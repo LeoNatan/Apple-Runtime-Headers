@@ -20,7 +20,6 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSNumber *onboardingVersion;
-@property(readonly, copy, nonatomic) NSString *feldsparID;
 @property(readonly, copy, nonatomic) NSArray *recentlySeenHistoryItems;
 @property(readonly, copy, nonatomic) NSDictionary *recentlyReadHistoryItems;
 @property(readonly, copy, nonatomic) NSArray *rankedPersonalSubscribedTagIDs;

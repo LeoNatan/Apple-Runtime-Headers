@@ -6,7 +6,7 @@
 
 #import <NanoTimeKitCompanion/NTKCNavigationController.h>
 
-@class NTKCompanionCustomPhotosEditor, NTKDigitalTimeLabelStyle, _NTKCFaceDetailPhotoCropViewController;
+@class NTKCompanionCustomPhotosEditor, NTKDigitalTimeLabelStyle, NTKFace, _NTKCFaceDetailPhotoCropViewController;
 
 @interface NTKCFaceDetailPhotoCropViewController : NTKCNavigationController
 {
@@ -15,10 +15,11 @@
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NTKDigitalTimeLabelStyle *timeStyle;
+@property(readonly, nonatomic) NTKFace *face;
 @property(readonly, nonatomic) NTKCompanionCustomPhotosEditor *editor;
 @property(readonly, nonatomic) unsigned long long index;
 - (void)viewDidLoad;
-- (id)initWithIndex:(unsigned long long)arg1 inPhotosEditor:(id)arg2 timeStyle:(id)arg3;
+- (id)initWithIndex:(unsigned long long)arg1 inPhotosEditor:(id)arg2 forFace:(id)arg3 timeStyle:(id)arg4;
 
 @end
 

@@ -7,10 +7,11 @@
 #import <AppKit/NSControl.h>
 
 #import "NSUserInterfaceValidations.h"
+#import "NSViewToolTipOwner.h"
 
-@class NSArray, NSCell, NSColor, NSMutableArray;
+@class NSArray, NSCell, NSColor, NSMutableArray, NSString;
 
-@interface NSMatrix : NSControl <NSUserInterfaceValidations>
+@interface NSMatrix : NSControl <NSUserInterfaceValidations, NSViewToolTipOwner>
 {
     id _reserved2;
     SEL _reserved3;
@@ -69,8 +70,6 @@
 + (void)initialize;
 + (BOOL)accessibilityIsSingleCelled;
 - (void).cxx_destruct;
-- (void)heartBeat:(CDStruct_fadd2e06 *)arg1;
-- (BOOL)_wantsHeartBeat;
 - (void)_windowChangedKeyState;
 - (void)_rightMouseUpOrDown:(id)arg1;
 - (void)_resetBrowserClickedRowAndColumn;
@@ -196,7 +195,6 @@
 - (BOOL)_shouldShowFirstResponderForCell:(id)arg1;
 - (BOOL)_shouldShowFirstResponderAtRow:(long long)arg1 column:(long long)arg2 ignoringWindowKeyState:(BOOL)arg3;
 - (void)_deselectAllExcept:(long long)arg1:(long long)arg2 andDraw:(BOOL)arg3;
-- (id)_findFirstOne:(long long *)arg1:(long long *)arg2;
 - (BOOL)_radioHit:(struct CGPoint)arg1 row:(long long *)arg2 col:(long long *)arg3;
 - (BOOL)_loopHit:(struct CGPoint)arg1 row:(long long *)arg2 col:(long long *)arg3;
 - (BOOL)_mouseHit:(struct CGPoint)arg1 row:(long long *)arg2 col:(long long *)arg3;
@@ -210,7 +208,6 @@
 - (void)_drawCellAtRow:(long long)arg1 column:(long long)arg2 inFrame:(struct CGRect)arg3;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)_propagateDownNeedsDisplayInRect:(struct CGRect)arg1;
-- (void)_liveResizeHighlightSelectionInClipRect:(struct CGRect)arg1;
 - (void)_getRowRange:(struct _NSRange *)arg1 andColumnRange:(struct _NSRange *)arg2 intersectingRect:(struct CGRect)arg3;
 - (BOOL)_selectFirstEnabledCell;
 - (long long)_firstSelectableRow;
@@ -361,6 +358,12 @@
 - (id)accessibilityAttributeNames;
 - (BOOL)_accessibilityIsRadioGroup;
 - (id)accessibilityCurrentEditorForCell:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

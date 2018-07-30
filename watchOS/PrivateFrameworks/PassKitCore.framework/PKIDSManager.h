@@ -8,7 +8,7 @@
 
 #import "IDSServiceDelegate.h"
 
-@class IDSService, NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PKProximityAdvertiser;
+@class IDSService, NSArray, NSHashTable, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PKProximityAdvertiser;
 
 @interface PKIDSManager : NSObject <IDSServiceDelegate>
 {
@@ -18,6 +18,7 @@
     NSMutableDictionary *_thumbnailCompletionHandlers;
     PKProximityAdvertiser *_proximityAdvertiser;
     NSHashTable *_delegates;
+    NSLock *_delegatesLock;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     int _requestCLTMThrottleUncapToken;
     id <PKIDSManagerDataSource> _dataSource;

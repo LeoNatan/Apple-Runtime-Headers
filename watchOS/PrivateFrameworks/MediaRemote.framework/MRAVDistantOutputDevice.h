@@ -20,6 +20,8 @@
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)sourceInfo;
+- (_Bool)isVolumeControlAvailable;
+- (float)volume;
 - (_Bool)requiresAuthorization;
 - (_Bool)supportsExternalScreen;
 - (_Bool)isLocalDevice;
@@ -29,20 +31,33 @@
 - (unsigned int)deviceSubtype;
 - (unsigned int)deviceType;
 - (_Bool)isDeviceGroupable;
+- (_Bool)isProxyGroupPlayer;
 - (_Bool)isGroupable;
+- (_Bool)parentGroupContainsDiscoverableLeader;
+- (id)parentGroupIdentifier;
+- (_Bool)isAirPlayReceiverSessionActive;
+- (_Bool)groupContainsGroupLeader;
 - (_Bool)isGroupLeader;
+- (_Bool)supportsBufferedAirPlay;
 - (_Bool)canRelayCommunicationChannel;
 - (_Bool)isRemoteControllable;
+- (_Bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (_Bool)canFetchMediaDataFromSender;
+- (_Bool)canPlayEncryptedProgressiveDownloadAssets;
+- (_Bool)canAccessiCloudMusicLibrary;
+- (_Bool)canAccessAppleMusic;
 - (_Bool)canAccessRemoteAssets;
 - (id)MACAddress;
 - (id)logicalDeviceID;
 - (id)groupID;
+- (id)firmwareVersion;
 - (id)modelID;
 - (id)uid;
 - (id)name;
 - (id)descriptor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithSkeleton:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;
 
 @end

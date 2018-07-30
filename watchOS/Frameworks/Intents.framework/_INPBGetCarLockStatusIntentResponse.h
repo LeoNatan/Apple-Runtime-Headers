@@ -7,29 +7,30 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBGetCarLockStatusIntentResponse.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBGetCarLockStatusIntentResponse : PBCodable <NSCopying>
+@interface _INPBGetCarLockStatusIntentResponse : PBCodable <_INPBGetCarLockStatusIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _Bool _locked;
     CDStruct_b1e20226 _has;
+    _Bool _locked;
 }
 
-+ (id)options;
 @property(nonatomic) _Bool locked; // @synthesize locked=_locked;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(nonatomic) _Bool hasLocked;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

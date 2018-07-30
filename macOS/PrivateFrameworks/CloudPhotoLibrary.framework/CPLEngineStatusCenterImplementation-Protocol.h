@@ -6,15 +6,15 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class CPLRecordStatus, NSArray, NSString;
+@class CPLRecordStatus, CPLScopedIdentifier, NSArray;
 
 @protocol CPLEngineStatusCenterImplementation <CPLEngineStorageImplementation>
 @property(readonly, nonatomic) BOOL hasStatusChanges;
-- (BOOL)resetWithError:(id *)arg1;
-- (BOOL)discardNotificationForRecordWithIdentifier:(NSString *)arg1 error:(id *)arg2;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (BOOL)discardNotificationForRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 error:(id *)arg2;
 - (BOOL)acknowledgeChangedStatus:(CPLRecordStatus *)arg1 hasBeenDeleted:(char *)arg2 error:(id *)arg3;
 - (NSArray *)statusChangesMaximumCount:(unsigned long long)arg1;
-- (CPLRecordStatus *)statusForRecordWithIdentifier:(NSString *)arg1;
+- (CPLRecordStatus *)statusForRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1;
 - (BOOL)addStatus:(CPLRecordStatus *)arg1 error:(id *)arg2;
 - (BOOL)getNewGeneration:(unsigned long long *)arg1 error:(id *)arg2;
 @end

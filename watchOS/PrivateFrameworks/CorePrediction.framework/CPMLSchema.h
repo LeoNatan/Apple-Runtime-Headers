@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableString;
 
+__attribute__((visibility("hidden")))
 @interface CPMLSchema : NSObject
 {
     NSMutableArray *schema;

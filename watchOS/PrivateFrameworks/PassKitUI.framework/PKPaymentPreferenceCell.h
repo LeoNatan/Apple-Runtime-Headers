@@ -17,6 +17,7 @@
 @property(nonatomic) _Bool hasError; // @synthesize hasError=_hasError;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)prepareForReuse;
 - (id)initWithReuseIdentifier:(id)arg1;
 
 @end

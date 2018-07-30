@@ -18,12 +18,12 @@
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 @property(copy) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
 - (void).cxx_destruct;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)client_deliverWorkoutRouteLocations:(id)arg1 isFinal:(_Bool)arg2 query:(id)arg3;
 - (id)initWithRoute:(id)arg1 dataHandler:(CDUnknownBlockType)arg2;
 

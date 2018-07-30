@@ -12,6 +12,9 @@
 
 + (void)registerConnectedCarInfo:(id)arg1;
 + (id)sharedManager;
+- (void)captureTileCacheMissForRequestReason:(unsigned char)arg1 missType:(int)arg2 tileStyle:(int)arg3 tileZoom:(unsigned int)arg4 missCount:(unsigned int)arg5 missByteCount:(unsigned int)arg6 httpStatus:(unsigned int)arg7 errors:(id)arg8;
+- (void)captureTileCacheHitForRequestReason:(unsigned char)arg1 tileSource:(unsigned char)arg2 tileStyle:(int)arg3 tileZoom:(unsigned int)arg4 hitCount:(unsigned int)arg5 hitByteCount:(unsigned int)arg6;
+- (int)_originTypeForTileLoadReason:(unsigned char)arg1;
 - (void)captureFailedMsgMetricFromLogFrameworkAdaptor:(_Bool)arg1;
 - (void)capturePurgeMetricWithState:(int)arg1 purgeReason:(int)arg2 fromLogFrameworkAdaptor:(_Bool)arg3;
 - (void)captureNetworkMetricWithState:(int)arg1 fromLogFrameworkAdaptor:(_Bool)arg2 logCollectionRequest:(id)arg3;
@@ -51,11 +54,16 @@
 - (id)logContextByAddingPlaceCardStateWithPlaceActionDetails:(id)arg1 placeCardType:(int)arg2 mapItemCategory:(id)arg3 availableActions:(id)arg4 unactionableUIElements:(id)arg5 toLogContext:(id)arg6;
 - (id)logContextByAddingPlaceCardStateWithChildPlace:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 toLogContext:(id)arg4;
 - (id)logContextByAddingPlaceCardStateWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 toLogContext:(id)arg4;
+- (void)captureTileCacheMissAnalyticForRequestReason:(int)arg1 missType:(int)arg2 tileStyle:(int)arg3 tileZoom:(unsigned int)arg4 missCount:(unsigned int)arg5 missByteCount:(unsigned int)arg6 httpStatus:(unsigned int)arg7 errors:(id)arg8;
+- (void)captureTileCacheHitAnalyticForRequestReason:(int)arg1 tileSource:(int)arg2 tileStyle:(int)arg3 tileZoom:(unsigned int)arg4 hitCount:(unsigned int)arg5 hitByteCount:(unsigned int)arg6;
+- (void)captureParkedCarEventAtLocation:(id)arg1 atTime:(double)arg2 withUncertainty:(double)arg3;
 - (void)captureBatchTrafficProbes:(id)arg1;
 - (void)captureRealtimeTrafficProbes:(id)arg1 tripId:(id)arg2 probeCount:(unsigned int)arg3 recvTime:(id)arg4;
 - (void)captureWiFiConnectionQualityEvent:(id)arg1;
 - (void)registerTouristInfo:(_Bool)arg1;
-- (void)captureClientACSuggestionsEventWith:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3 selectedIndex:(int)arg4;
+- (void)captureClientACKeypressEventWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3 keyPressStatus:(int)arg4 userSessionSnapshot:(id)arg5;
+- (void)captureClientACResponseEventWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3;
+- (void)captureClientACSuggestionEventWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3 selectedIndex:(int)arg4;
 - (void)captureTelemetricEnties:(id)arg1;
 - (void)captureTelemetricEntityForEventKey:(int)arg1 eventValue:(unsigned long long)arg2 eventDetail:(id)arg3;
 - (void)captureTelemetricEntityCountForEventKey:(int)arg1 eventDetail:(id)arg2;

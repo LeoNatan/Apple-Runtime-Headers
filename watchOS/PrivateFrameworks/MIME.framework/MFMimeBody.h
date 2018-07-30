@@ -15,6 +15,7 @@
     MFMimePart *_topLevelPart;
     unsigned int _preferredAlternative:16;
     unsigned int _numAlternatives:16;
+    int _encryptedDescendantState;
 }
 
 + (id)copyNewMimeBoundary;
@@ -31,7 +32,7 @@
 - (id)attachmentURLs;
 - (id)attachments;
 - (unsigned int)numberOfAttachmentsSigned:(_Bool *)arg1 encrypted:(_Bool *)arg2;
-- (id)firstPartPassingTest:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool hasEncryptedDescendantPart;
 - (id)partWithNumber:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *mimeSubtype;
 @property(readonly, copy, nonatomic) NSString *mimeType;

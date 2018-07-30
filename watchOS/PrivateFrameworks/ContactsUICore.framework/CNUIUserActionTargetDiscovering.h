@@ -8,16 +8,16 @@
 
 #import "CNUIUserActionTargetDiscovering.h"
 
-@class CNCache, NSString;
+@class CNUIUserActionTargetDiscoveryCache, NSString;
 
 @interface CNUIUserActionTargetDiscovering : NSObject <CNUIUserActionTargetDiscovering>
 {
     id <CNUIUserActionDiscoveringEnvironment> _discoveringEnvironment;
-    CNCache *_cache;
+    CNUIUserActionTargetDiscoveryCache *_cache;
 }
 
 + (_Bool)isSkypeAvailableWithEnvironment:(id)arg1;
-@property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
+@property(readonly, nonatomic) CNUIUserActionTargetDiscoveryCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <CNUIUserActionDiscoveringEnvironment> discoveringEnvironment; // @synthesize discoveringEnvironment=_discoveringEnvironment;
 - (void).cxx_destruct;
 - (id)thirdPartyTargetsForBundleIdentifier:(id)arg1;

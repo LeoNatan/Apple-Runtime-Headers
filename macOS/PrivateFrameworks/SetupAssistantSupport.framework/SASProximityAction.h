@@ -12,7 +12,7 @@
 
 + (id)actionFromDictionary:(id)arg1;
 + (unsigned long long)actionID;
-- (void)setResponseFromDictionary:(id)arg1;
+- (void)setResponseFromData:(id)arg1;
 - (id)responsePayload;
 - (BOOL)hasResponse;
 - (id)requestPayload;

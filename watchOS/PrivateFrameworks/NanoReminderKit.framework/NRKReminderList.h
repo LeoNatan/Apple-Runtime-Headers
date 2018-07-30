@@ -71,7 +71,7 @@
 @property(readonly, nonatomic) NSString *description;
 @property(readonly, nonatomic) NSString *title;
 - (id)_getLocalBundle;
-@property(readonly, nonatomic) struct CGColor *listColor;
+- (struct CGColor *)copyListColor;
 - (id)initWithStoreParent:(id)arg1 listId:(id)arg2;
 - (id)initWithReminderArray:(struct NSArray *)arg1 storeParent:(id)arg2 eKCalendar:(id)arg3 listId:(id)arg4;
 

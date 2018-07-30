@@ -38,7 +38,8 @@
 - (void)layoutSubviews;
 @property(readonly, nonatomic) PKPaymentPass *paymentPass;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 pass:(id)arg2;
+- (id)initWithPass:(id)arg1;
+- (id)init;
 
 @end
 

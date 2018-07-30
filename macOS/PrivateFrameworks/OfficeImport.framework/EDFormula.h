@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDFormula : NSObject <EDFormulaBuilding>
 {
     struct __CFData *mPackedData;
@@ -53,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)setOriginalFormulaString:(id)arg1;
 - (id)originalFormulaString;
 - (_Bool)convertTokensToSharedAtRow:(unsigned int)arg1 column:(unsigned int)arg2;
-- (ChVector_2ce397a3 *)xlPtgs;
+- (ChVector_1f909c3e *)xlPtgs;
 - (void)populateXlPtg:(struct XlPtg *)arg1 index:(unsigned int)arg2;
 - (_Bool)replaceTokenAtIndex:(unsigned int)arg1 withFormula:(id)arg2 formulaTokenIndex:(unsigned int)arg3;
 - (_Bool)replaceTokenAtIndex:(unsigned int)arg1 withFormula:(id)arg2;

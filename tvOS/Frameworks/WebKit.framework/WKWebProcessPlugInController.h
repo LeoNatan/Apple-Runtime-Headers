@@ -19,6 +19,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly) struct Object *_apiObject;
+- (void)extendClassesForParameterCoder:(id)arg1;
 @property(readonly) id parameters;
 @property(readonly) WKConnection *connection;
 - (void)_setPrincipalClassInstance:(id)arg1;

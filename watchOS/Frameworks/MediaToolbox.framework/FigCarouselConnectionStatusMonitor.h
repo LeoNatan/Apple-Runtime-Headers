@@ -20,7 +20,7 @@
 }
 
 + (int)_getCurrentNetworkFromStatus:(unsigned int)arg1;
-- (void)connectionStatusDidChange:(unsigned int)arg1 lastConnection:(id)arg2;
+- (void)connectionStatusDidChange:(unsigned int)arg1;
 - (int)_getCurrentNetworkFromCSLSConnectionStatusService;
 - (void)dealloc;
 - (id)initWithUpdateHandler:(id)arg1 handlingObject:(void *)arg2 pathChangeHandler:(CDUnknownFunctionPointerType)arg3;

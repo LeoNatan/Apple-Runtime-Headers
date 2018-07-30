@@ -19,9 +19,14 @@ __attribute__((visibility("hidden")))
     unsigned int _type;
     int _localCellTech;
     int _remoteCellTech;
-    int _cellularMTU;
+    int _connectionMTU;
+    unsigned int _uplinkBitrateCap;
+    unsigned int _downlinkBitrateCap;
 }
 
++ (unsigned int)worstCaseNetworkOverheadInBytesWithNumOfStreamId:(int)arg1 isPriorityIncluded:(_Bool)arg2;
+@property unsigned int downlinkBitrateCap; // @synthesize downlinkBitrateCap=_downlinkBitrateCap;
+@property unsigned int uplinkBitrateCap; // @synthesize uplinkBitrateCap=_uplinkBitrateCap;
 @property(readonly) unsigned int type; // @synthesize type=_type;
 @property int priority; // @synthesize priority=_priority;
 @property(readonly) unsigned int datagramChannelToken; // @synthesize datagramChannelToken=_datagramChannelToken;
@@ -32,13 +37,17 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSameAsConnection:(id)arg1;
 @property int remoteCellTech;
 @property int localCellTech;
-@property int cellularMTU;
+- (void)setCellularMTU:(int)arg1;
 - (void)getSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
 @property(readonly) NSString *remoteInterfaceTypeString;
 @property(readonly) NSString *localInterfaceTypeString;
 @property(readonly) int remoteConnectionType;
 @property(readonly) int localConnectionType;
 @property(readonly) NSUUID *connectionUUID;
+- (int)networkOverheadInBytesWithNumOfStreamId:(int)arg1 isPriorityIncluded:(_Bool)arg2;
+@property int connectionMTU;
+- (id)connectionQRSessionID;
+@property(readonly) _Bool serverIsDegraded;
 @property(readonly) _Bool isRelay;
 @property(readonly) _Bool isVPN;
 @property(readonly) int connectionId;

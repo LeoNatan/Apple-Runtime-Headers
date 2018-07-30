@@ -12,11 +12,13 @@
 
 @interface LiveConversionCandidate : NSObject <IMKCandidate>
 {
+    NSString *_annotation;
     void *_mecabraCandidateRef;
     NSString *_dictionaryReading;
 }
 
 @property(readonly, nonatomic) void *mecabraCandidateRef; // @synthesize mecabraCandidateRef=_mecabraCandidateRef;
+@property(copy, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *dictionaryReading; // @synthesize dictionaryReading=_dictionaryReading;
 @property(readonly, copy, nonatomic) NSString *analysisString;

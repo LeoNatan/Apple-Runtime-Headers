@@ -9,12 +9,12 @@
 #import "NSCoding.h"
 #import "NSTextLayoutOrientationProvider.h"
 
-@class NSArray, NSDictionary, NSLayoutManager;
+@class NSArray, NSDictionary, NSLayoutManager, UIView<NSTextContainerView>;
 
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider>
 {
     NSLayoutManager *_layoutManager;
-    id _textView;
+    UIView<NSTextContainerView> *_textView;
     struct CGSize _size;
     float _lineFragmentPadding;
     unsigned int _maximumLines;
@@ -35,12 +35,14 @@
     float _minimumWidth;
     int _layoutOrientation;
     NSDictionary *_attributesForExtraLineFragment;
+    int _applicationFrameworkContext;
 }
 
 + (void)initialize;
 - (id)description;
 - (void)setLayoutOrientation:(int)arg1;
 @property(readonly, nonatomic) int layoutOrientation; // @dynamic layoutOrientation;
+- (_Bool)containsPoint:(struct CGPoint)arg1;
 @property(readonly, nonatomic, getter=isSimpleRectangularTextContainer) _Bool simpleRectangularTextContainer;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 remainingRect:(struct CGRect *)arg2;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 atIndex:(unsigned int)arg2 writingDirection:(int)arg3 remainingRect:(struct CGRect *)arg4;
@@ -67,13 +69,14 @@
 - (id)initWithSize:(struct CGSize)arg1;
 - (id)initWithContainerSize:(struct CGSize)arg1;
 - (void)_commonInit;
+- (struct NSEdgeInsets)textContainerInsetsForView_iOS:(id)arg1;
 - (float)minimumLineFragmentWidth;
 - (void)setMinimumLineFragmentWidth:(float)arg1;
-- (void)_resizeAccordingToTextView:(id)arg1;
 - (void)coordinateAccess:(CDUnknownBlockType)arg1;
-
-// Remaining properties
-@property(readonly) _Bool isSimpleRectangularTextContainer;
+- (struct NSEdgeInsets)textContainerInsetsForView:(id)arg1;
+- (void)_containerTextViewFrameChanged:(id)arg1;
+- (void)_resizeAccordingToTextView:(id)arg1;
+- (_Bool)_containerObservesTextViewFrameChanges;
 
 @end
 

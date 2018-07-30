@@ -8,6 +8,7 @@
 
 @class NSProgress;
 
+__attribute__((visibility("hidden")))
 @interface AEProgressIndicatorView : PLRoundProgressView
 {
     NSProgress *__progress;

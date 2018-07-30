@@ -10,7 +10,6 @@
 
 @class ABSearchElementUIController, NSArray, NSPopUpButton, NSString, NSTextField;
 
-__attribute__((visibility("hidden")))
 @interface ABSearchElementView : NSView <NSMenuDelegate>
 {
     NSPopUpButton *_propertyPopUp;

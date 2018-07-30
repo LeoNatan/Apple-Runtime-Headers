@@ -10,6 +10,7 @@
 
 @class AVFigEndpointUIAgentOutputDeviceAuthorizationSessionImpl, AVOutputDevice, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigEndpointUIAgentOutputDeviceAuthorizationRequestImpl : NSObject <AVOutputDeviceAuthorizationRequestImpl>
 {
     AVFigEndpointUIAgentOutputDeviceAuthorizationSessionImpl *_parentSession;

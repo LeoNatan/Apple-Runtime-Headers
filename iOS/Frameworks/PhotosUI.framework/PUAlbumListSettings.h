@@ -9,20 +9,20 @@
 __attribute__((visibility("hidden")))
 @interface PUAlbumListSettings : PXSettings
 {
-    _Bool _allowPlacesAlbum;
-    _Bool _allowPeopleAlbum;
-    _Bool _allowScenesAlbum;
-    _Bool _allowMemoriesAlbum;
+    _Bool _shouldUseEditorialLayout;
+    _Bool _shouldShowSubscriberMonograms;
+    _Bool _combinePeoplePlacesAndMediaTypesOnIpad;
     _Bool _allowNavigationTitleEditing;
+    double _avatarSpacing;
 }
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 @property(nonatomic) _Bool allowNavigationTitleEditing; // @synthesize allowNavigationTitleEditing=_allowNavigationTitleEditing;
-@property(nonatomic) _Bool allowMemoriesAlbum; // @synthesize allowMemoriesAlbum=_allowMemoriesAlbum;
-@property(nonatomic) _Bool allowScenesAlbum; // @synthesize allowScenesAlbum=_allowScenesAlbum;
-@property(nonatomic) _Bool allowPeopleAlbum; // @synthesize allowPeopleAlbum=_allowPeopleAlbum;
-@property(nonatomic) _Bool allowPlacesAlbum; // @synthesize allowPlacesAlbum=_allowPlacesAlbum;
+@property(nonatomic) _Bool combinePeoplePlacesAndMediaTypesOnIpad; // @synthesize combinePeoplePlacesAndMediaTypesOnIpad=_combinePeoplePlacesAndMediaTypesOnIpad;
+@property(nonatomic) double avatarSpacing; // @synthesize avatarSpacing=_avatarSpacing;
+@property(nonatomic) _Bool shouldShowSubscriberMonograms; // @synthesize shouldShowSubscriberMonograms=_shouldShowSubscriberMonograms;
+@property(nonatomic) _Bool shouldUseEditorialLayout; // @synthesize shouldUseEditorialLayout=_shouldUseEditorialLayout;
 - (void)setDefaultValues;
 - (id)parentSettings;
 

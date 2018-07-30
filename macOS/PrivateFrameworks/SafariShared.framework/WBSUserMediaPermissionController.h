@@ -23,7 +23,7 @@
     WBSPerSitePreference *_microphoneMediaCapturePreference;
 }
 
-+ (id)perSitePreferenceValueForMediaCaptureSetting:(long long)arg1;
++ (id)localizedStringForPerSitePreferenceValue:(id)arg1;
 + (id)sharedController;
 @property(readonly, nonatomic) WBSPerSitePreference *microphoneMediaCapturePreference; // @synthesize microphoneMediaCapturePreference=_microphoneMediaCapturePreference;
 @property(readonly, nonatomic) WBSPerSitePreference *cameraMediaCapturePreference; // @synthesize cameraMediaCapturePreference=_cameraMediaCapturePreference;
@@ -42,6 +42,7 @@
 - (long long)_mediaCaptureSettingForMediaCaptureType:(long long)arg1 userMediaPermission:(unsigned long long)arg2;
 - (void)getValueOfPreference:(id)arg1 forDomain:(id)arg2 withTimeout:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)setValue:(id)arg1 ofPreference:(id)arg2 forDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
 - (void)checkUserMediaPermissionForURL:(id)arg1 mainFrameURL:(id)arg2 frameIdentifier:(unsigned long long)arg3 decisionHandler:(CDUnknownBlockType)arg4;

@@ -17,7 +17,7 @@
     NTKSafeLocketReader *_reader;
 }
 
-+ (id)_localizedNameOverrideForCustomEditMode:(int)arg1;
++ (id)_localizedNameOverrideForCustomEditMode:(int)arg1 forDevice:(id)arg2;
 + (id)_photoIdentifierFromResourceDirectory:(id)arg1;
 @property(retain, nonatomic) NTKSafeLocketReader *reader; // @synthesize reader=_reader;
 @property(copy, nonatomic) NSString *photoIdentifier; // @synthesize photoIdentifier=_photoIdentifier;
@@ -36,7 +36,7 @@
 - (void)_updateForResourceDirectoryChange:(id)arg1;
 - (void)_updateCanEdit;
 - (void)dealloc;
-- (id)init;
+- (void)_commonInit;
 - (int)_editModeForOldEncodingIndex:(int)arg1;
 
 // Remaining properties

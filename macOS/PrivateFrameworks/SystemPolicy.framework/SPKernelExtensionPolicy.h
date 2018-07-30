@@ -25,6 +25,7 @@
 - (BOOL)teamIdentifierIsAllowed:(id)arg1 error:(id *)arg2;
 - (BOOL)canLoadKernelExtensionInCache:(id)arg1 error:(id *)arg2;
 - (BOOL)canLoadKernelExtension:(id)arg1 error:(id *)arg2;
+- (void)dealloc;
 - (id)init;
 
 @end

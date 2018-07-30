@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
 {
     TSDPathSource *mPathSource;
     TSDShapeStyle *mStyle;
+    double mStrokePatternOffsetDistance;
 }
 
+@property(nonatomic) double strokePatternOffsetDistance; // @synthesize strokePatternOffsetDistance=mStrokePatternOffsetDistance;
 @property(retain, nonatomic) TSDPathSource *pathSource; // @synthesize pathSource=mPathSource;
 - (id)style;
 - (void).cxx_destruct;
@@ -43,16 +45,18 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TSDLineEnd *headLineEnd;
 - (void)setStyle:(id)arg1;
 - (_Bool)allowsParentGroupToBeResizedWithoutAspectRatioLock;
+- (_Bool)canAspectRatioLockBeChangedByUser;
 - (_Bool)isAllowedInFreehandDrawings;
 @property(readonly, nonatomic) _Bool supportsShrinkTextToFit;
 @property(readonly, nonatomic) _Bool supportsTextInset;
+- (_Bool)shouldBeIgnoredWhenCopying;
+@property(readonly, nonatomic) _Bool isFreehandDrawingSpacerShape;
 - (_Bool)needsDownload;
 @property(readonly, nonatomic) TSDShapeStyle *shapeStyle;
 - (Class)styleClass;
 - (Class)repClass;
 - (Class)layoutClass;
 - (id)copyWithContext:(id)arg1;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
 - (void)p_correctNearZeroWidthLines;

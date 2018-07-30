@@ -6,12 +6,12 @@
 
 #import "NSTableRowView.h"
 
-@class SeparatorView;
+@class NSBox;
 
 __attribute__((visibility("hidden")))
 @interface FormAutoFillCompletionControllerRowView : NSTableRowView
 {
-    SeparatorView *_separatorView;
+    NSBox *_separatorView;
 }
 
 - (void).cxx_destruct;

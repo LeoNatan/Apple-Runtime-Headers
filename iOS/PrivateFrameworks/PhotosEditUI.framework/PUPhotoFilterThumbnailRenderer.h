@@ -8,6 +8,7 @@
 
 @class PLEditSource;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoFilterThumbnailRenderer : NSObject
 {
     _Bool _allowDepthEffects;

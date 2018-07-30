@@ -6,53 +6,24 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSDictionary, NSString, _SFPBAbstractCommand, _SFPBColor, _SFPBImage, _SFPBPunchout, _SFPBRichText, _SFPBText;
+@class NSArray, NSData, NSDictionary, NSString, _SFPBAbstractCommand, _SFPBColor, _SFPBImage, _SFPBPunchout, _SFPBRichText;
 
 @protocol _SFPBAudioPlaybackCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasThumbnail;
 @property(retain, nonatomic) _SFPBImage *thumbnail;
-@property(readonly, nonatomic) BOOL hasSubtitle;
 @property(retain, nonatomic) _SFPBRichText *subtitle;
-@property(readonly, nonatomic) BOOL hasTitle;
 @property(retain, nonatomic) _SFPBRichText *title;
-@property(readonly, nonatomic) BOOL hasDetailText;
 @property(retain, nonatomic) _SFPBRichText *detailText;
 @property(copy, nonatomic) NSArray *stopCommands;
 @property(copy, nonatomic) NSArray *playCommands;
-@property(readonly, nonatomic) BOOL hasState;
 @property(nonatomic) int state;
-@property(readonly, nonatomic) BOOL hasBottomImageEmoji;
-@property(copy, nonatomic) NSString *bottomImageEmoji;
-@property(readonly, nonatomic) BOOL hasTopImageEmoji;
-@property(copy, nonatomic) NSString *topImageEmoji;
-@property(readonly, nonatomic) BOOL hasBottomSubtitle;
-@property(retain, nonatomic) _SFPBText *bottomSubtitle;
-@property(readonly, nonatomic) BOOL hasBottomText;
-@property(retain, nonatomic) _SFPBText *bottomText;
-@property(readonly, nonatomic) BOOL hasBottomImage;
-@property(retain, nonatomic) _SFPBImage *bottomImage;
-@property(readonly, nonatomic) BOOL hasTopSecondaryText;
-@property(copy, nonatomic) NSString *topSecondaryText;
-@property(readonly, nonatomic) BOOL hasTopText;
-@property(retain, nonatomic) _SFPBText *topText;
-@property(readonly, nonatomic) BOOL hasTopImage;
-@property(retain, nonatomic) _SFPBImage *topImage;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
 @property(nonatomic) int separatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
 @property(copy, nonatomic) NSString *type;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
 @property(nonatomic) BOOL hasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
 @property(nonatomic) BOOL hasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
 @property(nonatomic) BOOL canBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
 - (id)initWithDictionary:(NSDictionary *)arg1;

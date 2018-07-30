@@ -16,6 +16,7 @@
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)performClassificationReportRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performReportRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performQueryRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;

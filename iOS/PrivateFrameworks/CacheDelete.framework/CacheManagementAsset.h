@@ -10,7 +10,6 @@
 
 @interface CacheManagementAsset : NSObject
 {
-    _Bool _hasLegacyXattrs;
     int _priority;
     unsigned int _assetVersion;
     NSString *_displayName;
@@ -31,7 +30,6 @@
 + (id)assetFromFile:(id)arg1 withIdentifier:(id)arg2;
 + (id)assetFromData:(id)arg1;
 + (id)assetWithRelativePath:(id)arg1 identifier:(id)arg2 expirationDate:(id)arg3 contentType:(id)arg4 metadata:(id)arg5 priority:(int)arg6;
-@property _Bool hasLegacyXattrs; // @synthesize hasLegacyXattrs=_hasLegacyXattrs;
 @property(retain) NSString *absolutePath; // @synthesize absolutePath=_absolutePath;
 @property double last_viewed_date; // @synthesize last_viewed_date=_last_viewed_date;
 @property double download_completion_date; // @synthesize download_completion_date=_download_completion_date;

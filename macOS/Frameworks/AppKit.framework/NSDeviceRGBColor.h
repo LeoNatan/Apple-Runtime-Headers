@@ -6,6 +6,7 @@
 
 #import <AppKit/NSCalibratedRGBColor.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDeviceRGBColor : NSCalibratedRGBColor
 {
 }

@@ -12,6 +12,7 @@
 {
     NSDictionary *_mediaRemoteOptions;
     NSString *_contextID;
+    NSString *_commandID;
     MPRemoteCommand *_command;
     double _timestamp;
 }
@@ -22,6 +23,7 @@
 - (void).cxx_destruct;
 - (int)playbackQueueOffset;
 - (id)contentItemID;
+- (id)commandID;
 - (id)contextID;
 - (id)mediaRemoteOptions;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;

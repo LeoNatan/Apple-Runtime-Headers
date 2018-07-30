@@ -10,9 +10,7 @@
 {
 }
 
-+ (id)confirmationRequiredWithValueToConfirm:(long long)arg1;
 + (id)confirmationRequiredWithDateSearchTypeToConfirm:(long long)arg1;
-+ (id)successWithResolvedValue:(long long)arg1;
 + (id)successWithResolvedDateSearchType:(long long)arg1;
 
 @end

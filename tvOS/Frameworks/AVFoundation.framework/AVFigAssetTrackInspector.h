@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVFigAssetTrackInspector : AVAssetTrackInspector
 {
     struct OpaqueFigAsset *_figAsset;

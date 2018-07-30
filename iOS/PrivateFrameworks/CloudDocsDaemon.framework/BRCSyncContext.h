@@ -65,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)waitForAllOperations;
 - (void)cancel;
 - (void)resume;
+- (void)addOperation:(id)arg1 allowsCellularAccess:(id)arg2 nonDiscretionary:(id)arg3;
+- (void)addOperation:(id)arg1 nonDiscretionary:(_Bool)arg2;
 - (void)addOperation:(id)arg1 allowsCellularAccess:(id)arg2;
 - (void)addOperation:(id)arg1;
 - (_Bool)allowsCellularAccess;

@@ -9,10 +9,11 @@
 #import "CUISBlockedViewDataSource.h"
 #import "CUISPasscodeEntryViewDataSource.h"
 #import "CUISPasscodeEntryViewDelegate.h"
+#import "PUICActionSheetControllerDelegate.h"
 
-@class CUISBlockedView, CUISPasscodeDialogView, CUISPasscodeEntryView, NSString, NSTimer, PUICActivityIndicatorView;
+@class CUISAlertSheetController, CUISBlockedView, CUISPasscodeEntryView, NSString, NSTimer, PUICActivityIndicatorView;
 
-@interface CUISPasscodeViewController : UIViewController <CUISPasscodeEntryViewDelegate, CUISPasscodeEntryViewDataSource, CUISBlockedViewDataSource>
+@interface CUISPasscodeViewController : UIViewController <CUISPasscodeEntryViewDelegate, CUISPasscodeEntryViewDataSource, CUISBlockedViewDataSource, PUICActionSheetControllerDelegate>
 {
     int _mode;
     CUISPasscodeEntryView *_entry;
@@ -32,15 +33,15 @@
     NSString *_changingPasscode;
     NSString *_currentPasscode;
     int _activeFieldType;
-    CUISPasscodeDialogView *_errorDialog;
-    CUISPasscodeDialogView *_confirmWeakDialog;
+    UIViewController *_alertSheetPresenter;
+    CUISAlertSheetController *_errorAlertSheet;
     id <CUISSetupAsyncPasscodeCreationViewControllerDelegate> _asynchronousDelegate;
 }
 
 + (_Bool)unlockDeviceWithPasscode:(id)arg1 outError:(id *)arg2;
 @property(nonatomic) __weak id <CUISSetupAsyncPasscodeCreationViewControllerDelegate> asynchronousDelegate; // @synthesize asynchronousDelegate=_asynchronousDelegate;
-@property(retain, nonatomic) CUISPasscodeDialogView *confirmWeakDialog; // @synthesize confirmWeakDialog=_confirmWeakDialog;
-@property(retain, nonatomic) CUISPasscodeDialogView *errorDialog; // @synthesize errorDialog=_errorDialog;
+@property(retain, nonatomic) CUISAlertSheetController *errorAlertSheet; // @synthesize errorAlertSheet=_errorAlertSheet;
+@property(retain, nonatomic) UIViewController *alertSheetPresenter; // @synthesize alertSheetPresenter=_alertSheetPresenter;
 @property(nonatomic, getter=_activeFieldType, setter=_setActiveFieldType:) int activeFieldType; // @synthesize activeFieldType=_activeFieldType;
 @property(copy, nonatomic) NSString *currentPasscode; // @synthesize currentPasscode=_currentPasscode;
 @property(copy, nonatomic) NSString *changingPasscode; // @synthesize changingPasscode=_changingPasscode;
@@ -50,6 +51,8 @@
 @property(nonatomic) _Bool shouldShowCancel; // @synthesize shouldShowCancel=_shouldShowCancel;
 @property(nonatomic) __weak id <CUISPasscodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)actionSheetController:(id)arg1 didDismissWithActionAtIndexPath:(id)arg2;
+- (void)removeActionSheetPresenter;
 - (void)_passcodeEntered:(id)arg1;
 - (void)_checkIfNewPasscodeIsAcceptable:(id)arg1;
 - (void)_useOrRejectWeakNewPasscode:(id)arg1;
@@ -57,16 +60,15 @@
 - (_Bool)_privateChangePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id *)arg3;
 - (_Bool)_privateValidatePasscode:(id)arg1 outError:(id *)arg2;
 - (_Bool)validatePasscode:(id)arg1 error:(id *)arg2;
-- (void)_dialogView:(id)arg1 visible:(_Bool)arg2;
 - (void)_showPasscodeError:(id)arg1;
 - (void)_showDifferingPasscodes;
 - (void)_showConfirmPasscode:(id)arg1;
 - (void)_setWaiting:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)_dismissDialog:(id)arg1;
 - (_Bool)useDefaultBlockedView;
 - (void)refreshBlockedState;
 - (void)_setActiveFieldType:(int)arg1 animated:(_Bool)arg2 withNewTitle:(id)arg3;

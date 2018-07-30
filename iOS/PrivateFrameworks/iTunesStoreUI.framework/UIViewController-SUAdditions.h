@@ -9,6 +9,7 @@
 @class SUViewControllerFactory;
 
 @interface UIViewController (SUAdditions)
+- (id)su_closestNavigationController;
 @property(readonly, nonatomic) SUViewControllerFactory *viewControllerFactory;
 @property(readonly, nonatomic) _Bool shouldInvalidateForMemoryPurge;
 - (void)setBadgeValue:(id)arg1 animated:(_Bool)arg2 blink:(_Bool)arg3;

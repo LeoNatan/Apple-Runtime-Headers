@@ -8,7 +8,6 @@
 
 @class PDAnimationTarget;
 
-__attribute__((visibility("hidden")))
 @interface PDParallelTimeNodeBuildInfo : NSObject
 {
     PDAnimationTarget *mTarget;
@@ -23,7 +22,7 @@ __attribute__((visibility("hidden")))
 @property double duration; // @synthesize duration=mDuration;
 @property double delay; // @synthesize delay=mDelay;
 @property(retain) PDAnimationTarget *target; // @synthesize target=mTarget;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

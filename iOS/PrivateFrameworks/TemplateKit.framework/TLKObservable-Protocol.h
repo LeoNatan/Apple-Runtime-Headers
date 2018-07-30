@@ -6,9 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray;
-
 @protocol TLKObservable <NSObject>
-- (NSArray *)observableProperties;
+@property __weak id <TLKObserver> observer;
 @end
 

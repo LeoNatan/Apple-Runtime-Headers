@@ -9,6 +9,8 @@
 @class NSString, NSUUID;
 
 @protocol VCConnectionProtocol <NSObject>
+@property unsigned int downlinkBitrateCap;
+@property unsigned int uplinkBitrateCap;
 @property(readonly) NSString *remoteInterfaceTypeString;
 @property(readonly) NSString *localInterfaceTypeString;
 @property(readonly) unsigned int type;
@@ -18,10 +20,11 @@
 @property(readonly) int remoteConnectionType;
 @property(readonly) int localConnectionType;
 @property(readonly) NSUUID *connectionUUID;
+@property(readonly) BOOL serverIsDegraded;
 @property(readonly) BOOL isVPN;
 @property(readonly) BOOL isRelay;
 @property(readonly) int connectionId;
-@property int cellularMTU;
+@property int connectionMTU;
 @property(readonly) BOOL isIPv6;
 @property(readonly) BOOL isRemoteOnCellular;
 @property(readonly) BOOL isLocalOnCellular;

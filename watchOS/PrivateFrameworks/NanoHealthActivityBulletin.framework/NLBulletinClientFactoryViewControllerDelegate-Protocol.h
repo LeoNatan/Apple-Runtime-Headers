@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-@class UIViewController;
+@class ASFriend, UIViewController;
 
 @protocol NLBulletinClientFactoryViewControllerDelegate <NSObject>
-- (void)clientViewControllerDidSelectPresentQuickboard:(UIViewController *)arg1;
+- (void)clientViewControllerDidSelectPresentQuickboard:(UIViewController *)arg1 forFriend:(ASFriend *)arg2;
 - (void)clientViewControllerDidSelectDismiss:(id <NLBulletinClientCoachingViewController>)arg1 shouldAnimateActionMenu:(_Bool)arg2;
 - (void)clientViewControllerDidDisappear:(id <NLBulletinClientCoachingViewController>)arg1;
 - (void)clientViewControllerDidAppear:(id <NLBulletinClientCoachingViewController>)arg1;

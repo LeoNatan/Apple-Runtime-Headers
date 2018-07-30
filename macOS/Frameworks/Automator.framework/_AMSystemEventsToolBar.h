@@ -6,7 +6,7 @@
 
 #import <Automator/_AMSystemEventsUIElement.h>
 
-@interface _AMSystemEventsToolBar : _AMSystemEventsUIElement
+@interface _AMSystemEventsToolbar : _AMSystemEventsUIElement
 {
 }
 

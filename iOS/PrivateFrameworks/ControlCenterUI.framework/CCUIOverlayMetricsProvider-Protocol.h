@@ -9,7 +9,6 @@
 @class CCUIStatusBarStyleSnapshot;
 
 @protocol CCUIOverlayMetricsProvider <NSObject>
-@property(readonly, nonatomic) _Bool overlayReachabilityAffectsHeader;
 @property(readonly, nonatomic) double overlayReachabilityHeight;
 @property(readonly, copy, nonatomic) CCUIStatusBarStyleSnapshot *overlayStatusBarStyle;
 @property(readonly, nonatomic) long long overlayInterfaceOrientation;

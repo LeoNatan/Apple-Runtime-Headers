@@ -48,7 +48,7 @@
 @property(retain, nonatomic) NSArray *currentApps; // @synthesize currentApps=_currentApps;
 @property(nonatomic) unsigned long long activeFetchEvents; // @synthesize activeFetchEvents=_activeFetchEvents;
 @property(retain, nonatomic) NSMapTable *fetchObservers; // @synthesize fetchObservers=_fetchObservers;
-@property(nonatomic) id <AXElementFetcherDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <AXElementFetcherDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long elementGroupingHeuristics; // @synthesize elementGroupingHeuristics=_elementGroupingHeuristics;
 @property(nonatomic, getter=isGroupingEnabled) _Bool groupingEnabled; // @synthesize groupingEnabled=_groupingEnabled;
 @property(nonatomic) _Bool shouldIncludeNonScannerElements; // @synthesize shouldIncludeNonScannerElements=_shouldIncludeNonScannerElements;

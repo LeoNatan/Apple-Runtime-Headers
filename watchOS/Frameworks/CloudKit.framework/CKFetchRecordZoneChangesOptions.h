@@ -30,8 +30,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
-- (id)description;
+- (id)zoneConfiguration;
+- (id)initWithZoneConfiguration:(id)arg1;
 - (id)init;
 
 @end

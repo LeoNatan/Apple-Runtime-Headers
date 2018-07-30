@@ -12,14 +12,8 @@
 
 @interface RTWiFiAccessPoint : NSObject <NSSecureCoding>
 {
-    _Bool _adHoc;
-    _Bool _captiveNetwork;
-    _Bool _applePersonalHotspot;
-    _Bool _carPlay;
     NSString *_mac;
-    NSString *_ssid;
     int _rssi;
-    int _mode;
     int _channel;
     NSDate *_date;
     double _age;
@@ -28,20 +22,14 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) double age; // @synthesize age=_age;
-@property(readonly, nonatomic) _Bool carPlay; // @synthesize carPlay=_carPlay;
-@property(readonly, nonatomic) _Bool applePersonalHotspot; // @synthesize applePersonalHotspot=_applePersonalHotspot;
-@property(readonly, nonatomic) _Bool captiveNetwork; // @synthesize captiveNetwork=_captiveNetwork;
-@property(readonly, nonatomic) _Bool adHoc; // @synthesize adHoc=_adHoc;
 @property(readonly, nonatomic) int channel; // @synthesize channel=_channel;
-@property(readonly, nonatomic) int mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) int rssi; // @synthesize rssi=_rssi;
-@property(readonly, nonatomic) NSString *ssid; // @synthesize ssid=_ssid;
 @property(readonly, nonatomic) NSString *mac; // @synthesize mac=_mac;
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMac:(id)arg1 ssid:(id)arg2 rssi:(int)arg3 mode:(int)arg4 channel:(int)arg5 adHoc:(_Bool)arg6 captiveNetwork:(_Bool)arg7 applePersonalHotspot:(_Bool)arg8 carPlay:(_Bool)arg9 age:(double)arg10 date:(id)arg11;
+- (id)initWithMac:(id)arg1 rssi:(int)arg2 channel:(int)arg3 age:(double)arg4 date:(id)arg5;
 
 @end
 

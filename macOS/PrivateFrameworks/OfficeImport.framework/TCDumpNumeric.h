@@ -8,19 +8,18 @@
 
 @class TCDumpEnum;
 
-__attribute__((visibility("hidden")))
 @interface TCDumpNumeric : TCDumpType
 {
     int mType;
     TCDumpEnum *mEnumType;
 }
 
+- (void).cxx_destruct;
 - (void)fromXml:(struct _xmlNode *)arg1 toBinary:(struct __sFILE *)arg2 state:(id)arg3;
 - (void)fromBinary:(struct __sFILE *)arg1 toXml:(struct _xmlNode *)arg2 state:(id)arg3;
 - (id)enumType;
 - (int)type;
 - (id)initWithType:(int)arg1;
-- (void)dealloc;
 - (id)initWithType:(int)arg1 enumType:(id)arg2;
 
 @end

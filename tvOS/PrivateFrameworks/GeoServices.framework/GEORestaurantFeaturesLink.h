@@ -8,7 +8,6 @@
 
 @class GEOPDRestaurantReservationLink, NSArray, NSMapTable;
 
-__attribute__((visibility("hidden")))
 @interface GEORestaurantFeaturesLink : NSObject
 {
     GEOPDRestaurantReservationLink *_restaurantReservationLink;

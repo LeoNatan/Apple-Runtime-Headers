@@ -46,6 +46,7 @@
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 - (BOOL)booleanForKey:(id)arg1 inDomain:(id)arg2;
 - (void)setBoolean:(BOOL)arg1 forKey:(id)arg2 inDomain:(id)arg3;
+- (void)toggleTouchBarControlStripCustomizationPalette;
 - (void)setSuddenTerminationEnabled:(BOOL)arg1;
 - (void)switchToPanel:(id)arg1 anchor:(id)arg2;
 - (void)switchToPanel:(id)arg1;

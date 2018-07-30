@@ -7,12 +7,17 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBTask.h"
 
-@class NSString, PBUnknownFields, _INPBDataString, _INPBDateTime, _INPBSpatialEventTrigger, _INPBTemporalEventTrigger;
+@class NSString, _INPBDataString, _INPBDateTime, _INPBSpatialEventTrigger, _INPBTemporalEventTrigger;
 
-@interface _INPBTask : PBCodable <NSCopying>
+@interface _INPBTask : PBCodable <_INPBTask, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct {
+        unsigned int status:1;
+        unsigned int taskType:1;
+    } _has;
     _INPBDateTime *_createdDateTime;
     NSString *_identifier;
     _INPBDateTime *_modifiedDateTime;
@@ -21,43 +26,40 @@
     int _taskType;
     _INPBTemporalEventTrigger *_temporalEventTrigger;
     _INPBDataString *_title;
-    struct {
-        unsigned int status:1;
-        unsigned int taskType:1;
-    } _has;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) _INPBDateTime *modifiedDateTime; // @synthesize modifiedDateTime=_modifiedDateTime;
-@property(retain, nonatomic) _INPBDateTime *createdDateTime; // @synthesize createdDateTime=_createdDateTime;
-@property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
-@property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
+@property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
+@property(nonatomic) int taskType; // @synthesize taskType=_taskType;
+@property(nonatomic) int status; // @synthesize status=_status;
+@property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
+@property(retain, nonatomic) _INPBDateTime *modifiedDateTime; // @synthesize modifiedDateTime=_modifiedDateTime;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) _INPBDateTime *createdDateTime; // @synthesize createdDateTime=_createdDateTime;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasTitle;
+@property(readonly, nonatomic) _Bool hasTemporalEventTrigger;
 - (int)StringAsTaskType:(id)arg1;
 - (id)taskTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTaskType;
-@property(nonatomic) int taskType; // @synthesize taskType=_taskType;
-@property(readonly, nonatomic) _Bool hasIdentifier;
-@property(readonly, nonatomic) _Bool hasModifiedDateTime;
-@property(readonly, nonatomic) _Bool hasCreatedDateTime;
-@property(readonly, nonatomic) _Bool hasTemporalEventTrigger;
-@property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
-@property(readonly, nonatomic) _Bool hasTitle;
+@property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
+@property(readonly, nonatomic) _Bool hasModifiedDateTime;
+@property(readonly, nonatomic) _Bool hasIdentifier;
+@property(readonly, nonatomic) _Bool hasCreatedDateTime;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

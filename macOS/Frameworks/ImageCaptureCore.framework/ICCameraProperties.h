@@ -8,6 +8,7 @@
 
 @class NSArray, NSLock, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ICCameraProperties : NSObject
 {
     NSString *_mountPoint;
@@ -18,7 +19,7 @@
     BOOL _isLocked;
     NSMutableArray *_contents;
     NSMutableArray *_mediaFiles;
-    NSLock *_mediaFilesLock;
+    NSObject<OS_dispatch_queue> *_mediaProcessingQueue;
     double _timeOffset;
     unsigned long long _estimatedCountOfMediafiles;
     BOOL _contentReceived;
@@ -49,13 +50,27 @@
     NSMutableArray *_originalMediaFiles;
     NSMutableArray *_convertedMediaFiles;
     NSMutableArray *_universalMediaFiles;
-    BOOL _legacyDevice;
     unsigned long long _mediaPresentation;
     NSMutableOrderedSet *_indexedCameraFiles;
     NSMutableOrderedSet *_indexedCameraFolders;
+    NSMutableOrderedSet *_indexedCameraFileUUIDs;
+    NSMutableOrderedSet *_indexedCameraFileDates;
+    BOOL _isBuildingVirtualCamera;
+    NSMutableArray *_virtualCameraFiles;
+    NSMutableDictionary *_virtualCameraManifest;
+    NSString *_virtualCameraLocation;
+    long long _appleRelatedUUIDSupport;
+    struct os_unfair_lock_s _mediaLock;
 }
 
-@property BOOL legacyDevice; // @synthesize legacyDevice=_legacyDevice;
+@property(retain) NSObject<OS_dispatch_queue> *mediaProcessingQueue; // @synthesize mediaProcessingQueue=_mediaProcessingQueue;
+@property(copy) NSString *virtualCameraLocation; // @synthesize virtualCameraLocation=_virtualCameraLocation;
+@property(retain) NSMutableDictionary *virtualCameraManifest; // @synthesize virtualCameraManifest=_virtualCameraManifest;
+@property BOOL isBuildingVirtualCamera; // @synthesize isBuildingVirtualCamera=_isBuildingVirtualCamera;
+@property(retain) NSArray *virtualCameraFiles; // @synthesize virtualCameraFiles=_virtualCameraFiles;
+@property long long appleRelatedUUIDSupport; // @synthesize appleRelatedUUIDSupport=_appleRelatedUUIDSupport;
+@property(retain) NSMutableOrderedSet *indexedCameraFileDates; // @synthesize indexedCameraFileDates=_indexedCameraFileDates;
+@property(retain) NSMutableOrderedSet *indexedCameraFileUUIDs; // @synthesize indexedCameraFileUUIDs=_indexedCameraFileUUIDs;
 @property(retain) NSMutableOrderedSet *indexedCameraFolders; // @synthesize indexedCameraFolders=_indexedCameraFolders;
 @property(retain) NSMutableOrderedSet *indexedCameraFiles; // @synthesize indexedCameraFiles=_indexedCameraFiles;
 @property unsigned long long mediaPresentation; // @synthesize mediaPresentation=_mediaPresentation;
@@ -69,7 +84,6 @@
 @property unsigned int iCloudPhotosEnabled; // @synthesize iCloudPhotosEnabled=_iCloudPhotosEnabled;
 @property unsigned int aptpObjectLimit; // @synthesize aptpObjectLimit=_aptpObjectLimit;
 @property BOOL operationQueueSuspended; // @synthesize operationQueueSuspended=_operationQueueSuspended;
-@property(readonly) NSLock *operationQueueLock; // @synthesize operationQueueLock=_operationQueueLock;
 @property(readonly) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) NSMutableArray *aptpRequestedFiles; // @synthesize aptpRequestedFiles=_aptpRequestedFiles;
 @property NSArray *supportedSidecarFiles; // @synthesize supportedSidecarFiles=_supportedSidecarFiles;
@@ -81,12 +95,10 @@
 @property BOOL isAccessRestrictedAppleDevice; // @synthesize isAccessRestrictedAppleDevice=_isAccessRestrictedAppleDevice;
 @property(readonly) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property BOOL notificationQueueSuspended; // @synthesize notificationQueueSuspended=_notificationQueueSuspended;
-@property(readonly) NSLock *notificationQueueLock; // @synthesize notificationQueueLock=_notificationQueueLock;
 @property(readonly) NSObject<OS_dispatch_group> *activityGroup; // @synthesize activityGroup=_activityGroup;
 @property BOOL contentReceived; // @synthesize contentReceived=_contentReceived;
 @property unsigned long long estimatedCountOfMediafiles; // @synthesize estimatedCountOfMediafiles=_estimatedCountOfMediafiles;
 @property double timeOffset; // @synthesize timeOffset=_timeOffset;
-@property(retain) NSLock *mediaFilesLock; // @synthesize mediaFilesLock=_mediaFilesLock;
 @property(retain) NSMutableArray *mediaFiles; // @synthesize mediaFiles=_mediaFiles;
 @property(retain) NSMutableArray *contents; // @synthesize contents=_contents;
 @property BOOL isLocked; // @synthesize isLocked=_isLocked;
@@ -97,8 +109,6 @@
 @property(retain) NSString *mountPoint; // @synthesize mountPoint=_mountPoint;
 - (void)unlockOperationQueue;
 - (void)lockOperationQueue;
-- (void)unlockMediaFiles;
-- (void)lockMediaFiles;
 - (void)unlockNotificationQueue;
 - (void)lockNotificationQueue;
 - (void)setteardownPhase:(BOOL)arg1;
@@ -110,7 +120,6 @@
 - (void)suspendOperationQueue;
 - (void)resumeNotificationQueue;
 - (void)suspendNotificationQueue;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

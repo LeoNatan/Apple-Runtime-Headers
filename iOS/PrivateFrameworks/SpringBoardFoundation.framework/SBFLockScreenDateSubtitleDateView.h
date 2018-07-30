@@ -18,6 +18,7 @@
 
 + (double)scaledFontSize:(double)arg1 withMaximumFontSizeCategory:(id)arg2;
 + (double)subtitleLabelToLunarDateLabelBaselineDifferenceY;
++ (CDStruct_d2b197d1)dateTimeLunarDateFontMetrics;
 + (id)dateTimeLunarDateFont;
 @property(nonatomic) _Bool useCompactDateFormat; // @synthesize useCompactDateFormat=_useCompactDateFormat;
 @property(nonatomic) double alignmentPercent; // @synthesize alignmentPercent=_alignmentPercent;
@@ -25,8 +26,6 @@
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)_createReplicateView;
-- (id)replicate;
 - (double)_lunarDateLabelYOffsetFromDateLabel;
 - (void)_updateDateLabelForCompact;
 - (struct CGRect)alternateDateLabelFrame;
@@ -37,6 +36,7 @@
 - (void)setLegibilitySettings:(id)arg1;
 - (void)dealloc;
 - (void)_setupAlternateDateLabel;
+- (void)_overlayCalendarDidChange;
 - (id)initWithDate:(id)arg1;
 
 @end

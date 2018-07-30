@@ -13,16 +13,18 @@
     NSString *_string;
     SiriCoreSQLiteStatement *_statement;
     NSArray *_parameters;
+    id <SiriCoreSQLiteRecordBuilder> _recordBuilder;
     unsigned int _options;
 }
 
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
+@property(readonly, nonatomic) id <SiriCoreSQLiteRecordBuilder> recordBuilder; // @synthesize recordBuilder=_recordBuilder;
 @property(readonly, copy, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) SiriCoreSQLiteStatement *statement; // @synthesize statement=_statement;
 @property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithString:(id)arg1 statement:(id)arg2 parameters:(id)arg3 options:(unsigned int)arg4;
+- (id)initWithString:(id)arg1 statement:(id)arg2 parameters:(id)arg3 recordBuilder:(id)arg4 options:(unsigned int)arg5;
 
 @end
 

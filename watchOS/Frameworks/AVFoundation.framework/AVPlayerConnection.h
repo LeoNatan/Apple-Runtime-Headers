@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSError;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerConnection : NSObject
 {
     AVWeakReference *_playerReference;

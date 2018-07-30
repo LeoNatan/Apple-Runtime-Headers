@@ -7,40 +7,45 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSetProfileInCarIntent.h"
 
-@class PBUnknownFields, _INPBInteger, _INPBIntentMetadata, _INPBString;
+@class NSString, _INPBDataString, _INPBInteger, _INPBIntentMetadata, _INPBString;
 
-@interface _INPBSetProfileInCarIntent : PBCodable <NSCopying>
+@interface _INPBSetProfileInCarIntent : PBCodable <_INPBSetProfileInCarIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBIntentMetadata *_intentMetadata;
-    _INPBString *_profileName;
-    _INPBInteger *_profileNumber;
-    _Bool _defaultProfile;
     struct {
         unsigned int defaultProfile:1;
     } _has;
+    _Bool _defaultProfile;
+    _INPBDataString *_carName;
+    _INPBIntentMetadata *_intentMetadata;
+    _INPBString *_profileName;
+    _INPBInteger *_profileNumber;
 }
 
-+ (id)options;
-@property(nonatomic) _Bool defaultProfile; // @synthesize defaultProfile=_defaultProfile;
-@property(retain, nonatomic) _INPBString *profileName; // @synthesize profileName=_profileName;
 @property(retain, nonatomic) _INPBInteger *profileNumber; // @synthesize profileNumber=_profileNumber;
+@property(retain, nonatomic) _INPBString *profileName; // @synthesize profileName=_profileName;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) _Bool defaultProfile; // @synthesize defaultProfile=_defaultProfile;
+@property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasDefaultProfile;
-@property(readonly, nonatomic) _Bool hasProfileName;
 @property(readonly, nonatomic) _Bool hasProfileNumber;
+@property(readonly, nonatomic) _Bool hasProfileName;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(nonatomic) _Bool hasDefaultProfile;
+@property(readonly, nonatomic) _Bool hasCarName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

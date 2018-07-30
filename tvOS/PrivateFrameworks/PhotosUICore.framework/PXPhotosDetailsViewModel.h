@@ -8,7 +8,7 @@
 
 #import "PXMutablePhotosDetailsViewModel.h"
 
-@class NSString, PXSectionedSelectionManager;
+@class NSSet, NSString, PXSectionedSelectionManager;
 
 @interface PXPhotosDetailsViewModel : PXObservable <PXMutablePhotosDetailsViewModel>
 {
@@ -17,14 +17,17 @@
     _Bool _supportsFaceMode;
     _Bool _faceModeEnabled;
     PXSectionedSelectionManager *_selectionManager;
+    NSSet *_disabledActionTypes;
 }
 
+@property(readonly, nonatomic) NSSet *disabledActionTypes; // @synthesize disabledActionTypes=_disabledActionTypes;
 @property(readonly, nonatomic, getter=isFaceModeEnabled) _Bool faceModeEnabled; // @synthesize faceModeEnabled=_faceModeEnabled;
 @property(readonly, nonatomic) _Bool supportsFaceMode; // @synthesize supportsFaceMode=_supportsFaceMode;
 @property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(readonly, nonatomic) _Bool supportsSelection; // @synthesize supportsSelection=_supportsSelection;
 @property(readonly, nonatomic, getter=isSelecting) _Bool selecting; // @synthesize selecting=_selecting;
 - (void).cxx_destruct;
+- (void)setDisabledActionTypes:(id)arg1;
 - (void)setFaceModeEnabled:(_Bool)arg1;
 - (void)setSupportsFaceMode:(_Bool)arg1;
 - (void)setSelectionManager:(id)arg1;

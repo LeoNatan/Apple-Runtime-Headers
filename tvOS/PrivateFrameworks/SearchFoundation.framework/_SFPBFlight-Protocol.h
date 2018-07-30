@@ -10,20 +10,13 @@
 
 @protocol _SFPBFlight <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasCarrierPhoneNumber;
 @property(copy, nonatomic) NSString *carrierPhoneNumber;
-@property(readonly, nonatomic) _Bool hasOperatorFlightNumber;
 @property(copy, nonatomic) NSString *operatorFlightNumber;
-@property(readonly, nonatomic) _Bool hasOperatorCarrierCode;
 @property(copy, nonatomic) NSString *operatorCarrierCode;
 @property(copy, nonatomic) NSArray *legs;
-@property(readonly, nonatomic) _Bool hasFlightNumber;
 @property(copy, nonatomic) NSString *flightNumber;
-@property(readonly, nonatomic) _Bool hasCarrierName;
 @property(copy, nonatomic) NSString *carrierName;
-@property(readonly, nonatomic) _Bool hasCarrierCode;
 @property(copy, nonatomic) NSString *carrierCode;
-@property(readonly, nonatomic) _Bool hasFlightID;
 @property(copy, nonatomic) NSString *flightID;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

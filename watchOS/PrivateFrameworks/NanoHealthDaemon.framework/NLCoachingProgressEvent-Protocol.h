@@ -11,7 +11,7 @@
 @protocol NLCoachingProgressEvent <NSObject>
 + (NLCoachingProgressReason *)reason;
 + (NSString *)eventIdentifier;
-@property(nonatomic) unsigned int goalType;
+@property(nonatomic) int goalType;
 - (_Bool)shouldFireWithTypicalDayModel:(FITypicalDayActivityModel *)arg1 evaluationDelegate:(id <NLCoachingProgressEventEvaluationDelegate>)arg2;
 
 @optional

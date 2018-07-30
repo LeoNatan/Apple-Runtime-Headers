@@ -8,6 +8,7 @@
 
 @class UIImageView, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface MCProfileDetailsCell : UITableViewCell
 {
     UIImageView *_detailImageView;

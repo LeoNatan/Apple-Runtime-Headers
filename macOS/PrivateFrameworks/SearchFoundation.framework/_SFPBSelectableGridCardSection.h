@@ -13,13 +13,6 @@
 
 @interface _SFPBSelectableGridCardSection : PBCodable <_SFPBSelectableGridCardSection, NSSecureCoding>
 {
-    struct {
-        unsigned int canBeHidden:1;
-        unsigned int hasTopPadding:1;
-        unsigned int hasBottomPadding:1;
-        unsigned int separatorStyle:1;
-        unsigned int initialSelectedIndex:1;
-    } _has;
     BOOL _canBeHidden;
     BOOL _hasTopPadding;
     BOOL _hasBottomPadding;
@@ -53,19 +46,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasInitialSelectedIndex;
 - (id)entriesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)entriesCount;
 - (void)addEntries:(id)arg1;
 - (void)clearEntries;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (void)addTrafficSegment:(id)arg1;
 - (void)clearTrafficSegments;
 @property(readonly, nonatomic) _Bool hasVertices;
-- (CDStruct_1ef3fb1f *)createUnpackedVerticesWithGutterSize:(int)arg1;
 
 @end
 

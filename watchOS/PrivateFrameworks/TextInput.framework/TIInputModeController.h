@@ -26,7 +26,7 @@
 @property(copy, nonatomic) NSArray *enabledInputModes; // @synthesize enabledInputModes;
 @property(copy, nonatomic) NSArray *preferredLanguages; // @synthesize preferredLanguages;
 @property(copy, nonatomic) NSString *currentLocale; // @synthesize currentLocale;
-- (id)keyboardLanguageForDictationLanguage:(id)arg1;
+- (void).cxx_destruct;
 - (id)defaultDictationLanguagesForKeyboardLanguage:(id)arg1;
 - (id)suggestedDictationLanguagesForDeviceLanguage;
 - (id)suggestedDictationLanguageForDeviceLanguage;
@@ -35,7 +35,6 @@
 @property(readonly) NSArray *supportedInputModeLanguageAndRegions;
 @property(readonly) NSArray *supportedInputModeIdentifiers;
 - (id)defaultEnabledInputModesForCurrentLocale;
-- (void)dealloc;
 - (void)setInputModeIdentifiersForTesting:(id)arg1;
 
 @end

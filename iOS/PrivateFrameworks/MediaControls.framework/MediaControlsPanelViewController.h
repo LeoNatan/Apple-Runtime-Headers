@@ -10,11 +10,12 @@
 #import "MPMediaControlsViewControllerDelegate.h"
 #import "MediaControlsCollectionItemViewController.h"
 #import "MediaControlsEndpointControllerDelegate.h"
+#import "MediaControlsMasterVolumeSliderDelegate.h"
 #import "MediaControlsRatingActionSheet.h"
 
-@class MPAVRoutingViewController, MPArtworkCatalog, MPMediaControlsViewController, MPVolumeGroupSliderCoordinator, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsVolumeContainerView, NSMutableArray, NSString, UIView;
+@class MPAVRoutingViewController, MPArtworkCatalog, MPMediaControlsViewController, MPVolumeGroupSliderCoordinator, MTVibrantStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsVolumeContainerView, NSMutableArray, NSString, UIView;
 
-@interface MediaControlsPanelViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsRatingActionSheet, MPAVRoutingViewControllerThemeDelegate, MPMediaControlsViewControllerDelegate, MediaControlsCollectionItemViewController>
+@interface MediaControlsPanelViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsRatingActionSheet, MPAVRoutingViewControllerThemeDelegate, MPMediaControlsViewControllerDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsCollectionItemViewController>
 {
     struct CGSize _lastKnownSize;
     _Bool _selected;
@@ -26,6 +27,7 @@
     UIView *_backgroundView;
     MPAVRoutingViewController *_routingViewController;
     id <MediaControlsPanelViewControllerDelegate> _delegate;
+    MTVibrantStylingProvider *_vibrantStylingProvider;
     long long _style;
     MediaControlsHeaderView *_headerView;
     MediaControlsRoutingCornerView *_routingCornerView;
@@ -65,6 +67,7 @@
 @property(retain, nonatomic) MediaControlsHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic) long long style; // @synthesize style=_style;
+@property(retain, nonatomic) MTVibrantStylingProvider *vibrantStylingProvider; // @synthesize vibrantStylingProvider=_vibrantStylingProvider;
 @property(nonatomic) __weak id <MediaControlsPanelViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MPAVRoutingViewController *routingViewController; // @synthesize routingViewController=_routingViewController;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -73,6 +76,9 @@
 - (void).cxx_destruct;
 - (void)_routingCornerViewReceivedTap:(id)arg1;
 - (void)_updateRoutingCornerView;
+- (_Bool)slider:(id)arg1 shouldCancelSnapWithTouch:(id)arg2;
+- (_Bool)slider:(id)arg1 syncStateWillChangeFromState:(long long)arg2 toState:(long long)arg3;
+- (_Bool)shouldEnableSyncingForSlider:(id)arg1;
 - (void)routingViewController:(id)arg1 willDisplayCell:(id)arg2;
 - (struct UIEdgeInsets)contentInsetsForRoutingViewController:(id)arg1;
 - (void)mediaControlsViewControllerDidReceiveInteraction:(id)arg1;

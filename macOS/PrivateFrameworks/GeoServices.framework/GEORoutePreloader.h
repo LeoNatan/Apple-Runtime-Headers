@@ -59,7 +59,6 @@
 - (BOOL)fullDebuggingEnabled;
 - (BOOL)minimalDebuggingEnabled;
 - (BOOL)isSufficientlyLoaded;
-- (void)_withDownloadedRegionsOnQueue:(id)arg1 perform:(CDUnknownBlockType)arg2;
 - (void)performTearDown;
 - (void)dealloc;
 - (void)tearDown;

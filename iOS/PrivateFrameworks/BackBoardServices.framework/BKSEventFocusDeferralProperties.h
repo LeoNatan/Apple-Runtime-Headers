@@ -25,6 +25,7 @@
 @property(readonly, copy, nonatomic) NSString *displayUUID; // @synthesize displayUUID=_displayUUID;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

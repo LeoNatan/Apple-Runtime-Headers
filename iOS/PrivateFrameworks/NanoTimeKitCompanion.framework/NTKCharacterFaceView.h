@@ -6,11 +6,12 @@
 
 #import <NanoTimeKitCompanion/NTKFaceView.h>
 
+#import "NTKUtilityComplicationFactoryDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
 @class NSString, NTKCharacterTimeView, NTKUtilityComplicationFactory, UIColor, UITapGestureRecognizer, UIView;
 
-@interface NTKCharacterFaceView : NTKFaceView <UIGestureRecognizerDelegate>
+@interface NTKCharacterFaceView : NTKFaceView <UIGestureRecognizerDelegate, NTKUtilityComplicationFactoryDelegate>
 {
     NTKCharacterTimeView *_characterTimeView;
     UIView *_circleView;
@@ -24,9 +25,9 @@
     double _optionClothingDesaturation;
 }
 
-+ (id)_swatchColorForColorOption:(id)arg1;
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
-+ (void)_prewarm;
++ (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
++ (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
@@ -34,6 +35,7 @@
 - (_Bool)_supportsTimeScrubbing;
 - (struct CGRect)_tapToSpeakRect;
 - (void)_faceTapped:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)applyToForegroundZoomFraction:(double)arg1 faceScale:(double)arg2;
 - (void)_cleanupAfterZoom;
@@ -44,6 +46,7 @@
 - (void)_prepareWristRaiseAnimation;
 - (double)_verticalPaddingForStatusBar;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
+- (id)utilityDateComplicationFontForDateStyle:(unsigned long long)arg1;
 - (void)_updateComplicationViewsAlphasWithAnimation:(_Bool)arg1;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
@@ -62,6 +65,7 @@
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureForEditMode:(long long)arg1;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
@@ -69,10 +73,11 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
+- (id)_slotForUtilitySlot:(long long)arg1;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_needsForegroundContainerView;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

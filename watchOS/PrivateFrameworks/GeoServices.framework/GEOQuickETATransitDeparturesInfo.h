@@ -6,14 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDate, NSString;
+@class NSDate, NSString;
 
 __attribute__((visibility("hidden")))
 @interface GEOQuickETATransitDeparturesInfo : NSObject
 {
     NSString *_direction;
     NSString *_headsign;
-    NSArray *_departures;
     _Bool _departuresHaveFrequency;
     double _departureFrequency;
     NSDate *_departureFrequencyValidUntil;

@@ -8,12 +8,12 @@
 
 @class PDNotesMaster;
 
-__attribute__((visibility("hidden")))
 @interface PDNotesSlide : PDSlideChild
 {
     PDNotesMaster *mNotesMaster;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)doneWithContent;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)setNotesMaster:(id)arg1;
 - (id)notesMaster;
 - (id)parentSlideBase;
-- (void)dealloc;
 - (id)init;
 
 @end

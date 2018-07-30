@@ -34,6 +34,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)popUpDidUpdate:(id)arg1;
 - (void)reconfigureToShowDay:(BOOL)arg1 month:(BOOL)arg2 year:(BOOL)arg3;
+- (id)_textFieldWithPlaceHolder:(id)arg1;
 - (void)_configurePopUpButton:(id)arg1 placeHolder:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 

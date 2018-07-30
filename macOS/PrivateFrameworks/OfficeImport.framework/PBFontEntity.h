@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface PBFontEntity : NSObject
 {
     NSString *mFaceName;
@@ -17,11 +16,11 @@ __attribute__((visibility("hidden")))
     int mFamily;
 }
 
+- (void).cxx_destruct;
 - (int)family;
 - (int)type;
 - (int)charSet;
 - (id)faceName;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 charSet:(int)arg2 type:(int)arg3 family:(int)arg4;
 
 @end

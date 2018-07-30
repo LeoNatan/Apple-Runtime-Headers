@@ -16,7 +16,6 @@
     NSUUID *_uniqueIdentifier;
     NSString *_primaryApplicationDisplayID;
     NSString *_secondaryApplicationDisplayID;
-    _Bool _shouldPrepareAppPlaybackQueue;
     int _status;
     int _creatorProcessID;
 }
@@ -24,7 +23,6 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) int creatorProcessID; // @synthesize creatorProcessID=_creatorProcessID;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
-@property(readonly, nonatomic) _Bool shouldPrepareAppPlaybackQueue; // @synthesize shouldPrepareAppPlaybackQueue=_shouldPrepareAppPlaybackQueue;
 @property(readonly, nonatomic) NSString *secondaryApplicationDisplayID; // @synthesize secondaryApplicationDisplayID=_secondaryApplicationDisplayID;
 @property(readonly, nonatomic) NSString *primaryApplicationDisplayID; // @synthesize primaryApplicationDisplayID=_primaryApplicationDisplayID;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;

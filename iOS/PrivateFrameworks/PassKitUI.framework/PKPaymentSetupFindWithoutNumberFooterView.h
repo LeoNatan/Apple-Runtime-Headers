@@ -21,7 +21,6 @@
 - (_Bool)isBuddyiPad;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 context:(long long)arg2;
 
 @end

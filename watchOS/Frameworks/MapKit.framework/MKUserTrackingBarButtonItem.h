@@ -16,7 +16,6 @@
     UIButton *_customButton;
     _MKUserTrackingButtonController *_controller;
     _MKUserTrackingButton *_userTrackingButton;
-    _Bool _isLegacy;
     _Bool _explicitlyEnabled;
     _Bool _internallyEnabled;
     UIImage *_trackingEmptyImage;
@@ -38,7 +37,6 @@
 @property(nonatomic, setter=_setState:) int _state;
 - (void)_updateForState:(int)arg1;
 - (_Bool)_isHighlightedForState:(int)arg1;
-- (int)_styleForState:(int)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)createViewForNavigationItem:(id)arg1;
 - (id)createViewForToolbar:(id)arg1;

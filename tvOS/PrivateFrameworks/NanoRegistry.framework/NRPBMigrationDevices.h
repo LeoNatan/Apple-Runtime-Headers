@@ -10,6 +10,7 @@
 
 @class NSData, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface NRPBMigrationDevices : PBCodable <NSCopying>
 {
     NSMutableArray *_devices;

@@ -8,38 +8,55 @@
 
 #import "IMKCandidateControllerDelegate.h"
 #import "IMKCandidateSelectionViewDelegate.h"
+#import "IMKCandidatesDelegate.h"
 
-@class IMKCandidateController, NSArray, NSString;
+@class IMKCandidates, NSArray, NSString;
 
-@interface IMKCandidateBasedInputController : IMKInputController <IMKCandidateControllerDelegate, IMKCandidateSelectionViewDelegate>
+@interface IMKCandidateBasedInputController : IMKInputController <IMKCandidateControllerDelegate, IMKCandidateSelectionViewDelegate, IMKCandidatesDelegate>
 {
-    IMKCandidateController *_candidateController;
+    BOOL _automaticallyShowPrimaryCandidatesInSecondaryController;
+    IMKCandidates *_candidateController;
+    IMKCandidates *_candidateControllerForScrubber;
+    IMKCandidates *_candidateControllerForTouchBar;
     BOOL _primaryCandidatesShownByScrubbing;
     NSArray *_secondaryCandidates;
+    unsigned long long _touchBarCandidatesSelectionTimeStamp;
     struct _NSRange _selectedRange;
     unsigned long long _windowLevel;
     BOOL _sInvalidateIMKTextOrientation;
     BOOL _sInvalidateIsIncrementalSearchInputContext;
     BOOL _sInvalidateIncrementalSearchClientGeometry;
+    BOOL _touchBarCandidatesDidPresent;
 }
 
-@property(retain, nonatomic) NSArray *secondaryCandidates; // @synthesize secondaryCandidates=_secondaryCandidates;
+@property(nonatomic) unsigned long long touchBarCandidatesSelectionTimeStamp; // @synthesize touchBarCandidatesSelectionTimeStamp=_touchBarCandidatesSelectionTimeStamp;
+@property(nonatomic) BOOL touchBarCandidatesDidPresent; // @synthesize touchBarCandidatesDidPresent=_touchBarCandidatesDidPresent;
 @property(nonatomic) BOOL sInvalidateIncrementalSearchClientGeometry; // @synthesize sInvalidateIncrementalSearchClientGeometry=_sInvalidateIncrementalSearchClientGeometry;
 @property(nonatomic) BOOL sInvalidateIsIncrementalSearchInputContext; // @synthesize sInvalidateIsIncrementalSearchInputContext=_sInvalidateIsIncrementalSearchInputContext;
 @property(nonatomic) BOOL sInvalidateIMKTextOrientation; // @synthesize sInvalidateIMKTextOrientation=_sInvalidateIMKTextOrientation;
 @property(nonatomic) unsigned long long windowLevel; // @synthesize windowLevel=_windowLevel;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(nonatomic) BOOL primaryCandidatesShownByScrubbing; // @synthesize primaryCandidatesShownByScrubbing=_primaryCandidatesShownByScrubbing;
-@property(retain, nonatomic) IMKCandidateController *candidateController; // @synthesize candidateController=_candidateController;
+@property(retain, nonatomic) IMKCandidates *candidateControllerForTouchBar; // @synthesize candidateControllerForTouchBar=_candidateControllerForTouchBar;
+@property(retain, nonatomic) IMKCandidates *candidateControllerForScrubber; // @synthesize candidateControllerForScrubber=_candidateControllerForScrubber;
+@property(retain, nonatomic) IMKCandidates *candidateController; // @synthesize candidateController=_candidateController;
+@property(nonatomic) BOOL automaticallyShowPrimaryCandidatesInSecondaryController; // @synthesize automaticallyShowPrimaryCandidatesInSecondaryController=_automaticallyShowPrimaryCandidatesInSecondaryController;
+- (void)showScrubberPanel;
+- (void)hideScrubberAndCancelFurtherRequests;
+- (id)selectedCandidateForProposedCandidate:(id)arg1 candidateController:(id)arg2;
+- (unsigned long long)firstVisibleLineForCandidateController:(id)arg1;
+- (void)didFinishInteracting:(id)arg1;
+- (void)didHideCandidates:(id)arg1;
+- (void)didUpdateCandidates:(id)arg1;
+- (void)didShowCandidates:(id)arg1;
+- (void)didSelectSortingMode:(id)arg1 candidateController:(id)arg2;
+- (void)candidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
+- (void)candidateSelected:(id)arg1 candidateController:(id)arg2;
+- (void)reflectOnScreenCandidatesInTouchBar;
+- (BOOL)shouldHandleTouchBarPresentationManually;
 - (void)setMarkedText:(id)arg1 selectionRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
-- (id)secondaryCandidateControllerAuxiliaryViews;
-- (BOOL)touchesEndedOutsideView;
-- (void)touchesEnded;
-- (void)shouldUpdateForPressAndHold:(id)arg1;
-- (void)scrubbedCandidate:(id)arg1;
-@property(readonly, nonatomic) BOOL automaticallyRestrictLayoutToPrimaryCandidateControllerLayout;
-@property(readonly, nonatomic) BOOL automaticallyShowPrimaryCandidatesInSecondaryController;
+- (id)functionRowItemTextInputViewController;
 - (id)currentInlineText;
 - (id)textClient;
 @property(readonly, nonatomic) unsigned long long incrementalSearchClientGeometry;
@@ -53,27 +70,24 @@
 - (long long)windowType;
 - (id)sortingMethods;
 - (id)displayMethod;
-- (id)functionRowItemTextInputViewController;
 - (id)inlineText;
 - (void)hideSecondaryCandidatesOnly;
 - (void)reloadSecondaryCandidatesOnly;
 - (void)hideCandidates;
 - (void)reloadCandidates;
-- (void)dismissSecondaryCandidates;
-- (void)presentSecondaryCandidates;
 - (BOOL)selectDisplayMethod:(id)arg1;
-- (void)handleCandidateSelected:(id)arg1 candidateController:(id)arg2;
-- (void)handleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
-- (id)candidateDataForDisplayMethod:(id)arg1 candidateController:(id)arg2;
-@property(readonly, nonatomic) NSString *selectedDisplayMethod;
+- (void)setSecondaryCandidates:(id)arg1;
+- (id)selectedDisplayMethod;
 @property(readonly, nonatomic) BOOL isVerticalLayout;
-@property(readonly, nonatomic) NSArray *displayMethods;
+- (id)displayMethods;
 - (void)dealloc;
-@property(readonly, nonatomic) IMKCandidateController *secondaryCandidateController;
 - (void)invalidateClientSideInfoCache;
-- (Class)touchBarControllerClass;
-@property(readonly, nonatomic) Class onscreenCandidateWindowClass;
-@property(readonly, nonatomic) Class auxiliaryCandidateWindowClass;
+- (void)showCandidates:(id)arg1;
+- (void)showCandidateListDictionary:(id)arg1 sortingModes:(id)arg2;
+- (void)updateCandidateController:(id)arg1;
+- (id)makeScrubbingCandidateController;
+- (id)makeTouchBarCandidateController;
+- (id)makeCandidateController;
 - (void)deactivateServer:(id)arg1;
 - (void)activateServer:(id)arg1;
 

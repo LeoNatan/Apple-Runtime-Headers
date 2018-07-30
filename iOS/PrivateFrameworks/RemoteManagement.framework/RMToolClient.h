@@ -14,7 +14,7 @@
 }
 
 + (id)client;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (id)initWithServiceName:(id)arg1;
 

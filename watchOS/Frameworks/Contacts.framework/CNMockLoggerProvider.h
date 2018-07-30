@@ -16,9 +16,11 @@ __attribute__((visibility("hidden")))
     id <CNContactsLogger> _contactsLogger;
     id <CNSpotlightIndexingLogger> _spotlightIndexingLogger;
     id <CNRegulatoryLogger> _regulatoryLogger;
+    id <CNFavoritesLogger> _favoritesLogger;
 }
 
 + (id)loggerProvider;
+@property(retain, nonatomic) id <CNFavoritesLogger> favoritesLogger; // @synthesize favoritesLogger=_favoritesLogger;
 @property(retain, nonatomic) id <CNRegulatoryLogger> regulatoryLogger; // @synthesize regulatoryLogger=_regulatoryLogger;
 @property(retain, nonatomic) id <CNSpotlightIndexingLogger> spotlightIndexingLogger; // @synthesize spotlightIndexingLogger=_spotlightIndexingLogger;
 @property(retain, nonatomic) id <CNContactsLogger> contactsLogger; // @synthesize contactsLogger=_contactsLogger;

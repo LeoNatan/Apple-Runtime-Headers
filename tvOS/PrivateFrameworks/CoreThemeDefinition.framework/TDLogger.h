@@ -15,6 +15,7 @@
     int _logMaxVerbosity;
 }
 
++ (id)defaultLogger;
 + (id)logger;
 - (void)waitForLoggingToComplete;
 - (_Bool)isVerbosityLogEverything;

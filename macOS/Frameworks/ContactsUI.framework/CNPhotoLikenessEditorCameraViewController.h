@@ -6,9 +6,11 @@
 
 #import "NSViewController.h"
 
-@class AVCaptureConnection, AVCaptureDeviceInput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoPreviewLayer, CNCameraChangeWatcher, NSImageView;
+#import "CNPhotoLikenessEditorCameraViewDelegate.h"
 
-@interface CNPhotoLikenessEditorCameraViewController : NSViewController
+@class AVCaptureConnection, AVCaptureDeviceInput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoPreviewLayer, CNCameraChangeWatcher, NSImageView, NSString;
+
+@interface CNPhotoLikenessEditorCameraViewController : NSViewController <CNPhotoLikenessEditorCameraViewDelegate>
 {
     BOOL _sessionActive;
     BOOL _sessionInited;
@@ -37,13 +39,21 @@
 - (BOOL)updateVideoInputForDevice:(id)arg1;
 - (void)captureDeviceDidChange:(id)arg1;
 - (void)takePhotoWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 @property double viewFinderCornerRadius; // @synthesize viewFinderCornerRadius=_viewFinderCornerRadius;
 - (void)initCaptureSession;
+- (void)teardownCaptureSession;
+- (void)cameraView:(id)arg1 didHide:(BOOL)arg2;
+- (void)cameraView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)viewWillAppear;
-- (void)viewWillDisappear;
 - (void)viewDidLayout;
+- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

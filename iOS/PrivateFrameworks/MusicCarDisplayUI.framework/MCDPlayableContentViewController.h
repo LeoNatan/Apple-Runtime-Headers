@@ -26,7 +26,6 @@
 - (id)currentStack;
 - (void)_populateStack;
 - (void)_modelDidInvalidate:(id)arg1;
-- (void)_modelWillInvalidate:(id)arg1;
 - (void)_updateStackForPlaying:(_Bool)arg1;
 - (void)refreshNavigationStackForLaunch;
 - (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;

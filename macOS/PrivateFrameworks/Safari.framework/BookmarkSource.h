@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)child:(unsigned int)arg1 ofContentItem:(id)arg2;
 - (BOOL)contentItemCanHaveChildren:(id)arg1;
 - (BOOL)contentItemCanBeSearchResult:(id)arg1;
-- (BOOL)deleteContentItems:(id)arg1 withParentWindow:(id)arg2 undoManager:(id)arg3;
+- (BOOL)deleteContentItems:(id)arg1;
 - (BOOL)canDeleteContents;
 - (BOOL)canCopyContents;
 - (void)refreshContents;

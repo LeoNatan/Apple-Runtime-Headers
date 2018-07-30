@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setPollDelegate:) __weak id <SCRValueChangeMonitorDelegate> _pollDelegate; // @synthesize _pollDelegate=__pollDelegate;
 @property(readonly, nonatomic) double _pollDuration; // @synthesize _pollDuration=__pollDuration;
 - (void).cxx_destruct;
-- (BOOL)_stopPolling;
+- (void)_stopPolling;
 - (void)_continuePolling;
 - (void)invalidatePollDelegate;
 - (void)startPolling;

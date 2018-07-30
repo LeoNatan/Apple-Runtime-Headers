@@ -208,7 +208,7 @@ struct function<void (double)> {
 struct list<ASDDSPGraphHelper, std::__1::allocator<ASDDSPGraphHelper>> {
     struct __list_node_base<ASDDSPGraphHelper, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<ASDDSPGraphHelper, void *>>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_alloc_;
 };
 
@@ -223,19 +223,19 @@ struct type {
 
 struct unique_ptr<ASDBufferList, std::__1::default_delete<ASDBufferList>> {
     struct __compressed_pair<ASDBufferList *, std::__1::default_delete<ASDBufferList>> {
-        struct ASDBufferList *__first_;
+        struct ASDBufferList *__value_;
     } __ptr_;
 };
 
 struct unique_ptr<ASDDSPStreamHelper, std::__1::default_delete<ASDDSPStreamHelper>> {
     struct __compressed_pair<ASDDSPStreamHelper *, std::__1::default_delete<ASDDSPStreamHelper>> {
-        struct ASDDSPStreamHelper *__first_;
+        struct ASDDSPStreamHelper *__value_;
     } __ptr_;
 };
 
 struct unique_ptr<ASDSRCStreamHelper, std::__1::default_delete<ASDSRCStreamHelper>> {
     struct __compressed_pair<ASDSRCStreamHelper *, std::__1::default_delete<ASDSRCStreamHelper>> {
-        struct ASDSRCStreamHelper *__first_;
+        struct ASDSRCStreamHelper *__value_;
     } __ptr_;
 };
 
@@ -247,7 +247,7 @@ struct unique_ptr<AUProcessingBlock_DSPGraph, std::__1::default_delete<AUProcess
 
 struct unique_ptr<AudioRingBuffer, std::__1::default_delete<AudioRingBuffer>> {
     struct __compressed_pair<AudioRingBuffer *, std::__1::default_delete<AudioRingBuffer>> {
-        struct AudioRingBuffer *__first_;
+        struct AudioRingBuffer *__value_;
     } __ptr_;
 };
 
@@ -263,13 +263,13 @@ struct unique_ptr<DSPGraph::Graph, std::__1::default_delete<DSPGraph::Graph>> {
 
 struct unique_ptr<DSPGraph::Interpreter, std::__1::default_delete<DSPGraph::Interpreter>> {
     struct __compressed_pair<DSPGraph::Interpreter *, std::__1::default_delete<DSPGraph::Interpreter>> {
-        struct Interpreter *__first_;
+        struct Interpreter *__value_;
     } __ptr_;
 };
 
 struct unique_ptr<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>, std::__1::default_delete<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>>> {
     struct __compressed_pair<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>*, std::__1::default_delete<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>>> {
-        struct LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> *__first_;
+        struct LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> *__value_;
     } __ptr_;
 };
 

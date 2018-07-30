@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     struct TFENodeVector _nodes;
     id <TQLPreviewWindowControllerProtocol> _activeViewController;
     unsigned int _avcRespondsToFlags;
-    struct TNSRef<QLPreviewPanel *, void> _previewPanel;
+    struct TNSRef<QLPreviewPanel, void> _previewPanel;
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
-    struct shared_ptr<TQLPreviewQTEjectHelper> _ejectHelper;
+    struct shared_ptr<TQLPreviewWindowQTEjectHelper> _ejectHelper;
     _Bool _canZoom;
     _Bool _positionNearPreviewItem;
     struct TFENode _overrideNode;

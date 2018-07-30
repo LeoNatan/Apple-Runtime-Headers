@@ -14,7 +14,10 @@
 }
 
 - (void).cxx_destruct;
+- (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
+- (void)applyPalette:(id)arg1;
 - (void)_updateCorners;
+- (id)_cornerImage;
 - (void)layoutSubviews;
 - (void)setStyle:(unsigned int)arg1;
 - (id)init;

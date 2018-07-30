@@ -10,7 +10,6 @@
 
 @class CNContact, CNContactFormatter, NSArray, NSLayoutConstraint, NSString, UIDragInteraction, UIGestureRecognizer, UILabel;
 
-__attribute__((visibility("hidden")))
 @interface CNContactListBannerView : UIView <UIDragInteractionDelegate>
 {
     id <CNContactListBannerViewDelegate> _delegate;

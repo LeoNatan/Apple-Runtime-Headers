@@ -13,9 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (void)subtract:(id)arg1;
 - (void)unionWith:(id)arg1;
-- (struct _NSRange)replacedTextAtRange:(struct _NSRange)arg1 delta:(unsigned long long)arg2;
-- (void)deletedTextAtRange:(struct _NSRange)arg1;
-- (void)insertedTextAtIndex:(unsigned long long)arg1 delta:(unsigned long long)arg2;
+- (struct _NSRange)replacedTextAtRange:(struct _NSRange)arg1 delta:(long long)arg2;
 - (void)replaceRangeAtIndex:(unsigned long long)arg1 withRange:(struct _NSRange)arg2;
 - (void)removeRange:(struct _NSRange)arg1;
 - (void)addRange:(struct _NSRange)arg1;

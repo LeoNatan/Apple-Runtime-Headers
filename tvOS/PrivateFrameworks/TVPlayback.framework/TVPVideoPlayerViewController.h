@@ -12,14 +12,13 @@
 #import "TVPMainVideoViewControllerDelegate.h"
 #import "TVPMediaCacheManagerResponder.h"
 #import "TVPPlaybackInterruptable.h"
-#import "TVPPlayerItemMetadataPopulator.h"
 #import "TVPRelatedContentLoaderDelegate.h"
 #import "TVPRelatedContentViewControllerDelegate.h"
 #import "UIViewControllerTransitioningDelegate.h"
 
 @class AVPlayerViewController, AVTransportBarViewController, NSDate, NSDictionary, NSMutableDictionary, NSObject<TVPAVFPlayback>, NSString, NSTimer, TVPInteractionGestureRecognizer, TVPMainVideoViewController, TVPPlaybackInterruption, TVPPlayer, TVPRelatedContentLoader, TVPRelatedContentViewController, TVPVideoView, TVSStateMachine, UIActivityIndicatorView, UIAlertController, UIButton, UIDigitizerTapGestureRecognizer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 
-@interface TVPVideoPlayerViewController : UIViewController <TVPMainVideoViewControllerDelegate, TVPRelatedContentLoaderDelegate, TVPRelatedContentViewControllerDelegate, TVPPlaybackInterruptable, TVPMediaCacheManagerResponder, UIViewControllerTransitioningDelegate, TVPPlayerItemMetadataPopulator, AVPlayerViewControllerDelegate, AVPlayerViewControllerPlaybackDelegate, AVScanningDelegate>
+@interface TVPVideoPlayerViewController : UIViewController <TVPMainVideoViewControllerDelegate, TVPRelatedContentLoaderDelegate, TVPRelatedContentViewControllerDelegate, TVPPlaybackInterruptable, TVPMediaCacheManagerResponder, UIViewControllerTransitioningDelegate, AVPlayerViewControllerDelegate, AVPlayerViewControllerPlaybackDelegate, AVScanningDelegate>
 {
     _Bool _showsTitleWhileLoading;
     _Bool _suppressErrorAlerts;
@@ -159,8 +158,6 @@
 - (void)_handerSkipBumperGesture:(id)arg1;
 - (void)_bumperPlayerStateDidChange:(id)arg1;
 - (double)_startTimeWhenResumeMenuIsNotShown;
-- (void)_configurePlayerItemForExternalImageScrubbing:(id)arg1;
-- (id)_avContentProposalForProposal:(id)arg1 previewImage:(id)arg2;
 - (void)_rentalStopTimerFired:(id)arg1;
 - (void)_backgroundStopTimerFired:(id)arg1;
 - (void)_spinnerDelayTimerFired:(id)arg1;
@@ -170,7 +167,6 @@
 - (void)_setPlayPauseButtonEnabled:(_Bool)arg1;
 - (void)_handlePlayPauseButton;
 - (void)_handleSelectButton:(id)arg1;
-- (_Bool)_getStringForTitleLabel:(id *)arg1 subtitleLabel:(id *)arg2 forMediaItem:(id)arg3;
 - (void)_updateTimeUntilReadyToPlay;
 - (double)_currentMediaItemNetDuration;
 - (double)_currentMediaItemGrossBookmarkTime;
@@ -193,7 +189,6 @@
 - (void)dismiss;
 - (void)_enforceHighContrastResumeMenuLabelColors;
 - (void)_reducedTransparencyStateChanged:(id)arg1;
-- (void)_stateMachineStateChanged:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationDidRemoveDeactivationReason:(id)arg1;
@@ -223,8 +218,6 @@
 - (void)playerViewController:(id)arg1 didPresentInterstitialTimeRange:(id)arg2;
 - (void)playerViewController:(id)arg1 willPresentInterstitialTimeRange:(id)arg2;
 - (void)_updateAVChapterNavigationMarkers;
-- (void)populatePlayerItem:(id)arg1 withUpNextInfoFromCurrentMediaItem:(id)arg2 nextMediaItem:(id)arg3 playlist:(id)arg4;
-- (void)populatePlayerItem:(id)arg1 withMetadataFromMediaItem:(id)arg2;
 - (void)interruptionDidEnd;
 - (void)interruptionWillBegin;
 - (_Bool)mediaCacheManagerItemDidBecomeLikelyToKeepUp:(id)arg1;

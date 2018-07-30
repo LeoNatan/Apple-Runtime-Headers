@@ -14,7 +14,8 @@
 - (void)_beginBlockingBodyScroll;
 - (void)setIsModal:(_Bool)arg1;
 - (id)_selectedAttachmentURLs;
-- (id)_copyMessageDataForActivityContinuation;
+- (id)_copyMessagePlainTextForDonation;
+- (id)_copyMessageDataForActivityHandoff;
 - (void)_setBodyFieldAutocorrectionContext:(id)arg1;
 - (unsigned long long)_bodyFieldTextContentLength;
 - (void)_placeCaretAtStartOfBodyField;

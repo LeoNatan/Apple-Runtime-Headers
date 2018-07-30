@@ -10,6 +10,8 @@
 {
 }
 
++ (id)blacklistFileRemovalKey;
++ (id)blacklistFileCreationKey;
 + (id)staleReportFileRemovalKey;
 + (id)staleRecordRemovalKey;
 + (id)submittedRecordRemovalKey;

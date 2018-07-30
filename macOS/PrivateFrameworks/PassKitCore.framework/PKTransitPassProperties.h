@@ -9,25 +9,26 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSDate, NSDecimalNumber, NSString, PKCurrencyAmount, PKFelicaPassProperties;
+@class NSArray, NSDate, NSDecimalNumber, NSString, PKCurrencyAmount, PKFelicaPassProperties;
 
 @interface PKTransitPassProperties : NSObject <NSCopying, NSSecureCoding>
 {
-    BOOL _inStation;
     BOOL _blacklisted;
     NSDate *_expirationDate;
     NSString *_appletFormat;
     PKCurrencyAmount *_balance;
+    NSArray *_enrouteTransitTypes;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)passPropertiesForPass:(id)arg1;
+@property(copy, nonatomic) NSArray *enrouteTransitTypes; // @synthesize enrouteTransitTypes=_enrouteTransitTypes;
 @property(copy, nonatomic) PKCurrencyAmount *balance; // @synthesize balance=_balance;
 @property(copy, nonatomic) NSString *appletFormat; // @synthesize appletFormat=_appletFormat;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(nonatomic, getter=isBlacklisted) BOOL blacklisted; // @synthesize blacklisted=_blacklisted;
-@property(nonatomic, getter=isInStation) BOOL inStation; // @synthesize inStation=_inStation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isInStation) BOOL inStation;
 @property(readonly, nonatomic) NSDecimalNumber *decimalTransitBalance;
 @property(readonly, nonatomic) NSString *displayableTransitBalance;
 @property(readonly, nonatomic) NSString *currencyCode;

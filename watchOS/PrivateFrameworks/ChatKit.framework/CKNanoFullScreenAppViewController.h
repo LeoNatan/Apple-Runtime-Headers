@@ -37,6 +37,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)loadView;
 - (id)initWithConversation:(id)arg1 plugin:(id)arg2;
+@property(readonly, nonatomic) _Bool inFullScreenModalPresentation;
 @property(readonly, nonatomic) _Bool inExpandedPresentation;
 - (_Bool)isLoaded;
 - (void)dismiss;
@@ -67,6 +68,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) struct CGRect horizontalSwipeExclusionRect;
+@property(nonatomic) _Bool isPrimaryViewController;
 @property(readonly, nonatomic) int parentModalPresentationStyle;
 @property(readonly, nonatomic) __weak id <UIViewControllerTransitioningDelegate> parentTransitioningDelegate;
 @property(retain, nonatomic) NSArray *recipients;

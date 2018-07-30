@@ -95,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithTask:(id)arg1 Connection:(shared_ptr_f0c1381f)arg2 disavow:(CDUnknownBlockType)arg3;
 - (id)initWithHost:(id)arg1 port:(long long)arg2 session:(id)arg3 disavow:(CDUnknownBlockType)arg4;
+- (_Bool)isKindOfClass:(Class)arg1;
 
 @end
 

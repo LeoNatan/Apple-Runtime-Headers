@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (id)recordTypesToRecordNames;
 - (BOOL)updateRelationshipValueUsingImportContext:(id)arg1 andManagedObjectContext:(id)arg2 error:(id *)arg3;
+- (void)_setManyToManyRecordName:(id)arg1 manyToManyRecordType:(id)arg2 ckRecordName:(id)arg3 relatedCKRecordName:(id)arg4 relationshipDescription:(id)arg5 inverseRelationshipDescription:(id)arg6;
 - (void)dealloc;
 - (id)initWithRecordName:(id)arg1 recordType:(id)arg2 managedObjectModel:(id)arg3 andType:(unsigned long long)arg4;
 

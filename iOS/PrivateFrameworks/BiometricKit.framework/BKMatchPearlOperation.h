@@ -9,9 +9,13 @@
 @interface BKMatchPearlOperation : BKMatchOperation
 {
     _Bool _longTimeout;
+    _Bool _shouldAutoRetry;
 }
 
+@property(nonatomic) _Bool shouldAutoRetry; // @synthesize shouldAutoRetry=_shouldAutoRetry;
 @property(nonatomic) _Bool longTimeout; // @synthesize longTimeout=_longTimeout;
+- (_Bool)pauseFaceDetectTimer:(_Bool)arg1 error:(id *)arg2;
+- (_Bool)enableAutoRetry:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)startNewMatchAttemptWithError:(id *)arg1;
 
 // Remaining properties

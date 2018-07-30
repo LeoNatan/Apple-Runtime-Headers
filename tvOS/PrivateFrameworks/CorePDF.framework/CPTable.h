@@ -9,6 +9,7 @@
 #import "CPDisposable.h"
 #import "CPGraphicUser.h"
 
+__attribute__((visibility("hidden")))
 @interface CPTable : CPChunk <CPDisposable, CPGraphicUser>
 {
     struct CGRect tableBounds;

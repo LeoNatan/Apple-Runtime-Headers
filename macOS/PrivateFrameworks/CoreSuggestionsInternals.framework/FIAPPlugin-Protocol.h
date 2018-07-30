@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CSSearchableItem, CSUserAction, FIAPResult, NSArray, NSString;
+@class CSSearchableItem, CSUserAction, FIAPResult, INInteraction, NSArray, NSString;
 
 @protocol FIAPPlugin <NSObject>
 @property(readonly, nonatomic) NSString *identifier;
@@ -16,6 +16,7 @@
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(NSString *)arg1 domainIdentifiers:(NSArray *)arg2;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(NSString *)arg1 uniqueIdentifiers:(NSArray *)arg2;
 - (void)purgeSpotlightReferencesWithBundleIdentifier:(NSString *)arg1 uniqueIdentifiers:(NSArray *)arg2;
+- (FIAPResult *)processInteraction:(INInteraction *)arg1 bundleIdentifier:(NSString *)arg2 protectionClass:(NSString *)arg3;
 - (FIAPResult *)processUserAction:(CSUserAction *)arg1 searchableItem:(CSSearchableItem *)arg2;
 - (FIAPResult *)processSearchableItem:(CSSearchableItem *)arg1;
 - (FIAPResult *)setup;

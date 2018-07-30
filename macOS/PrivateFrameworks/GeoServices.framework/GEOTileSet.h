@@ -27,12 +27,14 @@
     int _updateBehavior;
     NSMutableArray *_validVersions;
     BOOL _multiTileURLUsesStatusCodes;
+    BOOL _useAuthProxy;
     struct {
         unsigned int checksumType:1;
         unsigned int dataSet:1;
         unsigned int requestStyle:1;
         unsigned int updateBehavior:1;
         unsigned int multiTileURLUsesStatusCodes:1;
+        unsigned int useAuthProxy:1;
     } _has;
 }
 
@@ -61,6 +63,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasUseAuthProxy;
+@property(nonatomic) BOOL useAuthProxy; // @synthesize useAuthProxy=_useAuthProxy;
 - (int)StringAsRequestStyle:(id)arg1;
 - (id)requestStyleAsString:(int)arg1;
 @property(nonatomic) BOOL hasRequestStyle;

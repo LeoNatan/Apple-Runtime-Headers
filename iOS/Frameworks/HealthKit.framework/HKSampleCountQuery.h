@@ -18,12 +18,12 @@
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 @property(readonly, copy, nonatomic) NSSet *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
 - (void).cxx_destruct;
 - (void)queue_validate;
 - (void)queue_populateConfiguration:(id)arg1;
 - (void)queue_deliverError:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)client_deliverSampleCountDictionary:(id)arg1 forQuery:(id)arg2;
 - (id)initWithSampleTypes:(id)arg1 predicate:(id)arg2 resultsHandler:(CDUnknownBlockType)arg3;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 resultsHandler:(CDUnknownBlockType)arg3;

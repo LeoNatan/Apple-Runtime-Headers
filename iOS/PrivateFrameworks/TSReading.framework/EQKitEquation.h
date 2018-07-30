@@ -16,6 +16,7 @@
 }
 
 + (id)mathMLStringFromLaTeXString:(id)arg1 environment:(id)arg2 error:(id *)arg3;
++ (id)equationSourceFromPDFDocument:(struct CGPDFDocument *)arg1;
 + (id)equationWithXMLDoc:(struct _xmlDoc *)arg1 node:(struct _xmlNode *)arg2 environment:(id)arg3 error:(id *)arg4;
 + (id)equationWithString:(id)arg1 format:(int)arg2 error:(id *)arg3;
 + (id)equationWithString:(id)arg1 format:(int)arg2 environment:(id)arg3 error:(id *)arg4;

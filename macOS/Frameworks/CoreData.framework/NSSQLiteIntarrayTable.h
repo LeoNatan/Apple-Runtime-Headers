@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_intarrayTableName;
 }
 
-@property(retain) NSString *intarrayTableName; // @synthesize intarrayTableName=_intarrayTableName;
-@property struct sqlite3_intarray *intarrayTable; // @synthesize intarrayTable=_intarrayTable;
+@property(retain, nonatomic) NSString *intarrayTableName; // @synthesize intarrayTableName=_intarrayTableName;
+@property(nonatomic) struct sqlite3_intarray *intarrayTable; // @synthesize intarrayTable=_intarrayTable;
 - (void)dealloc;
 
 @end

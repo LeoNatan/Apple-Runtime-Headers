@@ -21,7 +21,7 @@
 - (id)remoteObjectInterface;
 - (id)exportedInterface;
 - (id)machServiceName;
-- (void)transferWithIdentifierWasDeclined:(id)arg1;
+- (void)transferWithIdentifierWasDeclined:(id)arg1 withFailureReason:(unsigned long long)arg2;
 - (void)transferWithIdentifierWasAccepted:(id)arg1;
 - (void)updateTransferWithIdentifier:(id)arg1 withState:(long long)arg2 information:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_getRemoteObjectProxyOnQueue:(CDUnknownBlockType)arg1;

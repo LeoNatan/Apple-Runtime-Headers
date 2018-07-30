@@ -15,10 +15,14 @@
     id <NUScalePolicy> _scalePolicy;
     id <NUExtentPolicy> _extentPolicy;
     NUPixelFormat *_pixelFormat;
+    id <NUMutableImage> _targetImage;
+    CDStruct_d58201db _tileSize;
     CDStruct_1b6d18a9 _time;
 }
 
+@property(retain) id <NUMutableImage> targetImage; // @synthesize targetImage=_targetImage;
 @property CDStruct_1b6d18a9 time; // @synthesize time=_time;
+@property CDStruct_912cb5d2 tileSize; // @synthesize tileSize=_tileSize;
 @property(retain) NUPixelFormat *pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(retain) id <NUExtentPolicy> extentPolicy; // @synthesize extentPolicy=_extentPolicy;
 @property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;

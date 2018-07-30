@@ -17,6 +17,7 @@
 
 @property(retain, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
 - (void).cxx_destruct;
+- (double)confidenceFromMapItemSource:(unsigned long long)arg1;
 - (id)mapItemsWithinDistance:(double)arg1 location:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
 - (id)initWithDistanceCalculator:(id)arg1 mapsSupportManager:(id)arg2;
 - (id)init;

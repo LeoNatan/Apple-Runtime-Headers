@@ -8,7 +8,6 @@
 
 @class ABPeoplePickerTableView;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerSubrowGroupElement : NSObject
 {
     id _parent;

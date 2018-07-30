@@ -28,6 +28,9 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _unfair_lock;
 }
 
+- (_Bool)_isTopLevelNavigation;
+- (id)_siteForCookies;
+- (id)_nw_activity;
 - (id)_APSRelayTopic;
 - (id)_incompleteTaskMetrics;
 - (void)set_incompleteTaskMetrics:(id)arg1;
@@ -35,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)set_preconnect:(_Bool)arg1;
 - (void)_consumePendingBytesReceivedEncoded;
 - (void)_appendCountOfPendingBytesReceivedEncoded:(long long)arg1;
+- (long long)_discretionaryOverrride;
+- (void)set_discretionaryOverride:(long long)arg1;
 - (_Bool)_allowsQUIC;
 - (void)set_allowsQUIC:(_Bool)arg1;
 - (void)set_TLSNegotiatedCipherSuite:(unsigned short)arg1;
@@ -52,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (struct __CFSet *)_getAuthenticatorStatusCodes;
 - (void)_getAuthenticationHeadersForResponse:(struct _CFURLResponse *)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setAppleIDContext:(id)arg1;
+- (_Bool)_requiresSecureHTTPSProxyConnection;
 - (_Bool)_preventsSystemHTTPProxyAuthentication;
 - (_Bool)_cacheOnly;
 - (_Bool)_shouldSkipPreferredClientCertificateLookup;
@@ -115,7 +121,7 @@ __attribute__((visibility("hidden")))
 - (void)_setSocketProperties:(struct __CFDictionary *)arg1 connectionProperties:(struct __CFDictionary *)arg2;
 - (const struct XCredentialStorage *)_createXCredentialStorage;
 - (const struct XCookieStorage *)_createXCookieStorage;
-- (const struct XURLCache *)_createXURLCache;
+- (void)_withXURLCache:(CDUnknownBlockType)arg1;
 - (struct _CFHSTSPolicy *)_copyHSTSPolicy;
 - (void)_processConnectionProperties;
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;

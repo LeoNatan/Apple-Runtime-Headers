@@ -10,8 +10,8 @@
 
 @interface NSPrefCrossFadeWindow : NSWindow
 {
-    NSPrefCrossFadeWindowMoveHelper *mMoveHelper;
     NSMutableArray *mAnimatedViews;
+    NSPrefCrossFadeWindowMoveHelper *mMoveHelper;
 }
 
 - (void).cxx_destruct;

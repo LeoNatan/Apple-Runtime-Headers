@@ -48,6 +48,7 @@
 @property(retain) NSURLCache *URLCache; // @dynamic URLCache;
 @property(retain) NSURLCredentialStorage *URLCredentialStorage; // @dynamic URLCredentialStorage;
 @property(copy) NSString *_CTDataConnectionServiceType; // @dynamic _CTDataConnectionServiceType;
+@property long long _IDSMessageTimeout; // @dynamic _IDSMessageTimeout;
 @property unsigned long long _TCPAdaptiveReadTimeout; // @dynamic _TCPAdaptiveReadTimeout;
 @property unsigned long long _TCPAdaptiveWriteTimeout; // @dynamic _TCPAdaptiveWriteTimeout;
 @property _Bool _allowTCPIOConnectionStreamTask; // @dynamic _allowTCPIOConnectionStreamTask;
@@ -60,6 +61,7 @@
 @property _Bool _allowsTCPFastOpen; // @dynamic _allowsTCPFastOpen;
 @property _Bool _allowsTLSSessionResumption; // @dynamic _allowsTLSSessionResumption;
 @property _Bool _allowsTLSSessionTickets; // @dynamic _allowsTLSSessionTickets;
+@property _Bool _alwaysPerformDefaultTrustEvaluation; // @dynamic _alwaysPerformDefaultTrustEvaluation;
 @property(copy) id <NSURLSessionAppleIDContext> _appleIDContext; // @dynamic _appleIDContext;
 @property(copy) NSData *_atsContext; // @dynamic _atsContext;
 @property(copy) NSSet *_authenticatorStatusCodes; // @dynamic _authenticatorStatusCodes;
@@ -77,6 +79,7 @@
 @property _Bool _disablesUseOfProxySession; // @dynamic _disablesUseOfProxySession;
 @property _Bool _disallowsSPDY; // @dynamic _disallowsSPDY;
 @property _Bool _duetPreauthorized; // @dynamic _duetPreauthorized;
+@property long long _expiredDNSBehavior; // @dynamic _expiredDNSBehavior;
 @property unsigned long long _forcedNetworkServiceType; // @dynamic _forcedNetworkServiceType;
 @property _Bool _forcesNewConnections; // @dynamic _forcesNewConnections;
 @property _Bool _ignoreDidReceiveResponseDisposition; // @dynamic _ignoreDidReceiveResponseDisposition;
@@ -104,6 +107,7 @@
 @property(getter=_isProxySession) _Bool _proxySession; // @dynamic _proxySession;
 @property _Bool _requiresClientToOpenFiles; // @dynamic _requiresClientToOpenFiles;
 @property _Bool _requiresPowerPluggedIn; // @dynamic _requiresPowerPluggedIn;
+@property _Bool _requiresSecureHTTPSProxyConnection; // @dynamic _requiresSecureHTTPSProxyConnection;
 @property _Bool _requiresSustainedDataDelivery; // @dynamic _requiresSustainedDataDelivery;
 @property _Bool _respectsAllowsCellularAccessForDiscretionaryTasks; // @dynamic _respectsAllowsCellularAccessForDiscretionaryTasks;
 @property _Bool _sessionSendsLaunchOnDemandEvents; // @dynamic _sessionSendsLaunchOnDemandEvents;
@@ -117,6 +121,7 @@
 @property(copy) NSSet *_suppressedAutoAddedHTTPHeaders; // @dynamic _suppressedAutoAddedHTTPHeaders;
 @property(copy) NSString *_tcpConnectionPoolName; // @dynamic _tcpConnectionPoolName;
 @property long long _timingDataOptions; // @dynamic _timingDataOptions;
+@property(copy) NSString *_tlsCachePrefix; // @dynamic _tlsCachePrefix;
 @property(copy) NSString *_tlsTrustPinningPolicyName; // @dynamic _tlsTrustPinningPolicyName;
 @property _Bool _usePipeliningHeuristics; // @dynamic _usePipeliningHeuristics;
 @property(copy) NSString *_watchAppBundleIdentifier; // @dynamic _watchAppBundleIdentifier;

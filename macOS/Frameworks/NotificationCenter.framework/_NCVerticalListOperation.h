@@ -8,6 +8,7 @@
 
 @class _NCVerticalListContainer;
 
+__attribute__((visibility("hidden")))
 @interface _NCVerticalListOperation : NSObject
 {
     _Bool _remove;

@@ -6,15 +6,15 @@
 
 #import "HDHealthExtensionsServer.h"
 
-#import "NLActivityAchievementDefinitionAlertObserver.h"
 #import "NLActivityCarouselServiceProvider.h"
 #import "NLActivityCoachingAlertObserver.h"
 #import "NLActivitySedentaryAlertObserver.h"
 #import "NLNanoHealthServerInterface.h"
+#import "NLPredictedActivityAlertObserver.h"
 
 @class NLNanoHealthPlugin, NSString;
 
-@interface NLNanoHealthServer : HDHealthExtensionsServer <NLNanoHealthServerInterface, NLActivityCoachingAlertObserver, NLActivityAchievementDefinitionAlertObserver, NLActivitySedentaryAlertObserver, NLActivityCarouselServiceProvider>
+@interface NLNanoHealthServer : HDHealthExtensionsServer <NLNanoHealthServerInterface, NLActivityCoachingAlertObserver, NLActivitySedentaryAlertObserver, NLActivityCarouselServiceProvider, NLPredictedActivityAlertObserver>
 {
     NLNanoHealthPlugin *_nanoHealthPlugin;
 }
@@ -25,16 +25,28 @@
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
+- (void)hideAlertForPredictedActivityEnd:(id)arg1;
+- (void)showAlertForPredictedEndWorkoutActivity:(id)arg1;
+- (void)setMuteForTodayPredictedActivityAlerts:(_Bool)arg1 ompletion:(CDUnknownBlockType)arg2;
+- (void)getPredictedActivitiesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)systemDidHideAlertForPredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)hideAlertForPredictedActivityStart:(id)arg1;
+- (void)showStartAlertForPredictedActivity:(id)arg1;
 - (void)fetchWellnessComplicationOnCurrentClockFaceWithCompletion:(CDUnknownBlockType)arg1;
-- (void)showAchievementDefinitionAlertForIdentifier:(id)arg1;
 - (void)showCoachingAlertRequests:(id)arg1;
 - (void)hideSedentaryActivityAlert;
 - (void)showSedentaryAlertOfType:(int)arg1 withTimeoutDate:(id)arg2 withActiveHourCount:(int)arg3 withTotalCount:(int)arg4 wheelchairUser:(_Bool)arg5 experimentInstance:(id)arg6;
 - (void)coachingAlertDidCompleteWithResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)remote_runAchievementManagerWithCompletion:(CDUnknownBlockType)arg1;
-- (void)remote_deleteMonthlyChallengeWithCompletion:(CDUnknownBlockType)arg1;
-- (void)remote_createMonthlyChallengeType:(id)arg1 goalOverride:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)remote_runMonthlyChallengeEngineWithCompletion:(CDUnknownBlockType)arg1;
+- (void)remote_didPredictActivityEndedWithIdentifier:(id)arg1 endDate:(id)arg2 activityType:(unsigned int)arg3 locationType:(int)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)remote_setMuteForTodayPredictedActivityAlerts:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_getPredictedActivitiesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)remote_systemDidHideAlertForPredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_systemDidDenyAlertForPredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_systemDidAbandonPredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_userDidDeclinePredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_didTransitionFromPredictedActivityToActiveWorkoutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_didBeginPredictedActivityAtDate:(id)arg1 withIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)remote_didClassifyPredictedActivityWithIdentifier:(id)arg1 asActivityType:(unsigned int)arg2 locationType:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)showTypicalDayWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopFakingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fakeFreeCalendarDateIntervals:(id)arg1 motionState:(_Bool)arg2 inCarState:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

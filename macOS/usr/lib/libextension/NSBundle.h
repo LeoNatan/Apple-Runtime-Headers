@@ -16,7 +16,7 @@
     Class _principalClass;
     id _initialPath;
     id _resolvedPath;
-    id _reserved3;
+    Class _firstClass;
     id _lock;
 }
 
@@ -83,6 +83,7 @@
 - (BOOL)unload;
 - (BOOL)loadAndReturnError:(id *)arg1;
 - (BOOL)load;
+- (BOOL)_searchForLocalizedString:(id)arg1 foundKey:(id *)arg2 foundTable:(id *)arg3;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
@@ -97,6 +98,9 @@
 - (id)findBundleResourceURLsCallingMethod:(SEL)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (struct __CFBundle *)_cfBundleIfPresent;
 - (struct __CFBundle *)_cfBundle;
+- (double)preservationPriorityForTag:(id)arg1;
+- (void)setPreservationPriority:(double)arg1 forTag:(id)arg2;
+- (void)setPreservationPriority:(double)arg1 forTags:(id)arg2;
 
 @end
 

@@ -35,6 +35,7 @@
 - (id)replay:(unsigned long long)arg1;
 - (id)replay;
 - (id)publish;
+- (id)multicast:(id)arg1;
 - (id)map:(CDUnknownBlockType)arg1;
 - (id)filter:(CDUnknownBlockType)arg1;
 - (id)take:(unsigned long long)arg1;

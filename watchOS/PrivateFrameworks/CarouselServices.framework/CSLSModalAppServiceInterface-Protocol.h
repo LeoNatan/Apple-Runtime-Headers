@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class CSLSModalAppServicePresentationOptions, NSString;
 
 @protocol CSLSModalAppServiceInterface <NSObject>
-- (oneway void)startModalAppWithBundleIdentifier:(NSString *)arg1;
+- (oneway void)terminateModalAppWithBundleIdentifier:(NSString *)arg1;
+- (oneway void)startModalAppWithOptions:(CSLSModalAppServicePresentationOptions *)arg1;
 @end
 

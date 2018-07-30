@@ -29,8 +29,7 @@
 - (void)_updateMessageDetails:(id)arg1 forAddedSuggestionEvent:(id)arg2;
 - (void)addMessageForSuggestedEvent:(id)arg1 context:(id)arg2;
 - (void)updateMessageForSuggestedEvent:(id)arg1;
-- (void)_messageTraceIgnoredSuggestedEvents;
-- (void)scheduleIgnoredSuggestedEventMessageTrace;
+- (void)messageTraceIgnoredSuggestedEvents;
 - (void)removeNaturalLanguageSuggestedEventCalendar;
 - (void)removeSuggestedEventCalendar;
 - (void)createNaturalLanguageSuggestedEventCalendar;

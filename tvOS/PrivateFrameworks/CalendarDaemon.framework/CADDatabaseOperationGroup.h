@@ -23,7 +23,8 @@ __attribute__((visibility("hidden")))
 - (void)CADDatabaseRebuildOccurrenceCacheWithReply:(CDUnknownBlockType)arg1;
 - (void)CADDatabaseSetShowsDeclinedEvents:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseExportICSDataForCalendarItems:(id)arg1 preventLineFolding:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)CADDatabaseImportICSData:(id)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
+- (id)_importData:(id)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned long long)arg3 outError:(int *)arg4;
+- (void)CADDatabaseImportICSData:(id)arg1 intoCalendarsWithIDs:(id)arg2 optionsMask:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)CADDatabaseLastConfirmedSplashScreenVersion:(CDUnknownBlockType)arg1;
 - (_Bool)_CADDatabaseCanModifyCalendarDatabase;
 - (void)CADDatabaseCanModifyCalendarDatabase:(CDUnknownBlockType)arg1;

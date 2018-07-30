@@ -8,6 +8,7 @@
 
 @class NSObject<OS_dispatch_queue>, TURepeatingActor;
 
+__attribute__((visibility("hidden")))
 @interface TUSoundPlayer : NSObject
 {
     unsigned int _soundID;
@@ -15,9 +16,8 @@
     TURepeatingActor *_repeatingActor;
 }
 
-@property(nonatomic) unsigned int soundID; // @synthesize soundID=_soundID;
-@property(retain, nonatomic) TURepeatingActor *repeatingActor; // @synthesize repeatingActor=_repeatingActor;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) TURepeatingActor *repeatingActor; // @synthesize repeatingActor=_repeatingActor;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPlaying) BOOL playing;
 - (void)stopPlaying;
@@ -25,6 +25,7 @@
 - (void)playSound:(unsigned int)arg1 iterations:(unsigned long long)arg2 pauseDurationBetweenIterations:(double)arg3;
 - (void)playSoundIndefinitely:(unsigned int)arg1 pauseDurationBetweenIterations:(double)arg2;
 - (void)playSound:(unsigned int)arg1;
+@property(nonatomic) unsigned int soundID; // @synthesize soundID=_soundID;
 - (id)init;
 
 @end

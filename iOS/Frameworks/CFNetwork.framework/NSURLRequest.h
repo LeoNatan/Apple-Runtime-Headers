@@ -53,6 +53,7 @@
 - (id)_initWithCFURLRequest:(struct _CFURLRequest *)arg1;
 - (id)initWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 - (_Bool)_isSafeRequestForBackgroundDownload;
+- (_Bool)_isIdempotent;
 - (_Bool)_schemeWasUpgradedDueToDynamicHSTS;
 - (_Bool)_ignoreHSTS;
 - (_Bool)_preventHSTSStorage;

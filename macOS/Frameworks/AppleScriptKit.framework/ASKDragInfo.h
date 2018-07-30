@@ -8,7 +8,7 @@
 
 #import "NSDraggingInfo.h"
 
-@class NSString;
+@class NSImage, NSPasteboard, NSString, NSWindow;
 
 @interface ASKDragInfo : NSObject <NSDraggingInfo>
 {
@@ -19,14 +19,14 @@
 - (id)objectSpecifier;
 - (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
 - (void)slideDraggedImageTo:(struct CGPoint)arg1;
-- (long long)draggingSequenceNumber;
-- (id)draggingSource;
-- (id)draggingPasteboard;
-- (id)draggedImage;
-- (struct CGPoint)draggedImageLocation;
-- (struct CGPoint)draggingLocation;
-- (unsigned long long)draggingSourceOperationMask;
-- (id)draggingDestinationWindow;
+@property(readonly) long long draggingSequenceNumber;
+@property(readonly) id draggingSource;
+@property(readonly) NSPasteboard *draggingPasteboard;
+@property(readonly) NSImage *draggedImage;
+@property(readonly) struct CGPoint draggedImageLocation;
+@property(readonly) struct CGPoint draggingLocation;
+@property(readonly) unsigned long long draggingSourceOperationMask;
+@property(readonly) NSWindow *draggingDestinationWindow;
 - (void)setSender:(id)arg1;
 - (id)sender;
 - (void)dealloc;

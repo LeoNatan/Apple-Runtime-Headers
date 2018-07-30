@@ -15,6 +15,8 @@
     id <MTLFunction> _function;
 }
 
+@property(readonly) unsigned long long uniqueIdentifier;
+- (unsigned long long)resourceIndex;
 @property(readonly) unsigned long long staticThreadgroupMemoryLength;
 @property(readonly) unsigned long long threadExecutionWidth;
 @property(readonly) unsigned long long maxTotalThreadsPerThreadgroup;

@@ -14,7 +14,5 @@
 - (id)universalDateTimeAsString;
 - (id)localDateTimeAsString;
 - (int)toServerTime;
-- (_Bool)isAfterDate:(id)arg1;
-- (_Bool)isBeforeDate:(id)arg1;
 @end
 

@@ -6,6 +6,7 @@
 
 #import "PSTableCell.h"
 
+__attribute__((visibility("hidden")))
 @interface MCProfileInfoCell : PSTableCell
 {
 }

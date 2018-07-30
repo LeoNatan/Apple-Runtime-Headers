@@ -8,6 +8,7 @@
 
 @class NSArray, NSLayoutConstraint, NSString, UIButton, UIImage, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface PUAdjustmentsModePickerCell : UITableViewCell
 {
     UIButton *_accessoryButton;

@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (void)_handleSiriIntent:(id)arg1;
 - (void)_handleDaemonRequest:(id)arg1;
 - (void)_handleSiriSyncDataRequest:(id)arg1;
 - (void)_handleSiriCommand:(id)arg1;

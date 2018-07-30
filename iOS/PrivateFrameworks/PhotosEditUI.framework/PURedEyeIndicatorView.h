@@ -6,6 +6,7 @@
 
 #import "UIView.h"
 
+__attribute__((visibility("hidden")))
 @interface PURedEyeIndicatorView : UIView
 {
     unsigned long long _animationType;

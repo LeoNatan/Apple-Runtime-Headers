@@ -10,23 +10,24 @@
 
 @interface SUScriptNativeObject : NSObject
 {
-    NSLock *_lock;
-    id _nativeObject;
+    id _strongObject;
+    id _weakObject;
     SUScriptObject *_scriptObject;
-    _Bool _weak;
+    NSLock *_internalLock;
 }
 
++ (id)objectWithNativeObject:(id)arg1 weak:(_Bool)arg2;
 + (id)objectWithNativeObject:(id)arg1;
-+ (void)makeReferencesToObjectWeak:(id)arg1;
-+ (void)clearWeakReferencesToObject:(id)arg1;
-- (void)_nativeObjectBecameWeakNotification:(id)arg1;
+@property(retain, nonatomic) NSLock *internalLock; // @synthesize internalLock=_internalLock;
+- (void).cxx_destruct;
 - (void)unlock;
 - (void)setupNativeObject;
-@property SUScriptObject *scriptObject;
-@property(nonatomic) id object;
 - (void)lock;
 - (void)destroyNativeObject;
-- (void)dealloc;
+@property(nonatomic) __weak id weakObject;
+@property(retain, nonatomic) id strongObject;
+@property __weak SUScriptObject *scriptObject;
+@property(retain) id object;
 - (id)init;
 
 @end

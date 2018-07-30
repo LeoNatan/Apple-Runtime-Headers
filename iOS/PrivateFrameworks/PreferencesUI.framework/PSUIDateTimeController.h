@@ -21,8 +21,10 @@
     PSSpecifier *_timePickerSpecifier;
     PSSpecifier *_currentTimeSpecifier;
     PSWallClockMinuteTimer *_minuteTimer;
+    PSSpecifier *_ampmToggleSpecifier;
 }
 
+@property(retain, nonatomic) PSSpecifier *ampmToggleSpecifier; // @synthesize ampmToggleSpecifier=_ampmToggleSpecifier;
 @property(retain, nonatomic) PSWallClockMinuteTimer *minuteTimer; // @synthesize minuteTimer=_minuteTimer;
 @property(retain) PSSpecifier *currentTimeSpecifier; // @synthesize currentTimeSpecifier=_currentTimeSpecifier;
 @property(retain) PSSpecifier *timePickerSpecifier; // @synthesize timePickerSpecifier=_timePickerSpecifier;
@@ -32,14 +34,20 @@
 - (id)currentTimeString;
 - (void)_createDateTimeFormatters;
 - (void)_updateCurrentTime;
+- (void)loadTimeZoneController:(id)arg1;
 - (void)setTimeZoneValue:(id)arg1 specifier:(id)arg2;
 - (id)timeZoneValue:(id)arg1;
 - (void)set24HourTime:(id)arg1 specifier:(id)arg2;
 - (id)is24HourTime:(id)arg1;
+- (void)setShowAMPMInStatusBar:(id)arg1 specifier:(id)arg2;
+- (id)isShowingAMPMInStatusBar:(id)arg1;
+- (void)setShowDateInStatusBar:(id)arg1 specifier:(id)arg2;
+- (id)isShowingDateInStatusBar:(id)arg1;
 - (void)setUseAutomaticTime:(id)arg1 specifier:(id)arg2;
 - (id)useAutomaticTime:(id)arg1;
 - (id)valueForTime:(id)arg1;
 - (_Bool)shouldDisplayTimezoneSpinner;
+- (void)effectiveSettingsChanged:(id)arg1;
 - (void)localeChanged:(id)arg1;
 - (void)significantTimeChange:(id)arg1;
 - (void)newCarrierNotification;

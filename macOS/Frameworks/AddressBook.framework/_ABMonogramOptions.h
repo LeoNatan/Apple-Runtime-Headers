@@ -8,7 +8,6 @@
 
 @class NSColor;
 
-__attribute__((visibility("hidden")))
 @interface _ABMonogramOptions : NSObject
 {
     double _diameter;

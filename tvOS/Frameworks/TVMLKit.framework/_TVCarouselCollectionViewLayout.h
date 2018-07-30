@@ -6,16 +6,20 @@
 
 #import "UICollectionViewFlowLayout.h"
 
+@class NSDictionary;
+
 @interface _TVCarouselCollectionViewLayout : UICollectionViewFlowLayout
 {
+    NSDictionary *_layoutAttributesByIndexPath;
 }
 
-- (void)_adjustLayoutAttributes:(id)arg1 forVirtualItemIndex:(long long)arg2;
-- (void)_enumerateVisibleIndexPaths:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
+- (long long)_expectedNumberOfCells;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (struct CGSize)collectionViewContentSize;
+- (void)prepareLayout;
 
 @end
 

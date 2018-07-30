@@ -33,6 +33,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *layout;
+@property(readonly, nonatomic) NSString *resourceIdentifier; // @dynamic resourceIdentifier;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) NSString *style;
 @property(readonly) Class superclass;

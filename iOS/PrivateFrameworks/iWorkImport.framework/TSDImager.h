@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
     _Bool mShouldReuseBitmapContext;
     TSKDocumentRoot *mDocumentRoot;
     TSDCanvas *mCanvas;
+    _Bool mMayBeReused;
+    _Bool mHasBeenUsed;
     struct CGRect mActualScaledClipRect;
     _Bool mDrawingIntoPDF;
     _Bool mIsPrinting;
@@ -38,6 +40,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType mPostRenderAction;
 }
 
+@property(nonatomic) _Bool mayBeReused; // @synthesize mayBeReused=mMayBeReused;
 @property(nonatomic) _Bool imageIsRenderingForMovie; // @synthesize imageIsRenderingForMovie=mImageIsRenderingForMovie;
 @property(copy, nonatomic) NSSet *previousRenderDatasNeedingDownload; // @synthesize previousRenderDatasNeedingDownload=mPreviousRenderDatasNeedingDownload;
 @property(nonatomic) _Bool isPrinting; // @synthesize isPrinting=mIsPrinting;

@@ -6,26 +6,20 @@
 
 #import "NSObject.h"
 
-@class CDAttribute, CDSession;
+@class _DKEventStream, _DKKnowledgeStore;
 
 @interface PRSCoreDuet : NSObject
 {
-    CDSession *_cdSession;
-    CDAttribute *_spotlightAttr;
-    CDAttribute *_bundleIdAttribute;
+    _DKKnowledgeStore *_knowledgeStore;
+    _DKEventStream *_spotlightStream;
 }
 
-@property(retain) CDAttribute *bundleIdAttribute; // @synthesize bundleIdAttribute=_bundleIdAttribute;
-@property(retain) CDAttribute *spotlightAttr; // @synthesize spotlightAttr=_spotlightAttr;
-@property(retain) CDSession *cdSession; // @synthesize cdSession=_cdSession;
+@property(retain) _DKEventStream *spotlightStream; // @synthesize spotlightStream=_spotlightStream;
+@property(retain) _DKKnowledgeStore *knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (void).cxx_destruct;
-- (void)addResultCategoryAndGroupToHistory:(id)arg1 groupName:(id)arg2 cost:(unsigned long long)arg3 error:(id)arg4;
-- (void)addResultCategoryToHistory:(id)arg1 cost:(unsigned long long)arg2 error:(id)arg3;
-- (id)getRankedCategories;
-- (id)getTopApps;
+- (void)addResultCategoryAndGroupToHistory:(id)arg1 groupName:(id)arg2 error:(id)arg3;
 - (id)getRankedCategoriesDictionaryWithPredictionWindow:(double)arg1 predictionInterval:(double)arg2;
-- (id)getRankedCategoriesWithPredictionWindow:(double)arg1 predictionInterval:(double)arg2;
-- (id)initWithDuetClientID:(unsigned long long)arg1 attributeString:(id)arg2;
+- (id)initWithStreamName:(id)arg1;
 
 @end
 

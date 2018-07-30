@@ -6,15 +6,17 @@
 
 #import <CallKit/CXAction.h>
 
-@class NSString;
+@class NSString, NSUUID;
 
 @interface CXSendMMIOrUSSDCodeAction : CXAction
 {
     NSString *_code;
     long long _ttyType;
+    NSUUID *_senderIdentityUUID;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSUUID *senderIdentityUUID; // @synthesize senderIdentityUUID=_senderIdentityUUID;
 @property(nonatomic) long long ttyType; // @synthesize ttyType=_ttyType;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
 - (void).cxx_destruct;

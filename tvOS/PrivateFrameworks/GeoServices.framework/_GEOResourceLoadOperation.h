@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 @interface _GEOResourceLoadOperation : NSObject <NSURLSessionDataDelegate, GEOResourceLoadOperation>
 {
     NSURL *_url;
+    NSURL *_proxyURL;
     CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSURLSession *_session;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
     GEOApplicationAuditToken *_auditToken;
     NSLock *_lock;
     _Bool _requiresWiFi;
+    _Bool _requiresProxy;
     GEOReportedProgress *_progress;
 }
 
@@ -37,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1 callbackQueue:(id)arg2;
 @property(readonly) NSProgress *progress;
 - (void)dealloc;
-- (id)initWithResource:(id)arg1 existingPartialData:(id)arg2 auditToken:(id)arg3 baseURLString:(id)arg4;
+- (id)initWithResource:(id)arg1 existingPartialData:(id)arg2 auditToken:(id)arg3 baseURL:(id)arg4 proxyURL:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

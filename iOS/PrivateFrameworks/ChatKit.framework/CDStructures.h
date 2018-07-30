@@ -126,6 +126,7 @@ struct _Spec {
     struct CGSize _field2;
     double _field3;
     double _field4;
+    long long _field5;
 };
 
 #pragma mark Typedef'd Structures

@@ -6,6 +6,7 @@
 
 #import "UIViewController.h"
 
+#import "PSStateRestoration.h"
 #import "TKVibrationPickerCollectionViewCellDelegate.h"
 #import "TKVibrationRecorderViewControllerDelegate.h"
 #import "UICollectionViewDataSource.h"
@@ -15,7 +16,7 @@
 
 @class NSArray, NSIndexPath, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSURL, TKVibratorController, TLVibrationManager, UICollectionView;
 
-@interface TKVibrationPickerViewController : UIViewController <TKVibrationPickerCollectionViewCellDelegate, TKVibrationRecorderViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateTableLayout, UINavigationControllerDelegate>
+@interface TKVibrationPickerViewController : UIViewController <PSStateRestoration, TKVibrationPickerCollectionViewCellDelegate, TKVibrationRecorderViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateTableLayout, UINavigationControllerDelegate>
 {
     long long _alertType;
     _Bool _showsDefault;
@@ -145,6 +146,7 @@
 - (id)initWithAlertType:(long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 @property(copy, nonatomic) NSString *accountIdentifier;
+- (_Bool)canBeShownFromSuspendedState;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

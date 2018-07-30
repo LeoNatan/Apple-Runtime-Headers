@@ -6,7 +6,11 @@
 
 #import <HealthDaemon/HDSampleEntity.h>
 
-@interface HDSeriesSampleEntity : HDSampleEntity
+#import "_HDSeriesFreezeJournalEntrySeries.h"
+
+@class NSString;
+
+@interface HDSeriesSampleEntity : HDSampleEntity <_HDSeriesFreezeJournalEntrySeries>
 {
 }
 
@@ -14,17 +18,25 @@
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
 + (id)additionalPredicateForEnumeration;
 + (CDUnknownBlockType)objectInsertionFilterForProfile:(id)arg1;
-+ (_Bool)_replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 profile:(id)arg3 error:(id *)arg4;
-+ (id)_seriesSampleWithID:(id)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (_Bool)_deleteSeriesWithID:(id)arg1 profile:(id)arg2 error:(id *)arg3;
++ (_Bool)replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 insertDeletedObject:(_Bool)arg3 profile:(id)arg4 database:(id)arg5 error:(id *)arg6;
++ (id)seriesSampleWithID:(id)arg1 profile:(id)arg2 error:(id *)arg3;
++ (_Bool)_deleteSeriesWithID:(id)arg1 insertDeletedObject:(_Bool)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
 + (id)freezeSeriesWithIdentifier:(id)arg1 metadata:(id)arg2 profile:(id)arg3 error:(id *)arg4;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
 + (void)updateInsertionEra;
 + (long long)_insertionEra;
 - (_Bool)updateSampleCount:(long long)arg1 withDatabase:(id)arg2 error:(id *)arg3;
 - (_Bool)canAddDatumInDatabase:(id)arg1 error:(id *)arg2;
-- (_Bool)freezeWithDatabase:(id)arg1 error:(id *)arg2;
+- (id)freezeWithDatabase:(id)arg1 profile:(id)arg2 error:(id *)arg3;
+- (id)HFDKeyWithDatabase:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

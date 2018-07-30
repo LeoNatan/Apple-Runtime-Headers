@@ -13,6 +13,7 @@
 
 @interface _SFPBPunchout : PBCodable <_SFPBPunchout, NSSecureCoding>
 {
+    BOOL _isRunnableInBackground;
     NSString *_name;
     NSString *_bundleIdentifier;
     NSString *_label;
@@ -21,6 +22,7 @@
     NSString *_actionTarget;
 }
 
+@property(nonatomic) BOOL isRunnableInBackground; // @synthesize isRunnableInBackground=_isRunnableInBackground;
 @property(copy, nonatomic) NSString *actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(retain, nonatomic) _SFPBUserActivityData *userActivityData; // @synthesize userActivityData=_userActivityData;
 @property(copy, nonatomic) NSArray *urls; // @synthesize urls=_urls;
@@ -36,15 +38,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasActionTarget;
-@property(readonly, nonatomic) BOOL hasUserActivityData;
 - (id)urlsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)urlsCount;
 - (void)addUrls:(id)arg1;
 - (void)clearUrls;
-@property(readonly, nonatomic) BOOL hasLabel;
-@property(readonly, nonatomic) BOOL hasBundleIdentifier;
-@property(readonly, nonatomic) BOOL hasName;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

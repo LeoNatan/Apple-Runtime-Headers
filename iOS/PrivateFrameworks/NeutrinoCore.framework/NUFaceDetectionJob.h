@@ -11,6 +11,7 @@
 @interface NUFaceDetectionJob : NURenderJob
 {
     NSArray *_faces;
+    CDStruct_d58201db _imageSize;
 }
 
 - (void).cxx_destruct;
@@ -20,6 +21,7 @@
 - (id)detectFaceLandmarksInBuffer:(struct __CVBuffer *)arg1 withFaceRects:(id)arg2 error:(out id *)arg3;
 - (id)detectFaceRectsInBuffer:(struct __CVBuffer *)arg1 maxResultCount:(unsigned long long)arg2 error:(out id *)arg3;
 - (_Bool)wantsCompleteStage;
+- (_Bool)wantsOutputGeometry;
 - (_Bool)wantsOutputImage;
 - (id)scalePolicy;
 @property(readonly) NUFaceDetectionRequest *faceDetectionRequest;

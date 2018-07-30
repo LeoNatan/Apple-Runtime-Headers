@@ -7,38 +7,40 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentResponsePayloadFailure.h"
 
-@class NSString, PBUnknownFields;
+@class NSString;
 
-@interface _INPBIntentResponsePayloadFailure : PBCodable <NSCopying>
+@interface _INPBIntentResponsePayloadFailure : PBCodable <_INPBIntentResponsePayloadFailure, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSString *_enumTypeName;
-    int _errorCode;
-    _Bool _appLaunchRequested;
     struct {
-        unsigned int errorCode:1;
         unsigned int appLaunchRequested:1;
+        unsigned int errorCode:1;
     } _has;
+    _Bool _appLaunchRequested;
+    int _errorCode;
+    NSString *_enumTypeName;
 }
 
-+ (id)options;
-@property(nonatomic) _Bool appLaunchRequested; // @synthesize appLaunchRequested=_appLaunchRequested;
-@property(retain, nonatomic) NSString *enumTypeName; // @synthesize enumTypeName=_enumTypeName;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
+@property(copy, nonatomic) NSString *enumTypeName; // @synthesize enumTypeName=_enumTypeName;
+@property(nonatomic) _Bool appLaunchRequested; // @synthesize appLaunchRequested=_appLaunchRequested;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasAppLaunchRequested;
-@property(readonly, nonatomic) _Bool hasEnumTypeName;
 @property(nonatomic) _Bool hasErrorCode;
+@property(readonly, nonatomic) _Bool hasEnumTypeName;
+@property(nonatomic) _Bool hasAppLaunchRequested;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

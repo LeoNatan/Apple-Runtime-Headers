@@ -13,19 +13,19 @@
 __attribute__((visibility("hidden")))
 @interface CXCallObserverXPCClient : NSObject <CXCallObserverDataSource>
 {
-    _Bool _hasCallHostLaunched;
+    _Bool _clientsShouldConnect;
     NSObject<OS_dispatch_queue> *_concurrentQueue;
     NSMutableDictionary *_mutableCallUUIDToCallMap;
     NSHashTable *_delegates;
     NSXPCConnection *_connection;
-    int _notifyToken;
+    int _clientsShouldConnectToken;
 }
 
 + (void)releaseSharedXPCClient;
 + (id)sharedXPCClient;
 + (id)sharedXPCClientSemaphore;
-@property(nonatomic) _Bool hasCallHostLaunched; // @synthesize hasCallHostLaunched=_hasCallHostLaunched;
-@property(nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
+@property(nonatomic) _Bool clientsShouldConnect; // @synthesize clientsShouldConnect=_clientsShouldConnect;
+@property(nonatomic) int clientsShouldConnectToken; // @synthesize clientsShouldConnectToken=_clientsShouldConnectToken;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NSMutableDictionary *mutableCallUUIDToCallMap; // @synthesize mutableCallUUIDToCallMap=_mutableCallUUIDToCallMap;
@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_addOrUpdateCall:(id)arg1;
 - (void)_markAllCallsAsEnded;
 - (void)invalidate;
-- (void)requestTransaction:(id)arg1 forExtensionIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestTransaction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *callUUIDToCallMap;

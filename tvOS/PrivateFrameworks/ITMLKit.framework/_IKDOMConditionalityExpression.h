@@ -13,15 +13,15 @@ __attribute__((visibility("hidden")))
 {
     _Bool _isNegated;
     NSArray *_operations;
-    NSSet *_dependentPropertyPaths;
+    NSSet *_dependentPathStrings;
 }
 
 + (id)expressionFromString:(id)arg1;
 + (id)parseExpressionsFromString:(id)arg1;
-@property(readonly, copy, nonatomic) NSSet *dependentPropertyPaths; // @synthesize dependentPropertyPaths=_dependentPropertyPaths;
+@property(readonly, copy, nonatomic) NSSet *dependentPathStrings; // @synthesize dependentPathStrings=_dependentPathStrings;
 - (void).cxx_destruct;
 - (_Bool)passesForDataItem:(id)arg1;
-- (id)initWithOperations:(id)arg1 dependentPropertyPaths:(id)arg2 isNegated:(_Bool)arg3;
+- (id)initWithOperations:(id)arg1 dependentPathStrings:(id)arg2 isNegated:(_Bool)arg3;
 
 @end
 

@@ -15,11 +15,10 @@
 + (id)codableObjectsFromObjectCollection:(id)arg1;
 + (id)mergeDataObject:(id)arg1 provenance:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5 insertHandler:(CDUnknownBlockType)arg6;
 + (_Bool)supportsObjectMerging;
-+ (id)activityCachesInRangeStart:(id)arg1 end:(id)arg2 profile:(id)arg3 error:(id *)arg4;
-+ (id)activityCacheForIndex:(long long)arg1 profile:(id)arg2 error:(id *)arg3;
++ (id)activityCacheForIndex:(long long)arg1 profile:(id)arg2 encodingOptions:(id)arg3 error:(id *)arg4;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
 + (id)indices;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
 
 @end

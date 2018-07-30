@@ -42,9 +42,6 @@
 - (unsigned long long)iconsCount;
 - (void)addIcons:(id)arg1;
 - (void)clearIcons;
-@property(readonly, nonatomic) _Bool hasContentAdvisory;
-@property(readonly, nonatomic) _Bool hasStarRating;
-@property(readonly, nonatomic) _Bool hasText;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

@@ -6,9 +6,11 @@
 
 #import <SafariShared/WBSSiteMetadataResponse.h>
 
-@class NSColor, NSImage;
+#import "WBSIconResponse.h"
 
-@interface WBSTouchIconResponse : WBSSiteMetadataResponse
+@class NSColor, NSImage, NSString;
+
+@interface WBSTouchIconResponse : WBSSiteMetadataResponse <WBSIconResponse>
 {
     BOOL _generated;
     NSImage *_touchIcon;
@@ -20,9 +22,15 @@
 @property(readonly, nonatomic) NSColor *extractedBackgroundColor; // @synthesize extractedBackgroundColor=_extractedBackgroundColor;
 @property(readonly, nonatomic) NSImage *touchIcon; // @synthesize touchIcon=_touchIcon;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, nonatomic) NSImage *icon;
+@property(readonly, copy) NSString *description;
 - (id)initWithURL:(id)arg1 touchIcon:(id)arg2 generated:(BOOL)arg3 extractedBackgroundColor:(id)arg4;
 - (id)initWithURL:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

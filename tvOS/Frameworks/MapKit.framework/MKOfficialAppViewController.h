@@ -30,7 +30,10 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)infoCardChildPossibleActions;
 - (void)officialAppViewDidSelectPunchOutButton:(id)arg1;
-- (void)_beginFindingOfficialApp;
+- (void)_updateAppImage:(id)arg1 error:(id)arg2;
+- (void)_updateView:(id)arg1;
+- (void)_loadAppArtwork:(id)arg1 adamID:(id)arg2;
+- (void)_loadOfficialApp;
 - (void)updateOfficialViewButtonText;
 - (void)viewDidLoad;
 - (id)initWithMKMapItem:(id)arg1;

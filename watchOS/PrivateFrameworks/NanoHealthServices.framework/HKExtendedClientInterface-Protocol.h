@@ -7,7 +7,5 @@
 #import "NSObject.h"
 
 @protocol HKExtendedClientInterface <NSObject>
-- (void)clientRemote_achievementDefinitionUnviewedCountChanged;
-- (void)clientRemote_achievementsWereAddedOrRemoved;
 @end
 

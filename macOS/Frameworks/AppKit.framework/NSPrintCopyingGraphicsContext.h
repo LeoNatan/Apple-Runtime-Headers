@@ -10,6 +10,7 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface NSPrintCopyingGraphicsContext : NSCGSContext <NSPrintGraphicsContextAdvancing>
 {
     NSDictionary *_attributes;

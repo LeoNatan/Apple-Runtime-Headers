@@ -11,9 +11,11 @@
 @interface ICAttachmentDrawingModel : ICAttachmentModel
 {
     ICDrawingVersionedDocument *_drawingDocument;
+    BOOL _observingAttachment;
 }
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
+@property(nonatomic) BOOL observingAttachment; // @synthesize observingAttachment=_observingAttachment;
 - (void).cxx_destruct;
 - (id)previewItemURL;
 - (id)previewItemTitle;
@@ -32,6 +34,9 @@
 - (id)drawingDocument;
 @property(readonly, nonatomic) ICDrawing *drawing;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)stopObservingAttachment:(id)arg1;
+- (void)startObservingAttachment;
+- (void)attachmentIsDeallocating:(id)arg1;
 - (void)dealloc;
 - (id)initWithAttachment:(id)arg1;
 

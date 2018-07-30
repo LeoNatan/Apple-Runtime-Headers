@@ -25,3 +25,25 @@ struct CGSize {
     double _field2;
 };
 
+struct NSColor {
+    Class _field1;
+};
+
+struct animation_completion_handler_container;
+
+struct vector<CAShapeLayer *, std::__1::allocator<CAShapeLayer *>> {
+    id *__begin_;
+    id *__end_;
+    struct __compressed_pair<CAShapeLayer *__strong *, std::__1::allocator<CAShapeLayer *>> {
+        id *__value_;
+    } __end_cap_;
+};
+
+struct vector<LAUI_CA_utilities::animation_completion_handler_container, std::__1::allocator<LAUI_CA_utilities::animation_completion_handler_container>> {
+    struct animation_completion_handler_container *__begin_;
+    struct animation_completion_handler_container *__end_;
+    struct __compressed_pair<LAUI_CA_utilities::animation_completion_handler_container *, std::__1::allocator<LAUI_CA_utilities::animation_completion_handler_container>> {
+        struct animation_completion_handler_container *__value_;
+    } __end_cap_;
+};
+

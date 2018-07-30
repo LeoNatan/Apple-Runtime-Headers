@@ -9,7 +9,7 @@
 #import "EKFrozenMeltedPair.h"
 #import "EKProtocolMutableObject.h"
 
-@class EKChangeSet, EKEventStore, EKPersistentObject, NSDictionary, NSMutableDictionary, NSString;
+@class EKChangeSet, EKEventStore, EKObjectValidationContext, EKPersistentObject, NSDictionary, NSMutableDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface EKObject : NSObject <EKFrozenMeltedPair, EKProtocolMutableObject>
@@ -19,11 +19,13 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *__cachedMeltedObjects;
     NSDictionary *_additionalFrozenProperties;
     NSMutableDictionary *__cachedValues;
+    EKObjectValidationContext *__validationContext;
 }
 
 + (id)propertiesUnavailableForPartialObjects;
 + (Class)frozenClass;
 + (Class)meltedClass;
++ (_Bool)_isWeakRelationMeltedObject:(id)arg1 forKey:(id)arg2;
 + (_Bool)isMeltedAndNotWeakRelationshipObject:(id)arg1 forKey:(id)arg2;
 + (id)knownImmutableKeys;
 + (id)knownDerivedRelationshipKeys;
@@ -34,6 +36,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)isDerivedRelationship;
 + (_Bool)isWeakRelationship;
 + (unsigned int)_numberOfSharedLocksForUnitTesting;
+@property(retain, nonatomic) EKObjectValidationContext *_validationContext; // @synthesize _validationContext=__validationContext;
 @property(retain, nonatomic) NSMutableDictionary *_cachedValues; // @synthesize _cachedValues=__cachedValues;
 @property(retain, nonatomic) NSDictionary *additionalFrozenProperties; // @synthesize additionalFrozenProperties=_additionalFrozenProperties;
 @property(retain, nonatomic) NSMutableDictionary *_cachedMeltedObjects; // @synthesize _cachedMeltedObjects=__cachedMeltedObjects;
@@ -80,6 +83,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithObject:(id)arg1;
 @property(readonly, nonatomic) _Bool hasChanges;
 @property(readonly, nonatomic, getter=isNew) _Bool new;
+@property(readonly, nonatomic) NSString *semanticIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (_Bool)_isPropertyUnavailable:(id)arg1 convertToFullObjectIfUnavailable:(_Bool)arg2;
 - (void)setPersistentObject:(id)arg1;
@@ -87,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithPersistentObject:(id)arg1;
 - (id)init;
+- (id)privacyDescription;
 - (void)emptyMeltedCacheForKeys:(id)arg1;
 - (void)_emptyMeltedCacheForKey:(id)arg1;
 - (void)emptyMeltedCache;
@@ -133,7 +138,6 @@ __attribute__((visibility("hidden")))
 - (void)addChangesFromObject:(id)arg1 except:(id)arg2;
 - (void)addChangesFromObject:(id)arg1;
 - (id)_previousValueForKey:(id)arg1;
-- (id)previouslySavedObject;
 - (_Bool)_areOnlyChangedKeys:(id)arg1;
 - (_Bool)_isOnlyChangedKey:(id)arg1;
 - (_Bool)_hasChangesForKey:(id)arg1 checkUnsaved:(_Bool)arg2;

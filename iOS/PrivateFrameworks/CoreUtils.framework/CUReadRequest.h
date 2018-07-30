@@ -15,8 +15,8 @@
     unsigned long long _length;
     void *_bufferBytes;
     NSMutableData *_bufferData;
-    NSData *_data;
     CDUnknownBlockType _completion;
+    NSData *_data;
     unsigned long long _minLength;
     unsigned long long _maxLength;
 }
@@ -24,9 +24,9 @@
 @property(nonatomic) unsigned long long maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) unsigned long long minLength; // @synthesize minLength=_minLength;
 @property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSMutableData *bufferData; // @synthesize bufferData=_bufferData;
 @property(nonatomic) void *bufferBytes; // @synthesize bufferBytes=_bufferBytes;
 - (void).cxx_destruct;

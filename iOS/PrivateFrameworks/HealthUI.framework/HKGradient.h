@@ -6,14 +6,28 @@
 
 #import "NSObject.h"
 
-@interface HKGradient : NSObject
+#import "NSCopying.h"
+
+@class NSArray, UIColor;
+
+@interface HKGradient : NSObject <NSCopying>
 {
+    NSArray *_colors;
+    NSArray *_locations;
 }
 
-+ (id)generateGradientWithTopColor:(id)arg1 bottomColor:(id)arg2 height:(double)arg3;
-+ (id)generateRoundedCornerGradientWithTopColor:(id)arg1 bottomColor:(id)arg2 byRoundingCorners:(unsigned long long)arg3 cornerRadii:(struct CGSize)arg4 height:(double)arg5;
-+ (id)generateRoundedCornerGradientWithTopColor:(id)arg1 bottomColor:(id)arg2 cornerRadius:(double)arg3 height:(double)arg4;
-+ (struct CGGradient *)newGradientWithTopColor:(id)arg1 bottomColor:(id)arg2;
++ (id)defaultGradient;
+@property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;
+@property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToHKGradient:(id)arg1;
+@property(readonly, nonatomic) UIColor *bottomColor;
+@property(readonly, nonatomic) UIColor *topColor;
+- (id)initWithTopColor:(id)arg1 bottomColor:(id)arg2;
+- (id)initWithColors:(id)arg1 locations:(id)arg2;
 
 @end
 

@@ -172,6 +172,10 @@ struct InterAppAudioAppInfo {
     struct __CFURL *_field6;
 };
 
+struct NSMutableDictionary {
+    Class _field1;
+};
+
 struct NewServerListener;
 
 struct Node;

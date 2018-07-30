@@ -20,8 +20,7 @@ __attribute__((visibility("hidden")))
     FI_TTextField *_titleField;
     FI_TButton *_collapseButton;
     FI_TUpdateLayerView *_topHorizontalLineView;
-    struct TNSRef<FI_TUpdateLayerView *, void> _bottomHorizontalLineView;
-    struct TNSRef<NSVisualEffectView *, void> _blurBackgroundView;
+    struct TNSRef<NSView, void> _blurBackgroundView;
     unsigned long long _nodeCount;
     _Bool _isCollapsed;
     _Bool _isCollapseButtonHiddenManually;
@@ -42,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *reuseIdentifier;
 - (void)updateLayer;
 - (void)layout;
-- (void)_windowChangedKeyState;
 @property(getter=isFloating) BOOL floating; // @synthesize floating=_isFloating;
 - (void)setCollapseButtonPressedFunc:(const function_fa9a3333 *)arg1;
 @property(nonatomic, getter=isCollapseButtonHidden) _Bool collapseButtonHidden; // @dynamic collapseButtonHidden;

@@ -12,6 +12,7 @@
 
 @class NSData, NSDictionary, NSMutableArray, NSString, NSXPCConnection, NSXPCListener;
 
+__attribute__((visibility("hidden")))
 @interface UMXPCServer : NSObject <NSXPCListenerDelegate, UMUserSwitchManagement, UMUserSwitchManagement_Private>
 {
     _Bool _currentlyBroadcastingWillSwitchToUser;
@@ -32,6 +33,9 @@
     CDUnknownBlockType _registrationCompletionHandler;
     CDUnknownBlockType _switchCompletionHandler;
     CDUnknownBlockType _suspendQuotasCompletionHandler;
+    CDUnknownBlockType _directSwitchCompletionHandler;
+    CDUnknownBlockType _logoutToLoginSessionCompletionHandler;
+    CDUnknownBlockType _loginUICheckinSessionCompletionHandler;
     CDUnknownBlockType _uploadContentCompletionHandler;
     CDUnknownBlockType _willSwitchCompletionHandler;
     NSMutableArray *_switchBlockingTasks;
@@ -57,6 +61,9 @@
 @property(retain, nonatomic) NSMutableArray *switchBlockingTasks; // @synthesize switchBlockingTasks=_switchBlockingTasks;
 @property(copy, nonatomic) CDUnknownBlockType willSwitchCompletionHandler; // @synthesize willSwitchCompletionHandler=_willSwitchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType uploadContentCompletionHandler; // @synthesize uploadContentCompletionHandler=_uploadContentCompletionHandler;
+@property(copy, nonatomic) CDUnknownBlockType loginUICheckinSessionCompletionHandler; // @synthesize loginUICheckinSessionCompletionHandler=_loginUICheckinSessionCompletionHandler;
+@property(copy, nonatomic) CDUnknownBlockType logoutToLoginSessionCompletionHandler; // @synthesize logoutToLoginSessionCompletionHandler=_logoutToLoginSessionCompletionHandler;
+@property(copy, nonatomic) CDUnknownBlockType directSwitchCompletionHandler; // @synthesize directSwitchCompletionHandler=_directSwitchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType suspendQuotasCompletionHandler; // @synthesize suspendQuotasCompletionHandler=_suspendQuotasCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType switchCompletionHandler; // @synthesize switchCompletionHandler=_switchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType registrationCompletionHandler; // @synthesize registrationCompletionHandler=_registrationCompletionHandler;
@@ -75,9 +82,12 @@
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)bubbleDidPop;
 - (void)uploadContentWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)deviceLoginSessionStateDidUpdate;
 - (void)userSwitchTaskListDidUpdate;
+- (void)readyToSwitchToLoginSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)readyToSwitchToUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)willSwitchToUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_broadcastReadyToSwitchToLoginSession:(id)arg1;
 - (void)_broadcastReadyToSwitchToUser:(id)arg1;
 - (void)_broadcastWillSwitchToUser:(id)arg1;
 - (void)_resendXPCMessages;
@@ -96,8 +106,11 @@
 - (void)terminateSyncWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resumeQuotas;
 - (void)suspendQuotasWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)loginUICheckInWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)directSwitchToUser:(id)arg1 passcodeData:(id)arg2 context:(id)arg3 preferences:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)switchToUser:(id)arg1 passcodeData:(id)arg2 context:(id)arg3 preferences:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)switchToUser:(id)arg1 passcodeData:(id)arg2 context:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)logoutToLoginSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)switchToLoginUserWithError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)switchToLoginUserWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)unregisterStakeHolder:(id)arg1 status:(unsigned long long)arg2 reason:(id)arg3;

@@ -38,8 +38,6 @@
 + (id)outputContextWithFigRoutingContextCreator:(CDUnknownBlockType)arg1 outputDeviceTranslator:(id)arg2;
 + (void)resetRoutingContextFactoryForQueue:(id)arg1;
 + (void)setRoutingContextFactory:(id)arg1 forQueue:(id)arg2;
-+ (void)resetCurrentRoutingContextFactory;
-+ (void)setCurrentRoutingContextFactory:(id)arg1;
 + (id)currentRoutingContextFactory;
 - (void)outputContextImpl:(id)arg1 didExpireWithReplacement:(id)arg2;
 - (void)outputContextImpl:(id)arg1 didCloseCommunicationChannel:(id)arg2;

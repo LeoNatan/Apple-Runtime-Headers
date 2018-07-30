@@ -8,6 +8,5 @@
 
 @interface NSString (HealthRecordsPlugin)
 - (id)hk_base64PaddedString;
-- (id)hrs_stringByUnescapingJSONCharactersForDisplay;
 @end
 

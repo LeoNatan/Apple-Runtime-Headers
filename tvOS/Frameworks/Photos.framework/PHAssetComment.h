@@ -46,7 +46,7 @@
 @property(readonly, nonatomic) NSString *commenterEmail;
 @property(readonly, nonatomic) NSString *commenterDisplayName;
 @property(readonly, nonatomic) _Bool isInterestingForAlbumsSorting;
-- (_Bool)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(_Bool *)arg2;
+- (_Bool)shouldNotifyAsNotificationWithMediaStreamInfo:(id)arg1 asCaptionOnly:(_Bool *)arg2;
 - (_Bool)_isInterestingToUser:(id)arg1;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;

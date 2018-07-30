@@ -40,8 +40,8 @@
 - (void)pendingRequestFromResidentChanged;
 @property(nonatomic) _Bool pendingRequestDataFromResident; // @synthesize pendingRequestDataFromResident=_pendingRequestDataFromResident;
 - (void)requestDataSync;
-- (void)_receivedHomeDataFromSourceVersion:(id)arg1;
-- (void)receivedHomeDataFromSourceVersion:(id)arg1;
+- (void)_receivedHomeDataFromSourceVersion:(id)arg1 forceUpdateVersion:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)receivedHomeDataFromSourceVersion:(id)arg1 forceUpdateVersion:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_requestDataFromResident:(id)arg1 currentUser:(id)arg2;
 - (void)_startRequestForDataSync;
 - (void)_evaluateNeedForSync;

@@ -8,6 +8,7 @@
 
 @class NSArray, NSTimer, PGPlaybackProgress, _PGPlaybackProgressIndicatorRangesView;
 
+__attribute__((visibility("hidden")))
 @interface PGPlaybackProgressIndicator : UIView
 {
     NSTimer *_playbackProgressTimer;

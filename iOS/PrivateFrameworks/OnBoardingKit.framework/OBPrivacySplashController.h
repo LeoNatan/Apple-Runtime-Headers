@@ -8,7 +8,7 @@
 
 #import "UIScrollViewDelegate.h"
 
-@class NSString, OBPrivacyFlow;
+@class NSString, OBPrivacyFlow, UIButton, UILabel;
 
 @interface OBPrivacySplashController : OBSplashController <UIScrollViewDelegate>
 {
@@ -22,11 +22,23 @@
     _Bool _useModalStyle;
     _Bool _isCombined;
     NSString *_displayLanguage;
+    unsigned long long _displayDeviceType;
+    UIButton *_linkToPrivacyGatewayButton;
+    UILabel *_privacyGatewayDescription;
+    UILabel *_linkToPrivacyGateway;
+    UIButton *_unifiedAboutButton;
+    double _incomingNavigationBarOpacity;
 }
 
 + (id)splashPageWithBundleIdentifier:(id)arg1;
+@property(nonatomic) double incomingNavigationBarOpacity; // @synthesize incomingNavigationBarOpacity=_incomingNavigationBarOpacity;
+@property(retain) UIButton *unifiedAboutButton; // @synthesize unifiedAboutButton=_unifiedAboutButton;
+@property(retain) UILabel *linkToPrivacyGateway; // @synthesize linkToPrivacyGateway=_linkToPrivacyGateway;
+@property(retain) UILabel *privacyGatewayDescription; // @synthesize privacyGatewayDescription=_privacyGatewayDescription;
+@property(retain) UIButton *linkToPrivacyGatewayButton; // @synthesize linkToPrivacyGatewayButton=_linkToPrivacyGatewayButton;
 @property(nonatomic) _Bool isCombined; // @synthesize isCombined=_isCombined;
 @property _Bool useModalStyle; // @synthesize useModalStyle=_useModalStyle;
+@property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property _Bool forceLargeMargins; // @synthesize forceLargeMargins=_forceLargeMargins;
 @property _Bool useSmallTitle; // @synthesize useSmallTitle=_useSmallTitle;
@@ -35,11 +47,15 @@
 @property _Bool allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property _Bool suppressPerPageAnalyticsLogging; // @synthesize suppressPerPageAnalyticsLogging=_suppressPerPageAnalyticsLogging;
 - (void).cxx_destruct;
+- (void)updateFontForUnifiedAboutButton;
+- (void)updateFontForPrivacyGateway;
 - (_Bool)shouldUseTiledTextViews;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateNavigationBarAnimated:(_Bool)arg1;
 - (void)setDarkMode:(_Bool)arg1;
 - (void)setDismissHandlerForDefaultButton:(CDUnknownBlockType)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;

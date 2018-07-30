@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     UIView *_fadingHighlightedDayBackground;
     UIView *_gridContainerView;
     NSMutableDictionary *_gridParentViews;
+    float _cachedWidthForOffMainThreadWork;
     _Bool _rightBorderInsetsOccurrences;
     _Bool _showsTimeLine;
     _Bool _showsTimeMarker;
@@ -94,6 +95,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) float topPadding;
 - (void)setOrientation:(int)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)setFrame:(struct CGRect)arg1;
+- (void)setBounds:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 backgroundColor:(id)arg2 opaque:(_Bool)arg3 numberOfDaysToDisplay:(unsigned int)arg4;
 
 // Remaining properties

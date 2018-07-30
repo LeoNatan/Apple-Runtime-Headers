@@ -13,6 +13,7 @@
     BOOL _canceled;
     BOOL _finished;
     BOOL _hasPausedResults;
+    BOOL _willAsyncStart;
     NSString *_queryString;
     struct __SIQuery *_siQuery;
     SPQueryResultsQueue *_resultsQueue;
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) NSMutableArray *jobs; // @synthesize jobs=_jobs;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType scheduleBlock; // @synthesize scheduleBlock=_scheduleBlock;
+@property(nonatomic) BOOL willAsyncStart; // @synthesize willAsyncStart=_willAsyncStart;
 @property(nonatomic) BOOL hasPausedResults; // @synthesize hasPausedResults=_hasPausedResults;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
 @property BOOL canceled; // @synthesize canceled=_canceled;

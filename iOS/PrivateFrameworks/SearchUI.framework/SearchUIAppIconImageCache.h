@@ -6,16 +6,23 @@
 
 #import "NSObject.h"
 
+@class NSCache;
+
 @interface SearchUIAppIconImageCache : NSObject
 {
+    NSCache *_imageCache;
 }
 
-+ (void)appIconImageDidChange:(id)arg1;
-+ (id)keyStringWithBundleID:(id)arg1 variant:(unsigned long long)arg2;
-+ (id)appIconForBundleID:(id)arg1 webClipID:(id)arg2 variant:(unsigned long long)arg3;
-+ (id)appIconForResult:(id)arg1 variant:(unsigned long long)arg2;
-+ (id)appIconForBundleID:(id)arg1 variant:(unsigned long long)arg2;
-+ (_Bool)appIconIsCachedForBundleID:(id)arg1 variant:(unsigned long long)arg2;
++ (id)sharedCache;
+@property(retain) NSCache *imageCache; // @synthesize imageCache=_imageCache;
+- (void).cxx_destruct;
+- (void)clearCacheAndPostNotificationForChangedIconForBundleIdentifier:(id)arg1;
+- (void)dateDidChange;
+- (void)appIconImageDidChange:(id)arg1;
+- (id)cacheKeyForVariant:(unsigned long long)arg1;
+- (void)updateImage:(id)arg1 forBundleIdentifier:(id)arg2 variant:(unsigned long long)arg3;
+- (id)cachedImageForBundleIdentifier:(id)arg1 variant:(unsigned long long)arg2;
+- (id)init;
 
 @end
 

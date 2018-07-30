@@ -6,40 +6,37 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSString, OADColorMap, OADColorScheme;
+@class NSMutableDictionary, NSString, OADColorMap, OADColorScheme, OCDDocument;
 
+__attribute__((visibility("hidden")))
 @interface CMState : NSObject
 {
+    OCDDocument *_document;
     NSMutableDictionary *components;
     NSMutableDictionary *htmlResource;
     NSString *mResourceUrlPrefix;
     OADColorMap *mColorMap;
     OADColorScheme *mColorScheme;
     id mResources;
-    int mSrcFormat;
+    unsigned long long mSourceFormat;
     BOOL mIsThumbnail;
     BOOL mIsOnPhone;
     long long _textLevel;
 }
 
+@property(retain) OCDDocument *document; // @synthesize document=_document;
+@property unsigned long long sourceFormat; // @synthesize sourceFormat=mSourceFormat;
+@property(retain) id resources; // @synthesize resources=mResources;
+@property(retain) OADColorScheme *colorScheme; // @synthesize colorScheme=mColorScheme;
+@property(retain) OADColorMap *colorMap; // @synthesize colorMap=mColorMap;
 - (void).cxx_destruct;
 - (long long)textLevel;
 - (void)popTextLevel;
 - (void)pushTextLevel;
-- (BOOL)isOnPhone;
-- (void)setIsOnPhone:(BOOL)arg1;
-- (BOOL)isThumbnail;
-- (void)setIsThumbnail:(BOOL)arg1;
+@property BOOL isOnPhone; // @synthesize isOnPhone=mIsOnPhone;
+@property BOOL isThumbnail; // @synthesize isThumbnail=mIsThumbnail;
 - (BOOL)isOffice12;
 - (void)copyFromCMStateWithoutComponents:(id)arg1;
-- (void)setResources:(id)arg1;
-- (id)resources;
-- (void)setColorScheme:(id)arg1;
-- (id)colorScheme;
-- (void)setColorMap:(id)arg1;
-- (id)colorMap;
-- (int)sourceFormat;
-- (void)setSrcFormat:(int)arg1;
 - (id)getHtmlResource;
 - (void)setHtmlResource:(id)arg1;
 - (id)resourceUrlPrefix;

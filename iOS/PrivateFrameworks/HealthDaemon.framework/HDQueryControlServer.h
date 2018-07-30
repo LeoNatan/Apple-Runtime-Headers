@@ -8,12 +8,14 @@
 
 #import "HDQueryControlServerInterface.h"
 #import "HDQueryServerDelegate.h"
+#import "HDTaskServerDelegate.h"
 
 @class NSMutableDictionary, NSString;
 
-@interface HDQueryControlServer : HDSubserver <HDQueryServerDelegate, HDQueryControlServerInterface>
+@interface HDQueryControlServer : HDSubserver <HDQueryServerDelegate, HDTaskServerDelegate, HDQueryControlServerInterface>
 {
     NSMutableDictionary *_queryServersByUUID;
+    NSMutableDictionary *_queryServerEndpointsByUUID;
 }
 
 - (void).cxx_destruct;
@@ -22,33 +24,20 @@
 - (_Bool)queryServerClientHasActiveWorkout:(id)arg1;
 - (_Bool)queryServerShouldObserveInBackground:(id)arg1;
 - (void)queryServerDidFinish:(id)arg1;
+- (void)queryServer:(id)arg1 shouldStartWithCompletion:(CDUnknownBlockType)arg2;
 - (void)queryServer:(id)arg1 requestsAuthorizationForSamples:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)readAuthorizationStatusForQueryServer:(id)arg1 type:(id)arg2 error:(id *)arg3;
-- (_Bool)queryServer:(id)arg1 isAuthorizationStatusDeterminedForTypes:(id)arg2 error:(id *)arg3;
-- (id)queryServer:(id)arg1 filterSamplesForReadAuthorization:(id)arg2;
 - (id)_clientSourceIdentifierWithError:(id *)arg1;
 - (void)_startQueryServer:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)_queue_hasActiveQueries;
-- (void)remote_startQueryWithUUID:(id)arg1 serverDataObject:(id)arg2 queryClass:(Class)arg3 client:(id)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)remote_startHeartRateSummaryQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startHeartRateHistogramQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startStatisticsQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startStatisticsCollectionQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startSourceQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startSampleTypesQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startSampleQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startSampleCountQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startObserverQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startLocationSeriesQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startLatestSummariesQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startFitnessFriendsQueryWithUUID:(id)arg1 serverDataObject:(id)arg2 queryClass:(Class)arg3 clientProxy:(id)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)remote_startDocumentQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startDateRangeQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startCurrentActivitySummaryQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startCorrelationQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startAnchoredObjectQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startActivitySummaryQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)remote_startActivityStatisticsQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)removeTaskServerObserver:(id)arg1;
+- (void)removeObserver:(id)arg1 forTaskServerUUID:(id)arg2;
+- (void)addObserver:(id)arg1 forTaskServerUUID:(id)arg2;
+- (void)taskServerDidInvalidate:(id)arg1;
+- (void)taskServerDidFailToInitializeForUUID:(id)arg1;
+- (void)taskServerDidFinishInitialization:(id)arg1;
+- (id)taskServerWithUUID:(id)arg1;
+- (void)remote_createQueryServerForIdentifier:(id)arg1 queryUUID:(id)arg2 configuration:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)invalidate;
 - (id)initWithParentServer:(id)arg1;
 

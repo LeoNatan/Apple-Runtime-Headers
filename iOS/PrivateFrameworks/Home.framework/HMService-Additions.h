@@ -7,9 +7,11 @@
 #import "HMService.h"
 
 @interface HMService (Additions)
++ (id)hf_descriptionForServiceSubtype:(id)arg1;
 + (id)hf_defaultServiceSubtypeForServiceType:(id)arg1;
 + (id)_hf_allowedChildServicesTypeMap;
 + (id)hf_roomsForServices:(id)arg1;
++ (id)hf_standardServiceTypes;
 + (id)hf_standardServices;
 - (_Bool)hf_canGroupWithService:(id)arg1;
 - (id)hf_effectiveServiceSubtype;

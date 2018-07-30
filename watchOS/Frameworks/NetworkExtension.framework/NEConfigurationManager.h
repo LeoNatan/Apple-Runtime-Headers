@@ -30,7 +30,6 @@
     NSUUID *_userUUID;
     id <NEConfigurationManagerDelegate> _delegate;
     int _configurationChangeSource;
-    CDUnknownBlockType _getIndexDelegateCallback;
     long long _generation;
 }
 
@@ -40,7 +39,6 @@
 + (void)updateFlags:(unsigned long long *)arg1 withConfiguration:(id)arg2;
 + (id)sharedManagerForAllUsers;
 + (id)sharedManager;
-@property(copy) CDUnknownBlockType getIndexDelegateCallback; // @synthesize getIndexDelegateCallback=_getIndexDelegateCallback;
 @property int configurationChangeSource; // @synthesize configurationChangeSource=_configurationChangeSource;
 @property(retain) id <NEConfigurationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSUUID *userUUID; // @synthesize userUUID=_userUUID;
@@ -61,9 +59,11 @@
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
 - (void).cxx_destruct;
+- (void)upgradeLegacyPluginConfigurationsWithUpgradeInfo:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchCarrierBundleNATKeepAliveIntervalOverCell:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchUpgradeInfoForPluginType:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchClientListenerWithBundleID:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)showObsoleteAppAlert;
 - (void)triggerLocalAuthenticationForConfigurationWithID:(id)arg1 withCompletionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)copyIdentities:(id)arg1 fromDomain:(int)arg2 withCompletionQueue:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)handleApplicationsRemoved:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -94,7 +94,6 @@
 - (void)clearLoadedConfigurationsWithIDs:(id)arg1;
 - (void)didLoadConfiguration:(id)arg1;
 - (void)didLoadConfiguration:(id)arg1 withSignature:(id)arg2;
-- (void)deregisterForChangeNotifications;
 - (void)registerForChangeNotifications;
 - (void)notifyChanges;
 - (void)getCurrentIndexWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -107,6 +106,7 @@
 - (id)errorWithCode:(int)arg1 specifics:(id)arg2;
 - (id)description;
 - (void)dealloc;
+- (id)initForAllUsers;
 - (id)initWithPluginType:(id)arg1;
 - (id)init;
 - (id)initWithUserUUID:(id)arg1;

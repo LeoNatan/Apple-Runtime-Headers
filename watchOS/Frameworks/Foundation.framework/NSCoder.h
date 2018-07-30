@@ -12,6 +12,7 @@
 
 + (_Bool)__categorizeException:(id)arg1 intoError:(id *)arg2;
 - (_Bool)_validateAllowedClass:(Class)arg1 forKey:(id)arg2 allowingInvocations:(_Bool)arg3;
+- (_Bool)_validateAllowedClassesContainsClass:(Class)arg1 forKey:(id)arg2;
 - (_Bool)validateClassSupportsSecureCoding:(Class)arg1;
 - (_Bool)validateAllowedClass:(Class)arg1 forKey:(id)arg2;
 - (id)allowedClasses;

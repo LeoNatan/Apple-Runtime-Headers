@@ -7,6 +7,8 @@
 #import "NSString.h"
 
 @interface NSString (TSULogAdditions)
++ (id)tsu_unRedactedStringWithFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
++ (id)tsu_redactedStringWithFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
 - (id)tsu_initUnRedactedWithFormat:(id)arg1;
 - (id)tsu_initRedactedWithFormat:(id)arg1;
 - (id)tsu_initUnRedactedWithFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;

@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) unsigned int displayID; // @synthesize displayID=_displayID;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic, getter=isExternal) _Bool external; // @synthesize external=_external;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -45,12 +46,11 @@
 - (_Bool)expectsSecureRendering;
 - (id)uniqueIdentifier;
 - (long long)type;
-@property(readonly, nonatomic, getter=isTatlDisplay) _Bool tatlDisplay;
+@property(readonly, nonatomic, getter=isCarInstrumentsDisplay) _Bool carInstrumentsDisplay;
 @property(readonly, nonatomic, getter=isCarDisplay) _Bool carDisplay;
 @property(readonly, nonatomic, getter=isMainDisplay) _Bool mainDisplay;
 @property(readonly, nonatomic) _Bool isRootIdentity;
 @property(readonly, copy, nonatomic) FBSDisplayIdentity *rootIdentity;
-- (void)dealloc;
 - (id)_initWithType:(long long)arg1 displayID:(unsigned int)arg2 connectionSeed:(unsigned int)arg3 pid:(int)arg4 external:(_Bool)arg5 uniqueIdentifier:(id)arg6 secure:(_Bool)arg7 root:(id)arg8;
 - (id)init;
 

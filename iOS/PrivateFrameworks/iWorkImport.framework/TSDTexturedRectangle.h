@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _originalFrame;
     CDUnknownBlockType _renderBlock;
     _Bool _singleTextureContainsMipmaps;
-    _Bool _didInitFromGLTexture;
     _Bool _didInitFromLayer;
     _Bool _shouldCleanUpSingleTexture;
+    _Bool _didInitFromGPUTexture;
     NSMapTable *_eventIndexToViewLayerMap;
     struct CGColorSpace *_colorSpace;
     TSUBezierPath *_shapePath;
@@ -79,6 +79,7 @@ __attribute__((visibility("hidden")))
 @property struct CGImage *bakedImage; // @synthesize bakedImage=_bakedImage;
 - (void).cxx_destruct;
 - (void)setupMetalTextureForDevice:(id)arg1;
+- (void)releaseMetalTexture;
 - (_Bool)isMetalTextureSetup;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;
 - (id)viewLayerAtEventIndex:(unsigned long long)arg1;
@@ -118,11 +119,13 @@ __attribute__((visibility("hidden")))
 - (void)p_initializeMap;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
+@property(readonly, nonatomic) _Bool isValid;
 - (void)dealloc;
 - (void)teardown;
 - (id)init;
 - (id)initWithLayer:(id)arg1 forMetalTexture:(id)arg2;
 - (id)initWithLayer:(id)arg1 forGLTexture:(id)arg2;
+- (id)initWithMetalTexture:(id)arg1 frame:(struct CGRect)arg2;
 - (id)initWithTextureInfo:(id)arg1 frame:(struct CGRect)arg2;
 - (id)initWithCGImage:(struct CGImage *)arg1;
 - (id)initWithLayer:(id)arg1;

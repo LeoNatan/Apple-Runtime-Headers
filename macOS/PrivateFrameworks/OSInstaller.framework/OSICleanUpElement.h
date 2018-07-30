@@ -10,11 +10,15 @@
 
 @interface OSICleanUpElement : OSIInstallQueueElement
 {
-    SKDisk *_alternateBlessTarget;
     BOOL _done;
+    SKDisk *_alternateBlessTarget;
     NSError *_error;
 }
 
+@property BOOL done; // @synthesize done=_done;
+@property(retain) NSError *error; // @synthesize error=_error;
+@property(retain) SKDisk *alternateBlessTarget; // @synthesize alternateBlessTarget=_alternateBlessTarget;
+- (void).cxx_destruct;
 - (void)_cleanUpPKGDMGSItemsAtPath:(id)arg1;
 - (void)_writeTALRestoreApps;
 - (void)_writeInstallTypeCookieForServerAndMacBuddy;
@@ -30,7 +34,6 @@
 - (double)estimatedTimeToComplete;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 
 @end
 

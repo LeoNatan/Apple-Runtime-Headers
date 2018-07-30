@@ -4,17 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSUUID;
 
-@interface DMFEndTransactionRequest : CATTaskRequest
+@interface DMFEndTransactionRequest : DMFTaskRequest
 {
     NSUUID *_UUID;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
+@property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

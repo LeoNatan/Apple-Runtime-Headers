@@ -4,17 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CPExclusiveLock.h"
+#import "NSObject.h"
 
-@interface ACAccountMigrationLock : CPExclusiveLock
+#import "NSLocking.h"
+
+@class CPExclusiveLock;
+
+@interface ACAccountMigrationLock : NSObject <NSLocking>
 {
+    CPExclusiveLock *_underlyingLock;
 }
 
-+ (_Bool)migrationFinished;
 + (void)writeMigrationVersionPref;
 + (void)signalMigrationFinished;
 + (id)_currentSystemVersion;
-+ (id)createAccountMigrationLock;
++ (_Bool)isMigrationFinished;
+- (void).cxx_destruct;
+- (void)unlock;
+- (void)lock;
+- (id)init;
 
 @end
 

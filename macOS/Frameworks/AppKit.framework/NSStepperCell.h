@@ -40,10 +40,11 @@
 - (id)_pressureConfigurationIfNeeded;
 - (void)_updateMouseTracking;
 - (void)setControlView:(id)arg1;
+- (void)drawFocusRingMaskWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (struct CGRect)focusRingMaskBoundsForFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (id)_vibrancyFilterForControlView:(id)arg1;
-- (BOOL)_allowsVibrancyForControlView:(id)arg1;
-- (struct __CFDictionary *)_coreUIDrawOptionsWithView:(id)arg1;
+- (int)_vibrancyBlendModeForControlView:(id)arg1;
+- (id)_coreUIDrawOptionsWithView:(id)arg1;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)_stepperImageSizeForControlSize:(unsigned long long)arg1;

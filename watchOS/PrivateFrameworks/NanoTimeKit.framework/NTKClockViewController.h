@@ -18,7 +18,7 @@
 #import "ORBTapGestureRecognizerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CSLPITimer, NCEClockCelebrationViewController, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKQueriableAWDMetrics, NTKTransientFaceCollection, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection;
+@class CSLPITimer, NCEClockCelebrationViewController, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKTransientFaceCollection, NTKUpNextUseMonitor, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection;
 
 @interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSWakeGestureObserver>
 {
@@ -42,10 +42,11 @@
     _Bool _haveFinishedLoadingView;
     CSLPITimer *_complicationRefreshTimer;
     NTKAggdReporter *_aggdReporter;
-    NTKQueriableAWDMetrics *_queriableAWDMetrics;
     NSTimer *_libraryTimeoutTimer;
     NCEClockCelebrationViewController *_celebrationViewController;
     NTKComplicationLocationManager *_complicationLocationManager;
+    _Bool _needsEvaluatePrideAvailable;
+    NTKUpNextUseMonitor *_upNextUseMonitor;
     _Bool _lockScreenBorrowed;
     NSSet *_pauseReasons;
 }
@@ -95,6 +96,11 @@
 - (void)_beginOrbZoom;
 - (void)ORBTapGestureRecognizer:(id)arg1 setScaleFactor:(float)arg2;
 - (void)ORBTapGestureRecognizerDidLatch:(id)arg1;
+- (void)_removePrideFaceFromCollection:(id)arg1 reloadCollection:(CDUnknownBlockType)arg2;
+- (_Bool)_faceCollectionContainsPrideFace:(id)arg1;
+- (void)_addPrideFaceToAddableFaceCollectionIfNecessary;
+- (unsigned int)_indexForPrideFaceInAddableFaces;
+- (void)_updatePrideFaceAvailability;
 - (void)faceLibraryViewControllerDidEndSwiping:(id)arg1;
 - (void)faceLibraryViewControllerDidStartSwiping:(id)arg1;
 - (void)faceLibraryViewControllerDidCompleteSelection:(id)arg1;
@@ -122,6 +128,7 @@
 - (id)powerLogDescription;
 - (id)currentFaceClass;
 - (id)currentFaceDescription;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
@@ -129,6 +136,7 @@
 - (void)_finishLoadingViewIfNecessary;
 - (_Bool)_hasRealFaceCollections;
 - (void)_createOrRecreateFaceContent;
+- (id)_currentFaceCollection;
 - (void)loadView;
 - (_Bool)handleCrownPressed;
 - (void)handleOrdinaryScreenWake;

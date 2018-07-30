@@ -27,7 +27,7 @@
 - (id)init;
 - (void)restoreFromCoder:(id)arg1;
 - (void)archiveToCoder:(id)arg1;
-- (BOOL)shouldRetryDownloadBasedOnLastErrorForPackageIdentifier:(id)arg1 isNetworkError:(char *)arg2;
+- (BOOL)shouldRetryDownloadBasedOnLastErrorForPackageIdentifier:(id)arg1;
 - (id)lastErrorForPackageIdentifier:(id)arg1;
 - (void)setLastError:(id)arg1 forPackageIdentifier:(id)arg2;
 

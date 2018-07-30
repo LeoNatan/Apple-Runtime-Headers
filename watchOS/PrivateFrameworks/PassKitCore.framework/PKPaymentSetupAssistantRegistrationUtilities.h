@@ -17,6 +17,8 @@
 + (void)_bridgePreflight:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (void)_phonePreflight:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (void)preflightPaymentSetupProvisioningController:(id)arg1 forSetupAssistant:(unsigned int)arg2 withCompletion:(CDUnknownBlockType)arg3;
++ (_Bool)_shouldCheckMacNeedsToRun;
++ (_Bool)_macNeedsToRun:(unsigned int *)arg1 secureElementOwnershipState:(unsigned int)arg2;
 + (_Bool)_macNeedsToRun:(unsigned int *)arg1;
 + (_Bool)_bridgeNeedsToRun:(unsigned int *)arg1;
 + (_Bool)_phoneNeedsToRun:(unsigned int *)arg1;

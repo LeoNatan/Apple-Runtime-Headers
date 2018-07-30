@@ -10,6 +10,7 @@
 
 @class GEOLocation, GEOMapRegion, GEOPlaceSearchRequest, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapQuery : PBCodable <NSCopying>
 {
     struct GEOSessionID _sessionID;

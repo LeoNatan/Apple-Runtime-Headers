@@ -66,7 +66,7 @@ struct CoreSignature {
 struct LRUCache<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *> {
     struct __list_node_base<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_alloc_;
     struct map<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iterator<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>, std::__1::less<std::__1::pair<long, Li::Model::CoreSignature>>, std::__1::allocator<std::__1::pair<const std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iterator<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>>>> _map;
     unsigned long long _capacity;
@@ -192,10 +192,10 @@ struct map<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iter
     struct __tree<std::__1::__value_type<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iterator<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>>, std::__1::__map_value_compare<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__value_type<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iterator<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>>, std::__1::less<std::__1::pair<long, Li::Model::CoreSignature>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iterator<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iterator<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__value_type<std::__1::pair<long, Li::Model::CoreSignature>, std::__1::__list_iterator<std::__1::pair<std::__1::pair<long, Li::Model::CoreSignature>, RDModel *>, void *>>, std::__1::less<std::__1::pair<long, Li::Model::CoreSignature>>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -207,23 +207,23 @@ struct shared_ptr<LiRidBitset> {
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*> **__first_;
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*> **__value_;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>*>> {
-                unsigned long long __first_;
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*> **__first_;
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*> **__value_;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>*>> {
-                unsigned long long __first_;
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
@@ -231,13 +231,13 @@ struct unordered_map<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutable
     struct __hash_table<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, std::__1::__unordered_map_hasher<LiTable *, std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, _TableHashFunctor, true>, std::__1::__unordered_map_equal<LiTable *, std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, std::__1::equal_to<LiTable *>, true>, std::__1::allocator<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*> __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<LiTable *, std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, _TableHashFunctor, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<LiTable *, std::__1::__hash_value_type<LiTable *, std::__1::tuple<NSMutableOrderedSet *, NSMutableOrderedSet *, NSMutableOrderedSet *>>, std::__1::equal_to<LiTable *>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };
@@ -246,13 +246,13 @@ struct unordered_map<long, std::__1::unordered_map<long, LiModel *, std::__1::ha
     struct __hash_table<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, std::__1::__unordered_map_hasher<long, std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, std::__1::hash<long>, true>, std::__1::__unordered_map_equal<long, std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, std::__1::equal_to<long>, true>, std::__1::allocator<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*> __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long, std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, std::__1::hash<long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<long, std::__1::__hash_value_type<long, std::__1::unordered_map<long, LiModel *, std::__1::hash<long>, std::__1::equal_to<long>, std::__1::allocator<std::__1::pair<const long, LiModel *>>>>, std::__1::equal_to<long>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };
@@ -261,7 +261,7 @@ struct vector<Li::Sqlite::BufferSegment *, std::__1::allocator<Li::Sqlite::Buffe
     struct BufferSegment **__begin_;
     struct BufferSegment **__end_;
     struct __compressed_pair<Li::Sqlite::BufferSegment **, std::__1::allocator<Li::Sqlite::BufferSegment *>> {
-        struct BufferSegment **__first_;
+        struct BufferSegment **__value_;
     } __end_cap_;
 };
 
@@ -269,7 +269,7 @@ struct vector<Li::Transport::SizedSegment *, std::__1::allocator<Li::Transport::
     struct SizedSegment **__begin_;
     struct SizedSegment **__end_;
     struct __compressed_pair<Li::Transport::SizedSegment **, std::__1::allocator<Li::Transport::SizedSegment *>> {
-        struct SizedSegment **__first_;
+        struct SizedSegment **__value_;
     } __end_cap_;
 };
 
@@ -285,7 +285,7 @@ struct vector<std::__1::shared_ptr<LiRidBitset>, std::__1::allocator<std::__1::s
     shared_ptr_4932a42e *__begin_;
     shared_ptr_4932a42e *__end_;
     struct __compressed_pair<std::__1::shared_ptr<LiRidBitset>*, std::__1::allocator<std::__1::shared_ptr<LiRidBitset>>> {
-        shared_ptr_4932a42e *__first_;
+        shared_ptr_4932a42e *__value_;
     } __end_cap_;
 };
 
@@ -342,7 +342,7 @@ typedef struct vector<std::__1::shared_ptr<LiRidBitset>, std::__1::allocator<std
     shared_ptr_4932a42e *__begin_;
     shared_ptr_4932a42e *__end_;
     struct __compressed_pair<std::__1::shared_ptr<LiRidBitset>*, std::__1::allocator<std::__1::shared_ptr<LiRidBitset>>> {
-        shared_ptr_4932a42e *__first_;
+        shared_ptr_4932a42e *__value_;
     } __end_cap_;
-} vector_4442b5b9;
+} vector_6231458f;
 

@@ -6,16 +6,22 @@
 
 #import "NSObject.h"
 
-@class CPLAccountFlags, CPLFeatureVersionHistory, NSData, NSDictionary;
+#import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@interface CPLLibraryInfo : NSObject
+@class CPLAccountFlags, CPLFeatureVersionHistory, CPLMomentShare, NSData, NSDictionary;
+
+@interface CPLLibraryInfo : NSObject <NSSecureCoding, NSCopying>
 {
     NSDictionary *_assetCounts;
     CPLFeatureVersionHistory *_featureVersionHistory;
-    NSData *_lastKnownSyncAnchor;
+    struct NSData *_lastKnownSyncAnchor;
     NSData *_accountFlagsData;
+    CPLMomentShare *_momentShare;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) CPLMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 @property(copy, nonatomic) NSData *accountFlagsData; // @synthesize accountFlagsData=_accountFlagsData;
 @property(copy, nonatomic) NSData *lastKnownSyncAnchor; // @synthesize lastKnownSyncAnchor=_lastKnownSyncAnchor;
 @property(retain, nonatomic) CPLFeatureVersionHistory *featureVersionHistory; // @synthesize featureVersionHistory=_featureVersionHistory;
@@ -23,6 +29,9 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CPLAccountFlags *accountFlags;
 - (id)prettyDescriptionWithAnchorDesciptionBlock:(CDUnknownBlockType)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

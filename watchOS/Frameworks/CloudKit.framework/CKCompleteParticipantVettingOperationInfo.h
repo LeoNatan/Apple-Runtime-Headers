@@ -18,9 +18,11 @@
     NSString *_routingKey;
     NSData *_encryptedKey;
     NSString *_baseToken;
+    NSString *_displayedHostname;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(retain, nonatomic) NSString *baseToken; // @synthesize baseToken=_baseToken;
 @property(retain, nonatomic) NSData *encryptedKey; // @synthesize encryptedKey=_encryptedKey;
 @property(retain, nonatomic) NSString *routingKey; // @synthesize routingKey=_routingKey;

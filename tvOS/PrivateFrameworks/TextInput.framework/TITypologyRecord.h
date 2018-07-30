@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface TITypologyRecord : NSObject <NSCoding>
+@interface TITypologyRecord : NSObject <NSSecureCoding>
 {
     double _timestamp;
 }
 
++ (id)recordClasses;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (id)textSummaryForAutocorrection:(id)arg1;
 - (id)shortDescription;

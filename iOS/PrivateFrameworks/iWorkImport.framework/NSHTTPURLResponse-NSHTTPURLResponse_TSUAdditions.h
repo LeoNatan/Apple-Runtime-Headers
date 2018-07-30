@@ -7,6 +7,7 @@
 #import "NSHTTPURLResponse.h"
 
 @interface NSHTTPURLResponse (NSHTTPURLResponse_TSUAdditions)
++ (_Bool)tsu_isSuccessStatusCode:(long long)arg1;
 @property(readonly) _Bool tsu_isSuccess;
 @end
 

@@ -7,13 +7,14 @@
 #import "CKRecord.h"
 
 @interface CKRecord (CPLCloudKitImplementation)
-+ (id)cpl_recordFromCPLRecordChange:(id)arg1 withRecordMap:(id)arg2 tempCKAssetURL:(id)arg3 inZone:(id)arg4;
++ (id)cpl_recordFromCPLRecordChange:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 inZone:(id)arg5 error:(id *)arg6;
 + (id)cpl_expungedRecordFromCPLRecordChange:(id)arg1 inZone:(id)arg2;
 + (Class)cpl_recordChangeClassForRecordType:(id)arg1;
-- (void)cplAddResources:(id)arg1 clearMissing:(BOOL)arg2;
-- (id)cplResourcesAreCoherent:(char *)arg1;
-- (id)cplResourceWithType:(unsigned long long)arg1 isCoherent:(char *)arg2;
-- (id)cpl_recordChangeMissingResourceProperties:(id *)arg1;
+- (unsigned long long)cplTotalResourceSize;
+- (BOOL)cplAddResourcesFromChange:(id)arg1 scopeProvider:(id)arg2 clearMissing:(BOOL)arg3 error:(id *)arg4;
+- (id)cplResourcesWithScopedIdentifier:(id)arg1 coherent:(char *)arg2;
+- (id)cplResourceWithType:(unsigned long long)arg1 scopedIdentifier:(id)arg2 isCoherent:(char *)arg3;
+- (id)cpl_recordChangeMissingResourceProperties:(id *)arg1 scopeIdentifier:(id)arg2;
 - (void)cpl_setEncryptedObject:(id)arg1 forKey:(id)arg2;
 - (void)cpl_setNonNilEncryptedObject:(id)arg1 forKey:(id)arg2;
 - (id)cpl_decryptedObjectForKey:(id)arg1 validateClass:(Class)arg2;

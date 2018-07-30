@@ -26,6 +26,7 @@
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 @property(nonatomic) unsigned long long mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
 @property(retain) HKStatisticsCollection *statisticsCollection; // @synthesize statisticsCollection=_statisticsCollection;
 @property(retain) NSNumber *lastAnchor; // @synthesize lastAnchor=_lastAnchor;
@@ -45,7 +46,6 @@
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 anchorDate:(id)arg4 intervalComponents:(id)arg5;
 
 // Remaining properties

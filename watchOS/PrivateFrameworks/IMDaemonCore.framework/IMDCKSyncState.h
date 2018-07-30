@@ -20,6 +20,7 @@
 @property(nonatomic) __weak id <IMDCKSyncStateDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IMKeyValueCollection *keyValueCollection; // @synthesize keyValueCollection=_storage;
 - (void).cxx_destruct;
+- (void)setErrorToKeyRollingError;
 - (void)setErrorToAccountNeedsRepair;
 - (void)broadcastSyncState;
 - (id)serializedRepresentation;

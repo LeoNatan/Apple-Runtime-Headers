@@ -19,6 +19,9 @@
     long long _displayRouteType;
     MPAVBatteryLevel *_batteryLevel;
     _Bool _canAccessRemoteAssets;
+    _Bool _canPlayEncryptedProgressiveDownloadAssets;
+    _Bool _canFetchMediaDataFromSender;
+    _Bool _presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
     _Bool _pickedOnPairedDevice;
     _Bool _playingOnPairedDevice;
     _Bool _requiresPassword;
@@ -47,6 +50,9 @@
 @property(readonly, nonatomic) NSString *playingPairedDeviceName; // @synthesize playingPairedDeviceName=_playingPairedDeviceName;
 @property(readonly, nonatomic) NSArray *auxiliaryDevices; // @synthesize auxiliaryDevices=_auxiliaryDevices;
 @property(readonly, nonatomic) MPAVBatteryLevel *batteryLevel; // @synthesize batteryLevel=_batteryLevel;
+@property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets; // @synthesize presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets=_presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(readonly, nonatomic) _Bool canFetchMediaDataFromSender; // @synthesize canFetchMediaDataFromSender=_canFetchMediaDataFromSender;
+@property(readonly, nonatomic) _Bool canPlayEncryptedProgressiveDownloadAssets; // @synthesize canPlayEncryptedProgressiveDownloadAssets=_canPlayEncryptedProgressiveDownloadAssets;
 @property(readonly, nonatomic) _Bool canAccessRemoteAssets; // @synthesize canAccessRemoteAssets=_canAccessRemoteAssets;
 @property(readonly, nonatomic) long long routeSubtype; // @synthesize routeSubtype=_routeSubtype;
 @property(readonly, nonatomic) long long pickableRouteType; // @synthesize pickableRouteType=_pickableRouteType;

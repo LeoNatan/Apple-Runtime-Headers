@@ -11,9 +11,9 @@
 __attribute__((visibility("hidden")))
 @interface FI_TStandardViewSettings : NSObject
 {
-    struct TNSRef<NSMutableDictionary *, void> _settings;
-    struct TNSRef<FI_TIconViewSettings *, void> _iconViewSettings;
-    struct TNSRef<FI_TListViewSettings *, void> _listViewSettings;
+    struct TNSRef<NSMutableDictionary, void> _settings;
+    struct TNSRef<FI_TIconViewSettings, void> _iconViewSettings;
+    struct TNSRef<FI_TListViewSettings, void> _listViewSettings;
 }
 
 + (void)finalize;

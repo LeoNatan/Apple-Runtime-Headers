@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TFloatingInputWindow : NSPanel
 {
-    struct TNSRef<FI_TFloatingInputView *, void> _floatingInputView;
+    struct TNSRef<FI_TFloatingInputView, void> _floatingInputView;
 }
 
 - (id).cxx_construct;

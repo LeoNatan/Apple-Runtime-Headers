@@ -25,10 +25,3 @@ struct CGSize {
     float _field2;
 };
 
-struct UIEdgeInsets {
-    float top;
-    float left;
-    float bottom;
-    float right;
-};
-

@@ -4,17 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class IKAppMediaItemBridge, NSArray, NSString, NSURL;
+@class IKAppMediaItemBridge, NSString, NSURL;
 
 @protocol IKAppMediaItem
-@property(readonly, nonatomic) __weak IKAppMediaItemBridge *bridge;
+@property(readonly, nonatomic) IKAppMediaItemBridge *bridge;
 @property(retain, nonatomic) NSString *type;
 @property(retain, nonatomic) NSURL *url;
 - (id)objectForKey:(id <NSCopying>)arg1;
 - (void)setObject:(id)arg1 forKey:(id <NSCopying>)arg2;
-
-@optional
-@property(retain, nonatomic) NSArray *chapterGroups;
-@property(retain, nonatomic) NSArray *interstitials;
 @end
 

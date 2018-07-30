@@ -92,6 +92,8 @@
 - (void)workflowControllerWillStep:(id)arg1;
 - (void)workflowControllerWillRun:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)viewDidEndLiveResize;
+- (void)viewWillStartLiveResize;
 - (void)addHeaderView:(id)arg1;
 - (void)removeHeaderView:(id)arg1;
 @property(readonly, nonatomic) NSArray *_visibleActionViews;

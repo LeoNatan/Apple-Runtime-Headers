@@ -26,13 +26,14 @@
 @property(nonatomic, getter=isExtensionCandidate) _Bool extensionCandidate; // @synthesize extensionCandidate=_extensionCandidate;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
 @property(copy, nonatomic) NSString *candidate; // @synthesize candidate=_candidate;
+- (void).cxx_destruct;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)candidateByReplacingWithCandidate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
+- (id)initWithResponseCandidate:(id)arg1;
 - (id)initWithUnchangedInput:(id)arg1;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 extensionCandidate:(_Bool)arg3;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2;

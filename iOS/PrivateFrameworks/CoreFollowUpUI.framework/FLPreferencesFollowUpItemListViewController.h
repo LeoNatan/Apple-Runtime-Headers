@@ -12,7 +12,7 @@
 
 @interface FLPreferencesFollowUpItemListViewController : PSListController <FLSpecifierTapHandlerDelegate>
 {
-    id <FLViewModel> _topViewModel;
+    id <FLViewModel> _viewModel;
     FLSpecifierTapHandler *_actionHandler;
     UIViewController *_presentationContext;
 }
@@ -29,7 +29,7 @@
 - (void)handleURL:(id)arg1;
 - (id)specifiers;
 - (void)setSpecifier:(id)arg1;
-- (id)_topViewModel;
+- (id)_viewModel;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

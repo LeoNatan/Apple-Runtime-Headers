@@ -23,9 +23,7 @@
     BOOL _requiresGraphicsAcceleration;
 }
 
-+ (id)defaultModuleName;
 + (id)floatingMessageModuleWithMessage:(id)arg1;
-+ (id)randomModule;
 + (id)defaultModule;
 + (id)moduleFromLegacyDefaults:(id)arg1;
 + (id)moduleWithDictionary:(id)arg1;

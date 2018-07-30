@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary, OITSUNoCopyDictionary;
 
-__attribute__((visibility("hidden")))
 @interface TCImportFontCache : NSObject
 {
     OITSUNoCopyDictionary *mFontCache;
@@ -17,8 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)stringSizeForText:(id)arg1 ctFontRef:(struct __CTFont *)arg2;
 @property(readonly, nonatomic) NSMutableDictionary *fontNameCache; // @synthesize fontNameCache=mFontNameCache;
-- (void)validateFontInfoInPropertyMap:(id)arg1 baseStyle:(id)arg2;
-- (void)addReplacementFontWarning:(id)arg1 fontName:(id)arg2;
+- (void).cxx_destruct;
 - (struct CGSize)stringSizeForText:(id)arg1 fontName:(id)arg2 fontSize:(int)arg3;
 - (struct CGSize)stringSizeForSpaceWithFontName:(id)arg1 fontSize:(int)arg2;
 - (struct __CTFont *)fontRefForFontName:(id)arg1 size:(int)arg2;

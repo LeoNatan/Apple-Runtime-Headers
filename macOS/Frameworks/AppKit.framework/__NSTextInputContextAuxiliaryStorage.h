@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSPopoverTouchBarItem, NSTextInputContext, NSTouchBar, NSViewController;
+@class NSArray, NSPopoverTouchBarItem, NSTextInputContext, NSTouchBar, NSViewController, RTIInputSystemServiceSession;
 
 __attribute__((visibility("hidden")))
 @interface __NSTextInputContextAuxiliaryStorage : NSObject
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSPopoverTouchBarItem *_characterPickerPopoverTouchBarItem;
     NSPopoverTouchBarItem *_pressAndHoldPopoverTouchBarItem;
     NSPopoverTouchBarItem *_trackpadHandwritingPopoverTouchBarItem;
+    RTIInputSystemServiceSession *_rtiCurrentInputSystemServiceSession;
     struct {
         unsigned int _haveKeyboardIM:1;
         unsigned int _havePressAndHold:1;
@@ -27,8 +28,9 @@ __attribute__((visibility("hidden")))
         unsigned int _haveTrackpadHandwritingInput:1;
         unsigned int _characterPickerDisabled:1;
         unsigned int _haveFunctionRowDeviceKVOObserver:1;
-        unsigned int _extra:26;
-    } _functionRowItemFlags;
+        unsigned int _iosMacClient:1;
+        unsigned int _extra:25;
+    } _ticFlags;
 }
 
 @property(retain) NSPopoverTouchBarItem *trackpadHandwritingPopoverTouchBarItem; // @synthesize trackpadHandwritingPopoverTouchBarItem=_trackpadHandwritingPopoverTouchBarItem;

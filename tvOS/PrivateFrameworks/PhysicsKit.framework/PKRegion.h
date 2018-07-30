@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@interface PKRegion : NSObject <NSCopying, NSCoding>
+@interface PKRegion : NSObject <NSCopying, NSSecureCoding>
 {
     int _shape;
     _Bool _isExclusive;
@@ -22,6 +22,7 @@
 }
 
 + (id)infiniteRegion;
++ (_Bool)supportsSecureCoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)containsPoints:(const float *)arg1 locationStride:(long long)arg2 results:(char *)arg3 resultsStride:(long long)arg4 count:(int)arg5;
@@ -39,6 +40,7 @@
 - (_Bool)isEmpty;
 - (_Bool)isInfinite;
 @property(readonly, nonatomic) struct CGPath *path;
+- (_Bool)isEqualToRegion:(id)arg1;
 
 @end
 

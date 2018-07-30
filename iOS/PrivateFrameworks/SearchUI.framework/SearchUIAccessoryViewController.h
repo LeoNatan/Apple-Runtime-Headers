@@ -22,6 +22,7 @@
 @property(retain) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (_Bool)shouldTopAlignForAccessibilityContentSizes;
+- (_Bool)isPrimarilyTextView;
 - (void)buttonPressed;
 - (void)updateWithResult:(id)arg1;
 - (void)updateWithResult:(id)arg1 resultForFeedback:(id)arg2;

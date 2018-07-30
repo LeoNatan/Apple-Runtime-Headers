@@ -6,17 +6,19 @@
 
 #import "NSObject.h"
 
+#import "DEDSecureArchiving.h"
 #import "NSSecureCoding.h"
 
 @class NSDictionary, NSString;
 
-@interface DEDBugSessionOperation : NSObject <NSSecureCoding>
+@interface DEDBugSessionOperation : NSObject <NSSecureCoding, DEDSecureArchiving>
 {
     long long _type;
     NSDictionary *_options;
     NSString *_identifier;
 }
 
++ (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
 + (id)hashingKeyWithId:(id)arg1 type:(long long)arg2;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
@@ -26,7 +28,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)hashingKey;
-- (id)description;
+@property(readonly, copy) NSString *description;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -20,6 +20,7 @@
 }
 
 + (void)getErrorDescription:(out id *)arg1 detailedErrorDescription:(out id *)arg2 forCameraStreamError:(id)arg3;
++ (id)cameraDemoURLWithName:(id)arg1 extension:(id)arg2;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 - (void).cxx_destruct;
@@ -29,6 +30,8 @@
 - (id)copyWithValueSource:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)_subclass_updateWithOptions:(id)arg1;
+- (id)demoMovieURL;
+- (id)demoSnapshotURL;
 @property(readonly, nonatomic) HMAccessory *accessory;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

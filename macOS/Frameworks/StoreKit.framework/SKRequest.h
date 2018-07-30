@@ -6,15 +6,22 @@
 
 #import "NSObject.h"
 
+@class SKPaymentQueueClient;
+
 @interface SKRequest : NSObject
 {
     id _requestInternal;
 }
 
 - (void).cxx_destruct;
-- (void)issueRequestForIdentifier:(id)arg1;
-@property(nonatomic) __weak id <SKRequestDelegate> delegate;
+- (void)_endBackgroundTask;
+- (void)_beginBackgroundTask;
+- (void)_startWithMessage:(id)arg1 replyBlock:(CDUnknownBlockType)arg2;
+- (void)_shutdownRequest;
+- (void)_start;
+@property(copy, nonatomic) SKPaymentQueueClient *paymentQueueClient;
 - (void)start;
+@property(nonatomic) __weak id <SKRequestDelegate> delegate;
 - (void)cancel;
 - (id)init;
 

@@ -7,12 +7,12 @@
 #import "UIMailActivity.h"
 
 #import "MFMailComposeViewControllerDelegate.h"
-#import "PUActivity.h"
+#import "PUMomentShareActivity.h"
 
 @class MFMailComposeViewController, NSString, PLManagedAsset, PLProgressView, PLUIEditVideoViewController, PUActivityItemSource, PUActivityItemSourceController, UIViewController;
 
 __attribute__((visibility("hidden")))
-@interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUActivity>
+@interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUMomentShareActivity>
 {
     UIViewController *_referenceViewController;
     PLManagedAsset *_currentVideo;
@@ -29,17 +29,28 @@ __attribute__((visibility("hidden")))
 
 + (void)openEmailAccountPrefs;
 + (_Bool)allowedToModifyEmailAccounts;
++ (id)_momentShareLinkActivityItemsForURL:(id)arg1 momentShare:(id)arg2;
++ (id)_expirationStringForMomentShare:(id)arg1;
++ (id)_momentShareLinkTitleForMomentShare:(id)arg1;
++ (id)_momentShareLinkSubjectForMomentShare:(id)arg1;
++ (id)_momentShareLinkPrompt;
++ (_Bool)wantsMomentShareLinkForAssetCount:(long long)arg1;
 @property(nonatomic) __weak PUActivityItemSourceController *itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void).cxx_destruct;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
 - (void)activityDidFinish:(_Bool)arg1;
+- (void)performActivity;
 - (_Bool)_presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)mailComposeViewController;
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
+- (void)_prepareWithMomentShareLink:(id)arg1;
+- (_Bool)_canPerformForIndividualAssetsWithActivityItems:(id)arg1;
+- (_Bool)_canPerformWithLink;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
+- (_Bool)_momentShareLinkDidFail;
 - (void)_sendViaEmail;
 - (void)_composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2;
 - (void)_transcodeVideo:(id)arg1 usingMode:(int)arg2;

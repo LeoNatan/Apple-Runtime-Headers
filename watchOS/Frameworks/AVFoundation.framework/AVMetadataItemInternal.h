@@ -8,6 +8,7 @@
 
 @class NSDate, NSDictionary, NSLocale, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVMetadataItemInternal : NSObject
 {
     struct OpaqueFigMetadataReader *reader;

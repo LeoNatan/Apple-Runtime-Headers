@@ -13,7 +13,6 @@
 
 @class ABCardCollectionView, ABCardViewStyleProvider, ABCollectionViewItem, ABImmediateActionGestureAdapter, ABOverlayView, ABThrottledTrackingAreaMonitor, CNCollectionViewTouchBar, NSArray, NSButton, NSPopUpButton, NSStackView, NSString, NSTrackingArea;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionRowView : NSView <CNCollectionViewTouchBarDelegate, ABPopUpButtonDelegate, ABCardCollectionRowView, NSTextFieldDelegate>
 {
     NSButton *_addValueButton;
@@ -81,8 +80,8 @@ __attribute__((visibility("hidden")))
 - (void)didRemoveFromCollection:(id)arg1;
 - (void)didChangeLabelForCollection:(id)arg1;
 - (void)didInsertIntoCollectionView:(id)arg1;
-- (BOOL)shouldDrawRolloverHilight;
-- (void)prepareForDrawingWithoutRolloverHilight;
+- (BOOL)shouldDrawRolloverHighlight;
+- (void)prepareForDrawingWithoutRolloverHighlight;
 - (void)mouseExitedValueTrackingArea;
 - (void)mouseExitedLabelTrackingArea;
 - (void)mouseExited:(id)arg1;
@@ -113,16 +112,8 @@ __attribute__((visibility("hidden")))
 - (void)attachOverlayViewToFocusedView;
 @property(retain) NSPopUpButton *messagingServiceChooserPopup;
 @property(retain) NSView *messagingServiceLabel;
-- (id)suggestedColor;
 - (id)valueTextColor;
 - (id)labelTextColor;
-- (id)valueMouseoverValueTextColorKey;
-- (id)valueTextColorKey;
-- (id)valueFontSizeKey;
-- (id)valueFontNameKey;
-- (id)labelTextColorKey;
-- (id)labelFontSizeKey;
-- (id)labelFontNameKey;
 - (void)updateTextColors;
 - (void)updateValueFontWithFont:(id)arg1;
 - (void)updateValueFont;
@@ -161,10 +152,7 @@ __attribute__((visibility("hidden")))
 - (void)hideGlyphButtonsIfNeeded;
 - (void)showGlyphsButtonsIfNeeded;
 - (void)setGlyphsButtonsVisible:(BOOL)arg1;
-- (BOOL)isVibrantDarkAppearance;
-- (id)labelMouseOverValueHighlightColor;
-- (id)labelMouseOverValueTextColor;
-- (id)labelMouseOverLabelTextColor;
+- (void)updateGlyphButtonsVisibility;
 - (void)drawValueHighlightRect:(struct CGRect)arg1 labelRect:(struct CGRect)arg2;
 - (void)drawLabelHighlightRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;

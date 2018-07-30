@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSLock, NSMutableArray;
 
-@interface SUGradient : NSObject <NSCoding, NSCopying>
+@interface SUGradient : NSObject <NSSecureCoding, NSCopying>
 {
     NSMutableArray *_colorStops;
     NSLock *_lock;
@@ -21,6 +21,7 @@
     long long _type;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)gradientWithColor:(id)arg1;
 - (id)description;
 @property(readonly) struct SUGradientPoint p1;

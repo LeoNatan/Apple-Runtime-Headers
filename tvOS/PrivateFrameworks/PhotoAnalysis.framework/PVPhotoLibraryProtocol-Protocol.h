@@ -23,13 +23,13 @@
 - (id <PVFetchResultProtocol>)pv_fetchMomentsForPerson:(id <PVPersonProtocol>)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchMomentsWithLocalIdentifiers:(NSArray *)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchMoments;
+- (unsigned long long)pv_numberOfFacesWithFaceprints;
 - (NSDictionary *)pv_fetchFacesGroupedByAssetLocalIdentifierForAssets:(id <PVFetchResultProtocol>)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchFacesForFaceGroup:(id <PVFaceGroupProtocol>)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchFacesForPersonLocalIdentifiers:(NSArray *)arg1 inMoment:(id <PVMomentProtocol>)arg2;
 - (id <PVFetchResultProtocol>)pv_fetchFacesForPerson:(id <PVPersonProtocol>)arg1 inMoment:(id <PVMomentProtocol>)arg2;
 - (id <PVFetchResultProtocol>)pv_fetchFacesForPerson:(id <PVPersonProtocol>)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchFacesWithLocalIdentifiers:(NSArray *)arg1;
-- (id <PVFetchResultProtocol>)pv_fetchFaces;
 - (NSDictionary *)pv_fetchPersonsGroupedByAssetLocalIdentifierForAssets:(id <PVFetchResultProtocol>)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchInvalidCandidatePersonsForPerson:(id <PVPersonProtocol>)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchCandidatePersonsForPerson:(id <PVPersonProtocol>)arg1;

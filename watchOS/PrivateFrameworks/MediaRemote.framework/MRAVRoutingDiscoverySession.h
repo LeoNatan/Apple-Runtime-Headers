@@ -30,9 +30,9 @@
 // Remaining properties
 @property(readonly, nonatomic) NSArray *availableEndpoints; // @dynamic availableEndpoints;
 @property(readonly, nonatomic) NSArray *availableOutputDevices; // @dynamic availableOutputDevices;
+@property(readonly, nonatomic) _Bool devicePresenceDetected; // @dynamic devicePresenceDetected;
 @property(nonatomic) unsigned int discoveryMode; // @dynamic discoveryMode;
 @property(readonly, nonatomic) unsigned int endpointFeatures; // @dynamic endpointFeatures;
-@property(readonly, nonatomic) _Bool hasAvailableEndpoints; // @dynamic hasAvailableEndpoints;
 @property(copy, nonatomic) NSString *routingContextUID; // @dynamic routingContextUID;
 @property(nonatomic) unsigned int targetAudioSessionID; // @dynamic targetAudioSessionID;
 

@@ -6,10 +6,11 @@
 
 #import <VideoProcessing/VCPVideoAnalyzer.h>
 
-@class NSMutableArray, NSNumber, VCPCNNData, VCPCNNModel, VCPVideoActivityDescriptor;
+@class NSMutableArray, NSNumber, VCPCNNData, VCPCNNModel, VCPFrameAnalysisStats, VCPVideoActivityDescriptor;
 
 @interface VCPVideoActivityAnalyzer : VCPVideoAnalyzer
 {
+    VCPFrameAnalysisStats *_frameStats;
     VCPVideoActivityDescriptor *_activityDescriptor;
     NSMutableArray *_activityScores;
     NSMutableArray *_validActivityScores;
@@ -31,7 +32,7 @@
 
 - (void).cxx_destruct;
 - (id)results;
-- (int)finishAnalysisPass:(CDStruct_e83c9415)arg1;
+- (int)finishAnalysisPass:(CDStruct_e83c9415)arg1 fpsRate:(float)arg2;
 - (void)addSceneClassificationContributionToActivityLevel:(float *)arg1;
 - (float)actionScoreInTimeRange:(CDStruct_e83c9415)arg1;
 - (void)addSceneSwitchFrequencyConstributionToActivityLevel:(float *)arg1;
@@ -47,8 +48,8 @@
 - (void)resetActivityStatsAtTime:(CDStruct_1b6d18a9)arg1;
 - (void)normalizeActivityDescriptor;
 - (void)generateActivityDescriptor;
-- (int)prepareActivityStats:(id)arg1;
-- (id)init;
+- (int)prepareActivityStats;
+- (id)initWithFrameStats:(id)arg1;
 
 @end
 

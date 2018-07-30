@@ -6,80 +6,25 @@
 
 #import "NSView.h"
 
-@class CAShapeLayer, MKSmallCalloutView, NSColor, NSTimer, NSVisualEffectView;
+@class MKAnnotationView;
 
 @interface MKCalloutView : NSView
 {
-    struct CGRect _boundary;
-    NSColor *_leftViewColor;
-    struct {
-        struct CGPoint origin;
-        struct CGPoint offset;
-        int position;
-        struct CGPoint desiredPoint;
-        struct CGRect desiredBounds;
-    } _anchor;
-    struct CGRect _frame;
-    id _delegate;
-    struct {
-        unsigned int animated:1;
-        unsigned int didMoveCalled:1;
-        unsigned int hasPendingAnimatedLayout:1;
-        unsigned int reserved:28;
-    } _flags;
-    NSTimer *_layoutAnimationTimer;
-    NSVisualEffectView *_backdropView;
-    CAShapeLayer *_contentMaskLayer;
-    NSView *_contentView;
-    NSView *_leftViewBackground;
-    NSView *_shadowView;
-    MKSmallCalloutView *_calloutView;
+    BOOL _parallaxEnabled;
+    MKAnnotationView *_annotationView;
 }
 
-+ (double)defaultHeight;
+@property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
+@property(readonly) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void).cxx_destruct;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (id)accessibilityAttributeNames;
-- (BOOL)isFlipped;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)completeBounceAnimation;
-- (void)_markDidMoveCalled;
-- (void)fadeOutWithDuration:(double)arg1;
-- (void)removeFromSuperview;
-- (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void *)arg3;
-- (void)setAnchorPoint:(struct CGPoint)arg1 boundaryRect:(struct CGRect)arg2 animate:(BOOL)arg3;
 @property(readonly, nonatomic, getter=isLeftAnchored) BOOL leftAnchored;
-- (void)_runBounceAnimation;
-- (void)_layoutSubviews:(BOOL)arg1;
-- (void)_updateLeftBackgroundView;
-- (void)forceAnchorPosition:(int)arg1;
-- (struct CGPath *)newMaskCGPath;
-- (void)_updateMask;
-- (void)setFrame:(struct CGRect)arg1;
-- (void)_setOriginForScale:(double)arg1;
-- (struct CGPoint)_originForScale:(double)arg1;
-- (void)getActualAnchorPoint:(struct CGPoint *)arg1 frame:(struct CGRect *)arg2 forDesiredAnchorPoint:(struct CGPoint)arg3 boundaryRect:(struct CGRect)arg4;
-- (double)_minimumCalloutWidthForView:(id)arg1;
-- (struct CGPoint)anchorPoint;
-- (struct CGPoint)offset;
-- (void)setOffset:(struct CGPoint)arg1;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)dealloc;
+@property(readonly, nonatomic) long long anchorPosition;
+@property(readonly, nonatomic, getter=isVisibile) BOOL visible;
+- (void)dismissAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)showAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)initWithAnnotationView:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)setRightView:(id)arg1;
-- (void)setLeftView:(id)arg1;
-- (void)_scheduleLayoutAnimation;
-- (void)_layoutAnimation;
-- (void)_setLayoutAnimationTimer:(id)arg1;
-- (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
-- (void)setDetailView:(id)arg1;
-- (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
-- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
-- (void)setLeftView:(id)arg1 backgroundColor:(id)arg2 animated:(BOOL)arg3;
-- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 
 @end
 

@@ -13,6 +13,7 @@
     NSXPCConnection *_connection;
 }
 
+- (id)currentStateDictionary;
 - (void)submitSample:(id)arg1;
 - (void)connect;
 - (void)dealloc;

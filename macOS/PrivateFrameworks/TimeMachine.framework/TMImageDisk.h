@@ -16,6 +16,7 @@
 
 @property(readonly) NSString *imagePath; // @synthesize imagePath=_imagePath;
 @property(readonly) unsigned int imageType; // @synthesize imageType=_imageType;
+- (id)description;
 - (id)_attachNewDeviceWithCapacity:(unsigned long long)arg1;
 - (BOOL)_create:(unsigned long long)arg1;
 - (id)initWithVolumeName:(id)arg1 imageType:(unsigned int)arg2 fileSystemType:(unsigned int)arg3 capacity:(unsigned long long)arg4 arbiter:(id)arg5;

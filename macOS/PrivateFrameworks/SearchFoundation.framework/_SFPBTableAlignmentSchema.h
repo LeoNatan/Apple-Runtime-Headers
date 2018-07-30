@@ -28,7 +28,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasMetadata;
 - (id)tableColumnAlignmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)tableColumnAlignmentCount;
 - (void)addTableColumnAlignment:(id)arg1;

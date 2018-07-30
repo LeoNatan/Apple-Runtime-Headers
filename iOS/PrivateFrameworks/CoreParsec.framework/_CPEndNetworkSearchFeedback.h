@@ -11,37 +11,30 @@
 #import "_CPFeedbackUUID.h"
 #import "_CPProcessableFeedback.h"
 
-@class NSData, NSDictionary, NSString, _CPStruct;
+@class NSData, NSDictionary, NSString, _CPNetworkTimingData;
 
 @interface _CPEndNetworkSearchFeedback : PBCodable <_CPProcessableFeedback, _CPFeedbackUUID, _CPEndNetworkSearchFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int responseSize:1;
-        unsigned int statusCode:1;
-        unsigned int duration:1;
-    } _has;
     int _statusCode;
     unsigned long long _timestamp;
     long long _responseSize;
-    _CPStruct *_networkTimingData;
     NSString *_uuid;
     NSString *_parsecStatus;
     NSString *_fbq;
     double _duration;
     NSString *_partialClientIp;
+    _CPNetworkTimingData *_timingData;
 }
 
-+ (id)_networkTimingStructFromDictionary:(id)arg1;
+@property(retain, nonatomic) _CPNetworkTimingData *timingData; // @synthesize timingData=_timingData;
 @property(copy, nonatomic) NSString *partialClientIp; // @synthesize partialClientIp=_partialClientIp;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *fbq; // @synthesize fbq=_fbq;
 @property(copy, nonatomic) NSString *parsecStatus; // @synthesize parsecStatus=_parsecStatus;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-@property(retain, nonatomic) _CPStruct *networkTimingData; // @synthesize networkTimingData=_networkTimingData;
 @property(nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
 @property(nonatomic) long long responseSize; // @synthesize responseSize=_responseSize;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
@@ -51,15 +44,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasPartialClientIp;
-@property(readonly, nonatomic) _Bool hasDuration;
-@property(readonly, nonatomic) _Bool hasFbq;
-@property(readonly, nonatomic) _Bool hasParsecStatus;
-@property(readonly, nonatomic) _Bool hasUuid;
-@property(readonly, nonatomic) _Bool hasNetworkTimingData;
-@property(readonly, nonatomic) _Bool hasStatusCode;
-@property(readonly, nonatomic) _Bool hasResponseSize;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 @property(readonly, nonatomic) _Bool requiresQueryId;
 @property(readonly, nonatomic) id feedbackJSON;

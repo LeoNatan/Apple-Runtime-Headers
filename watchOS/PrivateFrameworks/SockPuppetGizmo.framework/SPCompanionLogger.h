@@ -6,15 +6,15 @@
 
 #import "NSObject.h"
 
-@class SPCompanionConnection;
+@class SPExtensionConnection;
 
 @interface SPCompanionLogger : NSObject
 {
-    SPCompanionConnection *_companionConnection;
+    SPExtensionConnection *_extensionConnection;
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak SPCompanionConnection *companionConnection; // @synthesize companionConnection=_companionConnection;
+@property(nonatomic) __weak SPExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
 - (void).cxx_destruct;
 - (void)logMessage:(id)arg1;
 

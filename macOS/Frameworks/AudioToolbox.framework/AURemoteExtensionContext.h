@@ -8,27 +8,33 @@
 
 #import "AUAudioUnitXPCProtocol.h"
 
-@class AUAudioUnit, AUAudioUnitViewService, AUParameterTree, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_voucher>;
+@class AUAudioUnit, AUAudioUnitViewService, AUParameterTree, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_voucher>, NSXPCConnection;
 
 @interface AURemoteExtensionContext : NSExtensionContext <AUAudioUnitXPCProtocol>
 {
     AUAudioUnit *_audioUnit;
     _Bool _isUIExtension;
     struct AudioComponentDescription _componentDescription;
-    id <AUAudioUnitHostProtocol> _remoteHost;
+    NSXPCConnection *_remoteHostXPCConnection;
     struct AUExtRenderingServer *_renderServer;
     NSObject<OS_dispatch_queue> *_propertyObserverQueue;
     NSMutableArray *_pendingChangedProperties;
     int _deferPropertyChangeNotifications;
     NSObject<OS_voucher> *_initializationVoucher;
     AUParameterTree *_cachedParameterTree;
+    struct reply_watchdog_factory _replyWatchdogFactory;
     AUAudioUnitViewService *_viewService;
 }
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
 @property(nonatomic) AUAudioUnitViewService *viewService; // @synthesize viewService=_viewService;
-- (void)selectViewConfiguration:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)disableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)enableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)profileStateForCable:(unsigned char)arg1 channel:(unsigned char)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)selectViewConfiguration:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)supportedViewConfigurations:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_fetchAndClearPendingChangedProperties;
@@ -43,16 +49,16 @@
 - (void)setBusCount:(unsigned long long)arg1 scope:(unsigned int)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)setBusName:(unsigned int)arg1 scope:(unsigned int)arg2 name:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)setBusFormat:(unsigned int)arg1 scope:(unsigned int)arg2 format:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)removePropertyObserver:(id)arg1 context:(unsigned long long)arg2;
-- (void)addPropertyObserver:(id)arg1 context:(unsigned long long)arg2;
+- (void)removePropertyObserver:(id)arg1 context:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)addPropertyObserver:(id)arg1 context:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)valueForProperty:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)valueForKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)reset;
+- (void)reset:(CDUnknownBlockType)arg1;
 - (void)uninitialize:(CDUnknownBlockType)arg1;
 - (void)initialize2:(int)arg1 formats:(id)arg2 maxFrames:(unsigned long long)arg3 buffer:(id)arg4 bufferSize:(unsigned int)arg5 beginSem:(id)arg6 endSem:(id)arg7 reply:(CDUnknownBlockType)arg8;
-- (void)setWorkIntervalPort:(id)arg1;
+- (void)setWorkIntervalPort:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)initialize:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getBusses:(unsigned int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)open:(CDUnknownBlockType)arg1;

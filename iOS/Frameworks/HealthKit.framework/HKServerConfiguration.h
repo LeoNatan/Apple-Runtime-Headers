@@ -10,7 +10,6 @@
 
 @class HKProfileIdentifier, NSString;
 
-__attribute__((visibility("hidden")))
 @interface HKServerConfiguration : NSObject <NSSecureCoding>
 {
     unsigned int _applicationSDKVersion;

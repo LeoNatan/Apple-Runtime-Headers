@@ -8,21 +8,21 @@
 
 #import "NSCopying.h"
 
-@class ASCodableRelationship, NSMutableArray, NSString;
+@class ASCodableRelationshipContainer, NSMutableArray, NSString;
 
 @interface ASCodableContact : PBCodable <NSCopying>
 {
     NSMutableArray *_destinations;
     NSString *_fullName;
     NSString *_linkedContactStoreIdentifier;
-    ASCodableRelationship *_relationship;
-    ASCodableRelationship *_remoteRelationship;
+    ASCodableRelationshipContainer *_relationshipContainer;
+    ASCodableRelationshipContainer *_remoteRelationshipContainer;
     NSString *_shortName;
 }
 
 + (Class)destinationsType;
-@property(retain, nonatomic) ASCodableRelationship *remoteRelationship; // @synthesize remoteRelationship=_remoteRelationship;
-@property(retain, nonatomic) ASCodableRelationship *relationship; // @synthesize relationship=_relationship;
+@property(retain, nonatomic) ASCodableRelationshipContainer *remoteRelationshipContainer; // @synthesize remoteRelationshipContainer=_remoteRelationshipContainer;
+@property(retain, nonatomic) ASCodableRelationshipContainer *relationshipContainer; // @synthesize relationshipContainer=_relationshipContainer;
 @property(retain, nonatomic) NSMutableArray *destinations; // @synthesize destinations=_destinations;
 @property(retain, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
@@ -37,8 +37,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasRemoteRelationship;
-@property(readonly, nonatomic) _Bool hasRelationship;
+@property(readonly, nonatomic) _Bool hasRemoteRelationshipContainer;
+@property(readonly, nonatomic) _Bool hasRelationshipContainer;
 - (id)destinationsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)destinationsCount;
 - (void)addDestinations:(id)arg1;

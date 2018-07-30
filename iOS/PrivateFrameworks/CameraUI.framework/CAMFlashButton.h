@@ -39,6 +39,7 @@
 - (long long)numberOfMenuItems;
 - (long long)indexForMode:(long long)arg1;
 - (long long)modeForIndex:(long long)arg1;
+- (void)setAllowsAutomaticFlash:(_Bool)arg1 needsReloadData:(_Bool)arg2;
 @property(nonatomic) long long flashMode;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithLayoutStyle:(long long)arg1;

@@ -6,9 +6,9 @@
 
 #import <SpriteKit/SKWarpGeometry.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface SKWarpGeometryGrid : SKWarpGeometry <NSCoding>
+@interface SKWarpGeometryGrid : SKWarpGeometry <NSSecureCoding>
 {
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _sourcePositions;
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _destPositions;
@@ -20,6 +20,7 @@
 +     // Error parsing type: @48@0:8q16q24r^32r^40, name: gridWithColumns:rows:sourcePositions:destPositions:
 + (id)gridWithColumns:(long long)arg1 rows:(long long)arg2;
 + (id)grid;
++ (_Bool)supportsSecureCoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -37,6 +38,7 @@
 -     // Error parsing type: 24@0:8q16, name: sourcePositionAtIndex:
 @property(readonly, nonatomic) long long vertexCount;
 - (_Bool)isIdentityWarp;
+- (_Bool)isEqualToGrid:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 -     // Error parsing type: @48@0:8q16q24r^32r^40, name: initWithColumns:rows:sourcePositions:destPositions:

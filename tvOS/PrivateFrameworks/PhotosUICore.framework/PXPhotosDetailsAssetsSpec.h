@@ -23,7 +23,6 @@
     struct UIEdgeInsets _gridContentInsets;
 }
 
-+ (struct CGSize)bestItemSizeForAvailableWidth:(double)arg1 screenScale:(double)arg2 bestSpacing:(double *)arg3 bestInset:(double *)arg4;
 + (_Bool)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
 @property(readonly, nonatomic) PXWidgetSpec *_widgetSpec; // @synthesize _widgetSpec=__widgetSpec;
 @property(readonly, nonatomic) unsigned long long detailsOptions; // @synthesize detailsOptions=_detailsOptions;

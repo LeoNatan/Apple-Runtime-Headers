@@ -30,6 +30,7 @@
 - (void)setFontName:(id)arg1 baselineOffset:(float)arg2 forFontSelector:(id)arg3;
 - (void)setColor:(struct _rgbquad)arg1 forName:(const char *)arg2 excludeFromFilter:(_Bool)arg3;
 - (void)updateBitmapInfo;
+- (void)setAppearanceIdentifier:(unsigned short)arg1 forName:(id)arg2;
 - (void)setCatalogGlobalData:(id)arg1;
 - (void)setAsset:(id)arg1 forKey:(const void *)arg2 withLength:(unsigned long long)arg3;
 - (void)setAsset:(id)arg1 forKey:(id)arg2;

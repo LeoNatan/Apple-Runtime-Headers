@@ -18,8 +18,8 @@
     IMChatItem *_nextStaleChatItem;
 }
 
-+ (_Bool)testShouldShowSMSSpamForChat:(id)arg1 chatItems:(id)arg2;
-+ (_Bool)testShouldShowReportSpamForChat:(id)arg1 chatItems:(id)arg2;
++ (_Bool)testShouldShowSMSSpamForChat:(id)arg1 items:(id)arg2;
++ (_Bool)testShouldShowReportSpamForChat:(id)arg1 items:(id)arg2;
 - (void).cxx_destruct;
 - (id)_initWithChat:(id)arg1;
 - (id)_itemWithChatItemsDeleted:(id)arg1 fromItem:(id)arg2;

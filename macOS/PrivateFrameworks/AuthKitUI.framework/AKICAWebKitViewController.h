@@ -55,7 +55,6 @@
 @property(nonatomic) __weak id <AKICAWebKitViewControllerDelegate> icaWebKitViewControllerDelegate; // @synthesize icaWebKitViewControllerDelegate=_icaWebKitViewControllerDelegate;
 @property(nonatomic) __weak id <AKICAUIDelegate> icaUIDelegate; // @synthesize icaUIDelegate=_icaUIDelegate;
 - (void).cxx_destruct;
-- (void)validateLocalPasswordWithTitle:(id)arg1 forcingReprompt:(BOOL)arg2 callback:(id)arg3;
 - (void)validateLocalPassword:(id)arg1;
 - (void)runAppleIDOptOut:(id)arg1;
 - (void)obtainAuthRight:(id)arg1;

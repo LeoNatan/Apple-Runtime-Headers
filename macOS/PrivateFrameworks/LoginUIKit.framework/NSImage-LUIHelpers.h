@@ -7,6 +7,7 @@
 #import "NSImage.h"
 
 @interface NSImage (LUIHelpers)
++ (id)stretchableRoundedRectImage;
 + (int)optionsForStyle:(int)arg1;
 + (id)imageForIdentifier:(id)arg1 options:(int)arg2;
 + (id)imageForIdentifier:(id)arg1 pressed:(BOOL)arg2;

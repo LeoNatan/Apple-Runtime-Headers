@@ -15,8 +15,11 @@
 - (BOOL)swizzledMakeFirstResponder:(id)arg1;
 - (BOOL)swizzledHostWindowIsKey;
 - (BOOL)swizzledIsKeyWindow;
+- (void)swizzledBecomeKeyWindow;
+- (void)swizzledResignKeyWindow;
 - (void)swizzledShake;
 - (void)swizzledSetCursorForMouseLocation:(struct CGPoint)arg1;
+- (struct CGSRegionObject *)swizzledRegionForOpaqueViewsBlockingDraggableFrame:(struct CGRect)arg1;
 - (BOOL)swizzledCanBecomeKeyWindow;
 - (void)swizzledSendEvent:(id)arg1;
 - (id)swizzledAccessibilityAttributeValue:(id)arg1;
@@ -27,11 +30,11 @@
 - (struct CGRect)swizzledConstrainFrameRect:(struct CGRect)arg1 toScreen:(id)arg2;
 - (void)swizzledEndSheet:(id)arg1 returnCode:(long long)arg2;
 - (void)swizzledEndSheet:(id)arg1;
-- (void)endRemoteSheet:(id)arg1;
+- (void)endHostSheet:(id)arg1;
 - (void)swizzledBeginCriticalSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)swizzledBeginSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_beginSheet:(id)arg1 isCritical:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)beginLocalSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 isCritical:(BOOL)arg3;
+- (void)beginServiceSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 isCritical:(BOOL)arg3;
 - (void)swizzledHierarchyDidChangeInView:(id)arg1;
 - (void)swizzledSetStyleMask:(unsigned long long)arg1;
 - (unsigned long long)swizzledStyleMask;
@@ -44,5 +47,7 @@
 - (void)swizzledDragWindowRelativeToMouseDown:(struct CGPoint)arg1;
 - (void)swizzledRemoveChildWindow:(id)arg1;
 - (void)swizzledAddChildWindow:(id)arg1 ordered:(long long)arg2;
+- (void)swizzledSetBackgroundColor:(id)arg1;
+- (id)swizzledBackgroundColor;
 @end
 

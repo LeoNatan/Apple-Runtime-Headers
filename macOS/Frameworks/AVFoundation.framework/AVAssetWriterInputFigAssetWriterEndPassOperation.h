@@ -8,6 +8,7 @@
 
 @class AVAssetWriterInputPassDescription;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputFigAssetWriterEndPassOperation : AVOperation
 {
     struct OpaqueFigAssetWriter *_figAssetWriter;

@@ -33,8 +33,8 @@
 + (void)setClassName:(id)arg1 forClass:(Class)arg2;
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
 + (id)archivedDataWithRootObject:(id)arg1;
-+ (void)initialize;
 + (id)archivedDataWithRootObject:(id)arg1 requiringSecureCoding:(BOOL)arg2 error:(id *)arg3;
++ (void)initialize;
 @property BOOL requiresSecureCoding;
 - (unsigned int)systemVersion;
 - (long long)versionForClassName:(id)arg1;
@@ -74,9 +74,9 @@
 - (id)initForWritingWithMutableData:(id)arg1;
 - (id)_initWithOutput:(id)arg1;
 - (id)init;
+- (id)initRequiringSecureCoding:(BOOL)arg1;
 - (id)_blobForCurrentObject;
 - (void)_setBlobForCurrentObject:(id)arg1;
-- (id)initRequiringSecureCoding:(BOOL)arg1;
 
 @end
 

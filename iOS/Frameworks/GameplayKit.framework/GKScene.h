@@ -6,18 +6,19 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
 
-@interface GKScene : NSObject <NSCopying, NSCoding>
+@interface GKScene : NSObject <NSCopying, NSSecureCoding>
 {
     NSMutableArray *_entities;
     NSMutableDictionary *_graphs;
     id <GKSceneRootNodeType> _rootNode;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)sceneWithFileNamed:(id)arg1;
 + (id)sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;
 + (id)_sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;

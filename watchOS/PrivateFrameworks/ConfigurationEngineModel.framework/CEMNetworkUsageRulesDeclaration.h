@@ -12,26 +12,25 @@
 
 @interface CEMNetworkUsageRulesDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadApplicationRules;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withApplicationRules:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withApplicationRules:(id)arg2;
 + (id)restrictionPayloadKeys;
-+ (id)ApplicationRulesItem_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadApplicationRulesItem:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadApplicationRulesItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSArray *payloadApplicationRules; // @synthesize payloadApplicationRules=_payloadApplicationRules;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSArray *payloadApplicationRules;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

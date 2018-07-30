@@ -13,7 +13,6 @@
 
 @interface _SFPBMediaOffer : PBCodable <_SFPBMediaOffer, NSSecureCoding>
 {
-    CDStruct_c119988d _has;
     BOOL _isEnabled;
     _SFPBActionItem *_actionItem;
     NSString *_sublabel;
@@ -35,11 +34,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasImage;
-@property(readonly, nonatomic) BOOL hasIsEnabled;
-@property(readonly, nonatomic) BOOL hasOfferIdentifier;
-@property(readonly, nonatomic) BOOL hasSublabel;
-@property(readonly, nonatomic) BOOL hasActionItem;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

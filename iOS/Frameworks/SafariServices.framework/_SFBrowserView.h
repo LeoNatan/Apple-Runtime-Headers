@@ -25,8 +25,12 @@
     UIView *_scrollToTopView;
     _SFCrashBanner *_crashBanner;
     double _crashBannerOffset;
+    double _minimalUITopOffset;
+    id <SFBrowserViewDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <SFBrowserViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) double minimalUITopOffset; // @synthesize minimalUITopOffset=_minimalUITopOffset;
 @property(readonly, nonatomic) _Bool hasReceivedTouchEvents; // @synthesize hasReceivedTouchEvents=_hasReceivedTouchEvents;
 @property(nonatomic) double crashBannerOffset; // @synthesize crashBannerOffset=_crashBannerOffset;
 @property(retain, nonatomic) _SFCrashBanner *crashBanner; // @synthesize crashBanner=_crashBanner;

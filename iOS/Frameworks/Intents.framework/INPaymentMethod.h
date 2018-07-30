@@ -7,42 +7,43 @@
 #import "NSObject.h"
 
 #import "INCacheableContainer.h"
-#import "INPaymentMethodExport.h"
+#import "INKeyImageProducing.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class INImage, NSString;
 
-@interface INPaymentMethod : NSObject <INCacheableContainer, INPaymentMethodExport, NSCopying, NSSecureCoding>
+@interface INPaymentMethod : NSObject <INCacheableContainer, INKeyImageProducing, NSCopying, NSSecureCoding>
 {
     long long _type;
     NSString *_name;
-    NSString *_identificationHint;
     INImage *_icon;
+    NSString *_identificationHint;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)applePayPaymentMethod;
-@property(readonly, copy, nonatomic) INImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *identificationHint; // @synthesize identificationHint=_identificationHint;
+@property(readonly, copy, nonatomic) INImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)initWithType:(long long)arg1 name:(id)arg2 identificationHint:(id)arg3 icon:(id)arg4;
-- (id)_dictionaryRepresentation;
-- (id)descriptionAtIndent:(unsigned long long)arg1;
-@property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) INImage *image;
-@property(readonly, nonatomic) NSString *title;
-@property(readonly, nonatomic) NSString *identifier;
-- (id)initWithIdentifier:(id)arg1 title:(id)arg2 image:(id)arg3;
+- (id)_intents_localizedCopyForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
+- (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
+@property(readonly) INImage *_keyImage;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

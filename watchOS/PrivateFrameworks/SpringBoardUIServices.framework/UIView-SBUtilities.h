@@ -7,7 +7,6 @@
 #import "UIView.h"
 
 @interface UIView (SBUtilities)
-- (void)sb_stopSettingPresentationBoundsAndPosition;
 - (void)sb_setPresentationBoundsAndPositionFromFrame:(struct CGRect)arg1;
 - (void)sb_setBoundsAndPositionFromFrame:(struct CGRect)arg1;
 @end

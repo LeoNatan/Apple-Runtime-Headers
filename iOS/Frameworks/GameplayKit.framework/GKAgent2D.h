@@ -6,12 +6,13 @@
 
 #import <GameplayKit/GKAgent.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface GKAgent2D : GKAgent <NSCoding>
+@interface GKAgent2D : GKAgent <NSSecureCoding>
 {
 }
 
++ (_Bool)supportsSecureCoding;
 - (void)applyBrakingForce:(float)arg1 deltaTime:(double)arg2;
 - (void)applySteeringForce:(double)arg1 deltaTime: /* Error: Ran out of types for this method. */;
 - (void)updateWithDeltaTime:(double)arg1;

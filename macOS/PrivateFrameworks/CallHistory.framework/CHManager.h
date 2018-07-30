@@ -70,6 +70,7 @@
 - (void)deleteTheseCallsSync:(id)arg1;
 - (void)updateBytesOfDataUsedFor:(id)arg1 with:(id)arg2;
 - (void)markAllCallsAsReadWithPredicate:(id)arg1;
+- (void)setOutgoingLocalParticipantUUID:(id)arg1 forRecentCallsMatchingPredicate:(id)arg2;
 - (void)addToCallHistory:(id)arg1;
 - (unsigned long long)fetchUnreadCallsCount;
 - (unsigned long long)countCallsWithPredicate:(id)arg1;

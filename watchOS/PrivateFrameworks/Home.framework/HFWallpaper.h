@@ -17,6 +17,7 @@
     NSString *_assetIdentifier;
 }
 
++ (id)customWallpaperWithAssetIdentifier:(id)arg1;
 + (struct CGSize)size;
 @property(readonly, copy, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 @property(copy, nonatomic) HFCroppedWallpaperInfo *cropInfo; // @synthesize cropInfo=_cropInfo;

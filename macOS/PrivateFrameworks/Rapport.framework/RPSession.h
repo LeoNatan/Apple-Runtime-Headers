@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CUMobileDeviceSession, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSViewController, NSWindow, RPDevice;
+@class CUMobileDeviceSession, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, RPDevice;
 
 @interface RPSession : NSObject
 {
@@ -24,9 +24,7 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_label;
     RPDevice *_peerDevice;
-    NSViewController *_presentingViewController;
     NSString *_serviceType;
-    NSWindow *_window;
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
@@ -37,10 +35,8 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
-@property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) unsigned int securityFlags; // @synthesize securityFlags=_securityFlags;
-@property(retain, nonatomic) NSViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) RPDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;

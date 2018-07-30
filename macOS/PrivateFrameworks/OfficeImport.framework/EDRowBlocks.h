@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-#import "TSUFlushable.h"
+#import "TSUiOSMemoryWarningFlushable.h"
 
 @class EDCollection, EDWorksheet, NSMutableArray, NSRecursiveLock, NSString;
 
-__attribute__((visibility("hidden")))
-@interface EDRowBlocks : NSObject <TSUFlushable>
+@interface EDRowBlocks : NSObject <TSUiOSMemoryWarningFlushable>
 {
     EDWorksheet *mWorksheet;
     NSMutableArray *mRowBlocks;
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSRecursiveLock *mSaveLoadLock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)formulas;
 - (unsigned int)maxPopulatedColumn;

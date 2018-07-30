@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
     VKTileCache *_recentTrafficDynamicTiles;
 }
 
+- (BOOL)allowPreliminaryTiles;
+- (id)stateDescriptionForRenderKey:(const struct VKTileKey *)arg1;
 - (void)expireTiles;
 - (void)forceExpireTile:(const struct VKTileKey *)arg1;
 - (void)fetchTileForKey:(const struct VKTileKey *)arg1 isPrefetch:(BOOL)arg2;
 - (id)sourceKeysForRenderKey:(const struct VKTileKey *)arg1;
 - (struct _GEOTileKey)downloadKeyAtX:(unsigned int)arg1 y:(unsigned int)arg2 z:(unsigned int)arg3;
-- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3;
+- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3 userInfo:(id)arg4;
 - (BOOL)minimumZoomLevelBoundsCamera;
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (unsigned char)mapLayerForZoomLevelRange;

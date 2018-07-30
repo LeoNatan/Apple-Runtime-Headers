@@ -17,6 +17,7 @@
 
 @property(nonatomic) __weak id <MTAgentDiagnosticDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_addStateHandler;
 - (void)handleNotification:(id)arg1;
 - (_Bool)handlesNotification:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

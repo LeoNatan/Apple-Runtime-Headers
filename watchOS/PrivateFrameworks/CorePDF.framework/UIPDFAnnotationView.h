@@ -8,6 +8,7 @@
 
 @class UIPDFAnnotation;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFAnnotationView : UIView
 {
     UIPDFAnnotation *_annotation;

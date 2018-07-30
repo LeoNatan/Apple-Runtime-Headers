@@ -47,7 +47,8 @@
         unsigned int _isXPCServerContext:1;
         unsigned int _pushSecureDelete:1;
         unsigned int _refreshAfterSave:1;
-        unsigned int _reservedFlags:3;
+        unsigned int _allowAncillary:1;
+        unsigned int _reservedFlags:2;
     } _flags;
     NSMutableSet *_unprocessedChanges;
     NSMutableSet *_unprocessedDeletes;
@@ -84,6 +85,7 @@
 + (void)initialize;
 + (BOOL)_handleError:(id)arg1 withError:(id *)arg2;
 + (void)_mergeChangesFromRemoteContextSave:(id)arg1 intoContexts:(id)arg2;
++ (id)createFutureForFileAtURL:(id)arg1;
 - (void)_automaticallyMergeChangesFromContextDidSaveNotification:(id)arg1;
 - (void)_setAutomaticallyMergesChangesFromParent:(BOOL)arg1;
 @property(nonatomic) BOOL automaticallyMergesChangesFromParent;
@@ -166,6 +168,8 @@
 - (void)_setRetainsRegisteredObjects:(BOOL)arg1;
 @property(retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 - (void)_setPersistentStoreCoordinator:(id)arg1;
+- (void)_setAllowAncillaryEntities:(BOOL)arg1;
+- (BOOL)_allowAncillaryEntities;
 - (void)_persistentStoreDidUpdateAdditionalRowsWithNewVersions:(id)arg1;
 - (void)_setStalenessInterval:(double)arg1;
 - (BOOL)_postSaveNotifications;
@@ -308,8 +312,10 @@
 - (void)_setDelegate:(id)arg1;
 - (void)performWithOptions:(unsigned long long)arg1 andBlock:(CDUnknownBlockType)arg2;
 - (id)performBlockWithResult:(CDUnknownBlockType)arg1;
-@property(nonatomic) BOOL shouldPerformSecureOperation;
-@property(nonatomic) BOOL shouldRefreshAfterSave;
+- (BOOL)shouldPerformSecureOperation;
+- (void)setShouldPerformSecureOperation:(BOOL)arg1;
+- (BOOL)shouldRefreshAfterSave;
+- (void)setShouldRefreshAfterSave:(BOOL)arg1;
 - (BOOL)_parentObtainPermanentIDsForObjects:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id *)arg4;
 - (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id *)arg4;

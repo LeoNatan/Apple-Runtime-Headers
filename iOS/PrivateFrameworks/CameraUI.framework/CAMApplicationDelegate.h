@@ -53,7 +53,7 @@
 - (void)applicationWillResignActive:(id)arg1;
 - (_Bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)application:(id)arg1 performActionForShortcutItem:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_updateShortcutItemsForApplication:(id)arg1;
+- (void)updateShortcutItemsForApplication:(id)arg1;
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (_Bool)_createSubsystemsWithLaunchOptions:(id)arg1;
 

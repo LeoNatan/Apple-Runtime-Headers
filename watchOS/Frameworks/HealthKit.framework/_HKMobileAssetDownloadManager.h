@@ -11,7 +11,7 @@
 @interface _HKMobileAssetDownloadManager : NSObject
 {
     NSMutableArray *_pendingOperations;
-    NSMutableSet *_downloadedPredicateFormats;
+    NSMutableSet *_downloadingPredicateFormats;
     NSObject<OS_dispatch_queue> *_queue;
     _HKMobileAssetDownloadManager *_retainedSelf;
     _Bool _shouldQueryLocalAssetsFirst;
@@ -30,14 +30,15 @@
 @property(nonatomic) _Bool shouldQueryLocalAssetsFirst; // @synthesize shouldQueryLocalAssetsFirst=_shouldQueryLocalAssetsFirst;
 - (void).cxx_destruct;
 - (void)removeAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_queue_downloadAssets:(id)arg1 completionOverride:(CDUnknownBlockType)arg2;
+- (void)_queue_downloadAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_fetchAssetsWithPredicate:(id)arg1 onlyLocal:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_queue_fetchAssetsWithLocalInformation:(_Bool)arg1 shouldRequery:(_Bool)arg2 predicate:(id)arg3;
 - (void)_callErrorHandlerWithError:(id)arg1;
-- (void)_callDownloadCompletionHandlerWithAssets:(id)arg1;
+- (void)_callDownloadCompletionHandlerWithAssets:(id)arg1 predicate:(id)arg2;
 - (void)downloadAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAssetsWithPredicate:(id)arg1 onlyLocal:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)downloadAssetsWithPredicate:(id)arg1;
+- (id)description;
 - (void)dealloc;
 - (id)initWithMobileAssetTypeName:(id)arg1;
 

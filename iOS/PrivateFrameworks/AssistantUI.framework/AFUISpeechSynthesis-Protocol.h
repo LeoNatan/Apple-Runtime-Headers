@@ -13,9 +13,10 @@
 - (void)invalidate;
 - (void)skipCurrentSynthesis;
 - (void)cancel;
+- (void)processDelayedItem:(NSString *)arg1;
 - (void)enqueueAudioData:(SAUIAudioData *)arg1 identifier:(NSString *)arg2 provisionally:(_Bool)arg3 eligibleAfterDuration:(double)arg4 completion:(void (^)(long long))arg5;
 - (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 completion:(void (^)(long long))arg3;
-- (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 language:(NSString *)arg3 gender:(NSString *)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 preparationIdentifier:(NSString *)arg8 completion:(void (^)(long long))arg9 animationIdentifier:(NSString *)arg10 analyticsContext:(NSDictionary *)arg11 speakableContextInfo:(NSDictionary *)arg12;
+- (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 language:(NSString *)arg3 gender:(NSString *)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 preparationIdentifier:(NSString *)arg9 completion:(void (^)(long long))arg10 animationIdentifier:(NSString *)arg11 analyticsContext:(NSDictionary *)arg12 speakableContextInfo:(NSDictionary *)arg13;
 - (void)presynthesizeDialogStrings:(NSArray *)arg1 speakableContext:(NSDictionary *)arg2;
 @end
 

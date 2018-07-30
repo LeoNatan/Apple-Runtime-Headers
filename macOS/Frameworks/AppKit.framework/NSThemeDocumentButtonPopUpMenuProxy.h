@@ -8,6 +8,7 @@
 
 @class NSPathControl, NSThemeDocumentButton;
 
+__attribute__((visibility("hidden")))
 @interface NSThemeDocumentButtonPopUpMenuProxy : NSProxy
 {
     id realObject;

@@ -6,23 +6,27 @@
 
 #import <NanoTimeKitCompanion/NTKAnalogFaceView.h>
 
+#import "NTKUtilityComplicationFactoryDelegate.h"
 #import "NTKVictoryAnalogBackgroundViewDelegate.h"
 
-@class NTKUtilityComplicationFactory, NTKVictoryAnalogBackgroundView;
+@class NSString, NTKRoundedCornerOverlayView, NTKUtilityComplicationFactory, NTKVictoryAnalogBackgroundView;
 
-@interface NTKVictoryAnalogFaceView : NTKAnalogFaceView <NTKVictoryAnalogBackgroundViewDelegate>
+@interface NTKVictoryAnalogFaceView : NTKAnalogFaceView <NTKVictoryAnalogBackgroundViewDelegate, NTKUtilityComplicationFactoryDelegate>
 {
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
     NTKVictoryAnalogBackgroundView *_backgroundView;
+    NTKRoundedCornerOverlayView *_cornerView;
 }
 
-+ (id)_swatchImageForColorOption:(id)arg1;
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
++ (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
+- (id)utilityDateComplicationFontForDateStyle:(unsigned long long)arg1;
 - (double)_keylinePaddingForState:(long long)arg1;
 - (double)_keylineEdgeGapForState:(long long)arg1;
 - (void)_loadLayoutRules;
+- (id)_slotForUtilitySlot:(long long)arg1;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
@@ -50,12 +54,22 @@
 - (struct CGPoint)_contentCenterOffset;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
+- (void)_applyDataMode;
 - (id)_additionalPrelaunchApplicationIdentifiers;
+- (void)_configureReusableTimeView:(id)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

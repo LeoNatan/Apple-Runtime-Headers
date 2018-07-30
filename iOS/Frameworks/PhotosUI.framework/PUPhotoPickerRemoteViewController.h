@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *actionTypeDescription; // @synthesize actionTypeDescription=_actionTypeDescription;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
 - (void).cxx_destruct;
+- (_Bool)_useLibraryPresentation;
 - (void)_allowSharingSelectionOfInfoDictionaries:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_logAssetSelectionIfNeeded:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

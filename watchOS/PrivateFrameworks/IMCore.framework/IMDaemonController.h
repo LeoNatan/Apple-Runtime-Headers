@@ -39,6 +39,7 @@
     unsigned int _lastUpdatedCapabilities;
     _Bool _requestingConnection;
     NSMutableDictionary *_requestQOSClassCompletionBlocks;
+    CDUnknownBlockType _prewarmingBlock;
 }
 
 + (void)_setApplicationWillTerminate;
@@ -46,6 +47,7 @@
 + (_Bool)_applicationWillTerminate;
 + (id)sharedController;
 + (id)sharedInstance;
+@property(copy, nonatomic) CDUnknownBlockType prewarmingBlock; // @synthesize prewarmingBlock=_prewarmingBlock;
 @property(retain, nonatomic) NSMutableDictionary *requestQOSClassCompletionBlocks; // @synthesize requestQOSClassCompletionBlocks=_requestQOSClassCompletionBlocks;
 @property(readonly, nonatomic, getter=isRequestingConnection) _Bool requestingConnection; // @synthesize requestingConnection=_requestingConnection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_remoteMessageQueue; // @synthesize _remoteMessageQueue;

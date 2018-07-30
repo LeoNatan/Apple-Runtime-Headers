@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool __needsUpdateFullsizeImageMetadata;
     _Bool __needsUpdateFullsizeTiledLayer;
     _Bool __isDisplayingFullQualityImage;
+    _Bool _canUseFullsizeTiledLayer;
     PUAssetViewModel *_assetViewModel;
     id <PUDisplayAsset> _asset;
     PUMediaProvider *_mediaProvider;
@@ -48,6 +49,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) PXImageLayerModulator *imageLayerModulator; // @synthesize imageLayerModulator=_imageLayerModulator;
 @property(retain, nonatomic, setter=_setImageRequester:) PUImageRequester *_imageRequester; // @synthesize _imageRequester=__imageRequester;
+@property(nonatomic) _Bool canUseFullsizeTiledLayer; // @synthesize canUseFullsizeTiledLayer=_canUseFullsizeTiledLayer;
 @property(retain, nonatomic, setter=_setAssetLoadingStartDate:) NSDate *_assetLoadingStartDate; // @synthesize _assetLoadingStartDate=__assetLoadingStartDate;
 @property(nonatomic, setter=_setAssetLoadingStage:) long long _assetLoadingStage; // @synthesize _assetLoadingStage=__assetLoadingStage;
 @property(nonatomic, setter=_setDisplayingFullQualityImage:) _Bool _isDisplayingFullQualityImage; // @synthesize _isDisplayingFullQualityImage=__isDisplayingFullQualityImage;

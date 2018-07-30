@@ -11,11 +11,10 @@
 #import "UITableViewDataSource.h"
 #import "UITableViewDelegate.h"
 #import "UITextFieldDelegate.h"
-#import "UITextViewDelegate.h"
 
 @class AAUIBuddyView, AAUIHeaderView, NSArray, NSString, UILabel, UITableView, UITableViewCell, UITableViewHeaderFooterView;
 
-@interface AAUISignInViewController : UIViewController <AKAppleIDAuthenticationInAppContextPasswordDelegate, RemoteUIControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+@interface AAUISignInViewController : UIViewController <AKAppleIDAuthenticationInAppContextPasswordDelegate, RemoteUIControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
     UITableView *_tableView;
     UITableViewCell *_usernameCell;
@@ -42,7 +41,6 @@
 - (void).cxx_destruct;
 - (void)_updateConstraintsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
@@ -72,11 +70,11 @@
 - (void)_setUsernameCellWaiting:(_Bool)arg1;
 - (void)_setPasswordFieldHidden:(_Bool)arg1;
 - (void)_cancelPasswordDelegateIfNecessary;
-- (void)_presentAppleIDPrivacyInformationPane;
 - (id)_authorizationValueForAuthenticationResults:(id)arg1;
 - (void)_repairCloudAccountWithAuthenticationResults:(id)arg1;
 - (void)_attemptAuthenticationWithContext:(id)arg1;
 - (void)_attemptAuthentication;
+- (void)_prewarmSignInFlowIfApplicable;
 - (void)_presentForgotAppleIDPane;
 - (void)_presentCreateAppleIDPane;
 - (void)_actionButtonSelected:(id)arg1;

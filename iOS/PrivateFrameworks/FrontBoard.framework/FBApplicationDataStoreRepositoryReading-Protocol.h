@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @protocol FBApplicationDataStoreRepositoryReading <NSObject>
-@property(nonatomic) id <FBApplicationDataStoreRepositoryReadingDelegate> delegate;
+@property(nonatomic) __weak id <FBApplicationDataStoreRepositoryReadingDelegate> delegate;
 - (void)close;
-- (void)objectForKeys:(NSArray *)arg1 forAllApplicationsWithResult:(void (^)(id))arg2;
-- (void)objectForKey:(NSString *)arg1 forApplication:(NSString *)arg2 withResult:(void (^)(id))arg3;
+- (NSDictionary *)allObjectsForKeys:(NSArray *)arg1;
 - (id)objectForKey:(NSString *)arg1 forApplication:(NSString *)arg2;
 - (_Bool)containsKey:(NSString *)arg1 forApplication:(NSString *)arg2;
 - (NSArray *)keysForApplication:(NSString *)arg1;

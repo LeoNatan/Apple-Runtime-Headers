@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-@class FLExtensionContext, FLExtensionHostContext, NSExtension, NSString, NSUUID;
+@class FLExtensionContext, NSExtension, NSString, NSUUID;
 
 @interface FLHeadlessExtensionLoader : NSObject
 {
     FLExtensionContext *_extensionContext;
-    FLExtensionHostContext *_hostContext;
     id <FLExtensionHostContextInterface> _delegate;
     NSExtension *_extension;
     CDUnknownBlockType _requestInterruptionBlock;
@@ -24,6 +23,8 @@
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) CDUnknownBlockType requestInterruptionBlock; // @synthesize requestInterruptionBlock=_requestInterruptionBlock;
 - (void).cxx_destruct;
+- (void)dealloc;
+- (id)description;
 - (id)_hostContextForExtension:(id)arg1;
 - (id)_loadExtensionForIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)_setupSessionIfNeeded:(id *)arg1;

@@ -27,7 +27,8 @@
 - (void)finalize;
 - (id)init;
 - (id)initWithSuiteName:(id)arg1;
-- (void)setObservationInfo:(void *)arg1;
+- (void)_didEndKeyValueObserving;
+- (void)_willBeginKeyValueObserving;
 - (id)_initWithSuiteName:(id)arg1 container:(id)arg2;
 - (id)initWithUser:(id)arg1;
 - (void)registerDefaults:(id)arg1;

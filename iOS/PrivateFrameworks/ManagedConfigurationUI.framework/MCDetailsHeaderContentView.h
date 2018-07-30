@@ -8,6 +8,7 @@
 
 @class MCActionButton, MCUIGradientLabel, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface MCDetailsHeaderContentView : UIView
 {
     UILabel *_displayNameLabel;

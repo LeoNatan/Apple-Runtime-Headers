@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)customActionWithDuration:(double)arg1 actionBlock:(CDUnknownBlockType)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

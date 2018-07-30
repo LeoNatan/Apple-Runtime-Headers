@@ -35,7 +35,6 @@
 - (BOOL)isInternal;
 - (id)displayState;
 - (unsigned long long)systemType;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)description;
 - (id)initWithPath:(id)arg1 onVolume:(id)arg2 onMachine:(id)arg3 backedUpOnVolume:(id)arg4;
 

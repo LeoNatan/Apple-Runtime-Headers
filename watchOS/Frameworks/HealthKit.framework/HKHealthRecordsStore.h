@@ -28,9 +28,11 @@
 - (CDUnknownBlockType)_actionCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_objectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (void)_fetchHealthRecordsPluginServerProxyWithHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void)deregisterAppSourceFromClinicalUnlimitedAuthorizationModeConfirmation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)registerAppSourceForClinicalUnlimitedAuthorizationModeConfirmation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)notifyForNewHealthRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)badgeForNewHealthRecordsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)createStaticAccountWithTitle:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)createStaticAccountWithTitle:(id)arg1 subtitle:(id)arg2 description:(id)arg3 onlyIfNeededForSimulatedGatewayID:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)addIngestionStateListener:(id)arg1;
 - (void)dispatchIngestionStateChange;
 - (void)clientRemote_updateIngestionState:(int)arg1;
@@ -50,6 +52,7 @@
 - (void)displayStringForMedicalCodingSystem:(id)arg1 code:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)displayStringForMedicalCodingSystem:(id)arg1 code:(id)arg2 version:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchFHIRJSONDocumentWithAccountIdentifier:(struct NSUUID *)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchExportedPropertiesForHealthRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchRawSourceStringForHealthRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setHealthRecordsIngestionFrequency:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHealthRecordsIngestionFrequencyWithCompletion:(CDUnknownBlockType)arg1;

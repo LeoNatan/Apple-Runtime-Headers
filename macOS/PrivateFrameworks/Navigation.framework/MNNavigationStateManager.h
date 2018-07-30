@@ -34,7 +34,6 @@
 @property(nonatomic) __weak id <MNNavigationSessionManagerDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 - (void).cxx_destruct;
-- (void)acquireDesiredResourcePolicy;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;
@@ -47,6 +46,7 @@
 - (void)setCurrentAudioOutputSetting:(id)arg1;
 - (void)setHFPPreference:(BOOL)arg1 forSetting:(id)arg2;
 - (void)setGuidancePromptsEnabled:(BOOL)arg1;
+- (void)setHeadingOrientation:(int)arg1;
 - (void)stopCurrentGuidancePrompt;
 - (void)vibrateForPrompt:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)repeatCurrentTrafficAlertWithReply:(CDUnknownBlockType)arg1;
@@ -85,9 +85,9 @@
 - (id)init;
 - (unsigned long long)_stateTypeForState:(id)arg1;
 - (void)_changeToDesiredLocationProviderType;
+- (void)_acquireDesiredResourcePolicyAfterDelay:(double)arg1;
 - (void)transitionToState:(id)arg1;
 - (void)setCurrentState:(id)arg1;
-@property(readonly, nonatomic) MNResourceManager *resourceManager;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

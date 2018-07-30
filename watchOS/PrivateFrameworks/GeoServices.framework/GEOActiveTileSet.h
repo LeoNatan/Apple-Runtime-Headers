@@ -29,11 +29,13 @@
     unsigned int _timeToLiveSeconds;
     int _updateBehavior;
     unsigned int _version;
+    _Bool _useAuthProxy;
     struct {
         unsigned int checksumType:1;
         unsigned int requestStyle:1;
         unsigned int timeToLiveSeconds:1;
         unsigned int updateBehavior:1;
+        unsigned int useAuthProxy:1;
     } _has;
 }
 
@@ -62,6 +64,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasUseAuthProxy;
+@property(nonatomic) _Bool useAuthProxy; // @synthesize useAuthProxy=_useAuthProxy;
 - (int)StringAsRequestStyle:(id)arg1;
 - (id)requestStyleAsString:(int)arg1;
 @property(nonatomic) _Bool hasRequestStyle;

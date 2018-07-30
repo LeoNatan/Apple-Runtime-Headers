@@ -10,6 +10,7 @@
 
 @protocol PUImageInfoNode <PXRunNode>
 @property(readonly, nonatomic) long long imageExifOrientation;
+@property(readonly, nonatomic) _Bool useEmbeddedPreview;
 @property(readonly, nonatomic) NSString *imageDataUTI;
 @property(readonly, nonatomic) NSURL *imageDataURL;
 @end

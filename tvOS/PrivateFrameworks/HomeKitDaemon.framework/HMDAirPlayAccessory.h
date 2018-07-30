@@ -34,6 +34,7 @@
 - (void)removeUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) _Bool supportsUserManagement;
+- (void)disassociateUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)disassociateWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly) _Bool supportsDisassociation;
 - (id)transactionWithObjectChangeType:(unsigned long long)arg1;

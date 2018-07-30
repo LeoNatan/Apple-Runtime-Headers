@@ -6,11 +6,17 @@
 
 #import "UIView.h"
 
+@class UIButton;
+
 @interface SPUILockScreenFooterView : UIView
 {
+    UIButton *_unlockScreenButton;
 }
 
+@property(retain) UIButton *unlockScreenButton; // @synthesize unlockScreenButton=_unlockScreenButton;
+- (void).cxx_destruct;
 - (void)unlockButtonPressed:(id)arg1;
+- (void)updateColors;
 - (id)init;
 
 @end

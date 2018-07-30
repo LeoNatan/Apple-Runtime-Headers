@@ -6,7 +6,6 @@
 
 #import "NSTextField.h"
 
-__attribute__((visibility("hidden")))
 @interface ABLinkTextField : NSTextField
 {
 }

@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-#import "HFAVRoutingControllerObserver.h"
 #import "HFAccessoryObserver.h"
 #import "HFCameraObserver.h"
 #import "HFHomeManagerObserver.h"
@@ -17,23 +16,28 @@
 #import "HFResidentDeviceObserver.h"
 #import "HFSoftwareUpdateControllerObserver.h"
 #import "HFSoftwareUpdateObserver.h"
-#import "HFStateDumpSerializable.h"
+#import "HFStateDumpBuildable.h"
+#import "HFSymptomFixSessionObserver.h"
 #import "HFSymptomsHandlerObserver.h"
 #import "HFTemperatureUnitObserver.h"
 #import "HFUserObserver.h"
 
 @class HFItem, HFItemManagerBatchedDelegateAdapter, HMHome, NAFuture, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
-@interface HFItemManager : NSObject <HFStateDumpSerializable, HFHomeManagerObserver, HFHomeObserver, HFAccessoryObserver, HFResidentDeviceObserver, HFCameraObserver, HFMediaSessionObserver, HFMediaObjectObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFAVRoutingControllerObserver, HFSymptomsHandlerObserver, HFUserObserver, HFTemperatureUnitObserver, HFItemUpdating>
+@interface HFItemManager : NSObject <HFStateDumpBuildable, HFHomeManagerObserver, HFHomeObserver, HFAccessoryObserver, HFResidentDeviceObserver, HFCameraObserver, HFMediaSessionObserver, HFMediaObjectObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFSymptomsHandlerObserver, HFUserObserver, HFSymptomFixSessionObserver, HFTemperatureUnitObserver, HFItemUpdating>
 {
     _Bool _hasRequestedFirstUpdate;
     id <HFItemManagerDelegate> _delegate;
     HFItem *_sourceItem;
     HMHome *_home;
     NSArray *_itemProviders;
+    NSArray *_itemModules;
+    NSString *_identifier;
     id <HFCharacteristicReadPolicy> _readPolicy;
     unsigned int _overallLoadingState;
     NAFuture *_firstFastUpdateFuture;
+    NSSet *_subclassItemProviderSet;
+    NSSet *_moduleItemProviderSet;
     HMHome *_lastUpdatedHome;
     NSArray *_sections;
     NSMapTable *_childItemsByParentItem;
@@ -54,16 +58,20 @@
 @property(retain, nonatomic) NSMapTable *childItemsByParentItem; // @synthesize childItemsByParentItem=_childItemsByParentItem;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) HMHome *lastUpdatedHome; // @synthesize lastUpdatedHome=_lastUpdatedHome;
+@property(retain, nonatomic) NSSet *moduleItemProviderSet; // @synthesize moduleItemProviderSet=_moduleItemProviderSet;
+@property(retain, nonatomic) NSSet *subclassItemProviderSet; // @synthesize subclassItemProviderSet=_subclassItemProviderSet;
 @property(readonly, nonatomic) NAFuture *firstFastUpdateFuture; // @synthesize firstFastUpdateFuture=_firstFastUpdateFuture;
 @property(nonatomic) unsigned int overallLoadingState; // @synthesize overallLoadingState=_overallLoadingState;
 @property(retain, nonatomic) id <HFCharacteristicReadPolicy> readPolicy; // @synthesize readPolicy=_readPolicy;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) NSArray *itemModules; // @synthesize itemModules=_itemModules;
 @property(retain, nonatomic) NSArray *itemProviders; // @synthesize itemProviders=_itemProviders;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(nonatomic) __weak id <HFItemManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_debug_itemManagerDescription;
-- (void)notificationSettingsInvalidatedForManager:(id)arg1;
+- (void)settingsInvalidatedForNotificationCenter:(id)arg1;
 - (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnit:(_Bool)arg2;
 - (id)_indexPathForItem:(id)arg1 inDisplayedItemsArray:(id)arg2;
 - (id)_allDisplayedItemsIncludingInternalItems;
@@ -107,6 +115,7 @@
 - (unsigned int)_sectionForItem:(id)arg1;
 - (id)_serviceGroupItemForServiceGroup:(id)arg1 inItems:(id)arg2;
 - (id)_itemsOfClass:(Class)arg1 inItems:(id)arg2 allowTransformedItems:(_Bool)arg3;
+- (_Bool)_isUsingOnlyItemModules;
 - (id)_allSuppressedCharacteristics;
 - (_Bool)_shouldHideServiceItem:(id)arg1 containedInServiceGroupItem:(id)arg2;
 - (id)_serviceItemsToHideInSet:(id)arg1 allServiceGroupItems:(id)arg2;
@@ -114,6 +123,7 @@
 - (void)_notifyDelegateOfItemOperations:(id)arg1 logger:(id)arg2;
 - (void)_notifyDelegateOfSectionOperations:(id)arg1 logger:(id)arg2;
 - (void)_notifyDelegateOfChangesFromDiff:(id)arg1 logger:(id)arg2;
+- (id)_legacy_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (void)_updateRepresentationForExternalItemsWithUpdatedOrAddedItems:(id)arg1 logger:(id)arg2;
 - (void)_updateRepresentationForInternalItemsWithUpdatedItems:(id)arg1;
@@ -122,7 +132,7 @@
 - (void)_batchItemUpdateFutureWrappers:(id)arg1 removedItems:(id)arg2 batchingIntervals:(id)arg3 logger:(id)arg4;
 - (id)_updateResultsForItems:(id)arg1 removedItems:(id)arg2 context:(id)arg3 allowDelaying:(_Bool)arg4;
 - (id)_updateResultsForItems:(id)arg1 context:(id)arg2;
-- (void)resetItemProviders;
+- (void)resetItemProvidersAndModules;
 - (id)updateResultsForItems:(id)arg1 senderSelector:(SEL)arg2;
 - (void)_updateOverallLoadingStateAndNotifyDelegate;
 - (unsigned int)_loadingStateForItem:(id)arg1;
@@ -152,6 +162,7 @@
 - (unsigned int)_numberOfSections;
 - (void)_willUpdateSections;
 - (id)_buildItemProvidersForHome:(id)arg1;
+- (id)_buildItemModulesForHome:(id)arg1;
 - (void)endSuppressingUpdatesForCharacteristicsWithReason:(id)arg1 updateAffectedItems:(_Bool)arg2;
 - (void)beginSuppressingUpdatesForCharacteristics:(id)arg1 withReason:(id)arg2;
 - (void)endDisableExternalUpdatesWithReason:(id)arg1;
@@ -164,6 +175,7 @@
 - (id)displayedItemAtIndexPath:(id)arg1;
 - (id)displayedSectionIdentifierForSectionIndex:(unsigned int)arg1;
 - (unsigned int)sectionIndexForDisplayedSectionIdentifier:(id)arg1;
+- (id)displayedItemsInSectionWithIdentifier:(id)arg1;
 - (id)displayedItemsInSection:(unsigned int)arg1;
 - (id)attributedFooterTitleForSection:(unsigned int)arg1;
 - (id)footerTitleForSection:(unsigned int)arg1;
@@ -176,10 +188,12 @@
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
 - (id)init;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)_debug_itemDescriptions;
 - (id)_debug_itemProviderDescriptions;
 - (void)_debug_registerForStateDump;
+- (void)didUpdateDemoModeStateForAccessory:(id)arg1;
+- (void)mediaSystem:(id)arg1 didUpdateConfiguredName:(id)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateComponents:(id)arg2;
 - (void)home:(id)arg1 didUpdateMediaSystem:(id)arg2;
@@ -199,8 +213,7 @@
 - (void)home:(id)arg1 willExecuteActionSets:(id)arg2;
 - (void)home:(id)arg1 willWriteValuesForCharacteristics:(id)arg2;
 - (void)home:(id)arg1 willReadValuesForCharacteristics:(id)arg2;
-- (void)symptomsHandler:(id)arg1 didUpdateCanInitiateFix:(int)arg2;
-- (void)symptomsHandler:(id)arg1 didUpdateFixState:(int)arg2;
+- (void)fixSession:(id)arg1 didChangeState:(int)arg2;
 - (void)symptomsHandler:(id)arg1 didUpdateSymptoms:(id)arg2;
 - (void)accessorySettings:(id)arg1 didWriteValueForSettings:(id)arg2 failedSettings:(id)arg3;
 - (void)accessorySettings:(id)arg1 willWriteValueForSettings:(id)arg2;
@@ -221,6 +234,11 @@
 - (void)residentDevice:(id)arg1 didUpdateCapabilities:(unsigned int)arg2;
 - (void)residentDevice:(id)arg1 didUpdateName:(id)arg2;
 - (void)home:(id)arg1 didUpdateReprovisionStateForAccessory:(id)arg2;
+- (void)accessory:(id)arg1 didRemoveControlTarget:(id)arg2;
+- (void)accessory:(id)arg1 didAddControlTarget:(id)arg2;
+- (void)accessoryDidUpdateTargetControlSupport:(id)arg1;
+- (void)accessoryDidRemoveSymptomsHandler:(id)arg1;
+- (void)accessory:(id)arg1 didAddSymptomsHandler:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateConfigurationStateForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateServiceSubtypeForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateDefaultNameForService:(id)arg2;

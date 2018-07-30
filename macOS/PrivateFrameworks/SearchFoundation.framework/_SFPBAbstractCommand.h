@@ -13,7 +13,6 @@
 
 @interface _SFPBAbstractCommand : PBCodable <_SFPBAbstractCommand, NSSecureCoding>
 {
-    CDStruct_f953fb60 _has;
     int _type;
     _SFPBCommandValue *_value;
 }
@@ -29,8 +28,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasValue;
-@property(readonly, nonatomic) BOOL hasType;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

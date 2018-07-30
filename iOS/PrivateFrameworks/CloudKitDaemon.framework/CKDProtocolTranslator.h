@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CKDPIdentifier, NSString;
+@class CKDPIdentifier, NSMutableDictionary, NSString;
 
 @interface CKDProtocolTranslator : NSObject
 {
@@ -17,9 +17,11 @@
     id <CKDProtocolTranslatorIdentityDelegate> _identityDelegate;
     NSString *_containerScopedUserID;
     NSString *_overriddenContainerScopedUserID;
+    NSMutableDictionary *_downloadPreauthorizationMap;
 }
 
 + (id)translatorIgnoringUserIDsWithDatabaseScope:(long long)arg1;
+@property(retain, nonatomic) NSMutableDictionary *downloadPreauthorizationMap; // @synthesize downloadPreauthorizationMap=_downloadPreauthorizationMap;
 @property(copy, nonatomic) NSString *overriddenContainerScopedUserID; // @synthesize overriddenContainerScopedUserID=_overriddenContainerScopedUserID;
 @property(copy, nonatomic) NSString *containerScopedUserID; // @synthesize containerScopedUserID=_containerScopedUserID;
 @property(nonatomic) __weak id <CKDProtocolTranslatorIdentityDelegate> identityDelegate; // @synthesize identityDelegate=_identityDelegate;
@@ -76,6 +78,8 @@
 @property(readonly, nonatomic) CKDPIdentifier *pUserID;
 - (_Bool)_isDefaultUserNameFromClient:(id)arg1;
 - (_Bool)_isDefaultUserNameFromServer:(id)arg1;
+- (void)consumeResponseHeader:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 databaseScope:(long long)arg2;
 - (id)initWithContainerScopedUserID:(id)arg1 orgAdminUserID:(id)arg2 bundleIdentifier:(id)arg3 databaseScope:(long long)arg4;
 - (id)_initWithContainerScopedUserID:(id)arg1 orgAdminUserID:(id)arg2 bundleIdentifier:(id)arg3 databaseScope:(long long)arg4;
 - (id)pFieldWithKey:(id)arg1 value:(id)arg2;

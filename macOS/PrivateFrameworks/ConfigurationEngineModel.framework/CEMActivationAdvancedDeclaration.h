@@ -8,28 +8,27 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSArray, NSDictionary, NSString;
+@class CEMAnyPayload, NSArray, NSString;
 
 @interface CEMActivationAdvancedDeclaration : CEMDeclarationBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadRequiredConfigurations;
+    NSArray *_payloadStandardConfigurations;
+    CEMAnyPayload *_payloadActivationPredicate;
 }
 
-+ (id)allowedReasons;
-+ (id)InstalledConfigurationsItem_allowedStatusKeys;
-+ (id)allowedStatusKeys;
-+ (id)RequiredConfigurationsDictionary_allowedPayloadKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withRequiredConfigurations:(id)arg2 withStandardConfigurations:(id)arg3;
++ (id)buildWithIdentifier:(id)arg1 withRequiredConfigurations:(id)arg2 withStandardConfigurations:(id)arg3 withActivationPredicate:(id)arg4;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadRequiredConfigurationsDictionary:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusInstalledConfigurationsItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadRequiredConfigurationsDictionary_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSDictionary *payloadActivationPredicate;
-@property(readonly, nonatomic) NSArray *payloadStandardConfigurations;
-@property(readonly, nonatomic) NSArray *payloadRequiredConfigurations;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMAnyPayload *payloadActivationPredicate; // @synthesize payloadActivationPredicate=_payloadActivationPredicate;
+@property(copy, nonatomic) NSArray *payloadStandardConfigurations; // @synthesize payloadStandardConfigurations=_payloadStandardConfigurations;
+@property(copy, nonatomic) NSArray *payloadRequiredConfigurations; // @synthesize payloadRequiredConfigurations=_payloadRequiredConfigurations;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

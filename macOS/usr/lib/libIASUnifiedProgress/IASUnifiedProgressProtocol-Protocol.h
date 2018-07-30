@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class IASPPhase, NSDictionary, NSString;
+@class IASPPhase, NSDictionary;
 
 @protocol IASUnifiedProgressProtocol
-- (void)writePhaseRangeToNVRAMForPhase:(NSString *)arg1;
 - (void)unregisterClient:(NSDictionary *)arg1;
 - (void)registerClient:(NSDictionary *)arg1 completionHandler:(void (^)(void))arg2;
 - (void)registerClient:(NSDictionary *)arg1;

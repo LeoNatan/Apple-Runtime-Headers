@@ -16,6 +16,7 @@
     NSString *_registryBasePath;
 }
 
++ (_Bool)isWebKitSupported;
 + (id)sharedInstance;
 @property(readonly, nonatomic) _Bool isRunningInStoreDemoMode; // @synthesize isRunningInStoreDemoMode=_isRunningInStoreDemoMode;
 @property(readonly, nonatomic) NSString *registryBasePath; // @synthesize registryBasePath=_registryBasePath;
@@ -24,6 +25,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) float screenScale;
 @property(readonly, nonatomic) float screenWidth;
+@property(readonly, nonatomic) _Bool isRunningTest;
 - (void)setIsRunningInStoreDemoMode:(_Bool)arg1;
 - (void)setIsDeviceUnlocked:(_Bool)arg1;
 - (void)setRegistryBasePath:(id)arg1;

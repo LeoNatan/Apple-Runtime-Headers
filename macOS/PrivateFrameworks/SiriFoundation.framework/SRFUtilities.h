@@ -10,8 +10,8 @@
 {
 }
 
++ (BOOL)isShieldWindowShowing;
 + (BOOL)isFastUserSwitching;
-+ (BOOL)isScreenLocked;
 
 @end
 

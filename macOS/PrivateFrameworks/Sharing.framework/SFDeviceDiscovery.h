@@ -26,6 +26,7 @@
     BOOL _overrideScreenOff;
     BOOL _scanCache;
     BOOL _targetUserSession;
+    BOOL _trackPeers;
     unsigned int _changeFlags;
     NSSet *_deviceFilter;
     CDUnknownBlockType _deviceFoundHandler;
@@ -49,6 +50,7 @@
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) CDUnknownBlockType scanStateChangedHandler; // @synthesize scanStateChangedHandler=_scanStateChangedHandler;
 @property(nonatomic) long long scanRateOverride; // @synthesize scanRateOverride=_scanRateOverride;
+@property(nonatomic) BOOL trackPeers; // @synthesize trackPeers=_trackPeers;
 @property(copy, nonatomic) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) BOOL targetUserSession; // @synthesize targetUserSession=_targetUserSession;

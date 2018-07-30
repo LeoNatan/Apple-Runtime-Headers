@@ -14,5 +14,6 @@
 - (void)synchronouslyReflectCurrentValue;
 - (void)stop;
 - (void)start;
+- (void)setCurrentEvent:(_DKEvent *)arg1 inferHistoricalState:(_Bool)arg2;
 @end
 

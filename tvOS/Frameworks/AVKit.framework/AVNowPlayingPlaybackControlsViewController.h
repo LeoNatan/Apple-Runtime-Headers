@@ -190,6 +190,7 @@
 - (void)_skipDisplayTimeByAdding:(double)arg1 seeking:(_Bool)arg2;
 @property(readonly, getter=isSeeking) _Bool seeking;
 - (double)timeFromTransportBar;
+- (void)resumeAfterModalInterruption;
 - (void)pauseForModalInterruption;
 - (void)pause;
 @property(nonatomic) _Bool wantPlayback;
@@ -234,6 +235,7 @@
 - (void)_updateStartAndEndDatesAndTimes;
 - (void)_playerStatusDidChange:(id)arg1;
 - (void)_seekableRangesDidChange;
+- (void)_updateSeekableRangesOnceOnMain;
 - (void)_keyDidChangeAffectingLoadingOrErrorStatus:(id)arg1;
 - (void)_updateLoadingAndErrorIndicators;
 - (void)setControlsVisible:(_Bool)arg1 animated:(_Bool)arg2;

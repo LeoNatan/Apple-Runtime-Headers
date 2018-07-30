@@ -6,11 +6,12 @@
 
 #import "ARSessionDelegate.h"
 
-@class ARSession;
+@class ARConfiguration, ARSession;
 
 @protocol ARInternalSessionObserver <ARSessionDelegate>
 
 @optional
+- (void)session:(ARSession *)arg1 willRunWithConfiguration:(ARConfiguration *)arg2;
 - (void)sessionShouldAttemptRelocalization:(ARSession *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)session:(ARSession *)arg1 didChangeState:(unsigned long long)arg2;
 @end

@@ -32,6 +32,7 @@
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(copy, nonatomic) NSArray *urlStrings; // @synthesize urlStrings=_urlStrings;
 - (void).cxx_destruct;
+- (void)attributionCellDidChangeEffectiveAppearance;
 - (void)openURL;
 - (id)infoAttributionString;
 - (void)infoCardThemeChanged:(id)arg1;

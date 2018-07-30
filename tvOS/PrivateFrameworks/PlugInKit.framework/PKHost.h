@@ -31,8 +31,8 @@
 - (id)activePlugInForIdentifier:(id)arg1;
 - (void)setExtensionState:(id)arg1 forPlugIn:(id)arg2;
 - (void)setElection:(long long)arg1 forPlugIn:(id)arg2;
-- (void)readyPlugIns:(id)arg1 environment:(id)arg2 ready:(CDUnknownBlockType)arg3;
-- (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 extensions:(CDUnknownBlockType)arg3;
+- (void)readyPlugIns:(id)arg1 synchronously:(_Bool)arg2 environment:(id)arg3 ready:(CDUnknownBlockType)arg4;
+- (void)accessPlugIns:(id)arg1 synchronously:(_Bool)arg2 flags:(unsigned long long)arg3 extensions:(CDUnknownBlockType)arg4;
 - (void)cancelPlugInDiscovery:(id)arg1;
 - (id)continuouslyDiscoverPlugInsForAttributes:(id)arg1 flags:(unsigned long long)arg2 found:(CDUnknownBlockType)arg3;
 - (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned long long)arg2;

@@ -10,20 +10,22 @@
 
 @interface _MKNanoPlaceCardMapDataSource : _MKNanoPlaceCardSectionData
 {
+    _Bool _showsName;
+    UIColor *_pinTintColor;
     _MKNanoPlaceCardFooterView *_cell;
+    unsigned int _mapType;
 }
 
+@property(nonatomic) _Bool showsName; // @synthesize showsName=_showsName;
+@property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
+@property(retain, nonatomic) _MKNanoPlaceCardFooterView *cell; // @synthesize cell=_cell;
+@property(retain, nonatomic) UIColor *pinTintColor; // @synthesize pinTintColor=_pinTintColor;
 - (void).cxx_destruct;
-- (void)preloadSnapshotForWidth:(float)arg1;
 - (void)notifyDelegateForActionAtRow:(unsigned int)arg1;
 - (id)cellForRow:(unsigned int)arg1 inTableView:(id)arg2;
-@property(retain, nonatomic) UIColor *pinTintColor;
-@property(nonatomic) unsigned int pinColor;
-@property(nonatomic) unsigned int mapType;
-@property(nonatomic) _Bool showsName;
-- (id)initWithMapItem:(id)arg1;
 - (id)title;
 - (int)numberOfRows;
+- (id)initWithMapItem:(id)arg1 mapType:(unsigned int)arg2 showsName:(_Bool)arg3;
 
 // Remaining properties
 @property(nonatomic) __weak id <_MKNanoPlaceCardMapDataDelegate> delegate; // @dynamic delegate;

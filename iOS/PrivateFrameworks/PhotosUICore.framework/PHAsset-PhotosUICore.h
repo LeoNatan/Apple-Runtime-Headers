@@ -15,8 +15,6 @@
 - (id)px_mailingAddressIncludeZipCode:(_Bool)arg1;
 - (id)px_postalAddressIncludeZipCode:(_Bool)arg1;
 - (struct CGRect)faceAreaRect;
-- (void)_px_adjustRectWithFaces:(struct CGRect *)arg1 forAssetRect:(struct CGRect)arg2 verticalContentMode:(long long)arg3;
-- (struct CGRect)px_bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(long long)arg2 shouldUseFacesRect:(_Bool)arg3;
-- (struct CGRect)px_bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(long long)arg2;
+- (struct CGRect)originalFaceAreaRect;
 @end
 

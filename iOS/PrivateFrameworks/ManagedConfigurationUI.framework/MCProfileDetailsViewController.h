@@ -10,6 +10,7 @@
 
 @class MCUIProfile, NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCProfileDetailsViewController : UITableViewController <PSStateRestoration>
 {
     _Bool _showTitleIfOnlyOneSection;

@@ -23,8 +23,8 @@
 @property(readonly, nonatomic) float collisionImpulse;
 @property(readonly, nonatomic) struct CGVector contactNormal;
 @property(readonly, nonatomic) struct CGPoint contactPoint;
-@property(readonly, retain, nonatomic) PKPhysicsBody *bodyB;
-@property(readonly, retain, nonatomic) PKPhysicsBody *bodyA;
+@property(readonly, nonatomic) PKPhysicsBody *bodyB;
+@property(readonly, nonatomic) PKPhysicsBody *bodyA;
 - (void)setCollisionImpulse:(float)arg1;
 - (void)setBodyB:(id)arg1;
 - (void)setBodyA:(id)arg1;

@@ -8,14 +8,17 @@
 
 #import "NSCopying.h"
 
-__attribute__((visibility("hidden")))
 @interface OADFill : OADProperties <NSCopying>
 {
+    BOOL mDefinedByStyle;
+    BOOL _definedByStyle;
 }
 
+@property BOOL definedByStyle; // @synthesize definedByStyle=_definedByStyle;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (BOOL)isOverridden;
 - (BOOL)usesPlaceholderColor;
 - (void)setStyleColor:(id)arg1;
 - (float)alpha;

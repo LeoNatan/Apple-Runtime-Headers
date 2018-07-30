@@ -16,6 +16,7 @@
 + (id)fu_alternateColonsFeatureSetting;
 + (id)_fu_sausageFontOfSize:(float)arg1 fontWeight:(float)arg2 centeredColons:(_Bool)arg3;
 + (id)_fu_sausageFontOfSize:(float)arg1 fontWeight:(float)arg2;
++ (id)fu_heavySausageFontOfSize:(float)arg1;
 + (id)fu_boldSausageFontOfSize:(float)arg1;
 + (id)fu_semiboldSausageFontOfSize:(float)arg1;
 + (id)fu_mediumSausageFontOfSize:(float)arg1;

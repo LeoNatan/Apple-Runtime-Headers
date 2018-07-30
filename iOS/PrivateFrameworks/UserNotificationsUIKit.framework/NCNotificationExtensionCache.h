@@ -13,7 +13,7 @@
     struct NSMutableDictionary *_extensions;
 }
 
-@property(copy, nonatomic) NSMutableDictionary *extensions; // @synthesize extensions=_extensions;
+@property(retain, nonatomic) NSMutableDictionary *extensions; // @synthesize extensions=_extensions;
 - (void).cxx_destruct;
 - (id)_extensionMatchingSection:(id)arg1 category:(id)arg2;
 - (id)_customSectionIdentifierForExtension:(id)arg1;

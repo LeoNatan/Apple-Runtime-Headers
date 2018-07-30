@@ -11,5 +11,6 @@
 @protocol SXComponentInteractionManager <NSObject>
 - (void)commitViewController:(UIViewController *)arg1;
 - (id <SXComponentInteractionPreviewContext>)previewViewControllerForLocation:(struct CGPoint)arg1;
+- (_Bool)hasInteractionForLocation:(struct CGPoint)arg1;
 @end
 

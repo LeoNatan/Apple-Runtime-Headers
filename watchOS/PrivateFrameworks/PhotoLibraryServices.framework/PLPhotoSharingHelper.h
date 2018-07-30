@@ -70,11 +70,13 @@
 + (void)requestVideoPlaybackURLForAsset:(id)arg1 videoType:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 + (_Bool)isCellularConnection;
 + (void)deleteCloudSharedAssetsFromServer:(id)arg1 inSharedAlbum:(id)arg2;
++ (void)_userDidDeleteSharedAssets:(id)arg1;
 + (void)enqueueCloudSharedAssetsForPublishToServer:(id)arg1 inSharedAlbum:(id)arg2;
 + (void)updateCloudSharedAlbumMultipleContributorsStateOnServer:(id)arg1;
 + (void)updateCloudSharedAlbumPublicURLStateOnServer:(id)arg1;
 + (void)updateCloudSharedAlbumMetadataOnServer:(id)arg1;
 + (void)deleteCloudSharedAlbumFromServer:(id)arg1;
++ (void)_userDidDeleteSharedAlbum:(id)arg1;
 + (void)publishCloudSharedAlbumToServer:(id)arg1;
 + (void)deleteLocalAlbumsForMSASAlbumsWithGUIDs:(id)arg1;
 + (void)resetAllLocalState;
@@ -113,7 +115,6 @@
 + (id)sharingPersonID;
 + (_Bool)sharedStreamsExplictlyDisabled;
 + (_Bool)sharedStreamsEnabled;
-+ (_Bool)sharedStreamsUIEnabled;
 + (void)clearCachedAccountState;
 + (void)photosPreferencesChanged;
 + (void)accountSettingsChanged;

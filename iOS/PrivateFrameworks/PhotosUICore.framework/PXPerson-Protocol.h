@@ -16,7 +16,7 @@
 @property(readonly) NSString *px_displayName;
 @property(readonly) NSString *name;
 @property(readonly) unsigned long long numberOfAssets;
-- (void)requestFaceTileImageWithTargetSize:(struct CGSize)arg1 cropFactor:(unsigned long long)arg2 round:(_Bool)arg3 cacheResult:(_Bool)arg4 boundFaceRect:(_Bool)arg5 completionBlock:(void (^)(UIImage *, struct CGRect, NSError *))arg6;
+- (void)requestFaceTileImageWithTargetSize:(struct CGSize)arg1 cropFactor:(unsigned long long)arg2 style:(unsigned long long)arg3 cacheResult:(_Bool)arg4 boundFaceRect:(_Bool)arg5 completionBlock:(void (^)(UIImage *, struct CGRect, NSError *))arg6;
 
 @optional
 @property(readonly) NSDate *px_keyPhotoDate;

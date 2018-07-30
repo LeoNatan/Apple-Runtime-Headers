@@ -34,7 +34,6 @@
 @property(retain, nonatomic) AVPlayerController *playerController;
 @property(readonly, nonatomic) AVPlayerLayer *playerLayer;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

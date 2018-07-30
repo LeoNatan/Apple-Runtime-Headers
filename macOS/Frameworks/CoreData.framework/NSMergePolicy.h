@@ -19,7 +19,7 @@
 + (id)mergeByPropertyStoreTrumpMergePolicy;
 + (id)errorMergePolicy;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (void)load;
++ (void)initialize;
 - (void)mergeToManyRelationshipForSourceObject:(id)arg1 withOldSnapshot:(id)arg2 newSnapshot:(id)arg3 andAncestor:(id)arg4 andLegacyPath:(BOOL)arg5;
 - (BOOL)resolveOptimisticLockingVersionConflicts:(id)arg1 error:(id *)arg2;
 - (BOOL)resolveConstraintConflicts:(id)arg1 error:(id *)arg2;

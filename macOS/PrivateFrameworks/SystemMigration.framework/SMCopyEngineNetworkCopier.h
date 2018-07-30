@@ -29,7 +29,6 @@
 - (void)bomCopierCopyFileFinished:(struct _BOMCopier *)arg1 filePath:(const char *)arg2 type:(int)arg3 totalSize:(long long)arg4 result:(int)arg5;
 - (void)fileFinishedFromArchiver:(id)arg1 totalSize:(unsigned long long)arg2;
 - (void)bomCopierCopyFileUpdate:(struct _BOMCopier *)arg1 filePath:(const char *)arg2 totalSizeCopied:(long long)arg3;
-- (id)formattedExcludedPaths;
 - (BOOL)copyFrom:(id)arg1 relativeFrom:(id)arg2 to:(id)arg3 error:(id *)arg4;
 - (BOOL)processReturningError:(id *)arg1;
 - (id)initWithProxy:(id)arg1;

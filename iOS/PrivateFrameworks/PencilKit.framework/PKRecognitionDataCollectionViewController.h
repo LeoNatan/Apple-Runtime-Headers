@@ -38,6 +38,7 @@
 - (void)openTapToRadarWithTempDirectoryURL:(id)arg1;
 - (void)openAppleFeedbackAssistantWithTempDirectoryURL:(id)arg1;
 - (void)sendRadarButtonTapped:(id)arg1;
+- (void)openURL:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)adjustCollectionViewHeight;

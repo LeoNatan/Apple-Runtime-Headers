@@ -9,20 +9,21 @@
 #import "HMFLogging.h"
 #import "HMObjectMerge.h"
 
-@class HMAccessory, HMAccessorySettingGroup, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMAccessory, HMAccessorySettingGroup, HMFUnfairLock, NSString, NSUUID, _HMContext;
 
 @interface HMAccessorySettings : NSObject <HMFLogging, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     id <HMAccessorySettingsContainer> _settingsContainer;
     id <HMControllable> _settingsControl;
     id <HMAccessorySettingsDelegate> _delegate;
     HMAccessorySettingGroup *_rootGroup;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
+    _HMContext *_context;
 }
 
 + (id)logCategory;
 + (id)localizationKeyForKeyPath:(id)arg1;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
+@property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly) HMAccessorySettingGroup *rootGroup; // @synthesize rootGroup=_rootGroup;
 @property __weak id <HMAccessorySettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -33,8 +34,7 @@
 - (void)_updateSettingsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, getter=isControllable) _Bool controllable;
 @property __weak id <HMControllable> settingsControl; // @synthesize settingsControl=_settingsControl;
-- (void)setSettingsContainer:(id)arg1;
-@property(readonly) __weak id <HMAccessorySettingsContainer> settingsContainer; // @synthesize settingsContainer=_settingsContainer;
+@property __weak id <HMAccessorySettingsContainer> settingsContainer; // @synthesize settingsContainer=_settingsContainer;
 @property(readonly) __weak HMAccessory *accessory;
 - (void)_configureWithContext:(id)arg1;
 - (id)initWithSettingsContainer:(id)arg1 settingsControl:(id)arg2 rootGroup:(id)arg3;

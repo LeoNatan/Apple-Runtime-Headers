@@ -28,6 +28,7 @@
 - (void)enumerateItems:(CDUnknownBlockType)arg1;
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;
+- (void)addPromisedType:(id)arg1 fileCallback:(CDUnknownBlockType)arg2;
 - (void)addRepresentingObject:(id)arg1;
 - (void)addData:(id)arg1 forType:(id)arg2;
 - (void)dealloc;

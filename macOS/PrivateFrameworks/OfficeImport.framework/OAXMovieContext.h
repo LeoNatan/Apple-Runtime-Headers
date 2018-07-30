@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OCXDelayedMediaContext.h>
 
-__attribute__((visibility("hidden")))
 @interface OAXMovieContext : OCXDelayedMediaContext
 {
 }

@@ -20,10 +20,11 @@
     _Bool _clippingDisabled;
 }
 
-@property(readonly, retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
+@property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 @property(nonatomic, getter=isClippingDisabled) _Bool clippingDisabled; // @synthesize clippingDisabled=_clippingDisabled;
-@property(nonatomic) id <FBSceneLayerHostContainerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-@property(readonly, retain, nonatomic) NSArray *hostedLayers; // @synthesize hostedLayers=_hostedLayers;
+@property(nonatomic) __weak id <FBSceneLayerHostContainerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly, nonatomic) NSArray *hostedLayers; // @synthesize hostedLayers=_hostedLayers;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

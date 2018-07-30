@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CUISAlertQuickLongLookScrollView, CUISBulletinClientViewController, NSDictionary, UIView;
+@class BBResponse, CUISAlertQuickLongLookScrollView, CUISBulletinClientViewController, NSDictionary, UIView;
 
 @protocol CUISBulletinClientViewControllerDelegate <NSObject>
 - (void)clientViewController:(CUISBulletinClientViewController *)arg1 insertTemporaryBackground:(UIView *)arg2;
@@ -18,6 +18,8 @@
 - (void)clientViewControllerRequestsAutoScrollToBottom:(CUISBulletinClientViewController *)arg1;
 - (void)clientViewControllerRequestsScrollToBottom:(CUISBulletinClientViewController *)arg1;
 - (void)clientViewControllerNeedsResizeViews:(CUISBulletinClientViewController *)arg1;
+- (void)clientViewController:(CUISBulletinClientViewController *)arg1 requestActionCompletionForActionResponse:(BBResponse *)arg2;
+- (void)clientViewController:(CUISBulletinClientViewController *)arg1 requestPerformActionResponse:(BBResponse *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)clientViewControllerPerformedAction:(CUISBulletinClientViewController *)arg1;
 - (void)clientViewControllerRequestsDismissal:(CUISBulletinClientViewController *)arg1;
 @end

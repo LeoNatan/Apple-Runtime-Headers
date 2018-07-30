@@ -6,11 +6,12 @@
 
 #import "UIView.h"
 
-#import "MTContentSizeCategoryAdjusting.h"
+#import "NCMaterialsAdjusting.h"
+#import "PLContentSizeCategoryAdjusting.h"
 
 @class NCNotificationListCellActionButton, NSString, UIStackView, _UIStatesFeedbackGenerator;
 
-@interface NCNotificationListCellActionButtonsView : UIView <MTContentSizeCategoryAdjusting>
+@interface NCNotificationListCellActionButtonsView : UIView <PLContentSizeCategoryAdjusting, NCMaterialsAdjusting>
 {
     _Bool _adjustsFontForContentSizeCategory;
     _Bool _highlightDefaultActionButton;
@@ -21,14 +22,19 @@
     UIView *_clippingView;
     UIStackView *_buttonsStackView;
     NCNotificationListCellActionButton *_defaultActionButton;
+    long long _materialRecipe;
+    unsigned long long _backgroundMaterialOptions;
+    unsigned long long _overlayMaterialOptions;
     _UIStatesFeedbackGenerator *_defaultActionFeedbackGenerator;
 }
 
-+ (unsigned long long)numberOfActionButtonsForNotificationRequest:(id)arg1 cell:(id)arg2;
 + (id)_openButtonDescriptionForNotificationRequest:(id)arg1 cell:(id)arg2;
-+ (id)_actionButtonDescriptionsForNotificationRequest:(id)arg1 cell:(id)arg2;
++ (id)_actionButtonDescriptionsForNotificationRequest:(id)arg1 sectionSettings:(id)arg2 cell:(id)arg3;
 @property(nonatomic) _Bool didPlayHaptic; // @synthesize didPlayHaptic=_didPlayHaptic;
 @property(retain, nonatomic) _UIStatesFeedbackGenerator *defaultActionFeedbackGenerator; // @synthesize defaultActionFeedbackGenerator=_defaultActionFeedbackGenerator;
+@property(nonatomic) unsigned long long overlayMaterialOptions; // @synthesize overlayMaterialOptions=_overlayMaterialOptions;
+@property(nonatomic) unsigned long long backgroundMaterialOptions; // @synthesize backgroundMaterialOptions=_backgroundMaterialOptions;
+@property(nonatomic) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
 @property(retain, nonatomic) NCNotificationListCellActionButton *defaultActionButton; // @synthesize defaultActionButton=_defaultActionButton;
 @property(retain, nonatomic) UIStackView *buttonsStackView; // @synthesize buttonsStackView=_buttonsStackView;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
@@ -38,6 +44,7 @@
 @property(nonatomic) _Bool highlightDefaultActionButton; // @synthesize highlightDefaultActionButton=_highlightDefaultActionButton;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 - (void).cxx_destruct;
+- (void)adjustForChangeInMaterialRecipe:(long long)arg1 backgroundMaterialOptions:(unsigned long long)arg2 overlayMaterialOptions:(unsigned long long)arg3;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)_actuateFeedbackForDefaultActionUnlockedIfNecessary;
@@ -56,7 +63,7 @@
 @property(readonly, nonatomic) _Bool shouldPerformDefaultAction;
 - (void)_configureActionButtonsForActionButtonDescriptions:(id)arg1 cell:(id)arg2;
 - (void)configureOpenActionButtonForNotificationRequest:(id)arg1 cell:(id)arg2;
-- (void)configureCellActionButtonsForNotificationRequest:(id)arg1 cell:(id)arg2;
+- (void)configureCellActionButtonsForNotificationRequest:(id)arg1 sectionSettings:(id)arg2 cell:(id)arg3;
 - (void)layoutSubviews;
 - (void)willMoveToSuperview:(id)arg1;
 

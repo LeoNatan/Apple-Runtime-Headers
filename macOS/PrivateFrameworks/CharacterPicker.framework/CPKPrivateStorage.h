@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CPKDataProvider, CPKPopoverController, CPKWindow, EMFEmojiLocaleData, EMFEmojiPreferences, NSView, NSWindow;
+@class CPKDataProvider, CPKPopoverController, CPKWindow, EMFEmojiLocaleData, EMFEmojiPreferences, NSDictionary, NSView, NSWindow;
 
 __attribute__((visibility("hidden")))
 @interface CPKPrivateStorage : NSObject
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSWindow *_alternateLargeWindow;
     NSWindow *_lastKeyWindow;
     id _lastActionObject;
+    NSDictionary *_selectionAttributeForTextView;
     id <CPKCharacterEntity> _lastSelectedEntity;
     CPKWindow *_detachingWindow;
     CPKWindow *_detachedWindow;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(retain) CPKWindow *detachedWindow; // @synthesize detachedWindow=_detachedWindow;
 @property(retain) CPKWindow *detachingWindow; // @synthesize detachingWindow=_detachingWindow;
 @property(retain) id <CPKCharacterEntity> lastSelectedEntity; // @synthesize lastSelectedEntity=_lastSelectedEntity;
+@property(retain) NSDictionary *selectionAttributeForTextView; // @synthesize selectionAttributeForTextView=_selectionAttributeForTextView;
 @property struct _NSRange lastSelectionOnTarget; // @synthesize lastSelectionOnTarget=_lastSelectionOnTarget;
 @property BOOL lastTargetValidation; // @synthesize lastTargetValidation=_lastTargetValidation;
 @property id lastActionObject; // @synthesize lastActionObject=_lastActionObject;

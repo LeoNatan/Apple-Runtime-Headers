@@ -18,7 +18,11 @@
 
 @property __weak id <XCTElementSnapshotProvider> snapshotProvider; // @synthesize snapshotProvider=_snapshotProvider;
 - (void).cxx_destruct;
+@property(readonly) BOOL usePointTransformationsForFrameConversions;
+@property(readonly) BOOL supportsHostedViewCoordinateTransformations;
+- (id)parameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 error:(id *)arg4;
 - (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
+@property(readonly) BOOL allowsRemoteAccess;
 - (id)snapshotForElement:(id)arg1 attributes:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
 - (void)fetchMatchesForQuery:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)init;

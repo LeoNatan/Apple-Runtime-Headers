@@ -14,7 +14,6 @@
     _Bool _sendCurrentLocationFromKeyboardEnabled;
     _Bool _updatesFontOnTextChange;
     _Bool _hideCaret;
-    _Bool _preventingResignFirstResponder;
     UIColor *_placeholderColor;
     float _placeHolderWidth;
     float _placeholderExpandedWidth;
@@ -27,7 +26,6 @@
 
 @property(retain, nonatomic) UIKeyboardInputMode *savedKeyboardInputMode; // @synthesize savedKeyboardInputMode=_savedKeyboardInputMode;
 @property(retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
-@property(nonatomic, getter=isPreventingResignFirstResponder) _Bool preventingResignFirstResponder; // @synthesize preventingResignFirstResponder=_preventingResignFirstResponder;
 @property(nonatomic) float adjustedLineFragmentPadding; // @synthesize adjustedLineFragmentPadding=_adjustedLineFragmentPadding;
 @property(nonatomic) _Bool hideCaret; // @synthesize hideCaret=_hideCaret;
 @property(nonatomic) _Bool updatesFontOnTextChange; // @synthesize updatesFontOnTextChange=_updatesFontOnTextChange;

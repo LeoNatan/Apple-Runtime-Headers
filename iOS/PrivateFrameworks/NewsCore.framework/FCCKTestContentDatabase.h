@@ -26,6 +26,7 @@
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
 @property(nonatomic) _Bool simulateNetworkError; // @synthesize simulateNetworkError=_simulateNetworkError;
 - (void).cxx_destruct;
+- (id)records:(id)arg1 withDesiredKeys:(id)arg2;
 - (unsigned long long)orderForArticleID:(id)arg1 feedID:(id)arg2;
 - (id)addArticlesToTopOfFeed:(id)arg1 count:(unsigned long long)arg2;
 - (void)simulateDroppedFeedForFeedID:(id)arg1;
@@ -46,6 +47,7 @@
 - (void)insertTestArticleWithID:(id)arg1 properties:(id)arg2;
 - (id)insertTestArticleWithProperties:(id)arg1;
 - (id)insertTestArticle;
+- (void)insertRecord:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (_Bool)shouldUseCloudd;
 - (id)initWithContainerIdentifier:(id)arg1 productionEnvironment:(_Bool)arg2 networkBehaviorMonitor:(id)arg3;

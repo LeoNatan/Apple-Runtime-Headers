@@ -19,6 +19,7 @@
 @property unsigned int chipID; // @synthesize chipID=_chipID;
 @property unsigned int boardID; // @synthesize boardID=_boardID;
 @property(retain) NSString *modelID; // @synthesize modelID=_modelID;
+- (void)dealloc;
 
 @end
 

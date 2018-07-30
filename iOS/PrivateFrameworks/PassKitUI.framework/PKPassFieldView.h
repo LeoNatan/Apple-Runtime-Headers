@@ -29,8 +29,8 @@
 @property(retain, nonatomic) PKPassFieldTemplate *fieldTemplate; // @synthesize fieldTemplate=_fieldTemplate;
 @property(retain, nonatomic) PKPassField *field; // @synthesize field=_field;
 - (void).cxx_destruct;
-- (id)_valueAttributedStringForColorProfile:(id)arg1 background:(long long)arg2;
-- (id)_labelAttributedStringForColorProfile:(id)arg1 background:(long long)arg2;
+- (id)_valueAttributedStringForColorProfile:(id)arg1;
+- (id)_labelAttributedStringForColorProfile:(id)arg1;
 - (struct CGSize)_resizeMultiLineValueFontForAvailableSize:(struct CGSize)arg1;
 - (_Bool)_shouldDisplayLabel;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(CDUnknownBlockType)arg3;

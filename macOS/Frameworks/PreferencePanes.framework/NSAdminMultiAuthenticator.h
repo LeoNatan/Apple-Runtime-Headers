@@ -17,6 +17,7 @@
 
 + (id)multiAuthenticator;
 - (void).cxx_destruct;
+- (void)authenticateUsingAuthorization:(id)arg1 userName:(id)arg2 password:(id)arg3;
 - (BOOL)isAuthenticated;
 - (void)deauthenticate;
 - (void)authenticateUsingAuthorization:(id)arg1;

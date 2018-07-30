@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak GEORouteSet *routeSet; // @synthesize routeSet=_routeSet;
 @property(readonly, nonatomic) GEODirectionsResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) GEODirectionsRequest *request; // @synthesize request=_request;
-@property(readonly, nonatomic) _Bool isNavigable; // @synthesize isNavigable=_isNavigable;
 - (void).cxx_destruct;
 - (void)_createAlternateStartRoutesLookup;
 @property(readonly, nonatomic) NSDictionary *alternateStartRoutesLookup;
@@ -52,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)routeAndFullLazyContingenciesAtIndex:(unsigned long long)arg1;
 - (id)routeAndPartialLazyContingenciesAtIndex:(unsigned long long)arg1;
 - (id)_lazyRoutesAtIndex:(unsigned long long)arg1 partial:(_Bool)arg2;
+@property(readonly, nonatomic) _Bool isNavigable;
 - (id)initWithReroute:(id)arg1 request:(id)arg2 response:(id)arg3 shouldLazyLoad:(_Bool)arg4;
 - (id)initWithRequest:(id)arg1 response:(id)arg2 routeSet:(id)arg3 shouldLazyLoad:(_Bool)arg4 selectedRouteIndex:(long long)arg5;
 

@@ -11,15 +11,13 @@
 
 @class AVWeakReference, NSArray, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetInspectorLoader : NSObject <NSCopying, AVAsynchronousKeyValueLoading>
 {
     AVWeakReference *_weakReference;
 }
 
 + (void)initialize;
-- (void)postURLSessionSetUpDidCompleteNotificationIfAppropriate;
-- (id)_URLSessionDataDelegate;
-- (id)_URLSessionOperationQueue;
 - (id)_createAVErrorForError:(id)arg1 andFigErrorCode:(int)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;

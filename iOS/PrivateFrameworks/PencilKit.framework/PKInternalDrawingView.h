@@ -4,18 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <PencilKit/PKInternalDrawingLightView.h>
+#import "UIView.h"
 
 #import "PKControllerDelegate.h"
 #import "PKDrawingGestureTarget.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CADisplayLink, NSString, NSTimer, PKController, PKDrawingGestureRecognizer, PKFreeTransformGestureRecognizer, PKInk, PKOpenGLESView, PKSelectionController, PKUndoSwipeGestureRecognizer, UIActivityIndicatorView, UIView;
+@class CADisplayLink, NSMutableOrderedSet, NSString, NSTimer, PKController, PKDrawing, PKDrawingGestureRecognizer, PKFreeTransformGestureRecognizer, PKInk, PKMetalView, PKOpenGLESView, PKSelectionController;
 
-@interface PKInternalDrawingView : PKInternalDrawingLightView <PKControllerDelegate, PKDrawingGestureTarget, UIGestureRecognizerDelegate>
+@interface PKInternalDrawingView : UIView <PKControllerDelegate, PKDrawingGestureTarget, UIGestureRecognizerDelegate>
 {
-    UIView *_transitionBackgroundView;
-    UIView *_transitionImageView;
     CADisplayLink *_displayLink;
     _Bool _shouldPause;
     struct CGAffineTransform _imageTransform;
@@ -24,7 +22,12 @@
     struct CGPoint _drawingBeganLocation;
     _Bool _isErasingObjects;
     struct CGPoint _oldEraseLocation;
-    long long _undoGroupCount;
+    unsigned long long _maxNumPredictionPoints;
+    NSMutableOrderedSet *_strokesToErase;
+    _Bool _shouldPresentInDidMoveToWindow;
+    CDUnknownBlockType _purgeResourcesBlock;
+    PKDrawing *_drawingAboutToBeSet;
+    unsigned long long _numSkippedDoubleBufferedFrames;
     _Bool _isDrawing;
     _Bool _disableWideGamut;
     _Bool _zooming;
@@ -33,53 +36,49 @@
     _Bool _pinchingFromSmallestState;
     _Bool _pinchValid;
     _Bool _fullySetup;
-    _Bool _claimedLiveDrawing;
     _Bool _layerFixedPixelSize;
+    PKDrawing *_drawing;
+    PKSelectionController *_selectionController;
     id <PKInternalDrawingViewDelegate> _delegate;
+    long long _cachedOrientation;
     PKInk *_ink;
     PKDrawingGestureRecognizer *_drawingGestureRecognizer;
     PKFreeTransformGestureRecognizer *_pinchGestureRecognizer;
     PKController *_drawingController;
-    PKOpenGLESView *_glView;
     id _undoTarget;
     SEL _undoSelector;
-    UIActivityIndicatorView *_activityView;
     double _minimumZoomScale;
     double _maximumZoomScale;
     double _drawingStartTimestamp;
+    PKMetalView *_metalView;
+    PKOpenGLESView *_glView;
     NSTimer *_imageTransformTimer;
     double _initialDrawingBoundsYOrigin;
-    PKUndoSwipeGestureRecognizer *_undoGestureRecognizer;
-    PKUndoSwipeGestureRecognizer *_redoGestureRecognizer;
-    PKSelectionController *_selectionController;
-    struct CGPoint _drawingStartPointInScreenSpace;
+    id _pkaxOpenGLView;
+    struct CGSize _drawingSize;
     struct CGAffineTransform _strokeTransform;
     struct CGAffineTransform _pinchStartAffineTransform;
 }
 
 + (void)setupDefaults;
 + (void)initialize;
+@property(readonly, nonatomic) id pkaxOpenGLView; // @synthesize pkaxOpenGLView=_pkaxOpenGLView;
 @property(nonatomic) _Bool layerFixedPixelSize; // @synthesize layerFixedPixelSize=_layerFixedPixelSize;
-@property(readonly, nonatomic) __weak PKSelectionController *selectionController; // @synthesize selectionController=_selectionController;
 @property(nonatomic) _Bool didCancelSelection; // @synthesize didCancelSelection=_didCancelSelection;
-@property(nonatomic) _Bool claimedLiveDrawing; // @synthesize claimedLiveDrawing=_claimedLiveDrawing;
 @property(nonatomic) _Bool fullySetup; // @synthesize fullySetup=_fullySetup;
 @property(nonatomic) _Bool pinchValid; // @synthesize pinchValid=_pinchValid;
 @property(nonatomic) struct CGAffineTransform pinchStartAffineTransform; // @synthesize pinchStartAffineTransform=_pinchStartAffineTransform;
 @property(nonatomic) _Bool pinchingFromSmallestState; // @synthesize pinchingFromSmallestState=_pinchingFromSmallestState;
-@property(retain, nonatomic) PKUndoSwipeGestureRecognizer *redoGestureRecognizer; // @synthesize redoGestureRecognizer=_redoGestureRecognizer;
-@property(retain, nonatomic) PKUndoSwipeGestureRecognizer *undoGestureRecognizer; // @synthesize undoGestureRecognizer=_undoGestureRecognizer;
 @property(nonatomic) double initialDrawingBoundsYOrigin; // @synthesize initialDrawingBoundsYOrigin=_initialDrawingBoundsYOrigin;
 @property(retain, nonatomic) NSTimer *imageTransformTimer; // @synthesize imageTransformTimer=_imageTransformTimer;
+@property(readonly, nonatomic) PKOpenGLESView *glView; // @synthesize glView=_glView;
+@property(readonly, nonatomic) PKMetalView *metalView; // @synthesize metalView=_metalView;
 @property double drawingStartTimestamp; // @synthesize drawingStartTimestamp=_drawingStartTimestamp;
 @property(nonatomic) _Bool shouldPause; // @synthesize shouldPause=_shouldPause;
-@property(nonatomic) struct CGPoint drawingStartPointInScreenSpace; // @synthesize drawingStartPointInScreenSpace=_drawingStartPointInScreenSpace;
 @property(nonatomic) double maximumZoomScale; // @synthesize maximumZoomScale=_maximumZoomScale;
 @property(nonatomic) double minimumZoomScale; // @synthesize minimumZoomScale=_minimumZoomScale;
-@property(nonatomic) __weak UIActivityIndicatorView *activityView; // @synthesize activityView=_activityView;
 @property(nonatomic) SEL undoSelector; // @synthesize undoSelector=_undoSelector;
 @property(nonatomic) __weak id undoTarget; // @synthesize undoTarget=_undoTarget;
-@property(readonly, nonatomic) PKOpenGLESView *glView; // @synthesize glView=_glView;
 @property(readonly, nonatomic) PKController *drawingController; // @synthesize drawingController=_drawingController;
 @property(nonatomic, getter=isEditable) _Bool editable; // @synthesize editable=_editable;
 @property(nonatomic) _Bool allowLiveInteraction; // @synthesize allowLiveInteraction=_allowLiveInteraction;
@@ -89,15 +88,22 @@
 @property(nonatomic) _Bool disableWideGamut; // @synthesize disableWideGamut=_disableWideGamut;
 @property(nonatomic) _Bool isDrawing; // @synthesize isDrawing=_isDrawing;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
+@property(nonatomic) struct CGSize drawingSize; // @synthesize drawingSize=_drawingSize;
+@property(nonatomic) long long cachedOrientation; // @synthesize cachedOrientation=_cachedOrientation;
 @property(nonatomic) struct CGAffineTransform strokeTransform; // @synthesize strokeTransform=_strokeTransform;
 @property(nonatomic) __weak id <PKInternalDrawingViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak PKSelectionController *selectionController; // @synthesize selectionController=_selectionController;
 - (void).cxx_destruct;
 - (void)setDisplayLinkPaused:(_Bool)arg1;
 - (void)setIsDrawingForRecap:(_Bool)arg1;
+- (void)_handleSelectionForTouch:(id)arg1 stroke:(id)arg2 drawing:(id)arg3;
+- (void)_closeLassoForTouch:(id)arg1;
+- (void)_addSpaceBelowDrawingForStroke:(id)arg1 touch:(id)arg2;
+- (_Bool)_isLassoAddingSpace:(id)arg1;
+- (struct CGRect)visibleOnscreenBoundsForDrawing:(id)arg1;
 - (void)selectionBegan:(id)arg1;
 - (id)accessibilityElements;
-@property(readonly, nonatomic) id pkaxOpenGLView;
-- (void)updatePanEdgesForTransform:(struct CGAffineTransform)arg1;
+- (id)pkaxMetalView;
 - (void)paste:(id)arg1;
 - (void)duplicate:(id)arg1;
 - (void)cut:(id)arg1;
@@ -110,40 +116,39 @@
 - (struct CGAffineTransform)pinchTransform:(id)arg1 elasticity:(double)arg2;
 - (struct CGPoint)translationOffsetForTransform:(struct CGAffineTransform)arg1;
 - (double)offsetForCenteringRangeMin:(double)arg1 size:(double)arg2 inSize:(double)arg3;
-- (void)forceEndDrawing;
-- (void)forceCancelDrawing;
 - (void)drawingEstimatedPropertiesUpdated:(id)arg1;
 - (void)drawingMoved:(id)arg1 withEvent:(id)arg2;
 - (void)cancelNonDrawingGestures;
 - (struct CGPoint)applyTransformToTouchLocation:(struct CGPoint)arg1;
+- (struct CGAffineTransform)fitTransformForOrientation:(long long)arg1;
 - (struct CGAffineTransform)fitTransform;
 - (void)drawingCancelled;
+- (void)drawStrokeWithPoints:(struct CGPoint *)arg1 count:(unsigned long long)arg2;
 - (void)drawStrokeWithPath:(struct CGPath *)arg1;
 - (void)registerUndoForStroke:(id)arg1;
 - (void)drawingEnded:(id)arg1;
-- (void)_closeLassoForTouch:(id)arg1;
 - (void)postDrawingEndedAnnouncementFor:(id)arg1;
 - (CDStruct_f17e9403)drawingInputPoint:(struct CGPoint)arg1 forTouch:(id)arg2 predicted:(_Bool)arg3;
 - (void)drawingBegan:(id)arg1;
 - (void)postDrawingBeganAnnouncementFor:(id)arg1;
+- (void)_didFinishErasingStrokes;
 - (void)eraseStrokesForPoint:(struct CGPoint)arg1 prevPoint:(struct CGPoint)arg2;
 - (void)eraseStrokesForPoint:(struct CGPoint)arg1;
 @property(readonly, nonatomic) _Bool isRendering;
-@property(nonatomic) _Bool contentHidden;
+- (void)didMoveToWindow;
 - (void)setDrawing:(id)arg1 image:(id)arg2 imageDrawing:(id)arg3 completion:(CDUnknownBlockType)arg4 fullyRenderedCompletionBlock:(CDUnknownBlockType)arg5;
-- (void)_setDrawing:(id)arg1 tiles:(id)arg2 setupComplete:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (void)setDrawing:(id)arg1;
+@property(retain, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 - (void)delayCompletionBlockUntilPresentation:(CDUnknownBlockType)arg1;
 - (void)rotate:(id)arg1;
 - (void)rotateIfNeeded;
 - (void)updateImageTransform:(id)arg1;
 - (void)setImageTransformFrom:(struct CGAffineTransform)arg1 toTransform:(struct CGAffineTransform)arg2 animated:(_Bool)arg3 duration:(double)arg4;
 - (void)setupFullScreenTransform:(struct CGAffineTransform)arg1 toViewOrientation:(struct CGAffineTransform)arg2 animated:(_Bool)arg3;
+- (void)replaceWithStrokesFromDrawing:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (void)eraseAll;
 - (void)performUndoSelectionCommand:(id)arg1;
 - (void)performUndoModifyStrokesCommand:(id)arg1;
 - (void)performUndo:(id)arg1;
-- (_Bool)showEraseAllButton;
 - (_Bool)canEraseAll;
 - (_Bool)canRedo;
 - (_Bool)canUndo;
@@ -156,6 +161,8 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setOpaque:(_Bool)arg1;
 - (void)_drawingDisplay:(double)arg1;
+- (struct CGAffineTransform)scaledStrokeTransform;
+- (void)drawNowIfNeeded;
 - (void)handleDrawingShouldPause:(_Bool)arg1;
 - (void)setNeedsDrawingDisplay;
 - (void)setBackgroundImage:(struct CGImage *)arg1;
@@ -163,11 +170,11 @@
 - (void)done;
 - (_Bool)canBecomeFirstResponder;
 - (void)setupDisplayLink;
-- (id)glLayer;
-- (void)_rebuildOpenGLView;
+- (void)_rebuildMetalView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setupOpenGLViewForWideGamut:(_Bool)arg1 withPixelSize:(struct CGSize)arg2;
-- (void)setupOpenGLWithPixelSize:(struct CGSize)arg1 drawingSize:(struct CGSize)arg2;
+- (void)setupMetalViewForWideGamut:(_Bool)arg1 withPixelSize:(struct CGSize)arg2;
+- (void)setupViewWithPixelSize:(struct CGSize)arg1 drawingSize:(struct CGSize)arg2;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
@@ -177,11 +184,8 @@
 - (double)layerContentScale;
 - (void)resizeBackingBuffersForPixelSize:(struct CGSize)arg1 drawingScale:(double)arg2;
 - (void)adjustedPixelSize:(struct CGSize *)arg1 drawingSize:(struct CGSize *)arg2;
-- (void)decrementUndoGroupCount;
-- (void)incrementUndoGroupCount;
-- (void)didMoveToWindow;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 editable:(_Bool)arg2 pixelSize:(struct CGSize)arg3 drawingScale:(double)arg4 layerFixedPixelSize:(_Bool)arg5 drawingController:(id)arg6 selectionController:(id)arg7;
+- (id)initWithFrame:(struct CGRect)arg1 editable:(_Bool)arg2 pixelSize:(struct CGSize)arg3 drawingScale:(double)arg4 layerFixedPixelSize:(_Bool)arg5 selectionController:(id)arg6;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (CDStruct_f17e9403)drawingInputPoint:(struct CGPoint)arg1 forHIDEvent:(id)arg2 predicted:(_Bool)arg3;

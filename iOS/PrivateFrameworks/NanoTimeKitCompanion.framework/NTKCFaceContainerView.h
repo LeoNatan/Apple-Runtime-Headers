@@ -16,12 +16,14 @@
     UIView *_backgroundView;
     CAShapeLayer *_outline;
     UIView *_faceContainer;
+    UIView *_highlightView;
     struct CGSize _faceSize;
 }
 
 + (double)_insetPaddingForStyle:(long long)arg1;
 + (struct CGSize)faceSizeForSize:(struct CGSize)arg1 style:(long long)arg2;
 + (struct CGSize)sizeForFaceSize:(struct CGSize)arg1 style:(long long)arg2;
+@property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) UIView *faceContainer; // @synthesize faceContainer=_faceContainer;
 @property(retain, nonatomic) CAShapeLayer *outline; // @synthesize outline=_outline;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -34,6 +36,7 @@
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)setHighlighted:(_Bool)arg1;
 - (struct CGAffineTransform)_transformForFaceView;
 - (id)initWithFaceSize:(struct CGSize)arg1 style:(long long)arg2;
 

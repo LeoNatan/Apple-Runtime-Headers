@@ -17,6 +17,7 @@
 - (int)playerPlayingItemGlobalIndex:(int)arg1 chain:(MPMiddlewareChain *)arg2;
 - (NSIndexPath *)playerPlayingItemIndexPath:(NSIndexPath *)arg1 chain:(MPMiddlewareChain *)arg2;
 - (MPModelGenericObject *)playerModelObject:(MPModelGenericObject *)arg1 propertySet:(MPPropertySet *)arg2 atIndexPath:(NSIndexPath *)arg3 chain:(MPMiddlewareChain *)arg4;
+- (_Bool)playerItemIsPlaceholder:(_Bool)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (int)playerItemEditingStyleFlags:(int)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (CDStruct_fce57115)playerItemDuration:(CDStruct_fce57115)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (unsigned int)playerNumberOfItems:(unsigned int)arg1 inSection:(unsigned int)arg2 chain:(MPMiddlewareChain *)arg3;

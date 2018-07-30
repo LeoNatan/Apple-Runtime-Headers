@@ -16,5 +16,8 @@
 - (void)updateNowPlayingStateWithCompletion:(void (^)(void))arg1;
 - (void)endObserving;
 - (void)beginObserving;
+
+@optional
+- (void)preparePlayerRequestForNewPlaybackIntent;
 @end
 

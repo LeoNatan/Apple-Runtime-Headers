@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 - (void)setValueTextAttributes:(id)arg1;
 - (void)performDefaultAction;
 - (_Bool)shouldPerformDefaultAction;
-- (void)setLabelTextAttributes:(id)arg1;
 - (id)valueView;
 - (id)labelView;
 - (_Bool)shouldIndentWhileEditing;
+- (_Bool)allowsCellSelection;
 - (_Bool)supportsTintColorValue;
 - (void)setProperty:(id)arg1;
 - (void)dealloc;

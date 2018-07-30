@@ -20,7 +20,7 @@
     SXFullscreenCaption *_caption;
     unsigned long long _viewIndex;
     UITapGestureRecognizer *_tapGestureRecognizer;
-    id <SXActionProvider> _actionProvider;
+    id <SXSmartFieldFactory> _smartFieldFactory;
     id <SXComponentActionHandler> _actionHandler;
     SXAutoSizedCanvasController *_autoSizeCanvasController;
     STTextTangierDocumentRoot *_documentRoot;
@@ -51,7 +51,7 @@
 @property(retain, nonatomic) STTextTangierDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
 @property(retain, nonatomic) SXAutoSizedCanvasController *autoSizeCanvasController; // @synthesize autoSizeCanvasController=_autoSizeCanvasController;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
-@property(readonly, nonatomic) id <SXActionProvider> actionProvider; // @synthesize actionProvider=_actionProvider;
+@property(readonly, nonatomic) id <SXSmartFieldFactory> smartFieldFactory; // @synthesize smartFieldFactory=_smartFieldFactory;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(readonly, nonatomic) int expansionMode; // @synthesize expansionMode=_expansionMode;
 @property(readonly, nonatomic) unsigned long long viewIndex; // @synthesize viewIndex=_viewIndex;
@@ -84,7 +84,7 @@
 - (void)createBackgroundView;
 - (void)updateWithCaption:(id)arg1 forViewIndex:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)dealloc;
-- (id)initWithActionProvider:(id)arg1 actionHandler:(id)arg2;
+- (id)initWithSmartFieldFactory:(id)arg1 actionHandler:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

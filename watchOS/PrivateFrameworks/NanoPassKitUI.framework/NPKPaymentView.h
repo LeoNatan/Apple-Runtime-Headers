@@ -24,13 +24,15 @@
     _Bool _animationIsForQuickPay;
     _Bool _hasCardWithUserSelectablePaymentApplications;
     _Bool _hasPresentedExtendedTopViewThisTransaction;
+    _Bool _hasAccessPasses;
     _Bool _inServiceMode;
+    _Bool _isTransitioningUIToReady;
     _Bool _shouldAllowUserInteraction;
     id <NPKPaymentViewDataSource> _dataSource;
     id <NPKPaymentViewDelegate> _delegate;
     NSArray *_passUniqueIDs;
     NSString *_loyaltyPendingUniqueID;
-    NSArray *_passDescriptions;
+    NSArray *_passes;
     UIView *_topContainerView;
     UIView *_bottomContainerView;
     UIView *_topClippingView;
@@ -42,10 +44,12 @@
     UILabel *_needsSetupTopLabel;
     NPKPaymentThreePartTopView *_doneTopView;
     UIImageView *_doneCheckmarkView;
+    UILabel *_failedTransactionTopLabel;
     UILabel *_activationFailureLabel;
     UILabel *_instructionLabel;
     UILabel *_readerNotRequestingPaymentLabel;
     UILabel *_enableCardInstructionLabel;
+    UILabel *_failedTransactionBottomLabel;
     UILabel *_firstClassTrainRedeemedLabel;
     UILabel *_highSpeedTrainRedeemedLabel;
     NPKTransactionAndBalanceView *_transactionView;
@@ -84,7 +88,9 @@
 @property(retain, nonatomic) PUICActionController *actionController; // @synthesize actionController=_actionController;
 @property(nonatomic) _Bool shouldAllowUserInteraction; // @synthesize shouldAllowUserInteraction=_shouldAllowUserInteraction;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *loyaltyAdvisoryTimer; // @synthesize loyaltyAdvisoryTimer=_loyaltyAdvisoryTimer;
+@property(nonatomic) _Bool isTransitioningUIToReady; // @synthesize isTransitioningUIToReady=_isTransitioningUIToReady;
 @property(nonatomic) _Bool inServiceMode; // @synthesize inServiceMode=_inServiceMode;
+@property(nonatomic) _Bool hasAccessPasses; // @synthesize hasAccessPasses=_hasAccessPasses;
 @property(nonatomic) _Bool hasPresentedExtendedTopViewThisTransaction; // @synthesize hasPresentedExtendedTopViewThisTransaction=_hasPresentedExtendedTopViewThisTransaction;
 @property(nonatomic) _Bool hasCardWithUserSelectablePaymentApplications; // @synthesize hasCardWithUserSelectablePaymentApplications=_hasCardWithUserSelectablePaymentApplications;
 @property(nonatomic) struct CGRect bottomContainerViewFrame; // @synthesize bottomContainerViewFrame=_bottomContainerViewFrame;
@@ -109,10 +115,12 @@
 @property(retain, nonatomic) NPKTransactionAndBalanceView *transactionView; // @synthesize transactionView=_transactionView;
 @property(retain, nonatomic) UILabel *highSpeedTrainRedeemedLabel; // @synthesize highSpeedTrainRedeemedLabel=_highSpeedTrainRedeemedLabel;
 @property(retain, nonatomic) UILabel *firstClassTrainRedeemedLabel; // @synthesize firstClassTrainRedeemedLabel=_firstClassTrainRedeemedLabel;
+@property(retain, nonatomic) UILabel *failedTransactionBottomLabel; // @synthesize failedTransactionBottomLabel=_failedTransactionBottomLabel;
 @property(retain, nonatomic) UILabel *enableCardInstructionLabel; // @synthesize enableCardInstructionLabel=_enableCardInstructionLabel;
 @property(retain, nonatomic) UILabel *readerNotRequestingPaymentLabel; // @synthesize readerNotRequestingPaymentLabel=_readerNotRequestingPaymentLabel;
 @property(retain, nonatomic) UILabel *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(retain, nonatomic) UILabel *activationFailureLabel; // @synthesize activationFailureLabel=_activationFailureLabel;
+@property(retain, nonatomic) UILabel *failedTransactionTopLabel; // @synthesize failedTransactionTopLabel=_failedTransactionTopLabel;
 @property(retain, nonatomic) UIImageView *doneCheckmarkView; // @synthesize doneCheckmarkView=_doneCheckmarkView;
 @property(retain, nonatomic) NPKPaymentThreePartTopView *doneTopView; // @synthesize doneTopView=_doneTopView;
 @property(retain, nonatomic) UILabel *needsSetupTopLabel; // @synthesize needsSetupTopLabel=_needsSetupTopLabel;
@@ -124,7 +132,7 @@
 @property(retain, nonatomic) UIView *topClippingView; // @synthesize topClippingView=_topClippingView;
 @property(retain, nonatomic) UIView *bottomContainerView; // @synthesize bottomContainerView=_bottomContainerView;
 @property(retain, nonatomic) UIView *topContainerView; // @synthesize topContainerView=_topContainerView;
-@property(retain, nonatomic) NSArray *passDescriptions; // @synthesize passDescriptions=_passDescriptions;
+@property(retain, nonatomic) NSArray *passes; // @synthesize passes=_passes;
 @property(nonatomic) _Bool passViewUpdatedHeight; // @synthesize passViewUpdatedHeight=_passViewUpdatedHeight;
 @property(nonatomic) _Bool topViewPresentedDuringSessionChanged; // @synthesize topViewPresentedDuringSessionChanged=_topViewPresentedDuringSessionChanged;
 @property(nonatomic) _Bool paymentCardsChanged; // @synthesize paymentCardsChanged=_paymentCardsChanged;
@@ -140,7 +148,7 @@
 - (id)_serviceModeInstructionLabel;
 - (id)_instructionLabelWithFirstLine:(id)arg1 coloredSecondLine:(id)arg2;
 - (id)_instructionViewWithBalance:(id)arg1 currencyCode:(id)arg2;
-- (id)_instructionViewForTransitPassDescription:(id)arg1;
+- (id)_instructionViewForTransitPassProperties:(id)arg1 pass:(id)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1;
 - (id)_baseInstructionLabelAttributedStringWithText:(id)arg1;
 - (void)_handleLoyaltyAdvisoryTimerFired;
@@ -173,7 +181,7 @@
 - (_Bool)_shouldProvideActionController;
 - (_Bool)canProvideActionController;
 - (id)_passUniqueIDAtIndex:(unsigned int)arg1;
-- (id)_passDescriptionAtIndex:(unsigned int)arg1;
+- (id)_passAtIndex:(unsigned int)arg1;
 - (_Bool)becomeFirstResponder;
 - (void)_selectPassDidEnd;
 - (void)_selectPassDidStart;
@@ -202,11 +210,9 @@
 - (void)setNeedsPeerPaymentSetupForPass:(id)arg1 animated:(_Bool)arg2;
 - (void)setReadyForPass:(id)arg1 readyDescription:(id)arg2 inServiceMode:(_Bool)arg3 animated:(_Bool)arg4;
 - (void)setNotReadyForPass:(id)arg1 animated:(_Bool)arg2;
-- (void)getLoyaltyPendingPass:(CDUnknownBlockType)arg1;
-- (void)getCurrentVisiblePaymentPass:(CDUnknownBlockType)arg1;
-- (void)getCurrentVisiblePass:(CDUnknownBlockType)arg1;
 - (_Bool)shouldDisplayBottomLabel;
-- (id)_currentVisiblePassDescription;
+- (id)_loyaltyPendingPass;
+- (id)_currentVisiblePass;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

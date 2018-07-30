@@ -16,10 +16,12 @@
     _Bool _visible;
     _Bool _lastTimeShown;
     id <AFUISiriSetupViewControllerDelegate> _delegate;
+    UIView *_siriSetupView;
     UIStatusBar *_statusBar;
 }
 
 @property(retain, nonatomic, getter=_statusBar, setter=_setStatusBar:) UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
+@property(retain, nonatomic) UIView *siriSetupView; // @synthesize siriSetupView=_siriSetupView;
 @property(nonatomic) _Bool lastTimeShown; // @synthesize lastTimeShown=_lastTimeShown;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) __weak id <AFUISiriSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,7 +35,7 @@
 - (void)_laterTapped:(id)arg1;
 - (void)_continueTapped:(id)arg1;
 - (id)dimBackdropSettings;
-- (void)_setBackdropVisible:(_Bool)arg1;
+- (void)setBackdropVisible:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

@@ -63,7 +63,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 device:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)initCommon;
+- (void)__initCommon;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

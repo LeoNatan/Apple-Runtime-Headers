@@ -21,6 +21,9 @@
     _Bool _requestingUnenroll;
     float _batteryLevel;
     float _volume;
+    float _displayBackingScaleFactor;
+    float _displayWidth;
+    float _displayHeight;
     NSString *_identifier;
     NSString *_serialNumber;
     unsigned long long _platform;
@@ -89,6 +92,9 @@
 @property(copy, nonatomic) NSString *primaryOpenApplication; // @synthesize primaryOpenApplication=_primaryOpenApplication;
 @property(nonatomic) double uptimeAtInternetDateAndTimeFetch; // @synthesize uptimeAtInternetDateAndTimeFetch=_uptimeAtInternetDateAndTimeFetch;
 @property(retain, nonatomic) NSDate *internetDateAndTime; // @synthesize internetDateAndTime=_internetDateAndTime;
+@property(nonatomic) float displayHeight; // @synthesize displayHeight=_displayHeight;
+@property(nonatomic) float displayWidth; // @synthesize displayWidth=_displayWidth;
+@property(nonatomic) float displayBackingScaleFactor; // @synthesize displayBackingScaleFactor=_displayBackingScaleFactor;
 @property(nonatomic, getter=isOrientationLocked) _Bool orientationLocked; // @synthesize orientationLocked=_orientationLocked;
 @property(nonatomic) unsigned long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) unsigned long long deviceOrientation; // @synthesize deviceOrientation=_deviceOrientation;

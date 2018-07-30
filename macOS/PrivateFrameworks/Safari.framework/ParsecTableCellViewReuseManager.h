@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (id)_findAndPrepareCellViewForResultWithIdentifier:(id)arg1;
+- (id)_findAndPrepareCellView;
 - (void)prepareForReload;
-- (id)cellViewForResultWithIdentifier:(id)arg1;
+- (id)nextCellView;
 - (id)initWithCellViewFactory:(CDUnknownBlockType)arg1;
 
 @end

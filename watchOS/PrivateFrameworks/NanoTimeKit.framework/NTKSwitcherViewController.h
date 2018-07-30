@@ -22,6 +22,7 @@
 }
 
 @property(readonly, nonatomic) _Bool animatingZoom; // @synthesize animatingZoom=_animatingZoom;
+@property(readonly, nonatomic) float zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(nonatomic) unsigned int zoomAnimationCurve; // @synthesize zoomAnimationCurve=_zoomAnimationCurve;
 @property(nonatomic) double zoomAnimationDuration; // @synthesize zoomAnimationDuration=_zoomAnimationDuration;
 @property(nonatomic) float interpageSpacingWhenZoomedOut; // @synthesize interpageSpacingWhenZoomedOut=_interpageSpacingWhenZoomedOut;

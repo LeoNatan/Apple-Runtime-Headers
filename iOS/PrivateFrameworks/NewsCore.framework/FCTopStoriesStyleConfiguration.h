@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class FCColor, NSString, NTPBTopStoriesStyleConfig;
+@class FCColor, NSDictionary, NSString, NTPBTopStoriesStyleConfig;
 
 @interface FCTopStoriesStyleConfiguration : NSObject
 {
     NTPBTopStoriesStyleConfig *_pbConfig;
+    NSDictionary *_configDict;
     unsigned long long _storyType;
     NSString *_label;
     FCColor *_foreground_color;
@@ -26,8 +27,8 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithConfigDictionary:(id)arg1;
 - (id)initWithPBTopStoriesStyleConfig:(id)arg1;
-- (id)initWithStoryType:(unsigned long long)arg1 label:(id)arg2 foregroundColor:(id)arg3 backgroundColor:(id)arg4 stringType:(id)arg5;
 
 @end
 

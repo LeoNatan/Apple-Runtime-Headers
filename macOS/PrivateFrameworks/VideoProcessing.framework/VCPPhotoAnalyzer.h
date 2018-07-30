@@ -6,35 +6,32 @@
 
 #import "NSObject.h"
 
-@class AVAsset, NSData, NSDictionary, NSMutableDictionary, VCPAsset;
+@class NSData, NSDictionary, NSMutableDictionary, VCPAsset;
 
 @interface VCPPhotoAnalyzer : NSObject
 {
     unsigned long long _requestedAnalyses;
     NSMutableDictionary *_analysis;
     NSMutableDictionary *_results;
-    BOOL _isPano;
-    AVAsset *_irisAsset;
     unsigned long long _irisAnalyses;
-    float _irisPhotoOffsetSec;
     NSData *_featureData;
     NSDictionary *_phFaceResults;
     unsigned long long _phFaceFlags;
-    BOOL _sdof;
     VCPAsset *_asset;
     long long _status;
 }
 
++ (id)analyzerWithTypes:(unsigned long long)arg1 forAsset:(id)arg2;
 + (BOOL)canAnalyzeUndegraded:(id)arg1 withResources:(id)arg2;
 + (id)resourceForAsset:(id)arg1 withResources:(id)arg2;
 @property(readonly) long long status; // @synthesize status=_status;
 - (void).cxx_destruct;
 - (id)analyzeAsset:(CDUnknownBlockType)arg1;
-- (int)analyzeImage:(unsigned long long *)arg1 performedAnalyses:(unsigned long long *)arg2 movingObjectResults:(id)arg3 obstruction:(id)arg4 cancel:(CDUnknownBlockType)arg5;
+- (int)analyzeImage:(unsigned long long *)arg1 performedAnalyses:(unsigned long long *)arg2 movingObjectResults:(id)arg3 cancel:(CDUnknownBlockType)arg4;
 - (int)downscaleImage:(struct __CVBuffer *)arg1 scaledImage:(struct __CVBuffer **)arg2 majorDimension:(int)arg3;
 - (void)updateDegradedFlagForMajorDimension:(unsigned long long)arg1;
-- (id)initWithImageURL:(id)arg1 pairMovie:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
 - (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
+- (id)initWithTypes:(unsigned long long)arg1 forAsset:(id)arg2;
 
 @end
 

@@ -22,7 +22,7 @@
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)performRemovalAction:(id)arg1;
-- (id)userID;
+- (id)userHandle;
 - (id)itemTableHeaderView;
 - (id)initWithUserItemManager:(id)arg1;
 

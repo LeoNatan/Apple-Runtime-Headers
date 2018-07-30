@@ -77,7 +77,7 @@
 - (void)cancelGameInvite:(id)arg1;
 - (void)fetchTurnBasedEvent;
 - (void)fetchMultiplayerGameInvite;
-- (void)removeAllFriends:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)removeAllFriendsWithBlock:(CDUnknownBlockType)arg1;
 - (void)removeFriend:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)authenticateWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) CDUnknownBlockType authenticateHandler;

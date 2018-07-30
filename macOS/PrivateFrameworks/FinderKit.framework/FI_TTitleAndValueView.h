@@ -11,16 +11,19 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTitleAndValueView : FI_TUpdateLayerView
 {
-    struct TNSRef<FI_TTextField *, void> _titleField;
-    struct TNSRef<NSView *, void> _valueView;
-    struct TNSRef<NSMutableArray<NSLayoutConstraint *>*, void> _constraints;
+    struct TNSRef<FI_TTextField, void> _titleField;
+    struct TNSRef<NSView, void> _valueView;
+    struct TNSRef<NSMutableArray<NSLayoutConstraint *>, void> _constraints;
     NSLayoutConstraint *_titleAndValueGapConstraint;
     double _titleAndValueGap;
+    double _valueViewBottomInset;
     _Bool _loadedFromNib;
 }
 
+@property(nonatomic) double valueViewBottomInset; // @synthesize valueViewBottomInset=_valueViewBottomInset;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)updateValueViewAXTitle;
 - (void)_updateInternalConstraints;
 @property(nonatomic) double titleAndValueGap; // @dynamic titleAndValueGap;
 @property(retain, nonatomic) NSView *valueView; // @dynamic valueView;

@@ -8,12 +8,13 @@
 
 #import "NSCopying.h"
 
-@class _NMRCommandOptionsProtobuf;
+@class NSString, _NMRCommandOptionsProtobuf;
 
 __attribute__((visibility("hidden")))
 @interface _NMRSendCommandMessageProtobuf : PBCodable <NSCopying>
 {
     double _timestamp;
+    NSString *_bundleID;
     int _command;
     _NMRCommandOptionsProtobuf *_options;
     int _originIdentifier;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+@property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) int originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) _NMRCommandOptionsProtobuf *options; // @synthesize options=_options;
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasBundleID;
 @property(nonatomic) _Bool hasOriginIdentifier;
 @property(nonatomic) _Bool hasTimestamp;
 @property(readonly, nonatomic) _Bool hasOptions;

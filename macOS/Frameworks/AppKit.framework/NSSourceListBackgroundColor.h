@@ -4,35 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <AppKit/NSCatalogColor.h>
+#import <AppKit/NSDynamicNamedColor.h>
 
-@class NSColor;
-
-@interface NSSourceListBackgroundColor : NSCatalogColor
+__attribute__((visibility("hidden")))
+@interface NSSourceListBackgroundColor : NSDynamicNamedColor
 {
-    NSColor *_activeColor;
-    NSColor *_inactiveColor;
 }
 
-+ (id)inactiveColor;
-+ (id)activeColor;
-+ (id)inactiveGradient;
-+ (id)activeGradient;
-- (id)colorUsingColorSpace:(id)arg1;
-- (id)colorUsingColorSpaceName:(id)arg1 device:(id)arg2;
-- (id)colorUsingColorSpaceName:(id)arg1;
-- (id)_legacyCurrentDisplayColor;
-- (void)setStroke;
-- (void)setFill;
-- (void)set;
 - (void)drawSwatchInRect:(struct CGRect)arg1;
 - (BOOL)isUniform;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_currentDisplayColor;
-- (void)dealloc;
+- (id)resolvedColor;
+- (id)_displayColorForActiveState:(BOOL)arg1;
 - (BOOL)_isSourceListColor;
 - (id)initWithCatalogName:(id)arg1 colorName:(id)arg2 genericColor:(id)arg3;
 - (id)init;
+- (Class)classForCoder;
 
 @end
 

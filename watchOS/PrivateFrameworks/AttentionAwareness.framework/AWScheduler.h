@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedScheduler;
 - (void).cxx_destruct;
+- (void)createUnitTestSampler;
 - (void)getUnitTestSamplerWithReply:(CDUnknownBlockType)arg1;
 - (void)outputPowerLogWithReply:(CDUnknownBlockType)arg1;
 - (void)setDebugPreference:(id)arg1 reply:(CDUnknownBlockType)arg2;

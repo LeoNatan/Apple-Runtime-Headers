@@ -8,6 +8,7 @@
 
 @class NSImage, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSViewWindowBackingStoreBuffer : NSViewBuffer
 {
     NSWindow *_window;

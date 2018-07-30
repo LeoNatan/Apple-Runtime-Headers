@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCKContentDatabase, NSArray, NSDictionary, NSMutableArray, NSMutableSet;
+@class FCCKContentDatabase, FCEdgeCacheHint, NSArray, NSDictionary, NSMutableArray, NSMutableSet;
 
 @interface FCCKMultiFetchQueryOperation : FCOperation
 {
@@ -14,7 +14,7 @@
     NSArray *_recordIDs;
     NSArray *_recordSpecs;
     NSDictionary *_knownRecordIDsToEtags;
-    long long _requestTypeOverride;
+    FCEdgeCacheHint *_edgeCacheHint;
     NSArray *_networkEvents;
     CDUnknownBlockType _queryCompletionHandler;
     NSDictionary *_recordSpecsByType;
@@ -27,7 +27,7 @@
 @property(retain, nonatomic) NSDictionary *recordSpecsByType; // @synthesize recordSpecsByType=_recordSpecsByType;
 @property(copy, nonatomic) CDUnknownBlockType queryCompletionHandler; // @synthesize queryCompletionHandler=_queryCompletionHandler;
 @property(copy, nonatomic) NSArray *networkEvents; // @synthesize networkEvents=_networkEvents;
-@property(nonatomic) long long requestTypeOverride; // @synthesize requestTypeOverride=_requestTypeOverride;
+@property(copy, nonatomic) FCEdgeCacheHint *edgeCacheHint; // @synthesize edgeCacheHint=_edgeCacheHint;
 @property(retain, nonatomic) NSDictionary *knownRecordIDsToEtags; // @synthesize knownRecordIDsToEtags=_knownRecordIDsToEtags;
 @property(retain, nonatomic) NSArray *recordSpecs; // @synthesize recordSpecs=_recordSpecs;
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;

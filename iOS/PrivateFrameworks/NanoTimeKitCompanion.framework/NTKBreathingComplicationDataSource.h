@@ -10,18 +10,15 @@
 {
 }
 
-+ (id)_templateForFamily:(long long)arg1;
-+ (_Bool)acceptsComplicationFamily:(long long)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned long long)arg1;
++ (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
-- (id)_template;
 - (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
-- (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 @end
 

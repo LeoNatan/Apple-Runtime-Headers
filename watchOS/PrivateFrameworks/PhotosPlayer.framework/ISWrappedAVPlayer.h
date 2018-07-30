@@ -35,6 +35,7 @@
     NSArray *_ivarQueue_currentItemLoadedTimeRanges;
     NSMutableDictionary *_observersByID;
     void *_ivarQueueIdentifier;
+    _Bool _playerQueue_didBeginObservingPlayer;
     id <ISWrappedAVPlayerDelegate> _delegate;
 }
 

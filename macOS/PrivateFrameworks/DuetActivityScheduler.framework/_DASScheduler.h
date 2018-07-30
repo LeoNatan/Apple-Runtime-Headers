@@ -9,11 +9,12 @@
 #import "NSXPCListenerDelegate.h"
 #import "_DASActivityBackgroundLaunchScheduler.h"
 #import "_DASActivityGroupScheduler.h"
+#import "_DASActivityMetering.h"
 #import "_DASActivitySchedulerIntrospecting.h"
 
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_os_log>, NSString, NSXPCConnection, NSXPCListenerEndpoint, _DASSubmissionRateLimiter;
 
-@interface _DASScheduler : NSObject <NSXPCListenerDelegate, _DASActivityGroupScheduler, _DASActivitySchedulerIntrospecting, _DASActivityBackgroundLaunchScheduler>
+@interface _DASScheduler : NSObject <NSXPCListenerDelegate, _DASActivityGroupScheduler, _DASActivitySchedulerIntrospecting, _DASActivityBackgroundLaunchScheduler, _DASActivityMetering>
 {
     BOOL _interrupted;
     int _resubmitToken;
@@ -21,6 +22,7 @@
     NSXPCListenerEndpoint *_endpoint;
     NSMutableDictionary *_submittedActivities;
     NSMutableDictionary *_startedActivities;
+    NSMutableDictionary *_activityToDataMap;
     _DASSubmissionRateLimiter *_rateLimiter;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_connectionCreationQueue;
@@ -36,15 +38,20 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionCreationQueue; // @synthesize connectionCreationQueue=_connectionCreationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) _DASSubmissionRateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
+@property(retain, nonatomic) NSMutableDictionary *activityToDataMap; // @synthesize activityToDataMap=_activityToDataMap;
 @property(retain, nonatomic) NSMutableDictionary *startedActivities; // @synthesize startedActivities=_startedActivities;
 @property(retain, nonatomic) NSMutableDictionary *submittedActivities; // @synthesize submittedActivities=_submittedActivities;
 @property(nonatomic) int resubmitToken; // @synthesize resubmitToken=_resubmitToken;
 @property(nonatomic) BOOL interrupted; // @synthesize interrupted=_interrupted;
 @property(retain, nonatomic) NSXPCListenerEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)activityStoppedWithParameters:(id)arg1;
+- (void)activityStartedWithParameters:(id)arg1;
 - (void)setMinimumBackgroundFetchInterval:(double)arg1 forApp:(id)arg2;
+- (void)setBalance:(double)arg1 forBudgetWithName:(id)arg2;
+- (double)remainingBalanceForBudgetWithName:(id)arg1;
 - (id)currentPredictions;
 - (void)cancelActivities:(id)arg1;
 - (void)suspendActivities:(id)arg1;
@@ -57,8 +64,8 @@
 - (void)submitActivity:(id)arg1 inGroup:(id)arg2;
 - (void)submitActivity:(id)arg1 inGroupWithName:(id)arg2;
 - (void)createActivityGroup:(id)arg1;
-- (void)updateKBDownloadedOnWifi:(unsigned long long)arg1 downloadedOnCell:(unsigned long long)arg2 uploadedOnWifi:(unsigned long long)arg3 uploadedOnCell:(unsigned long long)arg4 forActivity:(id)arg5;
-- (void)updateActivity:(id)arg1 withPriority:(unsigned long long)arg2 startAfter:(id)arg3 startBefore:(id)arg4 options:(id)arg5;
+- (void)updateBytesConsumedForActivity:(id)arg1 downloadedOnWifi:(unsigned long long)arg2 downloadedOnCell:(unsigned long long)arg3 uploadedOnWifi:(unsigned long long)arg4 uploadedOnCell:(unsigned long long)arg5;
+- (void)updateActivity:(id)arg1 withParameters:(id)arg2;
 - (void)activityCompleted:(id)arg1;
 - (void)activityCanceled:(id)arg1;
 - (void)handleNoLongerRunningActivities:(id)arg1;
@@ -69,7 +76,7 @@
 - (void)submitActivitiesInternal:(id)arg1;
 - (BOOL)submitActivityInternal:(id)arg1;
 - (void)handleEligibleActivities:(CDUnknownBlockType)arg1;
-- (void)establishDaemonConnectionIfInterrupted;
+- (id)currentConnection;
 - (void)unprotectedEstablishDaemonConnectionIfInterrupted;
 - (void)resubmitPendingActivities;
 - (void)resubmitRunningActivities;

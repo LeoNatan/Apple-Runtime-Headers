@@ -23,11 +23,13 @@
     NSArray *_routeRules;
 }
 
++ (id)scopedNetworkAgent:(id)arg1;
 + (id)triggerScopedService:(id)arg1 data:(unsigned int)arg2;
 + (id)routeRules:(id)arg1;
 + (id)netAgentUUID:(id)arg1;
 + (id)filterWithControlUnit:(unsigned int)arg1;
 + (id)tunnelIPToInterfaceName:(id)arg1 secondaryResultType:(long long)arg2;
++ (id)scopeToDirectInterface;
 + (id)scopeSocketToInterfaceName:(id)arg1;
 + (id)divertSocketToControlUnit:(unsigned int)arg1;
 + (id)drop;

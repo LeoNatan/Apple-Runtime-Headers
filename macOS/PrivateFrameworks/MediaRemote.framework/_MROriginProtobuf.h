@@ -42,6 +42,7 @@
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
 @property(nonatomic) int type; // @synthesize type=_type;
+- (BOOL)isLocal;
 
 @end
 

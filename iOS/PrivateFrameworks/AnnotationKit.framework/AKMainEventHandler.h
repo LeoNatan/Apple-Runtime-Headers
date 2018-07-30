@@ -88,7 +88,6 @@
 - (_Bool)enterRotateEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
 - (_Bool)continueDragEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
 - (_Bool)enterDragEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
-- (void)updateCropHandleVisibilityForEvent:(id)arg1;
 - (void)updateCursorForEvent:(id)arg1;
 - (_Bool)handleRotateEvent:(id)arg1 orRecognizer:(id)arg2;
 - (_Bool)handleKeyboardEvent:(id)arg1;

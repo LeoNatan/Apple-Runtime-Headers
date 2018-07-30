@@ -14,5 +14,6 @@
 - (void)cancelAuthentication;
 - (BOOL)cmdEnterOrReturnPressed;
 - (void)passwordFieldDidResignFirstResponder:(LAUIPasswordField *)arg1;
+- (void)passwordFieldDidBecomeFirstResponder:(LAUIPasswordField *)arg1;
 @end
 

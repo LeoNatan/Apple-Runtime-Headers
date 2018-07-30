@@ -8,12 +8,10 @@
 
 #import "NSCopying.h"
 
-@class CLKImageProvider, CLKTextProvider, NSString, NSTimeZone, NTKUpNextAccessoryDescription, UIColor, UIImage;
+@class CLKImageProvider, CLKTextProvider, NSString, UIColor, UIImage;
 
 @interface NTKUpNextElementContent : NSObject <NSCopying>
 {
-    _Bool _wantsFullCellPhoto;
-    NSTimeZone *_timeZone;
     _Bool _useMonospaceFont;
     _Bool _tintColorAffectsHeader;
     _Bool _bodyImageShouldStretch;
@@ -31,15 +29,14 @@
     unsigned int _description1FontStyle;
     unsigned int _description2FontStyle;
     unsigned int _headerImageEdge;
-    NTKUpNextAccessoryDescription *_descriptionAccessory;
+    id _descriptionAccessory;
     NSString *_overrideBodyString;
     struct CGRect _imageFocusRect;
 }
 
-+ (id)dashedContentTextProvider;
 @property(retain, nonatomic) NSString *overrideBodyString; // @synthesize overrideBodyString=_overrideBodyString;
 @property(nonatomic) struct CGRect imageFocusRect; // @synthesize imageFocusRect=_imageFocusRect;
-@property(copy, nonatomic) NTKUpNextAccessoryDescription *descriptionAccessory; // @synthesize descriptionAccessory=_descriptionAccessory;
+@property(copy, nonatomic) id descriptionAccessory; // @synthesize descriptionAccessory=_descriptionAccessory;
 @property(nonatomic) unsigned int headerImageEdge; // @synthesize headerImageEdge=_headerImageEdge;
 @property(nonatomic) _Bool bodyImageShouldStretch; // @synthesize bodyImageShouldStretch=_bodyImageShouldStretch;
 @property(nonatomic) _Bool tintColorAffectsHeader; // @synthesize tintColorAffectsHeader=_tintColorAffectsHeader;
@@ -58,14 +55,7 @@
 @property(retain, nonatomic) UIImage *overrideBodyImage; // @synthesize overrideBodyImage=_overrideBodyImage;
 @property(retain, nonatomic) UIImage *overrideHeaderImage; // @synthesize overrideHeaderImage=_overrideHeaderImage;
 - (void).cxx_destruct;
-- (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)setWantsFullCellPhoto:(_Bool)arg1;
-- (_Bool)wantsFullCellPhoto;
-- (id)_descriptionForProvider:(id)arg1;
-- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)init;
 
 @end
 

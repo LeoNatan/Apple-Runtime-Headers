@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_fetchRecordsGroup;
     NSSet *_desiredAssetKeys;
     NSArray *_recordZoneIDs;
-    NSDictionary *_optionsByRecordZoneID;
+    NSDictionary *_configurationsByRecordZoneID;
     unsigned long long _numRequestsSent;
     CKDRecordFetchAggregator *_recordFetcher;
     NSMutableArray *_requestInfos;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *requestInfos; // @synthesize requestInfos=_requestInfos;
 @property(retain, nonatomic) CKDRecordFetchAggregator *recordFetcher; // @synthesize recordFetcher=_recordFetcher;
 @property(nonatomic) unsigned long long numRequestsSent; // @synthesize numRequestsSent=_numRequestsSent;
-@property(retain, nonatomic) NSDictionary *optionsByRecordZoneID; // @synthesize optionsByRecordZoneID=_optionsByRecordZoneID;
+@property(retain, nonatomic) NSDictionary *configurationsByRecordZoneID; // @synthesize configurationsByRecordZoneID=_configurationsByRecordZoneID;
 @property(retain, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
 @property(retain, nonatomic) NSSet *desiredAssetKeys; // @synthesize desiredAssetKeys=_desiredAssetKeys;
 @property(nonatomic) _Bool fetchAllChanges; // @synthesize fetchAllChanges=_fetchAllChanges;
@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (id)_possiblyWrapError:(id)arg1 forRecordWithID:(id)arg2 withCode:(long long)arg3 format:(id)arg4;
 - (void)_sendFetchChangesRequestForZoneIDs:(id)arg1 withOptions:(id)arg2 previousRequestSchedulerInfo:(id)arg3;
 - (void)_handleRecordDelete:(id)arg1 recordType:(id)arg2 perRequestSchedulerInfo:(id)arg3;
-- (void)_handleRecordChange:(id)arg1 perRequestSchedulerInfo:(id)arg2;
+- (void)_handleChangedRecords:(id)arg1 perRequestSchedulerInfo:(id)arg2;
 - (void)_handleFetchChangesRequestFinishedWithSchedulerInfo:(id)arg1;
 @property(readonly, nonatomic) CKDRecordCache *recordCache; // @synthesize recordCache=_recordCache;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

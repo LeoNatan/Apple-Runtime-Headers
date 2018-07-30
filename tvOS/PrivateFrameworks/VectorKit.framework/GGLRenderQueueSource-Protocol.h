@@ -7,6 +7,6 @@
 #import "NSObject.h"
 
 @protocol GGLRenderQueueSource <NSObject>
-- (RenderQueue_5bbf3210 *)renderQueueForTimestamp:(double)arg1;
+- (RenderQueue_efd5f737 *)renderQueueForTimestamp:(double)arg1;
 @end
 

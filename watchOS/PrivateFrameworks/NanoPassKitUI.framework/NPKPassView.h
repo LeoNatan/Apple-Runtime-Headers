@@ -6,43 +6,42 @@
 
 #import "UIView.h"
 
-@class NPKPassDescription, PKDiff, PKPass;
+@class PKPass;
 
 @interface NPKPassView : UIView
 {
     _Bool _showFullPass;
-    _Bool _hideBarcodeIfPossible;
-    _Bool _showBarcodeButtonIfHidden;
-    _Bool _showDiff;
+    _Bool _hideAccessoryIfPossible;
+    _Bool _showAccessoryButtonIfHidden;
     _Bool _needsUpdateUI;
     _Bool _updateNeedsHeightChange;
     _Bool _pendingHeightChangeCallback;
-    NPKPassDescription *_passDescription;
     PKPass *_pass;
-    PKDiff *_diff;
     id <NPKPassViewDelegate> _delegate;
     int _uiWorkStackCount;
+    struct CGSize _rasterizedImageSize;
 }
 
-+ (id)viewForPassDescription:(id)arg1 withFrame:(struct CGRect)arg2;
++ (id)viewForPass:(id)arg1 withFrame:(struct CGRect)arg2 enableUseRasterizePassIfPossible:(_Bool)arg3;
++ (id)viewForPass:(id)arg1 withFrame:(struct CGRect)arg2;
++ (void)clearCache;
 + (void)setCaching:(_Bool)arg1;
++ (_Bool)resolveForeignReferences;
++ (void)setResolveForeignReferences:(_Bool)arg1;
 @property(nonatomic) int uiWorkStackCount; // @synthesize uiWorkStackCount=_uiWorkStackCount;
 @property(nonatomic) _Bool pendingHeightChangeCallback; // @synthesize pendingHeightChangeCallback=_pendingHeightChangeCallback;
 @property(nonatomic) _Bool updateNeedsHeightChange; // @synthesize updateNeedsHeightChange=_updateNeedsHeightChange;
 @property(nonatomic) _Bool needsUpdateUI; // @synthesize needsUpdateUI=_needsUpdateUI;
 @property(nonatomic) __weak id <NPKPassViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) PKDiff *diff; // @synthesize diff=_diff;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-@property(retain, nonatomic) NPKPassDescription *passDescription; // @synthesize passDescription=_passDescription;
-@property(nonatomic) _Bool showDiff; // @synthesize showDiff=_showDiff;
-@property(nonatomic) _Bool showBarcodeButtonIfHidden; // @synthesize showBarcodeButtonIfHidden=_showBarcodeButtonIfHidden;
-@property(nonatomic) _Bool hideBarcodeIfPossible; // @synthesize hideBarcodeIfPossible=_hideBarcodeIfPossible;
+@property(nonatomic) struct CGSize rasterizedImageSize; // @synthesize rasterizedImageSize=_rasterizedImageSize;
+@property(nonatomic) _Bool showAccessoryButtonIfHidden; // @synthesize showAccessoryButtonIfHidden=_showAccessoryButtonIfHidden;
+@property(nonatomic) _Bool hideAccessoryIfPossible; // @synthesize hideAccessoryIfPossible=_hideAccessoryIfPossible;
 @property(nonatomic) _Bool showFullPass; // @synthesize showFullPass=_showFullPass;
 - (void).cxx_destruct;
 - (_Bool)handleTapAtPoint:(struct CGPoint)arg1 andScrollWithBehavior:(int *)arg2 toOffset:(struct CGPoint *)arg3;
-- (_Bool)shouldShowBarcodeButton;
-- (_Bool)shouldShowBarcode;
-- (void)setPassDescription:(id)arg1 forceUIUpdate:(_Bool)arg2;
+- (_Bool)shouldShowAccessoryButton;
+- (int)accessoryTypeToShow;
 - (void)updateUIIfNeeded;
 - (void)_setNeedsUpdateUIWithHeightChange:(_Bool)arg1;
 - (void)setNeedsUpdateUI;

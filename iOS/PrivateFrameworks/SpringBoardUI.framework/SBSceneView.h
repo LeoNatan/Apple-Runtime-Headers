@@ -31,9 +31,11 @@
     UIView *_backgroundView;
     _Bool _placeholderContentEnabled;
     id <SBScenePlaceholderContentViewProvider> _placeholderContentProvider;
+    id <SBSceneViewDelegate> _delegate;
 }
 
 + (id)defaultDisplayModeAnimationFactory;
+@property(nonatomic) __weak id <SBSceneViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long hostingPriority; // @synthesize hostingPriority=_hostingPriority;
 @property(readonly, copy, nonatomic) NSString *hostingRequester; // @synthesize hostingRequester=_hostingRequester;
 @property(nonatomic) _Bool placeholderContentEnabled; // @synthesize placeholderContentEnabled=_placeholderContentEnabled;

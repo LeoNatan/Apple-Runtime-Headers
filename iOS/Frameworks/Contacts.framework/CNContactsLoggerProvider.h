@@ -15,10 +15,12 @@
     id <CNContactsLogger> _contactsLogger;
     id <CNSpotlightIndexingLogger> _spotlightIndexingLogger;
     id <CNRegulatoryLogger> _regulatoryLogger;
+    id <CNFavoritesLogger> _favoritesLogger;
 }
 
 + (id)defaultProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CNFavoritesLogger> favoritesLogger;
 @property(readonly, nonatomic) id <CNRegulatoryLogger> regulatoryLogger;
 @property(readonly, nonatomic) id <CNSpotlightIndexingLogger> spotlightIndexingLogger;
 @property(readonly, nonatomic) id <CNContactsLogger> contactsLogger;

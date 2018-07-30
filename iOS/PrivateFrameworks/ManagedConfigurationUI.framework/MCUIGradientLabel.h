@@ -8,6 +8,7 @@
 
 @class NSString, UIFont, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface MCUIGradientLabel : UIView
 {
     NSString *_text;

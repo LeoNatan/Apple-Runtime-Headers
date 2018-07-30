@@ -4,30 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIButton.h"
+#import <TVPlayback/TVPRoundButton.h>
 
 #import "AVRoutePickerViewDelegate.h"
-#import "UIGestureRecognizerDelegate.h"
 
-@class AVRoutePickerView, NSString, UIGestureRecognizer, _UIFloatingContentView;
+@class AVRoutePickerView, NSString;
 
-@interface _TVPRoutePickerButton : UIButton <AVRoutePickerViewDelegate, UIGestureRecognizerDelegate>
+@interface _TVPRoutePickerButton : TVPRoundButton <AVRoutePickerViewDelegate>
 {
-    _UIFloatingContentView *_floatingView;
-    UIGestureRecognizer *_selectRecognizer;
     AVRoutePickerView *_avRoutePickerView;
 }
 
 @property(retain, nonatomic) AVRoutePickerView *avRoutePickerView; // @synthesize avRoutePickerView=_avRoutePickerView;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)_selectButtonAction:(id)arg1;
-- (void)_buttonActionTriggered;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (id)preferredFocusEnvironments;
-- (void)setHighlighted:(_Bool)arg1;
-- (_Bool)canBecomeFocused;
-- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

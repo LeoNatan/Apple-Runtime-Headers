@@ -11,12 +11,16 @@
 @interface CSSpeakerDetectorNDAPI : NSObject
 {
     float _threshold;
+    unsigned int _maxSpeakerVectorsToPersist;
     CSSpeakerModel *_spkModel;
     id <CSSpeakerDetectorNDAPIDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <CSSpeakerDetectorNDAPIDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (unsigned int)getMaxSpeakerVectorsToPersist;
+- (unsigned int)getSATVectorCount;
+- (_Bool)addLastTriggerToProfileWithSuperVector:(id)arg1;
 - (_Bool)addLastTriggerToProfile;
 - (id)analyzeWavForEnrollment:(id)arg1 numSamples:(unsigned int)arg2;
 - (float)_computeSATScore:(id)arg1;

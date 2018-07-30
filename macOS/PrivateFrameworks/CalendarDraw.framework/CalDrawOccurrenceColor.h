@@ -6,20 +6,27 @@
 
 #import "NSObject.h"
 
-@class CalDrawColorKey;
+@class CalDrawColorKey, NSColor;
 
 @interface CalDrawOccurrenceColor : NSObject
 {
     CalDrawColorKey *_colorKey;
     struct CGColor *_baseColor;
     struct CGColor *_foregroundColor;
+    NSColor *_selectedTextColor;
 }
 
++ (id)colorForNSColor:(id)arg1 appearance:(id)arg2;
++ (id)colorForNSColor:(id)arg1;
++ (id)colorForCGColor:(struct CGColor *)arg1 appearance:(id)arg2;
 + (id)colorForCGColor:(struct CGColor *)arg1;
-+ (id)adjustedUIOccurrenceColorForUnadjustedCalendarColor:(id)arg1;
++ (id)adjustedUIOccurrenceColorForUnadjustedCalendarColor:(id)arg1 appearance:(id)arg2;
++ (id)_getCacheForAppearance:(id)arg1;
++ (id)adjustedOccurrenceColor:(id)arg1 darkBackground:(BOOL)arg2;
++ (id)adjustedOccurrenceColor:(id)arg1 forAppearance:(id)arg2;
 + (id)adjustedOccurrenceColor:(id)arg1;
-+ (BOOL)isWhiteColor:(id)arg1;
 + (id)styleStringForCGColor:(struct CGColor *)arg1;
+@property(retain, nonatomic) NSColor *selectedTextColor; // @synthesize selectedTextColor=_selectedTextColor;
 @property(retain) CalDrawColorKey *colorKey; // @synthesize colorKey=_colorKey;
 - (void).cxx_destruct;
 - (struct CGColor *)foregroundColor;

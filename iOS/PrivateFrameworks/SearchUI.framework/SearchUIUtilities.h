@@ -10,9 +10,15 @@
 {
 }
 
++ (void)openApplicationWithBundleIdentifier:(id)arg1;
++ (id)richTextForBlockedAppName:(id)arg1 style:(unsigned long long)arg2;
++ (_Bool)bundleIdentifierIsBlockedForScreenTimeExpiration:(id)arg1;
++ (_Bool)resultIsSiriAction:(id)arg1;
++ (_Bool)appIsValidForBundleIdentifier:(id)arg1;
 + (id)stringForSFRichTextArray:(id)arg1;
 + (id)stringForSFRichText:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
++ (void)playNegativeHaptic;
 + (void)requestDeviceUnlockWithSuccessHandler:(CDUnknownBlockType)arg1;
 + (_Bool)deviceIsAuthenticated;
 + (id)sendFeedbackForPunchout:(id)arg1 toListener:(id)arg2 fromCardSection:(id)arg3 triggerEvent:(unsigned long long)arg4;
@@ -34,6 +40,7 @@
 + (id)addAspectRatioConstraintForImageView:(id)arg1;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2 cornersToRound:(unsigned long long)arg3 cornerRadius:(double)arg4;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2;
++ (id)horizontalAppNameFont;
 + (id)footnoteFont;
 + (id)captionFont;
 + (id)shortFontForFontStyle:(id)arg1;
@@ -47,7 +54,6 @@
 + (_Bool)isLargeIpad;
 + (double)standardTableCellContentInset;
 + (double)onePixelForCurrentScreenResolution;
-+ (double)separatorHeight;
 + (_Bool)backgroundColorPrefersWhiteForegroundText:(id)arg1;
 + (id)uiColorForSFColor:(id)arg1;
 + (id)vibrantButtonColorForStyle:(unsigned long long)arg1;

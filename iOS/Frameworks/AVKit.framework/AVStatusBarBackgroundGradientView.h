@@ -8,17 +8,12 @@
 
 @interface AVStatusBarBackgroundGradientView : UIView
 {
-    _Bool _showsGradientWhenStatusBarVisible;
     double _gradientOpacity;
 }
 
 + (Class)layerClass;
 @property(nonatomic) double gradientOpacity; // @synthesize gradientOpacity=_gradientOpacity;
-@property(nonatomic) _Bool showsGradientWhenStatusBarVisible; // @synthesize showsGradientWhenStatusBarVisible=_showsGradientWhenStatusBarVisible;
-- (void)_updateGradientOpacity;
-- (void)layoutSubviews;
-- (void)dealloc;
-- (id)init;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

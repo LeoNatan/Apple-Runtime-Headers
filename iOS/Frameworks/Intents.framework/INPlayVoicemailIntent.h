@@ -25,6 +25,9 @@
 - (void)setCallRecordIdentifier:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *callRecordIdentifier;
 - (id)initWithCallRecordIdentifier:(id)arg1;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

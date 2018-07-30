@@ -9,7 +9,7 @@
 
 @class NSNumber, NSString, UIImage;
 
-@protocol WBSParsecSearchSimpleResult <WBSParsecSearchMapsResultFeedbackSenderClient, WBSParsecSearchResultPresentedInCard>
+@protocol WBSParsecSearchSimpleResult <WBSParsecSearchResultPresentedInCard, WBSParsecSearchMapsResultFeedbackSenderClient>
 @property(readonly, nonatomic) _Bool hasSingleLineDescriptionAndTitle;
 @property(readonly, nonatomic) NSString *footnote;
 @property(readonly, nonatomic) _Bool descriptionTextCanWrap;

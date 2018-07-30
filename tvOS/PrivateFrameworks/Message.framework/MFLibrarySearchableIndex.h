@@ -6,13 +6,11 @@
 
 #import "NSObject.h"
 
-#import "CSSearchableIndexDelegate.h"
 #import "MFDiagnosticsGenerator.h"
-#import "MFLibrarySearchableIndexVerifierDataSource.h"
 
-@class CSSearchableIndex, MFCancelationToken, MFCoalescer, MFLazyCache, MFWeakSet, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSString, _MFLibrarySearchableIndexPendingRemovals;
+@class MFCancelationToken, MFCoalescer, MFLazyCache, MFWeakSet, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSString, _MFLibrarySearchableIndexPendingRemovals;
 
-@interface MFLibrarySearchableIndex : NSObject <MFDiagnosticsGenerator, CSSearchableIndexDelegate, MFLibrarySearchableIndexVerifierDataSource>
+@interface MFLibrarySearchableIndex : NSObject <MFDiagnosticsGenerator>
 {
     NSString *_indexName;
     MFCancelationToken *_cancelationToken;
@@ -44,13 +42,11 @@
     _Bool _scheduledRefresh;
     _Bool _scheduledVerification;
     id <MFLibrarySearchableIndexDataSource> _dataSource;
-    CSSearchableIndex *_csIndex;
 }
 
 + (void)_saveLocalClientState:(id)arg1;
 + (id)_localClientState;
 + (id)_localClientStateURL;
-@property(retain, nonatomic) CSSearchableIndex *csIndex; // @synthesize csIndex=_csIndex;
 @property(nonatomic) id <MFLibrarySearchableIndexDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)identifiersMatchingCriterion:(id)arg1;
 - (void)removeAllItems;
@@ -59,15 +55,10 @@
 - (void)removeItemsWithIdentifiers:(id)arg1;
 - (void)_indexItems:(id)arg1 fromRefresh:(_Bool)arg2;
 - (void)indexItems:(id)arg1;
-- (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(CDUnknownBlockType)arg2;
-- (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(CDUnknownBlockType)arg3;
 - (id)indexedEmptySubjectIdentifers;
 - (void)requestSpotlightDiagnosticsForMessageRowId:(id)arg1;
 - (void)_processSpotlightVerificationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_processRefreshRequestWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_processIdentifierRemovals:(id)arg1;
-- (id)_processDomainRemovals:(id)arg1;
-- (void)_processIndexingBatch:(id)arg1 clientState:(id)arg2;
 - (void)_getDomainRemovals:(id *)arg1 identifierRemovals:(id *)arg2;
 - (id)_consumeBatchOfSize:(unsigned long long)arg1;
 - (void)_scheduleDataSourceRefresh;
@@ -80,8 +71,6 @@
 - (void)_coalescingTimerFired;
 - (void)_stopCoalescingTimer;
 - (void)_startCoalescingTimer;
-- (id)librarySearchableIndexForSearchableIndexVerifier:(id)arg1;
-- (id)dataSamplesForSearchableIndexVerifier:(id)arg1 searchableIndex:(id)arg2;
 - (void)_dataSourceVerifyRepresentativeSampleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_dataSourceRequestNeededUpdatesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_dataSourceInvalidateItemsGreaterThanTransaction:(long long)arg1 completion:(CDUnknownBlockType)arg2;

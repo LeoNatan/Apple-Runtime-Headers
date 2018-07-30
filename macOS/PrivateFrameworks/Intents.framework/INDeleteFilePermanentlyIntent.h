@@ -23,6 +23,7 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 - (id)init;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

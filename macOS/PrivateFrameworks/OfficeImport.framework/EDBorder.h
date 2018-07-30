@@ -8,7 +8,6 @@
 
 @class EDColorReference, EDResources;
 
-__attribute__((visibility("hidden")))
 @interface EDBorder : NSObject
 {
     EDResources *mResources;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)borderWithType:(int)arg1 resources:(id)arg2;
 + (id)borderWithType:(int)arg1 colorReference:(id)arg2 diagonalType:(int)arg3 resources:(id)arg4;
 + (id)borderWithType:(int)arg1 colorReference:(id)arg2 resources:(id)arg3;
+- (void).cxx_destruct;
 - (id)description;
 - (id)color;
 - (void)setDiagonalType:(int)arg1;
@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToBorder:(id)arg1;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (id)colorReference;
 

@@ -7,6 +7,7 @@
 #import "NSString.h"
 
 @interface NSString (IMKAdditions)
+- (unsigned long long)_IMKUI_UTF32Length;
 - (BOOL)onlyContainsCJKUnifiedIdeographs;
 @end
 

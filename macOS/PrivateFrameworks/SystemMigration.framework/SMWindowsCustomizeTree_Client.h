@@ -16,7 +16,6 @@
     SMCustomizeTreeNode_Client *settings;
     SMCustomizeTreeNode_Client *network;
     SMCustomizeTreeNode_Client *machine;
-    SMCustomizeTreeNode_Client *root;
     NSString *migratableStateDescription;
     NSMutableArray *_otherDiskNodes;
     SMCustomizeTreeNode_Client *_users;
@@ -48,7 +47,6 @@
 @property BOOL someUserNeedsToLogin; // @synthesize someUserNeedsToLogin=_someUserNeedsToLogin;
 @property(retain) NSMutableArray *otherDiskNodes; // @synthesize otherDiskNodes=_otherDiskNodes;
 @property(retain) NSString *migratableStateDescription; // @synthesize migratableStateDescription;
-@property(retain) SMCustomizeTreeNode_Client *root; // @synthesize root;
 @property(retain) SMCustomizeTreeNode_Client *machine; // @synthesize machine;
 @property(retain) SMCustomizeTreeNode_Client *network; // @synthesize network;
 @property(retain) SMCustomizeTreeNode_Client *settings; // @synthesize settings;
@@ -70,6 +68,7 @@
 - (void)addSystemComponentToTransfer:(id)arg1 toRequest:(id)arg2;
 - (void)addUserToTransfer:(id)arg1 toRequest:(id)arg2 withSelectedComponents:(id)arg3;
 - (id)migrationRequest;
+- (Class)requestClass;
 - (BOOL)showCustomPaths;
 - (void)addDisk:(id)arg1 toNode:(id)arg2;
 - (void)addSubComponent:(id)arg1 toNode:(id)arg2 select:(BOOL)arg3;
@@ -77,7 +76,7 @@
 - (void)addUsers:(id)arg1;
 - (void)beginAsynchronousSizing;
 - (void)tearDown;
-- (void)generateTree:(BOOL)arg1;
+- (void)generateTree;
 - (BOOL)rebootRequired;
 - (id)initWithTransferredUsers:(id)arg1 sourceSystem:(id)arg2 targetSystem:(id)arg3;
 

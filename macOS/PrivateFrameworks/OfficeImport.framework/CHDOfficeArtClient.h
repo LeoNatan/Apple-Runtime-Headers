@@ -10,17 +10,16 @@
 
 @class CHDAnchor, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CHDOfficeArtClient : NSObject <OADClient>
 {
     CHDAnchor *mAnchor;
 }
 
+- (void).cxx_destruct;
 - (struct CGRect)bounds;
 - (BOOL)hasBounds;
 - (void)setAnchor:(id)arg1;
 - (id)anchor;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

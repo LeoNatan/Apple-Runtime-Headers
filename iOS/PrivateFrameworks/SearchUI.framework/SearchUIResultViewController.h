@@ -6,24 +6,42 @@
 
 #import "UIViewController.h"
 
+#import "SearchUIKeyboardableTableViewScrollDelegate.h"
+#import "SearchUITableViewTesting.h"
 #import "UIGestureRecognizerDelegate.h"
 
 @class NSString, SearchUIReplicatorView, SearchUIResultTableViewController, SearchUISearchField, UIView;
 
-@interface SearchUIResultViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface SearchUIResultViewController : UIViewController <UIGestureRecognizerDelegate, SearchUIKeyboardableTableViewScrollDelegate, SearchUITableViewTesting>
 {
+    _Bool _shouldMonitorScrollingPastBottomOfContent;
+    CDUnknownBlockType tableViewWillUpdateHandler;
+    CDUnknownBlockType tableViewDidUpdateHandler;
+    CDUnknownBlockType cellWillDisplayHandler;
     SearchUIResultTableViewController *_resultTableViewController;
     SearchUIReplicatorView *_replicatorView;
+    NSString *_previousSearchString;
     id <SearchUIResultViewDelegate> _delegate;
 }
 
+@property(nonatomic) _Bool shouldMonitorScrollingPastBottomOfContent; // @synthesize shouldMonitorScrollingPastBottomOfContent=_shouldMonitorScrollingPastBottomOfContent;
 @property(nonatomic) __weak id <SearchUIResultViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain) NSString *previousSearchString; // @synthesize previousSearchString=_previousSearchString;
 @property(retain) SearchUIReplicatorView *replicatorView; // @synthesize replicatorView=_replicatorView;
 @property(retain) SearchUIResultTableViewController *resultTableViewController; // @synthesize resultTableViewController=_resultTableViewController;
+@property(copy, nonatomic) CDUnknownBlockType cellWillDisplayHandler; // @synthesize cellWillDisplayHandler;
+@property(copy, nonatomic) CDUnknownBlockType tableViewDidUpdateHandler; // @synthesize tableViewDidUpdateHandler;
+@property(copy, nonatomic) CDUnknownBlockType tableViewWillUpdateHandler; // @synthesize tableViewWillUpdateHandler;
 - (void).cxx_destruct;
+- (void)tapAtIndexPath:(id)arg1;
+- (id)currentTableModel;
+- (void)performScrollTestWithHandlerForFirstScrollCompletion:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performScrollTestWithCompletion:(CDUnknownBlockType)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)contentScrollView;
 @property(readonly, nonatomic) double distanceToTopOfAppIcons;
+- (void)updateWithResultSections:(id)arg1 resetScrollPoint:(_Bool)arg2;
 - (void)updateWithResultSections:(id)arg1;
 @property(nonatomic) _Bool shouldUseInsetRoundedSections;
 @property(nonatomic) _Bool shouldHideResultsUnderKeyboard;
@@ -35,8 +53,10 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)viewDidLayoutSubviews;
-- (void)replaceResult:(id)arg1 withResult:(id)arg2 inResultSection:(id)arg3;
+- (void)replaceResult:(id)arg1 withResult:(id)arg2;
 @property(retain, nonatomic) UIView *footerView;
+- (void)didBeginScrolling;
+- (void)didScrollPastBottomOfContent;
 - (id)init;
 
 // Remaining properties

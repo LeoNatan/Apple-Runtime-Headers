@@ -6,15 +6,19 @@
 
 #import "NSObject.h"
 
+#import "VideoCaptureServer.h"
+
 @class NSMutableArray, NSObject<AVConferencePreviewDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<VideoCaptureProtocol>, NSString, VCImageQueue, VideoAttributes;
 
 __attribute__((visibility("hidden")))
-@interface VCVideoCaptureServer : NSObject
+@interface VCVideoCaptureServer : NSObject <VideoCaptureServer>
 {
     int currentWidth;
     int currentHeight;
     int currentFrameRate;
     int _maxFrameRate;
+    int _encodingWidth;
+    int _encodingHeight;
     int previewFrameCount;
     int captureFrameCount;
     NSObject<OS_dispatch_source> *cameraHealthMonitor;
@@ -48,7 +52,7 @@ __attribute__((visibility("hidden")))
     double falteredRenderingtimeStamp;
     VCImageQueue *frontQueue;
     VCImageQueue *backQueue;
-    int _previewSlot;
+    unsigned int _previewSlot;
     int _thermalNotificationToken;
     int _thermalLevel;
     int _newThermalLevel;
@@ -56,6 +60,7 @@ __attribute__((visibility("hidden")))
     int _peakPowerLevel;
     int _newPeakPowerLevel;
     BOOL _isPreviewRunning;
+    BOOL _forceDisableThermal;
 }
 
 + (id)VCVideoCaptureServerSingleton;
@@ -95,20 +100,25 @@ __attribute__((visibility("hidden")))
 - (struct __CFDictionary *)copyCameraColorInfo;
 - (BOOL)canStopPreview;
 - (void)changeCameraToPendingSettingsWithReset:(BOOL)arg1;
-- (struct __CVBuffer *)resizeFrame:(struct __CVBuffer *)arg1;
-- (BOOL)screenCaptureFrame:(struct opaqueCMSampleBuffer *)arg1 frameTime:(CDStruct_1b6d18a9)arg2 droppedFrames:(int)arg3 orientation:(int)arg4;
+- (struct __CVBuffer *)createResizedFrame:(struct __CVBuffer *)arg1;
+- (void)onCaptureScreenFrame:(struct opaqueCMSampleBuffer *)arg1 frameTime:(CDStruct_1b6d18a9)arg2 droppedFrames:(int)arg3 orientation:(int)arg4;
+- (void)notifyFrameRateBeingThrottledForClients:(id)arg1 newFrameRate:(int)arg2 thermalLevelDidChange:(_Bool)arg3 powerLevelDidChange:(_Bool)arg4;
 - (void)notifyThermalChangeForClients:(id)arg1;
 - (int)getFrameRateForThermalLevel:(int)arg1 peakPowerPressure:(int)arg2;
 - (int)getFrameRateForPeakPowerLevel:(int)arg1;
 - (int)getFrameRateForThermalLevel:(int)arg1;
 - (void)applyPressureLevelChanges;
-- (BOOL)onCaptureFrame:(struct opaqueCMSampleBuffer *)arg1 frameTime:(CDStruct_1b6d18a9)arg2 preview:(BOOL)arg3 droppedFrames:(int)arg4 isSwitching:(BOOL)arg5 camera:(int)arg6;
+- (void)clearAllStickers:(BOOL)arg1;
+- (void)addStickerWithURL:(id)arg1 isFaceSticker:(BOOL)arg2 atPosition:(struct CGPoint)arg3 identifier:(id)arg4;
+- (void)setMemoji:(id)arg1;
+- (void)setAnimoji:(id)arg1;
+- (void)onCaptureVideoFrame:(struct opaqueCMSampleBuffer *)arg1 frameTime:(CDStruct_1b6d18a9)arg2 preview:(BOOL)arg3 shouldEnqueueFrame:(BOOL)arg4 droppedFrames:(int)arg5 switching:(BOOL)arg6 orientation:(int)arg7 camera:(int)arg8;
 - (BOOL)enqueueFrameToQueueFront:(BOOL)arg1 frame:(struct __CVBuffer *)arg2 frameTime:(CDStruct_1b6d18a9)arg3;
 - (BOOL)captureVideoWidth:(int *)arg1 height:(int *)arg2 frameRate:(int *)arg3;
 - (void)previewVideoWidth:(int *)arg1 height:(int *)arg2 frameRate:(int *)arg3;
 - (void)reconnectClientLayerFront:(BOOL)arg1;
-- (void)handleScreenCaptureEvent:(id)arg1;
-- (void)handleVideoCaptureEvent:(id)arg1;
+- (void)handleCaptureEvent:(id)arg1 subType:(id)arg2;
+- (void)handleCaptureEvent:(id)arg1;
 - (void)handleAVCaptureError:(int)arg1 error:(id)arg2;
 - (int)createVideoCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3 useBackFacingCamera:(BOOL)arg4;
 - (void)registerBlocksForServer;

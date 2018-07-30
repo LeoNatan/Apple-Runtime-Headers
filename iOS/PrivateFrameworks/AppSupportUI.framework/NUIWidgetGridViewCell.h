@@ -35,7 +35,7 @@
 - (id)currentFont;
 - (id)_createLabelForStyle:(long long)arg1;
 - (id)_createButtonWithGridView:(id)arg1 item:(id)arg2;
-- (void)_didTapButton:(id)arg1;
+- (void)_didTapButton;
 - (id)initWithWidgetGridView:(id)arg1 item:(id)arg2 index:(unsigned long long)arg3;
 @property(readonly, nonatomic) unsigned long long index;
 

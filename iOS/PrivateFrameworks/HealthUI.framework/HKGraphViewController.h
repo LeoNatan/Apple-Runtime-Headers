@@ -24,7 +24,6 @@
 @property(readonly, nonatomic) HKGraphView *graphView; // @synthesize graphView=_graphView;
 - (void).cxx_destruct;
 - (void)graphViewDidTapYAxis:(id)arg1;
-- (void)graphView:(id)arg1 didUpdateAnnotationViewContentWithContexts:(id)arg2;
 - (void)graphView:(id)arg1 didUpdateLegendViewsWithTopLegendFrame:(struct CGRect)arg2;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;
 - (void)graphView:(id)arg1 didUpdateSeries:(id)arg2 newDataArrived:(_Bool)arg3;

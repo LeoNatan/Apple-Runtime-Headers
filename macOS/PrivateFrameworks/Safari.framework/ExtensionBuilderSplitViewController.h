@@ -8,13 +8,14 @@
 
 #import "ExtensionBuilderContentViewControllerDelegate.h"
 
-@class ExtensionBuilderContentViewController, ExtensionBuilderSidebarViewController, NSString, NSView;
+@class ExtensionBuilderContentViewController, ExtensionBuilderSidebarViewController, NSString, NSView, SandboxFileExtensionController;
 
 __attribute__((visibility("hidden")))
 @interface ExtensionBuilderSplitViewController : NSSplitViewController <ExtensionBuilderContentViewControllerDelegate>
 {
     ExtensionBuilderContentViewController *_contentViewController;
     ExtensionBuilderSidebarViewController *_sidebarViewController;
+    SandboxFileExtensionController *_fileExtensionController;
 }
 
 - (void).cxx_destruct;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)_confirmUserInstendsToUseSafariExtensionBuilderIfNecessary;
 @property(readonly, nonatomic) NSView *initialFirstResponder;
 - (void)saveChanges;
+- (id)initWithSandboxFileExtensionController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

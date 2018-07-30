@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class CLKDevice, NSArray;
 
 @interface NTKNumeralsHourViewsManager : NSObject
 {
+    CLKDevice *_device;
     NSArray *_hourViews;
     int _visibleHour;
     int _visibleComplicationSlot;
@@ -31,11 +32,11 @@
 - (void)applyFaceColorFromFaceConfiguration:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3 faceConfiguration:(id)arg4;
 - (void)configureForEditMode:(int)arg1;
-- (void)updateVisibleHour:(int)arg1 targetUtilitySlot:(int)arg2 faceConfiguration:(id)arg3 animationProgress:(float)arg4;
+- (void)updateVisibleHour:(int)arg1 targetUtilitySlot:(int)arg2 faceConfiguration:(id)arg3 animationProgress:(float)arg4 forEditMode:(int)arg5;
 - (_Bool)needHourAnimationForChangeToHour:(int)arg1 toFaceConfiguration:(id)arg2;
 - (void)removeHourViews;
 - (void)addHourViewsToSuperview:(id)arg1;
-- (id)initWithStyleFromFaceConfiguration:(id)arg1;
+- (id)initWithStyleFromFaceConfiguration:(id)arg1 forDevice:(id)arg2;
 
 @end
 

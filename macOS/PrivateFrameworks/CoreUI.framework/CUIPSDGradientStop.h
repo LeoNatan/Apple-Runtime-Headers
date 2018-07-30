@@ -9,7 +9,6 @@
 #import "NSCoding.h"
 #import "NSCopying.h"
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDGradientStop : NSObject <NSCoding, NSCopying>
 {
     double location;

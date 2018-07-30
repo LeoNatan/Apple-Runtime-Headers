@@ -10,9 +10,9 @@
 #import "AKBasicLoginAlertControllerDelegate.h"
 #import "RemoteUIControllerDelegate.h"
 
-@class AAUICDPStingrayRemoteUIController, AKAppleIDServerUIContextController, AKBasicLoginAlertController, NSHTTPURLResponse, NSString, RUIObjectModel, RemoteUIController, UINavigationController, UIViewController;
+@class AAUICDPStingrayRemoteUIController, AKAppleIDServerUIContextController, AKBasicLoginAlertController, AKNativeAccountRecoveryController, NSHTTPURLResponse, NSString, RUIObjectModel, RemoteUIController, UINavigationController, UIViewController;
 
-@interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AKBasicLoginAlertControllerDelegate, AKAppleIDAuthenticationUIProvider, RemoteUIControllerDelegate>
+@interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AKBasicLoginAlertControllerDelegate, RemoteUIControllerDelegate, AKAppleIDAuthenticationUIProvider>
 {
     UIViewController *_topViewControllerOnLoadStart;
     _Bool _overrideFirstActionSignal;
@@ -23,16 +23,19 @@
     RUIObjectModel *_currentRemoteOM;
     AKAppleIDServerUIContextController *_serverUIContextController;
     NSHTTPURLResponse *_deferredResponse;
+    AKNativeAccountRecoveryController *_nativeRecoveryController;
     _Bool _isPresentingServerUI;
     AAUICDPStingrayRemoteUIController *_stingrayController;
     _Bool _forceInlinePresentation;
     UIViewController *_presentingViewController;
     id <AKAppleIDAuthenticationInAppContextDelegate> _delegate;
     id <AKAppleIDAuthenticationInAppContextAlertDelegate> _alertDelegate;
+    id <CDPStateUIProvider> _cdpUiProvider;
     id <AKAppleIDAuthenticationInAppContextPasswordDelegate> __passwordDelegate;
 }
 
 @property(nonatomic, setter=_setPasswordDelegate:) __weak id <AKAppleIDAuthenticationInAppContextPasswordDelegate> _passwordDelegate; // @synthesize _passwordDelegate=__passwordDelegate;
+@property(retain, nonatomic, setter=_setCdpUiProvider:) id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextAlertDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
@@ -56,8 +59,7 @@
 - (void)remoteUIController:(id)arg1 didFinishLoadWithError:(id)arg2;
 - (_Bool)_isDeferrableFinalResponseHarvested;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (_Bool)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
-- (id)cdpUiProvider;
+- (void)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentIDPProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -81,6 +83,8 @@
 - (void)_contextWillDismissLoginAlertController;
 - (void)_contextDidPresentLoginController;
 - (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)dismissNativeRecoveryUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)presentNativeRecoveryUIWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 

@@ -24,7 +24,7 @@
 @property(readonly) NSString *routeUID; // @synthesize routeUID=_routeUID;
 - (void)_notifyDelegateOfUpdatedMediaSession:(id)arg1;
 @property(retain) HMMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
-- (void)configureWithAccessory:(id)arg1 home:(id)arg2 context:(id)arg3;
+- (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
 
 @end
 

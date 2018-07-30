@@ -72,11 +72,10 @@
 - (void)hideMode:(id)arg1 animate:(_Bool)arg2;
 - (void)showMode:(id)arg1 animate:(_Bool)arg2;
 - (void)setRegularDeviceLowerDialLabelPositions;
-- (void)setRegularDeviceUpperDialLabelPositions:(id)arg1;
 - (void)updateTimeScaleLabel;
 - (void)updateTimeScaleLabelWithTimeScale:(unsigned long long)arg1;
 - (_Bool)isTimeMode;
-- (id)initWithSize:(struct CGSize)arg1;
+- (id)initWithSize:(struct CGSize)arg1 forDevice:(id)arg2;
 
 @end
 

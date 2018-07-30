@@ -14,7 +14,6 @@
 - (BOOL)removeFollowUpItems:(NSArray *)arg1 error:(id *)arg2;
 - (BOOL)addFollowUpItems:(NSArray *)arg1 error:(id *)arg2;
 - (BOOL)removeAllAuthKitFollowUpItems:(id *)arg1;
-- (NSArray *)pendingAuthKitFollowUpUniqueIdentifiers:(id *)arg1;
 - (NSArray *)pendingAuthKitFollowUpItems:(id *)arg1;
 @end
 

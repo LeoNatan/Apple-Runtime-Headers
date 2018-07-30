@@ -54,7 +54,10 @@
 - (void)_handleRetryAfterTSMSyncForPushTopic:(id)arg1 withRequest:(id)arg2 taskIdentifier:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_handlePassDownloadTask:(id)arg1 data:(id)arg2;
 - (void)_handlePassListDownloadTask:(id)arg1 data:(id)arg2;
-- (void)_handleRemoteAssetDownloadTask:(id)arg1 data:(id)arg2;
+- (void)_handleRemoteCloudStoreAssetForRecordName:(id)arg1 taskRecord:(id)arg2 data:(id)arg3 shouldWriteData:(_Bool)arg4;
+- (void)_handleRemoteURLAssetDownloadTask:(id)arg1 data:(id)arg2;
+- (void)_handleRemoteAssetDownloadForManifestItem:(id)arg1 taskPassURL:(id)arg2 data:(id)arg3 shouldWriteData:(_Bool)arg4;
+- (void)_backgroundDownloadCloudStoreAssetsforItem:(id)arg1 cloudStoreCoordinatorDelegate:(id)arg2;
 - (id)_passWithFileURL:(id)arg1;
 - (void)_updateRequestWithCurrentTargetDevice:(id)arg1;
 - (_Bool)_hasConfiguration;
@@ -81,10 +84,13 @@
 - (unsigned int)passActionWithRemoteContentPassAction:(id)arg1 forPass:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned int)paymentProvisioningNonceWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned int)provisioningMethodWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (unsigned int)browseableBankAppsWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned int)availableProductsWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)backgroundDownloadWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (unsigned int)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2;
+- (void)backgroundDownloadRemotePassAssets:(id)arg1 cloudStoreCoordinatorDelegate:(id)arg2;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1;
 - (void)backgroundDownloadPassAtURL:(id)arg1;
 - (unsigned int)passAtURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -134,6 +140,7 @@
 - (_Bool)_canRegisterForPeerPayment;
 @property(readonly) NSURL *primaryBrokerURL;
 @property(readonly) _Bool needsConfiguration;
+- (_Bool)_needsRegistrationShouldCheckSecureElementOwnership:(_Bool)arg1;
 @property(readonly) _Bool needsRegistration;
 @property(readonly) int paymentSetupSupportedInRegion;
 - (void)sharedPaymentServiceChanged:(id)arg1;

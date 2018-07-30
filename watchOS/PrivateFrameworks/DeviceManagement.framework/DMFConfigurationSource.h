@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class DMFStatusReportingRequirements, NSString;
+@class DMFReportingRequirements, NSString;
 
 @interface DMFConfigurationSource : NSObject <NSSecureCoding>
 {
@@ -16,11 +16,11 @@
     NSString *_displayName;
     NSString *_organizationIdentifier;
     NSString *_machServiceName;
-    DMFStatusReportingRequirements *_statusReportingRequirements;
+    DMFReportingRequirements *_reportingRequirements;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) DMFStatusReportingRequirements *statusReportingRequirements; // @synthesize statusReportingRequirements=_statusReportingRequirements;
+@property(retain, nonatomic) DMFReportingRequirements *reportingRequirements; // @synthesize reportingRequirements=_reportingRequirements;
 @property(copy, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;

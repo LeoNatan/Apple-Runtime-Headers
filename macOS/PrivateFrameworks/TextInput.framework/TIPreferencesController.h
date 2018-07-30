@@ -14,6 +14,7 @@
 {
     NSMutableDictionary *_configuredDomains;
     NSMutableDictionary *_configuredPreferences;
+    NSMutableDictionary *_cachedMCRestrictedValue;
     NSTimer *_synchronizePreferencesTimer;
     double _lastSynchronizePreferencesTime[5];
     BOOL isInternalInstall;
@@ -26,6 +27,7 @@
 @property(nonatomic) BOOL ignoreNextSyncNotification; // @synthesize ignoreNextSyncNotification=_ignoreNextSyncNotification;
 @property(nonatomic) BOOL inhibitGlobalNotification; // @synthesize inhibitGlobalNotification=_inhibitGlobalNotification;
 @property(nonatomic) BOOL isInternalInstall; // @synthesize isInternalInstall;
+- (void).cxx_destruct;
 - (void)updateLastUsedDictationLanguages:(id)arg1;
 - (void)updateEnabledDictationLanguages:(id)arg1;
 - (void)updateDidPerformFirstReachableKeyboardInteraction;
@@ -47,7 +49,6 @@
 - (BOOL)_isOneTimeAction:(id)arg1;
 - (BOOL)allEnabledInputModesAreValid;
 - (void)updateInputModes:(id)arg1;
-- (void)updateEnabledDictationLanguagesForInputModes:(id)arg1;
 - (BOOL)isKeyLockedDown:(int)arg1;
 - (BOOL)isPreferenceKeyLockedDown:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(int)arg2;

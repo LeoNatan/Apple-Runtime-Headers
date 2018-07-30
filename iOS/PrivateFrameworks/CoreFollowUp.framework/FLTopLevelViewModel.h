@@ -8,17 +8,20 @@
 
 #import "FLViewModel.h"
 
-@class FLFollowUpController, NSString;
+@class FLFollowUpController, FLItemChangeObserver, NSString;
 
 @interface FLTopLevelViewModel : NSObject <FLViewModel>
 {
     FLFollowUpController *_controller;
-    int _notifyToken;
-    CDUnknownBlockType _itemChangeObserver;
+    FLItemChangeObserver *_observer;
+    NSString *_bundleIdentifier;
+    NSString *_localizedDeviceRowTitle;
 }
 
++ (id)_prefixFromBundleIdentifier:(id)arg1;
++ (id)redirectURLForItem:(id)arg1 withAction:(id)arg2;
+@property(copy, nonatomic) NSString *localizedDeviceRowTitle; // @synthesize localizedDeviceRowTitle=_localizedDeviceRowTitle;
 - (void).cxx_destruct;
-- (void)dealloc;
 - (void)setItemChangeHandler:(CDUnknownBlockType)arg1;
 - (void)mapItemsToGroups:(id)arg1;
 - (id)groups;
@@ -28,6 +31,8 @@
 - (void)refreshItems:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)refreshItemsForItem:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)allPendingItems;
+- (id)initWithBundleIdentifier:(id)arg1 controller:(id)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 clientIdentifier:(id)arg2;
 - (id)initWithIdentifier:(id)arg1;
 
 // Remaining properties

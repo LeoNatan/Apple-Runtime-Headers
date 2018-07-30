@@ -23,6 +23,7 @@
 @property(copy, nonatomic) BSSettings *clientExtendedData; // @synthesize clientExtendedData=_clientExtendedData;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType requestHandler; // @synthesize requestHandler=_requestHandler;
+- (void).cxx_destruct;
 - (Class)fallbackXPCEncodableClass;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
@@ -36,7 +37,6 @@
 - (void)executeRequestsWithHandler:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2 expirationHandler:(CDUnknownBlockType)arg3;
 - (void)setExpired:(_Bool)arg1;
 @property(readonly, getter=isExpired) _Bool expired; // @dynamic expired;
-- (void)dealloc;
 - (id)initWithRequests:(id)arg1 expirationInterval:(double)arg2 responseHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties

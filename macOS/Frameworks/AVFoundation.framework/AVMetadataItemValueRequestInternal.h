@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSError, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVMetadataItemValueRequestInternal : NSObject
 {
     AVWeakReference *weakReferenceToMetadataItem;

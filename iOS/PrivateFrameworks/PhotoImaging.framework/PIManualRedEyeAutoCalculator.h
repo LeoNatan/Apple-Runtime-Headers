@@ -12,6 +12,7 @@
     double _touchDiameter;
 }
 
+- (void)_configureRequest:(id)arg1;
 - (id)_options;
 - (id)initWithComposition:(id)arg1 location:(struct CGPoint)arg2 touchDiameter:(double)arg3;
 

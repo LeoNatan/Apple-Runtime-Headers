@@ -9,11 +9,17 @@
 __attribute__((visibility("hidden")))
 @interface FI_TGoToFieldEditor : NSTextView
 {
+    long long _retainCount;
 }
 
 - (struct _NSRange)rangeForUserCompletion;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 textContainer:(id)arg2;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (unsigned long long)retainCount;
+- (oneway void)release;
+- (id)retain;
 
 @end
 

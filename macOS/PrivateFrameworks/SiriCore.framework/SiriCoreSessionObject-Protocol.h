@@ -16,7 +16,7 @@
 - (NSString *)siriCore_requestId;
 - (NSObject<OS_dispatch_data> *)siriCore_serializedAceDataError:(id *)arg1;
 - (void)siriCore_logDiagnostics;
-- (BOOL)siriCore_canBeRemapped;
+- (BOOL)siriCore_isProvisional;
 - (BOOL)siriCore_isRestartable;
 - (BOOL)siriCore_isRetryable;
 - (BOOL)siriCore_bufferingAllowedDuringActiveSession;

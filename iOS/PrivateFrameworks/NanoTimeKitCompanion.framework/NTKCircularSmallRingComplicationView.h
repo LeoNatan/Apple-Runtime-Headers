@@ -22,7 +22,6 @@
 - (void)updateRingWithOverrideColor:(id)arg1;
 - (void)updateRingWithRingDescription:(id)arg1;
 - (void)layoutSubviews;
-- (_Bool)_wantsPlatter;
 - (void)setUsesMediumLayout:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

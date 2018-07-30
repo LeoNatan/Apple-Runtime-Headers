@@ -10,6 +10,16 @@
 {
 }
 
++ (id)RealTimeEncryptionController;
++ (id)QRAllocator_oversized;
++ (id)SessionController;
++ (id)GlobalLinkZUDP;
++ (id)GlobalLink;
++ (id)Stun;
++ (id)QRAllocator;
++ (id)IDSDSession;
++ (id)IDSSession;
++ (id)xpc;
 + (id)utilities;
 + (id)bonjourDeliveryController;
 + (id)deliveryController;
@@ -19,6 +29,7 @@
 + (id)socketPairConnection;
 + (id)localDeliveryQueue;
 + (id)UTunConnection;
++ (id)query;
 + (id)delivery;
 + (id)groupCrypto;
 + (id)accountIdentity;

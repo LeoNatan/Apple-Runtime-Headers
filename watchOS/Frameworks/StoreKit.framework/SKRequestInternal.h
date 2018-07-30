@@ -8,6 +8,7 @@
 
 @class SKPaymentQueueClient, SKXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface SKRequestInternal : NSObject
 {
     int _backgroundTaskIdentifier;
@@ -17,7 +18,9 @@
     int _state;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
+- (id)init;
 
 @end
 

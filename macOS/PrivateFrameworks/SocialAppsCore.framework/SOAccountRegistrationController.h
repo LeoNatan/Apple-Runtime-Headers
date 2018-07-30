@@ -58,6 +58,7 @@
 - (BOOL)addAndConfirmNewAlias:(id)arg1;
 - (void)enableAccount:(BOOL)arg1;
 - (BOOL)deleteAccount;
+- (void)signOutAndUpdateDaemon:(BOOL)arg1;
 - (void)signOut;
 - (void)_registerAccountIfNecessary;
 - (void)registerAccount;

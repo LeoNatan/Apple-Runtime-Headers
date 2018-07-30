@@ -6,6 +6,7 @@
 
 #import <AppKit/NSBrowserCell.h>
 
+__attribute__((visibility("hidden")))
 @interface NSLazyBrowserCell : NSBrowserCell
 {
 }

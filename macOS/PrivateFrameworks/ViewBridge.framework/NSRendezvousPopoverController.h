@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)addBridgeKeys:(id)arg1;
++ (unsigned long long)acceptableStyleMask;
 - (struct CGRect)_serviceWindowFrameForRemoteViewFrame:(struct CGRect)arg1;
 - (id)popoverAccessibilityParent;
 - (id)objectToObserveForKey:(id)arg1 withWindow:(id)arg2;

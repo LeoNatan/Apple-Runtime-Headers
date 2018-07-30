@@ -76,6 +76,8 @@
 + (_Bool)_ignoresViewTransformations;
 + (_Bool)_usesScreenFonts;
 + (void)initialize;
++ (void)_doSomeBackgroundLayout;
++ (_Bool)_inBackgroundLayout;
 + (id)_defaultLinkAttributes;
 - (void)showAttachmentCell:(id)arg1 inRect:(struct CGRect)arg2 characterIndex:(unsigned long long)arg3;
 - (void)underlineGlyphRange:(struct _NSRange)arg1 underlineType:(long long)arg2 lineFragmentRect:(struct CGRect)arg3 lineFragmentGlyphRange:(struct _NSRange)arg4 containerOrigin:(struct CGPoint)arg5;
@@ -194,6 +196,7 @@
 - (void)invalidateLayoutForCharacterRange:(struct _NSRange)arg1 actualCharacterRange:(struct _NSRange *)arg2;
 - (void)invalidateGlyphsForCharacterRange:(struct _NSRange)arg1 changeInLength:(long long)arg2 actualCharacterRange:(struct _NSRange *)arg3;
 - (void)_invalidateGlyphsForCharacterRange:(struct _NSRange)arg1 editedCharacterRange:(struct _NSRange)arg2 changeInLength:(long long)arg3 actualCharacterRange:(struct _NSRange *)arg4;
+@property _Bool limitsLayoutForSuspiciousContents;
 - (_Bool)backgroundColorProvidesOpaqueSurface;
 - (unsigned long long)layoutOptions;
 - (long long)typesetterBehavior;
@@ -239,9 +242,10 @@
 - (void)_drawLineForGlyphRange:(struct _NSRange)arg1 inContext:(struct CGContext *)arg2 from:(double)arg3 to:(double)arg4 at:(double)arg5 thickness:(double)arg6 lineOrigin:(struct CGPoint)arg7 breakForDescenders:(_Bool)arg8;
 - (void)_drawLineForGlyphRange:(struct _NSRange)arg1 inContext:(struct CGContext *)arg2 from:(double)arg3 to:(double)arg4 at:(double)arg5 thickness:(double)arg6 lineOrigin:(struct CGPoint)arg7 breakForDescenders:(_Bool)arg8 flipped:(_Bool)arg9;
 - (void)drawSpellingUnderlineForGlyphRange:(struct _NSRange)arg1 spellingState:(long long)arg2 inGlyphRange:(struct _NSRange)arg3 lineFragmentRect:(struct CGRect)arg4 lineFragmentGlyphRange:(struct _NSRange)arg5 containerOrigin:(struct CGPoint)arg6;
-- (id)circleImageWithSize:(struct CGSize)arg1 bufferWidth:(double)arg2 usingColor:(id)arg3;
 - (void)_showAttachmentCell:(id)arg1 inRect:(struct CGRect)arg2 characterIndex:(unsigned long long)arg3;
-- (void)_showCGGlyphs:(const unsigned short *)arg1 positions:(const struct CGPoint *)arg2 count:(unsigned long long)arg3 font:(id)arg4 matrix:(struct CGAffineTransform)arg5 attributes:(id)arg6 inContext:(struct CGContext *)arg7;
+- (void)showCGGlyphs:(const unsigned short *)arg1 positions:(const struct CGPoint *)arg2 count:(unsigned long long)arg3 font:(id)arg4 textMatrix:(struct CGAffineTransform)arg5 attributes:(id)arg6 inContext:(struct CGContext *)arg7;
+- (void)setApplicationFrameworkContext:(long long)arg1;
+- (long long)applicationFrameworkContext;
 - (void)setUnderlineColorForSpelling:(id)arg1;
 - (id)underlineColorForSpelling;
 - (void)setUnderlineColorForTextAlternatives:(id)arg1;

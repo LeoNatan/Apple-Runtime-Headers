@@ -20,6 +20,8 @@
     double _intervalForRetry;
     NSObject<OS_dispatch_queue> *_queue;
     unsigned int _currentSyncState;
+    _Bool _needsToUpdateScopeList;
+    _Bool _shouldNoteServerHasChanges;
     _Bool _opened;
     NSDate *_unavailabilityLimitDate;
     unsigned int _foregroundCalls;
@@ -32,10 +34,9 @@
     unsigned int _significantWorkCalls;
     unsigned int _disablingMinglingCount;
     NSDate *_lastSyncSessionDateCausedByForeground;
-    _Bool _didStartFirstSync;
+    _Bool _protectAgainstFastRelaunch;
     _Bool _didWriteFirstSyncMarker;
     _Bool _delayedFirstSyncBecauseOfRapidLaunch;
-    _Bool _needsPrePush;
     CPLPlatformObject *_platformObject;
     CPLEngineLibrary *_engineLibrary;
     CDUnknownBlockType _requiredStateObserverBlock;
@@ -44,13 +45,12 @@
 
 + (id)validElements;
 + (id)platformImplementationProtocol;
-@property(readonly) _Bool needsPrePush; // @synthesize needsPrePush=_needsPrePush;
 @property(copy, nonatomic) CDUnknownBlockType shouldBackOffOnErrorBlock; // @synthesize shouldBackOffOnErrorBlock=_shouldBackOffOnErrorBlock;
 @property(copy, nonatomic) CDUnknownBlockType requiredStateObserverBlock; // @synthesize requiredStateObserverBlock=_requiredStateObserverBlock;
 @property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
 - (void).cxx_destruct;
-- (_Bool)needsPrepush;
+@property(readonly, nonatomic) unsigned int requiredState;
 - (void)_resetFirstSynchronizationMarker;
 - (id)_minimalDateForFirstSync;
 - (void)_writeFirstSynchronizationMarker;
@@ -62,6 +62,7 @@
 - (void)openWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetBackoffInterval;
 - (void)noteSyncSessionFailedDuringPhase:(unsigned int)arg1 withError:(id)arg2;
+- (void)_handleResetGlobalAnchorWithError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleResetAnchorWithError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleResetCloudCacheWithError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleResetClientCacheWithError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -91,11 +92,20 @@
 - (void)noteClientIsInForeground;
 - (void)noteResourceDownloadQueueIsFull;
 - (void)noteServerHasChanges;
+- (void)_reallyNoteServerHasChangesLocked;
 - (void)noteClientIsNotInSyncWithClientCache;
 - (void)noteClientIsInSyncWithClientCache;
-- (void)notePullQueueIsFull;
-- (void)notePushQueueIsFull;
-- (void)notePushQueueIsEmpty;
+- (void)noteClientNeedsToPull;
+- (void)noteScopeNeedsToPullFromTransport;
+- (void)noteScopeNeedsToPushToTransport;
+- (void)noteScopeNeedsToPushHighPriorityToTransport;
+- (void)_disableFastRelaunchProtection;
+- (void)noteScopeNeedsUpdate;
+- (void)noteScopeListNeedsUpdate;
+- (void)noteTransportNeedsUpdate;
+- (void)noteStoreNeedsCleanup;
+- (void)noteStoreNeedsToUpdateDisabledFeatures;
+- (void)noteStoreNeedsSetup;
 - (void)kickOffSyncSession;
 - (void)startRequiredSyncSessionNow;
 - (void)_backOff;

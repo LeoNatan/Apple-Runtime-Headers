@@ -54,7 +54,7 @@
 @property(readonly, nonatomic) unsigned short floors;
 @property(readonly, nonatomic) _Bool floorsIsSet;
 - (id)description;
-- (id)init;
+- (id)_init;
 - (id)allFields;
 - (id)generateDatums:(id)arg1;
 

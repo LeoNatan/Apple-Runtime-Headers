@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class CKDPIdentifier, CKDPLocale, NSData, NSMutableArray, NSString;
+@class CKDPIdentifier, CKDPLocale, CKDPRequestOperationHeaderAssetAuthorizeGetRequestOptions, NSData, NSMutableArray, NSString;
 
 @interface CKDPRequestOperationHeader : PBCodable <NSCopying>
 {
@@ -22,6 +22,7 @@
     NSString *_applicationContainer;
     int _applicationContainerEnvironment;
     NSString *_applicationVersion;
+    CKDPRequestOperationHeaderAssetAuthorizeGetRequestOptions *_assetAuthorizeGetRequestOptions;
     NSData *_clientChangeToken;
     NSString *_deviceAssignedName;
     NSString *_deviceFlowControlKey;
@@ -57,6 +58,7 @@
 }
 
 + (Class)serviceIdentityKeyIDsType;
+@property(retain, nonatomic) CKDPRequestOperationHeaderAssetAuthorizeGetRequestOptions *assetAuthorizeGetRequestOptions; // @synthesize assetAuthorizeGetRequestOptions=_assetAuthorizeGetRequestOptions;
 @property(nonatomic) _Bool deviceSoftwareIsAppleInternal; // @synthesize deviceSoftwareIsAppleInternal=_deviceSoftwareIsAppleInternal;
 @property(retain, nonatomic) NSMutableArray *serviceIdentityKeyIDs; // @synthesize serviceIdentityKeyIDs=_serviceIdentityKeyIDs;
 @property(nonatomic) unsigned long long operationGroupQuantity; // @synthesize operationGroupQuantity=_operationGroupQuantity;
@@ -93,6 +95,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAssetAuthorizeGetRequestOptions;
 @property(nonatomic) _Bool hasDeviceSoftwareIsAppleInternal;
 - (id)serviceIdentityKeyIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)serviceIdentityKeyIDsCount;

@@ -8,6 +8,7 @@
 
 @class UIPDFPageRenderJob;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFPageRenderOperation : NSOperation
 {
     UIPDFPageRenderJob *_job;

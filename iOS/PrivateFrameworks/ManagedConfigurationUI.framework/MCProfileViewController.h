@@ -14,15 +14,15 @@
 {
     _Bool _profileOffersReenroll;
     _Bool _profileRemovable;
-    int _profileViewMode;
     id <MCProfileViewControllerDelegate> _profileViewControllerDelegate;
+    long long _profileViewMode;
     MCUIProfile *_UIProfile;
 }
 
 @property(nonatomic) _Bool profileRemovable; // @synthesize profileRemovable=_profileRemovable;
 @property(nonatomic) _Bool profileOffersReenroll; // @synthesize profileOffersReenroll=_profileOffersReenroll;
 @property(retain, nonatomic) MCUIProfile *UIProfile; // @synthesize UIProfile=_UIProfile;
-@property(nonatomic) int profileViewMode; // @synthesize profileViewMode=_profileViewMode;
+@property(nonatomic) long long profileViewMode; // @synthesize profileViewMode=_profileViewMode;
 @property(nonatomic) __weak id <MCProfileViewControllerDelegate> profileViewControllerDelegate; // @synthesize profileViewControllerDelegate=_profileViewControllerDelegate;
 - (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
@@ -44,7 +44,7 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (void)_setup;
-- (id)initWithStyle:(long long)arg1 profile:(id)arg2 profileViewMode:(int)arg3;
+- (id)initWithStyle:(long long)arg1 profile:(id)arg2 profileViewMode:(long long)arg3;
 - (id)initWithStyle:(long long)arg1;
 
 // Remaining properties

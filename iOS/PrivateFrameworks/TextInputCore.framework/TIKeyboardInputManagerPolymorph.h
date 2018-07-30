@@ -13,7 +13,7 @@
 - (void)syncToKeyboardState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)skipHitTestForTouchEvent:(id)arg1 keyboardState:(id)arg2;
 - (void)handleKeyboardInput:(id)arg1 keyboardState:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setInputManagerForInputMode:(id)arg1 withClass:(Class)arg2;
+- (void)setInputManagerForInputMode:(id)arg1 withKeyboardState:(id)arg2 class:(Class)arg3;
 - (void)setInputManagerForKeyboardState:(id)arg1;
 - (void)handleKeyboardState:(id)arg1;
 - (void)dealloc;

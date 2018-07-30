@@ -12,11 +12,7 @@
 {
     _Bool _isRelayRunning;
     double _IOBufferDuration;
-    struct _opaque_pthread_t {
-        long long _field1;
-        struct __darwin_pthread_handler_rec *_field2;
-        char _field3[8176];
-    } *_relayThread;
+    struct _opaque_pthread_t *_relayThread;
     struct _opaque_pthread_cond_t _wakeUpCondition;
     struct _opaque_pthread_mutex_t _wakeUpMutex;
     struct OpaqueAudioConverter *_clientToRemoteConverter;

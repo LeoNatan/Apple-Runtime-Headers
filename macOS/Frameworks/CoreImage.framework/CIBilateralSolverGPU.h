@@ -61,7 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)_setupBuffer;
 - (void)_setupPipelinesAsync:(CDUnknownBlockType)arg1;
 - (void)_setupMetal;
-- (int)doSolveWithBilateralGridhash:(id)arg1 reference:(id)arg2 disparity:(id)arg3 confidence:(id)arg4 output:(id)arg5 lambda:(float)arg6 maxIterations:(int)arg7 offsets:(struct *)arg8;
+- (int)doSolveWithBilateralGridhash:(id)arg1 reference:(id)arg2 disparity:(id)arg3 confidence:(id)arg4 output:(id)arg5 lambda:(float)arg6 maxIterations:(int)arg7 offsets:(CDStruct_183601bc *)arg8;
 - (id)initWithWidth:(int)arg1 height:(int)arg2 maxVertices:(unsigned long long)arg3 commandBuffer:(id)arg4;
 - (void)_setupPipelineCache;
 

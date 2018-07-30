@@ -8,6 +8,7 @@
 
 @class NSMutableData;
 
+__attribute__((visibility("hidden")))
 @interface VKTriangulator : NSObject
 {
     void *_opaque_triangulator;

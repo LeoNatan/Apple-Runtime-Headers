@@ -22,6 +22,7 @@
 @property(retain, nonatomic) id clientLink; // @synthesize clientLink=_clientLink;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+- (_Bool)donatesIntent;
 - (id)sourceIdentifier;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) int processID;

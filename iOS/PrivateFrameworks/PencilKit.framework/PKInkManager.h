@@ -10,20 +10,16 @@
 
 @interface PKInkManager : NSObject
 {
-    unsigned long long _version;
     NSMutableDictionary *_inks;
 }
 
-+ (id)dictionaryForInk:(id)arg1;
-+ (void)reloadInks;
-+ (id)inkDictionary;
-+ (id)defaultInkManagerWithVersion:(unsigned long long)arg1;
++ (void)clearCachedManager;
 + (id)defaultInkManager;
 @property(readonly, nonatomic) NSMutableDictionary *inks; // @synthesize inks=_inks;
-@property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
-- (void)writeDictionary:(id)arg1 forInk:(id)arg2;
-- (id)initWithVersion:(unsigned long long)arg1;
+- (id)inkBehaviorForIdentifier:(id)arg1 version:(unsigned long long)arg2 variant:(id)arg3;
+- (id)inkBehaviorForIdentifier:(id)arg1 variant:(id)arg2;
+- (id)init;
 
 @end
 

@@ -6,22 +6,23 @@
 
 #import "NSObject.h"
 
-@class WDDocument;
+@class WDCharacterPropertiesValues, WDDocument;
 
-__attribute__((visibility("hidden")))
 @interface WDCharacterProperties : NSObject
 {
+    BOOL mOriginal;
+    BOOL mTracked;
+    BOOL mResolved;
+    WDCharacterPropertiesValues *mOriginalProperties;
+    WDCharacterPropertiesValues *mTrackedProperties;
     WDDocument *mDocument;
-    unsigned int mOriginal:1;
-    unsigned int mTracked:1;
-    unsigned int mResolved:1;
-    CDStruct_2bc0833e *mOriginalProperties;
-    CDStruct_2bc0833e *mTrackedProperties;
 }
 
 + (SEL)setFontSelectorForFontType:(int)arg1;
 + (SEL)fontOverriddenSelectorForFontType:(int)arg1;
 + (SEL)fontSelectorForFontType:(int)arg1;
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
+- (void).cxx_destruct;
 - (id)description;
 - (void)copyPropertiesInto:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -239,15 +240,13 @@ __attribute__((visibility("hidden")))
 - (void)setResolveMode:(int)arg1;
 - (int)resolveMode;
 - (BOOL)isAnythingOverridden;
-- (id)document;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 - (int)reverseBooleanProperty:(int)arg1;
 - (BOOL)formattingChangedDifferentFrom:(id)arg1 mode:(int)arg2;
 - (BOOL)editDifferentFrom:(id)arg1 mode:(int)arg2;
 - (BOOL)deletionDifferentFrom:(id)arg1 mode:(int)arg2;
 - (BOOL)isBooleanProbablyDifferent:(unsigned char)arg1 than:(unsigned char)arg2;
-- (BOOL)isAnythingOverriddenIn:(CDStruct_2bc0833e *)arg1;
+- (BOOL)isAnythingOverriddenIn:(id)arg1;
 
 @end
 

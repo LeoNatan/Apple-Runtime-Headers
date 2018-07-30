@@ -8,6 +8,7 @@
 
 @class MCDetailsDescriptionView;
 
+__attribute__((visibility("hidden")))
 @interface MCDetailsDescriptionTableCell : UITableViewCell
 {
     MCDetailsDescriptionView *_descView;

@@ -14,11 +14,6 @@
 
 @interface _CPResultRankingFeedback : PBCodable <_CPProcessableFeedback, _CPResultRankingFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int localResultPosition:1;
-        unsigned int personalizationScore:1;
-    } _has;
     unsigned int _localResultPosition;
     unsigned long long _timestamp;
     _CPSearchResultForFeedback *_result;
@@ -42,8 +37,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasPersonalizationScore;
-@property(readonly, nonatomic) BOOL hasLocalResultPosition;
 - (id)duplicateResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)duplicateResultsCount;
 - (void)addDuplicateResults:(id)arg1;
@@ -52,8 +45,6 @@
 - (unsigned long long)hiddenResultsCount;
 - (void)addHiddenResults:(id)arg1;
 - (void)clearHiddenResults;
-@property(readonly, nonatomic) BOOL hasResult;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

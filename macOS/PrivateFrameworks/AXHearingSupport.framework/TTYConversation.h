@@ -26,7 +26,8 @@
 - (void)cleanup;
 - (unsigned long long)utteranceCountForMe:(BOOL)arg1;
 - (id)transcriptString;
-- (id)_processBackspace;
+- (id)lastUtteranceForMe:(BOOL)arg1;
+- (id)processBackspaceForMe:(BOOL)arg1;
 - (id)appendCharacter:(unsigned short)arg1;
 - (void)addUtterance:(id)arg1;
 - (id)mergeUtterancesIfPossible;

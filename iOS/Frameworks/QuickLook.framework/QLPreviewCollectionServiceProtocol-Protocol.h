@@ -9,7 +9,8 @@
 @class NSUUID;
 
 @protocol QLPreviewCollectionServiceProtocol <QLPreviewCollectionProtocol>
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(void (^)(void))arg1;
 - (void)getNetworkObserverWithCompletionBlock:(void (^)(id <QLNetworkStateListener>))arg1;
 - (void)setNotificationCenter:(id <QLNotificationCenterProtocol>)arg1;
 - (void)setAllowInteractiveTransitions:(_Bool)arg1;

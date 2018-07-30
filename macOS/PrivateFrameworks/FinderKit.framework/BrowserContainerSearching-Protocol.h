@@ -8,8 +8,7 @@
 
 @protocol BrowserContainerSearching
 - (void)searchWasChanged;
-- (void)searchDidBeginWithScopes:(const vector_e0f53d80 *)arg1 selectedScopeIndex:(unsigned int)arg2;
-- (void)toolbarUpdateForSplitterChange;
+- (void)searchDidBeginWithScopes:(const vector_757c8b87 *)arg1 selectedScopeIndex:(unsigned int)arg2;
 - (NSMenu *)toolbarHistorySearchTemplate;
 - (_Bool)toolbarMakeSearchFieldFirstResponder;
 - (NSSearchField *)toolbarSearchField;

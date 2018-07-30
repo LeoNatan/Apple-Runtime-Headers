@@ -8,8 +8,10 @@
 
 @interface MDLSubmesh (SCNModelIO)
 + (id)newSubmeshWithSCNGeometryElement:(id)arg1 bufferAllocator:(id)arg2 positionSourceChannel:(unsigned int)arg3;
++ (id)newSubmeshWithUniquedIndexData:(id)arg1 andSCNGeometryElement:(id)arg2 bufferAllocator:(id)arg3;
 + (id)newSubmeshWithSCNGeometryElement:(id)arg1 bufferAllocator:(id)arg2;
 + (id)newSubmeshWithGeometryData:(id)arg1 indexBufferLength:(unsigned long)arg2 interleaved:(_Bool)arg3 channelCount:(unsigned int)arg4 channelIdx:(unsigned int)arg5 bytesPerIndex:(unsigned long)arg6 indexType:(unsigned int)arg7 geometryType:(int)arg8 allocator:(id)arg9 indexCount:(unsigned int)arg10 topology:(id)arg11;
++ (id)submeshWithUniquedIndexData:(id)arg1 andSCNGeometryElement:(id)arg2 bufferAllocator:(id)arg3;
 + (id)submeshWithSCNGeometryElement:(id)arg1 bufferAllocator:(id)arg2 positionSourceChannel:(unsigned int)arg3;
 + (id)submeshWithSCNGeometryElement:(id)arg1 bufferAllocator:(id)arg2;
 + (id)submeshWithSCNGeometryElement:(id)arg1;

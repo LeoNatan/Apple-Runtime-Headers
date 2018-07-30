@@ -32,6 +32,7 @@
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)_cycleDrawersReversed:(BOOL)arg1;
 - (BOOL)isMovableByWindowBackground;
+- (BOOL)isMovable;
 - (void)_adjustWindowToScreen;
 - (void)performMiniaturize:(id)arg1;
 - (void)performZoom:(id)arg1;
@@ -61,7 +62,6 @@
 - (BOOL)isMainWindow;
 - (void)orderOut:(id)arg1;
 - (void)_resetDrawerFirstResponder;
-- (BOOL)_useMetalPattern;
 - (void)_setDrawerVisibleWithoutLogin;
 - (void)_changeDrawerFirstResponder;
 - (void)_changeDrawerMainState;

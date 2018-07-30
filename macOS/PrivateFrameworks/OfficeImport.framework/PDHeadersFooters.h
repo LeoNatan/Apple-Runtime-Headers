@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface PDHeadersFooters : NSObject
 {
     BOOL mHasDateTime;
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSString *mFooter;
 }
 
+- (void).cxx_destruct;
 - (void)setFooter:(id)arg1;
 - (id)footer;
 - (void)setHeader:(id)arg1;
@@ -41,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasNowDateTime;
 - (void)setHasDateTime:(BOOL)arg1;
 - (BOOL)hasDateTime;
-- (void)dealloc;
 
 @end
 

@@ -25,7 +25,7 @@
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (id)serverIdentity;
-- (id)initWithDeviceIdentity:(id)arg1;
+- (id)initWithServerIdentity:(id)arg1;
 
 @end
 

@@ -23,11 +23,14 @@
 @property(retain) NSURLCredential *stashedURLCredential; // @synthesize stashedURLCredential=_stashedURLCredential;
 - (void)didReceiveAuthenticationChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)promptForAuthenticationChallenge:(id)arg1;
+- (BOOL)evValidatedForURL:(id)arg1;
 - (void)_setCertValidated:(BOOL)arg1 forHost:(id)arg2;
 - (BOOL)certValidatedForURL:(id)arg1;
 - (BOOL)isHostDiabledForEVCheck:(id)arg1;
+- (void)enableHostForEVCheck:(id)arg1;
 - (void)disableHostForEVCheck:(id)arg1;
 - (id)init;
+- (void)dealloc;
 
 @end
 

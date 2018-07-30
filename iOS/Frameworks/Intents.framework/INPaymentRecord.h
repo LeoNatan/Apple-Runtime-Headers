@@ -7,28 +7,27 @@
 #import "NSObject.h"
 
 #import "INCacheableContainer.h"
-#import "INPaymentRecordExport.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class INCurrencyAmount, INPaymentMethod, INPerson, NSString;
 
-@interface INPaymentRecord : NSObject <INCacheableContainer, INPaymentRecordExport, NSCopying, NSSecureCoding>
+@interface INPaymentRecord : NSObject <INCacheableContainer, NSCopying, NSSecureCoding>
 {
     INPerson *_payee;
     INPerson *_payer;
     INCurrencyAmount *_currencyAmount;
-    INPaymentMethod *_paymentMethod;
     NSString *_note;
     long long _status;
+    INPaymentMethod *_paymentMethod;
     INCurrencyAmount *_feeAmount;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) INCurrencyAmount *feeAmount; // @synthesize feeAmount=_feeAmount;
+@property(readonly, copy, nonatomic) INPaymentMethod *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, copy, nonatomic) NSString *note; // @synthesize note=_note;
-@property(readonly, copy, nonatomic) INPaymentMethod *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
 @property(readonly, copy, nonatomic) INCurrencyAmount *currencyAmount; // @synthesize currencyAmount=_currencyAmount;
 @property(readonly, copy, nonatomic) INPerson *payer; // @synthesize payer=_payer;
 @property(readonly, copy, nonatomic) INPerson *payee; // @synthesize payee=_payee;
@@ -36,8 +35,8 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
-- (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

@@ -8,6 +8,7 @@
 
 @class AVCaptionGrouper;
 
+__attribute__((visibility("hidden")))
 @interface AVFigAssetWriterCaptionTrack : AVFigAssetWriterTrack
 {
     AVCaptionGrouper *_captionGrouper;

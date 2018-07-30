@@ -7,6 +7,7 @@
 #import "NSURLSession.h"
 
 @interface NSURLSession (WBSNSURLSessionExtras)
++ (id)safari_sharedNonCellularSession;
 + (id)safari_sharedSession;
 - (void)safari_downloadImageWithURL:(id)arg1 completionHandlerIncludingErrors:(CDUnknownBlockType)arg2;
 - (void)safari_downloadImageWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

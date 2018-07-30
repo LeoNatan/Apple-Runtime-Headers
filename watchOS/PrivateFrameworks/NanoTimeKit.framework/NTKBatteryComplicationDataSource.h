@@ -10,8 +10,9 @@
 {
 }
 
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
+- (void)_handleLocaleChange;
 - (void)_stateDidChange:(id)arg1;
 - (void)_levelDidChange:(id)arg1;
 - (void)_stopObserving;
@@ -24,7 +25,7 @@
 - (id)currentSwitcherTemplate;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 @end
 

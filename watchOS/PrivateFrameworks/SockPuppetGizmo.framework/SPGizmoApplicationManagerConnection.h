@@ -22,6 +22,9 @@
     NSObject<OS_dispatch_queue> *_connectQueue;
 }
 
++ (id)applicationTintColorForWatchKitApp:(id)arg1;
++ (id)extensionIdentifierForCompanionApplicationBundleIdentifier:(id)arg1;
++ (id)companionApplicationBundleIdentifierForExtensionIdentifier:(id)arg1;
 + (id)sharedConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectQueue; // @synthesize connectQueue=_connectQueue;
 @property(nonatomic) unsigned int wkAppActiveUIStateInterestedStateTypes; // @synthesize wkAppActiveUIStateInterestedStateTypes=_wkAppActiveUIStateInterestedStateTypes;

@@ -8,6 +8,7 @@
 
 @class NSAttributedString, NSFont, NSImage, NSMenuItemViewer, NSString, _NSBindingAdaptor;
 
+__attribute__((visibility("hidden")))
 @interface NSExtraMIData : NSObject
 {
     NSAttributedString *attributedTitle;

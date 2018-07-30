@@ -12,12 +12,12 @@
 {
 }
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
-+ (id)_resourceNameForTheme:(unsigned int)arg1 videoIndex:(int)arg2;
-+ (id)_resourceBaseNameForTheme:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)_orderedValues;
-+ (id)optionWithTimelapseTheme:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_resourceNameForTheme:(unsigned int)arg1 videoIndex:(int)arg2 forDevice:(id)arg3;
++ (id)_resourceBaseNameForTheme:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (id)optionWithTimelapseTheme:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
 - (id)resourceNameWithVideoIndex:(int)arg1;
 @property(readonly, nonatomic) NSString *resourceName;

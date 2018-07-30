@@ -9,11 +9,10 @@
 @class NSString;
 
 @protocol NTKDateComplicationDisplay <NTKComplicationDisplay>
-- (void)setDateComplicationText:(NSString *)arg1 forDateStyle:(unsigned int)arg2;
+- (void)setDateComplicationText:(NSString *)arg1 withDayRange:(struct _NSRange)arg2 forDateStyle:(unsigned int)arg3;
 
 @optional
 - (unsigned int)overrideDateStyle;
-- (void)setDateComplicationText:(NSString *)arg1 withDayRange:(struct _NSRange)arg2 forDateStyle:(unsigned int)arg3;
 - (unsigned int)desiredDateComplicationDateStyle;
 @end
 

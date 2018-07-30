@@ -14,6 +14,7 @@
     NSMutableDictionary *_propertyValueCache;
 }
 
++ (id)managedObjectModelForName:(id)arg1;
 + (id)managedObjectModel;
 + (id)managedObjectModelUrl;
 + (id)newIncrementedSearchString:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class MCDetailsDescriptionTableCell, MCDetailsHeaderCell, NSArray, NSDate, NSString, UITableViewCell;
 
+__attribute__((visibility("hidden")))
 @interface MCCertificateSummaryController : PSListController
 {
     struct __SecTrust *_trust;

@@ -30,6 +30,7 @@
 - (void)peerTrackingFull;
 - (void)failedToStartTrackingPeer:(WPPeerTrackingRequest *)arg1 error:(NSError *)arg2;
 - (void)lostPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
+- (void)foundPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
 - (void)stoppedTrackingPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
 - (void)startedTrackingPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
 - (void)anyDiscoveredDevice:(NSDictionary *)arg1;

@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class PKPassViewerViewController;
+@class PKPass, PKPassViewerViewController;
 
 @protocol PKPassViewerDelegate <NSObject>
+- (void)passViewer:(PKPassViewerViewController *)arg1 didChangePass:(PKPass *)arg2;
 - (void)passViewer:(PKPassViewerViewController *)arg1 closeClicked:(id)arg2;
 - (void)passViewer:(PKPassViewerViewController *)arg1 didAddToPassbook:(id)arg2;
 @end

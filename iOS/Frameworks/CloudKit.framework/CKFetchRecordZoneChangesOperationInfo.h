@@ -16,7 +16,7 @@
     _Bool _fetchAllChanges;
     _Bool _forcePCSDecryptionAttempt;
     NSArray *_recordZoneIDs;
-    NSDictionary *_optionsByRecordZoneID;
+    NSDictionary *_configurationsByRecordZoneID;
     long long _changeTypes;
     NSDictionary *_assetTransferOptionsByRecordTypeAndKey;
 }
@@ -27,7 +27,7 @@
 @property(nonatomic) _Bool fetchAllChanges; // @synthesize fetchAllChanges=_fetchAllChanges;
 @property(nonatomic) long long changeTypes; // @synthesize changeTypes=_changeTypes;
 @property(nonatomic) _Bool shouldFetchAssetContents; // @synthesize shouldFetchAssetContents=_shouldFetchAssetContents;
-@property(retain, nonatomic) NSDictionary *optionsByRecordZoneID; // @synthesize optionsByRecordZoneID=_optionsByRecordZoneID;
+@property(retain, nonatomic) NSDictionary *configurationsByRecordZoneID; // @synthesize configurationsByRecordZoneID=_configurationsByRecordZoneID;
 @property(retain, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

@@ -28,8 +28,10 @@
     PHFetchResult *_placesAssetsFetchResult;
     PHFetchResult *_assetCountFetchResult;
     NSTimer *_assetCountChangedTimer;
+    NSMutableArray *_localSearches;
 }
 
+@property(retain, nonatomic) NSMutableArray *localSearches; // @synthesize localSearches=_localSearches;
 @property(retain, nonatomic) NSTimer *assetCountChangedTimer; // @synthesize assetCountChangedTimer=_assetCountChangedTimer;
 @property(retain, nonatomic) PHFetchResult *assetCountFetchResult; // @synthesize assetCountFetchResult=_assetCountFetchResult;
 @property(nonatomic) _Bool countCacheInvalidated; // @synthesize countCacheInvalidated=_countCacheInvalidated;
@@ -46,12 +48,16 @@
 - (void)removePreviousCachedImage;
 - (id)_latestAssetWithLocation;
 - (id)_placeHolderImageForExtendedTraitCollection:(id)arg1;
+- (void)requestAssetCountWithForcedRefresh:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (long long)assetCountWithForcedRefresh:(_Bool)arg1;
+- (void)_requestPlacesSnapshotWithSnapshotOptions:(id)arg1 visibleRegion:(CDStruct_26e8d939)arg2 andCompletion:(CDUnknownBlockType)arg3;
+- (void)requestMapSnapshotForQuery:(id)arg1 snapshotOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_removeLocalSearch:(id)arg1;
+- (void)_addLocalSearch:(id)arg1;
 - (void)requestPlacesImageOfAsset:(id)arg1 withSnapshotOptions:(id)arg2 andCompletion:(CDUnknownBlockType)arg3;
 - (void)_fetchImageOfAsset:(id)arg1 withSnapshotOptions:(id)arg2 andCompletion:(CDUnknownBlockType)arg3;
 - (void)_handleAsyncPlacesLibraryAlbumSnapshotWithSnapshotOptions:(id)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)requestPlacesLibraryAlbumSnapshotWithSnapshotOptions:(id)arg1 andCompletion:(CDUnknownBlockType)arg2;
-- (void)requestPlacesLibraryImageWithSnapshotOptions:(id)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)requestPlacesSnapshotWithSnapshotOptions:(id)arg1 assets:(id)arg2 andCompletion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)init;

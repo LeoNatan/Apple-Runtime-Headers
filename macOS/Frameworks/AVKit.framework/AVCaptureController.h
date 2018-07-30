@@ -27,6 +27,8 @@
     AVCaptureQualityItem *_selectedQualityItem;
     BOOL _shouldSelectAssociatedAudioInputSourceItems;
     long long _discoveringWirelessCaptureDevicesCount;
+    long long _cameraAuthorizationStatus;
+    long long _microphoneAuthorizationStatus;
     BOOL _videoPreviewEnabled;
     BOOL _audioPreviewEnabled;
     BOOL _wantsDefaultConfiguration;
@@ -89,6 +91,8 @@
 @property(readonly) NSString *deviceErrorDescription;
 - (id)audioDeviceErrorDescription;
 - (id)videoDeviceErrorDescription;
+@property(readonly) long long microphoneAuthorizationStatus;
+@property(readonly) long long cameraAuthorizationStatus;
 @property(readonly) NSString *deviceDisabledDescription;
 @property(retain) AVCaptureQualityItem *selectedQualityItem;
 @property(copy) NSArray *captureQualityItems;

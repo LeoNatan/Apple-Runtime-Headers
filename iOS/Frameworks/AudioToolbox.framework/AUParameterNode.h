@@ -28,10 +28,11 @@
 @property(copy, nonatomic) CDUnknownBlockType impl_implementorValueProvider; // @synthesize impl_implementorValueProvider=_impl_implementorValueProvider;
 @property(copy, nonatomic) CDUnknownBlockType impl_implementorValueObserver; // @synthesize impl_implementorValueObserver=_impl_implementorValueObserver;
 @property(nonatomic) struct AUObserverList *observerList; // @synthesize observerList=_observerList;
-@property(nonatomic) AUParameterGroup *parentNode; // @synthesize parentNode=_parentNode;
+@property(nonatomic) __weak AUParameterGroup *parentNode; // @synthesize parentNode=_parentNode;
 @property(nonatomic) unsigned long long indexInGroup; // @synthesize indexInGroup=_indexInGroup;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (void)_deserialize:(struct CADeserializer *)arg1;
 - (void)_serialize:(struct CASerializer *)arg1;
 - (id)displayNameWithLength:(long long)arg1;

@@ -11,6 +11,7 @@
     struct GKCGraphNode2D *_cGraphNode2D;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)nodeWithPoint: /* Error: Ran out of types for this method. */;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

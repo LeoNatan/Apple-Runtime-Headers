@@ -16,11 +16,12 @@
 
 + (int)pickableRouteTypeForOutputDevice:(void *)arg1;
 + (id)localDeviceUID;
-+ (id)localOutputDeviceLocalizedName;
 + (void *)logicalLeaderFromOutputDevices:(id)arg1;
 @property(readonly, nonatomic) void *logicalLeaderOutputDevice; // @synthesize logicalLeaderOutputDevice=_logicalLeaderOutputDevice;
 @property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
 - (void).cxx_destruct;
+- (_Bool)_anyOutputDevicePassesTest:(CDUnknownBlockType)arg1;
+- (_Bool)_anyOutputDevicePassesMRFunction:(CDUnknownFunctionPointerType)arg1;
 - (_Bool)supportsGrouping;
 - (_Bool)isStereoPair;
 - (_Bool)requiresPassword;
@@ -35,11 +36,15 @@
 - (_Bool)isPickedOnPairedDevice;
 - (_Bool)isVolumeControlAvailable;
 @property(readonly, nonatomic, getter=isGroupLeader) _Bool groupLeader;
+- (_Bool)isProxyGroupPlayer;
 - (_Bool)isDeviceSpeakerRoute;
 - (_Bool)isDeviceRoute;
 - (_Bool)isHomePodRoute;
 - (_Bool)isCarplayRoute;
 - (_Bool)isAppleTVRoute;
+- (_Bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (_Bool)canFetchMediaDataFromSender;
+- (_Bool)canPlayEncryptedProgressiveDownloadAssets;
 - (_Bool)canAccessRemoteAssets;
 - (id)description;
 - (id)routeName;

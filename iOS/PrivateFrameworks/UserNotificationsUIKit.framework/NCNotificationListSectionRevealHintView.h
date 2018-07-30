@@ -6,59 +6,47 @@
 
 #import "UICollectionReusableView.h"
 
-@class NSDate, SBUILegibilityLabel, SBUILegibilityView;
+#import "NCLegibilitySettingsAdjusting.h"
+#import "PLContentSizeCategoryAdjusting.h"
 
-@interface NCNotificationListSectionRevealHintView : UICollectionReusableView
+@class NSString, SBUILegibilityLabel, _UILegibilitySettings;
+
+@interface NCNotificationListSectionRevealHintView : UICollectionReusableView <NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting>
 {
-    _Bool _showingPersistentTitle;
-    _Bool _recentsNotificationSectionEmpty;
-    _Bool _donePerformingInitialReveal;
+    _Bool _adjustsFontForContentSizeCategory;
     _Bool _forceRevealed;
-    _Bool _needsFadeOut;
     double _revealPercentage;
-    double _initialRevealPercentageForPersistentTitle;
-    NSDate *_titleDate;
     SBUILegibilityLabel *_revealHintTitle;
-    SBUILegibilityView *_revealHintChevron;
     double _hintingAlpha;
+    _UILegibilitySettings *_legibilitySettings;
 }
 
 + (double)minimumViewHeight;
-@property(nonatomic) _Bool needsFadeOut; // @synthesize needsFadeOut=_needsFadeOut;
+@property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) double hintingAlpha; // @synthesize hintingAlpha=_hintingAlpha;
-@property(retain, nonatomic) SBUILegibilityView *revealHintChevron; // @synthesize revealHintChevron=_revealHintChevron;
 @property(retain, nonatomic) SBUILegibilityLabel *revealHintTitle; // @synthesize revealHintTitle=_revealHintTitle;
 @property(nonatomic, getter=isForceRevealed) _Bool forceRevealed; // @synthesize forceRevealed=_forceRevealed;
-@property(nonatomic, getter=isDonePerformingInitialReveal) _Bool donePerformingInitialReveal; // @synthesize donePerformingInitialReveal=_donePerformingInitialReveal;
-@property(nonatomic, getter=isRecentsNotificationSectionEmpty) _Bool recentsNotificationSectionEmpty; // @synthesize recentsNotificationSectionEmpty=_recentsNotificationSectionEmpty;
-@property(nonatomic, getter=isShowingPersistentTitle) _Bool showingPersistentTitle; // @synthesize showingPersistentTitle=_showingPersistentTitle;
-@property(retain, nonatomic) NSDate *titleDate; // @synthesize titleDate=_titleDate;
-@property(nonatomic) double initialRevealPercentageForPersistentTitle; // @synthesize initialRevealPercentageForPersistentTitle=_initialRevealPercentageForPersistentTitle;
 @property(nonatomic) double revealPercentage; // @synthesize revealPercentage=_revealPercentage;
+@property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 - (void).cxx_destruct;
-- (id)_chevronImage;
-- (void)_updateHintTitleFont;
-- (void)_updateHintTitle;
 - (void)_updateAlpha;
-- (void)_updateBaseAlpha;
-- (double)_chevronAlphaForAlpha:(double)arg1;
 - (double)_alphaValueBasedOnRevealPercentage;
-- (double)_baseAlphaValueBasedOnPersistence;
 - (id)_labelFont;
-- (void)_layoutRevealHintChevronForInitialRevealPercentage:(double)arg1;
-- (void)_layoutRevealHintTitleForInitialRevealPercentage:(double)arg1;
-- (void)_layoutRevealHintChevronForRevealPercentage:(double)arg1;
-- (void)_layoutRevealHintTitleForRevealPercentage:(double)arg1;
-- (void)_updateLayout;
 - (double)_hintTitleDisplacementForRevealPercentage:(double)arg1;
-- (void)_layoutRevealHintChevron;
 - (void)_layoutRevealHintTitle;
-- (void)_configureRevealHintChevronIfNecessary;
 - (void)_configureRevealHintTitleIfNecessary;
+- (_Bool)adjustForContentSizeCategoryChange;
+- (void)adjustForLegibilitySettingsChange:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
-- (void)updateForLegibilitySettings:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(copy, nonatomic) NSString *preferredContentSizeCategory;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSCloudKitMirroringDelegate, NSFileManager, NSManagedObjectModel, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, _DKDataProtectionStateMonitor;
+@class NSCloudKitMirroringDelegate, NSFileManager, NSManagedObjectModel, NSMapTable, NSMutableDictionary, NSString, NSURL, _DKDataProtectionStateMonitor;
 
 @interface _DKCoreDataStorage : NSObject
 {
@@ -14,8 +14,6 @@
     NSMutableDictionary *_paths;
     NSMapTable *_managedObjectContexts;
     NSMutableDictionary *_persistentStoreCoordinators;
-    NSObject<OS_dispatch_queue> *_queueMOC;
-    NSObject<OS_dispatch_queue> *_queuePSC;
     _DKDataProtectionStateMonitor *_dataProtectionMonitor;
     NSFileManager *_fm;
     NSCloudKitMirroringDelegate *_mirroringDelegate;
@@ -65,6 +63,7 @@
 - (id)_descriptionForStoreWithURL:(id)arg1 protectionClass:(id)arg2 sync:(BOOL)arg3;
 - (id)_defaultOptionsForStoreWithProtectionClass:(id)arg1;
 - (BOOL)didAutoMigratePersistentStore:(id)arg1 toManagedObjectModel:(id)arg2 havingVersion:(unsigned long long)arg3 error:(id *)arg4;
+- (BOOL)willAutoMigrateStoreAtURL:(id)arg1 fromManagedObjectModel:(id)arg2 havingVersion:(unsigned long long)arg3 error:(id *)arg4;
 - (id)autoMigratePersistentStoreAtURL:(id)arg1 toManagedObjectModel:(id)arg2 protectionClass:(id)arg3 error:(id *)arg4;
 - (BOOL)migratePersistentStoreAtURL:(id)arg1 toManagedObjectModel:(id)arg2 protectionClass:(id)arg3 startVersion:(unsigned long long)arg4 endVersion:(unsigned long long)arg5 error:(id *)arg6;
 - (BOOL)migratePersistentStoreAtURL:(id)arg1 toManagedObjectModel:(id)arg2 protectionClass:(id)arg3 error:(id *)arg4;
@@ -80,6 +79,7 @@
 - (void)removePersistentStoresInCoordinator:(id)arg1;
 - (void)invalidateManagedObjectContextAndPersistentStoreCoordinatorFor:(id)arg1;
 - (void)handleDataProtectionChangeFor:(id)arg1 willBeAvailable:(BOOL)arg2;
+- (BOOL)isDatabaseOwner;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(BOOL)arg4 localOnly:(BOOL)arg5 sync:(BOOL)arg6;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 sync:(BOOL)arg4;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(BOOL)arg4 localOnly:(BOOL)arg5;

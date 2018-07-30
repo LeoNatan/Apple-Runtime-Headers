@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface ODDShapeAdjustment : NSObject
 {
     unsigned int mIndex;

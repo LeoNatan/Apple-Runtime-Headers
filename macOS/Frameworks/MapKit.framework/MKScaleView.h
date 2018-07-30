@@ -6,7 +6,7 @@
 
 #import "NSView.h"
 
-@class NSCache, NSColor, NSDictionary;
+@class NSCache, NSImageView, NSVisualEffectView;
 
 @interface MKScaleView : NSView
 {
@@ -18,7 +18,11 @@
     double _magicNumbers[3];
     double _segmentLength;
     NSCache *_cache;
-    BOOL _drawsBlackOnWhite;
+    NSVisualEffectView *_effectView;
+    NSImageView *_vibrantImageView;
+    NSImageView *_imageView;
+    BOOL _drawsOutline;
+    BOOL _reducesTransparency;
     double _distanceInMeters;
 }
 
@@ -27,7 +31,8 @@
 + (id)niceMileageSegmentWithLowerBound:(double)arg1 useMetricSystem:(BOOL)arg2;
 + (double)niceDistanceFromDistance:(double)arg1;
 + (id)niceSegmentWithLowerBound:(double)arg1 useMetricSystem:(BOOL)arg2 useYardsForShortDistances:(BOOL)arg3;
-@property(nonatomic) BOOL drawsBlackOnWhite; // @synthesize drawsBlackOnWhite=_drawsBlackOnWhite;
+@property(nonatomic) BOOL reducesTransparency; // @synthesize reducesTransparency=_reducesTransparency;
+@property(nonatomic) BOOL drawsOutline; // @synthesize drawsOutline=_drawsOutline;
 @property(nonatomic) double distanceInMeters; // @synthesize distanceInMeters=_distanceInMeters;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double segmentLength;
@@ -39,16 +44,14 @@
 - (void)mouseDown:(id)arg1;
 - (struct CGRect)trackingRect;
 - (struct CGSize)sizeForLegendString:(id)arg1;
-- (void)drawRect:(struct CGRect)arg1;
+- (void)updateImages;
 @property(readonly, nonatomic) NSCache *cache;
 - (struct CGSize)fittingSize;
 - (void)setupLocale;
 - (void)dealloc;
+- (void)setFrame:(struct CGRect)arg1;
 - (void)localWasUpdated;
-@property(readonly, nonatomic) NSColor *outerColor;
-@property(readonly, nonatomic) NSColor *innerColor;
-@property(readonly, nonatomic) NSDictionary *darkLegendAttributes;
-@property(readonly, nonatomic) NSDictionary *legendAttributes;
+- (void)accessibilityDisplayOptionsDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_setVisible:(BOOL)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 

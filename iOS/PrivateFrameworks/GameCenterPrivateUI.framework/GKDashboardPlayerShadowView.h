@@ -18,6 +18,7 @@
 @property(nonatomic) UICollectionViewCell *parentCell; // @synthesize parentCell=_parentCell;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) UIView *parentView; // @dynamic parentView;
+- (void)invalidatePhoto;
 @property(retain, nonatomic) GKPlayer *player; // @dynamic player;
 - (void)setupPhoto;
 - (void)awakeFromNib;

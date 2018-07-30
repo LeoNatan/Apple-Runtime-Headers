@@ -8,6 +8,7 @@
 
 @class AVVideoCompositionRenderContext, AVWeakReference, NSArray, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVAsynchronousVideoCompositionRequestInternal : NSObject
 {
     AVWeakReference *_session;

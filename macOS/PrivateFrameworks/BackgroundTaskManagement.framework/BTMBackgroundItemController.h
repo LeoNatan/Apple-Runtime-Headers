@@ -23,7 +23,8 @@
 - (void)_setBackgroundItems:(id)arg1;
 - (void)fetchBackgroundTasks;
 - (void)handleBackgroundItemsChangeNotification:(id)arg1;
-- (void)setUserElection:(unsigned long long)arg1 forBackgroundItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setUserElection:(long long)arg1 forURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setUserElection:(long long)arg1 forBackgroundItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly) NSSet *items; // @dynamic items;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;

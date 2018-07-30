@@ -31,7 +31,6 @@
 - (id)_addProactiveExpertSourceTo:(id)arg1;
 - (id)_mapItemFromForwardGeocode:(id)arg1;
 - (id)_mapItemFromLocalSearch:(id)arg1;
-- (id)_mapItemFromMapItemURL:(id)arg1;
 - (id)mapItemUsingMapServiceManager:(id)arg1;
 
 @end

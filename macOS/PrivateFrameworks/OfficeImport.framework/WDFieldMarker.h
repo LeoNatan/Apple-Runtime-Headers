@@ -4,13 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <OfficeImport/WDRun.h>
+#import <OfficeImport/WDRunWithCharacterProperties.h>
 
-@class NSData, WDCharacterProperties;
+@class NSData;
 
-@interface WDFieldMarker : WDRun
+@interface WDFieldMarker : WDRunWithCharacterProperties
 {
-    WDCharacterProperties *mProperties;
     int mFieldPosition;
     int mMarkerType;
     unsigned char mFieldType;
@@ -24,6 +23,7 @@
     unsigned int mHasSeparator:1;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setData:(id)arg1;
 - (id)data;
@@ -48,10 +48,7 @@
 - (int)fieldMarkerType;
 - (void)setFieldPosition:(int)arg1;
 - (int)fieldPosition;
-- (void)dealloc;
 - (id)initWithParagraph:(id)arg1;
-- (void)clearProperties;
-- (id)properties;
 
 @end
 

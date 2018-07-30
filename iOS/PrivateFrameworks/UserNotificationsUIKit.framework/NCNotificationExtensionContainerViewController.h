@@ -13,37 +13,38 @@
 
 @interface NCNotificationExtensionContainerViewController : UIViewController <_UNNotificationExtensionHostDelegate, NCNotificationCustomContent>
 {
-    _Bool _userInteractionEnabled;
     _Bool _allowManualDismiss;
     _Bool _defaultContentHidden;
     _Bool _overridesDefaultTitle;
+    _Bool _userInteractionEnabled;
     id <NCNotificationCustomContentDelegate> _delegate;
     NSString *_extensionIdentifier;
     double _contentSizeRatio;
     NCNotificationRequest *_notificationRequest;
     _UNNotificationExtensionHostViewController *_extensionViewController;
-    id <_UNNotificationExtensionRemoteInterface> _remoteService;
     UIView *_blockingView;
     NCMediaPlayPauseButton *_mediaPlayPauseButton;
     NSMutableArray *_queuedRequests;
+    NSMutableArray *_updatedActions;
 }
 
+@property(retain, nonatomic) NSMutableArray *updatedActions; // @synthesize updatedActions=_updatedActions;
 @property(retain, nonatomic) NSMutableArray *queuedRequests; // @synthesize queuedRequests=_queuedRequests;
+@property(nonatomic) _Bool userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic) _Bool overridesDefaultTitle; // @synthesize overridesDefaultTitle=_overridesDefaultTitle;
 @property(nonatomic) _Bool defaultContentHidden; // @synthesize defaultContentHidden=_defaultContentHidden;
 @property(nonatomic) _Bool allowManualDismiss; // @synthesize allowManualDismiss=_allowManualDismiss;
 @property(retain, nonatomic) NCMediaPlayPauseButton *mediaPlayPauseButton; // @synthesize mediaPlayPauseButton=_mediaPlayPauseButton;
 @property(retain, nonatomic) UIView *blockingView; // @synthesize blockingView=_blockingView;
-@property(retain, nonatomic) id <_UNNotificationExtensionRemoteInterface> remoteService; // @synthesize remoteService=_remoteService;
 @property(retain, nonatomic) _UNNotificationExtensionHostViewController *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 @property(retain, nonatomic) NCNotificationRequest *notificationRequest; // @synthesize notificationRequest=_notificationRequest;
 @property(nonatomic) double contentSizeRatio; // @synthesize contentSizeRatio=_contentSizeRatio;
 @property(retain, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
-@property(nonatomic, getter=isUserInteractionEnabled) _Bool userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic) __weak id <NCNotificationCustomContentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (double)_contentHeightForWidth:(double)arg1;
 - (void)_loadExtensionViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (id)remoteService;
 - (void)_setupRemoteServiceInterface:(id)arg1;
 - (void)_addExtensionViewFromViewController:(id)arg1;
 - (id)_responseForAction:(id)arg1 notification:(id)arg2 response:(id)arg3;
@@ -53,16 +54,18 @@
 - (void)_setupMediaButton;
 - (void)_flushQueuedRequests;
 - (id)_requestActionForActionIdentifier:(id)arg1;
+- (void)notificationHostExtension:(id)arg1 setUserNotificationActions:(id)arg2;
 - (void)notificationHostExtension:(id)arg1 audioAccessoryViewLayerContextId:(unsigned int)arg2;
 - (void)notificationHostExtensionRequestsDismiss:(id)arg1;
+- (void)notificationHostExtensionRequestsDefaultAction:(id)arg1;
 - (void)notificationHostExtension:(id)arg1 setDismissEnabled:(_Bool)arg2;
 - (void)notificationHostExtensionMediaPlayingDidPause:(id)arg1;
 - (void)notificationHostExtensionMediaPlayingDidStart:(id)arg1;
 - (void)notificationHost:(id)arg1 extensionDidCompleteResponse:(id)arg2 withOption:(unsigned long long)arg3;
 - (void)notificationHostExtension:(id)arg1 setTitle:(id)arg2;
 - (void)notificationHostExtensionDidUpdateControls:(id)arg1;
+- (id)cancelTouches;
 - (void)playAudioMessage;
-- (void)loadExtension;
 @property(readonly, nonatomic) NSString *contentExtensionIdentifier;
 - (void)loadAudioAccessoryView;
 - (_Bool)restoreInputViews;
@@ -79,7 +82,6 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithExtension:(id)arg1 forNotificationRequest:(id)arg2;

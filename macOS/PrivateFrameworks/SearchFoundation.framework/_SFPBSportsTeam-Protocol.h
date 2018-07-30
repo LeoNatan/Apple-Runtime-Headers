@@ -10,15 +10,10 @@
 
 @protocol _SFPBSportsTeam <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasName;
 @property(copy, nonatomic) NSString *name;
-@property(readonly, nonatomic) BOOL hasAccessibilityDescription;
 @property(copy, nonatomic) NSString *accessibilityDescription;
-@property(readonly, nonatomic) BOOL hasScore;
 @property(copy, nonatomic) NSString *score;
-@property(readonly, nonatomic) BOOL hasRecord;
 @property(copy, nonatomic) NSString *record;
-@property(readonly, nonatomic) BOOL hasLogo;
 @property(retain, nonatomic) _SFPBImage *logo;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

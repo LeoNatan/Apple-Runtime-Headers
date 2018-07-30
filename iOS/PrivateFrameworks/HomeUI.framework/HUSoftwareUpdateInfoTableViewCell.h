@@ -23,6 +23,7 @@
 - (void)didUpdateRequiredHeightForSoftwareUpdateInfoView:(id)arg1;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 @property(retain, nonatomic) HFItem *item;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties

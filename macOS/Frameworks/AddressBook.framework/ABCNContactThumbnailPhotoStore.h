@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCNContactPhotoStore.h>
 
-__attribute__((visibility("hidden")))
 @interface ABCNContactThumbnailPhotoStore : ABCNContactPhotoStore
 {
 }

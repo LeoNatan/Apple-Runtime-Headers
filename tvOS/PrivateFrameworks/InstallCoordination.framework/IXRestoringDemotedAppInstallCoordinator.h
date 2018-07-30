@@ -6,12 +6,13 @@
 
 #import <InstallCoordination/IXAppInstallCoordinator.h>
 
+#import "IXCoordinatorWithImportance.h"
 #import "IXCoordinatorWithUserDataPromise.h"
 #import "IXUserInitiatedCoordinator.h"
 
 @class NSString;
 
-@interface IXRestoringDemotedAppInstallCoordinator : IXAppInstallCoordinator <IXCoordinatorWithUserDataPromise, IXUserInitiatedCoordinator>
+@interface IXRestoringDemotedAppInstallCoordinator : IXAppInstallCoordinator <IXCoordinatorWithUserDataPromise, IXUserInitiatedCoordinator, IXCoordinatorWithImportance>
 {
 }
 
@@ -23,13 +24,13 @@
 @property(readonly, nonatomic) _Bool hasUserDataPromise;
 - (id)userDataPromiseWithError:(id *)arg1;
 - (_Bool)setUserDataPromise:(id)arg1 error:(id *)arg2;
-@property(nonatomic, getter=isUserInitiated) _Bool userInitiated;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(nonatomic, getter=isUserInitiated) _Bool userInitiated;
 
 @end
 

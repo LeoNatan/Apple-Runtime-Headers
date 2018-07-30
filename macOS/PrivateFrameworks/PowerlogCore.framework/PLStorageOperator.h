@@ -12,9 +12,11 @@
 
 + (id)eventPointCacheFlushWithPayload:(id)arg1;
 + (id)eventIntervalCacheSizeWithPayload:(id)arg1 withEntryDate:(id)arg2;
++ (id)entryEventNoneDefinitionArchiveInfo;
 + (id)entryEventNoneDefinitionAdditionalTablesTurnedOn;
 + (id)entryEventNoneDefinitionActivity;
 + (id)entryEventNoneDefinitions;
++ (id)entryEventForwardDefinitionSubmissionTag;
 + (id)entryEventForwardDefinitionTaskingMode;
 + (id)entryEventForwardDefinitionActivityStates;
 + (id)entryEventForwardDefinitionTimeOffset;

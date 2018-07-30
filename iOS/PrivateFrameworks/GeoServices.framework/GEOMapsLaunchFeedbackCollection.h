@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapsLaunchFeedbackCollection : PBCodable <NSCopying>
 {
     struct GEOSessionID _sessionId;

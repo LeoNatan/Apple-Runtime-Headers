@@ -8,7 +8,6 @@
 
 @class ABPerson;
 
-__attribute__((visibility("hidden")))
 @interface ABUserActivityScore : NSObject
 {
     unsigned long long _score;

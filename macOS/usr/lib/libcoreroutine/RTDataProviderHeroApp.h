@@ -36,7 +36,6 @@
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (void)dealloc;
 - (void)_shutdown;
-- (void)shutdown;
 - (id)initWithPurgeManager:(id)arg1 locationManager:(id)arg2 applicationManager:(id)arg3;
 - (id)init;
 

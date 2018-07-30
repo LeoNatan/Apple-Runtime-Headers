@@ -19,6 +19,7 @@
 + (id)nodeWithFileNamed:(id)arg1;
 + (id)referenceNodeWithFileNamed:(id)arg1;
 + (id)referenceNodeWithURL:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)resolvedNode;

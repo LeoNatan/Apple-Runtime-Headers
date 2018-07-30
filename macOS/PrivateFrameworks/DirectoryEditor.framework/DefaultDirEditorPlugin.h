@@ -21,6 +21,7 @@
     NSSegmentedControl *_attributeValueAddRemoveSegmented;
     NSPopUpButton *_attributeValueTypePopUp;
     NSSegmentedControl *_attributeValueTypeSegmented;
+    NSTextView *_attributeDataHintMessageTextView;
     NSPanel *_newAttributeSheet;
     NSPopUpButton *_newAttributeSheetAttrPopup;
     NSTextField *_newAttributeSheetNativeTextField;

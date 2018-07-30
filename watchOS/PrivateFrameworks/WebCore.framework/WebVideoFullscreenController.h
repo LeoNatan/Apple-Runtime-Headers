@@ -8,13 +8,19 @@
 
 @interface WebVideoFullscreenController : NSObject
 {
+    struct RefPtr<VideoFullscreenControllerContext, WTF::DumbPtrTraits<VideoFullscreenControllerContext>> _context;
+    struct RefPtr<WebCore::HTMLVideoElement, WTF::DumbPtrTraits<WebCore::HTMLVideoElement>> _videoElement;
 }
 
-- (void)exitFullscreen;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+-     // Error parsing type: v12@0:4^{VideoFullscreenControllerContext=^^?^^?^^?^^?^^?{atomic<unsigned int>=AI}{HashSet<WebCore::PlaybackSessionModelClient *, WTF::PtrHash<WebCore::PlaybackSessionModelClient *>, WTF::HashTraits<WebCore::PlaybackSessionModelClient *> >={HashTable<WebCore::PlaybackSessionModelClient *, WebCore::PlaybackSessionModelClient *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::PlaybackSessionModelClient *>, WTF::HashTraits<WebCore::PlaybackSessionModelClient *>, WTF::HashTraits<WebCore::PlaybackSessionModelClient *> >=^^{PlaybackSessionModelClient}IIII}}{HashSet<WebCore::VideoFullscreenModelClient *, WTF::PtrHash<WebCore::VideoFullscreenModelClient *>, WTF::HashTraits<WebCore::VideoFullscreenModelClient *> >={HashTable<WebCore::VideoFullscreenModelClient *, WebCore::VideoFullscreenModelClient *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::VideoFullscreenModelClient *>, WTF::HashTraits<WebCore::VideoFullscreenModelClient *>, WTF::HashTraits<WebCore::VideoFullscreenModelClient *> >=^^{VideoFullscreenModelClient}IIII}}{RefPtr<WebCore::VideoFullscreenInterfaceAVKit, WTF::DumbPtrTraits<WebCore::VideoFullscreenInterfaceAVKit> >=^{VideoFullscreenInterfaceAVKit}}{RefPtr<WebCore::VideoFullscreenModelVideoElement, WTF::DumbPtrTraits<WebCore::VideoFullscreenModelVideoElement> >=^{VideoFullscreenModelVideoElement}}{RefPtr<WebCore::PlaybackSessionModelMediaElement, WTF::DumbPtrTraits<WebCore::PlaybackSessionModelMediaElement> >=^{PlaybackSessionModelMediaElement}}{RefPtr<WebCore::HTMLVideoElement, WTF::DumbPtrTraits<WebCore::HTMLVideoElement> >=^{HTMLVideoElement}}{RetainPtr<UIView>=^v}{RetainPtr<WebVideoFullscreenController>=^v}}8, name: didFinishFullscreen:
 - (void)requestHideAndExitFullscreen;
+- (void)exitFullscreen;
 - (void)enterFullscreen:(id)arg1 mode:(unsigned int)arg2;
 - (struct HTMLVideoElement *)videoElement;
 - (void)setVideoElement:(struct HTMLVideoElement *)arg1;
+- (id)init;
 
 @end
 

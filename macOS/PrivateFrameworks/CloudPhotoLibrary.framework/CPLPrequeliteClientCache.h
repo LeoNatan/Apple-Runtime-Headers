@@ -8,36 +8,30 @@
 
 #import "CPLEngineClientCacheImplementation.h"
 
-@class CPLPrequeliteVariable, NSString;
+@class NSString;
 
 @interface CPLPrequeliteClientCache : CPLPrequeliteStorage <CPLEngineClientCacheImplementation>
 {
-    CPLPrequeliteVariable *_estimatedLocalLibrarySizeVar;
-    CPLPrequeliteVariable *_estimatedLocalLibraryAssetCountVar;
 }
 
-- (void).cxx_destruct;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (void)fillRelatedIdentifiersInChange:(id)arg1;
+- (id)statusPerScopeIndex;
 - (id)statusDictionary;
 - (id)status;
-- (BOOL)resetWithError:(id *)arg1;
 - (BOOL)_updateRelatedIdentifier:(id)arg1 forRecordWithIdentifier:(id)arg2;
 - (BOOL)_deleteBadRelations;
 - (id)_badContainerRelationsIdentifiers;
-- (BOOL)storeEstimatedLocalLibrarySize:(unsigned long long)arg1 estimatedAssetCount:(unsigned long long)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) unsigned long long estimatedLocalLibraryAssetCount;
-@property(readonly, nonatomic) unsigned long long estimatedLocalLibrarySize;
-- (unsigned long long)countOfRecordsWithRelatedIdentifier:(id)arg1 class:(Class)arg2;
-- (BOOL)hasRecordWithRelatedIdentifier:(id)arg1 class:(Class)arg2;
-- (id)recordsWithRelatedIdentifier:(id)arg1 class:(Class)arg2;
-- (id)recordsWithRelatedIdentifier:(id)arg1;
-- (BOOL)hasRecordWithIdentifier:(id)arg1;
-- (id)relatedIdentifierForRecordWithIdentifier:(id)arg1;
-- (id)recordWithIdentifier:(id)arg1;
-- (BOOL)deleteRecordWithIdentifier:(id)arg1 error:(id *)arg2;
+- (unsigned long long)countOfRecordsWithRelatedScopedIdentifier:(id)arg1 class:(Class)arg2;
+- (BOOL)hasRecordWithRelatedScopedIdentifier:(id)arg1 class:(Class)arg2;
+- (id)recordsWithRelatedScopedIdentifier:(id)arg1 class:(Class)arg2;
+- (id)recordsWithRelatedScopedIdentifier:(id)arg1;
+- (BOOL)hasRecordWithScopedIdentifier:(id)arg1;
+- (id)relatedScopedIdentifierForRecordWithScopedIdentifier:(id)arg1;
+- (id)recordWithScopedIdentifier:(id)arg1;
+- (BOOL)deleteRecordWithScopedIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)updateRecord:(id)arg1 error:(id *)arg2;
 - (BOOL)addRecord:(id)arg1 error:(id *)arg2;
-- (BOOL)openWithError:(id *)arg1;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
 - (id)initWithAbstractObject:(id)arg1;

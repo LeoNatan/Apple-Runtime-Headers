@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface WKPDFPageNumberIndicator : UIView
 {
-    struct RetainPtr<UILabel> _label;
+    RetainPtr_0fbf5207 _label;
     struct RetainPtr<_UIBackdropView> _backdropView;
     struct RetainPtr<NSTimer> _timer;
     _Bool _hasValidPageCountAndCurrentPage;

@@ -14,11 +14,11 @@
 }
 
 - (void).cxx_destruct;
-- (struct _LXLexicon *)_lexiconForLocale:(id)arg1;
-- (_Bool)textExistsInLexicon:(id)arg1 withLocale:(id)arg2;
-- (_Bool)lexiconExistsForLocale:(id)arg1;
+- (struct _LXLexicon *)_lexiconForLocale:(id)arg1 diagnostics:(id)arg2;
+- (_Bool)textExistsInLexicon:(id)arg1 withLocale:(id)arg2 diagnostics:(id)arg3;
+- (_Bool)lexiconExistsForLocale:(id)arg1 diagnostics:(id)arg2;
 - (id)init;
-- (const void *)_opaqueLexiconForLocale:(id)arg1;
+- (void *)_opaqueLexiconForLocale:(id)arg1 diagnostics:(id)arg2;
 
 @end
 

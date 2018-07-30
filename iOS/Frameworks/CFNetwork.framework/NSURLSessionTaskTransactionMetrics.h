@@ -33,6 +33,8 @@
 @property long long _responseHeaderBytesReceived; // @dynamic _responseHeaderBytesReceived;
 @property _Bool _secureConnection; // @dynamic _secureConnection;
 @property _Bool _serverPush; // @dynamic _serverPush;
+@property long long _totalBytesReceived; // @dynamic _totalBytesReceived;
+@property long long _totalBytesSent; // @dynamic _totalBytesSent;
 @property(copy) NSDate *connectEndDate; // @dynamic connectEndDate;
 @property(copy) NSDate *connectStartDate; // @dynamic connectStartDate;
 @property(copy) NSDate *domainLookupEndDate; // @dynamic domainLookupEndDate;

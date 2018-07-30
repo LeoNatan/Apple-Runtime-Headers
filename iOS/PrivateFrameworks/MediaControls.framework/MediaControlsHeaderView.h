@@ -6,12 +6,13 @@
 
 #import "UIView.h"
 
-@class MPButton, MPCPlayerPath, MPUMarqueeView, MediaControlsRouteLabel, NSString, UIButton, UIImageView, UILabel;
+@class MPButton, MPCPlayerPath, MPUMarqueeView, MTMaterialView, MediaControlsRouteLabel, NSString, UIButton, UIImageView, UILabel;
 
 @interface MediaControlsHeaderView : UIView
 {
     _Bool _transitioning;
     _Bool _marqueeEnabled;
+    _Bool _routing;
     _Bool _shouldUseOverrideSize;
     MPCPlayerPath *_playerPath;
     UIImageView *_artworkView;
@@ -25,25 +26,26 @@
     MPButton *_playPauseButton;
     UIButton *_launchNowPlayingAppButton;
     long long _buttonType;
-    UIView *_artworkBackgroundView;
+    MTMaterialView *_artworkBackground;
     UIView *_shadow;
     MPUMarqueeView *_primaryMarqueeView;
     UILabel *_primaryLabel;
     MPUMarqueeView *_secondaryMarqueeView;
     UILabel *_secondaryLabel;
-    UIView *_buttonBackground;
+    MTMaterialView *_buttonBackground;
     struct CGSize _overrideSize;
 }
 
-@property(retain, nonatomic) UIView *buttonBackground; // @synthesize buttonBackground=_buttonBackground;
+@property(retain, nonatomic) MTMaterialView *buttonBackground; // @synthesize buttonBackground=_buttonBackground;
 @property(nonatomic) _Bool shouldUseOverrideSize; // @synthesize shouldUseOverrideSize=_shouldUseOverrideSize;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) MPUMarqueeView *secondaryMarqueeView; // @synthesize secondaryMarqueeView=_secondaryMarqueeView;
 @property(retain, nonatomic) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
 @property(retain, nonatomic) MPUMarqueeView *primaryMarqueeView; // @synthesize primaryMarqueeView=_primaryMarqueeView;
 @property(retain, nonatomic) UIView *shadow; // @synthesize shadow=_shadow;
-@property(retain, nonatomic) UIView *artworkBackgroundView; // @synthesize artworkBackgroundView=_artworkBackgroundView;
+@property(retain, nonatomic) MTMaterialView *artworkBackground; // @synthesize artworkBackground=_artworkBackground;
 @property(nonatomic) struct CGSize overrideSize; // @synthesize overrideSize=_overrideSize;
+@property(nonatomic, getter=isRouting) _Bool routing; // @synthesize routing=_routing;
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
 @property(nonatomic) _Bool marqueeEnabled; // @synthesize marqueeEnabled=_marqueeEnabled;
 @property(retain, nonatomic) UIButton *launchNowPlayingAppButton; // @synthesize launchNowPlayingAppButton=_launchNowPlayingAppButton;
@@ -59,6 +61,7 @@
 @property(retain, nonatomic) UIImageView *artworkView; // @synthesize artworkView=_artworkView;
 @property(copy, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_updateRTL;
 - (void)clearOverrideSize;

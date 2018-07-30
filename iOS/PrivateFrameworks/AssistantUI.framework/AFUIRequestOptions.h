@@ -20,6 +20,7 @@
     _Bool _useStreamingDictation;
     _Bool _acousticIdEnabled;
     _Bool _releaseAudioSessionOnRecordingCompletion;
+    _Bool _predictedRecordRouteIsZLL;
     NSString *_activationDeviceIdentifier;
     AFBulletin *_bulletin;
     NSString *_appBundleIdentifier;
@@ -40,6 +41,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool predictedRecordRouteIsZLL; // @synthesize predictedRecordRouteIsZLL=_predictedRecordRouteIsZLL;
 @property(nonatomic) _Bool releaseAudioSessionOnRecordingCompletion; // @synthesize releaseAudioSessionOnRecordingCompletion=_releaseAudioSessionOnRecordingCompletion;
 @property(nonatomic) _Bool acousticIdEnabled; // @synthesize acousticIdEnabled=_acousticIdEnabled;
 @property(retain, nonatomic) AFSpeechRequestOptions *speechRequestOptions; // @synthesize speechRequestOptions=_speechRequestOptions;

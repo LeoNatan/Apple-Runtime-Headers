@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithNewVisualRanges:(id)arg1;
 - (id)constrainToRange:(struct _NSRange)arg1;
 - (id)copyWithNewStyleInsertionBehavior:(int)arg1 newCaretAffinity:(int)arg2;
+- (id)copyWithNewRange:(struct _NSRange)arg1 newCaretAffinity:(int)arg2;
 - (id)copyWithNewRange:(struct _NSRange)arg1;
 - (id)copyWithNewType:(int)arg1;
 - (id)copyWithNewVisualTypeRange:(struct _NSRange)arg1 head:(unsigned long long)arg2 tail:(unsigned long long)arg3;

@@ -15,18 +15,15 @@
 @interface RWIInspector : NSObject <NSWindowDelegate, _WKRemoteWebInspectorViewControllerDelegate, RWIDebugger>
 {
     _WKRemoteWebInspectorViewController *_remoteInspectorViewController;
-    BOOL _autoPause;
-    id <RWIInspectorDelegate> _delegate;
-    NSString *_uuid;
+    BOOL _pauseImmediately;
     RWIDebuggable *_debuggable;
     RWIManager *_manager;
+    NSString *_uuid;
 }
 
-@property(nonatomic) BOOL autoPause; // @synthesize autoPause=_autoPause;
+@property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) RWIManager *manager; // @synthesize manager=_manager;
 @property(readonly, nonatomic) RWIDebuggable *debuggable; // @synthesize debuggable=_debuggable;
-@property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-@property(nonatomic) __weak id <RWIInspectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (void)inspectorViewControllerInspectorDidClose:(id)arg1;
@@ -35,15 +32,14 @@
 - (long long)_debuggableType;
 - (void)_updateWindowTitleWithLastComponent:(id)arg1;
 - (void)_updateWindowTitle;
-- (void)debuggableDidChange;
+- (void)debuggableDidChange:(id)arg1;
+- (void)close;
 - (void)sendMessageToBackend:(id)arg1;
 - (void)sendMessageToFrontend:(id)arg1;
-- (id)window;
 - (void)loadAndShow;
-- (void)close;
-- (void)_close;
+- (void)_closeInternal;
 - (void)show;
-- (id)initWithManager:(id)arg1 debuggable:(id)arg2;
+- (id)initWithManager:(id)arg1 debuggable:(id)arg2 pauseImmediately:(BOOL)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

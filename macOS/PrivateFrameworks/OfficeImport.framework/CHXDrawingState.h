@@ -8,12 +8,12 @@
 
 @class CHXReadState;
 
-__attribute__((visibility("hidden")))
 @interface CHXDrawingState : OAXDrawingState
 {
     CHXReadState *mCHXState;
 }
 
+- (void).cxx_destruct;
 - (id)chxState;
 - (id)initWithCHXState:(id)arg1;
 

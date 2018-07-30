@@ -127,6 +127,7 @@
 - (void)addTracksToMyLibrary:(id)arg1;
 - (id)multiverseIdentifierForCollectionWithPersistentID:(long long)arg1 groupingType:(long long)arg2;
 - (id)multiverseIdentifierForTrackWithPersistentID:(long long)arg1;
+- (_Bool)deleteDatabaseProperty:(id)arg1;
 - (_Bool)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
 - (id)valueForDatabaseProperty:(id)arg1;
 @property(readonly, nonatomic) NSArray *localizedSectionIndexTitles;

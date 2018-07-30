@@ -35,6 +35,7 @@
 - (BOOL)setRegistrationInfo:(id)arg1 primaryRegionTopic:(id)arg2;
 - (void)unregisterEventListener:(id)arg1;
 - (void)registerEventListener:(id)arg1;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)didInterruptXPCConnection:(id)arg1;
 - (void)didInvalidateXPCConnection:(id)arg1;

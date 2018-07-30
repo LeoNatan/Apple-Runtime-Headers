@@ -19,7 +19,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasAxisLineInBody:(id)arg1 forAxis:(id)arg2 outTransform:(struct CGAffineTransform *)arg3 outLine:(CDStruct_e3b9714e *)arg4;
 - (unsigned long long)countOfGridLinesInBody:(id)arg1 forAxis:(id)arg2 minor:(_Bool)arg3 outNewLineDescriptors:(CDStruct_183601bc **)arg4;
 - (struct CGPoint)labelPointForPosition:(unsigned int)arg1 rect:(struct CGRect)arg2 stringSize:(struct CGSize)arg3;
+- (struct CGPoint)labelPointForPosition:(unsigned int)arg1 rect:(struct CGRect)arg2 stringSize:(struct CGSize)arg3 offset:(double)arg4;
 - (long long)hitCheckPoint:(struct CGPoint)arg1 inSeries:(id)arg2 withBodyLayout:(id)arg3;
+- (unsigned long long)countOfHitCheckRegionsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementPaths:(const struct CGPath ***)arg4 outSelectionKnobLocations:(id *)arg5 withInnerRadius:(id)arg6;
 - (unsigned long long)countOfHitCheckRegionsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementPaths:(const struct CGPath ***)arg4 outSelectionKnobLocations:(id *)arg5;
 - (struct CGAffineTransform)transformForRenderingTrendlineTextForSeries:(id)arg1 forAreaLayout:(id)arg2 outElementSize:(struct CGSize *)arg3 outClipRect:(struct CGRect *)arg4 outParagraphStyle:(id *)arg5 outNewString:(const struct __CFAttributedString **)arg6;
 - (struct CGAffineTransform)transformForRenderingR2TextForSeries:(id)arg1 forAreaLayout:(id)arg2 outElementSize:(struct CGSize *)arg3 outClipRect:(struct CGRect *)arg4 outParagraphStyle:(id *)arg5 outString:(id *)arg6;
@@ -30,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (struct CGAffineTransform)transformForRenderingLabelInBody:(id)arg1 forSeries:(unsigned long long)arg2 forGroup:(unsigned long long)arg3 outElementSize:(struct CGSize *)arg4 outClipRect:(struct CGRect *)arg5;
 - (unsigned long long)countOfCalloutLinesForSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewClipRect:(struct CGRect *)arg4;
 - (unsigned long long)countOfLabelsForSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewTransforms:(struct CGAffineTransform **)arg4 outNewElementSizes:(struct CGSize **)arg5 outNewClipRect:(struct CGRect **)arg6 outNewStrings:(id *)arg7;
+- (unsigned long long)countOfElementsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementBounds:(struct CGRect **)arg4 outNewClipRects:(struct CGRect **)arg5 outNewElementPaths:(const struct CGPath ***)arg6 outSelectionKnobLocations:(id *)arg7 withInnerRadius:(id)arg8;
 - (unsigned long long)countOfElementsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementBounds:(struct CGRect **)arg4 outNewClipRects:(struct CGRect **)arg5 outNewElementPaths:(const struct CGPath ***)arg6 outSelectionKnobLocations:(id *)arg7;
 - (unsigned long long)p_countOfReferenceLineLabelsForReferenceLine:(id)arg1 forRefLineLabelsLayout:(id)arg2 substringRange:(struct _NSRange *)arg3 outNewTransforms:(struct CGAffineTransform **)arg4 outNewElementSizes:(struct CGSize **)arg5 outNewClipRects:(struct CGRect **)arg6 outNewParagraphStyles:(id *)arg7 outNewStrings:(id *)arg8 outNewLabelTypes:(unsigned long long **)arg9 includeOutsideChartBodyBounds:(_Bool)arg10 outOutsideChartBodyBounds:(_Bool **)arg11;
 - (struct CGAffineTransform)transformForRenderingLabelForReferenceLine:(id)arg1 ofType:(unsigned long long)arg2 range:(struct _NSRange)arg3 inLayoutItem:(id)arg4 outElementSize:(struct CGSize *)arg5 outClipRect:(struct CGRect *)arg6;

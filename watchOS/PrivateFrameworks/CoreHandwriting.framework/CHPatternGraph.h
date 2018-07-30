@@ -8,15 +8,18 @@
 
 @interface CHPatternGraph : NSObject
 {
-    struct PatternGraph *_graph;
+    map_f99f8862 _graphForContentType;
 }
 
-+ (struct PatternGraph *)sharedRootCursor;
++ (struct PatternGraph *)sharedRootCursorForContentType:(int)arg1;
 + (struct PatternGraph *)sharedCursorByAdvancingWithCharacterTypes:(unsigned int *)arg1 withLength:(unsigned long)arg2 fromCursor:(struct PatternGraph *)arg3;
 + (id)sharedPatternGraph;
-@property(nonatomic) struct PatternGraph *graph; // @synthesize graph=_graph;
+@property(nonatomic) map_f99f8862 graphForContentType; // @synthesize graphForContentType=_graphForContentType;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
+- (struct PatternGraph *)graphForContentType:(int)arg1;
 
 @end
 

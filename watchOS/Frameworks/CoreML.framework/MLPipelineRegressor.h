@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)regress:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithEngine:(id)arg1 interface:(id)arg2 metadata:(id)arg3 error:(id *)arg4;
+@property(readonly) MLPipeline *pipeline;
 
 @end
 

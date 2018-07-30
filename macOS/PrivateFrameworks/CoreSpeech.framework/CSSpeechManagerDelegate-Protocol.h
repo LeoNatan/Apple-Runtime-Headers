@@ -15,6 +15,7 @@
 - (void)speechManagerRecordBufferAvailable:(CSSpeechManager *)arg1 buffer:(AVVCAudioBuffer *)arg2;
 
 @optional
+- (void)speechManagerDidFinishAlertPlayback:(CSSpeechManager *)arg1 ofType:(long long)arg2 error:(NSError *)arg3;
 - (void)speechManagerDetectedSystemVolumeChange:(CSSpeechManager *)arg1 withVolume:(float)arg2 forReason:(unsigned long long)arg3;
 - (void)speechManagerRecordHardwareConfigurationDidChange:(CSSpeechManager *)arg1 toConfiguration:(long long)arg2;
 - (NSDictionary *)speechManagerRecordingContext;

@@ -12,7 +12,6 @@
 
 @interface NTKUpNextElement : NSObject <NSCopying>
 {
-    NSString *_bundleIdentifier;
     unsigned int _interaction;
     NSString *_identifier;
     unsigned int _privacyBehavior;
@@ -32,13 +31,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned int interaction; // @synthesize interaction=_interaction;
 - (void).cxx_destruct;
-- (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (_Bool)isNoContentElement;
-- (void)setBundleIdentifier:(id)arg1;
-- (id)bundleIdentifier;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyElementWithUpdatedRelevanceProviders:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 action:(id)arg3 relevanceProviders:(id)arg4 lockedContent:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 action:(id)arg3 relevanceProviders:(id)arg4 privacyBehavior:(unsigned int)arg5 idealizedContent:(id)arg6 interaction:(unsigned int)arg7 lockedContent:(id)arg8;
@@ -46,6 +38,7 @@
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 action:(id)arg3 relevanceProviders:(id)arg4 privacyBehavior:(unsigned int)arg5 idealizedContent:(id)arg6;
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 action:(id)arg3 relevanceProviders:(id)arg4 privacyBehavior:(unsigned int)arg5;
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 action:(id)arg3 relevanceProviders:(id)arg4;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

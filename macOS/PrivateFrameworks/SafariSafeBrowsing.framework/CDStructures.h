@@ -64,7 +64,7 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
                     unsigned long long __words[3];
                 } __r;
             } ;
-        } __first_;
+        } __value_;
     } __r_;
 };
 
@@ -75,7 +75,7 @@ struct shared_ptr<SafeBrowsing::LookupContext> {
 
 struct unique_ptr<SafeBrowsing::SafeHashCache, std::__1::default_delete<SafeBrowsing::SafeHashCache>> {
     struct __compressed_pair<SafeBrowsing::SafeHashCache *, std::__1::default_delete<SafeBrowsing::SafeHashCache>> {
-        struct SafeHashCache *__first_;
+        struct SafeHashCache *__value_;
     } __ptr_;
 };
 
@@ -83,7 +83,7 @@ struct vector<SafeBrowsing::DatabaseStatus::Database, std::__1::allocator<SafeBr
     struct Database *__begin_;
     struct Database *__end_;
     struct __compressed_pair<SafeBrowsing::DatabaseStatus::Database *, std::__1::allocator<SafeBrowsing::DatabaseStatus::Database>> {
-        struct Database *__first_;
+        struct Database *__value_;
     } __end_cap_;
 };
 
@@ -91,7 +91,7 @@ struct vector<SafeBrowsing::ServiceStatus::Connection, std::__1::allocator<SafeB
     struct Connection *__begin_;
     struct Connection *__end_;
     struct __compressed_pair<SafeBrowsing::ServiceStatus::Connection *, std::__1::allocator<SafeBrowsing::ServiceStatus::Connection>> {
-        struct Connection *__first_;
+        struct Connection *__value_;
     } __end_cap_;
 };
 
@@ -99,7 +99,7 @@ struct vector<SafeBrowsing::ServiceStatus::DatabaseUpdaterStatus, std::__1::allo
     struct DatabaseUpdaterStatus *__begin_;
     struct DatabaseUpdaterStatus *__end_;
     struct __compressed_pair<SafeBrowsing::ServiceStatus::DatabaseUpdaterStatus *, std::__1::allocator<SafeBrowsing::ServiceStatus::DatabaseUpdaterStatus>> {
-        struct DatabaseUpdaterStatus *__first_;
+        struct DatabaseUpdaterStatus *__value_;
     } __end_cap_;
 };
 
@@ -107,7 +107,7 @@ struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__begin_;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__end_;
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
-        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__first_;
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__value_;
     } __end_cap_;
 };
 

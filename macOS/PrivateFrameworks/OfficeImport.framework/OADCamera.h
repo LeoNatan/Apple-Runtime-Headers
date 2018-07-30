@@ -10,7 +10,6 @@
 
 @class OADRotation3D;
 
-__attribute__((visibility("hidden")))
 @interface OADCamera : NSObject <NSCopying>
 {
     OADRotation3D *mRotation;
@@ -19,6 +18,7 @@ __attribute__((visibility("hidden")))
     float mZoom;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)setRotation:(id)arg1;
 - (id)rotation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

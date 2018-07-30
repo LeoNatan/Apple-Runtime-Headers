@@ -36,6 +36,7 @@
 @property(readonly, nonatomic) _Bool hasBeenUnlockedSinceBoot;
 - (void)createStashBag:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)createStashBag:(id)arg1 completion:(CDUnknownBlockType)arg2 completionQueue:(id)arg3;
+@property(readonly, nonatomic) int maxUnlockAttempts;
 @property(readonly, nonatomic) _Bool hasPasscodeSet;
 - (_Bool)unlockWithPasscode:(id)arg1 error:(id *)arg2;
 - (void)lockSkippingGracePeriod:(_Bool)arg1;

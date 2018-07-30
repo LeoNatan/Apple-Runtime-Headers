@@ -12,9 +12,9 @@
 
 @interface SPApplication : NSObject <NSSecureCoding>
 {
+    NSString *_longDisplayName;
     _Bool _isWebClip;
     NSString *_displayIdentifier;
-    NSString *_longDisplayName;
     NSMutableArray *_keywords;
     NSURL *_URL;
     NSString *_shortVersion;
@@ -27,9 +27,9 @@
 @property(retain, nonatomic) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSMutableArray *keywords; // @synthesize keywords=_keywords;
-@property(retain, nonatomic) NSString *longDisplayName; // @synthesize longDisplayName=_longDisplayName;
 @property(retain, nonatomic) NSString *displayIdentifier; // @synthesize displayIdentifier=_displayIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *longDisplayName;
 - (void)copySearchFoundationResult:(id)arg1;
 @property(retain, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) _Bool displayNameLoaded;

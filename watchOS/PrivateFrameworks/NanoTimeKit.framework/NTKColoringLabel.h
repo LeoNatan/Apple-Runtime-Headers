@@ -10,14 +10,13 @@
 #import "NTKColoringView.h"
 #import "NTKTimeTravelState.h"
 
-@class CLKFont, CLKTextProvider, NSAttributedString, NSParagraphStyle, NSString, UIColor, UIFont, _NTKColorManager;
+@class CLKDevice, CLKFont, CLKTextProvider, NSAttributedString, NSParagraphStyle, NSString, UIColor, UIFont, _NTKColorManager;
 
 @interface NTKColoringLabel : NTKLegibilityLabel <NTKColoringView, CLKUILabel, NTKTimeTravelState>
 {
+    CLKDevice *_device;
     unsigned int _options;
     _NTKColorManager *_colorManager;
-    struct CGSize _cachedSingleLineSize;
-    _Bool _cachedSizeIsValid;
     struct UIEdgeInsets _cachedOpticalEdgeInsets;
     _Bool _cachedOpticalEdgeInsetsIsValid;
     struct NSNumber *_updateToken;
@@ -25,20 +24,30 @@
     CLKFont *_preTimeTravelFont;
     _Bool _inTimeTravel;
     _Bool _uppercase;
+    _Bool _usesTextProviderTintColoring;
+    _Bool _cachedSizeIsValid;
+    _Bool _usesTextProviderSize;
     UIColor *_overrideColor;
     CLKTextProvider *_textProvider;
     CLKFont *_textProviderFont;
     CLKFont *_textProviderSmallCapsBaseFont;
     float _maxWidth;
     NSParagraphStyle *_paragraphStyle;
+    float _tracking;
     CDUnknownBlockType _nowProvider;
     CDUnknownBlockType _needsResizeHandler;
+    struct CGSize _cachedSingleLineSize;
 }
 
 + (id)labelWithOptions:(unsigned int)arg1;
+@property(nonatomic) _Bool usesTextProviderSize; // @synthesize usesTextProviderSize=_usesTextProviderSize;
+@property(nonatomic) _Bool cachedSizeIsValid; // @synthesize cachedSizeIsValid=_cachedSizeIsValid;
+@property(nonatomic) struct CGSize cachedSingleLineSize; // @synthesize cachedSingleLineSize=_cachedSingleLineSize;
 @property(copy, nonatomic) CDUnknownBlockType needsResizeHandler; // @synthesize needsResizeHandler=_needsResizeHandler;
 @property(copy, nonatomic) CDUnknownBlockType nowProvider; // @synthesize nowProvider=_nowProvider;
+@property(nonatomic) float tracking; // @synthesize tracking=_tracking;
 @property(copy, nonatomic) NSParagraphStyle *paragraphStyle; // @synthesize paragraphStyle=_paragraphStyle;
+@property(nonatomic) _Bool usesTextProviderTintColoring; // @synthesize usesTextProviderTintColoring=_usesTextProviderTintColoring;
 @property(nonatomic) _Bool uppercase; // @synthesize uppercase=_uppercase;
 @property(nonatomic) float maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) CLKFont *textProviderSmallCapsBaseFont; // @synthesize textProviderSmallCapsBaseFont=_textProviderSmallCapsBaseFont;
@@ -67,6 +76,7 @@
 - (float)widthForMaxWidth:(float)arg1;
 - (void)_requeryTextProviderAndNotify:(_Bool)arg1;
 - (void)setNumberOfLines:(int)arg1;
+- (void)setusesTextProviderTintColoring:(_Bool)arg1;
 @property(nonatomic) _Bool usesLegibility; // @dynamic usesLegibility;
 - (_Bool)usesLegibility:(_Bool)arg1;
 - (void)setBounds:(struct CGRect)arg1;

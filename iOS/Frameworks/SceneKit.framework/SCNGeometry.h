@@ -60,6 +60,7 @@
 -     // Error parsing type: ^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v}C}16@0:8, name: __createCFObject
 - (void)_customDecodingOfSCNGeometry:(id)arg1;
 - (void)_customEncodingOfSCNGeometry:(id)arg1;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;
@@ -89,6 +90,8 @@
 - (void)handleBindingOfSymbol:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)shaderModifiersArgumentsNames;
 @property(copy, nonatomic) NSDictionary *shaderModifiers;
+- (void)copyShaderModifiersFrom:(id)arg1;
+- (id)__shadableHelper;
 - (void)_setupShadableHelperIfNeeded;
 - (id)customMaterialAttributes;
 - (id)customMaterialAttributeNames;

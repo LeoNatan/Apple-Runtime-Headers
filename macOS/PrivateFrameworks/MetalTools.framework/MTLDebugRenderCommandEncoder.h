@@ -22,14 +22,15 @@
     CDStruct_db34bedf _fragmentBuffers[31];
     CDStruct_db34bedf _fragmentTextures[128];
     CDStruct_db34bedf _fragmentSamplers[16];
-    CDStruct_b3e7dfa1 _limits;
+    CDStruct_df0ba0f9 _limits;
     unsigned int _encoderState;
     unsigned int _unknownStoreActions;
     struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int>> *_visibilityOffsets;
-    vector_377cc592 _viewports;
-    vector_33bee457 _scissorRects;
+    vector_9706d78e _viewports;
+    vector_dc8a7a87 _scissorRects;
     struct ResourceTrackingDeferredAttachments _deferredAttachments;
-    struct deque<id, std::__1::allocator<id>> updatedFences;
+    struct deque<id, std::__1::allocator<id>> _updatedFences;
+    BOOL _hasValidViewportsAndScissorRects;
     float _lineWidth;
     float _depthBias;
     float _depthBiasSlopeScale;
@@ -84,6 +85,9 @@
 @property(readonly, copy, nonatomic) MTLRenderPassDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
+- (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
+- (void)memoryBarrierWithScope:(unsigned long long)arg1 afterStages:(unsigned long long)arg2 beforeStages:(unsigned long long)arg3;
 - (void)_resourceTrackingRecordBoundResourceAccesses;
 - (void)_resourceTrackingRecordRenderTargetAccessesForEndEncoding:(BOOL)arg1;
 - (void)_resourceTrackingRecordDrawAccesses;
@@ -169,8 +173,8 @@
 - (void)enumerateVertexBuffersUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) CDStruct_33dcf794 scissorRect;
 @property(readonly, nonatomic) CDStruct_8727d297 viewport;
-@property(readonly, nonatomic) vector_33bee457 *scissorRects;
-@property(readonly, nonatomic) vector_377cc592 *viewports;
+@property(readonly, nonatomic) vector_dc8a7a87 *scissorRects;
+@property(readonly, nonatomic) vector_9706d78e *viewports;
 
 @end
 

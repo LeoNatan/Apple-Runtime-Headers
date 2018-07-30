@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)p_rectForSelectionPath:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
-- (struct CGRect)rectInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1;
+- (id)rectsInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1 attachedType:(long long)arg2;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForZoomingToSelectionPath:(id)arg1;

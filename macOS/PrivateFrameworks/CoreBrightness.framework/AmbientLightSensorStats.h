@@ -8,6 +8,7 @@
 
 @class NSLock, NSObject<OS_dispatch_source>;
 
+__attribute__((visibility("hidden")))
 @interface AmbientLightSensorStats : NSObject
 {
     CDStruct_93cb412c _activityFilteredStats;

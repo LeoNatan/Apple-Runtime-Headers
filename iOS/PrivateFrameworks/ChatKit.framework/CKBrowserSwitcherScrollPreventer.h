@@ -19,10 +19,10 @@
     _Bool _scrollEnabled;
     id <CKBrowserSwitcherScrollPreventerDelegate> _delegate;
     UIScrollView *_horizontalScrollView;
-    UIScrollView *_verticalScrollView;
+    UIView *_horizontalScrollPreventerView;
 }
 
-@property(retain, nonatomic) UIScrollView *verticalScrollView; // @synthesize verticalScrollView=_verticalScrollView;
+@property(retain, nonatomic) UIView *horizontalScrollPreventerView; // @synthesize horizontalScrollPreventerView=_horizontalScrollPreventerView;
 @property(retain, nonatomic) UIScrollView *horizontalScrollView; // @synthesize horizontalScrollView=_horizontalScrollView;
 @property(nonatomic) __weak id <CKBrowserSwitcherScrollPreventerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
@@ -32,7 +32,6 @@
 @property(nonatomic) struct CGSize contentSize;
 @property(nonatomic) struct CGPoint contentOffset;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)layoutSubviews;

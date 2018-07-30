@@ -6,6 +6,7 @@
 
 #import <AppKit/NSColor.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDeviceCMYKColor : NSColor
 {
     double cyanComponent;

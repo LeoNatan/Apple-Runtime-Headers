@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (id)_backgroundImageProxy;
 - (struct CGSize)_backgroundImageProxySize;
 - (long long)_blurEffectStyle;
+- (void)_updateIndexDisplayMode;
 - (void)_configureWithBannerElement:(id)arg1;
 - (void)_configureWithBgElement:(id)arg1;
 - (id)_relatedSectionHeaderView;

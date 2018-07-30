@@ -19,7 +19,7 @@
 @property(retain) AKDevice *companionDevice; // @synthesize companionDevice=_companionDevice;
 - (void).cxx_destruct;
 - (id)idmsAccountForiCloud;
-- (void)setResponseFromDictionary:(id)arg1;
+- (void)setResponseFromData:(id)arg1;
 - (id)responsePayload;
 - (BOOL)hasResponse;
 

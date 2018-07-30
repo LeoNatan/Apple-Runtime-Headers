@@ -6,6 +6,7 @@
 
 #import <AppKit/NSImage.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSFlippedImage : NSImage
 {
 }

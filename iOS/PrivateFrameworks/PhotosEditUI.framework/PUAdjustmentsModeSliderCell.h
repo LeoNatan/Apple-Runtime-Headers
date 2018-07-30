@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, PUAdjustmentsMode, PUAdjustmentsModeBadge, PUPhotoEditLevelSlider, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface PUAdjustmentsModeSliderCell : UICollectionViewCell <PUPhotoEditLayoutStaticAdaptable>
 {
     UILabel *_titleLabel;

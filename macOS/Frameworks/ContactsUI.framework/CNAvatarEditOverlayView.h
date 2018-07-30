@@ -6,20 +6,24 @@
 
 #import "NSView.h"
 
-@class NSImageView, NSTextField;
+@class CAGradientLayer, NSImageView, NSTextField;
 
 @interface CNAvatarEditOverlayView : NSView
 {
     NSTextField *_label;
     NSImageView *_arrowImage;
+    CAGradientLayer *_gradientLayer;
 }
 
 + (id)arrowImage;
-@property(retain) NSImageView *arrowImage; // @synthesize arrowImage=_arrowImage;
-@property(retain) NSTextField *label; // @synthesize label=_label;
+@property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
+@property(retain, nonatomic) NSImageView *arrowImage; // @synthesize arrowImage=_arrowImage;
+@property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)updateLabelVisibilityForNewSize;
 - (void)setFrame:(struct CGRect)arg1;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (id)initWithTitle:(id)arg1 font:(id)arg2 textColor:(id)arg3;
 
 @end

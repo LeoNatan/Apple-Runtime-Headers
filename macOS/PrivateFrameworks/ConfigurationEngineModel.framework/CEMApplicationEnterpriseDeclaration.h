@@ -8,23 +8,27 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSString;
+@class CEMAssetBaseDescriptor, CEMAssetBaseReference, NSString;
 
 @interface CEMApplicationEnterpriseDeclaration : CEMAssetBase <CEMRegisteredTypeProtocol>
 {
+    CEMAssetBaseDescriptor *_payloadDescriptor;
+    CEMAssetBaseReference *_payloadReference;
+    NSString *_payloadBundleIdentifier;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withDescriptor:(id)arg2 withReference:(id)arg3 withBundleIdentifier:(id)arg4;
++ (id)buildWithIdentifier:(id)arg1 withDescriptor:(id)arg2 withReference:(id)arg3 withBundleIdentifier:(id)arg4;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSString *payloadBundleIdentifier;
-@property(readonly, nonatomic) NSDictionary *payloadReference;
-@property(readonly, nonatomic) NSDictionary *payloadDescriptor;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadBundleIdentifier; // @synthesize payloadBundleIdentifier=_payloadBundleIdentifier;
+@property(copy, nonatomic) CEMAssetBaseReference *payloadReference; // @synthesize payloadReference=_payloadReference;
+@property(copy, nonatomic) CEMAssetBaseDescriptor *payloadDescriptor; // @synthesize payloadDescriptor=_payloadDescriptor;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

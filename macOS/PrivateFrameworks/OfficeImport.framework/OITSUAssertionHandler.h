@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface OITSUAssertionHandler : NSObject
 {
 }
@@ -15,6 +14,7 @@ __attribute__((visibility("hidden")))
 + (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(long long)arg3 isFatal:(BOOL)arg4 description:(const char *)arg5;
 + (void)simulateCrashWithMessage:(id)arg1;
 + (void)logBacktraceThrottled;
++ (void)logBacktraceWithCallStackSymbols:(id)arg1;
 + (void)logBacktrace;
 + (id)p_performBlockIgnoringAssertions:(CDUnknownBlockType)arg1 onlyFatal:(BOOL)arg2;
 + (id)performBlockIgnoringFatalAssertions:(CDUnknownBlockType)arg1;

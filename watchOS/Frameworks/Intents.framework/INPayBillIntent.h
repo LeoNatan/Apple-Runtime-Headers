@@ -20,6 +20,7 @@
 - (id)verb;
 - (void)setDomain:(id)arg1;
 - (id)domain;
+- (_Bool)_isUserConfirmationRequired;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 - (void)setDueDate:(id)arg1;
@@ -37,6 +38,9 @@
 - (void)setBillPayee:(id)arg1;
 @property(readonly, copy, nonatomic) INBillPayee *billPayee;
 - (id)initWithBillPayee:(id)arg1 fromAccount:(id)arg2 transactionAmount:(id)arg3 transactionScheduledDate:(id)arg4 transactionNote:(id)arg5 billType:(int)arg6 dueDate:(id)arg7;
+- (id)_categoryVerb;
+- (int)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

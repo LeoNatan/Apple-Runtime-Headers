@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class CPLRecordChange;
+@class CPLRecordChange, PLMomentShare;
 
 @protocol PLSyncableObject <NSObject>
 @property(nonatomic) short cloudLocalState;
 @property(readonly, retain, nonatomic) id localID;
+- (PLMomentShare *)momentShare;
 - (CPLRecordChange *)cplFullRecord;
 @end
 

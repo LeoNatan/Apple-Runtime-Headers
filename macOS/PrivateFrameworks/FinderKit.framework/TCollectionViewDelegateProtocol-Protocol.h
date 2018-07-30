@@ -5,10 +5,13 @@
 //
 
 #import "TBrowserViewDelegate.h"
+#import "TFloatingInputWindowDelegateProtocol.h"
 
 @class NSCollectionView, NSEvent;
 
-@protocol TCollectionViewDelegateProtocol <TBrowserViewDelegate>
+@protocol TCollectionViewDelegateProtocol <TBrowserViewDelegate, TFloatingInputWindowDelegateProtocol>
+- (void)endSelectionCoalescing:(NSEvent *)arg1;
+- (void)startSelectionCoalescing:(NSEvent *)arg1;
 - (_Bool)handleQuickLookWithEvent:(NSEvent *)arg1;
 - (_Bool)handleKeyDown:(NSEvent *)arg1 currentKey:(unsigned short)arg2;
 - (_Bool)handleMouseUp:(NSEvent *)arg1;

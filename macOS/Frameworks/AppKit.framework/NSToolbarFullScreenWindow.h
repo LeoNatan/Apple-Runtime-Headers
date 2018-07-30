@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void)_enableFullScreenMenubarAutohiding;
 - (void)_disableFullScreenMenubarAutohiding;
+- (id)appearance;
 - (void)setAppearance:(id)arg1;
 - (float)_backdropBleedAmount;
 - (id)accessibilityParameterizedAttributeNames;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 - (void)_adjustWindowToScreen;
 - (id)_findKeyLoopGroupingViewFollowingKeyLoopGroupingView:(id)arg1 direction:(unsigned long long)arg2;
 - (id)_orderedDrawerAndWindowKeyLoopGroupingViews;
-- (BOOL)_attachToParentBeforeOrderingWindow;
 - (id)_parentWindowForAddingToMovementGroupWithProposedParent:(id)arg1;
 - (void)_setFirstResponder:(id)arg1;
 - (BOOL)_newFirstResponderIsInToolbar:(id)arg1;
@@ -53,7 +53,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_ignoreForFullScreenTransition;
 - (BOOL)isMainWindow;
 - (BOOL)hasKeyAppearanceIncludingSheets:(BOOL)arg1;
-- (BOOL)_shouldAutoIncSubLevel;
 - (void)_setChildWindowOrderingPriority:(long long)arg1;
 - (long long)_childWindowOrderingPriority;
 - (void)_setWindowTag;
@@ -72,8 +71,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canBeSnappingTarget;
 - (BOOL)_allowsSnapping;
 - (BOOL)_shouldSnapWindowsClientSide;
-- (BOOL)_shouldAutoDecSubLevel;
-- (BOOL)_resetSublevelOnChildWindowAddition;
 
 @end
 

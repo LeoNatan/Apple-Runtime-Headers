@@ -31,7 +31,7 @@
 - (unsigned int)fingerCount;
 - (void)removeFingerWithIdentifier:(unsigned int)arg1;
 - (void)addStylusWithIdentifier:(unsigned int)arg1 location:(struct CGPoint)arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
-- (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint)arg2 orbValue:(float)arg3;
+- (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint)arg2 pressure:(float)arg3;
 - (unsigned int)deviceIdentifier;
 - (id)description;
 - (void)dealloc;

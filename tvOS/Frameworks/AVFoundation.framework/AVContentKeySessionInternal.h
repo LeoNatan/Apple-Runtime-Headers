@@ -8,17 +8,18 @@
 
 @class AVWeakReference, AVWeakReferencingDelegateStorage, NSData, NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVContentKeySessionInternal : NSObject
 {
     AVWeakReferencingDelegateStorage *_delegateStorage;
     AVWeakReference *_weakReference;
     NSURL *_storageURL;
+    NSData *_appIdentifier;
     _Bool _isExpired;
     _Bool _internal;
     NSObject<OS_dispatch_queue> *_threadSafetyQ;
     struct __CFData *_protectorSessionIdentifier;
     NSHashTable *_contentKeyRecipients;
-    NSData *_appIdentifier;
     struct OpaqueFigContentKeySession *_figContentKeySession;
     NSMutableArray *_cryptorsList;
     NSString *_keySystem;

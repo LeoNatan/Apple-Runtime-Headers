@@ -8,17 +8,14 @@
 
 #import "NSSecureCoding.h"
 
-@class BBDataProviderConnection, HMDBulletinProvider, HMDHomeManager, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class HMDHomeManager, HMDUserNotificationCenter, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface HMDBulletinBoard : HMFObject <NSSecureCoding>
 {
-    _Bool _enabled;
-    NSArray *_categories;
     NSObject<OS_dispatch_queue> *_workQueue;
-    BBDataProviderConnection *_dataProviderConnection;
-    HMDBulletinProvider *_bulletinProvider;
-    HMDHomeManager *_homeManager;
+    HMDUserNotificationCenter *_notificationCenter;
     NSMutableDictionary *_characteristicTuples;
+    HMDHomeManager *_homeManager;
 }
 
 + (_Bool)presentationValueOfCharacteristic:(id)arg1 equalTo:(id)arg2;
@@ -32,24 +29,22 @@
 + (_Bool)isBulletinSupportedForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 + (id)_supportedNonSecureServices;
 + (id)_supportedSecureServices;
-+ (void)initializeMapping;
++ (id)_targetCurrentCharacteristicTypeMap;
 + (id)sharedBulletinBoard;
-@property(retain, nonatomic) NSMutableDictionary *characteristicTuples; // @synthesize characteristicTuples=_characteristicTuples;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
-@property(retain, nonatomic) HMDBulletinProvider *bulletinProvider; // @synthesize bulletinProvider=_bulletinProvider;
-@property(retain, nonatomic) BBDataProviderConnection *dataProviderConnection; // @synthesize dataProviderConnection=_dataProviderConnection;
+@property(retain, nonatomic) NSMutableDictionary *characteristicTuples; // @synthesize characteristicTuples=_characteristicTuples;
+@property(retain, nonatomic) HMDUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 - (void).cxx_destruct;
 - (_Bool)isTargetCharacteristic:(id)arg1 matchCurrentCharacteristic:(id)arg2;
 - (_Bool)_shouldPostBulletinOnCurrentValueChangeForCharacteristic:(id)arg1;
 - (void)_updateCharacteristicTupleFor:(id)arg1 withCurrentType:(id)arg2 changedByThisDevice:(_Bool)arg3;
 - (_Bool)_hasDuplicateBulletinForCharacteristic:(id)arg1;
-- (id)_bulletinWithRecordID:(id)arg1;
-- (id)_lookupBulletinForCharacteristic:(id)arg1;
+- (id)_requestWithRecordID:(id)arg1;
+- (id)_lookupRequestForCharacteristic:(id)arg1;
 - (void)_removeBulletinsUsingPredicate:(id)arg1;
-- (id)_insertBulletinWithTitle:(id)arg1 snapshotData:(id)arg2 message:(id)arg3 recordID:(id)arg4 bulletinType:(unsigned int)arg5 actionURL:(id)arg6 bulletinContext:(struct NSDictionary *)arg7 actionContext:(struct NSDictionary *)arg8;
-- (void)_updateBulletin:(id)arg1;
+- (id)_insertRequestWithTitle:(id)arg1 snapshotData:(id)arg2 message:(id)arg3 requestIdentifier:(id)arg4 bulletinType:(unsigned int)arg5 actionURL:(id)arg6 bulletinContext:(struct NSDictionary *)arg7 actionContext:(struct NSDictionary *)arg8;
+- (id)_insertImageBulletinsForChangedCharacteristics:(id)arg1 snapshotData:(id)arg2;
 - (void)removeAllBulletins;
 - (void)removeBulletinsForTrigger:(id)arg1;
 - (void)removeBulletinsForService:(id)arg1;
@@ -59,17 +54,13 @@
 - (id)updateBulletinForFirmwareUpdateInHome:(id)arg1;
 - (id)insertBulletinForSecureTrigger:(id)arg1;
 - (id)insertBulletinForIncomingInvitation:(id)arg1;
-- (id)_insertImageBulletinsForChangedCharacteristics:(id)arg1 snapshotData:(id)arg2;
 - (void)insertBulletinsForChangedCharacteristics:(id)arg1 changedByThisDevice:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)insertImageBulletinsForChangedCharacteristics:(id)arg1 snapshotData:(id)arg2 completion:(CDUnknownBlockType)arg3;
-@property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
+- (void)_migrateBulletins:(id)arg1 requests:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)reloadDefaultSectionInfo;
 - (void)refreshHomeBadgeNumber;
-- (void)refreshHomeConfiguration;
 - (void)configureHomeManager:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

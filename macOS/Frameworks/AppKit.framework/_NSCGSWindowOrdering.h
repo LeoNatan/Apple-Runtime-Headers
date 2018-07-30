@@ -34,11 +34,11 @@ __attribute__((visibility("hidden")))
 - (void)orderGroup:(id)arg1 op:(int)arg2 againstWindow:(id)arg3;
 - (void)orderApplicationWindowsFront;
 - (BOOL)_hasUncommittedSpaceAssignmentChanges:(id)arg1;
+- (void)unlockWindowSublevel:(id)arg1;
+- (void)lockWindow:(id)arg1 toAbsoluteSublevel:(int)arg2;
 - (void)reassociateWithSpacesByGeometry:(id)arg1;
 - (void)disassociateFromSpacesIfOrderedOut:(id)arg1;
 - (void)setDesiredSpace:(unsigned long long)arg1 forWindow:(id)arg2;
-- (int)subLevelForWindow:(id)arg1;
-- (void)setSubLevel:(int)arg1 forWindow:(id)arg2;
 - (int)levelForWindow:(id)arg1;
 - (void)setLevel:(int)arg1 forWindow:(id)arg2;
 - (void)orderWindow:(id)arg1 op:(int)arg2 againstWindow:(id)arg3;

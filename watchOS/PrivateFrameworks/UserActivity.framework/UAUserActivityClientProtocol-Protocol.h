@@ -9,6 +9,7 @@
 @class NSDate, NSDictionary, NSString, NSURL, NSUUID, UAUserActivityInfo;
 
 @protocol UAUserActivityClientProtocol <NSObject>
+- (void)doRegisterAsProxyApplicationForPid:(int)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)doGetLoggingFileForClient:(NSString *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(NSFileHandle *, NSError *))arg3;
 - (void)doDetermineIfUserActivityIsCurrent:(NSUUID *)arg1 completionHandler:(void (^)(_Bool, NSString *, int, NSString *, NSError *))arg2;
 - (void)doGetCurrentUserActivityInfo:(void (^)(NSUUID *, NSString *, NSError *))arg1;

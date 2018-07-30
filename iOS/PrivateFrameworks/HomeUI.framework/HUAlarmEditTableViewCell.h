@@ -6,6 +6,7 @@
 
 #import "UITableViewCell.h"
 
+__attribute__((visibility("hidden")))
 @interface HUAlarmEditTableViewCell : UITableViewCell
 {
 }

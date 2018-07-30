@@ -10,11 +10,8 @@
 
 @protocol _SFPBButton <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasIsSelected;
 @property(nonatomic) BOOL isSelected;
-@property(readonly, nonatomic) BOOL hasSelectedImage;
 @property(retain, nonatomic) _SFPBImage *selectedImage;
-@property(readonly, nonatomic) BOOL hasImage;
 @property(retain, nonatomic) _SFPBImage *image;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

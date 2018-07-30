@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface TCXmlEnumMap : NSObject
 {
     struct __CFDictionary *mNameToValueMap;

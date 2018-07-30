@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, PUReviewAsset;
 
+__attribute__((visibility("hidden")))
 @interface PUReviewCreateAssetNode : PXRunNode <PUReviewAssetNode>
 {
     PUReviewAsset *_reviewAsset;

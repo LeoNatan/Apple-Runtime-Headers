@@ -13,7 +13,7 @@
 + (id)textColorForColorType:(unsigned long long)arg1;
 + (id)convertFont:(id)arg1 forColorType:(unsigned long long)arg2;
 + (void)setColor:(id)arg1 font:(id)arg2 onTextField:(id)arg3;
-+ (void)updateTextField:(id)arg1 withColorType:(unsigned long long)arg2;
++ (void)updateTextField:(id)arg1 withColorType:(unsigned long long)arg2 state:(CDStruct_8024420c)arg3;
 + (unsigned long long)colorTypeForState:(CDStruct_8024420c)arg1;
 + (BOOL)textFieldHasFieldEditor:(id)arg1;
 + (void)updateAppearanceOfTextField:(id)arg1 withRowView:(id)arg2 ofType:(unsigned long long)arg3;

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (Class)trackerObservationClass;
 - (id)_parseInputObservations:(id)arg1 imageBuffer:(id)arg2 error:(id *)arg3;
 - (id)initWithOptions:(id)arg1 error:(id *)arg2;
 

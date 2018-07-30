@@ -8,7 +8,7 @@
 
 #import "SFCompanionAdvertiserDelegate.h"
 
-@class CSSearchableItemAttributeSet, NSData, NSDate, NSDictionary, NSError, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL, NSUUID, NSUserActivity, SFCompanionAdvertiser, UAUserActivityManager;
+@class CSSearchableItemAttributeSet, NSData, NSDate, NSDictionary, NSError, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL, NSUUID, NSUserActivity, SFCompanionAdvertiser, UAUserActivityManager;
 
 @interface UAUserActivity : NSObject <SFCompanionAdvertiserDelegate>
 {
@@ -17,6 +17,7 @@
     NSURL *_webpageURL;
     NSURL *_referrerURL;
     SFCompanionAdvertiser *_advertiser;
+    NSObject<OS_dispatch_group> *_advertiserCompletedGroup;
     SFCompanionAdvertiser *_resumerAdvertiser;
     NSMutableSet *_dirtyPayloadIdentifiers;
     double _lastSaveTime;
@@ -44,6 +45,11 @@
     _Bool _eligibleForSearch;
     _Bool _eligibleForReminders;
     _Bool _eligibleForPublicIndexing;
+    _Bool _eligibleForPrediction;
+    NSString *_persistentIdentifier;
+    id <UAUserActivityDelegate> _delegate;
+    unsigned int _userInfoChangeCount;
+    NSDictionary *_savedUserInfo;
     _Bool _invalidated;
     _Bool _userInfoContainsFileURLs;
     _Bool _canCreateStreams;
@@ -51,7 +57,6 @@
     NSSet *_keywords;
     NSSet *_requiredUserInfoKeys;
     NSDictionary *_userInfo;
-    id <UAUserActivityDelegate> _delegate;
     UAUserActivityManager *_manager;
     NSString *_typeIdentifier;
     NSString *_dynamicIdentifier;
@@ -85,10 +90,15 @@
 + (_Bool)currentUserActivityUUIDWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)currentUserActivityUUID;
 + (_Bool)supportsUserActivityAppLinks;
++ (id)_decodeFromEntireString:(id)arg1;
 + (id)_decodeFromString:(id)arg1;
 + (id)_decodeFromScanner:(id)arg1;
 + (id)_encodeKeyAndValueIntoString:(id)arg1 value:(id)arg2;
 + (id)_encodeToString:(id)arg1;
++ (_Bool)registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
++ (void)deleteAllSavedUserActivitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)mainBundleIdentifier;
 @property(readonly, retain) NSObject<OS_dispatch_queue> *willCallSaveSerializationQueue; // @synthesize willCallSaveSerializationQueue=_willCallSaveSerializationQueue;
 @property(retain) NSMutableSet *dirtyPayloadIdentifiers; // @synthesize dirtyPayloadIdentifiers=_dirtyPayloadIdentifiers;
 @property(retain) NSMutableDictionary *payloadDataCache; // @synthesize payloadDataCache=_payloadDataCache;
@@ -102,12 +112,10 @@
 @property(copy) NSString *dynamicIdentifier; // @synthesize dynamicIdentifier=_dynamicIdentifier;
 @property(copy) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
 @property(readonly) __weak UAUserActivityManager *manager; // @synthesize manager=_manager;
-@property id <UAUserActivityDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSSet *requiredUserInfoKeys; // @synthesize requiredUserInfoKeys=_requiredUserInfoKeys;
 @property(copy) NSSet *keywords; // @synthesize keywords=_keywords;
 @property _Bool userInfoContainsFileURLs; // @synthesize userInfoContainsFileURLs=_userInfoContainsFileURLs;
 @property(readonly) unsigned long long os_state_handler; // @synthesize os_state_handler=_os_state_handler;
-@property(readonly, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(copy) NSData *cachedEncodedUserInfo; // @synthesize cachedEncodedUserInfo=_cachedEncodedUserInfo;
 @property(readonly) _Bool activityHasBeenSentToServer; // @synthesize activityHasBeenSentToServer=_activityHasBeenSentToServer;
 @property _Bool encodedContainsUnsynchronizedCloudDocument; // @synthesize encodedContainsUnsynchronizedCloudDocument=_encodedContainsUnsynchronizedCloudDocument;
@@ -135,19 +143,25 @@
 - (id)unarchiveURL:(id)arg1 error:(id *)arg2;
 - (_Bool)archiveURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)invalidate;
+@property(readonly, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 - (void)resignCurrent;
 - (void)_resignCurrent;
 - (void)becomeCurrent;
 - (void)getContinuationStreamsWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property id <UAUserActivityDelegate> delegate; // @dynamic delegate;
 @property _Bool supportsContinuationStreams; // @dynamic supportsContinuationStreams;
 @property(copy) NSData *streamsData;
 @property __weak NSUserActivity *parentUserActivity;
 - (id)teamID;
 @property _Bool needsSave; // @dynamic needsSave;
 @property _Bool dirty; // @dynamic dirty;
-- (void)addUserInfoEntriesFromDictionary:(id)arg1;
 @property(copy) NSURL *referrerURL; // @dynamic referrerURL;
 @property(copy) NSURL *webpageURL; // @dynamic webpageURL;
+- (void)_setWebpageURL:(id)arg1 throwOnFailure:(_Bool)arg2;
+- (_Bool)finishUserInfoUpdate;
+- (unsigned int)beginUserInfoUpdate:(id)arg1;
+@property(readonly) unsigned int userInfoChangeCount;
+- (void)addUserInfoEntriesFromDictionary:(id)arg1;
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) NSString *title; // @dynamic title;
 - (void)dealloc;
@@ -197,6 +211,8 @@
 - (void)updateForwardToCoreSpotlightIndexer:(BOOL)arg1;
 @property(readonly) _Bool forwardToCoreSpotlightIndexer;
 @property(copy) CSSearchableItemAttributeSet *contentAttributeSet; // @dynamic contentAttributeSet;
+@property(copy) NSString *persistentIdentifier;
+@property(getter=isEligibleForPrediction) _Bool eligibleForPrediction; // @dynamic eligibleForPrediction;
 - (void)setDirty:(_Bool)arg1 identifier:(id)arg2;
 - (_Bool)isPayloadDirty:(id)arg1;
 - (CDUnknownBlockType)payloadUpdateBlockForIdentifier:(id)arg1;

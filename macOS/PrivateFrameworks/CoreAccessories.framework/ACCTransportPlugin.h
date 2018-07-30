@@ -6,15 +6,19 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSString;
+@class NSMutableDictionary, NSMutableSet, NSString;
 
 @interface ACCTransportPlugin : NSObject
 {
     id <ACCTransportPluginManagerProtocol> _delegate;
     NSMutableSet *_activeConnectionUUIDs;
     NSString *_pluginName;
+    NSMutableDictionary *_connectionPropertyChangeHandlers;
+    NSMutableDictionary *_endpointPropertyChangeHandlers;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *endpointPropertyChangeHandlers; // @synthesize endpointPropertyChangeHandlers=_endpointPropertyChangeHandlers;
+@property(retain, nonatomic) NSMutableDictionary *connectionPropertyChangeHandlers; // @synthesize connectionPropertyChangeHandlers=_connectionPropertyChangeHandlers;
 @property(readonly, nonatomic) NSString *pluginName; // @synthesize pluginName=_pluginName;
 @property(retain, nonatomic) NSMutableSet *activeConnectionUUIDs; // @synthesize activeConnectionUUIDs=_activeConnectionUUIDs;
 @property(nonatomic) __weak id <ACCTransportPluginManagerProtocol> delegate; // @synthesize delegate=_delegate;
@@ -22,6 +26,12 @@
 - (BOOL)sendOutgoingData:(id)arg1 forEndpointWithUUID:(id)arg2 connectionUUID:(id)arg3;
 - (BOOL)routeOutgoingData:(id)arg1 forEndpointWithUUID:(id)arg2 connectionUUID:(id)arg3;
 - (BOOL)processIncomingData:(id)arg1 forEndpointWithUUID:(id)arg2;
+- (void)setHandler:(CDUnknownBlockType)arg1 forEndpointProperty:(id)arg2;
+- (void)setHandler:(CDUnknownBlockType)arg1 forConnectionProperty:(id)arg2;
+- (id)propertiesForEndpointWithUUID:(id)arg1;
+- (id)propertiesForConnectionWithUUID:(id)arg1;
+- (id)identifierForEndpointWithUUID:(id)arg1;
+- (id)identifierForConnectionWithUUID:(id)arg1;
 - (int)transportTypeForEndpointWithUUID:(id)arg1;
 - (id)certificateCapabilitiesForConnectionWithUUID:(id)arg1;
 - (id)certificateSerialStringForConnectionWithUUID:(id)arg1;

@@ -9,5 +9,6 @@
 @interface NSImage (CalClassAdditions)
 - (id)tintedImageWithColor:(id)arg1 size:(struct CGSize)arg2;
 - (id)tintedImageWithColor:(id)arg1;
+- (struct CGImage *)cal_createCGImageForView:(id)arg1;
 @end
 

@@ -24,10 +24,18 @@
 - (void)setInputMode:(id)arg1 client:(id)arg2;
 - (void)menuItemAction:(id)arg1;
 @property(readonly) unsigned long long scriptType;
+- (id)inlineText;
+- (void)didSelectSortingMode:(id)arg1 candidateController:(id)arg2;
+- (void)candidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
+- (void)candidateSelected:(id)arg1 candidateController:(id)arg2;
+@property(readonly, nonatomic) BOOL windowIsHorizontal;
 - (unsigned long long)optionsForMenuController:(id)arg1;
 - (id)selectedStringForMenuController:(id)arg1;
 - (BOOL)selectionShouldBeReflectedInTouchBar;
-- (id)candidateDataForDisplayMethod:(id)arg1 candidateController:(id)arg2;
+- (void)didHideCandidates:(id)arg1;
+- (id)makeScrubbingCandidateController;
+- (void)updateCandidateController:(id)arg1;
+- (id)makeCandidateController;
 - (BOOL)mouseMovedOnCharacterIndex:(unsigned long long)arg1 coordinate:(struct CGPoint)arg2 withModifier:(unsigned long long)arg3 client:(id)arg4;
 - (BOOL)mouseUpOnCharacterIndex:(unsigned long long)arg1 coordinate:(struct CGPoint)arg2 withModifier:(unsigned long long)arg3 client:(id)arg4;
 - (BOOL)mouseDownOnCharacterIndex:(unsigned long long)arg1 coordinate:(struct CGPoint)arg2 withModifier:(unsigned long long)arg3 continueTracking:(char *)arg4 client:(id)arg5;
@@ -40,14 +48,9 @@
 - (BOOL)handleEvent:(id)arg1 client:(id)arg2;
 - (BOOL)inputText:(id)arg1 client:(id)arg2;
 - (BOOL)didCommandBySelector:(SEL)arg1 client:(id)arg2;
-- (void)handleCandidateSelected:(id)arg1 candidateController:(id)arg2;
-- (void)handleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
 - (BOOL)isUsingSortingBar;
 - (id)informationView;
-- (Class)onscreenCandidateWindowClass;
-- (Class)auxiliaryCandidateWindowClass;
 - (BOOL)automaticallyRestrictLayoutToPrimaryCandidateControllerLayout;
-- (id)candidateController;
 - (void)inputControllerWillClose;
 - (id)menu;
 

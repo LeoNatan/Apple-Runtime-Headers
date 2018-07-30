@@ -6,33 +6,11 @@
 
 #import "NSObject.h"
 
-@class BBSectionInfo, NSArray, NSDate, NSSet, NSString;
+@class BBSectionInfo, NSSet, NSString;
 
 @protocol BBSettingsGatewayServerInterface <NSObject>
-- (void)requestQuietModeOverrideAssertionWithCompletion:(void (^)(BSAction *))arg1;
-- (void)getSectionOrderRuleWithHandler:(void (^)(NSNumber *, NSError *))arg1;
-- (void)setBehaviorOverridesEffectiveWhileUnlocked:(_Bool)arg1 source:(unsigned long long)arg2;
-- (void)setPrivilegedSenderTypesChangeUpdatesEnabled:(_Bool)arg1;
-- (void)setPrivilegedSenderAddressBookGroupRecordIDChangeUpdatesEnabled:(_Bool)arg1;
-- (void)setActiveBehaviorOverrideTypesChangeAssertionCountUpdatesEnabled:(_Bool)arg1;
-- (void)setActiveBehaviorOverrideTypesChangeUpdatesEnabled:(_Bool)arg1;
-- (void)setBehaviorOverrideStatusChangeUpdatesEnabled:(_Bool)arg1;
-- (void)setBehaviorOverridesEffectiveWhileUnlockedChangeUpdatesEnabled:(_Bool)arg1;
-- (void)setBehaviorOverridesChangeUpdatesEnabled:(_Bool)arg1;
-- (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(NSString *)arg2 source:(unsigned long long)arg3;
-- (void)setPrivilegedSenderTypes:(unsigned long long)arg1 source:(unsigned long long)arg2;
-- (void)setBehaviorOverrideStatus:(long long)arg1 effectiveDate:(NSDate *)arg2 source:(unsigned long long)arg3;
-- (void)setBehaviorOverrides:(NSArray *)arg1 source:(unsigned long long)arg2;
 - (void)setSectionInfo:(BBSectionInfo *)arg1 forSectionID:(NSString *)arg2 withHandler:(void (^)(void))arg3;
 - (void)setSectionInfo:(BBSectionInfo *)arg1 forSectionID:(NSString *)arg2;
-- (void)setOrderedSectionIDs:(NSArray *)arg1;
-- (void)setSectionOrderRule:(long long)arg1;
-- (void)getBehaviorOverridesEnabledAndEffectiveDateWithHandler:(void (^)(long long, NSDate *))arg1;
-- (void)getBehaviorOverridesEffectiveWhileUnlockedWithHandler:(void (^)(NSNumber *, NSError *))arg1;
-- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(void (^)(NSArray *, NSError *))arg1;
-- (void)getPrivilegedSenderTypesWithHandler:(void (^)(NSNumber *, NSError *))arg1;
-- (void)getBehaviorOverridesEnabledWithHandler:(void (^)(NSNumber *, NSError *))arg1;
-- (void)getBehaviorOverridesWithHandler:(void (^)(NSArray *, NSError *))arg1;
 - (void)getEffectiveSectionInfoForSectionIDs:(NSSet *)arg1 withHandler:(void (^)(NSArray *))arg2;
 - (void)getSectionInfoForSectionIDs:(NSSet *)arg1 withHandler:(void (^)(NSArray *))arg2;
 - (void)getEffectiveSectionInfoForSectionID:(NSString *)arg1 withHandler:(void (^)(BBSectionInfo *))arg2;

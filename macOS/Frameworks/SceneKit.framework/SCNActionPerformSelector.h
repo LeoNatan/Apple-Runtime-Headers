@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     id _target;
 }
 
-+ (id)perfromSelector:(SEL)arg1 onTarget:(id)arg2;
++ (id)performSelector:(SEL)arg1 onTarget:(id)arg2;
 + (BOOL)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;

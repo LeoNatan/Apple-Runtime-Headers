@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)_defaultFillColor;
 - (struct NSEdgeInsets)alignmentRectInsetsForState:(CDStruct_40e84b6d)arg1;
 - (struct CGSize)indicatorSizeForState:(CDStruct_40e84b6d)arg1;
-- (BOOL)allowsVibrancyForState:(CDStruct_40e84b6d)arg1;
+- (int)vibrancyBlendModeForState:(CDStruct_40e84b6d)arg1;
 - (void)drawInRect:(struct CGRect)arg1 inContext:(id)arg2 forState:(CDStruct_40e84b6d)arg3;
 
 // Remaining properties

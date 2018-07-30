@@ -13,7 +13,6 @@
 
 @interface _SFPBAppLink : PBCodable <_SFPBAppLink, NSSecureCoding>
 {
-    CDStruct_9f571ec0 _has;
     int _imageAlign;
     NSString *_title;
     _SFPBPunchout *_appPunchout;
@@ -33,10 +32,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasImageAlign;
-@property(readonly, nonatomic) BOOL hasImage;
-@property(readonly, nonatomic) BOOL hasAppPunchout;
-@property(readonly, nonatomic) BOOL hasTitle;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

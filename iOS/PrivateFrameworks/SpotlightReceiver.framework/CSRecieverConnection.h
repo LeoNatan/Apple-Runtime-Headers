@@ -10,9 +10,6 @@
 
 @interface CSRecieverConnection : CSXPCConnection
 {
-    _Bool _wantsIndexUpdates;
-    _Bool _wantsUAs;
-    _Bool _wantsInteractions;
     int _supportedJobs;
     NSObject<SpotlightReceiver> *_receiver;
     NSArray *_bundleIDs;
@@ -23,16 +20,17 @@
 @property(copy, nonatomic) NSArray *INIntentClassNames; // @synthesize INIntentClassNames=_INIntentClassNames;
 @property(copy, nonatomic) NSArray *contentTypes; // @synthesize contentTypes=_contentTypes;
 @property(copy, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
-@property(nonatomic) _Bool wantsInteractions; // @synthesize wantsInteractions=_wantsInteractions;
-@property(nonatomic) _Bool wantsUAs; // @synthesize wantsUAs=_wantsUAs;
-@property(nonatomic) _Bool wantsIndexUpdates; // @synthesize wantsIndexUpdates=_wantsIndexUpdates;
 @property(readonly, nonatomic) NSObject<SpotlightReceiver> *receiver; // @synthesize receiver=_receiver;
 @property(readonly, nonatomic) int supportedJobs; // @synthesize supportedJobs=_supportedJobs;
 - (void).cxx_destruct;
+- (int)donateRelevantActions:(id)arg1 bundleID:(id)arg2;
+- (int)donateRelevantShortcuts:(id)arg1 bundleID:(id)arg2;
 - (int)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;
 - (int)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (int)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (int)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (int)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2;
+- (int)deleteAllUserActivities:(id)arg1;
 - (int)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (int)purgeFromBundle:(id)arg1 identifiers:(id)arg2;
 - (int)deleteFromBundle:(id)arg1 sinceDate:(id)arg2 domains:(id)arg3 deletes:(id)arg4;

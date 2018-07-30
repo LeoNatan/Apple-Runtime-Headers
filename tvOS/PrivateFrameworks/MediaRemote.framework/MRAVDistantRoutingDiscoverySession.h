@@ -35,7 +35,7 @@
 - (void)_reloadAvailableDistantEndpointsWithEndpoints:(id)arg1;
 - (void)_reloadHostedRoutingServiceDiscoveryMode;
 - (id)_hostedRoutingConnection;
-- (void)_initializeHostedRoutingConnection;
+- (void)_initializeHostedRoutingConnectionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)availableOutputDevicesDidChange:(id)arg1;
 - (void)availableEndpointsDidChange:(id)arg1;
 @property(retain, nonatomic) NSArray *distantOutputDevices;

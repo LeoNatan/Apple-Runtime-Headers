@@ -25,6 +25,7 @@
 @property(retain) NSString *path; // @synthesize path=_path;
 @property(retain) NSString *remoteViewClass; // @synthesize remoteViewClass=_remoteViewClass;
 - (void).cxx_destruct;
+- (void)toggleTouchBarControlStripCustomizationPalette;
 - (void)switchToPanel:(id)arg1 anchor:(id)arg2;
 - (void)switchToPanel:(id)arg1;
 - (void)setSuddenTerminationEnabled:(BOOL)arg1;

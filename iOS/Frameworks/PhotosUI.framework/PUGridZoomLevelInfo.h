@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
     PUZoomableGridViewController *_zoomableGridViewController;
     double _pendingContentWidth;
     PHAssetResourceQualityClass *_qualityClass;
-    NSString *_displayTitle;
     long long _maxRowsPerSection;
     struct CGSize _thumbnailImageSize;
     struct CGSize _lastItemPixelSize;
@@ -34,7 +33,6 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) _Bool summarizeSections; // @synthesize summarizeSections=_summarizeSections;
 @property(readonly, nonatomic) long long maxRowsPerSection; // @synthesize maxRowsPerSection=_maxRowsPerSection;
-@property(readonly, nonatomic) NSString *displayTitle; // @synthesize displayTitle=_displayTitle;
 @property(nonatomic) struct CGSize lastItemPixelSize; // @synthesize lastItemPixelSize=_lastItemPixelSize;
 @property(retain, nonatomic) PHAssetResourceQualityClass *qualityClass; // @synthesize qualityClass=_qualityClass;
 @property(nonatomic) double pendingContentWidth; // @synthesize pendingContentWidth=_pendingContentWidth;
@@ -57,7 +55,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(id)arg1;
 - (struct CGPoint)sectionedGridLayout:(id)arg1 targetContentOffsetForProposedUpdatesContentOffset:(struct CGPoint)arg2;
 - (id)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(id)arg1;
-- (id)sectionedGridLayoutName:(id)arg1;
 - (void)sectionedGridLayout:(id)arg1 didFinalizePrepareTransitionIsAppearing:(_Bool)arg2;
 - (void)sectionedGridLayout:(id)arg1 didPrepareTransitionIsAppearing:(_Bool)arg2;
 - (long long)sectionedGridLayout:(id)arg1 maximumRowsForVisualSection:(long long)arg2;

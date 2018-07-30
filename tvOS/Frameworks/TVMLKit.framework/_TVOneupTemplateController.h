@@ -9,36 +9,33 @@
 #import "TVOneupViewDataSource.h"
 #import "TVOneupViewDelegate.h"
 
-@class IKAudioElement, IKViewElement, NSArray, NSMapTable, NSMutableIndexSet, NSString, _TVOneupView;
+@class IKAudioElement, IKViewElement, NSArray, NSMutableDictionary, NSString, _TVOneupView;
 
 __attribute__((visibility("hidden")))
 @interface _TVOneupTemplateController : UIViewController <TVOneupViewDelegate, TVOneupViewDataSource>
 {
+    _Bool _requiresReload;
     unsigned long long _transition;
     _TVOneupView *_oneupView;
     IKViewElement *_oneupElement;
     NSArray *_sections;
     long long _totalNumberOfItems;
-    long long _autoHighlightFlattenedIndex;
+    long long _focusedFlattenedIndex;
     NSArray *_modes;
     IKAudioElement *_audioElement;
-    NSMapTable *_imageProxies;
-    unsigned long long _lastMotion;
-    unsigned long long _lastVisibleIndex;
-    NSMutableIndexSet *_preloadedIndexes;
-    unsigned long long _maxImageProxyCacheCount;
+    NSMutableDictionary *_imageProxies;
+    unsigned long long _indexToConfigure;
+    CDUnknownBlockType _indexMapBlock;
 }
 
-+ (long long)_flattenedIndexForItemAtIndexPath:(id)arg1 inSections:(id)arg2;
 + (id)_indexPathForItemAtFlattenedIndex:(long long)arg1 inSections:(id)arg2;
-@property(nonatomic) unsigned long long maxImageProxyCacheCount; // @synthesize maxImageProxyCacheCount=_maxImageProxyCacheCount;
-@property(retain, nonatomic) NSMutableIndexSet *preloadedIndexes; // @synthesize preloadedIndexes=_preloadedIndexes;
-@property(nonatomic) unsigned long long lastVisibleIndex; // @synthesize lastVisibleIndex=_lastVisibleIndex;
-@property(nonatomic) unsigned long long lastMotion; // @synthesize lastMotion=_lastMotion;
-@property(retain, nonatomic) NSMapTable *imageProxies; // @synthesize imageProxies=_imageProxies;
+@property(copy, nonatomic) CDUnknownBlockType indexMapBlock; // @synthesize indexMapBlock=_indexMapBlock;
+@property(nonatomic) _Bool requiresReload; // @synthesize requiresReload=_requiresReload;
+@property(nonatomic) unsigned long long indexToConfigure; // @synthesize indexToConfigure=_indexToConfigure;
+@property(retain, nonatomic) NSMutableDictionary *imageProxies; // @synthesize imageProxies=_imageProxies;
 @property(retain, nonatomic) IKAudioElement *audioElement; // @synthesize audioElement=_audioElement;
 @property(copy, nonatomic) NSArray *modes; // @synthesize modes=_modes;
-@property(nonatomic) long long autoHighlightFlattenedIndex; // @synthesize autoHighlightFlattenedIndex=_autoHighlightFlattenedIndex;
+@property(nonatomic) long long focusedFlattenedIndex; // @synthesize focusedFlattenedIndex=_focusedFlattenedIndex;
 @property(nonatomic) long long totalNumberOfItems; // @synthesize totalNumberOfItems=_totalNumberOfItems;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) IKViewElement *oneupElement; // @synthesize oneupElement=_oneupElement;
@@ -51,8 +48,12 @@ __attribute__((visibility("hidden")))
 - (void)_configureView:(id)arg1 withImageElement:(id)arg2 andIndex:(unsigned long long)arg3;
 - (unsigned long long)_allowedModesFromModes:(id)arg1;
 - (void)_updateWithViewElement:(id)arg1 update:(_Bool)arg2;
-- (void)oneupView:(id)arg1 didEndDisplayingView:(id)arg2 forItemAtIndex:(long long)arg3;
-- (void)oneupView:(id)arg1 willDisplayView:(id)arg2 forItemAtIndex:(long long)arg3;
+- (void)_configureOneupView;
+- (void)_setAudioElementIfAny:(id)arg1;
+- (_Bool)_isReloadRequired:(id)arg1 addedSectionIndexes:(id)arg2 removedSectionIndexes:(id)arg3 sectionsMoved:(_Bool)arg4;
+- (id)_mapOldSectionsByNew:(id)arg1 addedIndexes:(id *)arg2 removedIndexes:(id *)arg3 sectionsMoved:(_Bool *)arg4;
+- (long long)_flattenedCountWithAutoHighlightIndex:(long long *)arg1;
+- (void)_setTransitionAndModes:(id)arg1;
 - (void)oneupView:(id)arg1 didPlayItemAtIndex:(unsigned long long)arg2;
 - (void)oneupView:(id)arg1 didSelectItemAtIndex:(unsigned long long)arg2;
 - (void)oneupView:(id)arg1 didFocusItemAtIndex:(unsigned long long)arg2;
@@ -62,14 +63,15 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfItemsInOneupView:(id)arg1;
 - (id)_imageElementAtIndex:(unsigned long long)arg1;
 - (id)_sectionForIndex:(unsigned long long)arg1 itemIndexOut:(long long *)arg2;
-- (id)_proxyForImageElement:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)_cacheProxyies;
-- (void)_cancelImageProxies:(CDUnknownBlockType)arg1;
-- (void)_enumerateImageProxies:(CDUnknownBlockType)arg1;
-- (unsigned long long)_nextIndexForEventType:(unsigned long long)arg1 andIndex:(unsigned long long)arg2;
+- (void)viewDidLoad;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)_prepareIndexesToLoad:(unsigned long long)arg1;
+- (id)_imageProxyForIndex:(unsigned long long)arg1 forCaching:(_Bool)arg2;
+- (void)_updateCachedIndexes:(CDUnknownBlockType)arg1;
+- (void)_unloadIndex:(unsigned long long)arg1;
+- (void)_loadIndex:(unsigned long long)arg1;
+- (_Bool)_isElementUpdatedAtFlattenedIndex:(long long)arg1;
 - (void)loadView;
-- (void)didReceiveMemoryWarning;
 @property(readonly, nonatomic) unsigned long long oneupViewTransition;
 - (void)updateWithShowcaseLockupElements:(id)arg1 focusedIndex:(long long)arg2 update:(_Bool)arg3;
 - (void)updateWithOneElement:(id)arg1;

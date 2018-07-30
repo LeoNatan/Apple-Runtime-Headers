@@ -36,6 +36,7 @@
 + (id)buildingPathForBounds:(struct CGRect)arg1;
 + (double)_referenceHeightForPanelAtPosition:(unsigned long long)arg1 open:(_Bool)arg2;
 + (double)_referenceOriginYForPanelAtPosition:(unsigned long long)arg1 open:(_Bool)arg2;
++ (double)_scaleFactorForBounds:(struct CGRect)arg1 referenceSize:(struct CGSize)arg2;
 @property(retain, nonatomic) HUGarageDoorStateTransition *activeTransition; // @synthesize activeTransition=_activeTransition;
 @property(nonatomic) _Bool clipBottomPanelShapesToBounds; // @synthesize clipBottomPanelShapesToBounds=_clipBottomPanelShapesToBounds;
 @property(nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;

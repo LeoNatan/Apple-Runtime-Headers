@@ -610,7 +610,7 @@ struct TopoSubstring {
     struct TopoID _field2;
     unsigned int _field3;
     _Bool _field4;
-    vector_6c07be0f _field5;
+    vector_c5c053b6 _field5;
     unsigned int _field6;
 };
 
@@ -705,7 +705,7 @@ struct vector<CRDT::Document_DocObject *, std::__1::allocator<CRDT::Document_Doc
     struct Document_DocObject **__begin_;
     struct Document_DocObject **__end_;
     struct __compressed_pair<CRDT::Document_DocObject **, std::__1::allocator<CRDT::Document_DocObject *>> {
-        struct Document_DocObject **__first_;
+        struct Document_DocObject **__value_;
     } __end_cap_;
 };
 
@@ -713,7 +713,7 @@ struct vector<ICDrawingOutputPoint, std::__1::allocator<ICDrawingOutputPoint>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<ICDrawingOutputPoint *, std::__1::allocator<ICDrawingOutputPoint>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -729,7 +729,7 @@ struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *>> {
     struct TopoSubstring **__begin_;
     struct TopoSubstring **__end_;
     struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *>> {
-        struct TopoSubstring **__first_;
+        struct TopoSubstring **__value_;
     } __end_cap_;
 };
 
@@ -745,7 +745,7 @@ struct vector<std::__1::pair<TopoID, TopoID>, std::__1::allocator<std::__1::pair
     struct pair<TopoID, TopoID> *__begin_;
     struct pair<TopoID, TopoID> *__end_;
     struct __compressed_pair<std::__1::pair<TopoID, TopoID>*, std::__1::allocator<std::__1::pair<TopoID, TopoID>>> {
-        struct pair<TopoID, TopoID> *__first_;
+        struct pair<TopoID, TopoID> *__value_;
     } __end_cap_;
 };
 
@@ -879,9 +879,9 @@ typedef struct vector<ICDrawingOutputPoint, std::__1::allocator<ICDrawingOutputP
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<ICDrawingOutputPoint *, std::__1::allocator<ICDrawingOutputPoint>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
-} vector_82e5b66f;
+} vector_352d2fdf;
 
 typedef struct vector<TopoIDRange, std::__1::allocator<TopoIDRange>> {
     struct TopoIDRange *_field1;
@@ -895,9 +895,9 @@ typedef struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *>> {
     struct TopoSubstring **__begin_;
     struct TopoSubstring **__end_;
     struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *>> {
-        struct TopoSubstring **__first_;
+        struct TopoSubstring **__value_;
     } __end_cap_;
-} vector_6c07be0f;
+} vector_c5c053b6;
 
 typedef struct vector<_NSRange, std::__1::allocator<_NSRange>> {
     struct _NSRange *_field1;
@@ -911,9 +911,9 @@ typedef struct vector<std::__1::pair<TopoID, TopoID>, std::__1::allocator<std::_
     struct pair<TopoID, TopoID> *__begin_;
     struct pair<TopoID, TopoID> *__end_;
     struct __compressed_pair<std::__1::pair<TopoID, TopoID>*, std::__1::allocator<std::__1::pair<TopoID, TopoID>>> {
-        struct pair<TopoID, TopoID> *__first_;
+        struct pair<TopoID, TopoID> *__value_;
     } __end_cap_;
-} vector_8c432507;
+} vector_0ee2fe7a;
 
 typedef struct vector<std::__1::pair<TopoIDRange, NSAttributedString *>, std::__1::allocator<std::__1::pair<TopoIDRange, NSAttributedString *>>> {
     struct pair<TopoIDRange, NSAttributedString *> *_field1;

@@ -14,11 +14,13 @@
     float _interiorAngle;
     float _exteriorAngle;
     NSMutableDictionary *_faceViews;
+    unsigned int _numberOfVisibleFaces;
     float _faceDistanceToCenter;
 }
 
 + (Class)layerClass;
 @property(readonly, nonatomic) float faceDistanceToCenter; // @synthesize faceDistanceToCenter=_faceDistanceToCenter;
+@property(readonly, nonatomic) unsigned int numberOfVisibleFaces; // @synthesize numberOfVisibleFaces=_numberOfVisibleFaces;
 @property(readonly, nonatomic) unsigned int numberOfFaces; // @synthesize numberOfFaces=_numberOfFaces;
 - (void).cxx_destruct;
 - (struct CATransform3D)_transformForFaceIndex:(unsigned int)arg1;

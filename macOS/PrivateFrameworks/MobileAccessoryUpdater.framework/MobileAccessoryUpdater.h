@@ -34,6 +34,8 @@
 - (id)getActiveDeviceClass;
 - (BOOL)setActiveDeviceClass:(id)arg1;
 - (id)queryNextStep:(id *)arg1;
+- (BOOL)loadPluginWithAccessoryInfo:(id)arg1 options:(id)arg2;
+- (id)getPluginsList;
 - (BOOL)sendMessageForCommand:(int)arg1 withOptions:(id)arg2 requiresFilter:(BOOL)arg3 replyHandler:(CDUnknownBlockType)arg4;
 - (BOOL)sendMessageForCommand:(int)arg1 withOptions:(id)arg2 requiresFilter:(BOOL)arg3;
 - (BOOL)doesOperationCodeRequireFilter:(int)arg1;
@@ -44,6 +46,7 @@
 - (id)initWithPluginIdentifier:(id)arg1 delegate:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)initWithGroupIdentifer:(id)arg1 delegate:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)initWithPluginIdentifier:(id)arg1 isGroupIdentifier:(BOOL)arg2 delegate:(id)arg3 isInternalClient:(BOOL)arg4 options:(id)arg5 error:(id *)arg6;
+- (id)initWithDelegate:(id)arg1 isInternalClient:(BOOL)arg2 options:(id)arg3 error:(id *)arg4;
 
 @end
 

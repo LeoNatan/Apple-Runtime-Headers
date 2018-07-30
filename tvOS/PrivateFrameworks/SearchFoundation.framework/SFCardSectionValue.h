@@ -10,7 +10,7 @@
 #import "NSSecureCoding.h"
 #import "SFCardSectionValue.h"
 
-@class NSData, NSDictionary, NSString, SFActivityIndicatorCardSection, SFAppLinkCardSection, SFAudioPlaybackCardSection, SFDescriptionCardSection, SFDetailedRowCardSection, SFFlightCardSection, SFImagesCardSection, SFKeyValueDataCardSection, SFMapCardSection, SFMediaInfoCardSection, SFMediaPlayerCardSection, SFMessageCardSection, SFMetaInfoCardSection, SFNowPlayingCardSection, SFRichTitleCardSection, SFRowCardSection, SFScoreboardCardSection, SFSectionHeaderCardSection, SFSelectableGridCardSection, SFSocialMediaPostCardSection, SFStockChartCardSection, SFSuggestionCardSection, SFTableHeaderRowCardSection, SFTableRowCardSection, SFTextColumnsCardSection, SFTitleCardSection, SFTrackListCardSection, SFWatchListCardSection, SFWebCardSection;
+@class NSData, NSDictionary, NSString, SFActivityIndicatorCardSection, SFAppLinkCardSection, SFAudioPlaybackCardSection, SFButtonCardSection, SFDescriptionCardSection, SFDetailedRowCardSection, SFFlightCardSection, SFHorizontalButtonCardSection, SFHorizontalScrollCardSection, SFImagesCardSection, SFKeyValueDataCardSection, SFMapCardSection, SFMapsDetailedRowCardSection, SFMediaInfoCardSection, SFMediaPlayerCardSection, SFMessageCardSection, SFMetaInfoCardSection, SFNowPlayingCardSection, SFProductCardSection, SFRichTitleCardSection, SFRowCardSection, SFScoreboardCardSection, SFSectionHeaderCardSection, SFSelectableGridCardSection, SFSocialMediaPostCardSection, SFStockChartCardSection, SFSuggestionCardSection, SFTableHeaderRowCardSection, SFTableRowCardSection, SFTextColumnsCardSection, SFTitleCardSection, SFTrackListCardSection, SFVerticalLayoutCardSection, SFWatchListCardSection, SFWebCardSection;
 
 @interface SFCardSectionValue : NSObject <SFCardSectionValue, NSSecureCoding, NSCopying>
 {
@@ -43,9 +43,21 @@
     SFSectionHeaderCardSection *_sectionHeaderCardSection;
     SFMetaInfoCardSection *_metaInfoCardSection;
     SFWatchListCardSection *_watchListCardSection;
+    SFMapsDetailedRowCardSection *_mapsDetailedRowCardSection;
+    SFButtonCardSection *_buttonCardSection;
+    SFHorizontalButtonCardSection *_horizontalButtonCardSection;
+    SFVerticalLayoutCardSection *_verticalLayoutCardSection;
+    SFProductCardSection *_productCardSection;
+    SFHorizontalScrollCardSection *_horizontalScrollCardSection;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) SFHorizontalScrollCardSection *horizontalScrollCardSection; // @synthesize horizontalScrollCardSection=_horizontalScrollCardSection;
+@property(retain, nonatomic) SFProductCardSection *productCardSection; // @synthesize productCardSection=_productCardSection;
+@property(retain, nonatomic) SFVerticalLayoutCardSection *verticalLayoutCardSection; // @synthesize verticalLayoutCardSection=_verticalLayoutCardSection;
+@property(retain, nonatomic) SFHorizontalButtonCardSection *horizontalButtonCardSection; // @synthesize horizontalButtonCardSection=_horizontalButtonCardSection;
+@property(retain, nonatomic) SFButtonCardSection *buttonCardSection; // @synthesize buttonCardSection=_buttonCardSection;
+@property(retain, nonatomic) SFMapsDetailedRowCardSection *mapsDetailedRowCardSection; // @synthesize mapsDetailedRowCardSection=_mapsDetailedRowCardSection;
 @property(retain, nonatomic) SFWatchListCardSection *watchListCardSection; // @synthesize watchListCardSection=_watchListCardSection;
 @property(retain, nonatomic) SFMetaInfoCardSection *metaInfoCardSection; // @synthesize metaInfoCardSection=_metaInfoCardSection;
 @property(retain, nonatomic) SFSectionHeaderCardSection *sectionHeaderCardSection; // @synthesize sectionHeaderCardSection=_sectionHeaderCardSection;

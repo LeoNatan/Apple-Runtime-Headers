@@ -9,7 +9,6 @@
 @class JSValue, NSDictionary, NSString, NSWindow;
 
 @protocol AKICAUIDelegate <NSObject>
-- (void)validateLocalPasswordWithTitle:(NSString *)arg1 forcingReprompt:(BOOL)arg2 callback:(JSValue *)arg3;
 - (void)validateLocalPassword:(JSValue *)arg1;
 - (void)runAppleIDOptOut:(JSValue *)arg1;
 - (id)clientInfo;
@@ -23,6 +22,7 @@
 - (void)icaWebKitViewIsAvailable;
 
 @optional
+- (void)obtainAuthRight:(JSValue *)arg1;
 - (void)triggerAKAction:(NSString *)arg1;
 - (NSWindow *)webViewWindow;
 - (void)icaWebKitViewHasLoaded;

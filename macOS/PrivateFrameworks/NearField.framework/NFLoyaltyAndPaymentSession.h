@@ -6,17 +6,17 @@
 
 #import <NearField/NFSession.h>
 
-@class NFApplet, NFTechnologyEvent, NFWeakReference, NSDictionary;
+@class NFApplet, NFWeakReference, NSDictionary;
 
 @interface NFLoyaltyAndPaymentSession : NFSession
 {
     BOOL _pendingServerRequest;
     BOOL _vasTransactionInProgress;
-    NFTechnologyEvent *_technologyEvent;
     NFWeakReference *_delegate;
     BOOL _emulationActive;
     NSDictionary *_appletsById;
     unsigned long long _numActiveSEs;
+    BOOL _fieldNotificationSent;
     NFApplet *_activeApplet;
     NFApplet *_defaultApplet;
 }
@@ -58,7 +58,7 @@
 - (void)didEndTransaction:(id)arg1;
 - (void)didStartTransaction:(id)arg1;
 - (void)didSelectApplet:(id)arg1;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didDetectField:(BOOL)arg1;
 - (void)didEndUnexpectedly;
 - (void)endSessionWithCompletion:(CDUnknownBlockType)arg1;

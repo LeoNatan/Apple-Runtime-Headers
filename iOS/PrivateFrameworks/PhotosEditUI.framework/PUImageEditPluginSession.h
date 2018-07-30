@@ -6,6 +6,7 @@
 
 #import <PhotosEditUI/PUEditPluginSession.h>
 
+__attribute__((visibility("hidden")))
 @interface PUImageEditPluginSession : PUEditPluginSession
 {
     _Bool _allowLivePhotoExtensions;

@@ -8,17 +8,16 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface OADBlipCollection : NSObject
 {
     NSMutableArray *mBlips;
 }
 
 @property(retain, nonatomic) NSMutableArray *blips; // @synthesize blips=mBlips;
+- (void).cxx_destruct;
 - (unsigned int)blipCount;
 - (unsigned int)addBlip:(id)arg1;
 - (id)blipAtIndex:(int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

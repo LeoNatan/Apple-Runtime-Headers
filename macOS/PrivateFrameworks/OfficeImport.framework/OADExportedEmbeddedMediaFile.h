@@ -8,7 +8,6 @@
 
 @class TSPData;
 
-__attribute__((visibility("hidden")))
 @interface OADExportedEmbeddedMediaFile : OADEmbeddedMediaFile
 {
     BOOL isAudioOnly;
@@ -18,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSPData *tspData; // @synthesize tspData=_tspData;
 - (void)setIsAudioOnly:(BOOL)arg1;
 - (BOOL)isAudioOnly;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

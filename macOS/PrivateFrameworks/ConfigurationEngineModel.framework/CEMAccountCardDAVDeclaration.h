@@ -8,39 +8,41 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSNumber, NSString;
+@class CEMAccountCardDAVDeclaration_CommunicationServiceRules, NSNumber, NSString;
 
 @interface CEMAccountCardDAVDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadCardDAVAccountDescription;
+    NSString *_payloadCardDAVHostName;
+    NSString *_payloadCardDAVPrincipalURL;
+    NSNumber *_payloadCardDAVUseSSL;
+    NSNumber *_payloadCardDAVPort;
+    CEMAccountCardDAVDeclaration_CommunicationServiceRules *_payloadCommunicationServiceRules;
+    NSString *_payloadCardDAVCredentials;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withCardDAVHostName:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withCardDAVAccountDescription:(id)arg2 withCardDAVHostName:(id)arg3 withCardDAVPrincipalURL:(id)arg4 withCardDAVUseSSL:(id)arg5 withCardDAVPort:(id)arg6 withCommunicationServiceRules:(id)arg7 withCardDAVCredentials:(id)arg8;
 + (id)restrictionPayloadKeys;
-+ (id)CommunicationServiceRules_DefaultServiceHandlers_allowedPayloadKeys;
-+ (id)CommunicationServiceRules_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadCommunicationServiceRules_DefaultServiceHandlers:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadCommunicationServiceRules:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadCommunicationServiceRules_DefaultServiceHandlers_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadCommunicationServiceRules_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadCardDAVCredentials; // @synthesize payloadCardDAVCredentials=_payloadCardDAVCredentials;
+@property(copy, nonatomic) CEMAccountCardDAVDeclaration_CommunicationServiceRules *payloadCommunicationServiceRules; // @synthesize payloadCommunicationServiceRules=_payloadCommunicationServiceRules;
+@property(copy, nonatomic) NSNumber *payloadCardDAVPort; // @synthesize payloadCardDAVPort=_payloadCardDAVPort;
+@property(copy, nonatomic) NSNumber *payloadCardDAVUseSSL; // @synthesize payloadCardDAVUseSSL=_payloadCardDAVUseSSL;
+@property(copy, nonatomic) NSString *payloadCardDAVPrincipalURL; // @synthesize payloadCardDAVPrincipalURL=_payloadCardDAVPrincipalURL;
+@property(copy, nonatomic) NSString *payloadCardDAVHostName; // @synthesize payloadCardDAVHostName=_payloadCardDAVHostName;
+@property(copy, nonatomic) NSString *payloadCardDAVAccountDescription; // @synthesize payloadCardDAVAccountDescription=_payloadCardDAVAccountDescription;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSString *payloadCardDAVCredentials;
-@property(readonly, nonatomic) NSDictionary *payloadCommunicationServiceRules;
-@property(readonly, nonatomic) NSNumber *payloadCardDAVPort;
-@property(readonly, nonatomic) NSNumber *payloadCardDAVUseSSL;
-@property(readonly, nonatomic) NSString *payloadCardDAVPrincipalURL;
-@property(readonly, nonatomic) NSString *payloadCardDAVHostName;
-@property(readonly, nonatomic) NSString *payloadCardDAVAccountDescription;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

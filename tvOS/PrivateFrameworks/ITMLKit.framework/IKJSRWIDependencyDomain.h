@@ -11,17 +11,24 @@
 @interface IKJSRWIDependencyDomain : NSObject
 {
     NSString *_identifier;
+    Class _agentClass;
     NSDictionary *_types;
+    NSDictionary *_commands;
 }
 
 + (void)processDomains:(id)arg1;
 + (id)allDomains;
++ (id)domainAgentClassMap;
 + (id)allowedDomains;
+@property(readonly, nonatomic) NSDictionary *commands; // @synthesize commands=_commands;
 @property(readonly, nonatomic) NSDictionary *types; // @synthesize types=_types;
+@property(retain, nonatomic) Class agentClass; // @synthesize agentClass=_agentClass;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (_Bool)isValidForTypesWithError:(id *)arg1;
+- (_Bool)isValidForAgentWithError:(id *)arg1;
 - (_Bool)isValidWithError:(id *)arg1;
-- (id)initWithDomainDictionary:(id)arg1;
+- (id)initWithDomainDictionary:(id)arg1 agentClass:(Class)arg2;
 
 @end
 

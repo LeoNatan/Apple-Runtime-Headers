@@ -13,10 +13,10 @@
     NSURL *_presentedItemURL;
 }
 
+- (void).cxx_destruct;
 - (void)dequeueObjects:(CDUnknownBlockType)arg1;
 - (void)enqueueObjects:(CDUnknownBlockType)arg1;
 - (void)readObjects:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)initWithURL:(id)arg1;
 
 @end

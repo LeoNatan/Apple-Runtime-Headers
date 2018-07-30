@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSTextFieldPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSTextPlugin : _NSTextFieldPlugin
 {
 }

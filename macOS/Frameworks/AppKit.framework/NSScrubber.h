@@ -9,7 +9,7 @@
 #import "NSGestureRecognizerDelegate.h"
 #import "NSScrollViewDelegate.h"
 
-@class NSArray, NSButton, NSColor, NSPanGestureRecognizer, NSPressGestureRecognizer, NSScrollView, NSScrubberLayout, NSScrubberPendingChanges, NSScrubberSelectionStyle, NSString, NSTimer;
+@class NSButton, NSColor, NSPanGestureRecognizer, NSPressGestureRecognizer, NSScrollView, NSScrubberLayout, NSScrubberPendingChanges, NSScrubberSelectionStyle, NSString, NSTimer;
 
 @interface NSScrubber : NSView <NSScrollViewDelegate, NSGestureRecognizerDelegate>
 {
@@ -40,16 +40,22 @@
     unsigned int _reservedFlags:27;
 }
 
++ (id)texturedBackgroundColor;
 + (id)keyPathsForValuesAffectingAlignmentRectInsets;
 + (id)keyPathsForValuesInvalidatingSelectionLayout;
 + (id)keyPathsForValuesInvalidatingItemLayout;
-+ (id)texturedBackgroundColor;
 + (id)outlineSelectionOverlayView;
 + (id)roundedSelectionBackgroundView;
 + (id)touchBarColorListPickerScrubberWithDataSource:(id)arg1 delegate:(id)arg2;
 @property(retain) NSScrubberPendingChanges *pendingChanges; // @synthesize pendingChanges=_tx;
 @property long long itemAlignment; // @synthesize itemAlignment=_itemAlignment;
 - (void).cxx_destruct;
+- (void)setEndcapCornerRadius:(double)arg1;
+- (double)endcapCornerRadius;
+- (void)setSelectionLensSize:(struct CGSize)arg1;
+- (struct CGSize)selectionLensSize;
+- (id)populatedItemViews;
+- (id)scrollView;
 @property(retain) NSTimer *selectionLensPopTimer;
 - (struct CGRect)visibleContentRectForLayout;
 - (CDStruct_99688279)proxyState;
@@ -97,6 +103,7 @@
 - (void)reloadItemsAtIndexes:(id)arg1;
 - (void)removeItemsAtIndexes:(id)arg1;
 - (void)insertItemsAtIndexes:(id)arg1;
+- (void)performSequentialBatchUpdates:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performSequentialBatchUpdates:(CDUnknownBlockType)arg1;
 - (void)reloadData;
 - (void)_updateNumberOfItems;
@@ -105,7 +112,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)unregisterDependencyObservations;
 - (void)registerDependencyObservations;
-@property(getter=_ignoresTouches, setter=_setIgnoresTouches:) BOOL ignoresTouches;
+- (void)_setIgnoresTouches:(BOOL)arg1;
+- (BOOL)_ignoresTouches;
 - (void)_updateScrollViewCornerRadius;
 - (void)_updateBackground;
 @property(retain) NSView *backgroundView;
@@ -135,10 +143,6 @@
 - (void)_earlyCommonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-@property double endcapCornerRadius;
-@property struct CGSize selectionLensSize;
-@property(readonly) NSArray *populatedItemViews;
-@property(readonly) NSScrollView *scrollView;
 @property long long tag;
 @property NSScrubberSelectionStyle *selectionStyle;
 @property long long selectionIndex;
@@ -172,6 +176,8 @@
 - (id)accessibilityAttributeNames;
 
 // Remaining properties
+@property(setter=_setWantsPageAlignedHorizontalAxis:) BOOL _wantsPageAlignedHorizontalAxis;
+@property(setter=_setWantsPageAlignedVerticalAxis:) BOOL _wantsPageAlignedVerticalAxis;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

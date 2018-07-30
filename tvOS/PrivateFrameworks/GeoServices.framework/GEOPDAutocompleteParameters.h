@@ -10,6 +10,7 @@
 
 @class GEOPDAutocompleteParametersAddressOnly, GEOPDAutocompleteParametersAllEntries, GEOPDAutocompleteParametersAllEntriesWithBrowse, GEOPDAutocompleteParametersBrandProfileSearch, GEOPDAutocompleteParametersFullEntriesOnly, GEOPDAutocompleteParametersLocalitiesAndLandmarks, GEOPDAutocompleteParametersPoiAddressOnly, GEOPDAutocompleteParametersSiriSearch, GEOPDAutocompleteParametersVenueSearch, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

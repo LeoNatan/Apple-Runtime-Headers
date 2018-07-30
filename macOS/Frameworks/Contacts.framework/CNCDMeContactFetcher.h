@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)allMeContactIdentifiersInPersistenceContext:(id)arg1 error:(id *)arg2;
++ (id)allMeContactIdentifiersInPersistenceContext:(id)arg1;
 + (id)allMeContactIdentifiersInPersistenceStack:(id)arg1 error:(id *)arg2;
 + (id)_containersWithWritableFirstInPersistenceContext:(id)arg1;
 + (id)_firstMeContactIdentifierInContainers:(id)arg1 persistenceContext:(id)arg2 managedObjectContext:(id)arg3;

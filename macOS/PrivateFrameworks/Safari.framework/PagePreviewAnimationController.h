@@ -9,7 +9,7 @@
 #import "NSImmediateActionAnimationController.h"
 #import "PagePreviewViewControllerDelegate.h"
 
-@class NSImmediateActionGestureRecognizer, NSPopover, NSPopoverAnimationController, NSString, NSTimer, NSURL, NSView, PagePreviewViewController;
+@class NSImmediateActionGestureRecognizer, NSPopover, NSPopoverAnimationController, NSString, NSTimer, NSURL, NSView, NSViewController, PagePreviewViewController;
 
 __attribute__((visibility("hidden")))
 @interface PagePreviewAnimationController : NSObject <PagePreviewViewControllerDelegate, NSImmediateActionAnimationController>
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     BOOL _didCompleteAnimation;
     NSTimer *_previewWatchdogTimer;
     id <PagePreviewAnimationControllerDelegate> _delegate;
+    NSViewController *_parentViewController;
     NSURL *_url;
     NSView *_view;
     struct CGRect _originRect;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect originRect; // @synthesize originRect=_originRect;
 @property(readonly, nonatomic) __weak NSView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(nonatomic) __weak NSViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) __weak id <PagePreviewAnimationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dismissPagePreviewViewController:(id)arg1;

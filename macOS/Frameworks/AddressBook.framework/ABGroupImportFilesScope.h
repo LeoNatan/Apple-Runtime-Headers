@@ -8,7 +8,6 @@
 
 @class ABAccount, ABAddressBook, ABGroup, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupImportFilesScope : NSObject
 {
     ABAccount *_account;

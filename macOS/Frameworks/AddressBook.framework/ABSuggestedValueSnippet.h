@@ -8,7 +8,6 @@
 
 @class NSDate, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface ABSuggestedValueSnippet : NSObject
 {
     NSString *_text;

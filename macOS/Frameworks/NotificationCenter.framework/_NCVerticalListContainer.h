@@ -8,6 +8,7 @@
 
 @class NCVerticalListController, NSArray, NSLayoutConstraint, NSView;
 
+__attribute__((visibility("hidden")))
 @interface _NCVerticalListContainer : _NCFlippedView
 {
     NCVerticalListController *_owner;

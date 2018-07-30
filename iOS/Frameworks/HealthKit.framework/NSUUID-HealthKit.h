@@ -8,6 +8,8 @@
 
 @interface NSUUID (HealthKit)
 + (id)hk_UUIDWithData:(id)arg1;
+- (id)hk_shortRepresentation;
+- (long long)hk_compare:(id)arg1;
 - (id)hk_dataForUUIDBytes;
 @end
 

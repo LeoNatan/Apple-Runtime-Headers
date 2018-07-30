@@ -11,6 +11,7 @@
 @protocol CKConversationListCell <NSObject>
 + (double)cellHeight;
 + (NSString *)identifierForConversation:(CKConversation *)arg1;
+- (void)updateContentsForConversation:(CKConversation *)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(CKConversation *)arg1;
 @end
 

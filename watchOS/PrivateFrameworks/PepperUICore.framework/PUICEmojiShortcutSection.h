@@ -12,17 +12,24 @@
 
 @interface PUICEmojiShortcutSection : NSObject <PUICCollectionViewSection>
 {
+    _Bool _showHeader;
+    NSString *_language;
 }
 
 + (id)headerReuseIdentifier;
 + (Class)headerClass;
 + (id)cellReuseIdentifier;
 + (Class)cellClass;
+@property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
+@property(copy, nonatomic) NSString *language; // @synthesize language=_language;
+- (void).cxx_destruct;
 - (void)configureHeaderView:(id)arg1;
 - (void)configureCell:(id)arg1 forItem:(int)arg2;
 - (int)numberOfItems;
 - (id)headerView;
 - (id)indexItem;
+- (id)initShowingHeader:(_Bool)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

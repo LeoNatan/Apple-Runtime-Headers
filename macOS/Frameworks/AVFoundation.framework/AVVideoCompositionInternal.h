@@ -8,6 +8,7 @@
 
 @class AVVideoCompositionCoreAnimationTool, NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVVideoCompositionInternal : NSObject
 {
     unsigned long long changeSeed;

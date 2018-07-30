@@ -115,11 +115,13 @@
         unsigned int updating:1;
     } _collectionViewFlags;
     struct CGPoint _lastLayoutOffset;
+    BOOL _requiresTransparentLayer;
     double _currentAnimatedUpdateDuration;
 }
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 + (BOOL)isCompatibleWithResponsiveScrolling;
+@property(nonatomic) BOOL requiresTransparentLayer; // @synthesize requiresTransparentLayer=_requiresTransparentLayer;
 @property(nonatomic) double currentAnimatedUpdateDuration; // @synthesize currentAnimatedUpdateDuration=_currentAnimatedUpdateDuration;
 @property(readonly, nonatomic, getter=isDecelerating) BOOL decelerating; // @synthesize decelerating=_decelerating;
 @property(nonatomic) BOOL alwaysBounceHorizontal; // @synthesize alwaysBounceHorizontal=_alwaysBounceHorizontal;
@@ -298,6 +300,7 @@
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)description;
+- (void)updateLayer;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;

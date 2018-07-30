@@ -16,6 +16,7 @@
 
 + (id)setWithDictionary:(id)arg1 context:(id)arg2;
 + (id)set;
+- (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
 @property(retain, nonatomic) SATimerObject *timer;
 - (id)encodedClassName;

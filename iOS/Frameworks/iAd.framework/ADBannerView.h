@@ -9,7 +9,7 @@
 #import "ADAdRecipient.h"
 #import "ADDimmerViewDelegate.h"
 
-@class ADAdSpace, ADDimmerView, ADPrivacyButton, NSDate, NSString, NSTimer, NSURL, UILabel, UIViewController;
+@class ADAdSpace, ADDimmerView, ADLayoutOptions, ADPrivacyButton, NSDate, NSString, NSTimer, NSURL, UILabel, UIViewController;
 
 @interface ADBannerView : UIView <ADAdRecipient, ADDimmerViewDelegate>
 {
@@ -34,6 +34,7 @@
     NSString *_adResponseId;
     long long _lastErrorCode;
     long long _options;
+    ADLayoutOptions *_layoutOptions;
     long long _adType;
     NSString *_advertisingSection;
     UIView *_highlightClippedView;
@@ -97,6 +98,7 @@
 @property(readonly, nonatomic) long long adType; // @synthesize adType=_adType;
 @property(nonatomic) struct CGSize landscapeSize; // @synthesize landscapeSize=_landscapeSize;
 @property(nonatomic) struct CGSize portraitSize; // @synthesize portraitSize=_portraitSize;
+@property(retain, nonatomic) ADLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) int internalAdType; // @synthesize internalAdType=_internalAdType;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
 @property(nonatomic) long long lastErrorCode; // @synthesize lastErrorCode=_lastErrorCode;
@@ -171,6 +173,7 @@
 - (void)serverBannerViewWillLoad;
 @property(readonly, nonatomic) UIViewController *presentingViewController;
 - (void)setViewSizeInPortrait:(struct CGSize)arg1 inLandscape:(struct CGSize)arg2;
+- (id)adPrivacyDetailsAttributes;
 - (void)privacyButtonWasTapped;
 - (void)_resetHighlightTimer;
 - (void)_updateHighlight:(id)arg1;
@@ -179,6 +182,10 @@
 - (void)displayCreativeView;
 - (void)displayBannerView;
 - (void)reportNativeClickEvent;
+- (void)reportAdPrivacySheetDidLinkOut;
+- (void)reportAdPrivacySheetDidDisappear;
+- (void)reportAdPrivacySheetDidAppear;
+- (void)reportAdPrivacySheetDidRender;
 - (void)bannerTappedAtPoint:(struct CGPoint)arg1 withMRAIDAction:(id)arg2;
 - (void)bannerTappedAtPoint:(struct CGPoint)arg1;
 - (void)beginAction;
@@ -209,6 +216,7 @@
 - (id)initFromIBWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)_initWithInternalAdType:(int)arg1 layoutOptions:(id)arg2 options:(long long)arg3;
 - (id)_initWithInternalAdType:(int)arg1 options:(long long)arg2;
 - (id)initWithAdType:(long long)arg1;
 - (void)dealloc;

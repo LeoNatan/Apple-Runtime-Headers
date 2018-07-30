@@ -6,14 +6,13 @@
 
 #import "NSObject.h"
 
-@class CSLSSuspendSystemGestureAssertion, NSTimer, PUICCrownInputSequencer, PUICScrollViewInertialAnimator;
+@class NSTimer, PUICCrownInputSequencer, PUICScrollViewInertialAnimator;
 
 @interface _PUICScrollViewAssociatedObject : NSObject
 {
     _Bool _mechanizedScrollingEnabled;
     int _crownInputScrollDirection;
     PUICCrownInputSequencer *_crownInputSequencer;
-    CSLSSuspendSystemGestureAssertion *_suspendSystemGestureAssertion;
     NSTimer *_suspendSystemGestureReleaseTimer;
     struct {
         unsigned int scrollViewWillEndDraggingWithVelocityTargetContentOffset:1;
@@ -29,15 +28,9 @@
 @property(nonatomic) CDStruct_a12fb154 delegateRespondsTo; // @synthesize delegateRespondsTo=_delegateRespondsTo;
 @property(nonatomic) _Bool mechanizedScrollingEnabled; // @synthesize mechanizedScrollingEnabled=_mechanizedScrollingEnabled;
 @property(retain, nonatomic) NSTimer *suspendSystemGestureReleaseTimer; // @synthesize suspendSystemGestureReleaseTimer=_suspendSystemGestureReleaseTimer;
-@property(retain, nonatomic) CSLSSuspendSystemGestureAssertion *suspendSystemGestureAssertion; // @synthesize suspendSystemGestureAssertion=_suspendSystemGestureAssertion;
 @property(retain, nonatomic) PUICCrownInputSequencer *crownInputSequencer; // @synthesize crownInputSequencer=_crownInputSequencer;
 @property(nonatomic) int crownInputScrollDirection; // @synthesize crownInputScrollDirection=_crownInputScrollDirection;
 - (void).cxx_destruct;
-- (void)_handleSystemGestureReleaseTimer:(id)arg1;
-- (void)_appWillResignActive:(id)arg1;
-- (void)startSuspendSystemGestureAssertionReleaseTimer;
-- (void)releaseSuspendSystemGestureAssertion;
-- (void)takeSuspendSystemGestureAssertion;
 - (void)dealloc;
 - (id)init;
 

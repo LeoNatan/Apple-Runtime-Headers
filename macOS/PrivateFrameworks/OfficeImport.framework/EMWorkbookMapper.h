@@ -4,26 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <OfficeImport/CMMapper.h>
+#import <OfficeImport/CMDocumentMapper.h>
 
 #import "CMMapperRoot.h"
 
-@class CMArchiveManager, EDWorkbook, NSMutableArray, NSString, OIXMLDocument, OIXMLElement;
+@class EDWorkbook, NSMutableArray, NSString, OIXMLDocument, OIXMLElement;
 
 __attribute__((visibility("hidden")))
-@interface EMWorkbookMapper : CMMapper <CMMapperRoot>
+@interface EMWorkbookMapper : CMDocumentMapper <CMMapperRoot>
 {
     unsigned long long mRealSheetCount;
     int mWidth;
     int mHeight;
-    EDWorkbook *edWorkbook;
     NSMutableArray *mWorksheetUrls;
     NSMutableArray *mWorksheetNames;
     NSMutableArray *mWorksheetGuids;
     NSString *mResourceUrlPrefix;
     NSString *mResourceUrlProtocol;
     NSString *mStyleSheetGuid;
-    CMArchiveManager *mArchiver;
     NSString *mFileName;
     unsigned int mSheetIndex;
     _Bool mIsFirstMappedSheet;
@@ -45,11 +43,13 @@ __attribute__((visibility("hidden")))
 + (id)cssStyleCache;
 @property(retain) NSString *fileName; // @synthesize fileName=mFileName;
 - (void).cxx_destruct;
+- (void)setElementCount:(unsigned long long)arg1;
 - (void)finishMappingWithState:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
 - (id)_copyStringForSheet:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 andMapper:(id)arg4;
 - (void)startMappingWithState:(id)arg1;
 - (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)tabTitleDrawingAttributes;
 - (id)_mainPageBack;
 - (id)_frontPageByCopyingMainPage;
 - (id)headElementForFrontPage;
@@ -61,10 +61,11 @@ __attribute__((visibility("hidden")))
 - (id)documentTitle;
 - (id)archiver;
 - (id)blipAtIndex:(unsigned int)arg1;
-- (id)workbook;
-- (void)dealloc;
-- (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
+- (id)initWithDocument:(id)arg1 archiver:(id)arg2;
 - (id)copySheetMapperWithEdSheet:(id)arg1;
+
+// Remaining properties
+@property(readonly) EDWorkbook *document; // @dynamic document;
 
 @end
 

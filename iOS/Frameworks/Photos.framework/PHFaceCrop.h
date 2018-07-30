@@ -16,13 +16,14 @@
 }
 
 + (id)fetchFaceCropsNeedingFaceDetectionWithOptions:(id)arg1;
++ (id)fetchFaceCropsForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchFaceCropsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchFaceCropsWithOptions:(id)arg1;
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)identifierCode;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 @property(readonly, nonatomic) short type; // @synthesize type=_type;
 @property(readonly, nonatomic) short state; // @synthesize state=_state;

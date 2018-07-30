@@ -8,6 +8,7 @@
 
 @class NSMutableSet, NSTimer, UILabel, UIPDFDocument;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFWidget : UIView
 {
     int queueIndex;

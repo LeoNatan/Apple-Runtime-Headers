@@ -11,6 +11,7 @@
 @interface RCAVPlayer : AVPlayer
 {
     _Bool _valid;
+    _Bool _scrubbing;
     id _periodicTimeObserverToken;
     AVPlayerItem *_AVPlayerItemBeingObserved;
     double _updateRate;
@@ -20,6 +21,8 @@
 @property(nonatomic) __weak id <RCAVPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double updateRate; // @synthesize updateRate=_updateRate;
 - (void).cxx_destruct;
+- (void)_endScrubbing;
+- (void)_beginScrubbing;
 - (void)_invalidate;
 - (void)_rateDidChange;
 - (void)_periodicTimeUpdate;

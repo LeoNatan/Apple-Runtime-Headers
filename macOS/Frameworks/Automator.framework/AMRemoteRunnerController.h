@@ -9,7 +9,7 @@
 #import "AMRunnerController.h"
 #import "NSXPCConnectionDelegate.h"
 
-@class AMRemoteRunnerXPCDelegate, AMWorkflow, AMWorkflowCompletionResults, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
+@class AMRemoteRunnerXPCDelegate, AMWorkflow, AMWorkflowCompletionResults, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCConnection;
 
 @interface AMRemoteRunnerController : NSObject <NSXPCConnectionDelegate, AMRunnerController>
 {
@@ -24,14 +24,16 @@
     CDUnknownBlockType _completionHandler;
     BOOL _workflowDelegateHasFinished;
     AMWorkflowCompletionResults *_workflowCompletionResults;
+    NSURL *_workingDirectoryURL;
 }
 
 + (BOOL)currentProcessIsSandboxed;
 + (id)wrappedError:(id)arg1 forRunningWorkflow:(id)arg2;
 + (id)resumedXPCConnectionWithRemoteRunnerXPCDelegate:(id)arg1 queue:(id)arg2;
-+ (id)remoteRunnerControllerWithURL:(id)arg1 error:(id *)arg2;
-+ (id)remoteRunnerControllerWithPropertyList:(id)arg1 url:(id)arg2 error:(id *)arg3;
-+ (id)remoteRunnerControllerWithWorkflow:(id)arg1 error:(id *)arg2;
++ (id)remoteRunnerControllerWithWorkflowURL:(id)arg1 workingDirectoryURL:(id)arg2 error:(id *)arg3;
++ (id)remoteRunnerControllerWithPropertyList:(id)arg1 workflowURL:(id)arg2 workingDirectoryURL:(id)arg3 error:(id *)arg4;
++ (id)remoteRunnerControllerWithWorkflow:(id)arg1 workingDirectoryURL:(id)arg2 error:(id *)arg3;
+@property(retain) NSURL *workingDirectoryURL; // @synthesize workingDirectoryURL=_workingDirectoryURL;
 @property(retain) AMWorkflowCompletionResults *workflowCompletionResults; // @synthesize workflowCompletionResults=_workflowCompletionResults;
 @property BOOL workflowDelegateHasFinished; // @synthesize workflowDelegateHasFinished=_workflowDelegateHasFinished;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -59,9 +61,9 @@
 - (void)step;
 - (void)runWithInput:(id)arg1 steppingInitially:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) id <AMRemoteRunnerXPCProtocol> remoteRunnerProxy;
-- (id)initWithWorkflow:(id)arg1 propertyList:(id)arg2;
-- (id)initWithWorkflow:(id)arg1;
-- (id)initWithPropertyList:(id)arg1 url:(id)arg2;
+- (id)initWithWorkflow:(id)arg1 propertyList:(id)arg2 workingDirectoryURL:(id)arg3;
+- (id)initWithWorkflow:(id)arg1 workingDirectoryURL:(id)arg2;
+- (id)initWithPropertyList:(id)arg1 workflowURL:(id)arg2 workingDirectoryURL:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

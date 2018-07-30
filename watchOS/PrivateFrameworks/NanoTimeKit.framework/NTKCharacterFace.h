@@ -13,7 +13,7 @@
     NSMutableDictionary *_previousCharacterColors;
 }
 
-+ (id)_defaultSelectedComplicationSlot;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (unsigned int)_selectedCharacter;
 - (Class)_optionClassForCustomEditMode:(int)arg1;

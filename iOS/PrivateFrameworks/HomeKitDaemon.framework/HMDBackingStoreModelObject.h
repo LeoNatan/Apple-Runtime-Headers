@@ -67,6 +67,7 @@
 @property(readonly, nonatomic, getter=isReadOnly) _Bool isReadOnly; // @dynamic isReadOnly;
 - (_Bool)propertyWasSet:(id)arg1;
 - (id)setProperties;
+- (void)setParentUUIDIfNotNil:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)encodeForCloud:(id *)arg1;

@@ -21,8 +21,6 @@
 + (id)protoSPObjectWithString:(id)arg1 forKey:(id)arg2;
 + (id)numberWithSPProtoSockPuppetObject:(id)arg1;
 + (id)protoSPObjectWithNumber:(id)arg1 forKey:(id)arg2;
-+ (id)objectWithData:(id)arg1;
-+ (id)dataWithObject:(id)arg1;
 
 @end
 

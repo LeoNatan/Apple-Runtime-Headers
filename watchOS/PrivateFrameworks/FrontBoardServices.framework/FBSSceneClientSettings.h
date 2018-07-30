@@ -27,6 +27,7 @@
 @property(readonly, copy, nonatomic) NSSet *occlusions; // @synthesize occlusions=_occlusions;
 @property(readonly, nonatomic) int preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(readonly, nonatomic) float preferredLevel; // @synthesize preferredLevel=_preferredLevel;
+- (void).cxx_destruct;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

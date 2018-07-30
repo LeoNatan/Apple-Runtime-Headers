@@ -21,27 +21,7 @@ struct CGSize {
     double height;
 };
 
-struct concomp;
-
-struct lineseg;
-
-struct sequence;
-
-struct vImage_Buffer {
-    void *_field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-    unsigned long long _field4;
-};
-
-#pragma mark Typedef'd Structures
-
-typedef struct {
-    int minScale;
-    int maxScale;
-} CDStruct_74dcf1ab;
-
-typedef struct {
+struct FKSession {
     int _field1;
     int _field2;
     int _field3;
@@ -68,7 +48,27 @@ typedef struct {
     int _field24;
     int _field25;
     int _field26;
-} CDStruct_6a58b7ce;
+};
+
+struct concomp;
+
+struct lineseg;
+
+struct sequence;
+
+struct vImage_Buffer {
+    void *_field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+};
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    int minScale;
+    int maxScale;
+} CDStruct_74dcf1ab;
 
 #pragma mark Typedef'd Unions
 

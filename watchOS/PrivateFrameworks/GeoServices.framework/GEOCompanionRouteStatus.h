@@ -27,6 +27,7 @@
     GEOLatLng *_routeMatchCoordinate;
     unsigned int _stepID;
     _Bool _guidancePromptsEnabled;
+    _Bool _isConnectedToCarplay;
     _Bool _lowGuidanceNavigation;
     struct {
         unsigned int timestamp:1;
@@ -40,10 +41,12 @@
         unsigned int routeLocationOffset:1;
         unsigned int stepID:1;
         unsigned int guidancePromptsEnabled:1;
+        unsigned int isConnectedToCarplay:1;
         unsigned int lowGuidanceNavigation:1;
     } _has;
 }
 
+@property(nonatomic) _Bool isConnectedToCarplay; // @synthesize isConnectedToCarplay=_isConnectedToCarplay;
 @property(nonatomic) _Bool lowGuidanceNavigation; // @synthesize lowGuidanceNavigation=_lowGuidanceNavigation;
 @property(nonatomic) _Bool guidancePromptsEnabled; // @synthesize guidancePromptsEnabled=_guidancePromptsEnabled;
 @property(retain, nonatomic) NSData *routeID; // @synthesize routeID=_routeID;
@@ -67,6 +70,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsConnectedToCarplay;
 - (int)StringAsHapticsType:(id)arg1;
 - (id)hapticsTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasHapticsType;

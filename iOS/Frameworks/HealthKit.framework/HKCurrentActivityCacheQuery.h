@@ -4,25 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <HealthKit/HKLegacyQuery.h>
+#import <HealthKit/HKQuery.h>
+
+#import "HKCurrentActivityCacheQueryClientInterface.h"
 
 @class NSDateComponents;
 
-@interface HKCurrentActivityCacheQuery : HKLegacyQuery
+@interface HKCurrentActivityCacheQuery : HKQuery <HKCurrentActivityCacheQueryClientInterface>
 {
     NSDateComponents *_statisticsIntervalComponents;
     CDUnknownBlockType _updateHandler;
 }
 
-+ (Class)_queryServerDataObjectClass;
++ (void)configureClientInterface:(id)arg1;
++ (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 - (void).cxx_destruct;
-- (CDUnknownBlockType)_queue_errorHandler;
-- (_Bool)_queue_shouldStayAliveAfterInitialResults;
-- (void)_queue_validate;
-- (void)_queue_cleanupAfterDeactivation;
-- (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (void)deliverCurrentActivityCache:(id)arg1 moveStatistics:(id)arg2 exerciseStatistics:(id)arg3 standHoursInfo:(id)arg4 queryUUID:(id)arg5;
+- (void)queue_deliverError:(id)arg1;
+- (_Bool)queue_shouldDeactivateAfterInitialResults;
+- (void)queue_validate;
+- (void)queue_queryDidDeactivate:(id)arg1;
+- (void)queue_populateConfiguration:(id)arg1;
+- (void)client_deliverCurrentActivityCache:(id)arg1 moveStatistics:(id)arg2 exerciseStatistics:(id)arg3 standHoursInfo:(id)arg4 queryUUID:(id)arg5;
 - (id)initWithUpdateHandler:(CDUnknownBlockType)arg1 statisticsIntervalComponents:(id)arg2;
 
 @end

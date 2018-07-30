@@ -6,15 +6,17 @@
 
 #import <NanoTimeKitCompanion/NTKUpNextBaseCell.h>
 
-@class CLKFont, NSArray, NSLayoutConstraint, NTKColoringLabel, UIImageView, UILayoutGuide;
+@class CLKFont, NSArray, NSLayoutConstraint, NTKColoringLabel, NTKUpNextImageView, UILayoutGuide;
 
 @interface NTKUpNextThumbnailCell : NTKUpNextBaseCell
 {
     UILayoutGuide *_labelLayoutGuide;
-    UIImageView *_imageView;
+    UILayoutGuide *_imageLayoutGuide;
+    NTKUpNextImageView *_imageView;
     NTKColoringLabel *_headerLabel;
     NTKColoringLabel *_descriptionLine1Label;
     NTKColoringLabel *_descriptionLine2Label;
+    NTKColoringLabel *_descriptionLine3Label;
     CLKFont *_standardFont;
     CLKFont *_italicFont;
     CLKFont *_boldFont;
@@ -22,14 +24,18 @@
     NSArray *_withoutHeaderConstraints;
     NSArray *_withDescription2Constraints;
     NSArray *_withoutDescription2Constraints;
-    NSLayoutConstraint *_imageWidthConstraint;
-    NSLayoutConstraint *_imageHeightConstraint;
+    NSArray *_withDescription3Constraints;
+    NSArray *_withoutDescription3Constraints;
+    NSLayoutConstraint *_imageLayoutGuideWidthConstraint;
+    NSLayoutConstraint *_imageLayoutGuideHeightConstraint;
     _Bool _showingHeader;
-    _Bool _showingThreeLineLayout;
+    _Bool _showingThirdLine;
+    _Bool _showingSmallThumbnail;
 }
 
-+ (void)initialize;
++ (struct CGSize)suggestedBodyImageSizeForDevice:(id)arg1;
 - (void).cxx_destruct;
+- (void)setPaused:(_Bool)arg1;
 - (void)configureWithContent:(id)arg1;
 - (void)updateConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -22,6 +22,7 @@
 @property(copy, nonatomic) NSUUID *userDictionaryUUID; // @synthesize userDictionaryUUID=_userDictionaryUUID;
 @property(retain, nonatomic) NSSet *userDictionaryTokens; // @synthesize userDictionaryTokens=_userDictionaryTokens;
 @property(retain, nonatomic) NSSet *addressBookTokens; // @synthesize addressBookTokens=_addressBookTokens;
+- (void).cxx_destruct;
 - (void)removeObserverAssertion;
 - (void)addObserverAssertion;
 - (_Bool)stringIsExemptFromChecker:(id)arg1;

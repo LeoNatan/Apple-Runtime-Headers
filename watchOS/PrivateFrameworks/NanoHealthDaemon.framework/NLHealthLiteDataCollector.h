@@ -12,7 +12,7 @@
 #import "HDHeartRateDataCollector.h"
 #import "NLBridgeSettingsObserver.h"
 
-@class CMCatherineFeeder, HDDataCollectorConfiguration, HDDataCollectorState, HDDeviceEntity, HDHeartEventDataAggregator, HDHeartRateDataAggregator, HDHeartRateVariabilityDataAggregator, HDHeartbeatSequenceDataAggregator, HDProfile, NLBridgeSettings, NSObject<OS_dispatch_queue>, NSString;
+@class CMCatherineFeeder, HDDataCollectorConfiguration, HDDataCollectorState, HDDeviceEntity, HDHeartRateDataAggregator, HDHeartRateVariabilityDataAggregator, HDHeartbeatSequenceDataAggregator, HDProfile, HDTachycardiaDataAggregator, NLBridgeSettings, NSObject<OS_dispatch_queue>, NSString;
 
 @interface NLHealthLiteDataCollector : NSObject <HDDiagnosticObject, HDHealthDaemonReadyObserver, NLBridgeSettingsObserver, HDDataCollector, HDHeartRateDataCollector>
 {
@@ -22,15 +22,15 @@
     HDHeartRateDataAggregator *_heartRateAggregator;
     HDHeartRateVariabilityDataAggregator *_heartRateVariabilityDataAggregator;
     HDHeartbeatSequenceDataAggregator *_heartbeatSequenceAggregator;
-    HDHeartEventDataAggregator *_heartEventAggregator;
+    HDTachycardiaDataAggregator *_tachycardiaAggregator;
     HDDataCollectorConfiguration *_heartRateCollectionConfiguration;
     HDDataCollectorConfiguration *_heartRateVariabilityCollectionConfiguration;
     HDDataCollectorConfiguration *_heartbeatSequenceCollectionConfiguration;
-    HDDataCollectorConfiguration *_heartEventCollectionConfiguration;
+    HDDataCollectorConfiguration *_tachycardiaCollectionConfiguration;
     HDDataCollectorState *_heartRateCollectionState;
     HDDataCollectorState *_heartRateVariabilityCollectionState;
     HDDataCollectorState *_heartbeatSequenceCollectionState;
-    HDDataCollectorState *_heartEventCollectionState;
+    HDDataCollectorState *_tachycardiaCollectionState;
     CMCatherineFeeder *_catherineFeeder;
     NLBridgeSettings *_bridgeSettings;
     HDDeviceEntity *_localDeviceEntity;
@@ -51,7 +51,7 @@
 - (void)_workoutManagerStateDidChange;
 - (void)_startObservingCurrentWorkoutChanges;
 - (void)_queue_createHealthLiteManager;
-- (void)_queue_updateHeartEventCollectionType;
+- (void)_queue_updateTachycardiaCollectionType;
 - (void)_queue_updateHeartbeatSequenceCollectionType;
 - (void)_queue_updateHeartRateVariabilityCollectionType;
 - (void)_queue_updateHeartRateCollectionType;

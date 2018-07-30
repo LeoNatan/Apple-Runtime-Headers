@@ -10,9 +10,11 @@
 {
     _Bool _usesCPUOnly;
     unsigned int _classifyTopK;
+    unsigned int _maxComputationBatchSize;
 }
 
 + (id)defaultOptions;
+@property unsigned int maxComputationBatchSize; // @synthesize maxComputationBatchSize=_maxComputationBatchSize;
 @property unsigned int classifyTopK; // @synthesize classifyTopK=_classifyTopK;
 @property(nonatomic) _Bool usesCPUOnly; // @synthesize usesCPUOnly=_usesCPUOnly;
 @property _Bool useCPUOnly;

@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <OfficeImport/CMTop.h>
+#import <OfficeImport/QLTop.h>
 
 __attribute__((visibility("hidden")))
-@interface WMTop : CMTop
+@interface WMTop : QLTop
 {
 }
 
-+ (void)fillHTMLArchiveForOfficeData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
-+ (void)fillHTMLArchiveForOfficeFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
-+ (id)documentFromContents:(id)arg1 isXML:(BOOL)arg2 archiver:(id)arg3;
+- (Class)mapperClassForIndexing:(BOOL)arg1;
+- (Class)stateClass;
+- (void)initializeClasses;
+- (Class)readerClassForXMLDocuments;
+- (Class)readerClassForBinaryDocuments;
 
 @end
 

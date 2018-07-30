@@ -14,6 +14,8 @@
 + (id)tsu_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)tsu_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3 recoverySuggestion:(id)arg4;
 - (_Bool)tsu_isErrorPassingTest:(CDUnknownBlockType)arg1;
+- (void)tsu_enumerateErrorUsingBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool tsu_isNoPermissionError;
 @property(readonly, nonatomic) _Bool tsu_isNoSuchFileError;
 @property(readonly, nonatomic) _Bool tsu_isCancelError;
 @property(readonly, nonatomic) _Bool tsu_isOutOfSpaceError;

@@ -7,36 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPaymentAmountValue.h"
 
-@class PBUnknownFields, _INPBCurrencyAmountValue;
+@class NSString, _INPBCurrencyAmountValue;
 
-@interface _INPBPaymentAmountValue : PBCodable <NSCopying>
+@interface _INPBPaymentAmountValue : PBCodable <_INPBPaymentAmountValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _amountType;
-    _INPBCurrencyAmountValue *_value;
     struct {
         unsigned int amountType:1;
     } _has;
+    int _amountType;
+    _INPBCurrencyAmountValue *_value;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBCurrencyAmountValue *value; // @synthesize value=_value;
+@property(nonatomic) int amountType; // @synthesize amountType=_amountType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasValue;
 - (int)StringAsAmountType:(id)arg1;
 - (id)amountTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasAmountType;
-@property(nonatomic) int amountType; // @synthesize amountType=_amountType;
-@property(readonly, nonatomic) _Bool hasValue;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

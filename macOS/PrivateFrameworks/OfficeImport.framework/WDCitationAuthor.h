@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface WDCitationAuthor : NSObject
 {
     NSString *mFirst;
@@ -17,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) NSString *last; // @synthesize last=mLast;
 @property(retain, nonatomic) NSString *first; // @synthesize first=mFirst;
+- (void).cxx_destruct;
 - (id)initWithFirst:(id)arg1 last:(id)arg2;
-- (void)dealloc;
 
 @end
 

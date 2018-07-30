@@ -8,6 +8,7 @@
 
 @class NSCarbonMenuImpl;
 
+__attribute__((visibility("hidden")))
 @interface NSMenuCustomCarbonEventHandler : NSObject
 {
     struct OpaqueEventHandlerRef *eventHandlerRef;

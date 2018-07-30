@@ -8,7 +8,6 @@
 
 @class GEOPDDisplayHeaderSubstitute, GEORelatedSearchSuggestion, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEODisplayHeaderSubstitute : NSObject
 {
     GEOPDDisplayHeaderSubstitute *_displayHeaderSubstitute;

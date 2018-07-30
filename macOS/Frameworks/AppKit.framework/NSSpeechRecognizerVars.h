@@ -8,6 +8,7 @@
 
 @class NSArray, NSLocale, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSSpeechRecognizerVars : NSObject
 {
     id <NSSpeechRecognizerDelegate> _delegate;

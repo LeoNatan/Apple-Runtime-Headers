@@ -52,9 +52,10 @@ __attribute__((visibility("hidden")))
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_finishRecordFetchAggregator;
 - (void)finishIfAppropriate;
-- (void)fetchRecordFromResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)fetchRecords:(id)arg1 withPerRecordCompletion:(CDUnknownBlockType)arg2;
+- (id)_fetchRecord:(id)arg1 recordReadyHandle:(_Bool *)arg2 withRecordCompletion:(CDUnknownBlockType)arg3;
 - (void)main;
-- (void)_addRecordFetchInfo:(id)arg1;
+- (void)_addRecordFetchInfos:(id)arg1;
 - (void)_recordFetchesAvailable;
 - (void)_lockedSendFetchRequest;
 - (void)_flushFetchedRecordsToConsumerLocked;
@@ -65,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (id)CKPropertiesDescription;
 - (void)dealloc;
 @property(readonly, nonatomic) CKDRecordCache *recordCache;
+- (id)activityCreate;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 
 @end

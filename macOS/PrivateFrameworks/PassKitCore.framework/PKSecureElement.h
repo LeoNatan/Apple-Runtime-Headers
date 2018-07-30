@@ -27,6 +27,7 @@
     NSMutableArray *_prioritySessionAccessHandlers;
     NSHashTable *_observers;
     NSLock *_observersLock;
+    BOOL _registeredForHardwareUpdates;
     NFSecureElement *_secureElement;
     NSArray *_secureElementArray;
     CDUnknownBlockType _pairingChangeHandler;
@@ -34,9 +35,14 @@
 
 + (id)secureElementIdentifiers;
 + (id)primarySecureElementIdentifier;
++ (BOOL)isInFailForward;
 + (BOOL)hardwareSupportsExpressMode:(id)arg1;
 + (BOOL)supportsExpressMode:(id)arg1 byHardware:(char *)arg2;
 + (BOOL)supportsExpressMode:(id)arg1;
++ (BOOL)hardwareSupportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
++ (BOOL)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
++ (BOOL)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1 byHardware:(char *)arg2;
++ (id)sharedSecureElement;
 - (void).cxx_destruct;
 - (void)_registerPairingChangeHandler;
 @property(readonly, nonatomic) NSUUID *ownerUserUUID;
@@ -54,6 +60,8 @@
 @property(copy, nonatomic) CDUnknownBlockType secureElementSessionPrelude;
 - (BOOL)setOwnerUserUUID:(id)arg1 keybagUUID:(id)arg2;
 - (unsigned long long)ownershipStateForUserUUID:(id)arg1;
+- (void)setOwnerUserUUID:(id)arg1 keybagUUID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)ownershipStateForUserUUID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (BOOL)supportsExpressModeForExpressPassType:(long long)arg1;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
@@ -78,6 +86,8 @@
 - (void)initializeSecureElementQueuingServerConnection:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)remoteAdminCleanupProgress:(double)arg1;
 - (void)secureElement:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;
+- (void)_updateHardwareManagerListener;
+- (void)contactlessPaymentPassesAvailableDidChange;
 - (void)_executeSecureElementSessionHandlersWithPriority:(BOOL)arg1 session:(id)arg2;
 - (void)_accessSecureElementManagerSessionWithPriority:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)accessPrioritySecureElementManagerSessionWithHandler:(CDUnknownBlockType)arg1;

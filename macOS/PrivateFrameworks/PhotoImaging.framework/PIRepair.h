@@ -25,7 +25,6 @@
 - (void).cxx_destruct;
 - (id)outputImage;
 - (id)_applyToImage:(id)arg1 maskImage:(id)arg2 strokeRadius:(double)arg3 inputOffset:(struct CGPoint)arg4 repairEdges:(BOOL)arg5;
-- (void)calcExtentsForStrokeRadius:(double)arg1 offset:(CDStruct_912cb5d2)arg2 inputImageExtent:(CDStruct_996ac03c)arg3 maskExtent:(CDStruct_996ac03c)arg4 repairExtent:(CDStruct_996ac03c *)arg5 textureExtent:(CDStruct_996ac03c *)arg6 border:(long long *)arg7;
 
 @end
 

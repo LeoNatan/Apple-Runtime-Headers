@@ -18,6 +18,8 @@
 @property(readonly, nonatomic) PXSectionedDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)description;
+- (_Bool)areAllItemsSelected;
+- (_Bool)isAnyItemSelected;
 - (_Bool)isIndexPathSelected:(struct PXSimpleIndexPath)arg1;
 - (id)init;
 - (id)initWithDataSource:(id)arg1 selectedIndexPaths:(id)arg2;

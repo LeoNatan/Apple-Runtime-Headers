@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _PUSliderPlayheadBaseView : UIView <PUPhotoEditLayoutStaticAdaptable>
 {
     long long _layoutOrientation;

@@ -7,9 +7,10 @@
 #import "BBSectionInfo.h"
 
 @interface BBSectionInfo (UserNotificationsServer)
+- (void)uns_setPropertiesFromTopicRecord:(id)arg1;
+- (void)uns_setPropertiesFromSourceSettingsDescription:(id)arg1;
 - (int)uns_notificationSettingForBBSectionInfoSetting:(int)arg1;
 - (id)uns_notificationSettings;
-- (id)uns_sectionInfoWithAuthorizationOptions:(unsigned int)arg1;
-- (_Bool)uns_isEnabled;
+- (void)uns_setPropertiesFromAuthorizationOptions:(unsigned int)arg1;
 @end
 

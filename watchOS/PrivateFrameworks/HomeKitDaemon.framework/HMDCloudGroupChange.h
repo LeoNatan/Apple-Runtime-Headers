@@ -6,7 +6,7 @@
 
 #import "HMFObject.h"
 
-@class HMDCloudGroup, NSArray, NSMapTable, NSMutableArray;
+@class HMDCloudChangeTree, HMDCloudGroup, NSArray, NSMutableArray;
 
 @interface HMDCloudGroupChange : HMFObject
 {
@@ -15,9 +15,8 @@
     _Bool _encryptionFailed;
     _Bool _controllerIdentifierChanged;
     HMDCloudGroup *_cloudGroup;
+    HMDCloudChangeTree *_cloudChangeTree;
     NSMutableArray *_cloudChanges;
-    NSMapTable *_objectChangeMap;
-    NSMapTable *_recordChangeMap;
     NSMutableArray *_processingCloudChanges;
     NSMutableArray *_processedCloudChanges;
 }
@@ -25,9 +24,8 @@
 + (id)shortDescription;
 @property(retain, nonatomic) NSMutableArray *processedCloudChanges; // @synthesize processedCloudChanges=_processedCloudChanges;
 @property(retain, nonatomic) NSMutableArray *processingCloudChanges; // @synthesize processingCloudChanges=_processingCloudChanges;
-@property(retain, nonatomic) NSMapTable *recordChangeMap; // @synthesize recordChangeMap=_recordChangeMap;
-@property(retain, nonatomic) NSMapTable *objectChangeMap; // @synthesize objectChangeMap=_objectChangeMap;
 @property(retain, nonatomic) NSMutableArray *cloudChanges; // @synthesize cloudChanges=_cloudChanges;
+@property(retain, nonatomic) HMDCloudChangeTree *cloudChangeTree; // @synthesize cloudChangeTree=_cloudChangeTree;
 @property(readonly, nonatomic) __weak HMDCloudGroup *cloudGroup; // @synthesize cloudGroup=_cloudGroup;
 @property(nonatomic) _Bool controllerIdentifierChanged; // @synthesize controllerIdentifierChanged=_controllerIdentifierChanged;
 @property(nonatomic) _Bool encryptionFailed; // @synthesize encryptionFailed=_encryptionFailed;
@@ -41,32 +39,33 @@
 - (void)setDeleteAsProcessedWithRecordID:(id)arg1;
 - (void)resetRecordWithRecordID:(id)arg1;
 - (void)setSaveAsProcessedWithRecord:(id)arg1;
+- (void)fetchBatchToUpload:(CDUnknownBlockType)arg1;
+- (void)removeChangeWithObjectID:(id)arg1;
+- (void)_removeChange:(id)arg1;
+- (void)addChange:(id)arg1 setAsProcessing:(_Bool)arg2;
+- (void)collectRecordsForBatch;
 - (void)addRootRecordChange;
 - (id)rootRecordModelObject;
-- (void)fetchBatchToUpload:(CDUnknownBlockType)arg1;
-- (void)collectRecordsForBatch;
 @property(readonly, nonatomic, getter=isRootRecordRequired) _Bool rootRecordRequired;
+- (void)setAllChangedAsProcessed;
+- (void)setAsProcessedChange:(id)arg1;
 - (_Bool)moreChangesToProcess;
 - (void)loadCloudRecordsAndDetermineDeletesFromCache:(CDUnknownBlockType)arg1;
-- (void)_determineDeletesFromCache:(CDUnknownBlockType)arg1;
 - (void)loadCloudRecordsFromCache:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) _Bool hasValidChanges;
-- (id)cloudRecordWithObjectID:(id)arg1;
-- (void)cachedCloudRecordWithObjectID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)cachedCloudRecordWithObjectID:(id)arg1;
-- (id)cloudRecordWithName:(id)arg1;
-- (void)removeChangeWithObjectID:(id)arg1;
+- (void)_initializeCloudChanges;
+- (void)loadCloudChangeTreeFromCache:(CDUnknownBlockType)arg1;
+- (void)_loadTreeWithRecordMapping:(id)arg1;
 - (void)addChangeWithDeletedRecordID:(id)arg1;
 - (void)_addChangeWithDeletedCloudRecord:(id)arg1;
 - (void)addChangeWithRecord:(id)arg1;
 - (void)addChangeWithObjectChange:(id)arg1;
-- (void)setAllChangedAsProcessed;
-- (void)setAsProcessedChange:(id)arg1;
-- (void)addChange:(id)arg1 setAsProcessing:(_Bool)arg2;
-- (void)_removeChange:(id)arg1;
+- (id)cloudRecordWithName:(id)arg1;
 - (id)changeWithRecordName:(id)arg1;
+- (id)cachedCloudRecordWithObjectID:(id)arg1;
+- (void)cachedCloudRecordWithObjectID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)cloudRecordWithObjectID:(id)arg1;
 - (id)changeWithObjectID:(id)arg1;
-- (id)transactionStoreRowIDsForObjectID:(id)arg1;
+@property(readonly, nonatomic) _Bool hasValidChanges;
 @property(readonly, nonatomic) NSArray *processedTransactionStoreRowIDs;
 @property(readonly, nonatomic) NSArray *allTransactionStoreRowIDs;
 - (id)description;

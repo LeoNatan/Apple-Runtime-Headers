@@ -6,44 +6,39 @@
 
 #import "NSObject.h"
 
-@class NSPredicate, PHCollectionList, PHFetchOptions, PHFetchResult;
+@class PHCollectionList, PHFetchOptions, PHFetchResult;
 
 @interface PXPhotoKitCollectionsDataSourceManagerConfiguration : NSObject
 {
-    _Bool _isRootSharedAlbum;
-    _Bool _isRootFolder;
-    _Bool _shouldHideEmptyCollections;
-    _Bool _shouldHideSmartAlbums;
-    _Bool _canShowVirtualCollections;
-    _Bool _isPickingSession;
-    _Bool _canShowPeopleAlbum;
-    _Bool _canShowScenesAlbum;
-    _Bool _canShowMemoriesAlbum;
-    PHCollectionList *_collectionList;
+    _Bool _separateSectionsForSmartAndUserCollections;
+    _Bool _includePeopleAlbum;
+    _Bool _skipKeyAssetFetches;
+    _Bool _shouldIgnoreLibraryChanges;
     PHFetchResult *_collectionsFetchResult;
-    NSPredicate *_assetFilteringPredicate;
-    long long _filteringAssetTypes;
+    PHCollectionList *_collectionList;
+    unsigned long long _assetTypesToInclude;
+    unsigned long long _collectionTypesToInclude;
 }
 
-@property(nonatomic) long long filteringAssetTypes; // @synthesize filteringAssetTypes=_filteringAssetTypes;
-@property(retain) NSPredicate *assetFilteringPredicate; // @synthesize assetFilteringPredicate=_assetFilteringPredicate;
-@property _Bool canShowMemoriesAlbum; // @synthesize canShowMemoriesAlbum=_canShowMemoriesAlbum;
-@property _Bool canShowScenesAlbum; // @synthesize canShowScenesAlbum=_canShowScenesAlbum;
-@property _Bool canShowPeopleAlbum; // @synthesize canShowPeopleAlbum=_canShowPeopleAlbum;
-@property(readonly) _Bool isPickingSession; // @synthesize isPickingSession=_isPickingSession;
-@property _Bool canShowVirtualCollections; // @synthesize canShowVirtualCollections=_canShowVirtualCollections;
-@property _Bool shouldHideSmartAlbums; // @synthesize shouldHideSmartAlbums=_shouldHideSmartAlbums;
-@property _Bool shouldHideEmptyCollections; // @synthesize shouldHideEmptyCollections=_shouldHideEmptyCollections;
-@property _Bool isRootFolder; // @synthesize isRootFolder=_isRootFolder;
-@property _Bool isRootSharedAlbum; // @synthesize isRootSharedAlbum=_isRootSharedAlbum;
-@property(retain) PHFetchResult *collectionsFetchResult; // @synthesize collectionsFetchResult=_collectionsFetchResult;
-@property(retain) PHCollectionList *collectionList; // @synthesize collectionList=_collectionList;
+@property _Bool shouldIgnoreLibraryChanges; // @synthesize shouldIgnoreLibraryChanges=_shouldIgnoreLibraryChanges;
+@property(nonatomic) unsigned long long collectionTypesToInclude; // @synthesize collectionTypesToInclude=_collectionTypesToInclude;
+@property(nonatomic) unsigned long long assetTypesToInclude; // @synthesize assetTypesToInclude=_assetTypesToInclude;
+@property(nonatomic) _Bool skipKeyAssetFetches; // @synthesize skipKeyAssetFetches=_skipKeyAssetFetches;
+@property(nonatomic) _Bool includePeopleAlbum; // @synthesize includePeopleAlbum=_includePeopleAlbum;
+@property(nonatomic) _Bool separateSectionsForSmartAndUserCollections; // @synthesize separateSectionsForSmartAndUserCollections=_separateSectionsForSmartAndUserCollections;
+@property(readonly) PHCollectionList *collectionList; // @synthesize collectionList=_collectionList;
 - (void).cxx_destruct;
-- (id)dataSourceManagerConfigurationWithCollectionsFetchResult:(id)arg1;
-- (id)dataSourceManagerConfigurationWithCollectionList:(id)arg1;
+- (id)_generatePredicateForAssetTypesToInclude;
+- (id)_newConfigurationWithCollectionList:(id)arg1 collectionsFetchResult:(id)arg2;
+- (_Bool)isRootFolder;
+- (void)setIsRootFolder:(_Bool)arg1;
+- (id)newConfigurationWithCollectionsFetchResult:(id)arg1;
+- (id)newConfigurationWithCollectionList:(id)arg1;
 @property(readonly) PHFetchOptions *customFetchOptions;
-- (id)initWithCollectionList:(id)arg1 collectionsFetchResult:(id)arg2 isPickingSession:(_Bool)arg3;
+@property(readonly) PHFetchResult *collectionsFetchResult; // @synthesize collectionsFetchResult=_collectionsFetchResult;
 - (id)initWithCollectionList:(id)arg1 collectionsFetchResult:(id)arg2;
+- (id)initWithCollectionsFetchResult:(id)arg1;
+- (id)initWithCollectionList:(id)arg1;
 - (id)init;
 
 @end

@@ -9,7 +9,7 @@
 #import "NSURLConnectionDelegate.h"
 #import "WFTemperatureUnitObserver.h"
 
-@class City, NSArray, NSString, WeatherCloudPreferences;
+@class City, NSArray, NSDate, NSString, WeatherCloudPreferences;
 
 @interface WeatherPreferences : NSObject <WFTemperatureUnitObserver, NSURLConnectionDelegate>
 {
@@ -35,6 +35,7 @@
 @property(nonatomic) _Bool userGroupPrefsLockedWhenInit; // @synthesize userGroupPrefsLockedWhenInit=_userGroupPrefsLockedWhenInit;
 @property(nonatomic) __weak id <SynchronizedDefaultsDelegate> syncDelegate; // @synthesize syncDelegate=_syncDelegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSDate *lastUpdated;
 - (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnitTo:(int)arg2;
 - (_Bool)areCitiesDefault:(id)arg1;
 - (void)saveToUbiquitousStore;

@@ -10,6 +10,7 @@
 
 @protocol NUImageProperties <NSObject>
 @property(readonly) id <NURAWImageProperties> rawProperties;
+@property(readonly) id <NUPortraitEffectsMatteProperties> portraitEffectsMatteProperties;
 @property(readonly) id <NUDepthProperties> depthProperties;
 @property(readonly) long long componentInfo;
 @property(readonly) long long alphaInfo;

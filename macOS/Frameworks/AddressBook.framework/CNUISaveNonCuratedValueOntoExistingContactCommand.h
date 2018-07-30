@@ -8,7 +8,6 @@
 
 @class CNContact, CNContactStore, CNLabeledValue, CNUIEditContactCommand, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNUISaveNonCuratedValueOntoExistingContactCommand : CNUIUndoableCommand
 {
     CNContactStore *_contactStore;

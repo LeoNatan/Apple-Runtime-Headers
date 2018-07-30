@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 + (id)colorNames;
 + (struct CGSize)sizeWithImagePosition:(unsigned long long)arg1;
 + (Class)cellClass;
-- (void)setForApplyingTags:(_Bool)arg1;
+- (void)setForApplyingFavoriteTags:(_Bool)arg1;
 - (unsigned long long)whichFavoriteTagsWillRemove;
 - (void)setWhichFavoriteTagsWillRemove:(unsigned long long)arg1;
 - (long long)favoriteValue;

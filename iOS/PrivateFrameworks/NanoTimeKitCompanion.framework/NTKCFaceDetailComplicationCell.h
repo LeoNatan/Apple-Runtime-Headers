@@ -24,6 +24,8 @@
 - (void).cxx_destruct;
 - (id)_activeColor;
 - (id)_inactiveColor;
+- (id)_disabledColor;
+- (void)_updateState;
 - (void)_updateDetailText;
 - (id)initWithSlot:(id)arg1 dateSlot:(_Bool)arg2 inFace:(id)arg3;
 - (double)rowHeight;

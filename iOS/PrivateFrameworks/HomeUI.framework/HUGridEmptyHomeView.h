@@ -13,6 +13,7 @@
     id <HUGridEmptyHomeViewDelegate> _delegate;
     UILabel *_instructionsLabel;
     HUColoredButton *_addAccessoryButton;
+    HUChevronButton *_learnToAddAccessoryButton;
     HUChevronButton *_storeButton;
     NSArray *_constraints;
 }
@@ -20,13 +21,16 @@
 + (_Bool)requiresConstraintBasedLayout;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) HUChevronButton *storeButton; // @synthesize storeButton=_storeButton;
+@property(retain, nonatomic) HUChevronButton *learnToAddAccessoryButton; // @synthesize learnToAddAccessoryButton=_learnToAddAccessoryButton;
 @property(retain, nonatomic) HUColoredButton *addAccessoryButton; // @synthesize addAccessoryButton=_addAccessoryButton;
 @property(retain, nonatomic) UILabel *instructionsLabel; // @synthesize instructionsLabel=_instructionsLabel;
 @property(nonatomic) __weak id <HUGridEmptyHomeViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)updateConstraints;
+- (void)_openLearnToAddAccessories:(id)arg1;
 - (void)_openStore:(id)arg1;
 - (void)_addNewAccessory:(id)arg1;
+@property(readonly, nonatomic) _Bool canAddAccessories;
 - (void)didMoveToSuperview;
 - (void)tintColorDidChange;
 - (void)_setupCommonAppearance;

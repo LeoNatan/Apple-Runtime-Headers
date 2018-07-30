@@ -8,7 +8,7 @@
 
 #import "CPLPullChangeSessionImplementation.h"
 
-@class CPLChangeBatch, CPLEngineChangePipe, CPLEngineClientCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineScheduler, CPLEngineStore, NSString;
+@class CPLChangeBatch, CPLEngineChangePipe, CPLEngineClientCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineScheduler, CPLEngineScopeStorage, CPLEngineStore, NSString;
 
 @interface CPLDirectPullChangeSession : CPLDirectChangeSession <CPLPullChangeSessionImplementation>
 {
@@ -16,10 +16,11 @@
     CPLChangeBatch *_pendingAckForBatch;
     CPLChangeBatch *_expandedCloudBatch;
     CPLChangeBatch *_expandedClientBatch;
-    BOOL _pushRepositoryIsEmpty;
+    CPLChangeBatch *_scopeChangesBatch;
     NSString *_lastSeenLibraryVersion;
     CPLEngineLibrary *_engineLibrary;
     CPLEngineStore *_store;
+    CPLEngineScopeStorage *_scopes;
     CPLEngineChangePipe *_pullQueue;
     CPLEngineIDMapping *_idMapping;
     CPLEngineClientCache *_clientCache;

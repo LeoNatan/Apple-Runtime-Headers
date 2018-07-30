@@ -8,10 +8,11 @@
 
 #import "RTPurgable.h"
 
-@class NSDictionary, NSManagedObjectContext, NSObject<OS_dispatch_queue>, NSString, RTDefaultsManager, RTEventManager, RTInvocationDispatcher, RTLearnedLocationManager, RTLocationShifter, RTMetricManager, RTPersistenceManager;
+@class NSDictionary, NSManagedObjectContext, NSObject<OS_dispatch_queue>, NSString, RTDefaultsManager, RTEventLocationIdentifier, RTEventManager, RTInvocationDispatcher, RTLearnedLocationManager, RTLocationShifter, RTMetricManager, RTPersistenceManager;
 
 @interface RTEventModelProvider : NSObject <RTPurgable>
 {
+    RTEventLocationIdentifier *_reusableLookupIdentifier;
     BOOL _locationsOfInterestsAvailable;
     int _highProbabilityItemMinNumOfEvents;
     NSObject<OS_dispatch_queue> *_queue;
@@ -46,7 +47,7 @@
 - (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_deleteUserInteractionsBeforeDate:(id)arg1;
 - (BOOL)_persistUserInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2 feedback:(id)arg3;
-- (void)userInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2 feedback:(id)arg3 geoMapItem:(id)arg4 handler:(CDUnknownBlockType)arg5;
+- (void)userInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2 feedback:(id)arg3 mapItem:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)restoreEventModelWithHandler:(CDUnknownBlockType)arg1;
 - (void)persistEventModel;
 - (void)restoreEventModelIfAppropriate;

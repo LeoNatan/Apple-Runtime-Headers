@@ -10,8 +10,8 @@
 
 @interface WebBookmarkLeaf : WebBookmark
 {
-    BOOL _shouldReleaseIconForHost;
     NSString *_threadUnsafeUserVisibleURLString;
+    BOOL _shouldReleaseIconForHost;
     BOOL _threadUnsafeShouldNeverFetchMetadata;
     BOOL _threadUnsafeHasUserDefinedPreviewText;
     NSURL *_threadUnsafeImageURL;
@@ -45,6 +45,7 @@
 - (BOOL)mergeAttributesFromBookmark:(id)arg1;
 - (BOOL)updateByCopyingAttributesFromBookmark:(id)arg1 withExistingBookmarksByUUID:(id)arg2;
 - (id)description;
+- (id)url;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTopSite:(struct TopSite *)arg1;
 - (id)initFromDictionaryRepresentation:(id)arg1 topLevelOnly:(BOOL)arg2 withGroup:(id)arg3;

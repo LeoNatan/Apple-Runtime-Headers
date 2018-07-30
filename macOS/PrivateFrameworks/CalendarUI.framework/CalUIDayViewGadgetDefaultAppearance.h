@@ -61,7 +61,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) BOOL isHourHeightFixed;
 @property(readonly) BOOL shouldAllDayEventsShowColorBar;
-@property(readonly) char *shouldAlwaysDrawAllDayArea;
+@property(readonly) BOOL shouldAlwaysDrawAllDayArea;
 @property(readonly) BOOL shouldDisplayCurrentTime;
 @property(readonly) BOOL shouldDisplayPreviewEventsAsTentative;
 @property(readonly) BOOL shouldDrawAllDaySeparator;

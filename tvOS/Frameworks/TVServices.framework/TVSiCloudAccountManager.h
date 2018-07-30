@@ -28,7 +28,6 @@
 - (id)_titleForError:(id)arg1 account:(id)arg2;
 - (id)_messageForError:(id)arg1;
 - (void)_handleAuthenticationError:(id)arg1 forAccount:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)_isAccountInLilacMode:(id)arg1;
 - (_Bool)_isPasswordRequiredToValidateAccount:(id)arg1;
 - (void)_renewCredentialsForAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_saveAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) id <CNUIUserActionTemplateImage> coreTemplateImage; // @synthesize coreTemplateImage=_coreTemplateImage;
 - (void).cxx_destruct;
+- (id)templateImage;
 - (id)imageWithColor:(id)arg1;
 - (id)initWithCoreTemplateImage:(id)arg1;
 

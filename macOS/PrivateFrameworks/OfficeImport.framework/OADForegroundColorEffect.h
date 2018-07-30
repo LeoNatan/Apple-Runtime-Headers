@@ -8,18 +8,17 @@
 
 @class OADColor;
 
-__attribute__((visibility("hidden")))
 @interface OADForegroundColorEffect : OADBlipEffect
 {
     OADColor *mForegroundColor;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setStyleColor:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (id)foregroundColor;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

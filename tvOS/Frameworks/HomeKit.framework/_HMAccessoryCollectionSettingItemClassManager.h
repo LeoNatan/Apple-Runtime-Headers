@@ -6,17 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class HMFUnfairLock, NSMutableDictionary;
 
 @interface _HMAccessoryCollectionSettingItemClassManager : NSObject
 {
+    HMFUnfairLock *_lock;
     NSMutableDictionary *_classes;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (id)sharedManager;
 + (id)defaultItemValueClasses;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 - (void)setItemValueClasses:(id)arg1 forKeyPath:(id)arg2;
 - (id)itemValueClassesForKeyPath:(id)arg1;

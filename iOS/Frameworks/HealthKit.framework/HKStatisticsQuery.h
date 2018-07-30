@@ -20,6 +20,7 @@
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 @property(retain, nonatomic, getter=_dateInterval, setter=_setDateInterval:) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(nonatomic) unsigned long long mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -30,7 +31,6 @@
 - (void)queue_validate;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_filter;
 - (id)_filterForDateInterval:(id)arg1;
 - (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;

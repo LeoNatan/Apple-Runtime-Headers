@@ -17,10 +17,10 @@
     id _defaultValue;
 }
 
-+ (id)_classNameForType:(unsigned long long)arg1;
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
 + (id)stringForAttributeType:(unsigned long long)arg1;
++ (id)_classNameForType:(unsigned long long)arg1;
 @property BOOL preserveValueOnDeletionInPersistentHistory;
 @property BOOL allowsExternalBinaryDataStorage;
 - (id)validationWarnings;
@@ -32,13 +32,13 @@
 @property unsigned long long attributeType;
 @property(copy) NSString *attributeValueClassName;
 - (id)description;
+- (BOOL)_isSchemaEqual:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_sortOutDefaultNumericValuesBecauseDoublesAndFloatsDontCompareEqualAndThatBreaksTests;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)_initWithName:(id)arg1 type:(unsigned long long)arg2 withClassName:(id)arg3;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6 fetchRequests:(id)arg7;
 - (void)setStoresBinaryDataExternally:(BOOL)arg1;
 - (BOOL)storesBinaryDataExternally;
@@ -56,6 +56,8 @@
 - (id)_rawValidationWarnings;
 - (id)_rawValidationPredicates;
 - (BOOL)_epsilonEquals:(id)arg1 rhs:(id)arg2 withFlags:(int)arg3;
+@property BOOL isFileBackedFuture;
+- (id)_initWithName:(id)arg1 type:(unsigned long long)arg2 withClassName:(id)arg3;
 
 @end
 

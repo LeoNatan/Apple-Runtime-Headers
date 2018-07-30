@@ -8,7 +8,6 @@
 
 @class OADColor, OADPattern;
 
-__attribute__((visibility("hidden")))
 @interface OADPatternFill : OADFill
 {
     OADColor *mFgColor;
@@ -17,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (id)namedImageDataWithBlipCollection:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAnythingOverridden;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

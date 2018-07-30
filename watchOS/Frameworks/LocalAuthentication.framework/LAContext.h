@@ -53,6 +53,7 @@
 @property(copy, nonatomic) NSString *localizedFallbackTitle;
 - (void)_setServerPropertyForOption:(int)arg1 value:(id)arg2;
 - (id)_serverPropertyValueForOption:(int)arg1;
+- (void)setShowingCoachingHint:(_Bool)arg1 event:(int)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)prearmTouchIDWithReply:(CDUnknownBlockType)arg1;
 - (_Bool)isCredentialSet:(int)arg1;

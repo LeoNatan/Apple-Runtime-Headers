@@ -29,6 +29,7 @@
 @property(nonatomic) BOOL pendingUpdate; // @synthesize pendingUpdate=_pendingUpdate;
 @property(nonatomic) BOOL hasAssertions; // @synthesize hasAssertions=_hasAssertions;
 @property(nonatomic) id <TIKeyboardAssertionManagerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)releaseBackgroundActivityAssertion;
 - (void)retainBackgroundActivityAssertion;
 - (void)removeAssertionForObject:(id)arg1;
@@ -37,7 +38,6 @@
 - (void)performUpdate;
 - (void)scheduleUpdate;
 - (id)init;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,7 +11,7 @@
 }
 
 + (id)conditionRecordType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

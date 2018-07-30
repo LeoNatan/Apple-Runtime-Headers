@@ -9,10 +9,11 @@
 #import "NSCopying.h"
 #import "NTKAVListing.h"
 
-@class CLKVideo, NSString, UIColor, UIImage;
+@class CLKDevice, CLKVideo, NSString, UIColor, UIImage;
 
 @interface NTKVideoListing : NSObject <NSCopying, NTKAVListing>
 {
+    CLKDevice *_device;
     CLKVideo *_video;
     UIImage *_image;
     NSString *_name;
@@ -37,7 +38,7 @@
 @property(readonly, nonatomic) UIImage *image;
 @property(readonly, nonatomic) CLKVideo *video;
 - (void)_setHasAssets;
-- (id)initWithName:(id)arg1 videoName:(id)arg2 transitionImageName:(id)arg3 overlayColor:(id)arg4 theme:(unsigned long long)arg5 variant:(long long)arg6 clip:(long long)arg7 tags:(unsigned long long)arg8;
+- (id)initForDevice:(id)arg1 withName:(id)arg2 videoName:(id)arg3 transitionImageName:(id)arg4 overlayColor:(id)arg5 theme:(unsigned long long)arg6 variant:(long long)arg7 clip:(long long)arg8 tags:(unsigned long long)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

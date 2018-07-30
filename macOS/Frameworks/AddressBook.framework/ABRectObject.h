@@ -8,7 +8,6 @@
 
 #import "NSSecureCoding.h"
 
-__attribute__((visibility("hidden")))
 @interface ABRectObject : NSObject <NSSecureCoding>
 {
     struct CGRect _rect;

@@ -6,7 +6,6 @@
 
 #import <AddressBook/CNUIUndoableCommand.h>
 
-__attribute__((visibility("hidden")))
 @interface CNUISaveNonCuratedContactCommand : CNUIUndoableCommand
 {
     CNUIUndoableCommand *_command;

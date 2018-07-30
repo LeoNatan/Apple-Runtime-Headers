@@ -35,6 +35,7 @@
 - (id)correctedHardlinkURLFileExtensionForExtention:(id)arg1;
 - (id)generateHardLinkURLIfNecessaryForURL:(id)arg1 withFileName:(id)arg2;
 - (id)generateHardLinkURLIfNecessaryForURL:(id)arg1;
+- (id)generateTemporaryURLWithExtension:(id)arg1;
 @property(readonly) NSURL *previewItemURL;
 - (id)titleForSubAttachment:(id)arg1;
 - (id)hardLinkFolderPath;
@@ -59,6 +60,7 @@
 - (BOOL)shouldSyncPreviewImageToCloud:(id)arg1;
 - (short)sectionForSubAttachments;
 - (void)updateAttachmentSize;
+- (void)attachmentIsDeallocating:(id)arg1;
 - (void)attachmentDidRefresh:(BOOL)arg1;
 - (void)attachmentWillRefresh:(BOOL)arg1;
 - (void)attachmentWillTurnIntoFault;

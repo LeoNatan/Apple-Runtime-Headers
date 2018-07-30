@@ -11,10 +11,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
+- (void)flush;
 - (_Bool)needsUpdateForProperty:(unsigned int)arg1;
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
+-     // Error parsing type: v32@0:8r^{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}16r^{atomic<bool>=AB}24, name: prefetchValueOnSecondaryThread:cancelled:
 - (id)defaultValue;
+- (id)init;
 
 @end
 

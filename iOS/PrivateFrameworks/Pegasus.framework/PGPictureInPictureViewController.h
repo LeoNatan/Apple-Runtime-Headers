@@ -37,13 +37,16 @@
         unsigned int pictureInPictureViewControllerCancelButtonTapped:1;
     } _delegateRespondsTo;
     struct CGSize _preferredContentSize;
+    _Bool _showsChrome;
     PGPictureInPictureApplication *_application;
     id <PGPictureInPictureViewControllerContentContainer> _contentContainer;
     long long _controlsStyle;
 }
 
 + (void)animateViewWithAnimationType:(long long)arg1 initialSpringVelocity:(double)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
++ (double)contentViewCornerRadius;
 @property(readonly, nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
+@property(nonatomic) _Bool showsChrome; // @synthesize showsChrome=_showsChrome;
 @property(nonatomic) __weak id <PGPictureInPictureViewControllerContentContainer> contentContainer; // @synthesize contentContainer=_contentContainer;
 @property(readonly, nonatomic) __weak PGPictureInPictureApplication *application; // @synthesize application=_application;
 - (void).cxx_destruct;
@@ -52,22 +55,27 @@
 - (void)pictureInPictureControlsViewControllerCancelButtonTapped:(id)arg1;
 - (void)pictureInPictureControlsViewControllerActionButtonTapped:(id)arg1;
 - (void)pictureInPictureControlsViewControllerStopButtonTapped:(id)arg1;
+- (void)_handleTapGestureRecognizer:(id)arg1;
 - (void)stopShowingControlsAnimated:(_Bool)arg1;
 - (void)startShowingControlsAnimated:(_Bool)arg1;
+- (void)relinquishInterfaceOrientationLockWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)acquireInterfaceOrientationLockWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performRotateAnimationWithRotation:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performResumeAnimationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performSuspendAnimationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)performStopAnimationWithFinalLayerFrame:(struct CGRect)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)performStopAnimationWithFinalInterfaceOrientation:(long long)arg1 finalLayerFrame:(struct CGRect)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performStartAnimationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)prepareStartAnimationWithInitialLayerFrame:(struct CGRect)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)prepareStartAnimationWithInitialInterfaceOrientation:(long long)arg1 initialLayerFrame:(struct CGRect)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setPreferredContentSize:(struct CGSize)arg1;
 - (struct CGSize)preferredContentSize;
+@property(readonly, nonatomic) UIView *contentContainerView;
 - (void)loadView;
 - (void)setStashState:(long long)arg1 animated:(_Bool)arg2;
 - (void)hostedWindowSizeChangeEnded;
 - (void)hostedWindowSizeChangeBegan;
 - (void)updateLayerHostTransform:(struct CGAffineTransform)arg1;
 - (void)updateHostedWindowSize:(struct CGSize)arg1;
+- (void)setShowsChrome:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic) __weak id <PGPictureInPictureViewControllerDelegate> delegate;
 @property(retain, nonatomic) NSArray *loadedTimeRanges;
 @property(retain, nonatomic) PGPlaybackProgress *playbackProgress;

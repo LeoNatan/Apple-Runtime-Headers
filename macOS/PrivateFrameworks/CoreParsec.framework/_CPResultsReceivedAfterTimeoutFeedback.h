@@ -14,7 +14,6 @@
 
 @interface _CPResultsReceivedAfterTimeoutFeedback : PBCodable <_CPProcessableFeedback, _CPResultsReceivedAfterTimeoutFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
     NSArray *_results;
 }
@@ -34,7 +33,6 @@
 - (unsigned long long)resultsCount;
 - (void)addResults:(id)arg1;
 - (void)clearResults;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

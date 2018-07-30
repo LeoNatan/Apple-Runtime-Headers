@@ -10,9 +10,7 @@
 
 @protocol _SFPBTitleSubtitleTuple <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasSubtitle;
 @property(copy, nonatomic) NSString *subtitle;
-@property(readonly, nonatomic) _Bool hasTitle;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)accessibilityAttributeValue:(id)arg1;
+- (void)stopTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 mouseIsUp:(BOOL)arg4;
 - (BOOL)continueTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3;
 - (BOOL)startTrackingAt:(struct CGPoint)arg1 inView:(id)arg2;
 

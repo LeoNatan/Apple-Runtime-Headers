@@ -13,6 +13,7 @@
 }
 
 + (id)sharedManager;
+- (void)clearAdvertisingIdentifier;
 @property(readonly, nonatomic) NSUUID *advertisingIdentifier;
 @property(readonly, nonatomic, getter=isAdvertisingTrackingEnabled) _Bool advertisingTrackingEnabled;
 

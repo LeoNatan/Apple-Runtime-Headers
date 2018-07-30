@@ -15,6 +15,8 @@
 }
 
 - (void)getCurrentGeoServicesState:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)getGeoServicesCacheDirectoryPath;
+- (id)getHomeDirectoryPath;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

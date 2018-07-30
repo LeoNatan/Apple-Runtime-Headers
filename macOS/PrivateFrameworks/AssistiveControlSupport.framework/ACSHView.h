@@ -6,6 +6,8 @@
 
 #import "NSView.h"
 
+@class NSUndoManager;
+
 @interface ACSHView : NSView
 {
     unsigned long long _order;
@@ -15,11 +17,11 @@
 - (void)dealloc;
 - (void)resumeTracking;
 - (void)suspendTracking;
-- (double)scaleFactorToDrawAt;
+@property(readonly, nonatomic) double scaleFactorToDrawAt;
 - (void)clearImageCache;
 - (void)addSubview:(id)arg1;
 - (void)updateDepthBasedInformation;
-- (id)undoManager;
+@property(readonly, nonatomic) NSUndoManager *undoManager;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)viewDidMoveToWindow;

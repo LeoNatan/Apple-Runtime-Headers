@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     TSSStylesheet *_stylesheet;
 }
 
++ (_Bool)shouldShowImportedDataNotificationsOnOpen;
 + (struct CGSize)previewImageMaxSizeForType:(unsigned long long)arg1;
 + (struct CGSize)previewImageSizeForType:(unsigned long long)arg1;
 @property(retain, nonatomic) TSSStylesheet *stylesheet; // @synthesize stylesheet=_stylesheet;

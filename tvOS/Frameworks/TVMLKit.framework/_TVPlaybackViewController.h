@@ -4,46 +4,43 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "TVPPlaybackViewController.h"
+#import "UIViewController.h"
 
-@class UIViewController;
+@class _TVMLPlaybackViewController, _TVPlayer;
 
 __attribute__((visibility("hidden")))
-@interface _TVPlaybackViewController : TVPPlaybackViewController
+@interface _TVPlaybackViewController : UIViewController
 {
-    UIViewController *_overlayViewController;
-    _Bool _viewDidAppear;
     struct {
         _Bool respondsToCustomAnimatorForNavigationControllerOperation;
         _Bool respondsToViewWillAppear;
         _Bool respondsToViewDidAppear;
         _Bool respondsToViewWillDisappear;
         _Bool respondsToViewDidDisappear;
-    } _tvPlaybackDelegateFlags;
-    _Bool _interactiveOverlayDismissable;
-    UIViewController *_interactiveOverlayViewController;
+    } _delegateFlags;
+    _Bool _stopPlaybackWhenDismissed;
+    _TVPlayer *_player;
+    id <_TVPlaybackViewControllerDelegate> _delegate;
+    UIViewController *_playbackViewController;
 }
 
-@property(retain, nonatomic) UIViewController *interactiveOverlayViewController; // @synthesize interactiveOverlayViewController=_interactiveOverlayViewController;
-@property(retain, nonatomic) UIViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
-@property(nonatomic, getter=isInteractiveOverlayDismissable) _Bool interactiveOverlayDismissable; // @synthesize interactiveOverlayDismissable=_interactiveOverlayDismissable;
+@property(retain, nonatomic) UIViewController *playbackViewController; // @synthesize playbackViewController=_playbackViewController;
+@property(nonatomic) __weak id <_TVPlaybackViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) _TVPlayer *player; // @synthesize player=_player;
+@property(nonatomic) _Bool stopPlaybackWhenDismissed; // @synthesize stopPlaybackWhenDismissed=_stopPlaybackWhenDismissed;
 - (void).cxx_destruct;
-- (void)_currentChildViewControllerDidChangeFrom:(id)arg1;
-- (void)_currentChildViewControllerWillChangeTo:(id)arg1;
+- (void)_hostPlaybackViewController;
+- (void)_initPlaybackViewController;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)loadView;
-- (void)navigationControllerDidShowViewController:(id)arg1;
-- (void)dealloc;
-- (void)_presentInteractiveOverlay:(_Bool)arg1;
-- (void)setInteractiveOverlayViewController:(id)arg1 animated:(_Bool)arg2;
-- (void)_dismissPlayerFromInteractiveOverlay;
-- (void)_updateInteractiveOverlayDismissableState;
-- (void)setPlaybackDelegate:(id)arg1;
+- (void)viewDidLoad;
+@property(readonly, nonatomic) _TVMLPlaybackViewController *tvmlPlaybackViewController;
+- (id)initWithPlayer:(id)arg1;
 
 @end
 

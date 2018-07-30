@@ -53,10 +53,9 @@
 - (void).cxx_destruct;
 - (void)resizeSubtitles;
 - (long long)getHeightForText:(id)arg1 maxSize:(long long)arg2 font:(id)arg3;
-- (double)getWidthOfString:(id)arg1 font:(id)arg2;
 - (BOOL)isAccessibilityElement;
 - (void)updateConstraints;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)awakeFromNib;
 
 @end
 

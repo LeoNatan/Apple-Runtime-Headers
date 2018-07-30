@@ -4,6 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#pragma mark Blocks
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
 #pragma mark Named Structures
 
 struct CGPoint {
@@ -27,6 +31,8 @@ struct FaceList {
     struct list<vision::DCN::boundingbox, std::__1::allocator<vision::DCN::boundingbox>> _field1;
 };
 
+struct __CVBuffer;
+
 struct __list_node_base<vision::DCN::boundingbox, void *> {
     struct __list_node_base<vision::DCN::boundingbox, void *> *_field1;
     struct __list_node_base<vision::DCN::boundingbox, void *> *_field2;
@@ -34,7 +40,35 @@ struct __list_node_base<vision::DCN::boundingbox, void *> {
 
 struct __shared_weak_count;
 
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *__left_;
+};
+
 struct abstract_context;
+
+struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned int __cap_;
+                    unsigned int __size_;
+                    char *__data_;
+                } __l;
+                struct __short {
+                    union {
+                        unsigned char __size_;
+                        char __lx;
+                    } ;
+                    char __data_[11];
+                } __s;
+                struct __raw {
+                    unsigned long __words[3];
+                } __r;
+            } ;
+        } __value_;
+    } __r_;
+};
 
 struct blob<float, 3>;
 
@@ -51,6 +85,54 @@ struct list<vision::DCN::boundingbox, std::__1::allocator<vision::DCN::boundingb
     } _field2;
 };
 
+struct map<int, ETDataPoint *, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, ETDataPoint *>>> {
+    struct __tree<std::__1::__value_type<int, ETDataPoint *>, std::__1::__map_value_compare<int, std::__1::__value_type<int, ETDataPoint *>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, ETDataPoint *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, ETDataPoint *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, ETDataPoint *>, std::__1::less<int>, true>> {
+            unsigned long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
+struct map<std::__1::basic_string<char>, ETDataPoint_buffer, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, ETDataPoint_buffer>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, ETDataPoint_buffer>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, ETDataPoint_buffer>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, ETDataPoint_buffer>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, ETDataPoint_buffer>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, ETDataPoint_buffer>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
+struct map<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
+struct map<std::__1::basic_string<char>, vImage_Buffer, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, vImage_Buffer>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, vImage_Buffer>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, vImage_Buffer>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, vImage_Buffer>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, vImage_Buffer>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, vImage_Buffer>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
 struct net;
 
 struct net_strides_configuration {
@@ -58,6 +140,15 @@ struct net_strides_configuration {
     struct vector<int, std::__1::allocator<int>> kernel_size;
     struct vector<int, std::__1::allocator<int>> stride;
     struct vector<int, std::__1::allocator<int>> pad;
+};
+
+struct options {
+    float lr;
+    float lr_decay_epoch;
+    float momentum;
+    float weight_decay;
+    _Bool l2_regularization;
+    int verbose;
 };
 
 struct pair<unsigned long long, unsigned long long> {
@@ -110,6 +201,14 @@ struct vector<FaceLandmarkDetectorPoint, std::__1::allocator<FaceLandmarkDetecto
     } _field3;
 };
 
+struct vector<__CVBuffer *, std::__1::allocator<__CVBuffer *>> {
+    struct __CVBuffer **__begin_;
+    struct __CVBuffer **__end_;
+    struct __compressed_pair<__CVBuffer **, std::__1::allocator<__CVBuffer *>> {
+        struct __CVBuffer **__value_;
+    } __end_cap_;
+};
+
 struct vector<double, std::__1::allocator<double>> {
     double *__begin_;
     double *__end_;
@@ -158,9 +257,52 @@ struct vector<std::__1::shared_ptr<Espresso::net>, std::__1::allocator<std::__1:
     } __end_cap_;
 };
 
+struct vector<void *, std::__1::allocator<void *>> {
+    void **__begin_;
+    void **__end_;
+    struct __compressed_pair<void **, std::__1::allocator<void *>> {
+        void **__value_;
+    } __end_cap_;
+};
+
 #pragma mark Typedef'd Structures
 
+typedef struct {
+    void *data;
+    void *reserved;
+    unsigned long dim[4];
+    unsigned long stride[4];
+    unsigned int width;
+    unsigned int height;
+    unsigned int channels;
+    unsigned int batch_number;
+    unsigned int sequence_length;
+    unsigned int stride_width;
+    unsigned int stride_height;
+    unsigned int stride_channels;
+    unsigned int stride_batch_number;
+    unsigned int stride_sequence_length;
+    int storage_type;
+} CDStruct_f9cfda8c;
+
+typedef struct {
+    void *plan;
+    int network_index;
+} CDStruct_2bc666a5;
+
 // Template types
+typedef struct map<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<Espresso::blob<float, 4>>>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long __value_;
+        } __pair3_;
+    } __tree_;
+} map_d09bf3e1;
+
 typedef struct shared_ptr<Espresso::abstract_context> {
     struct abstract_context *__ptr_;
     struct __shared_weak_count *__cntrl_;

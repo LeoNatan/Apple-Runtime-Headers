@@ -10,6 +10,7 @@
 
 @class NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface TUSandboxExtendedURL : NSObject <NSSecureCoding>
 {
     NSString *_sandboxExtensionClass;

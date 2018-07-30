@@ -8,7 +8,6 @@
 
 @class NSObject<OS_dispatch_queue>;
 
-__attribute__((visibility("hidden")))
 @interface ABCNDDScanner : NSObject
 {
     NSObject<OS_dispatch_queue> *_analysisQueue;

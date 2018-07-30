@@ -8,7 +8,7 @@
 
 #import "MLModelSpecificationLoader.h"
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface MLSVMEngine : NSObject <MLModelSpecificationLoader>
 {
@@ -19,7 +19,7 @@
     NSArray *_classLabels;
 }
 
-+ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
++ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
 @property(retain, nonatomic) NSArray *classLabels; // @synthesize classLabels=_classLabels;
 @property unsigned long long inputSize; // @synthesize inputSize=_inputSize;
 @property _Bool isInputSizeLowerBoundOnly; // @synthesize isInputSizeLowerBoundOnly=_isInputSizeLowerBoundOnly;
@@ -36,6 +36,12 @@
 - (void)dealloc;
 - (id)initWithSVMModel:(struct svm_model *)arg1 freeOnDealloc:(_Bool)arg2 isInputSizeLowerBoundOnly:(_Bool)arg3 inputSize:(unsigned long long)arg4 classLabels:(id)arg5;
 - (id)initWithLibSVMFile:(id)arg1 classLabels:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

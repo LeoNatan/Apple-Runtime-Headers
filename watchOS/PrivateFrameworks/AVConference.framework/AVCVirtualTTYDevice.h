@@ -6,14 +6,13 @@
 
 #import "NSObject.h"
 
-@class AVConferenceXPCClient, NSObject<OS_dispatch_queue>;
+@class AVConferenceXPCClient;
 
 @interface AVCVirtualTTYDevice : NSObject
 {
     AVConferenceXPCClient *_connection;
     id _delegate;
     _Bool _isStarted;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
 @property(nonatomic) id <AVCVirtualTTYDeviceDelegate> delegate; // @synthesize delegate=_delegate;

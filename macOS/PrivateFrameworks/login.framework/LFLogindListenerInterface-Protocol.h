@@ -10,7 +10,7 @@
 
 @protocol LFLogindListenerInterface <NSObject>
 - (void)SMCreateSessionTemporaryBridge:(NSDictionary *)arg1 reply:(void (^)(int, unsigned int))arg2;
-- (void)SMCopySessionUserInfo:(void (^)(int, NSDictionary *))arg1;
+- (void)SMGetSessionUserInfo:(void (^)(int, NSDictionary *))arg1;
 - (void)SMSetSessionUserInfo:(NSDictionary *)arg1 reply:(void (^)(int))arg2;
 - (void)SMGetSessionOwnerConnection:(void (^)(int, NSXPCListenerEndpoint *))arg1;
 - (void)SMRegisterSessionOwner:(NSXPCListenerEndpoint *)arg1 reply:(void (^)(int))arg2;

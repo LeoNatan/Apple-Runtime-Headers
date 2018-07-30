@@ -9,6 +9,7 @@
 @class NSArray, NSProgress, NSString, VMVoicemailGreeting;
 
 @protocol VMServerXPCProtocol <NSObject>
+- (void)obliterate;
 - (void)reportTranscriptionRatedAccurate:(_Bool)arg1 forIdentifier:(int)arg2;
 - (void)reportTranscriptionProblemForIdentifier:(int)arg1;
 - (void)changePassword:(NSString *)arg1 completionBlock:(void (^)(NSError *))arg2;

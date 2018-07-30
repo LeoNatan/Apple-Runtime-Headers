@@ -7,35 +7,36 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBDeleteFilePermanentlyIntentResponse.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBDeleteFilePermanentlyIntentResponse : PBCodable <NSCopying>
+@interface _INPBDeleteFilePermanentlyIntentResponse : PBCodable <_INPBDeleteFilePermanentlyIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    BOOL _confirm;
-    BOOL _success;
     struct {
         unsigned int confirm:1;
         unsigned int success:1;
     } _has;
+    BOOL _confirm;
+    BOOL _success;
 }
 
-+ (id)options;
 @property(nonatomic) BOOL success; // @synthesize success=_success;
 @property(nonatomic) BOOL confirm; // @synthesize confirm=_confirm;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(nonatomic) BOOL hasSuccess;
 @property(nonatomic) BOOL hasConfirm;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

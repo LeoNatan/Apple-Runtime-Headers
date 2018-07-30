@@ -4,11 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSDate, NSString, NSTimeZone, NSUUID, OSLogEventDecomposedMessage;
+@class NSDate, NSString, NSTimeZone, NSUUID, OSLogEventBacktrace, OSLogEventDecomposedMessage;
 
 @protocol OSLogEventProvider
+@property(readonly, nonatomic) CDStruct_0dd72924 lossCount;
+@property(readonly, nonatomic) struct timezone *lossEndUnixTimeZone;
+@property(readonly, nonatomic) struct timeval *lossEndUnixDate;
+@property(readonly, nonatomic) unsigned long long lossEndMachContinuousTimestamp;
+@property(readonly, nonatomic) struct timezone *lossStartUnixTimeZone;
+@property(readonly, nonatomic) struct timeval *lossStartUnixDate;
+@property(readonly, nonatomic) unsigned long long lossStartMachContinuousTimestamp;
 @property(readonly, nonatomic) unsigned long long creatorProcessUniqueIdentifier;
 @property(readonly, nonatomic) unsigned long long creatorActivityIdentifier;
+@property(readonly, nonatomic) NSString *signpostName;
 @property(readonly, nonatomic) unsigned long long signpostScope;
 @property(readonly, nonatomic) unsigned long long signpostType;
 @property(readonly, nonatomic) unsigned long long signpostIdentifier;
@@ -16,6 +24,7 @@
 @property(readonly, nonatomic) NSString *formatString;
 @property(readonly, nonatomic) NSString *category;
 @property(readonly, nonatomic) NSString *subsystem;
+@property(readonly, nonatomic) OSLogEventBacktrace *backtrace;
 @property(readonly, nonatomic) unsigned long long senderImageOffset;
 @property(readonly, nonatomic) NSString *sender;
 @property(readonly, nonatomic) NSString *senderImagePath;

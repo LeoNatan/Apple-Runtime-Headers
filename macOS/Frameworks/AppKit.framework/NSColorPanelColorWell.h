@@ -6,6 +6,7 @@
 
 #import <AppKit/NSColorWell.h>
 
+__attribute__((visibility("hidden")))
 @interface NSColorPanelColorWell : NSColorWell
 {
     BOOL _disabledAsColorDestination;
@@ -16,6 +17,7 @@
 - (void)setColor:(id)arg1;
 - (void)_drawBorderInRect:(struct CGRect)arg1;
 - (BOOL)drawColor;
+- (BOOL)_drawWithStrokeColor:(id)arg1;
 - (unsigned long long)controlSize;
 - (void)setControlSize:(unsigned long long)arg1;
 - (void)moveLeft:(id)arg1;

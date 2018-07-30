@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     BOOL _allowsVibrancy;
 }
 
+- (BOOL)wantsUpdateLayer;
 - (void)setAllowsVibrancy:(BOOL)arg1;
 - (BOOL)allowsVibrancy;
 

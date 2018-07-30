@@ -20,7 +20,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFeatureValue:(id)arg1;
+- (id)initWithRequestRevision:(unsigned long long)arg1 featureValue:(id)arg2;
 
 @end
 

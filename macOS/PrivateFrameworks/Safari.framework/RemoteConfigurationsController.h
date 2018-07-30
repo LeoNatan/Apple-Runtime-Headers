@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_downloadRemoteConfigurationTimer;
     NSURLSessionDataTask *_downloadRemoteConfigurationTask;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    NSObject<OS_dispatch_queue> *_diskAccessQueue;
     id <RemoteConfigurationsControllerDelegate> _delegate;
     NSURL *_remoteConfigurationURL;
     NSURL *_localConfigurationFileURL;

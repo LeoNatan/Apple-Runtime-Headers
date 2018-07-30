@@ -14,30 +14,33 @@
 {
     CPLPrequeliteVariable *_nextTaskIdentifier;
     CPLPrequeliteVariable *_nextPosition;
+    BOOL _recreatedDownloadQueueIndex;
 }
 
 - (void).cxx_destruct;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (id)statusPerScopeIndex;
 - (id)status;
 - (id)recordsDesignation;
 - (BOOL)hasActiveOrQueuedBackgroundDownloadOperations;
 - (unsigned long long)countOfQueuedDownloadTasks;
 - (unsigned long long)_countOfRecordsWithStatus:(int)arg1;
 - (id)enumeratorForDownloadedResources;
-- (BOOL)removeAllBackgroundDownloadTasksForItemWithIdentifier:(id)arg1 error:(id *)arg2;
-- (BOOL)resetWithError:(id *)arg1;
+- (BOOL)removeAllBackgroundDownloadTasksForItemWithScopedIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)resetDequeuedBackgroundDownloadTasksWithError:(id *)arg1;
 - (id)dequeueNextBackgroundDownloadTasksForResourceType:(unsigned long long)arg1 maximumSize:(unsigned long long)arg2 maximumCount:(unsigned long long)arg3 error:(id *)arg4;
 - (BOOL)removeBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)markBackgroundDownloadTaskForResourceAsSuceeded:(id)arg1 taskIdentifier:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)reenqueueBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned long long)arg2 bumpRetryCount:(BOOL)arg3 didDiscard:(char *)arg4 error:(id *)arg5;
 - (BOOL)enqueueBackgroundDownloadTaskForResource:(id)arg1 downloading:(BOOL)arg2 error:(id *)arg3;
-- (id)_enqueuedResourceForResource:(id)arg1;
+- (id)_enqueuedResourceForResource:(id)arg1 verifyScopeIndex:(BOOL)arg2;
 - (BOOL)_deleteEnqueuedResource:(id)arg1 error:(id *)arg2;
 - (BOOL)_getNextPosition:(unsigned long long *)arg1 andBumpWithError:(id *)arg2;
 - (unsigned long long)newTaskIdentifier;
 - (BOOL)openWithError:(id *)arg1;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
+- (BOOL)_createResourceTypeAndStatusIndex;
 - (id)initWithAbstractObject:(id)arg1;
 
 // Remaining properties

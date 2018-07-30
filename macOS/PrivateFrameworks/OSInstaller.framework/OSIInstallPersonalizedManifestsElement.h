@@ -14,10 +14,10 @@
 }
 
 @property(retain) OSIPersonalizedManifests *personalizedManifests; // @synthesize personalizedManifests=_personalizedManifests;
+- (void).cxx_destruct;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 - (id)initWithOptions:(id)arg1 personalizedManifests:(id)arg2;
 
 @end

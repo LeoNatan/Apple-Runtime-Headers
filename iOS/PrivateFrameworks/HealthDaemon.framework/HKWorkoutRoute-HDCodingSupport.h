@@ -6,9 +6,19 @@
 
 #import "HKWorkoutRoute.h"
 
-@interface HKWorkoutRoute (HDCodingSupport)
+#import "HDCoding.h"
+
+@class NSString;
+
+@interface HKWorkoutRoute (HDCodingSupport) <HDCoding>
 + (id)createWithCodable:(id)arg1;
 - (_Bool)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

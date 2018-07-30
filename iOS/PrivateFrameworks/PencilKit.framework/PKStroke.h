@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
+#import "NSCopying.h"
+
 @class NSMutableArray, PKInk, _PKStrokeData, _PKStrokeIDWrapper;
 
-@interface PKStroke : NSObject
+@interface PKStroke : NSObject <NSCopying>
 {
     _PKStrokeData *_strokeData;
     NSMutableArray *_pointsArray;
@@ -26,13 +28,19 @@
     double _timestamp;
     struct _PKStrokeID _version;
     struct CGRect _bounds;
+    struct CGRect _tightBounds;
+    struct CGRect __untransformedBounds;
 }
 
 + (long long)compareStrokeWithIDWrapper:(id)arg1 toStrokeIDWrapper:(id)arg2;
++ (long long)_asciiBitfieldIndexForX:(long long)arg1 y:(long long)arg2 width:(long long)arg3;
++ (long long)_asciiDimensionForBoundsDimension:(double)arg1;
+@property(nonatomic) struct CGRect _untransformedBounds; // @synthesize _untransformedBounds=__untransformedBounds;
 @property double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic, setter=_setTransform:) struct CGAffineTransform _transform; // @synthesize _transform;
 @property(nonatomic, setter=_setInputType:) long long _inputType; // @synthesize _inputType;
 @property(nonatomic) _Bool _inflight; // @synthesize _inflight;
+@property(nonatomic) struct CGRect _tightBounds; // @synthesize _tightBounds;
 @property(nonatomic) struct CGRect _bounds; // @synthesize _bounds;
 @property(nonatomic) struct _PKStrokeID _version; // @synthesize _version;
 @property(nonatomic, getter=_isHidden) _Bool _hidden; // @synthesize _hidden;
@@ -45,16 +53,22 @@
 - (struct CGPoint)_splineControlPoint:(long long)arg1;
 - (double)endTimestamp;
 - (double)startTimestamp;
+- (id)_substrokeWithRange:(struct _NSRange)arg1;
 - (void)enumeratePointsWithDistanceStep:(double)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumeratePointsWithTimestep:(double)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (struct CGRect)bounds;
 - (id)strokeIdentifier;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)compareToStroke:(id)arg1;
+- (_Bool *)_newAsciiBitfieldWithWidth:(long long)arg1 height:(long long)arg2;
+- (_Bool *)_newAsciiBitfield;
+- (id)_ascii;
 - (id)descriptionExtended;
 - (id)description;
 - (void)_setStrokeIDWrapper:(id)arg1;
 @property(nonatomic, setter=_setStrokeID:) struct _PKStrokeID _strokeID;
 - (void)_invalidateBounds;
+- (struct CGRect)_calculateBounds:(_Bool)arg1;
 - (struct CGPoint)_clipNormal;
 - (void)_setClipNormal:(struct CGPoint)arg1;
 - (struct CGPoint)_clipOrigin;
@@ -63,6 +77,7 @@
 - (void)_setIsClipped:(_Bool)arg1;
 - (struct _PKStrokePoint)_baseValues;
 - (void)_setBaseValues:(struct _PKStrokePoint)arg1;
+- (unsigned long long)oldHashForRandomSeedSoonToBeObsoleted;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)_randomSeed;
@@ -76,7 +91,6 @@
 - (struct PKCompressedStrokePoint *)_completedPoints;
 - (struct _PKInflightStrokePoint *)_inflightPoints;
 - (void *)_points;
-- (double)_renderCost;
 - (unsigned long long)_pointsCount;
 - (void)_setPoints:(struct PKCompressedStrokePoint *)arg1 count:(unsigned long long)arg2 copy:(_Bool)arg3;
 @property(readonly) NSMutableArray *points;
@@ -86,9 +100,9 @@
 - (id)initWithStroke:(id)arg1 hidden:(_Bool)arg2 version:(struct _PKStrokeID)arg3 transform:(struct CGAffineTransform)arg4;
 - (id)initWithStroke:(id)arg1 hidden:(_Bool)arg2 version:(struct _PKStrokeID)arg3;
 - (id)initWithStroke:(id)arg1 points:(struct PKCompressedStrokePoint *)arg2 count:(unsigned long long)arg3 copy:(_Bool)arg4;
+- (id)initWithPath:(struct CGPath *)arg1 ink:(id)arg2 inputScale:(double)arg3 velocityForDistanceFunction:(CDUnknownBlockType)arg4;
 - (id)initWithPath:(struct CGPath *)arg1 ink:(id)arg2 inputScale:(double)arg3;
 - (id)init;
-- (struct CGRect)bounds;
 - (struct CGPoint)clipNormal;
 - (void)setClipNormal:(struct CGPoint)arg1;
 - (struct CGPoint)clipOrigin;

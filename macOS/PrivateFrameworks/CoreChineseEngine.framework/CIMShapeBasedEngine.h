@@ -45,7 +45,6 @@
 - (id)mecabraEnvironment;
 - (id)currentInlineText;
 - (BOOL)shouldOptimizeLayoutForFixedSize;
-- (long long)windowType;
 - (id)higherOrderDataProvider;
 - (BOOL)inputModeShowsDynamicCandidates;
 - (id)inputString;
@@ -53,7 +52,7 @@
 - (BOOL)candidateIsPhonetic:(id)arg1;
 - (id)readingStringFromReading:(id)arg1;
 - (BOOL)sendsSelectionKeyEventsToCandidateWindow;
-- (id)candidatesForSortingMethod:(id)arg1;
+- (id)candidateListDictionaryWithSortingMethod:(id)arg1;
 - (id)getCharacterCodeForCharacter:(id)arg1;
 @property(readonly, nonatomic) BOOL updateMarkedTextOnSelectionChange;
 - (BOOL)inlineBeginsWithWildcard;
@@ -68,8 +67,8 @@
 @property(readonly, nonatomic) unsigned long long mecabraCreationOptions; // @synthesize mecabraCreationOptions=_mecabraCreationOptions;
 @property(readonly, nonatomic) BOOL characterBeforeCaretIsNumber;
 - (double)numberOfVisibleCandidatesAtOutsetForOrientation:(unsigned long long)arg1;
-- (void)didHandleCandidateSelectionChanged:(id)arg1;
-- (void)didHandleCandidateSelected:(id)arg1;
+- (void)didHandleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
+- (void)didHandleCandidateSelected:(id)arg1 candidateController:(id)arg2;
 - (void)reset;
 - (void)endSession;
 - (BOOL)isInlineEmpty;

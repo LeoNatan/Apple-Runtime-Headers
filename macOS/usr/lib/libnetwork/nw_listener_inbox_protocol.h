@@ -9,12 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface nw_listener_inbox_protocol : nw_listener_inbox
 {
-    struct nw_protocol *_multiplexing_protocol;
     struct nw_listen_protocol_callbacks _listen_callbacks;
     struct nw_listen_protocol _listen_protocol;
 }
 
-- (void)cancel;
+- (BOOL)cancel;
 - (id)description;
 - (id)initWithProtocol:(struct nw_protocol *)arg1 delegate:(id)arg2;
 

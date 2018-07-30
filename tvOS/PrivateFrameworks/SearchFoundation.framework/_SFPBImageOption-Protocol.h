@@ -10,11 +10,8 @@
 
 @protocol _SFPBImageOption <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasOptions;
 @property(retain, nonatomic) _SFPBStringDictionary *options;
-@property(readonly, nonatomic) _Bool hasDefaultValue;
 @property(copy, nonatomic) NSString *defaultValue;
-@property(readonly, nonatomic) _Bool hasName;
 @property(copy, nonatomic) NSString *name;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -17,6 +17,7 @@
 
 @property(readonly, nonatomic) NSObject<OS_os_log> *log_t; // @synthesize log_t=_log_t;
 - (void).cxx_destruct;
+- (void)accountsDidNotChange;
 - (void)removalFailedWithError:(id)arg1;
 - (void)donationFailedWithError:(id)arg1;
 - (void)removing:(id)arg1;

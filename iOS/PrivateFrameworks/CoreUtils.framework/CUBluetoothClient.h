@@ -19,12 +19,16 @@
     CBPeripheralManager *_btPeripheralManager;
     _Bool _btPeripheralManagerNeeded;
     struct BTAccessoryManagerImpl *_btAccessoryManager;
+    _Bool _btConnectionDevicesInitialized;
+    _Bool _btConnectionEventsNeeded;
     struct BTSessionImpl *_btSession;
+    _Bool _btSessionAddedServiceCallback;
     _Bool _btSessionAttaching;
     _Bool _btSessionNeeded;
     _Bool _btSessionStarted;
     struct BTLocalDeviceImpl *_btLocalDevice;
     NSData *_btLocalDeviceAddr;
+    _Bool _btLocalDeviceAddrNeeded;
     struct {
         CDUnknownFunctionPointerType statusEvent;
         CDUnknownFunctionPointerType leTestStopped;
@@ -35,6 +39,7 @@
     struct BTPairingAgentImpl *_btPairingAgent;
     _Bool _btPairingAgentNeeded;
     _Bool _btPairingAgentStarted;
+    struct NSMutableDictionary *_btConnectedDevices;
     struct NSMutableDictionary *_btPairedDevices;
     _Bool _btPairedDevicesInitialized;
     struct NSMutableArray *_findDeviceRequests;
@@ -45,6 +50,8 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_label;
     CDUnknownBlockType _bluetoothAddressChangedHandler;
+    CDUnknownBlockType _deviceConnectedHandler;
+    CDUnknownBlockType _deviceDisconnectedHandler;
     CDUnknownBlockType _devicePairedHandler;
     CDUnknownBlockType _deviceUnpairedHandler;
     CDUnknownBlockType _interruptionHandler;
@@ -55,6 +62,8 @@
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceUnpairedHandler; // @synthesize deviceUnpairedHandler=_deviceUnpairedHandler;
 @property(copy, nonatomic) CDUnknownBlockType devicePairedHandler; // @synthesize devicePairedHandler=_devicePairedHandler;
+@property(copy, nonatomic) CDUnknownBlockType deviceDisconnectedHandler; // @synthesize deviceDisconnectedHandler=_deviceDisconnectedHandler;
+@property(copy, nonatomic) CDUnknownBlockType deviceConnectedHandler; // @synthesize deviceConnectedHandler=_deviceConnectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothAddressChangedHandler; // @synthesize bluetoothAddressChangedHandler=_bluetoothAddressChangedHandler;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
@@ -64,10 +73,15 @@
 - (void)peripheralManagerDidUpdateState:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_handlePairingStatusChanged;
+- (void)_handleDeviceDisconnected:(struct BTDeviceImpl *)arg1;
+- (void)_handleDeviceConnected:(struct BTDeviceImpl *)arg1;
+- (void)_handleConnectedDevicesInit;
 - (void)_handleBluetoothAddressChanged;
+- (id)_createCUBluetoothDeviceWithBTDevice:(struct BTDeviceImpl *)arg1;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)_btEnsureStopped;
 - (void)_btEnsureStarted;
+- (void)_processFindDeviceRequests;
 - (void)_findDeviceByAddress:(CDStruct_83abfce7)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)findDeviceByAddress:(CDStruct_83abfce7)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_invalidated;

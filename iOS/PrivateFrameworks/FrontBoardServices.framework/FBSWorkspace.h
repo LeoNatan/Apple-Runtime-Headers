@@ -8,7 +8,7 @@
 
 #import "FBSWorkspaceClientDelegate.h"
 
-@class FBSSerialQueue, FBSWorkspaceClient, NSArray, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class BSMutableIntegerMap, FBSSerialQueue, FBSWorkspaceClient, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface FBSWorkspace : NSObject <FBSWorkspaceClientDelegate>
 {
@@ -18,12 +18,13 @@
     FBSSerialQueue *_callOutQueue;
     NSObject<OS_dispatch_queue> *_scenesQueue;
     NSMutableDictionary *_scenesByIdentifier;
-    NSMapTable *_triggerToFenceNameMap;
+    BSMutableIntegerMap *_triggerToFenceNameMap;
     _Bool _synchronizingFence;
     unsigned long long _signpostName;
 }
 
-@property(readonly, retain, nonatomic) FBSSerialQueue *queue; // @synthesize queue=_callOutQueue;
+@property(readonly, nonatomic) FBSSerialQueue *queue; // @synthesize queue=_callOutQueue;
+- (void).cxx_destruct;
 - (void)client:(id)arg1 handleActions:(id)arg2;
 - (void)client:(id)arg1 handleDestroyScene:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)client:(id)arg1 handleCreateScene:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
@@ -46,7 +47,7 @@
 - (void)enumerateScenesWithBlock:(CDUnknownBlockType)arg1;
 - (id)sceneWithIdentifier:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *scenes;
-@property(nonatomic) id <FBSWorkspaceDelegate> delegate;
+@property(nonatomic) __weak id <FBSWorkspaceDelegate> delegate;
 - (void)dealloc;
 - (id)initWithSerialQueue:(id)arg1;
 - (id)initWithQueue:(id)arg1;

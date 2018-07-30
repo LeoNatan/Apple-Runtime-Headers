@@ -27,6 +27,7 @@ struct AVMediaFileSegmenterInternal {
     CDUnknownBlockType _field12;
     CDStruct_1b6d18a9 _field13;
     id _field14;
+    char _field15;
 };
 
 struct AudioChannelDescription {

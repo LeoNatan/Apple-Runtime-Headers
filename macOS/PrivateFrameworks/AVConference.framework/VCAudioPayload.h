@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VCAudioPayloadConfig *config; // @synthesize config=_config;
 - (id)description;
 - (BOOL)getMagicCookie:(char *)arg1 withLength:(unsigned int *)arg2;
+- (void)setCurrentDTXEnable:(BOOL)arg1;
 - (BOOL)setBitrate:(unsigned int)arg1;
 - (void)resetEncoderWithSampleBuffer:(char *)arg1 numBytes:(int)arg2;
 - (void)resetEncoder;

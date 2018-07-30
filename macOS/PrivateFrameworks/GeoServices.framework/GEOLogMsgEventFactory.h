@@ -16,7 +16,12 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)logMsgEventForTileCacheMissAnalyticForRequestReason:(int)arg1 missType:(int)arg2 missCount:(unsigned int)arg3 missByteCount:(unsigned int)arg4 httpStatus:(unsigned int)arg5 errors:(id)arg6;
+- (id)logMsgEventForTileCacheHitAnalyticForRequestReason:(int)arg1 tileSource:(int)arg2 hitCount:(unsigned int)arg3 hitByteCount:(unsigned int)arg4;
+- (id)logMsgEventForParkedCarAtLocation:(id)arg1 atTime:(double)arg2 withUncertainty:(double)arg3;
 - (id)logMsgEventForWiFiConnectionQuality:(id)arg1;
+- (id)logMsgEventForClientACKeypressWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3 keyPressStatus:(int)arg4;
+- (id)logMsgEventForClientACResponseWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3;
 - (id)logMsgEventForClientACSuggestionsWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3 selectedIndex:(int)arg4;
 - (id)logMsgEventForTelemetricWithEntities:(id)arg1;
 - (id)logMsgEventForTelemetricWithEventKey:(int)arg1 eventValue:(unsigned long long)arg2 eventDetail:(id)arg3;

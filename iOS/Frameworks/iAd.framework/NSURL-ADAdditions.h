@@ -11,5 +11,6 @@
 + (id)removeQueryItemForKey:(id)arg1 fromURL:(id)arg2;
 + (id)valueForKey:(id)arg1 fromQueryItems:(id)arg2;
 + (id)queryParametersForURL:(id)arg1;
+- (id)decodePercentEscapesEncoding;
 @end
 

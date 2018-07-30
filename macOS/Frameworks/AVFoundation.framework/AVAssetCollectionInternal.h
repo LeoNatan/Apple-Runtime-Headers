@@ -8,6 +8,7 @@
 
 @class AVAssetCollectionInspectorLoader, AVWeakReference, NSObject<OS_dispatch_queue>, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetCollectionInternal : NSObject
 {
     NSURL *rootURL;

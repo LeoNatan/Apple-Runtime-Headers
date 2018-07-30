@@ -32,6 +32,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) FBSSceneSettings *settings; // @synthesize settings=_settings;
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -39,7 +40,6 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)initWithSceneID:(id)arg1 settings:(id)arg2;
 
 // Remaining properties

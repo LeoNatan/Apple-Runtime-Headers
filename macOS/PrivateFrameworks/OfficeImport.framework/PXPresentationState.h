@@ -8,7 +8,6 @@
 
 @class CXNamespace, NSMutableDictionary, OAVReadState, OAXDrawingState, OAXTableStyleCache, PDPresentation;
 
-__attribute__((visibility("hidden")))
 @interface PXPresentationState : OCXReadState
 {
     NSMutableDictionary *mModelObjects;
@@ -23,9 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)setPptChartGraphicPropertyDefaultBlock:(id)arg1;
+@property(retain, nonatomic) CXNamespace *PXPresentationMLNamespace; // @synthesize PXPresentationMLNamespace=mPXPresentationMLNamespace;
 @property(readonly, nonatomic) NSMutableDictionary *commentAuthorIdToIndexMap; // @synthesize commentAuthorIdToIndexMap=mCommentAuthorIdToIndexMap;
 @property(retain, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancel;
-@property(retain, nonatomic) CXNamespace *PXPresentationMLNamespace; // @synthesize PXPresentationMLNamespace=mPXPresentationMLNamespace;
+- (void).cxx_destruct;
 - (void)setupNSForXMLFormat:(int)arg1;
 - (BOOL)isCancelled;
 - (void)setTgtPresentation:(id)arg1;
@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (void)setModelObject:(id)arg1 forLocation:(id)arg2;
 - (id)modelObjectForLocation:(id)arg1;
 - (id)oavState;
-- (void)dealloc;
 - (id)init;
 
 @end

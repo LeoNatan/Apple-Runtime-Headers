@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABActionAutovalidatorCacheEntry.h>
 
-__attribute__((visibility("hidden")))
 @interface ABActionAutovalidatorCacheSimpleEntry : ABActionAutovalidatorCacheEntry
 {
     SEL _selector;

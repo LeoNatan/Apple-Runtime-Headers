@@ -22,7 +22,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)_sourceForClinicalAccountIdentifier:(id)arg1;
++ (id)_publicSourceForGatewayExternalIdentifier:(id)arg1 name:(id)arg2;
++ (id)_privateSourceForClinicalAccountIdentifier:(id)arg1 name:(id)arg2;
 + (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned long long)arg4;
 + (_Bool)_isPlaceholderBundleIdentifier:(id)arg1;
 + (id)_generateIdentifierForAppleDeviceWithUUID:(id)arg1;
@@ -56,7 +57,7 @@
 - (unsigned long long)hash;
 - (id)_init;
 - (id)init;
-- (id)_clinicalAccountIdentifier;
+- (id)_deducedClinicalAccountIdentifier;
 - (_Bool)_isClinicalSource;
 - (_Bool)_isHidden;
 - (_Bool)_requiresAuthorization;

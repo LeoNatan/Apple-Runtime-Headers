@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSPArchiverBase.h>
 
-@class NSArray, NSHashTable, NSMutableSet, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_group>, NSSet, NSUUID, TSPObject;
+@class NSArray, NSHashTable, NSMutableSet, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_group>, NSSet, NSUUID, TSPObject, TSPReferenceOrderedSet;
 
 __attribute__((visibility("hidden")))
 @interface TSPArchiver : TSPArchiverBase
@@ -17,20 +17,20 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_serializeGroup;
     NSObject<OS_dispatch_data> *_serializedData;
     NSMutableSet *_featureInfos;
-    NSHashTable *_aggregatedStrongReferences;
-    NSHashTable *_aggregatedWeakReferences;
-    NSHashTable *_aggregatedCommandToModelReferences;
-    NSHashTable *_aggregatedLazyReferences;
-    NSHashTable *_aggregatedDataReferences;
     NSUUID *_objectUUID;
     TSPObject *_explicitComponentRootObject;
+    TSPReferenceOrderedSet *_aggregatedStrongReferences;
+    TSPReferenceOrderedSet *_aggregatedWeakReferences;
+    TSPReferenceOrderedSet *_aggregatedCommandToModelReferences;
+    NSHashTable *_aggregatedLazyReferences;
+    NSHashTable *_aggregatedDataReferences;
 }
 
 @property(readonly, nonatomic) NSHashTable *aggregatedDataReferences; // @synthesize aggregatedDataReferences=_aggregatedDataReferences;
 @property(readonly, nonatomic) NSHashTable *aggregatedLazyReferences; // @synthesize aggregatedLazyReferences=_aggregatedLazyReferences;
-@property(readonly, nonatomic) NSHashTable *aggregatedCommandToModelReferences; // @synthesize aggregatedCommandToModelReferences=_aggregatedCommandToModelReferences;
-@property(readonly, nonatomic) NSHashTable *aggregatedWeakReferences; // @synthesize aggregatedWeakReferences=_aggregatedWeakReferences;
-@property(readonly, nonatomic) NSHashTable *aggregatedStrongReferences; // @synthesize aggregatedStrongReferences=_aggregatedStrongReferences;
+@property(readonly, nonatomic) TSPReferenceOrderedSet *aggregatedCommandToModelReferences; // @synthesize aggregatedCommandToModelReferences=_aggregatedCommandToModelReferences;
+@property(readonly, nonatomic) TSPReferenceOrderedSet *aggregatedWeakReferences; // @synthesize aggregatedWeakReferences=_aggregatedWeakReferences;
+@property(readonly, nonatomic) TSPReferenceOrderedSet *aggregatedStrongReferences; // @synthesize aggregatedStrongReferences=_aggregatedStrongReferences;
 @property(readonly, nonatomic) NSObject<OS_dispatch_data> *serializedData; // @synthesize serializedData=_serializedData;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *serializeGroup; // @synthesize serializeGroup=_serializeGroup;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *archiveGroup; // @synthesize archiveGroup=_archiveGroup;

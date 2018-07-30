@@ -7,13 +7,13 @@
 #import <NanoTimeKit/NTKLocationManager.h>
 
 #import "CLLocationManagerDelegate.h"
-#import "PSYSyncStateObserver.h"
-#import "RadiosPreferencesDelegate.h"
+#import "NTKLocationCoordinatorDelegate.h"
 
-@class CLInUseAssertion, CLLocation, CLLocationManager, NSDate, NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PSYSyncStateObserver, RadiosPreferences;
+@class CLInUseAssertion, CLLocation, CLLocationManager, NSDate, NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NTKLocationCoordinator;
 
-@interface NTKCarouselLocationManager : NTKLocationManager <CLLocationManagerDelegate, RadiosPreferencesDelegate, PSYSyncStateObserver>
+@interface NTKCarouselLocationManager : NTKLocationManager <CLLocationManagerDelegate, NTKLocationCoordinatorDelegate>
 {
+    NTKLocationCoordinator *_locationCoordinator;
     CLLocation *_currentLocation;
     CLLocation *_previousLocation;
     unsigned int _handlerCounter;
@@ -21,41 +21,32 @@
     NSMutableDictionary *_locationUpdateHandlers;
     CLLocationManager *_locationManager;
     CLInUseAssertion *_locationInUseAssertion;
-    RadiosPreferences *_radioPreferences;
-    PSYSyncStateObserver *_syncStateObserver;
-    int _deviceLockStateChangeNotifyToken;
     NSObject<OS_dispatch_queue> *_queue;
     NSDate *_lastLocationUpdateDate;
     NSLock *_locationAccessLock;
     NSLock *_tokenAccessLock;
-    _Bool _isStoreDemoDevice;
 }
 
 + (void)_saveLocationIntoDefaultsWithLocation:(id)arg1;
 + (id)_locationFromDefaults;
 - (void).cxx_destruct;
-- (void)_tearDownNotificationObservers;
-- (void)_setupNotificationObservers;
+- (void)requestDiscardLocationsFromLocationCoordinator:(id)arg1;
+- (void)requestStartMonitoringFromLocationCoordinator:(id)arg1;
+- (void)requestCancelMonitoringFromLocationCoordinator:(id)arg1;
 - (void)_notifyUpdateHandlersWithError:(id)arg1;
 - (void)_cancelMonitoring;
 - (void)_startMonitoring;
 - (void)_requestMonitoringIfPossible;
-- (_Bool)_canMonitorLocations;
 - (void)_discardLocations;
 - (void)_updateLocation:(id)arg1;
 - (void)_didReceiveLocation:(id)arg1;
-- (void)syncClientStateDidChange:(id)arg1;
-- (void)airplaneModeChanged;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (void)_didReceiveDeviceLockStateDidChangeNotification;
 - (id)_debugLastUpdateDate;
 - (void)_debugUpdateToLocationWithLatitude:(double)arg1 longitude:(double)arg2;
-- (id)_clLocationManagerLocation;
 - (void)stopLocationUpdatesForToken:(struct NSString *)arg1;
 - (struct NSString *)startLocationUpdatesWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (struct NSString *)startLocationUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (id)anyLocation;
 - (id)previousLocation;
 - (id)currentLocation;

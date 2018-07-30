@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)modelBuiltFromConfiguration:(id)arg1 personUniqueIdentifierToSerialNumberMapping:(id)arg2 serialNumberToFaceprintsMapping:(id)arg3 canceller:(id)arg4 error:(id *)arg5;
++ (id)modelBuiltFromConfiguration:(id)arg1 dataProvider:(id)arg2 canceller:(id)arg3 error:(id *)arg4;
 + (shared_ptr_099ccdd3)_concatenateFaceprintImageDescriptorBuffer:(shared_ptr_099ccdd3)arg1 withFaceprints:(id)arg2 forIdentityWithSerialNumber:(int)arg3 faceprintLabels:(vector_3203cf93 *)arg4;
 - (id).cxx_construct;
 - (void).cxx_destruct;

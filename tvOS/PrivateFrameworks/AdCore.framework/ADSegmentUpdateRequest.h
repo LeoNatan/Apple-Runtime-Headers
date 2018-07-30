@@ -12,6 +12,7 @@
 
 @interface ADSegmentUpdateRequest : PBRequest <NSCopying>
 {
+    CDStruct_95bda58d _accountStates;
     CDStruct_95bda58d _accountTypes;
     CDStruct_95bda58d _deviceModes;
     double _iTunesRefreshTime;
@@ -56,6 +57,14 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsAccountStates:(id)arg1;
+- (id)accountStatesAsString:(int)arg1;
+- (void)setAccountStates:(int *)arg1 count:(unsigned long long)arg2;
+- (int)accountStateAtIndex:(unsigned long long)arg1;
+- (void)addAccountState:(int)arg1;
+- (void)clearAccountStates;
+@property(readonly, nonatomic) int *accountStates;
+@property(readonly, nonatomic) unsigned long long accountStatesCount;
 - (int)StringAsAccountTypes:(id)arg1;
 - (id)accountTypesAsString:(int)arg1;
 - (void)setAccountTypes:(int *)arg1 count:(unsigned long long)arg2;

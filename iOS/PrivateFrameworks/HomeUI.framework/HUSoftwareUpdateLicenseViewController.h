@@ -9,46 +9,50 @@
 #import "HUPreloadableViewController.h"
 #import "MFMailComposeViewControllerDelegate.h"
 #import "UIScrollViewDelegate.h"
-#import "UIWebViewDelegate.h"
+#import "WKNavigationDelegate.h"
+#import "WKUIDelegate.h"
 
-@class HMHTMLDocument, NAFuture, NSString, NSURL, UIButton, UIScrollView, UIWebView;
+@class HMHTMLDocument, HUWebViewController, NSFileManager, NSString, NSURL, UIButton, UIScrollView, WKWebView;
 
-@interface HUSoftwareUpdateLicenseViewController : UIViewController <UIScrollViewDelegate, UIWebViewDelegate, MFMailComposeViewControllerDelegate, HUPreloadableViewController>
+@interface HUSoftwareUpdateLicenseViewController : UIViewController <UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate, MFMailComposeViewControllerDelegate, HUPreloadableViewController>
 {
     NSURL *_URL;
     HMHTMLDocument *_document;
     CDUnknownBlockType _agreeHandler;
     CDUnknownBlockType _disagreeHandler;
     UIScrollView *_scrollView;
-    UIButton *_emailButton;
-    UIWebView *_webView;
-    NAFuture *_loadFuture;
+    UIButton *_retainCopyOfTermsButton;
+    NSString *_license;
+    NSFileManager *_fileManager;
+    HUWebViewController *_webViewController;
 }
 
-@property(readonly, nonatomic) NAFuture *loadFuture; // @synthesize loadFuture=_loadFuture;
-@property(readonly, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
-@property(readonly, nonatomic) UIButton *emailButton; // @synthesize emailButton=_emailButton;
+@property(readonly, nonatomic) HUWebViewController *webViewController; // @synthesize webViewController=_webViewController;
+@property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
+@property(readonly, nonatomic) NSString *license; // @synthesize license=_license;
+@property(readonly, nonatomic) UIButton *retainCopyOfTermsButton; // @synthesize retainCopyOfTermsButton=_retainCopyOfTermsButton;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(copy, nonatomic) CDUnknownBlockType disagreeHandler; // @synthesize disagreeHandler=_disagreeHandler;
 @property(copy, nonatomic) CDUnknownBlockType agreeHandler; // @synthesize agreeHandler=_agreeHandler;
 @property(readonly, copy, nonatomic) HMHTMLDocument *document; // @synthesize document=_document;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WKWebView *webView;
+- (id)_evaluateHeight:(id)arg1;
+- (void)_saveToDesktop:(id)arg1;
 - (void)_emailTermsAndConditions:(id)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id)viewForZoomingInScrollView:(id)arg1;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
-- (void)_startLoadWithDocument:(id)arg1 orMaybeAURL:(id)arg2;
 - (void)_disagreeToTerms:(id)arg1;
 - (void)_agreeToTerms:(id)arg1;
+- (id)loadLicense;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (id)hu_preloadContent;
-- (id)_initWithDocument:(id)arg1 orMaybeAURL:(id)arg2;
+- (id)_initWithWebViewController:(id)arg1;
 - (id)initWithDocument:(id)arg1;
 - (id)initWithURL:(id)arg1;
 

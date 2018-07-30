@@ -43,12 +43,15 @@ struct CGSize {
     double height;
 };
 
+struct NSDictionary {
+    Class _field1;
+};
+
 struct NSNumber {
     Class _field1;
 };
 
 struct PowerMeter {
-    _Bool mInstantaneousMode;
     double mSampleRate;
     double mPeakDecay1;
     double mPeakDecay;
@@ -56,13 +59,8 @@ struct PowerMeter {
     double mDecay;
     int mPrevBlockSize;
     int mPeakHoldCount;
-    double mPeak;
-    double mAveragePowerPeak;
     double mMaxPeak;
     struct AudioUnitMeterClipping mClipping;
-    double mAveragePowerF;
-    float m_vAvePower[16];
-    int mAveragePowerI;
 };
 
 struct UIEdgeInsets {
@@ -80,6 +78,23 @@ struct UIOffset {
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
+};
+
+struct _RCWaveformRendererState {
+    _Bool recordDidSwitch;
+    double lastRenderTime;
+};
+
+struct in_addr {
+    unsigned int _field1;
+};
+
+struct sockaddr_in {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned short _field3;
+    struct in_addr _field4;
+    char _field5[8];
 };
 
 struct vector<float, std::__1::allocator<float>> {
@@ -109,12 +124,11 @@ typedef struct {
     double hDeltaAdditionalInsetFromWaveformEdge;
     double hDeltaControlButtonsSpacing;
     double hDeltaTrimProgressInset;
-    double hDeltaAcousticAnnotationLabelToWaveformRight;
     double hTrimModeInset;
     double hDetailNavigationBarInset;
     double hPresentedRecordMemoHeight;
     double vDeltaLockAbsoluteTopToWaveformTop;
-} CDStruct_76b83881;
+} CDStruct_a8723754;
 
 // Template types
 typedef struct vector<float, std::__1::allocator<float>> {

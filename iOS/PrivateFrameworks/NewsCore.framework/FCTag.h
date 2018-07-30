@@ -24,7 +24,8 @@
     _Bool _publisherPaidWebAccessOptIn;
     _Bool _hideAccessoryText;
     _Bool _isHidden;
-    _Bool _isRealTimeTrackingEnabed;
+    _Bool _isRealTimeTrackingEnabled;
+    _Bool _isArticleReadCountReportingEnabled;
     NSString *_identifier;
     NSString *_versionKey;
     NSString *_name;
@@ -53,6 +54,7 @@
     FCAssetHandle *_nameImageMaskAssetHandle;
     FCAssetHandle *_logoImageAssetHandle;
     FCAssetHandle *_coverImageAssetHandle;
+    FCAssetHandle *_feedNavImageAssetHandle;
     NSString *_coverArticleListID;
     FCTextInfo *_headlineTitleTextInfo;
     FCTextInfo *_headlineExcerptTextInfo;
@@ -89,9 +91,9 @@
     struct CGSize _nameImageSize;
     struct CGSize _nameImageForDarkBackgroundSize;
     struct CGSize _nameImageMaskSize;
-    struct UIEdgeInsets _nameImageInsets;
-    struct UIEdgeInsets _nameImageForDarkBackgroundInsets;
-    struct UIEdgeInsets _nameImageMaskInsets;
+    struct FCEdgeInsets _nameImageInsets;
+    struct FCEdgeInsets _nameImageForDarkBackgroundInsets;
+    struct FCEdgeInsets _nameImageMaskInsets;
 }
 
 @property(readonly, nonatomic) FCInterestToken *tagRecordInterestToken; // @synthesize tagRecordInterestToken=_tagRecordInterestToken;
@@ -106,7 +108,8 @@
 @property(copy, nonatomic) NSString *pptFeedIDOverride; // @synthesize pptFeedIDOverride=_pptFeedIDOverride;
 @property(readonly, nonatomic) NSDate *publisherSpecifiedArticleIDsModifiedDate; // @synthesize publisherSpecifiedArticleIDsModifiedDate=_publisherSpecifiedArticleIDsModifiedDate;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs; // @synthesize publisherSpecifiedArticleIDs=_publisherSpecifiedArticleIDs;
-@property(readonly, nonatomic) _Bool isRealTimeTrackingEnabed; // @synthesize isRealTimeTrackingEnabed=_isRealTimeTrackingEnabed;
+@property(readonly, nonatomic) _Bool isArticleReadCountReportingEnabled; // @synthesize isArticleReadCountReportingEnabled=_isArticleReadCountReportingEnabled;
+@property(readonly, nonatomic) _Bool isRealTimeTrackingEnabled; // @synthesize isRealTimeTrackingEnabled=_isRealTimeTrackingEnabled;
 @property(readonly, nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(readonly, nonatomic) unsigned long long groupingEligibility; // @synthesize groupingEligibility=_groupingEligibility;
 @property(readonly, nonatomic) _Bool hideAccessoryText; // @synthesize hideAccessoryText=_hideAccessoryText;
@@ -128,18 +131,19 @@
 @property(readonly, copy, nonatomic) FCTextInfo *headlineExcerptTextInfo; // @synthesize headlineExcerptTextInfo=_headlineExcerptTextInfo;
 @property(readonly, copy, nonatomic) FCTextInfo *headlineTitleTextInfo; // @synthesize headlineTitleTextInfo=_headlineTitleTextInfo;
 @property(readonly, copy, nonatomic) NSString *coverArticleListID; // @synthesize coverArticleListID=_coverArticleListID;
+@property(readonly, nonatomic) FCAssetHandle *feedNavImageAssetHandle; // @synthesize feedNavImageAssetHandle=_feedNavImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *coverImageAssetHandle; // @synthesize coverImageAssetHandle=_coverImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *logoImageAssetHandle; // @synthesize logoImageAssetHandle=_logoImageAssetHandle;
-@property(readonly, nonatomic) struct UIEdgeInsets nameImageMaskInsets; // @synthesize nameImageMaskInsets=_nameImageMaskInsets;
+@property(readonly, nonatomic) struct FCEdgeInsets nameImageMaskInsets; // @synthesize nameImageMaskInsets=_nameImageMaskInsets;
 @property(readonly, nonatomic) struct CGSize nameImageMaskSize; // @synthesize nameImageMaskSize=_nameImageMaskSize;
 @property(readonly, nonatomic) FCAssetHandle *nameImageMaskAssetHandle; // @synthesize nameImageMaskAssetHandle=_nameImageMaskAssetHandle;
-@property(readonly, nonatomic) struct UIEdgeInsets nameImageForDarkBackgroundInsets; // @synthesize nameImageForDarkBackgroundInsets=_nameImageForDarkBackgroundInsets;
+@property(readonly, nonatomic) struct FCEdgeInsets nameImageForDarkBackgroundInsets; // @synthesize nameImageForDarkBackgroundInsets=_nameImageForDarkBackgroundInsets;
 @property(readonly, nonatomic) struct CGSize nameImageForDarkBackgroundSize; // @synthesize nameImageForDarkBackgroundSize=_nameImageForDarkBackgroundSize;
 @property(readonly, nonatomic) FCAssetHandle *nameImageForDarkBackgroundAssetHandle; // @synthesize nameImageForDarkBackgroundAssetHandle=_nameImageForDarkBackgroundAssetHandle;
 @property(nonatomic) double bannerImageBaselineOffsetPercentage; // @synthesize bannerImageBaselineOffsetPercentage=_bannerImageBaselineOffsetPercentage;
 @property(nonatomic) double bannerImageScale; // @synthesize bannerImageScale=_bannerImageScale;
 @property(readonly, nonatomic) FCAssetHandle *nameImageCompactAssetHandle; // @synthesize nameImageCompactAssetHandle=_nameImageCompactAssetHandle;
-@property(readonly, nonatomic) struct UIEdgeInsets nameImageInsets; // @synthesize nameImageInsets=_nameImageInsets;
+@property(readonly, nonatomic) struct FCEdgeInsets nameImageInsets; // @synthesize nameImageInsets=_nameImageInsets;
 @property(nonatomic) struct CGSize nameImageSize; // @synthesize nameImageSize=_nameImageSize;
 @property(retain, nonatomic) FCAssetHandle *nameImageAssetHandle; // @synthesize nameImageAssetHandle=_nameImageAssetHandle;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;

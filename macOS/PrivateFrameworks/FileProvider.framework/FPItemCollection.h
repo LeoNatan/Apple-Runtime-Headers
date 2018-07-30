@@ -28,6 +28,7 @@
     NSString *_providerIdentifier;
     BOOL _isRecursiveFolderEnumeration;
     BOOL _started;
+    BOOL _restartAfterForeground;
     BOOL _shouldResort;
     BOOL _regathering;
     BOOL _enumeratingExtensionResults;
@@ -110,6 +111,7 @@
 - (void)_updateItems;
 - (void)_updateItemsWithUpdatesCount:(unsigned long long)arg1 section:(unsigned long long)arg2;
 - (void)_gatherInitialItems;
+- (id)_initialPageFromSortDescriptors:(id)arg1;
 - (void)_gatherMoreItemsAfterPage:(id)arg1 section:(unsigned long long)arg2;
 @property(readonly, copy, nonatomic) NSString *providerIdentifier;
 - (void)startObserving;

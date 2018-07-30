@@ -8,6 +8,7 @@
 
 @class MCMoreDetailsContentView;
 
+__attribute__((visibility("hidden")))
 @interface MCMoreDetailsCell : PSTableCell
 {
     MCMoreDetailsContentView *_mcContentView;

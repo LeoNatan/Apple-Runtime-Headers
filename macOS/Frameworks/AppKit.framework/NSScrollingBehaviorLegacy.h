@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     id _endGestureMonitor;
     id _mouseDownMonitor;
     NSScrollView *_scrollViewRefForCarbonApps;
+    NSTimer *_momentumTimer;
     _NSPeriodicInvoker *_snapBackAnimator;
     _NSScrollingPredominantAxisFilter *_predominantAxisFilter;
     _NSScrollingRubberbandFilter *_rubberbandFilter;

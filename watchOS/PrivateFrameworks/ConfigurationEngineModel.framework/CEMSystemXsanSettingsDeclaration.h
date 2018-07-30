@@ -12,27 +12,33 @@
 
 @interface CEMSystemXsanSettingsDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadSanName;
+    NSArray *_payloadSanConfigURLs;
+    NSArray *_payloadFsnameservers;
+    NSString *_payloadSanAuthMethod;
+    NSString *_payloadSharedSecret;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withSanName:(id)arg2 withSanConfigURLs:(id)arg3 withFsnameservers:(id)arg4 withSharedSecret:(id)arg5;
++ (id)buildWithIdentifier:(id)arg1 withSanName:(id)arg2 withSanConfigURLs:(id)arg3 withFsnameservers:(id)arg4 withSanAuthMethod:(id)arg5 withSharedSecret:(id)arg6;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadSharedSecret; // @synthesize payloadSharedSecret=_payloadSharedSecret;
+@property(copy, nonatomic) NSString *payloadSanAuthMethod; // @synthesize payloadSanAuthMethod=_payloadSanAuthMethod;
+@property(copy, nonatomic) NSArray *payloadFsnameservers; // @synthesize payloadFsnameservers=_payloadFsnameservers;
+@property(copy, nonatomic) NSArray *payloadSanConfigURLs; // @synthesize payloadSanConfigURLs=_payloadSanConfigURLs;
+@property(copy, nonatomic) NSString *payloadSanName; // @synthesize payloadSanName=_payloadSanName;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSString *payloadSharedSecret;
-@property(readonly, nonatomic) NSString *payloadSanAuthMethod;
-@property(readonly, nonatomic) NSArray *payloadFsnameservers;
-@property(readonly, nonatomic) NSArray *payloadSanConfigURLs;
-@property(readonly, nonatomic) NSString *payloadSanName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

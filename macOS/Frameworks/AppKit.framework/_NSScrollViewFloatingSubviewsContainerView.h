@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)accessibilityChildrenAttribute;
 - (void)setCanDrawSubviewsIntoLayer:(BOOL)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)_removeSubview:(id)arg1;

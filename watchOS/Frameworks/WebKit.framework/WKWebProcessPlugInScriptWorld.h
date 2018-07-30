@@ -20,6 +20,7 @@
 @property(readonly) struct Object *_apiObject;
 @property(readonly) struct InjectedBundleScriptWorld *_scriptWorld;
 @property(readonly, copy, nonatomic) NSString *name;
+- (void)disableOverrideBuiltinsBehavior;
 - (void)makeAllShadowRootsOpen;
 - (void)clearWrappers;
 - (void)dealloc;

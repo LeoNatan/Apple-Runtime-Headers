@@ -7,36 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBShareDestination.h"
 
-@class PBUnknownFields, _INPBContact;
+@class NSString, _INPBContact;
 
-@interface _INPBShareDestination : PBCodable <NSCopying>
+@interface _INPBShareDestination : PBCodable <_INPBShareDestination, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBContact *_contact;
-    int _deviceType;
     struct {
         unsigned int deviceType:1;
     } _has;
+    int _deviceType;
+    _INPBContact *_contact;
 }
 
-+ (id)options;
+@property(nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) _INPBContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (int)StringAsDeviceType:(id)arg1;
 - (id)deviceTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasDeviceType;
-@property(nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic) _Bool hasContact;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

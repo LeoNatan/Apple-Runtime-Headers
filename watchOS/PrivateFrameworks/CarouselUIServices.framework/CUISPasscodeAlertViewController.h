@@ -6,15 +6,16 @@
 
 #import <CarouselUIServices/CUISAlertViewController.h>
 
-@class UIView;
+@class CUISPasscodeViewController, UIView;
 
 @interface CUISPasscodeAlertViewController : CUISAlertViewController
 {
-    UIView *_contentView;
+    CUISPasscodeViewController *_passcodeViewController;
     id <CUISPasscodeAlertViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <CUISPasscodeAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) CUISPasscodeViewController *passcodeViewController; // @synthesize passcodeViewController=_passcodeViewController;
 - (void).cxx_destruct;
 - (_Bool)allowAutoDismissAfterBacklightOff;
 - (_Bool)allowsCrownButtonDismissal;
@@ -23,7 +24,7 @@
 - (void)deactivate;
 - (void)activate;
 - (void)viewDidLoad;
-- (void)_addAndPositionContentViewIfNecessary;
+- (void)loadView;
 @property(readonly, nonatomic) UIView *contentView;
 - (id)init;
 

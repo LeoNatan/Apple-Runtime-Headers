@@ -105,6 +105,8 @@
 - (BOOL)isSharedCalendarReply;
 - (BOOL)isSharedCalendarInvitation;
 - (BOOL)isInvitation;
+- (BOOL)shouldDisplayInNobo;
+- (BOOL)proposedStartDateIsInFuture;
 - (id)calendar;
 - (void)setOccurrence:(id)arg1;
 @property(readonly, nonatomic) id <EventOccurrenceModelProtocol> occurrence;

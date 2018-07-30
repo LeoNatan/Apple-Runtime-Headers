@@ -6,26 +6,44 @@
 
 #import <ARKit/ARConfiguration.h>
 
-@class NSSet;
+@class ARWorldMap, NSSet, NSString;
 
 @interface ARWorldTrackingConfiguration : ARConfiguration
 {
     _Bool _relocalizationEnabled;
+    _Bool _mlModelEnabled;
+    _Bool _deliverRawSceneUnderstandingResults;
+    long long _environmentTexturing;
     unsigned long long _planeDetection;
+    ARWorldMap *_initialWorldMap;
     NSSet *_detectionImages;
+    long long _maximumNumberOfTrackedImages;
+    NSSet *_detectionObjects;
+    NSString *_slamConfiguration;
+    double _minVergenceAngle;
 }
 
 + (id)supportedVideoFormats;
 + (id)new;
 + (_Bool)isSupported;
+@property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;
+@property(nonatomic, getter=isMLModelEnabled) _Bool mlModelEnabled; // @synthesize mlModelEnabled=_mlModelEnabled;
+@property(nonatomic) double minVergenceAngle; // @synthesize minVergenceAngle=_minVergenceAngle;
+@property(copy, nonatomic) NSString *slamConfiguration; // @synthesize slamConfiguration=_slamConfiguration;
 @property(nonatomic) _Bool relocalizationEnabled; // @synthesize relocalizationEnabled=_relocalizationEnabled;
+@property(copy, nonatomic) NSSet *detectionObjects; // @synthesize detectionObjects=_detectionObjects;
+@property(nonatomic) long long maximumNumberOfTrackedImages; // @synthesize maximumNumberOfTrackedImages=_maximumNumberOfTrackedImages;
 @property(copy, nonatomic) NSSet *detectionImages; // @synthesize detectionImages=_detectionImages;
+@property(retain, nonatomic) ARWorldMap *initialWorldMap; // @synthesize initialWorldMap=_initialWorldMap;
 @property(nonatomic) unsigned long long planeDetection; // @synthesize planeDetection=_planeDetection;
+@property(nonatomic) long long environmentTexturing; // @synthesize environmentTexturing=_environmentTexturing;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)techniques;
+- (id)_trackingOptions;
+- (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (id)imageSensorSettings;
 - (id)init;
 
 // Remaining properties

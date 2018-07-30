@@ -37,9 +37,9 @@
 @property(copy, nonatomic) NSString *dynamicResourcePath; // @synthesize dynamicResourcePath=_dynamicResourcePath;
 @property(copy, nonatomic) NSString *staticDictionaryPath; // @synthesize staticDictionaryPath=_staticDictionaryPath;
 @property(retain, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
+- (void).cxx_destruct;
 - (id)propertyList;
 @property(nonatomic) _Bool usesWordNgramModelAdaptation;
-- (void)dealloc;
 
 @end
 

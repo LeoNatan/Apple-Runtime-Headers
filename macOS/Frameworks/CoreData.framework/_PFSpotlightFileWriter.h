@@ -8,6 +8,7 @@
 
 @class NSManagedObjectContext, NSManagedObjectModel, NSMutableDictionary, NSPersistentStoreCoordinator, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _PFSpotlightFileWriter : NSObject
 {
     NSString *externalRecordsPath;

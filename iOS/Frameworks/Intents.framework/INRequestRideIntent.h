@@ -20,6 +20,7 @@
 - (id)verb;
 - (void)setDomain:(id)arg1;
 - (id)domain;
+- (_Bool)_isUserConfirmationRequired;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 - (void)setScheduledPickupTime:(id)arg1;
@@ -35,6 +36,9 @@
 - (void)setPickupLocation:(id)arg1;
 @property(readonly, copy, nonatomic) CLPlacemark *pickupLocation;
 - (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2 rideOptionName:(id)arg3 partySize:(id)arg4 paymentMethod:(id)arg5 scheduledPickupTime:(id)arg6;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 - (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2 rideOptionName:(id)arg3 partySize:(id)arg4 paymentMethod:(id)arg5;

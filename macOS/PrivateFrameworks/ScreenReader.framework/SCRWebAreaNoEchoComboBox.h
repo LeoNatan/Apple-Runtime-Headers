@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)typeDescription;
+- (BOOL)isComboBox;
 - (BOOL)canHandleValueChange;
 - (BOOL)canHandleTextValueChange;
 - (BOOL)canHandleTextSelectionChange;

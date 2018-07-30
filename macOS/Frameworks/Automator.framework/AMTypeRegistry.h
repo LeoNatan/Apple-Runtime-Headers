@@ -14,23 +14,30 @@
     NSDictionary *_categorizedBasicTypes;
     NSArray *_customApplicationTypes;
     NSDictionary *_categorizedCustomApplicationTypes;
-    NSMutableDictionary *_typesByAutomatorIdentifier;
+    NSMutableDictionary *__typesByAutomatorIdentifier;
+    NSDictionary *_typesByHeaderInputType;
     AMType *_nothingType;
     AMType *_unknownType;
 }
 
 + (id)sharedTypeRegistry;
-@property(retain) NSMutableDictionary *typesByAutomatorIdentifier; // @synthesize typesByAutomatorIdentifier=_typesByAutomatorIdentifier;
+@property(copy, nonatomic) NSDictionary *typesByHeaderInputType; // @synthesize typesByHeaderInputType=_typesByHeaderInputType;
+@property(retain, nonatomic) NSMutableDictionary *_typesByAutomatorIdentifier; // @synthesize _typesByAutomatorIdentifier=__typesByAutomatorIdentifier;
 @property(retain) NSDictionary *categorizedCustomApplicationTypes; // @synthesize categorizedCustomApplicationTypes=_categorizedCustomApplicationTypes;
 @property(retain) NSArray *customApplicationTypes; // @synthesize customApplicationTypes=_customApplicationTypes;
 @property(retain) NSArray *basicTypes; // @synthesize basicTypes=_basicTypes;
 @property(retain) AMType *unknownType; // @synthesize unknownType=_unknownType;
 @property(retain) AMType *nothingType; // @synthesize nothingType=_nothingType;
-@property(retain, nonatomic) NSDictionary *categorizedBasicTypes; // @synthesize categorizedBasicTypes=_categorizedBasicTypes;
+@property(copy, nonatomic) NSDictionary *categorizedBasicTypes; // @synthesize categorizedBasicTypes=_categorizedBasicTypes;
 - (void).cxx_destruct;
+- (id)_automaticallyGuessedInputTypeForActionInputTypes:(id)arg1 allowNothingType:(BOOL)arg2;
+- (id)orderedTypesIncludingApplicationIdentifier:(id)arg1 includeNothing:(BOOL)arg2 includeUnkown:(BOOL)arg3;
+@property(readonly, nonatomic) NSArray *orderedCategoryIdentifiers;
 - (id)imageRepresentationTypeForObject:(id)arg1;
 - (id)imageRepresentationForObject:(id)arg1;
 - (id)humanReadableNameForObject:(id)arg1 delimiter:(id)arg2;
+- (id)_organizeTypesByHeaderInputType;
+@property(readonly, nonatomic) NSDictionary *typesByAutomatorIdentifier;
 - (id)typeWithAutomatorIdentifier:(id)arg1;
 - (id)typesForApplicationWithBundleIdentifier:(id)arg1;
 - (id)init;

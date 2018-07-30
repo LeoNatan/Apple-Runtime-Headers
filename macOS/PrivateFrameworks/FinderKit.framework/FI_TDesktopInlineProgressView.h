@@ -15,7 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TDesktopInlineProgressView : FI_TUpdateLayerView <TTrackingAreaOwnerProtocol, CAAnimationDelegate, CALayerDelegate>
 {
-    struct TNSRef<FI_TInlineProgressHostLayer *, void> _inlineProgressHostLayer;
+    struct TNSRef<FI_TInlineProgressHostLayer, void> _inlineProgressHostLayer;
     function_b1fce659 _cancelButtonHandler;
 }
 

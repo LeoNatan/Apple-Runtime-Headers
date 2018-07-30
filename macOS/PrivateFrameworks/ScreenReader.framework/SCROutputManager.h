@@ -181,7 +181,7 @@
 - (long long)punctuationRepeatLimitForCategory:(id)arg1;
 - (long long)punctuationRepeateModeForCategory:(id)arg1;
 - (long long)punctuationVerbosityLevelForCategory:(id)arg1;
-- (void)_adjustSpeechAttributeForCategory:(id)arg1 speakAttributeChange:(BOOL)arg2 continueSpeech:(BOOL)arg3 responseAction:(int)arg4;
+- (void)_adjustSpeechAttributeForCategory:(id)arg1 speakAttributeChange:(BOOL)arg2 continueSpeech:(BOOL)arg3 responseAction:(long long)arg4;
 - (void)updateSpeechRateWithoutPause;
 - (void)updateSpeechVoiceIdentifierForCategory:(id)arg1 shouldSpeakResult:(BOOL)arg2;
 - (void)updateSpeechVolumeForCategory:(id)arg1 shouldSpeakResult:(BOOL)arg2;

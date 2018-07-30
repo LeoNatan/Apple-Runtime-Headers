@@ -6,14 +6,15 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@interface SKAction : NSObject <NSCopying, NSCoding>
+@interface SKAction : NSObject <NSCopying, NSSecureCoding>
 {
     struct SKCAction *_caction;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)animateWithWarps:(id)arg1 times:(id)arg2 restore:(_Bool)arg3;
 + (id)animateWithWarps:(id)arg1 times:(id)arg2;
 + (id)warpTo:(id)arg1 duration:(double)arg2;
@@ -123,6 +124,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
 @property(nonatomic) double speed;
+- (_Bool)isEqualToAction:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

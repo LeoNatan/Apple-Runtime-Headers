@@ -6,20 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSString, NSXPCListenerEndpoint;
 
 __attribute__((visibility("hidden")))
 @interface NSChildWindowQueueElement : NSObject
 {
     NSString *_identifier;
-    int _privateEventLoopKind;
-    unsigned char _windowBase;
-    long long _ordered;
-    struct CGRect _content;
     CDUnknownBlockType _reply;
+    NSXPCListenerEndpoint *_listenerEndpoint;
+    CDStruct_e578beec _parameters;
 }
 
-- (id)initWithIdentifier:(id)arg1 privateEventLoopKind:(int)arg2 windowBase:(unsigned char)arg3 ordered:(long long)arg4 content:(struct CGRect)arg5 reply:(CDUnknownBlockType)arg6;
+- (id)initWithIdentifier:(id)arg1 parameters:(const CDStruct_e578beec *)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 
 @end

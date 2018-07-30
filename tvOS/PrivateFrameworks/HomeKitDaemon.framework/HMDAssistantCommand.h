@@ -95,7 +95,6 @@
 - (_Bool)populateResultWithEntity:(id)arg1 action:(id)arg2 entity:(id)arg3;
 - (_Bool)populateResult:(id)arg1 withObject:(id)arg2 serviceType:(id)arg3 action:(id)arg4;
 - (_Bool)populateResult:(id)arg1 withService:(id)arg2 serviceType:(id)arg3 characteristic:(id)arg4 resultAttribute:(id)arg5 action:(id)arg6;
-- (id)actionSetFromObject:(id)arg1;
 - (id)serviceFromObject:(id)arg1;
 
 // Remaining properties

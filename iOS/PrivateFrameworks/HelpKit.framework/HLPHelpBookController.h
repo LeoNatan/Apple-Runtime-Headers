@@ -57,6 +57,7 @@
 - (id)dynamicServerSectionsForIdentifiers:(id)arg1 level:(long long)arg2 parent:(id)arg3 tocMap:(id)arg4;
 - (void)processData:(id)arg1 formattedData:(id)arg2;
 - (void)processFileURLWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchDataWithDataType:(long long)arg1 identifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic, getter=isSemanticHTML) _Bool semanticHTML; // @dynamic semanticHTML;
 - (void)dealloc;
 

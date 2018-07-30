@@ -13,7 +13,9 @@
 
 @property long long assistiveControlType; // @synthesize assistiveControlType=_assistiveControlType;
 - (void)performWithEventSourceData:(id)arg1;
+- (id)dictionaryForSaving;
 - (unsigned long long)actionType;
+- (id)init;
 
 @end
 

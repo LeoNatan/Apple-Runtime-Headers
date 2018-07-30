@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 + (id)styleSet;
 + (id)ruleDictionaryForStyle:(id)arg1;
 + (id)additionalRulesForStyle:(id)arg1;
++ (id)ruleDictionaryForStyleWithDarkInterface:(id)arg1;
 + (id)baseRules;
 - (id)initWithType:(long long)arg1 style:(id)arg2 themePath:(id)arg3 generator:(id)arg4;
 

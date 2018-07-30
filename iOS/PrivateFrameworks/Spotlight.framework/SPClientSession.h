@@ -15,12 +15,15 @@
     int _prefsToken;
     PARSession *_session;
     SPAppService *_appService;
+    long long _contentFilter;
     _Bool _infinitePatience;
 }
 
 + (void)retrieveFirstTimeExperienceTextWithReply:(CDUnknownBlockType)arg1;
++ (void)initialize;
 @property(nonatomic) _Bool infinitePatience; // @synthesize infinitePatience=_infinitePatience;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)finishRanking:(id)arg1 blendingDuration:(double)arg2;
 - (void)deactivate;
 - (void)activate;

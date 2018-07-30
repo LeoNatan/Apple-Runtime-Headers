@@ -6,14 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSProgress, NSString, PMRActivity;
+@class NSDate, NSProgress, NSString;
 
 @interface RDLibraryUpgraderLogger : NSObject
 {
     NSString *_name;
     NSDate *_date;
     NSString *_key;
-    PMRActivity *_activity;
     struct {
         double virtualSize;
         double residentSize;
@@ -28,7 +27,7 @@
 - (void).cxx_destruct;
 - (void)stop;
 - (id)memoryUsage;
-- (id)initWithName:(id)arg1 PMRKey:(id)arg2 progress:(id)arg3;
+- (id)initWithName:(id)arg1 PPTKey:(id)arg2 progress:(id)arg3;
 
 @end
 

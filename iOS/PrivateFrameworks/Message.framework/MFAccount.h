@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
+#import "EMAccount.h"
 #import "MFPubliclyDescribable.h"
 
 @class ACAccount, NSDictionary, NSMutableDictionary, NSString;
 
-@interface MFAccount : NSObject <MFPubliclyDescribable>
+@interface MFAccount : NSObject <EMAccount, MFPubliclyDescribable>
 {
     ACAccount *_persistentAccount;
     struct os_unfair_lock_s _persistentAccountLock;
@@ -59,6 +60,7 @@
 - (_Bool)enableAccount;
 - (_Bool)shouldEnableAfterError:(id)arg1;
 - (id)nameForMailboxUid:(id)arg1;
+- (id)networkAccountIdentifier;
 @property(readonly) NSString *syncStoreIdentifier;
 @property(readonly) NSString *uniqueId;
 - (_Bool)_connectAndAuthenticate:(id)arg1;
@@ -95,6 +97,9 @@
 - (unsigned int)defaultSecurePortNumber;
 - (unsigned int)defaultPortNumber;
 - (unsigned int)portNumber;
+- (_Bool)hasPasswordCredential;
+- (_Bool)canAuthenticateWithCurrentCredentials;
+- (id)systemAccount;
 - (_Bool)fetchTokensIfNecessary:(id *)arg1;
 @property(readonly) NSString *managedTag;
 @property(readonly) ACAccount *accountForRenewingCredentials;
@@ -109,17 +114,16 @@
 - (id)credentialItemForKey:(id)arg1 error:(id *)arg2;
 - (id)credentialItemForKey:(id)arg1;
 - (unsigned long long)credentialAccessibility;
-- (id)password;
+@property(copy, nonatomic) NSString *password;
 - (id)_passwordWithError:(id *)arg1;
 - (id)_password;
-- (void)setPassword:(id)arg1;
 - (id)_credentialCreateIfNecessary:(_Bool)arg1 error:(id *)arg2;
 - (id)_credentialCreateIfNecessary:(_Bool)arg1;
 - (id)_credential;
 - (_Bool)supportsMailDrop;
 - (_Bool)isManaged;
-@property(retain, nonatomic) NSString *hostname;
-@property(retain, nonatomic) NSString *username;
+@property(copy, nonatomic) NSString *hostname;
+@property(retain) NSString *username;
 @property(retain, nonatomic) NSString *displayName;
 - (_Bool)canGoOffline;
 - (void)setActive:(_Bool)arg1;
@@ -142,7 +146,7 @@
 @property(readonly) NSString *type;
 @property(readonly) NSString *parentAccountIdentifier;
 @property(readonly) ACAccount *parentAccount;
-@property(readonly) NSString *identifier;
+@property(readonly, copy) NSString *identifier;
 - (void)removePersistentAccount;
 - (void)savePersistentAccount;
 @property(readonly) ACAccount *persistentAccount;

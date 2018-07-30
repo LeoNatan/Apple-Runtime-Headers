@@ -21,14 +21,13 @@
 + (struct UIEdgeInsets)defaultInsets;
 @property(retain) NUIContainerStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) NSMutableArray *imageViews; // @synthesize imageViews=_imageViews;
-@property(getter=isPaddingDisabled) _Bool paddingDisabled; // @synthesize paddingDisabled=_paddingDisabled;
-@property(retain) NSArray *images; // @synthesize images=_images;
+@property(nonatomic, getter=isPaddingDisabled) _Bool paddingDisabled; // @synthesize paddingDisabled=_paddingDisabled;
+@property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
 - (void).cxx_destruct;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (void)updateWithImages:(id)arg1;
 - (void)updateForPaddingDisabled:(_Bool)arg1;
 - (void)observedPropertiesChanged;
-- (id)observableProperties;
 - (void)styleDidChange:(unsigned long long)arg1;
 - (id)init;
 

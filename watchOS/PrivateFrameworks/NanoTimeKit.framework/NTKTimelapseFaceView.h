@@ -14,6 +14,7 @@
     UIView *_cornerView;
     UITapGestureRecognizer *_tapToPlayGesture;
     NTKUtilityComplicationFactory *_complicationFactory;
+    unsigned int _deviceSizeClass;
     UIColor *_foregroundColor;
     UIColor *_shadowColor;
     UIView *_topGradientView;
@@ -53,14 +54,16 @@
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (void)_loadLayoutRules;
 - (void)layoutSubviews;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)_prepareForEditing;
+- (_Bool)_timeLabelUsesLegibility;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 @end
 

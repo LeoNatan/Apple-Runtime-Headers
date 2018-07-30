@@ -30,7 +30,6 @@
 + (id)themeWithThemeType:(unsigned long long)arg1;
 + (id)_currentTheme:(unsigned long long)arg1;
 + (id)currentTheme;
-+ (_Bool)_shouldAutoSwitchTheme;
 @property(nonatomic) _Bool useSmallFont; // @synthesize useSmallFont=_useSmallFont;
 @property(readonly, nonatomic) unsigned long long themeType; // @synthesize themeType=_themeType;
 - (void).cxx_destruct;
@@ -76,6 +75,7 @@
 - (unsigned long long)_currentSystemTheme;
 - (id)_initWithThemeType:(unsigned long long)arg1;
 - (id)init;
+- (_Bool)_isInSpotlightContext;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,14 +6,18 @@
 
 #import <NanoRegistry/NRMutableStateBase.h>
 
+@class NRPBMutableDeviceProperty;
+
 @interface NRMutableDeviceProperty : NRMutableStateBase
 {
     id <NSObject><NSCopying> _value;
+    NRPBMutableDeviceProperty *_protobuf;
 }
 
 + (id)diffFrom:(id)arg1 to:(id)arg2;
 + (id)enclosedClassTypes;
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NRPBMutableDeviceProperty *protobuf; // @synthesize protobuf=_protobuf;
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
@@ -21,11 +25,12 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)applyDiff:(id)arg1 upOnly:(_Bool)arg2 notifyParent:(_Bool)arg3 unconditional:(_Bool)arg4;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithProtobuf:(id)arg1;
 - (id)initWithValue:(id)arg1;
 - (id)init;
-@property(retain, nonatomic) id <NSObject><NSCopying> value; // @synthesize value=_value;
+- (void)setValue:(id)arg1;
+@property(readonly, retain, nonatomic) id <NSObject><NSCopying> value; // @synthesize value=_value;
 
 @end
 

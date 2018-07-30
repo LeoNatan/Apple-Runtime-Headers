@@ -27,6 +27,7 @@
 + (id)displayContextWithName:(id)arg1;
 + (id)_gizmoContext;
 + (id)_companionContext;
++ (void)_contentSizeChangeForContext:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSDictionary *keyColors; // @synthesize keyColors=_keyColors;
 @property(retain, nonatomic) NSDictionary *titleColors; // @synthesize titleColors=_titleColors;
 @property(retain, nonatomic) UIFont *descriptionFont; // @synthesize descriptionFont=_descriptionFont;

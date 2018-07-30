@@ -6,30 +6,12 @@
 
 #import <PepperUICore/PUICQuickboardListItemCell.h>
 
-@class UILabel;
-
 @interface PUICQuickboardListContactItemCell : PUICQuickboardListItemCell
 {
-    _Bool _displayNameIsRawAdress;
-    _Bool _handleAndAddressFitOnSameLine;
-    UILabel *_handleLabel;
-    UILabel *_rawAddressLabel;
 }
 
 + (id)detailFont;
-@property(retain, nonatomic) UILabel *rawAddressLabel; // @synthesize rawAddressLabel=_rawAddressLabel;
-@property(retain, nonatomic) UILabel *handleLabel; // @synthesize handleLabel=_handleLabel;
-- (void).cxx_destruct;
-- (void)layoutHandleAndAddressConstrainedToWidth:(float)arg1;
 - (void)configureForContact:(id)arg1 width:(float)arg2;
-- (void)setupLabelFonts;
-- (void)prepareForReuse;
-- (float)baselineToBottomSpecValue;
-- (float)topToLabelBaselineSpecValue;
-- (void)visuallySelect;
-- (void)layoutSubviews;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

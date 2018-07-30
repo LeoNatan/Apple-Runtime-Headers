@@ -6,16 +6,14 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSColor, NSImage, NSString;
+@class NSArray, NSImage, NSString;
 
 @protocol TabBarViewItem <NSObject>
 @property(readonly, copy, nonatomic) NSArray *accessoryViews;
 @property(readonly, copy, nonatomic) NSString *toolTip;
 @property(readonly, copy, nonatomic) NSString *label;
-@property(readonly, nonatomic) NSColor *themeColor;
-@property(readonly, nonatomic) NSImage *highlightedImage;
 @property(readonly, nonatomic) NSImage *image;
+@property(nonatomic) BOOL showIcon;
 @property(nonatomic, getter=isPinned) BOOL pinned;
-- (void)updateSiteIconNow;
 @end
 

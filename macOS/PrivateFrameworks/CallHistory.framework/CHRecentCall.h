@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class CNContact, NSDate, NSMutableArray, NSNumber, NSString, NSValue;
+@class CHHandle, CNContact, NSDate, NSMutableArray, NSNumber, NSSet, NSString, NSUUID, NSValue;
 
 @interface CHRecentCall : CHSynchronizable <NSSecureCoding, NSCopying>
 {
@@ -19,18 +19,20 @@
     BOOL _answered;
     BOOL _mobileOriginated;
     unsigned int _callerIdAvailability;
-    unsigned int _callType;
     unsigned int _callStatus;
     unsigned int _callCategory;
+    unsigned int _callType;
     NSString *_callerNetworkName;
     long long _handleType;
+    NSUUID *_localParticipantUUID;
+    NSUUID *_outgoingLocalParticipantUUID;
+    CHHandle *_localParticipantHandle;
+    NSSet *_remoteParticipantHandles;
     NSString *_uniqueId;
-    NSString *_devicePhoneId;
-    NSString *_callerId;
     NSString *_serviceProvider;
+    NSNumber *_bytesOfDataUsed;
     NSDate *_date;
     double _duration;
-    NSNumber *_bytesOfDataUsed;
     NSString *_isoCountryCode;
     NSString *_mobileCountryCode;
     NSString *_mobileNetworkCode;
@@ -39,13 +41,15 @@
     NSString *_callerNetworkSecondName;
     unsigned long long _unreadCount;
     NSString *_clientAddressBookRecordId;
-    NSValue *_addressBookRecordRef;
-    NSString *_addressBookRecordId;
-    NSString *_addressBookCallerIDMultiValueId;
     NSString *_contactIdentifier;
     long long _mediaType;
     long long _ttyType;
     NSNumber *_timeToEstablish;
+    NSValue *_addressBookRecordRef;
+    NSString *_addressBookRecordId;
+    NSString *_addressBookCallerIDMultiValueId;
+    NSString *_devicePhoneId;
+    NSString *_callerId;
     NSString *_callerName;
     NSMutableArray *_callOccurrences;
     NSString *_callerIdLabel;
@@ -69,7 +73,8 @@
 + (id)callTTYTypeAsString:(long long)arg1;
 + (id)callMediaTypeAsString:(long long)arg1;
 + (id)getLocationForCallerId:(id)arg1 andIsoCountryCode:(id)arg2;
-+ (long long)handleTypeForCallerId:(id)arg1;
++ (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
++ (id)unarchivedObjectClasses;
 @property BOOL mobileOriginated; // @synthesize mobileOriginated=_mobileOriginated;
 @property BOOL answered; // @synthesize answered=_answered;
 @property(retain) id <CHPhoneBookManagerProtocol> phoneBookManager; // @synthesize phoneBookManager=_phoneBookManager;
@@ -80,13 +85,17 @@
 @property(copy, nonatomic) NSString *callerIdLabel; // @synthesize callerIdLabel=_callerIdLabel;
 @property(retain, nonatomic) NSMutableArray *callOccurrences; // @synthesize callOccurrences=_callOccurrences;
 @property(copy, nonatomic) NSString *callerName; // @synthesize callerName=_callerName;
-@property(copy) NSNumber *timeToEstablish; // @synthesize timeToEstablish=_timeToEstablish;
-@property(nonatomic) long long ttyType; // @synthesize ttyType=_ttyType;
-@property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
-@property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
+@property(copy) NSString *callerId; // @synthesize callerId=_callerId;
+@property(copy) NSString *devicePhoneId; // @synthesize devicePhoneId=_devicePhoneId;
+@property(nonatomic) unsigned int callType; // @synthesize callType=_callType;
+@property(nonatomic) unsigned int callCategory; // @synthesize callCategory=_callCategory;
 @property(copy, nonatomic) NSString *addressBookCallerIDMultiValueId; // @synthesize addressBookCallerIDMultiValueId=_addressBookCallerIDMultiValueId;
 @property(copy, nonatomic) NSString *addressBookRecordId; // @synthesize addressBookRecordId=_addressBookRecordId;
 @property(copy) NSValue *addressBookRecordRef; // @synthesize addressBookRecordRef=_addressBookRecordRef;
+@property(copy, nonatomic) NSNumber *timeToEstablish; // @synthesize timeToEstablish=_timeToEstablish;
+@property(nonatomic) long long ttyType; // @synthesize ttyType=_ttyType;
+@property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
+@property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(copy) NSString *clientAddressBookRecordId; // @synthesize clientAddressBookRecordId=_clientAddressBookRecordId;
 @property unsigned long long unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(copy) NSString *callerNetworkSecondName; // @synthesize callerNetworkSecondName=_callerNetworkSecondName;
@@ -95,17 +104,15 @@
 @property(copy) NSNumber *disconnectedCause; // @synthesize disconnectedCause=_disconnectedCause;
 @property(copy) NSString *mobileNetworkCode; // @synthesize mobileNetworkCode=_mobileNetworkCode;
 @property(copy) NSString *mobileCountryCode; // @synthesize mobileCountryCode=_mobileCountryCode;
-@property(copy) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
-@property(copy) NSNumber *bytesOfDataUsed; // @synthesize bytesOfDataUsed=_bytesOfDataUsed;
-@property double duration; // @synthesize duration=_duration;
-@property(copy) NSDate *date; // @synthesize date=_date;
+@property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
+@property(nonatomic) double duration; // @synthesize duration=_duration;
+@property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(copy, nonatomic) NSNumber *bytesOfDataUsed; // @synthesize bytesOfDataUsed=_bytesOfDataUsed;
 @property(copy, nonatomic) NSString *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
-@property(nonatomic) unsigned int callCategory; // @synthesize callCategory=_callCategory;
-@property unsigned int callStatus; // @synthesize callStatus=_callStatus;
-@property(nonatomic) unsigned int callType; // @synthesize callType=_callType;
-@property(copy) NSString *callerId; // @synthesize callerId=_callerId;
-@property(copy) NSString *devicePhoneId; // @synthesize devicePhoneId=_devicePhoneId;
-@property(copy) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
+@property(nonatomic) unsigned int callStatus; // @synthesize callStatus=_callStatus;
+@property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
+@property(copy, nonatomic) NSSet *remoteParticipantHandles; // @synthesize remoteParticipantHandles=_remoteParticipantHandles;
+@property(retain, nonatomic) CHHandle *localParticipantHandle; // @synthesize localParticipantHandle=_localParticipantHandle;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fixCallTypeInfo;
@@ -138,6 +145,8 @@
 - (void)fetchAndSetFullContactSync;
 - (void)fetchAndSetContactIdentifierSync;
 @property(nonatomic) BOOL read; // @synthesize read=_read;
+@property(retain, nonatomic) NSUUID *outgoingLocalParticipantUUID; // @synthesize outgoingLocalParticipantUUID=_outgoingLocalParticipantUUID;
+@property(retain, nonatomic) NSUUID *localParticipantUUID; // @synthesize localParticipantUUID=_localParticipantUUID;
 - (void)createOccurrenceArraySync;
 - (id)callOccurrencesSync;
 - (unsigned long long)numberOfOccurrences;
@@ -154,6 +163,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithQueue:(id)arg1;
+- (id)archivedDataWithError:(id *)arg1;
 
 @end
 

@@ -105,6 +105,7 @@
 - (void)setLayer:(id)arg1;
 - (id)_makeShadowView;
 - (void)_updateLayerDividersIfNeeded;
+- (BOOL)_canUseLayersForDividers;
 - (id)_priorityGroups;
 - (BOOL)_validateArrangedViewFrames;
 - (void)resetCursorRects;
@@ -186,7 +187,6 @@
 @property(readonly) double dividerThickness;
 @property(readonly, copy) NSColor *dividerColor;
 - (void)setDividerColor:(id)arg1;
-- (BOOL)_hasBehaviorForLinkedOnOrAfter:(long long)arg1;
 - (void)drawDividerInRect:(struct CGRect)arg1;
 - (void)_drawDividerDimpleInRect:(struct CGRect)arg1 indicatorOnly:(BOOL)arg2;
 - (struct __CFString *)_currentStateKey;
@@ -235,9 +235,6 @@
 - (void)_autosaveArrangedViewLayoutIfNecessary;
 - (id)_arrangedViewLayoutDescriptions;
 - (BOOL)_walkLayoutDescriptionArray:(id)arg1 withFrameHandler:(CDUnknownBlockType)arg2;
-- (void)_removeTrackingOverlayView:(id)arg1;
-- (void)_addTrackingOverlayView:(id)arg1;
-@property(setter=_setShowsOverlayMetrics:) BOOL _showsOverlayMetrics;
 - (BOOL)_isArrangedViewAutoCollapsed:(id)arg1;
 - (void)_setArrangedView:(id)arg1 isAutocollapsed:(BOOL)arg2;
 - (void)_animatedAutoCollapseArrangedView:(id)arg1;

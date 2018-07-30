@@ -121,6 +121,7 @@
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(BOOL)arg3 validator:(id)arg4;
 - (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
 - (void)pinEntryComplete:(BOOL)arg1;
+- (void)mbConfirmLocalPasswordWithCompletion:(id)arg1;
 - (void)mbRunAppleIDOptOut:(id)arg1;
 - (void)mbWebkitViewSaveFile:(id)arg1 withLocalizedDisplayName:(id)arg2 content:(id)arg3;
 - (void)mbWebkitViewSaveFile:(id)arg1 content:(id)arg2;

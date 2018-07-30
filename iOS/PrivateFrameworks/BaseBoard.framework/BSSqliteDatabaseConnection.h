@@ -17,6 +17,7 @@
 }
 
 + (int)_sqliteOpenFlagsForDataProtectionClass:(unsigned long long)arg1;
+- (void).cxx_destruct;
 - (void)_closeConnection;
 - (void)_queue_close;
 - (id)_sqliteErrorForResult:(int)arg1 errorMessage:(id)arg2;

@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface FI_TAirDropLegacyModePopoverViewController : FI_TViewController
 {
-    struct TNSRef<FI_TAirDropDiscoveryController *, void> _discoveryController;
+    struct TNSRef<FI_TAirDropDiscoveryController, void> _discoveryController;
     struct TKeyValueObserver _legacyModeEnabledObserver;
     struct TKeyValueObserver _legacyMachineObserver;
-    struct TNSRef<FI_TPopoverController *, void> _popoverController;
+    struct TNSRef<FI_TPopoverController, void> _popoverController;
     FI_TTextField *_messageTextField;
     FI_TButton *_toggleLegacyModeButton;
 }

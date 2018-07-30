@@ -42,6 +42,7 @@
 - (void)_addStatusBarAlphaAnimationToBatch:(id)arg1 transitionState:(id)arg2;
 - (void)_addStatusBarStateAnimationToBatch:(id)arg1 transitionState:(id)arg2;
 - (struct CGAffineTransform)_headerViewTransformForTransitionState:(id)arg1;
+- (struct CGAffineTransform)_compactStatusBar:(id)arg1 transformForTransitionState:(id)arg2;
 - (void)_addHeaderContentTransformAnimationToBatch:(id)arg1 transitionState:(id)arg2;
 - (double)_leadingStatusBarAlphaForTransitionState:(id)arg1;
 - (void)_addLeadingStatusBarAlphaAnimationToBatch:(id)arg1 transitionState:(id)arg2;

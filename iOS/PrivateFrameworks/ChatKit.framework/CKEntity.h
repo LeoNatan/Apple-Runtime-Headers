@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CNContact, IMHandle, NSString, UIImage;
+@class CNContact, IMAccount, IMHandle, NSString, UIImage;
 
 @interface CKEntity : NSObject
 {
@@ -14,12 +14,14 @@
     UIImage *_transcriptContactImage;
     UIImage *_transcriptDrawerContactImage;
     IMHandle *_handle;
+    IMAccount *_chatAccount;
     CNContact *_cnContact;
 }
 
 + (id)copyEntityForAddressString:(id)arg1;
 + (id)_copyEntityForAddressString:(id)arg1 onAccount:(id)arg2;
 @property(retain, nonatomic) CNContact *cnContact; // @synthesize cnContact=_cnContact;
+@property(retain, nonatomic) IMAccount *chatAccount; // @synthesize chatAccount=_chatAccount;
 @property(retain, nonatomic) IMHandle *handle; // @synthesize handle=_handle;
 @property(nonatomic) _Bool enlargedContactImage; // @synthesize enlargedContactImage=_enlargedContactImage;
 @property(readonly, nonatomic) UIImage *transcriptDrawerContactImage; // @synthesize transcriptDrawerContactImage=_transcriptDrawerContactImage;
@@ -47,6 +49,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)initWithChat:(id)arg1 imHandle:(id)arg2;
 - (id)initWithIMHandle:(id)arg1;
 - (id)personViewControllerWithDelegate:(id)arg1 isUnknown:(_Bool *)arg2 contactStoreProvider:(id)arg3;
 - (id)personViewControllerWithDelegate:(id)arg1 isUnknown:(_Bool *)arg2;

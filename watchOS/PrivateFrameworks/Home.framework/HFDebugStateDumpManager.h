@@ -12,14 +12,17 @@
 {
     NSObject<OS_dispatch_queue> *_stateHandlerQueue;
     NSMutableDictionary *_stateDumpHandlersByName;
+    int _logStateDumpNotifyToken;
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) int logStateDumpNotifyToken; // @synthesize logStateDumpNotifyToken=_logStateDumpNotifyToken;
 @property(retain, nonatomic) NSMutableDictionary *stateDumpHandlersByName; // @synthesize stateDumpHandlersByName=_stateDumpHandlersByName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateHandlerQueue; // @synthesize stateHandlerQueue=_stateHandlerQueue;
 - (void).cxx_destruct;
 - (id)performStateDump:(_Bool)arg1;
 - (id)registerStateDumpHandler:(CDUnknownBlockType)arg1 withName:(id)arg2;
+- (void)dealloc;
 - (id)init;
 
 @end

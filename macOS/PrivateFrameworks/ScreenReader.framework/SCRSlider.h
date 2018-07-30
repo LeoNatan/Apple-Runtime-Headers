@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)buildBrailleLineWithFocusedElement:(id)arg1;
 - (void)sendBrailleLineWithElement:(id)arg1 focusThrough:(BOOL)arg2 forceRebuild:(BOOL)arg3;
 - (id)description;
+- (id)_defaultLocalizedStringForCommandKey:(id)arg1;
 - (void)delayOutputValueDescription;
 - (void)addElementSummaryToRequest:(id)arg1;
 - (id)summaryTypeDescription;

@@ -6,22 +6,22 @@
 
 #import "NSObject.h"
 
-@class VCPCNNData, VCPCNNModel;
+@class VCPRTLandmarkDetector;
 
 @interface VCPCNNGazeAnalysis : NSObject
 {
-    VCPCNNModel *_modelLandmarks;
-    VCPCNNModel *_modelEyeOpenness;
-    VCPCNNData *_faceInput;
-    VCPCNNData *_eyeInput;
+    VCPRTLandmarkDetector *_rtLandmarkDetector;
 }
 
++ (id)analyzer;
 - (void).cxx_destruct;
 - (int)cropAndRotateEyeImage:(struct __CVBuffer *)arg1 leftCornerX:(int)arg2 leftCornerY:(int)arg3 rightCornerX:(int)arg4 rightCornerY:(int)arg5;
 - (int)detectEyeOpennessForFace:(struct CGRect)arg1 inBuffer:(struct __CVBuffer *)arg2 eyeOpenness:(char *)arg3;
+- (int)planDestroy;
+- (int)planCreate;
+- (int)computeBlinkScore:(float *)arg1;
+- (float *)getInputBuffer;
 - (id)init;
-- (int)initEyeOpennessModel;
-- (int)initLandmarkModel;
 
 @end
 

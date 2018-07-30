@@ -120,6 +120,7 @@
 - (void)PPTCreateComplication:(id)arg1 forSlot:(id)arg2 synchronously:(_Bool)arg3;
 - (void)PPTPrepareComplicationTest;
 - (id)PPTUniqueComplicationsToSlotForCurrentFace;
+- (id)faceViewComplicationForSlot:(id)arg1;
 - (id)faceViewComplicationAppIdentifierForSlot:(id)arg1;
 - (_Bool)faceView:(id)arg1 wantsToDismissPresentedViewControllerAnimated:(_Bool)arg2;
 - (void)faceViewWantsToPresentViewController:(id)arg1;
@@ -161,6 +162,7 @@
 - (_Bool)becomeFirstResponder;
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)canStopEditing;
+- (void)hideFaceEditingUIAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hideFaceEditingUIAnimated:(_Bool)arg1;
 - (void)showEditingUIAnimated:(_Bool)arg1;
 - (_Bool)dailySnapshotShowsComplication:(id)arg1 forSlot:(id)arg2;
@@ -172,6 +174,7 @@
 - (void)enumerateComplicationControllersAndDisplaysWithBlock:(CDUnknownBlockType)arg1;
 - (void)getComplicationController:(id *)arg1 andDisplay:(id *)arg2 forSlot:(id)arg3;
 @property(readonly, copy) NSString *description;
+- (void)finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (void)prepareForSnapshotting;
 - (id)blurSourceImage;
 - (void)viewDidLayoutSubviews;

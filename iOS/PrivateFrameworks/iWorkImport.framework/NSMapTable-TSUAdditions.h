@@ -7,6 +7,7 @@
 #import "NSMapTable.h"
 
 @interface NSMapTable (TSUAdditions)
+- (id)tsu_allObjects;
 - (id)tsu_allKeys;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;

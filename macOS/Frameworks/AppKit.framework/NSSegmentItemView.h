@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class NSColor, NSFont, NSImage, NSSegmentItem, NSSegmentItemImageView, NSSegmentItemLabelView, NSSegmentedCell, NSString, NSUserInterfaceCompressionOptions;
+@class NSColor, NSFont, NSImage, NSSegmentItem, NSSegmentItemBezelView, NSSegmentItemImageView, NSSegmentItemLabelView, NSSegmentedCell, NSString, NSUserInterfaceCompressionOptions;
 
 __attribute__((visibility("hidden")))
 @interface NSSegmentItemView : NSView
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSSegmentItem *_segmentItemData;
     unsigned long long _controlSize;
     long long _segmentStyle;
+    NSSegmentItemBezelView *_bezelView;
     NSSegmentItemLabelView *_labelView;
     NSSegmentItemImageView *_imageView;
     NSSegmentItemImageView *_menuIndicatorView;
@@ -62,11 +63,13 @@ __attribute__((visibility("hidden")))
 @property BOOL drawsBezel; // @synthesize drawsBezel=_drawsBezel;
 @property __weak NSSegmentedCell *parentCell; // @synthesize parentCell=_parentCell;
 - (void).cxx_destruct;
-- (BOOL)canSmoothFontsInLayer;
-- (void)updateLayer;
-- (BOOL)wantsUpdateLayer;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)_drawBezel;
+- (id)_preferredAppearanceForSegmentLabelView:(id)arg1;
+- (id)_preferredAppearanceForSegmentImageView:(id)arg1;
+- (int)_vibrancyBlendModeForSegmentLabelView:(id)arg1 proposedBlendMode:(int)arg2;
+- (int)_vibrancyBlendModeForSegmentImageView:(id)arg1 proposedBlendMode:(int)arg2;
+- (int)_vibrancyBlendModeForSegmentBezelView:(id)arg1 proposedBlendMode:(int)arg2;
+- (int)_vibrancyBlendMode;
+- (void)_updateBezelView;
 - (struct CGSize)_labelSize;
 - (void)_updateLabelState;
 @property(retain) NSFont *font;
@@ -99,7 +102,7 @@ __attribute__((visibility("hidden")))
 - (void)_windowDidOrderOnScreen;
 - (void)viewDidMoveToWindow;
 - (void)viewDidMoveToSuperview;
-- (void)_viewDidChangeAppearance:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_stopObserving;
 - (void)_setupObserving;

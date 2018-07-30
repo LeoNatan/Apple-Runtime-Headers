@@ -17,6 +17,7 @@
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(nonatomic) __weak id <NPKRemoteInterfacePresenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)presentSetupApplePayAlert:(id)arg1;
 - (void)clearInAppInterfaceForSkeletonPeerPaymentQuote:(id)arg1 withError:(id)arg2;
 - (void)showInAppInterfaceWithSkeletonPeerPaymentQuote:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentContinuityPaymentInterfaceWithRemotePaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -15,7 +15,7 @@
 #import "UITableViewDataSource.h"
 #import "UITableViewDelegate.h"
 
-@class NSLayoutConstraint, NSString, PKAuthenticator, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationLayout, PKPaymentAuthorizationPasswordButtonView, PKPaymentAuthorizationStateMachine, PKPaymentAuthorizationSummaryItemsView, PKPaymentAuthorizationTotalView, PKPaymentPreferencesViewController, PKPeerPaymentAccount, PKPhysicalButtonView, UIBarButtonItem, UITableView, UIView;
+@class LAUIPhysicalButtonView, NSLayoutConstraint, NSMutableSet, NSString, PKAuthenticator, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationLayout, PKPaymentAuthorizationPasswordButtonView, PKPaymentAuthorizationStateMachine, PKPaymentAuthorizationSummaryItemsView, PKPaymentAuthorizationTotalView, PKPaymentPreferencesViewController, PKPeerPaymentAccount, UIBarButtonItem, UITableView, UIView;
 
 @interface PKPaymentAuthorizationServiceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, PKPaymentAuthorizationFooterViewDelegate, PKAuthenticatorDelegate, PKPaymentAuthorizationStateMachineDelegate, AKAppleIDAuthenticationInAppContextDelegate, PKPaymentAuthorizationServiceProtocol>
 {
@@ -31,6 +31,7 @@
     NSLayoutConstraint *_passphraseBottomConstraint;
     _Bool _needsToAccommodateKeyboard;
     UIBarButtonItem *_cancelBarButtonItem;
+    _Bool _cancelButtonDisabled;
     UIView *_passphraseSeparatorView;
     NSLayoutConstraint *_contentViewRightConstraint;
     PKPaymentPreferencesViewController *_shippingMethodPreferencesController;
@@ -54,18 +55,20 @@
     struct __IOHIDEventSystemClient *_hidSystemClient;
     unsigned long long _biometryAttempts;
     PKPeerPaymentAccount *_peerPaymentAccount;
+    _Bool _peerPaymentBalanceIsInsufficient;
+    NSMutableSet *_completionHandlers;
     _Bool _userIntentRequired;
     _Bool _shouldIgnorePhysicalButton;
-    _Bool _cancelButtonDisabled;
+    _Bool _blockingHardwareCancels;
     PKPaymentAuthorizationStateMachine *_stateMachine;
     PKAuthenticator *_authenticator;
-    PKPhysicalButtonView *_physicalButtonView;
+    LAUIPhysicalButtonView *_physicalButtonView;
     id <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> _delegate;
 }
 
-@property(readonly, nonatomic) _Bool cancelButtonDisabled; // @synthesize cancelButtonDisabled=_cancelButtonDisabled;
+@property(readonly, nonatomic) _Bool blockingHardwareCancels; // @synthesize blockingHardwareCancels=_blockingHardwareCancels;
 @property(nonatomic) __weak id <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) PKPhysicalButtonView *physicalButtonView; // @synthesize physicalButtonView=_physicalButtonView;
+@property(retain, nonatomic) LAUIPhysicalButtonView *physicalButtonView; // @synthesize physicalButtonView=_physicalButtonView;
 @property(readonly, nonatomic) _Bool shouldIgnorePhysicalButton; // @synthesize shouldIgnorePhysicalButton=_shouldIgnorePhysicalButton;
 @property(readonly, nonatomic, getter=isUserIntentRequired) _Bool userIntentRequired; // @synthesize userIntentRequired=_userIntentRequired;
 @property(retain, nonatomic) PKAuthenticator *authenticator; // @synthesize authenticator=_authenticator;
@@ -91,6 +94,10 @@
 - (void)_updateShippingMethods;
 - (id)_availabilityStringForPass:(id)arg1;
 - (void)_setupPaymentPassAndBillingAddress;
+- (void)_updateAvailableCardsPreferences;
+- (id)_unavailablePasses;
+- (long long)selectedPaymentApplicationIndexFromCardEntries:(id)arg1;
+- (id)_availablePasses;
 - (void)_setupShippingContact;
 - (void)_setupShippingAddress;
 - (void)_setupShippingMethods;
@@ -131,6 +138,7 @@
 - (void)_didFailWithFatalError:(id)arg1;
 - (void)_didFailWithError:(id)arg1;
 - (void)_didCancel:(_Bool)arg1;
+- (void)_executeCompletionHandlers;
 - (void)authorizationDidSelectPaymentMethodCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingMethodCompleteWithUpdate:(id)arg1;
@@ -143,6 +151,7 @@
 - (void)_hostApplicationWillEnterForeground;
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationWillResignActive:(_Bool)arg1;
+- (void)handleDismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleHostApplicationDidCancel;
 - (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(_Bool)arg3;
@@ -160,6 +169,8 @@
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

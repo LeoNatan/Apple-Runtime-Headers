@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIImage *baseImage; // @synthesize baseImage=_baseImage;
 @property(readonly, nonatomic) CNCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
+- (id)templateImage;
 - (id)uncachedImageWithColor:(id)arg1;
 - (id)imageWithColor:(id)arg1;
 - (id)initWithImage:(id)arg1 cache:(id)arg2;

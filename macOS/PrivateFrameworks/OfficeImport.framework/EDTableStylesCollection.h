@@ -8,13 +8,13 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDTableStylesCollection : EDCollection
 {
     NSString *mDefaultTableStyleName;
     NSString *mDefaultPivotStyleName;
 }
 
+- (void).cxx_destruct;
 - (void)setDefaultPivotStyleName:(id)arg1;
 - (id)defaultPivotStyleName;
 - (void)setDefaultTableStyleName:(id)arg1;
@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)objectWithName:(id)arg1;
 - (id)defaultPivotStyle;
 - (id)defaultTableStyle;
-- (void)dealloc;
 
 @end
 

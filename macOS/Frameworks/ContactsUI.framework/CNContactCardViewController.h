@@ -13,14 +13,12 @@
 #import "CNContactNameViewControllerDelegate.h"
 #import "CNUIShareKitTransitionProvider.h"
 
-@class ABAddressBook, ABCardViewSaveHelper, ABCardViewStyleProvider, ABCardViewUndoableDataSource, ABCommandExecutor, ABPerson, AKCardViewDataSource, AKCardViewDataSourceFactory, CNContact, CNContactCardViewControlContext, CNContactCardViewControllerABPersonViewMediator, CNContactCardViewControllerDataSourceDelegate, CNContactCardViewControllerWidgetProviderDelegate, CNContactCardWidgetProvider, CNContactPersistenceHelper, CNContactStore, CNSuddenTerminationInhibitor, CNUIMeContactMonitor, CNUIUserActionListDataSource, NSArray, NSMutableDictionary, NSSet, NSStackView, NSString, NSTextField, NSUndoManager;
+@class ABAddressBook, ABCardViewSaveHelper, ABCardViewStyleProvider, ABCardViewUndoableDataSource, ABCommandExecutor, ABPerson, AKCardViewDataSource, AKCardViewDataSourceFactory, CNContact, CNContactCardViewControlContext, CNContactCardViewControllerABPersonViewMediator, CNContactCardViewControllerDataSourceDelegate, CNContactCardViewControllerWidgetProviderDelegate, CNContactCardWidgetProvider, CNContactPersistenceHelper, CNContactStore, CNUIMeContactMonitor, CNUIUserActionListDataSource, NSArray, NSColor, NSMutableDictionary, NSSet, NSStackView, NSString, NSTextField, NSUndoManager;
 
 @interface CNContactCardViewController : NSViewController <CNContactDetailsViewControllerDelegate, CNContactNameViewControllerDelegate, AKCardViewDataSourceSupport, ABCardViewDelegate, CNAvatarViewDelegate, CNUIShareKitTransitionProvider>
 {
     BOOL _editable;
     BOOL _selectable;
-    BOOL _isSaving;
-    BOOL _drawsBackground;
     BOOL _shouldSave;
     BOOL _shouldShowLinkedContacts;
     BOOL _shouldShowSuggestedFields;
@@ -40,7 +38,7 @@
     CNContactCardViewControllerABPersonViewMediator *_abPersonViewMediator;
     CNContactCardViewControllerDataSourceDelegate *_dataSourceDelegate;
     ABCardViewSaveHelper *_saveHelper;
-    CNSuddenTerminationInhibitor *_editModeSuddenTerminationInhibitor;
+    id <CNInhibitor> _editModeSuddenTerminationInhibitor;
     ABCommandExecutor *_commandExecutor;
     ABCommandExecutor *_dataSourceCommandExecutor;
     CNContactStore *_contactStore;
@@ -64,9 +62,11 @@
     unsigned long long _mode;
     unsigned long long _displayStyle;
     NSString *_containerIdentifier;
+    NSColor *_backgroundColor;
 }
 
 + (id)contactFromPerson:(id)arg1;
+@property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
@@ -79,8 +79,6 @@
 @property(nonatomic) BOOL shouldShowSuggestedFields; // @synthesize shouldShowSuggestedFields=_shouldShowSuggestedFields;
 @property(nonatomic) BOOL shouldShowLinkedContacts; // @synthesize shouldShowLinkedContacts=_shouldShowLinkedContacts;
 @property(nonatomic) BOOL shouldSave; // @synthesize shouldSave=_shouldSave;
-@property(nonatomic) BOOL drawsBackground; // @synthesize drawsBackground=_drawsBackground;
-@property(readonly, nonatomic) BOOL isSaving; // @synthesize isSaving=_isSaving;
 @property(nonatomic, getter=isSelectable) BOOL selectable; // @synthesize selectable=_selectable;
 @property(nonatomic, getter=isEditable) BOOL editable; // @synthesize editable=_editable;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
@@ -102,7 +100,7 @@
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) ABCommandExecutor *dataSourceCommandExecutor; // @synthesize dataSourceCommandExecutor=_dataSourceCommandExecutor;
 @property(retain, nonatomic) ABCommandExecutor *commandExecutor; // @synthesize commandExecutor=_commandExecutor;
-@property(retain, nonatomic) CNSuddenTerminationInhibitor *editModeSuddenTerminationInhibitor; // @synthesize editModeSuddenTerminationInhibitor=_editModeSuddenTerminationInhibitor;
+@property(retain, nonatomic) id <CNInhibitor> editModeSuddenTerminationInhibitor; // @synthesize editModeSuddenTerminationInhibitor=_editModeSuddenTerminationInhibitor;
 @property(retain, nonatomic) ABCardViewSaveHelper *saveHelper; // @synthesize saveHelper=_saveHelper;
 @property(retain, nonatomic) CNContactCardViewControllerDataSourceDelegate *dataSourceDelegate; // @synthesize dataSourceDelegate=_dataSourceDelegate;
 @property(retain, nonatomic) CNContactCardViewControllerABPersonViewMediator *abPersonViewMediator; // @synthesize abPersonViewMediator=_abPersonViewMediator;
@@ -143,7 +141,7 @@
 - (void)contactDetailsViewControllerKeyViewLoopNeedsUpdate:(id)arg1;
 - (void)contactNameViewController:(id)arg1 willLoseFocusInDirection:(unsigned long long)arg2;
 - (void)avatarViewControllerDidFinishEditing:(id)arg1 cancelled:(BOOL)arg2;
-- (void)cardViewNoteDidChange:(id)arg1;
+- (void)cardViewNoteDidChange;
 - (BOOL)avatarViewControllerCanDisplayEditOverlay:(id)arg1;
 - (BOOL)isPictureEditable;
 - (void)avatarViewControllerWantsEdit:(id)arg1;
@@ -189,20 +187,25 @@
 - (BOOL)isShouldSaveFlagEnabledAndCanSaveInCurrentMode;
 - (void)saveContactIfNecessaryWithRefreshData:(BOOL)arg1;
 - (void)saveContactIfNecessary;
+@property(readonly, nonatomic) BOOL isSaving;
 - (void)updateDataSourceWithContact:(id)arg1;
 - (void)handeNewContact:(id)arg1;
 - (void)handleNilContact;
 - (void)updateToContact:(id)arg1;
 - (void)didReceveRefreshedContact:(id)arg1;
 - (BOOL)shouldRefetchContact:(id)arg1;
-- (void)_refreshData;
+- (id)generateFetchDescriptionForContact:(id)arg1;
+- (void)fetchContact;
 - (void)refreshData;
+- (void)finishSwichingToDefaultModeFromMode:(unsigned long long)arg1;
+- (void)finishSwichingToEditModeAndRefocusOnNameView:(BOOL)arg1;
 - (void)switchModeFromMode:(unsigned long long)arg1 toMode:(unsigned long long)arg2 refocusOnNameView:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL hasChanges;
 - (BOOL)editLikenessMode;
 - (BOOL)editMode;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void)createViewHierarchy;
+- (void)ensureUserEnteredDataIsPersistedBeforeViewWillDisappear;
 - (void)viewWillDisappear;
 - (void)viewDidLoad;
 - (void)loadView;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)animateWithWarps:(id)arg1 times:(id)arg2 restore:(BOOL)arg3;
 + (id)animateWithWarps:(id)arg1 times:(id)arg2;
 + (id)warpTo:(id)arg1 duration:(double)arg2;
++ (BOOL)supportsSecureCoding;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

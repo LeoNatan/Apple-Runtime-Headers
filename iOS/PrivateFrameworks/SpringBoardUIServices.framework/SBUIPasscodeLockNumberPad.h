@@ -26,11 +26,13 @@
     SBUIButton *_emergencyCallButton;
     SBUIButton *_backspaceButton;
     SBUIButton *_cancelButton;
+    UIColor *_reduceTransparencyButtonColor;
 }
 
 + (struct UIEdgeInsets)_inputButtonCircleSpacing;
 + (struct CGSize)_inputButtonCircleSize;
 + (id)_buttonForCharacter:(unsigned int)arg1 withLightStyle:(_Bool)arg2;
+@property(retain, nonatomic) UIColor *reduceTransparencyButtonColor; // @synthesize reduceTransparencyButtonColor=_reduceTransparencyButtonColor;
 @property(readonly, nonatomic) SBUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) SBUIButton *backspaceButton; // @synthesize backspaceButton=_backspaceButton;
 @property(readonly, nonatomic) SBUIButton *emergencyCallButton; // @synthesize emergencyCallButton=_emergencyCallButton;

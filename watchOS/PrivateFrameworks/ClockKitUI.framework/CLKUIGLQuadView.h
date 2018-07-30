@@ -12,10 +12,13 @@
 {
     EAGLContext *_context;
     CLKUIGLQuadRenderer *_renderer;
+    struct CGSize _layoutSize;
     unsigned int _defaultFramebuffer;
     unsigned int _colorRenderbuffer;
+    unsigned int _depthRenderbuffer;
     int _backingWidth;
     int _backingHeight;
+    unsigned int _isDepthBufferRequired:1;
 }
 
 + (Class)layerClass;
@@ -28,11 +31,12 @@
 - (void)addQuadsFromArray:(id)arg1;
 - (void)addQuad:(id)arg1;
 - (id)_snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
+- (void)setOpaque:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)_resizeFramebuffer;
 - (void)dealloc;
 - (void)_setupGL;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 options:(unsigned int)arg2;
 
 @end
 

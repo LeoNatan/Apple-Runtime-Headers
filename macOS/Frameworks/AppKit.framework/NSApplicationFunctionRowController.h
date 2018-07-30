@@ -8,7 +8,7 @@
 
 #import "NSTouchBarFinderObserver.h"
 
-@class NSFunctionRow, NSMutableArray, NSString, NSTouchBarCustomizationController, NSTouchBarEscapeKeyViewController, NSTouchBarFinder, NSTouchBarViewController;
+@class NSFunctionRow, NSMutableArray, NSString, NSTouchBarCustomizationController, NSTouchBarEscapeKeyViewController, NSTouchBarFinder, NSTouchBarViewController, _NSQuickActionTouchBarClient;
 
 __attribute__((visibility("hidden")))
 @interface NSApplicationFunctionRowController : NSObject <NSTouchBarFinderObserver>
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSTouchBarEscapeKeyViewController *_escapeKeyTouchBarViewController;
     NSTouchBarCustomizationController *_customizationController;
     NSTouchBarFinder *_finder;
+    _NSQuickActionTouchBarClient *_quickActionClient;
     unsigned int _observingPopoversForCustomization:1;
 }
 

@@ -28,6 +28,7 @@
 @property(retain, nonatomic) TITypologyStatistic *typologyStatistic; // @synthesize typologyStatistic=_typologyStatistic;
 @property(retain, nonatomic) TITypologyLog *typologyLog; // @synthesize typologyLog=_typologyLog;
 @property(retain, nonatomic) NSString *inputModeIdentifier; // @synthesize inputModeIdentifier=_inputModeIdentifier;
+- (void).cxx_destruct;
 - (void)logReceivedLastAcceptedCandidateCorrected;
 - (void)logReceivedCandidateRejected:(id)arg1;
 - (void)logReceivedTextAccepted:(id)arg1;
@@ -39,7 +40,7 @@
 - (void)logReplacements:(id)arg1 forString:(id)arg2 keyLayout:(id)arg3;
 - (void)logKeyboardConfig:(id)arg1 textToCommit:(id)arg2 forAcceptedCandidate:(id)arg3 keyboardState:(id)arg4;
 - (void)logCandidateResultSet:(id)arg1 forKeyboardState:(id)arg2;
-- (void)logAutocorrections:(id)arg1 forKeyboardState:(id)arg2;
+- (void)logAutocorrections:(id)arg1 forKeyboardState:(id)arg2 requestToken:(id)arg3;
 - (void)logKeyboardOutput:(id)arg1 keyboardConfiguration:(id)arg2 forKeyboardInput:(id)arg3 keyboardState:(id)arg4;
 - (void)logKeyboardConfig:(id)arg1 forSyncToKeyboardState:(id)arg2;
 - (void)logToHumanReadableTrace:(id)arg1;

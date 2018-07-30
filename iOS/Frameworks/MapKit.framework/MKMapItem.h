@@ -11,7 +11,7 @@
 #import "NSItemProviderWriting.h"
 #import "NSSecureCoding.h"
 
-@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
+@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
 
 @interface MKMapItem : NSObject <NSSecureCoding, NSItemProviderReading, NSItemProviderWriting, GEOURLSerializable>
 {
@@ -36,6 +36,7 @@
     MKMapItemMetadata *_metadata;
     GEOPlace *_place;
     _MKPlaceReservationInfo *_reservationInfo;
+    id <MKTransitInfoPreload> _preloadedTransitInfo;
 }
 
 + (id)_launchOptionsWithOptions:(id)arg1;
@@ -44,6 +45,10 @@
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)_mapItemBackedByURL:(id)arg1;
 + (id)mapItemsFromURL:(id)arg1 options:(id *)arg2;
++ (id)sanitizeDictionary:(id)arg1;
++ (id)sanitizeArray:(id)arg1 forKey:(id)arg2;
++ (id)sanitizeObject:(id)arg1 forKey:(id)arg2;
++ (_Bool)valueIsValid:(id)arg1 forKey:(id)arg2;
 + (id)launchOptionsFromURL:(id)arg1;
 + (id)_launchOptionsFromResourceOptionsDictionary:(id)arg1;
 + (id)_deserializeResourceOptionsFromURL:(id)arg1 error:(out id *)arg2;
@@ -78,6 +83,7 @@
 + (id)contactsAddressKeysForGeoAddressKeys;
 + (id)contactsAddressDictionaryFromGeoAddressDictionary:(id)arg1;
 + (id)_mapItemFromVCardRepresentation:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic, getter=_preloadedTransitInfo) id <MKTransitInfoPreload> preloadedTransitInfo; // @synthesize preloadedTransitInfo=_preloadedTransitInfo;
 @property(retain, nonatomic) _MKPlaceReservationInfo *reservationInfo; // @synthesize reservationInfo=_reservationInfo;
 @property(nonatomic, getter=_isMapItemTypeTransit) _Bool isMapItemTypeTransit; // @synthesize isMapItemTypeTransit=_isMapItemTypeTransit;
 @property(readonly, nonatomic, getter=_reviewsAttribution) _MKMapItemReviewsAttribution *reviewsAttribution; // @synthesize reviewsAttribution=_reviewsAttribution;
@@ -100,6 +106,7 @@
 @property(readonly, nonatomic, getter=_quickLinks) NSArray *quickLinks;
 @property(readonly, nonatomic, getter=_navTintBrandColor) UIColor *navTintBrandColor;
 @property(readonly, nonatomic, getter=_navBackgroundbrandColor) UIColor *navBackgroundbrandColor;
+@property(readonly, nonatomic, getter=_placecardLayout) GEOModuleLayoutEntry *placecardLayout;
 @property(readonly, nonatomic, getter=_isMessageIDVerified) _Bool isMessageIDVerified;
 @property(readonly, nonatomic, getter=_messageURLString) NSString *messageURLString;
 @property(readonly, nonatomic, getter=_messageID) NSString *messageID;
@@ -151,7 +158,6 @@
 @property(readonly, nonatomic, getter=_poiSurveyURLString) NSString *poiSurveyURLString;
 @property(readonly, nonatomic, getter=_placeDataAsData) NSData *placeDataAsData;
 @property(readonly, nonatomic, getter=_openingHoursOptions) unsigned long long openingHoursOptions;
-@property(readonly, nonatomic, getter=_disambiguationName) NSString *disambiguationName;
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) _Bool hasEncyclopedicInfo;
 @property(readonly, nonatomic, getter=_localizedResponseTime) NSString *localizedResponseTime;
@@ -190,6 +196,7 @@
 @property(readonly, nonatomic, getter=_muid) unsigned long long muid;
 @property(readonly, nonatomic, getter=_hasMUID) _Bool hasMUID;
 @property(readonly, nonatomic, getter=_identifier) MKMapItemIdentifier *identifier;
+@property(readonly, nonatomic, getter=_annotatedItemList) id <GEOAnnotatedItemList> annotatedItemList;
 @property(readonly, nonatomic, getter=_placeDisplayStyle) int placeDisplayStyle;
 @property(readonly, nonatomic, getter=_browseCategories) NSArray *browseCategories;
 @property(readonly, nonatomic, getter=_venueInfo) id <GEOMapItemVenueInfo> venueInfo;
@@ -198,6 +205,7 @@
 @property(readonly, nonatomic, getter=_flyoverAnnouncementMessage) NSString *flyoverAnnouncementMessage;
 @property(readonly, nonatomic, getter=_flyover) GEOPDFlyover *flyover;
 @property(readonly, nonatomic, getter=_hasFlyover) _Bool hasFlyover;
+- (void)preloadTransitInfoWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=_transitInfo) id <GEOMapItemTransitInfo> transitInfo;
 - (id)_formatterForAdamId;
 @property(readonly, nonatomic, getter=_transitAttribution) id <GEOTransitAttribution> transitAttribution;

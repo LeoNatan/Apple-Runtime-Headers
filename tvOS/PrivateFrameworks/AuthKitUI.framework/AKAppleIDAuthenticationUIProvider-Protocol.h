@@ -7,9 +7,11 @@
 #import "AKAppleIDAuthenticationLimitedUIProvider.h"
 #import "AKAppleIDServerAuthenticationUIProvider.h"
 
-@class NSString;
+@class AKAccountRecoveryContext, NSString;
 
 @protocol AKAppleIDAuthenticationUIProvider <AKAppleIDAuthenticationLimitedUIProvider, AKAppleIDServerAuthenticationUIProvider>
+- (void)dismissNativeRecoveryUIWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)presentNativeRecoveryUIWithContext:(AKAccountRecoveryContext *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 
 @optional
 - (void)dismissKeepUsingUIWithCompletion:(void (^)(_Bool, NSError *))arg1;

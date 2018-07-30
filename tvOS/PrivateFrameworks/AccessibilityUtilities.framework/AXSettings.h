@@ -13,8 +13,10 @@
     NSLock *_synchronizeDomainsLock;
     NSMutableSet *_migratedSwitchControlMenuItemsPreferenceKeys;
     NSMutableDictionary *_unarchivedVoiceCache;
+    _Bool _assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
     _Bool _writeAXLogsToFile;
     _Bool _voiceOverVerbositySpeakCustomActionsHint;
+    _Bool _touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
     float _reduceWhitePointLevel;
     double _lastPlatformSwitchTimeResetCount;
     double _lastGuidedAccessTimeLimitResetCount;
@@ -37,8 +39,10 @@
 @property(nonatomic) double lastGuidedAccessTimeLimitResetCount; // @synthesize lastGuidedAccessTimeLimitResetCount=_lastGuidedAccessTimeLimitResetCount;
 @property(nonatomic) double lastPlatformSwitchTimeResetCount; // @synthesize lastPlatformSwitchTimeResetCount=_lastPlatformSwitchTimeResetCount;
 @property(nonatomic) float reduceWhitePointLevel; // @synthesize reduceWhitePointLevel=_reduceWhitePointLevel;
+@property(nonatomic) _Bool touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass; // @synthesize touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass=_touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
 @property(nonatomic) _Bool voiceOverVerbositySpeakCustomActionsHint; // @synthesize voiceOverVerbositySpeakCustomActionsHint=_voiceOverVerbositySpeakCustomActionsHint;
 @property(nonatomic) _Bool writeAXLogsToFile; // @synthesize writeAXLogsToFile=_writeAXLogsToFile;
+@property(nonatomic) _Bool assistiveTouchInternalOnlyHiddenNubbitModeEnabled; // @synthesize assistiveTouchInternalOnlyHiddenNubbitModeEnabled=_assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool callAudioRoutingAutoAnswerEnabled;
 @property(nonatomic) double callAudioRoutingAutoAnswerDelay;
@@ -96,6 +100,9 @@
 @property(nonatomic) long long touchAccommodationsTapActivationMethod;
 @property(nonatomic) double touchAccommodationsIgnoreRepeatDuration;
 @property(nonatomic) _Bool touchAccommodationsIgnoreRepeatEnabled;
+@property(readonly, nonatomic) long long touchAccommodationsHoldDurationSwipeGestureSensitivity;
+@property(nonatomic) double touchAccommodationsSwipeGestureMinimumDistance;
+@property(nonatomic) _Bool touchAccommodationsAllowsSwipeGesturesToBypass;
 @property(nonatomic) double touchAccommodationsHoldDuration;
 @property(nonatomic) _Bool touchAccommodationsHoldDurationEnabled;
 @property(nonatomic) _Bool touchAccommodationsUsageConfirmed;
@@ -133,6 +140,8 @@
 - (void)clearVoicePrefersCompactSettings;
 - (void)configureZoomForLoginSession;
 - (void)addRotorOptionsForLoginSession;
+@property(nonatomic) _Bool switchControlUserDidReadUSBRestrictedModeAlert;
+@property(nonatomic) _Bool voiceOverUserDidReadUSBRestrictedModeAlert;
 @property(nonatomic) _Bool switchControlShouldDisallowUSBRestrictedMode;
 @property(nonatomic) _Bool voiceOverShouldDisallowUSBRestrictedMode;
 @property(nonatomic) long long voiceOverDescribedMedia;
@@ -147,6 +156,7 @@
 - (_Bool)_anyUserPreferredLangaugeIsRTL;
 - (void)_localeChange:(id)arg1;
 @property(nonatomic) _Bool voiceOverEditAppsActionEnabled;
+@property(nonatomic) _Bool voiceOverSpeakActionConfirmation;
 @property(copy, nonatomic) NSArray *voiceOverRotorItems;
 @property(nonatomic) _Bool voiceOverSpeakNotificationsEnabled;
 @property(nonatomic) _Bool voiceOverSpeakingRateInRotorEnabled;
@@ -154,6 +164,7 @@
 @property(nonatomic) _Bool voiceOverVerbosityEmojiSuffixEnabled;
 @property(nonatomic) _Bool voiceOverPitchChangeEnabled;
 @property(nonatomic) double voiceOverPitch;
+@property(nonatomic) _Bool voiceOverAudioFollowsHDMIAudio;
 @property(nonatomic) _Bool voiceOverAudioDuckingEnabled;
 @property(nonatomic) _Bool voiceOverHintsEnabled;
 @property(nonatomic) _Bool voiceOverBrailleWordWrapEnabled;
@@ -196,7 +207,9 @@
 - (id)_voiceOverDefaultDialect;
 - (void)_clearWhitetailMigrationSettings;
 - (id)selectedSpeechVoiceIdentifiers;
+- (void)setUserDidSelectVoiceForLanguage:(id)arg1 source:(long long)arg2;
 - (void)setSpeechVoiceIdentifier:(id)arg1 forLanguage:(id)arg2 source:(long long)arg3;
+- (_Bool)userDidSelectVoiceForLanguage:(id)arg1 source:(long long)arg2;
 - (id)speechVoiceIdentifierForLanguage:(id)arg1 source:(long long)arg2 exists:(_Bool *)arg3;
 @property(nonatomic) unsigned long long quickSpeakHighlightOption;
 @property(nonatomic) long long quickSpeakSentenceHighlightColor;
@@ -224,6 +237,7 @@
 @property(retain, nonatomic) NSArray *currentVoices;
 @property(readonly, nonatomic) _Bool extantVoicesExist;
 @property(retain, nonatomic) NSArray *extantVoices;
+- (id)testingExtantVoices;
 - (void)setTestingExtantVoices:(id)arg1;
 - (id)_retrieveVoices:(id)arg1;
 - (void)_setVoiceArray:(id)arg1 forKey:(id)arg2;
@@ -232,12 +246,14 @@
 @property(nonatomic) _Bool syncPronunciationsWithCloudKit;
 @property(nonatomic) _Bool enableVoiceOverCaptions;
 @property(nonatomic) long long internalLoggingColorTheme;
+@property(nonatomic) _Bool shouldPerformValidationsAtRuntime;
+@property(nonatomic) _Bool useNewAXBundleLoader;
 @property(nonatomic) _Bool logAXNotificationPosting;
 @property(nonatomic) _Bool ignoreAXServerEntitlements;
 @property(nonatomic) _Bool ignoreAXAsserts;
 @property(nonatomic) _Bool includeBacktraceInLogs;
 @property(nonatomic) _Bool validateSecondPartyApps;
-@property(nonatomic) _Bool assistiveTouchHeadlessModeEnabled;
+- (_Bool)assistiveTouchInternalOnlyHiddenNubbitMode;
 @property(nonatomic) _Bool assistiveTouchCameraSwitchPreviewEnabled;
 @property(retain, nonatomic) NSDate *gaxInternalSettingsLastPasscodeSetDate;
 @property(retain, nonatomic) NSDate *gaxInternalSettingsLastActivationDate;
@@ -292,7 +308,7 @@
 @property(nonatomic) long long switchControlTapBehavior;
 @property(nonatomic) double switchControlDwellTime;
 @property(nonatomic) long long switchControlScanningStyle;
-@property(nonatomic) _Bool switchControlPointPickerHighPrecisionEnabled;
+@property(nonatomic) long long switchControlPointPickerSelectionStyle;
 @property(nonatomic) _Bool switchControlRestartScanningAtCurrentKey;
 @property(nonatomic) _Bool switchControlShouldUseExtendedKeyboardPredictions;
 @property(retain, nonatomic) NSArray *switchControlMediaControlsTopLevelMenuItems;
@@ -354,7 +370,6 @@
 @property(nonatomic) _Bool assistiveTouchScannerMenuLabelsEnabled;
 @property(nonatomic) _Bool assistiveTouchScannerCompactMenuEnabled;
 @property(nonatomic) _Bool assistiveTouchGroupElementsEnabled;
-@property(nonatomic) _Bool assistiveTouchScannerPointPickerDefaultsToRescan;
 - (_Bool)assistiveTouchAutoScanningEnabled;
 @property(nonatomic) long long assistiveTouchScanningMode;
 @property(nonatomic) _Bool assistiveTouchScannerCursorHighVisibilityEnabled;
@@ -377,11 +392,14 @@
 - (void)_registerForNotification:(id)arg1;
 - (void)_handlePreferenceChanged:(id)arg1;
 - (void)_handleVoiceUnarchivedCache:(id)arg1;
+- (void)_listenForAccessibilitySupportPassthroughs;
+- (void)nukeAll;
 - (void)dealloc;
 - (id)init;
 - (void)_synchronizeIfNecessary:(id)arg1 domain:(int)arg2;
 - (_Bool)_switchFromRootUserIfNecessary:(CDUnknownBlockType)arg1;
 - (id)_valueForPreferenceKey:(id)arg1;
+- (void)_postNotificationForPreferenceKey:(id)arg1;
 - (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2;
 - (id)_notificationForPreferenceKey:(id)arg1;
 - (id)_migratePreferenceIfNecessary:(id)arg1;

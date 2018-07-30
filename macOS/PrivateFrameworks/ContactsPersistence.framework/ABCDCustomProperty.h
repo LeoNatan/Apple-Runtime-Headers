@@ -12,7 +12,7 @@
 {
 }
 
-+ (id)fetchCustomPropertiesWithRecordType:(id)arg1 inContext:(id)arg2 persistentStore:(id)arg3;
++ (id)fetchCustomPropertiesWithRecordType:(id)arg1 inContext:(id)arg2 persistentStore:(id)arg3 error:(id *)arg4;
 + (id)recordTypePredicateTemplate;
 + (id)customPropertyFromDescription:(id)arg1 inContext:(id)arg2;
 

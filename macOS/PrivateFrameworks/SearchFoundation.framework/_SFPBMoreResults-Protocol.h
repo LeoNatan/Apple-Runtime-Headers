@@ -10,7 +10,6 @@
 
 @protocol _SFPBMoreResults <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasLabel;
 @property(copy, nonatomic) NSString *label;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

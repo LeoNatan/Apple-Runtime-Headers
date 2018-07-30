@@ -16,9 +16,11 @@
     NSData *_transactionData;
     NSData *_transactionInstructionsSignature;
     PKSecureElementCertificateSet *_certificates;
+    NSString *_kextBlacklistVersion;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *kextBlacklistVersion; // @synthesize kextBlacklistVersion=_kextBlacklistVersion;
 @property(copy, nonatomic) PKSecureElementCertificateSet *certificates; // @synthesize certificates=_certificates;
 @property(copy, nonatomic) NSData *transactionInstructionsSignature; // @synthesize transactionInstructionsSignature=_transactionInstructionsSignature;
 @property(copy, nonatomic) NSData *transactionData; // @synthesize transactionData=_transactionData;

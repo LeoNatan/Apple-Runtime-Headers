@@ -12,7 +12,7 @@
 }
 
 @property(nonatomic) double percentOfGoalCompleted; // @synthesize percentOfGoalCompleted=_percentOfGoalCompleted;
-- (_Bool)didCrossActivityThresholdWithModel:(id)arg1 evaluationDelegate:(id)arg2 forGoalType:(unsigned int)arg3;
+- (_Bool)didCrossActivityThresholdWithModel:(id)arg1 evaluationDelegate:(id)arg2 forGoalType:(int)arg3;
 - (id)nextFireDateWithModel:(id)arg1;
 
 @end

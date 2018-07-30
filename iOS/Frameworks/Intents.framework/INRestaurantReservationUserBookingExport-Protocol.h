@@ -10,7 +10,7 @@
 @class INRestaurantGuest, INRestaurantOffer, NSDate, NSString;
 
 @protocol INRestaurantReservationUserBookingExport <NSObject, JSExport>
-@property(retain, nonatomic) NSDate *dateStatusModified;
+@property(copy, nonatomic) NSDate *dateStatusModified;
 @property(nonatomic) unsigned long long status;
 @property(copy, nonatomic) NSString *guestProvidedSpecialRequestText;
 @property(copy, nonatomic) INRestaurantOffer *selectedOffer;

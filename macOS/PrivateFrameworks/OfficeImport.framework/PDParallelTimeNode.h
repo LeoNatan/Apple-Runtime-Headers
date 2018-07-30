@@ -8,14 +8,13 @@
 
 @class PDParallelTimeNodeBuildInfo;
 
-__attribute__((visibility("hidden")))
 @interface PDParallelTimeNode : PDTimeNode
 {
     PDParallelTimeNodeBuildInfo *mBuildInfo;
 }
 
 @property(retain) PDParallelTimeNodeBuildInfo *buildInfo; // @synthesize buildInfo=mBuildInfo;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

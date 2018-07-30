@@ -8,6 +8,7 @@
 
 @class AVAssetSynchronousInspectorLoader, AVStreamDataAssetInspector, AVStreamDataParser, NSArray, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVStreamDataAsset : AVAsset
 {
     AVStreamDataParser *_parser;

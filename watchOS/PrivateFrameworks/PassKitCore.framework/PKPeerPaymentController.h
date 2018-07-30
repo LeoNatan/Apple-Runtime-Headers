@@ -25,6 +25,8 @@
     PKPeerPaymentWebService *_webService;
 }
 
++ (id)_displayNameForRecipientAddress:(id)arg1 contactResolver:(id)arg2 foundInContacts:(_Bool *)arg3;
++ (id)displayNameForAddress:(id)arg1 contactResolver:(id)arg2;
 + (id)_peerPaymentPassURL;
 + (_Bool)errorIsTermsAcceptanceRequiredError:(id)arg1;
 + (_Bool)errorIsIdentityVerificationRequiredError:(id)arg1;
@@ -42,6 +44,8 @@
 - (void)paymentAuthorizationCoordinator:(id)arg1 didSelectPaymentMethod:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;
 - (id)summaryItemsForQuote:(id)arg1;
+- (id)_contactResolver;
+- (id)contactForHandle:(id)arg1;
 - (id)displayNameForRecipientAddress:(id)arg1 foundInContacts:(_Bool *)arg2;
 - (id)displayNameForRecipientAddress:(id)arg1;
 - (id)displayableErrorForError:(id)arg1;

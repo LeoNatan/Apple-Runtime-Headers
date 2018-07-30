@@ -6,17 +6,16 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class HMFUnfairLock, NSMutableDictionary;
 
 @interface HMFClassRegistry : HMFObject
 {
+    HMFUnfairLock *_lock;
     NSMutableDictionary *_classes;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     Class _defaultClass;
 }
 
 @property(readonly) Class defaultClass; // @synthesize defaultClass=_defaultClass;
-@property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 - (void)setClass:(Class)arg1 forKey:(id)arg2;
 - (Class)classForKey:(id)arg1;

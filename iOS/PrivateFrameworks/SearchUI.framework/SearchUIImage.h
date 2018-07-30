@@ -10,6 +10,8 @@
 
 @interface SearchUIImage : SFImage
 {
+    _Bool _useFastPathShadow;
+    _Bool _needsTinting;
     UIImage *_uiImage;
     SFImage *_sfImage;
 }
@@ -18,6 +20,8 @@
 + (id)imageFromData:(id)arg1;
 + (id)cachedImageFromSFImage:(id)arg1;
 + (id)imageWithSFImage:(id)arg1;
+@property _Bool needsTinting; // @synthesize needsTinting=_needsTinting;
+@property _Bool useFastPathShadow; // @synthesize useFastPathShadow=_useFastPathShadow;
 @property(retain) SFImage *sfImage; // @synthesize sfImage=_sfImage;
 @property(retain) UIImage *uiImage; // @synthesize uiImage=_uiImage;
 - (void).cxx_destruct;

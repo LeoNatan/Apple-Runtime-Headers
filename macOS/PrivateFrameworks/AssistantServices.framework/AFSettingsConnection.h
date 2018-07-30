@@ -25,6 +25,8 @@
 - (void)resetAnalyticsStoreWithCompletion:(CDUnknownBlockType)arg1;
 - (void)purgeAnalyticsStoreWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchEventRecordsFromAnalyticsStoreAtPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getStereoPairState:(CDUnknownBlockType)arg1;
+- (void)getStereoPartnerLastMyriadWinDate:(CDUnknownBlockType)arg1;
 - (void)setHorsemanSupplementalLanguageDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHorsemanSupplementalLanguageDictionary:(CDUnknownBlockType)arg1;
 - (void)getSupplementalLanguagesForProduct:(id)arg1 forBuildVersion:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -36,12 +38,6 @@
 - (void)stopAllAudioPlaybackRequests:(BOOL)arg1;
 - (void)stopAudioPlaybackRequest:(id)arg1 immediately:(BOOL)arg2;
 - (void)startAudioPlaybackRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setDESPolicyCDNOverride:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setDESLotteryWinOverrideEnabled:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setDESRecordingAlwaysIsEnabled:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)disableDESWithCompletion:(CDUnknownBlockType)arg1;
-- (void)runLiveAdaptationRecipeEvaluationWithBaseURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)runAdaptationRecipeEvaluation:(id)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getPeerIdentifiers:(CDUnknownBlockType)arg1;
 - (void)startRemoteRequest:(id)arg1 onPeer:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)startUIRequestWithSpeechAudioFileURL:(id)arg1;
@@ -63,6 +59,8 @@
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
 - (id)_voices;
 - (void)_setVoices:(id)arg1;
+- (void)configOverrides:(CDUnknownBlockType)arg1;
+- (void)setConfigOverrides:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getDevicesWithAvailablePHSAssetsForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)disableAndDeleteCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)barrier;
@@ -73,6 +71,7 @@
 - (void)deleteAccountWithIdentifier:(id)arg1;
 - (void)saveAccount:(id)arg1 setActive:(BOOL)arg2;
 - (id)accounts;
+- (void)fetchAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSupportedLanguageCodes:(CDUnknownBlockType)arg1;
 - (id)_settingsServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_settingsService;

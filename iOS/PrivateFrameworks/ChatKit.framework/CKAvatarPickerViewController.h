@@ -11,32 +11,28 @@
 #import "UICollectionViewDataSource.h"
 #import "UICollectionViewDelegate.h"
 
-@class CKAvatarPickerLayout, CKAvatarTitleCollectionReusableView, CKConversation, CNContactStore, NSMapTable, NSString, UICollectionView, UITapGestureRecognizer;
+@class CKAvatarPickerLayout, CKAvatarTitleCollectionReusableView, CKConversation, CNContactStore, NSMapTable, NSString, UICollectionView;
 
 @interface CKAvatarPickerViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, CNAvatarViewDelegate, CKAvatarPickerLayoutDelegate>
 {
-    id <CKAvatarPickerViewControllerDelegate> _delegate;
-    UIViewController *_avatarOrbPresentingViewController;
     CKAvatarTitleCollectionReusableView *_titleView;
+    long long _indicatorType;
     UICollectionView *_collectionView;
     CKAvatarPickerLayout *_layout;
     CKConversation *_conversation;
     CNContactStore *_suggestionsEnabledContactStore;
-    UITapGestureRecognizer *_tapGestureRecognizer;
     NSMapTable *_visibleTitleViews;
     long long _style;
 }
 
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSMapTable *visibleTitleViews; // @synthesize visibleTitleViews=_visibleTitleViews;
-@property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) CNContactStore *suggestionsEnabledContactStore; // @synthesize suggestionsEnabledContactStore=_suggestionsEnabledContactStore;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) CKAvatarPickerLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
+@property(nonatomic) long long indicatorType; // @synthesize indicatorType=_indicatorType;
 @property(retain, nonatomic) CKAvatarTitleCollectionReusableView *titleView; // @synthesize titleView=_titleView;
-@property(nonatomic) __weak UIViewController *avatarOrbPresentingViewController; // @synthesize avatarOrbPresentingViewController=_avatarOrbPresentingViewController;
-@property(nonatomic) __weak id <CKAvatarPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (id)_cutoutSupplementaryViewAtIndexPath:(id)arg1;
@@ -49,11 +45,6 @@
 - (id)avatarView:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (_Bool)avatarPickerLayoutShouldShowTitle:(id)arg1;
-- (void)_animateToLayout:(unsigned long long)arg1;
-- (void)expandToExpandedView;
-- (void)collapseToPancakeView;
-- (_Bool)_canCollapseToPancakeView;
-- (void)_handleTapOnCollectionView:(id)arg1;
 - (void)_handleAddressBookChange:(id)arg1;
 - (void)_handleGroupNameChange:(id)arg1;
 - (void)_handleConversationRecipientsDidChange:(id)arg1;
@@ -67,9 +58,8 @@
 - (void)_animateInTitleView;
 @property(readonly, nonatomic) struct CGRect titleViewFrame;
 - (_Bool)hasTitle;
-- (void)viewWillLayoutSubviews;
+- (void)setAvatarPickerActive:(_Bool)arg1;
 - (void)loadView;
-- (void)_handleTranscriptScroll:(id)arg1;
 - (void)dealloc;
 - (id)initWithConversation:(id)arg1;
 

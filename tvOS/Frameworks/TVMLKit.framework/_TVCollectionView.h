@@ -41,6 +41,7 @@
 - (void)_playButtonAction:(id)arg1;
 @property(nonatomic) __weak id <_TVCollectionViewDelegate> delegate; // @dynamic delegate;
 - (void)_notifyDidScroll;
+- (void)setScrollEnabled:(_Bool)arg1;
 - (void)reloadData;
 - (_Bool)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

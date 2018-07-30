@@ -8,7 +8,6 @@
 
 @class ABTTYServices;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewPhoneProperty : ABCardViewProperty
 {
     ABTTYServices *_ttyServices;

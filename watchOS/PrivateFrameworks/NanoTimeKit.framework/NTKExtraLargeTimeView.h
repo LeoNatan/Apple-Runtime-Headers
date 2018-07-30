@@ -8,10 +8,11 @@
 
 #import "NTKTimeView.h"
 
-@class NSString, NTKDigitalTimeLabel;
+@class CLKDevice, NSString, NTKDigitalTimeLabel;
 
 @interface NTKExtraLargeTimeView : UIView <NTKTimeView>
 {
+    CLKDevice *_device;
     _Bool _statusBarVisible;
     _Bool _frozen;
     NTKDigitalTimeLabel *_timeHourView;
@@ -33,7 +34,7 @@
 - (void)setBottomColor:(id)arg1;
 - (void)setTopColor:(id)arg1;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

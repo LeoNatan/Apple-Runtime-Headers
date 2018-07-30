@@ -6,7 +6,7 @@
 
 #import <SoftwareUpdateServices/SUAssetStateMatcher.h>
 
-@class NSNumber, NSString, SUPreferences;
+@class NSDictionary, NSString, SUPreferences;
 
 @interface SUSoftwareUpdateAssetMatcher : SUAssetStateMatcher
 {
@@ -14,18 +14,15 @@
     NSString *_fromVersion;
     NSString *_fromProductType;
     NSString *_fromReleaseType;
-    NSString *_requestedPMV;
-    NSNumber *_delayPeriod;
+    NSDictionary *_matcherInfo;
     _Bool _checkTatsu;
     SUPreferences *_preferences;
 }
 
-+ (id)matcherForCurrentDeviceWithRequestedPMV:(id)arg1 andDelayPeriod:(id)arg2;
-+ (id)matcherForCurrentDeviceWithRequestedPMV:(id)arg1;
++ (id)matcherForCurrentDeviceWithInfo:(id)arg1;
 + (id)matcherForCurrentDeviceWithInterestedStates:(int)arg1;
 + (id)matcherForCurrentDevice;
-@property(readonly, nonatomic) NSNumber *delayPeriod; // @synthesize delayPeriod=_delayPeriod;
-@property(readonly, nonatomic) NSString *requestedPMV; // @synthesize requestedPMV=_requestedPMV;
+@property(readonly, nonatomic) NSDictionary *matcherInfo; // @synthesize matcherInfo=_matcherInfo;
 @property(retain, nonatomic) SUPreferences *preferences; // @synthesize preferences=_preferences;
 @property(nonatomic) _Bool compareWithTatsuForEligibility; // @synthesize compareWithTatsuForEligibility=_checkTatsu;
 @property(readonly, nonatomic) NSString *fromReleaseType; // @synthesize fromReleaseType=_fromReleaseType;
@@ -34,7 +31,7 @@
 @property(readonly, nonatomic) NSString *fromBuild; // @synthesize fromBuild=_fromBuild;
 - (_Bool)_isPossibleSoftwareUpdate:(id)arg1;
 - (_Bool)_isDeviceEligibleForUpdate:(id)arg1;
-- (id)_fileterPatchesIfNecessary:(id)arg1;
+- (id)_filterPatchesIfNecessary:(id)arg1;
 - (id)_copyMatchingAssetsAfterSortingAndFiltering:(id)arg1;
 - (id)_createSortedAndFilteredAssetResults:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
 - (unsigned long long)_getIndexOfHighestVersionedAsset:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
@@ -42,7 +39,7 @@
 - (void)_modifyMADownloadOptions:(id)arg1;
 - (id)_findMatchFromCandidates:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
-- (id)initWithVersion:(id)arg1 build:(id)arg2 productType:(id)arg3 releaseType:(id)arg4 interestedStates:(int)arg5 requestedPMV:(id)arg6 delayPeriod:(id)arg7;
+- (id)initWithVersion:(id)arg1 build:(id)arg2 productType:(id)arg3 releaseType:(id)arg4 interestedStates:(int)arg5 matcherInfo:(id)arg6;
 
 @end
 

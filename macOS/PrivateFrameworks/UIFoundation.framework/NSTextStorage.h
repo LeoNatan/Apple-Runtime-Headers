@@ -24,6 +24,7 @@
     id _sideData;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)_fontSetChanged:(id)arg1;
 - (BOOL)_usesSimpleTextEffects;

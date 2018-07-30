@@ -33,7 +33,7 @@
 @property(nonatomic) double samplingDelay; // @synthesize samplingDelay=_samplingDelay;
 @property(nonatomic) double samplingInterval; // @synthesize samplingInterval=_samplingInterval;
 @property(nonatomic) unsigned long long eventMask; // @synthesize eventMask=_eventMask;
-@property(retain, nonatomic) id <NSCopying> tag; // @synthesize tag=_tag;
+@property(copy, nonatomic) id <NSCopying> tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *attentionLostTimeoutDictionary;

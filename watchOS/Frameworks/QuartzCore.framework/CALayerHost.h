@@ -12,6 +12,7 @@
 
 + (_Bool)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (_Bool)_hasRenderLayerSubclass;
+@property _Bool preservesFlip;
 @property _Bool rendersAsynchronously;
 @property _Bool inheritsSecurity;
 @property unsigned int contextId;

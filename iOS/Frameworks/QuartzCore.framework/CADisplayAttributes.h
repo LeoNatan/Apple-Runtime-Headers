@@ -8,16 +8,15 @@
 
 @interface CADisplayAttributes : NSObject
 {
-    long long _dolbyVision;
-    long long _pqEOTF;
-    long long _hdrStaticMetadataType1;
-    long long _bt2020YCC;
+    struct EDIDAttributes _edid_attributes;
 }
 
-@property(readonly) long long bt2020YCC; // @synthesize bt2020YCC=_bt2020YCC;
-@property(readonly) long long hdrStaticMetadataType1; // @synthesize hdrStaticMetadataType1=_hdrStaticMetadataType1;
-@property(readonly) long long pqEOTF; // @synthesize pqEOTF=_pqEOTF;
-@property(readonly) long long dolbyVision; // @synthesize dolbyVision=_dolbyVision;
+- (id).cxx_construct;
+@property(readonly) long long bt2020YCC;
+@property(readonly) long long hdrStaticMetadataType1;
+@property(readonly) long long pqEOTF;
+@property(readonly) long long dolbyVision;
+- (id)_initWithAttributes:(struct EDIDAttributes)arg1;
 
 @end
 

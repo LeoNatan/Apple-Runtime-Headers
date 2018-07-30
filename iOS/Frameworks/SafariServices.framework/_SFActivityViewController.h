@@ -6,11 +6,12 @@
 
 #import "UIActivityViewController.h"
 
-@class LPMetadataProvider, NSString, NSURL, _SFSafariSharingExtensionController;
+@class LPMetadataProvider, NSString, NSURL, _SFPrintController, _SFSafariSharingExtensionController;
 
 @interface _SFActivityViewController : UIActivityViewController
 {
     LPMetadataProvider *_pendingMessageMetadataProvider;
+    _SFPrintController *_printController;
     _Bool _viewCanEarlyDismiss;
     _SFSafariSharingExtensionController *_sharingExtensionController;
     id <_SFActivityViewControllerDelegate> _delegate;
@@ -20,7 +21,7 @@
 
 + (id)activeWebPageExtensionItemForURL:(id)arg1 withPreviewImageHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) NSString *currentExtensionIdentifier; // @synthesize currentExtensionIdentifier=_currentExtensionIdentifier;
-@property(readonly, nonatomic) NSURL *sharingURL; // @synthesize sharingURL=_sharingURL;
+@property(retain, nonatomic) NSURL *sharingURL; // @synthesize sharingURL=_sharingURL;
 @property(nonatomic) __weak id <_SFActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak _SFSafariSharingExtensionController *sharingExtensionController; // @synthesize sharingExtensionController=_sharingExtensionController;
 @property(readonly, nonatomic) _Bool viewCanEarlyDismiss; // @synthesize viewCanEarlyDismiss=_viewCanEarlyDismiss;
@@ -29,11 +30,13 @@
 - (void)_processJavaScriptFinalizeReturnedItems:(id)arg1 forExtension:(id)arg2;
 - (id)_extensionItemForExtensionActivity:(id)arg1;
 - (id)_javaScriptProcessingFileURLInExtension:(id)arg1;
-- (void)_prepareJavaScriptExtensionItemForActivity:(id)arg1;
+- (void)prepareJavaScriptExtensionItemForActivity:(id)arg1;
+- (void)_preparePrint:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_prepareActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_executeActivity;
 - (void)activityDidComplete:(id)arg1 withReturnedItems:(id)arg2 success:(_Bool)arg3;
-- (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2 sharingURL:(id)arg3;
+- (void)_updatePrintControllerWithActivityItems:(id)arg1;
+- (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2 sharingURL:(id)arg3 sourceURL:(id)arg4;
 
 @end
 

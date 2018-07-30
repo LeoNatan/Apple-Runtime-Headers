@@ -27,7 +27,7 @@
 - (id)sortedFontFamilyEntriesForStylesheet:(id)arg1;
 - (id)sortedFontFamilies;
 - (id)p_excludedFamilyNames;
-- (struct __CTFont *)createFontWithName:(id)arg1 size:(double)arg2;
+- (struct __CTFont *)createFontWithName:(id)arg1 size:(double)arg2 weight:(double)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;

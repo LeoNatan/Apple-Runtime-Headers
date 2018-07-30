@@ -20,6 +20,7 @@
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 + (_Bool)shouldApplyAdditionalPredicateForObjectType:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *filterDictionary; // @synthesize filterDictionary=_filterDictionary;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -30,7 +31,6 @@
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_validate;
 - (void)queue_populateConfiguration:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)client_deliverCorrelations:(id)arg1 clearPendingSamples:(_Bool)arg2 isFinalBatch:(_Bool)arg3 queryUUID:(id)arg4;
 @property(readonly, copy) HKCorrelationType *correlationType;
 - (id)initWithType:(id)arg1 predicate:(id)arg2 samplePredicates:(id)arg3 completion:(CDUnknownBlockType)arg4;

@@ -30,7 +30,6 @@
 + (id)themeWithThemeType:(unsigned long long)arg1;
 + (id)_currentTheme:(unsigned long long)arg1;
 + (id)currentTheme;
-+ (BOOL)_shouldAutoSwitchTheme;
 @property(nonatomic) BOOL useSmallFont; // @synthesize useSmallFont=_useSmallFont;
 @property(readonly, nonatomic) unsigned long long themeType; // @synthesize themeType=_themeType;
 - (void).cxx_destruct;
@@ -73,10 +72,13 @@
 - (void)_notifyAllListenersOfTintChange:(id)arg1 visitedSet:(id)arg2;
 - (void)_tintColorDidChange;
 - (void)_setTheme:(unsigned long long)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_interfaceThemeChanged;
 - (unsigned long long)_currentSystemTheme;
+- (void)dealloc;
 - (id)_initWithThemeType:(unsigned long long)arg1;
 - (id)init;
+- (BOOL)_isInSpotlightContext;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

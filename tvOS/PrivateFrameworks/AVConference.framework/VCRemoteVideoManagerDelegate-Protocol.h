@@ -11,6 +11,7 @@
 @protocol VCRemoteVideoManagerDelegate <NSObject>
 - (void)connectionDidChangeWithLocalInterfaceType:(NSString *)arg1 remoteInterfaceType:(NSString *)arg2 streamToken:(long long)arg3;
 - (void)releaseQueueForStreamToken:(long long)arg1;
+- (void)remoteVideoDidSuspend:(_Bool)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidDegrade:(_Bool)arg1 streamToken:(long long)arg2;
 - (void)remoteMediaDidStall:(_Bool)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidPause:(_Bool)arg1 streamToken:(long long)arg2;

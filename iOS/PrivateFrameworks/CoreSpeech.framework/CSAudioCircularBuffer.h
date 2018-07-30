@@ -9,8 +9,6 @@
 @interface CSAudioCircularBuffer : NSObject
 {
     struct unique_ptr<corespeech::CSAudioCircularBufferImpl<unsigned short>, std::__1::default_delete<corespeech::CSAudioCircularBufferImpl<unsigned short>>> _csAudioCircularBufferImpl;
-    unsigned long long _anchorSampleCount;
-    unsigned long long _anchorHostTime;
     unsigned long long _bufferLength;
 }
 
@@ -19,8 +17,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)saveRecordingBufferFrom:(unsigned long long)arg1 to:(unsigned long long)arg2 toURL:(id)arg3;
-- (unsigned long long)hostTimeFromSampleCount:(unsigned long long)arg1;
-- (unsigned long long)sampleCountFromHostTime:(unsigned long long)arg1;
 - (unsigned long long)sampleCount;
 - (void)reset;
 - (id)copyBufferWithNumSamplesCopiedIn:(unsigned long long *)arg1;

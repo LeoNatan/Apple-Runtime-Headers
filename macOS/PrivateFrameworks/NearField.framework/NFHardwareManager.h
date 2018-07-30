@@ -24,6 +24,7 @@
 }
 
 + (id)sharedHardwareManager;
+- (void)actOnUserInitiatedSystemShutDown:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)invalidateConnection;
 - (id)getBoosterInfo;
 - (id)getSecureElementInfo;
@@ -69,13 +70,18 @@
 - (BOOL)isExpressAppletTypeSupported:(unsigned char)arg1;
 - (BOOL)isExpressModeSupported;
 - (id)pushSignedRF:(id)arg1;
+- (id)getUniqueFDRKey:(id *)arg1;
 - (id)getDieID;
+- (id)getDieIDWithError:(id *)arg1;
 - (id)rfSettings;
 - (id)boosterInfo;
 @property(readonly) NFHardwareControllerInfo *controllerInfo;
+- (id)controllerInfoWithError:(id *)arg1;
+- (unsigned int)queryHardwareSupport:(id *)arg1;
 - (unsigned int)getHwSupport;
-- (void)updateHWSupport;
+- (id)updateHWSupport;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)didInterruptXPCConnection:(id)arg1;
 - (void)didInvalidateXPCConnection:(id)arg1;
 - (void)sessionDidEnd:(id)arg1;

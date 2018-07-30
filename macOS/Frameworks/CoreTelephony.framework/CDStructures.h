@@ -4,6 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#pragma mark Blocks
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
+#pragma mark Named Structures
+
+struct EmergencyMode {
+    _Bool _field1;
+    int _field2;
+    int _field3;
+};
+
+struct dispatch_object_s;
+
+struct object {
+    struct dispatch_object_s *fObj;
+};
+
+struct queue {
+    struct object fObj;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

@@ -6,17 +6,17 @@
 
 #import "NSButtonCell.h"
 
-@class NSMenuItem;
+@class CPKHorizontalPopupMenuView;
 
 __attribute__((visibility("hidden")))
 @interface CPKHorizontalPopupMenuCell : NSButtonCell
 {
     unsigned long long _cellState;
-    NSMenuItem *_associatedItem;
+    CPKHorizontalPopupMenuView *_parentView;
 }
 
+@property CPKHorizontalPopupMenuView *parentView; // @synthesize parentView=_parentView;
 @property unsigned long long cellState; // @synthesize cellState=_cellState;
-@property(retain) NSMenuItem *associatedItem; // @synthesize associatedItem=_associatedItem;
 - (BOOL)continueTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3;
 - (BOOL)startTrackingAt:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;

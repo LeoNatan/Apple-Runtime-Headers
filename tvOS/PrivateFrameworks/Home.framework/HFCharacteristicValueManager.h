@@ -8,7 +8,7 @@
 
 #import "HFCharacteristicValueSource.h"
 
-@class HFCharacteristicValueTransaction, NACancelationToken, NAFuture, NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSSet, NSString;
+@class HFCharacteristicReadLogger, HFCharacteristicValueTransaction, NACancelationToken, NAFuture, NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSSet, NSString;
 
 @interface HFCharacteristicValueManager : NSObject <HFCharacteristicValueSource>
 {
@@ -26,11 +26,14 @@
     NSMutableDictionary *_cachedWriteErrorsKeyedByCharacteristicIdentifier;
     NSMutableDictionary *_cachedExecutionErrorsKeyedByActionSetIdentifier;
     NACancelationToken *_inFlightReadCancelationToken;
+    HFCharacteristicReadLogger *_readsCompleteLogger;
     NAFuture *_firstReadCompleteFuture;
 }
 
 + (id)na_identity;
++ (_Bool)_shouldTrackReadsCompleteForPerformanceTesting;
 @property(readonly, nonatomic) NAFuture *firstReadCompleteFuture; // @synthesize firstReadCompleteFuture=_firstReadCompleteFuture;
+@property(retain, nonatomic) HFCharacteristicReadLogger *readsCompleteLogger; // @synthesize readsCompleteLogger=_readsCompleteLogger;
 @property(retain, nonatomic) NACancelationToken *inFlightReadCancelationToken; // @synthesize inFlightReadCancelationToken=_inFlightReadCancelationToken;
 @property(retain, nonatomic) NSMutableDictionary *cachedExecutionErrorsKeyedByActionSetIdentifier; // @synthesize cachedExecutionErrorsKeyedByActionSetIdentifier=_cachedExecutionErrorsKeyedByActionSetIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *cachedWriteErrorsKeyedByCharacteristicIdentifier; // @synthesize cachedWriteErrorsKeyedByCharacteristicIdentifier=_cachedWriteErrorsKeyedByCharacteristicIdentifier;
@@ -53,6 +56,8 @@
 - (id)readValuesForCharacteristicsPassingTest:(CDUnknownBlockType)arg1 inServices:(id)arg2;
 - (id)readValuesForCharacteristicTypes:(id)arg1 inServices:(id)arg2;
 - (id)readValuesForCharacteristics:(id)arg1;
+- (void)_endReadsCompleteTrackingForCharacteristic:(id)arg1 withLogger:(id)arg2 didRead:(_Bool)arg3;
+- (void)_beginReadsCompleteTrackingForCharacteristics:(id)arg1 withLogger:(id)arg2;
 - (void)cancelInFlightReadRequests;
 - (void)invalidateAllCachedErrors;
 - (void)invalidateCachedErrorForExecutionOfActionSet:(id)arg1;
@@ -76,6 +81,7 @@
 - (void)beginTransactionWithReason:(id)arg1;
 - (id)_transactionLock_characteristicsWithPendingWritesInTransacton:(id)arg1 includeDirectWrites:(_Bool)arg2 includeActionSets:(_Bool)arg3;
 @property(readonly, copy, nonatomic) NSSet *executingActionSets;
+- (unsigned long long)loadingStateForCharacteristics:(id)arg1 actionSets:(id)arg2;
 @property(readonly, copy, nonatomic) NSSet *characteristicsWithPendingWrites;
 @property(readonly, copy, nonatomic) NSSet *characteristicsWithPendingReads;
 @property(readonly, copy, nonatomic) NSSet *allReadCharacteristics;

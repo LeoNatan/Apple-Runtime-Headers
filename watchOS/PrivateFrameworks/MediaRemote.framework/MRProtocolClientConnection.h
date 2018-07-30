@@ -11,7 +11,7 @@
 #import "MSVMessageParserDelegate.h"
 #import "NSStreamDelegate.h"
 
-@class MRProtocolMessageQueue, MSVMessageParser, NSInputStream, NSOutputStream, NSRunLoop, NSString, _MRDeviceInfoMessageProtobuf;
+@class MRProtocolMessageQueue, MRSupportedProtocolMessages, MSVMessageParser, NSInputStream, NSOutputStream, NSRunLoop, NSString, _MRDeviceInfoMessageProtobuf;
 
 @interface MRProtocolClientConnection : NSObject <NSStreamDelegate, MSVMessageParserDelegate, MRProtocolMessageQueueDelegate, MRProtocolMessageQueueDataSource>
 {
@@ -24,10 +24,12 @@
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     _MRDeviceInfoMessageProtobuf *_deviceInfo;
+    MRSupportedProtocolMessages *_supportedMessages;
     id <MRProtocolClientConnectionDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <MRProtocolClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) MRSupportedProtocolMessages *supportedMessages; // @synthesize supportedMessages=_supportedMessages;
 @property(retain, nonatomic) _MRDeviceInfoMessageProtobuf *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(readonly, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(readonly, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
@@ -38,6 +40,7 @@
 - (void)_notifyDelegateClientDidRecieveMessage:(id)arg1;
 - (void)_notifyDelegateClientDidDisconnect;
 - (void)_setQOSPropertiesOnStream:(id)arg1;
+- (_Bool)_clientSupportsMessage:(id)arg1;
 - (void)_disconnectClient;
 - (void)_adjustTimestamp:(id)arg1;
 - (void)_preProcessMessage:(id)arg1 data:(id)arg2;
@@ -45,6 +48,8 @@
 - (void)_flush;
 - (void)_sendMessage:(id)arg1 queue:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)messageQueue:(id)arg1 dataForMessage:(id)arg2;
+- (void)messageQueue:(id)arg1 didPurgeMessage:(id)arg2;
+- (void)messageQueue:(id)arg1 didSendMessage:(id)arg2;
 - (unsigned int)messageQueue:(id)arg1 processData:(id)arg2 atReadPosition:(int)arg3;
 - (void)parser:(id)arg1 didParseMessage:(id)arg2;
 - (void)_stream:(id)arg1 handleEvent:(unsigned int)arg2;

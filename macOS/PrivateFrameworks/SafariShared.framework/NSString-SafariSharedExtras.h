@@ -25,8 +25,6 @@
 - (void)safari_enumerateSubdomainRangesInHostUsingBlock:(CDUnknownBlockType)arg1;
 - (id)safari_scriptIfJavaScriptURLString;
 - (BOOL)safari_isJavaScriptURLString;
-- (id)safari_domainFromHost;
-- (unsigned long long)safari_countOfString:(id)arg1;
 - (BOOL)safari_isPathExtensionAllowedForAnalytics;
 - (id)safari_stringBySubstitutingHTMLEntitiesForAmpersandAndAngleBrackets;
 - (id)safari_stringBySubstitutingAmpersandAndAngleBracketsForHTMLEntities;
@@ -38,12 +36,15 @@
 - (id)safari_bestURLStringForUserTypedString;
 - (id)safari_bestLanguageTag;
 - (id)safari_bestURLForUserTypedString;
-- (id)safari_stringByRemovingWwwDotPrefix;
-- (id)safari_fixedStringByExpandingTildeInPath;
+- (id)safari_stringByDeletingTrailingSlash;
+- (id)safari_stringByDeletingStartingSlash;
+- (id)_stringByAbbreviatingTildeInPathForDirectory:(id)arg1;
+- (id)safari_stringByAbbreviatingTildeInPathForUserHomeDirectory;
+- (id)_stringByExpandingTildeInPathToDirectory:(id)arg1;
+- (id)safari_stringByExpandingTildeInPathToUserHomeDirectory;
+- (id)safari_fixedStringByExpandingTildeInPathToUserHomeDirectory;
 - (id)safari_stringByRemovingUnnecessaryCharactersFromUserTypedURLString;
 - (id)safari_stringByRemovingTopLevelDomainFromHost;
 - (id)safari_possibleTopLevelDomainCorrectionForUserTypedString;
-- (id)safari_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
-- (id)safari_stringByRemovingCharactersInSet:(id)arg1;
 @end
 

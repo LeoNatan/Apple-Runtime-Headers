@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *closedTabs;
 @property(readonly, nonatomic) long long closedItemType;
 @property(readonly, copy, nonatomic) NSArray *tabUUIDs;
-- (id)dictionaryRepresentation;
+- (id)dictionaryRepresentationIncludingSessionState:(BOOL)arg1;
 - (id)_selectedTab;
 @property(readonly, nonatomic) BrowserTabPersistentState *firstNonDisposableTab;
 @property(readonly, nonatomic) unsigned long long numberOfNonDisposableTabs;

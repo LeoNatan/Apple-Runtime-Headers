@@ -27,6 +27,8 @@
 @property(readonly) long long layoutStyle;
 @property(readonly) NSImage *backgroundBackdropViewMaskImage;
 @property(readonly) NSString *controlsStyleIdentifier;
+@property(readonly) double layoutWidth;
+@property(readonly) double minimumWidth;
 - (void)unbindAllObjects;
 - (void)hideControlsForAuxiliaryControl;
 - (void)showControlsForAuxiliaryControl;

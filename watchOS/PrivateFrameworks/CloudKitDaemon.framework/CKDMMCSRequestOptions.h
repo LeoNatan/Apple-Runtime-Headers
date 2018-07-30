@@ -11,9 +11,9 @@
 __attribute__((visibility("hidden")))
 @interface CKDMMCSRequestOptions : NSObject
 {
-    _Bool _usesBackgroundSession;
     _Bool _allowsCellularAccess;
     _Bool _allowsPowerNapScheduling;
+    _Bool _automaticallyRetryNetworkFailures;
     int _databaseScope;
     int _containerEnvironment;
     NSString *_topmostParentOperationID;
@@ -26,16 +26,18 @@ __attribute__((visibility("hidden")))
     NSData *_authPutResponse;
     NSDictionary *_authPutResponseHeaders;
     int _qualityOfService;
+    unsigned int _discretionaryNetworkBehavior;
     unsigned int _networkServiceType;
     CKOperationMMCSRequestOptions *_MMCSRequestOptions;
 }
 
 @property(retain, nonatomic) CKOperationMMCSRequestOptions *MMCSRequestOptions; // @synthesize MMCSRequestOptions=_MMCSRequestOptions;
 @property(nonatomic) unsigned int networkServiceType; // @synthesize networkServiceType=_networkServiceType;
+@property(nonatomic) unsigned int discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
+@property(nonatomic) _Bool automaticallyRetryNetworkFailures; // @synthesize automaticallyRetryNetworkFailures=_automaticallyRetryNetworkFailures;
 @property(nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) _Bool allowsPowerNapScheduling; // @synthesize allowsPowerNapScheduling=_allowsPowerNapScheduling;
 @property(nonatomic) _Bool allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
-@property(nonatomic) _Bool usesBackgroundSession; // @synthesize usesBackgroundSession=_usesBackgroundSession;
 @property(retain, nonatomic) NSDictionary *authPutResponseHeaders; // @synthesize authPutResponseHeaders=_authPutResponseHeaders;
 @property(retain, nonatomic) NSData *authPutResponse; // @synthesize authPutResponse=_authPutResponse;
 @property(retain, nonatomic) NSString *deviceHardwareID; // @synthesize deviceHardwareID=_deviceHardwareID;
@@ -49,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int databaseScope; // @synthesize databaseScope=_databaseScope;
 - (void).cxx_destruct;
 - (id)MMCSOptions;
+- (_Bool)usesBackgroundSession;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)initWithOperation:(id)arg1;

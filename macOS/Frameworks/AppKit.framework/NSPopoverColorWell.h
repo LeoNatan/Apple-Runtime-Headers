@@ -26,7 +26,7 @@
 + (id)emptyColor;
 + (void)drawNoColorSwatchInRect:(struct CGRect)arg1 enabled:(BOOL)arg2 active:(BOOL)arg3;
 + (void)drawEmptyColorSwatchInRect:(struct CGRect)arg1 enabled:(BOOL)arg2;
-+ (id)_colorPopover;
++ (id)_colorPopoverCreateIfNecessary:(BOOL)arg1;
 + (id)_bezelRenderingButton;
 @property(copy) CDUnknownBlockType afterRenderer; // @synthesize afterRenderer=_afterRenderer;
 - (BOOL)isOpaque;
@@ -43,6 +43,8 @@
 - (void)_windowChangedKeyState;
 - (BOOL)_ownsColorPanelExclusively;
 - (void)dealloc;
+- (void)setColorMatrixColorList:(id)arg1;
+- (void)setTopBarMatrixColorList:(id)arg1;
 @property(getter=isEmptyColorEnabled) BOOL emptyColorEnabled; // @dynamic emptyColorEnabled;
 - (unsigned long long)controlSize;
 - (void)setControlSize:(unsigned long long)arg1;

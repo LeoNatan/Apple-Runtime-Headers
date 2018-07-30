@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)governingEntity;
 - (void)setGoverningAlias:(id)arg1;
 - (id)governingAlias;
+- (id)correlationToken;
 - (void)setCorrelationToken:(id)arg1;
 - (void)setOrderIntermediate:(id)arg1;
 - (id)orderIntermediate;

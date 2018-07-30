@@ -13,6 +13,7 @@
     unsigned int _vbo;
     unsigned int _vao;
     float _emitterSize;
+    float _zClipThreshold;
     float _averageLifespan;
     float _lifespanRandomness;
     float _averageEmissionSpeed;
@@ -54,6 +55,7 @@
 @property(nonatomic) float averageEmissionSpeed; // @synthesize averageEmissionSpeed=_averageEmissionSpeed;
 @property(nonatomic) float lifespanRandomness; // @synthesize lifespanRandomness=_lifespanRandomness;
 @property(nonatomic) float averageLifespan; // @synthesize averageLifespan=_averageLifespan;
+@property(nonatomic) float zClipThreshold; // @synthesize zClipThreshold=_zClipThreshold;
 @property(nonatomic) float emitterSize; // @synthesize emitterSize=_emitterSize;
 // Error parsing type for property emitterPosition:
 // Property attributes: T,N,V_emitterPosition

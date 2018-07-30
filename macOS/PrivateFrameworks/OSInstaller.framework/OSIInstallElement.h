@@ -22,6 +22,7 @@
 }
 
 @property BOOL isOSInstall; // @synthesize isOSInstall=_isOSInstall;
+- (void).cxx_destruct;
 - (void)updateSUProgress;
 - (double)estimatedTimeToComplete;
 - (void)installClientDidFinish:(id)arg1;
@@ -32,7 +33,6 @@
 - (id)localizedStatusString;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 - (id)initWithOptions:(id)arg1 packageSpecifiers:(id)arg2 isOSInstall:(BOOL)arg3;
 
 @end

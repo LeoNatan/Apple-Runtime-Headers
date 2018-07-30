@@ -39,5 +39,11 @@
 @property(readonly) int callService;
 @property(readonly) NSString *phoneNumber;
 - (id)_destinationIDConvertingNumbersToLatin:(BOOL)arg1;
+
+// Remaining properties
+@property(readonly, nonatomic) int addressBookUID;
+@property(readonly, nonatomic, getter=isBasebandLogURL) BOOL basebandLogURL;
+@property(readonly, copy, nonatomic) NSString *formattedPhoneNumber;
+@property(readonly, copy, nonatomic) NSString *numberQualifiedForAddressBook;
 @end
 

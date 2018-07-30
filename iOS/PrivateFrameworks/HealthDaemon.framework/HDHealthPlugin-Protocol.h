@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CMCatherineFeeder, HDProfile, HDQueryServer, HDXPCClient, NSArray, NSDate, NSString, NSTimeZone, NSUUID, NSXPCListenerEndpoint, _HKDeepBreathingSessionConfiguration, _HKQueryServerDataObject;
+@class CMCatherineFeeder, HDXPCClient, NSArray, NSDate, NSString, NSTimeZone, NSXPCListenerEndpoint, _HKDeepBreathingSessionConfiguration;
 
 @protocol HDHealthPlugin <NSObject>
 @property(readonly, copy, nonatomic) NSString *pluginIdentifier;
@@ -19,7 +19,6 @@
 - (void)setCurrentActivityCacheOverrideDate:(NSDate *)arg1 timeZone:(NSTimeZone *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (NSArray *)dataCollectors;
 - (id <HDDeepBreathingSessionServer>)deepBreathingServerForClient:(id)arg1 configuration:(_HKDeepBreathingSessionConfiguration *)arg2 healthDaemon:(id <HDHealthDaemon>)arg3 delegate:(id <HDDeepBreathingSessionServerDelegate>)arg4;
-- (HDQueryServer *)queryServerForUUID:(NSUUID *)arg1 serverDataObject:(_HKQueryServerDataObject *)arg2 queryClass:(Class)arg3 clientProxy:(id)arg4 client:(HDXPCClient *)arg5 profile:(HDProfile *)arg6 queryDelegate:(id <HDQueryServerDelegate>)arg7;
 - (_Bool)daemonDidReceiveNotification:(const char *)arg1;
 - (NSXPCListenerEndpoint *)listenerEndpointForClient:(HDXPCClient *)arg1 error:(id *)arg2;
 @end

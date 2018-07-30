@@ -12,6 +12,7 @@
 
 - (void)submit:(CDUnknownBlockType)arg1;
 - (id)newRenderJob;
+@property id <NUMutableBufferImage> targetBufferImage;
 
 @end
 

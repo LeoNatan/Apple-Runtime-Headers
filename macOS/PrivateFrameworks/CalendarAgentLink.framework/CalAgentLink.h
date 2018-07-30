@@ -22,6 +22,7 @@
 + (id)addressBookProxy;
 + (id)storeWithErrorBlock:(CDUnknownBlockType)arg1;
 + (id)store;
++ (id)synchronousRemoteObjectForMachServiceName:(id)arg1 errorBlock:(CDUnknownBlockType)arg2;
 + (id)remoteObjectForMachServiceName:(id)arg1 errorBlock:(CDUnknownBlockType)arg2;
 + (id)remoteObjectForMachServiceName:(id)arg1;
 + (id)clientSideCache;
@@ -29,6 +30,8 @@
 + (void)broadcastToOtherClients:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 + (void)broadcastToOtherClients:(SEL)arg1 withObject:(id)arg2;
 + (void)broadcastToOtherClients:(SEL)arg1;
++ (id)synchronousAgentWithErrorBlock:(CDUnknownBlockType)arg1;
++ (id)synchronousAgent;
 + (id)agentWithErrorBlock:(CDUnknownBlockType)arg1;
 + (id)agent;
 + (id)startWithMachServiceName:(id)arg1 exportedObject:(id)arg2;
@@ -37,6 +40,7 @@
 + (void)initialize;
 @property(retain) CalXPCConnectionProvider *connectionProvider; // @synthesize connectionProvider=_connectionProvider;
 - (void).cxx_destruct;
+- (id)_synchronousRemoteObjectWithErrorBlock:(CDUnknownBlockType)arg1;
 - (id)_remoteObjectWithErrorBlock:(CDUnknownBlockType)arg1;
 - (id)_remoteObject;
 - (void)setExportedObject:(id)arg1;

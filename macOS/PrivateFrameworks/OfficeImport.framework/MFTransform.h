@@ -10,7 +10,6 @@
 
 @class NSObject<MFDeviceDriver>;
 
-__attribute__((visibility("hidden")))
 @interface MFTransform : NSObject <NSCopying>
 {
     struct CGAffineTransform m_world;
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSObject<MFDeviceDriver> *m_deviceDriver;
 }
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct CGPoint)LPtoDP:(struct CGPoint)arg1;
 - (struct CGPoint)DPtoLP:(struct CGPoint)arg1;

@@ -25,7 +25,7 @@ struct CommandTagger;
 
 struct CommandTagging {
     struct map<std::__1::basic_string<char>, std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>> _field1;
-    struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> _field2;
+    vector_9492931a _field2;
     basic_string_23d93216 _field3;
 };
 
@@ -41,6 +41,7 @@ struct G2P;
 
 struct HybridClientConfigs {
     struct map<int, std::__1::map<std::__1::basic_string<char>, double, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double>>>, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, std::__1::map<std::__1::basic_string<char>, double, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double>>>>>> hybridEndpointerThresholds;
+    struct map<std::__1::basic_string<char>, int, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, int>>> hybridEndpointerExtraDelayFrequency;
 };
 
 struct HybridEndpointer;
@@ -87,6 +88,7 @@ struct SpeechModelInfo {
     basic_string_23d93216 version;
     struct set<int, std::__1::less<int>, std::__1::allocator<int>> samplingRates;
     struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> tasks;
+    struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> osTypes;
     basic_string_23d93216 language;
     basic_string_23d93216 phoneSetVersion;
     basic_string_23d93216 acousticProfileVersion;
@@ -114,6 +116,7 @@ struct SystemConfig {
     struct TranslationModelInfo translationModelInfo;
     struct shared_ptr<quasar::ModelLoader> modelLoader;
     struct HybridClientConfigs hybridClientConfigs;
+    basic_string_23d93216 mainModelVersion;
     struct map<std::__1::basic_string<char>, bool *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, bool *>>> boolMap;
     struct map<std::__1::basic_string<char>, int *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, int *>>> intMap;
     struct map<std::__1::basic_string<char>, unsigned int *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned int *>>> uintMap;
@@ -138,6 +141,7 @@ struct Token {
     _Bool hasSpaceAfter;
     _Bool hasSpaceBefore;
     basic_string_23d93216 phoneSeq;
+    basic_string_23d93216 ipaPhoneSeq;
 };
 
 struct TokenProns {
@@ -150,8 +154,10 @@ struct TranslationModelInfo {
     basic_string_23d93216 version;
     struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> tasks;
     struct vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>> languagePairs;
-    struct unordered_map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>> tokenizerLanguageMap;
+    struct unordered_map<std::__1::basic_string<char>, quasar::TranslationPairSetting, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, quasar::TranslationPairSetting>>> pairSpecificSettings;
 };
+
+struct TranslatorFactory;
 
 struct URegularExpressionWrapper;
 
@@ -162,6 +168,10 @@ struct Version {
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*> *__next_;
 };
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, void *>*> {
@@ -253,6 +263,18 @@ struct map<std::__1::basic_string<char>, int *, std::__1::less<std::__1::basic_s
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, int *>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
+struct map<std::__1::basic_string<char>, int, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, int>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, int>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::less<std::__1::basic_string<char>>, true>> {
             unsigned long long __value_;
         } __pair3_;
     } __tree_;
@@ -453,6 +475,11 @@ struct shared_ptr<quasar::SymbolTableList> {
     struct __shared_weak_count *_field2;
 };
 
+struct shared_ptr<quasar::TranslatorFactory> {
+    struct TranslatorFactory *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 struct shared_ptr<quasar::URegularExpressionWrapper> {
     struct URegularExpressionWrapper *__ptr_;
     struct __shared_weak_count *__cntrl_;
@@ -535,6 +562,17 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } __ptr_;
 };
 
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char>>, void *>*> **__value_;
@@ -556,6 +594,21 @@ struct unordered_map<char32_t, char32_t, std::__1::hash<char32_t>, std::__1::equ
             unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::equal_to<char32_t>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<std::__1::basic_string<char>, quasar::TranslationPairSetting, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, quasar::TranslationPairSetting>>> {
+    struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, std::__1::hash<std::__1::basic_string<char>>, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, std::__1::equal_to<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, std::__1::hash<std::__1::basic_string<char>>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, quasar::TranslationPairSetting>, std::__1::equal_to<std::__1::basic_string<char>>, true>> {
             float __value_;
         } __p3_;
     } __table_;
@@ -686,6 +739,14 @@ typedef struct vector<quasar::Token, std::__1::allocator<quasar::Token>> {
         struct Token *__value_;
     } __end_cap_;
 } vector_2f7ba0dc;
+
+typedef struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
+    basic_string_23d93216 *_field1;
+    basic_string_23d93216 *_field2;
+    struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
+        basic_string_23d93216 *_field1;
+    } _field3;
+} vector_9492931a;
 
 typedef struct vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>> {
     vector_2f7ba0dc *_field1;

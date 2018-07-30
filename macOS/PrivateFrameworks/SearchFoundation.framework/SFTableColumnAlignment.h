@@ -14,7 +14,11 @@
 
 @interface SFTableColumnAlignment : NSObject <SFTableColumnAlignment, NSSecureCoding, NSCopying>
 {
-    CDStruct_92ac6441 _has;
+    struct {
+        unsigned int columnAlignment:1;
+        unsigned int dataAlignment:1;
+        unsigned int isEqualWidth:1;
+    } _has;
     BOOL _isEqualWidth;
     int _columnAlignment;
     int _dataAlignment;
@@ -32,7 +36,6 @@
 - (BOOL)hasIsEqualWidth;
 - (BOOL)hasDataAlignment;
 - (BOOL)hasColumnAlignment;
-- (unsigned long long)textAlignment;
 - (id)initWithProtobuf:(id)arg1;
 
 // Remaining properties

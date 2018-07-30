@@ -13,15 +13,15 @@ __attribute__((visibility("hidden")))
 {
     struct TFENodeOrderedSet _nodeToRowSet;
     _Bool _itemHitOnMouseDown;
-    struct TNSRef<FI_TTableViewShrinkToFitController *, void> _stfController;
+    struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
     struct TNotificationCenterObserver _clipViewBoundsChangedObserver;
     _Bool _showingAnyColorTags;
     _Bool _showICloudDriveContent;
-    unordered_set_9d385924 _nodesWithBadgeImages;
+    unordered_set_931aff12 _nodesWithBadgeImages;
     long long _disabledTrackingRow;
-    struct TNSRef<FI_TBrowserImmediateActionGestureRecognizerDelegate *, void> _immediateActionGestureRecognizerDelegate;
-    struct TNSRef<NSImmediateActionGestureRecognizer *, void> _quickLookImmediateActionGestureRecognizer;
-    struct TNSRef<NSImmediateActionGestureRecognizer *, void> _renameImmediateActionGestureRecognizer;
+    struct TNSRef<FI_TBrowserImmediateActionGestureRecognizerDelegate, void> _immediateActionGestureRecognizerDelegate;
+    struct TNSRef<NSImmediateActionGestureRecognizer, void> _quickLookImmediateActionGestureRecognizer;
+    struct TNSRef<NSImmediateActionGestureRecognizer, void> _renameImmediateActionGestureRecognizer;
 }
 
 @property(nonatomic) _Bool showICloudDriveContent; // @synthesize showICloudDriveContent=_showICloudDriveContent;
@@ -52,7 +52,6 @@ __attribute__((visibility("hidden")))
 - (void)didRemoveRowView:(id)arg1 forRow:(long long)arg2;
 - (void)moveNode:(const struct TFENode *)arg1 atIndex:(long long)arg2 toIndex:(long long)arg3;
 - (void)removeNodes:(const struct TFENodeVector *)arg1 atIndexes:(id)arg2 withAnimation:(unsigned long long)arg3;
-- (void)setInitialNodes:(const struct TFENodeVector *)arg1;
 - (void)insertSortedNodes:(const struct TFENodeVector *)arg1 atIndexes:(id)arg2 withAnimation:(unsigned long long)arg3;
 - (id)selectedItems;
 - (void)synchSelectionCache;
@@ -62,7 +61,6 @@ __attribute__((visibility("hidden")))
 - (void)reloadData;
 - (BOOL)canDragRowsWithIndexes:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)invalidateThumbnailForKeyNodes:(const struct TFENodeVector *)arg1;
-- (double)optimalHeight;
 - (void)selectRowIndexes:(id)arg1 byExtendingSelection:(BOOL)arg2;
 - (void)scrollSelectedRowToVisible;
 - (void)dragImage:(id)arg1 at:(struct CGPoint)arg2 offset:(struct CGSize)arg3 event:(id)arg4 pasteboard:(id)arg5 source:(id)arg6 slideBack:(BOOL)arg7;

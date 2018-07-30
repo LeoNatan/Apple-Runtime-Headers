@@ -19,12 +19,14 @@
     NSString *_versionPath;
     NSObject<OS_dispatch_queue> *_serialQueueRemoveImagesBackground;
     NSObject<OS_dispatch_queue> *_serialQueueRemoveImagesDefault;
+    NSObject<OS_dispatch_queue> *_storeImageQueue;
     NSObject<OS_dispatch_queue> *_requestQueue;
     NSXPCConnection *_connection;
     _Bool _lockOnRead;
 }
 
 @property(nonatomic) _Bool lockOnRead; // @synthesize lockOnRead=_lockOnRead;
+- (void).cxx_destruct;
 - (void)_setCacheVersion:(int)arg1;
 - (int)_cacheVersion;
 - (id)_versionPath;
@@ -40,9 +42,9 @@
 - (struct _img)_imgForItem:(id)arg1;
 - (void)_remoteStoreImageForKey:(id)arg1 inGroup:(id)arg2 withItem:(id)arg3;
 - (void)_localStoreImageForKey:(id)arg1 inGroup:(id)arg2 withItem:(id)arg3;
+- (void)_createStorageQueueIfNecessary;
 - (struct CGImage *)copyImageForKey:(id)arg1 inGroup:(id)arg2;
 - (_Bool)imageExistsForKey:(id)arg1 inGroup:(id)arg2;
-- (unsigned int)memContentOffset;
 - (void *)openAndMmap:(id)arg1 withInfo:(struct _img *)arg2;
 - (id)cacheNumberForKey:(id)arg1;
 @property(nonatomic) unsigned long long cacheItemLimit;

@@ -19,12 +19,9 @@
 @property(readonly, nonatomic) HUMediaAccessControlEditorModuleController *accessControlEditorModuleController; // @synthesize accessControlEditorModuleController=_accessControlEditorModuleController;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
-- (id)_passwordSectionFooterTitle;
-- (void)_updateHeaderFooterView:(id)arg1 forSection:(long long)arg2;
+- (void)_updateFooterView:(id)arg1 forSection:(long long)arg2;
 - (void)accessControlEditorModuleController:(id)arg1 didUpdateAccessControl:(id)arg2;
-- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)itemModuleControllers;
 - (void)viewDidLoad;
 - (id)initWithHome:(id)arg1;

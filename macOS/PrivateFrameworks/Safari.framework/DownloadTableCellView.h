@@ -6,7 +6,7 @@
 
 #import "NSTableCellView.h"
 
-@class DownloadProgressEntry, NSButton, NSImage, NSProgressIndicator, NSTextField, NSTimer;
+@class ConfigurableVibrancyButton, DownloadProgressEntry, NSImage, NSProgressIndicator, NSTextField, NSTimer;
 
 __attribute__((visibility("hidden")))
 @interface DownloadTableCellView : NSTableCellView
@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     int _buttonState;
     NSTextField *_filenameTextField;
     NSTextField *_statusTextField;
-    NSButton *_stopResumeButton;
-    NSButton *_revealButton;
     NSImage *_iconImage;
     long long _revealTrackingRectTag;
     long long _stopResumeTrackingRectTag;
+    ConfigurableVibrancyButton *_stopResumeButton;
+    ConfigurableVibrancyButton *_revealButton;
 }
 
 + (double)rowHeight;

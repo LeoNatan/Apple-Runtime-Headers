@@ -14,10 +14,6 @@
 
 @interface _CPDidGoToSearchFeedback : PBCodable <_CPProcessableFeedback, _CPDidGoToSearchFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int endpoint:1;
-    } _has;
     int _endpoint;
     unsigned long long _timestamp;
     NSString *_input;
@@ -35,9 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasEndpoint;
-@property(readonly, nonatomic) BOOL hasInput;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

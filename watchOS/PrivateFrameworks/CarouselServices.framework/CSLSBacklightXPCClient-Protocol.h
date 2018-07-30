@@ -6,11 +6,11 @@
 
 #import "CSLSBacklightObserver.h"
 
-@class NSNumber, NSString;
+@class NSError, NSString;
 
 @protocol CSLSBacklightXPCClient <CSLSBacklightObserver>
-- (void)backlightDidChange:(NSString *)arg1 from:(int)arg2 to:(int)arg3 forReason:(NSNumber *)arg4;
+- (void)requestRejectedForError:(NSError *)arg1 shouldRaiseException:(_Bool)arg2;
+- (void)backlightDidChangeFrom:(int)arg1 to:(int)arg2 forReason:(unsigned int)arg3;
 - (void)assertionTimedOut:(NSString *)arg1;
-- (void)setCurrentBacklightState:(int)arg1 forDisplayType:(NSString *)arg2;
 @end
 

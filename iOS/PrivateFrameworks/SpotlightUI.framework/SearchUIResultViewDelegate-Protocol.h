@@ -6,12 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSString, SFResultSection;
+@class NSString, SFResultSection, SFSearchResult, UIViewController<SearchUIResultShortLook>;
 
 @protocol SearchUIResultViewDelegate <NSObject>
 
 @optional
 @property(readonly) NSString *currentQuery;
+- (void)getUserActivityForResult:(SFSearchResult *)arg1 completionHandler:(void (^)(NSUserActivity *))arg2;
+- (UIViewController<SearchUIResultShortLook> *)shortLookViewControllerForResult:(SFSearchResult *)arg1;
+- (_Bool)hasShortLookViewControllerForResult:(SFSearchResult *)arg1;
+- (void)didScrollPastBottomOfContent;
 - (void)didUpdateContentScrolledOffScreenStatus:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)didBeginScrollingResults;
 - (void)didChangeExpansionStateForSection:(SFResultSection *)arg1 expanded:(_Bool)arg2;

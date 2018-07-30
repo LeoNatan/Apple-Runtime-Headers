@@ -8,7 +8,6 @@
 
 @class ABUserDefaults, CNContact;
 
-__attribute__((visibility("hidden")))
 @interface _CNUIDefaultContactNameOrder : CNUIContactNameOrder
 {
     ABUserDefaults *_userDefaults;

@@ -6,7 +6,7 @@
 
 #import <SAObjects/SAStartRequest.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface SAStartDirectActionRequest : SAStartRequest
 {
@@ -15,6 +15,8 @@
 + (id)startDirectActionRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startDirectActionRequest;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *utteranceFromRequestParameters;
+@property(copy, nonatomic) NSDictionary *requestExecutionParameters;
 @property(copy, nonatomic) NSString *directAction;
 - (id)encodedClassName;
 - (id)groupIdentifier;

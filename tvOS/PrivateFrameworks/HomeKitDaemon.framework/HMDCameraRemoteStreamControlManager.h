@@ -61,6 +61,7 @@
 - (void)_setParametersSelected:(id)arg1;
 - (void)_negotiateStream;
 - (void)negotiateStream;
+- (void)updateAudioVolume:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)updateAudioSetting:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 reachabilityPath:(unsigned long long)arg4 destinationID:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 accessory:(id)arg8 streamManagementService:(id)arg9 remoteCapabilities:(id)arg10 profileUniqueIdentifier:(id)arg11 residentMessageHandler:(id)arg12 streamPreference:(id)arg13;

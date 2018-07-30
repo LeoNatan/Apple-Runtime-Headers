@@ -20,7 +20,7 @@
 + (void)execute:(CDUnknownBlockType)arg1;
 + (BOOL)validateValuesAreNumbers:(id)arg1 error:(out id *)arg2;
 @property(nonatomic) double executionTimeLimit; // @synthesize executionTimeLimit=_executionTimeLimit;
-@property(readonly) BOOL didTimeOut; // @synthesize didTimeOut=_didTimeOut;
+@property BOOL didTimeOut; // @synthesize didTimeOut=_didTimeOut;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error;
 - (void)setFunction:(id)arg1 forKey:(id)arg2;
@@ -28,9 +28,7 @@
 - (id)currentState;
 - (void)popState;
 - (void)pushState:(id)arg1;
-- (void)setException:(id)arg1;
 - (void)clearExecutionTimeLimit;
-- (void)setDidTimeOut:(BOOL)arg1;
 - (void)resetAllProxies;
 - (void)addProxy:(id)arg1;
 - (void)setupBuiltInFunctions;

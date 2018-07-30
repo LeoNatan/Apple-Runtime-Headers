@@ -8,6 +8,7 @@
 
 @class SCNNodeComponent;
 
+__attribute__((visibility("hidden")))
 @interface SCNNodeWeakComponent : NSObject
 {
     long long type;

@@ -14,6 +14,7 @@
 {
 }
 
+- (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 
 // Remaining properties

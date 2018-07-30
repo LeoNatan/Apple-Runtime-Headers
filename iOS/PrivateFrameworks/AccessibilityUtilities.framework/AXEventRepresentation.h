@@ -10,7 +10,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class AXEventAccelerometerInfoRepresentation, AXEventData, AXEventGameControllerInfoRepresentation, AXEventHandInfoRepresentation, AXEventKeyInfoRepresentation, AXEventPointerInfoRepresentation, NSData, NSString;
+@class AXEventAccelerometerInfoRepresentation, AXEventData, AXEventGameControllerInfoRepresentation, AXEventHandInfoRepresentation, AXEventIOSMACPointerInfoRepresentation, AXEventKeyInfoRepresentation, AXEventPointerInfoRepresentation, NSData, NSString;
 
 @interface AXEventRepresentation : NSObject <AXEventRepresentationDescription, NSSecureCoding, NSCopying>
 {
@@ -20,6 +20,7 @@
     _Bool _useOriginalHIDTime;
     _Bool _redirectEvent;
     _Bool _setTouchFlagOnSubevents;
+    _Bool _systemDrag;
     unsigned int _type;
     unsigned int _originalType;
     int _subtype;
@@ -36,6 +37,7 @@
     AXEventAccelerometerInfoRepresentation *_accelerometerInfo;
     AXEventGameControllerInfoRepresentation *_gameControllerInfo;
     AXEventPointerInfoRepresentation *_pointerControllerInfo;
+    AXEventIOSMACPointerInfoRepresentation *_iosmacPointerInfo;
     NSString *_clientId;
     unsigned long long _HIDTime;
     NSData *_HIDAttributeData;
@@ -51,6 +53,7 @@
 }
 
 + (id)touchRepresentationWithHandType:(unsigned int)arg1 location:(struct CGPoint)arg2;
++ (id)iosmacPointerRepresentationWithTypeWithPointerInfo:(id)arg1;
 + (id)buttonRepresentationWithType:(unsigned int)arg1;
 + (id)keyRepresentationWithType:(unsigned int)arg1;
 + (id)accelerometerRepresentation:(id)arg1;
@@ -71,6 +74,7 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) void *window; // @synthesize window=_window;
 @property(retain, nonatomic) AXEventData *accessibilityData; // @synthesize accessibilityData=_accessibilityData;
+@property(nonatomic, getter=isSystemDrag) _Bool systemDrag; // @synthesize systemDrag=_systemDrag;
 @property(nonatomic) _Bool setTouchFlagOnSubevents; // @synthesize setTouchFlagOnSubevents=_setTouchFlagOnSubevents;
 @property(nonatomic, getter=isRedirectEvent) _Bool redirectEvent; // @synthesize redirectEvent=_redirectEvent;
 @property(retain, nonatomic) struct __IOHIDEvent *creatorHIDEvent; // @synthesize creatorHIDEvent=_creatorHIDEvent;
@@ -89,6 +93,7 @@
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) unsigned int taskPort; // @synthesize taskPort=_taskPort;
 @property(retain, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
+@property(retain, nonatomic) AXEventIOSMACPointerInfoRepresentation *iosmacPointerInfo; // @synthesize iosmacPointerInfo=_iosmacPointerInfo;
 @property(retain, nonatomic) AXEventPointerInfoRepresentation *pointerControllerInfo; // @synthesize pointerControllerInfo=_pointerControllerInfo;
 @property(retain, nonatomic) AXEventGameControllerInfoRepresentation *gameControllerInfo; // @synthesize gameControllerInfo=_gameControllerInfo;
 @property(retain, nonatomic) AXEventAccelerometerInfoRepresentation *accelerometerInfo; // @synthesize accelerometerInfo=_accelerometerInfo;
@@ -127,6 +132,7 @@
 - (struct __GSEvent *)newGSEventRef;
 - (CDStruct_7f3c0925 *)newEventRecord;
 - (struct __IOHIDEvent *)_newHandHIDEventRef;
+- (struct __IOHIDEvent *)_newIOSMACPointerRef;
 - (id)denormalizedEventRepresentation:(_Bool)arg1 descale:(_Bool)arg2;
 - (void)neuterUpdates;
 - (void)modifyPoints:(CDUnknownBlockType)arg1;
@@ -135,6 +141,7 @@
 - (struct __IOHIDEvent *)_newButtonHIDEventRefWithType:(unsigned int)arg1;
 - (struct __IOHIDEvent *)_newKeyboardHIDEventRef;
 - (struct __IOHIDEvent *)_newAccelerometerHIDEventRef;
+- (unsigned long long)_machTimeForHIDEventRef;
 - (_Bool)isDownEvent;
 - (struct __IOHIDEvent *)newHIDEventRef;
 - (unsigned int)_contextIDFromHIDEvent:(struct __IOHIDEvent *)arg1;

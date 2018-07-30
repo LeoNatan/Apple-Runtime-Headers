@@ -23,6 +23,7 @@
     id <OccurrenceCacheDataSourceProtocol> _occurrenceCacheFilteredDataSource;
     int _cachedFakeTodayIndex;
     int _displayableAccountErrorsCount;
+    _Bool _autoStartNotificationMonitor;
     NSSet *_selectedCalendars;
     NSString *_searchString;
     NSCalendar *_calendar;
@@ -32,6 +33,7 @@
 }
 
 + (id)calendarModelWithDataPath:(id)arg1;
+@property(nonatomic) _Bool autoStartNotificationMonitor; // @synthesize autoStartNotificationMonitor=_autoStartNotificationMonitor;
 @property(retain, nonatomic) EKEvent *selectedOccurrence; // @synthesize selectedOccurrence=_selectedOccurrence;
 @property(nonatomic) unsigned int firstVisibleSecond; // @synthesize firstVisibleSecond=_firstVisibleSecond;
 @property(copy, nonatomic) EKCalendarDate *selectedDate; // @synthesize selectedDate=_selectedDate;
@@ -57,7 +59,9 @@
 - (void)updateAfterAppResume;
 - (void)_occurrenceCacheChanged;
 - (void)_eventStoreChanged:(id)arg1;
-- (void)calendarEventLoader:(id)arg1 occurrencesDidUpdateBetweenStart:(double)arg2 end:(double)arg3;
+- (void)calendarEventLoader:(id)arg1 occurrencesDidUpdateBetweenStart:(double)arg2 end:(double)arg3 wasEmptyLoad:(_Bool)arg4;
+- (void)_finishedFirstLoad;
+- (void)simulateFirstLoadFinished;
 - (int)countSourcesWithErrors;
 @property(readonly, nonatomic) int displayableAccountErrorsCount;
 - (void)_processReloadForCacheOnly:(_Bool)arg1 includingCalendars:(_Bool)arg2 checkCalendarsValid:(_Bool)arg3 checkSources:(_Bool)arg4;
@@ -105,6 +109,7 @@
 - (void)ensureCalendarVisibleWithId:(id)arg1;
 @property(readonly, nonatomic) int readWriteCalendarCount;
 @property(readonly, nonatomic) int visibleCalendarCount;
+@property(nonatomic) _Bool allowEventLocationPrediction;
 - (_Bool)selectedOccurrenceIsSearchMatch;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) NSSet *selectedCalendars; // @synthesize selectedCalendars=_selectedCalendars;

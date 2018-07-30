@@ -16,7 +16,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)new;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)evaluateServiceVisit:(id)arg1;
@@ -25,7 +24,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOrigins:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

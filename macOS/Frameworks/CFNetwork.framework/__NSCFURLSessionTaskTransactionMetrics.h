@@ -45,9 +45,15 @@ __attribute__((visibility("hidden")))
     long long __responseBodyBytesDecoded;
     BOOL __apsRelayAttempted;
     BOOL __apsRelaySucceeded;
+    long long __totalBytesSent;
+    long long __totalBytesReceived;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void)set_totalBytesReceived:(long long)arg1;
+- (long long)_totalBytesReceived;
+- (void)set_totalBytesSent:(long long)arg1;
+- (long long)_totalBytesSent;
 - (void)set_apsRelaySucceeded:(BOOL)arg1;
 - (BOOL)_apsRelaySucceeded;
 - (void)set_apsRelayAttempted:(BOOL)arg1;

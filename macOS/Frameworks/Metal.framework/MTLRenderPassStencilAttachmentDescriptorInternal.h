@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 - (void)setResolveSlice:(unsigned long long)arg1;
 - (unsigned long long)resolveLevel;
 - (void)setResolveLevel:(unsigned long long)arg1;
+- (void)setStencilResolveFilter:(unsigned long long)arg1;
+- (unsigned long long)stencilResolveFilter;
 - (unsigned int)clearStencil;
 - (void)setClearStencil:(unsigned int)arg1;
 - (unsigned long long)depthPlane;

@@ -23,14 +23,15 @@
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)_authenticateiCloudWithidMSResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_authenticateWithContext:(id)arg1 loginToiCloud:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (BOOL)_authenticateiCloudWithidMSResponse:(id)arg1 error:(id *)arg2;
+- (void)_authenticateWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_authenticateWithAuthKitResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_authenticationContextWithDialog:(id)arg1;
 - (void)authenticateWithDialog:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)signChallenge:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithStoreClient:(id)arg1;
 - (void)_signChallenge:(id)arg1 withCaller:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_authenticateWithDialog:(id)arg1 loginToiCloud:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_authenticateWithDialog:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

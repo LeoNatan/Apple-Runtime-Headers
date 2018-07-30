@@ -73,7 +73,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)visualTabPickerTileContainerViewShouldShowMuteButton:(id)arg1;
 - (struct CGRect)visibleBoundsForVisualTabPickerTileContainerView:(id)arg1;
 - (id)tileViewForVisualTabPickerTileContainerView:(id)arg1 lowResolution:(BOOL)arg2;
+- (id)siteIconForVisualTabPickerTileContainerView:(id)arg1;
 - (id)titleForVisualTabPickerTileContainerView:(id)arg1;
+- (void)updateIconForTab:(id)arg1;
 - (void)updateMuteButtonForTab:(id)arg1;
 - (void)_startGridAnimation:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startGridAnimation:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;

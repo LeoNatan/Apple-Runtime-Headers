@@ -9,28 +9,47 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSUUID;
+@class NSDate, NSUUID;
 
 @interface CMWorkout : NSObject <NSSecureCoding, NSCopying>
 {
     NSUUID *fSessionId;
     int fType;
+    int fLocationType;
+    NSDate *fStartDate;
+    NSDate *fEndDate;
+    _Bool fIsUserInitiated;
+    _Bool _isUserInitiated;
 }
 
-+ (int)workoutTypeFromNatalieDataSession:(int)arg1;
-+ (int)natalieDataSessionFromWorkoutType:(int)arg1;
++ (int)workoutLocationTypeFromCMWorkoutType:(int)arg1;
++ (id)workoutLocationName:(int)arg1;
 + (id)workoutName:(int)arg1;
 + (_Bool)supportsSecureCoding;
 + (_Bool)isAvailable;
++ (_Bool)workoutIsTypeRunning:(int)arg1;
++ (_Bool)workoutIsTypeWalking:(int)arg1;
++ (_Bool)workoutIsTypePedestrian:(int)arg1;
++ (int)CMSwimWorkoutLocationFromCMWorkoutLocationType:(int)arg1;
++ (int)CMWorkoutLocationTypeFromCMSwimWorkoutLocation:(int)arg1;
 + (int)CMWorkoutTypeFromCLMotionActivityType:(int)arg1;
 + (int)CLMotionActivityTypeFromCMWorkoutType:(int)arg1;
+@property(readonly, nonatomic) _Bool isUserInitiated; // @synthesize isUserInitiated=_isUserInitiated;
 - (id)description;
+@property(readonly, nonatomic) NSDate *endDate;
+@property(readonly, nonatomic) NSDate *startDate;
+@property(readonly, nonatomic) int locationType;
 @property(readonly, nonatomic) int type;
 @property(readonly, nonatomic) NSUUID *sessionId;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+- (void)setWorkoutType:(int)arg1;
+- (void)setIsUserInitiated:(_Bool)arg1;
+- (void)setLocationType:(int)arg1;
+- (id)initWithSessionId:(id)arg1 type:(int)arg2 locationType:(int)arg3 startDate:(id)arg4 endDate:(id)arg5;
+- (id)initWithSessionId:(id)arg1 type:(int)arg2 locationType:(int)arg3;
 - (id)initWithSessionId:(id)arg1 type:(int)arg2;
 
 @end

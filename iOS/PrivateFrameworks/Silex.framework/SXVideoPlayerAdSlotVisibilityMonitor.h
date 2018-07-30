@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <Silex/SXVisibilityMonitor.h>
+#import "SVVisibilityMonitor.h"
 
-@class SXKeyValueObserver;
+@class SVKeyValueObserver;
 
-@interface SXVideoPlayerAdSlotVisibilityMonitor : SXVisibilityMonitor
+@interface SXVideoPlayerAdSlotVisibilityMonitor : SVVisibilityMonitor
 {
-    SXKeyValueObserver *_observer;
+    SVKeyValueObserver *_observer;
 }
 
-@property(readonly, nonatomic) SXKeyValueObserver *observer; // @synthesize observer=_observer;
+@property(readonly, nonatomic) SVKeyValueObserver *observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
 - (id)initWithVideoPlayerViewController:(id)arg1 videoAdSlotVisiblePercentageProvider:(id)arg2;
 

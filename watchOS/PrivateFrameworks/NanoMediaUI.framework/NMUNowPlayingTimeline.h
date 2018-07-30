@@ -31,7 +31,6 @@
 @property(readonly, nonatomic) unsigned int mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
 - (void)_cloudAvailabilityDidChangeNotification:(id)arg1;
-- (void)_playbackSourceDidChangeNotification:(id)arg1;
 - (void)originObserver:(id)arg1 didUpdateTimestampForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdatePlaybackQueueForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdatePlaybackStateForOrigin:(id)arg2;

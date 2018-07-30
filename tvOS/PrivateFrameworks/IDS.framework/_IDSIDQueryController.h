@@ -15,7 +15,6 @@
     NSMutableDictionary *_listeners;
     NSMutableDictionary *_idStatusCache;
     NSMutableDictionary *_transactionIDToBlockMap;
-    NSString *_rerouteService;
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     NSObject<OS_dispatch_queue> *_queue;
@@ -44,7 +43,6 @@
 - (void)_setCurrentIDStatus:(long long)arg1 forDestination:(id)arg2 service:(id)arg3;
 - (id)_delegateMapForListenerID:(id)arg1 service:(id)arg2;
 - (void)_callDelegatesWithBlock:(CDUnknownBlockType)arg1 delegateMap:(id)arg2;
-- (id)_reroutedPrototypeService:(id)arg1;
 - (void)_purgeIDStatusCache;
 - (void)_purgeIDStatusCacheAfter:(double)arg1;
 - (void)_updateCacheWithDictionary:(id)arg1 service:(id)arg2;

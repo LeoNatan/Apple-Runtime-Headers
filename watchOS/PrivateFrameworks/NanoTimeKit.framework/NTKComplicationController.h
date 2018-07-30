@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSMapTable, NSMutableArray, NTKComplication;
+@class CLKDevice, NSDate, NSMapTable, NSMutableArray, NTKComplication;
 
 @interface NTKComplicationController : NSObject
 {
@@ -19,6 +19,7 @@
     _Bool _faceZooming;
     NTKComplication *_complication;
     int _complicationFamily;
+    CLKDevice *_device;
     CDUnknownBlockType _invalidationHandler;
     NSDate *_pauseDate;
     int _cachingMode;
@@ -27,11 +28,11 @@
     int _effectiveFaceDataMode;
 }
 
-+ (id)DEPRECATEDControllerForComplication:(id)arg1 withLegacyDisplay:(id)arg2;
++ (id)DEPRECATEDControllerForComplication:(id)arg1 withLegacyDisplay:(id)arg2 forDevice:(id)arg3;
 + (_Bool)_isLegacy;
-+ (_Bool)_acceptsComplicationType:(unsigned int)arg1 family:(int)arg2;
-+ (_Bool)_acceptsComplicationType:(unsigned int)arg1;
-+ (Class)controllerClassForComplicationType:(unsigned int)arg1 family:(int)arg2;
++ (_Bool)_acceptsComplicationType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
++ (_Bool)_acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
++ (Class)controllerClassForComplicationType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 + (id)controllerForComplication:(id)arg1 withRequestedFamily:(int)arg2 face:(id)arg3 slot:(id)arg4;
 @property(readonly, nonatomic) int effectiveFaceDataMode; // @synthesize effectiveFaceDataMode=_effectiveFaceDataMode;
 @property(readonly, nonatomic) int animationMode; // @synthesize animationMode=_animationMode;
@@ -41,6 +42,7 @@
 @property(nonatomic) _Bool showsLockedUI; // @synthesize showsLockedUI=_showsLockedUI;
 @property(retain, nonatomic) NSDate *pauseDate; // @synthesize pauseDate=_pauseDate;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int complicationFamily; // @synthesize complicationFamily=_complicationFamily;
 @property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
 - (void).cxx_destruct;
@@ -74,8 +76,8 @@
 - (void)_updateEffectiveUpdatingMode;
 - (void)_updateEffectiveCachingMode;
 - (void)DEPRECATEDInvalidate;
-- (id)_initWithComplication:(id)arg1 legacyDisplay:(id)arg2;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)_initWithComplication:(id)arg1 legacyDisplay:(id)arg2 forDevice:(id)arg3;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 - (_Bool)wantsLegacyDisplay;
 
 @end

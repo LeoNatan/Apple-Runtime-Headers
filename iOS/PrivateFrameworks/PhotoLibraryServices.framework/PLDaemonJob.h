@@ -12,6 +12,7 @@
 {
     NSObject<OS_xpc_object> *_xpcReply;
     PLXPCTransaction *_transaction;
+    unsigned long long _signpostId;
     NSObject<OS_xpc_object> *_connection;
 }
 
@@ -31,6 +32,7 @@
 - (void)handleReply;
 - (void)sendToAssetsdWithReply;
 - (void)sendToAssetsd;
+- (_Bool)shouldRunOnDaemonSerialQueue;
 - (long long)daemonOperation;
 
 @end

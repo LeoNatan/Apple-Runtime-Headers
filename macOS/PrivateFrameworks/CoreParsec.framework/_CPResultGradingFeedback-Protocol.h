@@ -10,13 +10,9 @@
 
 @protocol _CPResultGradingFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasTextFeedback;
 @property(copy, nonatomic) NSString *textFeedback;
-@property(readonly, nonatomic) BOOL hasGrade;
 @property(nonatomic) int grade;
-@property(readonly, nonatomic) BOOL hasResult;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

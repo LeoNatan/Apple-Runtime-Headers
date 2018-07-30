@@ -17,6 +17,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)_managedAppsChangedNotification:(id)arg1;
 - (void)_workQueue_reloadManagedApplicationBundleIDs;
 - (void)_workQueue_reloadProfiles;

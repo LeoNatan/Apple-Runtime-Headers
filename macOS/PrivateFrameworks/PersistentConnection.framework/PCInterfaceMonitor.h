@@ -23,9 +23,10 @@
 + (BOOL)isNetworkingPowerExpensiveToUse;
 + (id)sharedInstanceForIdentifier:(long long)arg1;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *networkCode;
 @property(readonly, nonatomic) BOOL isLTEWithCDRX;
 @property(readonly, nonatomic) struct __CFString *wwanInterfaceName;
-@property(readonly, nonatomic) struct __CFString *currentRAT;
+@property(readonly, nonatomic) int currentRAT;
 @property(readonly, nonatomic) BOOL isNetworkingPowerExpensiveToUse;
 @property(readonly, nonatomic) BOOL isRadioHot;
 @property(readonly, nonatomic) BOOL isBadLinkQuality;

@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface EDTableFilterColumn : NSObject
 {
     unsigned long long mColumnIndex;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
     int mFiltersRelation;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setFiltersRelation:(int)arg1;
 - (int)filtersRelation;
@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)addFilter:(id)arg1;
 - (id)filterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)filterCount;
-- (void)dealloc;
 - (id)init;
 
 @end

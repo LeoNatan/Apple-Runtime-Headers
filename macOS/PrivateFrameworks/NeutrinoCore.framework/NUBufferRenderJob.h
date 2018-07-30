@@ -11,7 +11,7 @@
 }
 
 - (id)result;
-- (id)imageAccumulationNodeWithSize:(CDStruct_912cb5d2)arg1 format:(id)arg2 colorSpace:(id)arg3;
+- (id)imageAccumulationNodeWithImageSize:(CDStruct_912cb5d2)arg1 tileSize:(CDStruct_912cb5d2)arg2 format:(id)arg3 colorSpace:(id)arg4;
 
 @end
 

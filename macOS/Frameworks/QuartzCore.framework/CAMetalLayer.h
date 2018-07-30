@@ -37,6 +37,7 @@
 @property BOOL nonDefaultColorspace;
 - (void)discardContents;
 - (BOOL)isDrawableAvailable;
+@property(readonly) unsigned long long displayCompositingInternalStatus;
 
 // Remaining properties
 @property BOOL wantsExtendedDynamicRangeContent; // @dynamic wantsExtendedDynamicRangeContent;

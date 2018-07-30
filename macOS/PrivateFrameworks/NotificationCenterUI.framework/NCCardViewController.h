@@ -6,9 +6,11 @@
 
 #import "NSViewController.h"
 
+#import "NCMaterialDelegate.h"
+
 @class CALayer, NSArray, _NCCardViewControllerCardView, _NCCardViewControllerContentView;
 
-@interface NCCardViewController : NSViewController
+@interface NCCardViewController : NSViewController <NCMaterialDelegate>
 {
     CALayer *_headerMaterial;
     CALayer *_backgroundMaterial1;
@@ -18,24 +20,29 @@
     _NCCardViewControllerCardView *_cardLayerView;
     _NCCardViewControllerContentView *_cardContentView;
     BOOL _needsLayout;
+    _Bool _isSystemDark;
     struct CGRect _lastLayoutRectBounds;
     BOOL _onDarkBackdrop;
-    BOOL _darkCompatibleLook;
     BOOL _cardVisible;
     NSViewController *_headerController;
     NSViewController *_contentController;
+    unsigned long long _cardMaterial;
 }
 
 @property(nonatomic) BOOL cardVisible; // @synthesize cardVisible=_cardVisible;
-@property(nonatomic) BOOL darkCompatibleLook; // @synthesize darkCompatibleLook=_darkCompatibleLook;
 @property(nonatomic) BOOL onDarkBackdrop; // @synthesize onDarkBackdrop=_onDarkBackdrop;
+@property(nonatomic) unsigned long long cardMaterial; // @synthesize cardMaterial=_cardMaterial;
 @property(retain, nonatomic) NSViewController *contentController; // @synthesize contentController=_contentController;
 @property(retain, nonatomic) NSViewController *headerController; // @synthesize headerController=_headerController;
 - (void).cxx_destruct;
 - (void)_layoutViews;
 - (void)viewDidLayout;
 - (void)viewWillLayout;
+- (void)_createLayersLayers;
 - (void)loadView;
+- (void)_updateCardLook;
+- (void)appearanceChanged:(_Bool)arg1;
+- (void)materialChanged:(unsigned char)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

@@ -11,6 +11,7 @@
     unsigned long long _seed;
 }
 
++ (BOOL)supportsSecureCoding;
 - (BOOL)nextBool;
 - (float)nextUniform;
 - (unsigned long long)nextIntWithUpperBound:(unsigned long long)arg1;

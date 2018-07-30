@@ -8,12 +8,14 @@
 
 #import "BSDescriptionProviding.h"
 
-@class NSArray, NSString, _SBAlertController;
+@class NSArray, NSString, UIImage, _SBAlertController;
 
 @interface SBAlertItem : NSObject <BSDescriptionProviding>
 {
     _SBAlertController *_alertController;
     NSArray *_allowedBundleIDs;
+    NSString *_iconImagePath;
+    UIImage *_iconImage;
     _Bool _didEverActivate;
     _Bool _didEverDeactivate;
     _Bool _ignoreIfAlreadyDisplaying;
@@ -25,21 +27,25 @@
     _Bool _allowMessageInCar;
     _Bool _presented;
     _Bool _ignoresQuietMode;
-    NSString *_iconImagePath;
-    NSString *_attachmentImagePath;
+    _Bool _suppressForKeynote;
+    UIImage *_headerImage;
+    UIImage *_attachmentImage;
 }
 
 + (void)activateAlertItem:(id)arg1;
 + (id)_alertItemsController;
-@property(retain, nonatomic, getter=_attachmentImagePath) NSString *attachmentImagePath; // @synthesize attachmentImagePath=_attachmentImagePath;
-@property(retain, nonatomic, getter=_iconImagePath) NSString *iconImagePath; // @synthesize iconImagePath=_iconImagePath;
+@property(retain, nonatomic, setter=_setAttachmentImage:) UIImage *_attachmentImage; // @synthesize _attachmentImage;
+@property(retain, nonatomic, setter=_setHeaderImage:) UIImage *_headerImage; // @synthesize _headerImage;
 @property(nonatomic, getter=_isPresented, setter=_setPresented:) _Bool presented; // @synthesize presented=_presented;
+@property(retain, nonatomic, getter=_iconImagePath) NSString *iconImagePath; // @synthesize iconImagePath=_iconImagePath;
+@property(retain, nonatomic, setter=setIconImage:) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic, setter=_setIgnoresQuietMode:) _Bool _ignoresQuietMode; // @synthesize _ignoresQuietMode;
 @property(nonatomic) _Bool allowMessageInCar; // @synthesize allowMessageInCar=_allowMessageInCar;
 @property(nonatomic) _Bool allowInCar; // @synthesize allowInCar=_allowInCar;
 @property(retain, nonatomic) NSArray *allowedBundleIDs; // @synthesize allowedBundleIDs=_allowedBundleIDs;
 @property(nonatomic) _Bool pendWhileKeyBagLocked; // @synthesize pendWhileKeyBagLocked=_pendWhileKeyBagLocked;
 @property(nonatomic) _Bool pendInSetupIfNotAllowed; // @synthesize pendInSetupIfNotAllowed=_pendInSetupIfNotAllowed;
+@property(nonatomic) _Bool suppressForKeynote; // @synthesize suppressForKeynote=_suppressForKeynote;
 @property(nonatomic) _Bool allowInSetup; // @synthesize allowInSetup=_allowInSetup;
 @property(nonatomic) _Bool ignoreIfAlreadyDisplaying; // @synthesize ignoreIfAlreadyDisplaying=_ignoreIfAlreadyDisplaying;
 - (void).cxx_destruct;
@@ -57,8 +63,6 @@
 - (_Bool)_didEverActivate;
 - (_Bool)_hasActiveKeyboardOnScreen;
 - (void)_noteVolumeOrLockPressed;
-- (id)_attachmentImage;
-- (id)_iconImage;
 - (id)_prepareNewAlertControllerWithLockedState:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 - (void)_clearAlertController;
 - (id)_alertController;

@@ -38,8 +38,8 @@
 @property(readonly) int exitStatus; // @synthesize exitStatus;
 @property(readonly) int waitPidStatusValue; // @synthesize waitPidStatusValue;
 @property(readonly) int pid; // @synthesize pid;
-@property(retain) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue;
-@property(retain) NSObject<OS_dispatch_queue> *waitQueue; // @synthesize waitQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *waitQueue; // @synthesize waitQueue;
 @property(retain) NSArray *args; // @synthesize args;
 @property(retain) NSString *program; // @synthesize program;
 - (void).cxx_destruct;

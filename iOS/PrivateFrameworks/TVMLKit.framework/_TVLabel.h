@@ -30,6 +30,7 @@
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)setTextColor:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

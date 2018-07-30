@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <iWorkImport/TSKApplicationDelegate.h>
+#import <iWorkImport/TSWPApplicationDelegate.h>
 
 @class NSArray, NSString, TSADocumentRoot;
 
 __attribute__((visibility("hidden")))
-@interface TSABaseApplicationDelegate : TSKApplicationDelegate
+@interface TSABaseApplicationDelegate : TSWPApplicationDelegate
 {
     TSADocumentRoot *mDocumentRoot;
     id <TSADownloadDelegate> _downloadDelegate;

@@ -8,6 +8,7 @@
 
 @class NSArray, NSOperationQueue;
 
+__attribute__((visibility("hidden")))
 @interface AVGlobalOperationQueue : NSObject
 {
     NSOperationQueue *_operationQueue;

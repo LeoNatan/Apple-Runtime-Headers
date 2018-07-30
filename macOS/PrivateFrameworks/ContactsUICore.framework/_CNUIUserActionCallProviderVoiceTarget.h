@@ -15,6 +15,10 @@
 - (id)actionsForPhoneNumbers:(id)arg1 contact:(id)arg2 group:(long long)arg3 options:(unsigned long long)arg4 discoveringEnvironment:(id)arg5;
 - (id)actionsForPhoneNumbers:(id)arg1 contact:(id)arg2 discoveringEnvironment:(id)arg3;
 - (id)actionsForEmailAddresses:(id)arg1 contact:(id)arg2 discoveringEnvironment:(id)arg3;
+- (BOOL)isCallProviderManagedUsingDiscoveringEnvironment:(id)arg1;
+- (id)externalAccountIdentifierForContact:(id)arg1 contactStore:(id)arg2;
+- (id)managedBundleIdentifierForContact:(id)arg1 discoveringEnvironment:(id)arg2;
+- (id)actionsForContact:(id)arg1 discoveringEnvironment:(id)arg2;
 
 @end
 

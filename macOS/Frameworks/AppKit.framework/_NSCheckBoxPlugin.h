@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSValueBinderPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSCheckBoxPlugin : _NSValueBinderPlugin
 {
     struct __checkBoxPluginFlags {

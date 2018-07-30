@@ -13,7 +13,9 @@
 - (void)resume;
 - (void)pauseAtTime:(double)arg1;
 - (void)pause;
+- (id)bakedLayerForLayerRect:(struct CGRect)arg1;
 - (id)bakedLayer;
+- (struct CGImage *)newRasterizedImageRefForLayerRect:(struct CGRect)arg1;
 - (struct CGImage *)newRasterizedImageRef;
 - (struct CGRect)frameIncludingSublayers;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;

@@ -8,7 +8,6 @@
 
 @class ABGroupListActions;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupListActionDispatcher : ABActionDispatcher
 {
     ABGroupListActions *_actions;

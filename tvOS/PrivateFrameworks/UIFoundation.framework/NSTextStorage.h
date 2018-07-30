@@ -23,6 +23,7 @@
     id _sideData;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)initialize;
 - (_Bool)_usesSimpleTextEffects;

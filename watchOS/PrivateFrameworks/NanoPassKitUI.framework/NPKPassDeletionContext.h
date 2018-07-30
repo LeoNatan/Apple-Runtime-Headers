@@ -6,23 +6,23 @@
 
 #import "NSObject.h"
 
-@class NPKPassDescription, UIViewController;
+@class PKPass, UIViewController;
 
 @interface NPKPassDeletionContext : NSObject
 {
-    NPKPassDescription *_passDescription;
+    PKPass *_pass;
     UIViewController *_presentingViewController;
 }
 
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
-@property(retain, nonatomic) NPKPassDescription *passDescription; // @synthesize passDescription=_passDescription;
+@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
 - (id)_unableToDeleteAlertSheetController;
 - (id)_confirmDeletionAlertSheetControllerWithMessage:(id)arg1;
 - (id)_confirmDeletionAlertSheetController;
 - (id)_confirmDeletionWithValueRemainingAlertSheetController;
 - (void)confirmDeletion;
-- (id)initWithPassDescription:(id)arg1 presentingViewController:(id)arg2;
+- (id)initWithPass:(id)arg1 presentingViewController:(id)arg2;
 
 @end
 

@@ -13,14 +13,14 @@ __attribute__((visibility("hidden")))
 {
     NSObject<NSObservable> *_LHSobservable;
     NSObject<NSObserver> *_RHSobserver;
-    id _observers;
+    id _observers[4];
 }
 
 - (void)dealloc;
 - (void)_receiveBox:(id)arg1;
 - (void)finishObserving;
 - (void)remove;
-- (id *)_observerStorage;
+- (void *)_observerStorageOfSize:(unsigned long long)arg1;
 - (id)initWithObservable:(id)arg1 observer:(id)arg2;
 - (id)debugDescription;
 - (_Bool)isEqual:(id)arg1;

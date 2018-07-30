@@ -6,26 +6,32 @@
 
 #import "NSObject.h"
 
+#import "VNClusteringCancelling.h"
 #import "VNClusteringReadOnly.h"
 
 @class NSData, NSNumber, NSString, VNClusteringLogger, VNSuggestionsLogger;
 
 __attribute__((visibility("hidden")))
-@interface VNGreedyClusteringReadOnly : NSObject <VNClusteringReadOnly>
+@interface VNGreedyClusteringReadOnly : NSObject <VNClusteringReadOnly, VNClusteringCancelling>
 {
     VNClusteringLogger *_clusteringLogger;
     VNSuggestionsLogger *_suggestionsLogger;
     NSString *_cacheFolderPath;
     NSNumber *_thresholdN;
+    NSNumber *_thresholdTorso;
+    NSString *_type;
     NSData *_state;
     NSNumber *_vectorMapReadOnlyFlagN;
-    shared_ptr_605f6fd7 m_ClusteringImpl_const;
+    shared_ptr_8fc713d1 m_ClusteringImpl_const;
 }
 
++ (id)clustererModelFileNamesFromState:(id)arg1 storedInPath:(id)arg2 error:(id *)arg3;
 + (id)getRepresentativenessForFaces:(id)arg1 error:(id *)arg2;
++ (void)addFaceObservations:(id)arg1 withGroupingIdentifiers:(id)arg2 toFaceDescriptorBuffer:(struct ImageDescriptorBufferJoint *)arg3;
 + (void)addFaceObservations:(id)arg1 toFaceDescriptorBuffer:(struct ImageDescriptorBufferFloat32 *)arg2;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (_Bool)cancelClustering:(id *)arg1;
 - (id)maximumFaceIdInModelAndReturnError:(id *)arg1;
 - (id)getDistances:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (id)getClustersForClusterIds:(id)arg1 options:(id)arg2 error:(id *)arg3;
@@ -37,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)getClusterState:(id *)arg1;
 - (id)suggestionsForClusterIdsWithFlags:(id)arg1 affinityThreshold:(float)arg2 error:(id *)arg3;
 - (id)convertUpdatePairsToClusters:(vector_22dfb71c *)arg1;
-- (void)setGreedyClustererFaces_const:(shared_ptr_605f6fd7)arg1;
+- (void)setGreedyClustererFaces_const:(shared_ptr_8fc713d1)arg1;
 - (id)initWithOptions:(id)arg1 error:(id *)arg2;
 - (void)initializeLogging;
 - (_Bool)_parseOptions:(id)arg1 error:(id *)arg2;

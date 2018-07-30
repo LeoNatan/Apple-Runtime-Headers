@@ -43,6 +43,7 @@
 - (void)_endShowingProgressIfReady;
 - (void)endShowingProgressImmediately:(_Bool)arg1 animated:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_handleBeginShowingAnimated:(_Bool)arg1 wasImmediate:(_Bool)arg2;
+- (void)beginShowingProgressWithDelay:(double)arg1 animated:(_Bool)arg2;
 - (void)beginShowingProgressImmediately:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic, getter=isShowingProgress) _Bool showingProgress;
 - (void)_updateSubviewsOrdering;

@@ -10,6 +10,7 @@
 {
 }
 
++ (double)_headerFadeForShowcaseFactor:(double)arg1;
 + (id)_mobileGestaltStringForKey:(struct __CFString *)arg1;
 + (_Bool)canHandleDecodingOnRenderThread;
 + (_Bool)isFlowcaseAtTopOfStackFromElement:(id)arg1;
@@ -24,6 +25,8 @@
 + (long long)semanticPositionForPosition:(long long)arg1 semanticContentAttribute:(long long)arg2;
 + (long long)semanticAlignmentForAlignment:(long long)arg1 semanticContentAttribute:(long long)arg2;
 + (id)_bgImageElementForProductTemplate:(id)arg1;
++ (long long)_overrideInterfaceStyleForElement:(id)arg1;
++ (long long)_interfaceStyleForElement:(id)arg1;
 + (long long)overrideInterfaceStyleForTemplateElement:(id)arg1;
 + (long long)interfaceStyleForTemplateElement:(id)arg1;
 + (long long)semanticContentAttributeForTemplateElement:(id)arg1;
@@ -31,6 +34,8 @@
 + (struct CGPath *)shadowPathForViewElement:(id)arg1 withCornerRadii:(struct TVCornerRadii)arg2 andScaledSize:(struct CGSize)arg3;
 + (id)placeholderImageForViewElement:(id)arg1 withCornerRadii:(struct TVCornerRadii)arg2 andScaledSize:(struct CGSize)arg3;
 + (id)placeholderImageForViewElement:(id)arg1;
++ (id)imageWithRadialGradientOverlayFromImage:(id)arg1;
++ (id)rowSpacingMetricsForRowMetrics:(id)arg1 forShowcase:(_Bool)arg2;
 + (id)rowSpacingMetricsForRowMetrics:(id)arg1;
 + (id)indexPathForFirstItemAttributeValue:(id)arg1;
 + (void)getValuesFromTransform:(struct CGAffineTransform)arg1 translation:(struct CGPoint *)arg2 rotation:(struct CGPoint *)arg3;

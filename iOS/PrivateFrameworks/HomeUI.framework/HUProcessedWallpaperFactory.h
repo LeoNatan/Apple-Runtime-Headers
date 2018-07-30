@@ -15,7 +15,8 @@
 }
 
 + (id)_defaultBackdropSettings;
-- (id)_imageByApplyingEffect:(id)arg1 toImage:(id)arg2;
+- (id)_imageByApplyingLayerEffects:(id)arg1 toImage:(id)arg2;
+- (id)_layerWithCompositingFilterType:(id)arg1 color:(id)arg2;
 - (id)_lightContentBlurredImageForWallpaper:(id)arg1 image:(id)arg2;
 - (id)_darkContentBlurredImageForWallpaper:(id)arg1 image:(id)arg2;
 - (id)_processedImageForWallpaper:(id)arg1 image:(id)arg2;

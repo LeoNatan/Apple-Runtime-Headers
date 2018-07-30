@@ -8,6 +8,8 @@
 
 @interface NTKUpNextCollectionViewFlowLayoutAttributes : UICollectionViewLayoutAttributes
 {
+    _Bool _notVisibleToUser;
+    _Bool _fullyVisibleToUser;
     double _darkeningAlphaUniform;
     double _shadowAlpha;
     double _scale;
@@ -16,6 +18,8 @@
     struct CGRect _computedFrame;
 }
 
+@property(nonatomic) _Bool fullyVisibleToUser; // @synthesize fullyVisibleToUser=_fullyVisibleToUser;
+@property(nonatomic) _Bool notVisibleToUser; // @synthesize notVisibleToUser=_notVisibleToUser;
 @property(nonatomic) long long layoutMode; // @synthesize layoutMode=_layoutMode;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGRect computedFrame; // @synthesize computedFrame=_computedFrame;

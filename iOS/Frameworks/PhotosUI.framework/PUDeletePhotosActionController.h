@@ -16,7 +16,8 @@
     long long _action;
     id <PUDeletePhotosActionControllerDelegate> _delegate;
     NSArray *__assets;
-    NSArray *__additionalAssetsToDelete;
+    NSArray *__plAssets;
+    NSArray *__plAdditionalAssetsToDelete;
     UIAlertController *__mainAlertController;
     UIAlertController *__overQuotaConfirmationAlertController;
     UIAlertController *__oneTimeConfirmationAlertController;
@@ -25,7 +26,8 @@
 @property(retain, nonatomic, setter=_setOneTimeConfirmationAlertController:) UIAlertController *_oneTimeConfirmationAlertController; // @synthesize _oneTimeConfirmationAlertController=__oneTimeConfirmationAlertController;
 @property(retain, nonatomic, setter=_setOverQuotaConfirmationAlertController:) UIAlertController *_overQuotaConfirmationAlertController; // @synthesize _overQuotaConfirmationAlertController=__overQuotaConfirmationAlertController;
 @property(retain, nonatomic, setter=_setMainAlertController:) UIAlertController *_mainAlertController; // @synthesize _mainAlertController=__mainAlertController;
-@property(readonly, copy, nonatomic) NSArray *_additionalAssetsToDelete; // @synthesize _additionalAssetsToDelete=__additionalAssetsToDelete;
+@property(readonly, copy, nonatomic) NSArray *_plAdditionalAssetsToDelete; // @synthesize _plAdditionalAssetsToDelete=__plAdditionalAssetsToDelete;
+@property(readonly, copy, nonatomic) NSArray *_plAssets; // @synthesize _plAssets=__plAssets;
 @property(readonly, copy, nonatomic) NSArray *_assets; // @synthesize _assets=__assets;
 @property(nonatomic) _Bool shouldSkipDeleteConfirmation; // @synthesize shouldSkipDeleteConfirmation=_shouldSkipDeleteConfirmation;
 @property(readonly, nonatomic) __weak id <PUDeletePhotosActionControllerDelegate> delegate; // @synthesize delegate=_delegate;

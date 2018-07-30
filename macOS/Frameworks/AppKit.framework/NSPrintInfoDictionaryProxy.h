@@ -8,6 +8,7 @@
 
 @class NSPrintInfo;
 
+__attribute__((visibility("hidden")))
 @interface NSPrintInfoDictionaryProxy : NSMutableDictionary
 {
     NSPrintInfo *_printInfo;

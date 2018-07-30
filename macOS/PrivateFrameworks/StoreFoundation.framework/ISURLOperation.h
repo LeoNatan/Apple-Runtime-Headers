@@ -8,7 +8,7 @@
 
 #import "NSURLConnectionDelegate.h"
 
-@class ISDataProvider, ISURLRequest, NSCountedSet, NSDictionary, NSMutableData, NSString, NSURLConnection, NSURLRequest, NSURLResponse;
+@class ISDataProvider, ISURLRequest, NSArray, NSCountedSet, NSDictionary, NSMutableData, NSString, NSURLConnection, NSURLRequest, NSURLResponse;
 
 @interface ISURLOperation : ISOperation <NSURLConnectionDelegate>
 {
@@ -25,9 +25,11 @@
     unsigned long long _countedBytes;
     BOOL _checkForIncompleteFinish;
     BOOL _cancelIfNotAlreadyOnDisk;
-    BOOL _skipCertificateValidation;
+    BOOL _requireExtendedValidationCertificate;
+    BOOL _anchorRevocationCheck;
     BOOL _fileWasAlreadyOnDisk;
     BOOL _shouldRetryOnNetworkError;
+    NSArray *_anchorCertificates;
     NSDictionary *_conditionalConnectionProperties;
     CDUnknownBlockType _outputHandler;
 }
@@ -37,7 +39,9 @@
 @property(copy) NSDictionary *conditionalConnectionProperties; // @synthesize conditionalConnectionProperties=_conditionalConnectionProperties;
 @property BOOL shouldRetryOnNetworkError; // @synthesize shouldRetryOnNetworkError=_shouldRetryOnNetworkError;
 @property(readonly) BOOL fileWasAlreadyOnDisk; // @synthesize fileWasAlreadyOnDisk=_fileWasAlreadyOnDisk;
-@property BOOL skipCertificateValidation; // @synthesize skipCertificateValidation=_skipCertificateValidation;
+@property BOOL anchorRevocationCheck; // @synthesize anchorRevocationCheck=_anchorRevocationCheck;
+@property(copy) NSArray *anchorCertificates; // @synthesize anchorCertificates=_anchorCertificates;
+@property BOOL requireExtendedValidationCertificate; // @synthesize requireExtendedValidationCertificate=_requireExtendedValidationCertificate;
 @property BOOL cancelIfNotAlreadyOnDisk; // @synthesize cancelIfNotAlreadyOnDisk=_cancelIfNotAlreadyOnDisk;
 @property BOOL checkForIncompleteFinish; // @synthesize checkForIncompleteFinish=_checkForIncompleteFinish;
 @property(getter=_shouldSetCookies, setter=_setShouldSetCookies:) BOOL _shouldSetCookies; // @synthesize _shouldSetCookies;
@@ -66,6 +70,7 @@
 - (void)_handleReceivedData:(id)arg1;
 - (void)_handleFinishedLoading;
 - (id)_request;
+- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 conditionalRequirementsChanged:(BOOL)arg2;
 - (id)connection:(id)arg1 willSendRequestForEstablishedConnection:(id)arg2 properties:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;

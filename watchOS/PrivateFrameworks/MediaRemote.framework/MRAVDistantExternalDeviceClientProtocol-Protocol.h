@@ -6,13 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSData, NSError, NSString;
+@class MRAVDistantEndpoint, NSData, NSError, NSString;
 
 @protocol MRAVDistantExternalDeviceClientProtocol <NSObject>
-- (void)hostedExternalDeviceOutputContextDidChangeWithInfo:(CDStruct_64424771)arg1;
+- (void)hostedExternalDeviceEndpointDidChange:(MRAVDistantEndpoint *)arg1;
 - (void)hostedExternalDeviceVolumeDidChange:(float)arg1 forEndpointWithIdentifier:(NSString *)arg2 forOutputDeviceWithIdentifier:(NSString *)arg3;
 - (void)hostedExternalDeviceDidReceiveCustomData:(NSData *)arg1 withName:(NSString *)arg2;
 - (void)hostedExternalDeviceNameDidChange:(NSString *)arg1;
 - (void)hostedExternalDeviceConnectionStateDidChange:(unsigned int)arg1 withError:(NSError *)arg2;
+
+@optional
+- (void)hostedExternalDeviceVolumeCapabilitiesDidChange:(unsigned int)arg1 forEndpointWithIdentifier:(NSString *)arg2 forOutputDeviceWithIdentifier:(NSString *)arg3;
 @end
 

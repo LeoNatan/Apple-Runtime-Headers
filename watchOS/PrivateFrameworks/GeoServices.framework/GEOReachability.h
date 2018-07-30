@@ -14,6 +14,7 @@
 {
     _Bool _networkReachable;
     unsigned int _errorCount;
+    int _symptomsAlternateAdviceToken;
 }
 
 + (id)sharedReachability;

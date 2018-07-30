@@ -6,7 +6,6 @@
 
 #import "NSOperation.h"
 
-__attribute__((visibility("hidden")))
 @interface SCNExportOperation : NSOperation
 {
 }

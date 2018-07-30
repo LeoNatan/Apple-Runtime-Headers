@@ -20,6 +20,8 @@
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 domainIdentifiers:(id)arg2;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2;
 - (void)purgeSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2;
+- (id)_harvestMapsIntent:(id)arg1 identifier:(id)arg2;
+- (id)processInteraction:(id)arg1 bundleIdentifier:(id)arg2 protectionClass:(id)arg3;
 - (id)processUserAction:(id)arg1 searchableItem:(id)arg2;
 - (id)processSearchableItem:(id)arg1;
 - (void)processTextContentItem:(id)arg1;

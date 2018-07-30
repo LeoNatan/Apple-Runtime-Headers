@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "PSSpecifierGroupController.h"
+#import "PSSpecifierGroup.h"
 
 @class NSString, PSListController, PSSpecifier;
 
-@interface PSPearlAttentionGroupController : NSObject <PSSpecifierGroupController>
+@interface PSPearlAttentionGroupController : NSObject <PSSpecifierGroup>
 {
     NSString *_pinCode;
     PSListController *_listController;

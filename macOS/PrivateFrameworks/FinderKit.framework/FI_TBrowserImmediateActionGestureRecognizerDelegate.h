@@ -15,7 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserImmediateActionGestureRecognizerDelegate : NSObject <NSGestureRecognizerDelegatePrivate, NSImmediateActionGestureRecognizerDelegate, NSImmediateActionAnimationController>
 {
-    struct unique_ptr<TBrowserImmediateActionGestureRecognizerHandlerBase, std::__1::default_delete<TBrowserImmediateActionGestureRecognizerHandlerBase>> _handler;
+    unique_ptr_8828cb85 _handler;
 }
 
 - (id).cxx_construct;
@@ -25,7 +25,8 @@ __attribute__((visibility("hidden")))
 - (void)immediateActionRecognizerWillBeginAnimation:(id)arg1;
 - (void)immediateActionRecognizerWillPrepare:(id)arg1;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldAttemptToRecognizeWithEvent:(id)arg2;
-@property struct TBrowserImmediateActionGestureRecognizerHandlerBase *handler;
+- (void)setHandler:(unique_ptr_8828cb85 *)arg1;
+- (const unique_ptr_8828cb85 *)handler;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

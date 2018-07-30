@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSArray, NSData, NSDictionary, NSNumber, NSSet;
+@class NSArray, NSData, NSDictionary, NSNumber, NSSet, NSString;
 
 @protocol VNClusteringReadOnly
++ (NSArray *)clustererModelFileNamesFromState:(NSData *)arg1 storedInPath:(NSString *)arg2 error:(id *)arg3;
++ (NSDictionary *)getRepresentativenessForFaces:(NSArray *)arg1 error:(id *)arg2;
 - (NSNumber *)maximumFaceIdInModelAndReturnError:(id *)arg1;
 - (NSDictionary *)getDistances:(NSArray *)arg1 to:(NSArray *)arg2 error:(id *)arg3;
 - (NSArray *)getClustersForClusterIds:(NSArray *)arg1 options:(NSDictionary *)arg2 error:(id *)arg3;

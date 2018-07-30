@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
-- (id)tokenBackgroundColor;
-- (id)tokenForegroundColor;
+- (id)tokenOutlineColor;
+- (id)tokenFillColor;
 - (_Bool)mixedState;
 - (_Bool)tagExists;
 - (void)updateAttributedStringValueForState;

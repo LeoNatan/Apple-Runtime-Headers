@@ -46,11 +46,13 @@
 - (long long)int64ForColumn:(int)arg1 inStatment:(struct sqlite3_stmt *)arg2;
 - (int)intForColumn:(int)arg1 inStatment:(struct sqlite3_stmt *)arg2;
 - (BOOL)executeInTransaction:(CDUnknownBlockType)arg1;
+- (BOOL)vacuum;
 - (BOOL)executeStatement:(id)arg1 statementBlock:(CDUnknownBlockType)arg2;
 - (BOOL)executeStatement:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
 - (BOOL)bindRealParameter:(const char *)arg1 toValue:(double)arg2 inStatement:(struct sqlite3_stmt *)arg3 error:(id *)arg4;
 - (BOOL)bindInt64Parameter:(const char *)arg1 toValue:(long long)arg2 inStatement:(struct sqlite3_stmt *)arg3 error:(id *)arg4;
 - (BOOL)bindIntParameter:(const char *)arg1 toValue:(int)arg2 inStatement:(struct sqlite3_stmt *)arg3 error:(id *)arg4;
+- (BOOL)bindNullParameter:(const char *)arg1 inStatement:(struct sqlite3_stmt *)arg2 error:(id *)arg3;
 - (BOOL)bindZeroBlobParameter:(const char *)arg1 length:(unsigned long long)arg2 inStatement:(struct sqlite3_stmt *)arg3 error:(id *)arg4;
 - (BOOL)bindBlobNoCopyParameter:(const char *)arg1 toValue:(id)arg2 inStatement:(struct sqlite3_stmt *)arg3 error:(id *)arg4;
 - (BOOL)bindBlobParameter:(const char *)arg1 toValue:(id)arg2 inStatement:(struct sqlite3_stmt *)arg3 error:(id *)arg4;
@@ -72,7 +74,9 @@
 - (void)dealloc;
 - (void)_closeDB;
 - (void)tearDown;
+- (BOOL)deleteAllDBFiles;
 - (int)_setPragmas;
+- (BOOL)_deleteAllDBFiles;
 - (BOOL)_deleteAllDatabaseFilesIfCorrupt:(int)arg1;
 - (void)_deleteAndReopenDatabaseIfCorrupt:(int)arg1;
 - (void)_createParentDirectory;
@@ -88,6 +92,7 @@
 - (id)description;
 - (id)initWithQueueName:(const char *)arg1 log:(id)arg2 databaseFileURL:(id)arg3 sqliteFlags:(int)arg4 pragmas:(id)arg5 setupBlock:(CDUnknownBlockType)arg6;
 - (id)initWithQueueName:(const char *)arg1 logFacility:(const char *)arg2 dbFilePath:(id)arg3 sqliteFlags:(int)arg4 pragmas:(id)arg5 setupBlock:(CDUnknownBlockType)arg6;
+@property(nonatomic) long long user_version;
 @property(readonly, nonatomic) NSDictionary *pragmas;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log;
 @property(readonly, nonatomic) BOOL isDBReady;

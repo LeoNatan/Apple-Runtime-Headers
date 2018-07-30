@@ -10,6 +10,7 @@
 
 @class GEOPDPhoto, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDUser : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

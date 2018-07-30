@@ -33,12 +33,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSSet *mergedSymptoms;
-- (void)_updateStatus:(struct NSDictionary *)arg1;
-- (void)_handleMediaSystemSymptoms:(id)arg1 message:(id)arg2;
-- (void)_handleNewProblemFlags:(unsigned long long)arg1 accessory:(id)arg2;
-- (void)handleNewProblemFlags:(unsigned long long)arg1 accessory:(id)arg2;
-- (void)_auditAccessoryStatus;
-- (void)auditAccessoryStatus;
+- (void)_updateBackingStoreModelWithNewSymptoms:(struct NSDictionary *)arg1;
+- (void)handleMediaSystemSymptoms:(struct NSDictionary *)arg1 message:(id)arg2;
+- (void)_handleNewDiscoveredSymptoms:(id)arg1 forAccessory:(id)arg2;
+- (void)handleNewDiscoveredSymptoms:(id)arg1 forAccessory:(id)arg2;
+- (void)_refreshCurrentDeviceSymptoms;
+- (void)refreshCurrentDeviceSymptoms;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)configureWithWorkQueue:(id)arg1 messageDispatcher:(id)arg2;

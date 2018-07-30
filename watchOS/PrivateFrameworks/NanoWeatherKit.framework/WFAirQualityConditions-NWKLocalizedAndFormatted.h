@@ -6,11 +6,10 @@
 
 #import "WFAirQualityConditions.h"
 
-@class NSString, UIColor;
+@class NSString;
 
 @interface WFAirQualityConditions (NWKLocalizedAndFormatted)
 - (id)nwkLocalizedAirQualityAtLocationName:(id)arg1;
-@property(readonly, nonatomic) UIColor *nwkLocalizedIndexColor;
 - (id)nwkLocalizedDescriptionForExtension:(id)arg1;
 @property(readonly, nonatomic) NSString *nwkLocalizedIndex;
 @property(readonly, nonatomic) NSString *nwkLocalizedDescription;

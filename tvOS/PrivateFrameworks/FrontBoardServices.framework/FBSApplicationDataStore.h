@@ -22,7 +22,8 @@
 + (id)applicationsWithAvailableStores;
 + (void)_doWithClassClient:(CDUnknownBlockType)arg1;
 + (id)storeForApplication:(id)arg1;
-@property(readonly, retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleId;
+@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleId;
+- (void).cxx_destruct;
 - (id)_makeSafe:(id)arg1 forType:(Class)arg2;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;

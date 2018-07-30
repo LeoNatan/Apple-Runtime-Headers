@@ -79,7 +79,6 @@
 - (void)_workspaceQueue_dispatchClientBlockIfNecessary:(CDUnknownBlockType)arg1 success:(_Bool)arg2;
 - (void)invalidate;
 @property(readonly, copy, nonatomic) FBSSceneSettings *settings;
-- (void)dealloc;
 - (id)initWithParentWorkspace:(id)arg1 identifier:(id)arg2;
 
 // Remaining properties

@@ -7,9 +7,9 @@
 #import "ICSEvent.h"
 
 @interface ICSEvent (SGCalendarAttachmentDissector)
-- (id)entityWithParentEntity:(id)arg1;
+- (id)entityWithParentEntity:(id)arg1 withCalendar:(id)arg2 withCorrectnessFlag:(_Bool *)arg3;
+- (id)entityWithParentEntity:(id)arg1 withCalendar:(id)arg2;
 - (int)method;
 - (id)attendeeEmailAddresses;
-- (id)firstValueOfPropertyForName:(id)arg1;
 @end
 

@@ -21,9 +21,11 @@
     unsigned int _remoteRATType;
     unsigned int _maxBitrate;
     NSUUID *_linkUUID;
+    NSUUID *_QRSessionID;
     int _relayServerProvider;
     NSData *_relaySessionToken;
     NSData *_relaySessionKey;
+    _Bool _serverIsDegraded;
 }
 
 - (void).cxx_destruct;

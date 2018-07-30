@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class MRAVOutputDevice, MRExternalDevice, NSArray, NSMutableArray, NSOperationQueue, NSString, NSTimer, _MRAVEndpointDescriptorProtobuf;
+@class MRAVOutputDevice, MRExternalDevice, NSArray, NSDictionary, NSMutableArray, NSOperationQueue, NSString, NSTimer, _MRAVEndpointDescriptorProtobuf;
 
 __attribute__((visibility("hidden")))
 @interface MRAVEndpoint : NSObject
@@ -33,6 +33,8 @@ __attribute__((visibility("hidden")))
 - (void)_callAllCompletionHandlersWithError:(id)arg1;
 - (void)_externalDeviceConnectionStateDidChangeNotification:(id)arg1;
 - (void)_requestSharedAudioPresentationOutputContextModificationWithAddingDevices:(id)arg1 removingDevices:(id)arg2 settingDevices:(id)arg3 replyQueue:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)outputDeviceUIDsMatchingPredicate:(CDUnknownBlockType)arg1;
+- (id)outputDevicesMatchingPredicate:(CDUnknownBlockType)arg1;
 - (void)removeOutputDeviceFromParentGroup:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)scheduleEndpointOutputDevicesDidChangeNotification;
 - (void)volumeControlCapabilitiesForOutputDevice:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -43,11 +45,15 @@ __attribute__((visibility("hidden")))
 - (void)addOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)containsOutputDevice:(id)arg1;
 - (void)connectToExternalDeviceWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic, getter=isLocalEndpoint) _Bool localEndpoint;
+@property(readonly, nonatomic) NSDictionary *jsonEncodableDictionaryRepresentation;
 @property(readonly, nonatomic) NSString *shortDescription;
 - (_Bool)isVolumeControlAvailable;
 @property(readonly, nonatomic) _Bool canModifyGroupMembership;
 @property(readonly, nonatomic) MRAVOutputDevice *designatedGroupLeader;
 @property(readonly, nonatomic) MRExternalDevice *externalDevice;
+@property(readonly, nonatomic) unsigned long long logicalOutputDeviceCount;
+@property(readonly, nonatomic) NSArray *outputDeviceUIDs;
 @property(readonly, nonatomic) NSArray *outputDevices;
 @property(readonly, nonatomic) _MRAVEndpointDescriptorProtobuf *descriptor;
 - (_Bool)isEqual:(id)arg1;

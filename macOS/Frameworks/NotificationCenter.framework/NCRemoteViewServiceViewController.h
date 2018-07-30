@@ -10,6 +10,7 @@
 
 @class NCRemoteViewServiceContainerView, NCRemoteViewServiceSubsystem, NCRemoteViewServiceWindow, NSArray, NSLayoutConstraint, NSMutableDictionary, NSString, NSView, _NCRVSVCClientMarginContainer, _NCRVSVCClientRootContainer, _NCRVSVCPresentedContainer;
 
+__attribute__((visibility("hidden")))
 @interface NCRemoteViewServiceViewController : NSViewController <NCRemoteServiceContainerViewDelegate>
 {
     NCRemoteViewServiceContainerView *_rootContainer;

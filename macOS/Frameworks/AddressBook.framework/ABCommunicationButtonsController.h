@@ -12,6 +12,7 @@
 
 @interface ABCommunicationButtonsController : NSObject <ABFaceTimeCommunicationsBridgeDelegate>
 {
+    BOOL _availableForFaceTime;
     NSStackView *_communicationButtonsRow;
     id <ABFaceTimeDataSource> _dataSource;
     ABFaceTimeCommunicationsBridge *_bridge;
@@ -23,6 +24,7 @@
 + (id)faceTimeAudioImageWrapper;
 @property(readonly, nonatomic) NSButton *faceTimeAudioButton; // @synthesize faceTimeAudioButton=_faceTimeAudioButton;
 @property(readonly, nonatomic) NSButton *faceTimeVideoButton; // @synthesize faceTimeVideoButton=_faceTimeButton;
+@property(nonatomic) BOOL availableForFaceTime; // @synthesize availableForFaceTime=_availableForFaceTime;
 @property(retain, nonatomic) ABFaceTimeCommunicationsBridge *bridge; // @synthesize bridge=_bridge;
 @property(nonatomic) __weak id <ABFaceTimeDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSStackView *communicationButtonsRow; // @synthesize communicationButtonsRow=_communicationButtonsRow;
@@ -42,7 +44,7 @@
 - (void)faceTimeAudioItemChosen:(id)arg1;
 - (void)handleFaceTimeAudioPressed;
 - (void)performActionForButton:(id)arg1;
-- (void)adjustStateOfButton:(id)arg1 givenFaceTimeAvailability:(BOOL)arg2;
+- (void)adjustStateOfButton:(id)arg1;
 - (void)faceTimeCommunicationsBridge:(id)arg1 faceTimeAvailabilityChaged:(BOOL)arg2 forContactWithIdentifier:(id)arg3;
 - (void)buildLabelForButton:(id)arg1;
 - (id)allButtons;

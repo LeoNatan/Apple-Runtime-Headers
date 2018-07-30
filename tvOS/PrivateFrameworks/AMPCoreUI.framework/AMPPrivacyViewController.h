@@ -4,46 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIViewController.h"
+#import "UIAlertController.h"
 
-#import "UIViewControllerTransitioningDelegate.h"
+@class NSString, NSURL;
 
-@class NSString, NSURL, OBPrivacyLinkController, UIButton, UILabel, UIScrollView;
-
-@interface AMPPrivacyViewController : UIViewController <UIViewControllerTransitioningDelegate>
+@interface AMPPrivacyViewController : UIAlertController
 {
+    id <AMPPrivacyViewControllerDelegate> _acknowledgementDelegate;
     NSString *_identifier;
     NSURL *_url;
-    UIScrollView *_scrollView;
-    UILabel *_titleLabel;
-    UILabel *_infoLabel;
-    OBPrivacyLinkController *_linkController;
-    UIButton *_continueButton;
 }
 
-@property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
-@property(retain, nonatomic) OBPrivacyLinkController *linkController; // @synthesize linkController=_linkController;
-@property(retain, nonatomic) UILabel *infoLabel; // @synthesize infoLabel=_infoLabel;
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
++ (id)privacyControllerWithIdentifier:(id)arg1 URL:(id)arg2;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) __weak id <AMPPrivacyViewControllerDelegate> acknowledgementDelegate; // @synthesize acknowledgementDelegate=_acknowledgementDelegate;
 - (void).cxx_destruct;
-- (id)animationControllerForDismissedController:(id)arg1;
-- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
-- (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
-- (void)continueTapped:(id)arg1;
-- (struct CGSize)_contentSize;
-- (struct CGSize)preferredContentSize;
-- (void)viewWillLayoutSubviews;
-- (void)viewDidLoad;
-- (id)initWithIdentifier:(id)arg1 URL:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)_finishWithResult:(unsigned long long)arg1;
 
 @end
 

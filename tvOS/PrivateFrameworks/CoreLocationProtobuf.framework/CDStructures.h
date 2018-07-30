@@ -23,3 +23,7 @@ typedef struct {
     unsigned int transmit:1;
 } CDStruct_3769fefd;
 
+typedef struct {
+    unsigned int timestamp:1;
+} CDStruct_b5306035;
+

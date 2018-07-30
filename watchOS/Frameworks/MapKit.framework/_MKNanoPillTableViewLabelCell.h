@@ -6,40 +6,35 @@
 
 #import "PUICTableViewCell.h"
 
-@class UIColor, UIFont, UIImage, UIImageView, UILabel, _MKAutoLayoutContext;
+@class NSArray, UIColor, UIFont, UIImage, UIImageView, UILabel;
 
 @interface _MKNanoPillTableViewLabelCell : PUICTableViewCell
 {
     UIFont *_pillBaseFont;
-    _MKAutoLayoutContext *_context;
     UILabel *_titleLabel;
     UIImageView *_leftImageView;
-    UIImageView *_rightImageView;
     _Bool _usingStandardFont;
+    NSArray *_constraintsWithLeftImage;
+    NSArray *_constraintsWithoutLeftImage;
     UIImage *_leftImage;
-    UIImage *_rightImage;
 }
 
 + (float)sideMargin;
 + (float)leftImageLabelSpacing;
 + (float)leftImageWidth;
-+ (void)initialize;
 + (_Bool)requiresConstraintBasedLayout;
 + (_Bool)usesConstraintBasedLayout;
-@property(retain, nonatomic) UIImage *rightImage; // @synthesize rightImage=_rightImage;
 @property(retain, nonatomic) UIImage *leftImage; // @synthesize leftImage=_leftImage;
 - (void).cxx_destruct;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 @property(retain, nonatomic) UIColor *leftImageTintColor;
-@property(readonly, nonatomic) UILabel *titleTextLabel;
 - (void)setTitleText:(id)arg1;
 - (void)setAttributedTitleText:(id)arg1;
 - (void)prepareForReuse;
 - (void)setNumberOfLines:(unsigned int)arg1;
 - (void)textSizeChanged;
 @property(nonatomic) _Bool allowsTitleFontDefaultTighteningForTruncation;
-- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

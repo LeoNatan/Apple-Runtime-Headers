@@ -24,6 +24,7 @@
 + (id)kindWithSeasonKind:(id)arg1;
 - (id)editorialArtworkCatalog;
 - (id)artworkCatalog;
+- (id)humanDescription;
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;

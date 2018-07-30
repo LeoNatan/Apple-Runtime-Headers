@@ -6,38 +6,66 @@
 
 #import "NSObject.h"
 
-@class NMSMediaContainerList, NMSyncDefaults, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSSet;
+#import "ICEnvironmentMonitorObserver.h"
 
-@interface NMSMediaPinningManager : NSObject
+@class NMSMediaQuotaManager, NMSPodcastSizeCache, NMSyncDefaults, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
+
+@interface NMSMediaPinningManager : NSObject <ICEnvironmentMonitorObserver>
 {
     NMSyncDefaults *_sharedDefaults;
+    NMSPodcastSizeCache *_podcastSizeCache;
     NSObject<OS_dispatch_queue> *_internalQueue;
-    NMSMediaContainerList *_cachedMusicContainerList;
-    NSArray *_cachedAddedSongs;
     NSArray *_cachedPlaylistIdentifiers;
     NSArray *_cachedAlbumIdentifiers;
+    NMSMediaQuotaManager *_quotaManager;
 }
 
 + (id)_fetchMusicRecommendations;
 + (id)_cachedIdentifiersDirectoryPath;
 + (id)_cachedAlbumIdentifiersFilePath;
 + (id)_cachedPlaylistIdentifiersFilePath;
-+ (unsigned long long)mediaStorageSizeForCurrentWatch;
 + (id)_tokenForInstance:(id)arg1;
 + (_Bool)playlistPIDValidForPinning:(id)arg1;
 + (id)sharedManager;
+@property(retain, nonatomic) NMSMediaQuotaManager *quotaManager; // @synthesize quotaManager=_quotaManager;
 - (void).cxx_destruct;
-- (id)_musicContainerList;
-- (id)_aggregatedMusicContainerList;
+@property(readonly, nonatomic) NSArray *onlyOnPowerSongsList;
+@property(readonly, nonatomic) NSArray *offPowerEligibleSongsList;
+@property(readonly, nonatomic) NSArray *addedPodcastEpisodesArray;
 - (_Bool)_isPlaylistPinned:(id)arg1;
 - (_Bool)_isAlbumPinned:(id)arg1;
-- (void)_invalidateCachedSongs;
+- (void)_invalidatePodcastsCache;
+- (void)_invalidateMusicCache;
+- (void)_invalidateAddedItemsCache;
+- (id)_newPodcastsGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
+- (id)_newMusicGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
+- (_Bool)_quotaManagerShouldFetchDownloadedItemsOnly;
+- (void)environmentMonitorDidChangePower:(id)arg1;
+- (void)_handlePodcastSizeInfoDidChangeNotification:(id)arg1;
 - (void)_handlePinningSettingsDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryEntitiesAddedOrRemovedNotification:(id)arg1;
 - (void)_handleRecommendationsDidUpdateNotification:(id)arg1;
 - (void)_handleRecommendationLibraryContentsDidChangeNotification:(id)arg1;
-- (void)_handlePinningSelectionsDidChangeNotification:(id)arg1;
+- (void)_handlePodcastsPinningSelectionsDidChangeNotification:(id)arg1;
+- (void)_handleMusicPinningSelectionsDidChangeNotification:(id)arg1;
 - (id)currentSyncSettingsStateToken;
+- (void)unpinPodcastWithIdentifiers:(id)arg1;
+- (void)pinPodcastWithIdentifiers:(id)arg1;
+- (_Bool)isPodcastWithIdentifiersPinned:(id)arg1;
+- (void)setListenNowEpisodePIDs:(id)arg1;
+@property(retain, nonatomic) NSNumber *podcastsAssetSyncLimit;
+- (_Bool)isPodcastWithFeedURLPinned:(id)arg1;
+- (void)unpinPodcastWithFeedURL:(id)arg1;
+- (void)pinPodcastWithFeedURL:(id)arg1;
+- (void)setListenNowPodcastFeedURLs:(id)arg1;
+- (long long)episodeLimitForPodcastWithFeedURL:(id)arg1;
+- (void)setGizmoEpisodeLimit:(long long)arg1 forPodcastWithFeedURL:(id)arg2;
+- (unsigned int)downloadOrderForPodcastWithFeedURL:(id)arg1;
+- (void)removePodcastWithFeedURL:(id)arg1;
+- (void)setGizmoDownloadOrder:(unsigned int)arg1 forPodcastWithFeedURL:(id)arg2;
+@property(nonatomic) _Bool pinnedPodcastsAreUserSet;
+- (void)invalidatePodcastsCache;
+- (_Bool)isItemGroupWithinQuota:(id)arg1;
 - (id)addedItemsWithMediaTypes:(unsigned long)arg1;
 @property(retain, nonatomic) NSNumber *workoutPlaylistID;
 - (void)_setWorkoutPlaylistID:(id)arg1;
@@ -56,16 +84,21 @@
 @property(readonly, nonatomic) NSArray *albumIdentifiers;
 - (unsigned long long)nominatedSongsSize;
 - (unsigned long long)addedSongsSize;
-- (id)mediaContainerForIdentifierSet:(id)arg1;
-@property(readonly, nonatomic) NSArray *musicContainers;
-@property(readonly, nonatomic) NSArray *onlyOnPowerSongsList;
-@property(readonly, nonatomic) NSArray *offPowerEligibleSongsList;
-@property(readonly, nonatomic) NSArray *addedSongsArray;
-@property(readonly, nonatomic) NSSet *addedSongs;
-- (void)invalidateCache;
+- (id)itemGroupForIdentifiers:(id)arg1;
+@property(readonly, nonatomic) NSArray *addedPodcastsItems;
+- (id)addedItemsForDownloadWithinAvailableSpace:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSArray *addedMusicItems;
+@property(readonly, nonatomic) NSArray *addedItems;
+- (void)invalidateMusicCache;
 - (unsigned int)_pairedWatchVersion;
-- (unsigned long long)musicStorageLimitInBytes;
+- (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

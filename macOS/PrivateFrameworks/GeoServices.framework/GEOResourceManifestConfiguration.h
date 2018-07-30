@@ -22,11 +22,13 @@
     NSString *_dataDirectory;
     NSString *_disputedBorderCountryOverride;
     NSString *_disputedBorderRegionOverride;
+    int _defaultScale;
     BOOL _requiresLegacyFormat;
 }
 
 + (id)defaultConfiguration;
 @property(readonly, nonatomic) BOOL requiresLegacyFormat; // @synthesize requiresLegacyFormat=_requiresLegacyFormat;
+@property(readonly, nonatomic) int defaultScale; // @synthesize defaultScale=_defaultScale;
 @property(copy, nonatomic) NSString *disputedBorderRegionOverride; // @synthesize disputedBorderRegionOverride=_disputedBorderRegionOverride;
 @property(copy, nonatomic) NSString *disputedBorderCountryOverride; // @synthesize disputedBorderCountryOverride=_disputedBorderCountryOverride;
 @property(copy, nonatomic) NSString *dataDirectory; // @synthesize dataDirectory=_dataDirectory;

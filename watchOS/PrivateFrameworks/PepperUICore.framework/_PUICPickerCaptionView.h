@@ -13,6 +13,7 @@
     UILabel *_label;
 }
 
++ (void)initialize;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

@@ -10,14 +10,15 @@
 
 @interface SGDPowerBudget : NSObject
 {
+    // Error parsing type: AB, name: _discretionaryWorkInProgress
     NSObject<OS_os_log> *_log;
 }
 
 + (id)defaultBudget;
 - (void).cxx_destruct;
 - (void)doDiscretionaryWork:(CDUnknownBlockType)arg1 orElse:(CDUnknownBlockType)arg2;
-- (void)endWork;
-- (void)startWork;
+- (void)_endWork;
+- (void)_startWork;
 - (_Bool)canDoDiscretionaryWork;
 - (void)_endThrottleBudgetedWork;
 - (void)_startThrottleBudgetedWork;

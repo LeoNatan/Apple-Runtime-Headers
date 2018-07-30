@@ -18,6 +18,8 @@
     unsigned int _initalizedHemi:1;
     unsigned int _initalizedTextures:1;
     unsigned int _initalized:1;
+    struct _NUGeometryRange _octahedronGeomRange;
+    struct _NUGeometryRange _quadGeomRange;
 }
 
 + (void)prime;

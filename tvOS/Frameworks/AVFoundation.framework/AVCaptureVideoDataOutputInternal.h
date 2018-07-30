@@ -16,9 +16,11 @@
     NSDictionary *videoSettings;
     CDStruct_1b6d18a9 deprecatedMinFrameDuration;
     _Bool alwaysDiscardsLateVideoFrames;
+    _Bool videoSettingsDimensionsOverrideEnabled;
     NSObject<OS_dispatch_queue> *bufferQueue;
-    struct OpaqueFigSimpleMutex *remoteQueueMutex;
-    void *remoteReceiverQueue;
+    struct OpaqueFigSimpleMutex *queueMutex;
+    void *remoteQueueReceiver;
+    void *localQueue;
 }
 
 - (void)dealloc;

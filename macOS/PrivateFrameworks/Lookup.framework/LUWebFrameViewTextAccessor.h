@@ -25,9 +25,9 @@
 + (BOOL)canAccessTextAtLocation:(struct CGPoint)arg1;
 @property(retain, nonatomic) WebFrameView *webFrameView; // @synthesize webFrameView=_webFrameView;
 - (void).cxx_destruct;
-- (id)termForRange:(id)arg1 textOrigin:(struct CGPoint *)arg2 language:(id *)arg3 partOfSpeech:(id *)arg4;
-- (id)_termAndTextOrigin:(struct CGPoint *)arg1 language:(id *)arg2 partOfSpeech:(id *)arg3;
-- (id)_termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2 language:(id *)arg3 partOfSpeech:(id *)arg4;
+- (id)termForRange:(id)arg1 textOrigin:(struct CGPoint *)arg2;
+- (id)_termAndTextOrigin:(struct CGPoint *)arg1;
+- (id)_termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2;
 - (id)initWithView:(id)arg1;
 - (id)initWithLocation:(struct CGPoint)arg1;
 - (void)dealloc;

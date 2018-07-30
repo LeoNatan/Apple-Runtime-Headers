@@ -19,7 +19,8 @@
 - (void)updateSessionWithMetadataObjects:(id)arg1;
 - (id)_bestObjectForParsing:(id)arg1;
 - (double)_temporalStickyFactorForObject:(id)arg1;
-- (void)updateSessionWithMetadataObject:(id)arg1;
+- (void)updateSessionWithMetadataObjects:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_updateSessionWithMetadataObject:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_isLikelyLastScannedObject:(id)arg1;
 - (void)dealloc;
 - (id)init;

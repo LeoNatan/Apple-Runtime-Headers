@@ -20,7 +20,7 @@
 @property(readonly) NSUUID *sessionId; // @synthesize sessionId=_sessionId;
 @property(readonly) __weak id <HDWorkoutEventCollectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)immediateUpdateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)requestPendingEventsThroughDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)supportsWorkoutActivityType:(unsigned long long)arg1;
 - (void)stop;
 - (void)startWithSessionId:(id)arg1;

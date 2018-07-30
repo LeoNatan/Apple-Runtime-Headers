@@ -21,6 +21,7 @@
 + (struct CGPath *)newBottomEdgePathForAnnotation:(id)arg1 withPageController:(id)arg2;
 + (struct CGPath *)newRightEdgePathForAnnotation:(id)arg1 withPageController:(id)arg2;
 + (struct CGPath *)newLeftEdgePathForAnnotation:(id)arg1 withPageController:(id)arg2;
++ (struct CGPath *)cropHandle:(long long)arg1 forAnnotation:(id)arg2 withPageController:(id)arg3;
 + (_Bool)_concretePointIsOnInside:(struct CGPoint)arg1 ofAnnotation:(id)arg2;
 + (_Bool)_concretePointIsOnBorder:(struct CGPoint)arg1 ofAnnotation:(id)arg2 minimumBorderThickness:(double)arg3;
 + (void)_concreteRenderAnnotation:(id)arg1 intoContext:(struct CGContext *)arg2 forDisplay:(_Bool)arg3 pageControllerOrNil:(id)arg4;

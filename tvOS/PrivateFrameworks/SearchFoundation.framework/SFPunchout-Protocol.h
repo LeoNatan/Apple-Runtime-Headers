@@ -11,6 +11,7 @@
 @protocol SFPunchout <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(nonatomic) _Bool isRunnableInBackground;
 @property(copy, nonatomic) NSString *actionTarget;
 @property(retain, nonatomic) SFUserActivityData *userActivityData;
 @property(copy, nonatomic) NSArray *urls;

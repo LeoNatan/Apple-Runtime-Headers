@@ -12,7 +12,6 @@
 
 @interface GEOLocationShifter : NSObject <GEOResourceManifestTileGroupObserver>
 {
-    id <_GEOLocationShifterProxy> _proxy;
     _Bool _isRequestingShiftFunction;
     NSLock *_lock;
     NSMutableArray *_locationsToShift;
@@ -22,9 +21,9 @@
 }
 
 + (_Bool)isLocationShiftEnabled;
-+ (_Bool)isLocationShiftRequiredForRegion:(id)arg1;
 + (_Bool)isLocationShiftRequiredForCoordinate:(CDStruct_c3b9c2ee)arg1;
 + (unsigned int)locationShiftFunctionVersion;
++ (id)_proxy;
 + (void)useLocalProxy;
 - (void).cxx_destruct;
 - (_Bool)_shiftLocation:(id)arg1;

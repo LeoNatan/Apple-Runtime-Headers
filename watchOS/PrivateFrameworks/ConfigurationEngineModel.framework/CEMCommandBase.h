@@ -6,7 +6,7 @@
 
 #import <ConfigurationEngineModel/CEMPayloadBase.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class CEMAnyPayload, NSNumber, NSString;
 
 @interface CEMCommandBase : CEMPayloadBase
 {
@@ -14,19 +14,20 @@
     NSString *_commandIdentifier;
     NSString *_commandDescription;
     NSNumber *_commandRequiresNetworkTether;
-    NSDictionary *_commandPayload;
+    CEMAnyPayload *_commandPayload;
 }
 
++ (id)commandForData:(id)arg1 error:(id *)arg2;
 + (id)commandForPayload:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSDictionary *commandPayload; // @synthesize commandPayload=_commandPayload;
-@property(readonly, nonatomic) NSNumber *commandRequiresNetworkTether; // @synthesize commandRequiresNetworkTether=_commandRequiresNetworkTether;
-@property(readonly, nonatomic) NSString *commandDescription; // @synthesize commandDescription=_commandDescription;
-@property(readonly, nonatomic) NSString *commandIdentifier; // @synthesize commandIdentifier=_commandIdentifier;
-@property(readonly, nonatomic) NSString *commandType; // @synthesize commandType=_commandType;
+@property(copy, nonatomic) CEMAnyPayload *commandPayload; // @synthesize commandPayload=_commandPayload;
+@property(copy, nonatomic) NSNumber *commandRequiresNetworkTether; // @synthesize commandRequiresNetworkTether=_commandRequiresNetworkTether;
+@property(copy, nonatomic) NSString *commandDescription; // @synthesize commandDescription=_commandDescription;
+@property(copy, nonatomic) NSString *commandIdentifier; // @synthesize commandIdentifier=_commandIdentifier;
+@property(copy, nonatomic) NSString *commandType; // @synthesize commandType=_commandType;
 - (void).cxx_destruct;
-- (id)serializePayload:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializeAsDataWithError:(id *)arg1;
 - (id)serialize;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
 - (_Bool)loadCommandFromDictionary:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (_Bool)mustBeSupervised;

@@ -6,15 +6,17 @@
 
 #import <Safari/PreferencesModule.h>
 
+#import "AggregatedPasswordsViewControllerDelegate.h"
 #import "InlineAuthorizationViewControllerDelegate.h"
 #import "SecureWindow.h"
 
-@class InlineAuthorizationViewController, NSLayoutConstraint, NSView, NSViewController<PreferencesViewController>, NSWindow, SecureWindowLockPolicyEnforcer;
+@class InlineAuthorizationViewController, NSLayoutConstraint, NSMutableArray, NSString, NSView, NSViewController<PreferencesViewController>, NSWindow, SecureWindowLockPolicyEnforcer;
 
 __attribute__((visibility("hidden")))
-@interface PasswordsPreferences : PreferencesModule <InlineAuthorizationViewControllerDelegate, SecureWindow>
+@interface PasswordsPreferences : PreferencesModule <AggregatedPasswordsViewControllerDelegate, InlineAuthorizationViewControllerDelegate, SecureWindow>
 {
     NSLayoutConstraint *_passwordsViewControllerWidthConstraint;
+    NSMutableArray *_blocksToPerformAfterAuthentication;
     NSViewController<PreferencesViewController> *_passwordsViewController;
     InlineAuthorizationViewController *_authorizationViewController;
     SecureWindowLockPolicyEnforcer *_lockPolicyEnforcer;
@@ -29,18 +31,29 @@ __attribute__((visibility("hidden")))
 - (void)controllerAuthorizationDidSucceed:(id)arg1;
 @property(readonly, nonatomic) NSWindow *windowToSecure;
 - (void)lockFromPolicyEnforcer:(id)arg1;
+- (void)aggregatePasswordsViewControllerWantsLockPolicyDeferral:(id)arg1;
+- (void)aggregatePasswordsViewControllerDoesNotWantLockPolicyDeferral:(id)arg1;
+- (void)_performBlockAfterAuthentication:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) SecureWindowLockPolicyEnforcer *lockPolicyEnforcer; // @synthesize lockPolicyEnforcer=_lockPolicyEnforcer;
 @property(readonly, nonatomic) InlineAuthorizationViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 - (void)_refreshAuthorizationViewController;
 - (void)_installViewController:(id)arg1 postModuleBeingDisplayed:(BOOL)arg2;
 @property(readonly, nonatomic) NSViewController<PreferencesViewController> *passwordsViewController; // @synthesize passwordsViewController=_passwordsViewController;
+- (id)helpAnchor;
 - (void)setMinSize:(struct CGSize)arg1;
 - (struct CGSize)minSize;
 - (void)initializeFromDefaults;
 - (void)moduleWillBeRemoved;
 - (void)willBeDisplayed;
 - (BOOL)snapshotsOfPreferencesWindowArePermitted;
+- (void)openWithPasswordManagerURL:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

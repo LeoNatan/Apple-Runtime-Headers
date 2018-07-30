@@ -6,20 +6,24 @@
 
 #import <NanoTimeKit/NTKAnalogFaceView.h>
 
+#import "NTKUtilityComplicationFactoryDelegate.h"
 #import "NTKVictoryAnalogBackgroundViewDelegate.h"
 
-@class NTKUtilityComplicationFactory, NTKVictoryAnalogBackgroundView;
+@class NSString, NTKRoundedCornerOverlayView, NTKUtilityComplicationFactory, NTKVictoryAnalogBackgroundView;
 
-@interface NTKVictoryAnalogFaceView : NTKAnalogFaceView <NTKVictoryAnalogBackgroundViewDelegate>
+@interface NTKVictoryAnalogFaceView : NTKAnalogFaceView <NTKVictoryAnalogBackgroundViewDelegate, NTKUtilityComplicationFactoryDelegate>
 {
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
     NTKVictoryAnalogBackgroundView *_backgroundView;
+    NTKRoundedCornerOverlayView *_cornerView;
 }
 
 - (void).cxx_destruct;
+- (id)utilityDateComplicationFontForDateStyle:(unsigned int)arg1;
 - (float)_keylinePaddingForState:(int)arg1;
 - (float)_keylineEdgeGapForState:(int)arg1;
 - (void)_loadLayoutRules;
+- (id)_slotForUtilitySlot:(int)arg1;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
@@ -47,12 +51,22 @@
 - (struct CGPoint)_contentCenterOffset;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (void)_applyDataMode;
 - (id)_additionalPrelaunchApplicationIdentifiers;
+- (void)_configureReusableTimeView:(id)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

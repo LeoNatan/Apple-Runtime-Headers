@@ -7,28 +7,31 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBTemporalEventTrigger.h"
 
-@class PBUnknownFields, _INPBDateTimeRangeValue;
+@class NSString, _INPBDateTimeRangeValue;
 
-@interface _INPBTemporalEventTrigger : PBCodable <NSCopying>
+@interface _INPBTemporalEventTrigger : PBCodable <_INPBTemporalEventTrigger, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBDateTimeRangeValue *_dateTime;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBDateTimeRangeValue *dateTime; // @synthesize dateTime=_dateTime;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasDateTime;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

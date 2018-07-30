@@ -36,10 +36,12 @@
 - (void)updateTrackingAreas;
 - (void)setFrame:(struct CGRect)arg1 leftToRight:(BOOL)arg2;
 - (void)updateImagesAnimated:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)applyImageNamed:(id)arg1 withTint:(struct NSColor *)arg2 forImageView:(struct NSImageView *)arg3;
 - (struct CGSize)sizeForLetterpressedImage;
+- (void)updateAccentColor;
+- (void)accentColorDidChange;
+- (BOOL)allowsVibrancy;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)dealloc;
 
 @end
 

@@ -14,6 +14,13 @@
 {
 }
 
+- (void)optimizeIndirectCommandBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
+- (void)copyIndirectCommandBuffer:(id)arg1 sourceRange:(struct _NSRange)arg2 destination:(id)arg3 destinationIndex:(unsigned long long)arg4;
+- (void)resetCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
+- (void)optimizeContentsForCPUAccess:(id)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
+- (void)optimizeContentsForCPUAccess:(id)arg1;
+- (void)optimizeContentsForGPUAccess:(id)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
+- (void)optimizeContentsForGPUAccess:(id)arg1;
 - (void)fillBuffer:(id)arg1 range:(struct _NSRange)arg2 value:(unsigned char)arg3;
 - (void)generateMipmapsForTexture:(id)arg1;
 - (void)copyFromBuffer:(id)arg1 sourceOffset:(unsigned long long)arg2 toBuffer:(id)arg3 destinationOffset:(unsigned long long)arg4 size:(unsigned long long)arg5;

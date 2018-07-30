@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSNumber, NSString, RWIApplication, RWIInspector;
+@class NSDictionary, NSNumber, NSString, RWIApplication;
 
 @interface RWIDebuggable : NSObject
 {
@@ -17,16 +17,16 @@
     NSString *_title;
     NSDictionary *_userInfo;
     RWIApplication *_application;
-    RWIInspector *_inspector;
     long long _type;
     long long _debuggerState;
     RWIApplication *_proxyApplication;
+    id <RWIDebugger> _debugger;
 }
 
+@property(nonatomic) __weak id <RWIDebugger> debugger; // @synthesize debugger=_debugger;
 @property(readonly, nonatomic) RWIApplication *proxyApplication; // @synthesize proxyApplication=_proxyApplication;
 @property(readonly, nonatomic) long long debuggerState; // @synthesize debuggerState=_debuggerState;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-@property(nonatomic) __weak RWIInspector *inspector; // @synthesize inspector=_inspector;
 @property(readonly, nonatomic) RWIApplication *application; // @synthesize application=_application;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -37,7 +37,6 @@
 - (void).cxx_destruct;
 - (void)hostApplicationNowAvailable:(id)arg1;
 - (void)changeURL:(id)arg1 title:(id)arg2 debuggerState:(long long)arg3 userInfo:(id)arg4;
-@property(readonly, nonatomic) id <RWIDebugger> debugger;
 @property(readonly, copy, nonatomic) NSString *name; // @dynamic name;
 @property(readonly, nonatomic) RWIApplication *owningApplication; // @dynamic owningApplication;
 - (void)setIndicating:(BOOL)arg1;

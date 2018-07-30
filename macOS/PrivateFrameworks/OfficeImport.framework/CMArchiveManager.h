@@ -10,6 +10,7 @@
 
 @class NSCache, NSMutableDictionary, NSMutableSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CMArchiveManager : NSObject <TCCancelDelegate>
 {
     BOOL mIsThumbnail;
@@ -24,11 +25,13 @@
     double mCommitInterval;
     BOOL mAutoCommit;
     NSCache *mStyleObjectCache;
+    BOOL _noDecorations;
 }
 
 + (id)resourceTypeToExtension:(int)arg1;
 + (id)resourceTypeToMIME:(int)arg1;
 + (int)blipTypeToResourceType:(int)arg1;
+@property BOOL noDecorations; // @synthesize noDecorations=_noDecorations;
 @property(copy) NSString *passphrase; // @synthesize passphrase=mPassphrase;
 - (void).cxx_destruct;
 - (BOOL)isCancelled;

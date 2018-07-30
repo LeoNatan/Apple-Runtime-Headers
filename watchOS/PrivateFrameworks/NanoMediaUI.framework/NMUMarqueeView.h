@@ -40,6 +40,7 @@
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) float contentGap; // @synthesize contentGap=_contentGap;
 - (void).cxx_destruct;
+- (_Bool)_isRunningInNowPlayingViewService;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_updateFeatheringMasks;

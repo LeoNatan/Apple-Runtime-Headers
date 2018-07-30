@@ -6,7 +6,7 @@
 
 #import "NSView.h"
 
-@class NSArray, NSAttributedString, NSImage, NSLayoutConstraint, NSString, NSTextField, PRSCardSection, PRSImageView, PRSTextField;
+@class NSArray, NSAttributedString, NSImage, NSLayoutConstraint, NSString, NSTextField, PRSCardSection, PRSImageView;
 
 @interface PRSRichTitleSliceView : NSView
 {
@@ -20,7 +20,6 @@
     unsigned long long _moreGlyphsPlacement;
     NSArray *_moreGlyphs;
     BOOL _needsRoundedImage;
-    BOOL _shouldAllowVibrancy;
     BOOL _overlayPositionedAtBottomRightCornerOfImage;
     double _roundingRadius;
     PRSCardSection *_cardSection;
@@ -30,7 +29,7 @@
     NSTextField *_descriptionTextField;
     NSTextField *_auxiliaryTopText;
     NSTextField *_auxiliaryMiddleText;
-    PRSTextField *_auxiliaryBottomText;
+    NSTextField *_auxiliaryBottomText;
     NSLayoutConstraint *_titleToImageConstraint;
     NSLayoutConstraint *_titleToSuperViewLeadingConstraint;
     NSLayoutConstraint *_imageTopToTitleTopConstraint;
@@ -80,7 +79,7 @@
 @property __weak NSLayoutConstraint *imageTopToTitleTopConstraint; // @synthesize imageTopToTitleTopConstraint=_imageTopToTitleTopConstraint;
 @property __weak NSLayoutConstraint *titleToSuperViewLeadingConstraint; // @synthesize titleToSuperViewLeadingConstraint=_titleToSuperViewLeadingConstraint;
 @property __weak NSLayoutConstraint *titleToImageConstraint; // @synthesize titleToImageConstraint=_titleToImageConstraint;
-@property __weak PRSTextField *auxiliaryBottomText; // @synthesize auxiliaryBottomText=_auxiliaryBottomText;
+@property __weak NSTextField *auxiliaryBottomText; // @synthesize auxiliaryBottomText=_auxiliaryBottomText;
 @property __weak NSTextField *auxiliaryMiddleText; // @synthesize auxiliaryMiddleText=_auxiliaryMiddleText;
 @property __weak NSTextField *auxiliaryTopText; // @synthesize auxiliaryTopText=_auxiliaryTopText;
 @property __weak NSTextField *descriptionTextField; // @synthesize descriptionTextField=_descriptionTextField;
@@ -89,7 +88,6 @@
 @property __weak PRSImageView *imageView; // @synthesize imageView=_imageView;
 @property PRSCardSection *cardSection; // @synthesize cardSection=_cardSection;
 @property(readonly) NSArray *moreGlyphs; // @synthesize moreGlyphs=_moreGlyphs;
-@property BOOL shouldAllowVibrancy; // @synthesize shouldAllowVibrancy=_shouldAllowVibrancy;
 @property double roundingRadius; // @synthesize roundingRadius=_roundingRadius;
 @property BOOL needsRoundedImage; // @synthesize needsRoundedImage=_needsRoundedImage;
 - (void).cxx_destruct;
@@ -119,8 +117,6 @@
 - (BOOL)isAccessibilityElement;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)awakeFromNib;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (BOOL)allowsVibrancy;
 
 @end
 

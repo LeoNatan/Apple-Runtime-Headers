@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize iconSize; // @synthesize iconSize=_iconSize;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateFont;
 - (void)updateConstraints;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;

@@ -20,6 +20,7 @@
 @property _Bool visible; // @synthesize visible=_visible;
 - (void)dealloc;
 - (void)addLayerEffectComponent:(id)arg1;
+- (id)colorOverlay;
 - (id)dropShadow;
 - (id)init;
 

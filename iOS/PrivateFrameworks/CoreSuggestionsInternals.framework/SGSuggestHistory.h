@@ -45,8 +45,9 @@
 - (void)writeAndPushConfirmedEventHashes:(id)arg1;
 - (void)confirmStorageEvent:(id)arg1;
 - (void)confirmEvent:(id)arg1;
-- (void)confirmContact:(id)arg1;
-- (void)rejectContact:(id)arg1;
+- (void)confirmRealtimeContact:(id)arg1;
+- (void)confirmOrRejectContact:(id)arg1;
+- (void)rejectRealtimeContact:(id)arg1;
 - (void)confirmOrRejectRecordForContact:(id)arg1;
 - (void)confirmOrRejectCuratedDetail:(id)arg1 forContact:(id)arg2;
 - (void)confirmOrRejectDetail:(id)arg1 forContact:(id)arg2;

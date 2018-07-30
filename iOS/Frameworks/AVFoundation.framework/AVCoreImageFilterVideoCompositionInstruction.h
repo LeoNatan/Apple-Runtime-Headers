@@ -10,6 +10,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCoreImageFilterVideoCompositionInstruction : NSObject <AVVideoCompositionInstruction>
 {
     CDStruct_e83c9415 _timeRange;

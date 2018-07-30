@@ -31,8 +31,6 @@ __attribute__((visibility("hidden")))
 - (long long)_resolveInternalTerminalID:(long long)arg1;
 - (id)copyItemSetForStateIndex:(long long)arg1;
 - (struct __CFString *)copyItemSetDescriptionForStateWithIndex:(long long)arg1;
-- (void)setNonTerminalPermutation:(struct __DDPermutation *)arg1;
-- (void)setTerminalPermutation:(struct __DDPermutation *)arg1;
 - (void)setPlCollection:(struct __DDProtoLexemeCollection *)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

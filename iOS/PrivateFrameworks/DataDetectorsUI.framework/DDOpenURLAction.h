@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)notificationURL;
+- (id)notificationIconBundleIdentifier;
 - (_Bool)canBePerformedByOpeningURL;
 - (void)performFromView:(id)arg1;
 - (id)localizedName;

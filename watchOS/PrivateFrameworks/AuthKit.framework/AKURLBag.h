@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) unsigned int lastKnownIDMSEnvironment;
 @property(readonly, nonatomic) unsigned int IDMSEnvironment;
 @property(readonly, nonatomic) NSString *APSEnvironment;
+@property(readonly, nonatomic) NSURL *repairURL;
 @property(readonly, nonatomic) NSURL *acsURL;
 @property(readonly, nonatomic, getter=isPhoneNumberSupportedConfig) _Bool phoneNumberSupportedConfig;
 @property(readonly, nonatomic) NSURL *storeModernRecoveryURL;

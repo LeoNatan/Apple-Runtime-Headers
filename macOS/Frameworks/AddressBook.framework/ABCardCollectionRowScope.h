@@ -8,7 +8,6 @@
 
 @class ABCardViewStyleProvider, NSArray, NSButton, NSStackView, NSView, NSView<ABCardCollectionRowView>;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionRowScope : CNWrappedDictionary
 {
 }

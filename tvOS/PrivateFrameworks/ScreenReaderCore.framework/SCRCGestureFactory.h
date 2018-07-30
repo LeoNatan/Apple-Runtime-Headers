@@ -102,7 +102,7 @@
 - (struct CGPoint)rawAverageLocation;
 - (double)firstFingerAzimuth;
 - (double)firstFingerAltitude;
-- (double)firstFingerOrbValue;
+- (double)firstFingerPressure;
 - (struct CGPoint)rawLocation;
 - (_Bool)tapIsDown;
 - (unsigned long long)tapCount;

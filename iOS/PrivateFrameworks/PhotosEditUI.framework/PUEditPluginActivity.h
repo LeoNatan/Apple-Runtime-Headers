@@ -8,6 +8,7 @@
 
 @class PUEditPlugin;
 
+__attribute__((visibility("hidden")))
 @interface PUEditPluginActivity : UIActivity
 {
     PUEditPlugin *_plugin;

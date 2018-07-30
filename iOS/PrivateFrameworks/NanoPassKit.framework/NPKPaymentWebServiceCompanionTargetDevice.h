@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <NanoPassKit/NPKPaymentWebServiceTargetDevice.h>
+#import "NSObject.h"
 
 #import "IDSServiceDelegate.h"
 #import "PKPaymentWebServiceArchiver.h"
@@ -12,7 +12,7 @@
 
 @class IDSService, NPKCompanionAgentConnection, NRActiveDeviceAssertion, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface NPKPaymentWebServiceCompanionTargetDevice : NPKPaymentWebServiceTargetDevice <IDSServiceDelegate, PKPaymentWebServiceTargetDeviceProtocol, PKPaymentWebServiceArchiver>
+@interface NPKPaymentWebServiceCompanionTargetDevice : NSObject <IDSServiceDelegate, PKPaymentWebServiceTargetDeviceProtocol, PKPaymentWebServiceArchiver>
 {
     id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> _delegate;
     unsigned long long _context;
@@ -24,6 +24,7 @@
     NRActiveDeviceAssertion *_provisioningActiveDeviceAssertion;
 }
 
++ (id)bridgedClientInfoHTTPHeader;
 @property(retain, nonatomic) NRActiveDeviceAssertion *provisioningActiveDeviceAssertion; // @synthesize provisioningActiveDeviceAssertion=_provisioningActiveDeviceAssertion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
@@ -33,8 +34,6 @@
 @property(nonatomic) unsigned long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)_deviceSupportExpressModeTypeAGeneric;
-- (_Bool)_deviceSupportAccessExpressMode;
 - (_Bool)_deviceIsFortuneOrLater;
 - (_Bool)_deviceIsDaytonaOrLater;
 - (id)_serialNumbersOfAllPairedDevices;
@@ -47,6 +46,7 @@
 - (void)handleShowPaymentSetupRequest:(id)arg1;
 - (void)handleWebServiceContextNeededRequest:(id)arg1;
 - (void)handleWebServiceContextDidChangeRequest:(id)arg1;
+- (void)handleCompanioniCloudSignout;
 - (void)handleCompanionPeerPaymentRegistration;
 - (void)handleCompanionMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleCompanionMigrationResponse:(id)arg1;
@@ -54,7 +54,7 @@
 - (void)sendPaymentOptionsDefaultsToWatch;
 - (void)paymentWebService:(id)arg1 handlePotentialExpressPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)supportsCredentialType:(long long)arg1;
-- (_Bool)supportsExpressModeForExpressPassType:(long long)arg1;
+- (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (_Bool)felicaSecureElementIsAvailable;
 - (void)checkCompanionPeerPaymentRegistrationState:(id)arg1;
 - (void)downloadAllPaymentPasses:(id)arg1;
@@ -68,6 +68,8 @@
 - (void)initializeCloudStoreIfNecessaryWithHandlerResponse:(id)arg1;
 - (void)initializeCloudStoreIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initializeCloudStoreIfNecessaryResponse:(id)arg1;
+- (void)updatePeerPaymentAccountWithCompletion:(CDUnknownBlockType)arg1;
+- (void)updatePeerPaymentAccountResponse:(id)arg1;
 - (void)provisionPeerPaymentPassWithCompletion:(CDUnknownBlockType)arg1;
 - (void)provisionPeerPaymentPassResponse:(id)arg1;
 - (void)peerPaymentUnregisterWithCompletion:(CDUnknownBlockType)arg1;
@@ -78,8 +80,11 @@
 - (void)enableServiceModeForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelOutstandingSetDefaultExpressPassRequestsWithExpressMode:(id)arg1;
 - (void)enableServiceModeResponse:(id)arg1;
+- (void)removeExpressPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeExpressPassWithUniqueIdentifierResponse:(id)arg1;
+- (void)removeExpressPassesWithCardType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeExpressPassesWithCardTypeResponse:(id)arg1;
 - (void)setExpressWithPassInformation:(id)arg1 requestAuthorization:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)_shouldAllowSetExpressWithPassInformation:(id)arg1;
 - (void)setExpressPassResponse:(id)arg1;
 - (void)handleUpdatedAppletState:(id)arg1;
 - (void)handleDeletePaymentTransactionWithIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2;
@@ -112,6 +117,7 @@
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (id)paymentWebService:(id)arg1 filterVerificationChannels:(id)arg2;
 - (void)paymentWebServiceDidUpdateConfiguration:(id)arg1;
+- (id)_supportedRegionsForWebService:(id)arg1;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2 primaryRegionTopic:(id)arg3;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2;
 - (void)didRegisterResponse:(id)arg1;
@@ -125,6 +131,7 @@
 - (void)provisioningDataResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 registrationDataWithAuthToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)registrationDataResponse:(id)arg1;
+- (void)handleBalanceChange:(id)arg1;
 - (void)markAllAppletsForDeletionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)markAllAppletsForDeletionResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 queueConnectionToTrustedServiceManagerForPushTopic:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;

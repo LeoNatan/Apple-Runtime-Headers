@@ -14,7 +14,7 @@
     _Bool _wantsFullCellPhoto;
 }
 
-- (id)transitionContext;
+- (id)transitionContextInView:(id)arg1;
 - (void)layoutSubviews;
 - (void)configureWithContent:(id)arg1;
 

@@ -30,8 +30,10 @@
     NSString *_identifier;
     NSString *_version;
     id <PKPlugIn> _plugin;
+    unsigned long long _presentationContexts;
 }
 
++ (unsigned long long)presentationContextsForInfoPlistArray:(id)arg1 isStickerPackOnly:(_Bool)arg2;
 + (void)_setUnremovableDisabledApps:(id)arg1;
 + (id)_unremovableDisabledApps;
 + (id)appWithPluginBundle:(id)arg1 appBundle:(id)arg2;
@@ -39,6 +41,7 @@
 + (id)appWithPluginBundle:(id)arg1 extension:(id)arg2;
 + (id)appWithPluginBundle:(id)arg1 pluginKitProxy:(id)arg2 extension:(id)arg3;
 @property(nonatomic) _Bool pluginLoaded; // @synthesize pluginLoaded=_pluginLoaded;
+@property(nonatomic) unsigned long long presentationContexts; // @synthesize presentationContexts=_presentationContexts;
 @property(retain, nonatomic) id <PKPlugIn> plugin; // @synthesize plugin=_plugin;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

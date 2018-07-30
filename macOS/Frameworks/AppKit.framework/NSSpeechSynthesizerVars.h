@@ -8,6 +8,7 @@
 
 @class NSString, _NSPeriodicInvoker;
 
+__attribute__((visibility("hidden")))
 @interface NSSpeechSynthesizerVars : NSObject
 {
     id _delegate;

@@ -6,31 +6,23 @@
 
 #import "NSObject.h"
 
-@class MSPFavoritesContainer, MSPHistoryContainer, NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, RTMapServiceManager;
 
 @interface RTMapsSupportManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    MSPFavoritesContainer *_favoritesContainer;
-    MSPHistoryContainer *_historyContainer;
+    RTMapServiceManager *_mapServiceManager;
 }
 
-+ (id)mapItemFromFavorite:(id)arg1;
-+ (id)locationFromFavorite:(id)arg1;
-+ (id)mapItemFromHistoryEntry:(id)arg1;
 + (id)locationFromHistoryEntry:(id)arg1;
-@property(retain, nonatomic) MSPHistoryContainer *historyContainer; // @synthesize historyContainer=_historyContainer;
-@property(retain, nonatomic) MSPFavoritesContainer *favoritesContainer; // @synthesize favoritesContainer=_favoritesContainer;
+@property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (id)_historyEntryPlaceDisplayFromMapsHistoryEntryPlaceDisplay:(id)arg1 error:(id *)arg2;
+- (id)_historyEntryRouteFromMapsHistoryEntryRoute:(id)arg1 error:(id *)arg2;
 - (void)fetchHistoryEntryRoutesWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchHistoryEntryPlaceDisplaysWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchFavoritePlacesWithHandler:(CDUnknownBlockType)arg1;
-- (void)fetchHistoryEntryPlaceDisplayMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)_fetchHistoryEntryPlaceDisplayMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)fetchHistoryEntryRouteMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)_fetchHistoryEntryRouteMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)fetchFavoritePlaceMapItemsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchFavoritePlaceMapItemsWithHandler:(CDUnknownBlockType)arg1;
 - (void)clearParkedCarBulletin;
 - (void)showParkedCarReplacementBulletinForEvent:(id)arg1 replacingEvent:(id)arg2;
@@ -44,8 +36,10 @@
 - (void)_fetchFavoritesWithHandler:(CDUnknownBlockType)arg1;
 - (id)_getNextPredictedLocationsOfInterestBackedByHistortyEntryPlaceDisplayFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 historyEntries:(id)arg4;
 - (id)_getNextPredictedLocationsOfInterestBackedByHistortyEntryRouteFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 historyEntries:(id)arg4;
-- (id)_getNextPredictedLocationsOfInterestBackedByFavoritePlaceFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 favorites:(id)arg4;
 - (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
+- (id)historyContainer;
+- (id)favoritesContainer;
+- (id)initWithMapServiceManager:(id)arg1;
 - (id)init;
 
 @end

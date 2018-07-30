@@ -52,3 +52,7 @@ struct _opaque_pthread_t {
     char _field3[8176];
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+

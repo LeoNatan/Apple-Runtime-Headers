@@ -7,14 +7,16 @@
 #import "NSObject.h"
 
 #import "PBSDisplayState.h"
+#import "PBSDisplayState_Private.h"
 
 @class NSArray, NSHashTable, NSSet, NSString, PBSDisplayManagerServiceProxy, PBSDisplayMode;
 
-@interface PBSDisplayManager : NSObject <PBSDisplayState>
+@interface PBSDisplayManager : NSObject <PBSDisplayState_Private, PBSDisplayState>
 {
     _Bool _canHandleHighBandwidthModes;
     _Bool _shouldModeSwitchForDynamicRange;
     _Bool _shouldModeSwitchForFrameRate;
+    _Bool _detectedPoorCableConnection;
     double _localeRefreshRate;
     NSArray *_sortedDisplayModes;
     PBSDisplayMode *_currentDisplayMode;
@@ -23,6 +25,8 @@
     NSSet *_seenDisplayIDs;
     NSString *_currentDisplayID;
     long long _displayConnection;
+    NSSet *_promotedVirtualDisplayModes;
+    long long _lastCablePollStatus;
     NSHashTable *_stateObservers;
     PBSDisplayManagerServiceProxy *_serviceProxy;
 }
@@ -32,6 +36,9 @@
 + (void)preheat;
 @property(retain, nonatomic) PBSDisplayManagerServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) NSHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
+@property(nonatomic) long long lastCablePollStatus; // @synthesize lastCablePollStatus=_lastCablePollStatus;
+@property(retain, nonatomic) NSSet *promotedVirtualDisplayModes; // @synthesize promotedVirtualDisplayModes=_promotedVirtualDisplayModes;
+@property(nonatomic) _Bool detectedPoorCableConnection; // @synthesize detectedPoorCableConnection=_detectedPoorCableConnection;
 @property(nonatomic) long long displayConnection; // @synthesize displayConnection=_displayConnection;
 @property(nonatomic) _Bool shouldModeSwitchForFrameRate; // @synthesize shouldModeSwitchForFrameRate=_shouldModeSwitchForFrameRate;
 @property(nonatomic) _Bool shouldModeSwitchForDynamicRange; // @synthesize shouldModeSwitchForDynamicRange=_shouldModeSwitchForDynamicRange;
@@ -57,20 +64,20 @@
 - (id)findMatchingLocaleMode:(id)arg1 enforceVirtualCheck:(_Bool)arg2;
 - (id)findFirstMode:(CDUnknownBlockType)arg1;
 - (id)filterModes:(CDUnknownBlockType)arg1;
+- (_Bool)isAdvertisingHDMI2;
 - (void)dealloc;
 - (id)_init;
 - (id)init;
-- (void)displayAssistantDidCompleteForInvocation:(id)arg1;
-- (void)displayAssistantDidStartForInvocation:(id)arg1;
-- (void)forgetDisplaysForDisplayAssistant;
 - (void)presentDisplayAssistantForInvocation:(long long)arg1 destinationDisplayMode:(id)arg2 dismissHandler:(CDUnknownBlockType)arg3;
+- (void)displayAssistantDidCompleteForKind:(id)arg1;
+- (void)displayAssistantDidStartForKind:(id)arg1;
+- (void)removeCableCheckHistory;
+- (void)resetPoorCableWarnings;
+- (void)forgetDisplaysForDisplayAssistant;
+- (void)presentDisplayAssistantWithRequest:(id)arg1 dismissHandler:(CDUnknownBlockType)arg2;
 - (void)handleRegionChangeWithNewCountryCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) long long manualInvocationAction;
+- (_Bool)needsHDRBuddyForDisplayMode:(id)arg1;
 @property(readonly, nonatomic) _Bool canAttemptUpgradeWithDisplayAssistant;
-@property(readonly, nonatomic) PBSDisplayMode *dolbyVisionUpgradeDisplayMode;
-- (id)HDRDisplayModeMatchingOnlyVirtual:(_Bool)arg1;
-@property(readonly, nonatomic) PBSDisplayMode *HDRAttemptDisplayMode;
-@property(readonly, nonatomic) PBSDisplayMode *HDRUpgradeDisplayMode;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

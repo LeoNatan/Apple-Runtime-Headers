@@ -20,5 +20,6 @@
 - (id)MCDeepCopyWithZone:(struct _NSZone *)arg1;
 - (id)MCMutableDeepCopy;
 - (id)MCMutableDeepCopyWithZone:(struct _NSZone *)arg1;
+- (_Bool)writeToBinaryFile:(id)arg1 atomically:(_Bool)arg2;
 @end
 

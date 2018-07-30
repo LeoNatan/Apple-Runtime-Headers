@@ -10,6 +10,7 @@
 
 @class GEOPlaceResult;
 
+__attribute__((visibility("hidden")))
 @interface GEOCluster : PBCodable <NSCopying>
 {
     CDStruct_95bda58d _indexs;

@@ -6,10 +6,11 @@
 
 #import "UIView.h"
 
-@class CALayer, CAReplicatorLayer, NSArray;
+@class CALayer, CAReplicatorLayer, CLKDevice, NSArray;
 
 @interface NTKExplorerDialView : UIView
 {
+    CLKDevice *_device;
     _Bool _editing;
     CALayer *_ringLayer;
     CAReplicatorLayer *_hourReplicatorLayer;
@@ -45,7 +46,7 @@
 - (void)_applyDensity:(unsigned long long)arg1;
 - (void)cleanupAfterEditing;
 - (void)prepareForEditing;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 
 @end
 

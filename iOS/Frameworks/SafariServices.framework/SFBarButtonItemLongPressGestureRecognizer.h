@@ -14,17 +14,19 @@ __attribute__((visibility("hidden")))
 @interface SFBarButtonItemLongPressGestureRecognizer : UILongPressGestureRecognizer <UIGestureRecognizerDelegate>
 {
     UIBarButtonItem *_barButtonItem;
-    id _longPressTarget;
+    id _target;
     SEL _longPressAction;
+    SEL _touchDownAction;
 }
 
-+ (id)gestureRecognizerWithLongPressTarget:(id)arg1 action:(SEL)arg2 attachedToBarButtonItem:(id)arg3;
++ (id)gestureRecognizerTarget:(id)arg1 longPressAction:(SEL)arg2 touchDownAction:(SEL)arg3 attachedToBarButtonItem:(id)arg4;
 - (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_updateMinimumPressDurationForContentSizeCategory:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_invokeLongPressAction;
 - (void)longPress:(id)arg1;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

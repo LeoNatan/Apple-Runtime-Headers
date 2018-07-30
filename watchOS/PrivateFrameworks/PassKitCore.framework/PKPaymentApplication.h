@@ -27,13 +27,15 @@
     int _state;
     NSString *_suspendedReason;
     NSArray *_supportedExpressModes;
-    NSArray *_supportsExpressModes;
+    NSArray *_automaticSelectionCriteria;
     NSString *_appletCurrencyCode;
     int _paymentNetworkIdentifier;
     NSDecimalNumber *_inAppPINRequiredAmount;
     NSString *_inAppPINRequiredCurrency;
     unsigned int _paymentType;
     NSString *_displayName;
+    int _contactlessPriority;
+    int _inAppPriority;
     NSString *_appletDataFormat;
     PKTransitPassProperties *_transitProperties;
 }
@@ -42,6 +44,8 @@
 + (id)applicationWithProtobuf:(id)arg1;
 @property(copy, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
 @property(copy, nonatomic) NSString *appletDataFormat; // @synthesize appletDataFormat=_appletDataFormat;
+@property(nonatomic) int inAppPriority; // @synthesize inAppPriority=_inAppPriority;
+@property(nonatomic) int contactlessPriority; // @synthesize contactlessPriority=_contactlessPriority;
 @property(nonatomic, getter=isAuxiliary) _Bool auxiliary; // @synthesize auxiliary=_auxiliary;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned int paymentType; // @synthesize paymentType=_paymentType;
@@ -51,7 +55,7 @@
 @property(nonatomic) int paymentNetworkIdentifier; // @synthesize paymentNetworkIdentifier=_paymentNetworkIdentifier;
 @property(nonatomic) _Bool requiresDeferredAuthorization; // @synthesize requiresDeferredAuthorization=_requiresDeferredAuthorization;
 @property(copy, nonatomic) NSString *appletCurrencyCode; // @synthesize appletCurrencyCode=_appletCurrencyCode;
-@property(copy, nonatomic) NSArray *supportsExpressModes; // @synthesize supportsExpressModes=_supportsExpressModes;
+@property(copy, nonatomic) NSArray *automaticSelectionCriteria; // @synthesize automaticSelectionCriteria=_automaticSelectionCriteria;
 @property(copy, nonatomic) NSArray *supportedExpressModes; // @synthesize supportedExpressModes=_supportedExpressModes;
 @property(nonatomic) _Bool supportsOptionalAuthentication; // @synthesize supportsOptionalAuthentication=_supportsOptionalAuthentication;
 @property(nonatomic) _Bool supportsInAppPayment; // @synthesize supportsInAppPayment=_supportsInAppPayment;
@@ -65,6 +69,7 @@
 @property(copy, nonatomic, setter=setDPANIdentifier:) NSString *dpanIdentifier; // @synthesize dpanIdentifier=_dpanIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *stationCodeProvider;
+@property(readonly, nonatomic) _Bool generatesLocalTransactions;
 @property(readonly, nonatomic, getter=isParsedTransitApplication) _Bool parsedTransitApplication;
 @property(readonly, nonatomic) _Bool supportsExpressSuica;
 @property(readonly, nonatomic) _Bool supportsSuica;
@@ -72,12 +77,14 @@
 @property(readonly, nonatomic) _Bool supportsTransit;
 @property(readonly, nonatomic) _Bool supportsExpressTransit;
 - (_Bool)supportsExpressMode:(id)arg1;
-- (_Bool)_expressModesIncludeTransit:(id)arg1;
+- (_Bool)supportsExpressForAutomaticPresentationTechnologyType:(int)arg1;
+- (_Bool)supportsExpress;
 - (_Bool)supportsWebPaymentMode:(int)arg1 withExclusionList:(id)arg2 clientOSVersion:(id)arg3;
 - (_Bool)supportsWebPaymentMode:(int)arg1 withExclusionList:(id)arg2;
 @property(readonly, nonatomic) NSString *stateAsString;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)_createAutomaticSelectionCriteriaIfNecessary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqualToPaymentApplication:(id)arg1;

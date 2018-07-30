@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIView.h"
+#import <WebKit/WKApplicationStateTrackingView.h>
 
 #import "UIGestureRecognizerDelegate.h"
 #import "UITextAutoscrolling.h"
@@ -17,10 +17,10 @@
 #import "WKFileUploadPanelDelegate.h"
 #import "_WKWebViewPrintProvider.h"
 
-@class NSDictionary, NSIndexSet, NSString, UIColor, UIImage, UIInputContextHistory, UITextInteractionAssistant, UITextPosition, UITextRange, UIWebFormAccessory, WKBrowsingContextController, WKWebView;
+@class NSDictionary, NSIndexSet, NSString, RTIInputSystemSourceSession, UIColor, UIImage, UIInputContextHistory, UITextInputPasswordRules, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIWebFormAccessory, WKBrowsingContextController, WKWebView;
 
 __attribute__((visibility("hidden")))
-@interface WKContentView : UIView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate>
+@interface WKContentView : WKApplicationStateTrackingView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate>
 {
     RefPtr_a805eeb8 _page;
     WKWebView *_webView;
@@ -48,7 +48,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<WKFileUploadPanel> _fileUploadPanel;
     struct RetainPtr<UIGestureRecognizer> _previewGestureRecognizer;
     struct RetainPtr<UIGestureRecognizer> _previewSecondaryGestureRecognizer;
-    struct Vector<bool, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _focusStateStack;
+    struct Vector<bool, 0, WTF::CrashOnOverflow, 16> _focusStateStack;
     struct unique_ptr<WebKit::SmartMagnificationController, std::__1::default_delete<WebKit::SmartMagnificationController>> _smartMagnificationController;
     id <UITextInputDelegate> _inputDelegate;
     unsigned long long _latestTapID;
@@ -64,7 +64,7 @@ __attribute__((visibility("hidden")))
     struct WKSelectionDrawingInfo _lastSelectionDrawingInfo;
     struct optional<WebKit::InteractionInformationRequest> _outstandingPositionInformationRequest;
     unsigned long long _positionInformationCallbackDepth;
-    struct Vector<std::optional<std::__1::pair<WebKit::InteractionInformationRequest, WTF::BlockPtr<void (WebKit::InteractionInformationAtPosition)>>>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _pendingPositionInformationHandlers;
+    struct Vector<std::optional<std::__1::pair<WebKit::InteractionInformationRequest, WTF::BlockPtr<void (WebKit::InteractionInformationAtPosition)>>>, 0, WTF::CrashOnOverflow, 16> _pendingPositionInformationHandlers;
     struct unique_ptr<WebKit::InputViewUpdateDeferrer, std::__1::default_delete<WebKit::InputViewUpdateDeferrer>> _inputViewUpdateDeferrer;
     _Bool _isEditable;
     _Bool _showingTextStyleOptions;
@@ -84,6 +84,13 @@ __attribute__((visibility("hidden")))
     _Bool _becomingFirstResponder;
     _Bool _resigningFirstResponder;
     _Bool _needsDeferredEndScrollingSelectionUpdate;
+    _Bool _isChangingFocus;
+    _Bool _isBlurringFocusedNode;
+    _Bool _focusRequiresStrongPasswordAssistance;
+    struct RetainPtr<WKFocusedFormControlView> _focusedFormControlView;
+    struct RetainPtr<UIViewController> _presentedFullScreenInputViewController;
+    struct RetainPtr<UINavigationController> _inputNavigationViewControllerForFullScreenInputs;
+    _Bool _shouldRestoreFirstResponderStatusAfterLosingFocus;
     struct unique_ptr<WebKit::PageClientImpl, std::__1::default_delete<WebKit::PageClientImpl>> _pageClient;
     struct RetainPtr<WKBrowsingContextController> _browsingContextController;
     struct RetainPtr<UIView> _rootContentView;
@@ -92,7 +99,6 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<WKInspectorHighlightView> _inspectorHighlightView;
     struct HistoricalVelocityData _historicalKinematicData;
     struct RetainPtr<NSUndoManager> _undoManager;
-    struct unique_ptr<WebKit::ApplicationStateTracker, std::__1::default_delete<WebKit::ApplicationStateTracker>> _applicationStateTracker;
     _Bool _isPrintingToPDF;
     struct RetainPtr<CGPDFDocument *> _printedDocument;
     _Bool _sizeChangedSinceLastVisibleContentRectUpdate;
@@ -103,10 +109,6 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_applicationWillEnterForeground;
-- (void)_applicationDidFinishSnapshottingAfterEnteringBackground;
-- (void)_applicationDidCreateWindowContext;
-- (void)_applicationDidEnterBackground;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_zoomToInitialScaleWithOrigin:(struct CGPoint)arg1;
 - (void)_zoomOutWithOrigin:(struct CGPoint)arg1;
@@ -137,11 +139,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isShowingInspectorIndication) _Bool showingInspectorIndication;
 - (void)_hideInspectorHighlight;
 - (void)_showInspectorHighlight:(const struct Highlight *)arg1;
-@property(readonly, nonatomic) _Bool isBackground;
 @property(readonly, nonatomic) _Bool isAssistingNode;
 - (struct OpaqueWKPage *)_pageRef;
 @property(readonly, nonatomic) WKBrowsingContextController *browsingContextController;
-- (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
 @property(readonly, nonatomic) struct WebPageProxy *page;
 - (void)dealloc;
@@ -149,6 +149,20 @@ __attribute__((visibility("hidden")))
 - (id)_commonInitializationWithProcessPool:(struct WebProcessPool *)arg1 configuration:(Ref_1d7364d1 *)arg2;
 @property(readonly, nonatomic) struct CGPDFDocument *_wk_printedDocument;
 - (unsigned int)_wk_pageCountForPrintFormatter:(id)arg1;
+- (_Bool)allowsDictationInputForListViewController:(id)arg1;
+- (void)listViewController:(id)arg1 didSelectTextSuggestion:(id)arg2;
+- (id)textSuggestionsForListViewController:(id)arg1;
+- (id)textContentTypeForListViewController:(id)arg1;
+- (int)numericInputModeForListViewController:(id)arg1;
+- (_Bool)shouldDisplayInputContextViewForListViewController:(id)arg1;
+- (id)initialValueForViewController:(id)arg1;
+- (id)inputLabelTextForViewController:(id)arg1;
+- (id)inputContextViewForViewController:(id)arg1;
+- (_Bool)allowsLanguageSelectionMenuForListViewController:(id)arg1;
+- (float)viewController:(id)arg1 inputContextViewHeightForSize:(struct CGSize)arg2;
+- (void)quickboardInputCancelled:(id)arg1;
+- (void)quickboard:(id)arg1 textEntered:(id)arg2;
+- (void)dismissQuickboardViewControllerAndRevealFocusedFormOverlayIfNecessary:(id)arg1;
 - (void)actionSheetAssistant:(id)arg1 getAlternateURLForImage:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)selectedTextForActionSheetAssistant:(id)arg1;
 - (id)dataDetectionContextForActionSheetAssistant:(id)arg1;
@@ -160,25 +174,50 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
 - (void)updatePositionInformationForActionSheetAssistant:(id)arg1;
-- (optional_37d01839)positionInformationForActionSheetAssistant:(id)arg1;
+- (optional_d8dc43b0)positionInformationForActionSheetAssistant:(id)arg1;
 - (_Bool)isAnyTouchOverActiveArea:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldIgnoreWebTouchWithEvent:(id)arg2;
 - (_Bool)shouldIgnoreWebTouch;
 - (void)_preserveFocusWithToken:(id)arg1 destructively:(_Bool)arg2;
 - (void)_restoreFocusWithToken:(id)arg1;
-- (id)viewControllerForPresentingFileUploadPanel:(id)arg1;
 - (void)fileUploadPanelDidDismiss:(id)arg1;
 - (void)_showRunOpenPanel:(struct OpenPanelParameters *)arg1 resultListener:(struct WebOpenPanelResultListenerProxy *)arg2;
-- (void)_showPlaybackTargetPicker:(_Bool)arg1 fromRect:(const struct IntRect *)arg2;
+- (void)_showPlaybackTargetPicker:(_Bool)arg1 fromRect:(const struct IntRect *)arg2 routeSharingPolicy:(int)arg3 routingContextUID:(id)arg4;
 @property(nonatomic) _Bool suppressAssistantSelectionView;
 - (void)_updateChangedSelection:(_Bool)arg1;
 - (void)_updateChangedSelection;
 - (void)selectWordForReplacement;
 - (void)_selectionChanged;
+- (void)_wheelChangedWithEvent:(id)arg1;
+- (_Bool)selectMenu:(id)arg1 hasSelectedOptionAtIndex:(unsigned int)arg2;
+- (_Bool)selectMenuUsesMultipleSelection:(id)arg1;
+- (void)selectMenu:(id)arg1 didCheckItemAtIndex:(unsigned int)arg2 checked:(_Bool)arg3;
+- (id)selectMenu:(id)arg1 displayTextForItemAtIndex:(unsigned int)arg2;
+- (unsigned int)numberOfItemsInSelectMenu:(id)arg1;
+- (void)selectMenu:(id)arg1 didSelectItemAtIndex:(unsigned int)arg2;
+- (void)focusedFormControllerDidUpdateSuggestions:(id)arg1;
+- (_Bool)hasPreviousNodeForFocusedFormControlView:(id)arg1;
+- (_Bool)hasNextNodeForFocusedFormControlView:(id)arg1;
+- (void)focusedFormControlViewDidRequestPreviousNode:(id)arg1;
+- (void)focusedFormControlViewDidRequestNextNode:(id)arg1;
+- (id)actionNameForFocusedFormControlView:(id)arg1;
+- (id)scrollViewForFocusedFormControlView:(id)arg1;
+- (struct CGRect)previousRectForFocusedFormControlView:(id)arg1;
+- (struct CGRect)nextRectForFocusedFormControlView:(id)arg1;
+- (struct CGRect)rectForFocusedFormControlView:(id)arg1;
+- (void)focusedFormControlViewDidBeginEditing:(id)arg1;
+- (void)focusedFormControlViewDidCancel:(id)arg1;
+- (void)focusedFormControlViewDidSubmit:(id)arg1;
+- (void)dismissAllInputViewControllers:(_Bool)arg1;
+- (void)presentViewControllerForCurrentAssistedNode;
+- (void)removeFocusedFormControlOverlay;
+- (void)addFocusedFormControlOverlay;
+- (void)reloadContextViewForPresentedListViewController;
+- (void)updateCurrentAssistedNodeInformation:(Function_f7a043c0 *)arg1;
 - (void)_stopAssistingNode;
 - (void)_startAssistingNode:(const struct AssistedNodeInformation *)arg1 userIsInteracting:(_Bool)arg2 blurPreviousNode:(_Bool)arg3 changingActivityState:(_Bool)arg4 userObject:(id)arg5;
 @property(readonly, nonatomic) UIWebFormAccessory *formAccessoryView;
-- (Vector_98374b04 *)assistedNodeSelectOptions;
+- (Vector_116a0919 *)assistedNodeSelectOptions;
 @property(readonly, nonatomic) const struct AssistedNodeInformation *assistedNodeInformation;
 - (void)_stopAssistingKeyboard;
 - (void)_startAssistingKeyboard;
@@ -301,14 +340,11 @@ __attribute__((visibility("hidden")))
 - (void)requestAutocorrectionRectsForString:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) const struct WKAutoCorrectionData *autocorrectionData;
 - (void)moveByOffset:(int)arg1;
-- (void)changeBlockSelectionWithTouchAt:(struct CGPoint)arg1 withSelectionTouch:(int)arg2 forHandle:(int)arg3;
 - (void)changeSelectionWithTouchesFrom:(struct CGPoint)arg1 to:(struct CGPoint)arg2 withGesture:(int)arg3 withState:(int)arg4;
 - (void)changeSelectionWithTouchAt:(struct CGPoint)arg1 withSelectionTouch:(int)arg2 baseIsStart:(_Bool)arg3 withFlags:(int)arg4;
-- (void)changeSelectionWithTouchAt:(struct CGPoint)arg1 withSelectionTouch:(int)arg2 baseIsStart:(_Bool)arg3;
 - (void)changeSelectionWithGestureAt:(struct CGPoint)arg1 withGesture:(int)arg2 withState:(int)arg3 withFlags:(int)arg4;
 - (void)changeSelectionWithGestureAt:(struct CGPoint)arg1 withGesture:(int)arg2 withState:(int)arg3;
 - (_Bool)_isInteractingWithAssistedNode;
-- (void)_didUpdateBlockSelectionWithTouch:(int)arg1 withFlags:(int)arg2 growThreshold:(float)arg3 shrinkThreshold:(float)arg4;
 - (void)_accessibilityClearSelection;
 - (void)_accessibilityStoreSelection;
 - (void)_accessibilityRetrieveRectsAtSelectionOffset:(int)arg1 withText:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -334,7 +370,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *insertionPointColor;
 - (id)textStylingAtPosition:(id)arg1 inDirection:(int)arg2;
 - (void)replaceForWebView:(id)arg1;
-- (void)_reanalyzeForWebView:(id)arg1;
 - (void)_transliterateChineseForWebView:(id)arg1;
 - (void)_promptForReplaceForWebView:(id)arg1;
 - (void)selectWordBackward;
@@ -356,7 +391,6 @@ __attribute__((visibility("hidden")))
 - (void)_transliterateChinese:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)_share:(id)arg1;
-- (void)_reanalyze:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
@@ -388,7 +422,7 @@ __attribute__((visibility("hidden")))
 - (void)_twoFingerSingleTapGestureRecognized:(id)arg1;
 - (void)_highlightLongPressRecognized:(id)arg1;
 - (id)webSelectionRects;
-- (id)webSelectionRectsForSelectionRects:(const Vector_b95a6004 *)arg1;
+- (id)webSelectionRectsForSelectionRects:(const Vector_029b09a9 *)arg1;
 - (_Bool)textInteractionGesture:(int)arg1 shouldBeginAtPoint:(struct CGPoint)arg2;
 - (_Bool)pointIsNearMarkedText:(struct CGPoint)arg1;
 - (_Bool)hasSelectablePositionAtPoint:(struct CGPoint)arg1;
@@ -397,6 +431,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)_uiTextSelectionRects;
 - (void)_invokeAndRemovePendingHandlersValidForCurrentPositionInformation;
+- (_Bool)_currentPositionInformationIsApproximatelyValidForRequest:(const struct InteractionInformationRequest *)arg1;
 - (_Bool)_hasValidOutstandingPositionInformationRequest:(const struct InteractionInformationRequest *)arg1;
 - (_Bool)_currentPositionInformationIsValidForRequest:(const struct InteractionInformationRequest *)arg1;
 - (void)requestAsynchronousPositionInformationUpdate:(struct InteractionInformationRequest)arg1;
@@ -424,7 +459,7 @@ __attribute__((visibility("hidden")))
 - (void)_cancelLongPressGestureRecognizer;
 - (void)_disableDoubleTapGesturesDuringTapIfNecessary:(unsigned long long)arg1;
 - (_Bool)_mayDisableDoubleTapGesturesDuringSingleTap;
-- (void)_didGetTapHighlightForRequest:(unsigned long long)arg1 color:(const struct Color *)arg2 quads:(const Vector_a7a1654e *)arg3 topLeftRadius:(const struct IntSize *)arg4 topRightRadius:(const struct IntSize *)arg5 bottomLeftRadius:(const struct IntSize *)arg6 bottomRightRadius:(const struct IntSize *)arg7;
+- (void)_didGetTapHighlightForRequest:(unsigned long long)arg1 color:(const struct Color *)arg2 quads:(const Vector_c1077595 *)arg3 topLeftRadius:(const struct IntSize *)arg4 topRightRadius:(const struct IntSize *)arg5 bottomLeftRadius:(const struct IntSize *)arg6 bottomRightRadius:(const struct IntSize *)arg7;
 - (void)_showTapHighlight;
 - (void)_updateTapHighlight;
 - (void)_webTouchEvent:(const struct NativeWebTouchEvent *)arg1 preventsNativeGestures:(_Bool)arg2;
@@ -460,11 +495,17 @@ __attribute__((visibility("hidden")))
 - (void)_createAndConfigureLongPressGestureRecognizer;
 - (void)_createAndConfigureDoubleTapGestureRecognizer;
 - (id)_contentsOfUserInterfaceItem:(id)arg1;
+- (void)setTimePickerValueToHour:(int)arg1 minute:(int)arg2;
+@property(readonly, nonatomic) NSString *formInputLabel;
+@property(readonly, nonatomic) NSString *selectFormPopoverTitle;
+@property(readonly, nonatomic) NSString *textContentTypeForTesting;
 - (void)selectFormAccessoryPickerRow:(int)arg1;
 - (void)_simulateLongPressActionAtLocation:(struct CGPoint)arg1;
+- (void)_simulateTextEntered:(id)arg1;
 
 // Remaining properties
 @property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;
+@property(readonly, nonatomic) RTIInputSystemSourceSession *_rtiSourceSession;
 @property(nonatomic) int _textInputSource;
 @property(nonatomic) _Bool acceptsDictationSearchResults;
 @property(nonatomic) _Bool acceptsEmoji;
@@ -492,6 +533,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool forceEnableDictation;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned int hash;
+@property(nonatomic) _Bool hidePrediction;
 @property(retain, nonatomic) UIInputContextHistory *inputContextHistory;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;
 @property(nonatomic) unsigned int insertionPointWidth;
@@ -501,6 +543,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int keyboardType;
 @property(nonatomic) _Bool learnsCorrections;
 @property(nonatomic) _Bool loadKeyboardsForSiriLanguage;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(copy, nonatomic) NSString *recentInputIdentifier;
 @property(copy, nonatomic) NSString *responseContext;
 @property(nonatomic) _Bool returnKeyGoesToNextResponder;

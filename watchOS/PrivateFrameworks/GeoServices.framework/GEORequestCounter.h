@@ -20,6 +20,13 @@
 + (void)useLocalProxy;
 + (void)useProxy:(Class)arg1;
 - (void).cxx_destruct;
+- (void)finishedCDSStaleTileUpdateForID:(id)arg1 tilesConsidered:(unsigned int)arg2 tileDownloadAttempts:(unsigned int)arg3 successes:(unsigned int)arg4 failures:(unsigned int)arg5;
+- (void)startedCDSStaleTileUpdateForID:(id)arg1;
+- (void)startedCDSDownloadForTileSet:(id)arg1 zoom:(unsigned char)arg2 forCDSRegionId:(id)arg3;
+- (void)receivedCDSRegions:(id)arg1 forCDSRegionId:(id)arg2;
+- (void)readCDSDiagnosticsSince:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)finishedCDSDownloadForTileSet:(id)arg1 zoom:(unsigned char)arg2 tilesAtZoom:(unsigned int)arg3 tileDownloadAttempts:(unsigned int)arg4 successes:(unsigned int)arg5 failures:(unsigned int)arg6 forCDSRegionId:(id)arg7;
+- (void)finishedCDSDownloadForRegionId:(id)arg1;
 - (void)fetchTrafficProbeCollectionsStartingFrom:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)recordTrafficProbeCollectionAt:(id)arg1 tripId:(id)arg2 locationCount:(int)arg3 result:(unsigned char)arg4;
 - (void)clearCounters;

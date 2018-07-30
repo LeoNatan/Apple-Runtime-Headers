@@ -6,25 +6,24 @@
 
 #import "NSObject.h"
 
-@class NMSMutableMediaSyncInfo, NSObject<OS_dispatch_source>, NSOperationQueue;
+@class NSMutableDictionary, NSMutableOrderedSet, NSObject<OS_dispatch_source>, NSOperationQueue;
 
 @interface NMSMediaSyncInfoUpdater : NSObject
 {
-    NMSMutableMediaSyncInfo *_currentMusicSyncInfo;
-    _Bool _currentMusicSyncInfoNeedsSynchronize;
-    NSObject<OS_dispatch_source> *_currentMusicSyncInfoSynchronizeTimer;
+    NSMutableDictionary *_syncInfo;
+    NSMutableOrderedSet *_targetsNeedingSyncInfoSynchronize;
+    NSObject<OS_dispatch_source> *_currentSyncInfoSynchronizeTimer;
     NSOperationQueue *_queue;
     _Bool _observing;
 }
 
 + (id)sharedMediaSyncInfoUpdater;
 - (void).cxx_destruct;
-- (void)setSyncState:(unsigned int)arg1 stateToken:(id)arg2 detailsDict:(id)arg3;
-- (id)currentStateToken;
-- (void)_setNeedsMusicSyncInfoUpdate;
+- (void)_setNeedsMediaSyncInfoUpdate;
 - (void)_handleMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_handleMusicRecommendationsDidUpdateNotification:(id)arg1;
-- (void)_handleMediaPinningResultsInvalidatedNotification:(id)arg1;
+- (void)_handleMediaPinningPodcastsContentsInvalidatedNotification:(id)arg1;
+- (void)_handleMediaPinningMusicContentsInvalidatedNotification:(id)arg1;
 - (void)endUpdatingSyncInfo;
 - (void)beginUpdatingSyncInfo;
 - (id)init;

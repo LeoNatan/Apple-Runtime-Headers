@@ -143,6 +143,7 @@ __attribute__((visibility("hidden")))
 - (void)_closeTileLoader;
 - (void)_openTileLoader;
 - (void)_setVolumeFromDefaults;
+- (void)setIsNavigatingInLowGuidance:(_Bool)arg1;
 - (void)traceJumpedInTime;
 - (_Bool)isCurrentlySpeaking;
 - (double)timeUntilNextAnnouncement;

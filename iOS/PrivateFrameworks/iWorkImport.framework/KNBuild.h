@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_buildChunkIDMap;
 }
 
-+ (id)buildWithEffect:(id)arg1 animationType:(long long)arg2 drawable:(id)arg3;
++ (id)buildWithEffect:(id)arg1 animationType:(long long)arg2 drawable:(id)arg3 slide:(id)arg4;
 + (id)menuAnimationInfosForDrawableInfo:(id)arg1 animationType:(long long)arg2;
 + (id)supportedAnimationInfosForDrawableInfo:(id)arg1 animationType:(long long)arg2;
 + (id)p_drawableFromInfo:(id)arg1;
@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long customScale;
 @property(readonly, nonatomic) _Bool customDecay;
 @property(readonly, nonatomic) unsigned long long customRepeatCount;
+@property(readonly, nonatomic) double customTravelDistance;
 @property(readonly, nonatomic) double customScaleAmount;
 @property(readonly, nonatomic) _Bool customShine;
 @property(readonly, nonatomic) _Bool customIncludeEndpoints;
@@ -79,6 +80,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsCustomEffectTimingCurve2;
 @property(readonly, nonatomic) _Bool supportsCustomEffectTimingCurve1;
 @property(readonly, nonatomic) _Bool supportsRandomNumberSeedInspection;
+@property(readonly, nonatomic) _Bool supportsTravelDistance;
 @property(readonly, nonatomic) _Bool supportsScaleAmount;
 @property(readonly, nonatomic) _Bool supportsShine;
 @property(readonly, nonatomic) _Bool supportsIncludeEndpoints;

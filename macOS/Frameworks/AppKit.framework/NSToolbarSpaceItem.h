@@ -12,6 +12,7 @@
 
 + (id)itemIdentifier;
 - (unsigned long long)spaceItemSize;
+- (BOOL)isSpace;
 - (void)configureForDisplayMode:(unsigned long long)arg1 andSizeMode:(unsigned long long)arg2;
 - (struct CGSize)maxSize;
 - (struct CGSize)minSize;

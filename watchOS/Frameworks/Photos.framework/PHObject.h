@@ -27,7 +27,9 @@
 + (id)uuidFromLocalIdentifier:(id)arg1;
 + (id)localIdentifierWithUUID:(id)arg1;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)propertyKeyForEntityKey:(id)arg1;
 + (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)identifierCode;
 + (_Bool)managedObjectSupportsMontage;
 + (_Bool)managedObjectSupportsSavedAssetType;
@@ -39,6 +41,8 @@
 + (_Bool)managedObjectSupportsPendingState;
 + (_Bool)managedObjectSupportsVisibilityState;
 + (_Bool)managedObjectSupportsHiddenState;
++ (_Bool)managedObjectSupportsMomentShareExpiredState;
++ (_Bool)managedObjectSupportsMomentShareTrashedState;
 + (_Bool)managedObjectSupportsTrashedState;
 + (id)fetchType;
 + (id)managedEntityName;

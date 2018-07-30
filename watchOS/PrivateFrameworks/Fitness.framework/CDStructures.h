@@ -8,3 +8,10 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct _NSRange {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+

@@ -9,7 +9,7 @@
 #import "CXCallObserverDelegate.h"
 #import "FMFSessionDelegate.h"
 
-@class CUBluetoothClient, CUWiFiManager, CXCallObserver, NSData, NSObject<OS_dispatch_queue>, NSString;
+@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, CXCallObserver, NSArray, NSData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CUSystemMonitorImp : NSObject <FMFSessionDelegate, CXCallObserverDelegate>
@@ -21,6 +21,14 @@ __attribute__((visibility("hidden")))
     CUBluetoothClient *_bluetoothClient;
     CXCallObserver *_callObserver;
     int _activeCallCount;
+    unsigned int _consoleUserID;
+    NSString *_consoleUserName;
+    struct __SCDynamicStore *_consoleUserStore;
+    BOOL _familyFailed;
+    NSArray *_familyMembers;
+    BOOL _familyObserving;
+    CUSystemMonitor *_familyPrimaryIPMonitor;
+    int _familyUpdatedToken;
     int _fmfDevicesChangedToken;
     int _meDeviceChangedToken;
     int _meDeviceRetryToken;
@@ -28,10 +36,18 @@ __attribute__((visibility("hidden")))
     NSString *_meDeviceIDSDeviceID;
     NSString *_meDeviceName;
     BOOL _meDeviceValid;
+    CUNetInterfaceMonitor *_netInterfaceMonitor;
+    unsigned int _netFlags;
+    CDUnion_fab80606 _primaryIPv4Addr;
+    CDUnion_fab80606 _primaryIPv6Addr;
     int _powerSourceToken;
     BOOL _powerUnlimited;
     BOOL _primaryAppleIDIsHSA2;
     BOOL _primaryAppleIDObserving;
+    CDStruct_83abfce7 _rotatingIdentifier48;
+    NSData *_rotatingIdentifierData;
+    CUSystemMonitor *_rotatingIdentifierBluetoothAddressMonitor;
+    NSObject<OS_dispatch_source> *_rotatingIdentifierTimer;
     BOOL _screenLocked;
     int _screenLockedToken;
     int _screenUnlockedToken;
@@ -39,6 +55,8 @@ __attribute__((visibility("hidden")))
     struct IONotificationPort *_screenNotificationPort;
     unsigned int _screenNotification;
     BOOL _screenSaverActive;
+    BOOL _firstUnlocked;
+    int _firstUnlockToken;
     CUWiFiManager *_wifiManager;
     unsigned int _wifiFlags;
     int _wifiState;
@@ -48,6 +66,9 @@ __attribute__((visibility("hidden")))
 - (void)_wifiMonitorStateChanged:(BOOL)arg1;
 - (void)_wifiMonitorStop;
 - (void)_wifiMonitorStart;
+- (void)_firstUnlockMonitorCheck:(BOOL)arg1;
+- (void)_firstUnlockMonitorStop;
+- (void)_firstUnlockMonitorStart;
 - (void)_screenSaverMonitorStop;
 - (void)_screenSaverMonitorStart;
 - (void)_screenChanged:(BOOL)arg1;
@@ -56,15 +77,30 @@ __attribute__((visibility("hidden")))
 - (void)_screenLockedChanged;
 - (void)_screenLockedMonitorStop;
 - (void)_screenLockedMonitorStart;
+- (void)_rotatingIdentifierTimerReset:(BOOL)arg1;
+- (void)_rotatingIdentifierTimerFired;
+- (void)_rotatingIdentifierBTUpdated;
+- (void)_rotatingIdentifierMonitorStop;
+- (void)_rotatingIdentifierMonitorStart;
 - (void)_primaryAppleIDChanged:(id)arg1;
 - (void)_primaryAppleIDMonitorStop;
 - (void)_primaryAppleIDMonitorStart;
 - (void)_powerUnlimitedMonitorStop;
 - (void)_powerUnlimitedMonitorStart;
+- (void)_netInterfaceMonitorStop;
+- (void)_netInterfaceMonitorStart;
 - (void)_meDeviceCheckCompletion:(id)arg1 error:(id)arg2 firstCheck:(BOOL)arg3;
 - (void)_meDeviceCheckStart:(BOOL)arg1;
 - (void)_meDeviceMonitorStop;
 - (void)_meDeviceMonitorStart;
+- (void)_familyUpdated:(id)arg1;
+- (void)_familyNetworkChanged;
+- (void)_familyGetMembers:(BOOL)arg1;
+- (void)_familyMonitorStop;
+- (void)_familyMonitorStart;
+- (void)_consoleUserChanged;
+- (void)_consoleUserMonitorStop;
+- (void)_consoleUserMonitorStart;
 - (int)_activeCallCountUnached;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (void)_callMonitorStop;

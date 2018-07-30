@@ -8,13 +8,13 @@
 
 @class OADFill;
 
-__attribute__((visibility("hidden")))
 @interface OADFillOverlayEffect : OADEffect
 {
     int mBlendMode;
     OADFill *mFill;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)fill;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

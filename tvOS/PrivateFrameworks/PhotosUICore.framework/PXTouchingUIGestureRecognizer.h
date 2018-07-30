@@ -8,19 +8,25 @@
 
 @interface PXTouchingUIGestureRecognizer : UIGestureRecognizer
 {
+    _Bool __didBegin;
     double _minimumTouchDuration;
     double _maximumTouchMovement;
+    id <PXTouchingUIGestureRecognizerDelegate> _touchDelegate;
     unsigned long long __touchCount;
     unsigned long long __beginRequestID;
     struct CGPoint __initialPointInView;
 }
 
 @property(nonatomic, setter=_setInitialPointInView:) struct CGPoint _initialPointInView; // @synthesize _initialPointInView=__initialPointInView;
+@property(nonatomic, setter=_setDidBegin:) _Bool _didBegin; // @synthesize _didBegin=__didBegin;
 @property(nonatomic, setter=_setBeginRequestID:) unsigned long long _beginRequestID; // @synthesize _beginRequestID=__beginRequestID;
 @property(nonatomic, setter=_setTouchCount:) unsigned long long _touchCount; // @synthesize _touchCount=__touchCount;
+@property(nonatomic) __weak id <PXTouchingUIGestureRecognizerDelegate> touchDelegate; // @synthesize touchDelegate=_touchDelegate;
 @property(nonatomic) double maximumTouchMovement; // @synthesize maximumTouchMovement=_maximumTouchMovement;
 @property(nonatomic) double minimumTouchDuration; // @synthesize minimumTouchDuration=_minimumTouchDuration;
+- (void).cxx_destruct;
 - (void)reset;
+- (void)setState:(long long)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

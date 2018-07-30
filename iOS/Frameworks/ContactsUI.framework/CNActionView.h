@@ -33,6 +33,7 @@
 + (void)fadeInView:(id)arg1;
 + (id)defaultTitleFontOfSize:(double)arg1;
 + (id)defaultTitleFont;
++ (id)colorByIncreasingBrightnessComponentByPercentage:(double)arg1 ofColor:(id)arg2;
 + (id)contentColorForDisabledVibrantDarkState;
 + (id)contentColorForDisabledBoldState;
 + (id)borderColorForDisabledBoldState;
@@ -73,6 +74,7 @@
 - (void)setDisabled:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
+- (id)colorByAdjustingColorToHighlightState:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

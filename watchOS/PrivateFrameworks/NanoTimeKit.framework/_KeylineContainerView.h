@@ -16,9 +16,11 @@
     unsigned int _labelAlignment;
     struct CGRect _selectedFrame;
     struct CGRect _deselectedFrame;
+    struct UIEdgeInsets _activeAreaInsets;
 }
 
 @property(nonatomic) unsigned int labelAlignment; // @synthesize labelAlignment=_labelAlignment;
+@property(nonatomic) struct UIEdgeInsets activeAreaInsets; // @synthesize activeAreaInsets=_activeAreaInsets;
 @property(retain, nonatomic) _KeylineLabel *label; // @synthesize label=_label;
 @property(nonatomic) struct CGRect deselectedFrame; // @synthesize deselectedFrame=_deselectedFrame;
 @property(nonatomic) struct CGRect selectedFrame; // @synthesize selectedFrame=_selectedFrame;
@@ -27,7 +29,7 @@
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)stopBreathingWithUrgency:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startBreathingWithApplier:(CDUnknownBlockType)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initForDevice:(id)arg1;
 
 @end
 

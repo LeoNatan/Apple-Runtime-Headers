@@ -10,19 +10,20 @@
 
 @interface NSProgressPanel : NSPanel
 {
-    NSButton *cancelButton;
-    NSTextField *captionTextField;
-    NSProgressIndicator *progressIndicator;
-    id cancellationDelegate;
-    SEL cancellationSelector;
-    void *cancellationContextInfo;
-    BOOL wasCancelled;
+    NSButton *_cancelButton;
+    NSTextField *_captionTextField;
+    NSProgressIndicator *_progressIndicator;
+    id _cancellationDelegate;
+    SEL _cancellationSelector;
+    void *_cancellationContextInfo;
+    BOOL _wasCancelled;
 }
 
 + (id)progressPanelWithNibName:(id)arg1;
+@property NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
+@property NSTextField *captionTextField; // @synthesize captionTextField=_captionTextField;
 - (void)cancelButtonPressed:(id)arg1;
-- (id)progressIndicator;
-- (id)captionTextField;
 - (void)setCancellationDelegate:(id)arg1 wasCancelledSelector:(SEL)arg2 contextInfo:(void *)arg3;
 
 @end

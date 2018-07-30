@@ -58,6 +58,7 @@
 - (void)_callRelayStarted:(id)arg1;
 - (void)_callReceivedFirstFrame:(id)arg1;
 - (void)_callStreamStarted:(id)arg1;
+- (void)updateAudioVolume:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)updateAudioSetting:(unsigned long long)arg1;
 - (void)_stopStream;
 - (void)updateStreamConfiguration:(id)arg1;

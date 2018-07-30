@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface CUIRenditionMetrics : NSObject
 {
     struct CGSize _imageSize;

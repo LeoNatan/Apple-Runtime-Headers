@@ -8,28 +8,32 @@
 
 #import "_DKExecutableQuery.h"
 
-@class NSDateInterval, NSPredicate, _DKEventStream;
+@class NSArray, NSDateInterval, NSPredicate, NSString, _DKEventStream;
 
 @interface _DKHistogramQuery : _DKQuery <_DKExecutableQuery>
 {
-    _Bool _isCategory;
     _Bool _includeLocalResults;
     _Bool _includeRemoteResults;
     _DKEventStream *_stream;
     NSDateInterval *_interval;
     CDUnknownBlockType _histogramHandler;
+    NSString *_customIdentifier;
     unsigned long long _minimumOccurrencesForInclusion;
     NSPredicate *_predicate;
+    NSArray *_valueKeyPaths;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)histogramQueryForPersistedHistogramsForStream:(id)arg1 withCustomIdentifier:(id)arg2;
++ (id)histogramQueryForStream:(id)arg1 interval:(id)arg2 predicate:(id)arg3 valueKeyPaths:(id)arg4;
 + (id)histogramQueryForStream:(id)arg1 interval:(id)arg2 withPredicate:(id)arg3;
 + (id)histogramQueryForStream:(id)arg1 interval:(id)arg2;
+@property(retain, nonatomic) NSArray *valueKeyPaths; // @synthesize valueKeyPaths=_valueKeyPaths;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) unsigned long long minimumOccurrencesForInclusion; // @synthesize minimumOccurrencesForInclusion=_minimumOccurrencesForInclusion;
 @property(nonatomic) _Bool includeRemoteResults; // @synthesize includeRemoteResults=_includeRemoteResults;
 @property(nonatomic) _Bool includeLocalResults; // @synthesize includeLocalResults=_includeLocalResults;
-@property(nonatomic) _Bool isCategory; // @synthesize isCategory=_isCategory;
+@property(retain, nonatomic) NSString *customIdentifier; // @synthesize customIdentifier=_customIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType histogramHandler; // @synthesize histogramHandler=_histogramHandler;
 @property(retain, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) _DKEventStream *stream; // @synthesize stream=_stream;
@@ -41,9 +45,12 @@
 - (id)_constructFetchRequestPredicate;
 - (id)_histogramFromEvents:(id)arg1;
 - (id)_valueForEvent:(id)arg1;
+- (id)_histogramFromValueCounts:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+- (id)_defaultValueKeyPaths;
+- (id)init;
 
 @end
 

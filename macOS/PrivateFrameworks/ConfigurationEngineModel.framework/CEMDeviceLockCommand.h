@@ -12,20 +12,23 @@
 
 @interface CEMDeviceLockCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadMessage;
+    NSString *_payloadPhoneNumber;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withMessage:(id)arg2 withPhoneNumber:(id)arg3;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadPhoneNumber; // @synthesize payloadPhoneNumber=_payloadPhoneNumber;
+@property(copy, nonatomic) NSString *payloadMessage; // @synthesize payloadMessage=_payloadMessage;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (BOOL)mustBeSupervised;
-@property(readonly, nonatomic) NSString *payloadPhoneNumber;
-@property(readonly, nonatomic) NSString *payloadMessage;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

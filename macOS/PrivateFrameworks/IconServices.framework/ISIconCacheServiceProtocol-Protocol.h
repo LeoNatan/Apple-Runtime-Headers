@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class ISImageDescriptor;
+@class ISGenerationRequest;
 
 @protocol ISIconCacheServiceProtocol <NSObject>
 - (void)clearCacheWithCompletion:(void (^)(BOOL))arg1;
-- (void)fetchImageDataDescriptor:(ISImageDescriptor *)arg1 completion:(void (^)(NSData *, NSUUID *))arg2;
+- (void)fetchImageDataWithGenerationRequest:(ISGenerationRequest *)arg1 completion:(void (^)(NSData *, NSUUID *))arg2;
 - (void)fetchCachePathWithCompletion:(void (^)(NSString *, NSString *))arg1;
 @end
 

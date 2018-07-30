@@ -27,17 +27,21 @@ __attribute__((visibility("hidden")))
 + (struct CGPoint)convertPointToCGCoordinates:(struct CGPoint)arg1;
 + (struct CGRect)convertRectFromCGCoordinates:(struct CGRect)arg1;
 + (struct CGRect)convertRectToCGCoordinates:(struct CGRect)arg1;
-+ (void)coalesceUpdateOnPort:(unsigned int)arg1;
++ (void)performBarrier:(CDUnknownBlockType)arg1;
++ (void)coalesceUpdateOnSendRight:(struct _mach_right_send)arg1;
 + (void)reenableScreenUpdates;
 + (void)disableScreenUpdates;
 + (void)synchronizeForCarbon;
 + (void)synchronize;
+- (void)invalidateAlphaShape;
 - (void)_prepareForRelativeMoveForWindow:(id)arg1;
 - (BOOL)_hasUncommittedSpaceGeometryChanges;
+@property double backdropChameleonContribution;
 @property double backdropBleedFraction;
 @property BOOL backdropsAreFrozen;
 - (id)makeBackdrop;
 - (id)makeLayerSurface;
+- (unsigned long long)bestParentSpaceContainingWindow;
 - (unsigned long long)bestSpaceContainingWindow;
 - (unsigned long long)bestVisibleSpaceContainingWindow;
 - (unsigned long long)bestUserSpaceContainingWindow;
@@ -45,6 +49,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isExpectedToBeOnSpace:(unsigned long long)arg1;
 - (id)makeLocallyRenderedLayerSurface;
 - (BOOL)_hasUncommittedSpaceAssignmentChanges;
+- (void)unlockWindowSublevel;
+- (void)lockWindowToAbsoluteSublevel:(int)arg1;
 - (void)reassociateWithSpacesByGeometry;
 - (void)disassociateFromSpacesIfOrderedOut;
 - (void)setDesiredSpace:(unsigned long long)arg1;
@@ -54,7 +60,6 @@ __attribute__((visibility("hidden")))
 - (void)orderAboveWindow:(id)arg1;
 - (void)orderBack;
 - (void)orderFront;
-@property int subLevel;
 @property int level;
 - (void)orderGroupOut;
 - (void)orderGroupBelowWindow:(id)arg1;
@@ -91,6 +96,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(copy) struct CGSRegionObject *activationShape; // @dynamic activationShape;
 @property(copy) struct CGSRegionObject *buttonShape; // @dynamic buttonShape;
+@property(copy) struct CGColor *chameleonOverrideColor; // @dynamic chameleonOverrideColor;
 @property(copy) struct CGSRegionObject *commandModifierExclusionShape; // @dynamic commandModifierExclusionShape;
 @property(copy) NSCGSWindowCornerMask *cornerMask; // @dynamic cornerMask;
 @property(copy) struct CGSRegionObject *dragShape; // @dynamic dragShape;

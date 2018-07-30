@@ -8,7 +8,7 @@
 
 #import "PLPTPTransferableAdditionalAssetAttributes.h"
 
-@class CLLocation, NSData, NSDate, NSNumber, NSSet, NSString, PLAssetDescription, PLManagedAsset, PLUnmanagedAdjustment;
+@class CLLocation, NSData, NSDate, NSNumber, NSSet, NSString, PLAssetDescription, PLManagedAsset, PLSceneprint, PLUnmanagedAdjustment;
 
 @interface PLAdditionalAssetAttributes : PLManagedObject <PLPTPTransferableAdditionalAssetAttributes>
 {
@@ -19,11 +19,13 @@
 + (id)listOfSyncedProperties;
 + (void)fromExtraDurationData:(id)arg1 getStillDisplayTime:(CDStruct_1b6d18a9 *)arg2 videoDuration:(CDStruct_1b6d18a9 *)arg3;
 + (id)newExtraDurationDataFromStillDisplayTime:(CDStruct_1b6d18a9)arg1 videoDuration:(CDStruct_1b6d18a9)arg2;
++ (id)descriptionForDestinationAssetCopyState:(short)arg1;
 @property(retain, nonatomic, setter=_setCachedShiftedLocation:) CLLocation *_cachedShiftedLocation; // @synthesize _cachedShiftedLocation=__cachedShiftedLocation;
 - (void)dealloc;
 @property(nonatomic) _Bool shiftedLocationIsValid; // @dynamic shiftedLocationIsValid;
 @property(retain, nonatomic) CLLocation *shiftedLocation;
 - (void)willSave;
+- (void)truncatedOriginalCheckChangedValues:(id)arg1;
 - (_Bool)isUserInterfaceChange;
 - (_Bool)isSyncableChange;
 - (_Bool)supportsCloudUpload;
@@ -36,10 +38,12 @@
 - (void)removeCloudRecoveryStateFlag:(long long)arg1;
 - (void)setCloudRecoveryStateFlag:(long long)arg1;
 - (_Bool)hasConsistentCloudState;
+- (void)setSceneprintWithData:(id)arg1;
 
 // Remaining properties
 @property(copy, nonatomic) NSString *adjustedFingerPrint; // @dynamic adjustedFingerPrint;
 @property(nonatomic) _Bool allowedForAnalysis; // @dynamic allowedForAnalysis;
+@property(retain, nonatomic) NSDate *alternateImportImageDate; // @dynamic alternateImportImageDate;
 @property(retain, nonatomic) PLManagedAsset *asset; // @dynamic asset;
 @property(retain, nonatomic) PLAssetDescription *assetDescription; // @dynamic assetDescription;
 @property(nonatomic) short cameraCaptureDevice; // @dynamic cameraCaptureDevice;
@@ -55,6 +59,7 @@
 @property(retain, nonatomic) NSString *customMomentUUID; // @dynamic customMomentUUID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic) short destinationAssetCopyState; // @dynamic destinationAssetCopyState;
 @property(retain, nonatomic) NSData *distanceIdentity; // @dynamic distanceIdentity;
 @property(retain, nonatomic) NSString *editorBundleID; // @dynamic editorBundleID;
 @property(retain, nonatomic) NSNumber *embeddedThumbnailHeight; // @dynamic embeddedThumbnailHeight;
@@ -65,7 +70,6 @@
 @property(retain, nonatomic) NSNumber *externalUsageIntent; // @dynamic externalUsageIntent;
 @property(retain, nonatomic) NSData *faceRegions; // @dynamic faceRegions;
 @property(readonly) unsigned int hash;
-@property(retain, nonatomic) id importSessionID; // @dynamic importSessionID;
 @property(nonatomic) short importedBy; // @dynamic importedBy;
 @property(retain, nonatomic) NSSet *keywords; // @dynamic keywords;
 @property(retain, nonatomic) NSDate *lastUploadAttemptDate; // @dynamic lastUploadAttemptDate;
@@ -94,7 +98,10 @@
 @property(retain, nonatomic) NSDate *sceneAnalysisTimestamp; // @dynamic sceneAnalysisTimestamp;
 @property(nonatomic) short sceneAnalysisVersion; // @dynamic sceneAnalysisVersion;
 @property(retain, nonatomic) NSSet *sceneClassifications; // @dynamic sceneClassifications;
+@property(retain, nonatomic) PLSceneprint *sceneprint; // @dynamic sceneprint;
 @property(nonatomic) long long shareCount; // @dynamic shareCount;
+@property(copy, nonatomic) NSString *shareOriginator; // @dynamic shareOriginator;
+@property(nonatomic) short shareType; // @dynamic shareType;
 @property(retain, nonatomic) NSData *shiftedLocationData; // @dynamic shiftedLocationData;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) NSString *timeZoneName; // @dynamic timeZoneName;

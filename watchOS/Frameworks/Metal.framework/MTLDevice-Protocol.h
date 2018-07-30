@@ -6,10 +6,12 @@
 
 #import "NSObject.h"
 
-@class MTLCompileOptions, MTLComputePipelineDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLTextureDescriptor, NSArray, NSBundle, NSObject<OS_dispatch_data>, NSString, NSURL;
+@class MTLCompileOptions, MTLComputePipelineDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLIndirectCommandBufferDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLSharedEventHandle, MTLTextureDescriptor, NSArray, NSBundle, NSObject<OS_dispatch_data>, NSString, NSURL;
 
 @protocol MTLDevice <NSObject>
+@property(readonly) unsigned int maxBufferLength;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) _Bool programmableSamplePositionsSupported;
+@property(readonly) unsigned int maxArgumentBufferSamplerCount;
 @property(readonly) unsigned int maxThreadgroupMemoryLength;
 @property(readonly) unsigned int currentAllocatedSize;
 @property(readonly, getter=areRasterOrderGroupsSupported) _Bool rasterOrderGroupsSupported;
@@ -23,8 +25,13 @@
 @property(readonly) CDStruct_32a7f38a maxThreadsPerThreadgroup;
 @property(readonly) unsigned long long registryID;
 @property(readonly) NSString *name;
+- (id <MTLSharedEvent>)newSharedEventWithHandle:(MTLSharedEventHandle *)arg1;
+- (id <MTLSharedEvent>)newSharedEvent;
+- (id <MTLEvent>)newEvent;
+- (id <MTLIndirectCommandBuffer>)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCommandCount:(unsigned int)arg2 options:(unsigned int)arg3;
 - (id <MTLArgumentEncoder>)newArgumentEncoderWithArguments:(NSArray *)arg1;
 - (void)getDefaultSamplePositions:(CDStruct_6e3f967a *)arg1 count:(unsigned int)arg2;
+- (unsigned int)minimumTextureBufferAlignmentForPixelFormat:(unsigned int)arg1;
 - (unsigned int)minimumLinearTextureAlignmentForPixelFormat:(unsigned int)arg1;
 - (_Bool)supportsTextureSampleCount:(unsigned int)arg1;
 - (_Bool)supportsFeatureSet:(unsigned int)arg1;

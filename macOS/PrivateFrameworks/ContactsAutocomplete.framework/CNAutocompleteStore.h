@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CNAutocompleteStoreQueryHelper, CNAutocompleteUserSession, CNCancelationToken;
+@class CNAutocompleteStoreQueryHelper, CNAutocompleteStoreReproStringRecorder, CNAutocompleteUserSession, CNCancelationToken;
 
 @interface CNAutocompleteStore : NSObject
 {
@@ -14,6 +14,7 @@
     CNAutocompleteStoreQueryHelper *_queryHelper;
     CNCancelationToken *_currentFetchToken;
     CNAutocompleteUserSession *_userSession;
+    CNAutocompleteStoreReproStringRecorder *_reproStringRecorder;
     id <CNAutocompleteProbeProvider> _probeProvider;
     id <CNScheduler> _scheduler;
 }
@@ -21,6 +22,7 @@
 + (double)defaultFetchCoalescingInterval;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) id <CNAutocompleteProbeProvider> probeProvider; // @synthesize probeProvider=_probeProvider;
+@property(retain, nonatomic) CNAutocompleteStoreReproStringRecorder *reproStringRecorder; // @synthesize reproStringRecorder=_reproStringRecorder;
 @property(retain, nonatomic) CNAutocompleteUserSession *userSession; // @synthesize userSession=_userSession;
 @property(nonatomic) __weak CNCancelationToken *currentFetchToken; // @synthesize currentFetchToken=_currentFetchToken;
 @property(readonly, nonatomic) CNAutocompleteStoreQueryHelper *queryHelper; // @synthesize queryHelper=_queryHelper;

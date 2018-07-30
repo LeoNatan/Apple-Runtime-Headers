@@ -20,6 +20,7 @@
 - (id)titleParagraphStyleWithWrapping:(_Bool)arg1;
 - (id)titleSmallFont;
 - (id)titleLargeFont;
+- (id)messageParagraphStyle;
 - (id)messageSmallFont;
 - (id)messageLargeFont;
 - (id)styleTextAsTitle:(id)arg1 boundingSize:(struct CGSize)arg2;

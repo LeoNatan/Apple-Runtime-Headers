@@ -20,8 +20,10 @@ __attribute__((visibility("hidden")))
     struct VoiceIOFarEndVersionInfo _farEndVersionInfo;
     unsigned int _remoteCodecType;
     double _remoteCodecSampleRate;
+    _Bool _enableDNNVAD;
 }
 
+@property(nonatomic) _Bool enableDNNVAD; // @synthesize enableDNNVAD=_enableDNNVAD;
 @property(readonly, nonatomic) _Bool isFarEndVersionInfoValid; // @synthesize isFarEndVersionInfoValid=_isFarEndVersionInfoValid;
 @property(nonatomic) struct AudioStreamBasicDescription format; // @synthesize format=_format;
 @property(nonatomic) int deviceRole; // @synthesize deviceRole=_deviceRole;

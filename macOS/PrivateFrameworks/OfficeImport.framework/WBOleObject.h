@@ -6,7 +6,6 @@
 
 #import <OfficeImport/WBPicture.h>
 
-__attribute__((visibility("hidden")))
 @interface WBOleObject : WBPicture
 {
 }

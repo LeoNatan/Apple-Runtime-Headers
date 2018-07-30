@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     TSUTemporaryDirectory *_temporaryDirectory;
     NSMutableDictionary *_bookmarkDataURLsForFilenames;
+    NSMutableDictionary *_digestStringsForFilenames;
     NSObject<OS_dispatch_queue> *_queue;
 }
 

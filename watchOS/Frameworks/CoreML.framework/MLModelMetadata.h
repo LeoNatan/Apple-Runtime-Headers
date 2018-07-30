@@ -28,8 +28,6 @@
 - (id)debugDescription;
 - (id)initWithName:(id)arg1 shortDescription:(id)arg2 versionString:(id)arg3 author:(id)arg4 license:(id)arg5 creatorDefined:(id)arg6;
 - (id)initWithName:(id)arg1;
-- (id)initWithMetadataFormat:(struct _MLModelMetadataSpecification *)arg1 error:(id *)arg2;
-- (id)initWithSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
 
 @end
 

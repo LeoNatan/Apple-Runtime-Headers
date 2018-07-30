@@ -6,11 +6,12 @@
 
 #import <StoreKit/SKRequest.h>
 
+__attribute__((visibility("hidden")))
 @interface SKHandleInvalidReceiptRequest : SKRequest
 {
 }
 
-- (void)_sendXPCMessage;
+- (void)_start;
 
 @end
 

@@ -13,6 +13,7 @@
 @interface PUICEmojiSection : NSObject <PUICCollectionViewSection>
 {
     NSArray *_frequentlyUsedEmojiArray;
+    _Bool _showHeader;
     NSString *_categoryIdentifier;
     NSString *_language;
 }
@@ -21,6 +22,7 @@
 + (Class)headerClass;
 + (id)cellReuseIdentifier;
 + (Class)cellClass;
+@property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 - (void).cxx_destruct;
@@ -31,6 +33,7 @@
 - (id)indexItem;
 - (id)displayEmojiStringAtIndex:(int)arg1;
 - (id)emojiAtIndex:(int)arg1;
+- (id)initWithCategoryIdentifier:(id)arg1 withHeader:(_Bool)arg2;
 - (id)initWithCategoryIdentifier:(id)arg1;
 
 // Remaining properties

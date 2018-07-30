@@ -8,24 +8,26 @@
 
 #import "NSSecureCoding.h"
 
-@class NSMutableDictionary;
+@class HMFUnfairLock, NSMutableDictionary;
 
 @interface HMDNotificationRegistry : HMFObject <NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
     NSMutableDictionary *_notificationRegistry;
 }
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)doesKey:(id)arg1 matchMediaProfile:(id)arg2;
 + (id)keyForProperty:(id)arg1 mediaProfile:(id)arg2;
++ (id)_createCharacteristicsMapForCharacteristics:(id)arg1;
 + (id)keyForCharacteristic:(id)arg1;
-@property(retain, nonatomic) NSMutableDictionary *notificationRegistry; // @synthesize notificationRegistry=_notificationRegistry;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)auditUsersForNotifications:(id)arg1 forHome:(id)arg2;
 - (void)disableNotification:(id)arg1 user:(id)arg2 ignoreLockReq:(_Bool)arg3 home:(id)arg4;
 - (void)deregisterUsers:(id)arg1 forHome:(id)arg2;
+- (id)_delayedBlocksCollectedWhileDeregisteringUsers:(id)arg1 forHome:(id)arg2 isiOS:(_Bool)arg3 isResident:(_Bool)arg4;
 - (id)allCharacteristicIdentifiers;
 - (id)usersRegisteredForNotificationsForProperties:(id)arg1;
 - (id)usersRegisteredForNotificationsForCharacteristics:(id)arg1;
@@ -37,6 +39,7 @@
 - (_Bool)disableNotificationForCharacteristics:(id)arg1 forUser:(id)arg2 characteristicsToDisableEvents:(id *)arg3;
 - (_Bool)enableNotificationForCharacteristics:(id)arg1 forUser:(id)arg2;
 - (id)shortDescription;
+@property(readonly, nonatomic) NSMutableDictionary *notificationRegistry; // @synthesize notificationRegistry=_notificationRegistry;
 - (id)init;
 
 @end

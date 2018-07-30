@@ -7,6 +7,11 @@
 #import "PQLConnection.h"
 
 @interface PQLConnection (CPLExtensions)
++ (id)cplInjectionFor:(id)arg1 isNotInIndexSet:(id)arg2;
++ (id)cplInjectionFor:(id)arg1 isInIndexSet:(id)arg2;
+- (BOOL)cplRegisterIndexSetMatch;
+- (BOOL)_cplRegisterDeterministicFunction:(id)arg1 nArgs:(int)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)cplFetchObject:(CDUnknownBlockType)arg1 sql:(id)arg2;
 - (id)cplFetchObjectOfClass:(Class)arg1 sql:(id)arg2;
 - (id)cplFetchObjectOfClass:(Class)arg1 initializer:(SEL)arg2 sql:(id)arg3;
 - (id)cplFetch:(id)arg1;

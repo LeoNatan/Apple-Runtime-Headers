@@ -11,7 +11,7 @@
 }
 
 + (id)accountOwnerType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

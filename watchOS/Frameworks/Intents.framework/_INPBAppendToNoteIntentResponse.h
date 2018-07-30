@@ -7,28 +7,31 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBAppendToNoteIntentResponse.h"
 
-@class PBUnknownFields, _INPBNote;
+@class NSString, _INPBNote;
 
-@interface _INPBAppendToNoteIntentResponse : PBCodable <NSCopying>
+@interface _INPBAppendToNoteIntentResponse : PBCodable <_INPBAppendToNoteIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBNote *_note;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBNote *note; // @synthesize note=_note;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasNote;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

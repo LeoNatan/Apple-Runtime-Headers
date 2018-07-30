@@ -17,5 +17,7 @@
 - (void)_didChangeValuesForKeys:(id)arg1;
 - (void)_willChangeValuesForKeys:(id)arg1;
 - (void)_notifyObserversForKeyPath:(id)arg1 change:(id)arg2;
+- (void)_didEndKeyValueObserving;
+- (void)_willBeginKeyValueObserving;
 @end
 

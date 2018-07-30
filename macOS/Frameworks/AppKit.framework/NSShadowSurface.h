@@ -6,6 +6,7 @@
 
 #import <AppKit/NSSurface.h>
 
+__attribute__((visibility("hidden")))
 @interface NSShadowSurface : NSSurface
 {
     int _height;

@@ -14,13 +14,13 @@
 __attribute__((visibility("hidden")))
 @interface FI_TColumnCellView : NSTableCellView <TICloudBadgeButtonContainer, TInlineProgressViewContainer>
 {
-    struct TNSRef<FI_TBasicImageView *, void> _iconImageView;
-    struct TNSRef<FI_TButton *, void> _ejectButton;
-    struct TNSRef<FI_TTextField *, void> _sizeTextField;
-    struct TNSRef<FI_TBadgeImageButton *, void> _iCloudBadgeButton;
-    struct TNSRef<FI_TBasicImageView *, void> _syncExtBadgeImageView;
-    struct TNSRef<FI_TTagsImageView *, void> _tagImageView;
-    struct TNSRef<FI_TInlineProgressView *, void> _progressView;
+    struct TNSRef<FI_TBasicImageView, void> _iconImageView;
+    struct TNSRef<FI_TButton, void> _ejectButton;
+    struct TNSRef<FI_TTextField, void> _sizeTextField;
+    struct TNSRef<FI_TICloudBadgeButton, void> _iCloudBadgeButton;
+    struct TNSRef<FI_TBasicImageView, void> _syncExtBadgeImageView;
+    struct TNSRef<FI_TTagsImageView, void> _tagImageView;
+    struct TNSRef<FI_TInlineProgressView, void> _progressView;
     struct TICloudStateCoordinator _iCloudStateCoordinator;
     function_d15ff7cc _syncExtensionBadgeFunc;
     struct CGSize _iconSize;
@@ -53,11 +53,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isEditing) _Bool editing; // @dynamic editing;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @dynamic dimmed;
 - (void)setBackgroundStyle:(long long)arg1;
-- (void)viewDidMoveToWindow;
-- (void)_windowChangedKeyState;
 - (void)prepareForReuse;
-- (void)setTags:(const vector_e0f2bd7e *)arg1;
-- (vector_e0f2bd7e)tags;
+- (void)setTags:(const vector_12bd641b *)arg1;
+- (vector_12bd641b)tags;
 @property(readonly, nonatomic) _Bool hasTagImage; // @dynamic hasTagImage;
 - (void)updateProgressView;
 - (void)setProgressStatus:(const struct TNodeProgressStatus *)arg1;
@@ -65,14 +63,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)updateSyncExtensionBadgeImage;
 - (_Bool)setSyncExtBadgeAndToolTipFunc:(const function_d15ff7cc *)arg1;
 @property(readonly, nonatomic) _Bool hasSyncExtBadgeImage; // @dynamic hasSyncExtBadgeImage;
-- (void)setICloudBadgeBRBadge:(int)arg1 toolTip:(const struct TString *)arg2 clickHandler:(const function_b1fce659 *)arg3;
+- (void)setICloudBadge:(int)arg1 toolTip:(const struct TString *)arg2 clickHandler:(const function_b1fce659 *)arg3;
 @property(readonly, nonatomic) _Bool hasICloudBadgeImage; // @dynamic hasICloudBadgeImage;
 @property(copy, nonatomic) NSString *sizeStr;
 - (_Bool)hasSizeStr;
 - (void)setEjectButtonFunc:(const function_b1fce659 *)arg1;
 @property(readonly, nonatomic) _Bool hasEjectButton; // @dynamic hasEjectButton;
 - (void)updateTextColors;
-- (_Bool)isSelected;
 @property(nonatomic) _Bool shouldEdit; // @dynamic shouldEdit;
 @property(retain, nonatomic) NSFont *titleFont; // @dynamic titleFont;
 @property(copy, nonatomic) NSString *titleStr; // @dynamic titleStr;

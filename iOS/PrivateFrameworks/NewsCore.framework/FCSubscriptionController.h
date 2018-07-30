@@ -9,7 +9,7 @@
 #import "FCAppActivityObserving.h"
 #import "FCSubscriptionListObserving.h"
 
-@class FCAppConfigurationManager, FCNotificationController, FCPurchaseController, FCSubscriptionList, FCTagController, FCThreadSafeMutableDictionary, FCThreadSafeMutableSet, NSHashTable, NSString;
+@class FCNotificationController, FCPurchaseController, FCSubscriptionList, FCTagController, FCThreadSafeMutableDictionary, FCThreadSafeMutableSet, NSHashTable, NSString;
 
 @interface FCSubscriptionController : NSObject <FCSubscriptionListObserving, FCAppActivityObserving>
 {
@@ -20,10 +20,10 @@
     NSHashTable *_observers;
     FCNotificationController *_notificationController;
     FCPurchaseController *_purchaseController;
-    FCAppConfigurationManager *_appConfigurationManager;
+    id <FCCoreConfigurationManager> _configurationManager;
 }
 
-@property(retain, nonatomic) FCAppConfigurationManager *appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
+@property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) FCPurchaseController *purchaseController; // @synthesize purchaseController=_purchaseController;
 @property(retain, nonatomic) FCNotificationController *notificationController; // @synthesize notificationController=_notificationController;
 @property(copy, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
@@ -32,17 +32,20 @@
 @property(retain, nonatomic) FCTagController *tagController; // @synthesize tagController=_tagController;
 @property(retain, nonatomic) FCSubscriptionList *subscriptionList; // @synthesize subscriptionList=_subscriptionList;
 - (void).cxx_destruct;
-- (void)_handleSubscriptionType:(unsigned long long)arg1 addedSubscriptionsByType:(id)arg2 removedSubscriptionsByType:(id)arg3 changedSubscriptionsByType:(id)arg4 eventInitiationLevel:(long long)arg5;
-- (void)_handleTagSubscriptionsAdded:(id)arg1 tagSubscriptionsChanged:(id)arg2 tagSubscriptionsRemoved:(id)arg3 eventInitiationLevel:(long long)arg4;
+- (void)_handleNonTagSubscriptionType:(unsigned long long)arg1 addedSubscriptionsByType:(id)arg2 removedSubscriptionsByType:(id)arg3 changedSubscriptionsByType:(id)arg4 eventInitiationLevel:(long long)arg5;
+- (void)_handleTagSubscriptionsAdded:(id)arg1 tagSubscriptionsChanged:(id)arg2 tagSubscriptionsMoved:(id)arg3 tagSubscriptionsRemoved:(id)arg4 eventInitiationLevel:(long long)arg5;
 - (void)_notifyOfTagsWithNotificationSupport:(id)arg1;
-- (void)_notifyOfTagsAdded:(id)arg1 tagsChanged:(id)arg2 tagsRemoved:(id)arg3 subscriptionType:(unsigned long long)arg4 eventInitiationLevel:(long long)arg5;
+- (void)_notifyOfTagsAdded:(id)arg1 tagsChanged:(id)arg2 tagsMoved:(id)arg3 tagsRemoved:(id)arg4 subscriptionType:(unsigned long long)arg5 eventInitiationLevel:(long long)arg6;
+- (void)_prewarmFeedNavAssetsInOrderedSubscribedTags:(id)arg1 limit:(unsigned long long)arg2;
 - (void)_fetchTagsForIDs:(id)arg1 maxCachedAge:(double)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_integrateTags:(id)arg1 eventInitiationLevel:(long long)arg2;
 - (void)_fetchMissingTagsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_refreshChannelsWithNotificationsEnabled;
-- (void)_purchaseListDidChange;
+- (void)_updateNotificationsForPurchaseTagIDs:(id)arg1 isPaid:(_Bool)arg2;
+- (void)_purchaseListDidRemoveTagIDs:(id)arg1;
+- (void)_purchaseListDidAddTagIDs:(id)arg1;
 - (void)activityObservingApplicationDidEnterBackground;
-- (void)subscriptionList:(id)arg1 didAddSubscriptions:(id)arg2 changeSubscriptions:(id)arg3 removeSubscriptions:(id)arg4 eventInitiationLevel:(long long)arg5;
+- (void)subscriptionList:(id)arg1 didAddSubscriptions:(id)arg2 changeSubscriptions:(id)arg3 moveSubscriptions:(id)arg4 removeSubscriptions:(id)arg5 eventInitiationLevel:(long long)arg6;
 - (_Bool)addGroupableSubscriptionForTagID:(id)arg1 origin:(unsigned long long)arg2 eventInitiationLevel:(long long)arg3;
 - (void)addAutoFavoriteSubscriptionForTagIDs:(id)arg1 groupableSubscriptionForTagIDs:(id)arg2 originProvider:(CDUnknownBlockType)arg3 eventInitiationLevelProvider:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)removeAllAutoFavoriteSubscriptions:(CDUnknownBlockType)arg1;
@@ -54,6 +57,7 @@
 - (_Bool)addMutedSubscriptionForTagID:(id)arg1 eventInitiationLevel:(long long)arg2;
 - (_Bool)hasMutedSubscriptionForTagID:(id)arg1;
 - (_Bool)hasAutoFavoriteSubscriptionForTagID:(id)arg1;
+- (_Bool)moveSubscriptionForTagID:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)newlySubscribedTagIDsInDateRange:(id)arg1;
 - (void)fetchSubscribedTagsWithCallbackQueue:(id)arg1 preferCache:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchAllTagsWithCallbackQueue:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
@@ -84,12 +88,13 @@
 - (id)mutedTagIDs;
 - (id)subscribedTagIDs;
 - (id)cachedSubscribedTags;
+- (id)orderedCachedSubscribedTags;
 - (id)subscribedTagIDsWithNotificationsEnabled;
 - (id)subscriptions;
 - (id)subscribedTagForTagID:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)initWithSubscriptionList:(id)arg1 tagController:(id)arg2 notificationController:(id)arg3 purchaseController:(id)arg4 appConfigurationManager:(id)arg5 appActivityMonitor:(id)arg6;
+- (id)initWithSubscriptionList:(id)arg1 tagController:(id)arg2 notificationController:(id)arg3 purchaseController:(id)arg4 configurationManager:(id)arg5 appActivityMonitor:(id)arg6;
 - (id)init;
 
 // Remaining properties

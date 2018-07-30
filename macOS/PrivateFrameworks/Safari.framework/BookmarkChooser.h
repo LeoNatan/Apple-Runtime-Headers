@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSTextField *promptField;
     WBSFaviconRequestsController *_tableRequestsController;
     WBSFaviconRequestsController *_outlineRequestsController;
+    vector_06e666a8 _uiShownRowIndexes;
     BOOL _canChooseBookmarkLeaves;
     BOOL _canChooseBookmarkCollections;
     id <BookmarkChooserDelegate> _delegate;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <BookmarkChooserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL canChooseBookmarkCollections; // @synthesize canChooseBookmarkCollections=_canChooseBookmarkCollections;
 @property(nonatomic) BOOL canChooseBookmarkLeaves; // @synthesize canChooseBookmarkLeaves=_canChooseBookmarkLeaves;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_visibleSheetIsBlockingPropertyChanges;
 - (void)_updatePrompt;

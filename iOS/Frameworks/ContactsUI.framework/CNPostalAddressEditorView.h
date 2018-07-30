@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)countryPicker:(id)arg1 didPickCountryCode:(id)arg2;
 - (void)countryPickerDidCancel:(id)arg1;
+- (void)keyboardWillShow:(id)arg1;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)textFieldChanged:(id)arg1;
 - (void)_invalidateCellsLayout;

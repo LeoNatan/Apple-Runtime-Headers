@@ -8,6 +8,7 @@
 
 @class NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface C3DIONSZipFileArchive : NSObject
 {
     NSDictionary *_contents;

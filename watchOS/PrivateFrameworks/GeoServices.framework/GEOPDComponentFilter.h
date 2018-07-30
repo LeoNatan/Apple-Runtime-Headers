@@ -8,8 +8,9 @@
 
 #import "NSCopying.h"
 
-@class GEOPDAddressFilter, GEOPDAddressObjectFilter, GEOPDAmenitiesFilter, GEOPDAssociatedAppFilter, GEOPDBoundsFilter, GEOPDBrowseCategoriesFilter, GEOPDBusinessClaimFilter, GEOPDCaptionedPhotoFilter, GEOPDContainedPlaceFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDExternalActionFilter, GEOPDFactoidFilter, GEOPDFlyoverFilter, GEOPDHoursFilter, GEOPDIconFilter, GEOPDLocationEventFilter, GEOPDMessageLinkFilter, GEOPDPhotoFilter, GEOPDPlaceInfoFilter, GEOPDPlacecardURLFilter, GEOPDPriceDescriptionFilter, GEOPDQuickLinkFilter, GEOPDRapFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDRestaurantReservationLinkFilter, GEOPDResultSnippetFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDSimpleRestaurantMenuTextFilter, GEOPDSpatialLookupFilter, GEOPDStyleAttributesFilter, GEOPDTextBlockFilter, GEOPDTipFilter, GEOPDTransitAttributionFilter, GEOPDTransitIncidentFilter, GEOPDTransitInfoFilter, GEOPDTransitInfoSnippetFilter, GEOPDTransitScheduleFilter, GEOPDVenueInfoFilter, GEOPDWifiFingerprintFilter, PBUnknownFields;
+@class GEOPDAddressFilter, GEOPDAddressObjectFilter, GEOPDAmenitiesFilter, GEOPDAnnotatedItemListFilter, GEOPDAssociatedAppFilter, GEOPDBoundsFilter, GEOPDBrowseCategoriesFilter, GEOPDBusinessClaimFilter, GEOPDCaptionedPhotoFilter, GEOPDContainedPlaceFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDExternalActionFilter, GEOPDFactoidFilter, GEOPDFlyoverFilter, GEOPDHoursFilter, GEOPDIconFilter, GEOPDLocationEventFilter, GEOPDMessageLinkFilter, GEOPDPhotoFilter, GEOPDPlaceInfoFilter, GEOPDPlacecardLayoutConfigurationFilter, GEOPDPlacecardURLFilter, GEOPDPoiEventFilter, GEOPDPriceDescriptionFilter, GEOPDQuickLinkFilter, GEOPDRapFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDRestaurantReservationLinkFilter, GEOPDResultSnippetFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDSimpleRestaurantMenuTextFilter, GEOPDSpatialLookupFilter, GEOPDStyleAttributesFilter, GEOPDTextBlockFilter, GEOPDTipFilter, GEOPDTransitAttributionFilter, GEOPDTransitIncidentFilter, GEOPDTransitInfoFilter, GEOPDTransitInfoSnippetFilter, GEOPDTransitScheduleFilter, GEOPDVenueInfoFilter, GEOPDWifiFingerprintFilter, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDComponentFilter : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
@@ -17,6 +18,7 @@
     GEOPDAddressFilter *_addressFilter;
     GEOPDAddressObjectFilter *_addressObjectFilter;
     GEOPDAmenitiesFilter *_amenitiesFilter;
+    GEOPDAnnotatedItemListFilter *_annotatedItemListFilter;
     GEOPDAssociatedAppFilter *_associatedAppFilter;
     GEOPDBoundsFilter *_boundsFilter;
     GEOPDBrowseCategoriesFilter *_browseCategoriesFilter;
@@ -34,7 +36,9 @@
     GEOPDMessageLinkFilter *_messageLinkFilter;
     GEOPDPhotoFilter *_photoFilter;
     GEOPDPlaceInfoFilter *_placeInfoFilter;
+    GEOPDPlacecardLayoutConfigurationFilter *_placecardLayoutConfigurationFilter;
     GEOPDPlacecardURLFilter *_placecardUrlFilter;
+    GEOPDPoiEventFilter *_poiEventFilter;
     GEOPDPriceDescriptionFilter *_priceDescriptionFilter;
     GEOPDQuickLinkFilter *_quickLinkFilter;
     GEOPDRapFilter *_rapFilter;
@@ -57,6 +61,9 @@
     GEOPDWifiFingerprintFilter *_wifiFingerprintFilter;
 }
 
+@property(retain, nonatomic) GEOPDPlacecardLayoutConfigurationFilter *placecardLayoutConfigurationFilter; // @synthesize placecardLayoutConfigurationFilter=_placecardLayoutConfigurationFilter;
+@property(retain, nonatomic) GEOPDPoiEventFilter *poiEventFilter; // @synthesize poiEventFilter=_poiEventFilter;
+@property(retain, nonatomic) GEOPDAnnotatedItemListFilter *annotatedItemListFilter; // @synthesize annotatedItemListFilter=_annotatedItemListFilter;
 @property(retain, nonatomic) GEOPDBrowseCategoriesFilter *browseCategoriesFilter; // @synthesize browseCategoriesFilter=_browseCategoriesFilter;
 @property(retain, nonatomic) GEOPDPriceDescriptionFilter *priceDescriptionFilter; // @synthesize priceDescriptionFilter=_priceDescriptionFilter;
 @property(retain, nonatomic) GEOPDIconFilter *iconFilter; // @synthesize iconFilter=_iconFilter;
@@ -110,6 +117,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPlacecardLayoutConfigurationFilter;
+@property(readonly, nonatomic) _Bool hasPoiEventFilter;
+@property(readonly, nonatomic) _Bool hasAnnotatedItemListFilter;
 @property(readonly, nonatomic) _Bool hasBrowseCategoriesFilter;
 @property(readonly, nonatomic) _Bool hasPriceDescriptionFilter;
 @property(readonly, nonatomic) _Bool hasIconFilter;
@@ -158,6 +168,7 @@
 - (id)initReviewUserPhotoFilterWithTraits:(id)arg1;
 - (id)initResultSnippetFilterWithTraits:(id)arg1;
 - (id)initRestaurantReservationLinkFilterWithTraits:(id)arg1;
+- (id)initAnnotatedItemListFilterWithTraits:(id)arg1;
 - (id)initCaptionedPhotoFilterWithTraits:(id)arg1;
 - (id)initPhotoFilterWithTraits:(id)arg1;
 - (id)initEntityFilterWithSpokenNames;

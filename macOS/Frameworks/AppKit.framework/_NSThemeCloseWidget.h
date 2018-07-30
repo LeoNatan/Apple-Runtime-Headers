@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSThemeWidget.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSThemeCloseWidget : _NSThemeWidget
 {
 }

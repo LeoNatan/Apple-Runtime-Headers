@@ -7,35 +7,37 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBGetFileInformationIntentResponse.h"
 
-@class PBUnknownFields, _INPBFileProperty, _INPBString;
+@class NSString, _INPBFileProperty, _INPBString;
 
-@interface _INPBGetFileInformationIntentResponse : PBCodable <NSCopying>
+@interface _INPBGetFileInformationIntentResponse : PBCodable <_INPBGetFileInformationIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_f2ecb737 _has;
+    _Bool _success;
     _INPBString *_entityName;
     _INPBFileProperty *_property;
-    _Bool _success;
-    CDStruct_f2ecb737 _has;
 }
 
-+ (id)options;
+@property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(retain, nonatomic) _INPBFileProperty *property; // @synthesize property=_property;
 @property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
-@property(nonatomic) _Bool success; // @synthesize success=_success;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(nonatomic) _Bool hasSuccess;
 @property(readonly, nonatomic) _Bool hasProperty;
 @property(readonly, nonatomic) _Bool hasEntityName;
-@property(nonatomic) _Bool hasSuccess;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

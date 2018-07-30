@@ -12,6 +12,7 @@
 
 @optional
 - (void)registrationControlGetRegistrationStateForRegistrationType:(long long)arg1 requestID:(NSString *)arg2;
+- (void)registrationControlGetCurrentiMessageStateWithContextForRequestID:(NSString *)arg1;
 - (void)registrationControlSetRegistrationStateForRegistrationType:(long long)arg1 toState:(long long)arg2 requestID:(NSString *)arg3;
 - (void)appleCareSignOutUserWithRequestID:(NSString *)arg1;
 - (void)appleCareSignInUserName:(NSString *)arg1 DSID:(NSString *)arg2 authToken:(NSString *)arg3 requestID:(NSString *)arg4;
@@ -35,12 +36,18 @@
 - (void)continuityStopAdvertisingOfType:(long long)arg1;
 - (void)continuityStartAdvertisingOfType:(long long)arg1 withData:(NSData *)arg2 withOptions:(NSDictionary *)arg3;
 - (void)continuityClientInstanceCreated;
-- (NSArray *)participantsForGroupID:(NSString *)arg1 forNotifierWithUniqueID:(NSString *)arg2;
-- (void)cleanupGroupStatusNotifier:(NSString *)arg1;
-- (void)setupNewStatusNotifierWithConfiguration:(NSDictionary *)arg1;
+- (void)resetRealTimeEncryptionKeys:(NSString *)arg1 forGroup:(NSString *)arg2;
+- (void)requestRealTimeEncryptionMasterKeyMaterial:(NSString *)arg1 forGroup:(NSString *)arg2;
+- (void)sendRealTimeEncryptionMKMRecoveryRequest:(NSString *)arg1 toGroup:(NSString *)arg2;
+- (void)sendRealTimeEncryptionMasterKeyMaterial:(NSString *)arg1 toGroup:(NSString *)arg2;
+- (void)requestPublicKeysForRealTimeEncryption:(NSString *)arg1 forAccountWithID:(NSString *)arg2;
+- (void)sendRealTimeMediaPrekey:(NSString *)arg1 toGroup:(NSString *)arg2;
+- (void)setupRealtimeEncryptionController:(NSString *)arg1 forAccountWithID:(NSString *)arg2;
+- (void)requestActiveParticipantsForGroupSession:(NSString *)arg1;
 - (void)leaveGroupSession:(NSString *)arg1 participantInfo:(NSDictionary *)arg2;
-- (void)joinGroupSession:(NSString *)arg1 participantInfo:(NSDictionary *)arg2;
-- (void)updateMembers:(NSArray *)arg1 forGroupID:(NSString *)arg2 isTriggeredLocally:(BOOL)arg3 forSessionWithUniqueID:(NSString *)arg4;
+- (void)joinGroupSession:(NSString *)arg1 withOptions:(NSDictionary *)arg2;
+- (void)updateParticipantData:(NSData *)arg1 forGroup:(NSString *)arg2 sessionID:(NSString *)arg3 withContext:(NSData *)arg4;
+- (void)updateMembers:(NSArray *)arg1 forGroup:(NSString *)arg2 sessionID:(NSString *)arg3 withContext:(NSData *)arg4 triggeredLocally:(BOOL)arg5;
 - (void)sendAllocationRequest:(NSString *)arg1 options:(NSDictionary *)arg2;
 - (void)acknowledgeSessionID:(NSString *)arg1 clientID:(NSString *)arg2;
 - (void)setInviteTimetout:(long long)arg1 forSessionWithUniqueID:(NSString *)arg2;
@@ -78,6 +85,7 @@
 - (void)setPreferInfraWiFi:(BOOL)arg1 service:(NSString *)arg2;
 - (void)sendServerMessage:(NSDictionary *)arg1 command:(NSNumber *)arg2 usingAccountWithUniqueID:(NSString *)arg3;
 - (void)sendPersistedFile:(NSURL *)arg1 userInfo:(NSDictionary *)arg2 toDestinations:(NSArray *)arg3 usingAccountWithUniqueID:(NSString *)arg4 identifier:(NSString *)arg5;
+- (void)getProgressUpdateForIdentifier:(NSString *)arg1 service:(NSString *)arg2;
 - (void)cancelItemWithIdentifier:(NSString *)arg1 service:(NSString *)arg2;
 - (void)sendMessageWithSendParameters:(NSDictionary *)arg1;
 - (void)regenerateRegisteredIdentity;
@@ -115,12 +123,15 @@
 - (void)localSetupUnpair;
 - (void)stopLocalSetup;
 - (void)startLocalSetup;
+- (void)fetchPhoneUserSubscriptionSourceWithRequestUUID:(NSString *)arg1;
+- (void)setPhoneUserSubscriptionSource:(NSNumber *)arg1 withRequestUUID:(NSString *)arg2;
 - (void)generatePhoneAuthenticationSignatureOverData:(NSData *)arg1 withRequestUUID:(NSString *)arg2;
 - (void)authenticatePhoneWithRequestUUID:(NSString *)arg1;
 - (void)getRegisteredIdentities;
 - (void)repairAccounts;
 - (void)reRegisterWithUserID:(NSString *)arg1 action:(NSNumber *)arg2 service:(NSString *)arg3;
 - (void)kickGetDependentForAccount:(NSString *)arg1;
+- (void)updateUserWithOldUserName:(NSString *)arg1 newUserName:(NSString *)arg2;
 - (void)iTunesSignOut;
 - (void)iTunesSignInWithUserName:(NSString *)arg1 authToken:(NSString *)arg2 password:(NSString *)arg3 accountInfo:(NSDictionary *)arg4 accountStatus:(NSNumber *)arg5 handles:(NSArray *)arg6;
 - (void)iCloudSignOut;
@@ -148,7 +159,6 @@
 - (void)authenticationChangedForAccount:(NSString *)arg1;
 - (void)passwordChanged:(NSString *)arg1 forAccount:(NSString *)arg2;
 - (void)authTokenChanged:(NSString *)arg1 forAccount:(NSString *)arg2;
-- (void)setLoginID:(NSString *)arg1 forAccount:(NSString *)arg2;
 - (void)disableAccount:(NSString *)arg1;
 - (void)enableAccount:(NSString *)arg1;
 - (void)updateAccount:(NSString *)arg1 withAccountInfo:(NSDictionary *)arg2;

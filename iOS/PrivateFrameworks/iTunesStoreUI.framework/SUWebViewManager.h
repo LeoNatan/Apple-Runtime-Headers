@@ -13,10 +13,11 @@
 #import "WebResourceLoadDelegate.h"
 #import "WebUIDelegate.h"
 
-@class ISURLRequestPerformance, NSLock, NSMapTable, NSMutableSet, NSSet, NSString, SSAuthenticationContext, SUClientInterface, SUScriptWindowContext, SUWebScriptReloadContext, UIWebView;
+@class ACAccount, ISURLRequestPerformance, NSDictionary, NSLock, NSMapTable, NSMutableSet, NSSet, NSString, SSAuthenticationContext, SUClientInterface, SUScriptWindowContext, SUWebScriptReloadContext, UIWebView;
 
 @interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, WebFrameLoadDelegate, WebPolicyDelegate, WebResourceLoadDelegate, WebUIDelegate, UIWebViewDelegate>
 {
+    _Bool _initialLoadReported;
     SSAuthenticationContext *_authenticationContext;
     SUClientInterface *_clientInterface;
     id <SUWebViewManagerDelegate> _delegate;
@@ -35,9 +36,12 @@
     long long _usingNetworkCount;
     struct __CFSet *_webFramesPendingInitialRequest;
     UIWebView *_webView;
+    ACAccount *_account;
+    NSDictionary *_tidHeaders;
 }
 
 + (id)defaultLocalStoragePath;
+@property(retain, nonatomic) NSDictionary *tidHeaders; // @synthesize tidHeaders=_tidHeaders;
 @property(readonly, nonatomic) __weak UIWebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) _Bool shouldSignRequests; // @synthesize shouldSignRequests=_shouldSignRequests;
 @property(retain, nonatomic) SUScriptWindowContext *scriptWindowContext; // @synthesize scriptWindowContext=_scriptWindowContext;
@@ -48,6 +52,7 @@
 @property(retain, nonatomic) ISURLRequestPerformance *initialRequestPerformance; // @synthesize initialRequestPerformance=_initialRequestPerformance;
 @property(nonatomic) id <SUWebViewManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (id)_userIdentifier;
 - (_Bool)_presentModalAlertWithMessage:(id)arg1 includingCancelButton:(_Bool)arg2 configurationHandler:(CDUnknownBlockType)arg3;
 - (void)_enumerateScriptInterfacesWithBlock:(CDUnknownBlockType)arg1;

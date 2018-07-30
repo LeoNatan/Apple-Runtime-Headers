@@ -13,6 +13,7 @@
     id _guessesBrowser;
     id _wordField;
     id _languagePopUp;
+    id _topLevelPanels;
     id _panel;
     id _correctButton;
     id _guessButton;
@@ -116,7 +117,6 @@
 @property(readonly, copy) NSDictionary *userReplacementsDictionary;
 - (void)_replacementPreferencesChanged;
 - (void)_resetReplacementPreferences;
-- (void)_replacementPreferencesSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_reallyResetReplacementPreferences;
 - (void)_writeReplacementPreferences;
 - (void)_quotesPreferencesChanged;
@@ -134,6 +134,7 @@
 - (void)updateSpellingPanelWithGrammarString:(id)arg1 detail:(id)arg2;
 - (void)updateSpellingPanelWithMisspelledWordRange:(struct _NSRange)arg1 inString:(id)arg2;
 - (void)updateSpellingPanelWithMisspelledWord:(id)arg1;
+- (id)_textCheckingResultsFromSpellServerData:(id)arg1;
 - (id)candidatesForSelectedRange:(struct _NSRange)arg1 inString:(id)arg2 types:(unsigned long long)arg3 options:(id)arg4 offset:(unsigned long long)arg5 orthography:(id)arg6 inSpellDocumentWithTag:(long long)arg7;
 - (id)nextLetterDictionariesForPartialWordRange:(struct _NSRange)arg1 inString:(id)arg2 language:(id)arg3 inSpellDocumentWithTag:(long long)arg4;
 - (id)completionDictionariesForPartialWordRange:(struct _NSRange)arg1 inString:(id)arg2 language:(id)arg3 inSpellDocumentWithTag:(long long)arg4;
@@ -156,7 +157,7 @@
 - (long long)adjustOffsetToNextWordBoundaryInString:(id)arg1 startingAt:(long long)arg2;
 - (void)_findNext:(id)arg1;
 - (void)_languagePreferencesChanged:(BOOL)arg1;
-- (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
+- (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2;
 - (void)cancelSheet:(id)arg1;
 - (void)confirmSheet:(id)arg1;
 - (void)_configureLanguages:(id)arg1;
@@ -215,6 +216,10 @@
 - (void)_learn:(id)arg1;
 - (id)_learnOrForgetOrInvalidate:(long long)arg1 word:(id)arg2 dictionary:(id)arg3 language:(id)arg4 ephemeral:(long long)arg5;
 - (void)_normalizeUserDictionary:(id)arg1;
+- (BOOL)isSentenceCorrectionWord:(id)arg1;
+- (void)noteSentenceCorrectionResult:(id)arg1 grammarResult:(id)arg2 inString:(id)arg3 offset:(unsigned long long)arg4;
+- (void)recordSentenceCorrections:(id)arg1;
+- (BOOL)result:(id)arg1 isSentenceCorrectionInString:(id)arg2;
 - (void)_preflightTextCheckingForTypes:(unsigned long long)arg1;
 - (void)_preflightChosenSpellServer;
 - (id)_chosenSpellServer:(BOOL)arg1 launchIfNecessary:(BOOL)arg2;
@@ -232,7 +237,9 @@
 - (void)_updateGrammar;
 - (void)_activateControl:(id)arg1 forResponder:(id)arg2 setSelector:(SEL)arg3 toggleSelector:(SEL)arg4;
 - (void)_updateControl:(id)arg1 forResponder:(id)arg2 getSelector:(SEL)arg3 setSelector:(SEL)arg4 toggleSelector:(SEL)arg5;
+- (id)_responderForSubstitutions;
 - (id)_responder;
+- (id)_firstResponderForWindow:(id)arg1;
 @property BOOL automaticallyIdentifiesLanguages;
 @property(readonly, copy) NSArray *userPreferredLanguages;
 @property(readonly, copy) NSArray *availableLanguages;

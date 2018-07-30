@@ -10,6 +10,7 @@
 
 @class AVMediaFileType;
 
+__attribute__((visibility("hidden")))
 @interface AVMediaFileOutputSettingsValidator : NSObject <AVOutputSettingsValidation>
 {
     AVMediaFileType *_fileType;

@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString, NSURL;
 
-@interface ISReview : NSObject <NSCoding, NSCopying>
+@interface ISReview : NSObject <NSSecureCoding, NSCopying>
 {
     long long _assetType;
     NSString *_body;
@@ -27,6 +27,7 @@
     unsigned long long _titleMaxLength;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned long long titleMaxLength; // @synthesize titleMaxLength=_titleMaxLength;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSURL *submitURL; // @synthesize submitURL=_submitURL;

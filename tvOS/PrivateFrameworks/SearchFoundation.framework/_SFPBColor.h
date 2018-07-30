@@ -32,10 +32,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasAlphaComponent;
-@property(readonly, nonatomic) _Bool hasBlueComponent;
-@property(readonly, nonatomic) _Bool hasGreenComponent;
-@property(readonly, nonatomic) _Bool hasRedComponent;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

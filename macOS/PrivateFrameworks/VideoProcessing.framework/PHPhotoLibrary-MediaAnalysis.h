@@ -7,7 +7,14 @@
 #import "PHPhotoLibrary.h"
 
 @interface PHPhotoLibrary (MediaAnalysis)
-+ (unsigned long long)vcp_assetCount;
++ (id)vcp_defaultMediaAnalysisDatabaseFilepath;
 + (id)vcp_photoLibrary;
+- (long long)vcp_isCPLDownloadComplete;
+- (long long)vcp_isCPLSyncComplete;
+- (long long)vcp_isCPLEnabled;
+- (unsigned long long)vcp_assetCount;
+- (id)vcp_mediaAnalysisDatabaseFilepath;
+- (id)vcp_mediaAnalysisDirectory;
+- (id)vcp_url;
 @end
 

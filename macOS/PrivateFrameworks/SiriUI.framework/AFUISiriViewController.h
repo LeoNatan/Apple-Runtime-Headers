@@ -6,16 +6,15 @@
 
 #import "NSViewController.h"
 
-#import "AFMyriadDelegate.h"
 #import "AFUIDelayedActionCommandCacheDelegate.h"
 #import "AFUISiriSessionLocalDataSource.h"
 #import "AFUISiriSessionLocalDelegate.h"
 #import "SiriUIAutoDismissalControllerDelegate.h"
 #import "SiriUISiriViewDelegate.h"
 
-@class AFMyriadCoordinator, AFUIDelayedActionCommandCache, AFUISiriSession, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSTrackingArea, SVSSiriViewController, SiriUIConfiguration, SiriUIRequestOptions, SiriUISiriView;
+@class AFUIDelayedActionCommandCache, AFUISiriSession, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSTrackingArea, SVSSiriViewController, SiriUIConfiguration, SiriUIRequestOptions, SiriUISiriView;
 
-@interface AFUISiriViewController : NSViewController <SiriUISiriViewDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUIDelayedActionCommandCacheDelegate, AFMyriadDelegate, SiriUIAutoDismissalControllerDelegate>
+@interface AFUISiriViewController : NSViewController <SiriUISiriViewDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUIDelayedActionCommandCacheDelegate, SiriUIAutoDismissalControllerDelegate>
 {
     BOOL _active;
     BOOL _remoteViewControllerDispatchQueueSuspended;
@@ -25,7 +24,6 @@
     AFUIDelayedActionCommandCache *_delayedActionCommandCache;
     BOOL _siriSessionWantsToEnd;
     SiriUIConfiguration *_configuration;
-    AFMyriadCoordinator *_myriadCoordinator;
     CDUnknownBlockType _unlockCompletion;
     unsigned int _darkWakeAssertion;
     BOOL _visible;
@@ -33,7 +31,6 @@
     BOOL _mapsGatekeeperEnabled;
     BOOL _inHoldToTalkMode;
     BOOL _isBeingPresented;
-    BOOL _shouldRetryRequest;
     id <AFUISiriViewControllerDataSource> _dataSource;
     id <AFUISiriViewControllerDelegate> _delegate;
     AFUISiriSession *_session;
@@ -43,15 +40,10 @@
     NSNumber *_recordingStartedTimeValue;
     double _viewDidAppearTime;
     NSTrackingArea *_trackingArea;
-    long long _sourceForRetryRequest;
-    NSTimer *_retryRequestTimeout;
 }
 
 + (id)viewControllerWithConnection:(id)arg1 configuration:(id)arg2 delegate:(id)arg3 dataSource:(id)arg4;
 + (id)sharedSiriViewController;
-@property(retain) NSTimer *retryRequestTimeout; // @synthesize retryRequestTimeout=_retryRequestTimeout;
-@property long long sourceForRetryRequest; // @synthesize sourceForRetryRequest=_sourceForRetryRequest;
-@property BOOL shouldRetryRequest; // @synthesize shouldRetryRequest=_shouldRetryRequest;
 @property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property BOOL isBeingPresented; // @synthesize isBeingPresented=_isBeingPresented;
 @property(nonatomic, getter=_viewDidAppearTime, setter=_setViewDidAppearTime:) double viewDidAppearTime; // @synthesize viewDidAppearTime=_viewDidAppearTime;
@@ -81,13 +73,13 @@
 - (void)setStatusViewDisabled:(BOOL)arg1;
 - (void)setStatusViewHidden:(BOOL)arg1;
 - (void)siriIdleAndQuietStatusDidChange:(BOOL)arg1;
+- (void)siriDidLaunchApplication:(id)arg1;
 - (void)serviceLaunchApplicationWithBundleIdentifier:(id)arg1 withURL:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
 - (void)performUnlockDependentAction:(CDUnknownBlockType)arg1;
 - (void)askUserToUnlock;
+- (void)serviceDidFinishRequest;
 - (void)serviceStartRequestWithOptions:(id)arg1;
 - (void)serviceRequestsDismissal:(BOOL)arg1;
-- (void)shouldContinue:(id)arg1;
-- (void)shouldAbortAnotherDeviceBetter:(id)arg1;
 - (void)handleLongPressEndFromSource:(long long)arg1 atTime:(double)arg2;
 - (void)handleLongPressBeginFromSource:(long long)arg1;
 - (void)handleClickFromSource:(long long)arg1;
@@ -166,11 +158,12 @@
 - (void)svsViewWillDisappear;
 - (void)svsViewWillAppear;
 - (void)handlePasscodeUnlockAndCancelRequest:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)declareUserActivity;
+- (void)declareUserActivityForReason:(id)arg1;
 - (void)handlePasscodeUnlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleLongPressEndedFromSource:(long long)arg1 atTime:(double)arg2;
 - (void)_handleLongPressBeganFromSource:(long long)arg1;
 - (void)_handleClickFromSource:(long long)arg1;
+- (void)startMyriadAdvertisingWithRequestOptions:(id)arg1;
 - (void)_handlePreheatFromSource:(long long)arg1;
 - (void)_enqueueRemoteViewControllerMessageBlock:(CDUnknownBlockType)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
@@ -181,12 +174,16 @@
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;
+- (void)idleTimeout;
 - (void)releaseDarkWakeAssertion;
 - (void)holdDarkWakeAssertion:(double)arg1;
 - (BOOL)isHoldingDarkWakeAssertion;
 - (void)viewWillAppear;
 @property(readonly, nonatomic) BOOL hasScreenSnapshot;
+- (void)viewDidLayout;
+- (void)viewWillLayout;
 - (void)viewDidLoad;
+- (void)loadView;
 - (id)_siriView;
 - (void)didChangeWindowHeight:(BOOL)arg1;
 @property(readonly, nonatomic) double contentHeight;

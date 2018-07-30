@@ -10,12 +10,9 @@
 {
 }
 
-- (BOOL)_isGrayScaleColor:(id)arg1;
-- (id)_deriveShadowColor:(id)arg1;
 - (void)draw;
 - (struct CGRect)rectForBorderLine;
 - (struct CGRect)rectForPocketShadow;
-- (id)findShadowColor;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)accessibilityIsIgnored;

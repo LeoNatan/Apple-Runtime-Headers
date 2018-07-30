@@ -46,7 +46,9 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
 @property(readonly, copy, nonatomic) NSArray *preferredFocusEnvironments;
 @property(readonly, nonatomic) __weak UIView *preferredFocusedView;
 @property(readonly) Class superclass;

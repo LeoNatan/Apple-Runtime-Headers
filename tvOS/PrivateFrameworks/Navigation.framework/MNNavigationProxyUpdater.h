@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationSession:(id)arg1 matchedToStepIndex:(unsigned long long)arg2 legIndex:(unsigned long long)arg3;
 - (void)navigationSession:(id)arg1 didUpdateMatchedLocation:(id)arg2;
 - (void)navigationSession:(id)arg1 didChangeNavigationState:(int)arg2;
+- (void)setIsConnectedToCarplay:(_Bool)arg1;
 - (void)setIsNavigatingInLowGuidance:(_Bool)arg1;
 - (void)setVoiceVolume:(unsigned long long)arg1;
 - (void)updateClusteredSectionSelectedRideForNavigationSession:(id)arg1;

@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 - (void).cxx_destruct;
 - (_Bool)generateThumbnail:(id *)arg1 representativeIcon:(_Bool *)arg2;
-- (id)initWithContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 delegate:(id)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6 qos:(unsigned int)arg7;
+- (id)initWithContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 delegate:(id)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6;
 
 @end
 

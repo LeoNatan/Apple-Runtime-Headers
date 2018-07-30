@@ -28,8 +28,6 @@
 - (void)mmWebKitViewControllerDidCancel:(id)arg1;
 - (void)showManageWebView;
 - (void)showUpsellStorageWebView:(id)arg1;
-- (BOOL)hasDataToMerge;
-- (BOOL)hasPreflightAction;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (id)icon;
 - (void)dealloc;

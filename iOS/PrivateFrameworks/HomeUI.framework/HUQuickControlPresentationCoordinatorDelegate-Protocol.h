@@ -26,6 +26,5 @@
 - (void)presentationCoordinator:(HUQuickControlPresentationCoordinator *)arg1 didRecognizeTapForItem:(HFItem *)arg2;
 - (id <HUOpenURLHandling>)detailViewURLHandlerForPresentationCoordinator:(HUQuickControlPresentationCoordinator *)arg1;
 - (UIViewController<HUDetailsPresentationDelegateHost> *)detailsViewControllerForPresentationCoordinator:(HUQuickControlPresentationCoordinator *)arg1 item:(HFItem *)arg2;
-- (void)presentationCoordinator:(HUQuickControlPresentationCoordinator *)arg1 pressedStateDidChange:(_Bool)arg2 forItem:(HFItem *)arg3;
 @end
 

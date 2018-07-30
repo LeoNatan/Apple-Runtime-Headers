@@ -88,10 +88,9 @@
 // Property attributes: T{?=[4]},R,N
 
 -     // Error parsing type: {?=[4]}16@0:4d8, name: getViewMatrixAtTime:
-// Error parsing type for property rtCamera:
-// Property attributes: T^{RTCamera=^^?IIffi^f^^@{?=[4]}{?=[4]}^{RTRaySegment}ffffffffff},R,N
-
+-     // Error parsing type: ^{RTCamera=^^?IIffi^f^^@{?=[4]}{?=[4]}^{RTRaySegment}ffffffffff}8@0:4, name: rtCamera
 - (int)version;
+- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

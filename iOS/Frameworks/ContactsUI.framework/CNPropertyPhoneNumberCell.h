@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)copy:(id)arg1;
 - (void)updateTransportButtons;
 - (_Bool)shouldPerformDefaultAction;
 - (void)setProperty:(id)arg1;

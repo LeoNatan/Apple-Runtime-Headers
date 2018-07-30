@@ -6,21 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSMutableArray, NSMutableSet;
+@class NSDate, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface ICCameraFolderProperties : NSObject
 {
     NSDate *_creationDate;
     NSDate *_modificationDate;
-    NSMutableSet *_files;
+    NSMutableArray *_files;
     NSMutableArray *_folders;
 }
 
 @property(retain) NSMutableArray *folders; // @synthesize folders=_folders;
-@property(retain) NSMutableSet *files; // @synthesize files=_files;
+@property(retain) NSMutableArray *files; // @synthesize files=_files;
 @property(retain) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void)finalize;
 - (void)dealloc;
 
 @end

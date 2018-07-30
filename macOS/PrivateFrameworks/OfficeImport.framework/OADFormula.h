@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OADFormula : NSObject
 {
     int mType;
@@ -16,10 +15,10 @@ __attribute__((visibility("hidden")))
     NSString *mName;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setName:(id)arg1;
 - (id)name;
-- (void)dealloc;
 - (struct OADFormulaArg)argAtIndex:(unsigned int)arg1;
 - (int)type;
 - (id)initWithType:(int)arg1 arg0:(struct OADFormulaArg)arg2 arg1:(struct OADFormulaArg)arg3 arg2:(struct OADFormulaArg)arg4;

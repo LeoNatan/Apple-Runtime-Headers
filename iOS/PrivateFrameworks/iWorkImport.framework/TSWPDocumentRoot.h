@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (double)bodyWidth;
 - (void)fontUpdatedForStyleClient:(id)arg1;
-- (_Bool)has_30356142_build;
 - (id)documentId;
 @property(readonly, nonatomic) _Bool supportHeaderFooterParagraphAlignmentInInspectors;
 - (int)verticalAlignmentForTextStorage:(id)arg1;
@@ -43,6 +42,8 @@ __attribute__((visibility("hidden")))
 - (id)changeSessionManagerForModel:(id)arg1;
 - (void)willClose;
 - (void)documentDidLoad;
+- (_Bool)has_30356142_build;
+- (_Bool)validatedLoadFromUnarchiver:(id)arg1;
 
 @end
 

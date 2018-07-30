@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import "NSVisualEffectView.h"
 
 @class NSColor;
 
-@interface IMKClipView : NSView
+@interface IMKClipView : NSVisualEffectView
 {
     NSColor *_backgroundColor;
 }

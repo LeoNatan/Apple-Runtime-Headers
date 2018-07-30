@@ -6,6 +6,7 @@
 
 #import <AppKit/NSGradient.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSWindowBorderGradient : NSGradient
 {
 }

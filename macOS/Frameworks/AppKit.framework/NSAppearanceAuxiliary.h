@@ -20,8 +20,12 @@ __attribute__((visibility("hidden")))
     double _bezelBrightness;
     double _glyphBrightness;
     unsigned long long _colorTemperature;
+    BOOL _allowsSystemTintColors;
+    BOOL _allowsCustomTintColors;
 }
 
+@property BOOL allowsCustomTintColors; // @synthesize allowsCustomTintColors=_allowsCustomTintColors;
+@property BOOL allowsSystemTintColors; // @synthesize allowsSystemTintColors=_allowsSystemTintColors;
 @property unsigned long long colorTemperature; // @synthesize colorTemperature=_colorTemperature;
 @property double glyphBrightness; // @synthesize glyphBrightness=_glyphBrightness;
 @property double bezelBrightness; // @synthesize bezelBrightness=_bezelBrightness;
@@ -31,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property int defaultBlendMode; // @synthesize defaultBlendMode=_defaultBlendMode;
 @property BOOL allowsVibrancy; // @synthesize allowsVibrancy=_allowsVibrancy;
 @property BOOL preventArchiving; // @synthesize preventArchiving=_preventArchiving;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 
 @end

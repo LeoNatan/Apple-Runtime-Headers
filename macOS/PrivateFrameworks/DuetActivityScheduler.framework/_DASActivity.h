@@ -136,6 +136,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)updateGroupIfNecessary;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)debugDescription;
@@ -148,6 +149,7 @@
 - (BOOL)overwritesPrevious;
 - (BOOL)keepsPrevious;
 - (BOOL)isIdenticalLaunchTo:(id)arg1;
+- (BOOL)overdueAtDate:(id)arg1;
 - (BOOL)timewiseEligibleAtDate:(id)arg1;
 - (BOOL)hasManyConstraints;
 - (double)compatibilityWith:(id)arg1;

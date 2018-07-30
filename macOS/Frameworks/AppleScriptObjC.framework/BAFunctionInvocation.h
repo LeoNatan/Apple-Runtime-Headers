@@ -8,6 +8,7 @@
 
 @class BAFunctionSignature, NSMutableArray, NSPointerArray;
 
+__attribute__((visibility("hidden")))
 @interface BAFunctionInvocation : NSObject
 {
     BAFunctionSignature *_signature;

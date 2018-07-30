@@ -9,7 +9,7 @@
 #import "IMSendProgressDelegate.h"
 #import "INSpeakable.h"
 
-@class IMAccount, IMChatRegistry, IMHandle, IMMessage, IMScheduledUpdater, IMSendProgress, IMTimingCollection, MKMapItem, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSSet, NSString;
+@class IMAccount, IMChatRegistry, IMHandle, IMMessage, IMMessageItem, IMScheduledUpdater, IMSendProgress, IMTimingCollection, MKMapItem, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSSet, NSString, TUConversation;
 
 @interface IMChat : IMItemsController <INSpeakable, IMSendProgressDelegate>
 {
@@ -23,6 +23,7 @@
     NSString *_roomName;
     NSString *_roomNameWithoutSuffix;
     NSString *_lastAddressedHandleID;
+    NSString *_lastAddressedSIMID;
     NSString *_groupID;
     NSData *_engramID;
     NSArray *_participants;
@@ -67,6 +68,7 @@
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
     double _latestTypingIndicatorTimeInterval;
+    TUConversation *_conversation;
 }
 
 + (Class)chatItemRulesClass;
@@ -78,6 +80,14 @@
 + (CDUnknownBlockType)watermarkComparator;
 + (void)cleanWatermarkCache;
 + (id)__im_adjustMessageSummaryInfoForSending:(id)arg1;
++ (void)removeGUIDInAttemptingListInScrutinyMode:(id)arg1;
++ (_Bool)isGUIDInAttemptingListInScrutinyMode:(id)arg1;
++ (void)storeGUIDInAttemptingListInScrutinyMode:(id)arg1;
++ (void)_removeGUID:(id)arg1 fromList:(id)arg2;
++ (void)_storeGUID:(id)arg1 forKey:(id)arg2;
++ (id)_GUIDsForKey:(id)arg1;
+@property(readonly, nonatomic) TUConversation *conversation; // @synthesize conversation=_conversation;
+@property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
 @property(nonatomic) double latestTypingIndicatorTimeInterval; // @synthesize latestTypingIndicatorTimeInterval=_latestTypingIndicatorTimeInterval;
 @property(copy, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(readonly, nonatomic) long long lastMessageTimeStampOnLoad; // @synthesize lastMessageTimeStampOnLoad=_lastMessageTimeStampOnLoad;
@@ -95,7 +105,7 @@
 @property(readonly, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(retain, nonatomic, setter=_setGUIDs:) NSMutableSet *_guids; // @synthesize _guids;
 @property(retain, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
-@property(readonly, nonatomic) NSString *lastAddressedHandleID; // @synthesize lastAddressedHandleID=_lastAddressedHandleID;
+@property(retain, nonatomic) NSString *lastAddressedHandleID; // @synthesize lastAddressedHandleID=_lastAddressedHandleID;
 @property(retain, nonatomic) NSArray *frequentReplies; // @synthesize frequentReplies=_frequentReplies;
 - (void).cxx_destruct;
 - (void)downloadPurgedAttachments;
@@ -109,7 +119,7 @@
 - (void)_daemonAlive:(id)arg1;
 - (void)_accountControllerUpdated:(id)arg1;
 - (_Bool)_sanityCheckAccounts;
-- (void)_handleAddressBookChange:(id)arg1;
+- (void)_handleAddressBookChangeForRecipientUID:(id)arg1;
 - (void)addPendingParticipants:(id)arg1;
 - (void)_removeParticipantsFromChat:(id)arg1 reason:(id)arg2 fromiMessageChat:(_Bool)arg3;
 - (void)removeParticipantsFromiMessageChat:(id)arg1 reason:(id)arg2;
@@ -174,6 +184,8 @@
 @property(readonly, nonatomic) NSString *roomNameWithoutSuffix;
 @property(readonly, nonatomic) NSString *deviceIndependentID;
 @property(readonly, nonatomic) NSString *persistentID;
+- (void)_updateLastAddressedSIMID:(id)arg1;
+- (void)_updateLastAddressedHandleID:(id)arg1;
 - (void)_updateEngramID:(id)arg1;
 - (void)_updateDisplayName:(id)arg1;
 - (void)_setDisplayName:(id)arg1;
@@ -231,15 +243,20 @@
 @property(readonly, nonatomic) unsigned long long messageCount;
 @property(readonly, nonatomic) long long lastFinishedMessageID;
 @property(readonly, nonatomic) NSDate *lastSentMessageDate;
+@property(readonly, nonatomic) IMMessage *lastSentMessage;
+@property(readonly, nonatomic) NSDate *lastTUConversationCreatedDate;
 @property(readonly, nonatomic) NSDate *lastFinishedMessageDate;
+@property(readonly, nonatomic) _Bool lastMessageExists;
 @property(readonly, nonatomic) IMMessage *lastMessage;
 - (id)lastRelatedIncomingFinishedMessageTextContentWithLimit:(long long)arg1;
 @property(readonly, nonatomic) IMMessage *lastIncomingFinishedMessageWithTextContent;
 @property(readonly, nonatomic) IMMessage *lastIncomingFinishedMessage;
 @property(readonly, nonatomic) IMMessage *lastIncomingMessage;
+@property(readonly, nonatomic) IMMessageItem *lastFinishedMessageItem;
 @property(readonly, nonatomic) IMMessage *lastFinishedMessage;
 @property(readonly, nonatomic) IMMessage *firstMessage;
 - (id)messageForGUID:(id)arg1;
+- (id)_lastFinishedMessage;
 - (id)_appendArchivedItemsToItemsArray:(id)arg1;
 - (id)_archivedItemsToReplace:(id)arg1 numberOfMessagesBeforeGUID:(unsigned long long)arg2 numberOfMessagesAfterGUID:(unsigned long long)arg3;
 - (void)_insertHistoricalMessages:(id)arg1 queryID:(id)arg2 isRefresh:(_Bool)arg3 isHistoryQuery:(_Bool)arg4 limit:(unsigned long long)arg5 numberOfMessagesBeforeGUID:(unsigned long long)arg6 numberOfMessagesAfterGUID:(unsigned long long)arg7;
@@ -255,7 +272,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)_initialize;
-- (id)_initWithGUID:(id)arg1 account:(id)arg2 style:(unsigned char)arg3 roomName:(id)arg4 displayName:(id)arg5 items:(id)arg6 participants:(id)arg7 isFiltered:(_Bool)arg8 hasHadSuccessfulQuery:(_Bool)arg9;
+- (id)_initWithGUID:(id)arg1 account:(id)arg2 style:(unsigned char)arg3 roomName:(id)arg4 displayName:(id)arg5 lastAddressedHandle:(id)arg6 lastAddressedSIMID:(id)arg7 items:(id)arg8 participants:(id)arg9 isFiltered:(_Bool)arg10 hasHadSuccessfulQuery:(_Bool)arg11;
 - (void)_setupObservation;
 @property(nonatomic) _Bool forceMMS;
 @property(readonly, nonatomic) _Bool suppressAccountRetargetingForNamedGroupConversation;
@@ -278,6 +295,9 @@
 - (_Bool)sendDowngradeNotificationTo:(id)arg1;
 - (void)sendDowngradePingForMessage:(id)arg1 manualDowngrade:(_Bool)arg2;
 - (void)refreshServiceForSending;
+- (long long)_compareChat:(id)arg1 withDate:(id)arg2 withDate:(id)arg3;
+- (id)_tuDateForChat:(id)arg1;
+- (long long)compareChatByTUDateAndLastFinishedMessageDate:(id)arg1;
 - (long long)compareChatByDate:(id)arg1;
 - (_Bool)_hasJustSentAMessage;
 - (void)verifyFiltering;
@@ -317,7 +337,17 @@
 @property(readonly, nonatomic) _Bool hasMoreRecentMessagesToLoad;
 @property(readonly, nonatomic) _Bool hasMoreMessagesToLoad;
 @property(nonatomic) unsigned long long numberOfMessagesToKeepLoaded;
+- (id)messagesToReportAsSpamFromChatItems:(id)arg1;
+- (id)allMessagesToReportAsSpam;
 - (id)chatItemsForItems:(id)arg1;
+- (void)clearScrutinyMode;
+- (void)watermarkOutForScrutinyMode;
+- (_Bool)isInScrutinyMode;
+- (_Bool)_serverBagPreventsScrutinyMode;
+- (unsigned long long)scrutinyModeAttemptCount;
+- (void)watermarkInForScrutinyMode;
+- (void)_setRenderingDataDictionary:(id)arg1;
+- (id)_renderingDataDictionary;
 - (void)markChatItemAsPlayedExpressiveSend:(id)arg1;
 - (void)_markItemAsPlayed:(id)arg1;
 - (void)markChatItemAsPlayed:(id)arg1;
@@ -352,6 +382,9 @@
 @property(readonly, nonatomic) IMChatRegistry *chatRegistry;
 - (id)testChatItems;
 - (_Bool)canEditChatItem:(id)arg1;
+- (void)initiateTUConversationWithVideo:(_Bool)arg1;
+- (void)joinExistingTUConversation;
+- (_Bool)mapsToTUConversation:(id)arg1;
 @property(readonly, nonatomic) NSArray *alternativeSpeakableMatches;
 @property(readonly, nonatomic) NSString *vocabularyIdentifier;
 @property(readonly, nonatomic) NSString *pronunciationHint;

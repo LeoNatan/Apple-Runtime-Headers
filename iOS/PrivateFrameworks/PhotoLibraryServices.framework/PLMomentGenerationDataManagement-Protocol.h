@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDate, NSDictionary, NSObject<NSCopying>, NSSet, NSString;
+@class NSArray, NSDate, NSDateInterval, NSDictionary, NSObject<NSCopying>, NSSet, NSString, PLXPCTransaction;
 
 @protocol PLMomentGenerationDataManagement <NSObject>
+- (void)runPeriodicMaintenanceTasks:(unsigned long long)arg1 withTransaction:(PLXPCTransaction *)arg2;
 - (NSArray *)allAssetIDsNeedingLocationShiftWithError:(id *)arg1;
 - (void)invalidateShiftedLocationForAllAssetsInMoments;
 - (NSDictionary *)locationCoordinatesForAssetIDs:(NSArray *)arg1;
@@ -20,12 +21,6 @@
 - (_Bool)isNetworkReachable;
 - (void)stopObservingNetworkReachabilityChanges;
 - (void)beginObservingNetworkReachabilityChangesWithBlock:(void (^)(_Bool))arg1;
-- (NSArray *)allAssetIDsToBeIncludedInMomentsWithError:(id *)arg1;
-- (NSArray *)allAssetsToBeIncludedInMomentsWithError:(id *)arg1;
-- (NSArray *)allMomentListsWithInvalidReverseLocationDataForLevel:(short)arg1;
-- (NSArray *)allMomentListsForLevel:(short)arg1;
-- (NSArray *)allMomentsWithInvalidReverseLocationData;
-- (NSArray *)allMomentsWithError:(id *)arg1;
 - (void)resetOnFailure;
 - (_Bool)save:(id *)arg1;
 - (_Bool)hasChanges;
@@ -34,13 +29,22 @@
 - (Class)momentAssetDataClass;
 - (Class)momentDataClass;
 - (Class)momentListDataClassForGranularityLevel:(short)arg1;
+- (NSArray *)allAssetIDsToBeIncludedInMomentsWithError:(id *)arg1;
+- (NSArray *)allAssetsToBeIncludedInMomentsWithError:(id *)arg1;
+- (NSArray *)momentsWithinDateInterval:(NSDateInterval *)arg1;
+- (NSArray *)orphanedAssetIDsWithError:(id *)arg1;
+- (NSArray *)allMomentListsWithInvalidReverseLocationDataForLevel:(short)arg1;
+- (NSArray *)allMomentListsForLevel:(short)arg1;
+- (NSArray *)allMomentsWithInvalidReverseLocationData;
+- (NSArray *)allMomentsWithError:(id *)arg1;
 - (id <PLMomentListData>)findOrCreateYearMomentListForYear:(long long)arg1;
 - (id <PLMomentListData>)yearMomentListForYear:(long long)arg1 wantsEarliest:(_Bool)arg2;
 - (id <PLMomentListData>)momentListContainingDate:(NSDate *)arg1 forLevel:(short)arg2 wantsEarliest:(_Bool)arg3;
-- (NSArray *)momentsBetweenDateRanges:(NSArray *)arg1;
 - (NSArray *)momentsBetweenDate:(NSDate *)arg1 andDate:(NSDate *)arg2 sorted:(_Bool)arg3;
 - (NSArray *)momentsSinceDate:(NSDate *)arg1;
+- (NSArray *)momentsForAssetsWithUniqueIDs:(NSArray *)arg1 error:(id *)arg2;
 - (id <PLMomentListData>)momentListWithUniqueID:(NSObject<NSCopying> *)arg1 forLevel:(short)arg2 error:(id *)arg3;
+- (void)enumerateAssetsWithIDs:(NSArray *)arg1 usingBlock:(void (^)(id <PLMomentAssetData>, unsigned long long, _Bool *))arg2;
 - (id <PLMomentData>)momentWithUniqueID:(NSObject<NSCopying> *)arg1 error:(id *)arg2;
 - (NSArray *)assetsWithUniqueIDs:(NSArray *)arg1 error:(id *)arg2;
 - (id <PLMomentAssetData>)assetWithUniqueID:(NSObject<NSCopying> *)arg1 error:(id *)arg2;
@@ -50,12 +54,14 @@
 - (NSDictionary *)serverVersionInfo;
 - (void)setMomentAnalysisNeeded:(_Bool)arg1;
 - (_Bool)isMomentAnalysisNeeded;
-- (void)enumerateAssetsWithIDs:(NSArray *)arg1 usingBlock:(void (^)(id <PLMomentAssetData>, unsigned long long, _Bool *))arg2;
+- (_Bool)isMomentsSupportedOnPlatform;
+- (void)performDataTransaction:(void (^)(void))arg1 synchronously:(_Bool)arg2 priority:(long long)arg3 completionHandler:(void (^)(void))arg4;
+- (void)performBlock:(void (^)(void))arg1 synchronously:(_Bool)arg2 priority:(long long)arg3 completionHandler:(void (^)(void))arg4;
 - (void)performDataTransaction:(void (^)(void))arg1 synchronously:(_Bool)arg2 completionHandler:(void (^)(void))arg3;
 - (void)performBlock:(void (^)(void))arg1 synchronously:(_Bool)arg2 completionHandler:(void (^)(void))arg3;
-- (_Bool)isMomentsSupportedOnPlatform;
 
 @optional
+@property(nonatomic) _Bool simulatesTimeout;
 - (NSString *)replayLogPath;
 - (_Bool)wantsMomentReplayLogging;
 - (NSSet *)deletedObjects;

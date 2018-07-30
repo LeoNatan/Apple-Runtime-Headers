@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface NSBlockOperation (_MSPMockCloudAccess) <MSPCloudRequest>
+- (void)setNetworkBehaviorIsDiscretionary:(BOOL)arg1;
 - (void)addCloudAccessCompletionBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
 

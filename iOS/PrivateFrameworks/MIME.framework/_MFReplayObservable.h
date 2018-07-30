@@ -6,20 +6,33 @@
 
 #import <MIME/MFObservable.h>
 
-@class MFQueue, NSLock;
+#import "MFObserver.h"
+
+@class MFQueue, NSError, NSLock, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _MFReplayObservable : MFObservable
+@interface _MFReplayObservable : MFObservable <MFObserver>
 {
     NSLock *_lock;
-    MFObservable *_observable;
+    _Bool _isStopped;
+    NSError *_error;
     MFQueue *_queue;
+    NSMutableArray *_observers;
 }
 
-- (void)_enqueue:(id)arg1;
+- (void)observerDidFailWithError:(id)arg1;
+- (void)observerDidComplete;
+- (void)observerDidReceiveResult:(id)arg1;
+- (void)_unsubscribe:(id)arg1;
 - (id)subscribe:(id)arg1;
-- (id)initWithObservable:(id)arg1 count:(unsigned long long)arg2;
+- (id)initWithCount:(unsigned long long)arg1;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

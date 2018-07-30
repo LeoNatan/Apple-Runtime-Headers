@@ -13,7 +13,6 @@
 
 @class ABAccount, ABActionAutovalidator, ABAddressBook, ABCommandExecutor, ABGroup, ABKeystrokeForwarder, ABMainListOutlineView, ABPersonEntriesList, ABPersonListDragExportHelper, ABPersonListMenuHelper, ABPersonListSearchHelper, CNPublishingSubject, NSArray, NSDictionary, NSMutableArray, NSMutableIndexSet, NSOutlineView, NSString, NSUndoManager;
 
-__attribute__((visibility("hidden")))
 @interface ABPersonListController : NSResponder <ABPersonListControllerProtocol, NSOutlineViewDelegate, NSOutlineViewDataSource, ABBookStateSaving>
 {
     ABMainListOutlineView *_outlineView;
@@ -117,7 +116,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)outlineView:(id)arg1 isGroupItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
-- (void)outlineView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
 - (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;
 - (void)reloadData;
 - (void)updateObjectValueForEntry:(id)arg1 indexesToReload:(id)arg2;

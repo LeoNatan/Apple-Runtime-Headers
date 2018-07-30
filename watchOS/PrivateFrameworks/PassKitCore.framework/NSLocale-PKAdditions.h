@@ -7,6 +7,7 @@
 #import "NSLocale.h"
 
 @interface NSLocale (PKAdditions)
++ (id)pk_deviceLanguage;
 + (id)pk_preferredLocale;
 @end
 

@@ -9,15 +9,21 @@
 @interface CalUITextFieldEditor : NSTextView
 {
     BOOL _shouldAllowVibrancy;
+    id <CalUITextFieldEditorDelegate> _calUITextFieldDelegate;
 }
 
 @property BOOL shouldAllowVibrancy; // @synthesize shouldAllowVibrancy=_shouldAllowVibrancy;
+@property __weak id <CalUITextFieldEditorDelegate> calUITextFieldDelegate; // @synthesize calUITextFieldDelegate=_calUITextFieldDelegate;
+- (void).cxx_destruct;
 - (BOOL)isRichText;
+- (BOOL)writeSelectionToPasteboard:(id)arg1 type:(id)arg2;
 - (BOOL)readSelectionFromPasteboard:(id)arg1;
 - (BOOL)allowsVibrancy;
 - (id)readablePasteboardTypes;
 - (void)selectAll:(id)arg1;
+- (void)keyDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (id)init;
 
 @end
 

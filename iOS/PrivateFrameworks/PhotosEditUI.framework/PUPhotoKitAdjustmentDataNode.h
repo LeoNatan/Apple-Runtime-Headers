@@ -8,6 +8,7 @@
 
 @class PHAdjustmentData, PHAsset;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoKitAdjustmentDataNode : PXRunNode
 {
     int _requestID;

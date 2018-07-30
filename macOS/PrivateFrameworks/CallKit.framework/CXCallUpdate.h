@@ -27,6 +27,7 @@
     BOOL _requiresInCallSounds;
     BOOL _prefersExclusiveAccessToCellularNetwork;
     BOOL _remoteUplinkMuted;
+    BOOL _shouldSuppressInCallUI;
     BOOL _supportsUnambiguousMultiPartyState;
     BOOL _supportsAddCall;
     BOOL _supportsSendingToVoicemail;
@@ -41,6 +42,7 @@
     long long _audioInterruptionProvider;
     long long _audioInterruptionOperationMode;
     NSString *_crossDeviceIdentifier;
+    NSUUID *_localSenderIdentityUUID;
     NSSet *_remoteParticipantHandles;
     NSSet *_activeRemoteParticipantHandles;
     CXHandoffContext *_handoffContext;
@@ -54,12 +56,14 @@
 @property(nonatomic) BOOL supportsSendingToVoicemail; // @synthesize supportsSendingToVoicemail=_supportsSendingToVoicemail;
 @property(nonatomic) BOOL supportsAddCall; // @synthesize supportsAddCall=_supportsAddCall;
 @property(nonatomic) BOOL supportsUnambiguousMultiPartyState; // @synthesize supportsUnambiguousMultiPartyState=_supportsUnambiguousMultiPartyState;
+@property(nonatomic) BOOL shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
 @property(nonatomic, getter=isRemoteUplinkMuted) BOOL remoteUplinkMuted; // @synthesize remoteUplinkMuted=_remoteUplinkMuted;
 @property(nonatomic) BOOL prefersExclusiveAccessToCellularNetwork; // @synthesize prefersExclusiveAccessToCellularNetwork=_prefersExclusiveAccessToCellularNetwork;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(retain, nonatomic) CXHandoffContext *handoffContext; // @synthesize handoffContext=_handoffContext;
 @property(copy, nonatomic) NSSet *activeRemoteParticipantHandles; // @synthesize activeRemoteParticipantHandles=_activeRemoteParticipantHandles;
 @property(copy, nonatomic) NSSet *remoteParticipantHandles; // @synthesize remoteParticipantHandles=_remoteParticipantHandles;
+@property(copy, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
 @property(copy, nonatomic) NSString *crossDeviceIdentifier; // @synthesize crossDeviceIdentifier=_crossDeviceIdentifier;
 @property(nonatomic) long long audioInterruptionOperationMode; // @synthesize audioInterruptionOperationMode=_audioInterruptionOperationMode;
 @property(nonatomic) long long audioInterruptionProvider; // @synthesize audioInterruptionProvider=_audioInterruptionProvider;

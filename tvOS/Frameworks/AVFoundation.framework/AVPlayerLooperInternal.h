@@ -8,6 +8,7 @@
 
 @class AVPlayerItem, AVQueuePlayer, AVWeakReference, NSError, NSMutableArray, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerLooperInternal : NSObject
 {
     AVQueuePlayer *loopingPlayer;

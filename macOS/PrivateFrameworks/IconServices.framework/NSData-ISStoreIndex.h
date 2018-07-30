@@ -8,14 +8,5 @@
 
 @interface NSData (ISStoreIndex)
 + (id)_ISStoreIndex_mappedDataWithURL:(id)arg1;
-- (BOOL)_ISStoreIndex_enumerateValuesForKey:(unsigned long long)arg1 bock:(CDUnknownBlockType)arg2;
-- (void)_ISStoreIndex_enumerateValuesWithBock:(CDUnknownBlockType)arg1;
-- (BOOL)_ISStoreIndex_setNodeIndex:(unsigned int)arg1 forKey:(unsigned long long)arg2;
-- (unsigned int)_ISStoreIndex_nodeIndexForKey:(unsigned long long)arg1;
-- (CDStruct_72690114 *)_ISStoreIndex_nodeAtIndex:(unsigned int)arg1;
-- (CDStruct_72690114 *)_ISStoreIndex_nodes;
-- (unsigned int *)_ISStoreIndex_hashTable;
-- (BOOL)_ISStoreIndex_isValid;
-- (CDStruct_00287ae1 *)_ISStoreIndex_header;
 @end
 

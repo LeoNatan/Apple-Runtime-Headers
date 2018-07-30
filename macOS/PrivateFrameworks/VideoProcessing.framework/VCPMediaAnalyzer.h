@@ -21,8 +21,12 @@
 
 + (id)sharedMediaAnalyzer;
 - (void).cxx_destruct;
+- (id)requestLivePhotoEffectsForAssets:(id)arg1 allowOnDemand:(BOOL)arg2 flags:(unsigned long long)arg3;
+- (id)requestMovieHighlightsForAssets:(id)arg1;
 - (id)curateMovieAssetsForCollection:(id)arg1 withAlreadyCuratedAssets:(id)arg2 andDesiredCount:(unsigned long long)arg3 allowOnDemand:(BOOL)arg4;
+- (id)requestAnalysisTypes:(unsigned long long)arg1 forAssets:(id)arg2 allowOndemand:(BOOL)arg3 progressHandler:(CDUnknownBlockType)arg4 error:(id *)arg5;
 - (int)requestAnalysesForAssets:(id)arg1 analysisTypes:(unsigned long long)arg2 allowOndemand:(BOOL)arg3 progressHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (int)requestAnalysisTypes:(unsigned long long)arg1 forAssets:(id)arg2 allowOndemand:(BOOL)arg3 progressHandler:(CDUnknownBlockType)arg4 analyses:(id)arg5;
 - (void)distanceFromAsset:(id)arg1 timeRange:(CDStruct_e83c9415)arg2 toAsset:(id)arg3 timeRange:(CDStruct_e83c9415)arg4 duplicate:(long long *)arg5 distance:(float *)arg6;
 - (void)distanceFromAsset:(id)arg1 toAsset:(id)arg2 duplicate:(long long *)arg3 distance:(float *)arg4;
 - (void)getSceneDescriptors:(CDStruct_e83c9415)arg1 featureResults:(id)arg2 descriptorArray:(id)arg3;
@@ -32,7 +36,7 @@
 - (BOOL)cancelAnalysisWithRequestID:(int)arg1;
 - (int)requestAnalysisForAsset:(id)arg1 analysisTypes:(unsigned long long)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)analyzeOndemand:(id)arg1 forAnalysisTypes:(unsigned long long)arg2 storeAnalysis:(BOOL)arg3;
-- (id)requestAnalysisForAsset:(id)arg1 analysisTypes:(unsigned long long)arg2 resultTypes:(id)arg3 allowOndemand:(BOOL)arg4;
+- (id)requestAnalysisForAsset:(id)arg1 withAnalysisInDatabase:(id)arg2 analysisTypes:(unsigned long long)arg3 allowOndemand:(BOOL)arg4;
 - (unsigned long long)typesToRemove:(unsigned long long)arg1 requested:(unsigned long long)arg2;
 - (unsigned long long)metaAnalysisTypesForAsset:(id)arg1;
 - (id)addClassificationResults:(id)arg1 analysis:(id)arg2;

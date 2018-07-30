@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OITSUDescription : NSObject
 {
     NSObject *_object;

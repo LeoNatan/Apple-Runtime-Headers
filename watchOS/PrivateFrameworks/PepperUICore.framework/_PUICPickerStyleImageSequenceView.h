@@ -24,6 +24,8 @@
 - (void)crownInputSequencerIdleDidChange:(id)arg1;
 - (void)crownInputSequencerWillBecomeIdle:(id)arg1 withCrownVelocity:(double)arg2 targetOffset:(inout double *)arg3;
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
+- (_Bool)resignFirstResponder;
+- (_Bool)becomeFirstResponder;
 - (void)_setSelectedIndex:(int)arg1 relayout:(_Bool)arg2 notifyPicker:(_Bool)arg3;
 - (void)_layoutItemViews;
 - (void)_updateCrownInputSequencer;
@@ -31,6 +33,7 @@
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)handleCrownEvent:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

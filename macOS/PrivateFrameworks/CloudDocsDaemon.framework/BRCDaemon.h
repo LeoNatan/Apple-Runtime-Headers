@@ -88,6 +88,7 @@
 - (void)_startXPCListeners;
 - (void)_setupCacheDelete;
 - (BOOL)_shouldCacheDeleteForVolume:(id)arg1;
+- (void)loadAndResumeAccount;
 - (void)loadAccount;
 - (void)_loadAccountIfNeeded;
 - (BOOL)checkEnoughDiskSpaceToBeFunctional;

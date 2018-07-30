@@ -9,10 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface CPKPopoverView : NSView
 {
-    BOOL _draggingDetachedWindow;
 }
-
-@property BOOL draggingDetachedWindow; // @synthesize draggingDetachedWindow=_draggingDetachedWindow;
 
 @end
 

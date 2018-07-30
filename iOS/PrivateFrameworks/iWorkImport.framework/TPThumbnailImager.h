@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (struct CGImage *)newImage;
 - (void)canvasDidValidateLayouts:(id)arg1;
-- (void)canvasWillLayout:(id)arg1;
+- (void)canvasWillValidateLayouts:(id)arg1;
 
 @end
 

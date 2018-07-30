@@ -8,15 +8,14 @@
 
 @class NSMutableSet;
 
-__attribute__((visibility("hidden")))
 @interface PBAnimationCacheState : PDAnimationCacheState
 {
     NSMutableSet *mEntranceDrawables;
     NSMutableSet *mExitDrawables;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isValid:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

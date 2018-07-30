@@ -8,11 +8,16 @@
 
 #import "_NSServiceAction.h"
 
-@class NSArray, NSKeyboardShortcut, NSString;
+@class NSArray, NSKeyboardShortcut, NSSet, NSString, NSUUID;
 
 @interface _NSServiceEntry : NSObject <_NSServiceAction>
 {
     NSString *menuItemTitle;
+    NSSet *_availablePresentationModes;
+    NSSet *_defaultPresentationModes;
+    NSSet *_presentationModes;
+    NSString *_iconName;
+    NSString *_backgroundColorName;
     NSString *bundleIdentifier;
     NSString *bundlePath;
     NSString *executablePath;
@@ -40,20 +45,29 @@
         unsigned int filterRequireFilePath:1;
         unsigned int isWorkflow:1;
         unsigned int showApplicationNameWithMenuItemTitle:1;
-        unsigned int activeInServicesMenu:1;
-        unsigned int activeInContextMenu:1;
         unsigned int serviceCategory:5;
         unsigned int checkedServiceDescription:1;
         unsigned int restricted:1;
-        unsigned int reserved:17;
+        unsigned int reserved:19;
     } _flags;
 }
 
+@property(readonly, copy, nonatomic) NSSet *availablePresentationModes; // @synthesize availablePresentationModes=_availablePresentationModes;
+@property(readonly, copy, nonatomic) NSSet *defaultPresentationModes; // @synthesize defaultPresentationModes=_defaultPresentationModes;
+@property(copy, nonatomic) NSSet *presentationModes; // @synthesize presentationModes=_presentationModes;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier;
 @property(copy, nonatomic) NSKeyboardShortcut *keyboardShortcut; // @synthesize keyboardShortcut;
 @property(readonly, nonatomic) NSKeyboardShortcut *defaultKeyboardShortcut; // @synthesize defaultKeyboardShortcut;
 @property(readonly, nonatomic) NSString *bundlePath; // @synthesize bundlePath;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=defaultTitle;
+- (id)internalRunService:(id)arg1 flags:(unsigned long long)arg2 cancelledHint:(const char *)arg3;
+- (void)validateWithResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)invokeWithPasteboard:(id)arg1;
+- (BOOL)invokeWithResponder:(id)arg1;
+@property(readonly, nonatomic) BOOL hasBackgroundColor;
+- (void)loadBackgroundColorOnQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) BOOL hasCustomIcon;
+- (void)loadImageOnQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned int)enableStatus;
 - (long long)compareServiceEntryByLocalizedTitle:(id)arg1;
 - (id)titleForTracking;
@@ -64,6 +78,7 @@
 - (void)resetToDefaultAvailability;
 - (void)applyServicesPreferences:(id)arg1;
 - (id)servicePreferences;
+@property(readonly, nonatomic) NSUUID *serviceUUID;
 - (id)serviceIdentifier;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
@@ -83,7 +98,9 @@
 @property(readonly, nonatomic) BOOL isRestricted;
 @property(readonly, nonatomic) BOOL isWorkflow;
 - (unsigned long long)combinedSendTypeCount;
-- (id)combinedSendTypes;
+@property(readonly, nonatomic) NSArray *returnTypes;
+@property(readonly, nonatomic) NSArray *sendFileTypes;
+@property(readonly, nonatomic) NSArray *combinedSendTypes;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

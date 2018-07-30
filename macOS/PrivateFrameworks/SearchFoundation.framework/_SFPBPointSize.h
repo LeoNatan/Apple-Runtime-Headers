@@ -28,8 +28,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasHeight;
-@property(readonly, nonatomic) BOOL hasWidth;
 - (id)initWithCGSize:(struct CGSize)arg1;
 
 // Remaining properties

@@ -7,6 +7,7 @@
 #import "NSMutableSet.h"
 
 @interface NSMutableSet (TSUAdditions)
+- (void)tsu_removeObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (void)tsu_removeEqualObject:(id)arg1;
 - (void)tsu_addObjectsFromNonNilArray:(id)arg1;
 - (void)tsu_addNonNilObject:(id)arg1;

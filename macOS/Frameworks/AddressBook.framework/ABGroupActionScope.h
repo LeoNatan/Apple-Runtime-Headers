@@ -8,7 +8,6 @@
 
 @class ABAccount, ABAddressBook, ABGroup, ABRecordContext;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupActionScope : NSObject
 {
     ABAccount *_account;

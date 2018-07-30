@@ -19,8 +19,11 @@
 @property(readonly, nonatomic) double searchTitleTopBaselineDistance;
 @property(readonly, nonatomic) double searchSingleTitleBottomBaselineDistance;
 @property(readonly, nonatomic) double searchSingleTitleTopBaselineDistance;
+@property(readonly, nonatomic) UIColor *searchResultCountTextColor;
+@property(readonly, nonatomic) UIFont *searchResultCountLabelFont;
 @property(readonly, nonatomic) UIColor *searchSubtitleTextColor;
 @property(readonly, nonatomic) UIFont *searchSubtitleLabelFont;
+@property(readonly, nonatomic) UIFont *searchItalicTitleLabelFont;
 @property(readonly, nonatomic) UIFont *searchTitleLabelFont;
 @property(readonly, nonatomic) UIColor *searchRecentLabelTextColor;
 @property(readonly, nonatomic) UIFont *searchRecentLabelFont;
@@ -31,7 +34,6 @@
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardTextFont;
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardTitleFont;
 @property(readonly, nonatomic) UIImage *cloudFeedSectionHeaderBackgroundImage;
-@property(readonly, nonatomic) UIImage *cloudFeedMiniChevronImage;
 @property(readonly, nonatomic) NSDictionary *cloudFeedInteractionLargerTextAttributes;
 @property(readonly, nonatomic) NSDictionary *cloudFeedInteractionTextAttributes;
 @property(readonly, nonatomic) NSDictionary *cloudFeedInvitationSubtitleTextAttributes;
@@ -45,7 +47,6 @@
 @property(readonly, nonatomic) double cloudFeedSeparatorHeight;
 @property(readonly, nonatomic) UIColor *cloudFeedSeparatorColor;
 @property(readonly, nonatomic) UIColor *cloudFeedBackgroundColor;
-@property(readonly, nonatomic) UIFont *wallpaperCategoryLabelFont;
 @property(readonly, nonatomic) UIColor *videoEditingToolbarToolButtonColor;
 @property(readonly, nonatomic) UIColor *videoEditingToolbarSecondaryButtonColor;
 @property(readonly, nonatomic) UIColor *videoEditingToolbarDestructiveButtonColor;
@@ -160,7 +161,6 @@
 @property(readonly, nonatomic) double photoCollectionToolbarIconToTextSpacerWidth;
 @property(readonly, nonatomic) double photoCollectionToolbarTextTitleSpacerWidth;
 @property(readonly, nonatomic) int photoCollectionViewBackgroundColorValue;
-@property(readonly, nonatomic) UIColor *photoCollectionViewSecondScreenBackgroundColor;
 @property(readonly, nonatomic) UIColor *photoCollectionViewBackgroundColor;
 @property(readonly, nonatomic) UIColor *topLevelNavigationBarButtonTintColor;
 @property(readonly, nonatomic) long long topLevelStatusBarStyle;
@@ -168,10 +168,14 @@
 @property(readonly, nonatomic) NSDictionary *textBlockBelowArtTitleEmphasizedTextAttributes;
 @property(readonly, nonatomic) NSDictionary *textBlockBelowArtTitleTextAttributes;
 @property(readonly, nonatomic) NSDictionary *sectionHeaderNotTappableTextAttributes;
+- (void)configureImportHeaderSubtitleLabel:(UILabel *)arg1;
+- (void)configureImportHeaderTitleLabel:(UILabel *)arg1;
 - (void)configureSlideshowMusicHeaderTitleLabel:(UILabel *)arg1;
 - (UIFont *)cloudWelcomeViewTitleLabelFontForSize:(double)arg1;
 - (NSDictionary *)searchDimmedAttributes;
+- (NSDictionary *)searchItalicTitleAttributes;
 - (NSDictionary *)searchDefaultAttributes;
+- (void)configureSearchResultCountLabel:(UILabel *)arg1;
 - (void)configureSearchSubtitleLabel:(UILabel *)arg1;
 - (void)configureSearchTitleLabel:(UILabel *)arg1;
 - (void)configureEditPluginUserDefaultsAccessorySwitch:(UISwitch *)arg1;
@@ -193,9 +197,6 @@
 - (void)configureBannerLabel:(UILabel *)arg1;
 - (void)configureBannerStackView:(PUStackView *)arg1;
 - (void)configureAlbumListDeleteButton:(UIButton *)arg1;
-- (void)configureAlbumListEmptyStackViewPadPhotoDecoration:(PUPhotoDecoration *)arg1;
-- (void)configureAlbumListStackViewPadPhotoDecoration:(PUPhotoDecoration *)arg1;
-- (void)configureAlbumListEmptyStackViewPhonePhotoDecoration:(PUPhotoDecoration *)arg1;
 - (void)configureAlbumListStackViewPhonePhotoDecoration:(PUPhotoDecoration *)arg1;
 - (void)configureAlbumListSectionTitleLabel:(UILabel *)arg1;
 - (void)configureAlbumListSubtitleLabel:(UILabel *)arg1 asOpaque:(_Bool)arg2;

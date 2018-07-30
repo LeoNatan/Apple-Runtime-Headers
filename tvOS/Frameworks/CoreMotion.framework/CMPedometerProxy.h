@@ -14,7 +14,8 @@
     NSObject<OS_dispatch_queue> *fAppQueue;
     NSObject<OS_dispatch_source> *fWatchdogTimer;
     struct CLConnectionClient *fLocationdConnection;
-    CDUnknownBlockType fHandler;
+    CDUnknownBlockType fOffsetUpdateHandler;
+    CDUnknownBlockType fCumulativeUpdateHandler;
     long long fStepCountFromStart;
     long long fPushCountFromStart;
     long long fStepCountOffset;
@@ -34,6 +35,11 @@
     CDUnknownBlockType fEventHandler;
     _Bool fStopEventUpdates;
     int fWorkoutType;
+    int fElevationAscendedStart;
+    int fElevationAscendedOffset;
+    int fElevationDescendedStart;
+    int fElevationDescendedOffset;
+    _Bool fElevationCountingAvailable;
 }
 
 - (void)_queryPedometerCalibrationBinsWithHandler:(CDUnknownBlockType)arg1 forType:(long long)arg2 forRemote:(_Bool)arg3;
@@ -44,6 +50,7 @@
 - (void)_startPedometerEventUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_handleRecordQueryResponse:(shared_ptr_bdcc6d0f)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)_startPedometerUpdatesSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_handleQueryResponse:(shared_ptr_bdcc6d0f)arg1 onQueue:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)_stopPedometerUpdates;
 - (void)_startPedometerUpdatesFromDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

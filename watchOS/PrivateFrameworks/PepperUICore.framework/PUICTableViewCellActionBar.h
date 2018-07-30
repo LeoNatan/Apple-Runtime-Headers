@@ -34,7 +34,7 @@
 - (void)resetView;
 - (void)didMoveToSuperview;
 - (void)willMoveToSuperview:(id)arg1;
-- (void)refreshActions;
+- (void)refreshActionsForCell:(id)arg1;
 @property(readonly, nonatomic) PUICTableViewRowAction *nonDestructiveAction;
 @property(readonly, nonatomic) PUICTableViewRowAction *destructiveAction;
 @property(readonly, nonatomic) float confirmationThreshold;

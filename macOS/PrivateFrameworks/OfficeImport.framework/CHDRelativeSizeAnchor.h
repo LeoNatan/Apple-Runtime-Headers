@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDAnchor.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDRelativeSizeAnchor : CHDAnchor
 {
     struct CGPoint mFrom;

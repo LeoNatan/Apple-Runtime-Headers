@@ -8,15 +8,14 @@
 
 @interface MTLRenderPassDepthAttachmentDescriptor : MTLRenderPassAttachmentDescriptor
 {
-    unsigned long long _depthResolveFilter;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
-@property(nonatomic) unsigned long long depthResolveFilter; // @synthesize depthResolveFilter=_depthResolveFilter;
 
 // Remaining properties
 @property(nonatomic) double clearDepth; // @dynamic clearDepth;
+@property(nonatomic) unsigned long long depthResolveFilter; // @dynamic depthResolveFilter;
 
 @end
 

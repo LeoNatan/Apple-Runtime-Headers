@@ -11,6 +11,7 @@
 }
 
 + (id)bestArtworkSizes;
++ (id)sharedDataSource;
 - (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize)arg2;
 - (void)getExportableArtworkPropertiesForCatalog:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)requestForCatalog:(id)arg1 size:(struct CGSize)arg2;

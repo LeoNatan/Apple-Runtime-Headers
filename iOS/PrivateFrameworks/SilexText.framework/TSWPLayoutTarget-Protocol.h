@@ -51,6 +51,7 @@
 @property(readonly, nonatomic) _Bool allowsDescendersToClip;
 @property(readonly, nonatomic) _Bool ignoresEquationAlignment;
 @property(readonly, nonatomic) unsigned int maxLineCount;
+@property(readonly, nonatomic) double reservedWidthWhenTruncating;
 @property(readonly, nonatomic) _Bool allowsLastLineTruncation;
 @property(readonly, nonatomic) struct __CFLocale *hyphenationLocale;
 @property(readonly, nonatomic) _Bool shouldHyphenate;

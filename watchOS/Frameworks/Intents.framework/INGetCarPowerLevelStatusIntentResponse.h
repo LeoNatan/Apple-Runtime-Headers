@@ -15,7 +15,6 @@
     _INPBGetCarPowerLevelStatusIntentResponse *_responseMessagePBRepresentation;
 }
 
-+ (int)_intentHandlingStatusFromCode:(int)arg1;
 + (_Bool)_appLaunchRequestedFromCode:(int)arg1;
 + (int)_errorCodeFromCode:(int)arg1;
 + (int)_typeFromCode:(int)arg1;
@@ -25,14 +24,18 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property(copy, nonatomic) NSNumber *minutesToFull;
+@property(copy, nonatomic) NSNumber *charging;
 @property(copy, nonatomic) NSMeasurement *distanceRemaining;
 @property(copy, nonatomic) NSNumber *chargePercentRemaining;
 @property(copy, nonatomic) NSNumber *fuelPercentRemaining;
 - (id)_responseMessagePBRepresentation;
+- (int)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) int code;
 - (id)initWithBackingStore:(id)arg1;
+- (id)_initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)init;
 

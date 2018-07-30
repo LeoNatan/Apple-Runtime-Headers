@@ -10,25 +10,30 @@
 
 @interface NTKTimerComplicationDataSource : NTKComplicationDataSource
 {
+    struct NSNumber *_timerToken;
     MTTimerManager *_timerManager;
 }
 
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) MTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 - (void).cxx_destruct;
+- (void)_handleTimeFormatChange;
+- (void)_handleLocaleChange;
 - (void)_timerDidChange:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;
+- (id)_unknownEntry;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
 - (void)resume;
 - (void)pause;
-- (id)_currentTimelineEntry;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
+- (id)_currentTimelineEntry;
 - (id)currentSwitcherTemplate;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 @end
 

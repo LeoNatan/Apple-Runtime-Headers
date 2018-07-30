@@ -20,8 +20,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CIContext *context; // @synthesize context;
 - (id)featuresInImage:(id)arg1;
 - (id)featuresInImage:(id)arg1 options:(id)arg2;
-- (void)finalize;
-- (void)dealloc;
 - (id)initWithContext:(id)arg1 options:(id)arg2;
 
 @end

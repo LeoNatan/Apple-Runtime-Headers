@@ -13,15 +13,13 @@ __attribute__((visibility("hidden")))
 {
     ViewHost *_viewHost;
     ViewService *_viewService;
-    NSString *_identifier;
+    NSString *_remoteViewIdentifier;
     unsigned int _keyFocusTheftID;
 }
 
 + (BOOL)determineKeyFocus:(id)arg1 because:(const char *)arg2;
-+ (void)setCurrentApplicationValue:(void *)arg1 forKey:(id)arg2;
-+ (void)setApplication:(struct __LSASN *)arg1 value:(void *)arg2 forKey:(id)arg3;
+@property(retain) NSString *remoteViewIdentifier; // @synthesize remoteViewIdentifier=_remoteViewIdentifier;
 @property(readonly) unsigned int keyFocusTheftID; // @synthesize keyFocusTheftID=_keyFocusTheftID;
-@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property ViewService *viewService; // @synthesize viewService=_viewService;
 @property ViewHost *viewHost; // @synthesize viewHost=_viewHost;
 - (struct __CGEvent *)eventInProgress:(id)arg1;

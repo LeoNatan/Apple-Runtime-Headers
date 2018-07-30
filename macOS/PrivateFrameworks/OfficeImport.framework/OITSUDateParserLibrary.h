@@ -8,7 +8,6 @@
 
 @class NSCondition, NSMutableArray, OITSULocale;
 
-__attribute__((visibility("hidden")))
 @interface OITSUDateParserLibrary : NSObject
 {
     OITSULocale *mLocale;

@@ -14,11 +14,10 @@
 
 @interface _CPFeedback : PBCodable <_CPProcessableFeedback, _CPFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
 }
 
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
@@ -27,7 +26,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

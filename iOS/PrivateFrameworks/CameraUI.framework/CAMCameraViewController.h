@@ -38,12 +38,14 @@
     CAMThumbnailGenerator *__resultQueueThumbnailGenerator;
     CAMViewfinderViewController *_viewfinderViewController;
     id <CAMCameraViewControllerPresentationDelegate> _presentationDelegate;
+    id <CAMCameraViewControllerCameraSessionDelegate> _cameraSessionDelegate;
 }
 
 + (_Bool)isEmulatingImagePicker;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <CAMCameraViewControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
+@property(nonatomic) __weak id <CAMCameraViewControllerCameraSessionDelegate> cameraSessionDelegate; // @synthesize cameraSessionDelegate=_cameraSessionDelegate;
 @property(nonatomic) _Bool automaticallyManagesCameraSession; // @synthesize automaticallyManagesCameraSession=_automaticallyManagesCameraSession;
+@property(nonatomic) __weak id <CAMCameraViewControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(readonly, nonatomic) CAMViewfinderViewController *viewfinderViewController; // @synthesize viewfinderViewController=_viewfinderViewController;
 @property(readonly, nonatomic) CAMThumbnailGenerator *_resultQueueThumbnailGenerator; // @synthesize _resultQueueThumbnailGenerator=__resultQueueThumbnailGenerator;
 @property(readonly, nonatomic) NSMutableDictionary *_resultQueueStillImageResultCoordinators; // @synthesize _resultQueueStillImageResultCoordinators=__resultQueueStillImageResultCoordinators;
@@ -63,6 +65,7 @@
 @property(readonly, nonatomic) CUCaptureController *captureController; // @synthesize captureController=_captureController;
 @property(nonatomic) __weak id <CAMCameraCaptureDelegate> captureDelegate; // @synthesize captureDelegate=_captureDelegate;
 - (void).cxx_destruct;
+@property(nonatomic, getter=creativeCameraDelegate) __weak id <CAMCreativeCameraDelegate> creativeCameraDelegate;
 - (id)reviewButton;
 - (void)handleReviewButtonReleased:(id)arg1;
 - (void)stillImagePersistenceCoordinator:(id)arg1 requestsDispatchForResultSpecifiers:(unsigned long long)arg2 photoProperties:(id)arg3 videoProperties:(id)arg4 unfilteredPhotoProperties:(id)arg5 unfilteredVideoProperties:(id)arg6 assetAdjustments:(id)arg7 error:(id)arg8;
@@ -81,7 +84,7 @@
 - (void)captureController:(id)arg1 didGenerateStillImageCaptureResult:(id)arg2 fromRequest:(id)arg3;
 - (id)_clientPropertiesForVideoURL:(id)arg1 duration:(CDStruct_1b6d18a9)arg2 size:(struct CGSize)arg3 creationDate:(id)arg4 captureOrientation:(long long)arg5 previewSurface:(void *)arg6 previewOrientation:(long long)arg7 adjustments:(id)arg8 uniqueIdentifier:(id)arg9 savedToPhotoLibrary:(_Bool)arg10;
 - (id)_clientPropertiesForLivePhotoVideoURL:(id)arg1 duration:(CDStruct_1b6d18a9)arg2;
-- (id)_clientPropertiesForStillImageWithURL:(id)arg1 captureOrientation:(long long)arg2 previewSurface:(void *)arg3 previewOrientation:(long long)arg4 uniqueIdentifier:(id)arg5 savedToPhotoLibrary:(_Bool)arg6 captureResult:(id)arg7;
+- (id)_clientPropertiesForStillImageWithURL:(id)arg1 captureMode:(long long)arg2 captureOrientation:(long long)arg3 previewSurface:(void *)arg4 previewOrientation:(long long)arg5 uniqueIdentifier:(id)arg6 savedToPhotoLibrary:(_Bool)arg7 captureResult:(id)arg8;
 - (id)_assetAdjustmentsFromFilters:(id)arg1 portraitMetadata:(id)arg2 properties:(id)arg3;
 - (void)_notifyCaptureDelegateOfCompletedCaptureOfLivePhoto:(id)arg1 withProperties:(id)arg2 error:(id)arg3;
 - (void)_notifyCaptureDelegateOfCompletedCaptureOfPhoto:(id)arg1 withProperties:(id)arg2 error:(id)arg3;
@@ -96,6 +99,8 @@
 @property(nonatomic) unsigned long long persistenceBehavior;
 @property(nonatomic, getter=isDisablingAdditionalCaptures) _Bool disablingAdditionalCaptures;
 @property(nonatomic, getter=isDisablingMultipleCaptureFeatures) _Bool disablingMultipleCaptureFeatures;
+- (void)setMessagesTransitionState:(long long)arg1 animated:(_Bool)arg2;
+@property(readonly, nonatomic) long long messagesTransitionState;
 - (void)resumeCameraSession;
 - (void)suspendCameraSession;
 - (_Bool)stopRecording;
@@ -120,11 +125,11 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
-- (id)initWithInitialLayoutStyle:(long long)arg1 privateOptions:(long long)arg2;
-- (id)initWithCustomLaunchOptions:(id)arg1 usingEmulationMode:(long long)arg2;
+- (id)initWithOverrides:(id)arg1 initialLayoutStyle:(long long)arg2 privateOptions:(long long)arg3;
+- (id)initWithOverrides:(id)arg1 usingEmulationMode:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)_commonCAMCameraViewControllerInitializationWithLaunchOptions:(id)arg1 usingEmulationMode:(long long)arg2 initialLayoutStyle:(long long)arg3 privateOptions:(long long)arg4;
+- (void)_commonCAMCameraViewControllerInitializationWithOverrides:(id)arg1 usingEmulationMode:(long long)arg2 initialLayoutStyle:(long long)arg3 privateOptions:(long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

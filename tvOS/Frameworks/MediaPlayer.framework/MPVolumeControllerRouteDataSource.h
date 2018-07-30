@@ -44,7 +44,6 @@
 - (void)_updateVolumeControlCapabilities:(unsigned int)arg1;
 - (void)initializeVolume;
 - (void)adjustVolumeValue:(float)arg1;
-- (void)reloadWarning;
 - (void)reload;
 - (void)_setPendingVolumeIfNeeded;
 @property(readonly, copy, nonatomic) NSString *volumeControlLabel;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSViewController, NSWindow;
+@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface RPService : NSObject
 {
@@ -23,10 +23,8 @@
     unsigned int _advertiseRate;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_label;
-    NSViewController *_presentingViewController;
     NSString *_serviceType;
     NSDictionary *_txtDictionary;
-    NSWindow *_window;
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
@@ -43,10 +41,8 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
-@property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 @property(copy, nonatomic) NSDictionary *txtDictionary; // @synthesize txtDictionary=_txtDictionary;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-@property(retain, nonatomic) NSViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) BOOL needsSetup; // @synthesize needsSetup=_needsSetup;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;

@@ -71,7 +71,7 @@
 - (long long)runModal;
 - (void)beginWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_runOrderingOperationWithContext:(id)arg1;
+- (int)_runOrderingOperationWithContext:(id)arg1;
 - (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(id)arg3;
 - (void)cancel:(id)arg1;
 - (void)ok:(id)arg1;

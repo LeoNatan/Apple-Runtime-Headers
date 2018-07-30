@@ -9,7 +9,7 @@
 #import "CKBrowserDragViewControllerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CKBrowserDragViewController, CKBrowserDragWindow, NSString, UILongPressGestureRecognizer, UIView;
+@class CKBrowserDragViewController, NSString, UILongPressGestureRecognizer, UIView, UIViewController, UIWindow;
 
 @interface CKBrowserDragManager : NSObject <CKBrowserDragViewControllerDelegate, UIGestureRecognizerDelegate>
 {
@@ -19,11 +19,13 @@
     UILongPressGestureRecognizer *_gestureRecognizer;
     UIView *_targetView;
     CKBrowserDragViewController *_dragViewController;
-    CKBrowserDragWindow *_dragWindow;
+    UIWindow *_dragWindow;
+    UIViewController *_presentingViewController;
     struct CGPoint _locationInView;
 }
 
-@property(retain, nonatomic) CKBrowserDragWindow *dragWindow; // @synthesize dragWindow=_dragWindow;
+@property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
+@property(retain, nonatomic) UIWindow *dragWindow; // @synthesize dragWindow=_dragWindow;
 @property(retain, nonatomic) CKBrowserDragViewController *dragViewController; // @synthesize dragViewController=_dragViewController;
 @property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
 @property(nonatomic) struct CGPoint locationInView; // @synthesize locationInView=_locationInView;
@@ -38,6 +40,7 @@
 - (void)tapRecognized:(id)arg1;
 - (void)beginDraggingItem:(id)arg1 withAnimatedDragImage:(id)arg2 fromRect:(struct CGRect)arg3;
 - (void)beginDraggingItem:(id)arg1 withDragImage:(id)arg2 fromRect:(struct CGRect)arg3;
+- (_Bool)usesSeparateDragWindow;
 - (void)dealloc;
 - (id)initWithTargetView:(id)arg1;
 

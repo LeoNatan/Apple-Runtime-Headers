@@ -75,6 +75,7 @@ __attribute__((visibility("hidden")))
 - (void)dataFromFileURL:(id)arg1 filename:(id)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)dataFromFileURL:(id)arg1 filename:(id)arg2 useFileCoordination:(_Bool)arg3;
 - (id)dataFromURL:(id)arg1 filename:(id)arg2 useFileCoordination:(_Bool)arg3;
+- (void)willCreateData;
 - (void)didCloseDocument;
 - (id)initWithContext:(id)arg1;
 - (id)init;

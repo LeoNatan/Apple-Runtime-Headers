@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADPathElement.h>
 
-__attribute__((visibility("hidden")))
 @interface OADVectorArcPathElement : OADPathElement
 {
     struct OADAdjustCoord mLeft;

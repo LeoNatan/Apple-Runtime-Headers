@@ -6,29 +6,40 @@
 
 #import <MediaRemote/MRAVConcreteEndpoint.h>
 
+#import "MROutputContextDataSourceDelegate.h"
 #import "NSSecureCoding.h"
 
-@class MRAVOutputContext, NSArray, NSObject<OS_dispatch_queue>, NSString;
+@class MRAVOutputContext, MROutputContextController, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
 __attribute__((visibility("hidden")))
-@interface MRAVLocalEndpoint : MRAVConcreteEndpoint <NSSecureCoding>
+@interface MRAVLocalEndpoint : MRAVConcreteEndpoint <NSSecureCoding, MROutputContextDataSourceDelegate>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
     MRAVOutputContext *_outputContext;
     NSString *_uniqueIdentifier;
     NSArray *_outputDevices;
+    MROutputContextController *_outputContextController;
 }
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (void)_reloadOutputDevicesFromContext;
-- (id)_localizeOutputDevices:(id)arg1;
+- (void)_localizeOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_outputContextDevicesDidChangeNotification:(id)arg1;
+- (void)outputContextDataSource:(id)arg1 outputDevice:(id)arg2 didChangeVolumeControlCapabilities:(unsigned int)arg3;
+- (void)outputContextDataSource:(id)arg1 outputDevice:(id)arg2 didChangeVolume:(float)arg3;
+- (void)outputContextDataSource:(id)arg1 didRemoveOutputDevice:(id)arg2;
+- (void)outputContextDataSource:(id)arg1 didAddOutputDevice:(id)arg2;
+- (void)removeOutputDeviceFromParentGroup:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)volumeControlCapabilitiesForOutputDevice:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setOutputDeviceVolume:(float)arg1 outputDevice:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)isLocalEndpoint;
-- (id)instanceIdentifier;
+- (_Bool)canModifyGroupMembership;
+- (_Bool)isProxyGroupPlayer;
+- (long)connectionType;
 - (id)uniqueIdentifier;
 @property(copy, nonatomic) NSArray *outputDevices;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,6 +47,13 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithOutputDevices:(id)arg1;
 - (id)initWithOutputContext:(id)arg1;
+- (id)initWithOutputContext:(id)arg1 wantsUpdates:(_Bool)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     struct MTLRenderPipelineDescriptorPrivate _private;
 }
 
+- (id)newSerializedVertexDataWithFlags:(unsigned long long)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)newSerializedVertexDataWithFlags:(unsigned long long)arg1 error:(id *)arg2;
 - (id)serializeFragmentData;
 - (void)validateWithDevice:(id)arg1;
@@ -23,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (const struct MTLRenderPipelineDescriptorPrivate *)_descriptorPrivate;
+- (id)driverCompilerOptions;
+- (void)setDriverCompilerOptions:(id)arg1;
 - (id)vertexDescriptor;
 - (void)setVertexDescriptor:(id)arg1;
 - (void)attachVertexDescriptor:(id)arg1;
@@ -53,6 +56,12 @@ __attribute__((visibility("hidden")))
 - (void)setSampleCount:(unsigned long long)arg1;
 - (unsigned long long)sampleCount;
 @property(nonatomic) unsigned long long postVertexDumpBufferIndex;
+- (void)setResourceIndex:(unsigned long long)arg1;
+- (unsigned long long)resourceIndex;
+- (void)setForceResourceIndex:(BOOL)arg1;
+- (BOOL)forceResourceIndex;
+- (void)setSupportIndirectCommandBuffers:(BOOL)arg1;
+- (BOOL)supportIndirectCommandBuffers;
 - (void)setTessellationOutputWindingOrder:(unsigned long long)arg1;
 - (unsigned long long)tessellationOutputWindingOrder;
 - (void)setTessellationFactorStepFunction:(unsigned long long)arg1;

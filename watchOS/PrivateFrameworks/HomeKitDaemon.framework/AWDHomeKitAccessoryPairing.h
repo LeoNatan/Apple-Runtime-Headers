@@ -13,7 +13,6 @@
 @interface AWDHomeKitAccessoryPairing : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;
-    int _authMethod;
     int _certified;
     unsigned int _duration;
     int _errorCode;
@@ -24,7 +23,6 @@
     _Bool _isSecureWAC;
     struct {
         unsigned int timestamp:1;
-        unsigned int authMethod:1;
         unsigned int certified:1;
         unsigned int duration:1;
         unsigned int errorCode:1;
@@ -52,10 +50,6 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (int)StringAsAuthMethod:(id)arg1;
-- (id)authMethodAsString:(int)arg1;
-@property(nonatomic) _Bool hasAuthMethod;
-@property(nonatomic) int authMethod; // @synthesize authMethod=_authMethod;
 @property(nonatomic) _Bool hasIsSecureWAC;
 - (int)StringAsCertified:(id)arg1;
 - (id)certifiedAsString:(int)arg1;

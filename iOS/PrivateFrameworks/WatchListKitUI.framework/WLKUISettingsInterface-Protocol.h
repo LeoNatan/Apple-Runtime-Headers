@@ -6,13 +6,13 @@
 
 #import "JSExport.h"
 
-@class NSArray, NSDictionary;
+@class JSValue, NSArray, NSDictionary;
 
 @protocol WLKUISettingsInterface <JSExport>
 - (NSArray *)deniedBrands;
 - (NSArray *)consentedBrands;
 - (NSDictionary *)settings;
-- (void)forceUpdate;
+- (void)forceUpdateWithCallback:(JSValue *)arg1;
 - (_Bool)sportsScoreSpoilersAllowed;
 - (_Bool)privateModeEnabled;
 - (unsigned long long)privacyFlowContentVersion;

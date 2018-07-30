@@ -8,7 +8,6 @@
 
 @class NSArray, NSString, UIColor, _MKMapItemAttribution;
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceCardActionItem : NSObject
 {
     _Bool _enabled;

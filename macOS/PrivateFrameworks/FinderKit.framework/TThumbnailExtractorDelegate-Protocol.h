@@ -5,6 +5,7 @@
 //
 
 @protocol TThumbnailExtractorDelegate
+- (_Bool)fetchIconifiedThumbnails;
 - (struct TFENode)thumbnailTargetNodeForNode:(const struct TFENode *)arg1;
 - (void)invalidateThumbnailForKeyNodes:(const struct TFENodeVector *)arg1;
 @end

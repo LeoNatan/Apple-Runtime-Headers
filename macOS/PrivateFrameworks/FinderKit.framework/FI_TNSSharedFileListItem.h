@@ -9,15 +9,16 @@
 __attribute__((visibility("hidden")))
 @interface FI_TNSSharedFileListItem : NSObject
 {
-    struct TSharedFileListItem *_item;
+    struct unique_ptr<TSharedFileListItem, std::__1::default_delete<TSharedFileListItem>> _item;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)iconAsImage;
 - (struct TIconRef)icon;
 - (id)url;
 - (id)displayName;
 - (struct OpaqueLSSharedFileListItemRef *)item;
-- (void)dealloc;
 - (id)initWithSFLItem:(struct OpaqueLSSharedFileListItemRef *)arg1;
 
 @end

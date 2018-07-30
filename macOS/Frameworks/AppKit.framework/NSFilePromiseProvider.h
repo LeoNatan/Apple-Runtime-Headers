@@ -10,7 +10,7 @@
 #import "NSPasteboardWriting.h"
 #import "_NSPasteboardPromiseProviderAgency.h"
 
-@class NSArray, NSOperationQueue, NSString, NSURL;
+@class NSArray, NSOperationQueue, NSString, NSURL, _NSFilePromiseProviderPrivate;
 
 @interface NSFilePromiseProvider : NSObject <NSFileProvider, _NSPasteboardPromiseProviderAgency, NSPasteboardWriting>
 {
@@ -23,11 +23,14 @@
     long long _dragggingSequenceNumber;
     struct {
         unsigned int valid;
-        unsigned int reserved:31;
+        unsigned int providedItem:1;
+        unsigned int reserved:30;
     } _flags;
     id _private;
 }
 
++ (id)_provideItemNotifyQueue;
+@property(readonly, nonatomic) _NSFilePromiseProviderPrivate *private; // @synthesize private=_private;
 @property long long dragggingSequenceNumber; // @synthesize dragggingSequenceNumber=_dragggingSequenceNumber;
 @property(copy) NSArray *alternateFileTypes; // @synthesize alternateFileTypes=_reservedA;
 @property __weak id <NSFilePromiseProviderDelegate> delegate; // @synthesize delegate=_delegate;

@@ -6,20 +6,22 @@
 
 #import <PhotosUICore/PXBarsController.h>
 
+#import "PXActionMenuDelegate.h"
 #import "PXActionPerformerDelegate.h"
 #import "PXChangeObserver.h"
 #import "PXPhotosDataSourceChangeObserver.h"
 #import "UIPopoverPresentationControllerDelegate.h"
 
-@class NSMutableDictionary, NSString, PXActionPerformer, PXAssetActionManager, PXAssetCollectionActionManager, PXBarAppearance, PXExtendedTraitCollection, PXPhotosDataSource, PXPhotosDetailsBarSpec, PXPhotosDetailsContext, PXPhotosDetailsViewModel, PXSectionedSelectionManager, UIView;
+@class NSMutableDictionary, NSString, PXActionMenuController, PXActionPerformer, PXAssetActionManager, PXAssetCollectionActionManager, PXBarAppearance, PXExtendedTraitCollection, PXPhotosDataSource, PXPhotosDetailsBarSpec, PXPhotosDetailsContext, PXPhotosDetailsUIViewController, PXPhotosDetailsViewModel, PXSectionedSelectionManager, UIView;
 
-@interface PXPhotosDetailsBarsController : PXBarsController <PXPhotosDataSourceChangeObserver, PXChangeObserver, PXActionPerformerDelegate, UIPopoverPresentationControllerDelegate>
+@interface PXPhotosDetailsBarsController : PXBarsController <PXPhotosDataSourceChangeObserver, PXChangeObserver, PXActionPerformerDelegate, PXActionMenuDelegate, UIPopoverPresentationControllerDelegate>
 {
     struct {
         _Bool assetActionManager;
         _Bool assetCollectionActionManager;
     } _needsUpdateFlags;
     _Bool __showTitleView;
+    _Bool _shouldAddActionButton;
     PXAssetActionManager *__assetActionManager;
     PXAssetCollectionActionManager *__assetCollectionActionManager;
     PXBarAppearance *__barAppearance;
@@ -27,6 +29,7 @@
     PXSectionedSelectionManager *__selectionManager;
     PXActionPerformer *__activePerformer;
     PXActionPerformer *__lastActionPerformer;
+    PXActionMenuController *__activeMenuController;
     UIView *__titleView;
     PXPhotosDetailsContext *__context;
     PXPhotosDataSource *__dataSource;
@@ -35,6 +38,7 @@
     NSMutableDictionary *__barButtonItemCacheByBarItemIdentifier;
 }
 
+@property(nonatomic) _Bool shouldAddActionButton; // @synthesize shouldAddActionButton=_shouldAddActionButton;
 @property(readonly, nonatomic) NSMutableDictionary *_barButtonItemCacheByBarItemIdentifier; // @synthesize _barButtonItemCacheByBarItemIdentifier=__barButtonItemCacheByBarItemIdentifier;
 @property(readonly, nonatomic) NSMutableDictionary *_barButtonItemByActionType; // @synthesize _barButtonItemByActionType=__barButtonItemByActionType;
 @property(readonly, nonatomic) PXExtendedTraitCollection *_extendedTraitCollection; // @synthesize _extendedTraitCollection=__extendedTraitCollection;
@@ -42,19 +46,26 @@
 @property(readonly, nonatomic) PXPhotosDetailsContext *_context; // @synthesize _context=__context;
 @property(nonatomic, setter=_setShowTitleView:) _Bool _showTitleView; // @synthesize _showTitleView=__showTitleView;
 @property(readonly, nonatomic) UIView *_titleView; // @synthesize _titleView=__titleView;
+@property(retain, nonatomic) PXActionMenuController *_activeMenuController; // @synthesize _activeMenuController=__activeMenuController;
 @property(nonatomic, setter=_setLastActionPerformer:) __weak PXActionPerformer *_lastActionPerformer; // @synthesize _lastActionPerformer=__lastActionPerformer;
 @property(retain, nonatomic, setter=_setActivePerformer:) PXActionPerformer *_activePerformer; // @synthesize _activePerformer=__activePerformer;
 @property(retain, nonatomic, setter=_setSelectionManager:) PXSectionedSelectionManager *_selectionManager; // @synthesize _selectionManager=__selectionManager;
 @property(readonly, nonatomic) PXPhotosDetailsViewModel *_viewModel; // @synthesize _viewModel=__viewModel;
 @property(retain, nonatomic, setter=_setBarAppearance:) PXBarAppearance *_barAppearance; // @synthesize _barAppearance=__barAppearance;
 - (void).cxx_destruct;
+- (_Bool)actionMenu:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)actionMenu:(id)arg1 presentViewController:(id)arg2;
 - (void)prepareForPopoverPresentation:(id)arg1;
+- (_Bool)_dismissViewControllerIfSafeAnimated:(_Bool)arg1;
+- (void)actionMenu:(id)arg1 actionPerformer:(id)arg2 didChangeState:(unsigned long long)arg3;
 - (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)_sourceBarButtonItemForActionType:(id)arg1;
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
+- (void)removeActionButton;
+- (void)actionMenuButtonItemTapped:(id)arg1;
 - (void)faceModeButtonItemTapped:(id)arg1;
 - (void)doneBarButtonItemTapped:(id)arg1;
 - (void)cancelBarButtonItemTapped:(id)arg1;
@@ -86,6 +97,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(nonatomic) __weak PXPhotosDetailsUIViewController *viewController; // @dynamic viewController;
 
 @end
 

@@ -10,10 +10,16 @@
 {
 }
 
++ (id)touchBarSelectedCandidateSurface;
++ (id)touchBarCandidateArray;
 + (id)selectedCandidateSurface;
 + (BOOL)candidateWindowIsVisible;
 + (id)informationStringWithIndex:(unsigned long long)arg1;
++ (id)informationStringWithIndex:(unsigned long long)arg1 pasteboardNamed:(id)arg2;
 + (id)groupedCandidateArray;
++ (id)groupedCandidateArrayWithPasteboardNamed:(id)arg1;
++ (void)setCandidateListDictionary:(id)arg1 candidateWindowVisible:(BOOL)arg2 selectedCandidateSurface:(id)arg3;
++ (void)setCandidateListDictionary:(id)arg1 candidateWindowVisible:(BOOL)arg2 selectedCandidateSurface:(id)arg3 debuggingPasteboardName:(id)arg4;
 + (void)setCandidates:(id)arg1 candidateWindowVisible:(BOOL)arg2 selectedCandidateSurface:(id)arg3;
 + (id)candidateInformationFromArray:(id)arg1;
 + (BOOL)isSendingDebugInformation;

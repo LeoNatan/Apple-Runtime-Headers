@@ -10,7 +10,6 @@
 
 @class NSString, TKTonePickerViewController;
 
-__attribute__((visibility("hidden")))
 @interface ABAlertToneCollectionViewItem : ABCollectionViewItem <TKTonePickerViewControllerDelegate>
 {
     TKTonePickerViewController *_tonePickerViewController;

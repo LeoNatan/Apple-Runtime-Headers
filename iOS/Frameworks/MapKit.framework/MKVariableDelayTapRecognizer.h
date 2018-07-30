@@ -6,7 +6,6 @@
 
 #import "UITapGestureRecognizer.h"
 
-__attribute__((visibility("hidden")))
 @interface MKVariableDelayTapRecognizer : UITapGestureRecognizer
 {
     double originalMaximumIntervalBetweenSuccessiveTaps;

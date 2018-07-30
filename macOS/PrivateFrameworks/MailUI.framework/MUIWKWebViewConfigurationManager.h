@@ -26,6 +26,7 @@
 - (void)_updateStyleSheets;
 - (void)_updateFontPreferences;
 - (void)_updateDebuggingPreferences;
+- (void)handleAccessibilityDisplayChange:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)init;

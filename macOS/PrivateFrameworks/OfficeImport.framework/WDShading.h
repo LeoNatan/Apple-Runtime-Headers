@@ -10,7 +10,6 @@
 
 @class OITSUColor;
 
-__attribute__((visibility("hidden")))
 @interface WDShading : NSObject <NSCopying>
 {
     int mStyle;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)autoBackgroundColor;
 + (id)autoForegroundColor;
 + (id)nilShading;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setBackground:(id)arg1;
@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToShading:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

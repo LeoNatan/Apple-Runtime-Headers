@@ -12,12 +12,14 @@
 {
     NSURL *_harrierBaseURL;
     NSURL *_remoteSearchIndex;
+    NSURL *_remoteCSSearchIndex;
     NSURL *_remoteExactMatch;
     NSString *_buildID;
 }
 
 @property(readonly) NSString *buildID; // @synthesize buildID=_buildID;
 @property(readonly) NSURL *remoteExactMatch; // @synthesize remoteExactMatch=_remoteExactMatch;
+@property(readonly) NSURL *remoteCSSearchIndex; // @synthesize remoteCSSearchIndex=_remoteCSSearchIndex;
 @property(readonly) NSURL *remoteSearchIndex; // @synthesize remoteSearchIndex=_remoteSearchIndex;
 @property(readonly) NSURL *harrierBaseURL; // @synthesize harrierBaseURL=_harrierBaseURL;
 - (void).cxx_destruct;

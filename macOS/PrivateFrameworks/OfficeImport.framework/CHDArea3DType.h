@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDArea2DType.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDArea3DType : CHDArea2DType
 {
     int mGapDepth;

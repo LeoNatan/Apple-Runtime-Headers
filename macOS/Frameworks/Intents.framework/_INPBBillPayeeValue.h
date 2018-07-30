@@ -7,37 +7,40 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBBillPayeeValue.h"
 
-@class NSString, PBUnknownFields, _INPBDataString, _INPBValueMetadata;
+@class NSString, _INPBDataString, _INPBValueMetadata;
 
-@interface _INPBBillPayeeValue : PBCodable <NSCopying>
+@interface _INPBBillPayeeValue : PBCodable <_INPBBillPayeeValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSString *_accountNumber;
     _INPBDataString *_nickname;
     _INPBDataString *_organizationName;
     _INPBValueMetadata *_valueMetadata;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBDataString *organizationName; // @synthesize organizationName=_organizationName;
-@property(retain, nonatomic) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
-@property(retain, nonatomic) _INPBDataString *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(retain, nonatomic) _INPBDataString *organizationName; // @synthesize organizationName=_organizationName;
+@property(retain, nonatomic) _INPBDataString *nickname; // @synthesize nickname=_nickname;
+@property(copy, nonatomic) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasOrganizationName;
-@property(readonly, nonatomic) BOOL hasAccountNumber;
-@property(readonly, nonatomic) BOOL hasNickname;
 @property(readonly, nonatomic) BOOL hasValueMetadata;
+@property(readonly, nonatomic) BOOL hasOrganizationName;
+@property(readonly, nonatomic) BOOL hasNickname;
+@property(readonly, nonatomic) BOOL hasAccountNumber;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)proposedIdentifierForItemIdentifier:(id)arg1;
+- (id)proposedScopedIdentifierForItemScopedIdentifier:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

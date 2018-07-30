@@ -12,6 +12,8 @@
 
 @interface AXSSPronunciationDatabase : NSObject <APSConnectionDelegate>
 {
+    int _lockNotificationToken;
+    BOOL _isScreenedLocked;
     NSManagedObjectContext *_managedObjectContext;
     NSCloudKitMirroringDelegate *_mirroringDelegate;
     APSConnection *_apsConnection;

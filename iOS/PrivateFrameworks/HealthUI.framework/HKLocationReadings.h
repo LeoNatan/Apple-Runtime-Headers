@@ -34,6 +34,7 @@
 - (void)_calculateSpeeds;
 - (id)description;
 - (id)debugDescription;
+- (id)initWithLocation:(id)arg1 workout:(id)arg2;
 - (id)initWithLocations:(id)arg1 workout:(id)arg2 isSmoothed:(_Bool)arg3;
 
 @end

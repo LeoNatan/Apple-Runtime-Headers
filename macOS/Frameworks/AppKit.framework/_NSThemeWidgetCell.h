@@ -8,18 +8,17 @@
 
 @interface _NSThemeWidgetCell : NSButtonCell
 {
-    int _buttonID;
+    long long _buttonID;
     BOOL _hasRollover;
     BOOL _isObscured;
     BOOL _temporarilyDisabled;
-    struct __CFDictionary *_coreUIDrawOptions;
 }
 
 - (void)update;
-- (BOOL)isObscured;
-- (void)setObscured:(BOOL)arg1;
+@property(getter=isObscured) BOOL obscured;
 - (int)getState:(id)arg1;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
+- (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_drawCustomImage:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
 - (void)layoutLayerWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -31,22 +30,18 @@
 - (void)setButtonID:(long long)arg1;
 - (long long)buttonID;
 - (void)coreUIDrawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (struct __CFString *)coreUIState;
+- (id)coreUIDrawOptionsInView:(id)arg1 isFlipped:(BOOL)arg2;
+- (id)coreUIWidgetType;
+- (id)coreUIWindowType;
+- (id)coreUIValue;
+- (id)coreUIState;
+- (id)coreUIPresentationState;
 - (id)_containingThemeFrameFromView:(id)arg1;
-- (struct __CFString *)coreUIPresentationState;
 - (BOOL)isEnabled;
 - (BOOL)isEdited;
-- (BOOL)temporarilyDisabled;
-- (void)setTemporarilyDisabled:(BOOL)arg1;
-- (void)setCoreUIWindowType:(struct __CFString *)arg1;
-- (struct __CFString *)coreUIWidgetType;
+@property BOOL temporarilyDisabled;
 - (id)_realWindow;
-- (void)setCoreUIWidgetType:(struct __CFString *)arg1;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initImageCell:(id)arg1;
-- (id)initTextCell:(id)arg1;
-- (void)_NSThemeWidgetCell_commonInit;
 - (BOOL)_accessibilityZoomButtonHasFullscreenBehavior;
 - (id)_accessibilityWindowDelegate;
 - (BOOL)_accessibilityIsZoomButtonID;

@@ -10,6 +10,10 @@
 {
 }
 
++ (_Bool)bypassBBForNotifications;
++ (id)pushNotificationVersion;
++ (unsigned int)openAllMessagesTestCount;
++ (_Bool)isStandaloneServiceEnabled;
 + (_Bool)networkLatencyTestMode;
 
 @end

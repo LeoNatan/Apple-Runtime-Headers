@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface MPIdentifierSet : NSObject <NSCopying, NSSecureCoding>
 {
@@ -18,6 +18,7 @@
     long long _syncID;
     NSString *_globalPlaylistID;
     long long _storeAdamID;
+    NSArray *_formerStoreAdamIDs;
     NSString *_socialProfileID;
     unsigned long long _storeCloudID;
     NSString *_cloudUniversalLibraryID;
@@ -52,19 +53,21 @@
 @property(copy, nonatomic) NSString *cloudUniversalLibraryID; // @synthesize cloudUniversalLibraryID=_cloudUniversalLibraryID;
 @property(nonatomic) unsigned long long storeCloudID; // @synthesize storeCloudID=_storeCloudID;
 @property(copy, nonatomic) NSString *socialProfileID; // @synthesize socialProfileID=_socialProfileID;
+@property(copy, nonatomic) NSArray *formerStoreAdamIDs; // @synthesize formerStoreAdamIDs=_formerStoreAdamIDs;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(copy, nonatomic) NSString *globalPlaylistID; // @synthesize globalPlaylistID=_globalPlaylistID;
 @property(nonatomic) long long syncID; // @synthesize syncID=_syncID;
 @property(nonatomic) long long homeSharingLibraryID; // @synthesize homeSharingLibraryID=_homeSharingLibraryID;
 @property(nonatomic) long long deviceLibraryPersistentID; // @synthesize deviceLibraryPersistentID=_deviceLibraryPersistentID;
 - (void).cxx_destruct;
-- (void)appendIdentifiersToDescription:(id)arg1 withIdentifiersPrefix:(id)arg2;
+- (id)identifierDescriptions;
 - (_Bool)hasCommonIdentifierWithIdentifierSet:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+@property(readonly, nonatomic) NSString *humanDescription;
 - (id)description;
 - (id)copyWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;

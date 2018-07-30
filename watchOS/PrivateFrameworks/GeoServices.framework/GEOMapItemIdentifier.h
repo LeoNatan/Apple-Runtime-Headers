@@ -17,6 +17,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)mapItemIdentifiersFromMapsIdentifiers:(id)arg1;
 - (void).cxx_destruct;
 - (_Bool)isEqualToGEOMapItemIdentifier:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -6,14 +6,16 @@
 
 #import "NSPanel.h"
 
-@class NSString;
+@class CPKEmojiPreviewView, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CPKEmojiIMPreviewWindow : NSPanel
 {
     NSString *_emojiString;
+    CPKEmojiPreviewView *_previewView;
 }
 
+@property CPKEmojiPreviewView *previewView; // @synthesize previewView=_previewView;
 @property(copy) NSString *emojiString; // @synthesize emojiString=_emojiString;
 - (void)showAtScreenLocation:(struct CGPoint)arg1;
 - (void)showAtInsertionPoint;

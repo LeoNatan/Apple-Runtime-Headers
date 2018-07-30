@@ -6,6 +6,7 @@
 
 #import <AppKit/NSView.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSPrintThumbnailBaseView : NSView
 {
     NSView *_initialKeyView;

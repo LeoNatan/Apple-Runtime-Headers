@@ -6,15 +6,17 @@
 
 #import <NewsCore/FCGroupConfig.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDate, NSDictionary;
 
 @interface FCTopStoriesGroupConfig : FCGroupConfig
 {
     NSArray *_mandatoryArticleIDs;
     NSArray *_optionalArticleIDs;
     NSDictionary *_topStoriesMetadataByArticleID;
+    NSDate *_publishDate;
 }
 
+@property(readonly, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
 @property(retain, nonatomic) NSDictionary *topStoriesMetadataByArticleID; // @synthesize topStoriesMetadataByArticleID=_topStoriesMetadataByArticleID;
 @property(readonly, nonatomic) NSArray *optionalArticleIDs; // @synthesize optionalArticleIDs=_optionalArticleIDs;
 @property(readonly, nonatomic) NSArray *mandatoryArticleIDs; // @synthesize mandatoryArticleIDs=_mandatoryArticleIDs;

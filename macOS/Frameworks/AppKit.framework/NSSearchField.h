@@ -48,7 +48,6 @@
 - (void)_addPostAnimationBlock:(CDUnknownBlockType)arg1;
 - (void)_setAnimationCompletionBlocks:(id)arg1;
 - (id)_animationCompletionBlocks;
-- (void)updateCell:(id)arg1;
 - (void)_windowDidOrderOffScreen;
 - (BOOL)_shouldDoLayerPerformanceUpdates;
 - (BOOL)searchFieldCell:(id)arg1 shouldChangeCancelButtonVisibility:(BOOL)arg2;

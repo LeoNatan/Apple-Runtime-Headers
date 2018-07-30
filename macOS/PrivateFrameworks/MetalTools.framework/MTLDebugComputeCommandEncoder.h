@@ -12,7 +12,7 @@
     CDStruct_db34bedf _textures[128];
     CDStruct_db34bedf _samplers[16];
     CDStruct_db34bedf _threadgroupMemoryLengths[31];
-    const CDStruct_b3e7dfa1 *_limits;
+    const CDStruct_df0ba0f9 *_limits;
     BOOL canDealloc;
     BOOL canEndEncoding;
     BOOL canSetComputePipelineState;
@@ -20,6 +20,7 @@
     BOOL hasSetComputePipelineState;
     BOOL hasSetStageInRegion;
     CDStruct_1e3be3a8 stageInRegion;
+    BOOL hasIndirectSetStageInRegion;
     struct deque<id, std::__1::allocator<id>> updatedFences;
     id <MTLComputePipelineState> _computePipelineState;
 }
@@ -27,6 +28,8 @@
 @property(readonly, nonatomic) id <MTLComputePipelineState> computePipelineState; // @synthesize computePipelineState=_computePipelineState;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned long long)arg2;
+- (void)memoryBarrierWithScope:(unsigned long long)arg1;
 - (void)useHeaps:(const id *)arg1 count:(unsigned long long)arg2;
 - (void)useHeap:(id)arg1;
 - (void)useResources:(const id *)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3;
@@ -45,6 +48,7 @@
 - (void)dispatchThreadgroups:(CDStruct_14f26992)arg1 threadsPerThreadgroup:(CDStruct_14f26992)arg2;
 - (void)_validateThreadsPerThreadgroup:(CDStruct_14f26992)arg1;
 - (void)_validateAllFunctionArguments;
+- (void)setStageInRegionWithIndirectBuffer:(id)arg1 indirectBufferOffset:(unsigned long long)arg2;
 - (void)setStageInRegion:(CDStruct_1e3be3a8)arg1;
 - (void)validateStageInRegion:(CDStruct_14f26992)arg1;
 - (void)setThreadgroupMemoryLength:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;

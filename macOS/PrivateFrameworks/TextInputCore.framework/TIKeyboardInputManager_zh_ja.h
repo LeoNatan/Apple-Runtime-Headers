@@ -42,8 +42,9 @@
 @property(copy, nonatomic) NSString *currentClientIdentifier; // @synthesize currentClientIdentifier=_currentClientIdentifier;
 @property(retain, nonatomic) NSArray *clearedTouchDataArray; // @synthesize clearedTouchDataArray=_clearedTouchDataArray;
 @property(retain, nonatomic) NSArray *clearedGeometryDataArray; // @synthesize clearedGeometryDataArray=_clearedGeometryDataArray;
+- (void).cxx_destruct;
 - (void)updateProactiveCandidatesForCandidateResultSet:(id)arg1 withInput:(id)arg2;
-- (void)addProactiveTriggers:(id)arg1;
+- (void)addProactiveTriggers:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void *)mecabraCandidateRefFromCandidate:(id)arg1;
 - (id)candidateResultSetFromWordSearchCandidateResultSet:(id)arg1;
 - (void)deleteFromInputWithContext:(id)arg1;
@@ -87,7 +88,7 @@
 @property(readonly, nonatomic) struct __Mecabra *mecabra;
 - (unsigned long long)autoquoteType;
 - (void)dealloc;
-- (id)initWithConfig:(id)arg1;
+- (id)initWithConfig:(id)arg1 keyboardState:(id)arg2;
 
 @end
 

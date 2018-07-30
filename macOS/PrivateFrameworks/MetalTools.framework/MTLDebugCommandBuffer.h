@@ -12,19 +12,39 @@
 {
     _MTLCommandEncoder *_currentEncoder;
     NSMutableSet *_buffersBoundForWrite;
+    NSMutableSet *_texturesBoundForWrite;
+    NSMutableSet *_unsignaledResources;
+    struct unique_ptr<ILayerLockingPolicy, std::__1::default_delete<ILayerLockingPolicy>> _boundForWriteLockingPolicy;
+    struct vector<std::__1::pair<MTLDebugSharedEvent *, unsigned long long>, std::__1::allocator<std::__1::pair<MTLDebugSharedEvent *, unsigned long long>>> _waitEvents;
 }
 
-@property(readonly, nonatomic) NSMutableSet *buffersBoundForWrite; // @synthesize buffersBoundForWrite=_buffersBoundForWrite;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2;
+- (void)encodeSignalEvent:(id)arg1 value:(unsigned long long)arg2;
+- (void)executeSynchronizationNotifications:(int)arg1 scope:(unsigned long long)arg2 resources:(const id *)arg3 count:(unsigned long long)arg4;
+- (void)executeSynchronizationNotifications:(int)arg1;
+- (void)addSynchronizationNotification:(CDUnknownBlockType)arg1;
+- (id)videoCommandEncoder;
 - (void)doCorruptCBSPI:(int)arg1;
 - (void)commit;
+- (id)sampledComputeCommandEncoderWithDispatchType:(unsigned long long)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned long long)arg3;
 - (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(CDStruct_4af8c268 *)arg1 capacity:(unsigned long long)arg2;
 - (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned long long)arg3;
+- (void)onParallelRenderCommanderEndEncoding;
 - (id)parallelRenderCommandEncoderWithDescriptor:(id)arg1;
+- (id)computeCommandEncoderWithDispatchType:(unsigned long long)arg1;
 - (id)computeCommandEncoder;
 - (id)renderCommandEncoderWithDescriptor:(id)arg1;
+- (void)trackRenderPassDescriptor:(id)arg1;
+- (void)_trackRenderPassAttachmentDescriptor:(id)arg1;
+- (void)_trackTexture:(id)arg1;
 - (id)blitCommandEncoder;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
+- (void)resourceTrackingRecordAccessesToArguments:(id)arg1 bufferFuncArgsPtr:(CDStruct_db34bedf *)arg2 textureFuncArgsPtr:(CDStruct_db34bedf *)arg3;
+- (void)trackUseResources:(const id *)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3;
+- (void)trackUseResource:(id)arg1 usage:(unsigned long long)arg2;
 - (id)initWithCommandBuffer:(id)arg1 commandQueue:(id)arg2;
 - (void)dealloc;
 

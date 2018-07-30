@@ -11,6 +11,7 @@
 }
 
 + (_Bool)isSupported;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

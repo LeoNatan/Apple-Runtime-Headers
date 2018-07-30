@@ -6,18 +6,18 @@
 
 #import "NSObject.h"
 
-@class _CFXPreferences;
+@class _CFXPreferences, __CFPrefsWeakObservers;
 
 __attribute__((visibility("hidden")))
 @interface CFPrefsSource : NSObject
 {
     _CFXPreferences *_containingPreferences;
     struct __CFDictionary *_dict;
-    struct __CFArray *_observers;
+    __CFPrefsWeakObservers *_observers;
     // Error parsing type: Aq, name: _generationCount
-    // Error parsing type: A^(?), name: shmemEntry
-    struct _opaque_pthread_mutex_t *_lock;
-    // Error parsing type: (?="entry"{_CFPrefsShmemEntry="owner"Ai"generation"AI}"value"AQ), name: lastKnownShmemState
+    // Error parsing type: A^AI, name: shmemEntry
+    // Error parsing type: AI, name: lastKnownShmemState
+    struct os_unfair_lock_s _lock;
     BOOL _isSearchList;
 }
 
@@ -54,12 +54,10 @@ __attribute__((visibility("hidden")))
 - (void)removeAllValues_from:(id)arg1;
 - (void)replaceAllValuesWithValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 from:(id)arg4;
 - (void)_notifyObserversOfChangeFromValuesForKeys:(id)arg1 toValuesForKeys:(id)arg2;
-- (void)unlockObservers;
-- (void)lockObservers;
 - (void)setValue:(void *)arg1 forKey:(struct __CFString *)arg2 from:(id)arg3;
-- (void)setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 from:(id)arg4;
-- (void)setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 removeValuesForKeys:(const struct __CFString **)arg4 count:(long long)arg5 from:(id)arg6;
-- (void)alreadylocked_setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 from:(id)arg4;
+- (void)setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 copyValues:(BOOL)arg4 from:(id)arg5;
+- (void)setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 copyValues:(BOOL)arg4 removeValuesForKeys:(const struct __CFString **)arg5 count:(long long)arg6 from:(id)arg7;
+- (void)alreadylocked_setPrecopiedValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 from:(id)arg4;
 - (void)handleRemoteChangeNotificationForDomainIdentifier:(struct __CFString *)arg1;
 - (void)alreadylocked_updateObservingRemoteChanges;
 - (void)removePreferencesObserver:(id)arg1;

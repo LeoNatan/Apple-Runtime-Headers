@@ -15,7 +15,6 @@
 
 @interface PLAlbumStreamingOptionsViewController : UIViewController <PLComposeRecipientViewControllerDelegate, PLInvitationRecordsObserver, UITableViewDataSource, UITableViewDelegate>
 {
-    NSArray *_visibleInvitationRecords;
     NSString *_visiblePublicURL;
     _Bool _showShareLink;
     PLCloudSharedAlbum *_album;
@@ -39,6 +38,7 @@
     _Bool __shouldScrollToTopOnNextViewLayout;
     _Bool _albumIsFamilyStream;
     NSString *_albumName;
+    NSArray *_sharedAlbumSubscribers;
     PLCloudSharedAlbumInvitationRecord *__selectedSubscriberInvitationRecord;
     NSString *__lastPublicURLSectionFooterTitle;
     NSString *__lastMultiContributorsSectionFooterTitle;
@@ -50,6 +50,7 @@
 @property(nonatomic, setter=_setShouldScrollToTopOnNextViewLayout:) _Bool _shouldScrollToTopOnNextViewLayout; // @synthesize _shouldScrollToTopOnNextViewLayout=__shouldScrollToTopOnNextViewLayout;
 @property(retain, nonatomic, setter=_setSelectedSubscriberInvitationRecord:) PLCloudSharedAlbumInvitationRecord *_selectedSubscriberInvitationRecord; // @synthesize _selectedSubscriberInvitationRecord=__selectedSubscriberInvitationRecord;
 @property(nonatomic) _Bool streamOwner; // @synthesize streamOwner=_streamOwner;
+@property(retain, nonatomic) NSArray *sharedAlbumSubscribers; // @synthesize sharedAlbumSubscribers=_sharedAlbumSubscribers;
 @property(copy, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 @property(nonatomic) _Bool isPresentedModally; // @synthesize isPresentedModally=_isPresentedModally;
 @property(retain, nonatomic) PLCloudSharedAlbum *album; // @synthesize album=_album;
@@ -66,11 +67,9 @@
 - (void)_removeSelectedSubscriber;
 - (void)_displayConfirmationForRemovalOfSelectedSubscriber;
 - (void)_resendInvitationToSelectedSubscriber;
-- (id)_personMatchingEmail:(id)arg1 orPhone:(id)arg2 withFirstName:(id)arg3 lastName:(id)arg4 outMatchingKey:(id *)arg5 outMatchingIdentifier:(id *)arg6 keysToFetch:(id)arg7;
-- (id)_personViewControllerWithEmail:(id)arg1 phone:(id)arg2 firstName:(id)arg3 lastName:(id)arg4 canResendInvitation:(_Bool)arg5 canRemoveSubscriber:(_Bool)arg6;
+- (id)_personViewControllerSubscriberInfo:(id)arg1 canResendInvitation:(_Bool)arg2 canRemoveSubscriber:(_Bool)arg3;
 - (void)_updateMultipleContributorsState;
 - (void)_updatePublicURLStateIfNecessaryAnimated:(_Bool)arg1;
-- (id)_visibleInvitationRecordsForStreamOwner:(_Bool)arg1;
 - (void)_setShowingMultipleContributorSpinner:(_Bool)arg1;
 - (void)_setShowingPublicURLActivitySpinner:(_Bool)arg1;
 - (_Bool)_shouldShowPublicURLActivitySpinner;
@@ -89,7 +88,7 @@
 - (void)_doneAction:(id)arg1;
 - (void)_cancelAction:(id)arg1;
 - (void)_handleCompletionWithReason:(int)arg1;
-- (id)_suppresionContexts;
+- (id)_suppressionContexts;
 - (_Bool)_appAllowsSupressionOfAlerts;
 - (struct CGSize)contentSizeForViewInPopover;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;

@@ -11,7 +11,9 @@
 __attribute__((visibility("hidden")))
 @interface VNClustererContextBase : NSObject
 {
+    NSString *_type;
     NSNumber *_threshold;
+    NSNumber *_torsoThreshold;
     NSString *_cacheDirectoryPath;
     _Bool _readOnly;
 }
@@ -19,8 +21,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_createGreedyClusterer:(Class)arg1 state:(id)arg2 error:(id *)arg3;
 - (_Bool)_createGreedyClustererWith:(id)arg1 error:(id *)arg2;
-- (id)initWithType:(id)arg1 cachePath:(id)arg2 state:(id)arg3 threshold:(float)arg4 error:(id *)arg5;
+- (id)initWithType:(id)arg1 cachePath:(id)arg2 state:(id)arg3 readOnly:(_Bool)arg4 threshold:(float)arg5 torsoThreshold:(float)arg6 error:(id *)arg7;
 - (id)initWithType:(id)arg1 cachePath:(id)arg2 state:(id)arg3 readOnly:(_Bool)arg4 threshold:(float)arg5 error:(id *)arg6;
+- (_Bool)checkInitInputs:(id)arg1 cachePath:(id)arg2 checkType:(id)arg3 error:(id *)arg4;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVExportSettingsOutputSettingsAssistantBaseSettings : NSObject <AVOutputSettingsAssistantBaseSettingsProvider>
 {
     NSDictionary *_exportSettings;

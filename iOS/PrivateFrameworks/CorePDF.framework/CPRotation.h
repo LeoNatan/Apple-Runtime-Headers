@@ -6,6 +6,7 @@
 
 #import <CorePDF/CPZone.h>
 
+__attribute__((visibility("hidden")))
 @interface CPRotation : CPZone
 {
     double rotationAngle;

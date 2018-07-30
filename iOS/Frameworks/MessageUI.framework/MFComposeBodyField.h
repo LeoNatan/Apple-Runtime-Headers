@@ -96,6 +96,7 @@
 - (struct CGRect)rectOfElementWithID:(id)arg1;
 - (id)htmlString;
 - (void)getHTMLStringsAttachmentsCharsetsAndPlainTextAlternative:(CDUnknownBlockType)arg1;
+- (id)plainTextContentFromDOMDocument:(id)arg1;
 - (id)plainTextContent;
 - (id)compositionContextID;
 - (void)setCompositionContextID:(id)arg1;

@@ -19,10 +19,12 @@
     NSString *_fmdServerHost;
     NSString *_fmdServerProtocolScheme;
     NSString *_fmdAPSEnvironment;
+    NSString *_fmdIDSIdentifier;
     unsigned int _uid;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSString *fmdIDSIdentifier; // @synthesize fmdIDSIdentifier=_fmdIDSIdentifier;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
 @property(retain, nonatomic) NSString *fmdAPSEnvironment; // @synthesize fmdAPSEnvironment=_fmdAPSEnvironment;
 @property(retain, nonatomic) NSString *fmdServerProtocolScheme; // @synthesize fmdServerProtocolScheme=_fmdServerProtocolScheme;

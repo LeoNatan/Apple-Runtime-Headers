@@ -21,7 +21,8 @@
 }
 
 + (int)protectionClass;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
 + (id)_predicateWithRegistryUUID:(id)arg1;
 + (id)sourceEntityForRegistryUUID:(id)arg1 profile:(id)arg2 error:(id *)arg3;

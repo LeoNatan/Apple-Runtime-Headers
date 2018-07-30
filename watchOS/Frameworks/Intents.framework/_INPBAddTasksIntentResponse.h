@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBAddTasksIntentResponse.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBTaskList;
+@class NSArray, NSString, _INPBTaskList;
 
-@interface _INPBAddTasksIntentResponse : PBCodable <NSCopying>
+@interface _INPBAddTasksIntentResponse : PBCodable <_INPBAddTasksIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_addedTasks;
+    struct _has;
+    NSArray *_addedTasks;
     _INPBTaskList *_modifiedTaskList;
 }
 
 + (Class)addedTasksType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *addedTasks; // @synthesize addedTasks=_addedTasks;
 @property(retain, nonatomic) _INPBTaskList *modifiedTaskList; // @synthesize modifiedTaskList=_modifiedTaskList;
+@property(copy, nonatomic) NSArray *addedTasks; // @synthesize addedTasks=_addedTasks;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasModifiedTaskList;
 - (id)addedTasksAtIndex:(unsigned int)arg1;
-- (unsigned int)addedTasksCount;
+@property(readonly, nonatomic) unsigned int addedTasksCount;
 - (void)addAddedTasks:(id)arg1;
 - (void)clearAddedTasks;
-@property(readonly, nonatomic) _Bool hasModifiedTaskList;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

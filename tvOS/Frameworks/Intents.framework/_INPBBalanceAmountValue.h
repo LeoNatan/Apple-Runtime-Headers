@@ -7,40 +7,42 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBBalanceAmountValue.h"
 
-@class PBUnknownFields, _INPBCurrencyAmountValue, _INPBDecimalNumberValue, _INPBValueMetadata;
+@class NSString, _INPBCurrencyAmountValue, _INPBDecimalNumberValue, _INPBValueMetadata;
 
-@interface _INPBBalanceAmountValue : PBCodable <NSCopying>
+@interface _INPBBalanceAmountValue : PBCodable <_INPBBalanceAmountValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_f953fb60 _has;
+    int _type;
     _INPBCurrencyAmountValue *_currencyAmount;
     _INPBDecimalNumberValue *_customAmount;
-    int _type;
     _INPBValueMetadata *_valueMetadata;
-    CDStruct_f953fb60 _has;
 }
 
-+ (id)options;
+@property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBDecimalNumberValue *customAmount; // @synthesize customAmount=_customAmount;
 @property(retain, nonatomic) _INPBCurrencyAmountValue *currencyAmount; // @synthesize currencyAmount=_currencyAmount;
-@property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasCustomAmount;
-@property(readonly, nonatomic) _Bool hasCurrencyAmount;
+@property(readonly, nonatomic) _Bool hasValueMetadata;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
-@property(readonly, nonatomic) _Bool hasValueMetadata;
+@property(readonly, nonatomic) _Bool hasCustomAmount;
+@property(readonly, nonatomic) _Bool hasCurrencyAmount;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

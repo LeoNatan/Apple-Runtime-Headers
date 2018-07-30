@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) NSString *locale;
 @property(readonly, nonatomic) NSString *text;
-@property(readonly, nonatomic) CDStruct_87ab733e color;
+@property(readonly, nonatomic) CDStruct_b3fd5d76 color;
 - (id)initWithImageKey:(id)arg1;
 
 @end

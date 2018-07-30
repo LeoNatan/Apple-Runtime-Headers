@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSDictionary, SXComponentSizer, SXLayoutBlueprint;
 
-@interface SXComponentBlueprint : NSObject <NSCoding, NSCopying>
+@interface SXComponentBlueprint : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _hasValidSize;
     _Bool _hasValidPosition;
@@ -28,6 +28,7 @@
     struct UIEdgeInsets _contentInsets;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSDictionary *infoFromLayouting; // @synthesize infoFromLayouting=_infoFromLayouting;
 @property(nonatomic) struct CGSize suggestedSizeAfterInvalidation; // @synthesize suggestedSizeAfterInvalidation=_suggestedSizeAfterInvalidation;
 @property(retain, nonatomic) SXComponentSizer *componentSizer; // @synthesize componentSizer=_componentSizer;

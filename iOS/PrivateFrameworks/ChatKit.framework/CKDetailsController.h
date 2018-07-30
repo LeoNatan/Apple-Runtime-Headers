@@ -7,7 +7,6 @@
 #import <ChatKit/CKScrollViewController.h>
 
 #import "CKAttachmentCollectionManagerDelegate.h"
-#import "CKAvatarPickerViewControllerDelegate.h"
 #import "CKBusinessInfoViewDelegate.h"
 #import "CKDetailsAddGroupNameViewDelegate.h"
 #import "CKDetailsContactsManagerDelegate.h"
@@ -26,12 +25,11 @@
 
 @class CKAvatarPickerViewController, CKBusinessInfoView, CKConversation, CKDetailsContactsManager, CKDetailsDownloadAttachmentsHeaderFooterView, CKDetailsGroupNameCell, CKDetailsLocationShareCell, CKDetailsMapViewCell, CKDetailsTableView, CKEntity, CKGroupRecipientSelectionController, CKTranscriptDetailsResizableCell, CNContactStore, FMFMapViewController, NSMutableArray, NSString, NSTimer, UITextView, UIVisualEffectView;
 
-@interface CKDetailsController : CKScrollViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIViewControllerPreviewingDelegate, CKSharedAssetsControllerDelegate, CKDetailsAddGroupNameViewDelegate, FMFMapViewControllerDelegate, UITextViewDelegate, CKAttachmentCollectionManagerDelegate, CKAvatarPickerViewControllerDelegate, UIAlertViewDelegate, CKDetailsContactsManagerDelegate, CNAvatarViewDelegate, CKDetailsContactsTableViewCellDelegate, CKBusinessInfoViewDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, UINavigationControllerDelegate>
+@interface CKDetailsController : CKScrollViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIViewControllerPreviewingDelegate, CKSharedAssetsControllerDelegate, CKDetailsAddGroupNameViewDelegate, FMFMapViewControllerDelegate, UITextViewDelegate, CKAttachmentCollectionManagerDelegate, UIAlertViewDelegate, CKDetailsContactsManagerDelegate, CNAvatarViewDelegate, CKDetailsContactsTableViewCellDelegate, CKBusinessInfoViewDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, UINavigationControllerDelegate>
 {
     _Bool _fmfEnabled;
     _Bool _fmfRestricted;
     _Bool _isContactsSectionCollapsed;
-    _Bool _shouldShowDownloadMoreCell;
     _Bool _didPerformPurgedAttachmentsCheck;
     _Bool _isDisplayingPhotos;
     id <CKDetailsControllerDelegate> _detailsControllerDelegate;
@@ -68,7 +66,6 @@
 @property(nonatomic) unsigned long long downloadButtonState; // @synthesize downloadButtonState=_downloadButtonState;
 @property(nonatomic) unsigned long long undownloadedPhotoAttachmentCount; // @synthesize undownloadedPhotoAttachmentCount=_undownloadedPhotoAttachmentCount;
 @property(nonatomic) _Bool didPerformPurgedAttachmentsCheck; // @synthesize didPerformPurgedAttachmentsCheck=_didPerformPurgedAttachmentsCheck;
-@property(nonatomic) _Bool shouldShowDownloadMoreCell; // @synthesize shouldShowDownloadMoreCell=_shouldShowDownloadMoreCell;
 @property(retain, nonatomic) id selfWeakWrapper; // @synthesize selfWeakWrapper=_selfWeakWrapper;
 @property(nonatomic) double contentOffsetYShiftAfterKeyboardNotification; // @synthesize contentOffsetYShiftAfterKeyboardNotification=_contentOffsetYShiftAfterKeyboardNotification;
 @property(nonatomic) _Bool isContactsSectionCollapsed; // @synthesize isContactsSectionCollapsed=_isContactsSectionCollapsed;
@@ -97,8 +94,12 @@
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKDetailsControllerDelegate> detailsControllerDelegate; // @synthesize detailsControllerDelegate=_detailsControllerDelegate;
 - (void).cxx_destruct;
+- (void)_didFetchAttachments:(id)arg1;
 - (void)_insertRowForNewlyDownloadedAttachmentsWithTransferGUIDs:(id)arg1;
 - (void)_handlePurgedAttachmentDownloadNotification:(id)arg1;
+@property(readonly, nonatomic) _Bool shouldShowDownloadMoreCell;
+- (void)_resetPurgedAttachmentCount;
+- (unsigned long long)_purgedAttachmentCount;
 - (void)userDidTapDownloadForAttachmentsFooterView:(id)arg1;
 - (void)businessInfoView:(id)arg1 infoButtonTapped:(id)arg2;
 - (id)downloadButtonText;
@@ -174,11 +175,13 @@
 - (void)initializeLocationSharingTextViewIfNecessary;
 - (id)fmfViewControllerCellForIndexPath:(id)arg1;
 - (id)groupNameCellForIndexPath:(id)arg1;
+- (id)simTypeCellForIndexPath:(id)arg1;
 - (id)leaveCellForIndexPath:(id)arg1;
 - (void)_updateDownloadFooterView;
 - (id)downloadAttachmentsFooterViewForSection:(long long)arg1;
 - (id)businessInfoFooterViewForSection:(long long)arg1;
 - (id)locationFooterViewForSection:(long long)arg1;
+- (void)_lastAddressedHandleUpdateNotification:(id)arg1;
 - (void)showMapkitBusinessData;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

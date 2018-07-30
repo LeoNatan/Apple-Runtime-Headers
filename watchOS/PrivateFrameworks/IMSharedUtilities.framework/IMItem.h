@@ -29,6 +29,7 @@
     unsigned int _sortID;
     NSString *_destinationCallerID;
     NSDate *_clientSendTime;
+    NSString *_personCentric;
     NSString *_cloudKitRecordID;
     NSData *_cloudKitServerChangeTokenBlob;
     NSString *_cloudKitRecordChangeTag;
@@ -52,6 +53,7 @@
 @property(copy, nonatomic) NSData *cloudKitServerChangeTokenBlob; // @synthesize cloudKitServerChangeTokenBlob=_cloudKitServerChangeTokenBlob;
 @property(copy, nonatomic) NSString *cloudKitRecordID; // @synthesize cloudKitRecordID=_cloudKitRecordID;
 @property(nonatomic) long long cloudKitSyncState; // @synthesize cloudKitSyncState=_cloudKitSyncState;
+@property(retain, nonatomic) NSString *personCentric; // @synthesize personCentric=_personCentric;
 @property(retain, nonatomic) NSDate *clientSendTime; // @synthesize clientSendTime=_clientSendTime;
 @property(retain, nonatomic) NSString *destinationCallerID; // @synthesize destinationCallerID=_destinationCallerID;
 @property(nonatomic) unsigned int sortID; // @synthesize sortID=_sortID;
@@ -74,6 +76,7 @@
 - (unsigned int)hash;
 - (_Bool)isOlderThanItem:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+@property(retain, nonatomic) NSString *personCentricID;
 @property(retain, nonatomic) NSString *sender;
 @property(readonly, nonatomic) _Bool isFromMe;
 - (id)dictionaryRepresentation;

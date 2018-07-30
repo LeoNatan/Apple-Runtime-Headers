@@ -67,6 +67,7 @@
 - (void)itemDidEndEditing:(id)arg1;
 - (void)itemValueDidBecomeEmpty:(id)arg1;
 - (void)itemValueDidBecomeNonEmpty:(id)arg1;
+- (void)buildActionGlyphsForItem:(id)arg1;
 - (void)buildVisibleViewForItem:(id)arg1;
 - (id)removeSuggestedEntriesFromMultiValue:(id)arg1;
 - (id)removeEntriesWithEmptyValuesFromMultiValue:(id)arg1;

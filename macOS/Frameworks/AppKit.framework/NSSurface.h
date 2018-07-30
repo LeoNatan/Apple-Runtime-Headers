@@ -30,7 +30,6 @@
     int _lastScreenNumber;
     double _lastResolution;
     double _alphaValue;
-    double _backgroundBlurRadius;
 }
 
 - (void)displayIfNeeded;
@@ -46,8 +45,6 @@
 - (void)setSaveWeighting:(int)arg1;
 - (BOOL)isVisible;
 - (BOOL)isOrderedIn;
-- (void)setBackgroundBlurRadius:(double)arg1;
-- (double)backgroundBlurRadius;
 - (double)alphaValue;
 - (void)setAlphaValue:(double)arg1;
 - (void)setOrdersOutWhileAlphaValueIsZero:(BOOL)arg1;
@@ -79,7 +76,6 @@
 - (void)orderOut;
 - (void)orderBack;
 - (void)orderFront;
-- (void)_configureAutoFlattening;
 - (void)updateColorSpace;
 - (void)syncToView:(BOOL)arg1;
 - (void)syncToViewUnconditionally;

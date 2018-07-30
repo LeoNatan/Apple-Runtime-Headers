@@ -45,16 +45,16 @@
 @property(retain) TLKVibrantLabel *leadingTitleLabel; // @synthesize leadingTitleLabel=_leadingTitleLabel;
 @property(retain) TLKImageView *leadingImageView; // @synthesize leadingImageView=_leadingImageView;
 @property(retain) NUIContainerGridView *gridView; // @synthesize gridView=_gridView;
-@property(retain) TLKMultilineText *trailingSubtitle; // @synthesize trailingSubtitle=_trailingSubtitle;
-@property(retain) TLKMultilineText *trailingTitle; // @synthesize trailingTitle=_trailingTitle;
-@property(retain) TLKImage *trailingImage; // @synthesize trailingImage=_trailingImage;
-@property(retain) TLKMultilineText *leadingSubtitle; // @synthesize leadingSubtitle=_leadingSubtitle;
-@property(retain) TLKMultilineText *leadingTitle; // @synthesize leadingTitle=_leadingTitle;
-@property(retain) TLKImage *leadingImage; // @synthesize leadingImage=_leadingImage;
-@property _Bool shouldBadgeSubtitle; // @synthesize shouldBadgeSubtitle=_shouldBadgeSubtitle;
-@property(retain) TLKMultilineText *subtitle2; // @synthesize subtitle2=_subtitle2;
-@property(retain) TLKMultilineText *subtitle1; // @synthesize subtitle1=_subtitle1;
-@property(retain) TLKMultilineText *title; // @synthesize title=_title;
+@property(retain, nonatomic) TLKMultilineText *trailingSubtitle; // @synthesize trailingSubtitle=_trailingSubtitle;
+@property(retain, nonatomic) TLKMultilineText *trailingTitle; // @synthesize trailingTitle=_trailingTitle;
+@property(retain, nonatomic) TLKImage *trailingImage; // @synthesize trailingImage=_trailingImage;
+@property(retain, nonatomic) TLKMultilineText *leadingSubtitle; // @synthesize leadingSubtitle=_leadingSubtitle;
+@property(retain, nonatomic) TLKMultilineText *leadingTitle; // @synthesize leadingTitle=_leadingTitle;
+@property(retain, nonatomic) TLKImage *leadingImage; // @synthesize leadingImage=_leadingImage;
+@property(nonatomic) _Bool shouldBadgeSubtitle; // @synthesize shouldBadgeSubtitle=_shouldBadgeSubtitle;
+@property(retain, nonatomic) TLKMultilineText *subtitle2; // @synthesize subtitle2=_subtitle2;
+@property(retain, nonatomic) TLKMultilineText *subtitle1; // @synthesize subtitle1=_subtitle1;
+@property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)titleFont;
 - (id)trailingImageInView;
@@ -72,7 +72,6 @@
 - (id)firstRowOfViews;
 - (id)grid;
 - (void)styleDidChange:(unsigned long long)arg1;
-- (id)observableProperties;
 - (struct UIEdgeInsets)effectiveAlignmentRectInsets;
 - (id)init;
 

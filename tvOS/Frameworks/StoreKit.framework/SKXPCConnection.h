@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _messageBlock;
 }
 
+- (void).cxx_destruct;
 - (void)_reloadEventHandler;
 @property(copy) CDUnknownBlockType messageBlock;
 @property(copy) CDUnknownBlockType disconnectBlock;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)sendMessage:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1;
 - (id)createXPCEndpoint;
-- (void)dealloc;
 - (id)initWithXPCConnection:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id)init;

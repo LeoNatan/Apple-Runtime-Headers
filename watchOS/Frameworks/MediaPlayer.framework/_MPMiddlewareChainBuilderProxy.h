@@ -6,10 +6,15 @@
 
 #import "NSProxy.h"
 
+@class Protocol;
+
 @interface _MPMiddlewareChainBuilderProxy : NSProxy
 {
+    Protocol *_protocol;
 }
 
++ (id)allocWithProtocol:(id)arg1;
+- (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 

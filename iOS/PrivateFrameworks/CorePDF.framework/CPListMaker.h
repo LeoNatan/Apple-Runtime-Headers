@@ -10,6 +10,7 @@
 
 @class CPLayoutArea, CPList, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface CPListMaker : NSObject <CPDisposable>
 {
     CPLayoutArea *area;

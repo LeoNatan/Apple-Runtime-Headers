@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet;
+@class NSArray, NSDictionary, NSManagedObjectContext, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, PHPersistentChangeToken;
 
 @interface PHChange : NSObject
 {
@@ -23,12 +23,28 @@
     NSObject<OS_dispatch_queue> *_changeDetailIsolation;
     NSMapTable *_changeHandlingMap;
     _Bool _unknownMergeEvent;
+    NSMutableDictionary *_objectIDsByLocalIdentifier;
+    NSManagedObjectContext *_context;
+    NSDictionary *_deletedUuidsByObjectId;
+    PHPersistentChangeToken *_changeToken;
 }
 
++ (id)mergePersistedChanges:(id)arg1;
 + (id)handlerQueue;
 + (void)pl_simulateChangeWithAssetContainerList:(id)arg1 handler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) PHPersistentChangeToken *changeToken; // @synthesize changeToken=_changeToken;
+@property(readonly, nonatomic) NSDictionary *deletedUuidsByObjectId; // @synthesize deletedUuidsByObjectId=_deletedUuidsByObjectId;
+@property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (id)_formatEncodedDictionary:(id)arg1 withDecodeBlock:(CDUnknownBlockType)arg2;
+- (id)_formatedDeletedUUidsByObjectId;
+- (id)_pl_prettyDescriptionWithIndent:(long long)arg1;
 - (id)description;
+- (id)changedPropertyNamesForLocalIdentifier:(id)arg1 entityClass:(Class)arg2;
+- (id)changedPropertyNamesForObject:(id)arg1;
+- (id)_propertyNamesForObjectID:(id)arg1 entityClass:(Class)arg2;
+- (id)fetchUUIDMapForObjectIDs:(id)arg1 entityClass:(Class)arg2;
+- (id)changedLocalIdentifiersForEntityClass:(Class)arg1;
 - (_Bool)containsChangesForEntityClass:(Class)arg1;
 - (id)changeDetailsForFetchResult:(id)arg1;
 - (id)changeDetailsForObject:(id)arg1;
@@ -37,6 +53,8 @@
 - (_Bool)trashedStateChangedForPHAssetOID:(id)arg1;
 - (_Bool)contentOrThumbnailChangedForAsset:(id)arg1;
 - (_Bool)contentOrThumbnailChangedForPHAssetOID:(id)arg1;
+- (_Bool)personRelationshipChangedForFaceWithLocalIdentifier:(id)arg1;
+- (_Bool)faceRelationshipChangedForPersonWithLocalIdentifier:(id)arg1;
 - (_Bool)keyFaceChangedForPersonOID:(id)arg1;
 - (id)_preloadChangeDetailsWithClearCacheForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)_preloadChangeDetailsWithRefetchForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -51,6 +69,8 @@
 - (id)updatedObjectIDs;
 - (id)insertedObjectIDs;
 @property(readonly, nonatomic) _Bool hasIncrementalChanges;
+- (id)initWithInsertedObjectIDs:(id)arg1 updatedObjectIDs:(id)arg2 deletedObjectIDs:(id)arg3 deletedUuidsByObjectId:(id)arg4 changedAttributesByOID:(id)arg5 changedRelationshipsByOID:(id)arg6 unknownMergeEvent:(_Bool)arg7 changeToken:(id)arg8 managedObjectContext:(id)arg9;
+- (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(_Bool)arg2 changeToken:(id)arg3;
 - (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(_Bool)arg2;
 - (id)init;
 

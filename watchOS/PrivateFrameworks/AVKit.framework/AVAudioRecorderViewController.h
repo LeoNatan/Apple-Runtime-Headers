@@ -38,6 +38,7 @@
     double _maximumDuration;
 }
 
++ (void)_setupLayoutSpec;
 @property(nonatomic) __weak id <AVAudioRecorderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) double maximumDuration; // @synthesize maximumDuration=_maximumDuration;

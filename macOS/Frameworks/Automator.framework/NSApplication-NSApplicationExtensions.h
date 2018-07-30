@@ -9,6 +9,7 @@
 @interface NSApplication (NSApplicationExtensions)
 - (id)AMGetSpecifiedURLsAction_urlsAndTitlesFromPasteboard:(id)arg1;
 - (id)AMGetSpecifiedURLsAction_urlsAndTitlesFromArrayOfBookmarkDictionaries:(id)arg1;
-- (id)AMGetSpecifiedURLsAction_urlFromWeblocFile:(id)arg1;
+- (id)AMGetSpecifiedURLsAction_urlStringFromWeblocFileURL:(id)arg1;
+- (BOOL)AMGetSpecifiedURLsAction_fileURLIsWeblocFileURL:(id)arg1;
 @end
 

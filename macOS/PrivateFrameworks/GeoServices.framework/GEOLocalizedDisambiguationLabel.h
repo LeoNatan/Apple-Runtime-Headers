@@ -10,6 +10,7 @@
 
 @class NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOLocalizedDisambiguationLabel : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

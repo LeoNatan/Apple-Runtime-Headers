@@ -16,6 +16,8 @@
 }
 
 + (id)contactsForFetchRequest:(id)arg1 inPersistenceStack:(id)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) CNCDPersistenceContext *persistenceContext; // @synthesize persistenceContext=_persistenceContext;
+@property(readonly, nonatomic) CNCDContactFetchRequestDescription *fetchRequestDescription; // @synthesize fetchRequestDescription=_fetchRequestDescription;
 - (void).cxx_destruct;
 - (id)_fetchContactsFutureWithPredicate:(id)arg1;
 - (unsigned long long)_countForContactsWithPredicate:(id)arg1;

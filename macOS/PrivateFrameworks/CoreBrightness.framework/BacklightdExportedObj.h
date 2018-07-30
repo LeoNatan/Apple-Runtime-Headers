@@ -10,6 +10,7 @@
 
 @class BrightnessSystemInternal, NSString, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface BacklightdExportedObj : NSObject <BacklightdXPCProtocol>
 {
     unsigned long long _clientID;

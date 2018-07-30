@@ -9,7 +9,6 @@
 @class CLLocation, GEOMapItemStorage, NSArray, NSData, NSDate, NSDateInterval, NSDictionary, NSNumber, NSPredicate, NSSet, NSString, NSUUID, RTAction, RTPredictedLocationOfInterest;
 
 @protocol RTDaemonProtocol <NSObject>
-- (void)fetchPredictedContentForBundleWithIdentifier:(NSString *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (void)fetchAllRoutesForSettingsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)sortRoutes:(NSArray *)arg1 toLocationOfInterestWithIdentifier:(NSUUID *)arg2 fromLocation:(CLLocation *)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
 - (void)userInteractionWithPredictedLocationOfInterest:(RTPredictedLocationOfInterest *)arg1 interaction:(unsigned long long)arg2 feedback:(NSString *)arg3 geoMapItem:(GEOMapItemStorage *)arg4 reply:(void (^)(NSError *))arg5;
@@ -44,6 +43,7 @@
 - (void)fetchMonitoredScenarioTriggerTypesWithReply:(void (^)(unsigned long long, NSError *))arg1;
 - (void)stopMonitoringScenarioTriggerOfType:(unsigned long long)arg1;
 - (void)startMonitoringScenarioTriggerOfType:(unsigned long long)arg1;
+- (void)fetchTransitionsBetweenStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)fetchLocationsOfInterestVisitedBetweenStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)fetchLocationOfInterestWithIdentifier:(NSUUID *)arg1 withReply:(void (^)(RTLocationOfInterest *, NSError *))arg2;
 - (void)fetchPredictedLocationsOfInterestBetweenStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;

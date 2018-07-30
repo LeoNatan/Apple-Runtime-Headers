@@ -12,6 +12,8 @@
 {
     IKTextParser *_textParser;
     NSMutableArray *_textBadges;
+    NSMutableArray *_textBadgeElements;
+    NSMutableArray *_textSpanElements;
     unsigned long long _textStyle;
 }
 

@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_IPropertyValueApplicatorController : FI_IPropertyValueController
 {
-    struct TNSRef<FI_IPropertyValueApplicator *, void> _valueApplicator;
+    struct TNSRef<FI_IPropertyValueApplicator, void> _valueApplicator;
     struct TFENodeVector _nodes;
 }
 

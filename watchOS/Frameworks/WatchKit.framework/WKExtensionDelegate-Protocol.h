@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class HKWorkoutConfiguration, NSDictionary, NSSet, NSString, NSUserActivity, UILocalNotification;
+@class HKWorkoutConfiguration, INIntent, NSDictionary, NSSet, NSString, NSUserActivity, UILocalNotification;
 
 @protocol WKExtensionDelegate <NSObject>
 
@@ -19,8 +19,11 @@
 - (void)handleActionWithIdentifier:(NSString *)arg1 forRemoteNotification:(NSDictionary *)arg2;
 - (void)deviceOrientationDidChange;
 - (void)handleBackgroundTasks:(NSSet *)arg1;
+- (void)handleIntent:(INIntent *)arg1 completionHandler:(void (^)(INIntentResponse *))arg2;
 - (void)handleActivity:(NSUserActivity *)arg1;
 - (void)handleUserActivity:(NSDictionary *)arg1;
+- (void)handleRemoteNowPlayingActivity;
+- (void)handleActiveWorkoutRecovery;
 - (void)handleWorkoutConfiguration:(HKWorkoutConfiguration *)arg1;
 - (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;

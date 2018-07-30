@@ -7,13 +7,15 @@
 #import "NSObject.h"
 
 #import "INCacheableContainer.h"
+#import "INImageProxyInjecting.h"
+#import "INKeyImageProducing.h"
 #import "INMessageExport.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class INPerson, INSpeakableString, NSArray, NSDate, NSNumber, NSString;
+@class INCurrencyAmount, INImage, INMessageLinkMetadata, INPerson, INSpeakableString, NSArray, NSDate, NSNumber, NSString;
 
-@interface INMessage : NSObject <INCacheableContainer, INMessageExport, NSCopying, NSSecureCoding>
+@interface INMessage : NSObject <INCacheableContainer, INImageProxyInjecting, INKeyImageProducing, INMessageExport, NSCopying, NSSecureCoding>
 {
     NSString *_identifier;
     NSString *_conversationIdentifier;
@@ -26,16 +28,26 @@
     NSDate *_dateMessageWasLastRead;
     NSNumber *_numberOfAttachments;
     long long _messageEffectType;
+    INMessage *_referencedMessage;
+    INMessageLinkMetadata *_linkMetadata;
+    INCurrencyAmount *_paymentAmount;
+    NSString *_locationName;
+    NSString *_fileExtension;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
+@property(copy, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;
+@property(copy, nonatomic) INCurrencyAmount *paymentAmount; // @synthesize paymentAmount=_paymentAmount;
+@property(copy, nonatomic) INMessageLinkMetadata *linkMetadata; // @synthesize linkMetadata=_linkMetadata;
+@property(readonly, copy, nonatomic) INMessage *referencedMessage; // @synthesize referencedMessage=_referencedMessage;
 @property(readonly, nonatomic) long long messageEffectType; // @synthesize messageEffectType=_messageEffectType;
 @property(readonly, copy, nonatomic) NSNumber *numberOfAttachments; // @synthesize numberOfAttachments=_numberOfAttachments;
 @property(readonly, copy, nonatomic) NSDate *dateMessageWasLastRead; // @synthesize dateMessageWasLastRead=_dateMessageWasLastRead;
 @property(readonly, nonatomic) long long messageType; // @synthesize messageType=_messageType;
 @property(readonly, copy, nonatomic) INSpeakableString *groupName; // @synthesize groupName=_groupName;
-@property(readonly, copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
-@property(readonly, copy, nonatomic) INPerson *sender; // @synthesize sender=_sender;
+@property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
+@property(copy, nonatomic) INPerson *sender; // @synthesize sender=_sender;
 @property(readonly, copy, nonatomic) NSDate *dateSent; // @synthesize dateSent=_dateSent;
 @property(readonly, copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(readonly, copy, nonatomic) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
@@ -54,8 +66,12 @@
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 dateMessageWasLastRead:(id)arg7 numberOfAttachments:(id)arg8 messageType:(long long)arg9 messageEffectType:(long long)arg10;
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 messageType:(long long)arg8;
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 dateMessageWasLastRead:(id)arg8 numberOfAttachments:(id)arg9 messageType:(long long)arg10 messageEffectType:(long long)arg11;
+- (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 dateMessageWasLastRead:(id)arg8 numberOfAttachments:(id)arg9 messageType:(long long)arg10 messageEffectType:(long long)arg11 referencedMessage:(id)arg12;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
+@property(readonly) INImage *_keyImage;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

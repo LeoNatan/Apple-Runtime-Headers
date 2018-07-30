@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface WDHyperlinkFieldMarker : WDFieldMarker
 {
     NSString *mLink;
@@ -19,8 +18,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *fragment; // @synthesize fragment=mFragment;
 @property(retain, nonatomic) NSString *link; // @synthesize link=mLink;
 @property(nonatomic) BOOL internalLink; // @synthesize internalLink=mInternalLink;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 - (int)runType;
 
 @end

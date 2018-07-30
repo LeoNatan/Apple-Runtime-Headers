@@ -23,6 +23,7 @@
 + (id)lsDir:(id)arg1 sorted:(BOOL)arg2;
 + (id)findAllfiles:(id)arg1;
 + (id)findAllItems:(id)arg1 includeDirs:(BOOL)arg2;
++ (id)enumeratorForAllItems:(id)arg1;
 + (id)urlByRemovingComponentsBefore:(id)arg1 source:(id)arg2 keepComponent:(BOOL)arg3;
 + (BOOL)copyAllFilesFromDir:(id)arg1 toDir:(id)arg2;
 + (id)copyAndReturn:(id)arg1 toDir:(id)arg2;

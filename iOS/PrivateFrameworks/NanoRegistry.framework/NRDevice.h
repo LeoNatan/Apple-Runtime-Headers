@@ -8,26 +8,34 @@
 
 #import "NSSecureCoding.h"
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPointerArray;
+@class NRRegistry, NSMutableArray, NSMutableDictionary, NSPointerArray, NSUUID;
 
 @interface NRDevice : NSObject <NSSecureCoding>
 {
+    NRDevice *_me;
+    struct os_unfair_lock_s _lock;
+    NSUUID *_pairingID;
+    NRRegistry *_registry;
+    NSMutableDictionary *_oldPropertiesForChangeNotifications;
     NSMutableDictionary *_properties;
     NSMutableDictionary *_observers;
     NSPointerArray *_promiscuousObservers;
     NSMutableDictionary *_changeBlocks;
     NSMutableArray *_promiscuousChangeBlocks;
-    NSObject<OS_dispatch_queue> *_nrQueue;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *nrQueue; // @synthesize nrQueue=_nrQueue;
 @property(retain, nonatomic) NSMutableArray *promiscuousChangeBlocks; // @synthesize promiscuousChangeBlocks=_promiscuousChangeBlocks;
 @property(retain, nonatomic) NSMutableDictionary *changeBlocks; // @synthesize changeBlocks=_changeBlocks;
 @property(retain, nonatomic) NSPointerArray *promiscuousObservers; // @synthesize promiscuousObservers=_promiscuousObservers;
 @property(retain, nonatomic) NSMutableDictionary *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
+@property(retain, nonatomic) NSMutableDictionary *oldPropertiesForChangeNotifications; // @synthesize oldPropertiesForChangeNotifications=_oldPropertiesForChangeNotifications;
+@property(retain, nonatomic) NRRegistry *registry; // @synthesize registry=_registry;
+@property(retain, nonatomic) NSUUID *pairingID; // @synthesize pairingID=_pairingID;
 - (void).cxx_destruct;
+- (_Bool)setValue:(id)arg1 forProperty:(id)arg2;
+- (id)initWithQueue:(id)arg1;
 - (void)dealloc;
 - (void)queueUnregisterForPropertyChanges:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)unregisterForPropertyChanges:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
@@ -35,16 +43,10 @@
 - (void)registerForPropertyChanges:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)propertyNames;
 - (void)encodeWithCoder:(id)arg1;
-- (void)queueMergeWithDevice:(id)arg1;
-- (void)mergeWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 queue:(id)arg2 withSecureProperties:(_Bool)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)_queueFirePropertyObserversForProperty:(id)arg1 fromValue:(id)arg2;
-- (void)_firePropertyObserversForProperty:(id)arg1 fromValue:(id)arg2;
-- (_Bool)_queueSetValue:(id)arg1 forProperty:(id)arg2;
-- (_Bool)_setValue:(id)arg1 forProperty:(id)arg2;
-- (_Bool)setValue:(id)arg1 forProperty:(id)arg2;
-- (id)queueValueForProperty:(id)arg1;
+- (void)postNotification:(id)arg1 withUserInfo:(id)arg2;
+- (void)_fireChangeNotificationsForDiff:(id)arg1 secureProperties:(id)arg2 notify:(_Bool)arg3;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 - (void)queueRemovePropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
@@ -52,14 +54,17 @@
 - (void)queueAddPropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (void)addPropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (id)description;
-- (id)queueDescription;
-- (id)initWithQueue:(id)arg1;
+- (void)invalidate;
+- (void)_notifySecurePropertiesWithCollection:(id)arg1 secureProperties:(id)arg2;
+- (void)_updateSelfRetain;
+- (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (id)initWithRegistry:(id)arg1 diff:(id)arg2 pairingID:(id)arg3 notify:(_Bool)arg4;
 - (id)init;
-- (_Bool)supportsCapability:(id)arg1;
 - (_Bool)migrationConfirmed;
 - (id)migrationError;
 - (_Bool)archived;
 - (_Bool)canMigrate;
+- (_Bool)supportsCapability:(id)arg1;
 
 @end
 

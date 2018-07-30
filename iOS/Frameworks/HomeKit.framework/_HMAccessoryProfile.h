@@ -10,26 +10,25 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessory, HMHome, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMAccessory, HMFUnfairLock, HMHome, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface _HMAccessoryProfile : NSObject <HMObjectMerge, HMFMessageReceiver, NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
     NSUUID *_uniqueIdentifier;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     _HMContext *_context;
-    NSUUID *_profileUniqueIdentifier;
-    NSArray *_services;
     HMAccessory *_accessory;
     HMHome *_home;
+    NSUUID *_profileUniqueIdentifier;
+    NSArray *_services;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) __weak HMHome *home; // @synthesize home=_home;
-@property(readonly, nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) NSArray *services; // @synthesize services=_services;
 @property(readonly, copy, nonatomic) NSUUID *profileUniqueIdentifier; // @synthesize profileUniqueIdentifier=_profileUniqueIdentifier;
-@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
+@property(readonly, nonatomic) __weak HMHome *home; // @synthesize home=_home;
+@property(readonly, nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
+@property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -40,8 +39,8 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
+- (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
 @property(readonly, copy) NSString *description;
-- (void)configureWithAccessory:(id)arg1 home:(id)arg2 context:(id)arg3;
 - (id)init;
 
 // Remaining properties

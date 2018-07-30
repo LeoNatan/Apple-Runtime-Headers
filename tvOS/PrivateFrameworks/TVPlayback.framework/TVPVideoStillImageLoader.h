@@ -21,6 +21,7 @@
     CDStruct_1b6d18a9 _videoDuration;
 }
 
++ (void)initialize;
 @property(nonatomic) CDStruct_1b6d18a9 videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(retain, nonatomic) AVAssetImageGenerator *imageGenerator; // @synthesize imageGenerator=_imageGenerator;
 @property(retain, nonatomic) NSMutableArray *imageLoadInfosBeingLoaded; // @synthesize imageLoadInfosBeingLoaded=_imageLoadInfosBeingLoaded;

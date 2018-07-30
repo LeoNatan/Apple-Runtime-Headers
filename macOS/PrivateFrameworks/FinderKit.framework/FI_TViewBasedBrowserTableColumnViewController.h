@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
 {
     double _textSize;
     struct TKeyValueBinder _textSizeBinder;
-    struct TNSRef<NSFont *, void> _cellViewFont;
+    struct TNSRef<NSFont, void> _cellViewFont;
     double _titleFieldTextSize;
-    struct TNSRef<NSFont *, void> _titleFieldFont;
+    struct TNSRef<NSFont, void> _titleFieldFont;
 }
 
 @property(nonatomic) double textSize; // @synthesize textSize=_textSize;

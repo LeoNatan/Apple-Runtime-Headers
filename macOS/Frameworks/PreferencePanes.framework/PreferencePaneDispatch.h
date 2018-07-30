@@ -46,6 +46,7 @@
 - (oneway void)willSelect;
 @property(retain) NSXPCConnection *connection; // @dynamic connection;
 - (id)init;
+- (void)_toggleTouchBarControlStripCustomizationPaletteNotification:(id)arg1;
 - (void)_suddenTerminationStateShouldChangeNotification:(id)arg1;
 - (void)_switchToPaneNotification:(id)arg1;
 - (void)_cancelPaneSwitchNotification:(id)arg1;

@@ -7,38 +7,42 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentVocabulary.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBIntentVocabulary : PBCodable <NSCopying>
+@interface _INPBIntentVocabulary : PBCodable <_INPBIntentVocabulary, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_intentSlotVocabularyPolicies;
-    NSMutableArray *_intentTypePhrases;
+    struct _has;
+    NSArray *_intentSlotVocabularyPolicies;
+    NSArray *_intentTypePhrases;
 }
 
-+ (Class)intentSlotVocabularyPoliciesType;
 + (Class)intentTypePhrasesType;
-@property(retain, nonatomic) NSMutableArray *intentSlotVocabularyPolicies; // @synthesize intentSlotVocabularyPolicies=_intentSlotVocabularyPolicies;
-@property(retain, nonatomic) NSMutableArray *intentTypePhrases; // @synthesize intentTypePhrases=_intentTypePhrases;
++ (Class)intentSlotVocabularyPoliciesType;
+@property(copy, nonatomic) NSArray *intentTypePhrases; // @synthesize intentTypePhrases=_intentTypePhrases;
+@property(copy, nonatomic) NSArray *intentSlotVocabularyPolicies; // @synthesize intentSlotVocabularyPolicies=_intentSlotVocabularyPolicies;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (id)intentSlotVocabularyPoliciesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)intentSlotVocabularyPoliciesCount;
-- (void)addIntentSlotVocabularyPolicies:(id)arg1;
-- (void)clearIntentSlotVocabularyPolicies;
 - (id)intentTypePhrasesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)intentTypePhrasesCount;
+@property(readonly, nonatomic) unsigned long long intentTypePhrasesCount;
 - (void)addIntentTypePhrases:(id)arg1;
 - (void)clearIntentTypePhrases;
+- (id)intentSlotVocabularyPoliciesAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long intentSlotVocabularyPoliciesCount;
+- (void)addIntentSlotVocabularyPolicies:(id)arg1;
+- (void)clearIntentSlotVocabularyPolicies;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

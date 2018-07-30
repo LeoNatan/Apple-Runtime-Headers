@@ -7,6 +7,8 @@
 #import "NSObject.h"
 
 #import "INCacheableContainer.h"
+#import "INImageProxyInjecting.h"
+#import "INKeyImageProducing.h"
 #import "INPersonExport.h"
 #import "INSpeakable.h"
 #import "NSCopying.h"
@@ -15,7 +17,7 @@
 
 @class INImage, INPersonHandle, NSArray, NSPersonNameComponents, NSString;
 
-@interface INPerson : NSObject <INCacheableContainer, INSpeakable, INPersonExport, NSMutableCopying, NSCopying, NSSecureCoding>
+@interface INPerson : NSObject <INCacheableContainer, INKeyImageProducing, INImageProxyInjecting, INSpeakable, INPersonExport, NSMutableCopying, NSCopying, NSSecureCoding>
 {
     NSString *_displayName;
     NSPersonNameComponents *_nameComponents;
@@ -60,10 +62,11 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(copy, nonatomic) NSString *displayName;
-@property(copy, nonatomic) NSString *handle; // @dynamic handle;
+@property(copy, nonatomic) NSString *handle;
 - (id)initWithHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5;
 - (id)initWithHandle:(id)arg1 displayName:(id)arg2 contactIdentifier:(id)arg3;
 - (id)initWithHandle:(id)arg1 nameComponents:(id)arg2 contactIdentifier:(id)arg3;
+- (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 isMe:(_Bool)arg7;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6;
 @property(readonly, copy, nonatomic) NSString *fullName;
 @property(readonly, copy, nonatomic) NSString *userURIString;
@@ -73,9 +76,13 @@
 @property(readonly, copy, nonatomic) NSString *firstName;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 aliases:(id)arg7 suggestionType:(long long)arg8;
+- (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
+@property(readonly) INImage *_keyImage;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)spokenPhrases;
 @property(readonly, copy, nonatomic) NSArray *siriMatches;
 @property(readonly, nonatomic) NSArray *alternativeSpeakableMatches;

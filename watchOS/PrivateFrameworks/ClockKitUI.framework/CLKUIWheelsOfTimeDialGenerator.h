@@ -10,18 +10,18 @@
 {
 }
 
-+ (id)imageForType:(unsigned int)arg1 style:(unsigned int)arg2;
-+ (void)createAndSaveAllWOTImages:(id)arg1;
-+ (void)saveImage:(id)arg1 toPath:(id)arg2;
-+ (id)_create24HourWOTImage:(unsigned int)arg1;
-+ (id)_create12HourWOTImage:(unsigned int)arg1;
-+ (id)_createMinutesWOTImage:(unsigned int)arg1;
-+ (id)_createWOTDialImageForType:(unsigned int)arg1 style:(unsigned int)arg2 digitStrings:(id)arg3 xPositions:(float *)arg4;
-+ (void)_drawDialText:(id)arg1 baselinePositions:(float *)arg2 xPositions:(float *)arg3 kernValue:(float)arg4;
-+ (float)_dialTextKernValue:(unsigned int)arg1;
-+ (id)_tickImageForType:(unsigned int)arg1 style:(unsigned int)arg2;
-+ (id)_generateImage:(id)arg1 thinTickImage:(id)arg2;
-+ (id)_dialTextFont;
++ (id)imageForType:(unsigned int)arg1 style:(unsigned int)arg2 forDevice:(id)arg3;
++ (void)createAndSaveAllWOTImages:(id)arg1 forDevice:(id)arg2;
++ (void)saveImage:(id)arg1 toPath:(id)arg2 forDevice:(id)arg3;
++ (id)_create24HourWOTImage:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_create12HourWOTImage:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_createMinutesWOTImage:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_createWOTDialImageForType:(unsigned int)arg1 style:(unsigned int)arg2 digitStrings:(id)arg3 xPositions:(float *)arg4 forDevice:(id)arg5;
++ (void)_drawDialText:(id)arg1 baselinePositions:(float *)arg2 xPositions:(float *)arg3 kernValue:(float)arg4 forDevice:(id)arg5;
++ (float)_dialTextKernValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_tickImageForType:(unsigned int)arg1 style:(unsigned int)arg2 forDevice:(id)arg3;
++ (id)_generateImage:(id)arg1 thinTickImage:(id)arg2 forDevice:(id)arg3;
++ (id)_dialTextFontForDevice:(id)arg1;
 
 @end
 

@@ -9,5 +9,7 @@
 @interface NSMapTable (TSUAdditions)
 - (id)tsu_noCopyDictionaryRepresentation;
 - (id)tsu_allKeys;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 @end
 

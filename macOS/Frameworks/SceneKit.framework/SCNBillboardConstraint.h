@@ -9,6 +9,7 @@
 @interface SCNBillboardConstraint : SCNConstraint
 {
     unsigned long long _freeAxes;
+    BOOL _preserveScale;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -16,6 +17,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)preserveScale;
+- (void)setPreserveScale:(BOOL)arg1;
 @property(nonatomic) unsigned long long freeAxes; // @synthesize freeAxes=_freeAxes;
 - (id)init;
 

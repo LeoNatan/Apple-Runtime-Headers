@@ -15,15 +15,16 @@
     _NMRSendCommandMessageProtobuf *_protobuf;
 }
 
-+ (id)messageWithCommand:(unsigned int)arg1 options:(id)arg2 originIdentifier:(id)arg3;
++ (id)messageWithCommand:(unsigned int)arg1 bundleID:(id)arg2 options:(id)arg3 originIdentifier:(id)arg4;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *serializationDate;
 - (id)protobufData;
 @property(readonly, nonatomic) NSNumber *originIdentifier;
 @property(readonly, nonatomic) NSDictionary *options;
+@property(readonly, nonatomic) NSString *bundleID;
 @property(readonly, nonatomic) unsigned int command;
 - (id)initWithProtobufData:(id)arg1;
-- (id)initWithCommand:(unsigned int)arg1 options:(id)arg2 originIdentifier:(id)arg3;
+- (id)initWithCommand:(unsigned int)arg1 bundleID:(id)arg2 options:(id)arg3 originIdentifier:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

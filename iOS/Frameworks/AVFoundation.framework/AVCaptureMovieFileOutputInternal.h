@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AVWeakReference, NSArray, NSMutableArray, NSString;
+@class AVWeakReference, NSArray, NSDictionary, NSMutableArray, NSString;
 
 @interface AVCaptureMovieFileOutputInternal : NSObject
 {
@@ -17,6 +17,7 @@
     NSArray *metadata;
     NSArray *availableVideoCodecs;
     NSString *videoCodec;
+    NSDictionary *videoCompressionProperties;
     _Bool sendLastVideoPreviewFrame;
     _Bool recording;
     _Bool paused;

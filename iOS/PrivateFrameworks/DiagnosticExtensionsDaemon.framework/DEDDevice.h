@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
+#import "DEDDeviceUISupport.h"
 #import "DEDSecureArchiving.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSString, SFDevice;
+@class NSSet, NSString, SFDevice;
 
-@interface DEDDevice : NSObject <NSSecureCoding, NSCopying, DEDSecureArchiving>
+@interface DEDDevice : NSObject <DEDDeviceUISupport, NSSecureCoding, NSCopying, DEDSecureArchiving>
 {
     NSString *_address;
     NSString *_build;
@@ -24,15 +25,18 @@
     NSString *_name;
     NSString *_productType;
     NSString *_platform;
+    NSSet *_capabilities;
     long long _status;
     long long _transport;
     long long _remoteTransport;
     SFDevice *_sfDevice;
+    NSString *__hashingKey;
 }
 
 + (id)modelForProductType:(id)arg1;
 + (id)deviceClassForProductType:(id)arg1;
 + (id)nilSafeDevice;
++ (id)_currentDeviceId;
 + (id)idsDeviceWithDevice:(id)arg1 address:(id)arg2;
 + (id)deviceForSFDevice:(id)arg1 systemInfo:(id)arg2 andStatus:(long long)arg3;
 + (id)deviceForSFDevice:(id)arg1 andStatus:(long long)arg2;
@@ -40,10 +44,12 @@
 + (id)currentDevice;
 + (_Bool)supportsSecureCoding;
 + (id)archivedClasses;
+@property(retain, nonatomic) NSString *_hashingKey; // @synthesize _hashingKey=__hashingKey;
 @property(retain) SFDevice *sfDevice; // @synthesize sfDevice=_sfDevice;
 @property long long remoteTransport; // @synthesize remoteTransport=_remoteTransport;
 @property long long transport; // @synthesize transport=_transport;
 @property long long status; // @synthesize status=_status;
+@property(retain) NSSet *capabilities; // @synthesize capabilities=_capabilities;
 @property(retain) NSString *platform; // @synthesize platform=_platform;
 @property(retain) NSString *productType; // @synthesize productType=_productType;
 @property(retain) NSString *name; // @synthesize name=_name;
@@ -55,6 +61,12 @@
 @property(retain) NSString *build; // @synthesize build=_build;
 @property(retain) NSString *address; // @synthesize address=_address;
 - (void).cxx_destruct;
+- (id)hashingKeyForTempDevice;
+- (_Bool)isTemporaryDevice;
+- (_Bool)hasCapabilities:(id)arg1;
+- (_Bool)isMoreCompleteThan:(id)arg1;
+- (_Bool)isLikeDevice:(id)arg1;
+- (id)hashingKey;
 - (_Bool)isEqualToDevice:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)shortDescription;

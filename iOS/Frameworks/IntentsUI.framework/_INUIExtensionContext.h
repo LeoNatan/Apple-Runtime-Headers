@@ -10,6 +10,7 @@
 
 @class NSString, _INUIExtensionContextState;
 
+__attribute__((visibility("hidden")))
 @interface _INUIExtensionContext : NSExtensionContext <_INUIExtensionContextVending>
 {
     _INUIExtensionContextState *_currentExtensionContextState;

@@ -7,12 +7,11 @@
 #import <MediaPlayer/MPMediaItem.h>
 
 #import "MPCacheableConcreteMediaEntity.h"
-#import "NSCoding.h"
 #import "NSCopying.h"
 
 @class MPConcreteMediaEntityPropertiesCache, MPMediaLibrary, NSObject<OS_dispatch_queue>;
 
-@interface MPConcreteMediaItem : MPMediaItem <NSCoding, NSCopying, MPCacheableConcreteMediaEntity>
+@interface MPConcreteMediaItem : MPMediaItem <NSCopying, MPCacheableConcreteMediaEntity>
 {
     MPMediaLibrary *_library;
     unsigned long long _persistentID;

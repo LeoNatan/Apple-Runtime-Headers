@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSData, NSString, UIImage;
+@class NSData, NSString, SSScreenshotAssetManagerRegistrationOptions, UIImage;
 
 @protocol SSScreenshotAssetManagerBackend <NSObject>
 - (void)removeEntryWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)updateImage:(UIImage *)arg1 withModificationData:(NSData *)arg2 forEntryWithIdentifier:(NSString *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)imageForPreviouslyRegisteredIdentifier:(NSString *)arg1 imageHandler:(void (^)(UIImage *, NSError *))arg2;
-- (void)registerEntryWithImage:(UIImage *)arg1 identifierHandler:(void (^)(NSString *, NSError *))arg2;
+- (void)registerEntryWithImage:(UIImage *)arg1 options:(SSScreenshotAssetManagerRegistrationOptions *)arg2 identifierHandler:(void (^)(NSString *, NSError *))arg3;
 @end
 

@@ -10,13 +10,9 @@
 
 @protocol _SFPBColor <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasAlphaComponent;
 @property(retain, nonatomic) _SFPBGraphicalFloat *alphaComponent;
-@property(readonly, nonatomic) BOOL hasBlueComponent;
 @property(retain, nonatomic) _SFPBGraphicalFloat *blueComponent;
-@property(readonly, nonatomic) BOOL hasGreenComponent;
 @property(retain, nonatomic) _SFPBGraphicalFloat *greenComponent;
-@property(readonly, nonatomic) BOOL hasRedComponent;
 @property(retain, nonatomic) _SFPBGraphicalFloat *redComponent;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

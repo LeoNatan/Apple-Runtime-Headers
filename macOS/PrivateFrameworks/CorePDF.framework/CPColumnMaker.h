@@ -8,6 +8,7 @@
 
 @class CPZone, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPColumnMaker : NSObject
 {
     NSMutableArray *columns;

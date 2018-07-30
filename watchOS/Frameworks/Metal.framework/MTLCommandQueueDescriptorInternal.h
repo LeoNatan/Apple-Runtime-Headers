@@ -12,8 +12,10 @@ __attribute__((visibility("hidden")))
     unsigned int _maxCommandBufferCount;
     unsigned int _qosClass;
     int _qosRelativePriority;
+    _Bool _openGLQueue;
 }
 
+@property _Bool isOpenGLQueue; // @synthesize isOpenGLQueue=_openGLQueue;
 - (void)setQosRelativePriority:(int)arg1;
 - (int)qosRelativePriority;
 - (void)setQosClass:(unsigned int)arg1;

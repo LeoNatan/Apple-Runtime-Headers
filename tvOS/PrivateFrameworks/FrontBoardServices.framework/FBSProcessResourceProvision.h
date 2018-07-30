@@ -21,6 +21,7 @@
 + (id)provisionWithResourceType:(long long)arg1 timeInterval:(double)arg2;
 + (id)provisionWithAllowance:(CDStruct_4e83c7bf)arg1;
 @property(nonatomic) CDStruct_4e83c7bf allowance; // @synthesize allowance=_allowance;
+- (void).cxx_destruct;
 - (_Bool)isResourceProvision;
 - (id)succinctDescriptionBuilder;
 - (id)copyWithZone:(struct _NSZone *)arg1;

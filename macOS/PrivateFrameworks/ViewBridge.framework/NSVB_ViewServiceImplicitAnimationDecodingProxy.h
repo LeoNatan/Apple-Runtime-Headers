@@ -6,18 +6,20 @@
 
 #import <ViewBridge/NSVB_TargetedProxy.h>
 
-#import "_UIViewServiceImplicitAnimationDecodingProxy_EncodingProxyInterface.h"
+#import "NSVB_ViewServiceImplicitAnimationDecodingProxy_EncodingProxyInterface.h"
 
-@class NSString, NSVB_ViewAnimationAttributes;
+@class NSString, NSVB_ViewAnimationAttributes, NSViewServiceMarshal;
 
 __attribute__((visibility("hidden")))
-@interface NSVB_ViewServiceImplicitAnimationDecodingProxy : NSVB_TargetedProxy <_UIViewServiceImplicitAnimationDecodingProxy_EncodingProxyInterface>
+@interface NSVB_ViewServiceImplicitAnimationDecodingProxy : NSVB_TargetedProxy <NSVB_ViewServiceImplicitAnimationDecodingProxy_EncodingProxyInterface>
 {
     SEL _implicitAnimationSelector;
     NSVB_ViewAnimationAttributes *_animationAttributes;
+    NSViewServiceMarshal *_serviceMarshal;
 }
 
-+ (id)proxyDecodingAnimationsForTarget:(id)arg1;
++ (id)proxyDecodingAnimationsForTarget:(id)arg1 withServiceMarshal:(id)arg2;
+@property(retain) NSViewServiceMarshal *serviceMarshal; // @synthesize serviceMarshal=_serviceMarshal;
 - (void)__animateNextInvocationOfSelector:(id)arg1 withAnimationAttributes:(id)arg2;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;

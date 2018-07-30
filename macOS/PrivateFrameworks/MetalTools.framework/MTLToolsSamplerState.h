@@ -7,13 +7,16 @@
 #import <MetalTools/MTLToolsObject.h>
 
 #import "MTLSamplerState.h"
+#import "MTLSamplerStateSPI.h"
 
 @class NSString;
 
-@interface MTLToolsSamplerState : MTLToolsObject <MTLSamplerState>
+@interface MTLToolsSamplerState : MTLToolsObject <MTLSamplerState, MTLSamplerStateSPI>
 {
 }
 
+@property(readonly) unsigned long long uniqueIdentifier;
+- (unsigned long long)resourceIndex;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) NSString *label;
 - (void)dealloc;

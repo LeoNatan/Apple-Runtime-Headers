@@ -21,7 +21,7 @@
 }
 
 + (id)jsNodeDataForNode:(struct _xmlNode *)arg1 create:(_Bool)arg2;
-+ (void)load;
++ (void)initialize;
 @property(retain, nonatomic) NSMutableDictionary *featuresMap; // @synthesize featuresMap=_featuresMap;
 @property(nonatomic, getter=isDataUpdated) _Bool dataUpdated; // @synthesize dataUpdated=_dataUpdated;
 @property(nonatomic, getter=isBindingUpdated) _Bool bindingUpdated; // @synthesize bindingUpdated=_bindingUpdated;

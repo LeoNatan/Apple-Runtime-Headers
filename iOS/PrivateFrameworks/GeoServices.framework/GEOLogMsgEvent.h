@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventCacheHit, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventNetwork, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStaleResource, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray;
+@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventCacheHit, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStaleResource, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray;
 
 @interface GEOLogMsgEvent : PBCodable <NSCopying>
 {
@@ -27,6 +27,7 @@
     GEOLogMsgEventMapLaunch *_mapLaunchEvent;
     GEOLogMsgEventMapsWidgetsInteractionSession *_mapsWidgetsInteractionSession;
     GEOLogMsgEventNetwork *_networkEvent;
+    GEOLogMsgEventParkedCar *_parkedCar;
     GEOLogMsgEventPlaceDataCache *_placeDataCacheEvent;
     GEOLogMsgEventProactiveSuggestionInteractionSession *_proactiveSuggestionInteractionSessionEvent;
     GEOLogMsgEventRealtimeTrafficProbe *_realtimeTrafficProbeCollection;
@@ -38,6 +39,7 @@
     LOGMSGEVENTLogMsgEventTableBookedSession *_tableBookedSession;
     LOGMSGEVENTLogMsgEventTableBookingSession *_tableBookingSession;
     GEOLogMsgEventTelemetric *_telemetric;
+    GEOLogMsgEventTileCacheAnalytic *_tileCacheAnalytic;
     GEOLogMsgEventTileSetState *_tileSetStateEvent;
     GEOLogMsgEventTimeToLeaveHypothesis *_timeToLeaveHypothesisEvent;
     GEOLogMsgEventTimeToLeaveInitialTravelTime *_timeToLeaveInitialTravelTimeEvent;
@@ -55,6 +57,8 @@
 + (id)acceptedLogMsgStatesForLogMsgEventType:(int)arg1;
 + (id)acceptedLogMsgStates;
 + (void)_initializeAcceptedLogMsgStateTypes;
+@property(retain, nonatomic) GEOLogMsgEventTileCacheAnalytic *tileCacheAnalytic; // @synthesize tileCacheAnalytic=_tileCacheAnalytic;
+@property(retain, nonatomic) GEOLogMsgEventParkedCar *parkedCar; // @synthesize parkedCar=_parkedCar;
 @property(retain, nonatomic) GEOLogMsgEventWifiConnectionQualityProbe *wifiConnectionQualityProbeEvent; // @synthesize wifiConnectionQualityProbeEvent=_wifiConnectionQualityProbeEvent;
 @property(retain, nonatomic) GEOLogMsgEventGenericAppError *genericAppErrorEvent; // @synthesize genericAppErrorEvent=_genericAppErrorEvent;
 @property(retain, nonatomic) GEOLogMsgEventCommuteWindow *commuteWindow; // @synthesize commuteWindow=_commuteWindow;
@@ -95,6 +99,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasTileCacheAnalytic;
+@property(readonly, nonatomic) _Bool hasParkedCar;
 @property(readonly, nonatomic) _Bool hasWifiConnectionQualityProbeEvent;
 @property(readonly, nonatomic) _Bool hasGenericAppErrorEvent;
 @property(readonly, nonatomic) _Bool hasCommuteWindow;

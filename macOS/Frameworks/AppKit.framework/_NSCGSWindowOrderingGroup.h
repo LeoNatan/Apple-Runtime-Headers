@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
 
 - (void)removeWindow:(id)arg1;
 - (void)addWindow:(id)arg1 aboveWindow:(id)arg2;
+@property(readonly, getter=isEmpty) BOOL empty;
 @property(readonly) NSArray *windows;
 - (void)dealloc;
+- (id)description;
 - (id)initWithWindows:(id)arg1;
 - (id)init;
 

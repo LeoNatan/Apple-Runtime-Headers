@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 target:(id)arg3 outWidth:(double *)arg4 outGap:(double *)arg5;
 - (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
+- (id)interiorClippingPath;
 - (Class)repClassForTextLayout:(id)arg1;
 - (id)dependentsOfTextLayout:(id)arg1;
 - (struct CGRect)autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize)arg2;
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
 - (id)pathForClippingConnectionLines;
 - (struct CGRect)boundsForStandardKnobs;
+- (id)infoGeometryForFittingInFrame:(struct CGRect)arg1;
 - (struct CGRect)imageFrameInRootWithDragOffset:(struct CGPoint)arg1;
 - (struct CGRect)imageRectInImageContainerForItem:(id)arg1;
 @property(readonly, nonatomic) TSDLayoutGeometry *imageGeometryInRoot;

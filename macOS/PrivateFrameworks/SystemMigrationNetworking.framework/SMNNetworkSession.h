@@ -54,6 +54,7 @@
     double _infrastructureWirelessRate;
 }
 
++ (id)keyPathsForValuesAffectingActiveInterfaceBenchmark;
 + (id)keyPathsForValuesAffectingRemoteInterfaceType;
 + (id)keyPathsForValuesAffectingLocalInterfaceType;
 @property double infrastructureWirelessRate; // @synthesize infrastructureWirelessRate=_infrastructureWirelessRate;
@@ -123,6 +124,7 @@
 @property(readonly) NSSet *availableConnectionTypes;
 - (void)promoteConnectionToActive:(id)arg1;
 - (id)instantiateSecurityProviderForQueueName:(id)arg1;
+@property(readonly) double activeInterfaceBenchmark;
 @property(readonly) int remoteInterfaceType;
 @property(readonly) int localInterfaceType;
 - (void)dealloc;

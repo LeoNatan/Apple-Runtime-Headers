@@ -28,9 +28,9 @@
 @property(retain) TLKImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain) TLKKeyValueGridView *trailingGrid; // @synthesize trailingGrid=_trailingGrid;
 @property(retain) TLKKeyValueGridView *leadingGrid; // @synthesize leadingGrid=_leadingGrid;
-@property(retain) TLKImage *image; // @synthesize image=_image;
-@property(retain) NSArray *trailingTuples; // @synthesize trailingTuples=_trailingTuples;
-@property(retain) NSArray *leadingTuples; // @synthesize leadingTuples=_leadingTuples;
+@property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) NSArray *trailingTuples; // @synthesize trailingTuples=_trailingTuples;
+@property(retain, nonatomic) NSArray *leadingTuples; // @synthesize leadingTuples=_leadingTuples;
 - (void).cxx_destruct;
 - (id)leadingTextKeyLabels;
 - (unsigned long long)numberOfVisibleRowsForTrailingGrid;
@@ -43,7 +43,6 @@
 - (_Bool)isLayoutSizeDependentOnPerpendicularAxis;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (void)styleDidChange:(unsigned long long)arg1;
-- (id)observableProperties;
 - (id)init;
 
 // Remaining properties

@@ -18,10 +18,13 @@ __attribute__((visibility("hidden")))
     struct CGRect _frame;
     double _saturation;
     unsigned long long _level;
+    struct CGColor *_tintColor;
     unsigned int _hasActiveAppearance:1;
     unsigned int _orderedIn:1;
 }
 
+- (void)setTintColor:(struct CGColor *)arg1;
+- (struct CGColor *)tintColor;
 - (void)setOrderedIn:(BOOL)arg1;
 - (BOOL)isOrderedIn;
 - (void)setSaturation:(double)arg1;

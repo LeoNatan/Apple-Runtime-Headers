@@ -6,11 +6,12 @@
 
 #import "NSTitlebarAccessoryViewController.h"
 
-@class KeyLoopSplicingContainerView, NSView;
+@class KeyLoopSplicingContainerView, NSBox, NSView;
 
 __attribute__((visibility("hidden")))
 @interface ExtensionBarViewController : NSTitlebarAccessoryViewController
 {
+    NSBox *_topSeparatorView;
     NSView *_contentView;
 }
 

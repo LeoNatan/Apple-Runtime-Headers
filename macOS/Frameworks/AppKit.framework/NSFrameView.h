@@ -32,7 +32,6 @@
 + (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
 + (id)_defaultTitleFontForWindowWithStyleMask:(unsigned long long)arg1;
 + (void)initTitleCell:(id)arg1 styleMask:(unsigned long long)arg2;
-+ (void)initialize;
 - (BOOL)shouldUseStyledTextInTitleCell:(id)arg1;
 - (struct __CFString *)customizedBackgroundTypeForTitleCell:(id)arg1;
 - (id)_edgeResizingTrackingAreas;
@@ -78,8 +77,6 @@
 - (void)tabViewRemoved;
 - (void)tabViewAdded;
 - (id)contentFill;
-- (id)frameColor;
-- (void)systemColorsDidChange:(id)arg1;
 - (void)adjustHalftonePhase;
 - (void)setUpGState;
 - (void)_drawFrameShadowAndFlushContext:(id)arg1;

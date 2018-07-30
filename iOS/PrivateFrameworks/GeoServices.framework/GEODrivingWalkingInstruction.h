@@ -10,6 +10,7 @@
 
 @class GEOFormattedString, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEODrivingWalkingInstruction : PBCodable <NSCopying>
 {
     NSMutableArray *_continueCommands;

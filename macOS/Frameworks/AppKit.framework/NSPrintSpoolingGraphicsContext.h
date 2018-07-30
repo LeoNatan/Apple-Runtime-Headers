@@ -10,6 +10,7 @@
 
 @class NSPrintInfo;
 
+__attribute__((visibility("hidden")))
 @interface NSPrintSpoolingGraphicsContext : NSCGSContext <NSPrintGraphicsContextAdvancing>
 {
     NSPrintInfo *_printInfo;

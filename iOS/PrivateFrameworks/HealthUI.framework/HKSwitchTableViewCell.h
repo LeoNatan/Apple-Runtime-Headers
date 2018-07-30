@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (void)switchValueChanged:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isOn) _Bool on;
 - (void)setIconImage:(id)arg1;
 - (void)setCountText:(id)arg1;

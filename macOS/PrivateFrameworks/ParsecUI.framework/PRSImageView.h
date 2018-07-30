@@ -9,29 +9,19 @@
 #import "NSDraggingSource.h"
 #import "NSPasteboardItemDataProvider.h"
 
-@class NSString, NSVisualEffectView;
+@class NSString;
 
 @interface PRSImageView : NSImageView <NSPasteboardItemDataProvider, NSDraggingSource>
 {
-    BOOL _allowsVibrancy;
-    NSVisualEffectView *_effectView;
     BOOL _dragEnabled;
 }
 
 @property(getter=isDragEnabled) BOOL dragEnabled; // @synthesize dragEnabled=_dragEnabled;
-- (void).cxx_destruct;
 - (BOOL)isAccessibilityElement;
-- (void)addCoveringConstraintsForSubview:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)pasteboard:(id)arg1 item:(id)arg2 provideDataForType:(id)arg3;
 - (struct CGSize)fittingSize;
-- (void)resetFrame;
-- (void)awakeFromNib;
-- (void)disableEffectView;
-- (void)setHidden:(BOOL)arg1;
-- (void)removeFromSuperview;
-@property BOOL allowsVibrancy;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

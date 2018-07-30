@@ -8,6 +8,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface TKDataSource : NSObject
 {
     NSData *_data;

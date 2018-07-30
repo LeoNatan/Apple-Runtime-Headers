@@ -41,6 +41,7 @@
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;
+- (BOOL)_copyDataFrom:(id)arg1 range:(struct _NSRange)arg2;
 - (BOOL)_setData:(id)arg1 encoding:(unsigned long long)arg2;
 - (BOOL)_setStorage:(struct __CFStorage *)arg1 encoding:(unsigned long long)arg2;
 - (BOOL)_copyStorage:(struct __CFStorage **)arg1 encoding:(unsigned long long *)arg2;

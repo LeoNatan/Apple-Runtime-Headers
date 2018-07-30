@@ -25,6 +25,8 @@
 @property(copy, nonatomic) NSNumber *enableTcpFastOpen;
 @property(copy, nonatomic) NSNumber *enableTLS13ZeroRTT;
 @property(copy, nonatomic) NSNumber *enableTLS13;
+@property(copy, nonatomic) NSNumber *enableOptimisticDNS;
+@property(copy, nonatomic) NSNumber *disableMPTCP;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

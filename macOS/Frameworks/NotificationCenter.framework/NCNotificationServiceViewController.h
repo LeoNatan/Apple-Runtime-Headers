@@ -8,6 +8,7 @@
 
 @class NCNotificationServiceSubsystem;
 
+__attribute__((visibility("hidden")))
 @interface NCNotificationServiceViewController : NCRemoteViewServiceViewController
 {
 }

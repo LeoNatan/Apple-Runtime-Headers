@@ -37,7 +37,7 @@
 - (_Bool)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
-- (id)userID;
+- (id)userHandle;
 - (id)initWithItem:(id)arg1 home:(id)arg2;
 
 // Remaining properties

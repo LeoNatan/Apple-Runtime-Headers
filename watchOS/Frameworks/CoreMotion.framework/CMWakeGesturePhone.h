@@ -11,7 +11,6 @@
 }
 
 + (_Bool)hasSlowBootArgs;
-+ (_Bool)isWakeGestureAvailable;
 
 @end
 

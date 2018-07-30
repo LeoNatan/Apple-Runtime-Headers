@@ -12,25 +12,45 @@ __attribute__((visibility("hidden")))
 @interface NSTouchBarCustomizationPaletteLayout : NSCollectionViewLayout
 {
     NSDictionary *_cachedAttributes;
+    NSDictionary *_cachedDecorationAttributes;
     double _cachedHeight;
     double _scaleFactor;
+    long long _numberOfColumns;
+    double _columnWidth;
+    double _columnSpacing;
+    double _rowSpacing;
+    double _rowHeight;
+    double _minItemSpacing;
+    long long _flexibleColumnSpan;
+    struct NSEdgeInsets _edgeInsets;
 }
 
 + (Class)layoutAttributesClass;
+@property struct NSEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
+@property long long flexibleColumnSpan; // @synthesize flexibleColumnSpan=_flexibleColumnSpan;
+@property double minItemSpacing; // @synthesize minItemSpacing=_minItemSpacing;
+@property double rowHeight; // @synthesize rowHeight=_rowHeight;
+@property double rowSpacing; // @synthesize rowSpacing=_rowSpacing;
+@property double columnSpacing; // @synthesize columnSpacing=_columnSpacing;
+@property double columnWidth; // @synthesize columnWidth=_columnWidth;
+@property long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
+- (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (void)prepareLayout;
 - (CDStruct_5e3db82b)calculateStatsForItemAtPath:(id)arg1 remainingColumns:(long long)arg2;
+- (long long)numberOfSpannedColumns:(double)arg1 maxItemWidth:(double)arg2 columnWidth:(double)arg3 columnSpacing:(double)arg4 numRemainingColumns:(long long)arg5 numberOfColumnsPerRow:(long long)arg6;
 - (id)delegate;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (struct CGSize)collectionViewContentSize;
 - (long long)numberOfColumnsPerRow;
-- (double)minItemSpacing;
-- (double)rowHeight;
-- (double)rowSpacing;
-- (double)columnSpacing;
-- (double)columnWidth;
+- (double)minItemSpacingScaled;
+- (double)rowHeightScaled;
+- (double)rowSpacingScaled;
+- (double)columnSpacingScaled;
+- (double)columnWidthScaled;
+- (id)init;
 
 @end
 

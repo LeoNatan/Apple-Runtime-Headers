@@ -26,14 +26,14 @@
 @property CDStruct_4c969caf auditToken; // @synthesize auditToken=_auditToken;
 - (BOOL)pushSourcesContent:(id)arg1 forSource:(int)arg2 signature:(id)arg3;
 - (BOOL)clientCanWriteSource:(int)arg1;
-- (id)fileHandleForSourceRead:(int)arg1;
+- (id)fileHandleForSourceRead:(int)arg1 resourceType:(unsigned long long)arg2;
 - (BOOL)privacySystemWriteEntitled;
 - (BOOL)privacyUserWriteEntitled;
 - (BOOL)privacyUserReadEntitled;
 - (void)writeSourceFromJSONFile:(id)arg1 source:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)writeSourceFromRawData:(id)arg1 source:(id)arg2 signature:(id)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)filesForSourceRead:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fileForSourceRead:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)filesForSourceRead:(id)arg1 resourceType:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)fileForSourceRead:(id)arg1 resourceType:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 
 @end
 

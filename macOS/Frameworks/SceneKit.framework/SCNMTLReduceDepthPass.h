@@ -6,12 +6,14 @@
 
 #import <SceneKit/SCNMTLRenderPass.h>
 
+@class SCNMTLComputePipeline;
+
 __attribute__((visibility("hidden")))
 @interface SCNMTLReduceDepthPass : SCNMTLRenderPass
 {
-    id <MTLComputePipelineState> _initCS;
-    id <MTLComputePipelineState> _stepCS;
-    id <MTLComputePipelineState> _tailCS;
+    SCNMTLComputePipeline *_initCS;
+    SCNMTLComputePipeline *_stepCS;
+    SCNMTLComputePipeline *_tailCS;
     id <MTLTexture> _reduceTmpTexture[2];
     id <MTLBuffer> _reduceResult;
 }

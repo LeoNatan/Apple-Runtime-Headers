@@ -12,15 +12,16 @@
 {
     void *_contentItem;
     _Bool _currentlyPlaying;
+    UIImage *_artworkImage;
     MCDPCModel *_model;
 }
 
 @property(nonatomic) void *contentItem; // @synthesize contentItem=_contentItem;
 @property(readonly, nonatomic) __weak MCDPCModel *model; // @synthesize model=_model;
+@property(retain, nonatomic) UIImage *artworkImage; // @synthesize artworkImage=_artworkImage;
 @property(nonatomic) _Bool currentlyPlaying; // @synthesize currentlyPlaying=_currentlyPlaying;
 - (void).cxx_destruct;
 - (id)description;
-@property(readonly, nonatomic) UIImage *artworkImage;
 @property(readonly, nonatomic) _Bool isExplicitItem;
 @property(readonly, nonatomic) _Bool isCloudItem;
 @property(readonly, nonatomic) _Bool isPlayable;

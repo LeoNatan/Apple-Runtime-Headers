@@ -6,6 +6,7 @@
 
 #import "UIView.h"
 
+__attribute__((visibility("hidden")))
 @interface _PUScrubberContainerView : UIView
 {
     double __edgeInset;

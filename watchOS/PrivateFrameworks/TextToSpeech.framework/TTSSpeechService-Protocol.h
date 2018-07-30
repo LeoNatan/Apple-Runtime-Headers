@@ -22,6 +22,7 @@
 - (oneway void)startSpeechRequest:(TTSSpeechRequest *)arg1;
 
 @optional
+- (NSString *)embeddedVolumeMarkupForVoice:(TTSSpeechVoice *)arg1 string:(NSString *)arg2 volume:(float)arg3;
 - (NSString *)embeddedPitchMarkupForVoice:(TTSSpeechVoice *)arg1 string:(NSString *)arg2 pitch:(float)arg3;
 - (NSString *)embeddedRateMarkupForVoice:(TTSSpeechVoice *)arg1 string:(NSString *)arg2 rate:(float)arg3;
 - (NSString *)nashvilleVoiceName:(NSString *)arg1 footprint:(int)arg2 voiceType:(long)arg3 gender:(int)arg4;

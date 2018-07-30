@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface FI_TSidebarSplitViewController : NSSplitViewController
 {
-    struct TNSRef<NSSplitViewItem *, void> _browserSplitViewItem;
-    struct TNSRef<FI_TBrowserViewContainerController *, void> _browserViewContainerController;
-    struct TNSRef<NSSplitViewItem *, void> _sidebarSplitViewItem;
-    struct TNSRef<FI_TSidebarViewController *, void> _sidebarViewController;
+    struct TNSRef<NSSplitViewItem, void> _browserSplitViewItem;
+    struct TNSRef<FI_TBrowserViewContainerController, void> _browserViewContainerController;
+    struct TNSRef<NSSplitViewItem, void> _sidebarSplitViewItem;
+    struct TNSRef<FI_TSidebarViewController, void> _sidebarViewController;
     double _sidebarColumnWidthCache;
     _Bool _snapToOptimalSidebarWidth;
     long long _mediaBrowserShownTypes;
@@ -42,8 +42,8 @@ __attribute__((visibility("hidden")))
 - (void)updateSidebarSelectionForTarget:(const struct TFENode *)arg1;
 - (void)updateSidebarSelectionForCurrentTarget;
 - (void)removeNodeFromSidebar:(const struct TFENode *)arg1;
-- (_Bool)hidesSharedSection;
-- (void)setHidesSharedSection:(_Bool)arg1;
+- (_Bool)hidesSharedSharedItems;
+- (void)setHidesSharedItems:(_Bool)arg1;
 - (void)setMediaBrowserShownTypes:(unsigned long long)arg1;
 - (void)saveSidebarColumnWidthToDisk:(double)arg1 didUserResizeSidebar:(_Bool)arg2;
 - (void)setSidebarColumnWidth:(double)arg1;

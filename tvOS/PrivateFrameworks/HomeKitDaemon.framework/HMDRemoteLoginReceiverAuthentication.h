@@ -6,16 +6,12 @@
 
 #import <HomeKitDaemon/HMDRemoteLoginAuthentication.h>
 
-@class ACAccountStore;
-
 @interface HMDRemoteLoginReceiverAuthentication : HMDRemoteLoginAuthentication
 {
     id <HMDRemoteLoginReceiverAuthenticationDelegate> _delegate;
-    ACAccountStore *_store;
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) ACAccountStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) __weak id <HMDRemoteLoginReceiverAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_completedAuthenticationRequest:(id)arg1 loggedInAccount:(id)arg2;

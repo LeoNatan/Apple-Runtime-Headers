@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface PKQuadTree : NSObject
 {
     shared_ptr_639e7c03 quadTree;

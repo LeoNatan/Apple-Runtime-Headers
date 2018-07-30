@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_cancelFallbackIconRequestForReadingListItem:(id)arg1;
 - (id)_createLabelTextField;
-- (void)updateThumbnailViewWithReadingListItem:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)getThumbnailImageForReadingListItem:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_setUpConstraints;
 - (void)_setUpSubviews;
 - (void)dealloc;

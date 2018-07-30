@@ -28,7 +28,6 @@
 @property(nonatomic) __weak NSArrayController *itemsController; // @synthesize itemsController=_itemsController;
 - (void).cxx_destruct;
 - (void)scrollToTop;
-- (void)updatePreferredMaxLayoutWidth:(id)arg1;
 - (void)loadView;
 - (void)dealloc;
 

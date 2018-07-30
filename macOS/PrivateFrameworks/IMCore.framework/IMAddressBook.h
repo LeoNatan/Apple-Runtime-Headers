@@ -12,11 +12,6 @@
 
 + (BOOL)addressBookEnabled;
 + (void)setAddressBookEnabled:(BOOL)arg1;
-+ (void)performBlock:(CDUnknownBlockType)arg1;
-+ (id)_threadedABAddressBookLock;
-+ (void *)_threadedABAddressBookRef;
-+ (void *)abAddressBookRef;
-+ (void *)_abAddressBookRef;
 + (id)abAddressBook;
 + (void)_watchLocaleChanges;
 + (void)_localeChanged:(id)arg1;

@@ -15,10 +15,10 @@
     AVCaptureVideoDataOutputInternal *_internal;
 }
 
-+ (id)supportedVideoSettingsKeys;
 + (id)new;
 + (void)initialize;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
+@property(readonly, nonatomic) id delegateOverride;
 - (unsigned int)requiredOutputFormatForConnection:(id)arg1;
 - (_Bool)hasRequiredOutputFormatForConnection:(id)arg1;
 - (_Bool)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
@@ -36,7 +36,10 @@
 - (id)recommendedVideoSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)supportedAssetWriterOutputFileTypes;
 @property(copy, nonatomic) NSDictionary *videoSettings;
+- (id)supportedVideoSettingsKeys;
 - (id)vettedVideoSettingsForSettingsDictionary:(id)arg1;
+- (void)setVideoSettingsDimensionsOverrideEnabled:(_Bool)arg1;
+- (_Bool)isVideoSettingsDimensionsOverrideEnabled;
 - (id)outputScalingModeForSourceFormat:(id)arg1;
 - (int)outputFormat;
 - (_Bool)usesPreviewSizedBuffers;

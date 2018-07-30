@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSString;
 
-@interface DMFEraseDeviceRequest : CATTaskRequest
+@interface DMFEraseDeviceRequest : DMFTaskRequest
 {
     BOOL _hideProximitySetupPane;
     unsigned long long _eraseDeviceType;
@@ -17,6 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (BOOL)isPermittedOnUserConnection;
++ (BOOL)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(nonatomic) BOOL hideProximitySetupPane; // @synthesize hideProximitySetupPane=_hideProximitySetupPane;
 @property(copy, nonatomic) NSString *pin; // @synthesize pin=_pin;
 @property(nonatomic) unsigned long long dataResetOptions; // @synthesize dataResetOptions=_dataResetOptions;

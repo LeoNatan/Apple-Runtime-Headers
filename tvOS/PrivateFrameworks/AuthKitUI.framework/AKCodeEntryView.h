@@ -8,7 +8,7 @@
 
 #import "UIKeyInput.h"
 
-@class NSArray, NSMutableString, NSString, UILabel, UITapGestureRecognizer;
+@class NSArray, NSMutableString, NSString, UILabel, UITapGestureRecognizer, UITextInputPasswordRules;
 
 @interface AKCodeEntryView : UIView <UIKeyInput>
 {
@@ -51,6 +51,7 @@
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(readonly) unsigned long long hash;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) long long returnKeyType;
 @property(nonatomic) long long smartDashesType;
 @property(nonatomic) long long smartInsertDeleteType;

@@ -6,24 +6,41 @@
 
 #import "NSObject.h"
 
-@class FirmwareBundle, NSMutableData;
+#import "HSModelDelegate.h"
 
-@interface iAUPServer : NSObject
+@class FirmwareBundle, HSModel, NSMutableData, NSObject<OS_dispatch_queue>;
+
+@interface iAUPServer : NSObject <HSModelDelegate>
 {
     id <iAUPServerDelegate> _delegate;
+    int _serverState;
     int _parserState;
     BOOL _escapeInProgress;
+    BOOL _byteEscape;
+    FirmwareBundle *_firmwareBundle;
+    HSModel *_hsModel;
     unsigned int _telegramLength;
     unsigned char _telegramChecksum;
     NSMutableData *_telegramDataIn;
     unsigned short objectBlockTransferSizes[4];
     unsigned int _firmwareImageBaseTransferAddress;
-    FirmwareBundle *firmwareBundle;
+    NSObject<OS_dispatch_queue> *_dispatchQ;
 }
 
-+ (id)sharedServer;
-@property(retain) FirmwareBundle *firmwareBundle; // @synthesize firmwareBundle;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQ; // @synthesize dispatchQ=_dispatchQ;
+@property(nonatomic) int parserState; // @synthesize parserState=_parserState;
+@property(nonatomic) BOOL byteEscape; // @synthesize byteEscape=_byteEscape;
+@property(retain, nonatomic) FirmwareBundle *firmwareBundle; // @synthesize firmwareBundle=_firmwareBundle;
 @property id <iAUPServerDelegate> delegate; // @synthesize delegate=_delegate;
+- (char *)parserStateString:(int)arg1;
+- (char *)serverStateString:(int)arg1;
+- (char *)assetTypeString:(int)arg1;
+- (char *)commandString:(int)arg1;
+- (void)setHSModel:(id)arg1 fallbackModel:(id)arg2 error:(id)arg3;
+- (void)processNotifyAccessoryErrorCommand:(char *)arg1 length:(unsigned int)arg2;
+- (void)processDownloadCompleteCommand:(char *)arg1 length:(unsigned int)arg2;
+- (void)processRequestDownloadCommand:(char *)arg1 length:(unsigned int)arg2;
+- (void)processIdentifyCommand:(char *)arg1 length:(unsigned int)arg2;
 - (void)setBootloaderEntry;
 - (void)sendCommand:(unsigned char)arg1 payload:(char *)arg2 payload_length:(unsigned short)arg3;
 - (unsigned char)appendByteWithEscaping:(unsigned char)arg1 toObject:(id *)arg2;
@@ -35,7 +52,7 @@
 - (void)resetParser;
 - (unsigned int)supportedTargetProductIDCode;
 - (void)dealloc;
-- (id)init;
+- (id)initInstance;
 
 @end
 

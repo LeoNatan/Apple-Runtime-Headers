@@ -23,6 +23,7 @@
 @property(retain) SFCard *card; // @synthesize card=_card;
 @property unsigned long long level; // @synthesize level=_level;
 - (void).cxx_destruct;
+- (id)testingTableViewController;
 - (double)offScreenContentScrollDistance;
 - (void)setShouldUseInsetRoundedSections:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

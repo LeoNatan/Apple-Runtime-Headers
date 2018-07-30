@@ -8,6 +8,7 @@
 
 @class NSData, NSPrintInfoDictionaryProxy;
 
+__attribute__((visibility("hidden")))
 @interface NSPrintInfoAdditionalIVars : NSObject
 {
     struct OpaquePMPrintSession *printSession;

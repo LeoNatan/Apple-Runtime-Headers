@@ -19,7 +19,6 @@
 @property(readonly, nonatomic) NSArray *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSUUID *seriesIdentifier; // @synthesize seriesIdentifier=_seriesIdentifier;
 - (void).cxx_destruct;
-- (id)_locationsFromDatums:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

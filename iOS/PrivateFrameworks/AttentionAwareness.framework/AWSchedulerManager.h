@@ -6,23 +6,19 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSXPCConnection;
+@class NSObject<OS_dispatch_queue>, NSXPCConnection;
 
 __attribute__((visibility("hidden")))
 @interface AWSchedulerManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_semaphores;
     NSXPCConnection *_connection;
-    id <AWScheduler> _scheduler;
 }
 
++ (id)invokeWithScheduler:(CDUnknownBlockType)arg1;
 + (id)sharedManager;
 - (void).cxx_destruct;
-- (void)interruptOperationsWithError:(id)arg1;
-- (void)removeSemaphore:(id)arg1;
-- (id)createSemaphore;
-- (id)scheduler;
+- (id)invokeWithScheduler:(CDUnknownBlockType)arg1;
 - (id)init;
 
 @end

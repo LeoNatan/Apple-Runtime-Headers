@@ -18,6 +18,7 @@
     unsigned int _protocolVersion;
     BOOL _deviceDisabled;
     BOOL _locked;
+    BOOL _supportsFaceID;
     BOOL _userDisabled;
     struct {
         unsigned int defaultPaymentInstrumentIndex:1;
@@ -25,11 +26,13 @@
         unsigned int protocolVersion:1;
         unsigned int deviceDisabled:1;
         unsigned int locked:1;
+        unsigned int supportsFaceID:1;
         unsigned int userDisabled:1;
     } _has;
 }
 
 + (Class)paymentInstrumentsType;
+@property(nonatomic) BOOL supportsFaceID; // @synthesize supportsFaceID=_supportsFaceID;
 @property(nonatomic) unsigned int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(nonatomic) BOOL deviceDisabled; // @synthesize deviceDisabled=_deviceDisabled;
 @property(nonatomic) BOOL userDisabled; // @synthesize userDisabled=_userDisabled;
@@ -46,6 +49,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasSupportsFaceID;
 @property(nonatomic) BOOL hasProtocolVersion;
 - (int)StringAsNearby:(id)arg1;
 - (id)nearbyAsString:(int)arg1;

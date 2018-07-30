@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTouchBar.h>
 
+__attribute__((visibility("hidden")))
 @interface NSControlStripTouchBar : NSTouchBar
 {
 }

@@ -6,7 +6,9 @@
 
 #import "NSObject.h"
 
+@class NSString;
+
 @protocol IASAuthenticationAgentProtocol <NSObject>
-- (void)getSSOServiceTicketWithUI:(BOOL)arg1 completionHandler:(void (^)(NSError *, NSData *))arg2;
+- (void)getSSOServiceTicketWithUI:(BOOL)arg1 serviceID:(NSString *)arg2 completionHandler:(void (^)(NSError *, NSData *, NSString *))arg3;
 @end
 

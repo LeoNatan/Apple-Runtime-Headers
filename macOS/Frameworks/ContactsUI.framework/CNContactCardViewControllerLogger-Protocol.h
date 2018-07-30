@@ -7,6 +7,8 @@
 @class CNContact, NSArray, NSViewController;
 
 @protocol CNContactCardViewControllerLogger
+- (void)logCommitedEditingResults:(CNContact *)arg1;
+- (void)logReceivedRequestToSaveContact:(CNContact *)arg1;
 - (void)logDidSaveContact:(CNContact *)arg1;
 - (void)logWillSaveContact:(CNContact *)arg1;
 - (void)logTotalCalculatedDesiredHeight:(double)arg1;

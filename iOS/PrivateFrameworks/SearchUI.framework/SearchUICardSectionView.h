@@ -39,7 +39,6 @@
 - (void)openPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)updateWithRowModel:(id)arg1;
 @property(readonly, nonatomic) SFCardSection *section;
-- (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
 - (id)setupContentView;
 - (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;

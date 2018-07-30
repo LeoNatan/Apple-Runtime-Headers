@@ -7,6 +7,6 @@
 #import "UIImage.h"
 
 @interface UIImage (NTKRoundedCornerOverlayView)
-+ (id)newImageForScreenCorner:(unsigned long long)arg1 cornerRadius:(double)arg2;
++ (id)newImageForScreenCorner:(unsigned long long)arg1 device:(id)arg2 cornerRadius:(double)arg3;
 @end
 

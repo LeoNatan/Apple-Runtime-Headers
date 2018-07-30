@@ -16,6 +16,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)isValid:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int audioCodec; // @synthesize audioCodec=_audioCodec;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAudioCodecType:(unsigned int)arg1;

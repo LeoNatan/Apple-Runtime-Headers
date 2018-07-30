@@ -14,6 +14,7 @@
 {
     BBSectionSubtypeParameters *_fallbackParameters;
     NSString *_hiddenPreviewsBodyPlaceholder;
+    NSString *_subtypeSummaryFormat;
     NSString *_topic;
     NSString *_missedBannerDescriptionFormat;
     NSString *_fullUnlockActionLabel;
@@ -47,9 +48,11 @@
     NSNumber *_boxedPreemptsPresentedAlert;
     NSNumber *_boxedRevealsAdditionalContentOnPresentation;
     NSNumber *_boxedPrivacySettings;
+    NSNumber *_boxedShouldDismissBulletinWhenClosed;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSNumber *boxedShouldDismissBulletinWhenClosed; // @synthesize boxedShouldDismissBulletinWhenClosed=_boxedShouldDismissBulletinWhenClosed;
 @property(retain, nonatomic) NSNumber *boxedPrivacySettings; // @synthesize boxedPrivacySettings=_boxedPrivacySettings;
 @property(retain, nonatomic) NSNumber *boxedRevealsAdditionalContentOnPresentation; // @synthesize boxedRevealsAdditionalContentOnPresentation=_boxedRevealsAdditionalContentOnPresentation;
 @property(retain, nonatomic) NSNumber *boxedPreemptsPresentedAlert; // @synthesize boxedPreemptsPresentedAlert=_boxedPreemptsPresentedAlert;
@@ -82,6 +85,7 @@
 @property(copy, nonatomic) NSString *fullUnlockActionLabel; // @synthesize fullUnlockActionLabel=_fullUnlockActionLabel;
 @property(copy, nonatomic) NSString *missedBannerDescriptionFormat; // @synthesize missedBannerDescriptionFormat=_missedBannerDescriptionFormat;
 @property(copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
+@property(copy, nonatomic) NSString *subtypeSummaryFormat; // @synthesize subtypeSummaryFormat=_subtypeSummaryFormat;
 @property(copy, nonatomic) NSString *hiddenPreviewsBodyPlaceholder; // @synthesize hiddenPreviewsBodyPlaceholder=_hiddenPreviewsBodyPlaceholder;
 @property(nonatomic) __weak BBSectionSubtypeParameters *fallbackParameters; // @synthesize fallbackParameters=_fallbackParameters;
 - (void).cxx_destruct;
@@ -89,6 +93,7 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+@property(nonatomic) _Bool shouldDismissBulletinWhenClosed;
 @property(nonatomic) unsigned long long privacySettings;
 @property(nonatomic) _Bool revealsAdditionalContentOnPresentation;
 @property(nonatomic) _Bool preemptsPresentedAlert;

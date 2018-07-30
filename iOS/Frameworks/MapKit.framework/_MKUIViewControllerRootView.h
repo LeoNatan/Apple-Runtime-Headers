@@ -15,7 +15,7 @@
 
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
-- (void)commonInit;
+- (void)_commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithViewController:(id)arg1;

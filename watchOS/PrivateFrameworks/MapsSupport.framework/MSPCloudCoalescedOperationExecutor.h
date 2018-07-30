@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class MSPJournal, NSMutableArray, NSMutableSet, NSOperationQueue;
+@class MSPJournal, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface MSPCloudCoalescedOperationExecutor : NSObject
 {
     MSPJournal *_journal;
     NSOperationQueue *_queue;
+    NSObject<OS_dispatch_queue> *_operationQueue;
     NSMutableArray *_pendingFetchRequests;
     _Bool _isRunning;
     _Bool _pendingCachesFetchesExecutionTimerScheduled;

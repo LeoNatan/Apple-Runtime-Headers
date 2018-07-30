@@ -14,12 +14,10 @@
 }
 
 - (void).cxx_destruct;
-@property(retain, nonatomic) MKMapItem *mapItem;
 @property(retain, nonatomic) UIColor *pinTintColor;
+@property(retain, nonatomic) MKMapItem *mapItem;
 @property(nonatomic) unsigned int mapType;
 @property(nonatomic) _Bool showsName;
-- (void)preloadSnapshotForWidth:(float)arg1;
-- (void)setNeedsUpdateConstraints;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_emojiAccessibilityElements;
 }
 
++ (id)_emojiFontObj;
 @property(retain) NSMutableArray *emojiAccessibilityElements; // @synthesize emojiAccessibilityElements=_emojiAccessibilityElements;
 @property(retain) NSString *skinToneSelectingCharacter; // @synthesize skinToneSelectingCharacter=_skinToneSelectingCharacter;
 @property long long skinToneSelectingCharacterIndex; // @synthesize skinToneSelectingCharacterIndex=_skinToneSelectingCharacterIndex;

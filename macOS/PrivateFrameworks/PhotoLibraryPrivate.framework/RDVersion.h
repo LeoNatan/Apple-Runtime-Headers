@@ -61,6 +61,7 @@
 + (id)stringForUT8String:(const char *)arg1 length:(unsigned long long)arg2;
 + (Class)stringMapper;
 + (void)initialize;
++ (void)repairNullFileNameWithRepair:(id)arg1;
 + (void)repairInvalidAdjustmentUuidWithRepair:(id)arg1;
 + (void)repairAnalysisTableEntries:(id)arg1;
 + (void)repairNullSpecialType:(id)arg1;

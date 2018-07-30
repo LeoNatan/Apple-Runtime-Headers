@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (void)textReplySuggestionsForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissedWithReason:(int)arg1 dwelltime:(double)arg2;
-- (void)clientViewControllerDidSelectPresentQuickboard:(id)arg1;
+- (void)clientViewControllerDidSelectPresentQuickboard:(id)arg1 forFriend:(id)arg2;
 - (void)clientViewControllerDidSelectDismiss:(id)arg1 shouldAnimateActionMenu:(_Bool)arg2;
 - (void)clientViewControllerDidDisappear:(id)arg1;
 - (void)clientViewControllerDidAppear:(id)arg1;

@@ -14,15 +14,15 @@
     int _neuronType;
 }
 
++ (id)fcBlockWithNumNeurons:(int)arg1 NeuronType:(int)arg2;
 - (BOOL)useGPU;
 - (BOOL)supportGPU;
 - (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;
-- (int)shuffleWeights:(float *)arg1 fromSrc:(float *)arg2 inputChannels:(int)arg3 inputHeight:(int)arg4 inputWidth:(int)arg5 outputChannels:(int)arg6;
+- (int)loadWeights:(struct __sFILE *)arg1 inputDim:(int)arg2 outputDim:(int)arg3 quantFactor:(int)arg4;
 - (int)readWeightsBias:(struct __sFILE *)arg1 weights:(float *)arg2 bias:(float *)arg3 inputDim:(int)arg4 outputDim:(int)arg5 quantFactor:(int)arg6;
-- (int)straightForward;
-- (int)forward;
 - (int)constructBlock:(id)arg1 context:(id)arg2;
 - (void)dealloc;
+- (int)initializeRest;
 - (id)initWithParameters:(int)arg1 NeuronType:(int)arg2;
 
 @end

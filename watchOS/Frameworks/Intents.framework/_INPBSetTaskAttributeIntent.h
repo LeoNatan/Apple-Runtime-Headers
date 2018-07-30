@@ -7,43 +7,45 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSetTaskAttributeIntent.h"
 
-@class PBUnknownFields, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTask, _INPBTemporalEventTrigger;
+@class NSString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTask, _INPBTemporalEventTrigger;
 
-@interface _INPBSetTaskAttributeIntent : PBCodable <NSCopying>
+@interface _INPBSetTaskAttributeIntent : PBCodable <_INPBSetTaskAttributeIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_47fe53f2 _has;
     _INPBIntentMetadata *_intentMetadata;
     _INPBSpatialEventTrigger *_spatialEventTrigger;
     int _status;
     _INPBTask *_targetTask;
     _INPBTemporalEventTrigger *_temporalEventTrigger;
-    CDStruct_47fe53f2 _has;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
-@property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
 @property(retain, nonatomic) _INPBTask *targetTask; // @synthesize targetTask=_targetTask;
+@property(nonatomic) int status; // @synthesize status=_status;
+@property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasTemporalEventTrigger;
-@property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
+@property(readonly, nonatomic) _Bool hasTargetTask;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
-@property(readonly, nonatomic) _Bool hasTargetTask;
+@property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

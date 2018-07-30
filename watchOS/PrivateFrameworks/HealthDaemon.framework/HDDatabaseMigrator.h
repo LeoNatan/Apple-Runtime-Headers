@@ -6,21 +6,20 @@
 
 #import "NSObject.h"
 
-@class HDDatabaseSchemaManager, HDProfile, HDSQLiteDatabase, NSMutableArray, NSString;
+@class HDDatabaseMigrationTransaction, HDDatabaseSchemaManager, HDProfile, NSMutableArray;
 
 @interface HDDatabaseMigrator : NSObject
 {
     _Bool _hasPerformedMigration;
     NSMutableArray *_migrationSteps;
     HDProfile *_profile;
-    HDSQLiteDatabase *_database;
-    NSString *_databaseName;
+    HDDatabaseMigrationTransaction *_transaction;
     HDDatabaseSchemaManager *_schemaManager;
 }
 
++ (_Bool)_databaseSchemas:(id)arg1 containsTable:(id)arg2;
 @property(readonly, nonatomic) HDDatabaseSchemaManager *schemaManager; // @synthesize schemaManager=_schemaManager;
-@property(readonly, copy, nonatomic) NSString *databaseName; // @synthesize databaseName=_databaseName;
-@property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
+@property(readonly, nonatomic) HDDatabaseMigrationTransaction *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (int)deleteDatabaseStatusForVersion:(int)arg1 errorMessage:(id)arg2 error:(id *)arg3;
@@ -28,17 +27,23 @@
 - (_Bool)executeSQLStatements:(id)arg1 error:(id *)arg2;
 - (_Bool)executeSQL:(id)arg1 error:(id *)arg2;
 - (int)performHFDMigrationToVersion:(int)arg1 handler:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (void)invalidate;
 - (int)migrateFromVersion:(int)arg1 toVersion:(int)arg2 error:(id *)arg3;
-- (int)_runMigrationSteps:(id)arg1 currentVersion:(int)arg2 databaseName:(id)arg3 expectedFinalVersion:(int)arg4 error:(id *)arg5;
-- (id)_sortedAndPrunedMigrationSteps:(id)arg1 currentVersion:(int)arg2 databaseName:(id)arg3 error:(id *)arg4;
-- (int)_runMigrationStep:(id)arg1 currentVersion:(int *)arg2 finalVersion:(int)arg3 databaseName:(id)arg4 error:(id *)arg5;
+- (int)_runMigrationSteps:(id)arg1 currentVersion:(int)arg2 expectedFinalVersion:(int)arg3 error:(id *)arg4;
+- (id)_sortedAndPrunedMigrationSteps:(id)arg1 currentVersion:(int)arg2 error:(id *)arg3;
+- (int)_runMigrationStep:(id)arg1 currentVersion:(int *)arg2 finalVersion:(int)arg3 error:(id *)arg4;
 - (id)primaryProtectedMigrationSteps;
 - (id)primaryUnprotectedMigrationSteps;
 - (void)addMigrationSteps:(id)arg1;
 - (void)addLockstepMigrationForSchema:(id)arg1 to:(int)arg2 requiring:(int)arg3 foreignKeys:(int)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)addMigrationForSchema:(id)arg1 to:(int)arg2 foreignKeys:(int)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)addMigrationForSchema:(id)arg1 to:(int)arg2 foreignKeys:(int)arg3 migrationHandler:(CDUnknownBlockType)arg4;
+- (void)addMigrationTo:(int)arg1 function:(CDUnknownFunctionPointerType)arg2 foreignKeys:(int)arg3;
+- (void)addMigrationTo:(int)arg1 function:(CDUnknownFunctionPointerType)arg2;
 - (void)addMigrationTo:(int)arg1 foreignKeys:(int)arg2 handler:(CDUnknownBlockType)arg3;
-- (id)initWithProfile:(id)arg1 database:(id)arg2 databaseName:(id)arg3;
+- (void)_addPrimaryUnprotectedMigrationSteps;
+- (void)_addPrimaryProtectedMigrationSteps;
+- (void)addPrimaryMigrationSteps;
+- (id)initWithProfile:(id)arg1 transaction:(id)arg2;
 - (id)init;
 - (int)_removeActivitySharingDataWithError:(id *)arg1;
 - (int)_migrateAchievementExtraDataToWorkoutActivityTypeWithError:(id *)arg1;
@@ -72,7 +77,6 @@
 - (int)_addWorkoutSourceAndBundleIDToFitnessFriendsWorkoutsTableWithError:(id *)arg1;
 - (int)_addFitnessFriendsWorkoutAndAchievementTableWithError:(id *)arg1;
 - (int)_addFitnessFriendsTableWithError:(id *)arg1;
-- (int)_migrateAchievementTypeToDefinitionIdentifierWithError:(id *)arg1;
 - (int)_migrateAddBasalCalorieKeyValueWithError:(id *)arg1;
 - (id)whitetailProtectedMigrationSteps;
 - (id)whitetailUnprotectedMigrationSteps;
@@ -105,10 +109,10 @@
 - (int)_fixSyncProvenanceForPostOkemoZurs:(id *)arg1;
 - (id)boulderProtectedMigrationSteps;
 - (id)boulderUnprotectedMigrationSteps;
-- (int)_erie_removeBadTurkeyTrotAchievementsWithError:(id *)arg1;
 - (id)erieProtectedMigrationSteps;
 - (id)erieUnprotectedMigrationSteps;
-- (_Bool)_databaseSchemas:(id)arg1 containsTable:(id)arg2;
+- (void)peace_addProtectedMigrationSteps;
+- (void)peace_addUnprotectedMigrationSteps;
 - (_Bool)_deleteDataEntitySubclassTables:(id)arg1 intermediateTables:(id)arg2 error:(out id *)arg3;
 - (_Bool)_insertDeletedObjectTombstoneWithUUID:(id)arg1 provenanceIdentifier:(id)arg2 deletionDate:(id)arg3 insertedRowID:(out id *)arg4 error:(out id *)arg5;
 - (_Bool)_insertDeletedSampleTombstoneWithUUID:(id)arg1 provenanceIdentifier:(id)arg2 dataTypeCode:(id)arg3 deletionDate:(id)arg4 error:(out id *)arg5;
@@ -144,7 +148,6 @@
 - (int)_initializeDatabaseIdentifiersWithProfile:(id)arg1 error:(id *)arg2;
 - (int)_addEnergyBurnedGoalDateAndAnchorsToActivityCacheTableWithError:(id *)arg1;
 - (int)_addProvenanceColumnToCorrelationsWithError:(id *)arg1;
-- (int)_migrateAchievementDataStoreSessionCountsWithError:(id *)arg1;
 - (int)_createCorrelationsObjectIdIndexWithError:(id *)arg1;
 - (int)_createMetadataValuesObjectIdIndexWithError:(id *)arg1;
 - (int)_createAchievementsAndActivityCachesTablesWithError:(id *)arg1;
@@ -185,7 +188,6 @@
 - (int)_addSequenceColumnToActivityCacheWithError:(out id *)arg1;
 - (int)_removeVO2MaxTestTypeMetadataKeyAppleWatch:(out id *)arg1;
 - (int)_removeTrustedFitnessMachineEntityTable:(out id *)arg1;
-- (int)_setupNFCForFitnessMachinesWithError:(out id *)arg1;
 - (int)_addArbitraryMetadataSupportForWorkoutEventsWithError:(out id *)arg1;
 - (int)_removeUnusedColumnsFromActivityCacheWithError:(out id *)arg1;
 - (int)_addDeviceColumnsToFitnessFriendWorkoutsWithError:(out id *)arg1;

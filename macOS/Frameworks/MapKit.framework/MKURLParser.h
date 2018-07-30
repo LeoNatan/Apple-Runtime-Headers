@@ -36,6 +36,7 @@
 @property(readonly) int searchProviderID;
 @property(readonly) CDStruct_b7cb895d searchRegion;
 @property(readonly) struct CLLocationCoordinate2D searchCoordinate;
+@property(readonly) NSString *label;
 @property(readonly) NSString *searchQuery;
 @property(readonly) NSString *directionsDestinationAddressString;
 @property(readonly) NSString *directionsSourceAddressString;
@@ -45,6 +46,7 @@
 @property(readonly) struct CLLocationCoordinate2D centerCoordinate;
 @property(readonly) BOOL exactPositionSpecified;
 @property(readonly) long long trackingMode;
+@property(readonly) BOOL trackingModeSpecified;
 @property(readonly) unsigned long long transportType;
 @property(readonly) unsigned long long mapType;
 - (BOOL)parseIncludingCustomParameters:(BOOL)arg1;

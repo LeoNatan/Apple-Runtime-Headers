@@ -8,6 +8,7 @@
 
 @class NSView, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSDockMiniViewController : NSObject
 {
     NSView *_view;

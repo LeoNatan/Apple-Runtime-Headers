@@ -35,12 +35,12 @@
 @property(retain) TLKVibrantLabel *leadingSubtitleLabel; // @synthesize leadingSubtitleLabel=_leadingSubtitleLabel;
 @property(retain) TLKVibrantLabel *leadingTitleLabel; // @synthesize leadingTitleLabel=_leadingTitleLabel;
 @property(retain) TLKImageView *leadingImageView; // @synthesize leadingImageView=_leadingImageView;
-@property(retain) TLKRichText *trailingSubtitle; // @synthesize trailingSubtitle=_trailingSubtitle;
-@property(retain) TLKRichText *trailingTitle; // @synthesize trailingTitle=_trailingTitle;
-@property(retain) TLKImage *trailingImage; // @synthesize trailingImage=_trailingImage;
-@property(retain) TLKRichText *leadingSubtitle; // @synthesize leadingSubtitle=_leadingSubtitle;
-@property(retain) TLKRichText *leadingTitle; // @synthesize leadingTitle=_leadingTitle;
-@property(retain) TLKImage *leadingImage; // @synthesize leadingImage=_leadingImage;
+@property(retain, nonatomic) TLKRichText *trailingSubtitle; // @synthesize trailingSubtitle=_trailingSubtitle;
+@property(retain, nonatomic) TLKRichText *trailingTitle; // @synthesize trailingTitle=_trailingTitle;
+@property(retain, nonatomic) TLKImage *trailingImage; // @synthesize trailingImage=_trailingImage;
+@property(retain, nonatomic) TLKRichText *leadingSubtitle; // @synthesize leadingSubtitle=_leadingSubtitle;
+@property(retain, nonatomic) TLKRichText *leadingTitle; // @synthesize leadingTitle=_leadingTitle;
+@property(retain, nonatomic) TLKImage *leadingImage; // @synthesize leadingImage=_leadingImage;
 - (void).cxx_destruct;
 - (id)bottomRowViews;
 - (id)topRowViews;
@@ -57,7 +57,6 @@
 - (struct CGRect)containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect)arg3;
 - (_Bool)hasSubtitles;
 - (void)observedPropertiesChanged;
-- (id)observableProperties;
 - (void)styleDidChange:(unsigned long long)arg1;
 - (id)gridOfAllViews;
 - (id)init;

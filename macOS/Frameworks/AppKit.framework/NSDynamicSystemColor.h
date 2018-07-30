@@ -4,23 +4,57 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <AppKit/NSCatalogColor.h>
+#import <AppKit/NSDynamicNamedColor.h>
 
-@interface NSDynamicSystemColor : NSCatalogColor
+@class NSColor;
+
+__attribute__((visibility("hidden")))
+@interface NSDynamicSystemColor : NSDynamicNamedColor
 {
+    NSColor *_tintColor;
 }
 
++ (id)controlAccentColor;
++ (id)_selectionMaterialTintColor;
++ (id)unemphasizedSelectedTextBackgroundColor;
++ (id)unemphasizedSelectedTextColor;
++ (id)selectedTextColor;
 + (id)selectedMenuItemColor;
 + (id)alternateSelectedControlTextColor;
 + (id)_alternateDisabledSelectedControlTextColor;
 + (id)alternateSecondarySelectedControlColor;
++ (id)selectedControlColor;
++ (id)selectedTextBackgroundColor;
 + (id)alternateSelectedControlColor;
 + (id)controlAlternatingRowColor;
++ (id)textCorrectionIndicatorColor;
++ (id)textGrammarIndicatorColor;
++ (id)textSpellingIndicatorColor;
++ (id)detailAccentColor;
 + (id)keyboardFocusIndicatorColor;
++ (id)alternatingContentBackgroundColor;
++ (id)unemphasizedSelectedContentBackgroundColor;
++ (id)selectedContentTextColor;
++ (id)selectedContentBackgroundColor;
++ (id)contentBackgroundColor;
++ (id)separatorColor;
++ (id)containerBorderColor;
 + (id)findHighlightColor;
 + (id)springLoadedOverlayColor;
 + (id)linkColor;
 + (id)placeholderTextColor;
++ (id)controlAccentNoColor;
++ (id)controlAccentSilverColor;
++ (id)controlAccentRoseGoldColor;
++ (id)controlAccentGoldColor;
++ (id)controlAccentSpaceGrayColor;
++ (id)controlAccentPinkColor;
++ (id)controlAccentPurpleColor;
++ (id)controlAccentBlueColor;
++ (id)controlAccentGreenColor;
++ (id)controlAccentYellowColor;
++ (id)controlAccentOrangeColor;
++ (id)controlAccentRedColor;
 + (id)alternateSelectionGraphiteColor;
 + (id)alternateSelectionBlueColor;
 + (id)systemTealColor;
@@ -39,13 +73,13 @@
 + (id)secondaryLabelColor;
 + (id)labelColor;
 + (id)secondarySelectedControlColor;
-+ (id)toolbarBackgroundColor;
 + (id)clearControlTintColor;
 + (id)graphiteControlTintColor;
 + (id)blueControlTintColor;
 + (id)windowBackgroundColor;
 + (id)selectedHeaderTextColor;
 + (id)headerTextColor;
++ (id)thinSplitViewDividerColor;
 + (id)headerColor;
 + (id)progressIndicatorColor;
 + (id)selectedMenuItemTextColor;
@@ -60,15 +94,13 @@
 + (id)gridColor;
 + (id)scrollBarColor;
 + (id)disabledControlTextColor;
-+ (id)selectedControlColor;
 + (id)selectedControlTextColor;
-+ (id)selectedTextBackgroundColor;
-+ (id)selectedTextColor;
 + (id)controlTextColor;
 + (id)textBackgroundColor;
 + (id)textColor;
 + (id)controlLightHighlightColor;
 + (id)controlHighlightColor;
++ (id)underPageBackgroundColor;
 + (id)controlBackgroundColor;
 + (id)controlColor;
 + (id)controlDarkShadowColor;
@@ -83,22 +115,13 @@
 - (unsigned long long)retainCount;
 - (id)retain;
 - (oneway void)release;
-- (BOOL)isUniform;
-- (struct CGColor *)_createCGColorWithAlpha:(double)arg1;
-- (id)colorWithAlphaComponent:(double)arg1;
-- (double)alphaComponent;
-- (void)setStroke;
-- (void)setFill;
-- (void)set;
-- (id)_resolvedColor;
-- (struct CGColor *)CGColor;
 - (void)encodeWithCoder:(id)arg1;
-- (id)colorUsingType:(long long)arg1;
-- (id)colorUsingColorSpaceName:(id)arg1 device:(id)arg2;
-- (id)colorUsingColorSpace:(id)arg1;
-- (id)appearanceBasedColor:(id)arg1;
+- (id)colorWithAlphaComponent:(double)arg1;
+- (id)resolvedColor;
 - (void)recacheColor;
+- (id)initWithSelector:(SEL)arg1 tintedWithColor:(id)arg2;
 - (id)initWithSelector:(SEL)arg1;
+- (Class)classForCoder;
 
 @end
 

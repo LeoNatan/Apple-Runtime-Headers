@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADShapeGeometry.h>
 
-__attribute__((visibility("hidden")))
 @interface OADPresetShapeGeometry : OADShapeGeometry
 {
     int mType;

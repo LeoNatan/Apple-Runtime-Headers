@@ -17,7 +17,7 @@
 #import "PXUIWidget.h"
 #import "UIPopoverPresentationControllerDelegate.h"
 
-@class NSArray, NSMutableSet, NSObject<PXAnonymousView>, NSString, PHFetchResult, PXActionPerformer, PXActionRowTile, PXOneUpPresentation, PXPhotoKitAssetCollectionActionManager, PXPhotosDataSource, PXPhotosDetailsActionsSpecManager, PXPhotosDetailsContext, PXReusableObjectPool, PXSectionedSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetSpec;
+@class NSArray, NSMutableSet, NSObject<PXAnonymousView>, NSString, PHFetchResult, PXActionPerformer, PXActionRowTile, PXOneUpPresentation, PXPhotoKitAssetCollectionActionManager, PXPhotosDataSource, PXPhotosDetailsActionsSpecManager, PXPhotosDetailsContext, PXPhotosDetailsViewModel, PXReusableObjectPool, PXSectionedSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetSpec;
 
 @interface PXPhotosDetailsActionsUIWidget : NSObject <PXPhotosDataSourceChangeObserver, PXTileSource, PXTilingControllerTransitionDelegate, PXReusableObjectPoolDelegate, PXActionRowTileDelegate, PXActionPerformerDelegate, PXChangeObserver, PXPhotoLibraryUIChangeObserver, UIPopoverPresentationControllerDelegate, PXUIWidget>
 {
@@ -49,7 +49,7 @@
     PXPhotoKitAssetCollectionActionManager *__assetCollectionActionManager;
     NSArray *__allowedActionTypes;
     NSArray *__performableActionTypes;
-    NSMutableSet *__disabledActionTypes;
+    PXPhotosDetailsViewModel *__viewModel;
     PXPhotosDetailsActionsSpecManager *__specManager;
     PXActionRowTile *__measuringActionRowTile;
     double __rowHeight;
@@ -62,7 +62,7 @@
 @property(nonatomic, setter=_setRowHeight:) double _rowHeight; // @synthesize _rowHeight=__rowHeight;
 @property(readonly, nonatomic) PXActionRowTile *_measuringActionRowTile; // @synthesize _measuringActionRowTile=__measuringActionRowTile;
 @property(readonly, nonatomic) PXPhotosDetailsActionsSpecManager *_specManager; // @synthesize _specManager=__specManager;
-@property(readonly, nonatomic) NSMutableSet *_disabledActionTypes; // @synthesize _disabledActionTypes=__disabledActionTypes;
+@property(retain, nonatomic, setter=_setViewModel:) PXPhotosDetailsViewModel *_viewModel; // @synthesize _viewModel=__viewModel;
 @property(retain, nonatomic, setter=_setPerformableActionTypes:) NSArray *_performableActionTypes; // @synthesize _performableActionTypes=__performableActionTypes;
 @property(retain, nonatomic, setter=_setAllowedActionTypes:) NSArray *_allowedActionTypes; // @synthesize _allowedActionTypes=__allowedActionTypes;
 @property(retain, nonatomic, setter=_setAssetCollectionActionManager:) PXPhotoKitAssetCollectionActionManager *_assetCollectionActionManager; // @synthesize _assetCollectionActionManager=__assetCollectionActionManager;

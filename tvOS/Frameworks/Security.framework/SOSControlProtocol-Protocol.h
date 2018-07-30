@@ -22,7 +22,6 @@
 - (void)assertStashedAccountCredential:(void (^)(_Bool, NSError *))arg1;
 - (void)stashedCredentialPublicKey:(void (^)(NSData *, NSError *))arg1;
 - (void)rateLimitingPerformanceCounters:(void (^)(NSDictionary *))arg1;
-- (void)idsPerformanceCounters:(void (^)(NSDictionary *))arg1;
 - (void)kvsPerformanceCounters:(void (^)(NSDictionary *))arg1;
 - (void)userPublicKey:(void (^)(_Bool, NSData *, NSError *))arg1;
 @end

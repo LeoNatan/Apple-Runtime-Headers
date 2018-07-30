@@ -9,7 +9,7 @@
 #import "CATRemoteTransportDelegate.h"
 #import "CATTransportDelegate.h"
 
-@class CATRemoteTransport, CATStateMachine, CATTransport, NSString;
+@class CATRemoteTransport, CATStateMachine, CATTransport, CRKRemoteEndpoint, NSString;
 
 @interface CRKSession : NSObject <CATTransportDelegate, CATRemoteTransportDelegate>
 {
@@ -19,7 +19,7 @@
     _Bool _allowUntrustedConnections;
     _Bool _requiresBeacon;
     id <CRKSessionDelegate> _delegate;
-    NSString *_ipAddress;
+    CRKRemoteEndpoint *_endpoint;
     id <CRKGrowthFunction> _backoffGrowthFunction;
     double _lostBeaconTimeout;
     double _willLoseBeaconWarningTimeout;
@@ -32,7 +32,7 @@
 @property(readonly, nonatomic) id <CRKGrowthFunction> backoffGrowthFunction; // @synthesize backoffGrowthFunction=_backoffGrowthFunction;
 @property(nonatomic) _Bool requiresBeacon; // @synthesize requiresBeacon=_requiresBeacon;
 @property(readonly, nonatomic) _Bool allowUntrustedConnections; // @synthesize allowUntrustedConnections=_allowUntrustedConnections;
-@property(readonly, copy, nonatomic) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
+@property(readonly) CRKRemoteEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) __weak id <CRKSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CATTransport *transport; // @synthesize transport=mTransport;
 @property(retain, nonatomic) CATStateMachine *stateMachine; // @synthesize stateMachine=mFSM;
@@ -68,7 +68,7 @@
 - (void)localWiFiBecameUnavailable;
 - (void)localWiFiBecameAvailable;
 - (void)foundBeacon;
-- (id)initWithIPAddress:(id)arg1;
+- (id)initWithEndpoint:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

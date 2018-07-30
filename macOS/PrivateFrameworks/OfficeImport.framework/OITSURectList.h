@@ -6,10 +6,9 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface OITSURectList : NSObject
 {
-    vector_b8c73e0a mRectList;
+    vector_a9587b3d mRectList;
 }
 
 + (id)rectListWithDifference:(struct CGRect)arg1 withRect:(struct CGRect)arg2;

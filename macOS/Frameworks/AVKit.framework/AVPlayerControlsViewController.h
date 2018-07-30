@@ -35,6 +35,7 @@
     NSButton *_playPauseButton;
 }
 
++ (id)keyPathsForValuesAffectingPlayPauseButtonEnabled;
 + (id)keyPathsForValuesAffectingExternalPlaybackButtonHidden;
 + (id)keyPathsForValuesAffectingPlayerController;
 @property(retain) NSButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
@@ -47,7 +48,9 @@
 - (double)scrubberValueTransformer:(id)arg1 transformedTimeInterval:(double)arg2;
 - (BOOL)scrubberValueTransformerRequiresTransformation:(id)arg1;
 - (id)makeTouchBar;
+- (void)_notifyPlayerViewDelegateOfMetricsCollectedEvent:(long long)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+@property(readonly) BOOL playPauseButtonEnabled;
 - (void)playPauseButtonPressed:(id)arg1;
 - (void)setPlayingState:(long long)arg1;
 - (void)_updateSlowMotionSlider;

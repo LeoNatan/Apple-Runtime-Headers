@@ -42,6 +42,8 @@
 @property(readonly, copy) NSSet *messageReceiverChildren;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (void)handleAccountUsernameUpdatedOnCurrentDevice:(id)arg1;
+- (void)_registerForUsernameUpdates;
 - (void)_updateLoggedInAccount:(id)arg1;
 - (void)__handleUpdateLoggedInAccount:(id)arg1;
 - (void)_sendAccountUpdateNotification:(id)arg1;

@@ -25,7 +25,7 @@
 - (void)recordConstraintChange:(id)arg1;
 - (id)initWithWorkers:(id)arg1;
 - (id)statusAsDictionary;
-- (void)_cooldownWorkerIfWarmed:(id)arg1;
+- (_Bool)_cooldownWorkerIfWarmed:(id)arg1;
 - (void)_warmupWorkerIfCooled:(id)arg1;
 
 @end

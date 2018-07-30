@@ -32,6 +32,8 @@
 - (void)loadView;
 - (void)_didInstantiateRemoteViewController;
 - (void)_commonInitializationWithAccount:(id)arg1 accountStore:(id)arg2 username:(id)arg3 accountDescription:(id)arg4 youTube:(_Bool)arg5 presentationBlock:(CDUnknownBlockType)arg6;
+- (id)_extensionItemForAccount:(id)arg1 accountDescription:(id)arg2 username:(id)arg3 youTube:(_Bool)arg4;
+@property(readonly) unsigned long long _clientType;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithAccount:(id)arg1 accountStore:(id)arg2 presentationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithAccountDescription:(id)arg1 presentationBlock:(CDUnknownBlockType)arg2;

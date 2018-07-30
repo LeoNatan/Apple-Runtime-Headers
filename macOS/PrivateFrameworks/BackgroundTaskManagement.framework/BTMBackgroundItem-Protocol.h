@@ -9,7 +9,7 @@
 @class NSData, NSString, NSUUID;
 
 @protocol BTMBackgroundItem <NSObject>
-@property(readonly) unsigned long long userElection;
+@property(readonly) long long userElection;
 @property(readonly) unsigned long long type;
 @property(readonly) NSData *bookmark;
 @property(readonly) NSString *name;

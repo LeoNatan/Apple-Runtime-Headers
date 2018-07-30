@@ -10,7 +10,6 @@
 
 @protocol _SFPBCommandValue <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasReferentialCommand;
 @property(retain, nonatomic) _SFPBReferentialCommand *referentialCommand;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

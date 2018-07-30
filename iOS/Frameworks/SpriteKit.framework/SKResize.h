@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 + (id)resizeToHeight:(double)arg1 duration:(double)arg2;
 + (id)resizeToWidth:(double)arg1 height:(double)arg2 duration:(double)arg3;
 + (id)resizeToWidth:(double)arg1 duration:(double)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

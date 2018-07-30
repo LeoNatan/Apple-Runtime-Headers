@@ -9,7 +9,7 @@
 #import "SKUIViewElementView.h"
 #import "UIKeyInput.h"
 
-@class NSMutableArray, NSMutableString, NSString, SKUIViewElement, UIColor, UIFont;
+@class NSMutableArray, NSMutableString, NSString, SKUIViewElement, UIColor, UIFont, UITextInputPasswordRules;
 
 @interface SKUIPINInputControl : UIControl <SKUIViewElementView, UIKeyInput>
 {
@@ -68,6 +68,7 @@
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) long long keyboardAppearance;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) long long returnKeyType;
 @property(nonatomic) long long smartDashesType;
 @property(nonatomic) long long smartInsertDeleteType;

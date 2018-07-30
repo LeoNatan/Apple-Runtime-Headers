@@ -7,10 +7,11 @@
 #import "NSObject.h"
 
 #import "NSPersistentStoreMirroringDelegate.h"
+#import "PFCloudKitExporterDelegate.h"
 
-@class CKContainer, CKDatabase, CKRecordZone, CKRecordZoneSubscription, NSCloudKitMirroringDelegateOptions, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSPersistentStore, NSPersistentStoreCoordinator, NSSQLCore, NSString;
+@class CKContainer, CKDatabase, CKRecordZone, CKRecordZoneSubscription, NSCloudKitMirroringDelegateOptions, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSPersistentStore, NSPersistentStoreCoordinator, NSSQLCore, NSString, PFCloudKitExporterOptions;
 
-@interface NSCloudKitMirroringDelegate : NSObject <NSPersistentStoreMirroringDelegate>
+@interface NSCloudKitMirroringDelegate : NSObject <PFCloudKitExporterDelegate, NSPersistentStoreMirroringDelegate>
 {
     NSCloudKitMirroringDelegateOptions *_options;
     NSString *_ckDatabaseName;
@@ -23,12 +24,15 @@
     NSError *_lastInitializationError;
     BOOL _hadObservedStore;
     BOOL _successfullyInitialized;
+    PFCloudKitExporterOptions *_exporterOptions;
     NSSQLCore *_observedStore;
     NSPersistentStoreCoordinator *_observedCoordinator;
 }
 
 + (void)initialize;
++ (id)describeMetadataForStoreAtURL:(id)arg1;
 @property(readonly, nonatomic) BOOL hadObservedStore; // @synthesize hadObservedStore=_hadObservedStore;
+@property(readonly, nonatomic) PFCloudKitExporterOptions *exporterOptions; // @synthesize exporterOptions=_exporterOptions;
 @property(readonly, nonatomic) BOOL successfullyInitialized; // @synthesize successfullyInitialized=_successfullyInitialized;
 @property(readonly, nonatomic) __weak NSPersistentStoreCoordinator *observedCoordinator; // @synthesize observedCoordinator=_observedCoordinator;
 @property(readonly, nonatomic) __weak NSPersistentStore *observedStore; // @synthesize observedStore=_observedStore;
@@ -47,6 +51,7 @@
 - (void)_setDatabase:(id)arg1;
 - (void)_setObservedStore:(id)arg1 observedCoordinator:(id)arg2;
 - (void)logMessage:(id)arg1;
+- (void)exporter:(id)arg1 willScheduleOperations:(id)arg2;
 - (id)resetNotificationUserInfoForError:(id)arg1;
 - (void)postDidResetNotificationForError:(id)arg1;
 - (void)postWillResetNotificationForError:(id)arg1;
@@ -57,10 +62,13 @@
 - (BOOL)_recoverFromPartialError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)_recoverFromError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)recoverFromError:(id)arg1;
+- (void)handleErrorInResult:(id)arg1;
 - (void)fetchChangesAndUpdateObservedStore;
 - (void)checkForNewChanges;
+- (void)_requestEncounteredRecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_requestEncounteredUnrecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_requestAbortedNotInitialized:(id)arg1;
+- (void)_performFetchRecordsRequest:(id)arg1;
 - (void)_performResetZoneRequest:(id)arg1;
 - (void)_performExportWithRequest:(id)arg1;
 - (void)_performImportWithRequest:(id)arg1;

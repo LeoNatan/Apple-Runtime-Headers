@@ -60,7 +60,6 @@
 - (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 @property(retain, nonatomic) NSData *terminalIdentifier;
 @property(retain, nonatomic) NSData *stationId;
-- (void)setIsBlackListed:(BOOL)arg1;
 @property(retain, nonatomic) NSData *aid;
 @property(retain, nonatomic) NSData *transactionId;
 - (void)dealloc;

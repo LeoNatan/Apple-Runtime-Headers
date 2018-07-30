@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)unlock;
 - (void)lock;
 - (void)connectionDidChangeWithLocalInterfaceType:(id)arg1 remoteInterfaceType:(id)arg2 streamToken:(long long)arg3;
+- (void)remoteVideoDidSuspend:(BOOL)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidDegrade:(BOOL)arg1 streamToken:(long long)arg2;
 - (void)remoteMediaDidStall:(BOOL)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidPause:(BOOL)arg1 streamToken:(long long)arg2;

@@ -9,14 +9,13 @@
 #import "NTKComplicationDisplay.h"
 #import "NTKTemplateComplicationDisplay.h"
 
-@class CLKComplicationTemplate, CLKFont, NSDate, NSString, NTKFaceColorScheme, UIColor, UIImageView;
+@class CLKComplicationTemplate, CLKDevice, CLKFont, NSDate, NSString, NTKFaceColorScheme, UIColor, UIImageView;
 
 @interface NTKUtilityComplicationView : UIView <NTKTemplateComplicationDisplay, NTKComplicationDisplay>
 {
     _Bool _highlighted;
     _Bool _usesLegibility;
     UIColor *_foregroundColor;
-    UIImageView *_backgroundPlatter;
     CLKFont *_font;
     NSDate *_timeTravelDate;
     _Bool _shouldUseBackgroundPlatter;
@@ -26,9 +25,12 @@
     id <NTKComplicationDisplayObserver> displayObserver;
     double _foregroundAlpha;
     UIColor *_shadowColor;
+    CLKDevice *_device;
     UIColor *_accentColor;
     double _foregroundImageAlpha;
     unsigned long long _placement;
+    double _fontWeight;
+    UIImageView *_backgroundPlatter;
     double _minimumWidth;
     UIView *_highlightView;
     NTKFaceColorScheme *_colorScheme;
@@ -39,7 +41,6 @@
     struct UIEdgeInsets _touchEdgeInsets;
 }
 
-+ (id)_worldClockImageProvider;
 + (id)_stopwatchImageProvider;
 + (id)_alarmImageProviderActive:(_Bool)arg1;
 + (id)_timerImageProvider;
@@ -56,13 +57,16 @@
 @property(nonatomic) struct UIEdgeInsets touchEdgeInsets; // @synthesize touchEdgeInsets=_touchEdgeInsets;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(nonatomic) double minimumWidth; // @synthesize minimumWidth=_minimumWidth;
+@property(retain, nonatomic) UIImageView *backgroundPlatter; // @synthesize backgroundPlatter=_backgroundPlatter;
 @property(nonatomic) _Bool suppressesInternalColorOverrides; // @synthesize suppressesInternalColorOverrides=_suppressesInternalColorOverrides;
+@property(nonatomic) double fontWeight; // @synthesize fontWeight=_fontWeight;
 @property(nonatomic) _Bool useRoundedFontDesign; // @synthesize useRoundedFontDesign=_useRoundedFontDesign;
 @property(readonly) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(nonatomic) _Bool shouldUseBackgroundPlatter; // @synthesize shouldUseBackgroundPlatter=_shouldUseBackgroundPlatter;
 @property(nonatomic) unsigned long long placement; // @synthesize placement=_placement;
 @property(nonatomic) double foregroundImageAlpha; // @synthesize foregroundImageAlpha=_foregroundImageAlpha;
 @property(retain, nonatomic) UIColor *accentColor; // @synthesize accentColor=_accentColor;
+@property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) CLKFont *font; // @synthesize font=_font;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
@@ -78,14 +82,17 @@
 - (id)_standardFont;
 - (id)_newImageViewSubview;
 - (id)_newImageViewSubviewWithAlpha:(double)arg1;
+- (id)_newHighlightView;
+- (id)_newHighlightViewVariant:(_Bool)arg1;
 - (id)_newStandardLabelSubview;
-- (id)_newLabelSubviewWithFont:(id)arg1;
+- (id)_newStandardLabelSubviewVariant:(_Bool)arg1;
+- (id)_newLabelSubviewWithFont:(id)arg1 variant:(_Bool)arg2;
 - (id)_newDigitalTimeLabelSubviewWithOptions:(unsigned long long)arg1;
 - (struct UIEdgeInsets)_touchEdgeInsetsForPlacement:(unsigned long long)arg1;
 - (void)_enumerateColoringStackedImagesViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
-- (void)setComplicationTemplate:(id)arg1;
+- (void)setComplicationTemplate:(id)arg1 reason:(long long)arg2;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted;
 - (void)setEditing:(_Bool)arg1;
 - (void)setMaxSize:(struct CGSize)arg1;
@@ -94,13 +101,12 @@
 - (void)_updateImageViewAlpha:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutLabelVertically:(id)arg1;
+- (id)_backgroundPlatterImage;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_applyColorScheme:(id)arg1;
 - (void)applyTransitionFraction:(double)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 units:(unsigned long long)arg4 brightenedUnits:(unsigned long long)arg5;
 - (void)applyFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
-- (void)setContentsMultiplyColor:(id)arg1 animated:(_Bool)arg2 withDuration:(double)arg3;
-- (void)setContentsMultiplyColor:(id)arg1;
 @property(nonatomic) double foregroundAlpha; // @synthesize foregroundAlpha=_foregroundAlpha;
 - (id)initWithFrame:(struct CGRect)arg1;
 

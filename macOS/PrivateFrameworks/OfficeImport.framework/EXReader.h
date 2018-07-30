@@ -8,16 +8,15 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface EXReader : OCXReader
 {
     NSString *mTemporaryDirectory;
 }
 
 @property(retain, nonatomic) NSString *temporaryDirectory; // @synthesize temporaryDirectory=mTemporaryDirectory;
+- (void).cxx_destruct;
 - (id)defaultPassphrase;
 - (id)read;
-- (void)dealloc;
 
 @end
 

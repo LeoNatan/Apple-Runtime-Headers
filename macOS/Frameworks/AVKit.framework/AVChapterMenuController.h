@@ -6,24 +6,24 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMenu, NSMenuItem, NSMutableArray;
+@class AVTimeFormatter, NSArray, NSMenu, NSMenuItem, NSMutableArray;
 
 @interface AVChapterMenuController : NSObject
 {
-    NSMenu *_menu;
     NSArray *_chapters;
     NSMutableArray *_chaptersMenuItems;
     long long _selectedIndex;
     CDUnknownBlockType _selectionHandler;
+    AVTimeFormatter *_startTimeFormatter;
+    NSMenu *_menu;
 }
 
+@property(retain) NSMenu *menu; // @synthesize menu=_menu;
 - (void).cxx_destruct;
-- (void)_addSeparatorMenuItem;
 - (void)_selection:(id)arg1;
 - (void)_updateMenu;
 - (void)setChapters:(id)arg1 selectedIndex:(long long)arg2;
 @property(readonly) NSMenuItem *selectedMenuItem;
-@property(readonly) NSMenu *menu;
 - (id)initWithMenu:(id)arg1 chapters:(id)arg2 selectedIndex:(long long)arg3 selectionHandler:(CDUnknownBlockType)arg4;
 
 @end

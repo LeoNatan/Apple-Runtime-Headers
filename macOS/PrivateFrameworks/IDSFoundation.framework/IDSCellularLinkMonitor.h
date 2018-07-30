@@ -24,7 +24,7 @@
 - (void)registerCellularDataStatusNotification:(BOOL)arg1;
 - (void)currentCellularSignalStrength:(int *)arg1 signalStrength:(int *)arg2 signalGrade:(int *)arg3;
 - (void)updateProtocolQualityOfService:(BOOL)arg1 localAddress:(struct sockaddr *)arg2;
-- (BOOL)dropIPPackets:(id)arg1 localAddress:(struct sockaddr *)arg2 remoteAddress:(struct sockaddr *)arg3 isRelay:(BOOL)arg4;
+- (BOOL)dropIPPackets:(id)arg1 localAddress:(struct sockaddr *)arg2 remoteAddress:(struct sockaddr *)arg3 isRelay:(BOOL)arg4 channelNumberMSB:(unsigned char)arg5;
 - (BOOL)setPacketNotificationFilter:(struct sockaddr *)arg1 remote:(struct sockaddr *)arg2 uniqueTag:(unsigned int)arg3 callType:(unsigned char)arg4;
 - (void)removePacketNotificationFilter;
 @property(readonly) BOOL dataUsable; // @synthesize dataUsable=_dataUsable;
@@ -32,14 +32,10 @@
 @property(readonly) unsigned long long radioAccessTechnology; // @synthesize radioAccessTechnology=_radioAccessTechnology;
 @property(readonly) NSString *cellularDataInterfaceName; // @synthesize cellularDataInterfaceName=_cellularDataInterfaceName;
 - (void)reset;
-- (void)_processCTServerNotification:(id)arg1 info:(id)arg2;
-- (void)_unregisterCTNotification:(id)arg1;
-- (void)_registerCTNotification:(id)arg1;
 - (void)_updateDataStatus;
-- (BOOL)_dataContextUsable:(id)arg1;
-- (void)_updateCellularMTU;
+- (BOOL)_updateCellularMTU;
 - (BOOL)_updateRadioAccessTechnology;
-- (void)_updateCellularDataInterface;
+- (BOOL)_updateCellularDataInterface;
 - (void)_setupCTServerConnection;
 - (void)removeCellularLinkDelegate:(id)arg1;
 - (void)addCellularLinkDelegate:(id)arg1;

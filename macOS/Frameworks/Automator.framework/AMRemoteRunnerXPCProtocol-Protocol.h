@@ -10,6 +10,6 @@
 
 @protocol AMRemoteRunnerXPCProtocol <AMRunnerControl>
 - (void)resume;
-- (void)runWorkflowWithPropertyList:(id)arg1 fromURL:(NSURL *)arg2 withInput:(id)arg3 shouldDisplayProgressInMenuBar:(BOOL)arg4 steppingInitially:(BOOL)arg5 completionHandler:(void (^)(AMWorkflowCompletionResults *))arg6;
+- (void)runWorkflowWithPropertyList:(id)arg1 workflowURL:(NSURL *)arg2 workingDirectoryURL:(NSURL *)arg3 input:(id)arg4 shouldDisplayProgressInMenuBar:(BOOL)arg5 steppingInitially:(BOOL)arg6 completionHandler:(void (^)(AMWorkflowCompletionResults *))arg7;
 @end
 

@@ -14,8 +14,8 @@
 }
 
 + (id)scriptWithActions:(id)arg1;
-+ (id)scriptToMigrateAutosaveDocumentsForApplicationWithBundleId:(id)arg1 error:(id *)arg2;
-+ (id)scriptToMigratePreferencesOfApplicationWithBundleId:(id)arg1 error:(id *)arg2;
++ (id)scriptToMigrateAutosaveDocuments:(id)arg1 ofApplicationWithBundleId:(id)arg2 error:(id *)arg3;
++ (id)scriptToMigratePreferences:(id)arg1 ofApplicationWithBundleId:(id)arg2 error:(id *)arg3;
 + (id)scriptWithContentsOfMigrationManifestAtURL:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
 - (BOOL)runScriptWithContainer:(id)arg1 ignoringActionFailures:(BOOL)arg2 usingFileManager:(id)arg3 error:(id *)arg4;

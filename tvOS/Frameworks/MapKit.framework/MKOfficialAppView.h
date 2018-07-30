@@ -14,24 +14,29 @@ __attribute__((visibility("hidden")))
     UIImageView *_storeAppImageView;
     UIView *_labelContainerView;
     _MKUILabel *_appNameLabel;
-    _MKUILabel *_developerLabel;
+    _MKUILabel *_descriptionLabel;
     UIButton *_punchOutButton;
     NSMutableArray *_constraintArray;
+    _Bool _layoutShouldStack;
+    _Bool _isAppInstalled;
     SSLookupItem *_storeItem;
     UIImage *_storeItemImage;
     id <MKOfficialAppViewDelegate> _delegate;
 }
 
+@property(nonatomic) _Bool isAppInstalled; // @synthesize isAppInstalled=_isAppInstalled;
 @property(nonatomic) __weak id <MKOfficialAppViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIImage *storeItemImage; // @synthesize storeItemImage=_storeItemImage;
 @property(retain, nonatomic) SSLookupItem *storeItem; // @synthesize storeItem=_storeItem;
 - (void).cxx_destruct;
 - (void)_createConstraints;
 - (void)_updateLabelText;
-- (_Bool)_appIsInstalled;
 - (void)updateButtonText;
 - (void)infoCardThemeChanged:(id)arg1;
 - (void)_punchOutButtonSelected:(id)arg1;
+- (void)_updateFonts:(id)arg1;
+- (void)_updateShouldLayoutStack;
+- (void)_contentSizeDidChangeNotificationHandler;
 - (void)_commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 

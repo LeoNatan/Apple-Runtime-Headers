@@ -10,6 +10,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface NRPBCompressedData : PBCodable <NSCopying>
 {
     NSData *_possiblyCompressedData;

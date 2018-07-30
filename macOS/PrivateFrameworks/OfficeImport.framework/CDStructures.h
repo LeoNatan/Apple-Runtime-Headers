@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSDate, NSMutableArray, NSString, NSUUID, OITSUCustomFormat, WDBorder, WDShading, WDStyle;
+@class NSDate, NSMutableArray, NSString, NSUUID, OITSUCustomFormat, WDBorder, WDShading;
 
 #pragma mark Function Pointers and Blocks
 
@@ -28,7 +28,7 @@ struct AxisParentChildren {
     int _field2;
     int _field3;
     int _field4;
-    ChVector_fe49fc78 _field5;
+    struct ChVector<int> _field5;
     int _field6;
     int _field7;
     int _field8;
@@ -109,97 +109,97 @@ struct ChStack<EshHeader> {
 struct ChVector<ChPair<unsigned int, EscherObjectEnums>> {
     struct ChPair<unsigned int, EscherObjectEnums> *_field1;
     struct ChPair<unsigned int, EscherObjectEnums> *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<ChPair<unsigned int, EscherObjectEnums>*, ChAllocator<ChPair<unsigned int, EscherObjectEnums>>> {
+        struct ChPair<unsigned int, EscherObjectEnums> *_field1;
+    } _field3;
 };
 
 struct ChVector<CsString *> {
     struct CsString **_field1;
     struct CsString **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<CsString **, ChAllocator<CsString *>> {
+        struct CsString **_field1;
+    } _field3;
 };
 
 struct ChVector<EshComputedRect> {
     struct EshComputedRect *_field1;
     struct EshComputedRect *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<EshComputedRect *, ChAllocator<EshComputedRect>> {
+        struct EshComputedRect *_field1;
+    } _field3;
 };
 
 struct ChVector<EshComputedValue> {
     struct EshComputedValue *_field1;
     struct EshComputedValue *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<EshComputedValue *, ChAllocator<EshComputedValue>> {
+        struct EshComputedValue *_field1;
+    } _field3;
 };
 
 struct ChVector<EshFormula> {
     struct EshFormula *_field1;
     struct EshFormula *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<EshFormula *, ChAllocator<EshFormula>> {
+        struct EshFormula *_field1;
+    } _field3;
 };
 
 struct ChVector<EshHeader *> {
     struct EshHeader **_field1;
     struct EshHeader **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<EshHeader **, ChAllocator<EshHeader *>> {
+        struct EshHeader **_field1;
+    } _field3;
 };
 
 struct ChVector<EshPathCommand> {
     struct EshPathCommand *_field1;
     struct EshPathCommand *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<EshPathCommand *, ChAllocator<EshPathCommand>> {
+        struct EshPathCommand *_field1;
+    } _field3;
 };
 
 struct ChVector<OcText> {
     struct OcText *_field1;
     struct OcText *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<OcText *, ChAllocator<OcText>> {
+        struct OcText *_field1;
+    } _field3;
 };
 
 struct ChVector<PBReaderMasterStyleInfo> {
     struct PBReaderMasterStyleInfo *_field1;
     struct PBReaderMasterStyleInfo *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<PBReaderMasterStyleInfo *, ChAllocator<PBReaderMasterStyleInfo>> {
+        struct PBReaderMasterStyleInfo *_field1;
+    } _field3;
 };
 
 struct ChVector<PptCharRun *> {
     struct PptCharRun **_field1;
     struct PptCharRun **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<PptCharRun **, ChAllocator<PptCharRun *>> {
+        struct PptCharRun **_field1;
+    } _field3;
 };
 
 struct ChVector<PptParaRun *> {
     struct PptParaRun **_field1;
     struct PptParaRun **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<PptParaRun **, ChAllocator<PptParaRun *>> {
+        struct PptParaRun **_field1;
+    } _field3;
 };
 
 struct ChVector<PptSpecialInfoRun *> {
     struct PptSpecialInfoRun **_field1;
     struct PptSpecialInfoRun **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<PptSpecialInfoRun **, ChAllocator<PptSpecialInfoRun *>> {
+        struct PptSpecialInfoRun **_field1;
+    } _field3;
 };
 
 struct ChVector<PptTab>;
@@ -207,265 +207,273 @@ struct ChVector<PptTab>;
 struct ChVector<PptTextMasterStyle9Atom::Level *> {
     struct Level **_field1;
     struct Level **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<PptTextMasterStyle9Atom::Level **, ChAllocator<PptTextMasterStyle9Atom::Level *>> {
+        struct Level **_field1;
+    } _field3;
 };
 
 struct ChVector<PptTextMasterStyleAtom::Level *> {
     struct Level **_field1;
     struct Level **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<PptTextMasterStyleAtom::Level **, ChAllocator<PptTextMasterStyleAtom::Level *>> {
+        struct Level **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdAnnotation *> {
     struct WrdAnnotation **_field1;
     struct WrdAnnotation **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdAnnotation **, ChAllocator<WrdAnnotation *>> {
+        struct WrdAnnotation **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdBookmark *> {
     struct WrdBookmark **_field1;
     struct WrdBookmark **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdBookmark **, ChAllocator<WrdBookmark *>> {
+        struct WrdBookmark **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdFieldPosition *> {
     struct WrdFieldPosition **_field1;
     struct WrdFieldPosition **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdFieldPosition **, ChAllocator<WrdFieldPosition *>> {
+        struct WrdFieldPosition **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdFileShapeAddress *> {
     struct WrdFileShapeAddress **_field1;
     struct WrdFileShapeAddress **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdFileShapeAddress **, ChAllocator<WrdFileShapeAddress *>> {
+        struct WrdFileShapeAddress **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdFontFamilyName *> {
     struct WrdFontFamilyName **_field1;
     struct WrdFontFamilyName **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdFontFamilyName **, ChAllocator<WrdFontFamilyName *>> {
+        struct WrdFontFamilyName **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdListLevelFormat *> {
     struct WrdListLevelFormat **_field1;
     struct WrdListLevelFormat **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdListLevelFormat **, ChAllocator<WrdListLevelFormat *>> {
+        struct WrdListLevelFormat **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdListLevelFormatOverride *> {
     struct WrdListLevelFormatOverride **_field1;
     struct WrdListLevelFormatOverride **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdListLevelFormatOverride **, ChAllocator<WrdListLevelFormatOverride *>> {
+        struct WrdListLevelFormatOverride **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdNote *> {
     struct WrdNote **_field1;
     struct WrdNote **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdNote **, ChAllocator<WrdNote *>> {
+        struct WrdNote **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdStory *> {
     struct WrdStory **_field1;
     struct WrdStory **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdStory **, ChAllocator<WrdStory *>> {
+        struct WrdStory **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdStyle *> {
     struct WrdStyle **_field1;
     struct WrdStyle **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdStyle **, ChAllocator<WrdStyle *>> {
+        struct WrdStyle **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdTabDescriptor *> {
     struct WrdTabDescriptor **_field1;
     struct WrdTabDescriptor **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdTabDescriptor **, ChAllocator<WrdTabDescriptor *>> {
+        struct WrdTabDescriptor **_field1;
+    } _field3;
 };
 
 struct ChVector<WrdTableCellDescriptor *> {
     struct WrdTableCellDescriptor **_field1;
     struct WrdTableCellDescriptor **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<WrdTableCellDescriptor **, ChAllocator<WrdTableCellDescriptor *>> {
+        struct WrdTableCellDescriptor **_field1;
+    } _field3;
 };
 
 struct ChVector<XlBrk *> {
     struct XlBrk **_field1;
     struct XlBrk **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlBrk **, ChAllocator<XlBrk *>> {
+        struct XlBrk **_field1;
+    } _field3;
 };
 
 struct ChVector<XlCell *> {
     struct XlCell **_field1;
     struct XlCell **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlCell **, ChAllocator<XlCell *>> {
+        struct XlCell **_field1;
+    } _field3;
 };
 
 struct ChVector<XlChartBinaryReader::PlotDescriptor> {
     struct PlotDescriptor *_field1;
     struct PlotDescriptor *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlChartBinaryReader::PlotDescriptor *, ChAllocator<XlChartBinaryReader::PlotDescriptor>> {
+        struct PlotDescriptor *_field1;
+    } _field3;
 };
 
 struct ChVector<XlChartBinaryReader::SeriesDescriptor> {
     struct SeriesDescriptor *_field1;
     struct SeriesDescriptor *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlChartBinaryReader::SeriesDescriptor *, ChAllocator<XlChartBinaryReader::SeriesDescriptor>> {
+        struct SeriesDescriptor *_field1;
+    } _field3;
 };
 
 struct ChVector<XlChartCustomLabelText *> {
     struct XlChartCustomLabelText **_field1;
     struct XlChartCustomLabelText **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlChartCustomLabelText **, ChAllocator<XlChartCustomLabelText *>> {
+        struct XlChartCustomLabelText **_field1;
+    } _field3;
 };
 
 struct ChVector<XlChartCustomLegend *> {
     struct XlChartCustomLegend **_field1;
     struct XlChartCustomLegend **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlChartCustomLegend **, ChAllocator<XlChartCustomLegend *>> {
+        struct XlChartCustomLegend **_field1;
+    } _field3;
 };
 
 struct ChVector<XlChartPlot::DefText> {
     struct DefText *_field1;
     struct DefText *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlChartPlot::DefText *, ChAllocator<XlChartPlot::DefText>> {
+        struct DefText *_field1;
+    } _field3;
 };
 
 struct ChVector<XlChartSeriesFormat *> {
     struct XlChartSeriesFormat **_field1;
     struct XlChartSeriesFormat **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlChartSeriesFormat **, ChAllocator<XlChartSeriesFormat *>> {
+        struct XlChartSeriesFormat **_field1;
+    } _field3;
 };
 
 struct ChVector<XlChartTextFrame::TextRun> {
     struct TextRun *_field1;
     struct TextRun *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlChartTextFrame::TextRun *, ChAllocator<XlChartTextFrame::TextRun>> {
+        struct TextRun *_field1;
+    } _field3;
 };
 
 struct ChVector<XlGraphicsInfo::XlObjData *> {
     struct XlObjData **_field1;
     struct XlObjData **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlGraphicsInfo::XlObjData **, ChAllocator<XlGraphicsInfo::XlObjData *>> {
+        struct XlObjData **_field1;
+    } _field3;
 };
 
 struct ChVector<XlLink *> {
     struct XlLink **_field1;
     struct XlLink **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlLink **, ChAllocator<XlLink *>> {
+        struct XlLink **_field1;
+    } _field3;
 };
 
 struct ChVector<XlPtg *> {
     struct XlPtg **_field1;
     struct XlPtg **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlPtg **, ChAllocator<XlPtg *>> {
+        struct XlPtg **_field1;
+    } _field3;
 };
 
 struct ChVector<XlRecord *> {
     struct XlRecord **_field1;
     struct XlRecord **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlRecord **, ChAllocator<XlRecord *>> {
+        struct XlRecord **_field1;
+    } _field3;
 };
 
 struct ChVector<XlXti *> {
     struct XlXti **_field1;
     struct XlXti **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<XlXti **, ChAllocator<XlXti *>> {
+        struct XlXti **_field1;
+    } _field3;
+};
+
+struct ChVector<_NSRange> {
+    struct _NSRange *_field1;
+    struct _NSRange *_field2;
+    struct __compressed_pair<_NSRange *, ChAllocator<_NSRange>> {
+        struct _NSRange *_field1;
+    } _field3;
 };
 
 struct ChVector<int> {
     int *_field1;
     int *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<int *, ChAllocator<int>> {
+        int *_field1;
+    } _field3;
 };
 
 struct ChVector<long> {
     long long *_field1;
     long long *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<long *, ChAllocator<long>> {
+        long long *_field1;
+    } _field3;
 };
 
 struct ChVector<short *> {
     short **_field1;
     short **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<short **, ChAllocator<short *>> {
+        short **_field1;
+    } _field3;
 };
 
 struct ChVector<short> {
     short *_field1;
     short *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<short *, ChAllocator<short>> {
+        short *_field1;
+    } _field3;
 };
 
 struct ChVector<unsigned int> {
     unsigned int *_field1;
     unsigned int *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<unsigned int *, ChAllocator<unsigned int>> {
+        unsigned int *_field1;
+    } _field3;
 };
 
 struct CsColour {
@@ -526,10 +534,11 @@ struct EDBuildablePtg {
     struct EDBuildablePtg *_field6;
     struct EDBuildablePtg *_field7;
     struct EDBuildablePtg *_field8;
-    _Bool _field9;
-    int _field10;
-    unsigned short _field11;
+    struct EDBuildablePtg *_field9;
+    _Bool _field10;
+    int _field11;
     unsigned short _field12;
+    unsigned short _field13;
 };
 
 struct EDCellAnchorMarker {
@@ -566,7 +575,7 @@ struct EDValue {
     union {
         _Bool boolean;
         double number;
-        void *string;
+        char *string;
         unsigned long long stringIndex;
         int error;
     } ;
@@ -1048,9 +1057,9 @@ struct ODIHRange {
 struct ODIHRangeVector {
     struct ODIHRange *_field1;
     struct ODIHRange *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
+    struct __compressed_pair<ODIHRange *, ChAllocator<ODIHRange>> {
+        struct ODIHRange *_field1;
+    } _field3;
 };
 
 struct ODILayoutNodeState {
@@ -1584,10 +1593,11 @@ struct WBParagraphReadState {
     int _field3;
     struct WrdFieldPosition *_field4;
     int _field5;
-    struct vector<unsigned int, std::__1::allocator<unsigned int>> _field6;
-    int _field7;
+    int _field6;
+    struct vector<unsigned int, std::__1::allocator<unsigned int>> _field7;
     int _field8;
-    struct vector<unsigned int, std::__1::allocator<unsigned int>> _field9;
+    int _field9;
+    struct vector<unsigned int, std::__1::allocator<unsigned int>> _field10;
 };
 
 struct WBTextBoxReaderInfo {
@@ -1670,7 +1680,7 @@ struct WrdCHPXFKP;
 
 struct WrdCPTableHeaders {
     CDUnknownFunctionPointerType *_field1;
-    ChVector_fe49fc78 _field2;
+    struct ChVector<int> _field2;
 };
 
 struct WrdCharacterProperties {
@@ -2970,9 +2980,9 @@ struct XlBinaryReader {
     _Bool _field39;
     _Bool _field40;
     _Bool _field41;
-    ChVector_fe49fc78 _field42;
-    ChVector_fe49fc78 _field43;
-    ChVector_fe49fc78 _field44;
+    struct ChVector<int> _field42;
+    struct ChVector<int> _field43;
+    struct ChVector<int> _field44;
     struct XlIndex *_field45;
     struct XlRow *_field46;
     struct XlRecord *_field47;
@@ -3114,9 +3124,9 @@ struct XlChartBinaryReader {
     _Bool _field39;
     _Bool _field40;
     _Bool _field41;
-    ChVector_fe49fc78 _field42;
-    ChVector_fe49fc78 _field43;
-    ChVector_fe49fc78 _field44;
+    struct ChVector<int> _field42;
+    struct ChVector<int> _field43;
+    struct ChVector<int> _field44;
     struct XlIndex *_field45;
     struct XlRow *_field46;
     struct XlRecord *_field47;
@@ -3146,7 +3156,7 @@ struct XlChartBinaryReader {
     struct XlObjectFactory *_field71;
     struct XlParserVisitor *_field72;
     _Bool _field73;
-    ChVector_fe49fc78 _field74;
+    struct ChVector<int> _field74;
     struct XlSubstreamProperties _field75;
     int _field76;
     int _field77;
@@ -3160,7 +3170,7 @@ struct XlChartBinaryReader {
     int _field85;
     int _field86;
     int _field87;
-    ChVector_fe49fc78 _field88;
+    struct ChVector<int> _field88;
     int _field89[4];
     int _field90;
     int _field91;
@@ -3178,8 +3188,8 @@ struct XlChartBinaryReader {
     unsigned short _field103;
     unsigned short _field104;
     int _field105;
-    ChVector_fe49fc78 _field106;
-    ChVector_fe49fc78 _field107;
+    struct ChVector<int> _field106;
+    struct ChVector<int> _field107;
     int _field108;
     _Bool _field109;
     _Bool _field110;
@@ -3310,7 +3320,7 @@ struct XlChartDataSeries {
     struct ChVector<XlChartSeriesFormat *> _field7;
     struct ChVector<XlChartCustomLabelText *> _field8;
     struct ChVector<unsigned int> _field9;
-    ChVector_fe49fc78 _field10;
+    struct ChVector<int> _field10;
     struct XlChartLinkedData *_field11;
     struct XlChartLinkedData *_field12;
     struct XlChartLinkedData *_field13;
@@ -3328,7 +3338,7 @@ struct XlChartErrorBar {
     struct ChVector<XlChartSeriesFormat *> _field7;
     struct ChVector<XlChartCustomLabelText *> _field8;
     struct ChVector<unsigned int> _field9;
-    ChVector_fe49fc78 _field10;
+    struct ChVector<int> _field10;
     struct XlChartLinkedData *_field11;
     struct XlChartLinkedData *_field12;
     struct XlChartLinkedData *_field13;
@@ -3487,12 +3497,20 @@ struct XlChartPlot {
     struct XlChartLineStyle *_field6;
     struct XlChartLineStyle *_field7;
     struct XlChartLineStyle *_field8;
-    struct ChVector<XlChartPlot::DefText> _field9;
-    int _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
+    char *_field9;
+    char *_field10;
+    char *_field11;
+    char *_field12;
+    unsigned int _field13;
+    unsigned int _field14;
+    unsigned int _field15;
+    unsigned int _field16;
+    struct ChVector<XlChartPlot::DefText> _field17;
+    int _field18;
+    _Bool _field19;
+    _Bool _field20;
+    _Bool _field21;
+    _Bool _field22;
 };
 
 struct XlChartPlotAxis {
@@ -3626,7 +3644,7 @@ struct XlChartTrendLine {
     struct ChVector<XlChartSeriesFormat *> _field7;
     struct ChVector<XlChartCustomLabelText *> _field8;
     struct ChVector<unsigned int> _field9;
-    ChVector_fe49fc78 _field10;
+    struct ChVector<int> _field10;
     struct XlChartLinkedData *_field11;
     struct XlChartLinkedData *_field12;
     struct XlChartLinkedData *_field13;
@@ -3855,7 +3873,7 @@ struct XlFormulaProcessor {
     struct XlBaseFormulaTable *_field3;
     struct ChVector<CsString *> _field4;
     struct XlNameTable *_field5;
-    ChVector_be6372b9 *_field6;
+    ChVector_cc6fdd32 *_field6;
     struct XlLinkTable *_field7;
     unsigned int _field8;
     unsigned int _field9;
@@ -4280,7 +4298,7 @@ struct _SsrwPropVariant {
 };
 
 struct _StgInfo {
-    int *_field1;
+    unsigned short *_field1;
     int _field2;
     unsigned int _field3;
     unsigned long long _field4;
@@ -4386,8 +4404,6 @@ struct _xmlAttr {
     void *_field12;
 };
 
-struct _xmlBuf;
-
 struct _xmlDoc {
     void *_field1;
     int _field2;
@@ -4445,22 +4461,6 @@ struct _xmlNs {
     struct _xmlDoc *_field6;
 };
 
-struct _xmlOutputBuffer {
-    void *_field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-    struct _xmlCharEncodingHandler *_field4;
-    struct _xmlBuf *_field5;
-    struct _xmlBuf *_field6;
-    int _field7;
-    int _field8;
-};
-
-struct attributeMapEntry {
-    id _field1;
-    int _field2;
-};
-
 struct basic_istream<char, std::__1::char_traits<char>>;
 
 struct basic_ostream<char, std::__1::char_traits<char>>;
@@ -4479,10 +4479,10 @@ struct map<int, unsigned long, std::__1::less<int>, std::__1::allocator<std::__1
     struct __tree<std::__1::__value_type<int, unsigned long>, std::__1::__map_value_compare<int, std::__1::__value_type<int, unsigned long>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, unsigned long>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, unsigned long>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, unsigned long>, std::__1::less<int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -4491,10 +4491,10 @@ struct map<long, unsigned long, std::__1::less<long>, std::__1::allocator<std::_
     struct __tree<std::__1::__value_type<long, unsigned long>, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned long>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, unsigned long>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, unsigned long>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned long>, std::__1::less<long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -4599,10 +4599,10 @@ struct map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1
     struct __tree<std::__1::__value_type<unsigned long, unsigned long>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, unsigned long>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, unsigned long>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -4656,12 +4656,12 @@ struct tsuSaPage {
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*> **__first_;
+        struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*> **__value_;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*>> {
-                unsigned long long __first_;
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
@@ -4669,13 +4669,13 @@ struct unordered_set<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std:
     struct __hash_table<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>, std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*> __first_;
+            struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::hash<TSUUUID>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };
@@ -4684,14 +4684,14 @@ struct vector<CGRect, std::__1::allocator<CGRect>> {
     struct CGRect *__begin_;
     struct CGRect *__end_;
     struct __compressed_pair<CGRect *, std::__1::allocator<CGRect>> {
-        struct CGRect *__first_;
+        struct CGRect *__value_;
     } __end_cap_;
 };
 
 struct vector<OADTableCell *, std::__1::allocator<OADTableCell *>> {
     id *_field1;
     id *_field2;
-    struct __compressed_pair<OADTableCell **, std::__1::allocator<OADTableCell *>> {
+    struct __compressed_pair<OADTableCell *__strong *, std::__1::allocator<OADTableCell *>> {
         id *_field1;
     } _field3;
 };
@@ -4699,7 +4699,7 @@ struct vector<OADTableCell *, std::__1::allocator<OADTableCell *>> {
 struct vector<OADTablePartStyle *, std::__1::allocator<OADTablePartStyle *>> {
     id *_field1;
     id *_field2;
-    struct __compressed_pair<OADTablePartStyle **, std::__1::allocator<OADTablePartStyle *>> {
+    struct __compressed_pair<OADTablePartStyle *__strong *, std::__1::allocator<OADTablePartStyle *>> {
         id *_field1;
     } _field3;
 };
@@ -4708,7 +4708,7 @@ struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TS
     UUIDData_60906e89 *__begin_;
     UUIDData_60906e89 *__end_;
     struct __compressed_pair<TSU::UUIDData<TSP::UUIDData>*, std::__1::allocator<TSU::UUIDData<TSP::UUIDData>>> {
-        UUIDData_60906e89 *__first_;
+        UUIDData_60906e89 *__value_;
     } __end_cap_;
 };
 
@@ -4724,15 +4724,15 @@ struct vector<_NSRange, std::__1::allocator<_NSRange>> {
     struct _NSRange *__begin_;
     struct _NSRange *__end_;
     struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange>> {
-        struct _NSRange *__first_;
+        struct _NSRange *__value_;
     } __end_cap_;
 };
 
-struct vector<boost::shared_ptr<TSUStringChunk>, std::__1::allocator<boost::shared_ptr<TSUStringChunk>>> {
+struct vector<std::__1::shared_ptr<TSUStringChunk>, std::__1::allocator<std::__1::shared_ptr<TSUStringChunk>>> {
     struct shared_ptr<TSUStringChunk> *__begin_;
     struct shared_ptr<TSUStringChunk> *__end_;
-    struct __compressed_pair<boost::shared_ptr<TSUStringChunk>*, std::__1::allocator<boost::shared_ptr<TSUStringChunk>>> {
-        struct shared_ptr<TSUStringChunk> *__first_;
+    struct __compressed_pair<std::__1::shared_ptr<TSUStringChunk>*, std::__1::allocator<std::__1::shared_ptr<TSUStringChunk>>> {
+        struct shared_ptr<TSUStringChunk> *__value_;
     } __end_cap_;
 };
 
@@ -4741,6 +4741,14 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
     unsigned int *_field2;
     struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
         unsigned int *_field1;
+    } _field3;
+};
+
+struct vector<unsigned short, std::__1::allocator<unsigned short>> {
+    unsigned short *_field1;
+    unsigned short *_field2;
+    struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short>> {
+        unsigned short *_field1;
     } _field3;
 };
 
@@ -4833,143 +4841,6 @@ typedef struct {
 } CDStruct_dbdf0818;
 
 typedef struct {
-    id _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    id _field12;
-    id _field13;
-    id _field14;
-    id _field15;
-    id _field16;
-    int _field17;
-    int _field18;
-    int _field19;
-    short _field20;
-    short _field21;
-    id _field22;
-    id _field23;
-    float _field24;
-    unsigned short _field25;
-    unsigned short _field26;
-    unsigned short _field27;
-    unsigned short _field28;
-    unsigned short _field29;
-    unsigned short _field30;
-    unsigned short _field31;
-    unsigned char _field32;
-    unsigned char _field33;
-    float _field34;
-    unsigned char _field35;
-    unsigned char _field36;
-    unsigned char _field37;
-    unsigned char _field38;
-    unsigned char _field39;
-    unsigned char _field40;
-    unsigned char _field41;
-    unsigned char _field42;
-    int _field43;
-    unsigned char _field44;
-    unsigned char _field45;
-    char _field46;
-    unsigned char _field47;
-    unsigned char _field48;
-    unsigned char _field49;
-    unsigned char _field50;
-    unsigned char _field51;
-    unsigned char _field52;
-    unsigned char _field53;
-    unsigned char _field54;
-    unsigned char _field55;
-    unsigned char _field56;
-    unsigned short _field57;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-} CDStruct_2bc0833e;
-
-typedef struct {
     WDBorder *topBorder;
     WDBorder *leftBorder;
     WDBorder *bottomBorder;
@@ -5051,79 +4922,6 @@ typedef struct {
 } CDStruct_9cc0d39f;
 
 typedef struct {
-    WDStyle *baseStyle;
-    unsigned short look;
-    WDShading *shading;
-    WDBorder *topBorder;
-    WDBorder *leftBorder;
-    WDBorder *bottomBorder;
-    WDBorder *rightBorder;
-    WDBorder *insideHorizontalBorder;
-    WDBorder *insideVerticalBorder;
-    int justification;
-    int alignment;
-    long long width;
-    int widthType;
-    short indent;
-    int indentType;
-    short cellSpacing;
-    int cellSpacingType;
-    int verticalAnchor;
-    int horizontalAnchor;
-    long long verticalPosition;
-    long long horizontalPosition;
-    long long leftDistanceFromText;
-    long long topDistanceFromText;
-    long long rightDistanceFromText;
-    long long bottomDistanceFromText;
-    int deleted;
-    int edited;
-    int formattingChanged;
-    char biDirectional;
-    unsigned short indexToAuthorIDOfDeletion;
-    unsigned short indexToAuthorIDOfEdit;
-    unsigned short indexToAuthorIDOfFormattingChange;
-    NSDate *deletionDate;
-    NSDate *editDate;
-    NSDate *formattingChangeDate;
-    unsigned int baseStyleOverridden:1;
-    char lookOverridden;
-    unsigned int shadingOverridden:1;
-    unsigned int topBorderOverridden:1;
-    unsigned int leftBorderOverridden:1;
-    unsigned int bottomBorderOverridden:1;
-    unsigned int rightBorderOverridden:1;
-    unsigned int insideHorizontalBorderOverridden:1;
-    unsigned int insideVerticalBorderOverridden:1;
-    unsigned int justificationOverridden:1;
-    unsigned int alignmentOverridden:1;
-    unsigned int widthOverridden:1;
-    unsigned int widthTypeOverridden:1;
-    unsigned int indentOverridden:1;
-    unsigned int indentTypeOverridden:1;
-    unsigned int cellSpacingOverridden:1;
-    unsigned int cellSpacingTypeOverridden:1;
-    unsigned int verticalAnchorOverridden:1;
-    unsigned int horizontalAnchorOverridden:1;
-    unsigned int verticalPositionOverridden:1;
-    unsigned int horizontalPositionOverridden:1;
-    unsigned int leftDistanceFromTextOverridden:1;
-    unsigned int topDistanceFromTextOverridden:1;
-    unsigned int rightDistanceFromTextOverridden:1;
-    unsigned int bottomDistanceFromTextOverridden:1;
-    unsigned int deletedOverridden:1;
-    unsigned int editedOverridden:1;
-    unsigned int formattingChangedOverridden:1;
-    unsigned int biDirectionalOverridden:1;
-    unsigned int indexToAuthorIDOfDeletionOverridden:1;
-    unsigned int indexToAuthorIDOfEditOverridden:1;
-    unsigned int indexToAuthorIDOfFormattingChangeOverridden:1;
-    unsigned int deletionDateOverridden:1;
-    unsigned int editDateOverridden:1;
-    unsigned int formattingChangeDateOverridden:1;
-} CDStruct_36bc1ea2;
-
-typedef struct {
     unsigned char _field1;
     unsigned char _field2;
     unsigned char _field3;
@@ -5131,9 +4929,9 @@ typedef struct {
 } CDStruct_a06f635e;
 
 typedef struct {
-    unsigned char _field1;
-    unsigned char _field2;
-} CDStruct_5c52f79b;
+    unsigned char style;
+    unsigned char lines;
+} CDStruct_8835774c;
 
 typedef struct {
     unsigned int m_data1;
@@ -5141,12 +4939,6 @@ typedef struct {
     unsigned short m_data3;
     unsigned char m_data4[8];
 } CDStruct_214f2dba;
-
-typedef struct {
-    unsigned long long numberOfColumns;
-    unsigned long long numberOfRows;
-    char isConstantColumnCount;
-} CDStruct_aa5da924;
 
 typedef struct {
     unsigned long long _field1;
@@ -5227,119 +5019,6 @@ typedef struct {
 } CDStruct_43955328;
 
 typedef struct {
-    id _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    CDStruct_5c52f79b _field9;
-    id _field10;
-    id _field11;
-    long long _field12;
-    unsigned long long _field13;
-    unsigned long long _field14;
-    long long _field15;
-    long long _field16;
-    long long _field17;
-    long long _field18;
-    long long _field19;
-    short _field20;
-    short _field21;
-    short _field22;
-    short _field23;
-    short _field24;
-    short _field25;
-    short _field26;
-    short _field27;
-    short _field28;
-    unsigned short _field29;
-    unsigned short _field30;
-    unsigned short _field31;
-    unsigned short _field32;
-    unsigned short _field33;
-    char _field34;
-    unsigned char _field35;
-    unsigned char _field36;
-    unsigned char _field37;
-    unsigned char _field38;
-    unsigned char _field39;
-    unsigned char _field40;
-    unsigned char _field41;
-    unsigned char _field42;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-} CDStruct_8641e206;
-
-typedef struct {
     int mFormatType;
     union {
         struct {
@@ -5394,42 +5073,42 @@ typedef struct {
 typedef struct ChVector<OcText> {
     struct OcText *_field1;
     struct OcText *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-} ChVector_be6372b9;
+    struct __compressed_pair<OcText *, ChAllocator<OcText>> {
+        struct OcText *_field1;
+    } _field3;
+} ChVector_cc6fdd32;
 
 typedef struct ChVector<PBReaderMasterStyleInfo> {
     struct PBReaderMasterStyleInfo *_field1;
     struct PBReaderMasterStyleInfo *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-} ChVector_b45fc7a7;
+    struct __compressed_pair<PBReaderMasterStyleInfo *, ChAllocator<PBReaderMasterStyleInfo>> {
+        struct PBReaderMasterStyleInfo *_field1;
+    } _field3;
+} ChVector_7fbb5a88;
 
 typedef struct ChVector<XlPtg *> {
     struct XlPtg **_field1;
     struct XlPtg **_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-} ChVector_2ce397a3;
+    struct __compressed_pair<XlPtg **, ChAllocator<XlPtg *>> {
+        struct XlPtg **_field1;
+    } _field3;
+} ChVector_1f909c3e;
 
-typedef struct ChVector<int> {
-    int *_field1;
-    int *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-} ChVector_fe49fc78;
+typedef struct ChVector<_NSRange> {
+    struct _NSRange *_field1;
+    struct _NSRange *_field2;
+    struct __compressed_pair<_NSRange *, ChAllocator<_NSRange>> {
+        struct _NSRange *_field1;
+    } _field3;
+} ChVector_811a7989;
 
 typedef struct ChVector<long> {
     long long *_field1;
     long long *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-} ChVector_fa1ffc74;
+    struct __compressed_pair<long *, ChAllocator<long>> {
+        long long *_field1;
+    } _field3;
+} ChVector_0831b939;
 
 typedef struct CsPoint<int> {
     int _field1[2];
@@ -5442,17 +5121,17 @@ typedef struct CsRect<int> {
 typedef struct EshTablePropVal<EshComputedRect> {
     CDUnknownFunctionPointerType *_field1;
     struct ChVector<EshComputedRect> _field2;
-} EshTablePropVal_64904f96;
+} EshTablePropVal_515d12a1;
 
 typedef struct EshTablePropVal<EshFormula> {
     CDUnknownFunctionPointerType *_field1;
     struct ChVector<EshFormula> _field2;
-} EshTablePropVal_f007a3b0;
+} EshTablePropVal_31f0d5cf;
 
 typedef struct EshTablePropVal<EshPathCommand> {
     CDUnknownFunctionPointerType *_field1;
     struct ChVector<EshPathCommand> _field2;
-} EshTablePropVal_ea625207;
+} EshTablePropVal_68d7eaa9;
 
 typedef struct UUIDData<TSP::UUIDData> {
     union {
@@ -5498,37 +5177,49 @@ typedef struct unordered_set<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUI
     struct __hash_table<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*>, std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*> __first_;
+            struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::hash<TSUUUID>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
-} unordered_set_3f00ed57;
+} unordered_set_c6a929bd;
 
 typedef struct vector<CGRect, std::__1::allocator<CGRect>> {
     struct CGRect *__begin_;
     struct CGRect *__end_;
     struct __compressed_pair<CGRect *, std::__1::allocator<CGRect>> {
-        struct CGRect *__first_;
+        struct CGRect *__value_;
     } __end_cap_;
-} vector_b8c73e0a;
+} vector_a9587b3d;
 
 typedef struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData>>> {
     UUIDData_60906e89 *__begin_;
     UUIDData_60906e89 *__end_;
     struct __compressed_pair<TSU::UUIDData<TSP::UUIDData>*, std::__1::allocator<TSU::UUIDData<TSP::UUIDData>>> {
-        UUIDData_60906e89 *__first_;
+        UUIDData_60906e89 *__value_;
     } __end_cap_;
-} vector_dadc1b26;
+} vector_4dc5f307;
+
+typedef struct vector<unsigned short, std::__1::allocator<unsigned short>> {
+    unsigned short *_field1;
+    unsigned short *_field2;
+    struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short>> {
+        unsigned short *_field1;
+    } _field3;
+} vector_195fe69b;
 
 #pragma mark Named Unions
 
 union EFData {
-    CDStruct_aa5da924 _field1;
+    struct {
+        unsigned long long _field1;
+        unsigned long long _field2;
+        char _field3;
+    } _field1;
     struct {
         unsigned long long _field1;
         void *_field2;

@@ -15,6 +15,7 @@
 + (id)fetchSceneClassificationsGroupedByAssetLocalIdentifierForAssets:(id)arg1;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned int sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
+- (id)description;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (unsigned long long)hash;

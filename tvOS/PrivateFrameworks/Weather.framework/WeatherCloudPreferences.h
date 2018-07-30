@@ -10,6 +10,7 @@
 
 @class NSString, WeatherPreferences;
 
+__attribute__((visibility("hidden")))
 @interface WeatherCloudPreferences : NSObject <WeatherCloudPersistenceDelegate>
 {
     id <SynchronizedDefaultsDelegate> _syncDelegate;

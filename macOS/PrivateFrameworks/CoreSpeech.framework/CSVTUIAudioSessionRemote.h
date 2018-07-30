@@ -21,6 +21,7 @@
 @property(nonatomic) __weak id <CSVTUIAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)audioRecorderDisconnected:(id)arg1;
+- (void)audioRecorderDidFinishAlertPlayback:(id)arg1 ofType:(long long)arg2 error:(id)arg3;
 - (void)audioRecorderRecordHardwareConfigurationDidChange:(id)arg1 toConfiguration:(long long)arg2;
 - (void)audioRecorderDidStopRecording:(id)arg1 forReason:(long long)arg2;
 - (void)audioRecorderDidStartRecording:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;

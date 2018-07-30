@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) double level; // @synthesize level=_level;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, copy, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
+- (void).cxx_destruct;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

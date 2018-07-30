@@ -13,30 +13,28 @@
 __attribute__((visibility("hidden")))
 @interface EspressoInnerProductWeightsForMPS : NSObject <MPSCNNConvolutionDataSource>
 {
-    unsigned int _data_type;
-    id <MTLDevice> _dev;
-    shared_ptr_966620c9 _weights_blob;
-    shared_ptr_d6b95d07 _weights_f16_blob;
-    shared_ptr_0954c506 _biases_blob;
-    struct inner_product_uniforms _params;
+    struct inner_product_uniforms params;
+    struct shared_ptr<Espresso::blob<float, 2>> weights_blob;
+    struct shared_ptr<Espresso::blob<unsigned short, 2>> weights_f16_blob;
+    struct shared_ptr<Espresso::blob<unsigned char, 2>> quantized_weights_blob;
+    struct shared_ptr<Espresso::blob<float, 1>> biases_blob;
+    struct shared_ptr<Espresso::blob<float __attribute__((ext_vector_type(2))), 1>> quantization_ranges;
+    struct shared_ptr<Espresso::blob<float, 1>> quantization_lut;
+    unsigned int data_type;
 }
 
-@property(nonatomic) shared_ptr_0954c506 biases_blob; // @synthesize biases_blob=_biases_blob;
-@property(nonatomic) shared_ptr_d6b95d07 weights_f16_blob; // @synthesize weights_f16_blob=_weights_f16_blob;
-@property(nonatomic) shared_ptr_966620c9 weights_blob; // @synthesize weights_blob=_weights_blob;
-@property unsigned int data_type; // @synthesize data_type=_data_type;
-@property(retain) id <MTLDevice> dev; // @synthesize dev=_dev;
-@property struct inner_product_uniforms params; // @synthesize params=_params;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)ready;
 - (void)purge;
 - (float *)biasTerms;
+- (float *)lookupTableForUInt8Kernel;
+-     // Error parsing type: ^16@0:8, name: rangesForUInt8Kernel
 - (void *)weights;
 - (BOOL)load;
 - (id)descriptor;
 - (unsigned int)dataType;
-- (id)initWithDevice:(id)arg1 params:(struct inner_product_uniforms)arg2;
+- (id)initWithParams:(struct inner_product_uniforms)arg1;
 - (id)label;
 
 // Remaining properties

@@ -21,7 +21,7 @@
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <BYBuddyDaemonProximityTargetProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)receivedLanguage:(id)arg1 locale:(id)arg2 model:(id)arg3 deviceClass:(id)arg4;
+- (void)receivedLanguages:(id)arg1 locale:(id)arg2 model:(id)arg3 deviceClass:(id)arg4;
 - (void)proximityConnectionTerminated;
 - (void)proximityConnectionInitiated;
 - (void)proximityConnectionPreparing:(id)arg1;

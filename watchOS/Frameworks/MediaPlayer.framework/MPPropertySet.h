@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (id)propertySetByIntersectingWithPropertySet:(id)arg1;
 - (id)propertySetByCombiningWithPropertySet:(id)arg1;
+@property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (_Bool)containsPropertySet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -10,9 +10,9 @@
 {
 }
 
-+ (BOOL)urlIndicatesVirtualKeyboardPanelCollection:(id)arg1;
-+ (void)convertPanelInfo:(id)arg1 atURL:(id)arg2 fromVersion:(unsigned long long)arg3 toVersion:(unsigned long long)arg4;
-+ (void)convertPanelsInfo:(id)arg1 atURL:(id)arg2 fromVersion:(unsigned long long)arg3 toVersion:(unsigned long long)arg4;
++ (void)convertPanelInfo:(id)arg1 atURL:(id)arg2 packageInfo:(id)arg3 fromVersion:(unsigned long long)arg4;
++ (void)convertPanelsInfo:(id)arg1 atURL:(id)arg2 packageInfo:(id)arg3 fromVersion:(unsigned long long)arg4;
++ (id)convertPackageInfo:(id)arg1 atURL:(id)arg2 fromVersion:(unsigned long long)arg3;
 + (id)fileWrapperForPackageWithPanelCollection:(id)arg1 resourceCollection:(id)arg2 packageInfo:(id)arg3 error:(id *)arg4;
 + (BOOL)loadPackageWithFileWrapper:(id)arg1 atURL:(id)arg2 panelCollection:(id *)arg3 resourceCollection:(id *)arg4 packageInfo:(id *)arg5 error:(id *)arg6 undoManager:(id)arg7;
 

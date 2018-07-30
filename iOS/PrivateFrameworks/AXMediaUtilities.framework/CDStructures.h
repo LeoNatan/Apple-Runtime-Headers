@@ -44,6 +44,46 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
+struct mach_task_basic_info {
+    unsigned long long virtual_size;
+    unsigned long long resident_size;
+    unsigned long long resident_size_max;
+    struct time_value user_time;
+    struct time_value system_time;
+    int policy;
+    int suspend_count;
+};
+
+struct task_vm_info {
+    unsigned long long virtual_size;
+    int region_count;
+    int page_size;
+    unsigned long long resident_size;
+    unsigned long long resident_size_peak;
+    unsigned long long device;
+    unsigned long long device_peak;
+    unsigned long long internal;
+    unsigned long long internal_peak;
+    unsigned long long external;
+    unsigned long long external_peak;
+    unsigned long long reusable;
+    unsigned long long reusable_peak;
+    unsigned long long purgeable_volatile_pmap;
+    unsigned long long purgeable_volatile_resident;
+    unsigned long long purgeable_volatile_virtual;
+    unsigned long long compressed;
+    unsigned long long compressed_peak;
+    unsigned long long compressed_lifetime;
+    unsigned long long phys_footprint;
+    unsigned long long min_address;
+    unsigned long long max_address;
+};
+
+struct time_value {
+    int seconds;
+    int microseconds;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

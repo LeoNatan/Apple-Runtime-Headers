@@ -22,6 +22,7 @@
     } _needsUpdateFlags;
     _Bool _enabled;
     _Bool _displayingVideoComplement;
+    float _hdrGain;
     CALayer *_layer;
     ISLivePhotoUIView *_livePhotoView;
     CAFilter *_filter;
@@ -36,6 +37,7 @@
 @property(readonly, nonatomic, getter=isDisplayingVideoComplement) _Bool displayingVideoComplement; // @synthesize displayingVideoComplement=_displayingVideoComplement;
 @property(readonly, nonatomic) double intensity; // @synthesize intensity=_intensity;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
+@property(readonly, nonatomic) float hdrGain; // @synthesize hdrGain=_hdrGain;
 @property(readonly, nonatomic) long long filterType; // @synthesize filterType=_filterType;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) double intensityAnimationDuration; // @synthesize intensityAnimationDuration=_intensityAnimationDuration;
@@ -65,7 +67,7 @@
 - (void)_removeFilterFromLayer:(id)arg1;
 - (void)_addFilterToLayer:(id)arg1;
 - (void)setLayer:(id)arg1;
-- (id)initWithContentType:(long long)arg1 filterType:(long long)arg2;
+- (id)initWithContentType:(long long)arg1 filterType:(long long)arg2 hdrGain:(float)arg3;
 - (id)init;
 
 // Remaining properties

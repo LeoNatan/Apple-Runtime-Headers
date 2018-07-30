@@ -19,6 +19,7 @@
     _Bool _allowChromeHiding;
     _Bool _allowDoubleTapZoom;
     _Bool _allowFullsizeJPEGDisplay;
+    _Bool _allowToggleOriginalBarItem;
     _Bool _showFacesAreaRect;
     _Bool _hideToolbarWhenShowingAccessoryView;
     _Bool _useGlobalDetailsVisibility;
@@ -171,6 +172,7 @@
 @property(nonatomic) long long accessoryViewType; // @synthesize accessoryViewType=_accessoryViewType;
 @property(nonatomic) _Bool showFacesAreaRect; // @synthesize showFacesAreaRect=_showFacesAreaRect;
 @property(nonatomic) long long userNavigationMaximumDistance; // @synthesize userNavigationMaximumDistance=_userNavigationMaximumDistance;
+@property(nonatomic) _Bool allowToggleOriginalBarItem; // @synthesize allowToggleOriginalBarItem=_allowToggleOriginalBarItem;
 @property(nonatomic) _Bool allowFullsizeJPEGDisplay; // @synthesize allowFullsizeJPEGDisplay=_allowFullsizeJPEGDisplay;
 @property(nonatomic) _Bool allowDoubleTapZoom; // @synthesize allowDoubleTapZoom=_allowDoubleTapZoom;
 @property(nonatomic) _Bool allowChromeHiding; // @synthesize allowChromeHiding=_allowChromeHiding;

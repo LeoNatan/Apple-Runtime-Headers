@@ -6,12 +6,20 @@
 
 #import "UITextField.h"
 
+@class NSDictionary;
+
 @interface _TVTextEntryTextField : UITextField
 {
     _Bool _allowsFocus;
+    id <_TVTextEntryTextFieldDelegate> __tvTextEntryDelegate;
+    NSDictionary *_autofillContext;
 }
 
+@property(retain, nonatomic, getter=_autofillContext) NSDictionary *autofillContext; // @synthesize autofillContext=_autofillContext;
+@property(nonatomic) __weak id <_TVTextEntryTextFieldDelegate> _tvTextEntryDelegate; // @synthesize _tvTextEntryDelegate=__tvTextEntryDelegate;
 @property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
+- (void).cxx_destruct;
+- (void)insertTextSuggestion:(id)arg1;
 - (id)text;
 - (_Bool)canBecomeFocused;
 - (id)initWithFrame:(struct CGRect)arg1;

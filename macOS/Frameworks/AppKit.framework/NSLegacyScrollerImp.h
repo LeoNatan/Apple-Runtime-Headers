@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)setKnobAlpha:(double)arg1;
 - (long long)scrollerStyle;
 - (void)dealloc;
-- (id)init;
 
 @end
 

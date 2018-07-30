@@ -15,7 +15,8 @@
     _Bool _sent;
 }
 
-@property(readonly, retain, nonatomic) FBSSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
+@property(readonly, nonatomic) FBSSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
+- (void).cxx_destruct;
 - (void)sendWithResponseHandler:(CDUnknownBlockType)arg1;
 - (void)send;
 - (void)dealloc;

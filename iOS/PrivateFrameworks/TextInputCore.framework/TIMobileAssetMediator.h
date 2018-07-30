@@ -43,6 +43,7 @@
 @property(nonatomic) _Bool isWaitingForReachability; // @synthesize isWaitingForReachability=_isWaitingForReachability;
 @property(readonly, nonatomic) NSMutableSet *queuedAssetMatchSet; // @synthesize queuedAssetMatchSet=_queuedAssetMatchSet;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+- (void).cxx_destruct;
 - (void)downloadUninstalledAssetsMatching:(id)arg1 continuation:(CDUnknownBlockType)arg2;
 - (_Bool)tryToPurgeAsset:(id)arg1;
 - (id)fetchInstalledAssetInformation;

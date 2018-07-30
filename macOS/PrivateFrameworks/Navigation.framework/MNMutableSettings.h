@@ -24,10 +24,11 @@
 @property(nonatomic) double backgroundTimeWindow; // @dynamic backgroundTimeWindow;
 @property(nonatomic) double initialRequestDelay; // @dynamic initialRequestDelay;
 @property(nonatomic) double etaRequestInterval; // @dynamic etaRequestInterval;
-@property(retain, nonatomic) NSString *voiceLanguage; // @dynamic voiceLanguage;
+@property(copy, nonatomic) NSString *voiceLanguage; // @dynamic voiceLanguage;
 @property(nonatomic) BOOL beepBeforeInstruction; // @dynamic beepBeforeInstruction;
 @property(nonatomic) BOOL walkingVoiceGuidance; // @dynamic walkingVoiceGuidance;
 @property(nonatomic) BOOL drivingVoiceGuidance; // @dynamic drivingVoiceGuidance;
+@property(nonatomic) BOOL isConnectedToCarplay; // @dynamic isConnectedToCarplay;
 @property(nonatomic) unsigned long long maxAlternateRoutesCount; // @dynamic maxAlternateRoutesCount;
 @property(nonatomic) BOOL speechEnabled; // @dynamic speechEnabled;
 @property(nonatomic) BOOL muteSpeechOverride; // @dynamic muteSpeechOverride;

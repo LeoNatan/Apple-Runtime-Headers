@@ -21,7 +21,6 @@
     NSString *_noteMessage;
     NSString *_altNoteMessage;
     ICQLink *_noteActivateLink;
-    ICQLink *_noteDismissLink;
     ICQLink *_noteClearLink;
 }
 
@@ -29,7 +28,6 @@
 @property(nonatomic, getter=isZeroAction) _Bool zeroAction; // @synthesize zeroAction=_zeroAction;
 @property(nonatomic, getter=isForAccountGroup) _Bool forAccountGroup; // @synthesize forAccountGroup=_forAccountGroup;
 @property(retain, nonatomic) ICQLink *noteClearLink; // @synthesize noteClearLink=_noteClearLink;
-@property(retain, nonatomic) ICQLink *noteDismissLink; // @synthesize noteDismissLink=_noteDismissLink;
 @property(retain, nonatomic) ICQLink *noteActivateLink; // @synthesize noteActivateLink=_noteActivateLink;
 @property(retain, nonatomic) NSString *altNoteMessage; // @synthesize altNoteMessage=_altNoteMessage;
 @property(retain, nonatomic) NSString *noteMessage; // @synthesize noteMessage=_noteMessage;

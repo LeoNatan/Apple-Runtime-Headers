@@ -6,42 +6,43 @@
 
 #import "UIView.h"
 
+#import "ArouetTextPreviewViewDelegate.h"
 #import "UIScrollViewDelegate.h"
 
-@class ArouetCaretView, ArouetInputScrollView, ArouetSelectionOutlineView, ArouetTextPreviewView, ArouetThinkingDotsView, CALayer, NSDictionary, NSString, UIImageView;
+@class ArouetCaretView, ArouetInputScrollView, ArouetLanguageSpec, ArouetSelectionOutlineView, ArouetTextPreviewView, ArouetThinkingDotsView, CAGradientLayer, NSString, UIImageView;
 
-@interface ArouetTextInputView : UIView <UIScrollViewDelegate>
+@interface ArouetTextInputView : UIView <UIScrollViewDelegate, ArouetTextPreviewViewDelegate>
 {
     float _cachedInputTextWidth;
     float _cachedCaretOriginX;
     _Bool _textSelectionOutlineCanExtendToEnd;
-    _Bool _shouldHideCaretAndSelection;
+    _Bool _hideCaretAndSelection;
+    _Bool _hideTrailingTruncationIndicator;
     _Bool __caretViewActuallyVisible;
     _Bool __caretOriginXIsValid;
     _Bool __updateTruncationIndicatorAfterScrollEnds;
     _Bool __inputTextWidthIsValid;
     _Bool __selectionOutlineNeedsLayout;
     _Bool __selectionOutlineViewActuallyVisible;
-    CDStruct_a57c65e1 __lastTransactionChange;
+    ArouetLanguageSpec *_languageSpec;
     NSString *_displayedText;
     ArouetInputScrollView *_inputScrollView;
     ArouetCaretView *__caretView;
     UIView *__inputScrollViewWrapper;
-    CALayer *__inputScrollViewMask;
+    CAGradientLayer *__inputScrollViewMask;
     ArouetTextPreviewView *__textPreviewView;
     ArouetThinkingDotsView *__thinkingDotsView;
     UIImageView *__leadingTruncationIndicatorView;
     UIImageView *__trailingTruncationIndicatorView;
     ArouetSelectionOutlineView *__selectionOutlineView;
     unsigned int __selectionOutlineVisibleOverflowDirections;
-    NSDictionary *__textAttributes;
     int __textChangesDepth;
     struct _NSRange _textSelectionRange;
+    CDStruct_55c8205d __lastTransactionChange;
 }
 
-@property CDStruct_a57c65e1 _lastTransactionChange; // @synthesize _lastTransactionChange=__lastTransactionChange;
+@property CDStruct_55c8205d _lastTransactionChange; // @synthesize _lastTransactionChange=__lastTransactionChange;
 @property int _textChangesDepth; // @synthesize _textChangesDepth=__textChangesDepth;
-@property(readonly, nonatomic) NSDictionary *_textAttributes; // @synthesize _textAttributes=__textAttributes;
 @property(nonatomic, setter=_setSelectionOutlineVisibleOverflowDirections:) unsigned int _selectionOutlineVisibleOverflowDirections; // @synthesize _selectionOutlineVisibleOverflowDirections=__selectionOutlineVisibleOverflowDirections;
 @property(nonatomic) _Bool _selectionOutlineViewActuallyVisible; // @synthesize _selectionOutlineViewActuallyVisible=__selectionOutlineViewActuallyVisible;
 @property(nonatomic) _Bool _selectionOutlineNeedsLayout; // @synthesize _selectionOutlineNeedsLayout=__selectionOutlineNeedsLayout;
@@ -52,19 +53,22 @@
 @property(nonatomic) _Bool _inputTextWidthIsValid; // @synthesize _inputTextWidthIsValid=__inputTextWidthIsValid;
 @property(nonatomic) _Bool _updateTruncationIndicatorAfterScrollEnds; // @synthesize _updateTruncationIndicatorAfterScrollEnds=__updateTruncationIndicatorAfterScrollEnds;
 @property(retain, nonatomic) ArouetTextPreviewView *_textPreviewView; // @synthesize _textPreviewView=__textPreviewView;
-@property(retain, nonatomic) CALayer *_inputScrollViewMask; // @synthesize _inputScrollViewMask=__inputScrollViewMask;
+@property(retain, nonatomic) CAGradientLayer *_inputScrollViewMask; // @synthesize _inputScrollViewMask=__inputScrollViewMask;
 @property(retain, nonatomic) UIView *_inputScrollViewWrapper; // @synthesize _inputScrollViewWrapper=__inputScrollViewWrapper;
 @property(nonatomic) _Bool _caretOriginXIsValid; // @synthesize _caretOriginXIsValid=__caretOriginXIsValid;
 @property(nonatomic) _Bool _caretViewActuallyVisible; // @synthesize _caretViewActuallyVisible=__caretViewActuallyVisible;
 @property(retain, nonatomic) ArouetCaretView *_caretView; // @synthesize _caretView=__caretView;
-@property(nonatomic) _Bool shouldHideCaretAndSelection; // @synthesize shouldHideCaretAndSelection=_shouldHideCaretAndSelection;
+@property(nonatomic) _Bool hideTrailingTruncationIndicator; // @synthesize hideTrailingTruncationIndicator=_hideTrailingTruncationIndicator;
+@property(nonatomic) _Bool hideCaretAndSelection; // @synthesize hideCaretAndSelection=_hideCaretAndSelection;
 @property(retain, nonatomic) ArouetInputScrollView *inputScrollView; // @synthesize inputScrollView=_inputScrollView;
 @property(nonatomic) _Bool textSelectionOutlineCanExtendToEnd; // @synthesize textSelectionOutlineCanExtendToEnd=_textSelectionOutlineCanExtendToEnd;
 @property(nonatomic) struct _NSRange textSelectionRange; // @synthesize textSelectionRange=_textSelectionRange;
 @property(copy, nonatomic) NSString *displayedText; // @synthesize displayedText=_displayedText;
+@property(retain, nonatomic) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
 - (void).cxx_destruct;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)textPreviewViewDidLayout:(id)arg1;
 - (void)_layoutSelectionOutlineIfNeeded;
 - (void)_updateVisibilityForCaretAnimated:(_Bool)arg1 selectionOutlineAnimated:(_Bool)arg2;
 - (_Bool)_caretShouldBeVisible;
@@ -78,17 +82,24 @@
 - (_Bool)_isContentTrailingOverflowing;
 - (_Bool)_isContentLeadingOverflowing;
 @property(readonly, nonatomic, getter=isContentOverflowing) _Bool contentOverflowing;
-- (void)_setupScrollViewOpacityMask;
+- (void)_updateScrollViewOpacityMask;
 - (void)_updateTruncationIndicators;
 - (void)stopThinkingAnimation;
 - (void)startThinkingAnimation;
 @property(readonly, nonatomic) float _inputTextWidth;
-- (void)_updateTextPreviewContent;
+- (void)_updateTextPreviewContentWithInsertionRange:(struct _NSRange)arg1;
+- (void)_updateTextFieldConfiguration;
 - (void)performTextChangesAnimated:(_Bool)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (int)characterIndexAtPoint:(struct CGPoint)arg1 isBeforeStart:(_Bool *)arg2 isAfterEnd:(_Bool *)arg3;
+@property(copy, nonatomic) NSString *placeholder;
+- (void)setDisplayedText:(id)arg1 insertionRange:(struct _NSRange)arg2;
 - (void)layoutSubviews;
+- (_Bool)isFirstResponder;
+- (_Bool)canBecomeFirstResponder;
+- (_Bool)resignFirstResponder;
+- (_Bool)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (int)_characterIndexAtXLocation:(float)arg1 inString:(id)arg2 isBeforeStart:(_Bool *)arg3 isAfterEnd:(_Bool *)arg4;
+- (int)_characterIndexAtXLocation:(float)arg1 isBeforeStart:(_Bool *)arg2 isAfterEnd:(_Bool *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

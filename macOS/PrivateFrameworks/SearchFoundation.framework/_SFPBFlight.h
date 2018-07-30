@@ -40,17 +40,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasCarrierPhoneNumber;
-@property(readonly, nonatomic) BOOL hasOperatorFlightNumber;
-@property(readonly, nonatomic) BOOL hasOperatorCarrierCode;
 - (id)legsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)legsCount;
 - (void)addLegs:(id)arg1;
 - (void)clearLegs;
-@property(readonly, nonatomic) BOOL hasFlightNumber;
-@property(readonly, nonatomic) BOOL hasCarrierName;
-@property(readonly, nonatomic) BOOL hasCarrierCode;
-@property(readonly, nonatomic) BOOL hasFlightID;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

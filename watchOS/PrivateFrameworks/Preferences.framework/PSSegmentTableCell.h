@@ -20,7 +20,6 @@
 - (void)layoutSubviews;
 - (void)setValues:(id)arg1 titleDictionary:(id)arg2;
 - (_Bool)canReload;
-- (void)setBackgroundView:(id)arg1;
 - (id)titleLabel;
 - (id)newControl;
 - (void)prepareForReuse;

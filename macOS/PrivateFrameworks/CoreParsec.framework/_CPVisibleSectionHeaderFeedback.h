@@ -10,21 +10,17 @@
 #import "_CPProcessableFeedback.h"
 #import "_CPVisibleSectionHeaderFeedback.h"
 
-@class NSData, NSDictionary, NSString, _CPResultSectionForFeedback;
+@class NSData, NSDictionary, NSString;
 
 @interface _CPVisibleSectionHeaderFeedback : PBCodable <_CPProcessableFeedback, _CPVisibleSectionHeaderFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int headerType:1;
-    } _has;
     int _headerType;
     unsigned long long _timestamp;
-    _CPResultSectionForFeedback *_section;
+    NSString *_sectionId;
 }
 
+@property(copy, nonatomic) NSString *sectionId; // @synthesize sectionId=_sectionId;
 @property(nonatomic) int headerType; // @synthesize headerType=_headerType;
-@property(retain, nonatomic) _CPResultSectionForFeedback *section; // @synthesize section=_section;
 @property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
@@ -35,17 +31,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasHeaderType;
-@property(readonly, nonatomic) BOOL hasSection;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
-- (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;
-@property(readonly, nonatomic) id feedbackJSON;
+- (id)initWithFacade:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) id feedbackJSON;
 @property(readonly) Class superclass;
 
 @end

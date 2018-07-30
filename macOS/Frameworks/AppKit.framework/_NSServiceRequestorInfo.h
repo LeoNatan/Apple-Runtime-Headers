@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableSet;
 
+__attribute__((visibility("hidden")))
 @interface _NSServiceRequestorInfo : NSObject
 {
     id requestor;

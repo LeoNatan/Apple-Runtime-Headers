@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 @class NSArray;
 
-@interface RTWiFiManager : RTNotifier
+@interface RTWiFiManager : RTService
 {
     unsigned long long _powerStatus;
     unsigned long long _linkStatus;
@@ -28,14 +28,10 @@
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (void)_cancelScan;
 - (void)_scheduleScan;
-- (void)_shutdown;
-- (void)_setup;
 - (void)fetchLinkStatus:(CDUnknownBlockType)arg1;
 - (void)fetchPowerStatus:(CDUnknownBlockType)arg1;
 - (void)cancelScan;
 - (void)scheduleScan;
-- (void)shutdown;
-- (void)setup;
 - (id)init;
 
 @end

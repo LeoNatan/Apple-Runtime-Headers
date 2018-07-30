@@ -9,10 +9,16 @@
 @interface IMReportSpamChatItem : IMTranscriptChatItem
 {
     _Bool _wasReportedAsSpam;
+    _Bool _isGroupMessage;
+    _Bool _hasMultipleMessages;
+    _Bool _showReportSMSSpam;
 }
 
+@property(readonly, nonatomic) _Bool showReportSMSSpam; // @synthesize showReportSMSSpam=_showReportSMSSpam;
+@property(readonly, nonatomic) _Bool hasMultipleMessages; // @synthesize hasMultipleMessages=_hasMultipleMessages;
+@property(readonly, nonatomic) _Bool isGroupMessage; // @synthesize isGroupMessage=_isGroupMessage;
 @property(readonly, nonatomic) _Bool wasReportedAsSpam; // @synthesize wasReportedAsSpam=_wasReportedAsSpam;
-- (id)_initWithItem:(id)arg1 wasReportedAsSpam:(_Bool)arg2;
+- (id)_initWithItem:(id)arg1 wasReportedAsSpam:(_Bool)arg2 isGroup:(_Bool)arg3 hasMultipleMessages:(_Bool)arg4 showReportSMSSpam:(_Bool)arg5;
 
 @end
 

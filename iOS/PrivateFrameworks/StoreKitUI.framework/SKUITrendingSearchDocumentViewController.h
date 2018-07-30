@@ -6,12 +6,11 @@
 
 #import <StoreKitUI/SKUIViewController.h>
 
-#import "ADPrivacyViewControllerDelegate.h"
 #import "SKUIDocumentViewController.h"
 
 @class NSString, SKUITrendingSearchTemplateElement, SKUITrendingSearchView, UIViewController;
 
-@interface SKUITrendingSearchDocumentViewController : SKUIViewController <ADPrivacyViewControllerDelegate, SKUIDocumentViewController>
+@interface SKUITrendingSearchDocumentViewController : SKUIViewController <SKUIDocumentViewController>
 {
     SKUITrendingSearchView *_resultsView;
     SKUITrendingSearchTemplateElement *_template;
@@ -22,9 +21,6 @@
 @property(retain, nonatomic) SKUITrendingSearchTemplateElement *template; // @synthesize template=_template;
 @property(retain, nonatomic) SKUITrendingSearchView *resultsView; // @synthesize resultsView=_resultsView;
 - (void).cxx_destruct;
-- (void)adPrivacyViewController:(id)arg1 didFailWithError:(id)arg2;
-- (void)adPrivacyViewControllerDidDismiss:(id)arg1;
-- (void)adPrivacyViewControllerDidLoad:(id)arg1;
 - (struct UIEdgeInsets)_resultsViewContentInset;
 - (void)_reloadResultsView;
 - (void)searchResultButtonTapped:(id)arg1;

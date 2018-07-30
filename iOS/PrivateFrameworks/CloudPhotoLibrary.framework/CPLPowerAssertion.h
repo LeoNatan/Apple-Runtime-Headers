@@ -12,6 +12,7 @@
 
 + (id)powerAssertionStatus;
 + (void)setHasEnoughPower:(_Bool)arg1;
++ (_Bool)hasEnoughPower;
 + (void)enableSleep;
 + (void)disableSleep;
 + (void)_releaseAssertion;

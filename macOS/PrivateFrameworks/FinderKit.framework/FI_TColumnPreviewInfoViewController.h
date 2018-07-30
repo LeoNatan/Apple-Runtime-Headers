@@ -6,13 +6,11 @@
 
 #import <FinderKit/FI_TBaseInfoWindowViewController.h>
 
-@class FI_TColumnPreviewPropertyTaggingTokenFieldController, FI_TColumnPreviewSpotlightMetaDataController, FI_TPropertyColumnPreviewCreationDateController, FI_TPropertyColumnPreviewKindAndSizeController, FI_TPropertyColumnPreviewLastOpenedDateController, FI_TPropertyColumnPreviewModificationDateController, FI_TPropertyICloudShareOwnerController, FI_TPropertyNameController, FI_TPropertyShortVersionController, NSLayoutConstraint, NSStackView;
+@class FI_TButton, FI_TColumnPreviewPropertyTaggingTokenFieldController, FI_TColumnPreviewSpotlightMetaDataController, FI_TPreviewOptions, FI_TPropertyColumnPreviewCreationDateController, FI_TPropertyColumnPreviewLastOpenedDateController, FI_TPropertyColumnPreviewModificationDateController, FI_TPropertyICloudShareOwnerController, FI_TPropertyShortVersionController, NSStackView;
 
 __attribute__((visibility("hidden")))
 @interface FI_TColumnPreviewInfoViewController : FI_TBaseInfoWindowViewController
 {
-    FI_TPropertyNameController *_nameController;
-    FI_TPropertyColumnPreviewKindAndSizeController *_kindAndSizeController;
     FI_TPropertyICloudShareOwnerController *_iCloudShareOwnerController;
     FI_TPropertyColumnPreviewCreationDateController *_createDateController;
     FI_TPropertyColumnPreviewModificationDateController *_modDateController;
@@ -21,15 +19,36 @@ __attribute__((visibility("hidden")))
     FI_TColumnPreviewSpotlightMetaDataController *_spotightMetaDataController;
     FI_TColumnPreviewPropertyTaggingTokenFieldController *_taggingController;
     NSStackView *_stackView;
-    NSLayoutConstraint *_infoViewHeightConstraint;
-    struct TKeyValueObserver _isocShouldBeVisibleObserver;
+    FI_TButton *_expandButton;
+    _Bool _mouseInside;
+    struct TNSRef<FI_TPreviewOptions, void> _previewOptions;
+    _Bool _isRetargeting;
+    struct TKeyValueObserver _activeOptionsObserver;
+    struct TKeyValueObserver _filteredDeltaDidChange;
+    struct TriStateBool _wasCollapsedBeforeEditing;
+    struct TKeyValueObserver _editingOptionsObserver;
 }
 
+@property(nonatomic, getter=isMouseInside) _Bool mouseInside; // @synthesize mouseInside=_mouseInside;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)expandToggle:(id)arg1;
+- (id)addConstraintsToAvoidOverlapsInStackViewAnimations;
+- (void)configureExpandingButton;
+- (void)updateExpandButtonStateWithMouseEntered:(_Bool)arg1;
+- (_Bool)canShowMoreOrLess;
+- (long long)possibleHiddenAttributes;
+- (void)updateExpandButtonState;
+- (void)configureForEditing:(_Bool)arg1;
+- (void)refresh;
 - (void)targetNodesChanged;
-- (void)setTargetNodes:(const struct TFENodeVector *)arg1;
-- (void)configureMinRowCount:(double)arg1 maxRowCount:(double)arg2 resizable:(_Bool)arg3;
+- (void)targetNodesChanging;
+- (void)optionsDidChangeEditMode;
+- (void)userSelectedKeysDidChange;
+@property(retain, nonatomic) FI_TPreviewOptions *previewOptions; // @dynamic previewOptions;
+- (void)updateFilters;
+- (void)applyPreviewOptions;
+- (void)configureMinRowCount:(double)arg1 maxRowCount:(double)arg2;
 - (unsigned int)notificationOptionsForNodes:(const struct TFENodeVector *)arg1;
 - (void)aboutToTearDown;
 - (void)loadValueControllers;

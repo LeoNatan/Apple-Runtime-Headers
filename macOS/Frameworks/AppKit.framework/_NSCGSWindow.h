@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_shadowProperties;
     struct CGPoint _origin;
     double _opacity;
+    double _backdropChameleonContribution;
     double _backdropBleedFraction;
     struct CGSRegionObject *_dragRegion;
     struct CGSRegionObject *_activationRegion;
@@ -35,8 +36,11 @@ __attribute__((visibility("hidden")))
     NSCGSWindow *_relativeMoveParent;
     struct CGSize _relativeMoveOffset;
     struct CGSRegionObject *_mouseConfinementRegion;
+    struct CGColor *_chameleonOverrideColor;
 }
 
+- (void)setChameleonOverrideColor:(struct CGColor *)arg1;
+- (struct CGColor *)chameleonOverrideColor;
 - (void)moveToWindow:(id)arg1 offsetX:(double)arg2 Y:(double)arg3;
 - (id)movementChildren;
 - (void)setMovementChildren:(id)arg1;
@@ -59,10 +63,13 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasMainAppearance;
 - (void)setHasKeyAppearance:(BOOL)arg1;
 - (BOOL)hasKeyAppearance;
+- (void)_setBackdropChameleonContribution:(double)arg1;
+- (double)_backdropChameleonContribution;
 - (void)_setBackdropBleedFraction:(double)arg1;
 - (double)_backdropBleedFraction;
 - (void)_setBackdropsAreFrozen:(BOOL)arg1;
 - (BOOL)_backdropsAreFrozen;
+- (void)invalidateAlphaShape;
 - (void)setUseActiveShadow:(BOOL)arg1;
 - (BOOL)useActiveShadow;
 - (void)setShadowProperties:(id)arg1;

@@ -6,6 +6,7 @@
 
 #import <CorePDF/UIPDFSquareOrCircleAnnotation.h>
 
+__attribute__((visibility("hidden")))
 @interface UIPDFCircleAnnotation : UIPDFSquareOrCircleAnnotation
 {
 }

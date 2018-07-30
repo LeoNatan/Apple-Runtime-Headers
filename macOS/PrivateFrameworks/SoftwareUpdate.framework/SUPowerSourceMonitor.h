@@ -23,7 +23,6 @@
 - (void)_handleChangeInPowerSource;
 - (void)stop;
 - (void)start;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 

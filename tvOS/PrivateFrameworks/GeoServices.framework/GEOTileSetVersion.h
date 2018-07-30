@@ -10,6 +10,7 @@
 
 @class PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOTileSetVersion : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

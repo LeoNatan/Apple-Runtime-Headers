@@ -18,8 +18,8 @@
     unsigned long long _dateStyle;
 }
 
-+ (id)_swatchColorForColorOption:(id)arg1;
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
++ (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (id)_swatchImageFaceName;
 @property(nonatomic) unsigned long long dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(nonatomic) unsigned long long density; // @synthesize density=_density;
@@ -47,6 +47,7 @@
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (struct CGRect)_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
@@ -62,12 +63,13 @@
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
+- (id)_slotForUtilitySlot:(long long)arg1;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (double)_verticalPaddingForStatusBar;
 - (_Bool)_supportsUnadornedSnapshot;
 - (void)_loadScene;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, nonatomic) NTKUtilitarianScene *analogScene; // @dynamic analogScene;

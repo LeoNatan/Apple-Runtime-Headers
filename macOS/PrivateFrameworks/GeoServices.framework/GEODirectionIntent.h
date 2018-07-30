@@ -8,7 +8,6 @@
 
 @class GEOResolvedItem;
 
-__attribute__((visibility("hidden")))
 @interface GEODirectionIntent : NSObject
 {
     GEOResolvedItem *_origin;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (void)updateBrailleLineWithFocusedElement:(id)arg1;
 - (void)buildBrailleLineWithFocusedElement:(id)arg1;
 - (void)sendBrailleLineWithElement:(id)arg1 focusThrough:(BOOL)arg2 forceRebuild:(BOOL)arg3;
+- (id)_defaultLocalizedStringForCommandKey:(id)arg1;
 - (id)statusDescriptionWithOptionsMask:(long long)arg1;
 - (void)handleTimelineChangeFromString:(id)arg1;
 - (BOOL)canHandleValueChange;

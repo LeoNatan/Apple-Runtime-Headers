@@ -10,17 +10,20 @@
 
 @interface HKHeartRateSummaryWorkoutRecoveryStatistics : HKHeartRateSummaryStatistics
 {
+    unsigned long long _workoutActivityType;
     NSDictionary *_perMinuteReadings;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic, setter=_setPerMinuteReadings:) NSDictionary *perMinuteReadings; // @synthesize perMinuteReadings=_perMinuteReadings;
+@property(readonly, nonatomic) unsigned long long workoutActivityType; // @synthesize workoutActivityType=_workoutActivityType;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithDateInterval:(id)arg1 numberOfBuckets:(long long)arg2 workoutUUID:(id)arg3 workoutActivityType:(unsigned long long)arg4;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class NSArray, PKDiff, PKPass;
+@class NSArray, PKPass;
 
 @interface NPKPassDetailView : UIView
 {
@@ -14,15 +14,14 @@
     NSArray *_primaryFieldViews;
     NSArray *_secondaryFieldViews;
     NSArray *_auxiliaryFieldViews;
+    _Bool _shouldShowSeparators;
     NSArray *_separatorViews;
     _Bool _shouldShowTopLine;
     PKPass *_pass;
-    PKDiff *_diff;
 }
 
-+ (id)detailViewForPass:(id)arg1 diff:(id)arg2 width:(float)arg3;
++ (id)detailViewForPass:(id)arg1 width:(float)arg2;
 @property(nonatomic) _Bool shouldShowTopLine; // @synthesize shouldShowTopLine=_shouldShowTopLine;
-@property(readonly, nonatomic) PKDiff *diff; // @synthesize diff=_diff;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
 - (float)width;
@@ -48,7 +47,7 @@
 - (id)_newHorizontalSeparatorViewAtY:(float)arg1;
 - (id)_newSeparatorView;
 - (void)_createFieldViews;
-- (id)initWithPass:(id)arg1 diff:(id)arg2 width:(float)arg3;
+- (id)initWithPass:(id)arg1 width:(float)arg2 showSeparators:(_Bool)arg3;
 
 @end
 

@@ -18,6 +18,7 @@
     NSDictionary *_metadata;
 }
 
++ (unsigned int)mapWheelchairUserActivityType:(unsigned int)arg1 isWheelchairUser:(_Bool)arg2;
 + (id)possibleActivityTypesForIdentifier:(unsigned int)arg1 locationType:(int)arg2 swimmingLocationType:(int)arg3 wheelchairUser:(_Bool)arg4;
 + (id)wheelchairActivityTypes;
 + (id)supportedActivityTypesWithIsWheelchairUser:(_Bool)arg1;
@@ -47,15 +48,7 @@
 - (id)initWithActivityTypeIdentifier:(unsigned int)arg1 isIndoor:(_Bool)arg2 metadata:(id)arg3 auxiliaryTypeIdentifier:(unsigned int)arg4;
 - (id)initWithActivityTypeIdentifier:(unsigned int)arg1 isIndoor:(_Bool)arg2 metadata:(id)arg3;
 - (id)initWithActivityTypeIdentifier:(unsigned int)arg1 isIndoor:(_Bool)arg2;
-- (id)allAvailableMetrics;
-- (id)allAvailableMetricsWithIsMachineWorkout:(_Bool)arg1;
-- (_Bool)isAvailableMetricType:(unsigned int)arg1 withIsMachineWorkout:(_Bool)arg2;
-- (id)defaultEnabledMetrics;
-- (id)appendMachineMetricsIfPossibleToMetrics:(id)arg1 maxNumMetrics:(int)arg2;
-- (id)_machineProvidedMetrics;
-- (id)_defaultEnabledMetricsForActivityType:(unsigned int)arg1;
-- (id)_indoorDefaultEnabledMetricsForActivityType:(unsigned int)arg1;
-- (id)_metricsForSwimmingWithLocationType:(int)arg1;
+- (id)activityTypePlistKey;
 
 @end
 

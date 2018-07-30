@@ -11,13 +11,14 @@
 #import "UIPreviewInteractionDelegate.h"
 #import "UITextInputPayloadDelegate.h"
 
-@class CKMessageEntryView, CKRaiseGesture, CKScheduledUpdater, NSExtensionContext, NSString;
+@class CKFullScreenBalloonViewControllerNotification, CKMessageEntryView, CKRaiseGesture, CKScheduledUpdater, NSExtensionContext, NSString;
 
 @interface CKNotificationChatController : CKCoreChatController <UITextInputPayloadDelegate, CKMessageEntryViewDelegate, CKMessageEntryViewInputDelegate, UIPreviewInteractionDelegate>
 {
     _Bool _shouldAllowReplyFromLockScreen;
     CKMessageEntryView *_entryView;
     NSExtensionContext *_urlOpenContext;
+    CKFullScreenBalloonViewControllerNotification *_notificationFullScreenBalloonController;
     CKScheduledUpdater *_typingUpdater;
     CKRaiseGesture *_raiseGesture;
 }
@@ -25,10 +26,12 @@
 @property(nonatomic) _Bool shouldAllowReplyFromLockScreen; // @synthesize shouldAllowReplyFromLockScreen=_shouldAllowReplyFromLockScreen;
 @property(retain, nonatomic) CKRaiseGesture *raiseGesture; // @synthesize raiseGesture=_raiseGesture;
 @property(retain, nonatomic) CKScheduledUpdater *typingUpdater; // @synthesize typingUpdater=_typingUpdater;
+@property(nonatomic) __weak CKFullScreenBalloonViewControllerNotification *notificationFullScreenBalloonController; // @synthesize notificationFullScreenBalloonController=_notificationFullScreenBalloonController;
 @property(nonatomic) __weak NSExtensionContext *urlOpenContext; // @synthesize urlOpenContext=_urlOpenContext;
 @property(retain, nonatomic) CKMessageEntryView *entryView; // @synthesize entryView=_entryView;
 - (void).cxx_destruct;
 - (void)updateRaiseGesture;
+- (void)_dismissFullScreenBubbleViewControllerWithSendAnimation:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)raiseGestureRecognized:(id)arg1;
 - (void)previewInteractionDidCancel:(id)arg1;
 - (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(double)arg2 ended:(_Bool)arg3;
@@ -66,7 +69,6 @@
 - (void)_raiseToListenSettingChanged:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)sendComposition:(id)arg1;
 - (void)setLocalUserIsComposing:(_Bool)arg1 withPluginBundleID:(id)arg2 typingIndicatorData:(id)arg3;
 - (_Bool)becomeFirstResponder;
@@ -80,6 +82,15 @@
 - (id)inputAccessoryView;
 - (_Bool)_shouldDisplayTextEntry;
 - (void)_setConversationDeferredSetup;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 longPressedForItemWithIndexPath:(id)arg3;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
+- (id)_menuTitleForChatItem:(id)arg1;
+- (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
+- (_Bool)forceWindowedPresentation;
+- (_Bool)constrainToPresentingVCBounds;
+- (_Bool)preserveModalPresentationStyle;
+- (_Bool)wantsWindowedPresentation;
+- (void)showFullScreenAcknowledgmentPickerForChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
 - (id)launchURLForInputMode:(id)arg1;
 - (double)balloonMaxWidth;
 - (void)dealloc;
@@ -87,6 +98,13 @@
 - (void)handlePayload:(id)arg1 withPayloadId:(id)arg2;
 - (void)unregisterForTextInputPayloadHandling;
 - (void)registerForTextInputPayloadHandling;
+- (void)fullScreenBalloonViewController:(id)arg1 verticallyScrollTranscriptByAmount:(double)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)fullScreenBalloonViewControllerHandleDismissTap:(id)arg1;
+- (void)fullScreenBalloonViewControllerDidDisappear:(id)arg1;
+- (void)fullScreenBalloonViewController:(id)arg1 willDisappearWithSendAnimation:(_Bool)arg2;
+- (void)fullScreenBalloonViewController:(id)arg1 didAppearAnimated:(_Bool)arg2;
+- (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(_Bool)arg2;
+- (void)fullScreenBalloonViewController:(id)arg1 sendMessageAcknowledgment:(long long)arg2 forChatItem:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 {
     FI_TBrowserContentViewController *_contentViewController;
     struct TKeyValueBinder _activeContainerBinder;
-    struct TNSRef<FI_TContainerLayoutManager *, void> _containerLayoutManager;
-    struct TNSRef<NSArray<NSURL *>*, void> _excludedURLs;
-    vector_e0f53d80 _excludedPaths;
+    struct TNSRef<FI_TContainerLayoutManager, void> _containerLayoutManager;
+    struct TNSRef<NSArray<NSURL *>, void> _excludedURLs;
+    vector_757c8b87 _excludedPaths;
     FIBrowseBySizeContainerController *_activeContainer;
     _FIBrowseBySizeView *_browseBySizeView;
     NSArray *_selectedURLs;
@@ -40,8 +40,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)containerInBrowseMode:(id)arg1;
 - (id)containerWindowState:(id)arg1;
 - (void)searchWasChanged;
-- (void)searchDidBeginWithScopes:(const vector_e0f53d80 *)arg1 selectedScopeIndex:(unsigned int)arg2;
-- (void)toolbarUpdateForSplitterChange;
+- (void)searchDidBeginWithScopes:(const vector_757c8b87 *)arg1 selectedScopeIndex:(unsigned int)arg2;
 - (id)toolbarHistorySearchTemplate;
 - (_Bool)toolbarMakeSearchFieldFirstResponder;
 - (id)toolbarSearchField;
@@ -57,7 +56,8 @@ __attribute__((visibility("hidden")))
 - (void)aboutToDestroyBrowserView;
 - (void)didChangeSelection;
 - (id)activeBrowserViewController;
-- (void)setTarget:(const struct TFENode *)arg1 withViewStyle:(id)arg2;
+- (_Bool)shouldShowRecents;
+- (void)setTarget:(const struct TFENode *)arg1 withViewStyle:(int)arg2;
 @property(copy, nonatomic) NSArray *excludedURLs;
 @property(copy, nonatomic) NSURL *directoryURL;
 - (void)setInitialTarget;

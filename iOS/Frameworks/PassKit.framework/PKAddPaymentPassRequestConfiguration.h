@@ -14,6 +14,7 @@
 {
     _Bool _requiresFelicaSecureElement;
     NSString *_encryptionScheme;
+    long long _style;
     NSString *_cardholderName;
     NSString *_primaryAccountSuffix;
     NSArray *_cardDetails;
@@ -30,6 +31,7 @@
 @property(copy, nonatomic) NSArray *cardDetails; // @synthesize cardDetails=_cardDetails;
 @property(copy, nonatomic) NSString *primaryAccountSuffix; // @synthesize primaryAccountSuffix=_primaryAccountSuffix;
 @property(copy, nonatomic) NSString *cardholderName; // @synthesize cardholderName=_cardholderName;
+@property(nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, copy, nonatomic) NSString *encryptionScheme; // @synthesize encryptionScheme=_encryptionScheme;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

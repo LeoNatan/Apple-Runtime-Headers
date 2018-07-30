@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CSLSAlertSuppressionAssertion, CSLSBacklightAssertion, CSLSBacklightMinimumBrightnessAssertion, NSString, NSTimer;
+@class BrightnessSystemClient, CSLSAlertSuppressionAssertion, CSLSBacklightAssertion, NSTimer;
 
 @interface NPKUIAssertion : NSObject
 {
@@ -17,37 +17,38 @@
     _Bool _assertionTaken;
     _Bool _assertionInvalidated;
     float _miniumumNits;
-    NSString *_reason;
     CDUnknownBlockType _invalidationHandler;
-    CSLSBacklightMinimumBrightnessAssertion *_minimumBrightnessAssertion;
+    BrightnessSystemClient *_brightnessClient;
     CSLSBacklightAssertion *_noScreenOffAssertion;
     CSLSAlertSuppressionAssertion *_alertSuppressionAssertion;
     NSTimer *_invalidationTimer;
     double _timeout;
 }
 
-+ (id)takeBarcodeAssertionWithInvalidationHandler:(CDUnknownBlockType)arg1;
++ (id)takeFullScreenPassAccessoryAssertionWithBrightnessClient:(id)arg1 withInvalidationHandler:(CDUnknownBlockType)arg2;
++ (id)takeFullScreenPassAccessoryAssertionWithInvalidationHandler:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSTimer *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
 @property(retain, nonatomic) CSLSAlertSuppressionAssertion *alertSuppressionAssertion; // @synthesize alertSuppressionAssertion=_alertSuppressionAssertion;
 @property(retain, nonatomic) CSLSBacklightAssertion *noScreenOffAssertion; // @synthesize noScreenOffAssertion=_noScreenOffAssertion;
-@property(retain, nonatomic) CSLSBacklightMinimumBrightnessAssertion *minimumBrightnessAssertion; // @synthesize minimumBrightnessAssertion=_minimumBrightnessAssertion;
+@property(retain, nonatomic) BrightnessSystemClient *brightnessClient; // @synthesize brightnessClient=_brightnessClient;
 @property(nonatomic) _Bool assertionInvalidated; // @synthesize assertionInvalidated=_assertionInvalidated;
 @property(nonatomic) _Bool assertionTaken; // @synthesize assertionTaken=_assertionTaken;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(nonatomic) _Bool recreateOnAppBackgroundAndForeground; // @synthesize recreateOnAppBackgroundAndForeground=_recreateOnAppBackgroundAndForeground;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
-@property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) _Bool preventAlerts; // @synthesize preventAlerts=_preventAlerts;
 @property(nonatomic) _Bool preventGestures; // @synthesize preventGestures=_preventGestures;
 @property(nonatomic) _Bool preventScreenOff; // @synthesize preventScreenOff=_preventScreenOff;
 @property(nonatomic) float miniumumNits; // @synthesize miniumumNits=_miniumumNits;
 - (void).cxx_destruct;
 - (void)_buildAssertionObjects;
+- (_Bool)_currentDisplayBacklightMinimumNitsIsEqualTo:(id)arg1;
+- (void)_raiseDeviceBrightnessForPass;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleInvalidationTimerFired;
 - (void)invalidate;
-- (void)take;
+- (void)_take;
 - (void)dealloc;
 
 @end

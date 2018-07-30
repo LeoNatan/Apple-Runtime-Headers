@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)registerBlockForService:(char *)arg1 block:(CDUnknownBlockType)arg2;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 toAllClientsWithContext:(id)arg3;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 context:(id)arg3;
+- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 xpcArguments:(id)arg3 context:(id)arg4;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2;
 - (id)autorelease;
 - (oneway void)release;

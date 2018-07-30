@@ -11,16 +11,6 @@
 }
 
 + (id)sharedInstance;
-- (id)_primaryAppleAccount;
-- (id)sharedAccountStore;
-- (id)contextForPrimaryAccount;
-- (id)iCloudEnv;
-- (id)escrowURL;
-- (id)authToken;
-- (unsigned long long)primaryAccountSecurityLevel;
-- (id)primaryAccountAltDSID;
-- (id)primaryAccountDSID;
-- (id)primaryAccountUsername;
 - (BOOL)isICDPEnabledForDSID:(id)arg1 checkWithServer:(BOOL)arg2;
 - (BOOL)isICDPEnabledForDSID:(id)arg1;
 @property(nonatomic) BOOL hasDisabledKeychainExplicitly;

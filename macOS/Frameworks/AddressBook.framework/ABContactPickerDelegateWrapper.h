@@ -10,7 +10,6 @@
 
 @class ABAddressBook, ABPersonPicker, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABContactPickerDelegateWrapper : NSObject <CNPrivateContactPickerDelegate>
 {
     id <ABPersonPickerDelegate> _delegate;

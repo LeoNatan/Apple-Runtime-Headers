@@ -7,6 +7,7 @@
 #import "UITableViewController.h"
 
 #import "CNAvatarCardControllerDelegate.h"
+#import "CNAvatarViewControllerDelegate.h"
 #import "CNContactDataSourceDelegate.h"
 #import "CNContactListBannerViewDelegate.h"
 #import "CNContactViewControllerDelegate.h"
@@ -23,10 +24,9 @@
 
 @class CNAvatarCardController, CNAvatarViewController, CNContact, CNContactFormatter, CNContactListBannerView, CNUIContactsEnvironment, CNUIPeopleGroupsGridViewController, CNVCardImportController, NSArray, NSObject<CNContactDataSource>, NSString, UISearchBar, UISearchController, _UIContentUnavailableView;
 
-@interface CNContactListViewController : UITableViewController <CNAvatarCardControllerDelegate, CNContactDataSourceDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CNContactListBannerViewDelegate, CNContactViewControllerDelegate, UIGestureRecognizerDelegate, CNUIPeopleGroupsGridViewControllerDelegate, CNUIObjectViewControllerDelegate, UITableViewDragSourceDelegate, UITableViewDragDestinationDelegate, CNVCardImportControllerPresentationDelegate, CNVCardImportControllerDelegate>
+@interface CNContactListViewController : UITableViewController <CNAvatarCardControllerDelegate, CNContactDataSourceDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CNContactListBannerViewDelegate, CNContactViewControllerDelegate, UIGestureRecognizerDelegate, CNUIPeopleGroupsGridViewControllerDelegate, CNUIObjectViewControllerDelegate, UITableViewDragSourceDelegate, UITableViewDragDestinationDelegate, CNVCardImportControllerPresentationDelegate, CNVCardImportControllerDelegate, CNAvatarViewControllerDelegate>
 {
     CNContact *_preferredForNameMeContact;
-    _Bool _shouldRefreshMeContact;
     _Bool _shouldDisplayMeContactBanner;
     _Bool _shouldAutoHideMeContactBanner;
     _Bool _allowsSearching;
@@ -85,7 +85,6 @@
 @property(copy, nonatomic) NSString *meContactBannerFootnoteLabel; // @synthesize meContactBannerFootnoteLabel=_meContactBannerFootnoteLabel;
 @property(nonatomic) _Bool shouldAutoHideMeContactBanner; // @synthesize shouldAutoHideMeContactBanner=_shouldAutoHideMeContactBanner;
 @property(nonatomic) __weak id <CNContactListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) _Bool shouldRefreshMeContact; // @synthesize shouldRefreshMeContact=_shouldRefreshMeContact;
 - (void).cxx_destruct;
 - (void)vCardImportControllerDidCompleteQueue:(id)arg1;
 - (void)vCardImportController:(id)arg1 didSaveContacts:(id)arg2;
@@ -102,6 +101,7 @@
 - (void)beginSearch:(id)arg1;
 - (void)peopleGroupsGridViewControllerDidChange:(id)arg1;
 - (id)hostingViewControllerForController:(id)arg1;
+- (void)didUpdateContentForAvatarViewController:(id)arg1;
 - (void)bannerView:(id)arg1 wasSelectedToPresentMeContact:(id)arg2;
 @property(nonatomic) _Bool shouldDisplayMeContactBanner; // @synthesize shouldDisplayMeContactBanner=_shouldDisplayMeContactBanner;
 - (void)refreshTableViewHeader;
@@ -122,12 +122,14 @@
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (_Bool)isContactWithIdentifierMeContactOrLinkedToMeContact:(id)arg1;
 - (_Bool)canSelectContactAtIndexPath:(id)arg1;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)_contactAtIndexPath:(id)arg1;
 - (id)_sections;
+- (void)contactDataSourceMeContactDidChange:(id)arg1;
 - (void)contactDataSourceDidChangeDisplayName:(id)arg1;
 - (void)contactDataSourceDidChange:(id)arg1;
 - (_Bool)updateFrameAndDisplayNoContactsViewIfNeeded;
@@ -150,6 +152,7 @@
 - (void)_applicationEnteringForeground:(id)arg1;
 - (void)contactStoreDidChangeWithNotification:(id)arg1;
 - (void)_updateCountStringNow:(_Bool)arg1;
+- (void)_contactCountTelemetry:(unsigned long long)arg1;
 - (void)reloadContacts;
 - (void)selectRowAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(long long)arg3;
 - (_Bool)selectContact:(id)arg1 animated:(_Bool)arg2 scrollPosition:(long long)arg3;

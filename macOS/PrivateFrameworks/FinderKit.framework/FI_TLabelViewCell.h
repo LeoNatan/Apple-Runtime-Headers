@@ -10,15 +10,17 @@ __attribute__((visibility("hidden")))
 @interface FI_TLabelViewCell : NSLabelViewCell
 {
     unsigned long long _whichFavoriteTagsWillRemove;
-    _Bool _forApplyingTags;
+    _Bool _forApplyingFavoriteTags;
+    long long _observableHoveredPart;
 }
 
-@property(nonatomic) _Bool forApplyingTags; // @synthesize forApplyingTags=_forApplyingTags;
+@property(nonatomic) long long observableHoveredPart; // @synthesize observableHoveredPart=_observableHoveredPart;
+@property(nonatomic) _Bool forApplyingFavoriteTags; // @synthesize forApplyingFavoriteTags=_forApplyingFavoriteTags;
 @property(nonatomic) unsigned long long whichFavoriteTagsWillRemove; // @synthesize whichFavoriteTagsWillRemove=_whichFavoriteTagsWillRemove;
 - (void)_drawPart:(long long)arg1 withFrame:(struct CGRect)arg2;
-- (void)drawBackgroundForPart:(long long)arg1 rect:(struct CGRect)arg2;
 - (struct CGRect)part:(long long)arg1 boundsWithFrame:(struct CGRect)arg2;
 - (struct CGRect)_boundsForLabel:(id)arg1 withFrame:(struct CGRect)arg2;
+- (id)_labelAttributes;
 - (id)_nameForLabelPart:(long long)arg1;
 - (_Bool)partWillRemoveATag:(long long)arg1;
 - (long long)_partAtPoint:(struct CGPoint)arg1 inFrame:(struct CGRect)arg2;

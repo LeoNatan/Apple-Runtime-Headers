@@ -6,6 +6,7 @@
 
 #import <AppKit/NSBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSCollectionViewBinder : NSBinder
 {
     struct {

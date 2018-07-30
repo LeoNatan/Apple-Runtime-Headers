@@ -17,7 +17,7 @@
 #import "HMFLogging.h"
 #import "HMFTimerDelegate.h"
 
-@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSnapshotMonitorEvents, HMDCameraStreamSnapshotHandler, HMDNotificationRegistration, HMDSnapshotCacheRequestHandler, HMDSnapshotLocalSession, HMDSnapshotSlotManager, HMFMessageDispatcher, HMFNetMonitor, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSnapshotMonitorEvents, HMDCameraStreamSnapshotHandler, HMDNotificationRegistration, HMDSnapshotCacheRequestHandler, HMDSnapshotLocalSession, HMDSnapshotRequestHandler, HMDSnapshotSlotManager, HMFMessageDispatcher, HMFNetMonitor, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
 
 @interface HMDCameraSnapshotManager : HMFObject <HMDCameraSnapshotLocalDelegate, HMDCameraSnapshotRemoteRelaySenderDelegate, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraSnapshotRemoteStreamReceiverDelegate, HMDCameraSnapshotRemoteRelayStreamDelegate, HMFTimerDelegate, HMFLogging, HMDCameraStreamSnapshotHandlerDelegate, HMDHomeMessageReceiver>
 {
@@ -30,7 +30,7 @@
     NSString *_imageCacheDirectory;
     NSString *_logID;
     HMDCameraSnapshotMonitorEvents *_monitorServicesManager;
-    id <HMDSnapshotRequestHandlerProtocol> _snapshotRequestHandler;
+    HMDSnapshotRequestHandler *_snapshotRequestHandler;
     HMDSnapshotCacheRequestHandler *_snapshotCacheRequestHandler;
     HMDSnapshotSlotManager *_snapshotSlotManager;
     HMDCameraStreamSnapshotHandler *_streamSnapshotHandler;
@@ -52,7 +52,7 @@
 @property(readonly, nonatomic) HMDCameraStreamSnapshotHandler *streamSnapshotHandler; // @synthesize streamSnapshotHandler=_streamSnapshotHandler;
 @property(readonly, nonatomic) HMDSnapshotSlotManager *snapshotSlotManager; // @synthesize snapshotSlotManager=_snapshotSlotManager;
 @property(readonly, nonatomic) HMDSnapshotCacheRequestHandler *snapshotCacheRequestHandler; // @synthesize snapshotCacheRequestHandler=_snapshotCacheRequestHandler;
-@property(readonly, nonatomic) id <HMDSnapshotRequestHandlerProtocol> snapshotRequestHandler; // @synthesize snapshotRequestHandler=_snapshotRequestHandler;
+@property(readonly, nonatomic) HMDSnapshotRequestHandler *snapshotRequestHandler; // @synthesize snapshotRequestHandler=_snapshotRequestHandler;
 @property(readonly, nonatomic) HMDCameraSnapshotMonitorEvents *monitorServicesManager; // @synthesize monitorServicesManager=_monitorServicesManager;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(readonly, nonatomic) NSString *imageCacheDirectory; // @synthesize imageCacheDirectory=_imageCacheDirectory;

@@ -6,6 +6,7 @@
 
 #import "UITapGestureRecognizer.h"
 
+__attribute__((visibility("hidden")))
 @interface SiriTVUIClickRecognizer : UITapGestureRecognizer
 {
     id <SiriTVUIClickRecognizerDelegate> _clickDelegate;

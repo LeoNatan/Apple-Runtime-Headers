@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
     NSSet *_followers;
     NSSet *_following;
     NSSet *_locations;
+    NSSet *_fences;
     NSMutableDictionary *_locationsCache;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *locationsCache; // @synthesize locationsCache=_locationsCache;
+@property(retain, nonatomic) NSSet *fences; // @synthesize fences=_fences;
 @property(retain, nonatomic) NSSet *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) NSSet *following; // @synthesize following=_following;
 @property(retain, nonatomic) NSSet *followers; // @synthesize followers=_followers;

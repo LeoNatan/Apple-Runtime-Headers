@@ -19,6 +19,7 @@
 }
 
 + (id)quadViewWithFrame:(struct CGRect)arg1;
++ (id)quadViewWithFrame:(struct CGRect)arg1 options:(unsigned long long)arg2;
 @property(nonatomic) __weak id <CLKUIQuadViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_discardContents;

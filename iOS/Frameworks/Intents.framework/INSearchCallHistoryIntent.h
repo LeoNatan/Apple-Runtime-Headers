@@ -34,6 +34,7 @@
 - (void)setDateCreated:(id)arg1;
 @property(readonly, copy, nonatomic) INDateComponentsRange *dateCreated;
 - (id)initWithDateCreated:(id)arg1 recipient:(id)arg2 callCapabilities:(unsigned long long)arg3 callTypes:(unsigned long long)arg4 unseen:(id)arg5;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 @property(readonly, nonatomic) long long callType;

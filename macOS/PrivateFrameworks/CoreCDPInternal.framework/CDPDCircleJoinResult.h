@@ -11,7 +11,7 @@
     BOOL _didJoin;
     BOOL _needsBackupRecovery;
     BOOL _hasPeersForRemoteApproval;
-    BOOL _hasPeersWithBackupRecords;
+    BOOL _hasPeersWithCDPBackupRecords;
     BOOL _requiresEscrowRecordsFetch;
     BOOL _requiresInitialSync;
     int _circleStatus;
@@ -22,7 +22,7 @@
 @property unsigned long long remotePeeriCKState; // @synthesize remotePeeriCKState=_remotePeeriCKState;
 @property BOOL requiresInitialSync; // @synthesize requiresInitialSync=_requiresInitialSync;
 @property BOOL requiresEscrowRecordsFetch; // @synthesize requiresEscrowRecordsFetch=_requiresEscrowRecordsFetch;
-@property BOOL hasPeersWithBackupRecords; // @synthesize hasPeersWithBackupRecords=_hasPeersWithBackupRecords;
+@property BOOL hasPeersWithCDPBackupRecords; // @synthesize hasPeersWithCDPBackupRecords=_hasPeersWithCDPBackupRecords;
 @property BOOL hasPeersForRemoteApproval; // @synthesize hasPeersForRemoteApproval=_hasPeersForRemoteApproval;
 @property BOOL needsBackupRecovery; // @synthesize needsBackupRecovery=_needsBackupRecovery;
 @property BOOL didJoin; // @synthesize didJoin=_didJoin;

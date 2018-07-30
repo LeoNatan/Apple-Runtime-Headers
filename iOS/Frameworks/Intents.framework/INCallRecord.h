@@ -6,26 +6,27 @@
 
 #import "NSObject.h"
 
+#import "INCacheableContainer.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class INPerson, NSDate, NSNumber, NSString;
 
-@interface INCallRecord : NSObject <NSCopying, NSSecureCoding>
+@interface INCallRecord : NSObject <INCacheableContainer, NSCopying, NSSecureCoding>
 {
     NSString *_identifier;
     NSDate *_dateCreated;
     INPerson *_caller;
     long long _callRecordType;
-    long long _callCapability;
     NSNumber *_callDuration;
     NSNumber *_unseen;
+    long long _callCapability;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) long long callCapability; // @synthesize callCapability=_callCapability;
 @property(readonly, copy, nonatomic) NSNumber *unseen; // @synthesize unseen=_unseen;
 @property(readonly, copy, nonatomic) NSNumber *callDuration; // @synthesize callDuration=_callDuration;
-@property(readonly, nonatomic) long long callCapability; // @synthesize callCapability=_callCapability;
 @property(readonly, nonatomic) long long callRecordType; // @synthesize callRecordType=_callRecordType;
 @property(readonly, copy, nonatomic) INPerson *caller; // @synthesize caller=_caller;
 @property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
@@ -33,13 +34,19 @@
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
-- (id)description;
-- (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (id)initWithIdentifier:(id)arg1 dateCreated:(id)arg2 caller:(id)arg3 callRecordType:(long long)arg4 callCapability:(long long)arg5 callDuration:(id)arg6 unseen:(id)arg7;
+- (void)_intents_updateContainerWithCache:(id)arg1;
+- (id)_intents_cacheableObjects;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

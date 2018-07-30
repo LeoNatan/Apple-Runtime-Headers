@@ -9,24 +9,20 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTaggingPopoverController : FI_TPopoverController
 {
-    struct TNSRef<FI_TTagEditorController *, void> _editorController;
-    struct TNSRef<FI_TTextField *, void> _assignTagsToTitleText;
+    struct TNSRef<FI_TTaggingPopoverContentViewController, void> _popoverContentViewController;
+    struct TNotificationCenterObserver _didEndEditingObserver;
+    struct TNSRef<FI_TTagEditorController, void> _editorController;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)cancelOperation:(id)arg1;
 - (void)cancel:(id)arg1;
-- (void)popoverDidClose:(id)arg1;
 - (void)popoverWillClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;
-- (void)finishedEditing;
 - (void)showPopoverForNodes:(const struct TFENodeVector *)arg1 belowView:(id)arg2 verticalInset:(double)arg3;
-- (void)showPopoverOverNode:(const struct TFENode *)arg1 forNodes:(const struct TFENodeVector *)arg2 browserViewController:(id)arg3 preferredEdge:(unsigned long long)arg4;
-- (void)setAssignToTitleTextForNodes:(const struct TFENodeVector *)arg1;
+- (void)showPopoverOverNode:(const struct TFENode *)arg1 forNodes:(const struct TFENodeVector *)arg2 belowView:(id)arg3;
 - (void)setNodes:(const struct TFENodeVector *)arg1;
-- (_Bool)useSeparatorsBetweenSubviews;
-- (Class)popoverClass;
+- (void)aboutToTearDown;
 - (id)initWithWidth:(double)arg1;
 
 @end

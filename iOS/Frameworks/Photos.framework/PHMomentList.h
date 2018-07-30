@@ -20,7 +20,7 @@
 }
 
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)identifierCode;
 + (_Bool)managedObjectSupportsTrashedState;
 + (id)fetchType;

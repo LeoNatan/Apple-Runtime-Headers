@@ -13,7 +13,6 @@
 
 @interface _SFPBTableRowCardSection : PBCodable <_SFPBTableRowCardSection, NSSecureCoding>
 {
-    CDStruct_dff33cb6 _has;
     BOOL _canBeHidden;
     BOOL _hasTopPadding;
     BOOL _hasBottomPadding;
@@ -27,6 +26,7 @@
     NSString *_punchoutPickerDismissText;
     NSString *_type;
     _SFPBColor *_backgroundColor;
+    NSArray *_richDatas;
     NSString *_tableIdentifier;
     _SFPBTableAlignmentSchema *_alignmentSchema;
     NSArray *_datas;
@@ -41,6 +41,7 @@
 @property(copy, nonatomic) NSArray *datas; // @synthesize datas=_datas;
 @property(retain, nonatomic) _SFPBTableAlignmentSchema *alignmentSchema; // @synthesize alignmentSchema=_alignmentSchema;
 @property(copy, nonatomic) NSString *tableIdentifier; // @synthesize tableIdentifier=_tableIdentifier;
+@property(copy, nonatomic) NSArray *richDatas; // @synthesize richDatas=_richDatas;
 @property(retain, nonatomic) _SFPBColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) int separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
@@ -59,26 +60,16 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasAlignRowsToHeader;
-@property(readonly, nonatomic) BOOL hasVerticalAlign;
-@property(readonly, nonatomic) BOOL hasReducedRowHeight;
-@property(readonly, nonatomic) BOOL hasTabGroupIdentifier;
-@property(readonly, nonatomic) BOOL hasIsSubHeader;
 - (id)dataAtIndex:(unsigned long long)arg1;
 - (unsigned long long)dataCount;
 - (void)addData:(id)arg1;
 - (void)clearData;
 - (void)setData:(id)arg1;
-@property(readonly, nonatomic) BOOL hasAlignmentSchema;
-@property(readonly, nonatomic) BOOL hasTableIdentifier;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
+- (id)richDataAtIndex:(unsigned long long)arg1;
+- (unsigned long long)richDataCount;
+- (void)addRichData:(id)arg1;
+- (void)clearRichData;
+- (void)setRichData:(id)arg1;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

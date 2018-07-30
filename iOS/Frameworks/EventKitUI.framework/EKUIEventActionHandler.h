@@ -11,6 +11,9 @@
 }
 
 + (id)sharedInstance;
+- (id)createEventIntentForEvent:(id)arg1 withSuggestionsInfoUniqueKey:(id)arg2;
+- (id)createEventIntentForEvent:(id)arg1;
+- (void)donatePredictiveAction:(id)arg1 forEvent:(id)arg2;
 - (void)donateInteractionForAction:(id)arg1 onEvent:(id)arg2;
 - (id)_intentForAction:(id)arg1 onEvent:(id)arg2;
 - (void)removeInteractionsForCalendar:(id)arg1;

@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)_forEachTieredZoneInRect:(struct CGRect)arg1 forState:(CDStruct_40e84b6d)arg2 performBlock:(CDUnknownBlockType)arg3;
 - (struct NSEdgeInsets)alignmentRectInsetsForState:(CDStruct_40e84b6d)arg1;
 - (struct CGSize)indicatorSizeForState:(CDStruct_40e84b6d)arg1;
-- (BOOL)allowsVibrancyForState:(CDStruct_40e84b6d)arg1;
+- (int)vibrancyBlendModeForState:(CDStruct_40e84b6d)arg1;
 - (void)drawFocusRingMaskInRect:(struct CGRect)arg1 inContext:(id)arg2 forState:(CDStruct_40e84b6d)arg3;
 - (void)layoutSublayersOfLayer:(id)arg1 forState:(CDStruct_40e84b6d)arg2;
 - (void)updateLayer:(id)arg1 forState:(CDStruct_40e84b6d)arg2;

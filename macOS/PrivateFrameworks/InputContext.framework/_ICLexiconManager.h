@@ -8,16 +8,18 @@
 
 #import "_ICLexiconManaging.h"
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, _ICNamedEntityStore;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, _ICNamedEntityStore;
 
 @interface _ICLexiconManager : NSObject <_ICLexiconManaging>
 {
-    NSObject<OS_dispatch_queue> *_lexiconManagerQueue;
-    id <_ICLexiconSourcing> _lexiconSource;
+    NSObject<OS_dispatch_queue> *_serialQueue;
+    struct _opaque_pthread_mutex_t _contactsCallbackLock;
+    struct _opaque_pthread_mutex_t _namedEntityCallbackLock;
+    NSArray *_sources;
     NSMutableDictionary *_contacts;
     NSMutableArray *_contactObservers;
-    _ICNamedEntityStore *_namedEntityStore;
     int _contactChangeCount;
+    _ICNamedEntityStore *_namedEntityStore;
     int _contactLoadState;
     int _namedEntityLoadState;
 }
@@ -29,19 +31,35 @@
 - (int)debugEntityLoadState;
 - (unsigned long long)getContactCount;
 - (void)printLexiconToNSLog:(struct _LXLexicon *)arg1;
-- (void)doLoadLexicon;
-- (void)setContactHandlers:(id)arg1;
-- (void)setNamedEntityHandlers:(id)arg1;
+- (void)hibernate;
+- (void)warmUp;
+- (void)completeRecentContacts;
+- (void)handleRecentContact:(id)arg1;
+- (void)setupRecentContacts;
+- (void)completeContacts;
+- (void)handleContact:(id)arg1;
+- (void)setupContacts;
+- (void)completeRecentNamedEntities;
+- (void)handleRecentNamedEntity:(id)arg1;
+- (void)setupRecentNamedEntities;
+- (void)completeNamedEntities;
+- (void)handleNamedEntity:(id)arg1;
+- (void)setupNamedEntities;
+- (void)resetNamedEntities;
 - (void)removeContact:(id)arg1;
 - (void)addContact:(id)arg1;
 - (void)removeContactObserver:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)addContactObserver:(CDUnknownBlockType)arg1;
 - (void)unloadLexicons;
+- (id)loadLexiconsUsingFilter:(CDUnknownBlockType)arg1;
 - (id)loadLexicons:(CDUnknownBlockType)arg1;
+- (void)backgroundLoadLexiconsUsingFilter:(CDUnknownBlockType)arg1;
 - (void)changeNamedEntityLoadingState:(int)arg1;
 - (void)changeContactLoadingState:(int)arg1;
 - (id)stateName:(int)arg1;
-- (id)initWithLexiconSource:(id)arg1;
+- (void)doLoadLexicon;
+- (void)dealloc;
+- (id)initWithLexiconSources:(id)arg1;
 
 @end
 

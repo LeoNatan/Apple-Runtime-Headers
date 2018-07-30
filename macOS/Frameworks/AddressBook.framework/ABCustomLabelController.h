@@ -8,7 +8,6 @@
 
 @class NSButton, NSPanel, NSTextField, NSView<ABCardCollectionRowView>;
 
-__attribute__((visibility("hidden")))
 @interface ABCustomLabelController : NSObject
 {
     NSPanel *mEditPanel;

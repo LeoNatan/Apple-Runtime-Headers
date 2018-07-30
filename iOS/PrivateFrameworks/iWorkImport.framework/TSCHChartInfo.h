@@ -123,6 +123,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (void)performDeferredUpgradeAndImportOperations;
 @property(readonly, nonatomic) _Bool wantsDeferredUpgradeOrImport;
+- (void)upgradeChartRoundedCornerRadiusWithValue:(double)arg1;
 - (void)upgradeAxisLabelFormatWithValuePrefix:(id)arg1 valueSuffix:(id)arg2 valueUseSeparator:(_Bool)arg3 horizontalPrefix:(id)arg4 horizontalSuffix:(id)arg5 horizontalUseSeparator:(_Bool)arg6;
 - (void)upgradeWithHorizontalMin:(id)arg1 horizontalMax:(id)arg2 valueMin:(id)arg3 valueMax:(id)arg4;
 - (struct CGRect)chartBodyBoundsForSageImportWithSageChartType:(_Bool)arg1 isSpiceDoc:(_Bool)arg2;
@@ -269,6 +270,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSCHChartLayoutCache *sceneAreaLayoutItemCache;
 - (id)clamped3DRotationPropertyObject;
 - (id)pasteboardCustomFormatList;
+- (_Bool)supportsAndHasRoundedCorners;
+- (_Bool)p_containsCalloutLinesWithModelSync:(_Bool)arg1;
 - (_Bool)containsCalloutLines;
 - (_Bool)isSingleCircleSpecialCase;
 - (_Bool)isSingleCircleSpecialCaseOutSeries:(id *)arg1;
@@ -276,6 +279,11 @@ __attribute__((visibility("hidden")))
 - (float)maximumExplosion;
 - (float)radiusForFrame:(struct CGRect)arg1 withMaxExplosion:(float)arg2;
 - (float)minFrameDimensionForRadius:(float)arg1 withMaxExplosion:(float)arg2;
+- (_Bool)p_supportsRoundedCornersWithModelSync:(_Bool)arg1;
+- (_Bool)supportsRoundedCorners;
+- (_Bool)hasRoundedCorners;
+- (_Bool)supportsRoundedCornersWithoutModelSync;
+- (_Bool)containsCalloutLinesWithoutModelSync;
 - (void)loadFromPreUFFArchive:(const struct ChartInfoArchive *)arg1 unarchiver:(id)arg2 persistentChartInfo:(id)arg3;
 - (id)g_operationPropertyNameForGenericProperty:(int)arg1;
 - (id)g_genericToDefaultPropertyMap;

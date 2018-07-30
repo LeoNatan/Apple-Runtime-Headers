@@ -11,12 +11,15 @@ __attribute__((visibility("hidden")))
 {
     struct _CAImageQueue *_caQueue;
     struct OpaqueFigImageQueue *_figQueue;
+    struct _opaque_pthread_mutex_t _enqueueLock;
     unsigned int _slot;
     unsigned int _frameRate;
     BOOL _imageQueueProtected;
+    long long _streamToken;
 }
 
 + (id)drawingContext;
+@property long long streamToken; // @synthesize streamToken=_streamToken;
 @property unsigned int frameRate; // @synthesize frameRate=_frameRate;
 @property BOOL imageQueueProtected;
 - (BOOL)enqueueFrame:(struct __CVBuffer *)arg1 atTime:(CDStruct_1b6d18a9)arg2;

@@ -13,12 +13,12 @@
 @interface NLCoachingProgressEveningUpdateEvent : NSObject <NLCoachingProgressEvent>
 {
     FIActivitySettingsController *_settingsController;
-    unsigned int goalType;
+    int goalType;
 }
 
 + (id)reason;
 + (id)eventIdentifier;
-@property(nonatomic) unsigned int goalType; // @synthesize goalType;
+@property(nonatomic) int goalType; // @synthesize goalType;
 - (void).cxx_destruct;
 - (id)userInfoForCoachingAlertRequestWithModel:(id)arg1;
 - (_Bool)shouldFireWithTypicalDayModel:(id)arg1 evaluationDelegate:(id)arg2;

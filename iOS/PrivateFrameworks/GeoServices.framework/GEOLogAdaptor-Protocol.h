@@ -17,8 +17,6 @@
 
 @optional
 - (void)forceFlushLogs;
-- (void)disableLogMsgInstrumentation;
-- (void)enableLogMsgInstrumentation;
 - (void)updateAdaptorPolicyConfiguration:(NSDictionary *)arg1;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
 - (void)registerLogMsgState:(GEOLogMsgState *)arg1;

@@ -63,7 +63,8 @@
 - (id)geocodeStartDate;
 - (id)firstLocationForType:(unsigned long long)arg1;
 - (void)mergeIntoEKEvent:(id)arg1 withStore:(id)arg2 preservingValuesDifferentFrom:(id)arg3;
-- (void)_applyTimeRangeToEKEvent:(id)arg1;
+- (void)_mergeTagsIntoEKEvent:(id)arg1 withStore:(id)arg2;
+- (void)_applyTimeRangeToEKEvent:(id)arg1 withTZID:(id)arg2;
 - (void)mergeIntoEKEvent:(id)arg1 withStore:(id)arg2;
 - (void)mergeIntoEKEvent:(id)arg1;
 - (id)toEKEventWithStore:(id)arg1;

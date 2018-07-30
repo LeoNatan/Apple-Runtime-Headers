@@ -17,6 +17,8 @@
 + (id)recordIdentifierBestMatchingPayload:(id)arg1 addressBook:(id)arg2;
 + (id)recordIdentifiersForServerUUIDs:(id)arg1 addressBook:(id)arg2;
 + (id)recordIdentifiersGivenPayload:(id)arg1 addressBook:(id)arg2;
++ (id)recordsGivenPayload:(id)arg1 addressBook:(id)arg2;
++ (id)searchQueryGivenPayload:(id)arg1;
 
 @end
 

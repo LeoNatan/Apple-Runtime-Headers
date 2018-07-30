@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
+#import "SearchUIAuxilliaryFieldProtocol.h"
 #import "SearchUIRowModel.h"
 
-@class NSString, SFCardSection, SFSearchResult;
+@class NSString, SFActionItem, SFCard, SFCardSection, SFImage, SFRichText, SFSearchResult;
 
-@interface SearchUICardSectionRowModel : NSObject <SearchUIRowModel>
+@interface SearchUICardSectionRowModel : NSObject <SearchUIAuxilliaryFieldProtocol, SearchUIRowModel>
 {
     SFCardSection *_cardSection;
     SFSearchResult *_identifyingResult;
@@ -36,6 +37,15 @@
 - (id)punchouts;
 - (_Bool)anyInlineCardSectionsHavePunchouts;
 - (id)initWithResult:(id)arg1 cardSection:(id)arg2;
+@property(readonly) SFCard *card;
+@property(readonly) SFImage *thumbnail;
+@property(readonly) SFActionItem *action;
+@property(readonly) int auxiliaryBottomTextColor;
+@property(readonly) NSString *auxiliaryMiddleText;
+@property(readonly) NSString *auxiliaryBottomText;
+@property(readonly) NSString *auxiliaryTopText;
+@property(readonly) SFRichText *title;
+- (id)detailedRowCardSection;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

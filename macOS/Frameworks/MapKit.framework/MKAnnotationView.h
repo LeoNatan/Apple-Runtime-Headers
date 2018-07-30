@@ -8,10 +8,11 @@
 
 #import "MKAnnotationRepresentation.h"
 #import "MKLocatableObject.h"
+#import "_MKKVOProxyDelegate.h"
 
-@class CALayer, GEORouteMatch, MKAnnotationManager, MKCalloutView, MKUserLocationAnnotationViewProxy, NSColor, NSImage, NSMutableArray, NSString, VKAnchorWrapper, _MKAnnotationViewAnchor, _MKAnnotationViewCustomFeatureAnnotation;
+@class CALayer, GEORouteMatch, MKCalloutView, MKUserLocationAnnotationViewProxy, NSColor, NSImage, NSMutableArray, NSString, VKAnchorWrapper, _MKAnnotationViewAnchor, _MKAnnotationViewCustomFeatureAnnotation, _MKKVOProxy;
 
-@interface MKAnnotationView : NSView <MKAnnotationRepresentation, MKLocatableObject>
+@interface MKAnnotationView : NSView <_MKKVOProxyDelegate, MKAnnotationRepresentation, MKLocatableObject>
 {
     struct CLLocationCoordinate2D _presentationCoordinate;
     double _presentationCourse;
@@ -28,13 +29,14 @@
     struct CGPoint _realOffset;
     double _mapPitchRadians;
     CDStruct_51745937 _mapDisplayStyle;
-    CALayer *_imageLayer;
     float _selectionPriority;
-    MKAnnotationManager *_annotationManager;
+    _MKKVOProxy *_annotationObserver;
+    _MKAnnotationViewCustomFeatureAnnotation *_customFeatureAnnotation;
     id <MKAnnotation> _annotation;
     float _displayPriority;
     struct CGRect _collisionFrame;
     NSString *_clusteringIdentifier;
+    NSImage *_image;
     MKCalloutView *_calloutView;
     NSView *_leftCalloutAccessoryView;
     NSView *_rightCalloutAccessoryView;
@@ -42,7 +44,6 @@
     long long _collisionMode;
     NSString *_reuseIdentifier;
     MKAnnotationView *_clusterAnnotationView;
-    NSImage *_image;
     unsigned long long _mapType;
     unsigned long long _zIndex;
     struct CGPoint _centerOffset;
@@ -50,9 +51,8 @@
     struct CGPoint _leftCalloutOffset;
     struct CGPoint _rightCalloutOffset;
     unsigned long long _dragState;
-    CDUnknownBlockType _calloutHitTest;
-    BOOL _pendingSelectionAnimated;
     struct {
+        unsigned int pendingSelectionAnimated:1;
         unsigned int disabled:1;
         unsigned int selected:1;
         unsigned int canShowCallout:1;
@@ -67,10 +67,12 @@
         unsigned int tracking:1;
         unsigned int pendingOffsetAnimation:1;
         unsigned int pendingHideAnimation:1;
+        unsigned int setSelectState:2;
     } _flags;
-    _MKAnnotationViewCustomFeatureAnnotation *_customFeatureAnnotation;
+    CALayer *_imageLayer;
     BOOL _animatingToCoordinate;
     BOOL _tracking;
+    BOOL _pendingSelectionAnimated;
     double _direction;
     NSColor *_leftCalloutAccessoryViewBackgroundColor;
 }
@@ -82,6 +84,7 @@
 + (unsigned long long)_zIndex;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentLocationTitle;
++ (Class)calloutViewClass;
 @property(nonatomic) long long collisionMode; // @synthesize collisionMode=_collisionMode;
 @property(readonly, nonatomic) __weak MKAnnotationView *clusterAnnotationView; // @synthesize clusterAnnotationView=_clusterAnnotationView;
 @property(copy, nonatomic) NSString *clusteringIdentifier; // @synthesize clusteringIdentifier=_clusteringIdentifier;
@@ -99,12 +102,11 @@
 @property(nonatomic) struct CGPoint rightCalloutOffset; // @synthesize rightCalloutOffset=_rightCalloutOffset;
 @property(nonatomic) struct CGPoint leftCalloutOffset; // @synthesize leftCalloutOffset=_leftCalloutOffset;
 @property(readonly, nonatomic, getter=_collisionFrame) struct CGRect collisionFrame; // @synthesize collisionFrame=_collisionFrame;
-@property(copy, nonatomic) CDUnknownBlockType _calloutHitTest; // @synthesize _calloutHitTest;
+@property(retain, nonatomic, getter=_calloutView, setter=_setCalloutView:) MKCalloutView *_calloutView; // @synthesize _calloutView;
 @property(nonatomic, getter=_isTracking, setter=_setTracking:) BOOL _tracking; // @synthesize _tracking;
 @property(nonatomic, getter=_isAnimatingToCoordinate, setter=_setAnimatingToCoordinate:) BOOL _animatingToCoordinate; // @synthesize _animatingToCoordinate;
 @property(nonatomic, setter=_setPresentationCourse:) double _presentationCourse; // @synthesize _presentationCourse;
 @property(copy, nonatomic, setter=_setPresentationCoordinateChangedCallback:) CDUnknownBlockType _presentationCoordinateChangedCallback; // @synthesize _presentationCoordinateChangedCallback;
-@property(nonatomic, setter=_setAnnotationManager:) __weak MKAnnotationManager *_annotationManager; // @synthesize _annotationManager;
 @property(nonatomic, setter=_setDirection:) double _direction; // @synthesize _direction;
 - (void).cxx_destruct;
 - (struct NSEdgeInsets)alignmentRectInsets;
@@ -116,22 +118,17 @@
 - (id)accessibilityActionDescription:(id)arg1;
 - (BOOL)accessibilityIsIgnored;
 @property struct CGPoint center;
-@property(readonly, nonatomic, getter=_balloonContentView) NSView *balloonContentView;
-@property(readonly, nonatomic, getter=_balloonImage) NSImage *balloonImage;
-@property(readonly, nonatomic, getter=_balloonInnerStrokeColor) NSColor *balloonInnerStrokeColor;
-@property(readonly, nonatomic, getter=_balloonStrokeColor) NSColor *balloonStrokeColor;
-@property(readonly, nonatomic, getter=_balloonTintColor) NSColor *balloonTintColor;
+- (void)_mkObserveValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_removeAnnotationObservation;
+- (void)_addAnnotationObservation;
 - (id)_customFeatureAnnotation;
-- (void)_didHideBalloonCalloutView:(id)arg1;
-- (void)_addBalloonCalloutView:(id)arg1;
-- (BOOL)_balloonCalloutShouldOriginateFromSmallSize:(double *)arg1;
-@property(readonly, nonatomic, getter=_balloonCalloutStyle) long long balloonCalloutStyle;
 @property(nonatomic, getter=_useBalloonCallouts, setter=_setUseBalloonCallouts:) BOOL useBalloonCallouts;
 - (void)_didUpdatePosition;
 - (void)_updateFromMap;
 - (double)_pointsForDistance:(double)arg1;
 - (id)_vkNavigationPuckMarker;
 - (void)_setVKNavigationPuckMarker:(id)arg1;
+- (id)_mapView;
 - (id)_containerView;
 - (BOOL)_canChangeOrientation;
 - (unsigned long long)_orientationCount;
@@ -186,14 +183,18 @@
 - (void)_didDragWithVelocity:(struct CGPoint)arg1;
 - (struct CGPoint)_draggingDropOffset;
 @property(nonatomic) BOOL canShowCallout;
+- (BOOL)updateCalloutViewIfNeededAnimated:(BOOL)arg1;
+- (BOOL)_shouldShowCalloutIfSelected;
+- (void)_setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 @property(nonatomic, getter=isSelected) BOOL selected;
 @property(retain, nonatomic) NSImage *image;
+- (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
+- (void)_updateImageLayer;
+- (void)updateLayer;
 - (id)_contentLayer;
 - (id)menuForEvent:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
-- (void)_setCalloutView:(id)arg1;
-- (id)_calloutView;
 @property(retain, nonatomic) id <MKAnnotation> annotation;
 - (void)_unhideForDisplay;
 - (void)prepareForDisplay;
@@ -203,7 +204,7 @@
 - (void)dealloc;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (void)commonInit;
+- (void)_commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (void)layout;
@@ -211,6 +212,8 @@
 - (long long)compareForClustering:(id)arg1;
 - (void)setClusterAnnotationView:(id)arg1;
 - (void)_updateAnchorPosition:(struct CGPoint)arg1 alignToPixels:(BOOL)arg2;
+- (BOOL)isSelectable;
+- (BOOL)shouldShowCallout;
 - (void)configureCustomFeature:(id)arg1;
 - (void)invalidateCustomFeatureForced:(BOOL)arg1;
 - (BOOL)isProvidingCustomFeature;

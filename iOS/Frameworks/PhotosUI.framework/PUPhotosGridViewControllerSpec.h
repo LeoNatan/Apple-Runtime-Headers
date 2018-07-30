@@ -14,22 +14,20 @@
     _Bool _canDisplaySlideshowButton;
     _Bool _canDisplayEditActionsInNavigationBar;
     _Bool _usesStackPopTransition;
-    double _maxSearchBarWidth;
     PUPhotosPickerViewControllerSpec *_photosPickerViewControllerSpec;
     PUAlbumPickerViewControllerSpec *_albumPickerViewControllerSpec;
-    long long _layoutVariant;
+    long long _sizeSubclass;
     struct CGSize _baseInterItemSpacing;
     struct UIEdgeInsets _safeAreaInsets;
     struct UIEdgeInsets _layoutMargins;
 }
 
+@property(readonly, nonatomic) long long sizeSubclass; // @synthesize sizeSubclass=_sizeSubclass;
 @property(readonly, nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
-@property(readonly, nonatomic) long long layoutVariant; // @synthesize layoutVariant=_layoutVariant;
 @property(readonly, nonatomic) PUAlbumPickerViewControllerSpec *albumPickerViewControllerSpec; // @synthesize albumPickerViewControllerSpec=_albumPickerViewControllerSpec;
 @property(readonly, nonatomic) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec; // @synthesize photosPickerViewControllerSpec=_photosPickerViewControllerSpec;
 @property(readonly, nonatomic) _Bool usesStackPopTransition; // @synthesize usesStackPopTransition=_usesStackPopTransition;
-@property(readonly, nonatomic) double maxSearchBarWidth; // @synthesize maxSearchBarWidth=_maxSearchBarWidth;
 @property(readonly, nonatomic) _Bool canDisplayEditActionsInNavigationBar; // @synthesize canDisplayEditActionsInNavigationBar=_canDisplayEditActionsInNavigationBar;
 @property(readonly, nonatomic) _Bool canDisplaySlideshowButton; // @synthesize canDisplaySlideshowButton=_canDisplaySlideshowButton;
 @property(readonly, nonatomic) _Bool canDisplayOptionsInPopover; // @synthesize canDisplayOptionsInPopover=_canDisplayOptionsInPopover;
@@ -44,7 +42,6 @@
 @property(readonly, nonatomic) _Bool wantsBackButtonTitleForPhotoBrowser;
 @property(readonly, nonatomic) _Bool displaysAvalancheStacks;
 @property(readonly, nonatomic) _Bool canCommitPreview;
-@property(readonly, nonatomic) _Bool canDisplaySearchActionInNavigationBar;
 @property(readonly, nonatomic) _Bool shouldPlaceDeleteInCenterToolbarPosition;
 @property(readonly, nonatomic) _Bool shouldPlaceSelectAllButtonInRightNavigationBar;
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;

@@ -10,28 +10,27 @@
 {
 }
 
-+ (_Bool)_accessibilityServerStarted;
-+ (void)_accessibilityStopServer;
-+ (_Bool)_accessibilityUIKitBundleLoaded;
-+ (void)_accessibilityReenabled;
-+ (void)_accessibilityLoadExtendedBundles;
-+ (void)_accessibilityStartMiniServer;
-+ (void)_accessibilityStartServer;
-+ (void)_accessibilityInitializeRuntimeOverrides;
-+ (void)_stringLocalizationStarted:(id)arg1;
-+ (void)_accessibilityInitializeSubclassRuntimeOverrides;
-+ (void)_accessibilityLoadSubbundles:(id)arg1;
-+ (void)__loadActualAccessibilityBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 loadSubbundles:(_Bool)arg3;
-+ (id)_axBundleForBundle:(id)arg1;
-+ (id)_accessibilityBundlesForBundle:(id)arg1;
-+ (_Bool)_accessibilityShouldSortBundlesBeforeLoading;
-+ (long long)_accessibilityLoadingPriorityForBundle:(id)arg1;
-+ (void)_loadAXBundleForBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2;
-+ (void)_loadAXBundleForBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 forceLoad:(_Bool)arg3 loadSubbundles:(_Bool)arg4 loadAllAccessibilityInfo:(_Bool)arg5;
++ (void)loadActualAccessibilityBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 loadSubbundles:(_Bool)arg3;
 + (void)loadAccessibilityBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 force:(_Bool)arg3 loadAllAccessibilityInfo:(_Bool)arg4;
 + (void)loadAccessibilityBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2;
-+ (void)loadActualAccessibilityBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 loadSubbundles:(_Bool)arg3;
-+ (void)initialize;
++ (void)_stringLocalizationStarted:(id)arg1;
++ (void)_didLoadPreboardAccessibilityBundle;
++ (void)_didLoadSystemAppAccessibilityBundle;
++ (id)_accessibilityBundlesForBundle:(id)arg1;
++ (void)loadAccessibilityBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 loadSubbundles:(_Bool)arg3;
++ (void)loadAccessibilityBundleForBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 forceLoad:(_Bool)arg3 loadSubbundles:(_Bool)arg4 loadAllAccessibilityInfo:(_Bool)arg5;
++ (void)loadAccessibilityBundleForBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2 force:(_Bool)arg3 loadAllAccessibilityInfo:(_Bool)arg4;
++ (void)loadAccessibilityBundleForBundle:(id)arg1 didLoadCallback:(CDUnknownBlockType)arg2;
++ (void)_accessibilityInitializeSubclassRuntimeOverrides;
++ (void)_accessibilityInitializeRuntimeOverrides;
++ (_Bool)_accessibilityStringLocalizationCategoriesLoaded;
++ (_Bool)_accessibilityUIKitBundleLoaded;
++ (_Bool)_accessibilityServerStarted;
++ (void)_accessibilityStopServer;
++ (void)_accessibilityReenabled;
++ (void)_accessibilityStartMiniServer;
++ (void)_accessibilityStartServer;
++ (void)_performInitialAccessibilityBundleLoad:(_Bool)arg1 monitorForFutureLoadEvents:(_Bool)arg2 trackingMode:(long long)arg3;
 
 @end
 

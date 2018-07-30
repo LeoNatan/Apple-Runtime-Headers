@@ -47,10 +47,18 @@
     NSNumber *_connectionStartTimeToConnectionEstablishmentTimeMsec;
     NSNumber *_tlsHandshakeTimeMsec;
     NSNumber *_connectionStartTimeToTLSHandshakeTimeMsec;
+    NSNumber *_idsLastMessageDelay;
+    NSNumber *_idsLastSocketDelay;
+    NSNumber *_idsLastSocketOpenError;
     NSString *_tlsVersion;
+    NSNumber *_simSubscriptions;
 }
 
+@property(copy, nonatomic) NSNumber *simSubscriptions; // @synthesize simSubscriptions=_simSubscriptions;
 @property(copy, nonatomic) NSString *tlsVersion; // @synthesize tlsVersion=_tlsVersion;
+@property(copy, nonatomic) NSNumber *idsLastSocketOpenError; // @synthesize idsLastSocketOpenError=_idsLastSocketOpenError;
+@property(copy, nonatomic) NSNumber *idsLastSocketDelay; // @synthesize idsLastSocketDelay=_idsLastSocketDelay;
+@property(copy, nonatomic) NSNumber *idsLastMessageDelay; // @synthesize idsLastMessageDelay=_idsLastMessageDelay;
 @property(copy, nonatomic) NSNumber *connectionStartTimeToTLSHandshakeTimeMsec; // @synthesize connectionStartTimeToTLSHandshakeTimeMsec=_connectionStartTimeToTLSHandshakeTimeMsec;
 @property(copy, nonatomic) NSNumber *tlsHandshakeTimeMsec; // @synthesize tlsHandshakeTimeMsec=_tlsHandshakeTimeMsec;
 @property(copy, nonatomic) NSNumber *connectionStartTimeToConnectionEstablishmentTimeMsec; // @synthesize connectionStartTimeToConnectionEstablishmentTimeMsec=_connectionStartTimeToConnectionEstablishmentTimeMsec;
@@ -90,6 +98,7 @@
 @property(copy, nonatomic) NSNumber *timeUntilOpen; // @synthesize timeUntilOpen=_timeUntilOpen;
 - (void).cxx_destruct;
 - (id)getConnectionMetricsDescription;
+- (void)setConnectionMetricsForIDS:(double)arg1 messageDelay:(double)arg2 openErrorCode:(unsigned long long)arg3;
 - (void)setConnectionMetricsFromNWConnectionForPOP:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setConnectionMetricsFromNWConnectionForDirect:(id)arg1 isMPTCP:(_Bool)arg2 attemptedEndpoints:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)setConnectionMetricsFromConnection:(id)arg1 isPop:(_Bool)arg2 isMPTCP:(_Bool)arg3 attemptedEndpoints:(id)arg4 completion:(CDUnknownBlockType)arg5;

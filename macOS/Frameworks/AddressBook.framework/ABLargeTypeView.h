@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABLargeTypeView : NSView
 {
     struct CGRect _windowRect;

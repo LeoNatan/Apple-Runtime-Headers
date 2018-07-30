@@ -15,6 +15,7 @@
     unsigned long long _highlightMode;
 }
 
++ (struct CGSize)imageSize;
 @property(nonatomic) unsigned long long highlightMode; // @synthesize highlightMode=_highlightMode;
 @property(copy, nonatomic) CLKTextProvider *line2TextProvider; // @synthesize line2TextProvider=_line2TextProvider;
 @property(copy, nonatomic) CLKImageProvider *line1ImageProvider; // @synthesize line1ImageProvider=_line1ImageProvider;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AVInteractiveTransitionGestureTracker;
+@class AVInteractiveTransitionGestureTracker, UIGestureRecognizer, UITouch;
 
 @protocol AVInteractiveTransitionGestureTrackerDelegate <NSObject>
 - (void)gestureTrackerDidFinishTracking:(AVInteractiveTransitionGestureTracker *)arg1;
@@ -16,5 +16,6 @@
 - (_Bool)gestureTrackerShouldTrackPanToDismiss:(AVInteractiveTransitionGestureTracker *)arg1;
 - (_Bool)gestureTrackerShouldTrackPinchToDismiss:(AVInteractiveTransitionGestureTracker *)arg1;
 - (_Bool)gestureTrackerShouldTrackPinchToPresent:(AVInteractiveTransitionGestureTracker *)arg1;
+- (_Bool)gestureTracker:(AVInteractiveTransitionGestureTracker *)arg1 gestureRecognizer:(UIGestureRecognizer *)arg2 shouldReceiveTouch:(UITouch *)arg3;
 @end
 

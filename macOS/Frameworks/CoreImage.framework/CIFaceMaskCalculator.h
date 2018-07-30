@@ -29,10 +29,12 @@ __attribute__((visibility("hidden")))
     NSNumber *inputFacesEyeToEyebrowRatio;
     NSNumber *inputFacesDistToBlurScaling;
     NSNumber *inputFacesGainMultip;
+    NSNumber *inputApertureScaling;
     NSDictionary *inputTuningParameters;
 }
 
 @property(retain, nonatomic) NSDictionary *inputTuningParameters; // @synthesize inputTuningParameters;
+@property(copy, nonatomic) NSNumber *inputApertureScaling; // @synthesize inputApertureScaling;
 @property(copy, nonatomic) NSNumber *inputFacesGainMultip; // @synthesize inputFacesGainMultip;
 @property(copy, nonatomic) NSNumber *inputFacesDistToBlurScaling; // @synthesize inputFacesDistToBlurScaling;
 @property(copy, nonatomic) NSNumber *inputFacesEyeToEyebrowRatio; // @synthesize inputFacesEyeToEyebrowRatio;

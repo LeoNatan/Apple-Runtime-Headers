@@ -9,7 +9,6 @@
 #import "NSCoding.h"
 #import "NSCopying.h"
 
-__attribute__((visibility("hidden")))
 @interface OITSUBezierPath : NSObject <NSCopying, NSCoding>
 {
     long long sfr_elementCount;
@@ -85,7 +84,8 @@ __attribute__((visibility("hidden")))
 - (void)appendBezierPathWithPoints:(struct CGPoint *)arg1 count:(long long)arg2;
 - (void)appendBezierPathWithRect:(struct CGRect)arg1;
 - (void)appendBezierPath:(id)arg1;
-- (void)_appendToPath:(id)arg1;
+- (void)appendBezierPath:(id)arg1 skippingInitialMoveIfPossible:(BOOL)arg2;
+- (void)_appendToPath:(id)arg1 skippingInitialMoveIfPossible:(BOOL)arg2;
 - (void)setAssociatedPoints:(struct CGPoint *)arg1 atIndex:(long long)arg2;
 - (long long)elementAtIndex:(long long)arg1 allPoints:(struct CGPoint *)arg2;
 - (long long)elementAtIndex:(long long)arg1 associatedPoints:(struct CGPoint *)arg2;
@@ -108,7 +108,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)isTriangular;
 - (struct CGPath *)CGPath;
 - (void)transformUsingAffineTransform:(struct CGAffineTransform)arg1;
+- (id)p_bezierPathByRemovingRedundantElementAndSubregionsSmallerThanThreshold:(double)arg1;
 - (id)bezierPathByRemovingRedundantElements;
+- (id)bezierPathByRemovingSmallSubpathsForInteriorWrapsForInset:(double)arg1;
 - (id)bezierPathByReversingPath;
 - (id)_copyFlattenedPath;
 - (id)bezierPathByFlatteningPathWithFlatness:(double)arg1;

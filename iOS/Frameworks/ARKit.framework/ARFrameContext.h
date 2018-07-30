@@ -8,7 +8,7 @@
 
 #import "ARResultDataContext.h"
 
-@class ARImageData, NSMutableArray, NSString;
+@class ARImageData, ARWorldMap, NSMutableArray, NSString;
 
 @interface ARFrameContext : NSObject <ARResultDataContext>
 {
@@ -22,6 +22,7 @@
     _Bool _shouldRemoveExistingAnchors;
     ARImageData *_imageData;
     long long _worldAlignment;
+    ARWorldMap *_worldMap;
     unsigned long long _frameDebugOptions;
     // Error parsing type: {?="columns"[4]}, name: _relocalizationDeltaTransform
     // Error parsing type: {?="columns"[4]}, name: _sessionTransform
@@ -40,6 +41,7 @@
 
 @property(nonatomic) _Bool didRelocalize; // @synthesize didRelocalize=_didRelocalize;
 @property(nonatomic) unsigned long long frameDebugOptions; // @synthesize frameDebugOptions=_frameDebugOptions;
+@property(retain, nonatomic) ARWorldMap *worldMap; // @synthesize worldMap=_worldMap;
 @property(nonatomic) long long worldAlignment; // @synthesize worldAlignment=_worldAlignment;
 @property(retain, nonatomic) ARImageData *imageData; // @synthesize imageData=_imageData;
 - (void).cxx_destruct;

@@ -8,6 +8,7 @@
 
 @class NSView, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface _NSFocusStackElement : NSObject
 {
     NSView *_view;

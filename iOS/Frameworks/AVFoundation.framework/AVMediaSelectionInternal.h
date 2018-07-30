@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSArray, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AVMediaSelectionInternal : NSObject
 {
     AVWeakReference *assetWeakReference;

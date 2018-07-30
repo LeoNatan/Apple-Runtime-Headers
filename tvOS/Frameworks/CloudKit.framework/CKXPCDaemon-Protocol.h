@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
-@class CKAcceptSharesOperationInfo, CKAggregateZonePCSOperationInfo, CKArchiveRecordsOperationInfo, CKCodeFunctionInvokeOperationInfo, CKCompleteParticipantVettingOperationInfo, CKContainerSetupInfo, CKDPResponseOperationResult, CKDatabaseOperationInfo, CKDiscoverUserIdentitiesOperationInfo, CKFetchArchivedRecordsOperationInfo, CKFetchDatabaseChangesOperationInfo, CKFetchNotificationChangesOperationInfo, CKFetchRecordVersionsOperationInfo, CKFetchRecordZoneChangesOperationInfo, CKFetchRecordZonesOperationInfo, CKFetchRecordsOperationInfo, CKFetchShareMetadataOperationInfo, CKFetchShareParticipantKeyOperationInfo, CKFetchShareParticipantsOperationInfo, CKFetchSubscriptionsOperationInfo, CKFetchWebAuthTokenOperationInfo, CKInitiateParticipantVettingOperationInfo, CKMarkNotificationsReadOperationInfo, CKModifyBadgeOperationInfo, CKModifyRecordAccessOperationInfo, CKModifyRecordZonesOperationInfo, CKModifyRecordsOperationInfo, CKModifySubscriptionsOperationInfo, CKModifyWebSharingOperationInfo, CKOperationInfo, CKPublishAssetsOperationInfo, CKQueryOperationInfo, CKRecordID, CKRecordZoneID, CKRepairZonePCSOperationInfo, CKShare, NSArray, NSError, NSFileHandle, NSString;
+@class CKAcceptSharesOperationInfo, CKAggregateZonePCSOperationInfo, CKArchiveRecordsOperationInfo, CKCodeFunctionInvokeOperationInfo, CKCompleteParticipantVettingOperationInfo, CKContainerSetupInfo, CKDPResponseOperationResult, CKDatabaseOperationInfo, CKDiscoverUserIdentitiesOperationInfo, CKEventMetricInfo, CKFetchArchivedRecordsOperationInfo, CKFetchDatabaseChangesOperationInfo, CKFetchNotificationChangesOperationInfo, CKFetchRecordVersionsOperationInfo, CKFetchRecordZoneChangesOperationInfo, CKFetchRecordZonesOperationInfo, CKFetchRecordsOperationInfo, CKFetchShareMetadataOperationInfo, CKFetchShareParticipantKeyOperationInfo, CKFetchShareParticipantsOperationInfo, CKFetchSubscriptionsOperationInfo, CKFetchWebAuthTokenOperationInfo, CKInitiateParticipantVettingOperationInfo, CKMarkNotificationsReadOperationInfo, CKModifyBadgeOperationInfo, CKModifyRecordAccessOperationInfo, CKModifyRecordZonesOperationInfo, CKModifyRecordsOperationInfo, CKModifySubscriptionsOperationInfo, CKModifyWebSharingOperationInfo, CKOperationInfo, CKPublishAssetsOperationInfo, CKQueryOperationInfo, CKRecordID, CKRecordZoneID, CKRepairZonePCSOperationInfo, CKShare, NSArray, NSError, NSFileHandle, NSString;
 
 @protocol CKXPCDaemon <NSObject>
 - (void)tossConfigWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)repairZonePCSWithOperationInfo:(CKRepairZonePCSOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)getRecordPCSDiagnosticsForZonesWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSArray *))arg2;
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(CKPCSDiagnosticInformation *))arg2;
+- (void)submitClientEventMetric:(CKEventMetricInfo *)arg1 withSetupInfo:(CKContainerSetupInfo *)arg2;
 - (void)triggerAutoBugCaptureSnapshot;
 - (void)flushOperationMetricsToPowerLog;
 - (void)dataclassEnabled:(NSString *)arg1 withSetupInfo:(CKContainerSetupInfo *)arg2 completionHandler:(void (^)(NSString *, _Bool, NSError *))arg3;
@@ -28,6 +29,7 @@
 - (void)accountsDidRevokeAccessToBundleID:(NSString *)arg1 containerIdentifiers:(NSArray *)arg2;
 - (void)accountsDidGrantAccessToBundleID:(NSString *)arg1 containerIdentifiers:(NSArray *)arg2;
 - (void)getBehaviorOptionForKey:(NSString *)arg1 isContainerOption:(_Bool)arg2 completionHandler:(void (^)(id))arg3;
+- (void)clearPCSCachesForKnownContextsWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)wipeAllCachedLongLivedProxiesWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)clearCachesForZoneWithSetupInfo:(CKContainerSetupInfo *)arg1 zoneID:(CKRecordZoneID *)arg2 databaseScope:(long long)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)clearCachesForRecordWithSetupInfo:(CKContainerSetupInfo *)arg1 recordID:(CKRecordID *)arg2 databaseScope:(long long)arg3 completionHandler:(void (^)(NSError *))arg4;

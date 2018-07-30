@@ -8,7 +8,6 @@
 
 @class NSMutableString, WDCharacterProperties, WDDocument, WDOfficeArt, WDParagraphProperties;
 
-__attribute__((visibility("hidden")))
 @interface WDListLevel : NSObject
 {
     WDDocument *mDocument;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
     int mJustification;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)characterProperties;
 - (id)paragraphProperties;
@@ -65,7 +65,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)startNumberOverridden;
 - (void)setStartNumber:(long long)arg1;
 - (long long)startNumber;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 
 @end

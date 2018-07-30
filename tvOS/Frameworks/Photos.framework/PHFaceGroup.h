@@ -21,7 +21,7 @@
 + (id)fetchFaceGroupsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchFaceGroupsWithOptions:(id)arg1;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 + (id)fetchType;
 + (id)managedEntityName;

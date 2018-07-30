@@ -13,25 +13,29 @@
     NTSStopwatchModel *_stopwatchModel;
 }
 
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) NTSStopwatchModel *stopwatchModel; // @synthesize stopwatchModel=_stopwatchModel;
 - (void).cxx_destruct;
 - (void)_handleStopwatchChange:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;
+- (id)_zeroEntry;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
 - (void)resume;
 - (void)pause;
-- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)becomeInactive;
+- (void)becomeActive;
 - (id)_currentTimelineEntry;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (id)currentSwitcherTemplate;
+- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 @end
 

@@ -9,6 +9,7 @@
 @class NNMKAccount, NNMKMailboxSelection, NNMKMessage, NSArray, NSDictionary, NSError, NSString;
 
 @protocol NNMKNanoMailServiceXPCBasicClientInterface <NSObject>
+- (oneway void)receiverXPCServerDidReceiveMessage:(NNMKMessage *)arg1 replacingPreviousMessageWithId:(NSString *)arg2;
 - (oneway void)receiverXPCServerConnectivityDidChange:(_Bool)arg1;
 - (oneway void)receiverXPCServerDidRequestReloadCache;
 - (oneway void)receiverXPCServerDidDeleteAllMessages;
@@ -24,8 +25,9 @@
 - (oneway void)receiverXPCServerDidReplyWithComposedMessageIds:(NSDictionary *)arg1 progress:(NSDictionary *)arg2;
 - (oneway void)receiverXPCServerDidReplyWithAccounts:(NSArray *)arg1 error:(NSError *)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMailboxSelection:(NNMKMailboxSelection *)arg1;
+- (oneway void)receiverXPCServerDidFailSyncingAttachment:(NSString *)arg1 messageId:(NSString *)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMessageContentLoadFailedForMessageWithId:(NSString *)arg1;
 - (oneway void)receiverXPCServerDidReplyWithMessage:(NNMKMessage *)arg1;
-- (oneway void)receiverXPCServerDidReplyWithConversationOperations:(NSArray *)arg1 totalConversationsCount:(unsigned int)arg2 willFetch:(_Bool)arg3 error:(NSError *)arg4 reloadCache:(_Bool)arg5;
+- (oneway void)receiverXPCServerDidReplyWithConversationOperations:(NSArray *)arg1 totalConversationsCount:(unsigned int)arg2 willFetch:(_Bool)arg3 error:(NSError *)arg4 reloadCache:(_Bool)arg5 lastUpdateByMailboxId:(NSDictionary *)arg6;
 @end
 

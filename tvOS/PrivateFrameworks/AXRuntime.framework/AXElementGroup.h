@@ -35,7 +35,7 @@
 @property(nonatomic, getter=isRootGroup) _Bool rootGroup; // @synthesize rootGroup=_rootGroup;
 @property(nonatomic) unsigned long long userDefinedScanningBehaviorTraits; // @synthesize userDefinedScanningBehaviorTraits=_userDefinedScanningBehaviorTraits;
 @property(nonatomic) unsigned long long groupTraits; // @synthesize groupTraits=_groupTraits;
-@property(nonatomic) id <AXElementGroupGenerator> generator; // @synthesize generator=_generator;
+@property(nonatomic) __weak id <AXElementGroupGenerator> generator; // @synthesize generator=_generator;
 - (void).cxx_destruct;
 - (id)_debugFullDescriptionWithIndent:(id)arg1;
 - (id)debugFullDescription;

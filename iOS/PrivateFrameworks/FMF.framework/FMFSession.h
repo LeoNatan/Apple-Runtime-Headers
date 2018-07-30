@@ -23,13 +23,16 @@
     NSMutableDictionary *_cachedOfferExpirationForHandleByHandle;
     NSMutableDictionary *_cachedCanShareLocationWithHandleByHandle;
     NSObject<OS_dispatch_queue> *_connectionQueue;
+    NSObject<OS_dispatch_queue> *_handlesQueue;
 }
 
++ (_Bool)isAnyAccountManaged;
 + (_Bool)isProvisionedForLocationSharing;
 + (_Bool)FMFRestricted;
 + (_Bool)FMFAllowed;
 + (id)sharedInstance;
 @property(nonatomic) _Bool isModelInitialized; // @synthesize isModelInitialized=_isModelInitialized;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlesQueue; // @synthesize handlesQueue=_handlesQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain, nonatomic) NSMutableDictionary *cachedCanShareLocationWithHandleByHandle; // @synthesize cachedCanShareLocationWithHandleByHandle=_cachedCanShareLocationWithHandleByHandle;
 @property(retain, nonatomic) NSMutableDictionary *cachedOfferExpirationForHandleByHandle; // @synthesize cachedOfferExpirationForHandleByHandle=_cachedOfferExpirationForHandleByHandle;
@@ -49,6 +52,7 @@
 @property(copy, nonatomic) NSSet *handles;
 - (oneway void)modelDidLoad;
 - (oneway void)networkReachabilityUpdated:(_Bool)arg1;
+- (oneway void)didUpdateFences:(id)arg1;
 - (oneway void)didUpdateLocations:(id)arg1;
 - (oneway void)didUpdateFollowing:(id)arg1;
 - (oneway void)didUpdateFollowers:(id)arg1;
@@ -84,6 +88,8 @@
 - (void)_daemonDidLaunch;
 - (id)internalConnection;
 - (void)includeDeviceInAutomations:(CDUnknownBlockType)arg1;
+- (void)showShareMyLocationRestrictedAlert;
+- (void)showShareMyLocationiCloudSettingsOffAlert;
 - (void)getDataForPerformanceRequest:(CDUnknownBlockType)arg1;
 - (void)sessionHandleReport:(CDUnknownBlockType)arg1;
 - (void)dumpStateWithCompletion:(CDUnknownBlockType)arg1;
@@ -95,7 +101,7 @@
 - (_Bool)is5XXError:(id)arg1;
 - (void)setExpiredInitTimestamp;
 - (id)verifyRestrictionsAndShowDialogIfRequired;
-- (void)getAbRecordIdForHandle:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getRecordIdForHandle:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getPrettyNameForHandle:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getAllDevices:(CDUnknownBlockType)arg1;
@@ -128,6 +134,9 @@
 - (void)nearbyLocationsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)favoritesForMaxCount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getAllLocations:(CDUnknownBlockType)arg1;
+- (void)removeFavorite:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)addFavorite:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getFavoritesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getPendingFriendshipRequestsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopSharingMyLocationWithHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)stopSharingMyLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -141,6 +150,10 @@
 - (void)_sendAutoSwitchMeDevice;
 - (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)_isNoMappingPacketReturnedError:(id)arg1;
+- (void)fencesForHandles:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getFences:(CDUnknownBlockType)arg1;
+- (void)deleteFence:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)addFence:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadDataIfNotLoaded;
 - (id)getOfferExpirationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (id)cachedLocationForHandle:(id)arg1;

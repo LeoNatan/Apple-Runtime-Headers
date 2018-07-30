@@ -8,6 +8,7 @@
 
 @class AVAsynchronousVideoCompositionRequest, CIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVAsynchronousCIImageFilteringRequestInternal : NSObject
 {
     AVAsynchronousVideoCompositionRequest *_compositingRequest;

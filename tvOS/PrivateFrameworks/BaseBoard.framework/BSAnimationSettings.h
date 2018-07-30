@@ -27,6 +27,7 @@
 + (id)settingsWithDuration:(double)arg1 delay:(double)arg2;
 + (id)settingsWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (id)settingsWithDuration:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -38,7 +39,7 @@
 - (_Bool)isSpringAnimation;
 @property(readonly, nonatomic) float speed;
 @property(readonly, nonatomic) double frameInterval;
-@property(readonly, retain, nonatomic) CAMediaTimingFunction *timingFunction;
+@property(readonly, nonatomic) CAMediaTimingFunction *timingFunction;
 @property(readonly, nonatomic) double delay;
 @property(readonly, nonatomic) double duration;
 - (void)encodeWithXPCDictionary:(id)arg1;
@@ -48,7 +49,6 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)applyToCAAnimation:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)_initWithDuration:(double)arg1 delay:(double)arg2 frameInterval:(double)arg3 timingFunction:(id)arg4 speed:(float)arg5;
 

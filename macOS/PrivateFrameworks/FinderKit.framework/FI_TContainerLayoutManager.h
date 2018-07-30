@@ -11,13 +11,12 @@
 __attribute__((visibility("hidden")))
 @interface FI_TContainerLayoutManager : NSObject
 {
-    struct TNSRef<NSLayoutGuide *, void> _topStatusBarLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _searchSliceLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _bannerLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _pathBarLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _bottomStatusBarLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _browserViewContentInsetsLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _sidebarViewContentInsetsLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _searchSliceLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _bannerLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _pathBarLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _bottomStatusBarLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _browserScrollViewVerticalContentInsetsLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _sidebarScrollViewVerticalContentInsetsLayoutGuide;
     struct NSEdgeInsets _browserViewContentInsets;
     struct NSEdgeInsets _sidebarViewContentInsets;
     NSView *_contentView;
@@ -32,15 +31,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool opaqueToolbar; // @synthesize opaqueToolbar=_opaqueToolbar;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)sidebarViewContentInsetsLayoutGuide;
-- (id)browserViewContentInsetsLayoutGuide;
+- (id)sidebarScrollViewVerticalContentInsetsLayoutGuide;
+- (id)browserScrollViewVerticalContentInsetsLayoutGuide;
 - (id)bottomStatusBarLayoutGuide;
 - (id)pathBarLayoutGuide;
 - (id)bannerLayoutGuide;
 - (id)searchSliceLayoutGuide;
-- (id)topStatusBarLayoutGuide;
 - (struct NSEdgeInsets)contentInsetsWithInnerRect:(struct CGRect)arg1;
-- (id)newLayoutGuideWithTopAnchor:(id)arg1 bottomAnchor:(id)arg2 identifier:(id)arg3 outputDictionary:(id)arg4;
+- (id)newLayoutGuideWithTopAnchor:(id)arg1 bottomAnchor:(id)arg2 identifier:(id)arg3 outConstraints:(id)arg4;
 - (void)dealloc;
 - (void)updateBrowserViewContentInsets;
 - (void)updateSidebarViewContentInsets;

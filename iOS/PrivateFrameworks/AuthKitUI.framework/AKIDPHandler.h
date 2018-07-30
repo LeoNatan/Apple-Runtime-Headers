@@ -27,8 +27,8 @@
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (id)_samlJavaScriptQuery;
-- (id)_safePayloadFromResult:(id)arg1;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
+- (id)_safeAcsDictionaryFromResult:(id)arg1;
 - (void)webView:(id)arg1 didStartProvisionalNavigation:(id)arg2;
 - (void)cancel;
 - (id)initWithConfiguration:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

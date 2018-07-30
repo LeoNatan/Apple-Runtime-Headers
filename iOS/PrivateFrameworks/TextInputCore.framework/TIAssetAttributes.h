@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) NSDictionary *region; // @synthesize region=_region;
 @property(readonly, nonatomic) NSString *inputModeLevel; // @synthesize inputModeLevel=_inputModeLevel;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
+- (void).cxx_destruct;
 - (_Bool)containMatchingAttributes:(id)arg1;
 - (_Bool)containMatchingRegionIn:(id)arg1 shouldLenientlyMatchRegion:(CDUnknownBlockType)arg2;
 - (_Bool)containMatchingInputModeLevelIn:(id)arg1;
@@ -35,7 +36,6 @@
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithType:(id)arg1 inputModeLevel:(id)arg2 region:(id)arg3;
 
 @end

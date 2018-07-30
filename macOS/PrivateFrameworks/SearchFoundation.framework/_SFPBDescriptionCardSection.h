@@ -13,19 +13,6 @@
 
 @interface _SFPBDescriptionCardSection : PBCodable <_SFPBDescriptionCardSection, NSSecureCoding>
 {
-    struct {
-        unsigned int canBeHidden:1;
-        unsigned int hasTopPadding:1;
-        unsigned int hasBottomPadding:1;
-        unsigned int separatorStyle:1;
-        unsigned int titleNoWrap:1;
-        unsigned int titleWeight:1;
-        unsigned int descriptionSize:1;
-        unsigned int descriptionWeight:1;
-        unsigned int descriptionExpand:1;
-        unsigned int imageAlign:1;
-        unsigned int textAlign:1;
-    } _has;
     BOOL _canBeHidden;
     BOOL _hasTopPadding;
     BOOL _hasBottomPadding;
@@ -50,8 +37,10 @@
     NSString *_attributionText;
     _SFPBURL *_attributionURL;
     _SFPBImage *_attributionGlyph;
+    NSArray *_richDescriptions;
 }
 
+@property(copy, nonatomic) NSArray *richDescriptions; // @synthesize richDescriptions=_richDescriptions;
 @property(retain, nonatomic) _SFPBImage *attributionGlyph; // @synthesize attributionGlyph=_attributionGlyph;
 @property(retain, nonatomic) _SFPBURL *attributionURL; // @synthesize attributionURL=_attributionURL;
 @property(copy, nonatomic) NSString *attributionText; // @synthesize attributionText=_attributionText;
@@ -85,29 +74,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasAttributionGlyph;
-@property(readonly, nonatomic) BOOL hasAttributionURL;
-@property(readonly, nonatomic) BOOL hasAttributionText;
-@property(readonly, nonatomic) BOOL hasTextAlign;
-@property(readonly, nonatomic) BOOL hasImageAlign;
-@property(readonly, nonatomic) BOOL hasDescriptionExpand;
-@property(readonly, nonatomic) BOOL hasDescriptionWeight;
-@property(readonly, nonatomic) BOOL hasDescriptionSize;
-@property(readonly, nonatomic) BOOL hasTitleWeight;
-@property(readonly, nonatomic) BOOL hasTitleNoWrap;
-@property(readonly, nonatomic) BOOL hasImage;
-@property(readonly, nonatomic) BOOL hasExpandText;
-@property(readonly, nonatomic) BOOL hasDescriptionText;
-@property(readonly, nonatomic) BOOL hasSubtitle;
-@property(readonly, nonatomic) BOOL hasTitle;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
+- (id)richDescriptionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)richDescriptionsCount;
+- (void)addRichDescriptions:(id)arg1;
+- (void)clearRichDescriptions;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

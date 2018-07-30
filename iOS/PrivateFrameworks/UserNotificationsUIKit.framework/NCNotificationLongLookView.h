@@ -4,112 +4,80 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIView.h"
+#import "PLExpandedPlatterView.h"
 
-#import "MTContentSizeCategoryAdjusting.h"
 #import "NCCustomContentContainingLookView.h"
 #import "NCNotificationContentViewDelegate.h"
 #import "NCNotificationStaticContentAccepting.h"
 #import "UIGestureRecognizerDelegate.h"
-#import "UIScrollViewDelegate.h"
 
-@class MTMaterialView, MTPlatterHeaderContentView, NCKeyLineView, NCNotificationContentView, NSArray, NSDate, NSString, NSTimeZone, UIButton, UIImage, UIInterfaceActionGroupView, UIScrollView, UITapGestureRecognizer;
+@class NCNotificationContentView, NSArray, NSDate, NSString, NSTimeZone, UIButton, UIControl, UIImage, UIScrollView, UITapGestureRecognizer, UIView;
 
-@interface NCNotificationLongLookView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate, NCNotificationContentViewDelegate, NCNotificationStaticContentAccepting, NCCustomContentContainingLookView, MTContentSizeCategoryAdjusting>
+@interface NCNotificationLongLookView : PLExpandedPlatterView <UIGestureRecognizerDelegate, NCNotificationContentViewDelegate, NCNotificationStaticContentAccepting, NCCustomContentContainingLookView>
 {
-    MTPlatterHeaderContentView *_headerContentView;
-    UIView *_headerDivider;
-    UIView *_contentView;
-    UIView *_mainContentView;
-    UIView *_topRubberbandingView;
-    UIView *_customContentView;
     NCNotificationContentView *_notificationContentView;
-    NCKeyLineView *_actionsKeyLineView;
-    MTMaterialView *_actionsBackgroundView;
-    UIInterfaceActionGroupView *_actionsView;
     UITapGestureRecognizer *_lookViewTapGestureRecognizer;
-    _Bool _actionsHidden;
     _Bool _hidesNotificationContent;
     unsigned long long _customContentLocation;
-    UIScrollView *_scrollView;
-    id <NCNotificationLongLookViewDelegate> _delegate;
-    struct CGSize _customContentSize;
 }
 
-@property(nonatomic) __weak id <NCNotificationLongLookViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic, getter=_scrollView) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) _Bool hidesNotificationContent; // @synthesize hidesNotificationContent=_hidesNotificationContent;
 @property(nonatomic) unsigned long long customContentLocation; // @synthesize customContentLocation=_customContentLocation;
-@property(nonatomic) struct CGSize customContentSize; // @synthesize customContentSize=_customContentSize;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 - (void)notificationContentView:(id)arg1 willInteractWithURL:(id)arg2;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
-- (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)_lookViewTapGestureRecognizerShouldReceiveTouch:(id)arg1;
 - (void)layoutSubviews;
-- (void)_layoutActionsView;
 - (void)_layoutCustomContentViewInRelationToContentView;
-- (void)_layoutNotificationContentView;
 - (void)_layoutCustomContentView;
+- (void)_layoutNotificationContentView;
 - (void)_layoutMainContentView;
-- (void)_layoutContentView;
-- (void)_layoutTopRubberbandingView;
-- (void)_layoutScrollView;
-- (void)_layoutHeader;
+- (struct CGSize)_contentViewSize;
+- (struct CGRect)_actionsViewFrame;
 - (void)_configureLookViewTapGestureRecognizerIfNecessary;
-- (void)_configureActionViewIfNecessaryWithActions:(id)arg1;
-- (void)_configureActionsBackgroundViewIfNecessaryWithActions:(id)arg1;
-- (void)_configureActionsKeyLineViewIfNecessaryWithActions:(id)arg1;
 - (void)_configureNotificationContentViewIfNecessary;
-- (void)_configureCustomContentViewIfNecessary;
-- (void)_configureMainContentViewIfNecessary;
-- (void)_configureContentViewIfNecessary;
-- (void)_configureScrollViewIfNecessary;
-- (void)_configureHeaderContentViewIfNecessary;
-@property(readonly, nonatomic) UIView *customContentView; // @synthesize customContentView=_customContentView;
+- (void)_configureCustomContentView;
 - (long long)lookStyle;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct CGSize)actionsSizeThatFits:(struct CGSize)arg1;
-- (struct CGSize)_actionsSizeThatFits:(struct CGSize)arg1 includingPadding:(_Bool)arg2;
-@property(readonly, nonatomic) struct CGSize sizeExcludingActions;
-@property(readonly, nonatomic) struct CGSize contentSizeExcludingActions;
-- (struct CGSize)contentSizeForSize:(struct CGSize)arg1;
-- (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;
-- (struct CGSize)_sizeThatFitsContentExcludingActionsWithSize:(struct CGSize)arg1;
 - (struct CGSize)_contentSizeThatFitsContentWithSizeExcludingActions:(struct CGSize)arg1;
 @property(copy, nonatomic) NSString *secondaryText;
 @property(copy, nonatomic) NSString *primarySubtitleText;
 @property(copy, nonatomic) NSString *primaryText;
-@property(nonatomic) long long dateFormatStyle;
-@property(retain, nonatomic) NSArray *interfaceActions;
-- (struct CGRect)scrollViewFrame;
 @property(readonly, nonatomic) UITapGestureRecognizer *lookViewTapGestureRecognizer;
-@property(nonatomic, getter=isActionsHidden) _Bool actionsHidden;
-@property(nonatomic) _Bool hasShadow;
-@property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred;
-- (void)setDateAllDay:(_Bool)arg1;
-@property(readonly, nonatomic, getter=isDateAllDay) _Bool dateAllDay;
-@property(readonly, nonatomic) UIButton *iconButton;
-@property(readonly, nonatomic) UIButton *utilityButton;
-@property(copy, nonatomic) NSTimeZone *timeZone;
-@property(copy, nonatomic) NSDate *date;
-@property(copy, nonatomic) NSString *title;
-@property(retain, nonatomic) UIImage *icon;
 
 // Remaining properties
 @property(retain, nonatomic) UIView *accessoryView;
+@property(nonatomic, getter=isActionsHidden) _Bool actionsHidden;
+@property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred;
+@property(nonatomic) _Bool clipsVisibleContentToBounds;
+@property(nonatomic) double contentBottomInset;
+@property(nonatomic) struct CGSize customContentSize;
+@property(readonly, nonatomic) UIView *customContentView;
+@property(copy, nonatomic) NSDate *date;
+@property(nonatomic, getter=isDateAllDay) _Bool dateAllDay;
+@property(nonatomic) long long dateFormatStyle;
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <NCNotificationLongLookViewDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) UIControl *dismissControl;
+@property(readonly, nonatomic) struct UIEdgeInsets dismissControlInsets;
+@property(nonatomic) _Bool hasShadow;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSArray *iconButtons;
+@property(copy, nonatomic) NSArray *icons;
+@property(retain, nonatomic) NSArray *interfaceActions;
 @property(nonatomic) unsigned long long messageNumberOfLines;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory;
+@property(readonly, nonatomic) UIScrollView *scrollView;
+@property(copy, nonatomic) NSString *summaryText;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) UIImage *thumbnail;
+@property(copy, nonatomic) NSTimeZone *timeZone;
+@property(copy, nonatomic) NSString *title;
+@property(readonly, nonatomic) UIButton *utilityButton;
 
 @end
 

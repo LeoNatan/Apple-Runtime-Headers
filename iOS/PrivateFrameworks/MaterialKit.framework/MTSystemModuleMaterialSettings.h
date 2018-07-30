@@ -8,42 +8,44 @@
 
 #import "MTMaterialLuminanceOverlaySettings.h"
 #import "MTZooming.h"
-#import "_MTMaterialVersioning.h"
 
 @class NSString, UIColor;
 
-@interface MTSystemModuleMaterialSettings : MTSystemMaterialSettings <MTMaterialLuminanceOverlaySettings, _MTMaterialVersioning, MTZooming>
+@interface MTSystemModuleMaterialSettings : MTSystemMaterialSettings <MTMaterialLuminanceOverlaySettings, MTZooming>
 {
     double _baseOverlaySaturation;
     double _baseOverlayBrightness;
     double _baseOverlayTintAlpha;
+    double _baseOverlayBlurRadius;
     double _primaryOverlaySaturation;
     double _primaryOverlayBrightness;
     double _primaryOverlayTintAlpha;
     double _secondaryOverlaySaturation;
     double _secondaryOverlayBrightness;
+    double _secondaryOverlayTintAlpha;
     double _auxiliaryOverlayBlurRadius;
 }
 
 + (id)sharedMaterialSettings;
 @property(nonatomic) double auxiliaryOverlayBlurRadius; // @synthesize auxiliaryOverlayBlurRadius=_auxiliaryOverlayBlurRadius;
+@property(nonatomic) double secondaryOverlayTintAlpha; // @synthesize secondaryOverlayTintAlpha=_secondaryOverlayTintAlpha;
 @property(nonatomic) double secondaryOverlayBrightness; // @synthesize secondaryOverlayBrightness=_secondaryOverlayBrightness;
 @property(nonatomic) double secondaryOverlaySaturation; // @synthesize secondaryOverlaySaturation=_secondaryOverlaySaturation;
 @property(nonatomic) double primaryOverlayTintAlpha; // @synthesize primaryOverlayTintAlpha=_primaryOverlayTintAlpha;
 @property(nonatomic) double primaryOverlayBrightness; // @synthesize primaryOverlayBrightness=_primaryOverlayBrightness;
 @property(nonatomic) double primaryOverlaySaturation; // @synthesize primaryOverlaySaturation=_primaryOverlaySaturation;
+@property(nonatomic) double baseOverlayBlurRadius; // @synthesize baseOverlayBlurRadius=_baseOverlayBlurRadius;
 @property(nonatomic) double baseOverlayTintAlpha; // @synthesize baseOverlayTintAlpha=_baseOverlayTintAlpha;
 @property(nonatomic) double baseOverlayBrightness; // @synthesize baseOverlayBrightness=_baseOverlayBrightness;
 @property(nonatomic) double baseOverlaySaturation; // @synthesize baseOverlaySaturation=_baseOverlaySaturation;
 @property(readonly, nonatomic) double zoom;
 @property(readonly, copy, nonatomic) UIColor *baseOverlayColor;
-@property(nonatomic) double secondaryOverlayTintAlpha;
 @property(readonly, copy, nonatomic) UIColor *secondaryOverlayTintColor;
 @property(readonly, copy, nonatomic) UIColor *primaryOverlayTintColor;
+- (void)setDefaultValues;
 - (void)setUsesLuminanceMap:(_Bool)arg1;
 - (_Bool)usesLuminanceMap;
 - (Class)vibrantStylingProviderClass;
-@property(readonly, nonatomic) long long materialVersion;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

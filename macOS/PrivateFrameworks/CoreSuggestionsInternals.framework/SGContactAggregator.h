@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class SGLRUCache;
+@class _PASLRUCache;
 
 @interface SGContactAggregator : NSObject
 {
-    SGLRUCache *_cachedContacts;
+    _PASLRUCache *_cachedContacts;
 }
 
 + (id)mergeContact:(id)arg1 withContact:(id)arg2;

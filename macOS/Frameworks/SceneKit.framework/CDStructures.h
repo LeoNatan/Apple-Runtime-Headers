@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSMapTable, NSMutableSet, SCNMetalMesh, SCNMetalMeshElement, SCNMetalRenderPipeline, SCNMetalShadable;
+@class NSMapTable, NSMutableSet, SCNMTLMesh, SCNMTLMeshElement, SCNMTLRenderPipeline, SCNMTLShadable;
 
 #pragma mark Function Pointers and Blocks
 
@@ -24,18 +24,9 @@ struct Buffer;
 
 struct C3DColor4 {
     union {
-        float rgba[4];
-        struct {
-            float r;
-            float g;
-            float b;
-            float a;
-        } ;
-    } ;
-};
-
-struct C3DPlane {
-    CDUnion_915c2b1f _field1;
+        float _field1[4];
+        CDStruct_cdc14ebe _field2;
+    } _field1;
 };
 
 struct CATransform3D {
@@ -87,21 +78,24 @@ struct CVSMPTETime {
 struct Cache {
     struct __C3DRasterizerStates *rasterizerStates;
     struct __C3DMesh *mesh;
-    SCNMetalMesh *metalMesh;
+    SCNMTLMesh *metalMesh;
     struct __C3DMeshElement *meshElement;
-    SCNMetalMeshElement *metalMeshElement;
+    SCNMTLMeshElement *metalMeshElement;
     struct __C3DFXProgram *program;
     struct __C3DMaterial *material;
     struct __C3DGeometry *geometry;
-    SCNMetalShadable *metalShadable;
+    SCNMTLShadable *metalShadable;
     struct __C3DEffectCommonProfile *commonProfile;
     struct __C3DBlendStates *blendStates;
     unsigned char colorBufferWriteMask;
+    unsigned char topologyClass;
     struct __C3DNode *node;
     unsigned long long vertexDescriptorHash;
     unsigned char tessellationPipelineStateHash;
-    SCNMetalRenderPipeline *renderPipeline;
+    SCNMTLRenderPipeline *renderPipeline;
 };
+
+struct CachedTexture;
 
 struct InplaceSolverIslandCallback;
 
@@ -380,6 +374,11 @@ struct SCNCPlaySound {
     id _field22;
 };
 
+struct SCNMTLBlitCommandEncoder {
+    id _encoder;
+    id _commandBuffer;
+};
+
 struct SCNMTLBufferPool {
     id _field1;
     unsigned long long _field2;
@@ -392,6 +391,13 @@ struct SCNMTLBufferPool {
     char *_field9;
     unsigned long long _field10;
     unsigned long long _field11;
+};
+
+struct SCNMTLTexturePool {
+    id _field1;
+    id _field2;
+    struct vector<SCNMTLTexturePool::CachedTexture, std::__1::allocator<SCNMTLTexturePool::CachedTexture>> _field3;
+    unsigned int _field4;
 };
 
 struct SCNVector3 {
@@ -407,13 +413,16 @@ struct SCNVector4 {
     double w;
 };
 
+struct SkelNodesMap {
+    struct map<MDLSkeleton *, (anonymous namespace)::SkelNodes, std::__1::less<MDLSkeleton *>, std::__1::allocator<std::__1::pair<MDLSkeleton *const, (anonymous namespace)::SkelNodes>>> _field1;
+};
+
 struct Target {
-    id _field1;
+    CDStruct_798fd7c0 _field1;
     unsigned int _field2;
     float _field3;
     struct __C3DMeshSource *_field4[3];
-    id _field5;
-    unsigned int _field6;
+    CDStruct_798fd7c0 _field5;
 };
 
 struct _CGLContextObject {
@@ -1447,6 +1456,7 @@ struct __C3DEngineStats {
     double glFlushTime;
     double waitDisplayLinkTime;
     double drawableWaitTime;
+    double gpuTime;
     double lastDisplayLinkTime;
     unsigned int prgCount;
     unsigned int texCount;
@@ -1464,6 +1474,12 @@ struct __C3DEngineStats {
     unsigned int texMemory;
     unsigned int backBufferMemory;
     unsigned int depthBuffersMemory;
+    unsigned int onlineShaderCount;
+    double onlineShaderCompilationTime;
+    unsigned int renderPipelineCount;
+    double renderPipelineCompilationTime;
+    unsigned int computePipelineCount;
+    double computePipelineCompilationTime;
     double frmAvgTime;
     double frmMinTime;
     double frmMaxTime;
@@ -1479,8 +1495,6 @@ struct __C3DFXPassInstance;
 
 struct __C3DFXProgram;
 
-struct __C3DFXTechnique;
-
 struct __C3DFramebuffer;
 
 struct __C3DGeometry;
@@ -1495,35 +1509,7 @@ struct __C3DMeshElement;
 
 struct __C3DNode;
 
-struct __C3DRendererElement {
-    struct __C3DNode *_field1;
-    struct __C3DGeometry *_field2;
-    struct __C3DMesh *_field3;
-    void *_field4;
-    struct __C3DMaterial *_field5;
-    struct __C3DFXTechnique *_field6;
-    struct __C3DRendererElementProgramHashCode *_field7;
-    CDStruct_c6b9131d _field8;
-    int _field9;
-    unsigned int _field10;
-    unsigned int :8;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :3;
-    unsigned int :1;
-    unsigned int :3;
-};
-
 struct __CFString;
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*> *__next_;
-};
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *__left_;
@@ -2159,6 +2145,18 @@ struct c3dContactCallback;
 
 struct c3dPhysicsField;
 
+struct map<MDLSkeleton *, (anonymous namespace)::SkelNodes, std::__1::less<MDLSkeleton *>, std::__1::allocator<std::__1::pair<MDLSkeleton *const, (anonymous namespace)::SkelNodes>>> {
+    struct __tree<std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, std::__1::__map_value_compare<MDLSkeleton *, std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, std::__1::less<MDLSkeleton *>, true>, std::__1::allocator<std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<MDLSkeleton *, std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, std::__1::less<MDLSkeleton *>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+};
+
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
@@ -2167,38 +2165,12 @@ struct set<unsigned short, std::__1::less<unsigned short>, std::__1::allocator<u
     struct __tree<unsigned short, std::__1::less<unsigned short>, std::__1::allocator<unsigned short>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<unsigned short, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::less<unsigned short>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*> **__first_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>*>> {
-                unsigned long long __first_;
-            } __data_;
-        } __second_;
-    } __ptr_;
-};
-
-struct unordered_map<unsigned long long, SCNMTLLightSetData, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, SCNMTLLightSetData>>> {
-    struct __hash_table<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *>*> __first_;
-        } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::hash<unsigned long long>, true>> {
-            unsigned long long __first_;
-        } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::equal_to<unsigned long long>, true>> {
-            float __first_;
-        } __p3_;
-    } __table_;
 };
 
 struct vector<SCNCAction *, std::__1::allocator<SCNCAction *>> {
@@ -2217,11 +2189,19 @@ struct vector<SCNMTLBufferPool::Buffer, std::__1::allocator<SCNMTLBufferPool::Bu
     } _field3;
 };
 
+struct vector<SCNMTLTexturePool::CachedTexture, std::__1::allocator<SCNMTLTexturePool::CachedTexture>> {
+    struct CachedTexture *_field1;
+    struct CachedTexture *_field2;
+    struct __compressed_pair<SCNMTLTexturePool::CachedTexture *, std::__1::allocator<SCNMTLTexturePool::CachedTexture>> {
+        struct CachedTexture *_field1;
+    } _field3;
+};
+
 struct vector<c3dPhysicsField *, std::__1::allocator<c3dPhysicsField *>> {
     struct c3dPhysicsField **__begin_;
     struct c3dPhysicsField **__end_;
     struct __compressed_pair<c3dPhysicsField **, std::__1::allocator<c3dPhysicsField *>> {
-        struct c3dPhysicsField **__first_;
+        struct c3dPhysicsField **__value_;
     } __end_cap_;
 };
 
@@ -2229,11 +2209,20 @@ struct vector<unsigned short, std::__1::allocator<unsigned short>> {
     unsigned short *__begin_;
     unsigned short *__end_;
     struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short>> {
-        unsigned short *__first_;
+        unsigned short *__value_;
     } __end_cap_;
 };
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    id _field1;
+    id _field2;
+    id _field3;
+    _Bool _field4;
+    _Bool _field5;
+    _Bool _field6;
+} CDStruct_4cea7480;
 
 typedef struct {
     id _field1;
@@ -2248,6 +2237,13 @@ typedef struct {
 } CDStruct_c3e9b8dc;
 
 typedef struct {
+    unsigned char renderSliceIndex;
+    unsigned char eyeCount;
+    unsigned char renderMode;
+    _Bool isFinalTechnique;
+} CDStruct_b491a7a6;
+
+typedef struct {
     unsigned char format;
     unsigned char sampleCount;
     unsigned char textureUsage;
@@ -2256,8 +2252,9 @@ typedef struct {
     unsigned int viewportDependant:1;
     unsigned int renderToIOSurface:1;
     unsigned int mipmapped:1;
+    unsigned int textureCube:1;
     unsigned char padding[4];
-} CDStruct_fd8065c6;
+} CDStruct_ace98575;
 
 typedef struct {
     unsigned long long _field1;
@@ -2266,18 +2263,34 @@ typedef struct {
 } CDStruct_14f26992;
 
 typedef struct {
-    unsigned long long _field1;
-    unsigned long long _field2;
-} CDStruct_4bcfbbae;
-
-typedef struct {
     unsigned short _field1;
     unsigned short _field2;
 } CDStruct_d65e47c4;
 
 typedef struct {
-    unsigned char lights[8];
-} CDStruct_c6b9131d;
+    unsigned long long colorFormat[4];
+    unsigned long long depthFormat;
+    unsigned long long stencilFormat;
+    unsigned char sampleCount;
+} CDStruct_b93dc639;
+
+typedef struct {
+    char *memory;
+    id buffer;
+    unsigned long long offset;
+} CDStruct_798fd7c0;
+
+typedef struct {
+    unsigned int supportsUpdate:1;
+    unsigned int supportsDidApplyAnimations:1;
+    unsigned int supportsDidSimulatePhysics:1;
+    unsigned int supportsDidApplyConstraints:1;
+    unsigned int supportsWillRender:1;
+    unsigned int supportsDidRender:1;
+    unsigned int supportsInputTime:1;
+    unsigned int supportsReadSubdivCache:1;
+    unsigned int supportsWriteSubdivCache:1;
+} CDStruct_f76d274b;
 
 typedef struct {
     unsigned int :2;
@@ -2309,15 +2322,26 @@ typedef struct {
 } CDStruct_d3ce6806;
 
 typedef struct {
+    double originX;
+    double originY;
+    double width;
+    double height;
+    double znear;
+    double zfar;
+} CDStruct_4b2885c7;
+
+typedef struct {
     float _field1;
     void *_field2;
     float _field3;
 } CDStruct_962da47d;
 
 typedef struct {
-    float edgeTessellationFactor;
-    float insideTessellationFactor;
-} CDStruct_6e663ddf;
+    float x;
+    float y;
+    float z;
+    float radius;
+} CDStruct_cdc14ebe;
 
 typedef struct {
     long long _field1;
@@ -2339,18 +2363,19 @@ typedef struct {
     id _field3;
     id _field4;
     CDStruct_183601bc *_field5;
-    _Bool _field6;
+    unsigned int _field6;
     _Bool _field7;
-} CDStruct_f4c83048;
+} CDStruct_f890dce7;
 
 typedef struct {
     id _field1;
-    struct CGPoint _field2;
+    id _field2;
     struct CGPoint _field3;
-    struct SCNVector3 _field4;
+    struct CGPoint _field4;
     struct SCNVector3 _field5;
-    double _field6;
-} CDStruct_811921b8;
+    struct SCNVector3 _field6;
+    double _field7;
+} CDStruct_8e4f4b1c;
 
 typedef struct {
     NSMapTable *registry;
@@ -2373,11 +2398,12 @@ typedef struct {
     struct __C3DEnginePipeline *_field1;
     struct __C3DEngineContext *_field2;
     struct __C3DFXPassInstance *_field3;
-    int *_field4;
+    void *_field4;
     struct __C3DNode *_field5;
     _Bool _field6;
     _Bool _field7;
-} CDStruct_256c7a3c;
+    _Bool _field8;
+} CDStruct_65434d98;
 
 typedef struct {
     struct __C3DFXPass *_field1;
@@ -2432,13 +2458,16 @@ typedef struct {
     struct __C3DBlendStates *_field7;
     struct __C3DNode *_field8;
     unsigned char _field9;
-    char _field10;
-    id _field11;
+    unsigned char _field10;
+    unsigned char _field11;
+    unsigned char _field12;
+    char _field13;
+    id _field14;
     struct {
         unsigned char _field1;
         CDUnknownBlockType _field2;
-    } _field12;
-} CDStruct_595e5c78;
+    } _field15;
+} CDStruct_089bc920;
 
 typedef struct {
     long long _field1;
@@ -2462,7 +2491,10 @@ typedef struct {
     unsigned int tessellationPartitionMode;
     unsigned char tessellationSmoothingMode;
     union {
-        CDStruct_6e663ddf uniform;
+        struct {
+            float edgeTessellationFactor;
+            float insideTessellationFactor;
+        } uniform;
         struct {
             float projectedEdgeLength;
         } screenSpaceAdaptive;
@@ -2476,6 +2508,28 @@ typedef struct {
         } subdivisionSurface;
     } parameters;
 } CDStruct_14ccb760;
+
+typedef struct {
+    CDUnion_915c2b1f _field1[6];
+} CDStruct_7841dd09;
+
+typedef struct {
+    CDStruct_089bc920 _field1;
+    id _field2;
+    CDStruct_b93dc639 _field3;
+    struct __C3DBlendStates *_field4;
+    unsigned long long _field5[4];
+    unsigned char _field6;
+    id _field7;
+    id _field8;
+    id _field9;
+    id _field10;
+    CDUnknownBlockType _field11;
+    _Bool _field12;
+    _Bool _field13;
+    _Bool _field14;
+    _Bool _field15;
+} CDStruct_0fd8ad93;
 
 typedef struct {
     struct {
@@ -2514,11 +2568,6 @@ typedef union {
 } CDUnion_15924c16;
 
 typedef union {
-    struct {
-        float x;
-        float y;
-        float z;
-        float radius;
-    } vector__center__;
+    CDStruct_cdc14ebe vector__center__;
 } CDUnion_915c2b1f;
 

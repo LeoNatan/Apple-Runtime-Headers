@@ -12,7 +12,6 @@
 
 @interface SPInterfaceSlider : PUICSlider <SPInterfaceActionItem>
 {
-    _Bool _isNativeInterfaceObject;
     NSDictionary *_itemDescriptionForIB;
     NSBundle *_bundle;
     NSString *_stringsFileName;
@@ -31,6 +30,7 @@
     struct CGSize _cachedSize;
 }
 
++ (void)initialize;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) id target; // @synthesize target=_target;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
@@ -43,7 +43,6 @@
 @property(copy, nonatomic) NSString *interfaceAction; // @synthesize interfaceAction=_interfaceAction;
 @property(nonatomic) int verticalInterfaceAlignment; // @synthesize verticalInterfaceAlignment=_verticalInterfaceAlignment;
 @property(nonatomic) int interfaceAlignment; // @synthesize interfaceAlignment=_interfaceAlignment;
-@property(nonatomic) _Bool isNativeInterfaceObject; // @synthesize isNativeInterfaceObject=_isNativeInterfaceObject;
 @property(copy, nonatomic) NSDictionary *companionProperty; // @synthesize companionProperty=_companionProperty;
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
@@ -55,7 +54,7 @@
 - (_Bool)hasIntrinsicHeight;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

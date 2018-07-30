@@ -11,13 +11,14 @@
 }
 
 + (void)colorizeLabels:(id)arg1 color:(id)arg2;
-+ (void)updateNodes:(id)arg1 offset:(unsigned int)arg2 center:(struct CGPoint)arg3 radius:(float)arg4 angleMultiplier:(float)arg5 scale:(float)arg6 rotate:(_Bool)arg7 round:(_Bool)arg8;
++ (void)updateNodes:(id)arg1 forDevice:(id)arg2 offset:(unsigned int)arg3 center:(struct CGPoint)arg4 radius:(float)arg5 angleMultiplier:(float)arg6 scale:(float)arg7 rotate:(_Bool)arg8 round:(_Bool)arg9;
 + (void)scaleNodes:(id)arg1 scale:(float)arg2 andResetNodesAtIndices:(id)arg3;
 + (void)fadeNodes:(id)arg1 alpha:(float)arg2 except:(id)arg3;
-+ (id)labelsForFaceStyle:(int)arg1 count:(unsigned int)arg2 start:(unsigned int)arg3 multiple:(unsigned int)arg4 repeat:(unsigned int)arg5 fontSize:(float)arg6 radius:(float)arg7 paddedWithZeroes:(_Bool)arg8;
-+ (id)labelsWithCount:(unsigned int)arg1 start:(unsigned int)arg2 multiple:(unsigned int)arg3 repeat:(unsigned int)arg4 font:(int)arg5 fontSize:(float)arg6 center:(struct CGPoint)arg7 radius:(float)arg8 paddedWithZeros:(_Bool)arg9 filter:(_Bool)arg10;
-+ (struct CGSize)sceneSize;
-+ (void)preloadTextures;
++ (id)labelsForDevice:(id)arg1 faceStyle:(int)arg2 count:(unsigned int)arg3 start:(unsigned int)arg4 multiple:(unsigned int)arg5 repeat:(unsigned int)arg6 fontSize:(float)arg7 radius:(float)arg8 paddedWithZeroes:(_Bool)arg9;
++ (id)labelsForDevice:(id)arg1 withCount:(unsigned int)arg2 start:(unsigned int)arg3 multiple:(unsigned int)arg4 repeat:(unsigned int)arg5 font:(int)arg6 modifier:(id)arg7 center:(struct CGPoint)arg8 radius:(float)arg9 paddedWithZeros:(_Bool)arg10 filter:(_Bool)arg11;
++ (struct CGSize)dialSizeForDevice:(id)arg1;
++ (struct CGSize)sceneSizeForDevice:(id)arg1;
++ (void)preloadTexturesForDevice:(id)arg1;
 + (_Bool)shouldPreloadTextures;
 + (id)circularMaskShader;
 + (id)artShader;

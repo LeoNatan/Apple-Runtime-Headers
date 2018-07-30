@@ -24,6 +24,7 @@
 + (void)_runThread;
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)_runTimerBlock:(CDUnknownBlockType)arg1;
 - (void)_dispatchSCRCThread;
 - (void)_dispatchMainThread;
 - (void)_dispatch;
@@ -38,7 +39,9 @@
 - (void)dispatchAfterDelay:(double)arg1;
 - (void)dealloc;
 - (void)invalidate;
+- (id)initWithTarget:(id)arg1 selector:(SEL)arg2 thread:(id)arg3;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 threadKey:(id)arg3;
+- (id)_initWithTarget:(id)arg1 selector:(SEL)arg2 threadKeyOrThread:(id)arg3;
 - (_Bool)_createdTimer;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 

@@ -21,6 +21,7 @@
 - (void)layoutSubviews;
 - (void)setFocused:(_Bool)arg1 withAnimationCoordinator:(id)arg2;
 @property(readonly, nonatomic) UIView *parentView; // @dynamic parentView;
+- (void)invalidatePhoto;
 @property(retain, nonatomic) GKPlayer *player; // @dynamic player;
 - (void)setupPhoto;
 - (void)awakeFromNib;

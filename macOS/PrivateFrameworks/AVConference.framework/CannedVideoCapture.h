@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <AVConference/VCVideoCapture.h>
 
 #import "VideoCaptureProtocol.h"
 
 __attribute__((visibility("hidden")))
-@interface CannedVideoCapture : NSObject <VideoCaptureProtocol>
+@interface CannedVideoCapture : VCVideoCapture <VideoCaptureProtocol>
 {
     struct CannedVideoCapturePrivate *_pimpl;
     id <CannedVideoFrameFeeder> _frameFeeder;
@@ -21,6 +21,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CannedVideoCapturePrivate *pimpl; // @synthesize pimpl=_pimpl;
 - (void)stopThreads;
 - (int)startThreads;
+- (int)getPreviewFrameCount:(int *)arg1 captureFrameCount:(int *)arg2 reset:(BOOL)arg3;
+- (int)frameBecameAvailableCount:(int *)arg1 figBufferQueueEmptyCount:(int *)arg2 figBufferQueueErrorCount:(int *)arg3;
+- (BOOL)cameraSupportsFormatWidth:(int)arg1 height:(int)arg2;
 - (BOOL)isFrontCamera;
 - (int)stop:(BOOL)arg1;
 - (int)startCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
@@ -32,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (int)copyColorInfo:(const struct __CFDictionary **)arg1;
 - (int)setWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
 - (void)dealloc;
-- (id)initWithOptions:(void *)arg1 callback:(CDUnknownFunctionPointerType)arg2 width:(int)arg3 height:(int)arg4 frameRate:(int)arg5 cameraUID:(id)arg6 folder:(id)arg7 withError:(int *)arg8;
+- (id)initWithCaptureServer:(id)arg1 width:(int)arg2 height:(int)arg3 frameRate:(int)arg4 cameraUID:(id)arg5 video:(id)arg6 error:(int *)arg7;
 
 @end
 

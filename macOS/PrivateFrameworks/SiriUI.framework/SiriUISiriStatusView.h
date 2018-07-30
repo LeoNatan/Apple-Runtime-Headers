@@ -9,7 +9,7 @@
 #import "NSGestureRecognizerDelegate.h"
 #import "SiriUITalkGestureTargetDelegate.h"
 
-@class AVPlayerLayer, AVPlayerLooper, AVQueuePlayer, NSPressGestureRecognizer, NSString, SiriUITalkGestureTarget, SiriUITextInputField;
+@class AVPlayerLayer, AVPlayerLooper, AVQueuePlayer, NSPressGestureRecognizer, NSString, SRFLockStateNotifier, SiriUITalkGestureTarget, SiriUITextInputField;
 
 __attribute__((visibility("hidden")))
 @interface SiriUISiriStatusView : NSView <NSGestureRecognizerDelegate, SiriUITalkGestureTargetDelegate>
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     AVPlayerLayer *_orbLayer;
     AVPlayerLooper *_orbPlayerLooper;
     AVQueuePlayer *_orbQueuePlayer;
+    SRFLockStateNotifier *_lockStateNotifier;
     BOOL _reduceMotionEnabled;
     SiriUITextInputField *_textInputField;
     NSView *_orbView;
@@ -59,11 +60,12 @@ __attribute__((visibility("hidden")))
 - (void)forceOrbVisible:(BOOL)arg1;
 - (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)didUnlockScreen:(id)arg1;
-- (void)didLockScreen:(id)arg1;
 - (void)updateTextInputForLockedScreen:(BOOL)arg1;
+- (void)didUnlockDevice:(id)arg1;
+- (void)didLockDevice:(id)arg1;
 - (void)initInputMode;
 - (void)awakeFromNib;
+- (void)initOrbVideoLayerIfNecesary;
 - (id)initWithCoder:(id)arg1;
 
 // Remaining properties

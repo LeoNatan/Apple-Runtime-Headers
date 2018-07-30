@@ -10,6 +10,8 @@
 {
 }
 
++ (id)cdpStateUIController;
++ (id)accountRecoveryControllerWithPresentingViewController:(id)arg1;
 + (id)cdpIDMSRecordPRKKey;
 + (id)cdpIDMSRecordMIDKey;
 + (id)cdpErrorDomain;

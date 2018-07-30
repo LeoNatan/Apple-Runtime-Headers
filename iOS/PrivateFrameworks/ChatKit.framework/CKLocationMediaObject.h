@@ -38,7 +38,7 @@
 - (Class)previewBalloonViewClass;
 @property(readonly, copy, nonatomic) NSString *title;
 - (int)mediaType;
-- (id)initWithTransfer:(id)arg1;
+- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3;
 - (id)mapItem;
 
 // Remaining properties

@@ -26,6 +26,7 @@
 @property(readonly) NSURL *browsableURL;
 @property(readonly) NSURL *displayableURL;
 - (void)willRefresh:(BOOL)arg1;
+- (id)keysOnlyRelevantToNetworkDetails;
 @property(readonly) BOOL isHolidayCalendar;
 - (id)_session;
 - (void)_refreshSession:(long long)arg1;

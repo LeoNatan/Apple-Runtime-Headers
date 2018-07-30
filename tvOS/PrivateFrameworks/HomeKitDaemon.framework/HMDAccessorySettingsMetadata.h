@@ -8,7 +8,7 @@
 
 #import "HMFObject.h"
 
-@class HMDAccessorySettingGroupMetadata, NSString;
+@class HMDAccessorySettingGroupMetadata, NSArray, NSString;
 
 @interface HMDAccessorySettingsMetadata : HMFObject <HMFObject>
 {
@@ -22,9 +22,12 @@
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
 @property(readonly) Class superclass;
 
 @end

@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <OfficeImport/WDRun.h>
+#import <OfficeImport/WDRunWithCharacterProperties.h>
 
-@class OADDrawable, WDCharacterProperties;
+@class OADDrawable;
 
-__attribute__((visibility("hidden")))
-@interface WDOfficeArt : WDRun
+@interface WDOfficeArt : WDRunWithCharacterProperties
 {
-    WDCharacterProperties *mProperties;
     OADDrawable *mDrawable;
     _Bool mFloating;
 }
 
 + (int)textBoxTextTypeForRegularTextType:(int)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (void)propagateTextTypeToDrawables;
 - (void)setTextType:(int)arg1 recursivelyToDrawable:(id)arg2;
@@ -31,11 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)overrideDrawable;
 - (void)setDrawable:(id)arg1;
 - (id)drawable;
-- (void)clearProperties;
-- (void)setProperties:(id)arg1;
-- (id)properties;
 - (int)runType;
-- (void)dealloc;
 - (id)initWithParagraph:(id)arg1;
 - (void)checkForFloating:(id)arg1;
 

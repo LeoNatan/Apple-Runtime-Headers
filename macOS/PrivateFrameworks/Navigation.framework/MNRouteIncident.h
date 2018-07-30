@@ -10,7 +10,6 @@
 
 @class GEORouteIncident;
 
-__attribute__((visibility("hidden")))
 @interface MNRouteIncident : NSObject <NSSecureCoding>
 {
     GEORouteIncident *_geoRouteIncident;

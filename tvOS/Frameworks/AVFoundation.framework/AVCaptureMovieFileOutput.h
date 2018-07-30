@@ -28,6 +28,7 @@
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
+- (struct CGSize)outputSizeForSourceFormat:(id)arg1;
 - (id)_avErrorUserInfoDictionaryForError:(int)arg1 wrapper:(id)arg2 payload:(id)arg3;
 - (void)setRecordsVideoOrientationAndMirroringChanges:(_Bool)arg1 asMetadataTrackForConnection:(id)arg2;
 - (_Bool)recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:(id)arg1;

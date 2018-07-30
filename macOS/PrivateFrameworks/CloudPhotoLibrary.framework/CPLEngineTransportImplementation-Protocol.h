@@ -7,24 +7,19 @@
 #import "CPLEngineComponent.h"
 #import "CPLPlatformImplementation.h"
 
-@class CPLChangeBatch, CPLResource, NSArray, NSData, NSError;
+@class CPLChangeBatch, CPLEngineScope, CPLEngineScopeFlagsUpdate, CPLLibraryInfo, CPLMomentShare, CPLResource, NSArray, NSData, NSDictionary, NSError, NSSet, NSString, NSURL;
 
 @protocol CPLEngineTransportImplementation <CPLPlatformImplementation, CPLEngineComponent>
 @property(readonly, nonatomic) Class userIdentifierClass;
 @property(readonly, nonatomic) Class transportGroupClass;
-- (id <CPLEngineTransportSendFeedbackTask>)sendFeedbackTaskForMessages:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (id <CPLEngineTransportInMemoryResourceDownloadTask>)inMemoryDownloadTaskForResource:(CPLResource *)arg1 completionHandler:(void (^)(NSData *, NSError *))arg2;
-- (id <CPLEngineTransportResourcesDownloadTask>)resourcesDownloadTaskWithCompletionHandler:(void (^)(id <CPLEngineTransportResourcesDownloadTask>))arg1;
-- (id <CPLEngineTransportRampingRequestTask>)rampingRequestTaskForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 completionHandler:(void (^)(BOOL, unsigned long long, NSError *))arg3;
-- (id <CPLEngineTransportResourcesCheckTask>)resourceCheckTaskForResources:(NSArray *)arg1 completionHandler:(void (^)(NSArray *, NSDictionary *, NSError *))arg2;
-- (id <CPLEngineTransportResourcePublishTask>)resourcePublishTaskForResource:(CPLResource *)arg1 completionHandler:(void (^)(NSURL *, NSDate *, NSError *))arg2;
-- (id <CPLEngineTransportDownloadBatchTask>)downloadBatchTaskForSyncAnchor:(NSData *)arg1 progressHandler:(void (^)(CPLChangeBatch *, NSData *))arg2 completionHandler:(void (^)(NSData *, BOOL, NSError *))arg3;
-- (id <CPLEngineTransportQueryTask>)queryTaskForCursor:(NSData *)arg1 class:(Class)arg2 progressHandler:(void (^)(CPLChangeBatch *, NSData *))arg3 completionHandler:(void (^)(NSError *))arg4;
-- (id <CPLEngineTransportUploadBatchTask>)uploadBatchTaskForBatch:(CPLChangeBatch *)arg1 progressHandler:(void (^)(NSString *, float))arg2 completionHandler:(void (^)(NSError *))arg3;
-- (id <CPLEngineTransportCheckRecordsExistenceTask>)checkRecordsExistenceTaskForRecords:(NSArray *)arg1 fetchRecordProperties:(NSArray *)arg2 withCompletionHandler:(void (^)(NSDictionary *, NSError *))arg3;
-- (id <CPLEngineTransportSetupTask>)setupTaskCreateLibraryIfNecessary:(BOOL)arg1 withCompletionHandler:(void (^)(id <CPLEngineStoreUserIdentifier>, NSError *))arg2;
-
-@optional
+- (void)upgradeFlags:(CPLEngineScopeFlagsUpdate *)arg1 fromTransportScope:(NSData *)arg2;
+- (NSData *)transportScopeForUpgradeFromScopeName:(NSString *)arg1;
+- (NSString *)scopeNameForTransportScope:(NSData *)arg1;
+- (NSString *)descriptionForTransportScope:(NSData *)arg1;
+- (id <CPLEngineTransportGroup>)createGroupForQueryUserIdentities;
+- (id <CPLEngineTransportGroup>)createGroupForAcceptingMomentShare;
+- (id <CPLEngineTransportGroup>)createGroupForFetchingMomentShare;
+- (id <CPLEngineTransportGroup>)createGroupForPublishingMomentShare;
 - (id <CPLEngineTransportGroup>)createGroupForPruningCheck;
 - (id <CPLEngineTransportGroup>)createGroupForAnalysisDownload;
 - (id <CPLEngineTransportGroup>)createGroupForMovieStreaming;
@@ -34,6 +29,9 @@
 - (id <CPLEngineTransportGroup>)createGroupForChangeUpload;
 - (id <CPLEngineTransportGroup>)createGroupForLibraryStateCheck;
 - (id <CPLEngineTransportGroup>)createGroupForFeedback;
+- (id <CPLEngineTransportGroup>)createGroupForFetchScopeListChanges;
+- (id <CPLEngineTransportGroup>)createGroupForTransportScopeUpdate;
+- (id <CPLEngineTransportGroup>)createGroupForTransportScopeDelete;
 - (id <CPLEngineTransportGroup>)createGroupForSetup;
 - (id <CPLEngineTransportGroup>)createGroupForThumbnailPrefetch;
 - (id <CPLEngineTransportGroup>)createGroupForPrefetch;
@@ -41,12 +39,33 @@
 - (id <CPLEngineTransportGroup>)createGroupForResetSync;
 - (id <CPLEngineTransportGroup>)createGroupForInitialUpload;
 - (void)getPushEnvironmentWithCompletionHandler:(void (^)(NSString *, NSString *, NSError *))arg1;
+- (void)cancelBlockedTasksIncludingBackground:(BOOL)arg1;
 - (void)noteClientIsEndingSignificantWork;
 - (void)noteClientIsBeginningSignificantWork;
 - (void)setShouldOverride:(BOOL)arg1 forSystemBudgets:(unsigned long long)arg2;
 - (void)getSystemBudgetsWithCompletionHandler:(void (^)(NSDictionary *, NSError *))arg1;
-- (NSData *)simpleDataForSyncAnchor:(NSData *)arg1;
+- (NSString *)simpleDescriptionForScopeListSyncAnchor:(struct NSData *)arg1;
+- (NSString *)simpleDescriptionForSyncAnchor:(struct NSData *)arg1;
 - (NSError *)bestErrorForUnderlyingError:(NSError *)arg1;
-- (id <CPLEngineTransportGetLibraryInfoTask>)getLibraryInfoAndUpdateState:(BOOL)arg1 withCompletionHandler:(void (^)(CPLLibraryInfo *, NSError *))arg2;
+- (id <CPLEngineTransportFetchTransportScopeTask>)fetchTransportScopeForScope:(CPLEngineScope *)arg1 transportScope:(NSData *)arg2 completionHandler:(void (^)(NSData *, CPLEngineScopeFlagsUpdate *, NSError *))arg3;
+- (id <CPLEngineTransportGetLibraryInfoTask>)getLibraryInfoAndStateWithTransportScope:(NSData *)arg1 scope:(CPLEngineScope *)arg2 completionHandler:(void (^)(long long, CPLLibraryInfo *, CPLLibraryState *, NSError *))arg3;
+- (id <CPLEngineTransportUpdateTransportScopeTask>)updateTransportScope:(NSData *)arg1 scope:(CPLEngineScope *)arg2 libraryInfo:(CPLLibraryInfo *)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (id <CPLEngineTransportDeleteTransportScopeTask>)deleteTransportScope:(NSData *)arg1 scope:(CPLEngineScope *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (id <CPLEngineTransportSendFeedbackTask>)sendFeedbackTaskForMessages:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (id <CPLEngineTransportQueryUserIdentitiesTask>)queryUserIdentitiesTaskForParticipants:(NSArray *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
+- (id <CPLEngineTransportAcceptMomentShareTask>)acceptTaskForMomentShare:(CPLMomentShare *)arg1 completionHandler:(void (^)(CPLLibraryInfo *, NSData *, NSError *))arg2;
+- (id <CPLEngineTransportFetchMomentShareTask>)fetchTaskForMomentShareURL:(NSURL *)arg1 completionHandler:(void (^)(CPLMomentShare *, NSError *))arg2;
+- (id <CPLEngineTransportPublishMomentShareTask>)publishTaskForMomentShare:(CPLMomentShare *)arg1 completionHandler:(void (^)(CPLLibraryInfo *, NSData *, NSError *))arg2;
+- (id <CPLEngineTransportInMemoryResourceDownloadTask>)inMemoryDownloadTaskForResource:(CPLResource *)arg1 transportScope:(NSData *)arg2 completionHandler:(void (^)(NSData *, NSError *))arg3;
+- (id <CPLEngineTransportResourcesDownloadTask>)resourcesDownloadTaskWithCompletionHandler:(void (^)(id <CPLEngineTransportResourcesDownloadTask>))arg1;
+- (id <CPLEngineTransportRampingRequestTask>)rampingRequestTaskForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 completionHandler:(void (^)(BOOL, unsigned long long, NSError *))arg3;
+- (id <CPLEngineTransportResourcesCheckTask>)resourceCheckTaskForResources:(NSArray *)arg1 transportScopes:(NSDictionary *)arg2 completionHandler:(void (^)(NSArray *, NSDictionary *, NSError *))arg3;
+- (id <CPLEngineTransportResourcePublishTask>)resourcePublishTaskForResource:(CPLResource *)arg1 transportScope:(NSData *)arg2 completionHandler:(void (^)(NSURL *, NSDate *, NSError *))arg3;
+- (id <CPLEngineTransportFetchScopeListChangesTask>)fetchScopeListChangesForScopeListSyncAnchor:(struct NSData *)arg1 progressHandler:(void (^)(NSDictionary *, NSArray *, struct NSData *))arg2 completionHandler:(void (^)(struct NSData *, NSError *))arg3;
+- (id <CPLEngineTransportDownloadBatchTask>)downloadBatchTaskForSyncAnchor:(struct NSData *)arg1 transportScope:(NSData *)arg2 scope:(CPLEngineScope *)arg3 currentLibraryInfo:(CPLLibraryInfo *)arg4 progressHandler:(void (^)(CPLChangeBatch *, CPLLibraryInfo *, CPLLibraryState *, struct NSData *))arg5 completionHandler:(void (^)(struct NSData *, BOOL, NSError *))arg6;
+- (id <CPLEngineTransportQueryTask>)queryTaskForCursor:(NSData *)arg1 class:(Class)arg2 transportScope:(NSData *)arg3 scopeIdentifier:(NSString *)arg4 progressHandler:(void (^)(CPLChangeBatch *, NSData *))arg5 completionHandler:(void (^)(NSError *))arg6;
+- (id <CPLEngineTransportUploadBatchTask>)uploadBatchTaskForBatch:(CPLChangeBatch *)arg1 transportScope:(NSData *)arg2 scope:(CPLEngineScope *)arg3 additionalTransportScopes:(NSDictionary *)arg4 progressHandler:(void (^)(CPLScopedIdentifier *, float))arg5 completionHandler:(void (^)(NSError *))arg6;
+- (id <CPLEngineTransportCheckRecordsExistenceTask>)checkRecordsExistenceTaskForRecords:(NSArray *)arg1 fetchRecordProperties:(NSSet *)arg2 transportScope:(NSData *)arg3 scope:(CPLEngineScope *)arg4 additionalTransportScopes:(NSDictionary *)arg5 completionHandler:(void (^)(NSDictionary *, NSError *))arg6;
+- (id <CPLEngineTransportSetupTask>)setupTaskUpdateDisabledFeatures:(BOOL)arg1 completionHandler:(void (^)(id <CPLEngineStoreUserIdentifier>, NSArray *, NSError *))arg2;
 @end
 

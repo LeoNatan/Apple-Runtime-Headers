@@ -8,7 +8,7 @@
 
 #import "VCConnectionHealthMonitorDelegate.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, VCConnectionHealthMonitor;
+@class NSObject<OS_dispatch_queue>, NSString, VCConnectionHealthMonitor, VCStatsRecorder;
 
 __attribute__((visibility("hidden")))
 @interface VCConnectionManager : NSObject <VCConnectionHealthMonitorDelegate>
@@ -57,8 +57,10 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType _wrmStatusUpdateCallback;
     CDUnknownFunctionPointerType _wrmRequestNotificationCallback;
     void *_wrmCallbacksContext;
+    VCStatsRecorder *_statsRecorder;
 }
 
+@property(readonly, nonatomic) VCStatsRecorder *statsRecorder; // @synthesize statsRecorder=_statsRecorder;
 @property(readonly) double remoteNoRemotePacketInterval; // @synthesize remoteNoRemotePacketInterval=_remoteNoRemotePacketInterval;
 @property _Bool isAudioOnly; // @synthesize isAudioOnly=_isAudioOnly;
 @property(readonly) int signalingExcessiveCellularRxBytes; // @synthesize signalingExcessiveCellularRxBytes=_signalingExcessiveCellularRxBytes;
@@ -79,8 +81,9 @@ __attribute__((visibility("hidden")))
 - (void)updateConnectionStatsWithIndicatorNone:(CDStruct_b3143830 *)arg1;
 - (void)updateConnectionStatsWithIndicatorNoPackets:(CDStruct_b3143830 *)arg1;
 - (void)connectionHealthDidUpdate:(int)arg1 isLocalConnection:(_Bool)arg2;
+- (void)setDuplicationFlag:(_Bool)arg1 withPreferredLocalLinkTypeForDuplication:(int)arg2;
 - (_Bool)shouldAcceptDataFromSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
-- (id)getConnectionWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 isPrimary:(_Bool *)arg2;
+- (id)copyConnectionWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 isPrimary:(_Bool *)arg2;
 - (void)sourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 isSourceOnCellular:(_Bool *)arg2 isSourceIPv6:(_Bool *)arg3;
 - (void)updateCellularTech:(int)arg1 forLocalInterface:(_Bool)arg2;
 - (void)updateCellularMTU:(int)arg1;
@@ -90,7 +93,7 @@ __attribute__((visibility("hidden")))
 - (void)updateConnectionHealthWithIndicator:(_Bool)arg1;
 - (int)processConnectionHealthFromControlInfo:(void *)arg1;
 - (int)setConnectionHealthOnControlInfo:(void *)arg1;
-- (void)updateBytesForSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 bytes:(int)arg2 isMediaData:(_Bool)arg3 isOutgoing:(_Bool)arg4;
+- (void)updateCellularExcessiveBytesWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 bytes:(int)arg2 isMediaData:(_Bool)arg3 isOutgoing:(_Bool)arg4;
 - (void)updateTransmittedExcessiveBytes:(int)arg1 isMediaData:(_Bool)arg2 isIPv6:(_Bool)arg3;
 - (void)updateReceivedExcessiveBytes:(int)arg1 isMediaData:(_Bool)arg2 isIPv6:(_Bool)arg3;
 - (void)reportConnection:(id)arg1 isInitialConnection:(_Bool)arg2;
@@ -109,8 +112,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)isBetterConnection:(id)arg1 asPrimary:(_Bool)arg2;
 - (void)promoteSecondaryConnectionToPrimary:(id)arg1;
 - (void)primaryConnectionChanged:(id)arg1 oldPrimaryConnection:(id)arg2;
-- (void)updateReceivedBytesForSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 bytesReceived:(int)arg2 isMediaData:(_Bool)arg3;
-- (void)updateTransmittedBytesForSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 bytesSent:(int)arg2 isMediaData:(_Bool)arg3;
+- (void)updateSessionStats:(unsigned short)arg1;
+- (unsigned int)getByteCountWithIndex:(unsigned char)arg1 isOutgoing:(_Bool)arg2;
+- (unsigned int)getPacketCountWithIndex:(unsigned char)arg1 isOutgoing:(_Bool)arg2;
+- (void)synchronizeParticipantGenerationCounter:(unsigned char)arg1;
+- (void)updatePacketCountAndByteCountWithIndex:(unsigned char)arg1 packetSize:(int)arg2 numOfStreamId:(int)arg3 isPriorityIncluded:(_Bool)arg4 isOutgoing:(_Bool)arg5;
+- (void)updateReceivedPacketsAndBytesWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 bytesReceived:(int)arg2 isMediaData:(_Bool)arg3 shouldCountPacket:(_Bool)arg4 numOfStreamId:(int)arg5 isPriorityIncluded:(_Bool)arg6;
+- (void)updateTransmittedPacketsAndBytesWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 bytesSent:(int)arg2 isMediaData:(_Bool)arg3 shouldCountPacket:(_Bool)arg4 numOfStreamId:(int)arg5 isPriorityIncluded:(_Bool)arg6;
 - (_Bool)isConnectedOnRelayForActiveConnectionWithQuality:(int)arg1;
 - (_Bool)isConnectedOnIPv6ForActiveConnectionWithQuality:(int)arg1;
 - (int)getCellularMTUForActiveConnectionWithQuality:(int)arg1;
@@ -128,6 +136,7 @@ __attribute__((visibility("hidden")))
 - (void)setDuplicationCallback:(CDUnknownFunctionPointerType)arg1 withContext:(void *)arg2;
 - (void)setReportingAgent:(struct opaqueRTCReporting *)arg1;
 @property id <VCConnectionManagerDelegate> delegate;
+- (void)setupConnectionHealthMonitor;
 - (void)dealloc;
 - (id)init;
 

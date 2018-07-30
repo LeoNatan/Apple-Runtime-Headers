@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface TCEnumerationMap : NSObject
 {
     struct __CFDictionary *m_valueToString;
@@ -14,6 +13,7 @@ __attribute__((visibility("hidden")))
     BOOL m_caseSensitive;
 }
 
+- (void)enumerateValuesAndStringsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)stringForValue:(int)arg1;
 - (long long)valueForString:(id)arg1;
 - (void)dealloc;

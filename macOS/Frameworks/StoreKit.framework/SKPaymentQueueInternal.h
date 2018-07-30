@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SKPaymentQueueClient;
 
+__attribute__((visibility("hidden")))
 @interface SKPaymentQueueInternal : NSObject
 {
+    NSString *_identifier;
     NSMutableArray *_observers;
-    BOOL _restoringCompletedTransaction;
     NSMutableArray *_transactions;
     NSMutableDictionary *_downloads;
     NSObject<OS_dispatch_queue> *_replyQueue;
+    SKPaymentQueueClient *_client;
 }
 
 - (void).cxx_destruct;

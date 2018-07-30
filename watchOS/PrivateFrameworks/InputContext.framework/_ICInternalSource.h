@@ -12,10 +12,12 @@
 {
 }
 
-- (void)searchForMeCardEmailAddressesWithTimeout:(int)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)searchForMeCardRegionsWithTimeout:(int)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)hibernate;
+- (void)warmUp;
+- (void)searchForMeCardEmailAddressesWithTimeout:(unsigned int)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)searchForMeCardRegionsWithTimeout:(unsigned int)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)localizedStringForKey:(id)arg1 withLocale:(id)arg2;
-- (void)predictedItemsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned int)arg3 timeoutInMilliseconds:(float)arg4 handler:(CDUnknownBlockType)arg5;
+- (void)predictedItemsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned int)arg3 timeoutInMilliseconds:(unsigned int)arg4 handler:(CDUnknownBlockType)arg5;
 
 @end
 

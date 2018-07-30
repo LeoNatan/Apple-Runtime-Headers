@@ -12,13 +12,13 @@
 
 @interface SXDataTableTextSourceFactory : NSObject <SXDataTableTextSourceFactory>
 {
-    id <SXActionProvider> _actionProvider;
+    id <SXSmartFieldFactory> _smartFieldFactory;
 }
 
-@property(readonly, nonatomic) id <SXActionProvider> actionProvider; // @synthesize actionProvider=_actionProvider;
+@property(readonly, nonatomic) id <SXSmartFieldFactory> smartFieldFactory; // @synthesize smartFieldFactory=_smartFieldFactory;
 - (void).cxx_destruct;
 - (id)textSourceWithFormattedText:(id)arg1 indexPath:(CDStruct_2fea82da)arg2 dataSource:(id)arg3;
-- (id)initWithActionProvider:(id)arg1;
+- (id)initWithSmartFieldFactory:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

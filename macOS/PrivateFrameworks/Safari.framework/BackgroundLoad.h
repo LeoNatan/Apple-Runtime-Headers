@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     struct Array _currentPageBackList;
     struct BackForwardListItem _currentPageCurrentBackForwardListItem;
     struct Array _backgroundLoadPageBackList;
-    BOOL _canBeCanceled;
     BOOL _shouldSendExtensionNavigateWhenPageIsShown;
     BOOL _reissuedBecauseResultedInDownload;
     int _tryCloseOfDestinationPageCompletionAction;
@@ -35,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct BackForwardListItem backgroundLoadPageCurrentBackForwardListItem; // @synthesize backgroundLoadPageCurrentBackForwardListItem=_backgroundLoadPageCurrentBackForwardListItem;
 @property(nonatomic) int tryCloseOfDestinationPageCompletionAction; // @synthesize tryCloseOfDestinationPageCompletionAction=_tryCloseOfDestinationPageCompletionAction;
 @property(nonatomic) BOOL shouldSendExtensionNavigateWhenPageIsShown; // @synthesize shouldSendExtensionNavigateWhenPageIsShown=_shouldSendExtensionNavigateWhenPageIsShown;
-@property(nonatomic) BOOL canBeCanceled; // @synthesize canBeCanceled=_canBeCanceled;
 @property(copy, nonatomic) NSString *collectionIdentifier; // @synthesize collectionIdentifier=_collectionIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *httpReferrer; // @synthesize httpReferrer=_httpReferrer;

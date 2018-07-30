@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString, UIView;
+@class NSString, UIColor, UIView;
 
 @interface PUICActionSheetItem : NSObject
 {
@@ -21,9 +21,11 @@
     CDUnknownBlockType _actionHandler;
     UIView *_accessoryView;
     UIView *_contentView;
+    UIColor *_backgroundColor;
 }
 
 + (id)actionWithTitle:(id)arg1 style:(int)arg2 actionHandler:(CDUnknownBlockType)arg3;
+@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;

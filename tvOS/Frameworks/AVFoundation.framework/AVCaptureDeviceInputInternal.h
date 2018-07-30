@@ -13,7 +13,6 @@
     AVCaptureDevice *device;
     NSArray *ports;
     _Bool ready;
-    _Bool authorizedForCamera;
     AVWeakReference *weakReference;
     id <AVCallbackCancellation> deviceOpenCallbackInvoker;
 }

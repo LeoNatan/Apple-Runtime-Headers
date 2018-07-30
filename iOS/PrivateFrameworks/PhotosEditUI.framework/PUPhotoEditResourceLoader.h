@@ -8,25 +8,33 @@
 
 @class NSMutableArray, PHResourceDownloadRequest, PUEditableMediaProvider, PUPhotoEditResourceLoadRequest;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditResourceLoader : NSObject
 {
     _Bool _loadingMedia;
     id <PUEditableAsset> _asset;
     PUEditableMediaProvider *_mediaProvider;
     long long _resourcesAvailability;
+    long long _assetRawPropertyCheckState;
     PUPhotoEditResourceLoadRequest *__currentRequest;
     NSMutableArray *__enqueuedRequests;
     PHResourceDownloadRequest *__downloadRequest;
+    unsigned long long __downloadSignpostId;
 }
 
+@property(nonatomic) unsigned long long _downloadSignpostId; // @synthesize _downloadSignpostId=__downloadSignpostId;
 @property(retain, nonatomic, setter=_setDownloadRequest:) PHResourceDownloadRequest *_downloadRequest; // @synthesize _downloadRequest=__downloadRequest;
 @property(retain, nonatomic, setter=_setEnqueuedRequests:) NSMutableArray *_enqueuedRequests; // @synthesize _enqueuedRequests=__enqueuedRequests;
 @property(retain, nonatomic, setter=_setCurrentRequest:) PUPhotoEditResourceLoadRequest *_currentRequest; // @synthesize _currentRequest=__currentRequest;
+@property(readonly, nonatomic) long long assetRawPropertyCheckState; // @synthesize assetRawPropertyCheckState=_assetRawPropertyCheckState;
 @property(nonatomic, getter=isLoadingMedia, setter=_setLoadingMedia:) _Bool loadingMedia; // @synthesize loadingMedia=_loadingMedia;
 @property(nonatomic, setter=_setResourcesAvailability:) long long resourcesAvailability; // @synthesize resourcesAvailability=_resourcesAvailability;
 @property(readonly, nonatomic) PUEditableMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+- (void)_downloadSignpostEvent:(const char *)arg1;
+- (void)_downloadSignpostEnd;
+- (void)_downloadSignpostBegin;
 - (int)_loadVideoIfNeededWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (int)_loadImageURLIfNeededWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (int)_loadImageIfNeededWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -40,6 +48,7 @@
 - (void)_handleDownloadCompletedWithRequest:(id)arg1 success:(_Bool)arg2 canceled:(_Bool)arg3 error:(id)arg4;
 - (void)_handleDownloadRequired:(_Bool)arg1 withRequest:(id)arg2 downloadRequest:(id)arg3;
 - (void)_checkIfDownloadRequiredWithRequest:(id)arg1;
+- (void)_checkIfShouldUseRawWithRequest:(id)arg1;
 - (void)_initiateRequest:(id)arg1;
 - (_Bool)_assetNeedsVideoLoaded;
 - (_Bool)_assetNeedsImageURLLoaded;

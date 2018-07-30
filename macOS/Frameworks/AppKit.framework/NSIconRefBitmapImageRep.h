@@ -6,6 +6,7 @@
 
 #import <AppKit/NSBitmapImageRep.h>
 
+__attribute__((visibility("hidden")))
 @interface NSIconRefBitmapImageRep : NSBitmapImageRep
 {
     struct OpaqueIconRef *_iconRef;

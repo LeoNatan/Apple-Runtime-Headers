@@ -11,8 +11,8 @@
 @interface AVVolumeController : NSObject
 {
     _Bool _changingVolume;
-    _Bool _prefersSystemVolumeHUDHidden;
     _Bool _currentRouteHasVolumeControl;
+    _Bool _prefersSystemVolumeHUDHidden;
     _Bool _prefersSystemVolumeHUDHiddenInternal;
     _Bool _EUVolumeLimitEnabled;
     _Bool _EUVolumeLimitOverridden;
@@ -27,6 +27,7 @@
     AVSystemController *_sharedSystemController;
 }
 
++ (id)clientsPreferringVolumeHUDHidden;
 + (id)sharedVolumeController;
 @property(nonatomic, getter=isFullyInitialized) _Bool fullyInitialized; // @synthesize fullyInitialized=_fullyInitialized;
 @property(retain, nonatomic) AVSystemController *sharedSystemController; // @synthesize sharedSystemController=_sharedSystemController;
@@ -39,8 +40,8 @@
 @property(nonatomic, getter=isEUVolumeLimitEnabled) _Bool EUVolumeLimitEnabled; // @synthesize EUVolumeLimitEnabled=_EUVolumeLimitEnabled;
 @property(nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
 @property(nonatomic) _Bool prefersSystemVolumeHUDHiddenInternal; // @synthesize prefersSystemVolumeHUDHiddenInternal=_prefersSystemVolumeHUDHiddenInternal;
-@property(nonatomic) _Bool currentRouteHasVolumeControl; // @synthesize currentRouteHasVolumeControl=_currentRouteHasVolumeControl;
 @property(nonatomic) _Bool prefersSystemVolumeHUDHidden; // @synthesize prefersSystemVolumeHUDHidden=_prefersSystemVolumeHUDHidden;
+@property(nonatomic) _Bool currentRouteHasVolumeControl; // @synthesize currentRouteHasVolumeControl=_currentRouteHasVolumeControl;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(nonatomic, getter=isChangingVolume) _Bool changingVolume; // @synthesize changingVolume=_changingVolume;
 - (void).cxx_destruct;
@@ -56,6 +57,7 @@
 @property(readonly, nonatomic) float effectiveVolumeLimit;
 - (void)setTargetVolume:(float)arg1;
 - (void)setSystemVolumeHUDEnabled:(_Bool)arg1;
+- (void)setClientWithIdentifier:(id)arg1 prefersSystemVolumeHUDHidden:(_Bool)arg2;
 - (void)endChangingVolume;
 - (void)beginChangingVolume;
 - (void)dealloc;

@@ -14,6 +14,7 @@
 }
 
 + (id)nodeWithViewportSize:(struct CGSize)arg1;
++ (_Bool)supportsSecureCoding;
 - (void)_renderForTime:(double)arg1;
 -     // Error parsing type: 24@0:48, name: unprojectPoint:
 -     // Error parsing type: 24@0:48, name: projectPoint:

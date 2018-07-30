@@ -20,8 +20,11 @@
     unsigned int _numAppleMediaAccessories;
     unsigned int _numAppleTVAccessories;
     unsigned int _numBridgedAccessories;
+    unsigned int _numBridgedTargetControllers;
     unsigned int _numCameraAccessories;
     unsigned int _numCertifiedAccessories;
+    unsigned int _numCertifiedBridgedTargetControllers;
+    unsigned int _numCertifiedTargetControllers;
     unsigned int _numEventTriggers;
     unsigned int _numHAPAccessories;
     unsigned int _numMediaSystems;
@@ -29,6 +32,7 @@
     unsigned int _numRooms;
     unsigned int _numScenes;
     unsigned int _numServices;
+    unsigned int _numTargetControllers;
     unsigned int _numTimerTriggers;
     unsigned int _numTriggers;
     unsigned int _numUsers;
@@ -44,8 +48,11 @@
         unsigned int numAppleMediaAccessories:1;
         unsigned int numAppleTVAccessories:1;
         unsigned int numBridgedAccessories:1;
+        unsigned int numBridgedTargetControllers:1;
         unsigned int numCameraAccessories:1;
         unsigned int numCertifiedAccessories:1;
+        unsigned int numCertifiedBridgedTargetControllers:1;
+        unsigned int numCertifiedTargetControllers:1;
         unsigned int numEventTriggers:1;
         unsigned int numHAPAccessories:1;
         unsigned int numMediaSystems:1;
@@ -53,6 +60,7 @@
         unsigned int numRooms:1;
         unsigned int numScenes:1;
         unsigned int numServices:1;
+        unsigned int numTargetControllers:1;
         unsigned int numTimerTriggers:1;
         unsigned int numTriggers:1;
         unsigned int numUsers:1;
@@ -64,6 +72,10 @@
 }
 
 + (Class)eventTriggersType;
+@property(nonatomic) unsigned int numCertifiedBridgedTargetControllers; // @synthesize numCertifiedBridgedTargetControllers=_numCertifiedBridgedTargetControllers;
+@property(nonatomic) unsigned int numBridgedTargetControllers; // @synthesize numBridgedTargetControllers=_numBridgedTargetControllers;
+@property(nonatomic) unsigned int numCertifiedTargetControllers; // @synthesize numCertifiedTargetControllers=_numCertifiedTargetControllers;
+@property(nonatomic) unsigned int numTargetControllers; // @synthesize numTargetControllers=_numTargetControllers;
 @property(nonatomic) unsigned int numMediaSystems; // @synthesize numMediaSystems=_numMediaSystems;
 @property(nonatomic) unsigned int numCameraAccessories; // @synthesize numCameraAccessories=_numCameraAccessories;
 @property(nonatomic) unsigned int numAppleTVAccessories; // @synthesize numAppleTVAccessories=_numAppleTVAccessories;
@@ -98,6 +110,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasNumCertifiedBridgedTargetControllers;
+@property(nonatomic) _Bool hasNumBridgedTargetControllers;
+@property(nonatomic) _Bool hasNumCertifiedTargetControllers;
+@property(nonatomic) _Bool hasNumTargetControllers;
 @property(nonatomic) _Bool hasNumMediaSystems;
 @property(nonatomic) _Bool hasNumCameraAccessories;
 @property(nonatomic) _Bool hasNumAppleTVAccessories;

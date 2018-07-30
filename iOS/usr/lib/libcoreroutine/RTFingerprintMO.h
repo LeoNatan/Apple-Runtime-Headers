@@ -6,7 +6,7 @@
 
 #import "NSManagedObject.h"
 
-@class NSDate, NSNumber, NSOrderedSet, NSUUID;
+@class NSDate, NSNumber, NSSet, NSUUID;
 
 @interface RTFingerprintMO : NSManagedObject
 {
@@ -20,7 +20,7 @@
 @property(copy, nonatomic) NSUUID *identifier; // @dynamic identifier;
 @property(copy, nonatomic) NSNumber *settledState; // @dynamic settledState;
 @property(copy, nonatomic) NSDate *start; // @dynamic start;
-@property(retain, nonatomic) NSOrderedSet *wifiAccessPoints; // @dynamic wifiAccessPoints;
+@property(retain, nonatomic) NSSet *wifiAccessPoints; // @dynamic wifiAccessPoints;
 
 @end
 

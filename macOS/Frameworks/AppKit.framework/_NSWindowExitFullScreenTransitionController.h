@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)failedToExitFullScreen;
 - (struct CGImage *)captureAfterSnapshot;
 - (struct CGImage *)captureBeforeSnapshot;
+- (unsigned long long)destinationSpaceID;
 - (struct CGSize)transitionedWindowShadowOffset;
 - (id)windowIDsForSnapshot;
 - (struct CGRect)transitionedWindowFrame;

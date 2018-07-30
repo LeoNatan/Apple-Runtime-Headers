@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 @class RTInvocationDispatcher, RTMetricManager, RTPlatform, RTUserSessionMonitor;
 
-@interface RTAuthorizationManager : RTNotifier
+@interface RTAuthorizationManager : RTService
 {
     RTMetricManager *_metricManager;
     BOOL _supported;
@@ -45,7 +45,6 @@
 - (BOOL)isLocationServicesEnabled;
 - (void)dealloc;
 - (void)_shutdown;
-- (void)shutdown;
 - (void)_setup;
 - (void)setup;
 - (id)initWithMetricManager:(id)arg1 platform:(id)arg2 userSessionMonitor:(id)arg3;

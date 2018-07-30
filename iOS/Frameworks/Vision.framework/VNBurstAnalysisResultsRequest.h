@@ -8,20 +8,18 @@
 
 @interface VNBurstAnalysisResultsRequest : VNRequest
 {
-    _Bool _includeClusters;
-    _Bool _includeAllImageIdentifiers;
-    _Bool _includeAllImageStats;
 }
 
 + (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
-@property(nonatomic) _Bool includeAllImageStats; // @synthesize includeAllImageStats=_includeAllImageStats;
-@property(nonatomic) _Bool includeAllImageIdentifiers; // @synthesize includeAllImageIdentifiers=_includeAllImageIdentifiers;
-@property(nonatomic) _Bool includeClusters; // @synthesize includeClusters=_includeClusters;
++ (Class)configurationClass;
+@property(nonatomic) _Bool includeAllImageStats;
+@property(nonatomic) _Bool includeAllImageIdentifiers;
+@property(nonatomic) _Bool includeClusters;
 - (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
+- (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 - (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 

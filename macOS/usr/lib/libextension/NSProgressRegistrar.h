@@ -24,7 +24,7 @@
 
 - (oneway void)removeSubscriberForID:(id)arg1;
 - (oneway void)addSubscriber:(id)arg1 forID:(id)arg2 appBundleID:(id)arg3 fileURL:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)_getRemoteProcessWithIdentifier:(int)arg1 canReadItemAtURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_getRemoteProcessWithAuditToken:(CDStruct_4c969caf)arg1 canReadItemAtURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (oneway void)addSubscriber:(id)arg1 forID:(id)arg2 appBundleID:(id)arg3 category:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (oneway void)removePublisherForID:(id)arg1;
 - (oneway void)observePublisherForID:(id)arg1 values:(id)arg2 forKeys:(id)arg3;

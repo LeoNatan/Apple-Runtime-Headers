@@ -23,7 +23,7 @@
 @property(retain) CALayer *leftMaskLayer; // @synthesize leftMaskLayer=_maskOne;
 @property(retain) NSScrubberSelectionView *selectionOverlayView; // @synthesize selectionOverlayView=_foreground;
 @property(retain) NSScrubberSelectionView *selectionBackgroundView; // @synthesize selectionBackgroundView=_background;
-- (void)_viewDidChangeAppearance:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)_layoutMaskLayers;
 - (void)_createMaskLayersIfNeeded;
 - (void)_clearMaskLayers;

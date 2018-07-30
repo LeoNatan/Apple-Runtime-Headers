@@ -8,17 +8,15 @@
 
 #import "GEOResourceManifestServerProxy.h"
 
-@class GEOActiveTileGroup, GEOResourceManifestConfiguration, NSHashTable, NSLock, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
+@class GEOActiveTileGroup, GEOResourceManifestConfiguration, NSLock, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy>
 {
     id <GEOResourceManifestServerProxyDelegate> _delegate;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
     NSObject<OS_xpc_object> *_conn;
-    NSLock *_connLock;
-    NSHashTable *_cancellingConnections;
-    NSLock *_cancellingConnectionsLock;
-    unsigned long long _retryCount;
+    _Bool _sentConfigurationMessage;
+    _Bool _hasOpenConnection;
     _Bool _isUpdatingManifest;
     _Bool _isLoadingResources;
     NSObject<OS_dispatch_queue> *_serverQueue;
@@ -31,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <GEOResourceManifestServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;
+- (unsigned long long)maximumZoomLevelForStyle:(int)arg1 scale:(int)arg2;
 - (void)deactivateResourceScenario:(int)arg1;
 - (void)activateResourceScenario:(int)arg1;
 - (void)deactivateResourceScale:(int)arg1;
@@ -46,12 +45,12 @@ __attribute__((visibility("hidden")))
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)closeConnection;
 - (void)openConnection;
-- (void)_setupConnection;
+- (id)_xpcConnection;
 - (id)configuration;
 - (id)authToken;
 - (void)dealloc;
 @property(readonly, nonatomic) GEOActiveTileGroup *activeTileGroup;
-- (id)initWithDelegate:(id)arg1 configuration:(id)arg2 additionalMigrationTaskClasses:(id)arg3;
+- (id)initWithDelegate:(id)arg1 configuration:(id)arg2;
 - (id)serverQueue;
 
 // Remaining properties

@@ -8,7 +8,6 @@
 
 @class CUIRenditionKey, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CUINamedLookup : NSObject
 {
     NSString *_name;
@@ -19,7 +18,18 @@ __attribute__((visibility("hidden")))
     unsigned int _odContent:1;
 }
 
+@property(nonatomic) unsigned long long storageRef; // @synthesize storageRef=_storageRef;
+@property(copy, nonatomic) CUIRenditionKey *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) NSString *appearance;
+@property(readonly, nonatomic) long long layoutDirection;
+@property(readonly, nonatomic) long long displayGamut;
+@property(readonly, nonatomic) long long graphicsClass;
+@property(readonly, nonatomic) long long memoryClass;
+@property(readonly, nonatomic) long long sizeClassVertical;
+@property(readonly, nonatomic) long long sizeClassHorizontal;
+@property(readonly, nonatomic) unsigned long long subtype;
+@property(readonly, nonatomic) long long idiom;
 - (unsigned int)_distilledInVersion;
 - (_Bool)isTintable;
 - (void)setRepresentsOnDemandContent:(_Bool)arg1;

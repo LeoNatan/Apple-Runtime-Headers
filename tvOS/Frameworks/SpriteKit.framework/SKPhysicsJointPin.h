@@ -18,6 +18,7 @@
 
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly) struct CGPoint anchor; // @synthesize anchor=_anchor;
 @property(nonatomic) double rotationSpeed; // @synthesize rotationSpeed=_rotationSpeed;
 @property(nonatomic) double frictionTorque; // @synthesize frictionTorque=_frictionTorque;

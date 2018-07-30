@@ -19,9 +19,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (long long)invalidationStateForComponent:(id)arg1;
 - (long long)invalidationStateForPlace:(id)arg1;
-- (void)refreshLOIReverseGeocodedMapItems:(id)arg1 updatedCoordinates:(id)arg2 traits:(id)arg3 auditToken:(id)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)refreshLOIAssociatedMapItems:(id)arg1 updatedCoordinates:(id)arg2 traits:(id)arg3 auditToken:(id)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)_refreshMapItems:(id)arg1 updatedCoordinates:(id)arg2 xpcMessageName:(id)arg3 traits:(id)arg4 auditToken:(id)arg5 handler:(CDUnknownBlockType)arg6;
 - (void)snapshotWithFilePathArray:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)versionsForDomains:(id)arg1 handler:(CDUnknownBlockType)arg2;

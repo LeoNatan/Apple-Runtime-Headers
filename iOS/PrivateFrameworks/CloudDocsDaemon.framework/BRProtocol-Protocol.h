@@ -134,7 +134,7 @@
 - (void)dropSpotlightIndexWithReply:(void (^)(NSError *))arg1;
 - (void)reclaimAmount:(long long)arg1 withUrgency:(int)arg2 reply:(void (^)(long long))arg3;
 - (void)purgeAmount:(long long)arg1 withUrgency:(int)arg2 reply:(void (^)(long long))arg3;
-- (void)computePurgableSpaceWithUrgency:(int)arg1 reply:(void (^)(long long))arg2;
+- (void)computePurgeableSpaceForAllUrgenciesWithReply:(void (^)(NSDictionary *, NSNumber *, NSError *))arg1;
 - (void)iWorkForceSyncContainerID:(NSString *)arg1 ownedByMe:(_Bool)arg2 reply:(void (^)(NSError *))arg3;
 - (void)forceSyncContainerID:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)_t_waitUntilIdle:(NSString *)arg1 reply:(void (^)(NSError *))arg2;

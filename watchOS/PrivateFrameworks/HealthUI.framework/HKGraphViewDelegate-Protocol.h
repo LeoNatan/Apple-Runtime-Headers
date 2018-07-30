@@ -10,7 +10,6 @@
 
 @protocol HKGraphViewDelegate <NSObject>
 - (void)graphViewDidTapYAxis:(HKGraphView *)arg1;
-- (void)graphView:(HKGraphView *)arg1 didUpdateAnnotationViewContentWithContexts:(NSArray *)arg2;
 - (void)graphView:(HKGraphView *)arg1 didUpdateLegendViewsWithTopLegendFrame:(struct CGRect)arg2;
 - (UIColor *)seriesSelectionLineColorForGraphView:(HKGraphView *)arg1;
 - (void)graphView:(HKGraphView *)arg1 didUpdateSeries:(HKGraphSeries *)arg2 newDataArrived:(_Bool)arg3;

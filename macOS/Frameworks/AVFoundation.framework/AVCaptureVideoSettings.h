@@ -8,6 +8,7 @@
 
 @class AVVideoOutputSettings;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureVideoSettings : AVCaptureOutputSettings
 {
     AVVideoOutputSettings *_avVideoOutputSettings;

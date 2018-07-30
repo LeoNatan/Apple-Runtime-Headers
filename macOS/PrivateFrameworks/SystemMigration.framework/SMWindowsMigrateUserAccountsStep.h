@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)uniqueHomeDirectoryForUserWithName:(id)arg1;
 - (double)estimatedTimeToCompletePhase:(unsigned long long)arg1;
-- (id)createUserAccount:(id)arg1 withShortname:(id)arg2 longname:(id)arg3 homeDirectory:(id)arg4 outUID:(long long *)arg5;
+- (id)createUserAccount:(id)arg1 withShortname:(id)arg2 longname:(id)arg3 password:(id)arg4 authorizingUser:(id)arg5 authorizingPassword:(id)arg6 homeDirectory:(id)arg7 outUID:(long long *)arg8;
 - (id)process;
 - (id)prepare;
 - (id)initWithEngine:(id)arg1 pathMap:(id)arg2;

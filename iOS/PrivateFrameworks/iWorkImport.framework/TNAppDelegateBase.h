@@ -20,6 +20,9 @@ __attribute__((visibility("hidden")))
 - (id)cloudKitContainerIdentifier;
 - (void)p_inputMethodsChanged:(id)arg1;
 - (_Bool)supportsRTL;
+- (id)stringForEquationChoiceUseEQKitButtonTitle;
+- (id)stringForEquationChoiceBody;
+- (id)stringForEquationChoiceTitle;
 - (id)stringForDocumentViewOnlyMessage;
 - (id)stringForDocumentViewOnlyTitle;
 - (id)stringForOwnerHasCollabEnabledMessage;
@@ -59,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCollaboratorConflictDetails;
 - (id)stringForCollaboratorConflict;
 - (id)stringForUpdatingDocumentWithoutServiceType;
+- (id)equationEditorAPDID;
 - (id)templateTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
 - (id)documentTypeDisplayName;

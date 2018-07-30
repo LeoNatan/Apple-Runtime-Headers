@@ -15,12 +15,11 @@
 
 @interface _CPEndLocalSearchFeedback : PBCodable <_CPProcessableFeedback, _CPFeedbackUUID, _CPEndLocalSearchFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
     NSString *_uuid;
 }
 
-@property(copy, nonatomic) NSString *uuid;
+@property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
@@ -31,8 +30,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasUuid;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

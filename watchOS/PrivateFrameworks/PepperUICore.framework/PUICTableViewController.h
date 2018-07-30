@@ -25,9 +25,11 @@
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (void)viewDidAppear:(_Bool)arg1;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 @property(retain, nonatomic) PUICTableView *tableView;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;

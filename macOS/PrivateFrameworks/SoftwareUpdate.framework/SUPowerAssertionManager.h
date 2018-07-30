@@ -15,7 +15,6 @@
 
 - (void)cancelPowerAssertionWithDescription:(id)arg1;
 - (void)createPowerAssertionWithType:(struct __CFString *)arg1 timeout:(double)arg2 andDescription:(id)arg3;
-- (void)createPreventDisplaySleepPowerAssertion;
 - (void)createPowerAssertionWithDescription:(id)arg1;
 - (void)dealloc;
 - (id)init;

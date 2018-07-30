@@ -32,8 +32,6 @@
 - (void)finalizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginSessionWithKnownLibraryVersion:(id)arg1 resetTracker:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)createSessionContext;
-- (void)resume;
-- (void)pause;
 - (void)dealloc;
 - (id)initWithLibraryManager:(id)arg1;
 - (id)init;

@@ -11,7 +11,14 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGSize {
+    double width;
+    double height;
+};
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
     double _field1;
     double _field2;
-};
+} CDStruct_c3b9c2ee;
 

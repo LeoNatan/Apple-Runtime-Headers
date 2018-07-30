@@ -8,7 +8,6 @@
 
 @class ABCNDDScanner;
 
-__attribute__((visibility("hidden")))
 @interface ABCNAddressDetector : NSObject
 {
     ABCNDDScanner *_scanner;

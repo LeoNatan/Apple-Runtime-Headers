@@ -10,12 +10,16 @@
 
 @class NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDEntity : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
+    CDStruct_95bda58d _placeLookupCategorys;
+    unsigned long long _brandMuid;
     NSMutableArray *_altFaxs;
     NSMutableArray *_altTelephones;
     NSMutableArray *_altUrls;
+    int _capacity;
     int _displayStyle;
     NSString *_fax;
     NSMutableArray *_localizedCategorys;
@@ -32,6 +36,8 @@
     _Bool _isStandaloneBrand;
     _Bool _telephoneAdsOptOut;
     struct {
+        unsigned int brandMuid:1;
+        unsigned int capacity:1;
         unsigned int displayStyle:1;
         unsigned int placeDisplayType:1;
         unsigned int searchSection:1;
@@ -51,6 +57,8 @@
 + (Class)altFaxType;
 + (Class)altTelephoneType;
 + (id)entityForPlaceData:(id)arg1;
+@property(nonatomic) int capacity; // @synthesize capacity=_capacity;
+@property(nonatomic) unsigned long long brandMuid; // @synthesize brandMuid=_brandMuid;
 @property(nonatomic) _Bool isStandaloneBrand; // @synthesize isStandaloneBrand=_isStandaloneBrand;
 @property(nonatomic) _Bool altTelephoneAdsOptOut; // @synthesize altTelephoneAdsOptOut=_altTelephoneAdsOptOut;
 @property(nonatomic) _Bool telephoneAdsOptOut; // @synthesize telephoneAdsOptOut=_telephoneAdsOptOut;
@@ -76,6 +84,16 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsPlaceLookupCategorys:(id)arg1;
+- (id)placeLookupCategorysAsString:(int)arg1;
+- (void)setPlaceLookupCategorys:(int *)arg1 count:(unsigned long long)arg2;
+- (int)placeLookupCategoryAtIndex:(unsigned long long)arg1;
+- (void)addPlaceLookupCategory:(int)arg1;
+- (void)clearPlaceLookupCategorys;
+@property(readonly, nonatomic) int *placeLookupCategorys;
+@property(readonly, nonatomic) unsigned long long placeLookupCategorysCount;
+@property(nonatomic) _Bool hasCapacity;
+@property(nonatomic) _Bool hasBrandMuid;
 - (int)StringAsPlaceDisplayType:(id)arg1;
 - (id)placeDisplayTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPlaceDisplayType;
@@ -124,6 +142,7 @@
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type; // @synthesize type=_type;
+- (void)dealloc;
 - (id)bestLocalizedName;
 
 @end

@@ -9,24 +9,23 @@
 #import "AVAudioRecorderViewControllerDelegate.h"
 #import "NPKAddPassesViewControllerDelegate.h"
 #import "PUICActionSheetControllerDelegate.h"
-#import "PUICDictationViewControllerDelegatePrivate.h"
 #import "PUICQuickboardEmojiViewControllerDelegate.h"
 #import "PUICQuickboardViewControllerDelegate.h"
 #import "PUICSnapshotDelegate.h"
-#import "SPCompanionConnectionDelegate.h"
+#import "SPExtensionConnectionDelegate.h"
 #import "SPInterfaceViewControllerDelegate.h"
 #import "SPMediaPlayerViewControllerDelegate.h"
 #import "SPPageViewControllerDelegate.h"
 #import "UIApplicationDelegate.h"
-#import "UIGestureRecognizerDelegate.h"
 #import "UNUserNotificationCenterDelegate.h"
 
-@class AVAudioRecorderViewController, CSLSActivatingUIAssertion, CSLSUnblankingSynchronizer, NPKAddPassesViewController, NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NSTimer, PUICQuickboardViewController, SPCompanionConnection, SPInterfaceViewController, SPMediaPlayerViewController, SPPageViewController, UIColor, UIView, UIWindow;
+@class AVAudioRecorderViewController, CSLSActivatingUIAssertion, CSLSUnblankingSynchronizer, NPKAddPassesViewController, NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NSTimer, PUICQuickboardViewController, SPExtensionConnection, SPInterfaceViewController, SPMediaPlayerViewController, SPPageViewController, UIColor, UIView, UIWindow;
 
-@interface SPApplicationDelegate : NSObject <SPInterfaceViewControllerDelegate, SPCompanionConnectionDelegate, UIGestureRecognizerDelegate, PUICQuickboardViewControllerDelegate, PUICActionSheetControllerDelegate, NPKAddPassesViewControllerDelegate, PUICQuickboardEmojiViewControllerDelegate, SPMediaPlayerViewControllerDelegate, AVAudioRecorderViewControllerDelegate, PUICDictationViewControllerDelegatePrivate, PUICSnapshotDelegate, UNUserNotificationCenterDelegate, SPPageViewControllerDelegate, UIApplicationDelegate>
+@interface SPApplicationDelegate : NSObject <SPInterfaceViewControllerDelegate, SPExtensionConnectionDelegate, PUICQuickboardViewControllerDelegate, PUICActionSheetControllerDelegate, NPKAddPassesViewControllerDelegate, PUICQuickboardEmojiViewControllerDelegate, SPMediaPlayerViewControllerDelegate, AVAudioRecorderViewControllerDelegate, PUICSnapshotDelegate, UNUserNotificationCenterDelegate, SPPageViewControllerDelegate, UIApplicationDelegate>
 {
     _Bool _displayingFirstUnlockScreen;
     _Bool _displayingDisconnectedScreen;
+    _Bool _launchedSuspendedNotInDock;
     _Bool _pendingBSRefreshPrevDeferTransitions;
     _Bool _pendingBSSnapshotPrevDeferTransitions;
     _Bool _pendingBSURLSessionPrevDeferTransitions;
@@ -41,7 +40,7 @@
     _Bool _waitingForHandleActivityReply;
     _Bool _waitingForHandleActivityViewControllerActivation;
     UIWindow *_window;
-    SPCompanionConnection *_companionConnection;
+    SPExtensionConnection *_extensionConnection;
     NSDictionary *_interfaceDescription;
     NSMutableDictionary *_pendingBSActions;
     SPInterfaceViewController *_pendingBSRefreshActionViewController;
@@ -115,7 +114,8 @@
 @property(nonatomic) __weak SPInterfaceViewController *pendingBSRefreshActionViewController; // @synthesize pendingBSRefreshActionViewController=_pendingBSRefreshActionViewController;
 @property(retain, nonatomic) NSMutableDictionary *pendingBSActions; // @synthesize pendingBSActions=_pendingBSActions;
 @property(retain, nonatomic) NSDictionary *interfaceDescription; // @synthesize interfaceDescription=_interfaceDescription;
-@property(retain) SPCompanionConnection *companionConnection; // @synthesize companionConnection=_companionConnection;
+@property(retain) SPExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
+@property(nonatomic) _Bool launchedSuspendedNotInDock; // @synthesize launchedSuspendedNotInDock=_launchedSuspendedNotInDock;
 @property(nonatomic) _Bool displayingDisconnectedScreen; // @synthesize displayingDisconnectedScreen=_displayingDisconnectedScreen;
 @property(nonatomic) _Bool displayingFirstUnlockScreen; // @synthesize displayingFirstUnlockScreen=_displayingFirstUnlockScreen;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
@@ -136,7 +136,6 @@
 - (void)application:(id)arg1 handleEventsForBackgroundURLSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)visibleViewControllerID;
 - (id)prepareTaskKeysForActions:(id)arg1;
-- (void)companionConnectionDidPreventPlaybackUntilAudioRoutePicked:(id)arg1;
 - (void)viewController:(id)arg1 actionTapped:(id)arg2;
 - (id)cancelActionFromWKActions:(id)arg1;
 - (id)actionSheetItemsFromWKActions:(id)arg1 viewController:(id)arg2 skippingActions:(id)arg3;
@@ -164,9 +163,6 @@
 - (void)mediaPlayerViewControllerRequestsBacklightAssertionRelease:(id)arg1;
 - (void)mediaPlayerViewControllerRequestsBacklightAssertionCreate:(id)arg1;
 - (void)mediaPlayerViewController:(id)arg1 didPlayToEnd:(_Bool)arg2 endTime:(double)arg3 error:(id)arg4;
-- (void)dictationViewControllerRequestsBacklightAssertionRelease:(id)arg1;
-- (void)dictationViewControllerRequestsBacklightAssertionRenewal:(id)arg1;
-- (void)dictationViewControllerRequestsBacklightAssertion:(id)arg1;
 - (void)quickboardEmojiViewController:(id)arg1 didPickAnimatedEmojiWithName:(id)arg2;
 - (void)loadQuickboardMessages;
 - (void)quickboard:(id)arg1 languageDidChange:(id)arg2;
@@ -178,7 +174,6 @@
 - (void)interfaceViewController:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (void)interfaceViewController:(id)arg1 sendAction:(id)arg2 withValue:(id)arg3;
 - (void)appWithRootInterfaceViewController:(id)arg1 performActionWithItemID:(id)arg2 forNotificationID:(id)arg3 userInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (_Bool)interfaceViewControllerHasNativeConnection:(id)arg1;
 - (void)interfaceViewControllerDidAppearAfterModalDismissal:(id)arg1;
 - (void)interfaceViewControllerDidDisappearAfterModalPresentation:(id)arg1;
 - (void)interfaceViewControllerPurgeAndRecreate:(id)arg1;
@@ -191,43 +186,43 @@
 - (void)interfaceViewControllerDidDeactivate:(id)arg1;
 - (void)interfaceViewControllerDidHideDisconnectedView:(id)arg1;
 - (void)interfaceViewControllerDidShowDisconnectedView:(id)arg1;
-- (_Bool)interfaceViewControllerShouldShowDisconnectedView:(id)arg1;
 - (void)interfaceViewControllerDidActivate:(id)arg1;
 - (void)interfaceViewControllerWillActivate:(id)arg1;
 - (void)interfaceViewControllerRelease:(id)arg1;
 - (void)interfaceViewController:(id)arg1 createCompanionControllerClass:(id)arg2 properties:(id)arg3 initializationContextID:(id)arg4;
-- (void)companionConnection:(id)arg1 receivedPPTTestAction:(id)arg2;
-- (void)companionConnectionApplicationDidEndSuspendedLaunch:(id)arg1;
-- (void)companionConnectionApplicationBeginBackgroundUIUpdate:(id)arg1;
-- (void)restartAppContents;
+- (void)extensionConnection:(id)arg1 receivedPPTTestAction:(id)arg2;
+- (void)extensionConnectionApplicationDidEndSuspendedLaunch:(id)arg1;
+- (void)extensionConnectionApplicationBeginBackgroundUIUpdate:(id)arg1;
 - (void)extensionGotUnknownControllerID:(id)arg1;
-- (void)companionDaemonDidRestart:(id)arg1;
 - (void)gizmoDaemonDidTerminate:(id)arg1;
 - (void)extensionDidTerminate:(id)arg1;
 - (void)updateCrownSequencerForInterfaceViewController:(id)arg1 crownReplyData:(id)arg2;
 - (void)updateGestureRecognizerForInterfaceViewController:(id)arg1 gestureReplyData:(id)arg2;
 - (void)installGestureRecognizersForInterfaceViewController:(id)arg1;
-- (void)companionConnection:(id)arg1 setTextInputSuggestions:(id)arg2;
-- (void)companionConnection:(id)arg1 handleActivityReply:(id)arg2;
-- (void)companionConnection:(id)arg1 openSystemURL:(id)arg2;
-- (void)companionConnection:(id)arg1 userActivity:(id)arg2;
-- (void)companionConnection:(id)arg1 interfaceViewControllerDismissViewController:(id)arg2;
+- (void)extensionConnection:(id)arg1 setTextInputSuggestions:(id)arg2;
+- (void)extensionConnection:(id)arg1 handleActivityReply:(id)arg2;
+- (void)extensionConnection:(id)arg1 openSystemURL:(id)arg2;
+- (void)extensionConnection:(id)arg1 didReceiveUserActivity:(id)arg2;
+- (void)extensionConnection:(id)arg1 didReceiveUserActivityDict:(id)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewControllerDismissViewController:(id)arg2;
 - (void)cleanupTextInputController;
-- (void)companionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewControllers:(id)arg3 initializationContextIDs:(id)arg4;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewControllers:(id)arg3 initializationContextIDs:(id)arg4;
 - (void)addPassesViewControllerDidFinish:(id)arg1 withAddPassData:(id)arg2;
-- (void)companionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewController:(id)arg3 info:(id)arg4 initializationContextID:(id)arg5;
-- (void)companionConnection:(id)arg1 removeRootInterfaceViewControllerAtIndexes:(id)arg2;
-- (void)companionConnection:(id)arg1 moveRootInterfaceViewControllerAtIndex:(int)arg2 toIndex:(int)arg3;
-- (void)companionConnection:(id)arg1 insertRootInterfaceViewControllerWithNames:(id)arg2 atIndexes:(id)arg3 initializationContextIDs:(id)arg4;
-- (void)companionConnection:(id)arg1 reloadRootInterfaceViewControllersWithNames:(id)arg2 initializationContextIDs:(id)arg3 pageIndex:(id)arg4 verticalPaging:(id)arg5;
-- (void)companionConnection:(id)arg1 interfaceViewControllerBecomeCurrentPageViewController:(id)arg2;
-- (void)companionConnection:(id)arg1 interfaceViewController:(id)arg2 scrollToObject:(id)arg3 atScrollPosition:(id)arg4 animated:(id)arg5;
-- (void)companionConnection:(id)arg1 interfaceViewControllerPopToRootViewController:(id)arg2;
-- (void)companionConnection:(id)arg1 interfaceViewControllerPopViewController:(id)arg2;
-- (void)companionConnection:(id)arg1 interfaceViewController:(id)arg2 pushPagingScrollTableRow:(int)arg3 seguesByRowName:(id)arg4 rowNamesAndContextIDs:(id)arg5;
-- (void)companionConnection:(id)arg1 interfaceViewController:(id)arg2 pushViewController:(id)arg3 initializationContextID:(id)arg4;
-- (void)companionConnection:(id)arg1 interfaceViewController:(id)arg2 setValue:(id)arg3 forKey:(id)arg4 property:(id)arg5;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewController:(id)arg3 info:(id)arg4 initializationContextID:(id)arg5;
+- (void)extensionConnection:(id)arg1 removeRootInterfaceViewControllerAtIndexes:(id)arg2;
+- (void)extensionConnection:(id)arg1 moveRootInterfaceViewControllerAtIndex:(int)arg2 toIndex:(int)arg3;
+- (void)extensionConnection:(id)arg1 insertRootInterfaceViewControllerWithNames:(id)arg2 atIndexes:(id)arg3 initializationContextIDs:(id)arg4;
+- (void)extensionConnection:(id)arg1 reloadRootInterfaceViewControllersWithNames:(id)arg2 initializationContextIDs:(id)arg3 pageIndex:(id)arg4 verticalPaging:(id)arg5;
+- (void)extensionConnection:(id)arg1 interfaceViewControllerBecomeCurrentPageViewController:(id)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 scrollToObject:(id)arg3 atScrollPosition:(id)arg4 animated:(id)arg5;
+- (void)extensionConnection:(id)arg1 interfaceViewControllerPopToRootViewController:(id)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewControllerPopViewController:(id)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushPagingScrollTableRow:(int)arg3 seguesByRowName:(id)arg4 rowNamesAndContextIDs:(id)arg5;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushViewController:(id)arg3 initializationContextID:(id)arg4;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setValue:(id)arg3 forKey:(id)arg4 property:(id)arg5;
 - (void)_handleNotificationResponse:(id)arg1 actionItemID:(id)arg2 isFGAction:(_Bool)arg3 annotation:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (_Bool)application:(id)arg1 continueUserActivity:(id)arg2 restorationHandler:(CDUnknownBlockType)arg3;
+- (void)application:(id)arg1 handleIntent:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)application:(id)arg1 openURL:(id)arg2 sourceApplication:(id)arg3 annotation:(id)arg4;
 - (id)primaryApplicationColor;
 - (void)_exitApplicationNicely;
@@ -238,6 +233,7 @@
 - (_Bool)_animateViewControllerPresentations;
 - (_Bool)_loadRootViewController;
 - (_Bool)application:(id)arg1 _didFinishLaunchingWithOptions:(id)arg2;
+- (void)_terminateWK1App:(id)arg1;
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (void)application:(id)arg1 didFinishLaunchingSuspendedWithOptions:(id)arg2;
 @property(readonly, nonatomic) _Bool holdingActivatingAssertion;

@@ -25,6 +25,7 @@
 @property BOOL useAlternateTitle; // @synthesize useAlternateTitle=_useAlternateTitle;
 @property __weak EKUIPopUpButton *uiPopUpbutton; // @synthesize uiPopUpbutton=_uiPopUpbutton;
 - (void).cxx_destruct;
+- (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (void)drawBorderAndBackgroundWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_setMouseTrackingInRect:(struct CGRect)arg1 ofView:(id)arg2;
 - (void)drawTitle:(id)arg1 inFrame:(struct CGRect)arg2 deemphasizedString:(id)arg3 inView:(id)arg4;

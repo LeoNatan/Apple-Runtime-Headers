@@ -8,7 +8,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface MFPGradientBrush : MFPBrush
 {
     struct CGAffineTransform mTransform;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
     struct CGFunction *mShadingFunction;
 }
 
+- (void).cxx_destruct;
 - (void)createPhoneBrush;
 - (id)color;
 - (void)fillPath:(id)arg1;

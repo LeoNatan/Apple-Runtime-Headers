@@ -12,7 +12,6 @@
 
 - (_Bool)shouldUseCollageForCloudFeedPlaceholder;
 - (_Bool)showsDeleteButtonOnCellContentView;
-- (_Bool)canDisplaySearchActionInNavigationBar;
 - (long long)albumDeletionConfirmationStyle;
 - (id)feedViewControllerSpec;
 - (id)photosPickerViewControllerSpec;

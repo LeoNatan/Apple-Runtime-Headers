@@ -9,12 +9,13 @@
 @class AFBulletin, AceObject, NSString, NSURL;
 
 @protocol AFSpeakableNamespaceProvider <NSObject>
-- (NSString *)stringForExpression:(NSString *)arg1;
+- (NSString *)stringForExpression:(NSString *)arg1 containsPrivacySensitiveContents:(_Bool *)arg2;
 
 @optional
 - (NSURL *)attachmentURLForExpression:(NSString *)arg1;
 - (void)setAssistantBulletin:(AFBulletin *)arg1;
 - (NSString *)identifier;
 - (id)initWithAceObject:(AceObject *)arg1;
+- (NSString *)stringForExpression:(NSString *)arg1;
 @end
 

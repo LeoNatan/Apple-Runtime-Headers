@@ -7,11 +7,12 @@
 #import "PXObservable.h"
 
 #import "PUMutableUUIDSelectionManager.h"
+#import "_PUOneUpSelectionIndicatorCompatibleManager.h"
 
 @class NSMutableSet, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface PUUUIDSelectionManager : PXObservable <PUMutableUUIDSelectionManager>
+@interface PUUUIDSelectionManager : PXObservable <_PUOneUpSelectionIndicatorCompatibleManager, PUMutableUUIDSelectionManager>
 {
     NSMutableSet *__mutableSelectedUUIDs;
 }
@@ -28,6 +29,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSelectedUUID:(id)arg1;
 - (id)init;
 - (id)initWithSelectedUUIDs:(id)arg1;
+- (_Bool)pu_isAssetReferenceSelected:(id)arg1;
+- (void)pu_unregisterSelectionIndicatorObserver:(id)arg1;
+- (void)pu_registerSelectionIndicatorObserver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

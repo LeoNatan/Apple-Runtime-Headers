@@ -17,6 +17,7 @@
     NSMutableSet *_occurrencesAwaitingRefresh;
     NSMutableSet *_occurrencesAwaitingDeletion;
     NSSet *_selectedCalendars;
+    _Bool _selectedCalendarsWereSet;
     unsigned int _daysOfPadding;
     unsigned int _maxDaysToCache;
     unsigned int _componentForExpandingRequests;
@@ -33,9 +34,11 @@
     double _currentlyLoadingEnd;
     double _lastRequestedStart;
     double _lastRequestedEnd;
+    _Bool _allowEventLocationPrediction;
     id <CalendarEventLoaderDelegate> _delegate;
 }
 
+@property(nonatomic) _Bool allowEventLocationPrediction; // @synthesize allowEventLocationPrediction=_allowEventLocationPrediction;
 @property(nonatomic) __weak id <CalendarEventLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_getLoadStart:(double *)arg1 end:(double *)arg2 fromLoadedStart:(double)arg3 loadedEnd:(double)arg4 currentlyLoadingStart:(double)arg5 currentlyLoadingEnd:(double)arg6;
@@ -45,6 +48,7 @@
 - (void)_reload;
 - (void)cancelAllLoads;
 - (void)_enqueueLoadForRangeStart:(double)arg1 end:(double)arg2;
+- (_Bool)firstLoadBegan;
 - (id)_uniqueEventsFromArray:(id)arg1;
 - (void)_loadIfNeededBetweenStart:(double)arg1 end:(double)arg2 loadPaddingNow:(_Bool)arg3;
 - (void)loadIfNeeded;

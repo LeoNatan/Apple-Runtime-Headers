@@ -80,6 +80,7 @@
 - (void)_requestDelegateForFirstMessagesForMailboxes:(id)arg1;
 - (void)_requestDelegateForMoreMessagesBeforeDateReceived:(id)arg1 forConversationWithId:(id)arg2 mailbox:(id)arg3;
 - (void)_requestDelegateForMoreMessagesWithMailbox:(id)arg1 beforeDate:(id)arg2 messagesForspecialMailboxFilterType:(unsigned long long)arg3;
+- (void)_requestDelegateForVIPList:(id)arg1;
 - (void)_requestDelegateForAccounts;
 - (void)_notifyDelegateThatMessagesStatusWereUpdated:(id)arg1;
 - (void)_handleDidFailSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(long long)arg2;
@@ -91,8 +92,8 @@
 - (_Bool)isMessageOkForSyncedMailboxes:(id)arg1;
 - (void)_stopTaks;
 - (void)_fastForwardToFullSyncVersion:(unsigned long long)arg1;
-- (void)_handleNotificationPayloadAck:(CDUnknownBlockType)arg1 forMessageId:(id)arg2;
-- (void)syncStateManager:(id)arg1 didAcknowledgeNotificationPayload:(CDUnknownBlockType)arg2 forRecordId:(id)arg3;
+- (void)_handleForwardNotificationPayload:(CDUnknownBlockType)arg1 forBulletin:(id)arg2;
+- (void)syncStateManager:(id)arg1 didAcknowledgeForwardNotificationPayload:(CDUnknownBlockType)arg2 forBulletin:(id)arg3;
 - (id)_bbSubsectionIdsForMessage:(id)arg1;
 - (void)_markConversationWithId:(id)arg1 forNotify:(_Bool)arg2 mailbox:(id)arg3;
 - (void)_addMessages:(id)arg1 messagesAreNew:(_Bool)arg2 mailbox:(id)arg3;
@@ -104,11 +105,13 @@
 - (void)resendScheduler:(id)arg1 didRequestEnqueueIDSIdentifierForResend:(id)arg2 date:(id)arg3 silent:(_Bool)arg4;
 - (void)resendScheduler:(id)arg1 didRequestRetrySendingComposeMessageProgress:(long long)arg2 messageId:(id)arg3 resendInterval:(unsigned long long)arg4;
 - (void)resendScheduler:(id)arg1 didRequestRetrySendingDeletionForAccountWithId:(id)arg2 resendInterval:(unsigned long long)arg3;
+- (void)resendScheduler:(id)arg1 didRequestRetrySendingVIPListWithResendInterval:(unsigned long long)arg2;
+- (void)resendScheduler:(id)arg1 didRequestRetrySendingAccountIdentifier:(id)arg2 resendInterval:(unsigned long long)arg3;
 - (void)resendScheduler:(id)arg1 didRequestRetrySendingAccountWithId:(id)arg2;
 - (void)resendScheduler:(id)arg1 didRequestRetrySendingContentForMessageId:(id)arg2 highPriority:(_Bool)arg3;
 - (void)resendScheduler:(id)arg1 didRequestRetrySendingMessageDeletions:(id)arg2 deletionsMessageIds:(id)arg3 resendInterval:(unsigned long long)arg4;
 - (void)resendScheduler:(id)arg1 didRequestRetrySendingMessageWithIds:(id)arg2;
-- (void)resendScheduler:(id)arg1 didRequestToRetrySendMailboxSelectionWithResendInterval:(unsigned long long)arg2;
+- (void)resendScheduler:(id)arg1 didRequestRetrySendingMailboxSelectionWithResendInterval:(unsigned long long)arg2;
 - (void)resendScheduler:(id)arg1 didRequestRetryFullSyncForMailboxes:(id)arg2;
 - (void)_storeScreenRelatedValues;
 - (void)_verifyPairingForcingSync:(_Bool)arg1;
@@ -132,6 +135,8 @@
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestFetchInBatch:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didSendProtobufSuccessfullyWithIDSIdentifier:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didFailSendingProtobufWithIDSIdentifier:(id)arg2 errorCode:(long long)arg3;
+- (void)accountsSyncServiceServer:(id)arg1 didReceivedAccountAuthenticationStatus:(id)arg2;
+- (void)accountsSyncServiceServer:(id)arg1 didChangeAccountSourceType:(id)arg2;
 - (void)accountsSyncServiceServer:(id)arg1 didSendProtobufSuccessfullyWithIDSIdentifier:(id)arg2;
 - (void)accountsSyncServiceServer:(id)arg1 didFailSendingProtobufWithIDSIdentifier:(id)arg2 errorCode:(long long)arg3;
 - (void)messageContentSyncServiceServer:(id)arg1 didSendProtobufSuccessfullyWithIDSIdentifier:(id)arg2;
@@ -149,6 +154,11 @@
 - (void)resendObjectsForIDSIdentifier:(id)arg1;
 @property(readonly, nonatomic) NNMKPairedDeviceInfo *pairedDeviceInfo;
 @property(nonatomic) _Bool organizeByThread;
+- (void)_sendStandaloneAccountIdentity:(id)arg1 resendInterval:(unsigned long long)arg2;
+- (id)_watchAccounts;
+- (id)requestWatchAccounts;
+- (id)watchAccounts;
+- (void)syncStandaloneAccountIdentity:(id)arg1;
 - (_Bool)containsSyncedMailbox:(id)arg1;
 - (id)syncedMailboxes;
 @property(readonly, nonatomic) NNMKMailboxSelection *mailboxSelection;
@@ -159,6 +169,8 @@
 - (void)_sendUpdatedMailboxSelection:(unsigned long long)arg1 resendInterval:(unsigned long long)arg2;
 - (void)_sendUpdatedMailboxSelection:(unsigned long long)arg1;
 - (void)_updateMailboxSelection:(id)arg1 notifyClient:(_Bool)arg2;
+- (void)updateVIPSenderList:(id)arg1 requestContext:(id)arg2;
+- (void)updateVIPSenderList:(id)arg1;
 - (void)updateMailboxSelection:(id)arg1;
 - (void)addUpdateOrDeleteAccounts:(id)arg1;
 - (void)reportWillDownloadFirstMessages;

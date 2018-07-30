@@ -14,12 +14,12 @@
 }
 
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)dealloc;
 - (id)initWithExternalSceneID:(id)arg1 trackingContext:(id)arg2;
 - (id)initWithExternalSceneID:(id)arg1 level:(double)arg2;
 - (id)_initWithExternalSceneID:(id)arg1 level:(double)arg2 trackingContext:(id)arg3;

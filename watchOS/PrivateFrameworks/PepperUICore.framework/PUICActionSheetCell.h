@@ -6,35 +6,43 @@
 
 #import <PepperUICore/PUICTableViewCell.h>
 
-@class NSString, PUICActivityIndicatorView, PUICTableViewCellBackgroundView, UILabel, UIView;
+@class NSString, PUICActivityIndicatorView, PUICTableViewCellBackgroundView, UIColor, UILabel, UIView;
 
 @interface PUICActionSheetCell : PUICTableViewCell
 {
     _Bool _enabled;
     _Bool _loading;
     _Bool _destructive;
+    _Bool _pillShape;
     _Bool _blendContent;
+    _Bool _blurredBackground;
     UIView *_leftAccessoryView;
     NSString *_accessoryTitle;
     int _accessoryTitleAlignment;
     UIView *_customContentView;
+    UIColor *_customBackgroundColor;
     UILabel *_accessoryTitleLabel;
     PUICActivityIndicatorView *_activityIndicator;
     UIView *_currentAccessoryView;
     PUICTableViewCellBackgroundView *_backgroundColorDodgeView;
     PUICTableViewCellBackgroundView *_backgroundSourceOverView;
+    UIView *_customBackgroundView;
 }
 
 + (_Bool)_isMultilineRowWithTitle:(id)arg1 leftAccessoryView:(id)arg2 cellWidth:(float)arg3 outMultilineHeight:(float *)arg4;
 + (float)heightForRowWithTitle:(id)arg1 leftAccessoryView:(id)arg2 cellWidth:(float)arg3;
+@property(retain, nonatomic) UIView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundSourceOverView; // @synthesize backgroundSourceOverView=_backgroundSourceOverView;
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundColorDodgeView; // @synthesize backgroundColorDodgeView=_backgroundColorDodgeView;
 @property(retain, nonatomic) UIView *currentAccessoryView; // @synthesize currentAccessoryView=_currentAccessoryView;
 @property(retain, nonatomic) PUICActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UILabel *accessoryTitleLabel; // @synthesize accessoryTitleLabel=_accessoryTitleLabel;
+@property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(retain, nonatomic) UIView *customContentView; // @synthesize customContentView=_customContentView;
+@property(nonatomic) _Bool blurredBackground; // @synthesize blurredBackground=_blurredBackground;
 @property(nonatomic) _Bool blendContent; // @synthesize blendContent=_blendContent;
 @property(nonatomic) int accessoryTitleAlignment; // @synthesize accessoryTitleAlignment=_accessoryTitleAlignment;
+@property(nonatomic, getter=isPillShape) _Bool pillShape; // @synthesize pillShape=_pillShape;
 @property(nonatomic, getter=isDestructive) _Bool destructive; // @synthesize destructive=_destructive;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;

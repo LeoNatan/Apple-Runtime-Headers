@@ -9,7 +9,6 @@
 @class GEOComposedWaypoint, MNActiveRouteDetails, MNAudioOutputSetting, MNRoutePlanningDetails, MNSettings, MNTrafficIncidentAlertDetails, NSData;
 
 @protocol MNNavigationServiceProxy <NSObject>
-- (void)acquireDesiredResourcePolicy;
 - (void)interfaceHashesWithHandler:(void (^)(unsigned long long, unsigned long long))arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(NSData *)arg1;
 - (void)setTracePosition:(double)arg1;
@@ -20,6 +19,7 @@
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
 - (void)setIsConnectedToCarplay:(BOOL)arg1;
 - (void)setGuidancePromptsEnabled:(BOOL)arg1;
+- (void)setHeadingOrientation:(int)arg1;
 - (void)setCurrentAudioOutputSetting:(MNAudioOutputSetting *)arg1;
 - (void)setHFPPreference:(BOOL)arg1 forSetting:(MNAudioOutputSetting *)arg2;
 - (void)stopCurrentGuidancePrompt;

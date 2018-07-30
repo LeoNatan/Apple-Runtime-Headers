@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class SFCredentialStore;
+@class _SFCredentialStore;
 
 @interface _SFKeychainManager : NSObject
 {
@@ -29,7 +29,7 @@
 - (struct __CFDictionary *)_commonKeyAttributesForIdentityIdentifier:(id)arg1 accessPolicy:(id)arg2 key:(id)arg3;
 - (void)setKey:(id)arg1 forIdentifier:(id)arg2 accessPolicy:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
 - (id)_symmetricKeyAttributesForIdentifier:(id)arg1 accessPolicy:(id)arg2 key:(id)arg3;
-@property(readonly) SFCredentialStore *credentialStore;
+@property(readonly) _SFCredentialStore *credentialStore;
 - (id)_init;
 
 @end

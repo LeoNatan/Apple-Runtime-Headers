@@ -6,23 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSObject<OS_dispatch_queue>;
+@class HMFUnfairLock, NSDictionary;
 
 @interface HMLocalization : NSObject
 {
+    HMFUnfairLock *_lock;
     NSDictionary *_localizedStrings;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 - (id)getLocalizedOrCustomString:(id)arg1;
 - (id)getLocalizedString:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)_updateLocalizedStrings;
 @property(readonly, nonatomic) NSDictionary *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
+- (void)dealloc;
+- (id)init;
 
 @end
 

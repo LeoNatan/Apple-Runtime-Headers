@@ -23,6 +23,7 @@
 - (unsigned long long)score;
 - (id)groupName;
 - (id)category;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isCurrency;
 - (BOOL)isConversion;
 - (id)initWithDisplayName:(id)arg1 inputString:(id)arg2;

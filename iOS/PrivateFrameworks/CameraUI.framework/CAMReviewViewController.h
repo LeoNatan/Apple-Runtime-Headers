@@ -28,7 +28,7 @@
 @property(readonly, nonatomic) NSArray *_initialAssets; // @synthesize _initialAssets=__initialAssets;
 @property(nonatomic) __weak id <CAMCameraReviewDelegate> reviewDelegate; // @synthesize reviewDelegate=_reviewDelegate;
 - (void).cxx_destruct;
-- (void)assetExplorerReviewScreenViewController:(id)arg1 didPressDoneWithSelectedAssetUUIDs:(id)arg2 livePhotoDisabledAssetUUIDs:(id)arg3 substituteAssetsByUUID:(id)arg4;
+- (void)assetExplorerReviewScreenViewController:(id)arg1 didPerformCompletionAction:(unsigned long long)arg2 withSelectedAssetUUIDs:(id)arg3 livePhotoDisabledAssetUUIDs:(id)arg4 substituteAssetsByUUID:(id)arg5;
 - (void)assetExplorerReviewScreenViewControllerDidPressRetake:(id)arg1;
 - (void)assetExplorerReviewScreenViewControllerDidPressCancel:(id)arg1;
 - (_Bool)assetExplorerReviewScreenViewController:(id)arg1 shouldEnableActionType:(unsigned long long)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;

@@ -18,7 +18,8 @@
 + (id)joinClausesForProperty:(id)arg1;
 + (int)protectionClass;
 + (id)indices;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)tableAliases;
 + (id)databaseTable;
 

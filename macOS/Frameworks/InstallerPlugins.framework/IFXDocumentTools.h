@@ -14,6 +14,7 @@
 + (BOOL)saveView:(id)arg1 withDefaultFileName:(id)arg2;
 + (void)printView:(id)arg1 modalForWindow:(id)arg2 delegate:(id)arg3;
 + (void)standardizeTextView:(id)arg1 showContextualMenu:(BOOL)arg2;
++ (id)loadResourceData:(id)arg1 forDocument:(id)arg2 language:(id)arg3 verifyFailed:(char *)arg4;
 + (id)loadResourceData:(id)arg1 forDocument:(id)arg2 language:(id)arg3;
 + (id)_memoryBasedAttributedStringWithFile:(id)arg1;
 

@@ -14,9 +14,9 @@
     NSMapTable *_queue_portToContextMap;
 }
 
-- (void)clearListenerForTokens:(CDStruct_2873f8fa *)arg1;
+- (void)clearListenerForToken:(id)arg1;
 - (void)_queue_cleanupContext:(CDStruct_7eb2cf46 *)arg1 withResponse:(id)arg2;
-- (CDStruct_2873f8fa)listenForResponseWithHandler:(CDUnknownBlockType)arg1 timeout:(unsigned long long)arg2;
+- (id)listenForResponseWithHandler:(CDUnknownBlockType)arg1 timeout:(unsigned long long)arg2;
 - (void)queue_handleMessage:(id)arg1 client:(id)arg2;
 - (void)dealloc;
 - (id)init;

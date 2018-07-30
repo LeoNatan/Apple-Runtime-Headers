@@ -10,7 +10,7 @@
 #import "NSMutableCopying.h"
 #import "NSSecureCoding.h"
 
-@class HMPresenceEventActivation, HMThreadSafeMutableArrayCollection, NSString;
+@class HMMutableArray, HMPresenceEventActivation, NSString;
 
 @interface HMPresenceEvent : HMEvent <NSSecureCoding, NSCopying, NSMutableCopying>
 {
@@ -18,15 +18,17 @@
     HMPresenceEventActivation *_activation;
     unsigned long long _presenceEventType;
     unsigned long long _presenceUserType;
-    HMThreadSafeMutableArrayCollection *_observedUsers;
+    HMMutableArray *_observedUsers;
 }
 
-+ (id)users:(id)arg1 home:(id)arg2 presenceType:(id)arg3;
 + (_Bool)supportsSecureCoding;
++ (id)users:(id)arg1 home:(id)arg2 presenceType:(id)arg3;
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
 + (_Bool)isSupportedForHome:(id)arg1;
-@property(readonly, nonatomic) HMThreadSafeMutableArrayCollection *observedUsers; // @synthesize observedUsers=_observedUsers;
+@property(readonly, nonatomic) HMMutableArray *observedUsers; // @synthesize observedUsers=_observedUsers;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_update:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -44,8 +46,6 @@
 @property(retain, nonatomic) HMPresenceEventActivation *activation; // @synthesize activation=_activation;
 @property(readonly, nonatomic) unsigned long long activationGranularity;
 @property(retain, nonatomic) NSString *presenceType; // @synthesize presenceType=_presenceType;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)initWithDict:(id)arg1 presenceType:(id)arg2 users:(id)arg3 activation:(id)arg4;
 - (id)initWithDict:(id)arg1 presenceType:(id)arg2 users:(id)arg3 activationGranularity:(unsigned long long)arg4;

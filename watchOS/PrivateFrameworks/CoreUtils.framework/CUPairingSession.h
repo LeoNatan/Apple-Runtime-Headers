@@ -36,8 +36,13 @@
     CDUnknownBlockType _showPINHandler;
     CDUnknownBlockType _hidePINHandler;
     CDUnknownBlockType _sendDataHandler;
+    CDUnknownBlockType _signDataHandler;
+    CDUnknownBlockType _verifySignatureHandler;
+    unsigned long long _selfAppFlags;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType verifySignatureHandler; // @synthesize verifySignatureHandler=_verifySignatureHandler;
+@property(copy, nonatomic) CDUnknownBlockType signDataHandler; // @synthesize signDataHandler=_signDataHandler;
 @property(copy, nonatomic) CDUnknownBlockType sendDataHandler; // @synthesize sendDataHandler=_sendDataHandler;
 @property(copy, nonatomic) CDUnknownBlockType hidePINHandler; // @synthesize hidePINHandler=_hidePINHandler;
 @property(copy, nonatomic) CDUnknownBlockType showPINHandler; // @synthesize showPINHandler=_showPINHandler;
@@ -58,6 +63,7 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSString *fixedPIN; // @synthesize fixedPIN=_fixedPIN;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(nonatomic) unsigned long long selfAppFlags; // @synthesize selfAppFlags=_selfAppFlags;
 @property(copy, nonatomic) NSDictionary *additionalSelfInfo; // @synthesize additionalSelfInfo=_additionalSelfInfo;
 @property(copy, nonatomic) NSDictionary *additionalPeerInfo; // @synthesize additionalPeerInfo=_additionalPeerInfo;
 @property(copy, nonatomic) NSDictionary *acl; // @synthesize acl=_acl;
@@ -73,6 +79,7 @@
 - (void)invalidate;
 - (void)_activate;
 - (void)activate;
+@property(readonly, nonatomic) unsigned long long peerAppFlags;
 @property(readonly, nonatomic) CUPairedPeer *pairedPeer;
 - (void)_cleanup;
 - (void)dealloc;

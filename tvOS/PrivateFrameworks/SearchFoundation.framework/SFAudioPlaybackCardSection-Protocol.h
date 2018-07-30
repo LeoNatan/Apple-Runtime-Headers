@@ -6,7 +6,7 @@
 
 #import "SFCardSection.h"
 
-@class NSArray, NSData, NSDictionary, NSString, SFColor, SFImage, SFRichText, SFText;
+@class NSArray, NSData, NSDictionary, NSString, SFColor, SFImage, SFRichText;
 
 @protocol SFAudioPlaybackCardSection <SFCardSection>
 @property(readonly, nonatomic) NSData *jsonData;
@@ -18,14 +18,6 @@
 @property(copy, nonatomic) NSArray *stopCommands;
 @property(copy, nonatomic) NSArray *playCommands;
 @property(nonatomic) int state;
-@property(copy, nonatomic) NSString *bottomImageEmoji;
-@property(copy, nonatomic) NSString *topImageEmoji;
-@property(retain, nonatomic) SFText *bottomSubtitle;
-@property(retain, nonatomic) SFText *bottomText;
-@property(retain, nonatomic) SFImage *bottomImage;
-@property(copy, nonatomic) NSString *topSecondaryText;
-@property(retain, nonatomic) SFText *topText;
-@property(retain, nonatomic) SFImage *topImage;
 @property(retain, nonatomic) SFColor *backgroundColor;
 @property(nonatomic) int separatorStyle;
 @property(copy, nonatomic) NSString *type;

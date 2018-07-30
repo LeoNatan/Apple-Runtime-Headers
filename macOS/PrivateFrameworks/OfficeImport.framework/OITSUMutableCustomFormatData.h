@@ -8,7 +8,6 @@
 
 @class NSArray, NSIndexSet, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OITSUMutableCustomFormatData : OITSUCustomFormatData
 {
 }

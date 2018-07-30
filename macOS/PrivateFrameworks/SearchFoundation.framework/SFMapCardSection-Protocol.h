@@ -11,6 +11,7 @@
 @protocol SFMapCardSection <SFCardSection>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(copy, nonatomic) NSArray *pins;
 @property(nonatomic) int pinBehavior;
 @property(retain, nonatomic) SFMapRegion *boundingMapRegion;
 @property(nonatomic) int sizeFormat;

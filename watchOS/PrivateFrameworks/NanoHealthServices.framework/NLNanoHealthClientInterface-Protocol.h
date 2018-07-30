@@ -5,11 +5,11 @@
 //
 
 #import "HKExtendedClientInterface.h"
-#import "NLActivityAchievementDefinitionAlertObserver.h"
 #import "NLActivityCarouselServiceProvider.h"
 #import "NLActivityCoachingAlertObserver.h"
 #import "NLActivitySedentaryAlertObserver.h"
+#import "NLPredictedActivityAlertObserver.h"
 
-@protocol NLNanoHealthClientInterface <HKExtendedClientInterface, NLActivitySedentaryAlertObserver, NLActivityCoachingAlertObserver, NLActivityAchievementDefinitionAlertObserver, NLActivityCarouselServiceProvider>
+@protocol NLNanoHealthClientInterface <HKExtendedClientInterface, NLActivitySedentaryAlertObserver, NLPredictedActivityAlertObserver, NLActivityCoachingAlertObserver, NLActivityCarouselServiceProvider>
 @end
 

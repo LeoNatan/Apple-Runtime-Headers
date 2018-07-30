@@ -26,7 +26,9 @@
 - (void).cxx_destruct;
 - (void)profileNotification:(id)arg1;
 - (void)disablePasscodeRequiredSpecifiers:(id)arg1;
+- (void)setEnabledInLockScreenForUSB:(id)arg1 specifier:(id)arg2;
 - (void)setEnabledInLockScreen:(id)arg1 specifier:(id)arg2;
+- (id)enabledInLockScreenForUSB:(id)arg1;
 - (id)enabledInLockScreen:(id)arg1;
 - (id)specifiers;
 - (void)suspend;
@@ -64,6 +66,7 @@
 - (void)setGraceValue:(id)arg1 specifier:(id)arg2;
 - (id)graceValue:(id)arg1;
 - (void)showPINSheet:(id)arg1;
+- (void)presentAppleIDAuthenticationController;
 - (void)togglePasscode:(id)arg1;
 - (void)_showDeleteSavedFingerprintsAlert;
 - (long long)fingerprintCount;

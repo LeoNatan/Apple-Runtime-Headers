@@ -18,12 +18,23 @@
 
 + (id)assetWithPHAsset:(id)arg1;
 - (void).cxx_destruct;
-- (struct __CVBuffer *)imageWithPreferredDimension:(unsigned long long)arg1;
-- (id)exif;
+- (id)mainFileURL;
+- (id)localIdentifier;
 @property(readonly, nonatomic) NSArray *resources;
+- (id)fingerprint;
+- (id)modificationDate;
 - (unsigned long long)pixelHeight;
 - (unsigned long long)pixelWidth;
+- (unsigned long long)mediaSubtypes;
+- (long long)mediaType;
 - (id)initWithPHAsset:(id)arg1;
+- (struct __CVBuffer *)imageWithPreferredDimension:(unsigned long long)arg1;
+- (id)exif;
+- (float)photoOffsetSeconds;
+- (id)originalMovie;
+- (id)movie;
+- (float)slowmoRate;
+- (double)duration;
 
 @end
 

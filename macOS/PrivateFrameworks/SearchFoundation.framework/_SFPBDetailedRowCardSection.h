@@ -13,7 +13,6 @@
 
 @interface _SFPBDetailedRowCardSection : PBCodable <_SFPBDetailedRowCardSection, NSSecureCoding>
 {
-    CDStruct_76067eec _has;
     BOOL _canBeHidden;
     BOOL _hasTopPadding;
     BOOL _hasBottomPadding;
@@ -69,30 +68,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasButton;
-@property(readonly, nonatomic) BOOL hasAction;
-@property(readonly, nonatomic) BOOL hasTrailingBottomText;
-@property(readonly, nonatomic) BOOL hasTrailingMiddleText;
-@property(readonly, nonatomic) BOOL hasTrailingTopText;
-@property(readonly, nonatomic) BOOL hasFootnote;
 - (id)descriptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)descriptionsCount;
 - (void)addDescriptions:(id)arg1;
 - (void)clearDescriptions;
-@property(readonly, nonatomic) BOOL hasIsSecondaryTitleDetached;
-@property(readonly, nonatomic) BOOL hasSecondaryTitleImage;
-@property(readonly, nonatomic) BOOL hasSecondaryTitle;
-@property(readonly, nonatomic) BOOL hasTitle;
-@property(readonly, nonatomic) BOOL hasPreventThumbnailImageScaling;
-@property(readonly, nonatomic) BOOL hasThumbnail;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

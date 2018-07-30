@@ -6,7 +6,6 @@
 
 #import <Contacts/CNContactStore.h>
 
-__attribute__((visibility("hidden")))
 @interface CNSuggestedContactStore : CNContactStore
 {
     id <SGSuggestionsServiceContactsProtocol> _suggestionService;

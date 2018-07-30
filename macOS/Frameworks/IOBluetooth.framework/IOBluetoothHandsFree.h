@@ -66,6 +66,7 @@
 - (void)addAudioListeners;
 - (unsigned int)outputDeviceID;
 - (unsigned int)inputDeviceID;
+- (void)setFCComplete:(id)arg1;
 - (void)sendOutputVolume;
 - (void)sendInputVolume;
 - (void)processIncomingData:(char *)arg1 length:(unsigned long long)arg2;

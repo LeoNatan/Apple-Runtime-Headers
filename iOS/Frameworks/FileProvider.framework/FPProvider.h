@@ -18,6 +18,7 @@
     _Bool _enabled;
     _Bool _empty;
     _Bool _isReadOnly;
+    _Bool _usesUniqueItemIdentifiersAcrossDevices;
     NSString *_identifier;
     NSFileProviderDomain *_domain;
     NSString *_localizedName;
@@ -38,6 +39,7 @@
 + (void)fetchProviderWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
 @property(readonly, nonatomic) NSFileProviderManager *manager; // @synthesize manager=_manager;
+@property(nonatomic) _Bool usesUniqueItemIdentifiersAcrossDevices; // @synthesize usesUniqueItemIdentifiersAcrossDevices=_usesUniqueItemIdentifiersAcrossDevices;
 @property(readonly, nonatomic) NSArray *supportedFileTypes; // @synthesize supportedFileTypes=_supportedFileTypes;
 @property(readonly, nonatomic) NSArray *supportedSortDescriptors; // @synthesize supportedSortDescriptors=_supportedSortDescriptors;
 @property(readonly, nonatomic) _Bool isReadOnly; // @synthesize isReadOnly=_isReadOnly;
@@ -48,6 +50,7 @@
 @property(readonly, nonatomic) NSFileProviderDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isiCloudDriveProvider;
 - (void)setEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -57,7 +60,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)debugDescription;
 - (id)description;
-- (id)_initWithIdentifier:(id)arg1 domain:(id)arg2 localizedName:(id)arg3 storageURL:(id)arg4 supportedFileTypes:(id)arg5 type:(long long)arg6 isReadOnly:(_Bool)arg7 isEnabled:(_Bool)arg8;
+- (id)_initWithIdentifier:(id)arg1 domain:(id)arg2 localizedName:(id)arg3 storageURL:(id)arg4 supportedFileTypes:(id)arg5 type:(long long)arg6 isReadOnly:(_Bool)arg7 isEnabled:(_Bool)arg8 usesUniqueItemIdentifiers:(_Bool)arg9;
 - (id)init;
 @property(readonly, nonatomic) _Bool supportsEnumeration;
 @property(readonly, nonatomic) NSString *containingBundleIdentifier;

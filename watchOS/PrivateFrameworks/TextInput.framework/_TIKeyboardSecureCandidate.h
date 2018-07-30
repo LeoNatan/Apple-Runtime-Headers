@@ -19,15 +19,15 @@
     NSString *_truncationSentinel;
 }
 
-@property(readonly, retain, nonatomic) NSString *truncationSentinel; // @synthesize truncationSentinel=_truncationSentinel;
-@property(readonly, retain, nonatomic) NSString *input; // @synthesize input=_input;
-@property(readonly, retain, nonatomic) NSString *secureFormattedContent; // @synthesize secureFormattedContent=_secureFormattedContent;
-@property(readonly, retain, nonatomic) NSString *secureContent; // @synthesize secureContent=_secureContent;
-@property(readonly, retain, nonatomic) NSString *secureHeader; // @synthesize secureHeader=_secureHeader;
+@property(readonly, nonatomic) NSString *truncationSentinel; // @synthesize truncationSentinel=_truncationSentinel;
+@property(readonly, nonatomic) NSString *input; // @synthesize input=_input;
+@property(readonly, nonatomic) NSString *secureFormattedContent; // @synthesize secureFormattedContent=_secureFormattedContent;
+@property(readonly, nonatomic) NSString *secureContent; // @synthesize secureContent=_secureContent;
+@property(readonly, nonatomic) NSString *secureHeader; // @synthesize secureHeader=_secureHeader;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithSecureHeader:(id)arg1 secureContent:(id)arg2 secureFormattedContent:(id)arg3 input:(id)arg4 truncationSentinel:(id)arg5;
 
 @end

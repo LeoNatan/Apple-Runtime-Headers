@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @protocol CADPermissionValidator <NSObject>
+@property(readonly) _Bool hasChangeIdTrackingOverrideEntitlement;
 @property(readonly) _Bool hasCalendarToolEntitlement;
 @property(readonly) _Bool hasSyncClientEntitlement;
 @property(readonly) _Bool hasMigrationEntitlement;

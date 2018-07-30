@@ -9,13 +9,13 @@
 #import "HMFLogging.h"
 #import "_HMAccesorySettingGroupDelegate.h"
 
-@class NSArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, _HMAccessorySettingGroup;
+@class HMFUnfairLock, NSArray, NSMutableSet, NSString, _HMAccessorySettingGroup;
 
 @interface HMAccessorySettingGroup : NSObject <_HMAccesorySettingGroupDelegate, HMFLogging>
 {
+    HMFUnfairLock *_lock;
     NSMutableSet *_settings;
     NSMutableSet *_groups;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     _HMAccessorySettingGroup *_internal;
     HMAccessorySettingGroup *_group;
 }
@@ -23,7 +23,6 @@
 + (id)logCategory;
 @property __weak HMAccessorySettingGroup *group; // @synthesize group=_group;
 @property(readonly) _HMAccessorySettingGroup *internal; // @synthesize internal=_internal;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_settingGroup:(id)arg1 didRemoveSettingGroup:(id)arg2;

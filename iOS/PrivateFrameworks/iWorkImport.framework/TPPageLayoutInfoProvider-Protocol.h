@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString, TSPObject<TPMasterDrawableProvider>;
+@class NSString, TSDFill, TSPObject<TPMasterDrawableProvider>;
 
 @protocol TPPageLayoutInfoProvider <NSObject>
 - (NSString *)displayPageNumberForPageIndex:(unsigned long long)arg1;
@@ -18,6 +18,7 @@
 - (unsigned long long)pageNumberForPageIndex:(unsigned long long)arg1;
 - (TSPObject<TPMasterDrawableProvider> *)masterDrawableProviderForPageIndex:(unsigned long long)arg1;
 - (id <TSWPHeaderFooterProvider>)headerFooterProviderForPageIndex:(unsigned long long)arg1;
+- (TSDFill *)backgroundFillForPageIndex:(unsigned long long)arg1;
 - (_Bool)canProvideNumberingInfoForPageIndex:(unsigned long long)arg1;
 - (_Bool)canProvideInfoForPageIndex:(unsigned long long)arg1;
 @end

@@ -16,13 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_wisdomParams;
 }
 
-+ (id)mapMetalDeviceNameToWisdomParams;
 @property(readonly) _Bool useGPU; // @synthesize useGPU=_useGPU;
 @property(readonly) NSDictionary *wisdomParams; // @synthesize wisdomParams=_wisdomParams;
 @property(readonly) id <MTLDevice> metalDevice; // @synthesize metalDevice=_metalDevice;
 - (void).cxx_destruct;
-- (void)initWisdomParams;
-- (void)setMetalDevice:(id)arg1;
 - (id)initWithMetalDevice:(id)arg1;
 
 @end

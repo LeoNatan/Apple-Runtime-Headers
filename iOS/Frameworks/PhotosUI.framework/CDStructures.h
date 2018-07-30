@@ -53,6 +53,11 @@ struct CGSize {
     double height;
 };
 
+struct CGVector {
+    double _field1;
+    double _field2;
+};
+
 struct NSDirectionalEdgeInsets {
     double _field1;
     double _field2;
@@ -120,11 +125,33 @@ struct PXAssetBadgeInfo {
     long long count;
 };
 
-struct PXSimpleIndexPath {
+struct PXDisplayVelocity {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
+struct PXMediaProviderThumbnailDataFormat {
     unsigned long long _field1;
-    long long _field2;
-    long long _field3;
-    long long _field4;
+    unsigned short _field2;
+    unsigned short _field3;
+};
+
+struct PXMediaProviderThumbnailDataSpec {
+    struct PXMediaProviderThumbnailDataFormat _field1;
+    unsigned short _field2;
+    unsigned short _field3;
+    unsigned short _field4;
+    unsigned short _field5;
+    unsigned short _field6;
+};
+
+struct PXSimpleIndexPath {
+    unsigned long long dataSourceIdentifier;
+    long long section;
+    long long item;
+    long long subitem;
 };
 
 struct UIEdgeInsets {
@@ -153,16 +180,6 @@ struct _PUSectionedTilingLayoutSectionInfo {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    _Bool _field1;
-    _Bool _field2;
-    _Bool _field3;
-    _Bool _field4;
-    _Bool _field5;
-    double _field6;
-    int _field7;
-} CDStruct_e950349b;
-
-typedef struct {
     double left;
     double right;
     double top;
@@ -180,4 +197,15 @@ typedef struct {
     CDStruct_1b6d18a9 start;
     CDStruct_1b6d18a9 duration;
 } CDStruct_e83c9415;
+
+typedef struct {
+    struct CGSize _field1;
+    unsigned long long _field2;
+} CDStruct_5706cf93;
+
+typedef struct {
+    struct CGRect _field1;
+    struct CGPoint _field2;
+    struct CGAffineTransform _field3;
+} CDStruct_d54ccef3;
 

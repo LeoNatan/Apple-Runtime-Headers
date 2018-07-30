@@ -18,6 +18,7 @@
     NSString *_displayName;
     NSString *_issuerCountryCode;
     NSData *_manifestHash;
+    NSString *_organizationName;
     NSString *_passID;
     NSMutableArray *_paymentApplications;
     NSString *_peerPaymentAccountCurrency;
@@ -37,6 +38,7 @@
 
 + (Class)associatedWebDomainsType;
 + (Class)paymentApplicationsType;
+@property(retain, nonatomic) NSString *organizationName; // @synthesize organizationName=_organizationName;
 @property(nonatomic) unsigned int peerPaymentAccountState; // @synthesize peerPaymentAccountState=_peerPaymentAccountState;
 @property(nonatomic) long long peerPaymentAccountBalance; // @synthesize peerPaymentAccountBalance=_peerPaymentAccountBalance;
 @property(retain, nonatomic) NSString *peerPaymentAccountCurrency; // @synthesize peerPaymentAccountCurrency=_peerPaymentAccountCurrency;
@@ -61,6 +63,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasOrganizationName;
 @property(nonatomic) _Bool hasPeerPaymentAccountState;
 @property(nonatomic) _Bool hasPeerPaymentAccountBalance;
 @property(readonly, nonatomic) _Bool hasPeerPaymentAccountCurrency;

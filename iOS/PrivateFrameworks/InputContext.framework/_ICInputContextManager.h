@@ -9,12 +9,10 @@
 #import "_ICLexiconManaging.h"
 #import "_ICPredictionManaging.h"
 
-@class NSMutableArray, NSString, _ICPredictionManager;
+@class NSString, _ICPredictionManager;
 
 @interface _ICInputContextManager : NSObject <_ICPredictionManaging, _ICLexiconManaging>
 {
-    id <_ICLexiconSourcing> _lexiconSource;
-    NSMutableArray *_allPredictionSources;
     struct _LXLexicon *_durableNamedEntityLexicon;
     struct _LXLexicon *_recentNamedEntityLexicon;
     id <_ICLexiconManaging> _lexiconManager;
@@ -25,7 +23,10 @@
 - (void).cxx_destruct;
 - (id)initForIntegrationTesting;
 - (id)initWithPredictionSource:(id)arg1;
+- (void)hibernate;
+- (void)warmUp;
 - (void)unloadLexicons;
+- (id)loadLexiconsUsingFilter:(CDUnknownBlockType)arg1;
 - (id)loadLexicons:(CDUnknownBlockType)arg1;
 - (void)removeContactObserver:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)addContactObserver:(CDUnknownBlockType)arg1;
@@ -37,8 +38,10 @@
 - (id)searchWithTriggers:(id)arg1 application:(id)arg2 recipient:(id)arg3 localeIdentifier:(id)arg4 timeoutInMilliseconds:(int)arg5 resultLimit:(int)arg6 error:(id *)arg7;
 - (id)getLexiconManager;
 - (id)getPredictionManager;
-- (void)commonLazyInitialization;
-- (void)doInitialization;
+- (void)initPredictionManager;
+- (void)doInitPredictionManager;
+- (void)initLexiconManager;
+- (void)doInitLexiconManager;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

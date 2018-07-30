@@ -18,6 +18,8 @@
     int _shuffleMode;
     NSString *_playActivityFeatureName;
     NSData *_playActivityRecommendationData;
+    NSString *_siriAssetInfo;
+    NSString *_siriReferenceIdentifier;
 }
 
 + (id)tracklistDataSourceForSource:(int)arg1;
@@ -29,6 +31,8 @@
 + (id)radioPlaybackIntentFromAlbum:(id)arg1;
 + (id)intentFromQueueDescriptor:(id)arg1;
 @property(nonatomic) _Bool preventAutomaticPlayback; // @synthesize preventAutomaticPlayback=_preventAutomaticPlayback;
+@property(copy, nonatomic) NSString *siriReferenceIdentifier; // @synthesize siriReferenceIdentifier=_siriReferenceIdentifier;
+@property(copy, nonatomic) NSString *siriAssetInfo; // @synthesize siriAssetInfo=_siriAssetInfo;
 @property(copy, nonatomic) NSData *playActivityRecommendationData; // @synthesize playActivityRecommendationData=_playActivityRecommendationData;
 @property(copy, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;
 @property(nonatomic) int shuffleMode; // @synthesize shuffleMode=_shuffleMode;
@@ -36,10 +40,12 @@
 @property(nonatomic) int tracklistSource; // @synthesize tracklistSource=_tracklistSource;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 - (void).cxx_destruct;
+- (void)getRepresentativeMetadataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getPlaybackContextWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <MPCPlaybackIntentDataSource> tracklistDataSource;
 - (id)description;
+- (id)init;
 
 @end
 

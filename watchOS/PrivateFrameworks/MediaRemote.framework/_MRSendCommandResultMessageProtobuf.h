@@ -8,19 +8,24 @@
 
 #import "NSCopying.h"
 
-@class NSMutableArray;
+@class NSMutableArray, NSString, _MRNowPlayingPlayerPathProtobuf;
 
 @interface _MRSendCommandResultMessageProtobuf : PBCodable <NSCopying>
 {
-    CDStruct_084d6ede _handlerReturnStatus;
-    unsigned int _errorCode;
+    CDStruct_56d48c16 _handlerReturnStatus;
+    NSString *_commandID;
     NSMutableArray *_handlerReturnStatusDatas;
-    CDStruct_70a7dc3e _has;
+    _MRNowPlayingPlayerPathProtobuf *_playerPath;
+    int _sendError;
+    struct {
+        unsigned int sendError:1;
+    } _has;
 }
 
 + (Class)handlerReturnStatusDataType;
+@property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
+@property(retain, nonatomic) NSString *commandID; // @synthesize commandID=_commandID;
 @property(retain, nonatomic) NSMutableArray *handlerReturnStatusDatas; // @synthesize handlerReturnStatusDatas=_handlerReturnStatusDatas;
-@property(nonatomic) unsigned int errorCode; // @synthesize errorCode=_errorCode;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -31,17 +36,24 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPlayerPath;
+@property(readonly, nonatomic) _Bool hasCommandID;
 - (id)handlerReturnStatusDataAtIndex:(unsigned int)arg1;
 - (unsigned int)handlerReturnStatusDatasCount;
 - (void)addHandlerReturnStatusData:(id)arg1;
 - (void)clearHandlerReturnStatusDatas;
-- (void)setHandlerReturnStatus:(unsigned int *)arg1 count:(unsigned int)arg2;
-- (unsigned int)handlerReturnStatusAtIndex:(unsigned int)arg1;
-- (void)addHandlerReturnStatus:(unsigned int)arg1;
+- (int)StringAsHandlerReturnStatus:(id)arg1;
+- (id)handlerReturnStatusAsString:(int)arg1;
+- (void)setHandlerReturnStatus:(int *)arg1 count:(unsigned int)arg2;
+- (int)handlerReturnStatusAtIndex:(unsigned int)arg1;
+- (void)addHandlerReturnStatus:(int)arg1;
 - (void)clearHandlerReturnStatus;
-@property(readonly, nonatomic) unsigned int *handlerReturnStatus;
+@property(readonly, nonatomic) int *handlerReturnStatus;
 @property(readonly, nonatomic) unsigned int handlerReturnStatusCount;
-@property(nonatomic) _Bool hasErrorCode;
+- (int)StringAsSendError:(id)arg1;
+- (id)sendErrorAsString:(int)arg1;
+@property(nonatomic) _Bool hasSendError;
+@property(nonatomic) int sendError; // @synthesize sendError=_sendError;
 - (void)dealloc;
 
 @end

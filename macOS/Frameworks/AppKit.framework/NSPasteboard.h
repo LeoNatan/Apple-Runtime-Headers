@@ -95,6 +95,7 @@
 - (void)_removeFromGlobalTable;
 - (void)_clearOutstandingPromises;
 - (void)dealloc;
+- (void)_restrictSandboxExtensionAccess;
 - (void)_addConversionsFromTypeIdentifiers:(id)arg1 atIndex:(unsigned long long)arg2 usesPboardTypes:(BOOL)arg3;
 - (id)_dataWithConversionForTypeIdentifier:(id)arg1 atIndex:(unsigned long long)arg2 securityScoped:(BOOL)arg3;
 - (id)_dataWithConversionForType:(id)arg1 securityScoped:(BOOL)arg2;

@@ -6,7 +6,7 @@
 
 #import "NSViewController.h"
 
-@class AVMovableView, NSLayoutGuide, NSMutableArray, NSViewController<AVControlsContainerViewControllerContent>, NSVisualEffectView;
+@class AVMovableView, NSLayoutConstraint, NSLayoutGuide, NSMutableArray, NSViewController<AVControlsContainerViewControllerContent>, NSVisualEffectView;
 
 @interface AVControlsContainerViewController : NSViewController
 {
@@ -16,6 +16,7 @@
     NSMutableArray *_movableViewLayoutConstraints;
     NSLayoutGuide *_preferredIndicatorAreaLayoutGuide;
     NSMutableArray *_preferredIndicatorAreaLayoutConstraints;
+    NSLayoutConstraint *_leftConstraint;
 }
 
 - (void).cxx_destruct;
@@ -30,6 +31,9 @@
 - (void)removeBackgroundView;
 - (void)addBackgroundViewForControlsContentViewController:(id)arg1;
 - (void)loadView;
+- (void)updateViewHidden;
+- (void)viewDidLayout;
+- (void)updateViewConstraints;
 @property(readonly) NSLayoutGuide *preferredIndicatorAreaLayoutGuide;
 @property(retain) NSViewController<AVControlsContainerViewControllerContent> *controlsContentViewController;
 - (void)dealloc;

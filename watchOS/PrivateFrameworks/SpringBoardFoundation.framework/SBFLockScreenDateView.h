@@ -6,18 +6,15 @@
 
 #import "UIView.h"
 
-#import "SBFScreenFadeReplicatable.h"
+@class NSDate, SBFLockScreenDateSubtitleDateView, SBFLockScreenDateSubtitleView, SBUILegibilityLabel, UIColor, _UILegibilitySettings;
 
-@class NSDate, NSHashTable, NSString, SBFLockScreenDateSubtitleDateView, SBFLockScreenDateSubtitleView, SBUILegibilityLabel, UIColor, _UILegibilitySettings;
-
-@interface SBFLockScreenDateView : UIView <SBFScreenFadeReplicatable>
+@interface SBFLockScreenDateView : UIView
 {
     SBUILegibilityLabel *_timeLabel;
     float _timeAlpha;
     float _subtitleAlpha;
     SBFLockScreenDateSubtitleDateView *_dateSubtitleView;
     SBFLockScreenDateSubtitleView *_customSubtitleView;
-    NSHashTable *_replicatedViews;
     _Bool _useCompactDateFormat;
     NSDate *_date;
     UIColor *_overrideTextColor;
@@ -26,11 +23,14 @@
     float _dateToTimeStretch;
     float _timeLegibilityStrength;
     float _subtitleLegibilityStrength;
+    struct CGRect _restingFrame;
 }
 
++ (CDStruct_818bb265)timeFontMetrics;
 + (id)timeFont;
 + (float)defaultHeight;
 @property(retain, nonatomic) SBFLockScreenDateSubtitleView *customSubtitleView; // @synthesize customSubtitleView=_customSubtitleView;
+@property(nonatomic) struct CGRect restingFrame; // @synthesize restingFrame=_restingFrame;
 @property(nonatomic) float subtitleLegibilityStrength; // @synthesize subtitleLegibilityStrength=_subtitleLegibilityStrength;
 @property(nonatomic) float timeLegibilityStrength; // @synthesize timeLegibilityStrength=_timeLegibilityStrength;
 @property(nonatomic) _Bool useCompactDateFormat; // @synthesize useCompactDateFormat=_useCompactDateFormat;
@@ -54,8 +54,6 @@
 - (void)_updateLabels;
 - (struct CGRect)chargingVisualInformationTimeSubtitleFrame;
 - (struct CGRect)chargingVisualInformationTimeFrame;
-- (void)_enumerateReplicateViews:(CDUnknownBlockType)arg1;
-- (id)replicate;
 - (id)_timeLabel;
 - (struct CGRect)presentationExtentForAlignmentPercent:(float)arg1;
 - (void)setContentAlpha:(float)arg1 withSubtitleVisible:(_Bool)arg2;
@@ -63,12 +61,6 @@
 - (void)updateFormat;
 @property(nonatomic, getter=isSubtitleHidden) _Bool subtitleHidden;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

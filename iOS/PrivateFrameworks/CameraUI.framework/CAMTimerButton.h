@@ -30,6 +30,7 @@
 - (long long)numberOfMenuItems;
 - (void)_updateCurrentGlyphImage;
 - (id)_currentGlyphImageForAccessibiliyHUD:(_Bool)arg1;
+- (void)setHideOffWhenCollapsed:(_Bool)arg1 needsReloadData:(_Bool)arg2;
 - (void)setDuration:(long long)arg1 animated:(_Bool)arg2;
 @property(nonatomic) long long duration;
 - (id)initWithFrame:(struct CGRect)arg1;

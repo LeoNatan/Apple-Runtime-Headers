@@ -6,8 +6,12 @@
 
 #import "MTLResource.h"
 
+@class MTLSharedTextureHandle;
+
 @protocol MTLTexture <MTLResource>
+@property(readonly) BOOL allowGPUOptimizedContents;
 @property(readonly, getter=isFramebufferOnly) BOOL framebufferOnly;
+@property(readonly, getter=isShareable) BOOL shareable;
 @property(readonly) unsigned long long usage;
 @property(readonly) unsigned long long arrayLength;
 @property(readonly) unsigned long long sampleCount;
@@ -26,6 +30,7 @@
 @property(readonly) unsigned long long parentRelativeLevel;
 @property(readonly) id <MTLTexture> parentTexture;
 @property(readonly) id <MTLResource> rootResource;
+- (MTLSharedTextureHandle *)newSharedTextureHandle;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned long long)arg1;
 - (void)replaceRegion:(CDStruct_4c83c94d)arg1 mipmapLevel:(unsigned long long)arg2 withBytes:(const void *)arg3 bytesPerRow:(unsigned long long)arg4;

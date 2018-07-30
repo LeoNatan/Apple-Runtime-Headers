@@ -17,11 +17,26 @@
 
 + (void)EnableAnnotationKit;
 - (void).cxx_destruct;
+- (double)mainScreenScale;
+- (struct CGRect)mainScreenBounds;
 - (struct CGRect)extendedRootViewBounds;
 - (_Bool)flipsTileContents;
 - (struct CGRect)convertRootViewRect:(struct CGRect)arg1 toPageLayer:(id)arg2;
 - (struct CGRect)convertRectToRootView:(struct CGRect)arg1 fromPageLayer:(id)arg2;
 - (struct CGRect)rootViewBounds;
+- (struct CGRect)documentViewFrustumForSelection:(id)arg1;
+- (void)updatePDFViewLayout:(struct CGRect)arg1 boundsInView:(struct CGRect)arg2 scrollViewFrame:(struct CGRect)arg3 zoomScale:(double)arg4;
+- (struct CGSize)autoScalePageSize;
+- (struct CGSize)pdfDocumentViewSize;
+- (void)setExtensionViewInsets:(struct UIEdgeInsets)arg1;
+- (void)setExtensionViewFrame:(struct CGRect)arg1;
+- (struct CGRect)extensionViewFrame;
+- (double)extensionViewZoomScale;
+- (struct CGRect)extensionViewBoundsInDocument;
+- (struct CGPoint)documentViewCenterBeforeRotation;
+- (double)horizontalScaleFactorBeforeRotation;
+- (void)setScrollViewScrollEnabled:(_Bool)arg1;
+- (void)setIsUsingPDFExtensionView:(_Bool)arg1;
 - (void)setShowsScrollIndicators:(_Bool)arg1;
 - (_Bool)showsScrollIndicators;
 - (void)setEnableSelectionDrawing:(_Bool)arg1;
@@ -44,6 +59,7 @@
 - (_Bool)isForcingWebKitMainThread;
 - (void)forceWebKitMainThread:(_Bool)arg1;
 - (void)setForcesTopAlignment:(_Bool)arg1;
+@property(nonatomic, setter=enablePageShadows:) _Bool pageShadowsEnabled;
 - (void)setEnablePageShadows:(_Bool)arg1;
 - (_Bool)automaticallyHandleGutter;
 - (double)defaultGutterWidth;
@@ -63,6 +79,7 @@
 - (void)_forceTileRefresh;
 - (void)setEnableTileUpdates:(_Bool)arg1;
 - (void)removeActiveAnnotation;
+- (int)textSelectionState;
 - (void)enableTextSelectionHandles;
 - (void)clearTextSelectionHandles;
 - (void)setLollipopMagnifierPage:(id)arg1 forPagePoint:(struct CGPoint)arg2;
@@ -150,6 +167,7 @@
 - (_Bool)_isOverWidgetAnnotation:(struct CGPoint)arg1;
 - (_Bool)_shouldHandleAnnotationAtLocation:(struct CGPoint)arg1;
 - (_Bool)_hasDraggableSelectionAtLocation:(struct CGPoint)arg1;
+- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -224,6 +242,8 @@
 - (void)setShouldAntiAlias:(_Bool)arg1;
 @property(nonatomic) _Bool displaysAsBook;
 @property(nonatomic) long long displayBox;
+- (struct UIEdgeInsets)documentMargins;
+- (void)setDocumentMargins:(struct UIEdgeInsets)arg1;
 @property(nonatomic) struct UIEdgeInsets pageBreakMargins;
 @property(nonatomic) _Bool displaysPageBreaks;
 @property(nonatomic) long long displayDirection;
@@ -249,6 +269,7 @@
 @property(readonly, nonatomic) _Bool canGoToLastPage;
 - (void)goToFirstPage:(id)arg1;
 @property(readonly, nonatomic) _Bool canGoToFirstPage;
+- (void)_releaseDocumentViewController;
 - (void)_releaseDocument;
 - (void)setDocument:(id)arg1 waitDuration:(double)arg2;
 - (void)setDocument:(id)arg1 withInitialPageIndex:(unsigned long long)arg2;

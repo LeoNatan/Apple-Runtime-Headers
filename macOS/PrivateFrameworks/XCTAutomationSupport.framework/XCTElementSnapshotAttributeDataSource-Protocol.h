@@ -6,9 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, XCAccessibilityElement;
+@class NSArray, NSDictionary, NSString, XCAccessibilityElement;
 
 @protocol XCTElementSnapshotAttributeDataSource <NSObject>
+@property(readonly) BOOL usePointTransformationsForFrameConversions;
+@property(readonly) BOOL supportsHostedViewCoordinateTransformations;
+@property(readonly) BOOL allowsRemoteAccess;
+- (id)parameterizedAttribute:(NSString *)arg1 forElement:(XCAccessibilityElement *)arg2 parameter:(id)arg3 error:(id *)arg4;
 - (NSDictionary *)attributesForElement:(XCAccessibilityElement *)arg1 attributes:(NSArray *)arg2 error:(id *)arg3;
 @end
 

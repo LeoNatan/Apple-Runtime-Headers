@@ -12,15 +12,18 @@
 
 @interface CKAnimatedImageView : UIImageView <CKAnimationTimerObserver>
 {
+    _Bool _automaticallyObserveWindowForAnimationTimer;
     CKAnimatedImage *_animatedImage;
     NSArray *_frames;
 }
 
 @property(copy, nonatomic) NSArray *frames; // @synthesize frames=_frames;
+@property(nonatomic) _Bool automaticallyObserveWindowForAnimationTimer; // @synthesize automaticallyObserveWindowForAnimationTimer=_automaticallyObserveWindowForAnimationTimer;
 @property(retain, nonatomic) CKAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 - (void).cxx_destruct;
 - (void)animationTimerFired:(unsigned long long)arg1;
 - (void)updateAnimationTimerObserving;
+- (void)didMoveToWindow;
 - (void)dealloc;
 
 // Remaining properties

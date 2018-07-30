@@ -14,13 +14,15 @@
     NSXPCConnection *_connection;
     NSURL *_storeURL;
     NSMutableDictionary *_registry;
-    int _registryLock;
+    struct os_unfair_lock_s _registryLock;
 }
 
+@property struct os_unfair_lock_s registryLock; // @synthesize registryLock=_registryLock;
+@property(readonly) NSMutableDictionary *registry; // @synthesize registry=_registry;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
-@property(readonly) NSURL *storeURL; // @dynamic storeURL;
+@property(readonly) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 - (void)removeUnitForUUID:(id)arg1;
 - (id)addUnitWithLength:(unsigned long long)arg1 dataProvider:(CDUnknownBlockType)arg2;
 - (id)addUnitWithData:(id)arg1;

@@ -57,8 +57,6 @@
 - (id)makeViewForCustomizationPreview;
 - (id)makeViewForCustomizationPalette;
 - (id)_makeContainerTouchBar;
-- (void)setGroupFunctionBar:(id)arg1;
-- (id)groupFunctionBar;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

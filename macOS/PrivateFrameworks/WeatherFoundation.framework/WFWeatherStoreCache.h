@@ -6,11 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSURL;
+@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSTimer, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface WFWeatherStoreCache : NSObject
 {
     NSURL *_URL;
+    NSTimer *_cacheStoreTimer;
     NSObject<OS_dispatch_queue> *_cacheConcurrentQueue;
     NSMutableDictionary *_cacheForDomain;
     NSMutableSet *_dirtyCacheDomains;
@@ -22,6 +24,7 @@
 @property(retain) NSMutableSet *dirtyCacheDomains; // @synthesize dirtyCacheDomains=_dirtyCacheDomains;
 @property(retain) NSMutableDictionary *cacheForDomain; // @synthesize cacheForDomain=_cacheForDomain;
 @property(retain) NSObject<OS_dispatch_queue> *cacheConcurrentQueue; // @synthesize cacheConcurrentQueue=_cacheConcurrentQueue;
+@property(retain, nonatomic) NSTimer *cacheStoreTimer; // @synthesize cacheStoreTimer=_cacheStoreTimer;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (void)_concurrentQueue_barrier_removeObjectWithinDomain:(id)arg1 forKey:(id)arg2;
@@ -46,6 +49,9 @@
 - (void)_concurrentQueue_barrier_writeCacheDictionaryToFile;
 - (void)writeCacheDictionaryToFile;
 - (void)deleteOldDataFromCache:(id)arg1 allowedStaleness:(unsigned long long)arg2;
+- (void)_stopCacheStoreTimer;
+- (void)_startCacheStoreTimer;
+- (void)dealloc;
 - (id)initWithURL:(id)arg1;
 - (id)init;
 

@@ -8,6 +8,7 @@
 
 @class SHKSharingService;
 
+__attribute__((visibility("hidden")))
 @interface NSSharingServiceReserved : NSObject
 {
     id <NSSharingServiceDelegate> delegate;

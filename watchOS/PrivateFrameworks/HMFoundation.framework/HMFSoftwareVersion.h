@@ -21,6 +21,7 @@
 - (id)initWithCoder:(id)arg1;
 - (CDStruct_77932685)operatingSystemVersion;
 - (int)compare:(id)arg1;
+- (id)localizedDescription;
 - (id)versionString;
 - (id)initWithVersionString:(id)arg1;
 - (id)initWithMajorVersion:(unsigned int)arg1 minorVersion:(unsigned int)arg2 updateVersion:(unsigned int)arg3 buildVersion:(id)arg4;

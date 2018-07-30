@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
+#import "NUAdContextProvider.h"
 #import "NUVideoPlaybackCounter.h"
 #import "NUVideoPlayerEventTracker.h"
 
 @class NSString;
 
-@interface NUVideoPlaybackCounter : NSObject <NUVideoPlayerEventTracker, NUVideoPlaybackCounter>
+@interface NUVideoPlaybackCounter : NSObject <NUVideoPlayerEventTracker, NUVideoPlaybackCounter, NUAdContextProvider>
 {
     unsigned long long numberOfVideosPlayedSinceLastAd;
     unsigned long long numberOfVideosPlayedInSession;
@@ -22,6 +23,7 @@
 - (void)setNumberOfVideosPlayedSinceLastAd:(unsigned long long)arg1;
 - (void)incrementNumberOfVideosPlayedSinceLastAd;
 - (void)incrementNumberOfVideosPlayedInSession;
+- (id)adContextValueForKeyPath:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfVideosPlayedSinceLastAd; // @synthesize numberOfVideosPlayedSinceLastAd;
 - (void)playbackStartedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackStartedForVideoAdWithMetadata:(id)arg1;

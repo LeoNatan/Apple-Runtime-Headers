@@ -9,14 +9,12 @@
 @class NSArray, NSData, NSDictionary, NSString, _CPSearchResultForFeedback;
 
 @protocol _CPResultSectionForFeedback <NSObject>
+@property(readonly, nonatomic) unsigned long long whichBundleid;
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasFallbackResultSection;
-@property(copy, nonatomic) NSData *fallbackResultSection;
-@property(readonly, nonatomic) BOOL hasRankingScore;
-@property(nonatomic) double rankingScore;
-@property(readonly, nonatomic) BOOL hasBundleIdentifier;
+@property(nonatomic) int knownBundleIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier;
-@property(readonly, nonatomic) BOOL hasIdentifier;
+@property(copy, nonatomic) NSData *fallbackResultSection;
+@property(nonatomic) double rankingScore;
 @property(copy, nonatomic) NSString *identifier;
 @property(copy, nonatomic) NSArray *results;
 - (id)initWithDictionary:(NSDictionary *)arg1;

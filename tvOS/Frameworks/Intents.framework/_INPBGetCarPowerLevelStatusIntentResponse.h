@@ -7,34 +7,45 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBGetCarPowerLevelStatusIntentResponse.h"
 
-@class PBUnknownFields, _INPBDistance, _INPBDouble;
+@class NSString, _INPBDistance, _INPBDouble, _INPBInteger;
 
-@interface _INPBGetCarPowerLevelStatusIntentResponse : PBCodable <NSCopying>
+@interface _INPBGetCarPowerLevelStatusIntentResponse : PBCodable <_INPBGetCarPowerLevelStatusIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct {
+        unsigned int charging:1;
+    } _has;
+    _Bool _charging;
     _INPBDouble *_chargePercentRemaining;
     _INPBDistance *_distanceRemaining;
     _INPBDouble *_fuelPercentRemaining;
+    _INPBInteger *_minutesToFull;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBDistance *distanceRemaining; // @synthesize distanceRemaining=_distanceRemaining;
-@property(retain, nonatomic) _INPBDouble *chargePercentRemaining; // @synthesize chargePercentRemaining=_chargePercentRemaining;
+@property(retain, nonatomic) _INPBInteger *minutesToFull; // @synthesize minutesToFull=_minutesToFull;
 @property(retain, nonatomic) _INPBDouble *fuelPercentRemaining; // @synthesize fuelPercentRemaining=_fuelPercentRemaining;
+@property(retain, nonatomic) _INPBDistance *distanceRemaining; // @synthesize distanceRemaining=_distanceRemaining;
+@property(nonatomic) _Bool charging; // @synthesize charging=_charging;
+@property(retain, nonatomic) _INPBDouble *chargePercentRemaining; // @synthesize chargePercentRemaining=_chargePercentRemaining;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasDistanceRemaining;
-@property(readonly, nonatomic) _Bool hasChargePercentRemaining;
+@property(readonly, nonatomic) _Bool hasMinutesToFull;
 @property(readonly, nonatomic) _Bool hasFuelPercentRemaining;
+@property(readonly, nonatomic) _Bool hasDistanceRemaining;
+@property(nonatomic) _Bool hasCharging;
+@property(readonly, nonatomic) _Bool hasChargePercentRemaining;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

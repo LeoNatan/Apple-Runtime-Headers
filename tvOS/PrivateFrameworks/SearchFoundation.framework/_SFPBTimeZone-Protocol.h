@@ -10,7 +10,6 @@
 
 @protocol _SFPBTimeZone <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasIdentifier;
 @property(copy, nonatomic) NSString *identifier;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

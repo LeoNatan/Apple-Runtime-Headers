@@ -23,6 +23,9 @@ __attribute__((visibility("hidden")))
 - (void)emitValueIfNeeded;
 - (void)receiveObservedValue:(id)arg1 fromVariable:(id)arg2;
 - (id)addObserver:(id)arg1;
+- (id)addObserverBlock:(CDUnknownBlockType)arg1;
+- (_Bool)_overrideUseFastBlockObservers;
+- (void)_lazilyObserveVariablesIfNeeded;
 - (void)dealloc;
 - (id)initWithExpression:(id)arg1 inEngine:(id)arg2;
 

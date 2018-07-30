@@ -13,7 +13,7 @@
 
 + (id)sharedLogger;
 @property(nonatomic) _Bool shouldLog; // @synthesize shouldLog=_shouldLog;
-- (void)logMessage:(id)arg1 protocolMessage:(id)arg2;
+- (void)logMessage:(id)arg1 client:(id)arg2 protocolMessage:(id)arg3;
 - (id)init;
 
 @end

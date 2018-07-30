@@ -10,7 +10,9 @@
 {
 }
 
-+ (id)machineName;
++ (id)hardwareModelIdentifier;
++ (id)computerName;
++ (id)macAddress;
 + (id)hostUUID;
 + (BOOL)isNetBooted;
 

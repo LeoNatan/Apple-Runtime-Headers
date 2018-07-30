@@ -5,11 +5,11 @@
 //
 
 #import "SXVideoProviding.h"
-#import "SXVideoSkipThreshold.h"
 
-@protocol SXVideoAdProviding <SXVideoProviding, SXVideoSkipThreshold>
+@protocol SXVideoAdProviding <SXVideoProviding>
 @property(readonly, nonatomic) _Bool hasAction;
 @property(readonly, nonatomic) unsigned long long skipThreshold;
+- (void)nextVideoStartPlaying;
 - (void)presentPrivacyStatement;
 - (void)presentAction;
 - (void)skipped;

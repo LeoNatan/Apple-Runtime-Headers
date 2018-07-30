@@ -29,6 +29,29 @@ struct __va_list_tag {
     void *_field4;
 };
 
+struct _ftsent {
+    struct _ftsent *_field1;
+    struct _ftsent *_field2;
+    struct _ftsent *_field3;
+    long long _field4;
+    void *_field5;
+    char *_field6;
+    char *_field7;
+    int _field8;
+    int _field9;
+    unsigned short _field10;
+    unsigned short _field11;
+    unsigned long long _field12;
+    int _field13;
+    unsigned short _field14;
+    short _field15;
+    unsigned short _field16;
+    unsigned short _field17;
+    unsigned short _field18;
+    struct stat *_field19;
+    char _field20[1];
+};
+
 struct _os_log_index_timeref {
     unsigned char uuid[16];
     unsigned long long continuous;
@@ -113,6 +136,21 @@ struct os_activity_create_s {
     unsigned long long _field12;
 };
 
+struct os_activity_loss_s {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    char *_field4;
+    char *_field5;
+    struct timeval _field6;
+    struct timezone _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned long long _field10;
+    unsigned long long _field11;
+    unsigned int _field12;
+};
+
 struct os_activity_statedump_s {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -183,9 +221,10 @@ struct os_activity_stream_entry_s {
         struct os_activity_useraction_s _field7;
         struct os_activity_statedump_s _field8;
         struct os_activity_timesync_s _field9;
-        struct os_activity_breadcrumb_s _field10;
-        struct os_activity_stream_activity_s _field11;
-        struct os_trace_message_s _field12;
+        struct os_activity_loss_s _field10;
+        struct os_activity_breadcrumb_s _field11;
+        struct os_activity_stream_activity_s _field12;
+        struct os_trace_message_s _field13;
     } _field8;
 };
 
@@ -231,6 +270,13 @@ struct os_activity_useraction_s {
     unsigned int _field9;
     char *_field10;
     _Bool _field11;
+};
+
+struct os_log_backtrace_frame_s;
+
+struct os_log_backtrace_s {
+    struct os_log_backtrace_frame_s *_field1;
+    int _field2;
 };
 
 struct os_log_fmt_cspec_s {
@@ -289,6 +335,10 @@ struct os_log_message_s {
     unsigned char _field18;
     _Bool _field19;
     unsigned long long _field20;
+    char *_field21;
+    unsigned char _field22;
+    unsigned char _field23;
+    char *_field24;
 };
 
 struct os_procinfo_map_s;
@@ -327,6 +377,8 @@ struct os_trace_blob_s {
     _Bool ob_binary;
 };
 
+struct os_trace_context_data_s;
+
 struct os_trace_message_s {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -346,6 +398,8 @@ struct os_trace_message_s {
 struct os_trace_str_map_s;
 
 struct os_trace_uuid_map_s;
+
+struct stat;
 
 struct subchunk_queue_t {
     struct catalog_subchunk_s *_field1;
@@ -505,8 +559,20 @@ struct tracev3_subchunk_timezone_s {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned int _field1;
+    char _field2;
+} CDStruct_b08cb064;
+
+typedef struct {
+    unsigned long long stamp;
+    struct timeval tv_gmt;
+    struct timezone tz;
+} CDStruct_69b3e0b9;
+
+typedef struct {
     struct _os_log_index_timeref olim_oldestpersist;
     struct _os_log_index_timeref olim_oldestspecial;
+    struct _os_log_index_timeref olim_oldestsignpost;
     struct _os_log_index_timeref olim_oldesthighvol;
     struct _os_log_index_timeref olim_oldestlive;
     struct _os_log_index_timeref olim_end;
@@ -515,7 +581,7 @@ typedef struct {
         struct _os_log_index_timeref timeref;
         unsigned char ttl;
     } olim_ttl[5];
-} CDStruct_1936c231;
+} CDStruct_42ec109f;
 
 typedef struct {
     unsigned int _field1;

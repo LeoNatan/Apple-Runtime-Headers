@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)groupWithActions:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (_Bool)finished;
 - (id)reversedAction;

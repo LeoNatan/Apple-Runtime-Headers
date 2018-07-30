@@ -8,6 +8,7 @@
 
 @class AmbientLightSensorStats, NSObject<OS_dispatch_queue>, NSObject<OS_os_log>;
 
+__attribute__((visibility("hidden")))
 @interface DisplayALSManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
@@ -32,6 +33,8 @@
 }
 
 - (void)forceUpdate:(unsigned int)arg1;
+- (void)setDisplayModuleAlsCurve;
+- (void)setDisplayModuleAutoEnabled;
 - (void)preferencesChanged:(id)arg1;
 - (void)savePreferences;
 - (_Bool)loadPreferences;
@@ -43,6 +46,12 @@
 - (BOOL)updateDynamicSliderWithLux:(float)arg1 force:(BOOL)arg2;
 - (BOOL)updateDynamicSliderState:(BOOL)arg1 battery:(BOOL)arg2;
 - (void)setDynamicSliderWithFade:(float)arg1 length:(float)arg2;
+- (void)updateDynamicSliderConfiguration:(id)arg1;
+- (void)setDynamicSliderConfigurationValues:(id)arg1;
+- (id)copyDynamicSliderConfiguration;
+- (void)updateMagsafeRestrictionConfiguration:(id)arg1;
+- (void)setMagsafeRestrictionConfigurationValues:(id)arg1;
+- (id)copyMagsafeRestrictionConfiguration;
 - (void)stopDynamicSliderFade;
 - (float)linearBrightnessForLux:(float)arg1;
 - (float)linearBrightness;

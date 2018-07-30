@@ -11,53 +11,50 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMDelegateCaller, HMFMessageDispatcher, HMThreadSafeMutableArrayCollection, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class HMFUnfairLock, HMMutableArray, NSHashTable, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID, _HMContext;
 
-@interface HMSymptomsHandler : NSObject <HMFMessageReceiver, NSSecureCoding, HMObjectMerge, HMFLogging>
+@interface HMSymptomsHandler : NSObject <NSSecureCoding, HMFMessageReceiver, HMFLogging, HMObjectMerge>
 {
-    _Bool _canInitiateFix;
-    HMThreadSafeMutableArrayCollection *_currentSymptoms;
-    long long _fixState;
+    HMFUnfairLock *_lock;
+    NSUUID *_sfDeviceIdentifier;
     NSUUID *_uniqueIdentifier;
     id <HMSymptomsHandlerDelegate> _delegate;
+    _HMContext *_context;
+    NSHashTable *_fixSessions;
     NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDelegateCaller *_delegateCaller;
-    HMFMessageDispatcher *_msgDispatcher;
+    HMMutableArray *_currentSymptoms;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
+@property(readonly, nonatomic) HMMutableArray *currentSymptoms; // @synthesize currentSymptoms=_currentSymptoms;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-@property(retain, nonatomic) HMThreadSafeMutableArrayCollection *currentSymptoms; // @synthesize currentSymptoms=_currentSymptoms;
+@property(retain, nonatomic) NSHashTable *fixSessions; // @synthesize fixSessions=_fixSessions;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)_callFixStateUpdatedDelegate:(long long)arg1;
-- (void)_callCanFixUpdatedDelegate:(_Bool)arg1;
-- (void)_callStatusUpdateDelegate:(id)arg1;
+- (void)_callFixSessionAvailabilityUpdatedDelegate;
+- (void)_callSymptomsUpdatedDelegate:(id)arg1;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
-- (void)_handleFixStateUpdated:(id)arg1;
-- (void)_handleCanPromptFixProxCard:(id)arg1;
-- (void)_handleSymptomsUpdated:(id)arg1;
-- (void)initiateFixWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (id)logIdentifier;
+- (id)_findAndRemoveFixSessionsForSymptom:(id)arg1;
+- (void)_addFixSession:(id)arg1;
+- (void)_handleSFDeviceIdentifierUpdated:(id)arg1;
+- (void)_handleSymptomsUpdated:(id)arg1;
+- (void)initiateFixWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)newFixSessionForSymptom:(id)arg1;
 - (void)registerForMessages;
-- (void)setFixState:(long long)arg1;
-@property(readonly) long long fixState; // @synthesize fixState=_fixState;
-- (void)setCanInitiateFix:(_Bool)arg1;
-@property(readonly) _Bool canInitiateFix; // @synthesize canInitiateFix=_canInitiateFix;
+@property(readonly) long long fixState;
+@property(readonly) _Bool canInitiateFix;
+@property(copy, setter=setSFDeviceIdentifier:) NSUUID *sfDeviceIdentifier; // @synthesize sfDeviceIdentifier=_sfDeviceIdentifier;
 @property __weak id <HMSymptomsHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) NSSet *symptoms;
-@property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void)_configureClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3;
-- (id)logIdentifier;
+- (void)__configureWithContext:(id)arg1;
+- (id)initWithUUID:(id)arg1;
 - (id)init;
 
 // Remaining properties

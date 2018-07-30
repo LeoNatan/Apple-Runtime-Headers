@@ -10,9 +10,7 @@
 {
 }
 
-+ (id)confirmationRequiredWithValueToConfirm:(int)arg1;
 + (id)confirmationRequiredWithBalanceTypeToConfirm:(int)arg1;
-+ (id)successWithResolvedValue:(int)arg1;
 + (id)successWithResolvedBalanceType:(int)arg1;
 
 @end

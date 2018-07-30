@@ -33,6 +33,7 @@
 - (void)handleCrownEvent:(id)arg1;
 - (void)_updateCrownInputSequencer;
 - (void)layoutSubviews;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

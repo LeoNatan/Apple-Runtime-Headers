@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) int muteButtonState; // @synthesize muteButtonState=_muteButtonState;
 - (void)_updateImageAndAccessibilityLabel;
+- (BOOL)allowsVibrancy;
 - (id)init;
 
 @end

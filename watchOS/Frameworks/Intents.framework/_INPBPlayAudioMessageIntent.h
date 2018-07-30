@@ -7,31 +7,34 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPlayAudioMessageIntent.h"
 
-@class NSString, PBUnknownFields, _INPBIntentMetadata;
+@class NSString, _INPBIntentMetadata;
 
-@interface _INPBPlayAudioMessageIntent : PBCodable <NSCopying>
+@interface _INPBPlayAudioMessageIntent : PBCodable <_INPBPlayAudioMessageIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBIntentMetadata *_intentMetadata;
     NSString *_messageIdentifier;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
+@property(copy, nonatomic) NSString *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasMessageIdentifier;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

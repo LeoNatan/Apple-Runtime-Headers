@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FIRadialProgressView : FI_TUpdateLayerView <CALayerDelegate>
 {
-    struct TNSRef<FIRadialProgressLayer *, void> _progressLayer;
+    struct TNSRef<FIRadialProgressLayer, void> _progressLayer;
 }
 
 - (id).cxx_construct;

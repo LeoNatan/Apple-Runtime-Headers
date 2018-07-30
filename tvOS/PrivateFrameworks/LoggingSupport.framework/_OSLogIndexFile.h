@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     _Bool _catalogsScanned;
     unsigned long long _et;
     unsigned long long _ot;
+    char *_path;
 }
 
+@property(readonly, nonatomic) char *path; // @synthesize path=_path;
 @property(readonly, nonatomic) unsigned long long oldestTime; // @synthesize oldestTime=_ot;
 @property(readonly, nonatomic) unsigned long long endTime; // @synthesize endTime=_et;
 - (void).cxx_destruct;
@@ -28,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)copyMappedChunkStore:(id *)arg1;
 - (_Bool)_loadCatalogMetadata;
 - (_Bool)_loadHeaderMetadata:(id)arg1;
+- (void)dealloc;
 - (id)initWithChunkStore:(id)arg1 error:(id *)arg2;
 - (id)initWithTraceFile:(id)arg1 error:(id *)arg2;
 

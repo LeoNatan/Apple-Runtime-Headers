@@ -29,6 +29,18 @@ struct FSRef {
     unsigned char _field1[80];
 };
 
+struct _LIIconVariantInfo {
+    int _field1;
+    struct CGSize _field2;
+    double _field3;
+    unsigned long long _field4;
+    char *_field5;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -40,9 +52,15 @@ typedef struct {
 
 typedef struct {
     unsigned int _field1;
-    unsigned int _field2;
+    _Bool _field2;
     unsigned int _field3;
-} CDStruct_32a7f38a;
+} CDStruct_7956d949;
+
+typedef struct {
+    unsigned int lsDatabaseGeneration;
+    unsigned int bindableKey;
+    unsigned int bindableGeneration;
+} CDStruct_cbacfc36;
 
 typedef struct {
     unsigned int _field1;
@@ -51,13 +69,6 @@ typedef struct {
     unsigned int _field4;
     unsigned int _field5;
 } CDStruct_9d4bab76;
-
-typedef struct {
-    unsigned long long _field1;
-    id *_field2;
-    unsigned long long *_field3;
-    unsigned long long _field4[5];
-} CDStruct_70511ce9;
 
 typedef struct {
     int _field1;
@@ -83,16 +94,34 @@ typedef struct {
     } _field3;
     double _field4;
     unsigned int _field5;
-    CDStruct_32a7f38a _field6;
-    unsigned long long _field7;
-    unsigned char _field8[16];
-} CDStruct_dd73ed19;
+    unsigned long long _field6;
+    CDStruct_cbacfc36 _field7;
+    unsigned long long _field8;
+    unsigned char _field9[16];
+} CDStruct_1a8ce9d4;
 
 typedef struct {
-    unsigned long long _field1;
+    CDUnion_698d0922 _field1;
+    _Bool _field2;
+    unsigned char _field3[0];
+} CDStruct_31b2f3f3;
+
+typedef struct {
+    unsigned int _field1;
     unsigned long long _field2;
     unsigned int _field3;
     _Bool _field4;
-    CDStruct_dd73ed19 _field5;
-} CDStruct_72690114;
+    CDStruct_1a8ce9d4 _field5;
+    CDUnion_698d0922 _field6;
+} CDStruct_92a6f89f;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    struct {
+        unsigned int _field1;
+        unsigned int _field2;
+    } _field1;
+    unsigned long long _field2;
+} CDUnion_698d0922;
 

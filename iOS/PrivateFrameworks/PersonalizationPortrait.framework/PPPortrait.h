@@ -10,9 +10,6 @@
 {
 }
 
-+ (void)_logEngagementFeedbackForItems:(id)arg1 domain:(struct PPMPortraitDomain_)arg2;
-+ (void)_logOverallEngagement:(id)arg1 domain:(struct PPMPortraitDomain_)arg2;
-+ (void)_logUsedFeedbackForItems:(id)arg1 domain:(struct PPMPortraitDomain_)arg2;
 + (void)portraitFeedbackNamedEntitiesOverallEngagement:(id)arg1;
 + (void)portraitFeedbackMappedTopicsOverallEngagement:(id)arg1 forMapping:(id)arg2;
 + (void)portraitFeedbackTopicsOverallEngagement:(id)arg1;
@@ -23,17 +20,6 @@
 + (void)portraitFeedbackUsedMappedTopics:(id)arg1 forMapping:(id)arg2;
 + (void)portraitFeedbackUsedTopics:(id)arg1;
 + (unsigned long long)assetVersion;
-+ (id)getClientBundleId;
-+ (void)registerCloudKitDisabledBundleIdRewriteHandler;
-+ (void)_rewriteSyncStateToDisableBundleId:(id)arg1;
-+ (void)_rewriteSyncStateForDisabledBundleIdsAsync;
-+ (void)_triggerDelayedCloudSyncRewrite;
-+ (void)registerDisabledBundleIdPurgeHandler;
-+ (void)_purgeRecordsForDisabledBundleIdsAsync;
-+ (void)_triggerDelayedBundleIdPurge;
-+ (void)_triggerDelayedOperationWithCoalescingToken:(unsigned long long *)arg1 operation:(CDUnknownBlockType)arg2;
-+ (_Bool)logDailyMetricsWithError:(id *)arg1;
-+ (_Bool)deleteAllExtractionsFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 error:(id *)arg4;
 + (_Bool)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 error:(id *)arg3;
 + (_Bool)donateSiriQuery:(id)arg1 qid:(id)arg2 error:(id *)arg3;
 + (id)getPortraitVariantName;
@@ -42,19 +28,13 @@
 + (_Bool)deleteAllTopicsWithTopicId:(id)arg1 error:(id *)arg2;
 + (_Bool)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 error:(id *)arg3;
 + (_Bool)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 error:(id *)arg3;
-+ (_Bool)_deleteAllTopicsWithPredicate:(id)arg1 loggingBundleId:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
 + (id)topicRecordsWithQuery:(id)arg1 error:(id *)arg2;
-+ (id)_topicRecordFromEvent:(id)arg1;
 + (id)topicRecordsWithLimit:(unsigned long long)arg1 matchingTopicId:(id)arg2 sinceDate:(id)arg3 error:(id *)arg4;
 + (id)topicRecordsWithLimit:(unsigned long long)arg1 matchingSourceBundleId:(id)arg2 sinceDate:(id)arg3 error:(id *)arg4;
 + (id)topicRecordsWithLimit:(unsigned long long)arg1 excludingSourceBundleId:(id)arg2 sinceDate:(id)arg3 error:(id *)arg4;
-+ (id)_topicTransformForId:(id)arg1;
 + (id)scoresForTopicMapping:(id)arg1 excludingSourceBundleId:(id)arg2 fromDate:(id)arg3 decayRate:(double)arg4 withBiases:(_Bool)arg5 error:(id *)arg6;
 + (id)scoresForTopicMapping:(id)arg1 excludingSourceBundleId:(id)arg2 fromDate:(id)arg3 decayRate:(double)arg4 error:(id *)arg5;
 + (id)scoresForTopics:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4;
-+ (double)squash:(double)arg1 usingHalfSigmoidWithScalingFactor:(double)arg2;
-+ (double)squash:(double)arg1 withSigmoidWidth:(double)arg2 withPeakAt:(double)arg3;
-+ (double)decayValue:(double)arg1 withDecayRate:(double)arg2 forTimeElapsed:(double)arg3;
 + (id)rankedTopicsWithQuery:(id)arg1 error:(id *)arg2;
 + (id)rankedTopicsWithLimit:(unsigned long long)arg1 sinceDate:(id)arg2 decayRate:(double)arg3 error:(id *)arg4;
 + (id)rankedTopicsWithLimit:(unsigned long long)arg1 decayRate:(double)arg2 error:(id *)arg3;
@@ -66,54 +46,20 @@
 + (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 error:(id *)arg2;
 + (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 error:(id *)arg3;
 + (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 error:(id *)arg3;
-+ (_Bool)_deleteAllNamedEntitiesWithPredicate:(id)arg1 loggingBundleId:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
-+ (_Bool)_signalNamedEntitiesRemoved:(id)arg1;
-+ (_Bool)_deleteAllExtractionsWithPredicate:(id)arg1 fromStreams:(id)arg2 deletedCount:(unsigned long long *)arg3 namedEntitiesRemoved:(id)arg4 error:(id *)arg5;
 + (id)namedEntityRecordsWithLimit:(unsigned long long)arg1 matchingName:(id)arg2 matchingSourceBundleId:(id)arg3 sinceDate:(id)arg4 error:(id *)arg5;
 + (id)namedEntityRecordsWithLimit:(unsigned long long)arg1 matchingName:(id)arg2 sinceDate:(id)arg3 error:(id *)arg4;
-+ (id)_uncached_namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2;
-+ (id)_cached_namedEntityRecordsWithQuery:(id)arg1;
 + (id)namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2;
-+ (id)_namedEntityRecordFromEvent:(id)arg1;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 matchingCategory:(unsigned long long)arg2 excludingSourceBundleId:(id)arg3 fromDate:(id)arg4 toDate:(id)arg5 error:(id *)arg6;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 matchingCategory:(unsigned long long)arg2 sinceDate:(id)arg3 error:(id *)arg4;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 matchingCategory:(unsigned long long)arg2 error:(id *)arg3;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 sinceDate:(id)arg2 error:(id *)arg3;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 error:(id *)arg2;
 + (id)rankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2;
-+ (id)_rankedNamedEntitiesWithQuery:(id)arg1 usingFakeDataSource:(id)arg2;
-+ (double)_scoreEntityRecord:(id)arg1 query:(id)arg2 scoringDate:(id)arg3;
 + (void)flushNamedEntityDonation;
 + (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 error:(id *)arg6;
-+ (id)_coalesceScoredNamedEntities:(id)arg1;
-+ (id)_findLocalTopicsWithSource:(id)arg1 stream:(id)arg2;
-+ (id)_findLocalEntitiesWithSource:(id)arg1 stream:(id)arg2;
 + (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 error:(id *)arg5;
-+ (id)_cloudKitDisabledBundleIds;
-+ (id)_donationDisabledBundleIds;
-+ (id)_namedEntitiesOverride;
-+ (double)_weightMultiplier;
-+ (id)_readOnlyKnowledgeStore;
-+ (id)_readWriteKnowledgeStore;
-+ (id)_topicStream;
-+ (id)_entityStream;
-+ (void)_loadNamedEntitiesOverrideFromDefaults:(id)arg1;
-+ (id)_defaults;
-+ (void)_refreshCloudKitDisabledBundleIds;
-+ (void)_refreshCloudKitDisabledBundleIdsAsync;
-+ (void)_refreshDonationDisabledBundleIds;
-+ (void)registerXPCListenerForDeletionTracking;
 + (void)registerXPCListenerWithStringDonationHandler:(id)arg1;
 + (void)registerMaintenanceTasks;
-+ (void)initialize;
-+ (_Bool)isCoreRoutineEnabled;
-+ (void)importCoreRoutineData;
-+ (void)_registerPeriodicMetrics;
-+ (void)_registerKnowledgeStoreCleanup;
-+ (void)_registerTTLBasedDonationCleanup;
-+ (void)_registerCoreRoutineImport;
-+ (void)registerMaintenanceTasksInternal;
-+ (_Bool)isVoiceAssistantEnabled;
 
 @end
 

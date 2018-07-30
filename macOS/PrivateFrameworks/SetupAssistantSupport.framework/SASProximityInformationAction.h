@@ -13,11 +13,12 @@
     SASProximityInformation *_information;
 }
 
-+ (id)actionFromDictionary:(id)arg1;
 + (unsigned long long)actionID;
 @property(retain) SASProximityInformation *information; // @synthesize information=_information;
 - (void).cxx_destruct;
-- (id)requestPayload;
+- (id)responsePayload;
+- (void)setResponseFromData:(id)arg1;
+- (BOOL)hasResponse;
 - (id)init;
 
 @end

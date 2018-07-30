@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface SKBitmapFont : NSObject <NSCoding>
+@interface SKBitmapFont : NSObject <NSSecureCoding>
 {
     NSString *_fontName;
     NSString *_filePath;
@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 
 + (id)fontWithTexture:(id)arg1 fontDataString:(id)arg2;
 + (id)fontForFileNamed:(id)arg1;
++ (_Bool)supportsSecureCoding;
 + (id)_fontForFileNamed:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;

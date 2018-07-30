@@ -23,7 +23,9 @@ __attribute__((visibility("hidden")))
 + (BOOL)_shouldShowChineseFeatures;
 + (id)_sharedInstance;
 + (BOOL)_safariIsInRecoverySystem;
++ (BOOL)isAirDropPasswordsAvailable;
 + (BOOL)isApplePayAvailable;
++ (BOOL)isPerSitePopUpBlockingPreferenceAvailable;
 + (BOOL)isUserAllowedToToggleMiscellaneousFormsAutoFillEnabledState;
 + (BOOL)isMiscellaneousFormsAutoFillEnabled;
 + (BOOL)isUserAllowedToTogglePasswordsAutoFillEnabledState;

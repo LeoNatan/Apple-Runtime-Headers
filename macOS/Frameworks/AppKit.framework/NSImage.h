@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSPasteboardReading.h"
 #import "NSPasteboardWriting.h"
@@ -14,7 +13,7 @@
 
 @class NSArray, NSColor, NSData, NSString, _NSImageAuxiliary;
 
-@interface NSImage : NSObject <NSCopying, NSCoding, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
+@interface NSImage : NSObject <NSCopying, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
 {
     NSString *_name;
     struct CGSize _size;
@@ -64,6 +63,7 @@
 + (id)_searchForImageNamed:(id)arg1;
 + (id)imageNamed:(id)arg1;
 + (id)_coreUIImageWithName:(id)arg1;
++ (id)_systemIconImageWithName:(id)arg1;
 + (id)_touchBarSiriCompositeImage;
 + (id)_allNames;
 + (id)_imageNamed:(id)arg1;
@@ -113,12 +113,11 @@
 - (id)_accessibilityDescriptionBackingForCopying;
 - (void)_setAccessibilityDescriptionBacking:(id)arg1;
 - (id)_accessibilityDescriptionBacking;
+- (void)_applyAsContentsToLayer:(id)arg1;
 - (id)_defaultAccessibilityDescription;
 - (void)_setDefaultAccessibilityDescription:(id)arg1;
-- (void)setImageInterpolation:(unsigned long long)arg1;
-- (unsigned long long)imageInterpolation;
-- (void)_setImageInterpolation:(unsigned long long)arg1;
-- (unsigned long long)_imageInterpolation;
+@property unsigned long long imageInterpolation;
+@property(setter=_setImageInterpolation:) unsigned long long _imageInterpolation;
 @property long long resizingMode;
 @property struct NSEdgeInsets capInsets;
 @property struct CGRect alignmentRect;
@@ -152,8 +151,9 @@
 - (void)_deallocAuxiliaryStorage;
 - (void)_allocAuxiliaryStorage;
 - (void)_failsafeAllocAuxiliaryStorage;
+- (id)initWithISIcon:(id)arg1;
 - (id)initWithIconRef:(struct OpaqueIconRef *)arg1;
-- (id)_initWithIconRef:(void *)arg1 includeThumbnail:(BOOL)arg2;
+- (id)_initWithIconRef:(void *)arg1;
 - (id)_initWithData:(id)arg1 fileType:(id)arg2 hfsType:(id)arg3;
 - (id)initWithPasteboard:(id)arg1;
 - (id)initFromImage:(id)arg1 rect:(struct CGRect)arg2;
@@ -181,7 +181,8 @@
 - (void)_addRepresentations:(id)arg1;
 @property(readonly, copy) NSArray *representations;
 - (void)_setRepProviderWithRepresentationsArray:(id)arg1;
-- (void)_setRepProviderWithIconRef:(struct OpaqueIconRef *)arg1 includeThumbnail:(BOOL)arg2;
+- (void)_setRepProviderWithISIcon:(id)arg1;
+- (void)_setRepProviderWithIconRef:(struct OpaqueIconRef *)arg1;
 - (void)_setRepProviderWithReferencingURLs:(id)arg1;
 - (void)_setRepProviderWithReferencingURL:(id)arg1;
 - (void)_usingRepresentationsPerformBlock:(CDUnknownBlockType)arg1;
@@ -192,14 +193,12 @@
 - (id)_snapshotRepForRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
 - (id)_newSnapshotRepForRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
 - (id)_newSnapshotRepForCGImage:(struct CGImage *)arg1 drawingRect:(struct CGRect)arg2 applicableForRect:(struct CGRect)arg3 context:(id)arg4 processedHints:(id)arg5;
-- (void)_cacheSnapshotRep:(id)arg1;
 - (BOOL)_shouldCacheWhenDrawingRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
 - (void)recache;
 - (BOOL)_hasCacheRep;
 - (BOOL)_isCachedToRep:(id)arg1;
 - (void)_usingCacheRepPerformBlock:(CDUnknownBlockType)arg1;
 - (void)_setCacheRep:(id)arg1;
-- (id)tv_tintedImageWithTintColor:(id)arg1;
 - (void)lockFocusOnRepresentation:(id)arg1;
 - (BOOL)_composite:(long long)arg1 delta:(double)arg2 fromRect:(struct CGRect)arg3 toPoint:(struct CGPoint)arg4;
 - (void)_compositeFlipped:(BOOL)arg1 atPoint:(struct CGPoint)arg2 fromRect:(struct CGRect)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5;

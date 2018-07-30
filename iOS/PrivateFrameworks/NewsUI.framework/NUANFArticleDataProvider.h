@@ -12,9 +12,9 @@
 
 @interface NUANFArticleDataProvider : NSObject <NUArticleDataProvider>
 {
+    FCArticle *_article;
     NSString *_articleID;
     id <FCContentContext> _contentContext;
-    FCArticle *_article;
     id <NUFontRegistration> _fontRegistration;
     id <SXHost> _host;
     NUANFFontLoader *_fontLoader;
@@ -29,10 +29,11 @@
 @property(retain, nonatomic) NUANFFontLoader *fontLoader; // @synthesize fontLoader=_fontLoader;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) id <NUFontRegistration> fontRegistration; // @synthesize fontRegistration=_fontRegistration;
-@property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
 @property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
+@property(retain, nonatomic) FCArticle *article; // @synthesize article=_article;
 - (void).cxx_destruct;
+- (void)reloadArticleIfNeeded;
 - (void)loadArticleWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)loadContextWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;

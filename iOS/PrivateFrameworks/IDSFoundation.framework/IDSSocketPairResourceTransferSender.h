@@ -32,6 +32,7 @@
 }
 
 @property(nonatomic) unsigned short streamID; // @synthesize streamID=_streamID;
+@property(readonly, nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;
 @property(nonatomic) unsigned long long nextByte; // @synthesize nextByte=_nextByte;
 @property(nonatomic) _Bool resumeResourceTransfers; // @synthesize resumeResourceTransfers=_resumeResourceTransfers;
 @property(readonly, nonatomic) NSString *messageUUID; // @synthesize messageUUID=_messageUUID;

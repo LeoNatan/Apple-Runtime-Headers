@@ -9,6 +9,7 @@
 @protocol TSDPlayableInfo <NSObject>
 @property(nonatomic) float volume;
 @property(nonatomic) long long loopOption;
+@property(readonly, nonatomic) _Bool supportsLoopingBackAndForth;
 @property(readonly, nonatomic) _Bool supportsLooping;
 @property(nonatomic) double endTime;
 @property(nonatomic) double startTime;

@@ -18,13 +18,13 @@ __attribute__((visibility("hidden")))
     struct CGPoint _origin;
 }
 
-@property void *node; // @synthesize node=_node;
-@property struct CGPoint origin; // @synthesize origin=_origin;
-@property struct CGSize size; // @synthesize size=_size;
-@property _Bool fit; // @synthesize fit=_fit;
-@property(retain) _TDPackerNode *right; // @synthesize right=_right;
-@property(retain) _TDPackerNode *down; // @synthesize down=_down;
-@property _Bool used; // @synthesize used=_used;
+@property(nonatomic) void *node; // @synthesize node=_node;
+@property(nonatomic) struct CGPoint origin; // @synthesize origin=_origin;
+@property(nonatomic) struct CGSize size; // @synthesize size=_size;
+@property(nonatomic) _Bool fit; // @synthesize fit=_fit;
+@property(retain, nonatomic) _TDPackerNode *right; // @synthesize right=_right;
+@property(retain, nonatomic) _TDPackerNode *down; // @synthesize down=_down;
+@property(nonatomic) _Bool used; // @synthesize used=_used;
 - (void)dealloc;
 
 @end

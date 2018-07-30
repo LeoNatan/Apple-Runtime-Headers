@@ -46,5 +46,8 @@
 @property(nonatomic, getter=isVoluntary) BOOL voluntary;
 - (id)copyAgentData;
 
+// Remaining properties
+@property(nonatomic) BOOL requiresAssert;
+
 @end
 

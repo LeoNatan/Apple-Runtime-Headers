@@ -15,6 +15,9 @@
 
 @property(copy, nonatomic) NSAttributedString *transcriptButtonText; // @synthesize transcriptButtonText=_transcriptButtonText;
 - (void).cxx_destruct;
+- (_Bool)showReportSMSSpam;
+- (_Bool)hasMultipleMessages;
+- (_Bool)isGroupChat;
 - (id)transcriptTextForSpam:(_Bool)arg1;
 - (id)loadTranscriptText;
 - (struct CGSize)loadSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;

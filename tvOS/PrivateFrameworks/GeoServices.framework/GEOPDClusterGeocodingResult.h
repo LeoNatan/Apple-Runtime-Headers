@@ -10,6 +10,7 @@
 
 @class PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDClusterGeocodingResult : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

@@ -14,22 +14,14 @@
 {
 }
 
-+ (id)allowedReasons;
-+ (id)SecurityInfo_FirmwarePasswordStatus_allowedStatusKeys;
-+ (id)SecurityInfo_FirewallSettings_ApplicationsItem_allowedStatusKeys;
-+ (id)SecurityInfo_FirewallSettings_allowedStatusKeys;
-+ (id)SecurityInfo_allowedStatusKeys;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusSecurityInfo_FirmwarePasswordStatus_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusSecurityInfo_FirewallSettings_ApplicationsItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusSecurityInfo_FirewallSettings_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusSecurityInfo_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (BOOL)mustBeSupervised;
 

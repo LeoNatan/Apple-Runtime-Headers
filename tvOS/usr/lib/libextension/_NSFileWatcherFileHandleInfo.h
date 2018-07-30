@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)dealloc;
 - (void)close;
-- (_Bool)verifyAccessByProcessIdentifier:(int)arg1;
+- (_Bool)verifyAccessByAuditToken:(CDStruct_4c969caf)arg1;
 @property(readonly) _Bool isDirectory;
 
 @end

@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
-- (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end
 

@@ -23,6 +23,8 @@
     LPCaptionRowPresentationProperties *_bottom;
     LPCaptionRowPresentationProperties *_belowBottom;
     NSNumber *_minimumHeight;
+    struct CGSize _leadingIconSize;
+    struct CGSize _trailingIconSize;
 }
 
 @property(retain, nonatomic) NSNumber *minimumHeight; // @synthesize minimumHeight=_minimumHeight;
@@ -34,8 +36,10 @@
 @property(nonatomic) long long leadingAccessoryType; // @synthesize leadingAccessoryType=_leadingAccessoryType;
 @property(retain, nonatomic) NSColor *belowLeadingIconMaskColor; // @synthesize belowLeadingIconMaskColor=_belowLeadingIconMaskColor;
 @property(retain, nonatomic) LPImage *belowLeadingIcon; // @synthesize belowLeadingIcon=_belowLeadingIcon;
+@property(nonatomic) struct CGSize trailingIconSize; // @synthesize trailingIconSize=_trailingIconSize;
 @property(retain, nonatomic) NSColor *trailingIconMaskColor; // @synthesize trailingIconMaskColor=_trailingIconMaskColor;
 @property(retain, nonatomic) LPImage *trailingIcon; // @synthesize trailingIcon=_trailingIcon;
+@property(nonatomic) struct CGSize leadingIconSize; // @synthesize leadingIconSize=_leadingIconSize;
 @property(retain, nonatomic) NSColor *leadingIconMaskColor; // @synthesize leadingIconMaskColor=_leadingIconMaskColor;
 @property(retain, nonatomic) LPImage *leadingIcon; // @synthesize leadingIcon=_leadingIcon;
 - (void).cxx_destruct;

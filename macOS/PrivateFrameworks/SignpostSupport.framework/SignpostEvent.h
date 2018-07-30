@@ -14,7 +14,11 @@
 {
     BOOL __hasTotalFrames;
     BOOL _isAnimationStart;
+    int _tv_usec;
+    int _tz_minuteswest;
+    int _tz_dsttime;
     int _processID;
+    long long _tv_sec;
     unsigned long long _processUniqueID;
     unsigned long long _threadID;
     unsigned long long _eventType;
@@ -47,8 +51,15 @@
 @property(nonatomic) unsigned long long threadID; // @synthesize threadID=_threadID;
 @property(nonatomic) unsigned long long processUniqueID; // @synthesize processUniqueID=_processUniqueID;
 @property(nonatomic) int processID; // @synthesize processID=_processID;
+@property(nonatomic) int tz_dsttime; // @synthesize tz_dsttime=_tz_dsttime;
+@property(nonatomic) int tz_minuteswest; // @synthesize tz_minuteswest=_tz_minuteswest;
+@property(nonatomic) int tv_usec; // @synthesize tv_usec=_tv_usec;
+@property(nonatomic) long long tv_sec; // @synthesize tv_sec=_tv_sec;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
+- (void)_adjustEndTimeVal:(struct timeval *)arg1;
+- (void)_adjustBeginTimeVal:(struct timeval *)arg1;
+- (void)_adjustTimeStruct:(struct timeval *)arg1;
 @property(readonly, nonatomic) NSString *_key;
 @property(readonly, nonatomic) BOOL overridesEndTime;
 @property(readonly, nonatomic) BOOL overridesBeginTime;
@@ -58,12 +69,19 @@
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)startMachContinuousTime;
 @property(readonly, nonatomic) BOOL overridesTime;
+@property(readonly, nonatomic) unsigned long long overridingEmitNanoseconds;
+@property(readonly, nonatomic) unsigned long long overridingEndNanoseconds;
+@property(readonly, nonatomic) unsigned long long overridingBeginNanoseconds;
+@property(readonly, nonatomic) unsigned long long timeRecordedNanoseconds;
 @property(readonly, nonatomic) unsigned long long timeRecordedMachContinuousTime;
 - (unsigned long long)_resolvedTime;
 @property(readonly, copy) NSString *debugDescription;
+- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
+- (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval *)arg4 unixTimeZone:(struct timezone *)arg5;
 - (BOOL)_overridesOwnTime;
 - (id)initWithDictionary:(id)arg1;
-- (id)serializeableDictionary;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
+- (id)humanReadableType;
 
 // Remaining properties
 @property(readonly, copy) NSString *description;

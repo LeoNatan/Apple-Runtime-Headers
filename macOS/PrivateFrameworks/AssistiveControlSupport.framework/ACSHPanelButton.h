@@ -6,7 +6,7 @@
 
 #import <AssistiveControlSupport/ACSHPanelElement.h>
 
-@class ACSHActionPressKeyCode, NSArray, NSColor, NSDictionary, NSIndexPath, NSString;
+@class ACSHActionPressKeyCode, ACSHKeyboardLayout, NSArray, NSColor, NSDictionary, NSIndexPath, NSString;
 
 @interface ACSHPanelButton : ACSHPanelElement
 {
@@ -14,7 +14,9 @@
     BOOL _isKeyboardKey;
     BOOL _shouldExecuteSystemFunction;
     BOOL _keyIsDeadKey;
+    BOOL _displayImageIdentifierIsTemplate;
     BOOL _isStickyKey;
+    BOOL _shouldNotLockModifierKey;
     NSColor *_displayColor;
     NSColor *_fontColor;
     NSString *_localizedDisplayTextKey;
@@ -41,12 +43,13 @@
 + (id)allDisplayImageIdentifiersForSystemActions;
 + (id)displayImageIdentifierForSystemActionType:(unsigned long long)arg1;
 + (id)descriptionForSystemActionType:(unsigned long long)arg1;
-+ (BOOL)_shouldShowAlternateTextForModifiers:(unsigned long long)arg1;
++ (BOOL)shouldShowAlternateTextForModifiers:(unsigned long long)arg1 autoShift:(BOOL)arg2;
 + (BOOL)_actionIsKeyboardKeyAction:(id)arg1 displayText:(id)arg2;
 + (id)buttonWithRect:(struct CGRect)arg1 text:(id)arg2 actions:(id)arg3;
 + (id)keysForValuesToObserveForView;
 @property(retain, nonatomic) NSDictionary *noDeadKeyDisplayTextDictionary; // @synthesize noDeadKeyDisplayTextDictionary=_noDeadKeyDisplayTextDictionary;
 @property(retain, nonatomic) NSDictionary *displayTextKeyDictionary; // @synthesize displayTextKeyDictionary=_displayTextKeyDictionary;
+@property(nonatomic) BOOL shouldNotLockModifierKey; // @synthesize shouldNotLockModifierKey=_shouldNotLockModifierKey;
 @property(nonatomic) BOOL isStickyKey; // @synthesize isStickyKey=_isStickyKey;
 @property(nonatomic) unsigned long long buttonType; // @synthesize buttonType=_buttonType;
 @property(nonatomic) struct CGPoint positionIndex; // @synthesize positionIndex=_positionIndex;
@@ -59,6 +62,7 @@
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) NSString *functionSystemActionDisplayImageIdentifier; // @synthesize functionSystemActionDisplayImageIdentifier=_functionSystemActionDisplayImageIdentifier;
+@property(nonatomic) BOOL displayImageIdentifierIsTemplate; // @synthesize displayImageIdentifierIsTemplate=_displayImageIdentifierIsTemplate;
 @property(retain, nonatomic) NSString *displayImageIdentifier; // @synthesize displayImageIdentifier=_displayImageIdentifier;
 @property(retain, nonatomic) NSString *functionSystemActionDisplayText; // @synthesize functionSystemActionDisplayText=_functionSystemActionDisplayText;
 @property(nonatomic) BOOL keyIsDeadKey; // @synthesize keyIsDeadKey=_keyIsDeadKey;
@@ -82,17 +86,18 @@
 - (id)descriptionForDepth:(unsigned long long)arg1;
 - (void)updateResourceIdentifiers:(id)arg1;
 - (void)updateToKeyboardLayout:(id)arg1;
-- (void)_updateDisplayTextKeyDictionaryForKeyboardLayout:(id)arg1 deadKeyState:(unsigned int)arg2 modifiers:(unsigned long long)arg3 lockedModifiers:(unsigned long long)arg4;
-- (void)updateForModifiers:(unsigned long long)arg1 lockedModifiers:(unsigned long long)arg2 deadKeyState:(unsigned int)arg3;
-- (void)_updateKeyDisplayTextForModifiers:(unsigned long long)arg1 deadKeyState:(unsigned int)arg2;
-@property(readonly, nonatomic) ACSHActionPressKeyCode *_pressKeyCodeActionForKeyboardKey;
+- (void)_updateDisplayTextKeyDictionaryForKeyboardLayout:(id)arg1 deadKeyState:(unsigned int)arg2 modifiers:(unsigned long long)arg3 lockedModifiers:(unsigned long long)arg4 autoShift:(BOOL)arg5;
+- (void)updateForModifiers:(unsigned long long)arg1 lockedModifiers:(unsigned long long)arg2 deadKeyState:(unsigned int)arg3 autoShift:(BOOL)arg4;
+@property(readonly, nonatomic) ACSHKeyboardLayout *_keyboardLayout;
+- (void)_updateKeyDisplayTextForModifiers:(unsigned long long)arg1 deadKeyState:(unsigned int)arg2 autoShift:(BOOL)arg3;
+@property(readonly, nonatomic) ACSHActionPressKeyCode *pressKeyCodeActionForKeyboardKey;
 - (void)_updateIsKeyboardKeyStatus;
 @property(readonly, nonatomic) BOOL canInvertImage;
 - (id)dictionaryForSaving;
 - (id)allRequiredResourceIDs;
 - (void)_didUnregisterAssets:(id)arg1;
 - (void)dealloc;
-- (void)_initWithPlistDictionary:(id)arg1;
+- (void)_configureWithPlistDictionary:(id)arg1;
 - (id)init;
 
 @end

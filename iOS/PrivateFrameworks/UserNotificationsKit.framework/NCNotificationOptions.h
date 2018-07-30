@@ -18,6 +18,7 @@
     NSString *_alternateActionLabel;
     _Bool _dismissAutomatically;
     _Bool _overridesQuietMode;
+    _Bool _overridesDowntime;
     _Bool _alertsWhenLocked;
     _Bool _addToLockScreenWhenLocked;
     unsigned long long _lockScreenPersistence;
@@ -31,6 +32,7 @@
     _Bool _requestsFullScreenPresentation;
     _Bool _hideClearActionInList;
     unsigned long long _messageNumberOfLines;
+    _Bool _prefersDarkAppearance;
     _Bool _preemptsPresentedNotification;
     _Bool _revealsAdditionalContentOnPresentation;
     _Bool _suppressesTitleWhenLocked;
@@ -40,8 +42,10 @@
     _Bool _coalescesWhenLocked;
     _Bool _preventsAutomaticLock;
     _Bool _revealsAdditionalContentIfNoDefaultAction;
+    _Bool _lauchUsingSiriForCarPlayDefaultAction;
 }
 
+@property(readonly, nonatomic) _Bool lauchUsingSiriForCarPlayDefaultAction; // @synthesize lauchUsingSiriForCarPlayDefaultAction=_lauchUsingSiriForCarPlayDefaultAction;
 @property(readonly, nonatomic) _Bool revealsAdditionalContentIfNoDefaultAction; // @synthesize revealsAdditionalContentIfNoDefaultAction=_revealsAdditionalContentIfNoDefaultAction;
 @property(readonly, nonatomic) _Bool preventsAutomaticLock; // @synthesize preventsAutomaticLock=_preventsAutomaticLock;
 @property(readonly, nonatomic) _Bool coalescesWhenLocked; // @synthesize coalescesWhenLocked=_coalescesWhenLocked;
@@ -51,6 +55,7 @@
 @property(readonly, nonatomic) _Bool suppressesTitleWhenLocked; // @synthesize suppressesTitleWhenLocked=_suppressesTitleWhenLocked;
 @property(readonly, nonatomic) _Bool revealsAdditionalContentOnPresentation; // @synthesize revealsAdditionalContentOnPresentation=_revealsAdditionalContentOnPresentation;
 @property(readonly, nonatomic) _Bool preemptsPresentedNotification; // @synthesize preemptsPresentedNotification=_preemptsPresentedNotification;
+@property(readonly, nonatomic) _Bool prefersDarkAppearance; // @synthesize prefersDarkAppearance=_prefersDarkAppearance;
 @property(readonly, nonatomic) unsigned long long messageNumberOfLines; // @synthesize messageNumberOfLines=_messageNumberOfLines;
 @property(readonly, nonatomic) _Bool hideClearActionInList; // @synthesize hideClearActionInList=_hideClearActionInList;
 @property(readonly, nonatomic) _Bool overridesPocketMode; // @synthesize overridesPocketMode=_overridesPocketMode;
@@ -64,6 +69,7 @@
 @property(readonly, nonatomic) unsigned long long lockScreenPersistence; // @synthesize lockScreenPersistence=_lockScreenPersistence;
 @property(readonly, nonatomic) _Bool addToLockScreenWhenUnlocked; // @synthesize addToLockScreenWhenUnlocked=_addToLockScreenWhenLocked;
 @property(readonly, nonatomic) _Bool alertsWhenLocked; // @synthesize alertsWhenLocked=_alertsWhenLocked;
+@property(readonly, nonatomic) _Bool overridesDowntime; // @synthesize overridesDowntime=_overridesDowntime;
 @property(readonly, nonatomic) _Bool overridesQuietMode; // @synthesize overridesQuietMode=_overridesQuietMode;
 @property(readonly, nonatomic) _Bool dismissAutomatically; // @synthesize dismissAutomatically=_dismissAutomatically;
 @property(readonly, copy, nonatomic) NSString *alternateActionLabel; // @synthesize alternateActionLabel=_alternateActionLabel;

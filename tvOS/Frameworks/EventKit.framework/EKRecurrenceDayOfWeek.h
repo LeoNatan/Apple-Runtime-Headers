@@ -7,8 +7,9 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@interface EKRecurrenceDayOfWeek : NSObject <NSCopying>
+@interface EKRecurrenceDayOfWeek : NSObject <NSCopying, NSSecureCoding>
 {
     long long _dayOfTheWeek;
     long long _weekNumber;
@@ -16,6 +17,7 @@
 
 + (id)dayOfWeek:(long long)arg1 weekNumber:(long long)arg2;
 + (id)dayOfWeek:(long long)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long weekNumber; // @synthesize weekNumber=_weekNumber;
 @property(readonly, nonatomic) long long dayOfTheWeek; // @synthesize dayOfTheWeek=_dayOfTheWeek;
 - (id)copyWithZone:(struct _NSZone *)arg1;

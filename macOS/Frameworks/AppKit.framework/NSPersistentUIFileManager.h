@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)reopenPersistentState;
 - (void)dealloc;
 - (void)preserveStateDirectoryAtLaunch;
-- (id)init;
+- (id)initWithBundleID:(id)arg1;
 - (id)initWithPersistentStateDirectoryURL:(id)arg1;
 
 @end

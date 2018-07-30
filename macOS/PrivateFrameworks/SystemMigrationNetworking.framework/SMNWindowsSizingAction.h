@@ -6,26 +6,26 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class SMWindowsComponent;
+@class NSNumber;
 
 @interface SMNWindowsSizingAction : SMNAction
 {
     BOOL cancel;
-    SMWindowsComponent *component;
+    NSNumber *componentIdentifier;
     id result;
 }
 
 + (int)actionID;
 @property(readonly, retain) id result; // @synthesize result;
 @property BOOL cancel; // @synthesize cancel;
-@property(retain) SMWindowsComponent *component; // @synthesize component;
+@property(retain) NSNumber *componentIdentifier; // @synthesize componentIdentifier;
 - (void).cxx_destruct;
 - (id)requestPayload;
 - (id)description;
 - (BOOL)expectsAResult;
 - (BOOL)setResultFromData:(id)arg1;
 - (id)initWithCancelRequest;
-- (id)initWithComponent:(id)arg1;
+- (id)initWithComponentIdentifier:(id)arg1;
 
 @end
 

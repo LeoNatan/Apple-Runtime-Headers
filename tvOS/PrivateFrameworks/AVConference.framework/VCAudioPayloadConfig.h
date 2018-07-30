@@ -26,9 +26,13 @@ __attribute__((visibility("hidden")))
     _Bool _useSBR;
     _Bool _isDTXEnabled;
     unsigned int _evsSIDPeriod;
+    unsigned short _evsChannelAwareOffset;
+    _Bool _evsHeaderFullOnly;
     _Bool _payloadOctetAligned;
 }
 
+@property(readonly, nonatomic) _Bool evsHeaderFullOnly; // @synthesize evsHeaderFullOnly=_evsHeaderFullOnly;
+@property(readonly, nonatomic) unsigned short evsChannelAwareOffset; // @synthesize evsChannelAwareOffset=_evsChannelAwareOffset;
 @property(readonly, nonatomic) unsigned int evsSIDPeriod; // @synthesize evsSIDPeriod=_evsSIDPeriod;
 @property(readonly, nonatomic) _Bool isDTXEnabled; // @synthesize isDTXEnabled=_isDTXEnabled;
 @property(readonly, nonatomic) _Bool forcingBitrate; // @synthesize forcingBitrate=_forcingBitrate;

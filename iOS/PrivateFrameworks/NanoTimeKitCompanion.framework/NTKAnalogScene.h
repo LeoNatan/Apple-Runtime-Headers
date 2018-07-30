@@ -6,7 +6,7 @@
 
 #import "SKScene.h"
 
-@class NSArray, NSMutableArray, NTKFaceEditView, NTKVariantNode, SKNode, SKSpriteNode, SKTexture, UIColor;
+@class CLKDevice, NSArray, NSMutableArray, NTKFaceEditView, NTKVariantNode, SKNode, SKSpriteNode, SKTexture, UIColor;
 
 @interface NTKAnalogScene : SKScene
 {
@@ -18,6 +18,7 @@
     SKSpriteNode *_faceCircleSprite;
     _Bool _showContentForUnadornedSnapshot;
     _Bool _shouldHideVariantsBelowCurrent;
+    CLKDevice *_device;
     SKNode *_background;
     SKNode *_circle;
     NSMutableArray *_variantNodes;
@@ -29,6 +30,7 @@
     UIColor *_alternativeTickColor;
 }
 
++ (id)sceneWithSize:(struct CGSize)arg1 forDevice:(id)arg2;
 @property(nonatomic) _Bool shouldHideVariantsBelowCurrent; // @synthesize shouldHideVariantsBelowCurrent=_shouldHideVariantsBelowCurrent;
 @property(retain, nonatomic) UIColor *alternativeTickColor; // @synthesize alternativeTickColor=_alternativeTickColor;
 @property(retain, nonatomic) UIColor *tickColor; // @synthesize tickColor=_tickColor;
@@ -40,6 +42,7 @@
 @property(readonly, nonatomic) NSMutableArray *variantNodes; // @synthesize variantNodes=_variantNodes;
 @property(readonly, nonatomic) SKNode *circle; // @synthesize circle=_circle;
 @property(readonly, nonatomic) SKNode *background; // @synthesize background=_background;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (id)handColor;
 - (id)auxiliaryScrubbingObscuredNodes;
@@ -71,8 +74,8 @@
 - (void)_updateTickColors;
 - (void)preRender;
 - (id)displayTime;
-- (void)applyLabelPositions:(struct LabelPosition *)arg1 withCenter:(struct CGPoint)arg2 toNodes:(id)arg3;
-- (void)applyLabelPositions:(struct LabelPosition *)arg1 toNodes:(id)arg2;
+- (void)applyLabelPositions:(const struct NTKLabelPosition *)arg1 withCenter:(struct CGPoint)arg2 toNodes:(id)arg3;
+- (void)applyLabelPositions:(const struct NTKLabelPosition *)arg1 toNodes:(id)arg2;
 - (void)setDensity:(unsigned long long)arg1;
 - (id)addVariantNodeWithElements:(id)arg1;
 - (id)addVariantNodeWithElements:(id)arg1 parent:(id)arg2 hidden:(_Bool)arg3;
@@ -82,7 +85,7 @@
 - (void)setBackgroundAlpha:(double)arg1;
 - (void)addNodeToBackground:(id)arg1;
 - (void)addNodeToFace:(id)arg1;
-- (id)initWithSize:(struct CGSize)arg1;
+- (id)initWithSize:(struct CGSize)arg1 forDevice:(id)arg2;
 @property(readonly, nonatomic) SKNode *face;
 
 @end

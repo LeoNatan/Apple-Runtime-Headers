@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface VK3DObjectSubTile : NSObject
 {
-    vector_fbcf581f _objectGroups;
+    vector_defea32f _objectGroups;
     GEOVectorTile *_modelTile;
     shared_ptr_a3c46825 _styleManager;
     VKSharedResources *_sharedResources;
@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
 - (void)fillShadowAreasInContext:(struct CGContext *)arg1;
 - (Box_3fb92e00)shadowBounds;
 - (BOOL)heightAtPoint:(const Matrix_8746f91e *)arg1 outZ:(float *)arg2 outBuildingId:(unsigned long long *)arg3;
-- (BOOL)_createMeshForObjects:(CDStruct_8aea5fca *)arg1 count:(unsigned long long)arg2;
+- (BOOL)_createMeshForObjectsInModelTile:(id)arg1 count:(unsigned long long)arg2;
 - (void)_read3DObjects:(vector_25c79282 *)arg1 fromDiskForTileKey:(const struct _GEOTileKey *)arg2;
 - (void)_replaceThreeBuldingsInModelTile:(id)arg1 objects:(vector_25c79282 *)arg2;
 - (void)dealloc;
 - (id)initWithKey:(const struct VKTileKey *)arg1 modelTile:(id)arg2 styleManager:(shared_ptr_a3c46825)arg3 sharedResources:(id)arg4 contentScale:(double)arg5;
-@property(readonly, nonatomic) vector_fbcf581f *objectGroups;
+@property(readonly, nonatomic) vector_defea32f *objectGroups;
 
 @end
 

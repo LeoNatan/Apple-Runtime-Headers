@@ -10,7 +10,8 @@
 {
 }
 
-+ (id)sharedFaceCollectionForActivePairedDeviceForCollectionIdentifier:(id)arg1;
++ (id)sharedLibraryFaceCollectionsForAllDevices;
++ (id)sharedFaceCollectionForDevice:(id)arg1 forCollectionIdentifier:(id)arg2;
 
 @end
 

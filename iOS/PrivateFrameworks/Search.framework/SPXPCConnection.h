@@ -32,10 +32,11 @@
 - (void)sendMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)eventQueue;
+- (id)eventQueueWithQOS:(unsigned int)arg1;
 @property(readonly) __weak NSString *bundleID;
 @property(readonly) __weak NSString *serviceName;
 - (void)dealloc;
-- (id)initWithXPCConnection:(id)arg1;
+- (id)initWithXPCConnection:(id)arg1 qos:(unsigned int)arg2;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 
 @end

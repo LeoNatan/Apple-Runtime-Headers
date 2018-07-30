@@ -6,23 +6,39 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>;
+#import "AFSiriActivationListenerDelegate.h"
 
-@interface AFRemoteRequestWatcher : NSObject
+@class AFSiriActivationListener, NSObject<OS_dispatch_queue>, NSString;
+
+@interface AFRemoteRequestWatcher : NSObject <AFSiriActivationListenerDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    CDUnknownBlockType _prewarmHandler;
     CDUnknownBlockType _requestHandler;
+    CDUnknownBlockType _intentHandler;
     int _speechRequestToken;
     CDUnknownBlockType _speechRequestHandler;
+    AFSiriActivationListener *_siriActivationListener;
 }
 
 - (void).cxx_destruct;
 - (void)setNewSpeechRequestHandler:(CDUnknownBlockType)arg1;
 - (void)_setupSpeechRequestListener;
+- (void)setIntentHandler:(CDUnknownBlockType)arg1;
 - (void)setNewRequestHandler:(CDUnknownBlockType)arg1;
+- (void)setPrewarmHandler:(CDUnknownBlockType)arg1;
 - (void)_setupRequestListener;
+- (void)siriActivationListener:(id)arg1 handleIntent:(id)arg2 inBackgroundAppWithBundleId:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)siriActivationListener:(id)arg1 handleActivationWithRequestInfo:(id)arg2;
+- (void)siriActivationListener:(id)arg1 handlePrewarmForRequestInfo:(id)arg2;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

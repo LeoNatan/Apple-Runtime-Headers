@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class TVTextEntryController;
+@class TVTextEntryController, UITextAutofillSuggestion;
 
 @protocol TVTextEntryControllerDelegate <NSObject>
 
 @optional
+- (void)textEntryController:(TVTextEntryController *)arg1 didReceiveAutofillSuggestion:(UITextAutofillSuggestion *)arg2;
 - (void)textEntryControllerDidFinish:(TVTextEntryController *)arg1;
 @end
 

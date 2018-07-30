@@ -27,6 +27,7 @@
 - (void)setEntityType:(id)arg1;
 @property(readonly, copy) NSString *entityType;
 - (id)initWithEntityType:(id)arg1 entityName:(id)arg2;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

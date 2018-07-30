@@ -29,13 +29,13 @@
 @property(copy, nonatomic) NSString *rightSingleQuote; // @synthesize rightSingleQuote=_rightSingleQuote;
 @property(copy, nonatomic) NSString *leftSingleQuote; // @synthesize leftSingleQuote=_leftSingleQuote;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (void)_generateDataFromLocale;
 - (id)initWithLocale:(id)arg1;
 

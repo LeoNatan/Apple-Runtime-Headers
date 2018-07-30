@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     _OSLogEventStoreTimeRef *_ttls[5];
     _OSLogEventStoreTimeRef *_oldestPersist;
     _OSLogEventStoreTimeRef *_oldestSpecial;
+    _OSLogEventStoreTimeRef *_oldestSignpost;
     _OSLogEventStoreTimeRef *_oldestHighVolume;
     _OSLogEventStoreTimeRef *_oldestLive;
     _OSLogEventStoreTimeRef *_end;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *end; // @synthesize end=_end;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestLive; // @synthesize oldestLive=_oldestLive;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestHighVolume; // @synthesize oldestHighVolume=_oldestHighVolume;
+@property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestSignpost; // @synthesize oldestSignpost=_oldestSignpost;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestSpecial; // @synthesize oldestSpecial=_oldestSpecial;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestPersist; // @synthesize oldestPersist=_oldestPersist;
 - (void).cxx_destruct;

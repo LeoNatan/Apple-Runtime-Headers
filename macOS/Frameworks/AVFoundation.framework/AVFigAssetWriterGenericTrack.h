@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVFigAssetWriterTrack.h>
 
+__attribute__((visibility("hidden")))
 @interface AVFigAssetWriterGenericTrack : AVFigAssetWriterTrack
 {
 }

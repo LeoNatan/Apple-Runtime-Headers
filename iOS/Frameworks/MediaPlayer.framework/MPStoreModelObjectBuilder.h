@@ -10,10 +10,12 @@
 
 @interface MPStoreModelObjectBuilder : NSObject
 {
+    _Bool _preventStoreItemMetadataCaching;
     MPPropertySet *_requestedPropertySet;
 }
 
 + (id)allSupportedProperties;
+@property(nonatomic) _Bool preventStoreItemMetadataCaching; // @synthesize preventStoreItemMetadataCaching=_preventStoreItemMetadataCaching;
 @property(readonly, nonatomic) MPPropertySet *requestedPropertySet; // @synthesize requestedPropertySet=_requestedPropertySet;
 - (void).cxx_destruct;
 - (id)modelObjectWithStorePlatformDictionary:(id)arg1;

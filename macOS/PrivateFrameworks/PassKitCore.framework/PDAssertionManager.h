@@ -9,27 +9,26 @@
 #import "NSXPCListenerDelegate.h"
 #import "PDAssertionCoordinatorDelegate.h"
 
-@class NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
+@class NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
 @interface PDAssertionManager : NSObject <NSXPCListenerDelegate, PDAssertionCoordinatorDelegate>
 {
     NSHashTable *_observers;
     NSXPCListener *_coordinatorListener;
-    NSMutableArray *_coordinators;
+    NSMutableDictionary *_coordinators;
     NSObject<OS_dispatch_queue> *_managerSerialQueue;
 }
 
 - (void).cxx_destruct;
 - (void)_removeAllAssertionCoordinators;
 - (void)_removeAssertionCoordinator:(id)arg1;
-- (void)_addAssertionCoordinator:(id)arg1;
+- (void)_addAssertionCoordinator:(id)arg1 forProcessIdentifier:(id)arg2;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (id)assertionsOfType:(unsigned long long)arg1;
 - (void)assertionCoordinator:(id)arg1 didInvalidateAssertion:(id)arg2;
 - (void)assertionCoordinator:(id)arg1 didAcquireAssertion:(id)arg2;
 - (BOOL)assertionCoordinator:(id)arg1 canAcquireAssertion:(id)arg2;
-- (BOOL)assertionCoordinator:(id)arg1 assertionExistsOfType:(unsigned long long)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dealloc;
 - (id)init;

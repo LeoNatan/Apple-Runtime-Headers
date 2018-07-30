@@ -16,7 +16,7 @@
 @property(nonatomic) _Bool filtered; // @synthesize filtered=_filtered;
 @property(nonatomic) _Bool created; // @synthesize created=_created;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

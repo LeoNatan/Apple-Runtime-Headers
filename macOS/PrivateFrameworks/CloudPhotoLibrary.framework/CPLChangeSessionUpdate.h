@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) NSDate *queuedDate; // @synthesize queuedDate=_queuedDate;
 @property(readonly, copy, nonatomic) NSString *libraryVersion; // @synthesize libraryVersion=_libraryVersion;
 - (void).cxx_destruct;
+- (id)pendingRecordChangeForClientCacheWithLocalScopedIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSString *statusDescription;
 - (id)storageForStatusInStore:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

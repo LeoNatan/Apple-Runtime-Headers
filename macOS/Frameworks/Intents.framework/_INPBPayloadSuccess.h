@@ -7,31 +7,34 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPayloadSuccess.h"
 
-@class NSString, PBUnknownFields, _INPBIntentSlotValue;
+@class NSString, _INPBIntentSlotValue;
 
-@interface _INPBPayloadSuccess : PBCodable <NSCopying>
+@interface _INPBPayloadSuccess : PBCodable <_INPBPayloadSuccess, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSString *_resolvedKeyPath;
     _INPBIntentSlotValue *_resolvedValue;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *resolvedKeyPath; // @synthesize resolvedKeyPath=_resolvedKeyPath;
 @property(retain, nonatomic) _INPBIntentSlotValue *resolvedValue; // @synthesize resolvedValue=_resolvedValue;
+@property(copy, nonatomic) NSString *resolvedKeyPath; // @synthesize resolvedKeyPath=_resolvedKeyPath;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasResolvedKeyPath;
 @property(readonly, nonatomic) BOOL hasResolvedValue;
+@property(readonly, nonatomic) BOOL hasResolvedKeyPath;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

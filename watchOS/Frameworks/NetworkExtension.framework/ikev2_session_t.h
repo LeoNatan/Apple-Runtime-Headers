@@ -93,6 +93,7 @@
 @property CDUnknownFunctionPointerType clientCallback; // @synthesize clientCallback=_clientCallback;
 @property(retain) NSString *clientName; // @synthesize clientName=_clientName;
 - (void).cxx_destruct;
+- (void)blackholeDetectedSA:(id)arg1;
 - (void)idleTimeoutSA:(id)arg1;
 - (void)deleteSA:(id)arg1;
 - (void)expireSA:(id)arg1;

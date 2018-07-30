@@ -21,6 +21,7 @@
     struct MTLLibraryContainer *_cacheEntry;
 }
 
+@property(readonly) struct MTLLibraryContainer *cacheEntry; // @synthesize cacheEntry=_cacheEntry;
 @property(readonly, retain, nonatomic) NSMutableDictionary *functionDictionary; // @synthesize functionDictionary=_functionDictionary;
 @property(readonly) struct MTLLibraryData *libraryData; // @synthesize libraryData=_libraryData;
 @property(readonly, retain) NSArray *functionNames; // @synthesize functionNames=_functionNames;

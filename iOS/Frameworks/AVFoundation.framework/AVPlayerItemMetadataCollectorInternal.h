@@ -8,6 +8,7 @@
 
 @class AVWeakReference, AVWeakReferencingDelegateStorage, NSArray, NSDate, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerItemMetadataCollectorInternal : NSObject
 {
     AVWeakReferencingDelegateStorage *delegateStorage;

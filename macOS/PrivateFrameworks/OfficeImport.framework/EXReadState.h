@@ -6,9 +6,8 @@
 
 #import <OfficeImport/OCXReadState.h>
 
-@class CXNamespace, ECColumnWidthConvertor, EDReference, EDResources, EDSheet, EDWorkbook, EXOAVState, EXOfficeArtState, NSMutableArray, NSMutableDictionary, OCPPackagePart, TCImportTracing;
+@class CXNamespace, ECColumnWidthConvertor, EDReference, EDResources, EDSheet, EDWorkbook, EXOAVState, EXOfficeArtState, NSMutableArray, NSMutableDictionary, OCPPackagePart;
 
-__attribute__((visibility("hidden")))
 @interface EXReadState : OCXReadState
 {
     unsigned int mCurrentSheetIndex;
@@ -34,7 +33,6 @@ __attribute__((visibility("hidden")))
     EDWorkbook *mWorkbook;
     EDResources *mResources;
     id <TCCancelDelegate> mCancelDelegate;
-    TCImportTracing *mTracing;
     CXNamespace *mEXSpreadsheetMLNamespace;
     CXNamespace *mEXSpreadsheetDrawingNamespace;
     CXNamespace *mEXSpreadsheetRelationsNamespace;
@@ -93,8 +91,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)currentRowMinColumnIndex;
 - (void)setCurrentSheetIndex:(unsigned int)arg1;
 - (unsigned int)currentSheetIndex;
-- (void)dealloc;
-- (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
+- (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2;
 
 @end
 

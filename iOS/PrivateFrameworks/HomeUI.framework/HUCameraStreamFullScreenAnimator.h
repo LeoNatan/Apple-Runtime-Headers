@@ -6,15 +6,19 @@
 
 #import "NSObject.h"
 
+@class HUGridCameraCell;
+
 @interface HUCameraStreamFullScreenAnimator : NSObject
 {
-    struct CGRect _sourceFrameInPresentingView;
+    HUGridCameraCell *_sourceCameraCell;
 }
 
-@property(readonly, nonatomic) struct CGRect sourceFrameInPresentingView; // @synthesize sourceFrameInPresentingView=_sourceFrameInPresentingView;
+@property(readonly, nonatomic) HUGridCameraCell *sourceCameraCell; // @synthesize sourceCameraCell=_sourceCameraCell;
+- (void).cxx_destruct;
+- (struct CGRect)_adjustPresentedViewFrame:(struct CGRect)arg1 forTransitionContext:(id)arg2;
 - (struct CGRect)_toViewFinalFrame:(id)arg1;
 - (double)transitionDuration:(id)arg1;
-- (id)initWithSourceFrameInPresentingView:(struct CGRect)arg1;
+- (id)initWithSourceCameraCell:(id)arg1;
 
 @end
 

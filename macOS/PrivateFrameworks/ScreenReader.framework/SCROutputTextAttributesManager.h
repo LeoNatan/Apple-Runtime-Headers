@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)previousAttributesForTargetComponent:(id)arg1;
 - (void)setPreviousAttributes:(id)arg1 targetComponent:(id)arg2;
 - (id)_annotationElementDescriptionForElement:(id)arg1;
-- (id)_actionForComponent:(id)arg1 category:(id)arg2 message:(int)arg3 string:(id)arg4 variants:(id)arg5;
+- (id)_actionForComponent:(id)arg1 category:(id)arg2 message:(long long)arg3 string:(id)arg4 variants:(id)arg5;
 - (id)_annotationDescriptionWithLabel:(id)arg1 elementDescription:(id)arg2 position:(long long)arg3 context:(id)arg4;
 - (id)createActionsByExpandingTextAttributesInAction:(id)arg1 targetComponent:(id)arg2;
 - (void)dealloc;

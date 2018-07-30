@@ -10,7 +10,6 @@
 
 @class ABPersonListController, ABPersonListSharingHelper, NSMenu, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABPersonListMenuHelper : NSObject <NSMenuDelegate>
 {
     ABPersonListController *_personListController;

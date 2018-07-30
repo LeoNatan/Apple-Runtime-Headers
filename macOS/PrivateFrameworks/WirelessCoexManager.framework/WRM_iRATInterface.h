@@ -14,15 +14,21 @@
     _Bool mClientSupportsMultipleAppTypes;
     CDUnknownBlockType mObserver;
     CDUnknownBlockType mOppModeObserver;
+    CDUnknownBlockType mProximitySubscribeLinkRecommendationHandler;
+    CDUnknownBlockType mProximityGetLinkRecommendationHandler;
     _Bool mLinkPreferenceSubscriptionEnabled;
     _Bool mTelephoneAssertionEnabled;
     _Bool mTelephonyStateEnabled;
     _Bool mLocationAssertionEnabled;
+    _Bool mProximitySubscribeLinkRecommendationEnabled;
+    _Bool mProximityGetLinkRecommendationEnabled;
     int mLocationState;
+    NSMutableArray *mProximityLinkRecommendationList;
     BOOL mBBAssertionBGAppActive;
 }
 
 - (void)unregisterClient;
+- (void)expediteBBAssertionBGAppActiveAppType:(int)arg1:(BOOL)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)expediteBBAssertionBGAppActive:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_expediteBBAssertionBGAppActive_sync:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)statusUpdateAppType:(int)arg1 linkType:(int)arg2 serviceStatus:(_Bool)arg3;
@@ -31,6 +37,9 @@
 - (void)setTelephonyEnabled:(_Bool)arg1;
 - (void)assertCommCenterBaseBandMode:(int)arg1;
 - (void)assertCommCenterBaseBand:(int)arg1;
+- (void)statusUpdateAppLinkPreference:(int)arg1 status:(_Bool)arg2;
+- (void)getProximityLinkRecommendation:(BOOL)arg1 recommendation:(CDUnknownBlockType)arg2;
+- (void)subscribeProximityLinkRecommendation:(CDUnknownBlockType)arg1;
 - (void)subscribeOperatingModeChangeNotification:(CDUnknownBlockType)arg1;
 - (int)getStatusUpdateMessageType:(int)arg1;
 - (int)getSubscribeMessageType:(int)arg1;
@@ -39,7 +48,10 @@
 - (void)handleNotification:(id)arg1:(_Bool)arg2;
 - (void)reConnect;
 - (void)processNotificationList:(id)arg1;
+- (void)processNotificationListForTerminus:(id)arg1;
 - (void)processOperatingModeNotification:(id)arg1;
+- (void)removeProximityLinkRecommendationType:(id)arg1;
+- (void)addProximityLinkRecommendationType:(id)arg1;
 - (void)removeAppType:(id)arg1;
 - (void)addAppType:(id)arg1;
 - (id)init;

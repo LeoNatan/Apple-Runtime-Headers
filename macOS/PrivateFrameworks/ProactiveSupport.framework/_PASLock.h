@@ -9,10 +9,17 @@
 @interface _PASLock : NSObject
 {
     struct _opaque_pthread_mutex_t _lock;
+    struct _opaque_pthread_t {
+        long long _field1;
+        struct __darwin_pthread_handler_rec *_field2;
+        char _field3[8176];
+    } *_owner;
     id _guardedData;
 }
 
 - (void).cxx_destruct;
+- (id)unsafeGuardedData;
+- (id)guardedDataAssertingLockContext;
 - (void)runWithLockAcquired:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithGuardedData:(id)arg1;

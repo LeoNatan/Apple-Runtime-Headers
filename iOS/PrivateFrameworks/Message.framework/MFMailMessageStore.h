@@ -79,8 +79,6 @@
 - (_Bool)hasCachedDataForMimePart:(id)arg1;
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(_Bool)arg2;
 - (id)uniqueRemoteIDsForMessages:(id)arg1;
-- (id)lastViewedMessageDate;
-- (id)lastViewedMessageWithOptions:(unsigned int)arg1;
 - (id)messageForRemoteID:(id)arg1 inMailbox:(id)arg2;
 - (id)messageForRemoteID:(id)arg1;
 - (id)messageForMessageID:(id)arg1 options:(unsigned int)arg2;

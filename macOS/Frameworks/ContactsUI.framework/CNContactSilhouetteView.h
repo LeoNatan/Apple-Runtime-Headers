@@ -8,20 +8,22 @@
 
 #import "CNContactIconUpdating.h"
 
-@class CALayer, NSImage, NSString;
+@class CAGradientLayer, CALayer, NSImage, NSString;
 
 @interface CNContactSilhouetteView : NSView <CNContactIconUpdating>
 {
+    BOOL _selected;
     NSImage *_placeholderImage;
     CALayer *_silhouetteLayer;
-    CALayer *_gradientLayer;
+    CAGradientLayer *_gradientLayer;
 }
 
 + (id)silhouetteTemplateImage;
 + (id)companyTemplateImageCircle;
 + (id)companyTemplateImageSqare;
 + (id)implicitAnimatedActionsToDisable;
-@property(retain) CALayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
+@property BOOL selected; // @synthesize selected=_selected;
+@property(retain) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain) CALayer *silhouetteLayer; // @synthesize silhouetteLayer=_silhouetteLayer;
 @property(retain) NSImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 - (void).cxx_destruct;

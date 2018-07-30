@@ -14,7 +14,7 @@
 @optional
 - (_Bool)quickLookShouldShowOpenButtonForNode:(const struct TFENode *)arg1;
 - (void)openQuickLookNode:(const struct TFENode *)arg1;
-- (QLPreviewView *)quickLookSharedPreviewViewForPreviewNode:(const struct TFENode *)arg1;
+- (QLPreviewView *)quickLookSharedPreviewView;
 - (NSImage *)zoomImageForNode:(const struct TFENode *)arg1 contentRect:(struct CGRect *)arg2;
 - (struct CGRect)globalZoomRectForNode:(const struct TFENode *)arg1;
 - (_Bool)quickLookHandleEvent:(NSEvent *)arg1;

@@ -16,7 +16,7 @@
     Class _principalClass;
     id _initialPath;
     id _resolvedPath;
-    id _reserved3;
+    Class _firstClass;
     id _lock;
 }
 
@@ -83,6 +83,7 @@
 - (_Bool)unload;
 - (_Bool)loadAndReturnError:(id *)arg1;
 - (_Bool)load;
+- (_Bool)_searchForLocalizedString:(id)arg1 foundKey:(id *)arg2 foundTable:(id *)arg3;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;

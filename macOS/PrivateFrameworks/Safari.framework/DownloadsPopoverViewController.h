@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
     NSPopover *_popover;
 }
 
++ (void)determinePopoverAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (BOOL)canShowPopover;
 + (id)sharedController;
 @property(retain, nonatomic) NSPopover *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;
@@ -40,8 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isShowingPopover) BOOL showingPopover;
 - (id)popoverPositioningView;
 - (struct CGSize)bestSizeAllowingSmallerWidth:(BOOL)arg1;
-- (void)determinePopoverAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) BOOL canShowPopover;
 - (void)closePopoverIfNecessary;
 - (void)clear:(id)arg1;
 - (void)loadView;

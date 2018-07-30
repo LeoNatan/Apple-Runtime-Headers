@@ -8,6 +8,7 @@
 
 @class NSEvent, NSFindIndicator, NSImmediateActionGestureRecognizer, NSLayoutManager, NSMutableArray, NSTextContainer, NSTextDragInfo, NSTextStorage, NSTextViewSharedData, NSTimer, NSTrackingArea, NSViewWindowBackingStoreBuffer;
 
+__attribute__((visibility("hidden")))
 @interface NSTextViewIvars : NSObject
 {
     struct CGSize textContainerInset;
@@ -43,7 +44,8 @@
         unsigned int isDrawingLayer:1;
         unsigned int touchBarInstantiated:1;
         unsigned int calculatingContainerOrigin:1;
-        unsigned int _pad:5;
+        unsigned int doesOverrideDrawInsertionPointInRect:1;
+        unsigned int _pad:4;
     } tvFlags;
     NSTextViewSharedData *sharedData;
     NSMutableArray *eventList;

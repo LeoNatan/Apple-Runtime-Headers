@@ -9,7 +9,7 @@
 #import "HDFitnessMachinePairingManagerDelegate.h"
 #import "HDFitnessMachineStateTimersDelegate.h"
 
-@class HDFitnessMachineAnalyticsCollector, HDFitnessMachineDataCollector, HDFitnessMachineDataProducer, HDFitnessMachinePairingManager, HDFitnessMachineSession, HDFitnessMachineStateTimers, HDHealthServiceManager, HDProfile, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class HDFitnessMachineAnalyticsCollector, HDFitnessMachineDataCollector, HDFitnessMachineDataProducer, HDFitnessMachinePairingManager, HDFitnessMachineSession, HDFitnessMachineStateTimers, HDHealthServiceManager, HDProfile, HKObserverSet, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HDFitnessMachineManager : NSObject <HDFitnessMachinePairingManagerDelegate, HDFitnessMachineStateTimersDelegate>
 {
@@ -22,6 +22,7 @@
     _Bool _shouldReconnect;
     _Bool _resetInProgress;
     NSMutableArray *_characteristicDataBuffer;
+    HKObserverSet *_fitnessMachineSessionObservers;
     HDFitnessMachineDataProducer *_fitnessMachineDataProducer;
     NSDate *_machinePreferredUntilDate;
     HDHealthServiceManager *_serviceManager;
@@ -36,6 +37,11 @@
 @property(readonly, nonatomic) NSDate *machinePreferredUntilDate; // @synthesize machinePreferredUntilDate=_machinePreferredUntilDate;
 @property(readonly, nonatomic) HDFitnessMachineDataProducer *fitnessMachineDataProducer; // @synthesize fitnessMachineDataProducer=_fitnessMachineDataProducer;
 - (void).cxx_destruct;
+- (void)unitTest_receiveFakeCharacteristicUpdate:(id)arg1;
+- (id)unitTest_currentFitnessMachineSession;
+- (void)unitTest_fakeSession:(id)arg1;
+- (void)unitTest_fakeMachineDiscoveryForType:(unsigned long long)arg1;
+- (void)hktest_setMachinePreferredUntilDate:(id)arg1;
 - (void)_queue_simulateDisconnect;
 - (void)simulateDisconnect;
 - (void)pairingManagerDidBeginPairing:(id)arg1;
@@ -48,6 +54,7 @@
 - (void)pairingManager:(id)arg1 didChangeNFCEnabledState:(_Bool)arg2;
 - (void)pairingManager:(id)arg1 failedPairingWithError:(id)arg2;
 - (void)pairingManagerWillBeginPairing:(id)arg1 fitnessMachineToken:(id)arg2;
+@property(readonly, nonatomic) id <HDMetricsCollector> metricsCollector;
 @property(readonly, nonatomic) id <HDFitnessMachineConnectionInitiatorProtocol> connectionInitiatorServer;
 - (void)_queue_performBlockOnConnections:(CDUnknownBlockType)arg1;
 - (_Bool)_queue_connectionIsRegistered:(id)arg1;
@@ -67,7 +74,7 @@
 - (void)_queue_deliverMachineStateChangedFromState:(unsigned long long)arg1 date:(id)arg2;
 - (void)_queue_deliverMachineInformationUpdatedNotifyingPairingManager:(_Bool)arg1;
 - (void)_queue_deliverNFCDetected:(id)arg1;
-- (void)_queue_recoverFromCrashWithSessionConfiguration:(id)arg1 shouldReconnect:(_Bool)arg2;
+- (void)_queue_recoverSessionWithConfiguration:(id)arg1;
 - (void)_queue_setConnectionState:(unsigned long long)arg1 error:(id)arg2;
 - (void)_queue_setMachineState:(unsigned long long)arg1 date:(id)arg2;
 - (void)_queue_setDeviceInformation:(id)arg1;
@@ -93,12 +100,17 @@
 - (void)_queue_handleConnectionStatus:(long long)arg1 finished:(_Bool)arg2 error:(id)arg3;
 - (unsigned long long)connectionOptionsForSession:(id)arg1 isReconnect:(_Bool)arg2;
 - (void)_queue_connectFitnessMachineIsReconnect:(_Bool)arg1;
+- (void)removeFitnessMachineSessionObserver:(id)arg1;
+- (void)addFitnessMachineSessionObserver:(id)arg1 queue:(id)arg2;
+- (void)finishSessionWithConfiguration:(id)arg1;
+- (void)recoverSessionWithConfiguration:(id)arg1;
+- (id)currentSessionRecoveryConfiguration;
 - (void)clientInvalidatedWithConnectionUUID:(id)arg1;
 - (void)_queue_endFitnessMachineConnectionForFitnessMachineSessionUUID:(id)arg1 withConnectionUUID:(id)arg2 forcingReset:(_Bool)arg3;
+- (void)endFitnessMachineSessionWithUUID:(id)arg1;
 - (void)endFitnessMachineConnectionForFitnessMachineSessionUUID:(id)arg1 withConnectionUUID:(id)arg2;
 - (void)endFitnessMachineConnectionWithUUID:(id)arg1;
 - (void)markClientReadyWithConnectionUUID:(id)arg1;
-- (void)ensureClientIsRegistered:(id)arg1 sessionConfiguration:(id)arg2 shouldReconnect:(_Bool)arg3;
 - (void)registerClient:(id)arg1 withConnectionUUID:(id)arg2;
 - (void)_setQueue:(id)arg1;
 - (void)dealloc;

@@ -10,6 +10,7 @@
 
 @class GEOLocation, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDMerchantLookupParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

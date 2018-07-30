@@ -13,7 +13,7 @@
     CPLEngineStore *_store;
 }
 
-+ (id)_mergerWithConflictsForStore:(id)arg1;
++ (id)_mergerWithConflictsForStore:(id)arg1 conflictingScopeIdentifiers:(id)arg2;
 + (id)_mergerWithNoConflictsForStore:(id)arg1;
 @property(readonly, nonatomic) CPLEngineStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;

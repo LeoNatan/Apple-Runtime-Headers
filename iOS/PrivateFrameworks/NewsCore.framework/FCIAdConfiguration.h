@@ -6,18 +6,21 @@
 
 #import "NSObject.h"
 
-@class NTPBIAdConfig;
+@class NSArray, NSDictionary, NTPBIAdConfig;
 
 @interface FCIAdConfiguration : NSObject
 {
     NTPBIAdConfig *_pbConfig;
+    NSDictionary *_configDict;
     _Bool _segmentsEnabled;
     double _segmentsThreshold;
     long long _segmentsSubmissionFrequency;
     long long _segmentsHistoryWindowInterval;
     long long _segmentsMinimumArticleCount;
+    NSArray *_iAdSegmentIDs;
 }
 
+@property(readonly, nonatomic) NSArray *iAdSegmentIDs; // @synthesize iAdSegmentIDs=_iAdSegmentIDs;
 @property(readonly, nonatomic) long long segmentsMinimumArticleCount; // @synthesize segmentsMinimumArticleCount=_segmentsMinimumArticleCount;
 @property(readonly, nonatomic) long long segmentsHistoryWindowInterval; // @synthesize segmentsHistoryWindowInterval=_segmentsHistoryWindowInterval;
 @property(readonly, nonatomic) long long segmentsSubmissionFrequency; // @synthesize segmentsSubmissionFrequency=_segmentsSubmissionFrequency;
@@ -26,6 +29,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithConfigDictionary:(id)arg1;
 - (id)initWithPBIAdConfig:(id)arg1;
 
 @end

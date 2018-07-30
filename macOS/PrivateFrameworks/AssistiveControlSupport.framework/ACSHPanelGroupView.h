@@ -23,7 +23,7 @@
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;
 - (void)dealloc;
-- (void)setFocused:(BOOL)arg1;
+- (void)setEditorFocused:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)_updateOutlineViewVisibility;
 - (BOOL)supportsResizeHandleDrawing;

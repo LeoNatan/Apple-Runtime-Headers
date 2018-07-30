@@ -10,7 +10,6 @@
 
 @class NSData, NSString;
 
-__attribute__((visibility("hidden")))
 @interface TSUExtendedAttribute : NSObject <NSCopying>
 {
     NSString *_name;
@@ -29,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)setAttributeToPathFileSystemRepresentation:(const char *)arg1 options:(int)arg2 error:(id *)arg3;
 - (BOOL)setAttributeToPath:(id)arg1 options:(int)arg2 error:(id *)arg3;
 - (BOOL)shouldPreserveForIntent:(unsigned int)arg1;
-- (id)initFromPathFileSystemRepresentation:(const char *)arg1 name:(id)arg2 options:(int)arg3 error:(id *)arg4;
+- (id)initFromPathFileSystemRepresentation:(const char *)arg1 name:(id)arg2 forRemoval:(BOOL)arg3 options:(int)arg4 error:(id *)arg5;
 - (id)initFromPath:(id)arg1 name:(id)arg2 options:(int)arg3 error:(id *)arg4;
 - (id)initWithName:(id)arg1 value:(id)arg2;
 - (id)init;

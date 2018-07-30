@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) id <SXWebContentInteractionProvider> interactionProvider; // @synthesize interactionProvider=_interactionProvider;
 - (void).cxx_destruct;
 - (_Bool)allowUserInteractionForInteractionType:(unsigned long long)arg1;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadURL:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

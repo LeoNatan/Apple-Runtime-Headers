@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class NSArray, SCNMTLComputePipeline, SCNMTLResourceManager;
 
 __attribute__((visibility("hidden")))
 @interface SCNMTLMorph : NSObject
 {
-    id <MTLBuffer> _baseBuffer;
+    SCNMTLResourceManager *_resourceManager;
+    CDStruct_798fd7c0 _baseBuffer;
     unsigned int _baseVertexCount;
     short _baseBufferTypes[3];
     unsigned int _baseBufferTypesCount;
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
     unsigned int _targetBufferStride;
     unsigned int _dstSemanticUsageMask;
     unsigned int _srcSemanticUsageMask;
+    struct SCNMTLBufferPool *_bufferPool;
     BOOL _unifyPostMorphNormals;
     BOOL _shouldMorphNormals;
     unsigned char _dataKindForMorphing;
@@ -33,20 +35,20 @@ __attribute__((visibility("hidden")))
     struct Target *_targets;
     unsigned long long _targetCount;
     NSArray *_originalTargets;
-    id <MTLComputePipelineState> _copyCPS;
-    id <MTLComputePipelineState> _blendCPS;
-    id <MTLComputePipelineState> _blendSparseCPS;
-    id <MTLComputePipelineState> _splatCPS;
+    SCNMTLComputePipeline *_copyCPS;
+    SCNMTLComputePipeline *_blendCPS;
+    SCNMTLComputePipeline *_blendSparseCPS;
+    SCNMTLComputePipeline *_splatCPS;
 }
 
--     // Error parsing type: v48@0:8@16^{__C3DMorpher={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DGeometry}^{__C3DMorph}^{__C3DMesh}II^fII}24@32@40, name: morphSparseMesh:morpher:computeEncoder:resourceManager:
-- (void)unifyMesh:(id)arg1 computeEncoder:(id)arg2 resourceManager:(id)arg3;
--     // Error parsing type: v48@0:8@16^{__C3DMorpher={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DGeometry}^{__C3DMorph}^{__C3DMesh}II^fII}24@32@40, name: morphIncrementalMesh:morpher:computeEncoder:resourceManager:
-- (void)morphOptimizedMesh:(id)arg1 morph:(struct __C3DMorph *)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
-- (void)morphMesh:(id)arg1 morph:(struct __C3DMorph *)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
+-     // Error parsing type: v40@0:8@16^{__C3DMorpher={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DGeometry}^{__C3DMorph}^{__C3DMesh}II^fII}24@32, name: morphSparseMesh:morpher:renderContext:
+- (void)unifyMesh:(id)arg1 renderContext:(id)arg2;
+-     // Error parsing type: v40@0:8@16^{__C3DMorpher={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DGeometry}^{__C3DMorph}^{__C3DMesh}II^fII}24@32, name: morphIncrementalMesh:morpher:renderContext:
+- (void)morphMesh:(id)arg1 morph:(struct __C3DMorph *)arg2 renderContext:(id)arg3;
 - (BOOL)isCompatibleWithMorph:(struct __C3DMorph *)arg1;
 - (unsigned int)sparseIndexSize;
 - (void)dealloc;
+- (CDStruct_798fd7c0)newBufferWithLength:(unsigned long long)arg1;
 -     // Error parsing type: @40@0:8^{__C3DMorph=}16^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v^v}{?=CfIC(?={?=ff}{?=f}{?=f}{?=Cb1b1})}C}24@32, name: initWithMorph:baseGeometry:resourceManager:
 - (void)_prepareTargetDataForIndex:(long long)arg1 morph:(struct __C3DMorph *)arg2 baseMesh:(struct __C3DMesh *)arg3;
 - (void)_writeSources:(const struct __C3DMeshSource **)arg1 dstTypes:(short *)arg2 sourcesCount:(unsigned int)arg3 inBuffer:(void *)arg4 stride:(unsigned int)arg5 length:(unsigned long long)arg6 sparse:(BOOL)arg7 positionScale:(float)arg8;

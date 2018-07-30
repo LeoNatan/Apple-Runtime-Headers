@@ -25,10 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct Object;
 
 struct Ref<WTF::JSONImpl::Object, WTF::DumbPtrTraits<WTF::JSONImpl::Object>> {

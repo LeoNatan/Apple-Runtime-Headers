@@ -21,6 +21,7 @@
 - (float)attachmentBrowserGridInterItemSpacing;
 - (struct CGSize)attachmentBrowserDefaultSizeForSquare;
 - (float)entryViewMaxHandWritingPluginShelfHeight;
+- (_Bool)isAppStripInKeyboard;
 - (_Bool)presentsFullscreenInViewService;
 - (_Bool)shouldRefreshAlternateAddressesSheet;
 - (_Bool)shouldShowDisclosureChevronInRecipientAtoms;

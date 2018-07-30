@@ -6,10 +6,11 @@
 
 #import "NSImageView.h"
 
-@class NSImage;
+@class NSImage, NSLayoutConstraint;
 
 @interface TTYStretchImageView : NSImageView
 {
+    NSLayoutConstraint *_widthConstraint;
     NSImage *_topLeft;
     NSImage *_top;
     NSImage *_topRight;
@@ -31,9 +32,11 @@
 @property(retain, nonatomic) NSImage *topRight; // @synthesize topRight=_topRight;
 @property(retain, nonatomic) NSImage *top; // @synthesize top=_top;
 @property(retain, nonatomic) NSImage *topLeft; // @synthesize topLeft=_topLeft;
+@property(nonatomic) __weak NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setImage:(id)arg1 withInsets:(struct NSEdgeInsets)arg2;
+- (id)init;
 
 @end
 

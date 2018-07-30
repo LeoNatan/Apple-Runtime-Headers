@@ -101,9 +101,12 @@
     int _finishState;
     unsigned long long _finishStartTicks;
     double _finishSecs;
+    double _iTunesWaitSecs;
+    double _mediaSystemWaitSecs;
     double _totalSecs;
     BOOL _prefForceSiriGreeting;
     BOOL _liveOn;
+    BOOL _pauseAfterPreAuth;
     unsigned char _stereoCounterpartColor;
     BOOL _touchRemoteEnabled;
     unsigned int _testFlags;
@@ -111,6 +114,8 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SFDevice *_peerDevice;
     unsigned long long _peerFeatureFlags;
+    NSDictionary *_preAuthResponse;
+    CDUnknownBlockType _preAuthHandler;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _promptForAppleMusicHandler;
     CDUnknownBlockType _promptForHomeHandler;
@@ -145,11 +150,14 @@
 @property(copy, nonatomic) CDUnknownBlockType promptForHomeHandler; // @synthesize promptForHomeHandler=_promptForHomeHandler;
 @property(copy, nonatomic) CDUnknownBlockType promptForAppleMusicHandler; // @synthesize promptForAppleMusicHandler=_promptForAppleMusicHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
+@property(copy, nonatomic) CDUnknownBlockType preAuthHandler; // @synthesize preAuthHandler=_preAuthHandler;
 @property(nonatomic) BOOL touchRemoteEnabled; // @synthesize touchRemoteEnabled=_touchRemoteEnabled;
 @property(nonatomic) unsigned int testFlags; // @synthesize testFlags=_testFlags;
 @property(readonly, nonatomic) unsigned char stereoCounterpartColor; // @synthesize stereoCounterpartColor=_stereoCounterpartColor;
+@property(retain, nonatomic) NSDictionary *preAuthResponse; // @synthesize preAuthResponse=_preAuthResponse;
 @property(nonatomic) unsigned long long peerFeatureFlags; // @synthesize peerFeatureFlags=_peerFeatureFlags;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
+@property(nonatomic) BOOL pauseAfterPreAuth; // @synthesize pauseAfterPreAuth=_pauseAfterPreAuth;
 @property(nonatomic) BOOL liveOn; // @synthesize liveOn=_liveOn;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;

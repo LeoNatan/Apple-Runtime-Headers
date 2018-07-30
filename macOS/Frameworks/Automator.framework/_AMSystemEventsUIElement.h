@@ -4,36 +4,46 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <Automator/_AMSystemEventsItem.h>
+#import "SBObject.h"
+
+#import "_AMSystemEventsGenericMethods.h"
 
 @class NSArray, NSString;
 
-@interface _AMSystemEventsUIElement : _AMSystemEventsItem
+@interface _AMSystemEventsUIElement : SBObject <_AMSystemEventsGenericMethods>
 {
 }
 
+- (void)moveTo:(id)arg1;
+- (void)duplicateTo:(id)arg1 withProperties:(id)arg2;
+- (void)delete;
+- (void)printWithProperties:(id)arg1 printDialog:(BOOL)arg2;
+- (void)saveIn:(id)arg1 as:(int)arg2;
+- (void)closeSaving:(int)arg1 savingIn:(id)arg2;
 - (id)select;
 - (id)clickAt:(id)arg1;
-@property long long value;
+@property(copy) id value;
 @property(readonly, copy) NSString *title;
-@property(readonly, copy) NSString *subrole;
-@property(copy) NSArray *size;
-@property BOOL selected;
+@property(readonly, copy) id subrole;
+@property(copy) id size;
+@property(copy) id selected;
+@property(readonly, copy) NSString *roleDescription;
 @property(readonly, copy) NSString *role;
-@property(copy) NSArray *position;
-@property(readonly, copy) NSString *orientation;
+@property(copy) id position;
+@property(readonly, copy) id orientation;
 @property(readonly, copy) NSString *name;
-@property(readonly) long long minimumValue;
-@property(readonly) long long maximumValue;
-@property(readonly, copy) NSString *help;
-@property BOOL focused;
+@property(readonly, copy) id minimumValue;
+@property(readonly, copy) id maximumValue;
+@property(readonly, copy) id help;
+@property(copy) id focused;
 @property(readonly, copy) NSArray *entireContents;
-@property(readonly) BOOL enabled;
-@property(readonly, copy) NSString *objectDescription;
+@property(readonly, copy) id enabled;
+@property(readonly, copy) id objectDescription;
+@property(readonly, copy) id accessibilityDescription;
 - (id)windows;
 - (id)valueIndicators;
 - (id)UIElements;
-- (id)toolBars;
+- (id)toolbars;
 - (id)textFields;
 - (id)textAreas;
 - (id)tables;
@@ -51,6 +61,7 @@
 - (id)radioButtons;
 - (id)progressIndicators;
 - (id)popUpButtons;
+- (id)popOvers;
 - (id)outlines;
 - (id)menuItems;
 - (id)menuButtons;

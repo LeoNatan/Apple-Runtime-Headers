@@ -8,16 +8,15 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface OABTableSortedIntArray : NSObject
 {
     NSArray *mIntArray;
 }
 
+- (void).cxx_destruct;
 - (int)dim;
 - (int)intAtIndex:(int)arg1;
 - (int)indexOfInt:(int)arg1;
-- (void)dealloc;
 - (id)initWithIntSet:(id)arg1;
 
 @end

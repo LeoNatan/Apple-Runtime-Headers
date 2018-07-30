@@ -30,8 +30,8 @@
 @property(nonatomic) __weak id <FBSynchronizedTransactionDelegate> synchronizationDelegate; // @synthesize synchronizationDelegate=_synchronizationDelegate;
 @property(nonatomic) _Bool waitsForSceneCommit; // @synthesize waitsForSceneCommit=_waitsForSceneCommit;
 @property(readonly, nonatomic) _Bool destroyed; // @synthesize destroyed=_destroyed;
-@property(readonly, retain, nonatomic) FBSSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
-@property(readonly, retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneID;
+@property(readonly, nonatomic) FBSSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
+@property(readonly, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneID;
 - (void).cxx_destruct;
 - (void)_enumerateUpdateSceneObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)performSynchronizedCommit;
@@ -55,10 +55,10 @@
 - (void)_commitSceneUpdate:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(readonly, retain, nonatomic) FBSSceneSpecification *specification; // @dynamic specification;
-@property(readonly, retain, nonatomic) FBSSceneSettings *newSettings; // @dynamic newSettings;
-@property(readonly, retain, nonatomic) FBSSceneSettings *settings; // @dynamic settings;
-@property(readonly, retain, nonatomic) FBScene *scene; // @dynamic scene;
+@property(readonly, nonatomic) FBSSceneSpecification *specification; // @dynamic specification;
+@property(readonly, nonatomic) FBSSceneSettings *newSettings; // @dynamic newSettings;
+@property(readonly, nonatomic) FBSSceneSettings *settings; // @dynamic settings;
+@property(readonly, nonatomic) FBScene *scene; // @dynamic scene;
 - (void)dealloc;
 - (id)initWithSceneToUpdate:(id)arg1 newSettings:(id)arg2 transitionContext:(id)arg3;
 - (id)initWithSceneIdentifier:(id)arg1 process:(id)arg2 parameters:(id)arg3 transitionContext:(id)arg4;

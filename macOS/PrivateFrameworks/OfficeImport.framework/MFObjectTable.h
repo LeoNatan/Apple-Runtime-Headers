@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface MFObjectTable : NSObject
 {
     NSMutableArray *m_objects;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property unsigned int maximumSize; // @synthesize maximumSize=m_maximumSize;
+- (void).cxx_destruct;
 - (int)size;
 - (id)getObject:(unsigned int)arg1;
 - (int)putObject:(id)arg1 in_objectPos:(unsigned int)arg2;
@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (void)clear;
 - (int)selectInto:(int)arg1 io_DC:(id)arg2;
 - (int)deleteObject:(unsigned int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

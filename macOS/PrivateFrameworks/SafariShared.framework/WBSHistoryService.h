@@ -8,13 +8,12 @@
 
 #import "NSXPCListenerDelegate.h"
 
-@class NSCountedSet, NSDate, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCListener, WBSHistoryDatabaseAccessBroker, WBSHistoryURLCompletionDataStore;
+@class NSCountedSet, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCListener, WBSHistoryDatabaseAccessBroker, WBSHistoryURLCompletionDataStore;
 
 @interface WBSHistoryService : NSObject <NSXPCListenerDelegate>
 {
     NSXPCListener *_listener;
     NSObject<OS_dispatch_queue> *_historyServiceQueue;
-    NSMutableSet *_connectionsReceivingHistoryNotifications;
     NSMutableDictionary *_openedDatabases;
     NSCountedSet *_openedDatabasesRefCounts;
     NSDate *_initDate;
@@ -29,9 +28,6 @@
 - (void)connectWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_openOrReuseExistingDatabaseWithOptions:(id)arg1 error:(id *)arg2;
 - (id)_acquireLockForURL:(id)arg1 error:(id *)arg2;
-- (void)postHistoryNotificationToRegisteredConnections:(id)arg1;
-- (void)unregisterConnectionForHistoryNotifications:(id)arg1;
-- (void)registerConnectionForHistoryNotifications:(id)arg1;
 @property(readonly, nonatomic) NSURL *databaseURL;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (BOOL)_connectionIsEntitledToUseService:(id)arg1;

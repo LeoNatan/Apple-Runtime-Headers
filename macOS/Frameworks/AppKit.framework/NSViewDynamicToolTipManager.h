@@ -8,6 +8,7 @@
 
 @class NSView;
 
+__attribute__((visibility("hidden")))
 @interface NSViewDynamicToolTipManager : NSObject
 {
     NSView *_view;

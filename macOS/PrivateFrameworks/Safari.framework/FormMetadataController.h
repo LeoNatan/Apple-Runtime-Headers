@@ -19,14 +19,17 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldIncludeNonEmptyFields;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue *)arg1 inContext:(struct OpaqueJSContext *)arg2;
 - (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
+- (void)oneTimeCodeFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
+- (void)oneTimeCodeFieldFocused:(id)arg1 withFieldMetadata:(id)arg2 inFrame:(id)arg3;
 - (void)addressBookAutoFillableFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
-- (void)addressBookAutoFillableFieldFocused:(id)arg1 withAddressBookAutoFillableFieldMetadata:(id)arg2 inFrame:(id)arg3;
+- (BOOL)addressBookAutoFillableFieldFocused:(id)arg1 withAddressBookAutoFillableFieldMetadata:(id)arg2 inFrame:(id)arg3;
 - (void)usernameFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)usernameFieldFocused:(id)arg1 fieldMetadata:(id)arg2 inForm:(id)arg3 inFrame:(id)arg4;
 - (void)creditCardFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)creditCardFieldFocused:(id)arg1 inFrame:(id)arg2;
 - (void)passwordFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2 isPasswordFieldForUserCredentials:(BOOL)arg3;
+- (BOOL)_fieldContainsStrongPasswordButton:(id)arg1;
 - (BOOL)manualAutoFillButtonWillFitInFieldWithMetadata:(id)arg1;
 - (void)_requestToShowAutoFillButtonForAddressBookFieldWithMetadataIfAvailable:(id)arg1 formMetadata:(id)arg2 inFrame:(id)arg3 textFieldNodeHandle:(const struct BundleNodeHandle *)arg4;
 - (BOOL)_isAddressBookAutoFillAllowedInFormWithType:(unsigned long long)arg1;

@@ -13,10 +13,10 @@ __attribute__((visibility("hidden")))
     struct optional<md::MeshSet<ggl::VenueWall::EndCapMesh, ggl::VenueWall::EndCapVbo>> _venueWallEndCapMeshInfo;
     struct optional<md::MeshSet<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh, ggl::Venue3DStroke::HorizontalDefaultVbo>> _venueWallHorizontalStrokeMeshInfo;
     struct optional<md::MeshSet<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh, ggl::Venue3DStroke::VerticalDefaultVbo>> _venueWallVerticalStrokeMeshInfo;
-    vector_3a6d496e _venueWallMeshes;
-    vector_59518bae _venueWallEndMeshes;
-    vector_8cf9b7af _venueWallHorizontalStrokeMeshes;
-    vector_4bf97ea8 _venueWallVerticalStrokeMeshes;
+    vector_e4fc2931 _venueWallMeshes;
+    vector_da5ada59 _venueWallEndMeshes;
+    vector_8c4a3c5e _venueWallHorizontalStrokeMeshes;
+    vector_5b05785e _venueWallVerticalStrokeMeshes;
     struct unordered_map<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge>>, std::__1::hash<SectionKey>, std::__1::equal_to<std::__1::pair<void *, unsigned long>>, std::__1::allocator<std::__1::pair<const std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge>>>>> _venueWalls;
     unsigned long long _buildingId;
     float _maximumSectionLength;
@@ -42,10 +42,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct Texture2D *wallTexture;
 @property(readonly, nonatomic) float maximumSectionLength;
 @property(readonly, nonatomic) unsigned long long buildingId;
-@property(readonly, nonatomic) const vector_4bf97ea8 *venueWallVerticalStrokeMeshes;
-@property(readonly, nonatomic) const vector_8cf9b7af *venueWallHorizontalStrokeMeshes;
-@property(readonly, nonatomic) const vector_59518bae *venueWallEndMeshes;
-@property(readonly, nonatomic) const vector_3a6d496e *venueWallMeshes;
+@property(readonly, nonatomic) const vector_5b05785e *venueWallVerticalStrokeMeshes;
+@property(readonly, nonatomic) const vector_8c4a3c5e *venueWallHorizontalStrokeMeshes;
+@property(readonly, nonatomic) const vector_da5ada59 *venueWallEndMeshes;
+@property(readonly, nonatomic) const vector_e4fc2931 *venueWallMeshes;
 - (id)initWithStyleQuery:(shared_ptr_c5d816ee *)arg1 tileZoom:(float)arg2 layer:(int)arg3 buildingId:(unsigned long long)arg4 contentScale:(float)arg5 sharedResources:(id)arg6;
 
 @end

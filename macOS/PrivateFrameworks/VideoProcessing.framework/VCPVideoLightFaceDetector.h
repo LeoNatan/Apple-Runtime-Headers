@@ -6,18 +6,22 @@
 
 #import <VideoProcessing/VCPVideoFaceDetector.h>
 
+@class VCPFrameAnalysisStats;
+
 @interface VCPVideoLightFaceDetector : VCPVideoFaceDetector
 {
     int _lastestFaceID;
     int _numFacesLastFrame;
+    VCPFrameAnalysisStats *_frameStats;
 }
 
+- (void).cxx_destruct;
 - (int)finishAnalysisPass:(CDStruct_e83c9415)arg1;
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 flags:(unsigned long long *)arg4;
 - (float)minProcessTimeIntervalInSecs;
 - (int)detectFaces:(struct __CVBuffer *)arg1 faces:(id)arg2;
 - (void)dealloc;
-- (id)initWithTransform:(struct CGAffineTransform)arg1;
+- (id)initWithTransform:(struct CGAffineTransform)arg1 frameStats:(id)arg2;
 
 @end
 

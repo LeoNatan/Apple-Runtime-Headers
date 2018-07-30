@@ -17,7 +17,7 @@
 @property(retain, nonatomic) SKNode *x15sSubLabels; // @synthesize x15sSubLabels=_x15sSubLabels;
 - (void).cxx_destruct;
 - (void)colorize:(id)arg1;
-- (id)initWithRadius:(double)arg1;
+- (id)initWithRadius:(double)arg1 forDevice:(id)arg2;
 
 @end
 

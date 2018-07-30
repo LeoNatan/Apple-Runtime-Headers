@@ -20,6 +20,7 @@
 + (void)_setCachedQueriesEnabled:(BOOL)arg1;
 + (id)_initialABPropertyLabelForProperty:(id)arg1;
 + (id)personWithABPerson:(id)arg1;
++ (BOOL)shouldPurgeCacheForIMPerson:(id)arg1;
 + (id)existingABPeopleWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 + (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5;

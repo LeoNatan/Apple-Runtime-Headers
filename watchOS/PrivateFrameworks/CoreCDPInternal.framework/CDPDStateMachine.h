@@ -38,9 +38,11 @@
 - (void)_disableCloudDataProtectionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_resetAccountCDPStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_enableSecureBackupWithCircleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_attemptBackupRecoveryByPromptingForRemoteSecretWithLocalSecret:(id)arg1 localSecretType:(unsigned int)arg2 useCachedSecret:(_Bool)arg3 hasPeersForRemoteApproval:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)_attemptBackupRecoveryWithLocalSecret:(id)arg1 type:(unsigned int)arg2 useCachedSecret:(_Bool)arg3 hasPeersForRemoteApproval:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)_recoverSecureBackupWithHasPeersForRemoteApproval:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_postRecoveryEnableSecureBackupWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_attemptBackupRecoveryByPromptingForRemoteSecretWithLocalSecret:(id)arg1 localSecretType:(unsigned int)arg2 useCachedSecret:(_Bool)arg3 circleJoinResult:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_attemptBackupRecoveryWithLocalSecret:(id)arg1 type:(unsigned int)arg2 useCachedSecret:(_Bool)arg3 circleJoinResult:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_handleInteractiveRecoveryFlowWithCircleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_recoverSecureBackupWithCircleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_confirmCDPEligibilityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_enableKVSForAccount:(id)arg1 store:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_preflightAccountStateWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -53,10 +55,10 @@
 - (id)_predicateForRecordUpgradeCheckIgnoringBottled;
 - (void)_authenticatedShouldPerformRepairWithCompletion:(CDUnknownBlockType)arg1;
 - (void)shouldPerformRepairWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_recoverSecureBackupWithCircleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_attemptCDPEnable:(CDUnknownBlockType)arg1;
 - (void)_handlePreflightError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_handleRecoveryResetRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_enrollOrDisableCDPAfterEnabledStateVerified:(CDUnknownBlockType)arg1;
 - (void)_handleiCDPStatusCheckError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;

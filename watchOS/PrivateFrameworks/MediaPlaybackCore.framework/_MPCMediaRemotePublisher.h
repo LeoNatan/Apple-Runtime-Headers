@@ -32,6 +32,7 @@
 - (void)_updateUpNextItemCount;
 - (void)_updateSupportedCommands;
 - (void)_enqueueFallbackIntentIfNeededForCommandEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_becomeActiveIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_disableQueueModificationsChangedNotification:(id)arg1;
 - (void)_likedStateChangedNotification:(id)arg1;
 - (void)_durationAvailableNotification:(id)arg1;

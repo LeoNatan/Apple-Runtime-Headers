@@ -21,23 +21,30 @@
     id _requireAdminNetworkChangeCheckbox;
     id _airportID;
     id _airportIDLabel;
-    NSMutableArray *_networksArray;
+    NSMutableArray *_preferredNetworks;
+    NSMutableArray *_preferredNetworksCloudOnly;
     NSMutableArray *_removeNetworks;
+    NSMutableArray *_removeNetworksLocalOnly;
     NSWindowController *_currentDialog;
 }
 
 @property(retain) NSWindowController *currentDialog; // @synthesize currentDialog=_currentDialog;
-@property(retain) NSMutableArray *preferredNetworks; // @synthesize preferredNetworks=_networksArray;
-@property(retain) NSMutableArray *removePreferredNetworks; // @synthesize removePreferredNetworks=_removeNetworks;
+@property(retain) NSMutableArray *preferredNetworksCloudOnly; // @synthesize preferredNetworksCloudOnly=_preferredNetworksCloudOnly;
+@property(retain) NSMutableArray *preferredNetworks; // @synthesize preferredNetworks=_preferredNetworks;
+@property(retain) NSMutableArray *removeNetworksLocalOnly; // @synthesize removeNetworksLocalOnly=_removeNetworksLocalOnly;
+@property(retain) NSMutableArray *removeNetworks; // @synthesize removeNetworks=_removeNetworks;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
-- (BOOL)tableView:(id)arg1 writeRows:(id)arg2 toPasteboard:(id)arg3;
+- (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
 - (void)tableView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
+- (id)_longestLocalizedSecurityTypeString;
+- (void)_customSizeToFitTable;
 - (void)showDupicateAlertWithEntry:(id)arg1;
-- (void)removePreferredNetworksWithIndexSet:(id)arg1 selectionIndexSet:(id)arg2 requireUserConfirmation:(BOOL)arg3;
+- (void)removePreferredNetworksWithIndexSet:(id)arg1 selectionIndexSet:(id)arg2 requireUserConfirmation:(BOOL)arg3 modifierFlags:(unsigned long long)arg4;
 - (void)setHasUnsavedChanges:(BOOL)arg1;
 - (id)localizedStringForKey:(id)arg1;
 - (id)getBundle;
@@ -71,6 +78,7 @@
 - (void)addProfileDialog:(id)arg1 didConfigureOpenProfile:(id)arg2 interface:(id)arg3;
 - (void)addProfileDialogCancelled:(id)arg1;
 - (void)dealloc;
+- (void)didRefreshService;
 - (void)awakeFromNib;
 
 @end

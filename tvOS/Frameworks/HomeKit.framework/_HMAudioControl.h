@@ -9,14 +9,14 @@
 #import "HMFMessageReceiver.h"
 #import "HMObjectMerge.h"
 
-@class HMMediaSession, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMFUnfairLock, HMMediaSession, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface _HMAudioControl : NSObject <HMFMessageReceiver, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     _Bool _muted;
     float _volume;
     NSUUID *_uniqueIdentifier;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMMediaSession *_mediaSession;
     id <_HMAudioControlDelegate> _delegate;
     _HMContext *_context;
@@ -25,23 +25,20 @@
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property __weak id <_HMAudioControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak HMMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 - (void)_handleAudioControlUpdated:(id)arg1;
 - (void)updateMuted:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateVolume:(float)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
-- (id)delegateCaller;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (id)messageDestination;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 @property(getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue;
-- (void)configure:(id)arg1;
+- (void)__configureWithContext:(id)arg1;
 - (void)_registerNotificationHandlers;
-- (id)initWithMediaSession:(id)arg1 propertyQueue:(id)arg2;
+- (id)initWithMediaSession:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

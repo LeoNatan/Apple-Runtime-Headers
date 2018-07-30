@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
     NSNumber *_hasTransformedTableSchema;
 }
 
-@property(readonly) NSSQLEntity *rootEntity; // @synthesize rootEntity=_rootEntity;
-@property(readonly) int migrationType; // @synthesize migrationType=_migrationType;
+@property(readonly, nonatomic) NSSQLEntity *rootEntity; // @synthesize rootEntity=_rootEntity;
+@property(readonly, nonatomic) int migrationType; // @synthesize migrationType=_migrationType;
 - (id)_sourceRootEntity;
 - (id)_tempNameForTableName:(id)arg1;
 - (id)_transformedManyToManys;

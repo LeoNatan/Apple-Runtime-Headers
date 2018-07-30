@@ -14,7 +14,7 @@
 #import "UIScrollViewDelegate.h"
 #import "UIViewControllerPreviewingDelegate.h"
 
-@class CalendarOccurrencesCollection, EKDayOccurrenceView, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSCalendar, NSDateComponents, NSString, NSTimer, ScrollSpringFactory, UIScrollView, UIView;
+@class CalendarOccurrencesCollection, EKDayOccurrenceView, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSCalendar, NSDateComponents, NSObject<OS_dispatch_queue>, NSString, NSTimer, ScrollSpringFactory, UIScrollView, UIView;
 
 @interface EKDayViewController : UIViewController <BlockableScrollViewDelegate, UIViewControllerPreviewingDelegate, EKDayOccurrenceViewDelegate, EKDayViewDataSource, EKDayViewDelegate, EKEventGestureControllerDelegate, UIScrollViewDelegate>
 {
@@ -52,6 +52,8 @@
     NSDateComponents *_targetDateComponents;
     _Bool _needToCompleteScrollingAnimation;
     _Bool _needToCompleteDeceleration;
+    NSObject<OS_dispatch_queue> *_reloadQueue;
+    NSObject<OS_dispatch_queue> *_protectionQueue;
     id <UIViewControllerPreviewing> _viewControllerPreviewingRegistration;
     _Bool _showsBanner;
     _Bool _allowsDaySwitching;
@@ -62,6 +64,7 @@
     _Bool _animateAllDayAreaHeight;
     _Bool _shouldAutoscrollAfterAppearance;
     _Bool _notifyWhenTapOtherEventDuringDragging;
+    _Bool _preloadExtraDays;
     _Bool _transitionedToSameDay;
     id <EKDayViewControllerDelegate> _delegate;
     id <EKDayViewControllerDataSource> _dataSource;
@@ -83,6 +86,7 @@
 @property(retain, nonatomic) EKEventEditViewController *currentEditor; // @synthesize currentEditor=_currentEditor;
 @property(retain, nonatomic) UIView *gestureOccurrenceSuperview; // @synthesize gestureOccurrenceSuperview=_gestureOccurrenceSuperview;
 @property(nonatomic) double gutterWidth; // @synthesize gutterWidth=_gutterWidth;
+@property(nonatomic) _Bool preloadExtraDays; // @synthesize preloadExtraDays=_preloadExtraDays;
 @property(nonatomic) _Bool notifyWhenTapOtherEventDuringDragging; // @synthesize notifyWhenTapOtherEventDuringDragging=_notifyWhenTapOtherEventDuringDragging;
 @property(nonatomic) _Bool shouldAutoscrollAfterAppearance; // @synthesize shouldAutoscrollAfterAppearance=_shouldAutoscrollAfterAppearance;
 @property(nonatomic) _Bool animateAllDayAreaHeight; // @synthesize animateAllDayAreaHeight=_animateAllDayAreaHeight;
@@ -97,6 +101,11 @@
 @property(nonatomic) __weak id <EKDayViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <EKDayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)__cutLongTailCallbackForScrollAnimationFromExternalSource;
+- (void)__cutLongCallbackTailForDecelerationFromUserInput;
+- (void)_cancelAllLongTailCuttingCallbacks;
+- (void)_cutAnimationTailAfterDelayForScrollAnimationFromExternalSource;
+- (void)_cutAnimationTailAfterDelayForDecelerationFromUserInput;
 - (void)_completeScrollingAnimationIfNeeded;
 - (void)_setHorizontalContentOffsetUsingSpringAnimation:(struct CGPoint)arg1;
 - (void)applicationWillResignActive;
@@ -125,6 +134,7 @@
 - (void)_updateAllDayAreaHeight;
 - (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)_isViewInVisibleRect:(id)arg1;
+- (id)verticalScrollView;
 - (id)horizontalScrollView;
 - (void)_setDayView:(id)arg1 toDate:(id)arg2;
 - (void)_relayoutDaysDuringScrollingAndPerformDayChanges:(_Bool)arg1;
@@ -176,7 +186,8 @@
 - (id)_occurrencesForDayView:(id)arg1;
 - (void)dayView:(id)arg1 didUpdateScrollPosition:(struct CGPoint)arg2;
 - (void)significantTimeChangeOccurred;
-- (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2;
+- (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2 completionForCurrentDayReload:(CDUnknownBlockType)arg3;
+- (void)reloadDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)reloadData;
 - (id)_eventsForDay:(id)arg1;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
@@ -216,7 +227,6 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_scrollDayViewAfterRelayoutDays;
 - (void)scrollDayViewAppropriatelyWithAnimation:(_Bool)arg1;

@@ -24,8 +24,7 @@
 - (void)_deleteBaseImages;
 - (void)buildBaseLOD;
 - (void)_buildBaseImagesWithVersion:(int)arg1;
-- (id)_buildRTLBaseImageFromLTRBaseImage:(id)arg1 numberOfColumns:(unsigned int)arg2;
-- (id)_buildLTRBaseImageWithFetchResult:(id)arg1 version:(int)arg2;
+- (id)_buildBaseImageWithFetchResult:(id)arg1 version:(int)arg2 rightToLeft:(_Bool)arg3;
 - (id)init;
 
 @end

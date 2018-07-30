@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 - (id)primaryImageColor;
 - (id)lightTextColor;
 - (id)primaryTextColor;
-- (id)separatorColor;
 - (id)compositingFilter;
 - (long long)blendMode;
+- (id)separatorColor;
 
 @end
 

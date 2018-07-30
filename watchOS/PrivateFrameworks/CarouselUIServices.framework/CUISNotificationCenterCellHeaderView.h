@@ -15,6 +15,7 @@
     UIImageView *_iconShadowView;
     CUISNotificationCenterCellPlatterView *_platterView;
     UIColor *_titleColor;
+    UIImageView *_modifierIconView;
     unsigned int _iconStyle;
 }
 
@@ -22,10 +23,10 @@
 - (void).cxx_destruct;
 - (void)_createSubviews;
 - (void)layoutSubviews;
-- (id)_imageNamed:(id)arg1;
 @property(readonly, nonatomic) struct CGRect backgroundFrame;
 @property(retain, nonatomic) UIColor *titleColor;
 @property(retain, nonatomic) UIColor *headerBackgroundColor;
+@property(retain, nonatomic) UIImage *modifierIcon;
 @property(retain, nonatomic) UIImage *icon;
 @property(copy, nonatomic) NSString *title;
 - (id)init;

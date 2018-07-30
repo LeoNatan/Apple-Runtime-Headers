@@ -30,8 +30,10 @@
 - (BOOL)_submitToCrashReporter;
 - (id)_replaceOccurrencesOfPattern:(id)arg1 withReplacement:(id)arg2 inString:(id)arg3;
 - (id)_scrubString:(id)arg1;
+- (id)_tailLogFromURL:(id)arg1 maximumByteLength:(unsigned long long)arg2;
 - (id)_collectBridgeOSLog;
 - (id)_collectLogsWithPredicate:(id)arg1 startDate:(id)arg2 maximumByteLength:(unsigned long long)arg3;
+- (id)_collectMacOSInstallLog;
 - (id)_collectMacOSBridgeOSSoftwareUpdateControllerLog;
 - (id)_collectMacOSBridgeOSInstallLog;
 - (void)_clearNVRAMState;

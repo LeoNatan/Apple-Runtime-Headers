@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSVisualEffectView *_effectView;
 }
 
+- (id)_preferredAppearance;
 @property long long blendingMode;
 - (BOOL)allowsVibrancy;
 - (BOOL)isOpaque;

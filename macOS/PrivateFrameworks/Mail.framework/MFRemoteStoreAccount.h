@@ -8,7 +8,7 @@
 
 #import "MCRemoteStoreAccount.h"
 
-@class MCAuthScheme, MFBehaviorTracker, NSArray, NSOperationQueue, NSString;
+@class MCAuthScheme, NSArray, NSOperationQueue, NSString;
 
 @interface MFRemoteStoreAccount : MFMailAccount <MCRemoteStoreAccount>
 {
@@ -40,7 +40,6 @@
 @property long long cachePolicy;
 - (BOOL)canGoOffline;
 @property(copy) NSString *displayName;
-@property(readonly) MFBehaviorTracker *behaviorTracker;
 
 // Remaining properties
 @property(readonly, copy) NSString *accountTypeString;
@@ -55,14 +54,14 @@
 @property(readonly, copy) NSString *description;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
-@property(copy) NSString *hostname;
+@property(copy, nonatomic) NSString *hostname;
 @property(readonly, copy) NSString *identifier;
 @property(readonly, nonatomic) BOOL isGmailAccount;
 @property(readonly) BOOL isYahooAccount;
 @property(readonly, copy) NSString *machineID;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *oneTimePassword;
-@property(copy) NSString *password;
+@property(copy, nonatomic) NSString *password;
 @property long long portNumber;
 @property(retain) MCAuthScheme *preferredAuthScheme;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue;

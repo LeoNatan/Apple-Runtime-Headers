@@ -6,15 +6,18 @@
 
 #import "NSObject.h"
 
-@class MPCPlayerResponse;
+@class MPCPlayerPath, MPCPlayerResponse;
 
 @interface _MPCPlayerCommand : NSObject
 {
     MPCPlayerResponse *_response;
+    MPCPlayerPath *_playerPath;
 }
 
-@property(retain, nonatomic) MPCPlayerResponse *response; // @synthesize response=_response;
+@property(readonly, copy, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
+@property(readonly, nonatomic) MPCPlayerResponse *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+- (id)initWithPlayerPath:(id)arg1;
 - (id)initWithResponse:(id)arg1;
 
 @end

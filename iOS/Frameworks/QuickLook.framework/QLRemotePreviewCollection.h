@@ -43,7 +43,8 @@ __attribute__((visibility("hidden")))
 - (void)hostApplicationDidEnterBackground:(_Bool)arg1;
 - (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(_Bool)arg2;
 - (void)configureWithNumberOfItems:(long long)arg1 currentPreviewItemIndex:(unsigned long long)arg2 itemProvider:(id)arg3 stateManager:(id)arg4;
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)_presentViewControllerForError:(id)arg1;
 - (void)getPreviewCollectionUUIDWithCompletionHandler:(CDUnknownBlockType)arg1;

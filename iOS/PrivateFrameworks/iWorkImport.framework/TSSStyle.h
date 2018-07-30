@@ -139,7 +139,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqualToStyle:(id)arg1 ignoreObjectContext:(_Bool)arg2;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)init;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(_Bool)arg4;
 - (void)setIsVariation:(_Bool)arg1;

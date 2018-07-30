@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _MXExtensionVendorContext : _MXExtensionContext <_MXExtensionVendorContextType>
 {
     id <_MXExtensionResponseObserver> _observer;

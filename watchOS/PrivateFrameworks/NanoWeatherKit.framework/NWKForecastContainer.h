@@ -13,7 +13,6 @@
 @interface NWKForecastContainer : NSObject <NSSecureCoding>
 {
     _Bool _updating;
-    _Bool _updatable;
     NSError *_lastError;
     unsigned int _updateToken;
     WFLocation *_location;
@@ -30,12 +29,12 @@
 @property(retain, nonatomic) NSArray *dailyForecasts; // @synthesize dailyForecasts=_dailyForecasts;
 @property(retain, nonatomic) NSArray *hourlyForecasts; // @synthesize hourlyForecasts=_hourlyForecasts;
 @property(retain, nonatomic) WFWeatherConditions *currentWeatherConditions; // @synthesize currentWeatherConditions=_currentWeatherConditions;
-@property(retain, nonatomic) WFLocation *location; // @synthesize location=_location;
+@property(readonly, nonatomic) WFLocation *location; // @synthesize location=_location;
 @property(nonatomic) unsigned int updateToken; // @synthesize updateToken=_updateToken;
 @property(retain, nonatomic) NSError *lastError; // @synthesize lastError=_lastError;
-@property(nonatomic, getter=isUpdatable) _Bool updatable; // @synthesize updatable=_updatable;
 @property(nonatomic, getter=isUpdating) _Bool updating; // @synthesize updating=_updating;
 - (void).cxx_destruct;
+- (void)setLocation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)performActionWhileForecastLocked:(CDUnknownBlockType)arg1;

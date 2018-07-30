@@ -8,6 +8,7 @@
 
 @class NSObject<OS_xpc_object>;
 
+__attribute__((visibility("hidden")))
 @interface _CFXPreferences : NSObject
 {
     struct __CFDictionary *_sources;
@@ -31,7 +32,7 @@
 - (id)_copyDaemonConnectionSettingUpIfNecessaryForRole:(int)arg1;
 - (void)dealloc;
 - (void)destroyConnections;
--     // Error parsing type: ^(?={_CFPrefsShmemEntry=AiAI}AQ)28@0:8i16r*20, name: shmemForRole:name:
+-     // Error parsing type: ^AI28@0:8i16r*20, name: shmemForRole:name:
 - (void)resetPreferences:(_Bool)arg1;
 - (void)ingestVolatileStateFromPreferences:(id)arg1;
 - (void)registerDefaultValues:(struct __CFDictionary *)arg1;
@@ -42,6 +43,7 @@
 - (void)removeVolatileSourceForName:(struct __CFString *)arg1;
 - (void)replaceValuesInSourceForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2 host:(struct __CFString *)arg3 container:(struct __CFString *)arg4 withValues:(struct __CFDictionary *)arg5;
 - (void *)copyAppValueForKey:(struct __CFString *)arg1 identifier:(struct __CFString *)arg2 container:(struct __CFString *)arg3 configurationURL:(struct __CFURL *)arg4;
+- (void)preloadAppValuesForIdentifiers:(const struct __CFString **)arg1 containers:(const struct __CFString **)arg2 configurationURLs:(const struct __CFURL **)arg3 count:(long long)arg4;
 - (void *)copyValueForKey:(struct __CFString *)arg1 identifier:(struct __CFString *)arg2 user:(struct __CFString *)arg3 host:(struct __CFString *)arg4 container:(struct __CFString *)arg5;
 - (void)setValue:(void *)arg1 forKey:(struct __CFString *)arg2 identifier:(struct __CFString *)arg3 user:(struct __CFString *)arg4 host:(struct __CFString *)arg5 container:(struct __CFString *)arg6;
 - (struct __CFDictionary *)copyManagedValuesForKeys:(struct __CFArray *)arg1 identifier:(struct __CFString *)arg2 useSystemContainer:(_Bool)arg3;
@@ -66,8 +68,6 @@
 - (void)registerUserDefaultsInstance:(id)arg1 configurationURL:(struct __CFURL *)arg2;
 - (void)unregisterUserDefaultsInstance:(id)arg1;
 - (id)init;
-- (void)cancelObservationConnection;
-- (id)copyObservationConnection;
 - (_Bool)canLookUpAgents;
 - (unsigned int)euid;
 - (void)assertEquivalence:(_Bool)arg1 ofIdentifiers:(struct __CFArray *)arg2 users:(struct __CFArray *)arg3 hosts:(struct __CFArray *)arg4 containers:(struct __CFArray *)arg5 managedFlags:(struct __CFArray *)arg6 cloudFlags:(struct __CFArray *)arg7;

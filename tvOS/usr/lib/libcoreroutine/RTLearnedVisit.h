@@ -18,8 +18,12 @@
     NSDate *_exitDate;
     NSDate *_creationDate;
     NSDate *_expirationDate;
+    double _placeConfidence;
+    unsigned long long _placeSource;
 }
 
+@property(nonatomic) unsigned long long placeSource; // @synthesize placeSource=_placeSource;
+@property(nonatomic) double placeConfidence; // @synthesize placeConfidence=_placeConfidence;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
@@ -30,6 +34,7 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (id)initWithIdentifier:(id)arg1 location:(id)arg2 entryDate:(id)arg3 exitDate:(id)arg4 creationDate:(id)arg5 expirationDate:(id)arg6 placeConfidence:(double)arg7 placeSource:(unsigned long long)arg8;
 - (id)initWithIdentifier:(id)arg1 location:(id)arg2 entryDate:(id)arg3 exitDate:(id)arg4 creationDate:(id)arg5 expirationDate:(id)arg6;
 - (id)init;
 - (id)initWithVisit:(id)arg1 locationOfInterest:(id)arg2 creationDate:(id)arg3 expirationDate:(id)arg4;

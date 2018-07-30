@@ -9,13 +9,12 @@
 @class NSArray, NSData, NSDictionary, NSString;
 
 @protocol _CPPunchoutForFeedback <NSObject>
+@property(readonly, nonatomic) unsigned long long whichBundleid;
 @property(readonly, nonatomic) NSData *jsonData;
-@property(copy, nonatomic) NSArray *urls;
-@property(readonly, nonatomic) BOOL hasLabel;
-@property(copy, nonatomic) NSString *label;
-@property(readonly, nonatomic) BOOL hasBundleIdentifier;
+@property(nonatomic) int knownBundleIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier;
-@property(readonly, nonatomic) BOOL hasName;
+@property(copy, nonatomic) NSArray *urls;
+@property(copy, nonatomic) NSString *label;
 @property(copy, nonatomic) NSString *name;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

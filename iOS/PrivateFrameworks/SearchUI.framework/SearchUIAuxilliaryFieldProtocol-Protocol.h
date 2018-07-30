@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSString, SFActionItem, SFCard, SFImage, SFRichText;
+@class NSString, SFActionItem, SFCard, SFImage, SFRichText, SFSearchResult;
 
 @protocol SearchUIAuxilliaryFieldProtocol <NSObject>
 @property(readonly) SFImage *thumbnail;
+@property(readonly) SFSearchResult *identifyingResult;
 @property(readonly) SFCard *card;
 @property(readonly) int auxiliaryBottomTextColor;
 @property(readonly) NSString *auxiliaryBottomText;

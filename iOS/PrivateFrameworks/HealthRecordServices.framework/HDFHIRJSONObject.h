@@ -21,6 +21,7 @@
 + (id)resourceTypeOfJSONObject:(id)arg1 error:(id *)arg2;
 + (id)objectWithResourceData:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
++ (id)_dataFromJSONObject:(id)arg1 JSONOptions:(unsigned long long)arg2;
 @property(readonly, copy, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 @property(readonly, copy, nonatomic) NSString *FHIRVersion; // @synthesize FHIRVersion=_FHIRVersion;
 @property(readonly, copy, nonatomic) NSDictionary *JSONObject; // @synthesize JSONObject=_JSONObject;

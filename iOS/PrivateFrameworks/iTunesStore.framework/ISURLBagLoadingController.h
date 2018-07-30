@@ -11,15 +11,18 @@
 @interface ISURLBagLoadingController : NSObject
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
     _Bool _hasSuccessfullyLoadedBag;
     NSDictionary *_bagDictionary;
     NSMutableArray *_bagAccessRequestBlocks;
     NSError *_bagLoadingError;
     NSHashTable *_bagObservers;
     SSURLBag *_URLBag;
+    _Bool _loadingBag;
 }
 
 + (id)sharedBagLoadingController;
+@property(readonly, nonatomic, getter=isLoadingBag) _Bool loadingBag; // @synthesize loadingBag=_loadingBag;
 - (void).cxx_destruct;
 - (void)_updateBagWithDictionary:(id)arg1 error:(id)arg2;
 - (void)_reloadURLBagAllowingUpdateUsingExistingBagDictionary:(_Bool)arg1;
@@ -27,6 +30,7 @@
 - (void)_handleStoreFrontDidChangeNotification:(id)arg1;
 - (void)_handleNetworkReachabilityFlagsDidChangeNotification:(id)arg1;
 - (void)_handleAccountStoreDidChangeNotification:(id)arg1;
+- (void)reloadBag;
 - (void)requestAccessToBagUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeBagObserver:(id)arg1;
 - (void)addBagObserver:(id)arg1;

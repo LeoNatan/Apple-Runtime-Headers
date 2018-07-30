@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAlert.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSSavePanelHackAlert : NSAlert
 {
 }

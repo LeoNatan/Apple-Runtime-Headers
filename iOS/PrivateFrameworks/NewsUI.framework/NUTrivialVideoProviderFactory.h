@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "SXVideoProviderFactory.h"
+#import "SVVideoProviderFactory.h"
 
 @class NSString;
 
-@interface NUTrivialVideoProviderFactory : NSObject <SXVideoProviderFactory>
+@interface NUTrivialVideoProviderFactory : NSObject <SVVideoProviderFactory>
 {
 }
 

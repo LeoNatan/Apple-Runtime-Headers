@@ -33,9 +33,12 @@
     PKPhysicsWorld *__pkPhysicsWorld;
 }
 
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id *)arg3 outError:(id *)arg4;
++ (id)debugHierarchyPropertyDescriptions;
 + (id)sceneWithContentsOfFile:(id)arg1 size:(struct CGSize)arg2;
 + (id)sceneWithContentsOfFile:(id)arg1;
 + (id)sceneWithSize:(struct CGSize)arg1;
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) PKPhysicsWorld *_pkPhysicsWorld; // @synthesize _pkPhysicsWorld=__pkPhysicsWorld;
 @property(retain, nonatomic) AVAudioEnvironmentNode *avAudioEnvironmentNode; // @synthesize avAudioEnvironmentNode=_avAudioEnvironmentNode;
 @property _Bool _needsRender; // @synthesize _needsRender=__needsRender;
@@ -43,10 +46,8 @@
 @property(nonatomic) __weak id <SKSceneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak SKCameraNode *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-- (id)debugHierarchyPropertyDescriptions;
 - (id)_getFocusNodes;
-- (id)_parentFocusEnvironment;
+- (id)parentFocusEnvironment;
 @property(readonly, nonatomic) __weak SKView *view;
 - (void)setPaused:(_Bool)arg1;
 - (void)didFinishUpdate;
@@ -69,6 +70,7 @@
 - (struct CGPoint)convertPointToView:(struct CGPoint)arg1;
 - (struct CGPoint)convertPointFromView:(struct CGPoint)arg1;
 - (id)description;
+- (_Bool)isEqualToNode:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)setZPosition:(double)arg1;
 - (double)zPosition;

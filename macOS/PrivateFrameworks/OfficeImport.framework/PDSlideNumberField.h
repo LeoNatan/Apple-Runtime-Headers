@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADTextField.h>
 
-__attribute__((visibility("hidden")))
 @interface PDSlideNumberField : OADTextField
 {
 }

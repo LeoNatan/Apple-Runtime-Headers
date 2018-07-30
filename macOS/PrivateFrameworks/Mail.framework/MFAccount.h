@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
+#import "EMAccount.h"
 #import "MCAccount.h"
 
 @class ACAccount, MCAuthScheme, NSArray, NSDate, NSImage, NSNumber, NSString;
 
-@interface MFAccount : NSObject <MCAccount>
+@interface MFAccount : NSObject <MCAccount, EMAccount>
 {
     BOOL _primitiveIsOffline;
     BOOL _primitiveIsWillingToGoOnline;
@@ -54,6 +55,9 @@
 @property(readonly, copy) NSString *identifier;
 - (id)localizedRecoverySuggestionWithServerError:(id)arg1 genericDescription:(id)arg2;
 - (BOOL)connectAndAuthenticate:(id)arg1;
+- (void)savePersistentAccount;
+- (id)smtpIdentifier;
+- (BOOL)canAuthenticateWithCurrentCredentials;
 - (id)authenticatedConnection;
 - (id)newConnectedConnectionDiscoveringBestSettings:(BOOL)arg1 withConnectTimeout:(double)arg2 readWriteTimeout:(double)arg3;
 @property BOOL allowInsecureAuthentication;
@@ -93,10 +97,10 @@
 - (void)renewCredentialsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) BOOL hasPasswordCredential;
 @property(readonly) BOOL usesParentAuthentication;
-@property(copy) NSString *password;
+@property(copy, nonatomic) NSString *password;
 @property(readonly) BOOL hostnameOriginatesFromParentAccount;
 - (id)_hostnameFromParentAccount:(id)arg1;
-@property(copy) NSString *hostname;
+@property(copy, nonatomic) NSString *hostname;
 @property(copy) NSString *username;
 @property(readonly, copy) NSString *offlineDisplayName;
 @property(copy) NSString *displayName;

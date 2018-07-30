@@ -10,7 +10,6 @@
 
 @interface PKSuicaPassProperties : PKTransitPassProperties
 {
-    _Bool _inShinkansenStation;
     _Bool _balanceAllowedForCommute;
     _Bool _lowBalanceGateNotificationEnabled;
     _Bool _greenCarTicketUsed;
@@ -20,12 +19,12 @@
 @property(readonly, nonatomic, getter=isGreenCarTicketUsed) _Bool greenCarTicketUsed; // @synthesize greenCarTicketUsed=_greenCarTicketUsed;
 @property(readonly, nonatomic, getter=isLowBalanceGateNotificationEnabled) _Bool lowBalanceGateNotificationEnabled; // @synthesize lowBalanceGateNotificationEnabled=_lowBalanceGateNotificationEnabled;
 @property(readonly, nonatomic, getter=isBalanceAllowedForCommute) _Bool balanceAllowedForCommute; // @synthesize balanceAllowedForCommute=_balanceAllowedForCommute;
-@property(readonly, nonatomic, getter=isInShinkansenStation) _Bool inShinkansenStation; // @synthesize inShinkansenStation=_inShinkansenStation;
+@property(readonly, nonatomic, getter=isInStation) _Bool inStation; // @dynamic inStation;
+@property(readonly, nonatomic, getter=isInShinkansenStation) _Bool inShinkansenStation; // @dynamic inShinkansenStation;
 - (id)_initWithProperties:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic, getter=isBlacklisted) _Bool blacklisted; // @dynamic blacklisted;
-@property(readonly, nonatomic, getter=isInStation) _Bool inStation; // @dynamic inStation;
 @property(readonly, copy, nonatomic) NSDecimalNumber *transitBalance; // @dynamic transitBalance;
 @property(readonly, copy, nonatomic) NSString *transitBalanceCurrencyCode; // @dynamic transitBalanceCurrencyCode;
 

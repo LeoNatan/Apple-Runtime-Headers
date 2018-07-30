@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     struct MTLRenderPipelineDescriptorPrivate _private;
 }
 
+- (id)newSerializedVertexDataWithFlags:(unsigned int)arg1 options:(unsigned int)arg2 error:(id *)arg3;
 - (id)newSerializedVertexDataWithFlags:(unsigned int)arg1 error:(id *)arg2;
 - (id)serializeFragmentData;
 - (void)validateWithDevice:(id)arg1;
@@ -23,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (const struct MTLRenderPipelineDescriptorPrivate *)_descriptorPrivate;
+- (id)driverCompilerOptions;
+- (void)setDriverCompilerOptions:(id)arg1;
 - (id)vertexDescriptor;
 - (void)setVertexDescriptor:(id)arg1;
 - (void)attachVertexDescriptor:(id)arg1;
@@ -40,6 +43,32 @@ __attribute__((visibility("hidden")))
 - (id)vertexBuffers;
 - (void)setDepthStencilWriteDisabled:(_Bool)arg1;
 - (_Bool)isDepthStencilWriteDisabled;
+- (void)setSampleCoverageInvert:(_Bool)arg1;
+- (_Bool)sampleCoverageInvert;
+- (void)setOpenGLModeEnabled:(_Bool)arg1;
+- (_Bool)openGLModeEnabled;
+- (void)setFragmentDepthCompareClampMask:(unsigned int)arg1;
+- (unsigned int)fragmentDepthCompareClampMask;
+- (void)setVertexDepthCompareClampMask:(unsigned int)arg1;
+- (unsigned int)vertexDepthCompareClampMask;
+- (void)setTwoSideEnabled:(_Bool)arg1;
+- (_Bool)isTwoSideEnabled;
+- (void)setPointSizeOutputVS:(_Bool)arg1;
+- (_Bool)isPointSizeOutputVS;
+- (void)setPointCoordLowerLeft:(_Bool)arg1;
+- (_Bool)isPointCoordLowerLeft;
+- (void)setPointSmoothEnabled:(_Bool)arg1;
+- (_Bool)isPointSmoothEnabled;
+- (unsigned char)clipDistanceEnableMask;
+- (void)setClipDistanceEnableMask:(unsigned char)arg1;
+- (void)setAlphaTestFunction:(unsigned int)arg1;
+- (unsigned int)alphaTestFunction;
+- (void)setAlphaTestEnabled:(_Bool)arg1;
+- (_Bool)isAlphaTestEnabled;
+- (void)setLogicOperation:(unsigned int)arg1;
+- (unsigned int)logicOperation;
+- (void)setLogicOperationEnabled:(_Bool)arg1;
+- (_Bool)isLogicOperationEnabled;
 - (void)setVertexEnabled:(_Bool)arg1;
 - (_Bool)isVertexEnabled;
 - (void)setRasterizationEnabled:(_Bool)arg1;
@@ -57,6 +86,12 @@ __attribute__((visibility("hidden")))
 - (void)setSampleCount:(unsigned int)arg1;
 - (unsigned int)sampleCount;
 @property(nonatomic) unsigned int postVertexDumpBufferIndex;
+- (void)setResourceIndex:(unsigned long long)arg1;
+- (unsigned long long)resourceIndex;
+- (void)setForceResourceIndex:(_Bool)arg1;
+- (_Bool)forceResourceIndex;
+- (void)setSupportIndirectCommandBuffers:(_Bool)arg1;
+- (_Bool)supportIndirectCommandBuffers;
 - (void)setTessellationOutputWindingOrder:(unsigned int)arg1;
 - (unsigned int)tessellationOutputWindingOrder;
 - (void)setTessellationFactorStepFunction:(unsigned int)arg1;

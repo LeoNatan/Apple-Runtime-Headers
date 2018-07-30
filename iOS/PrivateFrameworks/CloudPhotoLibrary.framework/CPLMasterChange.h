@@ -6,10 +6,11 @@
 
 #import <CloudPhotoLibrary/CPLItemChange.h>
 
-@class NSArray, NSData, NSDate, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @interface CPLMasterChange : CPLItemChange
 {
+    NSDictionary *_resourcePerResourceType;
     short _importedBy;
     short _videoFrameRate;
     NSArray *_resources;
@@ -47,9 +48,10 @@
 - (_Bool)supportsResources;
 - (id)name;
 - (void)setName:(id)arg1;
+- (void)copyDerivativesFromRecordIfPossible:(id)arg1;
+- (void)_copyDerivatives:(unsigned long long *)arg1 count:(int)arg2 ifMatchingResourceType:(unsigned long long)arg3 fromRecord:(id)arg4 inResourcePerType:(id)arg5;
+- (id)resourceForType:(unsigned long long)arg1;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
-- (void)awakeFromStorage;
-- (void)prepareForStorage;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (id)propertiesDescription;
 - (long long)dequeueOrder;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AVAsset, CLLocation, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL, PHAdjustmentData, PHLivePhoto, UIImage;
+@class AVAsset, CLLocation, NSDate, NSMutableArray, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSURL, PHAdjustmentData, PHLivePhoto, UIImage;
 
 @interface PHContentEditingInput : NSObject
 {
@@ -25,10 +25,12 @@
     NSURL *_fullSizeImageURL;
     PHLivePhoto *_livePhoto;
     long long _baseVersion;
+    NSNumber *_originalResourceChoice;
     NSURL *_videoURL;
 }
 
 @property(copy, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
+@property(retain, nonatomic) NSNumber *originalResourceChoice; // @synthesize originalResourceChoice=_originalResourceChoice;
 @property(nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(retain, nonatomic) PHLivePhoto *livePhoto; // @synthesize livePhoto=_livePhoto;
 @property(nonatomic) int fullSizeImageOrientation; // @synthesize fullSizeImageOrientation=_fullSizeImageOrientation;

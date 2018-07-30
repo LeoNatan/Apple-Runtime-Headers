@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _headerFrame;
     UIView *_selectingView;
     UIView *_headerView;
+    double _showcaseFactor;
     struct {
         _Bool respondsToAugmentedSelectionFrameForFrame;
     } _collectionViewFlags;
@@ -46,6 +47,8 @@ __attribute__((visibility("hidden")))
 - (id)_currentHeaderView;
 - (struct UIEdgeInsets)_adjustedPadding;
 - (struct CGRect)_adjustedHeaderFrame;
+- (id)_collectionRowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2 forShowcase:(_Bool)arg3;
+- (id)showcaseRowMetricsForExpectedWidth:(double)arg1;
 @property(readonly, nonatomic) _Bool shouldBindRowsTogether;
 - (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2;
 - (id)preferredFocusEnvironments;
@@ -53,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setValue:(id)arg1 forTVViewStyle:(id)arg2;
+- (void)tv_setShowcaseFactor:(double)arg1;
 - (void)reevaluateHeaderFrame;
 - (id)initWithFrame:(struct CGRect)arg1;
 

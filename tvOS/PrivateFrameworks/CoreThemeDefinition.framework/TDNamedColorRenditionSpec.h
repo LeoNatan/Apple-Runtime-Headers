@@ -6,6 +6,8 @@
 
 #import <CoreThemeDefinition/TDRenditionSpec.h>
 
+@class NSString;
+
 @interface TDNamedColorRenditionSpec : TDRenditionSpec
 {
 }
@@ -19,6 +21,7 @@
 @property(nonatomic) long long colorSpaceID; // @dynamic colorSpaceID;
 @property(nonatomic) double green; // @dynamic green;
 @property(nonatomic) double red; // @dynamic red;
+@property(retain, nonatomic) NSString *systemColorName; // @dynamic systemColorName;
 
 @end
 

@@ -12,7 +12,7 @@
 #import "BSXPCCoding.h"
 #import "NSSecureCoding.h"
 
-@class BSActionResponse, BSAuditHistory, BSMachPortReceiveRight, BSMachPortTransferableSendRight, BSPortDeathSentinel, BSSettings, BSTimer, NSObject<OS_dispatch_queue>, NSString;
+@class BSActionListenerToken, BSActionResponse, BSAuditHistory, BSMachPortReceiveRight, BSMachPortTransferableSendRight, BSPortDeathSentinel, BSSettings, BSTimer, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BSAction : NSObject <BSXPCCoding, NSSecureCoding, BSSettingDescriptionProvider, BSDescriptionProviding, BSInvalidatable>
 {
@@ -25,7 +25,7 @@
     _Bool _queue_hasBeenNeutered;
     _Bool _queue_invalidated;
     CDUnknownBlockType _queue_handler;
-    CDStruct_2873f8fa _queue_listenerTokens;
+    BSActionListenerToken *_queue_listenerToken;
     BSTimer *_queue_timer;
     CDUnknownBlockType _queue_invalidationHandler;
     BSActionResponse *_queue_response;

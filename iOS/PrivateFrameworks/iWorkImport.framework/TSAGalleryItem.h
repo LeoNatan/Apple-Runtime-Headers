@@ -11,7 +11,7 @@
 #import "TSKDocumentObject.h"
 #import "TSWPStorageParent.h"
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSObject<TSDContainerInfo>, NSString, TSAGalleryInfo, TSDImageAdjustments, TSDImageDataHelper, TSDInfoGeometry, TSPData, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails, TSWPStorage;
+@class NSArray, NSObject<OS_dispatch_queue>, NSObject<TSDContainerInfo>, NSString, TSDImageAdjustments, TSDImageDataHelper, TSDInfoGeometry, TSPData, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails, TSWPStorage;
 
 __attribute__((visibility("hidden")))
 @interface TSAGalleryItem : TSPObject <TSDContainerInfo, TSWPStorageParent, TSDChangeableInfo, TSKDocumentObject>
@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_naturalSizeQueue;
     TSSPropertySetChangeDetails *_changes;
     NSObject<TSDContainerInfo> *_parentInfo;
-    TSAGalleryInfo *_parentGalleryInfo;
 }
 
 + (_Bool)needsObjectUUID;
@@ -47,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TSDImageAdjustments *imageAdjustments; // @synthesize imageAdjustments=_imageAdjustments;
 @property(retain, nonatomic) TSPData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
 @property(retain, nonatomic) TSPData *imageData; // @synthesize imageData=_imageData;
-@property(nonatomic) __weak TSAGalleryInfo *parentGalleryInfo; // @synthesize parentGalleryInfo=_parentGalleryInfo;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo; // @synthesize parentInfo=_parentInfo;
 - (void).cxx_destruct;
@@ -57,8 +55,10 @@ __attribute__((visibility("hidden")))
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)objectUUIDPath;
+@property(readonly, nonatomic) _Bool supportsMultipleColumns;
 @property(readonly, nonatomic) _Bool storageChangesInvalidateWrap;
 @property(readonly, nonatomic) long long contentWritingDirection;
+@property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
 @property(readonly, nonatomic) _Bool textIsVertical;
@@ -89,6 +89,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 - (void)setPrimitiveGeometry:(id)arg1;
 @property(copy, nonatomic) TSDInfoGeometry *geometry;
+@property(readonly, nonatomic) unsigned long long itemIndex;
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 @property(readonly, nonatomic) struct CGSize naturalSize;
 @property(nonatomic) double scale;
 - (id)copyWithContext:(id)arg1;

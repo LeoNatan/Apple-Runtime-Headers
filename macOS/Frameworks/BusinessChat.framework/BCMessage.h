@@ -6,39 +6,58 @@
 
 #import "NSObject.h"
 
-#import "BCMessageProtocol.h"
+@class BCImageStore, BCMessageData, BCMessageInfo, NSAttributedString, NSData, NSDictionary, NSImage, NSString, NSURL;
 
-@class NSAttributedString, NSData, NSImage, NSString, NSURL;
-
-@interface BCMessage : NSObject <BCMessageProtocol>
+@interface BCMessage : NSObject
 {
     BOOL _isFromMe;
-    long long _style;
+    NSString *_version;
+    NSString *_requestIdentifier;
+    NSString *_messageGUID;
+    id <BCDictionaryImageSerializable> _rootObject;
+    BCImageStore *_imageStore;
+    BCMessageData *_messageData;
+    BCMessageInfo *_receivedMessage;
+    BCMessageInfo *_replyMessage;
     NSString *_title;
     NSAttributedString *_subtitle;
-    NSData *_data;
-    NSString *_messageGUID;
-    NSImage *_image;
-    NSURL *_url;
     NSString *_summaryText;
     NSString *_subcaption;
     NSString *_accessibilityLabel;
-    long long _type;
+    NSString *_internalRootKey;
 }
 
-@property(readonly, nonatomic) BOOL isFromMe; // @synthesize isFromMe=_isFromMe;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
++ (id)defaultBubbleTitleFor:(id)arg1;
+@property(retain, nonatomic) NSString *internalRootKey; // @synthesize internalRootKey=_internalRootKey;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) NSString *subcaption; // @synthesize subcaption=_subcaption;
 @property(retain, nonatomic) NSString *summaryText; // @synthesize summaryText=_summaryText;
-@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-@property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
-@property(readonly, nonatomic) NSString *messageGUID; // @synthesize messageGUID=_messageGUID;
-@property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSAttributedString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(readonly, nonatomic) long long style; // @synthesize style=_style;
+@property(retain, nonatomic) BCMessageInfo *replyMessage; // @synthesize replyMessage=_replyMessage;
+@property(retain, nonatomic) BCMessageInfo *receivedMessage; // @synthesize receivedMessage=_receivedMessage;
+@property(retain, nonatomic) BCMessageData *messageData; // @synthesize messageData=_messageData;
+@property(retain, nonatomic) BCImageStore *imageStore; // @synthesize imageStore=_imageStore;
+@property(retain, nonatomic) id <BCDictionaryImageSerializable> rootObject; // @synthesize rootObject=_rootObject;
+@property(nonatomic) BOOL isFromMe; // @synthesize isFromMe=_isFromMe;
+@property(retain, nonatomic) NSString *messageGUID; // @synthesize messageGUID=_messageGUID;
+@property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
+@property(retain, nonatomic) NSString *version; // @synthesize version=_version;
 - (void).cxx_destruct;
+- (BOOL)isVersionSupported;
+- (BOOL)isAnyUnknownRootKey;
+@property(readonly, nonatomic) Class rootModelObject;
+@property(readonly, nonatomic) NSString *rootKey;
+- (id)encodedStringForDictionary:(id)arg1;
+@property(readonly, nonatomic) NSImage *image;
+@property(readonly, nonatomic) long long type;
+@property(readonly, nonatomic) long long style;
+@property(readonly, nonatomic) NSData *data;
+@property(readonly, nonatomic) NSURL *url;
+@property(readonly, nonatomic) NSDictionary *dictionaryValue;
+- (void)updateTitles;
+- (id)initFromOriginalMessage:(id)arg1 rootKey:(id)arg2 rootObject:(id)arg3 receivedMessage:(id)arg4 replyMessage:(id)arg5;
+- (id)initWithData:(id)arg1 url:(id)arg2 isFromMe:(BOOL)arg3;
 - (id)initWithData:(id)arg1 url:(id)arg2 messageGUID:(id)arg3 isFromMe:(BOOL)arg4;
 
 @end

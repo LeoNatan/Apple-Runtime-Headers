@@ -171,6 +171,7 @@
 - (id)_eventRemovingTouchIdentities:(id)arg1;
 - (id)_eventCancellingTouchIdentities:(id)arg1;
 - (id)_eventCancellingTouches;
+- (id)_currentEventWithLocationInWindow:(struct CGPoint)arg1 modifiers:(unsigned long long)arg2;
 - (id)_eventRelativeToWindow:(id)arg1;
 - (struct CGSize)_velocity;
 - (struct CGSize)velocity;

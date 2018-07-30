@@ -19,7 +19,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)definitionForHomeButton;
 @property(nonatomic) _Bool representsHomeButton; // @synthesize representsHomeButton=_representsHomeButton;
-@property(readonly, retain, nonatomic, getter=_BSSettings) BSSettings *BSSettings; // @synthesize BSSettings=_settings;
+@property(readonly, nonatomic, getter=_BSSettings) BSSettings *BSSettings; // @synthesize BSSettings=_settings;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateFromDefinition:(id)arg1 withChangeInspectorBlock:(CDUnknownBlockType)arg2;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long maximumPressCount;
 @property(nonatomic) long long maximumTapCount;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 - (id)_initWithBSSettings:(id)arg1;
 

@@ -45,15 +45,16 @@ struct CHCandidateResult {
 };
 
 struct CHNeuralNetwork {
-    char *_field1;
-    unsigned int _field2;
-    unsigned int *_field3;
-    unsigned int _field4;
+    _Bool _field1;
+    char *_field2;
+    unsigned int _field3;
+    unsigned int *_field4;
     unsigned int _field5;
     unsigned int _field6;
     unsigned int _field7;
-    id _field8;
+    unsigned int _field8;
     id _field9;
+    id _field10;
 };
 
 struct CJKChar {
@@ -181,6 +182,18 @@ struct list<PatternGraph *, std::__1::allocator<PatternGraph *>> {
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<PatternGraph *, void *>>> {
         unsigned long _field1;
     } _field2;
+};
+
+struct map<CHRecognitionContentType, PatternGraph *, std::__1::less<CHRecognitionContentType>, std::__1::allocator<std::__1::pair<const CHRecognitionContentType, PatternGraph *>>> {
+    struct __tree<std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, std::__1::__map_value_compare<CHRecognitionContentType, std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, std::__1::less<CHRecognitionContentType>, true>, std::__1::allocator<std::__1::__value_type<CHRecognitionContentType, PatternGraph *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<CHRecognitionContentType, std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, std::__1::less<CHRecognitionContentType>, true>> {
+            unsigned long __value_;
+        } __pair3_;
+    } __tree_;
 };
 
 struct map<std::__1::basic_string<char>, unsigned long, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned long>>> {
@@ -425,6 +438,18 @@ typedef struct list<CGPoint, std::__1::allocator<CGPoint>> {
         unsigned long _field1;
     } _field2;
 } list_c5fac4d1;
+
+typedef struct map<CHRecognitionContentType, PatternGraph *, std::__1::less<CHRecognitionContentType>, std::__1::allocator<std::__1::pair<const CHRecognitionContentType, PatternGraph *>>> {
+    struct __tree<std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, std::__1::__map_value_compare<CHRecognitionContentType, std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, std::__1::less<CHRecognitionContentType>, true>, std::__1::allocator<std::__1::__value_type<CHRecognitionContentType, PatternGraph *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<CHRecognitionContentType, std::__1::__value_type<CHRecognitionContentType, PatternGraph *>, std::__1::less<CHRecognitionContentType>, true>> {
+            unsigned long __value_;
+        } __pair3_;
+    } __tree_;
+} map_f99f8862;
 
 typedef struct map<std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>, std::__1::vector<CHCandidateResult, std::__1::allocator<CHCandidateResult>>, std::__1::less<std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>>, std::__1::allocator<std::__1::pair<const std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>, std::__1::vector<CHCandidateResult, std::__1::allocator<CHCandidateResult>>>>> {
     struct __tree<std::__1::__value_type<std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>, std::__1::vector<CHCandidateResult, std::__1::allocator<CHCandidateResult>>>, std::__1::__map_value_compare<std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>, std::__1::__value_type<std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>, std::__1::vector<CHCandidateResult, std::__1::allocator<CHCandidateResult>>>, std::__1::less<std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long>>, std::__1::vector<CHCandidateResult, std::__1::allocator<CHCandidateResult>>>>> {

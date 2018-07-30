@@ -8,17 +8,19 @@
 
 #import "NSSecureCoding.h"
 
-@class GEOFeatureStyleAttributes, GEOPDAutocompleteEntry, GEOPDBrowseCategory, NSArray, NSData, NSString;
+@class GEOFeatureStyleAttributes, GEOPDAutocompleteEntry, GEOPDBrowseCategory, NSArray, NSData, NSString, NSURL;
 
 @interface GEOSearchCategory : NSObject <NSSecureCoding>
 {
     GEOPDBrowseCategory *_browseCategory;
     GEOPDAutocompleteEntry *_autocompleteEntry;
     NSArray *_subcategories;
+    NSURL *_mapsURL;
 }
 
 + (BOOL)supportsSecureCoding;
 + (void)sendFeedbackForVisibleCategories:(id)arg1;
+@property(readonly, nonatomic) NSURL *mapsURL; // @synthesize mapsURL=_mapsURL;
 @property(readonly, nonatomic) NSArray *subcategories; // @synthesize subcategories=_subcategories;
 @property(readonly, nonatomic, getter=_autocompleteEntry) GEOPDAutocompleteEntry *autocompleteEntry; // @synthesize autocompleteEntry=_autocompleteEntry;
 - (void).cxx_destruct;

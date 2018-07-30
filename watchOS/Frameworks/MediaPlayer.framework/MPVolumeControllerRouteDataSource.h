@@ -15,6 +15,8 @@
     float _pendingVolume;
     _Bool _hasPendingVolume;
     _Bool _hasVolumeInFlight;
+    _Bool _volumeInitialized;
+    _Bool _volumeCapabilitiesInitialized;
     _Bool _volumeControlAvailable;
     _Bool _muted;
     _Bool _volumeWarningEnabled;
@@ -36,20 +38,22 @@
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) __weak id <MPVolumeControllerDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_routeConnectionVolumeDidChangeNotification:(id)arg1;
-- (void)_pickedRouteVolumeControlAvailabilityChanged:(id)arg1;
+- (void)_routeVolumeControlCapabilitiesDidChangeNotification:(id)arg1;
+- (void)_routeVolumeDidChangeNotification:(id)arg1;
+- (void)getVolumeValueWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateVolumeControlCapabilities:(unsigned int)arg1;
+- (void)initializeVolume;
 - (void)adjustVolumeValue:(float)arg1;
-- (void)reloadWarning;
 - (void)reload;
 - (void)_setPendingVolumeIfNeeded;
 @property(readonly, copy, nonatomic) NSString *volumeControlLabel;
 @property(readonly, nonatomic) _Bool applicationShouldOverrideHardwareVolumeBehavior;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithGroupRoute:(id)arg1 outputDeviceRoute:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

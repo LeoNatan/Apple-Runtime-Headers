@@ -10,27 +10,16 @@
 
 @protocol _SFPBAirport <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasName;
 @property(copy, nonatomic) NSString *name;
-@property(readonly, nonatomic) _Bool hasCountry;
 @property(copy, nonatomic) NSString *country;
-@property(readonly, nonatomic) _Bool hasCountryCode;
 @property(copy, nonatomic) NSString *countryCode;
-@property(readonly, nonatomic) _Bool hasPostalCode;
 @property(copy, nonatomic) NSString *postalCode;
-@property(readonly, nonatomic) _Bool hasState;
 @property(copy, nonatomic) NSString *state;
-@property(readonly, nonatomic) _Bool hasDistrict;
 @property(copy, nonatomic) NSString *district;
-@property(readonly, nonatomic) _Bool hasStreet;
 @property(copy, nonatomic) NSString *street;
-@property(readonly, nonatomic) _Bool hasCity;
 @property(copy, nonatomic) NSString *city;
-@property(readonly, nonatomic) _Bool hasLocation;
 @property(retain, nonatomic) _SFPBLatLng *location;
-@property(readonly, nonatomic) _Bool hasTimezone;
 @property(retain, nonatomic) _SFPBTimeZone *timezone;
-@property(readonly, nonatomic) _Bool hasCode;
 @property(copy, nonatomic) NSString *code;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

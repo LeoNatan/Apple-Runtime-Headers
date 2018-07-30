@@ -9,7 +9,12 @@
 @class NSNumber, NSString;
 
 @protocol ASServerInterface <NSObject>
-- (void)remote_consolidateRelationshipEventsForFriendWithUUID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_friendWithRemoteUUID:(NSString *)arg1 completion:(void (^)(NSData *, _Bool, NSError *))arg2;
+- (void)remote_expireChangeTokenWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)remote_completeCompetitionWithFriendWithUUID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_ignoreCompetitionRequestFromFriendWithUUID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_acceptCompetitionRequestFromFriendWithUUID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_sendCompetitionRequestToFriendWithUUID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_fetchAreMultipleDevicesSharingDataForSnapshotIndex:(NSNumber *)arg1 withCompletion:(void (^)(_Bool, _Bool, NSError *))arg2;
 - (void)remote_clearFriendListWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_cloudKitAccountStatusWithCompletion:(void (^)(_Bool, _Bool, NSError *))arg1;

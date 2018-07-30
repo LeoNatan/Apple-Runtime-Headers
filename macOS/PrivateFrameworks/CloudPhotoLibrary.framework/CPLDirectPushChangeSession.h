@@ -8,7 +8,7 @@
 
 #import "CPLPushChangeSessionImplementation.h"
 
-@class CPLEngineLibrary, CPLEnginePushRepository, CPLEngineScheduler, CPLEngineStore, NSString;
+@class CPLEngineLibrary, CPLEnginePushRepository, CPLEngineScheduler, CPLEngineStore, NSMutableSet, NSString;
 
 @interface CPLDirectPushChangeSession : CPLDirectChangeSession <CPLPushChangeSessionImplementation>
 {
@@ -19,6 +19,7 @@
     CPLEngineStore *_store;
     CPLEnginePushRepository *_pushRepository;
     CPLEngineScheduler *_scheduler;
+    NSMutableSet *_scopeIdentifiersInThisSession;
 }
 
 + (id)selfCrashResetReason;

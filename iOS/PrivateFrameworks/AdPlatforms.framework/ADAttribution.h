@@ -13,6 +13,7 @@
 }
 
 + (id)sharedInstance;
+- (void)setStocksAdEnabled:(_Bool)arg1;
 - (void)requestAttributionDetailsWithBlock:(CDUnknownBlockType)arg1;
 
 @end

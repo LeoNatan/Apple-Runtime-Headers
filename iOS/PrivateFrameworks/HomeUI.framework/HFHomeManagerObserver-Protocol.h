@@ -4,24 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "HMHomeManagerDelegate.h"
+#import "HMHomeManagerDelegatePrivate.h"
 
-@class HFHomeKitDispatcher, HMHome, HMHomeManager, NSArray;
+@class HFHomeKitDispatcher, HMHome, HMHomeManager;
 
-@protocol HFHomeManagerObserver <HMHomeManagerDelegate>
+@protocol HFHomeManagerObserver <HMHomeManagerDelegatePrivate>
 
 @optional
-- (void)homeManagerDidEndBatchNotifications:(HMHomeManager *)arg1;
-- (void)homeManagerWillStartBatchNotifications:(HMHomeManager *)arg1;
 - (void)homeManager:(HMHomeManager *)arg1 didUpdateLocationSensingAvailability:(_Bool)arg2;
-- (void)homeManager:(HMHomeManager *)arg1 didUpdateAccessAllowedWhenLocked:(_Bool)arg2;
-- (void)homeManager:(HMHomeManager *)arg1 residentProvisioningStatusChanged:(unsigned long long)arg2;
-- (void)homeManager:(HMHomeManager *)arg1 didUpdateResidentEnabledForThisDevice:(_Bool)arg2;
-- (void)homeManager:(HMHomeManager *)arg1 didUpdateStatus:(unsigned long long)arg2;
-- (void)homeManagerDidUpdateDataSyncState:(HMHomeManager *)arg1;
-- (void)homeManagerDidUpdateApplicationData:(HMHomeManager *)arg1;
-- (void)homeManagerDidUpdateCurrentHome:(HMHomeManager *)arg1;
-- (void)homeManager:(HMHomeManager *)arg1 didUpdateStateForIncomingInvitations:(NSArray *)arg2;
 - (void)homeManagerDidFinishUnknownChange:(HMHomeManager *)arg1;
 - (void)homeManagerDidFinishInitialDatabaseLoad:(HMHomeManager *)arg1;
 - (void)homeKitDispatcher:(HFHomeKitDispatcher *)arg1 manager:(HMHomeManager *)arg2 didChangeHome:(HMHome *)arg3;

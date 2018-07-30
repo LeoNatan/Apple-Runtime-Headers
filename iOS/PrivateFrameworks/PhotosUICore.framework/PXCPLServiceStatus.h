@@ -12,11 +12,11 @@
 
 @interface PXCPLServiceStatus : NSObject <NSCopying>
 {
+    float _pendingProgress;
     long long _state;
     long long _pauseReason;
     unsigned long long _activity;
     long long _action;
-    double _pendingProgress;
     unsigned long long _pendingNumberOfItems;
     NSDate *_syncDate;
     NSDate *_exitDate;
@@ -29,7 +29,7 @@
 @property(retain, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
 @property(retain, nonatomic) NSDate *syncDate; // @synthesize syncDate=_syncDate;
 @property(nonatomic) unsigned long long pendingNumberOfItems; // @synthesize pendingNumberOfItems=_pendingNumberOfItems;
-@property(nonatomic) double pendingProgress; // @synthesize pendingProgress=_pendingProgress;
+@property(nonatomic) float pendingProgress; // @synthesize pendingProgress=_pendingProgress;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(nonatomic) unsigned long long activity; // @synthesize activity=_activity;
 @property(nonatomic) long long pauseReason; // @synthesize pauseReason=_pauseReason;

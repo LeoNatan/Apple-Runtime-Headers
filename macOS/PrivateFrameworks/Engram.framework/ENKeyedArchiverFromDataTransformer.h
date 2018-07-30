@@ -6,6 +6,7 @@
 
 #import "NSValueTransformer.h"
 
+__attribute__((visibility("hidden")))
 @interface ENKeyedArchiverFromDataTransformer : NSValueTransformer
 {
 }

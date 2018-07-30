@@ -29,8 +29,10 @@
     NSButton *mConnectButton;
     NSProgressIndicator *mConnectingProgressSpinner;
     NSTextField *mConnectingText;
+    NSString *_unlocalizedKeyString;
 }
 
+@property NSString *unlocalizedKeyString; // @synthesize unlocalizedKeyString=_unlocalizedKeyString;
 @property NSTextField *mConnectingText; // @synthesize mConnectingText;
 @property NSProgressIndicator *mConnectingProgressSpinner; // @synthesize mConnectingProgressSpinner;
 @property NSButton *mConnectButton; // @synthesize mConnectButton;

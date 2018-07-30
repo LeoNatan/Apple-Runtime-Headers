@@ -11,6 +11,7 @@
 }
 
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (struct CGRect)_visibleBounds;
 - (_Bool)crownInputSequencer:(id)arg1 shouldRubberBandAtBoundary:(int)arg2;
 - (void)crownInputSequencerWillBecomeIdle:(id)arg1 withCrownVelocity:(double)arg2 targetOffset:(inout double *)arg3;
 

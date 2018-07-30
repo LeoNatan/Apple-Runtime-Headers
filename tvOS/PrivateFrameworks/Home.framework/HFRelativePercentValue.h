@@ -25,6 +25,7 @@
 @property(copy, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(copy, nonatomic) NSNumber *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -33,7 +34,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

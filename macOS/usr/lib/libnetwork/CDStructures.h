@@ -12,9 +12,137 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct in6_addr;
+struct activity_bitmap {
+    unsigned long long _field1;
+    unsigned long long _field2[2];
+};
 
-struct in_addr;
+struct ifnet_stats_per_flow {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    unsigned int _field12;
+    unsigned int _field13;
+    unsigned int _field14;
+    unsigned int _field15;
+    unsigned int _field16;
+    unsigned int _field17;
+    unsigned int _field18;
+    unsigned int _field19;
+    unsigned int _field20;
+    unsigned short _field21;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+};
+
+struct in6_addr {
+    union {
+        unsigned char _field1[16];
+        unsigned short _field2[8];
+        unsigned int _field3[4];
+    } _field1;
+};
+
+struct in_addr {
+    unsigned int _field1;
+};
+
+struct necp_all_stats {
+    union {
+        struct necp_tcp_stats _field1;
+        struct necp_udp_stats _field2;
+    } _field1;
+};
+
+struct necp_basic_metadata {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
+struct necp_client_interface_option;
+
+struct necp_client_result_interface {
+    unsigned int generation;
+    unsigned int index;
+};
+
+struct necp_client_result_netagent {
+    unsigned int generation;
+    unsigned char netagent_uuid[16];
+};
+
+struct necp_extra_tcp_metadata {
+    struct necp_tcp_probe_status _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    struct activity_bitmap _field12;
+};
+
+struct necp_stat_counts {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    unsigned int _field12;
+    unsigned int _field13;
+};
+
+struct necp_stats_hdr {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned long long _field3;
+};
+
+struct necp_tcp_probe_status {
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+};
+
+struct necp_tcp_stats {
+    struct necp_stats_hdr _field1;
+    struct necp_stat_counts _field2;
+    struct necp_basic_metadata _field3;
+    struct necp_extra_tcp_metadata _field4;
+};
+
+struct necp_udp_stats {
+    struct necp_stats_hdr _field1;
+    struct necp_stat_counts _field2;
+    struct necp_basic_metadata _field3;
+};
 
 struct netcore_stats_data_usage_snapshot {
     unsigned long long _field1;
@@ -156,6 +284,8 @@ struct nw_connection_report_s {
     int _field42;
     unsigned char _field43;
     unsigned char _field44;
+    unsigned char _field45[16];
+    unsigned char _field46[10][16];
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -178,7 +308,7 @@ struct nw_connection_report_s {
     unsigned int :1;
     unsigned int :1;
     unsigned int :3;
-    unsigned char _field45[7];
+    unsigned char _field47[7];
 };
 
 struct nw_connection_throughput_monitor_s {
@@ -195,13 +325,39 @@ struct nw_connection_timestamp_s {
     unsigned long long _field1;
     unsigned long long _field2;
     struct nw_endpoint_handler_event_s _field3;
-    long long _field4;
+    unsigned long long _field4;
     unsigned char _field5[0];
 };
 
 struct nw_endpoint_handler_event_s {
-    unsigned int _field1;
-    unsigned int _field2;
+    unsigned int domain;
+    unsigned int event;
+};
+
+struct nw_frame;
+
+struct nw_frame_array_s {
+    struct nw_frame *tqh_first;
+    struct nw_frame **tqh_last;
+};
+
+struct nw_interface_details {
+    struct nw_interface_signature ipv4_signature;
+    struct nw_interface_signature ipv6_signature;
+    int is_active;
+    int mtu;
+    unsigned int expensive:1;
+    unsigned int tx_start:1;
+    unsigned int ack_priority:1;
+    unsigned int carrier_aggregation:1;
+    unsigned int __pad_bits:4;
+    unsigned char __pad[3];
+};
+
+struct nw_interface_signature {
+    unsigned char signature[20];
+    unsigned char signature_len;
+    unsigned char __pad[3];
 };
 
 struct nw_listen_protocol {
@@ -214,6 +370,31 @@ struct nw_listen_protocol {
 struct nw_listen_protocol_callbacks {
     CDUnknownFunctionPointerType new_flow;
     CDUnknownFunctionPointerType disconnected;
+};
+
+struct nw_path_necp_result {
+    unsigned int routing_result;
+    union {
+        unsigned int tunnel_interface_index;
+        unsigned int scoped_interface_index;
+        unsigned int flow_divert_control_unit;
+        unsigned int filter_control_unit;
+    } routing_result_parameter;
+    unsigned int filter_control_unit;
+    unsigned int service_action;
+    unsigned char service_uuid[16];
+    struct necp_client_result_netagent *netagents;
+    struct necp_client_interface_option *interface_options;
+    unsigned int service_flags;
+    unsigned int service_data;
+    unsigned int routed_interface_index;
+    unsigned int direct_interface_index;
+    unsigned int direct_interface_generation;
+    unsigned int delegate_interface_index;
+    unsigned int delegate_interface_generation;
+    unsigned int policy_id;
+    unsigned int num_interface_options;
+    unsigned int num_netagents;
 };
 
 struct nw_protocol {
@@ -258,7 +439,7 @@ struct nw_protocol_callbacks {
     CDUnknownFunctionPointerType copy_info;
     CDUnknownFunctionPointerType add_listen_handler;
     CDUnknownFunctionPointerType remove_listen_handler;
-    CDUnknownFunctionPointerType supports_message_frames;
+    CDUnknownFunctionPointerType get_message_properties;
     CDUnknownFunctionPointerType reset;
     CDUnknownFunctionPointerType input_flush;
 };
@@ -271,6 +452,37 @@ struct nw_protocol_identifier {
 
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
+};
+
+struct sockaddr {
+    unsigned char _field1;
+    unsigned char _field2;
+    char _field3[14];
+};
+
+struct sockaddr_in {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned short _field3;
+    struct in_addr _field4;
+    char _field5[8];
+};
+
+struct sockaddr_in6 {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned short _field3;
+    unsigned int _field4;
+    struct in6_addr _field5;
+    unsigned int _field6;
+};
+
+struct sockaddr_storage {
+    unsigned char ss_len;
+    unsigned char ss_family;
+    char __ss_pad1[6];
+    long long __ss_align;
+    char __ss_pad2[112];
 };
 
 struct tcp_conn_status {
@@ -406,5 +618,13 @@ struct tcp_info {
     unsigned int _field53;
     unsigned int _field54;
     unsigned long long _field55;
+};
+
+#pragma mark Named Unions
+
+union sockaddr_in_4_6 {
+    struct sockaddr _field1;
+    struct sockaddr_in _field2;
+    struct sockaddr_in6 _field3;
 };
 

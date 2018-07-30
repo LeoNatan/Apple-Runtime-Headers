@@ -11,6 +11,7 @@
 
 @class LACachedExternalizedContext, NSData, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface LAClient : NSObject <LAContextXPC, LAContextCallbackXPC>
 {
     id <LAContextXPC> _remoteContext;
@@ -29,6 +30,7 @@
 + (id)_queue;
 @property(nonatomic) __weak id <LAUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 - (void).cxx_destruct;
+- (void)setShowingCoachingHint:(_Bool)arg1 event:(long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)notifyEvent:(long long)arg1 options:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)prearmTouchIdWithReply:(CDUnknownBlockType)arg1;

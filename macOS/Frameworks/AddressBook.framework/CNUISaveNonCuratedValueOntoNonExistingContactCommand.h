@@ -8,7 +8,6 @@
 
 @class CNUIAggregateUndoableCommand;
 
-__attribute__((visibility("hidden")))
 @interface CNUISaveNonCuratedValueOntoNonExistingContactCommand : CNUIUndoableCommand
 {
     CNUIAggregateUndoableCommand *_aggregateCommand;

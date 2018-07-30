@@ -8,7 +8,6 @@
 
 @class ABCardViewPersonMapper, CNContact;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewMultiValueConverterBuilder : NSObject
 {
     BOOL _shouldShowPrivateMeFields;

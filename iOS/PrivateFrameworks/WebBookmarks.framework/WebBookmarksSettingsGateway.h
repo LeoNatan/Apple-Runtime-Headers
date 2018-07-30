@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)schedulePasswordIconsCleanup;
 - (void)scheduleHSTSSuperCookieCleanup;
 - (void)scheduleBookmarksDatabaseMigrationTask;
 - (void)scheduleBookmarksDatabaseMaintenance;

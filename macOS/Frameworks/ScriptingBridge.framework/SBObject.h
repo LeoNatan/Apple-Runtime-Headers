@@ -17,12 +17,20 @@
     id _reserved;
 }
 
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)valueForKey:(id)arg1;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (BOOL)_shouldUseForwarding;
 - (BOOL)isRangeSpecifier;
 - (id)qualifiedSpecifier;
 - (id)qualify:(id)arg1;
 - (id)description;
 - (id)specifierDescription;
 - (id)descriptionForSpecifier:(id)arg1;
+- (BOOL)isMemberOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)properties;
 - (void)setTo:(id)arg1;
@@ -43,6 +51,7 @@
 - (id)childWithClass:(Class)arg1 code:(unsigned int)arg2 keyForm:(unsigned int)arg3 keyDesc:(const struct AEDesc *)arg4;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)wanttype;
 - (void)setLastError:(id)arg1;
 - (id)lastError;
 - (const struct AEDesc *)specifier;

@@ -33,7 +33,7 @@
 - (id)currentVehicleInfo:(id)arg1;
 - (void)destinationSharingStatus:(BOOL)arg1 forDestinationUUID:(id)arg2 supportedParams:(id)arg3 forUUID:(id)arg4;
 - (void)stopDestinationSharingForUUID:(id)arg1;
-- (void)startDestinationSharingForUUID:(id)arg1;
+- (void)startDestinationSharingForUUID:(id)arg1 options:(unsigned long long)arg2;
 - (void)sendOutgoingExternalAccessoryData:(id)arg1 forEASessionIdentifier:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)closeExternalAccessorySession:(id)arg1;
 - (void)openSocketForAppToAccessory:(id)arg1;

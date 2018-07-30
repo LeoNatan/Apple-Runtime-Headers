@@ -22,6 +22,7 @@
 - (void)_handleCustomMonogramChangedNotification;
 - (void)_updateAllSnapshots;
 - (void)faceSnapshotChangedForKey:(id)arg1;
+- (void)snapshotLibrarySelectedFaceForDeviceUUID:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)snapshotFace:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)performAfterCompletingCurrentlyPendingSnapshots:(CDUnknownBlockType)arg1;
 - (void)requestSnapshotOfFace:(id)arg1;

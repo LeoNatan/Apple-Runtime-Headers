@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *_agentConnections;
     NSObject<OS_dispatch_queue> *_agentQueue;
     BOOL _testMode;
-    // Error parsing type: ^(?={_CFPrefsShmemEntry=AiAI}AQ), name: _shmem
+    // Error parsing type: ^AI, name: _shmem
 }
 
 - (id)listener;
@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 - (id)copyResumedAgentToDaemonXPCConnection;
 - (void)getShmemName:(char *)arg1 bufLen:(unsigned long long)arg2;
 - (unsigned int)userID;
--     // Error parsing type: ^(?={_CFPrefsShmemEntry=AiAI}AQ)16@0:8, name: shmem
-- (void)_initializeShmemPage:(union **)arg1;
+-     // Error parsing type: ^AI16@0:8, name: shmem
+-     // Error parsing type: v24@0:8^^AI16, name: _initializeShmemPage:
 - (BOOL)isInTestMode;
 - (int)role;
 - (id)initWithRole:(int)arg1 testMode:(BOOL)arg2;

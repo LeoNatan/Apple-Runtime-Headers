@@ -12,13 +12,11 @@
 #import "HMFLogging.h"
 #import "HMFMessageTransportDelegate.h"
 
-@class HMDAccountRegistry, HMDRemoteDeviceMonitor, HMDRemoteIdentityRegistry, HMDRemoteMessageNotifications, NSArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class HMDRemoteDeviceMonitor, HMDRemoteMessageNotifications, NSArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HMDSecureRemoteMessageTransport : HMFMessageTransport <HMDRemoteDeviceMonitorDelegate, HMDSecureRemoteSessionDelegate, HMFLogging, HMFMessageTransportDelegate, HMFDumpState>
 {
     NSArray *_transports;
-    HMDRemoteIdentityRegistry *_identityRegistry;
-    HMDAccountRegistry *_accountRegistry;
     HMDRemoteDeviceMonitor *_deviceMonitor;
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
@@ -29,15 +27,14 @@
 
 + (id)logCategory;
 + (id)shortDescription;
++ (id)defaultTransport;
 @property(retain, nonatomic) NSMutableDictionary *currentHomeConfigurations; // @synthesize currentHomeConfigurations=_currentHomeConfigurations;
 @property(retain, nonatomic) HMDRemoteMessageNotifications *sessionNotifications; // @synthesize sessionNotifications=_sessionNotifications;
 @property(readonly, nonatomic) NSMutableSet *secureRemoteSessions; // @synthesize secureRemoteSessions=_secureRemoteSessions;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(readonly, nonatomic) HMDRemoteDeviceMonitor *deviceMonitor; // @synthesize deviceMonitor=_deviceMonitor;
-@property(readonly, nonatomic) HMDAccountRegistry *accountRegistry; // @synthesize accountRegistry=_accountRegistry;
-@property(readonly, nonatomic) HMDRemoteIdentityRegistry *identityRegistry; // @synthesize identityRegistry=_identityRegistry;
-@property(readonly, copy, nonatomic) NSArray *transports; // @synthesize transports=_transports;
+@property(readonly) HMDRemoteDeviceMonitor *deviceMonitor; // @synthesize deviceMonitor=_deviceMonitor;
+@property(readonly, copy) NSArray *transports; // @synthesize transports=_transports;
 - (void).cxx_destruct;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
 - (id)dumpState;
@@ -66,6 +63,7 @@
 - (_Bool)_handleReceivedMessage:(id)arg1 transport:(id)arg2;
 - (id)_preferredTransportForMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)accountRegistry;
 - (void)reset;
 - (void)start;
 @property(readonly, copy) NSString *description;
@@ -73,7 +71,7 @@
 - (id)descriptionWithPointer:(_Bool)arg1;
 - (id)shortDescription;
 - (void)dealloc;
-- (id)initWithTransports:(id)arg1 identityRegistry:(id)arg2 accountRegistry:(id)arg3;
+- (id)initWithTransports:(id)arg1;
 
 // Remaining properties
 @property(readonly) unsigned long long hash;

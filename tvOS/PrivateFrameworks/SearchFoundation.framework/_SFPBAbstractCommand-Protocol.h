@@ -10,9 +10,7 @@
 
 @protocol _SFPBAbstractCommand <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasValue;
 @property(retain, nonatomic) _SFPBCommandValue *value;
-@property(readonly, nonatomic) _Bool hasType;
 @property(nonatomic) int type;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -22,7 +22,7 @@
 - (void)_requestArchiveToDisk;
 - (void)_validateRegisteredApplications;
 - (_Bool)applicationIsRegisteredWithBundleIdentifier:(id)arg1;
-- (_Bool)registerApplicationWithBundeIdentifier:(id)arg1;
+- (_Bool)registerApplicationWithBundleIdentifier:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)dealloc;
 - (id)initWithArchiveFileURL:(id)arg1;

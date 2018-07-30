@@ -35,6 +35,7 @@
 - (void)_updateLayerPromiseIfNeeded;
 - (void)_updateLayerPromiseWithChanges:(CDUnknownBlockType)arg1;
 - (void)_invalidateLayerPromise;
+- (BOOL)mouseDownCanMoveWindow;
 - (void)layout;
 - (void)forceTextRendering;
 - (void)_configureLayerPromise:(id)arg1;

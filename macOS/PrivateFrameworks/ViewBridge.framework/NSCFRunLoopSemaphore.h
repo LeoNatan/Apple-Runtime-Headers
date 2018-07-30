@@ -17,6 +17,7 @@
     unsigned int _waited:1;
     unsigned int _signaled:1;
     unsigned int _stopped:1;
+    struct os_unfair_lock_s _retainReleaseLock;
     void *reserved;
 }
 
@@ -32,8 +33,12 @@
 - (BOOL)wait:(double)arg1;
 - (void)signal;
 - (void)_log:(id)arg1;
-- (void)deallocOnAppKitThread;
 - (void)dealloc;
+- (oneway void)release;
+- (void)__vbSuperRelease;
+- (id)retain;
+- (void)__vbWithLockPerform:(CDUnknownBlockType)arg1;
+- (struct os_unfair_lock_s *)retainReleaseLock;
 - (id)initWithMode:(struct __CFString *)arg1;
 - (id)init;
 

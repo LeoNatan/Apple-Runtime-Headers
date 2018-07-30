@@ -6,7 +6,6 @@
 
 #import "UIGestureRecognizer.h"
 
-__attribute__((visibility("hidden")))
 @interface _MKShoulderPressGestureRecognizer : UIGestureRecognizer
 {
     long long _shoulderPressType;

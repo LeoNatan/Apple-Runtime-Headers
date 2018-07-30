@@ -4,47 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <NanoRegistry/NRRegistryClient.h>
 
-#import "NRFrameworkDeviceDelegate.h"
-#import "NRMutableStateParentDelegate.h"
 #import "NRPairedDeviceRegistryXPCFrameworkDelegate.h"
-#import "NSXPCConnectionDelegate.h"
 
-@class NRMutableDeviceCollection, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
-@interface NRPairedDeviceRegistry : NSObject <NSXPCConnectionDelegate, NRFrameworkDeviceDelegate, NRMutableStateParentDelegate, NRPairedDeviceRegistryXPCFrameworkDelegate>
+@interface NRPairedDeviceRegistry : NRRegistryClient <NRPairedDeviceRegistryXPCFrameworkDelegate>
 {
-    _Bool _xpcConnectionInvalidated;
-    _Bool _hasSomeEntitlements;
-    _Bool _hasSecurePropertyEntitlement;
-    _Bool _isDeviceCollectionDiffRequested;
-    _Bool _areSecurePropertiesRequested;
-    _Bool _initialLastCompatibilityStateHasBeenSent;
-    _Bool _initialStatusHasBeenSent;
-    _Bool _isInitialized;
-    _Bool _secureDataIsAvailable;
-    _Bool _needToFetchSecureProperties;
-    unsigned short _lastCompatibilityStateSent;
-    NSXPCConnection *_xpcConnection;
-    NSMutableDictionary *_mutableDeviceDictionary;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    NSMutableArray *_finishedPairingSemaphores;
-    int _pairingCompatibilityVersion;
-    int _maxPairingCompatibilityVersion;
-    int _minPairingCompatibilityVersion;
-    int _devicesUpdateCounterNotifyToken;
-    int _securePropertiesUnlockedNotifyToken;
-    int _demoModeNotifyToken;
-    int _idleNotifyToken;
-    NRMutableDeviceCollection *_deviceCollection;
-    NSMutableArray *_deviceCollectionUpdateBlocks;
-    NSMutableArray *_securePropertiesUpdateBlocks;
-    NSMutableArray *_waitForDeviceCollectionBlocks;
-    unsigned int _lastStatusSent;
-    NSObject<OS_dispatch_queue> *_pairingOrSwitchCompleteQueue;
-    unsigned long long _devicesUpdateCounter;
+    _Bool _disconnected;
+    unsigned short _lastCompatibilityState;
+    NSMutableDictionary *_legacyDevices;
+    NSObject<OS_dispatch_queue> *_legacyDevicesQueue;
+    NSObject<OS_dispatch_queue> *_legacyDevicesQueueFirst;
+    unsigned int _lastStatus;
+    NSMutableArray *_waitingToPairBlocks;
 }
 
 + (CDUnknownBlockType)activePairedDeviceSelectorBlock;
@@ -52,51 +26,31 @@
 + (CDUnknownBlockType)activeDeviceSelectorBlock;
 + (id)sharedInstance;
 + (_Bool)shouldBoostProcess;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *pairingOrSwitchCompleteQueue; // @synthesize pairingOrSwitchCompleteQueue=_pairingOrSwitchCompleteQueue;
-@property(nonatomic) _Bool needToFetchSecureProperties; // @synthesize needToFetchSecureProperties=_needToFetchSecureProperties;
-@property(nonatomic) _Bool secureDataIsAvailable; // @synthesize secureDataIsAvailable=_secureDataIsAvailable;
-@property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
-@property(nonatomic) _Bool initialStatusHasBeenSent; // @synthesize initialStatusHasBeenSent=_initialStatusHasBeenSent;
-@property(nonatomic) _Bool initialLastCompatibilityStateHasBeenSent; // @synthesize initialLastCompatibilityStateHasBeenSent=_initialLastCompatibilityStateHasBeenSent;
-@property(nonatomic) unsigned short lastCompatibilityStateSent; // @synthesize lastCompatibilityStateSent=_lastCompatibilityStateSent;
-@property(nonatomic) unsigned int lastStatusSent; // @synthesize lastStatusSent=_lastStatusSent;
-@property(nonatomic) _Bool areSecurePropertiesRequested; // @synthesize areSecurePropertiesRequested=_areSecurePropertiesRequested;
-@property(nonatomic) _Bool isDeviceCollectionDiffRequested; // @synthesize isDeviceCollectionDiffRequested=_isDeviceCollectionDiffRequested;
-@property(retain, nonatomic) NSMutableArray *waitForDeviceCollectionBlocks; // @synthesize waitForDeviceCollectionBlocks=_waitForDeviceCollectionBlocks;
-@property(retain, nonatomic) NSMutableArray *securePropertiesUpdateBlocks; // @synthesize securePropertiesUpdateBlocks=_securePropertiesUpdateBlocks;
-@property(retain, nonatomic) NSMutableArray *deviceCollectionUpdateBlocks; // @synthesize deviceCollectionUpdateBlocks=_deviceCollectionUpdateBlocks;
-@property(retain, nonatomic) NRMutableDeviceCollection *deviceCollection; // @synthesize deviceCollection=_deviceCollection;
-@property(nonatomic) _Bool hasSecurePropertyEntitlement; // @synthesize hasSecurePropertyEntitlement=_hasSecurePropertyEntitlement;
-@property(nonatomic) unsigned long long devicesUpdateCounter; // @synthesize devicesUpdateCounter=_devicesUpdateCounter;
-@property(nonatomic) int idleNotifyToken; // @synthesize idleNotifyToken=_idleNotifyToken;
-@property(nonatomic) int demoModeNotifyToken; // @synthesize demoModeNotifyToken=_demoModeNotifyToken;
-@property(nonatomic) int securePropertiesUnlockedNotifyToken; // @synthesize securePropertiesUnlockedNotifyToken=_securePropertiesUnlockedNotifyToken;
-@property(nonatomic) int devicesUpdateCounterNotifyToken; // @synthesize devicesUpdateCounterNotifyToken=_devicesUpdateCounterNotifyToken;
-@property(nonatomic) int minPairingCompatibilityVersion; // @synthesize minPairingCompatibilityVersion=_minPairingCompatibilityVersion;
-@property(nonatomic) int maxPairingCompatibilityVersion; // @synthesize maxPairingCompatibilityVersion=_maxPairingCompatibilityVersion;
-@property(nonatomic) int pairingCompatibilityVersion; // @synthesize pairingCompatibilityVersion=_pairingCompatibilityVersion;
-@property(nonatomic) _Bool hasSomeEntitlements; // @synthesize hasSomeEntitlements=_hasSomeEntitlements;
-@property(retain, nonatomic) NSMutableArray *finishedPairingSemaphores; // @synthesize finishedPairingSemaphores=_finishedPairingSemaphores;
-@property(nonatomic) _Bool xpcConnectionInvalidated; // @synthesize xpcConnectionInvalidated=_xpcConnectionInvalidated;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(retain, nonatomic) NSMutableDictionary *mutableDeviceDictionary; // @synthesize mutableDeviceDictionary=_mutableDeviceDictionary;
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
++ (Class)proxyClass;
+@property(retain, nonatomic) NSMutableArray *waitingToPairBlocks; // @synthesize waitingToPairBlocks=_waitingToPairBlocks;
+@property(nonatomic) unsigned short lastCompatibilityState; // @synthesize lastCompatibilityState=_lastCompatibilityState;
+@property(nonatomic) unsigned int lastStatus; // @synthesize lastStatus=_lastStatus;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *legacyDevicesQueueFirst; // @synthesize legacyDevicesQueueFirst=_legacyDevicesQueueFirst;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *legacyDevicesQueue; // @synthesize legacyDevicesQueue=_legacyDevicesQueue;
+@property(retain, nonatomic) NSMutableDictionary *legacyDevices; // @synthesize legacyDevices=_legacyDevices;
 - (void).cxx_destruct;
+- (void)clearRecoveryFlagWithCompletion:(CDUnknownBlockType)arg1;
+- (void)checkIfFlaggedForRecoveryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)keepPhoneUnlockedInternalTestSPI:(CDUnknownBlockType)arg1;
+- (id)devicesFromMigrationConsentRequestData:(id)arg1;
+- (id)migrationConsentRequestData;
+- (id)lastMigrationRequestPhoneName;
+- (void)beginMigrationWithDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)beginMigrationWithDevice:(id)arg1 passcode:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)setMigrationConsented:(_Bool)arg1 forDevice:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (void)setMigrationConsented:(_Bool)arg1 forDeviceID:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (void)waitForWatchPairingExtendedMetadataForAdvertisedName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)stopWatchSetupPush;
 - (_Bool)isWatchSetupPushActive;
 - (void)startWatchSetupPush;
-- (void)applyDiff:(id)arg1;
 - (void)_pingActiveGizmoWithPriority:(int)arg1 withMessageSize:(unsigned int)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)putMigrationChallengeCharacteristicWriteData:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getMigrationPairingCharacteristicReadDataWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)serverRequestReporterWithType:(id)arg1;
-- (void)_submitServerRequestReportWithRequestType:(id)arg1 duration:(double)arg2 errorCode:(unsigned long)arg3;
-- (id)_synchronousPrivateDaemonProxyWithErrorString:(id)arg1;
-- (id)_privateDaemonProxyWithErrorString:(id)arg1;
-- (id)_privateDaemonConnection;
 - (void)_getActiveDeviceAssertionsWithInlineBlock:(CDUnknownBlockType)arg1;
 - (void)getSwitchEventsFromIndex:(unsigned long)arg1 inlineCallback:(CDUnknownBlockType)arg2;
 - (void)_getSwitchEventsFromIndex:(unsigned long)arg1 toIndex:(unsigned long)arg2 inlineCallback:(CDUnknownBlockType)arg3;
@@ -110,42 +64,21 @@
 - (id)deviceForBluetoothID:(id)arg1;
 - (id)deviceForBTDeviceID:(id)arg1;
 - (id)deviceForPairingID:(id)arg1;
-- (id)_getSecureProperties:(id)arg1;
-- (id)_getLocalDeviceCollection;
 - (void)_submitAlbertPairingReport;
+- (void)_submitServerRequestReportWithRequestType:(id)arg1 duration:(double)arg2 errorCode:(unsigned long)arg3;
+- (id)serverRequestReporterWithType:(id)arg1;
 - (void)sendDevicesUpdatedNotification;
 - (void)xpcHasNewOOBKey:(id)arg1;
 - (void)xpcDeviceID:(id)arg1 needsPasscode:(id)arg2;
-- (void)_xpcInterruptionHandler;
-- (void)_xpcInvalidationHandler;
-- (id)_findActivePairedDevice;
 - (_Bool)supportsPairedDevice;
-- (_Bool)_supportsWatch;
-- (id)_xpcInitializeConnection;
-- (void)_qsRecoveryMigrationWithPairedBTDeviceID:(id)arg1;
-- (void)_addRemoveRecoveryStepIDSFinalizeQS:(_Bool)arg1 withPairedBTDeviceID:(id)arg2;
-- (void)_addRemoveRecoveryStepIDSFinalize:(_Bool)arg1;
-- (void)_addRemoveRecoveryStepObliterate:(_Bool)arg1 withStatePath:(id)arg2;
-- (void)_addRemoveRecoveryStepResetNVRAM:(_Bool)arg1;
-- (void)_addRemoveRecoveryStepICloudDeletePaymentCards:(_Bool)arg1;
-- (void)_addRemoveRecoveryStepStockholmReset:(_Bool)arg1;
-- (void)_addRemoveRecoveryStepIDSUnpair:(_Bool)arg1 withPairingDeviceID:(id)arg2;
-- (void)_addRemoveRecoveryStepUnpairBluetooth:(_Bool)arg1 withPairingDeviceID:(id)arg2;
-- (void)_addRemoveRecoveryStepDeletePairingStore:(_Bool)arg1 withPairingDeviceID:(id)arg2;
-- (void)_addRemoveRecoveryStepRemoteUnpair:(_Bool)arg1 withAdvertisedName:(id)arg2 andPairedDeviceID:(id)arg3;
-- (void)_addRemoveRecoveryStepIDSUnpairStartQS:(_Bool)arg1 withPairedBTDeviceID:(id)arg2;
-- (void)_addRemoveRecoveryStepIDSUnpairStart:(_Bool)arg1;
-- (void)_addRemoveRecoveryStepDeleteAccounts:(_Bool)arg1;
-- (void)_addRemoveRecoveryStepBackup:(_Bool)arg1 withPairingDeviceID:(id)arg2;
-- (void)_addRemoveRecoveryStepDisableDaemons:(_Bool)arg1;
-- (void)_setObliterationEnabled:(_Bool)arg1;
-- (void)_triggerRecovery;
-- (id)_recoveryDescription;
 - (void)overrideSignalStrengthLimit:(int)arg1;
 - (void)endDiscovery;
 - (void)beginDiscovery;
 - (void)retriggerUnpairInfoDialog;
 - (int)minQuickSwitchCompatibilityVersion;
+- (int)minPairingCompatibilityVersion;
+- (int)maxPairingCompatibilityVersion;
+- (int)pairingCompatibilityVersion;
 - (void)userIsCheckingForUpdate;
 - (id)blockAndQueryVersions;
 - (_Bool)isPaired;
@@ -155,12 +88,12 @@
 - (void)suspendPairingClientCrashMonitoring;
 - (void)abortPairingWithReason:(id)arg1;
 - (void)abortPairing;
+- (void)_fireWaitingToPairBlocks;
 - (id)waitForActivePairedDevice;
 - (void)waitForPairingStorePathPairingID:(CDUnknownBlockType)arg1;
 - (void)pairingStorePathPairingID:(CDUnknownBlockType)arg1;
-- (void)_pairingStorePathPairingID:(CDUnknownBlockType)arg1;
-- (unsigned short)compatibilityState;
 - (void)enterCompatibilityState:(unsigned short)arg1 forDevice:(id)arg2;
+- (void)fakePairedSyncIsCompleteWithCompletion:(CDUnknownBlockType)arg1;
 - (void)switchToSimulator:(id)arg1 withQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)unpairWithSimulator:(id)arg1 withQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)pairWithSimulator:(id)arg1 withQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
@@ -173,46 +106,32 @@
 - (void)gizmoOOBAdvertiseAndPairWithName:(id)arg1 operationHasBegun:(CDUnknownBlockType)arg2;
 - (void)companionPasscodePairWithDevice:(id)arg1 withOptions:(id)arg2 operationHasBegun:(CDUnknownBlockType)arg3;
 - (void)companionOOBDiscoverAndPairWithName:(id)arg1 withOutOfBandPairingKey:(id)arg2 withOptions:(id)arg3 operationHasBegun:(CDUnknownBlockType)arg4;
+- (id)getAllDevicesWithArchivedDevicesMatching:(CDUnknownBlockType)arg1;
 - (id)getDevicesMatching:(CDUnknownBlockType)arg1;
+- (id)getAllDevicesWithArchivedDevices;
 - (id)getAllDevices;
 - (id)getActivePairedDevice;
 - (id)getPairedDevices;
 - (id)getDevices;
+- (_Bool)isKeychainEnabled;
 - (void)getDevicesWithBlock:(CDUnknownBlockType)arg1;
-- (void)dealloc;
-- (unsigned long long)readNotifyToken:(int)arg1;
+- (void)_fireChangeNotificationsForDiff:(id)arg1 collection:(id)arg2 secureProperties:(id)arg3 index:(unsigned long long)arg4 notify:(_Bool)arg5;
+- (void)_postNotification:(id)arg1 forDeviceID:(id)arg2 withUserInfo:(id)arg3;
+- (void)_fireCompatibilityStateStatusNotificationsWithCollection:(id)arg1;
+- (unsigned short)compatibilityState;
+- (unsigned short)_getCompatibilityStateWithCollection:(id)arg1;
+- (void)_fireCompatibilityStateChangedNotificationWithCollection:(id)arg1;
 @property(readonly, nonatomic) unsigned int status;
-- (void)blockUntilDeviceCollectionIsInitialized;
-- (void)updateSecurePropertiesWithQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)updateDeviceCollectionWithQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)requestSecureProperties;
-- (void)fireAllDeviceCollectionBlocksWithStatus:(_Bool)arg1;
-- (void)fireDeviceCollectionBlocksUpUntilIndex:(unsigned long long)arg1;
-- (void)fireAllInitialDeviceCollectionBlocksWith:(_Bool)arg1;
-- (void)requestDeviceCollectionDiffWithForce:(_Bool)arg1;
-- (void)initializeWithShouldMakeEmptyDeviceCollection:(_Bool)arg1;
-- (void)setupDeviceCollectionObserver;
-- (void)child:(id)arg1 didApplyDiff:(id)arg2;
-- (void)transitionToCompatibilityState:(int)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (void)sendCompatibilityStateChangeNotification;
-- (void)sendStatusChangeNotification;
-- (void)checkStatusAndCompatibilityState;
-- (void)parseDiffForNRDeviceUpdatesAndPairUnpair:(id)arg1 hasSecurePropertyEntitlement:(_Bool)arg2 shouldBeQuiet:(_Bool)arg3;
-- (void)resumePairingOrSwitchCompleteQueue;
-- (id)createDevicesFromMutableDevices:(id)arg1 andPropertyStore:(id)arg2;
-- (void)createDevicesFromMutableDevicesAndPropertyStore:(id)arg1;
+- (unsigned int)_getStatusWithCollection:(id)arg1;
+- (void)_fireStatusChangedNotificationWithCollection:(id)arg1;
+- (id)_legacyDevicesWithCollection:(id)arg1 secureProperties:(id)arg2;
 - (id)_getClientInfo;
+- (id)_getSecureProperties:(id)arg1;
 - (id)_getChangeHistory;
-- (id)retrieveSecurePropertiesWithIDs:(id)arg1;
-- (void)postNotification:(id)arg1 forDeviceID:(id)arg2 withUserInfo:(id)arg3;
-- (id)queue;
-- (void)initNotifyTokens;
-- (_Bool)isDaemonIdle;
-- (int)registerNotifyTokenWithName:(id)arg1 withQueue:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (int)registerNotifyTokenWithName:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)initWithBoost:(_Bool)arg1 disconnected:(_Bool)arg2;
+- (_Bool)supportsWatch;
 - (id)initWithBoost:(_Bool)arg1;
 - (id)init;
-- (void)syncDevicesWithDevice:(id)arg1;
 - (void)_invalidateActiveDeviceAssertionWithIdentifier:(id)arg1;
 - (void)setActivePairedDevice:(id)arg1 withActiveDeviceAssertionHandler:(CDUnknownBlockType)arg2;
 - (void)setActivePairedDevice:(id)arg1 isMagicSwitch:(_Bool)arg2 operationHasCompleted:(CDUnknownBlockType)arg3;
@@ -220,13 +139,8 @@
 - (_Bool)pairedDeviceSupportQuickSwitch;
 - (_Bool)pairedDeviceCountIsLessThanMaxPairedDevices;
 - (int)maxPairedDeviceCount;
-- (_Bool)isKeychainEnabled;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (void)threadIsBlockedWaitingOn_nanoregistryd_syncGrabLegacyRegistryWithBlock:(CDUnknownBlockType)arg1;
+- (id)_getLocalDeviceCollection;
 
 @end
 

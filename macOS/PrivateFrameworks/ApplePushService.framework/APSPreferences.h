@@ -8,6 +8,7 @@
 
 @class NSArray, NSData, NSDictionary, NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface APSPreferences : NSObject
 {
 }
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSDictionary *allTokenTopics;
 @property(readonly, nonatomic) NSString *albertName;
 @property(retain, nonatomic) NSArray *activationRecordListeners;
-@property(retain, nonatomic) NSDictionary *acknowledgedTokenHashes;
 
 @end
 

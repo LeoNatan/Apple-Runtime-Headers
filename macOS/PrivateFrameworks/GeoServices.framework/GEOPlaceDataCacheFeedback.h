@@ -10,6 +10,7 @@
 
 @class GEOPDPlaceRequest, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOPlaceDataCacheFeedback : PBCodable <NSCopying>
 {
     NSString *_bundleIdentifier;

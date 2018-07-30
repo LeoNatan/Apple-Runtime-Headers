@@ -8,7 +8,7 @@
 
 #import "MKMultiLineLabelContainer.h"
 
-@class MKImageView, NSDate, NSImage, NSLayoutConstraint, NSString, NSView, _MKUILabel;
+@class MKImageView, NSBox, NSDate, NSImage, NSLayoutConstraint, NSString, _MKUILabel;
 
 @interface MKTransitIncidentSummaryCell : MKTableViewCell <MKMultiLineLabelContainer>
 {
@@ -16,7 +16,7 @@
     _MKUILabel *_summaryLabel;
     _MKUILabel *_startedLabel;
     MKImageView *_iconImageView;
-    NSView *_separator;
+    NSBox *_separator;
     NSLayoutConstraint *_separatorHeightConstraint;
     NSDate *_startDate;
 }

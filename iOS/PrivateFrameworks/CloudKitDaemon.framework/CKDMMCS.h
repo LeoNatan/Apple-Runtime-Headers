@@ -58,10 +58,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)registeredItemCount:(unsigned long long *)arg1 error:(id *)arg2;
 - (_Bool)_getRegisteredItemsGreaterThan:(unsigned long long)arg1 itemIds:(unsigned long long *)arg2 itemCount:(unsigned long long *)arg3 error:(id *)arg4;
 - (id)CKStatusReportArray;
+- (id)putChunkKeysItemGroupSet:(id)arg1 operation:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)putItemGroupSet:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_contextToPutItemGroup:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)getItemGroupSet:(id)arg1 operation:(id)arg2 shouldFetchAssetContentInMemory:(_Bool)arg3 options:(id)arg4 progress:(CDUnknownBlockType)arg5 command:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (id)_contextToGetItemGroup:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(CDUnknownBlockType)arg4 command:(CDUnknownBlockType)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (id)getChunkKeysItemGroupSet:(id)arg1 operation:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_contextToGetOrPutChunkKeysItemGroup:(id)arg1 operation:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)registerItemGroupSet:(id)arg1 operation:(id)arg2 options:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_contextToRegisterItemGroup:(id)arg1 operation:(id)arg2 options:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_logMMCSOptions:(id)arg1;

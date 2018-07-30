@@ -9,12 +9,10 @@
 #import "NSStreamDelegate.h"
 #import "NSURLSessionDelegate.h"
 
-@class NSCondition, NSError, NSInputStream, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOutputStream, NSString, NSURLSession, NSURLSessionStreamTask;
+@class NSCondition, NSError, NSInputStream, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
 
 @interface MFStream : NSObject <NSStreamDelegate, NSURLSessionDelegate>
 {
-    NSURLSession *_session;
-    NSURLSessionStreamTask *_streamTask;
     NSInputStream *_rStream;
     NSOutputStream *_wStream;
     NSMutableDictionary *_properties;
@@ -42,7 +40,6 @@
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (void)_closeAndReleaseStream:(id)arg1 logMessage:(id)arg2;
-- (void)URLSession:(id)arg1 streamTask:(id)arg2 didBecomeInputStream:(id)arg3 outputStream:(id)arg4;
 - (void)_createPairWithSocketToHostName:(id)arg1 port:(int)arg2;
 - (void)openToHostName:(id)arg1 port:(int)arg2;
 - (_Bool)setProperty:(id)arg1 forKey:(id)arg2;

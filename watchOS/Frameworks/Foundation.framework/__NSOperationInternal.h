@@ -35,16 +35,19 @@ __attribute__((visibility("hidden")))
     } __wait_cond;
     char *__nameBuffer;
     id __activity;
+    CDUnknownBlockType __schedule;
     // Error parsing type: AC, name: __isExecutingObserverCount
     // Error parsing type: AC, name: __isFinishedObserverCount
     // Error parsing type: AC, name: __isReadyObserverCount
     // Error parsing type: AC, name: __isCancelledObserverCount
+    _Bool _shouldRemoveDependenciesAfterFinish;
 }
 
 + (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void *)arg7;
 - (id)_activity;
 - (void)_start:(id)arg1;
 - (id)_dependencies;
+- (void)_removeAllDependencies:(id)arg1;
 - (void)_removeDependency:(id)arg1 outer:(id)arg2;
 - (void)_addDependency:(id)arg1 outer:(id)arg2;
 - (void)_waitUntilFinishedOrTimeout:(double)arg1 outer:(id)arg2;

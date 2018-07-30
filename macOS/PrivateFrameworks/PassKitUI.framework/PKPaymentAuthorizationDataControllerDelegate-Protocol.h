@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class CNContact, NSArray, PKPaymentAuthorizationDataController, PKPaymentPass, PKRemotePaymentInstrument, PKShippingMethod;
+@class CNContact, NSArray, PKPaymentApplication, PKPaymentAuthorizationDataController, PKPaymentPass, PKRemotePaymentInstrument, PKShippingMethod;
 
 @protocol PKPaymentAuthorizationDataControllerDelegate
 - (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 willEditExistingShippingContact:(CNContact *)arg2 errors:(NSArray *)arg3 completion:(void (^)(BOOL, CNContact *))arg4;
@@ -17,7 +17,7 @@
 - (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 willEditExistingBillingAddress:(CNContact *)arg2 errors:(NSArray *)arg3 completion:(void (^)(BOOL, CNContact *))arg4;
 - (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 willAddNewBillingAddressWithCompletion:(void (^)(BOOL, CNContact *))arg2;
 - (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 didSelectBillingAddress:(CNContact *)arg2;
-- (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 didSelectRemotePaymentInstrument:(PKRemotePaymentInstrument *)arg2;
-- (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 didSelectPaymentPass:(PKPaymentPass *)arg2;
+- (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 didSelectRemotePaymentInstrument:(PKRemotePaymentInstrument *)arg2 paymentApplication:(PKPaymentApplication *)arg3;
+- (void)paymentAuthorizationDataController:(PKPaymentAuthorizationDataController *)arg1 didSelectPaymentPass:(PKPaymentPass *)arg2 paymentApplication:(PKPaymentApplication *)arg3;
 @end
 

@@ -6,6 +6,7 @@
 
 #import <AppleScriptObjC/BAObjectProto.h>
 
+__attribute__((visibility("hidden")))
 @interface BAGenericObject : BAObjectProto
 {
     struct ComponentInstanceRecord *m_ci;

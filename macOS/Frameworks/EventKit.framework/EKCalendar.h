@@ -103,8 +103,6 @@
 @property(readonly, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier;
 - (BOOL)cachedHasSharees;
 - (void).cxx_destruct;
-- (id)_existingObjectForDecodedIdentifier:(id)arg1;
-- (BOOL)_useExistingObjectWhenDecoding;
 - (id)coreDataEntityName;
 - (BOOL)revert;
 - (void)refetch;

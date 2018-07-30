@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OCXReader.h>
 
-__attribute__((visibility("hidden")))
 @interface WXReader : OCXReader
 {
 }

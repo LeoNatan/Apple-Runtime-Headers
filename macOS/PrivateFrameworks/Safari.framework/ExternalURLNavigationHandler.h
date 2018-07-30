@@ -15,9 +15,11 @@ __attribute__((visibility("hidden")))
     BOOL _shouldSuppressAutomaticExternalSchemeNavigations;
     NSDate *_recentExternalSchemeNavigationWindowStart;
     unsigned long long _recentExternalSchemeNavigations;
+    id <ExternalURLNavigationDelegate> _delegate;
 }
 
 + (BOOL)_applicationAtURLIsSignedByApple:(id)arg1;
+@property(nonatomic) __weak id <ExternalURLNavigationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)reset;
 - (void)_enqueueOrPresentDialogWithConfiguration:(id)arg1 externalURL:(id)arg2 applicationURL:(id)arg3 tabDialogPresenter:(id)arg4;

@@ -14,7 +14,13 @@
 
 @interface SFTitleCardSection : SFCardSection <SFTitleCardSection, NSSecureCoding, NSCopying>
 {
-    CDStruct_da38e31c _has;
+    struct {
+        unsigned int canBeHidden:1;
+        unsigned int hasTopPadding:1;
+        unsigned int hasBottomPadding:1;
+        unsigned int separatorStyle:1;
+        unsigned int isCentered:1;
+    } _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;

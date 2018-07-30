@@ -20,6 +20,7 @@
 @property(retain, nonatomic) UNNotificationServiceExtension *extensionInstance; // @synthesize extensionInstance=_extensionInstance;
 - (void).cxx_destruct;
 - (id)_stageAttachmentsForNotificationContent:(id)arg1;
+- (void)serviceExtensionPerformCleanup;
 - (void)serviceExtensionTimeWillExpire;
 - (void)didReceiveNotificationRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;

@@ -72,6 +72,11 @@
 - (void)addSetting:(id)arg1;
 - (id)settingWithIdentifier:(id)arg1;
 @property(readonly, copy) NSArray *settings;
+- (_Bool)isPrivateToDevice;
+- (id)ownerAccessory;
+- (id)accessoryFromTarget;
+- (_Bool)isTargetCurrentDevice;
+- (_Bool)isOwnerCurrentDevice;
 @property(readonly) NSString *keyPath;
 - (void)registerForMessages;
 - (void)configureWithContainer:(id)arg1 messageDispatcher:(id)arg2;

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface TSKDocumentModelEnumerator : NSEnumerator
 {
     _Bool _stop;
+    unsigned long long _flags;
     id <TSKModel> _root;
     NSMutableArray *_enumeratorStack;
     CDUnknownBlockType _filter;
@@ -20,10 +21,14 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(retain, nonatomic) NSMutableArray *enumeratorStack; // @synthesize enumeratorStack=_enumeratorStack;
 @property(retain, nonatomic) id <TSKModel> root; // @synthesize root=_root;
+- (void).cxx_destruct;
 - (void)enumerateUsingBlock:(CDUnknownBlockType)arg1;
 - (id)nextObject;
+@property(readonly, nonatomic, getter=isEnumeratingForUserSearch) _Bool enumeratingForUserSearch;
 - (void)dealloc;
+- (id)initWithEnumerator:(id)arg1 flags:(unsigned long long)arg2 filter:(CDUnknownBlockType)arg3;
 - (id)initWithEnumerator:(id)arg1 filter:(CDUnknownBlockType)arg2;
+- (id)initWithRootModelObject:(id)arg1 flags:(unsigned long long)arg2 filter:(CDUnknownBlockType)arg3;
 - (id)initWithRootModelObject:(id)arg1 filter:(CDUnknownBlockType)arg2;
 - (void)enumerateReferencedStylesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateModelAndReferencedStylesUsingBlock:(CDUnknownBlockType)arg1;

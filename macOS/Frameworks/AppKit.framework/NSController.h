@@ -7,10 +7,12 @@
 #import "NSObject.h"
 
 #import "NSCoding.h"
+#import "NSEditor.h"
+#import "NSEditorRegistration.h"
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface NSController : NSObject <NSCoding>
+@interface NSController : NSObject <NSCoding, NSEditor, NSEditorRegistration>
 {
     int _specialPurposeType;
     id _bindingAdaptor;
@@ -71,9 +73,7 @@
 - (void)_notifyEditorStateChanged:(BOOL)arg1;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)willChangeValueForKey:(id)arg1;
-- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
-- (void)_commonRemoveObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (void)_notifyObserversForKeyPath:(id)arg1 change:(id)arg2;
 - (BOOL)_shouldAddObservationForwardersForKey:(id)arg1;
@@ -92,6 +92,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

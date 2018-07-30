@@ -30,6 +30,9 @@
 - (id)updateTransfersWithCKRecord:(id)arg1 recordWasFetched:(_Bool)arg2 downloadAsset:(_Bool *)arg3;
 - (_Bool)_usingStingRay;
 - (_Bool)_shouldDownloadAssetForTransfer:(id)arg1 forMessageItem:(id)arg2;
+- (void)_updateSyncStatsForAttachments:(id)arg1 incrementTotalAttachmentCount:(unsigned int)arg2;
+- (_Bool)_shouldUpdateSyncStats:(id)arg1 originalSyncState:(int)arg2;
+- (id)_statsCollector;
 - (id)_attachmentStoreSharedInstance;
 - (id)_messageStoreSharedInstance;
 - (_Bool)initiateHighQualityDownload:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)acceptTransfer:(id)arg1 path:(id)arg2;
 - (void)failTransfer:(id)arg1 error:(id)arg2;
 - (void)resetTransferAndPostError:(id)arg1 error:(id)arg2;
+- (void)failTransferPreviewGeneration:(id)arg1;
 - (void)resetTransfer:(id)arg1 andPostReason:(int)arg2;
 - (void)failTransfer:(id)arg1 reason:(int)arg2;
 - (void)endTransfer:(id)arg1 overrideFinalFileName:(id)arg2;

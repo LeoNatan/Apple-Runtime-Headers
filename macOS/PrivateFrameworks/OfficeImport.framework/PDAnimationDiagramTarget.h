@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PDAnimationShapeTarget.h>
 
-__attribute__((visibility("hidden")))
 @interface PDAnimationDiagramTarget : PDAnimationShapeTarget
 {
     int mDiagramBuildStepBg;

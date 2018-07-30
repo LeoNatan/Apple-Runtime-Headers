@@ -18,9 +18,9 @@
 + (id)sharedAssetsSaver;
 @property(retain, nonatomic) NSMutableArray *_pendingSaveAssetJobs; // @synthesize _pendingSaveAssetJobs=__pendingSaveAssetJobs;
 - (void)saveSyncedAssets:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)validateAvalanches:(id)arg1;
+- (id)validateAvalanches:(id)arg1;
+- (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 importSessionIdentifier:(id)arg3 importedBy:(short)arg4 alternateImportImageDate:(id)arg5 isPhotoStreamsPublishCandidate:(_Bool)arg6 avalancheUUID:(id)arg7 destinationAlbumUUID:(id)arg8 completionHandler:(CDUnknownBlockType)arg9;
 - (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 intoEventWithName:(id)arg3 importSessionIdentifier:(id)arg4 isPhotoStreamsPublishCandidate:(_Bool)arg5 avalancheUUID:(id)arg6;
-- (void)copyAssetToCameraRoll:(id)arg1;
 - (void)reenqueueAssetUUIDsForPhotoStreamPublication:(id)arg1;
 - (void)deletePhotoStreamAssetsWithUUIDs:(id)arg1 streamID:(id)arg2;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;

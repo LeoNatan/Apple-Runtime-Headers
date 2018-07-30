@@ -11,7 +11,6 @@
     long long _configuration;
 }
 
-@property(readonly, nonatomic) _Bool usesExtraBarGradients;
 @property(readonly, nonatomic) _Bool usesDarkTheme;
 @property(readonly, nonatomic) unsigned long long toolbarTintStyle;
 @property(readonly, nonatomic) unsigned long long navigationBarTintStyle;
@@ -23,11 +22,11 @@
 @property(readonly, nonatomic) _Bool usesPersistentDataStore;
 @property(readonly, nonatomic) _Bool forcesDoNotTrack;
 @property(readonly, nonatomic) _Bool allowsUserActivityFeedback;
+@property(readonly, nonatomic) _Bool allowsStreamlinedLogin;
 @property(readonly, nonatomic) _Bool allowsSpeculativeLoading;
 @property(readonly, nonatomic) _Bool allowsSiteSpecificSearch;
 @property(readonly, nonatomic) _Bool allowsSearchSuggestions;
 @property(readonly, nonatomic) _Bool allowsKeyboardCorrectionLearning;
-@property(readonly, nonatomic) _Bool allowsAutoFill;
 @property(readonly, nonatomic, getter=isPrivateBrowsingEnabled) _Bool privateBrowsingEnabled;
 - (id)description;
 - (unsigned long long)hash;

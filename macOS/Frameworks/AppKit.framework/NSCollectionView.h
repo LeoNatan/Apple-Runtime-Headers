@@ -31,7 +31,6 @@
         unsigned int avoidsEmptySelection:1;
         unsigned int superviewIsClipView:1;
         unsigned int needsUpdateGrid:1;
-        unsigned int needsUpdateBackground:1;
         unsigned int gridSettingsNeedUpdate:1;
         unsigned int guardSetFrameSize:1;
         unsigned int canDisplayItems:1;
@@ -47,6 +46,7 @@
         unsigned int visMode:1;
         unsigned int restoringState:1;
         unsigned int needsResize:1;
+        unsigned int itemPrototypeInitialized:1;
         unsigned int reserved:9;
     } _cvFlags;
     id _delegate;
@@ -74,6 +74,7 @@
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
 + (unsigned long long)defaultFocusRingType;
++ (id)defaultAnimationForKey:(id)arg1;
 + (double)_dropHighlightWidthForSections;
 + (id)_dropHighlightColorForSections;
 - (void)_reuseSupplementaryView:(id)arg1;
@@ -137,7 +138,7 @@
 - (void)_applySelectionIndexes:(id)arg1 toItems:(id)arg2;
 - (void)_setBackgroundNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)setLayer:(id)arg1;
-- (void)_createLayerAndInitialize;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)_setBackgroundNeedsDisplay;
 - (BOOL)_needsLayerBackgrounds;
 - (void)_updateBackgroundLayers;
@@ -146,6 +147,8 @@
 - (long long)_createGridBackgroundInRect:(struct CGRect)arg1 withSelector:(SEL)arg2;
 - (void)_createBackgroundLayerWithProperties:(id)arg1;
 - (void)_drawBackgroundGridWithProperties:(id)arg1;
+- (BOOL)_needsCollectionViewContentBackgroundView;
+- (BOOL)_hasContentBackgroundColor;
 - (struct _NSRange)_contiguousRangeOfItemsForRect:(struct CGRect)arg1;
 - (void)_scheduleEndOfAnimationTimer:(double)arg1;
 - (void)_displayItems:(id)arg1 withConfiguration:(CDStruct_22276b4c)arg2 animate:(BOOL)arg3;
@@ -348,13 +351,18 @@
 @property BOOL allowsEmptySelection;
 @property BOOL allowsMultipleSelection;
 @property(getter=isSelectable) BOOL selectable;
-@property unsigned long long maxNumberOfColumns;
-@property unsigned long long maxNumberOfRows;
-@property struct CGSize maxItemSize;
-@property struct CGSize minItemSize;
+- (unsigned long long)maxNumberOfColumns;
+- (void)setMaxNumberOfColumns:(unsigned long long)arg1;
+- (unsigned long long)maxNumberOfRows;
+- (void)setMaxNumberOfRows:(unsigned long long)arg1;
+- (struct CGSize)maxItemSize;
+- (void)setMaxItemSize:(struct CGSize)arg1;
+- (struct CGSize)minItemSize;
+- (void)setMinItemSize:(struct CGSize)arg1;
 - (void)_setCollectionViewLayout:(id)arg1 animate:(BOOL)arg2;
 @property(retain) NSCollectionViewLayout *collectionViewLayout;
-@property(retain) NSCollectionViewItem *itemPrototype;
+- (id)itemPrototype;
+- (void)setItemPrototype:(id)arg1;
 - (void)reloadItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;
 - (void)deleteItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;
 - (void)insertItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;

@@ -11,14 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface BrowserWindowTabViewController : NSTabViewController
 {
+    BOOL _isAddingOrRemovingTabViewItem;
     BOOL _didSetUpTabView;
     id <BrowserWindowTabViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <BrowserWindowTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)tabView:(id)arg1 didSelectTabViewItem:(id)arg2;
-- (void)tabView:(id)arg1 willSelectTabViewItem:(id)arg2;
 - (id)tabViewItemsWithUnsubmittedFormTextPassingTest:(CDUnknownBlockType)arg1;
 - (id)firstTabViewItemWithUnsavedCredentialsPassingTest:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSArray *pinnedTabViewItems;
@@ -28,6 +27,9 @@ __attribute__((visibility("hidden")))
 - (id)tabViewItemAtIndex:(long long)arg1;
 - (long long)indexOfTabViewItem:(id)arg1;
 @property(retain, nonatomic) BrowserTabViewItem *selectedTabViewItem;
+- (void)removeTabViewItem:(id)arg1;
+- (void)insertTabViewItem:(id)arg1 atIndex:(long long)arg2;
+- (void)setSelectedTabViewItemIndex:(long long)arg1;
 @property(readonly, nonatomic) long long numberOfTabViewItems;
 - (void)_setUpTabView;
 @property(retain) BrowserWindowTabView *tabView; // @dynamic tabView;

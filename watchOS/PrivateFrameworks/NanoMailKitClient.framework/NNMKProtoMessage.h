@@ -24,14 +24,17 @@
     NSString *_messageId;
     NSString *_messageIdHeader;
     NSString *_notificationMessageId;
+    NSString *_publisherBulletinId;
     NSString *_remoteId;
     unsigned int _status;
+    unsigned int _statusVersion;
     NSString *_subject;
     NSMutableArray *_tos;
     _Bool _isThreadSpecific;
     struct {
         unsigned int isSpecialMailboxSpecific:1;
         unsigned int status:1;
+        unsigned int statusVersion:1;
         unsigned int isThreadSpecific:1;
     } _has;
 }
@@ -40,6 +43,8 @@
 + (Class)ccType;
 + (Class)toType;
 + (id)protoMessageFromMessage:(id)arg1 organizedByThread:(_Bool)arg2 sanitizeMessageId:(_Bool)arg3;
+@property(nonatomic) unsigned int statusVersion; // @synthesize statusVersion=_statusVersion;
+@property(retain, nonatomic) NSString *publisherBulletinId; // @synthesize publisherBulletinId=_publisherBulletinId;
 @property(nonatomic) unsigned int isSpecialMailboxSpecific; // @synthesize isSpecialMailboxSpecific=_isSpecialMailboxSpecific;
 @property(nonatomic) _Bool isThreadSpecific; // @synthesize isThreadSpecific=_isThreadSpecific;
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
@@ -67,6 +72,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasStatusVersion;
+@property(readonly, nonatomic) _Bool hasPublisherBulletinId;
 @property(nonatomic) _Bool hasIsSpecialMailboxSpecific;
 @property(nonatomic) _Bool hasIsThreadSpecific;
 @property(readonly, nonatomic) _Bool hasMailboxId;

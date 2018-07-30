@@ -15,7 +15,7 @@
 - (void)applyDensity:(unsigned long long)arg1;
 - (void)setAlpha:(double)arg1 element:(id)arg2 index:(int)arg3;
 - (id)scrubbingObscuredCollectionNodes;
-- (id)initWithSize:(struct CGSize)arg1;
+- (id)initWithSize:(struct CGSize)arg1 forDevice:(id)arg2;
 
 @end
 

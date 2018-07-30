@@ -4,12 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSCopying.h"
-#import "NSObject.h"
-
 @class NSDate, NSString;
 
-@protocol FCHeadlineMetadata <NSObject, NSCopying>
+@protocol FCHeadlineMetadata
 @property(readonly, nonatomic) NSString *storyType;
 @property(readonly, nonatomic) NSDate *displayDate;
 @end

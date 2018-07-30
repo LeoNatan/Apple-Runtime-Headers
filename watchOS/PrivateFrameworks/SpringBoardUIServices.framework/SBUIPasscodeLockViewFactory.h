@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)_warmupKBDIfNecessary;
 + (id)_defaultPasscodeBiometricResource;
 + (void)setPasscodeBiometricResource:(id)arg1;
 + (void)_commonInitPasscodeView:(id)arg1 forStyle:(int)arg2;

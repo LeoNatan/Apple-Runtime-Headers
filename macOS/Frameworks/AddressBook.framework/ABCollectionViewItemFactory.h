@@ -47,6 +47,7 @@
 - (id)birthdayCollectionItemForMultiValue:(id)arg1 index:(unsigned long long)arg2 delegate:(id)arg3;
 - (id)emailCollectionItemForMultiValue:(id)arg1 index:(unsigned long long)arg2 delegate:(id)arg3;
 - (id)phoneCollectionItemForMultiValue:(id)arg1 index:(unsigned long long)arg2 delegate:(id)arg3;
+- (void)buildActionGlyphsForItem:(id)arg1 delegate:(id)arg2;
 - (void)buildVisibleViewForItem:(id)arg1 delegate:(id)arg2;
 - (id)collectionItemForKey:(id)arg1 multiValue:(id)arg2 index:(unsigned long long)arg3 delegate:(id)arg4;
 @property(nonatomic) BOOL shouldBuildActionGlyphs;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) TSDShapeInfo *freehandDrawingSpacerShape; // @synthesize freehandDrawingSpacerShape=_freehandDrawingSpacerShape;
 - (void).cxx_destruct;
+- (id)tsaxTypeDescription;
 - (void)saveToArchive:(struct GroupArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct GroupArchive *)arg1 unarchiver:(id)arg2 upgradeDOLC:(_Bool)arg3;
 - (id)copyWithContext:(id)arg1;
@@ -31,9 +32,13 @@ __attribute__((visibility("hidden")))
 - (id)infosToObserveForAttachedInfo;
 - (id)childEnumerator;
 - (void)setFreehandDrawingSpacerShape:(id)arg1;
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)animationFilters;
 - (_Bool)isFreehandDrawing;
 - (id)initWithSpacerShapeAndContext:(id)arg1 geometry:(id)arg2;
+- (_Bool)containsDisallowedElementKind:(unsigned int)arg1;
+- (int)elementKind;
 
 @end
 

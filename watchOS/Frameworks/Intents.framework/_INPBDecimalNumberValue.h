@@ -7,42 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBDecimalNumberValue.h"
 
-@class PBUnknownFields, _INPBValueMetadata;
+@class NSString, _INPBValueMetadata;
 
-@interface _INPBDecimalNumberValue : PBCodable <NSCopying>
+@interface _INPBDecimalNumberValue : PBCodable <_INPBDecimalNumberValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    unsigned long long _mantissa;
-    int _exponent;
-    _INPBValueMetadata *_valueMetadata;
-    _Bool _isNegative;
     struct {
-        unsigned int mantissa:1;
         unsigned int exponent:1;
         unsigned int isNegative:1;
+        unsigned int mantissa:1;
     } _has;
+    _Bool _isNegative;
+    int _exponent;
+    _INPBValueMetadata *_valueMetadata;
+    unsigned long long _mantissa;
 }
 
-+ (id)options;
+@property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(nonatomic) unsigned long long mantissa; // @synthesize mantissa=_mantissa;
 @property(nonatomic) _Bool isNegative; // @synthesize isNegative=_isNegative;
 @property(nonatomic) int exponent; // @synthesize exponent=_exponent;
-@property(nonatomic) unsigned long long mantissa; // @synthesize mantissa=_mantissa;
-@property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasValueMetadata;
+@property(nonatomic) _Bool hasMantissa;
 @property(nonatomic) _Bool hasIsNegative;
 @property(nonatomic) _Bool hasExponent;
-@property(nonatomic) _Bool hasMantissa;
-@property(readonly, nonatomic) _Bool hasValueMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -34,6 +34,11 @@ __attribute__((visibility("hidden")))
 - (void)loadFromArchive:(const struct FreehandDrawingToolkitUIState *)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)copy;
+- (void)p_setDefaultToolType:(unsigned long long)arg1;
+- (unsigned long long)p_defaultToolType;
+- (unsigned long long)p_indexOfDefaultStrokeWidthForFreehandDrawingToolType:(unsigned long long)arg1;
+- (id)strokeWidthsForFreehandDrawingToolType:(unsigned long long)arg1;
+- (double)p_defaultStrokeWidthForToolType:(unsigned long long)arg1;
 - (void)p_setupDefaultValuesFromUnarchive:(_Bool)arg1;
 - (id)initWithContext:(id)arg1;
 

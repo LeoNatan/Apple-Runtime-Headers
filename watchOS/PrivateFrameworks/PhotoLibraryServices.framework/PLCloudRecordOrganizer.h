@@ -14,6 +14,7 @@
     NSMutableArray *_assetRecordsWithContainerChange;
     NSMutableArray *_albumRecordsWithContainerChange;
     NSMutableArray *_personRecords;
+    NSMutableArray *_scopeRecords;
     NSMutableArray *_masterRecords;
     NSMutableArray *_assetRecords;
     NSMutableArray *_albumRecords;
@@ -22,9 +23,11 @@
     NSMutableArray *_deleteRecords;
     NSMutableArray *_deletePersonRecords;
     NSMutableArray *_expungedRecords;
+    NSMutableArray *_suggestionRecords;
 }
 
-+ (_Bool)records:(id)arg1 containsIdentifier:(id)arg2;
++ (_Bool)records:(id)arg1 containsScopedIdentifier:(id)arg2;
+@property(readonly) NSMutableArray *suggestionRecords; // @synthesize suggestionRecords=_suggestionRecords;
 @property(readonly) NSMutableArray *expungedRecords; // @synthesize expungedRecords=_expungedRecords;
 @property(readonly) NSMutableArray *deletePersonRecords; // @synthesize deletePersonRecords=_deletePersonRecords;
 @property(readonly) NSMutableArray *deleteRecords; // @synthesize deleteRecords=_deleteRecords;
@@ -33,11 +36,12 @@
 @property(readonly) NSMutableArray *albumRecords; // @synthesize albumRecords=_albumRecords;
 @property(readonly) NSMutableArray *assetRecords; // @synthesize assetRecords=_assetRecords;
 @property(readonly) NSMutableArray *masterRecords; // @synthesize masterRecords=_masterRecords;
+@property(readonly) NSMutableArray *scopeRecords; // @synthesize scopeRecords=_scopeRecords;
 @property(readonly) NSMutableArray *personRecords; // @synthesize personRecords=_personRecords;
 @property(readonly) NSMutableArray *albumRecordsWithContainerChange; // @synthesize albumRecordsWithContainerChange=_albumRecordsWithContainerChange;
 @property(readonly) NSMutableArray *assetRecordsWithContainerChange; // @synthesize assetRecordsWithContainerChange=_assetRecordsWithContainerChange;
+- (void).cxx_destruct;
 - (void)organizeRecords:(id)arg1;
-- (void)dealloc;
 - (id)initWithPhotoLibrary:(id)arg1;
 
 @end

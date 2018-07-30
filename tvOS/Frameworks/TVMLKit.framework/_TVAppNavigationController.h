@@ -10,7 +10,7 @@
 #import "UIGestureRecognizerDelegate.h"
 #import "UINavigationControllerDelegate.h"
 
-@class NSString, UITapGestureRecognizer, UIViewController;
+@class NSString, TVApplicationController, UITapGestureRecognizer, UIViewController;
 
 __attribute__((visibility("hidden")))
 @interface _TVAppNavigationController : UINavigationController <UIGestureRecognizerDelegate, UINavigationControllerDelegate, IKAppNavigationController>
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int willLoadAppDocumentWithController:1;
     } _ancDelegateFlags;
+    TVApplicationController *_appController;
     id <_TVAppNavigationControllerDelegate> _appNavigationControllerDelegate;
     UITapGestureRecognizer *_menuRecognizer;
     UIViewController *_presentedModalViewController;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *presentedModalViewController; // @synthesize presentedModalViewController=_presentedModalViewController;
 @property(retain, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(nonatomic) __weak id <_TVAppNavigationControllerDelegate> appNavigationControllerDelegate; // @synthesize appNavigationControllerDelegate=_appNavigationControllerDelegate;
+@property(readonly, nonatomic) __weak TVApplicationController *appController; // @synthesize appController=_appController;
 - (void).cxx_destruct;
 - (void)_doWillLoadAppDocumentWithController:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
@@ -48,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)pushDocument:(id)arg1 options:(id)arg2;
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
 - (id)documents;
+- (void)setDocuments:(id)arg1 options:(id)arg2;
 - (void)clear;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)dealloc;
@@ -56,7 +59,7 @@ __attribute__((visibility("hidden")))
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithApplicationController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

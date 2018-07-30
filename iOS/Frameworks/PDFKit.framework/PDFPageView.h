@@ -72,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)addControlForWidgetAnnotation:(id)arg1;
 - (void)setAnnotation:(id)arg1 isSelected:(_Bool)arg2;
 - (void)removeAnnotation:(id)arg1;
+- (void)_updateAnnotationVisibility:(id)arg1;
 - (void)updateAnnotation:(id)arg1;
 - (void)addAnnotation:(id)arg1;
 - (void)colorWidgetBackgrounds:(_Bool)arg1;

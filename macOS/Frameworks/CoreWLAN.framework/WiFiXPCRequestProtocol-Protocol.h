@@ -7,9 +7,11 @@
 @class CWChannel, CWNetwork, CWNetworkProfile, CWTetherDevice, NSArray, NSData, NSDictionary, NSNumber, NSSet, NSString;
 
 @protocol WiFiXPCRequestProtocol
+- (void)setWoWEnabled:(BOOL)arg1 reply:(void (^)(NSError *))arg2;
 - (void)setAutoJoinEnabled:(BOOL)arg1 reply:(void (^)(NSError *))arg2;
 - (void)startAutoJoinForInterfaceName:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)setPeerTrafficRegistrationWithConfiguration:(NSDictionary *)arg1 interfaceName:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)queryJoinHistoryWithInterfaceName:(NSString *)arg1 reply:(void (^)(NSError *, NSArray *))arg2;
 - (void)queryAutoJoinHistoryWithInterfaceName:(NSString *)arg1 reply:(void (^)(NSError *, NSArray *))arg2;
 - (void)queryRoamHistoryWithInterfaceName:(NSString *)arg1 reply:(void (^)(NSError *, NSArray *))arg2;
 - (void)queryThermalIndexAndReply:(void (^)(NSError *, long long))arg1;
@@ -43,9 +45,8 @@
 - (void)relinquishBluetoothPagingLockWithInterfaceName:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)acquireBluetoothPagingLockWithInterfaceName:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)dumpWiFiTemporaryLogAndReply:(void (^)(NSError *, NSString *))arg1;
-- (void)forgetPasspointWiFiNetworkProfileWithDomainName:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
-- (void)forgetWiFiNetworkProfileWithSSID:(NSData *)arg1 reply:(void (^)(NSError *))arg2;
-- (void)rememberWiFiNetworkProfile:(CWNetworkProfile *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)forgetWiFiProfileWithID:(NSString *)arg1 event:(unsigned long long)arg2 reply:(void (^)(NSError *))arg3;
+- (void)rememberWiFiProfile:(CWNetworkProfile *)arg1 event:(unsigned long long)arg2 reply:(void (^)(NSError *))arg3;
 - (void)setWiFiHostAPModeKeychainItemforInterfaceName:(NSString *)arg1 password:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)setWiFiEAPKeychainItemforSSID:(NSData *)arg1 identity:(NSData *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)setWiFiEAPKeychainItemforSSID:(NSData *)arg1 username:(NSString *)arg2 password:(NSString *)arg3 reply:(void (^)(NSError *))arg4;

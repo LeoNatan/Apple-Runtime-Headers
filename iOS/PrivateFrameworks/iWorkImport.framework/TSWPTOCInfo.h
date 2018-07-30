@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *paragraphStylesShownInTOC;
 @property(readonly, nonatomic) NSArray *visibleTOCEntries;
 - (id)partitioner;
+- (_Bool)wantsPositionFixedWhenCopying;
 - (int)elementKind;
 - (Class)repClass;
 - (id)copyWithContext:(id)arg1;

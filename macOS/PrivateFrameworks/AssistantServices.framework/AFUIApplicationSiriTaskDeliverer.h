@@ -23,9 +23,11 @@
 - (void).cxx_destruct;
 - (void)_invalidateAssertionTimer;
 - (void)_invalidateBackboardServices;
+- (void)_handleSuccessfulAppLaunchToBackground:(BOOL)arg1 forRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)siriTaskDidFinish;
 - (void)deliverSiriTask:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
+- (void)_startAppStateMonitoringForRequest:(id)arg1;
 - (void)dealloc;
 - (id)initWithAppBundleIdentifier:(id)arg1;
 

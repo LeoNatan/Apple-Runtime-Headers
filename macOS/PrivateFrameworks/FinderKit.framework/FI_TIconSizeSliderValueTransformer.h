@@ -18,11 +18,15 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;
+- (double)decrease:(double)arg1;
+- (double)increase:(double)arg1;
 - (void)setOffset:(double)arg1;
 - (void)setIconSizeMin:(double)arg1 max:(double)arg2;
 - (void)setSliderValueMin:(double)arg1 max:(double)arg2;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
+- (double)reverseTransformedFloatValue:(unsigned long long)arg1;
+- (double)transformedFloatValue:(unsigned long long)arg1;
 - (id)init;
 
 @end

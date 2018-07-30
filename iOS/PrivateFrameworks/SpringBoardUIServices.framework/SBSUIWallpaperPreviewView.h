@@ -22,6 +22,7 @@
     SBFWallpaperView *_wallpaperView;
 }
 
++ (_Bool)shouldEnableParallaxForEffect:(unsigned long long)arg1;
 @property(retain, nonatomic) _UILegibilityLabel *irisInstructionsLabel2; // @synthesize irisInstructionsLabel2=_irisInstructionsLabel2;
 @property(retain, nonatomic) _UILegibilityLabel *irisInstructionsLabel1; // @synthesize irisInstructionsLabel1=_irisInstructionsLabel1;
 @property(readonly, nonatomic) SBFWallpaperView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
@@ -41,6 +42,8 @@
 - (void)setIrisInstructionsVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_effectChanged:(id)arg1;
 - (void)_toggleMotion;
+- (_Bool)shouldEnableParallax;
+- (unsigned long long)selectedEffect;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 wallpaperView:(id)arg2;
 

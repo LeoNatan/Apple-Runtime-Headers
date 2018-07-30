@@ -7,6 +7,6 @@
 #import "UIDevice.h"
 
 @interface UIDevice (UglyHack)
-- (_Bool)cn_isD22;
+- (_Bool)cn_hasSensorArray;
 @end
 

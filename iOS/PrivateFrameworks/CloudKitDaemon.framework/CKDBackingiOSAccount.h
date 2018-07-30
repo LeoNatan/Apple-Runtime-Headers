@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)_accountCredentialForAccount:(id)arg1 withError:(id *)arg2;
 - (_Bool)isDataclassEnabled:(id)arg1;
 - (_Bool)canAuthWithCloudKit;
+- (id)displayedHostname;
 - (id)fullName;
 - (id)identifier;
 - (id)dsid;

@@ -7,25 +7,27 @@
 #import "NSView.h"
 
 #import "AVTrimControlsViewControllerDelegate.h"
+#import "AVVolumeButtonDelegate.h"
 #import "CALayerDelegate.h"
 #import "NSSharingServiceDelegate.h"
 #import "NSSharingServicePickerDelegate.h"
 
-@class AVAnimator, AVAudioOnlyIndicatorView, AVControlsContainerViewController, AVExternalPlaybackIndicatorView, AVLoadingIndicatorView, AVNowPlayingInfoController, AVPlayer, AVPlayerController, AVPlayerControlsViewController, AVPlayerLayer, AVShareController, AVStatusOverlayView, AVTrimControlsViewController, AVUnsupportedContentIndicatorView, NSArray, NSMenu, NSMutableArray, NSString, NSTimer, NSTrackingArea, NSWindow;
+@class AVAnimator, AVAudioOnlyIndicatorView, AVControlsContainerViewController, AVExternalPlaybackIndicatorView, AVLoadingIndicatorView, AVNowPlayingInfoController, AVPlayer, AVPlayerController, AVPlayerControlsViewController, AVPlayerLayer, AVShareController, AVStatusOverlayView, AVTrimControlsViewController, AVUnsupportedContentIndicatorView, NSArray, NSLayoutConstraint, NSLayoutGuide, NSMenu, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSTrackingArea, NSWindow;
 
-@interface AVPlayerView : NSView <NSSharingServicePickerDelegate, NSSharingServiceDelegate, AVTrimControlsViewControllerDelegate, CALayerDelegate>
+@interface AVPlayerView : NSView <NSSharingServicePickerDelegate, NSSharingServiceDelegate, AVVolumeButtonDelegate, AVTrimControlsViewControllerDelegate, CALayerDelegate>
 {
+    NSObject<OS_dispatch_queue> *_dummyImageQueue;
+    long long _actualControlsStyle;
     BOOL _playerShouldAutoplay;
     NSString *_videoGravity;
-    AVPlayerLayer *_playerLayer;
-    AVPlayerLayer *_trimThumbnailPlayerLayer;
-    AVPlayerLayer *_touchBarThumbnailPlayerLayer;
     AVUnsupportedContentIndicatorView *_unsupportedContentIndicatorView;
     AVAudioOnlyIndicatorView *_audioOnlyIndicatorView;
     AVExternalPlaybackIndicatorView *_externalPlaybackIndicatorView;
     NSView *_contentOverlayView;
     AVStatusOverlayView *_statusOverlayView;
-    NSMutableArray *_statusOverlayViewLayoutConstraints;
+    NSArray *_statusOverlayViewLayoutConstraints;
+    NSLayoutConstraint *_statusOverlayViewLeftAnchor;
+    NSLayoutConstraint *_statusOverlayViewTopAnchor;
     AVLoadingIndicatorView *_loadingIndicatorView;
     NSTimer *_loadingIndicatorTimer;
     AVControlsContainerViewController *_controlsContainerViewController;
@@ -82,9 +84,27 @@
     BOOL _prefersReducedUserInterface;
     BOOL _showsDurationInsteadOfRemainingTime;
     AVShareController *_shareController;
-    AVNowPlayingInfoController *_nowPlayingInfoController;
+    NSObject<OS_dispatch_queue> *_nowPlayingInfoCenterInitQueue;
+    BOOL _updatesNowPlayingInfoCenter;
     long long _touchBarViewAppearCount;
+    BOOL _needsTransportControlsHeightLayoutGuideConstraints;
+    NSLayoutGuide *_transportControlsHeightLayoutGuide;
+    BOOL _showsAudioOnlyIndicatorView;
+    BOOL _includesTrimAndCancelButtons;
+    BOOL _flashesControlsWhenChangingStyle;
+    BOOL _shouldInsetControlsFromVideoRect;
+    NSLayoutConstraint *_controlsContainerWidthConstraint;
+    NSLayoutConstraint *_controlsContainerCenterXConstraint;
+    NSLayoutConstraint *_controlsContainerLeftConstraint;
+    NSLayoutConstraint *_controlsContainerRightConstraint;
+    CDUnknownBlockType _playButtonHandlerForLazyPlayerLoading;
+    id <AVPlayerViewDelegate_AppStoreOnly> _metricsDelegate;
+    BOOL _inlineControlsShowMinimalControlsWhenPaused;
     long long _controlsStyle;
+    AVPlayerLayer *_playerLayer;
+    AVPlayerLayer *_trimThumbnailPlayerLayer;
+    AVPlayerLayer *_touchBarThumbnailPlayerLayer;
+    AVNowPlayingInfoController *_nowPlayingInfoController;
 }
 
 + (id)keyPathsForValuesAffectingTouchBar;
@@ -101,8 +121,11 @@
 + (id)keyPathsForValuesAffectingPlayerLayerFrame;
 + (id)keyPathsForValuesAffectingPrefersUnobscuredContent;
 + (id)keyPathsForValuesAffectingCanShowSharingServiceButton;
++ (id)keyPathsForValuesAffectingControlsHidden;
+@property(retain, nonatomic) AVNowPlayingInfoController *nowPlayingInfoController; // @synthesize nowPlayingInfoController=_nowPlayingInfoController;
 @property(retain) AVPlayerLayer *touchBarThumbnailPlayerLayer; // @synthesize touchBarThumbnailPlayerLayer=_touchBarThumbnailPlayerLayer;
 @property(retain) AVPlayerLayer *trimThumbnailPlayerLayer; // @synthesize trimThumbnailPlayerLayer=_trimThumbnailPlayerLayer;
+@property(retain) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(retain) AVControlsContainerViewController *controlsContainerViewController; // @synthesize controlsContainerViewController=_controlsContainerViewController;
 @property long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
 - (void).cxx_destruct;
@@ -110,6 +133,7 @@
 - (void)windowWillBeginSheet:(id)arg1;
 - (void)playerControllerDidChangePlaybackStateByHandlingEvent:(id)arg1;
 - (void)playerControllerDidSeekChapter:(id)arg1;
+- (void)updateConstraints;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)touchBar;
 - (void)_fireControlsTimer:(id)arg1;
@@ -144,6 +168,7 @@
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
+- (BOOL)volumeButton:(id)arg1 shouldShowVolumeSlider:(id)arg2;
 - (void)_fireLoadingIndicatorTimer:(id)arg1;
 - (void)_restorePreviousFirstResponderOrMakeCurrentControlsViewControllersInitialFirstResponderFirstResponderIfSelfIsCurrentFirstResponder:(id)arg1;
 - (id)_makeSelfFirstResponderIfCurrentFirstResponderIsDescendantOfSelfAndReturnCurrentFirstResponderInThatCase;
@@ -164,20 +189,17 @@
 - (void)_hideControlsIfPossibleAfterDelay;
 - (void)_hideControlsIfPossible;
 - (void)_showControlsIfNeeded;
+- (void)_setupLoadingIndicatorView;
 - (void)_updateExternalPlaybackIndicatorView;
+- (void)_setupExternalPlaybackIndicatorView;
 - (void)_updateAudioOnlyIndicatorView;
 - (BOOL)_isAudioOnlyContent;
 - (void)_updateUnsupportedContentIndicatorView;
 - (BOOL)_isUnsupportedContent;
-- (void)_setupPreferredIndicatorAreas;
 - (void)_setupControlsContainerView;
 - (void)_setupContentOverlayView;
 - (void)_layoutStatusOverlayView;
 - (void)_setupStatusOverlayView;
-- (void)_setupLoadingIndicatorView;
-- (void)_setupExternalPlaybackIndicatorView;
-- (void)_setupAudioOnlyIndicatorView;
-- (void)_setupUnsupportedContentIndicatorView;
 - (void)_setupPlayerLayer;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
@@ -257,6 +279,20 @@
 - (struct CGRect)videoRect;
 - (void)showSharingServicePickerRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3;
 @property(readonly) BOOL canShowSharingServiceButton;
+- (BOOL)inlineControlsShowMinimalControlsWhenPaused;
+- (void)setInlineControlsShowMinimalControlsWhenPaused:(BOOL)arg1;
+- (id)metricsDelegate;
+- (void)setMetricsDelegate:(id)arg1;
+- (CDUnknownBlockType)playButtonHandlerForLazyPlayerLoading;
+- (void)setPlayButtonHandlerForLazyPlayerLoading:(CDUnknownBlockType)arg1;
+- (void)cancelTrim:(id)arg1;
+- (void)commitTrim:(id)arg1;
+@property(nonatomic) BOOL includesTrimAndCancelButtons;
+@property(nonatomic) BOOL flashesControlsWhenChangingStyle;
+@property(nonatomic) BOOL showsAudioOnlyIndicatorView;
+@property(readonly, nonatomic) NSLayoutGuide *transportControlsHeightLayoutGuide;
+@property(readonly, nonatomic) BOOL controlsHidden;
+@property(nonatomic) BOOL shouldInsetControlsFromVideoRect;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

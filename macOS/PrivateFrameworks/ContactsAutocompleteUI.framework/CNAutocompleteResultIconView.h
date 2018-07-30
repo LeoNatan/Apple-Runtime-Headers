@@ -15,12 +15,15 @@
     NSImageView *_iconView;
 }
 
-@property(retain) NSImageView *iconView; // @synthesize iconView=_iconView;
-@property(retain) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
-@property(retain) NSImage *image; // @synthesize image=_image;
++ (id)iconViewWithImage:(id)arg1;
+@property(retain, nonatomic) NSImageView *iconView; // @synthesize iconView=_iconView;
+@property(retain, nonatomic) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
+@property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (struct CGSize)fittingSize;
+- (void)updateIconViewForDisplayOverBackgroundWithStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
+- (void)setupConstraintsWithLeftMargin:(double)arg1 rightMargin:(double)arg2 imageSize:(struct CGSize)arg3;
 - (id)initWithImage:(id)arg1 selectedImage:(id)arg2 leftMargin:(double)arg3 rightMargin:(double)arg4;
 
 @end

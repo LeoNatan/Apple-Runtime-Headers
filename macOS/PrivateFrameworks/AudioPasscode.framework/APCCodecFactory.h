@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface APCCodecFactory : NSObject
 {
 }
 
++ (id)createBestConfigForCapability:(id)arg1;
 + (float)evaluateCarrierWithConfig:(id)arg1 carrier:(id)arg2 carrierOffset:(unsigned long long *)arg3;
-+ (unique_ptr_db3a804f)createEncoderWithConfig:(id)arg1 apcConfig:(map_5b8d8d8c *)arg2 payloadData:(id)arg3;
-+ (unique_ptr_72d731d9)createDecoderWithConfig:(id)arg1 apcConfig:(map_5b8d8d8c *)arg2;
++ (unique_ptr_5bd60e54)createEncoderWithConfig:(id)arg1 apcConfig:(map_fc0e2ca7 *)arg2 payloadData:(id)arg3;
++ (unique_ptr_36d0a635)createDecoderWithConfig:(id)arg1 apcConfig:(map_fc0e2ca7 *)arg2 error:(id *)arg3;
 
 @end
 

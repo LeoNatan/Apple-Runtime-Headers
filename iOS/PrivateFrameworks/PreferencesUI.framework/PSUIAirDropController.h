@@ -27,7 +27,7 @@
 - (void)_updateSpecifiersFromPreferences;
 - (id)specifiers;
 - (void)dealloc;
-- (id)init;
+- (void)loadView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

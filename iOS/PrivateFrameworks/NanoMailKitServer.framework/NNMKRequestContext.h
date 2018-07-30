@@ -15,10 +15,12 @@
     NSString *_conversationId;
     NSDate *_beforeDate;
     unsigned long long _count;
+    unsigned long long _resendInterval;
     unsigned long long _messagesForSpecialMailbox;
 }
 
 @property(nonatomic) unsigned long long messagesForSpecialMailbox; // @synthesize messagesForSpecialMailbox=_messagesForSpecialMailbox;
+@property(nonatomic) unsigned long long resendInterval; // @synthesize resendInterval=_resendInterval;
 @property(nonatomic) _Bool hasProtectedMessages; // @synthesize hasProtectedMessages=_hasProtectedMessages;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(retain, nonatomic) NSDate *beforeDate; // @synthesize beforeDate=_beforeDate;

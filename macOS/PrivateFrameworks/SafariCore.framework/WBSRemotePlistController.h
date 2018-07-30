@@ -11,7 +11,7 @@
 @interface WBSRemotePlistController : NSObject
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
-    NSObject<OS_dispatch_queue> *_diskAccessQueue;
+    NSObject<OS_dispatch_queue> *_diskWriteQueue;
     NSURL *_builtInListURL;
     NSURL *_downloadsDirectoryURL;
     NSString *_resourceName;

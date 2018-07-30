@@ -16,6 +16,8 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)fetchLocationNamesStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchRecentLocationDonationsSince:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchRecentLocationDonationsSince:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end

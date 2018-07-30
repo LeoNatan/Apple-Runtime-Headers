@@ -9,20 +9,21 @@
 #import "MPQueueBehaviorManaging.h"
 #import "NSSecureCoding.h"
 
-@class MPModelPlayEvent, MPMutableBidirectionalDictionary, NSData, NSMutableDictionary, NSString;
+@class MPModelPlayEvent, MSVMutableBidirectionalDictionary, NSData, NSDictionary, NSMutableDictionary, NSString;
 
 @interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, NSSecureCoding>
 {
     int _repeatType;
     int _shuffleType;
     NSMutableDictionary *_nextStartTimes;
-    MPMutableBidirectionalDictionary *_exportableItemIDs;
+    MSVMutableBidirectionalDictionary *_exportableItemIDs;
     _Bool _requiresQueueChangeVerification;
     id <MPQueueFeederDelegate> _delegate;
     unsigned int _state;
     NSString *_playActivityFeatureName;
     NSData *_playActivityRecommendationData;
     NSString *_siriReferenceIdentifier;
+    NSDictionary *_siriWHAMetricsInfo;
     NSString *_playbackContextUniqueIdentifier;
     int _activeShuffleType;
     NSString *_uniqueIdentifier;
@@ -38,6 +39,7 @@
 @property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
 @property(nonatomic) int repeatType; // @synthesize repeatType=_repeatType;
 @property(copy, nonatomic) NSString *playbackContextUniqueIdentifier; // @synthesize playbackContextUniqueIdentifier=_playbackContextUniqueIdentifier;
+@property(copy, nonatomic) NSDictionary *siriWHAMetricsInfo; // @synthesize siriWHAMetricsInfo=_siriWHAMetricsInfo;
 @property(copy, nonatomic) NSString *siriReferenceIdentifier; // @synthesize siriReferenceIdentifier=_siriReferenceIdentifier;
 @property(copy, nonatomic) NSData *playActivityRecommendationData; // @synthesize playActivityRecommendationData=_playActivityRecommendationData;
 @property(copy, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;

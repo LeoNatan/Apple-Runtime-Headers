@@ -22,6 +22,34 @@ struct CLLocationCoordinate2D {
     double _field2;
 };
 
+struct _CLLocationManagerStateTrackerState {
+    double distanceFilter;
+    double desiredAccuracy;
+    char updatingLocation;
+    char requestingLocation;
+    char requestingRanging;
+    char updatingRanging;
+    char updatingHeading;
+    double headingFilter;
+    char persistentMonitoringEnabled;
+    char allowsLocationPrompts;
+    char allowsAlteredAccessoryLocations;
+    char dynamicAccuracyReductionEnabled;
+    char previousAuthorizationStatusValid;
+    int previousAuthorizationStatus;
+    long long activityType;
+    int pausesLocationUpdatesAutomatically;
+    char paused;
+    char allowsBackgroundLocationUpdates;
+    char showsBackgroundLocationIndicator;
+    char allowsMapCorrection;
+    char batchingLocation;
+    char updatingVehicleSpeed;
+    char updatingVehicleHeading;
+    char matchInfoEnabled;
+    char courtesyPromptNeeded;
+};
+
 struct os_state_hints_s {
     unsigned int _field1;
     char *_field2;
@@ -99,7 +127,8 @@ typedef struct {
             double radius;
             double desiredAccuracy;
             int referenceFrame;
+            _Bool allowMonitoringWhileNearby;
         } circularAttributes;
     } ;
-} CDStruct_3afce72c;
+} CDStruct_5652eb1b;
 

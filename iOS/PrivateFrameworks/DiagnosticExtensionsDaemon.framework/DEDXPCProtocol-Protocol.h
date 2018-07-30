@@ -6,11 +6,13 @@
 
 #import "NSObject.h"
 
-@class DEDBugSessionConfiguration, DEDDevice, NSArray, NSDictionary, NSError, NSString;
+@class DEDBugSessionConfiguration, DEDDevice, NSArray, NSDate, NSDictionary, NSError, NSString;
 
 @protocol DEDXPCProtocol <NSObject>
 - (void)didStartBugSessionWithInfo:(NSDictionary *)arg1;
 - (void)startBugSessionWithIdentifier:(NSString *)arg1 configuration:(DEDBugSessionConfiguration *)arg2 caller:(DEDDevice *)arg3 target:(DEDDevice *)arg4;
+- (void)sessionWithIdentifier:(NSString *)arg1 isActive:(_Bool)arg2;
+- (void)hasActiveSession:(NSString *)arg1;
 - (void)successPINForDevice:(DEDDevice *)arg1;
 - (void)tryPIN:(NSString *)arg1 forDevice:(DEDDevice *)arg2;
 - (void)promptPINForDevice:(DEDDevice *)arg1;
@@ -23,6 +25,8 @@
 - (void)ping;
 
 @optional
+- (void)cancelNotifySession:(NSString *)arg1;
+- (void)notifySession:(NSString *)arg1;
 - (void)didCancelSession:(NSString *)arg1;
 - (void)cancelSession:(NSString *)arg1;
 - (void)didCommitSession:(NSString *)arg1;
@@ -30,10 +34,13 @@
 - (void)uploadProgress:(unsigned long long)arg1 total:(long long)arg2 session:(NSString *)arg3;
 - (void)didAdoptFilesWithError:(NSError *)arg1 forSession:(NSString *)arg2;
 - (void)adoptFiles:(NSArray *)arg1 forSession:(NSString *)arg2;
+- (void)hasCollected:(NSArray *)arg1 isCollecting:(NSArray *)arg2 withIdentifiers:(NSArray *)arg3 inSession:(NSString *)arg4;
 - (void)hasCollected:(NSArray *)arg1 isCollecting:(NSArray *)arg2 inSession:(NSString *)arg3;
+- (void)syncSessionStatusWithSession:(NSString *)arg1;
 - (void)getSessionStatusWithSession:(NSString *)arg1;
 - (void)terminateExtension:(NSString *)arg1 info:(NSDictionary *)arg2 session:(NSString *)arg3;
 - (void)finishedDiagnosticWithIdentifier:(NSString *)arg1 result:(NSDictionary *)arg2 session:(NSString *)arg3;
+- (void)startDiagnosticWithIdentifier:(NSString *)arg1 parameters:(NSDictionary *)arg2 deferRunUntil:(NSDate *)arg3 session:(NSString *)arg4;
 - (void)startDiagnosticWithIdentifier:(NSString *)arg1 parameters:(NSDictionary *)arg2 session:(NSString *)arg3;
 - (void)deviceSupportsDiagnosticExtensions:(NSArray *)arg1 session:(NSString *)arg2;
 - (void)listAvailableExtensionsForSession:(NSString *)arg1;

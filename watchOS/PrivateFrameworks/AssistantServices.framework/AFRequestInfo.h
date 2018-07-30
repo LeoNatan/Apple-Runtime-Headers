@@ -6,14 +6,15 @@
 
 #import "NSObject.h"
 
+#import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSData, NSDictionary, NSNumber, NSString, SAStartLocalRequest, SAStartRequest;
+@class AFSpeechRequestOptions, NSData, NSDictionary, NSNumber, NSString, SAStartLocalRequest, SAStartRequest;
 
-@interface AFRequestInfo : NSObject <NSSecureCoding>
+@interface AFRequestInfo : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _handoffRequiresUserInteraction;
-    _Bool _suppressAlert;
+    unsigned int _options;
     NSNumber *_notifyState;
     NSString *_text;
     NSString *_directAction;
@@ -26,6 +27,7 @@
     SAStartRequest *_startRequest;
     SAStartLocalRequest *_startLocalRequest;
     int _activationEvent;
+    AFSpeechRequestOptions *_speechRequestOptions;
     NSNumber *_combinedRank;
     NSNumber *_combinedScore;
     NSString *_interactionId;
@@ -35,6 +37,7 @@
     NSString *_previousUtterance;
     NSString *_sessionId;
     NSString *_utteranceSource;
+    unsigned long long _timestamp;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -47,8 +50,8 @@
 @property(copy, nonatomic) NSString *interactionId; // @synthesize interactionId=_interactionId;
 @property(copy, nonatomic) NSNumber *combinedScore; // @synthesize combinedScore=_combinedScore;
 @property(copy, nonatomic) NSNumber *combinedRank; // @synthesize combinedRank=_combinedRank;
+@property(copy, nonatomic) AFSpeechRequestOptions *speechRequestOptions; // @synthesize speechRequestOptions=_speechRequestOptions;
 @property(nonatomic) int activationEvent; // @synthesize activationEvent=_activationEvent;
-@property(nonatomic) _Bool suppressAlert; // @synthesize suppressAlert=_suppressAlert;
 @property(copy, nonatomic) SAStartLocalRequest *startLocalRequest; // @synthesize startLocalRequest=_startLocalRequest;
 @property(copy, nonatomic) SAStartRequest *startRequest; // @synthesize startRequest=_startRequest;
 @property(copy, nonatomic) NSDictionary *correctedSpeechContext; // @synthesize correctedSpeechContext=_correctedSpeechContext;
@@ -61,11 +64,17 @@
 @property(copy, nonatomic) NSString *directAction; // @synthesize directAction=_directAction;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSNumber *notifyState; // @synthesize notifyState=_notifyState;
+@property(nonatomic) unsigned int options; // @synthesize options=_options;
+@property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
+- (_Bool)isSpeechRequest;
 - (_Bool)requiresUserInteraction;
+- (id)initWithTimestamp:(unsigned long long)arg1;
+- (id)init;
 
 @end
 

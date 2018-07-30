@@ -21,6 +21,7 @@
     double _shadowSelectionDuration;
     double _shadowUnselectionDuration;
     double _repositionUnselectionDuration;
+    _Bool _overlayComposited;
     _Bool _imageLoaded;
     TVImageProxy *_imageProxy;
     NSShadow *_shadow;
@@ -34,6 +35,7 @@
 @property(nonatomic, getter=isImageLoaded) _Bool imageLoaded; // @synthesize imageLoaded=_imageLoaded;
 @property(retain, nonatomic) UIView *unmaskedOverlayView; // @synthesize unmaskedOverlayView=_unmaskedOverlayView;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
+@property(nonatomic, getter=isOverlayComposited) _Bool overlayComposited; // @synthesize overlayComposited=_overlayComposited;
 @property(copy, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(nonatomic) struct CGSize stackSize; // @synthesize stackSize=_stackSize;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;

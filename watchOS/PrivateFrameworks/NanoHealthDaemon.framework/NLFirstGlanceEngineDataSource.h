@@ -8,29 +8,29 @@
 
 #import "NLFirstGlanceEngineDataSource.h"
 
-@class FITypicalDayActivityModel, HDProfile, NSString;
+@class ACHAchievementStore, FITypicalDayActivityModel, HDProfile, NSString;
 
 @interface NLFirstGlanceEngineDataSource : NSObject <NLFirstGlanceEngineDataSource>
 {
     HDProfile *_profile;
     FITypicalDayActivityModel *_typicalDayModel;
+    ACHAchievementStore *_achievementStore;
 }
 
+@property(nonatomic) __weak ACHAchievementStore *achievementStore; // @synthesize achievementStore=_achievementStore;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel=_typicalDayModel;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
-- (_Bool)hasMonthlyChallengeForDate:(id)arg1 calendar:(id)arg2;
+- (id)allActivitySharingFriends;
 - (double)projectedDayDuration;
-- (id)monthlyChallengeAchievementForIdentifier:(id)arg1;
 - (id)activitySummariesDuringInterval:(id)arg1 calendar:(id)arg2;
 - (id)yesterdayActivitySummary;
 - (double)recommendedGoalInCaloriesForDate:(id)arg1;
 - (id)workoutsCompletedDuringInterval:(id)arg1;
-- (id)achievementsCompletedDuringInterval:(id)arg1;
+- (id)monthlyChallengeForDate:(id)arg1 calendar:(id)arg2;
+- (id)achievementsCompletedOnDay:(id)arg1 calendar:(id)arg2;
+- (id)achievementWithUniqueName:(id)arg1;
 - (id)weeklySummaryInfoForDate:(id)arg1;
-- (id)evaluatedAchievementExpression:(id)arg1;
-- (id)evaluatedAchievementWithDefinitionIdentifier:(id)arg1;
-- (id)definitionWithIdentifier:(id)arg1;
 - (int)firstDayOfFitnessWeek;
 - (id)initWithProfile:(id)arg1 typicalDayModel:(id)arg2;
 

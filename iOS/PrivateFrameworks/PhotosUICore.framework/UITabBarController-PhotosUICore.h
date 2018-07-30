@@ -9,6 +9,8 @@
 @interface UITabBarController (PhotosUICore)
 - (struct CGRect)px_frameForTabItem:(unsigned long long)arg1 inCoordinateSpace:(id)arg2;
 - (void)px_performAddToTabAnimation:(unsigned long long)arg1 withSnapshotView:(id)arg2;
+@property(readonly, nonatomic) _Bool px_hidesTabBarForCurrentHorizontalSizeClass;
+@property(readonly, nonatomic) _Bool px_hidesTabBarForRegularHorizontalSizeClass;
 - (_Bool)px_canPerformAddToTabAnimationForTab:(unsigned long long)arg1;
 - (id)px_navigateToMemoryWithLocalIdentifier:(id)arg1;
 @property(readonly, nonatomic, getter=px_isTabBarHidden) _Bool px_tabBarHidden;

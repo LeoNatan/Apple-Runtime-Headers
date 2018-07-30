@@ -24,6 +24,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)data;
+- (id)initWithData:(id)arg1;
 - (id)initWithPropertyString:(id)arg1;
 - (id)init;
 

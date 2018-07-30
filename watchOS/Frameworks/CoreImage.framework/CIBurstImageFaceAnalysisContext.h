@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class FCRFaceDetector, NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
 @interface CIBurstImageFaceAnalysisContext : NSObject
@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     NSMutableArray *faceInfoArray;
     int numFramesSinceFullFaceCore;
     int numFramesNoFaces;
-    FCRFaceDetector *faceDetector;
     NSMutableArray *faceTimestampArray;
     double latestImageTimestamp;
     int lastFaceIndex;

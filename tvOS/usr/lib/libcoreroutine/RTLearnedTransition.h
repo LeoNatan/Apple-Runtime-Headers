@@ -19,8 +19,10 @@
     NSUUID *_visitIdentifierDestination;
     NSDate *_creationDate;
     NSDate *_expirationDate;
+    unsigned long long _predominantMotionActivityType;
 }
 
+@property(nonatomic) unsigned long long predominantMotionActivityType; // @synthesize predominantMotionActivityType=_predominantMotionActivityType;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSUUID *visitIdentifierDestination; // @synthesize visitIdentifierDestination=_visitIdentifierDestination;
@@ -32,7 +34,7 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (id)initWithIdentifier:(id)arg1 startDate:(id)arg2 stopDate:(id)arg3 visitIdentifierOrigin:(id)arg4 visitIdentifierDestination:(id)arg5 creationDate:(id)arg6 expirationDate:(id)arg7;
+- (id)initWithIdentifier:(id)arg1 startDate:(id)arg2 stopDate:(id)arg3 visitIdentifierOrigin:(id)arg4 visitIdentifierDestination:(id)arg5 creationDate:(id)arg6 expirationDate:(id)arg7 predominantMotionActivityType:(unsigned long long)arg8;
 - (id)init;
 - (id)managedObjectWithContext:(id)arg1;
 - (id)initWithTransitionMO:(id)arg1;

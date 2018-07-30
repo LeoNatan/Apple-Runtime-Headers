@@ -10,6 +10,7 @@
 
 @class GEOPlaceResult;
 
+__attribute__((visibility("hidden")))
 @interface GEOBatchPlaceResult : PBCodable <NSCopying>
 {
     GEOPlaceResult *_placeResult;

@@ -21,7 +21,7 @@
 @property _Bool canHaveSmallSpotlightIcons; // @synthesize canHaveSmallSpotlightIcons=_canHaveSmallSpotlightIcons;
 @property(retain) SFSearchResult *result; // @synthesize result=_result;
 @property(retain) SBFApplication *application; // @synthesize application=_application;
-@property(retain) UIView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
+@property __weak UIView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 - (void).cxx_destruct;
 - (id)engagementFeedbackForTriggerEvent:(unsigned long long)arg1;
 - (void)didPop;

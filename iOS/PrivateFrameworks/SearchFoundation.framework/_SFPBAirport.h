@@ -46,17 +46,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasName;
-@property(readonly, nonatomic) _Bool hasCountry;
-@property(readonly, nonatomic) _Bool hasCountryCode;
-@property(readonly, nonatomic) _Bool hasPostalCode;
-@property(readonly, nonatomic) _Bool hasState;
-@property(readonly, nonatomic) _Bool hasDistrict;
-@property(readonly, nonatomic) _Bool hasStreet;
-@property(readonly, nonatomic) _Bool hasCity;
-@property(readonly, nonatomic) _Bool hasLocation;
-@property(readonly, nonatomic) _Bool hasTimezone;
-@property(readonly, nonatomic) _Bool hasCode;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

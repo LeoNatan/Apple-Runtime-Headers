@@ -50,11 +50,12 @@
 - (id)initWithDelegateQueue:(id)arg1;
 
 // Remaining properties
-@property(readonly, nonatomic) struct __CFString *currentRAT;
+@property(readonly, nonatomic) int currentRAT;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) BOOL isLTEWithCDRX;
+@property(readonly, nonatomic) NSString *networkCode;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) struct __CFString *wwanInterfaceName;
 

@@ -57,7 +57,7 @@
 - (BOOL)hasValidCacheFileForMessage:(id)arg1;
 - (id)_preferredOrderForFetchingMessageBodies:(id)arg1;
 - (void)addMessageDetails:(id)arg1;
-- (void)setResultsForLabelChangeAction:(long long)arg1;
+- (void)setResultsForLabelChangeAction:(long long)arg1 uids:(id)arg2 labelsToAdd:(id)arg3 labelsToRemove:(id)arg4;
 - (void)setResultsForFlagChangeAction:(long long)arg1 uids:(id)arg2 flags:(long long)arg3 mask:(long long)arg4;
 - (void)setResultsForAppendAction:(long long)arg1 newMessageDetails:(id)arg2;
 - (void)setResultsForCopyAction:(long long)arg1 newMessageDetails:(id)arg2 lastBatch:(BOOL)arg3;
@@ -95,7 +95,7 @@
 - (id)messagesWithRowIDs:(id)arg1;
 - (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2;
 - (id)messageWithDefaultLoadOptionsAndRowID:(long long)arg1;
-- (void)reflectGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (void)reflectGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2 messageDetails:(id)arg3;
 - (void)reflectFlagChanges:(id)arg1 forMessages:(id)arg2 withUIDs:(id)arg3;
 - (void)_addFlagChangeActionForFlagChanges:(id)arg1 messages:(id)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
@@ -124,7 +124,6 @@
 @property(readonly, nonatomic) MFMailbox *mailbox;
 - (BOOL)canRebuild;
 - (void)doRoutineCleanup;
-- (void)cleanupSynchronously;
 - (void)fetchSynchronouslyForKnownChanges;
 - (void)fetchSynchronously;
 - (void)checkNewMail;
@@ -155,7 +154,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) BOOL isTrash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) BOOL supportsSnippets;
 
 @end
 

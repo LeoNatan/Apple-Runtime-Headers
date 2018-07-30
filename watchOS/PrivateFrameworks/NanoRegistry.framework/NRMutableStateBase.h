@@ -13,6 +13,7 @@
 @interface NRMutableStateBase : NSObject <NRMutableStateProtocol>
 {
     NSMutableSet *_observers;
+    struct os_unfair_lock_s _lock;
     id <NRMutableStateParentDelegate> _parentDelegate;
 }
 
@@ -26,12 +27,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (void)invalidate;
 - (void)removeObserver:(id)arg1;
 - (id)addObserverQueue:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)notifyObserversWithDiff:(id)arg1;
 - (void)notifyParentWithDiff:(id)arg1;
 - (id)applyDiff:(id)arg1 upOnly:(_Bool)arg2 notifyParent:(_Bool)arg3 unconditional:(_Bool)arg4;
 - (id)applyDiff:(id)arg1;
+- (id)observers;
 - (id)init;
 
 // Remaining properties

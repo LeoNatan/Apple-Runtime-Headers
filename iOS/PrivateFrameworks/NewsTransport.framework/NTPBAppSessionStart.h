@@ -37,6 +37,7 @@
     NSMutableArray *_subscribedFeedIds;
     int _topicSubscriptionCount;
     NSString *_userActivityType;
+    int _viewabilityState;
     NSMutableArray *_visibleViews;
     int _widgetArticleRank;
     NTPBWidgetEngagement *_widgetEngagement;
@@ -54,6 +55,7 @@
         unsigned int safariAutoSubscribeFeedCount:1;
         unsigned int sessionStartMethod:1;
         unsigned int topicSubscriptionCount:1;
+        unsigned int viewabilityState:1;
         unsigned int widgetArticleRank:1;
         unsigned int widgetSection:1;
         unsigned int widgetSectionArticleRank:1;
@@ -105,6 +107,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasViewabilityState;
+@property(nonatomic) int viewabilityState; // @synthesize viewabilityState=_viewabilityState;
 @property(nonatomic) _Bool hasInternalAutoSubscribeFeedCount;
 @property(nonatomic) _Bool hasAppsAutoSubscribeFeedCount;
 @property(nonatomic) _Bool hasSafariAutoSubscribeFeedCount;

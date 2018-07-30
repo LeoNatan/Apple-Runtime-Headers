@@ -13,5 +13,7 @@
 @property(readonly, copy, nonatomic) UIColor *secondaryOverlayTintColor;
 @property(nonatomic) double primaryOverlayTintAlpha;
 @property(readonly, copy, nonatomic) UIColor *primaryOverlayTintColor;
+@property(nonatomic) double baseOverlayTintAlpha;
+@property(readonly, copy, nonatomic) UIColor *baseOverlayColor;
 @end
 

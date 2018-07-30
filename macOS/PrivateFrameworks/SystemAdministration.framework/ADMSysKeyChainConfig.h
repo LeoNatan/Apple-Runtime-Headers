@@ -12,6 +12,7 @@
 
 + (id)sharedSysKeyChainConfig;
 - (void)setRestrictAppInstallations:(BOOL)arg1 allowCaspianIdentifiedApps:(BOOL)arg2;
+- (void)setRestrictAppInstallations:(unsigned long long)arg1;
 - (BOOL)setODSDPassword:(id)arg1 accountName:(id)arg2;
 - (int)storeKeyInSystemKeychain:(id)arg1 forUser:(id)arg2 serverURL:(id)arg3 description:(id)arg4;
 - (BOOL)storeSystemKeychainPassword:(id)arg1 account:(id)arg2 service:(id)arg3;

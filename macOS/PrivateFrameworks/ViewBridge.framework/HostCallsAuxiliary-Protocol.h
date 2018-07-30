@@ -10,8 +10,9 @@
 
 @protocol HostCallsAuxiliary <HostOrServiceCallsAuxiliary>
 - (void)killViewService:(void (^)(int))arg1;
-- (void)joinPair:(NSString *)arg1 reply:(void (^)(BOOL))arg2;
-- (void)remoteViewBecameAssociatedWithWindow:(unsigned int)arg1;
+- (void)updateFrameInScreenCoords:(struct CGRect)arg1;
+- (void)joinPair:(NSString *)arg1 rendezvousWindowIdentifier:(NSString *)arg2 frameInScreenCoords:(struct CGRect)arg3 hostWindowKind:(unsigned char)arg4 hostWindowBase:(unsigned char)arg5 reply:(void (^)(NSError *))arg6;
+- (void)remoteViewBecameAssociatedWithWindow:(unsigned int)arg1 reply:(void (^)(NSError *))arg2;
 - (void)remoteViewKeyTestWindowResignedKey;
 - (void)remoteViewKeyTestWindowBecameKeyWhileFirstResponder:(BOOL)arg1 inActiveApp:(BOOL)arg2 wantsAggressiveKeyboardFocusTheftCancellation:(BOOL)arg3;
 - (void)remoteViewResignedFirstResponderInService:(NSString *)arg1 forWindowWithKey:(BOOL)arg2 inActiveApp:(BOOL)arg3 wantsAggressiveKeyboardFocusTheftCancellation:(BOOL)arg4 inFavorOfAccessoryView:(BOOL)arg5;

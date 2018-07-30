@@ -7,14 +7,17 @@
 #import "UIViewController.h"
 
 #import "SBUIRemoteAlertServiceInterface.h"
+#import "SBUIRemoteAlertServiceInterface_Internal.h"
 
-@interface SBUIRemoteAlertServiceViewController : UIViewController <SBUIRemoteAlertServiceInterface>
+@interface SBUIRemoteAlertServiceViewController : UIViewController <SBUIRemoteAlertServiceInterface_Internal, SBUIRemoteAlertServiceInterface>
 {
 }
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 - (_Bool)_selectorIsOverriden:(SEL)arg1;
+- (void)sb_resignFirstResponder;
+- (void)sb_becomeFirstResponder;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setUserInfo:(id)arg1;
 - (void)handleButtonActions:(id)arg1;

@@ -13,20 +13,12 @@
     _Bool _alwaysAllowDragsWithinUserAlbums;
     _Bool _springLoadingEnabled;
     _Bool _useFileProvider;
-    _Bool _oneUpDragOutEnabled;
-    long long _oneUpStyle;
-    double _longPressDuration;
-    double _longPressRadius;
     long long _reorderCadence;
 }
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
 @property(nonatomic) long long reorderCadence; // @synthesize reorderCadence=_reorderCadence;
-@property(nonatomic) double longPressRadius; // @synthesize longPressRadius=_longPressRadius;
-@property(nonatomic) double longPressDuration; // @synthesize longPressDuration=_longPressDuration;
-@property(nonatomic) long long oneUpStyle; // @synthesize oneUpStyle=_oneUpStyle;
-@property(nonatomic) _Bool oneUpDragOutEnabled; // @synthesize oneUpDragOutEnabled=_oneUpDragOutEnabled;
 @property(nonatomic) _Bool useFileProvider; // @synthesize useFileProvider=_useFileProvider;
 @property(nonatomic) _Bool springLoadingEnabled; // @synthesize springLoadingEnabled=_springLoadingEnabled;
 @property(nonatomic) _Bool alwaysAllowDragsWithinUserAlbums; // @synthesize alwaysAllowDragsWithinUserAlbums=_alwaysAllowDragsWithinUserAlbums;

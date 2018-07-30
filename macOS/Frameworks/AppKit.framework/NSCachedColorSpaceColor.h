@@ -6,6 +6,7 @@
 
 #import <AppKit/NSColorSpaceColor.h>
 
+__attribute__((visibility("hidden")))
 @interface NSCachedColorSpaceColor : NSColorSpaceColor
 {
 }

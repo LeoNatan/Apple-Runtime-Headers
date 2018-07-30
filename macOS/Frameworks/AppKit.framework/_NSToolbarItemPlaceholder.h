@@ -8,6 +8,7 @@
 
 @class NSString, NSToolbar;
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarItemPlaceholder : NSObject
 {
     NSString *_itemIdentifier;
@@ -22,6 +23,7 @@
 - (long long)visibilityPriority;
 - (void)setVisibilityPriority:(long long)arg1;
 - (id)toolbar;
+- (id)_toolbar;
 - (void)_setToolbar:(id)arg1;
 - (id)itemIdentifier;
 - (void)dealloc;

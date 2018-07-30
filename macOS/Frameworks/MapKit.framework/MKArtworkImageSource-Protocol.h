@@ -13,6 +13,7 @@
 - (NSImage *)imageToDisplayWithScreenScale:(double)arg1;
 
 @optional
+@property(readonly, nonatomic) BOOL primaryImage;
 @property(readonly, nonatomic) BOOL shouldHighlight;
 @end
 

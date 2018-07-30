@@ -7,10 +7,10 @@
 #import "NFSessionCallbackInterface.h"
 #import "NSObject.h"
 
-@class NFTechnologyEvent;
+@class NFFieldNotification;
 
 @protocol NFFieldDetectSessionCallbacks <NSObject, NFSessionCallbackInterface>
-- (void)didDetectTechnology:(NFTechnologyEvent *)arg1;
+- (void)didDetectFieldNotification:(NFFieldNotification *)arg1;
 - (void)didDetectField:(BOOL)arg1;
 @end
 

@@ -43,7 +43,8 @@
 - (void)pushAdditionOfEntries:(struct NSArray *)arg1 deleteMissing:(_Bool)arg2;
 - (unsigned long)_addEntries:(struct NSArray *)arg1 deleteMissing:(_Bool)arg2;
 - (struct NSArray *)_copyEntriesIfNecessary:(struct NSArray *)arg1;
-- (_Bool)canProduceEntriesOfType:(unsigned int)arg1;
+- (_Bool)removeEntry:(id)arg1 behavior:(int)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)canProduceEntriesOfType:(int)arg1;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;

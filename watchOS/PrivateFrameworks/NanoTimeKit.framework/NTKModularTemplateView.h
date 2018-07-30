@@ -31,6 +31,7 @@
 - (void)setContainsOverrideFaceColor:(id)arg1;
 - (void)_setColorScheme:(id)arg1 propagateToSubviews:(_Bool)arg2;
 - (void)applyFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;
+- (void)setComplicationTemplate:(id)arg1 reason:(int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

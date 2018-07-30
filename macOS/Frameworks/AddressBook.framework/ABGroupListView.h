@@ -6,7 +6,6 @@
 
 #import "NSOutlineView.h"
 
-__attribute__((visibility("hidden")))
 @interface ABGroupListView : NSOutlineView
 {
 }

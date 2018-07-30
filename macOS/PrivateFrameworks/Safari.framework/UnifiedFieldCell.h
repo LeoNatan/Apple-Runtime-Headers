@@ -12,12 +12,10 @@ __attribute__((visibility("hidden")))
 @interface UnifiedFieldCell : NSTextFieldCell
 {
     NSString *_accessibilityDescription;
-    BOOL _drawingBackgroundOnly;
 }
 
-@property(nonatomic, getter=isDrawingBackgroundOnly) BOOL drawingBackgroundOnly; // @synthesize drawingBackgroundOnly=_drawingBackgroundOnly;
 - (void).cxx_destruct;
-- (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)unifiedFieldView;
 - (BOOL)isOpaque;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;

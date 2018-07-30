@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (int)isolationLevel;
 - (id)requestOperationClasses;
 - (id)zoneIDsToLock;
+- (BOOL)allowsAnonymousAccount;
 - (int)operationType;
 - (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 oplock:(BOOL)arg3 sendAllFields:(BOOL)arg4 clientChangeTokenData:(id)arg5;
 

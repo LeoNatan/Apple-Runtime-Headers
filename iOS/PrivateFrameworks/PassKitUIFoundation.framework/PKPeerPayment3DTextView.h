@@ -6,33 +6,31 @@
 
 #import "UIView.h"
 
-#import "PKMotionManagerClientProtocol.h"
 #import "SCNSceneRendererDelegate.h"
 
-@class NSMutableArray, NSString, SCNMaterial, SCNNode, SCNPlane, SCNView;
+@class NSMutableArray, NSString, PKPeerPayment3DScene, PKPeerPayment3DStore, SCNView;
 
-@interface PKPeerPayment3DTextView : UIView <PKMotionManagerClientProtocol, SCNSceneRendererDelegate>
+@interface PKPeerPayment3DTextView : UIView <SCNSceneRendererDelegate>
 {
     SCNView *_sceneView;
-    SCNMaterial *_textMaterial;
-    SCNPlane *_wallGeometry;
-    SCNNode *_lightNode;
-    SCNNode *_textContainerNode;
-    // Error parsing type: , name: _lastRollPitch
+    PKPeerPayment3DScene *_scene;
     double _sceneWidthUnits;
     double _sceneHeightUnits;
     NSMutableArray *_performHandlers;
-    long long _frameCount;
     double _dynamicRollPitchMix;
     double _startAnimationTime;
     double _animationDuration;
     double _lastRenderTime;
     _Bool _liveMotionEnabled;
+    _Bool _snapshotRequested;
+    _Bool _hasFullyRendered;
+    PKPeerPayment3DStore *_3DStore;
+    _Bool _layoutRequested;
+    NSMutableArray *_charactersToDraw;
     unsigned long long _renderStyle;
     NSString *_text;
 }
 
-+ (id)_sharedMotionManager;
 + (id)supportedCharacterSet;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) unsigned long long renderStyle; // @synthesize renderStyle=_renderStyle;
@@ -40,12 +38,17 @@
 - (void)renderer:(id)arg1 didRenderScene:(id)arg2 atTime:(double)arg3;
 - (void)performPostRender:(CDUnknownBlockType)arg1;
 - (void)didMoveToWindow;
-- (id)generatedSnapshot;
-- (void)setRollPitch: /* Error: Ran out of types for this method. */;
+- (void)didBecomeActive;
+- (void)willResignActive;
 - (void)setMotionEffectEnabled:(_Bool)arg1 animated:(_Bool)arg2;
+- (id)generatedSnapshot;
+- (void)renderer:(id)arg1 updateAtTime:(double)arg2;
+- (void)layoutText;
+- (void)loadCharactersAndLayout;
 - (_Bool)setText:(id)arg1;
 - (void)layoutSubviews;
 - (void)updateSceneUnits;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 renderStyle:(unsigned long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 

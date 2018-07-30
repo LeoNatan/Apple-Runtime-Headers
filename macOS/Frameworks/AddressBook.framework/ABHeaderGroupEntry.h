@@ -8,7 +8,6 @@
 
 @class ABAccount, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ABHeaderGroupEntry : ABGroupEntry
 {
     ABAccount *_account;

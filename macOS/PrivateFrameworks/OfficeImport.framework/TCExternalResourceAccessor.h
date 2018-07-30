@@ -8,7 +8,6 @@
 
 @class NSArray, NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface TCExternalResourceAccessor : NSObject
 {
     NSURL *mDocumentURL;
@@ -22,11 +21,11 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSError *error; // @synthesize error=mError;
 @property(readonly, nonatomic) NSArray *externalResourceURLs; // @synthesize externalResourceURLs=mExternalResourceURLs;
+- (void).cxx_destruct;
 - (BOOL)couldAccessExternalResourceURL:(id)arg1 error:(out id *)arg2;
 - (id)p_localizedErrorWithError:(id)arg1 forURL:(id)arg2;
 - (void)p_finishAccessingExternalResourcesWithExternalResourceURLs:(id)arg1 accessErrorsForExternalResourceURLs:(id)arg2 error:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)accessExternalResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)initWithDocumentURL:(id)arg1 extractorServiceName:(id)arg2;
 
 @end

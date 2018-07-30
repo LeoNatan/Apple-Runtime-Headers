@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak PUPhotosGridViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
 - (void).cxx_destruct;
 - (void)handleKeyboardAvoidanceIfNeeded:(id)arg1;
-- (_Bool)_isPhotosPickerExtensionAvailable;
 - (void)updatePhotoPickerAppearance;
 - (id)_imagePickerController;
 - (void)_showImageViewController:(id)arg1;

@@ -29,6 +29,7 @@
 - (long long)imageOrientation;
 - (struct CGImage *)CGImage;
 - (id)bitmapRepresentation;
+- (struct NSImage *)ic_imageWithBackgroundColor:(struct NSColor *)arg1;
 - (struct NSImage *)imageFromRect:(struct CGRect)arg1;
 - (struct NSImage *)scaledImageWithSize:(struct CGSize)arg1 scale:(double)arg2;
 - (struct NSImage *)scaledImageMaxDimension:(double)arg1 scale:(double)arg2;

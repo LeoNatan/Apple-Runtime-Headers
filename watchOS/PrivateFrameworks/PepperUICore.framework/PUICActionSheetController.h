@@ -15,6 +15,7 @@
 {
     PUICStatusBarOccludedAssertion *_statusBarOccludedAssertion;
     _Bool _allowsMultipleSelection;
+    _Bool _blurredCellBackground;
     NSArray *_groups;
     PUICTableView *_tableView;
     NSIndexPath *_lastSelectedIndexPath;
@@ -24,6 +25,7 @@
 + (id)actionSheetControllerWithActions:(id)arg1 title:(id)arg2;
 + (id)actionSheetControllerWithGroups:(id)arg1;
 + (id)actionSheetController;
+@property(nonatomic) _Bool blurredCellBackground; // @synthesize blurredCellBackground=_blurredCellBackground;
 @property(retain, nonatomic) NSIndexPath *lastSelectedIndexPath; // @synthesize lastSelectedIndexPath=_lastSelectedIndexPath;
 @property(retain, nonatomic) PUICTableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;

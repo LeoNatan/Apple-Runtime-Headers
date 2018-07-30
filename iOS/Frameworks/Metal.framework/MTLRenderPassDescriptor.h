@@ -17,7 +17,6 @@
     unsigned long long _threadgroupMemoryLength;
     unsigned long long _tileWidth;
     unsigned long long _tileHeight;
-    unsigned long long _defaultSampleCount;
     unsigned long long _defaultRasterSampleCount;
 }
 
@@ -25,7 +24,6 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 @property(nonatomic) unsigned long long defaultRasterSampleCount; // @synthesize defaultRasterSampleCount=_defaultRasterSampleCount;
-@property(nonatomic) unsigned long long defaultSampleCount; // @synthesize defaultSampleCount=_defaultSampleCount;
 @property(nonatomic) unsigned long long tileHeight; // @synthesize tileHeight=_tileHeight;
 @property(nonatomic) unsigned long long tileWidth; // @synthesize tileWidth=_tileWidth;
 @property(nonatomic) unsigned long long threadgroupMemoryLength; // @synthesize threadgroupMemoryLength=_threadgroupMemoryLength;

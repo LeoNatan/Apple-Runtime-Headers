@@ -6,10 +6,23 @@
 
 #import <Spotlight/SPMetadataResult.h>
 
-@interface SPApplicationQueryResult : SPMetadataResult
+#import "NSSecureCoding.h"
+
+@class NSArray, NSSet;
+
+@interface SPApplicationQueryResult : SPMetadataResult <NSSecureCoding>
 {
+    NSArray *_displayNameInitials;
+    NSSet *_supportedRegions;
 }
 
++ (BOOL)supportsSecureCoding;
+@property(retain) NSSet *supportedRegions; // @synthesize supportedRegions=_supportedRegions;
+@property(retain) NSArray *displayNameInitials; // @synthesize displayNameInitials=_displayNameInitials;
+- (void).cxx_destruct;
+- (BOOL)isFile;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)isApplicationQueryResult;
 - (id)valueForAttribute:(id)arg1;
 

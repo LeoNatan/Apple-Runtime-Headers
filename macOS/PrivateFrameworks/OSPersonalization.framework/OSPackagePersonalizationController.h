@@ -11,7 +11,7 @@
 }
 
 + (id)sharedController;
-- (BOOL)_extractFirmwareBundleComponentFromPackage:(id)arg1 toDestination:(id)arg2;
+- (BOOL)_extractFirmwareBundleComponentFromPackage:(id)arg1 toDestination:(id)arg2 error:(id *)arg3;
 - (id)_recommendedFirmwareBundleComponentInSpecifiers:(id)arg1;
 - (void)personalizePackageSpecifiersForInstall:(id)arg1 outputDirectory:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)personalizationRequiredForPackageSpecifiers:(id)arg1;

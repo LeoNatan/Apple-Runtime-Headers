@@ -41,6 +41,9 @@
 - (void)setTitle:(id)arg1;
 @property(readonly, copy, nonatomic) INSpeakableString *title;
 - (id)initWithTitle:(id)arg1 content:(id)arg2 itemType:(int)arg3 status:(int)arg4 location:(id)arg5 locationSearchType:(int)arg6 dateTime:(id)arg7 dateSearchType:(int)arg8 notebookItemIdentifier:(id)arg9;
+- (id)_categoryVerb;
+- (int)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 - (id)initWithTitle:(id)arg1 content:(id)arg2 itemType:(int)arg3 status:(int)arg4 location:(id)arg5 locationSearchType:(int)arg6 dateTime:(id)arg7 dateSearchType:(int)arg8;

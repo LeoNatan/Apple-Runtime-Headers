@@ -14,6 +14,6 @@
 
 @optional
 - (void)willLoadMoreSuggestionsForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
-- (void)confirmationCountUpdatedForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
+- (void)confirmationCountUpdatedForSuggestionManager:(PXPeopleSuggestionManager *)arg1 undoing:(BOOL)arg2;
 @end
 

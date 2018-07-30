@@ -29,6 +29,7 @@
 - (void)releaseAllConnections;
 - (void)_connectionExpired:(id)arg1;
 - (void)_setTimer;
+- (BOOL)canAuthenticateWithCurrentCredentials;
 - (void)checkInConnection:(id)arg1;
 - (BOOL)connectAndAuthenticate:(id)arg1;
 - (id)authenticatedConnection;

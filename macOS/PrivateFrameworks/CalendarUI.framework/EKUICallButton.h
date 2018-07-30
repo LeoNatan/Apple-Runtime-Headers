@@ -14,6 +14,7 @@
 - (void)setFrameSize:(struct CGSize)arg1;
 - (id)callIconImageWithTint:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
+- (void)updateLayer;
 - (id)init;
 
 @end

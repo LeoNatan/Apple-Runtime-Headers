@@ -11,6 +11,7 @@
 
 @class NSMutableArray, NSMutableArray<CBContainerModuleProtocol>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CBDisplayContainerMacOS : CBContainer <CBContainerProtocol, CBHIDServiceProtocol>
 {
     unsigned long long _deviceID;

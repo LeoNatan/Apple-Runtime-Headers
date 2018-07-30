@@ -7,31 +7,34 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBProperty.h"
 
-@class NSString, PBUnknownFields, _INPBIntentSlotValue;
+@class NSString, _INPBIntentSlotValue;
 
-@interface _INPBProperty : PBCodable <NSCopying>
+@interface _INPBProperty : PBCodable <_INPBProperty, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBIntentSlotValue *_payload;
     NSString *_role;
 }
 
-+ (id)options;
+@property(copy, nonatomic) NSString *role; // @synthesize role=_role;
 @property(retain, nonatomic) _INPBIntentSlotValue *payload; // @synthesize payload=_payload;
-@property(retain, nonatomic) NSString *role; // @synthesize role=_role;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasPayload;
 @property(readonly, nonatomic) BOOL hasRole;
+@property(readonly, nonatomic) BOOL hasPayload;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

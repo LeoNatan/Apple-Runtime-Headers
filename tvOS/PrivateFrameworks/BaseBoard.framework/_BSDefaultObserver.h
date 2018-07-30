@@ -20,6 +20,7 @@
     // Error parsing type: AI, name: _debounceCounter
 }
 
+- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)invalidate;
 - (void)dealloc;

@@ -46,7 +46,7 @@
 - (void)didInvalidate;
 - (void)hardwareFailedToLoad;
 - (void)didDetectTags:(id)arg1;
-- (void)didDetectExternalReader:(id)arg1;
+- (void)didDetectExternalReaderWithNotification:(id)arg1;
 - (void)didTerminate:(id)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)invalidateSessionWithReason:(long long)arg1;

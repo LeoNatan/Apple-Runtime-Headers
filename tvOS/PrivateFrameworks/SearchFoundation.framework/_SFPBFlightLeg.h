@@ -13,7 +13,6 @@
 
 @interface _SFPBFlightLeg : PBCodable <_SFPBFlightLeg, NSSecureCoding>
 {
-    CDStruct_47fe53f2 _has;
     int _status;
     _SFPBDate *_departurePublishedTime;
     _SFPBDate *_departureActualTime;
@@ -61,24 +60,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasArrivalGateTime;
-@property(readonly, nonatomic) _Bool hasArrivalRunwayTime;
-@property(readonly, nonatomic) _Bool hasDepartureRunwayTime;
-@property(readonly, nonatomic) _Bool hasDepartureGateClosedTime;
-@property(readonly, nonatomic) _Bool hasBaggageClaim;
-@property(readonly, nonatomic) _Bool hasTitle;
-@property(readonly, nonatomic) _Bool hasDivertedAirport;
-@property(readonly, nonatomic) _Bool hasArrivalAirport;
-@property(readonly, nonatomic) _Bool hasArrivalGate;
-@property(readonly, nonatomic) _Bool hasArrivalTerminal;
-@property(readonly, nonatomic) _Bool hasArrivalActualTime;
-@property(readonly, nonatomic) _Bool hasArrivalPublishedTime;
-@property(readonly, nonatomic) _Bool hasDepartureAirport;
-@property(readonly, nonatomic) _Bool hasDepartureGate;
-@property(readonly, nonatomic) _Bool hasDepartureTerminal;
-@property(readonly, nonatomic) _Bool hasDepartureActualTime;
-@property(readonly, nonatomic) _Bool hasDeparturePublishedTime;
-@property(readonly, nonatomic) _Bool hasStatus;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

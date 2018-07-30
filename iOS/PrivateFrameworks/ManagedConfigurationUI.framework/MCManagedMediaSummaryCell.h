@@ -6,6 +6,7 @@
 
 #import <ManagedConfigurationUI/MCItemSummaryCell.h>
 
+__attribute__((visibility("hidden")))
 @interface MCManagedMediaSummaryCell : MCItemSummaryCell
 {
 }

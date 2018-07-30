@@ -25,6 +25,7 @@
 + (id)logCategory;
 + (id)resetBackingStore;
 + (id)flushBackingStore;
++ (id)internalAllowedTypes;
 + (id)allowedTypes;
 + (void)start;
 @property(nonatomic) __weak id <HMDBackingStoreObjectProtocol> delegate; // @synthesize delegate=_delegate;
@@ -41,8 +42,9 @@
 - (id)dumpState;
 - (id)logIdentifier;
 @property(readonly, copy) NSString *description;
-- (void)registerObject:(id)arg1 forUUID:(id)arg2;
 - (void)submit:(id)arg1;
+- (void)deleteModelObjects:(id)arg1 destination:(unsigned long long)arg2;
+- (void)updateModelObjects:(id)arg1 destination:(unsigned long long)arg2;
 - (void)commit:(id)arg1 run:(_Bool)arg2 save:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)transaction:(id)arg1 options:(id)arg2;
 - (id)transactionWithOptions:(id)arg1;

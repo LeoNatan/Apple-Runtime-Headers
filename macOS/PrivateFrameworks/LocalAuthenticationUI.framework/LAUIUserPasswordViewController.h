@@ -19,7 +19,7 @@
 + (void)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
 @property __weak id <LAUIUserPasswordFieldRemoteProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)didSubmitUnverifiedData:(unsigned int)arg1;
+- (void)didSubmitUnverifiedData:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestCancelAuthentication;
 - (void)passwordFieldDidResignFirstResponder;
 - (void)didSubmitWrongPassword:(BOOL)arg1;

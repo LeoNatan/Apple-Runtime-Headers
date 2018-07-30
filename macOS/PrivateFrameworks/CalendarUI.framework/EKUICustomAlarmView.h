@@ -59,7 +59,6 @@
 - (void)chooseAlarmType:(id)arg1;
 - (id)_iCalURL;
 - (void)fillAuxMenuWithFilesWithNewFileItem:(id)arg1;
-- (void)fillAuxMenuWithSounds;
 - (void)fillAuxMenuWithEmailAddresses;
 - (void)fillTimingMenu;
 - (BOOL)_isAddingEmailAlarmValid;

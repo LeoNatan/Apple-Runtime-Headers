@@ -28,8 +28,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasProtobufMessageName;
-@property(readonly, nonatomic) BOOL hasProtobufMessageData;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

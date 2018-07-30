@@ -6,39 +6,36 @@
 
 #import "NSView.h"
 
-@class CALayer<IMTypingIndicatorLayerProtocol>, NSColor, NSString;
+@class CALayer<IMTypingIndicatorLayerProtocol>, NSString;
 
 @interface SOTypingIndicatorView : NSView
 {
+    BOOL _hasDarkBackground;
     BOOL _flipForRTLLayout;
-    NSString *_balloonPlugInBundleID;
-    double _bubbleOpacity;
-    NSColor *_customBubbleColor;
+    BOOL _isDarkAqua;
     CALayer<IMTypingIndicatorLayerProtocol> *_typingLayer;
+    NSString *_balloonPlugInBundleID;
 }
 
-@property(retain, nonatomic) CALayer<IMTypingIndicatorLayerProtocol> *typingLayer; // @synthesize typingLayer=_typingLayer;
-@property(copy, nonatomic) NSColor *customBubbleColor; // @synthesize customBubbleColor=_customBubbleColor;
-@property(nonatomic) double bubbleOpacity; // @synthesize bubbleOpacity=_bubbleOpacity;
+@property(nonatomic) BOOL isDarkAqua; // @synthesize isDarkAqua=_isDarkAqua;
 @property(copy, nonatomic) NSString *balloonPlugInBundleID; // @synthesize balloonPlugInBundleID=_balloonPlugInBundleID;
 @property(nonatomic) BOOL flipForRTLLayout; // @synthesize flipForRTLLayout=_flipForRTLLayout;
+@property(nonatomic) BOOL hasDarkBackground; // @synthesize hasDarkBackground=_hasDarkBackground;
 - (void).cxx_destruct;
-- (struct CGSize)intrinsicContentSize;
+- (void)resetTypingLayer;
+- (void)updateLayer;
 - (void)viewDidChangeBackingProperties:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)_updateTypingLayerCustomColor;
 - (void)_updateTypingLayerTransform;
 - (void)_updatePlugInImage;
 - (void)_commonSOTypingIndicatorViewInit;
 - (void)stopAnimation;
 - (void)startShrinkAnimationWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)stopPulseAnimation;
 - (void)startPulseAnimation;
 - (void)startGrowAnimation;
 - (void)destroyTypingLayer;
-- (void)createTypingLayer;
-@property(nonatomic) BOOL hasDarkBackground;
+@property(retain, nonatomic) CALayer<IMTypingIndicatorLayerProtocol> *typingLayer; // @synthesize typingLayer=_typingLayer;
 
 @end
 

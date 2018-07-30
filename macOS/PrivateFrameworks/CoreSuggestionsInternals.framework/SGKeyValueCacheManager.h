@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)replaceCacheOfType:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (id)cacheOfType:(unsigned long long)arg1;
+- (id)cacheOfType:(unsigned long long)arg1 forceReadFromDisk:(BOOL)arg2;
 - (id)initInMemory;
 - (id)init;
 - (id)initWithBasePath:(id)arg1;

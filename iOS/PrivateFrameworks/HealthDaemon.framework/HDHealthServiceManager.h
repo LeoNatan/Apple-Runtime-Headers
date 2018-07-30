@@ -53,7 +53,7 @@
 - (void)pairingAgent:(id)arg1 peerDidCompletePairing:(id)arg2;
 - (unsigned long long)connectHealthService:(id)arg1 connectionOptions:(unsigned long long)arg2 sessionHandler:(CDUnknownBlockType)arg3 dataHandler:(CDUnknownBlockType)arg4 mfaSuccessHandler:(CDUnknownBlockType)arg5 autoPairData:(id)arg6 error:(id *)arg7;
 - (unsigned long long)connectHealthService:(id)arg1 sessionHandler:(CDUnknownBlockType)arg2 dataHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
-- (void)_reportExistingDiscoveriesForService:(id)arg1;
+- (void)_queue_reportExistingDiscoveriesForService:(id)arg1;
 - (void)_notifyDiscoveryForInfos:(id)arg1 peripheral:(id)arg2 healthService:(id)arg3 alwaysNotify:(_Bool)arg4;
 - (id)_reportPeripheral:(id)arg1 serviceUUID:(id)arg2 serviceAdvertisementData:(id)arg3 peripheralAdvertisementData:(id)arg4;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
@@ -83,6 +83,7 @@
 - (void)_queue_handleMFASuccessNotification;
 - (void)resetOOBState;
 - (id)retrieveOOBData:(id *)arg1;
+- (id)allServicesWithError:(id *)arg1;
 - (void)removeConnectingPeripheralsWithError:(id)arg1;
 - (void)removeAllDisconnectedPeripherals;
 - (void)_disconnectPeripheralWithDeviceIdentifier:(id)arg1 error:(id)arg2;
@@ -97,7 +98,7 @@
 - (id)_createDiscoveryTimeout:(unsigned long long)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)stopDiscoveryWithIdentifier:(unsigned long long)arg1;
 - (unsigned long long)discoverHealthServicesWithType:(long long)arg1 timeout:(unsigned long long)arg2 alwaysNotify:(_Bool)arg3 handler:(CDUnknownBlockType)arg4 error:(id *)arg5;
-- (void)_notifyBluetoothStatusUpdates:(long long)arg1 error:(id)arg2;
+- (void)_queue_notifyBluetoothStatusUpdates:(long long)arg1 error:(id)arg2;
 - (void)sendBluetoothStatusUpdatesForServer:(id)arg1 updateHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)setHealthUpdatesEnabled:(_Bool)arg1 fromDevice:(id)arg2 error:(id *)arg3;
 - (_Bool)healthUpdatesEnabledFromDevice:(id)arg1 error:(id *)arg2;

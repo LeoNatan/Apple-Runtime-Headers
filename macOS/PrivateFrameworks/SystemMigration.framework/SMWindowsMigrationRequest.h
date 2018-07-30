@@ -24,7 +24,6 @@
 @property(retain) NSMutableArray *systemComponentDicts; // @synthesize systemComponentDicts=_systemComponentDicts;
 @property(copy) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
 - (void).cxx_destruct;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (void)updateAutoLoginUser;
 - (id)description;
 - (id)exportXPCDict;

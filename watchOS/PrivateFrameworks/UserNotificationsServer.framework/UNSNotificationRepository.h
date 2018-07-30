@@ -19,36 +19,42 @@
 
 @property(nonatomic) id <UNSNotificationRepositoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_queue_performValidation;
 - (void)_queue_performMigrationForBundleIdentifier:(id)arg1;
+- (void)_queue_performMigrationForPushStoreAtPath:(id)arg1;
+- (void)_queue_performMigrationForPushStore;
+- (void)_queue_performMigrationForUserNotificationsStore;
 - (void)_queue_performMigration;
 - (void)_logNotification:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)_queue_setBadgeValue:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_queue_setBadgeString:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_queue_setBadgeNumber:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)_queue_getBadgeNumberForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)_queue_badgeNumberForBundleIdentifier:(id)arg1;
 - (void)setBadgeString:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setBadgeNumber:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)getBadgeNumberForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)badgeNumberForBundleIdentifier:(id)arg1;
 - (void)_queue_removeNotificationRecordsPassingTest:(CDUnknownBlockType)arg1 forBundleIdentifier:(id)arg2;
 - (void)_queue_removeAllNotificationRecordsForBundleIdentifier:(id)arg1;
-- (void)_queue_saveNotificationRecord:(id)arg1 withOptions:(unsigned int)arg2 forBundleIdentifier:(id)arg3;
-- (void)_queue_notifyObserversNotificationsDidAddNotifications:(id)arg1 replaceNotifications:(id)arg2 replacementNotifications:(id)arg3 removedNotifications:(id)arg4 forBundleIdentifier:(id)arg5;
+- (void)_queue_saveNotificationRecord:(id)arg1 shouldRepost:(_Bool)arg2 withOptions:(unsigned int)arg3 forBundleIdentifier:(id)arg4;
+- (void)_queue_notifyObserversNotificationsDidAddNotifications:(id)arg1 replaceNotifications:(id)arg2 replacementNotifications:(id)arg3 removedNotifications:(id)arg4 shouldRepost:(_Bool)arg5 forBundleIdentifier:(id)arg6;
 - (id)_queue_notificationRecordsForBundleIdentifier:(id)arg1;
 - (id)_notificationsForObjects:(id)arg1;
+- (void)performValidation;
 - (void)performMigration;
+- (id)allBundleIdentifiers;
 - (void)removeNotificationRepository;
 - (void)removeStoreForBundleIdentifier:(id)arg1;
 - (void)removeNotificationRecordsPassingTest:(CDUnknownBlockType)arg1 forBundleIdentifier:(id)arg2;
 - (void)removeAllNotificationRecordsForBundleIdentifier:(id)arg1;
-- (void)saveNotificationRecord:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)notificationRecordsForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)saveNotificationRecord:(id)arg1 shouldRepost:(_Bool)arg2 forBundleIdentifier:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (id)notificationRecordsForBundleIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)initWithSystemService:(id)arg1 dataStoreRepository:(id)arg2 observable:(id)arg3;
-- (id)initWithSystemService:(id)arg1;
+- (id)initWithDataStoreRepository:(id)arg1 observable:(id)arg2 systemService:(id)arg3;
+- (id)initWithDataStoreRepository:(id)arg1 observable:(id)arg2;
+- (id)initWithDirectory:(id)arg1 systemService:(id)arg2;
+- (id)initWithDirectory:(id)arg1;
 - (int)_maxObjectsPerKey;
-- (id)_pathExtension;
-- (id)_directory;
 
 @end
 

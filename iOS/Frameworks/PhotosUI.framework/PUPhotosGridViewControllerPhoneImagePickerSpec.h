@@ -11,7 +11,6 @@
 }
 
 - (_Bool)canCommitPreview;
-- (_Bool)canDisplaySearchActionInNavigationBar;
 - (_Bool)displaysAvalancheStacks;
 
 @end

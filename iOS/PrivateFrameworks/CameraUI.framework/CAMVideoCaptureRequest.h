@@ -19,6 +19,7 @@
     id <CAMVideoCaptureRequestDelegate> _delegate;
     long long _captureVideoConfiguration;
     long long _torchMode;
+    double _userInitationTimestamp;
 }
 
 @property(readonly, nonatomic) long long remainingDiskUsageThreshold; // @synthesize remainingDiskUsageThreshold=_remainingDiskUsageThreshold;
@@ -26,6 +27,7 @@
 @property(readonly, nonatomic) double maximumRecordedDuration; // @synthesize maximumRecordedDuration=_maximumRecordedDuration;
 @property(readonly, nonatomic) _Bool shouldGenerateVideoPreviewImage; // @synthesize shouldGenerateVideoPreviewImage=_shouldGenerateVideoPreviewImage;
 @property(readonly, nonatomic, getter=isTimelapse) _Bool timelapse; // @synthesize timelapse=_timelapse;
+@property(readonly, nonatomic) double userInitationTimestamp; // @synthesize userInitationTimestamp=_userInitationTimestamp;
 @property(readonly, nonatomic) long long torchMode; // @synthesize torchMode=_torchMode;
 @property(readonly, nonatomic) long long captureVideoConfiguration; // @synthesize captureVideoConfiguration=_captureVideoConfiguration;
 @property(readonly, nonatomic) __weak id <CAMVideoCaptureRequestDelegate> delegate; // @synthesize delegate=_delegate;

@@ -12,6 +12,7 @@
 - (id)vcp_localMovieResourcesSorted:(BOOL)arg1;
 - (id)vcp_localPhotoResourcesSorted:(BOOL)arg1;
 - (id)vcp_adjustmentsResource;
+- (id)vcp_originalVideoResource;
 - (id)vcp_originalResource;
 - (id)vcp_thumbnailResource;
 - (BOOL)vcp_hasLocalSlowmo;

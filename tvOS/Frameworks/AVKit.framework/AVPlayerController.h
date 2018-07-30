@@ -72,6 +72,7 @@
     NSObject<OS_dispatch_source> *_seekTimer;
     long long _bestAvailableVideoResolution;
     long long _bestAvailableVideoRange;
+    long long _bestAvailableAudioFormat;
     CDStruct_1b6d18a9 _seekToTimeInternal;
     CDStruct_1b6d18a9 _cachedContentDuration;
     CDStruct_1b6d18a9 _forwardPlaybackEndTime;
@@ -125,6 +126,7 @@
 + (id)keyPathsForValuesAffectingHasLegibleMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasAudioMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
+@property(nonatomic) long long bestAvailableAudioFormat; // @synthesize bestAvailableAudioFormat=_bestAvailableAudioFormat;
 @property(nonatomic) long long bestAvailableVideoRange; // @synthesize bestAvailableVideoRange=_bestAvailableVideoRange;
 @property(nonatomic) long long bestAvailableVideoResolution; // @synthesize bestAvailableVideoResolution=_bestAvailableVideoResolution;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *seekTimer; // @synthesize seekTimer=_seekTimer;
@@ -218,6 +220,7 @@
 - (_Bool)hasEnabledAudio;
 - (id)loadedTimeRanges;
 - (double)currentTimeWithinEndTimes;
+@property(readonly, nonatomic) NSDate *currentOrEstimatedDate;
 @property(readonly, nonatomic) NSDate *currentDate;
 - (double)contentDurationWithinEndTimes;
 - (void)setMaxTime:(double)arg1;
@@ -344,8 +347,10 @@
 - (id)initWithTVPlayer:(id)arg1;
 - (void)setClientSpecifiedDate:(id)arg1;
 - (id)clientSpecifiedDate;
+- (void)updateAudioFormats;
 - (void)updateVideoResolutionAndRange;
 - (void)_updateVideoResolutionAndRange;
+- (id)_audioAssetTracks;
 - (id)_videoAssetTracks;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;

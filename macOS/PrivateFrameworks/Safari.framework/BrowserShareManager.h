@@ -50,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (id)sharingServicePicker:(id)arg1 recentSharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (id)_addToBookmarksGlyph;
-- (id)_itemsForSharingService:(id)arg1 defaultSubject:(id)arg2 proposedItems:(id)arg3;
 - (void)_didFinishUsingSharingService:(id)arg1;
 - (id)_sharingServicesForShareSubmenuInFileMenuForItems:(id)arg1 proposedSharingServices:(id)arg2 isForRecentsSection:(BOOL)arg3;
 - (id)_emailLinkToThisPageMenuItemKeyEquivalent;
@@ -71,7 +70,6 @@ __attribute__((visibility("hidden")))
 - (void)_addBookmarkForUnifiedFieldURL;
 - (id)_transitionImageFromSourceWindow;
 - (struct CGRect)_currentTabContentViewFrameForSnapshot;
-- (id)_currentTabContentView;
 - (id)_currentBrowserViewController;
 - (id)_browserDocument;
 - (id)_titleForSharingService:(id)arg1;

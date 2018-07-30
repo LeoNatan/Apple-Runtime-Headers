@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CKAccountOverrideInfo, CKContainerID, CKDAccount, CKDAppContainerIntersectionMetadata, CKDAppContainerTuple, CKDApplicationMetadata, CKDCachePurger, CKDFlowControlManager, CKDKeyValueDiskCache, CKDMMCS, CKDMescalSession, CKDPCSCache, CKDPCSManager, CKDPublicIdentityLookupService, CKDServerConfiguration, CKDZoneGatekeeper, CKTimeLogger, NSBundle, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class CKAccountOverrideInfo, CKContainerID, CKDAccount, CKDAppContainerIntersectionMetadata, CKDAppContainerTuple, CKDApplicationMetadata, CKDCachePurger, CKDFlowControlManager, CKDKeyValueDiskCache, CKDMMCS, CKDMescalSession, CKDPCSCache, CKDPCSManager, CKDPublicIdentityLookupService, CKDServerConfiguration, CKDZoneGatekeeper, CKTimeLogger, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface CKDClientContext : NSObject
 {
@@ -36,7 +36,6 @@
     NSHashTable *_proxies;
     long long _cachedEnvironment;
     CKContainerID *_containerID;
-    NSBundle *_applicationBundle;
     NSString *_applicationBundleID;
     NSString *_sourceApplicationBundleID;
     NSString *_applicationVersion;
@@ -144,7 +143,6 @@
 @property(retain, nonatomic) NSString *applicationVersion; // @synthesize applicationVersion=_applicationVersion;
 @property(readonly, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(readonly, nonatomic) NSString *applicationBundleID; // @synthesize applicationBundleID=_applicationBundleID;
-@property(readonly, nonatomic) NSBundle *applicationBundle; // @synthesize applicationBundle=_applicationBundle;
 @property(readonly, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 @property long long cachedEnvironment; // @synthesize cachedEnvironment=_cachedEnvironment;
 @property(retain, nonatomic) NSHashTable *proxies; // @synthesize proxies=_proxies;
@@ -168,6 +166,7 @@
 - (void)clearAssetCache;
 - (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 withLifetime:(int)arg4;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
+@property(nonatomic) BOOL hasNonLegacyShareURLEntitlement;
 @property(retain, nonatomic) NSString *clientPrefixEntitlement;
 @property(retain, nonatomic) NSString *applicationIdentifier;
 @property(readonly, nonatomic) NSString *encryptionServiceName;
@@ -194,8 +193,6 @@
 - (id)description;
 - (id)CKPropertiesDescription;
 - (double)publicIdentitiesExpirationTimeout;
-@property(readonly, nonatomic) unsigned long long c2MetricsReportFrequencyBase;
-@property(readonly, nonatomic) unsigned long long c2MetricsReportFrequency;
 - (void)showUserNotification:(void *)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)performRequest:(id)arg1;
 - (void)tearDownAssetTransfers;

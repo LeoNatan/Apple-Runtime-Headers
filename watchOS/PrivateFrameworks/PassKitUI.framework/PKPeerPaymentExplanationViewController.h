@@ -40,6 +40,7 @@
 - (void)_presentDeviceToDeviceEncryptionFlow;
 - (void)_continuePressed;
 - (void)_addDifferentCard;
+- (id)_bodyText;
 - (void)explanationViewControllerDidSelectCancel:(id)arg1;
 - (void)selectPassesViewController:(id)arg1 didSelectPasses:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned int *)arg3;

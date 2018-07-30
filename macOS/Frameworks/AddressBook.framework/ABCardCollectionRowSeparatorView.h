@@ -8,7 +8,6 @@
 
 @class ABCardViewSeparator, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionRowSeparatorView : ABCardCollectionRowView
 {
     ABCardViewSeparator *_separator;

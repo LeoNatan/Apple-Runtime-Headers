@@ -12,6 +12,7 @@
 - (UIViewController *)presentingViewControllerForAvatarView:(CNAvatarView *)arg1;
 
 @optional
+- (void)didUpdateContentForAvatarView:(CNAvatarView *)arg1;
 - (void)didDismissActionsForAvatarView:(CNAvatarView *)arg1;
 - (void)willDismissActionsForAvatarView:(CNAvatarView *)arg1;
 - (void)willBeginPreviewInteractionForAvatarView:(CNAvatarView *)arg1;

@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FIReplicaNode : FINode
 {
-    struct TNSRef<FITNode *, void> _node;
+    struct TNSRef<FITNode, void> _node;
 }
 
 - (id).cxx_construct;

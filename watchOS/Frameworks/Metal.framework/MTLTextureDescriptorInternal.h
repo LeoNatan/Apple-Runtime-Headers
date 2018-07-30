@@ -42,6 +42,12 @@ __attribute__((visibility("hidden")))
 - (unsigned int)storageMode;
 - (void)setCpuCacheMode:(unsigned int)arg1;
 - (unsigned int)cpuCacheMode;
+- (void)setResourceIndex:(unsigned long long)arg1;
+- (unsigned long long)resourceIndex;
+- (void)setForceResourceIndex:(_Bool)arg1;
+- (_Bool)forceResourceIndex;
+- (void)setAllowGPUOptimizedContents:(_Bool)arg1;
+- (_Bool)allowGPUOptimizedContents;
 - (void)setArrayLength:(unsigned int)arg1;
 - (unsigned int)arrayLength;
 - (void)setSampleCount:(unsigned int)arg1;

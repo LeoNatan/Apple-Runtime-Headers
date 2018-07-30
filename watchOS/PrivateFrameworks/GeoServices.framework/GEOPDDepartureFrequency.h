@@ -11,6 +11,7 @@
 
 @class NSDate, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDDepartureFrequency : PBCodable <GEOTransitDepartureFrequency, NSCopying>
 {
     PBUnknownFields *_unknownFields;

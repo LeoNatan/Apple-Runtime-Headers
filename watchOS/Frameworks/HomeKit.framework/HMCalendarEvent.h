@@ -20,6 +20,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_updateFireDateComponents:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -27,8 +29,6 @@
 - (id)_serializeForAdd;
 - (void)_handleEventUpdatedNotification:(id)arg1;
 @property(retain, nonatomic) NSDateComponents *fireDateComponents; // @synthesize fireDateComponents=_fireDateComponents;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithDict:(id)arg1 fireDateComponents:(id)arg2;
 - (id)initWithFireDateComponents:(id)arg1;
 

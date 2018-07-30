@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBDoubleList.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBCondition;
+@class NSArray, NSString, _INPBCondition;
 
-@interface _INPBDoubleList : PBCodable <NSCopying>
+@interface _INPBDoubleList : PBCodable <_INPBDoubleList, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBCondition *_conditionType;
-    NSMutableArray *_dataStrings;
+    NSArray *_dataStrings;
 }
 
 + (Class)dataStringType;
-+ (id)options;
+@property(copy, nonatomic) NSArray *dataStrings; // @synthesize dataStrings=_dataStrings;
 @property(retain, nonatomic) _INPBCondition *conditionType; // @synthesize conditionType=_conditionType;
-@property(retain, nonatomic) NSMutableArray *dataStrings; // @synthesize dataStrings=_dataStrings;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasConditionType;
 - (id)dataStringAtIndex:(unsigned int)arg1;
-- (unsigned int)dataStringsCount;
+@property(readonly, nonatomic) unsigned int dataStringsCount;
 - (void)addDataString:(id)arg1;
 - (void)clearDataStrings;
+@property(readonly, nonatomic) _Bool hasConditionType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

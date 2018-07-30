@@ -109,6 +109,7 @@ __attribute__((visibility("hidden")))
 - (void)didChangeWindowHeight:(BOOL)arg1;
 - (double)contentHeight;
 - (void)didReceiveDismissalAction:(CDUnknownBlockType)arg1;
+- (void)checkForNoSound;
 - (void)speechRecordingDidDetectSpeechStartpoint;
 - (void)speechRecordingDidFailForRequest:(id)arg1 onAVRecordRoute:(id)arg2 withError:(id)arg3;
 - (void)speechRecordingDidCancelForRequest:(id)arg1 onAVRecordRoute:(id)arg2;
@@ -157,7 +158,6 @@ __attribute__((visibility("hidden")))
 - (id)_identifierOfPreviousConversation;
 - (id)_conversationIdentifiers;
 - (id)microphoneErrorExplanation;
-- (id)preferredMicrophoneIdentifier;
 - (BOOL)hasNoMicrophone;
 - (void)inputDeviceChanged:(id)arg1;
 - (void)viewWillDisappear;

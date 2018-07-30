@@ -17,6 +17,7 @@
 + (void)initialize;
 - (void)dealloc;
 - (void)done;
+- (void)stopDiskManagementLog;
 - (int)setUserID:(id)arg1 groupID:(id)arg2;
 - (void)setLanguage:(id)arg1;
 - (const struct AuthorizationOpaqueRef *)authorization;
@@ -186,6 +187,7 @@
 - (int)moveJournalInternal:(struct __DADisk *)arg1;
 - (int)upgradeDisk:(struct __DADisk *)arg1 enablePermissions:(BOOL)arg2;
 - (int)findBooterDiskContainingBaseSystemForDisk:(struct __DADisk *)arg1;
+- (int)updateBootFirmwareLabelsForAllInternalOrGivenMacOSDisks:(id)arg1 options:(id)arg2;
 - (int)makeLegacyBootable:(struct __DADisk *)arg1 partitionDataRuns:(id)arg2 MBRHeaderDataRun:(id)arg3 setActive:(unsigned char)arg4 updateBootIni:(BOOL)arg5 options:(id)arg6;
 - (int)recoveryPartitionInfoForVolume:(struct __DADisk *)arg1 what:(id)arg2 info:(id *)arg3;
 - (int)replaceDiagnosticsForVolume:(struct __DADisk *)arg1 diagnosticsDiskImageFile:(id)arg2 diagnosticsChunkListFile:(id)arg3 verifyImage:(BOOL)arg4 allowGrowth:(BOOL)arg5 diagnosticsMachineBlacklistInhibit:(BOOL)arg6;
@@ -229,7 +231,7 @@
 - (int)isDiskSuitableForDecryption:(struct __DADisk *)arg1 options:(id)arg2 suitable:(char *)arg3 details:(id *)arg4;
 - (int)isDiskSuitableForEncryption:(struct __DADisk *)arg1 options:(id)arg2 suitable:(char *)arg3 details:(id *)arg4;
 - (int)isSuitableTransformForLOG:(struct DMUDSPrivRec *)arg1 transform:(id)arg2 suitable:(char *)arg3 plan:(id *)arg4 details:(id)arg5;
-- (void)cryptoStatusForLOG:(struct DMUDSPrivRec *)arg1 inSS:(id)arg2 yesInfoFileVaulted:(char *)arg3 yesInfoBusy:(char *)arg4 yesInfoDirection:(char *)arg5 yesInfoLocked:(char *)arg6 nonNilInfoProgress:(id *)arg7;
+- (void)cryptoStatusForLOG:(struct DMUDSPrivRec *)arg1 inSS:(id)arg2 yesInfoFileVaulted:(char *)arg3 yesInfoFullyEncrypted:(char *)arg4 yesInfoBusy:(char *)arg5 yesInfoDirection:(char *)arg6 yesInfoLocked:(char *)arg7 nonNilInfoProgress:(id *)arg8;
 - (int)cryptoMigrationPlanForLOG:(struct DMUDSPrivRec *)arg1 transform:(id)arg2 currentOldSS:(id *)arg3 supported:(char *)arg4 planScript:(id *)arg5 plannedNewSS:(id *)arg6 plannedChangeSS:(char *)arg7 plannedChangeLOG:(char *)arg8;
 - (int)partitionMapTypeForDisk:(id)arg1;
 - (id)directChildrenOfDisk:(id)arg1;

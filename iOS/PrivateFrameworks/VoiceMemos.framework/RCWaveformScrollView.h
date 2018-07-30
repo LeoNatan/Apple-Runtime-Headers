@@ -6,6 +6,7 @@
 
 #import "UIScrollView.h"
 
+__attribute__((visibility("hidden")))
 @interface RCWaveformScrollView : UIScrollView
 {
     unsigned long long _ignoreContentOffsetChangesCount;

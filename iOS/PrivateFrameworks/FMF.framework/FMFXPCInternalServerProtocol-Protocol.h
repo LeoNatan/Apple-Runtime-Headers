@@ -9,6 +9,7 @@
 @class FMFHandle, NSString;
 
 @protocol FMFXPCInternalServerProtocol <FMFXPCServerProtocol>
+- (oneway void)showShareMyLocationiCloudSettingsOffAlert;
 - (oneway void)getDataForPerformanceRequest:(void (^)(NSData *, NSError *))arg1;
 - (oneway void)sessionHandleReport:(void (^)(NSDictionary *))arg1;
 - (oneway void)dumpStateWithCompletion:(void (^)(NSDictionary *))arg1;
@@ -18,5 +19,6 @@
 - (oneway void)crashDaemon;
 - (oneway void)setSessionClientBundleId:(NSString *)arg1;
 - (oneway void)iCloudAccountNameWithCompletion:(void (^)(NSString *))arg1;
+- (oneway void)refreshLocationSnapshotForHandle:(FMFHandle *)arg1 width:(double)arg2 andHeight:(double)arg3 withCompletion:(void (^)(_Bool))arg4;
 @end
 

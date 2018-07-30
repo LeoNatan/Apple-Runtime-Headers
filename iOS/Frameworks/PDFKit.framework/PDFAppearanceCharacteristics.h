@@ -29,6 +29,7 @@
 @property(nonatomic) long long rotation;
 @property(copy, nonatomic) UIColor *borderColor;
 @property(copy, nonatomic) UIColor *backgroundColor;
+- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

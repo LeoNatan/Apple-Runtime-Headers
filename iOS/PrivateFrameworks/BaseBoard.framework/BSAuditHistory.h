@@ -18,7 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, retain, nonatomic) NSArray *items; // @synthesize items=_items;
+@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -30,7 +31,6 @@
 - (void)addItemWithFormat:(id)arg1;
 - (void)addItem:(id)arg1;
 @property(readonly, nonatomic) _Bool hasItems;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

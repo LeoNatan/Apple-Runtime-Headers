@@ -6,7 +6,7 @@
 
 #import <GameCenterPrivateUIMac/NSUICollectionViewCell.h>
 
-@class GKDashboardPlayerShadowView, GKPlayer, NSColor, NSLayoutConstraint, NSTextField, NSView;
+@class GKDashboardPlayerShadowView, GKPlayer, NSColor, NSLayoutConstraint, NSString, NSTextField, NSView;
 
 @interface GKDashboardPlayerCell : NSUICollectionViewCell
 {
@@ -19,10 +19,12 @@
     NSColor *_nameColor;
     NSColor *_statusColor;
     double _playerViewBottomToNameLabelTopConstant;
+    NSString *_lastAppearanceName;
 }
 
 + (double)preferredCollectionHeight;
 + (struct CGSize)defaultSize;
+@property(retain, nonatomic) NSString *lastAppearanceName; // @synthesize lastAppearanceName=_lastAppearanceName;
 @property(nonatomic) double playerViewBottomToNameLabelTopConstant; // @synthesize playerViewBottomToNameLabelTopConstant=_playerViewBottomToNameLabelTopConstant;
 @property(retain, nonatomic) NSColor *statusColor; // @synthesize statusColor=_statusColor;
 @property(retain, nonatomic) NSColor *nameColor; // @synthesize nameColor=_nameColor;
@@ -41,6 +43,7 @@
 - (void)setNameText:(id)arg1;
 @property(readonly, nonatomic) NSView *popoverSourceView;
 - (void)dealloc;
+- (void)updateLayer;
 - (void)awakeFromNib;
 
 @end

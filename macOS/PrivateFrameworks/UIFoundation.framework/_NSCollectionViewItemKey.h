@@ -15,7 +15,7 @@
     NSIndexPath *_indexPath;
     NSString *_identifier;
     BOOL _isClone;
-    unsigned long long _type;
+    long long _type;
 }
 
 + (id)collectionItemKeyForLayoutAttributes:(id)arg1;
@@ -23,7 +23,7 @@
 + (id)collectionItemKeyForSupplementaryViewOfKind:(id)arg1 andIndexPath:(id)arg2;
 + (id)collectionItemKeyForCellWithIndexPath:(id)arg1;
 @property(readonly, nonatomic) BOOL isClone; // @synthesize isClone=_isClone;
-@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 - (void).cxx_destruct;
@@ -32,8 +32,8 @@
 - (id)copyAsClone:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)initWithType:(unsigned long long)arg1 indexPath:(id)arg2 identifier:(id)arg3 clone:(BOOL)arg4;
-- (id)initWithType:(unsigned long long)arg1 indexPath:(id)arg2 identifier:(id)arg3;
+- (id)initWithType:(long long)arg1 indexPath:(id)arg2 identifier:(id)arg3 clone:(BOOL)arg4;
+- (id)initWithType:(long long)arg1 indexPath:(id)arg2 identifier:(id)arg3;
 
 @end
 

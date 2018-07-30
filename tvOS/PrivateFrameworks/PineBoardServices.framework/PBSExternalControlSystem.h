@@ -72,6 +72,7 @@
 @property(copy, nonatomic) PBSIRVolumeButtonConfiguration *selectedVolumeButtonConfiguration; // @synthesize selectedVolumeButtonConfiguration=_selectedVolumeButtonConfiguration;
 @property(nonatomic) __weak id <PBSExternalControlSystemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_stringFromVolumeButtonBehavior:(long long)arg1;
 - (id)_stringFromExternalControlSystemAction:(long long)arg1;
 - (id)_SYNC_nameForExternalIRDeviceWithUUID:(id)arg1;
 - (id)_SYNC_availableExternalIRDeviceUUIDsForDeviceType:(int)arg1;

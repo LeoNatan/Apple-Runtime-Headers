@@ -13,8 +13,8 @@
     NSMutableDictionary *_previousCharacterColors;
 }
 
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
-+ (id)_defaultSelectedComplicationSlot;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (unsigned long long)_selectedCharacter;
 - (Class)_optionClassForCustomEditMode:(long long)arg1;

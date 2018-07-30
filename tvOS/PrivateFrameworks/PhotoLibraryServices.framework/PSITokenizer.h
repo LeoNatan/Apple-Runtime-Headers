@@ -8,15 +8,18 @@
 
 @interface PSITokenizer : NSObject
 {
+    void *_tagger;
     struct __CFStringTokenizer *_nameTokenizer;
+    struct __CFLocale *_locale;
+    _Bool _localeIsGerman;
 }
 
 - (id)newTokensFromString:(id)arg1 withOptions:(long long)arg2 outCopyRanges:(id *)arg3;
 - (void)tokenizePersonName:(id)arg1 tokenOutput:(struct tokenOutput_t *)arg2;
 - (void)tokenizeString:(id)arg1 withOptions:(long long)arg2 tokenOutput:(struct tokenOutput_t *)arg3;
-- (id)normalizeString:(id)arg1 includeWildcard:(_Bool)arg2;
+- (id)normalizeString:(id)arg1 matchType:(unsigned long long)arg2 insertDoubleQuotes:(_Bool)arg3;
 - (void)dealloc;
-- (id)init;
+- (id)initWithLocale:(id)arg1;
 
 @end
 

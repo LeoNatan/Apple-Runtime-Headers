@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_connection;
     VKMapView *_mapView;
-    struct shared_ptr<MITManager> _mitManager;
     struct DebugTree _debugTree;
     _Bool _isActive;
 }
@@ -24,9 +23,6 @@
 @property(readonly, nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)mapLayer:(id)arg1 didChangeRegionAnimated:(_Bool)arg2;
-- (_Bool)takeMITSnapshot:(out id *)arg1;
-- (void)decodeMITreeData:(id)arg1;
 - (void)decodeDebugTreeData:(id)arg1;
 - (void)sendData:(id)arg1;
 - (void)recievedData:(id)arg1;

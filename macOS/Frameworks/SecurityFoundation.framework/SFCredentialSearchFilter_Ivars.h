@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSArray<SFServiceIdentifier>, NSDate;
+@class NSArray, NSArray<_SFServiceIdentifier>, NSDate;
 
 __attribute__((visibility("hidden")))
 @interface SFCredentialSearchFilter_Ivars : NSObject
@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     NSDate *maximumCreationDate;
     NSDate *minimumModificationDate;
     NSDate *maximumModificationDate;
-    NSArray<SFServiceIdentifier> *serviceIdentifiers;
+    NSArray<_SFServiceIdentifier> *serviceIdentifiers;
     NSArray *usernames;
 }
 

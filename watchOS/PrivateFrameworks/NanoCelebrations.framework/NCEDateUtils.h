@@ -10,6 +10,7 @@
 {
 }
 
++ (double)midnightDelay;
 + (_Bool)isBirthdaySurvey:(id)arg1;
 + (_Bool)isInternalBirthday:(id)arg1;
 + (_Bool)isInternalChineseNewYear:(id)arg1;

@@ -17,14 +17,14 @@ __attribute__((visibility("hidden")))
     int _previousImageMappingLevel;
     SCRBrailleLineManager *_brailleLineManager;
     NSArray *__verticallyOrderedChildren;
-    NSArray *__horizontallyOrderedChildren;
     SCRChildrenHashCache *__childrenHashCache;
     id <SCRLocaleInfoProviding> __currentLocale;
+    NSArray *__horizontallyOrderedChildren;
 }
 
+@property(retain, nonatomic) NSArray *_horizontallyOrderedChildren; // @synthesize _horizontallyOrderedChildren=__horizontallyOrderedChildren;
 @property(readonly, retain, nonatomic) id <SCRLocaleInfoProviding> _currentLocale; // @synthesize _currentLocale=__currentLocale;
 @property(readonly, retain, nonatomic) SCRChildrenHashCache *_childrenHashCache; // @synthesize _childrenHashCache=__childrenHashCache;
-@property(retain, nonatomic) NSArray *_horizontallyOrderedChildren; // @synthesize _horizontallyOrderedChildren=__horizontallyOrderedChildren;
 @property(retain, nonatomic) NSArray *_verticallyOrderedChildren; // @synthesize _verticallyOrderedChildren=__verticallyOrderedChildren;
 - (BOOL)handleLayoutChangeWithInfo:(id)arg1;
 - (id)children:(BOOL)arg1;
@@ -96,6 +96,7 @@ __attribute__((visibility("hidden")))
 - (id)prepareChildrenArrayWithUIElements:(id)arg1;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (BOOL)needToRebuildChildren;
+- (BOOL)_supportsChildrenHashCache;
 - (int)previousImageMappingLevel;
 - (void)_logMapWithColumns:(struct __CFArray *)arg1 ColumnRanges:(struct __CFArray *)arg2 rowRanges:(struct __CFArray *)arg3;
 - (id)alternateOrderedChildrenForMappedChildren:(id)arg1;

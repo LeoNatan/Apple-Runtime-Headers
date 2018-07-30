@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSArray, NSNumber, NSURL;
 
-@interface DMFFetchAppsRequest : CATTaskRequest
+@interface DMFFetchAppsRequest : DMFTaskRequest
 {
     BOOL _deleteFeedback;
     BOOL _managedAppsOnly;
     BOOL _advanceTransientStates;
+    unsigned long long _type;
     NSArray *_bundleIdentifiers;
     NSNumber *_storeItemIdentifier;
     NSURL *_manifestURL;
@@ -20,6 +21,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (BOOL)isPermittedOnUserConnection;
++ (BOOL)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
 @property(copy, nonatomic) NSArray *propertyKeys; // @synthesize propertyKeys=_propertyKeys;
 @property(nonatomic) BOOL advanceTransientStates; // @synthesize advanceTransientStates=_advanceTransientStates;
@@ -28,9 +32,11 @@
 @property(copy, nonatomic) NSNumber *storeItemIdentifier; // @synthesize storeItemIdentifier=_storeItemIdentifier;
 @property(nonatomic) BOOL deleteFeedback; // @synthesize deleteFeedback=_deleteFeedback;
 @property(copy, nonatomic) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

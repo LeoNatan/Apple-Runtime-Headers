@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface FCSolTagID : NSObject <NSCoding, NSCopying>
+@interface FCSolTagID : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _isFavorited;
     _Bool _isAutoFavorited;
@@ -21,6 +21,7 @@
     double _specificity;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)discardedOrphanID;
 + (id)orphanID;
 @property(nonatomic) _Bool isGroupable; // @synthesize isGroupable=_isGroupable;

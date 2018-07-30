@@ -6,10 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSSet, NSString, VCAudioRuleCollection, VCBitrateArbiter, VCVideoRuleCollections;
+#import "NSCopying.h"
+
+@class NSArray, NSDictionary, NSSet, NSString, VCAudioRuleCollection, VCBitrateArbiter, VCVideoRuleCollections;
 
 __attribute__((visibility("hidden")))
-@interface VCMediaNegotiatorLocalConfiguration : NSObject
+@interface VCMediaNegotiatorLocalConfiguration : NSObject <NSCopying>
 {
     unsigned int _audioSSRC;
     unsigned int _videoSSRC;
@@ -30,8 +32,14 @@ __attribute__((visibility("hidden")))
     NSSet *_captionsReceiverLanguages;
     NSSet *_captionsSenderLanguages;
     void *_callLogFile;
+    unsigned long long _creationTime;
+    NSArray *_multiwayAudioStreams;
+    NSArray *_multiwayVideoStreams;
 }
 
+@property(retain, nonatomic) NSArray *multiwayVideoStreams; // @synthesize multiwayVideoStreams=_multiwayVideoStreams;
+@property(retain, nonatomic) NSArray *multiwayAudioStreams; // @synthesize multiwayAudioStreams=_multiwayAudioStreams;
+@property(nonatomic) unsigned long long creationTime; // @synthesize creationTime=_creationTime;
 @property(nonatomic) void *callLogFile; // @synthesize callLogFile=_callLogFile;
 @property(retain, nonatomic) NSSet *captionsReceiverLanguages; // @synthesize captionsReceiverLanguages=_captionsReceiverLanguages;
 @property(retain, nonatomic) NSSet *captionsSenderLanguages; // @synthesize captionsSenderLanguages=_captionsSenderLanguages;
@@ -51,6 +59,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VCVideoRuleCollections *screenRuleCollections; // @synthesize screenRuleCollections=_screenRuleCollections;
 @property(retain, nonatomic) VCVideoRuleCollections *videoRuleCollections; // @synthesize videoRuleCollections=_videoRuleCollections;
 @property(retain, nonatomic) VCAudioRuleCollection *audioRuleCollection; // @synthesize audioRuleCollection=_audioRuleCollection;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 
 @end

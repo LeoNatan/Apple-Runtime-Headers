@@ -15,7 +15,7 @@
 {
     NSString *_category;
     NSString *_component;
-    int _message;
+    long long _message;
     SCRCIndexMap *_variants;
     unsigned long long _synchronization;
     SCROffsetMappedString *_offsetMappedString;
@@ -34,9 +34,9 @@
 - (unsigned long long)synchronization;
 - (id)offsetMappedString;
 - (id)string;
-- (id)objectForIndex:(int)arg1;
+- (id)objectForIndex:(long long)arg1;
 - (id)variants;
-- (int)message;
+- (long long)message;
 - (id)component;
 - (id)category;
 - (void)addVariants:(id)arg1;
@@ -44,18 +44,18 @@
 - (void)setHasBeenExecuted:(BOOL)arg1;
 - (void)setHasBeenDispatched:(BOOL)arg1;
 - (void)setSynchronization:(unsigned long long)arg1;
-- (void)setVariant:(id)arg1 forKey:(int)arg2;
+- (void)setVariant:(id)arg1 forKey:(long long)arg2;
 - (void)setOriginalAttributedString:(id)arg1;
 - (void)setOriginalString:(id)arg1;
-- (void)setMessage:(int)arg1;
+- (void)setMessage:(long long)arg1;
 - (void)setComponent:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initBrailleActionWithMessage:(int)arg1 variants:(id)arg2;
-- (id)initSoundActionWithMessage:(int)arg1 soundIdentifier:(id)arg2;
-- (id)initTextDisplayActionWithMessage:(int)arg1 string:(id)arg2 variant:(int)arg3;
-- (id)initSpeechActionWithMessage:(int)arg1 string:(id)arg2 variant:(int)arg3;
+- (id)initBrailleActionWithMessage:(long long)arg1 variants:(id)arg2;
+- (id)initSoundActionWithMessage:(long long)arg1 soundIdentifier:(id)arg2;
+- (id)initTextDisplayActionWithMessage:(long long)arg1 string:(id)arg2 variant:(long long)arg3;
+- (id)initSpeechActionWithMessage:(long long)arg1 string:(id)arg2 variant:(long long)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithOutputAction:(id)arg1;
 - (void)dealloc;

@@ -10,7 +10,6 @@
 
 @class ABPeoplePickerScope, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerGroupHelperFactory : NSObject <ABGroupHelperFactory>
 {
     ABPeoplePickerScope *_pickerScope;

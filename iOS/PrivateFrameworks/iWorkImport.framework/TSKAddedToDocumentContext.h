@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mInsertedTableInfos;
 }
 
++ (id)textBoxLinkageContext;
 + (id)migrateStylesContext;
 + (id)preserveParentStorageContext;
++ (id)exportMergedHeaderContext;
 + (id)exportFootnoteContext;
 + (id)undoDeleteContext;
 + (id)unhidingContext;

@@ -12,6 +12,7 @@
 {
     WKCrownSequencer *_crownSequencer;
     WKPlaceholderGestureRecognizer *_placeholderGesture;
+    _Bool _isInAlertActionHandler;
     NSArray *_topLevelObjects;
     NSArray *_properties;
     NSString *_viewControllerID;
@@ -21,7 +22,6 @@
     struct CGRect _contentFrame;
 }
 
-+ (_Bool)openParentApplication:(id)arg1 reply:(CDUnknownBlockType)arg2;
 + (id)addDefaultCancelActionForAlertSheetIfNecessary:(id)arg1;
 + (void)_removePageControllersAtIndexes:(id)arg1;
 + (void)_movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
@@ -30,6 +30,7 @@
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
 + (struct CGRect)screenBounds;
 + (float)screenScale;
+@property(nonatomic) _Bool isInAlertActionHandler; // @synthesize isInAlertActionHandler=_isInAlertActionHandler;
 @property(retain, nonatomic) NSMutableArray *pendingGestureInstallationFinishedBlocks; // @synthesize pendingGestureInstallationFinishedBlocks=_pendingGestureInstallationFinishedBlocks;
 @property(retain, nonatomic) NSMutableArray *uninstalledGestureIDs; // @synthesize uninstalledGestureIDs=_uninstalledGestureIDs;
 @property(retain, nonatomic) NSMutableDictionary *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
@@ -38,6 +39,7 @@
 @property(retain, nonatomic) NSArray *topLevelObjects; // @synthesize topLevelObjects=_topLevelObjects;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 - (void).cxx_destruct;
+- (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
 - (void)forceRenderAllSpriteKitAndSceneKitScenes;
 - (void)setProperties:(id)arg1 forInterfaceObjectNamed:(id)arg2;
 @property(readonly, nonatomic) WKCrownSequencer *crownSequencer;
@@ -50,7 +52,7 @@
 - (void)endGlanceUpdates;
 - (void)beginGlanceUpdates;
 - (void)invalidateUserActivity;
-- (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
+- (void)updateUserActivity:(id)arg1;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2;
 - (void)clearAllMenuItems;
 - (void)addMenuItemWithItemIcon:(int)arg1 title:(id)arg2 action:(SEL)arg3;

@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (void)generateArchive:(CDUnknownBlockType)arg1;
 - (long long)compare:(id)arg1;
 - (id)copyStateDecoder;
-- (id)copyRecordToNewWindowID:(unsigned int)arg1;
 - (void)mergeFromRecord:(id)arg1;
 - (BOOL)parsePayloadFromData:(void *)arg1 length:(unsigned long long)arg2;
 - (struct __CFData *)copyData;

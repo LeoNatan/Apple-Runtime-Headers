@@ -7,24 +7,28 @@
 #import "NSObject.h"
 
 #import "NUDepthProperties.h"
+#import "NUPortraitEffectsMatteProperties.h"
 
-@class AVDepthData, NSDictionary, NSString;
+@class AVDepthData, AVPortraitEffectsMatte, NSDictionary, NSString;
 
-@interface NUCGAuxiliaryImageProperties : NSObject <NUDepthProperties>
+@interface NUCGAuxiliaryImageProperties : NSObject <NUDepthProperties, NUPortraitEffectsMatteProperties>
 {
     id _imageSource;
     NSString *_auxiliaryType;
     AVDepthData *_depthData;
     NSDictionary *_auxiliaryData;
+    AVPortraitEffectsMatte *_portraitEffectsMatte;
     CDStruct_d58201db _size;
 }
 
+@property(retain) AVPortraitEffectsMatte *portraitEffectsMatte; // @synthesize portraitEffectsMatte=_portraitEffectsMatte;
 @property(retain) NSDictionary *auxiliaryData; // @synthesize auxiliaryData=_auxiliaryData;
 @property(retain) AVDepthData *depthData; // @synthesize depthData=_depthData;
 @property CDStruct_912cb5d2 size; // @synthesize size=_size;
 @property(copy) NSString *auxiliaryType; // @synthesize auxiliaryType=_auxiliaryType;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (id)portraitEffectsMatte:(out id *)arg1;
 - (id)depthData:(out id *)arg1;
 - (id)auxiliaryData:(out id *)arg1;
 @property(readonly) NSString *depthType;

@@ -20,6 +20,7 @@
 - (id)init;
 - (void)_lookUpURLs:(id)arg1 forProtectionType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_getLastDatabaseUpdateTimeWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchCellularDataPlanWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_deleteAllDatabasesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_forceUpdateRemoteConfigurationFromServerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_forceLoadRemoteConfigurationFromDiskWithCompletionHandler:(CDUnknownBlockType)arg1;

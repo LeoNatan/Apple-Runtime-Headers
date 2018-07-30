@@ -6,11 +6,9 @@
 
 #import "NSObject.h"
 
-#import "PSUIWirelessDataOptionsDelegate.h"
-
 @class NSString;
 
-@interface PSSystemPolicyForApp : NSObject <PSUIWirelessDataOptionsDelegate>
+@interface PSSystemPolicyForApp : NSObject
 {
     unsigned long long _policyOptions;
     _Bool _forcePolicyOptions;
@@ -41,24 +39,15 @@
 - (_Bool)_isBackgroundAppRefreshAllowed;
 - (_Bool)_supportsBackgroundAppRefresh;
 - (id)backgroundAppRefreshSpecifier;
-- (id)appCellularDataEnabledForSpecifier:(id)arg1;
-- (void)setAppCellularDataEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (id)wirelessDataSpecifierWithAppName:(id)arg1;
 - (_Bool)_isWirelessDataRestricted;
 - (_Bool)isCellularBundleID:(id)arg1;
 - (id)dataUsageWorkspaceInfo;
 - (id)assistantAndSearchSpecifiers;
-- (id)_sectionInfo;
 - (id)notificationSpecifier;
 - (id)specifiersForPolicyOptions:(unsigned long long)arg1 force:(_Bool)arg2;
 - (id)specifiers;
 - (id)initWithBundleIdentifier:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

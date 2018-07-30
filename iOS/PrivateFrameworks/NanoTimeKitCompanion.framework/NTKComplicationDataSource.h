@@ -6,20 +6,22 @@
 
 #import "NSObject.h"
 
-@class NTKComplication;
+@class CLKDevice, NTKComplication;
 
 @interface NTKComplicationDataSource : NSObject
 {
     NTKComplication *_complication;
     long long _family;
+    CLKDevice *_device;
     id <NTKComplicationDataSourceDelegate> _delegate;
 }
 
-+ (_Bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2;
-+ (_Bool)acceptsComplicationType:(unsigned long long)arg1;
-+ (_Bool)acceptsComplicationFamily:(long long)arg1;
-+ (Class)dataSourceClassForComplicationType:(unsigned long long)arg1 family:(long long)arg2;
++ (_Bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2 forDevice:(id)arg3;
++ (_Bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (Class)dataSourceClassForComplicationType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
 @property(nonatomic) __weak id <NTKComplicationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) long long family; // @synthesize family=_family;
 @property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
 - (void).cxx_destruct;
@@ -33,6 +35,7 @@
 - (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (id)complicationApplicationIdentifier;
+- (_Bool)alwaysShowIdealizedTemplateInSwitcher;
 - (void)didTouchUpInside;
 - (void)didTouchDown;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
@@ -44,7 +47,7 @@
 - (void)becomeActive;
 @property(readonly, nonatomic) _Bool supportsTapAction;
 @property(readonly, nonatomic) unsigned long long timelineAnimationBehavior;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 @end
 

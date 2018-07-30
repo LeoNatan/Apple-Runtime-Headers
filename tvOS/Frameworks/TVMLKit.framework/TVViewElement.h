@@ -13,9 +13,11 @@
 @interface TVViewElement : NSObject <NSCopying>
 {
     _Bool _disabled;
+    _Bool _parsedOnce;
     IKViewElement *_element;
 }
 
+@property(nonatomic, getter=isParsedOnce) _Bool parsedOnce; // @synthesize parsedOnce=_parsedOnce;
 @property(readonly, nonatomic) __weak IKViewElement *element; // @synthesize element=_element;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 - (void).cxx_destruct;

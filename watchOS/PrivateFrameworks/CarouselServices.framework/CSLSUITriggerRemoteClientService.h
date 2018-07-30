@@ -34,6 +34,7 @@
 - (void)removeUITriggerName:(id)arg1;
 - (void)addUITriggerName:(id)arg1 usage:(id)arg2;
 - (void)connectWithMachServiceName:(id)arg1;
+- (void)_invalidateConnectionFromServer;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dealloc;
 - (id)init;

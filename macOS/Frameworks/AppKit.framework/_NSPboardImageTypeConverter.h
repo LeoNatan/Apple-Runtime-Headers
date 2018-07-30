@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSPboardImageTypeConverter : NSObject
 {
     NSString *_sourceType;

@@ -8,6 +8,7 @@
 
 @class AVCaptureInputPort, MediaIOGraphNodeDescription, NSArray, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureScreenInputInternal : NSObject
 {
     MediaIOGraphNodeDescription *inputUnitNodeDescription;

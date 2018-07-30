@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSObject<OS_dispatch_semaphore>, _CDClientContext, _CDContextualChangeRegistration, _CDContextualKeyPath, _CDContextualPredicate;
 
+__attribute__((visibility("hidden")))
 @interface SunriseSunsetProvider : NSObject
 {
     _CDClientContext *_duetContextStore;

@@ -7,6 +7,7 @@
 #import "NSFileManager.h"
 
 @interface NSFileManager (TSUAdditions)
+- (_Bool)tsu_makeWritableItemAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)tsu_replaceItemAtURL:(id)arg1 withItemAtURL:(id)arg2 backupItemName:(id)arg3 options:(unsigned long long)arg4 resultingItemURL:(id *)arg5 error:(id *)arg6;
 - (_Bool)tsu_linkOrCopyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 - (_Bool)tsu_canCloneItemAtURL:(id)arg1 toURL:(id)arg2;

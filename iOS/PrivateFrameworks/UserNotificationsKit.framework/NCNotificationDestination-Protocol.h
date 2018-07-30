@@ -17,7 +17,7 @@
 - (_Bool)canReceiveNotificationRequest:(NCNotificationRequest *)arg1;
 
 @optional
-- (void)updateNotificationSectionSettings:(NCNotificationSectionSettings *)arg1;
+- (void)updateNotificationSectionSettings:(NCNotificationSectionSettings *)arg1 previousSectionSettings:(NCNotificationSectionSettings *)arg2;
 - (_Bool)interceptsQueueRequest:(NCNotificationRequest *)arg1;
 @end
 

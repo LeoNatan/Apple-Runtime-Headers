@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UICollectionViewDelegate.h"
+#import "PUICCollectionViewDelegate.h"
 
 @class NSIndexPath, PUICEmojiCollectionView, UICollectionView;
 
-@protocol PUICEmojiCollectionViewDelegate <UICollectionViewDelegate>
+@protocol PUICEmojiCollectionViewDelegate <PUICCollectionViewDelegate>
 - (void)longPressDidCancelForCollectionView:(PUICEmojiCollectionView *)arg1;
 - (void)longPressDidEndForCollectionView:(PUICEmojiCollectionView *)arg1;
 - (void)collectionView:(PUICEmojiCollectionView *)arg1 longPressDidMoveToPoint:(struct CGPoint)arg2;

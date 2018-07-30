@@ -8,6 +8,7 @@
 
 @class NSValue;
 
+__attribute__((visibility("hidden")))
 @interface _NSAccessibilityOverriddenAttributeUIElementValue : NSObject
 {
     NSValue *_value;

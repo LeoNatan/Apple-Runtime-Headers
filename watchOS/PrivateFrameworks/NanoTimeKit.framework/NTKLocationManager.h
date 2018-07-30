@@ -12,12 +12,10 @@
 
 + (id)fallbackLocation;
 + (id)sharedLocationManager;
-- (id)_clLocationManagerLocation;
 - (id)anyLocation;
 - (id)previousLocation;
 - (id)currentLocation;
 - (void)stopLocationUpdatesForToken:(struct NSString *)arg1;
-- (struct NSString *)startLocationUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (struct NSString *)startLocationUpdatesWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 
 @end

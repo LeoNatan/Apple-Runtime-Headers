@@ -17,6 +17,7 @@
 @property(retain, nonatomic) SXComponentTextStyle *defaultTextStyle; // @synthesize defaultTextStyle=_defaultTextStyle;
 @property(retain, nonatomic) SXColumnLayout *columnLayout; // @synthesize columnLayout=_columnLayout;
 - (void).cxx_destruct;
+- (double)normalizedFontSizeForSize:(double)arg1;
 - (unsigned long long)resizeDropCapNumberOfLines:(long long)arg1;
 - (long long)resizeTextSize:(long long)arg1 fontResizingThreshold:(double)arg2 fontSizeConstant:(double)arg3 contentSizeCategory:(id)arg4 fontTextStyle:(id)arg5;
 - (id)initWithColumnLayout:(id)arg1 andDefaultTextStyle:(id)arg2;

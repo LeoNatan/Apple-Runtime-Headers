@@ -12,6 +12,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedRebroadcaster;
+- (void)_endObservingAccountStoreDidChangeNotifications;
+- (void)_accountStoreDidChange:(id)arg1;
+- (void)_beginObservingAccountStoreDidChangeNotifications;
+- (void)dealloc;
+- (id)init;
 
 @end
 

@@ -6,14 +6,15 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface SKReachConstraints : NSObject <NSCoding>
+@interface SKReachConstraints : NSObject <NSSecureCoding>
 {
     float _lowerAngleLimit;
     float _upperAngleLimit;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) float upperAngleLimit; // @synthesize upperAngleLimit=_upperAngleLimit;
 @property(nonatomic) float lowerAngleLimit; // @synthesize lowerAngleLimit=_lowerAngleLimit;
 - (id)initWithCoder:(id)arg1;

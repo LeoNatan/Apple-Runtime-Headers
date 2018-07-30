@@ -12,8 +12,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
+- (id)_preferredAppearance;
+- (void)viewDidChangeEffectiveAppearance;
+- (int)_vibrancyBlendMode;
+- (int)_defaultVibrancyBlendMode;
 - (BOOL)isAccessibilityElement;
-- (BOOL)allowsVibrancy;
 
 @end
 

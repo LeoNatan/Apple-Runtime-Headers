@@ -7,9 +7,10 @@
 #import "JSExport.h"
 #import "NSObject.h"
 
-@class NSNumber;
+@class INSpeakableString, NSNumber;
 
 @protocol INSetDefrosterSettingsInCarIntentExport <NSObject, JSExport>
+@property(copy, nonatomic) INSpeakableString *carName;
 @property(nonatomic) long long defroster;
 @property(copy, nonatomic) NSNumber *enable;
 - (id)init;

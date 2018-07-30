@@ -24,10 +24,13 @@
 - (void)_mapkit_sizeToFit;
 - (void)_mapkit_insertSubviewBelowAllOtherSubviews:(id)arg1;
 - (void)_mapkit_insertSubviewAboveAllOtherSubviews:(id)arg1;
+- (_Bool)_mapkit_isRTL;
 - (void)_mapKit_setNeedsDisplay;
 - (struct CGSize)_mapkit_fittingSize;
 - (void)_mapkit_setBackgroundColor:(id)arg1;
+- (void)_mapkit_layoutBelowIfNeeded;
 - (void)_mapkit_layoutIfNeeded;
+- (void)_mapkit_updateConstraintsIfNeeded;
 - (void)_mapkit_setNeedsLayout;
 - (void)_mapkit_setNeedsUpdateConstraints;
 @end

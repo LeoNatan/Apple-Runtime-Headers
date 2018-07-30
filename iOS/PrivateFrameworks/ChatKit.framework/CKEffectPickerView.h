@@ -9,7 +9,7 @@
 #import "UICollectionViewDataSource.h"
 #import "UICollectionViewDelegate.h"
 
-@class CABackdropLayer, CALayer, CKBalloonView, CKChatControllerDummyAnimator, CKFullScreenEffectManager, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString, UIButton, UICollectionView, UIFont, UILabel, UIPageControl, UIPanGestureRecognizer, UISegmentedControl, _UIBackdropView;
+@class CABackdropLayer, CALayer, CKBalloonView, CKChatControllerDummyAnimator, CKFullScreenEffectManager, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString, UIButton, UICollectionView, UIFont, UILabel, UIPageControl, UIPanGestureRecognizer, UISegmentedControl;
 
 @interface CKEffectPickerView : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
 {
@@ -22,19 +22,14 @@
     UIView *_peekContainer;
     CABackdropLayer *_backdrop;
     CALayer *_blueContrastLayer;
-    CABackdropLayer *_segmentedBackdrop;
     CKFullScreenEffectManager *_fsem;
     NSArray *_momentIdentifiers;
     NSMutableDictionary *_animationTimers;
     NSMutableDictionary *_animatedCells;
     NSMutableDictionary *_pausedAnimatedCells;
-    UIPageControl *_pageControl;
-    UILabel *_mainLabel;
-    UILabel *_momentTitleLabel;
     UIFont *_effectLabelFont;
     UICollectionView *_momentsCollectionView;
     UIView *_backgroundView;
-    _UIBackdropView *_accessibilityBackdropView;
     NSLayoutConstraint *_typeSegmentedControlBottomConstraint;
     NSLayoutConstraint *_mainLabelBottomConstraint;
     NSLayoutConstraint *_lastEffectDotTopConstraint;
@@ -56,10 +51,24 @@
     NSLayoutConstraint *_roundedContainerViewTopConstraint;
     NSLayoutConstraint *_closeButtonBottomConstraint;
     NSMutableArray *_effectIdentifiers;
+    CABackdropLayer *_segmentedBackdrop;
+    UIPageControl *_pageControl;
+    UILabel *_mainLabel;
+    UILabel *_momentTitleLabel;
+    UIView *_accessibilityBackdropView;
+    UIView *_accessibilityCloseBackgroundView;
+    UIView *_accessibilitySendBackgroundView;
     struct CGPoint _balloonViewOrigin;
 }
 
 + (_Bool)shouldUseLargeScreenDimension;
+@property(retain, nonatomic) UIView *accessibilitySendBackgroundView; // @synthesize accessibilitySendBackgroundView=_accessibilitySendBackgroundView;
+@property(retain, nonatomic) UIView *accessibilityCloseBackgroundView; // @synthesize accessibilityCloseBackgroundView=_accessibilityCloseBackgroundView;
+@property(retain, nonatomic) UIView *accessibilityBackdropView; // @synthesize accessibilityBackdropView=_accessibilityBackdropView;
+@property(retain, nonatomic) UILabel *momentTitleLabel; // @synthesize momentTitleLabel=_momentTitleLabel;
+@property(retain, nonatomic) UILabel *mainLabel; // @synthesize mainLabel=_mainLabel;
+@property(retain, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
+@property(retain, nonatomic) CABackdropLayer *segmentedBackdrop; // @synthesize segmentedBackdrop=_segmentedBackdrop;
 @property(retain, nonatomic) NSMutableArray *effectIdentifiers; // @synthesize effectIdentifiers=_effectIdentifiers;
 @property(retain, nonatomic) NSLayoutConstraint *closeButtonBottomConstraint; // @synthesize closeButtonBottomConstraint=_closeButtonBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *roundedContainerViewTopConstraint; // @synthesize roundedContainerViewTopConstraint=_roundedContainerViewTopConstraint;
@@ -85,27 +94,22 @@
 @property(retain, nonatomic) NSLayoutConstraint *lastEffectDotTopConstraint; // @synthesize lastEffectDotTopConstraint=_lastEffectDotTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *mainLabelBottomConstraint; // @synthesize mainLabelBottomConstraint=_mainLabelBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *typeSegmentedControlBottomConstraint; // @synthesize typeSegmentedControlBottomConstraint=_typeSegmentedControlBottomConstraint;
-@property(retain, nonatomic) _UIBackdropView *accessibilityBackdropView; // @synthesize accessibilityBackdropView=_accessibilityBackdropView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UICollectionView *momentsCollectionView; // @synthesize momentsCollectionView=_momentsCollectionView;
 @property(retain, nonatomic) UIFont *effectLabelFont; // @synthesize effectLabelFont=_effectLabelFont;
 @property(nonatomic) BOOL controlColor; // @synthesize controlColor=_controlColor;
-@property(retain, nonatomic) UILabel *momentTitleLabel; // @synthesize momentTitleLabel=_momentTitleLabel;
-@property(retain, nonatomic) UILabel *mainLabel; // @synthesize mainLabel=_mainLabel;
-@property(retain, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) NSMutableDictionary *pausedAnimatedCells; // @synthesize pausedAnimatedCells=_pausedAnimatedCells;
 @property(retain, nonatomic) NSMutableDictionary *animatedCells; // @synthesize animatedCells=_animatedCells;
 @property(retain, nonatomic) NSMutableDictionary *animationTimers; // @synthesize animationTimers=_animationTimers;
 @property(copy, nonatomic) NSArray *momentIdentifiers; // @synthesize momentIdentifiers=_momentIdentifiers;
 @property(retain, nonatomic) CKFullScreenEffectManager *fsem; // @synthesize fsem=_fsem;
-@property(retain, nonatomic) CABackdropLayer *segmentedBackdrop; // @synthesize segmentedBackdrop=_segmentedBackdrop;
 @property(retain, nonatomic) CALayer *blueContrastLayer; // @synthesize blueContrastLayer=_blueContrastLayer;
 @property(retain, nonatomic) CABackdropLayer *backdrop; // @synthesize backdrop=_backdrop;
 @property(retain, nonatomic) UIView *peekContainer; // @synthesize peekContainer=_peekContainer;
 @property(retain, nonatomic) UIView *hintContainer; // @synthesize hintContainer=_hintContainer;
 @property(nonatomic) id <CKEffectPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_accessibilityReduceTransparencyStatusDidChange;
+- (void)_accessibilityContrastStatusDidChange;
 - (id)_defaultSendAnimationContextForAnimationPreview;
 - (void)_applicationWillEnterForeground;
 - (void)_applicationDidEnterBackground;
@@ -131,6 +135,7 @@
 - (void)removeAnimationTimerForCell:(id)arg1;
 - (void)addAnimationTimerForCell:(id)arg1;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)checkAndUpdateForSpotlightEffect:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
@@ -163,6 +168,8 @@
 - (void)activateTextSizeDependentConstraintsForSendButtonFrame:(struct CGRect)arg1;
 - (void)contentSizeCategoryDidChange;
 - (void)safeAreaInsetsDidChange;
+- (void)updateViewColors:(_Bool)arg1;
+- (void)updateViewColors;
 - (id)initWithFrame:(struct CGRect)arg1 sendButtonFrame:(struct CGRect)arg2 balloonViewOrigin:(struct CGPoint)arg3 composition:(id)arg4 color:(BOOL)arg5;
 - (double)marginBetweenPickerDotButtons;
 

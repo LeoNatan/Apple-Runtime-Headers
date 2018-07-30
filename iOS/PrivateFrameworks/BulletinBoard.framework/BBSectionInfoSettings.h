@@ -12,34 +12,46 @@
 @interface BBSectionInfoSettings : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _allowsNotifications;
-    _Bool _showsInNotificationCenter;
-    _Bool _showsInLockScreen;
     _Bool _showsOnExternalDevices;
+    _Bool _showsCustomSettingsLink;
+    long long _authorizationStatus;
+    long long _notificationCenterSetting;
+    long long _lockScreenSetting;
     long long _contentPreviewSetting;
     unsigned long long _alertType;
     unsigned long long _pushSettings;
     long long _carPlaySetting;
+    long long _criticalAlertSetting;
+    long long _bulletinGroupingSetting;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)sectionInfoSettingsForManagedBundleID:(id)arg1;
+@property(nonatomic) long long bulletinGroupingSetting; // @synthesize bulletinGroupingSetting=_bulletinGroupingSetting;
+@property(nonatomic) long long criticalAlertSetting; // @synthesize criticalAlertSetting=_criticalAlertSetting;
 @property(nonatomic) long long carPlaySetting; // @synthesize carPlaySetting=_carPlaySetting;
 @property(nonatomic) unsigned long long pushSettings; // @synthesize pushSettings=_pushSettings;
 @property(nonatomic) unsigned long long alertType; // @synthesize alertType=_alertType;
 @property(nonatomic) long long contentPreviewSetting; // @synthesize contentPreviewSetting=_contentPreviewSetting;
+@property(nonatomic) _Bool showsCustomSettingsLink; // @synthesize showsCustomSettingsLink=_showsCustomSettingsLink;
 @property(nonatomic) _Bool showsOnExternalDevices; // @synthesize showsOnExternalDevices=_showsOnExternalDevices;
-@property(nonatomic) _Bool showsInLockScreen; // @synthesize showsInLockScreen=_showsInLockScreen;
-@property(nonatomic) _Bool showsInNotificationCenter; // @synthesize showsInNotificationCenter=_showsInNotificationCenter;
+@property(nonatomic) long long lockScreenSetting; // @synthesize lockScreenSetting=_lockScreenSetting;
+@property(nonatomic) long long notificationCenterSetting; // @synthesize notificationCenterSetting=_notificationCenterSetting;
 @property(nonatomic) _Bool allowsNotifications; // @synthesize allowsNotifications=_allowsNotifications;
+@property(nonatomic) long long authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)_bulletinGroupingSettingDescription;
 - (id)_contentPreviewSettingDescription;
 - (id)_alertTypeDescription;
+- (id)_authorizationStatusDescription;
 - (id)description;
 - (id)initWithDefaultsForSectionType:(long long)arg1;
+@property(nonatomic) _Bool showsInLockScreen;
+@property(nonatomic) _Bool showsInNotificationCenter;
 @property(nonatomic) _Bool showsMessagePreview;
 
 @end

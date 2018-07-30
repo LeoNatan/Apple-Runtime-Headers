@@ -59,7 +59,7 @@
 - (void)getPairedPeersWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_deletePairingIdentityWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deletePairingIdentityWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_getPairingIdentityWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_getPairingIdentityWithOptions:(unsigned int)arg1 tryCount:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getPairingIdentityWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_invalidated;
 - (void)_invalidate;

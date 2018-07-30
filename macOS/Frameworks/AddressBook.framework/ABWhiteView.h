@@ -6,13 +6,11 @@
 
 #import "NSView.h"
 
-__attribute__((visibility("hidden")))
 @interface ABWhiteView : NSView
 {
 }
 
 - (void)drawRect:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

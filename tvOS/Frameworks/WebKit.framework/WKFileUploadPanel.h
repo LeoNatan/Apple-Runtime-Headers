@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UIViewController> _presentationViewController;
     struct RetainPtr<UIPopoverController> _presentationPopover;
     struct RetainPtr<UIDocumentMenuViewController> _documentMenuController;
-    struct RetainPtr<UIAlertController> _actionSheetController;
     int _mediaCaptureType;
     id <WKFileUploadPanelDelegate> _delegate;
 }
@@ -35,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) id <WKFileUploadPanelDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (_Bool)platformSupportsPickerViewController;
 - (void)_uploadItemFromMediaInfo:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (void)_uploadItemForJPEGRepresentationOfImage:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (void)_uploadItemForImageData:(id)arg1 imageName:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failureBlock:(CDUnknownBlockType)arg4;

@@ -7,47 +7,30 @@
 #import "NSObject.h"
 
 #import "IKAppMediaItem.h"
-#import "TVPMediaItem.h"
 
-@class IKAppMediaItemBridge, NSArray, NSMutableDictionary, NSString, NSURL, TVPSecureKeyDeliveryCoordinator;
+@class IKAppMediaItemBridge, NSMutableDictionary, NSString, NSURL, TVMediaItem;
 
 __attribute__((visibility("hidden")))
-@interface _TVMediaItem : NSObject <TVPMediaItem, IKAppMediaItem>
+@interface _TVMediaItem : NSObject <IKAppMediaItem>
 {
     NSMutableDictionary *_metadata;
-    IKAppMediaItemBridge *_bridge;
-    TVPSecureKeyDeliveryCoordinator *_keyDeliveryCoordinator;
     NSURL *_url;
     NSString *_type;
+    IKAppMediaItemBridge *_bridge;
+    TVMediaItem *_publicObj;
 }
 
++ (id)_tvHighlightGroupsFromObject:(id)arg1;
++ (id)_tvInterstitialsFromObject:(id)arg1;
+@property(readonly, nonatomic) TVMediaItem *publicObj; // @synthesize publicObj=_publicObj;
+@property(readonly, nonatomic) IKAppMediaItemBridge *bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
-- (void)_postMetadataDidChangeNotificationWithMetadataProperties:(id)arg1;
-- (void)_postMetadataWillChangeNotificationWithMetadataProperties:(id)arg1;
-- (id)reportingDelegate;
-- (void)updateBookmarkWithSuggestedTime:(double)arg1 forElapsedTime:(double)arg2 duration:(double)arg3 playbackOfMediaItemIsEnding:(_Bool)arg4;
-- (void)loadStreamingKeyForRequest:(id)arg1;
-- (void)performMediaItemMetadataTransactionWithBlock:(CDUnknownBlockType)arg1;
-- (void)removeMediaItemMetadataForProperty:(id)arg1;
-- (void)setMediaItemMetadata:(id)arg1 forProperty:(id)arg2;
-- (id)mediaItemMetadataForProperty:(id)arg1;
-- (_Bool)hasTrait:(id)arg1;
-- (_Bool)isEqualToMediaItem:(id)arg1;
-- (id)mediaItemURL;
-- (id)objectForKey:(id)arg1;
+- (void)_forwardObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-@property(retain, nonatomic) NSArray *chapterGroups;
-@property(retain, nonatomic) NSArray *interstitials;
-@property(readonly, nonatomic) IKAppMediaItemBridge *bridge;
+- (id)objectForKey:(id)arg1;
 - (id)initWithIKAppMediaItem:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

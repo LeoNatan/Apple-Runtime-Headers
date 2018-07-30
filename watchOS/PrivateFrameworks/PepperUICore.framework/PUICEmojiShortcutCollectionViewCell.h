@@ -6,17 +6,20 @@
 
 #import "UICollectionViewCell.h"
 
-@class UIImage, UIImageView;
+@class UIImageView, UILabel;
 
 @interface PUICEmojiShortcutCollectionViewCell : UICollectionViewCell
 {
-    UIImageView *_imageView;
+    UILabel *_categoryLabel;
+    UIImageView *_categoryImageView;
 }
 
+@property(retain, nonatomic) UIImageView *categoryImageView; // @synthesize categoryImageView=_categoryImageView;
+@property(retain, nonatomic) UILabel *categoryLabel; // @synthesize categoryLabel=_categoryLabel;
 - (void).cxx_destruct;
-- (id)circleColor;
-@property(retain, nonatomic) UIImage *image;
-- (void)drawRect:(struct CGRect)arg1;
+- (void)_createConstraints;
+- (void)setHighlighted:(_Bool)arg1;
+- (id)description;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

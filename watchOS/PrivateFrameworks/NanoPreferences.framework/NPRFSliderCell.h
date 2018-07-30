@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) PUICSlider *slider; // @synthesize slider=_slider;
 - (void).cxx_destruct;
+- (void)setCellEnabled:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)specifierValueChanged;
 - (void)setContentsFromSpecifier:(id)arg1 controller:(id)arg2;

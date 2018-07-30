@@ -8,13 +8,15 @@
 
 #import "OS_nw_endpoint_flow.h"
 
-@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSObject<OS_nw_channel>, NSObject<OS_nw_endpoint>, NSObject<OS_nw_fd_wrapper>, NSObject<OS_nw_path>, NSObject<OS_nw_read_request>, NSObject<OS_nw_write_request>, NSObject<OS_xpc_object>, NSString;
+@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSObject<OS_nw_array>, NSObject<OS_nw_channel>, NSObject<OS_nw_content_context>, NSObject<OS_nw_dictionary>, NSObject<OS_nw_endpoint>, NSObject<OS_nw_error>, NSObject<OS_nw_fd_wrapper>, NSObject<OS_nw_path>, NSObject<OS_nw_path_flow_registration>, NSObject<OS_nw_read_request>, NSObject<OS_nw_write_request>, NSObject<OS_xpc_object>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_endpoint_flow : NSObject <OS_nw_endpoint_flow>
 {
     NSObject<OS_nw_path> *connected_path;
     void *internally_retained_object;
     unsigned int initialized_protocol:1;
+    unsigned int started:1;
     unsigned int setup_protocols:1;
     unsigned int started_protocols:1;
     unsigned int is_viable:1;
@@ -37,12 +39,16 @@
     struct nw_protocol_identifier *ip_protocol_identifier;
     struct tcp_info *tcp_info;
     struct tcp_connection_info *tcp_connection_info;
+    NSObject<OS_nw_path_flow_registration> *flow_registration;
     NSObject<OS_nw_write_request> *write_requests;
     NSObject<OS_nw_read_request> *read_requests;
+    NSObject<OS_nw_content_context> *last_output_context;
+    NSObject<OS_nw_dictionary> *input_contexts;
+    struct nw_frame_array_s pending_input_frames;
     NSObject<OS_dispatch_queue> *client_queue;
     CDUnknownBlockType read_close_handler;
     CDUnknownBlockType write_close_handler;
-    struct __CFError *last_error;
+    NSObject<OS_nw_error> *last_error;
     struct os_unfair_lock_s lock;
     NSObject<OS_nw_fd_wrapper> *connected_fd_wrapper;
     unsigned int pending_write_bytes;
@@ -52,7 +58,9 @@
     struct _DNSServiceRef_t *sleep_proxy_ref;
     NSObject<OS_xpc_object> *flow_divert_token;
     NSObject<OS_nw_endpoint> *flow_divert_endpoint;
+    unsigned short protocol_log_id_num;
     unsigned int keepalive_event_enabled:1;
+    unsigned int last_output_context_pending:1;
     unsigned long long first_keepalive_time;
     unsigned int keepalive_count;
     unsigned int configured_keepalive_count;
@@ -60,8 +68,9 @@
     CDUnknownBlockType adaptive_read_event_handler;
     CDUnknownBlockType adaptive_write_event_handler;
     CDUnknownBlockType keepalive_event_handler;
+    NSObject<OS_nw_array> *connected_metadata;
     NSObject<OS_dispatch_data> *final_data;
-    int final_error;
+    NSObject<OS_nw_error> *final_error;
 }
 
 - (void).cxx_destruct;

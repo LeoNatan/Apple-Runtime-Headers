@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMapTable, NSMutableDictionary, NSOperationQueue, UIImage;
+@class NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, UIImage;
 
 __attribute__((visibility("hidden")))
 @interface PDFThumbnailRenderingController : NSObject
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_sharedOperationQueue;
     UIImage *_genericThumbnailImage;
     NSMutableDictionary *_cachedThumbnails;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
 + (id)sharedController;

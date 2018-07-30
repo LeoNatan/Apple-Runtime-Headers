@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSEventObserver.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSLocalEventObserver : _NSEventObserver
 {
     BOOL _isAdditive;

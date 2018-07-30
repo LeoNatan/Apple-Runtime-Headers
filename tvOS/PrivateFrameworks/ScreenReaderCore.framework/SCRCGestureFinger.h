@@ -10,15 +10,15 @@
 {
     unsigned long long _identifier;
     struct CGPoint _location;
-    double _orbValue;
+    double _pressure;
 }
 
 - (unsigned long long)type;
-- (double)orbValue;
+- (double)pressure;
 - (struct CGPoint)location;
 - (unsigned long long)identifier;
 - (id)description;
-- (id)initWithIdentifier:(unsigned long long)arg1 location:(struct CGPoint)arg2 orbValue:(double)arg3;
+- (id)initWithIdentifier:(unsigned long long)arg1 location:(struct CGPoint)arg2 pressure:(double)arg3;
 
 @end
 

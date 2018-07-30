@@ -14,13 +14,12 @@
 
 @interface _CPLateSectionsAppendedFeedback : PBCodable <_CPProcessableFeedback, _CPLateSectionsAppendedFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
     NSArray *_sections;
 }
 
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
@@ -34,7 +33,6 @@
 - (unsigned long long)sectionsCount;
 - (void)addSections:(id)arg1;
 - (void)clearSections;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

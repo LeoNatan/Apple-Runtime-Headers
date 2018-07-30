@@ -6,13 +6,16 @@
 
 #import "NSObject.h"
 
-@class AVCameraCalibrationData, AVCapturePhotoInternal, AVCaptureResolvedPhotoSettings, AVDepthData, NSDictionary, NSString;
+@class AVCameraCalibrationData, AVCapturePhotoInternal, AVCaptureResolvedPhotoSettings, AVDepthData, AVPortraitEffectsMatte, NSDictionary, NSString;
 
 @interface AVCapturePhoto : NSObject
 {
     AVCapturePhotoInternal *_internal;
+    AVPortraitEffectsMatte *_portraitEffectsMatte;
 }
 
+@property(readonly) AVPortraitEffectsMatte *portraitEffectsMatte; // @synthesize portraitEffectsMatte=_portraitEffectsMatte;
+- (id)_fileDataRepresentationWithReplacementMetadata:(id)arg1 replacementEmbeddedThumbnailPhotoFormat:(id)arg2 replacementEmbeddedThumbnailPixelBuffer:(struct __CVBuffer *)arg3 replacementDepthData:(id)arg4 exceptionReason:(id *)arg5;
 - (unsigned int)_orientation;
 - (struct __CVBuffer *)_embeddedThumbnailSourcePixelBuffer;
 - (id)portraitMetadata;
@@ -25,6 +28,7 @@
 - (id)bracketSettings;
 - (struct CGImage *)previewCGImageRepresentation;
 - (struct CGImage *)CGImageRepresentation;
+- (id)fileDataRepresentationWithCustomizer:(id)arg1;
 - (id)fileDataRepresentationWithReplacementMetadata:(id)arg1 replacementEmbeddedThumbnailPhotoFormat:(id)arg2 replacementEmbeddedThumbnailPixelBuffer:(struct __CVBuffer *)arg3 replacementDepthData:(id)arg4;
 - (id)fileDataRepresentation;
 @property(readonly) NSString *sourceDeviceType;
@@ -41,7 +45,7 @@
 - (id)description;
 - (id)debugDescription;
 - (void)dealloc;
-- (id)initWithTimestamp:(CDStruct_1b6d18a9)arg1 photoSurface:(void *)arg2 photoSurfaceSize:(unsigned long long)arg3 previewPhotoSurface:(void *)arg4 metadata:(id)arg5 depthDataSurface:(void *)arg6 depthMetadataDictionary:(id)arg7 captureRequest:(id)arg8 bracketSettings:(id)arg9 sequenceCount:(unsigned long long)arg10 photoCount:(unsigned long long)arg11 expectedPhotoProcessingFlags:(unsigned int)arg12 sourceDeviceType:(id)arg13;
+- (id)initWithTimestamp:(CDStruct_1b6d18a9)arg1 photoSurface:(void *)arg2 photoSurfaceSize:(unsigned long long)arg3 previewPhotoSurface:(void *)arg4 embeddedThumbnailSourceSurface:(void *)arg5 metadata:(id)arg6 depthDataSurface:(void *)arg7 depthMetadataDictionary:(id)arg8 captureRequest:(id)arg9 bracketSettings:(id)arg10 sequenceCount:(unsigned long long)arg11 photoCount:(unsigned long long)arg12 expectedPhotoProcessingFlags:(unsigned int)arg13 sourceDeviceType:(id)arg14;
 
 @end
 

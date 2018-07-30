@@ -32,6 +32,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)clearHeaderData;
 - (void)setHeaderData:(id)arg1 andData:(id)arg2;
 
 @end

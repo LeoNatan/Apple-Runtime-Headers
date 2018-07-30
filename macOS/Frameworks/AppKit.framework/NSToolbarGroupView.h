@@ -8,6 +8,7 @@
 
 @class NSToolbarItemGroup;
 
+__attribute__((visibility("hidden")))
 @interface NSToolbarGroupView : NSView
 {
     NSToolbarItemGroup *_groupItem;

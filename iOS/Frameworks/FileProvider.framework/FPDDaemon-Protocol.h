@@ -35,6 +35,6 @@
 - (void)evictItemAtURL:(NSURL *)arg1 evenIfEnumeratingFP:(_Bool)arg2 andClearACLForConsumer:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)startProvidingItemAtURL:(NSURL *)arg1 fromProviderID:(NSString *)arg2 forConsumerID:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)extendSandboxForFileURL:(NSURL *)arg1 fromProviderID:(NSString *)arg2 toConsumerID:(NSString *)arg3 completionHandler:(void (^)(FPSandboxingURLWrapper *, NSError *))arg4;
-- (void)wakeUpCompletionHandler:(void (^)(NSError *))arg1;
+- (void)wakeUpForURL:(NSURL *)arg1 completionHandler:(void (^)(NSError *, id <FPDWakeupTransaction>))arg2;
 @end
 

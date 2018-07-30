@@ -16,6 +16,7 @@
 - (_Bool)mf_appearsToBeAnInitial;
 - (void)mf_firstName:(id *)arg1 middleName:(id *)arg2 lastName:(id *)arg3 extension:(id *)arg4;
 - (void *)person;
+- (id)addressComment;
 - (id)emailAddress;
 - (id)preferredCompositeName;
 - (id)preferredAbbreviatedName;

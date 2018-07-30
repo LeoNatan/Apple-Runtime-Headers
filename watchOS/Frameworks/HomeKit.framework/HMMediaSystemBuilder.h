@@ -8,41 +8,42 @@
 
 #import "HMFLogging.h"
 
-@class HMHome, HMMediaSystem, HMThreadSafeMutableArrayCollection, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMFUnfairLock, HMHome, HMMediaSystem, HMMutableArray, NSArray, NSString, NSUUID, _HMContext;
 
 @interface HMMediaSystemBuilder : NSObject <HMFLogging>
 {
+    HMFUnfairLock *_lock;
     NSArray *_components;
     NSString *_name;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
+    NSString *_configuredName;
     _HMContext *_context;
     NSUUID *_uuid;
     NSUUID *_mediaSystemUUID;
     NSString *_builderSessionID;
     HMHome *_home;
     HMMediaSystem *_mediaSystem;
-    HMThreadSafeMutableArrayCollection *_componentsArray;
+    HMMutableArray *_componentsArray;
 }
 
++ (id)logCategory;
 + (_Bool)supportsMediaSystem:(id)arg1;
 + (_Bool)canSupportMediaSystem:(id)arg1;
-+ (id)logCategory;
-@property(retain, nonatomic) HMThreadSafeMutableArrayCollection *componentsArray; // @synthesize componentsArray=_componentsArray;
+@property(retain, nonatomic) HMMutableArray *componentsArray; // @synthesize componentsArray=_componentsArray;
 @property(readonly, nonatomic) HMMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
 @property(readonly, nonatomic) __weak HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSString *builderSessionID; // @synthesize builderSessionID=_builderSessionID;
 @property(readonly, nonatomic) NSUUID *mediaSystemUUID; // @synthesize mediaSystemUUID=_mediaSystemUUID;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
+@property(retain, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)_callCompletion:(CDUnknownBlockType)arg1 builderSessionID:(id)arg2 error:(id)arg3 response:(id)arg4;
 - (void)_commitWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)commitWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSArray *components; // @synthesize components=_components;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)_initializeContext;
-- (id)logIdentifier;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithMediaSystem:(id)arg1;

@@ -13,7 +13,7 @@
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (id)iokitMatchingDictionaryForInterfaceName:(id)arg1 andIPv6Address:(char *)arg2;
 - (void)dealloc;
-- (long long)portType;
+- (int)portType;
 - (id)_destinationAddressString;
 - (id)_sourceAddressString;
 - (id)initWithInterfaceName:(id)arg1 andIPv6Address:(char *)arg2;

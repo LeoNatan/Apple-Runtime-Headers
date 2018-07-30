@@ -17,6 +17,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) NSString *latestIDSTokenURI; // @synthesize latestIDSTokenURI=_latestIDSTokenURI;
 @property(retain, nonatomic) NSMutableDictionary *chatsStartTimeDictionary; // @synthesize chatsStartTimeDictionary=_chatsStartTimeDictionary;
+- (void)acquireAssertionToUnsuspendProcess;
 - (void)sendNotificationMessageIfNeededForIncomingMessageFromChatIdentifier:(id)arg1;
 - (void)setLatestNotificationIDSTokenURI:(id)arg1;
 - (_Bool)_shouldSendNotificationForChatIdentifier:(id)arg1;

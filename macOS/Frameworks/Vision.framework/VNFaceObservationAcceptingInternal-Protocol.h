@@ -5,11 +5,10 @@
 //
 
 #import "VNFaceObservationAccepting.h"
-#import "VNObservationsCacheKeyProviding.h"
 
 @class NSArray;
 
-@protocol VNFaceObservationAcceptingInternal <VNFaceObservationAccepting, VNObservationsCacheKeyProviding>
+@protocol VNFaceObservationAcceptingInternal <VNFaceObservationAccepting>
 - (NSArray *)validatedInputFaceObservationsClippedToRegionOfInterest:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)getOptionalValidatedInputFaceObservations:(id *)arg1 clippedToRegionOfInterest:(BOOL)arg2 error:(id *)arg3;
 @end

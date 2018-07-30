@@ -13,12 +13,15 @@ __attribute__((visibility("hidden")))
 {
     struct WeakObjCPtr<id<UIScrollViewDelegate>> _externalDelegate;
     WKScrollViewDelegateForwarder *_delegateForwarder;
+    double _keyboardBottomInsetAdjustment;
     WKWebView<UIScrollViewDelegate> *_internalDelegate;
 }
 
 @property(nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct UIEdgeInsets)_systemContentInset;
+- (void)_adjustForAutomaticKeyboardInfo:(id)arg1 animated:(_Bool)arg2 lastAdjustment:(double *)arg3;
 - (void)_setContentSizePreservingContentOffsetDuringRubberband:(struct CGSize)arg1;
 - (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize)arg1;
 - (struct CGSize)_currentTopLeftRubberbandAmount;

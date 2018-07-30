@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "SXVideoQueueModifying.h"
+#import "SVVideoQueueModifying.h"
 
 @class NSString;
 
-@interface NUVideoQueueModifier : NSObject <SXVideoQueueModifying>
+@interface NUVideoQueueModifier : NSObject <SVVideoQueueModifying>
 {
 }
 

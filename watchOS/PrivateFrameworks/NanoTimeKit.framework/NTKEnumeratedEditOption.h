@@ -10,13 +10,13 @@
 {
 }
 
-+ (id)_orderedValuesRestrictedByCurrentDeviceCollection;
-+ (id)_orderedValues;
-+ (_Bool)_valueIsValid:(unsigned int)arg1;
-+ (id)optionsRestrictedByCurrentDeviceCollection;
-+ (unsigned int)indexOfOption:(id)arg1;
-+ (id)optionAtIndex:(unsigned int)arg1;
-+ (unsigned int)numberOfOptions;
++ (id)_orderedValuesRestrictedByDevice:(id)arg1;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (_Bool)_valueIsValid:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)optionsRestrictedByDevice:(id)arg1;
++ (unsigned int)indexOfOption:(id)arg1 forDevice:(id)arg2;
++ (id)optionAtIndex:(unsigned int)arg1 forDevice:(id)arg2;
++ (unsigned int)numberOfOptionsForDevice:(id)arg1;
 
 @end
 

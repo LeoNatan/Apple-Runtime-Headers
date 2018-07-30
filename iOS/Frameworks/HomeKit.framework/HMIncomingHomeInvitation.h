@@ -21,7 +21,6 @@
 @property(readonly, nonatomic) HMUser *inviter; // @synthesize inviter=_inviter;
 - (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_acceptInviteWithPresenceAuthStatus:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -32,6 +31,7 @@
 - (void)cancelInviteWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSUUID *homeUUID;
 @property(readonly, copy, nonatomic) NSString *homeName;
+- (void)__configureWithContext:(id)arg1 homeManager:(id)arg2;
 - (id)initWithInvitationData:(id)arg1 homeManager:(id)arg2;
 
 @end

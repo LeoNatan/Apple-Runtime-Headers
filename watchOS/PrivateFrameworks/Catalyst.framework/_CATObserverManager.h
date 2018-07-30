@@ -17,6 +17,7 @@
     NSObject<OS_dispatch_queue> *mQueue;
     NSObject<OS_dispatch_source> *mProgressSource;
     CATOperation *mOperation;
+    CATOperation *mStrongOperation;
     _Bool mIsObserving;
 }
 

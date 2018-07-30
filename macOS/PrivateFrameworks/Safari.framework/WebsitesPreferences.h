@@ -89,9 +89,8 @@ __attribute__((visibility("hidden")))
 - (id)_selectedDomains;
 - (void)_saveCurrentlySelectedSubPane;
 - (void)_restoreLastSelectedSubPane;
-- (BOOL)_shouldSelectPreferenceValue:(id)arg1 forManager:(id)arg2 inButton:(id)arg3;
+- (BOOL)_shouldSelectPreferenceValue:(id)arg1 forPerSitePreference:(id)arg2 inButton:(id)arg3;
 - (void)_updateRemoveButtonState;
-- (void)_populateMenu:(id)arg1 withWBSPerSitePreferenceValues:(id)arg2;
 - (void)_setUpPolicyPopUpButtonIfNecessary:(id)arg1 forPerSitePreference:(id)arg2;
 - (BOOL)_shouldIncludeWebGLInPreferences;
 - (void)_initializePerSitePreferencesAndPreferencesToManagers;

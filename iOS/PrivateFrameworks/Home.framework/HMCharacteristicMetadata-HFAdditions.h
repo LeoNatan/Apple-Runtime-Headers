@@ -6,7 +6,7 @@
 
 #import "HMCharacteristicMetadata.h"
 
-@class NSNumber;
+@class HFNumberValueConstraints;
 
 @interface HMCharacteristicMetadata (HFAdditions)
 - (id)hf_percentageForCharacteristicValue:(id)arg1;
@@ -16,7 +16,7 @@
 - (_Bool)hf_isValidValue:(id)arg1;
 - (id)hf_valueRoundedToNearestStepValue:(id)arg1;
 - (id)hf_normalizedValueForValue:(id)arg1;
-@property(readonly, nonatomic) NSNumber *hf_effectiveStepValue;
 - (_Bool)hf_isEqualToMetadata:(id)arg1;
+@property(readonly, nonatomic) HFNumberValueConstraints *hf_numericValueConstraints;
 @end
 

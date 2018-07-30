@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPopUpButton.h"
+#import <CalendarUI/CalUICustomAppearancePopUpButton.h>
 
-@interface CalUITimeZonePicker : NSPopUpButton
+@interface CalUITimeZonePicker : CalUICustomAppearancePopUpButton
 {
     BOOL _supportsFloating;
     BOOL _includeGMT;

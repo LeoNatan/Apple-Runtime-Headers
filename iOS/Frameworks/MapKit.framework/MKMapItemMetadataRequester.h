@@ -10,7 +10,7 @@
 #import "NSURLSessionDelegate.h"
 #import "NSURLSessionTaskDelegate.h"
 
-@class ACAccountCredential, ACAccountStore, NSMapTable, NSString, NSURLSession, OAURLRequestSigner;
+@class NSMapTable, NSString, NSURLSession;
 
 @interface MKMapItemMetadataRequester : NSObject <NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDelegate>
 {
@@ -18,18 +18,10 @@
     NSMapTable *_requestsForURLs;
     NSMapTable *_tasksForURLs;
     NSMapTable *_dataForTasks;
-    _Bool _hasCheckedYelpAccountCredentials;
-    ACAccountStore *_accountStore;
-    ACAccountCredential *_yelpAccountCredentials;
-    OAURLRequestSigner *_signer;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) ACAccountCredential *yelpAccountCredentials;
-- (void)accountStoreDidChange:(id)arg1;
-- (id)accountStore;
-@property(readonly, nonatomic) OAURLRequestSigner *signer;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)handleTask:(id)arg1 withData:(id)arg2 error:(id)arg3;

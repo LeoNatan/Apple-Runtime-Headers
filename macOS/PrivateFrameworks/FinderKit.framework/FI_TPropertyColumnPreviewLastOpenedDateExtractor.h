@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FinderKit/FI_IPropertyLastOpenedDateExtractor.h>
+#import <FinderKit/FI_TPropertyLastOpenedDateExtractor.h>
 
 __attribute__((visibility("hidden")))
-@interface FI_TPropertyColumnPreviewLastOpenedDateExtractor : FI_IPropertyLastOpenedDateExtractor
+@interface FI_TPropertyColumnPreviewLastOpenedDateExtractor : FI_TPropertyLastOpenedDateExtractor
 {
 }
 
-- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
+- (id)init;
 
 @end
 

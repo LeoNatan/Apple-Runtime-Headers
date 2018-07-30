@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSString, PKPaymentWebServiceBackgroundContext, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext, PKTransitAppletState;
+@class NSArray, NSDictionary, NSSet, NSString, PKPaymentWebServiceBackgroundContext, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext, PKTransitAppletState;
 
 @protocol NPKPaymentWebServiceCompanionTargetDeviceDelegate <NSObject>
 - (void)checkCompanionPeerPaymentRegistrationState;
@@ -19,6 +19,7 @@
 - (void)setNewAuthRandom:(void (^)(_Bool))arg1;
 - (void)archiveWebServiceBackgroundContext:(PKPaymentWebServiceBackgroundContext *)arg1;
 - (void)archiveWebServiceContext:(PKPaymentWebServiceContext *)arg1;
+- (void)handleBalanceUpdate:(NSSet *)arg1 forUniqueID:(NSString *)arg2;
 - (void)handleRemoveTransactionsWithIdentifiers:(NSArray *)arg1;
 - (void)handleAppletState:(PKTransitAppletState *)arg1 forUniqueID:(NSString *)arg2;
 - (void)handlePaymentTransactions:(NSArray *)arg1 appletStates:(NSDictionary *)arg2 forUniqueIDs:(NSArray *)arg3;

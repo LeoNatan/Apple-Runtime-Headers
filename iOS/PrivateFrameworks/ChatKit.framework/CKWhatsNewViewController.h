@@ -75,6 +75,7 @@
 - (void)welcomeViewCancelButtonTapped:(id)arg1;
 - (void)handleUIContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)handleUIDeviceOrientationDidChangeNotification:(id)arg1;
+- (void)layoutForCallerID;
 - (void)layoutForSurf;
 - (void)layoutForMOC;
 - (void)updateConstraints;

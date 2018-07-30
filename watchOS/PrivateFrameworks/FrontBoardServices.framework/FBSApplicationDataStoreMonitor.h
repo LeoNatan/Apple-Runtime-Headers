@@ -17,6 +17,7 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 - (void)applicationDataStoreRepositoryClient:(id)arg1 storeInvalidatedForApplication:(id)arg2;
 - (void)applicationDataStoreRepositoryClient:(id)arg1 application:(id)arg2 changedObject:(id)arg3 forKey:(id)arg4;
 - (_Bool)_hasObserver:(id)arg1;

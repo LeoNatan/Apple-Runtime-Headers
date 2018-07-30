@@ -6,21 +6,21 @@
 
 #import "NSObject.h"
 
-@class CVMLImageprintObservation;
+@class VNImageprint;
 
 @interface VCPImageDescriptor : NSObject
 {
-    CVMLImageprintObservation *_imagePrint;
+    VNImageprint *_imagePrint;
 }
 
-+ (id)descriptorWithData:(id)arg1 isRaw:(BOOL)arg2;
++ (id)descriptorWithData:(id)arg1;
 + (id)descriptorWithImage:(struct __CVBuffer *)arg1;
 + (int)preferredPixelFormat;
 + (BOOL)useDistanceIdentity;
 - (void).cxx_destruct;
 - (int)computeDistanceWith:(id)arg1 distance:(float *)arg2;
 - (id)serialize;
-- (id)initWithData:(id)arg1 isRaw:(BOOL)arg2;
+- (id)initWithData:(id)arg1;
 - (id)initWithImage:(struct __CVBuffer *)arg1;
 
 @end

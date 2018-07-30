@@ -15,5 +15,8 @@
 - (struct CGPoint)anchorForIndex:(unsigned long long)arg1 offset:(const struct CGPoint *)arg2;
 - (unsigned long long)totalNumberOfGridSpots;
 - (struct CGPoint)invalidAnchorPoint;
+
+@optional
+- (unsigned long long)nextMajorIndexFromIndex:(unsigned long long)arg1;
 @end
 

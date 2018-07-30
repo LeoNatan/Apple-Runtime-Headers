@@ -6,13 +6,13 @@
 
 #import "UIView.h"
 
-@class NSArray, UICollectionView, UIImage, UIImageView;
+@class NSArray, UICollectionView, UIImageView;
 
 __attribute__((visibility("hidden")))
 @interface _TVStackWrappingView : UIView
 {
-    UIImageView *_bgImageView;
-    UIImage *_backgroundImage;
+    UIImageView *_backgroundImageView;
+    UIImageView *_backgroundBackdropImageView;
     NSArray *_headerSupplementaryViews;
     UICollectionView *_stackView;
     UIView *_backgroundView;
@@ -23,10 +23,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UICollectionView *stackView; // @synthesize stackView=_stackView;
 @property(copy, nonatomic) NSArray *headerSupplementaryViews; // @synthesize headerSupplementaryViews=_headerSupplementaryViews;
-@property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 - (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (void)configureSupplementaryCellLayoutAttributesWithAutomaticInsets:(struct UIEdgeInsets)arg1;
+- (void)layoutSubviews;
+@property(readonly, nonatomic) UIImageView *backgroundBackdropImageView; // @synthesize backgroundBackdropImageView=_backgroundBackdropImageView;
+@property(readonly, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 
 @end
 

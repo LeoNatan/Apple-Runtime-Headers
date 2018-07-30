@@ -8,6 +8,7 @@
 
 @class NSPathComponentCell;
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilityPathComponent : NSAccessibilityIndexedMockUIElement
 {
     NSPathComponentCell *_pathComponentCell;

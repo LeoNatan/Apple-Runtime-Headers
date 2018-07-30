@@ -6,43 +6,44 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMFNetAddress, NSObject<OS_dispatch_queue>;
+#import "HMFLogging.h"
 
-@interface HMFNetMonitor : HMFObject
+@class HMFNetAddress, HMFUnfairLock, NSObject<OS_dispatch_queue>, NSString;
+
+@interface HMFNetMonitor : HMFObject <HMFLogging>
 {
+    HMFUnfairLock *_lock;
     _Bool _reachable;
-    _Bool _monitoring;
     unsigned int _currentNetworkFlags;
     id <HMFNetMonitorDelegate> _delegate;
     HMFNetAddress *_netAddress;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
+    NSObject<OS_dispatch_queue> *_queue;
     struct __SCNetworkReachability *_networkReachabilityRef;
 }
 
-+ (id)shortDescription;
++ (id)logCategory;
 @property(nonatomic) unsigned int currentNetworkFlags; // @synthesize currentNetworkFlags=_currentNetworkFlags;
-@property(nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
 @property(readonly, nonatomic) struct __SCNetworkReachability *networkReachabilityRef; // @synthesize networkReachabilityRef=_networkReachabilityRef;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, copy, nonatomic) HMFNetAddress *netAddress; // @synthesize netAddress=_netAddress;
 @property __weak id <HMFNetMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)handleNetworkReachabilityChange:(unsigned int)arg1;
-- (void)_stop;
-- (void)stop;
-- (void)start;
 @property(readonly) unsigned long long reachabilityPath;
 - (void)setReachable:(_Bool)arg1;
 @property(readonly, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
-- (id)description;
-- (id)debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
+- (id)attributeDescriptions;
 - (id)shortDescription;
 - (void)dealloc;
 - (id)initWithNetAddress:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

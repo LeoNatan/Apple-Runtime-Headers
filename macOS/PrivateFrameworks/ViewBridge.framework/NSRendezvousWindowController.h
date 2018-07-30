@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)awakeFromRemoteView;
 - (id)objectToObserveForKey:(id)arg1 withWindow:(id)arg2;
 - (void)loadView;
+- (void)windowWillOrder:(long long)arg1 relativeTo:(long long)arg2;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithWindow:(id)arg1;

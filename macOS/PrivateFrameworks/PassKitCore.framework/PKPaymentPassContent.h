@@ -36,7 +36,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
+- (id)initWithDictionary:(id)arg1 bundle:(id)arg2 privateBundle:(id)arg3;
 
 @end
 

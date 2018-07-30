@@ -15,11 +15,6 @@
 
 @interface _CPStartSearchFeedback : PBCodable <_CPProcessableFeedback, _CPFeedbackUUID, _CPStartSearchFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int triggerEvent:1;
-        unsigned int queryId:1;
-    } _has;
     int _triggerEvent;
     unsigned long long _timestamp;
     NSString *_input;
@@ -29,7 +24,7 @@
 
 @property(nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(nonatomic) int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
-@property(copy, nonatomic) NSString *uuid;
+@property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
 @property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
@@ -41,11 +36,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasQueryId;
-@property(readonly, nonatomic) BOOL hasTriggerEvent;
-@property(readonly, nonatomic) BOOL hasUuid;
-@property(readonly, nonatomic) BOOL hasInput;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

@@ -13,6 +13,7 @@
 - (void)donationFailedWithError:(NSError *)arg1;
 - (void)removing:(NSString *)arg1;
 - (void)donating:(CNDonationValue *)arg1;
+- (void)accountsDidNotChange;
 - (void)accountRemoved:(ACAccount *)arg1;
 - (void)accountChanged:(ACAccount *)arg1;
 - (void)accountAdded:(ACAccount *)arg1;

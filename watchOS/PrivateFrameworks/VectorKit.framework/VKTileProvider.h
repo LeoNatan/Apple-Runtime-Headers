@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
     struct VKCameraState _lastCameraState;
     struct CGSize _lastCanvasSize;
     _Bool _tilesChanged;
+    _Bool _tileProviderHasBadTiles;
     VKMapRasterizer *_rasterizer;
     id <VKMapLayer> _debugLayer;
     GEOTileKeyList *_debugLayerKeys;
@@ -62,6 +63,11 @@ __attribute__((visibility("hidden")))
     GEOResourceManifestConfiguration *_manifestConfiguration;
     NSLocale *_locale;
     shared_ptr_e963992e _taskContext;
+    _Bool _enableIntegrityCheck;
+    double _minTimeInLoadingState;
+    double _maxTimeInLoadingState;
+    double _integrityInternval;
+    double _lastIntegrityCheckLog;
 }
 
 @property(readonly, nonatomic) _Bool hasFailedTile; // @synthesize hasFailedTile=_hasFailedTile;
@@ -88,14 +94,14 @@ __attribute__((visibility("hidden")))
 - (void)willStartLoadingTiles;
 - (int)tileSource:(id)arg1 overrideForMaximumZoomLevel:(int)arg2;
 - (_Bool)tileSource:(id)arg1 keyIsNeeded:(const struct VKTileKey *)arg2;
+- (void)dirtyTilesFromTileSource:(id)arg1 withState:(unsigned int)arg2;
 - (void)dirtyTilesFromTileSource:(id)arg1;
 - (void)tileSource:(id)arg1 dirtyTilesWithinRect:(const Box_3d7e3c2c *)arg2 level:(int)arg3;
 - (void)_dirtyTile:(id)arg1 source:(id)arg2 layer:(unsigned char)arg3;
 - (void)dirtyTile:(const struct VKTileKey *)arg1 source:(id)arg2;
 - (void)invalidateTilesFromTileSource:(id)arg1;
-- (void)tileSource:(id)arg1 invalidateTilesWithState:(unsigned int)arg2;
+- (void)tileSource:(id)arg1 invalidateTilesWithStatePredicate:(CDUnknownBlockType)arg2;
 - (void)tileSource:(id)arg1 invalidateKeys:(id)arg2;
-- (void)tileSource:(id)arg1 invalidateKey:(const struct VKTileKey *)arg2;
 - (void)tileSource:(id)arg1 didFailToLoadTileForKey:(const struct VKTileKey *)arg2 error:(id)arg3;
 - (void)tileSource:(id)arg1 didFailToDecodeTileForKey:(const struct VKTileKey *)arg2;
 - (void)tileSource:(id)arg1 didFetchTile:(id)arg2 forKey:(const struct VKTileKey *)arg3;
@@ -128,6 +134,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)evaluateSelectedTileForRendering:(id)arg1;
 - (_Bool)evaluateNeighborTileForRendering:(id)arg1;
 - (void)changeTileForKey:(const struct VKTileKey *)arg1 toState:(unsigned int)arg2 withMetadata:(id)arg3 withTile:(id)arg4 forLayer:(unsigned char)arg5;
+- (unsigned int)_tileStateForKey:(const struct VKTileKey *)arg1 forLayer:(unsigned char)arg2;
 - (_Bool)tileMatters:(id)arg1;
 - (void)releaseFallbackTileForRendering:(id)arg1;
 - (_Bool)canRenderTile:(id)arg1;
@@ -148,6 +155,8 @@ __attribute__((visibility("hidden")))
 - (void)populateDebugNode:(shared_ptr_eafb90f9)arg1;
 - (id)detailedDescriptionDictionaryRepresentation;
 - (id)detailedDescription;
+- (void)logIntegrityCheck;
+- (_Bool)checkMapTileIntegrity:(id)arg1 errors:(id)arg2;
 - (void)describeTilesFromList:(id)arg1 outputtoDict:(id)arg2;
 - (void)describeTilesFromList:(id)arg1 output:(id)arg2;
 - (void)tileStatusFromList:(id)arg1 canRender:(out id *)arg2 canNotRender:(out id *)arg3;

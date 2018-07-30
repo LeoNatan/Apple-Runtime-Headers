@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;
 @property(readonly, nonatomic) _Bool isRequiredByFollowingEmitters;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
-- (id)backingChannelTagIDWithCoreConfiguration:(id)arg1;
+- (id)backingChannelTagIDWithConfiguration:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (_Bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;

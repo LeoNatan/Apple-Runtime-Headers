@@ -50,6 +50,7 @@
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)session:(id)arg1 didReceiveReport:(id)arg2;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 - (void)session:(id)arg1 muted:(_Bool)arg2;
 - (void)session:(id)arg1 audioEnabled:(_Bool)arg2;

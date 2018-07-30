@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSHashTable, NSMutableArray, NSMutableIndexSet, NSMutableString;
+@class NSHashTable, NSMutableArray, NSMutableData, NSMutableIndexSet, NSString;
 
 @interface SGHtmlParserDissectorTask : NSObject
 {
@@ -16,7 +16,8 @@
     unsigned long long _plainTextLinesTotalLength;
     NSMutableArray *_plainTextLineToHTMLOffset;
     _Bool _currentLineIsCollapsed;
-    NSMutableString *_currentLineText;
+    NSMutableData *_currentLineData;
+    NSString *_currentLineString;
     struct _xmlParserCtxt {
         struct _xmlSAXHandler *_field1;
         void *_field2;

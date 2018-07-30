@@ -30,9 +30,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasOptions;
-@property(readonly, nonatomic) BOOL hasDefaultValue;
-@property(readonly, nonatomic) BOOL hasName;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

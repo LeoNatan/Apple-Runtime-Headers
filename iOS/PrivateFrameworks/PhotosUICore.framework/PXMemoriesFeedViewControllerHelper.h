@@ -114,7 +114,7 @@
 - (void)_generateMemoriesForReason:(unsigned long long)arg1 contextualMemoriesSettings:(id)arg2;
 - (void)invalidateMetrics;
 - (void)feedViewControllerDidDisappear;
-- (void)feedViewControllerDidAppear;
+- (void)feedViewControllerDidAppear:(_Bool)arg1;
 - (void)feedViewControllerWillLayoutSubviews;
 @property(readonly, nonatomic) PXMemoriesFeedTilingLayout *targetLayout;
 @property(readonly, nonatomic) PXMemoriesFeedTilingLayout *currentLayout;
@@ -131,7 +131,9 @@
 - (_Bool)canRequestNewMemoriesForReason:(unsigned long long)arg1;
 - (void)_handleChangeFromDataSource:(id)arg1 toDataSource:(id)arg2 withChangeDetails:(id)arg3;
 - (void)prepare;
+- (id)initWithScrollViewController:(id)arg1 photoLibrary:(id)arg2 traitCollection:(id)arg3 memoriesStyle:(unsigned long long)arg4 tilingControllerConfigurationBlock:(CDUnknownBlockType)arg5;
 - (id)initWithScrollViewController:(id)arg1 photoLibrary:(id)arg2 traitCollection:(id)arg3 tilingControllerConfigurationBlock:(CDUnknownBlockType)arg4;
+- (id)initWithPhotoLibrary:(id)arg1;
 - (id)mutableChangeObject;
 
 // Remaining properties

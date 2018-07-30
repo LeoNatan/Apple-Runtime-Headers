@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCardCollectionRowView.h>
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionLinkedPeopleRowView : ABCardCollectionRowView
 {
 }
@@ -17,7 +16,6 @@ __attribute__((visibility("hidden")))
 - (void)mouseEnteredValueTrackingArea;
 - (void)showCard:(id)arg1;
 - (void)mouseUp:(id)arg1;
-- (id)valueTextColorKey;
 
 @end
 

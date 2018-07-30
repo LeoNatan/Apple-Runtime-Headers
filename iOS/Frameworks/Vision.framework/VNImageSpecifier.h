@@ -7,12 +7,11 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
-#import "VNObservationsCacheKeyProviding.h"
 #import "VNSequencedRequestSupporting.h"
 
 @class NSDictionary, VNImageBuffer;
 
-@interface VNImageSpecifier : NSObject <VNObservationsCacheKeyProviding, VNSequencedRequestSupporting, NSCopying>
+@interface VNImageSpecifier : NSObject <VNSequencedRequestSupporting, NSCopying>
 {
     VNImageBuffer *_imageBuffer;
     NSDictionary *_options;
@@ -37,7 +36,6 @@
 - (void).cxx_destruct;
 - (id)sequencedRequestPreviousObservationsKey;
 - (_Bool)wantsSequencedRequestObservationsRecording;
-- (id)observationsCacheKey;
 @property(readonly, copy, nonatomic) NSDictionary *options;
 - (id)newImageBufferWithOptions:(id)arg1 error:(id *)arg2;
 - (id)imageBufferAndReturnError:(id *)arg1;

@@ -8,8 +8,7 @@
 
 @interface NSView (NUIContainerViewHack)
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
-- (id)viewForLastBaselineLayout;
-- (id)viewForFirstBaselineLayout;
+- (double)_nui_currentScreenScale;
 - (BOOL)_needsDoubleUpdateConstraintsPass;
 @end
 

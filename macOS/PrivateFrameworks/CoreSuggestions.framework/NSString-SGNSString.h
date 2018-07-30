@@ -7,6 +7,7 @@
 #import "NSString.h"
 
 @interface NSString (SGNSString)
+- (id)sg_md5Hash;
 - (id)sg_deepCopy;
 @end
 

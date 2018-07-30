@@ -17,6 +17,7 @@
 + (id)mean:(id)arg1;
 + (id)multiply:(id)arg1 withScalar:(double)arg2;
 + (id)sum:(id)arg1;
+- (id)dictionaryRepresentation;
 - (void)scalarMultiply:(double)arg1;
 - (id)scalarProduct:(double)arg1;
 - (void)add:(id)arg1;

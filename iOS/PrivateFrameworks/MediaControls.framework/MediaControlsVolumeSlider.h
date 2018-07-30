@@ -10,6 +10,8 @@
 {
 }
 
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateStyle;
 - (id)_thumbImageForStyle:(long long)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGRect)maximumValueImageRectForBounds:(struct CGRect)arg1;

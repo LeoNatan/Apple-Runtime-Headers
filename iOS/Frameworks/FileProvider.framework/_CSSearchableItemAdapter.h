@@ -8,7 +8,7 @@
 
 #import "NSFileProviderItem_Private.h"
 
-@class CSSearchableItem, CSSearchableItemAttributeSet, NSData, NSDate, NSDictionary, NSError, NSNumber, NSPersonNameComponents, NSString, NSURL;
+@class CSSearchableItem, CSSearchableItemAttributeSet, NSArray, NSData, NSDate, NSDictionary, NSError, NSNumber, NSPersonNameComponents, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface _CSSearchableItemAdapter : NSObject <NSFileProviderItem_Private>
@@ -32,10 +32,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSError *downloadingError;
 @property(readonly, copy, nonatomic) NSError *uploadingError;
 @property(readonly, copy, nonatomic) NSData *tagData;
+@property(readonly, copy) NSArray *tags;
 @property(readonly, nonatomic) NSDictionary *userInfo;
 @property(readonly, getter=fp_isUbiquitous) _Bool fp_ubiquitous;
 @property(readonly, copy) NSString *fp_spotlightDomainIdentifier;
 @property(readonly, nonatomic) unsigned long long capabilities;
+@property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
+@property(readonly, nonatomic) NSString *preformattedOwnerName;
 @property(readonly, nonatomic) NSPersonNameComponents *mostRecentEditorNameComponents;
 @property(readonly, nonatomic) NSPersonNameComponents *ownerNameComponents;
 @property(readonly, nonatomic, getter=isShared) _Bool shared;

@@ -36,7 +36,7 @@
 - (void)_handleChatDeletionCompletionForRecordIDs:(id)arg1 error:(id)arg2;
 - (id)_copyRecordIDsToDelete;
 - (void)clearLocalSyncState;
-- (void)__syncChatsWithCloudKit:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)__syncChatsWithCloudKit:(long long)arg1 attemptCount:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)syncChatsWithCloudKit:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)syncChatsWithCloudKitWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateAllChatsAsNotNeedingReUpload;

@@ -31,6 +31,7 @@
     _Bool _isInitialLoad;
     _Bool _isInitialAppearance;
     _Bool _isShowingSwipeDeleteConfirmation;
+    _Bool _shouldUseFastPreviewText;
     CKConversationList *_conversationList;
     CKMessagesController *_messagesController;
     CKCloudKitSyncProgressViewController *_syncProgressViewController;
@@ -51,6 +52,7 @@
     CDUnknownBlockType _searchCompletion;
 }
 
+@property(nonatomic) _Bool shouldUseFastPreviewText; // @synthesize shouldUseFastPreviewText=_shouldUseFastPreviewText;
 @property(copy, nonatomic) CDUnknownBlockType searchCompletion; // @synthesize searchCompletion=_searchCompletion;
 @property(retain, nonatomic) UIBarButtonItem *composeButton; // @synthesize composeButton=_composeButton;
 @property(retain, nonatomic) CKConversationSearchResultsController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
@@ -153,6 +155,7 @@
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)_endHoldingUpdatesOnViewWillAppear;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidUnload;
 - (void)viewDidLoad;
@@ -165,9 +168,13 @@
 - (void)_updateConversationFilteredFlagsAndReportSpam;
 - (void)updateNoMessagesDialog;
 - (void)updateMarginWidth;
+- (void)_updateConversationListNeedsResort:(_Bool)arg1;
 - (void)updateConversationList;
+- (id)_indexPaths:(id)arg1 containingHandleWithUID:(id)arg2;
+- (void)_reloadVisibleConversationList:(id)arg1;
 - (void)updateSMSSpamConversationsDisplayName;
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
+- (void)endHoldingAllConversationListUpdatesForKey:(id)arg1;
 - (void)beginHoldingConversationListUpdatesForKey:(id)arg1;
 - (void)scrollToTop;
 - (void)significantTimeChange;
@@ -177,13 +184,13 @@
 - (void)updateCurrentEditButton;
 - (void)editButtonTapped:(id)arg1;
 - (void)updateNavigationItems;
-- (void)_updateTableViewRowHeights;
 - (_Bool)_shouldKeepSelection;
 - (void)_groupsChanged:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;
 - (void)_conversationListDidChange:(id)arg1;
 - (void)_conversationListDidFinishLoadingConversations:(id)arg1;
 - (void)_chatWatermarkDidChange:(id)arg1;
+- (void)_multiWayCallStateChanged:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)_conversationPinStateChangedNotification:(id)arg1;
 - (void)_conversationContactPhotosEnabledChangedNotification:(id)arg1;
@@ -192,9 +199,10 @@
 - (void)_conversationMuteDidChangeNotification:(id)arg1;
 - (void)_conversationDisplayNameChangedNotification:(id)arg1;
 - (void)_conversationIsFilteredChangedNotification:(id)arg1;
+- (void)_chatRegistryLastMessageLoadedNotification:(id)arg1;
 - (void)_chatParticipantsChangedNotification:(id)arg1;
 - (void)_chatUnreadCountDidChange:(id)arg1;
-- (void)accessibilityLargeTextDidChange;
+- (void)_increaseContrastDidChange:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (_Bool)_shouldResizeNavigationBar;
 - (void)invalidateCellLayout;

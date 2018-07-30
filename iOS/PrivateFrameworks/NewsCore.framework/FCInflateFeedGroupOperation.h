@@ -6,13 +6,14 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCloudContext, FCDeflatedFeedGroup, FCFeedGroup;
+@class FCCloudContext, FCDeflatedFeedGroup, FCFeedDescriptor, FCFeedGroup;
 
 @interface FCInflateFeedGroupOperation : FCOperation
 {
     _Bool _cachedOnly;
     id <FCCoreConfiguration> _configuration;
     FCCloudContext *_context;
+    FCFeedDescriptor *_feedDescriptor;
     FCDeflatedFeedGroup *_deflatedGroup;
     CDUnknownBlockType _inflationCompletionHandler;
     FCFeedGroup *_inflatedGroup;
@@ -22,6 +23,7 @@
 @property(copy, nonatomic) CDUnknownBlockType inflationCompletionHandler; // @synthesize inflationCompletionHandler=_inflationCompletionHandler;
 @property(nonatomic) _Bool cachedOnly; // @synthesize cachedOnly=_cachedOnly;
 @property(retain, nonatomic) FCDeflatedFeedGroup *deflatedGroup; // @synthesize deflatedGroup=_deflatedGroup;
+@property(retain, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;

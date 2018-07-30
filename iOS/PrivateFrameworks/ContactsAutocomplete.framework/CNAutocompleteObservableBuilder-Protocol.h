@@ -15,7 +15,9 @@
 - (void)setSupplementalResultsUseNetwork:(_Bool)arg1;
 - (void)setNetworkActivityStartDelay:(double)arg1;
 - (void)addCalendarServerObservable:(CNObservable *)arg1;
+- (void)addCachedCalendarServerObservable:(CNObservable *)arg1;
 - (void)addDirectoryServerObservable:(CNObservable *)arg1;
+- (void)addCachedDirectoryServerObservable:(CNObservable *)arg1;
 - (void)addSupplementalObservable:(CNObservable *)arg1;
 - (void)addDuetObservable:(CNObservable *)arg1 doOnTimeout:(void (^)(void))arg2;
 - (void)addSuggestionsObservable:(CNObservable *)arg1;

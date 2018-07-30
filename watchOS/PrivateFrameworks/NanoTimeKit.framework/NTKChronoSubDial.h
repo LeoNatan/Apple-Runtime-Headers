@@ -6,8 +6,11 @@
 
 #import "SKEffectNode.h"
 
+@class CLKDevice;
+
 @interface NTKChronoSubDial : SKEffectNode
 {
+    CLKDevice *_device;
     float _labelsRadius;
     float _labelsFontSize;
     int _labelsFont;
@@ -16,20 +19,22 @@
     struct CGSize _smallInner;
 }
 
-+ (id)lower:(float)arg1;
-+ (id)upper:(float)arg1;
++ (id)lower:(float)arg1 forDevice:(id)arg2;
++ (id)upper:(float)arg1 forDevice:(id)arg2;
 @property(readonly, nonatomic) struct CGSize smallInner; // @synthesize smallInner=_smallInner;
 @property(readonly, nonatomic) struct CGSize smallOuter; // @synthesize smallOuter=_smallOuter;
 @property(readonly, nonatomic) float radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) int labelsFont; // @synthesize labelsFont=_labelsFont;
 @property(readonly, nonatomic) float labelsFontSize; // @synthesize labelsFontSize=_labelsFontSize;
 @property(readonly, nonatomic) float labelsRadius; // @synthesize labelsRadius=_labelsRadius;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+- (void).cxx_destruct;
 - (void)colorize:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromTimeScale:(unsigned int)arg2 toTimeScale:(unsigned int)arg3;
 - (void)updateTimeScale:(unsigned int)arg1;
 - (id)addNodes:(id)arg1;
 - (id)addNodes:(id)arg1 to:(id)arg2;
-- (id)initWithRadius:(float)arg1;
+- (id)initWithRadius:(float)arg1 forDevice:(id)arg2;
 
 @end
 

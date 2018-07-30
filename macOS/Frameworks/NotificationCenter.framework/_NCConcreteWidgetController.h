@@ -6,6 +6,7 @@
 
 #import <NotificationCenter/NCWidgetController.h>
 
+__attribute__((visibility("hidden")))
 @interface _NCConcreteWidgetController : NCWidgetController
 {
 }

@@ -30,7 +30,6 @@
 - (id)volumes;
 - (id)physicalStores;
 - (id)description;
-- (BOOL)matchesDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)minimalDictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;

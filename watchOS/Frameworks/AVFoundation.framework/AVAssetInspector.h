@@ -10,6 +10,7 @@
 
 @class AVMetadataItem, NSArray, NSData, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetInspector : AVFigObjectInspector <NSCopying>
 {
 }

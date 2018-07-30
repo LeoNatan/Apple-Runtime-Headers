@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface NSVB_ViewAnimationAttributes : NSObject <NSSecureCoding>
 {
+    unsigned int _windowFrameAnimationInProgress:1;
     unsigned int _allowsImplicitAnimation:1;
     unsigned int _hasTimingFunctionControlPoints:1;
     CDStruct_119a7730 _c1;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithCoder:(id)arg1;
 @property BOOL allowsImplicitAnimation;
 @property(readonly) BOOL hasTimingFunctionControlPoints;
+@property BOOL windowFrameAnimationInProgress;
 
 @end
 

@@ -34,6 +34,8 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
     _Bool _everHadDelegate;
     NSMutableArray *_queuedDelegateBlocks;
+    NSString *_processName;
+    _Bool _isShutdown;
 }
 
 + (void)notifySafeToSendFilter;
@@ -50,8 +52,10 @@
 + (void)_safelyCancelAndReleaseConnection:(id)arg1;
 + (void)_safelyCancelAndReleaseAfterBarrierConnection:(id)arg1;
 + (_Bool)isValidEnvironment:(id)arg1;
+@property(readonly, nonatomic) _Bool isShutdown; // @synthesize isShutdown=_isShutdown;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
+- (void)confirmReceiptForMessage:(id)arg1;
 - (void)requestKeepAlive;
 - (void)invalidateTokenForTopic:(id)arg1 identifier:(id)arg2;
 - (void)requestTokenForTopic:(id)arg1 identifier:(id)arg2;
@@ -62,10 +66,11 @@
 - (_Bool)hasIdentity;
 - (void)_deliverToken:(id)arg1 forTopic:(id)arg2 identifier:(id)arg3;
 - (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 error:(id)arg2;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 checkpointTraceData:(id)arg2 error:(id)arg3;
 - (void)_deliverConnectionStatusFromDealloc:(_Bool)arg1;
 - (void)_deliverConnectionStatusChange:(_Bool)arg1;
-- (void)_deliverPublicToken:(id)arg1;
-- (void)_deliverPublicTokenOnIvarQueue:(id)arg1;
+- (void)_deliverPublicToken:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)_deliverPublicTokenOnIvarQueue:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_deliverDidReconnectOnIvarQueue;
 - (void)_deliverMessage:(id)arg1;
 - (void)_dispatch_async_to_ivarQueue:(CDUnknownBlockType)arg1;
@@ -87,6 +92,8 @@
 - (id)opportunisticTopics;
 - (id)ignoredTopics;
 - (id)enabledTopics;
+- (void)setIgnoredTopics:(id)arg1;
+- (void)setOpportunisticTopics:(id)arg1;
 - (void)setEnabledTopics:(id)arg1;
 - (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2;
 - (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3;

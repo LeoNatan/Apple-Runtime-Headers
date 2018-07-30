@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSString, UIColor, UNNotificationResponse;
+@class NSArray, NSString, UIColor, UNNotificationResponse;
 
 @protocol _UNNotificationExtensionHostInterface
+- (void)_extensionSetUserNotificationActions:(NSArray *)arg1;
 - (void)_extensionAudioAccessoryViewContextId:(unsigned int)arg1;
 - (void)_extensionRequestsToSetDismissEnabled:(_Bool)arg1;
 - (void)_extensionSetTitle:(NSString *)arg1;
 - (void)_extensionRequestsDismiss;
+- (void)_extensionRequestsDefaultAction;
 - (void)_extensionDidUpdateControls;
 - (void)_extensionMediaPlayingPaused;
 - (void)_extensionMediaPlayingStarted;

@@ -8,5 +8,6 @@
 
 @interface NSDictionary (MediaAnalysisResults)
 - (CDStruct_e83c9415)vcp_timerange;
+- (CDStruct_1b6d18a9)vcp_time;
 @end
 

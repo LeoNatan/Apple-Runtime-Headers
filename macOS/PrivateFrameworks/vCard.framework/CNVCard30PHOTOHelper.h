@@ -6,17 +6,17 @@
 
 #import "NSObject.h"
 
-@class CNVCardOptions;
+@class CNVCardWritingOptions;
 
 @interface CNVCard30PHOTOHelper : NSObject
 {
     id <CNVCardPerson> _person;
-    CNVCardOptions *_options;
+    CNVCardWritingOptions *_options;
     unsigned long long _maxBytes;
 }
 
 @property(readonly, nonatomic) unsigned long long maxBytes; // @synthesize maxBytes=_maxBytes;
-@property(readonly, nonatomic) CNVCardOptions *options; // @synthesize options=_options;
+@property(readonly, nonatomic) CNVCardWritingOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) id <CNVCardPerson> person; // @synthesize person=_person;
 - (void).cxx_destruct;
 - (id)compressImage:(id)arg1 allowableCompressions:(id)arg2;

@@ -59,11 +59,11 @@
     NSURL *_streamKeyURL;
 }
 
+@property(copy, nonatomic) NSArray *trackPlaybackDescriptorQueue; // @synthesize trackPlaybackDescriptorQueue=_trackPlaybackDescriptorQueue;
 @property(readonly, nonatomic) RadioModel *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSManagedObject *managedObject; // @synthesize managedObject=_managedObject;
 @property(readonly, nonatomic, getter=isDatabaseBacked) _Bool databaseBacked; // @synthesize databaseBacked=_databaseBacked;
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSArray *trackPlaybackDescriptorQueue; // @synthesize trackPlaybackDescriptorQueue=_trackPlaybackDescriptorQueue;
 @property(readonly, nonatomic, getter=isPreview) _Bool preview;
 @property(readonly, copy, nonatomic) NSDictionary *feedbackDictionaryRepresentation;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

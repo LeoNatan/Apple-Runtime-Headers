@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTaggingTokenFieldCell : NSTokenFieldCell
 {
-    struct TNSRef<NSObject *, void> _objectValue;
+    struct TNSRef<NSObject, void> _objectValue;
 }
 
 - (id).cxx_construct;

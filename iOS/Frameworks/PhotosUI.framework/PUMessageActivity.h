@@ -6,18 +6,23 @@
 
 #import "UIMessageActivity.h"
 
-#import "PUActivity.h"
+#import "PUMomentShareActivity.h"
 
 @class NSString, PUActivityItemSourceController;
 
 __attribute__((visibility("hidden")))
-@interface PUMessageActivity : UIMessageActivity <PUActivity>
+@interface PUMessageActivity : UIMessageActivity <PUMomentShareActivity>
 {
     PUActivityItemSourceController *_itemSourceController;
 }
 
++ (_Bool)wantsMomentShareLinkForAssetCount:(long long)arg1;
 @property(nonatomic) __weak PUActivityItemSourceController *itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void).cxx_destruct;
+- (void)performActivity;
+- (id)activityViewController;
+- (void)prepareWithActivityItems:(id)arg1;
+- (void)_prepareWithMomentShareLink:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 
 // Remaining properties

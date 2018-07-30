@@ -40,12 +40,6 @@ struct NSObject {
     Class _field1;
 };
 
-struct _NSModalSession {
-    id _field1;
-    id _field2;
-    struct _NSModalSession *_field3;
-};
-
 struct __va_list_tag {
     unsigned int _field1;
     unsigned int _field2;
@@ -79,17 +73,23 @@ typedef struct {
 } CDStruct_e99345e9;
 
 typedef struct {
+    unsigned char base;
+    struct CGRect content;
+    unsigned int id;
+    unsigned long long styleMask;
+} CDStruct_6d86e322;
+
+typedef struct {
     unsigned int _field1;
-    struct CGSize _field2;
-    struct CGSize _field3;
-    unsigned long long _field4;
+    unsigned int _field2;
+    unsigned long long _field3;
+    long long _field4;
     unsigned long long _field5;
     struct CGSize _field6;
     struct CGSize _field7;
-    unsigned int _field8;
-    struct CGPoint _field9;
-    id _field10;
-} CDStruct_79351cb8;
+    struct CGRect _field8;
+    id _field9;
+} CDStruct_4e11500c;
 
 typedef struct {
     double _field1;
@@ -104,7 +104,20 @@ typedef struct {
     id _field10;
     id _field11;
     id _field12;
-    unsigned int _field13;
-    char _field14;
-} CDStruct_e6bf86d5;
+    id _field13;
+    unsigned int _field14;
+    unsigned long long _field15;
+    char _field16;
+} CDStruct_e2fa5527;
+
+typedef struct {
+    int privateEventLoopKind;
+    char sharesParentKeyState;
+    CDStruct_6d86e322 window;
+} CDStruct_e578beec;
+
+typedef struct {
+    int _field1;
+    CDStruct_6d86e322 _field2;
+} CDStruct_d1b93830;
 

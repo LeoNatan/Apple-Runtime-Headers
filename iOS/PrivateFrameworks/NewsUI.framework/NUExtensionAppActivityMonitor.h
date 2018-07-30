@@ -28,6 +28,7 @@
 - (void)applicationDidBecomeActiveNotification:(id)arg1;
 - (void)performOnApplicationDidEnterBackground:(CDUnknownBlockType)arg1;
 - (void)performOnApplicationDidBecomeActive:(CDUnknownBlockType)arg1;
+- (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)initWithNotificationCenter:(id)arg1;

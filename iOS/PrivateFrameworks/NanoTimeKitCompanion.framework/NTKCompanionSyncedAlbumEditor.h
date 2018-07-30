@@ -4,18 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <NanoTimeKitCompanion/NTKCompanionResourceDirectoryEditor.h>
+#import <NanoTimeKitCompanion/NTKCompanionSinglePHAssetEditor.h>
 
-@interface NTKCompanionSyncedAlbumEditor : NTKCompanionResourceDirectoryEditor
+@interface NTKCompanionSyncedAlbumEditor : NTKCompanionSinglePHAssetEditor
 {
 }
 
 + (id)_firstAssetInCollection:(id)arg1;
-+ (id)_createResourceDirectoryForSyncedAlbumWithPreviewOnly:(_Bool)arg1;
-- (void)finalizeWithCompletion:(CDUnknownBlockType)arg1;
-- (void)generateGalleryPreviewResourceDirectoryWithCompletion:(CDUnknownBlockType)arg1;
-@property(nonatomic) _Bool shouldFinalize;
-- (id)initWithResourceDirectory:(id)arg1 shouldFinalize:(_Bool)arg2;
++ (id)_assetForResourceDirectoryForDevice:(id)arg1;
 
 @end
 

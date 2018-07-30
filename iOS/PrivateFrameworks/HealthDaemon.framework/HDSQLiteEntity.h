@@ -21,11 +21,18 @@
 + (id)joinClausesForProperty:(id)arg1;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)_generateDisambiguatedDatabaseTableName;
++ (Class)entityClassForEnumeration;
 + (Class)entityForProperty:(id)arg1;
 + (id)allDatabaseColumnNames;
 + (id)privateSubEntities;
++ (_Bool)isTemporary;
 + (id)indices;
++ (void)enumerateColumnsWithBlock:(CDUnknownBlockType)arg1;
++ (void)_enumerateColumnNamesWithBlock:(CDUnknownBlockType)arg1;
++ (void)_enumerateColumnDefinitionsWithBlock:(CDUnknownBlockType)arg1;
++ (id)foreignKeys;
 + (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)disambiguatedDatabaseTable;
 + (id)tableAliases;
 + (id)databaseTable;
@@ -37,7 +44,6 @@
 + (id)updateSQLForProperties:(id)arg1 predicate:(id)arg2;
 + (id)insertSQLForProperties:(id)arg1 shouldReplace:(_Bool)arg2;
 + (id)entityWithPersistentID:(id)arg1;
-+ (id)queryStatementWithPredicate:(id)arg1 properties:(id)arg2 database:(id)arg3;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5 groupBy:(id)arg6;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2;
 + (id)distinctProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id *)arg4;
@@ -64,8 +70,10 @@
 - (id)dateForProperty:(id)arg1 database:(id)arg2;
 - (_Bool)booleanForProperty:(id)arg1 database:(id)arg2;
 - (id)valueForProperty:(id)arg1 database:(id)arg2;
+- (_Bool)getValuesForProperties:(id)arg1 database:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 - (_Bool)getValuesForProperties:(id)arg1 database:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)existsInDatabase:(id)arg1;
+- (void)willDeleteFromDatabase:(id)arg1;
 - (_Bool)deleteFromDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)updateProperties:(id)arg1 database:(id)arg2 error:(id *)arg3 bindingHandler:(CDUnknownBlockType)arg4;
 - (id)initWithPersistentID:(long long)arg1;

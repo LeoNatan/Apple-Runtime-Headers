@@ -18,6 +18,7 @@
     long long _numberOfDataPoints;
 }
 
++ (id)heartBeatSequenceSampleFromCSV:(id)arg1 startDate:(id)arg2 metadata:(id)arg3 error:(out id *)arg4;
 + (_Bool)supportsSecureCoding;
 + (id)heartbeatSequenceSampleWithData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4;
 @property(readonly) long long numberOfDataPoints; // @synthesize numberOfDataPoints=_numberOfDataPoints;
@@ -29,7 +30,6 @@
 - (void)_computeMinimumAndMaximumBeatsPerMinute;
 @property(readonly) NSNumber *_maximumBeatsPerMinute;
 @property(readonly) NSNumber *_minimumBeatsPerMinute;
-- (_Bool)isEqual:(id)arg1;
 - (id)_validateConfiguration;
 - (void)enumerateHeartbeatDataWithBlock:(CDUnknownBlockType)arg1;
 - (id)init;

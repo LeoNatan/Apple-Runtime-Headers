@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSString;
+@class NSNumber, NSString;
 
 @protocol CKNanoReplyViewControllerProtocol
 @property(nonatomic) __weak id <CKNanoReplyViewControllerDismissalDelegate> dismissalDelegate;
 
 @optional
+@property(copy, nonatomic) NSNumber *messageItemListNumber;
 @property(copy, nonatomic) CDUnknownBlockType messageForReplyBlock;
 @property(copy, nonatomic) NSString *breadcrumbText;
 - (void)dismissAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;

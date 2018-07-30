@@ -4,51 +4,59 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <ARKit/ARTechnique.h>
+#import <ARKit/ARImageBasedTechnique.h>
 
-@class ARWorldTrackingErrorData, ARWorldTrackingPoseData, ARWorldTrackingReferenceAnchorData, NSMutableArray, NSObject<OS_dispatch_semaphore>, NSString;
+@class ARWorldTrackingErrorData, ARWorldTrackingOptions, ARWorldTrackingPoseData, ARWorldTrackingReferenceAnchorData, NSDictionary, NSHashTable, NSObject<OS_dispatch_semaphore>;
 
-@interface ARWorldTrackingTechnique : ARTechnique
+@interface ARWorldTrackingTechnique : ARImageBasedTechnique
 {
+    NSHashTable *_observers;
+    NSObject<OS_dispatch_semaphore> *_observersSemaphore;
     _Bool _useFixedIntrinsics;
-    unsigned long long _vioState;
-    NSObject<OS_dispatch_semaphore> *_vioStateSemaphore;
-    NSMutableArray *_latestVisionFeaturePointDatas;
+    long long _vioHandleState;
+    NSObject<OS_dispatch_semaphore> *_vioHandleStateSemaphore;
+    NSObject<OS_dispatch_semaphore> *_vioObjectDetectionSemaphore;
     ARWorldTrackingReferenceAnchorData *_anchorData;
     ARWorldTrackingErrorData *_errorData;
-    ARWorldTrackingPoseData *_cachedTrackingData;
+    ARWorldTrackingPoseData *_cachedPoseData;
     long long _reinitializationAttempts;
     long long _reinitializationAttemptsAtInitialization;
     double _lastRelocalizationTimestamp;
+    double _lastQualityKeyframeTimestamp;
+    long long _previousKeyframeCount;
+    double _lastPoseTrackingMapTimestamp;
+    double _lastMajorRelocalizationTimestamp;
+    double _lastPoseMajorRelocalizationTimestamp;
     _Bool _relocalizingAfterSensorDataDrop;
     _Bool _didRelocalize;
     _Bool _didClearMap;
     NSObject<OS_dispatch_semaphore> *_resultSemaphore;
     double _minVergenceAngleCosine;
+    double _resultLatency;
+    ARWorldTrackingOptions *_options;
     _Bool _allowPoseGraphUpdates;
-    unsigned long long _customLensType;
-    // Error parsing type: {?="columns"[3]}, name: _customIntrinsics
-    // Error parsing type: , name: _radialDistortion
-    // Error parsing type: , name: _tangentialDistortion
-    _Bool _relocalizationEnabled;
-    NSString *_deviceModel;
-    long long _latencyFrameCount;
-    struct CGSize _imageResolution;
+    NSDictionary *_objectDetectionOptions;
 }
 
-+ (_Bool)supports1080p;
++ (_Bool)supportsVideoResolution:(struct CGSize)arg1;
 + (_Bool)isSupported;
-@property(nonatomic) struct CGSize imageResolution; // @synthesize imageResolution=_imageResolution;
-@property(nonatomic) _Bool relocalizationEnabled; // @synthesize relocalizationEnabled=_relocalizationEnabled;
-@property(readonly, nonatomic) long long latencyFrameCount; // @synthesize latencyFrameCount=_latencyFrameCount;
-@property(readonly, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 - (void).cxx_destruct;
--     // Error parsing type: {?=[4]}24@0:8d16, name: cameraTransformAtTimestamp:
+- (_Bool)setupObjectDetection:(id)arg1;
+- (id)getObservers;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (void)removeReferenceAnchors:(id)arg1;
 - (void)addReferenceAnchors:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
+- (void)loadSurfaceData:(id)arg1;
+- (id)serializeSurfaceData;
 - (void)clearMap;
-- (id)initWithDeviceModel:(id)arg1 latencyFrameCount:(long long)arg2;
+- (id)serializeMapData;
+-     // Error parsing type: {?=[4]}24@0:8d16, name: cameraTransformAtTimestamp:
+- (_Bool)isEqual:(id)arg1;
+- (long long)vioHandleState;
+@property(readonly, nonatomic) ARWorldTrackingOptions *mutableOptions;
+@property(readonly, copy, nonatomic) ARWorldTrackingOptions *options;
+- (id)initWithOptions:(id)arg1;
 - (id)init;
 
 @end

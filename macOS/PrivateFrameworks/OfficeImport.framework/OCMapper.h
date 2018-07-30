@@ -8,7 +8,6 @@
 
 @class OCCancel, OITSUTemporaryDirectory;
 
-__attribute__((visibility("hidden")))
 @interface OCMapper : NSObject
 {
     OCCancel *mCancel;
@@ -16,13 +15,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)mapperForCurrentThread;
+- (void).cxx_destruct;
 - (id)temporaryDirectoryPath;
 - (void)teardown;
 - (void)setup;
 - (void)quit;
 - (BOOL)isCancelled;
 - (void)cancel;
-- (void)dealloc;
 - (id)init;
 
 @end

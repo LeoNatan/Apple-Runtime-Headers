@@ -8,6 +8,7 @@
 
 @class NSString, NSValue;
 
+__attribute__((visibility("hidden")))
 @interface NSNonStandardBehaviorEntry : NSObject
 {
     NSString *_name;

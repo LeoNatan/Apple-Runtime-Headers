@@ -26,7 +26,6 @@
 - (BOOL)_eventHasValidLocation:(id)arg1;
 - (BOOL)_mouseEventInVisibleBounds:(id)arg1;
 - (BOOL)_eventIsForOurWindow:(id)arg1;
-- (void)updateCropHandleVisibilityForEvent:(id)arg1;
 - (void)updateCursorForEvent:(id)arg1;
 - (void)applyToAllSelectedAnnotationsRotateEvent:(id)arg1 orRecognizer:(id)arg2;
 - (void)_candidatePickerDidDismissNotification:(id)arg1;

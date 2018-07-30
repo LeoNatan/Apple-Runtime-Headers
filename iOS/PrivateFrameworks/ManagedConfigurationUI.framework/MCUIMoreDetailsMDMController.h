@@ -8,6 +8,7 @@
 
 @class MCDetailsDescriptionTableCell;
 
+__attribute__((visibility("hidden")))
 @interface MCUIMoreDetailsMDMController : PSListController
 {
     MCDetailsDescriptionTableCell *_descCell;

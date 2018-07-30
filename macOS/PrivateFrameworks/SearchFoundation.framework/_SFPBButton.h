@@ -13,7 +13,6 @@
 
 @interface _SFPBButton : PBCodable <_SFPBButton, NSSecureCoding>
 {
-    CDStruct_e4e3bb5e _has;
     BOOL _isSelected;
     _SFPBImage *_image;
     _SFPBImage *_selectedImage;
@@ -31,9 +30,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasIsSelected;
-@property(readonly, nonatomic) BOOL hasSelectedImage;
-@property(readonly, nonatomic) BOOL hasImage;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

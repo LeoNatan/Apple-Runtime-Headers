@@ -17,8 +17,6 @@
     NSMutableDictionary *_styleDict;
 }
 
-+ (id)_updatedEdgeInsetsDeclaration:(id)arg1 withValue:(double)arg2 forIndex:(unsigned long long)arg3;
-+ (id)_clonedCSSDeclarationEdgeInsetsFromDeclaration:(id)arg1;
 + (id)elementStyleWithParentStyle:(id)arg1 elementStyle:(id)arg2 elementStyleOverrides:(id)arg3;
 + (id)elementStyleWithSelector:(id)arg1 aggregatingStyles:(id)arg2;
 + (id)elementStyleWithSelector:(id)arg1 cssRule:(id)arg2 filterBlockedStyles:(_Bool)arg3;
@@ -54,6 +52,7 @@
 - (unsigned long long)typeForStyle:(id)arg1;
 - (_Bool)requiresDynamicEvaluation;
 @property(readonly, nonatomic) _Bool hidden;
+@property(readonly, nonatomic) NSNumber *lineHeight;
 @property(readonly, nonatomic) NSNumber *letterSpacing;
 @property(readonly, nonatomic) NSString *maxHeight;
 @property(readonly, nonatomic) NSShadow *textShadow;

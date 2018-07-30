@@ -6,21 +6,19 @@
 
 #import "NSObject.h"
 
-@class HKActivitySummary, NSArray, NSCalendar, NSDate, NSDateInterval, NSDictionary, NSExpression, NSNumber, NSString, _HKAchievement, _HKAchievementDefinition;
+@class ACHAchievement, HKActivitySummary, NSArray, NSCalendar, NSDate, NSDateComponents, NSDateInterval, NSDictionary, NSSet, NSString;
 
 @protocol NLFirstGlanceEngineDataSource <NSObject>
 - (double)projectedDayDuration;
-- (_Bool)hasMonthlyChallengeForDate:(NSDate *)arg1 calendar:(NSCalendar *)arg2;
-- (_HKAchievement *)monthlyChallengeAchievementForIdentifier:(NSString *)arg1;
 - (NSArray *)activitySummariesDuringInterval:(NSDateInterval *)arg1 calendar:(NSCalendar *)arg2;
 - (HKActivitySummary *)yesterdayActivitySummary;
 - (double)recommendedGoalInCaloriesForDate:(NSDate *)arg1;
 - (NSArray *)workoutsCompletedDuringInterval:(NSDateInterval *)arg1;
-- (NSArray *)achievementsCompletedDuringInterval:(NSDateInterval *)arg1;
+- (ACHAchievement *)monthlyChallengeForDate:(NSDate *)arg1 calendar:(NSCalendar *)arg2;
+- (NSArray *)achievementsCompletedOnDay:(NSDateComponents *)arg1 calendar:(NSCalendar *)arg2;
+- (ACHAchievement *)achievementWithUniqueName:(NSString *)arg1;
 - (NSDictionary *)weeklySummaryInfoForDate:(NSDate *)arg1;
-- (NSNumber *)evaluatedAchievementExpression:(NSExpression *)arg1;
-- (_HKAchievement *)evaluatedAchievementWithDefinitionIdentifier:(NSString *)arg1;
-- (_HKAchievementDefinition *)definitionWithIdentifier:(NSString *)arg1;
 - (int)firstDayOfFitnessWeek;
+- (NSSet *)allActivitySharingFriends;
 @end
 

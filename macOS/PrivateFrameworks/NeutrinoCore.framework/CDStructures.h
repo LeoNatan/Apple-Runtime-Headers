@@ -108,17 +108,17 @@ struct map<unsigned int, std::__1::stack<unsigned int, std::__1::deque<unsigned 
     struct __tree<std::__1::__value_type<unsigned int, std::__1::stack<unsigned int, std::__1::deque<unsigned int, std::__1::allocator<unsigned int>>>>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::stack<unsigned int, std::__1::deque<unsigned int, std::__1::allocator<unsigned int>>>>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, std::__1::stack<unsigned int, std::__1::deque<unsigned int, std::__1::allocator<unsigned int>>>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, std::__1::stack<unsigned int, std::__1::deque<unsigned int, std::__1::allocator<unsigned int>>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::stack<unsigned int, std::__1::deque<unsigned int, std::__1::allocator<unsigned int>>>>, std::__1::less<unsigned int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
 
 struct unique_ptr<NU::Histogram<long, double>, std::__1::default_delete<NU::Histogram<long, double>>> {
     struct __compressed_pair<NU::Histogram<long, double>*, std::__1::default_delete<NU::Histogram<long, double>>> {
-        struct Histogram<long, double> *__first_;
+        struct Histogram<long, double> *__value_;
     } __ptr_;
 };
 
@@ -152,7 +152,7 @@ struct vector<double, std::__1::allocator<double>> {
     double *__begin_;
     double *__end_;
     struct __compressed_pair<double *, std::__1::allocator<double>> {
-        double *__first_;
+        double *__value_;
     } __end_cap_;
 };
 
@@ -160,7 +160,7 @@ struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     char *__begin_;
     char *__end_;
     struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char>> {
-        char *__first_;
+        char *__value_;
     } __end_cap_;
 };
 

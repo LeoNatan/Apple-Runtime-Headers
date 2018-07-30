@@ -6,7 +6,6 @@
 
 #import "NSATSTypesetter.h"
 
-__attribute__((visibility("hidden")))
 @interface ABTypesetter : NSATSTypesetter
 {
 }

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class GEOActiveTileGroup, GEOResourceManifestConfiguration, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSProgress, NSString;
+@class GEOActiveTileGroup, GEOResourceManifestConfiguration, NSNumber, NSObject<OS_dispatch_queue>, NSProgress, NSString;
 
 @protocol GEOResourceManifestServerProxy <NSObject>
 @property(readonly, nonatomic) GEOActiveTileGroup *activeTileGroup;
@@ -14,6 +14,7 @@
 - (void)getResourceManifestWithHandler:(void (^)(GEOResourceManifestDownload *, NSError *))arg1;
 - (oneway void)resetActiveTileGroup;
 - (oneway void)setActiveTileGroupIdentifier:(NSNumber *)arg1;
+- (unsigned long long)maximumZoomLevelForStyle:(int)arg1 scale:(int)arg2;
 - (NSProgress *)updateProgress;
 - (void)deactivateResourceScenario:(int)arg1;
 - (void)activateResourceScenario:(int)arg1;
@@ -29,6 +30,6 @@
 - (void)closeConnection;
 - (void)openConnection;
 - (NSObject<OS_dispatch_queue> *)serverQueue;
-- (id)initWithDelegate:(id <GEOResourceManifestServerProxyDelegate>)arg1 configuration:(GEOResourceManifestConfiguration *)arg2 additionalMigrationTaskClasses:(NSArray *)arg3;
+- (id)initWithDelegate:(id <GEOResourceManifestServerProxyDelegate>)arg1 configuration:(GEOResourceManifestConfiguration *)arg2;
 @end
 

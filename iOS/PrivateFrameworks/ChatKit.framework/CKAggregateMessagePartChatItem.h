@@ -18,6 +18,7 @@
 @property(readonly, copy, nonatomic) NSString *title;
 - (id)pasteboardItems;
 - (Class)balloonViewClass;
+- (id)loadTranscriptText;
 - (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
 - (id)composition;
 

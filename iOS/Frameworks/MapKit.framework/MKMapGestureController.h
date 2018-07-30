@@ -10,13 +10,17 @@
 #import "UIGestureRecognizerDelegate.h"
 #import "_MKUserInteractionGestureRecognizerTouchObserver.h"
 
-@class MKBasicMapView, MKTiltGestureRecognizer, MKTwoFingerPanGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, VKCompoundAnimation, VKDynamicAnimation, _MKUserInteractionGestureRecognizer;
+@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKTwoFingerPanGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, VKCompoundAnimation, VKDynamicAnimation, _MKUserInteractionGestureRecognizer;
 
 __attribute__((visibility("hidden")))
 @interface MKMapGestureController : NSObject <MKVariableDelayTapRecognizerDelegate, _MKUserInteractionGestureRecognizerTouchObserver, UIGestureRecognizerDelegate>
 {
     MKBasicMapView *_mapView;
     id <MKMapGestureControllerDelegate> _delegate;
+    MKScaleView *_scaleView;
+    MKCompassView *_compassView;
+    MKRotationFilter *_rotationFilter;
+    _Bool _rotationSnappingEnabled;
     MKVariableDelayTapRecognizer *_doubleTapGestureRecognizer;
     UITapGestureRecognizer *_twoFingerTapGestureRecognizer;
     UILongPressGestureRecognizer *_twoFingerLongPressGestureRecognizer;
@@ -42,6 +46,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIPanGestureRecognizer *twoFingerPanGestureRecognizer; // @synthesize twoFingerPanGestureRecognizer=_twoFingerPanGestureRecognizer;
 @property(readonly, nonatomic) UIPanGestureRecognizer *verticalPanGestureRecognizer; // @synthesize verticalPanGestureRecognizer=_verticalPanGestureRecognizer;
 @property(nonatomic) _Bool panWithMomentum; // @synthesize panWithMomentum=_panWithMomentum;
+@property(retain, nonatomic) MKRotationFilter *rotationFilter; // @synthesize rotationFilter=_rotationFilter;
+@property(retain, nonatomic) MKCompassView *compassView; // @synthesize compassView=_compassView;
+@property(retain, nonatomic) MKScaleView *scaleView; // @synthesize scaleView=_scaleView;
 @property(readonly, nonatomic) MKBasicMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) __weak id <MKMapGestureControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIRotationGestureRecognizer *rotationGestureRecognizer; // @synthesize rotationGestureRecognizer=_rotationGestureRecognizer;
@@ -66,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)handleTwoFingerLongPress:(id)arg1;
 - (void)handleTwoFingerTap:(id)arg1;
 - (void)handleDoubleTap:(id)arg1;
+- (void)_updateRotationGestureForState:(long long)arg1 focusPoint:(struct CGPoint)arg2 rotation:(double)arg3 velocity:(double)arg4;
 - (void)handleRotation:(id)arg1;
 - (void)handleTwoFingerPan:(id)arg1;
 - (void)handleTilt:(id)arg1;

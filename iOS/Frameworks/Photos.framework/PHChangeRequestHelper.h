@@ -21,7 +21,7 @@
     NSError *_placeholderRequestError;
 }
 
-+ (id)changeRequestWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
++ (id)changeRequestWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5 clientSender:(id)arg6;
 + (id)changeRequestForObject:(id)arg1;
 @property(readonly, nonatomic) NSError *placeholderRequestError; // @synthesize placeholderRequestError=_placeholderRequestError;
 @property(retain, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
@@ -43,6 +43,7 @@
 - (_Bool)_validateOrGenerateUUIDWithClientEntitled:(_Bool)arg1 changeRequest:(id)arg2;
 - (_Bool)_generateUUIDIfNecessary:(id *)arg1;
 - (id)placeholderForCreatedObjectWithClass:(Class)arg1 changeRequest:(id)arg2;
+- (_Bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareForServicePreflightCheck:(id *)arg1;
 - (id)init;
 - (id)initWithXPCDict:(id)arg1 changeRequest:(id)arg2 clientEntitlements:(id)arg3;

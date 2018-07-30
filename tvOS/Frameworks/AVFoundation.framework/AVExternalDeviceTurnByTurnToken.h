@@ -8,6 +8,7 @@
 
 @class AVExternalDevice;
 
+__attribute__((visibility("hidden")))
 @interface AVExternalDeviceTurnByTurnToken : NSObject
 {
     AVExternalDevice *_externalDevice;

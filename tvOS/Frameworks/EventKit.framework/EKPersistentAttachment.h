@@ -12,6 +12,7 @@
 
 + (id)relations;
 - (id)description;
+- (id)semanticIdentifier;
 - (void)setExternalId:(id)arg1;
 - (id)externalId;
 - (void)setXPropertiesData:(id)arg1;

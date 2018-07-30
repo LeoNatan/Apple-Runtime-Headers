@@ -6,6 +6,7 @@
 
 #import <AppKit/NSObjectDetailBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSArrayDetailBinder : NSObjectDetailBinder
 {
     struct __arrayDetailBinderFlags {

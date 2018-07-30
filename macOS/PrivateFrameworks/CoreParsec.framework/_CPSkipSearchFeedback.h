@@ -14,7 +14,6 @@
 
 @interface _CPSkipSearchFeedback : PBCodable <_CPProcessableFeedback, _CPSkipSearchFeedback, NSSecureCoding>
 {
-    CDStruct_c6e3878d _has;
     int _triggerEvent;
     unsigned long long _timestamp;
     NSString *_input;
@@ -32,9 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasTriggerEvent;
-@property(readonly, nonatomic) BOOL hasInput;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 @property(readonly, nonatomic) BOOL requiresQueryId;
 - (id)initWithTriggerEvent:(int)arg1 input:(id)arg2;

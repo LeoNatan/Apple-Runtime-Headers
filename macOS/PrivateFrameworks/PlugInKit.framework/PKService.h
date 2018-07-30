@@ -55,6 +55,7 @@
 - (void)discoverSubsystems;
 - (BOOL)_processDefaultSubsystemName:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)_prepareToRun;
 - (void)run;
 - (id)init;
 

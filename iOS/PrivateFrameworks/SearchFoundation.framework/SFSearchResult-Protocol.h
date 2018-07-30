@@ -7,6 +7,8 @@
 @class NSArray, NSData, NSDictionary, NSNumber, NSString, NSURL, SFActionItem, SFCard, SFCustom, SFImage, SFMoreResults, SFPunchout, SFText;
 
 @protocol SFSearchResult
+@property(nonatomic) unsigned long long blockId;
+@property(nonatomic) _Bool doNotFold;
 @property(copy, nonatomic) NSString *srf;
 @property(copy, nonatomic) NSString *fbr;
 @property(copy, nonatomic) NSString *fileProviderDomainIdentifier;
@@ -59,6 +61,7 @@
 @property(retain, nonatomic) SFMoreResults *moreResults;
 @property(retain, nonatomic) SFCard *inlineCard;
 @property(retain, nonatomic) SFCard *card;
+@property(copy, nonatomic) NSString *appleReferrer;
 @property(copy, nonatomic) NSString *nearbyBusinessesString;
 @property(retain, nonatomic) SFImage *mapsMoreIcon;
 @property(copy, nonatomic) NSString *mapsMoreString;

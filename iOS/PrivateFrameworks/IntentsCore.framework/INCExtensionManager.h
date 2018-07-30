@@ -16,12 +16,14 @@
 }
 
 + (id)sharedManager;
++ (void)initialize;
 - (void).cxx_destruct;
 - (void)_manageExtension:(id)arg1 requestIdentifier:(id)arg2;
 - (void)_killExtensionWithBundleIdentifier:(id)arg1;
 - (void)_resetKillTimerForExtensionWithBundleIdentifier:(id)arg1;
+- (_Bool)isExtensionLoadedForExtensionBundleIdentifier:(id)arg1;
 - (void)killExtension:(id)arg1 requestIdentifier:(id)arg2 afterTimeout:(double)arg3;
-- (void)fetchExtensionForIntent:(id)arg1 extensionInputItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fetchExtensionForIntent:(id)arg1 extensionInputItems:(id)arg2 requiresTCC:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)init;
 
 @end

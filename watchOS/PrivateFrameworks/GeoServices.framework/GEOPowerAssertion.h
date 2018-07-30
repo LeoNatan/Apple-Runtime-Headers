@@ -13,12 +13,13 @@
     NSString *_identifier;
     double _timeout;
     unsigned int _assertion;
+    int _type;
 }
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
-- (id)initWithIdentifier:(id)arg1 timeout:(double)arg2;
+- (id)initWithType:(int)arg1 identifier:(id)arg2 timeout:(double)arg3;
 
 @end
 

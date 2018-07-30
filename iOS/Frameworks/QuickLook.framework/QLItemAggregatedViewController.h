@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     _Bool _isVisible;
     _Bool _isAppearing;
-    _Bool _isDisappearing;
     _Bool _fullScreen;
     QLAppearance *_appearance;
     id <QLPreviewItemViewControllerDelegate> _delegate;
@@ -37,10 +36,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)automaticallyUpdateScrollViewIndicatorInset;
 - (_Bool)automaticallyUpdateScrollViewContentInset;
 - (_Bool)automaticallyUpdateScrollViewContentOffset;
+- (void)endPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1;
+- (void)beginPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (_Bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (id)parallaxView;
 - (id)scrollView;
+- (_Bool)canShowNavBar;
 - (_Bool)canShowToolBar;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;
@@ -63,6 +65,9 @@ __attribute__((visibility("hidden")))
 - (id)appearance;
 - (void)setAppearance:(id)arg1 animated:(_Bool)arg2;
 - (void)showPreviewViewController:(id)arg1;
+- (void)showPreviewViewController:(id)arg1 animatingWithCrossfade:(_Bool)arg2;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 
 @end
 

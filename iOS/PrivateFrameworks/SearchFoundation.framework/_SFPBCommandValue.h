@@ -26,7 +26,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasReferentialCommand;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

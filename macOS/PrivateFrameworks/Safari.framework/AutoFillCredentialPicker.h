@@ -7,18 +7,20 @@
 #import <Safari/SheetWithTableController.h>
 
 #import "AutoFillCredentialPickerAuthorizationDelegate.h"
-#import "CredentialAndProtectionSpaceCollectionDelegate.h"
 #import "NSTableViewDataSource.h"
 #import "NSTableViewDelegate.h"
 #import "SecureWindow.h"
 
-@class AutoFillCredentialPickerAuthorizationViewController, CredentialAndProtectionSpaceCollection, NSButton, NSCountedSet, NSSearchField, NSString, NSTextField, NSView, NSWindow, SecureWindowLockPolicyEnforcer;
+@class AutoFillCredentialPickerAuthorizationViewController, NSArray, NSButton, NSSearchField, NSString, NSTextField, NSView, NSWindow, SecureWindowLockPolicyEnforcer, WBSFaviconRequestsController, WBSSavedPasswordStore, WBSSiteMetadataManager;
 
 __attribute__((visibility("hidden")))
-@interface AutoFillCredentialPicker : SheetWithTableController <AutoFillCredentialPickerAuthorizationDelegate, SecureWindow, NSTableViewDataSource, NSTableViewDelegate, CredentialAndProtectionSpaceCollectionDelegate>
+@interface AutoFillCredentialPicker : SheetWithTableController <AutoFillCredentialPickerAuthorizationDelegate, SecureWindow, NSTableViewDataSource, NSTableViewDelegate>
 {
-    CredentialAndProtectionSpaceCollection *_credentialAndProtectionSpaceCollection;
-    NSCountedSet *_credentialHosts;
+    NSArray *_displayedPasswords;
+    WBSFaviconRequestsController *_iconRequestsController;
+    WBSSavedPasswordStore *_savedPasswordStore;
+    WBSSiteMetadataManager *_siteMetadataManager;
+    BOOL _isWaitingForIconRequestCancellation;
     long long _purpose;
     NSWindow *_windowPresentingCredentialPicker;
     SecureWindowLockPolicyEnforcer *_lockPolicyEnforcer;
@@ -45,23 +47,18 @@ __attribute__((visibility("hidden")))
 - (void)autoFillCredentialPickerAuthorizationWasCancelled:(id)arg1;
 @property(readonly, nonatomic) AutoFillCredentialPickerAuthorizationViewController *autoFillCredentialPickerAuthorizationViewController; // @synthesize autoFillCredentialPickerAuthorizationViewController=_autoFillCredentialPickerAuthorizationViewController;
 @property(readonly, nonatomic) SecureWindowLockPolicyEnforcer *lockPolicyEnforcer; // @synthesize lockPolicyEnforcer=_lockPolicyEnforcer;
-- (id)passwordForSortingAndFilteringCredentialAndProtectionSpace:(id)arg1;
-- (id)userForSortingAndFilteringCredential:(id)arg1;
-- (id)addressStringForFilteringProtectionSpace:(id)arg1;
-- (long long)compareAddressFromCredentialAndProtectionSpace:(id)arg1 toAddressFromCredentialAndProtectionSpace:(id)arg2;
 - (void)controlTextDidChange:(id)arg1;
-- (id)_addressStringFromProtectionSpace:(id)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)_updateFillAndRemoveButtons;
 - (void)_updateCredentialsToDisplay;
-- (void)reloadTableData;
+- (void)_updateDisplayedPasswords;
 - (BOOL)_confirmCredentialRemoval;
 - (void)removeSelectedItems:(id)arg1;
 - (void)focusContentSearchField:(id)arg1;
 - (void)fillSelectedItem:(id)arg1;
-- (void)showSheetInWindow:(id)arg1 forPurpose:(long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)showSheetInWindow:(id)arg1 forPurpose:(long long)arg2 savedPasswordStore:(id)arg3 siteMetadataManager:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (void)hideSheet:(id)arg1;
 - (void)awakeFromNib;
 - (id)windowNibName;

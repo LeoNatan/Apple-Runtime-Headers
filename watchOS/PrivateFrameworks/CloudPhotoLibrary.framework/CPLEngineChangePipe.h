@@ -14,19 +14,23 @@
 {
 }
 
-@property(nonatomic, getter=isLocked) _Bool locked;
 - (id)allChangeBatches;
 - (id)popAllChangeBatchesWithError:(id *)arg1;
 - (_Bool)compactChangeBatchesWithError:(id *)arg1;
+- (_Bool)deleteAllChangesWithScopeFilter:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteAllChangeBatchesWithError:(id *)arg1;
-- (_Bool)hasSomeChangeWithIdentifier:(id)arg1;
+- (_Bool)hasSomeChangeWithScopeFilter:(id)arg1;
+- (_Bool)hasSomeChangeInScopesWithIdentifiers:(id)arg1;
+- (_Bool)hasSomeChangeWithScopedIdentifier:(id)arg1;
 - (_Bool)popNextBatchWithError:(id *)arg1;
 - (id)nextBatch;
 - (_Bool)popChangeBatch:(id *)arg1 error:(id *)arg2;
 - (_Bool)appendChangeBatch:(id)arg1 error:(id *)arg2;
 - (_Bool)hasQueuedBatches;
-- (unsigned int)countOfQueuedBatches;
-- (id)initWithEngineStore:(id)arg1 name:(id)arg2;
+@property(readonly, nonatomic, getter=isEmpty) _Bool empty;
+@property(readonly, nonatomic) unsigned int countOfQueuedBatches;
+- (_Bool)deleteRecordsForScopeIndex:(int)arg1 maxCount:(int)arg2 deletedCount:(int *)arg3 error:(id *)arg4;
+- (unsigned int)scopeType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

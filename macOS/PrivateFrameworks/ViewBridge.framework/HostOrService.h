@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property HostAndService *hostAndService; // @synthesize hostAndService=_hostAndService;
 - (void)dealloc;
+- (BOOL)colorHasMeaningfulAlpha:(id)arg1;
+- (int)owningProcessForWindow:(unsigned int)arg1;
 - (void)invalidate:(struct NSMutableDictionary *)arg1;
 - (void)post:(struct __CGEvent *)arg1;
 - (id)secBundleIdentifier;

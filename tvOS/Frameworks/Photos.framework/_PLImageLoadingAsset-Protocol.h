@@ -23,8 +23,6 @@
 - (_Bool)isInFlight;
 - (NSURL *)fileURLForFullsizeRenderImage;
 - (NSURL *)fileURLForFullsizeRenderVideo;
-- (NSString *)pathForNonAdjustedSRGBLargeThumbnailFile;
-- (NSString *)pathForAdjustedSRGBLargeThumbnailFile;
 - (NSString *)pathForSRGBLargeThumbnailFile;
 - (NSString *)pathForVideoPreviewFile;
 - (NSString *)pathForMediumThumbnailFile;

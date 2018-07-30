@@ -18,8 +18,6 @@
     NSMutableDictionary *_deviceSessions;
     NSMutableDictionary *_discoveredDevices;
     NSObject<OS_dispatch_queue> *_run_queue;
-    NSObject<OS_dispatch_queue> *_system_info_queue;
-    NSObject<OS_dispatch_queue> *_sessionQueue;
     NSObject<OS_os_log> *_log;
     NSObject<OS_dispatch_semaphore> *_bluetoothSessionSemaphore;
     SFService *_pingService;
@@ -39,8 +37,6 @@
 @property(retain, nonatomic) SFService *pingService; // @synthesize pingService=_pingService;
 @property(retain) NSObject<OS_dispatch_semaphore> *bluetoothSessionSemaphore; // @synthesize bluetoothSessionSemaphore=_bluetoothSessionSemaphore;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
-@property(retain) NSObject<OS_dispatch_queue> *sessionQueue; // @synthesize sessionQueue=_sessionQueue;
-@property(retain) NSObject<OS_dispatch_queue> *system_info_queue; // @synthesize system_info_queue=_system_info_queue;
 @property(retain) NSObject<OS_dispatch_queue> *run_queue; // @synthesize run_queue=_run_queue;
 @property(retain) NSMutableDictionary *discoveredDevices; // @synthesize discoveredDevices=_discoveredDevices;
 @property(retain) NSMutableDictionary *deviceSessions; // @synthesize deviceSessions=_deviceSessions;

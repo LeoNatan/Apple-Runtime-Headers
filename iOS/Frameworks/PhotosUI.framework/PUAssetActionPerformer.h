@@ -37,6 +37,7 @@
 - (_Bool)dismissViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)presentViewController:(id)arg1;
 - (void)performUserInteractionTask;
+- (void)preheatUserInteractionTask;
 - (void)_completeUnlockTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_performUnlockIfNeeded;
 - (_Bool)_requiresUnlockedDevice;

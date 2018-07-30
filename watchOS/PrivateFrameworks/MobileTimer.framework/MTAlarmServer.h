@@ -20,14 +20,16 @@
     id <NAScheduler> _serializer;
 }
 
++ (_Bool)_notifyClientsForTriggerType:(unsigned int)arg1;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(readonly, nonatomic, getter=isSystemReady) _Bool systemReady; // @synthesize systemReady=_systemReady;
 @property(readonly, nonatomic) MTXPCConnectionListenerProvider *connectionListenerProvider; // @synthesize connectionListenerProvider=_connectionListenerProvider;
 @property(readonly, nonatomic) MTAlarmStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+- (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)source:(id)arg1 didChangeNextAlarm:(id)arg2;
-- (void)source:(id)arg1 didFireAlarm:(id)arg2;
+- (void)source:(id)arg1 didFireAlarm:(id)arg2 triggerType:(unsigned int)arg3;
 - (void)source:(id)arg1 didDismissAlarm:(id)arg2 dismissAction:(unsigned int)arg3;
 - (void)source:(id)arg1 didSnoozeAlarm:(id)arg2 snoozeAction:(unsigned int)arg3;
 - (void)source:(id)arg1 didRemoveAlarms:(id)arg2;

@@ -6,15 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSURL, PDFDocument;
+@class NSURL;
 
 __attribute__((visibility("hidden")))
 @interface PDFActionURLPrivateVars : NSObject
 {
     NSURL *url;
-    struct CGPDFDictionary *lazyInitDictionary;
-    PDFDocument *lazyInitDocument;
-    unsigned long long lazyInitPageIndex;
 }
 
 - (void).cxx_destruct;

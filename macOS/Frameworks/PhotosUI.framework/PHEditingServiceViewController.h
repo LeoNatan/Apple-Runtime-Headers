@@ -4,34 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSServiceViewController.h"
+#import <PhotosUI/PHExtensionServiceViewController.h>
 
-#import "PHEditingRemoteViewProtocol.h"
-
-@class NSViewController, NSWindow, PHEditingHostViewPreferredSizes;
-
-@interface PHEditingServiceViewController : NSServiceViewController <PHEditingRemoteViewProtocol>
+@interface PHEditingServiceViewController : PHExtensionServiceViewController
 {
-    NSWindow *__window;
-    NSViewController *_extensionViewController;
-    PHEditingHostViewPreferredSizes *_preferredSizes;
 }
 
-@property(nonatomic) __weak PHEditingHostViewPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
-@property(nonatomic) __weak NSViewController *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
-@property(retain, nonatomic) NSWindow *_window; // @synthesize _window=__window;
-- (void).cxx_destruct;
-- (struct CGSize)preferredMaximumSize;
-- (struct CGSize)preferredMinimumSize;
-- (void)updatePreferredSizesIfNeeeded;
-- (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
-- (void)setupWithController:(id)arg1;
-- (void)connectToContextWithSessionID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (id)remoteViewControllerInterface;
-- (id)exportedInterface;
-- (id)exportedObject;
-- (void)invalidate;
-- (void)loadView;
++ (Class)expectedExtensionContextClass;
 
 @end
 

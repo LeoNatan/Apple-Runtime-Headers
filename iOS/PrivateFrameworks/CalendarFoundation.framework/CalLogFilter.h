@@ -25,7 +25,7 @@
 @property(copy, nonatomic) NSArray *includes; // @synthesize includes=_includes;
 @property(nonatomic) int minimumLevel; // @synthesize minimumLevel=_minimumLevel;
 - (void).cxx_destruct;
-- (_Bool)proceedProcessingEnvelope:(id)arg1;
+- (_Bool)proceedProcessingLogName:(id)arg1;
 - (id)generateRegexesForPatterns:(id)arg1;
 - (id)description;
 - (id)init;

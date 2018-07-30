@@ -11,22 +11,28 @@
 __attribute__((visibility("hidden")))
 @interface IKDOMConditionality : NSObject
 {
-    NSArray *_expressions;
-    NSSet *_dependentPropertyPaths;
+    _Bool _mutable;
+    NSArray *_inclusionExpressions;
+    NSArray *_exclusionExpressions;
+    NSSet *_dependentPathStrings;
     IKDOMElement *_domElement;
     NSString *_identifier;
 }
 
-+ (id)_applyOnDOMElement:(id)arg1 withDOMElement:(id)arg2;
-+ (id)conditionalityWithDOMElement:(id)arg1;
++ (id)_applyGeneralizationOnDOMElement:(id)arg1 withDOMElement:(id)arg2;
++ (id)_applySpecializationOnDOMElement:(id)arg1 withDOMElement:(id)arg2;
++ (id)conditionalityWithDOMElement:(id)arg1 mutable:(_Bool)arg2;
+@property(readonly, nonatomic, getter=isMutable) _Bool mutable; // @synthesize mutable=_mutable;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak IKDOMElement *domElement; // @synthesize domElement=_domElement;
 - (void).cxx_destruct;
 - (void)applyOnDOMElement:(id)arg1;
 - (_Bool)passesForDataItem:(id)arg1;
-@property(readonly, copy, nonatomic) NSSet *dependentPropertyPaths; // @synthesize dependentPropertyPaths=_dependentPropertyPaths;
-@property(readonly, copy, nonatomic) NSArray *expressions; // @synthesize expressions=_expressions;
-- (id)initWithDOMElement:(id)arg1;
+- (long long)compare:(id)arg1;
+@property(readonly, copy, nonatomic) NSSet *dependentPathStrings; // @synthesize dependentPathStrings=_dependentPathStrings;
+@property(readonly, copy, nonatomic) NSArray *exclusionExpressions; // @synthesize exclusionExpressions=_exclusionExpressions;
+@property(readonly, copy, nonatomic) NSArray *inclusionExpressions; // @synthesize inclusionExpressions=_inclusionExpressions;
+- (id)initWithDOMElement:(id)arg1 mutable:(_Bool)arg2;
 
 @end
 

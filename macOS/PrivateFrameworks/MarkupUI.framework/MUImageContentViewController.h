@@ -9,7 +9,7 @@
 #import "AKControllerDelegateProtocol.h"
 #import "MUContentViewControllerProtocol.h"
 
-@class NSDictionary, NSString;
+@class MUImageView, NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MUImageContentViewController : MUContentViewController <AKControllerDelegateProtocol, MUContentViewControllerProtocol>
@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     id _sourceContent;
     NSDictionary *_imageProperties;
     id _frameChangedObserver;
+    MUImageView *_preloadedView;
 }
 
+@property(retain) MUImageView *preloadedView; // @synthesize preloadedView=_preloadedView;
 @property(retain) id frameChangedObserver; // @synthesize frameChangedObserver=_frameChangedObserver;
 @property(retain) NSDictionary *imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(retain) id sourceContent; // @synthesize sourceContent=_sourceContent;
@@ -31,6 +33,9 @@ __attribute__((visibility("hidden")))
 - (void)_updateMinZoomFactor;
 - (void)_imageViewFrameDidChange:(id)arg1;
 - (BOOL)isScreenCaptureItemAtURL:(id)arg1;
+- (void)editDetectedForAnnotationController:(id)arg1;
+- (void)rotateLeft:(id)arg1;
+- (void)rotateRight:(id)arg1;
 - (BOOL)shouldPlaceProposedFormElementAtRect:(struct CGRect)arg1 onOverlayAtPageIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
 - (BOOL)shouldPlaceFormElementAtPoint:(struct CGPoint)arg1 onOverlayAtPageIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
 - (void)setPreferredCursor:(id)arg1 forAnnotationController:(id)arg2;
@@ -55,10 +60,12 @@ __attribute__((visibility("hidden")))
 - (void)_uninstallOverlayOfController:(id)arg1 forPageAtIndex:(unsigned long long)arg2;
 - (void)_installOverlayOfController:(id)arg1 forPageAtIndex:(unsigned long long)arg2;
 - (void)loadContentWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_setupContentRectObservers;
 - (void)viewDidLoad;
 - (void)teardown;
 - (void)setup;
 - (void)dealloc;
+- (id)initWithPreloadedImageView:(id)arg1 inSource:(id)arg2 archivedDataModel:(id)arg3 delegate:(id)arg4;
 - (id)initWithSourceContent:(id)arg1 archivedDataModel:(id)arg2 delegate:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 delegate:(id)arg3;
 

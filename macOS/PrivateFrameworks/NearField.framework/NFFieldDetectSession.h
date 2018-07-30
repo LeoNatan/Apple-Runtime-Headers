@@ -13,10 +13,11 @@
 @interface NFFieldDetectSession : NFSession <NFFieldDetectSessionCallbacks>
 {
     NFWeakReference *_delegate;
+    BOOL _fieldNotificationSent;
 }
 
 - (void)didEndUnexpectedly;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didDetectField:(BOOL)arg1;
 @property id <NFFieldDetectSessionDelegate> delegate;
 - (void)dealloc;

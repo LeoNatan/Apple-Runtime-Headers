@@ -6,20 +6,19 @@
 
 #import "WBSTouchIconRequest.h"
 
-@class WebBookmark;
-
 __attribute__((visibility("hidden")))
 @interface BookmarkTouchIconRequest : WBSTouchIconRequest
 {
-    WebBookmark *_bookmark;
+    id <BookmarkItem> _bookmark;
 }
 
 + (id)requestWithBookmark:(id)arg1 minimumIconSize:(struct CGSize)arg2 maximumIconSize:(struct CGSize)arg3 useSiteNameInsteadOfTitle:(BOOL)arg4;
-@property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
+@property(readonly, nonatomic) id <BookmarkItem> bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)uniqueIdentifier;
 - (id)initWithBookmark:(id)arg1 minimumIconSize:(struct CGSize)arg2 maximumIconSize:(struct CGSize)arg3 useSiteNameInsteadOfTitle:(BOOL)arg4;
 
 @end

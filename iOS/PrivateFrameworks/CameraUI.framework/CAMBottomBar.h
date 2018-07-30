@@ -10,7 +10,7 @@
 #import "CAMBarsAccessibilityHUDManagerGestureProvider.h"
 #import "CAMExpandableMenuButtonDelegate.h"
 
-@class CAMExpandableMenuButton, CAMFlashButton, CAMFlipButton, CAMHDRButton, CAMImageWell, CAMIrisButton, CAMModeDial, CAMTimerButton, CAMUtilityBar, CUShutterButton, NSString, UIButton;
+@class CAMCreativeCameraButton, CAMExpandableMenuButton, CAMFlashButton, CAMFlipButton, CAMHDRButton, CAMImageWell, CAMLivePhotoButton, CAMModeDial, CAMTimerButton, CAMUtilityBar, CUShutterButton, NSString, PUReviewScreenDoneButton, UIButton;
 
 @interface CAMBottomBar : UIView <CAMExpandableMenuButtonDelegate, CAMAccessibilityHUDItemProvider, CAMBarsAccessibilityHUDManagerGestureProvider>
 {
@@ -22,25 +22,30 @@
     CAMModeDial *_modeDial;
     CAMImageWell *_imageWell;
     UIButton *_reviewButton;
+    CAMCreativeCameraButton *_creativeCameraButton;
+    PUReviewScreenDoneButton *_doneButton;
     CAMFlipButton *_flipButton;
     CAMFlashButton *_flashButton;
     CAMHDRButton *_HDRButton;
     CAMTimerButton *_timerButton;
-    CAMIrisButton *_irisButton;
+    CAMLivePhotoButton *_livePhotoButton;
     CAMUtilityBar *_utilityBar;
     double _utilityBarExtensionAboveTopEdge;
     CAMExpandableMenuButton *__expandedMenuButton;
 }
 
 + (_Bool)wantsVerticalBarForLayoutStyle:(long long)arg1;
++ (struct CGRect)shutterButtonAlignmentRectInBounds:(struct CGRect)arg1 forLayoutStyle:(long long)arg2;
 @property(retain, nonatomic, setter=_setExpandedMenuButton:) CAMExpandableMenuButton *_expandedMenuButton; // @synthesize _expandedMenuButton=__expandedMenuButton;
 @property(nonatomic) double utilityBarExtensionAboveTopEdge; // @synthesize utilityBarExtensionAboveTopEdge=_utilityBarExtensionAboveTopEdge;
 @property(retain, nonatomic) CAMUtilityBar *utilityBar; // @synthesize utilityBar=_utilityBar;
-@property(retain, nonatomic) CAMIrisButton *irisButton; // @synthesize irisButton=_irisButton;
+@property(retain, nonatomic) CAMLivePhotoButton *livePhotoButton; // @synthesize livePhotoButton=_livePhotoButton;
 @property(retain, nonatomic) CAMTimerButton *timerButton; // @synthesize timerButton=_timerButton;
 @property(retain, nonatomic) CAMHDRButton *HDRButton; // @synthesize HDRButton=_HDRButton;
 @property(retain, nonatomic) CAMFlashButton *flashButton; // @synthesize flashButton=_flashButton;
 @property(retain, nonatomic) CAMFlipButton *flipButton; // @synthesize flipButton=_flipButton;
+@property(retain, nonatomic) PUReviewScreenDoneButton *doneButton; // @synthesize doneButton=_doneButton;
+@property(retain, nonatomic) CAMCreativeCameraButton *creativeCameraButton; // @synthesize creativeCameraButton=_creativeCameraButton;
 @property(retain, nonatomic) UIButton *reviewButton; // @synthesize reviewButton=_reviewButton;
 @property(retain, nonatomic) CAMImageWell *imageWell; // @synthesize imageWell=_imageWell;
 @property(retain, nonatomic) CAMModeDial *modeDial; // @synthesize modeDial=_modeDial;
@@ -67,13 +72,16 @@
 - (void)layoutSubviews;
 - (void)_layoutUtilityBarForLayoutStyle:(long long)arg1;
 - (void)_layoutFlipButtonForLayoutStyle:(long long)arg1;
+- (void)_layoutDoneButtonForLayoutStyle:(long long)arg1;
 - (void)_layoutReviewButtonForLayoutStyle:(long long)arg1;
+- (void)_layoutCreativeCameraButtonForLayoutStyle:(long long)arg1;
 - (void)_layoutImageWellForLayoutStyle:(long long)arg1;
 - (void)_layoutModeDialForLayoutStyle:(long long)arg1;
 - (void)_layoutStillDuringVideoButtonForLayoutStyle:(long long)arg1;
 - (void)_layoutShutterButtonForLayoutStyle:(long long)arg1;
 - (void)_ensureSubviewOrdering;
 - (void)_updateFlipButtonTappableEdgeInsets;
+- (void)_updateCreativeCameraButtonTappableEdgeInsets;
 - (void)_updateImageWellTappableEdgeInsets;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

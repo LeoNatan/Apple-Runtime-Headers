@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSMutableArray, NSString, SKTileGroup;
 
-@interface SKTileGroupRule : NSObject <NSCopying, NSCoding>
+@interface SKTileGroupRule : NSObject <NSCopying, NSSecureCoding>
 {
     NSMutableArray *_tileDefinitions;
     NSMutableArray *_tileDefinitionIDs;
@@ -21,6 +21,7 @@
 }
 
 + (id)tileGroupRuleWithAdjacency:(unsigned long long)arg1 tileDefinitions:(id)arg2;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) __weak SKTileGroup *parentGroup; // @synthesize parentGroup=_parentGroup;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
@@ -29,6 +30,7 @@
 - (id)initWithAdjacency:(unsigned long long)arg1 tileDefinitions:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
+- (_Bool)isEqualToNode:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setTileDefinitionParentPointers;

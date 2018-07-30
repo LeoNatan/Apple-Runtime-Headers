@@ -13,6 +13,7 @@
 
 @class ISWrappedAVPlayer, NSString, PHLivePhotoView, PLEditSource, PLPhotoEditMutableModel, PLPhotoEditRenderer, PULivePhotoKeyFrameSelectionViewController, PULivePhotoTrimScrubber, PUPhotoEditSnapStripView, UIImage, UIView;
 
+__attribute__((visibility("hidden")))
 @interface PUTrimToolController : UIViewController <ISChangeObserver, PULivePhotoTrimScrubberDelegate, UIPopoverPresentationControllerDelegate, PULivePhotoKeyFrameSelectionViewControllerDelegate>
 {
     PUPhotoEditSnapStripView *_snapStripView;

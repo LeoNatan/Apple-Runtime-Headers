@@ -4,17 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSString;
 
-@interface DMFEchoRequest : CATTaskRequest
+@interface DMFEchoRequest : DMFTaskRequest
 {
     NSString *_echo;
     NSString *_resultStatus;
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
 @property(copy, nonatomic) NSString *resultStatus; // @synthesize resultStatus=_resultStatus;
 @property(copy, nonatomic) NSString *echo; // @synthesize echo=_echo;

@@ -8,6 +8,7 @@
 
 @class AVPlayerItem, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVSynchronizedLayerInternal : NSObject
 {
     AVPlayerItem *playerItem;

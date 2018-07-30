@@ -8,15 +8,14 @@
 
 @class ODDIteratorSpecification;
 
-__attribute__((visibility("hidden")))
 @interface ODDForEach : ODDLayoutObjectList
 {
     ODDIteratorSpecification *mIteratorSpecification;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)iteratorSpecification;
-- (void)dealloc;
 - (id)init;
 
 @end

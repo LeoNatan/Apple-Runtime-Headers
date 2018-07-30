@@ -19,6 +19,7 @@
     _Bool _touchRecognizingHint;
     _Bool _persistentEmulationHint;
     _Bool _accessPass;
+    _Bool _useSmallStyleGlyph;
     int _state;
     PKGlyphView *_glyph;
     UILabel *_label;
@@ -27,7 +28,8 @@
     id <PKPassPaymentPayStateViewDelegate> _delegate;
 }
 
-@property(nonatomic) id <PKPassPaymentPayStateViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PKPassPaymentPayStateViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool useSmallStyleGlyph; // @synthesize useSmallStyleGlyph=_useSmallStyleGlyph;
 @property(nonatomic) _Bool accessPass; // @synthesize accessPass=_accessPass;
 @property(nonatomic) _Bool persistentEmulationHint; // @synthesize persistentEmulationHint=_persistentEmulationHint;
 @property(nonatomic) _Bool touchRecognizingHint; // @synthesize touchRecognizingHint=_touchRecognizingHint;
@@ -45,9 +47,10 @@
 - (id)_textForState:(int)arg1 textOverride:(id)arg2;
 - (_Bool)_canEmphasizeState:(int)arg1;
 - (void)updateDebugLabel:(id)arg1 isErrorState:(_Bool)arg2;
-- (void)emphasizeStateIfPossible:(int)arg1 withTextOverride:(id)arg2;
+- (void)emphasizeStateIfPossible:(int)arg1 withOverrideText:(id)arg2;
+- (_Bool)labelWillChangeForState:(int)arg1 withOverrideText:(id)arg2;
 - (void)_applyStatePreservingGlyphState:(_Bool)arg1 overridingText:(id)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)setState:(int)arg1 preservingGlyphState:(_Bool)arg2 overridingText:(id)arg3 animated:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)setState:(int)arg1 animated:(_Bool)arg2 withOverrideText:(id)arg3 preserveGlyphState:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)setState:(int)arg1 animated:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_canPreserveGlyphForState:(int)arg1;
 - (int)_defaultGlyphStateForState:(int)arg1;

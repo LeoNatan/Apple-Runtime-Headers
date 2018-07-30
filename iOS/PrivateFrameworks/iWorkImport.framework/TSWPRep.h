@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     TSWPSelection *_dropSelection;
     _Bool _isShowingCommentKnobs;
     _Bool _tornDown;
+    _Bool _searchHitsAreInvalid;
     NSTimer *_caretTimer;
     _Bool _caretCancelled;
     _Bool _findIsShowing;
@@ -103,16 +104,9 @@ __attribute__((visibility("hidden")))
 - (id)p_hyperlinkAtPoint:(struct CGPoint)arg1;
 - (_Bool)directlyManagesLayerContent;
 - (Class)layerClass;
-- (unsigned long long)charIndexFromPoint:(struct CGPoint)arg1 allowPastBreak:(_Bool)arg2 allowNotFound:(_Bool)arg3 pastCenterGoesToNextChar:(_Bool)arg4 constrainToAscentAndDescent:(_Bool)arg5 isAtEndOfLine:(_Bool *)arg6 leadingEdge:(_Bool *)arg7;
-- (unsigned long long)charIndexFromPoint:(struct CGPoint)arg1 allowPastBreak:(_Bool)arg2 allowNotFound:(_Bool)arg3 pastCenterGoesToNextChar:(_Bool)arg4 isAtEndOfLine:(_Bool *)arg5 leadingEdge:(_Bool *)arg6;
-- (unsigned long long)charIndexFromPoint:(struct CGPoint)arg1 allowPastBreak:(_Bool)arg2 allowNotFound:(_Bool)arg3 constrainToAscentAndDescent:(_Bool)arg4 isAtEndOfLine:(_Bool *)arg5 leadingEdge:(_Bool *)arg6;
-- (unsigned long long)charIndexFromPoint:(struct CGPoint)arg1 allowPastBreak:(_Bool)arg2 allowNotFound:(_Bool)arg3 isAtEndOfLine:(_Bool *)arg4 leadingEdge:(_Bool *)arg5;
-- (unsigned long long)charIndexFromPoint:(struct CGPoint)arg1 allowPastBreak:(_Bool)arg2 constrainToAscentAndDescent:(_Bool)arg3 isAtEndOfLine:(_Bool *)arg4;
-- (unsigned long long)charIndexFromPoint:(struct CGPoint)arg1 allowPastBreak:(_Bool)arg2 isAtEndOfLine:(_Bool *)arg3;
-- (unsigned long long)charIndexForPointWithPinning:(struct CGPoint)arg1 isTail:(_Bool)arg2 selectionType:(int)arg3;
-- (unsigned long long)charIndexForPointWithPinning:(struct CGPoint)arg1 constrainToAscentAndDescent:(_Bool)arg2;
-- (unsigned long long)charIndexForPointWithPinning:(struct CGPoint)arg1;
 - (_Bool)p_shouldShowCommentsIncludingHighlights:(_Bool)arg1;
+- (void)p_unregisterNotifications;
+- (void)p_registerNotifications;
 - (struct CGRect)p_closestCaretRectForPoint:(struct CGPoint)arg1 inSelection:(_Bool)arg2 allowPastBreak:(_Bool)arg3;
 - (struct CGRect)p_topicDragRectForSelection:(id)arg1;
 - (struct CGRect)p_caretRectForSelection:(id)arg1;

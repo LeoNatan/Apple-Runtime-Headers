@@ -68,6 +68,7 @@
     LiKeyPath *_trainingTypeKeyPath;
     LiKeyPath *_cloudNameSourceKeyPath;
     LiKeyPath *_personUuidKeyPath;
+    LiKeyPath *_groupingIdentifierKeyPath;
 }
 
 + (SEL)deletedModelIdsMulticasterSelector;
@@ -77,6 +78,7 @@
 + (id)tableName;
 + (id)modelName;
 + (Class)modelClass;
+@property(readonly, nonatomic) LiKeyPath *groupingIdentifierKeyPath; // @synthesize groupingIdentifierKeyPath=_groupingIdentifierKeyPath;
 @property(readonly, nonatomic) LiKeyPath *personUuidKeyPath; // @synthesize personUuidKeyPath=_personUuidKeyPath;
 @property(readonly, nonatomic) LiKeyPath *cloudNameSourceKeyPath; // @synthesize cloudNameSourceKeyPath=_cloudNameSourceKeyPath;
 @property(readonly, nonatomic) LiKeyPath *trainingTypeKeyPath; // @synthesize trainingTypeKeyPath=_trainingTypeKeyPath;

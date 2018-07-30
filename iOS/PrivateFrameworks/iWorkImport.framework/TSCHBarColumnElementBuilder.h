@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)countOfBarRectsForSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewGroupIndexArray:(unsigned long long **)arg4 outNewElementRectsArray:(struct CGRect **)arg5 outNewClipRectsArray:(struct CGRect **)arg6;
 - (unsigned long long)countOfLabelsForSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewTransforms:(struct CGAffineTransform **)arg4 outNewElementSizes:(struct CGSize **)arg5 outNewClipRect:(struct CGRect **)arg6 outNewStrings:(id *)arg7;
 - (unsigned long long)countOfElementsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementBounds:(struct CGRect **)arg4 outNewClipRects:(struct CGRect **)arg5 outNewElementPaths:(const struct CGPath ***)arg6 outSelectionKnobLocations:(id *)arg7;
+- (struct CGPath *)newRoundedRectPathWithRect:(struct CGRect)arg1 chartInfo:(id)arg2 series:(id)arg3 groupIndex:(unsigned long long)arg4 isVertical:(_Bool)arg5 forGroups:(id)arg6 forBodyLayout:(id)arg7;
 - (id)initWithVertical:(_Bool)arg1;
 - (id)init;
 

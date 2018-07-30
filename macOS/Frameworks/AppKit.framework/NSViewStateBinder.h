@@ -6,6 +6,7 @@
 
 #import <AppKit/NSBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSViewStateBinder : NSBinder
 {
     struct __viewStateBinderFlags {

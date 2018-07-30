@@ -22,12 +22,15 @@
     NSString *_modelID;
     NSData *_modelSpecificInfoData;
     NSString *_name;
+    NSString *_parentGroupIdentifier;
     _MRAVOutputDeviceSourceInfoProtobuf *_sourceInfo;
     NSString *_uniqueIdentifier;
     float _volume;
     BOOL _canAccessAppleMusic;
     BOOL _canAccessRemoteAssets;
     BOOL _canAccessiCloudMusicLibrary;
+    BOOL _canFetchMediaDataFromSender;
+    BOOL _canPlayEncryptedProgressiveDownloadAssets;
     BOOL _canRelayCommunicationChannel;
     BOOL _groupContainsGroupLeader;
     BOOL _isAirPlayReceiverSessionActive;
@@ -38,6 +41,8 @@
     BOOL _isProxyGroupPlayer;
     BOOL _isRemoteControllable;
     BOOL _isVolumeControlAvailable;
+    BOOL _parentGroupContainsDiscoverableLeader;
+    BOOL _presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
     BOOL _requiresAuthorization;
     BOOL _shouldForceRemoteControlabillity;
     BOOL _supportsBufferedAirPlay;
@@ -50,6 +55,8 @@
         unsigned int canAccessAppleMusic:1;
         unsigned int canAccessRemoteAssets:1;
         unsigned int canAccessiCloudMusicLibrary:1;
+        unsigned int canFetchMediaDataFromSender:1;
+        unsigned int canPlayEncryptedProgressiveDownloadAssets:1;
         unsigned int canRelayCommunicationChannel:1;
         unsigned int groupContainsGroupLeader:1;
         unsigned int isAirPlayReceiverSessionActive:1;
@@ -60,6 +67,8 @@
         unsigned int isProxyGroupPlayer:1;
         unsigned int isRemoteControllable:1;
         unsigned int isVolumeControlAvailable:1;
+        unsigned int parentGroupContainsDiscoverableLeader:1;
+        unsigned int presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets:1;
         unsigned int requiresAuthorization:1;
         unsigned int shouldForceRemoteControlabillity:1;
         unsigned int supportsBufferedAirPlay:1;
@@ -67,7 +76,12 @@
     } _has;
 }
 
+@property(nonatomic) BOOL parentGroupContainsDiscoverableLeader; // @synthesize parentGroupContainsDiscoverableLeader=_parentGroupContainsDiscoverableLeader;
+@property(retain, nonatomic) NSString *parentGroupIdentifier; // @synthesize parentGroupIdentifier=_parentGroupIdentifier;
 @property(nonatomic) BOOL isAirPlayReceiverSessionActive; // @synthesize isAirPlayReceiverSessionActive=_isAirPlayReceiverSessionActive;
+@property(nonatomic) BOOL presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets; // @synthesize presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets=_presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(nonatomic) BOOL canFetchMediaDataFromSender; // @synthesize canFetchMediaDataFromSender=_canFetchMediaDataFromSender;
+@property(nonatomic) BOOL canPlayEncryptedProgressiveDownloadAssets; // @synthesize canPlayEncryptedProgressiveDownloadAssets=_canPlayEncryptedProgressiveDownloadAssets;
 @property(nonatomic) BOOL supportsBufferedAirPlay; // @synthesize supportsBufferedAirPlay=_supportsBufferedAirPlay;
 @property(nonatomic) BOOL groupContainsGroupLeader; // @synthesize groupContainsGroupLeader=_groupContainsGroupLeader;
 @property(nonatomic) BOOL canAccessiCloudMusicLibrary; // @synthesize canAccessiCloudMusicLibrary=_canAccessiCloudMusicLibrary;
@@ -105,7 +119,12 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasParentGroupContainsDiscoverableLeader;
+@property(readonly, nonatomic) BOOL hasParentGroupIdentifier;
 @property(nonatomic) BOOL hasIsAirPlayReceiverSessionActive;
+@property(nonatomic) BOOL hasPresentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(nonatomic) BOOL hasCanFetchMediaDataFromSender;
+@property(nonatomic) BOOL hasCanPlayEncryptedProgressiveDownloadAssets;
 @property(nonatomic) BOOL hasSupportsBufferedAirPlay;
 @property(nonatomic) BOOL hasGroupContainsGroupLeader;
 @property(nonatomic) BOOL hasCanAccessiCloudMusicLibrary;

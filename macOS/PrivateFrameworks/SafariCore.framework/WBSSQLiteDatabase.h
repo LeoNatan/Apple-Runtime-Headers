@@ -42,6 +42,7 @@
 - (BOOL)reportErrorWithCode:(int)arg1 statement:(struct sqlite3_stmt *)arg2 error:(id *)arg3;
 - (void)_reportSevereError:(id)arg1;
 - (int)close;
+- (BOOL)openWithAccessType:(long long)arg1 protectionType:(long long)arg2 vfs:(id)arg3 error:(id *)arg4;
 - (BOOL)openWithAccessType:(long long)arg1 vfs:(id)arg2 error:(id *)arg3;
 - (BOOL)openWithAccessType:(long long)arg1 error:(id *)arg2;
 - (void)dealloc;

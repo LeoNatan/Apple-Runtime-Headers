@@ -16,12 +16,16 @@
     id <MTLDevice> _device;
     MTLIndirectArgumentBufferEmulationData *_vertexIABEmulationData;
     MTLIndirectArgumentBufferEmulationData *_fragmentIABEmulationData;
+    BOOL _supportIndirectCommandBuffers;
+    unsigned long long _uniqueIdentifier;
 }
 
 @property(retain, nonatomic) MTLIndirectArgumentBufferEmulationData *fragmentIABEmulationData; // @synthesize fragmentIABEmulationData=_fragmentIABEmulationData;
 @property(retain, nonatomic) MTLIndirectArgumentBufferEmulationData *vertexIABEmulationData; // @synthesize vertexIABEmulationData=_vertexIABEmulationData;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly) NSString *label; // @synthesize label=_label;
+@property(readonly) unsigned long long uniqueIdentifier;
+@property(readonly) BOOL supportIndirectCommandBuffers;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 pipelineStateDescriptor:(id)arg2;
 

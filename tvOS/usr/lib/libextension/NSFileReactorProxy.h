@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)forwardUsingProxy:(id)arg1;
 - (id)itemLocation;
 - (void)setItemLocation:(id)arg1;
-- (unsigned int)effectiveUserIdentifier;
+@property unsigned int effectiveUserIdentifier;
 - (id)reactorID;
 - (id)client;
 - (void)dealloc;

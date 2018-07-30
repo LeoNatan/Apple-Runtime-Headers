@@ -15,6 +15,7 @@
 {
     UILabel *_titleLabel;
     UIView *_headerSeparatorView;
+    UIView *_footerSeparatorView;
     MTMaterialView *_platterMaterialView;
     UIStackView *_menuItemsContainer;
     NSMutableArray *_menuItemsViews;
@@ -23,7 +24,8 @@
     UILongPressGestureRecognizer *_pressGestureRecognizer;
     UISelectionFeedbackGenerator *_feedbackGenerator;
     _Bool _ignoreMenuItemAtTouchLocationAfterExpanded;
-    CCUIMenuModuleItemView *_menuItemToIgnore;
+    struct CGPoint _touchLocationToIgnore;
+    CCUIMenuModuleItemView *_footerButtonView;
     _Bool _shouldProvideOwnPlatter;
     _Bool _useTallLayout;
     UIView *_contentView;
@@ -34,17 +36,28 @@
 @property(nonatomic) _Bool useTallLayout; // @synthesize useTallLayout=_useTallLayout;
 @property(nonatomic) _Bool shouldProvideOwnPlatter; // @synthesize shouldProvideOwnPlatter=_shouldProvideOwnPlatter;
 - (void).cxx_destruct;
+- (_Bool)_shouldShowFooterButton;
+- (_Bool)_shouldShowFooterChin;
+- (_Bool)_shouldShowFooterSeparator;
+- (double)_footerHeight;
 - (void)_contentSizeCategoryDidChange;
 - (double)_menuItemsHeightForWidth:(double)arg1;
+- (_Bool)_shouldLimitContentSizeCategory;
 - (id)_titleFont;
 - (double)_separatorHeight;
 - (void)_handlePressGesture:(id)arg1;
+- (_Bool)_toggleSelectionForMenuItem:(id)arg1;
+- (id)_menuItemAtGestureTouchLocation:(id)arg1;
+- (id)_menuItemAtLocation:(struct CGPoint)arg1;
 - (void)_setupMenuItems;
 - (void)_setupTitleLabel;
 - (void)_setupContentViewBounds;
 - (struct CGAffineTransform)_contentTransformForScale:(double)arg1;
 - (double)_contentScaleForSize:(struct CGSize)arg1;
-- (void)_layoutSeparatorForSize:(struct CGSize)arg1;
+- (double)_titleWidthForContainerWidth:(double)arg1;
+- (void)_layoutFooterSeparatorForSize:(struct CGSize)arg1;
+- (void)_layoutHeaderSeparatorForSize:(struct CGSize)arg1;
+- (void)_layoutFooterButtonForSize:(struct CGSize)arg1;
 - (void)_layoutMenuItemsForSize:(struct CGSize)arg1;
 - (void)_layoutTitleLabelForSize:(struct CGSize)arg1;
 - (void)_layoutGlyphViewForSize:(struct CGSize)arg1;
@@ -68,6 +81,8 @@
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (double)headerHeightForWidth:(double)arg1;
 @property(readonly, nonatomic) double headerHeight;
+- (void)removeFooterButton;
+- (void)setFooterButtonTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)removeAllActions;
 @property(readonly, nonatomic) unsigned long long actionsCount;
 - (void)addActionWithTitle:(id)arg1 subtitle:(id)arg2 glyph:(id)arg3 handler:(CDUnknownBlockType)arg4;

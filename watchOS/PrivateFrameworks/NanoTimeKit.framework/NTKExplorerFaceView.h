@@ -7,12 +7,13 @@
 #import <NanoTimeKit/NTKAnalogFaceView.h>
 
 #import "CSLSConnectionStatusObserver.h"
+#import "NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate.h"
 
-@class NSString, NTKExplorerDialView, NTKExplorerHandsView, NTKExplorerStatusView, NTKFaceLayoutContentProvider;
+@class NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKExplorerDialView, NTKExplorerHandsView, NTKExplorerStatusView;
 
-@interface NTKExplorerFaceView : NTKAnalogFaceView <CSLSConnectionStatusObserver>
+@interface NTKExplorerFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate, CSLSConnectionStatusObserver>
 {
-    NTKFaceLayoutContentProvider *_layoutContentProvider;
+    NTKColorCircularUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKExplorerDialView *_dialView;
     NTKExplorerStatusView *_statusView;
     _Bool _observingConnectivity;
@@ -60,8 +61,10 @@
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (float)_verticalPaddingForStatusBar;
 - (struct CGPoint)_contentCenterOffset;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
@@ -74,7 +77,7 @@
 - (void)_applyFrozen;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

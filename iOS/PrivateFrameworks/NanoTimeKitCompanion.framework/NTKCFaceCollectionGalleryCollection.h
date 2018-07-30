@@ -23,6 +23,7 @@
 - (unsigned long long)indexOfFace:(id)arg1;
 - (id)faceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfFaces;
+- (id)collectionIdentifier;
 - (id)initWithTitle:(id)arg1 faceCollection:(id)arg2;
 
 // Remaining properties

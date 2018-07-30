@@ -18,7 +18,7 @@
 
 + (id)_textForDate:(id)arg1 dateStyle:(unsigned long long)arg2;
 + (id)textForDateStyle:(unsigned long long)arg1;
-+ (_Bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (_Bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
 - (void)_setTextInDisplayIfNeededWithDate:(id)arg1;
 - (void)_updateDisplay;

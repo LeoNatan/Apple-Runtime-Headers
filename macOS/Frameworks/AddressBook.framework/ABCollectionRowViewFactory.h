@@ -8,7 +8,6 @@
 
 @class ABCardViewStyleProvider;
 
-__attribute__((visibility("hidden")))
 @interface ABCollectionRowViewFactory : NSObject
 {
     BOOL _shouldFormatURLs;

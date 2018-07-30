@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface AVFloat64Range : NSObject <NSCopying>
 {
     double _minimum;

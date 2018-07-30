@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)_dateChangeHandler:(id)arg1;
 - (void)_dateChanged;
 - (void)_dateChangedSetAsString;
-- (RetainPtr_6b9d0b10)dateFormatterForPicker;
+- (RetainPtr_1a71a0e2)dateFormatterForPicker;
 - (void)_dateChangedSetAsNumber;
 - (id)_sanitizeInputValueForFormatter:(id)arg1;
 - (int)_timeZoneOffsetFromGMT:(id)arg1;

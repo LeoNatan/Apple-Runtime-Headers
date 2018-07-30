@@ -13,7 +13,6 @@
     NSObject<OS_dispatch_queue> *_accessSerialQueue;
     AVOutputDevice *_avOutputDevice;
     MRAVOutputDeviceSourceInfo *_sourceInfo;
-    NSString *_name;
     NSString *_uid;
     NSString *_modelID;
     NSString *_firmwareVersion;
@@ -44,11 +43,17 @@
 - (_Bool)isDeviceGroupable;
 - (_Bool)isProxyGroupPlayer;
 - (_Bool)isGroupable;
+- (id)parentGroupIdentifier;
+- (_Bool)parentGroupContainsDiscoverableLeader;
+- (_Bool)isAirPlayReceiverSessionActive;
 - (_Bool)groupContainsGroupLeader;
 - (_Bool)isGroupLeader;
 - (_Bool)supportsBufferedAirPlay;
 - (_Bool)canRelayCommunicationChannel;
 - (_Bool)isRemoteControllable;
+- (_Bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (_Bool)canFetchMediaDataFromSender;
+- (_Bool)canPlayEncryptedProgressiveDownloadAssets;
 - (_Bool)canAccessiCloudMusicLibrary;
 - (_Bool)canAccessAppleMusic;
 - (_Bool)canAccessRemoteAssets;

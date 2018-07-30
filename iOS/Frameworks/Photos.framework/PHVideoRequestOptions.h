@@ -13,6 +13,7 @@
     _Bool _videoComplementAllowed;
     _Bool _allowMediumHighQuality;
     _Bool _restrictToPlayableOnCurrentDevice;
+    _Bool _routeToNewImageManager;
     long long _version;
     long long _deliveryMode;
     CDUnknownBlockType _progressHandler;
@@ -20,6 +21,7 @@
     struct CGSize _targetSize;
 }
 
+@property(nonatomic) _Bool routeToNewImageManager; // @synthesize routeToNewImageManager=_routeToNewImageManager;
 @property(nonatomic) _Bool restrictToPlayableOnCurrentDevice; // @synthesize restrictToPlayableOnCurrentDevice=_restrictToPlayableOnCurrentDevice;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;

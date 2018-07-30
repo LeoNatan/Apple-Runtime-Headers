@@ -41,6 +41,7 @@
 - (id)packagesForLocation:(id)arg1 fromSet:(id)arg2;
 - (id)sortedPackageLocations;
 - (id)objectForOptionNamed:(id)arg1;
+- (BOOL)getData:(id *)arg1 andMIMEType:(id *)arg2 forResourceNamed:(id)arg3 forLanguage:(id)arg4 error:(id *)arg5;
 - (BOOL)getData:(id *)arg1 andMIMEType:(id *)arg2 forResourceNamed:(id)arg3 forLanguage:(id)arg4;
 - (id)languagesAvailableForResource:(id)arg1;
 - (id)installableCheckResults;

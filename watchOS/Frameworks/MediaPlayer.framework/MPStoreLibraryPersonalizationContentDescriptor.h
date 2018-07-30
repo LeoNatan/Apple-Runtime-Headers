@@ -14,6 +14,9 @@
     int _personalizationStyle;
 }
 
++ (id)_lightweightPersonalizationPropertiesForStoreAsset;
++ (id)_lightweightPersonalizationPropertiesForPlaybackPosition;
++ (id)lightweightPersonalizationPropertiesForModelClass:(Class)arg1;
 @property(readonly, nonatomic) int personalizationStyle; // @synthesize personalizationStyle=_personalizationStyle;
 @property(readonly, nonatomic) MPModelObject *model; // @synthesize model=_model;
 - (void).cxx_destruct;

@@ -659,7 +659,7 @@ struct vector<PKDebugDrawPacket::color4, std::__1::allocator<PKDebugDrawPacket::
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<PKDebugDrawPacket::color4 *, std::__1::allocator<PKDebugDrawPacket::color4>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -667,7 +667,7 @@ struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *>> {
     struct PKPhysicsShape **__begin_;
     struct PKPhysicsShape **__end_;
     struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *>> {
-        struct PKPhysicsShape **__first_;
+        struct PKPhysicsShape **__value_;
     } __end_cap_;
 };
 
@@ -675,7 +675,7 @@ struct vector<PKPoint, std::__1::allocator<PKPoint>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<PKPoint *, std::__1::allocator<PKPoint>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -766,13 +766,13 @@ typedef struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *>> {
     struct PKPhysicsShape **__begin_;
     struct PKPhysicsShape **__end_;
     struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *>> {
-        struct PKPhysicsShape **__first_;
+        struct PKPhysicsShape **__value_;
     } __end_cap_;
-} vector_4360c5cc;
+} vector_8416aa54;
 
 #pragma mark Named Unions
 
-union _GLKMatrix4 {
+union _GLSKMatrix4 {
     struct {
         float _field1;
         float _field2;

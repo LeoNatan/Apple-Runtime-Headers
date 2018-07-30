@@ -8,6 +8,7 @@
 
 @class NSConnection;
 
+__attribute__((visibility("hidden")))
 @interface NSRemoteInputServer : NSInputServer
 {
     NSConnection *_connection;

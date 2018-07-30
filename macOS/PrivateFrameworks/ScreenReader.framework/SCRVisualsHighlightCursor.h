@@ -33,6 +33,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowMouseCursorSync; // @synthesize allowMouseCursorSync=_allowMouseCursorSync;
 @property(nonatomic) long long magnificationLevel; // @synthesize magnificationLevel=_magnificationLevel;
 @property(readonly, nonatomic) SCRElement *cursorElement; // @synthesize cursorElement=_cursorElement;
+@property(readonly, nonatomic) NSArray *cursorRects; // @synthesize cursorRects=_cursorRects;
+@property(readonly, nonatomic) struct CGRect cursorRect; // @synthesize cursorRect=_cursorRect;
 - (void).cxx_destruct;
 - (void)_unregisterWindowObservers;
 - (void)_registerWindowObservers;
@@ -53,9 +55,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isValidCursorRect:(struct CGRect)arg1;
 - (struct CGRect)_convertRectFromScreenToWindowCoordinates:(struct CGRect)arg1;
 - (void)setCursorRects:(id)arg1;
-@property(readonly, nonatomic) NSArray *cursorRects; // @synthesize cursorRects=_cursorRects;
 - (void)setCursorRect:(struct CGRect)arg1;
-@property(readonly, nonatomic) struct CGRect cursorRect; // @synthesize cursorRect=_cursorRect;
 @property(nonatomic) BOOL cursorEnabled;
 - (void)dealloc;
 - (id)init;

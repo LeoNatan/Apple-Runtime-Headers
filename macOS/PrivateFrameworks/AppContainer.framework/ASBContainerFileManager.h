@@ -14,6 +14,7 @@
 }
 
 + (void)setAutoFixPermissionsErrors:(BOOL)arg1;
+@property(readonly) ASBContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
 - (id)URLsForDirectory:(unsigned long long)arg1 inDomains:(unsigned long long)arg2;
 - (id)URLForDirectory:(unsigned long long)arg1 inDomain:(unsigned long long)arg2 appropriateForURL:(id)arg3 create:(BOOL)arg4 error:(id *)arg5;

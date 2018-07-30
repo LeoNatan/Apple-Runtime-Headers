@@ -8,19 +8,18 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface OADFontCollection : OADBaseFontCollection
 {
     NSMutableDictionary *_scriptToFontMap;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEmpty;
 - (BOOL)isEqualToFontCollection:(id)arg1;
 - (id)scripts;
 - (void)setFont:(id)arg1 forScript:(id)arg2;
 - (id)fontForScript:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -18,7 +18,7 @@
 - (void)reloadFromServerInBackgroundWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
 - (void)reloadManagedUpdatesWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
 - (void)reloadFromServerWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
-- (void)refreshUpdatesWithCompletionBlock:(NSArray *)arg1 userInitiated:(_Bool)arg2 completionBlock:(void (^)(_Bool, NSError *))arg3;
+- (void)refreshUpdatesWithCompletionBlock:(NSArray *)arg1 completionBlock:(void (^)(_Bool, NSError *))arg2;
 - (void)refreshUpdateCountWithCompletionBlock:(void (^)(long long, NSError *))arg1;
 - (void)migrateUpdatesStoreWithCompletionBlock:(void (^)(_Bool, NSError *))arg1;
 - (void)getManagedUpdatesWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;

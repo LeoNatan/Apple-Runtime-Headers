@@ -19,7 +19,9 @@
 - (void).cxx_destruct;
 - (_Bool)batchAtIndexIncludesServer:(unsigned long long)arg1;
 - (void)addCalendarServerObservable:(id)arg1;
+- (void)addCachedCalendarServerObservable:(id)arg1;
 - (void)addDirectoryServerObservable:(id)arg1;
+- (void)addCachedDirectoryServerObservable:(id)arg1;
 - (void)addSupplementalObservable:(id)arg1;
 - (void)addDuetObservable:(id)arg1;
 - (void)addSuggestionsObservable:(id)arg1;

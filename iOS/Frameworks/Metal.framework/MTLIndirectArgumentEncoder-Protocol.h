@@ -13,6 +13,8 @@
 @property(readonly) unsigned long long encodedLength;
 @property(copy) NSString *label;
 @property(readonly) id <MTLDevice> device;
+- (void)setRenderPipelineStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
+- (void)setRenderPipelineState:(id <MTLRenderPipelineState>)arg1 atIndex:(unsigned long long)arg2;
 - (void *)constantDataAtIndex:(unsigned long long)arg1;
 - (void)setSamplerStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setSamplerState:(id <MTLSamplerState>)arg1 atIndex:(unsigned long long)arg2;

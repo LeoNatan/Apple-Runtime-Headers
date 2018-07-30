@@ -15,6 +15,7 @@
 - (void)_pxswizzled_oneUpPresentation_viewDidAppear:(_Bool)arg1;
 - (void)_pxswizzled_oneUpPresentation_viewWillAppear:(_Bool)arg1;
 @property(readonly, nonatomic) PXOneUpPresentation *px_oneUpPresentation;
+- (void)px_enableOneUpPresentationFromViewController:(id)arg1;
 - (void)px_enableOneUpPresentation;
 @end
 

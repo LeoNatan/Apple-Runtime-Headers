@@ -10,9 +10,9 @@
 {
 }
 
-+ (unsigned int)_dateComplicationSlotSupportedStyles;
-+ (id)_dateComplicationSlot;
-+ (id)_defaultSelectedComplicationSlot;
++ (unsigned int)_dateComplicationSlotSupportedStylesForDevice:(id)arg1;
++ (id)_dateComplicationSlotForDevice:(id)arg1;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
 - (id)_orderedComplicationSlots;
 - (id)_complicationSlotDescriptors;
 

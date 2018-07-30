@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id _containerView;
 }
 
-@property NSColorPickerPencilView *pencilView; // @synthesize pencilView=_pencilView;
-@property NSView *containerView; // @synthesize containerView=_containerView;
-@property NSTextField *colorNameTextField; // @synthesize colorNameTextField=_colorNameTextField;
+@property(retain) NSColorPickerPencilView *pencilView; // @synthesize pencilView=_pencilView;
+@property(retain) NSView *containerView; // @synthesize containerView=_containerView;
+@property(retain) NSTextField *colorNameTextField; // @synthesize colorNameTextField=_colorNameTextField;
 - (void)setColor:(id)arg1;
 - (id)buttonToolTip;
 - (struct CGSize)minContentSize;
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)changeDisplayedColorName:(id)arg1;
 - (void)changeColor:(id)arg1;
 - (id)provideNewButtonImage;
+- (void)dealloc;
 - (id)initWithPickerMask:(unsigned long long)arg1 colorPanel:(id)arg2;
 
 @end

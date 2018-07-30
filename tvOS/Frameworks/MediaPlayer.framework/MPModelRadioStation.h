@@ -22,6 +22,7 @@
 + (id)__beats1_KEY;
 + (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (id)artworkCatalog;
+- (id)humanDescription;
 - (id)contentItemCollectionInfo;
 
 // Remaining properties

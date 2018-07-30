@@ -38,6 +38,7 @@
     BOOL _visible;
     BOOL _overrideVisible;
     BOOL _favorite;
+    BOOL _devVersion;
     unsigned long long _nameIconVariant;
     NSMutableArray *_searchAnchors;
 }
@@ -45,6 +46,7 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)bundleAtPathIsNativeForSystem:(id)arg1;
 + (BOOL)numberingSystemIsArabic;
+@property(getter=isDevVersion) BOOL devVersion; // @synthesize devVersion=_devVersion;
 @property unsigned long long nameIconVariant; // @synthesize nameIconVariant=_nameIconVariant;
 @property(readonly) NSPreferencePane *prefPaneObject; // @synthesize prefPaneObject=_prefPaneObject;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
@@ -59,6 +61,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (long long)compare:(id)arg1;
+- (id)supportedAppearance;
+- (BOOL)isLinkedOnMacOS10_14_Or_Later;
 - (id)mainView;
 - (void)instantiatePrefPaneObjectWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)instantiatePrefPaneObject;

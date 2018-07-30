@@ -6,18 +6,14 @@
 
 #import "NSObject.h"
 
-#import "SXMediaSelectionControllerDataSource.h"
-#import "SXMediaSelectionControllerDelegate.h"
-#import "SXVideoMetadataProviding.h"
-#import "SXVideoPrefetching.h"
+#import "SVVideoMetadata.h"
 
-@class NSArray, NSError, NSHashTable, NSObject<SXVideoPlaybackHost>, NSString, SXAVPlayer, SXKeyValueObserver;
+@class NSArray, NSError, NSHashTable, NSObject<SXVideoPlaybackHost>, NSString, SVKeyValueObserver, SXAVPlayer;
 
-@interface SXPlaybackCoordinator : NSObject <SXVideoMetadataProviding, SXMediaSelectionControllerDelegate, SXMediaSelectionControllerDataSource, SXVideoPrefetching>
+@interface SXPlaybackCoordinator : NSObject <SVVideoMetadata>
 {
     _Bool _playbackLikelyToKeepUp;
     _Bool _playbackBufferFull;
-    _Bool _hasMediaSelectionOptions;
     _Bool _muted;
     _Bool _playbackRequested;
     _Bool _initiatedPlayback;
@@ -28,21 +24,21 @@
     NSHashTable *_observers;
     SXAVPlayer *_player;
     CDUnknownBlockType _cancelHandler;
-    SXKeyValueObserver *_playerItemPresentationSizeObserver;
-    SXKeyValueObserver *_readyForDisplayObserver;
+    SVKeyValueObserver *_playerItemPresentationSizeObserver;
+    SVKeyValueObserver *_readyForDisplayObserver;
     id <SXAVPlayerFactory> _playerFactory;
-    SXKeyValueObserver *_muteStateObserver;
-    SXKeyValueObserver *_playbackLikelyToKeepUpObserver;
-    SXKeyValueObserver *_playbackBufferFullObserver;
+    SVKeyValueObserver *_muteStateObserver;
+    SVKeyValueObserver *_playbackLikelyToKeepUpObserver;
+    SVKeyValueObserver *_playbackBufferFullObserver;
     struct CGSize _dimensions;
 }
 
-@property(retain, nonatomic) SXKeyValueObserver *playbackBufferFullObserver; // @synthesize playbackBufferFullObserver=_playbackBufferFullObserver;
-@property(retain, nonatomic) SXKeyValueObserver *playbackLikelyToKeepUpObserver; // @synthesize playbackLikelyToKeepUpObserver=_playbackLikelyToKeepUpObserver;
-@property(retain, nonatomic) SXKeyValueObserver *muteStateObserver; // @synthesize muteStateObserver=_muteStateObserver;
+@property(retain, nonatomic) SVKeyValueObserver *playbackBufferFullObserver; // @synthesize playbackBufferFullObserver=_playbackBufferFullObserver;
+@property(retain, nonatomic) SVKeyValueObserver *playbackLikelyToKeepUpObserver; // @synthesize playbackLikelyToKeepUpObserver=_playbackLikelyToKeepUpObserver;
+@property(retain, nonatomic) SVKeyValueObserver *muteStateObserver; // @synthesize muteStateObserver=_muteStateObserver;
 @property(readonly, nonatomic) id <SXAVPlayerFactory> playerFactory; // @synthesize playerFactory=_playerFactory;
-@property(retain, nonatomic) SXKeyValueObserver *readyForDisplayObserver; // @synthesize readyForDisplayObserver=_readyForDisplayObserver;
-@property(retain, nonatomic) SXKeyValueObserver *playerItemPresentationSizeObserver; // @synthesize playerItemPresentationSizeObserver=_playerItemPresentationSizeObserver;
+@property(retain, nonatomic) SVKeyValueObserver *readyForDisplayObserver; // @synthesize readyForDisplayObserver=_readyForDisplayObserver;
+@property(retain, nonatomic) SVKeyValueObserver *playerItemPresentationSizeObserver; // @synthesize playerItemPresentationSizeObserver=_playerItemPresentationSizeObserver;
 @property(nonatomic) _Bool initiatedPlayback; // @synthesize initiatedPlayback=_initiatedPlayback;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
 @property(retain, nonatomic) SXAVPlayer *player; // @synthesize player=_player;
@@ -52,7 +48,6 @@
 @property(nonatomic) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) __weak NSObject<SXVideoPlaybackHost> *host; // @synthesize host=_host;
 @property(nonatomic) struct CGSize dimensions; // @synthesize dimensions=_dimensions;
-@property(nonatomic) _Bool hasMediaSelectionOptions; // @synthesize hasMediaSelectionOptions=_hasMediaSelectionOptions;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) id <SXVideoProviding> video; // @synthesize video=_video;
 @property(readonly, nonatomic) _Bool playbackBufferFull; // @synthesize playbackBufferFull=_playbackBufferFull;
@@ -66,12 +61,6 @@
 - (void)addPlaybackLikelyToKeepUpObserver;
 - (void)playbackBufferFullStateChanged;
 - (void)addPlaybackBuferObserver;
-- (void)updateMediaSelectionOptionAvailability;
-- (void)loadAvailableMediaCharacteristics;
-- (id)mediaSelectionController:(id)arg1 preferredMediaSelectionOptionInMediaSelectionGroup:(id)arg2;
-- (id)mediaSelectionController:(id)arg1 selectedMediaSelectionOptionInMediaSelectionGroup:(id)arg2;
-- (void)mediaSelectionController:(id)arg1 selectMediaSelectionOption:(id)arg2 inMediaSelectionGroup:(id)arg3;
-- (id)mediaSelectionController:(id)arg1 mediaSelectionGroupWithCharacteristic:(id)arg2;
 - (void)stateChanged;
 - (void)loadedTimeRangesChanged;
 - (void)timeElapsed:(double)arg1 duration:(double)arg2;

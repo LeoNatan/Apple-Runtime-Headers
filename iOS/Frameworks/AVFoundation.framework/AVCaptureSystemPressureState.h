@@ -13,6 +13,8 @@
     AVCaptureSystemPressureStateInternal *_internal;
 }
 
+- (id)spiDebugDescription;
+- (int)figLevel;
 - (id)recommendedFrameRateRangeForPortrait;
 @property(readonly) unsigned long long factors;
 @property(readonly) NSString *level;
@@ -20,7 +22,7 @@
 - (id)description;
 - (id)debugDescription;
 - (void)dealloc;
-- (id)initWithLevel:(id)arg1 factors:(unsigned long long)arg2 recommendedFrameRateRangeForPortrait:(id)arg3;
+- (id)initWithFigLevel:(int)arg1 factors:(unsigned long long)arg2 recommendedFrameRateRangeForPortrait:(id)arg3;
 - (id)init;
 
 @end

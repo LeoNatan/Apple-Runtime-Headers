@@ -24,6 +24,7 @@
 @property(nonatomic) BOOL doAddToHistory; // @synthesize doAddToHistory=mDoAddToHistory;
 @property(nonatomic) BOOL isVisited; // @synthesize isVisited=mIsVisited;
 @property(nonatomic) BOOL doEndSound; // @synthesize doEndSound=mDoEndSound;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -39,7 +40,6 @@
 - (int)targetMode;
 - (void)setTargetLocation:(id)arg1;
 - (id)targetLocation;
-- (void)dealloc;
 - (id)init;
 
 @end

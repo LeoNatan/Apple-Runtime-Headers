@@ -229,6 +229,7 @@
 - (id)_itemWithUpdatedCalendarForItem:(id)arg1;
 - (id)_itemWithIdentifier:(id)arg1 options:(long long)arg2;
 - (id)_itemWithIdentifier:(id)arg1;
+- (void)_repopulateCacheWithIdentifier:(id)arg1;
 - (id)_itemsWithExternalIdentifier:(id)arg1;
 - (id)_lookupItemsWithExternalIdentifier:(id)arg1 type:(unsigned long long)arg2;
 - (id)_lookupItemsWithIdentifiers:(id)arg1 type:(unsigned long long)arg2;

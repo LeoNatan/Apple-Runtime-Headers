@@ -26,9 +26,9 @@ struct CGSize {
 };
 
 struct UIEdgeInsets {
-    float top;
-    float left;
-    float bottom;
-    float right;
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
 };
 

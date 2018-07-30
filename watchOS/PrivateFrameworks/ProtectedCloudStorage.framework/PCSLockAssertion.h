@@ -8,6 +8,7 @@
 
 @class NSString, PCSLockManager;
 
+__attribute__((visibility("hidden")))
 @interface PCSLockAssertion : NSObject
 {
     _Bool _held;

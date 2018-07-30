@@ -9,6 +9,7 @@
 @class NSArray;
 
 @protocol NUFaceDetectionResult <NURenderResult>
+@property(readonly) CDStruct_912cb5d2 imageSize;
 @property(readonly) NSArray *faces;
 @end
 

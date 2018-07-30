@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class CWNetwork, CWTetherDevice, NSArray, NSData, NSDictionary, NSError, NSSet, NSString;
+@class CWAutoJoinStatistics, CWNetwork, CWTetherDevice, NSArray, NSData, NSDictionary, NSError, NSSet, NSString;
 
 @protocol WiFiXPCEventProtocol
 - (void)internal_joinWiFiNetworkWithUserAgent:(CWNetwork *)arg1 interfaceName:(NSString *)arg2 dialogToken:(long long)arg3 reply:(void (^)(NSError *, BOOL))arg4;
-- (void)internal_enableTetherDevice:(CWTetherDevice *)arg1 reply:(void (^)(NSError *, SFRemoteHotspotInfo *))arg2;
+- (void)internal_enableTetherDevice:(CWTetherDevice *)arg1 reply:(void (^)(NSError *, NSString *, NSString *, NSNumber *))arg2;
 - (void)internal_stopBrowsingForTetherDevicesAndReply:(void (^)(NSError *))arg1;
 - (void)internal_startBrowsingForTetherDevicesAndReply:(void (^)(NSError *))arg1;
 - (void)internal_showDHCPMessage:(NSString *)arg1 networkName:(NSString *)arg2;
@@ -21,9 +21,13 @@
 - (void)internal_startUserMode8021XUsingKeychainWithSSID:(NSData *)arg1 interfaceWithName:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)willShowJoinUIForWiFiNetwork:(CWNetwork *)arg1 interfaceName:(NSString *)arg2 reply:(void (^)(void))arg3;
 - (void)deviceAvailabilityChangedForWiFiInterfaceWithName:(NSString *)arg1 isAvailable:(BOOL)arg2;
+- (void)wowStateDidChangeForWiFiInterfaceWithName:(NSString *)arg1;
 - (void)foundTetherDevices:(NSSet *)arg1;
 - (void)realTimeModeDidEndForWiFiInterfaceWithName:(NSString *)arg1;
 - (void)realTimeModeDidStartForWiFiInterfaceWithName:(NSString *)arg1;
+- (void)joinDidCompleteForWiFiInterfaceWithName:(NSString *)arg1 error:(NSError *)arg2;
+- (void)joinDidStartForWiFiInterfaceWithName:(NSString *)arg1 ssid:(NSData *)arg2;
+- (void)autoJoinDidUpdate:(CWAutoJoinStatistics *)arg1;
 - (void)autoJoinDidCompleteForWiFiInterfaceWithName:(NSString *)arg1;
 - (void)autoJoinDidStartForWiFiInterfaceWithName:(NSString *)arg1;
 - (void)rsnHandshakeDidCompleteForWiFiInterfaceWithName:(NSString *)arg1;

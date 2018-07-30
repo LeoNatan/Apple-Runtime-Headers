@@ -22,6 +22,7 @@
     long long _gamut;
     long long _hdr;
     long long _rotation;
+    _Bool _virtual;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -47,10 +48,12 @@
 - (unsigned long long)_caPreferredScale;
 - (unsigned long long)_caHeight;
 - (unsigned long long)_caWidth;
+- (_Bool)_isVirtualMode;
+- (id)_copyWithOverrideSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) double scale;
 @property(readonly, nonatomic) struct CGSize pixelSize;
-- (id)_initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 preferredScale:(unsigned long long)arg3 scaleOverride:(double)arg4 refreshRate:(double)arg5 gamut:(long long)arg6 hdr:(long long)arg7 rotation:(long long)arg8 validityCheck:(long long)arg9;
+- (id)_initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 preferredScale:(unsigned long long)arg3 scaleOverride:(double)arg4 refreshRate:(double)arg5 gamut:(long long)arg6 hdr:(long long)arg7 rotation:(long long)arg8 virtual:(_Bool)arg9 validityCheck:(long long)arg10;
 - (id)_initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 scale:(unsigned long long)arg3 refreshRate:(double)arg4 gamut:(long long)arg5 hdr:(long long)arg6;
 - (id)_initWithCADisplayMode:(id)arg1 scale:(double)arg2 rotation:(long long)arg3;
 - (id)init;

@@ -80,6 +80,10 @@
 - (void)_handleURLRequest:(id)arg1;
 - (void)_setUserInfoObject:(id)arg1;
 - (void)_removeUserInfoObject;
+- (void)expire;
+- (_Bool)_attachedToExternalContentKeySession;
+- (id)contentKeySession;
+- (long)_attachToContentKeySession:(id)arg1 failedSinceAlreadyAttachedToAnotherSession:(_Bool *)arg2;
 @property(readonly, nonatomic) _Bool mayRequireContentKeysForMediaDataProcessing;
 - (id)_installHandlerForNSURLSessionConfiguration:(id)arg1 queue:(id)arg2;
 

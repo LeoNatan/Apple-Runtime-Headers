@@ -8,20 +8,25 @@
 
 #import "HMFMessageReceiver.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface _HMCameraStream : _HMCameraSource <HMFMessageReceiver>
 {
     unsigned long long _audioStreamSetting;
+    NSNumber *_audioVolume;
 }
 
+- (void).cxx_destruct;
 - (void)_handleAudioStreamSettingUpdate:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2 error:(id)arg3;
 - (void)_issueUpdateAudioStreamSettingRequest:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateAudioStreamSetting:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateAudioStreamSetting:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_updateAudioVolume:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)updateAudioVolume:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(retain, nonatomic) NSNumber *audioVolume; // @synthesize audioVolume=_audioVolume;
 @property(nonatomic) unsigned long long audioStreamSetting; // @synthesize audioStreamSetting=_audioStreamSetting;
 - (void)dealloc;
-- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 profileUniqueIdentifier:(id)arg6 aspectRatio:(id)arg7 audioStreamSetting:(unsigned long long)arg8;
+- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 context:(id)arg3 profileUniqueIdentifier:(id)arg4 aspectRatio:(id)arg5 audioStreamSetting:(unsigned long long)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

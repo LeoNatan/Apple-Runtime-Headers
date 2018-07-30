@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) NSDictionary *imageProperties;
 @property(readonly, nonatomic) PFVideoAVObjectBuilder *videoObjectBuilder;
 @property(readonly, nonatomic) unsigned long long livePhotoVisibilityState;
+@property(readonly, nonatomic) unsigned long long originalResourceChoice;
 @property(readonly, nonatomic, getter=isInPlaceVideoTrimAllowed) _Bool inPlaceVideoTrimAllowed;
 @property(readonly, nonatomic, getter=isLivePhotoVisibilityAdjustmentAllowed) _Bool livePhotoVisibilityAdjustmentAllowed;
 @property(readonly, nonatomic, getter=isContentAdjustmentAllowed) _Bool contentAdjustmentAllowed;
@@ -25,5 +26,6 @@
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 - (void)cancelContentEditingInputRequest:(unsigned long long)arg1;
 - (unsigned long long)requestContentEditingInputWithOptions:(PHContentEditingInputRequestOptions *)arg1 completionHandler:(void (^)(PHContentEditingInput *, NSDictionary *))arg2;
+- (_Bool)isOriginalRaw;
 @end
 

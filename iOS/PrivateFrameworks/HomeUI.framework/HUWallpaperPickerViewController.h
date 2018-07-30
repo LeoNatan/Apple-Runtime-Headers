@@ -13,7 +13,7 @@
 
 @class HUNamedWallpaperCollectionViewController, NSArray, NSMutableDictionary, NSString, PHCachingImageManager;
 
-@interface HUWallpaperPickerViewController : HUTableViewController <PHPhotoLibraryChangeObserver, HUWallpaperEditingViewControllerDelegate, HUNamedWallpaperCollectionViewControllerDelegate, HUWallpaperPhotoCollectionViewControllerDelegate>
+@interface HUWallpaperPickerViewController : HUTableViewController <HUWallpaperEditingViewControllerDelegate, HUNamedWallpaperCollectionViewControllerDelegate, HUWallpaperPhotoCollectionViewControllerDelegate, PHPhotoLibraryChangeObserver>
 {
     id <HUWallpaperPickerViewControllerDelegate> _delegate;
     long long _collectionType;
@@ -45,6 +45,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+@property(readonly, nonatomic) _Bool shouldShowPhotoLibrary;
 - (void)contentSizeCategoryDidChange;
 - (void)viewDidLoad;
 - (id)initWithStyle:(long long)arg1;

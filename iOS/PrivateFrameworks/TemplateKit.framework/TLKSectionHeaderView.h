@@ -19,13 +19,12 @@
 
 @property(retain) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) UILabel *headerTextLabel; // @synthesize headerTextLabel=_headerTextLabel;
-@property(retain) TLKMultilineText *headerText; // @synthesize headerText=_headerText;
+@property(retain, nonatomic) TLKMultilineText *headerText; // @synthesize headerText=_headerText;
 - (void).cxx_destruct;
 - (id)headerLabelText;
 - (long long)containerBoxView:(id)arg1 verticalAlignmentForArrangedSubview:(id)arg2;
 - (long long)containerBoxView:(id)arg1 horizontalAlignmentForArrangedSubview:(id)arg2;
 - (void)observedPropertiesChanged;
-- (id)observableProperties;
 - (void)styleDidChange:(unsigned long long)arg1;
 - (id)init;
 

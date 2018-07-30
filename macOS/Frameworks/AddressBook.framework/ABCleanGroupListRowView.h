@@ -10,7 +10,6 @@
 
 @class NSString, NSTrackingArea;
 
-__attribute__((visibility("hidden")))
 @interface ABCleanGroupListRowView : NSTableRowView <ABGroupListRowView>
 {
     BOOL _highlighted;
@@ -22,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)addTrackingAreaToVisibleRect;
-- (void)x_drawSelectionInRect:(struct CGRect)arg1;
 - (void)enumerateGroupListCellViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)updateSelectionAppearanceOfCellViews;
 - (BOOL)mouseDownCanMoveWindow;

@@ -6,17 +6,16 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface TCMessagePlaceholderInfo : NSObject
 {
     id mKey;
     BOOL mInUse;
 }
 
+- (void).cxx_destruct;
 - (void)setInUse:(BOOL)arg1;
 - (BOOL)isInUse;
 - (id)key;
-- (void)dealloc;
 - (id)init;
 
 @end

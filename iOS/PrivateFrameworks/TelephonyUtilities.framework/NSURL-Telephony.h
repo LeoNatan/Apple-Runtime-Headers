@@ -25,11 +25,11 @@
 @property(readonly) _Bool isVoicemailURL;
 @property(readonly) _Bool isEmergencyCallURL;
 @property(readonly) _Bool isEmergencyURL;
-@property(readonly) _Bool isBasebandLogURL;
+@property(readonly, nonatomic, getter=isBasebandLogURL) _Bool basebandLogURL;
 - (id)webSafeTelephoneURL;
 - (_Bool)isWebSafeTelephoneURL;
-- (id)numberQualifiedForAddressBook;
-- (id)formattedPhoneNumber;
+@property(readonly, copy, nonatomic) NSString *numberQualifiedForAddressBook;
+@property(readonly, copy, nonatomic) NSString *formattedPhoneNumber;
 - (_Bool)_hasScheme:(id)arg1;
 - (_Bool)hasTelephonyScheme;
 - (_Bool)isTelephonyPromptURL;
@@ -40,7 +40,7 @@
 @property(readonly) _Bool forceAssist;
 @property(readonly) NSString *originatingUIIdentifier;
 @property(readonly) int callService;
-@property(readonly) int addressBookUID;
+@property(readonly, nonatomic) int addressBookUID;
 @property(readonly) NSString *phoneNumber;
 - (id)_destinationIDConvertingNumbersToLatin:(_Bool)arg1;
 @end

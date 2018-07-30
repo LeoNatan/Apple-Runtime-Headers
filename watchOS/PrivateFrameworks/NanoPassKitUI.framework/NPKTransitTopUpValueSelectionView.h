@@ -6,26 +6,27 @@
 
 #import <NanoPassKitUI/NPKValueSelectionView.h>
 
-@class NPKPassDescription, NSDecimalNumber, NSNumberFormatter, PKPaymentPassAction;
+@class NSDecimalNumber, NSNumberFormatter, PKPass, PKPaymentPassAction;
 
 @interface NPKTransitTopUpValueSelectionView : NPKValueSelectionView
 {
     PKPaymentPassAction *_topUpAction;
     NSDecimalNumber *_cardBalance;
-    NPKPassDescription *_passDescription;
     NSNumberFormatter *_balanceFormatter;
+    PKPass *_pass;
 }
 
+@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) NSNumberFormatter *balanceFormatter; // @synthesize balanceFormatter=_balanceFormatter;
-@property(retain, nonatomic) NPKPassDescription *passDescription; // @synthesize passDescription=_passDescription;
 @property(retain, nonatomic) NSDecimalNumber *cardBalance; // @synthesize cardBalance=_cardBalance;
 @property(retain, nonatomic) PKPaymentPassAction *topUpAction; // @synthesize topUpAction=_topUpAction;
 - (void).cxx_destruct;
 - (void)setShouldDisplayActivityIndicator:(_Bool)arg1;
 - (id)annotationStringWithValue:(id)arg1;
 - (id)_newAcceptButton;
+- (id)_constraintAdjustedAmountForAmount:(id)arg1;
 - (short)_roundingScale;
-- (id)initWithPassDescription:(id)arg1 action:(id)arg2;
+- (id)initWithPass:(id)arg1 transitProperties:(id)arg2 action:(id)arg3;
 
 @end
 

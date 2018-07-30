@@ -16,6 +16,7 @@
     NSMutableDictionary *_localSourceIDsByOriginalSourceID;
     NSMutableSet *_deletedObjectTypeSet;
     _Bool _insertDeletedObjects;
+    _Bool _callWillDeleteFromDatabase;
     HDSQLiteDatabase *_database;
     CDUnknownBlockType _recursiveDeleteAuthorizationBlock;
     NSNumber *_lastInsertedDeletedObjectPersistentID;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) unsigned long long deletedObjectCount; // @synthesize deletedObjectCount=_deletedObjectCount;
 @property(readonly, copy, nonatomic) NSSet *deletedObjectTypeSet; // @synthesize deletedObjectTypeSet=_deletedObjectTypeSet;
 @property(readonly, nonatomic) NSNumber *lastInsertedDeletedObjectPersistentID; // @synthesize lastInsertedDeletedObjectPersistentID=_lastInsertedDeletedObjectPersistentID;
+@property(nonatomic) _Bool callWillDeleteFromDatabase; // @synthesize callWillDeleteFromDatabase=_callWillDeleteFromDatabase;
 @property(nonatomic) _Bool insertDeletedObjects; // @synthesize insertDeletedObjects=_insertDeletedObjects;
 @property(copy, nonatomic) CDUnknownBlockType recursiveDeleteAuthorizationBlock; // @synthesize recursiveDeleteAuthorizationBlock=_recursiveDeleteAuthorizationBlock;
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;

@@ -10,13 +10,17 @@
 #import "PUICCrownInputSequencerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CLKFont, NSDateComponentsFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKComplicationController, NTKDateComplicationLabel, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKFloatCurve, NTKLayoutRule, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@class NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 
 @interface NTKSolarFaceView : NTKDigitalFaceView <NTKTimeView, PUICCrownInputSequencerDelegate, UIGestureRecognizerDelegate>
 {
-    NTKDigitalTimeLabel *_timeLabel;
-    NTKDigitalTimeLabelStyle *_timeLabelDefaultStyle;
-    NTKDigitalTimeLabelStyle *_timeLabelSmallInUpperRightCornerStyle;
+    NTKDigitialUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
+    NTKColorCurve *_preNoonComplicationColorCurve;
+    NTKColorCurve *_postNoonComplicationColorCurve;
+    NTKDigitalTimeLabel *_digitalTimeLabel;
+    NTKDigitalTimeLabelStyle *_digitalTimeLabelDefaultStyle;
+    NTKDigitalTimeLabelStyle *_digitalTimeLabelSmallInUpperRightCornerStyle;
+    UIView *_solarContentView;
     UIView *_solarPathObjectContainerView;
     NTKBezierPathView *_solarBezierPathView;
     NTKSolarDiskView *_solarDiskView;
@@ -26,6 +30,9 @@
     NTKColorCurve *_preNoonSolarDiskColorCurve;
     NTKColorCurve *_postNoonSolarDiskColorCurve;
     PUICClientSideAnimation *_solarDiskAnimation;
+    PUICClientSideAnimation *_modeInterpolationAnimation;
+    float _lastOffset;
+    int _lastWaypoint;
     float _solarDiskOverridePercentage;
     UILabel *_waypointLabel;
     NSDictionary *_waypoints;
@@ -37,7 +44,6 @@
     NTKColorCurve *_postNoonHorizonGradientColorCurve;
     UIView *_belowHorizonView;
     NTKSolarTimeModel *_solarTimeModel;
-    _Bool _solarPathNeedsUpdate;
     float _currentSolarDiskPercentage;
     NTKFloatCurve *_preNoonHorizonHeightCurve;
     NTKFloatCurve *_postNoonHorizonHeightCurve;
@@ -46,43 +52,43 @@
     int _previousViewMode;
     struct NSNumber *_clockTimerToken;
     struct NSString *_locationManagerToken;
-    NTKComplicationController *_dateComplicationController;
-    NTKDateComplicationLabel *_dateComplicationLabel;
-    NTKLayoutRule *_dateComplicationLayoutRule;
-    _Bool _canHandleHardwareEvents;
     PUICCrownInputSequencer *_crownSequencer;
-    NTKDigitalTimeLabel *_timeScrubLabel;
-    NTKDigitalTimeLabelStyle *_timeScrubLabelStyle;
-    UILabel *_timeScrubNowLabel;
-    UILabel *_timeDifferenceScrubLabel;
-    NTKLayoutRule *_timeDifferenceScrubLabelLayoutRule;
-    NSDateComponentsFormatter *_intervalDateFormatter;
-    _Bool _useLocationAwareInteractiveMode;
+    UILabel *_scrubLabel;
+    UILabel *_overrideDateLabel;
+    NSDateFormatter *_overrideDateFormatter;
     CDUnknownBlockType _waypointSettleAnimationBlock;
-    UIView *_wristRaiseBackgroundView;
-    UIView *_wristRaiseSunView;
-    UIView *_wristRaiseSunMaskView;
     UIView *_zoomMaskView;
-    struct CGPoint _timeLabelZoomEndingCenter;
+    struct CGPoint _digitalTimeLabelZoomEndingCenter;
     struct CGPoint _dateLabelZoomEndingCenter;
     struct CGPoint _solarDiskViewZoomEndingCenter;
     UIView *_borrowedTimeViewFromClockIcon;
     UIView *_borrowedCircleViewFromClockIcon;
     NSMutableSet *_animatingReasons;
-    _Bool _isContentLoaded;
     NSTimer *_wheelDelayTimer;
     NSTimer *_buttonPressTimer;
-    CLKFont *_labelFont;
+    float _labelFontLineHeight;
+    unsigned int _isContentLoaded:1;
+    unsigned int _isSolarPathUpdateNeeded:1;
+    unsigned int _isLocationAwareInteractiveModeEnabled:1;
+    unsigned int _isHandlingHardwareEvents:1;
 }
 
 - (void).cxx_destruct;
+- (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (void)_configureForEditMode:(int)arg1;
+- (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
+- (void)_adjustUIForBoundsChange;
+- (void)_cleanupAfterEditing;
+- (void)_prepareForEditing;
+- (void)_bringForegroundViewsToFront;
+- (void)_layoutForegroundContainerView;
+- (_Bool)_needsForegroundContainerView;
 - (void)_layoutTimeLabelForViewMode:(int)arg1;
-- (id)_timeLabelStyleForViewMode:(int)arg1;
+- (id)_digitalTimeLabelStyleForViewMode:(int)arg1;
 - (void)_layoutSolarDiskViewForViewMode:(int)arg1;
 - (void)_layoutSolarPathAndContainerForViewMode:(int)arg1;
 - (void)_layoutHorizonForViewMode:(int)arg1;
-- (void)_layoutCrownLabelsForViewMode:(int)arg1;
-- (void)_layoutDateComplicationForViewMode:(int)arg1;
 - (_Bool)_isAnimatingForReason:(id)arg1;
 - (_Bool)_isAnimating;
 - (void)_endAnimatingForReason:(id)arg1;
@@ -90,7 +96,10 @@
 - (void)_cleanupAfterSettingViewMode:(int)arg1;
 - (void)_prepareForSettingViewMode:(int)arg1;
 - (void)_setViewMode:(int)arg1 animated:(_Bool)arg2;
+- (void)_interpolateFromViewMode:(int)arg1 toViewMode:(int)arg2 progress:(float)arg3;
 - (_Bool)_canEnterInteractiveMode;
+- (void)_updateToViewMode:(int)arg1;
+- (void)_transitionToViewMode:(int)arg1;
 - (void)_setSolarBezierPath:(id)arg1 animated:(_Bool)arg2;
 - (id)_createSolarBezierPath;
 - (void)_updateSolarPathForChangedDate:(id)arg1;
@@ -103,6 +112,7 @@
 - (void)_solarDiskPercentageChanged:(float)arg1;
 - (float)_solarDiskIdealizedDatePercentage;
 - (float)_solarDiskRestPercentage;
+- (void)_updateComplicationColorWithPercentage:(float)arg1;
 - (void)_updateSolarHorizonGradientColorWithPercentage:(float)arg1;
 - (void)_updateSolarHorizonGradientAlphaWithSolarDiskCenter:(struct CGPoint)arg1;
 - (void)_updateSolarHorizonGradientAlphaWithPercentage:(float)arg1;
@@ -110,19 +120,16 @@
 - (void)_updateColorCurves;
 - (void)_updateWaypointLabelForCrownMovement;
 - (id)_waypointLabelTextForPercentage:(float)arg1;
+- (int)_waypointBetweenPreviousOffset:(float)arg1 currentOffset:(float)arg2;
 - (int)_waypointForPercentage:(float)arg1 withSmallThreshold:(float)arg2 largeThreshold:(float)arg3;
 - (float)_percentageForWaypoint:(int)arg1;
 - (void)_updateWaypoints;
 - (void)_handleViewModeTapGesture:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)_makeLocationAwareInteractiveModeUIVisible:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_localeChanged;
+- (void)_updateLocale;
+- (void)_asyncUpdateLocale;
 - (void)_timeZoneChanged:(id)arg1;
 - (_Bool)_solarPathRequiresUpdateForChangedLocation:(id)arg1;
 - (void)_sharedLocationManagerUpdatedLocation:(id)arg1 error:(id)arg2;
-- (id)_formatDateStringForIntervalBetweenReferenceDate:(id)arg1 andOverrideDate:(id)arg2;
-- (void)_performWristRaiseAnimation;
-- (void)_prepareWristRaiseAnimation;
 - (void)_cleanupAfterZoom;
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
@@ -141,8 +148,7 @@
 - (_Bool)_wheelChangedWithEvent:(id)arg1;
 - (void)_disableCrown;
 - (void)_enableCrown;
-- (void)_adjustUIForBoundsChange;
-- (void)_loadLayoutRules;
+- (void)_updateDigitalTimeLabelStylesForBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)setViewMode:(int)arg1;
@@ -150,8 +156,18 @@
 - (void)_becameActiveFace;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
+- (float)_minimumBreathingScaleForComplicationSlot:(id)arg1;
+- (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
+- (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (float)keylineStyleForComplicationSlot:(id)arg1;
+- (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (void)_loadLayoutRules;
+- (id)_detachedComplicationDisplays;
+- (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
+- (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
+- (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

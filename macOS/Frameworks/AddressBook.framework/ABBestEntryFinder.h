@@ -8,7 +8,6 @@
 
 @class ABAddressBook, NSArray, NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface ABBestEntryFinder : NSObject
 {
     NSArray *_entries;

@@ -12,23 +12,25 @@
 
 @interface CEMSecurityIdentityDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadCredentialIdentifier;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withCredentialIdentifier:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withCredentialIdentifier:(id)arg2;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadCredentialIdentifier; // @synthesize payloadCredentialIdentifier=_payloadCredentialIdentifier;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSString *payloadCredentialIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

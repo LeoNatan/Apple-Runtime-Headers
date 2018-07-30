@@ -8,30 +8,10 @@
 
 @class NSData, NSSet;
 
-__attribute__((visibility("hidden")))
 @interface CUICommonAssetStorage : NSObject
 {
-    struct _carheader {
-        unsigned int _field1;
-        unsigned int _field2;
-        unsigned int _field3;
-        unsigned int _field4;
-        unsigned int _field5;
-        char _field6[128];
-        char _field7[256];
-        unsigned char _field8[16];
-        unsigned int _field9;
-        unsigned int _field10;
-        unsigned int _field11;
-        unsigned int _field12;
-    } *_header;
-    struct _carextendedMetadata {
-        unsigned int _field1;
-        char _field2[256];
-        char _field3[256];
-        char _field4[256];
-        char _field5[256];
-    } *_extendedMetadata;
+    struct _carheader *_header;
+    struct _carextendedMetadata *_extendedMetadata;
     struct _renditionkeyfmt *_keyfmt;
     void *_imagedb;
     void *_colordb;
@@ -41,6 +21,7 @@ __attribute__((visibility("hidden")))
     void *_zcbezeldb;
     void *_facetKeysdb;
     void *_bitmapKeydb;
+    void *_appearancedb;
     NSData *_globals;
     unsigned int _swap:1;
     unsigned int _isMemoryMapped:1;
@@ -55,6 +36,22 @@ __attribute__((visibility("hidden")))
 + (_Bool)isValidAssetStorageWithURL:(id)arg1;
 + (_Bool)isValidAssetStorageWithBytes:(const void *)arg1 length:(unsigned long)arg2;
 + (void)initialize;
+@property(nonatomic) NSData *globals; // @synthesize globals=_globals;
+@property(nonatomic) void *appearancedb; // @synthesize appearancedb=_appearancedb;
+@property(nonatomic) void *bitmapKeydb; // @synthesize bitmapKeydb=_bitmapKeydb;
+@property(nonatomic) void *facetKeysdb; // @synthesize facetKeysdb=_facetKeysdb;
+@property(nonatomic) void *zcbezeldb; // @synthesize zcbezeldb=_zcbezeldb;
+@property(nonatomic) void *zcglyphdb; // @synthesize zcglyphdb=_zcglyphdb;
+@property(nonatomic) void *fontsizedb; // @synthesize fontsizedb=_fontsizedb;
+@property(nonatomic) void *fontdb; // @synthesize fontdb=_fontdb;
+@property(nonatomic) void *colordb; // @synthesize colordb=_colordb;
+@property(nonatomic) void *imagedb; // @synthesize imagedb=_imagedb;
+@property(nonatomic) struct _renditionkeyfmt *keyfmt; // @synthesize keyfmt=_keyfmt;
+@property(nonatomic) struct _carextendedMetadata *extendedMetadata; // @synthesize extendedMetadata=_extendedMetadata;
+@property(nonatomic) struct _carheader *header; // @synthesize header=_header;
+- (id)appearances;
+- (id)nameForAppearanceIdentifier:(unsigned short)arg1;
+- (unsigned short)appearanceIdentifierForName:(id)arg1;
 - (int)validateBitmapInfo;
 - (void)_buildBitmapInfoIntoDictionary:(id)arg1;
 - (void)_addBitmapIndexForNameIdentifier:(unsigned short)arg1 attribute:(int)arg2 withValue:(unsigned short)arg3 toDictionary:(id)arg4;
@@ -100,6 +97,7 @@ __attribute__((visibility("hidden")))
 - (const struct _renditionkeyfmt *)keyFormat;
 - (id)keyFormatData;
 - (int)keySemantics;
+- (void)updateTimestamp;
 - (long)storageTimestamp;
 - (long)_storagefileTimestamp;
 - (unsigned int)schemaVersion;
@@ -118,6 +116,9 @@ __attribute__((visibility("hidden")))
 - (void)_swapHeader;
 - (void)_bringHeaderInfoUpToDate;
 - (void)_initDefaultHeaderVersion:(double)arg1 versionString:(const char *)arg2;
+- (void)setExternalTags:(id)arg1;
+- (struct os_unfair_lock_s *)renditionInfoCacheLock;
+- (struct os_unfair_lock_s *)lock;
 
 @end
 

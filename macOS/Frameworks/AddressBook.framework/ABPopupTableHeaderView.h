@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABTableHeaderView.h>
 
-__attribute__((visibility("hidden")))
 @interface ABPopupTableHeaderView : ABTableHeaderView
 {
 }

@@ -9,12 +9,14 @@
 @class NFApplet, NFPeerPaymentEnrollmentRequest, NFRunScriptParameters, NSArray, NSData, NSDictionary, NSSet, NSString;
 
 @protocol NFSecureElementManagerSessionInterface <NFSessionInterface>
+- (oneway void)getOSUpdateLog:(void (^)(NSData *, NSError *))arg1;
 - (oneway void)powerCycleSEID:(NSString *)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)dumpDomain:(unsigned char)arg1 forSEID:(NSString *)arg2 callback:(void (^)(NSDictionary *, NSError *))arg3;
 - (oneway void)getAttackCounterLogForSEID:(NSString *)arg1 callback:(void (^)(NSDictionary *, NSError *))arg2;
 - (oneway void)performPeerPaymentEnrollment:(NFPeerPaymentEnrollmentRequest *)arg1 callback:(void (^)(NFPeerPaymentEnrollmentResponse *, NSError *))arg2;
+- (oneway void)checkSEExpressAppletCompatibility:(NSDictionary *)arg1 callback:(void (^)(NSArray *, NSError *))arg2;
 - (oneway void)removeExpressApplet:(NFApplet *)arg1 type:(unsigned char)arg2 restoreAuthorization:(BOOL)arg3 callback:(void (^)(NSError *))arg4;
-- (oneway void)addExpressApplet:(NFApplet *)arg1 type:(unsigned char)arg2 authorization:(NSData *)arg3 callback:(void (^)(NSError *))arg4;
+- (oneway void)addExpressApplet:(NFApplet *)arg1 type:(unsigned char)arg2 authorization:(NSData *)arg3 expressInfo:(NSDictionary *)arg4 callback:(void (^)(NSError *))arg5;
 - (oneway void)expressModesInfo:(void (^)(BOOL, NSDictionary *))arg1;
 - (oneway void)getTransitAppletState:(NFApplet *)arg1 callback:(void (^)(NSDictionary *, NSError *))arg2;
 - (oneway void)getFelicaAppletState:(NFApplet *)arg1 callback:(void (^)(NSDictionary *, NSError *))arg2;

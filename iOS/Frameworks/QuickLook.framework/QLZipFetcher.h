@@ -8,7 +8,6 @@
 
 @class NSError, NSString, QLURLHandler, UIDocumentInteractionController;
 
-__attribute__((visibility("hidden")))
 @interface QLZipFetcher : QLItemFetcher
 {
     UIDocumentInteractionController *_archiveController;

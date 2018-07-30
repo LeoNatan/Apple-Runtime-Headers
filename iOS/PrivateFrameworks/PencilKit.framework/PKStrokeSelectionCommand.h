@@ -20,7 +20,7 @@
 
 + (id)commandForDeselectingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform)arg3 previousSelectionTransform:(struct CGAffineTransform)arg4;
 + (id)commandForMovingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform)arg3 previousSelectionTransform:(struct CGAffineTransform)arg4 fromDrawingUUID:(id)arg5;
-+ (id)commandForSelectingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform)arg3;
++ (id)commandForSelectingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform)arg3 previousSelectionTransform:(struct CGAffineTransform)arg4;
 @property(readonly, nonatomic) NSUUID *fromDrawingUUID; // @synthesize fromDrawingUUID=_fromDrawingUUID;
 @property(readonly, nonatomic) struct CGAffineTransform previousSelectionTransform; // @synthesize previousSelectionTransform=_previousSelectionTransform;
 @property(readonly, nonatomic) struct CGAffineTransform selectionTransform; // @synthesize selectionTransform=_selectionTransform;

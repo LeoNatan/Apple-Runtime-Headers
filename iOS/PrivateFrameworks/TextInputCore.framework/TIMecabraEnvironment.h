@@ -36,6 +36,7 @@
 @property(retain, nonatomic) NSMutableArray *candidatesLeftOfCaret; // @synthesize candidatesLeftOfCaret=_candidatesLeftOfCaret;
 @property(nonatomic) _Bool shouldAdjustOnAnalyze; // @synthesize shouldAdjustOnAnalyze=_shouldAdjustOnAnalyze;
 @property(retain, nonatomic) TIMecabraEnvironmentContextWrapper *mecabraContextWrapper; // @synthesize mecabraContextWrapper=_mecabraContextWrapper;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *rightCandidateSurfaces;
 @property(readonly, nonatomic) NSArray *inlineCandidateSurfaces;
 @property(readonly, nonatomic) NSArray *contextCandidateSurfaces;
@@ -57,7 +58,6 @@
 - (_Bool)predictionAnalyzeWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
 - (_Bool)analyzeString:(id)arg1 options:(unsigned long long)arg2;
 @property(readonly, nonatomic) struct __Mecabra *mecabra;
-- (void)dealloc;
 - (id)initWithMecabraEngine:(struct __Mecabra *)arg1 language:(int)arg2;
 - (void)adjustEnvironment:(long long)arg1;
 - (void)compareDocumentAndEnvironmentCandidates;

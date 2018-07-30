@@ -8,6 +8,7 @@
 
 @class UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface AERoundedCornerButton : UIControl
 {
     long long __layoutStyle;

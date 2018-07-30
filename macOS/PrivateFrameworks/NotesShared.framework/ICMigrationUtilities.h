@@ -10,6 +10,8 @@
 {
 }
 
++ (void)deleteMigratedHTMLAccountIfNecessaryForModernAccount:(id)arg1;
++ (void)deleteMigratedHTMLAccounts;
 + (void)updateAllLegacyAccountMigrationStates;
 + (void)updateLegacyAccountMigrationStateForModernAccount:(id)arg1;
 + (void)clearPostIAMigrationFlagFromAccount:(id)arg1;

@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface AVRunLoopConditionRunLoopState : NSObject
 {
     struct __CFRunLoop *_runLoop;

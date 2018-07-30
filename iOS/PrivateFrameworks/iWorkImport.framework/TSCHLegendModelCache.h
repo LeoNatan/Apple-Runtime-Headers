@@ -27,9 +27,11 @@ __attribute__((visibility("hidden")))
     _Bool mReverseSingleColumnLegendOrder;
     double mLastLegendWidth;
     TSCHLegendViewCache *mLastLegendViewCache;
+    _Bool mLegendIsRTL;
     double mSymbolGap;
 }
 
+@property(readonly) _Bool legendIsRTL; // @synthesize legendIsRTL=mLegendIsRTL;
 @property(readonly) _Bool reverseSingleColumnLegendOrder; // @synthesize reverseSingleColumnLegendOrder=mReverseSingleColumnLegendOrder;
 @property(readonly) double effectiveStrokeWidth; // @synthesize effectiveStrokeWidth=mEffectiveStrokeWidth;
 @property(readonly) struct CGSize largestCellSize; // @synthesize largestCellSize=mLargestCellSize;

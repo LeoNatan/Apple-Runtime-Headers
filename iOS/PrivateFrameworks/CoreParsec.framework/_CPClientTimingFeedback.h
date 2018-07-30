@@ -14,11 +14,6 @@
 
 @interface _CPClientTimingFeedback : PBCodable <_CPProcessableFeedback, _CPClientTimingFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int queryId:1;
-        unsigned int nanosecondInterval:1;
-    } _has;
     unsigned long long _timestamp;
     NSString *_input;
     NSString *_eventName;
@@ -30,7 +25,7 @@
 @property(nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
@@ -40,11 +35,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasNanosecondInterval;
-@property(readonly, nonatomic) _Bool hasQueryId;
-@property(readonly, nonatomic) _Bool hasEventName;
-@property(readonly, nonatomic) _Bool hasInput;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

@@ -43,7 +43,6 @@
 + (id)_quicklookURLForContact:(id)arg1;
 + (id)_popoverAnimationControllerWithContents:(id)arg1 anchorView:(id)arg2 vibrant:(BOOL)arg3;
 + (void)updateContact:(id)arg1 withLikeness:(id)arg2;
-+ (id)backgroundColorForLikeness:(id)arg1;
 + (id)photoDataLikenessForContact:(id)arg1;
 + (BOOL)canCreateMonogramForContact:(id)arg1;
 + (id)_monogramStringForContact:(id)arg1;

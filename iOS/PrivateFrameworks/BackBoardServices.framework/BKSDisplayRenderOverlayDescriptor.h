@@ -32,6 +32,7 @@
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(copy, nonatomic) NSString *displayUUID; // @synthesize displayUUID=_displayUUID;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -41,8 +42,7 @@
 @property(readonly, copy) NSString *description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-@property(readonly, retain, nonatomic) CADisplay *display; // @synthesize display=_display;
-- (void)dealloc;
+@property(readonly, nonatomic) CADisplay *display; // @synthesize display=_display;
 - (id)initWithName:(id)arg1 display:(id)arg2;
 - (id)_initWithName:(id)arg1 displayUUID:(id)arg2;
 

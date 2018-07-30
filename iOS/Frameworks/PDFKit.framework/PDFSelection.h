@@ -22,6 +22,8 @@
 - (void)drawForPage:(id)arg1 withBox:(int)arg2 active:(_Bool)arg3 inContext:(struct CGContext *)arg4;
 - (void)setForceBreaks:(_Bool)arg1;
 - (_Bool)forceBreaks;
+- (void)setCornerRadius:(double)arg1;
+- (double)cornerRadius;
 - (void)setInactiveColor:(id)arg1;
 - (id)inactiveColor;
 - (void)setActiveColor:(id)arg1;

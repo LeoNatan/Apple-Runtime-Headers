@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSString, RTLOIDisplayInfo, RTPredictedLocationOfInterest;
+@class NSString, RTLOIDisplayInfo, RTMapItem, RTPredictedLocationOfInterest;
 
 @interface RTPLOIETA : NSObject
 {
     RTPredictedLocationOfInterest *_ploi;
-    id <GEOMapItem> _origin;
+    RTMapItem *_origin;
     unsigned int _responseETASeconds;
     unsigned int _baselineETASeconds;
     NSString *_responseRouteDescription;

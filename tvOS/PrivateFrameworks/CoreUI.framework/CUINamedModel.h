@@ -6,7 +6,6 @@
 
 #import <CoreUI/CUINamedLookup.h>
 
-__attribute__((visibility("hidden")))
 @interface CUINamedModel : CUINamedLookup
 {
 }

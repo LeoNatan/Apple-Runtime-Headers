@@ -10,6 +10,29 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct LogCategory {
+    int _field1;
+    int _field2;
+    char *_field3;
+    unsigned int _field4;
+    char *_field5;
+    char *_field6;
+    int _field7;
+    struct LogCategory *_field8;
+    struct LogOutput *_field9;
+    struct LogOutput *_field10;
+    unsigned long long _field11;
+    unsigned long long _field12;
+    unsigned int _field13;
+    unsigned int _field14;
+    char *_field15;
+    struct LogCategoryPrivate *_field16;
+};
+
+struct LogCategoryPrivate;
+
+struct LogOutput;
+
 struct NSMutableDictionary {
     Class _field1;
 };
@@ -17,4 +40,14 @@ struct NSMutableDictionary {
 struct NSMutableSet {
     Class _field1;
 };
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    struct {
+        unsigned char _field1;
+        unsigned char _field2[3];
+    } _field1;
+    unsigned char _field2[4];
+} CDStruct_793dca1b;
 

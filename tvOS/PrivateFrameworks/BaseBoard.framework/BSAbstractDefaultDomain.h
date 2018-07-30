@@ -24,6 +24,7 @@
 + (id)__getPropertyMetadataForProperty:(struct objc_property *)arg1;
 + (void)__processPropertyMetadata:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 - (_Bool)_isCollectionEmpty:(id)arg1;
 - (id)_propertyFromSelector:(SEL)arg1;
 - (id)_defaultKeyFromPropertyName:(id)arg1;

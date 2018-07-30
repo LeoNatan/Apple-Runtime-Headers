@@ -8,6 +8,10 @@
 
 @interface NSImage (IMRenderingUtilities)
 + (id)imageNamed:(id)arg1 messagesImageState:(int)arg2 size:(struct CGSize)arg3 invertColor:(BOOL)arg4;
++ (id)imageNamed:(id)arg1 messagesImageState:(int)arg2 size:(struct CGSize)arg3 invertColor:(BOOL)arg4 additionalCacheKey:(id)arg5 tintColor:(id)arg6;
++ (id)defaultDarkColorForMessageImageState:(int)arg1 invertColor:(BOOL)arg2;
++ (id)defaultColorForMessageImageState:(int)arg1 invertColor:(BOOL)arg2;
++ (id)_cacheName:(id)arg1 messagesImageState:(int)arg2 size:(struct CGSize)arg3 invertColor:(BOOL)arg4 additionalCacheKey:(id)arg5;
 + (id)imageNamed:(id)arg1 messagesImageState:(int)arg2 size:(struct CGSize)arg3;
 + (id)imageNamed:(id)arg1 messagesImageState:(int)arg2;
 - (id)messagesTintedImageWithColor:(id)arg1 withSize:(struct CGSize)arg2;

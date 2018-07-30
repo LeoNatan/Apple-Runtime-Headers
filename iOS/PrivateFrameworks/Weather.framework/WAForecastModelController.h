@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, WFServiceConnection;
 
+__attribute__((visibility("hidden")))
 @interface WAForecastModelController : NSObject
 {
     NSOperationQueue *_forecastOperationQueue;

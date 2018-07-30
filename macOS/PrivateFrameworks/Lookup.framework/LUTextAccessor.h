@@ -16,21 +16,20 @@
 + (id)windowAtScreenLocation:(struct CGPoint)arg1;
 + (BOOL)canAccessTextInView:(id)arg1;
 + (BOOL)canAccessTextAtLocation:(struct CGPoint)arg1;
-+ (struct _NSRange)rangeOfTermInString:(id)arg1 containingOffset:(unsigned long long)arg2 language:(id *)arg3 partOfSpeech:(id *)arg4;
++ (struct _NSRange)rangeOfTermInString:(id)arg1 containingOffset:(unsigned long long)arg2;
 + (struct _NSRange)rangeOfAddressInString:(id)arg1 forRange:(struct _NSRange)arg2;
 + (struct _NSRange)rangeOfParagraphInString:(id)arg1 containingOffset:(unsigned long long)arg2;
-+ (id)languageOfString:(id)arg1 forRange:(struct _NSRange)arg2 partOfSpeech:(id *)arg3;
 + (id)textAccessorForView:(id)arg1;
 + (id)textAccessorForScreenLocation:(struct CGPoint)arg1;
 + (BOOL)enabled;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 - (struct _NSRange)trimmedTermRangeForString:(id)arg1 range:(struct _NSRange)arg2;
-- (id)_termAndTextOrigin:(struct CGPoint *)arg1 language:(id *)arg2 partOfSpeech:(id *)arg3;
-- (id)_termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2 language:(id *)arg3 partOfSpeech:(id *)arg4;
+- (id)_termAndTextOrigin:(struct CGPoint *)arg1;
+- (id)_termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2;
 - (id)initWithView:(id)arg1;
 - (id)initWithLocation:(struct CGPoint)arg1;
-- (id)termAndTextOrigin:(struct CGPoint *)arg1 language:(id *)arg2 partOfSpeech:(id *)arg3;
-- (id)termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2 language:(id *)arg3 partOfSpeech:(id *)arg4;
+- (id)termAndTextOrigin:(struct CGPoint *)arg1;
+- (id)termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2;
 - (id)init;
 
 @end

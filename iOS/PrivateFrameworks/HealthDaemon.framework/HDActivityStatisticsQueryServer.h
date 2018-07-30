@@ -25,10 +25,12 @@
     HDSourceManager *_sourceManager;
 }
 
++ (Class)queryClass;
 - (void).cxx_destruct;
 - (void)_queue_deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workouts:(id)arg4;
 - (void)_queue_deliverError:(id)arg1;
 - (void)_queue_deliverUpdates;
+- (void)_queue_reset;
 - (_Bool)_queue_updateDataSourceWithMoveStatistics:(id *)arg1 exerciseStatistics:(id *)arg2 standInfo:(id *)arg3 workoutInfoOut:(id *)arg4 error:(id *)arg5;
 - (void)_createDataSourceIfNecessary;
 - (id)_allObservedQuantityTypes;
@@ -36,7 +38,7 @@
 - (void)_queue_stop;
 - (void)_queue_start;
 - (_Bool)_shouldListenForUpdates;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

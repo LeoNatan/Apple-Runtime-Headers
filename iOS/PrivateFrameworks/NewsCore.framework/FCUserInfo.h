@@ -21,6 +21,7 @@
     FCMTWriterMutexLock *_userInfoLock;
 }
 
++ (id)overrideFeldsparID;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
 + (long long)commandQueueUrgency;
 + (id)commandStoreFileName;

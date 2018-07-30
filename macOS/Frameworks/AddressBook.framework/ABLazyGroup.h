@@ -8,7 +8,6 @@
 
 @class ABAddressBook, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABLazyGroup : NSObject
 {
     ABAddressBook *_addressBook;

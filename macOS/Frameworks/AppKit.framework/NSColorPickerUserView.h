@@ -8,6 +8,7 @@
 
 @class NSImage;
 
+__attribute__((visibility("hidden")))
 @interface NSColorPickerUserView : NSView
 {
     NSImage *currImage;

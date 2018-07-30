@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface _NAUIAutoUpdatingFontObserver : NSObject
 {
     id _notificationObserver;

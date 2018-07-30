@@ -26,6 +26,7 @@
     } _flags;
 }
 
++ (BOOL)forceClickUserPreferencesEnabled;
 + (BOOL)_forceClickPossibleFromEvent:(id)arg1 respectUserPreferences:(BOOL)arg2;
 + (void)_lookupStyleSettingDidChangeNotification:(id)arg1;
 @property double allowableMovement; // @synthesize allowableMovement=_allowableMovement;

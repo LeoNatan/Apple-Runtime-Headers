@@ -15,6 +15,7 @@
     id <FCContentContext> _context;
     id <FCFeedPersonalizing> _personalizer;
     NSArray *_feedItems;
+    long long _feedPersonalizationConfigurationSet;
     CDUnknownBlockType _rapidUpdateRefreshTest;
     NSDictionary *_feedContextByFeedID;
     NSDictionary *_feedIDsByArticleID;
@@ -32,6 +33,7 @@
 @property(copy, nonatomic) NSDictionary *feedContextByFeedID; // @synthesize feedContextByFeedID=_feedContextByFeedID;
 @property(copy, nonatomic) CDUnknownBlockType rapidUpdateRefreshTest; // @synthesize rapidUpdateRefreshTest=_rapidUpdateRefreshTest;
 @property(nonatomic) _Bool shouldFilterHeadlinesWithoutSourceChannels; // @synthesize shouldFilterHeadlinesWithoutSourceChannels=_shouldFilterHeadlinesWithoutSourceChannels;
+@property(nonatomic) long long feedPersonalizationConfigurationSet; // @synthesize feedPersonalizationConfigurationSet=_feedPersonalizationConfigurationSet;
 @property(copy, nonatomic) NSArray *feedItems; // @synthesize feedItems=_feedItems;
 @property(retain, nonatomic) id <FCFeedPersonalizing> personalizer; // @synthesize personalizer=_personalizer;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
@@ -41,6 +43,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;
+- (id)init;
 
 @end
 

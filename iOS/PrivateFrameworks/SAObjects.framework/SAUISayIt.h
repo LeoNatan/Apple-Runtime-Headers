@@ -15,12 +15,14 @@
 + (id)sayItWithDictionary:(id)arg1 context:(id)arg2;
 + (id)sayIt;
 - (_Bool)requiresResponse;
+@property(nonatomic) _Bool repeatable;
 @property(copy, nonatomic) NSString *message;
 @property(copy, nonatomic) NSNumber *listenAfterSpeaking;
 @property(copy, nonatomic) NSString *languageCode;
 @property(copy, nonatomic) NSString *gender;
 @property(copy, nonatomic) NSString *dialogIdentifier;
 @property(retain, nonatomic) id <SAAceSerializable> context;
+@property(nonatomic) _Bool canUseServerTTS;
 @property(retain, nonatomic) SAUIAudioData *audioData;
 - (id)encodedClassName;
 - (id)groupIdentifier;

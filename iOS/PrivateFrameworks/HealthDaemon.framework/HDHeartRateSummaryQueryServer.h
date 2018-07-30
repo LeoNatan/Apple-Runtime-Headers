@@ -12,10 +12,13 @@
 
 @interface HDHeartRateSummaryQueryServer : HDQueryServer <HDActivityCacheManagerObserver>
 {
-    HDActivityCacheManager *_activityCacheManager;
     HKHeartRateSummary *_latestSummary;
+    HDActivityCacheManager *_activityCacheManager;
 }
 
++ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5 error:(id *)arg6;
++ (Class)queryClass;
+@property(nonatomic) __weak HDActivityCacheManager *activityCacheManager; // @synthesize activityCacheManager=_activityCacheManager;
 - (void).cxx_destruct;
 - (void)activityCacheManager:(id)arg1 changedHeartRateSummary:(id)arg2 isToday:(_Bool)arg3;
 - (void)activityCacheManager:(id)arg1 changedTodayActivityCache:(id)arg2;
@@ -23,7 +26,7 @@
 - (_Bool)_shouldListenForUpdates;
 - (void)_queue_stop;
 - (void)_queue_start;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6 activityCacheManager:(id)arg7;
+- (id)heartRateSummaryQueryClientProxy;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

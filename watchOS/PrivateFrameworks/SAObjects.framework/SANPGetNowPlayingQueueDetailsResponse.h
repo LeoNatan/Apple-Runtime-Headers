@@ -6,11 +6,12 @@
 
 #import <SAObjects/SABaseCommand.h>
 
+#import "SABackgroundContextObject.h"
 #import "SAServerBoundCommand.h"
 
 @class NSArray, NSString;
 
-@interface SANPGetNowPlayingQueueDetailsResponse : SABaseCommand <SAServerBoundCommand>
+@interface SANPGetNowPlayingQueueDetailsResponse : SABaseCommand <SAServerBoundCommand, SABackgroundContextObject>
 {
 }
 

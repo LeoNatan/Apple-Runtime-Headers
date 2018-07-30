@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class PUOneUpAssetTransitionContext;
+@class PUOneUpAssetTransitionContext, PUOneUpAssetTransitionInfo;
 
 @protocol PUOneUpAssetTransitionViewController <NSObject>
 
 @optional
+- (PUOneUpAssetTransitionInfo *)createAssetTransitionInfo;
 - (struct CGRect)oneUpAssetTransitionAssetFinalFrame:(id <PUOneUpAssetTransition>)arg1;
 - (void)oneUpAssetTransitionDidEnd:(id <PUOneUpAssetTransition>)arg1;
 - (void)oneUpAssetTransitionWillBegin:(id <PUOneUpAssetTransition>)arg1;

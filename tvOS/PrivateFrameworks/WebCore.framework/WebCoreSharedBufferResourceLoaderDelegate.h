@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     long long _expectedContentSize;
     struct RetainPtr<NSData> _data;
     _Bool _complete;
-    struct Vector<WTF::RetainPtr<AVAssetResourceLoadingRequest>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _requests;
+    struct Vector<WTF::RetainPtr<AVAssetResourceLoadingRequest>, 0, WTF::CrashOnOverflow, 16> _requests;
     // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: _dataLock
 }
 

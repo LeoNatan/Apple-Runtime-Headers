@@ -6,6 +6,7 @@
 
 #import "UIViewController.h"
 
+#import "PLDismissableViewController.h"
 #import "PXActionPerformerDelegate.h"
 #import "PXChangeObserver.h"
 #import "PXPurgeableController.h"
@@ -16,9 +17,9 @@
 #import "UIViewControllerPreviewingDelegate.h"
 #import "UIViewControllerPreviewingDelegate_Private.h"
 
-@class NSArray, NSMapTable, NSMutableArray, NSString, PXAssetCollectionActionController, PXBarsController, PXPhotosDetailsContext, PXPhotosDetailsHeaderTileWidget, PXPhotosDetailsSpecManager, PXPhotosDetailsViewModel, PXScrollViewController, PXSwipeSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetComposition, PXWidgetSpec, UIScrollView, UIView, _PXPhotosDetailsPreviewOrbContext;
+@class NSArray, NSMapTable, NSMutableArray, NSString, NSUserActivity, PXAssetCollectionActionController, PXBarsController, PXPhotosDetailsContext, PXPhotosDetailsHeaderTileWidget, PXPhotosDetailsSpecManager, PXPhotosDetailsViewModel, PXScrollViewController, PXSwipeSelectionManager, PXTilingController, PXUIScrollViewController, PXWidgetComposition, PXWidgetSpec, UIScrollView, UIView, _PXPhotosDetailsPreviewOrbContext;
 
-@interface PXPhotosDetailsUIViewController : UIViewController <PXWidgetCompositionDelegate, PXChangeObserver, PXUIViewControllerZoomTransitionEndPoint, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, PXActionPerformerDelegate, PXWidgetUnlockDelegate, PXScrollViewControllerObserver, PXPurgeableController>
+@interface PXPhotosDetailsUIViewController : UIViewController <PXWidgetCompositionDelegate, PXChangeObserver, PXUIViewControllerZoomTransitionEndPoint, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, PXActionPerformerDelegate, PXWidgetUnlockDelegate, PLDismissableViewController, PXScrollViewControllerObserver, PXPurgeableController>
 {
     struct {
         _Bool requestDismissal;
@@ -50,6 +51,7 @@
     CDUnknownBlockType __ppt_allWidgetLoadingCompleteHandler;
     CDUnknownBlockType __ppt_variationsWidgetLoadingCompleteHandler;
     id <UIViewControllerPreviewing> __previewingContext;
+    NSUserActivity *_siriActionActivity;
     PXBarsController *_barsController;
     id <PXActionPerformerDelegate> _actionPerformerDelegate;
     unsigned long long _occludedContentEdges;
@@ -62,6 +64,7 @@
 @property(nonatomic) __weak id <PXActionPerformerDelegate> actionPerformerDelegate; // @synthesize actionPerformerDelegate=_actionPerformerDelegate;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(readonly, nonatomic) PXBarsController *barsController; // @synthesize barsController=_barsController;
+@property(retain, nonatomic) NSUserActivity *siriActionActivity; // @synthesize siriActionActivity=_siriActionActivity;
 @property(retain, nonatomic, setter=_setPreviewingContext:) id <UIViewControllerPreviewing> _previewingContext; // @synthesize _previewingContext=__previewingContext;
 @property(copy, nonatomic, setter=_ppt_setVariationsWidgetLoadingCompleteHandler:) CDUnknownBlockType _ppt_variationsWidgetLoadingCompleteHandler; // @synthesize _ppt_variationsWidgetLoadingCompleteHandler=__ppt_variationsWidgetLoadingCompleteHandler;
 @property(copy, nonatomic, setter=_ppt_setAllWidgetLoadingCompleteHandler:) CDUnknownBlockType _ppt_allWidgetLoadingCompleteHandler; // @synthesize _ppt_allWidgetLoadingCompleteHandler=__ppt_allWidgetLoadingCompleteHandler;
@@ -95,6 +98,7 @@
 - (void)ppt_performBlockAfterAllWidgetLoadingCompletes:(CDUnknownBlockType)arg1;
 - (void)ppt_toggleDiscloseWidgets;
 @property(readonly, nonatomic) UIScrollView *ppt_scrollView;
+- (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)_performAddToMemoriesAnimation;
 - (void)_updatePreviewActionController;

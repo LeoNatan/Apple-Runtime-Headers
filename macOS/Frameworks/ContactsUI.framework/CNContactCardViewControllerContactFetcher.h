@@ -12,6 +12,8 @@
 
 + (id)observerWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)finishObserver:(id)arg1 withResult:(id)arg2 error:(id)arg3;
++ (void)notifyObserver:(id)arg1 withResult:(id)arg2 error:(id)arg3 nextActionOnSuccess:(CDUnknownBlockType)arg4;
++ (id)fetchContactMatchingFetchDescription:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)fetchContactWithIdentifier:(id)arg1 unified:(BOOL)arg2 keysToFetch:(id)arg3 contactStore:(id)arg4 fetchAsynchronously:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
 
 @end

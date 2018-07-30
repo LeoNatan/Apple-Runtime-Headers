@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)buildChunks;
 - (unsigned long long)buildCount;
 - (id)builds;
+- (_Bool)supportsBuilds;
 - (_Bool)isMasterSlide;
 - (void)updatePlaceholderText;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;

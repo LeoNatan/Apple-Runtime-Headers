@@ -10,6 +10,7 @@
 
 @class NSString, UIWindow, WebAppViewController;
 
+__attribute__((visibility("hidden")))
 @interface WebApplication : UIApplication <UIApplicationDelegate>
 {
     WebAppViewController *_webApp;

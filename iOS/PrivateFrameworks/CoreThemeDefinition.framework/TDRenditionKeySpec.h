@@ -8,7 +8,7 @@
 
 #import "TDElementAttributes.h"
 
-@class TDThemeDeploymentTarget, TDThemeDirection, TDThemeDisplayGamut, TDThemeDrawingLayer, TDThemeElement, TDThemeGraphicsFeatureSetClass, TDThemeIdiom, TDThemePart, TDThemePresentationState, TDThemeSize, TDThemeState, TDThemeUISizeClass, TDThemeValue;
+@class TDAppearance, TDThemeDeploymentTarget, TDThemeDirection, TDThemeDisplayGamut, TDThemeDrawingLayer, TDThemeElement, TDThemeGraphicsFeatureSetClass, TDThemeIdiom, TDThemePart, TDThemePresentationState, TDThemeSize, TDThemeState, TDThemeUISizeClass, TDThemeValue;
 
 @interface TDRenditionKeySpec : NSManagedObject <TDElementAttributes>
 {
@@ -18,7 +18,7 @@
     unsigned int _subtype;
     unsigned int _nameIdentifier;
     unsigned int _memoryClass;
-    struct _renditionkeytoken _stackScratchKey[17];
+    struct _renditionkeytoken _stackScratchKey[18];
     struct _renditionkeytoken *_scratchKey;
 }
 
@@ -53,6 +53,7 @@
 - (void)dealloc;
 
 // Remaining properties
+@property(retain, nonatomic) TDAppearance *appearance; // @dynamic appearance;
 @property(retain, nonatomic) TDThemeDirection *direction; // @dynamic direction;
 @property(retain, nonatomic) TDThemeElement *element; // @dynamic element;
 @property(retain, nonatomic) TDThemeDisplayGamut *gamut; // @dynamic gamut;

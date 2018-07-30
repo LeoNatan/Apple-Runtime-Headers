@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <ViewBridge/NSRendezvousWindowController.h>
+#import <ViewBridge/NSSemiAutonomousRendezvousWindowController.h>
 
 __attribute__((visibility("hidden")))
-@interface NSRendezvousChildWindowController : NSRendezvousWindowController
+@interface NSRendezvousChildWindowController : NSSemiAutonomousRendezvousWindowController
 {
     unsigned int _childControllerInvalid:1;
     int _privateEventLoopKind;
@@ -15,24 +15,11 @@ __attribute__((visibility("hidden")))
 
 + (Class)comboBoxWindowClass;
 + (Class)correctionPanelClass;
-+ (void)addBridgeKeys:(id)arg1;
 @property(readonly) int privateEventLoopKind; // @synthesize privateEventLoopKind=_privateEventLoopKind;
-- (BOOL)_shouldNormalizeAppearance;
-- (struct CGRect)_serviceWindowFrameForRemoteViewFrame:(struct CGRect)arg1;
 - (id)initWithWindow:(id)arg1;
 - (void)_endPrivateEventLoop;
-- (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
-- (BOOL)allowsImplicitResizeRequests;
-- (BOOL)allowsWindowFrameOriginChanges;
-- (unsigned long long)acceptableStyleMask;
-- (unsigned long long)awakeFromRemoteView;
 - (void)invalidateWithError:(id)arg1;
 - (void)invalidate;
-- (id)appearanceName;
-- (id)frame;
-- (id)objectToObserveForKey:(id)arg1 withWindow:(id)arg2;
-- (void)_windowFrameDidChange;
-- (void)_windowFrameWillChange;
 
 @end
 

@@ -8,7 +8,7 @@
 #import "UITextInputTokenizer.h"
 #import "UITextInputTraits_Private.h"
 
-@class NSArray, NSAttributedString, NSDictionary, NSString, UIColor, UIDictationSerializableResults, UIFont, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UITextSuggestion, UIView, WebEvent;
+@class NSArray, NSAttributedString, NSDictionary, NSString, RTIInputSystemSourceSession, UIColor, UIDictationSerializableResults, UIFont, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UITextSuggestion, UIView, WebEvent;
 
 @protocol UITextInputPrivate <UITextInput, UITextInputTokenizer, UITextInputTraits_Private>
 @property(readonly, nonatomic) UITextInteractionAssistant *interactionAssistant;
@@ -19,6 +19,7 @@
 - (UITextInputTraits *)textInputTraits;
 
 @optional
+@property(readonly, nonatomic) RTIInputSystemSourceSession *_rtiSourceSession;
 @property(nonatomic) long long _textInputSource;
 @property(readonly, nonatomic) id <UITextInputSuggestionDelegate> textInputSuggestionDelegate;
 @property(nonatomic) long long selectionGranularity;
@@ -42,11 +43,15 @@
 - (void)streamingDictationDidEnd;
 - (void)streamingDictationDidBegin;
 - (struct CGRect)visibleRect;
+- (UIView *)selectionContainerView;
 - (UIView *)automaticallySelectedOverlay;
 - (void)setBottomBufferHeight:(double)arg1;
 - (id <UISelectionInteractionAssistant>)selectionInteractionAssistant;
 - (void)handleKeyWebEvent:(WebEvent *)arg1 withCompletionHandler:(void (^)(WebEvent *, _Bool))arg2;
 - (void)handleKeyWebEvent:(WebEvent *)arg1;
 - (_Bool)requiresKeyEvents;
+- (void)setAttributedMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange)arg2;
+- (NSAttributedString *)attributedTextInRange:(UITextRange *)arg1;
+- (void)insertAttributedText:(NSAttributedString *)arg1;
 @end
 

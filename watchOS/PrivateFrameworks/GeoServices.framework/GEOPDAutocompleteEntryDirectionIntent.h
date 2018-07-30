@@ -10,6 +10,7 @@
 
 @class GEOPDDirectionIntent, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteEntryDirectionIntent : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

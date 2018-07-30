@@ -33,6 +33,7 @@
     long long _textWritingDirection;
 }
 
++ (id)attributeDictionaryForFontRef:(struct __CTFont *)arg1 lineBreakMode:(long long)arg2 textNSColor:(id)arg3 isCancelled:(BOOL)arg4;
 + (id)attributeDictionaryForFontRef:(struct __CTFont *)arg1 lineBreakMode:(long long)arg2 textColor:(struct CGColor *)arg3 isCancelled:(BOOL)arg4;
 + (id)attributeDictionaryForFontRef:(struct __CTFont *)arg1;
 + (double)lineHeightForFontRef:(struct __CTFont *)arg1;
@@ -67,7 +68,6 @@
 - (void)drawRect;
 - (id)tileOptionsWithDashes:(BOOL)arg1;
 - (id)tileOptions;
-- (void)setBaseColor:(id)arg1;
 - (void)resetColors;
 - (void)invalidateMetrics;
 - (id)init;

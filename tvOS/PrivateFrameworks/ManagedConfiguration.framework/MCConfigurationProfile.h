@@ -27,6 +27,7 @@
 @property(nonatomic) _Bool isCloudProfile; // @synthesize isCloudProfile=_isCloudProfile;
 @property(retain, nonatomic) MCProfileServiceProfile *OTAProfile; // @synthesize OTAProfile=_OTAProfile;
 - (void).cxx_destruct;
+- (void)replacePayloadWithUUID:(id)arg1 withPayload:(id)arg2;
 - (id)earliestCertificateExpiryDate;
 - (id)localizedManagedPayloadSummaryByType;
 - (id)localizedPayloadSummaryByType;

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *tokens; // @synthesize tokens=_tokens;
 - (void).cxx_destruct;
 - (id)description;
-- (void)addTokenWithAttributedString:(id)arg1 atRect:(struct CGRect)arg2;
+- (void)addTokenWithAttributedString:(id)arg1 atRect:(struct CGRect)arg2 forElement:(id)arg3;
 - (id)init;
 
 @end

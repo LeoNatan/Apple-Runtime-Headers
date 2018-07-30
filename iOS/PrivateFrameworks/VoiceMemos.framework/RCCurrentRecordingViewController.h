@@ -29,7 +29,6 @@
 @property(nonatomic) __weak id <RCCurrentRecordingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_failedToBecomeReadyWithMessage:(id)arg1;
-- (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)currentRecordingViewController:(id)arg1 didChangeAVState:(id)arg2;
 - (void)currentRecordingViewControllerRecordingDidEnd:(id)arg1;
 - (void)currentRecordingViewController:(id)arg1 didDeterminteAvailability:(_Bool)arg2;
@@ -39,7 +38,6 @@
 - (void)setScreenUpdatesDisabled:(_Bool)arg1;
 - (void)insertRemoteViewController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (_Bool)shouldAutomaticallyForwardRotationMethods;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

@@ -10,6 +10,7 @@
 
 @class GEOPDMapsIdentifier, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDChildPlace : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

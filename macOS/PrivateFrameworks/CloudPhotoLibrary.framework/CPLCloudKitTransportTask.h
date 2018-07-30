@@ -6,20 +6,27 @@
 
 #import "NSObject.h"
 
+#import "CPLCloudKitScopeProvider.h"
 #import "CPLCloudKitTrackableTask.h"
 #import "CPLEngineTransportTask.h"
 
-@class CKDatabaseOperation, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class CKOperation, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface CPLCloudKitTransportTask : NSObject <CPLCloudKitTrackableTask, CPLEngineTransportTask>
+@interface CPLCloudKitTransportTask : NSObject <CPLCloudKitTrackableTask, CPLEngineTransportTask, CPLCloudKitScopeProvider>
 {
     NSMutableArray *_currentOperations;
+    NSMutableArray *_lastOperationRequestUUIDs;
+    NSMutableDictionary *_cachedScopes;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _mustCallTaskDidFinish;
     unsigned long long _nonCKOperationCount;
     BOOL _foregroundHasBeenChanged;
+    BOOL _highPriorityBackground;
+    BOOL _forcedTask;
+    BOOL _backgroundTask;
     BOOL _foreground;
     BOOL _allowsCellular;
+    BOOL _boostable;
     BOOL _isUpload;
     BOOL _isMetadata;
     BOOL _cancelled;
@@ -30,24 +37,29 @@
     NSString *_sourceBundleIdentifier;
     double _timeoutIntervalForRequest;
     double _timeoutIntervalForResource;
-    NSArray *_lastOperationRequestUUIDs;
+    NSDictionary *_transportScopes;
 }
 
 + (BOOL)allowsCellularForDownloadOperationOfSize:(unsigned long long)arg1 isForeground:(BOOL)arg2 isHighPriority:(BOOL)arg3;
 + (BOOL)allowsCellularForDownloadOperationOfResource:(id)arg1 isForeground:(BOOL)arg2 isHighPriority:(BOOL)arg3;
-@property(readonly, nonatomic) NSArray *lastOperationRequestUUIDs; // @synthesize lastOperationRequestUUIDs=_lastOperationRequestUUIDs;
 @property(readonly, nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
+@property(copy, nonatomic) NSDictionary *transportScopes; // @synthesize transportScopes=_transportScopes;
 @property(nonatomic) BOOL isMetadata; // @synthesize isMetadata=_isMetadata;
 @property(nonatomic) BOOL isUpload; // @synthesize isUpload=_isUpload;
 @property(readonly, nonatomic) double timeoutIntervalForResource; // @synthesize timeoutIntervalForResource=_timeoutIntervalForResource;
 @property(readonly, nonatomic) double timeoutIntervalForRequest; // @synthesize timeoutIntervalForRequest=_timeoutIntervalForRequest;
+@property(nonatomic, getter=isBoostable) BOOL boostable; // @synthesize boostable=_boostable;
 @property(nonatomic) BOOL allowsCellular; // @synthesize allowsCellular=_allowsCellular;
 @property(copy, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(readonly, nonatomic) NSString *operationType; // @synthesize operationType=_operationType;
 @property(readonly, nonatomic) id <CPLCloudKitTaskController> controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) id trackingContext; // @synthesize trackingContext;
+@property(nonatomic, getter=isBackgroundTask) BOOL backgroundTask; // @synthesize backgroundTask=_backgroundTask;
+@property(nonatomic, getter=isForcedTask) BOOL forcedTask; // @synthesize forcedTask=_forcedTask;
+@property(nonatomic, getter=isHighPriorityBackground) BOOL highPriorityBackground; // @synthesize highPriorityBackground=_highPriorityBackground;
 @property(retain, nonatomic) id <CPLEngineTransportGroup> transportGroup; // @synthesize transportGroup=_transportGroup;
 - (void).cxx_destruct;
+- (id)_stringForNetworkBehavior:(unsigned long long)arg1;
 - (id)_stringForQoS:(long long)arg1;
 - (id)_statusForConfiguration:(id)arg1;
 - (void)setupConfigurationForOperation:(id)arg1;
@@ -60,16 +72,18 @@
 - (void)updateContextWithBlock:(CDUnknownBlockType)arg1 forOperation:(id)arg2;
 - (void)updateProgress:(double)arg1 forOperation:(id)arg2;
 - (void)updateOneBatchForOperation:(id)arg1;
+@property(readonly, nonatomic) NSArray *lastOperationRequestUUIDs;
 - (void)operationDidFinish;
 - (void)updateContextWithBlock:(CDUnknownBlockType)arg1;
 - (void)updateProgress:(double)arg1;
 - (void)updateOneBatch;
-- (void)launchOperation:(id)arg1 withContext:(id)arg2 sourceBundleIdentifiers:(id)arg3;
-- (void)launchOperation:(id)arg1 withContext:(id)arg2;
-@property(readonly, nonatomic) CKDatabaseOperation *currentOperation;
+- (void)launchOperation:(id)arg1 type:(long long)arg2 withContext:(id)arg3 sourceBundleIdentifiers:(id)arg4;
+- (void)launchOperation:(id)arg1 type:(long long)arg2 withContext:(id)arg3;
+@property(readonly, nonatomic) CKOperation *currentOperation;
 - (void)dispatchAsync:(CDUnknownBlockType)arg1;
 - (void)cancel;
 - (void)run;
+- (id)cloudKitScopeForScopeIdentifier:(id)arg1;
 @property(nonatomic) BOOL foreground; // @synthesize foreground=_foreground;
 - (id)initWithController:(id)arg1 operationType:(id)arg2;
 

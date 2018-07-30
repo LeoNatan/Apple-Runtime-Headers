@@ -10,9 +10,9 @@
 @class NSDecimalNumber, NSString;
 
 @protocol INRideFareLineItemExport <NSObject, JSExport>
-@property(retain, nonatomic) NSString *currencyCode;
-@property(retain, nonatomic) NSDecimalNumber *price;
-@property(retain, nonatomic) NSString *title;
+@property(copy, nonatomic) NSString *currencyCode;
+@property(copy, nonatomic) NSDecimalNumber *price;
+@property(copy, nonatomic) NSString *title;
 - (id)init;
 @end
 

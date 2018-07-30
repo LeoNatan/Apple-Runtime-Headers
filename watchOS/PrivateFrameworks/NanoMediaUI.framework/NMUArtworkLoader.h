@@ -17,10 +17,10 @@
 
 @property(nonatomic) __weak id <NMUArtworkLoaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (id)_prerenderedPlaceholderWithName:(id)arg1;
+- (id)_prerenderedPlaceholderWithName:(id)arg1 inBundle:(id)arg2;
 - (void)_configureArtworkCatalog:(id)arg1 isPrefetching:(_Bool)arg2;
+- (void)setImageView:(id)arg1 artworkCatalog:(id)arg2 placeholderName:(id)arg3 placeholderBundle:(id)arg4;
 - (void)setImageView:(id)arg1 artworkCatalog:(id)arg2 placeholderName:(id)arg3;
-- (void)setImageView:(id)arg1 placeholderName:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)cancelPrefetchingForItemsAtIndexPaths:(id)arg1;
 - (void)prefetchItemsAtIndexPaths:(id)arg1;
 - (id)initWithFormat:(id)arg1;

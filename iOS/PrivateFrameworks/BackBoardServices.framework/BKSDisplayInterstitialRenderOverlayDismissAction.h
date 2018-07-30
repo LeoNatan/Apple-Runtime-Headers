@@ -16,6 +16,7 @@
     BKSDisplayRenderOverlayDescriptor *_overlayDescriptor;
 }
 
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -23,7 +24,6 @@
 - (void)dismissWithAnimation:(id)arg1;
 - (void)dismiss;
 @property(readonly, nonatomic) BKSDisplayRenderOverlayDescriptor *overlayDescriptor;
-- (void)dealloc;
 - (id)initWithDescriptor:(id)arg1;
 
 // Remaining properties

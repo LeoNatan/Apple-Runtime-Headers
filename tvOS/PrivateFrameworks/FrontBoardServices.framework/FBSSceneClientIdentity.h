@@ -21,6 +21,7 @@
 + (id)localIdentity;
 @property(readonly, nonatomic, getter=isLocal) _Bool local; // @synthesize local=_local;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -29,7 +30,6 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithBundleID:(id)arg1;
 
 // Remaining properties

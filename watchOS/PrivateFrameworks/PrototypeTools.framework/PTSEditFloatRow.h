@@ -4,19 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <PrototypeTools/PTSRow.h>
+#import <PrototypeTools/PTEditFloatRow.h>
 
-@interface PTSEditFloatRow : PTSRow
+@interface PTSEditFloatRow : PTEditFloatRow
 {
-    unsigned int _precision;
 }
-
-@property(nonatomic) unsigned int precision; // @synthesize precision=_precision;
-- (void)updateWithRow:(id)arg1;
-- (id)init;
-- (id)between:(float)arg1 and:(float)arg2;
-- (id)precision:(unsigned int)arg1;
-- (Class)rowTableViewCellClass;
 
 @end
 

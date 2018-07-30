@@ -6,7 +6,7 @@
 
 #import <AppKit/_NSKeyLoopSplicingContainerView.h>
 
-@class CABackdropLayer, NSColor, NSMutableSet, NSString, NSView, NSVisualEffectView, _NSViewActionForwardingLayerDelegate;
+@class CABackdropLayer, NSBox, NSColor, NSMutableSet, NSString, NSView, NSVisualEffectView, _NSViewActionForwardingLayerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface NSTabBarViewButton : _NSKeyLoopSplicingContainerView
@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSColor *_backgroundColor;
     NSView *_backgroundView;
     NSView *_topBorderView;
-    NSView *_leftBorderView;
-    NSView *_rightBorderView;
+    NSBox *_leftBorderView;
+    NSBox *_rightBorderView;
     NSView *_contentView;
     NSView *_vibrantContentView;
     NSView *_nonVibrantContentView;
@@ -44,8 +44,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasMouseOverHighlight; // @dynamic hasMouseOverHighlight;
 - (void)setHasMouseOverHighlight:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateBackgroundLayerImagesForActiveTab:(BOOL)arg1 inActiveWindow:(BOOL)arg2;
-- (BOOL)_isDark;
-- (void)_viewDidChangeAppearance:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
@@ -61,6 +59,8 @@ __attribute__((visibility("hidden")))
 - (void)_reconfigureFullscreenViewsUsingVisualEffectViews:(BOOL)arg1;
 - (void)_reconfigureFullscreenViewsIfNeeded;
 - (BOOL)_isInFullscreenToolbarWindow;
+- (id)_makeTopBorderView;
+- (id)_makeBoxInVibrantContentView;
 - (id)_makeViewInVibrantContentView;
 - (void)_setUpBackgroundViews;
 - (id)initWithFrame:(struct CGRect)arg1;

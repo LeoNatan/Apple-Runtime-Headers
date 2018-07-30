@@ -6,20 +6,22 @@
 
 #import <CoreData/NSIncrementalStore.h>
 
-@class NSGenerationToken, NSGenerationalRowCache, NSMutableDictionary, NSSQLCore, NSSQLModel, NSString, NSXPCStoreConnection, NSXPCStoreNotificationObserver;
+#import "NSSQLModelProvider.h"
 
-@interface NSXPCStore : NSIncrementalStore
+@class NSDictionary, NSGenerationalRowCache, NSSQLCore, NSSQLModel, NSString, NSXPCStoreConnectionManager, NSXPCStoreNotificationObserver;
+
+@interface NSXPCStore : NSIncrementalStore <NSSQLModelProvider>
 {
+    NSDictionary *_metadata;
     NSGenerationalRowCache *_cache;
-    NSMutableDictionary *_changeCache;
-    NSXPCStoreConnection *_myConnection;
+    NSString *_fileBackedFuturesDirectory;
+    NSXPCStoreConnectionManager *_connectionManager;
     NSSQLModel *_model;
     NSSQLCore *_core;
     NSString *_sanityCheckToken;
     NSXPCStoreNotificationObserver *_observer;
-    NSGenerationToken *_identifier;
     NSString *_remoteStoreChangedNotificationName;
-    int _assertion;
+    int _stateLock;
 }
 
 + (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
@@ -39,11 +41,8 @@
 - (id)executeBatchDeleteRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (id)executePullChangesRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (id)executeSaveRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
-- (id)_executeSaveRequest:(id)arg1 forceInsertsToUpdates:(BOOL)arg2 withContext:(id)arg3 interrupts:(unsigned long long *)arg4 error:(id *)arg5;
-- (void)_commitChangesForRequest:(id)arg1;
-- (id)encodeSaveRequest:(id)arg1 forceInsertsToUpdates:(BOOL)arg2;
-- (id)encodeObjectsForSave:(id)arg1 forDelete:(BOOL)arg2;
-- (id)_cacheNodePropertiesFromObject:(id)arg1;
+- (id)_executeSaveRequestForContext:(id)arg1 error:(id *)arg2;
+- (void)_commitChangesForRequestContext:(id)arg1;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (id)executeFetchRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
@@ -56,22 +55,28 @@
 - (id)currentQueryGeneration;
 - (BOOL)supportsGenerationalQuerying;
 - (BOOL)loadMetadata:(id *)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)_setMetadata:(id)arg1 includeVersioning:(BOOL)arg2;
+- (id)metadata;
+- (id)_rawMetadata__;
 - (BOOL)load:(id *)arg1;
 - (void)setupRemoteStoreObserver;
+- (void)_setSanityCheckToken:(id)arg1;
 - (id)_sanityCheckToken;
 - (void)setIdentifier:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)type;
 - (id)sendMessage:(id)arg1 fromContext:(id)arg2 interrupts:(unsigned long long *)arg3 error:(id *)arg4;
-- (id)retainedConnection;
+- (BOOL)supportsConcurrentRequestHandling;
 - (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;
-- (void)disconnectConnection:(id)arg1;
 - (id)serviceName;
 - (void)disconnect;
 - (void)dealloc;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (id)unarchiver:(id)arg1 didDecodeObject:(id)arg2;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
+- (id)fileBackedFuturesDirectory;
+- (id)connectionManager;
 - (struct _NSScalarObjectID *)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (struct _NSScalarObjectID *)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
@@ -80,14 +85,16 @@
 - (id)objectIDFactoryForEntity:(id)arg1;
 - (id)_storeInfoForEntityDescription:(id)arg1;
 - (Class)_objectIDClass;
+- (id)currentChangeToken;
 - (void)cacheContents:(id)arg1 ofRelationship:(id)arg2 onObjectWithID:(id)arg3 withTimestamp:(double)arg4 generation:(id)arg5;
 - (void)cacheFetchedRows:(id)arg1 forManagedObjects:(id)arg2 generation:(id)arg3;
 - (void)decodePrefetchArray:(id)arg1 forSources:(id)arg2 context:(id)arg3;
 - (void)decodePrefetchResult:(id)arg1 forSources:(id)arg2 context:(id)arg3;
-- (void)_updateRollbackCacheForObjectWithID:(id)arg1 relationship:(id)arg2 withValuesFrom:(id)arg3;
 - (void)_clearCachedRowForObjectWithID:(id)arg1 generation:(id)arg2;
 - (id)_cachedRowForObjectWithID:(id)arg1 generation:(id)arg2;
 - (id)_cachedRowForRelationship:(id)arg1 onObjectWithID:(id)arg2 generation:(id)arg3;
+- (id)ancillarySQLModels;
+- (id)ancillaryModels;
 - (void)setSQLCore:(id)arg1;
 - (id)sqlCore;
 - (id)model;

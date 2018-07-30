@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSObject<OS_os_transaction>, NSString;
 
 @interface DMFOSStateHandler : NSObject
 {
     CDUnknownBlockType _block;
     NSString *_name;
     unsigned long long _handle;
+    NSObject<OS_os_transaction> *_transaction;
 }
 
+@property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(nonatomic) unsigned long long handle; // @synthesize handle=_handle;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;

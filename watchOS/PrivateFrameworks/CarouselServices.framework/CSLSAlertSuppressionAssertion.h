@@ -13,6 +13,7 @@
     CSLSAlertSuppressionToken *_token;
 }
 
++ (id)alertSuppressionAssertionWithAlertServiceNames:(id)arg1;
 + (id)alertSuppressionAssertionWithReason:(unsigned int)arg1;
 + (id)alertSuppressionAssertionAllowingServices:(id)arg1;
 + (id)alertSuppressionAssertion;

@@ -10,19 +10,20 @@
 #import "NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate.h"
 #import "UIScrollViewDelegate.h"
 
-@class NPKActivatingUIAssertion, NPKGenericPassView, NPKPassDescription, NPKPassView, NPKPaymentStatusView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NSMutableArray, NSString, UIImageView, UIScrollView, UITapGestureRecognizer;
+@class NPKActivatingUIAssertion, NPKGenericPassView, NPKPassView, NPKPaymentStatusView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NSMutableArray, NSString, PKPass, UIImageView, UIScrollView, UITapGestureRecognizer;
 
 @interface NPKPassCollectionViewCell : UICollectionViewCell <UIScrollViewDelegate, NPKPassViewDelegate, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate>
 {
     BOOL _detailTableViewContentObjectKvoContext;
+    _Bool _hasLoadedRasterizedImage;
     _Bool _showFullPass;
     _Bool _useRasterizedPass;
     _Bool _showShadow;
     _Bool _shrinkCardView;
-    _Bool _orbEnabled;
     _Bool _isHelperCardCell;
     id <NPKPassCollectionViewCellDelegate> _delegate;
-    NPKPassDescription *_passDescription;
+    id <NPKPassActionControllerProtocol> _actionControllerDelegate;
+    PKPass *_pass;
     NPKActivatingUIAssertion *_activatingUIAssertion;
     NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator *_animationCoordinator;
     NPKPaymentStatusView *_paymentStatusView;
@@ -30,13 +31,13 @@
     NPKPassView *_passView;
     float _contentHeight;
     UITapGestureRecognizer *_tapGestureRecognizer;
-    UIImageView *_rasterizedImageView;
+    UIImageView *_rasterizedPassImageView;
     NSMutableArray *_scrollViewDidEndScrollingAnimationBlocks;
 }
 
 + (Class)_contentViewClass;
 @property(retain, nonatomic) NSMutableArray *scrollViewDidEndScrollingAnimationBlocks; // @synthesize scrollViewDidEndScrollingAnimationBlocks=_scrollViewDidEndScrollingAnimationBlocks;
-@property(retain, nonatomic) UIImageView *rasterizedImageView; // @synthesize rasterizedImageView=_rasterizedImageView;
+@property(retain, nonatomic) UIImageView *rasterizedPassImageView; // @synthesize rasterizedPassImageView=_rasterizedPassImageView;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) float contentHeight; // @synthesize contentHeight=_contentHeight;
 @property(retain, nonatomic) NPKPassView *passView; // @synthesize passView=_passView;
@@ -45,21 +46,22 @@
 @property(nonatomic) __weak NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator *animationCoordinator; // @synthesize animationCoordinator=_animationCoordinator;
 @property(nonatomic) _Bool isHelperCardCell; // @synthesize isHelperCardCell=_isHelperCardCell;
 @property(retain, nonatomic) NPKActivatingUIAssertion *activatingUIAssertion; // @synthesize activatingUIAssertion=_activatingUIAssertion;
-@property(nonatomic, getter=isOrbEnabled) _Bool orbEnabled; // @synthesize orbEnabled=_orbEnabled;
 @property(nonatomic) _Bool shrinkCardView; // @synthesize shrinkCardView=_shrinkCardView;
 @property(nonatomic) _Bool showShadow; // @synthesize showShadow=_showShadow;
 @property(nonatomic) _Bool useRasterizedPass; // @synthesize useRasterizedPass=_useRasterizedPass;
 @property(nonatomic) _Bool showFullPass; // @synthesize showFullPass=_showFullPass;
-@property(retain, nonatomic) NPKPassDescription *passDescription; // @synthesize passDescription=_passDescription;
+@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
+@property(nonatomic) __weak id <NPKPassActionControllerProtocol> actionControllerDelegate; // @synthesize actionControllerDelegate=_actionControllerDelegate;
 @property(nonatomic) __weak id <NPKPassCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)fadeAndScaleAndimationCoordinator:(id)arg1 didUpdateSideButtonAlignedAlpha:(float)arg2 otherContentAlpha:(float)arg3 scale:(float)arg4;
+- (void)resetFadeAndScaleEffect;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewCrownWillScrollToOffset:(struct CGPoint *)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (void)_handlePassRasterizationInvalidation:(id)arg1;
+- (void)didSelectPass;
 - (void)didScrollToPass;
 - (void)didScrollAwayFromPass;
 - (void)scrollToBarcode;
@@ -68,17 +70,20 @@
 - (void)_manuallyScrollToOffsetPerformingDelegateCalls:(struct CGPoint)arg1;
 - (void)_handleTap:(id)arg1;
 - (void)_createPassView;
+- (void)_notifyCellWasDisplayed;
+- (void)_setRasterizedImageFromOriginalPass:(id)arg1;
 - (void)_updateContentView;
 - (void)_clearOutAllContentViews;
 - (void)setShowShadow:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_enterServiceMode;
+- (void)_suppressHelperCell;
+- (id)actionController;
 @property(retain, nonatomic) UIScrollView *passScrollView; // @dynamic passScrollView;
 @property(nonatomic) _Bool scrollingAllowed; // @dynamic scrollingAllowed;
 @property(readonly) float height;
 - (void)passViewNeedsResetState:(id)arg1;
 - (void)passView:(id)arg1 hideStatusBar:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)passView:(id)arg1 didUpdateHeight:(float)arg2;
-- (_Bool)canProvideActionController;
-- (id)actionController;
 - (void)layoutSubviews;
 - (void)didMoveToSuperview;
 - (void)applyLayoutAttributes:(id)arg1;

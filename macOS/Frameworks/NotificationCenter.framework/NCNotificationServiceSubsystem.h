@@ -10,6 +10,7 @@
 
 @class NCNotificationExtensionContext, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NCNotificationServiceSubsystem : NCRemoteViewServiceSubsystem <NCNotificationServiceProtocol>
 {
     _Bool _fullCustomizationAllowed;

@@ -10,10 +10,11 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMDelegateCaller, HMDevice, HMFMessageDispatcher, HMHome, HMThreadSafeMutableArrayCollection, HMUser, NSArray, NSDate, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMDevice, HMFUnfairLock, HMHome, HMMutableArray, HMUser, NSArray, NSDate, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface HMTrigger : NSObject <HMFMessageReceiver, NSSecureCoding, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     _Bool _enabled;
     NSString *_name;
     NSUUID *_uniqueIdentifier;
@@ -22,19 +23,13 @@
     HMHome *_home;
     HMDevice *_ownerDevice;
     HMUser *_owner;
-    HMThreadSafeMutableArrayCollection *_currentActionSets;
-    HMFMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMDelegateCaller *_delegateCaller;
+    _HMContext *_context;
+    HMMutableArray *_currentActionSets;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) HMThreadSafeMutableArrayCollection *currentActionSets; // @synthesize currentActionSets=_currentActionSets;
+@property(retain, nonatomic) HMMutableArray *currentActionSets; // @synthesize currentActionSets=_currentActionSets;
+@property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (_Bool)compatibleWithApp;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
@@ -60,11 +55,6 @@
 - (void)_addActionSet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addActionSet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateActionSet:(id)arg1 add:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_invalidate;
-- (void)_unconfigure;
-- (void)_configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5;
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
 @property(nonatomic) __weak HMUser *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) HMDevice *ownerDevice; // @synthesize ownerDevice=_ownerDevice;
 - (id)creator;
@@ -76,6 +66,11 @@
 @property(readonly, copy, nonatomic) NSArray *actionSets;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void)_invalidate;
+- (void)_unconfigure;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
+- (void)dealloc;
+- (id)initWithName:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

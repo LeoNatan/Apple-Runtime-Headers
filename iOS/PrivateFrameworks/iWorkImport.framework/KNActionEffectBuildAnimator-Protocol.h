@@ -6,11 +6,10 @@
 
 #import "KNAnimationPlugin.h"
 
-@class KNAnimationPluginContext, NSDictionary, NSMapTable, NSSet, TSDTextureSet;
+@class KNAnimationPluginContext, NSDictionary, NSMapTable, TSDTextureSet;
 
 @protocol KNActionEffectBuildAnimator <KNAnimationPlugin>
 + (NSDictionary *)applyActionEffect:(NSDictionary *)arg1 toAttributes:(NSDictionary *)arg2;
-+ (NSSet *)actionEffectStyle;
 - (void)addAnimationsTo:(NSMapTable *)arg1 forTextureSet:(TSDTextureSet *)arg2 finalTextureSet:(TSDTextureSet *)arg3 duration:(double)arg4 attributes:(NSDictionary *)arg5 previousAttributes:(NSDictionary *)arg6;
 
 @optional

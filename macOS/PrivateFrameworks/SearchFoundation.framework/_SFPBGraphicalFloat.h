@@ -13,9 +13,6 @@
 
 @interface _SFPBGraphicalFloat : PBCodable <_SFPBGraphicalFloat, NSSecureCoding>
 {
-    struct {
-        unsigned int doubleValue:1;
-    } _has;
     double _doubleValue;
 }
 
@@ -28,7 +25,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasDoubleValue;
 - (id)initWithCGFloat:(double)arg1;
 
 // Remaining properties

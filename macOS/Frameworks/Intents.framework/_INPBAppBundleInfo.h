@@ -7,51 +7,55 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBAppBundleInfo.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBAppId, _INPBBuildId;
+@class NSArray, NSString, _INPBAppId, _INPBBuildId;
 
-@interface _INPBAppBundleInfo : PBCodable <NSCopying>
+@interface _INPBAppBundleInfo : PBCodable <_INPBAppBundleInfo, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBAppId *_appId;
     _INPBBuildId *_buildId;
-    NSMutableArray *_intentSupports;
-    NSMutableArray *_localizedProjects;
-    NSMutableArray *_supportedPlatforms;
+    NSArray *_intentSupports;
+    NSArray *_localizedProjects;
+    NSArray *_supportedPlatforms;
 }
 
 + (Class)supportedPlatformsType;
 + (Class)localizedProjectsType;
 + (Class)intentSupportType;
-@property(retain, nonatomic) NSMutableArray *supportedPlatforms; // @synthesize supportedPlatforms=_supportedPlatforms;
+@property(copy, nonatomic) NSArray *supportedPlatforms; // @synthesize supportedPlatforms=_supportedPlatforms;
+@property(copy, nonatomic) NSArray *localizedProjects; // @synthesize localizedProjects=_localizedProjects;
+@property(copy, nonatomic) NSArray *intentSupports; // @synthesize intentSupports=_intentSupports;
 @property(retain, nonatomic) _INPBBuildId *buildId; // @synthesize buildId=_buildId;
 @property(retain, nonatomic) _INPBAppId *appId; // @synthesize appId=_appId;
-@property(retain, nonatomic) NSMutableArray *localizedProjects; // @synthesize localizedProjects=_localizedProjects;
-@property(retain, nonatomic) NSMutableArray *intentSupports; // @synthesize intentSupports=_intentSupports;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)supportedPlatformsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)supportedPlatformsCount;
+@property(readonly, nonatomic) unsigned long long supportedPlatformsCount;
 - (void)addSupportedPlatforms:(id)arg1;
 - (void)clearSupportedPlatforms;
-@property(readonly, nonatomic) BOOL hasBuildId;
-@property(readonly, nonatomic) BOOL hasAppId;
 - (id)localizedProjectsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)localizedProjectsCount;
+@property(readonly, nonatomic) unsigned long long localizedProjectsCount;
 - (void)addLocalizedProjects:(id)arg1;
 - (void)clearLocalizedProjects;
 - (id)intentSupportAtIndex:(unsigned long long)arg1;
-- (unsigned long long)intentSupportsCount;
+@property(readonly, nonatomic) unsigned long long intentSupportsCount;
 - (void)addIntentSupport:(id)arg1;
 - (void)clearIntentSupports;
+@property(readonly, nonatomic) BOOL hasBuildId;
+@property(readonly, nonatomic) BOOL hasAppId;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,19 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSObject<OS_dispatch_source>, PLAccountingOperator, PLCoreAgent, PLCoreService, PLCoreStorage;
+@class NSDate, NSObject<OS_dispatch_source>, PLCoreAgent, PLCoreService, PLCoreStorage;
 
 @interface PowerlogCore : NSObject
 {
     NSObject<OS_dispatch_source> *_fVMPressureSource;
     NSDate *_launchDate;
     PLCoreStorage *_storage;
-    PLAccountingOperator *_accounting;
     PLCoreAgent *_agents;
     PLCoreService *_services;
 }
 
 + (BOOL)isDebugEnabled;
++ (BOOL)isAudioAccessory;
++ (BOOL)shouldSetupCore;
 + (BOOL)allowRun;
 + (void)deprecateOldFullMode;
 + (void)setupCore;
@@ -26,7 +27,6 @@
 + (BOOL)sharedCoreStarted;
 @property(readonly) PLCoreService *services; // @synthesize services=_services;
 @property(readonly) PLCoreAgent *agents; // @synthesize agents=_agents;
-@property(readonly) PLAccountingOperator *accounting; // @synthesize accounting=_accounting;
 @property(readonly) PLCoreStorage *storage; // @synthesize storage=_storage;
 @property(readonly) NSDate *launchDate; // @synthesize launchDate=_launchDate;
 - (void).cxx_destruct;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _dimmed;
     long long _backgroundStyle;
-    vector_e0f2bd7e _tags;
+    vector_12bd641b _tags;
     _Bool _inBatchUpdate;
 }
 
@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)updateTagsImage;
-- (void)setTags:(const vector_e0f2bd7e *)arg1;
-- (vector_e0f2bd7e)tags;
+- (void)setTags:(const vector_12bd641b *)arg1;
+- (vector_12bd641b)tags;
 - (_Bool)isSelected;
 - (void)initCommon;
 

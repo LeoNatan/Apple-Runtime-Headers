@@ -15,6 +15,7 @@
     Class _nodeClass;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)graphWithBufferRadius:(float)arg1 minCoordinate:maxCoordinate: /* Error: Ran out of types for this method. */;
 + (id)graphWithBufferRadius:(float)arg1 minCoordinate:(Class)arg2 maxCoordinate:nodeClass: /* Error: Ran out of types for this method. */;
 - (void).cxx_destruct;

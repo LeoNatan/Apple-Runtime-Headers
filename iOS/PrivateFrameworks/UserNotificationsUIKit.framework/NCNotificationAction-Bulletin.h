@@ -7,6 +7,8 @@
 #import "NCNotificationAction.h"
 
 @interface NCNotificationAction (Bulletin)
++ (id)userNotificationActionForNCNotificationAction:(id)arg1;
++ (id)notificationActionForUNNotificationAction:(id)arg1 bulletin:(id)arg2 observer:(id)arg3;
 + (id)_notificationActionForAction:(id)arg1 bulletin:(id)arg2 observer:(id)arg3;
 + (id)notificationActionForSilenceAction:(id)arg1 bulletin:(id)arg2 observer:(id)arg3;
 + (id)notificationActionForDismissAction:(id)arg1 bulletin:(id)arg2 observer:(id)arg3;

@@ -8,6 +8,7 @@
 
 @protocol EQKitLayoutContext <NSObject>
 - (struct CGSize)containerSize;
+- (struct CGSize)targetSize;
 - (struct __CFString *)baseFontName;
 - (double)baseFontSize;
 

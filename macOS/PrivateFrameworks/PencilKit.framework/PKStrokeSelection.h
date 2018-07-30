@@ -26,9 +26,9 @@
 @property(readonly, nonatomic) NSMutableOrderedSet *strokes; // @synthesize strokes=_strokes;
 - (void).cxx_destruct;
 - (id)strokeDataForSelection;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct CGRect)boundsWithoutLasso;
 - (struct CGRect)bounds;
-- (id)allStrokes;
 - (id)initWithStrokes:(id)arg1 lassoStroke:(id)arg2 drawing:(id)arg3;
 
 // Remaining properties

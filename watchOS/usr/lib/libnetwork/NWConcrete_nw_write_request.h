@@ -8,28 +8,30 @@
 
 #import "OS_nw_write_request.h"
 
-@class NSObject<OS_dispatch_data>, NSObject<OS_nw_array>, NSObject<OS_nw_outbound_message>, NSString;
+@class NSObject<OS_dispatch_data>, NSObject<OS_nw_content_context>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_write_request : NSObject <OS_nw_write_request>
 {
-    NWConcrete_nw_write_request *nwr_next;
+    NWConcrete_nw_write_request *next;
     CDUnknownBlockType completion;
     NSObject<OS_dispatch_data> *data;
-    NSObject<OS_nw_outbound_message> *message;
-    NSObject<OS_nw_array> *data_array;
-    unsigned long consumed_data_count;
-    unsigned char variant;
+    NSObject<OS_nw_content_context> *context;
+    unsigned long consumed_bytes;
+    double relative_priority;
     unsigned int complete:1;
+    unsigned int reported:1;
     unsigned int idempotent:1;
+    unsigned int write_close:1;
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

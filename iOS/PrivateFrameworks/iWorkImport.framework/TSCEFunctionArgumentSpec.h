@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
     int mArgumentContext;
     unsigned char mRangeContext;
     NSArray *mDisallowedTypes;
-    vector_10088e46 *mModeValues;
+    vector_a1208d01 mModeValues;
     short mDefaultModeIndex;
     TSCEFunctionSpec *mFunctionSpec;
     _Bool mMinInclusive;
@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
     _Bool mReferenceForGeometryOnly;
 }
 
-+ (id)argumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(unsigned char)arg6 minValue:(double)arg7 minInclusive:(_Bool)arg8 maxValue:(double)arg9 maxInclusive:(_Bool)arg10 isInteger:(_Bool)arg11 disallowDuration:(_Bool)arg12 disallowCurrency:(_Bool)arg13 modeValues:(vector_10088e46 *)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(_Bool)arg16 forceArrayMode:(_Bool)arg17;
++ (id)argumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(unsigned char)arg6 minValue:(double)arg7 minInclusive:(_Bool)arg8 maxValue:(double)arg9 maxInclusive:(_Bool)arg10 isInteger:(_Bool)arg11 disallowDuration:(_Bool)arg12 disallowCurrency:(_Bool)arg13 modeValues:(const vector_a1208d01 *)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(_Bool)arg16 forceArrayMode:(_Bool)arg17;
 @property(readonly, nonatomic) _Bool forceArrayMode; // @synthesize forceArrayMode=mForceArrayMode;
 @property(nonatomic) TSCEFunctionSpec *functionSpec; // @synthesize functionSpec=mFunctionSpec;
-@property(readonly, nonatomic) vector_10088e46 *modeValues; // @synthesize modeValues=mModeValues;
+@property(readonly, nonatomic) vector_a1208d01 modeValues; // @synthesize modeValues=mModeValues;
 @property(readonly, nonatomic) short defaultModeIndex; // @synthesize defaultModeIndex=mDefaultModeIndex;
 @property(readonly, nonatomic) _Bool referenceForGeometryOnly; // @synthesize referenceForGeometryOnly=mReferenceForGeometryOnly;
 @property(readonly, nonatomic) _Bool disallowCurrency; // @synthesize disallowCurrency=mDisallowCurrency;
@@ -50,6 +50,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned char rangeContext; // @synthesize rangeContext=mRangeContext;
 @property(readonly, nonatomic) int argumentContext; // @synthesize argumentContext=mArgumentContext;
 @property(readonly, nonatomic) int accessorMode; // @synthesize accessorMode=mAccessorMode;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (_Bool)isModeEnabled:(short)arg1;
 - (_Bool)typeIsDisallowed:(int)arg1 value:(struct TSCEValue *)arg2;
 @property(readonly, nonatomic) NSArray *disallowedTypes;
@@ -72,7 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)localizedArgumentNameForLocale:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initArgumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(unsigned char)arg6 minValue:(double)arg7 minInclusive:(_Bool)arg8 maxValue:(double)arg9 maxInclusive:(_Bool)arg10 isInteger:(_Bool)arg11 disallowDuration:(_Bool)arg12 disallowCurrency:(_Bool)arg13 modeValues:(vector_10088e46 *)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(_Bool)arg16 forceArrayMode:(_Bool)arg17;
+- (id)initArgumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(unsigned char)arg6 minValue:(double)arg7 minInclusive:(_Bool)arg8 maxValue:(double)arg9 maxInclusive:(_Bool)arg10 isInteger:(_Bool)arg11 disallowDuration:(_Bool)arg12 disallowCurrency:(_Bool)arg13 modeValues:(const vector_a1208d01 *)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(_Bool)arg16 forceArrayMode:(_Bool)arg17;
 
 @end
 

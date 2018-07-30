@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _region;
     struct __IOSurface *_surface;
     _Bool _usesSRGB;
-    // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLiB[1024{TreeCacheElement=Q^{Kernel}}]I^{ObjectCache<CI::Node>}^{ObjectCache<CI::Node>}dd@^{RenderTask}iBI@@}, name: _context
+    // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@}, name: _context
     id <MTLTexture> _mtlTexture;
     _Bool _surfaceLocked;
 }
@@ -22,10 +22,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int format;
 @property(readonly, nonatomic) unsigned long bytesPerRow;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer;
+@property(readonly, nonatomic) void *device;
 @property(readonly, nonatomic) _Bool usesSRGBTransferFunction;
 @property(readonly, nonatomic) struct __IOSurface *surface;
 - (void)dealloc;
--     // Error parsing type: @44@0:4^{__IOSurface=}8{Texture=(?={?=II}^v)}12B20{CGRect={CGPoint=ff}{CGSize=ff}}24^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLiB[1024{TreeCacheElement=Q^{Kernel}}]I^{ObjectCache<CI::Node>}^{ObjectCache<CI::Node>}dd@^{RenderTask}iBI@@}40, name: initWithSurface:texture:allowSRGB:bounds:context:
+-     // Error parsing type: @44@0:4^{__IOSurface=}8{Texture=(?={?=II}^v)}12B20{CGRect={CGPoint=ff}{CGSize=ff}}24^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@}40, name: initWithSurface:texture:allowSRGB:bounds:context:
 
 @end
 

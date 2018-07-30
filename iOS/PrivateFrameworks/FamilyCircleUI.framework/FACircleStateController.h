@@ -6,16 +6,23 @@
 
 #import "NSObject.h"
 
-@class FARequestConfigurator, UIViewController;
+#import "DevicePINControllerDelegate.h"
 
-@interface FACircleStateController : NSObject
+@class FARequestConfigurator, NSString, UIViewController;
+
+@interface FACircleStateController : NSObject <DevicePINControllerDelegate>
 {
     FARequestConfigurator *_requestConfigurator;
+    CDUnknownBlockType _performOperationCompletion;
     UIViewController *_presenter;
 }
 
 @property(nonatomic) __weak UIViewController *presenter; // @synthesize presenter=_presenter;
 - (void).cxx_destruct;
+- (void)_restrictionsPINCompletionWithSuccess:(_Bool)arg1;
+- (void)didCancelEnteringPIN;
+- (void)didAcceptEnteredPIN;
+- (void)showRestrictionsPINController;
 - (void)_performOperationWithContext:(id)arg1 viewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_presentViewServiceWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_contextRequiresRemoteService:(id)arg1;
@@ -23,6 +30,12 @@
 - (void)performOperationWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithPresenter:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

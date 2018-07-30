@@ -73,6 +73,7 @@
 - (id)activeCaloriesForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)_generateWorkoutDataWithHeartRates:(id)arg1 recoveryHeartRates:(id)arg2 objectCollection:(id)arg3 demoPerson:(id)arg4;
 - (void)_generateYogaWorkoutDataWithObjectCollection:(id)arg1 demoPerson:(id)arg2;
+- (void)_generateHikingWorkoutDataWithObjectCollection:(id)arg1 demoPerson:(id)arg2;
 - (void)_generateWalkingWorkoutDataWithObjectCollection:(id)arg1 demoPerson:(id)arg2;
 - (void)_generateRunningWorkoutDataWithObjectCollection:(id)arg1 demoPerson:(id)arg2;
 - (void)_generateEllipticalWorkoutDataWithObjectCollection:(id)arg1 demoPerson:(id)arg2;

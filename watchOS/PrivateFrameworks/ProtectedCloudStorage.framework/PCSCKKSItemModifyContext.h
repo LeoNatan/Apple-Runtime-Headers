@@ -13,6 +13,7 @@
     struct __CFDictionary *_rollAttributes;
     _Bool _sync;
     _Bool _roll;
+    _Bool _returnedExistingIdentity;
     struct _PCSIdentitySetData *_set;
     struct __PCSLogContext *_log;
     NSString *_dsid;
@@ -37,6 +38,7 @@
 @property(retain) id activityAssertion; // @synthesize activityAssertion=_activityAssertion;
 @property(retain) PCSLockAssertion *lockAssertion; // @synthesize lockAssertion=_lockAssertion;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
+@property _Bool returnedExistingIdentity; // @synthesize returnedExistingIdentity=_returnedExistingIdentity;
 @property(readonly) PCSMTT *mtt; // @synthesize mtt=_mtt;
 @property int retryLeftCount; // @synthesize retryLeftCount=_retryLeftCount;
 @property _Bool roll; // @synthesize roll=_roll;

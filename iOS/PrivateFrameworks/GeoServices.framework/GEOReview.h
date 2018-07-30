@@ -10,6 +10,7 @@
 
 @class GEOUser, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOReview : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

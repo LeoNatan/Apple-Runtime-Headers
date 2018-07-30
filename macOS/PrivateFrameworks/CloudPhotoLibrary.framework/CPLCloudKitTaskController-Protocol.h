@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class CKDatabase, CKRecord, CKRecordZone, CPLCloudKitOperationsTracker, CPLLibraryInfo, NSError;
+@class CKContainer, CKDatabase, CPLCloudKitOperationsTracker, NSError;
 
 @protocol CPLCloudKitTaskController
+@property(readonly, nonatomic) BOOL canBoostBackgroundOperations;
+@property(readonly, nonatomic) BOOL canBoostOperations;
+@property(readonly, nonatomic, getter=isForeground) BOOL foreground;
 @property(readonly, nonatomic, getter=isNetworkConnected) BOOL networkConnected;
 @property(readonly, nonatomic) CPLCloudKitOperationsTracker *operationTracker;
-@property(readonly, nonatomic) CKRecordZone *recordZone;
+@property(readonly, nonatomic) CKContainer *container;
+@property(readonly, nonatomic) CKDatabase *sharedDatabase;
 @property(readonly, nonatomic) CKDatabase *database;
-- (void)updateRecordZone:(CKRecordZone *)arg1;
-- (void)handleCKRecord:(CKRecord *)arg1;
-- (void)updateZoneState:(CKRecord *)arg1;
 - (void)processTaskErrorIfNeeded:(NSError *)arg1;
-- (void)updateCachedLibraryInfo:(CPLLibraryInfo *)arg1;
-- (CPLLibraryInfo *)cachedLibraryInfo;
 @end
 

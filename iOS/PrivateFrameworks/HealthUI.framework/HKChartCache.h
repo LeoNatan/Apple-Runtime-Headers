@@ -34,7 +34,7 @@
 - (void)_removeFetchOperationsForIdentifiers:(id)arg1;
 - (void)fetchResultsForIdentifiers:(id)arg1;
 - (id)cachedResultsForIdentifier:(id)arg1;
-- (_Bool)cacheIsDirtyForIdentifier:(id)arg1;
+- (unsigned long long)stateForIdentifier:(id)arg1;
 - (void)_alertObserversDidUpdateResults;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

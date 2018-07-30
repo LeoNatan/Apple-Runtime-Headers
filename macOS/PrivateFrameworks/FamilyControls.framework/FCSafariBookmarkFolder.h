@@ -13,12 +13,13 @@
     NSMutableArray *_children;
 }
 
++ (id)defaultBookmarksForLevel:(id)arg1;
 + (id)bookmarkWithDictionary:(id)arg1;
 + (id)bookmarkFolderWithFlatArray:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (id)flatArrayWithArray:(id)arg1 beginningAtPath:(id)arg2;
 - (id)description;
 - (id)flatArray;
-- (id)flatArrayWithArray:(id)arg1 beginningAtPath:(id)arg2;
 - (void)removeBookmarkAtIndex:(long long)arg1;
 - (void)removeBookmarks:(id)arg1;
 - (void)removeBookmark:(id)arg1;

@@ -24,6 +24,7 @@
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 @property(nonatomic, getter=_updateInterval, setter=_setUpdateInterval:) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(copy, nonatomic) CDUnknownBlockType initialResultsHandler; // @synthesize initialResultsHandler=_initialResultsHandler;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
@@ -34,7 +35,6 @@
 - (void)queue_validate;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_queryDidDeactivate:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)queue_populateConfiguration:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 moveIntervalComponents:(id)arg3 exerciseIntervalComponents:(id)arg4 initialResultsHandler:(CDUnknownBlockType)arg5;
 

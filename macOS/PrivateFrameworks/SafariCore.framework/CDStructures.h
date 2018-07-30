@@ -39,6 +39,7 @@ struct _malloc_zone_t {
     CDUnknownFunctionPointerType _field15;
     CDUnknownFunctionPointerType _field16;
     CDUnknownFunctionPointerType _field17;
+    CDUnknownFunctionPointerType _field18;
 };
 
 struct malloc_introspection_t;

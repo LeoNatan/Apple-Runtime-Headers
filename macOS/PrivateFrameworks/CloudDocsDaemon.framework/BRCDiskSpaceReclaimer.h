@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     BRCAccountSession *_session;
     BOOL _isClosed;
+    BOOL _computingPurgable;
     br_pacer *_purgePacer;
     STMFreeSpaceRequest *_purgeRequest;
     NSObject<OS_dispatch_queue> *_queue;
@@ -34,26 +35,27 @@ __attribute__((visibility("hidden")))
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(CDUnknownBlockType)arg1 withUrgency:(int)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(CDUnknownBlockType)arg1 withTimeDelta:(double)arg2 onDiskAccessTimeDelta:(double)arg3;
+- (void)_updateNonPurgeableCachedSizeForDocument:(id)arg1;
 - (id)accessTimestampForDocument:(id)arg1;
 - (BOOL)documentWasAccessedRecently:(id)arg1;
-- (void)didUpdateMtimeOnDocument:(id)arg1;
 - (void)didAccessDocument:(id)arg1;
 - (BOOL)overwriteDocumentAccessTime:(id)arg1 atime:(unsigned long long)arg2;
 - (BOOL)documentUpdateEvictability:(id)arg1;
+- (BOOL)documentWasUpdated:(id)arg1 diffs:(unsigned long long)arg2;
 - (BOOL)documentWasDeleted:(id)arg1;
 - (BOOL)documentWasCreated:(id)arg1;
+- (void)_updateNonPurgeableCachedSizeByAddingBytes:(long long)arg1;
 - (long long)periodicReclaimSpace;
 - (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
 - (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
 - (void)_asyncAutovacuumIfNeeds:(id)arg1;
 - (long long)_vacuumDB:(id)arg1 amount:(long long)arg2 withUrgency:(int)arg3;
 - (long long)_doIncrementalVacuum:(id)arg1 amount:(long long)arg2;
-- (long long)_doFullVacuum:(id)arg1;
 - (long long)_fullVacuumIfPossible:(id)arg1;
 - (long long)_dbAutovacuumableSpaceInBytes:(id)arg1;
 - (long long)_dbSizeInBytes:(id)arg1;
-- (long long)computePurgableSpaceWithUrgency:(int)arg1;
-- (id)computePurgeableSpaceForAllUrgencies;
+- (void)computePurgeableSpaceForAllUrgenciesWithReply:(CDUnknownBlockType)arg1;
+- (void)cachedPurgeableSpaceForAllUrgencies:(id *)arg1 nonPurgeableSpace:(id *)arg2 error:(id *)arg3;
 - (void)close;
 - (id)initWithAccountSession:(id)arg1;
 

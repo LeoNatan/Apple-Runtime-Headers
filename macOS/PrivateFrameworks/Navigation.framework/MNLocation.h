@@ -43,8 +43,8 @@
 @property(nonatomic) int rampType; // @synthesize rampType=_rampType;
 @property(nonatomic) unsigned int roadLineType; // @synthesize roadLineType=_roadLineType;
 @property(nonatomic) long long shieldType; // @synthesize shieldType=_shieldType;
-@property(retain, nonatomic) NSString *shieldText; // @synthesize shieldText=_shieldText;
-@property(retain, nonatomic) NSString *roadName; // @synthesize roadName=_roadName;
+@property(copy, nonatomic) NSString *shieldText; // @synthesize shieldText=_shieldText;
+@property(copy, nonatomic) NSString *roadName; // @synthesize roadName=_roadName;
 @property(retain, nonatomic) GEONavigationMatchInfo *detailedMatchInfo; // @synthesize detailedMatchInfo=_detailedMatchInfo;
 @property(retain, nonatomic) CLLocation *rawLocation; // @synthesize rawLocation=_rawLocation;
 @property(retain, nonatomic) GEORoadMatch *roadMatch; // @synthesize roadMatch=_roadMatch;

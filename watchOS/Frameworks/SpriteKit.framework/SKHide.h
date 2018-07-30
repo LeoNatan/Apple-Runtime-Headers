@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (id)unhide;
 + (id)hide;
++ (_Bool)supportsSecureCoding;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)reversedAction;
 - (void)encodeWithCoder:(id)arg1;

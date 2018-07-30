@@ -6,14 +6,14 @@
 
 #import "UIImageView.h"
 
-@class SXVideoPlayButton;
+@class SVVideoPlayButton;
 
 @interface SXPosterFrameView : UIImageView
 {
-    SXVideoPlayButton *_playButton;
+    SVVideoPlayButton *_playButton;
 }
 
-@property(retain, nonatomic) SXVideoPlayButton *playButton; // @synthesize playButton=_playButton;
+@property(retain, nonatomic) SVVideoPlayButton *playButton; // @synthesize playButton=_playButton;
 - (void).cxx_destruct;
 - (_Bool)accessibilityIgnoresInvertColors;
 - (void)setImage:(id)arg1 animated:(_Bool)arg2;

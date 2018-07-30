@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)stopCurrentSpeechRequestAtMark:(long long)arg1;
 - (void)startSynthesisRequest:(id)arg1;
 - (void)stopPresynthesizedAudioRequest;
+- (void)cachePresynthesizedAudioRequest:(id)arg1;
 - (void)startPresynthesizedAudioRequest:(id)arg1;
 - (void)startSpeechRequest:(id)arg1;
 - (void)endAudioPowerUpdate;

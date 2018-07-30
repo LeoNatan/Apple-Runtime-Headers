@@ -8,7 +8,6 @@
 
 @class CNContactStore, NSObject<OS_os_log>;
 
-__attribute__((visibility("hidden")))
 @interface CNUIDeleteCommandHelper : NSObject
 {
     CNContactStore *_contactStore;

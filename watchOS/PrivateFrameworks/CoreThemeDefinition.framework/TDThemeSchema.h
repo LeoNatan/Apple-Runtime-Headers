@@ -29,7 +29,6 @@
 - (void)loadRenditionSubtypes;
 - (void)loadRenditionTypes;
 - (void)loadThemeDefaultLook;
-- (void)loadThemeLooks;
 - (void)loadIterationTypes;
 - (void)loadThemeUISizeClasses;
 - (void)loadThemeGraphicsFeatureSetClasses;

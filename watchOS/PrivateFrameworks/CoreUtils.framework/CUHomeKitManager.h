@@ -18,6 +18,7 @@
 
 @interface CUHomeKitManager : NSObject <HMAccessoryDelegatePrivate, HMHomeDelegate, HMHomeDelegatePrivate, HMHomeManagerDelegate, HMHomeManagerDelegatePrivate, HMMediaSystemDelegate, HMUserDelegatePrivate>
 {
+    int _homeKitPrefsNotifyToken;
     HMHomeManager *_homeManager;
     _Bool _homeManagerDidUpdateHomes;
     struct NSMutableDictionary *_homes;
@@ -76,10 +77,9 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
-- (void)user:(id)arg1 didUpdatePairingIdentity:(id)arg2;
 - (void)user:(id)arg1 didUpdateAssistantAccessControl:(id)arg2 forHome:(id)arg3;
-- (void)accessory:(id)arg1 didUpdatePairingIdentity:(id)arg2;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
+- (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateComponents:(id)arg2;
 - (void)home:(id)arg1 didRemoveMediaSystem:(id)arg2;
 - (void)home:(id)arg1 didAddMediaSystem:(id)arg2;
@@ -96,12 +96,14 @@
 - (void)homeManagerDidUpdateHomes:(id)arg1;
 - (void)homeManagerDidUpdateDataSyncState:(id)arg1;
 - (id)_selfAccessoryMediaSystemUncached:(id *)arg1;
-- (id)_selfAccessoryUncached;
 - (_Bool)_isOwnerOfHome:(id)arg1;
 - (id)_cuPairingIdentityWithHMFPairingIdentity:(id)arg1 options:(unsigned int)arg2 error:(id *)arg3;
-- (id)_bestPairingIdentity;
+- (id)_bestUserAndLabel:(id *)arg1;
+- (void)_findPairedPeerWithContext:(id)arg1 label:(id)arg2 pairingIdentity:(id)arg3 error:(id)arg4;
+- (void)_findPairedPeerWithContext:(id)arg1;
 - (void)_findPairedPeer:(id)arg1 options:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)findPairedPeer:(id)arg1 options:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_getPairingIdentityCompleted:(id)arg1 options:(unsigned int)arg2 error:(id)arg3 label:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_getPairingIdentityForUserWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_getPairingIdentityForAccessoryWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getPairingIdentityWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
@@ -115,7 +117,7 @@
 - (void)_invalidated;
 - (void)invalidate;
 - (void)_interrupted;
-- (void)_activate;
+- (void)_activateIfNeeded;
 - (void)activate;
 - (void)dealloc;
 - (id)init;

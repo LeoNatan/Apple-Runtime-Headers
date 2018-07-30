@@ -44,7 +44,7 @@
     NSString *_savedURLHostForEvaluator;
     NSString *_savedPortForEvaluator;
     _Bool _skipPeer;
-    _Bool _skipEdge;
+    _Bool _useWiFiHint;
     _Bool _forceReconnect;
     NSError *_skipPeerError;
     SAConnectionPolicy *_connectionPolicy;
@@ -68,12 +68,13 @@
 @property(nonatomic) _Bool forceReconnect; // @synthesize forceReconnect=_forceReconnect;
 @property(nonatomic) _Bool prefersWWAN; // @synthesize prefersWWAN=_prefersWWAN;
 @property(copy, nonatomic) NSError *skipPeerError; // @synthesize skipPeerError=_skipPeerError;
-@property(nonatomic) _Bool skipEdge; // @synthesize skipEdge=_skipEdge;
+@property(nonatomic) _Bool useWiFiHint; // @synthesize useWiFiHint=_useWiFiHint;
 @property(nonatomic) _Bool skipPeer; // @synthesize skipPeer=_skipPeer;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) __weak id <SiriCoreSiriConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_recordConnectionMethodForMetrics:(id)arg1;
+- (void)siriBackgroundConnection:(id)arg1 didEncounterIntermediateError:(id)arg2;
 - (void)siriBackgroundConnection:(id)arg1 didEncounterError:(id)arg2 analysisInfo:(id)arg3;
 - (void)siriBackgroundConnectionDidClose:(id)arg1;
 - (void)siriBackgroundConnection:(id)arg1 didReceiveAceObject:(id)arg2;

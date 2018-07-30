@@ -20,11 +20,13 @@
     struct CGSize _boundsSize;
     PKShapeView *_maskView;
     double _fontRatio;
+    double _cornerRadius;
 }
 
 + (id)titleForType:(long long)arg1;
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
 + (Class)layerClass;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_createHighlightFilterIfNecessary;

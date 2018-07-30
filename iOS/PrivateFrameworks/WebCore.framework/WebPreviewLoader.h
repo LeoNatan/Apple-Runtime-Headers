@@ -15,6 +15,10 @@ __attribute__((visibility("hidden")))
     struct unique_ptr<WebCore::PreviewConverter, std::__1::default_delete<WebCore::PreviewConverter>> _converter;
     struct RetainPtr<NSMutableArray> _bufferedDataArray;
     _Bool _hasSentDidReceiveResponse;
+    _Bool _hasProcessedResponse;
+    struct RefPtr<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>> _bufferedData;
+    long long _lengthReceived;
+    _Bool _needsToCallDidFinishLoading;
 }
 
 - (id).cxx_construct;

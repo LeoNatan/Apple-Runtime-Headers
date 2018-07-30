@@ -29,7 +29,8 @@
 @property(retain, nonatomic) NSString *unmodifiedInput; // @synthesize unmodifiedInput=_unmodifiedInput;
 @property(readonly, nonatomic) long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(readonly, nonatomic) long long keyCode; // @synthesize keyCode=_keyCode;
-@property(readonly, retain, nonatomic) NSString *input; // @synthesize input=_input;
+@property(readonly, nonatomic) NSString *input; // @synthesize input=_input;
+- (void).cxx_destruct;
 - (long long)describes:(id)arg1;
 @property(readonly, nonatomic) _Bool isTextualDescriptor;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -39,7 +40,6 @@
 - (id)initWithInput:(id)arg1 modifierFlags:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end
 

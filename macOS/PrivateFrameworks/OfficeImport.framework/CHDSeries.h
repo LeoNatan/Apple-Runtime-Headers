@@ -10,7 +10,6 @@
 
 @class CHDChart, CHDChartType, CHDData, CHDDataLabel, CHDDataValue, CHDErrorBar, CHDFormula, EDCollection, EDKeyedCollection, NSString, OADGraphicProperties;
 
-__attribute__((visibility("hidden")))
 @interface CHDSeries : NSObject <EDKeyedObject>
 {
     CHDChart *mChart;
@@ -32,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)seriesWithChart:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEmpty;
 - (id)defaultSeriesNameForIndex:(unsigned long long)arg1;
@@ -71,7 +71,6 @@ __attribute__((visibility("hidden")))
 - (void)setChartType:(id)arg1;
 - (id)chart;
 - (id)chartType;
-- (void)dealloc;
 - (void)clearBackPointers;
 - (id)shallowCopy;
 - (id)initWithChart:(id)arg1;

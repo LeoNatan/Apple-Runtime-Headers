@@ -8,7 +8,7 @@
 
 #import "PARClientXPC.h"
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSXPCConnection, NSXPCListenerEndpoint, PARImageLoader, PARSessionConfiguration, QueryIdMapper;
+@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListenerEndpoint, PARImageLoader, PARSessionConfiguration, QueryIdMapper;
 
 @interface PARSearchClient : NSObject <PARClientXPC>
 {
@@ -23,6 +23,7 @@
     PARImageLoader *_imageLoader;
 }
 
++ (id)sharedClient;
 + (id)daemonConnection;
 + (id)_deafListenerEndpoint;
 @property(readonly) PARImageLoader *imageLoader; // @synthesize imageLoader=_imageLoader;
@@ -35,22 +36,26 @@
 - (void)getImageMap:(CDUnknownBlockType)arg1;
 - (void)fileHandleAndAttributesForResource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)listSessions:(CDUnknownBlockType)arg1;
-- (void)listenToFlusher:(CDUnknownBlockType)arg1;
-- (void)feedback:(CDUnknownBlockType)arg1;
-- (void)reportFeedback:(id)arg1 queryId:(unsigned long long)arg2;
-- (unsigned long long)request:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)reportFeedback:(id)arg1 feedback:(id)arg2 queryId:(unsigned long long)arg3;
+- (unsigned long long)request:(id)arg1 request:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (unsigned long long)_queryId:(unsigned long long)arg1 forObject:(id)arg2;
-- (void)bag:(CDUnknownBlockType)arg1;
-- (void)configure;
+- (void)bag:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)configure:(id)arg1;
 @property(retain) NSXPCListenerEndpoint *endpoint;
 - (void)addSession:(id)arg1;
 - (void)dealloc;
 - (void)_invalidateConnection;
-- (id)initWithConnection:(id)arg1 configuration:(id)arg2;
+- (id)initWithConnection:(id)arg1;
 - (id)init;
 - (void)didDeleteResource:(id)arg1;
 - (void)didDownloadResource:(id)arg1;
 - (void)bagDidLoad:(id)arg1 error:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

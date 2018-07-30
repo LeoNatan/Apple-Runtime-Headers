@@ -55,6 +55,13 @@ struct _NSRange {
     unsigned int _field2;
 };
 
+struct __CFArray;
+
+struct __cfobservers_t {
+    id slot;
+    struct __cfobservers_t *next;
+};
+
 struct _opaque_pthread_mutex_t {
     long __sig;
     char __opaque[40];
@@ -117,6 +124,12 @@ typedef struct {
 typedef struct {
     int _field1;
     int _field2;
+    int _field3;
+} CDStruct_77932685;
+
+typedef struct {
+    int _field1;
+    int _field2;
 } CDStruct_1ef3fb1f;
 
 typedef struct {
@@ -125,6 +138,19 @@ typedef struct {
     unsigned int _field3;
     unsigned int _field4;
 } CDStruct_52991635;
+
+typedef struct {
+    int _field1;
+    int _field2;
+    struct __CFArray *_field3;
+    struct __CFArray *_field4;
+} CDStruct_199678ce;
+
+typedef struct {
+    int _field1;
+    int _field2;
+    struct __CFArray *_field3;
+} CDStruct_79d58866;
 
 typedef struct {
     CDStruct_08ecd808 _field1;

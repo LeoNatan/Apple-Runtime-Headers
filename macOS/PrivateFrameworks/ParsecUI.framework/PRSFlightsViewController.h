@@ -36,11 +36,8 @@
 - (id)flightSectionFromSFResult:(id)arg1;
 - (void)updateWithFlight:(id)arg1 andLegIndex:(unsigned long long)arg2;
 - (void)setRepresentedObject:(id)arg1;
-- (void)appearanceChanged:(id)arg1;
 - (void)loadView;
 - (void)mouseDown:(id)arg1;
-- (void)dealloc;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

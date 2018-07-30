@@ -8,6 +8,7 @@
 
 @class NSIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface _NSLazyFetchingArray : NSMutableArray
 {
     NSMutableArray *_objects;

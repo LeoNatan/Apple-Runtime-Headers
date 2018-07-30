@@ -8,7 +8,7 @@
 
 #import "FCUserInfoObserving.h"
 
-@class FCAppConfigurationManager, FCCommandQueue, FCUserInfo, NSString;
+@class FCCommandQueue, FCUserInfo, NSString;
 
 @interface FCNotificationController : NSObject <FCUserInfoObserving>
 {
@@ -16,10 +16,10 @@
     NSString *_deviceToken;
     FCUserInfo *_userInfo;
     FCCommandQueue *_commandQueue;
-    FCAppConfigurationManager *_appConfigManager;
+    id <FCCoreConfigurationManager> _configurationManager;
 }
 
-@property(retain, nonatomic) FCAppConfigurationManager *appConfigManager; // @synthesize appConfigManager=_appConfigManager;
+@property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) FCCommandQueue *commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(retain, nonatomic) FCUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *deviceToken; // @synthesize deviceToken=_deviceToken;
@@ -33,7 +33,7 @@
 - (void)_registerDeviceToken:(id)arg1;
 - (void)registerDeviceToken:(id)arg1;
 - (void)dealloc;
-- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 appConfigurationManager:(id)arg3;
+- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 configurationManager:(id)arg3;
 - (id)init;
 
 // Remaining properties

@@ -14,6 +14,8 @@
 - (void)setPropertyOnStreamWithIdentifier:(unsigned long long)arg1 propDict:(NSDictionary *)arg2 propKey:(NSString *)arg3 withReply:(void (^)(_Bool))arg4;
 - (void)invalidateWithReply:(void (^)(void))arg1;
 - (void)resetStorageWithReply:(void (^)(void))arg1;
+- (void)setTLSCachePrefix:(NSString *)arg1;
+- (void)setDiscretionaryOverride:(long long)arg1 forTaskWithIdentifier:(unsigned long long)arg2;
 - (void)setBytesPerSecondLimit:(long long)arg1 forTaskWithIdentifier:(unsigned long long)arg2;
 - (void)setLoadingPoolPriority:(double)arg1 forTaskWithIdentifier:(unsigned long long)arg2;
 - (void)setPriority:(long long)arg1 forTaskWithIdentifier:(unsigned long long)arg2;

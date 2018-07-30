@@ -6,27 +6,21 @@
 
 #import "NSObject.h"
 
-#import "ADAdSheetConnectionDelegate.h"
+#import "ADAdServingDaemonConnectionDelegate.h"
 
-@class ADAdSheetConnection, NSString;
+@class ADAdServingDaemonConnection, NSString;
 
-@interface ADOptInManager : NSObject <ADAdSheetConnectionDelegate>
+@interface ADOptInManager : NSObject <ADAdServingDaemonConnectionDelegate>
 {
-    ADAdSheetConnection *_connection;
+    ADAdServingDaemonConnection *_connection;
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) ADAdSheetConnection *connection; // @synthesize connection=_connection;
-- (void)adSheetConnectionInterrupted;
+@property(retain, nonatomic) ADAdServingDaemonConnection *connection; // @synthesize connection=_connection;
+- (void)adServingDaemonConnectionInterrupted;
 - (void)getiAdIDsWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)handlePushNotification:(id)arg1;
-- (void)primeAdSheetDataStore;
-- (void)handleAccountChange;
-- (void)refreshOptInStatusRefreshingWeakToken:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)refreshOptInStatus;
-- (void)setOptInStatus:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)configureConnection:(id)arg1;
-- (id)adSheetMachServiceName;
+- (id)adServingDaemonMachServiceName;
 - (id)init;
 - (void)dealloc;
 

@@ -38,6 +38,7 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *recentInputIdentifier; // @synthesize recentInputIdentifier=_recentInputIdentifier;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -56,7 +57,6 @@
 @property(nonatomic) unsigned int spellCheckingType;
 @property(nonatomic) unsigned int autocorrectionType;
 @property(nonatomic) unsigned int autocapitalizationType;
-- (void)dealloc;
 
 @end
 

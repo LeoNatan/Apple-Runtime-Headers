@@ -10,7 +10,10 @@
 {
 }
 
++ (id)facetime;
++ (id)transcript;
 + (id)details;
++ (id)autocomplete;
 
 @end
 

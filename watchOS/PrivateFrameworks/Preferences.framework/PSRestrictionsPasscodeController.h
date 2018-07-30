@@ -10,20 +10,23 @@
 {
 }
 
++ (void)removePasswordForHashAndSaltLegacyRestrictions;
++ (id)passwordForHashAndSaltLegacyRestrictions;
++ (id)saltForHashAndSaltLegacyRestrictions;
++ (id)newHashDataForPassword:(id)arg1 andSalt:(id)arg2;
++ (id)_restrictionPasswordDictionary;
++ (id)_generateSalt;
++ (_Bool)legacyRestrictionsInEffect;
++ (id)pinFromHashAndSaltLegacyPassword;
++ (_Bool)hasHashAndSaltLegacyPassword;
++ (void)_setKeychainPasswordForRestrictions:(id)arg1;
 + (id)_keychainPasswordForRestrictions;
 + (void)_removeKeychainPasswordForRestrictions;
 + (_Bool)validatePIN:(id)arg1;
 + (_Bool)settingEnabled;
 + (void)setPIN:(id)arg1;
-+ (void)removePasswordForRestrictions;
-+ (void)setPasswordForRestrictions:(id)arg1;
-+ (id)passwordForRestrictions;
-+ (id)saltForRestrictions;
-+ (id)newHashDataForPassword:(id)arg1 andSalt:(id)arg2;
-+ (id)_restrictionPasswordDictionary;
-+ (id)_generateSalt;
-+ (_Bool)legacyRestrictionsInEffect;
 + (void)migrateRestrictionsPasscode;
++ (void)_migrateRestrictionsPasscodeIfNeeded;
 
 @end
 

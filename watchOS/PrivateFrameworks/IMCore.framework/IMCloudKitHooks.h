@@ -14,6 +14,8 @@
 + (id)sharedInstance;
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
+- (_Bool)mocAccountsMatch;
+- (void)broadcastCloudKitStateAfterClearingErrors;
 - (void)broadcastCloudKitState;
 - (void)tryToAutoCollectLogsWithErrorString:(id)arg1 sendLogsTo:(id)arg2;
 - (void)fetchCloudKitSyncStateDebuggingInfo:(id)arg1;
@@ -54,10 +56,12 @@
 - (_Bool)rampedIntoTruthZone;
 - (_Bool)removedFromiCloudBackup;
 - (void)tryToDisableAllDevices;
+- (void)fetchSecurityLevelAndUpdateMiCSwitchEligibility;
 - (void)performAdditionalStorageRequiredCheck;
 - (void)setEnabled:(_Bool)arg1;
 - (_Bool)isEnabled;
 - (_Bool)shouldShowCloudKitUI;
+- (void)sendRestoreFailuresLogDumps;
 - (void)clearDataFromCloudKit;
 - (void)clearLocalSyncState;
 - (void)loadDirtyMessagesWithLimit:(int)arg1;

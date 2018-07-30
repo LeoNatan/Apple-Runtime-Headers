@@ -10,6 +10,7 @@
 
 @interface STMFreeSpaceRequest : NSObject
 {
+    struct os_unfair_lock_s _stateLock;
     BOOL _userInteractionAllowed;
     long long _state;
     unsigned long long _spaceRequested;

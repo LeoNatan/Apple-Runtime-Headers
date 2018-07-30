@@ -6,38 +6,31 @@
 
 #import <MapKit/_MKUILabel.h>
 
-@class MKArtworkDataSourceCache, MKMapItem, NSArray;
+@class MKArtworkDataSourceCache, NSArray;
 
 @interface MKTransitInfoLabelView : _MKUILabel
 {
+    int _iconSize;
+    float _maxWidth;
+    float _spaceBetweenIcons;
+    CDUnknownBlockType _textForTruncationGenerator;
     _Bool _hasCustomShieldSize;
     _Bool _hasCustomIconSize;
     _Bool _hasCustomFont;
-    _Bool _containsText;
-    float _maxWidth;
-    CDUnknownBlockType _textForTruncation;
-    MKMapItem *_mapItem;
     int _shieldSize;
-    int _iconSize;
     NSArray *_labelItems;
     float _spaceBetweenShields;
-    float _spaceBetweenIcons;
     MKArtworkDataSourceCache *_artworkCache;
 }
 
++ (int)iconSizeForContentSizeCategory:(id)arg1;
++ (int)shieldSizeForContentSizeCategory:(id)arg1;
++ (id)stringAttributesForFont:(id)arg1 lineBreakMode:(int)arg2;
 @property(retain, nonatomic) MKArtworkDataSourceCache *artworkCache; // @synthesize artworkCache=_artworkCache;
-@property(readonly, nonatomic) _Bool containsText; // @synthesize containsText=_containsText;
-@property(nonatomic) float spaceBetweenIcons; // @synthesize spaceBetweenIcons=_spaceBetweenIcons;
 @property(nonatomic) float spaceBetweenShields; // @synthesize spaceBetweenShields=_spaceBetweenShields;
 @property(copy, nonatomic) NSArray *labelItems; // @synthesize labelItems=_labelItems;
-@property(nonatomic) int iconSize; // @synthesize iconSize=_iconSize;
 @property(nonatomic) int shieldSize; // @synthesize shieldSize=_shieldSize;
-@property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-@property(copy, nonatomic) CDUnknownBlockType textForTruncation; // @synthesize textForTruncation=_textForTruncation;
-@property(nonatomic) float maxWidth; // @synthesize maxWidth=_maxWidth;
 - (void).cxx_destruct;
-- (int)_iconSizeForContentSizeCategory:(id)arg1;
-- (int)_shieldSizeForContentSizeCategory:(id)arg1;
 - (void)_contentSizeCategoryDidChange;
 - (void)_setFont:(id)arg1 custom:(_Bool)arg2;
 - (void)setFont:(id)arg1;
@@ -45,12 +38,17 @@
 - (id)_imageForArtworkDataSource:(id)arg1;
 - (id)_imageForLabelItem:(id)arg1;
 - (id)_stringAttributes;
+- (void)setSpaceBetweenIcons:(float)arg1;
+- (void)setIconSize:(int)arg1;
 - (id)_generateText;
 - (void)_setupLabelInfo;
+- (void)setMaxWidth:(float)arg1 textForTruncationGenerator:(CDUnknownBlockType)arg2;
+- (void)setMapItem:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithLabelItems:(id)arg1 iconSize:(int)arg2 shieldSize:(int)arg3 spaceBetweenShields:(float)arg4 maxWidth:(float)arg5;
 - (id)initWithMapItem:(id)arg1 maxWidth:(float)arg2;
 - (id)initWithMapItem:(id)arg1;
+- (id)init;
 
 @end
 

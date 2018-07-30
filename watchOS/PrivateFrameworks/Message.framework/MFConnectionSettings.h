@@ -24,12 +24,14 @@
     _Bool _allowsTrustPrompt;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_accountIdentifier;
+    NSString *_networkAccountIdentifier;
 }
 
 @property(nonatomic) _Bool allowsTrustPrompt; // @synthesize allowsTrustPrompt=_allowsTrustPrompt;
 @property(nonatomic) _Bool usesOpportunisticSockets; // @synthesize usesOpportunisticSockets=_usesOpportunisticSockets;
 @property(nonatomic) _Bool usesSSL; // @synthesize usesSSL=_usesSSL;
 @property(nonatomic) unsigned int portNumber; // @synthesize portNumber=_portNumber;
+@property(copy, nonatomic) NSString *networkAccountIdentifier; // @synthesize networkAccountIdentifier=_networkAccountIdentifier;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(copy, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;

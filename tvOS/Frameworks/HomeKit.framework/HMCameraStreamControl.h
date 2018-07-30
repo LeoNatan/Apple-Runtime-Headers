@@ -8,16 +8,15 @@
 
 #import "_HMCameraStreamControlDelegate.h"
 
-@class HMCameraStream, NSObject<OS_dispatch_queue>, NSString, _HMCameraStreamControl;
+@class HMCameraStream, HMFUnfairLock, NSString, _HMCameraStreamControl;
 
 @interface HMCameraStreamControl : HMCameraControl <_HMCameraStreamControlDelegate>
 {
+    HMFUnfairLock *_lock;
     id <HMCameraStreamControlDelegate> _delegate;
     _HMCameraStreamControl *_streamControl;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain, nonatomic) _HMCameraStreamControl *streamControl; // @synthesize streamControl=_streamControl;
 - (void).cxx_destruct;
 - (void)cameraStreamControl:(id)arg1 didStopStream:(id)arg2;

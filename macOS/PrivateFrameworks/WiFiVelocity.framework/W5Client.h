@@ -46,6 +46,7 @@
 - (id)runWiFiSnifferOnChannel:(id)arg1 duration:(double)arg2 peer:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)collectLogItems:(id)arg1 outputURL:(id)arg2 compress:(BOOL)arg3 peer:(id)arg4 update:(CDUnknownBlockType)arg5 diagnostics:(CDUnknownBlockType)arg6 reply:(CDUnknownBlockType)arg7;
 - (id)collectLogs:(id)arg1 compress:(BOOL)arg2 peer:(id)arg3 update:(CDUnknownBlockType)arg4 diagnostics:(CDUnknownBlockType)arg5 reply:(CDUnknownBlockType)arg6;
+- (void)__logsCollectedWithTemporaryURL:(id)arg1 receipts:(id)arg2 error:(id)arg3 outputURL:(id)arg4 compress:(BOOL)arg5 reply:(CDUnknownBlockType)arg6;
 - (id)runDiagnosticsTests:(id)arg1 peer:(id)arg2 update:(CDUnknownBlockType)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)setDebugConfiguration:(id)arg1 peer:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)queryDebugConfigurationForPeer:(id)arg1 reply:(CDUnknownBlockType)arg2;

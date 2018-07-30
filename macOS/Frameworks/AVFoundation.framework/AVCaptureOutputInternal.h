@@ -8,6 +8,7 @@
 
 @class AVCaptureSession, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureOutputInternal : NSObject
 {
     AVCaptureSession *session;

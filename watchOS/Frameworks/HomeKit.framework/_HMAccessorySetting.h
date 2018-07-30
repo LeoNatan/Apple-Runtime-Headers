@@ -11,10 +11,11 @@
 #import "HMFMessageReceiver.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessorySettings, NSArray, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMAccessorySettings, HMFUnfairLock, NSArray, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface _HMAccessorySetting : NSObject <HMFLogging, HMFMessageReceiver, HMFMerging, NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
     NSMutableOrderedSet *_constraints;
     _Bool _reflected;
     id <NSCopying><NSSecureCoding> _value;
@@ -23,7 +24,6 @@
     int _type;
     unsigned int _properties;
     NSString *_name;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMAccessorySettings *_accessorySettings;
     _HMContext *_context;
 }
@@ -32,10 +32,12 @@
 + (id)supportedConstraintClasses;
 + (id)supportedValueClasses;
 + (id)logCategory;
++ (id)_replaceConstraintsPayloadWithAdditions:(id)arg1 removals:(id)arg2;
++ (id)_encodedConstraintsToAdd:(id)arg1;
++ (id)_encodedConstraintsToRemove:(id)arg1;
 + (id)shortDescription;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) HMAccessorySettings *accessorySettings; // @synthesize accessorySettings=_accessorySettings;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned int properties; // @synthesize properties=_properties;
 @property(readonly) int type; // @synthesize type=_type;
@@ -71,7 +73,6 @@
 @property(readonly, copy) NSArray *constraints;
 - (void)_registerNotificationHandlers;
 - (void)configureWithAccessorySettings:(id)arg1 context:(id)arg2;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;

@@ -10,6 +10,7 @@
 
 @class NSArray, NSError, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureFileOutputRecordingOperationDescriptor : NSObject <AVCaptureOperationDescriptor>
 {
     NSURL *_outputFileURL;

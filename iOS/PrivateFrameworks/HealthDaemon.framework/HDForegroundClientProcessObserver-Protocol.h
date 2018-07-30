@@ -9,6 +9,6 @@
 @class NSSet;
 
 @protocol HDForegroundClientProcessObserver <NSObject>
-- (void)foregroundClientProcessesDidChange:(NSSet *)arg1;
+- (void)foregroundClientProcessesDidChange:(NSSet *)arg1 previouslyForegroundBundleIdentifiers:(NSSet *)arg2;
 @end
 

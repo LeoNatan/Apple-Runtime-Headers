@@ -14,12 +14,13 @@
 }
 
 + (id)localizedShortPowerUnitString;
-+ (id)localizedShortCadenceUnitString;
++ (id)localizedShortCadenceUnitStringForActivityType:(unsigned long long)arg1;
 + (id)percentStringWithNumber:(id)arg1;
 + (id)stringWithNumber:(id)arg1 decimalPrecision:(unsigned long long)arg2 roundingMode:(unsigned long long)arg3;
 + (id)stringWithNumber:(id)arg1 decimalPrecision:(unsigned long long)arg2;
 @property(readonly, nonatomic) FIUIUnitManager *unitManager; // @synthesize unitManager=_unitManager;
 - (void).cxx_destruct;
+- (id)localizedInSessionDescriptionForElevation:(unsigned long long)arg1;
 - (id)localizedDistanceByStrokeStyle:(id)arg1 isPoolSwim:(_Bool)arg2;
 - (id)localizedHeartRateUnitString;
 - (id)localizedStringWithBeatsPerMinute:(double)arg1 requirePositiveValue:(_Bool)arg2;
@@ -54,13 +55,16 @@
 - (double)roundedDailyMoveGoalForCalories:(double)arg1;
 - (id)localizedStringWithPersonHeight:(id)arg1 unitStyle:(long long)arg2;
 - (unsigned long long)userDistanceUnitForSwimmingLapLength;
-- (id)localizedDistinguishingPaceUnitStringWithMetricType:(unsigned long long)arg1 distanceType:(unsigned long long)arg2 distanceUnit:(unsigned long long)arg3 paceFormat:(long long)arg4;
+- (id)localizedDistinguishingPaceUnitStringWithMetricType:(unsigned long long)arg1 distanceType:(unsigned long long)arg2 distanceUnit:(unsigned long long)arg3 paceFormat:(long long)arg4 abbreviated:(_Bool)arg5;
+- (id)localizedPaceUnitStringWithDistanceType:(unsigned long long)arg1 distanceUnit:(unsigned long long)arg2 unitStyle:(long long)arg3;
 - (id)localizedPaceUnitStringWithDistanceType:(unsigned long long)arg1 distanceUnit:(unsigned long long)arg2;
 - (id)localizedSpeedUnitString;
 - (id)localizedShortTypeDistinguishingUnitStringForPowerType:(unsigned long long)arg1 unitString:(id)arg2;
 - (id)localizedPowerUnitStringForPower:(double)arg1;
 - (id)localizedStrokeCountStringWithCount:(long long)arg1 overDistance:(id)arg2 paceFormat:(long long)arg3;
 - (id)localizedSwimmingPaceStringWithDistance:(id)arg1 overDuration:(double)arg2 paceFormat:(long long)arg3;
+- (double)speedPerHourWithDistance:(id)arg1 overDuration:(double)arg2 paceFormat:(long long)arg3;
+- (id)localizedPaceAndUnitStringForSpeed:(double)arg1 activityType:(id)arg2;
 - (id)localizedPaceStringWithDistance:(id)arg1 overDuration:(double)arg2 paceFormat:(long long)arg3;
 - (id)localizedLongUnitStringForDistanceUnit:(unsigned long long)arg1 distanceInUnit:(double)arg2 textCase:(unsigned long long)arg3;
 - (id)localizedLongUnitStringForDistanceUnit:(unsigned long long)arg1 distanceInUnit:(double)arg2;
@@ -71,10 +75,8 @@
 - (unsigned long long)_naturalScaleUnitForDistanceInMeters:(double)arg1 distanceType:(unsigned long long)arg2;
 - (id)localizedNaturalScaleStringWithDistanceInMeters:(double)arg1 distanceType:(unsigned long long)arg2 unitStyle:(unsigned long long)arg3 usedUnit:(unsigned long long *)arg4;
 - (id)localizedStringWithDistanceInMeters:(double)arg1 distanceType:(unsigned long long)arg2 unitStyle:(unsigned long long)arg3;
+- (id)_stringByReplacingThirtyThreeAndAThirdIfNeeded:(id)arg1 distanceInMeters:(double)arg2 distanceUnit:(unsigned long long)arg3;
 - (id)localizedStringWithDistanceInMeters:(double)arg1 distanceUnit:(unsigned long long)arg2 unitStyle:(unsigned long long)arg3 decimalPrecision:(unsigned long long)arg4;
-- (double)distanceInDistanceUnit:(unsigned long long)arg1 forDistanceInMeters:(double)arg2;
-- (double)distanceInUserDistanceUnitForDistanceInMeters:(double)arg1 distanceType:(unsigned long long)arg2;
-- (double)distanceInMetersForDistanceInUserUnit:(double)arg1 distanceType:(unsigned long long)arg2;
 - (id)stringWithDuration:(double)arg1 durationFormat:(unsigned long long)arg2;
 - (id)localizationKeyForDistanceBaseKey:(id)arg1 distanceType:(unsigned long long)arg2;
 - (id)localizationKeyForEnergyBaseKey:(id)arg1;

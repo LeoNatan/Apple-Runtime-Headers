@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(copy, setter=_setCurrentColor:) NSColor *_currentColor; // @synthesize _currentColor;
 - (void)loadView;
 - (void)viewDidInvalidate:(id)arg1;
-- (void)preparePickerWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)preparePickerWithSandboxExtension:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)remoteView;
 - (id)exportedInterface;

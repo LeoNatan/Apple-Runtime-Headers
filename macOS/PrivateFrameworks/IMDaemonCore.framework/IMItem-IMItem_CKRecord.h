@@ -38,8 +38,6 @@
 - (id)compressedProtobufDataForGroupTitleChangeItem;
 - (void)_populateCKRecordWithIMMessageItemFields:(id)arg1;
 - (void)_populateCKRecordWithIMItemFields:(id)arg1;
-- (id)_recordIDUsingName:(id)arg1 zoneID:(id)arg2;
-- (id)_recordNameUsingSalt:(id)arg1;
 - (id)compressedProtobufDataForMessage;
 - (id)compressedProtobufDataWithPadding:(id)arg1;
 - (id)_accountControllerSharedInstance;

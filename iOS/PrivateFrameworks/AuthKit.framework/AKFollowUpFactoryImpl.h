@@ -15,6 +15,7 @@
 }
 
 - (_Bool)IsFollowUpItemNotificationForced:(id)arg1;
+- (id)actionWithTitle:(id)arg1 andActionKey:(id)arg2;
 - (id)_clearAction;
 - (id)_notificationFromPayload:(id)arg1;
 - (id)_actionFromInfo:(id)arg1;

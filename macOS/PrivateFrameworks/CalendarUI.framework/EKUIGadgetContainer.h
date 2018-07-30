@@ -8,7 +8,7 @@
 
 #import "EKUILayoutItem.h"
 
-@class CalDefaultDictionary, EKUIGadget, EKUIGadgetContainerDividerView, EKUIGadgetContainerView, EKUIVibrantView, EKViewController, NSArray, NSColor, NSDictionary, NSMutableDictionary, NSMutableOrderedSet, NSString;
+@class CalDefaultDictionary, CalUIDividerView, EKUIGadget, EKUIGadgetContainerView, EKUIVibrantView, EKViewController, NSArray, NSColor, NSDictionary, NSMutableDictionary, NSMutableOrderedSet, NSString;
 
 @interface EKUIGadgetContainer : NSObject <EKUILayoutItem>
 {
@@ -35,8 +35,8 @@
     NSMutableOrderedSet *_currentlyDisplayedItems;
     EKUIGadgetContainerView *_containerView;
     EKUIVibrantView *_backgroundView;
-    EKUIGadgetContainerDividerView *_topDivider;
-    EKUIGadgetContainerDividerView *_bottomDivider;
+    CalUIDividerView *_topDivider;
+    CalUIDividerView *_bottomDivider;
     NSDictionary *_metrics;
     NSMutableDictionary *_conditionalMetrics;
     NSArray *_topConstraints;
@@ -57,8 +57,8 @@
 @property(retain) NSArray *topConstraints; // @synthesize topConstraints=_topConstraints;
 @property(retain) NSMutableDictionary *conditionalMetrics; // @synthesize conditionalMetrics=_conditionalMetrics;
 @property(retain) NSDictionary *metrics; // @synthesize metrics=_metrics;
-@property(retain) EKUIGadgetContainerDividerView *bottomDivider; // @synthesize bottomDivider=_bottomDivider;
-@property(retain) EKUIGadgetContainerDividerView *topDivider; // @synthesize topDivider=_topDivider;
+@property(retain) CalUIDividerView *bottomDivider; // @synthesize bottomDivider=_bottomDivider;
+@property(retain) CalUIDividerView *topDivider; // @synthesize topDivider=_topDivider;
 @property(retain) EKUIVibrantView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) EKUIGadgetContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain) NSMutableOrderedSet *currentlyDisplayedItems; // @synthesize currentlyDisplayedItems=_currentlyDisplayedItems;

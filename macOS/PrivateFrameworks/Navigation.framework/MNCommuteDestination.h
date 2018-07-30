@@ -33,7 +33,7 @@
 
 + (BOOL)supportsSecureCoding;
 @property(retain) MNObserverHashTable *observers; // @synthesize observers=_observers;
-@property(retain, nonatomic) NSDictionary *scores; // @synthesize scores=_scores;
+@property(copy, nonatomic) NSDictionary *scores; // @synthesize scores=_scores;
 @property(nonatomic) long long score; // @synthesize score=_score;
 @property(retain, nonatomic) MNLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
 @property(nonatomic) BOOL rerouting; // @synthesize rerouting=_rerouting;
@@ -54,10 +54,10 @@
 @property(readonly, nonatomic) double geodesicDistance;
 @property(readonly) BOOL canCalculateETA;
 @property(readonly) BOOL canGetETARoute;
-@property(readonly, nonatomic) NSString *name;
+@property(readonly, copy, nonatomic) NSString *name;
 @property(readonly, nonatomic) GEOComposedWaypoint *waypoint;
-@property(readonly, nonatomic) NSString *uniqueIdentifier;
-@property(readonly) NSString *shortDescription;
+@property(readonly, copy, nonatomic) NSString *uniqueIdentifier;
+@property(readonly, nonatomic) NSString *shortDescription;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

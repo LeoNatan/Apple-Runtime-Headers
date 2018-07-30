@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isEitherDeviceGreenTea;
 + (float)estimatedHeightForText:(id)arg1 withFontStyle:(id)arg2 usingCellWidth:(float)arg3;
 + (float)estimatedHeightForText:(id)arg1 withFont:(id)arg2 usingCellWidth:(float)arg3;
 

@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)addBridgeKeys:(id)arg1;
-- (unsigned long long)acceptableStyleMask;
++ (unsigned long long)acceptableStyleMask;
 
 @end
 

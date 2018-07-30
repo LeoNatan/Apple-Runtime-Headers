@@ -75,7 +75,6 @@ __attribute__((visibility("hidden")))
 - (void)indexOneBatchInDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)itemChangedAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeTrashedItemsOlderThanDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)refreshInstalledAppsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)defaultInstance;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)evictItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

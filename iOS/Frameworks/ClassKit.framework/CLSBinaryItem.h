@@ -8,12 +8,11 @@
 
 @interface CLSBinaryItem : CLSActivityItem
 {
-    _Bool __value;
+    _Bool _value;
     long long _valueType;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) _Bool _value; // @synthesize _value=__value;
 @property(nonatomic) long long valueType; // @synthesize valueType=_valueType;
 @property(nonatomic) _Bool value;
 - (id)dictionaryRepresentation;

@@ -11,6 +11,7 @@
 
 @class CBDisplayModuleMacOS, DisplayALSManager, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CBABModuleMacBuiltIn : CBModule <CBContainerModuleProtocol, CBHIDServiceProtocol>
 {
     CDUnknownBlockType _notificationBlock;

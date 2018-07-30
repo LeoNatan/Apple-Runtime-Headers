@@ -8,7 +8,6 @@
 
 @class NSAttributedString, NSTextView;
 
-__attribute__((visibility("hidden")))
 @interface ABShadowTextFieldCell : NSTextFieldCell
 {
     NSTextView *_fieldEditor;

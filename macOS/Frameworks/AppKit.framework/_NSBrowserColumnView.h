@@ -37,6 +37,7 @@
 - (id)menuForEvent:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)tile;
+- (struct CGRect)_boundsInsetForBorder;
 - (id)_invalidateGStatesForTree;
 - (void)_updateHorizontalScrollerAvoidance;
 - (BOOL)_accessoryViewMightInterfereWithOverlayScrollers:(id)arg1;

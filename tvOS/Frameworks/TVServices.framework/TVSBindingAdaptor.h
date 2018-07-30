@@ -16,6 +16,7 @@
 }
 
 + (id)atvValueTransformerFromOptions:(id)arg1;
+- (void).cxx_destruct;
 - (_Bool)validateValue:(id *)arg1 forBinding:(id)arg2 error:(id *)arg3;
 - (void)setValue:(id)arg1 forBinding:(id)arg2;
 - (id)optionsForBinding:(id)arg1;

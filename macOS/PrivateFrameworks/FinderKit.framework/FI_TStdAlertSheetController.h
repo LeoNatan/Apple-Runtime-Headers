@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TStdAlertSheetController : NSObject
 {
-    struct TNSRef<id<TStdAlertSheetClientProtocol>, void> _client;
+    struct TNSRef<NSObject<TStdAlertSheetClientProtocol>, void> _client;
     function_b1fce659 _notifySuppression;
 }
 

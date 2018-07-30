@@ -13,7 +13,6 @@
 
 @interface _SFPBTextColumnsCardSection : PBCodable <_SFPBTextColumnsCardSection, NSSecureCoding>
 {
-    CDStruct_9787ad25 _has;
     BOOL _canBeHidden;
     BOOL _hasTopPadding;
     BOOL _hasBottomPadding;
@@ -53,16 +52,6 @@
 - (unsigned long long)columnsCount;
 - (void)addColumns:(id)arg1;
 - (void)clearColumns;
-@property(readonly, nonatomic) BOOL hasTitleWeight;
-@property(readonly, nonatomic) BOOL hasTitle;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

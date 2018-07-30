@@ -6,7 +6,7 @@
 
 #import <PhotosUICore/PXTilingLayout.h>
 
-@class PXAssetsDataSource, PXBasicTileUserData, PXIndexPathSet, PXOverlayBadgeTileUserData, PXSelectionBadgeTileUserData;
+@class NSIndexSet, PXAssetsDataSource, PXBasicTileUserData, PXIndexPathSet, PXOverlayBadgeTileUserData, PXSelectionBadgeTileUserData;
 
 @interface PXAssetsTilingLayout : PXTilingLayout
 {
@@ -22,10 +22,12 @@
     PXBasicTileUserData *__highlightedDimmingUserData;
     PXBasicTileUserData *__selectedDimmingUserData;
     PXBasicTileUserData *__draggingDimmingUserData;
+    NSIndexSet *_additionalAccessoryTileKinds;
     struct PXSimpleIndexPath _highlightedIndexPath;
     struct PXSimpleIndexPath _focusedIndexPath;
 }
 
+@property(retain, nonatomic) NSIndexSet *additionalAccessoryTileKinds; // @synthesize additionalAccessoryTileKinds=_additionalAccessoryTileKinds;
 @property(readonly, nonatomic) PXBasicTileUserData *_draggingDimmingUserData; // @synthesize _draggingDimmingUserData=__draggingDimmingUserData;
 @property(readonly, nonatomic) PXBasicTileUserData *_selectedDimmingUserData; // @synthesize _selectedDimmingUserData=__selectedDimmingUserData;
 @property(readonly, nonatomic) PXBasicTileUserData *_highlightedDimmingUserData; // @synthesize _highlightedDimmingUserData=__highlightedDimmingUserData;
@@ -44,6 +46,7 @@
 - (double)zPositionOffsetForKind:(unsigned long long)arg1;
 - (id)description;
 - (void)_invalidateAllSelectionTiles;
+- (_Bool)getAdditionalAccessoryTileIdentifier:(out struct PXTileIdentifier *)arg1 outGeometry:(out struct PXTileGeometry *)arg2 group:(out unsigned long long *)arg3 userData:(out id *)arg4 forTileKind:(unsigned long long)arg5 contentTileGeometry:(const struct PXTileGeometry *)arg6 indexPath:(struct PXSimpleIndexPath)arg7;
 - (_Bool)_getOverlayBadgeTileIdentifier:(out struct PXTileIdentifier *)arg1 outGeometry:(out struct PXTileGeometry *)arg2 group:(out unsigned long long *)arg3 userData:(out id *)arg4 forContentTileGeometry:(const struct PXTileGeometry *)arg5 indexPath:(struct PXSimpleIndexPath)arg6;
 - (_Bool)_getDimmingTileIdentifier:(out struct PXTileIdentifier *)arg1 outGeometry:(out struct PXTileGeometry *)arg2 group:(out unsigned long long *)arg3 userData:(out id *)arg4 forContentTileGeometry:(const struct PXTileGeometry *)arg5 indexPath:(struct PXSimpleIndexPath)arg6;
 - (_Bool)_getPlayButtonTileIdentifier:(out struct PXTileIdentifier *)arg1 outGeometry:(out struct PXTileGeometry *)arg2 group:(out unsigned long long *)arg3 userData:(out id *)arg4 forContentTileGeometry:(const struct PXTileGeometry *)arg5 indexPath:(struct PXSimpleIndexPath)arg6;

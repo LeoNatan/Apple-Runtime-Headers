@@ -15,6 +15,8 @@
     id _frameworkDelegate;
 }
 
++ (void)deleteAllSavedUserActivitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (_Bool)_supportsUserActivityAppLinks;
 + (_Bool)_currentUserActivityUUIDWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)_currentUserActivityUUID;
@@ -31,6 +33,8 @@
 - (id)typeIdentifier;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+@property(copy) NSString *persistentIdentifier; // @dynamic persistentIdentifier;
+@property(getter=isEligibleForPrediction) _Bool eligibleForPrediction;
 @property(getter=isEligibleForPublicIndexing) _Bool eligibleForPublicIndexing;
 @property(getter=isEligibleForSearch) _Bool eligibleForSearch;
 @property(getter=isEligibleForHandoff) _Bool eligibleForHandoff;

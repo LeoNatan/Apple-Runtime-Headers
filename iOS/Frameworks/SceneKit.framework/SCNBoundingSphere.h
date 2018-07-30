@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface SCNBoundingSphere : NSObject
 {
     struct SCNVector3 center;

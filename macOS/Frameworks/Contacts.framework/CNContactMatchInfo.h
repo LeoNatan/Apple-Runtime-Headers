@@ -8,19 +8,19 @@
 
 #import "NSSecureCoding.h"
 
-@class NSAttributedString, NSDictionary, NSNumber;
+@class CNPromise, NSDictionary, NSNumber;
 
 @interface CNContactMatchInfo : NSObject <NSSecureCoding>
 {
     BOOL _matchedNameProperty;
     NSNumber *_relevanceScore;
     NSDictionary *_matchedProperties;
-    NSAttributedString *_excerpt;
+    CNPromise *_excerpt;
 }
 
 + (BOOL)supportsSecureCoding;
 @property BOOL matchedNameProperty; // @synthesize matchedNameProperty=_matchedNameProperty;
-@property(retain) NSAttributedString *excerpt; // @synthesize excerpt=_excerpt;
+@property(retain) CNPromise *excerpt; // @synthesize excerpt=_excerpt;
 @property(copy) NSDictionary *matchedProperties; // @synthesize matchedProperties=_matchedProperties;
 @property(copy) NSNumber *relevanceScore; // @synthesize relevanceScore=_relevanceScore;
 - (void).cxx_destruct;

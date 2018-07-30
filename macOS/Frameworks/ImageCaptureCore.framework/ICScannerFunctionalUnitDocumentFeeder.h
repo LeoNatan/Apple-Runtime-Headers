@@ -17,7 +17,6 @@
 - (id)description;
 - (id)currentSettings;
 - (id)initWithDictionary:(id)arg1 andScanner:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 @property BOOL documentLoaded;
 @property BOOL duplexScanningEnabled;

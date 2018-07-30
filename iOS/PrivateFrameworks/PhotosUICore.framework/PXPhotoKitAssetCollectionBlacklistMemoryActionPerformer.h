@@ -10,6 +10,7 @@
 {
 }
 
++ (id)createAlertActionWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
 + (id)localizedTitleForUseCase:(unsigned long long)arg1 assetCollection:(id)arg2 person:(id)arg3;
 + (id)createPreviewActionGroupForAssetCollection:(id)arg1 mutableActionTypeToPreviewActionMap:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 + (id)createPreviewActionForAssetCollection:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

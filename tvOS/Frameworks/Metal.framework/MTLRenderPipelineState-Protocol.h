@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol MTLRenderPipelineState <NSObject>
+@property(readonly) _Bool supportIndirectCommandBuffers;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) NSString *label;
 @end

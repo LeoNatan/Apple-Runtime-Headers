@@ -8,13 +8,12 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface PDAnimationSoundTarget : PDAnimationShapeTarget
 {
     NSString *mSoundFile;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -6,30 +6,36 @@
 
 #import "NSObject.h"
 
-@class AVPlayerController, NSUUID;
+@class AVObservationController, AVPlayerController, NSObject<OS_dispatch_queue>;
 
 @interface AVNowPlayingInfoController : NSObject
 {
-    AVPlayerController *_playerController;
     id _playerControllerCurrentTimeJumpedObserver;
     _Bool _nowPlayingInfoNeedsUpdate;
     _Bool _enabled;
-    NSUUID *_identifier;
-    _Bool _shouldOwnNowPlayingInfo;
+    void *_commandHandlerIdentifier;
+    AVObservationController *_keyValueObservationController;
+    NSObject<OS_dispatch_queue> *_backgroundQueue;
     _Bool _requiresLinearPlayback;
+    AVPlayerController *_playerController;
+    AVPlayerController *_playerControllerToActivateAfterDelay;
 }
 
++ (void)sharedNowPlayingInfoControllerWithCompletion:(CDUnknownBlockType)arg1;
+@property(nonatomic) __weak AVPlayerController *playerControllerToActivateAfterDelay; // @synthesize playerControllerToActivateAfterDelay=_playerControllerToActivateAfterDelay;
+@property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(nonatomic) _Bool requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
 - (void).cxx_destruct;
-- (long long)_handleRemoteCommandEvent:(id)arg1;
-- (void)_updateRegisteredRemoteCommandEnabledStatesWithPlayerController:(id)arg1;
-- (void)_updateNowPlayingInfo;
+- (unsigned int)_handleRemoteCommand:(unsigned int)arg1 options:(id)arg2;
+- (void)_updateRegisteredRemoteCommandEnabledStatesWithCommandsAndStates:(id)arg1;
+- (id)_makeCommandsAndStatesDictionaryForPlayerController:(id)arg1;
+- (id)_makeNowPlayingInfo;
+- (void)_updateNowPlayingInfo:(id)arg1 commandsAndStates:(id)arg2 playbackState:(unsigned int)arg3;
 - (void)_updateNowPlayingInfoIfNeeded;
 - (void)_setNowPlayingInfoNeedsUpdate;
-- (_Bool)_ownsNowPlayingInfo;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)stopNowPlayingUpdatesForPlayerController:(id)arg1;
+- (void)startNowPlayingUpdatesForPlayerController:(id)arg1 afterDelay:(double)arg2;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
-@property(retain, nonatomic) AVPlayerController *playerController;
 - (void)dealloc;
 - (id)init;
 

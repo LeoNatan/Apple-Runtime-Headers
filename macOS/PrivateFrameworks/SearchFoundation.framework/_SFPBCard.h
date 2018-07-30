@@ -13,7 +13,6 @@
 
 @interface _SFPBCard : PBCodable <_SFPBCard, NSSecureCoding>
 {
-    CDStruct_db075487 _has;
     BOOL _flexibleSectionOrder;
     int _type;
     int _source;
@@ -65,29 +64,14 @@
 - (unsigned long long)entityProtobufMessagesCount;
 - (void)addEntityProtobufMessages:(id)arg1;
 - (void)clearEntityProtobufMessages;
-@property(readonly, nonatomic) BOOL hasFlexibleSectionOrder;
-@property(readonly, nonatomic) BOOL hasFbr;
-@property(readonly, nonatomic) BOOL hasQueryId;
-@property(readonly, nonatomic) BOOL hasResultIdentifier;
-@property(readonly, nonatomic) BOOL hasEntityIdentifier;
-@property(readonly, nonatomic) BOOL hasSource;
-@property(readonly, nonatomic) BOOL hasUrlValue;
-@property(readonly, nonatomic) BOOL hasContextReferenceIdentifier;
-@property(readonly, nonatomic) BOOL hasCardId;
 - (id)dismissalCommandsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)dismissalCommandsCount;
 - (void)addDismissalCommands:(id)arg1;
 - (void)clearDismissalCommands;
-@property(readonly, nonatomic) BOOL hasIntentResponseMessageName;
-@property(readonly, nonatomic) BOOL hasIntentResponseMessageData;
-@property(readonly, nonatomic) BOOL hasIntentMessageName;
-@property(readonly, nonatomic) BOOL hasIntentMessageData;
 - (id)cardSectionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)cardSectionsCount;
 - (void)addCardSections:(id)arg1;
 - (void)clearCardSections;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasTitle;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

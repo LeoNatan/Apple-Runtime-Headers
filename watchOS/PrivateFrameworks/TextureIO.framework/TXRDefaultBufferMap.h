@@ -10,6 +10,7 @@
 
 @class NSString, TXRDefaultBuffer;
 
+__attribute__((visibility("hidden")))
 @interface TXRDefaultBufferMap : NSObject <TXRBufferMap>
 {
     void *_bytes;

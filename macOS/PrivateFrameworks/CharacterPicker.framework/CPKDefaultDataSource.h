@@ -15,13 +15,11 @@
     id _contents;
 }
 
-+ (id)_sortFlagCharactersBasedOnLocalizedName:(id)arg1;
 + (id)characterPaletteLaunchParamForKey:(id)arg1;
 + (void)setCharacterPaletteLaunchParam:(id)arg1 forKey:(id)arg2;
 + (id)lastUsedSkinToneEmojiForEmoji:(id)arg1;
 + (id)setSkinTone:(long long)arg1 toString:(id)arg2;
 + (long long)hasSkinTone:(id)arg1;
-+ (id)localizedFlagRegionName:(id)arg1;
 + (id)localizedCharacterName:(id)arg1;
 + (const struct __EmojiLocaleDataWrapper *)preferredEmojiLocale;
 + (long long)indexInArray:(id)arg1 fromStandardItemIndex:(long long)arg2;
@@ -36,24 +34,27 @@
 + (void)setRecents:(id)arg1;
 + (void)setRecentString:(id)arg1;
 + (id)recents;
++ (id)copySkintoneHelpViewControllerForEmoji:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (void)didDisplaySkinToneHelp;
 + (id)loadEmojiCategoryData:(id)arg1;
 + (void)loadCategoryData:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (void)loadRecentsUsingBlock:(CDUnknownBlockType)arg1;
 + (void)loadRecentsAndFavoritesUsingBlock:(CDUnknownBlockType)arg1;
 + (id)sharedEmojiPreference;
 + (void)changeActiveCategories;
 + (id)_dataCategories;
 + (id)_prefixCategories;
-+ (void)_cachedDefaultDataArrayOrClear:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (void)_cacheDataArrayOnlyFastData:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)_expandNestedDataArray:(id)arg1;
-+ (void)_prepareCategories;
++ (BOOL)_prepareCategoriesWithFastData;
 + (CDStruct_4441bc53 *)_classGlobalPtr;
 + (void **)_classGlobalBufferPtr;
 - (BOOL)_shouldOmitCharacter:(id)arg1;
 - (BOOL)_cacheDecomposedEntityDataWithCheckGlyph:(BOOL)arg1 forceUpdate:(BOOL)arg2;
 - (id)_entityArrayInCategory:(long long)arg1;
 - (BOOL)_hasCachedData;
-- (void)secondaryDataSourcePreparationAsync:(BOOL)arg1;
+- (void)secondaryDataSourcePreparationUsingBlock:(CDUnknownBlockType)arg1;
+- (BOOL)needsSecondaryDataSourcePreparation;
 - (BOOL)isEmojiCategory:(long long)arg1;
 - (long long)initialSelectedCategoryIndex;
 - (id)storageIdentifier;
@@ -63,7 +64,8 @@
 - (id)titleForCategory:(long long)arg1;
 - (long long)numberOfCharactersInCategory:(long long)arg1;
 - (long long)numberOfCategories;
-- (void)prepareDataForceUpdate:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)prepareDataOnlyFastData:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)prepareOnlyFastDataUsingBlock:(CDUnknownBlockType)arg1;
 - (void)prepareDataUsingBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 

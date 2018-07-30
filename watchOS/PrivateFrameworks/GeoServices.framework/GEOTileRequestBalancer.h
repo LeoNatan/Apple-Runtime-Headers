@@ -6,16 +6,24 @@
 
 #import "NSObject.h"
 
+#import "GEOPListStateCapturing.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface GEOTileRequestBalancer : NSObject
+@interface GEOTileRequestBalancer : NSObject <GEOPListStateCapturing>
 {
     void *_requesters;
     void *_randomIndexGenerator;
+    unsigned int _maxRunningOperationsCount;
+    unsigned long long _stateCaptureHandle;
 }
 
 + (id)balancerForRequester:(id)arg1 tileKeys:(id)arg2 priorities:(id)arg3;
++ (void)setMaxRunningOperationsCount:(unsigned int)arg1;
++ (unsigned int)maxRunningOperationsCount;
 - (__wrap_iter_9a08789a)_next_requester;
-- (void)_startOperationsWithAvailableCount:(int)arg1;
+- (void)_startOperationsWithAvailableCount:(unsigned int)arg1;
 - (void)_startOperations;
 - (void)_requester:(id)arg1 removeTileKey:(struct _GEOTileKey)arg2;
 - (void)requester:(id)arg1 removeTileKey:(const struct _GEOTileKey *)arg2;
@@ -30,8 +38,15 @@ __attribute__((visibility("hidden")))
 - (void)_addRequester:(id)arg1 tileKeys:(id)arg2 priorities:(id)arg3;
 - (vector_49336e52 *)requesters;
 - (void)dealloc;
-- (id)_init;
+- (id)_initWithMaxRunningOperationsCount:(unsigned int)arg1;
 - (id)init;
+- (id)captureStatePlistWithHints:(struct os_state_hints_s *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

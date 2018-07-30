@@ -6,13 +6,11 @@
 
 #import "NSObject.h"
 
-#import "IKDOMBindingControllerDelegate.h"
-#import "IKJSDataItemObserver.h"
 #import "IKStyleableElement.h"
 
 @class IKAppDocument, IKDOMBindingController, IKElementChangeSet, IKViewElementStyle, IKViewElementStyleComposer, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
 
-@interface IKViewElement : NSObject <IKJSDataItemObserver, IKStyleableElement, IKDOMBindingControllerDelegate>
+@interface IKViewElement : NSObject <IKStyleableElement>
 {
     NSArray *_unfilteredChildren;
     NSArray *_visibleChildren;
@@ -39,24 +37,21 @@
     NSArray *_features;
     NSMutableDictionary *_metadataDict;
     NSMutableSet *_activeSingularEvents;
-    NSDictionary *_prototypesByType;
     NSString *_itmlID;
     IKDOMBindingController *_bindingController;
 }
 
-+ (id)_prototypesByTypeForDOMElement:(id)arg1 prototypesDOMElement:(id *)arg2;
 + (unsigned long long)evaluateElementUpdateType:(id)arg1;
-+ (id)instantiateDOMElementForItem:(id)arg1 withPrototype:(id)arg2 parentDOMElement:(id)arg3 existingDOMElement:(id)arg4;
 + (unsigned long long)updateTypeForChangeInAttribute:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
 + (id)supportedFeatures;
 + (_Bool)shouldParseChildDOMElement:(id)arg1;
 + (_Bool)shouldParseChildDOMElements;
++ (id)effectiveChildDOMElementsForDOMElement:(id)arg1;
 + (void)willParseDOMElement:(id)arg1;
 @property(readonly, nonatomic) _Bool prototypesUpdated; // @synthesize prototypesUpdated=_prototypesUpdated;
 @property(readonly, nonatomic) _Bool areChildrenBound; // @synthesize areChildrenBound=_areChildrenBound;
 @property(readonly, nonatomic) IKDOMBindingController *bindingController; // @synthesize bindingController=_bindingController;
 @property(readonly, retain, nonatomic) NSString *itmlID; // @synthesize itmlID=_itmlID;
-@property(retain, nonatomic) NSDictionary *prototypesByType; // @synthesize prototypesByType=_prototypesByType;
 @property(retain, nonatomic) NSMutableSet *activeSingularEvents; // @synthesize activeSingularEvents=_activeSingularEvents;
 @property(retain, nonatomic) NSMutableDictionary *metadataDict; // @synthesize metadataDict=_metadataDict;
 @property(nonatomic) _Bool didUpdateAutoHighlightIdentifier; // @synthesize didUpdateAutoHighlightIdentifier=_didUpdateAutoHighlightIdentifier;
@@ -77,8 +72,6 @@
 @property(readonly, nonatomic) _Bool isPartOfPrototypeElement; // @synthesize isPartOfPrototypeElement=_isPartOfPrototypeElement;
 @property(retain, nonatomic) IKViewElementStyleComposer *styleComposer; // @synthesize styleComposer=_styleComposer;
 - (void).cxx_destruct;
-- (void)_applyUpdatedIndexesValueWithIndexes:(id)arg1 domBindingController:(id)arg2;
-- (void)_applyChildrenValueWithItems:(id)arg1 domBindingController:(id)arg2;
 - (void)_updateSubtreeWithElement:(id)arg1;
 - (void)appDocumentDidMarkStylesDirty;
 @property(readonly, nonatomic) __weak id <IKStyleableElement> parentStyleableElement; // @synthesize parentStyleableElement=_parentStyleableElement;
@@ -88,19 +81,11 @@
 - (id)childTextElementWithStyle:(unsigned long long)arg1;
 - (id)childElementsWithType:(unsigned long long)arg1;
 - (id)childElementWithType:(unsigned long long)arg1;
-- (id)findPrototypeForType:(id)arg1;
 - (id)actualElementForProxyElement:(id)arg1 jsContext:(id)arg2;
 @property(readonly, retain, nonatomic) NSArray *children;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic) _Bool isProxyElement; // @synthesize isProxyElement=_isProxyElement;
-- (void)dataItem:(id)arg1 didChangeSubPropertyPathWithString:(id)arg2 forPropertyPathWithString:(id)arg3 subscriptIndex:(long long)arg4;
-- (void)domBindingController:(id)arg1 didResolveKeys:(id)arg2;
-- (_Bool)domBindingController:(id)arg1 applyValue:(id)arg2 forKey:(id)arg3;
-- (id)additionalKeysToResolveForDOMBindingController:(id)arg1;
-- (_Bool)domBindingController:(id)arg1 doKeysAffectSubtree:(id)arg2;
-- (_Bool)domBindingController:(id)arg1 doKeysAffectChildren:(id)arg2;
 - (_Bool)shouldResolveDataForDOMBindingController:(id)arg1;
-- (void)domBindingController:(id)arg1 didLoadBinding:(id)arg2;
 - (void)dispatchEvent:(id)arg1 eventAttribute:(id)arg2 canBubble:(_Bool)arg3 isCancelable:(_Bool)arg4 extraInfo:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)dispatchEventOfType:(unsigned long long)arg1 canBubble:(_Bool)arg2 isCancelable:(_Bool)arg3 extraInfo:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)retrievePresentationDocument:(CDUnknownBlockType)arg1;

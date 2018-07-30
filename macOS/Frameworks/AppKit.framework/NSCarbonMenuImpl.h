@@ -197,6 +197,8 @@
 - (void)setMenu:(id)arg1;
 - (void)setPopUpContext:(struct SLMPopUpMenuContext_t *)arg1;
 - (struct SLMPopUpMenuContext_t *)popUpContext;
+- (void)setMenuAppearance:(id)arg1;
+- (id)menuAppearance;
 - (void)setCustomHandlerList:(id)arg1;
 - (id)customHandlerList;
 - (void)_createExtraVars;

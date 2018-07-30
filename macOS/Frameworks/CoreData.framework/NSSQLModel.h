@@ -46,9 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(unsigned long long)arg3;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 entityIDOffset:(unsigned int)arg3;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(unsigned long long)arg4 entityIDOffset:(unsigned int)arg5;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(unsigned long long)arg4;
 
 @end

@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSActionBinderPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSDoubleClickActionBinderPlugin : _NSActionBinderPlugin
 {
 }

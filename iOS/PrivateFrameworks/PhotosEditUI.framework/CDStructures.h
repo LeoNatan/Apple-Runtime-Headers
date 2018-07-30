@@ -49,6 +49,11 @@ struct UIEdgeInsets {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    long long privateInteger;
+    float privateFloat;
+} CDStruct_910f5d27;
+
+typedef struct {
     long long value;
     int timescale;
     unsigned int flags;

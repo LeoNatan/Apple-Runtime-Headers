@@ -14,7 +14,6 @@
 @property(nonatomic) _Bool startingInitialSelectionDrag; // @synthesize startingInitialSelectionDrag=_startingInitialSelectionDrag;
 - (void)lookupAction:(id)arg1;
 - (void)lookup:(id)arg1;
-- (void)copy:(id)arg1;
 - (id)editorKeyboardLanguage;
 - (_Bool)handleGesture:(id)arg1;
 - (_Bool)canHandleGesture:(id)arg1;

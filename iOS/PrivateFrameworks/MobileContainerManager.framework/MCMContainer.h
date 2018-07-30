@@ -17,6 +17,7 @@
     struct container_object *_thisContainer;
 }
 
++ (long long)typeContainerClass;
 + (id)temporaryContainerWithIdentifier:(id)arg1 existed:(_Bool *)arg2 error:(id *)arg3;
 + (id)containerWithIdentifier:(id)arg1 createIfNecessary:(_Bool)arg2 existed:(_Bool *)arg3 error:(id *)arg4;
 + (id)containerWithIdentifier:(id)arg1 error:(id *)arg2;
@@ -40,10 +41,10 @@
 - (id)init;
 - (struct container_object *)getLowLevelContainerObject;
 - (void)markDeleted;
-- (id)initWithIdentifier:(id)arg1 userId:(unsigned int)arg2 uuid:(id)arg3 containerClass:(long long)arg4 error:(id *)arg5;
-- (long long)_getContainerClass;
+- (id)initWithIdentifier:(id)arg1 userId:(unsigned int)arg2 uuid:(id)arg3 error:(id *)arg4;
 - (void)dealloc;
 - (void)_errorOccurred;
+@property(readonly, nonatomic) struct container_object *thisContainer;
 
 @end
 

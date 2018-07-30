@@ -6,7 +6,7 @@
 
 #import <Safari/BookmarkSource.h>
 
-@class NSArray, NSDate, NSDateFormatter, NSMenu, NSMenuItem;
+@class NSArray, NSDate, NSDateFormatter, NSMapTable, NSMenu, NSMenuItem;
 
 __attribute__((visibility("hidden")))
 @interface HistoryBookmarkSource : BookmarkSource
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSArray *_sessions;
     NSDate *_oldestDateLoaded;
     NSDateFormatter *_dateFormatter;
+    NSMapTable *_bookmarkCache;
 }
 
 + (id)sharedSource;
@@ -42,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_removeHistoryFromMenu;
 - (void)_recentlyClosedTabsOrWindowsDidChange;
 - (void)refreshContents;
-- (void)_historySessionsDidChange;
+- (void)_historySessionsDidChange:(id)arg1;
 - (id)titleStringForContentItem:(id)arg1;
 - (id)parentOfContentItem:(id)arg1;
 - (unsigned int)numberOfChildrenOfContentItem:(id)arg1;

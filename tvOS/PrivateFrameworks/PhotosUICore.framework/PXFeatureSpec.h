@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSCache, PXExtendedTraitCollection, PXLayoutMetricInterpolator, UIColor;
+@class NSArray, NSCache, NSString, PXExtendedTraitCollection, PXLayoutMetricInterpolator, UIColor;
 
 @interface PXFeatureSpec : NSObject
 {
@@ -15,10 +15,10 @@
     long long _sizeClass;
     long long _userInterfaceIdiom;
     long long _userInterfaceFeature;
+    double _displayScale;
     NSArray *_collectionTileImageOverlaySpecs;
     NSArray *_collectionTileImageOverlaySpecsHighlighted;
     NSCache *__viewSpecCache;
-    double __displayScale;
     PXExtendedTraitCollection *__extendedTraitCollection;
     PXLayoutMetricInterpolator *__horizontalContentGuideInsetsInterpolator;
     struct CGSize __layoutReferenceSize;
@@ -30,11 +30,11 @@
 @property(readonly, nonatomic) PXLayoutMetricInterpolator *_horizontalContentGuideInsetsInterpolator; // @synthesize _horizontalContentGuideInsetsInterpolator=__horizontalContentGuideInsetsInterpolator;
 @property(readonly, nonatomic) PXExtendedTraitCollection *_extendedTraitCollection; // @synthesize _extendedTraitCollection=__extendedTraitCollection;
 @property(readonly, nonatomic) struct CGSize _layoutReferenceSize; // @synthesize _layoutReferenceSize=__layoutReferenceSize;
-@property(readonly, nonatomic) double _displayScale; // @synthesize _displayScale=__displayScale;
 @property(readonly, nonatomic) NSCache *_viewSpecCache; // @synthesize _viewSpecCache=__viewSpecCache;
 @property(readonly, nonatomic) _Bool shouldInsetAllPhotoDetailsContent; // @synthesize shouldInsetAllPhotoDetailsContent=_shouldInsetAllPhotoDetailsContent;
 @property(readonly, nonatomic) NSArray *collectionTileImageOverlaySpecsHighlighted; // @synthesize collectionTileImageOverlaySpecsHighlighted=_collectionTileImageOverlaySpecsHighlighted;
 @property(readonly, nonatomic) NSArray *collectionTileImageOverlaySpecs; // @synthesize collectionTileImageOverlaySpecs=_collectionTileImageOverlaySpecs;
+@property(readonly, nonatomic) double displayScale; // @synthesize displayScale=_displayScale;
 @property(readonly, nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
 @property(readonly, nonatomic) long long userInterfaceFeature; // @synthesize userInterfaceFeature=_userInterfaceFeature;
@@ -47,9 +47,11 @@
 @property(readonly, nonatomic) double collectionTileImageCornerRadius;
 - (struct UIColor *)collectionTileImageOverlayColorHighlighted;
 - (struct UIColor *)collectionTileImageOverlayColor;
+@property(readonly, nonatomic) double defaultDarkenSourceOverAmount;
 @property(readonly, nonatomic) UIColor *defaultPlacesPlaceholderColor;
 @property(readonly, nonatomic) UIColor *defaultPlaceholderColor;
 @property(readonly, nonatomic) double defaultCornerRadius;
+@property(readonly, nonatomic) NSString *defaultListChevronImageName;
 @property(readonly, nonatomic) UIColor *defaultBackgroundColor;
 - (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor)arg1;
 - (void)configureViewSpec:(id)arg1;

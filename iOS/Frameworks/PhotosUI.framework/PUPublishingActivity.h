@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_activityImage;
 - (id)activityTitle;
 - (id)activityType;
 - (void)_publishingAgentDidCancel:(id)arg1;

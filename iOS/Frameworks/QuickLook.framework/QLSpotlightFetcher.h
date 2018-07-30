@@ -6,7 +6,7 @@
 
 #import <QuickLook/QLItemFetcher.h>
 
-@class NSString;
+@class NSString, QLSpotlightSearchableItemInfo;
 
 __attribute__((visibility("hidden")))
 @interface QLSpotlightFetcher : QLItemFetcher
@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
     NSString *_searchableItemUniqueIdentifier;
     NSString *_queryString;
     NSString *_applicationBundleIdentifier;
+    QLSpotlightSearchableItemInfo *_info;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly) QLSpotlightSearchableItemInfo *info; // @synthesize info=_info;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

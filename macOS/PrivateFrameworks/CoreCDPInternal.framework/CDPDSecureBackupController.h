@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSDictionary *cachedAccountInfo; // @synthesize cachedAccountInfo=_cachedAccountInfo;
 @property(nonatomic) __weak id <CDPDSecureBackupDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <CDPStateUIProviderInternal> uiProvider; // @synthesize uiProvider=_uiProvider;
-@property(retain, nonatomic) CDPContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) CDPContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (BOOL)_disableRecoveryKey:(id *)arg1;
 - (void)disableRecoveryKeyWithCompletion:(CDUnknownBlockType)arg1;
@@ -54,7 +54,6 @@
 - (void)checkAndRemoveExistingThenEnableSecureBackupRecordWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)upgradeICSCRecordsThenEnableSecureBackupWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)enableSecureBackupWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)cdpBackupRecordsArePresentWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_dateWithSecureBackupDateString:(id)arg1;
 - (void)_getBackupRecordDevicesIncludingUnrecoverableRecords:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getBackupRecordDevicesWithCompletion:(CDUnknownBlockType)arg1;
@@ -66,7 +65,6 @@
 - (void)synchronizeKeyValueStoreWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithContext:(id)arg1 uiProvider:(id)arg2 delegate:(id)arg3;
 - (id)initWithContext:(id)arg1 proxy:(id)arg2;
-- (id)init;
 
 @end
 

@@ -17,7 +17,8 @@
 - (void).cxx_destruct;
 - (id)newDefaultRequestInstance;
 - (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
+- (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
+- (_Bool)allowsCachingOfResults;
 - (id)requiredTargetedImageSpecifierReturningError:(id *)arg1;
 - (id)targetedImageSpecifier;
 - (id)initWithTargetedImageData:(id)arg1 orientation:(unsigned int)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

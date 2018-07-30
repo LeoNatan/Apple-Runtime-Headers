@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CALayer, NSScroller, NSTrackingArea;
+@class CALayer, CAProxyLayer, NSScroller, NSTrackingArea;
 
 @interface NSScrollerImp : NSObject
 {
@@ -67,7 +67,7 @@
     CALayer *layer;
     CALayer *trackLayer;
     CALayer *knobLayer;
-    id _unused1;
+    CAProxyLayer *proxyLayer;
     double presentationValue;
 }
 
@@ -97,13 +97,12 @@
 - (void)drawKnobSlotInRect:(struct CGRect)arg1 highlight:(BOOL)arg2;
 - (void)_compositeScrollerPart:(unsigned long long)arg1 inRect:(struct CGRect)arg2 withAlpha:(double)arg3 drawHandler:(CDUnknownBlockType)arg4;
 - (void)displayLayer:(id)arg1;
-- (id)_vibrancyFilterForAppearance:(id)arg1;
-- (BOOL)allowsVibrancyForAppearance:(id)arg1;
+- (int)_vibrancyBlendModeForAppearance:(id)arg1;
 - (struct __CFDictionary *)copyCoreUITrackOptions;
 - (struct __CFDictionary *)copyCoreUIKnobOptions;
 - (struct __CFDictionary *)copyCoreUIOptions;
-- (void)loadImages;
 - (BOOL)hitTestForLocalPoint:(struct CGPoint)arg1;
+- (struct CGRect)expandedRectForPart:(unsigned long long)arg1;
 - (struct CGRect)_unsafeRectForPart:(unsigned long long)arg1;
 - (struct CGRect)_threadsafeRectForPart:(unsigned long long)arg1 preBlock:(CDUnknownBlockType)arg2 postBlock:(CDUnknownBlockType)arg3;
 - (struct CGRect)rectForPart:(unsigned long long)arg1;
@@ -126,8 +125,7 @@
 - (unsigned long long)overlayScrollerState;
 @property(getter=isExpanded) BOOL expanded;
 @property BOOL shouldDrawRolloverState;
-- (void)setTracking:(BOOL)arg1;
-- (BOOL)isTracking;
+@property(getter=isTracking) BOOL tracking;
 @property long long knobStyle;
 @property(readonly) long long scrollerStyle;
 @property(readonly) unsigned long long controlSize;
@@ -160,7 +158,6 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
 - (void)_drawScrollerPartForLayer:(id)arg1;
-- (id)_makeMaskLayer;
 - (void)_updateKnobPresentation;
 - (void)_updateLayerGeometry;
 - (void)dealloc;

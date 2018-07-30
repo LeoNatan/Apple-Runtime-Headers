@@ -20,13 +20,14 @@
 #import "CNPropertyGroupItemDelegate.h"
 #import "CNShareLocationProtocol.h"
 #import "CNUIObjectViewControllerDelegate.h"
+#import "NSUserActivityDelegate.h"
 #import "UIAdaptivePresentationControllerDelegate.h"
 #import "UIPopoverControllerDelegate.h"
 #import "UIViewControllerRestoration.h"
 
-@class CNCardFaceTimeGroup, CNCardGroup, CNCardLinkedCardsGroup, CNContact, CNContactAction, CNContactAddFavoriteAction, CNContactAddLinkedCardAction, CNContactAddNewFieldAction, CNContactAddToExistingContactAction, CNContactCreateNewContactAction, CNContactFormatter, CNContactHeaderDisplayView, CNContactHeaderEditView, CNContactHeaderView, CNContactInlineActionsViewController, CNContactStore, CNContactSuggestionAction, CNContactToggleBlockCallerAction, CNContactUpdateExistingContactAction, CNContactView, CNContactViewCache, CNContainer, CNGroup, CNManagedConfiguration, CNMedicalIDAction, CNMutableContact, CNPolicy, CNPropertyAction, CNPropertyFaceTimeAction, CNPropertyLinkedCardsAction, CNPropertyNoteCell, CNShareLocationController, CNSiriContactContextProvider, CNUIContactsEnvironment, CNUIUserActionListDataSource, HKHealthStore, NSArray, NSDictionary, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UIKeyCommand, UITableView, UIView;
+@class CNCardFaceTimeGroup, CNCardGroup, CNCardLinkedCardsGroup, CNContact, CNContactAction, CNContactAddFavoriteAction, CNContactAddLinkedCardAction, CNContactAddNewFieldAction, CNContactAddToExistingContactAction, CNContactCreateNewContactAction, CNContactFormatter, CNContactHeaderDisplayView, CNContactHeaderEditView, CNContactHeaderView, CNContactInlineActionsViewController, CNContactStore, CNContactSuggestionAction, CNContactToggleBlockCallerAction, CNContactUpdateExistingContactAction, CNContactView, CNContactViewCache, CNContainer, CNGroup, CNManagedConfiguration, CNMedicalIDAction, CNMutableContact, CNPolicy, CNPropertyAction, CNPropertyFaceTimeAction, CNPropertyLinkedCardsAction, CNPropertyNoteCell, CNShareLocationController, CNSiriContactContextProvider, CNUIContactsEnvironment, CNUIUserActionListDataSource, CNUIUserActivityManager, HKHealthStore, NSArray, NSDictionary, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UIKeyCommand, UITableView, UIView;
 
-@interface CNContactContentViewController : UIViewController <CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNContactGroupPickerDelegate, UIPopoverControllerDelegate, CNContactHeaderViewDelegate, CNContactContentViewControllerDelegate, UIAdaptivePresentationControllerDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, CNContactInlineActionsViewControllerDelegate_Internal, CNContactActionDelegate, CNPresenterDelegate, CNContactContentViewController, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration>
+@interface CNContactContentViewController : UIViewController <CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNContactGroupPickerDelegate, UIPopoverControllerDelegate, CNContactHeaderViewDelegate, CNContactContentViewControllerDelegate, UIAdaptivePresentationControllerDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, CNContactInlineActionsViewControllerDelegate_Internal, NSUserActivityDelegate, CNContactActionDelegate, CNPresenterDelegate, CNContactContentViewController, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration>
 {
     NSArray *_displayedProperties;
     _Bool _needsReload;
@@ -91,6 +92,7 @@
     CNCardGroup *_cardMedicalIDGroup;
     CNCardGroup *_cardBlockContactGroup;
     CNCardLinkedCardsGroup *_cardLinkedCardsGroup;
+    NSArray *_customActions;
     CNPropertyNoteCell *_noteCell;
     CNPropertyAction *_sendMessageAction;
     CNPropertyFaceTimeAction *_faceTimeAction;
@@ -135,6 +137,7 @@
     NSArray *_preEditLeftBarButtonItems;
     CNUIContactsEnvironment *_environment;
     CNContactViewCache *_contactViewCache;
+    CNUIUserActivityManager *_activityManager;
     CNPolicy *_policy;
     NSDictionary *_linkedPoliciesByContactIdentifier;
     long long _mode;
@@ -150,6 +153,7 @@
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 + (id)boolStateRestorationProperties;
 + (_Bool)actionModelIncludesTTY:(id)arg1;
++ (void)_telemetryForContact:(id)arg1;
 + (_Bool)enablesTransportButtons;
 + (id)createActionsControllerWithActionListDataSource:(id)arg1;
 + (id)descriptorForRequiredKeysWithDescription:(id)arg1;
@@ -168,6 +172,7 @@
 @property(retain, nonatomic) CNPolicy *policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) struct UIEdgeInsets peripheryInsets; // @synthesize peripheryInsets=_peripheryInsets;
 @property(nonatomic) _Bool runningPPT; // @synthesize runningPPT=_runningPPT;
+@property(readonly, nonatomic) CNUIUserActivityManager *activityManager; // @synthesize activityManager=_activityManager;
 @property(readonly, nonatomic) CNContactViewCache *contactViewCache; // @synthesize contactViewCache=_contactViewCache;
 @property(readonly, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) NSArray *preEditLeftBarButtonItems; // @synthesize preEditLeftBarButtonItems=_preEditLeftBarButtonItems;
@@ -214,6 +219,7 @@
 @property(retain, nonatomic) CNPropertyFaceTimeAction *faceTimeAction; // @synthesize faceTimeAction=_faceTimeAction;
 @property(retain, nonatomic) CNPropertyAction *sendMessageAction; // @synthesize sendMessageAction=_sendMessageAction;
 @property(retain, nonatomic) CNPropertyNoteCell *noteCell; // @synthesize noteCell=_noteCell;
+@property(retain, nonatomic) NSArray *customActions; // @synthesize customActions=_customActions;
 @property(retain, nonatomic) CNCardLinkedCardsGroup *cardLinkedCardsGroup; // @synthesize cardLinkedCardsGroup=_cardLinkedCardsGroup;
 @property(retain, nonatomic) CNCardGroup *cardBlockContactGroup; // @synthesize cardBlockContactGroup=_cardBlockContactGroup;
 @property(retain, nonatomic) CNCardGroup *cardMedicalIDGroup; // @synthesize cardMedicalIDGroup=_cardMedicalIDGroup;
@@ -384,6 +390,7 @@
 - (void)setNeedsReload;
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
+- (_Bool)shouldShowActionsForAvatarView:(id)arg1;
 - (id)viewControllerForHeaderView:(id)arg1;
 - (void)headerPhotoDidSaveEditsForImageDrop;
 - (void)headerViewDidUpdateLabelSizes;
@@ -436,6 +443,7 @@
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (_Bool)isStandardGroup:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)contactView:(id)arg1 didSelectItemAtIndex:(long long)arg2 inGroup:(id)arg3;
 - (double)contactView:(id)arg1 heightForItemAtIndex:(long long)arg2 inGroup:(id)arg3;

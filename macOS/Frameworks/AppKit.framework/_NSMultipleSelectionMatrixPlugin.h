@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSMultipleSelectionMatrixPlugin : _NSMatrixPlugin <_NSMultipleSelectionBinderPlugin>
 {
     struct __multipleSelectionMatrixPluginFlags {

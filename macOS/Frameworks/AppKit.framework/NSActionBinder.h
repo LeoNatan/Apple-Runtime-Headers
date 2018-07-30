@@ -6,6 +6,7 @@
 
 #import <AppKit/NSEditorBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSActionBinder : NSEditorBinder
 {
     SEL _selector;

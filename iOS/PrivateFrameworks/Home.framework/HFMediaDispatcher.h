@@ -18,7 +18,6 @@
 @property(retain, nonatomic) NSHashTable *appleMusicAccountObservers; // @synthesize appleMusicAccountObservers=_appleMusicAccountObservers;
 @property(copy, nonatomic) NSArray *appleMusicMagicAuthCapableAccounts; // @synthesize appleMusicMagicAuthCapableAccounts=_appleMusicMagicAuthCapableAccounts;
 - (void).cxx_destruct;
-- (id)_performStateDump;
 - (void)_setupAppleMusicAccountStoreIfNecessary;
 @property(readonly, nonatomic) _Bool isUsingiCloud;
 - (void)removeAppleMusicAccountObserver:(id)arg1;

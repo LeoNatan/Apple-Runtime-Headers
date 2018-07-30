@@ -8,12 +8,11 @@
 
 #import "UIScrollViewDelegate.h"
 
-@class NSString, SBFLockScreenWallpaperParallaxSettings, SBFSubject, UIColor, UIImageView, UIScrollView;
+@class NSString, SBFLockScreenWallpaperParallaxSettings, SBFSubject, UIImageView, UIScrollView;
 
 @interface SBFScrollableStaticWallpaperView : SBFStaticWallpaperView <UIScrollViewDelegate>
 {
     UIImageView *_imageView;
-    UIImageView *_gradientView;
     UIScrollView *_scrollView;
     SBFLockScreenWallpaperParallaxSettings *_parallaxSettings;
     SBFSubject *_scrollViewObserver;
@@ -21,14 +20,13 @@
     id <SBFCancelable> _parallaxCancelToken;
     float _minimumZoomScaleForParallax;
     float _minimumZoomScale;
-    _Bool _parallaxCanBeEnabledAutomatically;
-    UIColor *_averageColor;
+    _Bool _automaticallyEnablesParallax;
 }
 
 + (_Bool)_canDownscaleSampleImage;
 + (_Bool)_canCacheImages;
 + (_Bool)_shouldScaleForParallax;
-@property(readonly) __weak UIColor *averageColor; // @synthesize averageColor=_averageColor;
+@property(nonatomic) _Bool automaticallyEnablesParallax; // @synthesize automaticallyEnablesParallax=_automaticallyEnablesParallax;
 - (void).cxx_destruct;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
@@ -43,7 +41,6 @@
 - (struct CGPoint)_maximumContentOffsetForOverhang;
 - (struct CGPoint)_minimumContentOffsetForOverhang;
 - (struct CGPoint)_boundedContentOffsetForOverhang;
-- (void)legibilitySettingsDidChange;
 - (void)_setupScrollView;
 - (void)_updateScrollViewZoomScales;
 - (float)_throttleDuration;
@@ -56,7 +53,7 @@
 - (void)didMoveToWindow;
 - (id)_scrollView;
 - (id)_newImageView;
-- (void)_setupContentView;
+- (void)_setupContentViewWithOptions:(unsigned int)arg1;
 - (float)_parallaxFactorWithZoomScale:(float)arg1 contentOffset:(struct CGPoint)arg2;
 - (float)_scrollViewParallaxFactor;
 - (float)parallaxFactor;

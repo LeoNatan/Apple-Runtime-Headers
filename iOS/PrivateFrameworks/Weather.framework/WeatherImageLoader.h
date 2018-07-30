@@ -18,7 +18,10 @@
 + (id)conditionImageBundle;
 + (id)conditionImageNameWithConditionIndex:(long long)arg1;
 + (id)cachedImageNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (id)conditionImageNamed:(id)arg1;
++ (id)colorForImageColor:(id)arg1 lighter:(_Bool)arg2;
++ (id)conditionImageNamed:(id)arg1 size:(struct CGSize)arg2 cloudAligned:(_Bool)arg3 stroke:(_Bool)arg4 strokeAlpha:(double)arg5 lighterColors:(_Bool)arg6;
++ (id)conditionImageNamed:(id)arg1 style:(long long)arg2;
++ (id)conditionImageWithConditionIndex:(long long)arg1 style:(long long)arg2;
 + (id)conditionImageWithConditionIndex:(long long)arg1;
 + (void)cacheImageIfNecessary:(id)arg1;
 + (id)sharedImageLoader;

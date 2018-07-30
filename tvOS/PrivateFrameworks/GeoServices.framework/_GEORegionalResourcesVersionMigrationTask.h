@@ -8,30 +8,24 @@
 
 #import "GEOActiveTileGroupMigrationTask.h"
 
-@class GEOActiveTileGroup, GEORegionalResourcesVersionMigrator, GEOReportedProgress, GEOResourceLoader, GEOResourceManifestConfiguration, GEOResources, GEOTileGroup, NSArray, NSObject<OS_dispatch_queue>, NSProgress, NSSet, NSString;
+@class GEORegionalResourcesVersionMigrator, GEOReportedProgress, GEOResourceManifestConfiguration, GEOResources, GEOTileGroup, NSObject<OS_dispatch_queue>, NSProgress, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _GEORegionalResourcesVersionMigrationTask : NSObject <GEOActiveTileGroupMigrationTask>
 {
     GEORegionalResourcesVersionMigrator *_migrator;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    _Bool _running;
     GEOResourceManifestConfiguration *_manifestConfiguration;
     GEOTileGroup *_newTileGroup;
     GEOResources *_resourceManifest;
-    GEOActiveTileGroup *_oldTileGroup;
     NSSet *_activeScales;
     NSSet *_activeScenarios;
     CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     GEOReportedProgress *_progress;
-    GEOResourceLoader *_resourceLoader;
-    NSArray *_loadedResources;
     id <NSObject> _transaction;
 }
 
 + (id)_resourcesDirectory:(id)arg1;
-+ (id)_resourceLoaderFactoryWithTargetDirectory:(id)arg1 baseURLString:(id)arg2 resources:(id)arg3 maximumConcurrentLoads:(unsigned long long)arg4 additionalDirectoryToConsider:(id)arg5;
 @property(retain, nonatomic) id <NSObject> transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
 - (void)removeOldData:(id)arg1;
@@ -41,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)_resourcesDirectory;
 @property(readonly) NSProgress *progress;
 @property(readonly) long long estimatedWeight;
-- (id)initWithMigrator:(id)arg1 manifestConfiguration:(id)arg2 newTileGroup:(id)arg3 inResourceManifest:(id)arg4 oldTileGroup:(id)arg5 activeScales:(id)arg6 activeScenarios:(id)arg7;
+- (id)initWithMigrator:(id)arg1 manifestConfiguration:(id)arg2 newTileGroup:(id)arg3 inResourceManifest:(id)arg4 activeScales:(id)arg5 activeScenarios:(id)arg6;
 - (id)init;
 
 // Remaining properties

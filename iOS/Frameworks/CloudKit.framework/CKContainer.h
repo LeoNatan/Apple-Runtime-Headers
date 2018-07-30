@@ -8,7 +8,7 @@
 
 #import "CKXPCClient.h"
 
-@class ACAccountStore, CKAccountOverrideInfo, CKContainerID, CKContainerOptions, CKContainerSetupInfo, CKDatabase, CKOperationCallbackManager, CKOperationFlowControlManager, CKRecordID, NSMapTable, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSString, NSXPCConnection;
+@class ACAccountStore, CKAccountOverrideInfo, CKContainerID, CKContainerOptions, CKContainerSetupInfo, CKDatabase, CKOperationCallbackManager, CKOperationFlowControlManager, CKRecordID, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSXPCConnection;
 
 @interface CKContainer : NSObject <CKXPCClient>
 {
@@ -42,6 +42,7 @@
     NSMapTable *_assetsByUUID;
     NSMutableDictionary *_fakeEntitlements;
     unsigned long long _stateHandle;
+    NSObject<OS_dispatch_queue> *_underlyingDispatchQueue;
 }
 
 + (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -58,6 +59,7 @@
 + (id)containerIDForContainerIdentifier:(id)arg1;
 + (id)containerIDForContainerIdentifier:(id)arg1 environment:(long long)arg2;
 + (id)defaultContainer;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *underlyingDispatchQueue; // @synthesize underlyingDispatchQueue=_underlyingDispatchQueue;
 @property(nonatomic) unsigned long long stateHandle; // @synthesize stateHandle=_stateHandle;
 @property(retain, nonatomic) NSMutableDictionary *fakeEntitlements; // @synthesize fakeEntitlements=_fakeEntitlements;
 @property(retain, nonatomic) NSMapTable *assetsByUUID; // @synthesize assetsByUUID=_assetsByUUID;
@@ -91,6 +93,7 @@
 - (void)dumpDaemonStatusReportToFileHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpAllClientsStatusReportToFileHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)CKStatusReportArray;
+- (void)submitEventMetric:(id)arg1;
 - (void)fetchFullNameAndFormattedUsernameOfAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchFullNameAndPrimaryEmailOnAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchCurrentDeviceIDWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -110,6 +113,7 @@
 - (void)setHoldAllOperations:(_Bool)arg1;
 - (void)setFakeEntitlement:(id)arg1 forKey:(id)arg2;
 - (void)fetchCurrentUserBoundaryKeyWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)clearPCSCachesForKnownContextsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)wipeAllCachedLongLivedProxiesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 withLifetime:(int)arg4;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;

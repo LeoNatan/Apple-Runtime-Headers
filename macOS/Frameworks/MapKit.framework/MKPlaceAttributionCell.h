@@ -31,6 +31,7 @@
 - (BOOL)isHighlighted;
 @property(retain, nonatomic) _MKUILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)attributionCellButton:(id)arg1 isHighighted:(BOOL)arg2 executeAction:(BOOL)arg3;
 - (double)currentHeight;
 - (void)setAttributionString:(id)arg1;

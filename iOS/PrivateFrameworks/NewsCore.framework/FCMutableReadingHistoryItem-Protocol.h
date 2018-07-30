@@ -19,6 +19,8 @@
 @property(copy, nonatomic) NSDate *firstSeenAt;
 @property(nonatomic) long long maxVersionRead;
 @property(copy, nonatomic) NSDate *lastVisitedAt;
+@property(copy, nonatomic) NSString *deviceID;
+@property(copy, nonatomic) NSString *sourceChannelTagID;
 @property(copy, nonatomic) NSString *articleID;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @end

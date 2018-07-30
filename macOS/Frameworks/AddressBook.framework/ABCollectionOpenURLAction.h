@@ -8,7 +8,6 @@
 
 @class NSDataDetector;
 
-__attribute__((visibility("hidden")))
 @interface ABCollectionOpenURLAction : ABCollectionAbstractAction
 {
     NSDataDetector *_urlDetector;

@@ -17,16 +17,21 @@ __attribute__((visibility("hidden")))
     struct _Geometry2D_size2D_ m_RequiredImageSize;
     BOOL _useLowPriorityMode;
     unsigned long long _metalContextPriority;
+    unsigned long long _length;
 }
 
 + (BOOL)shouldDumpDebugIntermediates;
++ (id)configurationOptionKeysForDetectorKey;
++ (void)recordDefaultConfigurationOptionsInDictionary:(id)arg1;
+@property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
+@property(readonly, nonatomic) BOOL useLowPriorityMode; // @synthesize useLowPriorityMode=_useLowPriorityMode;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)printDebugInfoFor:(struct __CVBuffer *)arg1 imageBuffer:(id)arg2 originalImageLumaCrop:(struct vImage_Buffer)arg3 faceBBoxInLumaCropCoordinates:(struct _Geometry2D_rect2D_)arg4 magnifiedBBoxInLumaCropCoordinates:(struct _Geometry2D_rect2D_)arg5;
+- (BOOL)isFaceprinterCompatibleWithFaceprinterCreatedWithOptions:(id)arg1;
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
-- (id)computeFromBuffer:(struct vImage_Buffer *)arg1 withChannels:(unsigned long long)arg2 error:(id *)arg3;
-- (id)computeFromPixelBuffer:(struct __CVBuffer *)arg1 withChannels:(unsigned long long)arg2 error:(id *)arg3;
-@property(readonly) unsigned long long length;
-- (id)initWithOptions:(id)arg1 error:(id *)arg2;
+- (BOOL)completeInitializationAndReturnError:(id *)arg1;
+@property(readonly, nonatomic) unsigned long long metalContextPriority;
 
 @end
 

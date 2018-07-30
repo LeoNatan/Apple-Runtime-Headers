@@ -23,6 +23,10 @@ struct cssm_data {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned int val[8];
+} CDStruct_4c969caf;
+
+typedef struct {
     unsigned int _field1;
     struct *_field2;
 } CDStruct_166d2db6;

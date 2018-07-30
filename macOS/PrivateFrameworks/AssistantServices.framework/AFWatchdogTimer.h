@@ -21,6 +21,7 @@
 - (void)reset;
 - (BOOL)cancelIfNotAlreadyCanceled;
 - (void)cancel;
+- (BOOL)isStopped;
 - (void)stop;
 - (void)start;
 - (id)initWithTimeoutInterval:(double)arg1 onQueue:(id)arg2 timeoutHandler:(CDUnknownBlockType)arg3;

@@ -19,7 +19,7 @@
     NSDate *_timeTravelDate;
 }
 
-+ (_Bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (_Bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_endTimeTravelAnimated:(_Bool)arg1;

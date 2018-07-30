@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)intrinsicContentSize;
 @property BOOL isAlertButton;
 @property double preferredWidth;
-- (void)_viewDidChangeAppearance:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (double)_widthForTitle:(id)arg1 compressedImage:(BOOL)arg2;
 - (void)updateConstraintConstants;
 - (void)useShortTitle;

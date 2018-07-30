@@ -38,6 +38,7 @@
 @property(nonatomic) unsigned long long passcodeType; // @dynamic passcodeType;
 @property(copy, nonatomic) NSURL *photoURL; // @dynamic photoURL;
 @property(nonatomic) unsigned int uid; // @dynamic uid;
+@property(copy, nonatomic) NSString *userAuxiliaryString; // @dynamic userAuxiliaryString;
 @property(copy, nonatomic) NSString *username; // @dynamic username;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "SPKQueryDelegate.h"
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSObject<SPQueryTaskDelegate>, NSString, PRSRankingConfiguration, PRSResult, SFStartLocalSearchFeedback, SPMetadataQuery, SPWebHistoryQuery;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSObject<SPQueryTaskDelegate>, NSString, PRSRankingConfiguration, PRSResult, SFStartLocalSearchFeedback, SPMetadataQuery;
 
 @interface SPQueryTask : NSObject <SPKQueryDelegate>
 {
@@ -20,7 +20,6 @@
     BOOL _forceStableResults;
     BOOL _parsecFinished;
     BOOL _metadataFinished;
-    BOOL _webHistoryFinished;
     BOOL _finished;
     BOOL _live;
     BOOL _topHitIsInOfLastResponse;
@@ -41,7 +40,6 @@
     double _timeOfLastResponse;
     unsigned long long _countOfLastResponse;
     SPMetadataQuery *_mainQuery;
-    SPWebHistoryQuery *_whQuery;
     NSMutableArray *_auxQueries;
     NSMutableDictionary *_responses;
     NSString *_fbq;
@@ -70,7 +68,6 @@
 @property(retain) NSString *fbq; // @synthesize fbq=_fbq;
 @property(retain) NSMutableDictionary *responses; // @synthesize responses=_responses;
 @property(retain) NSMutableArray *auxQueries; // @synthesize auxQueries=_auxQueries;
-@property(retain) SPWebHistoryQuery *whQuery; // @synthesize whQuery=_whQuery;
 @property(retain) SPMetadataQuery *mainQuery; // @synthesize mainQuery=_mainQuery;
 @property BOOL topHitIsInOfLastResponse; // @synthesize topHitIsInOfLastResponse=_topHitIsInOfLastResponse;
 @property unsigned long long countOfLastResponse; // @synthesize countOfLastResponse=_countOfLastResponse;
@@ -85,7 +82,6 @@
 @property(retain, nonatomic) NSArray *currentResultSet; // @synthesize currentResultSet=_currentResultSet;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NSMutableDictionary *groupedResults; // @synthesize groupedResults=_groupedResults;
-@property(readonly) BOOL webHistoryFinished; // @synthesize webHistoryFinished=_webHistoryFinished;
 @property(readonly) BOOL metadataFinished; // @synthesize metadataFinished=_metadataFinished;
 @property(readonly) BOOL parsecFinished; // @synthesize parsecFinished=_parsecFinished;
 @property(retain) NSString *userQueryString; // @synthesize userQueryString=_userQueryString;
@@ -122,13 +118,12 @@
 - (id)findDistinctPathIdentifiers;
 - (void)finishResponse:(id)arg1;
 - (void)dedupeResults:(id)arg1;
-- (void)sendRankingFeedback:(id)arg1;
+- (void)sendRankingFeedback:(id)arg1 forResultsArrays:(id)arg2;
 - (id)sortLocalResults:(id)arg1;
 - (id)URLRepresentedByBookmarkResult:(id)arg1;
 - (id)deDuplicateResultSetWithResultArray:(id)arg1 dictGroupedResults:(id)arg2 parsecResultCategories:(id)arg3 duplicatedDictResults:(id *)arg4 originalDictResults:(id *)arg5;
 - (void)appendParsecSlice:(id)arg1 name:(id)arg2 results:(id)arg3 topHit:(id)arg4;
 - (void)addResultsForGroup:(id)arg1 title:(id)arg2 topHit:(id)arg3 toArray:(id)arg4 focusString:(id)arg5;
-- (void)setShortcutsDict:(id)arg1 shortcutsDictPath:(id)arg2;
 - (void)deleteOldShortcuts;
 
 @end

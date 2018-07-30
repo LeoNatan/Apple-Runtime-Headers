@@ -18,6 +18,7 @@
 }
 
 + (id)resultRowWithStatement:(struct sqlite3_stmt *)arg1;
+- (void).cxx_destruct;
 - (unsigned long long)_indexForKey:(id)arg1;
 - (id)_columnNames;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) unsigned long long count;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (void)invalidate;
-- (void)dealloc;
 - (id)_initWithStatement:(struct sqlite3_stmt *)arg1;
 - (id)init;
 

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTableRow.h>
 
+__attribute__((visibility("hidden")))
 @interface NSOutlineRow : NSTableRow
 {
 }

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSIndexSet, NSObject;
+@class NSISEngine, NSIndexSet, NSMutableIndexSet, NSObject;
 
 #pragma mark Function Pointers and Blocks
 
@@ -440,14 +440,13 @@ typedef struct {
 } CDStruct_26283fc3;
 
 typedef struct {
-    unsigned int _field1;
-    id _field2[4];
-} CDStruct_e8a1eea0;
-
-typedef struct {
     unsigned int offset;
     int type;
 } CDStruct_23b1d588;
+
+typedef struct {
+    unsigned int value;
+} CDStruct_fcd6c539;
 
 typedef struct {
     unsigned long _field1;
@@ -457,8 +456,8 @@ typedef struct {
 } CDStruct_11f37819;
 
 typedef struct {
-    unsigned int _field1[8];
-} CDStruct_6ad76789;
+    unsigned int val[8];
+} CDStruct_4c969caf;
 
 typedef struct {
     unsigned int :8;
@@ -481,7 +480,8 @@ typedef struct {
 typedef struct {
     int _field1;
     id _field2;
-} CDStruct_c22e37be;
+    id _field3;
+} CDStruct_acc9a335;
 
 typedef struct {
     int _field1;
@@ -502,6 +502,29 @@ typedef struct {
     int _field2;
 } CDStruct_1ef3fb1f;
 
+typedef struct CDStruct_183601bc;
+
+typedef struct {
+    NSISEngine *engine;
+    CDStruct_183601bc *storage;
+} CDStruct_a8d20eab;
+
+typedef struct {
+    unsigned long long _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    CDStruct_183601bc *_field6;
+} CDStruct_f5593f11;
+
+typedef struct {
+    CDStruct_183601bc *blocks;
+    unsigned int blocksCount;
+    unsigned int blocksCapacity;
+    NSMutableIndexSet *freeIndexes;
+} CDStruct_f99a037b;
+
 typedef struct {
     id objects;
     _Bool isMutable;
@@ -514,6 +537,23 @@ typedef struct {
         unsigned int count;
     } list;
 } CDStruct_5c782e52;
+
+typedef struct {
+    unsigned short inline_capacity;
+    unsigned int var_count;
+    double constant;
+    union {
+        struct {
+            id stored_extern_marker;
+            CDStruct_183601bc *slab;
+            unsigned int capacity;
+        } extern_data;
+        struct {
+            unsigned long aligner;
+        } inline_slab;
+        unsigned char padding[48];
+    } data;
+} CDStruct_b1b42f93;
 
 #pragma mark Typedef'd Unions
 

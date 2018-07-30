@@ -26,16 +26,20 @@
     BOOL pulseSelectedCity;
     CALayer *_pinLayer;
     CALayer *_pinShadowLayer;
+    struct CGPoint _pinPoint;
 }
 
 + (struct CGImage *)_tentativeSelectedCityImage:(double)arg1;
 + (struct CGImage *)_selectedCityImage:(double)arg1;
 + (struct CGImage *)_smallDotCityImage:(double)arg1;
+@property struct CGPoint pinPoint; // @synthesize pinPoint=_pinPoint;
 @property(retain) NSString *nameToSearch; // @synthesize nameToSearch;
 @property BOOL isBusy; // @synthesize isBusy;
 - (void)viewDidMoveToWindow;
 - (void)removePin;
 - (void)dropPinToCity:(id)arg1;
+- (void)updateSelectedCityLayer;
+- (void)updatePinLayer;
 - (void)dropPinToPoint:(struct CGPoint)arg1;
 - (id)pinShadowLayer;
 - (id)pinLayer;
@@ -87,6 +91,7 @@
 @property BOOL pulseSelectedCity;
 - (id)pulseLayer;
 - (void)dealloc;
+- (void)awakeFromNib;
 
 @end
 

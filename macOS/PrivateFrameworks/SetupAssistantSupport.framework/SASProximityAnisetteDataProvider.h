@@ -9,14 +9,14 @@
 #import "AKAnisetteServiceProtocol.h"
 #import "NSCopying.h"
 
-@class NSObject<SASProximitySessionProtocol>;
+@class SASProximitySession;
 
 @interface SASProximityAnisetteDataProvider : NSObject <NSCopying, AKAnisetteServiceProtocol>
 {
-    NSObject<SASProximitySessionProtocol> *_session;
+    SASProximitySession *_session;
 }
 
-@property(retain) NSObject<SASProximitySessionProtocol> *session; // @synthesize session=_session;
+@property(retain) SASProximitySession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
 - (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;

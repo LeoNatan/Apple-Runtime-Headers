@@ -15,7 +15,7 @@
     _Bool _shouldFetchAssetContents;
     _Bool _fetchAllChanges;
     NSArray *_recordZoneIDs;
-    NSDictionary *_optionsByRecordZoneID;
+    NSDictionary *_configurationsByRecordZoneID;
     NSDictionary *_assetTransferOptionsByRecordTypeAndKey;
 }
 
@@ -23,7 +23,7 @@
 @property(retain, nonatomic) NSDictionary *assetTransferOptionsByRecordTypeAndKey; // @synthesize assetTransferOptionsByRecordTypeAndKey=_assetTransferOptionsByRecordTypeAndKey;
 @property(nonatomic) _Bool fetchAllChanges; // @synthesize fetchAllChanges=_fetchAllChanges;
 @property(nonatomic) _Bool shouldFetchAssetContents; // @synthesize shouldFetchAssetContents=_shouldFetchAssetContents;
-@property(retain, nonatomic) NSDictionary *optionsByRecordZoneID; // @synthesize optionsByRecordZoneID=_optionsByRecordZoneID;
+@property(retain, nonatomic) NSDictionary *configurationsByRecordZoneID; // @synthesize configurationsByRecordZoneID=_configurationsByRecordZoneID;
 @property(retain, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

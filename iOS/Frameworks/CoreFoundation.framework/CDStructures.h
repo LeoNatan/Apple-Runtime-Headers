@@ -55,6 +55,13 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
+struct __CFArray;
+
+struct __cfobservers_t {
+    id slot;
+    struct __cfobservers_t *next;
+};
+
 struct __va_list_tag {
     unsigned int _field1;
     unsigned int _field2;
@@ -105,6 +112,12 @@ typedef struct {
 } CDStruct_78c06135;
 
 typedef struct {
+    int _field1;
+    long long _field2;
+    long long _field3;
+} CDStruct_b6748e3c;
+
+typedef struct {
     long long _field1;
     CDUnknownFunctionPointerType _field2;
     CDUnknownFunctionPointerType _field3;
@@ -132,6 +145,19 @@ typedef struct {
     unsigned int _field3;
     unsigned int _field4;
 } CDStruct_52991635;
+
+typedef struct {
+    int _field1;
+    long long _field2;
+    struct __CFArray *_field3;
+    struct __CFArray *_field4;
+} CDStruct_9e943ef1;
+
+typedef struct {
+    int _field1;
+    long long _field2;
+    struct __CFArray *_field3;
+} CDStruct_6ea78fe2;
 
 typedef struct {
     CDStruct_78c06135 _field1;

@@ -12,6 +12,7 @@
 
 @interface IMDCKUtilities : NSObject <IMDCKSyncStateDelegate>
 {
+    _Bool _didKeyRollPendingCheck;
     _Bool _useDeprecatedApi;
     IMDCKSyncState *_syncState;
     IMLockdownManager *_lockdownManager;
@@ -28,17 +29,20 @@
 @property(retain, nonatomic) FTDeviceSupport *deviceSupport; // @synthesize deviceSupport=_deviceSupport;
 @property(retain, nonatomic) IDSServerBag *serverBag; // @synthesize serverBag=_serverBag;
 @property(retain, nonatomic) IMLockdownManager *lockdownManager; // @synthesize lockdownManager=_lockdownManager;
+@property(nonatomic) _Bool didKeyRollPendingCheck; // @synthesize didKeyRollPendingCheck=_didKeyRollPendingCheck;
 - (void).cxx_destruct;
 - (void)fetchSecurityLevelForAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)accountWithDSID:(id)arg1;
 - (id)accountDSID:(id)arg1;
 - (void)disableAllDevicesWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)isInCloudKitDemoMode;
+@property(readonly, nonatomic) _Bool isInCloudKitDemoMode;
 - (void)eligibleForTruthZoneWithCompletion:(CDUnknownBlockType)arg1;
 - (void)downgradingFromHSA2AndDisablingMOC;
 - (void)enableMOCIfNeeded;
+- (_Bool)iCloudAccountMatchesiMessageAccount;
 - (unsigned int)_primaryiCloudAccountSecurityLevel;
-- (_Bool)_allowDestructiveMOCFeatureForDSID:(id)arg1;
+- (void)fetchSecurityLevelAndUpdateMiCSwitchEligibilityIfNeededOnImagentLaunch;
+- (void)fetchSecurityLevelAndUpdateMiCSwitchEligibility;
 - (_Bool)_allowDestructiveMOCFeaturesBasedOnDSID;
 - (id)dsid;
 - (id)_primaryiCloudAccountAltDSID;
@@ -49,6 +53,8 @@
 - (_Bool)logDumpIsNecessaryAfterSync;
 - (void)noteAllSyncedItemsPriorToSync;
 - (id)_ckStatisticCaluclations;
+- (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 isInitialSync:(_Bool)arg4 requirePreviousPrompt:(_Bool)arg5 willSendBlock:(CDUnknownBlockType)arg6;
+- (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 requirePreviousPrompt:(_Bool)arg4 willSendBlock:(CDUnknownBlockType)arg5;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3;
 - (void)_showCKLogNotificationWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)errorIndicateDeviceDoesNotHaveKeysToSync:(id)arg1;
@@ -60,6 +66,7 @@
 - (id)newfilteredArrayRemovingCKRecordDupes:(id)arg1;
 - (_Bool)deviceConditionsAllowPeriodicSync;
 - (id)deviceConditions;
+@property(readonly, nonatomic, getter=isKeyRollPending) _Bool keyRollPending;
 @property(readonly, nonatomic) _Bool isSyncingPaused;
 @property(readonly, nonatomic, getter=isDeviceOnWifi) _Bool deviceOnWifi;
 @property(readonly, nonatomic, getter=isDeviceCharging) _Bool deviceCharging;
@@ -72,6 +79,8 @@
 - (void)evalToggleiCloudSettingsSwitch;
 - (void)checkCloudkitEnabledStatusAndToggleiCloudSwitchIfNeeded;
 - (id)_accountStore;
+- (_Bool)errorIndicatesQuotaExceeded:(id)arg1;
+- (_Bool)errorIndicatesChatZoneCreationFailed:(id)arg1;
 - (void)resetLastSyncDate;
 - (_Bool)errorIndicatesUserDeletedZone:(id)arg1;
 - (_Bool)errorIndicatesZoneNotCreated:(id)arg1;
@@ -95,11 +104,10 @@
 - (void)reportMOCDebuggingErrorWithString:(id)arg1 internalOnly:(_Bool)arg2 initialSync:(_Bool)arg3;
 - (void)reportMOCDebuggingErrorWithString:(id)arg1 internalOnly:(_Bool)arg2;
 - (id)logCollectorAddress;
+- (_Bool)shouldCollectDailyLogDumpForRestoreFailures;
 - (_Bool)shouldCollectDailyLogDump;
 - (_Bool)shouldLogDumpOnCloudKitError;
 - (_Bool)shouldPresentTTROnCloudKitError;
-- (_Bool)_checkIfBuildVersionIsNewEnoughToLogDump;
-- (id)_dumpLogsForTrainPrefix;
 - (_Bool)_checkIfEnabledByServerBagOrDefault:(id)arg1;
 - (void)fetchCloudKitAccountStatusAndCheckForAccountNeedsRepairWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)shouldRepairAccountWithDeviceAccountSecurityLevel:(unsigned int)arg1 serverAccountStatus:(int)arg2;
@@ -118,6 +126,8 @@
 - (_Bool)enableAttachmentMetricCollection;
 - (_Bool)_serverAllowsCacheDelete;
 - (void)_resetKeepMessagesSettingandBroadcastToAllDevices;
+- (_Bool)_shouldDisplayPopUpForResettingKeepMessages;
+- (id)_getKeepMessagesValue;
 - (void)setCloudKitSyncingEnabled:(_Bool)arg1;
 - (_Bool)cloudKitSyncDownloadAssetsOnly;
 - (_Bool)cloudKitSyncingEnabled;
@@ -134,7 +144,9 @@
 - (_Bool)shouldSyncToSRContainer;
 - (_Bool)shouldForceArchivedMessagesSync;
 - (_Bool)shouldUseDevContainer;
-- (void)broadcastInstantStateChangeNotification;
+- (void)keyRollPendingStateDidChange;
+- (void)broadcastCloudKitStateAfterClearingErrors;
+- (void)broadcastCloudKitState;
 - (void)syncStateWillUpdate:(id)arg1;
 @property(readonly, nonatomic) IMDCKSyncState *syncState; // @synthesize syncState=_syncState;
 - (id)init;

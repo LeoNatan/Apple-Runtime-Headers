@@ -7,6 +7,7 @@
 @class NSString, VCVideoRule;
 
 @protocol VCVideoCaptureClient
+- (void)sourceFrameRateDidChange:(unsigned int)arg1;
 - (void)thermalLevelDidChange:(int)arg1;
 - (VCVideoRule *)clientCaptureRule;
 - (void)avConferencePreviewError:(NSString *)arg1;
@@ -14,5 +15,6 @@
 
 @optional
 - (void)avConferenceScreenCaptureError:(NSString *)arg1;
+- (void)frameRateIsBeingThrottled:(int)arg1 thermalLevelDidChange:(_Bool)arg2 powerLevelDidChange:(_Bool)arg3;
 @end
 

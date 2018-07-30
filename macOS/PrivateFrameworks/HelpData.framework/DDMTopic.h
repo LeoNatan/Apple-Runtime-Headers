@@ -21,6 +21,7 @@
     NSDictionary *_bookInfo;
     NSNumber *_count;
     NSString *_topicID;
+    NSString *_articleID;
     NSString *_searchTitle;
     NSString *_bodyString;
 }
@@ -29,6 +30,7 @@
 @property BOOL allResourcesCached; // @synthesize allResourcesCached=_allResourcesCached;
 @property(readonly) NSString *bodyString; // @synthesize bodyString=_bodyString;
 @property(readonly) NSString *searchTitle; // @synthesize searchTitle=_searchTitle;
+@property(readonly) NSString *articleID; // @synthesize articleID=_articleID;
 @property(readonly) NSString *topicID; // @synthesize topicID=_topicID;
 @property(readonly) NSNumber *count; // @synthesize count=_count;
 @property(readonly) NSDictionary *bookInfo; // @synthesize bookInfo=_bookInfo;

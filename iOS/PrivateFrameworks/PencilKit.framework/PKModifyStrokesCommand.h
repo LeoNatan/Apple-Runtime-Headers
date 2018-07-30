@@ -6,25 +6,20 @@
 
 #import <PencilKit/PKUndoCommand.h>
 
-@class NSArray, PKUndoCheckPoint;
+@class NSArray;
 
 @interface PKModifyStrokesCommand : PKUndoCommand
 {
     _Bool _hide;
-    _Bool _toggleHide;
     NSArray *_strokes;
-    PKUndoCheckPoint *_checkPoint;
     struct CGAffineTransform _strokeTransform;
 }
 
-+ (id)commandForMovingStrokes:(id)arg1 drawing:(id)arg2 strokeTransform:(struct CGAffineTransform)arg3;
 + (id)commandForErasingStrokes:(id)arg1 drawing:(id)arg2;
 + (id)commandForErasingAllStrokesInDrawing:(id)arg1;
-+ (id)commandForAddingStrokes:(id)arg1 drawing:(id)arg2 strokeTransform:(struct CGAffineTransform)arg3;
-+ (id)commandForAddingStroke:(id)arg1 drawing:(id)arg2 strokeTransform:(struct CGAffineTransform)arg3;
++ (id)commandForMakingStrokesVisible:(id)arg1 drawing:(id)arg2 strokeTransform:(struct CGAffineTransform)arg3;
++ (id)commandForMakingStrokeVisible:(id)arg1 drawing:(id)arg2 strokeTransform:(struct CGAffineTransform)arg3;
 @property(readonly, nonatomic) struct CGAffineTransform strokeTransform; // @synthesize strokeTransform=_strokeTransform;
-@property(readonly, nonatomic) PKUndoCheckPoint *checkPoint; // @synthesize checkPoint=_checkPoint;
-@property(readonly, nonatomic) _Bool toggleHide; // @synthesize toggleHide=_toggleHide;
 @property(readonly, nonatomic) _Bool hide; // @synthesize hide=_hide;
 @property(readonly, nonatomic) NSArray *strokes; // @synthesize strokes=_strokes;
 - (void).cxx_destruct;
@@ -32,9 +27,7 @@
 - (void)registerWithUndoManager:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)applyToDrawing:(id)arg1;
 - (id)inverted;
-- (double)renderCost;
 @property(readonly, nonatomic) NSArray *visibleStrokes;
-- (id)initWithStrokes:(id)arg1 drawingUUID:(id)arg2 actionName:(id)arg3 hiding:(_Bool)arg4 strokeTransform:(struct CGAffineTransform)arg5 toggleHide:(_Bool)arg6;
 - (id)initWithStrokes:(id)arg1 drawingUUID:(id)arg2 actionName:(id)arg3 hiding:(_Bool)arg4 strokeTransform:(struct CGAffineTransform)arg5;
 
 @end

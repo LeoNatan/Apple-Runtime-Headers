@@ -9,7 +9,6 @@
 @class NSString;
 
 @protocol NTKDeveloperToolsServer <NSObject>
-- (void)generateFaceCustomizationBundleAtPath:(NSString *)arg1 withCompletion:(void (^)(NSDictionary *))arg2;
 - (void)generateBundleForID:(NSString *)arg1 toPath:(NSString *)arg2 withCompletion:(void (^)(NSDictionary *))arg3;
 @end
 

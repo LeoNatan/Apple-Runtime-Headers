@@ -22,6 +22,7 @@
 }
 
 @property(readonly, nonatomic, getter=isScrolling) _Bool scrolling; // @synthesize scrolling=_scrolling;
+- (void).cxx_destruct;
 - (id)_animationForAnimationSettings:(id)arg1;
 - (void)_didEndScrollAnimationNotification:(id)arg1;
 - (void)_didDidEndDeceleratingNotification:(id)arg1;

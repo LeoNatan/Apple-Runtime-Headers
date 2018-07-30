@@ -10,11 +10,11 @@
 {
 }
 
-+ (id)_orderedValuesRestrictedByCurrentDeviceCollection;
-+ (id)_localizedNameForValue:(unsigned long long)arg1;
-+ (id)_snapshotKeyForValue:(unsigned long long)arg1;
-+ (id)_orderedValues;
-+ (id)optionWithVictoryColor:(unsigned long long)arg1;
++ (id)_orderedValuesRestrictedByDevice:(id)arg1;
++ (id)_localizedNameForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (id)optionWithVictoryColor:(unsigned long long)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
 - (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned long long victoryColor;

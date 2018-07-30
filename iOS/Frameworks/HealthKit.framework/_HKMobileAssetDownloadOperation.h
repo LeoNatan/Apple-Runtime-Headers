@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class ASAsset, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class ASAsset, NSDictionary, NSObject<OS_dispatch_queue>;
 
 __attribute__((visibility("hidden")))
 @interface _HKMobileAssetDownloadOperation : NSObject
@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
     long long _attemptCount;
     NSObject<OS_dispatch_queue> *_queue;
-    NSString *_operationName;
 }
 
 - (void).cxx_destruct;
@@ -34,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_queue_callCompletionWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_queue_run;
 - (void)run;
+- (id)description;
 - (id)initWithAsset:(id)arg1 serialQueue:(id)arg2 downloadOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end

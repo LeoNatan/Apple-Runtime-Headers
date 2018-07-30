@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_audioURLWithName:(id)arg1 bundle:(id)arg2;
 + (id)playSoundFileNamed:(id)arg1 atPosition:(struct CGPoint)arg2 waitForCompletion:(_Bool)arg3;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;

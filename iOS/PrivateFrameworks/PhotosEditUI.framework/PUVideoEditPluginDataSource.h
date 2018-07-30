@@ -10,6 +10,7 @@
 
 @class NSString, PHAsset;
 
+__attribute__((visibility("hidden")))
 @interface PUVideoEditPluginDataSource : NSObject <PUVideoEditPluginSessionDataSource>
 {
     _Bool _allowsRevertInSession;

@@ -8,6 +8,7 @@
 
 @class NSString, UIColor, UIFont;
 
+__attribute__((visibility("hidden")))
 @interface RCTextLayer : CALayer
 {
     struct CGSize _cachedSize;

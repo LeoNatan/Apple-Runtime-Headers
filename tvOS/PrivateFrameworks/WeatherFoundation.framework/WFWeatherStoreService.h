@@ -37,8 +37,9 @@
 @property(copy, nonatomic) CDUnknownBlockType forecastRequestStartingCallback; // @synthesize forecastRequestStartingCallback=_forecastRequestStartingCallback;
 @property(copy, nonatomic) WFWeatherStoreServiceConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
-- (void)_executeCallbacksForURL:(id)arg1 requestIdentifier:(id)arg2 conditions:(id)arg3 error:(id)arg4;
-- (void)_executeCallbacksForURL:(id)arg1 requestIdentifier:(id)arg2 parsedForecastData:(id)arg3 error:(id)arg4;
+- (void)_cleanupCallbacksAndTasksForURL:(id)arg1;
+- (void)_executeCallbacksForURL:(id)arg1 conditions:(id)arg2 error:(id)arg3;
+- (void)_executeCallbacksForURL:(id)arg1 parsedForecastData:(id)arg2 error:(id)arg3;
 - (void)_addCallback:(CDUnknownBlockType)arg1 requestIdentifier:(id)arg2 forURL:(id)arg3;
 - (void)_setTask:(id)arg1 requestIdentifier:(id)arg2 callback:(CDUnknownBlockType)arg3 forURL:(id)arg4;
 - (id)_taskForURL:(id)arg1;

@@ -58,7 +58,7 @@
 - (_Bool)supportsDeletion;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
-- (id)identifiersForMapping;
+- (id)scopedIdentifiersForMapping;
 
 @end
 

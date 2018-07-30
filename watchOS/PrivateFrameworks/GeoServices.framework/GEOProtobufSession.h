@@ -21,7 +21,7 @@
 - (id)taskWithRequest:(id)arg1 requestTypeCode:(unsigned int)arg2 responseClass:(Class)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
 - (id)initWithDataSession:(id)arg1 rulesProvider:(id)arg2;
 - (id)init;
-- (id)taskWithRequestKind:(int)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 auditToken:(id)arg5 traits:(id)arg6 delegate:(id)arg7 delegateQueue:(id)arg8 requestCounterTicket:(id)arg9;
+- (id)taskWithRequestKind:(int)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 needsProxy:(_Bool)arg5 auditToken:(id)arg6 traits:(id)arg7 delegate:(id)arg8 delegateQueue:(id)arg9 requestCounterTicket:(id)arg10;
 
 @end
 

@@ -15,7 +15,7 @@
     MPCMediaRemoteController *_controller;
 }
 
-@property(nonatomic) __weak MPCMediaRemoteController *controller; // @synthesize controller=_controller;
+@property(readonly, nonatomic) __weak MPCMediaRemoteController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
@@ -23,6 +23,7 @@
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (_Bool)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (_Bool)areRepresentationsAvailableForCatalog:(id)arg1;
+- (id)initWithController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

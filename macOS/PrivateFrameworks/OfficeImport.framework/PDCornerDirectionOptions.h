@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PDTransitionOptions.h>
 
-__attribute__((visibility("hidden")))
 @interface PDCornerDirectionOptions : PDTransitionOptions
 {
     int mDirection;

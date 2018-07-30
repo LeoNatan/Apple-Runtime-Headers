@@ -6,17 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSAttributedString;
+@class NSAttributedString, UIFont;
 
 @interface NSTextLineFragment : NSObject
 {
     struct __CTLine *_lineRef;
+    unsigned short *_glyphs;
+    struct CGSize *_advances;
+    UIFont *_font;
     NSAttributedString *_attributedString;
     struct _NSRange _characterRange;
     struct CGPoint glyphOrigin;
     struct CGRect typographicBounds;
 }
 
++ (_Bool)supportsSecureCoding;
 @property struct CGPoint glyphOrigin; // @synthesize glyphOrigin;
 @property struct CGRect typographicBounds; // @synthesize typographicBounds;
 @property(readonly) struct _NSRange characterRange; // @synthesize characterRange=_characterRange;
@@ -26,6 +30,9 @@
 - (void)drawAtPoint:(struct CGPoint)arg1 context:(struct CGContext *)arg2;
 @property(readonly) long long numberOfGlyphs; // @dynamic numberOfGlyphs;
 - (struct CGRect)typographicUsedBounds;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setGlyphs:(const unsigned short *)arg1 advances:(const struct CGSize *)arg2 font:(id)arg3;
 - (void)setLineRef:(struct __CTLine *)arg1;
 - (void)dealloc;
 - (id)initWithAttributedString:(id)arg1 range:(struct _NSRange)arg2;

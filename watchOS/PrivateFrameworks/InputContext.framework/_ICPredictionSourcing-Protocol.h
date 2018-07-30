@@ -7,8 +7,10 @@
 @class _ICProactiveTrigger, _ICSearchContext;
 
 @protocol _ICPredictionSourcing
-- (void)searchForMeCardEmailAddressesWithTimeout:(int)arg1 handler:(void (^)(NSArray *))arg2;
-- (void)searchForMeCardRegionsWithTimeout:(int)arg1 handler:(void (^)(NSArray *))arg2;
-- (void)predictedItemsWithProactiveTrigger:(_ICProactiveTrigger *)arg1 searchContext:(_ICSearchContext *)arg2 limit:(unsigned int)arg3 timeoutInMilliseconds:(float)arg4 handler:(void (^)(NSArray *, NSError *))arg5;
+- (void)hibernate;
+- (void)warmUp;
+- (void)searchForMeCardEmailAddressesWithTimeout:(unsigned int)arg1 handler:(void (^)(NSArray *))arg2;
+- (void)searchForMeCardRegionsWithTimeout:(unsigned int)arg1 handler:(void (^)(NSArray *))arg2;
+- (void)predictedItemsWithProactiveTrigger:(_ICProactiveTrigger *)arg1 searchContext:(_ICSearchContext *)arg2 limit:(unsigned int)arg3 timeoutInMilliseconds:(unsigned int)arg4 handler:(void (^)(NSArray *, NSError *))arg5;
 @end
 

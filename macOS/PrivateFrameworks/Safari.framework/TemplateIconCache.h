@@ -12,14 +12,13 @@ __attribute__((visibility("hidden")))
     BOOL _didLoadBookmarks;
 }
 
-+ (id)sharedCache;
-- (void)_downloadFallbackConfigurationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)_fallbackConfigurationURL;
 - (BOOL)_templateIconRetainerIsReadyForCleanUp;
-- (void)_generateFallbackThemeColorForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_imageForRequest:(id)arg1 getThemeColor:(id *)arg2;
 - (BOOL)shouldRequestTemplateIconForURL:(id)arg1 allowRefresh:(BOOL)arg2;
-- (void)_purgeUnneededTemplateIconsAfterLoadingBookmarks;
+- (void)_bookmarksWereReloaded:(id)arg1;
+- (void)_webBookmarkLeafURLStringDidChange:(id)arg1;
+- (void)dealloc;
+- (id)initWithImageDirectoryURL:(id)arg1;
 
 @end
 

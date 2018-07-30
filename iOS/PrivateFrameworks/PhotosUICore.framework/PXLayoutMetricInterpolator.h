@@ -18,7 +18,13 @@
     NSValue *__cachedValue;
 }
 
++ (struct CGSize)bestItemSizeForAvailableWidth:(double)arg1 screenScale:(double)arg2 columns:(unsigned long long)arg3 bestSpacing:(double *)arg4 bestInset:(double *)arg5;
++ (struct CGSize)zoomableGridLayoutSmallItemSizeForWidth:(double)arg1;
++ (unsigned long long)photosGridLayoutColumnsForWidth:(double)arg1;
++ (long long)photosGridSizeSubclassForScreenSize:(struct CGSize)arg1;
++ (id)allLayoutMetricConfigurationSizes;
 + (id)layoutMarginWidthInterpolator;
++ (id)legacyLayoutMarginWidthInterpolator;
 + (id)albumsGridItemWidthInterpolator;
 + (id)albumsGridEdgeInsetsInterpolator;
 + (id)memoriesItemWidthInterpolator;

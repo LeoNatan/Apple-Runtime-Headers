@@ -8,7 +8,6 @@
 
 @class GEOPDAssociatedApp, NSArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOAssociatedApp : NSObject
 {
     GEOPDAssociatedApp *_geoAssociatedApp;

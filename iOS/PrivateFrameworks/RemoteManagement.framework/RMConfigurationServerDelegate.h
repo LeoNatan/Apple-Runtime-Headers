@@ -15,7 +15,7 @@
     id <RMConfigurationXPCInterface> _target;
 }
 
-@property(retain) id <RMConfigurationXPCInterface> target; // @synthesize target=_target;
+@property(retain, nonatomic) id <RMConfigurationXPCInterface> target; // @synthesize target=_target;
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 

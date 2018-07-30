@@ -40,6 +40,7 @@
 @property(nonatomic) long long placement;
 @property(retain, nonatomic) NSDictionary *featuresSet;
 @property(retain, nonatomic) NSString *resultBundleID;
+@property(retain, nonatomic) NSString *displayName;
 @property long long topHitScore;
 @property BOOL isQuickGlance;
 @property(nonatomic) unsigned long long rank;

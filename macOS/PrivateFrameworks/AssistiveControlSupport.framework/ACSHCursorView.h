@@ -52,6 +52,7 @@
 - (void)setIsAvailable:(BOOL)arg1 forTabIdentifier:(unsigned long long)arg2;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_drawCursor;
+- (BOOL)wantsUpdateLayer;
 - (void)setCursorFrameInCarbonCoords:(struct CGRect)arg1;
 - (struct CGRect)_viewFrameForCursorTabPosition:(int)arg1;
 - (void)recalculateFrame;

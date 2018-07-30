@@ -6,7 +6,7 @@
 
 #import <GameCenterPrivateUIMac/NSUICollectionViewCell.h>
 
-@class GKMultiplayerParticipant, NSButton, NSColor, NSLayoutConstraint, NSTextField;
+@class GKMultiplayerParticipant, NSButton, NSColor, NSLayoutConstraint, NSString, NSTextField;
 
 @interface GKMultiplayerCollectionViewCell : NSUICollectionViewCell
 {
@@ -20,9 +20,11 @@
     NSLayoutConstraint *_labelSpacingConstraint;
     double _labelSpacing;
     NSColor *_nameLabelColor;
+    NSString *_lastAppearanceName;
 }
 
 + (id)reuseIdentifier;
+@property(retain, nonatomic) NSString *lastAppearanceName; // @synthesize lastAppearanceName=_lastAppearanceName;
 @property(retain) NSColor *nameLabelColor; // @synthesize nameLabelColor=_nameLabelColor;
 @property double labelSpacing; // @synthesize labelSpacing=_labelSpacing;
 @property NSLayoutConstraint *labelSpacingConstraint; // @synthesize labelSpacingConstraint=_labelSpacingConstraint;
@@ -40,6 +42,7 @@
 @property(nonatomic) BOOL removable; // @dynamic removable;
 - (void)participantChanged;
 - (void)setAddButtonTitle:(id)arg1;
+- (void)updateLayer;
 - (void)dealloc;
 - (void)awakeFromNib;
 

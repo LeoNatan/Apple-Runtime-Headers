@@ -44,11 +44,13 @@
 - (void)_cacheProviderInfo;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)registerURLSessionTask:(id)arg1 forItemWithIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_callAllCompletionHandlersForItemID:(id)arg1 error:(id)arg2;
 - (void)_signalPendingEnumerators;
+- (void)_failToSignalPendingChangesWithError:(id)arg1 completionHandlersByItemID:(id)arg2;
+- (void)_callCompletionHandlers:(id)arg1 error:(id)arg2;
 - (void)signalEnumeratorForContainerItemIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)itemIDForIdentifier:(id)arg1;
 - (id)_connection;
+- (void)fetchRemoteFileProviderSynchronously:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)remoteFileProviderWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_initWithProviderIdentifier:(id)arg1 domain:(id)arg2;
 - (id)_initWithProviderIdentifier:(id)arg1;

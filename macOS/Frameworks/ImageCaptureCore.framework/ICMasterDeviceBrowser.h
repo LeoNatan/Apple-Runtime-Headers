@@ -8,6 +8,7 @@
 
 @class ICCommandCenter, NSMutableArray, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface ICMasterDeviceBrowser : NSObject
 {
     ICCommandCenter *_commandCenter;
@@ -49,7 +50,6 @@
 - (void)startBrowsingForSharedDevices;
 - (void)removeBrowser:(id)arg1;
 - (void)addBrowser:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

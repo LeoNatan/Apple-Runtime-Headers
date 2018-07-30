@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)_facetForState:(unsigned long long)arg1;
 - (BOOL)_isValid;
 - (BOOL)_drawOnlyUsesOneDrawingOperation;
-- (BOOL)_wantsToBeCached;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

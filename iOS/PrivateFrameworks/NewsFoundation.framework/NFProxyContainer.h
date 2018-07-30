@@ -10,6 +10,7 @@
 
 @class NFContainer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NFProxyContainer : NSObject <NFRegistrationContainer>
 {
     NFContainer *_container;

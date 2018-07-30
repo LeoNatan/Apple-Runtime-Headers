@@ -11,6 +11,8 @@
 }
 
 + (id)sharedInstance;
+- (void)stopSoundMessageWithCompletion:(CDUnknownBlockType)arg1;
+- (void)playSoundWithMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getNeedsLocateAckLostModeFileURL;
 - (id)getManagedLostModeFileURL;
 - (void)_disableFMIPUsingToken:(id)arg1 inContext:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -19,7 +21,6 @@
 - (void)_updateManagedLostModeWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_isRunningAsMobileUser;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
-- (void)_stopAlarm;
 - (void)_forceFMWUpgradeAlertWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getAccessoriesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)clearData:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
@@ -51,6 +52,7 @@
 - (id)fmipAccount;
 - (void)fmipAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fmipStateWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)_checkLostModeInSharedContainer;
 - (_Bool)lockdownShouldDisableDevicePairing;
 - (_Bool)lockdownShouldDisableDeviceRestore;
 - (void)deviceActivationDidSucceed;
@@ -63,6 +65,7 @@
 - (id)lostModeInfo;
 - (unsigned long long)_needsAckLostModeType;
 - (unsigned long long)_managedLostModeType;
+- (_Bool)isLostModeActive;
 - (_Bool)isManagedLostModeActive;
 - (_Bool)lostModeIsActive;
 - (void)activationLockVersionWithCompletion:(CDUnknownBlockType)arg1;

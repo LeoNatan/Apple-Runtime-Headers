@@ -11,6 +11,7 @@
 @interface HKSleepPeriodSeries : HKGraphSeries
 {
     HKStrokeStyle *_strokeStyle;
+    HKStrokeStyle *_tiledStrokeStyle;
     NSArray *_defaultFillStyles;
     NSArray *_highlightedFillStyles;
     HKStrokeStyle *_goalLineStokeStyle;
@@ -22,6 +23,7 @@
 @property(copy, nonatomic) HKStrokeStyle *goalLineStokeStyle; // @synthesize goalLineStokeStyle=_goalLineStokeStyle;
 @property(copy, nonatomic) NSArray *highlightedFillStyles; // @synthesize highlightedFillStyles=_highlightedFillStyles;
 @property(copy, nonatomic) NSArray *defaultFillStyles; // @synthesize defaultFillStyles=_defaultFillStyles;
+@property(copy, nonatomic) HKStrokeStyle *tiledStrokeStyle; // @synthesize tiledStrokeStyle=_tiledStrokeStyle;
 @property(copy, nonatomic) HKStrokeStyle *strokeStyle; // @synthesize strokeStyle=_strokeStyle;
 @property(nonatomic) struct CGSize cornerRadii; // @synthesize cornerRadii=_cornerRadii;
 - (void).cxx_destruct;

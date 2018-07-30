@@ -20,8 +20,7 @@
 - (void)mbWebkitViewSetWindowTitle:(NSString *)arg1;
 
 @optional
-- (void)mbValidateLocalPasswordWithTitle:(NSString *)arg1 forcingReprompt:(BOOL)arg2 callback:(JSValue *)arg3;
-- (void)mbValidateLocalPasswordWithCompletion:(JSValue *)arg1;
+- (void)mbConfirmLocalPasswordWithCompletion:(JSValue *)arg1;
 - (void)mbWebkitViewTermsAndConditions:(NSArray *)arg1 completionHandler:(void (^)(BOOL))arg2;
 - (void)mbWebkitViewSaveFile:(NSString *)arg1 withLocalizedDisplayName:(NSString *)arg2 content:(NSString *)arg3;
 - (void)mbWebkitViewSaveFile:(NSString *)arg1 content:(NSString *)arg2;

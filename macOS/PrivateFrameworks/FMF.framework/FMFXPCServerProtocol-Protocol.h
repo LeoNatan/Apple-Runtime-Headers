@@ -6,9 +6,16 @@
 
 #import "NSObject.h"
 
-@class FMFDevice, FMFFriendshipRequest, FMFHandle, NSDate, NSNumber, NSSet, NSString;
+@class FMFDevice, FMFFence, FMFFriendshipRequest, FMFHandle, NSDate, NSNumber, NSSet, NSString;
 
 @protocol FMFXPCServerProtocol <NSObject>
+- (oneway void)removeFavorite:(FMFHandle *)arg1 completion:(void (^)(NSError *))arg2;
+- (oneway void)addFavorite:(FMFHandle *)arg1 completion:(void (^)(NSError *))arg2;
+- (oneway void)getFavoritesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
+- (oneway void)fencesForHandles:(NSSet *)arg1 completion:(void (^)(NSSet *, NSError *))arg2;
+- (oneway void)getFences:(void (^)(NSSet *, NSError *))arg1;
+- (oneway void)deleteFence:(FMFFence *)arg1 completion:(void (^)(NSError *))arg2;
+- (oneway void)addFence:(FMFFence *)arg1 completion:(void (^)(FMFFence *, NSError *))arg2;
 - (oneway void)encryptPayload:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (oneway void)decryptPayload:(NSString *)arg1 withToken:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (oneway void)dataForPayload:(NSString *)arg1 completion:(void (^)(FMFHandle *, CNContact *, CLLocation *, NSError *))arg2;
@@ -52,7 +59,7 @@
 - (oneway void)extendFriendshipOfferToHandle:(FMFHandle *)arg1 groupId:(NSString *)arg2 callerId:(FMFHandle *)arg3 endDate:(NSDate *)arg4 completion:(void (^)(NSString *, NSError *))arg5;
 - (oneway void)sendFriendshipOfferToHandles:(NSSet *)arg1 groupId:(NSString *)arg2 callerId:(FMFHandle *)arg3 endDate:(NSDate *)arg4 completion:(void (^)(NSDictionary *, NSError *))arg5;
 - (oneway void)removeDevice:(FMFDevice *)arg1 completion:(void (^)(NSError *))arg2;
-- (oneway void)getAbRecordIdForHandle:(FMFHandle *)arg1 completion:(void (^)(NSNumber *, NSError *))arg2;
+- (oneway void)getRecordIdForHandle:(FMFHandle *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (oneway void)getPrettyNameForHandle:(FMFHandle *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (oneway void)canOfferToHandles:(NSSet *)arg1 completion:(void (^)(NSSet *, NSError *))arg2;
 - (oneway void)isNetworkReachable:(void (^)(BOOL, NSError *))arg1;

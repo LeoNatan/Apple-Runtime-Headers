@@ -28,6 +28,9 @@
 - (id)status;
 - (void)writeTransactionDidSucceed;
 - (void)writeTransactionDidFail;
+- (id)statusPerScopeIndex;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+@property(readonly, nonatomic) unsigned long long scopeType;
 - (BOOL)closeWithError:(id *)arg1;
 - (BOOL)openWithError:(id *)arg1;
 @property(readonly, copy) NSString *description;

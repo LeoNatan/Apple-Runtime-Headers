@@ -8,13 +8,12 @@
 
 #import "UIApplicationDelegate.h"
 
-@class BLActivityAlert, NSDictionary, NSString, UIWindow;
+@class BLActivityAlert, NSDictionary, NSSet, NSString, UIWindow;
 
 @interface PLPhotosApplication : UIApplication <UIApplicationDelegate>
 {
     _Bool _receivingRemoteControlEvents;
     UIWindow *_window;
-    _Bool _urlNeedsHandling;
     int _observeForRechabilityChanges;
     _Bool _isReachable;
     _Bool _isOnWifi;
@@ -25,11 +24,13 @@
     int _sharedPhotoStreamInvitationFailureToken;
     NSString *_currentTestName;
     NSDictionary *_currentTestOptions;
+    NSSet *_notificationSuppressionContexts;
     BLActivityAlert *_iPhotoMigrationActivityAlert;
 }
 
 + (void)initialize;
 @property(retain, nonatomic) BLActivityAlert *iPhotoMigrationActivityAlert; // @synthesize iPhotoMigrationActivityAlert=_iPhotoMigrationActivityAlert;
+@property(copy, nonatomic) NSSet *notificationSuppressionContexts; // @synthesize notificationSuppressionContexts=_notificationSuppressionContexts;
 @property(retain, nonatomic) NSDictionary *currentTestOptions; // @synthesize currentTestOptions=_currentTestOptions;
 @property(retain, nonatomic) NSString *currentTestName; // @synthesize currentTestName=_currentTestName;
 @property(readonly, nonatomic) _Bool isOnWifi; // @synthesize isOnWifi=_isOnWifi;
@@ -58,7 +59,6 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)photosPreferencesChanged;
 - (_Bool)useCompatibleSuspensionAnimation;
-- (void)_finishExtendedTest;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)sharedFinishedLaunching:(_Bool)arg1;
 - (id)rootViewController;

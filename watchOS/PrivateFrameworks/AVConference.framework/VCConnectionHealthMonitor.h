@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
-@property id <VCConnectionHealthMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)isPrimaryConnectionImprovedFromHistory:(struct ConnectionStatsHistory *)arg1 withIndex:(int)arg2;
 - (_Bool)isHistoryImproved:(char *)arg1 currentIndex:(int)arg2;
 - (_Bool)isHistoryValid:(char *)arg1;
@@ -34,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)generateStatsBlob;
 - (void)updateReceiveStats;
 - (void)receiveNewPacket:(_Bool)arg1;
+@property id <VCConnectionHealthMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (id)init;
 

@@ -15,8 +15,8 @@
 
 + (id)optionsWithContainerPathProvider:(id)arg1;
 @property(retain, nonatomic) id <BSPathProviding> containerPathProvider; // @synthesize containerPathProvider=_containerPathProvider;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 @end
 

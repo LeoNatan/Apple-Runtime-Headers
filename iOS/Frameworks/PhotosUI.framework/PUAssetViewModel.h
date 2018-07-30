@@ -11,7 +11,7 @@
 #import "PUBrowsingIrisPlayerChangeObserver.h"
 #import "PUBrowsingVideoPlayerChangeObserver.h"
 
-@class NSNumber, NSObject<OS_dispatch_group>, NSProgress, NSString, PUAssetReference, PUAssetSharedViewModel, PUAssetViewModelChange, PUBadgeInfoPromise, PUBrowsingAnimatedImagePlayer, PUBrowsingIrisPlayer, PUBrowsingVideoPlayer, PUMediaProvider, PUModelTileTransform, PUOperationStatus, PXAutoloopScheduler;
+@class NSNumber, NSObject<OS_dispatch_group>, NSProgress, NSString, PUAssetReference, PUAssetSharedViewModel, PUAssetViewModelChange, PUBadgeInfoPromise, PUBrowsingAnimatedImagePlayer, PUBrowsingIrisPlayer, PUBrowsingVideoPlayer, PUMediaProvider, PUModelTileTransform, PUOperationStatus;
 
 @interface PUAssetViewModel : PUViewModel <PUBrowsingIrisPlayerChangeObserver, PUAssetSharedViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver, PUBrowsingAnimatedImagePlayerChangeObserver>
 {
@@ -42,7 +42,6 @@
     long long __currentFavoriteOverrideRequest;
     long long _displayedContentUpdateCount;
     PUMediaProvider *_mediaProvider;
-    PXAutoloopScheduler *_autoloopScheduler;
     NSNumber *_isFavoriteOverride;
     PUAssetReference *_assetReference;
     PUAssetSharedViewModel *_assetSharedViewModel;
@@ -53,7 +52,6 @@
 @property(retain, nonatomic) PUAssetSharedViewModel *assetSharedViewModel; // @synthesize assetSharedViewModel=_assetSharedViewModel;
 @property(retain, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 @property(copy, nonatomic) NSNumber *isFavoriteOverride; // @synthesize isFavoriteOverride=_isFavoriteOverride;
-@property(retain, nonatomic) PXAutoloopScheduler *autoloopScheduler; // @synthesize autoloopScheduler=_autoloopScheduler;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(nonatomic) long long displayedContentUpdateCount; // @synthesize displayedContentUpdateCount=_displayedContentUpdateCount;
 @property(nonatomic, setter=_setCurrentFavoriteOverrideRequest:) long long _currentFavoriteOverrideRequest; // @synthesize _currentFavoriteOverrideRequest=__currentFavoriteOverrideRequest;

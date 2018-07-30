@@ -59,8 +59,6 @@
 - (void)handleCallDBPropContextDidSaveNotification:(id)arg1;
 - (void)handleCallRecordContextDidSaveNotification:(id)arg1;
 - (_Bool)moveCallRecordsFromDatabaseAtURL:(id)arg1;
-- (void)setHandleTypeIn:(id)arg1 using:(id)arg2 havingVersion:(long long)arg3;
-- (void)setServiceProviderIn:(id)arg1 using:(id)arg2 havingVersion:(long long)arg3;
 - (void)handlePersistentStoreChangedNotification:(id)arg1;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications:(id)arg1;

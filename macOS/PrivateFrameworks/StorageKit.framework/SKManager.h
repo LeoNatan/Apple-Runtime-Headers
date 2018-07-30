@@ -32,7 +32,6 @@
 + (id)sharedManager;
 + (id)sharedManagerWithBindingsSafety:(BOOL)arg1;
 - (void).cxx_destruct;
-- (BOOL)_DEBUG_sanityCheckDiskType:(id)arg1;
 - (void)managerResumed;
 - (void)managerStalled;
 - (void)disksChanged:(id)arg1;
@@ -59,6 +58,7 @@
 - (void)createAPFSContainerWithDisks:(id)arg1 progressBlock:(CDUnknownBlockType)arg2 callbackBlock:(CDUnknownBlockType)arg3;
 - (id)volumesForAPFSPS:(id)arg1;
 - (id)physicalStoresForAPFSVolume:(id)arg1;
+- (id)raidForContentDisk:(id)arg1;
 - (id)membersForRAIDSet:(id)arg1;
 - (id)setForRAIDMember:(id)arg1;
 - (id)filesystemWithSKType:(id)arg1 isCaseSensitive:(BOOL)arg2 isEncrypted:(BOOL)arg3;

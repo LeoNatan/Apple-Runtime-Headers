@@ -12,6 +12,7 @@
 {
     _Bool _shouldDeleteDestinationURLOnDeallocation;
     _Bool _needsCurrentEncodingBitRateUpdate;
+    _Bool _maximizePowerEfficiency;
     NSString *_identifier;
     NSProgress *_progress;
     NSArray *_additionalMetadata;
@@ -41,6 +42,7 @@
     unsigned long long _outputFileLastEndOffset;
 }
 
+@property _Bool maximizePowerEfficiency; // @synthesize maximizePowerEfficiency=_maximizePowerEfficiency;
 @property _Bool needsCurrentEncodingBitRateUpdate; // @synthesize needsCurrentEncodingBitRateUpdate=_needsCurrentEncodingBitRateUpdate;
 @property int currentEncodingBitRate; // @synthesize currentEncodingBitRate=_currentEncodingBitRate;
 @property struct OpaqueVTCompressionSession *compressionSession; // @synthesize compressionSession=_compressionSession;
@@ -71,6 +73,7 @@
 @property(nonatomic) unsigned long long targetOutputFileSize; // @synthesize targetOutputFileSize=_targetOutputFileSize;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (double)inputAssetDuration;
 - (void)_cancel;
 - (id)bitRateControllerForTargetEncodingBitRate:(int)arg1;
 - (void)notifyDataAvailableToHandler:(CDUnknownBlockType)arg1 ignoreMinimumChunkLength:(_Bool)arg2;

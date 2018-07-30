@@ -14,19 +14,20 @@
 {
 }
 
-- (_Bool)resetWithError:(id *)arg1;
-- (_Bool)resetAllFinalCloudIdentifiersWithError:(id *)arg1;
-- (_Bool)addAddEventForRecordWithLocalIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
-- (_Bool)addDeleteEventForRecordWithLocalIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
-- (_Bool)removeMappingForCloudIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)resetAllFinalCloudIdentifiersForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)addAddEventForRecordWithLocalScopedIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
+- (_Bool)addDeleteEventForRecordWithLocalScopedIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
+- (_Bool)removeMappingForCloudScopedIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)hasPendingIdentifiers;
-- (_Bool)markAllPendingIdentifiersAsFinalWithError:(id *)arg1;
-- (_Bool)setFinalCloudIdentifier:(id)arg1 forPendingCloudIdentifier:(id)arg2 error:(id *)arg3;
-- (id)setupCloudIdentifier:(id)arg1 forLocalIdentifier:(id)arg2 isFinal:(_Bool)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
-- (_Bool)addCloudIdentifier:(id)arg1 forLocalIdentifier:(id)arg2 isFinal:(_Bool)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
-- (id)localIdentifierForCloudIdentifierIncludeRemappedRecords:(id)arg1;
-- (id)localIdentifierForCloudIdentifier:(id)arg1 isFinal:(_Bool *)arg2;
-- (id)cloudIdentifierForLocalIdentifier:(id)arg1 isFinal:(_Bool *)arg2;
+- (_Bool)markAllPendingIdentifiersForScopeWithIdentifier:(id)arg1 asFinalWithError:(id *)arg2;
+- (_Bool)setFinalCloudScopedIdentifier:(id)arg1 forPendingCloudScopedIdentifier:(id)arg2 error:(id *)arg3;
+- (id)setupCloudScopedIdentifier:(id)arg1 forLocalScopedIdentifier:(id)arg2 isFinal:(_Bool)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
+- (_Bool)addCloudScopedIdentifier:(id)arg1 forLocalScopedIdentifier:(id)arg2 isFinal:(_Bool)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
+- (id)localScopedIdentifierForCloudScopedIdentifierIncludeRemappedRecords:(id)arg1;
+- (id)localScopedIdentifierForCloudScopedIdentifier:(id)arg1 isFinal:(_Bool *)arg2;
+- (id)cloudScopedIdentifierForLocalScopedIdentifier:(id)arg1 isFinal:(_Bool *)arg2;
+- (_Bool)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (unsigned long long)scopeType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

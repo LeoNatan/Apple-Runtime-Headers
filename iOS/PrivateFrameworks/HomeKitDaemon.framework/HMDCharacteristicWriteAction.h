@@ -9,7 +9,7 @@
 #import "HMDBackingStoreObjectProtocol.h"
 #import "NSSecureCoding.h"
 
-@class HMDActionSet, HMDCharacteristic, NSUUID;
+@class HMDActionSet, HMDCharacteristic, NSString, NSUUID;
 
 @interface HMDCharacteristicWriteAction : HMFObject <NSSecureCoding, HMDBackingStoreObjectProtocol>
 {
@@ -37,6 +37,12 @@
 - (void)replaceCharacteristic:(id)arg1;
 - (id)initWithUUID:(id)arg1 characteristic:(id)arg2 targetValue:(id)arg3 actionSet:(id)arg4;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -18,7 +18,7 @@
 
 + (_Bool)acceptsComplicationType:(unsigned int)arg1;
 + (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (id)_imageProviderWithForegroundName:(id)arg1 compact:(_Bool)arg2 unreadCount:(int)arg3 family:(int)arg4 locked:(_Bool)arg5;
++ (id)_imageProviderWithForegroundName:(id)arg1 unreadCount:(int)arg2 family:(int)arg3 locked:(_Bool)arg4;
 + (id)_templateForFamily:(int)arg1 unreadMessageCount:(int)arg2 compact:(_Bool)arg3 locked:(_Bool)arg4;
 @property(nonatomic) _Bool messageRecdNotification; // @synthesize messageRecdNotification=_messageRecdNotification;
 @property(nonatomic) int unreadMessageCount; // @synthesize unreadMessageCount=_unreadMessageCount;

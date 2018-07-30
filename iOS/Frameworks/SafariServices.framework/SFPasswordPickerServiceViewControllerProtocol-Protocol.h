@@ -6,10 +6,15 @@
 
 #import "NSObject.h"
 
-@class NSURL;
+@class NSArray, NSString, NSURL;
 
 @protocol SFPasswordPickerServiceViewControllerProtocol <NSObject>
+- (void)setAuthenticationGracePeriod:(double)arg1;
+- (void)setExternallyVerifiedAndApprovedSharedWebCredentialsDomains:(NSArray *)arg1;
+- (void)setRemoteUnlocalizedAppName:(NSString *)arg1;
+- (void)setRemoteLocalizedAppName:(NSString *)arg1;
+- (void)setRemoteAppID:(NSString *)arg1;
 - (void)setWebViewURL:(NSURL *)arg1;
-- (void)authenticateToPresentInPopover:(_Bool)arg1 completion:(void (^)(_Bool, long long))arg2;
+- (void)authenticateToPresentInPopover:(_Bool)arg1 completion:(void (^)(_Bool, long long, long long))arg2;
 @end
 

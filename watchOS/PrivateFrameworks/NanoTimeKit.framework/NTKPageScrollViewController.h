@@ -80,7 +80,6 @@
 - (void)_purgeViewControllerForPageAtIndex:(unsigned int)arg1;
 - (void)_migratePageViewControllersWithStartIndex:(unsigned int)arg1 offset:(int)arg2;
 - (id)_viewControllerForPageAtIndex:(unsigned int)arg1;
-- (void)_ensureViewControllerForPageAtIndex:(unsigned int)arg1;
 - (struct CGSize)_contentViewSizeForPageAtIndex:(unsigned int)arg1;
 - (_Bool)_shouldEnableScrolling;
 - (void)_applyDefaultConfigurationToPage:(id)arg1;
@@ -93,6 +92,7 @@
 - (void)page:(id)arg1 didUpdateSwipeToDelete:(float)arg2;
 - (void)pageDidBeginSwipeToDelete:(id)arg1;
 - (void)pageWasSelected:(id)arg1;
+- (void)ensureViewControllerForPageAtIndex:(unsigned int)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)_forceScrollToSelectedPage;
 - (void)viewWillDisappear:(_Bool)arg1;

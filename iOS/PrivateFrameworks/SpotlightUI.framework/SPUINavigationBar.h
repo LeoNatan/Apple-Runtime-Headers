@@ -12,11 +12,9 @@
 {
     _Bool _roundedCornerVisible;
     UIView *_topDividerView;
-    double _currentBlurProgress;
 }
 
 + (_Bool)_supportsCanvasView;
-@property double currentBlurProgress; // @synthesize currentBlurProgress=_currentBlurProgress;
 @property(retain) UIView *topDividerView; // @synthesize topDividerView=_topDividerView;
 @property(nonatomic, getter=isRoundedCornerVisible) _Bool roundedCornerVisible; // @synthesize roundedCornerVisible=_roundedCornerVisible;
 - (void).cxx_destruct;
@@ -29,6 +27,7 @@
 - (void)pushNavigationItem:(id)arg1;
 - (void)updateBackgroundViewVisibility;
 - (_Bool)isLocked;
+- (void)updateColors;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

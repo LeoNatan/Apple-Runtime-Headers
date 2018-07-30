@@ -10,6 +10,7 @@
 
 @interface TIRevisionHistory : NSObject
 {
+    _Bool _shouldReportRevisionToDP;
     id <TIRevisionHistoryDelegate> _delegate;
     TILRUDictionary *_recentAutocorrections;
     NSString *_documentText;
@@ -20,6 +21,7 @@
     struct _TIRevisionHistoryTokenIterator _currentTokenIterator;
 }
 
+@property(nonatomic) _Bool shouldReportRevisionToDP; // @synthesize shouldReportRevisionToDP=_shouldReportRevisionToDP;
 @property(retain, nonatomic) TIRevisionHistoryToken *lastRejectedToken; // @synthesize lastRejectedToken=_lastRejectedToken;
 @property(readonly, nonatomic) void *tokenizer; // @synthesize tokenizer=_tokenizer;
 @property(nonatomic) struct _TIRevisionHistoryTokenIterator currentTokenIterator; // @synthesize currentTokenIterator=_currentTokenIterator;
@@ -28,6 +30,7 @@
 @property(copy, nonatomic) NSString *documentText; // @synthesize documentText=_documentText;
 @property(retain, nonatomic) TILRUDictionary *recentAutocorrections; // @synthesize recentAutocorrections=_recentAutocorrections;
 @property(nonatomic) id <TIRevisionHistoryDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)currentUserTyping;
 - (id)currentWord;
 - (void)enumerateSentenceStemUsingBlock:(CDUnknownBlockType)arg1;
@@ -74,7 +77,7 @@
 - (void)acceptTokensInRange:(struct _NSRange)arg1;
 - (unsigned long long)fillTokenBuffer:(struct TITokenID *)arg1 withContextForTokenAtIndex:(unsigned long long)arg2;
 - (void)rejectToken:(id)arg1 withContext:(const struct TITokenID *)arg2 contextLength:(unsigned long long)arg3 negativeLearningHint:(int)arg4 withRevisedToken:(id)arg5;
-- (void)acceptToken:(id)arg1 withContext:(const struct TITokenID *)arg2 contextLength:(unsigned long long)arg3 saveToDifferentialPrivacy:(_Bool)arg4;
+- (void)acceptToken:(id)arg1 withContext:(const struct TITokenID *)arg2 contextLength:(unsigned long long)arg3 saveToDifferentialPrivacy:(int)arg4;
 - (id)initWithLocale:(id)arg1;
 - (id)init;
 - (void)dealloc;

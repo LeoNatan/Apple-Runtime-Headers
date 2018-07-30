@@ -6,6 +6,7 @@
 
 #import <CorePDF/UIPDFMarkupAnnotation.h>
 
+__attribute__((visibility("hidden")))
 @interface UIPDFStrikeOutAnnotation : UIPDFMarkupAnnotation
 {
 }

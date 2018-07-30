@@ -37,6 +37,9 @@
 - (void)_volumeDidChangeForEndpointWithID:(struct __CFString *)arg1;
 @property(readonly) float volume;
 - (void)setSecondDisplayEnabled:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(readonly, nonatomic) _Bool canFetchMediaDataFromSender;
+@property(readonly, nonatomic) _Bool canPlayEncryptedProgressiveDownloadAssets;
 @property(readonly, nonatomic) _Bool supportsBufferedAirPlay;
 @property(readonly, nonatomic) _Bool canAccessiCloudMusicLibrary;
 @property(readonly, nonatomic) _Bool canAccessAppleMusic;

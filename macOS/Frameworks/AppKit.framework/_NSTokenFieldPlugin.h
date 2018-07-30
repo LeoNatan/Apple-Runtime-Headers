@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSPlaceholderTextFieldPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSTokenFieldPlugin : _NSPlaceholderTextFieldPlugin
 {
 }

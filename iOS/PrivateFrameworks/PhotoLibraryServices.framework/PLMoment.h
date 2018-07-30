@@ -15,13 +15,17 @@
 {
     PLMomentNameInfo *_cachedNameInfo;
     _Bool _loadedNameInfo;
+    CLLocation *_cachedApproximateLocation;
+    _Bool _didCacheApproximateLocation;
     _Bool isRegisteredForChanges;
     _Bool didRegisteredWithUserInterfaceContext;
 }
 
++ (id)sortByTimeSortDescriptors;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)allAssetsIncludedInMomentsInLibrary:(id)arg1;
++ (id)baseSearchIndexPredicate;
 + (id)allAssetsIncludedInMomentsInManagedObjectContext:(id)arg1 IDsOnly:(_Bool)arg2 error:(id *)arg3;
 + (id)predicateForAssetsIncludedInMoments;
 + (id)allMomentsRequiringAnalysisInManagedObjectContext:(id)arg1 error:(id *)arg2;
@@ -30,6 +34,11 @@
 + (id)insertNewMomentInManagedObjectContext:(id)arg1 error:(id *)arg2;
 @property(nonatomic) _Bool didRegisteredWithUserInterfaceContext; // @synthesize didRegisteredWithUserInterfaceContext;
 @property(nonatomic) _Bool isRegisteredForChanges; // @synthesize isRegisteredForChanges;
+@property(readonly, nonatomic) unsigned long long pl_numberOfAssets;
+@property(readonly, nonatomic) CLLocation *pl_location;
+@property(readonly, nonatomic) NSDate *pl_endDate;
+@property(readonly, nonatomic) NSDate *pl_startDate;
+- (unsigned long long)fetchedAssetsCount;
 @property(readonly, retain, nonatomic) NSArray *batchedAssets;
 @property(retain, nonatomic) NSArray *userTitles;
 - (void)removeAssetData:(id)arg1;
@@ -77,12 +86,32 @@
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (unsigned long long)countForAssetsOfKind:(short)arg1;
+- (void)_appendLocationsInfo:(id)arg1 toCollection:(id)arg2;
+- (void)_appendWorkText:(id)arg1 toCollection:(id)arg2;
+- (void)_appendHomeToCollection:(id)arg1;
+- (void)_appendPublicEventCategories:(id)arg1 withSynonyms:(id)arg2 toCollection:(id)arg3;
+- (void)_appendPublicEventStrings:(id)arg1 toCollection:(id)arg2 forSearchIndexCategory:(unsigned long long)arg3;
+- (void)_appendBusinessCategories:(id)arg1 toCollection:(id)arg2;
+- (void)_appendBusinessNames:(id)arg1 toCollection:(id)arg2;
+- (void)_appendROIs:(id)arg1 withSynonyms:(id)arg2 toCollection:(id)arg3;
+- (void)_appendPOIs:(id)arg1 withSynonyms:(id)arg2 toCollection:(id)arg3;
+- (void)_appendHolidays:(id)arg1 toCollection:(id)arg2;
+- (void)_appendMeanings:(id)arg1 withSynonyms:(id)arg2 toCollection:(id)arg3;
+- (void)_appendScenesWithIdentifiers:(id)arg1 toCollection:(id)arg2 sceneTaxonomyProxy:(id)arg3;
+- (void)_appendDates:(id)arg1 withDateFormatter:(id)arg2 withSynonyms:(id)arg3 toCollection:(id)arg4;
+- (void)_appendSocialGroupIdentifiers:(id)arg1 toCollection:(id)arg2;
+- (void)_appendPersonsWithUUIDs:(id)arg1 toCollection:(id)arg2;
+- (void)getSearchIndexContentsForCollection:(id)arg1 fromDictionary:(id)arg2 withDateFormatter:(id)arg3 synonymsDictionaries:(id)arg4 sceneTaxonomyProxy:(id)arg5;
+- (id)assetUUIDsForPreviewWithCount:(unsigned long long)arg1;
+- (id)displayTitleWithDateFormatter:(id)arg1;
+- (id)bestAsset;
 - (struct CGImage *)posterImage;
 - (id)groupURL;
 - (_Bool)isCloudSharedAlbum;
 
 // Remaining properties
-@property(retain, nonatomic) NSData *approximateLocationData; // @dynamic approximateLocationData;
+@property(nonatomic) double approximateLatitude; // @dynamic approximateLatitude;
+@property(nonatomic) double approximateLongitude; // @dynamic approximateLongitude;
 @property(retain, nonatomic) NSOrderedSet *assets; // @dynamic assets;
 @property(nonatomic) int cachedCount; // @dynamic cachedCount;
 @property(nonatomic) int cachedPhotosCount; // @dynamic cachedPhotosCount;

@@ -9,6 +9,10 @@
 @class AFAudioPlaybackRequest, AFRequestInfo, AFVoiceInfo, NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @protocol AFSettingsService <NSObject>
+- (oneway void)configOverrides:(void (^)(NSDictionary *))arg1;
+- (oneway void)setConfigOverrides:(NSDictionary *)arg1 completion:(void (^)(void))arg2;
+- (oneway void)getStereoPairState:(void (^)(BOOL, NSError *))arg1;
+- (oneway void)getStereoPartnerLastMyriadWinDate:(void (^)(NSDate *, NSError *))arg1;
 - (oneway void)getDevicesWithAvailablePHSAssetsForLanguage:(NSString *)arg1 completion:(void (^)(NSArray *))arg2;
 - (oneway void)disableAndDeleteCloudSyncWithCompletion:(void (^)(NSError *))arg1;
 - (oneway void)fetchExperimentContextWithCompletion:(void (^)(AFExperimentContext *, NSError *))arg1;
@@ -17,12 +21,6 @@
 - (oneway void)resetAnalyticsStoreWithCompletion:(void (^)(NSError *))arg1;
 - (oneway void)purgeAnalyticsStoreWithCompletion:(void (^)(NSError *))arg1;
 - (oneway void)fetchEventRecordsFromAnalyticsStoreAtPath:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
-- (oneway void)setDESPolicyCDNOverride:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
-- (oneway void)disableDESWithCompletion:(void (^)(NSError *))arg1;
-- (oneway void)setDESLotteryWinOverrideEnabled:(BOOL)arg1 completion:(void (^)(NSError *))arg2;
-- (oneway void)setDESRecordingAlwaysIsEnabled:(BOOL)arg1 completion:(void (^)(NSError *))arg2;
-- (oneway void)runLiveAdaptationRecipeEvaluationWithBaseURL:(NSURL *)arg1 completion:(void (^)(NSError *))arg2;
-- (oneway void)runAdaptationRecipeEvaluation:(NSDictionary *)arg1 language:(NSString *)arg2 completion:(void (^)(NSArray *, NSArray *))arg3;
 - (oneway void)getSupplementalLanguagesForProduct:(NSString *)arg1 forBuildVersion:(NSString *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
 - (oneway void)getSupplementalLanguageDictionaryForProduct:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (oneway void)getSupplementalLanguagesModificationDate:(void (^)(NSDate *, NSError *))arg1;

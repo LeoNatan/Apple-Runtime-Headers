@@ -10,7 +10,7 @@
 
 @protocol CSLSBulletinServiceServerExportedInterface <NSObject>
 - (void)getBulletinSettings:(void (^)(NSArray *))arg1;
-- (void)enableNotifications:(_Bool)arg1 sectionID:(NSString *)arg2 mirror:(_Bool)arg3 completion:(void (^)(void))arg4;
+- (void)setNotificationsLevel:(int)arg1 sectionID:(NSString *)arg2 mirror:(_Bool)arg3 completion:(void (^)(void))arg4;
 - (void)removeSectionWithSectionID:(NSString *)arg1 completion:(void (^)(void))arg2;
 - (void)clearAllBulletinsWithCompletion:(void (^)(void))arg1;
 - (void)clearBulletinWithSectionID:(NSString *)arg1 publisherMatchID:(NSString *)arg2 feed:(unsigned int)arg3 completion:(void (^)(void))arg4;

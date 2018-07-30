@@ -13,10 +13,10 @@
     CALayer *_dimmingLayer;
     CALayer *_downloadableIconLayer;
     CALayer *_waitingRingLayer;
-    CALayer *_smallDownloadingRingTrackShadowLayer;
+    CALayer *_downloadingRingTrackShadowLayer;
     CAShapeLayer *_downloadingRingTrackLayer;
     CAShapeLayer *_downloadingRingProgressLayer;
-    _Bool _useLargeDimmedStyle;
+    _Bool _dimmed;
     _Bool _paused;
     unsigned int _state;
     float _progress;
@@ -24,15 +24,11 @@
 
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
-@property(nonatomic) _Bool useLargeDimmedStyle; // @synthesize useLargeDimmedStyle=_useLargeDimmedStyle;
+@property(nonatomic) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)_updateDownloadingRingProgressLayerStrokeEnd;
-- (float)_ringLineWidth;
 - (id)_ringPath;
-- (id)_smallDownloadRingShadowImage;
-- (id)_waitingImage;
-- (id)_downloadImage;
 - (struct CGRect)_contentFrame;
 - (void)_resumeAnimation;
 - (void)_pauseAnimation;

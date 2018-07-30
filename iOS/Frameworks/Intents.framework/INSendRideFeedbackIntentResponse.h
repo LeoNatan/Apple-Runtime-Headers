@@ -16,6 +16,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) long long code;
 - (id)initWithBackingStore:(id)arg1;
+- (id)_initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 
 @end

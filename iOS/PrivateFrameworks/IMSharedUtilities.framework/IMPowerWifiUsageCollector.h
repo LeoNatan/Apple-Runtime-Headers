@@ -30,7 +30,7 @@
 - (void)_notePowerDidChangeForInternalCollection:(_Bool)arg1 isOnWifi:(_Bool)arg2;
 - (void)disconnectFromResourceForTotalDurationKey:(id)arg1 dateKey:(id)arg2 powerWifiDict:(id)arg3;
 - (void)reconnectToResourceForTotalDurationKey:(id)arg1 dateKey:(id)arg2 powerWifiDict:(id)arg3;
-- (id)getPowerAndWifiDictionaryForKey:(id)arg1;
+- (id)_getPowerAndWifiDictionaryForKey:(id)arg1;
 - (id)todaysKey;
 - (id)createTodaysStatisticDictionaryIfNeeded;
 - (id)_getExternalLastConnectedDate;

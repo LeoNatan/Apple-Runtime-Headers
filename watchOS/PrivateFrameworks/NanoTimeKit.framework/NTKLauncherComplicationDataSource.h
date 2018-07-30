@@ -10,12 +10,12 @@
 {
 }
 
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 withFamily:(int)arg2 forDevice:(id)arg3;
+- (id)_tinCanAppTintColor;
+- (id)_complicationLaunchURL;
 - (id)_complicationApplicationIdentifier;
 - (id)_appTintColor;
-- (id)_appImage;
-- (id)_appImageProvider;
+- (id)_tintableAppImageProvider;
 - (id)_appTitle;
 - (id)_extraLarge;
 - (id)_circularTemplateMedium:(_Bool)arg1;

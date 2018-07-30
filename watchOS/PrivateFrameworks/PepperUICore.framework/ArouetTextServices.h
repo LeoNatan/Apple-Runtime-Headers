@@ -13,11 +13,13 @@
     ArouetLanguageSpec *_languageSpec;
 }
 
++ (id)highLegibilityFontVariantForFont:(id)arg1;
 @property(readonly) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
 - (void).cxx_destruct;
 - (struct _NSRange)selectionRangeForTapAtCharacterIndex:(int)arg1 inString:(id)arg2 oldSelectionRange:(struct _NSRange)arg3;
 - (struct _NSRange)rangeOfTokenAtCharacterIndex:(int)arg1 inString:(id)arg2;
 - (struct _NSRange)rangeOfLastWordBeforeCharacterIndex:(int)arg1 inString:(id)arg2;
+- (struct _NSRange)rangeOfLastCharacterBeforeCharacterIndex:(int)arg1 inString:(id)arg2;
 - (id)initWithLanguageSpec:(id)arg1;
 - (id)init;
 

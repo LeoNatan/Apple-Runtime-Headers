@@ -6,16 +6,15 @@
 
 #import <Intents/INIntentResponse.h>
 
-#import "INSearchForPhotosIntentResponse.h"
+#import "INSearchForPhotosIntentResponseExport.h"
 
 @class NSNumber, NSString, _INPBSearchForPhotosIntentResponse;
 
-@interface INSearchForPhotosIntentResponse : INIntentResponse <INSearchForPhotosIntentResponse>
+@interface INSearchForPhotosIntentResponse : INIntentResponse <INSearchForPhotosIntentResponseExport>
 {
     _INPBSearchForPhotosIntentResponse *_responseMessagePBRepresentation;
 }
 
-+ (long long)_intentHandlingStatusFromCode:(long long)arg1;
 + (BOOL)_appLaunchRequestedFromCode:(long long)arg1;
 + (int)_errorCodeFromCode:(long long)arg1;
 + (int)_typeFromCode:(long long)arg1;
@@ -27,10 +26,12 @@
 - (id)_dictionaryRepresentation;
 @property(copy) NSNumber *searchResultsCount;
 - (id)_responseMessagePBRepresentation;
+- (long long)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) long long code;
 - (id)initWithBackingStore:(id)arg1;
+- (id)_initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)init;
 

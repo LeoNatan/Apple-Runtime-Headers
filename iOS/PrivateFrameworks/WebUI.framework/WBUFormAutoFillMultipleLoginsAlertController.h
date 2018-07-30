@@ -15,7 +15,7 @@
     _Bool _cancelsWhenAppEntersBackground;
 }
 
-+ (id)alertControllerWithMatchesFromFormProtectionSpace:(id)arg1 matchesFromOtherProtectionSpaces:(id)arg2 preferredStyle:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (id)alertControllerWithMatchesFromFormProtectionSpace:(id)arg1 matchesFromOtherProtectionSpaces:(id)arg2 externalCredentials:(id)arg3 preferredStyle:(long long)arg4 formURL:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 @property(nonatomic) _Bool cancelsWhenAppEntersBackground; // @synthesize cancelsWhenAppEntersBackground=_cancelsWhenAppEntersBackground;
 - (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;

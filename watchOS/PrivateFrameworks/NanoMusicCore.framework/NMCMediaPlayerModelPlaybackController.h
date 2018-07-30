@@ -6,21 +6,21 @@
 
 #import "NSObject.h"
 
-#import "MPCPlayerPlaybackErrorObserving.h"
+#import "MPCPlaybackEngineDelegate.h"
+#import "MPRequestResponseControllerDelegate.h"
 
-@class CSLSOnWristMonitor, MPCMediaPlayerLegacyPlayer, MPCMediaRemoteMuxer, NMCKeyValueObserver, NMCWiFiManager, NMRNowPlayingController, NSHashTable, NSString;
+@class CSLSOnWristMonitor, MPCPlaybackEngine, MPRequestResponseController, NMCWiFiManager, NMRNowPlayingController, NSHashTable, NSString;
 
-@interface NMCMediaPlayerModelPlaybackController : NSObject <MPCPlayerPlaybackErrorObserving>
+@interface NMCMediaPlayerModelPlaybackController : NSObject <MPCPlaybackEngineDelegate, MPRequestResponseControllerDelegate>
 {
+    MPCPlaybackEngine *_playbackEngine;
+    MPRequestResponseController *_requestResponseController;
     void *_mediaRemoteCommandObserver;
-    MPCMediaPlayerLegacyPlayer *_player;
-    MPCMediaRemoteMuxer *_mediaRemoteMuxer;
+    NSHashTable *_errorHandlers;
+    _Bool _systemMusicApplication;
     CSLSOnWristMonitor *_onWristMonitor;
     _Bool _shouldPauseNextTimeOffWrist;
-    NMCKeyValueObserver *_playerCurrentItemObserver;
-    NMCKeyValueObserver *_playerStateObserver;
     NMCWiFiManager *_wifiManager;
-    NSHashTable *_errorHandlers;
     _Bool _wantsRadioSupport;
     _Bool _wantsDefaultMusicFallbackPlaybackIntent;
     NMRNowPlayingController *_nowPlayingController;
@@ -31,26 +31,31 @@
 @property(nonatomic) _Bool wantsDefaultMusicFallbackPlaybackIntent; // @synthesize wantsDefaultMusicFallbackPlaybackIntent=_wantsDefaultMusicFallbackPlaybackIntent;
 @property(nonatomic) _Bool wantsRadioSupport; // @synthesize wantsRadioSupport=_wantsRadioSupport;
 - (void).cxx_destruct;
-- (void)_addPlaybackIntentWithIntentProvider:(id)arg1 playImmediately:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_configureDefaultFallbackPlaybackIntentIfNeededWithPlayer:(id)arg1;
-- (void)_configureLocalOriginObserverAndCommandHandlerWithPlayer:(id)arg1;
-- (void)_configureCurrentItemPlaybackStateObserversWithPlayer:(id)arg1;
-- (void)playerDidPauseForLeaseEnd:(id)arg1;
-- (void)player:(id)arg1 didFailToPlayFirstItem:(id)arg2 error:(id)arg3;
+- (void)startPlaybackWithIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)preparePlaybackWithIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_configureDefaultFallbackPlaybackIntentIfNeededWithPlaybackEngine:(id)arg1;
+- (void)_configureLocalOriginObserverAndCommandHandler;
+- (void)engine:(id)arg1 didFailToPlayItem:(id)arg2 withError:(id)arg3;
+- (void)engine:(id)arg1 didFailToPlayFirstItem:(id)arg2 withError:(id)arg3;
+- (void)engineDidPauseForLeaseEnd:(id)arg1;
+- (void)engine:(id)arg1 didFailToActivateWithError:(id)arg2 resolution:(CDUnknownBlockType)arg3;
 - (int)_playbackErrorTypeFromTopLevelError:(id)arg1;
 - (int)_playbackErrorFromError:(id)arg1;
-@property(readonly, nonatomic) MPCMediaPlayerLegacyPlayer *player;
+- (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
+- (void)_setupPlaybackEngineIfNecessary;
 - (void)_unregisterMediaRemoteCommandHandlerIfNeeded;
 - (void)_registerMediaRemoteCommandHandlerIfNeeded;
 - (void)_configureForStageDemoModeIfNeeded;
+- (_Bool)isSystemMusicApplication;
+- (void)setSystemMusicApplication:(_Bool)arg1;
 - (void)removeErrorHandler:(id)arg1;
 - (void)addErrorHandler:(id)arg1;
-- (void)clearPlaybackQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)startPlaybackWithIntentProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performMediaRemoteCommand:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)preparePlaybackWithIntentProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)clearPlaybackQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)replacePlaybackQueueWithIntent:(id)arg1 preventingAutomaticPlayback:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)prepareToHandleMediaRemoteCommands;
+- (void)setupPlaybackEngine;
 - (id)init;
 
 // Remaining properties

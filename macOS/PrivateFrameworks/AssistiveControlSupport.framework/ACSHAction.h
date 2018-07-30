@@ -36,6 +36,7 @@
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 - (void).cxx_destruct;
 - (void)repeatEndedWithEventSourceData:(id)arg1;
+- (void)performDeactivateWithEventSourceData:(id)arg1;
 - (void)performWithEventSourceData:(id)arg1;
 - (void)performDoubleActionWithEventSourceData:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldPerformDoubleActionIfPossible;
@@ -46,7 +47,7 @@
 - (id)paramDescription;
 - (id)dictionaryForSaving;
 - (id)paramDictionaryForSaving;
-- (void)_initWithPlistDictionary:(id)arg1;
+- (void)_configureWithPlistDictionary:(id)arg1;
 - (id)init;
 
 @end

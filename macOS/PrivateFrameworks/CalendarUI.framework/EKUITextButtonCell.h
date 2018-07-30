@@ -6,14 +6,18 @@
 
 #import "NSButtonCell.h"
 
-@class NSImage;
+@class NSAttributedString, NSColor, NSImage;
 
 @interface EKUITextButtonCell : NSButtonCell
 {
     BOOL _mouseOver;
     NSImage *_originalImage;
+    NSColor *_mouseoverTextColor;
+    NSAttributedString *_originalTitle;
 }
 
+@property(retain) NSAttributedString *originalTitle; // @synthesize originalTitle=_originalTitle;
+@property(retain) NSColor *mouseoverTextColor; // @synthesize mouseoverTextColor=_mouseoverTextColor;
 @property(retain) NSImage *originalImage; // @synthesize originalImage=_originalImage;
 @property BOOL mouseOver; // @synthesize mouseOver=_mouseOver;
 - (void).cxx_destruct;

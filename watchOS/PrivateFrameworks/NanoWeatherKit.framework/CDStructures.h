@@ -10,6 +10,21 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGPoint {
+    float _field1;
+    float _field2;
+};
+
+struct CGRect {
+    struct CGPoint _field1;
+    struct CGSize _field2;
+};
+
+struct CGSize {
+    float _field1;
+    float _field2;
+};
+
 struct NSDictionary {
     Class _field1;
 };

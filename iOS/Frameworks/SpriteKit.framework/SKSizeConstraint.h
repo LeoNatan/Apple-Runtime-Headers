@@ -18,9 +18,11 @@ __attribute__((visibility("hidden")))
 + (id)constraintWithHeightRange:(id)arg1;
 + (id)constraintWithWidthRange:(id)arg1;
 + (id)constraintWithWidthRange:(id)arg1 heightRange:(id)arg2;
++ (_Bool)supportsSecureCoding;
 @property(copy) SKRange *heightRange; // @synthesize heightRange=_heightRange;
 @property(copy) SKRange *widthRange; // @synthesize widthRange=_widthRange;
 - (void).cxx_destruct;
+- (_Bool)isEqualToSizeConstraint:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

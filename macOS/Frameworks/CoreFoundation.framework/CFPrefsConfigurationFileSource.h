@@ -6,6 +6,7 @@
 
 #import <CoreFoundation/CFPrefsSource.h>
 
+__attribute__((visibility("hidden")))
 @interface CFPrefsConfigurationFileSource : CFPrefsSource
 {
 }

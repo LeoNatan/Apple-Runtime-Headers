@@ -11,9 +11,11 @@
 
 @class NSArray, NSData, NSString, NSURL, PUEditableMediaProvider;
 
+__attribute__((visibility("hidden")))
 @interface PUEditableMediaProviderImageDataNode : PXRunNode <PUImageDataNode, PUImageInfoNode>
 {
     int _requestID;
+    _Bool _useEmbeddedPreview;
     NSData *_imageData;
     NSURL *_imageDataURL;
     NSString *_imageDataUTI;
@@ -26,6 +28,7 @@
 @property(readonly, nonatomic) PUEditableMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
+@property(readonly, nonatomic) _Bool useEmbeddedPreview; // @synthesize useEmbeddedPreview=_useEmbeddedPreview;
 @property(readonly, nonatomic) long long imageExifOrientation; // @synthesize imageExifOrientation=_imageExifOrientation;
 @property(readonly, nonatomic) NSString *imageDataUTI; // @synthesize imageDataUTI=_imageDataUTI;
 @property(readonly, nonatomic) NSURL *imageDataURL; // @synthesize imageDataURL=_imageDataURL;

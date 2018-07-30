@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)cancelOperation:(id)arg1;
 - (BOOL)mouseDownCanMoveWindow;
 - (BOOL)acceptsFirstResponder;
+- (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (id)initWithFrame:(struct CGRect)arg1 visualTabPickerViewController:(id)arg2;
 

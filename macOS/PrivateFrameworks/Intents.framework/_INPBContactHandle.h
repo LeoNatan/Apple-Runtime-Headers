@@ -7,37 +7,39 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBContactHandle.h"
 
-@class NSString, PBUnknownFields;
+@class NSString;
 
-@interface _INPBContactHandle : PBCodable <NSCopying>
+@interface _INPBContactHandle : PBCodable <_INPBContactHandle, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSString *_label;
-    int _type;
-    NSString *_value;
     CDStruct_f953fb60 _has;
+    int _type;
+    NSString *_label;
+    NSString *_value;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
+@property(copy, nonatomic) NSString *value; // @synthesize value=_value;
+@property(nonatomic) int type; // @synthesize type=_type;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasLabel;
+@property(readonly, nonatomic) BOOL hasValue;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
-@property(readonly, nonatomic) BOOL hasValue;
+@property(readonly, nonatomic) BOOL hasLabel;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

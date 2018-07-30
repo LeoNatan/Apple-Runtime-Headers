@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABMapsLauncher.h>
 
-__attribute__((visibility("hidden")))
 @interface _ABURLMapsLauncher : ABMapsLauncher
 {
 }

@@ -29,7 +29,7 @@
 @property(retain, nonatomic) SCNNode *pointOfView;
 @property(nonatomic) BOOL loops;
 @property(getter=isPlaying) BOOL playing;
-@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
 @property(nonatomic) double sceneTime;
 @property(retain, nonatomic) SCNScene *scene;
 - (void)prepareObjects:(NSArray *)arg1 withCompletionHandler:(void (^)(BOOL))arg2;

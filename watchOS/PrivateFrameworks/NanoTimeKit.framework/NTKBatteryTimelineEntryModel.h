@@ -16,10 +16,7 @@
 @property(nonatomic) float level; // @synthesize level=_level;
 - (id)_ringTextProvider;
 - (id)_levelTintColor;
-- (id)_newExtraLargeTemplate;
-- (id)_newModularSmallTemplate;
-- (id)_newCircularTemplateMedium:(_Bool)arg1;
-- (id)_newUtilitarianSmallTemplate;
+- (id)_newBatteryTemplateForFamily:(int)arg1;
 - (id)_newUtilitarianLargeTemplate;
 - (id)_newUtilitarianSmallFlatTemplate;
 - (id)templateForComplicationFamily:(int)arg1;

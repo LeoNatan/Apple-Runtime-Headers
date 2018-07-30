@@ -11,17 +11,17 @@
 @interface CADisplay : NSObject
 {
     void *_impl;
-    _Bool _allowsVirtualModes;
 }
 
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)TVOutDisplay;
 + (id)mainDisplay;
 + (id)displays;
-@property _Bool allowsVirtualModes; // @synthesize allowsVirtualModes=_allowsVirtualModes;
+@property(readonly) int linkQuality;
 @property(readonly) CADisplayAttributes *externalDisplayAttributes;
 - (id)description;
 @property(readonly) _Bool supportsExtendedColors;
+@property(readonly) unsigned int odLUTVersion;
 @property(readonly) NSString *nativeOrientation;
 @property(readonly, getter=isCloningSupported) _Bool cloningSupported;
 @property(readonly, getter=isCloned) _Bool cloned;
@@ -39,6 +39,7 @@
 @property(readonly, nonatomic) struct CGRect safeBounds;
 @property(readonly, nonatomic) struct CGRect frame;
 @property(readonly, nonatomic) struct CGRect bounds;
+@property _Bool allowsVirtualModes;
 @property(copy, nonatomic) NSString *colorMode;
 @property(readonly, nonatomic) CADisplayMode *preferredMode;
 @property(retain, nonatomic) CADisplayMode *currentMode;

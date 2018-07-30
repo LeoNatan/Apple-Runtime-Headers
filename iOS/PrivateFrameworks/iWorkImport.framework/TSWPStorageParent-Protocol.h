@@ -6,6 +6,8 @@
 
 @protocol TSWPStorageParent
 @property(readonly, nonatomic) long long contentWritingDirection;
+@property(readonly, nonatomic) _Bool supportsMultipleColumns;
+@property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
 @property(readonly, nonatomic) _Bool textIsVertical;

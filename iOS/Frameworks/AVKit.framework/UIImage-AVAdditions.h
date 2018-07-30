@@ -7,6 +7,7 @@
 #import "UIImage.h"
 
 @interface UIImage (AVAdditions)
++ (void)avkit_imageNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)avkit_flatWhiteResizableTemplateImage;
 @end
 

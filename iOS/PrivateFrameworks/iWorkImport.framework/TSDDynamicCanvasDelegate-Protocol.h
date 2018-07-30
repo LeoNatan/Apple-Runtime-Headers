@@ -6,10 +6,13 @@
 
 #import "TSDCanvasDelegate.h"
 
-@class TSDLayout;
+@class TSDCanvas, TSDLayout;
 
 @protocol TSDDynamicCanvasDelegate <TSDCanvasDelegate>
 - (void)i_layoutUnregistered:(TSDLayout *)arg1;
 - (void)i_layoutRegistered:(TSDLayout *)arg1;
+
+@optional
+- (void)i_canvasWillLayout:(TSDCanvas *)arg1;
 @end
 

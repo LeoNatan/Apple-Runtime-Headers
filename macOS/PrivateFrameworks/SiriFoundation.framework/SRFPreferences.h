@@ -15,6 +15,7 @@
 - (void)discardAllSATEnrollment;
 - (void)discardSATEnrollmentForLanguageCode:(id)arg1;
 - (BOOL)isSATEnrolledForLanguageCode:(id)arg1;
+@property(nonatomic) BOOL voiceTriggerUserEnabled;
 - (void)setVoiceTriggerEnabled:(BOOL)arg1;
 - (BOOL)voiceTriggerEnabled;
 - (BOOL)isVoiceTriggerAvailable;

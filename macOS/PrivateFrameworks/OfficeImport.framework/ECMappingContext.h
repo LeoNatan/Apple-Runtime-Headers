@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ECMappingContext : NSObject
 {
     struct map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>> mIndexToMappedIndex;
@@ -25,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)mappingInfoForObject:(id)arg1;
 - (unsigned long long)mappedSheetIndexForSheetName:(id)arg1;
 - (unsigned long long)mappedSheetIndexForSheetIndex:(unsigned long long)arg1;
-- (ChVector_be6372b9 *)mappedSheetNames;
+- (ChVector_cc6fdd32 *)mappedSheetNames;
 - (void)dealloc;
 - (id)init;
 - (void)associateMappingInfo:(id)arg1 withSheetName:(id)arg2 andSheetIndex:(unsigned long long)arg3 andObject:(id)arg4;

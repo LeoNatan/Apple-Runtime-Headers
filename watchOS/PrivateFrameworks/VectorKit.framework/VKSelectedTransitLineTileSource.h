@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOMapItemIdentifier *selectedLineID; // @synthesize selectedLineID=_selectedLineID;
 - (struct VKTileKey)sourceKeyForDownloadKey:(const struct _GEOTileKey *)arg1;
 - (struct _GEOTileKey)downloadKeyAtX:(unsigned int)arg1 y:(unsigned int)arg2 z:(unsigned int)arg3;
-- (void)performDownload:(const struct _GEOTileKey *)arg1 isPrefetch:(_Bool)arg2;
+- (void)performDownload:(const struct _GEOTileKey *)arg1 isPrefetch:(_Bool)arg2 requestPreliminary:(_Bool)arg3;
 - (_Bool)canFetchTileForKey:(const struct VKTileKey *)arg1;
 - (_Bool)_shouldUseDecodedTile:(id)arg1 extraInfo:(id)arg2;
 - (id)_extraInfoForPendingSourceKey:(const struct VKTileKey *)arg1;

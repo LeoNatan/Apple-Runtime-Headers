@@ -11,11 +11,15 @@
 }
 
 + (id)sharedPlatform;
++ (BOOL)isRunningInGeod;
 + (void)setIsRunningInGeod:(BOOL)arg1;
 - (double)deviceScreenScale;
 - (long long)deviceScreenHeightInPixels;
 - (long long)deviceScreenWidthInPixels;
 - (id)clientCapabilities;
+- (BOOL)isCellDataPossible;
+- (BOOL)supportsForceTouch;
+- (BOOL)supportsNewiOS9Features;
 - (BOOL)supportsNavigation;
 - (BOOL)supportsRealisticTiles;
 - (BOOL)mapsFeatureFreedomEnabled;

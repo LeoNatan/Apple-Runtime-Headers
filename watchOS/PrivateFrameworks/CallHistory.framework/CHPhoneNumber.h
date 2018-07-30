@@ -10,19 +10,22 @@
 
 @interface CHPhoneNumber : CHLogger
 {
-    _Bool _formatted;
-    NSString *_originalPhoneNumber;
-    NSString *_ISOCountryCode;
-    NSString *_formattedPhoneNumber;
+    _Bool _formattedRepresentationAttempted;
+    _Bool _normalizedRepresentationAttempted;
+    NSString *_formattedRepresentation;
+    NSString *_normalizedRepresentation;
+    NSString *_digits;
+    NSString *_isoCountryCode;
 }
 
-@property(copy) NSString *formattedPhoneNumber; // @synthesize formattedPhoneNumber=_formattedPhoneNumber;
-@property _Bool formatted; // @synthesize formatted=_formatted;
-@property(copy) NSString *ISOCountryCode; // @synthesize ISOCountryCode=_ISOCountryCode;
-@property(copy) NSString *originalPhoneNumber; // @synthesize originalPhoneNumber=_originalPhoneNumber;
+@property(nonatomic) _Bool normalizedRepresentationAttempted; // @synthesize normalizedRepresentationAttempted=_normalizedRepresentationAttempted;
+@property(nonatomic) _Bool formattedRepresentationAttempted; // @synthesize formattedRepresentationAttempted=_formattedRepresentationAttempted;
+@property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
+@property(readonly, copy, nonatomic) NSString *digits; // @synthesize digits=_digits;
 - (void).cxx_destruct;
-- (id)formattedNumber;
-- (id)initWithPhoneNumber:(id)arg1 andISOCountryCode:(id)arg2;
+@property(readonly, copy, nonatomic) NSString *normalizedRepresentation; // @synthesize normalizedRepresentation=_normalizedRepresentation;
+@property(readonly, copy, nonatomic) NSString *formattedRepresentation; // @synthesize formattedRepresentation=_formattedRepresentation;
+- (id)initWithDigits:(id)arg1 isoCountryCode:(id)arg2;
 
 @end
 

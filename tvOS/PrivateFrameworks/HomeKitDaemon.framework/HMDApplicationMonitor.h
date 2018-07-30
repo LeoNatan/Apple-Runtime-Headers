@@ -26,7 +26,7 @@
 @property(readonly, nonatomic) NSMutableSet *pendingTerminatedApplications; // @synthesize pendingTerminatedApplications=_pendingTerminatedApplications;
 @property(retain, nonatomic) HMFTimer *spiClientTerminationDelayTimer; // @synthesize spiClientTerminationDelayTimer=_spiClientTerminationDelayTimer;
 @property(nonatomic) __weak HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
-@property(readonly, nonatomic) BKSApplicationStateMonitor *bksMonitor; // @synthesize bksMonitor=_bksMonitor;
+@property(retain, nonatomic) BKSApplicationStateMonitor *bksMonitor; // @synthesize bksMonitor=_bksMonitor;
 @property(readonly, nonatomic) NSMutableSet *processes; // @synthesize processes=_processes;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(nonatomic) __weak id <HMDApplicationMonitorDelegate> delegate; // @synthesize delegate=_delegate;
@@ -48,14 +48,18 @@
 - (void)_callAppStateChangeDelegate:(id)arg1;
 - (void)_updateProcessInfo:(id)arg1 info:(id)arg2;
 - (void)_handleAppStateChangedInfo:(id)arg1;
+- (void)_processAppStateChange:(id)arg1;
 - (void)removeFromPendingTerminated:(id)arg1;
 - (void)handleAppStateChangedInfo:(id)arg1;
 - (void)_postAppTerminatedNotification:(id)arg1;
 - (_Bool)infoIsForViewService:(id)arg1;
 - (unsigned long long)translateApplicationStateForInfo:(id)arg1 processInfo:(id)arg2;
-- (void)start;
 - (void)removeProcess:(id)arg1;
 - (void)addProcess:(id)arg1;
+- (void)_stopMonitoringApplicationStateChangesForBundleIdentifier:(id)arg1;
+- (void)_startMonitoringApplicationStateChangesForBundleIdentifier:(id)arg1;
+- (void)tearDownMonitoringIfNotInUse;
+- (void)setUpForMonitoring;
 - (void)dealloc;
 - (id)initWithXpcQueue:(id)arg1;
 

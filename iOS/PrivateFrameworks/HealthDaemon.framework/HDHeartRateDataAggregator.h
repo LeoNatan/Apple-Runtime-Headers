@@ -10,14 +10,11 @@
 {
 }
 
-- (void)dataCollector:(id)arg1 didCollectSensorDatum:(id)arg2 device:(id)arg3;
+- (void)dataCollector:(id)arg1 didCollectSensorData:(id)arg2 device:(id)arg3;
 - (id)_metadataForSensorDatum:(id)arg1 collector:(id)arg2;
-- (void)dataCollector:(id)arg1 didChangeState:(id)arg2;
-- (void)queue_registeredCollectorsDidChange;
-- (void)queue_configurationDidChange;
-- (void)_queue_notifyForSensorDatum:(id)arg1 collector:(id)arg2 device:(id)arg3 source:(id)arg4;
-- (_Bool)_queue_shouldRequestActiveCollectionForConfiguration:(id)arg1;
-- (void)_queue_recomputeCollectorConfiguration;
+- (void)_notifyForSensorDatum:(id)arg1 collector:(id)arg2 device:(id)arg3 source:(id)arg4;
+- (_Bool)_shouldRequestActiveCollectionForConfiguration:(id)arg1;
+- (id)configurationForCollector:(id)arg1;
 - (void)workoutManagerStateChanged:(id)arg1;
 - (id)objectType;
 - (void)dealloc;

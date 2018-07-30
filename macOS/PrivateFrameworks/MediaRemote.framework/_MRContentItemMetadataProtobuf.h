@@ -48,6 +48,7 @@
     int _downloadState;
     int _editingStyleFlags;
     int _episodeNumber;
+    int _episodeType;
     NSString *_genre;
     NSString *_localizedContentRating;
     NSString *_lyricsURL;
@@ -111,6 +112,7 @@
         unsigned int downloadState:1;
         unsigned int editingStyleFlags:1;
         unsigned int episodeNumber:1;
+        unsigned int episodeType:1;
         unsigned int mediaSubType:1;
         unsigned int mediaType:1;
         unsigned int numberOfSections:1;
@@ -142,6 +144,7 @@
 }
 
 + (void)initialize;
+@property(nonatomic) int episodeType; // @synthesize episodeType=_episodeType;
 @property(nonatomic) long long legacyUniqueIdentifier; // @synthesize legacyUniqueIdentifier=_legacyUniqueIdentifier;
 @property(retain, nonatomic) NSData *artworkURLTemplatesData; // @synthesize artworkURLTemplatesData=_artworkURLTemplatesData;
 @property(nonatomic) BOOL isLoading; // @synthesize isLoading=_isLoading;
@@ -229,6 +232,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasEpisodeType;
 @property(nonatomic) BOOL hasLegacyUniqueIdentifier;
 @property(readonly, nonatomic) BOOL hasArtworkURLTemplatesData;
 @property(nonatomic) BOOL hasIsLoading;

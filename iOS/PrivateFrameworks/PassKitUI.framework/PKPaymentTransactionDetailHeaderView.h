@@ -10,6 +10,7 @@
 
 @interface PKPaymentTransactionDetailHeaderView : UIView
 {
+    _Bool _inBridge;
     UIView *_contentView;
     UIView *_contentViewSizingView;
     NSString *_subtitleText;
@@ -21,6 +22,7 @@
     UILabel *_secondarySubtitleLabel;
 }
 
+@property(nonatomic) _Bool inBridge; // @synthesize inBridge=_inBridge;
 @property(retain, nonatomic) UILabel *secondarySubtitleLabel; // @synthesize secondarySubtitleLabel=_secondarySubtitleLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(nonatomic) double bottomPadding; // @synthesize bottomPadding=_bottomPadding;
@@ -35,7 +37,7 @@
 - (void)layoutSubviews;
 - (void)_updateSecondarySubtitleLabel;
 - (void)_updateSubtitleLabel;
-- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3 secondarySubtitleText:(id)arg4;
+- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3 secondarySubtitleText:(id)arg4 runningInBridge:(_Bool)arg5;
 
 @end
 

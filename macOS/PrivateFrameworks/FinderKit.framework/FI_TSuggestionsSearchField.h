@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TSuggestionsSearchField : SGTSearchField
 {
-    struct TNSRef<NSTouchBar *, void> _activeTouchBar;
+    struct TNSRef<NSTouchBar, void> _activeTouchBar;
 }
 
 - (id).cxx_construct;

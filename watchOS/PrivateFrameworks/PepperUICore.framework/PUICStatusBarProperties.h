@@ -21,6 +21,7 @@
     UIFont *_titleFont;
     UIView *_titleView;
     float _titleBaseLine;
+    float _inset;
     UIColor *_backgroundColor;
     UIImage *_navigationImage;
     NSArray *_rightSideAdditionalImages;
@@ -36,6 +37,7 @@
 @property(nonatomic) _Bool showNavigationUI; // @synthesize showNavigationUI=_showNavigationUI;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic, getter=isTitleInteractive) _Bool titleInteractive; // @synthesize titleInteractive=_titleInteractive;
+@property(nonatomic) float inset; // @synthesize inset=_inset;
 @property(nonatomic) float titleBaseLine; // @synthesize titleBaseLine=_titleBaseLine;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;

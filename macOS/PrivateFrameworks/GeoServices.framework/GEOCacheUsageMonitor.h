@@ -6,24 +6,26 @@
 
 #import "NSObject.h"
 
-@class NSLock, NSMutableDictionary, NSObject<OS_dispatch_source>;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
-__attribute__((visibility("hidden")))
 @interface GEOCacheUsageMonitor : NSObject
 {
-    NSLock *_lock;
     NSMutableDictionary *_typeToHits;
     NSMutableDictionary *_typeToMisses;
-    NSMutableDictionary *_tileSetStyleToHits;
-    NSMutableDictionary *_tileSetStyleToMisses;
+    NSMutableDictionary *_tileCacheHitData;
+    NSMutableDictionary *_tileCacheMissData;
     NSObject<OS_dispatch_source> *_timer;
+    NSObject<OS_dispatch_queue> *_isolationQueue;
 }
 
 + (id)sharedMonitor;
 - (void).cxx_destruct;
+- (void)_flush;
 - (void)flush;
-- (void)recordCacheMissForTileKey:(const struct _GEOTileKey *)arg1;
-- (void)recordCacheHitForTileKey:(const struct _GEOTileKey *)arg1;
+- (void)recordTileCacheMissForReason:(unsigned char)arg1 missType:(int)arg2 tileKey:(const struct _GEOTileKey *)arg3 loadError:(id)arg4;
+- (void)recordTileCacheMissForReason:(unsigned char)arg1 missType:(int)arg2 tileKey:(const struct _GEOTileKey *)arg3 tileSizeInBytes:(unsigned int)arg4 httpStatus:(unsigned int)arg5;
+- (void)recordTileCacheHitForReason:(unsigned char)arg1 tileSource:(unsigned char)arg2 firstAccess:(BOOL)arg3 tileKey:(const struct _GEOTileKey *)arg4 tileSizeInBytes:(unsigned int)arg5;
+- (void)_recordTileCacheEventWithKey:(id)arg1 cacheEventDict:(id)arg2 tileSizeInBytes:(unsigned int)arg3 error:(id)arg4;
 - (void)recordCacheMissForType:(int)arg1;
 - (void)recordCacheHitForType:(int)arg1;
 - (void)_startTimerIfNecessary;

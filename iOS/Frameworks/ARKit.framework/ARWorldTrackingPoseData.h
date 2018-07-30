@@ -9,23 +9,25 @@
 #import "ARResultData.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSString;
+@class ARWorldTrackingState, NSDictionary, NSString;
 
 @interface ARWorldTrackingPoseData : NSObject <ARResultData, NSSecureCoding>
 {
     double _timestamp;
-    NSArray *_synchronizedResultData;
-    CDStruct_ca3abd1f _trackingState;
+    ARWorldTrackingState *_worldTrackingState;
+    NSDictionary *_vioStateDetails;
+    long long _worldMappingStatus;
     // Error parsing type: {?="columns"[4]}, name: _visionCameraTransform
     // Error parsing type: {?="columns"[4]}, name: _cameraTransform
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *synchronizedResultData; // @synthesize synchronizedResultData=_synchronizedResultData;
 // Error parsing type for property cameraTransform:
 // Property attributes: T{?=[4]},N,V_cameraTransform
 
-@property(nonatomic) CDStruct_ca3abd1f trackingState; // @synthesize trackingState=_trackingState;
+@property(nonatomic) long long worldMappingStatus; // @synthesize worldMappingStatus=_worldMappingStatus;
+@property(copy, nonatomic) NSDictionary *vioStateDetails; // @synthesize vioStateDetails=_vioStateDetails;
+@property(copy, nonatomic) ARWorldTrackingState *worldTrackingState; // @synthesize worldTrackingState=_worldTrackingState;
 // Error parsing type for property visionCameraTransform:
 // Property attributes: T{?=[4]},N,V_visionCameraTransform
 

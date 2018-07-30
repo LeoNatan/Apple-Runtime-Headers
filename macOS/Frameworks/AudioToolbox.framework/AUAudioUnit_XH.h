@@ -6,7 +6,7 @@
 
 #import <AudioToolbox/AUAudioUnit.h>
 
-@class AUAudioUnitBusArray_XH, AUParameterTree, NSExtension, NSObject<OS_dispatch_queue>, NSUUID;
+@class AUAudioUnitBusArray_XH, AUParameterTree, NSExtension, NSObject<OS_dispatch_queue>, NSUUID, NSXPCConnection;
 
 __attribute__((visibility("hidden")))
 @interface AUAudioUnit_XH : AUAudioUnit
@@ -22,20 +22,24 @@ __attribute__((visibility("hidden")))
     AUAudioUnitBusArray_XH *_inputBusses;
     AUAudioUnitBusArray_XH *_outputBusses;
     struct unique_ptr<AUProcAndUserData, std::__1::default_delete<AUProcAndUserData>> _elementCountListenerToken;
-    struct unique_ptr<AUSyncCaller, std::__1::default_delete<AUSyncCaller>> _syncCaller;
     struct recursive_mutex _propListenerMutex;
     struct vector<AUAudioUnit_XH_PropListener, std::__1::allocator<AUAudioUnit_XH_PropListener>> _propListeners;
     struct IPCAURenderingClient _renderClient;
     AUParameterTree *_cachedParameterTree;
     NSObject<OS_dispatch_queue> *_viewControllerRequestQueue;
-    id <AUAudioUnitXPCProtocol> _remote;
+    AUAudioUnit_XH *_strongInstance;
+    NSXPCConnection *_xpcConnection;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)instantiateWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription)arg2 instance:(struct ComponentInstanceRecord *)arg3 options:(unsigned int)arg4 completionHandler:(CDUnknownBlockType)arg5;
-@property(readonly, nonatomic) id <AUAudioUnitXPCProtocol> remote; // @synthesize remote=_remote;
+@property __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(retain) AUAudioUnit_XH *strongInstance; // @synthesize strongInstance=_strongInstance;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)disableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id *)arg4;
+- (BOOL)enableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id *)arg4;
+- (id)profileStateForCable:(unsigned char)arg1 channel:(unsigned char)arg2;
 - (BOOL)providesUserInterface;
 - (void)selectViewConfiguration:(id)arg1;
 - (id)supportedViewConfigurations:(id)arg1;

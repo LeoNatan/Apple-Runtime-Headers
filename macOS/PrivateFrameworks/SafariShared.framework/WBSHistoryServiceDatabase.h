@@ -25,8 +25,8 @@
     NSMutableSet *_registeredListeners;
     struct LatestVisitInformationMap _latestVisitMap;
     BOOL _hasComputedLatestVisit;
-    unordered_map_7f7b3f19 _temporaryIDToItem;
-    unordered_map_7f7b3f19 _visitForTemporaryID;
+    unordered_map_fcbaed0a _temporaryIDToItem;
+    unordered_map_fcbaed0a _visitForTemporaryID;
     // Error parsing type: {atomic<bool>="__a_"AB}, name: _integrityCheckPending
     NSURL *_clearHistoryInProgressFileURL;
     NSString *_databaseID;
@@ -61,13 +61,13 @@
 - (id)_preparePlan:(struct DeletionPlan *)arg1 ageLimit:(double)arg2 itemCountLimit:(unsigned long long)arg3;
 - (id)_deleteOldestItems:(unsigned long long)arg1 forPlan:(struct DeletionPlan *)arg2;
 - (unsigned long long)_countOfItems;
-- (id)_preparePlan:(struct DeletionPlan *)arg1 itemsToDelete:(const unordered_set_9227d2bb *)arg2 visitsToDelete:(const unordered_set_9227d2bb *)arg3;
+- (id)_preparePlan:(struct DeletionPlan *)arg1 itemsToDelete:(const unordered_set_da619913 *)arg2 visitsToDelete:(const unordered_set_da619913 *)arg3 afterDate:(id)arg4 beforeDate:(id)arg5;
 - (id)_findObsoleteItemsForPlan:(struct DeletionPlan *)arg1;
-- (id)_findAllRelatedVisitsToItems:(const unordered_set_9227d2bb *)arg1 forPlan:(struct DeletionPlan *)arg2;
-- (id)_findAllRelatedVisits:(const unordered_set_9227d2bb *)arg1 forPlan:(struct DeletionPlan *)arg2;
+- (id)_findAllRelatedVisitsToItems:(const unordered_set_da619913 *)arg1 forPlan:(struct DeletionPlan *)arg2;
+- (id)_findAllRelatedVisits:(const unordered_set_da619913 *)arg1 forPlan:(struct DeletionPlan *)arg2 afterDate:(id)arg3 beforeDate:(id)arg4;
 - (void)recomputeItemScoresWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)_recomputeItemScores:(unordered_set_9227d2bb *)arg1;
-- (id)_recomputeVisitScores:(unordered_set_9227d2bb *)arg1;
+- (id)_recomputeItemScores:(unordered_set_da619913 *)arg1;
+- (id)_recomputeVisitScores:(unordered_set_da619913 *)arg1;
 - (void)expireOldVisits:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_expireOldVisits:(double)arg1;
 - (double)_oldestLatestVisit;
@@ -117,7 +117,7 @@
 - (void)fetchWithOptions:(unsigned long long)arg1 predicate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_fetchTombstonesWithOptions:(unsigned long long)arg1 predicate:(id)arg2 writeDescriptor:(int)arg3;
 - (id)_fetchVisitsWithOptions:(unsigned long long)arg1 predicate:(id)arg2 writeDescriptor:(int)arg3;
-- (id)_recomputeLatestVisitsForItems:(const unordered_set_9227d2bb *)arg1;
+- (id)_recomputeLatestVisitsForItems:(const unordered_set_da619913 *)arg1;
 - (void)ensureLatestVisitsAreComputed:(CDUnknownBlockType)arg1;
 - (id)_ensureLatestVisitsAreComputed;
 - (void)warmUp;

@@ -6,7 +6,7 @@
 
 #import "MKLocalSearchCompleterDelegate.h"
 
-@class MKLocalSearchCompleter, NSError;
+@class MKLocalSearchCompleter, NSArray, NSError, NSString;
 
 @protocol MKLocalSearchCompleterDelegatePrivate <MKLocalSearchCompleterDelegate>
 
@@ -14,7 +14,9 @@
 @property(retain, nonatomic) id <GEOMapServiceCompletionTicket> lastTicket;
 - (void)completerDidAccessNetwork:(MKLocalSearchCompleter *)arg1;
 - (void)completerWillAccessNetwork:(MKLocalSearchCompleter *)arg1;
+- (void)completer:(MKLocalSearchCompleter *)arg1 didFailWithError:(NSError *)arg2 forQueryFragment:(NSString *)arg3;
 - (void)completerDidFail:(MKLocalSearchCompleter *)arg1 error:(NSError *)arg2;
+- (void)completer:(MKLocalSearchCompleter *)arg1 didUpdateResults:(NSArray *)arg2 forQueryFragment:(NSString *)arg3;
 - (void)completerDidUpdateResults:(MKLocalSearchCompleter *)arg1 finished:(_Bool)arg2;
 - (void)completerWillUpdateResults:(MKLocalSearchCompleter *)arg1;
 @end

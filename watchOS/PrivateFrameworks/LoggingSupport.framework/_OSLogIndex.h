@@ -14,8 +14,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_fileq;
     _OSLogCollectionReference *_lcr;
     NSString *_file;
-    NSMutableArray *_files;
-    CDStruct_1936c231 _metadata;
+    CDStruct_42ec109f _metadata;
     _Bool _metadataValid;
     _OSLogEventStoreMetadata *_metadata2;
     struct _os_timesync_db_s *_tsdb;
@@ -25,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)enumerateFilesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateEntriesUsingBlock:(CDUnknownBlockType)arg1;
-- (void)enumerateEntriesInRange:(struct os_timesync_range_s *)arg1 options:(unsigned int)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void)enumerateEntriesInRange:(struct os_timesync_range_s *)arg1 options:(unsigned int)arg2 usingCatalogFilter:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)_enumerateEntriesInRange:(struct os_timesync_range_s *)arg1 options:(unsigned int)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateEntriesFromLastBootWithOptions:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateEntriesFrom:(unsigned long long)arg1 to:(unsigned long long)arg2 options:(unsigned int)arg3 usingBlock:(CDUnknownBlockType)arg4;
@@ -36,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_buildFileIndex:(id *)arg1;
 - (void)insertIndexFile:(id)arg1;
 - (void)insertChunkStore:(id)arg1;
+- (void)_foreachIndexFile:(CDUnknownBlockType)arg1;
 - (_Bool)_addFileToIndex:(const char *)arg1 error:(id *)arg2;
 - (_Bool)addReferenceToIndex:(id)arg1 error:(id *)arg2;
 - (_Bool)_openTimesyncDatabase:(id *)arg1;

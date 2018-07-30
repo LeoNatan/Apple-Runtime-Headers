@@ -11,11 +11,21 @@
 @interface AVCaptureVideoPreviewLayer : CALayer
 {
     AVCaptureVideoPreviewLayerInternal *_internal;
+    BOOL _orientationSupported;
+    BOOL _mirroringSupported;
+    BOOL _automaticallyAdjustsMirroring;
+    BOOL _mirrored;
+    long long _orientation;
 }
 
 + (id)layerWithSessionWithNoConnection:(id)arg1;
 + (id)layerWithSession:(id)arg1;
 + (void)initialize;
+@property(nonatomic, getter=isMirrored) BOOL mirrored; // @synthesize mirrored=_mirrored;
+@property(nonatomic) BOOL automaticallyAdjustsMirroring; // @synthesize automaticallyAdjustsMirroring=_automaticallyAdjustsMirroring;
+@property(readonly, nonatomic, getter=isMirroringSupported) BOOL mirroringSupported; // @synthesize mirroringSupported=_mirroringSupported;
+@property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
+@property(readonly, nonatomic, getter=isOrientationSupported) BOOL orientationSupported; // @synthesize orientationSupported=_orientationSupported;
 - (id)notReadyError;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (void)removeConnection:(id)arg1;

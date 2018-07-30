@@ -8,12 +8,13 @@
 
 #import "AVTouchBarMediaSelectionButtonViewControllerDelegate.h"
 #import "AVTouchBarMediaSelectionViewControllerDelegate.h"
+#import "NSDescriptionBasedTouchBarItemProvider.h"
 #import "NSTouchBarDelegate.h"
 #import "NSTouchBarProvider.h"
 
 @class AVPlayerView, AVTouchBarMediaSelectionButtonViewController, AVTouchBarMediaSelectionViewController, AVTouchBarPlaybackControlsViewController, NSCustomTouchBarItem, NSPopoverTouchBarItem, NSString, NSTouchBar;
 
-@interface AVTouchBarPlaybackControlsProvider : NSResponder <AVTouchBarMediaSelectionViewControllerDelegate, AVTouchBarMediaSelectionButtonViewControllerDelegate, NSTouchBarDelegate, NSTouchBarProvider>
+@interface AVTouchBarPlaybackControlsProvider : NSResponder <AVTouchBarMediaSelectionViewControllerDelegate, AVTouchBarMediaSelectionButtonViewControllerDelegate, NSTouchBarDelegate, NSTouchBarProvider, NSDescriptionBasedTouchBarItemProvider>
 {
     NSTouchBar *_touchBar;
     id <AVTouchBarPlaybackControlsControlling> _playbackControlsController;
@@ -27,6 +28,7 @@
     AVTouchBarMediaSelectionViewController *_touchBarMediaSelectionViewController;
 }
 
++ (id)touchBarItemWithIdentifier:(id)arg1 itemDescription:(id)arg2;
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)updateTouchBarItemIdentifiersForTouchBar:(id)arg1;

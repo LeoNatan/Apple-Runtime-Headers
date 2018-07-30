@@ -17,13 +17,13 @@
     NSString *_site;
 }
 
-@property(readonly, retain, nonatomic) NSString *site; // @synthesize site=_site;
-@property(readonly, retain, nonatomic) NSString *password; // @synthesize password=_password;
-@property(readonly, retain, nonatomic) NSString *username; // @synthesize username=_username;
+@property(readonly, nonatomic) NSString *site; // @synthesize site=_site;
+@property(readonly, nonatomic) NSString *password; // @synthesize password=_password;
+@property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithUsername:(id)arg1 password:(id)arg2 site:(id)arg3;
 
 @end

@@ -13,7 +13,7 @@
     struct NSNumber *_stopwatchToken;
 }
 
-+ (_Bool)_acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)_acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) NSNumber *stopwatchToken; // @synthesize stopwatchToken=_stopwatchToken;
 - (void).cxx_destruct;
 - (void)_handleTimeFormatChange;

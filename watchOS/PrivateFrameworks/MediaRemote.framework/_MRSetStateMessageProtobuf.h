@@ -17,7 +17,7 @@
     _MRNowPlayingInfoProtobuf *_nowPlayingInfo;
     _MRPlaybackQueueProtobuf *_playbackQueue;
     _MRPlaybackQueueCapabilitiesProtobuf *_playbackQueueCapabilities;
-    unsigned int _playbackState;
+    int _playbackState;
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
     _MRPlaybackQueueRequestProtobuf *_request;
     _MRSupportedCommandsProtobuf *_supportedCommands;
@@ -29,7 +29,6 @@
 @property(retain, nonatomic) _MRPlaybackQueueRequestProtobuf *request; // @synthesize request=_request;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) _MRPlaybackQueueCapabilitiesProtobuf *playbackQueueCapabilities; // @synthesize playbackQueueCapabilities=_playbackQueueCapabilities;
-@property(nonatomic) unsigned int playbackState; // @synthesize playbackState=_playbackState;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *displayID; // @synthesize displayID=_displayID;
 @property(retain, nonatomic) _MRPlaybackQueueProtobuf *playbackQueue; // @synthesize playbackQueue=_playbackQueue;
@@ -48,7 +47,10 @@
 @property(readonly, nonatomic) _Bool hasRequest;
 @property(readonly, nonatomic) _Bool hasPlayerPath;
 @property(readonly, nonatomic) _Bool hasPlaybackQueueCapabilities;
+- (int)StringAsPlaybackState:(id)arg1;
+- (id)playbackStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasPlaybackState;
+@property(nonatomic) int playbackState; // @synthesize playbackState=_playbackState;
 @property(readonly, nonatomic) _Bool hasDisplayName;
 @property(readonly, nonatomic) _Bool hasDisplayID;
 @property(readonly, nonatomic) _Bool hasPlaybackQueue;

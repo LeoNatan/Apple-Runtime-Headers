@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface NSNaturalCubicSplineInterpolator : NSObject
 {
     CDStruct_6b6ad735 *_knots;

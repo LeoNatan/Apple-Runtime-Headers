@@ -8,3 +8,17 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct CGSize {
+    float width;
+    float height;
+};
+
+struct IMPreviewConstraints {
+    float _field1;
+    struct CGSize _field2;
+    float _field3;
+    _Bool _field4;
+};
+

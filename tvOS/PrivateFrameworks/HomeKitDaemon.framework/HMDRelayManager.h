@@ -17,7 +17,6 @@
 {
     _Bool _supported;
     _Bool _enabled;
-    _Bool _networkReachable;
     unsigned long long _currentState;
     NSString *_controllerIdentifier;
     HMDHome *_home;
@@ -32,7 +31,6 @@
 }
 
 + (id)logCategory;
-@property(nonatomic, getter=isNetworkReachable) _Bool networkReachable; // @synthesize networkReachable=_networkReachable;
 @property(readonly, nonatomic) HMFNetMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
 @property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(readonly, nonatomic) NSMutableArray *relayStreams; // @synthesize relayStreams=_relayStreams;

@@ -6,6 +6,9 @@
 
 #import "NTKColoringView.h"
 
+@class NTKKeylineTouchable;
+
 @protocol NTKKeylineView <NTKColoringView>
+@property(retain, nonatomic) NTKKeylineTouchable *touchable;
 @end
 

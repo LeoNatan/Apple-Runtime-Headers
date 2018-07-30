@@ -25,13 +25,12 @@ struct CGSize {
     double height;
 };
 
-struct CVSectionMatrixGeometry {
-    long long _field1;
+struct CPKCalculatedGeometry {
+    double _field1;
     long long _field2;
-    double _field3;
-    double _field4;
-    double _field5;
-    double _field6;
+    struct CGSize _field3;
+    struct CGSize _field4;
+    struct CGSize _field5;
 };
 
 struct _NSRange {

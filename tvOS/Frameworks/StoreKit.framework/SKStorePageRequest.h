@@ -18,9 +18,9 @@
 @property(copy, nonatomic) NSURL *productURL; // @synthesize productURL=_productURL;
 @property(copy, nonatomic) NSDictionary *productParameters; // @synthesize productParameters=_productParameters;
 @property(nonatomic) long long productPageStyle; // @synthesize productPageStyle=_pageStyle;
+- (void).cxx_destruct;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)dealloc;
 
 @end
 

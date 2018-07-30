@@ -13,6 +13,6 @@
 - (void)resumeProjectEditingWithProjectIdentifier:(NSString *)arg1 libraryURL:(NSURL *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)beginProjectWithProjectIdentifier:(NSString *)arg1 libraryURL:(NSURL *)arg2 projectInfo:(PHProjectInfo *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)requestTCCAccessForPhotos:(void (^)(NSError *))arg1;
-- (void)requestSupportedProjectTypes:(void (^)(NSArray *))arg1;
+- (void)requestProjectTypeSourceForCategory:(NSString *)arg1 reply:(void (^)(NSXPCListenerEndpoint *))arg2;
 @end
 

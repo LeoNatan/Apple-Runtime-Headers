@@ -10,6 +10,7 @@
 
 @class GEOLatLng, GEOPDMapsIdentifier, GEOStyleAttributes, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDLinkedPlace : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

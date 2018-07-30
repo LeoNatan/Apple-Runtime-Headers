@@ -23,8 +23,8 @@
 
 @property(retain, nonatomic) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
 @property(readonly, nonatomic) id <CNContactsLogger> logger; // @synthesize logger=_logger;
-@property(readonly, nonatomic) id <CNEncodedFetchCursor> cursor; // @synthesize cursor=_cursor;
-@property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(retain, nonatomic) id <CNEncodedFetchCursor> cursor; // @synthesize cursor=_cursor;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) CNContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) CNContactFetchRequest *contactFetchRequest; // @synthesize contactFetchRequest=_contactFetchRequest;
 @property(readonly, nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;

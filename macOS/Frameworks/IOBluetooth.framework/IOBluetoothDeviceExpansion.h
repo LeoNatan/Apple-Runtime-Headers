@@ -47,18 +47,19 @@
     unsigned char leftDoubleTap;
     unsigned char rightDoubleTap;
     unsigned char primaryBud;
-    BOOL traceLoggingEnabled;
     BOOL isDevFused;
+    BOOL isFirstPairing;
     unsigned char listeningMode;
+    BOOL switchControlEnabled;
     NSXPCConnection *xpcConnection;
     id mTarget;
 }
 
 @property(retain) id mTarget; // @synthesize mTarget;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection;
+@property BOOL switchControlEnabled; // @synthesize switchControlEnabled;
 @property unsigned char listeningMode; // @synthesize listeningMode;
 @property BOOL isDevFused; // @synthesize isDevFused;
-@property BOOL traceLoggingEnabled; // @synthesize traceLoggingEnabled;
 @property unsigned char primaryBud; // @synthesize primaryBud;
 @property unsigned char rightDoubleTap; // @synthesize rightDoubleTap;
 @property unsigned char leftDoubleTap; // @synthesize leftDoubleTap;
@@ -74,6 +75,7 @@
 @property unsigned char batteryPercentLeft; // @synthesize batteryPercentLeft;
 @property unsigned char batteryPercentSingle; // @synthesize batteryPercentSingle;
 @property unsigned char capabilityMask; // @synthesize capabilityMask;
+@property BOOL isFirstPairing; // @synthesize isFirstPairing;
 @property unsigned char colorID; // @synthesize colorID;
 @property unsigned int serviceMask; // @synthesize serviceMask;
 @property BOOL lowEnergyPointer; // @synthesize lowEnergyPointer;

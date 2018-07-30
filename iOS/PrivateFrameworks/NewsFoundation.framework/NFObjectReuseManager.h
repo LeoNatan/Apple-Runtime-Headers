@@ -19,6 +19,7 @@
 @property(copy, nonatomic) NSMutableDictionary *inuseObjects; // @synthesize inuseObjects=_inuseObjects;
 @property(copy, nonatomic) CDUnknownBlockType reuseFactory; // @synthesize reuseFactory=_reuseFactory;
 - (void).cxx_destruct;
+- (id)inUseObjectForIdentifier:(id)arg1;
 - (_Bool)isInUse:(id)arg1;
 - (void)purgeObjectForIdentifier:(id)arg1;
 - (void)prepareObjectForReuse:(id)arg1;

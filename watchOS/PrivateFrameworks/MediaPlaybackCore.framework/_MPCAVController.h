@@ -6,10 +6,11 @@
 
 #import "MPAVController.h"
 
-@class MPAVItem, MPCPlaybackEngine;
+@class MPAVItem, MPCPlaybackEngine, NSObject<OS_dispatch_queue>;
 
 @interface _MPCAVController : MPAVController
 {
+    NSObject<OS_dispatch_queue> *_unboostedAudioSessionQueue;
     _Bool _allowsNewPlaybackErrorItem;
     MPCPlaybackEngine *_playbackEngine;
     MPAVItem *_firstPlaybackErrorItem;
@@ -32,6 +33,7 @@
 - (void)_configureAudioSession;
 - (void)_networkPolicyItemCellularRestrictedNotification:(id)arg1;
 - (void)_playbackErrorNotification:(id)arg1;
+- (void)updateAudioSession;
 - (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) int upNextItemCount;
 - (void)setShuffleType:(int)arg1;

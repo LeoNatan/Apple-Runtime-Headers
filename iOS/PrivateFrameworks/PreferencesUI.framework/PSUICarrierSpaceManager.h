@@ -7,10 +7,11 @@
 #import "NSObject.h"
 
 #import "CTCarrierSpaceClientDelegate.h"
+#import "CoreTelephonyClientSubscriberDelegate.h"
 
-@class CTCarrierSpaceAppsInfo, CTCarrierSpaceCapabilities, CTCarrierSpaceClient, CTCarrierSpacePlansInfo, CTCarrierSpaceUsageInfo, CTCarrierSpaceUserConsentFlowInfo, NSNumber, NSObject<OS_dispatch_queue>, NSString, PSUIAppInstallController;
+@class CTCarrierSpaceAppsInfo, CTCarrierSpaceCapabilities, CTCarrierSpaceClient, CTCarrierSpacePlansInfo, CTCarrierSpaceUsageInfo, CTCarrierSpaceUserConsentFlowInfo, CoreTelephonyClient, NSNumber, NSObject<OS_dispatch_queue>, NSString, PSUIAppInstallController;
 
-@interface PSUICarrierSpaceManager : NSObject <CTCarrierSpaceClientDelegate>
+@interface PSUICarrierSpaceManager : NSObject <CTCarrierSpaceClientDelegate, CoreTelephonyClientSubscriberDelegate>
 {
     NSObject<OS_dispatch_queue> *_carrierSpaceQueue;
     CTCarrierSpaceCapabilities *_capabilities;
@@ -22,6 +23,7 @@
     CTCarrierSpaceUserConsentFlowInfo *_userConsentFlowInfo;
     NSNumber *_userConsentResponse;
     struct __CTServerConnection *_serverConnection;
+    CoreTelephonyClient *_coreTelephonyClient;
     CTCarrierSpaceClient *_carrierSpaceClient;
 }
 
@@ -35,6 +37,7 @@
 - (void)plansDidChange;
 - (void)usageDidChange;
 - (void)capabilitiesDidChange:(id)arg1;
+- (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (id)localizedDataStringFromBytes:(unsigned long long)arg1;
 - (_Bool)shouldShowPlanMetrics:(id)arg1;
 - (id)descriptionForPlanMetrics:(id)arg1;

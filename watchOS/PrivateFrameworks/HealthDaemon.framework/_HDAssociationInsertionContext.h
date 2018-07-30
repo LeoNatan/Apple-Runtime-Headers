@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class HDProfile, HDSQLiteDatabase, HDSQLitePredicate, HDSQLiteQueryStatement, NSUUID;
+@class HDProfile, HDSQLiteDatabase, NSUUID;
 
 @interface _HDAssociationInsertionContext : NSObject
 {
@@ -15,19 +15,14 @@
     NSUUID *_parentUUID;
     HDProfile *_profile;
     HDSQLiteDatabase *_database;
-    HDSQLitePredicate *_predicateForParent;
-    HDSQLiteQueryStatement *_lookupByUUIDStatement;
 }
 
-@property(readonly, nonatomic) HDSQLiteQueryStatement *lookupByUUIDStatement; // @synthesize lookupByUUIDStatement=_lookupByUUIDStatement;
-@property(readonly, nonatomic) HDSQLitePredicate *predicateForParent; // @synthesize predicateForParent=_predicateForParent;
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) _Bool permitPendingAssociations; // @synthesize permitPendingAssociations=_permitPendingAssociations;
 @property(readonly, nonatomic) _Bool enforceSameSource; // @synthesize enforceSameSource=_enforceSameSource;
 @property(readonly, copy, nonatomic) NSUUID *parentUUID; // @synthesize parentUUID=_parentUUID;
 - (void).cxx_destruct;
-- (void)finish;
 - (id)initWithParentUUID:(id)arg1 enforceSameSource:(_Bool)arg2 permitPendingAssociations:(_Bool)arg3 profile:(id)arg4 database:(id)arg5;
 
 @end

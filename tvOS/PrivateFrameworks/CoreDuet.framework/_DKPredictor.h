@@ -11,19 +11,20 @@
     id <_DKKnowledgeQuerying> _knowledgeStore;
 }
 
-+ (id)normalizeDictionaryToCurrentDate:(id)arg1 atDate:(id)arg2;
-+ (_Bool)databaseTooYoung:(id)arg1 atDate:(id)arg2;
-+ (id)dateRangeFromDictionary:(id)arg1 atDate:(id)arg2;
 + (id)roundDate:(id)arg1 toUpperQuarterHour:(_Bool)arg2;
-+ (int)endingSlotFromDate:(id)arg1;
-+ (int)startingSlotFromDate:(id)arg1;
 + (id)defaultPeriodAtDate:(id)arg1;
++ (id)deviceActivityLikelihoodQueryPredicate;
 + (id)predictorLog;
 + (id)predictorWithKnowledgeStore:(id)arg1;
 @property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (void).cxx_destruct;
 - (id)expectedInBedPeriod;
+- (id)localInBedPeriod;
+- (id)predictionForStreamsWithNames:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3 withDataPartitionType:(unsigned long long)arg4 asOfDate:(id)arg5;
+- (id)predictionForStreamsWithNames:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3 asOfDate:(id)arg4;
+- (id)predictionForStreamWithName:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3 withDataPartitionType:(unsigned long long)arg4 asOfDate:(id)arg5;
 - (id)predictionForStreamWithName:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3 asOfDate:(id)arg4;
+- (id)predictionForStreamsWithNames:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3;
 - (id)predictionForStreamWithName:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3;
 - (id)deviceActivityLikelihood;
 - (id)displayOnLikelihood;

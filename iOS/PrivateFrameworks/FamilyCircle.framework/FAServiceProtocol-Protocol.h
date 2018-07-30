@@ -10,6 +10,7 @@
 
 @protocol FAServiceProtocol <NSObject>
 - (void)launchiCloudFamilySettings;
+- (void)updateFamilyMemberFlagWithDSID:(NSNumber *)arg1 flag:(NSString *)arg2 enabled:(_Bool)arg3 replyBlock:(void (^)(NSError *))arg4;
 - (void)didReceiveFamilyEventPushNotificationWithPayload:(NSDictionary *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(NSError *))arg3;
 - (void)clearFamilyCircleCacheWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)registerPushToken:(NSData *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(NSError *))arg3;

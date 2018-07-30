@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)childItemCount;
 - (_Bool)hasLiveChildren;
 - (_Bool)hasDeadChildren;
+- (void)transformIntoFSRoot;
 - (_Bool)changedAtRelativePath:(id)arg1 scanPackage:(_Bool)arg2;
 - (void)updateItemMetadataFromServerItem:(id)arg1 appliedSharingPermission:(_Bool)arg2;
 - (_Bool)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;

@@ -10,14 +10,14 @@
 #import "PKPaymentAuthorizationFooterViewDelegate.h"
 #import "PKPaymentAuthorizationStateMachineDelegate.h"
 
-@class NSArray, NSString, NSTimer, PKAuthenticator, PKContinuityPaymentCardSummaryView, PKContinuityPaymentFaviconView, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationStateMachine, PKPhysicalButtonView, PKRemotePaymentRequest, UILabel, UIStackView, UIView, _UIBackdropView;
+@class LAUIPhysicalButtonView, NSArray, NSString, NSTimer, PKAuthenticator, PKContinuityPaymentCardSummaryView, PKContinuityPaymentFaviconView, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationStateMachine, PKRemotePaymentRequest, UILabel, UIStackView, UIView, _UIBackdropView;
 
 @interface PKContinuityPaymentViewController : UIViewController <PKAuthenticatorDelegate, PKPaymentAuthorizationFooterViewDelegate, PKPaymentAuthorizationStateMachineDelegate>
 {
     _UIBackdropView *_backdropView;
     UIView *_dimmingBackgroundView;
     UIView *_compactRegion;
-    PKPhysicalButtonView *_physicalButtonView;
+    LAUIPhysicalButtonView *_physicalButtonView;
     UILabel *_requestingDeviceLabel;
     UILabel *_requestingSiteLabel;
     UILabel *_priceLabel;
@@ -84,6 +84,7 @@
 - (void)_setAuthenticating:(_Bool)arg1;
 - (void)setProgressState:(long long)arg1 string:(id)arg2 animated:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)setProgressState:(long long)arg1 string:(id)arg2 animated:(_Bool)arg3;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;

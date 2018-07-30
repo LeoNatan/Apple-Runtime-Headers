@@ -27,6 +27,7 @@
     NSArray *_streamNamesObservedForAdditions;
     NSArray *_streamNamesObservedForDeletions;
     NSHashTable *_syncCoordinatorEventNotificationDelegates;
+    id c2;
     _DKKnowledgeStorage *_storage;
 }
 
@@ -84,6 +85,7 @@
 - (id)_queryStartDateGivenPolicy:(id)arg1 lastQueryEndDate:(id)arg2 isTriggeredSync:(_Bool)arg3;
 - (id)changeSetForSyncWithTombstones:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 error:(id *)arg4;
 - (id)changeSetForSyncWithInsertedObjects:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 error:(id *)arg4;
+- (void)synchronizeWithUrgency:(unsigned int)arg1 client:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)syncWithReply:(CDUnknownBlockType)arg1;
 - (void)_setIfHigherSequenceNumber:(unsigned int)arg1 ofLastDeletionChangeSetProcessedFromDevice:(id)arg2;
 - (unsigned int)_sequenceNumberOfLastDeletionChangeSetProcessedFromDevice:(id)arg1;

@@ -54,6 +54,7 @@
 - (id)_stringForResultCode:(long long)arg1;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
+- (id)_initWithIntentSlotResolutionResult:(id)arg1 slotDescription:(id)arg2;
 - (id)_initWithResolutionResult:(id)arg1;
 - (id)_vocabularyValueForObject:(id)arg1 slotDescription:(id)arg2;
 - (id)_intentSlotValueForObject:(id)arg1 slotDescription:(id)arg2;
@@ -61,6 +62,7 @@
 - (id)_dataForIntentSlotDescription:(id)arg1;
 - (id)resolutionResultDataForIntent:(id)arg1 intentSlotDescription:(id)arg2 error:(id *)arg3;
 - (id)_initWithResultCode:(long long)arg1;
+- (id)_objectForIntentSlotValue:(id)arg1 slotDescription:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

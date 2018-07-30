@@ -12,34 +12,35 @@
 
 @interface MRAVDistantEndpoint : MRAVEndpoint <NSSecureCoding>
 {
-    NSObject<OS_dispatch_queue> *_accessSerialQueue;
-    MRDistantExternalDevice *_distantExternalDevice;
+    _Bool _canModifyGroupMembership;
+    long _connectionType;
     NSString *_localizedName;
     NSString *_uniqueIdentifier;
-    NSString *_instanceIdentifier;
-    _Bool _isLocalEndpoint;
-    _Bool _proxyGroupPlayer;
-    NSXPCListenerEndpoint *_externalDeviceListenerEndpoint;
+    NSObject<OS_dispatch_queue> *_externalDeviceQueue;
     NSArray *_distantOutputDevices;
     MRAVDistantOutputDevice *_distantGroupLeader;
+    MRDistantExternalDevice *_distantExternalDevice;
+    NSXPCListenerEndpoint *_externalDeviceListenerEndpoint;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic, getter=isProxyGroupPlayer) _Bool proxyGroupPlayer; // @synthesize proxyGroupPlayer=_proxyGroupPlayer;
+@property(retain, nonatomic) NSXPCListenerEndpoint *externalDeviceListenerEndpoint; // @synthesize externalDeviceListenerEndpoint=_externalDeviceListenerEndpoint;
+@property(retain, nonatomic) MRDistantExternalDevice *distantExternalDevice; // @synthesize distantExternalDevice=_distantExternalDevice;
 @property(retain, nonatomic) MRAVDistantOutputDevice *distantGroupLeader; // @synthesize distantGroupLeader=_distantGroupLeader;
 @property(copy, nonatomic) NSArray *distantOutputDevices; // @synthesize distantOutputDevices=_distantOutputDevices;
-@property(retain, nonatomic) NSXPCListenerEndpoint *externalDeviceListenerEndpoint; // @synthesize externalDeviceListenerEndpoint=_externalDeviceListenerEndpoint;
-- (void).cxx_destruct;
-- (_Bool)isLocalEndpoint;
-- (id)instanceIdentifier;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalDeviceQueue; // @synthesize externalDeviceQueue=_externalDeviceQueue;
+- (void)setUniqueIdentifier:(id)arg1;
 - (id)uniqueIdentifier;
-@property(copy, nonatomic) NSString *localizedName;
+- (void)setLocalizedName:(id)arg1;
+- (id)localizedName;
+- (long)connectionType;
+- (void).cxx_destruct;
+- (_Bool)canModifyGroupMembership;
+- (_Bool)isProxyGroupPlayer;
 - (id)designatedGroupLeader;
 - (id)externalDevice;
 - (id)outputDevices;
 - (void)encodeWithCoder:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;
 

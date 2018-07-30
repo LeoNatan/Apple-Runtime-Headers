@@ -146,6 +146,7 @@
 - (id)valueRestrictionForFeature:(id)arg1;
 - (int)boolRestrictionForFeature:(id)arg1;
 - (id)effectiveRestrictions;
+- (id)permittedAutoLockSeconds;
 - (id)lockedDownRootCertificatesWithOutLocalizedSourceDescription:(id *)arg1;
 - (id)userValueForUnionSetting:(id)arg1;
 - (id)userValueForIntersectionSetting:(id)arg1;
@@ -310,6 +311,7 @@
 - (void)setRemoteAppPairingAllowed:(_Bool)arg1;
 - (_Bool)isRemoteAppPairingAllowed;
 - (_Bool)isWiFiWhitelistingEnforced;
+- (_Bool)isAutomaticDateAndTimeEnforced;
 - (unsigned int)enforcedSoftwareUpdateDelayInDays;
 - (_Bool)isSoftwareUpdateResisted;
 - (void)setTVAllowed:(_Bool)arg1;
@@ -420,6 +422,9 @@
 - (void)validateAppBundleIDs:(id)arg1;
 - (void)setTrustedCodeSigningIdentities:(id)arg1;
 - (id)trustedCodeSigningIdentities;
+- (_Bool)isPasswordProximityAutoFillRequestingAllowed;
+- (_Bool)isPasswordSharingAllowed;
+- (_Bool)isPasswordAutoFillAllowed;
 - (_Bool)isAuthenticationBeforeAutoFillRequired;
 - (_Bool)isSafariPasswordAutoFillAllowedForURL:(id)arg1;
 - (id)managedMedia;
@@ -437,7 +442,7 @@
 - (id)_localizedSourceDescriptionForType:(int)arg1 MDMName:(id)arg2 exchangeName:(id)arg3 exchangeCount:(int)arg4 profileName:(id)arg5 profileCount:(int)arg6;
 - (id)_localizedRestrictionSourceDescriptionFromMDMName:(id)arg1 exchangeName:(id)arg2 exchangeCount:(int)arg3 profileName:(id)arg4 profileCount:(int)arg5;
 - (id)_localizedCertificateSourceDescriptionFromMDMName:(id)arg1 exchangeName:(id)arg2 exchangeCount:(int)arg3 profileName:(id)arg4 profileCount:(int)arg5;
-- (id)activationLockBypassKeyCreateNewIfNeeded:(_Bool)arg1 outError:(id *)arg2;
+- (id)fetchActivationLockBypassKeyWithError:(id *)arg1;
 - (void)doMCICDidFinishPreflightWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)doMCICDidRequestShowUserWarnings:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)doMCICDidRequestUserInput:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -516,8 +521,10 @@
 - (id)restrictedAppBundleIDsExcludingRemovedSystemApps;
 - (id)restrictedAppBundleIDs;
 - (id)restrictionEnforcedHomeScreenLayout;
+- (_Bool)isHomeScreenLayoutApplied;
 - (id)knownAirPrintIPPURLStrings;
 - (_Bool)isTeslaCloudConfigurationAvailable;
+- (id)deviceOrganizationVendorID;
 - (id)deviceOrganizationCountry;
 - (id)deviceOrganizationZipCode;
 - (id)deviceOrganizationRegion;

@@ -29,6 +29,8 @@
 - (void)playbackPausedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackStartedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackInitiatedWithVideoItem:(id)arg1 metadata:(id)arg2;
+- (void)videoDidDisappearWithVideoItem:(id)arg1;
+- (void)videoDidAppearWithVideoItem:(id)arg1;
 - (id)init;
 
 // Remaining properties

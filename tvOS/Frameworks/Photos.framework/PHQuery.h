@@ -43,6 +43,13 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
++ (id)queryForImportSessionsWithOptions:(id)arg1;
++ (id)queryForSuggestionsWithState:(unsigned short)arg1 type:(unsigned short)arg2 options:(id)arg3;
++ (id)queryForSuggestionsWithState:(unsigned short)arg1 options:(id)arg2;
++ (id)queryForSuggestionsWithOptions:(id)arg1;
++ (id)queryForMomentShareParticiapntsWithLocalIdentifiers:(id)arg1;
++ (id)queryForMomentShareParticipantsInMomentShare:(id)arg1 options:(id)arg2;
++ (id)queryForFaceCropsForPerson:(id)arg1 options:(id)arg2;
 + (id)queryForFaceCropsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForFaceCropsWithOptions:(id)arg1;
 + (id)queryForInvalidMergeCandidatePersonsForPerson:(id)arg1 options:(id)arg2;
@@ -58,6 +65,7 @@
 + (id)queryForAssetsForPersons:(id)arg1 options:(id)arg2;
 + (id)queryForRejectedPersonsForFace:(id)arg1 options:(id)arg2;
 + (id)queryForPersonsWithFace:(id)arg1 options:(id)arg2;
++ (id)queryForPersonsWithContactIdentifiers:(id)arg1 options:(id)arg2;
 + (id)_queryForPersonsWithFaceRelationshipPredicate:(id)arg1 options:(id)arg2;
 + (id)queryForPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)_queryForPersonsInAssetsWithObjectIDs:(id)arg1 withOptions:(id)arg2;
@@ -89,7 +97,10 @@
 + (id)queryForCollectionListContainingCollection:(id)arg1;
 + (id)queryForCollectionsInCollectionList:(id)arg1 options:(id)arg2;
 + (id)queryForMomentsContainingAssetsWithLocalIdentifiers:(id)arg1;
++ (id)queryForMomentsForPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)queryForMomentsForFacesWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForMomentsInMomentList:(id)arg1 options:(id)arg2;
++ (id)queryForMomentsBackingSuggestion:(id)arg1;
 + (id)queryForMomentsBackingMemory:(id)arg1;
 + (id)queryForMomentsWithOptions:(id)arg1;
 + (id)queryForAssetCollectionsWithObjectIDs:(id)arg1;
@@ -101,7 +112,9 @@
 + (_Bool)_validateLocalIdentifiers:(id)arg1 compatibilityWithFetchType:(id)arg2;
 + (id)queryForAssetCollectionsContainingAssets:(id)arg1 withType:(long long)arg2;
 + (id)queryForAssetCollectionsContainingAsset:(id)arg1 withType:(long long)arg2;
++ (id)queryForQuarantinedAssetsWithOptions:(id)arg1;
 + (id)queryForKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
++ (id)queryForKeyAssetsInMomentShare:(id)arg1 options:(id)arg2;
 + (id)queryForCustomKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithBurstIdentifier:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithObjectIDs:(id)arg1 options:(id)arg2;
@@ -113,12 +126,16 @@
 + (id)queryForAssetsWithMediaType:(long long)arg1 options:(id)arg2;
 + (id)queryForMovieCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsInAssetCollection:(id)arg1 options:(id)arg2;
++ (id)queryForAssetsInImportSessions:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsInBoundingBoxWithTopLeftLocation:(id)arg1 bottomRightLocation:(id)arg2 options:(id)arg3;
 + (id)queryForRepresentativeAssetsInMemory:(id)arg1 options:(id)arg2;
++ (id)queryForRepresentativeAssetsInSuggestion:(id)arg1 options:(id)arg2;
++ (id)queryForKeyAssetsInSuggestion:(id)arg1 options:(id)arg2;
 + (id)queryForKeyAssetInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForExtendedCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;
++ (id)_fetchOptionsForFetchingAssetsFromImportSessions:(id)arg1 options:(id)arg2;
 + (id)combinedFetchRequestForQueries:(id)arg1;
 + (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 options:(id)arg2 phClass:(Class)arg3;
 + (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2 outRelationship:(id *)arg3;

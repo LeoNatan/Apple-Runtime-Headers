@@ -13,6 +13,7 @@
 
 @class NSString, PUEditPlugin, PUEditPluginManager, UINavigationController, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface PUEditPluginSession : NSObject <PUEditPluginHostViewControllerDataSource, PUEditPluginHostViewControllerDelegate, UINavigationControllerDelegate, UIActivityGroupViewControllerDelegate>
 {
     PUEditPluginManager *_pluginManager;

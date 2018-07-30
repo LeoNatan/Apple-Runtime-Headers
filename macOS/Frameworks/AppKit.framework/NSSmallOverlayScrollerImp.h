@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)scrollerWidth;
-- (void)loadImages;
 - (double)knobInset;
 - (double)trackOverlapEndInset;
 - (double)knobMinLength;

@@ -10,27 +10,31 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSDictionary, NSObject<OS_dispatch_semaphore>, NSString;
+@class NSDictionary, NSError, NSObject<OS_dispatch_semaphore>, NSString;
 
 @interface ARFaceTrackingData : NSObject <ARResultData, NSSecureCoding, NSCopying>
 {
     vector_1cb3ea33 _meshVertices;
-    vector_e654105b _verticesImageSpace;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _verticesImageSpace;
     vector_1cb3ea33 _normals;
     vector_7584168e _blendShapeCoefficients;
     // Error parsing type: {?="columns"[4]}, name: _transform
     NSObject<OS_dispatch_semaphore> *_normalsSemaphore;
     NSObject<OS_dispatch_semaphore> *_imageVerticesSemaphore;
+    float _tongueOut;
     NSDictionary *_trackingData;
-    // Error parsing type: , name: _lookAtPoint
+    NSError *_trackingError;
+    // Error parsing type: , name: _gazePoint
     // Error parsing type: {?="columns"[4]}, name: _leftEyeTransform
     // Error parsing type: {?="columns"[4]}, name: _rightEyeTransform
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)sharedNeutralGeometry;
-// Error parsing type for property lookAtPoint:
-// Property attributes: T,R,N,V_lookAtPoint
+@property(readonly, nonatomic) float tongueOut; // @synthesize tongueOut=_tongueOut;
+@property(readonly, nonatomic) NSError *trackingError; // @synthesize trackingError=_trackingError;
+// Error parsing type for property gazePoint:
+// Property attributes: T,R,N,V_gazePoint
 
 // Error parsing type for property rightEyeTransform:
 // Property attributes: T{?=[4]},R,N,V_rightEyeTransform
@@ -60,10 +64,11 @@
 // Error parsing type for property transform:
 // Property attributes: T{?=[4]},R,N
 
-- (void)_extractMetaData;
+- (void)_extractMetaDataAndTransformToMirrored:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isValid;
 -     // Error parsing type: @160@0:8{?=[4]}16{?=[4]}80@144@152, name: anchorsForCameraWithTransform:referenceOriginTransform:existingAnchors:anchorsToRemove:
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithTrackingData:(id)arg1 transformToMirrored:(_Bool)arg2;
 - (id)initWithTrackingData:(id)arg1;
 - (id)initPrivate;
 

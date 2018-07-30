@@ -25,6 +25,8 @@
     _Bool _hasCustomOccurrencePadding;
     EKEvent *_selectedEvent;
     NSMutableArray *_dayStarts;
+    NSMutableArray *_itemsForPreloadByDay;
+    NSMutableArray *_itemsForPreloadByDayByEndDate;
     NSMutableArray *_itemsByDay;
     NSMutableArray *_itemsByDayByEndDate;
     struct CGRect _latestVisibleRect;
@@ -89,11 +91,12 @@
 - (void)prepareForReuse;
 - (void)applyContentItem:(id)arg1 toView:(id)arg2;
 - (void)applyLoadedOccurrencesWithBatching:(_Bool)arg1 animated:(_Bool)arg2 reverse:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)movePreloadedItemsToVisible;
 - (void)applyLoadedOccurrenceBatchStartingAtIndex:(long long)arg1 batchSize:(long long)arg2 fromArray:(id)arg3 animated:(_Bool)arg4 reverse:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_configureOccurrenceViewMarginAndPadding:(id)arg1;
 - (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (id)lastDisplayedSecond;
-- (id)_dayStarts;
+- (id)dayStarts;
 @property(readonly, nonatomic) double firstEventSecond;
 - (struct _NSRange)_dayRangeForEvent:(id)arg1 useProposedTime:(_Bool)arg2;
 - (struct _NSRange)_dayRangeForEventWithStartDate:(id)arg1 endDate:(id)arg2;
@@ -118,9 +121,9 @@
 - (void)setHoursToPadTop:(double)arg1;
 @property(nonatomic) _Bool showsLeftBorder;
 @property(retain, nonatomic, setter=selectEvent:) EKEvent *selectedEvent;
-- (_Bool)containsEvent:(id)arg1;
-- (id)allItems;
-- (id)itemsByDay;
+- (id)allVisibleItems;
+- (id)itemsForPreloadByDay;
+- (id)visibleItemsByDay;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setOrientation:(long long)arg1;
 - (void)dealloc;

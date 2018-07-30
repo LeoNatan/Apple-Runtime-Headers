@@ -14,11 +14,6 @@
 
 @interface _CPSectionRankingFeedback : PBCodable <_CPProcessableFeedback, _CPSectionRankingFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int localSectionPosition:1;
-        unsigned int personalizationScore:1;
-    } _has;
     unsigned int _localSectionPosition;
     unsigned long long _timestamp;
     NSArray *_results;
@@ -30,7 +25,7 @@
 @property(nonatomic) unsigned int localSectionPosition; // @synthesize localSectionPosition=_localSectionPosition;
 @property(retain, nonatomic) _CPResultSectionForFeedback *section; // @synthesize section=_section;
 @property(copy, nonatomic) NSArray *results; // @synthesize results=_results;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
@@ -40,14 +35,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasPersonalizationScore;
-@property(readonly, nonatomic) _Bool hasLocalSectionPosition;
-@property(readonly, nonatomic) _Bool hasSection;
 - (id)resultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resultsCount;
 - (void)addResults:(id)arg1;
 - (void)clearResults;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

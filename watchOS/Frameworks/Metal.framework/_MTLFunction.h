@@ -8,7 +8,7 @@
 
 #import "MTLFunctionSPI.h"
 
-@class MTLType, NSArray, NSDictionary, NSString;
+@class MTLType, NSArray, NSDictionary, NSObject<OS_dispatch_data>, NSString;
 
 @interface _MTLFunction : NSObject <MTLFunctionSPI>
 {
@@ -23,14 +23,17 @@
     NSString *_label;
     MTLType *_returnType;
     NSArray *_arguments;
+    NSString *_unpackedFilePath;
 }
 
 @property(copy) NSString *label; // @synthesize label=_label;
+@property(copy) NSString *unpackedFilePath; // @synthesize unpackedFilePath=_unpackedFilePath;
 @property(readonly) id vendorPrivate; // @synthesize vendorPrivate=_vendorPrivate;
 @property(readonly) struct MTLLibraryData *libraryData; // @synthesize libraryData=_libraryData;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned int functionType; // @synthesize functionType=_functionType;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
+- (id)bitcodeData;
 - (id)newIndirectArgumentEncoderWithBufferIndex:(unsigned int)arg1 reflection:(id *)arg2;
 - (id)newIndirectArgumentEncoderWithBufferIndex:(unsigned int)arg1;
 - (id)newArgumentEncoderWithBufferIndex:(unsigned int)arg1 reflection:(id *)arg2;
@@ -54,6 +57,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(copy) NSString *filePath; // @dynamic filePath;
 @property NSArray *functionConstants; // @dynamic functionConstants;
+@property(readonly) NSObject<OS_dispatch_data> *functionInputs; // @dynamic functionInputs;
 @property(readonly) unsigned int hash;
 @property int lineNumber; // @dynamic lineNumber;
 @property(readonly) _Bool needsFunctionConstantValues; // @dynamic needsFunctionConstantValues;

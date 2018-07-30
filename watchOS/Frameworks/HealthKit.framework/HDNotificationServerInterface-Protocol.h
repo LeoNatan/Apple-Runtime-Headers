@@ -9,6 +9,7 @@
 @class HKBadge;
 
 @protocol HDNotificationServerInterface <NSObject>
+- (void)remote_postCompanionUserNotificationOfType:(int)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_setBadge:(HKBadge *)arg1 forDomain:(int)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)remote_badgeForDomain:(int)arg1 completion:(void (^)(HKBadge *, NSError *))arg2;
 @end

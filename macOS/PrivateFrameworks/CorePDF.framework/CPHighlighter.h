@@ -8,6 +8,7 @@
 
 @class CPTextLine, CPZone;
 
+__attribute__((visibility("hidden")))
 @interface CPHighlighter : NSObject
 {
     CPZone *boundingZone;

@@ -86,6 +86,8 @@
 - (void)_setCollapsed:(BOOL)arg1;
 - (void)_setCanCollapseFromWindowResize:(BOOL)arg1;
 - (BOOL)_canCollapseFromWindowResize;
+- (void)setCanCollapseFromWindowResize:(BOOL)arg1;
+- (BOOL)canCollapseFromWindowResize;
 @property BOOL canCollapse;
 @property(retain) NSViewController *viewController;
 - (void)encodeWithCoder:(id)arg1;

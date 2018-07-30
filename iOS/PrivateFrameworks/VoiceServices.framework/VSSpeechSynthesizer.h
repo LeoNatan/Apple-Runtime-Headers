@@ -139,6 +139,7 @@
 - (_Bool)pauseSpeakingAtNextBoundary:(long long)arg1 synchronously:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)stopSpeakingPresynthesizedAudioSynchronously:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)stopSpeakingAtNextBoundary:(long long)arg1 synchronously:(_Bool)arg2 error:(id *)arg3;
+- (id)cachePresynthesizedAudioRequest:(id)arg1;
 - (id)startSpeakingPresynthesizedAudioRequest:(id)arg1;
 - (id)startSpeakingRequest:(id)arg1;
 - (id)startSynthesizingRequest:(id)arg1;

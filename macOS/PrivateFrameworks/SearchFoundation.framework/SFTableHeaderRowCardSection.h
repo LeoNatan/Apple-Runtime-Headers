@@ -78,6 +78,7 @@
 @property(retain, nonatomic) SFCard *nextCard;
 @property(copy, nonatomic) NSArray *parameterKeyPaths;
 @property(copy, nonatomic) NSString *resultIdentifier;
+@property(copy, nonatomic) NSArray *richData;
 @property(readonly) Class superclass;
 
 @end

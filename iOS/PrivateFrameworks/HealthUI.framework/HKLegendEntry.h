@@ -12,20 +12,22 @@
 {
     NSString *_title;
     UIColor *_dotColor;
+    UIColor *_innerDotColor;
     UIColor *_labelColor;
     UIImage *_icon;
 }
 
 + (id)legendEntryWithTitle:(id)arg1 icon:(id)arg2;
 + (id)legendEntryWithTitle:(id)arg1 labelColor:(id)arg2;
-+ (id)legendEntryWithTitle:(id)arg1 dotColor:(id)arg2;
++ (id)legendEntryWithTitle:(id)arg1 dotColor:(id)arg2 innerDotColor:(id)arg3;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UIColor *labelColor; // @synthesize labelColor=_labelColor;
+@property(retain, nonatomic) UIColor *innerDotColor; // @synthesize innerDotColor=_innerDotColor;
 @property(retain, nonatomic) UIColor *dotColor; // @synthesize dotColor=_dotColor;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithTitle:(id)arg1 dotColor:(id)arg2 labelColor:(id)arg3 icon:(id)arg4;
+- (id)initWithTitle:(id)arg1 dotColor:(id)arg2 innerDotColor:(id)arg3 labelColor:(id)arg4 icon:(id)arg5;
 
 @end
 

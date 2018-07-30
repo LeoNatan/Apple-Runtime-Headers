@@ -6,6 +6,10 @@
 
 #import "NSObject.h"
 
+@class PBCodable;
+
 @protocol HDAnalyticSubmissionEvent <NSObject>
+- (PBCodable *)codableRepresentationForAWDSubmission;
+- (unsigned int)AWDMetricID;
 @end
 

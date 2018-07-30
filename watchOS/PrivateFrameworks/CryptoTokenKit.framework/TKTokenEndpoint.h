@@ -8,23 +8,25 @@
 
 @class NSError, NSMapTable, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, NSXPCListenerEndpoint, TKToken;
 
+__attribute__((visibility("hidden")))
 @interface TKTokenEndpoint : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_listener;
     NSMapTable *_sessionMap;
     int _clientCount;
-    NSError *_tokenError;
     NSString *_tokenID;
     TKToken *_token;
+    NSError *_tokenError;
 }
 
-@property(readonly) TKToken *token; // @synthesize token=_token;
+@property(retain) NSError *tokenError; // @synthesize tokenError=_tokenError;
+@property(retain) TKToken *token; // @synthesize token=_token;
 @property(readonly) NSString *tokenID; // @synthesize tokenID=_tokenID;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)acceptNewConnection:(id)arg1;
-- (id)sessionForEvent:(id)arg1 error:(id *)arg2;
+- (id)sessionForEvent:(id)arg1 context:(id *)arg2 error:(id *)arg3;
 @property(readonly) NSXPCListenerEndpoint *endpoint;
 - (void)terminateAfterRemovingClientWithNotification:(CDUnknownBlockType)arg1;
 - (void)resumeWithToken:(id)arg1 tokenError:(id)arg2;

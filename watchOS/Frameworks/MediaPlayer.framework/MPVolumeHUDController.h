@@ -18,7 +18,6 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_updateVisibility;
-- (id)_representedCategoryForCategory:(id)arg1;
 - (void)_addCategory:(id)arg1;
 - (void)unregisterView:(id)arg1 inContext:(id)arg2;
 - (void)registerView:(id)arg1 inContext:(id)arg2;

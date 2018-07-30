@@ -12,7 +12,7 @@
 
 @interface RCLayoutMetrics : NSObject <NSCopying>
 {
-    CDStruct_76b83881 _metricInfo;
+    CDStruct_a8723754 _metricInfo;
     NSString *_label;
     double _hPresentedRecordMemoHeight;
 }
@@ -23,11 +23,10 @@
 + (id)defaultMetrics;
 - (void).cxx_destruct;
 @property(nonatomic) double hPresentedRecordMemoHeight; // @synthesize hPresentedRecordMemoHeight=_hPresentedRecordMemoHeight;
-- (void)setMetricInfo:(CDStruct_76b83881)arg1;
+- (void)setMetricInfo:(CDStruct_a8723754)arg1;
 @property(readonly, nonatomic) double vDeltaLockAbsoluteTopToWaveformTop;
 @property(readonly, nonatomic) double hDetailNavigationBarInset;
 @property(readonly, nonatomic) double hTrimModeInset;
-@property(readonly, nonatomic) double hDeltaAcousticAnnotationLabelToWaveformRight;
 @property(readonly, nonatomic) double hDeltaTrimProgressInset;
 @property(readonly, nonatomic) double hDeltaControlButtonsSpacing;
 @property(readonly, nonatomic) double hDeltaAdditionalInsetFromWaveformEdge;

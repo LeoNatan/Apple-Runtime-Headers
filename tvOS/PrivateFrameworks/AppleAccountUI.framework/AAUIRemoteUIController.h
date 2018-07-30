@@ -22,6 +22,7 @@
 - (void)loader:(id)arg1 didFinishLoadWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_loader:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)loader:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)description;

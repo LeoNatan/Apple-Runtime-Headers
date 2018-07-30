@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTableView.h>
 
+__attribute__((visibility("hidden")))
 @interface NSFontPanelTableView : NSTableView
 {
 }

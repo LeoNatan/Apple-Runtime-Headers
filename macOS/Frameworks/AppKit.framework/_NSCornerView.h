@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (BOOL)_drawingEndSeparator;
-- (id)_vibrancyFilter;
+- (int)_vibrancyBlendMode;
 - (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)fillRect;

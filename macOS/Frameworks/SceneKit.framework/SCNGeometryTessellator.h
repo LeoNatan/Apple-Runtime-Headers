@@ -44,6 +44,7 @@
 - (void)clientWillDie:(id)arg1;
 - (void)removeClient:(id)arg1;
 - (void)addClient:(id)arg1;
+- (id)description;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

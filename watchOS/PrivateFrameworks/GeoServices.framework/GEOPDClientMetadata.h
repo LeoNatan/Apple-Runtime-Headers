@@ -10,6 +10,7 @@
 
 @class GEOABSecondPartyPlaceRequestClientMetaData, GEOAdditionalEnabledMarkets, GEOLocation, NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDClientMetadata : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

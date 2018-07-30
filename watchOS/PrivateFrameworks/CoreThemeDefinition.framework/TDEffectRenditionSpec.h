@@ -19,6 +19,7 @@
 - (id)componentOfType:(unsigned int)arg1;
 - (_Bool)canBePackedWithDocument:(id)arg1;
 - (id)createCSIRepresentationWithCompression:(_Bool)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
+- (void)replaceComponentsWithComponentsFromEffectRendition:(id)arg1 withDocument:(id)arg2;
 - (id)effectPreset;
 - (void)setComponentsFromEffectPreset:(id)arg1 withDocument:(id)arg2;
 

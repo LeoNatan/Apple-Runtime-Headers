@@ -58,8 +58,8 @@
     struct _NSRange _ttEditedRange;
 }
 
-+ (id)filteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange)arg2 forPlainText:(BOOL)arg3 fixAttachments:(BOOL)arg4;
-+ (void)fixAttachmentsForRenderingInAttributedString:(id)arg1 forPlainText:(BOOL)arg2;
++ (id)filteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange)arg2 forPlainText:(BOOL)arg3 forStandardizedText:(BOOL)arg4 fixAttachments:(BOOL)arg5;
++ (void)fixAttachmentsForRenderingInAttributedString:(id)arg1 forPlainText:(BOOL)arg2 forStandardizedText:(BOOL)arg3;
 + (id)removeTextAttachmentsForAttributedString:(id)arg1 translateTTFont:(BOOL)arg2;
 + (id)removeDataDetectorLinksForAttributedString:(id)arg1;
 + (id)standardizedAttributedStringFromAttributedString:(id)arg1 withStyler:(id)arg2 fixAttachments:(BOOL)arg3 translateTTFont:(BOOL)arg4;
@@ -161,6 +161,7 @@
 - (BOOL)_usesSimpleTextEffects;
 - (void)resetTTEdits;
 - (void)restoreAttributedString:(id)arg1;
+@property(readonly, nonatomic) BOOL hasAnyTextViewWithDarkAppearance;
 - (id)initWithAttributedString:(id)arg1 replicaID:(id)arg2 sourceZoomController:(id)arg3 keepSourceZoomController:(BOOL)arg4;
 - (id)initWithAttributedString:(id)arg1 replicaID:(id)arg2;
 - (id)initWithDocument:(id)arg1;

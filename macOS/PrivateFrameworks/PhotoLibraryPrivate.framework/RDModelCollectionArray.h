@@ -44,6 +44,7 @@
 - (void)loadPage:(unsigned long long)arg1;
 - (id)pageForIndex:(unsigned long long)arg1;
 - (id)pageForPageNumber:(unsigned long long)arg1;
+- (id)pageForPageNumber_onQueue:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (id)initWithFilter:(id)arg1 sortPropertyPaths:(id)arg2 sortDirections:(id)arg3 loadOptions:(id)arg4;
 

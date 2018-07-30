@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDBar2DType.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDBar3DType : CHDBar2DType
 {
     int mGapDepth;

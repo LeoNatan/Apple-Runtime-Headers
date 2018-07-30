@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (long long)userInterfaceTag;
+- (id)defaultDataFileName;
 - (Class)presetImagerClass;
 - (id)defaultSeriesType:(unsigned long long)arg1;
 - (id)userInterfaceName;

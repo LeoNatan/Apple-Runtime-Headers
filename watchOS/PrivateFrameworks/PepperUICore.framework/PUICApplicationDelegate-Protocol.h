@@ -12,6 +12,8 @@
 
 @optional
 @property(readonly, nonatomic, getter=puic_applicationStatusBarItem) PUICApplicationStatusBarItem *applicationStatusBarItem;
+- (void)application:(PUICApplication *)arg1 intentDidRunWithUserString:(NSString *)arg2 completion:(void (^)(void))arg3;
+- (void)application:(PUICApplication *)arg1 handleBackgroundSiriRelevantActionsWithCompletion:(void (^)(void))arg2;
 - (void)application:(PUICApplication *)arg1 handleBackgroundRefreshWithUserString:(NSString *)arg2 completion:(void (^)(void))arg3;
 - (_Bool)statusBarShouldPopForBackButtonPressed:(UINavigationController *)arg1;
 - (_Bool)statusBarShoulPopForBackButtonPressed:(UINavigationController *)arg1;

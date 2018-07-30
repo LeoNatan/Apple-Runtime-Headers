@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 + (id)fadeInWithDuration:(double)arg1;
 + (id)fadeAlphaTo:(double)arg1 duration:(double)arg2;
 + (id)fadeAlphaBy:(double)arg1 duration:(double)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -14,7 +14,7 @@
 {
     NSObject<OS_dispatch_queue> *_completionDatabaseQueue;
     WBSURLCompletionDatabase *_completionDatabase;
-    unique_ptr_ccdb242d _items;
+    unique_ptr_91c700ae _items;
 }
 
 - (id).cxx_construct;
@@ -25,7 +25,7 @@
 - (void)enumerateMatchDataForTypedStringHint:(id)arg1 options:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)getBestMatchesForTypedString:(id)arg1 limit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_matchSnapshotForCompletionMatch:(id)arg1;
-- (id)initWithItems:(unique_ptr_ccdb242d)arg1;
+- (id)initWithItems:(unique_ptr_91c700ae)arg1;
 - (id)init;
 
 // Remaining properties

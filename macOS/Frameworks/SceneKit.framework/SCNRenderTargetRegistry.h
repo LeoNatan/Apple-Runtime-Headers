@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary, SCNMTLRenderContext;
 
 __attribute__((visibility("hidden")))
 @interface SCNRenderTargetRegistry : NSObject
 {
-    id <SCNRenderContext> _renderContext;
+    SCNMTLRenderContext *_renderContext;
     NSMutableDictionary *_renderTargets;
     NSMutableDictionary *_nameToRenderTarget;
     NSMutableArray *_purgeArray;
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)releaseRenderTargetNamed:(id)arg1;
 - (id)renderTargetWithName:(id)arg1;
 - (void)releaseRenderTarget:(id)arg1;
-- (id)renderTargetWithDescription:(CDStruct_fd8065c6)arg1 size:(long long)arg2 arrayLength:(id)arg3 name:(long long)arg4 useCount: /* Error: Ran out of types for this method. */;
+- (id)renderTargetWithDescription:(CDStruct_ace98575)arg1 size:(long long)arg2 arrayLength:(id)arg3 name:(long long)arg4 useCount: /* Error: Ran out of types for this method. */;
 - (void)dealloc;
 - (id)initWithRenderContext:(id)arg1;
 @property(readonly, nonatomic) long long numberOfRenderTargets;

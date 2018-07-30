@@ -16,8 +16,9 @@
     NSDictionary *_results;
 }
 
-+ (id)faceDetectorWithTransform:(struct CGAffineTransform)arg1 withExistingFaceprints:(id)arg2 tracking:(BOOL)arg3 cancel:(CDUnknownBlockType)arg4;
++ (id)faceDetectorWithTransform:(struct CGAffineTransform)arg1 withExistingFaceprints:(id)arg2 frameStats:(id)arg3 tracking:(BOOL)arg4 cancel:(CDUnknownBlockType)arg5;
 - (void).cxx_destruct;
+- (id)faceRanges;
 - (id)results;
 
 @end

@@ -20,9 +20,19 @@ __attribute__((visibility("hidden")))
     _Bool _enableCVO;
     unsigned long long _cvoExtensionID;
     _Bool _isVideoProtected;
+    long long _type;
+    unsigned long long _sourceFramerate;
+    int _encodingMode;
+    // Error parsing type: ^AC, name: _videoPriorityPointer
 }
 
 + (_Bool)validateClientDictionary:(id)arg1;
+// Error parsing type for property videoPriorityPointer:
+// Property attributes: T^AC,N,V_videoPriorityPointer
+
+@property(nonatomic) int encodingMode; // @synthesize encodingMode=_encodingMode;
+@property(nonatomic) unsigned long long sourceFramerate; // @synthesize sourceFramerate=_sourceFramerate;
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool isVideoProtected; // @synthesize isVideoProtected=_isVideoProtected;
 @property(nonatomic) unsigned long long cvoExtensionID; // @synthesize cvoExtensionID=_cvoExtensionID;
 @property(nonatomic) _Bool enableCVO; // @synthesize enableCVO=_enableCVO;

@@ -6,7 +6,7 @@
 
 #import <IMAP/IMAPDownload.h>
 
-@class NSMutableData, NSString;
+@class NSError, NSMutableData, NSString;
 
 @interface IMAPSimpleDownload : IMAPDownload
 {
@@ -15,6 +15,7 @@
     unsigned int _bytesFetched;
     BOOL _isComplete;
     unsigned int _expectedLength;
+    NSError *_error;
     NSString *_partSectionSpecifier;
     long long _textSectionSpecifier;
 }
@@ -23,6 +24,8 @@
 @property(readonly, nonatomic) unsigned int expectedLength; // @synthesize expectedLength=_expectedLength;
 @property long long textSectionSpecifier; // @synthesize textSectionSpecifier=_textSectionSpecifier;
 @property(retain) NSString *partSectionSpecifier; // @synthesize partSectionSpecifier=_partSectionSpecifier;
+- (void)setError:(id)arg1;
+- (id)error;
 - (void).cxx_destruct;
 - (id)data;
 - (void)addCommandsToPipeline:(id)arg1 withCache:(id)arg2;

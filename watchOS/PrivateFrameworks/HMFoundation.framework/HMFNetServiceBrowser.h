@@ -8,10 +8,11 @@
 
 #import "NSNetServiceBrowserDelegate.h"
 
-@class NSArray, NSHashTable, NSNetServiceBrowser, NSObject<OS_dispatch_queue>, NSString;
+@class HMFUnfairLock, NSArray, NSHashTable, NSNetServiceBrowser, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HMFNetServiceBrowser : HMFObject <NSNetServiceBrowserDelegate>
 {
+    HMFUnfairLock *_lock;
     NSHashTable *_cachedNetServices;
     _Bool _shouldCache;
     _Bool _browsing;
@@ -19,17 +20,14 @@
     NSString *_domain;
     NSString *_serviceType;
     NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     NSNetServiceBrowser *_internal;
     CDUnknownBlockType _browseBlock;
 }
 
++ (id)logCategory;
 + (id)shortDescription;
 @property(copy, nonatomic) CDUnknownBlockType browseBlock; // @synthesize browseBlock=_browseBlock;
 @property(readonly, nonatomic) NSNetServiceBrowser *internal; // @synthesize internal=_internal;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
@@ -41,9 +39,7 @@
 - (void)netServiceBrowser:(id)arg1 didNotSearch:(id)arg2;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowserWillSearch:(id)arg1;
-- (void)notifyDelegateOfRemovedService:(id)arg1;
-- (void)notifyDelegateOfAddedService:(id)arg1;
-- (void)notifyDelegateBrowserStoppedWithError:(id)arg1;
+- (id)logIdentifier;
 - (void)_stopBrowsingWithError:(id)arg1;
 - (void)stopBrowsing;
 - (void)startBrowsingWithCompletionHandler:(CDUnknownBlockType)arg1;

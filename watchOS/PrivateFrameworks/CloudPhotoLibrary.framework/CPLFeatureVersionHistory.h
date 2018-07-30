@@ -6,23 +6,28 @@
 
 #import "NSObject.h"
 
+#import "NSSecureCoding.h"
+
 @class NSMutableDictionary;
 
-@interface CPLFeatureVersionHistory : NSObject
+@interface CPLFeatureVersionHistory : NSObject <NSSecureCoding>
 {
     NSMutableDictionary *_anchorToVersion;
     NSMutableDictionary *_versionToAnchor;
     int _currentFeatureVersion;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) int currentFeatureVersion; // @synthesize currentFeatureVersion=_currentFeatureVersion;
 - (void).cxx_destruct;
 - (void)enumerateHistoryWithBlock:(CDUnknownBlockType)arg1;
 - (id)description;
-- (int)featureVersionForSyncAnchor:(id)arg1;
-- (id)syncAnchorForFeatureVersion:(int)arg1;
-- (void)addSyncAnchor:(id)arg1 forFeatureVersion:(int)arg2;
+- (int)featureVersionForSyncAnchor:(struct NSData *)arg1;
+- (struct NSData *)syncAnchorForFeatureVersion:(int)arg1;
+- (void)addSyncAnchor:(struct NSData *)arg1 forFeatureVersion:(int)arg2;
 - (id)initWithCurrentFeatureVersion:(int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

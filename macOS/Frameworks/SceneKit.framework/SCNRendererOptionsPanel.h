@@ -6,10 +6,12 @@
 
 #import "NSPanel.h"
 
+@class SCNRendererOptionsPanelController;
+
 __attribute__((visibility("hidden")))
 @interface SCNRendererOptionsPanel : NSPanel
 {
-    id _controller;
+    SCNRendererOptionsPanelController *_controller;
 }
 
 + (id)rendererOptionsPanelForView:(id)arg1;

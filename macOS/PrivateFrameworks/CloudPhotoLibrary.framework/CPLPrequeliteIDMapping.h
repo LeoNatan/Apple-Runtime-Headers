@@ -14,19 +14,20 @@
 {
 }
 
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (id)scopeIndexColumnName;
 - (id)status;
-- (BOOL)resetWithError:(id *)arg1;
-- (BOOL)resetAllFinalCloudIdentifiersWithError:(id *)arg1;
-- (BOOL)removeMappingForLocalIdentifier:(id)arg1 error:(id *)arg2;
-- (BOOL)addAddEventForRecordWithLocalIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
-- (BOOL)addDeleteEventForRecordWithLocalIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
-- (BOOL)removeMappingForCloudIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)resetAllFinalCloudIdentifiersForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)removeMappingForLocalScopedIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)addAddEventForRecordWithLocalScopedIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)addDeleteEventForRecordWithLocalScopedIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)removeMappingForCloudScopedIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)hasPendingIdentifiers;
-- (BOOL)markAllPendingIdentifiersAsFinalWithError:(id *)arg1;
-- (BOOL)setFinalCloudIdentifier:(id)arg1 forPendingCloudIdentifier:(id)arg2 error:(id *)arg3;
-- (BOOL)addCloudIdentifier:(id)arg1 forLocalIdentifier:(id)arg2 isFinal:(BOOL)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
-- (id)localIdentifierForCloudIdentifier:(id)arg1 isFinal:(char *)arg2;
-- (id)cloudIdentifierForLocalIdentifier:(id)arg1 isFinal:(char *)arg2;
+- (BOOL)markAllPendingIdentifiersForScopeWithIdentifier:(id)arg1 asFinalWithError:(id *)arg2;
+- (BOOL)setFinalCloudScopedIdentifier:(id)arg1 forPendingCloudScopedIdentifier:(id)arg2 error:(id *)arg3;
+- (BOOL)addCloudScopedIdentifier:(id)arg1 forLocalScopedIdentifier:(id)arg2 isFinal:(BOOL)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
+- (id)localScopedIdentifierForCloudScopedIdentifier:(id)arg1 isFinal:(char *)arg2;
+- (id)cloudScopedIdentifierForLocalScopedIdentifier:(id)arg1 isFinal:(char *)arg2;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
 

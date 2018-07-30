@@ -12,9 +12,11 @@
 {
     NSString *_title;
     NSString *_externalID;
+    BOOL _predictable;
 }
 
 - (void).cxx_destruct;
+- (void)updateActivity:(id)arg1;
 - (id)remindersListFromStore:(id)arg1;
 - (BOOL)_isMatchForRemindersList:(id)arg1;
 - (id)dictionary;

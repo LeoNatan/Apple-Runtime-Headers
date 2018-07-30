@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *machineName; // @dynamic machineName;
 - (BOOL)isEqual:(id)arg1;
 - (void)updatePersonName;
-- (void)update:(id)arg1;
+- (void)update:(id)arg1 darkBackground:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithNode:(const struct TFENode *)arg1;
 

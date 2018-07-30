@@ -6,6 +6,7 @@
 
 #import <ManagedConfigurationUI/MCItemDetailsSummaryCell.h>
 
+__attribute__((visibility("hidden")))
 @interface MCProfileDetailsSummaryCell : MCItemDetailsSummaryCell
 {
 }

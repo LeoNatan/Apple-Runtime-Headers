@@ -9,6 +9,7 @@
 @class NSArray, NSSet, NSString, PBSDisplayMode;
 
 @protocol PBSDisplayState <NSObject>
+@property(readonly, nonatomic) _Bool detectedPoorCableConnection;
 @property(readonly, nonatomic) long long displayConnection;
 @property(readonly, nonatomic) _Bool shouldModeSwitchForFrameRate;
 @property(readonly, nonatomic) _Bool shouldModeSwitchForDynamicRange;
@@ -25,5 +26,7 @@
 - (NSArray *)filterModes:(_Bool (^)(PBSDisplayMode *))arg1;
 - (void)removeStateObserver:(id <PBSDisplayStateObserver>)arg1;
 - (void)addStateObserver:(id <PBSDisplayStateObserver>)arg1;
+- (_Bool)isAdvertisingHDMI2;
+- (NSSet *)promotedVirtualDisplayModes;
 @end
 

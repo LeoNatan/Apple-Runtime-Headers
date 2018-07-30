@@ -32,6 +32,7 @@
 - (void)stateDidChange:(long long)arg1;
 - (void)bandwidthStateUpdated:(id)arg1;
 - (void)lostPeer:(id)arg1 ofType:(unsigned char)arg2;
+- (void)foundPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (void)stoppedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (void)stopTrackingPeer:(id)arg1 forType:(long long)arg2;
 - (void)failedToStartTrackingPeer:(id)arg1 error:(id)arg2;

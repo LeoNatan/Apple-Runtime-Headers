@@ -9,12 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserViewSwitchAnimator : NSObject
 {
-    struct TNSRef<NSWindow *, void> _parentWindow;
-    struct TNSRef<NSWindow *, void> _coverWindow;
+    struct TNSRef<NSWindow, void> _parentWindow;
+    struct TNSRef<NSWindow, void> _coverWindow;
     struct TRef<CGImage *, TRetainReleasePolicy<CGImageRef>> _initialBrowserImage;
-    struct TNSRef<CALayer *, void> _initialBrowserLayer;
+    struct TNSRef<CALayer, void> _initialBrowserLayer;
     struct TRef<CGImage *, TRetainReleasePolicy<CGImageRef>> _finalBrowserImage;
-    struct TNSRef<CALayer *, void> _finalBrowserLayer;
+    struct TNSRef<CALayer, void> _finalBrowserLayer;
 }
 
 - (id).cxx_construct;

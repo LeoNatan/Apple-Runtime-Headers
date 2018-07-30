@@ -32,6 +32,7 @@
 @property(readonly, retain, nonatomic) CSSearchableItem *searchableItem;
 - (_Bool)shouldExcludeFromIndex;
 - (_Bool)_isMessagePartOfExistingThreadWithHeaders:(id)arg1;
+@property(readonly, nonatomic) unsigned long long bodySizeInBytes;
 @property(readonly, copy, nonatomic) NSString *domainIdentifier;
 - (long long)compare:(id)arg1;
 - (void)dealloc;

@@ -21,6 +21,7 @@
     NSString *_appleID;
     NSNumber *_personID;
     NSString *_personIDHash;
+    NSString *_altDSID;
     NSString *_title;
     NSDate *_joinDate;
     NSString *_iTunesNotLinkedMessage;
@@ -39,6 +40,7 @@
 @property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
 @property(copy, nonatomic) NSDate *joinDate; // @synthesize joinDate=_joinDate;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy, nonatomic) NSString *personIDHash; // @synthesize personIDHash=_personIDHash;
 @property(copy, nonatomic) NSNumber *personID; // @synthesize personID=_personID;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;

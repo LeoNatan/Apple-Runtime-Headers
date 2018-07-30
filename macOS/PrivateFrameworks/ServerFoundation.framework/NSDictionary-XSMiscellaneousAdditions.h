@@ -20,6 +20,7 @@
 - (id)stringForKey:(id)arg1;
 - (id)numberForKey:(id)arg1;
 - (id)propertyListDictionary;
+- (BOOL)isServiceAccessControlGroup;
 - (BOOL)isSystemAccount;
 - (id)dictionaryWithPasswordsRemoved;
 - (id)xmlDescription;

@@ -6,31 +6,37 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, OS_remote_device_browser, OS_xpc_remote_connection;
+@class CSDispatchGroup, NSObject<OS_dispatch_queue>, OS_remote_device, OS_xpc_remote_connection;
 
 @interface CSRemoteControlClient : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     OS_xpc_remote_connection *_connection;
-    OS_remote_device_browser *_deviceBrowser;
-    NSObject<OS_dispatch_group> *_deviceWaitingGroup;
+    CSDispatchGroup *_deviceWaitingGroup;
     id <CSRemoteControlClientDelegate> _delegate;
+    OS_remote_device *_device;
 }
 
+@property(retain, nonatomic) OS_remote_device *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CSRemoteControlClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_getMyriadInfoFromServerMessage:(id)arg1;
+- (id)_dictionaryWithContentsOfXPCObject:(id)arg1;
+- (BOOL)_saveTransferredData:(id)arg1 to:(id)arg2 numberOfSamplesToWrite:(unsigned long long)arg3;
+- (void)_handleWriteFileMessage:(id)arg1 withSpeakerModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getFirstPassRunningMode:(CDUnknownBlockType)arg1;
+- (void)requestUpdatedSATAudioForSpeakerModel:(id)arg1 requestTimestamp:(id)arg2 wtihUpdateBlock:(CDUnknownBlockType)arg3;
 - (void)clearTriggerCount:(CDUnknownBlockType)arg1;
 - (void)getTriggerCount:(CDUnknownBlockType)arg1;
 - (BOOL)transferInterstitialAudioFiles:(id)arg1 interstitialLevel:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)invalidateInterstitialWithLevel:(long long)arg1;
 - (void)voiceTriggerEnabledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setVoiceTriggerEnable:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (BOOL)transferVoiceTriggerAsset:(id)arg1 forLanguageCode:(id)arg2;
+- (void)transferVoiceTriggerAsset:(id)arg1 forLanguageCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)transferVoiceTriggerSpeakerModel:(id)arg1;
-- (BOOL)_transferFile:(id)arg1 at:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)readAndClearVoiceTriggeredTokenWithMyriadHash:(id *)arg1;
-- (BOOL)readAndClearVoiceTriggeredToken;
-- (BOOL)readVoiceTriggeredToken;
+- (void)_transferFile:(id)arg1 at:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)readAndClearVoiceTriggeredTokenWithCompletion:(CDUnknownBlockType)arg1;
+- (void)readVoiceTriggeredTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleServerMessage:(id)arg1;
 - (void)_handleServerError:(id)arg1;
 - (void)_handleServerEvent:(id)arg1;

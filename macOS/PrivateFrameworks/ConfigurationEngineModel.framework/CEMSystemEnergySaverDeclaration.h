@@ -8,41 +8,39 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSNumber, NSString;
+@class CEMSystemEnergySaverDeclaration_EnergySaverSchedule, CEMSystemEnergySaverDeclaration_PowerSettings, NSNumber, NSString;
 
 @interface CEMSystemEnergySaverDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    CEMSystemEnergySaverDeclaration_PowerSettings *_payloadComappleEnergySaverdesktopACPower;
+    CEMSystemEnergySaverDeclaration_PowerSettings *_payloadComappleEnergySaverportableACPower;
+    CEMSystemEnergySaverDeclaration_PowerSettings *_payloadComappleEnergySaverportableBatteryPower;
+    CEMSystemEnergySaverDeclaration_EnergySaverSchedule *_payloadComappleEnergySaverdesktopSchedule;
+    NSNumber *_payloadSleepDisabled;
+    NSNumber *_payloadDestroyFVKeyOnStandby;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withComappleEnergySaverdesktopACPower:(id)arg2 withComappleEnergySaverportableACPower:(id)arg3 withComappleEnergySaverportableBatteryPower:(id)arg4 withComappleEnergySaverdesktopSchedule:(id)arg5 withSleepDisabled:(id)arg6 withDestroyFVKeyOnStandby:(id)arg7;
 + (id)restrictionPayloadKeys;
-+ (id)PowerOnSettings_allowedPayloadKeys;
-+ (id)ComappleEnergySaverdesktopSchedule_allowedPayloadKeys;
-+ (id)EnergySaverSettings_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadPowerOnSettings:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadComappleEnergySaverdesktopSchedule:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadEnergySaverSettings:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadPowerOnSettings_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadComappleEnergySaverdesktopSchedule_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadEnergySaverSettings_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadDestroyFVKeyOnStandby; // @synthesize payloadDestroyFVKeyOnStandby=_payloadDestroyFVKeyOnStandby;
+@property(copy, nonatomic) NSNumber *payloadSleepDisabled; // @synthesize payloadSleepDisabled=_payloadSleepDisabled;
+@property(copy, nonatomic) CEMSystemEnergySaverDeclaration_EnergySaverSchedule *payloadComappleEnergySaverdesktopSchedule; // @synthesize payloadComappleEnergySaverdesktopSchedule=_payloadComappleEnergySaverdesktopSchedule;
+@property(copy, nonatomic) CEMSystemEnergySaverDeclaration_PowerSettings *payloadComappleEnergySaverportableBatteryPower; // @synthesize payloadComappleEnergySaverportableBatteryPower=_payloadComappleEnergySaverportableBatteryPower;
+@property(copy, nonatomic) CEMSystemEnergySaverDeclaration_PowerSettings *payloadComappleEnergySaverportableACPower; // @synthesize payloadComappleEnergySaverportableACPower=_payloadComappleEnergySaverportableACPower;
+@property(copy, nonatomic) CEMSystemEnergySaverDeclaration_PowerSettings *payloadComappleEnergySaverdesktopACPower; // @synthesize payloadComappleEnergySaverdesktopACPower=_payloadComappleEnergySaverdesktopACPower;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadDestroyFVKeyOnStandby;
-@property(readonly, nonatomic) NSNumber *payloadSleepDisabled;
-@property(readonly, nonatomic) NSDictionary *payloadComappleEnergySaverdesktopSchedule;
-@property(readonly, nonatomic) NSDictionary *payloadComappleEnergySaverportableBatteryPower;
-@property(readonly, nonatomic) NSDictionary *payloadComappleEnergySaverportableACPower;
-@property(readonly, nonatomic) NSDictionary *payloadComappleEnergySaverdesktopACPower;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

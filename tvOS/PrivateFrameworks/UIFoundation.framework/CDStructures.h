@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSFont, NSMutableParagraphStyle;
+@class NSFont, NSMutableParagraphStyle, NSString;
 
 #pragma mark Function Pointers and Blocks
 
@@ -38,11 +38,78 @@ struct CGSize {
     double height;
 };
 
+struct NSEdgeInsets {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
 struct RTFColor;
 
 struct RTFFont;
 
 struct RTFStyle;
+
+struct UIEdgeInsets {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
+struct UIKeyAndScopeToValueCache {
+    unsigned int previousScope;
+    unsigned int previousKey;
+    struct UINibDecoderValue *previousValue;
+};
+
+struct UIKeyToKeyIDCache {
+    NSString *previousKey[64];
+    void *previousKeyID[64];
+    _Bool previousKeyExists[64];
+    long long hashHits;
+    long long hashHotMisses;
+    long long hashColdMisses;
+};
+
+struct UINibArchiveTableInfo {
+    unsigned int count;
+    unsigned int offset;
+};
+
+struct UINibDecoderHeader {
+    unsigned char type[10];
+    unsigned int formatVersion;
+    unsigned int coderVersion;
+    struct UINibArchiveTableInfo objects;
+    struct UINibArchiveTableInfo keys;
+    struct UINibArchiveTableInfo values;
+    struct UINibArchiveTableInfo classes;
+};
+
+struct UINibDecoderObjectEntry {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
+struct UINibDecoderRecursiveState {
+    long long objectID;
+    long long nextGenericKey;
+    unsigned int nextValueSearchIndex;
+    _Bool replaced;
+};
+
+struct UINibDecoderValue {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
+struct UIStringIDTableBucket {
+    id _field1;
+    unsigned long long _field2;
+    struct UIStringIDTableBucket *_field3;
+};
 
 struct _NSAttributeDictionaryElement {
     unsigned long long hash;
@@ -227,10 +294,11 @@ typedef struct {
         unsigned int :1;
         unsigned int :2;
         unsigned int :1;
-        unsigned int :10;
+        unsigned int :3;
+        unsigned int :7;
     } _field20;
     void *_field21[0];
-} CDStruct_9b8416ed;
+} CDStruct_3fda14a5;
 
 #pragma mark Typedef'd Unions
 

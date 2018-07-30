@@ -6,43 +6,29 @@
 
 #import "NSObject.h"
 
-#import "SecureUI.h"
-
-@class NSAlert, NSString, NSWindow;
-
 __attribute__((visibility("hidden")))
-@interface ExtensionsAlertController : NSObject <SecureUI>
+@interface ExtensionsAlertController : NSObject
 {
-    BOOL hasReceivedUntrustedEvents;
-    BOOL runningUnderSecureUIEventSanitizer;
-    NSAlert *_alert;
 }
 
-+ (void)offerUpgradeForExtension:(id)arg1 toGalleryVersion:(id)arg2 orDeveloperVersion:(id)arg3 defaultToGalleryVersion:(BOOL)arg4 responseBlock:(CDUnknownBlockType)arg5;
 + (void)offerUpgradeForExtension:(id)arg1 toGalleryVersion:(id)arg2 defaultToGalleryVersion:(BOOL)arg3 responseBlock:(CDUnknownBlockType)arg4;
-+ (void)confirmUserTrustsEnablingExtension:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
-+ (void)offerInstallationOfExtension:(id)arg1 ofGalleryVersion:(id)arg2 orDeveloperVersion:(id)arg3 responseBlock:(CDUnknownBlockType)arg4;
++ (void)showPromptForExtensionsDisabledDueToResourceHogging:(id)arg1 developerHosted:(id)arg2;
++ (void)reportRefusalToInstallDeveloperHostedExtension:(id)arg1;
++ (void)showPromptForExtensionsDisabledDueToDeveloperHosted:(id)arg1;
++ (void)confirmUserIntendsToInstallResourceHoggingExtension:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
++ (void)confirmUserIntendsToEnableResourceHoggingExtension:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
++ (void)showPromptForExtensionsDisabledDueToResourceHogging:(id)arg1;
++ (void)confirmUserTrustsEnablingExtension:(id)arg1 warnAboutExtensionPerformance:(BOOL)arg2 responseBlock:(CDUnknownBlockType)arg3;
++ (void)offerInstallationOfExtensionFromGallery:(id)arg1 version:(id)arg2 responseBlock:(CDUnknownBlockType)arg3;
 + (void)showPromptForExtensionDisabledBecauseItHasRequestedAdditionalPermissions:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
 + (void)_handleExtensionTurnedOffAlertResponse:(long long)arg1 responseBlock:(CDUnknownBlockType)arg2;
 + (void)confirmUserIntendsToUseSafariExtensionBuilder:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
 + (void)confirmUserIntendsToInstallEphemeralExtension:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
-+ (void)confirmUserTrustsInstallingExtension:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
++ (void)confirmUserTrustsInstallingExtension:(id)arg1 warnAboutExtensionPerformance:(BOOL)arg2 responseBlock:(CDUnknownBlockType)arg3;
 + (void)reportRefusalToInstallAppleSignedExtension:(id)arg1 withIdentifier:(id)arg2;
 + (void)reportInstallationErrorForExtension:(id)arg1;
 + (void)reportBlacklistedExtension:(id)arg1 withIcon:(id)arg2;
 + (void)reportExtensionsAreNotEnabled;
-@property(readonly, nonatomic) NSAlert *alert; // @synthesize alert=_alert;
-@property(nonatomic) BOOL runningUnderSecureUIEventSanitizer; // @synthesize runningUnderSecureUIEventSanitizer;
-@property(nonatomic) BOOL hasReceivedUntrustedEvents; // @synthesize hasReceivedUntrustedEvents;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) NSWindow *window;
-- (id)initWithAlert:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

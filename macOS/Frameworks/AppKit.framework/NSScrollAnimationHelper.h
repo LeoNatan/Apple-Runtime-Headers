@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAnimationHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface NSScrollAnimationHelper : NSAnimationHelper
 {
     id _delegate;

@@ -8,7 +8,6 @@
 
 @class ECIntToTwoIntKeyCache, EDColumnInfoCollection, EDRowBlock, EDRowBlocks, EDWorksheet, NSArray, NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface EPStyleFlattener : EDProcessor
 {
     EDWorksheet *mWorksheet;
@@ -29,8 +28,8 @@ __attribute__((visibility("hidden")))
     unsigned int mSecondColumnStripeSize;
 }
 
+- (void).cxx_destruct;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
-- (void)dealloc;
 - (id)copyFlattenFont:(id)arg1 differentialFont:(id)arg2;
 - (unsigned long long)flattenFillIndex:(unsigned long long)arg1 differentialFill:(id)arg2;
 - (id)copyFlattenBorder:(int)arg1 borders:(id)arg2 differentialBorders:(id)arg3 flag:(_Bool)arg4 precedence:(unsigned long long)arg5 row:(int)arg6 column:(int)arg7;

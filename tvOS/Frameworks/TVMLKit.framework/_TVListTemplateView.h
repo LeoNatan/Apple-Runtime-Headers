@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *bgImageView; // @synthesize bgImageView=_bgImageView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) long long listAlignment;
 - (void)adjustScrollForListView:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)setOverlayBlurOffset:(double)arg1;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSCache, NSObject<OS_dispatch_queue>, NSObject<_PASSqliteErrorHandlerProtocol>, NSOperationQueue, NSString;
+@class NSCache, NSMutableArray, NSObject<_PASSqliteErrorHandlerProtocol>, NSString;
 
 @interface _PASSqliteDatabase : NSObject
 {
@@ -17,15 +17,8 @@
     NSObject<_PASSqliteErrorHandlerProtocol> *_errorHandler;
     NSString *_filename;
     NSCache *_queryCache;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    NSOperationQueue *_operationQueue;
-    struct _opaque_pthread_t {
-        long long _field1;
-        struct __darwin_pthread_handler_rec *_field2;
-        char _field3[8176];
-    } *_threadInQueue;
-    struct _opaque_pthread_mutex_t _threadInQueueLock;
+    struct _opaque_pthread_mutex_t _lock;
+    NSMutableArray *_statementsToFinalizeAsync;
     _Bool _currentExclusivity;
     _Bool _isInMemory;
 }
@@ -55,8 +48,8 @@
 @property(readonly, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;
 - (id)languageForFTSTable:(id)arg1;
+- (void)finalizeLater:(struct sqlite3_stmt *)arg1;
 - (void)withDbLockExecuteBlock:(CDUnknownBlockType)arg1;
-- (void)withDbLockExecuteAsyncBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)numberOfRowsInTable:(id)arg1;
 - (_Bool)hasIndexNamed:(id)arg1;
 - (_Bool)hasColumnOnTable:(id)arg1 named:(id)arg2;

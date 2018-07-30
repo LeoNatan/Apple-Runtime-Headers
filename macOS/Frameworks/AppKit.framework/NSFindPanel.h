@@ -10,6 +10,7 @@
 
 @class NSButton, NSComboBox<NSFindPatternField>, NSMutableArray, NSPopUpButton, NSString, NSTextField, NSTextView;
 
+__attribute__((visibility("hidden")))
 @interface NSFindPanel : NSPanel <NSWindowDelegate>
 {
     NSComboBox<NSFindPatternField> *_findComboBox;

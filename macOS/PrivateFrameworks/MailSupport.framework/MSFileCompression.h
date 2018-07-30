@@ -12,9 +12,12 @@
 
 + (id)_compressionLock;
 + (struct CompressionQueueContext_s *)_compressionQueueContext;
++ (BOOL)_doCompressFile:(const char *)arg1 errorCode:(long long *)arg2;
 + (BOOL)_compressFile:(const char *)arg1 error:(id *)arg2;
-+ (BOOL)compressDirectory:(id)arg1 shouldCancel:(CDUnknownBlockType)arg2 error:(id *)arg3;
-+ (BOOL)compressFile:(id)arg1 error:(id *)arg2;
++ (BOOL)_compressFileInPlace:(const char *)arg1 error:(id *)arg2;
++ (BOOL)_compressFile:(const char *)arg1 compressInPlace:(BOOL)arg2 error:(id *)arg3;
++ (BOOL)compressDirectory:(id)arg1 compressInPlace:(BOOL)arg2 shouldCancel:(CDUnknownBlockType)arg3 error:(id *)arg4;
++ (BOOL)compressFile:(id)arg1 compressInPlace:(BOOL)arg2 error:(id *)arg3;
 + (id)log;
 
 @end

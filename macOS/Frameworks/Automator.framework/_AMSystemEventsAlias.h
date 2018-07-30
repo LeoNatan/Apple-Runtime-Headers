@@ -12,17 +12,15 @@
 {
 }
 
-- (void)printPrintDialog:(BOOL)arg1 withProperties:(id)arg2;
-- (id)open;
 @property(readonly, copy) NSString *version;
 @property(readonly, copy) NSString *typeIdentifier;
 @property BOOL stationery;
 @property(readonly, copy) NSString *shortVersion;
 @property(readonly, copy) NSString *productVersion;
 @property(readonly, copy) NSString *kind;
-@property(copy) NSString *fileType;
-@property(copy) NSString *creatorType;
-- (id)items;
+@property(copy) id fileType;
+@property(copy) id defaultApplication;
+@property(copy) id creatorType;
 - (id)folders;
 - (id)filePackages;
 - (id)files;

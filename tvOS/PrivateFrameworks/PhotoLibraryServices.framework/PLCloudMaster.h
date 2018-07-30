@@ -8,7 +8,7 @@
 
 #import "PLSyncableObject.h"
 
-@class NSDate, NSManagedObject, NSSet, NSString;
+@class NSDate, NSManagedObject, NSSet, NSString, PLMomentShare;
 
 @interface PLCloudMaster : PLManagedObject <PLSyncableObject>
 {
@@ -19,13 +19,14 @@
 + (id)_originalTypes;
 + (void)resetCloudMastersStateInManagedObjectContext:(id)arg1 hardReset:(_Bool)arg2;
 + (void)deleteAllCloudMastersInManagedObjectContext:(id)arg1;
-+ (id)cloudMastersByGUID:(id)arg1 inManagedObjectContext:(id)arg2;
-+ (id)cloudMastersWithGUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
-+ (id)cloudMasterWithGUID:(id)arg1 inManagedObjectContext:(id)arg2;
-+ (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2;
++ (id)cloudMasterWithScopedIdentifier:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)cloudMasterWithGUID:(id)arg1 inMomentShare:(id)arg2 inManagedObjectContext:(id)arg3;
++ (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2 inMomentShare:(id)arg3;
+- (void)_promptForNilScopeIdentifierRadar;
+- (id)scopedIdentifier;
 - (id)cplFullRecord;
 @property(readonly, retain, nonatomic) id localID;
-- (_Bool)allOriginalsAreLocallyAvailableForAssetUuid:(id)arg1;
+- (_Bool)allOriginalsAreLocallyAvailableForAssetUuid:(id)arg1 useOriginalAltInsteadOfOriginal:(_Bool)arg2;
 - (_Bool)allOriginalsAreUploaded;
 - (unsigned long long)sizeOfOriginal;
 @property(readonly, copy) NSString *description;
@@ -37,6 +38,12 @@
 - (void)awakeFromInsert;
 - (void)deleteAllResourcesForAssetUuid:(id)arg1;
 - (id)cplResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
+- (void)nrm_applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
+- (_Bool)hasResourcesOtherThanForAssetUuid:(id)arg1;
+- (id)allMasterResources;
+- (id)nrm_assetUUIDToCloudResources;
+- (id)nrm_cloudResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
+- (id)nrm_cloudResourcesForResourceType:(unsigned long long)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *assets; // @dynamic assets;
@@ -48,11 +55,15 @@
 @property(readonly) unsigned long long hash;
 @property(retain, nonatomic) NSDate *importDate; // @dynamic importDate;
 @property(retain, nonatomic) NSString *importSessionID; // @dynamic importSessionID;
+@property(nonatomic) short importedBy; // @dynamic importedBy;
 @property(retain, nonatomic) NSManagedObject *mediaMetadata; // @dynamic mediaMetadata;
 @property(retain, nonatomic) NSString *mediaMetadataType; // @dynamic mediaMetadataType;
+@property(retain, nonatomic) NSSet *modernResources; // @dynamic modernResources;
+@property(retain, nonatomic) PLMomentShare *momentShare; // @dynamic momentShare;
 @property(retain, nonatomic) NSString *originalFilename; // @dynamic originalFilename;
 @property(nonatomic) short originalOrientation; // @dynamic originalOrientation;
 @property(copy, nonatomic) NSString *originatingAssetIdentifier; // @dynamic originatingAssetIdentifier;
+@property(nonatomic) short placeholderState; // @dynamic placeholderState;
 @property(retain, nonatomic) NSSet *resources; // @dynamic resources;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) NSString *uniformTypeIdentifier; // @dynamic uniformTypeIdentifier;

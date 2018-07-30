@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class IDSSession, NSData, NSError, NSString;
+@class IDSSession, NSArray, NSData, NSError, NSString;
 
 @protocol IDSSessionDelegate <NSObject>
 
 @optional
+- (void)session:(IDSSession *)arg1 didReceiveReport:(NSArray *)arg2;
 - (void)session:(NSString *)arg1 didReceiveData:(NSData *)arg2;
 - (void)sessionEnded:(IDSSession *)arg1 withReason:(unsigned int)arg2 error:(NSError *)arg3;
 - (void)sessionEnded:(IDSSession *)arg1;

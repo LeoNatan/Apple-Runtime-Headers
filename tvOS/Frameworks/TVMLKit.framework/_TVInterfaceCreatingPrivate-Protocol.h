@@ -6,12 +6,14 @@
 
 #import "TVInterfaceCreating.h"
 
-@class NSString, NSURL, TVImageProxy, TVViewElement;
+@class NSString, NSURL, TVImageProxy, TVViewElement, UINavigationController;
 
 @protocol _TVInterfaceCreatingPrivate <TVInterfaceCreating>
 
 @optional
+- (UINavigationController *)_navigationControllerForTabIdentifier:(NSString *)arg1;
 - (NSURL *)_styleSheetURLForTemplate:(NSString *)arg1;
 - (TVImageProxy *)_imageProxyForElement:(TVViewElement *)arg1;
+- (void)_parseAppConfigurationForElement:(TVViewElement *)arg1;
 @end
 

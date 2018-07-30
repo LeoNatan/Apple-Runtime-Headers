@@ -6,13 +6,11 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface WXTableRowProperties : NSObject
 {
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)initialize;
 
 @end
 

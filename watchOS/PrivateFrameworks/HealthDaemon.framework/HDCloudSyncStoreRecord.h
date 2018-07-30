@@ -39,6 +39,9 @@
 - (id)oldSequenceHeaderRecord;
 - (id)clearCurrentSequenceHeaderRecord;
 - (id)currentSequenceHeaderRecord;
+@property(readonly, nonatomic) HDCloudSyncSequenceRecord *sequenceRecord;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
 - (int)compare:(id)arg1;
 - (id)initWithOwnerIdentifier:(id)arg1 storeIdentifier:(id)arg2 pendingOwner:(id)arg3 active:(_Bool)arg4 record:(id)arg5 schemaVersion:(int)arg6;
 - (id)initInSyncCircle:(id)arg1 ownerIdentifier:(id)arg2 storeIdentifier:(id)arg3;

@@ -69,6 +69,7 @@
 - (id)defaultVibrationPatternForAlertType:(int)arg1;
 - (id)defaultVibrationNameForAlertType:(int)arg1;
 - (id)_defaultVibrationIdentifierForAlertType:(int)arg1 topic:(id)arg2 correspondingToneIdentifier:(id)arg3;
+- (id)defaultVibrationIdentifierForAlertType:(int)arg1 topic:(id)arg2;
 - (id)defaultVibrationIdentifierForAlertType:(int)arg1;
 - (id)currentVibrationPatternForAlertType:(int)arg1;
 - (id)currentVibrationNameForAlertType:(int)arg1;

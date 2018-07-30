@@ -7,43 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSetMessageAttributeIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBIntentMetadata;
 
-@interface _INPBSetMessageAttributeIntent : PBCodable <NSCopying>
+@interface _INPBSetMessageAttributeIntent : PBCodable <_INPBSetMessageAttributeIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _attribute;
-    NSMutableArray *_identifiers;
-    _INPBIntentMetadata *_intentMetadata;
     struct {
         unsigned int attribute:1;
     } _has;
+    int _attribute;
+    NSArray *_identifiers;
+    _INPBIntentMetadata *_intentMetadata;
 }
 
-+ (Class)identifierType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *identifiers; // @synthesize identifiers=_identifiers;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
+@property(nonatomic) int attribute; // @synthesize attribute=_attribute;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) BOOL hasIntentMetadata;
+- (id)identifierAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long identifiersCount;
+- (void)addIdentifier:(id)arg1;
+- (void)clearIdentifiers;
 - (int)StringAsAttribute:(id)arg1;
 - (id)attributeAsString:(int)arg1;
 @property(nonatomic) BOOL hasAttribute;
-@property(nonatomic) int attribute; // @synthesize attribute=_attribute;
-- (id)identifierAtIndex:(unsigned long long)arg1;
-- (unsigned long long)identifiersCount;
-- (void)addIdentifier:(id)arg1;
-- (void)clearIdentifiers;
-@property(readonly, nonatomic) BOOL hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

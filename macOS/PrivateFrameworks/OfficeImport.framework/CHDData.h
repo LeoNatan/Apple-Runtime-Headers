@@ -8,7 +8,6 @@
 
 @class CHDDataValuesCollection, CHDFormula, EDResources;
 
-__attribute__((visibility("hidden")))
 @interface CHDData : NSObject
 {
     CHDDataValuesCollection *mDataValues;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (id)dataWithDataPointCount:(unsigned long long)arg1 resources:(id)arg2;
 + (id)dataWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (id)firstValueContentFormatWithWorkbook:(id)arg1;
 - (_Bool)isEmpty;
@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
 - (void)setFormula:(id)arg1 chart:(id)arg2;
 - (id)formula;
 - (unsigned long long)averageDataPointDecimalCount;
+- (struct CGPoint)minMaxValues;
 - (void)setDataValueIndexCount:(unsigned long long)arg1;
 - (unsigned long long)dataValueIndexCount;
 - (id)dataValues;
-- (void)dealloc;
 - (id)initWithDataPointCount:(unsigned long long)arg1 resources:(id)arg2;
 - (id)initWithResources:(id)arg1;
 - (void)setContentFormatId:(unsigned long long)arg1;

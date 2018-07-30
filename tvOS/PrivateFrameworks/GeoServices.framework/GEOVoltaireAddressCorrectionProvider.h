@@ -21,7 +21,9 @@
     CDUnknownBlockType _updateErrorHandler;
 }
 
++ (_Bool)acUpdateNeedsProxy;
 + (id)acUpdateURL;
++ (_Bool)acInitNeedsProxy;
 + (id)acInitURL;
 @property(copy, nonatomic) CDUnknownBlockType updateErrorHandler; // @synthesize updateErrorHandler=_updateErrorHandler;
 @property(copy, nonatomic) CDUnknownBlockType updateFinishedHandler; // @synthesize updateFinishedHandler=_updateFinishedHandler;

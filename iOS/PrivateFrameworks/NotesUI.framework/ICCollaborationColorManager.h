@@ -18,7 +18,7 @@
 - (id)participantAXDisplayNameForUserID:(id)arg1 forNote:(id)arg2;
 - (id)containerScopedUserRecordName;
 - (id)baseColorValuesForUserID:(id)arg1;
-- (struct UIColor *)highlightColorForUserID:(id)arg1 withPercentage:(double)arg2 forNote:(id)arg3;
+- (struct UIColor *)highlightColorForUserID:(id)arg1 withPercentage:(double)arg2 forNote:(id)arg3 darkAppearance:(_Bool)arg4;
 - (id)init;
 
 @end

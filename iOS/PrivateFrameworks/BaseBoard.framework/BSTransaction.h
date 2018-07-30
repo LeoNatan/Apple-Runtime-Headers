@@ -41,7 +41,8 @@
 @property(readonly, nonatomic, getter=isAborted) _Bool aborted; // @synthesize aborted=_aborted;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic, getter=isFailed) _Bool failed; // @synthesize failed=_failed;
-@property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+- (void).cxx_destruct;
 - (id)_loggingProem;
 - (id)_descriptionProem;
 - (void)_removeDebugLogCategory:(id)arg1;
@@ -159,7 +160,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)registerBlockObserver:(CDUnknownBlockType)arg1;
-@property(readonly, retain, nonatomic) NSArray *allErrors;
+@property(readonly, nonatomic) NSArray *allErrors;
 - (void)removeAllChildTransactions;
 - (void)removeChildTransaction:(id)arg1;
 - (void)removeAllChildTransactionsOfClass:(Class)arg1;
@@ -167,9 +168,9 @@
 - (_Bool)hasChildTransactionsOfClass:(Class)arg1;
 - (void)addChildTransaction:(id)arg1 withSchedulingPolicy:(unsigned long long)arg2;
 - (void)addChildTransaction:(id)arg1;
-@property(readonly, retain, nonatomic) NSArray *childTransactions;
-@property(readonly, retain, nonatomic) NSSet *milestones;
-@property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property(readonly, nonatomic) NSArray *childTransactions;
+@property(readonly, nonatomic) NSSet *milestones;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue;
 - (void)dealloc;
 - (id)init;
 - (id)_initForUnitTesting;

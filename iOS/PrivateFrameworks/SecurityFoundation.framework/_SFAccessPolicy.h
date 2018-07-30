@@ -13,16 +13,21 @@
 
 @interface _SFAccessPolicy : NSObject <NSCopying, NSSecureCoding>
 {
-    id _accessPolicyInternal;
+    CDStruct_9d0d652d _accessibility;
+    long long _sharingPolicy;
+    NSString *_accessGroup;
+    NSArray *_accessControlList;
 }
 
++ (id)accessPolicyWithSecAccessibility:(struct __CFString *)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSArray *accessControlList; // @synthesize accessControlList=_accessControlList;
+@property(copy, nonatomic) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
+@property(nonatomic) long long sharingPolicy; // @synthesize sharingPolicy=_sharingPolicy;
+@property(nonatomic) CDStruct_9d0d652d accessibility; // @synthesize accessibility=_accessibility;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) const struct __CFDictionary *secAccessibilityAttributes;
-@property(copy, nonatomic) NSArray *accessControlList;
-@property(copy, nonatomic) NSString *accessGroup;
-@property(nonatomic) long long sharingPolicy;
-@property(nonatomic) CDStruct_9d0d652d accessibility;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

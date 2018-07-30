@@ -30,6 +30,7 @@
     NSMutableDictionary *_attributes;
     BOOL _canSendWriteWithoutResponse;
     BOOL _isConnectedToSystem;
+    BOOL _connectedToSystem;
     unsigned int _writesPending;
     id <CBPeripheralDelegate> _delegate;
     NSString *_name;
@@ -37,10 +38,16 @@
     long long _state;
     NSArray *_services;
     NSHashTable *_l2capChannels;
+    NSString *_BDAddress;
+    long long _PID;
+    long long _VID;
 }
 
+@property(readonly, nonatomic, getter=isConnectedToSystem) BOOL connectedToSystem; // @synthesize connectedToSystem=_connectedToSystem;
+@property long long VID; // @synthesize VID=_VID;
+@property long long PID; // @synthesize PID=_PID;
+@property(retain) NSString *BDAddress; // @synthesize BDAddress=_BDAddress;
 @property(readonly, retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
-@property(readonly, nonatomic) BOOL isConnectedToSystem; // @synthesize isConnectedToSystem=_isConnectedToSystem;
 @property unsigned int writesPending; // @synthesize writesPending=_writesPending;
 @property BOOL canSendWriteWithoutResponse; // @synthesize canSendWriteWithoutResponse=_canSendWriteWithoutResponse;
 @property(retain) NSArray *services; // @synthesize services=_services;
@@ -72,7 +79,9 @@
 - (id)l2capChannelForPeer:(id)arg1 withPsm:(unsigned short)arg2;
 - (void)openL2CAPChannel:(unsigned short)arg1 options:(id)arg2;
 - (void)openL2CAPChannel:(unsigned short)arg1;
+- (void)setHighPriorityStream:(BOOL)arg1 duration:(id)arg2;
 - (void)getTimeSyncData;
+- (void)setPeripheralName:(id)arg1;
 - (BOOL)hasTag:(id)arg1;
 - (void)untag:(id)arg1;
 - (void)tag:(id)arg1;
@@ -107,6 +116,9 @@
 - (id)description;
 - (void)dealloc;
 - (id)initWithCentralManager:(id)arg1 info:(id)arg2;
+
+// Remaining properties
+@property(readonly, nonatomic) BOOL isConnectedToSystem; // @synthesize isConnectedToSystem=_isConnectedToSystem;
 
 @end
 

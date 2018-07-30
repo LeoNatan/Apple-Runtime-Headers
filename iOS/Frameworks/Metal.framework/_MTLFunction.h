@@ -23,14 +23,17 @@
     NSString *_label;
     MTLType *_returnType;
     NSArray *_arguments;
+    NSString *_unpackedFilePath;
 }
 
 @property(copy) NSString *label; // @synthesize label=_label;
+@property(copy) NSString *unpackedFilePath; // @synthesize unpackedFilePath=_unpackedFilePath;
 @property(readonly) id vendorPrivate; // @synthesize vendorPrivate=_vendorPrivate;
 @property(readonly) struct MTLLibraryData *libraryData; // @synthesize libraryData=_libraryData;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long functionType; // @synthesize functionType=_functionType;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
+- (id)bitcodeData;
 - (id)newIndirectArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2;
 - (id)newIndirectArgumentEncoderWithBufferIndex:(unsigned long long)arg1;
 - (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2;

@@ -18,6 +18,7 @@
 - (id)result;
 - (id)extractDataToDictionary:(id)arg1 bounds:(CDStruct_996ac03c)arg2 dataExtractor:(id)arg3 options:(id)arg4 colorSpace:(struct CGColorSpace *)arg5 error:(id *)arg6;
 - (_Bool)render:(out id *)arg1;
+- (id)requestOptions;
 - (_Bool)wantsCompleteStage;
 - (_Bool)wantsOutputImage;
 - (_Bool)wantsOutputGeometry;

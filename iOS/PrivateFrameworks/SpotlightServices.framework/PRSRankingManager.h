@@ -29,7 +29,6 @@
 - (void)getRankedCategoriesForQuery:(id)arg1 meanScores:(id)arg2 maxScores:(id)arg3 standardDeviation:(id)arg4 sectionHeaderToBundleIdMapping:(id)arg5 bundleIdToSectionHeaderMapping:(id)arg6 rankingConfiguration:(id)arg7 placements:(id)arg8 topCategories:(id *)arg9 bottomCategories:(id *)arg10 blacklistedCategories:(id *)arg11 sessionIdentifier:(unsigned long long)arg12 logString:(id)arg13 cepsUsed:(id)arg14 poorTextMatchCategories:(id)arg15;
 - (void)adjustScoresUsingCategoryEngagement:(id)arg1 forTopScores:(id)arg2 forBottomScores:(id)arg3 query:(id)arg4 logInfo:(id)arg5 usingRankingKnobs:(id)arg6;
 - (id)getTopHitsBasedOnCategoryOrder:(id)arg1 groupedResults:(id)arg2 CEPTopHitThreshold:(double)arg3 CEPProbabilityFactor:(double)arg4 topHitCountLimit:(long long)arg5;
-- (id)postDeDuplicationTopHitResultArray:(id)arg1;
 - (_Bool)rankIsMeaningfulForTopHit:(unsigned long long)arg1;
 - (id)initWithGroupedResult:(id)arg1 preferredTopHitGroups:(id)arg2 shortcuts:(id)arg3;
 - (id)init;

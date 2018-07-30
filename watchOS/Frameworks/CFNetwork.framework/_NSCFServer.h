@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSNumber, NSObject<OS_tcp_listener>, NSString;
 
-__attribute__((visibility("hidden")))
 @interface _NSCFServer : NSObject
 {
     _Bool _enableCoprocessorInterface;

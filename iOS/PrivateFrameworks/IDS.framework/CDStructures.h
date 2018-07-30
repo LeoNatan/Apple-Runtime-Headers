@@ -22,11 +22,6 @@ struct os_unfair_lock_s {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    unsigned int _field1;
-    unsigned long long _field2;
-} CDStruct_d008d4b8;
-
-typedef struct {
     char _field1;
     unsigned short _field2;
     unsigned short _field3;
@@ -38,4 +33,23 @@ typedef struct {
     long long _field2;
     long long _field3;
 } CDStruct_2ec95fd7;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned long long _field2;
+    unsigned short _field3;
+    unsigned char _field4;
+    char _field5;
+    unsigned short _field6[12];
+    unsigned char _field7;
+    unsigned short _field8;
+    struct {
+        unsigned short _field1;
+        unsigned short _field2;
+        unsigned short _field3;
+        unsigned short _field4;
+        unsigned short _field5;
+    } _field9;
+    double _field10;
+} CDStruct_920a6c75;
 

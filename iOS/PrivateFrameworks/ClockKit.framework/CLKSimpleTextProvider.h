@@ -11,6 +11,7 @@
 @interface CLKSimpleTextProvider : CLKTextProvider
 {
     _Bool _useNoContentDashFormatting;
+    _Bool _useAllSmallCaps;
     NSString *_text;
     NSString *_shortText;
     NSString *_accessibilityLabel;
@@ -22,6 +23,7 @@
 + (id)textProviderWithText:(id)arg1 shortText:(id)arg2 accessibilityLabel:(id)arg3;
 + (id)textProviderWithText:(id)arg1 shortText:(id)arg2;
 + (id)textProviderWithText:(id)arg1;
+@property(nonatomic) _Bool useAllSmallCaps; // @synthesize useAllSmallCaps=_useAllSmallCaps;
 @property(nonatomic) _Bool useNoContentDashFormatting; // @synthesize useNoContentDashFormatting=_useNoContentDashFormatting;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(copy, nonatomic) NSString *shortText; // @synthesize shortText=_shortText;

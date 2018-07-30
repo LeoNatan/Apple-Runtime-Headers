@@ -10,7 +10,6 @@
 
 @class ABGroupSearchingContext, ABPeoplePickerController, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerSearchingSelectHelper : NSObject <ABGroupSelectHelper>
 {
     ABGroupSearchingContext *_searchingContext;

@@ -8,27 +8,33 @@
 
 #import "NSCopying.h"
 
-@class NSData, NSDate, NSURL, TSKCommand, TSKStructuredTextImportSettings, TSTCellRegion;
+@class NSArray, NSData, NSDate, NSURL, TSKStructuredTextImportSettings, TSTCellRegion;
 
 __attribute__((visibility("hidden")))
 @interface TSTStructuredTextImportRecord : NSObject <NSCopying>
 {
+    _Bool _pasteWasUpdate;
     TSKStructuredTextImportSettings *_importSettings;
     NSURL *_importSource;
     NSDate *_importDate;
     NSData *_sourceData;
-    unsigned long long _sourceEncoding;
     double _confidence;
     TSTCellRegion *_importedRegion;
-    TSKCommand *_pasteInverseCommand;
+    unsigned long long _sourceColumnCount;
+    unsigned long long _sourceRowCount;
+    NSArray *_pasteInverseCommands;
+    unsigned long long _pasteType;
 }
 
 + (id)recordFromArchive:(const struct StructuredTextImportRecord *)arg1;
 + (id)record;
-@property(retain, nonatomic) TSKCommand *pasteInverseCommand; // @synthesize pasteInverseCommand=_pasteInverseCommand;
+@property(nonatomic) _Bool pasteWasUpdate; // @synthesize pasteWasUpdate=_pasteWasUpdate;
+@property(nonatomic) unsigned long long pasteType; // @synthesize pasteType=_pasteType;
+@property(retain, nonatomic) NSArray *pasteInverseCommands; // @synthesize pasteInverseCommands=_pasteInverseCommands;
+@property(nonatomic) unsigned long long sourceRowCount; // @synthesize sourceRowCount=_sourceRowCount;
+@property(nonatomic) unsigned long long sourceColumnCount; // @synthesize sourceColumnCount=_sourceColumnCount;
 @property(retain, nonatomic) TSTCellRegion *importedRegion; // @synthesize importedRegion=_importedRegion;
 @property(nonatomic) double confidence; // @synthesize confidence=_confidence;
-@property(nonatomic) unsigned long long sourceEncoding; // @synthesize sourceEncoding=_sourceEncoding;
 @property(copy, nonatomic) NSData *sourceData; // @synthesize sourceData=_sourceData;
 @property(retain, nonatomic) NSDate *importDate; // @synthesize importDate=_importDate;
 @property(retain, nonatomic) NSURL *importSource; // @synthesize importSource=_importSource;

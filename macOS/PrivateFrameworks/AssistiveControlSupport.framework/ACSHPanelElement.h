@@ -6,9 +6,11 @@
 
 #import <AssistiveControlSupport/ACSHPlistObject.h>
 
-@class ACSHPanelElementView, ACSHPanelTextPredictionList, NSArray, NSMutableArray, NSString;
+#import "AXFGeometrySortableRect.h"
 
-@interface ACSHPanelElement : ACSHPlistObject
+@class ACSHPanel, ACSHPanelElementView, ACSHPanelTextPredictionList, ACSHResourceCollection, NSArray, NSMutableArray, NSString;
+
+@interface ACSHPanelElement : ACSHPlistObject <AXFGeometrySortableRect>
 {
     NSMutableArray *_panelElements;
     struct CGRect _rect;
@@ -53,17 +55,20 @@
 - (void)_performBlockOnAncestors:(CDUnknownBlockType)arg1 includeSelf:(BOOL)arg2;
 - (void)setRect:(struct CGRect)arg1 andNotify:(BOOL)arg2 includeInUndoStack:(BOOL)arg3;
 - (void)setRect:(struct CGRect)arg1 andNotify:(BOOL)arg2;
+@property(nonatomic) struct CGRect rectForGeometrySorting;
 @property(nonatomic) struct CGRect rect;
 - (void)switchToPanelIfUndoing;
 @property(retain, nonatomic) NSString *spokenDescription; // @synthesize spokenDescription=_spokenDescription;
 @property(nonatomic) unsigned long long displayTheme;
+@property(readonly, nonatomic) ACSHPanel *parentPanel;
+@property(readonly, nonatomic) ACSHResourceCollection *resourceCollection;
 - (id)panelElementsInGroup:(id)arg1;
 - (BOOL)supportsActionToggle;
 - (BOOL)descendentsContainPanelElement:(id)arg1;
 - (id)action;
 - (id)actions;
 - (void)removeChildElements:(id)arg1;
-- (void)prependChildElements:(id)arg1;
+- (void)prependChildElements:(id)arg1 reversed:(BOOL)arg2;
 - (void)appendChildElements:(id)arg1;
 - (void)removeChildElement:(id)arg1;
 - (void)prependChildElement:(id)arg1;
@@ -84,13 +89,19 @@
 - (id)breakApartGroup:(id)arg1;
 - (id)panelButtons;
 - (id)dictionaryForSaving;
-- (void)_initWithPlistDictionary:(id)arg1;
+- (void)_configureWithPlistDictionary:(id)arg1;
 - (id)descriptionForDepth:(unsigned long long)arg1;
 - (unsigned long long)numberOfTrailingExtrasForItemAtIndexPath:(id)arg1;
 - (unsigned long long)numberOfLeadingExtrasForItemAtIndexPath:(id)arg1;
 - (unsigned long long)numberOfChildItemsForItemAtIndexPath:(id)arg1;
 - (id)panelElementAtIndexPath:(id)arg1;
 - (void)setPanelElementsWithDictArray:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

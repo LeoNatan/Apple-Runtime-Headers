@@ -6,8 +6,25 @@
 
 #import "NSArray.h"
 
-@interface NSArray (HMFoundation)
+#import "HMFObject.h"
+
+@class NSString;
+
+@interface NSArray (HMFoundation) <HMFObject>
++ (id)shortDescription;
+- (id)hmf_objectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)hmf_objectPassingTest:(CDUnknownBlockType)arg1;
 - (_Bool)hmf_objectsAreKindOfClass:(Class)arg1;
 @property(readonly, getter=hmf_isEmpty) _Bool hmf_empty;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
+
+// Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *propertyDescription;
+@property(readonly) Class superclass;
 @end
 

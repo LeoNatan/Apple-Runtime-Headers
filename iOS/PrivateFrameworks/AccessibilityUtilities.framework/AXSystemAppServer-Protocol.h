@@ -30,6 +30,7 @@
 - (int)pid;
 
 @optional
+- (_Bool)isScreenshotWindowVisible;
 - (_Bool)isPasscodeLockVisible;
 @end
 

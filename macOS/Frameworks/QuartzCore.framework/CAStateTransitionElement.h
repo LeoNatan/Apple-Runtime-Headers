@@ -25,6 +25,7 @@
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) CAAnimation *animation; // @synthesize animation=_animation;
 @property(nonatomic) __weak CALayer *target; // @synthesize target=_target;
+- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

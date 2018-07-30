@@ -11,7 +11,7 @@
 }
 
 + (id)diagnosticTestReportType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSObject;
 
+__attribute__((visibility("hidden")))
 @interface MCPINEntryViewController : DevicePINController
 {
     NSObject *_delegate;

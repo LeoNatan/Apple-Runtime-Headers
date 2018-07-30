@@ -8,6 +8,7 @@
 
 @interface NSAttributedString (LUIHelpers)
 + (id)attributedStringForPopoverButtonTitle:(id)arg1;
++ (id)attributedStringForPlaceholder:(id)arg1;
 + (id)attributedStringForButtonTitle:(id)arg1 style:(int)arg2 pressed:(BOOL)arg3;
 @end
 

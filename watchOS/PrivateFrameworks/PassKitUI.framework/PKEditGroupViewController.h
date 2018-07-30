@@ -20,6 +20,7 @@
     UIBarButtonItem *_flexibleSpace;
     PKPass *_viewingPass;
     UITableView *_tableView;
+    struct CGSize _imageSizeNeeded;
     id <UIViewControllerPreviewing> _previewingContext;
     id <PKEditGroupViewControllerDelegate> _delegate;
 }
@@ -27,6 +28,9 @@
 - (void).cxx_destruct;
 - (id)pass;
 - (id)group;
+- (_Bool)passExistsWithUniqueIdentifier:(id)arg1;
+- (void)prefetchItemsAtIndexPaths:(id)arg1;
+- (id)passAtIndexPath:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
@@ -47,7 +51,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initWithGroup:(id)arg1 delegate:(id)arg2;
+- (id)initWithGroup:(id)arg1 existingGroupsController:(id)arg2 delegate:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

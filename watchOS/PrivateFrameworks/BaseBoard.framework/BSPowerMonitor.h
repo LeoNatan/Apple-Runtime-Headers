@@ -10,13 +10,14 @@
 
 @interface BSPowerMonitor : NSObject
 {
-    BSZeroingWeakReference *_weakSelf;
+    BSZeroingWeakReference *_weakSelfWrapper;
     NSObject<OS_dispatch_queue> *_queue;
     struct os_unfair_lock_s _observersLock;
     NSHashTable *_lock_observers;
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

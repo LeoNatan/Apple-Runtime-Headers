@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class NSArray, NSObject, NSString, NTPBTodayConfig;
+@class NSArray, NSString, NTPBTodayConfig;
 
 @interface FCTodayConfigOperation : FCOperation
 {
@@ -14,14 +14,12 @@
     id <FCContentContext> _context;
     NSString *_widgetConfigID;
     NSArray *_networkEvents;
-    CDUnknownBlockType _todayConfigCompletionHandlerWithInterest;
+    CDUnknownBlockType _todayConfigCompletionHandler;
     NTPBTodayConfig *_resultTodayConfig;
-    NSObject *_resultInterestToken;
 }
 
-@property(copy, nonatomic) NSObject *resultInterestToken; // @synthesize resultInterestToken=_resultInterestToken;
 @property(copy, nonatomic) NTPBTodayConfig *resultTodayConfig; // @synthesize resultTodayConfig=_resultTodayConfig;
-@property(copy, nonatomic) CDUnknownBlockType todayConfigCompletionHandlerWithInterest; // @synthesize todayConfigCompletionHandlerWithInterest=_todayConfigCompletionHandlerWithInterest;
+@property(copy, nonatomic) CDUnknownBlockType todayConfigCompletionHandler; // @synthesize todayConfigCompletionHandler=_todayConfigCompletionHandler;
 @property(copy, nonatomic) NSArray *networkEvents; // @synthesize networkEvents=_networkEvents;
 @property(copy, nonatomic) NSString *widgetConfigID; // @synthesize widgetConfigID=_widgetConfigID;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;

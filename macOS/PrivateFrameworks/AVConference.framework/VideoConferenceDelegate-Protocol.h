@@ -37,6 +37,7 @@
 - (void)videoConference:(VideoConference *)arg1 receivedNoRemotePacketsForTime:(double)arg2 callID:(unsigned int)arg3;
 - (void)videoConference:(VideoConference *)arg1 withCallID:(unsigned int)arg2 didPauseVideo:(BOOL)arg3 error:(NSError *)arg4;
 - (void)videoConference:(VideoConference *)arg1 withCallID:(unsigned int)arg2 didPauseAudio:(BOOL)arg3 error:(NSError *)arg4;
+- (void)videoConference:(VideoConference *)arg1 withCallID:(unsigned int)arg2 isSendingAudio:(BOOL)arg3 error:(NSError *)arg4;
 - (void)videoConference:(VideoConference *)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned int)arg3 withUserInfo:(NSDictionary *)arg4 error:(NSError *)arg5;
 - (void)videoConference:(VideoConference *)arg1 didStopWithCallID:(unsigned int)arg2 error:(NSError *)arg3 callMetadata:(NSDictionary *)arg4;
 - (void)videoConference:(VideoConference *)arg1 didStopWithCallID:(unsigned int)arg2 error:(NSError *)arg3;

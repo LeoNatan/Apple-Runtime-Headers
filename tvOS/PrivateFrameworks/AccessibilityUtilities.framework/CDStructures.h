@@ -107,6 +107,11 @@ typedef struct {
 } CDStruct_4c969caf;
 
 typedef struct {
+    int _field1;
+    float _field2;
+} CDStruct_3a8d9e70;
+
+typedef struct {
     short _field1;
     int _field2;
 } CDStruct_6d9e24e6;

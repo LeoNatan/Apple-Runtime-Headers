@@ -25,7 +25,7 @@ struct CGSize {
     double height;
 };
 
-struct UIEdgeInsets {
+struct FCEdgeInsets {
     double top;
     double left;
     double bottom;

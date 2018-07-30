@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface NFContainerPool : NSObject
 {
     _Bool _objectGraphDrainingEnabled;

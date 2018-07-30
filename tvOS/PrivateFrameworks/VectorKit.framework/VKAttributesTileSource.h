@@ -11,10 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3;
+- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3 userInfo:(id)arg4;
 - (long long)zEquivalenceClass;
 - (unsigned int)maximumDownloadZoomLevel;
-- (unsigned int)minimumDownloadZoomLevel;
 - (long long)tileSize;
 - (_Bool)maximumZoomLevelBoundsCamera;
 - (_Bool)minimumZoomLevelBoundsCamera;

@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 + (void)clearMonogramCache;
 + (id)contactStatusCache;
 + (id)contactImageCache;
-+ (void)setAddressBook:(id)arg1;
 
 @end
 

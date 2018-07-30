@@ -54,8 +54,8 @@ struct CPMLRemapper {
     _Bool _field3;
     struct sqlite3 *_field4;
     struct CPMLStatistics *_field5;
-    vector_e0f2bd7e *_field6;
-    vector_e0f2bd7e *_field7;
+    vector_12bd641b *_field6;
+    vector_12bd641b *_field7;
 };
 
 struct CPMLSerialization {
@@ -68,11 +68,11 @@ struct CPMLSerialization {
 };
 
 struct CPMLStatistics {
-    vector_e0f2bd7e _field1;
+    vector_12bd641b _field1;
     struct vector<double, std::__1::allocator<double>> _field2;
-    vector_e0f2bd7e _field3;
-    vector_e0f2bd7e _field4;
-    vector_e0f2bd7e _field5;
+    vector_12bd641b _field3;
+    vector_12bd641b _field4;
+    vector_12bd641b _field5;
     int _field6;
     int _field7;
     int _field8;
@@ -95,7 +95,7 @@ struct CPMLTunableData {
 struct ProbIndex;
 
 struct VectorClass {
-    vector_e0f2bd7e *_field1;
+    vector_12bd641b *_field1;
     struct vector<double, std::__1::allocator<double>> *_field2;
 };
 
@@ -129,7 +129,7 @@ struct vector<int, std::__1::allocator<int>> {
     int *__begin_;
     int *__end_;
     struct __compressed_pair<int *, std::__1::allocator<int>> {
-        int *__first_;
+        int *__value_;
     } __end_cap_;
 };
 
@@ -140,7 +140,7 @@ typedef struct vector<int, std::__1::allocator<int>> {
     int *__begin_;
     int *__end_;
     struct __compressed_pair<int *, std::__1::allocator<int>> {
-        int *__first_;
+        int *__value_;
     } __end_cap_;
-} vector_e0f2bd7e;
+} vector_12bd641b;
 

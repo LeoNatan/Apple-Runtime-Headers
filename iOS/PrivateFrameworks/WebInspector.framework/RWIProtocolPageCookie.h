@@ -12,6 +12,7 @@
 {
 }
 
+@property(nonatomic) long long sameSite;
 @property(nonatomic) _Bool session;
 @property(nonatomic) _Bool secure;
 @property(nonatomic) _Bool httpOnly;
@@ -21,7 +22,7 @@
 @property(copy, nonatomic) NSString *domain;
 @property(copy, nonatomic) NSString *value;
 @property(copy, nonatomic) NSString *name;
-- (id)initWithName:(id)arg1 value:(id)arg2 domain:(id)arg3 path:(id)arg4 expires:(double)arg5 size:(int)arg6 httpOnly:(_Bool)arg7 secure:(_Bool)arg8 session:(_Bool)arg9;
+- (id)initWithName:(id)arg1 value:(id)arg2 domain:(id)arg3 path:(id)arg4 expires:(double)arg5 size:(int)arg6 httpOnly:(_Bool)arg7 secure:(_Bool)arg8 session:(_Bool)arg9 sameSite:(long long)arg10;
 
 @end
 

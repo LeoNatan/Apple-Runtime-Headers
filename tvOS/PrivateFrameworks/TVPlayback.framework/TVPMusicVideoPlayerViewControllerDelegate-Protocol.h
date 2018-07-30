@@ -7,6 +7,8 @@
 @class TVPMusicVideoPlayerViewController, UIView;
 
 @protocol TVPMusicVideoPlayerViewControllerDelegate
+- (void)musicVideoPlayerViewControllerWillDisappear:(TVPMusicVideoPlayerViewController *)arg1;
+- (void)musicVideoPlayerViewControllerWillAppear:(TVPMusicVideoPlayerViewController *)arg1;
 - (struct CGRect)musicVideoPlayerViewController:(TVPMusicVideoPlayerViewController *)arg1 rectForPresentationAnimationTransitionInSourceView:(UIView *)arg2;
 - (UIView *)musicVideoPlayerViewControllerSourceViewForPresentationAnimationTransition:(TVPMusicVideoPlayerViewController *)arg1;
 @end

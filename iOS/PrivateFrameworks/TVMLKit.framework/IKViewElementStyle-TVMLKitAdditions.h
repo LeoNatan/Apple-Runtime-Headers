@@ -6,6 +6,8 @@
 
 #import "IKViewElementStyle.h"
 
+@class TVAppStyle;
+
 @interface IKViewElementStyle (TVMLKitAdditions)
 - (id)tv_group;
 - (unsigned long long)tv_maxLines;
@@ -65,6 +67,8 @@
 - (id)tv_fontFamily;
 - (struct CGAffineTransform)tv_focusTransform;
 - (struct CGAffineTransform)tv_transform;
+- (id)tv_valueForStyle:(id)arg1;
+@property(retain, nonatomic, setter=tv_setStyleMetrics:) TVAppStyle *tv_styleMetrics;
 - (id)tv_associatedViewElementStyle;
 @end
 

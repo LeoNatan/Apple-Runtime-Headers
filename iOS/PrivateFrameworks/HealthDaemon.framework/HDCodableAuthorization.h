@@ -10,12 +10,14 @@
 
 @interface HDCodableAuthorization : PBCodable <NSCopying>
 {
+    long long _authorizationMode;
     long long _authorizationRequest;
     long long _authorizationStatus;
     double _modificationDate;
     long long _modificationEpoch;
     long long _objectType;
     struct {
+        unsigned int authorizationMode:1;
         unsigned int authorizationRequest:1;
         unsigned int authorizationStatus:1;
         unsigned int modificationDate:1;
@@ -24,6 +26,7 @@
     } _has;
 }
 
+@property(nonatomic) long long authorizationMode; // @synthesize authorizationMode=_authorizationMode;
 @property(nonatomic) long long modificationEpoch; // @synthesize modificationEpoch=_modificationEpoch;
 @property(nonatomic) double modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(nonatomic) long long authorizationRequest; // @synthesize authorizationRequest=_authorizationRequest;
@@ -38,6 +41,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasAuthorizationMode;
 @property(nonatomic) _Bool hasModificationEpoch;
 @property(nonatomic) _Bool hasModificationDate;
 @property(nonatomic) _Bool hasAuthorizationRequest;
@@ -45,6 +49,8 @@
 @property(nonatomic) _Bool hasObjectType;
 - (void)_setModificationDate:(id)arg1;
 - (id)_modificationDate;
+- (void)_setAuthorizationModeWithNumber:(id)arg1;
+- (long long)_authorizationMode;
 - (void)_setAuthorizationRequestWithNumber:(id)arg1;
 - (long long)_authorizationRequest;
 - (void)_setAuthorizationStatusWithNumber:(id)arg1;

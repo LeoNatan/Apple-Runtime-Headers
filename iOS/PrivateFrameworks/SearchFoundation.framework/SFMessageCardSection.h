@@ -14,7 +14,14 @@
 
 @interface SFMessageCardSection : SFCardSection <SFMessageCardSection, NSSecureCoding, NSCopying>
 {
-    CDStruct_bb96dcf2 _has;
+    struct {
+        unsigned int canBeHidden:1;
+        unsigned int hasTopPadding:1;
+        unsigned int hasBottomPadding:1;
+        unsigned int separatorStyle:1;
+        unsigned int messageStatus:1;
+        unsigned int messageServiceType:1;
+    } _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;

@@ -17,8 +17,11 @@
 @property(nonatomic) _Bool updateSynchronouslyIfPossible; // @synthesize updateSynchronouslyIfPossible=_updateSynchronouslyIfPossible;
 @property(retain, nonatomic) NSCountedSet *holdingUpdatesKeys; // @synthesize holdingUpdatesKeys=_holdingUpdatesKeys;
 - (void).cxx_destruct;
+- (void)endHoldingAllUpdates;
+- (void)endHoldingAllUpdatesForKey:(id)arg1;
 - (void)invalidate;
 - (void)updateIfNeeded;
+- (_Bool)isHoldingUpdatesForKey:(id)arg1;
 - (_Bool)isHoldingUpdates;
 - (void)endHoldingUpdatesForKey:(id)arg1;
 - (void)beginHoldingUpdatesForKey:(id)arg1;

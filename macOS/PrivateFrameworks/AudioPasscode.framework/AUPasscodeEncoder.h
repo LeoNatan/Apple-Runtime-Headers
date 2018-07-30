@@ -8,14 +8,15 @@
 
 @class AUAudioUnitBus, AUAudioUnitBusArray, AUPasscodeCodecConfiguration, NSData, NSDictionary, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AUPasscodeEncoder : AUAudioUnit
 {
-    unique_ptr_db3a804f _kernel;
+    unique_ptr_5bd60e54 _kernel;
     struct BufferedInputBus _inputBus;
     AUAudioUnitBus *_outputBus;
     AUAudioUnitBusArray *_inputBusArray;
     AUAudioUnitBusArray *_outputBusArray;
-    map_5b8d8d8c _apcEncoderConfig;
+    map_fc0e2ca7 _apcEncoderConfig;
     long long _assetSampleCount;
     BOOL _outputIsSilenced;
     struct unique_ptr<EOFReachedMessage, std::__1::default_delete<EOFReachedMessage>> _eofMessage;

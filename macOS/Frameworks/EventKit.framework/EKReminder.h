@@ -95,7 +95,6 @@
 @property(readonly, copy, nonatomic) id <EKProtocolStructuredLocation> ekStructuredLocation;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) BOOL isPartialObject;
-@property(readonly, copy, nonatomic) NSDate *lastModifiedDate;
 @property(readonly, copy, nonatomic) NSData *localStructuredData;
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
 @property(copy, nonatomic) NSString *notes;

@@ -8,6 +8,7 @@
 
 @class PHAdjustmentData, PUEditableMediaProvider;
 
+__attribute__((visibility("hidden")))
 @interface PUEditableMediaProviderAdjustmentDataNode : PXRunNode
 {
     int _requestID;

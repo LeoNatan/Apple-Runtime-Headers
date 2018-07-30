@@ -85,7 +85,7 @@
 @property(nonatomic) BOOL showsDistance;
 @property(nonatomic) BOOL selected;
 - (id)_labelWithFontSize:(double)arg1;
-- (void)commonInit;
+- (void)_commonInit;
 - (id)initWithFrame:(struct CGRect)arg1 highlightsOnTouch:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;

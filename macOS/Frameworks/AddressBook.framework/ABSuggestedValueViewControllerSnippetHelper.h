@@ -8,7 +8,6 @@
 
 @class NSString, NSTextView;
 
-__attribute__((visibility("hidden")))
 @interface ABSuggestedValueViewControllerSnippetHelper : NSObject
 {
     NSString *_snippet;
@@ -19,18 +18,21 @@ __attribute__((visibility("hidden")))
 + (struct _NSRange)rangeOfTrimmedString:(id)arg1;
 + (struct _NSRange)rangeOfTrimmedString:(id)arg1 atSubstringRange:(struct _NSRange)arg2;
 + (void)enumerateLinesInSnippet:(id)arg1 range:(struct _NSRange)arg2 usingBlock:(CDUnknownBlockType)arg3;
++ (id)selectionAttributes;
 @property(readonly) NSTextView *textView; // @synthesize textView=_textView;
 @property(readonly) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, copy) NSString *snippet; // @synthesize snippet=_snippet;
-- (void)scrollHighlightingToVisible;
+- (void).cxx_destruct;
+- (void)scrollSelectionToVisible;
 - (void)enumerateLinesUsingBlock:(CDUnknownBlockType)arg1;
+- (id)selectedRanges;
 - (void)applyHighlighting;
+- (void)applySelection;
 - (void)applyStringValue;
 - (void)applyNonEmptySnippet;
 - (void)applyEmptySnippet;
 - (void)updateTextView;
-- (void)dealloc;
-- (id)initWithSnippet:(id)arg1 highlightedRange:(struct _NSRange)arg2 textView:(id)arg3;
+- (id)initWithSnippet:(id)arg1 selectedRange:(struct _NSRange)arg2 textView:(id)arg3;
 
 @end
 

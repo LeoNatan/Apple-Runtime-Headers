@@ -20,6 +20,7 @@
 + (id)serviceInterface;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) NSString *machName; // @synthesize machName=_machName;
+- (void).cxx_destruct;
 - (void)updateInputModes:(id)arg1;
 - (void)performWithWriteability:(_Bool)arg1 operations:(CDUnknownBlockType)arg2;
 - (void)_pushValue:(id)arg1 toPreference:(id)arg2 domain:(id)arg3;

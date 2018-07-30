@@ -35,6 +35,7 @@
 + (struct CGSize)defaultPixelSize;
 + (struct CGAffineTransform)orientationTransform:(long long)arg1 size:(struct CGSize)arg2;
 + (void)sortStrokes:(id)arg1;
++ (id)_drawingWithUnzippedData:(id)arg1;
 + (id)drawingWithData:(id)arg1;
 @property(retain, nonatomic) PKVisualizationManager *visualizationManager; // @synthesize visualizationManager=_visualizationManager;
 @property(retain, nonatomic) NSMapTable *ongoingQueries; // @synthesize ongoingQueries=_ongoingQueries;
@@ -54,6 +55,8 @@
 - (id)strokeProviderVersionFromData:(id)arg1;
 - (id)dataRepresentationForStrokeProviderVersion:(id)arg1;
 - (id)strokeProviderSnapshot;
+- (_Bool *)_newAsciiBitfield;
+- (id)_ascii;
 @property(readonly, copy) NSString *description;
 - (void)queryDidUpdateResult:(id)arg1;
 - (void)performSearchQuery:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
@@ -70,13 +73,14 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)CHDrawing;
-- (id)strokesIntersectedByPoint:(struct CGPoint)arg1 prevPoint:(struct CGPoint)arg2 minThreshold:(double)arg3 transform:(struct CGAffineTransform)arg4;
-- (id)strokesIntersectedByPoint:(struct CGPoint)arg1 prevPoint:(struct CGPoint)arg2;
+- (id)strokesIntersectedByPoint:(struct CGPoint)arg1 prevPoint:(struct CGPoint)arg2 minThreshold:(double)arg3 transform:(struct CGAffineTransform)arg4 onscreenVisibleStrokes:(id)arg5;
+- (id)strokesIntersectedByPoint:(struct CGPoint)arg1 prevPoint:(struct CGPoint)arg2 onscreenVisibleStrokes:(id)arg3;
 @property(readonly, nonatomic) long long imageOrientation;
 - (struct CGAffineTransform)orientationTransform;
 - (unsigned long long)mergeWithDrawing:(id)arg1;
 - (id)setStroke:(id)arg1 hidden:(_Bool)arg2 ink:(id)arg3 transform:(struct CGAffineTransform)arg4;
 - (id)setStroke:(id)arg1 hidden:(_Bool)arg2 transform:(struct CGAffineTransform)arg3;
+- (id)setStroke:(id)arg1 applyTransform:(struct CGAffineTransform)arg2;
 - (id)setStroke:(id)arg1 hidden:(_Bool)arg2 ink:(id)arg3;
 - (id)setStroke:(id)arg1 hidden:(_Bool)arg2;
 - (id)copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform)arg2;
@@ -90,8 +94,6 @@
 - (struct _PKStrokeID)strokeIDForNewStroke;
 - (struct _PKStrokeID)newStrokeIDGreaterThan:(struct _PKStrokeID)arg1;
 - (void)sortStrokes;
-- (_Bool)setTransientOrientation:(long long)arg1;
-@property(readonly, nonatomic) _Bool canChangeTransientOrientation;
 - (void)takeOrientationFrom:(id)arg1;
 - (void)invalidateStrokeBounds;
 @property(readonly, nonatomic) struct CGRect strokeBounds; // @synthesize strokeBounds=_strokeBounds;

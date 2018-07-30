@@ -10,7 +10,7 @@
 #import "VNRequestWarming.h"
 #import "VNTrackerProviding.h"
 
-@class NSLock, NSMutableArray, NSMutableSet, VNObservationsCache;
+@class NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet;
 
 __attribute__((visibility("hidden")))
 @interface VNRequestPerformer : NSObject <VNRequestWarming, VNRequestCancelling, VNTrackerProviding>
@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     NSLock *_requestLock;
     NSMutableArray *_requestsInFlight;
     NSMutableArray *_requestsPending;
-    VNObservationsCache *_sequencedRequestObservations;
+    NSMutableDictionary *_sequencedRequestObservations;
     NSMutableSet *_trackerKeys;
 }
 
@@ -30,11 +30,15 @@ __attribute__((visibility("hidden")))
 - (_Bool)prepareForPerformingRequestsOfClass:(id)arg1 error:(id *)arg2;
 - (id)previousSequencedObservationsForRequest:(id)arg1;
 - (void)recordSequencedObservationsForRequest:(id)arg1;
+- (_Bool)performDependentRequests:(id)arg1 inContext:(id)arg2 onBehalfOfRequest:(id)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (_Bool)performRequests:(id)arg1 inContext:(id)arg2 onBehalfOfRequest:(id)arg3 error:(id *)arg4;
+- (_Bool)_performOrderedRequests:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)_orderedRequestsForRequests:(id)arg1;
+- (id)_dependencyAnalyzedRequestsForRequests:(id)arg1;
+- (_Bool)_validateAndPrepareRequests:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (id)init;
-- (id)_orderedRequestsForRequests:(id)arg1;
-- (_Bool)_validateAndPrepareRequests:(id)arg1 error:(id *)arg2;
 
 @end
 

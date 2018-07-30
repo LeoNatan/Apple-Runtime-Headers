@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long toSpid; // @synthesize toSpid=_toSpid;
 - (void)interrupt;
 - (void)start;
+- (unsigned long long)_determineStartingSpaceID;
 - (id)_gatherAfterTransitionWindowNumbers;
 - (void)_captureAfterSnapshot;
 - (void)_swapOriginalWindowWithOverlayWindow;

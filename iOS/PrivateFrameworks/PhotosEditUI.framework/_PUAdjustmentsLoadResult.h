@@ -8,6 +8,7 @@
 
 @class PLPhotoEditMutableModel;
 
+__attribute__((visibility("hidden")))
 @interface _PUAdjustmentsLoadResult : NSObject
 {
     PLPhotoEditMutableModel *_editModel;

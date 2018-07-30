@@ -63,7 +63,7 @@
 - (id)_numberPad;
 - (id)_statusSubtitleView;
 - (id)_statusTitleView;
-- (void)updateForTransitionToPasscodeView:(_Bool)arg1;
+- (void)updateForTransitionToPasscodeView:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)willTransitionToPasscodeView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setKeypadVisible:(_Bool)arg1 animated:(_Bool)arg2;

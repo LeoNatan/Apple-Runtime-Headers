@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "NSCoding.h"
+#import "NSMenuItemValidation.h"
 #import "NSUserInterfaceValidations.h"
 
 @class NSArray, NSDocument, NSMutableDictionary, NSString;
 
-@interface NSDocumentController : NSObject <NSCoding, NSUserInterfaceValidations>
+@interface NSDocumentController : NSObject <NSCoding, NSMenuItemValidation, NSUserInterfaceValidations>
 {
     id _documents;
     id _moreVars;
@@ -34,6 +35,7 @@
 + (id)_recentMenuItemTitlesFromRecentDocumentInfos:(id)arg1 includingIcons:(BOOL)arg2;
 + (BOOL)_isJavaSubclass;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 - (id)displayNameForType:(id)arg1;
 - (Class)documentClassForType:(id)arg1;
 @property(readonly, copy) NSArray *documentClassNames;
@@ -189,7 +191,6 @@
 - (void)_finishedWithAutoreopenRecords;
 - (id)_autoreopenRecordsBeingReopened;
 - (id)_autosaveRecordPathCreateIfNecessary:(BOOL)arg1;
-- (BOOL)_appPersistenceIsJustOff;
 - (void)_notePendingRecentDocumentURLsIfNecessary;
 - (void)_shareMenuDidClose:(id)arg1;
 - (void)_share:(id)arg1;
@@ -217,7 +218,6 @@
 - (id)_types;
 - (id)_typesForDocumentClass:(Class)arg1 includeEditors:(BOOL)arg2 includeViewers:(BOOL)arg3 includeExportable:(BOOL)arg4;
 - (id)_resolveTypeAlias:(id)arg1;
-- (BOOL)validateMenuItem:(id)arg1;
 - (id)typeFromFileExtension:(id)arg1;
 - (BOOL)shouldCreateUI;
 - (void)setShouldCreateUI:(BOOL)arg1;
@@ -241,6 +241,12 @@
 - (id)_invokeJavaOverrideForSelector:(SEL)arg1 withErrorAndOtherArguments:(id *)arg2;
 - (id)initJava2;
 - (id)initJava1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

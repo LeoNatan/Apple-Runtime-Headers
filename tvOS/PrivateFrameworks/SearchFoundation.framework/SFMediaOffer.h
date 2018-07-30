@@ -14,7 +14,9 @@
 
 @interface SFMediaOffer : SFActionItem <SFMediaOffer, NSSecureCoding, NSCopying>
 {
-    CDStruct_c119988d _has;
+    struct {
+        unsigned int isEnabled:1;
+    } _has;
     _Bool _isEnabled;
     SFActionItem *_actionItem;
     NSString *_sublabel;

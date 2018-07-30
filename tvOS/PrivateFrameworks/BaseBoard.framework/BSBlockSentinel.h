@@ -23,10 +23,10 @@
 + (id)sentinelWithQueue:(id)arg1 signalHandler:(CDUnknownBlockType)arg2;
 + (id)sentinelWithQueue:(id)arg1 signalCount:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)sentinelWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 - (void)_performSynchronously:(CDUnknownBlockType)arg1;
 - (_Bool)signalWithContext:(id)arg1;
 - (_Bool)signal;
-- (void)dealloc;
 - (id)initWithCount:(unsigned long long)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
 
 @end

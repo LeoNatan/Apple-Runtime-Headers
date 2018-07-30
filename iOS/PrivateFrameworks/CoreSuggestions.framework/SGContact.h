@@ -21,11 +21,13 @@
     NSArray *_instantMessageAddresses;
     NSArray *_socialProfiles;
     unsigned long long _significance;
+    unsigned long long _significanceOrigin;
 }
 
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5;
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5 instantMessageAddresses:(id)arg6 socialProfiles:(id)arg7;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long significanceOrigin; // @synthesize significanceOrigin=_significanceOrigin;
 @property(nonatomic) unsigned long long significance; // @synthesize significance=_significance;
 @property(copy, nonatomic) NSArray *socialProfiles; // @synthesize socialProfiles=_socialProfiles;
 @property(copy, nonatomic) NSArray *instantMessageAddresses; // @synthesize instantMessageAddresses=_instantMessageAddresses;

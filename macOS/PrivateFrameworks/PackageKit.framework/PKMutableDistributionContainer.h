@@ -20,6 +20,7 @@
 - (BOOL)setStringsData:(id)arg1 forLocalization:(id)arg2;
 - (BOOL)setDistributionFromContainer:(id)arg1;
 - (void)setDistribution:(id)arg1;
+- (void)dealloc;
 - (id)initForWritingToArchive:(id)arg1;
 - (id)initForWritingToPath:(id)arg1;
 

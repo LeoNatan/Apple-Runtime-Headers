@@ -13,12 +13,12 @@
     FBSDisplayConfiguration *_displayConfiguration;
 }
 
+- (void).cxx_destruct;
 - (void)setDisplay:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateClientSettingsWithBlock:(CDUnknownBlockType)arg1;
 - (void)updateSettingsWithBlock:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) FBSSceneSettings *settings; // @dynamic settings;
-- (void)dealloc;
 
 // Remaining properties
 @property(copy, nonatomic) FBSSceneClientSettings *clientSettings; // @dynamic clientSettings;

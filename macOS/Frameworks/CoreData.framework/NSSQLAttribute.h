@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)isFileBackedFuture;
 - (void)addKeyForTriggerOnRelationship:(id)arg1;
 @property(readonly, nonatomic) NSSet *triggerKeys;
 - (void)_setIsBackedByTrigger:(BOOL)arg1;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long batchCount;
 - (void)chainPreparedRecordBatch:(id)arg1;
 - (void)addFullyChainedRecordInfo:(id)arg1;
+- (_Bool)containsRecordInfo:(id)arg1;
 - (id)initWithAppLibrary:(id)arg1;
 
 @end

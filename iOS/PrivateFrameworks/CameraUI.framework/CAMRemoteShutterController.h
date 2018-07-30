@@ -57,6 +57,7 @@
 - (void)openConnection;
 - (void)applyCaptureConfiguration:(id)arg1;
 - (void)dealloc;
+- (void)createConnectionIfNecessary;
 - (id)initWithCaptureConfiguration:(id)arg1 motionController:(id)arg2;
 
 @end

@@ -10,13 +10,17 @@
 
 @interface PUProjectExtensionHostContext : PUExtensionHostContext <PUProjectExtensionHost>
 {
+    id <PUProjectExtensionHostContextDelegate> _projectHostContextDelegate;
 }
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+@property(nonatomic) __weak id <PUProjectExtensionHostContextDelegate> projectHostContextDelegate; // @synthesize projectHostContextDelegate=_projectHostContextDelegate;
+- (void).cxx_destruct;
+- (void)performDragOperationWithPasteboardNamed:(id)arg1 draggingSequenceNumber:(long long)arg2;
+- (id)updateProjectInfo:(id)arg1 forProject:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)showEditorForAssetWithLocalIdentifier:(id)arg1;
 - (void)_openURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)didConnectToVendor:(id)arg1;
-- (void)_configureVendorInterface:(id)arg1;
 
 @end
 

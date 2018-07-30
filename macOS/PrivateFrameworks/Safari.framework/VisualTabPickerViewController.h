@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VisualTabPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) VisualTabPickerSnapshotCache *snapshotCache; // @synthesize snapshotCache=_snapshotCache;
 - (void).cxx_destruct;
+- (void)_browserTabViewItemDidChangeIcon:(id)arg1;
 - (id)_cloudTabAtIndex:(unsigned long long)arg1 forDeviceAtIndex:(unsigned long long)arg2;
 - (id)_dictionaryForCloudDeviceAtIndex:(unsigned long long)arg1;
 - (id)_cloudDeviceAtIndex:(unsigned long long)arg1;

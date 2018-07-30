@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) id previousValue; // @synthesize previousValue=_previousValue;
 @property(readonly, nonatomic) HMDCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithCharacteristic:(id)arg1;
 

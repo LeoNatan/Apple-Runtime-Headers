@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)_setUpOneStepBookmarkingMenu:(id)arg1;
 - (id)_oneStepBookmarkingTopSiteMenuItemIcon;
 - (id)_oneStepBookmarkingBookmarkMenuItemIcon;
+- (id)_oneStepBookmarkingFavoritesMenuItemIcon;
 - (id)_oneStepBookmarkingReadingListMenuItemIcon;
 - (BOOL)_canAddBookmark;
 - (id)_dynamicOneStepBookmarkingMenu;

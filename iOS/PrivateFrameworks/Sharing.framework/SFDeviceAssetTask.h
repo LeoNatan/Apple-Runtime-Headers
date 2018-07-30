@@ -12,18 +12,18 @@ __attribute__((visibility("hidden")))
 @interface SFDeviceAssetTask : NSObject
 {
     _Bool _useProcessLocalCache;
-    _Bool _fallbackIsCachedResult;
     SFDeviceAssetQuery *_deviceAssetQuery;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSObject<OS_dispatch_source> *_timer;
     CDUnknownBlockType _completionHandler;
     NSBundle *_assetBundle;
     NSBundle *_fallbackAssetBundle;
+    NSBundle *_cachedAssetBundle;
     NSError *_error;
 }
 
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-@property(readonly, nonatomic) _Bool fallbackIsCachedResult; // @synthesize fallbackIsCachedResult=_fallbackIsCachedResult;
+@property(readonly, nonatomic) NSBundle *cachedAssetBundle; // @synthesize cachedAssetBundle=_cachedAssetBundle;
 @property(readonly, nonatomic) NSBundle *fallbackAssetBundle; // @synthesize fallbackAssetBundle=_fallbackAssetBundle;
 @property(readonly, nonatomic) NSBundle *assetBundle; // @synthesize assetBundle=_assetBundle;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -35,7 +35,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)processCanAccessURL:(id)arg1 error:(id *)arg2;
 - (id)bundleAtURL:(id)arg1 error:(id *)arg2;
 - (id)bundleURLFromAssetURL:(id)arg1;
-- (void)complete;
+- (void)completeWithBundle:(id)arg1 isFallback:(_Bool)arg2 isCached:(_Bool)arg3;
+- (_Bool)completeIfPossible;
 - (void)cancelTimeout;
 - (_Bool)updateTaskWithBundle:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isCached:(_Bool)arg4;
 - (_Bool)updateTaskWithAssetBundleURL:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isCached:(_Bool)arg4;

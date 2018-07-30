@@ -10,7 +10,6 @@
 
 @interface AFPowerAssertionManager : NSObject
 {
-    unsigned int _powerAssertion;
     NSString *_debugName;
 }
 

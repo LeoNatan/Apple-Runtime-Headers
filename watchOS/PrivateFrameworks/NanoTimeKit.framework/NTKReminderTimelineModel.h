@@ -23,6 +23,8 @@
 + (id)sharedModel;
 - (void).cxx_destruct;
 - (void)syncStateObserverDidChangeSyncState:(id)arg1;
+- (void)_flushCacheAndLoadQueue;
+- (void)_significantTimeChanged;
 - (void)_reminderStoreDidChange;
 - (void)_loadQueueFinished;
 - (void)_closeReminderStoreAndStopObservingChanges;

@@ -42,7 +42,9 @@
 
 + (id)flattenedFeatureList:(id)arg1;
 + (void)_append:(id)arg1 toList:(id)arg2;
-+ (id)debugNameForFeatureType:(unsigned long long)arg1;
++ (id)nameForFaceExpression:(long long)arg1;
++ (id)nameForOCRType:(long long)arg1;
++ (id)nameForFeatureType:(unsigned long long)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)featureWithAssetMetadata:(id)arg1;
 + (id)featureWithColorInfo:(id)arg1 canvasSize:(struct CGSize)arg2;
@@ -50,8 +52,8 @@
 + (id)featureWithVisionRequest:(id)arg1 rectangleResult:(id)arg2 canvasSize:(struct CGSize)arg3;
 + (id)featureWithVisionRequest:(id)arg1 classificationResult:(id)arg2 canvasSize:(struct CGSize)arg3;
 + (id)featureWithVisionRequest:(id)arg1 horizonResult:(id)arg2 canvasSize:(struct CGSize)arg3;
-+ (id)featureWithVisionRequest:(id)arg1 brightnessResult:(id)arg2 canvasSize:(struct CGSize)arg3;
-+ (id)featureWithVisionRequest:(id)arg1 blurResult:(id)arg2 canvasSize:(struct CGSize)arg3;
++ (id)featureWithVisionRequest:(id)arg1 brightnessValue:(float)arg2 canvasSize:(struct CGSize)arg3;
++ (id)featureWithVisionRequest:(id)arg1 blurValue:(float)arg2 canvasSize:(struct CGSize)arg3;
 + (id)featureWithVisionRequest:(id)arg1 humanResult:(id)arg2 canvasSize:(struct CGSize)arg3;
 + (id)featureWithVisionRequest:(id)arg1 faceResult:(id)arg2 canvasSize:(struct CGSize)arg3;
 + (id)featureWithVisionRequest:(id)arg1 textResult:(id)arg2 canvasSize:(struct CGSize)arg3 context:(id)arg4;
@@ -63,7 +65,7 @@
 + (id)unitTestingHorizonFeature;
 + (id)unitTestingFaceFeature;
 + (id)unitTestingFeature;
-+ (id)unitTestingFeatureWithType:(unsigned long long)arg1 canvasSize:(struct CGSize)arg2 frame:(struct CGRect)arg3 value:(id)arg4 barcodeType:(id)arg5 ocrFeatureType:(long long)arg6;
++ (id)unitTestingFeatureWithType:(unsigned long long)arg1 canvasSize:(struct CGSize)arg2 frame:(struct CGRect)arg3 value:(id)arg4 barcodeType:(id)arg5 ocrFeatureType:(long long)arg6 subFeatures:(id)arg7;
 - (void).cxx_destruct;
 - (double)confidenceForExpression:(long long)arg1;
 @property(readonly, nonatomic) long long likelyExpression;

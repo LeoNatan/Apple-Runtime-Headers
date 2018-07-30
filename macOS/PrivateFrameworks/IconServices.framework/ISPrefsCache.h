@@ -12,14 +12,16 @@ __attribute__((visibility("hidden")))
 @interface ISPrefsCache : NSObject
 {
     NSNumber *_focusRingTint;
-    int _lock;
+    NSNumber *_shouldDrawObviousPlaceholders;
+    struct os_unfair_lock_s _lock;
 }
 
 + (id)sharedInstance;
-@property(readonly) int lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
+@property(readonly) BOOL shouldDrawObviousPlaceholders;
 @property(readonly) int focusRingTint; // @dynamic focusRingTint;
 - (void)_handleDefaultChangeNotification:(id)arg1;
+- (id)_objectForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

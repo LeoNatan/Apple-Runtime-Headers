@@ -69,6 +69,16 @@ struct _PFBatchFaultingArrayFlags {
     unsigned int _RESERVED:23;
 };
 
+struct _moFactoryClassFlags {
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :26;
+};
+
 struct _opaque_pthread_mutex_t {
     long long __sig;
     char __opaque[56];
@@ -112,14 +122,19 @@ typedef struct {
     void *_field7;
     id _field8;
     char *_field9;
-    struct _moFactoryClassFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :26;
-    } _field10;
+    struct _moFactoryClassFlags _field10;
 } CDStruct_977f6bcf;
+
+typedef struct {
+    int _field1;
+    void *_field2;
+    id _field3;
+    unsigned long long _field4;
+    unsigned char _field5;
+    unsigned long long _field6;
+    void *_field7;
+    unsigned char _field8[32];
+    char *_field9;
+    struct _moFactoryClassFlags _field10;
+} CDStruct_1e30fb15;
 

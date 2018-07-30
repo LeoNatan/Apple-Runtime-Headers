@@ -8,35 +8,33 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSString;
+@class CEMApplicationControlDeclaration_InstallSchedule, CEMApplicationControlDeclaration_UpdateSchedule, NSString;
 
 @interface CEMApplicationControlDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    CEMApplicationControlDeclaration_InstallSchedule *_payloadInstallSchedule;
+    NSString *_payloadUpdatePolicy;
+    CEMApplicationControlDeclaration_UpdateSchedule *_payloadUpdateSchedule;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withInstallSchedule:(id)arg2 withUpdatePolicy:(id)arg3 withUpdateSchedule:(id)arg4;
 + (id)restrictionPayloadKeys;
-+ (id)UpdateSchedule_allowedPayloadKeys;
-+ (id)InstallSchedule_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadUpdateSchedule:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadInstallSchedule:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadUpdateSchedule_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadInstallSchedule_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMApplicationControlDeclaration_UpdateSchedule *payloadUpdateSchedule; // @synthesize payloadUpdateSchedule=_payloadUpdateSchedule;
+@property(copy, nonatomic) NSString *payloadUpdatePolicy; // @synthesize payloadUpdatePolicy=_payloadUpdatePolicy;
+@property(copy, nonatomic) CEMApplicationControlDeclaration_InstallSchedule *payloadInstallSchedule; // @synthesize payloadInstallSchedule=_payloadInstallSchedule;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSDictionary *payloadUpdateSchedule;
-@property(readonly, nonatomic) NSString *payloadUpdatePolicy;
-@property(readonly, nonatomic) NSDictionary *payloadInstallSchedule;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

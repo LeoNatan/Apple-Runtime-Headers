@@ -7,36 +7,40 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBAppNames.h"
 
-@class NSString, PBUnknownFields;
+@class NSString;
 
-@interface _INPBAppNames : PBCodable <NSCopying>
+@interface _INPBAppNames : PBCodable <_INPBAppNames, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSString *_appName;
     NSString *_axSpokenName;
     NSString *_displayName;
     NSString *_spotlightName;
 }
 
-@property(retain, nonatomic) NSString *axSpokenName; // @synthesize axSpokenName=_axSpokenName;
-@property(retain, nonatomic) NSString *spotlightName; // @synthesize spotlightName=_spotlightName;
-@property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-@property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
+@property(copy, nonatomic) NSString *spotlightName; // @synthesize spotlightName=_spotlightName;
+@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(copy, nonatomic) NSString *axSpokenName; // @synthesize axSpokenName=_axSpokenName;
+@property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasAxSpokenName;
 @property(readonly, nonatomic) _Bool hasSpotlightName;
 @property(readonly, nonatomic) _Bool hasDisplayName;
+@property(readonly, nonatomic) _Bool hasAxSpokenName;
 @property(readonly, nonatomic) _Bool hasAppName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)drawFragment:(const struct TSWPLineFragment *)arg1 updateRect:(struct CGRect)arg2 drawingState:(const struct TSWPDrawingState *)arg3 runState:(CDStruct_3b6efdb6 *)arg4 lineDrawFlags:(unsigned int)arg5;
 - (void)didRenderFragments;
 - (void)willRenderFragmentsWithDrawingState:(const struct TSWPDrawingState *)arg1;
+- (void)setupFontSmoothingWithDrawingState:(const struct TSWPDrawingState *)arg1 attributes:(id)arg2;
 - (struct CGSize)convertSizeToDeviceSpace:(struct CGSize)arg1;
 - (struct CGRect)getClipBoundingBox;
 - (void)dealloc;

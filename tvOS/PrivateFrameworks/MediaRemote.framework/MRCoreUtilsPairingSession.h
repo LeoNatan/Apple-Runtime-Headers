@@ -12,7 +12,17 @@
 {
     MRPasscodeCredentials *_credentials;
     struct PairingSessionPrivate *_pairingSession;
-    CDStruct_1af33fde _pairingDelegate;
+    struct {
+        void *context;
+        CDUnknownFunctionPointerType showSetupCode_f;
+        CDUnknownFunctionPointerType hideSetupCode_f;
+        CDUnknownFunctionPointerType promptForSetupCode_f;
+        CDUnknownFunctionPointerType copyIdentity_f;
+        CDUnknownFunctionPointerType findPeer_f;
+        CDUnknownFunctionPointerType savePeer_f;
+        CDUnknownFunctionPointerType resumeRequest_f;
+        CDUnknownFunctionPointerType resumeResponse_f;
+    } _pairingDelegate;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _hasExchangedMessage;
     unsigned int _pairingFlags;

@@ -229,11 +229,11 @@
 - (id)_createTemplateLayoutCellForCellsWithIdentifier:(id)arg1;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
 - (id)dequeueReusableItemWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
-- (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3 viewCategory:(unsigned long long)arg4;
-- (id)_reuseQueueForViewWithElementCategory:(unsigned long long)arg1 elementKind:(id)arg2 reuseIdentifier:(id)arg3;
+- (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3 viewCategory:(long long)arg4;
+- (id)_reuseQueueForViewWithElementCategory:(long long)arg1 elementKind:(id)arg2 reuseIdentifier:(id)arg3;
 - (id)_reuseDictionaryForCell:(BOOL)arg1;
-- (void)_prepareViewForUse:(id)arg1 withElementCategory:(unsigned long long)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5 applyDefaultAttributes:(BOOL)arg6;
-- (void)_prepareViewForUse:(id)arg1 withElementCategory:(unsigned long long)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5;
+- (void)_prepareViewForUse:(id)arg1 withElementCategory:(long long)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5 applyDefaultAttributes:(BOOL)arg6;
+- (void)_prepareViewForUse:(id)arg1 withElementCategory:(long long)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5;
 - (id)_registeredCellNibsByReuseIdentifier;
 - (id)_registeredCellClassesByReuseIdentifier;
 - (void)registerNib:(id)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
@@ -258,7 +258,7 @@
 - (id)_itemAtIndexPath:(id)arg1 includePrefetchedCells:(BOOL)arg2;
 - (id)itemAtIndexPath:(id)arg1;
 - (id)indexPathForItem:(id)arg1;
-- (id)_visibleViewDictForElementCategory:(unsigned long long)arg1 elementKind:(id)arg2;
+- (id)_visibleViewDictForElementCategory:(long long)arg1 elementKind:(id)arg2;
 - (id)indexPathForItemAtPoint:(struct CGPoint)arg1;
 - (id)layoutAttributesForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

@@ -12,17 +12,19 @@
 
 @interface CSLSOnWristMonitor : NSObject <CSLOnWristClientExportedInterface>
 {
+    _Bool _activated;
     CSLSOnWristState *_lastState;
     CDUnknownBlockType _changeHandler;
     id <CSLSOnWristMonitorDelegate> _delegate;
+    NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_connection;
     CSLOnWristClientExportedObject *_exportedObject;
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(getter=isActivated) _Bool activated; // @synthesize activated=_activated;
 @property(retain, nonatomic) CSLOnWristClientExportedObject *exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSLSOnWristMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
 @property(retain) CSLSOnWristState *lastState; // @synthesize lastState=_lastState;
@@ -32,6 +34,8 @@
 - (void)_getCSLSWristState:(CDUnknownBlockType)arg1 notify:(_Bool)arg2;
 - (void)_queue_updateState:(id)arg1 notify:(_Bool)arg2;
 - (void)onWristStateChanged:(id)arg1;
+- (void)_activate;
+- (void)activate;
 - (void)requestWristDetectionDisabledStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)forceOnWristUpdate;
 - (void)getWristState:(CDUnknownBlockType)arg1;

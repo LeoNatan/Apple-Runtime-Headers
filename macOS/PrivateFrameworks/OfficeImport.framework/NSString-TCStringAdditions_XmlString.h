@@ -8,6 +8,7 @@
 
 @interface NSString (TCStringAdditions_XmlString)
 + (id)tc_stringWithXmlString:(const char *)arg1;
+- (id)tc_stringByRemovingInvalidXmlChars;
 - (BOOL)tc_isEqualToXmlString:(const char *)arg1;
 - (id)tc_componentsSeparatedByWhitespace;
 - (id)tc_initFromXmlNode:(struct _xmlNode *)arg1 nsWithFallbackNs:(id)arg2 attributeName:(const char *)arg3;

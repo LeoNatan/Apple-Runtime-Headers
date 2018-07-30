@@ -19,6 +19,8 @@
 + (void)useProxy:(Class)arg1;
 - (void).cxx_destruct;
 - (void)getCurrentGeoServicesState:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)getGeoServicesCacheDirectoryPath;
+- (id)getHomeDirectoryPath;
 - (id)init;
 
 // Remaining properties

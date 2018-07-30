@@ -47,7 +47,7 @@
 - (void)cancelEvaluation;
 - (void)fallbackToSystemPasscodeUI;
 - (void)evaluateRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_evaluateRequest:(id)arg1 withContext:(id)arg2;
+- (void)_evaluateEvaluationContext:(id)arg1;
 - (void)_handleInstructionsForRequest:(id)arg1 withContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_optionsForEvaluationRequest:(id)arg1;
 - (id)_swapContext:(id)arg1 withOptions:(unsigned long long)arg2;

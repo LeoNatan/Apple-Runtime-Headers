@@ -10,8 +10,7 @@
 {
 }
 
-+ (Class)registeredSubClassOf:(id)arg1 withType:(id)arg2;
-+ (id)registeredSubClasses;
++ (Class)registeredClassWithName:(id)arg1 withIdentifier:(id)arg2;
 
 @end
 

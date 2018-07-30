@@ -10,6 +10,7 @@
 
 @class NSColorPickerSliders, NSColorSpace;
 
+__attribute__((visibility("hidden")))
 @interface NSColorSpaceSliders : NSObject <NSSliderViewRequiredMethods>
 {
     id colorPanel;

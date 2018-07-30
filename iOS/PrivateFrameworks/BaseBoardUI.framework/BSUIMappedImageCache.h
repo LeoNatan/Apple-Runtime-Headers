@@ -21,6 +21,7 @@
     NSMutableSet *_queue_allKeys;
 }
 
+- (void).cxx_destruct;
 - (void)_noteExternalChangeForKey:(id)arg1;
 - (void)_warmupImageForKey:(id)arg1;
 - (void)_setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned long long)arg3 andCPBitmapReadFlags:(int)arg4;

@@ -23,6 +23,7 @@
 + (id)softwareUpdateDocumentFromPath:(id)arg1;
 + (id)softwareUpdateDocumentFromXML:(id)arg1 withBundlePath:(id)arg2;
 - (id)objectForOptionNamed:(id)arg1;
+- (BOOL)getData:(id *)arg1 andMIMEType:(id *)arg2 forResourceNamed:(id)arg3 forLanguage:(id)arg4 error:(id *)arg5;
 - (BOOL)getData:(id *)arg1 andMIMEType:(id *)arg2 forResourceNamed:(id)arg3 forLanguage:(id)arg4;
 - (BOOL)getData:(id *)arg1 andMIMEType:(id *)arg2 forResourceNamed:(id)arg3;
 - (BOOL)containsResourceNamed:(id)arg1;

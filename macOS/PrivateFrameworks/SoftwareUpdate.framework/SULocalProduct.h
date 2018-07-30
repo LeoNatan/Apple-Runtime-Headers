@@ -17,7 +17,7 @@
     SUProduct *_remoteProduct;
 }
 
-@property SUProduct *remoteProduct; // @synthesize remoteProduct=_remoteProduct;
+@property(retain) SUProduct *remoteProduct; // @synthesize remoteProduct=_remoteProduct;
 - (id)systemImagePackage;
 - (int)restartAction;
 - (id)mustCloseAppsToInstallProduct;

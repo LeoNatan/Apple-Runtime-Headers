@@ -6,6 +6,7 @@
 
 #import "UIWindow.h"
 
+__attribute__((visibility("hidden")))
 @interface _SCNSnapshotWindow : UIWindow
 {
 }

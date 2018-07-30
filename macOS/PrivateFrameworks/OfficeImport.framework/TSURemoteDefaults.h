@@ -6,7 +6,6 @@
 
 #import <OfficeImport/TSURemotePropertyList.h>
 
-__attribute__((visibility("hidden")))
 @interface TSURemoteDefaults : TSURemotePropertyList
 {
 }

@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PBSlideBase.h>
 
-__attribute__((visibility("hidden")))
 @interface PBSlideMaster : PBSlideBase
 {
 }

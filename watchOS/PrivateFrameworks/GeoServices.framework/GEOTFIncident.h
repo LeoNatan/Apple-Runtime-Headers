@@ -10,6 +10,7 @@
 
 @class NSData, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOTFIncident : PBCodable <NSCopying>
 {
     CDStruct_815f15fd _geoids;

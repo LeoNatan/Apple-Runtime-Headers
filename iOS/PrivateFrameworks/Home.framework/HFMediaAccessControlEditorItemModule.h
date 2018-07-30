@@ -17,12 +17,14 @@
     HFMediaAccessControlEditorItemProvider *_accessControlEditorItemProvider;
 }
 
++ (id)_descriptionFooterTextForAccessControlDescriptor:(id)arg1 hasNonPeerToPeerMediaAccessories:(_Bool)arg2;
 @property(readonly, nonatomic) HFMediaAccessControlEditorItemProvider *accessControlEditorItemProvider; // @synthesize accessControlEditorItemProvider=_accessControlEditorItemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
 - (void)home:(id)arg1 didUpdateMediaPassword:(id)arg2;
 - (void)home:(id)arg1 didUpdateMediaPeerToPeerEnabled:(_Bool)arg2;
 - (void)home:(id)arg1 didUpdateMinimumMediaUserPrivilege:(long long)arg2;
+- (_Bool)_hasNonPeerToPeerMediaAccessories;
 - (id)updateAccessControlDescriptor:(id)arg1;
 - (_Bool)containsItem:(id)arg1;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;

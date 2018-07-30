@@ -21,6 +21,10 @@
 @property(retain) ASAsset *asset; // @synthesize asset=_asset;
 @property(retain) VSVoiceAsset *voiceData; // @synthesize voiceData=_voiceData;
 - (void).cxx_destruct;
+- (_Bool)isDownloading;
+- (_Bool)isInstalled;
+- (unsigned long long)size;
+- (id)descriptiveKey;
 - (id)key;
 
 @end

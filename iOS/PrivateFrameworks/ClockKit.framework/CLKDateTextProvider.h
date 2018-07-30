@@ -14,6 +14,7 @@
     NSArray *_templateSeries;
     _Bool _shortUnits;
     _Bool _allowsNarrowUnits;
+    _Bool _narrowStandaloneWeekdayDay;
     NSDate *_date;
     unsigned long long _calendarUnits;
     NSTimeZone *_timeZone;
@@ -26,6 +27,7 @@
 + (id)textProviderWithDate:(id)arg1 units:(unsigned long long)arg2;
 @property(nonatomic) long long formattingContext; // @synthesize formattingContext=_formattingContext;
 @property(copy, nonatomic) NSString *alternateCalendarLocaleID; // @synthesize alternateCalendarLocaleID=_alternateCalendarLocaleID;
+@property(nonatomic) _Bool narrowStandaloneWeekdayDay; // @synthesize narrowStandaloneWeekdayDay=_narrowStandaloneWeekdayDay;
 @property(nonatomic) _Bool allowsNarrowUnits; // @synthesize allowsNarrowUnits=_allowsNarrowUnits;
 @property(nonatomic) _Bool shortUnits; // @synthesize shortUnits=_shortUnits;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;

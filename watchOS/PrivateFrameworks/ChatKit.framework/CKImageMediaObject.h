@@ -34,8 +34,7 @@
 - (_Bool)canShareItem;
 - (id)pasteboardItem;
 - (id)_getIrisBundleURL;
-- (id)_getTempIrisBundleLocation;
-- (id)_getTempIrisFolder;
+- (id)_getIrisBundleLocation;
 - (id)calculateIrisVideoPath;
 - (id)getIrisVideoPath;
 - (void)export:(id)arg1;
@@ -43,12 +42,14 @@
 - (_Bool)canExport;
 - (id)generateThumbnailFillToSize:(struct CGSize)arg1 contentAlignmentInsets:(struct UIEdgeInsets)arg2;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (_Bool)validatePreviewFormat;
+- (_Bool)generatePreviewOutOfProcess;
 - (struct CGSize)bbSize;
+- (id)bbPreviewFillToSize:(struct CGSize)arg1;
 - (id)location;
 - (int)mediaType;
-- (id)initWithTransfer:(id)arg1;
-- (void)dealloc;
-- (void)_removeAppendedBundle;
+- (id)previewFilenameExtension;
+- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3;
 - (Class)_cknmp_mediaPresenterClass;
 - (id)_cknmp_presenterTitle;
 

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (void)addData:(id)arg1 forPasteboardType:(id)arg2;
 - (void)addItems:(id)arg1 isSmartCopy:(_Bool)arg2;
+- (_Bool)canLoadItemsOfClass:(Class)arg1;
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (long long)numberOfItems;
 - (id)valueForPasteboardType:(id)arg1;

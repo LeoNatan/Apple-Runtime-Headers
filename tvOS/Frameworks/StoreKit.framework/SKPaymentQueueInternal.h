@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, SKPaymentQueueClient, SKXPCConnection;
+@class NSMutableArray, NSObject<OS_dispatch_queue>, SKPaymentQueueClient, SKXPCConnection;
 
 @interface SKPaymentQueueInternal : NSObject
 {
@@ -14,7 +14,8 @@
     SKPaymentQueueClient *_client;
     _Bool _isRefreshing;
     NSMutableArray *_localTransactions;
-    struct __CFArray *_observers;
+    NSMutableArray *_observerReferences;
+    NSObject<OS_dispatch_queue> *_observerReferencesAccessQueue;
     SKXPCConnection *_requestConnection;
     SKXPCConnection *_responseConnection;
     _Bool _restoreFinishedDuringRefresh;
@@ -22,6 +23,7 @@
     NSMutableArray *_transactions;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

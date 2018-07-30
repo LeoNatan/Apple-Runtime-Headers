@@ -14,6 +14,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)flush;
 - (void)setPins:(id)arg1 forMapType:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3 pinColor:(id)arg4;
 - (id)pinsWithMapType:(unsigned long long)arg1 displayStyle:(unsigned long long)arg2 pinColor:(id)arg3;
 - (id)init;

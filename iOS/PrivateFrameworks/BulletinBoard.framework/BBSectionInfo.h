@@ -72,6 +72,9 @@
 @property(readonly, copy, nonatomic) NSData *iconData;
 @property(nonatomic) unsigned long long bulletinCount;
 @property(nonatomic) _Bool enabled;
+- (void)deliverQuietly:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool isDeliveredQuietly;
+@property(readonly, nonatomic) _Bool hasEnabledSettings;
 - (void)_dissociateDataProviderSectionInfo:(id)arg1;
 - (void)_associateDataProviderSectionInfo:(id)arg1;
 - (id)_subsectionForID:(id)arg1;
@@ -92,15 +95,25 @@
 @property(copy, nonatomic) BBSectionInfoSettings *managedSectionInfoSettings;
 - (_Bool)queryAndUseManagedSettingsForSectionID:(id)arg1;
 - (_Bool)queryAndUseManagedSettings;
+- (void)setEmergencySetting:(long long)arg1;
+- (long long)emergencySetting;
+@property(nonatomic) _Bool showsCustomSettingsLink;
 - (void)setShowsMessagePreview:(_Bool)arg1;
 - (_Bool)showsMessagePreview;
 @property(nonatomic) long long contentPreviewSetting;
 @property(nonatomic) _Bool showsOnExternalDevices;
+@property(nonatomic) long long bulletinGroupingSetting;
+@property(nonatomic) long long criticalAlertSetting;
 @property(nonatomic) long long carPlaySetting;
 @property(nonatomic) unsigned long long pushSettings;
 @property(nonatomic) unsigned long long alertType;
-@property(nonatomic) _Bool showsInLockScreen;
-@property(nonatomic) _Bool showsInNotificationCenter;
+- (void)setShowsInLockScreen:(_Bool)arg1;
+- (_Bool)showsInLockScreen;
+@property(nonatomic) long long lockScreenSetting;
+- (void)setShowsInNotificationCenter:(_Bool)arg1;
+- (_Bool)showsInNotificationCenter;
+@property(nonatomic) long long notificationCenterSetting;
+@property(nonatomic) long long authorizationStatus;
 @property(nonatomic) _Bool allowsNotifications;
 
 @end

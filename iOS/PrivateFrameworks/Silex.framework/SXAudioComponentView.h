@@ -6,11 +6,12 @@
 
 #import <Silex/SXMediaComponentView.h>
 
+#import "AVPlayerViewControllerDelegate_AppStoreOnly.h"
 #import "SXMediaPlaybackDelegate.h"
 
 @class AVPlayerViewController, NSString, SXAVPlayer, SXAudioComponentOverlayView;
 
-@interface SXAudioComponentView : SXMediaComponentView <SXMediaPlaybackDelegate>
+@interface SXAudioComponentView : SXMediaComponentView <SXMediaPlaybackDelegate, AVPlayerViewControllerDelegate_AppStoreOnly>
 {
     _Bool _audioHasPlayed;
     _Bool _startPlaybackWhenReady;
@@ -29,6 +30,7 @@
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 - (void).cxx_destruct;
+- (void)playerViewController:(id)arg1 metricsCollectionEventOccured:(long long)arg2;
 - (_Bool)allowHierarchyRemoval;
 - (void)submitMediaEngageCompleteEvent;
 - (void)submitMediaEngageEventForUserAction:(unsigned long long)arg1;

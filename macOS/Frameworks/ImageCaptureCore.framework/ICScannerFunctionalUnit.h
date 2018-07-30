@@ -25,7 +25,6 @@
 - (unsigned char)backgroundGrayValue;
 - (void)clearOverviewImageBuffer;
 - (id)initWithDictionary:(id)arg1 andScanner:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 @property(readonly) NSDictionary *scanParams;
 @property unsigned long long scanAreaOrientation;

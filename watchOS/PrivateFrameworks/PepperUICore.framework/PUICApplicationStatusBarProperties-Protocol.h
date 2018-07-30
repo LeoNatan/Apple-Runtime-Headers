@@ -16,6 +16,7 @@
 @property(nonatomic) _Bool showNavigationUI;
 @property(retain, nonatomic) UIColor *backgroundColor;
 @property(nonatomic, getter=isTitleInteractive) _Bool titleInteractive;
+@property(nonatomic) float inset;
 @property(nonatomic) float titleBaseLine;
 @property(retain, nonatomic) UIFont *titleFont;
 @property(retain, nonatomic) UIColor *titleColor;

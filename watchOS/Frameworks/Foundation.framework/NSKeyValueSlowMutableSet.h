@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     char _padding[3];
 }
 
-+ (CDStruct_e8a1eea0 *)_proxyNonGCPoolPointer;
 - (void)unionSet:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)removeObject:(id)arg1;

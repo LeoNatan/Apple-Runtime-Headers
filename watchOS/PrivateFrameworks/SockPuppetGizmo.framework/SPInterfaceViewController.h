@@ -6,18 +6,17 @@
 
 #import "UIViewController.h"
 
-#import "PUICTableViewDataSource.h"
-#import "PUICTableViewDelegate.h"
 #import "SPActivatingViewDelegate.h"
 #import "SPInterfaceDelegate.h"
 #import "UIScrollViewDelegate.h"
 
-@class NSArray, NSBundle, NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, NSURL, PUICActionGroup, PUICActionItem, PUICTableView, SPActivatingView, SPAutoPlayManager, SPCrownSequencer, SPFullScreenView, SPInterfaceGroupView, UIColor, UIImage, UIImageView, UILabel, UIScrollView;
+@class NSArray, NSBundle, NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, NSURL, PUICActionGroup, PUICButton, SPActivatingView, SPAutoPlayManager, SPCrownSequencer, SPFullScreenView, SPIBContainerView, SPIBOuterScrollView, SPInterfaceGroupView, UIColor, UIImage, UIImageView, UILabel;
 
-@interface SPInterfaceViewController : UIViewController <PUICTableViewDataSource, PUICTableViewDelegate, SPActivatingViewDelegate, UIScrollViewDelegate, SPInterfaceDelegate>
+@interface SPInterfaceViewController : UIViewController <SPActivatingViewDelegate, UIScrollViewDelegate, SPInterfaceDelegate>
 {
     NSArray *_respondersForCrownInputFocus;
     _Bool _isNotification;
+    _Bool _isNotificationLinkedOnOrAfterGlory;
     _Bool _isGlanceInIB;
     _Bool _isVerticalPage;
     _Bool _fullScreenEnabled;
@@ -29,8 +28,8 @@
     _Bool _preloading;
     _Bool _alwaysBounceScrollView;
     _Bool _extensionControllerCreated;
-    _Bool _kvObservingSimNotificationActionTable;
     _Bool _isInInterfaceBuilder;
+    _Bool _hasNowPlaying;
     _Bool _reportDidAppearAfterModalDismissal;
     id <SPInterfaceViewControllerDelegate> _vcdelegate;
     id <SPInterfaceViewControllerPreloadDelegate> _vcPreloadDelegate;
@@ -46,6 +45,7 @@
     UIColor *_customNotificationTitleColor;
     NSString *_staticNotificationAlertLabelText;
     NSString *_staticNotificationTitleLabelText;
+    NSString *_staticNotificationSubtitleLabelText;
     NSURL *_staticNotificationAttachmentURL;
     int _staticNotificationAttachmentType;
     NSString *_activityType;
@@ -64,12 +64,10 @@
     NSDate *_lastUpdatedDate;
     NSMutableArray *_extensionControllerCreatedCompletions;
     UIImageView *_simulatorNotificationSash;
-    PUICTableView *_simulatorNotificationActionTable;
-    NSArray *_simulatorNotificationActionItems;
-    PUICActionItem *_simulatorNotificationDismissItem;
-    NSDictionary *_simulatorNotificationActionTagToIdentifierMap;
-    UIScrollView *_simulatorNotificationScrollView;
+    PUICButton *_simulatorNotificationDismissButton;
+    SPIBOuterScrollView *_simulatorNotificationScrollView;
     UILabel *_simulatorNotificationTimeLabel;
+    SPIBContainerView *_ibContainerView;
     NSMutableArray *_gestureRecognizers;
     SPCrownSequencer *_crownSequencer;
     SPAutoPlayManager *_autoplayManager;
@@ -85,15 +83,13 @@
 @property(retain, nonatomic) SPAutoPlayManager *autoplayManager; // @synthesize autoplayManager=_autoplayManager;
 @property(retain, nonatomic) SPCrownSequencer *crownSequencer; // @synthesize crownSequencer=_crownSequencer;
 @property(retain, nonatomic) NSMutableArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
+@property(nonatomic) _Bool hasNowPlaying; // @synthesize hasNowPlaying=_hasNowPlaying;
 @property(nonatomic) _Bool isInInterfaceBuilder; // @synthesize isInInterfaceBuilder=_isInInterfaceBuilder;
+@property(nonatomic) __weak SPIBContainerView *ibContainerView; // @synthesize ibContainerView=_ibContainerView;
 @property(retain, nonatomic) UILabel *simulatorNotificationTimeLabel; // @synthesize simulatorNotificationTimeLabel=_simulatorNotificationTimeLabel;
-@property(retain, nonatomic) UIScrollView *simulatorNotificationScrollView; // @synthesize simulatorNotificationScrollView=_simulatorNotificationScrollView;
-@property(copy, nonatomic) NSDictionary *simulatorNotificationActionTagToIdentifierMap; // @synthesize simulatorNotificationActionTagToIdentifierMap=_simulatorNotificationActionTagToIdentifierMap;
-@property(retain, nonatomic) PUICActionItem *simulatorNotificationDismissItem; // @synthesize simulatorNotificationDismissItem=_simulatorNotificationDismissItem;
-@property(retain, nonatomic) NSArray *simulatorNotificationActionItems; // @synthesize simulatorNotificationActionItems=_simulatorNotificationActionItems;
-@property(retain, nonatomic) PUICTableView *simulatorNotificationActionTable; // @synthesize simulatorNotificationActionTable=_simulatorNotificationActionTable;
+@property(retain, nonatomic) SPIBOuterScrollView *simulatorNotificationScrollView; // @synthesize simulatorNotificationScrollView=_simulatorNotificationScrollView;
+@property(retain, nonatomic) PUICButton *simulatorNotificationDismissButton; // @synthesize simulatorNotificationDismissButton=_simulatorNotificationDismissButton;
 @property(retain, nonatomic) UIImageView *simulatorNotificationSash; // @synthesize simulatorNotificationSash=_simulatorNotificationSash;
-@property(nonatomic) _Bool kvObservingSimNotificationActionTable; // @synthesize kvObservingSimNotificationActionTable=_kvObservingSimNotificationActionTable;
 @property(retain, nonatomic) NSMutableArray *extensionControllerCreatedCompletions; // @synthesize extensionControllerCreatedCompletions=_extensionControllerCreatedCompletions;
 @property(nonatomic) _Bool extensionControllerCreated; // @synthesize extensionControllerCreated=_extensionControllerCreated;
 @property _Bool alwaysBounceScrollView; // @synthesize alwaysBounceScrollView=_alwaysBounceScrollView;
@@ -120,6 +116,7 @@
 @property(copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(nonatomic) int staticNotificationAttachmentType; // @synthesize staticNotificationAttachmentType=_staticNotificationAttachmentType;
 @property(copy, nonatomic) NSURL *staticNotificationAttachmentURL; // @synthesize staticNotificationAttachmentURL=_staticNotificationAttachmentURL;
+@property(copy, nonatomic) NSString *staticNotificationSubtitleLabelText; // @synthesize staticNotificationSubtitleLabelText=_staticNotificationSubtitleLabelText;
 @property(copy, nonatomic) NSString *staticNotificationTitleLabelText; // @synthesize staticNotificationTitleLabelText=_staticNotificationTitleLabelText;
 @property(copy, nonatomic) NSString *staticNotificationAlertLabelText; // @synthesize staticNotificationAlertLabelText=_staticNotificationAlertLabelText;
 @property(retain, nonatomic) UIColor *customNotificationTitleColor; // @synthesize customNotificationTitleColor=_customNotificationTitleColor;
@@ -130,6 +127,7 @@
 @property(nonatomic) _Bool fullScreenEnabled; // @synthesize fullScreenEnabled=_fullScreenEnabled;
 @property(nonatomic) _Bool isVerticalPage; // @synthesize isVerticalPage=_isVerticalPage;
 @property(nonatomic) _Bool isGlanceInIB; // @synthesize isGlanceInIB=_isGlanceInIB;
+@property(nonatomic) _Bool isNotificationLinkedOnOrAfterGlory; // @synthesize isNotificationLinkedOnOrAfterGlory=_isNotificationLinkedOnOrAfterGlory;
 @property(nonatomic) _Bool isNotification; // @synthesize isNotification=_isNotification;
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
@@ -172,7 +170,6 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)_dismissCompanionLockedScreen;
-- (_Bool)_showCompanionLockedScreenIfNecessary;
 - (_Bool)_lastUpdatedDateExceedsMinimum;
 - (id)_appName;
 - (id)_getActivatingView;
@@ -198,8 +195,7 @@
 - (void)performActionWithItemID:(id)arg1 forNotificationID:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setInterfaceValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
-- (void)updateSimulatorActionTableFrame;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)updateIBDismissButtonFrame;
 - (void)prepareInterfaceForIB;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
@@ -239,6 +235,9 @@
 - (void)_addExtensionControllerCreatedCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)traverseHierarchyForSpriteOrScene:(id)arg1;
 - (_Bool)_fullScreenAllowed;
+- (void)_loadRemoteNowPlayingViewController;
+- (id)_enforceOnlyNowPlayingControlInThisControllerIterfaceDescription:(id)arg1;
+- (_Bool)_interfaceDescriptionContainsNowPlayingControl:(id)arg1;
 - (void)loadView;
 - (id)rootView;
 - (id)_scrollView;
@@ -248,9 +247,6 @@
 @property(readonly, nonatomic) struct CGRect contentFrame;
 @property(readonly, nonatomic) NSString *identifier;
 - (_Bool)prefersStatusBarHidden;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)createSimulatorNotificationButtonsInView:(id)arg1;
 - (void)forwardCrownDataToVCDelegate:(id)arg1;
 - (void)_wheelChangedWithEvent:(id)arg1;

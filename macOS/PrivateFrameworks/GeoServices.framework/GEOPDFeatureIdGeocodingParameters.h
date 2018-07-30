@@ -10,6 +10,7 @@
 
 @class GEOLatLng, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDFeatureIdGeocodingParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

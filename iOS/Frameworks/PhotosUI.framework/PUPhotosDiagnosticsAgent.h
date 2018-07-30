@@ -27,6 +27,7 @@
 - (id)_currentAssetIdentifierDescription;
 - (id)_currentAsset;
 - (id)_descriptionOfUIState:(long long)arg1;
+- (id)_descriptionForAllUIState;
 - (void)captureDescriptionOfUIState:(long long)arg1 resultHandler:(CDUnknownBlockType)arg2;
 
 @end

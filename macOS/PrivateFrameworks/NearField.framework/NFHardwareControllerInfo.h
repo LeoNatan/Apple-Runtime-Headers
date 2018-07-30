@@ -13,6 +13,7 @@
     BOOL _hasAntenna;
     BOOL _hasBooster;
     BOOL _hasIcfResistor;
+    BOOL _hasMFW;
     BOOL _hasExpressFelicaTransitMode;
     BOOL _hasExpressECPAccessMode;
     BOOL _hasExpressGenericAMode;
@@ -28,6 +29,7 @@
 @property(readonly, nonatomic) BOOL hasExpressGenericAMode; // @synthesize hasExpressGenericAMode=_hasExpressGenericAMode;
 @property(readonly, nonatomic) BOOL hasExpressECPAccessMode; // @synthesize hasExpressECPAccessMode=_hasExpressECPAccessMode;
 @property(readonly, nonatomic) BOOL hasExpressFelicaTransitMode; // @synthesize hasExpressFelicaTransitMode=_hasExpressFelicaTransitMode;
+@property(readonly, nonatomic) BOOL hasMFW; // @synthesize hasMFW=_hasMFW;
 @property(readonly, nonatomic) BOOL hasIcfResistor; // @synthesize hasIcfResistor=_hasIcfResistor;
 @property(readonly, nonatomic) BOOL hasBooster; // @synthesize hasBooster=_hasBooster;
 @property(readonly, nonatomic) BOOL hasAntenna; // @synthesize hasAntenna=_hasAntenna;

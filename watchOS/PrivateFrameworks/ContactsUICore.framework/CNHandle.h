@@ -22,6 +22,9 @@
 + (id)tuHandleTypeMap;
 + (int)tuHandleTypeFromType:(unsigned int)arg1;
 + (id)tuHandleForHandle:(id)arg1;
++ (id)inPersonHandleTypeMap;
++ (int)inPersonHandleTypeForType:(unsigned int)arg1;
++ (id)inPersonHandleForHandle:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *customIdentifier; // @synthesize customIdentifier=_customIdentifier;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;

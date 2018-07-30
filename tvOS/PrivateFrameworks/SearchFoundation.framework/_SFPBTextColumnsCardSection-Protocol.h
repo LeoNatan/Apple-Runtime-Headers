@@ -11,25 +11,15 @@
 @protocol _SFPBTextColumnsCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(copy, nonatomic) NSArray *columns;
-@property(readonly, nonatomic) _Bool hasTitleWeight;
 @property(nonatomic) unsigned int titleWeight;
-@property(readonly, nonatomic) _Bool hasTitle;
 @property(copy, nonatomic) NSString *title;
-@property(readonly, nonatomic) _Bool hasBackgroundColor;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;
-@property(readonly, nonatomic) _Bool hasSeparatorStyle;
 @property(nonatomic) int separatorStyle;
-@property(readonly, nonatomic) _Bool hasType;
 @property(copy, nonatomic) NSString *type;
-@property(readonly, nonatomic) _Bool hasHasBottomPadding;
 @property(nonatomic) _Bool hasBottomPadding;
-@property(readonly, nonatomic) _Bool hasHasTopPadding;
 @property(nonatomic) _Bool hasTopPadding;
-@property(readonly, nonatomic) _Bool hasCanBeHidden;
 @property(nonatomic) _Bool canBeHidden;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerTitle;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
 - (id)initWithDictionary:(NSDictionary *)arg1;

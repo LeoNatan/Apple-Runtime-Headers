@@ -9,6 +9,7 @@
 @class AFSpeechInterpretation, AFUIRequestOptions, AceObject<SAAceCommand>, INImage, NSArray, NSError, NSString, NSURL, SACardShowNextCard, SAGuidanceGuideUpdate, SAPhonePlayVoiceMail, SAPreSynthesizeTTS, SASSpeechPartialResult, SASSpeechRecognized, SASettingSetUIGuidedAccess, SASmsPlayAudio, SAUIAddContentToView, SAUIAddViews, SAUIAppPunchOut, SAUIChangePrimaryUtterance, SAUIClearScreen, SAUICloseAssistant, SAUIDisambiguationItemSelected, SAUIGetResponseAlternativesPlayback, SAUIHideSiriOverlay, SAUIListenForPronunciation, SAUIOpenLink, SAUIRepeatIt, SAUISayIt, SAUISetSuggestedUtterances, SAUIShowHelp, SAUIShowSpeechAlternatives, SAUIUpdateViews, SAVCSPlayContent;
 
 @protocol AFUISiriSessionDelegate <AFUISiriSessionListener>
+- (void)siriSessionFailTest:(NSString *)arg1 withReason:(NSString *)arg2;
 - (void)siriSessionDidFinishTest:(NSString *)arg1;
 - (void)siriSessionWillStartTest:(NSString *)arg1;
 - (void)siriSessionWillDismissAudioRoutePicker;

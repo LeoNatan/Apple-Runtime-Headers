@@ -6,33 +6,48 @@
 
 #import "NSObject.h"
 
+#import "NSCopying.h"
 #import "NSSecureCoding.h"
+#import "VNRequestRevisionProviding.h"
+#import "VNSerializing.h"
 
 @class NSData, NSDictionary, NSString;
 
-@interface VNEspressoModelImageprint : NSObject <NSSecureCoding>
+@interface VNEspressoModelImageprint : NSObject <NSSecureCoding, NSCopying, VNSerializing, VNRequestRevisionProviding>
 {
-    NSDictionary *_softmaxLabelsAndConfidence;
+    NSDictionary *_labelsAndConfidence;
+    unsigned long long _requestRevision;
     NSData *_descriptorData;
     unsigned long long _elementCount;
     unsigned long long _lengthInBytes;
+    unsigned long long _confidenceScoreType;
     NSString *_version;
     long long _distanceMode;
 }
 
 + (_Bool)supportsSecureCoding;
++ (unsigned long long)confidenceTypeForRevision:(unsigned long long)arg1;
 @property long long distanceMode; // @synthesize distanceMode=_distanceMode;
-@property(retain) NSString *version; // @synthesize version=_version;
-@property(retain) NSDictionary *softmaxLabelsAndConfidence; // @synthesize softmaxLabelsAndConfidence=_softmaxLabelsAndConfidence;
+@property(copy) NSString *version; // @synthesize version=_version;
+@property(readonly, nonatomic) unsigned long long confidenceScoreType; // @synthesize confidenceScoreType=_confidenceScoreType;
+@property(copy) NSDictionary *labelsAndConfidence; // @synthesize labelsAndConfidence=_labelsAndConfidence;
 @property unsigned long long lengthInBytes; // @synthesize lengthInBytes=_lengthInBytes;
 @property unsigned long long elementCount; // @synthesize elementCount=_elementCount;
 @property(retain) NSData *descriptorData; // @synthesize descriptorData=_descriptorData;
 - (void).cxx_destruct;
+- (id)computeDistance:(id)arg1 withDistanceFunction:(unsigned long long)arg2 error:(id *)arg3;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)initWithState:(id)arg1 startingAtByteOffset:(unsigned long long)arg2 error:(id *)arg3;
+- (id)initWithState:(id)arg1 error:(id *)arg2;
+- (id)serializeStateAndReturnError:(id *)arg1;
+- (unsigned long long)serializeStateIntoData:(id)arg1 startingAtByteOffset:(unsigned long long)arg2 error:(id *)arg3;
+- (unsigned long long)serializedLength;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithData:(char *)arg1 elementCount:(unsigned long long)arg2 lengthInBytes:(unsigned long long)arg3 distanceMode:(long long)arg4 softmaxLabelsAndConfidence:(map_fdb8d0b1 *)arg5;
+@property(readonly, nonatomic) unsigned long long requestRevision;
+- (id)initWithData:(const void *)arg1 elementCount:(unsigned long long)arg2 lengthInBytes:(unsigned long long)arg3 labelsAndConfidence:(id)arg4 requestRevision:(unsigned long long)arg5;
 
 @end
 

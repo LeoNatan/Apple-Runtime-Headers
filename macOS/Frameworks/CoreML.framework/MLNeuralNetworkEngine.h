@@ -13,66 +13,80 @@
 #import "MLRegressor.h"
 #import "MLSpecificationCompiler.h"
 
-@class MLModelDescription, MLModelInterface, MLModelMetadata, NSArray, NSMutableDictionary, NSString;
+@class MLModelDescription, MLModelInterface, MLModelMetadata, MLProbabilityDictionary, NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString;
 
 @interface MLNeuralNetworkEngine : MLModel <MLNeuralNetwork, MLModelSpecificationLoader, MLCompiledModelLoader, MLSpecificationCompiler, MLClassifier, MLRegressor>
 {
     BOOL _usingCPU;
     _Bool _isEspresoBiasPreprocessingShared;
+    _Bool _hasBidirectionalLayer;
+    _Bool _has1DConvOptional;
+    BOOL _isGPUPathForbidden;
+    BOOL _isEnergyEfficientPathForbidden;
     int _precision;
     int _engine;
     int _qos;
-    unsigned int _batchSize;
-    unsigned int _seqSize;
     NSArray *_classLabels;
     NSString *_classScoreVectorName;
     NSArray *_inputLayers;
     NSArray *_outputLayers;
     unsigned long long _numInputs;
     unsigned long long _numOutputs;
-    void *_context;
     void *_plan;
-    NSMutableDictionary *_probDict;
+    void *_context;
+    MLProbabilityDictionary *_probDict;
     NSString *_modelFilePath;
+    NSObject<OS_dispatch_semaphore> *_bufferSemaphore;
+    NSObject<OS_dispatch_queue> *_espressoQueue;
+    NSObject<OS_dispatch_queue> *_predictionsQueue;
+    NSObject<OS_dispatch_semaphore> *_submitSemaphore;
     CDStruct_2bc666a5 _network;
-    map_bb82c936 _inputBuffers;
-    map_bb82c936 _outputBuffers;
-    map_6a415e36 _params;
-    vector_1a1a2930 _names;
-    vector_e0f2bd7e _widths;
-    vector_e0f2bd7e _heights;
-    vector_e0f2bd7e _ks;
-    vector_e0f2bd7e _batches;
-    vector_e0f2bd7e _sequences;
+    vector_d21bac94 _inputBuffers;
+    vector_d21bac94 _outputBuffers;
+    map_bc506073 _params;
+    map_72eb5488 _widths;
+    map_72eb5488 _heights;
+    map_72eb5488 _ks;
+    map_72eb5488 _batches;
+    map_72eb5488 _sequences;
+    map_7c549560 _optionalInputTypes;
+    vector_553f084a _bufferAvailable;
 }
 
 + (id)neuralNetworkFromSpec:(id)arg1 classScoreVectorName:(id)arg2 classLabels:(id)arg3 error:(id *)arg4;
 + (id)neuralNetworkFromSpec:(id)arg1 error:(id *)arg2;
-+ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
-+ (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 error:(id *)arg4;
++ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
++ (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 + (id)compiledVersionForSpecification:(struct _MLModelSpecification *)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)compileSpecification:(struct _MLModelSpecification *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 error:(id *)arg4;
+@property BOOL isEnergyEfficientPathForbidden; // @synthesize isEnergyEfficientPathForbidden=_isEnergyEfficientPathForbidden;
+@property BOOL isGPUPathForbidden; // @synthesize isGPUPathForbidden=_isGPUPathForbidden;
+@property(retain) NSObject<OS_dispatch_semaphore> *submitSemaphore; // @synthesize submitSemaphore=_submitSemaphore;
+@property vector_553f084a bufferAvailable; // @synthesize bufferAvailable=_bufferAvailable;
+@property(retain) NSObject<OS_dispatch_queue> *predictionsQueue; // @synthesize predictionsQueue=_predictionsQueue;
+@property(retain) NSObject<OS_dispatch_queue> *espressoQueue; // @synthesize espressoQueue=_espressoQueue;
+@property(retain) NSObject<OS_dispatch_semaphore> *bufferSemaphore; // @synthesize bufferSemaphore=_bufferSemaphore;
+@property(nonatomic) _Bool has1DConvOptional; // @synthesize has1DConvOptional=_has1DConvOptional;
+@property(nonatomic) _Bool hasBidirectionalLayer; // @synthesize hasBidirectionalLayer=_hasBidirectionalLayer;
+@property(nonatomic) map_7c549560 optionalInputTypes; // @synthesize optionalInputTypes=_optionalInputTypes;
 @property(retain, nonatomic) NSString *modelFilePath; // @synthesize modelFilePath=_modelFilePath;
-@property(retain, nonatomic) NSMutableDictionary *probDict; // @synthesize probDict=_probDict;
-@property(nonatomic) vector_e0f2bd7e sequences; // @synthesize sequences=_sequences;
-@property(nonatomic) vector_e0f2bd7e batches; // @synthesize batches=_batches;
-@property(nonatomic) vector_e0f2bd7e ks; // @synthesize ks=_ks;
-@property(nonatomic) vector_e0f2bd7e heights; // @synthesize heights=_heights;
-@property(nonatomic) vector_e0f2bd7e widths; // @synthesize widths=_widths;
-@property(nonatomic) vector_1a1a2930 names; // @synthesize names=_names;
-@property(nonatomic) unsigned int seqSize; // @synthesize seqSize=_seqSize;
-@property(nonatomic) unsigned int batchSize; // @synthesize batchSize=_batchSize;
+@property(retain, nonatomic) MLProbabilityDictionary *probDict; // @synthesize probDict=_probDict;
+@property(nonatomic) map_72eb5488 sequences; // @synthesize sequences=_sequences;
+@property(nonatomic) map_72eb5488 batches; // @synthesize batches=_batches;
+@property(nonatomic) map_72eb5488 ks; // @synthesize ks=_ks;
+@property(nonatomic) map_72eb5488 heights; // @synthesize heights=_heights;
+@property(nonatomic) map_72eb5488 widths; // @synthesize widths=_widths;
 @property(nonatomic) _Bool isEspresoBiasPreprocessingShared; // @synthesize isEspresoBiasPreprocessingShared=_isEspresoBiasPreprocessingShared;
+@property(nonatomic) void *context; // @synthesize context=_context;
 @property(nonatomic) int qos; // @synthesize qos=_qos;
 @property(nonatomic) int engine; // @synthesize engine=_engine;
 @property(nonatomic) int precision; // @synthesize precision=_precision;
-@property(nonatomic) map_6a415e36 params; // @synthesize params=_params;
+@property(nonatomic) map_bc506073 params; // @synthesize params=_params;
 @property(nonatomic) CDStruct_2bc666a5 network; // @synthesize network=_network;
 @property(nonatomic) void *plan; // @synthesize plan=_plan;
-@property(nonatomic) void *context; // @synthesize context=_context;
 @property(nonatomic) BOOL usingCPU; // @synthesize usingCPU=_usingCPU;
-@property(nonatomic) map_bb82c936 outputBuffers; // @synthesize outputBuffers=_outputBuffers;
-@property(nonatomic) map_bb82c936 inputBuffers; // @synthesize inputBuffers=_inputBuffers;
+@property(nonatomic) vector_d21bac94 outputBuffers; // @synthesize outputBuffers=_outputBuffers;
+@property(nonatomic) vector_d21bac94 inputBuffers; // @synthesize inputBuffers=_inputBuffers;
 @property(readonly, nonatomic) unsigned long long numOutputs; // @synthesize numOutputs=_numOutputs;
 @property(readonly, nonatomic) unsigned long long numInputs; // @synthesize numInputs=_numInputs;
 @property(readonly, nonatomic) NSArray *outputLayers; // @synthesize outputLayers=_outputLayers;
@@ -81,29 +95,43 @@
 @property(retain, nonatomic) NSArray *classLabels; // @synthesize classLabels=_classLabels;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)evaluateBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (BOOL)resetSizesNoAutoRelease:(id)arg1 error:(id *)arg2;
 - (BOOL)resetSizes:(id)arg1 error:(id *)arg2;
+- (id)sortBatchByShape:(id)arg1 withMap:(id *)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (void)_deallocContextAndPlan;
 - (struct __CVBuffer *)_pixelBufferFromEbuf:(CDStruct_cf098810 *)arg1 description:(id)arg2 error:(id *)arg3;
-- (id)populateOutputs:(id *)arg1;
+- (id)populateOutputs:(unsigned long long)arg1 error:(id *)arg2;
 - (id)evaluateNoAutoRelease:(id)arg1 error:(id *)arg2;
 - (BOOL)unlockCVPixelBuffers:(id)arg1 error:(id *)arg2;
-- (BOOL)bindInputsAndOutputs:(id)arg1 allocatedImageData:(vector_fd38efa8 *)arg2 error:(id *)arg3;
+- (BOOL)bindInputsAndOutputs:(id)arg1 allocatedImageData:(vector_fd38efa8 *)arg2 bufferIndex:(unsigned long long)arg3 error:(id *)arg4;
+- (void)releaseBuffer:(unsigned long long)arg1;
+- (unsigned long long)obtainBuffer;
 - (id)verifyInputs:(id)arg1 error:(id *)arg2;
 - (id)evaluate:(id)arg1 error:(id *)arg2;
+- (BOOL)_setupContextAndPlanWithConfiguration:(id)arg1 error:(id *)arg2;
 - (BOOL)_setupContextAndPlanWithForceCPU:(BOOL)arg1 error:(id *)arg2;
-- (id)initWithSpec:(id)arg1 classScoreVectorName:(id)arg2 classLabels:(id)arg3 forceCPU:(BOOL)arg4 error:(id *)arg5;
+- (BOOL)fillInInitialShapeFromEspressoNet:(id *)arg1;
+- (id)initWithSpec:(id)arg1 classScoreVectorName:(id)arg2 classLabels:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 - (id)initWithSpec:(id)arg1 classScoreVectorName:(id)arg2 classLabels:(id)arg3 error:(id *)arg4;
-- (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (BOOL)_matchEngineToOptions:(id)arg1 error:(id *)arg2;
+- (id)getAvailableOutputBlobList;
 - (id)regress:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)classify:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)addClassifierInformationToOutput:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)convertPredictionToClassifierResult:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 @property(readonly) MLModelInterface *interface;
 @property(readonly) MLModelMetadata *metadata;
 @property(readonly, nonatomic) MLModelDescription *modelDescription;
+@property(readonly) Class superclass;
 
 @end
 

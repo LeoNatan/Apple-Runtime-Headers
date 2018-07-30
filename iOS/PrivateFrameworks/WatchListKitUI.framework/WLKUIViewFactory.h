@@ -10,6 +10,7 @@
 {
 }
 
++ (id)linkButtonWithTitleForTV:(id)arg1 textStyle:(id)arg2;
 + (id)linkButtonWithTitleForTV:(id)arg1;
 
 @end

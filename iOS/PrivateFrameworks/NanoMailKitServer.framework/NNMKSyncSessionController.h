@@ -12,11 +12,18 @@
 {
     NSMutableSet *_messageIdsToIgnoreStatusUpdates;
     NSMutableDictionary *_notificationPayloadAcks;
+    NSMutableDictionary *_syncingAccountIdentityByUsername;
+    NSMutableDictionary *_standaloneStateByAccountId;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *standaloneStateByAccountId; // @synthesize standaloneStateByAccountId=_standaloneStateByAccountId;
+@property(retain, nonatomic) NSMutableDictionary *syncingAccountIdentityByUsername; // @synthesize syncingAccountIdentityByUsername=_syncingAccountIdentityByUsername;
 @property(retain, nonatomic) NSMutableDictionary *notificationPayloadAcks; // @synthesize notificationPayloadAcks=_notificationPayloadAcks;
 @property(retain, nonatomic) NSMutableSet *messageIdsToIgnoreStatusUpdates; // @synthesize messageIdsToIgnoreStatusUpdates=_messageIdsToIgnoreStatusUpdates;
 - (void).cxx_destruct;
+- (void)deleteStandaloneStateForAccountId:(id)arg1;
+- (void)updateStandaloneState:(unsigned long long)arg1 forAccountId:(id)arg2;
+- (unsigned long long)standaloneStateForAccountId:(id)arg1;
 - (id)init;
 
 @end

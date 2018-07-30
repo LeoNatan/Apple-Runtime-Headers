@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
-@property(readonly) double itemPadding;
+@property(readonly) double preferredTrailingPosition;
 @property(readonly) double preferredZOrder;
 @property(readonly) Class superclass;
 

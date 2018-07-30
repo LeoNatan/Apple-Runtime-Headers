@@ -10,11 +10,13 @@
 
 @class NSArray, NSCFRunLoopSemaphore, NSURL, NSView;
 
+__attribute__((visibility("hidden")))
 @interface NSVBSavePanel : NSPanel <NSOpenAndSavePanelRemoteViewExportedToServiceProtocol>
 {
     id <NSOpenSavePanelDelegate> _openSaveDelegate;
     CDUnknownBlockType _completionHandler;
     NSCFRunLoopSemaphore *_advanceToRunPhaseIfNeededSemaphore;
+    struct CGSize _lastReportedAccessorySize;
     NSURL *_finalURL;
     NSArray *_finalURLs;
     NSView *_remoteAccessoryView;
@@ -25,7 +27,6 @@
     unsigned int _attachSandboxExtensionsToFinalURLsDone:1;
     unsigned int _runningAsASheet:1;
     unsigned int _hostWindow_runningAsASheet:1;
-    unsigned int _animatingSetFrame:1;
     unsigned int _panelCompleted:1;
     unsigned int _retained:1;
     unsigned int _panelIsNowUseless:1;
@@ -34,6 +35,7 @@
 + (id)savePanel;
 + (void)_warmUp;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+@property struct CGSize lastReportedAccessorySize; // @synthesize lastReportedAccessorySize=_lastReportedAccessorySize;
 - (void).cxx_destruct;
 - (void)_reallyDoOrderWindow:(long long)arg1 relativeTo:(long long)arg2 findKey:(BOOL)arg3 forCounter:(BOOL)arg4 force:(BOOL)arg5 isModal:(BOOL)arg6;
 - (BOOL)_startServiceFailedAlert;
@@ -120,6 +122,8 @@
 - (id)_supportedDelegateMethods;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)accessoryDidChangeConstraints:(struct CGSize)arg1;
+- (void)accessoryWindowOfViewWillUpdateConstraintsIfNeeded:(id)arg1;
 - (void)setAccessoryView:(id)arg1;
 - (id)accessoryView;
 - (void)setAllowsOtherFileTypes:(BOOL)arg1;
@@ -159,9 +163,7 @@
 - (BOOL)shouldRetainExportedObject;
 - (BOOL)iCloudOpenPanel;
 @property(readonly) BOOL appCentric;
-- (BOOL)isMovable;
 - (void)MondoSetFilenameWithProperSelection:(id)arg1;
-- (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2;
 - (double)_startRectForSheetHeightOffset;
 - (void)_hideWindowForTimeMachineMode:(BOOL)arg1;
 - (void)_orderRemoteWindow:(long long)arg1 sender:(id)arg2;

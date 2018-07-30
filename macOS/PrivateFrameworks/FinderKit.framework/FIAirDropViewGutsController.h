@@ -14,23 +14,23 @@ __attribute__((visibility("hidden")))
 @interface FIAirDropViewGutsController : FI_TViewController <TNWOperationDelegateProtocol>
 {
     id <FIAirDropViewDelegate> _delegate;
-    struct TNSRef<NSArray<NSURL *>*, void> _urlsToSend;
-    struct TNSRef<NSImage *, void> _largeThumbnail;
-    struct TNSRef<NSImage *, void> _mediumThumbnail;
-    struct TNSRef<NSImage *, void> _smallThumbnail;
-    struct TNSRef<NSString *, void> _clientBundleID;
+    struct TNSRef<NSArray<NSURL *>, void> _urlsToSend;
+    struct TNSRef<NSImage, void> _largeThumbnail;
+    struct TNSRef<NSImage, void> _mediumThumbnail;
+    struct TNSRef<NSImage, void> _smallThumbnail;
+    struct TNSRef<NSString, void> _clientBundleID;
     FIAirDropListViewController *_listViewController;
     FI_TImageView *_airDropLogoImageView;
     FI_TTextField *_explanationTextFld;
     FI_TButton *_turnOnWiFiBluetoothButton;
     FI_TButton *_doneButton;
     FI_TUpdateLayerView *_fileImagePlaceholderView;
-    struct TNSRef<id<FI_TAirDropNotAvailableDelegateProtocol>, void> _airDropNotAvailableDelegate;
-    struct TNSRef<FI_TAirDropDiscoveryController *, void> _discoveryController;
+    struct TNSRef<NSObject<FI_TAirDropNotAvailableDelegateProtocol>, void> _airDropNotAvailableDelegate;
+    struct TNSRef<FI_TAirDropDiscoveryController, void> _discoveryController;
     struct TNotificationCenterObserver _viewDidMoveToWindowObserver;
     struct TNotificationCenterObserver _windowDidChangeOcclusionStateObserver;
     _Bool _isObservingAirDropNode;
-    struct TNSRef<NSTimer *, void> _windowOccludedTeardownTimer;
+    struct TNSRef<NSTimer, void> _windowOccludedTeardownTimer;
     struct TNotificationCenterObserver _availableStateChangedObserver;
     struct TKeyValueObserver _isLegacyMachineObserver;
     struct TKeyValueObserver _isLegacyModeEnabledObserver;
@@ -40,9 +40,9 @@ __attribute__((visibility("hidden")))
     struct vector<std::__1::unique_ptr<TAirDropSenderOperationController, std::__1::default_delete<TAirDropSenderOperationController>>, std::__1::allocator<std::__1::unique_ptr<TAirDropSenderOperationController, std::__1::default_delete<TAirDropSenderOperationController>>>> _senderOpControllers;
     _Bool _atLeastOneTransferStarted;
     int _delegateRespondsToMask;
-    struct TNSRef<NSTouchBar *, void> _participantsTouchBar;
-    struct TNSRef<NSTouchBar *, void> _airDropNotAvailableTouchBar;
-    struct TNSRef<FI_TButton *, void> _turnOnWiFiBluetoothTouchBarButton;
+    struct TNSRef<NSTouchBar, void> _participantsTouchBar;
+    struct TNSRef<NSTouchBar, void> _airDropNotAvailableTouchBar;
+    struct TNSRef<FI_TButton, void> _turnOnWiFiBluetoothTouchBarButton;
 }
 
 @property(readonly, nonatomic) _Bool atLeastOneTransferStarted; // @synthesize atLeastOneTransferStarted=_atLeastOneTransferStarted;

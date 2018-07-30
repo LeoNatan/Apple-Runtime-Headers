@@ -13,7 +13,6 @@
 
 @interface _SFPBFormattedText : PBCodable <_SFPBFormattedText, NSSecureCoding>
 {
-    CDStruct_87e10b33 _has;
     BOOL _isEmphasized;
     BOOL _isBold;
     int _textColor;
@@ -35,11 +34,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasTextColor;
-@property(readonly, nonatomic) BOOL hasIsBold;
-@property(readonly, nonatomic) BOOL hasIsEmphasized;
-@property(readonly, nonatomic) BOOL hasGlyph;
-@property(readonly, nonatomic) BOOL hasText;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

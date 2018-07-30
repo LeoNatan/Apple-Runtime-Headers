@@ -9,6 +9,7 @@
 @class CPLResourceIdentity, NSArray, NSData, NSURL;
 
 @protocol CPLEngineFileStorageImplementation <CPLPlatformImplementation>
+- (BOOL)resetWithError:(id *)arg1;
 - (id <NSFastEnumeration>)fileEnumeratorIncludingPropertiesForKeys:(NSArray *)arg1 errorHandler:(BOOL (^)(CPLResourceIdentity *, NSError *))arg2;
 - (BOOL)markForDeleteFileWithIdentity:(CPLResourceIdentity *)arg1 error:(id *)arg2;
 - (BOOL)deleteFileWithIdentity:(CPLResourceIdentity *)arg1 includingOriginal:(BOOL)arg2 error:(id *)arg3;

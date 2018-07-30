@@ -6,6 +6,7 @@
 
 #import "NSImageView.h"
 
+__attribute__((visibility("hidden")))
 @interface NCLinearDodgeImageView : NSImageView
 {
     double _effectOpacity;

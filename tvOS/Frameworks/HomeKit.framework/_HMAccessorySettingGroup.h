@@ -11,18 +11,17 @@
 #import "HMFMessageReceiver.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessorySettings, NSArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMAccessorySettings, HMFUnfairLock, NSArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface _HMAccessorySettingGroup : NSObject <HMFLogging, HMFMessageReceiver, NSSecureCoding, HMFMerging>
 {
+    HMFUnfairLock *_lock;
     NSMutableSet *_settings;
     NSMutableSet *_groups;
     id <_HMAccesorySettingGroupDelegate> _delegate;
     NSUUID *_identifier;
     NSString *_name;
     _HMContext *_context;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMAccessorySettings *_accessorySettings;
 }
 
@@ -32,8 +31,6 @@
 + (id)logCategory;
 + (id)shortDescription;
 @property(retain, nonatomic) HMAccessorySettings *accessorySettings; // @synthesize accessorySettings=_accessorySettings;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
@@ -70,6 +67,7 @@
 @property(readonly, copy) NSArray *settings;
 - (void)_registerNotificationHandlers;
 - (void)configureWithAccessorySettings:(id)arg1 context:(id)arg2;
+- (id)clientQueue;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;

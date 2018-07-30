@@ -6,7 +6,6 @@
 
 #import "NSView.h"
 
-__attribute__((visibility("hidden")))
 @interface ABMiniGridView : NSView
 {
     struct CGSize _cellSize;

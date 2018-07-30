@@ -16,7 +16,8 @@
 - (id)inclusionPredicate;
 - (id)filteredFetchResult;
 - (_Bool)reverseSortOrder;
-- (_Bool)curate;
+- (_Bool)isCurated;
+- (_Bool)wantsCuration;
 - (id)keyAssetsFetchResult;
 - (id)curatedFetchResult;
 - (id)fetchResult;

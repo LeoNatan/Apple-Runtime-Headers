@@ -17,15 +17,10 @@
 + (BOOL)isLiveDeliveryWarmUpEnabled;
 + (void)setEnableLiveDeliveryWarmUp:(BOOL)arg1;
 + (BOOL)isDebugPiscoLoggingEnabled;
-+ (void)setEnableDebugPiscoLogging:(BOOL)arg1;
 + (BOOL)isDeviceScoringEnabled;
-+ (void)setEnableDeviceScoring:(BOOL)arg1;
-+ (BOOL)isBAACertEnabled;
-+ (void)setEnableBAACert:(BOOL)arg1;
++ (BOOL)isBAACertDisabled;
 + (BOOL)isAbsintheV4Enabled;
-+ (void)setEnableAbsintheV4:(BOOL)arg1;
-+ (BOOL)isPiscoEnabled;
-+ (void)setEnablePisco:(BOOL)arg1;
++ (BOOL)isPiscoDisabled;
 + (id)phoneNumberValidationPreflightTestData;
 + (void)setPhoneNumberValidationPreflightTestData:(id)arg1;
 + (long long)phoneNumberValidationMode;

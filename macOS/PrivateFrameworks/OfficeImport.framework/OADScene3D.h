@@ -10,7 +10,6 @@
 
 @class OADBackdrop, OADCamera, OADLightRig;
 
-__attribute__((visibility("hidden")))
 @interface OADScene3D : NSObject <NSCopying>
 {
     OADCamera *mCamera;
@@ -19,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)nullScene3D;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (void)setCamera:(id)arg1;
 - (id)camera;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

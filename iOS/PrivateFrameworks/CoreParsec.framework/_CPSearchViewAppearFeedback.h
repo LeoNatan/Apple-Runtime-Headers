@@ -14,13 +14,6 @@
 
 @interface _CPSearchViewAppearFeedback : PBCodable <_CPProcessableFeedback, _CPSearchViewAppearFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int viewAppearEvent:1;
-        unsigned int isOnLockScreen:1;
-        unsigned int isOverApp:1;
-        unsigned int readerTextAvailable:1;
-    } _has;
     _Bool _isOnLockScreen;
     _Bool _isOverApp;
     _Bool _readerTextAvailable;
@@ -32,7 +25,7 @@
 @property(nonatomic) _Bool isOverApp; // @synthesize isOverApp=_isOverApp;
 @property(nonatomic) _Bool isOnLockScreen; // @synthesize isOnLockScreen=_isOnLockScreen;
 @property(nonatomic) int viewAppearEvent; // @synthesize viewAppearEvent=_viewAppearEvent;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
@@ -41,11 +34,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasReaderTextAvailable;
-@property(readonly, nonatomic) _Bool hasIsOverApp;
-@property(readonly, nonatomic) _Bool hasIsOnLockScreen;
-@property(readonly, nonatomic) _Bool hasViewAppearEvent;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

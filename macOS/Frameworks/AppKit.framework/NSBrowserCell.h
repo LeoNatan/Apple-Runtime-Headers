@@ -59,7 +59,6 @@
 - (id)_enclosingBrowserForControlView:(id)arg1;
 - (BOOL)_branchImageEnabled;
 - (void)_setBranchImageEnabled:(BOOL)arg1;
-- (struct CGSize)labelSizeForBounds:(struct CGRect)arg1;
 
 @end
 

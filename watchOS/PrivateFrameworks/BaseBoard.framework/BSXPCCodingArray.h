@@ -16,6 +16,7 @@
     NSArray *_array;
 }
 
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -24,7 +25,6 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (unsigned int)count;
-- (void)dealloc;
 - (id)initWithArray:(id)arg1;
 
 // Remaining properties

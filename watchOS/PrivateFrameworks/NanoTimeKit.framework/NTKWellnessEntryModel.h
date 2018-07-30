@@ -15,14 +15,10 @@
 {
     _Bool _databaseLoading;
     _Bool _deviceLocked;
-    HKQuantity *_activeEnergy;
     HKQuantity *_activeEnergyTotal;
     HKQuantity *_activeEnergyGoal;
-    unsigned int _standHourState;
     int _standHoursTotal;
     int _standHoursGoal;
-    NTKWellnessEntryModel *_previousEntryModel;
-    double _briskMinutes;
     double _briskMinutesTotal;
     double _briskMinutesGoal;
 }
@@ -34,18 +30,14 @@
 + (id)_activityTemplateWithFamily:(int)arg1 entryModel:(id)arg2;
 + (id)idealizedEntryModel;
 + (id)lockedEntryModel;
-@property(nonatomic) __weak NTKWellnessEntryModel *previousEntryModel; // @synthesize previousEntryModel=_previousEntryModel;
 @property(readonly, nonatomic) _Bool deviceLocked; // @synthesize deviceLocked=_deviceLocked;
 @property(nonatomic) _Bool databaseLoading; // @synthesize databaseLoading=_databaseLoading;
 @property(nonatomic) int standHoursGoal; // @synthesize standHoursGoal=_standHoursGoal;
 @property(nonatomic) int standHoursTotal; // @synthesize standHoursTotal=_standHoursTotal;
-@property(nonatomic) unsigned int standHourState; // @synthesize standHourState=_standHourState;
 @property(nonatomic) double briskMinutesGoal; // @synthesize briskMinutesGoal=_briskMinutesGoal;
 @property(nonatomic) double briskMinutesTotal; // @synthesize briskMinutesTotal=_briskMinutesTotal;
-@property(nonatomic) double briskMinutes; // @synthesize briskMinutes=_briskMinutes;
 @property(retain, nonatomic) HKQuantity *activeEnergyGoal; // @synthesize activeEnergyGoal=_activeEnergyGoal;
 @property(retain, nonatomic) HKQuantity *activeEnergyTotal; // @synthesize activeEnergyTotal=_activeEnergyTotal;
-@property(retain, nonatomic) HKQuantity *activeEnergy; // @synthesize activeEnergy=_activeEnergy;
 - (void).cxx_destruct;
 - (id)date;
 - (void)setDate:(id)arg1;

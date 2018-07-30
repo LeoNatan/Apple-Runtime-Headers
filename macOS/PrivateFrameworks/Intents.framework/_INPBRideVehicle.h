@@ -7,12 +7,14 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBRideVehicle.h"
 
-@class GEOLocation, NSString, PBUnknownFields, _INPBImageValue;
+@class GEOLocation, NSString, _INPBImageValue;
 
-@interface _INPBRideVehicle : PBCodable <NSCopying>
+@interface _INPBRideVehicle : PBCodable <_INPBRideVehicle, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     GEOLocation *_location;
     NSString *_manufacturer;
     _INPBImageValue *_mapAnnotationImage;
@@ -20,27 +22,28 @@
     NSString *_registrationPlate;
 }
 
-+ (id)options;
+@property(copy, nonatomic) NSString *registrationPlate; // @synthesize registrationPlate=_registrationPlate;
+@property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(retain, nonatomic) _INPBImageValue *mapAnnotationImage; // @synthesize mapAnnotationImage=_mapAnnotationImage;
-@property(retain, nonatomic) NSString *model; // @synthesize model=_model;
-@property(retain, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
-@property(retain, nonatomic) NSString *registrationPlate; // @synthesize registrationPlate=_registrationPlate;
+@property(copy, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(retain, nonatomic) GEOLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasMapAnnotationImage;
-@property(readonly, nonatomic) BOOL hasModel;
-@property(readonly, nonatomic) BOOL hasManufacturer;
 @property(readonly, nonatomic) BOOL hasRegistrationPlate;
+@property(readonly, nonatomic) BOOL hasModel;
+@property(readonly, nonatomic) BOOL hasMapAnnotationImage;
+@property(readonly, nonatomic) BOOL hasManufacturer;
 @property(readonly, nonatomic) BOOL hasLocation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,7 +8,6 @@
 
 @class EBReaderState, EDSheet;
 
-__attribute__((visibility("hidden")))
 @interface EBReaderSheetState : NSObject
 {
     EBReaderState *mReaderState;
@@ -29,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (id)workbook;
 - (struct XlBinaryReader *)xlReader;
 - (id)readerState;
-- (void)dealloc;
 - (id)initWithReaderState:(id)arg1;
 
 @end

@@ -8,6 +8,7 @@
 
 @class NSGradient;
 
+__attribute__((visibility("hidden")))
 @interface NSGradientColor : NSColor
 {
     NSGradient *_gradient;

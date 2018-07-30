@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, SunriseSunsetProvider;
 
+__attribute__((visibility("hidden")))
 @interface NightModeControl : NSObject
 {
     NSMutableDictionary *_properties;

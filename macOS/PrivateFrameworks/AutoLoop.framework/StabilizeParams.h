@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface StabilizeParams : NSObject
 {
     struct vector<SP_FrameInfo, std::__1::allocator<SP_FrameInfo>> mFrameInfo;
-    vector_4f732a7b mFrameTimeArray;
+    vector_0821a7d5 mFrameTimeArray;
     BOOL passThrough;
     BOOL sparseFrames;
     unsigned int numFrames;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned int numFrames; // @synthesize numFrames;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (vector_4f732a7b *)frameTimes;
+- (vector_0821a7d5 *)frameTimes;
 - (id)initFromDict:(id)arg1;
 - (id)infoAsDict;
 - (BOOL)writeToURL:(id)arg1;

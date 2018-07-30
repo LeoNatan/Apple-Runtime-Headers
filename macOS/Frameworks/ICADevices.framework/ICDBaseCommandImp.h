@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-@class BaseObjectImp, NSMutableDictionary, NSString;
+@class ICDBaseObjectImp, NSMutableDictionary, NSString;
 
 @interface ICDBaseCommandImp : NSObject
 {
     NSString *_name;
     short _commandError;
-    BaseObjectImp *_objectPriv;
+    ICDBaseObjectImp *_objectPriv;
     NSMutableDictionary *_privateData;
     NSMutableDictionary *_commandData;
 }

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)unarchivableClasses;
 + (id)sharedArchiverDelegate;
 + (void)initialize;
 - (id)unarchiver:(id)arg1 didDecodeObject:(id)arg2;

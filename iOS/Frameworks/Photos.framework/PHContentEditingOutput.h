@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSData, NSURL, PHAdjustmentData;
+@class NSData, NSNumber, NSURL, PHAdjustmentData;
 
 @interface PHContentEditingOutput : NSObject <NSSecureCoding>
 {
@@ -17,6 +17,7 @@
     _Bool _isSubstandardRender;
     _Bool _loopingLivePhoto;
     NSURL *_renderedContentURL;
+    NSNumber *_originalResourceChoice;
     long long _fullSizeRenderWidth;
     long long _fullSizeRenderHeight;
     NSData *_penultimateRenderedJPEGData;
@@ -37,6 +38,7 @@
 @property(nonatomic) long long fullSizeRenderHeight; // @synthesize fullSizeRenderHeight=_fullSizeRenderHeight;
 @property(nonatomic) long long fullSizeRenderWidth; // @synthesize fullSizeRenderWidth=_fullSizeRenderWidth;
 @property(nonatomic) _Bool isSubstandardRender; // @synthesize isSubstandardRender=_isSubstandardRender;
+@property(retain, nonatomic) NSNumber *originalResourceChoice; // @synthesize originalResourceChoice=_originalResourceChoice;
 @property(copy) NSURL *renderedContentURL; // @synthesize renderedContentURL=_renderedContentURL;
 - (void).cxx_destruct;
 - (id)description;

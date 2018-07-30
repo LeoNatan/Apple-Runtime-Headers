@@ -30,9 +30,8 @@
 - (void)failWithError:(id)arg1;
 - (void)didParseData;
 - (_Bool)hadError;
-- (id)_parseDataSourceMapFromDataSourceDictionaries:(id)arg1;
 - (void)_parseExchangeDictionaries:(id)arg1;
-- (void)_parseQuoteDictionaries:(id)arg1 withDataSources:(id)arg2;
+- (void)_parseQuoteDictionaries:(id)arg1 withDataSourceDictionaries:(id)arg2;
 - (void)parseData:(id)arg1;
 - (_Bool)_updateStocks:(id)arg1 comprehensive:(_Bool)arg2 forceUpdate:(_Bool)arg3;
 

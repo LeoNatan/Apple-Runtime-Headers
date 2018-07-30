@@ -13,6 +13,7 @@
 @optional
 - (_Bool)contactListViewController:(NCABContactListViewController *)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (void)contactListViewController:(NCABContactListViewController *)arg1 didPickContact:(void *)arg2;
+- (void)contactListViewController:(NCABContactListViewController *)arg1 updatedNoContactsState:(_Bool)arg2;
 - (void)contactListViewController:(NCABContactListViewController *)arg1 didSelectContact:(CNContact *)arg2;
 - (_Bool)contactListViewController:(NCABContactListViewController *)arg1 shouldSelectContact:(CNContact *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (_Bool)contactListViewController:(NCABContactListViewController *)arg1 canSelectContact:(CNContact *)arg2;

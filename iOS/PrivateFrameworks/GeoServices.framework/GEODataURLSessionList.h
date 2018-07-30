@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)pruneSessionsNotInIdentifierArray:(id)arg1 agressive:(_Bool)arg2;
 - (void)addSession:(id)arg1;
+- (id)urlSessionForIdentifier:(id)arg1;
 - (id)urlSessionForRequest:(id)arg1;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)init;

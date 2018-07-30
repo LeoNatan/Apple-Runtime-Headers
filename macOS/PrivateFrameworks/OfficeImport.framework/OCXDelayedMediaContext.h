@@ -10,18 +10,17 @@
 
 @class NSString, NSURL, OCPPackage;
 
-__attribute__((visibility("hidden")))
 @interface OCXDelayedMediaContext : NSObject <OCDDelayedMediaContext>
 {
     OCPPackage *mPackage;
     NSURL *mTargetLocation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)dataRep;
 - (_Bool)saveDelayedMedia:(id)arg1 toFile:(id)arg2;
 - (_Bool)loadDelayedNode:(id)arg1;
-- (void)dealloc;
 - (id)initWithTargetLocation:(id)arg1 package:(id)arg2;
 
 // Remaining properties

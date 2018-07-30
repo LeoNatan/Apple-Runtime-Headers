@@ -17,14 +17,15 @@
     AVPlayer *_player;
 }
 
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id *)arg3 outError:(id *)arg4;
++ (id)debugHierarchyPropertyDescriptions;
 + (id)videoNodeWithAVPlayer:(id)arg1;
 + (id)videoNodeWithURL:(id)arg1;
 + (id)videoNodeWithFileNamed:(id)arg1;
 + (id)videoNodeWithVideoURL:(id)arg1;
 + (id)videoNodeWithVideoFileNamed:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-- (id)debugHierarchyPropertyDescriptions;
 @property(nonatomic) struct CGPoint anchorPoint;
 @property(nonatomic) struct CGSize size;
 - (void)pause;

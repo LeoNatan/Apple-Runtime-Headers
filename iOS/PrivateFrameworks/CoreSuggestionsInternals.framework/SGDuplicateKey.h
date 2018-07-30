@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) NSObject<SGEntityKey> *entityKey; // @synthesize entityKey=_entityKey;
 @property(readonly, nonatomic) long long entityType; // @synthesize entityType=_entityType;
 - (void).cxx_destruct;
+- (id)bundleId;
 @property(readonly, nonatomic) NSData *compositeHash;
 - (id)pseudoEventKey;
 - (id)interactionKey;

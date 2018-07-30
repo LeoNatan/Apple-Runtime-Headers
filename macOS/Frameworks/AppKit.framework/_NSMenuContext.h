@@ -23,20 +23,24 @@
     NSArray *_carbonCopyUTIs;
     NSArray *_carbonPasteUTIs;
     unsigned long long _duplicateServicesMask;
+    NSString *_presentationMode;
     unsigned long long _source;
     struct {
-        unsigned int isForContextMenu:1;
+        unsigned int requiresSelection:1;
+        unsigned int inspectsSelectionText:1;
+        unsigned int allowsAllWhitespaceText:1;
         unsigned int checkedForString:1;
         unsigned int checkedForAttrString:1;
         unsigned int checkedForURLs:1;
         unsigned int checkedForWhitespace:1;
         unsigned int isAllWhitespace:1;
-        unsigned int reserved:26;
+        unsigned int reserved:24;
     } _flags;
 }
 
 @property(nonatomic) unsigned long long duplicateServicesMask; // @synthesize duplicateServicesMask=_duplicateServicesMask;
 - (void)dealloc;
+- (BOOL)_finishQualifingEntries:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)qualifyEntries:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_concurrentPortionOfQualifyEntriesWithEntriesNeedingURLTypechecking:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_preconcurrentPortionOfQualifyEntries:(id)arg1 returningEntriesNeedingURLTypecheckingIntoSet:(id)arg2;
@@ -74,12 +78,14 @@
 - (id)_selectedStringAndRangeForApplyingFilters:(struct _NSRange *)arg1 attributed:(BOOL)arg2;
 - (BOOL)determineSelectedStringForApplyingFiltersViaPasteboardFromRequestorSupplyingType:(id)arg1 attributed:(BOOL)arg2;
 - (BOOL)determineSelectedStringForApplyingFiltersDirectlyFromRequestorSupplyingType:(id)arg1 attributed:(BOOL)arg2;
-- (id)getObjectsOfClass:(Class)arg1 fromRequestorProvidingType:(id)arg2;
+- (id)getObjectsOfClass:(Class)arg1 fromRequestorProvidingType:(id)arg2 options:(id)arg3;
 - (BOOL)serviceEntryIsActiveInThisContext:(id)arg1;
 - (id)requestorProvidingType:(id)arg1;
-@property(nonatomic) BOOL isForContextMenu;
+@property(nonatomic) BOOL allowsAllWhitespaceText;
+@property(nonatomic) BOOL inspectsSelectionText;
+@property(nonatomic) BOOL requiresSelection;
 - (id)initForCarbonServicesMenuWithCopyUTIs:(id)arg1 pasteUTIs:(id)arg2;
-- (id)initForServicesMenuWithRequestorChain:(id)arg1;
+- (id)initForServicePresentationMode:(id)arg1 withRequestorChain:(id)arg2;
 
 @end
 

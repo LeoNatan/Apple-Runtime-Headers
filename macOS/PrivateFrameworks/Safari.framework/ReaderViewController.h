@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_configuration;
     WBSReaderFontManager *_fontManager;
     ReaderAppearanceViewController *_readerAppearanceViewController;
-    struct unique_ptr<Safari::ReaderPageContextMenuClient, std::__1::default_delete<Safari::ReaderPageContextMenuClient>> _pageContextMenuClient;
     struct unique_ptr<Safari::ReaderPageFindClient, std::__1::default_delete<Safari::ReaderPageFindClient>> _pageFindClient;
     struct unique_ptr<Safari::ReaderPageNavigationClient, std::__1::default_delete<Safari::ReaderPageNavigationClient>> _pageNavigationClient;
+    struct unique_ptr<Safari::ReaderPageContextMenuClient, std::__1::default_delete<Safari::ReaderPageContextMenuClient>> _pageContextMenuClient;
     struct unique_ptr<Safari::ReaderPageUIClient, std::__1::default_delete<Safari::ReaderPageUIClient>> _pageUIClient;
     struct ReaderController *_readerController;
 }
@@ -55,12 +55,17 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)textZoomIndex;
 - (void)setTheme:(long long)arg1;
 @property(readonly, nonatomic) long long theme;
+- (id)_themeName;
+- (id)_defaultThemeNameForCurrentSystemAppearance;
+- (id)_themeNameKeyForCurrentSystemAppearance;
 - (void)setFont:(id)arg1;
 @property(readonly, nonatomic) WBSReaderFont *font;
 @property(readonly, copy, nonatomic) NSArray *possibleFonts;
 @property(readonly, copy, nonatomic) NSArray *availableFonts;
 - (void)updateLanguageTag:(id)arg1;
 - (void)_applyConfigurationAndSendNotification:(BOOL)arg1;
+- (id)_configurationToSendToInjectedBundle;
+- (void)readerViewAppearanceDidChange;
 - (void)applyInitialConfiguration;
 - (void)setConfiguration:(id)arg1;
 - (void)goForward;
@@ -72,10 +77,11 @@ __attribute__((visibility("hidden")))
 - (void)close;
 - (void)_clearWebKitPageClients;
 - (void)_installWebKitPageClients;
+- (void)viewDidAppear;
+- (void)viewDidLoad;
 - (void)_commonInitializationWithReaderController:(struct ReaderController *)arg1;
 - (id)_createWebViewWithConfigurationRef:(struct OpaqueWKPageConfiguration *)arg1;
 - (id)initWithReaderController:(struct ReaderController *)arg1 context:(const struct Context *)arg2 pageGroup:(const struct PageGroup *)arg3 browsingMode:(unsigned long long)arg4;
-- (id)initWithContext:(const struct Context *)arg1 pageGroup:(const struct PageGroup *)arg2 relatedToPage:(const struct Page *)arg3 browsingMode:(unsigned long long)arg4 websiteDataStore:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

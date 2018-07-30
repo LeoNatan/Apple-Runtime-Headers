@@ -8,7 +8,7 @@
 
 #import "SKInAppClient.h"
 
-@class NSArray;
+@class NSArray, NSString, SKPaymentQueueClient;
 
 @interface SKPaymentQueue : NSObject <SKInAppClient>
 {
@@ -23,8 +23,8 @@
 - (void)downloadAdded:(id)arg1;
 - (void)removedTransactions:(id)arg1;
 - (void)updatedTransactions:(id)arg1;
-- (void)restoreTransactionsFinished;
-- (void)restoreTransactionsFailed:(id)arg1;
+@property(readonly, nonatomic) SKPaymentQueueClient *paymentQueueClient;
+- (id)initWithPaymentQueueClient:(id)arg1;
 - (void)cancelDownloads:(id)arg1;
 - (void)resumeDownloads:(id)arg1;
 - (void)pauseDownloads:(id)arg1;
@@ -36,7 +36,14 @@
 - (void)finishTransaction:(id)arg1;
 - (void)addTransactionObserver:(id)arg1;
 - (void)addPayment:(id)arg1;
+- (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

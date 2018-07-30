@@ -6,18 +6,20 @@
 
 #import <PhotosUI/PUPhotosGridViewController.h>
 
-#import "PUCloudQuotaControllerDelegate.h"
 #import "PUMagnfiedViewControllerDelegate.h"
 #import "PXCPLServiceUIDelegate.h"
+#import "PXCloudQuotaControllerDelegate.h"
+#import "PXPhotosGlobalFooterViewModelPresentationDelegate.h"
 
-@class NSArray, NSIndexPath, NSString, NSTimer, PUCloudQuotaController, PUGridMagnifiedImageViewController, PUGridPinchGestureRecognizer, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUZoomableGridTransition, PUZoomableGridViewControllerSpec, PXCPLServiceUI, UITapGestureRecognizer;
+@class NSArray, NSIndexPath, NSString, NSTimer, PUGridMagnifiedImageViewController, PUGridPinchGestureRecognizer, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUZoomableGridTransition, PUZoomableGridViewControllerSpec, PXCPLServiceUI, PXCloudQuotaController, UITapGestureRecognizer;
 
-@interface PUZoomableGridViewController : PUPhotosGridViewController <PXCPLServiceUIDelegate, PUCloudQuotaControllerDelegate, PUMagnfiedViewControllerDelegate>
+@interface PUZoomableGridViewController : PUPhotosGridViewController <PXCPLServiceUIDelegate, PXCloudQuotaControllerDelegate, PUMagnfiedViewControllerDelegate, PXPhotosGlobalFooterViewModelPresentationDelegate>
 {
     _Bool _isDisplayingGlobalFooterView;
     _Bool _isDisplayingEmptyPlaceholderView;
     PXCPLServiceUI *_cplServiceUI;
-    PUCloudQuotaController *_cloudQuotaController;
+    PXCloudQuotaController *_cloudQuotaController;
+    _Bool _iCPLEnabled;
     _Bool _globalFooterDidAutoScroll;
     NSTimer *_globalFooterAutoScrollMinimumIdleTimer;
     _Bool _simulateGlobalFooterImportantInformationUpdates;
@@ -74,9 +76,11 @@
 - (void)_handleGridPinchGestureRecognizer:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)_accountStoreDidChange:(id)arg1;
 - (_Bool)serviceUI:(id)arg1 performAction:(long long)arg2;
-- (void)serviceUI:(id)arg1 progressDidChange:(double)arg2;
+- (void)serviceUI:(id)arg1 progressDidChange:(float)arg2;
 - (void)serviceUI:(id)arg1 statusDidChange:(id)arg2;
+- (id)presentingViewControllerForViewModel:(id)arg1;
 - (void)collectionView:(id)arg1 didEndDisplayingSupplementaryView:(id)arg2 forElementOfKind:(id)arg3 atIndexPath:(id)arg4;
 - (void)_didEndDisplayingGlobalFooterView;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;

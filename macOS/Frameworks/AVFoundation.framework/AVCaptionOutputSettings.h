@@ -8,6 +8,7 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptionOutputSettings : AVOutputSettings
 {
     NSDictionary *_captionSettingsDictionary;

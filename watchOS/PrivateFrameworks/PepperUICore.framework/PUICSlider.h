@@ -45,6 +45,7 @@
     int _style;
 }
 
++ (void)initialize;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(nonatomic) float pillHighlightedGlowOpacity; // @synthesize pillHighlightedGlowOpacity=_pillHighlightedGlowOpacity;
 @property(nonatomic) _Bool shouldFadeAccessoryImages; // @synthesize shouldFadeAccessoryImages=_shouldFadeAccessoryImages;
@@ -83,6 +84,9 @@
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
 - (void)_updateSequencerConfiguration;
 - (void)_wheelChangedWithEvent:(id)arg1;
+- (id)crownInputSequencer;
+- (_Bool)resignFirstResponder;
+- (_Bool)becomeFirstResponder;
 - (_Bool)canBecomeFirstResponder;
 @property(readonly, nonatomic) float cornerRadius;
 - (void)sliderDidFinishAnimatingFromValue:(float)arg1 toValue:(float)arg2;

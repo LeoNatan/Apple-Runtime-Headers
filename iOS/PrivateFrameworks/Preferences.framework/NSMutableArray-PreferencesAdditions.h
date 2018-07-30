@@ -7,6 +7,9 @@
 #import "NSMutableArray.h"
 
 @interface NSMutableArray (PreferencesAdditions)
+- (void)ps_addGroup:(id)arg1 afterGroup:(id)arg2;
+- (void)ps_addSpecifiers:(id)arg1 toGroup:(id)arg2;
+- (void)ps_addSpecifier:(id)arg1 toGroup:(id)arg2;
 - (void)ps_insertObjectsFromArray:(id)arg1 afterObject:(id)arg2;
 - (void)ps_insertObject:(id)arg1 afterObject:(id)arg2;
 @end

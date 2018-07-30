@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class MNLocationManager, NSError;
+@class MNLocationManager, NSDate, NSError;
 
 @protocol MNLocationManagerObserver <NSObject>
+- (void)locationManager:(MNLocationManager *)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(NSDate *)arg3;
+- (void)locationManager:(MNLocationManager *)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(NSDate *)arg3;
 - (void)locationManagerDidResumeLocationUpdates:(MNLocationManager *)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(MNLocationManager *)arg1;
 - (BOOL)locationManagerShouldPauseLocationUpdates:(MNLocationManager *)arg1;

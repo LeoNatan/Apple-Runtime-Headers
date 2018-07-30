@@ -38,6 +38,7 @@
 + (long long)assetMediaTypeFromVersionMediaType:(unsigned char)arg1;
 + (BOOL)pickTypeRepresentsBurst:(unsigned char)arg1;
 + (unsigned long long)burstSelectionTypesFromBurstPickType:(unsigned char)arg1;
++ (id)fetchQuarantinedAsssetsWithOptions:(id)arg1;
 + (id)fetchAssetsForPersons:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsForFaces:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithALAssetURLs:(id)arg1 options:(id)arg2;
@@ -61,6 +62,7 @@
 - (void)fetchPropertySetsIfNeeded;
 - (id)description;
 - (BOOL)canPerformEditOperation:(long long)arg1;
+- (void)getMasterFingerPrintWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id faceAdjustmentVersion;
 - (int)analysisStateForWorkerType:(short)arg1 outLastIgnoreDate:(id *)arg2 outIgnoreUntilDate:(id *)arg3;
 - (id)adjustmentVersion;

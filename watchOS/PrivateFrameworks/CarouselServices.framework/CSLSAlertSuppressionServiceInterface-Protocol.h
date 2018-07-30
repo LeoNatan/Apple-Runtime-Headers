@@ -10,6 +10,7 @@
 
 @protocol CSLSAlertSuppressionServiceInterface <NSObject>
 - (void)deactivateAssertion:(NSString *)arg1 forProcess:(int)arg2;
+- (void)activateAssertion:(NSString *)arg1 forProcess:(int)arg2 disallowingServices:(NSArray *)arg3;
 - (void)activateModalAppAssertion:(NSString *)arg1 forProcess:(int)arg2 allowingServices:(NSArray *)arg3;
 - (void)activateAssertion:(NSString *)arg1 forProcess:(int)arg2 reasonIdentifier:(NSString *)arg3;
 - (void)activateAssertion:(NSString *)arg1 forProcess:(int)arg2;

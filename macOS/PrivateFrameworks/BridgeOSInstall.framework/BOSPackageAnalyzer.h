@@ -11,9 +11,15 @@
 }
 
 + (id)sharedAnalyzer;
+- (id)_chooseBrainBundleComponentFromComponents:(id)arg1;
+- (id)_chooseUpdateBundleComponentFromComponents:(id)arg1;
+- (id)_brainBundleFromPackageInfos:(id)arg1;
+- (id)_updateBundleFromPackageInfos:(id)arg1;
+- (id)_firmwareBundleComponentsOfType:(long long)arg1 inPackageInfos:(id)arg2;
 - (id)_brainBundleFromSpecifiers:(id)arg1;
 - (id)_updateBundleFromSpecifiers:(id)arg1;
 - (id)_firmwareBundleComponentsOfType:(long long)arg1 inSpecifiers:(id)arg2;
+- (id)chooseBrainAndUpdateBundleFromPackageInfos:(id)arg1 withRequest:(id)arg2;
 - (id)chooseBrainAndUpdateBundleFromSpecifiers:(id)arg1 withRequest:(id)arg2;
 
 @end

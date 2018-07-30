@@ -20,9 +20,7 @@
 - (void)setShowsLiveBalance:(_Bool)arg1;
 - (void)createHeaderContentViews;
 - (_Bool)showsShare;
-- (id)tallFaceTemplate;
-- (id)shortFaceTemplate;
-- (id)shortScrunchedFaceTemplate;
+- (id)templateForLayoutMode:(long long)arg1;
 - (void)dealloc;
 
 @end

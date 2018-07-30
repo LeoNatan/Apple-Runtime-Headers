@@ -13,13 +13,13 @@
 #import "WebResourceLoadDelegate.h"
 #import "WebUIDelegate.h"
 
-@class GKMTextFieldPlus, GKServerWebViewJSRoot, NSArray, NSButton, NSData, NSDictionary, NSLayoutConstraint, NSScrollView, NSString, NSTextField, NSURL, NSURLRequest, WebView;
+@class GKMTextFieldPlus, GKServerWebViewJSRoot, GKWebView, NSArray, NSButton, NSData, NSDictionary, NSLayoutConstraint, NSScrollView, NSString, NSTextField, NSURL, NSURLRequest;
 
 @interface GKServerWebViewController : UXViewController <WebResourceLoadDelegate, WebDownloadDelegate, WebFrameLoadDelegate, WebUIDelegate, WebPolicyDelegate, GKServerWebViewJSRootDelegate>
 {
     NSURL *_url;
     long long _alertTag;
-    WebView *_webView;
+    GKWebView *_webView;
     NSString *_okCallback;
     NSString *_cancelCallback;
     NSString *_playerID;
@@ -69,7 +69,7 @@
 @property(retain, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 @property(retain, nonatomic) NSString *cancelCallback; // @synthesize cancelCallback=_cancelCallback;
 @property(retain, nonatomic) NSString *okCallback; // @synthesize okCallback=_okCallback;
-@property(retain, nonatomic) WebView *webView; // @synthesize webView=_webView;
+@property(retain, nonatomic) GKWebView *webView; // @synthesize webView=_webView;
 - (void)uploadContacts;
 - (void)changePhoto;
 - (void)alertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
@@ -91,6 +91,7 @@
 - (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
+- (void)insertCSSMediaQuery:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
 - (BOOL)shouldStartLoadWithURL:(id)arg1 request:(id)arg2 redirectTo:(id *)arg3;

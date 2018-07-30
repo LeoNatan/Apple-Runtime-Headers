@@ -15,12 +15,6 @@
 
 @interface _CPStartLocalSearchFeedback : PBCodable <_CPProcessableFeedback, _CPFeedbackUUID, _CPStartLocalSearchFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int triggerEvent:1;
-        unsigned int queryId:1;
-        unsigned int indexType:1;
-    } _has;
     int _triggerEvent;
     int _indexType;
     unsigned long long _timestamp;
@@ -34,7 +28,7 @@
 @property(nonatomic) int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
@@ -44,12 +38,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasIndexType;
-@property(readonly, nonatomic) _Bool hasQueryId;
-@property(readonly, nonatomic) _Bool hasTriggerEvent;
-@property(readonly, nonatomic) _Bool hasUuid;
-@property(readonly, nonatomic) _Bool hasInput;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

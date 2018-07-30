@@ -9,7 +9,9 @@
 @class NSString;
 
 @interface NSData (HMFoundation)
-@property(readonly) NSString *hmf_hexidecimalRepresentation;
+@property(readonly) NSString *hmf_hexadecimalRepresentation;
+- (id)hmf_hexadecimalStringWithOptions:(unsigned long long)arg1;
 @property(readonly, getter=hmf_isZeroed) _Bool hmf_zeroed;
+- (id)hmf_initWithHexadecimalString:(id)arg1 options:(unsigned long long)arg2;
 @end
 

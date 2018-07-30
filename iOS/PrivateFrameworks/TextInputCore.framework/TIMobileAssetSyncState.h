@@ -22,12 +22,12 @@
 @property(copy, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long status; // @synthesize status=_status;
+- (void).cxx_destruct;
 - (void)didSyncToRemoteMetadataWithError:(id)arg1;
 - (_Bool)shouldSyncToRemoteMetadata;
 - (void)updateState;
 - (void)saveState;
 - (void)loadStateIfNecessary;
-- (void)dealloc;
 - (id)initWithDate:(id)arg1 buildVersion:(id)arg2 status:(long long)arg3 attemptCount:(long long)arg4;
 
 @end

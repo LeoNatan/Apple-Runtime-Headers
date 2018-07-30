@@ -23,6 +23,7 @@
 @property(nonatomic) long long broadcastID;
 @property(nonatomic) _Bool wantsAppAck;
 @property(nonatomic) _Bool expectsPeerResponse;
+@property(copy, nonatomic) NSString *senderCorrelationIdentifier;
 @property(copy, nonatomic) NSNumber *serverTimestamp;
 @property(retain, nonatomic) NSNumber *priority;
 @property(retain, nonatomic) NSNumber *broadcastTime;

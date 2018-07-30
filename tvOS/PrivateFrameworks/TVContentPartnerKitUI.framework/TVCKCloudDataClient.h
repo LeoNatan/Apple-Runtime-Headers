@@ -132,6 +132,7 @@
 @property(readonly, nonatomic) _Bool isSagaGeniusEnabled;
 @property(nonatomic, getter=isSagaEnabled) _Bool sagaEnabled;
 @property(readonly, nonatomic) _Bool isSagaAvailableInStoreFront;
+- (void)dealloc;
 - (id)init;
 - (id)_jaliscoGetAccountID;
 - (id)_sagaGetCloudAccountID;

@@ -27,7 +27,7 @@
 + (void)configureNetworkPolicyForBuilder:(id)arg1 query:(id)arg2;
 + (void)configureNetworkForBuilder:(id)arg1 query:(id)arg2;
 + (_Bool)shouldPerformQueryForRequest:(id)arg1;
-+ (id)observableForQuery:(id)arg1;
++ (id)observableForQuery:(id)arg1 context:(id)arg2;
 + (_Bool)searchTypeSupportsSuppressionOfAlreadyChosenAddresses:(unsigned long long)arg1;
 + (_Bool)shouldSuppressAddressesAlreadyChosenForRequest:(id)arg1;
 + (id)queryWithRequest:(id)arg1 searchProvider:(id)arg2 delegate:(id)arg3 probeProvider:(id)arg4 scheduler:(id)arg5 userSession:(id)arg6 delegateToken:(id)arg7;
@@ -46,6 +46,7 @@
 - (void)searchOperationsHaveBegunNetworkActivity;
 - (void)searchOperationEncounteredError:(id)arg1;
 - (void)searchOperationReportedResults:(id)arg1;
+- (id)executeWithContext:(id)arg1;
 - (id)execute;
 - (id)makeDelegateWrapperWithDelegate:(id)arg1 forRequest:(id)arg2 userSession:(id)arg3;
 - (id)initWithRequest:(id)arg1 searchProvider:(id)arg2 delegate:(id)arg3 probeProvider:(id)arg4 scheduler:(id)arg5 userSession:(id)arg6 delegateToken:(id)arg7;

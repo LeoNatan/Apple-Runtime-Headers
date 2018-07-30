@@ -8,12 +8,12 @@
 
 #import "CPLAbstractObject.h"
 
-@class CPLEngineFileStorage, CPLPlatformObject, NSCountedSet, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class CPLEngineFileStorage, CPLPlatformObject, NSCountedSet, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface CPLEngineResourceStorage : CPLEngineStorage <CPLAbstractObject>
 {
-    NSMutableSet *_identitiesToCommit;
-    NSMutableSet *_identitiesToDelete;
+    NSMutableDictionary *_identitiesToCommit;
+    NSMutableDictionary *_identitiesToDelete;
     NSURL *_tempFolderURL;
     NSObject<OS_dispatch_queue> *_pruneStatsQueue;
     NSCountedSet *_successfulPruneStatsPerResourceType;
@@ -32,8 +32,8 @@
 - (void)writeTransactionDidSucceed;
 - (void)writeTransactionDidFail;
 - (BOOL)checkIsEmpty;
-- (BOOL)compactWithError:(id *)arg1;
 - (BOOL)resetWithError:(id *)arg1;
+- (BOOL)compactWithError:(id *)arg1;
 - (BOOL)storeDownloadedResource:(id)arg1 atURL:(id)arg2 error:(id *)arg3;
 - (id)createTempDestinationURLForResource:(id)arg1 error:(id *)arg2;
 - (BOOL)hasResource:(id)arg1;
@@ -42,7 +42,9 @@
 - (unsigned long long)sizeOfOriginalResourcesToUpload;
 - (unsigned long long)sizeOfResourcesToUpload;
 - (BOOL)dropResourceForUpload:(id)arg1 error:(id *)arg2;
+- (BOOL)storeResourceCopyForUpload:(id)arg1 error:(id *)arg2;
 - (BOOL)storeResourceForUpload:(id)arg1 error:(id *)arg2;
+- (unsigned long long)scopeType;
 - (BOOL)openWithError:(id *)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 

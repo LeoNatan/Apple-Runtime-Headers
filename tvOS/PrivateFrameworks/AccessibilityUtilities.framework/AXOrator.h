@@ -17,6 +17,7 @@
     AXDispatchTimer *_audioSessionTimer;
     _Bool _spellOutContent;
     _Bool _shouldSpeakNextItemOnResume;
+    _Bool _preferredLanguageWasSpecified;
     _Bool _isAudioSessionActive;
     _Bool _pendingAudioSessionActive;
     _Bool _isInAudioInterruption;
@@ -36,6 +37,7 @@
     NSString *_lastUtteranceLanguageCode;
     AVSpeechUtterance *_lastUtterance;
     AXLanguageTag *_lastUtteranceLanguageTag;
+    NSString *_currentLanguageCode;
     double _audioInterruptionStartedTime;
     NSString *_requestedLanguageCodeDuringAudioInterruption;
     struct _NSRange _lastSpokenSubstringRange;
@@ -51,6 +53,8 @@
 @property(nonatomic) _Bool isInAudioInterruption; // @synthesize isInAudioInterruption=_isInAudioInterruption;
 @property(nonatomic) _Bool pendingAudioSessionActive; // @synthesize pendingAudioSessionActive=_pendingAudioSessionActive;
 @property(nonatomic) _Bool isAudioSessionActive; // @synthesize isAudioSessionActive=_isAudioSessionActive;
+@property(nonatomic) _Bool preferredLanguageWasSpecified; // @synthesize preferredLanguageWasSpecified=_preferredLanguageWasSpecified;
+@property(retain, nonatomic) NSString *currentLanguageCode; // @synthesize currentLanguageCode=_currentLanguageCode;
 @property(nonatomic) _Bool shouldSpeakNextItemOnResume; // @synthesize shouldSpeakNextItemOnResume=_shouldSpeakNextItemOnResume;
 @property(retain, nonatomic) AXLanguageTag *lastUtteranceLanguageTag; // @synthesize lastUtteranceLanguageTag=_lastUtteranceLanguageTag;
 @property(retain, nonatomic) AVSpeechUtterance *lastUtterance; // @synthesize lastUtterance=_lastUtterance;
@@ -92,6 +96,7 @@
 - (id)_speechSequenceItemsStartingAtContentLocation:(unsigned long long)arg1;
 - (_Bool)_changeSpeakingSpeed:(_Bool)arg1;
 - (void)_speakNextItemInSequence;
+- (id)_getLangCodeForItem:(id)arg1;
 - (void)_updateSequenceForSpellOutBehavior;
 - (void)_startSpeakingSequence;
 - (void)clearSelectedContent;

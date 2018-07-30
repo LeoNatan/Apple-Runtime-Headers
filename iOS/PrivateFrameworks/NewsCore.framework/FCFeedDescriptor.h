@@ -29,13 +29,14 @@
 @property(readonly, copy) NSString *description;
 - (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(_Bool)arg3 personalize:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)latestHeadlineResultsWithContext:(id)arg1;
+@property(readonly, nonatomic) long long feedPersonalizationConfigurationSet;
 @property(readonly, nonatomic) long long feedFilterOptions;
 @property(readonly, nonatomic) long long feedSortMethod;
 @property(readonly, nonatomic) id <FCFeedPaginating> feedPaginator;
-- (_Bool)shouldFilterFeedGroupEmitter:(id)arg1 withCoreConfiguration:(id)arg2;
+- (_Bool)shouldFilterFeedGroupEmitter:(id)arg1 withConfiguration:(id)arg2;
 - (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)offlineFeedGroupEmittersWithCoreConfiguration:(id)arg1;
-- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (id)offlineFeedGroupEmittersWithConfiguration:(id)arg1;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)fetchOperationForHeadlinesWithIDs:(id)arg1 context:(id)arg2;
 - (id)streamOfLatestHeadlinesWithContext:(id)arg1;
 - (id)streamOfHeadlinesWithIDs:(id)arg1 context:(id)arg2 cachedOnly:(_Bool)arg3 maxCachedAge:(double)arg4;

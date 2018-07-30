@@ -11,49 +11,44 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMBulletinBoardNotificationServiceGroup, HMDelegateCaller, HMFMessageDispatcher, HMService, NSObject<OS_dispatch_queue>, NSPredicate, NSString, NSUUID;
+@class HMBulletinBoardNotificationServiceGroup, HMFUnfairLock, HMService, NSObject<OS_dispatch_queue>, NSPredicate, NSString, NSUUID, _HMContext;
 
 @interface HMBulletinBoardNotification : NSObject <NSSecureCoding, HMObjectMerge, HMFMessageReceiver, HMFLogging>
 {
+    HMFUnfairLock *_lock;
     _Bool _enabled;
     NSPredicate *_condition;
     HMBulletinBoardNotificationServiceGroup *_notificationServiceGroup;
     NSUUID *_uniqueIdentifier;
     NSUUID *_targetUUID;
     HMService *_service;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMDelegateCaller *_delegateCaller;
-    HMFMessageDispatcher *_msgDispatcher;
+    _HMContext *_context;
     NSString *_logID;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 @property(readonly, copy, nonatomic) NSString *logID; // @synthesize logID=_logID;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) __weak HMService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (id)logIdentifier;
 - (void)_commitWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)commitWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) HMBulletinBoardNotificationServiceGroup *notificationServiceGroup; // @synthesize notificationServiceGroup=_notificationServiceGroup;
 - (void)_callBulletinBoardNotificationUpdatedDelegate;
 @property(retain, nonatomic) NSPredicate *condition; // @synthesize condition=_condition;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void)_configureClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *targetUUID; // @synthesize targetUUID=_targetUUID;
 - (void)_handleBulletinBoardNotificationUpdateNotification:(id)arg1;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
-@property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (void)__configureWithContext:(id)arg1;
 - (void)_registerNotificationHandlers;
-- (id)logIdentifier;
 - (id)init;
 
 // Remaining properties

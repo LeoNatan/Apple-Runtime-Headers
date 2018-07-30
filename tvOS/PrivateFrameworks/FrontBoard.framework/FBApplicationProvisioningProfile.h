@@ -27,15 +27,15 @@
 @property(readonly, nonatomic, getter=isFreeDeveloperProfile) _Bool freeDeveloperProfile; // @synthesize freeDeveloperProfile=_freeDeveloperProfile;
 @property(readonly, nonatomic, getter=isBeta) _Bool beta; // @synthesize beta=_beta;
 @property(readonly, nonatomic, getter=isAppleInternalProfile) _Bool appleInternalProfile; // @synthesize appleInternalProfile=_appleInternalProfile;
-@property(readonly, retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
+@property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, copy, nonatomic) NSString *signerIdentity; // @synthesize signerIdentity=_signerIdentity;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)description;
 - (_Bool)allowsApplicationIdentifierEntitlement:(id)arg1;
-- (void)dealloc;
 - (id)initWithSignerIdentity:(id)arg1 profile:(id)arg2;
 
 @end

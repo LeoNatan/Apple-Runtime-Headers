@@ -14,6 +14,9 @@
     id _CPKPrivate;
 }
 
++ (id)performanceLogWithBaseTime:(double)arg1;
++ (id)logArrayForLogType:(id)arg1;
++ (void)logCurrentTimeWithLabel:(id)arg1 forLogType:(id)arg2;
 + (id)transformWindowButtonToExpand:(BOOL)arg1;
 + (id)characterPickerToolbarItem:(id)arg1;
 @property void *CPKUserInfo; // @synthesize CPKUserInfo=_CPKUserInfo;
@@ -30,6 +33,7 @@
 - (void)_characterViewerWillOpen:(id)arg1;
 - (void)_popoverDidClose:(id)arg1;
 - (void)_popoverDidOpen:(id)arg1;
+- (void)_targetTextViewSelectionChanged:(id)arg1;
 - (void)_popoverWillOpen;
 - (void)_insertSelectedCharacter:(id)arg1 toTarget:(id)arg2;
 - (BOOL)_isValidTarget:(id)arg1;

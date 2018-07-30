@@ -6,32 +6,28 @@
 
 #import "NSObject.h"
 
-#import "CNContactChangesObserver.h"
-
 @class CNContact, CNContactProperty, CNContactStore, NSString;
 
-@interface CNFavoritesEntry : NSObject <CNContactChangesObserver>
+@interface CNFavoritesEntry : NSObject
 {
     NSString *_name;
     _Bool _dirty;
-    _Bool _autoUpdating;
     NSString *_actionType;
     NSString *_bundleIdentifier;
     int _type;
-    CNContact *_contact;
+    CNContactStore *_contactStore;
     NSString *_label;
     NSString *_value;
-    NSString *_labeledValueIdentifier;
     NSString *_propertyKey;
-    CNContactStore *_store;
     NSString *_abDatabaseUUID;
     NSString *_originalName;
+    CNContact *_contact;
+    NSString *_labeledValueIdentifier;
     int _abUid;
     int _abIdentifier;
+    int _oldAbUid;
 }
 
-+ (void)_runLookupWithStore:(id)arg1;
-+ (id)rematchEntrySnapshot:(id)arg1 withStore:(id)arg2 noMatchFound:(_Bool *)arg3;
 + (_Bool)favoritesEntryValueForLabeledValueValue:(id)arg1 propertyKey:(id)arg2 isEqualToValue:(id)arg3;
 + (id)createLabeledValueForFavoritesEntryValue:(id)arg1 label:(id)arg2 iOSLegacyIdentifier:(int)arg3 propertyKey:(id)arg4;
 + (id)labeledValueValueForFavoritesEntryValue:(id)arg1 propertyKey:(id)arg2;
@@ -42,50 +38,40 @@
 + (id)valueStringFromSocialProfile:(id)arg1;
 + (id)descriptorsForRequiredKeysForPropertyKey:(id)arg1;
 + (id)contactFormatter;
-+ (id)sharedContactStore;
 + (void)initialize;
-@property(readonly, nonatomic) _Bool autoUpdating; // @synthesize autoUpdating=_autoUpdating;
+@property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
+@property(nonatomic) int oldAbUid; // @synthesize oldAbUid=_oldAbUid;
 @property(nonatomic) int abIdentifier; // @synthesize abIdentifier=_abIdentifier;
 @property(nonatomic) int abUid; // @synthesize abUid=_abUid;
-@property(copy, nonatomic) NSString *originalName; // @synthesize originalName=_originalName;
-@property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
-@property(retain, nonatomic) NSString *abDatabaseUUID; // @synthesize abDatabaseUUID=_abDatabaseUUID;
-@property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
-@property(retain, nonatomic) NSString *propertyKey; // @synthesize propertyKey=_propertyKey;
 @property(retain, nonatomic) NSString *labeledValueIdentifier; // @synthesize labeledValueIdentifier=_labeledValueIdentifier;
+@property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
+@property(copy, nonatomic) NSString *originalName; // @synthesize originalName=_originalName;
+@property(retain, nonatomic) NSString *abDatabaseUUID; // @synthesize abDatabaseUUID=_abDatabaseUUID;
+@property(retain, nonatomic) NSString *propertyKey; // @synthesize propertyKey=_propertyKey;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-@property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 - (void).cxx_destruct;
 - (int)_entryTypeForActionType:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_convertFromEntryType:(int)arg1 toActionType:(id *)arg2 bundleIdentifier:(id *)arg3;
-- (void)_lookupChanged:(id)arg1;
-- (void)_lookupNotFound;
-- (void)_postEntryChanged;
-- (void)_unqueueLookup;
-- (void)_queueLookup;
+- (void)applyChangeRecord:(id)arg1;
+- (void)resetContactMatch;
+- (_Bool)rematchWithContacts;
+- (struct CNPair *)rematch;
 - (void)dictionaryRepresentation:(id *)arg1 isDirty:(_Bool *)arg2;
 - (id)dictionaryRepresentation;
-- (id)initWithDictionaryRepresentation:(id)arg1 store:(id)arg2 autoUpdating:(_Bool)arg3;
+- (id)initWithDictionaryRepresentation:(id)arg1 store:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
-- (void)recheckContactStore;
 @property(readonly, nonatomic) CNContactProperty *contactProperty;
 @property(readonly, nonatomic) NSString *name;
-- (void)contactDidChange:(id)arg1;
 - (void)dealloc;
 - (id)_initWithContact:(id)arg1 propertyKey:(id)arg2 labeledValueIdentifier:(id)arg3 entryType:(int)arg4 actionType:(id)arg5 bundleIdentifier:(id)arg6 store:(id)arg7;
 - (id)initWithContact:(id)arg1 propertyKey:(id)arg2 labeledValueIdentifier:(id)arg3 actionType:(id)arg4 bundleIdentifier:(id)arg5 store:(id)arg6;
 - (id)initWithContact:(id)arg1 propertyKey:(id)arg2 identifier:(id)arg3 type:(int)arg4 store:(id)arg5;
 - (id)initWithContact:(id)arg1 propertyKey:(id)arg2 identifier:(id)arg3 type:(int)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

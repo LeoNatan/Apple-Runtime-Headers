@@ -10,6 +10,9 @@
 {
 }
 
++ (_Bool)isDeviceSupportedForPhotoSharingIntentDetection:(id)arg1;
++ (_Bool)isDeviceSupportedForLSTMBasedLanguageIdentification:(id)arg1;
++ (id)getDeviceModel;
 + (_Bool)suffixInArray:(id)arg1 withArray:(id)arg2;
 + (_Bool)prefixInArray:(id)arg1 withArray:(id)arg2;
 + (_Bool)tokenInArray:(id)arg1 withArray:(id)arg2;

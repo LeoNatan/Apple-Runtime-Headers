@@ -8,6 +8,7 @@
 
 @class NSPanel;
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarConfigPanelLoader : NSObject
 {
     NSPanel *panel;

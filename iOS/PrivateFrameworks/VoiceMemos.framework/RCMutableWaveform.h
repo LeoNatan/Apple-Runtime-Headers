@@ -6,6 +6,8 @@
 
 #import <VoiceMemos/RCWaveform.h>
 
+@class NSMutableArray;
+
 @interface RCMutableWaveform : RCWaveform
 {
 }
@@ -16,8 +18,10 @@
 - (void)addSegments:(id)arg1;
 - (void)addSegment:(id)arg1;
 - (_Bool)clipToTimeRange:(CDStruct_73a5d3ca)arg1;
-- (id)segments;
 - (void)setSegments:(id)arg1;
+
+// Remaining properties
+@property(readonly) NSMutableArray *segments; // @dynamic segments;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface DDAtomicRegexp : DDBasicRegexp <NSCopying>
 {
     struct _NSRange _range;

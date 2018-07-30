@@ -17,6 +17,7 @@
 - (_Bool)updatePackingPropertiesWithDocument:(id)arg1;
 @property(nonatomic) struct CGPoint packedPoint;
 @property(retain, nonatomic) TDRenditionType *renditionType; // @dynamic renditionType;
+- (id)propertiesAsDictionary;
 - (id)createCSIRepresentationWithCompression:(_Bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (void)resetToBaseKeySpec;
 - (void)awakeFromInsert;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) NSSet *packedRenditions; // @dynamic packedRenditions;
 @property(retain, nonatomic) TDRenditionSpec *parentRendition; // @dynamic parentRendition;
 @property(retain, nonatomic) TDElementProduction *production; // @dynamic production;
+@property(retain, nonatomic) NSSet *properties; // @dynamic properties;
 @property(nonatomic) int width; // @dynamic width;
 
 @end

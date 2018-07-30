@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
     struct objc_ivar *_ivar;
 }
 
-+ (CDStruct_e8a1eea0 *)_proxyNonGCPoolPointer;
 - (void)unionSet:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)removeObject:(id)arg1;

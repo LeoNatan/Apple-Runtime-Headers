@@ -28,6 +28,9 @@
     PKPaymentSetupProductImageAssets *_imageAssets;
     NSArray *_associatedStoreIdentifiers;
     NSURL *_appLaunchURL;
+    NSArray *_searchTerms;
+    NSArray *_supportedCameraCaptureTypes;
+    NSArray *_supportedInAppTypes;
     NSArray *_paymentOptions;
     NSDictionary *_rawDictionary;
     NSString *_identifier;
@@ -36,11 +39,17 @@
 }
 
 + (id)partnerProductsFromArrayOfPartners:(id)arg1 andProducts:(id)arg2;
++ (id)_inAppProvisioningURLWthScheme:(id)arg1 path:(id)arg2;
++ (id)_displayNameForCardType:(id)arg1;
++ (id)productsFromBrowseableBankApps:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *requestedProvisioningMethods; // @synthesize requestedProvisioningMethods=_requestedProvisioningMethods;
 @property(retain, nonatomic) NSDictionary *minimumOSVersion; // @synthesize minimumOSVersion=_minimumOSVersion;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSDictionary *rawDictionary; // @synthesize rawDictionary=_rawDictionary;
 @property(readonly, copy, nonatomic) NSArray *paymentOptions; // @synthesize paymentOptions=_paymentOptions;
+@property(readonly, copy, nonatomic) NSArray *supportedInAppTypes; // @synthesize supportedInAppTypes=_supportedInAppTypes;
+@property(readonly, copy, nonatomic) NSArray *supportedCameraCaptureTypes; // @synthesize supportedCameraCaptureTypes=_supportedCameraCaptureTypes;
+@property(readonly, copy, nonatomic) NSArray *searchTerms; // @synthesize searchTerms=_searchTerms;
 @property(copy, nonatomic) NSURL *appLaunchURL; // @synthesize appLaunchURL=_appLaunchURL;
 @property(copy, nonatomic) NSArray *associatedStoreIdentifiers; // @synthesize associatedStoreIdentifiers=_associatedStoreIdentifiers;
 @property(readonly, nonatomic) PKPaymentSetupProductImageAssets *imageAssets; // @synthesize imageAssets=_imageAssets;

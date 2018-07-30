@@ -11,6 +11,7 @@
 @interface PKPassFrontFaceImageSet : PKPassImageSet
 {
     PKImage *_faceImage;
+    PKImage *_faceShadowImage;
     struct CGRect _logoRect;
     struct CGRect _thumbnailRect;
     struct CGRect _stripRect;
@@ -23,6 +24,7 @@
 @property(nonatomic) struct CGRect stripRect; // @synthesize stripRect=_stripRect;
 @property(nonatomic) struct CGRect thumbnailRect; // @synthesize thumbnailRect=_thumbnailRect;
 @property(nonatomic) struct CGRect logoRect; // @synthesize logoRect=_logoRect;
+@property(retain, nonatomic) PKImage *faceShadowImage; // @synthesize faceShadowImage=_faceShadowImage;
 @property(retain, nonatomic) PKImage *faceImage; // @synthesize faceImage=_faceImage;
 - (void).cxx_destruct;
 - (unsigned long long)hash;

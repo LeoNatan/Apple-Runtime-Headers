@@ -13,12 +13,14 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1;
+- (id)initWithRequestRevision:(unsigned long long)arg1 CVPixelBuffer:(struct __CVBuffer *)arg2;
 
 @end
 

@@ -15,12 +15,12 @@
     NSMutableDictionary *_timeAndDesignatorFormattersSuppressingWhitespace;
 }
 
-+ (id)zoneName:(id)arg1;
++ (id)timeZoneName:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_invalidateFormatters;
-- (id)timeAndDesignatorFormatterForZone:(id)arg1 suppressWhitespace:(_Bool)arg2;
-- (id)timeOnlyFormatterForZone:(id)arg1 hasSeconds:(_Bool)arg2;
+- (id)timeAndDesignatorFormatterForTimeZone:(id)arg1 suppressWhitespace:(_Bool)arg2 forcesLatinNumbers:(_Bool)arg3;
+- (id)timeOnlyFormatterForTimeZone:(id)arg1 hasSeconds:(_Bool)arg2 forcesLatinNumbers:(_Bool)arg3;
 - (void)dealloc;
 - (id)init;
 

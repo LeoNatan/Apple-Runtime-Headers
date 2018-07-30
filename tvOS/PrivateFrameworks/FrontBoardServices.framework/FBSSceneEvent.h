@@ -20,13 +20,13 @@
 @property(retain, nonatomic) FBSSceneClientSettingsDiff *clientSettingsDiff; // @synthesize clientSettingsDiff=_clientSettingsDiff;
 @property(retain, nonatomic) FBSSceneSettingsDiff *settingsDiff; // @synthesize settingsDiff=_settingsDiff;
 @property(nonatomic) long long source; // @synthesize source=_source;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)description;
 @property(readonly, nonatomic) NSSet *actions;
-- (void)dealloc;
 - (id)init;
 
 @end

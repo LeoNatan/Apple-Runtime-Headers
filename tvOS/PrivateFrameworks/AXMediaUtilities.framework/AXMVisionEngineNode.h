@@ -35,6 +35,7 @@
 - (void)connect:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)validateVisionKitSoftLinkSymbols;
 - (void)freeResources;
 - (void)nodeInitialize;
 - (id)initWithIdentifier:(id)arg1;

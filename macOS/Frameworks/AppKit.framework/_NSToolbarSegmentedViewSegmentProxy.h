@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAccessibilityReparentingProxy.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarSegmentedViewSegmentProxy : NSAccessibilityReparentingProxy
 {
 }

@@ -33,7 +33,6 @@
 @property(readonly, nonatomic) UIImage *gearBackgroundImage;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)setAnimatingGearView:(_Bool)arg1;
-- (void)didMoveToSuperview;
 - (void)setStatusMessage:(id)arg1;
 - (void)setPublisherText:(id)arg1;
 - (void)setUpdateName:(id)arg1;

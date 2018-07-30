@@ -9,7 +9,7 @@
 #import "MFCancelable.h"
 #import "NSProgressReporting.h"
 
-@class CSSearchQuery, MFPromise, NSLock, NSMutableArray, NSProgress, NSString;
+@class MFPromise, NSLock, NSMutableArray, NSProgress, NSString;
 
 @interface MFLibrarySearchableIndexQuery : NSObject <MFCancelable, NSProgressReporting>
 {
@@ -21,7 +21,6 @@
     NSString *_queryString;
     NSString *_logPrefixString;
     NSString *_queryStatusString;
-    CSSearchQuery *_query;
 }
 
 + (id)searchWordsForPhrase:(id)arg1;
@@ -31,14 +30,9 @@
 + (id)_modifierStringFromModifiers:(unsigned long long)arg1;
 + (id)_operandStringForOperand:(long long)arg1;
 + (id)queryWithString:(id)arg1 context:(id)arg2;
-@property(retain, nonatomic) CSSearchQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSString *queryStatusString; // @synthesize queryStatusString=_queryStatusString;
 @property(retain, nonatomic) NSString *logPrefixString; // @synthesize logPrefixString=_logPrefixString;
 @property(readonly, copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (void)_searchQueryDidComplete;
-- (void)_searchQueryDidFailWithError:(id)arg1;
-- (void)_searchQueryDidFindItems:(id)arg1;
-- (void)_performClientWork:(CDUnknownBlockType)arg1;
 - (void)addFailureBlock:(CDUnknownBlockType)arg1;
 - (void)addCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)addResultsBlock:(CDUnknownBlockType)arg1;
@@ -52,13 +46,13 @@
 - (void)_foundItems:(id)arg1;
 @property(readonly) NSProgress *progress;
 - (id)truncatedDescription;
-@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithQueryString:(id)arg1 context:(id)arg2;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

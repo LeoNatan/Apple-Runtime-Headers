@@ -24,11 +24,21 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)realTimeTuningTrigger:(long long)arg1;
+- (void)realTimeTuningOutcome:(long long)arg1 withBundleId:(id)arg2;
+- (void)tappedCoalescedNotification:(id)arg1 inBundle:(id)arg2;
+- (void)removedNotificationFromAllFeeds:(id)arg1;
+- (void)removedNotificationFromLockScreen:(id)arg1;
+- (void)receivedNotification:(id)arg1 forFeed:(unsigned long long)arg2;
+- (void)pulldownActionForNotification:(id)arg1;
+- (void)silenceActionForNotification:(id)arg1;
+- (void)dismissActionForNotification:(id)arg1;
+- (void)defaultActionForNotification:(id)arg1;
 - (void)longLookReparkInvokedWithTrigger:(long long)arg1 forNotificationRequest:(id)arg2 withState:(id)arg3;
 - (void)longLookDismissInvokedWithTrigger:(long long)arg1 forNotificationRequest:(id)arg2 withState:(id)arg3;
 - (void)longLookCustomAction:(id)arg1 forNotificationRequest:(id)arg2 withState:(id)arg3;
 - (void)longLookDefaultActionInvokedWithTrigger:(long long)arg1 forNotificationRequest:(id)arg2 withState:(id)arg3;
-- (void)longLookDidPresentWithTrigger:(long long)arg1 forNotificationRequest:(id)arg2 withState:(id)arg3;
+- (void)longLookDidPresentForNotificationRequest:(id)arg1;
 - (void)notificationCenterClearAll;
 - (void)notificationCenterDayCleared;
 - (void)shortLookClearedForNotificationRequest:(id)arg1 withState:(id)arg2;

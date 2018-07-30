@@ -19,8 +19,10 @@
 @property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)debugDescription;
 - (id)description;
-- (id)descriptionStart;
+- (id)description:(BOOL)arg1;
+- (id)descriptionStart:(BOOL)arg1;
 - (id)initWithWeight:(id)arg1 placement:(struct CGRect)arg2;
 
 @end

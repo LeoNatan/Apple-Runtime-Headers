@@ -8,7 +8,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface NMUTransportControlProvider : NSObject
 {
     NSArray *_standardTransportControls;
@@ -23,6 +22,8 @@ __attribute__((visibility("hidden")))
 - (id)_likeBanControlForCurrentState:(id)arg1;
 - (id)_primaryTransportControlsForCurrentState:(id)arg1 usingExtendedControls:(_Bool)arg2;
 - (id)_secondaryTransportControlsForCurrentState:(id)arg1;
+- (_Bool)shouldProvidePlaybackRateControls;
+- (_Bool)shouldProvideFeedbackControls;
 - (void)reloadTransportControlsWithNowPlayingState:(id)arg1;
 
 @end

@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
         unsigned long long;
         _Bool;
         float;
-        struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer>>>;
+        struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, geo::StdAllocator<std::__1::shared_ptr<ggl::DebugRenderer>, ggl::Allocator>>;
         struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue>>;
         struct shared_ptr<ggl::CommonLibrary>;
         struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences>>;

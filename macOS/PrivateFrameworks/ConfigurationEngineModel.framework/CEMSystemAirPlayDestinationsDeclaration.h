@@ -12,30 +12,27 @@
 
 @interface CEMSystemAirPlayDestinationsDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadWhitelist;
+    NSArray *_payloadPasswords;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withWhitelist:(id)arg2 withPasswords:(id)arg3;
 + (id)restrictionPayloadKeys;
-+ (id)PasswordsItem_allowedPayloadKeys;
-+ (id)WhitelistItem_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadPasswordsItem:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadWhitelistItem:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadPasswordsItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadWhitelistItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSArray *payloadPasswords; // @synthesize payloadPasswords=_payloadPasswords;
+@property(copy, nonatomic) NSArray *payloadWhitelist; // @synthesize payloadWhitelist=_payloadWhitelist;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSArray *payloadPasswords;
-@property(readonly, nonatomic) NSArray *payloadWhitelist;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

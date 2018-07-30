@@ -6,21 +6,24 @@
 
 #import "NSObject.h"
 
+#import "GEOPListStateCapturing.h"
 #import "_GEONetworkDefaultsServerProxy.h"
 
 @class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURLSession;
 
 __attribute__((visibility("hidden")))
-@interface _GEONetworkDefaultsLocalProxy : NSObject <_GEONetworkDefaultsServerProxy>
+@interface _GEONetworkDefaultsLocalProxy : NSObject <_GEONetworkDefaultsServerProxy, GEOPListStateCapturing>
 {
     id <_GEONetworkDefaultsServerProxyDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_isolation;
     NSMutableArray *_updateCompletionHandlers;
     NSURLSession *_session;
+    unsigned long long _stateCaptureHandle;
 }
 
 @property(nonatomic) __weak id <_GEONetworkDefaultsServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)captureStatePlistWithHints:(struct os_state_hints_s *)arg1;
 - (void)_updateWithNewConfig:(id)arg1 error:(id)arg2 request:(id)arg3 response:(id)arg4;
 - (void)_processNetworkDefaultsResponse:(id)arg1 data:(id)arg2 error:(id)arg3 request:(id)arg4;
 - (id)_urlRequestForNetworkDefaults;

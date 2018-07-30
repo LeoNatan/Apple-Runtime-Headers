@@ -9,7 +9,7 @@
 #import "SBUIBackgroundStyleTransitioning.h"
 #import "SBUIWallpaperOverlay.h"
 
-@class BSUIBackdropView, MTMaterialView, NSString;
+@class BSUIBackdropView, MTMaterialView, NSString, UIColor;
 
 @interface SBUIBackgroundView : UIView <SBUIBackgroundStyleTransitioning, SBUIWallpaperOverlay>
 {
@@ -18,11 +18,14 @@
     _Bool _transitioning;
     double _progress;
     BSUIBackdropView *_backdropView;
+    _Bool _isReducedTransparencyEnabled;
     UIView *_reduceTransparencyView;
+    UIView *_reduceTransparencyTintingView;
     UIView *_sourceOverView;
     UIView *_darkenSourceOverView;
     UIView *_tintView;
     UIView *_lightenSourceOverView;
+    UIColor *_reduceTransparencyBackingColor;
     MTMaterialView *_luminanceView;
 }
 
@@ -37,6 +40,7 @@
 - (void)_tintWithProgress:(double)arg1 backgroundColorAlpha:(double)arg2;
 - (void)_darkenWithProgress:(double)arg1;
 - (double)_reducedTransparencyValueForBackgroundStyle:(long long)arg1;
+- (_Bool)_shouldApplyReducedTransparencyTintForBackgroundStyle:(long long)arg1;
 - (double)_lightenSourceOverValueForBackgroundStyle:(long long)arg1;
 - (double)_luminanceValueForBackgroundStyle:(long long)arg1;
 - (double)_tintValueForBackgroundStyle:(long long)arg1;
@@ -44,11 +48,16 @@
 - (double)_darkenValueForBackgroundStyle:(long long)arg1;
 - (void)_updateAppearanceForTransitionFromStyle:(long long)arg1 toStyle:(long long)arg2 withProgress:(double)arg3;
 - (void)_updateAppearanceForBackgroundStyle:(long long)arg1 transitionToSettings:(_Bool)arg2;
+- (void)_reduceTransparencyEnabledStateDidChange:(id)arg1;
+- (void)_updateReduceTransparencyTinting;
+- (void)_updateReduceTransparencyTintingWithProgressWeighting:(double)arg1;
+- (void)setReduceTransparencyBackingColor:(id)arg1;
 - (id)backdropView;
 @property(retain, nonatomic) NSString *groupName;
 - (void)completeTransitionToBackgroundStyle:(long long)arg1;
 - (void)updateBackgroundStyleTransitionProgress:(double)arg1;
 - (void)beginTransitionToBackgroundStyle:(long long)arg1;
+- (void)modifyAllViewsWithChanges:(CDUnknownBlockType)arg1;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

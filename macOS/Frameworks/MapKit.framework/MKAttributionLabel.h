@@ -21,6 +21,8 @@
 - (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)sizeToFit;
+- (void)viewDidChangeEffectiveAppearance;
+- (void)_updateTextColor;
 - (void)_prepareLabel;
 - (id)_attributesWithStroke:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

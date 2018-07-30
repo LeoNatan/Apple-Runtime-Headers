@@ -12,15 +12,15 @@
 
 @interface NLCoachingProgressAlmostThereEvent : NSObject <NLCoachingProgressEvent>
 {
-    unsigned int goalType;
+    int goalType;
 }
 
 + (id)reason;
 + (id)eventIdentifier;
-@property(nonatomic) unsigned int goalType; // @synthesize goalType;
+@property(nonatomic) int goalType; // @synthesize goalType;
 - (id)userInfoForCoachingAlertRequestWithModel:(id)arg1;
 - (_Bool)shouldFireWithTypicalDayModel:(id)arg1 evaluationDelegate:(id)arg2;
-- (id)initWithGoalType:(unsigned int)arg1;
+- (id)initWithGoalType:(int)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

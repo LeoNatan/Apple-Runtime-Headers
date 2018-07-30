@@ -6,7 +6,7 @@
 
 #import <InputMethodKit/IMKUICandidateController.h>
 
-@class IMKCandidatePopoverController, IMKCandidateWindowPositioning, IMKWindowController, NSArray, NSURL, NSView;
+@class IMKCandidatePopoverController, IMKCandidateWindowPositioning, IMKWindowController, NSAppearance, NSArray, NSURL, NSView;
 
 @interface IMKUIWindowBasedCandidateController : IMKUICandidateController
 {
@@ -127,6 +127,7 @@
 - (void)hide;
 - (void)windowDidHide;
 @property(nonatomic, getter=isVisible) BOOL visible;
+@property(retain, nonatomic) NSAppearance *appearance;
 - (double)lineViewWidth;
 - (void)reloadWithUpdatingFirstCandidate:(BOOL)arg1;
 - (void)updateCandidateSelection;

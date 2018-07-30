@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSData, NSDictionary, NSString, NSURL;
 
-@interface NSFileWrapper : NSObject <NSCoding>
+@interface NSFileWrapper : NSObject <NSSecureCoding>
 {
     NSDictionary *_fileAttributes;
     NSString *_preferredFileName;
@@ -20,6 +20,7 @@
     id _moreVars;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)_newContentsAtURL:(id)arg1 path:(id)arg2 itemKind:(id)arg3 oldChildrenByUniqueFileName:(id)arg4 options:(unsigned long long)arg5 error:(id *)arg6;
 + (_Bool)_canSafelyMapFilesAtPath:(id)arg1;
 + (_Bool)_forPath:(id)arg1 getItemKind:(id *)arg2 modificationDate:(id *)arg3;

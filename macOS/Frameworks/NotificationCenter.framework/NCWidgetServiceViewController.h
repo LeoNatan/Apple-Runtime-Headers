@@ -8,6 +8,7 @@
 
 @class NCWidgetServiceSubsystem;
 
+__attribute__((visibility("hidden")))
 @interface NCWidgetServiceViewController : NCRemoteViewServiceViewController
 {
     _Bool _supportsEditing;

@@ -8,7 +8,6 @@
 
 @class SCNNode;
 
-__attribute__((visibility("hidden")))
 @interface SCNManipulableItem : NSObject
 {
     double _screenSize;
@@ -28,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)parentItem;
 - (void)setPosition:(struct SCNVector3)arg1;
 - (struct SCNVector3)scale;
-- (struct SCNMatrix4)worldTransform;
+@property(nonatomic) struct SCNMatrix4 worldTransform;
 @property(nonatomic) struct SCNMatrix4 transform;
 - (_Bool)isNodeManipulator;
 - (unsigned long long)hash;

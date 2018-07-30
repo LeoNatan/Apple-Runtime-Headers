@@ -46,8 +46,6 @@
 - (void)_disassociateWithPIPLayer;
 - (id)_associatedPIPLayer;
 - (void)_associateWithPIPLayer:(id)arg1;
-- (void)_setCanEnterPIPMode:(_Bool)arg1;
-- (_Bool)canEnterPIPMode;
 - (void)_configurePlayerWhenLeavingPIP;
 - (void)_configurePlayerWhenEnteringPIP;
 - (struct CGRect)_videoRectForBounds:(struct CGRect)arg1;
@@ -96,6 +94,7 @@
 - (void)setContentsScale:(double)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSublayers;
+- (id)_compactDescription;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
 

@@ -43,6 +43,7 @@
 - (NSSet *)additionalResourceRequestsForObjectContext:(TSPObjectContext *)arg1;
 - (NSSet *)preferredResourceRequestTagsForContext:(TSPObjectContext *)arg1;
 - (NSDictionary *)packageDataForWrite;
+- (void)willBeginReadingFromURL:(NSURL *)arg1;
 - (_Bool)retrievePassphraseWithConsumer:(id <TSPPassphraseConsumer>)arg1 error:(id *)arg2;
 - (void)didLoadDocumentWrittenByPreviousVersion;
 - (void)addPersistenceWarnings:(NSSet *)arg1;

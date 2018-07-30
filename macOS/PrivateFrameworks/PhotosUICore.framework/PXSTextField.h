@@ -12,6 +12,7 @@
 {
     BOOL _emphasized;
     NSString *_text;
+    double _fontSize;
     long long _verticalAlignment;
     struct NSEdgeInsets _padding;
 }
@@ -20,6 +21,7 @@
 @property(nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic, getter=isEmphasized) BOOL emphasized; // @synthesize emphasized=_emphasized;
+@property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (void)_updateCell;

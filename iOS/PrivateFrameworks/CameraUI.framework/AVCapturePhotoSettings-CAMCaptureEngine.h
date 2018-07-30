@@ -7,6 +7,7 @@
 #import "AVCapturePhotoSettings.h"
 
 @interface AVCapturePhotoSettings (CAMCaptureEngine)
-- (id)initWithRequest:(id)arg1;
++ (id)cam_settingsWithRequest:(id)arg1;
+- (void)_configureForRequest:(id)arg1;
 @end
 

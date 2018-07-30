@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCardViewLinkedPeopleProperty.h>
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewPreferredForNameProperty : ABCardViewLinkedPeopleProperty
 {
 }

@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "TSDContainerInfo.h"
+#import "TSKModelRootIndexProvider.h"
 
 @class NSArray, NSObject<TSDContainerInfo>, NSString, TPBodyInfo, TPDocumentRoot, TSDInfoGeometry, TSPObject<TSDOwningAttachment>;
 
 __attribute__((visibility("hidden")))
-@interface TPPageInfo : NSObject <TSDContainerInfo>
+@interface TPPageInfo : NSObject <TSDContainerInfo, TSKModelRootIndexProvider>
 {
     unsigned long long _pageIndex;
     TPBodyInfo *_bodyInfo;
@@ -19,6 +20,13 @@ __attribute__((visibility("hidden")))
     id <TPPageLayoutInfoProvider> _layoutInfoProvider;
 }
 
++ (unsigned long long)documentSetupLeftSidePageIndex;
++ (unsigned long long)documentSetupRightSidePageIndex;
++ (unsigned long long)documentSetupPageIndex;
++ (unsigned long long)pageTemplateIndexFromPageIndex:(unsigned long long)arg1 documentRoot:(id)arg2;
++ (unsigned long long)pageIndexFromPageTemplateIndex:(unsigned long long)arg1;
++ (_Bool)isAlternativePageIndex:(unsigned long long)arg1 documentRoot:(id)arg2;
++ (_Bool)isPageTemplatePageIndex:(unsigned long long)arg1 documentRoot:(id)arg2;
 + (_Bool)isDocSetupPageIndex:(unsigned long long)arg1;
 + (_Bool)hasBodyInfo;
 @property(readonly, nonatomic) __weak id <TPPageLayoutInfoProvider> layoutInfoProvider; // @synthesize layoutInfoProvider=_layoutInfoProvider;
@@ -36,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isFloatingAboveText) _Bool floatingAboveText;
 @property(readonly, nonatomic) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+- (long long)modelRootIndex;
 - (_Bool)isThemeContent;
 - (Class)repClass;
 - (void)setPrimitiveGeometry:(id)arg1;

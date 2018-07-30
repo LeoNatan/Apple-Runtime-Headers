@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface OITSURangeList : NSObject
 {
     struct vector<_NSRange, std::__1::allocator<_NSRange>> mRangeList;

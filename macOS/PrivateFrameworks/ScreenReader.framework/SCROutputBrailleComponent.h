@@ -46,10 +46,10 @@ __attribute__((visibility("hidden")))
     int _primaryDisplayToken;
     int _inputAccessMode;
     int _lineFocus;
-    long long _toggledBrailleModifierKeys;
+    unsigned int _toggledBrailleModifierKeys;
 }
 
-@property(nonatomic) long long toggledBrailleModifierKeys; // @synthesize toggledBrailleModifierKeys=_toggledBrailleModifierKeys;
+@property(nonatomic) unsigned int toggledBrailleModifierKeys; // @synthesize toggledBrailleModifierKeys=_toggledBrailleModifierKeys;
 - (void)_dispatchBrailleDidPanWithSuccess:(id)arg1 token:(id)arg2 appToken:(id)arg3 direction:(int)arg4;
 - (void)_speakUntranslatedText:(id)arg1 speakLiterally:(BOOL)arg2;
 - (void)handleBrailleDeletedUntranslatedText:(id)arg1 speakLiterally:(BOOL)arg2;

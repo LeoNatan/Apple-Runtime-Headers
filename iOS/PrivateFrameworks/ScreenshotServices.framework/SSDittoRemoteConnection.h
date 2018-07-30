@@ -15,7 +15,8 @@
 
 - (void).cxx_destruct;
 - (void)sendDittoProcessImageIdentifierUpdate:(id)arg1;
-- (void)sendDittoProcessEnvironmentDescription:(id)arg1;
+- (void)sendDittoProcessEnvironmentDescription:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)preheatDittoProcess;
 - (void)_sendAction:(id)arg1;
 - (id)init;
 

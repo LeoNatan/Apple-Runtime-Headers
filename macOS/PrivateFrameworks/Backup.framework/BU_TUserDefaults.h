@@ -60,7 +60,6 @@ __attribute__((visibility("hidden")))
 + (id)standardUserDefaults;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)synchronize;
 - (_Bool)_boolForRegID:(int)arg1;
 - (_Bool)regIDExists:(int)arg1;
 - (void)removeObjectForRegID:(int)arg1;

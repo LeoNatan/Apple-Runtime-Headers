@@ -7,11 +7,10 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
-#import "NSSecureCoding.h"
 
-@class ASCodableContact, ASRelationship, CNContactStore, NSSet, NSString, NSUUID;
+@class ASRelationship, CNContactStore, NSSet, NSString, NSUUID;
 
-@interface ASContact : NSObject <NSCopying, NSSecureCoding>
+@interface ASContact : NSObject <NSCopying>
 {
     CNContactStore *_contactStore;
     NSString *_linkedContactStoreIdentifier;
@@ -22,7 +21,6 @@
     ASRelationship *_remoteRelationship;
 }
 
-+ (_Bool)supportsSecureCoding;
 + (id)contactWithCodableContact:(id)arg1;
 @property(copy, nonatomic) ASRelationship *remoteRelationship; // @synthesize remoteRelationship=_remoteRelationship;
 @property(copy, nonatomic) ASRelationship *relationship; // @synthesize relationship=_relationship;
@@ -42,10 +40,8 @@
 - (_Bool)isEqualToContact:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)init;
-@property(readonly, nonatomic) ASCodableContact *codableContact;
+- (id)codableContactIncludingCloudKitFields:(_Bool)arg1;
 
 @end
 

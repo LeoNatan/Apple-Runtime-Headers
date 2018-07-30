@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)notifyCacheClientOfTimeRelativeResponses:(id)arg1;
 - (void)notifyCachedURLResponseBecameFileBacked:(id)arg1 filePath:(id)arg2 forUUID:(id)arg3;
+- (void)flushWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setMinSizeForVMCachedResource:(long long)arg1;
 - (long long)currentDiskUsage;
 - (void)copyAllPartitionNamesWithCompletionHandler:(CDUnknownBlockType)arg1;

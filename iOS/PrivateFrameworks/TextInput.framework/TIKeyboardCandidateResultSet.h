@@ -51,11 +51,11 @@
 @property(copy, nonatomic) TIKeyboardCandidate *defaultCandidate; // @synthesize defaultCandidate=_defaultCandidate;
 @property(nonatomic) unsigned long long initialSelectedIndex; // @synthesize initialSelectedIndex=_initialSelectedIndex;
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
+- (void).cxx_destruct;
 - (_Bool)isSubsetOf:(id)arg1;
 - (id)setByAppendingSet:(id)arg1;
 - (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned long long)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned long long)arg9 proactiveTriggers:(id)arg10;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (unsigned long long)positionInCandidateList:(id)arg1;
 @property(readonly, nonatomic) _Bool isDummySet;
 @property(readonly, nonatomic) _Bool hasMetadata;

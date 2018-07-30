@@ -11,12 +11,20 @@
 @interface AVCaptureSession : NSObject
 {
     AVCaptureSessionInternal *_internal;
+    BOOL _interrupted;
+    BOOL _usesApplicationAudioSession;
+    BOOL _automaticallyConfiguresApplicationAudioSession;
+    BOOL _automaticallyConfiguresCaptureDeviceForWideColor;
 }
 
 + (id)avCaptureSessionPlist;
 + (BOOL)automaticallyNotifiesObserversOfMasterClock;
 + (void)initialize;
 + (id)allAVCaptureSessionPresets;
+@property(nonatomic) BOOL automaticallyConfiguresCaptureDeviceForWideColor; // @synthesize automaticallyConfiguresCaptureDeviceForWideColor=_automaticallyConfiguresCaptureDeviceForWideColor;
+@property(nonatomic) BOOL automaticallyConfiguresApplicationAudioSession; // @synthesize automaticallyConfiguresApplicationAudioSession=_automaticallyConfiguresApplicationAudioSession;
+@property(nonatomic) BOOL usesApplicationAudioSession; // @synthesize usesApplicationAudioSession=_usesApplicationAudioSession;
+@property(readonly, nonatomic, getter=isInterrupted) BOOL interrupted; // @synthesize interrupted=_interrupted;
 - (id)defaultConnectionPropertiesForConnection:(id)arg1;
 - (id)defaultOutputSettingsForConnection:(id)arg1 fileType:(id)arg2;
 - (void)decompressionRequirementsDidChangeForConnection:(id)arg1;

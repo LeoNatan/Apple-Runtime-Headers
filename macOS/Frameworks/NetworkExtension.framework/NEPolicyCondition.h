@@ -27,8 +27,11 @@
     NWAddressEndpoint *_startAddress;
     NWAddressEndpoint *_endAddress;
     NSString *_customEntitlement;
+    NSString *_agentDomain;
+    NSString *_agentType;
 }
 
++ (id)requiredAgentDomain:(id)arg1 agentType:(id)arg2;
 + (id)customEntitlement:(id)arg1;
 + (id)entitlement;
 + (id)remoteAddressStart:(id)arg1 end:(id)arg2;
@@ -45,9 +48,11 @@
 + (id)effectivePID:(int)arg1;
 + (id)realApplication:(id)arg1;
 + (id)effectiveApplication:(id)arg1;
-@property(retain) NSString *customEntitlement; // @synthesize customEntitlement=_customEntitlement;
-@property(retain) NWAddressEndpoint *endAddress; // @synthesize endAddress=_endAddress;
-@property(retain) NWAddressEndpoint *startAddress; // @synthesize startAddress=_startAddress;
+@property(copy) NSString *agentType; // @synthesize agentType=_agentType;
+@property(copy) NSString *agentDomain; // @synthesize agentDomain=_agentDomain;
+@property(copy) NSString *customEntitlement; // @synthesize customEntitlement=_customEntitlement;
+@property(copy) NWAddressEndpoint *endAddress; // @synthesize endAddress=_endAddress;
+@property(copy) NWAddressEndpoint *startAddress; // @synthesize startAddress=_startAddress;
 @property unsigned char prefix; // @synthesize prefix=_prefix;
 @property unsigned short ipProtocol; // @synthesize ipProtocol=_ipProtocol;
 @property unsigned int trafficClassEnd; // @synthesize trafficClassEnd=_trafficClassEnd;

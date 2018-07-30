@@ -6,6 +6,7 @@
 
 #import "NSString.h"
 
+__attribute__((visibility("hidden")))
 @interface NSSecureStringWrapper : NSString
 {
     struct __CFString *_originalString;

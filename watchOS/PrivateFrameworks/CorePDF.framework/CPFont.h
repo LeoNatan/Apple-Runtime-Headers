@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface CPFont : NSObject <CPDisposable>
 {
     struct CGPDFFont *cgPDFFont;

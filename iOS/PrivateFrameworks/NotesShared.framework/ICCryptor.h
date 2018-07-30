@@ -10,6 +10,7 @@
 {
 }
 
++ (void)rewrapAndDivergeKeyForObject:(id)arg1 usingPassphrase:(id)arg2;
 + (void)removeItemFromBiometricID:(id)arg1;
 + (void)removePassphraseForNotesInAccount:(id)arg1;
 + (void)removePassphraseForAccount:(id)arg1;
@@ -40,7 +41,13 @@
 + (_Bool)isPassphrase:(id)arg1 correctForNote:(id)arg2;
 + (_Bool)isPassphrase:(id)arg1 correctForAccount:(id)arg2;
 + (_Bool)isPassphrase:(id)arg1 correctForObject:(id)arg2;
++ (void)fixDivergedAttachmentsForNote:(id)arg1 usingPassphrase:(id)arg2;
++ (_Bool)unauthenticatedAttachmentsUsingSamePassphraseExistForNote:(id)arg1 passphrase:(id)arg2;
++ (void)fixNoteWithDivergedKeyFromAccountPassphrase:(id)arg1 usingPassphrase:(id)arg2;
++ (void)fixUpAnyNotesToMatchAccountUsingPassphrase:(id)arg1;
++ (void)fixUpAnyNotesToMatchAccountUsingPassphraseIfNecessary:(id)arg1;
 + (_Bool)authenticateWithPassphrase:(id)arg1 forNote:(id)arg2;
++ (_Bool)authenticateWithPassphrase:(id)arg1 forObject:(id)arg2;
 + (_Bool)authenticateWithPassphrase:(id)arg1 forAccount:(id)arg2;
 + (_Bool)isAuthenticatedForNote:(id)arg1;
 + (_Bool)isAuthenticatedForAccount:(id)arg1;

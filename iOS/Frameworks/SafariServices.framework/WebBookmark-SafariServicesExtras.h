@@ -10,7 +10,7 @@
 
 @interface WebBookmark (SafariServicesExtras)
 + (void)_sf_webBookmarksFromDropSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (_Bool)_sf_canCreateWebBookmarksFromDropSession:(id)arg1;
++ (unsigned long long)_sf_operationForDropSession:(id)arg1;
 @property(readonly, nonatomic) UIImage *_sf_icon;
 @property(retain, nonatomic, setter=_sf_setIconKeyColor:) UIColor *_sf_iconKeyColor;
 @end

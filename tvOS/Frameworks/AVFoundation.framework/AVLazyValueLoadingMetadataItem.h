@@ -8,6 +8,7 @@
 
 @class AVLazyValueLoadingMetadataItemInternal;
 
+__attribute__((visibility("hidden")))
 @interface AVLazyValueLoadingMetadataItem : AVMetadataItem
 {
     AVLazyValueLoadingMetadataItemInternal *_lazyMetadataItem;

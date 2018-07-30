@@ -27,6 +27,7 @@
     _Bool _paused;
     NSURL *_sourceURL;
     _Bool _pausedForEditing;
+    _Bool _allowsDefaultLightingEnvironmentFallback;
     SCNAuthoringEnvironment *_authoringEnvironment;
 }
 
@@ -51,6 +52,7 @@
 + (id)sceneWithMDLAsset:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)_prettifyForPreview;
 - (void)_didEncodeSCNScene:(id)arg1;
 - (void)_didDecodeSCNScene:(id)arg1;
 - (void)_customDecodingOfSCNScene:(id)arg1;
@@ -79,6 +81,8 @@
 @property(nonatomic) float fogDensityExponent;
 @property(nonatomic) float fogEndDistance;
 @property(retain, nonatomic) id fogColor;
+- (void)set_allowsDefaultLightingEnvironmentFallback:(_Bool)arg1;
+- (_Bool)_allowsDefaultLightingEnvironmentFallback;
 @property(readonly, nonatomic) SCNMaterialProperty *lightingEnvironment;
 @property(readonly, nonatomic) SCNMaterialProperty *background;
 - (id)attributeForKey:(id)arg1;
@@ -110,6 +114,7 @@
 - (void)dealloc;
 - (void)setUpAxis:(struct SCNVector3)arg1;
 - (struct SCNVector3)upAxis;
+- (void)_clearSceneRef;
 - (void)_syncObjCModel;
 - (id)initWithSceneRef:(struct __C3DScene *)arg1;
 - (id)init;

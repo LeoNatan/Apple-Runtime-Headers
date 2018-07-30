@@ -42,6 +42,7 @@
 + (id)newProfileSignatureVersion;
 + (id)dataFromCMSEncodedData:(id)arg1 outSignerCertificates:(id *)arg2;
 + (id)signerSummaryOfCertificate:(struct __SecCertificate *)arg1;
++ (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2 outIsAllowedToInstallUnsupportedPayloads:(_Bool *)arg3 outIsAllowedToWriteDefaults:(_Bool *)arg4 outIsAllowedToInstallSupervisedRestrictionsOnUnsupervisedDevices:(_Bool *)arg5;
 + (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2 outIsAllowedToInstallUnsupportedPayloads:(_Bool *)arg3 outIsAllowedToWriteDefaults:(_Bool *)arg4;
 + (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2 outIsAllowedToWriteDefaults:(_Bool *)arg3;
 + (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2;
@@ -75,6 +76,7 @@
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, retain, nonatomic) NSString *profileDescription; // @synthesize profileDescription=_profileDescription;
 - (void).cxx_destruct;
+- (void)replacePayloadWithUUID:(id)arg1 withPayload:(id)arg2;
 @property(readonly, nonatomic) _Bool shouldHaveFullSSLTrust;
 - (id)appAccessibilityParameters;
 - (id)restrictionsWithHeuristicsAppliedOutError:(id *)arg1;

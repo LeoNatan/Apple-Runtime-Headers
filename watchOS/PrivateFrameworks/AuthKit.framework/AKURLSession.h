@@ -19,6 +19,7 @@
     _Bool __usesAppleIDContext;
 }
 
++ (id)anisetteFreeURLSessionWithCacheProvider:(id)arg1;
 + (id)sharedAnisetteFreeURLSession;
 + (id)sharedURLSession;
 @property(nonatomic) _Bool _usesAppleIDContext; // @synthesize _usesAppleIDContext=__usesAppleIDContext;
@@ -32,6 +33,7 @@
 - (void)_unsafe_completeTask:(id)arg1 withError:(id)arg2;
 - (void)cancelDataTask:(id)arg1;
 - (id)beginDataTaskWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)defaultSessionObjectWithConfiguration:(id)arg1;
 - (id)_URLSession;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (id)init;

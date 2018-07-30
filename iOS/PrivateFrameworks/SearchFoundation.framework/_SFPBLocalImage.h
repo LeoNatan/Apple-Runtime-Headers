@@ -13,7 +13,6 @@
 
 @interface _SFPBLocalImage : PBCodable <_SFPBLocalImage, NSSecureCoding>
 {
-    CDStruct_1ae5a928 _has;
     int _localImageType;
 }
 
@@ -26,7 +25,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasLocalImageType;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

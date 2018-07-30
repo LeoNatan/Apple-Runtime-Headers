@@ -56,6 +56,8 @@
 @property(readonly, nonatomic) double timeoutIntervalForRequest;
 @property(readonly, nonatomic) BOOL allowsBackgroundNetworking;
 @property(readonly, nonatomic) BOOL preferAnonymousRequests;
+@property(readonly, nonatomic) unsigned long long discretionaryNetworkBehavior;
+@property(readonly, nonatomic) BOOL automaticallyRetryNetworkFailures;
 @property(readonly, nonatomic) NSString *sourceApplicationSecondaryIdentifier;
 @property(readonly, nonatomic) NSString *sourceApplicationBundleIdentifier;
 @property(readonly, nonatomic) long long qualityOfService;

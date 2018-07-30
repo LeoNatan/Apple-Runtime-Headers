@@ -22,6 +22,7 @@
 - (id)localizedNameOfVoiceGender:(long long)arg1 inDisplayLanguage:(id)arg2;
 - (id)localizedGenderOfOutputVoice:(id)arg1 inDisplayLanguage:(id)arg2;
 - (id)localizedNameOfOutputVoice:(id)arg1 inDisplayLanguage:(id)arg2;
+- (id)localizedNameOfOutputVoiceWithIdentifier:(id)arg1 inDisplayLanguage:(id)arg2;
 - (id)localizedNameForSiriLanguage:(id)arg1 inDisplayLanguage:(id)arg2;
 - (id)localizedCompactNameForSiriLanguage:(id)arg1 inDisplayLanguage:(id)arg2;
 - (id)compactDisplayNameInLanguage:(id)arg1 forSiriLanguage:(id)arg2;

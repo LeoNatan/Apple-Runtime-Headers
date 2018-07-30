@@ -19,10 +19,10 @@
 - (void)setLastUsedAlternateFundingSourcePassUniqueIdentifier:(NSString *)arg1 handler:(void (^)(void))arg2;
 - (void)balanceForPass:(PKPaymentPass *)arg1 completion:(void (^)(PKCurrencyAmount *))arg2;
 - (void)updateMessageReceivedDate:(NSDate *)arg1 forTransactionWithIdentifier:(NSString *)arg2 handler:(void (^)(void))arg3;
-- (void)updateMemo:(NSString *)arg1 forTransactionWithIdentifier:(NSString *)arg2 handler:(void (^)(void))arg3;
+- (void)receivedPeerPaymentMessageData:(NSData *)arg1 handler:(void (^)(void))arg2;
 - (void)noteAccountDeletedWithCompletion:(void (^)(void))arg1;
 - (void)presentPeerPaymentTermsAndConditionsWithTermsURL:(NSURL *)arg1 termsIdentifier:(NSString *)arg2 orientation:(NSNumber *)arg3 completion:(void (^)(_Bool))arg4;
-- (void)presentRegistrationFlowWithAccount:(PKPeerPaymentAccount *)arg1 amount:(PKCurrencyAmount *)arg2 state:(unsigned long long)arg3 orientation:(NSNumber *)arg4 completion:(void (^)(_Bool))arg5;
+- (void)presentRegistrationFlowWithAccount:(PKPeerPaymentAccount *)arg1 amount:(PKCurrencyAmount *)arg2 state:(unsigned long long)arg3 senderAddress:(NSString *)arg4 orientation:(NSNumber *)arg5 completion:(void (^)(_Bool))arg6;
 - (void)presentIdentityVerificationFlowWithResponseData:(NSData *)arg1 orientation:(NSNumber *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)registrationStatusWithCompletion:(void (^)(unsigned long long))arg1;
 - (void)unregisterDeviceWithCompletion:(void (^)(_Bool, NSError *))arg1;

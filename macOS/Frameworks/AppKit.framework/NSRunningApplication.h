@@ -44,6 +44,7 @@
 + (void)terminateAutomaticallyTerminableApplications;
 + (BOOL)_deactivateCurrentAppAndCheckIfFrontReservationIsAvailable;
 + (id)currentApplication;
++ (id)runningApplicationWithAuditToken:(CDStruct_4c969caf)arg1;
 + (id)runningApplicationWithProcessIdentifier:(int)arg1;
 + (id)runningApplicationsWithBundleIdentifier:(id)arg1;
 + (id)_TALTerminatedApplications;

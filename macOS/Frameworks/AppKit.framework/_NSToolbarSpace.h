@@ -24,8 +24,10 @@
 - (BOOL)_shouldDrawSpace;
 - (void)_drawToolbarSpaceInRect:(struct CGRect)arg1;
 - (struct __CFString *)_currentCoreUIWidget;
+- (BOOL)allowsVibrancy;
 - (BOOL)preservesContentDuringLiveResize;
 - (BOOL)_drawsNothing;
+- (BOOL)isSpaceItem;
 - (BOOL)inPalette;
 - (void)setInPalette:(BOOL)arg1;
 - (id)initWithSize:(struct CGSize)arg1 forSpaceItem:(id)arg2;

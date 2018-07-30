@@ -76,9 +76,9 @@
 - (void)invalidateComposition;
 - (void)ensureTextViewVisibleIfNeeded;
 - (void)ensureSelectionVisibleIfNeeded;
-- (float)_calcuateIdealMaxPluginHeight;
+- (float)_calcuateIdealMaxPluginHeight:(_Bool)arg1;
 - (void)plugingPayloadDidLoad:(id)arg1;
-- (void)plugingPayloadWantsResize:(id)arg1;
+- (void)pluginPayloadWantsResize:(id)arg1;
 - (void)messageEntryRichTextViewDidTapHandwritingKey:(id)arg1;
 - (void)messageEntryRichTextView:(id)arg1 pastedURL:(id)arg2;
 - (void)messageEntryRichTextViewWasTapped:(id)arg1 isLongPress:(_Bool)arg2;

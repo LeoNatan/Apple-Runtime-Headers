@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABAddressBookAPIAdapter.h>
 
-__attribute__((visibility("hidden")))
 @interface ABPersonViewAPIAdapter : ABAddressBookAPIAdapter
 {
 }

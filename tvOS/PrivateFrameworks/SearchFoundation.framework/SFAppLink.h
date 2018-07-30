@@ -14,7 +14,9 @@
 
 @interface SFAppLink : NSObject <SFAppLink, NSSecureCoding, NSCopying>
 {
-    CDStruct_9f571ec0 _has;
+    struct {
+        unsigned int imageAlign:1;
+    } _has;
     int _imageAlign;
     NSString *_title;
     SFPunchout *_appPunchout;

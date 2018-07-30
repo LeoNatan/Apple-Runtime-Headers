@@ -6,6 +6,7 @@
 
 #import "UIButton.h"
 
+__attribute__((visibility("hidden")))
 @interface MCActionButton : UIButton
 {
     int _state;

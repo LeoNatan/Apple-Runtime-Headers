@@ -31,6 +31,7 @@
 - (void)speakText:(id)arg1 languageCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)speakText:(id)arg1 rate:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)speakText:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)speakPasscode:(id)arg1 instructions:(id)arg2 languageCode:(id)arg3 flags:(unsigned int)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)speakDeviceSetupWelcomePhaseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)preWarmDeviceSetupWelcomePhaseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_invalidate;

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
     int _termstatus;
 }
 
++ (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2 environment:(id)arg3 redirect:(id)arg4;
 + (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2 environment:(id)arg3;
 + (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2;
 @property(readonly) int terminationStatus;

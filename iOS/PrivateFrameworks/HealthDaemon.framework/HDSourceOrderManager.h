@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-@class HDDatabaseValueCache, HDProfile, NSObject<OS_dispatch_queue>;
+@class HDDatabaseValueCache, HDProfile;
 
 @interface HDSourceOrderManager : NSObject
 {
     HDProfile *_profile;
-    NSObject<OS_dispatch_queue> *_queue;
     HDDatabaseValueCache *_sourceOrdersForTypeCache;
 }
 

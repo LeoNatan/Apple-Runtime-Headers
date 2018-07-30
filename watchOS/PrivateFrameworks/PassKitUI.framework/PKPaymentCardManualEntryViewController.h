@@ -10,12 +10,10 @@
 #import "PKPaymentSetupBrowseProductsViewControllerDelegate.h"
 #import "PKPaymentSetupDisambiguationViewControllerDelegate.h"
 
-@class NSArray, NSString, PKPaymentSetupBrowseProductsViewController, PKPaymentSetupFindWithoutNumberFooterView;
+@class NSArray, NSString;
 
 @interface PKPaymentCardManualEntryViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentSetupDisambiguationViewControllerDelegate, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentCameraCaptureViewControllerDelegate>
 {
-    PKPaymentSetupFindWithoutNumberFooterView *_findWithoutNumberFooterView;
-    PKPaymentSetupBrowseProductsViewController *_findWithoutNumberBrowser;
     NSArray *_pendingCameraCaptureObjects;
 }
 
@@ -29,7 +27,6 @@
 - (void)disambiguationViewControllerSetupLater:(id)arg1;
 - (void)disambiguationViewController:(id)arg1 didSelectProduct:(id)arg2;
 - (void)fieldCellEditableTextFieldValueDidChange:(id)arg1;
-- (void)findCardWithoutNumber:(id)arg1;
 - (void)_performInlineSecondaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performDisambiguationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_pushSecondaryPaymentSetupViewControllerWithCompletion:(CDUnknownBlockType)arg1;
@@ -46,8 +43,6 @@
 - (void)_cameraCaptureCancelButtonPressed:(id)arg1;
 - (void)_captureFromCamera:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)_findWithoutNumberFooterView;
-- (id)footerView;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

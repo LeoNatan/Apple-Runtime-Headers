@@ -19,6 +19,7 @@
 - (void)modelChangedForCall:(id)arg1;
 - (void)prefersExclusiveAccessToCellularNetworkChangedForCall:(id)arg1;
 - (void)mediaPropertiesChangedForCall:(id)arg1 remoteAspectRatioDidChange:(_Bool)arg2 remoteCameraOrientationDidChange:(_Bool)arg3;
+- (void)remoteParticipantHandlesChangedForCall:(id)arg1;
 - (void)providerContextChangedForCall:(id)arg1;
 - (void)remoteScreenAspectRatioChangedForCall:(id)arg1;
 - (void)remoteScreenOrientationChangedForCall:(id)arg1;

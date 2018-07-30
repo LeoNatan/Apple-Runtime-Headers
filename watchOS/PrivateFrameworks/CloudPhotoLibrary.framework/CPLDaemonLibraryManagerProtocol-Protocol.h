@@ -17,5 +17,8 @@
 - (void)finalizeSessionWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)beginPullSessionWithKnownLibraryVersion:(NSString *)arg1 context:(CPLChangeSessionContext *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)beginPushSessionWithKnownLibraryVersion:(NSString *)arg1 context:(CPLChangeSessionContext *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)boostPriorityForScopeWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)disableMainScopeWithCompletionHandler:(void (^)(NSError *))arg1;
+- (void)enableMainScopeWithCompletionHandler:(void (^)(NSError *))arg1;
 @end
 

@@ -28,6 +28,7 @@
 - (void)templateUpdate:(id)arg1 details:(id)arg2;
 - (void)touchIDButtonPressed:(BOOL)arg1;
 - (void)homeButtonPressed;
+- (void)statusMessage:(unsigned int)arg1 details:(id)arg2;
 - (void)statusMessage:(unsigned int)arg1;
 - (void)matchResult:(id)arg1 details:(id)arg2;
 - (void)enrollFeedback:(id)arg1;

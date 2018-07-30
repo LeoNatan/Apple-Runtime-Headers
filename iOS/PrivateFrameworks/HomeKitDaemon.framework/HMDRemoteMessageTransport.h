@@ -19,6 +19,7 @@
 + (id)logCategory;
 + (id)remoteMessageFromMessage:(id)arg1 secure:(_Bool)arg2 accountRegistry:(id)arg3;
 + (unsigned long long)restriction;
++ (id)remoteMessageTransportsForProductInfo:(id)arg1;
 @property(readonly, nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, nonatomic) HMDAccountRegistry *accountRegistry; // @synthesize accountRegistry=_accountRegistry;
 - (void).cxx_destruct;

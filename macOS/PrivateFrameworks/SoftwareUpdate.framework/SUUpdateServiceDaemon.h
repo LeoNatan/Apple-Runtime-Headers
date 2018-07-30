@@ -37,8 +37,13 @@
 }
 
 + (id)sharedUpdateServiceDaemon;
++ (id)daemonTempDirectoryAppendedWithPath:(id)arg1;
 + (id)daemonCacheDirectoryAppendedWithPath:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)migratePreferencesWithReply:(CDUnknownBlockType)arg1;
+- (void)clearCatalogAndNotifyWithReply:(CDUnknownBlockType)arg1;
+- (void)setPreferenceObject:(id)arg1 forKey:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)preferenceObjectForKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)_takeAllValidAdditionalPostLogoutInstallRequests;
 - (id)_addAdditionalPostLogoutInstallRequests:(id)arg1;
 - (void)_runBackgroundActionsOnCurrentQueueIfAppropriate:(char *)arg1;
@@ -47,12 +52,13 @@
 - (void)authChallengeWasReceived:(id)arg1 handled:(char *)arg2;
 - (void)resetServiceWithReply:(CDUnknownBlockType)arg1;
 - (void)dumpServiceDebugInfo;
+- (void)productsInActiveForegroundTransactions:(CDUnknownBlockType)arg1;
 - (void)bridgeOSUpdateIsPreparedWithReply:(CDUnknownBlockType)arg1;
-- (void)bridgeOSUpdatePreparedForProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getInstallHistoryWithReply:(CDUnknownBlockType)arg1;
 - (void)evaluateProducts:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)suspendBackgroundTasksTemporarily:(BOOL)arg1 desiredDuration:(long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)preparationRequiredForProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)adminDeferredAvailableUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)combinedStatusForUpdatesWithProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)conditionsMetForNonUserInitiatedUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)statusForUpdateWithProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -60,8 +66,10 @@
 - (void)registerRequestsToInstallAfterPostLogoutUpdates:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)productKeysToAutomaticallyInstallLaterWithReply:(CDUnknownBlockType)arg1;
 - (void)setAutomaticallyInstallLater:(BOOL)arg1 forProductKeys:(id)arg2 replyWhenDone:(CDUnknownBlockType)arg3;
+- (void)stashAndCommitFDEKeyReplyingWithResult:(CDUnknownBlockType)arg1;
 - (void)consumeUUIDForToken:(id)arg1 replyWithResult:(CDUnknownBlockType)arg2;
 - (void)adoptManualProductArchiveByReadingFromFileHandle:(id)arg1 archiveName:(id)arg2 displayName:(id)arg3 displayVersion:(id)arg4 allowDevSigning:(BOOL)arg5 replyWithResult:(CDUnknownBlockType)arg6;
+- (void)purgeManualProductState;
 - (void)stringRepresentationOfLongDescriptionForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)stashURLCredential:(id)arg1;
 - (void)configureProgressPhasesEnablingFLO:(id)arg1 finishBlock:(CDUnknownBlockType)arg2;
@@ -69,6 +77,7 @@
 - (void)commitLoginCredentialsDisablingFLO:(BOOL)arg1 hasArmedBaseSystemUpdates:(BOOL)arg2 finishBlock:(CDUnknownBlockType)arg3;
 - (void)stashLoginCredentialsEnablingFLO:(BOOL)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_doTheCredsStashEnablingFLO:(BOOL)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)performBaseSystemInstallCleanupTasks:(CDUnknownBlockType)arg1;
 - (void)productKeysToInstallAfterLogoutWithReply:(CDUnknownBlockType)arg1;
 - (void)registerToInstallAfterLogoutForProductKeys:(id)arg1 nowIsLater:(BOOL)arg2 restartNow:(BOOL)arg3 shouldStashCredentials:(BOOL)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)_updateProductForPostLogoutInstallResultsNotification:(id)arg1 withStatus:(id)arg2;
@@ -103,6 +112,7 @@
 - (void)installStatus:(id)arg1 didChangeExternallyForProductKey:(id)arg2;
 - (void)currentDevKeyModeWithReply:(CDUnknownBlockType)arg1;
 - (void)clearInvalidationForIdentifier:(id)arg1 version:(id)arg2 forReason:(int)arg3;
+- (void)fetchMajorOSInfoForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)remainingPackageIdentifiersToInstallForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)packageReferenceForMatchingIdentifier:(id)arg1 productKey:(id)arg2 invalidatingPrevious:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)availableUpdatesOfType:(long long)arg1 withState:(long long)arg2 filteredByState:(unsigned long long)arg3 filterDeferred:(BOOL)arg4 filterDuplicates:(BOOL)arg5 reply:(CDUnknownBlockType)arg6;

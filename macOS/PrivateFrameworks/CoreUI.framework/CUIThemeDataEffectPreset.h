@@ -6,7 +6,6 @@
 
 #import <CoreUI/CUIShapeEffectPreset.h>
 
-__attribute__((visibility("hidden")))
 @interface CUIThemeDataEffectPreset : CUIShapeEffectPreset
 {
 }

@@ -27,7 +27,6 @@
 - (id)document;
 - (id)calendar;
 - (id)components;
-- (id)timeZoneForLocationOfInterest:(id)arg1;
 - (id)initWithMapService:(id)arg1;
 - (id)init;
 

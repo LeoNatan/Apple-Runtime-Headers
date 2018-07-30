@@ -23,11 +23,12 @@
 }
 
 @property(readonly, nonatomic, getter=hasFired) _Bool fired; // @synthesize fired=_hasFired;
-@property(readonly, retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-@property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
-@property(readonly, retain, nonatomic) id <BSWatchdogProviding> provider; // @synthesize provider=_provider;
+@property(readonly, nonatomic) id <BSWatchdogProviding> provider; // @synthesize provider=_provider;
 @property(retain, nonatomic) id <BSWatchdogDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)_stageTwoTimerFired;
 - (void)_stageOneTimerFired;
 - (void)_startWatchdogTimer;

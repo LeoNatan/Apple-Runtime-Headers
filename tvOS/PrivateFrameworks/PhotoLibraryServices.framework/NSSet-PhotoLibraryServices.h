@@ -7,6 +7,7 @@
 #import "NSSet.h"
 
 @interface NSSet (PhotoLibraryServices)
+- (id)_pl_prettyDescriptionWithIndent:(long long)arg1;
 - (id)_pl_map:(CDUnknownBlockType)arg1;
 - (id)_pl_filter:(CDUnknownBlockType)arg1;
 - (id)_pl_firstObjectPassingTest:(CDUnknownBlockType)arg1;

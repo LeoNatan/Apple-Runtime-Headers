@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)_notificationTriggerForNotificationRecord:(id)arg1;
 - (id)_notificationSoundForNotificationRecord:(id)arg1;
+- (id)_notificationIconForNotificationRecord:(id)arg1;
 - (id)_notificationContentForNotificationRecord:(id)arg1;
 - (id)notificationRequestForNotificationRecord:(id)arg1;
 - (id)notificationForNotificationRecord:(id)arg1;

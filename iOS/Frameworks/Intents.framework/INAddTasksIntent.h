@@ -31,6 +31,9 @@
 - (void)setTargetTaskList:(id)arg1;
 @property(readonly, copy, nonatomic) INTaskList *targetTaskList;
 - (id)initWithTargetTaskList:(id)arg1 taskTitles:(id)arg2 spatialEventTrigger:(id)arg3 temporalEventTrigger:(id)arg4;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

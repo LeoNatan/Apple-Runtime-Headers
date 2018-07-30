@@ -7,7 +7,6 @@
 @class NSData;
 
 @protocol SGSuggestionsServiceFidesProtocol
-- (void)modelMetadataUpdateWithPayload:(NSData *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)planReceivedFromServerWithPayload:(NSData *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 @end
 

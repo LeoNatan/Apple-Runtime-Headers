@@ -10,6 +10,7 @@
 
 @class GEOPDPlaceRequestParameters;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapItemInitialRequestData : PBCodable <NSCopying>
 {
     GEOPDPlaceRequestParameters *_placeRequestParameters;

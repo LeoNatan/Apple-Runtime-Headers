@@ -10,6 +10,7 @@
 
 @class NSString, NSTimer;
 
+__attribute__((visibility("hidden")))
 @interface _NSScrollerStyleRecommender : NSObject <NSMachPortDelegate>
 {
     long long lastRecommendedScrollerStyle;

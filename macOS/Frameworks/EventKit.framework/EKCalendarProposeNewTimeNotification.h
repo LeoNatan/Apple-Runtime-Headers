@@ -13,6 +13,7 @@
 }
 
 - (unsigned long long)supportedActions;
+- (BOOL)proposedStartDateIsInFuture;
 - (BOOL)isProposedNewTime;
 @property(readonly, nonatomic) NSDate *proposedEndDate;
 @property(readonly, nonatomic) NSDate *proposedStartDate;

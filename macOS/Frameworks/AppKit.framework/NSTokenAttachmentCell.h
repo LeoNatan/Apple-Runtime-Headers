@@ -64,6 +64,8 @@
 - (id)menu;
 - (BOOL)_shouldShowPullDownImage;
 - (id)pullDownImage;
+- (BOOL)_shouldUseStyledTextInView:(id)arg1;
+- (id)_textAttributes;
 - (void)setTextColor:(id)arg1;
 - (id)textColor;
 - (id)tokenTintColor;

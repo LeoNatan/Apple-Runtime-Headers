@@ -12,6 +12,7 @@
 
 + (id)restoreFromNightInstall;
 + (id)prepareNightInstall;
++ (BOOL)muteBootChimeForNextReboot;
 
 @end
 

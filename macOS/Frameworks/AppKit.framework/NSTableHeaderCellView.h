@@ -8,6 +8,7 @@
 
 @class NSCell, NSTableHeaderView;
 
+__attribute__((visibility("hidden")))
 @interface NSTableHeaderCellView : NSView
 {
     NSTableHeaderView *_tableHeaderView;

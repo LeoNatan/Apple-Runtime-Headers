@@ -8,7 +8,7 @@
 
 #import "BRCCloudDocsAppsObserver.h"
 
-@class BRCAccountWaitOperation, BRCApplyScheduler, BRCClientState, BRCContainerScheduler, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCDownloadTrackers, BRCFSDownloader, BRCFSReader, BRCFSUploader, BRCFSWriter, BRCFairScheduler, BRCGlobalProgress, BRCInflightProgressTracker, BRCItemTransmogrifier, BRCNotificationManager, BRCPQLConnection, BRCServerPersistedState, BRCStageRegistry, BRCSyncUpScheduler, BRCThrottle, BRCUserNotification, BRCVolume, CDSession, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL, br_pacer;
+@class BRCAccountWaitOperation, BRCAnalyticsReporter, BRCApplyScheduler, BRCClientState, BRCContainerScheduler, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCDownloadTrackers, BRCFSDownloader, BRCFSReader, BRCFSUploader, BRCFSWriter, BRCFairScheduler, BRCGlobalProgress, BRCInflightProgressTracker, BRCItemTransmogrifier, BRCNotificationManager, BRCPQLConnection, BRCServerPersistedState, BRCStageRegistry, BRCSyncUpScheduler, BRCThrottle, BRCUserNotification, BRCVolume, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL, br_pacer;
 
 @interface BRCAccountSession : NSObject <BRCCloudDocsAppsObserver>
 {
@@ -18,6 +18,9 @@
     NSObject<OS_dispatch_source> *_dbWatcher;
     NSObject<OS_dispatch_queue> *_dbWatcherQueue;
     NSObject<OS_dispatch_queue> *_dbCorruptionQueue;
+    NSObject<OS_dispatch_queue> *_clientTruthWorkloop;
+    NSObject<OS_dispatch_queue> *_serverTruthWorkloop;
+    NSObject<OS_dispatch_queue> *_readOnlyWorkloop;
     int _cloudDocsFD;
     CDUnknownBlockType _dbProfilingHook;
     NSString *_databaseID;
@@ -71,7 +74,6 @@
     BRCInflightProgressTracker *_inflightProgressTracker;
     BRCStageRegistry *_stageRegistry;
     BRCDiskSpaceReclaimer *_diskReclaimer;
-    CDSession *_coreDuetSession;
     BRCThrottle *_appLibraryScanThrottle;
     BRCThrottle *_appLibraryResetThrottle;
     BRCThrottle *_sharedAppLibraryResetThrottle;
@@ -82,6 +84,7 @@
     BRCThrottle *_syncClientZoneErrorThrottle;
     NSObject<OS_dispatch_queue> *_resetQueue;
     BRCItemTransmogrifier *_itemTransmogrifier;
+    BRCAnalyticsReporter *_analyticsReporter;
 }
 
 + (BOOL)upgradeOfflineDB:(id)arg1 serverTruth:(BOOL)arg2 session:(id)arg3 error:(id *)arg4;
@@ -96,6 +99,7 @@
 + (BOOL)_openConnection:(id)arg1 databaseName:(id)arg2 baseURL:(id)arg3 readonly:(BOOL)arg4 error:(id *)arg5;
 + (id)sessionForDumpingDatabasesAtURL:(id)arg1;
 + (id)sessionForBackingUpDatabasesAtURL:(id)arg1;
+@property(readonly, nonatomic) BRCAnalyticsReporter *analyticsReporter; // @synthesize analyticsReporter=_analyticsReporter;
 @property(readonly, nonatomic) BRCItemTransmogrifier *itemTransmogrifier; // @synthesize itemTransmogrifier=_itemTransmogrifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resetQueue; // @synthesize resetQueue=_resetQueue;
 @property(readonly, nonatomic) BRCGlobalProgress *globalProgress; // @synthesize globalProgress=_globalProgress;
@@ -108,7 +112,6 @@
 @property(readonly, nonatomic) BRCThrottle *appLibraryResetThrottle; // @synthesize appLibraryResetThrottle=_appLibraryResetThrottle;
 @property(readonly, nonatomic) BRCThrottle *appLibraryScanThrottle; // @synthesize appLibraryScanThrottle=_appLibraryScanThrottle;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
-@property(readonly, nonatomic) CDSession *coreDuetSession; // @synthesize coreDuetSession=_coreDuetSession;
 @property(readonly, nonatomic) BRCDiskSpaceReclaimer *diskReclaimer; // @synthesize diskReclaimer=_diskReclaimer;
 @property(readonly, nonatomic) BRCUserNotification *userNotification; // @synthesize userNotification=_userNotification;
 @property(readonly, nonatomic) BRCDownloadTrackers *downloadTrackers; // @synthesize downloadTrackers=_downloadTrackers;
@@ -163,7 +166,9 @@
 - (BOOL)applySyncPolicy:(long long)arg1 forSyncedFolderType:(unsigned long long)arg2 isInitialCreation:(BOOL)arg3 error:(id *)arg4;
 @property(readonly, nonatomic) BOOL isGreedy;
 - (void)startDownloadsForGreediness;
-- (unsigned long long)totalEvictableSizeWithAccessTimeDelta:(double)arg1 db:(id)arg2;
+- (void)computeDocumentEvictableSizesForLowTime:(unsigned long long)arg1 medTime:(unsigned long long)arg2 highTime:(unsigned long long)arg3 lowSize:(unsigned long long)arg4 medSize:(unsigned long long)arg5 highSize:(unsigned long long)arg6 minRowID:(unsigned long long)arg7 minSize:(unsigned long long)arg8 batchSize:(unsigned long long)arg9 injection:(struct NSObject *)arg10 db:(id)arg11 reply:(CDUnknownBlockType)arg12;
+- (void)computeTotalEvictableSizeWithAccessLowTimeDelta:(double)arg1 medTimeDelta:(double)arg2 highTimeDelta:(double)arg3 db:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (unsigned long long)computeTotalLiveDocumentSizeWithDb:(id)arg1;
 - (void)setOptimizeStorageEnabled:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL hasOptimizeStorageEnabled;
 - (unsigned long long)accountSize;
@@ -324,6 +329,9 @@
 @property(readonly, nonatomic) BRCServerPersistedState *serverState;
 @property(readonly, nonatomic) BRCClientState *clientState;
 @property(readonly, nonatomic) unsigned long long databaseID;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serverTruthWorkloop; // @dynamic serverTruthWorkloop;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *readOnlyWorkloop; // @dynamic readOnlyWorkloop;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientTruthWorkloop; // @dynamic clientTruthWorkloop;
 - (void)scheduleZoneMovesToCloudDocs:(id)arg1;
 - (int)resolvePathAdditionalMetadata:(id)arg1 appLibrary:(id *)arg2;
 - (void)_resolvePathInMobileDocsRoot:(id)arg1 appLibrary:(id *)arg2;

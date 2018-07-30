@@ -6,12 +6,14 @@
 
 #import <AppKit/NSView.h>
 
-@class NSButton, NSLayoutConstraint, NSMenu, NSMenuItem, NSSearchField<NSFindPatternField>, NSSegmentedControl, NSStackView, NSTextField<NSFindPatternField>;
+@class NSBannerView, NSButton, NSLayoutConstraint, NSMenu, NSMenuItem, NSSearchField<NSFindPatternField>, NSSegmentedControl, NSStackView, NSTextField<NSFindPatternField>;
 
+__attribute__((visibility("hidden")))
 @interface NSTextFinderBarView : NSView
 {
     id _finder;
     id _container;
+    NSBannerView *_bannerView;
     NSSearchField<NSFindPatternField> *_searchField;
     NSTextField<NSFindPatternField> *_replaceField;
     NSButton *_doneButton;
@@ -52,13 +54,11 @@
 - (void)viewWillMoveToWindow:(id)arg1;
 - (id)_replaceField;
 - (id)_searchField;
-- (BOOL)_drawsNothing;
-- (void)drawRect:(struct CGRect)arg1;
-- (BOOL)_drawsDividerLineAtBottom;
-- (BOOL)_drawsOwnDividerLine;
+- (BOOL)_contiguousWithTitlebar;
+- (unsigned long long)_dividerPosition;
 - (void)_setReplaceMode:(BOOL)arg1;
 - (id)_contentView;
-- (void)_updateLayout;
+- (void)_updateSubviews;
 - (void)_updateReplaceUIVisibility;
 - (void)_layoutBarSubviews;
 - (void)_resizeIfNecessary;

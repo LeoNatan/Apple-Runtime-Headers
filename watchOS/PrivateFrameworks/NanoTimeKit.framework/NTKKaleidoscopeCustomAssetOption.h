@@ -10,10 +10,10 @@
 {
 }
 
-+ (id)_localizedNameForActionForValue:(unsigned int)arg1;
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)_orderedValues;
++ (id)_localizedNameForActionForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_nameLocalizationKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesForDevice:(id)arg1;
 - (id)_valueToFaceBundleStringDict;
 
 @end

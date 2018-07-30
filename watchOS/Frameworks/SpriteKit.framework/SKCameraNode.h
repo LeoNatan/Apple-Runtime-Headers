@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)supportsSecureCoding;
 -     // Error parsing type: {?=[4]}16@0:4{CGSize=ff}8, name: cameraBoundingBoxOverridingSceneSize:
 -     // Error parsing type: {?=[4]}8@0:4, name: cameraBoundingBox
 - (id)containedNodeSet;

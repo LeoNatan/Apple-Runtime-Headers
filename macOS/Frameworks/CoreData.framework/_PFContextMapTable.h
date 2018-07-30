@@ -6,6 +6,8 @@
 
 #import "NSObject.h"
 
+@class _PFModelMap;
+
 __attribute__((visibility("hidden")))
 @interface _PFContextMapTable : NSObject
 {
@@ -19,6 +21,7 @@ __attribute__((visibility("hidden")))
         unsigned int _garbageCollectionEnabled:1;
         unsigned int _reservedFlags:30;
     } _flags;
+    _PFModelMap *_modelMap;
 }
 
 - (void)clearTemporaryIDs;
@@ -27,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)finalize;
 - (void)dealloc;
 - (void)_dispose;
-- (void)setForUseWithModel:(id)arg1;
+- (void)setForUseWithCoordinator:(id)arg1;
 - (id)initWithWeaksReferences:(BOOL)arg1;
 
 @end

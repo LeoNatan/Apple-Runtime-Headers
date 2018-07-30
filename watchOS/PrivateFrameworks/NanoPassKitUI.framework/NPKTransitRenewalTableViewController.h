@@ -6,13 +6,13 @@
 
 #import "PUICTableViewController.h"
 
-@class NPKPassDescription, NSDateFormatter, PKPaymentPassAction;
+@class NSDateFormatter, PKPass, PKPaymentPassAction;
 
 @interface NPKTransitRenewalTableViewController : PUICTableViewController
 {
     PKPaymentPassAction *_action;
     id <NPKTransitRenewalTableViewControllerDelegate> _delegate;
-    NPKPassDescription *_passDescription;
+    PKPass *_pass;
     NSDateFormatter *_dateFormatter;
     unsigned int _requestingRemoteAction;
     PKPaymentPassAction *_remoteAction;
@@ -21,7 +21,7 @@
 @property(retain, nonatomic) PKPaymentPassAction *remoteAction; // @synthesize remoteAction=_remoteAction;
 @property(nonatomic) unsigned int requestingRemoteAction; // @synthesize requestingRemoteAction=_requestingRemoteAction;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
-@property(retain, nonatomic) NPKPassDescription *passDescription; // @synthesize passDescription=_passDescription;
+@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) __weak id <NPKTransitRenewalTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentPassAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
@@ -33,7 +33,7 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithPassDescription:(id)arg1 action:(id)arg2;
+- (id)initWithPass:(id)arg1 action:(id)arg2;
 
 @end
 

@@ -9,7 +9,9 @@
 @class UIImage;
 
 @protocol CNUIUserActionTemplateImage <NSObject>
+- (UIImage *)templateImage;
 - (UIImage *)thirtyPercentAlphaWhiteImage;
+- (UIImage *)systemDarkGrayImage;
 - (UIImage *)systemMidGrayImage;
 - (UIImage *)whiteImage;
 - (UIImage *)systemBlueImage;

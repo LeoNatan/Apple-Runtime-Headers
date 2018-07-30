@@ -6,9 +6,11 @@
 
 #import <SafariShared/WBSParsecLegacySearchResult.h>
 
+#import "WBSParsecSearchSportsResult.h"
+
 @class NSArray, NSString, WBSParsecSearchSportsAttributionExtraCompletionItem, WBSParsecSportsScoreSummary;
 
-@interface WBSParsecSearchSportsResult : WBSParsecLegacySearchResult
+@interface WBSParsecSearchSportsResult : WBSParsecLegacySearchResult <WBSParsecSearchSportsResult>
 {
     WBSParsecSportsScoreSummary *_scoreSummary;
     WBSParsecSearchSportsAttributionExtraCompletionItem *_extraCompletionItem;

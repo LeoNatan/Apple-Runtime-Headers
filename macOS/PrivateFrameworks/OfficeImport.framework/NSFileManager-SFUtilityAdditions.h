@@ -8,7 +8,6 @@
 
 @interface NSFileManager (SFUtilityAdditions)
 - (BOOL)sfu_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id *)arg4;
-- (BOOL)sfu_applyFileAttributesFromDocumentAtURL:(id)arg1 toDocumentAtURL:(id)arg2 error:(id *)arg3;
 - (BOOL)sfup_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id *)arg4 shouldUpdateAttributesHandler:(CDUnknownBlockType)arg5;
 - (unsigned long long)sfu_pathUsage:(id)arg1;
 - (unsigned long long)sfu_directoryUsage:(id)arg1;

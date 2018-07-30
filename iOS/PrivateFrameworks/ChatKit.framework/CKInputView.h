@@ -11,6 +11,7 @@
     struct CGSize _lastContentSize;
 }
 
++ (struct CGSize)defaultContentSizeLargerThanKeyboard:(_Bool *)arg1;
 + (struct CGSize)defaultContentSize;
 @property(nonatomic) struct CGSize lastContentSize; // @synthesize lastContentSize=_lastContentSize;
 - (struct CGSize)intrinsicContentSize;

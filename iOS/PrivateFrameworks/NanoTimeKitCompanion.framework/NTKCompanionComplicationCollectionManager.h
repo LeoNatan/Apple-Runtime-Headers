@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)sharedComplicationCollectionForActivePairedDevice;
++ (id)sharedComplicationCollectionForDevice:(id)arg1;
 
 @end
 

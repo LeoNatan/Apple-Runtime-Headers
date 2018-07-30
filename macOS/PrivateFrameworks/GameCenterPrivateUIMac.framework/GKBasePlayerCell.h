@@ -6,22 +6,26 @@
 
 #import <GameCenterPrivateUIMac/GKCollectionViewCell.h>
 
-@class GKPlayer, GKPlayerPhotoView, NSTextField;
+@class GKPlayer, GKPlayerPhotoView, NSString, NSTextField;
 
 @interface GKBasePlayerCell : GKCollectionViewCell
 {
     NSTextField *_nameLabel;
     GKPlayerPhotoView *_iconView;
+    NSString *_lastAppearanceName;
 }
 
 + (double)defaultRowHeight;
 + (id)itemHeightList;
+@property(retain, nonatomic) NSString *lastAppearanceName; // @synthesize lastAppearanceName=_lastAppearanceName;
 @property(retain, nonatomic) GKPlayerPhotoView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) NSTextField *nameLabel; // @synthesize nameLabel=_nameLabel;
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;
 - (void)configureContextMenu:(id)arg1;
 - (void)didUpdateModel;
+- (void)updateLayer;
+- (void)awakeFromNib;
 - (void)setRepresentedItem:(id)arg1;
 @property(retain, nonatomic) GKPlayer *player;
 - (struct CGRect)alignmentRectForText;

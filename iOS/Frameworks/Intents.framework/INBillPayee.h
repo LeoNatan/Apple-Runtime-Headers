@@ -32,6 +32,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 organizationName:(id)arg3;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
 @end
 

@@ -7,12 +7,11 @@
 #import <MediaPlayer/MPMediaItemCollection.h>
 
 #import "MPCacheableConcreteMediaEntity.h"
-#import "NSCoding.h"
 #import "NSCopying.h"
 
 @class MPConcreteMediaEntityPropertiesCache, MPMediaItem, MPMediaQuery;
 
-@interface MPConcreteMediaItemCollection : MPMediaItemCollection <NSCoding, NSCopying, MPCacheableConcreteMediaEntity>
+@interface MPConcreteMediaItemCollection : MPMediaItemCollection <NSCopying, MPCacheableConcreteMediaEntity>
 {
     long long _identifier;
     MPMediaQuery *_itemsQuery;

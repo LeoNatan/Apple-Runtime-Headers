@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface SFCollectionViewLayout : UICollectionViewLayout
 {
+    id <SFCollectionViewDelegateLayout> _fallbackDelegate;
     double _evaluatedHorizontalItemOffset;
     NSArray *_preparedLayoutAttributes;
     NSArray *_preparedUpdateItems;
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize evaluatedContentSize; // @synthesize evaluatedContentSize=_evaluatedContentSize;
 @property(nonatomic) struct CGSize evaluatedItemSize; // @synthesize evaluatedItemSize=_evaluatedItemSize;
 @property(nonatomic) struct UIEdgeInsets evaluatedInset; // @synthesize evaluatedInset=_evaluatedInset;
+@property(nonatomic) __weak id <SFCollectionViewDelegateLayout> fallbackDelegate; // @synthesize fallbackDelegate=_fallbackDelegate;
 - (void).cxx_destruct;
 - (void)invalidateGroupViewLayoutAnimated:(_Bool)arg1;
 - (id)_layoutAttributesForItemAtIndexPath:(id)arg1 numberOfItemsInSection:(unsigned long long)arg2;

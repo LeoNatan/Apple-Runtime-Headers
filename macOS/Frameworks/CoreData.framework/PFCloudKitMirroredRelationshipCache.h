@@ -22,16 +22,19 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_updatedMirroredRelationships;
     NSMutableArray *_deletedMirroredRelationships;
     NSMutableArray *_deletedPendingRelationships;
+    BOOL _initialized;
 }
 
+@property(readonly, nonatomic) NSArray *deletedMirroredRelationships; // @synthesize deletedMirroredRelationships=_deletedMirroredRelationships;
 @property(readonly, nonatomic) NSArray *pendingMirroredRelationships; // @synthesize pendingMirroredRelationships=_pendingMirroredRelationships;
 - (void)deleteMirroredRelationshipWithCKRecordID:(id)arg1;
-- (id)purgeMirroredRelationshipsForDeletedRecordNames:(id)arg1;
+- (id)purgeMirroredRelationshipsForDeletedRecordIDs:(id)arg1;
 - (void)applyChangesToSQLCore:(id)arg1;
 - (void)noteUpdateForMirroredRelationship:(id)arg1;
 - (void)markAccessedRelationshipsUploadedAndPrune;
-- (void)cacheMirroredRelationship:(id)arg1 noteAccess:(BOOL)arg2;
+- (void)_cacheMirroredRelationship:(id)arg1 noteAccess:(BOOL)arg2;
 - (id)addMirroredManyToMany:(id)arg1;
+- (id)_mtmKeyForObjectWithRecordName:(id)arg1 relatedToObjectWithRecordName:(id)arg2 byRelationship:(id)arg3 withInverse:(id)arg4;
 - (id)mtmKeyForObjectWithRecordName:(id)arg1 relatedToObjectWithRecordName:(id)arg2 byRelationship:(id)arg3 withInverse:(id)arg4;
 - (id)mirroredRelationshipForManyToMany:(id)arg1;
 - (id)mirroredRelationshipForKey:(id)arg1;

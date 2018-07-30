@@ -13,9 +13,6 @@
 
 @interface _CPError : PBCodable <_CPError, NSSecureCoding>
 {
-    struct {
-        unsigned int code:1;
-    } _has;
     NSString *_domain;
     NSString *_reason;
     double _code;
@@ -33,9 +30,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasCode;
-@property(readonly, nonatomic) BOOL hasReason;
-@property(readonly, nonatomic) BOOL hasDomain;
 - (BOOL)requiresQueryId;
 - (id)initWithFacade:(id)arg1;
 

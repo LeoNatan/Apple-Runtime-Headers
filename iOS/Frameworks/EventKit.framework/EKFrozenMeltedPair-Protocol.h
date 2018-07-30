@@ -11,6 +11,7 @@
 @protocol EKFrozenMeltedPair <NSObject>
 + (Class)meltedClass;
 + (Class)frozenClass;
+@property(readonly, nonatomic) NSString *semanticIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 @property(readonly, nonatomic) _Bool isPartialObject;
 @property(readonly, nonatomic) _Bool isFrozen;

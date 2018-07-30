@@ -75,6 +75,7 @@
 @property(nonatomic, getter=isShinkansenTicketActive) _Bool shinkansenTicketActive; // @synthesize shinkansenTicketActive=_shinkansenTicketActive;
 - (void).cxx_destruct;
 - (id)_stringForRow:(id)arg1 seat:(id)arg2;
+- (_Bool)isInStation;
 - (id)displayableShinkansenSecondarySeat;
 - (id)displayableShinkansenSeat;
 - (id)copyWithZone:(struct _NSZone *)arg1;

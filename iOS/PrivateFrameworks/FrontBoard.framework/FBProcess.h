@@ -35,7 +35,7 @@
     long long _executableOnSystemPartition;
 }
 
-@property(readonly, retain, nonatomic) FBWorkspace *workspace; // @synthesize workspace=_workspace;
+@property(readonly, nonatomic) FBWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, nonatomic) long long backgroundingPolicy; // @synthesize backgroundingPolicy=_backgroundingPolicy;
 @property(readonly, nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
@@ -81,7 +81,7 @@
 - (void)_queue_updateStateWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_queue_executableLivesOnSystemPartition;
 @property(readonly, nonatomic) _Bool executableLivesOnSystemPartition;
-@property(nonatomic) id <FBProcessDelegate> delegate;
+@property(nonatomic) __weak id <FBProcessDelegate> delegate;
 - (id)_workspace;
 @property(readonly, nonatomic, getter=isForeground) _Bool foreground;
 - (id)valueForEntitlement:(id)arg1;

@@ -9,31 +9,37 @@
 #import "QLDownloadingItemViewControllerDelegate.h"
 #import "QLItemViewControllerPresentingDelegate.h"
 
-@class NSString, QLDownloadingItemViewController, QLErrorItemViewController, QLItem, QLItemViewController, QLLoadingItemViewController;
+@class NSString, QLDownloadingItemViewController, QLErrorItemViewController, QLItem, QLItemViewController, QLLoadingItemViewController, QLPreviewContext;
 
 __attribute__((visibility("hidden")))
 @interface QLItemPresenterViewController : QLItemAggregatedViewController <QLDownloadingItemViewControllerDelegate, QLItemViewControllerPresentingDelegate>
 {
-    QLItem *_previewItem;
     _Bool _shouldDeferAppearanceUpdates;
     _Bool _isPeekingSession;
-    _Bool _failedToShowPreview;
+    _Bool _failureOccurred;
     _Bool _isReadyForDisplay;
+    _Bool _shouldHandleLoadingView;
     CDUnknownBlockType _readyBlock;
     QLItemViewController *_previewProvider;
     QLErrorItemViewController *_errorViewController;
     QLLoadingItemViewController *_loadingViewController;
     QLDownloadingItemViewController *_downloadingController;
     CDUnknownBlockType _completionHandler;
+    QLItem *_previewItem;
+    id _contents;
+    QLPreviewContext *_context;
 }
 
+@property(retain) QLPreviewContext *context; // @synthesize context=_context;
+@property(retain) id contents; // @synthesize contents=_contents;
+@property(retain, nonatomic) QLItem *previewItem; // @synthesize previewItem=_previewItem;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) QLDownloadingItemViewController *downloadingController; // @synthesize downloadingController=_downloadingController;
 @property(retain, nonatomic) QLLoadingItemViewController *loadingViewController; // @synthesize loadingViewController=_loadingViewController;
 @property(retain, nonatomic) QLErrorItemViewController *errorViewController; // @synthesize errorViewController=_errorViewController;
 @property(retain, nonatomic) QLItemViewController *previewProvider; // @synthesize previewProvider=_previewProvider;
 - (void).cxx_destruct;
-- (_Bool)isPresentingPreviewItemViewController:(id)arg1;
+- (id)additionalItemViewControllerDescription;
 @property(readonly) QLItemPresenterViewController *itemPresenterViewController;
 - (void)previewItemViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)transitionWillFinish:(_Bool)arg1 didComplete:(_Bool)arg2;
@@ -44,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (void)previewWillDisappear:(_Bool)arg1;
 - (void)previewDidAppear:(_Bool)arg1;
 - (void)previewWillAppear:(_Bool)arg1;
-- (id)previewItem;
 - (_Bool)loadingFailed;
 - (_Bool)isLoading;
 - (_Bool)isLoaded;
@@ -52,11 +57,14 @@ __attribute__((visibility("hidden")))
 - (void)downloadingItemViewControllerDidFinishLoadingPreviewItem:(id)arg1 withContents:(id)arg2;
 - (void)_startLoadingPreviewWithContents:(id)arg1;
 - (void)isReadyForDisplayWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)showPreviewViewController:(id)arg1 animatingWithCrossfade:(_Bool)arg2 updatingIsReadyForDisplay:(_Bool)arg3;
+- (void)showPreviewViewController:(id)arg1 animatingWithCrossfade:(_Bool)arg2;
 - (void)showPreviewViewController:(id)arg1;
 - (void)showErrorViewController;
 - (void)_performReadyBlockIfNedded;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_showLoadingViewControllerDeferred;
+- (void)_showReadyToDisplayPreviewViewControllerDeferredIfNeeded:(id)arg1;
+- (void)_showLoadingViewControllerDeferredIfNeeded;
 - (id)init;
 
 // Remaining properties

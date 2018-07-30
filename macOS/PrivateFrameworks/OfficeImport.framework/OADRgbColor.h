@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADColor.h>
 
-__attribute__((visibility("hidden")))
 @interface OADRgbColor : OADColor
 {
     float mRed;

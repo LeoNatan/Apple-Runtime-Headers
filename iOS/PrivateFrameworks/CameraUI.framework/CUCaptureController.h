@@ -124,10 +124,7 @@
 - (void)_setupSystemPressureStateMonitoring;
 - (_Bool)_shouldMonitorSystemPressureState;
 - (id)_systemPressureStateMonitoringKeyPaths;
-- (void)_shallowDepthOfFieldMonitoringChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
-- (void)_teardownShallowDepthOfFieldMonitoring;
-- (void)_setupShallowDepthOfFieldMonitoring;
-- (id)_shallowDepthOfFieldMonitoringKeyPaths;
+- (void)_handleShallowDepthOfFieldStatusChangedNotification:(id)arg1;
 - (void)_zoomResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
 - (void)_teardownZoomMonitoring;
 - (void)_setupZoomMonitoring;
@@ -149,7 +146,9 @@
 - (void)attemptToEndInterruptions;
 @property(readonly, nonatomic, getter=isInterrupted) _Bool interrupted;
 - (void)stopCaptureSession;
+- (void)stopCaptureSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startCaptureSession;
+- (void)startCaptureSessionWithRetryCount:(unsigned long long)arg1 retryInterval:(double)arg2 logReason:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)willPerformRecoveryFromRuntimeError:(id)arg1;
 - (void)queryTimelapseDimensionsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)queryVideoDimensionsWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -191,6 +190,7 @@
 - (void)_cancelDelayedFocusAndExposureReset;
 - (void)_resetFocusAndExposureAfterCapture;
 - (void)_scheduleFocusAndExposureResetAfterCaptureIfNecessary;
+@property(readonly, nonatomic) _Bool _shouldResetFocusAndExposureAfterCapture;
 - (void)focusAtCenterForVideoRecording;
 - (void)lockFocusAtLensPosition:(float)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)forceDisableSubjectAreaChangeMonitoring;
@@ -200,6 +200,7 @@
 - (void)_resetFocusAndExposureIfAppropriateForReason:(long long)arg1;
 - (_Bool)_useSmoothFocus;
 @property(readonly, nonatomic) _Bool shouldAllowUserToChangeFocusAndExposure;
+- (void)changeToVideoHDRSuspended:(_Bool)arg1;
 - (void)changeToPreviewFilters:(id)arg1;
 - (void)changeToPreviewConfiguration:(unsigned long long)arg1;
 - (void)changeToPreviewEnabledWithConfiguration:(unsigned long long)arg1;
@@ -266,6 +267,7 @@
 - (void)pauseCapturingStillImagePairedVideo;
 - (_Bool)captureStillImageWithRequest:(id)arg1 error:(id *)arg2;
 - (id)_sanitizeStillImageRequest:(id)arg1;
+@property(readonly, nonatomic, getter=isCapturingStillImage) _Bool capturingStillImage;
 - (id)_thumbnailImageFromStillImageCaptureResult:(id)arg1 imageOrientation:(long long)arg2;
 @property(readonly, nonatomic) CAMPanoramaPreviewView *panoramaPreviewView;
 @property(readonly, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;

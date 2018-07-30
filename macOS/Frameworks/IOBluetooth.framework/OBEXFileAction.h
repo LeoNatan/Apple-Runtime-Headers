@@ -8,11 +8,11 @@
 
 #import "TransferModuleInterface.h"
 
-@class FileReference, IOBluetoothOBEXSession, IOBluetoothTransferProgress, NSData, NSString, NSTimer;
+@class BluetoothFileReference, IOBluetoothOBEXSession, IOBluetoothTransferProgress, NSData, NSString, NSTimer;
 
 @interface OBEXFileAction : NSObject <TransferModuleInterface>
 {
-    FileReference *mFileRef;
+    BluetoothFileReference *mFileRef;
     IOBluetoothTransferProgress *mTransferProgress;
     unsigned int mOptions;
     BOOL mTargetIsAMac;

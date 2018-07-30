@@ -18,6 +18,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_windowLayers;
     CALayer *_windowContentLayer;
     NSView *_auxiliaryView;
+    unsigned long long _dividerDirections;
+    CALayer *_eastDivider;
+    CALayer *_westDivider;
 }
 
 @property NSView *auxiliaryView; // @synthesize auxiliaryView=_auxiliaryView;
@@ -28,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)positionAuxiliaryView;
 - (unsigned long long)tileID;
 - (void)addWindowWithID:(unsigned int)arg1;
-- (id)initWithTileID:(unsigned long long)arg1 parentSpaceID:(unsigned long long)arg2 coveredWindowTileFrame:(struct CGRect)arg3 window:(id)arg4;
+- (id)initWithTileID:(unsigned long long)arg1 parentSpaceID:(unsigned long long)arg2 coveredWindowTileFrame:(struct CGRect)arg3 window:(id)arg4 tileDividerDirections:(unsigned long long)arg5;
 - (void)dealloc;
 
 @end

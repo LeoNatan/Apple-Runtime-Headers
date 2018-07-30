@@ -8,15 +8,14 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface OADFlattenedGroup : OADDrawable
 {
     NSMutableArray *mDrawables;
 }
 
+- (void).cxx_destruct;
 - (void)addDrawable:(id)arg1;
 - (id)drawables;
-- (void)dealloc;
 - (id)init;
 
 @end

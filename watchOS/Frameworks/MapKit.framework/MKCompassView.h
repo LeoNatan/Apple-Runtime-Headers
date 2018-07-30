@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 @property(nonatomic) double yaw;
+@property(nonatomic) double mapHeading;
 - (void)_updateLayerForCurrentSizeAndStyle;
 - (void)setCompassViewSize:(int)arg1 style:(int)arg2;
 - (void)layoutSubviews;

@@ -12,7 +12,7 @@
 {
     id _controller;
     id _reserved;
-    struct TNSRef<FIAirDropViewGutsController *, void> _gutsController;
+    struct TNSRef<FIAirDropViewGutsController, void> _gutsController;
     struct TKeyValueObserver _isTransferInProgressObserver;
     _Bool _isTransferInProgress;
 }
@@ -31,7 +31,6 @@
 @property(copy) NSImage *largeThumbnail; // @dynamic largeThumbnail;
 @property(copy) NSArray *urlsToSend; // @dynamic urlsToSend;
 @property id <FIAirDropViewDelegate> delegate; // @dynamic delegate;
-- (BOOL)isOpaque;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_commonAirDropViewInit;

@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (_Bool)shouldNotCacheCharacteristicOfType:(id)arg1;
 - (_Bool)applyProtoBufData:(id)arg1 callbackOperations:(id)arg2;
+- (id)categoryForCategoryType:(id)arg1;
 - (id)categoryForNumber:(id)arg1;
 - (id)characteristicTypeDescription:(id)arg1;
 - (id)serviceTypeDescription:(id)arg1;

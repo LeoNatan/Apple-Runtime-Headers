@@ -118,10 +118,13 @@
 - (id)thumbnailOfSize:(struct CGSize)arg1 forBox:(long long)arg2 withBookmark:(_Bool)arg3 withAnnotations:(_Bool)arg4;
 - (id)thumbnailOfSize:(struct CGSize)arg1 forBox:(long long)arg2 withBookmark:(_Bool)arg3;
 - (id)thumbnailOfSize:(struct CGSize)arg1 forBox:(long long)arg2;
+- (void)_drawPageCGImageInContext:(struct CGContext *)arg1 withDisplayBox:(long long)arg2;
+- (void)_drawPageImageInContext:(struct CGContext *)arg1 withRotation:(_Bool)arg2 withDisplayBox:(long long)arg3;
 - (void)_drawWithBox:(long long)arg1 inContext:(struct CGContext *)arg2 withRotation:(_Bool)arg3 withAntialiasing:(_Bool)arg4 isThumbnail:(_Bool)arg5 withAnnotations:(_Bool)arg6 withBookmark:(_Bool)arg7 withDelegate:(id)arg8;
 - (void)drawWithBox:(long long)arg1 inContext:(struct CGContext *)arg2 isThumbnail:(_Bool)arg3;
 - (void)drawWithBox:(long long)arg1 inContext:(struct CGContext *)arg2;
 - (void)drawWithBox:(long long)arg1 toContext:(struct CGContext *)arg2;
+- (_Bool)hasPopups;
 - (id)annotationAtRect:(struct CGRect)arg1;
 - (id)annotationAtPoint:(struct CGPoint)arg1;
 - (void)removeAnnotation:(id)arg1 atIndex:(long long)arg2;
@@ -148,7 +151,10 @@
 - (void)purgeAll;
 - (void)setDocument:(id)arg1;
 - (_Bool)setPageRef:(struct CGPDFPage *)arg1;
+- (void)setAKDidSetupRealPageModelController:(_Bool)arg1;
+- (_Bool)akDidSetupRealPageModelController;
 - (void)setupAKPageAdaptorIfNecessary;
+- (id)initWithImageSource:(struct CGImageSource *)arg1;
 - (id)initWithPageRef:(struct CGPDFPage *)arg1;
 - (id)akPageAdaptor;
 

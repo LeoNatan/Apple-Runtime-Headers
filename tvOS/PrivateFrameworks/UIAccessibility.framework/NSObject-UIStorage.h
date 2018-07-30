@@ -62,6 +62,7 @@
 - (struct CGPoint)_accessibilityScreenPointForSceneReferencePoint:(struct CGPoint)arg1;
 - (_Bool)_accessibilityHandleMagicTap;
 - (_Bool)_accessibilityHandleMagicTapForPronunciation;
+- (void)_setAccessibilityFrameForSortingBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityIsRealtimeElementBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityActivateBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityIncrementBlock:(CDUnknownBlockType)arg1;
@@ -79,6 +80,7 @@
 - (void)_setAccessibilityPathBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityFrameBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityTraitsBlock:(CDUnknownBlockType)arg1;
+- (void)_setAccessibilityAdditionalTraitsBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityValueBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityHintBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityIdentifierBlock:(CDUnknownBlockType)arg1;

@@ -22,8 +22,10 @@
     PSSpecifier *_locationSpecifier;
     long long _locationSpecifierIndex;
     NSString *_passcode;
+    _Bool _shouldSkipBasebandStatusCheck;
 }
 
+@property(nonatomic) _Bool shouldSkipBasebandStatusCheck; // @synthesize shouldSkipBasebandStatusCheck=_shouldSkipBasebandStatusCheck;
 - (void).cxx_destruct;
 - (void)profileNotification:(id)arg1;
 - (void)confirmEraseCellularSettings;
@@ -32,6 +34,7 @@
 - (void)reprovisionAccount;
 - (void)subscriberOptions:(id)arg1;
 - (id)specifiers;
+- (void)resetAllCellularNetworks:(id)arg1;
 - (void)resetNetworkSettings:(id)arg1;
 - (void)eraseSettings:(id)arg1;
 - (void)_eraseSettingsAndContent;

@@ -8,6 +8,7 @@
 
 @class NSTimer;
 
+__attribute__((visibility("hidden")))
 @interface NSControlAuxiliary : NSObject
 {
     long long _tag;

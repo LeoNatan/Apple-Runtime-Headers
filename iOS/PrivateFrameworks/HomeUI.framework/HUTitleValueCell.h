@@ -48,7 +48,8 @@
 - (void)_addValueLabel;
 - (void)_addTitleLabel;
 - (void)updateUIWithAnimation:(_Bool)arg1;
-- (void)ensureCorrectHeaderViewOrientation;
+- (void)_ensureCorrectHeaderViewOrientation;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (void)setDisabled:(_Bool)arg1;
 - (void)copy:(id)arg1;

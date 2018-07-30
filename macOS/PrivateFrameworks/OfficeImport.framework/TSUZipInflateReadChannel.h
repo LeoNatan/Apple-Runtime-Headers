@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface TSUZipInflateReadChannel : NSObject <TSUStreamReadChannel>
 {
     id <TSUStreamReadChannel> _readChannel;

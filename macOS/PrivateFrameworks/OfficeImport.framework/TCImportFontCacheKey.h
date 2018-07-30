@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface TCImportFontCacheKey : NSObject
 {
     int _size;
@@ -18,9 +17,9 @@ __attribute__((visibility("hidden")))
 + (id)createFontCacheKeyForName:(id)arg1 size:(int)arg2;
 @property(nonatomic) int size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)dealloc;
 
 @end
 

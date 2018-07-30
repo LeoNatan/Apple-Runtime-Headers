@@ -19,7 +19,7 @@
 - (void)requestDownloadWithMetadata:(NSDictionary *)arg1 isRestore:(_Bool)arg2 reply:(void (^)(NSString *, NSError *))arg3;
 - (void)requestDownloadWithParameters:(NSDictionary *)arg1 reply:(void (^)(NSString *, NSError *))arg2;
 - (void)downloadWithPermlink:(NSURL *)arg1 title:(NSString *)arg2 reply:(void (^)(NSString *, NSError *))arg3;
-- (void)purchaseWithBuyParameters:(NSString *)arg1 storeID:(NSString *)arg2 reply:(void (^)(NSString *, NSError *))arg3;
+- (void)purchaseWithBuyParameters:(NSString *)arg1 storeID:(NSString *)arg2 reply:(void (^)(NSString *, BLPurchaseResponse *, NSError *))arg3;
 - (void)cancelAllActiveDownloadsWithReply:(void (^)(NSError *))arg1;
 - (void)cancelDownloadWithID:(NSString *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)resumeDownloadWithID:(NSString *)arg1 withReply:(void (^)(NSError *))arg2;

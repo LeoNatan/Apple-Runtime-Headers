@@ -8,7 +8,6 @@
 
 @class NSArray, _MXAssetStorage, _MXExtensionDispatchCenter, _MXExtensionMatchingMerger, _MXExtensionServiceCenter;
 
-__attribute__((visibility("hidden")))
 @interface _MXExtensionProvider : NSObject
 {
     Class _extensionMatchingClass;

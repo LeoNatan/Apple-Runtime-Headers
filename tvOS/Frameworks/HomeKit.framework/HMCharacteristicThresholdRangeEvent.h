@@ -23,6 +23,8 @@
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
 + (_Bool)isSupportedForHome:(id)arg1;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_updateThresholdRange:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -33,8 +35,6 @@
 @property(readonly, copy, nonatomic) HMNumberRange *thresholdRange; // @synthesize thresholdRange=_thresholdRange;
 - (void)setCharacteristic:(id)arg1;
 @property(readonly, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithDict:(id)arg1 characteristic:(id)arg2 thresholdRange:(id)arg3;
 - (id)initWithCharacteristic:(id)arg1 thresholdRange:(id)arg2;
 

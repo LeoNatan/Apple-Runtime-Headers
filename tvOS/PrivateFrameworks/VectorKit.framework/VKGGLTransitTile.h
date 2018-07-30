@@ -87,7 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)setNodeFeaturePool:(struct TransitNodeFeaturePool *)arg1;
 - (void)setInterTileMediator:(const shared_ptr_10302801 *)arg1;
 - (void)dealloc;
-- (id)initWithKey:(const struct VKTileKey *)arg1 modelTile:(id)arg2 styleManager:(shared_ptr_a3c46825)arg3 dataOverrideManager:(shared_ptr_887a193f)arg4 sharedResources:(id)arg5 contentScale:(double)arg6 device:(Device_9226c869 *)arg7 labelExternalObjectsModerator:(struct LabelExternalObjectsModerator *)arg8;
+- (id)initWithKey:(const struct VKTileKey *)arg1 modelTile:(id)arg2 userInfo:(id)arg3 styleManager:(shared_ptr_a3c46825)arg4 dataOverrideManager:(shared_ptr_887a193f)arg5 sharedResources:(id)arg6 contentScale:(double)arg7 device:(Device_9226c869 *)arg8 labelExternalObjectsModerator:(struct LabelExternalObjectsModerator *)arg9;
 
 @end
 

@@ -28,11 +28,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _OSLogChunkStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) struct tracev3_chunk_s *fileHeader; // @synthesize fileHeader=_fileHeader;
 @property(readonly, nonatomic) struct tracev3_chunk_s *chunk; // @synthesize chunk=_chunk;
-@property(readonly, nonatomic) struct catalog_s *catalog; // @synthesize catalog=_catalog;
 @property(readonly, nonatomic) __weak _OSLogIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
 - (void)enumerateSubchunksUsingBlock:(CDUnknownBlockType)arg1;
 - (void)unionWithRange:(struct _NSRange)arg1;
+@property(readonly, nonatomic) struct catalog_s *catalog; // @synthesize catalog=_catalog;
 @property(readonly, nonatomic) const char *bootUUID;
 - (void)dealloc;
 - (id)initWithStore:(id)arg1 index:(id)arg2 fileHeader:(struct tracev3_chunk_s *)arg3 range:(struct _NSRange)arg4 chunk:(struct tracev3_chunk_s *)arg5;

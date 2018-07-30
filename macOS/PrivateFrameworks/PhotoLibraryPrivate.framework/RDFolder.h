@@ -64,6 +64,7 @@
 - (id)parentFolder;
 - (id)parent;
 - (void)setParentFolderUuid:(id)arg1;
+- (BOOL)isTopLevelProjectsFolder;
 - (BOOL)isMediaTypesFolder;
 - (BOOL)isTopLevelAlbumsFolder;
 - (CDUnknownBlockType)willPersist;

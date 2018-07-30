@@ -8,6 +8,7 @@
 
 @class CALayer, UIPDFDocument, UIPDFPageView;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFPageContentDelegate : NSObject
 {
     UIPDFDocument *_document;

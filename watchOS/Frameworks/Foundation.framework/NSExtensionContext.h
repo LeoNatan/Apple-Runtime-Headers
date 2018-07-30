@@ -26,6 +26,7 @@
     id __processAssertion;
     id __principalObject;
     NSObject<OS_os_transaction> *__transaction;
+    CDStruct_4c969caf __extensionHostAuditToken;
 }
 
 + (id)_allowedErrorClasses;
@@ -37,8 +38,8 @@
 + (id)_extensionContextHostProtocolWithAllowedErrorClasses:(id)arg1;
 + (id)_defaultExtensionContextProtocol;
 + (id)_extensionContextHostProtocolAllowedClassesForItems;
-+ (void)initialize;
 + (id)_extensionContextForIdentifier:(id)arg1;
+@property(setter=_setExtensionHostAuditToken:) CDStruct_4c969caf _extensionHostAuditToken; // @synthesize _extensionHostAuditToken=__extensionHostAuditToken;
 @property(retain, getter=_transaction, setter=_setTransaction:) NSObject<OS_os_transaction> *_transaction; // @synthesize _transaction=__transaction;
 @property(nonatomic, getter=_isDummyExtension, setter=_setDummyExtension:) _Bool _dummyExtension; // @synthesize _dummyExtension=__dummyExtension;
 @property(nonatomic, setter=_setPrincipalObject:) id _principalObject; // @synthesize _principalObject=__principalObject;

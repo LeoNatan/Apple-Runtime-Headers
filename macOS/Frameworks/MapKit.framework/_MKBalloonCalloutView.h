@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import <MapKit/MKCalloutView.h>
 
-@class CALayer, CAShapeLayer, MKImageView, NSColor, NSImage;
+@class CALayer, CAShapeLayer, MKImageView, NSColor, NSImage, NSView;
 
-@interface _MKBalloonCalloutView : NSView
+@interface _MKBalloonCalloutView : MKCalloutView
 {
     NSView *_shadowView;
     NSView *_containerView;
@@ -42,9 +42,9 @@
 @property(copy, nonatomic) NSColor *balloonTintColor; // @synthesize balloonTintColor=_balloonTintColor;
 - (void).cxx_destruct;
 - (BOOL)calloutContainsPoint:(struct CGPoint)arg1;
-- (void)hideCalloutAnimated:(BOOL)arg1 endVerticalOffset:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)dismissAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)showAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)hideCalloutAnimated:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)showCalloutAnimated:(BOOL)arg1 startVerticalOffset:(double)arg2;
 - (void)showCalloutAnimated:(BOOL)arg1;
 - (void)_updateCroppedImage;
 - (void)viewDidMoveToWindow;
@@ -53,9 +53,9 @@
 - (double)_innerDiameter;
 - (struct CGRect)_centerFrame;
 - (struct CGSize)intrinsicContentSize;
+- (void)_commonInit;
 - (id)initWithStyle:(long long)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithAnnotationView:(id)arg1;
 
 @end
 

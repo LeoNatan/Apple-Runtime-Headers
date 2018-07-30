@@ -30,7 +30,6 @@
 - (void)discard;
 - (void)logTransactionSuccessfulForInput:(id)arg1 completion:(id)arg2;
 - (void)logTransactionSuccessfulForInput:(id)arg1;
-- (void)logResultsSuppressed;
 - (void)logEngagement:(id)arg1 forInput:(id)arg2 completion:(id)arg3;
 - (void)logEngagement:(id)arg1 forInput:(id)arg2;
 - (void)logResultsShown:(unsigned long long)arg1 serverOverride:(_Bool)arg2 forInput:(id)arg3;

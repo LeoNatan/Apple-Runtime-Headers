@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSCollectionViewData, NSIndexPath, NSMutableArray, NSMutableDictionary, UICollectionViewIndexMapper, _NSCollectionViewCore;
+@class NSArray, NSCollectionViewData, NSCollectionViewIndexMapper, NSIndexPath, NSMutableArray, NSMutableDictionary, _NSCollectionViewCore;
 
 @interface NSCollectionViewUpdate : NSObject
 {
@@ -16,8 +16,8 @@
     NSCollectionViewData *_newModel;
     struct CGRect _oldVisibleBounds;
     struct CGRect _newVisibleBounds;
-    UICollectionViewIndexMapper *_globalIndexMap;
-    UICollectionViewIndexMapper *_sectionMap;
+    NSCollectionViewIndexMapper *_globalIndexMap;
+    NSCollectionViewIndexMapper *_sectionMap;
     NSMutableArray *_deletedSupplementaryIndexesSectionArray;
     NSMutableArray *_insertedSupplementaryIndexesSectionArray;
     NSMutableDictionary *_deletedSupplementaryTopLevelIndexesDict;

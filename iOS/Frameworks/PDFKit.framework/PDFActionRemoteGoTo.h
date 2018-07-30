@@ -20,8 +20,6 @@
 - (id)toolTip;
 - (void)addDestinationToDictionaryRef:(struct __CFDictionary *)arg1;
 - (const struct __CFDictionary *)createDictionaryRef;
-- (id)finishInitWithActionDictionary:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2;
-- (void)lazyInit;
 - (void)commonInit;
 - (id)initWithActionDictionary:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2 forPage:(id)arg3;
 - (id)description;

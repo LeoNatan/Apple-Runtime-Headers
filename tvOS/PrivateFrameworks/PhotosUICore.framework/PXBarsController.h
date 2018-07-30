@@ -6,25 +6,31 @@
 
 #import "NSObject.h"
 
-@class PXBarSpec, UIViewController;
+@class NSArray, NSMutableDictionary, PXBarSpec, UIViewController;
 
 @interface PXBarsController : NSObject
 {
-    struct _delegateFlags;
     struct {
         _Bool needsUpdateBars;
     } _needsUpdateFlags;
     _Bool _wantsAnimatedBarsUpdate;
-    PXBarSpec *_barSpec;
     UIViewController *_viewController;
-    id <PXBarsControllerDelegate> _delegate;
+    id <PXActionPerformerDelegate> _actionPerformerDelegate;
+    PXBarSpec *_barSpec;
+    NSMutableDictionary *_barButtonItemCache;
 }
 
-@property(nonatomic) _Bool wantsAnimatedBarsUpdate; // @synthesize wantsAnimatedBarsUpdate=_wantsAnimatedBarsUpdate;
-@property(nonatomic) __weak id <PXBarsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
+@property(readonly, nonatomic) NSMutableDictionary *barButtonItemCache; // @synthesize barButtonItemCache=_barButtonItemCache;
 @property(retain, nonatomic) PXBarSpec *barSpec; // @synthesize barSpec=_barSpec;
+@property(nonatomic) _Bool wantsAnimatedBarsUpdate; // @synthesize wantsAnimatedBarsUpdate=_wantsAnimatedBarsUpdate;
+@property(nonatomic) __weak id <PXActionPerformerDelegate> actionPerformerDelegate; // @synthesize actionPerformerDelegate=_actionPerformerDelegate;
+@property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+- (id)barButtonItemForIdentifier:(id)arg1;
+- (id)_getCachedOrCreateNewBarButtonItemForIdentifier:(id)arg1;
+@property(readonly, nonatomic) NSArray *toolbarItemIdentifiers;
+@property(readonly, nonatomic) NSArray *rightBarButtonItemIdentifiers;
+@property(readonly, nonatomic) NSArray *leftBarButtonItemIdentifiers;
 - (void)updateBars;
 - (void)_updateBarsIfNeeded;
 - (void)updateIfNeeded;

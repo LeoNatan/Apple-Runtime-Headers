@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
 - (BOOL)performBrailleReplaceTextRangeWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)performBrailleRouterActionWithIndex:(unsigned long long)arg1 outputRequest:(id)arg2;
 - (id)_staticText_textMarkerRange_selectRange:(struct _NSRange)arg1 textArea:(id)arg2;
-- (BOOL)_staticText_textMarkerRange_moveToIndex:(id)arg1 outputRequest:(id)arg2 textArea:(id)arg3;
+- (id)_braille_staticText_textMarkerRange_selectRange:(struct _NSRange)arg1 textArea:(id)arg2;
+- (BOOL)_braille_staticText_textMarkerRange_moveToIndex:(id)arg1 outputRequest:(id)arg2 textArea:(id)arg3;
 - (BOOL)_editableText_indexBasedMarkers_moveToIndex:(id)arg1 outputRequest:(id)arg2 textArea:(id)arg3;
 - (id)helpDescription;
 - (id)shortInstruction;
 - (id)typeDescription;
+- (id)captionDescriptionContainsUserLabel:(char *)arg1 containsAncestorLabel:(char *)arg2;
 - (BOOL)hasAutofillMenuAvailable;
 - (BOOL)canHandleValueChange;
 - (BOOL)canHandleTextValueChange;

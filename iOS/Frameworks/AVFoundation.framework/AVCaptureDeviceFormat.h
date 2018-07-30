@@ -15,8 +15,10 @@
 
 + (void)initialize;
 - (unsigned int)supportedRawPixelFormat;
-- (_Bool)isDepthSupported;
-- (_Bool)isDisparitySupported;
+- (_Bool)isStreamingDepthSupported;
+- (_Bool)isStreamingDisparitySupported;
+- (_Bool)isStillImageDepthSupported;
+- (_Bool)isStillImageDisparitySupported;
 - (id)optimizedPhotoFilterNames;
 - (id)optimizedVideoPreviewFilterNames;
 - (_Bool)supportsQuadraHighResolutionStillImageOutput;
@@ -48,9 +50,9 @@
 - (_Bool)isStereoFusionSupported;
 - (_Bool)isSISSupported;
 - (_Bool)supportsDynamicCrop;
-- (_Bool)supportsLowLightBoost;
 - (_Bool)prefersVideoHDREnabledForSessionPreset:(id)arg1;
 - (int)supportedStabilizationMethod;
+- (_Bool)isPortraitEffectsMatteStillImageDeliverySupported;
 @property(readonly, nonatomic) NSArray *unsupportedCaptureOutputClasses;
 @property(readonly, nonatomic) NSArray *supportedDepthDataFormats;
 - (_Bool)isWideColorSupported;
@@ -58,6 +60,7 @@
 - (_Bool)supportsHighResolutionStillImageOutput;
 @property(readonly, nonatomic) CDStruct_79c71658 highResolutionStillImageDimensions;
 - (_Bool)isVideoStabilizationModeSupported:(long long)arg1;
+- (_Bool)isVideoHDRSuspensionSupported;
 @property(readonly, nonatomic, getter=isVideoHDRSupported) _Bool videoHDRSupported;
 @property(readonly, nonatomic, getter=isVideoStabilizationSupported) _Bool videoStabilizationSupported;
 @property(readonly, nonatomic) double videoMaxZoomFactorForDepthDataDelivery;
@@ -75,6 +78,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithFigCaptureSourceFormat:(id)arg1;
 - (id)description;
+- (id)debugDescription;
 - (id)_stringForMediaType:(unsigned int)arg1 formatDescription:(struct opaqueCMFormatDescription *)arg2 frameRateRanges:(id)arg3;
 
 @end

@@ -65,7 +65,9 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
+- (void)_handleApplicationDidEnterBackgroundNotification:(id)arg1;
 - (void)applicationWillSuspend;
+- (void)_stopRecordingOrPlayingForApplicationSuspension;
 - (void)dealloc;
 - (id)initWithVibratorController:(id)arg1;
 

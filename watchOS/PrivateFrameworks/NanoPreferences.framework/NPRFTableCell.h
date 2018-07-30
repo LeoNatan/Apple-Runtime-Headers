@@ -12,18 +12,23 @@
 
 @interface NPRFTableCell : PUICTableViewCell <NPRFSpecifierContentReader>
 {
+    _Bool _cellEnabled;
     PSSpecifier *_specifier;
 }
 
-+ (int)cellStyleForSpecifier:(id)arg1;
++ (int)cellStyle;
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (id)reuseIdentifierForClassAndType:(int)arg1;
 + (id)reuseIdentifierForBasicCellTypes:(int)arg1;
 + (Class)cellClassForSpecifier:(id)arg1;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 - (void).cxx_destruct;
+- (_Bool)isCellEnabled;
+- (void)setCellEnabled:(_Bool)arg1;
 - (id)cellAccesoryForSpecifier:(id)arg1 controller:(id)arg2;
 - (void)setContentsFromSpecifier:(id)arg1 controller:(id)arg2;
+- (void)prepareForReuse;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

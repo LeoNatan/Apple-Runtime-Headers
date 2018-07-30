@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NTKAVListingFaceBaseView.h>
 
-@class NTKComplicationDisplayWrapperView, NTKFaceLayoutContentProvider, NTKInfinityController, NTKInfinityListing, UIColor, UILabel, UIView;
+@class NTKComplicationDisplayWrapperView, NTKFaceViewComplicationFactory, NTKInfinityController, NTKInfinityListing, UIColor, UILabel, UIView;
 
 @interface NTKInfinityFaceView : NTKAVListingFaceBaseView
 {
@@ -15,7 +15,7 @@
     UIView *_cornerView;
     UILabel *_reviewLabel;
     int _previousDataMode;
-    NTKFaceLayoutContentProvider *_layoutContentProvider;
+    NTKFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKComplicationDisplayWrapperView *_touchWrapper;
     NTKInfinityController *_controller;
     NTKInfinityListing *_currentQueueListing;
@@ -38,6 +38,7 @@
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (_Bool)_shouldFadeToTransitionView;
 - (float)_timeLabelAlphaForEditMode:(int)arg1;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
@@ -48,7 +49,6 @@
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (id)_viewForEditOption:(id)arg1;
 - (id)_editingComplicationColor;
-- (void)_updateComplicationWithColor:(id)arg1 animated:(_Bool)arg2 useComplicationFlickerWorkaround:(_Bool)arg3;
 - (void)_updateComplicationWithColor:(id)arg1 animated:(_Bool)arg2;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
@@ -62,7 +62,7 @@
 - (id)videoPlayerView;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
-- (void)videoPlayerViewDidFinishPlayingVideoToEnd:(id)arg1;
+- (void)videoPlayerViewDidBeginPlayingQueuedVideo:(id)arg1;
 - (void)_backlightDidTurnOff;
 - (void)_backlightWillTurnOff;
 - (void)_handleOrdinaryScreenWake;
@@ -77,7 +77,7 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 @end
 

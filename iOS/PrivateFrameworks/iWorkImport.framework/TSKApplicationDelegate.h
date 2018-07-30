@@ -76,6 +76,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *applicationName;
 - (void)dealloc;
 - (id)init;
+- (id)strokeWidthsForFreehandDrawingToolType:(unsigned long long)arg1;
+@property(nonatomic) long long defaultPresetWhenConvertingToPlayableOnAllDevices;
+@property(nonatomic) _Bool shouldOptimizeForiOSOnInsert;
 @property(readonly, nonatomic) _Bool textInspectorShowsMoreSubpane;
 @property(readonly, nonatomic) _Bool tableCellInspectorShowsNaturalAlignment;
 @property(readonly, nonatomic) _Bool tableHeaderInspectorShowsRepeatHeaderRowsSwitch;

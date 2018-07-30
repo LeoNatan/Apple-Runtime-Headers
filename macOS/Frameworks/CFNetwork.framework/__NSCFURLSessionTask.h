@@ -6,13 +6,14 @@
 
 #import <CFNetwork/NSURLSessionTask.h>
 
-@class NSArray, NSData, NSDate, NSDictionary, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSession, NSURLSessionConfiguration, NSURLSessionTaskDependency, NSURLSessionTaskDependencyTree, NSURLSessionTaskHTTPAuthenticator, NSURLSessionTaskMetrics;
+@class NSArray, NSData, NSDate, NSDictionary, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_nw_activity>, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSession, NSURLSessionConfiguration, NSURLSessionTaskDependency, NSURLSessionTaskDependencyTree, NSURLSessionTaskHTTPAuthenticator, NSURLSessionTaskMetrics, __NSCFTaskPerformanceTiming;
 
 __attribute__((visibility("hidden")))
 @interface __NSCFURLSessionTask : NSURLSessionTask
 {
     unsigned long long _taskIdentifier;
     NSString *_taskDescription;
+    NSString *_loggableDescription;
     NSURLRequest *_originalRequest;
     NSURLRequest *_currentRequest;
     NSURLResponse *_response;
@@ -41,9 +42,6 @@ __attribute__((visibility("hidden")))
     long long _bytesPerSecondLimitValue;
     struct __PerformanceTiming *_performanceTiming;
     NSDictionary *_backgroundTaskTimingData;
-    BOOL _shouldSkipPreferredClientCertificateLookup;
-    BOOL _cacheOnly;
-    BOOL _preventsSystemHTTPProxyAuthentication;
     NSDictionary *_legacySocketStreamProperties;
     struct _CFHSTSPolicy *_cfHSTS;
     struct _CFURLCache *_cfCache;
@@ -54,20 +52,12 @@ __attribute__((visibility("hidden")))
     double _timeoutIntervalForResource;
     NSDictionary *_proxySettings;
     NSDictionary *_sslSettings;
-    BOOL _shouldPipelineHTTP;
-    BOOL _shouldUsePipelineHeuristics;
-    BOOL _shouldSkipPipelineProbe;
-    BOOL _shouldHandleCookies;
     int _cookieAcceptPolicy;
-    BOOL _preventsIdleSystemSleep;
     NSArray *_contentDispositionFallbackArray;
-    BOOL _allowsCellular;
     int _networkServiceType;
-    BOOL _prohibitAuthUI;
-    BOOL _strictContentLength;
+    unsigned int _qos;
     long long _suspensionThreshhold;
     NSString *_boundInterfaceIdentifier;
-    BOOL _disallowCellular;
     unsigned long long _allowedProtocolTypes;
     long long _requestPriority;
     long long _expectedWorkload;
@@ -78,11 +68,11 @@ __attribute__((visibility("hidden")))
     unsigned int _darkWakePowerAssertion;
     struct __CFDictionary *_cachedSocketStreamProperties;
     NSURLSessionConfiguration *_configuration;
-    BOOL _connectionIsCellular;
     id _protocolForTask;
     NSURLSessionTaskHTTPAuthenticator *_authenticator;
-    BOOL _shouldReportTimingDataToAWD;
     NSString *_storagePartitionIdentifier;
+    NSURL *_parentDocumentURL;
+    NSURL *_siteForCookies;
     NSDictionary *_dependencyInfo;
     NSDictionary *_DuetActivityProperties;
     NSURLSessionTaskDependencyTree *_dependencyTree;
@@ -90,32 +80,59 @@ __attribute__((visibility("hidden")))
     NSString *_pathToDownloadTaskFile;
     NSMutableArray *_transactionMetrics;
     NSURLSessionTaskMetrics *_incompleteTaskMetrics;
+    NSObject<OS_nw_activity> *_nw_activity;
+    __NSCFTaskPerformanceTiming *_taskPerformanceTiming;
     NSDictionary *_trailers;
-    BOOL _allowsQUIC;
+    long long _discretionaryOverride;
+    id <NSURLSessionAppleIDContext> _appleIDContext;
+    NSProgress *_progress;
+    NSProgress *_uploadProgress;
+    NSProgress *_downloadProgress;
+    NSURL *_publishingURL;
+    NSURL *_backgroundPublishingURL;
+    struct os_unfair_lock_s _unfair_lock;
+    NSString *_APSRelayTopic;
     id <SZExtractor> _extractor;
     BOOL _extractorFinishedDecoding;
     BOOL _hasSZExtractor;
     BOOL _doesSZExtractorConsumeExtractedData;
-    id <NSURLSessionAppleIDContext> _appleIDContext;
-    BOOL _authenticatorConfiguredViaTaskProperty;
-    NSProgress *_progress;
-    NSProgress *_uploadProgress;
-    NSProgress *_downloadProgress;
+    BOOL _shouldSkipPreferredClientCertificateLookup;
+    BOOL _cacheOnly;
+    BOOL _preventsSystemHTTPProxyAuthentication;
+    BOOL _requiresSecureHTTPSProxyConnection;
+    BOOL _shouldPipelineHTTP;
+    BOOL _shouldUsePipelineHeuristics;
+    BOOL _shouldSkipPipelineProbe;
+    BOOL _shouldHandleCookies;
+    BOOL _isTopLevelNavigation;
+    BOOL _prohibitAuthUI;
+    BOOL _strictContentLength;
+    BOOL _connectionIsCellular;
+    BOOL _disallowCellular;
+    BOOL _allowsCellular;
+    BOOL _isInUpload;
     BOOL _undeterminedUploadProgressState;
     BOOL _undeterminedDownloadProgressState;
-    BOOL _isInUpload;
     BOOL _progressReportingFinished;
-    NSURL *_publishingURL;
-    NSURL *_backgroundPublishingURL;
-    struct os_unfair_lock_s _unfair_lock;
+    BOOL _allowsQUIC;
+    BOOL _preventsIdleSystemSleep;
+    BOOL _shouldReportTimingDataToAWD;
     BOOL _preconnect;
-    NSString *_APSRelayTopic;
+    BOOL _authenticatorConfiguredViaTaskProperty;
     BOOL _extractorPreparedForExtraction;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void)set_isTopLevelNavigation:(BOOL)arg1;
+- (BOOL)_isTopLevelNavigation;
+- (void)set_siteForCookies:(id)arg1;
+- (id)_siteForCookies;
 - (void)set_APSRelayTopic:(id)arg1;
 - (id)_APSRelayTopic;
+- (void)set_taskPerformanceTiming:(id)arg1;
+- (id)_taskPerformanceTiming;
+- (void)set_nw_activity:(id)arg1;
+- (id)_nw_activity;
 - (void)set_incompleteTaskMetrics:(id)arg1;
 - (id)_incompleteTaskMetrics;
 - (void)set_backgroundPublishingURL:(id)arg1;
@@ -134,6 +151,8 @@ __attribute__((visibility("hidden")))
 - (void)set_extractorFinishedDecoding:(BOOL)arg1;
 - (BOOL)_extractorFinishedDecoding;
 - (id)_extractor;
+- (void)set_discretionaryOverride:(long long)arg1;
+- (long long)_discretionaryOverride;
 - (void)set_allowsQUIC:(BOOL)arg1;
 - (BOOL)_allowsQUIC;
 - (void)set_trailers:(id)arg1;
@@ -159,7 +178,6 @@ __attribute__((visibility("hidden")))
 - (unsigned int)_powerAssertion;
 - (void)set_storagePartitionIdentifier:(id)arg1;
 - (id)_storagePartitionIdentifier;
-- (void)set_uniqueIdentifier:(id)arg1;
 - (id)_uniqueIdentifier;
 - (void)set_requestPriority:(long long)arg1;
 - (long long)_requestPriority;
@@ -171,6 +189,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)_strictContentLength;
 - (void)set_prohibitAuthUI:(BOOL)arg1;
 - (BOOL)_prohibitAuthUI;
+- (void)set_qos:(unsigned int)arg1;
+- (unsigned int)_qos;
 - (void)set_allowsCellular:(BOOL)arg1;
 - (BOOL)_allowsCellular;
 - (void)set_contentDispositionFallbackArray:(id)arg1;
@@ -207,6 +227,8 @@ __attribute__((visibility("hidden")))
 - (struct _CFHSTSPolicy *)_cfHSTS;
 - (void)set_pathToDownloadTaskFile:(id)arg1;
 - (id)_pathToDownloadTaskFile;
+- (void)set_requiresSecureHTTPSProxyConnection:(BOOL)arg1;
+- (BOOL)_requiresSecureHTTPSProxyConnection;
 - (void)set_preventsSystemHTTPProxyAuthentication:(BOOL)arg1;
 - (BOOL)_preventsSystemHTTPProxyAuthentication;
 - (void)set_cacheOnly:(BOOL)arg1;
@@ -259,7 +281,6 @@ __attribute__((visibility("hidden")))
 - (id)originalRequest;
 - (void)setTaskDescription:(id)arg1;
 - (id)taskDescription;
-- (void)setTaskIdentifier:(unsigned long long)arg1;
 - (unsigned long long)taskIdentifier;
 - (BOOL)_preconnect;
 - (void)set_preconnect:(BOOL)arg1;
@@ -291,7 +312,7 @@ __attribute__((visibility("hidden")))
 - (void)_setSocketProperties:(struct __CFDictionary *)arg1 connectionProperties:(struct __CFDictionary *)arg2;
 - (const struct XCredentialStorage *)_createXCredentialStorage;
 - (const struct XCookieStorage *)_createXCookieStorage;
-- (const struct XURLCache *)_createXURLCache;
+- (void)_withXURLCache:(CDUnknownBlockType)arg1;
 - (struct _CFHSTSPolicy *)_copyHSTSPolicy;
 - (void)_onqueue_releasePowerAsssertion;
 - (void)_releasePreventIdleSleepAssertionIfAppropriate;
@@ -337,6 +358,9 @@ __attribute__((visibility("hidden")))
 - (void)resume;
 - (void)suspend;
 - (void)cancel;
+- (id)_loggableDescription;
+- (void)set_uniqueIdentifier:(id)arg1;
+- (void)setTaskIdentifier:(unsigned long long)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)initWithTask:(id)arg1;

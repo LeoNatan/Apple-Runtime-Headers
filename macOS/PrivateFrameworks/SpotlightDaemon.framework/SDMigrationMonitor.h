@@ -33,6 +33,8 @@
 - (void)unlock;
 - (void)_finishMigration;
 - (void)_didFindExtensions:(id)arg1;
+- (void)resumeMigrationQueue;
+- (void)suspendMigrationQueue;
 - (void)dealloc;
 - (id)init;
 

@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PDAnimationShapeTarget.h>
 
-__attribute__((visibility("hidden")))
 @interface PDAnimationOleChartTarget : PDAnimationShapeTarget
 {
     int mLevel;

@@ -8,6 +8,7 @@
 
 @class AVAssetWriterInputConfigurationState, AVAssetWriterInputPassDescription, AVOutputSettings, AVWeakReference, NSArray, NSDictionary, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputHelper : NSObject
 {
     AVAssetWriterInputConfigurationState *_configurationState;
@@ -51,6 +52,7 @@
 @property(copy, nonatomic) NSString *extendedLanguageTag;
 @property(copy, nonatomic) NSString *languageCode;
 @property(nonatomic) struct CGSize naturalSize;
+@property(nonatomic) BOOL maximizePowerEfficiency;
 @property(nonatomic) BOOL expectsMediaDataInRealTime;
 @property(readonly, nonatomic, getter=isReadyForMoreMediaData) BOOL readyForMoreMediaData;
 @property(nonatomic) int mediaTimeScale;

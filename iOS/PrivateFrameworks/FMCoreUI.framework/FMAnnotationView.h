@@ -29,6 +29,7 @@
 + (void)setThickAnnotationBorder:(_Bool)arg1;
 + (void)setLargeAnnotationBorderVisible:(_Bool)arg1;
 + (void)setImagePadding:(double)arg1;
++ (void)preloadAssets;
 @property(nonatomic) _Bool hasPhotoImage; // @synthesize hasPhotoImage=_hasPhotoImage;
 @property(nonatomic) _Bool isShowingLargeSelectedAnnotation; // @synthesize isShowingLargeSelectedAnnotation=_isShowingLargeSelectedAnnotation;
 @property(retain, nonatomic) CALayer *largePersonImageLayer; // @synthesize largePersonImageLayer=_largePersonImageLayer;

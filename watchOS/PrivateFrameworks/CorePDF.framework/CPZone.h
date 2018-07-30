@@ -10,6 +10,7 @@
 
 @class CPCharSequence, CPZoneProfile, NSArray, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPZone : CPRegion <CPGraphicUser>
 {
     NSMutableArray *zoneBorders;

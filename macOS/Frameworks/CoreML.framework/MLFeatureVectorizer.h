@@ -8,7 +8,7 @@
 
 #import "MLModelSpecificationLoader.h"
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface MLFeatureVectorizer : MLModel <MLModelSpecificationLoader>
 {
@@ -18,14 +18,20 @@
     NSArray *_dimensionEncoding;
 }
 
-+ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
++ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSArray *dimensionEncoding; // @synthesize dimensionEncoding=_dimensionEncoding;
 @property(readonly, nonatomic) NSArray *columnNameEncoding; // @synthesize columnNameEncoding=_columnNameEncoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)vectorizeOneHotEncoderDict:(id)arg1 index:(unsigned long long)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
-- (id)initWith:(id)arg1 dimensionEncoding:(id)arg2 dataTransformerName:(id)arg3 inputDescription:(id)arg4 outputDescription:(id)arg5 orderedInputFeatureNames:(id)arg6 orderedOutputFeatureNames:(id)arg7;
+- (id)initWith:(id)arg1 dimensionEncoding:(id)arg2 dataTransformerName:(id)arg3 inputDescription:(id)arg4 outputDescription:(id)arg5 orderedInputFeatureNames:(id)arg6 orderedOutputFeatureNames:(id)arg7 configuration:(id)arg8;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

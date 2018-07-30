@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class NSMutableSet, NSString;
 
 @interface AXRemoteElement : NSObject
 {
@@ -19,7 +19,6 @@
     unsigned int _machPort;
     id <AXRemoteElementChildrenDelegate> _remoteChildrenDelegate;
     id _accessibilityContainer;
-    NSObject<OS_dispatch_queue> *_remoteQueue;
 }
 
 + (_Bool)registerRemoteElement:(id)arg1;
@@ -27,7 +26,6 @@
 + (id)remoteElementsForBlock:(CDUnknownBlockType)arg1;
 + (id)remoteElementForBlock:(CDUnknownBlockType)arg1;
 + (void)initialize;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *remoteQueue; // @synthesize remoteQueue=_remoteQueue;
 @property(nonatomic) _Bool deniesDirectAppConnection; // @synthesize deniesDirectAppConnection=_deniesDirectAppConnection;
 @property(nonatomic) __weak id accessibilityContainer; // @synthesize accessibilityContainer=_accessibilityContainer;
 @property(nonatomic) unsigned int machPort; // @synthesize machPort=_machPort;

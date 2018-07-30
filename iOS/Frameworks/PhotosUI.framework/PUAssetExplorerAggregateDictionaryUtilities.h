@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface PUAssetExplorerAggregateDictionaryUtilities : NSObject
 {
 }
 
++ (void)updateForReviewScreenCompletedWithAction:(unsigned long long)arg1;
++ (void)updateForFunEffectsPresentedFromSourceType:(unsigned long long)arg1;
 + (void)updateForEditPresentedFromSourceType:(unsigned long long)arg1;
 + (void)updateForMarkupPresentedFromSourceType:(unsigned long long)arg1;
 + (void)updateForReviewScreenPresentedFromSourceType:(unsigned long long)arg1;

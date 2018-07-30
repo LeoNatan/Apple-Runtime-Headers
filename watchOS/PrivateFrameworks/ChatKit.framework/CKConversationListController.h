@@ -7,6 +7,7 @@
 #import "UITableViewController.h"
 
 #import "CKCloudKitSyncProgressViewControllerDelegate.h"
+#import "IMCloudKitEventHandler.h"
 #import "UIActionSheetDelegate.h"
 #import "UISearchBarDelegate.h"
 #import "UISearchControllerDelegate.h"
@@ -15,7 +16,7 @@
 
 @class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKMessagesController, CKScheduledUpdater, NSArray, NSIndexPath, NSString, UIBarButtonItem, UISearchController, UITableView, UIView;
 
-@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
+@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 {
     UITableView *_table;
     NSIndexPath *_previouslySelectedIndexPath;
@@ -24,6 +25,7 @@
     _Bool _isInitialLoad;
     _Bool _isInitialAppearance;
     _Bool _isShowingSwipeDeleteConfirmation;
+    _Bool _shouldUseFastPreviewText;
     CKConversationList *_conversationList;
     CKMessagesController *_messagesController;
     CKCloudKitSyncProgressViewController *_syncProgressViewController;
@@ -43,6 +45,7 @@
     CDUnknownBlockType _searchCompletion;
 }
 
+@property(nonatomic) _Bool shouldUseFastPreviewText; // @synthesize shouldUseFastPreviewText=_shouldUseFastPreviewText;
 @property(copy, nonatomic) CDUnknownBlockType searchCompletion; // @synthesize searchCompletion=_searchCompletion;
 @property(retain, nonatomic) UIBarButtonItem *composeButton; // @synthesize composeButton=_composeButton;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
@@ -58,12 +61,18 @@
 @property(retain, nonatomic) CKScheduledUpdater *updater; // @synthesize updater=_updater;
 @property(nonatomic) _Bool isShowingSwipeDeleteConfirmation; // @synthesize isShowingSwipeDeleteConfirmation=_isShowingSwipeDeleteConfirmation;
 @property(retain, nonatomic) UIBarButtonItem *currentEditButtonItem; // @synthesize currentEditButtonItem=_currentEditButtonItem;
+@property(retain, nonatomic) CKCloudKitSyncProgressViewController *syncProgressViewController; // @synthesize syncProgressViewController=_syncProgressViewController;
 @property(retain, nonatomic) NSIndexPath *previouslySelectedIndexPath; // @synthesize previouslySelectedIndexPath=_previouslySelectedIndexPath;
 @property(nonatomic) __weak CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
 @property(nonatomic) __weak CKConversationList *conversationList; // @synthesize conversationList=_conversationList;
 - (void).cxx_destruct;
-- (void)cloudKitSyncProgressViewControllerDidChangeVisibility:(id)arg1;
+- (void)cloudKitSyncProgressViewController:(id)arg1 actionButtonWasPressed:(int)arg2 errors:(id)arg3;
+- (void)cloudKitEventNotificationManager:(id)arg1 syncProgressDidUpdate:(id)arg2;
+- (void)unregisterForCloudKitEvents;
+- (void)registerForCloudKitEventsImmediately;
+- (void)registerForCloudKitEventsWithDelayedRegistration:(_Bool)arg1;
 - (void)_updateSyncProgressIfNeeded;
+- (void)_updateSyncProgressIfNeededWithProgressController:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldShowPendingCell;
 - (void)selectConversationClosestToDeletedIndex:(unsigned int)arg1;
 - (void)selectNextSequentialConversation:(_Bool)arg1;
@@ -116,8 +125,8 @@
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)_endHoldingUpdatesOnViewWillAppear;
 - (void)viewDidLayoutSubviews;
-@property(readonly, nonatomic) CKCloudKitSyncProgressViewController *syncProgressViewController; // @synthesize syncProgressViewController=_syncProgressViewController;
 - (void)viewDidUnload;
 - (void)viewDidLoad;
 - (void)loadView;
@@ -129,9 +138,13 @@
 - (void)_updateConversationFilteredFlagsAndReportSpam;
 - (void)updateNoMessagesDialog;
 - (void)updateMarginWidth;
+- (void)_updateConversationListNeedsResort:(_Bool)arg1;
 - (void)updateConversationList;
+- (id)_indexPaths:(id)arg1 containingHandleWithUID:(id)arg2;
+- (void)_reloadVisibleConversationList:(id)arg1;
 - (void)updateSMSSpamConversationsDisplayName;
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
+- (void)endHoldingAllConversationListUpdatesForKey:(id)arg1;
 - (void)beginHoldingConversationListUpdatesForKey:(id)arg1;
 - (void)scrollToTop;
 - (void)significantTimeChange;
@@ -141,13 +154,13 @@
 - (void)updateCurrentEditButton;
 - (void)editButtonTapped:(id)arg1;
 - (void)updateNavigationItems;
-- (void)_updateTableViewRowHeights;
 - (_Bool)_shouldKeepSelection;
 - (void)_groupsChanged:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;
 - (void)_conversationListDidChange:(id)arg1;
 - (void)_conversationListDidFinishLoadingConversations:(id)arg1;
 - (void)_chatWatermarkDidChange:(id)arg1;
+- (void)_multiWayCallStateChanged:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)_conversationPinStateChangedNotification:(id)arg1;
 - (void)_conversationContactPhotosEnabledChangedNotification:(id)arg1;
@@ -156,9 +169,10 @@
 - (void)_conversationMuteDidChangeNotification:(id)arg1;
 - (void)_conversationDisplayNameChangedNotification:(id)arg1;
 - (void)_conversationIsFilteredChangedNotification:(id)arg1;
+- (void)_chatRegistryLastMessageLoadedNotification:(id)arg1;
 - (void)_chatParticipantsChangedNotification:(id)arg1;
 - (void)_chatUnreadCountDidChange:(id)arg1;
-- (void)accessibilityLargeTextDidChange;
+- (void)_increaseContrastDidChange:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (_Bool)_shouldResizeNavigationBar;
 - (void)invalidateCellLayout;

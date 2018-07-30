@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVAssetWriterHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterUnknownHelper : AVAssetWriterHelper
 {
     short _alternateGroupID;

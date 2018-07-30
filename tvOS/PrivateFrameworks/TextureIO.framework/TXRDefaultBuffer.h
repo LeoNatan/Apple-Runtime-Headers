@@ -10,6 +10,7 @@
 
 @class NSMutableData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TXRDefaultBuffer : NSObject <TXRBuffer>
 {
     NSMutableData *_data;

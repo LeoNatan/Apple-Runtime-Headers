@@ -72,6 +72,7 @@
 @property(nonatomic) unsigned long long inputCount; // @synthesize inputCount=_inputCount;
 @property(copy, nonatomic) NSString *wordSeparator; // @synthesize wordSeparator=_wordSeparator;
 @property(retain, nonatomic) TIKeyboardCandidate *autocorrectionRecordForInputString; // @synthesize autocorrectionRecordForInputString=_autocorrectionRecordForInputString;
+- (void).cxx_destruct;
 - (_Bool)stringEndsWord:(id)arg1;
 - (_Bool)shouldDeleteAutospaceBeforeTerminator:(id)arg1;
 - (_Bool)shouldSuppressAutocorrectionWithTerminator:(id)arg1;
@@ -80,7 +81,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 @property(nonatomic) unsigned long long autoquoteType;
 @property(nonatomic) _Bool suppressPlaceholderCandidate;
 @property(nonatomic) _Bool usesAutocorrectionLists;

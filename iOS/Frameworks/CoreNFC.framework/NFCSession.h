@@ -26,7 +26,7 @@
 - (id)_connectionLock;
 - (void)_setConnection:(id)arg1;
 - (id)_connection;
-- (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4 delegate:(id)arg5;
 

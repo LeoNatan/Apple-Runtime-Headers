@@ -86,6 +86,8 @@
 - (id)_attachmentZoneID;
 - (_Bool)_deviceConditionsAllowsMessageSyncIgnoreFeatureEnabled:(_Bool)arg1;
 - (_Bool)_deviceConditionsAllowsMessageSync;
+- (_Bool)_deviceConditionsAllowsMessageSyncForCurrentBatchCount:(long long)arg1 maxBatchCount:(long long)arg2;
+- (void)_updateDeviceCondictionsToCheckIfNeededForCurrentBatchCount:(long long)arg1 maxBatchCount:(long long)arg2;
 - (id)_ckUtilitiesInstance;
 - (id)__databaseRequestForAttachmentsWithAssets;
 - (void)__databaseRequestResetAllAttachmentsInFaiedCloudDownloadState;

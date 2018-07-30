@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSData, NSDate, NSDictionary, NSString, NSURL;
+@class NSArray, NSData, NSDate, NSDictionary, NSString, NSURL, SUMajorProduct;
 
 @interface SUUpdateProduct : NSObject <NSSecureCoding>
 {
@@ -16,9 +16,11 @@
     BOOL _shouldAuthenticateReboot;
     BOOL _shouldLaunchFirstLoginOptimization;
     BOOL _isABaseSystemUpdate;
+    BOOL _isMajorOSUpdate;
     BOOL _adminDeferred;
     BOOL _doItLaterUpdateAndNowIsLater;
     BOOL _isFirmwareUpdate;
+    BOOL _autoUpdateEligible;
     BOOL _showPostInstallNotification;
     int _action;
     NSString *_title;
@@ -26,6 +28,7 @@
     NSString *_currentLocalization;
     NSData *_longDescriptionData;
     NSString *_longDescriptionMIMEType;
+    NSString *_longDescriptionString;
     NSData *_licenseAgreementData;
     NSString *_licenseAgreementMIMEType;
     NSData *_firmwareWarningData;
@@ -39,6 +42,7 @@
     NSString *_identifierForProductLabel;
     NSString *_versionForProductLabel;
     NSString *_serverMetadataURL;
+    SUMajorProduct *_majorProduct;
     NSDate *_adminDeferralDate;
     NSDictionary *_matchingDictionary;
     NSDictionary *_extraInfo;
@@ -49,6 +53,7 @@
     NSString *_productVersion;
     NSDate *_postDate;
     NSDate *_deferredEnablementDate;
+    NSDictionary *_updateInfo;
     long long _shouldAutoInstallWithDelayInHours;
     NSString *_customCriticalNotificationTitle;
     NSString *_customCriticalNotificationText;
@@ -67,8 +72,10 @@
 @property(readonly, retain) NSString *customCriticalNotificationText; // @synthesize customCriticalNotificationText=_customCriticalNotificationText;
 @property(readonly, retain) NSString *customCriticalNotificationTitle; // @synthesize customCriticalNotificationTitle=_customCriticalNotificationTitle;
 @property(readonly) long long shouldAutoInstallWithDelayInHours; // @synthesize shouldAutoInstallWithDelayInHours=_shouldAutoInstallWithDelayInHours;
+@property(readonly) NSDictionary *updateInfo; // @synthesize updateInfo=_updateInfo;
 @property(readonly) NSDate *deferredEnablementDate; // @synthesize deferredEnablementDate=_deferredEnablementDate;
 @property(readonly) NSDate *postDate; // @synthesize postDate=_postDate;
+@property(readonly, getter=isAutoUpdateEligible) BOOL autoUpdateEligible; // @synthesize autoUpdateEligible=_autoUpdateEligible;
 @property(readonly) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(readonly) NSString *productBuildVersion; // @synthesize productBuildVersion=_productBuildVersion;
 @property(readonly) NSString *productType; // @synthesize productType=_productType;
@@ -80,6 +87,8 @@
 @property(readonly, retain) NSDictionary *matchingDictionary; // @synthesize matchingDictionary=_matchingDictionary;
 @property(readonly, retain) NSDate *adminDeferralDate; // @synthesize adminDeferralDate=_adminDeferralDate;
 @property(readonly) BOOL adminDeferred; // @synthesize adminDeferred=_adminDeferred;
+@property(readonly, retain) SUMajorProduct *majorProduct; // @synthesize majorProduct=_majorProduct;
+@property(readonly) BOOL isMajorOSUpdate; // @synthesize isMajorOSUpdate=_isMajorOSUpdate;
 @property BOOL isABaseSystemUpdate; // @synthesize isABaseSystemUpdate=_isABaseSystemUpdate;
 @property(readonly) BOOL shouldLaunchFirstLoginOptimization; // @synthesize shouldLaunchFirstLoginOptimization=_shouldLaunchFirstLoginOptimization;
 @property(readonly) BOOL shouldAuthenticateReboot; // @synthesize shouldAuthenticateReboot=_shouldAuthenticateReboot;
@@ -97,13 +106,14 @@
 @property(readonly, retain) NSData *firmwareWarningData; // @synthesize firmwareWarningData=_firmwareWarningData;
 @property(readonly, retain) NSString *licenseAgreementMIMEType; // @synthesize licenseAgreementMIMEType=_licenseAgreementMIMEType;
 @property(readonly, retain) NSData *licenseAgreementData; // @synthesize licenseAgreementData=_licenseAgreementData;
+@property(readonly, retain) NSString *longDescriptionString; // @synthesize longDescriptionString=_longDescriptionString;
 @property(readonly, retain) NSString *longDescriptionMIMEType; // @synthesize longDescriptionMIMEType=_longDescriptionMIMEType;
 @property(readonly, retain) NSData *longDescriptionData; // @synthesize longDescriptionData=_longDescriptionData;
 @property(readonly, retain) NSString *currentLocalization; // @synthesize currentLocalization=_currentLocalization;
 @property(readonly) int action; // @synthesize action=_action;
 @property(readonly, retain) NSString *versionString; // @synthesize versionString=_versionString;
 @property(readonly, retain) NSString *title; // @synthesize title=_title;
-- (id)initWithProductKey:(id)arg1 title:(id)arg2 versionString:(id)arg3;
+- (id)initWithProductKey:(id)arg1 title:(id)arg2 versionString:(id)arg3 longDescription:(id)arg4;
 - (id)getObjectFromExtendedMetaInfoForKey:(id)arg1;
 - (id)updateLabel;
 - (id)licenseAgreement;

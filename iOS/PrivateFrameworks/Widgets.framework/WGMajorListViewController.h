@@ -21,6 +21,7 @@
 - (void)orderOfVisibleWidgetsDidChange:(id)arg1;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeHiddenInGroup:(id)arg3;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeVisibleInGroup:(id)arg3;
+- (void)_updateFooterViewShouldBlurContent;
 - (void)presentEditView:(id)arg1;
 - (void)widgetListFooterViewAvailableNewWidgetsUpdated:(id)arg1;
 - (void)setShouldBlurContent:(_Bool)arg1;

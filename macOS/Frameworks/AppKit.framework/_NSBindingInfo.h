@@ -10,6 +10,7 @@
 
 @class NSString, NSValueTransformer;
 
+__attribute__((visibility("hidden")))
 @interface _NSBindingInfo : NSObject <NSCoding>
 {
     NSString *_binding;

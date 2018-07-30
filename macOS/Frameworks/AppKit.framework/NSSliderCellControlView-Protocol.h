@@ -9,6 +9,7 @@
 @protocol NSSliderCellControlView
 
 @optional
+- (void)sliderCellDidInvalidateComponentRects:(NSSliderCell *)arg1;
 - (void)sliderCellDidChangeSliderType:(NSSliderCell *)arg1;
 - (void)sliderCellDidChangeControlSize:(NSSliderCell *)arg1;
 - (void)sliderCellDidChangeTickMarkPosition:(NSSliderCell *)arg1;

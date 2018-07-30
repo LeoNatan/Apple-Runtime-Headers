@@ -20,6 +20,18 @@
 @property(nonatomic) __weak id <BPSBuddyControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)removeFollowupForPageWithCompletion:(CDUnknownBlockType)arg1;
+- (void)addFollowUpForPageWithCompletion:(CDUnknownBlockType)arg1;
+- (void)addFollowUpForPageAndDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)_baseIdentifier;
+- (_Bool)wantsFollowUpNotification;
+- (id)localizedInformativeNotificationText;
+- (id)localizedNotificationTitle;
+- (id)localizedInformativeText;
+- (id)followUpActions;
+- (id)localizedTitle;
+- (id)followUpIdentifier;
+- (id)titleAttributedString;
 - (id)titleString;
 @property(readonly, nonatomic) UIView *contentView;
 - (_Bool)contentViewIsInAdjustedScrollView;

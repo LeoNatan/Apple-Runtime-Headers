@@ -8,10 +8,11 @@
 
 #import "NTKContainerViewLayoutDelegate.h"
 
-@class NSString, NTKContainerView, UIImageView, UILabel;
+@class CLKDevice, NSString, NTKContainerView, UIImageView, UILabel;
 
 @interface NTKDeleteConfirmationButton : UIControl <NTKContainerViewLayoutDelegate>
 {
+    CLKDevice *_device;
     NTKContainerView *_containerView;
     UIImageView *_deleteIconView;
     UILabel *_deleteLabel;

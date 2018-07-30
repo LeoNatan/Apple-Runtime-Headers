@@ -6,6 +6,7 @@
 
 #import "PUViewModelChange.h"
 
+__attribute__((visibility("hidden")))
 @interface PUVideoEditModelChange : PUViewModelChange
 {
     _Bool _videoDurationChanged;

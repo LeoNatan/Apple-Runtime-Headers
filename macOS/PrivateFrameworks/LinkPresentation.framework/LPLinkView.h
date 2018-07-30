@@ -124,6 +124,7 @@
 - (void)_invalidatePresentationProperties;
 - (void)_setMetadata:(id)arg1 isFinal:(BOOL)arg2;
 - (void)themeParametersDidChange;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)_setupView;
 - (void)setWantsLayer:(BOOL)arg1;
 - (void)_fetchMetadata;

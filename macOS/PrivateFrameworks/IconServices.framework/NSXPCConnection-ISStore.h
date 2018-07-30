@@ -8,6 +8,6 @@
 
 @interface NSXPCConnection (ISStore)
 - (void)_ISStore_addData:(id)arg1 withUUID:(id)arg2 domain:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_ISStore_fetchCachePathForDomain:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_ISStore_fetchCachePathForDomain:(id)arg1 error:(id *)arg2;
 @end
 

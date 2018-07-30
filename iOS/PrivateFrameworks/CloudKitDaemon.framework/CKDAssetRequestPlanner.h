@@ -11,19 +11,23 @@
 @interface CKDAssetRequestPlanner : NSObject
 {
     unsigned int _assetTokenRequestSizeLimit;
+    NSArray *_assetRegisterAndPutBatches;
+    NSArray *_assetGetChunkKeysBatches;
     NSArray *_assetTokenRequests;
-    NSArray *_assetBatches;
+    NSMutableDictionary *_rerefAssetBatchesByZoneID;
     NSMutableDictionary *_assetBatchesByZoneID;
     NSMutableOrderedSet *_items;
-    NSMutableDictionary *_assetZonesByZoneID;
+    NSMutableDictionary *_assetZoneByKey;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *assetZonesByZoneID; // @synthesize assetZonesByZoneID=_assetZonesByZoneID;
+@property(retain, nonatomic) NSMutableDictionary *assetZoneByKey; // @synthesize assetZoneByKey=_assetZoneByKey;
 @property(retain, nonatomic) NSMutableOrderedSet *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSMutableDictionary *assetBatchesByZoneID; // @synthesize assetBatchesByZoneID=_assetBatchesByZoneID;
-@property(retain, nonatomic) NSArray *assetBatches; // @synthesize assetBatches=_assetBatches;
+@property(retain, nonatomic) NSMutableDictionary *rerefAssetBatchesByZoneID; // @synthesize rerefAssetBatchesByZoneID=_rerefAssetBatchesByZoneID;
 @property(retain, nonatomic) NSArray *assetTokenRequests; // @synthesize assetTokenRequests=_assetTokenRequests;
 @property(readonly, nonatomic) unsigned int assetTokenRequestSizeLimit; // @synthesize assetTokenRequestSizeLimit=_assetTokenRequestSizeLimit;
+@property(retain, nonatomic) NSArray *assetGetChunkKeysBatches; // @synthesize assetGetChunkKeysBatches=_assetGetChunkKeysBatches;
+@property(retain, nonatomic) NSArray *assetRegisterAndPutBatches; // @synthesize assetRegisterAndPutBatches=_assetRegisterAndPutBatches;
 - (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
@@ -31,8 +35,11 @@
 - (_Bool)hasSuccessfulBatches;
 - (void)failBatch:(id)arg1;
 - (void)planAssetRequests;
+- (void)planGetChunkKeysBatches;
 - (void)planRegisterBatches;
+- (void)resetAssetTokenRequests;
 - (void)addMMCSSectionItem:(id)arg1;
+- (void)addRereferencedMMCSItem:(id)arg1;
 - (void)addMMCSItem:(id)arg1;
 - (id)init;
 

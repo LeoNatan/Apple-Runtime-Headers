@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)createLayers;
 - (void)_createCornerLayers;
 - (void)refreshLayerContents;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)destroyToolbarLayers;
 - (id)getShadowImage;
 - (struct NSToolbarFullScreenContentViewLayout_t)getToolbarLayout;

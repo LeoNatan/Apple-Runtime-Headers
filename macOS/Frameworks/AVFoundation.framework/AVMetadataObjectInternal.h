@@ -8,6 +8,7 @@
 
 @class AVCaptureInput, AVMetadataObject, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVMetadataObjectInternal : NSObject
 {
     CDStruct_1b6d18a9 _time;

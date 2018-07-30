@@ -6,26 +6,28 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableDictionary, UIColor;
+@class CLKDevice, NSArray, NSMutableDictionary, UIColor;
 
 @interface NTKFaceColorScheme : NSObject
 {
     NSMutableDictionary *_colorsByUnit;
     _Bool _containsOverrideFaceColor;
+    CLKDevice *_device;
     NSArray *_faceColors;
     double _multicolorAlpha;
     double _siriAlpha;
 }
 
-+ (id)interpolationFromFaceColor:(unsigned long long)arg1 toFaceColor:(unsigned long long)arg2 fraction:(double)arg3 units:(unsigned long long)arg4 brightenUnits:(unsigned long long)arg5 overrideColor:(id)arg6 alternateHighlight:(_Bool)arg7;
++ (id)interpolationForDevice:(id)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 fraction:(double)arg4 units:(unsigned long long)arg5 brightenUnits:(unsigned long long)arg6 overrideColor:(id)arg7 alternateHighlight:(_Bool)arg8;
 + (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(double)arg3 brightenUnits:(unsigned long long)arg4;
 + (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(double)arg3;
-+ (id)colorSchemeWithFaceColor:(unsigned long long)arg1 foregroundColor:(id)arg2 units:(unsigned long long)arg3 alternateHighlight:(_Bool)arg4;
-+ (id)colorSchemeWithFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
++ (id)colorSchemeForDevice:(id)arg1 withFaceColor:(unsigned long long)arg2 foregroundColor:(id)arg3 units:(unsigned long long)arg4 alternateHighlight:(_Bool)arg5;
++ (id)colorSchemeForDevice:(id)arg1 withFaceColor:(unsigned long long)arg2 units:(unsigned long long)arg3;
 @property(nonatomic) double siriAlpha; // @synthesize siriAlpha=_siriAlpha;
 @property(nonatomic) double multicolorAlpha; // @synthesize multicolorAlpha=_multicolorAlpha;
 @property(retain, nonatomic) NSArray *faceColors; // @synthesize faceColors=_faceColors;
 @property(nonatomic) _Bool containsOverrideFaceColor; // @synthesize containsOverrideFaceColor=_containsOverrideFaceColor;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (id)_colorForUnit:(unsigned long long)arg1;
 - (void)_setColor:(id)arg1 forUnit:(unsigned long long)arg2;
@@ -42,7 +44,7 @@
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) UIColor *secondaryForegroundColor;
 @property(readonly, nonatomic) UIColor *foregroundColor;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 
 @end
 

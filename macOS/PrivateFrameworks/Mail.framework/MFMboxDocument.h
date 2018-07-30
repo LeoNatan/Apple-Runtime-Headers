@@ -51,8 +51,6 @@
 @property(readonly, nonatomic) BOOL canCompact;
 - (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
 - (void)saveSnippetsForMessages:(id)arg1;
-- (id)snippetsForMessages:(id)arg1;
-@property(readonly, nonatomic) BOOL supportsSnippets;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)attachmentsDirectoryForMessage:(id)arg1 partNumber:(id)arg2;
 - (id)attachmentsDirectoryForMessage:(id)arg1;

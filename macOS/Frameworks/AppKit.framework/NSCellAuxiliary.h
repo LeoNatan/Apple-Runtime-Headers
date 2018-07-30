@@ -8,6 +8,7 @@
 
 @class NSAttributedString, NSControl, NSDragEventTracker, NSFont, NSFormatter, NSImage, NSMenu, NSMutableDictionary, NSString, NSTimer, NSTouch;
 
+__attribute__((visibility("hidden")))
 @interface NSCellAuxiliary : NSObject
 {
     NSControl *controlView;

@@ -6,10 +6,11 @@
 
 #import "UIView.h"
 
-@class NSString, UIImageView, UILabel;
+@class CLKDevice, NSString, UIImageView, UILabel;
 
 @interface NTKAlbumEmptyView : UIView
 {
+    CLKDevice *_device;
     UIImageView *_iconImageView;
     UILabel *_headerLabel;
     UILabel *_bodyLabel;
@@ -19,7 +20,7 @@
 @property(retain, nonatomic) NSString *bodyLabelText; // @synthesize bodyLabelText=_bodyLabelText;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initForDevice:(id)arg1;
 
 @end
 

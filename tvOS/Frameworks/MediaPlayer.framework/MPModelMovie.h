@@ -44,6 +44,7 @@
 + (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (id)editorialArtworkCatalog;
 - (id)artworkCatalog;
+- (id)humanDescription;
 - (id)mediaItemPropertyValues;
 - (struct MPLibraryAddStatusObserverConfiguration)libraryAddStatusObserverConfiguration;
 - (long long)libraryRemovalSupportedOptions;

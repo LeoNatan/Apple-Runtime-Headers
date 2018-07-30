@@ -14,24 +14,24 @@ struct NSArray {
     Class _field1;
 };
 
-struct XSPerfCollection {
-    id _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    struct XSPerfCounter *_field4;
-    struct XSPerfMetric *_field5;
-    char *_field6;
+struct NSMapTable {
+    Class _field1;
 };
 
-struct XSPerfCounter;
-
-struct XSPerfMetric;
+struct _CDPerfEvent {
+    unsigned long long CDPM_startTime;
+    unsigned long long CDPM_endTime;
+};
 
 struct _cdp_prediction_result {
     int _field1;
     float _field2;
     int _field3;
     int _field4;
+};
+
+struct os_activity_scope_state_s {
+    unsigned long long opaque[2];
 };
 
 #pragma mark Typedef'd Structures

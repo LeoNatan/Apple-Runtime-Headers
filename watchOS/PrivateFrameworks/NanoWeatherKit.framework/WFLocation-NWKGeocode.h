@@ -10,6 +10,6 @@
 - (_Bool)shouldNewLocationTriggerReplacement:(id)arg1;
 - (_Bool)isSameLocationButGeocodedVersionIsNew:(id)arg1;
 - (_Bool)isNotGeocodedButNewlocationIsGeocoded:(id)arg1;
-@property(readonly, nonatomic) _Bool hasFullGeocodeContent;
+@property(readonly, nonatomic, getter=nwk_hasBeenReverseGeocoded) _Bool nwk_reverseGeocoded;
 @end
 

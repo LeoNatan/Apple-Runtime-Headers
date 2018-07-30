@@ -6,16 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class SKPaymentQueueClient, SKXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface SKRequestInternal : NSObject
 {
+    long long _backgroundTaskIdentifier;
+    SKPaymentQueueClient *_client;
+    SKXPCConnection *_connection;
     id <SKRequestDelegate> _delegate;
-    NSString *_identifier;
-    int _state;
+    long long _state;
 }
 
 - (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
 
 @end
 

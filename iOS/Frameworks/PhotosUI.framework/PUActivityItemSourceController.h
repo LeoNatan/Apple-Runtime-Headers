@@ -6,15 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSError, NSMutableOrderedSet, NSOrderedSet, NSString, PUActivityViewController;
+#import "PXCMMActionPerformerDelegate.h"
 
-@interface PUActivityItemSourceController : NSObject
+@class NSArray, NSError, NSMutableOrderedSet, NSOrderedSet, NSString, NSURL, PUActivityViewController;
+
+@interface PUActivityItemSourceController : NSObject <PXCMMActionPerformerDelegate>
 {
     NSMutableOrderedSet *_assetItems;
     NSMutableOrderedSet *_assetItemSources;
     int _taskId;
     PUActivityViewController *_activityViewController;
     CDUnknownBlockType _progressHandler;
+    NSURL *_publishedURL;
     NSArray *__activeItemSources;
     NSError *__error;
     NSString *_activeActivityType;
@@ -23,13 +26,20 @@
 @property(retain) NSString *activeActivityType; // @synthesize activeActivityType=_activeActivityType;
 @property(retain, setter=_setError:) NSError *_error; // @synthesize _error=__error;
 @property(retain, setter=_setActiveItemSources:) NSArray *_activeItemSources; // @synthesize _activeItemSources=__activeItemSources;
+@property(retain, nonatomic, setter=_setPublishedURL:) NSURL *publishedURL; // @synthesize publishedURL=_publishedURL;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) NSOrderedSet *assetItems; // @synthesize assetItems=_assetItems;
 @property(nonatomic) __weak PUActivityViewController *activityViewController; // @synthesize activityViewController=_activityViewController;
 - (void).cxx_destruct;
+- (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
 - (id)activityItemSourceForAsset:(id)arg1;
 - (void)cancel;
+- (void)_didPublishMomentShareLinkToURL:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)publishLinkForActivityType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)runExplicitly:(_Bool)arg1 withActivityType:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_cleanupAfterPerform;
+- (_Bool)_prepareForPerformWithActivityType:(id)arg1 error:(id *)arg2;
 - (long long)countOfLoopsToShare;
 - (long long)countOfVideosToShare;
 - (long long)countOfImagesToShare;
@@ -37,6 +47,12 @@
 - (void)removeAssetItem:(id)arg1;
 - (void)addAssetItem:(id)arg1;
 @property(readonly, copy, nonatomic) NSOrderedSet *assetItemSources;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,8 +8,9 @@
 
 #import "OS_nw_socks5_connection.h"
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_nw_connection>, NSString;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_nw_connection>, NSObject<OS_nw_error>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_socks5_connection : NSObject <OS_nw_socks5_connection>
 {
     unsigned long long sc_id;
@@ -28,18 +29,24 @@
     unsigned short sc_shoes_request_length_hbo;
     unsigned char sc_out_address_domain_length;
     NSObject<OS_nw_connection> *sc_out_connection;
+    NSObject<OS_nw_error> *sc_error;
     unsigned int sc_out_connection_failed_or_sent_write_close:1;
     unsigned int sc_in_connection_failed_or_sent_write_close:1;
     unsigned int sc_out_disable_proxy:1;
+    unsigned int sc_sent_reply:1;
+    unsigned long long sc_out_connection_bytes_read;
+    unsigned long long sc_out_connection_bytes_written;
+    unsigned long long sc_in_connection_bytes_read;
+    unsigned long long sc_in_connection_bytes_written;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2 shoes:(_Bool)arg3 disableProxy:(_Bool)arg4;
+@property(readonly, copy) NSString *description;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

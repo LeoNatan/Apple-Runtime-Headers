@@ -6,6 +6,7 @@
 
 #import <AppKit/NSClipView.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSBrowserFlippedClipView : NSClipView
 {
 }

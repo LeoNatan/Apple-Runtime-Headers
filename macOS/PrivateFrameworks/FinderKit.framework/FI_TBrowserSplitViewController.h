@@ -11,11 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserSplitViewController : NSSplitViewController
 {
-    struct TNSRef<NSSplitViewItem *, void> _browserSplitViewItem;
-    struct TNSRef<NSView *, void> _browserView;
-    struct TNSRef<FI_TBrowserViewController *, void> _browserViewController;
-    struct TNSRef<NSSplitViewItem *, void> _tagsSplitViewItem;
-    struct TNSRef<FI_TTagColumnTableViewController *, void> _tagColumnTableViewController;
+    struct TNSRef<NSSplitViewItem, void> _browserSplitViewItem;
+    struct TNSRef<NSView, void> _browserView;
+    struct TNSRef<FI_TBrowserViewController, void> _browserViewController;
+    struct TNSRef<NSSplitViewItem, void> _tagsSplitViewItem;
+    struct TNSRef<FI_TTagColumnTableViewController, void> _tagColumnTableViewController;
     double _tagsColumnWidthCache;
 }
 

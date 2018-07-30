@@ -17,6 +17,7 @@
 @property BOOL isDragging; // @synthesize isDragging=_isDragging;
 @property BOOL isInTrackingLoop; // @synthesize isInTrackingLoop=_isInTrackingLoop;
 @property BOOL allowsDrags; // @synthesize allowsDrags=_allowsDrags;
+- (BOOL)allowsVibrancy;
 - (void)draggingEndedNotification:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (struct CGSize)intrinsicContentSize;

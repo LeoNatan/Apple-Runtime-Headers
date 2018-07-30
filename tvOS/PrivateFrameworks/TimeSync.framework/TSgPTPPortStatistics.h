@@ -10,6 +10,8 @@
 
 @interface TSgPTPPortStatistics : NSObject
 {
+    int _portType;
+    int _portRole;
     unsigned int _receivedSyncCounter;
     unsigned int _receivedFollowUpCounter;
     unsigned int _receivedAnnounceCounter;
@@ -45,8 +47,6 @@
     unsigned int _attemptedDelayRequestCounter;
     unsigned int _receivedDelayResponseCounter;
     NSString *_portIdentifier;
-    long long _portType;
-    long long _portRole;
 }
 
 @property(readonly, nonatomic) unsigned int receivedDelayResponseCounter; // @synthesize receivedDelayResponseCounter=_receivedDelayResponseCounter;
@@ -83,8 +83,8 @@
 @property(readonly, nonatomic) unsigned int receivedAnnounceCounter; // @synthesize receivedAnnounceCounter=_receivedAnnounceCounter;
 @property(readonly, nonatomic) unsigned int receivedFollowUpCounter; // @synthesize receivedFollowUpCounter=_receivedFollowUpCounter;
 @property(readonly, nonatomic) unsigned int receivedSyncCounter; // @synthesize receivedSyncCounter=_receivedSyncCounter;
-@property(readonly, nonatomic) long long portRole; // @synthesize portRole=_portRole;
-@property(readonly, nonatomic) long long portType; // @synthesize portType=_portType;
+@property(readonly, nonatomic) int portRole; // @synthesize portRole=_portRole;
+@property(readonly, nonatomic) int portType; // @synthesize portType=_portType;
 @property(readonly, copy, nonatomic) NSString *portIdentifier; // @synthesize portIdentifier=_portIdentifier;
 - (void)dealloc;
 - (id)initWithPort:(id)arg1;

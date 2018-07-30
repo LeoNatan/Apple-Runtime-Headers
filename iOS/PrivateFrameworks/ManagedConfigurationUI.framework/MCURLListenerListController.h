@@ -6,6 +6,7 @@
 
 #import "PSListController.h"
 
+__attribute__((visibility("hidden")))
 @interface MCURLListenerListController : PSListController
 {
 }

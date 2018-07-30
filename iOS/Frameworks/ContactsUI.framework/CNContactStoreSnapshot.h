@@ -28,10 +28,8 @@ __attribute__((visibility("hidden")))
     NSPointerArray *_summarizationFutures;
     NSMapTable *_identifiersToIndexPath;
     NSMutableArray *_batchContactIdentifiers;
-    struct CGRect _screenFrame;
 }
 
-@property(readonly, nonatomic) struct CGRect screenFrame; // @synthesize screenFrame=_screenFrame;
 @property(readonly, nonatomic) NSMutableArray *batchContactIdentifiers; // @synthesize batchContactIdentifiers=_batchContactIdentifiers;
 @property(readonly, nonatomic) NSMapTable *identifiersToIndexPath; // @synthesize identifiersToIndexPath=_identifiersToIndexPath;
 @property(readonly, nonatomic) NSPointerArray *summarizationFutures; // @synthesize summarizationFutures=_summarizationFutures;
@@ -53,7 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)objectIn_contactsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)countOf_contacts;
 @property(readonly, nonatomic) NSArray *contacts;
-- (id)initWithScreenFrame:(struct CGRect)arg1;
+- (id)init;
 
 @end
 

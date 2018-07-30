@@ -6,13 +6,16 @@
 
 #import <Safari/PreferencesModule.h>
 
-@class NSArray, NSButton, NSPopUpButton, NSTextField, NSView;
+@class NSArray, NSButton, NSPopUpButton, NSStackView, NSTextField, NSView;
 
 __attribute__((visibility("hidden")))
 @interface TabsPreferences : PreferencesModule
 {
     NSArray *_finePrintConstraints;
+    NSButton *_showIconsInTabsCheckbox;
+    BOOL _didAwakeFromNib;
     NSView *_mainContentView;
+    NSStackView *_checkBoxStackView;
     NSView *_tabCreationPolicyView;
     NSPopUpButton *_tabCreationPolicyPopUp;
     NSButton *_commandClickMakesTabsCheckbox;
@@ -43,17 +46,21 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSButton *commandClickMakesTabsCheckbox; // @synthesize commandClickMakesTabsCheckbox=_commandClickMakesTabsCheckbox;
 @property(nonatomic) __weak NSPopUpButton *tabCreationPolicyPopUp; // @synthesize tabCreationPolicyPopUp=_tabCreationPolicyPopUp;
 @property(nonatomic) __weak NSView *tabCreationPolicyView; // @synthesize tabCreationPolicyView=_tabCreationPolicyView;
+@property(nonatomic) __weak NSStackView *checkBoxStackView; // @synthesize checkBoxStackView=_checkBoxStackView;
 @property(nonatomic) __weak NSView *mainContentView; // @synthesize mainContentView=_mainContentView;
 - (void).cxx_destruct;
 - (id)helpAnchor;
 - (void)initializeFromDefaults;
 - (void)toggleCommand1Through9SwitchesTabs:(id)arg1;
 - (void)toggleSelectNewTabs:(id)arg1;
+- (void)toggleShowIconsInTabs:(id)arg1;
 - (void)toggleCommandClickMakesTabs:(id)arg1;
 - (void)takeTabCreationPolicyFrom:(id)arg1;
 - (void)updateViews;
+- (id)imageForPreferenceNamed:(id)arg1;
 - (void)_updateTabCreationPolicyPopUp;
 - (void)_updatePopUp:(id)arg1 toMatchPreferenceWithKey:(id)arg2;
+- (void)awakeFromNib;
 - (id)preferencesNibName;
 
 @end

@@ -6,14 +6,16 @@
 
 #import "NSObject.h"
 
-@class HDSQLiteDatabase, HDSQLiteQueryDescriptor;
+@class HDSQLiteDatabase, HDSQLiteQueryDescriptor, NSString;
 
 @interface HDSQLiteQuery : NSObject
 {
     HDSQLiteDatabase *_database;
     HDSQLiteQueryDescriptor *_descriptor;
+    NSString *_lastSQLStatement;
 }
 
+@property(readonly, copy) NSString *lastSQLStatement; // @synthesize lastSQLStatement=_lastSQLStatement;
 @property(readonly) HDSQLiteDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (_Bool)enumerateProperties:(id)arg1 error:(id *)arg2 enumerationHandler:(CDUnknownBlockType)arg3;

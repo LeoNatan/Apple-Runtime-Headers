@@ -8,6 +8,7 @@
 
 @class NSAutounbinder, NSView;
 
+__attribute__((visibility("hidden")))
 @interface NSTableCellViewAux : NSObject
 {
     NSAutounbinder *autounbinder;

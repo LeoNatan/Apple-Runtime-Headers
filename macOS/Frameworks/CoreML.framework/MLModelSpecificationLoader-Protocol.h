@@ -4,7 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@protocol MLModelSpecificationLoader
-+ (id <MLModeling>)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
+#import "NSObject.h"
+
+@class MLModelConfiguration;
+
+@protocol MLModelSpecificationLoader <NSObject>
++ (id <MLModeling>)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(MLModelConfiguration *)arg2 error:(id *)arg3;
 @end
 

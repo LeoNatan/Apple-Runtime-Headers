@@ -10,16 +10,13 @@
 
 @interface HDNanoSyncSession : HDSyncSession
 {
-    _Bool _pullRequest;
-    _Bool _requestedByRemote;
+    unsigned long long _options;
     CDUnknownBlockType _completion;
     unsigned long long _messageCount;
 }
 
 @property(readonly, nonatomic) unsigned long long messageCount; // @synthesize messageCount=_messageCount;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-@property(readonly, nonatomic, getter=isRequestedByRemote) _Bool requestedByRemote; // @synthesize requestedByRemote=_requestedByRemote;
-@property(readonly, nonatomic, getter=isPullRequest) _Bool pullRequest; // @synthesize pullRequest=_pullRequest;
 - (void).cxx_destruct;
 - (void)invokeCompletionWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)incrementMessageCount;
@@ -28,7 +25,10 @@
 - (id)predicateForSyncEntityClass:(Class)arg1;
 - (id)newChangeWithSyncEntityClass:(Class)arg1;
 @property(readonly, nonatomic) HDNanoSyncStore *nanoSyncStore;
-- (id)initWithSyncStore:(id)arg1 attemptWhileLocking:(_Bool)arg2 pullRequest:(_Bool)arg3 requestedByRemote:(_Bool)arg4 reason:(id)arg5 delegate:(id)arg6 completion:(CDUnknownBlockType)arg7;
+@property(readonly, nonatomic, getter=isLastChance) _Bool lastChance;
+@property(readonly, nonatomic, getter=isRequestedByRemote) _Bool requestedByRemote;
+@property(readonly, nonatomic, getter=isPullRequest) _Bool pullRequest;
+- (id)initWithSyncStore:(id)arg1 options:(unsigned long long)arg2 reason:(id)arg3 delegate:(id)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end
 

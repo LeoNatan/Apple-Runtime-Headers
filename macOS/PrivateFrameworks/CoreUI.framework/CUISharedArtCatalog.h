@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 - (id)_sharedArtNameFromImageID:(long long)arg1;
 - (BOOL)imageExistsWithName:(id)arg1 scaleFactor:(double)arg2;
 - (BOOL)imageExistsWithName:(id)arg1;
-- (id)imageWithName:(id)arg1 scaleFactor:(double)arg2 displayGamut:(long long)arg3 layoutDirection:(long long)arg4;
-- (id)imageWithName:(id)arg1 scaleFactor:(double)arg2;
+- (id)imageWithName:(id)arg1 scaleFactor:(double)arg2 displayGamut:(long long)arg3 layoutDirection:(long long)arg4 appearanceNames:(id)arg5;
+- (id)imageWithName:(id)arg1 scaleFactor:(double)arg2 appearanceNames:(id)arg3;
 - (id)imageWithID:(long long)arg1 scaleFactor:(double)arg2;
 - (id)initWithName:(id)arg1 fromBundle:(id)arg2 error:(id *)arg3;
 

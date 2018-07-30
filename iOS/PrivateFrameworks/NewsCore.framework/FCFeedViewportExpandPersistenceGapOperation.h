@@ -6,13 +6,14 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCloudContext, FCDeflatedFeedGroup, FCFeedGroup, FCFeedViewport, FCFeedViewportBookmark, FCFeedViewportPersistenceGap;
+@class FCCloudContext, FCDeflatedFeedGroup, FCFeedDescriptor, FCFeedGroup, FCFeedViewport, FCFeedViewportBookmark, FCFeedViewportPersistenceGap;
 
 @interface FCFeedViewportExpandPersistenceGapOperation : FCOperation
 {
     _Bool _cachedOnly;
     id <FCCoreConfiguration> _configuration;
     FCCloudContext *_context;
+    FCFeedDescriptor *_feedDescriptor;
     FCFeedViewport *_viewport;
     FCFeedViewportPersistenceGap *_gap;
     FCFeedViewportBookmark *_bookmark;
@@ -34,6 +35,7 @@
 @property(copy, nonatomic) FCFeedViewportBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(copy, nonatomic) FCFeedViewportPersistenceGap *gap; // @synthesize gap=_gap;
 @property(retain, nonatomic) FCFeedViewport *viewport; // @synthesize viewport=_viewport;
+@property(retain, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;

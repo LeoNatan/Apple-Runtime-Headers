@@ -6,8 +6,12 @@
 
 #import "NSObject.h"
 
+@class WFLocation;
+
 @protocol NWKLocationServable <NSObject>
 - (void)startObservingWithTrackedLocationSensitivity:(_Bool)arg1 andObserveInForegroundOnly:(_Bool)arg2;
+- (void)removeLocationFromList:(WFLocation *)arg1;
 - (void)refreshLocalLocation;
+- (void)addLocationToList:(WFLocation *)arg1;
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface ICDeviceBrowserPrivateData : NSObject
 {
     id _delegate;
@@ -18,7 +19,6 @@
 @property(retain) NSMutableArray *internalDevices; // @synthesize internalDevices=_internalDevices;
 @property(getter=isBrowsing) _Bool browsing; // @synthesize browsing=_browsing;
 @property id delegate; // @synthesize delegate=_delegate;
-- (void)finalize;
 - (void)dealloc;
 
 @end

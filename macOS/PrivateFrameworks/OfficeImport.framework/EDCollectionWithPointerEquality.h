@@ -6,7 +6,6 @@
 
 #import <OfficeImport/EDCollection.h>
 
-__attribute__((visibility("hidden")))
 @interface EDCollectionWithPointerEquality : EDCollection
 {
 }

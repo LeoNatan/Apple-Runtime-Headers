@@ -7,11 +7,10 @@
 #import "NSObject.h"
 
 #import "NSSecureCoding.h"
-#import "PQLResultSetInitializer.h"
 
 @class CPLRecordChange, NSString;
 
-@interface CPLRecordStatus : NSObject <PQLResultSetInitializer, NSSecureCoding>
+@interface CPLRecordStatus : NSObject <NSSecureCoding>
 {
     union {
         struct {
@@ -34,7 +33,7 @@
 @property(readonly, nonatomic) unsigned long long generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) CPLRecordChange *record; // @synthesize record=_record;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
+- (id)description;
 @property(readonly, nonatomic) NSString *statusDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -47,12 +46,7 @@
 @property(nonatomic, getter=isResetting) BOOL resetting;
 @property(nonatomic, getter=isQuarantined) BOOL quarantined;
 @property(nonatomic, getter=isUnknown) BOOL unknown;
-- (id)initFromPQLResultSet:(id)arg1 error:(id *)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initFromPQLResultSet:(id)arg1 center:(id)arg2 error:(id *)arg3;
 
 @end
 

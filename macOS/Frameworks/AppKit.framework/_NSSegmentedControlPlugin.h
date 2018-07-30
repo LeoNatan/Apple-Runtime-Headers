@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSSelectionBinderPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSSegmentedControlPlugin : _NSSelectionBinderPlugin
 {
 }

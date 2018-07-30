@@ -14,8 +14,8 @@
 }
 
 @property(retain, nonatomic) TIMecabraWrapper *mecabraWrapper; // @synthesize mecabraWrapper=_mecabraWrapper;
+- (void).cxx_destruct;
 - (void)perform;
-- (void)dealloc;
 - (id)initWithMecabraWrapper:(id)arg1;
 
 @end

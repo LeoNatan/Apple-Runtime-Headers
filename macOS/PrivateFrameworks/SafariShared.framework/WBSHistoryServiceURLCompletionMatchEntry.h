@@ -10,7 +10,7 @@
 
 @interface WBSHistoryServiceURLCompletionMatchEntry : NSObject
 {
-    unique_ptr_c0485e0a _streamData;
+    unique_ptr_1250213a _streamData;
     NSString *_url;
     NSString *_title;
 }
@@ -23,7 +23,7 @@
 @property(readonly, nonatomic) long long visitID;
 @property(readonly, nonatomic) long long itemID;
 @property(readonly, nonatomic) struct _HistoryStreamedMatchEntry *streamData;
-- (id)initWithStreamData:(unique_ptr_c0485e0a *)arg1;
+- (id)initWithStreamData:(unique_ptr_1250213a *)arg1;
 - (id)initWithItemID:(long long)arg1 url:(id)arg2 visitID:(long long)arg3 title:(id)arg4 topSitesScore:(float)arg5;
 - (id)init;
 

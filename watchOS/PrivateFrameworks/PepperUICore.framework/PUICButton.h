@@ -14,6 +14,8 @@
     float _backgroundCornerRadius;
 }
 
++ (float)pillCornerRadius;
++ (float)defaultCornerRadius;
 + (id)buttonWithType:(int)arg1;
 @property(nonatomic) float backgroundCornerRadius; // @synthesize backgroundCornerRadius=_backgroundCornerRadius;
 - (void).cxx_destruct;

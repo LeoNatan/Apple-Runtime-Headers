@@ -10,6 +10,7 @@
 - (_Bool)avkit_isInAWindowAndVisible;
 - (void)avkit_hitTestControlForPoint:(struct CGPoint)arg1 withEvent:(id)arg2 bestSoFar:(inout id *)arg3 shortestDistanceSoFar:(inout double *)arg4;
 - (id)avkit_hitTestControlForPoint:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (_Bool)avkit_isDescendantOfViewPassingTest:(CDUnknownBlockType)arg1;
 - (_Bool)avkit_isAncestorOfViewPassingTest:(CDUnknownBlockType)arg1;
 - (id)avkit_ancestorViewPassingTest:(CDUnknownBlockType)arg1;
 @end

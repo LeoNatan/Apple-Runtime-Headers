@@ -18,6 +18,8 @@
     _Bool _usesCustomBackground;
     _Bool _usesDynamicType;
     _Bool _usesCustomHighlightAlpha;
+    float _preferredImageViewMaxWidth;
+    _Bool _requestingLayout;
     _Bool _radioSectionCell;
     UIView *_swipingContentWrapperView;
     PUICTableViewCellActionBar *_actionBar;
@@ -63,6 +65,9 @@
 - (void)setSectionLocation:(int)arg1 animated:(_Bool)arg2;
 - (void)_removeSubviewsForReuse;
 - (void)prepareForReuse;
+- (_Bool)_shouldMaskToBoundsWhileAnimating;
+- (void)setFrame:(struct CGRect)arg1;
+- (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)_systemTextSizeChanged;
 @property(nonatomic) _Bool usesCustomHighlightAlpha;
 @property(nonatomic) _Bool usesDynamicType;
@@ -86,8 +91,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithCellIdentifier:(id)arg1;
+@property(nonatomic) float preferredImageViewMaxWidth;
 - (_Bool)_shouldUseOpaqueLabels;
 - (struct CGRect)actionBarFrame;
+@property(nonatomic) float cellSeparatorHeight;
 
 @end
 

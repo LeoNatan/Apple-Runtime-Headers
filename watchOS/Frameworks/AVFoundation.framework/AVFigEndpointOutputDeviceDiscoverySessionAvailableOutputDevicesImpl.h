@@ -10,6 +10,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigEndpointOutputDeviceDiscoverySessionAvailableOutputDevicesImpl : NSObject <AVOutputDeviceDiscoverySessionAvailableOutputDevicesImpl>
 {
     NSArray *_figEndpoints;

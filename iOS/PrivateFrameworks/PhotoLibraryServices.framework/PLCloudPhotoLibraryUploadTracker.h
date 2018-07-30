@@ -29,13 +29,13 @@
 - (void)resetIfNeeded;
 - (void)setupFromCPLManager:(id)arg1;
 - (void)setupFromLibrary:(id)arg1;
-- (_Bool)trackingIdentifier:(id)arg1;
-- (void)addSizeForUnpushedOriginals:(unsigned long long)arg1 forIdentifier:(id)arg2;
-- (void)updateForIdentifier:(id)arg1 progress:(float)arg2 fileSize:(unsigned long long)arg3 type:(int)arg4;
-- (void)uploadFinishedForIdentifier:(id)arg1 fileSize:(unsigned long long)arg2 type:(int)arg3 withError:(_Bool)arg4;
-- (void)stopTrackingResource:(id)arg1 fileSize:(unsigned long long)arg2 type:(int)arg3;
-- (void)stopTracking:(id)arg1;
-- (id)_constructKeyForIdentifier:(id)arg1 type:(int)arg2;
+- (_Bool)trackingScopedIdentifier:(id)arg1;
+- (void)addSizeForUnpushedOriginals:(unsigned long long)arg1 forScopedIdentifier:(id)arg2;
+- (void)updateForScopedIdentifier:(id)arg1 progress:(float)arg2 fileSize:(unsigned long long)arg3 type:(int)arg4;
+- (void)uploadFinishedForScopedIdentifier:(id)arg1 fileSize:(unsigned long long)arg2 type:(int)arg3 withError:(_Bool)arg4;
+- (void)stopTrackingResourceWithScopedIdentifier:(id)arg1 fileSize:(unsigned long long)arg2 type:(int)arg3;
+- (void)stopTrackingScopedIdentifier:(id)arg1;
+- (id)_constructKeyForScopedIdentifier:(id)arg1 type:(int)arg2;
 - (void)dealloc;
 - (id)init;
 

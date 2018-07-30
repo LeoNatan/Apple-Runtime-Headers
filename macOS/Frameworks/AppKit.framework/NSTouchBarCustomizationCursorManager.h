@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     id <NSTouchBarCustomizationCursorManagerDelegate> _delegate;
     long long _trackCount;
     int _displayID;
-    double _lastMouseUpTimestamp;
 }
 
 + (void)_showCursor;

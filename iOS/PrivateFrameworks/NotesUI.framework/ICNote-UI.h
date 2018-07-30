@@ -31,6 +31,7 @@
 - (void)saveAfterDelay;
 - (void)save;
 - (void)fetchThumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 cache:(id)arg3 cacheKey:(id)arg4 processingBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (struct UIImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 imageScaling:(unsigned long long *)arg3 showAsFileIcon:(_Bool *)arg4 isMovie:(_Bool *)arg5 movieDuration:(CDStruct_1b6d18a9 *)arg6 attachment:(id *)arg7;
 - (struct UIImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 imageScaling:(unsigned long long *)arg3 showAsFileIcon:(_Bool *)arg4 isMovie:(_Bool *)arg5 movieDuration:(CDStruct_1b6d18a9 *)arg6;
 - (id)attachmentFromRemoteFileWrapper:(id)arg1;
 - (id)attachmentFromLegacyAttachmentFileWrapper:(id)arg1;

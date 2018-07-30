@@ -14,7 +14,12 @@
 
 @interface SFCard : NSObject <SFCard, NSSecureCoding, NSCopying>
 {
-    CDStruct_db075487 _has;
+    struct {
+        unsigned int type:1;
+        unsigned int source:1;
+        unsigned int queryId:1;
+        unsigned int flexibleSectionOrder:1;
+    } _has;
     _Bool _flexibleSectionOrder;
     int _type;
     int _source;

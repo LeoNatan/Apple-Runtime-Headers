@@ -10,6 +10,7 @@
 
 @class NSObject<OS_nw_interface>, NSString, NWConcrete_nw_endpoint_handler;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_endpoint_fallback : NSObject <OS_nw_endpoint_fallback>
 {
     unsigned long long fallback_usage_cap;
@@ -27,10 +28,14 @@
     unsigned int no_fallback_timer:1;
     unsigned int fallback_based_on_interface_type:1;
     unsigned int started_fallback:1;
+    unsigned int primary_child_in_progress:1;
+    unsigned int fallback_child_in_progress:1;
+    unsigned int primary_child_indefinite_failed:1;
+    unsigned int fallback_child_indefinite_failed:1;
 }
 
 - (void).cxx_destruct;
-- (void)applyWithHandler:(id)arg1 toChildren:(CDUnknownBlockType)arg2;
+- (_Bool)applyWithHandler:(id)arg1 toChildren:(CDUnknownBlockType)arg2;
 - (void)updatePathWithHandler:(id)arg1;
 - (void)cancelWithHandler:(id)arg1 forced:(BOOL)arg2;
 - (void)startWithHandler:(id)arg1;

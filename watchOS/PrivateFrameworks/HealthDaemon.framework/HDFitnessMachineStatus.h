@@ -11,6 +11,7 @@
     unsigned int _machineState;
 }
 
++ (id)unitTest_fakeStatusUpdateForState:(unsigned int)arg1;
 + (id)_buildWithBinaryValue:(id)arg1 error:(id *)arg2;
 + (id)uuid;
 @property(nonatomic) unsigned int machineState; // @synthesize machineState=_machineState;

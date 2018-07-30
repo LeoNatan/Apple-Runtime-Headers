@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)didShowAutoFillQuickTypeForItem:(const struct CompletionListItem *)arg1;
+- (BOOL)didShowAutoFillQuickTypeForItem:(const struct CompletionListItem *)arg1;
 - (id)textForCompletionListItem:(const struct CompletionListItem *)arg1;
 - (id)imageForCompletionListItem:(const struct CompletionListItem *)arg1;
 

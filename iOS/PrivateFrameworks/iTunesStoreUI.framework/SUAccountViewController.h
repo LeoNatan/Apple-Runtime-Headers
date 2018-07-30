@@ -6,16 +6,17 @@
 
 #import <iTunesStoreUI/SUStorePageViewController.h>
 
-@class NSString, NSURL, SUMescalSession;
+@class NSDictionary, NSString, NSURL, SUMescalSession;
 
 @interface SUAccountViewController : SUStorePageViewController
 {
     _Bool _failed;
     long long _style;
+    NSURL *_accountURL;
     SUMescalSession *_mescalSession;
     long long _mescalState;
     NSString *_primingSignature;
-    NSURL *_accountURL;
+    NSDictionary *_tidHeaders;
 }
 
 + (id)_latestAccountViewController;
@@ -25,6 +26,7 @@
 - (_Bool)_shouldUseWebViewFastPath;
 - (void)_mescalDidOpenWithSession:(id)arg1 error:(id)arg2;
 - (void)_forceOrientationBackToSupportedOrientation;
+- (void)_didEnterBackground:(id)arg1;
 - (id)_bagKeyForStyle:(long long)arg1;
 - (id)_authenticationQueryParametersForStyle:(long long)arg1;
 - (void)_closeMescalSession;

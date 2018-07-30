@@ -13,7 +13,7 @@
 - (void)vehicleStatusUpdate:(NSDictionary *)arg1 forUUID:(NSString *)arg2;
 - (void)destinationSharingStatus:(BOOL)arg1 forDestinationUUID:(NSString *)arg2 supportedParams:(NSArray *)arg3 forUUID:(NSString *)arg4;
 - (void)stopDestinationSharingForUUID:(NSString *)arg1;
-- (void)startDestinationSharingForUUID:(NSString *)arg1;
+- (void)startDestinationSharingForUUID:(NSString *)arg1 options:(unsigned long long)arg2;
 - (void)enqueueLocationNMEASentence:(NSString *)arg1 forUUID:(NSString *)arg2;
 - (void)accessoryCloseExternalAccessorySession:(NSString *)arg1;
 - (void)handleIncomingExternalAccessoryData:(NSData *)arg1 forEASessionIdentifier:(NSString *)arg2 withReply:(void (^)(BOOL))arg3;

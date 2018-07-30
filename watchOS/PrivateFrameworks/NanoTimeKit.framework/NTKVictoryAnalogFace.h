@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)_initialDefaultComplicationForSlot:(id)arg1;
++ (id)_initialDefaultComplicationForSlot:(id)arg1 forDevice:(id)arg2;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
 - (id)_optionAtIndex:(unsigned int)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (unsigned int)_numberOfOptionsForCustomEditMode:(int)arg1 slot:(id)arg2;

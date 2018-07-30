@@ -8,7 +8,6 @@
 
 @class NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OITSUProgress : NSObject
 {
     NSMutableSet *mProgressObservers;

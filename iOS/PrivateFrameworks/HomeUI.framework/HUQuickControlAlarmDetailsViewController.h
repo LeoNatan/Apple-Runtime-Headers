@@ -4,21 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <HomeUI/HUQuickControlSingleControlViewController.h>
+#import <HomeUI/HUQuickControlViewController.h>
 
 #import "HUQuickControlDetailsViewControllerVendor.h"
 
 @class NSString;
 
-@interface HUQuickControlAlarmDetailsViewController : HUQuickControlSingleControlViewController <HUQuickControlDetailsViewControllerVendor>
+@interface HUQuickControlAlarmDetailsViewController : HUQuickControlViewController <HUQuickControlDetailsViewControllerVendor>
 {
 }
 
-+ (Class)controlItemClass;
-- (_Bool)shouldShowControlWhenUnreachable;
++ (id)controlItemPredicate;
+- (_Bool)shouldShowContentForReachabilityState:(_Bool)arg1;
 - (id)secondaryQuickControlPresentationStyle;
-- (id)createInteractionCoordinator;
 - (id)createDetailsViewController;
+- (id)controlItem;
+- (id)initWithControlItems:(id)arg1 home:(id)arg2 itemUpdater:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

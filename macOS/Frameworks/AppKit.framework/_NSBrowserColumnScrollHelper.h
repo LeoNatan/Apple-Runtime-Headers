@@ -8,6 +8,7 @@
 
 @class _NSBrowserColumnView, _NSBrowserScrollView;
 
+__attribute__((visibility("hidden")))
 @interface _NSBrowserColumnScrollHelper : NSObject
 {
     _NSBrowserScrollView *_scrollView;

@@ -12,36 +12,25 @@
 
 @interface CLSHandoutAttachment : CLSObject <CLSRelationable>
 {
+    int _shareType;
+    int _permissionType;
+    NSURL *_URL;
+    NSArray *_contextPath;
+    NSString *_title;
+    NSString *_bundleIdentifier;
+    NSString *_contentStoreIdentifier;
+    int _completionStatus;
+    long long _displayOrder;
+    long long _contextType;
+    NSDate *_dateLastCompleted;
     _Bool _locked;
     int _type;
-    int __completionStatus;
-    int __shareType;
-    int __permissionType;
-    NSDate *__dateLastCompleted;
     NSString *_storeIdentifier;
-    NSString *__title;
-    NSURL *__URL;
-    NSArray *__contextPath;
-    NSString *__contentStoreIdentifier;
-    long long __contextType;
-    long long __displayOrder;
-    NSString *__bundleIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)relations;
-@property(copy, nonatomic) NSString *_bundleIdentifier; // @synthesize _bundleIdentifier=__bundleIdentifier;
-@property(nonatomic) long long _displayOrder; // @synthesize _displayOrder=__displayOrder;
-@property(nonatomic) int _permissionType; // @synthesize _permissionType=__permissionType;
-@property(nonatomic) int _shareType; // @synthesize _shareType=__shareType;
-@property(nonatomic) long long _contextType; // @synthesize _contextType=__contextType;
-@property(retain, nonatomic) NSString *_contentStoreIdentifier; // @synthesize _contentStoreIdentifier=__contentStoreIdentifier;
-@property(nonatomic) int _completionStatus; // @synthesize _completionStatus=__completionStatus;
-@property(copy, nonatomic) NSArray *_contextPath; // @synthesize _contextPath=__contextPath;
-@property(copy, nonatomic) NSURL *_URL; // @synthesize _URL=__URL;
-@property(copy, nonatomic) NSString *_title; // @synthesize _title=__title;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
-@property(retain, nonatomic) NSDate *_dateLastCompleted; // @synthesize _dateLastCompleted=__dateLastCompleted;
 @property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
@@ -51,7 +40,7 @@
 @property(nonatomic) int permissionType;
 @property(nonatomic) int shareType;
 @property(nonatomic) long long contextType;
-@property(retain, nonatomic) NSString *contentStoreIdentifier;
+@property(copy, nonatomic) NSString *contentStoreIdentifier;
 @property(nonatomic) int completionStatus;
 @property(retain, nonatomic) NSDate *dateLastCompleted;
 @property(copy, nonatomic) NSArray *contextPath;

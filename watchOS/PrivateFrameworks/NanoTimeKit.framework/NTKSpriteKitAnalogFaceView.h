@@ -17,7 +17,7 @@
     float _maxZoomingIconDiameter;
 }
 
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 @property(nonatomic) float maxZoomingIconDiameter; // @synthesize maxZoomingIconDiameter=_maxZoomingIconDiameter;
 @property(nonatomic) __weak UIView *handsView; // @synthesize handsView=_handsView;
 @property(nonatomic) __weak UIView *circleView; // @synthesize circleView=_circleView;
@@ -43,6 +43,7 @@
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
 - (void)_applyFrozen;
+- (struct CGSize)_sceneSize;
 - (_Bool)_needsForegroundContainerView;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
 - (void)setEditView:(id)arg1;

@@ -8,7 +8,6 @@
 
 @class CNInstantMessageAddress;
 
-__attribute__((visibility("hidden")))
 @interface AKInstantMessageAddressValueTransformer : NSValueTransformer
 {
     CNInstantMessageAddress *_lastInstantMessageAddress;

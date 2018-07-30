@@ -10,7 +10,7 @@
 #import "MPRTCReportingItemSessionContaining.h"
 #import "MPShuffleControllerDataSource.h"
 
-@class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MPMutableBidirectionalDictionary, MPShuffleController, NSArray, NSDictionary, NSString;
+@class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MPShuffleController, MSVMutableBidirectionalDictionary, NSArray, NSDictionary, NSString;
 
 @interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate, MPRTCReportingItemSessionContaining, MPShuffleControllerDataSource>
 {
@@ -22,7 +22,7 @@
     NSArray *_queryItems;
     MPShuffleController *_shuffleController;
     vector_bbba3654 _itemPIDs;
-    MPMutableBidirectionalDictionary *_indexToIdentifierCache;
+    MSVMutableBidirectionalDictionary *_indexToIdentifierCache;
     unsigned long long _currentInvalidationRevision;
     NSDictionary *_startTimeModifications;
     NSDictionary *_endTimeModifications;
@@ -75,10 +75,10 @@
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned long long)arg1;
-- (_Bool)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (void)_commonInit;
 

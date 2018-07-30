@@ -6,19 +6,19 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, UIImage;
+@class BSAtomicSignal, NSThread, UIImage;
 
 @interface BSUIMappedImageCacheFuture : NSObject
 {
-    UIImage *_cacheImage;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    CDUnknownBlockType _waitBlock;
-    NSObject<OS_dispatch_semaphore> *_waitableSemaphore;
-    int _submitted;
-    int _waited;
-    int _workCompletionWasCalled;
+    struct os_unfair_lock_s _lock;
+    BSAtomicSignal *_submitted;
+    NSThread *_submissionThread;
+    CDUnknownBlockType _lock_workBlock;
+    _Bool _lock_workCompletionWasCalled;
+    UIImage *_postlock_cachedImage;
 }
 
+- (void).cxx_destruct;
 - (id)cacheImage;
 - (void)submitWorkBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;

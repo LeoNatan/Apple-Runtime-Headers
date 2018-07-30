@@ -17,24 +17,24 @@
     NSString *_identifier;
     NSString *_title;
     unsigned long long _activationMode;
-    _Bool _requiresAuthentication;
     NSURL *_launchURL;
     NSString *_launchBundleID;
     unsigned long long _behavior;
     NSDictionary *_behaviorParameters;
     id <NCNotificationActionRunner> _actionRunner;
+    _Bool _requiresAuthentication;
     _Bool _destructiveAction;
     _Bool _shouldDismissNotification;
 }
 
 @property(readonly, nonatomic) _Bool shouldDismissNotification; // @synthesize shouldDismissNotification=_shouldDismissNotification;
 @property(readonly, nonatomic, getter=isDestructiveAction) _Bool destructiveAction; // @synthesize destructiveAction=_destructiveAction;
+@property(readonly, nonatomic) _Bool requiresAuthentication; // @synthesize requiresAuthentication=_requiresAuthentication;
 @property(readonly, nonatomic) id <NCNotificationActionRunner> actionRunner; // @synthesize actionRunner=_actionRunner;
 @property(readonly, copy, nonatomic) NSDictionary *behaviorParameters; // @synthesize behaviorParameters=_behaviorParameters;
 @property(readonly, nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 @property(readonly, copy, nonatomic) NSString *launchBundleID; // @synthesize launchBundleID=_launchBundleID;
 @property(readonly, copy, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
-@property(readonly, nonatomic) _Bool requiresAuthentication; // @synthesize requiresAuthentication=_requiresAuthentication;
 @property(readonly, nonatomic) unsigned long long activationMode; // @synthesize activationMode=_activationMode;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

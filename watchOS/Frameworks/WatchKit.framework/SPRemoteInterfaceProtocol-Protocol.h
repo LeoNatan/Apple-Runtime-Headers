@@ -18,12 +18,10 @@
 - (void)applicationWillEnterForeground:(NSString *)arg1 withVisibleViewControllerID:(NSString *)arg2;
 - (void)receivePlist:(id)arg1 fromIdentifier:(NSString *)arg2;
 - (void)applicationHandleWatchTaskKeys:(NSDictionary *)arg1 reasonForSnapshot:(unsigned int)arg2 visibleVCID:(NSString *)arg3 barTaskUUID:(NSUUID *)arg4 clientIdentifier:(NSString *)arg5;
-- (void)applicationIsStillActive;
 - (void)applicationWillResignActive:(NSString *)arg1;
 - (void)applicationDidBecomeActive:(NSString *)arg1;
 - (void)applicationDidFinishConnecting:(NSString *)arg1;
 - (void)applicationDidTerminate:(NSString *)arg1;
-- (void)receiveProtoData:(NSData *)arg1 fromIdentifier:(NSString *)arg2;
 - (void)receiveData:(NSData *)arg1 fromIdentifier:(NSString *)arg2;
 
 @optional

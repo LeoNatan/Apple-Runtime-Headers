@@ -6,31 +6,12 @@
 
 #import <OfficeImport/OITSUFormatObject.h>
 
-#import "TSUMutableDateTimeFormatInspectorPropertyVendor.h"
-#import "TSUMutableDurationFormatInspectorPropertyVendor.h"
-
-@class NSNumber, NSSet, NSString;
-
-__attribute__((visibility("hidden")))
-@interface OITSUMutableFormatObject : OITSUFormatObject <TSUMutableDurationFormatInspectorPropertyVendor, TSUMutableDateTimeFormatInspectorPropertyVendor>
+@interface OITSUMutableFormatObject : OITSUFormatObject
 {
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) CDStruct_730f14de formatStruct; // @dynamic formatStruct;
-@property(copy, nonatomic) NSNumber *durationStyle;
-@property(copy, nonatomic) NSNumber *durationUnitLargest;
-@property(copy, nonatomic) NSNumber *durationUnitSmallest;
-@property(copy, nonatomic) NSNumber *durationUnitsAutomatic;
-@property(copy, nonatomic) NSString *timeFormat;
-@property(copy, nonatomic) NSString *dateFormat;
-- (void)p_setDateFormat:(id)arg1 timeFormat:(id)arg2;
-- (void)p_setDateTimeFormat:(id)arg1;
-
-// Remaining properties
-@property(readonly, nonatomic) NSSet *selectedDateFormats;
-@property(readonly, nonatomic) NSSet *selectedDurationStyles;
-@property(readonly, nonatomic) NSSet *selectedTimeFormats;
 
 @end
 

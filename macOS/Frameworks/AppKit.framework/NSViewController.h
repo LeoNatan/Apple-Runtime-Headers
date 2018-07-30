@@ -6,7 +6,7 @@
 
 #import <AppKit/NSResponder.h>
 
-#import "NSCoding.h"
+#import "NSEditor.h"
 #import "NSExtensionRequestHandling.h"
 #import "NSNibFinishedLoadingDependent.h"
 #import "NSSeguePerforming.h"
@@ -14,7 +14,7 @@
 
 @class NSArray, NSBundle, NSExtensionContext, NSPointerArray, NSString, NSView;
 
-@interface NSViewController : NSResponder <NSExtensionRequestHandling, NSNibFinishedLoadingDependent, NSCoding, NSSeguePerforming, NSUserInterfaceItemIdentification>
+@interface NSViewController : NSResponder <NSExtensionRequestHandling, NSNibFinishedLoadingDependent, NSEditor, NSSeguePerforming, NSUserInterfaceItemIdentification>
 {
     NSString *_nibName;
     NSBundle *_nibBundle;

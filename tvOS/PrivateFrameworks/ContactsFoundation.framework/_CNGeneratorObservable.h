@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)updateState;
 - (void)sendCurrentStateToObserver:(id)arg1;
+- (_Bool)isCanceled;
 - (_Bool)isFinished;
 - (void)scheduleNextResultForObserver:(id)arg1;
 - (void)sendResultsToObserver:(id)arg1;

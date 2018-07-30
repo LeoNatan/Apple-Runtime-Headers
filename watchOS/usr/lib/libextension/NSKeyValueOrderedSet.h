@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_proxyShare;
-+ (CDStruct_e8a1eea0 *)_proxyNonGCPoolPointer;
 - (id)objectsAtIndexes:(id)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfObject:(id)arg1;

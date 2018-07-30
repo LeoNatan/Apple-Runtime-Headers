@@ -55,6 +55,7 @@
 @property(copy, nonatomic) BBSectionIcon *sectionIcon; // @synthesize sectionIcon=_sectionIcon;
 @property(copy, nonatomic) NSString *sectionDisplayName; // @synthesize sectionDisplayName=_sectionDisplayName;
 - (id)sortDescriptors;
+- (id)parentSectionIdentifier;
 - (id)defaultSubsectionInfos;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
 - (id)primaryAttachmentDataForRecordID:(id)arg1;

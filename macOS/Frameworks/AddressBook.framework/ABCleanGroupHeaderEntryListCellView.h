@@ -10,7 +10,6 @@
 
 @class NSButton, NSStackView, NSString, NSTextField, NSView;
 
-__attribute__((visibility("hidden")))
 @interface ABCleanGroupHeaderEntryListCellView : NSTableCellView <ABMainWindowGroupListCellView>
 {
     NSStackView *_stackView;

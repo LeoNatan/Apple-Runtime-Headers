@@ -6,41 +6,40 @@
 
 #import "NSObject.h"
 
-#import "IMKCandidateControllerDelegate.h"
 #import "IMKCandidateMenu.h"
-#import "IMKCandidateSelectionViewDelegate.h"
 
-@class IMKCandidateController, IMKCandidateList, NSString;
+@class IMKCandidate, IMKCandidateList, IMKCandidates, NSString;
 
-@interface IMKCandidateControllerBasedCandidateMenu : NSObject <IMKCandidateMenu, IMKCandidateControllerDelegate, IMKCandidateSelectionViewDelegate>
+@interface IMKCandidateControllerBasedCandidateMenu : NSObject <IMKCandidateMenu>
 {
     id <IMKCandidateMenuDelegate> _delegate;
-    IMKCandidateController *_candidateController;
+    IMKCandidates *_candidateController;
     IMKCandidateList *_candidateList;
     id <IMKTextInput> _textInput;
 }
 
 @property(retain, nonatomic) id <IMKTextInput> textInput; // @synthesize textInput=_textInput;
 @property(retain, nonatomic) IMKCandidateList *candidateList; // @synthesize candidateList=_candidateList;
-@property(readonly, nonatomic) IMKCandidateController *candidateController; // @synthesize candidateController=_candidateController;
+@property(readonly, nonatomic) IMKCandidates *candidateController; // @synthesize candidateController=_candidateController;
 @property(nonatomic) __weak id <IMKCandidateMenuDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)didSelectSortingMode:(id)arg1;
-- (id)inlineText;
-- (void)handleCandidateSelected:(id)arg1 candidateController:(id)arg2;
-- (void)handleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
-- (id)candidateDataForDisplayMethod:(id)arg1 candidateController:(id)arg2;
-- (id)textClient;
-- (long long)windowType;
-- (id)displayMethod;
-- (id)sortingMethods;
-- (id)candidatesForSortingMethod:(id)arg1;
+- (id)selectedCandidateForProposedCandidate:(id)arg1 candidateController:(id)arg2;
+- (unsigned long long)firstVisibleLineForCandidateController:(id)arg1;
+- (void)didFinishInteracting:(id)arg1;
+- (void)didHideCandidates:(id)arg1;
+- (void)didUpdateCandidates:(id)arg1;
+- (void)didShowCandidates:(id)arg1;
+- (void)didSelectSortingMode:(id)arg1 candidateController:(id)arg2;
+- (void)candidateSelected:(id)arg1 candidateController:(id)arg2;
+- (void)candidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
 - (BOOL)selectCandidateNumbered:(unsigned long long)arg1;
 - (void)selectFocusedCandidate;
 - (void)moveFocusDown;
 - (void)moveFocusUp;
 - (void)moveFocusRight;
 - (void)moveFocusLeft;
+@property(retain, nonatomic) IMKCandidate *focusedCandidate;
+@property(readonly, nonatomic) IMKCandidateList *visibleCandidates;
 - (void)hide;
 - (void)showCandidates:(id)arg1;
 @property(readonly, nonatomic) BOOL isShown;

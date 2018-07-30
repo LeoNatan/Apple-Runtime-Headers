@@ -25,6 +25,8 @@
 @property(readonly, nonatomic) unsigned long long numChannels; // @synthesize numChannels=_numChannels;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+- (void)splitAudioChunkSuchThatNumSamplesReceivedSoFar:(unsigned long long)arg1 reachesACountOf:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)skipSamplesAtStartSuchThatNumSamplesReceivedSoFar:(unsigned long long)arg1 reachesACountOf:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)subChunkFrom:(unsigned long long)arg1 numSamples:(unsigned long long)arg2;
 - (id)subChunkFrom:(unsigned long long)arg1 numSamples:(unsigned long long)arg2 forChannel:(unsigned long long)arg3;
 - (id)dataForChannel:(unsigned long long)arg1;

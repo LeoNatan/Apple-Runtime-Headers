@@ -25,6 +25,7 @@
 + (id)_shadowImage;
 + (id)_reuseIdentifier;
 + (id)_pinsWithMapType:(unsigned long long)arg1 mapDisplayStyle:(CDStruct_51745937)arg2 pinColor:(id)arg3;
++ (id)_imageCache;
 + (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3 pinColor:(id)arg4;
 + (id)_imageForLayer:(long long)arg1 state:(long long)arg2 mapType:(unsigned long long)arg3;
 + (id)_dropBounceAnimation;
@@ -37,6 +38,8 @@
 + (Class)layerClass;
 @property(nonatomic, setter=_setDelegate:) __weak id <_MKPinAnnotationViewDelegate> _delegate; // @synthesize _delegate;
 - (void).cxx_destruct;
+- (void)updateLayer;
+- (void)viewDidChangeEffectiveAppearance;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (int)_state;
 - (BOOL)isHighlighted;
@@ -50,7 +53,6 @@
 - (void)_liftForDraggingAfterBounceAnimated:(BOOL)arg1;
 - (void)_liftForDraggingAnimated:(BOOL)arg1;
 - (void)setDragState:(unsigned long long)arg1 animated:(BOOL)arg2;
-- (void)setDragState:(unsigned long long)arg1;
 - (void)_dropAfterDraggingAndRevertPosition:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_dropFromDistance:(double)arg1 maxDistance:(double)arg2 withDelay:(double)arg3;
 - (id)_bounceAnimation:(BOOL)arg1 withDelay:(double)arg2 addToLayer:(BOOL)arg3;

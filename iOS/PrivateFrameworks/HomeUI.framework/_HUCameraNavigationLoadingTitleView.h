@@ -8,6 +8,7 @@
 
 @class UIActivityIndicatorView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface _HUCameraNavigationLoadingTitleView : UIView
 {
     UIActivityIndicatorView *_activityIndicator;

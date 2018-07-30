@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary, NSString, TCDumpNumeric;
 
-__attribute__((visibility("hidden")))
 @interface TCDumpUnion : TCDumpType
 {
     NSString *mSelectorFieldName;
@@ -16,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mSelectorToMemberMap;
 }
 
+- (void).cxx_destruct;
 - (void)fromBinary:(struct __sFILE *)arg1 toXml:(struct _xmlNode *)arg2 state:(id)arg3;
-- (void)dealloc;
 - (id)initWithSelectorField:(id)arg1 members:(id)arg2;
 - (id)initWithSelectorFieldName:(id)arg1 selectorEnumType:(id)arg2 members:(id)arg3;
 - (id)initWithSelectorFieldName:(id)arg1 selectorEnumType:(id)arg2 selectorField:(id)arg3 members:(id)arg4;

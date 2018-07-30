@@ -42,6 +42,7 @@
 @property(readonly, nonatomic) long long predictedCharacterCount; // @synthesize predictedCharacterCount=_predictedCharacterCount;
 @property(readonly, nonatomic) long long characterCount; // @synthesize characterCount=_characterCount;
 @property(readonly, nonatomic) long long touchCount; // @synthesize touchCount=_touchCount;
+- (void).cxx_destruct;
 - (void)visitRecordCandidateRejected:(id)arg1;
 - (void)visitRecordTextAccepted:(id)arg1;
 - (void)visitRecordSkipHitTest:(id)arg1;
@@ -52,7 +53,6 @@
 - (void)handleTouch:(id)arg1;
 - (id)aggregateReport;
 - (id)structuredReport;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -26,6 +26,7 @@
 - (void)saveValue:(id)arg1 forKey:(id)arg2;
 - (id)loadEntryForRowId:(long long)arg1;
 - (id)loadValueForKey:(id)arg1;
+- (void)tearDown;
 - (void)dealloc;
 - (void)protectedDataDidBecomeAvailable:(id)arg1;
 - (id)initWithPath:(id)arg1;

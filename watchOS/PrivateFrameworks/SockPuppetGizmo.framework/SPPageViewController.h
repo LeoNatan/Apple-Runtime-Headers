@@ -28,8 +28,10 @@
     CDUnknownBlockType _didAppearCompletion;
     NSMutableSet *_controllersActivatedButNotLoaded;
     NSMutableArray *_pageVCsToPreload;
+    float _topContentInset;
 }
 
+@property(nonatomic) float topContentInset; // @synthesize topContentInset=_topContentInset;
 @property(retain, nonatomic) NSMutableArray *pageVCsToPreload; // @synthesize pageVCsToPreload=_pageVCsToPreload;
 @property(retain, nonatomic) NSMutableSet *controllersActivatedButNotLoaded; // @synthesize controllersActivatedButNotLoaded=_controllersActivatedButNotLoaded;
 @property(nonatomic) _Bool needsContentOffsetUpdate; // @synthesize needsContentOffsetUpdate=_needsContentOffsetUpdate;

@@ -27,6 +27,7 @@
 - (struct CGPoint)pointOnPathForHorizontalPercentage:(double)arg1;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animateToPath:(id)arg1 duration:(double)arg2 curve:(long long)arg3;
+@property(retain, nonatomic) NSString *lineCap;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

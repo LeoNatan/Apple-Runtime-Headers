@@ -36,6 +36,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
+- (void)_setAttributedString:(id)arg1 forWidgetIdentifier:(id)arg2;
 - (void)setVisibleWidgetsIDs:(id)arg1;
 @property(retain, nonatomic) NSString *groupName; // @dynamic groupName;
 @property(nonatomic) _Bool shouldBlurContent; // @dynamic shouldBlurContent;

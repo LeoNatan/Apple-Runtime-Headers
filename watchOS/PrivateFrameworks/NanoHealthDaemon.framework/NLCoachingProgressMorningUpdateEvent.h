@@ -12,12 +12,12 @@
 
 @interface NLCoachingProgressMorningUpdateEvent : NSObject <NLCoachingProgressEvent>
 {
-    unsigned int goalType;
+    int goalType;
 }
 
 + (id)reason;
 + (id)eventIdentifier;
-@property(nonatomic) unsigned int goalType; // @synthesize goalType;
+@property(nonatomic) int goalType; // @synthesize goalType;
 - (id)userInfoForCoachingAlertRequestWithModel:(id)arg1;
 - (_Bool)shouldFireWithTypicalDayModel:(id)arg1 evaluationDelegate:(id)arg2;
 

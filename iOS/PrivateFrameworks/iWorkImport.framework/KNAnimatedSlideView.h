@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (void)addActiveAnimatedBuild:(id)arg1;
 - (_Bool)shouldPreCache;
 - (void)serializeTextures;
+- (void)prepareAnimations;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;
 - (void)renderTextures;
 - (void)generateTextures;
@@ -90,7 +91,7 @@ __attribute__((visibility("hidden")))
 - (id)p_initializeTextureSetForRep:(id)arg1 info:(id)arg2 eventIndex:(unsigned long long)arg3 ignoreBuildVisibility:(_Bool)arg4 isRenderingToContext:(_Bool)arg5;
 - (void)setTexture:(id)arg1 forRep:(id)arg2 forDescription:(id)arg3;
 - (void)p_evictCacheAmbientBuildTexturesForTransition:(id)arg1;
-- (void)p_resetAmbientBuildTextures;
+- (void)resetAmbientBuildTextures;
 - (void)p_clearAmbientBuildRenderers;
 - (void)p_removeAmbientBuildRenderer:(id)arg1;
 - (void)p_addAmbientBuildRenderer:(id)arg1;

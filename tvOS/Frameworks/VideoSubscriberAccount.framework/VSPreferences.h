@@ -19,6 +19,8 @@
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 - (void).cxx_destruct;
+- (void)noteIsInSTBMode:(_Bool)arg1;
+- (_Bool)isInSTBMode;
 - (void)noteDesiredApp:(id)arg1;
 - (_Bool)hasChosenDesiredApp;
 - (void)noteDidSendWelcomeMessage;

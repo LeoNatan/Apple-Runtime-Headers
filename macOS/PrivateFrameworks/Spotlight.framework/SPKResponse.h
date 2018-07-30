@@ -14,7 +14,6 @@
     BOOL _noChangeInResultsSinceLastResponse;
     BOOL _parsecFinished;
     BOOL _metadataFinished;
-    BOOL _webHistoryFinished;
     BOOL _isRewrite;
     int _kind;
     PRSRankingConfiguration *_rankingConfiguration;
@@ -39,7 +38,6 @@
 @property BOOL isRewrite; // @synthesize isRewrite=_isRewrite;
 @property(retain) NSString *userQueryString; // @synthesize userQueryString=_userQueryString;
 @property(retain) NSString *fbq; // @synthesize fbq=_fbq;
-@property BOOL webHistoryFinished; // @synthesize webHistoryFinished=_webHistoryFinished;
 @property BOOL metadataFinished; // @synthesize metadataFinished=_metadataFinished;
 @property BOOL parsecFinished; // @synthesize parsecFinished=_parsecFinished;
 @property BOOL noChangeInResultsSinceLastResponse; // @synthesize noChangeInResultsSinceLastResponse=_noChangeInResultsSinceLastResponse;
@@ -51,7 +49,6 @@
 @property(readonly) int kind; // @synthesize kind=_kind;
 @property(retain) PRSRankingConfiguration *rankingConfiguration; // @synthesize rankingConfiguration=_rankingConfiguration;
 - (void).cxx_destruct;
-- (id)responseFilteredWithPattern:(id)arg1;
 - (id)description;
 - (id)initWithQueryID:(unsigned long long)arg1 error:(id)arg2;
 - (id)initWithQueryID:(unsigned long long)arg1 results:(id)arg2;

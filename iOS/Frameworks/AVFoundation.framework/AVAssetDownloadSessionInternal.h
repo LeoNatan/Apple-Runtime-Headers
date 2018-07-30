@@ -8,6 +8,7 @@
 
 @class AVURLAsset, AVWeakReference, NSError, NSNumber, NSObject<OS_dispatch_queue>, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetDownloadSessionInternal : NSObject
 {
     AVWeakReference *weakReference;

@@ -8,16 +8,15 @@
 
 @class OADColor;
 
-__attribute__((visibility("hidden")))
 @interface OADBulletColorSpecification : OADBulletColor
 {
     OADColor *mColor;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)color;
-- (void)dealloc;
 - (id)initWithBulletColor:(id)arg1;
 
 @end

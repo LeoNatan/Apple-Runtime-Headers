@@ -29,6 +29,7 @@
 - (long long)compare:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithShortVersionString:(id)arg1 bundleVersion:(id)arg2 sourceVersion:(id)arg3 buildVersion:(id)arg4;
+- (void)_setBuildVersion:(id)arg1;
 
 @end
 

@@ -29,6 +29,7 @@
 - (_Bool)removeKey:(const struct _GEOTileKey *)arg1;
 - (void)removeKeysMatchingPredicate:(CDUnknownBlockType)arg1;
 - (void)sort:(CDUnknownBlockType)arg1;
+- (struct _GEOTileKey *)keyAtIndex:(unsigned int)arg1;
 - (id)sublistWithRange:(struct _NSRange)arg1;
 - (id)listWithout:(id)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;

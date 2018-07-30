@@ -15,27 +15,31 @@
 
 + (void)deleteContentForProductID:(id)arg1;
 + (id)contentURLForProductID:(id)arg1;
-+ (id)_contentURLForProductID:(id)arg1 isShared:(char *)arg2;
-+ (id)downloadWithID:(id)arg1 productID:(id)arg2;
 - (void).cxx_destruct;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (void)_setVersion:(id)arg1;
+- (void)_setTransaction:(id)arg1;
+- (void)_setTimeRemaining:(double)arg1;
+- (void)_setProgress:(float)arg1;
+- (void)_setError:(id)arg1;
+- (void)_setDownloadState:(long long)arg1;
+- (void)_setContentURL:(id)arg1;
+- (void)_setContentLength:(id)arg1;
+- (void)_setContentIdentifier:(id)arg1;
+@property(copy, nonatomic, getter=_downloadID, setter=_setDownloadID:) NSNumber *_downloadID;
+- (void)_applyChangeset:(id)arg1;
 @property(readonly, nonatomic) SKPaymentTransaction *transaction;
-- (void)setContentURL:(id)arg1;
-- (void)setError:(id)arg1;
 @property(readonly, nonatomic) double timeRemaining;
-@property(readonly, copy, nonatomic) NSError *error;
-- (void)setContentVersion:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *contentVersion;
-- (void)setContentLength:(id)arg1;
+@property(readonly, nonatomic) NSError *error;
+@property(readonly, nonatomic) NSString *contentVersion;
 @property(readonly, copy, nonatomic) NSNumber *contentLength;
-- (void)setTimeRemaining:(double)arg1;
-- (void)setProgress:(float)arg1;
 @property(readonly, nonatomic) float progress;
-- (id)assetID;
 @property(readonly, nonatomic) NSURL *contentURL;
-- (void)setState:(long long)arg1;
+@property(readonly, nonatomic) long long downloadState;
 @property(readonly, nonatomic) long long state;
 @property(readonly, nonatomic) NSString *contentIdentifier;
-- (id)initWithID:(id)arg1 productID:(id)arg2;
 - (id)init;
 
 @end

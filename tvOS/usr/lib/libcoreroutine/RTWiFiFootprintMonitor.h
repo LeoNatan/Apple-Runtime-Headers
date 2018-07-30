@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 @class NSMutableArray, RTPersistentTimer, RTWiFiManager;
 
-@interface RTWiFiFootprintMonitor : RTNotifier
+@interface RTWiFiFootprintMonitor : RTService
 {
     long long _footprintState;
     RTPersistentTimer *_scanTimer;
@@ -32,7 +32,7 @@
 - (void)onWiFiManagerNotificationScanResults:(id)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
-- (void)shutdown;
+- (void)_shutdown;
 - (void)_stop;
 - (void)_start;
 - (id)initWithWiFiManager:(id)arg1;

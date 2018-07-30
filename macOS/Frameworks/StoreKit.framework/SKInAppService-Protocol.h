@@ -6,20 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @protocol SKInAppService <NSObject>
-- (void)requestVPPReceiptRenewalWithSandboxOptions:(NSDictionary *)arg1 replyBlock:(void (^)(BOOL, NSError *))arg2;
-- (void)deleteSharedIAPContentForGroupID:(NSString *)arg1 productID:(NSString *)arg2;
+- (void)requestVPPReceiptRenewalWithSandboxOptions:(NSDictionary *)arg1 client:(NSDictionary *)arg2 replyBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)deleteContentForProductID:(NSString *)arg1;
-- (void)resumeDownloadWithID:(NSString *)arg1;
-- (void)pauseDownloadWithID:(NSString *)arg1;
-- (void)cancelDownloadWithID:(NSString *)arg1;
-- (void)addDownloadWithID:(NSString *)arg1;
-- (void)restoreCompletedTransactionsForUsername:(NSString *)arg1;
+- (void)resumeDownloadWithID:(NSNumber *)arg1;
+- (void)pauseDownloadWithID:(NSNumber *)arg1;
+- (void)cancelDownloadWithID:(NSNumber *)arg1;
+- (void)addDownloadWithID:(NSNumber *)arg1;
+- (void)restoreCompletedTransactionsToQueue:(NSString *)arg1 forUsername:(NSString *)arg2 withClient:(NSDictionary *)arg3 replyBlock:(void (^)(BOOL, NSError *))arg4;
 - (void)finishPaymentWithIdentifier:(NSString *)arg1;
-- (void)addPaymentWithInfo:(NSDictionary *)arg1;
-- (void)requestProductsWithIdentifiers:(NSArray *)arg1 replyBlock:(void (^)(NSArray *, NSArray *, NSError *))arg2;
-- (void)checkIn;
+- (void)addPaymentToQueue:(NSString *)arg1 withInfo:(NSDictionary *)arg2 client:(NSDictionary *)arg3;
+- (void)requestProductsWithIdentifiers:(NSArray *)arg1 client:(NSDictionary *)arg2 replyBlock:(void (^)(NSArray *, NSArray *, NSError *))arg3;
+- (void)requestProductReview;
+- (void)checkServerQueueForQueue:(NSString *)arg1 withClient:(NSDictionary *)arg2;
 @end
 

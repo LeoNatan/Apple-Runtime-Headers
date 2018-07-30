@@ -8,10 +8,11 @@
 
 #import "MKMapViewDelegate.h"
 
-@class CLLocation, EKUIMapView, EKUIWeatherBox, NSDateComponents, NSDictionary, NSImageView, NSString, NSTextField;
+@class CLLocation, EKUIMapContainerView, EKUIMapView, EKUIWeatherBox, NSDateComponents, NSDictionary, NSImageView, NSString, NSTextField;
 
 @interface EKUIMapGadget : EKUISingleViewGadget <MKMapViewDelegate>
 {
+    EKUIMapContainerView *_containerView;
     EKUIMapView *_mapView;
     EKUIWeatherBox *_weatherview;
     NSImageView *_weatherIconView;
@@ -31,6 +32,7 @@
 @property(retain) NSImageView *weatherIconView; // @synthesize weatherIconView=_weatherIconView;
 @property(retain) EKUIWeatherBox *weatherview; // @synthesize weatherview=_weatherview;
 @property(retain) EKUIMapView *mapView; // @synthesize mapView=_mapView;
+@property(retain) EKUIMapContainerView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
 - (id)dateComponentsForWeather;
 - (id)localizedStringWithUnitSymbolsUsingTemperatureString:(id)arg1;

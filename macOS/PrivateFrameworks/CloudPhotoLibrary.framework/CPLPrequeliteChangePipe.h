@@ -14,20 +14,23 @@
 {
     CPLPrequeliteVariable *_pullGenerationVar;
     CPLPrequeliteVariable *_pushGenerationVar;
-    CPLPrequeliteVariable *_isLockedVar;
     NSString *_countSqlCommand;
     NSString *_logDomain;
     unsigned long long _lastPullMarkerForCompact;
 }
 
 - (void).cxx_destruct;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (id)statusPerScopeIndex;
 - (id)status;
 - (void)writeTransactionDidFail;
-@property(nonatomic, getter=isLocked) BOOL locked;
 - (id)allChangeBatches;
 - (BOOL)compactChangeBatchesWithError:(id *)arg1;
+- (BOOL)deleteAllChangesWithScopeFilter:(id)arg1 error:(id *)arg2;
 - (BOOL)deleteAllChangeBatchesWithError:(id *)arg1;
-- (BOOL)hasSomeChangeWithIdentifier:(id)arg1;
+- (BOOL)hasSomeChangeWithScopeFilter:(id)arg1;
+- (BOOL)hasSomeChangeInScopesWithIdentifiers:(id)arg1;
+- (BOOL)hasSomeChangeWithScopedIdentifier:(id)arg1;
 - (BOOL)popNextBatchWithError:(id *)arg1;
 - (id)nextBatch;
 - (BOOL)popChangeBatch:(id *)arg1 error:(id *)arg2;
@@ -38,7 +41,6 @@
 - (unsigned long long)_pushMarker;
 - (BOOL)_setPullMarker:(unsigned long long)arg1 error:(id *)arg2;
 - (unsigned long long)_pullMarker;
-- (BOOL)openWithError:(id *)arg1;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
 - (id)initWithAbstractObject:(id)arg1;

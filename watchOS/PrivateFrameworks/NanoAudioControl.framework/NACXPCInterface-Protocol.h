@@ -13,13 +13,15 @@
 - (void)audioRoutesForCategory:(NSString *)arg1 result:(void (^)(NSArray *))arg2;
 - (void)endObservingAudioRoutesForCategory:(NSString *)arg1;
 - (void)beginObservingAudioRoutesForCategory:(NSString *)arg1;
-- (void)playProminentHapticPreview;
-- (void)playAudioAndHapticPreview;
 - (void)setProminentHapticEnabled:(_Bool)arg1;
 - (void)setHapticIntensity:(float)arg1;
-- (void)setSystemMuted:(_Bool)arg1;
 - (void)prominentHapticEnabled:(void (^)(_Bool))arg1;
 - (void)hapticIntensity:(void (^)(float))arg1;
+- (void)playProminentHapticPreview;
+- (void)playAudioAndHapticPreview;
+- (void)setHapticState:(int)arg1;
+- (void)setSystemMuted:(_Bool)arg1;
+- (void)hapticState:(void (^)(int))arg1;
 - (void)systemMutedState:(void (^)(_Bool))arg1;
 - (void)setMuted:(_Bool)arg1 target:(NACProxyVolumeControlTarget *)arg2;
 - (void)setVolumeValue:(float)arg1 target:(NACProxyVolumeControlTarget *)arg2;

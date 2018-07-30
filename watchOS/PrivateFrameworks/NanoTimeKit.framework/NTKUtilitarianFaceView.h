@@ -43,6 +43,7 @@
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
@@ -58,12 +59,13 @@
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
+- (id)_slotForUtilitySlot:(int)arg1;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (float)_verticalPaddingForStatusBar;
 - (_Bool)_supportsUnadornedSnapshot;
 - (void)_loadScene;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, nonatomic) NTKUtilitarianScene *analogScene; // @dynamic analogScene;

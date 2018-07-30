@@ -8,6 +8,7 @@
 
 @class NFMutexLock, NSError, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface NFPromiseSeal : NSObject
 {
     id _value;

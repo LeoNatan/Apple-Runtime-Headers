@@ -33,12 +33,12 @@
 @property(nonatomic, getter=isOpaque) _Bool opaque; // @synthesize opaque=_opaque;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)initWithFBSContext:(id)arg1;
 - (id)initWithScene:(id)arg1;
 

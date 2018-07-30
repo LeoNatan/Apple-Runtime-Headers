@@ -16,9 +16,10 @@ __attribute__((visibility("hidden")))
     ClientConnection *_connection;
 }
 
-@property(retain) ClientConnection *connection; // @synthesize connection=_connection;
+@property(readonly, nonatomic) __weak ClientConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (_Bool)_valueForBooleanEntitlement:(id)arg1 defaultValue:(_Bool)arg2;
+@property(readonly) _Bool hasChangeIdTrackingOverrideEntitlement;
 @property(readonly) _Bool hasCalendarToolEntitlement;
 @property(readonly) _Bool hasSyncClientEntitlement;
 @property(readonly) _Bool hasMigrationEntitlement;

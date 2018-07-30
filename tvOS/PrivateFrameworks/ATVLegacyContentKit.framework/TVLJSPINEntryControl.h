@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "TVDigitEntryViewController.h"
+#import "_TVDigitEntryViewController.h"
 
-#import "TVDigitEntryViewControllerDelegate.h"
+#import "_TVDigitEntryViewControllerDelegate.h"
 
 @class NSString;
 
-@interface TVLJSPINEntryControl : TVDigitEntryViewController <TVDigitEntryViewControllerDelegate>
+@interface TVLJSPINEntryControl : _TVDigitEntryViewController <_TVDigitEntryViewControllerDelegate>
 {
     CDUnknownBlockType _submitBlock;
     CDUnknownBlockType _cancelBlock;

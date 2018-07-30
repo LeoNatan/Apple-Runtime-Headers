@@ -6,13 +6,17 @@
 
 #import "NSObject.h"
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface CPLBatchExtractionStep : NSObject
 {
     id <CPLBatchExtractionStrategyStorage> _storage;
+    NSString *_scopeIdentifier;
 }
 
-@property(retain, nonatomic) id <CPLBatchExtractionStrategyStorage> storage; // @synthesize storage=_storage;
+@property(readonly, copy, nonatomic) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
+@property(readonly, nonatomic) id <CPLBatchExtractionStrategyStorage> storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
 - (id)description;
 - (id)shortDescription;
@@ -20,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldResetFromThisStepWithIncomingChange:(id)arg1;
 - (void)reset;
 - (_Bool)extractToBatch:(id)arg1 maximumCount:(unsigned long long)arg2 maximumResourceSize:(unsigned long long)arg3 error:(id *)arg4;
-- (id)initWithStorage:(id)arg1;
+- (id)initWithStorage:(id)arg1 scopeIdentifier:(id)arg2;
 
 @end
 

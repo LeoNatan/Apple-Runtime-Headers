@@ -23,6 +23,7 @@
 - (id)_originWithMROriginRef:(void *)arg1;
 - (void)_handleDeviceInfoDidChangeNotification:(id)arg1;
 - (void)_updateActiveOrigin;
+- (unsigned int)_orderForOriginIdentifier:(id)arg1;
 - (void)_updateAvailableOrigins;
 - (void)_updateLocalOrigin;
 - (id)deltaFromOrigins:(id)arg1;
@@ -33,6 +34,7 @@
 @property(readonly, nonatomic) NSArray *availableOrigins;
 - (void)dealloc;
 - (id)init;
+- (id)_originFromTestOptions:(id)arg1;
 
 @end
 

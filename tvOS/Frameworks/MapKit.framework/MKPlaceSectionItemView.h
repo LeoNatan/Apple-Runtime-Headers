@@ -6,7 +6,6 @@
 
 #import <MapKit/MKViewWithHairline.h>
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceSectionItemView : MKViewWithHairline
 {
     _Bool _fullWidthHairline;

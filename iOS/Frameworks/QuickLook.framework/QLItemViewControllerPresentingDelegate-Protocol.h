@@ -8,7 +8,6 @@
 
 @protocol QLItemViewControllerPresentingDelegate
 @property(readonly) QLItemPresenterViewController *itemPresenterViewController;
-- (_Bool)isPresentingPreviewItemViewController:(QLItemViewController *)arg1;
 - (void)previewItemViewController:(QLItemViewController *)arg1 didFailWithError:(NSError *)arg2;
 @end
 

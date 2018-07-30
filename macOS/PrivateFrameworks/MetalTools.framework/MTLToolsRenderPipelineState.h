@@ -14,11 +14,15 @@
 {
 }
 
+- (unsigned long long)uniqueIdentifier;
+- (unsigned long long)resourceIndex;
 - (id)newFragmentShaderDebugInfo;
 - (id)newVertexShaderDebugInfo;
+@property(readonly) BOOL supportIndirectCommandBuffers;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) NSString *label;
 - (void)acceptVisitor:(id)arg1;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

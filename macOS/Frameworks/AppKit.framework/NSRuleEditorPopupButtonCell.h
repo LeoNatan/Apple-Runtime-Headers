@@ -6,6 +6,7 @@
 
 #import <AppKit/NSPopUpButtonCell.h>
 
+__attribute__((visibility("hidden")))
 @interface NSRuleEditorPopupButtonCell : NSPopUpButtonCell
 {
 }

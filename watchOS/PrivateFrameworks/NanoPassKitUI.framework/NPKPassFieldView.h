@@ -11,6 +11,7 @@
 @interface NPKPassFieldView : UIView
 {
     _Bool _labelOnTop;
+    _Bool _uppercaseLabelText;
     NSDictionary *_valueAttributes;
     NSDictionary *_labelAttributes;
     int _textAlignment;
@@ -32,6 +33,7 @@
 @property(nonatomic) float paddingBelowBottomLabelBaseline; // @synthesize paddingBelowBottomLabelBaseline=_paddingBelowBottomLabelBaseline;
 @property(nonatomic) float bottomLabelBaselineOffset; // @synthesize bottomLabelBaselineOffset=_bottomLabelBaselineOffset;
 @property(nonatomic) float topLabelBaselineOffset; // @synthesize topLabelBaselineOffset=_topLabelBaselineOffset;
+@property(nonatomic) _Bool uppercaseLabelText; // @synthesize uppercaseLabelText=_uppercaseLabelText;
 @property(nonatomic, getter=isLabelOnTop) _Bool labelOnTop; // @synthesize labelOnTop=_labelOnTop;
 @property(nonatomic) int textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSDictionary *labelAttributes; // @synthesize labelAttributes=_labelAttributes;

@@ -8,7 +8,7 @@
 
 #import "CUReadWriteRequestable.h"
 
-@class CBScalablePipe, CBScalablePipeManager, CUReadRequest, CUWriteRequest, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+@class CBScalablePipe, CBScalablePipeManager, CUReadRequest, CUWriteRequest, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID;
 
 @interface CUBluetoothScalablePipe : NSObject <CUReadWriteRequestable>
 {
@@ -18,6 +18,8 @@
     struct channel *_btChannel;
     BOOL _btEndpointRegistering;
     BOOL _btEndpointRegistered;
+    int _btPeerHostState;
+    BOOL _btPeerKVORegistered;
     CBScalablePipe *_btPipe;
     CBScalablePipeManager *_btPipeManager;
     struct channel_ring_desc *_btReadRing;
@@ -35,16 +37,24 @@
     struct NSMutableArray *_writeRequests;
     NSObject<OS_dispatch_source> *_writeSource;
     BOOL _writeSuspended;
+    int _peerHostState;
+    int _priority;
     int _state;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_identifier;
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
+    NSUUID *_peerIdentifier;
+    CDUnknownBlockType _peerHostStateChangedHandler;
     CDUnknownBlockType _stateChangedHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType stateChangedHandler; // @synthesize stateChangedHandler=_stateChangedHandler;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
+@property(nonatomic) int priority; // @synthesize priority=_priority;
+@property(copy, nonatomic) CDUnknownBlockType peerHostStateChangedHandler; // @synthesize peerHostStateChangedHandler=_peerHostStateChangedHandler;
+@property(readonly, nonatomic) int peerHostState; // @synthesize peerHostState=_peerHostState;
+@property(copy, nonatomic) NSUUID *peerIdentifier; // @synthesize peerIdentifier=_peerIdentifier;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

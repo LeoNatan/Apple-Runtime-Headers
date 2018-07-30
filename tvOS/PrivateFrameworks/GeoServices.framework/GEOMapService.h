@@ -31,12 +31,12 @@
 - (void)resolveMapItemFromHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 useCache:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 cachePolicy:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)handleForMapItem:(id)arg1 withSizeLimit:(long long)arg2;
 - (id)handleForMapItem:(id)arg1;
 - (void)trackMapItem:(id)arg1;
 - (void)trackSerializedPlaceData:(id)arg1;
 - (id)_ticketForRefreshingHandle:(id)arg1 traits:(id)arg2;
 - (id)ticketForGeoIpLookupForIpAddr:(id)arg1;
+- (id)ticketForWifiFingerprintWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 entryTime:(unsigned long long)arg4 exitTime:(unsigned long long)arg5 traits:(id)arg6;
 - (id)ticketForWifiFingerprintWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 traits:(id)arg4;
 - (id)ticketForBrandLookupWithIMessageUid:(id)arg1 traits:(id)arg2;
 - (id)ticketForBatchPopularNearbyForSearchCategories:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
@@ -50,6 +50,7 @@
 - (id)ticketForTransitLines:(id)arg1 withTraits:(id)arg2;
 - (id)ticketForSearchFieldPlaceholderWithTraits:(id)arg1;
 - (id)ticketForSpotlightCategoryListWithTraits:(id)arg1;
+- (id)ticketForDFRCategoryListWithTraits:(id)arg1;
 - (id)ticketForCategoryListWithTraits:(id)arg1;
 - (id)ticketForSectionedLocalitiesAndLandmarksSearchFragment:(id)arg1 traits:(id)arg2;
 - (id)ticketForSectionedAutoCompleteSearchFragment:(id)arg1 traits:(id)arg2;
@@ -74,6 +75,10 @@
 - (id)ticketForSearchPoisForBrandMUID:(unsigned long long)arg1 traits:(id)arg2;
 - (id)ticketForProblemResubmission:(id)arg1 traits:(id)arg2;
 - (id)ticketForProblem:(id)arg1 placeForProblemContext:(id)arg2 userCredentials:(id)arg3 pushToken:(id)arg4 allowContactBackAtEmailAddress:(id)arg5 traits:(id)arg6;
+- (id)ticketForSpatialEventLookupParameters:(id)arg1 traits:(id)arg2;
+- (unsigned long long)maxParametersCountForSpatialEventLookup;
+- (id)ticketForSpatialPlaceLookupParameters:(id)arg1 traits:(id)arg2;
+- (unsigned long long)maxParametersCountForSpatialPlaceLookup;
 - (id)ticketForSpatialLookupParameters:(id)arg1 traits:(id)arg2;
 - (id)ticketForExternalTransitStationCodes:(id)arg1 sourceID:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4 traits:(id)arg5;
 - (id)ticketForMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 industryCategory:(id)arg3 industryCode:(id)arg4 paymentNetwork:(id)arg5 transactionDate:(id)arg6 transactionLocation:(id)arg7 traits:(id)arg8;

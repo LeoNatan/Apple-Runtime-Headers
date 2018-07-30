@@ -13,8 +13,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
+@property(nonatomic) unsigned int flags; // @dynamic flags;
 @property(nonatomic) int graphicsPolicy; // @dynamic graphicsPolicy;
 @property(nonatomic) int jetsamPolicy; // @dynamic jetsamPolicy;
+@property(nonatomic) unsigned int reason; // @dynamic reason;
 @property(nonatomic) int schedulingPolicy; // @dynamic schedulingPolicy;
 
 @end

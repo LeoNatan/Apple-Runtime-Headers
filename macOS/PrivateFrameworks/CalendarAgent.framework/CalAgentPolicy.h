@@ -8,14 +8,21 @@
 
 @interface CalAgentPolicy : NSXPCStoreServerRequestHandlingPolicy
 {
+    id <CalAgentTCCChecker> _tccChecker;
 }
 
++ (id)userInfoTccTokenName;
+@property(readonly, nonatomic) id <CalAgentTCCChecker> tccChecker; // @synthesize tccChecker=_tccChecker;
+- (void).cxx_destruct;
+- (id)_userInfoForContext:(id)arg1;
+- (id)_cachedTCCResultForUserInfo:(id)arg1;
 - (id)restrictingWritePredicateForEntity:(id)arg1 fromClientWithContext:(id)arg2;
 - (id)restrictingReadPredicateForEntity:(id)arg1 fromClientWithContext:(id)arg2;
 - (id)_restrictingPredicateForEntity:(id)arg1 fromClientWithContext:(id)arg2;
 - (BOOL)shouldAcceptMetadataChangesFromClientWithContext:(id)arg1;
 - (BOOL)shouldAcceptConnectionsFromClientWithContext:(id)arg1;
-- (unsigned long long)_shouldAcceptIncomingRequestFromClientWithContext:(id)arg1;
+- (long long)_shouldAcceptIncomingRequestFromClientWithContext:(id)arg1;
+- (id)initWithTCCChecker:(id)arg1;
 
 @end
 

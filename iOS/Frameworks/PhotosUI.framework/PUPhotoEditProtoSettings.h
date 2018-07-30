@@ -18,21 +18,25 @@
     _Bool _previewOriginalAllowsLongPress;
     _Bool _previewOriginalTimesOut;
     _Bool _livePhotoTrimAllowed;
+    _Bool _showEffectsPicker;
     long long _renderPriority;
     double _cropSideMargins;
     double _cropWheelSize;
     double _cropRecomposeDelay;
+    double _maxRawMP;
     double _previewOriginalDuration;
     double _minimumLivePhotoTrimDuration;
 }
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+@property(nonatomic) _Bool showEffectsPicker; // @synthesize showEffectsPicker=_showEffectsPicker;
 @property(nonatomic) double minimumLivePhotoTrimDuration; // @synthesize minimumLivePhotoTrimDuration=_minimumLivePhotoTrimDuration;
 @property(nonatomic) _Bool livePhotoTrimAllowed; // @synthesize livePhotoTrimAllowed=_livePhotoTrimAllowed;
 @property(nonatomic) double previewOriginalDuration; // @synthesize previewOriginalDuration=_previewOriginalDuration;
 @property(nonatomic) _Bool previewOriginalTimesOut; // @synthesize previewOriginalTimesOut=_previewOriginalTimesOut;
 @property(nonatomic) _Bool previewOriginalAllowsLongPress; // @synthesize previewOriginalAllowsLongPress=_previewOriginalAllowsLongPress;
+@property(nonatomic) double maxRawMP; // @synthesize maxRawMP=_maxRawMP;
 @property(nonatomic) _Bool simulateDownloadFailure; // @synthesize simulateDownloadFailure=_simulateDownloadFailure;
 @property(nonatomic) _Bool simulateDownload; // @synthesize simulateDownload=_simulateDownload;
 @property(nonatomic) double cropRecomposeDelay; // @synthesize cropRecomposeDelay=_cropRecomposeDelay;

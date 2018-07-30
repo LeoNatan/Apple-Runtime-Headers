@@ -6,10 +6,12 @@
 
 #import "NSObject.h"
 
+#import "TSPReferenceItem.h"
+
 @class NSString, NSUUID, TSPComponent, TSPObjectContext, TSPUnknownContent, TSUUUIDPath;
 
 __attribute__((visibility("hidden")))
-@interface TSPObject : NSObject
+@interface TSPObject : NSObject <TSPReferenceItem>
 {
     // Error parsing type: Aq, name: _identifier
     // Error parsing type: Aq, name: _modifyObjectToken
@@ -34,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool needsArchiving;
 @property(nonatomic) long long tsp_modifyObjectToken;
 @property(nonatomic) long long tsp_identifier;
+@property(readonly, nonatomic) _Bool tsp_isLazyReference;
 - (id)tsp_descriptionWithDepth:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *tsp_description;
 - (void)resetObjectUUIDWithoutUpdatingObjectUUIDMap;
@@ -93,6 +96,12 @@ __attribute__((visibility("hidden")))
 - (id)documentRoot;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (id)owningDocument;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

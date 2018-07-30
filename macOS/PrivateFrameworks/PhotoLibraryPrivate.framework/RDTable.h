@@ -40,6 +40,9 @@
     NSArray *_searchIndexPropertyPathsCache;
     NSArray *_editorialPropertyPathsCache;
     NSArray *_playbackStylePropertyPathsCache;
+    NSArray *_exifPropertyPathsCache;
+    NSArray *_iptcPropertyPathsCache;
+    NSArray *_basicPropertyPathsCache;
 }
 
 + (SEL)deletedModelIdsMulticasterSelector;
@@ -49,6 +52,9 @@
 + (id)unpersistedModelForLibrary:(id)arg1;
 + (unsigned long long)modelCacheCapacity;
 + (id)modelName;
+@property(retain) NSArray *basicPropertyPathsCache; // @synthesize basicPropertyPathsCache=_basicPropertyPathsCache;
+@property(retain) NSArray *iptcPropertyPathsCache; // @synthesize iptcPropertyPathsCache=_iptcPropertyPathsCache;
+@property(retain) NSArray *exifPropertyPathsCache; // @synthesize exifPropertyPathsCache=_exifPropertyPathsCache;
 @property(retain) NSArray *playbackStylePropertyPathsCache; // @synthesize playbackStylePropertyPathsCache=_playbackStylePropertyPathsCache;
 @property(retain) NSArray *editorialPropertyPathsCache; // @synthesize editorialPropertyPathsCache=_editorialPropertyPathsCache;
 @property(retain) NSArray *searchIndexPropertyPathsCache; // @synthesize searchIndexPropertyPathsCache=_searchIndexPropertyPathsCache;
@@ -72,6 +78,9 @@
 @property(readonly) NSArray *consolidatePropertyPaths; // @synthesize consolidatePropertyPaths=_consolidatePropertyPaths;
 @property(retain) PFBSMResourceIdentifier *resourceAccessIdentifier; // @synthesize resourceAccessIdentifier=_resourceAccessIdentifier;
 - (void).cxx_destruct;
+@property(readonly) NSArray *basicPropertyPaths;
+@property(readonly) NSArray *iptcPropertyPaths;
+@property(readonly) NSArray *exifPropertyPaths;
 @property(readonly) NSArray *playbackStylePropertyPaths;
 @property(readonly) NSArray *editorialPropertyPaths;
 @property(readonly) NSArray *searchIndexPropertyPaths;

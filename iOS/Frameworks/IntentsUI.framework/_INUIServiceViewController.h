@@ -10,6 +10,7 @@
 
 @class INInteraction, NSString, UIViewController<INUIHostedViewControlling>;
 
+__attribute__((visibility("hidden")))
 @interface _INUIServiceViewController : UIViewController <_INUIRemoteViewControllerServing>
 {
     UIViewController<INUIHostedViewControlling> *_hostedViewController;

@@ -19,6 +19,7 @@
     NSString *_creativeId;
     NSString *_errorCode;
     NSString *_errorMessage;
+    int _groupType;
     NSString *_iadQtoken;
     int _paidSubscriptionConversionPointType;
     int _parentFeedType;
@@ -29,6 +30,7 @@
     _Bool _subscriptionOnlyArticlePreview;
     _Bool _successfulNewsTokenVerification;
     struct {
+        unsigned int groupType:1;
         unsigned int paidSubscriptionConversionPointType:1;
         unsigned int parentFeedType:1;
         unsigned int arrivedFromAd:1;
@@ -60,6 +62,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsGroupType:(id)arg1;
+- (id)groupTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasGroupType;
+@property(nonatomic) int groupType; // @synthesize groupType=_groupType;
 @property(readonly, nonatomic) _Bool hasCreativeId;
 @property(readonly, nonatomic) _Bool hasCampaignType;
 @property(readonly, nonatomic) _Bool hasCampaignId;

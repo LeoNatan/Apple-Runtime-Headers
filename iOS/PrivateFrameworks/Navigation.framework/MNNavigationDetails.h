@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) MNActiveRouteDetails *activeRouteDetails; // @synthesize activeRouteDetails=_activeRouteDetails;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (id)description;
 - (void)_updateRouteIDLookup;
 - (id)removeTrafficIncidentAlertWithDetails:(id)arg1;
 - (id)updateWithTrafficIncidentAlertDetails:(id)arg1;

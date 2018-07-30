@@ -19,7 +19,6 @@
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
-- (id)operationByCombiningOperation:(id)arg1;
 
 @end
 

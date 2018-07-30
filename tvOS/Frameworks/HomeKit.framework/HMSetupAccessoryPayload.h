@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSNumber, NSString, NSURL;
+@class HMAccessoryCategory, NSNumber, NSString, NSURL;
 
 @interface HMSetupAccessoryPayload : NSObject <NSSecureCoding>
 {
@@ -43,6 +43,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)_parseSetupPayload:(id)arg1;
+@property(readonly, nonatomic) HMAccessoryCategory *category;
 - (id)initWithSetupCode:(id)arg1;
 - (id)initWithSetupPayload:(id)arg1;
 - (id)initWithSetupPayloadURL:(id)arg1 error:(id *)arg2;

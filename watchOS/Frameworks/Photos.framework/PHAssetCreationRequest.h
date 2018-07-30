@@ -7,10 +7,11 @@
 #import <Photos/PHAssetChangeRequest.h>
 
 #import "PHInsertChangeRequest.h"
+#import "PHMomentSharePropertySet.h"
 
-@class NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHChangeRequestHelper;
+@class NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHChangeRequestHelper, PHMomentShare, PHRelationshipChangeRequestHelper;
 
-@interface PHAssetCreationRequest : PHAssetChangeRequest <PHInsertChangeRequest>
+@interface PHAssetCreationRequest : PHAssetChangeRequest <PHInsertChangeRequest, PHMomentSharePropertySet>
 {
     NSMutableArray *_assetResources;
     PHAssetResourceBag *_assetResourceBag;
@@ -18,17 +19,23 @@
     _Bool _duplicateAllowsPrivateMetadata;
     _Bool _shouldCreateScreenshot;
     _Bool _duplicateLivePhotoAsStill;
+    short _importedBy;
+    unsigned short _duplicateAssetPhotoLibraryType;
+    NSString *_importSessionID;
     PHAssetCreationPhotoStreamPublishingRequest *__photoStreamPublishingRequest;
+    PHMomentShare *_momentShare;
+    NSString *_momentShareUUID;
+    PHRelationshipChangeRequestHelper *_momentShareHelper;
     NSString *_duplicateAssetIdentifier;
+    CDUnknownBlockType _destinationAssetAvailabilityHandler;
     CDStruct_1b6d18a9 _duplicateStillSourceTime;
 }
 
 + (_Bool)canGenerateUUIDWithoutEntitlements;
 + (_Bool)_createAssetFromImageData:(id)arg1 imageType:(id)arg2 uuid:(id)arg3 error:(id *)arg4;
 + (_Bool)supportsAssetResourceTypes:(id)arg1;
-+ (id)creationRequestForAssetCopyStillPhotoFromLivePhotoAsset:(id)arg1 stillSourceTime:(CDStruct_1b6d18a9)arg2;
 + (id)creationRequestForAssetCopyFromAsset:(id)arg1;
-+ (id)creationRequestForAssetCopyFromAsset:(id)arg1 stillSourceTime:(CDStruct_1b6d18a9)arg2;
++ (id)creationRequestForAssetCopyFromAsset:(id)arg1 options:(id)arg2;
 + (id)creationRequestForAssetFromVideoComplementBundle:(id)arg1;
 + (id)creationRequestForAssetFromVideoAtFileURL:(id)arg1;
 + (id)creationRequestForAssetFromImageAtFileURL:(id)arg1;
@@ -38,15 +45,25 @@
 + (id)creationRequestForAssetFromImageData:(id)arg1;
 + (id)creationRequestForAsset;
 + (id)_creationRequestForAssetUsingUUID:(id)arg1;
+@property(nonatomic, setter=_setDestinationAssetAvailabilityHandler:) CDUnknownBlockType destinationAssetAvailabilityHandler; // @synthesize destinationAssetAvailabilityHandler=_destinationAssetAvailabilityHandler;
 @property(nonatomic, setter=_setDuplicateLivePhotoAsStill:) _Bool duplicateLivePhotoAsStill; // @synthesize duplicateLivePhotoAsStill=_duplicateLivePhotoAsStill;
 @property(nonatomic, setter=_setDuplicateStillSourceTime:) CDStruct_1b6d18a9 duplicateStillSourceTime; // @synthesize duplicateStillSourceTime=_duplicateStillSourceTime;
+@property(nonatomic, setter=_setDuplicateAssetPhotoLibraryType:) unsigned short duplicateAssetPhotoLibraryType; // @synthesize duplicateAssetPhotoLibraryType=_duplicateAssetPhotoLibraryType;
 @property(retain, nonatomic, setter=_setDuplicateAssetIdentifier:) NSString *duplicateAssetIdentifier; // @synthesize duplicateAssetIdentifier=_duplicateAssetIdentifier;
+@property(readonly, nonatomic) PHRelationshipChangeRequestHelper *momentShareHelper; // @synthesize momentShareHelper=_momentShareHelper;
+@property(retain, nonatomic) NSString *momentShareUUID; // @synthesize momentShareUUID=_momentShareUUID;
+@property(retain, nonatomic) PHMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 @property(retain, nonatomic, setter=_setPhotoStreamPublishingRequest:) PHAssetCreationPhotoStreamPublishingRequest *_photoStreamPublishingRequest; // @synthesize _photoStreamPublishingRequest=__photoStreamPublishingRequest;
+@property(retain, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
+@property(nonatomic) short importedBy; // @synthesize importedBy=_importedBy;
 - (void).cxx_destruct;
 @property(nonatomic, getter=_shouldCreateScreenshot, setter=_setShouldCreateScreenshot:) _Bool shouldCreateScreenshot;
 @property(nonatomic, setter=_setDuplicateAllowsPrivateMetadata:) _Bool duplicateAllowsPrivateMetadata;
 @property(readonly, getter=isNew) _Bool new;
+- (id)_mutableMomentShareObjectIDsAndUUIDs;
+- (void)_prepareMomentShareHelperIfNeeded;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
+- (_Bool)applyMutationsToManagedObject:(id)arg1 error:(id *)arg2;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (_Bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (_Bool)_populateDuplicatingAssetCreationRequest:(id)arg1 error:(id *)arg2;
@@ -62,8 +79,9 @@
 - (id)initWithHelper:(id)arg1;
 - (id)initForNewObjectWithUUID:(id)arg1;
 - (id)initForNewObject;
-- (_Bool)_createAssetFromValidatedResources:(id)arg1 uuid:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
+- (_Bool)_createAssetFromValidatedResources:(id)arg1 withUUID:(id)arg2 inPhotoLibrary:(id)arg3 error:(id *)arg4;
 - (id)_managedAssetFromData:(id)arg1 imageUTIType:(id)arg2 photoLibrary:(id)arg3 getImageSource:(struct CGImageSource **)arg4 imageData:(id *)arg5;
+- (short)_savedAssetTypeForAsset;
 - (id)_exifPropertiesFromSourceImageDataExifProperties:(id)arg1;
 - (_Bool)_createRAWSidecarForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (_Bool)_createAssetAsPhotoIris:(id)arg1 fromValidatedResources:(id)arg2 error:(id *)arg3;
@@ -74,6 +92,7 @@
 - (void)_resetMovedFiles;
 - (_Bool)_restoreMovedFilesOnFailure;
 - (void)_didMoveFileFromURL:(id)arg1 toURL:(id)arg2;
+- (void)_copyUserSpecificMetadataFromAsset:(id)arg1;
 - (void)_copyMetadataFromAsset:(id)arg1;
 
 // Remaining properties

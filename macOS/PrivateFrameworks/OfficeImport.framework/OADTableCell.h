@@ -8,7 +8,6 @@
 
 @class OADTableCellProperties, OADTextBody;
 
-__attribute__((visibility("hidden")))
 @interface OADTableCell : NSObject
 {
     OADTextBody *mTextBody;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
     int mLeftColumn;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setLeftColumn:(int)arg1;
 - (int)leftColumn;
@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (id)properties;
 - (void)setTextBody:(id)arg1;
 - (id)textBody;
-- (void)dealloc;
 - (id)init;
 
 @end

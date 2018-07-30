@@ -15,13 +15,14 @@
     NSArray *_candidates;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
 @property(retain, nonatomic) TIKeyboardLayout *keyLayout; // @synthesize keyLayout=_keyLayout;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
+- (void).cxx_destruct;
 - (id)shortDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (void)applyToStatistic:(id)arg1;
 
 @end

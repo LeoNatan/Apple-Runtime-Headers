@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAccessibilityIndexedMockUIElement.h>
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilitySegment : NSAccessibilityIndexedMockUIElement
 {
 }

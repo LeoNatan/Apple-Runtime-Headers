@@ -26,6 +26,8 @@
 @property(readonly) UIButton *disclosureButton; // @synthesize disclosureButton=_disclosureButton;
 - (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)_updateColors;
+- (void)tintColorDidChange;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)dealloc;

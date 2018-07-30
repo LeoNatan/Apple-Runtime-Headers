@@ -17,7 +17,7 @@
 - (_Bool)_queue_handleMessageWithType:(long long)arg1 message:(id)arg2;
 
 // Remaining properties
-@property(readonly, nonatomic) id <FBSUIApplicationWorkspaceClientDelegate> delegate; // @dynamic delegate;
+@property(readonly, nonatomic) __weak id <FBSUIApplicationWorkspaceClientDelegate> delegate; // @dynamic delegate;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import "INSetSeatSettingsInCarIntentExport.h"
 
-@class NSNumber, NSString;
+@class INSpeakableString, NSNumber, NSString;
 
 @interface INSetSeatSettingsInCarIntent : INIntent <INSetSeatSettingsInCarIntentExport>
 {
@@ -22,6 +22,8 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+- (void)setCarName:(id)arg1;
+@property(readonly, copy, nonatomic) INSpeakableString *carName;
 - (void)setRelativeLevelSetting:(long long)arg1;
 @property(readonly, nonatomic) long long relativeLevelSetting;
 - (void)setLevel:(id)arg1;
@@ -34,9 +36,11 @@
 @property(readonly, copy, nonatomic) NSNumber *enableCooling;
 - (void)setEnableHeating:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *enableHeating;
-- (id)initWithEnableHeating:(id)arg1 enableCooling:(id)arg2 enableMassage:(id)arg3 seat:(long long)arg4 level:(id)arg5 relativeLevelSetting:(long long)arg6;
+- (id)initWithEnableHeating:(id)arg1 enableCooling:(id)arg2 enableMassage:(id)arg3 seat:(long long)arg4 level:(id)arg5 relativeLevelSetting:(long long)arg6 carName:(id)arg7;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)initWithEnableHeating:(id)arg1 enableCooling:(id)arg2 enableMassage:(id)arg3 seat:(long long)arg4 level:(id)arg5 relativeLevelSetting:(long long)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

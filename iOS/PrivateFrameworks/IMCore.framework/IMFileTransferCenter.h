@@ -26,6 +26,7 @@
 + (void)setTransferCenterClass:(Class)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)preWarmConnection;
 - (void)_daemonRestarted:(id)arg1;
 - (void)_initiateHighQualityVariantDownloadWithDaemonForGUID:(id)arg1;
 - (void)_fetchHighQualityVariantForTransferGUID:(id)arg1 completion:(CDUnknownBlockType)arg2;

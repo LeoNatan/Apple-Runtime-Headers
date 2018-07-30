@@ -20,15 +20,14 @@
     NSMutableDictionary *_drivers;
     RWIBaseManager *_manager;
     RWIServiceConnection *_connection;
-    CDUnknownBlockType _automaticInspectionHandler;
     long long _readyState;
+    BOOL _wantsAutomaticInspectionEnabled;
     BOOL _supportsWebDriver;
 }
 
 @property(retain, nonatomic) RWIServiceConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) RWIBaseManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) long long readyState; // @synthesize readyState=_readyState;
-@property(copy, nonatomic) CDUnknownBlockType automaticInspectionHandler; // @synthesize automaticInspectionHandler=_automaticInspectionHandler;
 @property(readonly, copy, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(readonly, copy, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(readonly, copy, nonatomic) NSString *udid; // @synthesize udid=_udid;
@@ -37,6 +36,8 @@
 @property(readonly, nonatomic) BOOL supportsRemoteWebInspector; // @synthesize supportsRemoteWebInspector=_supportsRemoteWebInspector;
 @property(nonatomic) __weak id <RWITargetDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)inspectAutomaticInspectionCandidate:(id)arg1 pauseImmediately:(BOOL)arg2;
+- (void)shouldAcceptAutomaticInspectionCandidate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)driverWithIdentifier:(id)arg1;
 - (void)removeDriver:(id)arg1;
 - (void)addDriver:(id)arg1;
@@ -45,6 +46,7 @@
 - (void)addApplication:(id)arg1;
 - (void)readyStateChanged;
 - (void)markAsHavingBasicInformation;
+@property(nonatomic) BOOL automaticInspectionEnabled;
 @property(readonly, nonatomic) NSString *loggingIdentifier;
 @property(readonly, nonatomic) NSArray *drivers; // @dynamic drivers;
 @property(readonly, nonatomic) NSArray *allApplications; // @dynamic allApplications;

@@ -4,21 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "HMFMessageDestination.h"
+#import <HomeKitDaemon/HMDRemoteAccountHandleMessageDestination.h>
 
 @class HMDAccount;
 
-@interface HMDRemoteAccountMessageDestination : HMFMessageDestination
+@interface HMDRemoteAccountMessageDestination : HMDRemoteAccountHandleMessageDestination
 {
-    _Bool _multicast;
     HMDAccount *_account;
 }
 
 + (id)shortDescription;
-+ (id)allMessageDestinations;
-@property(readonly, nonatomic, getter=isMulticast) _Bool multicast; // @synthesize multicast=_multicast;
 @property(readonly, nonatomic) HMDAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (id)remoteDestinationString;
 - (id)description;
 - (id)debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;
@@ -26,6 +24,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithTarget:(id)arg1 account:(id)arg2 multicast:(_Bool)arg3;
+- (id)initWithTarget:(id)arg1 handle:(id)arg2 multicast:(_Bool)arg3;
 - (id)initWithTarget:(id)arg1;
 
 @end

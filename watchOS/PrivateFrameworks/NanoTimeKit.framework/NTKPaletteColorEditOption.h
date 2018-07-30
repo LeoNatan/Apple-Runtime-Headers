@@ -10,12 +10,12 @@
 {
 }
 
-+ (id)_localizedNameForValue:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)__orderedValues;
-+ (id)_orderedValues;
-+ (id)_orderedValuesRestrictedByCurrentDeviceCollection;
-+ (id)optionWithPaletteColor:(unsigned int)arg1;
++ (id)_localizedNameForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)__orderedValuesForDevice:(id)arg1;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (id)_orderedValuesRestrictedByDevice:(id)arg1;
++ (id)optionWithPaletteColor:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
 @property(readonly, nonatomic) unsigned int paletteColor;
 

@@ -11,7 +11,6 @@
 
 @class NSString, OADImageRecolorInfo, PDAnimationInfo, PDPlaceholder;
 
-__attribute__((visibility("hidden")))
 @interface PDOfficeArtClient : NSObject <OADClient, OADImageRecolorInfoClient>
 {
     OADImageRecolorInfo *mImageRecolorInfo;
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) int inheritedTextStylePlaceholderType; // @synthesize inheritedTextStylePlaceholderType=mInheritedTextStylePlaceholderType;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setHasOleChart:(BOOL)arg1;
 - (BOOL)hasOleChart;
@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (id)imageRecolorInfo;
 - (struct CGRect)bounds;
 - (BOOL)hasBounds;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

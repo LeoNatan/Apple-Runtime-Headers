@@ -131,7 +131,6 @@
 - (void)resetCloudServerTokenData:(id)arg1;
 - (void)_resetCloudDataAndDeleteMetadataForCurrentAccount:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_resetCloudZonesIgnoreHomeManager:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_removeZones:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_removeAllHomeZonesCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetCloudDataAndDeleteMetadataForCurrentAccount:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchAndVerifyZoneRootRecord:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -154,6 +153,15 @@
 @property(readonly, nonatomic) HMDCloudMetadataZone *metadataZone;
 - (_Bool)legacyZoneHasRecordsAvaliable;
 @property(readonly, nonatomic) HMDCloudLegacyZone *legacyZone;
+- (void)__deleteRecordWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)__deleteRecordZonesWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)__deleteRecordZoneWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)__saveRecordZone:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)__fetchRecordZoneWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)__fetchAllRecordZonesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)__saveSubscription:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)__fetchSubscriptionWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)__addCKDatabaseOperation:(id)arg1;
 - (void)dealloc;
 - (id)initWithMessageDispatcher:(id)arg1 cloudDataSyncStateFilter:(id)arg2 cloudCache:(id)arg3 homeManager:(id)arg4 callbackQueue:(id)arg5;
 

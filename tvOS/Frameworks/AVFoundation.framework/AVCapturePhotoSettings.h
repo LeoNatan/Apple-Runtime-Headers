@@ -13,6 +13,10 @@
 @interface AVCapturePhotoSettings : NSObject <NSCopying>
 {
     AVCapturePhotoSettingsInternal *_internal;
+    _Bool _portraitEffectsMatteDeliveryEnabled;
+    _Bool _embedsPortraitEffectsMatteInPhoto;
+    NSArray *_availableRawEmbeddedThumbnailPhotoCodecTypes;
+    NSDictionary *_rawEmbeddedThumbnailPhotoFormat;
 }
 
 + (id)photoSettingsFromPhotoSettings:(id)arg1;
@@ -23,6 +27,10 @@
 + (id)photoSettingsWithFormat:(id)arg1;
 + (id)photoSettings;
 + (long long)uniqueID;
+@property(copy, nonatomic) NSDictionary *rawEmbeddedThumbnailPhotoFormat; // @synthesize rawEmbeddedThumbnailPhotoFormat=_rawEmbeddedThumbnailPhotoFormat;
+@property(readonly, nonatomic) NSArray *availableRawEmbeddedThumbnailPhotoCodecTypes; // @synthesize availableRawEmbeddedThumbnailPhotoCodecTypes=_availableRawEmbeddedThumbnailPhotoCodecTypes;
+@property(nonatomic) _Bool embedsPortraitEffectsMatteInPhoto; // @synthesize embedsPortraitEffectsMatteInPhoto=_embedsPortraitEffectsMatteInPhoto;
+@property(nonatomic, getter=isPortraitEffectsMatteDeliveryEnabled) _Bool portraitEffectsMatteDeliveryEnabled; // @synthesize portraitEffectsMatteDeliveryEnabled=_portraitEffectsMatteDeliveryEnabled;
 - (id)_sanitizedLivePhotoMovieMetadataForArray:(id)arg1 exceptionReason:(id *)arg2;
 - (void)setAdjustedPhotoFilters:(id)arg1;
 - (id)adjustedPhotoFilters;

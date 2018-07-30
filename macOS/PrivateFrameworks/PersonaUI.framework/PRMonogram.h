@@ -15,7 +15,7 @@
     NSColor *_color;
 }
 
-+ (id)plateFlatColor;
++ (void)updatePlateOverlayLayer:(id)arg1;
 + (id)plateOverlayLayer;
 + (double)kerningForFontIndex:(unsigned long long)arg1 fontSize:(double)arg2;
 + (id)fontForIndex:(unsigned long long)arg1 plateDiameter:(double)arg2;
@@ -24,6 +24,12 @@
 + (id)fontNames;
 + (id)_defaultMonogramColor;
 + (id)monogramColors;
++ (id)plateSelectedActiveTextColor;
++ (id)plateSelectedInactiveColor;
++ (id)plateSelectedActiveColor;
++ (id)plateGradientEndColor;
++ (id)plateGradientStartColor;
++ (id)plateFlatColor;
 + (id)monogramWithData:(id)arg1;
 + (id)monogram;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;

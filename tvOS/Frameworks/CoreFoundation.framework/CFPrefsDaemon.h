@@ -17,15 +17,15 @@ __attribute__((visibility("hidden")))
     struct __CFSet *_sourceCache;
     struct os_unfair_lock_s _sourceCacheLock;
     _Bool _testMode;
-    // Error parsing type: ^(?={_CFPrefsShmemEntry=AiAI}AQ), name: _shmem
+    // Error parsing type: ^AI, name: _shmem
 }
 
 - (id)listener;
 - (void)checkIn;
 - (void)getShmemName:(char *)arg1 bufLen:(unsigned long long)arg2;
 - (unsigned int)userID;
--     // Error parsing type: ^(?={_CFPrefsShmemEntry=AiAI}AQ)16@0:8, name: shmem
-- (void)_initializeShmemPage:(union **)arg1;
+-     // Error parsing type: ^AI16@0:8, name: shmem
+-     // Error parsing type: v24@0:8^^AI16, name: _initializeShmemPage:
 - (_Bool)isInTestMode;
 - (int)role;
 - (id)initWithRole:(int)arg1 testMode:(_Bool)arg2;

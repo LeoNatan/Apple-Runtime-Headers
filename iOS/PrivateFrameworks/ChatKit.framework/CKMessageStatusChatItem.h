@@ -38,6 +38,7 @@
 - (long long)expireStatusType;
 - (long long)statusType;
 - (id)now;
+@property(readonly, nonatomic) BOOL statusAlignment;
 @property(readonly, nonatomic) long long buttonType;
 @property(readonly, nonatomic) struct UIEdgeInsets buttonTextAlignmentInsets; // @synthesize buttonTextAlignmentInsets=_buttonTextAlignmentInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets labelTextAlignmentInsets; // @synthesize labelTextAlignmentInsets=_labelTextAlignmentInsets;

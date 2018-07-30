@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, SKScene;
 
+__attribute__((visibility("hidden")))
 @interface SCNSpriteKitEventHandler : NSObject
 {
     SKScene *_scene;

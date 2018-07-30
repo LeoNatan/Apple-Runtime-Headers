@@ -7,11 +7,11 @@
 #import "NFSessionCallbackInterface.h"
 #import "NSObject.h"
 
-@class NFTechnologyEvent, NSDictionary, NSString;
+@class NFFieldNotification, NSDictionary, NSString;
 
 @protocol NFContactlessSessionCallbacks <NSObject, NFSessionCallbackInterface>
 - (void)didSelectApplet:(NSString *)arg1;
-- (void)didDetectTechnology:(NFTechnologyEvent *)arg1;
+- (void)didDetectFieldNotification:(NFFieldNotification *)arg1;
 - (void)didDetectField:(BOOL)arg1;
 
 @optional

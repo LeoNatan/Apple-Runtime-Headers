@@ -6,28 +6,34 @@
 
 #import "NSObject.h"
 
+#import "BSXPCCoding.h"
 #import "NSCopying.h"
 
-@class NSDictionary, NSMutableDictionary, NSURL;
+@class NSDictionary, NSMutableDictionary, NSString, NSURL;
 
-@interface FBSOpenApplicationOptions : NSObject <NSCopying>
+@interface FBSOpenApplicationOptions : NSObject <BSXPCCoding, NSCopying>
 {
     NSMutableDictionary *_payload;
 }
 
 + (id)optionsWithDictionary:(id)arg1;
 @property(copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_payload;
+- (void).cxx_destruct;
 - (void)_sanitizeAndValidatePayload;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, retain, nonatomic) NSURL *url;
-- (void)dealloc;
+@property(readonly, nonatomic) NSURL *url;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

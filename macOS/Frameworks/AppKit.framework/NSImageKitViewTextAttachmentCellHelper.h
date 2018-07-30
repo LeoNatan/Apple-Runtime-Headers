@@ -6,6 +6,7 @@
 
 #import <AppKit/NSViewTextAttachmentCellHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface NSImageKitViewTextAttachmentCellHelper : NSViewTextAttachmentCellHelper
 {
     unsigned long long _charIndex;

@@ -15,34 +15,23 @@
     VCPCNNData *_filter;
     VCPCNNData *_bias;
     int _chunk;
-    BOOL _disableReLU;
+    BOOL _reLU;
     int _padding;
     int _padSize;
-    int _groups;
     int _stride;
+    int _groups;
     BOOL _batchNorm;
-    float *_batchNormMean;
-    float *_batchNormVar;
-    float *_batchNormGamma;
-    float *_batchNormBeta;
-    CDUnknownFunctionPointerType CalculateDotProductOfChunk;
 }
 
++ (id)convBlockWithFilterSize:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(BOOL)arg4 padding:(BOOL)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(BOOL)arg8;
++ (id)convBlockWithFilterSize:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(BOOL)arg4 padding:(BOOL)arg5;
++ (Class)convBlockClass:(int)arg1;
 - (void).cxx_destruct;
-- (int)chunkFourForward;
-- (BOOL)isFilterSizeSupported:(int)arg1;
-- (int)straightForwardForChunkFour;
-- (int)straightForward;
 - (BOOL)useGPU;
 - (BOOL)supportGPU;
-- (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;
-- (int)readBatchNormParam:(struct __sFILE *)arg1 quantFactor:(short)arg2;
-- (int)forward;
 - (int)constructBlock:(id)arg1 context:(id)arg2;
-- (void)dealloc;
-- (void)releaseBatchNormMemory;
-- (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 disableReLU:(BOOL)arg4 padding:(BOOL)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(BOOL)arg8;
-- (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 disableReLU:(BOOL)arg4 padding:(BOOL)arg5;
+- (int)initializeRest;
+- (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(BOOL)arg4 padding:(BOOL)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(BOOL)arg8;
 
 @end
 

@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSAttributedString;
+@class NSAttributedString, SCRUIElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRWebStitchedTextToken : NSObject
 {
     NSAttributedString *_attributedString;
+    SCRUIElement *_uiElement;
     struct CGRect _rect;
 }
 
+@property(retain, nonatomic, getter=uiElement, setter=setUIElement:) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (void).cxx_destruct;

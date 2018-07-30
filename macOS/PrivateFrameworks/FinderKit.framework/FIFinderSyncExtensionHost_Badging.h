@@ -14,16 +14,16 @@
 __attribute__((visibility("hidden")))
 @interface FIFinderSyncExtensionHost_Badging : FIFinderSyncExtensionHost <FIFinderSyncExtensionHostProtocol, NSMenuDelegate>
 {
-    struct TNSRef<id<FIFinderSyncExtensionProtocol>, void> _remote;
+    struct TNSRef<NSObject<FIFinderSyncExtensionProtocol>, void> _remote;
     NSExtension *_extension;
-    struct unordered_map<TString, TNSRef<NSImage *, void>, std::__1::hash<TString>, std::__1::equal_to<TString>, std::__1::allocator<std::__1::pair<const TString, TNSRef<NSImage *, void>>>> _badgeIDImages;
+    struct unordered_map<TString, TNSRef<NSImage, void>, std::__1::hash<TString>, std::__1::equal_to<TString>, std::__1::allocator<std::__1::pair<const TString, TNSRef<NSImage, void>>>> _badgeIDImages;
     struct unordered_map<TString, TString, std::__1::hash<TString>, std::__1::equal_to<TString>, std::__1::allocator<std::__1::pair<const TString, TString>>> _badgeIDLabels;
     struct TString _toolbarItemName;
     struct TString _toolbarToolTip;
-    struct TNSRef<NSData *, void> _toolbarImageData;
+    struct TNSRef<NSData, void> _toolbarImageData;
     _Bool _toolbarImageIsTemplate;
     struct TFENodeVector _interestedRoots;
-    struct vector<TNSRef<NSURL *, void>, std::__1::allocator<TNSRef<NSURL *, void>>> _unresolvedRoots;
+    struct vector<TNSRef<NSURL, void>, std::__1::allocator<TNSRef<NSURL, void>>> _unresolvedRoots;
     struct unordered_map<TFENode, TString, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TString>>> _nodeToBadgeIDMap;
     _Bool _fetchedContainingAppIcon;
     struct TIconRef _containingAppIcon;

@@ -25,7 +25,6 @@
     NSNumber *_calendarItemPermissionNumber;
     NSString *_contactIdentifiersString;
     id <EKProtocolStructuredLocation> _ekStructuredLocation;
-    NSDate *_lastModifiedDate;
     id <EKProtocolParticipant> _organizer;
     NSString *_organizerName;
     NSURL *_organizerURL;
@@ -50,6 +49,7 @@
     NSURL *_URL;
     NSNumber *_priorityNumber;
     NSDate *_creationDate;
+    NSDate *_lastModifiedDate;
     NSSet *_alarmSet;
     NSSet *_attendeeSet;
     NSSet *_attachmentSet;
@@ -68,6 +68,7 @@
 @property(readonly, nonatomic) NSSet *attachmentSet; // @synthesize attachmentSet=_attachmentSet;
 @property(readonly, nonatomic) NSSet *attendeeSet; // @synthesize attendeeSet=_attendeeSet;
 @property(readonly, nonatomic) NSSet *alarmSet; // @synthesize alarmSet=_alarmSet;
+@property(readonly, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSNumber *priorityNumber; // @synthesize priorityNumber=_priorityNumber;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
@@ -94,7 +95,6 @@
 @property(readonly, copy, nonatomic) NSString *organizerName; // @synthesize organizerName=_organizerName;
 @property(readonly, nonatomic) BOOL organizedByMe; // @synthesize organizedByMe=_organizedByMe;
 @property(readonly, retain, nonatomic) id <EKProtocolParticipant> organizer;
-@property(readonly, copy, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(readonly, copy, nonatomic) id <EKProtocolStructuredLocation> ekStructuredLocation; // @synthesize ekStructuredLocation=_ekStructuredLocation;
 @property(readonly, nonatomic) BOOL defaultAlarmWasDeleted; // @synthesize defaultAlarmWasDeleted=_defaultAlarmWasDeleted;
 @property(readonly, copy, nonatomic) NSString *contactIdentifiersString; // @synthesize contactIdentifiersString=_contactIdentifiersString;

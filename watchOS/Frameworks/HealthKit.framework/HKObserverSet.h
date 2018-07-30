@@ -6,20 +6,24 @@
 
 #import "NSObject.h"
 
-@class NSMapTable, NSObject<OS_os_log>, NSString;
+@class NSMapTable, NSObject<OS_dispatch_queue>, NSObject<OS_os_log>, NSString;
 
 @interface HKObserverSet : NSObject
 {
     NSMapTable *_observerMap;
     NSString *_name;
     NSObject<OS_os_log> *_category;
+    NSObject<OS_dispatch_queue> *_defaultObserverQueue;
     struct os_unfair_lock_s _lock;
 }
 
 - (void).cxx_destruct;
 - (void)_notifyObserver:(id)arg1 handler:(CDUnknownBlockType)arg2;
+@property(readonly) unsigned int count;
 - (void)notifyObservers:(CDUnknownBlockType)arg1;
 - (void)unregisterObserver:(id)arg1;
+- (void)_registerObserver:(id)arg1 queue:(id)arg2;
+- (void)registerObserver:(id)arg1 queue:(id)arg2;
 - (void)registerObserver:(id)arg1;
 - (id)initWithName:(id)arg1 loggingCategory:(id)arg2;
 

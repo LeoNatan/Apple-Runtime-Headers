@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (void)cancel;
 - (void)snapshotWithCompletion:(CDUnknownBlockType)arg1;
+- (id)initWithTransaction:(id)arg1 radius:(double)arg2 snapshotSize:(struct CGSize)arg3 showsMerchantAnnotation:(_Bool)arg4;
 - (id)initWithTransaction:(id)arg1 radius:(double)arg2 snapshotSize:(struct CGSize)arg3;
 
 @end

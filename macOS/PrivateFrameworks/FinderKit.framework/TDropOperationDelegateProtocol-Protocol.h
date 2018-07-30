@@ -9,6 +9,7 @@
 @class NSDraggingItem, NSView;
 
 @protocol TDropOperationDelegateProtocol <TNodeTaskDelegateProtocol>
+- (_Bool)useSpecialInFlightAnimation;
 - (void)offsetSpatialData:(struct IconSpatialData *)arg1;
 
 @optional

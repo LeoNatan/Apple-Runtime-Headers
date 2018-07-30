@@ -33,6 +33,7 @@
 + (_Bool)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2;
 + (long long)appDemoteableSpace;
 + (void)postFailureNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4;
++ (void)postAutoUpdateInformationalNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 + (long long)translateErrorCodeFromError:(id)arg1;
 + (id)translateError:(id)arg1 withAddedUserInfo:(id)arg2;
 + (id)translateError:(id)arg1;

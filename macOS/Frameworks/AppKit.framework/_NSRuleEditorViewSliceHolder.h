@@ -6,10 +6,18 @@
 
 #import <AppKit/NSView.h>
 
+@class NSBannerView;
+
+__attribute__((visibility("hidden")))
 @interface _NSRuleEditorViewSliceHolder : NSView
 {
+    NSBannerView *_bannerView;
 }
 
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)_preferredAppearance;
+- (unsigned long long)_vibrantBlendingStyleForSubtree;
 - (BOOL)isFlipped;
 
 @end

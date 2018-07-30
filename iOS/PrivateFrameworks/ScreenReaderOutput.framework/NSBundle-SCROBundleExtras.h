@@ -14,6 +14,7 @@
 + (id)_brailleTableDictionaryForBrailleTableIdentifier:(id)arg1;
 + (id)nameForBrailleTableIdentifier:(id)arg1;
 + (id)brailleTableBundleWithTableIdentifier:(id)arg1;
++ (id)defaultBrailleTableForLanguageIdentifier:(id)arg1;
 + (id)brailleTableIdentifiers;
 + (id)_brailleTableBundles;
 + (id)brailleDriverDeviceDetectionInfo;

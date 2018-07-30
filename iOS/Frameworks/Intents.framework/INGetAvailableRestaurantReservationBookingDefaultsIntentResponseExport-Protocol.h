@@ -11,8 +11,8 @@
 
 @protocol INGetAvailableRestaurantReservationBookingDefaultsIntentResponseExport <NSObject, JSExport>
 @property(copy, nonatomic) INImage *providerImage;
-@property(retain, nonatomic) NSNumber *minimumPartySize;
-@property(retain, nonatomic) NSNumber *maximumPartySize;
+@property(copy, nonatomic) NSNumber *minimumPartySize;
+@property(copy, nonatomic) NSNumber *maximumPartySize;
 @property(readonly, copy, nonatomic) NSDate *defaultBookingDate;
 @property(readonly, nonatomic) unsigned long long defaultPartySize;
 - (id)init;

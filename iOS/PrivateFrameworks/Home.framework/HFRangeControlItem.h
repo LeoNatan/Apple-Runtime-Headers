@@ -6,7 +6,7 @@
 
 #import <Home/HFControlItem.h>
 
-@class NSNumber, NSSet, NSString;
+@class HFNumberValueConstraints, NSNumber, NSSet, NSString;
 
 @interface HFRangeControlItem : HFControlItem
 {
@@ -16,7 +16,6 @@
 }
 
 + (_Bool)_hasWritableCharacteristicsOfType:(id)arg1 valueSource:(id)arg2;
-+ (id)numberValueFormatter;
 + (id)readOnlyCharacteristicTypes;
 + (Class)valueClass;
 @property(readonly, copy, nonatomic) NSString *maximumCharacteristicType; // @synthesize maximumCharacteristicType=_maximumCharacteristicType;
@@ -28,11 +27,15 @@
 - (id)_minimumCharacteristicTypeMetadata;
 - (id)targetCharacteristicTypeWithCharacteristicValuesKeyedByType:(id)arg1;
 - (unsigned long long)rangeModeWithCharacteristicValuesKeyedByType:(id)arg1;
-@property(readonly, copy, nonatomic) NSNumber *minimumCharacteristicTypeStepValue;
-@property(readonly, copy, nonatomic) NSNumber *maximumCharacteristicTypeStepValue;
+- (id)numberValueFormatter;
+- (id)minimumCharacteristicTypeStepValue;
+- (id)maximumCharacteristicTypeStepValue;
 @property(readonly, copy, nonatomic) NSNumber *stepValue;
 @property(readonly, copy, nonatomic) NSNumber *maximumValue;
 @property(readonly, copy, nonatomic) NSNumber *minimumValue;
+@property(readonly, nonatomic) HFNumberValueConstraints *targetValueConstraints;
+@property(readonly, nonatomic) HFNumberValueConstraints *maximumValueConstraints;
+@property(readonly, nonatomic) HFNumberValueConstraints *minimumValueConstraints;
 - (id)resultsForBatchReadResponse:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;

@@ -15,15 +15,12 @@
 - (id)_mediumQualityDevicesForCoverSheetBlur;
 - (id)_lowQualityDevicesForCoverSheetBlur;
 - (id)_lowQualityDevicesForDashBoardPresentation;
-- (id)_lowQualityDevicesForHomescreenFolders;
-- (id)_highQualityDevicesForHomeFolders;
 - (id)_mediumQualityProductsIncludingN41:(_Bool)arg1;
 - (long long)_graphicsQualityIncludingMediumN41:(_Bool)arg1;
 - (long long)sbf_homeScreenBlurGraphicsQuality;
 - (long long)sbf_coverSheetBlurGraphicsQuality;
 - (long long)sbf_dashBoardPresentationGraphicsQuality;
 - (long long)sbf_searchTransitionGraphicsQuality;
-- (long long)sbf_homeScreenFolderGraphicsQuality;
 - (long long)sbf_controlCenterGraphicsQuality;
 - (long long)sbf_bannerGraphicsQuality;
 @end

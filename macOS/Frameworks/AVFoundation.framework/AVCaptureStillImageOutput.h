@@ -11,11 +11,19 @@
 @interface AVCaptureStillImageOutput : AVCaptureOutput
 {
     AVCaptureStillImageOutputInternal *_internal;
+    BOOL _stillImageStabilizationSupported;
+    BOOL _automaticallyEnablesStillImageStabilizationWhenAvailable;
+    BOOL _stillImageStabilizationActive;
+    BOOL _highResolutionStillImageOutputEnabled;
 }
 
 + (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer *)arg1;
 + (id)new;
 + (void)initialize;
+@property(nonatomic, getter=isHighResolutionStillImageOutputEnabled) BOOL highResolutionStillImageOutputEnabled; // @synthesize highResolutionStillImageOutputEnabled=_highResolutionStillImageOutputEnabled;
+@property(readonly, nonatomic, getter=isStillImageStabilizationActive) BOOL stillImageStabilizationActive; // @synthesize stillImageStabilizationActive=_stillImageStabilizationActive;
+@property(nonatomic) BOOL automaticallyEnablesStillImageStabilizationWhenAvailable; // @synthesize automaticallyEnablesStillImageStabilizationWhenAvailable=_automaticallyEnablesStillImageStabilizationWhenAvailable;
+@property(readonly, nonatomic, getter=isStillImageStabilizationSupported) BOOL stillImageStabilizationSupported; // @synthesize stillImageStabilizationSupported=_stillImageStabilizationSupported;
 - (BOOL)supportsVideoMaxFrameDurationForConnection:(id)arg1;
 - (BOOL)supportsVideoMinFrameDurationForConnection:(id)arg1;
 - (long long)defaultVideoFieldModeForConnection:(id)arg1;

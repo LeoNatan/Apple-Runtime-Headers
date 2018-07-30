@@ -15,7 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface FormAutoFillCompletionControllerObjCAdapter : NSObject <NSTableViewDataSource, NSTableViewDelegate, CompletionUIPresentationControllerDelegate>
 {
-    // Error parsing type: ^{FormAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}III}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}III}}, name: _completionController
+    // Error parsing type: ^{FormAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}}, name: _completionController
     NSMutableSet *_completionAbortingNotificationNames;
     NSHashTable *_observers;
 }
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)removeAutoFillControllerObserver:(id)arg1;
 - (void)registerAutoFillControllerObserver:(id)arg1;
 - (BOOL)performActionForListItem:(const struct CompletionListItem *)arg1 result:(char *)arg2 shouldAbortCompletion:(char *)arg3;
-- (void)didRefreshCompletionListItems:(const Vector_24b72aae *)arg1;
+- (void)didRefreshCompletionListItems:(const Vector_9c080eda *)arg1;
 - (void)_registerForCompletionAbortingNotificationNamed:(id)arg1 object:(id)arg2;
 - (void)_unregisterForCompletionAbortingNotifications;
 - (void)_registerForCompletionAbortingNotifications;
@@ -35,8 +35,8 @@ __attribute__((visibility("hidden")))
 - (void)completionWindowDidShow;
 - (void)completionWindowWillShow;
 - (void)invalidate;
--     // Error parsing type: ^{FormAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}III}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}III}}16@0:8, name: completionController
--     // Error parsing type: @24@0:8^{FormAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}III}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}III}}16, name: initWithCompletionController:
+-     // Error parsing type: ^{FormAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}}16@0:8, name: completionController
+-     // Error parsing type: @24@0:8^{FormAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}}16, name: initWithCompletionController:
 - (void)completionUIPresentationControllerDidFinishPresentationAnimation:(id)arg1;
 - (void)completionUIPresentationControllerWillStartPresentationAnimation:(id)arg1;
 - (BOOL)completionListTableView:(id)arg1 rowSpansAllColumns:(long long)arg2;

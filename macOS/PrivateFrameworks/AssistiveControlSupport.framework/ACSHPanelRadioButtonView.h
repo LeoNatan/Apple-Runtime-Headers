@@ -14,7 +14,6 @@
 @property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
-- (BOOL)shouldResetLookAfterSelect;
 
 @end
 

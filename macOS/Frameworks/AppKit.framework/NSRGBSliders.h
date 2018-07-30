@@ -6,12 +6,15 @@
 
 #import <AppKit/NSColorSpaceSliders.h>
 
+@class NSView;
+
+__attribute__((visibility("hidden")))
 @interface NSRGBSliders : NSColorSpaceSliders
 {
     id redSlider;
     id greenSlider;
     id blueSlider;
-    id rgbView;
+    NSView *_rgbView;
     id redText;
     id greenText;
     id blueText;
@@ -22,6 +25,7 @@
 }
 
 + (id)genericColorSpace;
+@property(retain) NSView *rgbView; // @synthesize rgbView=_rgbView;
 - (void)takeColorSpaceFrom:(id)arg1;
 - (void)setEntryMode:(long long)arg1;
 - (void)_adjustControls:(id)arg1 andSetColor:(BOOL)arg2;
@@ -32,6 +36,7 @@
 - (void)setMatchedColor:(id)arg1;
 - (id)fieldEditableControl;
 - (id)provideNewSubview:(id)arg1;
+- (void)dealloc;
 
 @end
 

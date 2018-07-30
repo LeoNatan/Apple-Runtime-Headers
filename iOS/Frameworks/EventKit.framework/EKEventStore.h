@@ -118,6 +118,7 @@
 - (id)fetchObjectsMatchingPredicate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)fetchEventsMatchingPredicate:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)enumerateEventsMatchingPredicate:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)eventObjectIDsMatchingPredicate:(id)arg1;
 - (id)eventsMatchingPredicate:(id)arg1;
 - (void)_validateEventPredicate:(id)arg1;
 - (_Bool)commit:(id *)arg1;
@@ -171,6 +172,7 @@
 @property(readonly, nonatomic) EKCalendar *suggestedEventCalendar;
 - (void)rebuildOccurrenceCache;
 @property(nonatomic) _Bool showDeclinedEvents;
+- (id)scheduledTaskCacheFetchTasksOnDay:(id)arg1 maxResults:(unsigned long long)arg2;
 - (id)scheduledTaskCacheFetchTasksOnDay:(id)arg1;
 - (id)scheduledTaskCacheFetchDaysAndTaskCounts;
 - (id)occurrenceCacheGetOccurrencesForCalendars:(id)arg1;
@@ -190,6 +192,7 @@
 - (_Bool)fetchProperties:(id)arg1 forReminders:(id)arg2;
 - (id)predicateForRemindersWithTitle:(id)arg1 listTitle:(id)arg2 limitToCompletedOrIncomplete:(_Bool)arg3 completed:(_Bool)arg4 dueAfter:(id)arg5 dueBefore:(id)arg6 searchTerm:(id)arg7 sortOrder:(int)arg8 maxResults:(unsigned long long)arg9;
 - (id)predicateForRemindersWithTitle:(id)arg1 listTitle:(id)arg2 limitToCompletedOrIncomplete:(_Bool)arg3 completed:(_Bool)arg4 dueAfter:(id)arg5 dueBefore:(id)arg6 searchTerm:(id)arg7 sortOrder:(int)arg8;
+- (id)predicateForRemindersWithSearchTerm:(id)arg1 preloadProperties:(id)arg2;
 - (id)predicateForRemindersWithSearchTerm:(id)arg1;
 - (id)predicateForCompletedRemindersWithCalendars:(id)arg1;
 - (id)predicateForRemindersWithTitle:(id)arg1 calendars:(id)arg2;
@@ -199,14 +202,18 @@
 - (id)predicateForPreloadedCompletedRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3 preloadProperties:(id)arg4;
 - (id)predicateForCompletedRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
 - (id)predicateForIncompleteRemindersDueBeforeOrOnDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
+- (id)predicateForPreloadedIncompleteRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3 preloadProperties:(id)arg4 maxResults:(unsigned long long)arg5;
 - (id)predicateForPreloadedIncompleteRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3 preloadProperties:(id)arg4;
 - (id)predicateForIncompleteRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
+- (id)_predicateForRemindersWithDate:(id)arg1 useAsCompletionDate:(_Bool)arg2 calendars:(id)arg3 limitToCompletedOrIncomplete:(_Bool)arg4 completed:(_Bool)arg5 includeDatesBefore:(_Bool)arg6 sortOrder:(int)arg7 preloadProperties:(id)arg8 maxResults:(unsigned long long)arg9;
 - (id)_predicateForRemindersWithDate:(id)arg1 useAsCompletionDate:(_Bool)arg2 calendars:(id)arg3 limitToCompletedOrIncomplete:(_Bool)arg4 completed:(_Bool)arg5 includeDatesBefore:(_Bool)arg6 sortOrder:(int)arg7 preloadProperties:(id)arg8;
 - (id)predicateForCompletedRemindersWithCompletionDateStarting:(id)arg1 ending:(id)arg2 calendars:(id)arg3;
 - (id)predicateForIncompleteRemindersWithDueDateStarting:(id)arg1 ending:(id)arg2 calendars:(id)arg3;
 - (id)predicateForIncompleteRemindersDueBeforeOrOnExactDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
+- (id)predicateForRemindersInCalendars:(id)arg1 preloadProperties:(id)arg2;
 - (id)predicateForRemindersInCalendars:(id)arg1;
 - (id)fetchRemindersMatchingPredicate:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)reminderObjectIDsMatchingPredicate:(id)arg1;
 - (int)countOfRemindersMatchingPredicate:(id)arg1;
 - (id)remindersMatchingPredicate:(id)arg1;
 - (void)_validateReminderPredicate:(id)arg1;
@@ -224,6 +231,7 @@
 - (_Bool)saveReminder:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)saveReminder:(id)arg1 error:(id *)arg2;
 - (void)_removeCachedCalendarWithID:(id)arg1;
+- (void)_removeCachedCalendarFromSource:(id)arg1;
 - (void)_clearCachedCalendars;
 - (void)setDefaultCalendarForNewReminders:(id)arg1;
 - (id)defaultCalendarForNewReminders;
@@ -234,7 +242,8 @@
 - (struct CGColor *)copyCGColorForNewCalendar;
 - (id)ICSDataForCalendarItems:(id)arg1 preventLineFolding:(_Bool)arg2;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
-- (void)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_importICSData:(id)arg1 intoCalendarsWithIDs:(id)arg2 options:(unsigned long long)arg3;
+- (id)importICSData:(id)arg1 intoCalendars:(id)arg2 options:(unsigned long long)arg3;
 - (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
 - (_Bool)markEventAlerted:(id)arg1;
 - (_Bool)setInvitationStatus:(unsigned long long)arg1 forEvents:(id)arg2 error:(id *)arg3;
@@ -289,6 +298,7 @@
 - (void)daemonRestarted;
 - (void)_defaultAlarmChangedExternally;
 - (void)_defaultCalendarChangedExternally;
+- (void)_postEventStoreChangedNotificationWithChangedObjectIDs:(id)arg1;
 - (void)_databaseChangedExternally;
 - (void)_validateObjectIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)changesSinceSequenceNumber:(int)arg1;
@@ -306,9 +316,11 @@
 - (void)requestAccessToEntityType:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestAccessForEntityType:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)initWithOptions:(int)arg1 path:(id)arg2 clientIDSuffix:(id)arg3 enablePropertyModificationLogging:(_Bool)arg4;
+- (id)initWithOptions:(int)arg1 path:(id)arg2 changeTrackingClientId:(id)arg3 enablePropertyModificationLogging:(_Bool)arg4;
 - (id)initWithEKOptions:(unsigned long long)arg1;
+- (id)initWithEKOptions:(unsigned long long)arg1 path:(id)arg2 changeTrackingClientId:(id)arg3 enablePropertyModificationLogging:(_Bool)arg4;
 - (id)initWithEKOptions:(unsigned long long)arg1 path:(id)arg2 clientIDSuffix:(id)arg3 enablePropertyModificationLogging:(_Bool)arg4;
+- (id)initWithOptions:(int)arg1 path:(id)arg2 clientIDSuffix:(id)arg3 enablePropertyModificationLogging:(_Bool)arg4;
 - (id)initWithOptions:(int)arg1 path:(id)arg2;
 - (id)init;
 

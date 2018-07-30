@@ -10,6 +10,7 @@
 
 @class NSXPCConnection, TKSmartCardSlotEngine;
 
+__attribute__((visibility("hidden")))
 @interface TKSmartCardSessionEngine : NSObject <TKProtocolSmartCardSession>
 {
     TKSmartCardSlotEngine *_slot;

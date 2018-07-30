@@ -30,6 +30,7 @@
 - (id)filenames;
 @property(readonly, copy) NSArray *URLs;
 - (void)_initSaveMode;
+- (BOOL)_allowsRootLayerBacking;
 - (void)_unregisterKVOWithViewBridgeService:(id)arg1 onBridge:(id)arg2;
 - (void)_registerKVOWithViewBridgeService:(id)arg1 onBridge:(id)arg2;
 

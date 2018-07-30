@@ -9,24 +9,28 @@
 #import "MLFeatureValueConstraint.h"
 #import "NSCopying.h"
 
-@class NSArray;
+@class MLMultiArrayShapeConstraint, NSArray;
 
 @interface MLMultiArrayConstraint : NSObject <MLFeatureValueConstraint, NSCopying>
 {
     NSArray *_shape;
     long long _dataType;
+    MLMultiArrayShapeConstraint *_shapeConstraint;
 }
 
 + (id)constraintWithShape:(id)arg1 dataType:(long long)arg2;
++ (id)constraintWithShape:(id)arg1 dataType:(long long)arg2 shapeConstraint:(id)arg3;
+@property(readonly, nonatomic) MLMultiArrayShapeConstraint *shapeConstraint; // @synthesize shapeConstraint=_shapeConstraint;
 @property(readonly, nonatomic) long long dataType; // @synthesize dataType=_dataType;
 @property(readonly, nonatomic) NSArray *shape; // @synthesize shape=_shape;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isAllowedValue:(id)arg1 error:(id *)arg2;
+- (BOOL)isAllowedValue:(id)arg1 neuralNetworkInput:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)isAllowedDataType:(long long)arg1 error:(id *)arg2;
 - (BOOL)isAllowedShape:(id)arg1 error:(id *)arg2;
-- (id)initWithShape:(id)arg1 dataType:(long long)arg2;
+- (id)initWithShape:(id)arg1 dataType:(long long)arg2 shapeConstraint:(id)arg3;
 
 @end
 

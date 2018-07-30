@@ -196,7 +196,6 @@
 - (id)iCalendarDocumentWithMethod:(int)arg1 options:(unsigned long long)arg2;
 - (id)_iCalendarElementWithOptions:(unsigned long long)arg1;
 - (Class)entityClass;
-- (id)occurrenceIDFromCommittedValues;
 - (id)occurrenceID;
 - (id)occurrenceIDForOccurrenceDate:(id)arg1;
 - (id)entityID;
@@ -246,7 +245,6 @@
 @property BOOL isVeryLongDuration; // @dynamic isVeryLongDuration;
 @property(nonatomic) BOOL isYearlessLeapMonthBirthday; // @dynamic isYearlessLeapMonthBirthday;
 @property unsigned long long junkStatusEnum; // @dynamic junkStatusEnum;
-@property(readonly, copy, nonatomic) NSDate *lastModifiedDate;
 @property(retain) NSString *linkID; // @dynamic linkID;
 @property(readonly, copy, nonatomic) NSData *localStructuredData;
 @property(retain) NSString *lunarCalendarID; // @dynamic lunarCalendarID;

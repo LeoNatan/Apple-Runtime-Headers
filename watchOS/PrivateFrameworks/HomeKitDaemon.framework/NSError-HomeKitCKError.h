@@ -11,5 +11,6 @@
 - (_Bool)isCKError;
 - (id)hmErrorFromCKError;
 - (id)conciseCKError;
+- (id)actualCKErrorFromCKErrorPartialFailure:(id)arg1;
 @end
 

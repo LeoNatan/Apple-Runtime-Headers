@@ -8,12 +8,13 @@
 
 #import "PHPhotoLibraryChangeObserver.h"
 
-@class NSObject<OS_dispatch_source>, NSString, PHImageManagerSettings;
+@class NSObject<OS_dispatch_source>, NSString, PDImageManager, PHImageManagerSettings;
 
 @interface PHImageManager : NSObject <PHPhotoLibraryChangeObserver>
 {
     id _cachedDomain;
     PHImageManagerSettings *_settings;
+    PDImageManager *_newImageManager;
     NSObject<OS_dispatch_source> *_memoryEventSource;
     unsigned long long _managerID;
 }
@@ -24,6 +25,7 @@
 + (struct CGSize)sizeOfBestNonFullscreenThumbnailAndContentMode:(long long *)arg1;
 + (struct CGSize)fullScreenSizeForScreen:(id)arg1 contentMode:(long long *)arg2;
 + (_Bool)useNewImageManager;
++ (struct CGSize)maximumImageSizeFromProperties:(id)arg1;
 @property(readonly, nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryEventSource; // @synthesize memoryEventSource=_memoryEventSource;
 - (void).cxx_destruct;
@@ -56,9 +58,12 @@
 - (id)_domain;
 @property(readonly) unsigned long long hash;
 - (struct CGImage *)newResizedImageForImage:(struct CGImage *)arg1 withSize:(struct CGSize)arg2 normalizedCropRect:(struct CGRect)arg3 contentMode:(long long)arg4;
+- (id)_modernImageManager;
 - (id)requestAsynchronousVideoURLForImageLoadingAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (id)requestAsynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (int)requestImagePropertiesForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (int)_requestImagePropertiesFromFileForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

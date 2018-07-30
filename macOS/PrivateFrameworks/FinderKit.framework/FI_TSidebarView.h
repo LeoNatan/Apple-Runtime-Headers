@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTrackableOutlineView.h"
+#import "NSOutlineView.h"
 
 __attribute__((visibility("hidden")))
-@interface FI_TSidebarView : NSTrackableOutlineView
+@interface FI_TSidebarView : NSOutlineView
 {
     _Bool _shouldHandleCommandClickOnMouseUp;
     _Bool _keyOnMouseDown;
@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     _Bool _handlingCmdMouseDown;
     _Bool _handlingItemClick;
     _Bool _suppressSelectionClearForScreenCapture;
-    struct TNSRef<FI_TTableViewShrinkToFitController *, void> _stfController;
+    struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
 }
 
 @property(nonatomic) _Bool suppressSelectionClearForScreenCapture; // @synthesize suppressSelectionClearForScreenCapture=_suppressSelectionClearForScreenCapture;
@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_drawClearForSelectionArea;
 - (id)stfEditorController;
 - (void)cancelPendingInvoke;
+- (BOOL)_wantsUserCancelledOperationForDraggingSession:(id)arg1;
 - (void)draggingEnded:(id)arg1;
 - (void)draggingExited:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;

@@ -12,6 +12,7 @@
 
 @class NSArray, NSLayoutConstraint, NSNumberFormatter, NSString, PUAdjustmentsMode, UITableView, _PUSliderPlayheadBaseView, _UIDynamicValueAnimation;
 
+__attribute__((visibility("hidden")))
 @interface PUAdjustmentsModeBar : UIView <UITableViewDataSource, UITableViewDelegate, PUPhotoEditLayoutStaticAdaptable>
 {
     UIView *_adjustmentViewsContainer;

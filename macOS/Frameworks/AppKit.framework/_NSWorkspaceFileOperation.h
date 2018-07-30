@@ -8,6 +8,7 @@
 
 @class NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface _NSWorkspaceFileOperation : NSObject
 {
     NSObject<OS_dispatch_queue> *queue;

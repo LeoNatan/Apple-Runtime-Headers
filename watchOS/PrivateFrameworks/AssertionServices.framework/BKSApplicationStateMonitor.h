@@ -38,6 +38,7 @@
 - (void)_setEndpoint:(id)arg1;
 - (id)_connection;
 - (void)invalidate;
+- (id)dumpDescriptionForSubsystem:(id)arg1;
 - (id)bundleInfoValueForKey:(id)arg1 PID:(int)arg2;
 - (_Bool)isApplicationBeingDebugged:(id)arg1;
 - (unsigned int)mostElevatedApplicationStateForPID:(int)arg1;

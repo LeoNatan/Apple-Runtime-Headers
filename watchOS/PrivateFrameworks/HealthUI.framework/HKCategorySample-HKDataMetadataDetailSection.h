@@ -7,7 +7,7 @@
 #import "HKCategorySample.h"
 
 @interface HKCategorySample (HKDataMetadataDetailSection)
-- (void)_addStationaryDiscordanceDetailValuesToSection:(id)arg1;
+- (void)_addHeartEventDetailValuesToSection:(id)arg1;
 - (void)_addDefaultCategoryDetailValuesToSection:(id)arg1;
 - (void)addDetailValuesToSection:(id)arg1;
 @end

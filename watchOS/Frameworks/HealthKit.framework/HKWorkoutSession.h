@@ -6,28 +6,45 @@
 
 #import "NSObject.h"
 
+#import "HKStateMachineDelegate.h"
 #import "NSSecureCoding.h"
-#import "_HKWorkoutSessionDelegate.h"
+#import "_HKXPCExportable.h"
 
-@class HKWorkoutConfiguration, NSDate, NSObject<OS_dispatch_queue>, NSString, _HKWorkoutSession;
+@class HKHealthStore, HKLiveWorkoutBuilder, HKStateMachine, HKTaskServerProxyProvider, HKWorkoutConfiguration, HKWorkoutSessionTaskConfiguration, NSDate, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
-@interface HKWorkoutSession : NSObject <_HKWorkoutSessionDelegate, NSSecureCoding>
+@interface HKWorkoutSession : NSObject <_HKXPCExportable, HKStateMachineDelegate, NSSecureCoding>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    id <HKWorkoutSessionDelegate> _strongDelegate;
+    NSObject<OS_dispatch_queue> *_clientQueue;
     id <HKWorkoutSessionDelegate> _delegate;
-    _HKWorkoutSession *_privateSession;
+    int _state;
+    NSDate *_startDate;
+    NSDate *_endDate;
+    HKWorkoutSessionTaskConfiguration *_configuration;
+    HKTaskServerProxyProvider *_proxyProvider;
+    id <HKWorkoutSessionDelegate> _strongDelegate;
+    HKLiveWorkoutBuilder *_associatedWorkoutBuilder;
+    HKStateMachine *_targetStateMachine;
+    HKHealthStore *_healthStore;
 }
 
++ (void)_unitTest_clearAllRunningWorkouts;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic, getter=_privateSession) _HKWorkoutSession *privateSession; // @synthesize privateSession=_privateSession;
++ (id)serverInterface;
++ (id)clientInterface;
++ (_Bool)_applicationHasRunningWorkout;
++ (id)targetWorkoutSessionStateMachineForSessionUUID:(id)arg1;
+@property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void).cxx_destruct;
+- (void)_unitTest_discardAssociatedWorkoutBuilder;
+- (void)stopActivity;
+- (void)startActivity;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)workoutSession:(id)arg1 didUpdateMetrics:(id)arg2;
-- (void)workoutSession:(id)arg1 didGenerateEvent:(id)arg2;
-- (void)workoutSession:(id)arg1 didFailWithError:(id)arg2;
-- (void)workoutSession:(id)arg1 didChangeToState:(int)arg2 fromState:(int)arg3 date:(id)arg4;
+- (void)_setAssociatedWorkoutBuilder:(id)arg1;
+- (id)associatedWorkoutBuilderWithDevice:(id)arg1 goalType:(unsigned int)arg2 goal:(id)arg3;
+- (id)associatedWorkoutBuilder;
+@property(readonly, nonatomic) _Bool isGymKitSession;
 @property(readonly) NSDate *endDate;
 @property(readonly) NSDate *startDate;
 @property(readonly) int state;
@@ -35,13 +52,43 @@
 @property(readonly, copy) HKWorkoutConfiguration *workoutConfiguration;
 @property(readonly) int locationType;
 @property(readonly) unsigned int activityType;
-- (id)_init;
+@property(readonly, copy, nonatomic) NSUUID *identifier;
+- (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)resume;
+- (void)pauseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)pause;
+- (void)endWithCompletion:(CDUnknownBlockType)arg1;
+- (void)end;
+- (void)stopActivityWithDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)stopActivityWithDate:(id)arg1;
+- (void)startActivityWithDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)startActivityWithDate:(id)arg1;
+- (void)prepareWithCompletion:(CDUnknownBlockType)arg1;
+- (void)prepare;
+- (void)stateMachine:(id)arg1 didTransition:(id)arg2 fromState:(id)arg3 toState:(id)arg4 date:(id)arg5 error:(id)arg6;
+- (void)stateMachine:(id)arg1 didIgnoreEvent:(int)arg2 state:(id)arg3;
+- (void)client_synchronizeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)client_didFailWithError:(id)arg1;
+- (void)client_didGenerateEvents:(id)arg1;
+- (void)client_didChangeToState:(int)arg1 date:(id)arg2;
+- (void)client_didUpdateStartDate:(id)arg1 endDate:(id)arg2;
+- (void)connectionInterrupted;
+- (void)connectionInvalidated;
+- (id)remoteInterface;
+- (id)exportedInterface;
+- (_Bool)_queue_shouldAttemptRecovery;
+- (void)_queue_markRecoveryRequired;
+- (void)_recoverWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_setupWithHealthStore:(id)arg1;
+@property(readonly, copy) NSString *description;
+- (void)dealloc;
+- (id)_initWithHealthStore:(id)arg1 taskConfiguration:(id)arg2 error:(id *)arg3;
+- (id)initWithHealthStore:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 - (id)initWithConfiguration:(id)arg1 error:(id *)arg2;
 - (id)initWithActivityType:(unsigned int)arg1 locationType:(int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

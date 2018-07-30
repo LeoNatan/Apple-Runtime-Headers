@@ -19,8 +19,6 @@ __attribute__((visibility("hidden")))
 - (void)setSamplePositions:(const CDStruct_6e3f967a *)arg1 count:(unsigned long long)arg2;
 - (unsigned long long)defaultRasterSampleCount;
 - (void)setDefaultRasterSampleCount:(unsigned long long)arg1;
-- (unsigned long long)defaultSampleCount;
-- (void)setDefaultSampleCount:(unsigned long long)arg1;
 - (unsigned long long)tileHeight;
 - (void)setTileHeight:(unsigned long long)arg1;
 - (unsigned long long)tileWidth;

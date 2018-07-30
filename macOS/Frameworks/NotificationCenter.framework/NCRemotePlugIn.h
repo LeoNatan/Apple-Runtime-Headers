@@ -15,7 +15,6 @@
     _Bool _pluginUsing;
     NSUUID *_extensionRequestIdentifier;
     BOOL _isSnippet;
-    _Bool _darkAppearance;
     _Bool _outOfBundle;
     id <NCRemotePlugInClient> _delegate;
     unsigned long long _activationType;
@@ -27,6 +26,8 @@
     NSString *_imageBundlePath;
     double _defaultHeight;
     NSString *_configurationDescription;
+    unsigned long long _appearance;
+    long long _compatibilityMode;
     NSDate *_modificationDate;
     NSExtensionContext<NCRemoteViewExtensionContextProtocol> *_extensionContext;
     struct CGSize _maxSize;
@@ -36,7 +37,8 @@
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(readonly) _Bool outOfBundle; // @synthesize outOfBundle=_outOfBundle;
 @property(readonly) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
-@property(readonly) _Bool darkAppearance; // @synthesize darkAppearance=_darkAppearance;
+@property(readonly) long long compatibilityMode; // @synthesize compatibilityMode=_compatibilityMode;
+@property(readonly) unsigned long long appearance; // @synthesize appearance=_appearance;
 @property(readonly) BOOL isSnippet; // @synthesize isSnippet=_isSnippet;
 @property(readonly) NSString *configurationDescription; // @synthesize configurationDescription=_configurationDescription;
 @property(readonly) double defaultHeight; // @synthesize defaultHeight=_defaultHeight;

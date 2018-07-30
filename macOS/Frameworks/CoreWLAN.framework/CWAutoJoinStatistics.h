@@ -9,41 +9,43 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class CWNetwork, CWNetworkProfile, NSDate, NSError;
+@class CWNetwork, CWNetworkProfile, NSArray, NSDate, NSError, NSString;
 
 @interface CWAutoJoinStatistics : NSObject <NSCopying, NSSecureCoding>
 {
+    NSString *_interfaceName;
     long long _trigger;
     NSDate *_startedAt;
     NSDate *_endedAt;
-    CWNetwork *_network;
-    CWNetworkProfile *_profile;
     long long _scannedChannelCount;
     double _scanDuration;
-    double _joinDuration;
+    NSArray *_joinAttempts;
+    NSError *_error;
+    BOOL _result;
+    CWNetworkProfile *_profile;
+    CWNetwork *_network;
     double _assocStartedAt;
     double _assocEndedAt;
     double _authEndedAt;
     double _ipAssignedAt;
-    NSError *_error;
-    BOOL _result;
 }
 
 + (BOOL)supportsSecureCoding;
-@property BOOL result; // @synthesize result=_result;
-@property(copy) NSError *error; // @synthesize error=_error;
 @property double ipAssignedAt; // @synthesize ipAssignedAt=_ipAssignedAt;
 @property double authEndedAt; // @synthesize authEndedAt=_authEndedAt;
 @property double assocEndedAt; // @synthesize assocEndedAt=_assocEndedAt;
 @property double assocStartedAt; // @synthesize assocStartedAt=_assocStartedAt;
-@property double joinDuration; // @synthesize joinDuration=_joinDuration;
+@property(copy) CWNetwork *network; // @synthesize network=_network;
+@property(copy) CWNetworkProfile *profile; // @synthesize profile=_profile;
+@property BOOL result; // @synthesize result=_result;
+@property(copy) NSError *error; // @synthesize error=_error;
 @property double scanDuration; // @synthesize scanDuration=_scanDuration;
 @property long long scannedChannelCount; // @synthesize scannedChannelCount=_scannedChannelCount;
-@property(copy) CWNetworkProfile *profile; // @synthesize profile=_profile;
-@property(copy) CWNetwork *network; // @synthesize network=_network;
+@property(copy) NSArray *joinAttempts; // @synthesize joinAttempts=_joinAttempts;
 @property(copy) NSDate *endedAt; // @synthesize endedAt=_endedAt;
 @property(copy) NSDate *startedAt; // @synthesize startedAt=_startedAt;
 @property long long trigger; // @synthesize trigger=_trigger;
+@property(copy) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

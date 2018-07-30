@@ -19,9 +19,7 @@
 - (void)layoutSubviews;
 - (void)setShowsBarcodeView:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)createBodyContentViews;
-- (id)tallFaceTemplate;
-- (id)shortFaceTemplate;
-- (id)shortScrunchedFaceTemplate;
+- (id)templateForLayoutMode:(long long)arg1;
 
 @end
 

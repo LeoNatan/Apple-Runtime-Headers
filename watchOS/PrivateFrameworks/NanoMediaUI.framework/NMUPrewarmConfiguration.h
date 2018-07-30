@@ -9,14 +9,12 @@
 @interface NMUPrewarmConfiguration : NSObject
 {
     unsigned int _options;
-    CDUnknownBlockType _playerPlaybackQueueIntentProviderBlock;
     CDUnknownBlockType _nowPlayingUserInterfaceViewControllerBlock;
     CDUnknownBlockType _customPrewarmBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType customPrewarmBlock; // @synthesize customPrewarmBlock=_customPrewarmBlock;
 @property(copy, nonatomic) CDUnknownBlockType nowPlayingUserInterfaceViewControllerBlock; // @synthesize nowPlayingUserInterfaceViewControllerBlock=_nowPlayingUserInterfaceViewControllerBlock;
-@property(copy, nonatomic) CDUnknownBlockType playerPlaybackQueueIntentProviderBlock; // @synthesize playerPlaybackQueueIntentProviderBlock=_playerPlaybackQueueIntentProviderBlock;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (id)initWithOptions:(unsigned int)arg1;

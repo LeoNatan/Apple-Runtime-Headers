@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class CUICatalog, CUIStyleEffectConfiguration;
+#import "NSTextApplicationFrameworkContextClient.h"
 
-@interface NSLineFragmentRenderingContext : NSObject
+@class CUICatalog, CUIStyleEffectConfiguration, NSGraphicsContext, NSString;
+
+@interface NSLineFragmentRenderingContext : NSObject <NSTextApplicationFrameworkContextClient>
 {
     void *_runs;
     long long _numRuns;
@@ -25,21 +27,25 @@
         unsigned int _vAdvance:1;
         unsigned int _flipped:1;
         unsigned int _usesSimpleTextEffects:1;
-        unsigned int _reserved:28;
+        unsigned int _applicationFrameworkContext:3;
+        unsigned int _reserved:25;
     } _flags;
     long long _resolvedDirection;
     long long _resolvedAlignment;
     CUICatalog *_catalog;
     CUIStyleEffectConfiguration *_styleEffects;
+    NSGraphicsContext *_graphicsContext;
 }
 
 + (void)initialize;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) NSGraphicsContext *graphicsContext; // @synthesize graphicsContext=_graphicsContext;
 @property(retain, nonatomic) CUIStyleEffectConfiguration *cuiStyleEffects; // @synthesize cuiStyleEffects=_styleEffects;
 @property(retain, nonatomic) CUICatalog *cuiCatalog; // @synthesize cuiCatalog=_catalog;
 @property long long resolvedTextAlignment; // @synthesize resolvedTextAlignment=_resolvedAlignment;
 @property long long resolvedBaseWritingDirection; // @synthesize resolvedBaseWritingDirection=_resolvedDirection;
 - (struct CGRect)imageBounds;
+@property long long applicationFrameworkContext;
 - (_Bool)isRTL;
 - (double)elasticWidth;
 - (double)lineFragmentWidth;
@@ -53,6 +59,12 @@
 - (oneway void)release;
 - (_Bool)_isDeallocating;
 - (_Bool)_tryRetain;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

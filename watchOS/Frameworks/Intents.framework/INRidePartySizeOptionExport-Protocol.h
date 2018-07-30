@@ -10,8 +10,8 @@
 @class INPriceRange, NSString;
 
 @protocol INRidePartySizeOptionExport <NSObject, JSExport>
-@property(retain, nonatomic) INPriceRange *priceRange;
-@property(retain, nonatomic) NSString *sizeDescription;
+@property(copy, nonatomic) INPriceRange *priceRange;
+@property(copy, nonatomic) NSString *sizeDescription;
 @property(nonatomic) struct _NSRange partySizeRange;
 - (id)init;
 @end

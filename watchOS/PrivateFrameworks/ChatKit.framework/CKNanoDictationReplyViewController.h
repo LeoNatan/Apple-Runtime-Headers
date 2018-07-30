@@ -8,7 +8,7 @@
 
 #import "CKNanoReplyViewControllerProtocol.h"
 
-@class CKNanoSendController, NSString;
+@class CKNanoSendController, NSNumber, NSString;
 
 @interface CKNanoDictationReplyViewController : PUICDictationViewController <CKNanoReplyViewControllerProtocol>
 {
@@ -28,6 +28,7 @@
 // Remaining properties
 @property(copy, nonatomic) NSString *breadcrumbText;
 @property(copy, nonatomic) CDUnknownBlockType messageForReplyBlock;
+@property(copy, nonatomic) NSNumber *messageItemListNumber;
 
 @end
 

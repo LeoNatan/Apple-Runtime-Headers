@@ -32,7 +32,6 @@
 @property(copy, nonatomic) NSString *loggedInAppleMusicAccountDSID; // @synthesize loggedInAppleMusicAccountDSID=_loggedInAppleMusicAccountDSID;
 @property(nonatomic) __weak id <HUAlarmEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)tonePickerCellForTableView:(id)arg1;
 - (void)alarmEditSettingController:(id)arg1 didEditAlarm:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

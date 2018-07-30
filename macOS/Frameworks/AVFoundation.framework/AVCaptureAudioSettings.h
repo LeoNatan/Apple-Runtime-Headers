@@ -8,6 +8,7 @@
 
 @class AVAudioOutputSettings;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureAudioSettings : AVCaptureOutputSettings
 {
     AVAudioOutputSettings *_avAudioOutputSettings;

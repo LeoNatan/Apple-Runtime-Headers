@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#pragma mark Blocks
+#pragma mark Function Pointers and Blocks
+
+typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
@@ -27,7 +29,7 @@ struct CGSize {
 
 struct FrameMetadata {
     CDUnknownFunctionPointerType *_field1;
-    struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _field2;
+    struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16> _field2;
     struct OpaqueJSValue *_field3;
     struct OpaqueJSValue *_field4;
     struct OpaqueJSContext *_field5;
@@ -97,39 +99,34 @@ struct RetainPtr<const __CTFontDescriptor *> {
 
 struct SuddenTerminationDisabler;
 
-struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16> {
     struct OpaqueJSValue **_field1;
     unsigned int _field2;
     unsigned int _field3;
-    unsigned int _field4;
 };
 
-struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16> {
     struct RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
-    unsigned int _field4;
 };
 
-struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+struct Vector<double, 0, WTF::CrashOnOverflow, 16> {
     double *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
-    unsigned int m_mask;
 };
 
-struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> {
     id *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
-    unsigned int m_mask;
 };
 
-struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+struct Vector<int, 0, WTF::CrashOnOverflow, 16> {
     int *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
-    unsigned int m_mask;
 };
 
 struct _NSRange {
@@ -333,26 +330,23 @@ typedef struct RetainPtr<const __CTFontDescriptor *> {
     void *_field1;
 } RetainPtr_887fe677;
 
-typedef struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+typedef struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16> {
     struct RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
-    unsigned int _field4;
-} Vector_5cd8d07f;
+} Vector_fc835981;
 
-typedef struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+typedef struct Vector<double, 0, WTF::CrashOnOverflow, 16> {
     double *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
-    unsigned int m_mask;
-} Vector_7b793afa;
+} Vector_23cb8338;
 
-typedef struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+typedef struct Vector<int, 0, WTF::CrashOnOverflow, 16> {
     int *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
-    unsigned int m_mask;
-} Vector_c7837a24;
+} Vector_3b5d2a9f;
 
 typedef struct duration<long long, std::__1::ratio<1, 1000>> {
     long long __rep_;
@@ -397,4 +391,36 @@ typedef struct unordered_set<long long, std::__1::hash<long long>, std::__1::equ
         } __p3_;
     } __table_;
 } unordered_set_da619913;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    struct {
+        unsigned int disallowsAutocomplete:1;
+        unsigned int claimsToBeCurrentPasswordViaAutocompleteAttribute:1;
+        unsigned int claimsToBeNewPasswordViaAutocompleteAttribute:1;
+        unsigned int claimsToBeUsernameViaAutocompleteAttribute:1;
+        unsigned int looksLikeCreditCardCardholderField:1;
+        unsigned int looksLikeCreditCardCompositeExpirationDateField:1;
+        unsigned int looksLikeCreditCardNumberField:1;
+        unsigned int looksLikeCreditCardSecurityCodeField:1;
+        unsigned int looksLikeCreditCardTypeField:1;
+        unsigned int looksLikeDayField:1;
+        unsigned int looksLikeMonthField:1;
+        unsigned int looksLikeYearField:1;
+        unsigned int looksLikeIgnoredDataTypeField:1;
+        unsigned int looksLikePasswordCredentialField:1;
+        unsigned int looksLikeOneTimeCodeField:1;
+        unsigned int visible:1;
+        unsigned int active:1;
+        unsigned int disabled:1;
+        unsigned int readOnly:1;
+        unsigned int textField:1;
+        unsigned int secureTextField:1;
+        unsigned int autoFilledTextField:1;
+        unsigned int userEditedTextField:1;
+        unsigned int labeledUsernameField:1;
+    } flags;
+    long long asInteger;
+} CDUnion_a3b3b741;
 

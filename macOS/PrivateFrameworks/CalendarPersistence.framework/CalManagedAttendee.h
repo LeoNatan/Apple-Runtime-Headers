@@ -52,6 +52,7 @@
 - (void)_updateLikenessPropertiesForSave;
 - (void)willSave;
 - (void)willRefresh:(BOOL)arg1;
+- (id)keysOnlyRelevantToNetworkDetails;
 @property(readonly, getter=isOrganizer) BOOL organizer;
 - (id)_iCalendarElementWithOptions:(unsigned long long)arg1;
 - (void)importiCalendarProperty:(id)arg1 inComponent:(id)arg2 fromDocument:(id)arg3 inCalendar:(id)arg4;

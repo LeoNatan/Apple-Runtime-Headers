@@ -19,8 +19,10 @@
     id <NUURLHandling> _URLHandler;
     id <NUReportConcernViewPresenter> _reportConcernViewPresenter;
     id <NUURLModifying> _URLModifier;
+    id <NUArticleActivityOptionsProvider> _optionsProvider;
 }
 
+@property(readonly, nonatomic) id <NUArticleActivityOptionsProvider> optionsProvider; // @synthesize optionsProvider=_optionsProvider;
 @property(readonly, nonatomic) id <NUURLModifying> URLModifier; // @synthesize URLModifier=_URLModifier;
 @property(readonly, nonatomic) id <NUReportConcernViewPresenter> reportConcernViewPresenter; // @synthesize reportConcernViewPresenter=_reportConcernViewPresenter;
 @property(readonly, nonatomic) id <NUURLHandling> URLHandler; // @synthesize URLHandler=_URLHandler;
@@ -42,9 +44,10 @@
 - (id)activityTitleForHeadline:(id)arg1 withType:(unsigned long long)arg2;
 - (id)activityTypeForHeadline:(id)arg1 withType:(unsigned long long)arg2;
 - (id)supportedActivities;
+- (id)activityForType:(unsigned long long)arg1;
 - (id)activities;
 - (id)activityItemSources;
-- (id)initWithHeadline:(id)arg1 readingHistory:(id)arg2 readingList:(id)arg3 subscriptionList:(id)arg4 URLHandler:(id)arg5 reportConcernViewPresenter:(id)arg6 URLModifier:(id)arg7;
+- (id)initWithHeadline:(id)arg1 readingHistory:(id)arg2 readingList:(id)arg3 subscriptionList:(id)arg4 URLHandler:(id)arg5 reportConcernViewPresenter:(id)arg6 URLModifier:(id)arg7 optionsProvider:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

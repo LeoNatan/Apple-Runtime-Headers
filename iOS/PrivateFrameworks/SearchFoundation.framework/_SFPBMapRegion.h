@@ -13,7 +13,6 @@
 
 @interface _SFPBMapRegion : PBCodable <_SFPBMapRegion, NSSecureCoding>
 {
-    CDStruct_d6cfdf4e _has;
     double _southLat;
     double _westLng;
     double _northLat;
@@ -32,10 +31,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasEastLng;
-@property(readonly, nonatomic) _Bool hasNorthLat;
-@property(readonly, nonatomic) _Bool hasWestLng;
-@property(readonly, nonatomic) _Bool hasSouthLat;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

@@ -12,7 +12,7 @@
 {
 }
 
-- (void)setAllowsCollapsingCandidateList:(BOOL)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)setAllowsCollapsingCandidateList:(BOOL)arg1;
 - (id)exportedInterface;
 - (void)loadView;
 - (void)dealloc;

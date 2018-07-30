@@ -6,12 +6,12 @@
 
 #import "NSTableRowView.h"
 
-@class SeparatorView;
+@class NSBox;
 
 __attribute__((visibility("hidden")))
 @interface DownloadTableRowView : NSTableRowView
 {
-    SeparatorView *_separatorView;
+    NSBox *_separatorView;
     BOOL _shouldHideSeparator;
 }
 

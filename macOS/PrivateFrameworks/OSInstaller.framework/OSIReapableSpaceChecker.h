@@ -6,22 +6,23 @@
 
 #import "NSObject.h"
 
-@class SKDisk, SMPaths;
+@class OSInstallOptions, SMPaths;
 
 @interface OSIReapableSpaceChecker : NSObject
 {
-    SKDisk *_disk;
     SMPaths *_pather;
+    OSInstallOptions *_options;
 }
 
 + (void)initialize;
+@property(retain) OSInstallOptions *options; // @synthesize options=_options;
 @property(retain) SMPaths *pather; // @synthesize pather=_pather;
+- (void).cxx_destruct;
 - (id)reapableFiles;
 - (id)reapableSpace;
 - (void)_calculateSystemPathsAndSize;
 - (BOOL)willBlock;
-- (void)dealloc;
-- (id)initWithDisk:(id)arg1;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

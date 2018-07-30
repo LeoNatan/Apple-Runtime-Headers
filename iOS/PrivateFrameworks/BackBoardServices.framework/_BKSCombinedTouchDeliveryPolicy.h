@@ -14,7 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, retain, nonatomic) NSArray *policies; // @synthesize policies=_policies;
+@property(readonly, nonatomic) NSArray *policies; // @synthesize policies=_policies;
+- (void).cxx_destruct;
 - (void)setAssertionEndpoint:(id)arg1;
 - (id)assertionEndpoint;
 - (id)matchSharingTouchesPolicy:(CDUnknownBlockType)arg1 orCancelTouchesPolicy:(CDUnknownBlockType)arg2 orCombinedPolicy:(CDUnknownBlockType)arg3;
@@ -22,7 +23,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPolicies:(id)arg1;
 

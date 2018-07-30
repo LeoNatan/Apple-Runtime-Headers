@@ -6,23 +6,37 @@
 
 #import "NSObject.h"
 
+@class NSOperationQueue;
+
 @interface NNMKMessageContentAssetsManager : NSObject
 {
+    NSOperationQueue *_operationQueue;
 }
 
 + (id)_urlForAssetForMessageId:(id)arg1 inSubdirectory:(id)arg2;
 + (id)urlForImageAttachmentsFolder;
 + (id)urlForImageAttachmentsFolderForMailboxId:(id)arg1;
++ (_Bool)uncompressedImageHasBeenDownloadedForMessageWithId:(id)arg1 mailboxId:(id)arg2 contentId:(id)arg3;
 + (_Bool)imageHasBeenDownloadedForMessageWithId:(id)arg1 mailboxId:(id)arg2 contentId:(id)arg3;
 + (id)urlForImageAttachmentsFolderForMessageWithId:(id)arg1 mailboxId:(id)arg2;
 + (id)urlForImageAttachmentOfMessageWithId:(id)arg1 mailboxId:(id)arg2 contentId:(id)arg3;
++ (id)urlForUncompressedImageAttachmentOfMessageWithId:(id)arg1 mailboxId:(id)arg2 contentId:(id)arg3;
 + (id)urlForMessageContentsFolder;
 + (id)urlForMessageContentsFolderForMailboxId:(id)arg1;
 + (_Bool)messageContentHasBeenDownloadedForMessageWithId:(id)arg1 mailboxId:(id)arg2;
 + (_Bool)messageContentHasBeenDownloadedForMessage:(id)arg1;
++ (id)urlForMessageHtmlContentWithId:(id)arg1 mailboxId:(id)arg2;
 + (id)urlForMessageContentWithId:(id)arg1 mailboxId:(id)arg2;
 + (id)messageContentWithId:(id)arg1 mailboxId:(id)arg2;
 + (id)messageContentForMessage:(id)arg1;
+@property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
+- (void).cxx_destruct;
+- (void)_scaleImageForAttachment:(id)arg1 fileURL:(id)arg2 destinationURL:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_doScheduleToScaleImageForAttachment:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)scheduleToScaleImageDownForAttachment:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (_Bool)cancelPendingSchedules;
+- (_Bool)shouldScaleImageDownForAttachment:(id)arg1;
+- (id)init;
 
 @end
 

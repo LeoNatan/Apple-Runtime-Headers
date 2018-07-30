@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <dispatch/OS_dispatch_queue.h>
+#import <dispatch/OS_dispatch_queue_serial.h>
 
 #import "OS_dispatch_queue_main.h"
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
-@interface OS_dispatch_queue_main : OS_dispatch_queue <OS_dispatch_queue_main>
+@interface OS_dispatch_queue_main : OS_dispatch_queue_serial <OS_dispatch_queue_main>
 {
 }
 

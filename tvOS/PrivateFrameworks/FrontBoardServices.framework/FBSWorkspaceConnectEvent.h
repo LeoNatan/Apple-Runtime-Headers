@@ -13,10 +13,10 @@
     FBSProcessHandle *_processHandle;
 }
 
-@property(readonly, retain, nonatomic) FBSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
+@property(readonly, nonatomic) FBSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

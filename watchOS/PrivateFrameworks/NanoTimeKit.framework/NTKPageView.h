@@ -8,13 +8,14 @@
 
 #import "UIScrollViewDelegate.h"
 
-@class NSString, UIColor, UIImageView, UITapGestureRecognizer, UIView;
+@class CLKDevice, NSString, UIColor, UITapGestureRecognizer, UIView;
 
 @interface NTKPageView : UIScrollView <UIScrollViewDelegate>
 {
+    CLKDevice *_device;
     UITapGestureRecognizer *_tapGesture;
     struct CGPoint _zeroOffset;
-    UIImageView *_outlineView;
+    UIView *_outlineView;
     UIView *_outlineBackingView;
     UIView *_overlayView;
     _Bool _swipingToDelete;

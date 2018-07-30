@@ -12,6 +12,7 @@
 
 @interface RCCaptureInputWaveformDataSource : RCWaveformDataSource <AVCaptureAudioDataOutputSampleBufferDelegate>
 {
+    double captureDelta;
     _Bool _overdub;
     _Bool _canUpdateCaptureComposition;
     RCMutableComposition *_capturedComposition;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) RCCompositionFragment *destinationFragment; // @synthesize destinationFragment=_destinationFragment;
 @property(readonly, nonatomic) RCComposition *destinationComposition; // @synthesize destinationComposition=_destinationComposition;
 - (void).cxx_destruct;
+- (_Bool)shouldMergeLiveWaveform;
 - (void)_truncateAccumulatedWaveformSegmentsToEndTime:(double)arg1;
 - (void)_extendAccumulatedWaveformSegmentsToMatchFinalDuration:(double)arg1;
 - (void)_modifyAccumulatedWaveformSegmentsToMatchFinalDuration:(double)arg1;
@@ -46,6 +48,7 @@
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
 - (void)appendAveragePowerLevelsByDigestingWaveformSegment:(id)arg1;
 - (void)flushPendingCapturedSampleBuffers;
+- (_Bool)appendAveragePowerLevelsByDigestingAudioPCMBuffer:(id)arg1;
 - (_Bool)appendAveragePowerLevelsByDigestingCapturedSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)undoCapture;
 - (double)duration;
@@ -54,12 +57,13 @@
 - (id)segmentsInCompositionByConvertingFromActiveLoadingFragment:(id)arg1;
 - (CDStruct_73a5d3ca)timeRangeToHighlight;
 - (id)waveformSegmentsInTimeRange:(CDStruct_73a5d3ca)arg1;
+- (void)updateCapturedDelta:(double)arg1;
 - (id)_captureSegmentsInComponentWaveform:(id)arg1 captureTimeRange:(CDStruct_73a5d3ca)arg2 componentWaveformSegmentOffset:(double)arg3;
 - (_Bool)setPaused:(_Bool)arg1;
 - (_Bool)waitUntilFinishedWithFinalizedDestinationFragmentDuration:(double)arg1;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (_Bool)waitUntilFinished;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)startLoading;
 - (void)_initializeCaptureComposition;
 - (id)initWithDestinationComposition:(id)arg1 destinationFragment:(id)arg2 isOverdub:(_Bool)arg3;

@@ -26,7 +26,7 @@
 + (id)uiElementWithAXElement:(struct __AXUIElement *)arg1 cache:(id)arg2;
 + (id)uiElementWithAXElement:(struct __AXUIElement *)arg1;
 + (void)initialize;
-+ (void)applyElementAttributeCacheScheme:(int)arg1;
++ (void)applyElementAttributeCacheScheme:(unsigned long long)arg1;
 + (id)uiSystemWideApplication;
 + (struct __AXUIElement *)systemWideAXUIElement;
 - (void).cxx_destruct;

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (double)previewScrollView:(id)arg1 extraMinimumZoomForMinimumZoomScale:(double)arg2 maximumZoomScale:(double)arg3;
 - (void)previewScrollView:(id)arg1 didEndZoomingAtScale:(double)arg2;
 - (void)previewScrollViewWillBeginZooming:(id)arg1;
+- (_Bool)shouldLayoutContentBasedOnPeripheryInsets;
 - (void)_updateScrollViewZoomUpdate:(struct CGSize)arg1;
 - (id)parallaxView;
 - (id)scrollView;

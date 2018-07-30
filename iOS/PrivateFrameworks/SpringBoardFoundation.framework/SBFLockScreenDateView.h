@@ -6,19 +6,17 @@
 
 #import "UIView.h"
 
-#import "SBFScreenFadeReplicatable.h"
 #import "SFChargingVisualInformationProvider.h"
 
-@class NSDate, NSHashTable, NSString, SBFLockScreenDateSubtitleDateView, SBFLockScreenDateSubtitleView, SBUILegibilityLabel, UIColor, _UILegibilitySettings;
+@class NSDate, NSString, SBFLockScreenDateSubtitleDateView, SBFLockScreenDateSubtitleView, SBUILegibilityLabel, UIColor, _UILegibilitySettings;
 
-@interface SBFLockScreenDateView : UIView <SBFScreenFadeReplicatable, SFChargingVisualInformationProvider>
+@interface SBFLockScreenDateView : UIView <SFChargingVisualInformationProvider>
 {
     SBUILegibilityLabel *_timeLabel;
     double _timeAlpha;
     double _subtitleAlpha;
     SBFLockScreenDateSubtitleDateView *_dateSubtitleView;
     SBFLockScreenDateSubtitleView *_customSubtitleView;
-    NSHashTable *_replicatedViews;
     _Bool _useCompactDateFormat;
     NSDate *_date;
     UIColor *_overrideTextColor;
@@ -27,11 +25,14 @@
     double _dateToTimeStretch;
     double _timeLegibilityStrength;
     double _subtitleLegibilityStrength;
+    struct CGRect _restingFrame;
 }
 
++ (CDStruct_d2b197d1)timeFontMetrics;
 + (id)timeFont;
 + (double)defaultHeight;
 @property(retain, nonatomic) SBFLockScreenDateSubtitleView *customSubtitleView; // @synthesize customSubtitleView=_customSubtitleView;
+@property(nonatomic) struct CGRect restingFrame; // @synthesize restingFrame=_restingFrame;
 @property(nonatomic) double subtitleLegibilityStrength; // @synthesize subtitleLegibilityStrength=_subtitleLegibilityStrength;
 @property(nonatomic) double timeLegibilityStrength; // @synthesize timeLegibilityStrength=_timeLegibilityStrength;
 @property(nonatomic) _Bool useCompactDateFormat; // @synthesize useCompactDateFormat=_useCompactDateFormat;
@@ -55,8 +56,6 @@
 - (void)_updateLabels;
 @property(readonly, nonatomic) struct CGRect chargingVisualInformationTimeSubtitleFrame;
 @property(readonly, nonatomic) struct CGRect chargingVisualInformationTimeFrame;
-- (void)_enumerateReplicateViews:(CDUnknownBlockType)arg1;
-- (id)replicate;
 - (id)_timeLabel;
 - (struct CGRect)presentationExtentForAlignmentPercent:(double)arg1;
 - (void)setContentAlpha:(double)arg1 withSubtitleVisible:(_Bool)arg2;

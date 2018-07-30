@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (void)addObserversToSharedFocusElementsForElement;
 - (BOOL)isPasswordSuggestionComboBox;
+- (BOOL)isComboBox;
 - (BOOL)isControlElement;
 - (id)typeDescription;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;

@@ -12,6 +12,7 @@
     BOOL _displaysToolTips;
 }
 
+- (BOOL)wantsLayer;
 - (void)setSelectionIndexes:(id)arg1 byExtendingSelection:(BOOL)arg2;
 - (BOOL)selectItem:(BOOL)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)_shouldSelectIndex:(long long)arg1;

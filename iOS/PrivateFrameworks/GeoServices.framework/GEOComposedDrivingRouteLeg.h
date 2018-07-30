@@ -6,7 +6,6 @@
 
 #import <GeoServices/GEOComposedRouteLeg.h>
 
-__attribute__((visibility("hidden")))
 @interface GEOComposedDrivingRouteLeg : GEOComposedRouteLeg
 {
 }

@@ -16,5 +16,6 @@
 @optional
 - (void)airDropActivityDidFailToStartTransfer;
 - (void)airDropActivityRequestingSharedItemsWithOptions:(NSDictionary *)arg1 completionHandler:(void (^)(void))arg2;
+- (void)airDropActivityDoneButtonPressed;
 @end
 

@@ -22,7 +22,7 @@
 - (void)_createDuetHelpersWithEventStreamTypes:(id)arg1;
 - (id)supportedEventStreams;
 - (id)duetHelperForDuetEventStream:(long long)arg1;
-- (void)shutdown;
+- (void)_shutdown;
 - (id)initWithPurgeManager:(id)arg1 locationTagger:(id)arg2 defaultsManager:(id)arg3;
 - (id)init;
 

@@ -19,8 +19,10 @@
     NSString *_threadIdentifier;
     NSString *_categoryIdentifier;
     NSSet *_subSectionIdentifiers;
+    NSString *_highestPrioritySubSectionIdentifier;
     NSArray *_peopleIdentifiers;
     NSString *_parentSectionIdentifier;
+    _Bool _uniqueThreadIdentifier;
     NSDate *_timestamp;
     NSSet *_requestDestinations;
     NCNotificationContent *_content;
@@ -37,6 +39,7 @@
     _Bool _isCollapsedNotification;
     unsigned long long _collapsedNotificationsCount;
     NSDictionary *_sourceInfo;
+    _Bool _criticalAlert;
 }
 
 + (id)notificationRequestWithNotificationId:(id)arg1 requestDestinations:(id)arg2 lockScreenPersistence:(unsigned long long)arg3;
@@ -68,6 +71,7 @@
 + (id)notificationRequestWithSectionId:(id)arg1 notificationId:(id)arg2 threadId:(id)arg3 subSectionIds:(id)arg4 title:(id)arg5 message:(id)arg6 timestamp:(id)arg7 destinations:(id)arg8 options:(id)arg9;
 + (id)notificationRequestWithSectionId:(id)arg1 notificationId:(id)arg2 threadId:(id)arg3 title:(id)arg4 message:(id)arg5 timestamp:(id)arg6 destinations:(id)arg7;
 + (id)notificationRequestWithSectionId:(id)arg1 notificationId:(id)arg2 threadId:(id)arg3 title:(id)arg4 message:(id)arg5 timestamp:(id)arg6 destination:(id)arg7;
+@property(readonly, nonatomic, getter=isCriticalAlert) _Bool criticalAlert; // @synthesize criticalAlert=_criticalAlert;
 @property(readonly, copy, nonatomic) NSDictionary *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(readonly, nonatomic) unsigned long long collapsedNotificationsCount; // @synthesize collapsedNotificationsCount=_collapsedNotificationsCount;
 @property(readonly, nonatomic) _Bool isCollapsedNotification; // @synthesize isCollapsedNotification=_isCollapsedNotification;
@@ -84,8 +88,10 @@
 @property(readonly, nonatomic) NCNotificationContent *content; // @synthesize content=_content;
 @property(readonly, copy, nonatomic) NSSet *requestDestinations; // @synthesize requestDestinations=_requestDestinations;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
+@property(readonly, nonatomic, getter=isUniqueThreadIdentifier) _Bool uniqueThreadIdentifier; // @synthesize uniqueThreadIdentifier=_uniqueThreadIdentifier;
 @property(readonly, copy, nonatomic) NSString *parentSectionIdentifier; // @synthesize parentSectionIdentifier=_parentSectionIdentifier;
 @property(readonly, copy, nonatomic) NSArray *peopleIdentifiers; // @synthesize peopleIdentifiers=_peopleIdentifiers;
+@property(readonly, copy, nonatomic) NSString *highestPrioritySubSectionIdentifier; // @synthesize highestPrioritySubSectionIdentifier=_highestPrioritySubSectionIdentifier;
 @property(readonly, copy, nonatomic) NSSet *subSectionIdentifiers; // @synthesize subSectionIdentifiers=_subSectionIdentifiers;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(readonly, copy, nonatomic) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
@@ -101,6 +107,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+- (_Bool)matchesThreadForRequest:(id)arg1;
 - (_Bool)matchesRequest:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1;

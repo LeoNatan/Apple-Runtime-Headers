@@ -6,9 +6,9 @@
 
 #import "MapsSuggestionsTitleFormatter.h"
 
-@class MapsSuggestionsEntry, NSString;
+@class MapsSuggestionsETA, MapsSuggestionsEntry;
 
 @protocol MapsSuggestionsETATitleFormatter <MapsSuggestionsTitleFormatter>
-- (_Bool)formatTitlesForEntry:(MapsSuggestionsEntry *)arg1 eta:(double)arg2 trafficString:(NSString *)arg3;
+- (_Bool)formatTitlesForEntry:(MapsSuggestionsEntry *)arg1 eta:(MapsSuggestionsETA *)arg2;
 @end
 

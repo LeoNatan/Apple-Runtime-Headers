@@ -9,6 +9,7 @@
 @class NSData, NSDictionary, NSFileHandle, NSString;
 
 @protocol KBXPCProtocol <NSObject>
+- (void)Event:(int)arg1;
 - (void)listAllUserSessionIDsWithAReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)removeUserSession:(NSDictionary *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)migrateUserSession:(NSDictionary *)arg1 fromfilePath:(NSString *)arg2 withSecret:(NSFileHandle *)arg3 oldSize:(unsigned long long)arg4 withOpaqueData:(NSData *)arg5 reply:(void (^)(NSDictionary *, NSError *))arg6;

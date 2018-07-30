@@ -9,25 +9,28 @@
 #import "MCDPCContainerDelegate.h"
 #import "UITabBarControllerDelegate.h"
 
-@class AVExternalDevice, MCDPCContainer, MCDPCModel, NSString, UIButton;
+@class AVExternalDevice, MCDPCContainer, MCDPCModel, NSObject<OS_dispatch_queue>, NSString, UIButton;
 
 @interface MCDBrowsableContentNavigationController : UITabBarController <UITabBarControllerDelegate, MCDPCContainerDelegate>
 {
     _Bool _hasCarScreen;
     _Bool _didFinishInitialLoad;
+    _Bool _didFinishInitialViewAppear;
     _Bool _visible;
+    MCDPCContainer *_container;
     UITabBarController *_tabBarController;
     UITabBarController *_hostTabBarController;
     AVExternalDevice *_externalDevice;
     MCDPCModel *_model;
     NSString *_bundleID;
     UIButton *_nowPlayingButton;
-    MCDPCContainer *_container;
+    NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;
+@property(nonatomic) _Bool didFinishInitialViewAppear; // @synthesize didFinishInitialViewAppear=_didFinishInitialViewAppear;
 @property(nonatomic) _Bool didFinishInitialLoad; // @synthesize didFinishInitialLoad=_didFinishInitialLoad;
-@property(retain, nonatomic) MCDPCContainer *container; // @synthesize container=_container;
 @property(nonatomic) _Bool hasCarScreen; // @synthesize hasCarScreen=_hasCarScreen;
 @property(retain, nonatomic) UIButton *nowPlayingButton; // @synthesize nowPlayingButton=_nowPlayingButton;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -35,21 +38,22 @@
 @property(retain, nonatomic) AVExternalDevice *externalDevice; // @synthesize externalDevice=_externalDevice;
 @property(nonatomic) __weak UITabBarController *hostTabBarController; // @synthesize hostTabBarController=_hostTabBarController;
 @property(retain, nonatomic) UITabBarController *tabBarController; // @synthesize tabBarController=_tabBarController;
+@property(retain, nonatomic) MCDPCContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)setViewControllers:(id)arg1;
-- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)updateTitleAndTabBarItemsAtIndexes:(id)arg1;
 - (id)_hostTabAtIndex:(unsigned long long)arg1 dummyTab:(_Bool)arg2;
-- (void)reloadTabs;
+- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (void)invalidateAndReloadTabsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_loadAllHostTabs;
 - (void)container:(id)arg1 didInvalidateIndicies:(id)arg2;
 - (void)_nowPlayingButtonTapped:(id)arg1;
 - (void)_updateNowPlayingButtonVisibility;
 - (void)_nowPlayingDidChange:(id)arg1;
+- (void)_appRegisteredForContent:(id)arg1;
 - (id)initWithBundleID:(id)arg1 model:(id)arg2;
 
 // Remaining properties

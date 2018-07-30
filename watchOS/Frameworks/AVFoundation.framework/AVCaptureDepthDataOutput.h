@@ -18,6 +18,7 @@
 + (id)new;
 + (void)initialize;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
+@property(readonly, nonatomic) id delegateOverride;
 - (_Bool)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
 - (_Bool)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (void)removeConnection:(id)arg1;

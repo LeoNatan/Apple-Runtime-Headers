@@ -9,19 +9,21 @@
 #import "UISearchBarDelegate.h"
 #import "UISearchResultsUpdating.h"
 
-@class NSArray, NSString, UISearchController, WBUPasswordPickerViewController;
+@class NSCountedSet, NSIndexPath, NSMutableArray, NSString, UISearchController, WBUPasswordPickerViewController;
 
 @interface _WBUPasswordPicker : UITableViewController <UISearchBarDelegate, UISearchResultsUpdating>
 {
-    NSArray *_savedPasswordsMatchingHintStrings;
-    NSArray *_savedPasswords;
-    NSArray *_matchingPasswords;
+    NSMutableArray *_savedPasswordsMatchingHintStrings;
+    NSMutableArray *_savedPasswords;
+    NSMutableArray *_matchingPasswords;
     WBUPasswordPickerViewController *_pickerViewController;
     UISearchController *_searchController;
     NSString *_searchPattern;
     long long _sectionForPrompt;
     long long _sectionForPasswordsMatchingHintStrings;
     long long _sectionForAllPasswords;
+    NSCountedSet *_visibleDomains;
+    NSIndexPath *_indexPathOfRowShowingDetailView;
 }
 
 - (void).cxx_destruct;
@@ -29,12 +31,18 @@
 - (void)_updateSections;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (long long)positionForBar:(id)arg1;
+- (void)_deletePasswordAtIndexPath:(id)arg1;
+- (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 performAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (_Bool)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (_Bool)tableView:(id)arg1 shouldShowMenuForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (void)_updateIconForDomain:(id)arg1 forCell:(id)arg2;
+- (void)iconDidUpdateForDomain:(id)arg1;
+- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;

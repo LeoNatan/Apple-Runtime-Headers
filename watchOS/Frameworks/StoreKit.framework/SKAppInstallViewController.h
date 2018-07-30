@@ -20,6 +20,7 @@
 @property(retain, nonatomic) _UIResilientRemoteViewContainerViewController *remoteContainerViewController; // @synthesize remoteContainerViewController=_remoteContainerViewController;
 @property(retain, nonatomic) SKStoreRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
+- (void).cxx_destruct;
 - (_Bool)_viewControllerIsDescendent:(id)arg1 ofViewController:(id)arg2;
 - (void)_setupChildViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_requestRemoteViewController;

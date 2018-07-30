@@ -8,7 +8,6 @@
 
 @class CUIPSDLayerGroupRef;
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDLayerEnumerator : NSEnumerator
 {
     CUIPSDLayerGroupRef *_layerGroup;

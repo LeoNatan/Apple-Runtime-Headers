@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class NSMutableArray, NSString, NTPBBinningConfig, NTPBIAdConfig, NTPBPaidSubscriptionConfig, NTPBPersonalizationConfig, NTPBPersonalizationTreatment, NTPBPrefetchConfig, NTPBVideoGroupsConfig, NTPBWidgetConfig;
+@class NSMutableArray, NSString, NTPBBinningConfig, NTPBIAdConfig, NTPBPaidSubscriptionConfig, NTPBPersonalizationConfig, NTPBPersonalizationTreatment, NTPBPrefetchConfig, NTPBUserSegmentationApiConfiguration, NTPBVideoGroupsConfig, NTPBWidgetConfig;
 
 @interface NTPBConfig : PBCodable <NSCopying>
 {
@@ -18,6 +18,7 @@
     double _articleDiversitySimilarityExpectationEnd;
     double _articleDiversitySimilarityExpectationStart;
     long long _articleRapidUpdatesTimeout;
+    long long _articleRecirculationPopularFeedQueryTimeRange;
     long long _autoRefreshMinimumInterval;
     long long _autoScrollToTopFeedTimeout;
     double _batchedFeedTimeout;
@@ -70,8 +71,12 @@
     long long _trendingTopicsRefreshRate;
     long long _userSegmentationApiModMax;
     long long _userSegmentationApiModThreshold;
+    long long _widgetEventImmediateUploadModuloForHashing;
+    long long _widgetEventImmediateUploadPopulationCeiling;
+    long long _widgetEventImmediateUploadPopulationFloor;
     NTPBWidgetConfig *_alternativeButlerWidgetConfig;
     NSString *_anfEmbedConfigurationAsset;
+    NSString *_articleRecirculationComponentPlacementConfig;
     NSString *_articleRecirculationConfig;
     NTPBBinningConfig *_binningConfig;
     NTPBWidgetConfig *_butlerWidgetConfig;
@@ -96,13 +101,15 @@
     NSString *_personalizationWhitelistResourceId;
     NSString *_personalizationWidgetSectionMappingResourceId;
     NTPBPrefetchConfig *_prefetchConfig;
-    int _privateDataMigrationCleanupLevel;
+    unsigned int _privateDataMigrationCleanupLevel;
     int _trendingStyle;
+    NTPBUserSegmentationApiConfiguration *_userSegmentationApiConfiguration;
     NTPBWidgetConfig *_widgetConfig;
     NTPBWidgetConfig *_widgetConfig2;
     _Bool _alternativeButlerWidgetConfigEnabled;
     _Bool _articleSearchEnabled;
     _Bool _corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
+    _Bool _disableThumbnailsForArticleRecirculation;
     _Bool _diversifyOptionalTopStories;
     _Bool _newsletterSubscriptionChecked;
     _Bool _orderFeedEndpointEnabled;
@@ -116,6 +123,7 @@
         unsigned int articleDiversitySimilarityExpectationEnd:1;
         unsigned int articleDiversitySimilarityExpectationStart:1;
         unsigned int articleRapidUpdatesTimeout:1;
+        unsigned int articleRecirculationPopularFeedQueryTimeRange:1;
         unsigned int autoRefreshMinimumInterval:1;
         unsigned int autoScrollToTopFeedTimeout:1;
         unsigned int batchedFeedTimeout:1;
@@ -168,6 +176,9 @@
         unsigned int trendingTopicsRefreshRate:1;
         unsigned int userSegmentationApiModMax:1;
         unsigned int userSegmentationApiModThreshold:1;
+        unsigned int widgetEventImmediateUploadModuloForHashing:1;
+        unsigned int widgetEventImmediateUploadPopulationCeiling:1;
+        unsigned int widgetEventImmediateUploadPopulationFloor:1;
         unsigned int enabledPrivateDataEncryptionLevel:1;
         unsigned int orderFeedEnabledLevel:1;
         unsigned int orderFeedEnabledLevelDeprecated:1;
@@ -176,6 +187,7 @@
         unsigned int alternativeButlerWidgetConfigEnabled:1;
         unsigned int articleSearchEnabled:1;
         unsigned int corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers:1;
+        unsigned int disableThumbnailsForArticleRecirculation:1;
         unsigned int diversifyOptionalTopStories:1;
         unsigned int newsletterSubscriptionChecked:1;
         unsigned int orderFeedEndpointEnabled:1;
@@ -189,6 +201,9 @@
 + (Class)externalAnalyticsConfigType;
 + (Class)endpointConfigsType;
 + (Class)languageConfigsType;
+@property(retain, nonatomic) NTPBUserSegmentationApiConfiguration *userSegmentationApiConfiguration; // @synthesize userSegmentationApiConfiguration=_userSegmentationApiConfiguration;
+@property(retain, nonatomic) NSString *articleRecirculationComponentPlacementConfig; // @synthesize articleRecirculationComponentPlacementConfig=_articleRecirculationComponentPlacementConfig;
+@property(nonatomic) unsigned int privateDataMigrationCleanupLevel; // @synthesize privateDataMigrationCleanupLevel=_privateDataMigrationCleanupLevel;
 @property(nonatomic) long long userSegmentationApiModMax; // @synthesize userSegmentationApiModMax=_userSegmentationApiModMax;
 @property(nonatomic) long long userSegmentationApiModThreshold; // @synthesize userSegmentationApiModThreshold=_userSegmentationApiModThreshold;
 @property(nonatomic) long long optionalTopStoriesRefreshRate; // @synthesize optionalTopStoriesRefreshRate=_optionalTopStoriesRefreshRate;
@@ -272,8 +287,19 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasUserSegmentationApiConfiguration;
+@property(nonatomic) _Bool hasDisableThumbnailsForArticleRecirculation;
+@property(nonatomic) _Bool disableThumbnailsForArticleRecirculation; // @synthesize disableThumbnailsForArticleRecirculation=_disableThumbnailsForArticleRecirculation;
+@property(nonatomic) _Bool hasArticleRecirculationPopularFeedQueryTimeRange;
+@property(nonatomic) long long articleRecirculationPopularFeedQueryTimeRange; // @synthesize articleRecirculationPopularFeedQueryTimeRange=_articleRecirculationPopularFeedQueryTimeRange;
+@property(nonatomic) _Bool hasWidgetEventImmediateUploadModuloForHashing;
+@property(nonatomic) long long widgetEventImmediateUploadModuloForHashing; // @synthesize widgetEventImmediateUploadModuloForHashing=_widgetEventImmediateUploadModuloForHashing;
+@property(nonatomic) _Bool hasWidgetEventImmediateUploadPopulationCeiling;
+@property(nonatomic) long long widgetEventImmediateUploadPopulationCeiling; // @synthesize widgetEventImmediateUploadPopulationCeiling=_widgetEventImmediateUploadPopulationCeiling;
+@property(nonatomic) _Bool hasWidgetEventImmediateUploadPopulationFloor;
+@property(nonatomic) long long widgetEventImmediateUploadPopulationFloor; // @synthesize widgetEventImmediateUploadPopulationFloor=_widgetEventImmediateUploadPopulationFloor;
+@property(readonly, nonatomic) _Bool hasArticleRecirculationComponentPlacementConfig;
 @property(nonatomic) _Bool hasPrivateDataMigrationCleanupLevel;
-@property(nonatomic) int privateDataMigrationCleanupLevel; // @synthesize privateDataMigrationCleanupLevel=_privateDataMigrationCleanupLevel;
 @property(nonatomic) _Bool hasUserSegmentationApiModMax;
 @property(nonatomic) _Bool hasUserSegmentationApiModThreshold;
 @property(nonatomic) _Bool hasExpirePinnedArticlesAfter;

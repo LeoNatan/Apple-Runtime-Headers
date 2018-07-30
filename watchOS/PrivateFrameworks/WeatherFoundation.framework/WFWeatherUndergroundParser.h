@@ -6,6 +6,7 @@
 
 #import <WeatherFoundation/WFForecastDataParser.h>
 
+__attribute__((visibility("hidden")))
 @interface WFWeatherUndergroundParser : WFForecastDataParser
 {
 }

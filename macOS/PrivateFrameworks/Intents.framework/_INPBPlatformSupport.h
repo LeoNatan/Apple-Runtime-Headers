@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPlatformSupport.h"
 
-@class NSString, PBUnknownFields;
+@class NSString;
 
-@interface _INPBPlatformSupport : PBCodable <NSCopying>
+@interface _INPBPlatformSupport : PBCodable <_INPBPlatformSupport, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSString *_minimumOsVersion;
-    int _supportedPlatform;
     struct {
         unsigned int supportedPlatform:1;
     } _has;
+    int _supportedPlatform;
+    NSString *_minimumOsVersion;
 }
 
-@property(retain, nonatomic) NSString *minimumOsVersion; // @synthesize minimumOsVersion=_minimumOsVersion;
+@property(nonatomic) int supportedPlatform; // @synthesize supportedPlatform=_supportedPlatform;
+@property(copy, nonatomic) NSString *minimumOsVersion; // @synthesize minimumOsVersion=_minimumOsVersion;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasMinimumOsVersion;
 - (int)StringAsSupportedPlatform:(id)arg1;
 - (id)supportedPlatformAsString:(int)arg1;
 @property(nonatomic) BOOL hasSupportedPlatform;
-@property(nonatomic) int supportedPlatform; // @synthesize supportedPlatform=_supportedPlatform;
+@property(readonly, nonatomic) BOOL hasMinimumOsVersion;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

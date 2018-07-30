@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSTextColorBinderPlugin : _NSBinderPlugin <_NSTextColorBinderPlugin>
 {
     struct __textColorBinderPluginFlags {

@@ -15,19 +15,10 @@ __attribute__((visibility("hidden")))
     BOOL _snapshotsArePermitted;
 }
 
-+ (id)fullyResolvedDownloadPath;
 + (void)setShouldAlwaysPromptForDownloadPath:(BOOL)arg1;
 + (BOOL)shouldAlwaysPromptForDownloadPath;
-+ (void)setDownloadPath:(id)arg1;
-+ (id)downloadPath;
-+ (void)resetDownloadPath;
 + (int)newWindowBehavior;
 + (int)newTabBehavior;
-+ (void)setHomePage:(id)arg1;
-+ (id)homeURL;
-+ (id)homePage;
-+ (BOOL)homePageIsForced;
-+ (void)_setCachedHomePage:(id)arg1;
 + (id)preferencesModuleNameFromIdentifier:(int)arg1;
 - (void)focusContentSearchField:(id)arg1;
 - (BOOL)validate_focusContentSearchField:(id)arg1;

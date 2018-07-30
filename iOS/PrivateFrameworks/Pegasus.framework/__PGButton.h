@@ -8,6 +8,7 @@
 
 @class PGBackdropView, UIImage, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface __PGButton : UIButton
 {
     PGBackdropView *_backdropView;

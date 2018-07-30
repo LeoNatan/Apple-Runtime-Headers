@@ -30,6 +30,7 @@
     IKImageElement *_bannerImgElement;
     IKImageElement *_uberImgElement;
     UIImage *_bgImage;
+    UIImage *_bgBackdropImage;
     long long _numberOfCollections;
     NSArray *_supplementaryViewControllers;
     UIViewController *_focusedSupplementaryViewController;
@@ -38,6 +39,7 @@
 @property(retain, nonatomic) UIViewController *focusedSupplementaryViewController; // @synthesize focusedSupplementaryViewController=_focusedSupplementaryViewController;
 @property(copy, nonatomic) NSArray *supplementaryViewControllers; // @synthesize supplementaryViewControllers=_supplementaryViewControllers;
 @property(nonatomic) long long numberOfCollections; // @synthesize numberOfCollections=_numberOfCollections;
+@property(retain, nonatomic) UIImage *bgBackdropImage; // @synthesize bgBackdropImage=_bgBackdropImage;
 @property(retain, nonatomic) UIImage *bgImage; // @synthesize bgImage=_bgImage;
 @property(retain, nonatomic) IKImageElement *uberImgElement; // @synthesize uberImgElement=_uberImgElement;
 @property(retain, nonatomic) IKImageElement *bannerImgElement; // @synthesize bannerImgElement=_bannerImgElement;
@@ -65,9 +67,11 @@
 - (void)_cancelImpressionsUpdate;
 - (void)_updateImpressions;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)_updateIndexDisplayMode;
 - (void)_updateOverlayBlurView;
 - (_Bool)_shouldOverlayBlur;
 - (id)_overlayView;
+- (id)_flowLayout;
 - (id)_viewControllerWithElement:(id)arg1 existingController:(id)arg2;
 - (_Bool)_updateSupplementaryViewControllersWithElements:(id)arg1 updateStyles:(_Bool)arg2;
 - (struct UIEdgeInsets)collectionListMargin;

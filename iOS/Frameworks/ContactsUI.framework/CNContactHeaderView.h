@@ -26,6 +26,7 @@
 }
 
 + (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(_Bool)arg2 shouldAllowImageDrops:(_Bool)arg3;
++ (struct CGSize)defaultPhotoSize;
 + (_Bool)requiresConstraintBasedLayout;
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(_Bool)arg1;
 + (id)descriptorForRequiredKeys;

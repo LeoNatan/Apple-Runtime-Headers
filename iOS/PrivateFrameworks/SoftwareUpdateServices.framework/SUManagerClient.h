@@ -8,10 +8,11 @@
 
 #import "SUInstallationConstraintObserverDelegate.h"
 #import "SUManagerClientInterface.h"
+#import "SUPreferencesObserver.h"
 
 @class NSMutableDictionary, NSMutableSet, NSString, NSXPCConnection, SUDescriptor;
 
-@interface SUManagerClient : NSObject <SUManagerClientInterface, SUInstallationConstraintObserverDelegate>
+@interface SUManagerClient : NSObject <SUManagerClientInterface, SUInstallationConstraintObserverDelegate, SUPreferencesObserver>
 {
     NSXPCConnection *_serverConnection;
     id <SUManagerClientDelegate> _delegate;
@@ -31,9 +32,10 @@
 @property(nonatomic) int clientType; // @synthesize clientType=_clientType;
 @property(nonatomic) __weak id <SUManagerClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)autoInstallOperationPasscodePolicyChanged:(id)arg1 passcodePolicyType:(unsigned long long)arg2;
 - (void)autoInstallOperationIsReadyToInstall:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)autoInstallOperationDidConsent:(id)arg1;
-- (void)autoInstallOperationDidExpire:(id)arg1;
+- (void)autoInstallOperationDidExpire:(id)arg1 withError:(id)arg2;
 - (void)autoInstallOperationWasCancelled:(id)arg1;
 - (void)installPolicyDidChange:(id)arg1;
 - (void)installDidFinish:(id)arg1;
@@ -59,12 +61,15 @@
 - (id)_remoteInterface;
 - (void)_invalidateConstraintObserver:(id)arg1 withError:(id)arg2;
 - (void)_invalidateAllInstallationConstraintObserversForDownload;
+- (void)preference:(id)arg1 didChange:(id)arg2;
 - (void)installationConstraintObserverDidRemoveAllObserverBlocks:(id)arg1;
 - (void)installationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;
 - (void)_cancelAutoInstallOperation:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)_consentAutoInstallOperation:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)_unregisterAutoInstallOperationClientHandler:(id)arg1;
 - (void)_registerAutoInstallOperationClientHandler:(id)arg1;
+- (_Bool)isAutomaticUpdateV2Enabled;
+- (void)enableAutomaticUpdateV2:(_Bool)arg1;
 - (void)getMandatorySoftwareUpdateDictionary:(CDUnknownBlockType)arg1;
 - (void)setMandatorySoftwareUpdateDictionary:(id)arg1;
 - (void)delayEndDate:(CDUnknownBlockType)arg1;
@@ -78,6 +83,9 @@
 - (void)isUpdateReadyForInstallation:(CDUnknownBlockType)arg1;
 - (id)observeInstallationConstraintChangesForDownload:(id)arg1 observer:(CDUnknownBlockType)arg2;
 - (id)_getExistingAutoInstallOperationFromModel:(id)arg1;
+- (void)presentAutoUpdateBanner:(CDUnknownBlockType)arg1;
+- (void)isAutoUpdateEnabled:(CDUnknownBlockType)arg1;
+- (void)currentPasscodePolicy:(CDUnknownBlockType)arg1;
 - (void)currentAutoInstallOperation:(_Bool)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)extraSpaceNeededForDownloadWithoutAppPurging:(CDUnknownBlockType)arg1;
 - (void)deviceHasSufficientSpaceForDownload:(CDUnknownBlockType)arg1;
@@ -92,6 +100,7 @@
 - (void)startDownload:(CDUnknownBlockType)arg1;
 - (void)isDownloading:(CDUnknownBlockType)arg1;
 - (unsigned long long)totalPurgeableSpace;
+- (void)autoScanAndDownloadIfAvailable:(CDUnknownBlockType)arg1;
 - (void)scanForUpdates:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)isScanning:(CDUnknownBlockType)arg1;
 - (void)_setClientType;

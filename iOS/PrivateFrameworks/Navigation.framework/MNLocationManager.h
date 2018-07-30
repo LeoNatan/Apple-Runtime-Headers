@@ -93,8 +93,7 @@
 - (void)removeLocationListener:(id)arg1;
 - (void)addLocationListener:(id)arg1;
 @property(nonatomic) int headingOrientation;
-- (void)setActivityType:(long long)arg1;
-- (long long)activityType;
+@property(nonatomic) long long activityType;
 @property(nonatomic) double distanceFilter;
 @property(nonatomic) double desiredAccuracy;
 @property(readonly, nonatomic) double timeScale;

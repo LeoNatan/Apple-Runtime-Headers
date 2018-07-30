@@ -40,7 +40,6 @@
 - (void)_finishWithError:(id)arg1;
 - (void)afterThumbnailIsPutInGenstore;
 - (void)_afterThumbnailIsGenerated;
-- (id)issueSandboxExtension;
 - (void)main;
 - (void)_generateThumbnail;
 - (void)start;

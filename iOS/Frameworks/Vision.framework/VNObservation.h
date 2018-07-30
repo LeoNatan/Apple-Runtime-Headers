@@ -8,11 +8,13 @@
 
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
+#import "VNRequestRevisionProviding.h"
 
 @class NSUUID;
 
-@interface VNObservation : NSObject <NSCopying, NSSecureCoding>
+@interface VNObservation : NSObject <NSCopying, NSSecureCoding, VNRequestRevisionProviding>
 {
+    unsigned long long _requestRevision;
     float _confidence;
     NSUUID *_uuid;
 }
@@ -23,9 +25,10 @@
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+@property(readonly, nonatomic) unsigned long long requestRevision;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)init;
+- (id)initWithRequestRevision:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

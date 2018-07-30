@@ -7,11 +7,11 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
-#import "SXDiscoverMoreConfigurationProviding.h"
+#import "SVDiscoverMoreConfigurationProviding.h"
 
 @class NSString, NTPBDiscoverMoreVideosInfo;
 
-@interface NUDiscoverMoreVideosInfo : NSObject <NSCopying, SXDiscoverMoreConfigurationProviding>
+@interface NUDiscoverMoreVideosInfo : NSObject <NSCopying, SVDiscoverMoreConfigurationProviding>
 {
     NTPBDiscoverMoreVideosInfo *_discoverMoreVideosInfo;
 }

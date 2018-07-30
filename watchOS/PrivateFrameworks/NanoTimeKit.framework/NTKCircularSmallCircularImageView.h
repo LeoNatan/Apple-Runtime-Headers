@@ -18,11 +18,10 @@
 @property(retain, nonatomic) UIView<NTKComplicationImageView> *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(CDUnknownBlockType)arg1;
-- (void)_updateImageViewMulticolorAlphaIfNeeded;
 - (void)_updateForTemplateChange;
-- (_Bool)_wantsPlatter;
 - (void)setUsesMediumLayout:(_Bool)arg1;
 - (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

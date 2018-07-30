@@ -8,7 +8,6 @@
 
 @class WDBorder, WDShading;
 
-__attribute__((visibility("hidden")))
 @interface WDTableCellDescriptor : NSObject
 {
     WDShading *mShading;
@@ -54,6 +53,7 @@ __attribute__((visibility("hidden")))
     unsigned int mNoWrapOverridden:1;
 }
 
+- (void).cxx_destruct;
 - (void)setNoWrapOverridden:(BOOL)arg1;
 - (BOOL)isNoWrapOverridden;
 - (void)setNoWrap:(BOOL)arg1;

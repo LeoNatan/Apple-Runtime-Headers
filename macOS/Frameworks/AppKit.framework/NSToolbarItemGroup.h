@@ -47,8 +47,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy) NSArray *subitems;
 - (void)_forceSetView:(id)arg1;
-- (void)_autorecalculateMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2;
-- (void)_sizeFromSubitemsMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2;
+- (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 stretchesContent:(BOOL)arg3;
 - (BOOL)_mouseDownInSurroundingRegionShouldMoveWindow;
 - (void)dealloc;
 - (id)view;

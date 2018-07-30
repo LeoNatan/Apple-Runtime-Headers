@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
     NSView *_slaveView;
     struct TLayoutBinding _layoutBinding;
-    struct unordered_map<TNSRef<NSView *, void>, std::__1::pair<unsigned long, TNotificationCenterObserver>, std::__1::hash<TNSRef<NSView *, void>>, std::__1::equal_to<TNSRef<NSView *, void>>, std::__1::allocator<std::__1::pair<const TNSRef<NSView *, void>, std::__1::pair<unsigned long, TNotificationCenterObserver>>>> _observedMasterViews;
+    struct unordered_map<TNSRef<NSView, void>, std::__1::pair<unsigned long, TNotificationCenterObserver>, std::__1::hash<TNSRef<NSView, void>>, std::__1::equal_to<TNSRef<NSView, void>>, std::__1::allocator<std::__1::pair<const TNSRef<NSView, void>, std::__1::pair<unsigned long, TNotificationCenterObserver>>>> _observedMasterViews;
 }
 
 @property(readonly) NSView *slaveView; // @synthesize slaveView=_slaveView;

@@ -16,12 +16,12 @@
 
 @property(retain, nonatomic) TITypologyTimer *adjustedTimer; // @synthesize adjustedTimer=_adjustedTimer;
 @property(retain, nonatomic) TITypologyTimer *timer; // @synthesize timer=_timer;
+- (void).cxx_destruct;
 - (void)visitRecordKeyboardInput:(id)arg1;
 @property(readonly, nonatomic) double adjustedElapsedTime;
 @property(readonly, nonatomic) double elapsedTime;
 - (id)aggregateReport;
 - (id)structuredReport;
-- (void)dealloc;
 - (id)init;
 
 @end

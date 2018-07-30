@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)_dismissButtonIsPressed;
-- (void)drawRect:(struct CGRect)arg1;
+- (BOOL)drawImage:(struct CGRect)arg1;
 - (void)setCandidates:(id)arg1 andCorrectionPanelType:(long long)arg2;
 - (void)setCorrectionAttributes:(id)arg1;
 @property(readonly) BOOL hasSelection; // @dynamic hasSelection;

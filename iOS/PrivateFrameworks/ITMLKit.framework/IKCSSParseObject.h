@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class IKArray;
 
 @interface IKCSSParseObject : NSObject
 {
-    NSArray *_cssValue;
+    IKArray *_cssValue;
     long long _type;
     struct _NSRange _range;
 }
@@ -18,7 +18,7 @@
 + (id)stringifyList:(id)arg1;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(nonatomic) long long type; // @synthesize type=_type;
-@property(retain, nonatomic) NSArray *cssValue; // @synthesize cssValue=_cssValue;
+@property(retain, nonatomic) IKArray *cssValue; // @synthesize cssValue=_cssValue;
 - (void).cxx_destruct;
 - (id)description;
 - (id)init;

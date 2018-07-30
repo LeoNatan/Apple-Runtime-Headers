@@ -13,6 +13,7 @@
     NSString *_toolTipString;
 }
 
+- (unsigned long long)shadowOptions;
 - (float)_backdropBleedAmount;
 - (void)_setLevelToShowAboveWindow:(id)arg1;
 - (BOOL)ignoresMouseEvents;

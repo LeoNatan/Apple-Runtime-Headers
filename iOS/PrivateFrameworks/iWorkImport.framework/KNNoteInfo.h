@@ -31,9 +31,11 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)objectUUIDPath;
 @property(readonly, nonatomic) int verticalAlignment;
+@property(readonly, nonatomic) _Bool supportsMultipleColumns;
 @property(readonly, nonatomic) long long contentWritingDirection;
 @property(readonly, nonatomic) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 - (_Bool)shouldHideEmptyBullets;
+@property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
 @property(readonly, nonatomic) _Bool textIsVertical;

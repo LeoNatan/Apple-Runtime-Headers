@@ -11,14 +11,14 @@
 __attribute__((visibility("hidden")))
 @interface SCRVisualsEncircledPoint : NSObject
 {
-    char *_encircledPointEnabled;
+    BOOL _encircledPointEnabled;
     AXVHighlightPointView *__pointView;
     struct CGPoint _highlightPoint;
 }
 
 @property(retain, nonatomic, setter=_setPointView:) AXVHighlightPointView *_pointView; // @synthesize _pointView=__pointView;
 @property(nonatomic) struct CGPoint highlightPoint; // @synthesize highlightPoint=_highlightPoint;
-@property(nonatomic) char *encircledPointEnabled; // @synthesize encircledPointEnabled=_encircledPointEnabled;
+@property(nonatomic) BOOL encircledPointEnabled; // @synthesize encircledPointEnabled=_encircledPointEnabled;
 - (void).cxx_destruct;
 - (id)init;
 

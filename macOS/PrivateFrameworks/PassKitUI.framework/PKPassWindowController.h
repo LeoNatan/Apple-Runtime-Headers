@@ -45,6 +45,7 @@
 @property(getter=isActive) BOOL active; // @synthesize active=_active;
 @property(retain) NSWindow *clientWindow; // @synthesize clientWindow=_clientWindow;
 - (void).cxx_destruct;
+- (void)passViewer:(id)arg1 didChangePass:(id)arg2;
 - (void)passViewer:(id)arg1 didAddToPassbook:(id)arg2;
 - (void)passViewer:(id)arg1 closeClicked:(id)arg2;
 - (void)endWithAnimationStyle:(long long)arg1;
@@ -65,6 +66,7 @@
 - (void)_synchronizeBackgroundWindowFrame;
 - (struct CGRect)clientWindowFrame;
 - (BOOL)clientWindowAvailable;
+- (void)layoutForPass:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)windowDidLoad;
 - (struct CGRect)_centeredRectWithSize:(struct CGSize)arg1 inRect:(struct CGRect)arg2;

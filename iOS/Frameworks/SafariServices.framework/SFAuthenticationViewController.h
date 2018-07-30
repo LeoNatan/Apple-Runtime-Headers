@@ -15,10 +15,12 @@ __attribute__((visibility("hidden")))
 {
     _UIFallbackPresentationViewController *_fallbackPresentationViewController;
     NSString *_callbackURLScheme;
+    id <SFAuthenticationViewControllerPresentationDelegate> _presentationDelegate;
     CDUnknownBlockType _dismissCompletionHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
+@property(nonatomic) __weak id <SFAuthenticationViewControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
 - (void)remoteViewController:(id)arg1 didDecideCookieSharingForURL:(id)arg2 shouldCancel:(_Bool)arg3;
 - (void)remoteViewController:(id)arg1 hostApplicationOpenURL:(id)arg2;

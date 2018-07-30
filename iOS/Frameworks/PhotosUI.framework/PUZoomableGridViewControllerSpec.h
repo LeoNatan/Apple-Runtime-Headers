@@ -8,7 +8,6 @@
 
 @class PUPhotosGridViewControllerSpec;
 
-__attribute__((visibility("hidden")))
 @interface PUZoomableGridViewControllerSpec : NSObject
 {
     _Bool _canDisplayMultipleRightBarButtonItems;

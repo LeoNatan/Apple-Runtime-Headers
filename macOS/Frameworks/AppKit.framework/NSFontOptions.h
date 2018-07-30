@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     id optionsButtons;
     id optionsPopUp;
     id optionsPreviewField;
+    id optionsPreviewBackground;
     id optionsAttributesField;
     id optionsAddRemoveButton;
     id colorOptionsPanel;
@@ -81,7 +82,8 @@ __attribute__((visibility("hidden")))
     NSString *_optionsRemoveTitle;
     struct {
         unsigned int isMultiple:1;
-        unsigned int reserved:31;
+        unsigned int observingTextViewAppearance:1;
+        unsigned int reserved:30;
     } _flags;
     NSWindow *_windowForSheets;
     NSWindow *_windowForOptions;

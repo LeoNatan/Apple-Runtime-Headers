@@ -6,17 +6,17 @@
 
 #import "NSObject.h"
 
-#import "HDDailyActivityGoalDetectionDelegate.h"
 #import "NLCoachingSubmanager.h"
+#import "NLDailyActivityGoalDetectionDelegate.h"
 
 @class FITypicalDayActivityModel, HDProfile, NLBridgeSettings, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface NLDailyGoalCompletionManager : NSObject <NLCoachingSubmanager, HDDailyActivityGoalDetectionDelegate>
+@interface NLDailyGoalCompletionManager : NSObject <NLCoachingSubmanager, NLDailyActivityGoalDetectionDelegate>
 {
     HDProfile *_profile;
     NLBridgeSettings *_bridgeSettings;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_goalTypesToFireByCacheIndex;
+    NSMutableDictionary *_goalTypesToFireByActivitySummaryIndex;
     FITypicalDayActivityModel *typicalDayModel;
     id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate;
 }
@@ -25,7 +25,7 @@
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
 - (void).cxx_destruct;
-- (long long)_cacheIndexForDate:(id)arg1;
+- (long long)_activitySummaryIndexForDate:(id)arg1;
 - (_Bool)requiresCoachingConditionsOnRequests;
 - (int)minimumRecentActiveDays;
 - (_Bool)requiresMoveGoal;
@@ -36,19 +36,19 @@
 - (_Bool)alertsEnabled;
 - (id)coachingAlertRequestsWhenForcedWithArguments:(id)arg1;
 - (void)daemonAndCoachingManagerReady;
-- (void)concludeRunWithSuccess:(_Bool)arg1 cacheIndex:(long long)arg2;
-- (void)runDailyGoalCompletionDetectionForGoalType:(unsigned int)arg1 cacheIndex:(long long)arg2 previousValue:(double)arg3 currentValue:(double)arg4 goalValue:(double)arg5 shouldAlert:(_Bool)arg6 goalMetHandler:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
-- (void)_queue_addGoalTypeToNotify:(unsigned int)arg1 cacheIndex:(long long)arg2;
-- (void)_queue_addDailyGoalTypePreviouslyMet:(unsigned int)arg1 cacheIndex:(long long)arg2;
+- (void)concludeGoalDetectionRun;
+- (_Bool)runDailyGoalCompletionDetectionForGoalType:(int)arg1 activitySummaryIndex:(long long)arg2 previousValue:(double)arg3 currentValue:(double)arg4 goalValue:(double)arg5 shouldAlert:(_Bool)arg6 goalMetHandler:(CDUnknownBlockType)arg7;
+- (void)_queue_addGoalTypeToNotify:(int)arg1 activitySummaryIndex:(long long)arg2;
+- (void)_queue_addDailyGoalTypePreviouslyMet:(int)arg1 activitySummaryIndex:(long long)arg2;
 - (_Bool)_areGoalCompletionAlertsEnabled;
-- (void)_queue_setGoalTypesMet:(unsigned int)arg1 forCacheIndex:(long long)arg2;
-- (unsigned int)_queue_goalTypesMetForCacheIndex:(long long)arg1;
-- (_Bool)_queue_isDailyGoalTypeMet:(unsigned int)arg1 cacheIndex:(long long)arg2;
-- (void)_queue_addGoalTypeToDailyGoalTypesMet:(unsigned int)arg1 cacheIndex:(long long)arg2;
-- (void)_queue_clearAllDailyGoalTypesMetForCacheIndex:(long long)arg1;
-- (id)_queue_allGoalTypesMetForCacheIndex:(long long)arg1;
+- (void)_queue_setGoalTypesMet:(unsigned int)arg1 forActivitySummaryIndex:(long long)arg2;
+- (unsigned int)_queue_goalTypesMetForActivitySummaryIndex:(long long)arg1;
+- (_Bool)_queue_isDailyGoalTypeMet:(int)arg1 activitySummaryIndex:(long long)arg2;
+- (void)_queue_addGoalTypeToDailyGoalTypesMet:(int)arg1 activitySummaryIndex:(long long)arg2;
+- (void)_queue_clearAllDailyGoalTypesMetForActivitySummaryIndex:(long long)arg1;
+- (id)_queue_allGoalTypesMetForActivitySummaryIndex:(long long)arg1;
 - (id)_userDefaultsDomain;
-- (void)_queue_resetDailyGoalTypesMetCacheIndex:(long long)arg1;
+- (void)_queue_resetDailyGoalTypesMetActivitySummaryIndex:(long long)arg1;
 - (id)initWithProfile:(id)arg1 bridgeSettings:(id)arg2;
 
 // Remaining properties

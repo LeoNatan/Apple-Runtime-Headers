@@ -18,7 +18,7 @@
     CDUnknownBlockType _recordZoneFetchCompletionBlock;
     CDUnknownBlockType _fetchRecordZoneChangesCompletionBlock;
     NSArray *_recordZoneIDs;
-    NSDictionary *_optionsByRecordZoneID;
+    NSDictionary *_configurationsByRecordZoneID;
     NSMutableDictionary *_statusByZoneID;
     NSMutableSet *_zoneIDsWithPendingArchivedRecords;
     NSMutableDictionary *_perItemErrors;
@@ -31,7 +31,7 @@
 @property(retain, nonatomic) NSMutableSet *zoneIDsWithPendingArchivedRecords; // @synthesize zoneIDsWithPendingArchivedRecords=_zoneIDsWithPendingArchivedRecords;
 @property(retain, nonatomic) NSMutableDictionary *statusByZoneID; // @synthesize statusByZoneID=_statusByZoneID;
 @property(nonatomic) _Bool fetchAllChanges; // @synthesize fetchAllChanges=_fetchAllChanges;
-@property(copy, nonatomic) NSDictionary *optionsByRecordZoneID; // @synthesize optionsByRecordZoneID=_optionsByRecordZoneID;
+@property(copy, nonatomic) NSDictionary *configurationsByRecordZoneID; // @synthesize configurationsByRecordZoneID=_configurationsByRecordZoneID;
 @property(copy, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
 - (void).cxx_destruct;
 - (id)activityCreate;
@@ -50,8 +50,10 @@
 @property(copy, nonatomic) CDUnknownBlockType recordZoneChangeTokensUpdatedBlock; // @synthesize recordZoneChangeTokensUpdatedBlock=_recordZoneChangeTokensUpdatedBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordWithIDWasDeletedBlock; // @synthesize recordWithIDWasDeletedBlock=_recordWithIDWasDeletedBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordChangedBlock; // @synthesize recordChangedBlock=_recordChangedBlock;
-- (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
+- (id)initWithRecordZoneIDs:(id)arg1 configurationsByRecordZoneID:(id)arg2;
 - (id)init;
+@property(copy, nonatomic) NSDictionary *optionsByRecordZoneID;
+- (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
 
 @end
 

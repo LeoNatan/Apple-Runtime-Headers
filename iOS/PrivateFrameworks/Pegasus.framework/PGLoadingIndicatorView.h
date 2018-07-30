@@ -8,6 +8,7 @@
 
 @class UIActivityIndicatorView;
 
+__attribute__((visibility("hidden")))
 @interface PGLoadingIndicatorView : UIView
 {
     UIActivityIndicatorView *_activityIndicatorView;

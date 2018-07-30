@@ -17,7 +17,6 @@
     int _requestMode;
 }
 
-+ (BOOL)requestTrafficAndETAFromWaypoint:(id)arg1 toWaypoints:(id)arg2 transportType:(int)arg3 automobileOptions:(id)arg4 withShortTrafficString:(BOOL)arg5 handler:(CDUnknownBlockType)arg6;
 + (BOOL)requestTrafficAndETAFromWaypoint:(id)arg1 toWaypoints:(id)arg2 transportType:(int)arg3 automobileOptions:(id)arg4 handler:(CDUnknownBlockType)arg5;
 @property(copy, nonatomic) NSString *loggingFacility; // @synthesize loggingFacility=_loggingFacility;
 - (void).cxx_destruct;

@@ -8,22 +8,21 @@
 
 #import "SPLongFormAudioClientProtocol.h"
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, SPCompanionConnection;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, SPExtensionConnection;
 
 @interface SPLongFormAudioServerConnection : NSObject <SPLongFormAudioClientProtocol>
 {
     NSXPCConnection *_longFormAudioServerConnection;
-    SPCompanionConnection *_companionConnection;
+    SPExtensionConnection *_extensionConnection;
     NSMutableDictionary *_pendingResponses;
     NSObject<OS_dispatch_queue> *_longFormAudioMessagesQueue;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *longFormAudioMessagesQueue; // @synthesize longFormAudioMessagesQueue=_longFormAudioMessagesQueue;
 @property(retain, nonatomic) NSMutableDictionary *pendingResponses; // @synthesize pendingResponses=_pendingResponses;
-@property(retain, nonatomic) SPCompanionConnection *companionConnection; // @synthesize companionConnection=_companionConnection;
+@property(retain, nonatomic) SPExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
 @property(retain, nonatomic) NSXPCConnection *longFormAudioServerConnection; // @synthesize longFormAudioServerConnection=_longFormAudioServerConnection;
 - (void).cxx_destruct;
-- (void)backgroundAudioPlaybackRequestedWithoutValidAudioRoute;
 - (void)receiveData:(id)arg1;
 - (id)sanboxExtensionTokenForAssetURL:(id)arg1;
 - (id)_newMessageDataWithExtensionTokenIfAppropriate:(id)arg1;

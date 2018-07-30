@@ -26,6 +26,7 @@
     NSString *_creatorFacebookProfile;
     NSString *_creatorTwitterUsername;
     NSString *_appleContentID;
+    NSString *_appleSummary;
     LPImage *_icon;
     LPIconMetadata *_iconMetadata;
     LPImage *_image;
@@ -54,6 +55,7 @@
 @property(retain, nonatomic) LPImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) LPIconMetadata *iconMetadata; // @synthesize iconMetadata=_iconMetadata;
 @property(retain, nonatomic) LPImage *icon; // @synthesize icon=_icon;
+@property(copy, nonatomic) NSString *appleSummary; // @synthesize appleSummary=_appleSummary;
 @property(copy, nonatomic) NSString *appleContentID; // @synthesize appleContentID=_appleContentID;
 @property(copy, nonatomic) NSString *creatorTwitterUsername; // @synthesize creatorTwitterUsername=_creatorTwitterUsername;
 @property(copy, nonatomic) NSString *creatorFacebookProfile; // @synthesize creatorFacebookProfile=_creatorFacebookProfile;

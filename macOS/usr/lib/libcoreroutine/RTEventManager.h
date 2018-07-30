@@ -6,23 +6,29 @@
 
 #import "NSObject.h"
 
-@class EKEventStore, NSObject<OS_dispatch_queue>, RTEventModelProvider, RTLearnedLocationManager;
+#import "RTTransientObjectProtocol.h"
 
-@interface RTEventManager : NSObject
+@class NSObject<OS_dispatch_queue>, NSString, RTEventModelProvider, RTInvocationDispatcher, RTLearnedLocationManager, RTMapServiceManager;
+
+@interface RTEventManager : NSObject <RTTransientObjectProtocol>
 {
     BOOL _accessToEventsGranted;
-    EKEventStore *_eventStore;
-    NSObject<OS_dispatch_queue> *_queue;
-    RTLearnedLocationManager *_learnedLocationManager;
+    RTInvocationDispatcher *_invocationDispatcher;
     RTEventModelProvider *_eventModelProvider;
+    id _eventStore;
+    RTLearnedLocationManager *_learnedLocationManager;
+    RTMapServiceManager *_mapServiceManager;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (BOOL)reasonableDistanceBetweenEventLocation:(id)arg1 andLocation:(id)arg2;
-@property(retain, nonatomic) RTEventModelProvider *eventModelProvider; // @synthesize eventModelProvider=_eventModelProvider;
-@property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(nonatomic) BOOL accessToEventsGranted; // @synthesize accessToEventsGranted=_accessToEventsGranted;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
+@property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
+@property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
+@property(retain, nonatomic) id eventStore; // @synthesize eventStore=_eventStore;
+@property(retain, nonatomic) RTEventModelProvider *eventModelProvider; // @synthesize eventModelProvider=_eventModelProvider;
+@property(retain, nonatomic) RTInvocationDispatcher *invocationDispatcher; // @synthesize invocationDispatcher=_invocationDispatcher;
 - (void).cxx_destruct;
 - (void)fetchPredictedLocationsOfInterestBetweenStartDate:(id)arg1 endDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)_fetchPredictedLocationsOfInterestBetweenStartDate:(id)arg1 endDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
@@ -31,13 +37,19 @@
 - (void)fetchPredictedLocationsOfInterestOnDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchPredictedLocationsOfInterestOnDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
+- (void)_fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (void)fetchEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchEventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)_fetchEventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)fetchFreeDateIntervalsBetweenStartDate:(id)arg1 endDate:(id)arg2 filterAllDayEvents:(BOOL)arg3 filterFreeTimeEvents:(BOOL)arg4 handler:(CDUnknownBlockType)arg5;
+- (void)_fetchFreeDateIntervalsBetweenStartDate:(id)arg1 endDate:(id)arg2 filterAllDayEvents:(BOOL)arg3 filterFreeTimeEvents:(BOOL)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)fetchLastEventEndDateWithHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchLastEventEndDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchNextFreeStartDateWithHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchNextFreeStartDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchCurrentlyInEventWithHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchCurrentlyInEventWithHandler:(CDUnknownBlockType)arg1;
 - (id)nextPredictedLocationsOfInterestCalendars;
 - (id)calendars;
 - (id)eventsSortedByStartDateBetweenStartDate:(id)arg1 andEndDate:(id)arg2 calendars:(id)arg3;
@@ -45,9 +57,17 @@
 - (id)eventsSortedByEndDateBetweenStartDate:(id)arg1 andEndDate:(id)arg2;
 - (id)eventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2;
 - (id)eventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 calendars:(id)arg3;
-- (id)accessDeniedError;
-- (id)initWithEventModelProvider:(id)arg1 learnedLocationManager:(id)arg2 queue:(id)arg3;
+- (void)transientObjectDidReleaseBackingObject:(id)arg1;
+- (void)transientObjectDidCreateBackingObject:(id)arg1;
+- (id)initWithEventModelProvider:(id)arg1 eventStore:(id)arg2 learnedLocationManager:(id)arg3 mapServiceManager:(id)arg4 queue:(id)arg5;
+- (id)initWithEventModelProvider:(id)arg1 learnedLocationManager:(id)arg2 mapServiceManager:(id)arg3 queue:(id)arg4;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

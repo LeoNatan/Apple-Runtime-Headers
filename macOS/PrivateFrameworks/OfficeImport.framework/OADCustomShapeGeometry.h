@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface OADCustomShapeGeometry : OADShapeGeometry
 {
     CsRect_0aefebc6 *mGeometryCoordSpace;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mPaths;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)addPath:(id)arg1;
 - (id)pathAtIndex:(unsigned long long)arg1;

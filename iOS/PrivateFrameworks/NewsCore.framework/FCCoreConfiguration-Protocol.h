@@ -6,7 +6,7 @@
 
 #import "NFCopying.h"
 
-@class FCForYouGroupsConfiguration, FCNotificationsConfiguration, FCPersonalizationTreatment, FCTopStoriesConfiguration, NSArray, NSDictionary, NSNumber, NSString, NTPBTodayConfig, NTPBVideoGroupsConfig;
+@class FCForYouGroupsConfiguration, FCNotificationsConfiguration, FCPersonalizationTreatment, FCTopStoriesConfiguration, FCVideoGroupsConfig, NSArray, NSDictionary, NSNumber, NSString, NTPBTodayConfig;
 
 @protocol FCCoreConfiguration <NFCopying>
 @property(readonly, nonatomic) long long expirePinnedArticlesAfter;
@@ -16,7 +16,7 @@
 @property(readonly, nonatomic) long long minimumDistanceBetweenImageOnTopTiles;
 @property(readonly, nonatomic) long long endOfArticleMaxInaccessiblePaidArticleCount;
 @property(readonly, nonatomic) double endOfArticleMinPaidHeadlineRatio;
-@property(readonly, copy, nonatomic) NTPBVideoGroupsConfig *forYouVideoGroupsConfig;
+@property(readonly, copy, nonatomic) FCVideoGroupsConfig *forYouVideoGroupsConfig;
 @property(readonly, nonatomic) double minimumTrendingUnseenRatio;
 @property(readonly, nonatomic) long long optionalTopStoriesRefreshRate;
 @property(readonly, nonatomic) _Bool diversifyOptionalTopStories;
@@ -62,5 +62,13 @@
 - (NSDictionary *)analyticsEnvelopeContentTypeConfigsForEnvironment:(unsigned long long)arg1;
 - (NTPBTodayConfig *)todayConfigWithQueueConfigs:(NSArray *)arg1 maxSlotCount:(unsigned long long)arg2;
 - (FCPersonalizationTreatment *)personalizationTreatmentForFeldsparID:(NSString *)arg1;
+
+@optional
+@property(readonly, nonatomic) double delayBeforeRetryingDroppedFeeds;
+@property(readonly, nonatomic) long long maxRetriesForDroppedFeeds;
+@property(readonly, nonatomic) _Bool isSpecialEventsMicaAnimationDisabled;
+@property(readonly, nonatomic) long long singleChannelFeedMinFeedItemsPerRequest;
+@property(readonly, nonatomic) long long singleTopicFeedMinFeedItemsPerRequest;
+@property(readonly, nonatomic) _Bool shouldShowAlternateHeadlines;
 @end
 

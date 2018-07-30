@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     double fRedrawDuration;
     NSView *fParent;
     BUStarfieldTimelineLayer *fSuperLayer;
-    struct TTimelineControl *fTimeline;
+    struct shared_ptr<TTimelineControl> fTimeline;
 }
 
 + (id)controlWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -64,7 +64,6 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)superLayer;
 - (void)setSuperLayer:(id)arg1;

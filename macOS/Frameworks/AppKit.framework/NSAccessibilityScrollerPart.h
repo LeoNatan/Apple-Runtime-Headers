@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAccessibilityMockUIElement.h>
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilityScrollerPart : NSAccessibilityMockUIElement
 {
     unsigned long long _partCode;

@@ -8,6 +8,7 @@
 
 @class NSString, NSViewController;
 
+__attribute__((visibility("hidden")))
 @interface _NSTabViewItemAuxiliary : NSObject
 {
     struct CGSize cachedMinimumLabelSize;

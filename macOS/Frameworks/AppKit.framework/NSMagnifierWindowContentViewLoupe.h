@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSBitmapImageRep *_contentImageRep;
     NSBezierPath *_clipPath;
     NSTextField *_colorLabel;
+    NSView *_colorLabelContainer;
     NSColor *_cachedColor;
     long long _loupeMode;
 }
@@ -28,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)magnifyingGlassCenterPosition;
 - (double)magnifyingGlassRadius;
 - (double)magnifiedPointsPerPixel;
-- (id)borderColor;
+- (id)blendedBorderColor;
 - (id)color;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

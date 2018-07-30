@@ -10,11 +10,8 @@
 
 @protocol _CPErrorFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasUnderlyingError;
 @property(retain, nonatomic) _CPError *underlyingError;
-@property(readonly, nonatomic) BOOL hasError;
 @property(retain, nonatomic) _CPError *error;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

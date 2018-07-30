@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABSearchHighlightFormatter.h>
 
-__attribute__((visibility("hidden")))
 @interface ABNicknameFormatter : ABSearchHighlightFormatter
 {
 }

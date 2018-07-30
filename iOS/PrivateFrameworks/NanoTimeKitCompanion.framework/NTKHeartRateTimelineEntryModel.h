@@ -12,16 +12,17 @@
 {
     _Bool _hasBPM;
     _Bool _lessThanMinute;
+    _Bool _locked;
     NSDate *_measurementDate;
     long long _BPM;
 }
 
+@property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(nonatomic) _Bool lessThanMinute; // @synthesize lessThanMinute=_lessThanMinute;
 @property(nonatomic) _Bool hasBPM; // @synthesize hasBPM=_hasBPM;
 @property(nonatomic) long long BPM; // @synthesize BPM=_BPM;
 @property(retain, nonatomic) NSDate *measurementDate; // @synthesize measurementDate=_measurementDate;
 - (void).cxx_destruct;
-- (id)_heartrateTintColor;
 - (id)_bpmString;
 - (id)_heartrateString;
 - (id)_newExtraLargeTemplate;

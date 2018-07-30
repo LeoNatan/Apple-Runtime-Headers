@@ -79,6 +79,7 @@
 - (void)_setAuthenticating:(_Bool)arg1;
 - (void)setProgressState:(int)arg1 string:(id)arg2 animated:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)setProgressState:(int)arg1 string:(id)arg2 animated:(_Bool)arg3;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;

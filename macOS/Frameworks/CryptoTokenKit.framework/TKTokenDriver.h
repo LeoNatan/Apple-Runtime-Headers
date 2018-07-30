@@ -27,7 +27,6 @@
 - (void)getTokenEndpointWithAttributes:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)invalidateToken:(id)arg1;
 - (void)addTokenDriverContext:(id)arg1;
-- (void)removeTokenEndpoint:(id)arg1;
 - (id)tokenIDForInstanceID:(id)arg1;
 - (void)getTokenWithAttributes:(id)arg1 reply:(CDUnknownBlockType)arg2;
 @property(readonly) NSString *classID;

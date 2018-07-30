@@ -8,6 +8,7 @@
 
 @class PRLexicon, PRLexiconStemSuffixCursor;
 
+__attribute__((visibility("hidden")))
 @interface PRLexiconCursor : NSObject
 {
     PRLexicon *_lexicon;
@@ -16,6 +17,7 @@
     unsigned long long _stemSuffixState;
 }
 
+- (void)enumerateCompletionEntries:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateCompletions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_enumerateCompletions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateEntriesUsingBlock:(CDUnknownBlockType)arg1;

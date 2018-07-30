@@ -8,7 +8,6 @@
 
 @class NSOperationQueue;
 
-__attribute__((visibility("hidden")))
 @interface ABEmailCertificateController : NSObject
 {
     NSOperationQueue *_operationQueue;

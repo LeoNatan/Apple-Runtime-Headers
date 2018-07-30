@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)fillHTMLArchiveForCSVData:(id)arg1 fileName:(id)arg2 archiver:(id)arg3;
-+ (void)fillHTMLArchiveForCSVFile:(id)arg1 archiver:(id)arg2;
++ (void)fillHTMLArchiveForOfficeFile:(id)arg1 orData:(id)arg2 dataFileName:(id)arg3 dataFormat:(unsigned long long)arg4 archiver:(id)arg5;
 + (void)fillHTMLArchiveForCSVString:(id)arg1 fileName:(id)arg2 archiver:(id)arg3;
 + (struct CGSize)_improveSize:(struct CGSize)arg1;
 

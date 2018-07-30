@@ -31,9 +31,13 @@
     id <MKLocationManagerOperation> _singleLocationUpdate;
     GEOMapServiceTraits *_traits;
     _Bool _shouldDisplayNoResults;
+    _Bool _shouldPreloadTransitInfo;
+    id <MKAutocompleteAnalyticsProvider> _analyticsProvider;
 }
 
+@property(nonatomic, getter=_shouldPreloadTransitInfo, setter=_setShouldPreloadTransitInfo:) _Bool shouldPreloadTransitInfo; // @synthesize shouldPreloadTransitInfo=_shouldPreloadTransitInfo;
 @property(readonly, nonatomic, getter=_shouldDisplayNoResults) _Bool shouldDisplayNoResults; // @synthesize shouldDisplayNoResults=_shouldDisplayNoResults;
+@property(retain, nonatomic) id <MKAutocompleteAnalyticsProvider> analyticsProvider; // @synthesize analyticsProvider=_analyticsProvider;
 @property(retain, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
 @property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
 @property(retain, nonatomic) CLLocation *deviceLocation; // @synthesize deviceLocation=_deviceLocation;
@@ -59,11 +63,14 @@
 @property(readonly, nonatomic, getter=isSearching) _Bool searching;
 - (int)source;
 - (void)setSource:(int)arg1;
-- (void)_scheduleRequest;
+- (double)timeToNextRequest;
+- (void)_scheduleRequestWithTimeToNextRequest:(double)arg1;
+- (void)_markDirtyAndScheduleRequestWithTimeToNextRequest:(double)arg1;
 - (void)_markDirty;
 - (void)_schedulePendingRequest;
 - (void)_fireRequest;
 - (void)_handleError:(id)arg1 forTicket:(id)arg2;
+- (void)_notifyDelegatesWithResults:(id)arg1 shouldDisplayNoResults:(_Bool)arg2 ticket:(id)arg3;
 - (void)_handleCompletion:(id)arg1 shouldDisplayNoResults:(_Bool)arg2 forTicket:(id)arg3;
 - (void)dealloc;
 - (id)init;

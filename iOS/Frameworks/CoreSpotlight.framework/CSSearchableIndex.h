@@ -32,6 +32,7 @@
 + (void)notifyIndexDelegates;
 + (id)_requestQueueAttribute;
 + (id)defaultSearchableIndex;
++ (id)codedNSUAPersistentIdentifiers:(id)arg1;
 + (id)codedIdentifiers:(id)arg1;
 + (id)codedUniqueIdentifiers:(id)arg1;
 + (void)initialize;
@@ -47,6 +48,12 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 - (void).cxx_destruct;
+- (void)slowFetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_slowFetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_deleleActionsWithIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_deleteActionsBeforeTime:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)donateRelevantShortcuts:(id)arg1 bundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)donateRelevantActions:(id)arg1 bundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteAllInteractionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -60,6 +67,8 @@
 - (void)_performIndexJob:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)performDataMigrationWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)flushUserActivities;
+- (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)deleteAllUserActivities:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_indexActivities:(id)arg1 flush:(_Bool)arg2;
 - (void)indexUserActivity:(id)arg1;
 - (void)_changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(long long)arg2 forUser:(unsigned int)arg3 forBundleID:(id)arg4 forUTIType:(id)arg5;

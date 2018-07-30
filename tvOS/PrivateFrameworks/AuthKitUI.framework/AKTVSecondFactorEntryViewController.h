@@ -6,23 +6,23 @@
 
 #import "UIViewController.h"
 
-#import "TVDigitEntryViewControllerDelegate.h"
+#import "_TVDigitEntryViewControllerDelegate.h"
 
-@class NSString, TVDigitEntryViewController;
+@class NSString, _TVDigitEntryViewController;
 
-@interface AKTVSecondFactorEntryViewController : UIViewController <TVDigitEntryViewControllerDelegate>
+@interface AKTVSecondFactorEntryViewController : UIViewController <_TVDigitEntryViewControllerDelegate>
 {
     _Bool _didPerformAction;
     CDUnknownBlockType _ak_cancelAction;
     CDUnknownBlockType _ak_regenerateCodeAction;
     CDUnknownBlockType _ak_codeEnteredAction;
-    TVDigitEntryViewController *_pinViewController;
+    _TVDigitEntryViewController *_pinViewController;
     id _codeEntryObserver;
 }
 
 @property(nonatomic) _Bool didPerformAction; // @synthesize didPerformAction=_didPerformAction;
 @property(retain, nonatomic) id codeEntryObserver; // @synthesize codeEntryObserver=_codeEntryObserver;
-@property(readonly, nonatomic) TVDigitEntryViewController *pinViewController; // @synthesize pinViewController=_pinViewController;
+@property(readonly, nonatomic) _TVDigitEntryViewController *pinViewController; // @synthesize pinViewController=_pinViewController;
 @property(copy, nonatomic) CDUnknownBlockType ak_codeEnteredAction; // @synthesize ak_codeEnteredAction=_ak_codeEnteredAction;
 @property(copy, nonatomic) CDUnknownBlockType ak_regenerateCodeAction; // @synthesize ak_regenerateCodeAction=_ak_regenerateCodeAction;
 @property(copy, nonatomic) CDUnknownBlockType ak_cancelAction; // @synthesize ak_cancelAction=_ak_cancelAction;

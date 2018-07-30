@@ -14,7 +14,7 @@
     MTLIOAccelDevice<MTLDevice> *_device;
     struct MTLRangeAllocator _allocator;
     struct _opaque_pthread_mutex_t _mutex;
-    unsigned int _size;
+    unsigned long long _size;
     NSString *_label;
 }
 
@@ -22,10 +22,10 @@
 @property(readonly) unsigned long long currentAllocatedSize;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 - (void)deallocHeapSubResource;
-- (void)unpinMemoryAtOffset:(unsigned int)arg1 withLength:(unsigned int)arg2;
-- (id)newSubResourceWithLength:(unsigned int)arg1 alignment:(unsigned int)arg2 options:(unsigned long long)arg3 offset:(unsigned int *)arg4;
+- (void)unpinMemoryAtOffset:(unsigned long long)arg1 withLength:(unsigned long long)arg2;
+- (id)newSubResourceWithLength:(unsigned long long)arg1 alignment:(unsigned long long)arg2 options:(unsigned long long)arg3 offset:(unsigned long long *)arg4;
 - (void)dealloc;
-- (id)initWithDevice:(id)arg1 size:(unsigned int)arg2 options:(unsigned long long)arg3 args:(struct IOAccelNewResourceArgs *)arg4 argsSize:(unsigned int)arg5;
+- (id)initWithDevice:(id)arg1 size:(unsigned long long)arg2 options:(unsigned long long)arg3 args:(struct IOAccelNewResourceArgs *)arg4 argsSize:(unsigned int)arg5;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) unsigned long long cpuCacheMode;
 - (unsigned long long)maxAvailableSizeWithAlignment:(unsigned long long)arg1;

@@ -9,10 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface FI_TPropertyTaggingTokenFieldController : FI_IPropertyScrollViewController
 {
-    struct TNSRef<NSArray<FI_TTagInfo *>*, void> _origTagInfos;
+    struct TNSRef<NSArray<FI_TTagInfo *>, void> _origTagInfos;
     struct TNotificationCenterObserver _tokenFieldDidEndEditingObserver;
     struct TNotificationCenterObserver _forceTokenFieldToCommitObserver;
-    struct TNSRef<NSArray<NSLayoutConstraint *>*, void> _minAndMaxHeightConstraints;
+    struct TNSRef<NSArray<NSLayoutConstraint *>, void> _minAndMaxHeightConstraints;
 }
 
 - (id).cxx_construct;
@@ -22,9 +22,8 @@ __attribute__((visibility("hidden")))
 - (int)applyValueToNodes:(id)arg1;
 - (void)flush;
 - (void)updateWithNodes:(const struct TFENodeVector *)arg1;
-- (_Bool)adjustSize:(_Bool)arg1;
 - (void)setSubview:(id)arg1;
-- (void)configureMinRowCount:(double)arg1 maxRowCount:(double)arg2 resizable:(_Bool)arg3;
+- (void)configureMinRowCount:(double)arg1 maxRowCount:(double)arg2;
 - (void)setShowSuggestionsTableInMenu:(_Bool)arg1;
 - (void)aboutToTearDown;
 - (void)viewLoaded;

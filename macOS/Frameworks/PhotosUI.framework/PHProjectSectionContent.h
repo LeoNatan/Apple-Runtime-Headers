@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray;
+@class NSArray, NSColor;
 
 @interface PHProjectSectionContent : NSObject <NSSecureCoding>
 {
@@ -16,9 +16,11 @@
     long long _numberOfColumns;
     double _aspectRatio;
     NSArray *_cloudAssetIdentifiers;
+    NSColor *_backgroundColor;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) NSArray *cloudAssetIdentifiers; // @synthesize cloudAssetIdentifiers=_cloudAssetIdentifiers;
 @property(readonly, nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(readonly, nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
@@ -30,6 +32,7 @@
 - (id)description;
 - (id)description:(BOOL)arg1;
 - (id)initWithElements:(id)arg1 numberOfColumns:(long long)arg2 aspectRatio:(double)arg3 assetIdentifiers:(id)arg4;
+- (id)initWithElements:(id)arg1 numberOfColumns:(long long)arg2 aspectRatio:(double)arg3 assetIdentifiers:(id)arg4 backgroundColor:(id)arg5;
 
 @end
 

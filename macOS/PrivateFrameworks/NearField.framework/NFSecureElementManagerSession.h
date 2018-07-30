@@ -17,6 +17,7 @@
     NSMutableDictionary *_appletsById;
 }
 
+- (id)getOSUpdateLog;
 - (BOOL)powerCycleSEID:(id)arg1 error:(id *)arg2;
 - (id)dumpDomain:(unsigned char)arg1 forSEID:(id)arg2 error:(id *)arg3;
 - (id)dumpDomain:(unsigned char)arg1 forSEID:(id)arg2;
@@ -42,12 +43,14 @@
 - (BOOL)disableAuthorizationForApplet:(id)arg1 authorization:(id)arg2;
 - (BOOL)restoreAuthorizationForAllAppletsExcept:(id)arg1 error:(id *)arg2;
 - (BOOL)restoreAuthorizationForAllAppletsExcept:(id)arg1;
+- (id)checkExpressAppletCompatibility:(id)arg1 error:(id *)arg2;
 - (BOOL)setExpressModesEnabled:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)setExpressModesEnabled:(BOOL)arg1;
 - (BOOL)removeExpressApplet:(id)arg1 type:(unsigned char)arg2 restoreAuthorization:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)removeExpressApplet:(id)arg1 type:(unsigned char)arg2 restoreAuthorization:(BOOL)arg3;
 - (BOOL)removeExpressApplet:(id)arg1 type:(unsigned char)arg2 error:(id *)arg3;
 - (BOOL)removeExpressApplet:(id)arg1 type:(unsigned char)arg2;
+- (BOOL)addExpressApplet:(id)arg1 type:(unsigned char)arg2 authorization:(id)arg3 expressInfo:(id)arg4 error:(id *)arg5;
 - (BOOL)addExpressApplet:(id)arg1 type:(unsigned char)arg2 authorization:(id)arg3 error:(id *)arg4;
 - (BOOL)addExpressApplet:(id)arg1 type:(unsigned char)arg2 authorization:(id)arg3;
 - (BOOL)getCryptogram:(id *)arg1 challengeResponse:(id *)arg2 error:(id *)arg3;

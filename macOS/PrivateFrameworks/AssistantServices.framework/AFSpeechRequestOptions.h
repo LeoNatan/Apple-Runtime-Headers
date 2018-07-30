@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class AFSpeechSynthesisRecord, NSDictionary, NSFileHandle, NSNumber, NSString, NSURL, NSXPCListenerEndpoint;
+@class AFSpeechSynthesisRecord, CLLocation, NSDictionary, NSFileHandle, NSNumber, NSString, NSURL, NSXPCListenerEndpoint;
 
 @interface AFSpeechRequestOptions : NSObject <NSSecureCoding>
 {
@@ -23,6 +23,7 @@
     BOOL _useBorealisBuffer;
     BOOL _fetchSmartSiriVolume;
     BOOL _suppressStopAlert;
+    BOOL _isOnPhoneCall;
     long long _activationEvent;
     NSString *_activationDeviceIdentifier;
     NSString *_serverCommandId;
@@ -41,13 +42,18 @@
     NSURL *_audioFileURL;
     unsigned long long _bargeInOptions;
     AFSpeechSynthesisRecord *_speechSynthesisRecord;
+    CLLocation *_location;
+    NSString *_locationStatus;
     NSDictionary *_startContext;
     NSDictionary *_stopContext;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL isOnPhoneCall; // @synthesize isOnPhoneCall=_isOnPhoneCall;
 @property(copy, nonatomic) NSDictionary *stopContext; // @synthesize stopContext=_stopContext;
 @property(copy, nonatomic) NSDictionary *startContext; // @synthesize startContext=_startContext;
+@property(copy, nonatomic) NSString *locationStatus; // @synthesize locationStatus=_locationStatus;
+@property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) AFSpeechSynthesisRecord *speechSynthesisRecord; // @synthesize speechSynthesisRecord=_speechSynthesisRecord;
 @property(nonatomic) unsigned long long bargeInOptions; // @synthesize bargeInOptions=_bargeInOptions;
 @property(nonatomic) BOOL suppressStopAlert; // @synthesize suppressStopAlert=_suppressStopAlert;
@@ -83,6 +89,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
+- (BOOL)isRaiseToSpeak;
+- (BOOL)isVoiceTrigger;
 - (id)initWithActivationEvent:(long long)arg1;
 
 @end

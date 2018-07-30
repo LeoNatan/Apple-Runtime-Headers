@@ -10,6 +10,7 @@
 
 @class LSApplicationProxy, MCUIProfile, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCManagedAppDetailsViewController : UITableViewController <PSStateRestoration>
 {
     MCUIProfile *_UIProfile;

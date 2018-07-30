@@ -47,15 +47,19 @@
 - (id)attributedString;
 - (const struct __CFAttributedString *)cfAttributedString;
 - (void)replaceString:(struct __CFString *)arg1;
+- (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
 - (unsigned long long)length;
 - (void)convertAttachmentsWithBlock:(CDUnknownBlockType)arg1;
+- (id)stringByTrimmingCharactersInSet:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStringOrAttributedString:(id)arg1;
 - (id)initWithCFAttributedString:(struct __CFAttributedString *)arg1;
 - (id)initWithString:(id)arg1;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id *)arg1;
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id *)arg1;
 
 @end
 

@@ -29,6 +29,7 @@
 - (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 - (id)init;
 - (void)raise;
+- (id)redactedDescription;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

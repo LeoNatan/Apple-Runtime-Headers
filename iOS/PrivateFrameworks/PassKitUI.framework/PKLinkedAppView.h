@@ -8,13 +8,13 @@
 
 #import "PKLinkedApplicationObserver.h"
 
-@class NSArray, NSString, NSURL, PKLinkedAppUserRatingView, PKLinkedApplication, UIActivityIndicatorView, UIButton, UIColor, UIImageView, UILabel;
+@class NSArray, NSString, NSURL, PKContinuousButton, PKLinkedAppUserRatingView, PKLinkedApplication, UIActivityIndicatorView, UIColor, UIImageView, UILabel;
 
 @interface PKLinkedAppView : PKTableViewCell <PKLinkedApplicationObserver>
 {
     UIImageView *_iconView;
     UILabel *_appName;
-    UIButton *_viewButton;
+    PKContinuousButton *_viewButton;
     UILabel *_appPublisher;
     PKLinkedAppUserRatingView *_userRatingView;
     UILabel *_price;
@@ -23,10 +23,14 @@
     PKLinkedApplication *_linkedApplication;
     UIColor *_mainLabelColor;
     UIColor *_subTextLabelColor;
+    UIColor *_buttonBackgroundColor;
+    UIColor *_buttonTintColor;
 }
 
-@property(nonatomic) UIColor *subTextLabelColor; // @synthesize subTextLabelColor=_subTextLabelColor;
-@property(nonatomic) UIColor *mainLabelColor; // @synthesize mainLabelColor=_mainLabelColor;
+@property(retain, nonatomic) UIColor *buttonTintColor; // @synthesize buttonTintColor=_buttonTintColor;
+@property(retain, nonatomic) UIColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;
+@property(retain, nonatomic) UIColor *subTextLabelColor; // @synthesize subTextLabelColor=_subTextLabelColor;
+@property(retain, nonatomic) UIColor *mainLabelColor; // @synthesize mainLabelColor=_mainLabelColor;
 @property(readonly, nonatomic) PKLinkedApplication *linkedApplication; // @synthesize linkedApplication=_linkedApplication;
 - (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;

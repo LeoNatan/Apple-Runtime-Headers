@@ -28,8 +28,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasValue;
-@property(readonly, nonatomic) _Bool hasKey;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

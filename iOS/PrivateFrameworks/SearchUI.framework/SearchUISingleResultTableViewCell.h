@@ -9,13 +9,13 @@
 #import "CNAvatarViewDelegate.h"
 #import "NUIContainerStackViewDelegate.h"
 
-@class CNAvatarView, NSMutableDictionary, NSString, NUIContainerStackView, SFSearchResult, SearchUIAccessoryViewController, SearchUIForceTouchGestureRecognizer, SearchUIThumbnailView, TLKDetailsView;
+@class CNAvatarView, NSMutableDictionary, NSString, NUIContainerStackView, SFSearchResult, SearchUIAccessoryViewController, SearchUIForceTouchGestureRecognizer, SearchUIImageView, TLKDetailsView;
 
 @interface SearchUISingleResultTableViewCell : SearchUITableViewCell <NUIContainerStackViewDelegate, CNAvatarViewDelegate>
 {
     SFSearchResult *_result;
     NUIContainerStackView *_innerContainer;
-    SearchUIThumbnailView *_thumbnailView;
+    SearchUIImageView *_thumbnailView;
     TLKDetailsView *_detailsView;
     NSMutableDictionary *_accessoryViewControllers;
     SearchUIAccessoryViewController *_accessoryViewControllerForResult;
@@ -30,7 +30,7 @@
 @property(retain) SearchUIAccessoryViewController *accessoryViewControllerForResult; // @synthesize accessoryViewControllerForResult=_accessoryViewControllerForResult;
 @property(retain) NSMutableDictionary *accessoryViewControllers; // @synthesize accessoryViewControllers=_accessoryViewControllers;
 @property(retain) TLKDetailsView *detailsView; // @synthesize detailsView=_detailsView;
-@property(retain) SearchUIThumbnailView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
+@property(retain) SearchUIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(retain) NUIContainerStackView *innerContainer; // @synthesize innerContainer=_innerContainer;
 @property(retain) SFSearchResult *result; // @synthesize result=_result;
 - (void).cxx_destruct;

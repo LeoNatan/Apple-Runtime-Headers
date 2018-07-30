@@ -19,6 +19,7 @@
 - (void)_dropConnection;
 - (id)_createConnectionIfNecessary;
 - (void)shutdownForEcoMode:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

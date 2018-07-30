@@ -6,6 +6,7 @@
 
 #import <CoreFoundation/NSEnumerator.h>
 
+__attribute__((visibility("hidden")))
 @interface __NSFastEnumerationEnumerator : NSEnumerator
 {
     id <NSFastEnumeration> _obj;

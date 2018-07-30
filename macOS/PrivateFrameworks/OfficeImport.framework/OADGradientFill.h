@@ -8,7 +8,6 @@
 
 @class NSArray, OADRelativeRect, OADShade;
 
-__attribute__((visibility("hidden")))
 @interface OADGradientFill : OADFill
 {
     NSArray *mStops;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
 
 + (id)stringForTileFlipMode:(int)arg1;
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)usesPlaceholderColor;
@@ -49,7 +49,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAnythingOverridden;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

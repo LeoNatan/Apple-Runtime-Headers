@@ -21,7 +21,7 @@
 - (void)mergeVersion:(unsigned int)arg1 fromData:(id)arg2;
 - (unsigned long long)mergeWithDrawingVersionedDocument:(id)arg1;
 - (id)initWithDrawing:(id)arg1;
-- (id)initWithData:(id)arg1;
+- (void)loadUnzippedData:(id)arg1;
 
 @end
 

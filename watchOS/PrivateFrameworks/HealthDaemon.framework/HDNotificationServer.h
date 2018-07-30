@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)remote_postCompanionUserNotificationOfType:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_setBadge:(id)arg1 forDomain:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_badgeForDomain:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithParentServer:(id)arg1;

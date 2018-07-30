@@ -14,17 +14,15 @@
 #import "TabButtonDelegate.h"
 #import "TabDraggingDestination.h"
 
-@class CABackdropLayer, CALayer, NSArray, NSMapTable, NSMutableArray, NSScrollView, NSString, NSTrackingArea, NSView, TabBarEmptyRegionPlaceholderButton, TabButton;
+@class BackgroundColorView, CABackdropLayer, NSArray, NSMapTable, NSMutableArray, NSScrollView, NSString, NSTitlebarSeparatorView, NSTrackingArea, NSView, TabBarEmptyRegionPlaceholderButton, TabButton;
 
 __attribute__((visibility("hidden")))
 @interface TabBarView : KeyLoopSplicingContainerView <ButtonInTabSyncGroupDelegate, DetachedTabDraggingImageToWindowTransitionControllerDelegate, MorphingDragImageControllerDragSource, NSAnimationDelegate, NSDraggingDestination, TabButtonDelegate, TabDraggingDestination>
 {
-    long long _numberOfGroupUpdates;
     NSTrackingArea *_trackingArea;
     TabButton *_tabButtonUnderMouse;
     NSScrollView *_scrollView;
     NSView *_scrollViewDocumentView;
-    NSView *_selectedTabContainerView;
     NSView *_tabContainer;
     NSMutableArray *_tabBarViewItems;
     NSMutableArray *_tabButtons;
@@ -54,9 +52,9 @@ __attribute__((visibility("hidden")))
     double _selectedButtonSlowingFactor;
     double _slowingDistance;
     NSView *_backgroundView;
-    NSView *_maskingContainerView;
     CABackdropLayer *_backdropLayer;
-    CALayer *_topBorderLayer;
+    BackgroundColorView *_backgroundColorView;
+    NSTitlebarSeparatorView *_topBorderSeparatorView;
     NSView *_pinnedTabsContainer;
     unsigned long long _numberOfPinnedTabs;
     unsigned long long _numberOfPinnedTabsForLayout;
@@ -66,6 +64,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _lastHoveredIndexWhileWaitingForReorderingToKickIn;
     TabBarEmptyRegionPlaceholderButton *_placeholderTabForEmptyUnpinnedRegion;
     BOOL _shouldReduceTransparency;
+    BOOL _didScheduledAnimatedLayout;
     BOOL _didLayOutAfterMovingToWindow;
     BOOL _forcesActiveWindowState;
     id <TabBarViewDelegate> _delegate;
@@ -112,6 +111,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)_mouseLocationInDragImageForTabButton:(id)arg1;
 - (BOOL)_shouldDetachTabForMouseEvent:(id)arg1;
 - (BOOL)_canDetachTab;
+- (unsigned long long)_numberOfUnpinnedTabs;
 - (void)_cancelReorderingRestrictionsAfterPinning;
 - (void)_startReorderingRestrictionsAfterPinning;
 - (void)_autoscrollButtonsForStackingRegion:(unsigned long long)arg1;
@@ -187,18 +187,15 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)_numberOfTabsForLayout;
 - (void)_restackButtonViews;
 - (unsigned long long)_frontmostButtonIndex;
-- (void)_removeTabButton:(id)arg1;
 - (void)_updatePinnedTabs;
 - (struct CGRect)_placeholderTabForEmptyUnpinnedRegionButtonFrame;
 - (void)_installPlaceholderTabForEmptyUnpinnedRegion;
 - (void)_uninstallPlaceholderTabForEmptyUnpinnedRegion;
 - (BOOL)_shouldCreatePlaceholderTabForEmptyUnpinnedRegion;
 - (void)_insertTabButtonWithTabViewItem:(id)arg1 atIndex:(unsigned long long)arg2;
-- (BOOL)_insertMissingButtonsFromTabView;
 - (void)_layOutButtonsAnimated:(BOOL)arg1;
 - (void)_animateButtonLayout:(id)arg1;
 - (double)_titleCenterOffsetForButton:(id)arg1;
-- (void)_moveButtonToExpectedContainerView:(id)arg1;
 - (void)_layOutDraggedButtonAnimated:(BOOL)arg1;
 - (void)_recalculateLayoutAndUpdateContainerViewFrames;
 - (void)_toggleBackdropLayerVisibilityIfNecessary;
@@ -209,12 +206,13 @@ __attribute__((visibility("hidden")))
 - (void)_updateButtonsAndLayOutAnimated:(BOOL)arg1 isSelectingButton:(BOOL)arg2;
 - (void)_updateButtonsAndLayOutAnimated:(BOOL)arg1;
 - (void)_setUpViewAnimationForLayout:(BOOL)arg1;
+- (void)_scheduleButtonLayOutAnimated:(BOOL)arg1;
 - (BOOL)_shouldLayOutButtonsNow;
 - (void)_clipViewBoundsChanged:(id)arg1;
+- (struct CGRect)_contentBounds;
+- (void)_windowChangedKeyState;
 - (BOOL)isOpaque;
 - (BOOL)allowsVibrancy;
-- (void)endGroupUpdatesAnimated:(BOOL)arg1;
-- (void)beginGroupUpdates;
 - (void)dealloc;
 - (void)_commonTabBarViewInit;
 - (id)initWithCoder:(id)arg1;

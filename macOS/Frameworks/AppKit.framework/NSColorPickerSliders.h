@@ -8,20 +8,27 @@
 
 #import "NSColorPickingCustom.h"
 
+@class NSColorSpaceSliders, NSView;
+
 @interface NSColorPickerSliders : NSColorPicker <NSColorPickingCustom>
 {
     id sliderModePopUp;
-    id slidersView;
-    id greySliders;
-    id rgbSliders;
-    id hsbSliders;
-    id cmykSliders;
+    NSView *_slidersView;
+    NSColorSpaceSliders *_greySliders;
+    NSColorSpaceSliders *_rgbSliders;
+    NSColorSpaceSliders *_hsbSliders;
+    NSColorSpaceSliders *_cmykSliders;
     id currViewObject;
     id sliderContainer;
     id colorProfileButton;
     long long modeMask;
 }
 
+@property(retain) NSColorSpaceSliders *cmykSliders; // @synthesize cmykSliders=_cmykSliders;
+@property(retain) NSColorSpaceSliders *hsbSliders; // @synthesize hsbSliders=_hsbSliders;
+@property(retain) NSColorSpaceSliders *rgbSliders; // @synthesize rgbSliders=_rgbSliders;
+@property(retain) NSColorSpaceSliders *greySliders; // @synthesize greySliders=_greySliders;
+@property(retain) NSView *slidersView; // @synthesize slidersView=_slidersView;
 - (void)_restoreMode;
 - (long long)_savedMode;
 - (void)_saveMode;
@@ -35,7 +42,6 @@
 - (double)_insertionOrder;
 - (id)provideNewView:(BOOL)arg1;
 - (void)_adjustToMode;
-- (void)_setupProfileUI;
 - (id)initWithPickerMask:(unsigned long long)arg1 colorPanel:(id)arg2;
 - (void)replaceSubviewWith:(id)arg1;
 - (void)_redisplayColorProfileButtonIfNeeded;
@@ -47,6 +53,7 @@
 - (void)_removePopUpWithTag:(long long)arg1;
 - (void)_selectPopUpWithTag:(long long)arg1;
 - (BOOL)worksWhenModal;
+- (void)dealloc;
 
 @end
 

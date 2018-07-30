@@ -14,6 +14,7 @@
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
 - (void)evaluate:(id)arg1;
+- (_Bool)validateVisionKitSoftLinkSymbols;
 - (_Bool)requiresVisionFramework;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class NSClipView, NSColor, NSEvent, NSImage, NSMapTable, NSMatrix, NSMutableArray, NSString, _NSBrowserColumnScrollHelper, _NSBrowserDragSourceContext, _NSBrowserDropDestContext, _NSBrowserScrollView, _NSTypeSelectData;
 
+__attribute__((visibility("hidden")))
 @interface _NSBrowserAuxiliary : NSObject
 {
     _NSBrowserScrollView *_scrollViewForColumns;

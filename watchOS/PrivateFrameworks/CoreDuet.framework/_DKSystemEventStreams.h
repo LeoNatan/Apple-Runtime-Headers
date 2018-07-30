@@ -10,7 +10,10 @@
 {
 }
 
++ (id)remoteDeviceInBedTimesStream;
++ (id)pairedDeviceForecastStream;
 + (id)internalQueryDataCollectionStream;
++ (id)tombstoneStream;
 + (id)safariHistoryStream;
 + (id)searchFeedbackStream;
 + (id)userActivityDetectedStream;
@@ -20,6 +23,7 @@
 + (id)callInProgressStream;
 + (id)nowPlayingStream;
 + (id)watchActiveStream;
++ (id)defaultPairedDeviceNearbyStream;
 + (id)watchNearbyStream;
 + (id)bluetoothIsConnectedStream;
 + (id)carPlayIsConnectedStream;
@@ -49,13 +53,19 @@
 + (id)keybagIsLockedStream;
 + (id)deviceIsLockedStream;
 + (id)deviceActivityLevelStream;
++ (id)notificationUsageStream;
 + (id)appViewedInDockStream;
 + (id)glanceLaunchStream;
 + (id)spotlightActivityStream;
++ (id)appLocationActivityStream;
++ (id)appRelevantShortcutsStream;
++ (id)appRelevantActionsStream;
 + (id)appIntentsStream;
 + (id)appActivityStream;
 + (id)appBulletinStream;
 + (id)appInstallStream;
++ (id)appWebUsageStream;
++ (id)appUsageStream;
 + (id)appInFocusStream;
 + (id)deviceInUseProxyStream;
 + (id)contextStorePersistentRuleStream;

@@ -14,10 +14,12 @@
     UIFont *_dateFont;
     float _dayBaselineFromOriginY;
     float _dateBaselineFromOriginY;
+    float _dayHorizontalOffset;
     struct CGSize _size;
 }
 
-+ (id)calendarIconLayoutModelOfType:(int)arg1;
++ (id)calendarIconLayoutModelForIconDiameter:(float)arg1;
+@property(nonatomic) float dayHorizontalOffset; // @synthesize dayHorizontalOffset=_dayHorizontalOffset;
 @property(nonatomic) float dateBaselineFromOriginY; // @synthesize dateBaselineFromOriginY=_dateBaselineFromOriginY;
 @property(nonatomic) float dayBaselineFromOriginY; // @synthesize dayBaselineFromOriginY=_dayBaselineFromOriginY;
 @property(retain, nonatomic) UIFont *dateFont; // @synthesize dateFont=_dateFont;

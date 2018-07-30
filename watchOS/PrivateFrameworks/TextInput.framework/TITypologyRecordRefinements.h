@@ -15,13 +15,14 @@
     TIAutocorrectionList *_refinements;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) TIAutocorrectionList *refinements; // @synthesize refinements=_refinements;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 @property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
+- (void).cxx_destruct;
 - (id)shortDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (void)applyToStatistic:(id)arg1;
 
 @end

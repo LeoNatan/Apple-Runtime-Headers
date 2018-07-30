@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(readonly, nonatomic) __weak id <IKAppPlaylist> appPlaylist; // @synthesize appPlaylist=_appPlaylist;
 - (void).cxx_destruct;
+@property(nonatomic) long long repeatMode;
 @property(nonatomic) long long endAction;
 @property(readonly) unsigned long long length;
 - (id)replaceItemsAt:(long long)arg1 count:(unsigned long long)arg2 with:(id)arg3;

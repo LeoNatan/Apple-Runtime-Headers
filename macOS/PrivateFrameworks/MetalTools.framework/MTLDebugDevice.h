@@ -26,6 +26,12 @@
 @property(readonly, nonatomic) BOOL resourceTrackingEnabled; // @synthesize resourceTrackingEnabled=_resourceTrackingEnabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)eventSignaled:(id)arg1 value:(unsigned long long)arg2;
+- (id)newSharedEventWithHandle:(id)arg1;
+- (id)newSharedEventWithMachPort:(unsigned int)arg1;
+- (id)newSharedEvent;
+- (id)newEvent;
+- (id)newMotionEstimationPipelineWithDescriptor:(id)arg1;
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 deallocator:(CDUnknownBlockType)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6;
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 descriptor:(id)arg3 offset:(unsigned long long)arg4 bytesPerRow:(unsigned long long)arg5;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
@@ -61,6 +67,7 @@
 - (id)newRenderPipelineStateWithDescriptor:(id)arg1 error:(id *)arg2;
 - (id)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
 - (id)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
+- (void)validateTraceBuffer:(unsigned long long)arg1 maxBufferCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newDefaultLibrary;
 - (id)newDefaultLibraryWithBundle:(id)arg1 error:(id *)arg2;
 - (void)notifySamplerStateDeallocated:(id)arg1;
@@ -69,11 +76,14 @@
 - (id)newTextureWithDescriptor:(id)arg1;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
 - (id)newArgumentEncoderWithArguments:(id)arg1;
+- (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 deallocator:(CDUnknownBlockType)arg4;
 - (id)newBufferWithBytes:(const void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)validateNewBufferArgs:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)validateResourceOptions:(unsigned long long)arg1 isTexture:(BOOL)arg2 isIOSurface:(BOOL)arg3;
+- (id)newSharedTextureWithHandle:(id)arg1;
+- (id)newSharedTextureWithDescriptor:(id)arg1;
 - (id)newHeapWithDescriptor:(id)arg1;
 - (CDStruct_4bcfbbae)heapBufferSizeAndAlignWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (CDStruct_4bcfbbae)heapTextureSizeAndAlignWithDescriptor:(id)arg1;

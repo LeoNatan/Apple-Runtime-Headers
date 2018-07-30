@@ -29,7 +29,7 @@
 + (id)entityName;
 + (id)sourceForSearchableItem:(id)arg1 bundleID:(id)arg2;
 + (id)spotlightSourceID;
-@property(readonly) NSNumber *userID; // @synthesize userID=_userID;
+@property(retain) NSNumber *userID; // @synthesize userID=_userID;
 @property(retain) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(readonly) NSString *groupID; // @synthesize groupID=_groupID;
 @property(readonly) NSString *itemID; // @synthesize itemID=_itemID;
@@ -41,6 +41,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2 itemIdentifier:(id)arg3 groupIdentifier:(id)arg4 deviceIdentifier:(id)arg5 userIdentifier:(id)arg6;
+@property(readonly) NSString *syncDeviceID;
 - (id)toPBCodable;
 
 // Remaining properties

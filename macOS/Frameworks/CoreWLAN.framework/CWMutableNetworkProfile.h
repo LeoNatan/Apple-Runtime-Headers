@@ -14,6 +14,7 @@
 
 
 // Remaining properties
+@property unsigned long long addedBy; // @dynamic addedBy;
 @property BOOL autoLogin; // @dynamic autoLogin;
 @property(copy) NSArray *bssidList; // @dynamic bssidList;
 @property BOOL captiveBypass; // @dynamic captiveBypass;

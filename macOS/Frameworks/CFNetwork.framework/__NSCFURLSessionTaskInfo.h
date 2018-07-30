@@ -10,7 +10,6 @@
 
 @class NSDate, NSDictionary, NSError, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTaskMetrics;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLSessionTaskInfo : NSObject <NSSecureCoding>
 {
     BOOL _resumedAndWaitingForEarliestBeginDate;
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
     BOOL _mayBeDemotedToDiscretionary;
     BOOL __hasSZExtractor;
     BOOL __doesSZExtractorConsumeExtractedData;
+    unsigned int _qos;
     unsigned long long _identifier;
     unsigned long long _taskKind;
     double _creationTime;
@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _retryCount;
     unsigned long long _lowThroughputTimerRetryCount;
     long long _basePriority;
+    long long _discretionaryOverride;
     NSString *_uniqueIdentifier;
     NSString *_storagePartitionIdentifier;
     long long _bytesPerSecondLimit;
@@ -80,6 +81,8 @@ __attribute__((visibility("hidden")))
 @property long long bytesPerSecondLimit; // @synthesize bytesPerSecondLimit=_bytesPerSecondLimit;
 @property(copy) NSString *storagePartitionIdentifier; // @synthesize storagePartitionIdentifier=_storagePartitionIdentifier;
 @property(copy) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property unsigned int qos; // @synthesize qos=_qos;
+@property long long discretionaryOverride; // @synthesize discretionaryOverride=_discretionaryOverride;
 @property(getter=isDiscretionary) BOOL discretionary; // @synthesize discretionary=_discretionary;
 @property long long basePriority; // @synthesize basePriority=_basePriority;
 @property BOOL shouldCancelOnDisconnect; // @synthesize shouldCancelOnDisconnect=_shouldCancelOnDisconnect;

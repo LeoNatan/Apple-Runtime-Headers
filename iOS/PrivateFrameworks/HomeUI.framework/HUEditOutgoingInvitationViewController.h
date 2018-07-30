@@ -21,7 +21,7 @@
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
-- (id)userID;
+- (id)userHandle;
 - (id)initWithItem:(id)arg1 home:(id)arg2;
 
 @end

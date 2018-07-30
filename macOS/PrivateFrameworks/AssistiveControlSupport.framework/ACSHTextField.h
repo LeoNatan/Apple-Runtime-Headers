@@ -9,19 +9,19 @@
 @interface ACSHTextField : NSTextField
 {
     BOOL _shouldHideIfTruncated;
-    BOOL _internalHidden;
+    BOOL _hiddenDueToTruncation;
     unsigned long long _verticalTextPlacement;
 }
 
 + (Class)cellClass;
-@property BOOL internalHidden; // @synthesize internalHidden=_internalHidden;
 @property(nonatomic) unsigned long long verticalTextPlacement; // @synthesize verticalTextPlacement=_verticalTextPlacement;
+@property BOOL hiddenDueToTruncation; // @synthesize hiddenDueToTruncation=_hiddenDueToTruncation;
 @property BOOL shouldHideIfTruncated; // @synthesize shouldHideIfTruncated=_shouldHideIfTruncated;
 - (void)setStringValue:(id)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
+- (void)drawRect:(struct CGRect)arg1;
 - (void)_updateHideShowForTruncation;
-- (void)setHidden:(BOOL)arg1;
 - (BOOL)_isTruncated;
 - (void)initView;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -18,7 +18,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool conservativeEntry;
-@property(readonly, nonatomic) CDStruct_3afce72c clientRegion;
+@property(readonly, nonatomic) CDStruct_5652eb1b clientRegion;
 - (_Bool)containsCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(nonatomic) _Bool notifyOnExit;
 @property(nonatomic) _Bool notifyOnEntry;
@@ -38,7 +38,7 @@
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initCircularRegionWithCenter:(struct CLLocationCoordinate2D)arg1 radius:(double)arg2 identifier:(id)arg3;
-- (id)initWithClientRegion:(CDStruct_3afce72c)arg1;
+- (id)initWithClientRegion:(CDStruct_5652eb1b)arg1;
 
 @end
 

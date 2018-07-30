@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOPlaceSearchFeedbackCollection : PBCodable <NSCopying>
 {
     struct GEOSessionID _sessionID;

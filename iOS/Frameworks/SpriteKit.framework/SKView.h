@@ -63,7 +63,13 @@
     struct CGSize _pixelSize;
 }
 
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id *)arg3 outError:(id *)arg4;
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id *)arg3;
++ (id)debugHierarchyAdditionalGroupingIDs;
++ (void)_setCurrentTime:(double)arg1;
 + (Class)layerClass;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double physicsDebugStrokeWidth; // @synthesize physicsDebugStrokeWidth=_physicsDebugStrokeWidth;
 @property(retain, nonatomic) NSMutableDictionary *_info; // @synthesize _info=__info;
 // Error parsing type for property _layerBackedRenderer:
@@ -73,9 +79,6 @@
 @property(nonatomic) __weak NSObject<SKViewDelegate> *delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id *)arg2;
-- (id)debugHierarchyAdditionalGroupingIDs;
 - (long long)_preferredFocusMovementStyle;
 - (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
 - (id)_focusedItemRegionContainer;
@@ -110,10 +113,10 @@
 @property(nonatomic) long long preferredFramesPerSecond;
 @property(nonatomic) float preferredFrameRate;
 @property(nonatomic) long long frameInterval;
-- (void)_ibSetSceneName:(id)arg1;
 - (void)writeContentsToPNG:(id)arg1;
 - (void)runOnce;
 - (void)onInit;
+- (_Bool)isEqualToView:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 updateQueue:(id)arg2;
@@ -148,6 +151,7 @@
 - (_Bool)_usesAsyncUpdateQueue;
 - (void)set_usesAsyncUpdateQueue:(_Bool)arg1;
 @property(nonatomic, getter=isAsynchronous) _Bool asynchronous;
+- (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(_Bool)arg3 waitOnFence:(_Bool)arg4 preRender:(CDUnknownBlockType)arg5 postRender:(CDUnknownBlockType)arg6;
 - (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(_Bool)arg3 preRender:(CDUnknownBlockType)arg4 postRender:(CDUnknownBlockType)arg5;
 - (void)_renderSynchronouslyForTime:(double)arg1 preRender:(CDUnknownBlockType)arg2 postRender:(CDUnknownBlockType)arg3;
 - (void)_vsyncRenderForTime:(double)arg1 preRender:(CDUnknownBlockType)arg2 postRender:(CDUnknownBlockType)arg3;

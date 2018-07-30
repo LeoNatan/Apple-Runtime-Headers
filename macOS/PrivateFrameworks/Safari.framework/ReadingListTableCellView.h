@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)_setUpBindings;
 - (void)_setUpSubviews;
 - (void)_updateCloseButtonImages;
-- (void)_updateThumbnailImageViewWithFallbackIcon:(id)arg1;
+- (void)_updateThumbnailImageViewWithImage:(id)arg1;
 - (void)_updateThumbnailView;
 - (id)_savingForOfflinePreviewTextForItemIfApplicable:(id)arg1;
 @property(readonly, nonatomic) NSAttributedString *itemPreviewTextString;

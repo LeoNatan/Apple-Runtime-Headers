@@ -8,6 +8,7 @@
 
 @class NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVOutputDeviceInternal : NSObject
 {
     id <AVOutputDeviceImpl> impl;

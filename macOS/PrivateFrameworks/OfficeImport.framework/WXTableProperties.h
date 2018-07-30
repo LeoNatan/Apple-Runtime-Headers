@@ -6,13 +6,16 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface WXTableProperties : NSObject
 {
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)initialize;
++ (id)tableLookBitEnumMap;
++ (id)tableVerticalPositionEnumMap;
++ (id)tableHorizontalPositionEnumMap;
++ (id)tableHorizontalAnchorEnumMap;
++ (id)tableVerticalAnchorEnumMap;
 
 @end
 

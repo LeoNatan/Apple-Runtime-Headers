@@ -32,7 +32,7 @@
 @property(nonatomic) _Bool usedLocationsOfInterest; // @synthesize usedLocationsOfInterest=__usedLocationsOfInterest;
 @property(retain, nonatomic, setter=_setEndingDate:) NSDate *endingDate; // @synthesize endingDate=__endingDate;
 @property(retain, nonatomic, setter=_setStartingDate:) NSDate *startingDate; // @synthesize startingDate=__startingDate;
-@property(readonly, nonatomic) NSObject<NSCopying> *objectID; // @synthesize objectID=__objectID;
+@property(copy, nonatomic) NSObject<NSCopying> *objectID; // @synthesize objectID=__objectID;
 @property(retain, nonatomic) NSString *title; // @synthesize title=__title;
 - (unsigned long long)expandFromNode:(id)arg1 withNeighbors:(id)arg2 inClustering:(id)arg3 minimumNumberOfPoints:(unsigned long long)arg4;
 @property(readonly, nonatomic) CLLocation *approximateLocation; // @synthesize approximateLocation=__approximateLocation;

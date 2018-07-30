@@ -23,6 +23,7 @@
 @property(retain, nonatomic) BSEventQueueEvent *executingEvent; // @synthesize executingEvent=_executingEvent;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -52,7 +53,6 @@
 - (void)executeOrInsertEvent:(id)arg1 atPosition:(int)arg2;
 - (void)_executeOrPendEvents:(id)arg1 position:(int)arg2;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 onQueue:(id)arg2;
 - (id)init;
 

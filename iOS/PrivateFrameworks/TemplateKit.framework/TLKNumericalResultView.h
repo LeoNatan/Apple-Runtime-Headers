@@ -19,15 +19,14 @@
 
 @property(retain) TLKVibrantLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain) TLKVibrantLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property _Bool topLabelIsVibrant; // @synthesize topLabelIsVibrant=_topLabelIsVibrant;
-@property(retain) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
-@property(retain) TLKMultilineText *title; // @synthesize title=_title;
+@property(nonatomic) _Bool topLabelIsVibrant; // @synthesize topLabelIsVibrant=_topLabelIsVibrant;
+@property(retain, nonatomic) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
+@property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)subtitleFont;
 - (id)titleFont;
 - (id)subtitleLabelText;
 - (id)titleLabelText;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)styleDidChange:(unsigned long long)arg1;
 - (id)init;

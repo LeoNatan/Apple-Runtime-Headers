@@ -10,13 +10,7 @@
 {
 }
 
-+ (id)Reference_allowedPayloadKeys;
-+ (id)Descriptor_allowedPayloadKeys;
 + (id)declarationClass;
-- (id)serializePayloadReference:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadDescriptor:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validPayloadReference_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (_Bool)validPayloadDescriptor_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class AVVideoComposition, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVVideoCompositionRenderContextInternal : NSObject
 {
     NSDictionary *_basisProperties;

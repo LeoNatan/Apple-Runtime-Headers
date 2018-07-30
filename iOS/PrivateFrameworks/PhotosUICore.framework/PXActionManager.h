@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)previewActionGroupForActionType:(id)arg1;
+- (id)alertActionForActionType:(id)arg1;
 - (id)previewActionForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1;

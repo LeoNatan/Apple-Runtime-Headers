@@ -14,11 +14,11 @@
     NSArray *_touchPoints;
     NSArray *_selectionAreaMapping;
     NSArray *_selectedRangeBoundariesXValue;
-    HKGraphSeries *_selectedSeries;
+    HKGraphSeries *_closestSeriesToSelection;
     struct CGRect _seriesSelectionRect;
 }
 
-@property(retain, nonatomic) HKGraphSeries *selectedSeries; // @synthesize selectedSeries=_selectedSeries;
+@property(retain, nonatomic) HKGraphSeries *closestSeriesToSelection; // @synthesize closestSeriesToSelection=_closestSeriesToSelection;
 @property(retain, nonatomic) NSArray *selectedRangeBoundariesXValue; // @synthesize selectedRangeBoundariesXValue=_selectedRangeBoundariesXValue;
 @property(retain, nonatomic) NSArray *selectionAreaMapping; // @synthesize selectionAreaMapping=_selectionAreaMapping;
 @property(retain, nonatomic) NSArray *touchPoints; // @synthesize touchPoints=_touchPoints;

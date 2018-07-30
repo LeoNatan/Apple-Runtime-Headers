@@ -22,16 +22,14 @@
     NSMutableDictionary *_preferredRepresentationByType;
     NSUUID *_UUID;
     NSString *_suggestedName;
+    NSString *_sanitizedSuggestedName;
     NSDictionary *_userInfo;
     id <NSItemProviderDataTransferDelegate> _dataTransferDelegate;
-    NSString *__sanitizedSuggestedName;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy) NSString *_sanitizedSuggestedName; // @synthesize _sanitizedSuggestedName=__sanitizedSuggestedName;
 @property __weak id <NSItemProviderDataTransferDelegate> dataTransferDelegate; // @synthesize dataTransferDelegate=_dataTransferDelegate;
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property(copy) NSString *suggestedName; // @synthesize suggestedName=_suggestedName;
 @property(readonly) NSUUID *_UUID; // @synthesize _UUID;
 @property(retain, nonatomic) NSMutableDictionary *_preferredRepresentationByType; // @synthesize _preferredRepresentationByType;
 @property(readonly) NSArray *_representations; // @synthesize _representations;
@@ -65,6 +63,8 @@
 - (_Bool)hasRepresentationConformingToTypeIdentifier:(id)arg1 fileOptions:(int)arg2;
 @property(readonly, copy) NSArray *registeredTypeIdentifiers; // @dynamic registeredTypeIdentifiers;
 - (id)registeredTypeIdentifiersWithFileOptions:(int)arg1;
+@property(readonly, copy) NSString *_sanitizedSuggestedName; // @synthesize _sanitizedSuggestedName;
+@property(copy) NSString *suggestedName; // @synthesize suggestedName=_suggestedName;
 - (void)_setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)_metadataValueForKey:(id)arg1;
 - (id)_representationForType:(id)arg1;

@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
 {
     unsigned long long fIndex;
     _Bool fSnapshotImageRequested;
-    struct TRef<TTimeMachineTarget *, TRetainReleasePolicy<TTimeMachineTarget *>> fTarget;
-    struct TNSRef<CABackdropLayer *, void> _backdropLayer;
-    struct TNSRef<CALayer *, void> _effectLayer;
+    shared_ptr_253687d6 fTarget;
+    struct TNSRef<CABackdropLayer, void> _backdropLayer;
+    struct TNSRef<CALayer, void> _effectLayer;
     _Bool _configuredForInvalid;
 }
 

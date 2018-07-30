@@ -8,7 +8,6 @@
 
 @class CHDChart;
 
-__attribute__((visibility("hidden")))
 @interface CHBState : NSObject
 {
     CHDChart *mChart;
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
     _Bool mHasSecondaryMixedLine;
 }
 
+- (void).cxx_destruct;
 - (unsigned int)chartGroupIndexForType:(int)arg1 isForPrimary:(_Bool)arg2;
 - (_Bool)isMixedChart;
 - (void)setHasSecondaryMixedLine:(_Bool)arg1;

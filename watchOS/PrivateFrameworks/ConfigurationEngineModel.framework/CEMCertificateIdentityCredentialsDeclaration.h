@@ -6,19 +6,21 @@
 
 #import <ConfigurationEngineModel/CEMPayloadBase.h>
 
-@class NSData, NSDictionary;
+@class NSData;
 
 @interface CEMCertificateIdentityCredentialsDeclaration : CEMPayloadBase
 {
-    NSDictionary *_declarationPayload;
+    NSData *_payloadCertificate;
 }
 
++ (id)buildRequiredOnlyWithCertificate:(id)arg1;
++ (id)buildWithCertificate:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(readonly, retain) NSDictionary *declarationPayload; // @synthesize declarationPayload=_declarationPayload;
+@property(copy, nonatomic) NSData *payloadCertificate; // @synthesize payloadCertificate=_payloadCertificate;
 - (void).cxx_destruct;
-- (id)serializePayload:(id)arg1;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSData *payloadCertificate;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayload;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 
 @end
 

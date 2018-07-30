@@ -58,6 +58,7 @@
 - (void)_setupAutoLayout;
 - (float)topInset;
 - (void)_setupDayView;
+- (void)reload;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

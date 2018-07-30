@@ -23,6 +23,7 @@
     NSOperationQueue *_fragmentLoadingOperationQueue;
 }
 
++ (id)fragmentLoadingOperationQueue;
 @property(retain, nonatomic) NSOperationQueue *fragmentLoadingOperationQueue; // @synthesize fragmentLoadingOperationQueue=_fragmentLoadingOperationQueue;
 @property(nonatomic) _Bool highlightLastDecomposedFragment; // @synthesize highlightLastDecomposedFragment=_highlightLastDecomposedFragment;
 @property(nonatomic) _Bool saveGeneratedWaveform; // @synthesize saveGeneratedWaveform=_saveGeneratedWaveform;
@@ -36,7 +37,7 @@
 - (id)saveableWaveform;
 - (double)duration;
 - (id)synchronouslyApproximateWaveformSegmentsByReadingCurrentFileAheadTimeRange:(CDStruct_73a5d3ca)arg1;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_synchronouslyAppendSegmentsForAVContentURL:(id)arg1 isDecomposedFragment:(_Bool)arg2 sourceTimeRange:(CDStruct_73a5d3ca)arg3 destinationTime:(double)arg4;
 - (float)loadingProgress;
 - (void)startLoading;

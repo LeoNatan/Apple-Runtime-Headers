@@ -7,35 +7,36 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBCallMetricsValue.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBCallMetricsValue : PBCodable <NSCopying>
+@interface _INPBCallMetricsValue : PBCodable <_INPBCallMetricsValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    double _callDuration;
-    double _timeToEstablish;
     struct {
         unsigned int callDuration:1;
         unsigned int timeToEstablish:1;
     } _has;
+    double _callDuration;
+    double _timeToEstablish;
 }
 
-+ (id)options;
-@property(nonatomic) double callDuration; // @synthesize callDuration=_callDuration;
 @property(nonatomic) double timeToEstablish; // @synthesize timeToEstablish=_timeToEstablish;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(nonatomic) double callDuration; // @synthesize callDuration=_callDuration;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) BOOL hasCallDuration;
 @property(nonatomic) BOOL hasTimeToEstablish;
+@property(nonatomic) BOOL hasCallDuration;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -57,6 +57,44 @@ struct _NSRange {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned int shouldAllowRecentNotificationsReveal:1;
+    unsigned int shouldAttemptToFinishLongLookTransition:1;
+    unsigned int shouldFinishLongLookTransitionForNotification:1;
+    unsigned int staticContentProviderForNotificationRequest:1;
+    unsigned int isPresentingNotificationManagementSuggestionForNotificationRequest:1;
+    unsigned int auxiliaryOptionsContentProviderForNotificationRequest:1;
+    unsigned int didEndDisplayingCellForNotificationRequest:1;
+    unsigned int shouldAllowInteractionsForNotificationRequest:1;
+    unsigned int willPresentInitialContentWithTransitionCoordinator:1;
+    unsigned int isUpdatingContent:1;
+    unsigned int willDismissRemainingContentWithTransitionCoordinator:1;
+    unsigned int setRaiseGestureDetectionEnabled:1;
+    unsigned int willRemoveNotificationRequestInLongLook:1;
+    unsigned int didRemoveNotificationRequestInLongLook:1;
+    unsigned int requestsClearingNotificationRequestsInSections:1;
+    unsigned int requestsClearingNotificationRequestsFromDateToDate:1;
+    unsigned int willPresentLongLookForNotificationViewController:1;
+    unsigned int willDismissLongLookForNotificationViewController:1;
+    unsigned int notificationUsageTrackingState:1;
+    unsigned int isPerformingRevealHinting:1;
+    unsigned int shouldHorizontallyPanNotificationCell:1;
+    unsigned int shouldSuppressContentForNotificationRequest:1;
+    unsigned int keyboardAssertionForGestureWindow:1;
+    unsigned int hideHomeAffordanceAnimationSettings:1;
+    unsigned int unhideHomeAffordanceAnimationSettings:1;
+    unsigned int settleHomeAffordanceAnimationBehaviorDescription:1;
+    unsigned int requestsExpandingCoalescedBundleForNotificationRequest:1;
+    unsigned int requestsCoalescingExpandedBundleForCoalescingIdentifier:1;
+    unsigned int requestsClearingNotificationRequestsForCoalescingIdentifier:1;
+    unsigned int isExpandedCoalescedBundleForNotificationRequest:1;
+    unsigned int leadingNotificationRequestForCoalescingIdentifier:1;
+    unsigned int coalescingIdentifierForNotificationRequest:1;
+    unsigned int requestsCoalescingNotificationRequest:1;
+    unsigned int sectionSettingsForSectionIdentifier:1;
+    unsigned int requestsPresentingManagementView:1;
+} CDStruct_ef5db9df;
+
+typedef struct {
     unsigned int significantUserInteraction:1;
     unsigned int didScroll:1;
     unsigned int didEndScrolling:1;

@@ -8,6 +8,7 @@
 
 @class SCNNode;
 
+__attribute__((visibility("hidden")))
 @interface SCNIKJoint : NSObject
 {
     SCNNode *joint;

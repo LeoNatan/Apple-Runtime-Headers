@@ -28,6 +28,8 @@
 @property(copy, nonatomic) NSNumber *locationUncertainty; // @dynamic locationUncertainty;
 @property(retain, nonatomic) RTLearnedTransitionMO *outbound; // @dynamic outbound;
 @property(retain, nonatomic) RTLearnedPlaceMO *place; // @dynamic place;
+@property(copy, nonatomic) NSNumber *placeConfidence; // @dynamic placeConfidence;
+@property(copy, nonatomic) NSNumber *placeSource; // @dynamic placeSource;
 
 @end
 

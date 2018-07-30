@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface VKTile : NSObject
 {
     struct VKTileKey _key;
-    unsigned char _origin;
     Matrix_08d701e4 _matrix;
     Matrix_08d701e4 _inverseMatrix;
     VKTilePool *_pool;
@@ -21,10 +20,11 @@ __attribute__((visibility("hidden")))
     Box_3d7e3c2c bounds;
     Matrix_99e705ad _shaderMatrix;
     shared_ptr_696716c4 _viewConstantData;
+    _Bool _preliminary;
 }
 
+@property(nonatomic, getter=isPreliminary) _Bool preliminary; // @synthesize preliminary=_preliminary;
 @property(readonly, nonatomic) double birthdate; // @synthesize birthdate=_birthdate;
-@property(readonly, nonatomic) unsigned char origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) struct VKTileKey key; // @synthesize key=_key;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithKey:(const struct VKTileKey *)arg1;
 - (void)setPool:(id)arg1;
-- (void)setOrigin:(unsigned char)arg1;
 - (void)setKey:(const struct VKTileKey *)arg1;
 - (id)description;
 - (const struct VKTileKey *)keyPointer;

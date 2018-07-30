@@ -18,14 +18,16 @@
 + (id)CA_attributes;
 + (void)initialize;
 @property BOOL ignoresOffscreenGroups;
+@property BOOL disablesOccludedBackdropBlurs;
 @property BOOL windowServerAware;
 @property double bleedAmount;
 @property double statisticsInterval;
 @property(copy) NSString *statisticsType;
-@property BOOL disablesOccludedBackdropBlurs;
+@property BOOL reducesCaptureBitDepth;
 @property BOOL allowsInPlaceFiltering;
 @property BOOL captureOnly;
 @property double marginWidth;
+@property double zoom;
 @property struct CGRect backdropRect;
 @property double scale;
 @property BOOL usesGlobalGroupNamespace;

@@ -6,7 +6,7 @@
 
 #import "HMFObject.h"
 
-@class NSData, NSMutableData, NSObject<OS_dispatch_queue>;
+@class HAPSecuritySessionEncryption, NSData, NSObject<OS_dispatch_queue>;
 
 @interface HAPSecuritySession : HMFObject
 {
@@ -18,16 +18,10 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     struct PairingSessionPrivate *_pairingSession;
-    NSData *_inputKey;
-    NSMutableData *_inputNonce;
-    NSData *_outputKey;
-    NSMutableData *_outputNonce;
+    HAPSecuritySessionEncryption *_encryption;
 }
 
-@property(retain, nonatomic) NSMutableData *outputNonce; // @synthesize outputNonce=_outputNonce;
-@property(retain, nonatomic) NSData *outputKey; // @synthesize outputKey=_outputKey;
-@property(retain, nonatomic) NSMutableData *inputNonce; // @synthesize inputNonce=_inputNonce;
-@property(retain, nonatomic) NSData *inputKey; // @synthesize inputKey=_inputKey;
+@property(retain, nonatomic) HAPSecuritySessionEncryption *encryption; // @synthesize encryption=_encryption;
 @property(nonatomic) struct PairingSessionPrivate *pairingSession; // @synthesize pairingSession=_pairingSession;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;

@@ -15,6 +15,7 @@
     NSString *_articleId;
     NSData *_articleViewingSessionId;
     NSData *_feedViewExposureId;
+    int _groupType;
     NSString *_iadQtoken;
     int _paidSubscriptionConversionPointExposureLocation;
     int _paidSubscriptionConversionPointExposurePresentationReason;
@@ -27,6 +28,7 @@
     _Bool _arrivedFromAd;
     _Bool _subscriptionOnlyArticlePreview;
     struct {
+        unsigned int groupType:1;
         unsigned int paidSubscriptionConversionPointExposureLocation:1;
         unsigned int paidSubscriptionConversionPointExposurePresentationReason:1;
         unsigned int paidSubscriptionConversionPointType:1;
@@ -55,6 +57,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsGroupType:(id)arg1;
+- (id)groupTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasGroupType;
+@property(nonatomic) int groupType; // @synthesize groupType=_groupType;
 @property(readonly, nonatomic) _Bool hasFeedViewExposureId;
 @property(readonly, nonatomic) _Bool hasSubscriptionPurchaseSessionId;
 @property(readonly, nonatomic) _Bool hasIadQtoken;

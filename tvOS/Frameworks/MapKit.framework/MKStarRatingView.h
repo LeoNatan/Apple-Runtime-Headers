@@ -47,7 +47,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (id)imageWithName:(id)arg1 andColor:(id)arg2;
-- (void)commonInit;
+- (void)_commonInit;
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

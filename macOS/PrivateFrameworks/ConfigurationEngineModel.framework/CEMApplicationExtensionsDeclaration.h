@@ -12,25 +12,29 @@
 
 @interface CEMApplicationExtensionsDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadAllowedExtensions;
+    NSArray *_payloadDeniedExtensions;
+    NSArray *_payloadDeniedExtensionPoints;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowedExtensions:(id)arg2 withDeniedExtensions:(id)arg3 withDeniedExtensionPoints:(id)arg4;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSArray *payloadDeniedExtensionPoints; // @synthesize payloadDeniedExtensionPoints=_payloadDeniedExtensionPoints;
+@property(copy, nonatomic) NSArray *payloadDeniedExtensions; // @synthesize payloadDeniedExtensions=_payloadDeniedExtensions;
+@property(copy, nonatomic) NSArray *payloadAllowedExtensions; // @synthesize payloadAllowedExtensions=_payloadAllowedExtensions;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSArray *payloadDeniedExtensionPoints;
-@property(readonly, nonatomic) NSArray *payloadDeniedExtensions;
-@property(readonly, nonatomic) NSArray *payloadAllowedExtensions;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilityImageMockUIElement : NSAccessibilityIndexedMockUIElement
 {
     struct CGRect _bounds;

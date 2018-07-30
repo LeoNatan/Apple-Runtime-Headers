@@ -8,42 +8,39 @@
 
 #import "CPLEngineTransientRepositoryImplementation.h"
 
-@class CPLPrequeliteVariable, NSString;
+@class CPLPrequeliteScopeFilter, NSString;
 
 @interface CPLPrequeliteTransientRepository : CPLPrequeliteStorage <CPLEngineTransientRepositoryImplementation>
 {
-    CPLPrequeliteVariable *_syncAnchorVar;
+    CPLPrequeliteScopeFilter *_scopeFilter;
 }
 
 - (void).cxx_destruct;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (id)status;
 - (unsigned long long)countOfUnmingledRecords;
 - (unsigned long long)countOfAssetChanges;
-- (Class)classForRecordWithIdentifier:(id)arg1;
-- (BOOL)deleteAllRecordsWithError:(id *)arg1;
-- (BOOL)deleteMingledRecordsWithError:(id *)arg1;
-- (BOOL)resetMingledRecordsWithError:(id *)arg1;
-- (BOOL)hasUnmingledRecords;
-- (BOOL)hasMingledRecords;
+- (BOOL)deleteAllRecordsForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)deleteMingledRecordsForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)resetMingledRecordsWithScopeFilter:(id)arg1 error:(id *)arg2;
+- (BOOL)resetMingledRecordsForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)hasUnmingledRecordsForScopeWithIdentifier:(id)arg1;
+- (BOOL)hasMingledRecordsForScopeWithIdentifier:(id)arg1;
 - (BOOL)popChangeBatchOfChangedRecords:(id *)arg1 ofClass:(Class)arg2 maximumCount:(unsigned long long)arg3 error:(id *)arg4;
-- (BOOL)_fillArray:(id)arg1 alreadySeen:(id)arg2 withChangeAndRelated:(id)arg3 identifiersToDelete:(id)arg4 transientType:(int)arg5 maximumCount:(unsigned long long *)arg6 error:(id *)arg7;
+- (BOOL)_fillArray:(id)arg1 alreadySeen:(id)arg2 withChangeAndRelated:(id)arg3 scopedIdentifiersToDelete:(id)arg4 transientType:(int)arg5 maximumCount:(unsigned long long *)arg6 error:(id *)arg7;
 - (BOOL)popChangeBatchOfDeletedRecords:(id *)arg1 ofClass:(Class)arg2 maximumCount:(unsigned long long)arg3 error:(id *)arg4;
-- (BOOL)_fillBatchWithDeletedRecords:(id)arg1 withEnumerator:(id)arg2 maximumCount:(unsigned long long *)arg3 additionalRecordsToAdd:(id)arg4 identifiersToDelete:(id)arg5 alreadyDeleted:(id)arg6 error:(id *)arg7;
+- (BOOL)_fillBatchWithDeletedRecords:(id)arg1 withEnumerator:(id)arg2 maximumCount:(unsigned long long *)arg3 additionalRecordsToAdd:(id)arg4 scopedIdentifiersToDelete:(id)arg5 alreadyDeleted:(id)arg6 error:(id *)arg7;
 - (BOOL)popChangeBatchOfRemappedRecords:(id *)arg1 maximumCount:(unsigned long long)arg2 error:(id *)arg3;
-- (BOOL)_hasRecordWithTransientType:(int)arg1 relatedIdentifier:(id)arg2;
-- (id)_recordWithTransientType:(int)arg1 identifier:(id)arg2;
-- (BOOL)hasRecordWithIdentifier:(id)arg1;
-- (id)recordWithIdentifier:(id)arg1;
-- (id)_enumeratorForRecordsWithTransientType:(int)arg1 relatedIdentifier:(id)arg2 maximumCount:(unsigned long long)arg3;
+- (BOOL)_hasRecordWithTransientType:(int)arg1 relatedScopedIdentifier:(id)arg2;
+- (id)_recordWithTransientType:(int)arg1 scopedIdentifier:(id)arg2;
+- (BOOL)hasRecordWithScopedIdentifier:(id)arg1;
+- (id)recordWithScopedIdentifier:(id)arg1;
 - (id)_enumeratorForRecordsWithTransientType:(int)arg1 class:(Class)arg2 maximumCount:(unsigned long long)arg3;
 - (id)_enumeratorForRecordsWithTransientType:(int)arg1 maximumCount:(unsigned long long)arg2;
-- (BOOL)_markChangesWithIdentifiersAsMingled:(id)arg1 error:(id *)arg2;
-- (BOOL)prepareForMinglingWithError:(id *)arg1;
+- (BOOL)_markChangesWithScopedIdentifiersAsMingled:(id)arg1 error:(id *)arg2;
+- (BOOL)prepareForMinglingWithScopeFilter:(id)arg1 error:(id *)arg2;
 - (BOOL)appendBatch:(id)arg1 alreadyMingled:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)_appendChange:(id)arg1 alreadyMingled:(BOOL)arg2 error:(id *)arg3;
-- (BOOL)storeTransientSyncAnchor:(id)arg1 error:(id *)arg2;
-- (id)transientSyncAnchor;
-- (BOOL)openWithError:(id *)arg1;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
 - (id)initWithAbstractObject:(id)arg1;

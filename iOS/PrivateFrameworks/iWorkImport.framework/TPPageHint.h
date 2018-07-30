@@ -53,7 +53,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<TSWPTopicNumberHints> *topicNumbers;
 @property(readonly, nonatomic) id <TSDHint> lastChildHint;
 @property(readonly, nonatomic) id <TSDHint> firstChildHint;
-- (_Bool)syncsWithEndOfPageHint:(id)arg1 storage:(id)arg2;
+- (void)updateRangeForIndexPath:(id)arg1 withStorage:(id)arg2;
+- (_Bool)syncsFlowRanges:(id)arg1 withEndOfPageHint:(id)arg2;
+- (_Bool)syncsWithEndOfPageHint:(id)arg1 bodyStorage:(id)arg2 flowRanges:(id)arg3;
 - (void)offsetStartCharIndexBy:(long long)arg1 charIndex:(unsigned long long)arg2;
 - (id)flowTopicNumbers;
 - (id)flowHints;

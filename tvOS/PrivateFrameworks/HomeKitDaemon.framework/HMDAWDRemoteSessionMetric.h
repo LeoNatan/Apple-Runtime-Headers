@@ -13,6 +13,7 @@
 @interface HMDAWDRemoteSessionMetric : HMDLogEvent <HMDAWDLogEvent>
 {
     _Bool _submitted;
+    _Bool _authenticated;
     int _role;
     int _closeReason;
     NSDate *_creation;
@@ -24,6 +25,7 @@
 + (void)initialize;
 @property(readonly, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) int closeReason; // @synthesize closeReason=_closeReason;
+@property(getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(retain, nonatomic) NSDate *creation; // @synthesize creation=_creation;
 @property(readonly, nonatomic) int role; // @synthesize role=_role;
 @property(nonatomic) _Bool submitted; // @synthesize submitted=_submitted;

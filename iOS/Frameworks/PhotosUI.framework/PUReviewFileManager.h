@@ -8,7 +8,6 @@
 
 @class NSFileManager, NSObject<OS_dispatch_queue>, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface PUReviewFileManager : NSObject
 {
     NSFileManager *__fileManager;

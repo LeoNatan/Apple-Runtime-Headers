@@ -6,11 +6,13 @@
 
 #import "SFImage.h"
 
-@class NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 
 @protocol SFContactImage <SFImage>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(nonatomic) _Bool threeDTouchEnabled;
+@property(copy, nonatomic) NSArray *contactIdentifiers;
 @property(copy, nonatomic) NSString *contactIdentifier;
 @end
 

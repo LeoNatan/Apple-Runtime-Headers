@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSSet, NSString, NSURL, SMConfMigratorPlugin;
 
-@interface SMConfMigratorRule : NSObject <NSCoding>
+@interface SMConfMigratorRule : NSObject <NSSecureCoding>
 {
     BOOL _overwriteExistingPath;
     BOOL _disableMigratedVersion;
@@ -39,6 +39,7 @@
 
 + (void)executeSpecificPlugin:(id)arg1;
 + (id)loadPlugin:(id)arg1 forRequest:(id)arg2;
++ (BOOL)supportsSecureCoding;
 @property BOOL attemptedPluginLoad; // @synthesize attemptedPluginLoad=_attemptedPluginLoad;
 @property(retain) SMConfMigratorPlugin *plugin; // @synthesize plugin=_plugin;
 @property(readonly, getter=isDefaultedCopyRule) BOOL defaultedCopyRule; // @synthesize defaultedCopyRule=_defaultedCopyRule;

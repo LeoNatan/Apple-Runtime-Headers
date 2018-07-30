@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface TKSmartCardSessionRequest : NSObject
 {
     NSDictionary *_parameters;

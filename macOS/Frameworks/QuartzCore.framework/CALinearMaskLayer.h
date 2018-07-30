@@ -21,8 +21,8 @@
 - (struct Layer *)_copyRenderLayer:(struct Transaction *)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int *)arg3;
 - (void)drawInLinearMaskContext:(struct CALinearMaskContext *)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
-- (void)setContentsFormat:(id)arg1;
 - (void)didChangeValueForKey:(id)arg1;
+- (int)_overrideImageFormat;
 
 // Remaining properties
 @property __weak id <CALinearMaskLayerDelegate><CALayerDelegate> delegate; // @dynamic delegate;

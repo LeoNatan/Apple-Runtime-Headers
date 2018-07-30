@@ -8,6 +8,7 @@
 
 @class _CFXPreferences;
 
+__attribute__((visibility("hidden")))
 @interface _CFXPreferencesHandle : NSObject
 {
     _CFXPreferences *prefs;

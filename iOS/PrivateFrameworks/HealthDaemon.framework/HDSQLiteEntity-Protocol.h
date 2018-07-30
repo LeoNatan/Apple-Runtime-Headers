@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class HDSQLiteDatabase, HDSQLiteStatement, NSArray, NSDate, NSNumber, NSSet, NSString, NSUUID;
+@class HDSQLiteDatabase, HDSQLiteStatement, NSArray, NSDate, NSDictionary, NSNumber, NSSet, NSString, NSUUID;
 
 @protocol HDSQLiteEntity <NSObject>
++ (Class)entityClassForEnumeration;
 + (NSString *)disambiguatedSQLForProperty:(NSString *)arg1;
 + (NSSet *)joinClausesForProperty:(NSString *)arg1;
 + (NSSet *)checkConstraints;
@@ -16,13 +17,19 @@
 + (NSString *)disambiguatedDatabaseTable;
 + (Class)entityForProperty:(NSString *)arg1;
 + (NSArray *)privateSubEntities;
++ (_Bool)isTemporary;
 + (NSArray *)indices;
++ (NSDictionary *)foreignKeys;
++ (void)enumerateColumnsWithBlock:(void (^)(_HDSQLiteEntityColumn *, _Bool *))arg1;
 + (NSArray *)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (NSArray *)tableAliases;
 + (NSString *)databaseTable;
 + (NSString *)databaseName;
 + (HDSQLiteStatement *)deleteStatementWithProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;
+- (void)willDeleteFromDatabase:(HDSQLiteDatabase *)arg1;
 - (_Bool)deleteFromDatabase:(HDSQLiteDatabase *)arg1 error:(id *)arg2;
+- (_Bool)getValuesForProperties:(NSArray *)arg1 database:(HDSQLiteDatabase *)arg2 error:(id *)arg3 handler:(void (^)(NSArray *, struct HDSQLiteRow *))arg4;
 - (_Bool)getValuesForProperties:(NSArray *)arg1 database:(HDSQLiteDatabase *)arg2 handler:(void (^)(NSArray *, struct HDSQLiteRow *))arg3;
 - (NSUUID *)UUIDForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;
 - (NSString *)stringForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;

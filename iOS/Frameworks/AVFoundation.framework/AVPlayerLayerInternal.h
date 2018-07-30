@@ -8,6 +8,7 @@
 
 @class AVKeyPathDependencyManager, AVNetworkPlaybackPerfHUDLayer, AVPlayer, AVPlayerLayer, CALayer, FigBaseCALayer, FigSubtitleCALayer, FigVideoContainerLayer, NSDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerLayerInternal : NSObject
 {
     AVNetworkPlaybackPerfHUDLayer *hudLayer;
@@ -29,7 +30,6 @@
     FigBaseCALayer *closedCaptionLayer;
     AVPlayerLayer *associatedPIPLayer;
     _Bool willManageSublayersAsSwappedLayers;
-    _Bool canEnterPIPMode;
     _Bool isReadyForDisplay;
     AVPlayer *playerBeingObserved;
     NSSet *KVOInvokers;

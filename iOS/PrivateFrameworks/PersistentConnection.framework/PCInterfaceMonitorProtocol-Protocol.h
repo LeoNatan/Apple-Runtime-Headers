@@ -21,8 +21,9 @@
 @property(readonly, nonatomic) long long interfaceIdentifier;
 
 @optional
+@property(readonly, nonatomic) NSString *networkCode;
 @property(readonly, nonatomic) struct __CFString *wwanInterfaceName;
 @property(readonly, nonatomic) _Bool isLTEWithCDRX;
-@property(readonly, nonatomic) struct __CFString *currentRAT;
+@property(readonly, nonatomic) int currentRAT;
 @end
 

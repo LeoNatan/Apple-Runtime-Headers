@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABPeoplePickerView.h>
 
-__attribute__((visibility("hidden")))
 @interface ABDistributionListPeoplePickerView : ABPeoplePickerView
 {
 }

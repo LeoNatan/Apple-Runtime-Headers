@@ -7,12 +7,12 @@
 #import "UIView.h"
 
 #import "PUICCollectionViewDataSource.h"
-#import "UICollectionViewDelegate.h"
-#import "UICollectionViewDelegateFlowLayout.h"
+#import "PUICCollectionViewDelegate.h"
+#import "PUICCollectionViewDelegateFlowLayout.h"
 
 @class NSMutableArray, NSString, PUICActivityIndicatorView, PUICCollectionView, PUICContentUnavailableView, PUICEmojiCategoryHeaderView;
 
-@interface PUICRecentsView : UIView <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, PUICCollectionViewDataSource>
+@interface PUICRecentsView : UIView <PUICCollectionViewDelegate, PUICCollectionViewDelegateFlowLayout, PUICCollectionViewDataSource>
 {
     PUICContentUnavailableView *_contentUnavailableView;
     PUICActivityIndicatorView *_activityIndicatorView;
@@ -27,8 +27,6 @@
 @property(nonatomic) __weak id <PUICRecentsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PUICCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
-- (id)_sizingHeader;
 - (void)deactivate;
 - (void)activate;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

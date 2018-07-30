@@ -21,9 +21,9 @@
 @property(nonatomic, getter=shouldAvoidHitTesting) _Bool avoidHitTesting; // @synthesize avoidHitTesting=_avoidHitTesting;
 @property(copy, nonatomic) NSArray *contextIDsToExcludeFromHitTesting; // @synthesize contextIDsToExcludeFromHitTesting=_contextIDsToExcludeFromHitTesting;
 @property(copy, nonatomic) NSArray *contextIDsToAlwaysSendTouches; // @synthesize contextIDsToAlwaysSendTouches=_contextIDsToAlwaysSendTouches;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

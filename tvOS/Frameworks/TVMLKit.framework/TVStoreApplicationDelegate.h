@@ -49,6 +49,8 @@
 - (id)appLocalBootURL;
 - (id)bootURL;
 - (id)cachedBagPath;
+- (id)_bagBootURL;
+- (id)bagBootURLKey;
 - (void)dealloc;
 - (id)init;
 

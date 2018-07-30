@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     NSTouchBarItemTree *_draggedItemTree;
     NSTouchBarItem *_draggedItem;
     unsigned long long _oldPresentationOptions;
+    struct __CFString *_oldMenuBarDisplayIdentifier;
     NSMutableArray *_barsToReset;
     NSMutableArray *_barsToUpdate;
     NSValue *_oldKeyWindow;
@@ -51,6 +52,8 @@ __attribute__((visibility("hidden")))
 - (void)_closeCustomizationPalette;
 - (BOOL)validateTouchBarCustomizationPaletteItem:(id)arg1;
 - (void)toggleCustomizationPalette:(id)arg1 forceControlStrip:(BOOL)arg2;
+- (void)restorePresentationOptions;
+- (void)savePresentationOptions;
 - (BOOL)appTouchBarIsCustomizable;
 - (BOOL)_touchBarsAreCustomizable:(id)arg1;
 - (void)toggleCustomizationPalette:(id)arg1;

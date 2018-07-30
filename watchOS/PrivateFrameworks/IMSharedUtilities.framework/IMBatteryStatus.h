@@ -11,8 +11,9 @@
     id <IMBatteryStatusTestDelegate> _testDelegate;
 }
 
+@property(nonatomic) __weak id <IMBatteryStatusTestDelegate> testDelegate; // @synthesize testDelegate=_testDelegate;
+- (void).cxx_destruct;
 @property(readonly, getter=isCharging) _Bool charging;
-- (void)setTestDelegate:(id)arg1;
 
 @end
 

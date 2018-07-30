@@ -91,8 +91,6 @@ struct AURenderEventAllocator;
 
 struct AURenderEventStruct;
 
-struct AUSyncCaller;
-
 struct AUv3InstanceBase {
     CDUnknownFunctionPointerType *_field1;
     CDUnknownFunctionPointerType _field2;
@@ -154,7 +152,7 @@ struct AudioComponentVector {
     shared_ptr_a99cf2ba *__begin_;
     shared_ptr_a99cf2ba *__end_;
     struct __compressed_pair<std::__1::shared_ptr<APComponent>*, std::__1::allocator<std::__1::shared_ptr<APComponent>>> {
-        shared_ptr_a99cf2ba *__first_;
+        shared_ptr_a99cf2ba *__value_;
     } __end_cap_;
     _Bool mSorted;
 };
@@ -209,7 +207,7 @@ struct IOThread;
 
 struct IPCAURenderingClient {
     CDUnknownFunctionPointerType *_vptr$IPCAURenderingClient;
-    id mRemote;
+    NSXPCConnection *mXPCConnection;
     _Bool mInitialized;
     _Bool mRenderPrioritySet;
     _Bool mIsOffline;
@@ -376,10 +374,10 @@ struct map<unsigned int, AUProcessingBlock, std::__1::less<unsigned int>, std::_
     struct __tree<std::__1::__value_type<unsigned int, AUProcessingBlock>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUProcessingBlock>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, AUProcessingBlock>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, AUProcessingBlock>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUProcessingBlock>, std::__1::less<unsigned int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -388,16 +386,22 @@ struct map<unsigned int, RemoteAUHandleInfo, std::__1::less<unsigned int>, std::
     struct __tree<std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, RemoteAUHandleInfo>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, std::__1::less<unsigned int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
 
 struct recursive_mutex {
     struct _opaque_pthread_mutex_t __m_;
+};
+
+struct reply_watchdog_factory {
+    _Bool mDebugging;
+    int mDefaultTimeoutMS;
+    struct function<void ()> mTimeoutHandler;
 };
 
 struct set<AUObserverController::AddressOriginator, std::__1::less<AUObserverController::AddressOriginator>, std::__1::allocator<AUObserverController::AddressOriginator>> {
@@ -428,19 +432,13 @@ struct type {
 
 struct unique_ptr<AUAudioUnitV2Bridge_Renderer, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer>> {
     struct __compressed_pair<AUAudioUnitV2Bridge_Renderer *, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer>> {
-        struct AUAudioUnitV2Bridge_Renderer *__first_;
+        struct AUAudioUnitV2Bridge_Renderer *__value_;
     } __ptr_;
 };
 
 struct unique_ptr<AUProcAndUserData, std::__1::default_delete<AUProcAndUserData>> {
     struct __compressed_pair<AUProcAndUserData *, std::__1::default_delete<AUProcAndUserData>> {
-        struct AUProcAndUserData *__first_;
-    } __ptr_;
-};
-
-struct unique_ptr<AUSyncCaller, std::__1::default_delete<AUSyncCaller>> {
-    struct __compressed_pair<AUSyncCaller *, std::__1::default_delete<AUSyncCaller>> {
-        struct AUSyncCaller *__first_;
+        struct AUProcAndUserData *__value_;
     } __ptr_;
 };
 
@@ -460,7 +458,7 @@ struct unique_ptr<AudioComponentPluginScanner, std::__1::default_delete<AudioCom
 
 struct unique_ptr<CAMutex, std::__1::default_delete<CAMutex>> {
     struct __compressed_pair<CAMutex *, std::__1::default_delete<CAMutex>> {
-        struct CAMutex *__first_;
+        struct CAMutex *__value_;
     } __ptr_;
 };
 
@@ -472,24 +470,24 @@ struct unique_ptr<SemaphoreIOMessenger_Receiver, std::__1::default_delete<Semaph
 
 struct unique_ptr<SemaphoreIOMessenger_Sender, std::__1::default_delete<SemaphoreIOMessenger_Sender>> {
     struct __compressed_pair<SemaphoreIOMessenger_Sender *, std::__1::default_delete<SemaphoreIOMessenger_Sender>> {
-        struct SemaphoreIOMessenger_Sender *__first_;
+        struct SemaphoreIOMessenger_Sender *__value_;
     } __ptr_;
 };
 
 struct unique_ptr<TestAUProcessingBlock, std::__1::default_delete<TestAUProcessingBlock>> {
     struct __compressed_pair<TestAUProcessingBlock *, std::__1::default_delete<TestAUProcessingBlock>> {
-        struct TestAUProcessingBlock *__first_;
+        struct TestAUProcessingBlock *__value_;
     } __ptr_;
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*> **__first_;
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*> **__value_;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>*>> {
-                unsigned long long __first_;
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
@@ -497,13 +495,13 @@ struct unordered_map<long, void (^)(unsigned int, const AudioTimeStamp *, unsign
     struct __hash_table<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, std::__1::__unordered_map_hasher<long, std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, std::__1::hash<long>, true>, std::__1::__unordered_map_equal<long, std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, std::__1::equal_to<long>, true>, std::__1::allocator<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*> __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long, std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, std::__1::hash<long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<long, std::__1::__hash_value_type<long, void (^)(unsigned int, const AudioTimeStamp *, unsigned int, long)>, std::__1::equal_to<long>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };
@@ -512,7 +510,7 @@ struct vector<AUAudioUnit_XH_PropListener, std::__1::allocator<AUAudioUnit_XH_Pr
     struct AUAudioUnit_XH_PropListener *__begin_;
     struct AUAudioUnit_XH_PropListener *__end_;
     struct __compressed_pair<AUAudioUnit_XH_PropListener *, std::__1::allocator<AUAudioUnit_XH_PropListener>> {
-        struct AUAudioUnit_XH_PropListener *__first_;
+        struct AUAudioUnit_XH_PropListener *__value_;
     } __end_cap_;
 };
 
@@ -544,7 +542,7 @@ struct vector<AddressToParameter, std::__1::allocator<AddressToParameter>> {
     struct AddressToParameter *__begin_;
     struct AddressToParameter *__end_;
     struct __compressed_pair<AddressToParameter *, std::__1::allocator<AddressToParameter>> {
-        struct AddressToParameter *__first_;
+        struct AddressToParameter *__value_;
     } __end_cap_;
 };
 
@@ -552,7 +550,7 @@ struct vector<BusPropertyObserver, std::__1::allocator<BusPropertyObserver>> {
     struct BusPropertyObserver *__begin_;
     struct BusPropertyObserver *__end_;
     struct __compressed_pair<BusPropertyObserver *, std::__1::allocator<BusPropertyObserver>> {
-        struct BusPropertyObserver *__first_;
+        struct BusPropertyObserver *__value_;
     } __end_cap_;
 };
 
@@ -560,7 +558,7 @@ struct vector<IPCAUSharedMemoryBase::Element, std::__1::allocator<IPCAUSharedMem
     struct Element *__begin_;
     struct Element *__end_;
     struct __compressed_pair<IPCAUSharedMemoryBase::Element *, std::__1::allocator<IPCAUSharedMemoryBase::Element>> {
-        struct Element *__first_;
+        struct Element *__value_;
     } __end_cap_;
 };
 
@@ -568,7 +566,7 @@ struct vector<NSObject<OS_dispatch_semaphore>*, std::__1::allocator<NSObject<OS_
     id *__begin_;
     id *__end_;
     struct __compressed_pair<NSObject<OS_dispatch_semaphore>**, std::__1::allocator<NSObject<OS_dispatch_semaphore>*>> {
-        id *__first_;
+        id *__value_;
     } __end_cap_;
 };
 
@@ -576,7 +574,7 @@ struct vector<NewServerListener, std::__1::allocator<NewServerListener>> {
     struct NewServerListener *__begin_;
     struct NewServerListener *__end_;
     struct __compressed_pair<NewServerListener *, std::__1::allocator<NewServerListener>> {
-        struct NewServerListener *__first_;
+        struct NewServerListener *__value_;
     } __end_cap_;
 };
 
@@ -592,7 +590,7 @@ struct vector<PropertyListener, std::__1::allocator<PropertyListener>> {
     struct PropertyListener *__begin_;
     struct PropertyListener *__end_;
     struct __compressed_pair<PropertyListener *, std::__1::allocator<PropertyListener>> {
-        struct PropertyListener *__first_;
+        struct PropertyListener *__value_;
     } __end_cap_;
 };
 
@@ -623,17 +621,17 @@ typedef struct vector<AddressToParameter, std::__1::allocator<AddressToParameter
     struct AddressToParameter *__begin_;
     struct AddressToParameter *__end_;
     struct __compressed_pair<AddressToParameter *, std::__1::allocator<AddressToParameter>> {
-        struct AddressToParameter *__first_;
+        struct AddressToParameter *__value_;
     } __end_cap_;
-} vector_2580a1ea;
+} vector_66b3461a;
 
 typedef struct vector<BusPropertyObserver, std::__1::allocator<BusPropertyObserver>> {
     struct BusPropertyObserver *__begin_;
     struct BusPropertyObserver *__end_;
     struct __compressed_pair<BusPropertyObserver *, std::__1::allocator<BusPropertyObserver>> {
-        struct BusPropertyObserver *__first_;
+        struct BusPropertyObserver *__value_;
     } __end_cap_;
-} vector_07ddb480;
+} vector_e102d759;
 
 #pragma mark Named Unions
 

@@ -28,8 +28,8 @@
 @property(nonatomic) BOOL canEnableRoaming; // @synthesize canEnableRoaming=_canEnableRoaming;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL canEnable; // @synthesize canEnable=_canEnable;
-@property(retain, nonatomic) NSData *provisioningPostData; // @synthesize provisioningPostData=_provisioningPostData;
-@property(retain, nonatomic) NSURL *provisioningURL; // @synthesize provisioningURL=_provisioningURL;
+@property(copy, nonatomic) NSData *provisioningPostData; // @synthesize provisioningPostData=_provisioningPostData;
+@property(copy, nonatomic) NSURL *provisioningURL; // @synthesize provisioningURL=_provisioningURL;
 @property(nonatomic) int provisioningStatus; // @synthesize provisioningStatus=_provisioningStatus;
 - (void).cxx_destruct;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone *)arg1;

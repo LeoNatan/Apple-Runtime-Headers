@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-@class TabContentView, TabDialogPresentationManager;
+@class TabContentViewController, TabDialogPresentationManager;
 
 @protocol TabDialogPresentationManagerDelegate <NSObject>
-- (TabContentView *)tabDialogPresentationManagerTabContentViewForDialogInstallation:(TabDialogPresentationManager *)arg1;
+- (TabContentViewController *)tabDialogPresentationManagerTabContentViewControllerForDialogInstallation:(TabDialogPresentationManager *)arg1;
 - (int)tabDialogPresentationManagerWebProcessID:(TabDialogPresentationManager *)arg1;
 - (BOOL)tabDialogPresentationManagerShouldDisplayDialogs:(TabDialogPresentationManager *)arg1;
 - (BOOL)tabDialogPresentationManagerShouldSkipAnimations:(TabDialogPresentationManager *)arg1;

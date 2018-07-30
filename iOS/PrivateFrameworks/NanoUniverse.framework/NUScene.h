@@ -12,31 +12,35 @@
 
 @interface NUScene : NSObject <NUAnimatable>
 {
-    float _orbit;
-    float _roll;
-    float _yearsSince1970;
-    int _minFrameInterval;
     NSMutableArray *_spheroids;
-    NUSpheroid *_focus;
-    // Error parsing type: , name: _position
-    // Error parsing type: , name: _target
-    // Error parsing type: , name: _up
     unsigned long long _snap;
-    unsigned long long _backgroundType;
-    unsigned long long _projectionType;
     NSMutableArray *_animations;
     NSDate *_date;
     CDUnknownBlockType _currentDateBlock;
     unsigned int _isUpdateNeeded:1;
     unsigned int _isUpdatable:1;
+    float _orbit;
+    float _roll;
+    int _minFrameInterval;
+    float _yearsSince1970;
+    NUSpheroid *_focus;
+    unsigned long long _backgroundType;
+    unsigned long long _projectionType;
+    unsigned long long _collectionType;
+    // Error parsing type: , name: _position
+    // Error parsing type: , name: _target
+    // Error parsing type: , name: _up
 }
 
+@property(readonly, nonatomic) float yearsSince1970; // @synthesize yearsSince1970=_yearsSince1970;
 @property(copy, nonatomic) CDUnknownBlockType currentDateBlock; // @synthesize currentDateBlock=_currentDateBlock;
-@property(nonatomic) unsigned long long backgroundType; // @synthesize backgroundType=_backgroundType;
+@property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
 @property(nonatomic) unsigned long long projectionType; // @synthesize projectionType=_projectionType;
-@property(readonly, nonatomic) NSArray *spheroids; // @synthesize spheroids=_spheroids;
-@property(retain, nonatomic) NUSpheroid *focus; // @synthesize focus=_focus;
+@property(nonatomic) unsigned long long backgroundType; // @synthesize backgroundType=_backgroundType;
+@property(nonatomic) int minFrameInterval; // @synthesize minFrameInterval=_minFrameInterval;
 @property(nonatomic) float roll; // @synthesize roll=_roll;
+@property(nonatomic) float orbit; // @synthesize orbit=_orbit;
+@property(retain, nonatomic) NUSpheroid *focus; // @synthesize focus=_focus;
 // Error parsing type for property up:
 // Property attributes: T,R,N,V_up
 
@@ -46,17 +50,14 @@
 // Error parsing type for property position:
 // Property attributes: T,R,N,V_position
 
-@property(nonatomic) int minFrameInterval; // @synthesize minFrameInterval=_minFrameInterval;
-@property(readonly, nonatomic) float yearsSince1970; // @synthesize yearsSince1970=_yearsSince1970;
-@property(nonatomic) float orbit; // @synthesize orbit=_orbit;
-@property(nonatomic) _Bool updatable; // @synthesize updatable=_isUpdatable;
+@property(readonly, nonatomic) NSArray *spheroids; // @synthesize spheroids=_spheroids;
+@property(nonatomic, getter=isUpdatable) _Bool updatable; // @synthesize updatable=_isUpdatable;
 - (void).cxx_destruct;
 - (void)setCamera:(float)arg1 target:up:roll: /* Error: Ran out of types for this method. */;
 - (void)updateFromDateIfNeeded;
 - (id)spheroidOfType:(unsigned long long)arg1;
-- (void)updateSunLocationForDate:(id)arg1 animated:(_Bool)arg2;
-- (void)updateSunLocation;
-@property(retain, nonatomic) NSDate *date; // @dynamic date;
+- (void)updateSunLocationAnimated:(_Bool)arg1;
+@property(readonly, nonatomic) NSDate *date; // @dynamic date;
 - (void)removeAnimation:(id)arg1;
 - (void)removeAllAnimationsFor:(id)arg1 withKeys:(unsigned long long)arg2;
 - (void)addAnimation:(id)arg1;

@@ -6,19 +6,23 @@
 
 #import <AVFoundation/AVAssetInspector.h>
 
-@class NSArray, NSURL;
+@class AVDisplayCriteria, NSArray, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVFigAssetInspector : AVAssetInspector
 {
     struct OpaqueFigAsset *_figAsset;
     struct OpaqueFigFormatReader *_formatReader;
     long long _formatReaderOnce;
     long long _checkIsStreamingOnce;
+    long long _makeDisplayCriteriaOnce;
+    AVDisplayCriteria *_displayCriteria;
     _Bool _isStreaming;
     _Bool didCheckForSaveRestriction;
     _Bool hasSaveRestriction;
 }
 
+- (id)preferredDisplayCriteria;
 - (id)availableVideoDynamicRanges;
 - (struct CGSize)maximumVideoResolution;
 - (id)propertyListForProxy;

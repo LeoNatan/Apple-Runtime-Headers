@@ -10,5 +10,6 @@
 + (long long)ik_valueForBooleanAttribute:(id)arg1;
 - (id)ik_stringByTrimmingControlChars;
 - (_Bool)ik_attributeBoolValue;
+- (id)ik_sharedInstance;
 @end
 

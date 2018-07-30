@@ -18,6 +18,7 @@
 - (float)floatAtTime:(double)arg1;
 - (void)setDouble:(double)arg1 atTime:(double)arg2;
 - (void)setFloat:(float)arg1 atTime:(double)arg2;
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (struct VtValue)defaultVtValue;
 - (unsigned long long)precision;

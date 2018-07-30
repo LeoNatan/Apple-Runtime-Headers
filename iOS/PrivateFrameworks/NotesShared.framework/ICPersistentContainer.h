@@ -10,6 +10,7 @@
 
 @interface ICPersistentContainer : NSPersistentContainer
 {
+    _Bool _abortAfterReplacingDatabase;
     NSDictionary *_storeOptions;
     NSURL *_storeURL;
     NSString *_storeType;
@@ -20,6 +21,7 @@
 + (_Bool)isDataProtectionError:(id)arg1;
 + (id)standardStoreOptions;
 + (id)newManagedObjectModel;
+@property(nonatomic) _Bool abortAfterReplacingDatabase; // @synthesize abortAfterReplacingDatabase=_abortAfterReplacingDatabase;
 @property(nonatomic) unsigned long long fakeFreeDiskSpace; // @synthesize fakeFreeDiskSpace=_fakeFreeDiskSpace;
 @property(retain, nonatomic) NSMergePolicy *mergePolicy; // @synthesize mergePolicy=_mergePolicy;
 @property(retain, nonatomic) NSString *storeType; // @synthesize storeType=_storeType;

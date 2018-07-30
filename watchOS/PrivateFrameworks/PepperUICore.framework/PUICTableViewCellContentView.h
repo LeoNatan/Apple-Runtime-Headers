@@ -15,7 +15,6 @@
 }
 
 - (void).cxx_destruct;
-- (void)updateConstraintsIfNeeded;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)didMoveToSuperview;

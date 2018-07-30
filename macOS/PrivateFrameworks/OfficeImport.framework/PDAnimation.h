@@ -8,20 +8,20 @@
 
 @class OITSUNoCopyDictionary, PDRootTimeNode;
 
-__attribute__((visibility("hidden")))
 @interface PDAnimation : NSObject
 {
     PDRootTimeNode *mRootTimeNode;
     OITSUNoCopyDictionary *mBuildMap;
 }
 
-+ (void)initialize;
++ (id)exitSubTypeMap;
++ (id)entranceSubTypeMap;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setBuildMap:(id)arg1;
 - (id)buildMap;
 - (id)addRootTimeNode;
 - (id)rootTimeNode;
-- (void)dealloc;
 - (id)init;
 
 @end

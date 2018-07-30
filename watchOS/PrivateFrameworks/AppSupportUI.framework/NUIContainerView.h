@@ -6,41 +6,38 @@
 
 #import "UIView.h"
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NUIMultilineSizingHelper;
 
 @interface NUIContainerView : UIView
 {
+    _Bool _isRTL;
     id <NUIContainerViewDelegate> _delegate;
     NSMutableArray *_arrangedSubviews;
     NSArray *_visibleArrangedSubviews;
-    float _preferredMaxLayoutWidth;
-    struct nui_size_cache _cachedIntrinsicSizes;
+    NUIMultilineSizingHelper *_multilineSizeHelper;
     struct {
         unsigned int hiddenArrangedSubviewCount:16;
         unsigned int inBatch:1;
         unsigned int delayState:2;
         unsigned int inLayoutPass:2;
-        unsigned int determiningPreferredMaxLayoutWidth:1;
-        unsigned int inSecondConstraintsPass:1;
+        unsigned int inMeasurementPass:2;
+        unsigned int mustRestart:1;
         unsigned int delegateDidInvalidateIntrinsicContentSize:1;
         unsigned int delegateSystemLayoutSizeFittingSizeForArrangedSubview:1;
         unsigned int delegateLayoutFrameForArrangedSubview:1;
         unsigned int delegateWillMeasureFitting:1;
+        unsigned int delegateShouldRestart:1;
         unsigned int delegateDidLayout:1;
     } _containerFlags;
     _Bool _baselineRelativeArrangement;
     _Bool _layoutMarginsRelativeArrangement;
-    int _asynchronousMeasurement;
 }
 
 + (void)initialize;
 + (_Bool)isDebugBoundingBoxesEnabled;
 + (_Bool)requiresConstraintBasedLayout;
-@property(nonatomic) int asynchronousMeasurement; // @synthesize asynchronousMeasurement=_asynchronousMeasurement;
 @property(nonatomic, getter=isLayoutMarginsRelativeArrangement) _Bool layoutMarginsRelativeArrangement; // @synthesize layoutMarginsRelativeArrangement=_layoutMarginsRelativeArrangement;
 @property(nonatomic, getter=isBaselineRelativeArrangement) _Bool baselineRelativeArrangement; // @synthesize baselineRelativeArrangement=_baselineRelativeArrangement;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
@@ -50,8 +47,6 @@
 - (void)invalidateIntrinsicContentSize;
 - (void)layoutSubviews;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
-- (_Bool)supportsAsynchronousMeasurement;
-- (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (unsigned int)indexOfArrangedSubview:(id)arg1;
@@ -63,9 +58,7 @@
 - (void)_beginObservingSubviewVisibility:(id)arg1;
 - (void)_didRemoveSubview:(id)arg1;
 - (void)addArrangedSubview:(id)arg1;
-- (struct UIEdgeInsets)effectiveLayoutMargins;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;
-- (_Bool)isInBatchUpdate;
 @property(readonly, nonatomic) NSArray *visibleArrangedSubviews;
 @property(copy, nonatomic) NSArray *arrangedSubviews;
 @property(nonatomic) __weak id <NUIContainerViewDelegate> delegate;
@@ -80,11 +73,15 @@
 - (void)_setInSecondConstraintsPass:(_Bool)arg1;
 - (void)_prepareForSecondIntrinsicContentSizeCalculationWithLayoutEngineBounds:(struct CGRect)arg1;
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
+- (_Bool)_needsDoubleUpdateConstraintsPass;
+- (struct CGSize)intrinsicContentSize;
 - (void)updateConstraints;
 - (_Bool)isLayoutSizeDependentOnPerpendicularAxis;
-- (_Bool)_needsDoubleUpdateConstraintsPass;
 - (id)arrangedDescription;
-- (_Bool)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
+- (_Bool)mustRestartMeasurement;
+- (_Bool)shouldCancelMeasurementForCompressionInAxis:(int)arg1;
+- (_Bool)canCancelMeasurementForCompression;
+- (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
 - (struct CGSize)calculateArrangedSizeFittingSize:(struct CGSize)arg1;
 - (void)didRemoveArrangedSubview:(id)arg1 atIndex:(int)arg2;
 - (void)didInsertArrangedSubview:(id)arg1 atIndex:(int)arg2;
@@ -96,6 +93,9 @@
 - (void)visibilityDidChangeForArrangedSubview:(id)arg1;
 - (_Bool)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(_Bool)arg1;
 - (void)setNeedsLayout;
+- (struct UIEdgeInsets)effectiveLayoutMargins;
+- (_Bool)isInBatchUpdate;
+- (struct CGRect)effectiveLayoutBounds;
 
 @end
 

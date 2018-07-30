@@ -7,10 +7,11 @@
 #import "_SGDSuggestManagerBaseProtocol.h"
 #import "_SGDSuggestManagerInternalHarvestProtocol.h"
 
-@class NSArray, NSDate, NSString, NSURL, SGRecordId;
+@class NSArray, NSData, NSDate, NSString, NSURL, SGRecordId;
 
 @protocol SGDSuggestManagerInternalProtocol <_SGDSuggestManagerBaseProtocol, _SGDSuggestManagerInternalHarvestProtocol>
 - (void)deleteCloudKitZoneWithCompletion:(void (^)(SGXPCResponse *))arg1;
+- (void)suggestionsFromEmailContent:(NSString *)arg1 headers:(NSData *)arg2 source:(NSString *)arg3 options:(unsigned long long)arg4 withCompletion:(void (^)(SGXPCResponse1 *))arg5;
 - (void)sleepWithCompletion:(void (^)(SGXPCResponse *))arg1;
 - (void)daemonExitWithCompletion:(void (^)(SGXPCResponse *))arg1;
 - (void)removeAllStoredPseudoContactsWithCompletion:(void (^)(SGXPCResponse *))arg1;
@@ -21,6 +22,7 @@
 - (void)predictedCCEmailAddressesWithToAddresses:(NSArray *)arg1 ccAddresses:(NSArray *)arg2 fromAddress:(NSString *)arg3 date:(double)arg4 bounds:(NSArray *)arg5 completion:(void (^)(SGXPCResponse1 *))arg6;
 - (void)predictedToEmailAddressesWithToAddresses:(NSArray *)arg1 ccAddresses:(NSArray *)arg2 fromAddress:(NSString *)arg3 date:(double)arg4 bounds:(NSArray *)arg5 completion:(void (^)(SGXPCResponse1 *))arg6;
 - (void)clearCachesFully:(BOOL)arg1 withCompletion:(void (^)(SGXPCResponse *))arg2;
+- (void)suggestionsFromRFC822Data:(NSData *)arg1 source:(NSString *)arg2 options:(unsigned long long)arg3 withCompletion:(void (^)(SGXPCResponse1 *))arg4;
 - (void)realtimeSuggestionsFromURL:(NSURL *)arg1 title:(NSString *)arg2 HTMLPayload:(NSString *)arg3 extractionDate:(NSDate *)arg4 withCompletion:(void (^)(SGXPCResponse1 *))arg5;
 - (void)resetConfirmationAndRejectionHistory:(void (^)(SGXPCResponse *))arg1;
 - (void)sendRTCLogsWithCompletion:(void (^)(SGXPCResponse1 *))arg1;

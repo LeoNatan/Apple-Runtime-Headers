@@ -6,13 +6,19 @@
 
 #import "NSObject.h"
 
-@class ICCameraDevice, ICCameraFolder, NSDate, NSDictionary, NSMutableDictionary, NSString;
+@class ICCameraDevice, ICCameraFolder, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
 
 @interface ICCameraItem : NSObject
 {
     void *_itemProperties;
+    NSData *_thumbnailData;
+    id _userObject;
+    NSString *_relativeFileSystemPath;
 }
 
+@property(readonly) NSString *relativeFileSystemPath; // @synthesize relativeFileSystemPath=_relativeFileSystemPath;
+@property(retain) id userObject; // @synthesize userObject=_userObject;
+@property(readonly) NSData *thumbnailData; // @synthesize thumbnailData=_thumbnailData;
 - (id)description;
 @property(readonly) NSString *fileSystemPath;
 - (void)appendToPath:(id)arg1;
@@ -25,6 +31,8 @@
 @property(readonly) _Bool hasMetadata;
 @property(readonly) struct CGImage *thumbnail;
 @property(readonly) _Bool hasThumbnail;
+- (void)setPtpObjectHandle:(unsigned int)arg1;
+- (unsigned int)ptpObjectHandle;
 - (void)setModificationDate:(id)arg1;
 @property(readonly) NSDate *modificationDate;
 - (void)setCreationDate:(id)arg1;
@@ -33,11 +41,22 @@
 @property(readonly) NSString *UTI;
 @property(getter=isLocked) _Bool locked;
 @property(readonly) NSString *name;
-@property(readonly) ICCameraFolder *parentFolder;
 @property(readonly) ICCameraDevice *device;
 - (id)valueForUndefinedKey:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
+@property(copy) CDUnknownBlockType completionBlock;
+@property(readonly) unsigned long long objectID;
+- (void)setObjectID:(unsigned long long)arg1;
+@property(readonly) unsigned long long twinID;
+- (void)setTwinID:(unsigned long long)arg1;
+@property(readonly) unsigned long long ownerID;
+- (void)setOwnerID:(unsigned long long)arg1;
+@property(readonly) unsigned long long parentID;
+- (void)setParentID:(unsigned long long)arg1;
+- (unsigned long long)unsignedIntegerValue;
+- (void)setParentFolder:(id)arg1;
+@property(readonly) ICCameraFolder *parentFolder;
+- (long long)compareObjectID:(id)arg1;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 
 @end

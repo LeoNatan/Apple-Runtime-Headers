@@ -20,6 +20,7 @@
     NSLock *_currentRequestLock;
 }
 
++ (void)cancelOldActivities;
 @property(nonatomic) __weak id <GEOExperimentServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;

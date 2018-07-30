@@ -15,7 +15,6 @@
     NSArray *_replyAllExcludedEmailList;
     unsigned int _messageSendingType;
     NNMKNanoMailService *_nanoMailService;
-    NSString *_subject;
     NSString *_recipient;
     NNMKMessage *_referenceMessage;
     WRCannedRepliesStore *_repliesStore;
@@ -27,7 +26,6 @@
 @property(retain, nonatomic) WRCannedRepliesStore *repliesStore; // @synthesize repliesStore=_repliesStore;
 @property(retain, nonatomic) NNMKMessage *referenceMessage; // @synthesize referenceMessage=_referenceMessage;
 @property(retain, nonatomic) NSString *recipient; // @synthesize recipient=_recipient;
-@property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(retain, nonatomic) NNMKNanoMailService *nanoMailService; // @synthesize nanoMailService=_nanoMailService;
 @property(nonatomic) unsigned int messageSendingType; // @synthesize messageSendingType=_messageSendingType;
 @property(copy, nonatomic) NSArray *replyAllExcludedEmailList; // @synthesize replyAllExcludedEmailList=_replyAllExcludedEmailList;

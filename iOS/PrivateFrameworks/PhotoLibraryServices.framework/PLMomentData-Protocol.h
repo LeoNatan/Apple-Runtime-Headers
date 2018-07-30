@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#import "PLMomentProtocol.h"
 #import "PLMomentRefreshable.h"
 
 @class CLLocation, NSArray, NSData, NSDate, NSObject<NSCopying>, NSOrderedSet, NSString;
 
-@protocol PLMomentData <PLMomentRefreshable>
+@protocol PLMomentData <PLMomentRefreshable, PLMomentProtocol>
++ (NSArray *)sortByTimeSortDescriptors;
 @property(retain, nonatomic) NSArray *userTitles;
 @property(retain, nonatomic) NSString *uuid;
 @property(nonatomic) _Bool usedLocationsOfInterest;
@@ -30,5 +32,8 @@
 - (void)replaceAssetDataAtIndex:(unsigned long long)arg1 withAssetData:(id <PLMomentAssetData>)arg2;
 - (void)delete;
 - (_Bool)isDeleted;
+
+@optional
+@property(readonly, retain, nonatomic) NSString *title;
 @end
 

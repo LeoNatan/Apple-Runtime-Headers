@@ -8,6 +8,7 @@
 
 #import "NSSecureCoding.h"
 
+__attribute__((visibility("hidden")))
 @interface NullCodecConfiguration : AUPasscodeCodecConfiguration <NSSecureCoding>
 {
     float _retrievalCallbackInterval;

@@ -18,5 +18,6 @@
 - (id)objectsPassingTest:(CDUnknownBlockType)arg1;
 - (_Bool)containsObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)objectPassingTest:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) id ic_randomObject;
 @end
 

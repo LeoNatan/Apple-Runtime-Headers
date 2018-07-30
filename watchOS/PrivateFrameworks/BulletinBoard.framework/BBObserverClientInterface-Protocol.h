@@ -4,18 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class BBBulletin, BBBulletinUpdateTransaction, BBSectionInfo, BBSectionParameters, NSArray, NSNumber, NSString;
+@class BBBulletin, BBBulletinUpdateTransaction, BBSectionInfo, BBSectionParameters, NSString;
 
 @protocol BBObserverClientInterface
 - (void)getObserverDebugInfo:(void (^)(NSString *))arg1;
 - (void)noteServerReceivedResponseForBulletin:(BBBulletin *)arg1;
-- (void)noteAlertBehaviorOverrideStateChanged:(NSNumber *)arg1;
-- (void)noteAlertBehaviorOverridesChanged:(NSNumber *)arg1;
 - (void)removeSection:(NSString *)arg1;
 - (void)updateSectionParameters:(BBSectionParameters *)arg1 forSectionID:(NSString *)arg2;
 - (void)updateSectionInfo:(BBSectionInfo *)arg1;
-- (void)updateSectionOrder:(NSArray *)arg1;
-- (void)updateSectionOrderRule:(NSNumber *)arg1;
 - (void)updateBulletin:(BBBulletinUpdateTransaction *)arg1 withHandler:(void (^)(_Bool, NSError *))arg2;
 @end
 

@@ -19,7 +19,8 @@
 
 + (id)dismissActions;
 + (id)existingOverlayForDisplay:(id)arg1;
-@property(readonly, retain, nonatomic, getter=_descriptor) BKSDisplayRenderOverlayDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+@property(readonly, nonatomic, getter=_descriptor) BKSDisplayRenderOverlayDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) long long interfaceOrientation;
 @property(readonly, retain, nonatomic) CADisplay *display;
 @property(readonly, copy, nonatomic) NSString *name;
-- (void)dealloc;
 - (id)initWithDescriptor:(id)arg1;
 
 // Remaining properties

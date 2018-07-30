@@ -8,6 +8,7 @@
 
 @class AVRunLoopCondition, AVWeakReference, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetReaderOutputInternal : NSObject
 {
     AVWeakReference *weakReference;
@@ -21,6 +22,7 @@
     _Bool currentConfigurationIsFinal;
     _Bool extractionCompleteForCurrentConfiguration;
     int finished;
+    _Bool maximizePowerEfficiency;
 }
 
 @end

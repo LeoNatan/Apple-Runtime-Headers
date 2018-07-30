@@ -25,6 +25,7 @@
 - (void)internetAccountsMigrationDidFinish;
 - (void)authenticateAccount:(ACAccount *)arg1 reply:(void (^)(BOOL, NSError *))arg2;
 - (void)temporarilyAcceptCertificates:(NSArray *)arg1 forHost:(NSString *)arg2;
+- (void)updateNCMessages;
 - (void)remindersBadgeCount:(void (^)(NSNumber *))arg1;
 - (void)calendarBadgeCount:(void (^)(NSNumber *))arg1;
 - (void)attemptLocationGeocodeOnEvents;
@@ -49,6 +50,7 @@
 - (void)getUserAvailabilityForObjectID:(NSString *)arg1 maskedSharedUID:(NSString *)arg2 addresses:(NSArray *)arg3 timeRange:(CalDateRange *)arg4 reply:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg5;
 - (void)setOfficeHoursForPrincipalObjectIDString:(NSString *)arg1 officeHours:(NSData *)arg2;
 - (void)getOfficeHoursForPrincipalObjectIDString:(NSString *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
+- (void)getLastSelectedCalendarIdentifierWithReply:(void (^)(NSString *))arg1;
 - (void)setDefaultCalendarForRemindersToCalendarIdentifier:(NSString *)arg1;
 - (void)getDefaultCalendarForRemindersCalendarIdentifierWithReply:(void (^)(NSString *))arg1;
 - (void)setDefaultCalendarForEventsToCalendarIdentifier:(NSString *)arg1;

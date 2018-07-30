@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface FIAirDropListViewDataSource : FI_TTableViewDataSource <TCoalescingNodeObserverProtocol>
 {
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
-    struct TNSRef<CNContactStore *, void> _contactStore;
+    struct TNSRef<CNContactStore, void> _contactStore;
     int _animatingRefresh;
     struct TFENode _hoveringOver;
 }

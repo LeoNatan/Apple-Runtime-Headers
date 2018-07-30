@@ -7,6 +7,13 @@
 #import "MTLCommandEncoder.h"
 
 @protocol MTLBlitCommandEncoder <MTLCommandEncoder>
+- (void)optimizeIndirectCommandBuffer:(id <MTLIndirectCommandBuffer>)arg1 withRange:(struct _NSRange)arg2;
+- (void)copyIndirectCommandBuffer:(id <MTLIndirectCommandBuffer>)arg1 sourceRange:(struct _NSRange)arg2 destination:(id <MTLIndirectCommandBuffer>)arg3 destinationIndex:(unsigned long long)arg4;
+- (void)resetCommandsInBuffer:(id <MTLIndirectCommandBuffer>)arg1 withRange:(struct _NSRange)arg2;
+- (void)optimizeContentsForCPUAccess:(id <MTLTexture>)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
+- (void)optimizeContentsForCPUAccess:(id <MTLTexture>)arg1;
+- (void)optimizeContentsForGPUAccess:(id <MTLTexture>)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
+- (void)optimizeContentsForGPUAccess:(id <MTLTexture>)arg1;
 - (void)waitForFence:(id <MTLFence>)arg1;
 - (void)updateFence:(id <MTLFence>)arg1;
 - (void)copyFromBuffer:(id <MTLBuffer>)arg1 sourceOffset:(unsigned long long)arg2 toBuffer:(id <MTLBuffer>)arg3 destinationOffset:(unsigned long long)arg4 size:(unsigned long long)arg5;

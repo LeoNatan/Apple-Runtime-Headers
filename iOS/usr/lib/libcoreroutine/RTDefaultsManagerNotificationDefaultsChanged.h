@@ -13,9 +13,10 @@
     NSArray *_updatedKeys;
 }
 
-@property(retain, nonatomic) NSArray *updatedKeys; // @synthesize updatedKeys=_updatedKeys;
+@property(readonly, nonatomic) NSArray *updatedKeys; // @synthesize updatedKeys=_updatedKeys;
 - (void).cxx_destruct;
 - (id)initWithUpdatedKeys:(id)arg1;
+- (id)init;
 
 @end
 

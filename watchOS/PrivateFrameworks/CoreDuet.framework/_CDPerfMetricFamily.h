@@ -10,29 +10,19 @@
 
 @interface _CDPerfMetricFamily : NSObject
 {
-    char _region_path[31];
     NSString *_name;
     NSMutableDictionary *_perfMetrics;
-    // Error parsing type: ^{cdpm_shared_memory_region_s=c[1024c][256{cdpm_shared_memory_slot_s=[32c][8{XSPerfCounter=AQ}][1{XSPerfMetric=[32Q]}]}]}, name: _sharedMemoryRegion
 }
 
-+ (id)allPerfMetricFamilies;
-+ (id)perfMetricFamilyWithRegionPath:(id)arg1 name:(id)arg2;
-+ (id)defaultPerfMetricFamily;
-+ (id)regionPathForIdentifier:(id)arg1 signingIdentifier:(id)arg2;
-// Error parsing type for property sharedMemoryRegion:
-// Property attributes: T^{cdpm_shared_memory_region_s=c[1024c][256{cdpm_shared_memory_slot_s=[32c][8{XSPerfCounter=AQ}][1{XSPerfMetric=[32Q]}]}]},R,V_sharedMemoryRegion
-
++ (id)perfMetricFamilyWithName:(id)arg1;
 @property(readonly) NSMutableDictionary *perfMetrics; // @synthesize perfMetrics=_perfMetrics;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)description;
 - (id)allPerfMetrics;
-- (id)perfMetricWithName:(id)arg1 userInfo:(id)arg2;
-@property(readonly, nonatomic) NSString *identifier;
-@property(readonly, nonatomic) NSString *process;
-@property(readonly, nonatomic) NSString *bundleIdentifier;
-- (id)initWithRegionPath:(id)arg1 name:(id)arg2;
+- (id)perfMetricWithName:(id)arg1;
+- (id)perfMetricWithName:(id)arg1 string:(id)arg2;
+- (id)initWithName:(id)arg1;
 
 @end
 

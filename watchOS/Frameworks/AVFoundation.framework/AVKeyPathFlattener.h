@@ -11,6 +11,7 @@
 
 @class AVKeyPathDependencyManager, AVTwoPartKeyPath, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVKeyPathFlattener : NSObject <AVKeyPathDependencyHost, AVWeakObservable>
 {
     AVKeyPathDependencyManager *_dependencyManager;

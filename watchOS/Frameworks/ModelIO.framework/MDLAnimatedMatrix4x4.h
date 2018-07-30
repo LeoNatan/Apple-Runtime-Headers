@@ -18,6 +18,7 @@
 -     // Error parsing type: {?=[4]}16@0:4d8, name: float4x4AtTime:
 -     // Error parsing type: v144@0:4{?=[4]}8d136, name: setDouble4x4:atTime:
 -     // Error parsing type: v80@0:4{?=[4]}8d72, name: setFloat4x4:atTime:
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (struct VtValue)defaultVtValue;
 - (unsigned int)precision;

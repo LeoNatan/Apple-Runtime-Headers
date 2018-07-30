@@ -19,6 +19,14 @@
 + (id)sharedInstance;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
+- (void)readCDSDiagsSince:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)finishedCDSStaleTileUpdateForID:(id)arg1 tilesConsidered:(unsigned int)arg2 tileDownloadAttempts:(unsigned int)arg3 successes:(unsigned int)arg4 failures:(unsigned int)arg5;
+- (void)startedCDSStaleTileUpdateForID:(id)arg1;
+- (void)finishedCDSDownloadForRegionId:(id)arg1;
+- (void)finishedCDSDownloadForTileSet:(id)arg1 zoom:(unsigned char)arg2 tilesAtZoom:(unsigned int)arg3 tileDownloadAttempts:(unsigned int)arg4 successes:(unsigned int)arg5 failures:(unsigned int)arg6 forCDSRegionId:(id)arg7;
+- (void)startedCDSDownloadForTileSet:(id)arg1 zoom:(unsigned char)arg2 forCDSRegionId:(id)arg3;
+- (void)receivedCDSRegions:(id)arg1 forCDSRegionId:(id)arg2;
+- (void)_CDSDownloadAction:(unsigned long long)arg1 regionId:(id)arg2 tileSetName:(id)arg3 zoom:(unsigned char)arg4 totalTileCount:(unsigned int)arg5 attempts:(unsigned int)arg6 successes:(unsigned int)arg7 failures:(unsigned int)arg8 date:(id)arg9;
 - (void)fetchTrafficProbeCollectionsStartingFrom:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)recordTrafficProbeCollectionAt:(id)arg1 tripId:(id)arg2 locationCount:(int)arg3 result:(unsigned char)arg4;
 - (void)purgeAllCounts;

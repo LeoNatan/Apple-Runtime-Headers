@@ -17,6 +17,8 @@
 - (void)cam_setBorderColor:(id)arg1 width:(double)arg2;
 - (void)cam_setBorderColor:(id)arg1;
 - (void)cam_setBorder;
+- (void)cam_removeAllAnimationsOnLayer:(id)arg1 recursively:(_Bool)arg2 shouldLog:(_Bool)arg3;
+- (void)cam_removeAllAnimationsRecursively:(_Bool)arg1 shouldLog:(_Bool)arg2;
 - (void)cam_removeAnimationsForKeys:(id)arg1 setToCurrentPresentationValues:(_Bool)arg2;
 - (void)cam_removeAnimationForKey:(id)arg1 setToCurrentPresentationValue:(_Bool)arg2;
 - (void)cam_rotateWithInterfaceOrientation:(long long)arg1 animated:(_Bool)arg2;

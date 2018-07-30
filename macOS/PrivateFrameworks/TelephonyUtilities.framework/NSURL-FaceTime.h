@@ -8,6 +8,7 @@
 
 @interface NSURL (FaceTime)
 + (id)faceTimeShowInCallUIURL;
++ (id)faceTimeLaunchForOutgoingConversationURL;
 + (id)faceTimeLaunchForIncomingCallURL;
 + (id)faceTimePromptURLWithURL:(id)arg1;
 + (id)faceTimeURLWithURL:(id)arg1;
@@ -20,11 +21,13 @@
 + (id)_faceTimeURLWithHandle:(id)arg1 addressBookUID:(id)arg2 audioOnly:(BOOL)arg3;
 + (id)_faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(id)arg2 audioOnly:(BOOL)arg3;
 - (BOOL)isShowInCallUIURL;
+- (BOOL)isLaunchForOutgoingConversationURL;
 - (BOOL)isLaunchForIncomingCallURL;
 - (BOOL)isDialCallURL;
 - (id)addressBookUID;
 - (BOOL)isTelephonyURL;
 - (BOOL)hasNoPromptOption;
+- (BOOL)isFaceTimeMultiwayURL;
 - (BOOL)isFaceTimeAudioPromptURL;
 - (BOOL)isFaceTimeAudioURL;
 - (BOOL)isFaceTimePromptURL;

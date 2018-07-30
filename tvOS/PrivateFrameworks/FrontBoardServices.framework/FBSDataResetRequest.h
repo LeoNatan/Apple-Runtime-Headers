@@ -18,7 +18,7 @@
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithMode:(long long)arg1 options:(long long)arg2 reason:(id)arg3;
 
 @end

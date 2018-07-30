@@ -12,9 +12,13 @@
 
 @interface SXVideoAdViewControllerProvider : NSObject <SXVideoAdViewControllerProviding>
 {
+    id <SXVideoAdViewControllerProviding> _viewControllerProvider;
 }
 
+@property(readonly, nonatomic) __weak id <SXVideoAdViewControllerProviding> viewControllerProvider; // @synthesize viewControllerProvider=_viewControllerProvider;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *viewControllerForModalPresentation;
+- (id)initWithViewControllerProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

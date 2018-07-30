@@ -12,6 +12,5 @@
 - (void)assertionCoordinator:(PDAssertionCoordinator *)arg1 didInvalidateAssertion:(PDAssertion *)arg2;
 - (void)assertionCoordinator:(PDAssertionCoordinator *)arg1 didAcquireAssertion:(PDAssertion *)arg2;
 - (_Bool)assertionCoordinator:(PDAssertionCoordinator *)arg1 canAcquireAssertion:(PDAssertion *)arg2;
-- (_Bool)assertionCoordinator:(PDAssertionCoordinator *)arg1 assertionExistsOfType:(unsigned long long)arg2;
 @end
 

@@ -39,27 +39,12 @@ struct CGSize {
     double _field2;
 };
 
-struct IPCMessage;
-
-struct NEAgentFilterPluginCallbacks {
-    CDUnknownFunctionPointerType PluginInit;
-    CDUnknownFunctionPointerType PluginStart;
-    CDUnknownFunctionPointerType PluginStop;
-    CDUnknownFunctionPointerType PluginEnvironmentEvent;
-    CDUnknownFunctionPointerType PluginDispose;
-};
-
 struct NEIKEPacketDelegateCallbacks {
     CDUnknownFunctionPointerType registerIKEFlow;
     CDUnknownFunctionPointerType unregisterIKEFlow;
     CDUnknownFunctionPointerType sendData;
     CDUnknownFunctionPointerType invalidate;
     void *delegateHandle;
-};
-
-struct ipc_queue {
-    struct IPCMessage *_field1;
-    struct IPCMessage **_field2;
 };
 
 struct nw_protocol {
@@ -75,6 +60,20 @@ struct nw_protocol {
 struct nw_protocol_callbacks;
 
 struct nw_protocol_identifier;
+
+struct sockaddr {
+    unsigned char _field1;
+    unsigned char _field2;
+    char _field3[14];
+};
+
+struct sockaddr_storage {
+    unsigned char ss_len;
+    unsigned char ss_family;
+    char __ss_pad1[6];
+    long long __ss_align;
+    char __ss_pad2[112];
+};
 
 #pragma mark Typedef'd Structures
 

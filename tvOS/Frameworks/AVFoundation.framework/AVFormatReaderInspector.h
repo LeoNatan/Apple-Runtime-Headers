@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVAssetInspector.h>
 
+__attribute__((visibility("hidden")))
 @interface AVFormatReaderInspector : AVAssetInspector
 {
     struct OpaqueFigFormatReader *_formatReader;

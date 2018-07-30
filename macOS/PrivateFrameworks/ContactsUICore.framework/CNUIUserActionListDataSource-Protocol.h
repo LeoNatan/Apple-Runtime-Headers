@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CNContactProperty, CNFuture, CNObservable, CNUIUserActionItem, NSArray, NSImage, NSString;
+@class CNContact, CNContactProperty, CNFuture, CNObservable, CNUIUserActionItem, NSArray, NSImage, NSString;
 
 @protocol CNUIUserActionListDataSource <NSObject>
 + (NSArray *)allSupportedActionTypesWithCapabilities:(id <CNCapabilities>)arg1;
@@ -22,6 +22,7 @@
 - (NSString *)consumer:(id <CNUIUserActionListConsumer>)arg1 localizedDisplayNameForActionType:(NSString *)arg2;
 - (CNObservable *)consumer:(id <CNUIUserActionListConsumer>)arg1 actionModelsForActionType:(NSString *)arg2;
 - (id <CNCancelable>)consumer:(id <CNUIUserActionListConsumer>)arg1 actionModelsForActionType:(NSString *)arg2 handler:(void (^)(CNUIUserActionListModel *))arg3;
+- (void)setContact:(CNContact *)arg1;
 - (NSArray *)actionTypesForConsumer:(id <CNUIUserActionListConsumer>)arg1;
 @end
 

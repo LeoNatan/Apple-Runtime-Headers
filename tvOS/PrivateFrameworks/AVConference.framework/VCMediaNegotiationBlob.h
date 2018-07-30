@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     VCMediaNegotiationBlobCaptionsSettings *_captionsSettings;
     VCMediaNegotiationBlobMomentsSettings *_momentsSettings;
     NSMutableArray *_multiwayAudioStreams;
+    NSMutableArray *_multiwayVideoStreams;
     VCMediaNegotiationBlobVideoSettings *_screenSettings;
     NSString *_userAgent;
     VCMediaNegotiationBlobVideoSettings *_videoSettings;
@@ -36,8 +37,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
++ (Class)multiwayVideoStreamType;
 + (Class)multiwayAudioStreamsType;
 + (Class)bandwidthSettingsType;
+@property(retain, nonatomic) NSMutableArray *multiwayVideoStreams; // @synthesize multiwayVideoStreams=_multiwayVideoStreams;
 @property(nonatomic) unsigned int blobVersion; // @synthesize blobVersion=_blobVersion;
 @property(nonatomic) unsigned long long ntpTime; // @synthesize ntpTime=_ntpTime;
 @property(retain, nonatomic) VCMediaNegotiationBlobMomentsSettings *momentsSettings; // @synthesize momentsSettings=_momentsSettings;
@@ -61,6 +64,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)multiwayVideoStreamAtIndex:(unsigned long long)arg1;
+- (unsigned long long)multiwayVideoStreamsCount;
+- (void)addMultiwayVideoStream:(id)arg1;
+- (void)clearMultiwayVideoStreams;
 @property(nonatomic) _Bool hasBlobVersion;
 @property(nonatomic) _Bool hasNtpTime;
 @property(readonly, nonatomic) _Bool hasMomentsSettings;
@@ -83,6 +90,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasAllowDynamicMaxBitrate;
 - (void)dealloc;
 - (void)printWithTitle:(id)arg1 blobSize:(unsigned int)arg2 logFile:(void *)arg3;
+- (void)printMultiwayVideoStreamsWithLogFile:(void *)arg1;
+- (void)printMultiwayAudioStreamsWithLogFile:(void *)arg1;
 - (void)printMomentsSettingsWithLogFile:(void *)arg1;
 - (void)printCaptionsSettingsWithLogFile:(void *)arg1;
 - (void)printBandwidthSettingsWithLogFile:(void *)arg1;

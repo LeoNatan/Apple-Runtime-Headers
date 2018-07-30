@@ -28,6 +28,7 @@
 @property(nonatomic) struct CGPoint cameraOpticalOrigin; // @synthesize cameraOpticalOrigin=_cameraOpticalOrigin;
 @property(nonatomic) double cameraPixelFocalLength; // @synthesize cameraPixelFocalLength=_cameraPixelFocalLength;
 - (void)evaluate:(id)arg1;
+- (_Bool)validateVisionKitSoftLinkSymbols;
 - (id)_prepareRectangleRequestOptions;
 - (_Bool)requiresVisionFramework;
 - (void)encodeWithCoder:(id)arg1;

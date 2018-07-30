@@ -10,7 +10,6 @@
 
 @class ABCardViewPersonMapper, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewMultiValueReadOnlyTransformer : NSObject <ABCardViewMultiValueTransformer>
 {
     ABCardViewPersonMapper *_personMapper;

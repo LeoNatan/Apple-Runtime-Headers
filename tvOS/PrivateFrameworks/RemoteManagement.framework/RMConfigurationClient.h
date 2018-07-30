@@ -16,7 +16,7 @@
 }
 
 + (id)v2MDMServiceClient;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)uprootMDMConfiguration:(CDUnknownBlockType)arg1;
 - (void)notifyConfigurationChanged:(CDUnknownBlockType)arg1;

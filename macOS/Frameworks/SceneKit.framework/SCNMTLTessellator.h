@@ -6,28 +6,28 @@
 
 #import "NSObject.h"
 
-@class SCNMetalResourceManager;
+@class SCNMTLResourceManager;
 
 __attribute__((visibility("hidden")))
 @interface SCNMTLTessellator : NSObject
 {
     // Error parsing type: ^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v^v}{?=CfIC(?={?=ff}{?=f}{?=f}{?=Cb1b1})}C}, name: _geometry
-    SCNMetalResourceManager *_resourceManager;
+    SCNMTLResourceManager *_resourceManager;
     CDStruct_14ccb760 _cachedTessellator;
     id <MTLBuffer> _tessellationFactorBuffer;
 }
 
 - (void)subdivisionSurfaceTessellationDraw:(CDStruct_c3e9b8dc)arg1;
-- (void)updateSubdivisionSurfaceTessellator:(CDStruct_14ccb760)arg1 parameters:(CDStruct_f4c83048)arg2;
+- (void)updateSubdivisionSurfaceTessellator:(CDStruct_14ccb760)arg1 parameters:(CDStruct_f890dce7)arg2;
 - (void)constrainedEdgeLengthTessellationDrawMeshElement:(id)arg1 forMesh:(id)arg2 instanceCount:(unsigned long long)arg3 renderCommandEncoder:(id)arg4 renderContext:(id)arg5;
 - (void)updateConstrainedEdgeLengthTessellator:(CDStruct_14ccb760)arg1 withMesh:(id)arg2 computeCommandEncoder:(id)arg3;
 - (void)screenSpaceAdaptiveTessellationDrawMeshElement:(id)arg1 forMesh:(id)arg2 instanceCount:(unsigned long long)arg3 renderCommandEncoder:(id)arg4 renderContext:(id)arg5;
-- (void)updateScreenSpaceAdaptiveTessellator:(CDStruct_14ccb760)arg1 parameters:(CDStruct_f4c83048)arg2;
+- (void)updateScreenSpaceAdaptiveTessellator:(CDStruct_14ccb760)arg1 parameters:(CDStruct_f890dce7)arg2;
 - (void)uniformTessellationDrawMeshElement:(id)arg1 forMesh:(id)arg2 instanceCount:(unsigned long long)arg3 renderCommandEncoder:(id)arg4 renderContext:(id)arg5;
 - (void)updateUniformTessellator:(CDStruct_14ccb760)arg1;
 - (void)draw:(CDStruct_c3e9b8dc)arg1;
-- (void)update:(CDStruct_f4c83048)arg1;
-- (CDUnknownBlockType)newPipelineStateConfiguratorForMeshElement:(id)arg1 patchType:(unsigned char)arg2;
+- (void)update:(CDStruct_f890dce7)arg1;
+- (CDUnknownBlockType)newPipelineStateConfiguratorForMeshElement:(id)arg1 patchType:(unsigned char)arg2 device:(id)arg3;
 - (unsigned char)pipelineStateHashForMeshElement:(id)arg1 patchType:(unsigned char)arg2;
 - (CDStruct_9fd556a9)_pipelineStateHashForMeshElement:(id)arg1 patchType:(unsigned char)arg2;
 - (void)dealloc;

@@ -9,7 +9,7 @@
 @interface ARNeutralFaceGeometry : NSObject
 {
     vector_1cb3ea33 _verticesVector;
-    vector_e654105b _texCoordinatesVector;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _texCoordinatesVector;
     vector_00df4d9c _trianglesIndicesVector;
 }
 

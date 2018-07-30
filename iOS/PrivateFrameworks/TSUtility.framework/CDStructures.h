@@ -37,18 +37,6 @@ struct SFUZipEndOfCentralDirectory {
     long long _field3;
 };
 
-struct TSMTraceRecordHeader_s {
-    unsigned char _field1;
-    unsigned char _field2;
-    unsigned short _field3;
-    struct timeval _field4;
-};
-
-struct TSMTraceRecord_s {
-    struct TSMTraceRecordHeader_s _field1;
-    char _field2[0];
-};
-
 struct TSUCustomFormat {
     struct ObjcSharedPtr<NSString> _field1;
     int _field2;

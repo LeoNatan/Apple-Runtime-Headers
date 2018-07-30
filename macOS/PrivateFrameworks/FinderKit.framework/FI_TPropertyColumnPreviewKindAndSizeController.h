@@ -9,17 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface FI_TPropertyColumnPreviewKindAndSizeController : FI_TPropertyTextFieldController
 {
-    struct TNSRef<FI_IPropertyValueExtractor *, void> _kindExtractor;
-    struct TNSRef<FI_IPropertyValueExtractor *, void> _sizeExtractor;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)defaultValue;
-- (_Bool)needsUpdateForProperty:(unsigned int)arg1;
-- (void)flush;
-- (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
-- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 - (void)initCommon;
 
 @end

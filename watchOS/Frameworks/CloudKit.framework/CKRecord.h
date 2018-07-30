@@ -40,6 +40,7 @@
     NSData *_chainParentPublicKeyID;
     NSArray *_tombstonedPublicKeyIDs;
     NSURL *_mutableURL;
+    NSString *_displayedHostname;
     CKRecordValueStore *_valueStore;
     CKEncryptedRecordValueStore *_encryptedValueStore;
     NSString *_modifiedByDevice;
@@ -61,7 +62,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)accessInstanceVariablesDirectly;
-+ (id)shareURLWithShortToken:(id)arg1 shareTitle:(id)arg2 shareType:(id)arg3 containerID:(id)arg4;
++ (id)shareURLWithShortToken:(id)arg1 shareTitle:(id)arg2 shareType:(id)arg3 containerID:(id)arg4 displayedHostname:(id)arg5;
 + (id)decryptFullToken:(id)arg1 shortSharingTokenData:(id)arg2;
 + (id)encryptFullToken:(id)arg1 shortSharingTokenData:(id)arg2;
 + (id)fullTokenFromBaseToken:(id)arg1 privateToken:(id)arg2;
@@ -90,6 +91,7 @@
 @property(nonatomic) _Bool trackChanges; // @synthesize trackChanges=_trackChanges;
 @property(retain, nonatomic) CKEncryptedRecordValueStore *encryptedValueStore; // @synthesize encryptedValueStore=_encryptedValueStore;
 @property(retain, nonatomic) CKRecordValueStore *valueStore; // @synthesize valueStore=_valueStore;
+@property(copy, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(copy, nonatomic) NSURL *mutableURL; // @synthesize mutableURL=_mutableURL;
 @property(retain, nonatomic) NSArray *tombstonedPublicKeyIDs; // @synthesize tombstonedPublicKeyIDs=_tombstonedPublicKeyIDs;
 @property(retain, nonatomic) NSData *chainParentPublicKeyID; // @synthesize chainParentPublicKeyID=_chainParentPublicKeyID;
@@ -132,6 +134,7 @@
 - (_Bool)_checkProperties:(_Bool)arg1 encryptedStore:(_Bool)arg2 withValueCheckBlock:(CDUnknownBlockType)arg3;
 - (id)allTokens;
 - (id)_allStrings;
+- (id)allValues;
 - (id)allKeys;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
@@ -158,6 +161,7 @@
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy, nonatomic) NSURL *URL;
+@property(readonly, nonatomic) NSURL *uncachedURL;
 @property(readonly, nonatomic) NSString *shortToken;
 - (id)decryptFullToken:(id)arg1;
 @property(readonly, nonatomic) NSData *encryptedFullTokenData;

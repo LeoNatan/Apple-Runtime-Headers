@@ -6,15 +6,15 @@
 
 #import "NSObject.h"
 
-#import "FCAppConfigurationObserving.h"
 #import "FCContentContext.h"
+#import "FCCoreConfigurationObserving.h"
 #import "FCNetworkReachabilityRequirementObserving.h"
 
-@class FCAppConfigurationManager, FCArticleController, FCAssetManager, FCContentContextInternal, FCFlintResourceManager, FCNetworkBehaviorMonitor, FCTagController, NSString, NSURL;
+@class FCArticleController, FCAssetManager, FCContentContextInternal, FCContextConfiguration, FCFlintResourceManager, FCNetworkBehaviorMonitor, FCTagController, NSString, NSURL;
 
-@interface FCContentContext : NSObject <FCNetworkReachabilityRequirementObserving, FCAppConfigurationObserving, FCContentContext>
+@interface FCContentContext : NSObject <FCNetworkReachabilityRequirementObserving, FCCoreConfigurationObserving, FCContentContext>
 {
-    FCAppConfigurationManager *_appConfigurationManager;
+    id <FCCoreConfigurationManager> _configurationManager;
     FCArticleController *_articleController;
     FCAssetManager *_assetManager;
     FCFlintResourceManager *_flintResourceManager;
@@ -22,6 +22,8 @@
     FCNetworkBehaviorMonitor *_networkBehaviorMonitor;
     id <FCPPTContext> _pptContext;
     id <FCBackgroundTaskable> _backgroundTaskable;
+    id <FCWebArchiveSource> _webArchiveSource;
+    FCContextConfiguration *_contextConfiguration;
     NSString *_contentDirectory;
     NSURL *_assetCacheDirectoryURL;
     NSURL *_webArchiveCacheDirectoryURL;
@@ -35,28 +37,33 @@
 @property(retain, nonatomic) NSURL *webArchiveCacheDirectoryURL; // @synthesize webArchiveCacheDirectoryURL=_webArchiveCacheDirectoryURL;
 @property(retain, nonatomic) NSURL *assetCacheDirectoryURL; // @synthesize assetCacheDirectoryURL=_assetCacheDirectoryURL;
 @property(copy, nonatomic) NSString *contentDirectory; // @synthesize contentDirectory=_contentDirectory;
+@property(copy, nonatomic) FCContextConfiguration *contextConfiguration; // @synthesize contextConfiguration=_contextConfiguration;
 @property(readonly, nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
 @property(readonly, nonatomic) id <FCPPTContext> pptContext; // @synthesize pptContext=_pptContext;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 - (void).cxx_destruct;
-- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
+- (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (void)ppt_overrideFeedEndpoint:(long long)arg1;
+- (id)recordTreeSourceWithRecordSources:(id)arg1;
+- (id)recordSourceWithSchema:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *contentEnvironmentToken;
+- (id)webArchiveSourceAllowingNil;
+@property(retain, nonatomic) id <FCWebArchiveSource> webArchiveSource; // @synthesize webArchiveSource=_webArchiveSource;
 @property(readonly, nonatomic) FCFlintResourceManager *flintResourceManager; // @synthesize flintResourceManager=_flintResourceManager;
 @property(readonly, nonatomic) FCTagController *tagController; // @synthesize tagController=_tagController;
 @property(readonly, nonatomic) FCArticleController *articleController; // @synthesize articleController=_articleController;
 @property(readonly, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
-@property(readonly, nonatomic) FCAppConfigurationManager *appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
+- (id)news_core_ConfigurationManager;
+@property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager;
+@property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(readonly, copy, nonatomic) NSString *supportedContentStoreFrontID;
 @property(readonly, copy, nonatomic) NSString *contentStoreFrontID;
 - (void)_updateReachabilityGivenRequirements;
 - (void)networkReachabilityRequirementDidBecomeDirty:(id)arg1;
 - (void)dealloc;
-- (id)initWithContentDatabase:(id)arg1 contentHostDirectory:(id)arg2 networkBehaviorMonitor:(id)arg3 setupExcerptURLProtocol:(_Bool)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 backgroundTaskable:(id)arg7 pptContext:(id)arg8;
-- (id)initWithAppConfigurationManager:(id)arg1 contentHostDirectory:(id)arg2 networkBehaviorMonitor:(id)arg3 setupExcerptURLProtocol:(_Bool)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 backgroundTaskable:(id)arg7 pptContext:(id)arg8;
-- (id)initWithAppConfigurationManager:(id)arg1 contentHostDirectory:(id)arg2 desiredHeadlineFieldOptions:(unsigned long long)arg3 feedUsage:(long long)arg4 backgroundTaskable:(id)arg5 pptContext:(id)arg6;
-- (id)initWithContentHostDirectory:(id)arg1 networkBehaviorMonitor:(id)arg2 desiredHeadlineFieldOptions:(unsigned long long)arg3 feedUsage:(long long)arg4 backgroundTaskable:(id)arg5 pptContext:(id)arg6;
+- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentDatabase:(id)arg3 contentHostDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(_Bool)arg6 desiredHeadlineFieldOptions:(unsigned long long)arg7 feedUsage:(long long)arg8 backgroundTaskable:(id)arg9 pptContext:(id)arg10;
+- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentHostDirectory:(id)arg3 networkBehaviorMonitor:(id)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 backgroundTaskable:(id)arg7 pptContext:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

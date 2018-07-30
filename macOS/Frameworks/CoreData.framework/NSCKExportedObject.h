@@ -4,21 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <CoreData/NSManagedObject.h>
 
 @class NSCKExportOperation, NSNumber, NSString;
 
 __attribute__((visibility("hidden")))
-@interface NSCKExportedObject : NSObject
+@interface NSCKExportedObject : NSManagedObject
 {
-    NSString *_ckRecordName;
-    NSNumber *_changeType;
-    NSCKExportOperation *_operation;
 }
 
-@property(readonly, nonatomic) NSCKExportOperation *operation; // @synthesize operation=_operation;
-@property(readonly, nonatomic) NSNumber *changeType; // @synthesize changeType=_changeType;
-@property(readonly, nonatomic) NSString *ckRecordName; // @synthesize ckRecordName=_ckRecordName;
+@property(nonatomic) long long changeType;
+@property(nonatomic) unsigned long long type;
+
+// Remaining properties
+@property(retain, nonatomic) NSNumber *changeTypeNum; // @dynamic changeTypeNum;
+@property(retain, nonatomic) NSString *ckRecordName; // @dynamic ckRecordName;
+@property(retain, nonatomic) NSCKExportOperation *operation; // @dynamic operation;
+@property(retain, nonatomic) NSNumber *typeNum; // @dynamic typeNum;
+@property(retain, nonatomic) NSString *zoneName; // @dynamic zoneName;
 
 @end
 

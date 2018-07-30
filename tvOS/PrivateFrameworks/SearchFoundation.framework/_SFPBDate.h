@@ -13,9 +13,6 @@
 
 @interface _SFPBDate : PBCodable <_SFPBDate, NSSecureCoding>
 {
-    struct {
-        unsigned int secondsSince1970:1;
-    } _has;
     double _secondsSince1970;
 }
 
@@ -28,7 +25,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasSecondsSince1970;
 - (id)initWithNSDate:(id)arg1;
 
 // Remaining properties

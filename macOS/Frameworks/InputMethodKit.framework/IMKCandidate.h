@@ -12,12 +12,20 @@
 
 @interface IMKCandidate : NSObject <IMKCandidate>
 {
+    NSString *_annotation;
     NSString *_text;
 }
 
++ (id)candidateWithText:(id)arg1 annotation:(id)arg2;
 + (id)candidateWithText:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
+@property(copy, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *axHelpString;
+@property(readonly, nonatomic) NSString *axValueString;
+- (BOOL)isEqual:(id)arg1;
+- (id)stringIdentifier;
+- (id)initWithText:(id)arg1 annotation:(id)arg2;
 - (id)initWithText:(id)arg1;
 - (id)init;
 

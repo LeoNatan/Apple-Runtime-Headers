@@ -6,8 +6,9 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSCell, NSEvent, NSIndexSet, NSMutableDictionary, NSString, NSTableColumn, NSTableDragInfo, NSViewDynamicToolTipManager, _NSCellTrackingData, _NSTableRowHeightStorage, _NSTypeSelectData;
+@class NSArray, NSCell, NSEvent, NSIndexSet, NSMutableDictionary, NSString, NSTableColumn, NSTableDragInfo, NSThemeFrame, NSViewDynamicToolTipManager, NSVisualEffectView, _NSCellTrackingData, _NSTableRowHeightStorage, _NSTypeSelectData;
 
+__attribute__((visibility("hidden")))
 @interface _NSTableViewReserved : NSObject
 {
     NSIndexSet *selectionChanging;
@@ -73,12 +74,15 @@
     long long _rowSizeStyle;
     NSViewDynamicToolTipManager *_dynamicToolTipManager;
     long long _selectionBlendingMode;
+    NSVisualEffectView *_observedVisualEffectView;
+    NSThemeFrame *_observedThemeFrame;
     struct {
         unsigned int calledDrawRow:1;
         unsigned int copyPreparedCell:1;
         unsigned int excludeFloatingGroupRow:1;
         unsigned int subclassOverridesHighlightSelectionInClipRect:1;
         unsigned int subclassOverridesDrawRow:1;
+        unsigned int subclassOverridesIsOpaque:1;
         unsigned int calledBeginUpdatesOnRowData:1;
         unsigned int groupRowStyle:2;
         unsigned int gridStyleMask:4;

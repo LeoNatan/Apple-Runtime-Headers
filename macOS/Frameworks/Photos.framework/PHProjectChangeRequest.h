@@ -19,6 +19,9 @@
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(retain, nonatomic) RDAlbum *mutableModel; // @synthesize mutableModel=_mutableModel;
 - (void).cxx_destruct;
+- (void)removeAssets:(id)arg1;
+- (void)setProjectPreviewImage:(id)arg1;
+- (id)_tiffDataForImage:(id)arg1 size:(struct CGSize)arg2;
 @property(copy, nonatomic) NSString *title;
 - (void)setKeyAsset:(id)arg1;
 @property(copy, nonatomic) NSData *projectExtensionData;

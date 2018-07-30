@@ -13,8 +13,8 @@
 @interface ArouetScrollWheelView : UIView <UIScrollViewDelegate>
 {
     NSMutableArray *_reusableLabelsQueue;
-    NSMutableDictionary *_usedLabels;
-    unsigned int _numberOfRows;
+    NSMutableDictionary *_labelsInUse;
+    int _numberOfRows;
     float _scrollWheelLabelHeight;
     CAGradientLayer *_maskLayer;
     _Bool _loaded;
@@ -27,12 +27,10 @@
     UIFont *_font;
     UIColor *_fontColor;
     ArouetCandidatesScrollView *_scrollView;
-    float _scrollWheelLabelPageSize;
     NSTimer *_scrollCommitTimer;
 }
 
 @property(retain, nonatomic) NSTimer *scrollCommitTimer; // @synthesize scrollCommitTimer=_scrollCommitTimer;
-@property(nonatomic) float scrollWheelLabelPageSize; // @synthesize scrollWheelLabelPageSize=_scrollWheelLabelPageSize;
 @property(retain, nonatomic) ArouetCandidatesScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) UIColor *fontColor; // @synthesize fontColor=_fontColor;
@@ -44,8 +42,10 @@
 @property(nonatomic) __weak id <ArouetScrollWheelViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)_alertDelegateDidChangeToCurrentIndex:(unsigned int)arg1;
-- (unsigned int)_numberOfRows;
+- (int)_numberOfRows;
 - (id)_titleForItemAtIndex:(unsigned int)arg1;
+- (int)_estimatedItemIndexForContentOffsetY:(float)arg1;
+- (float)_contentOffsetYForLabelAtIndex:(int)arg1;
 - (float)_yPositionForLabelAtIndex:(unsigned int)arg1;
 - (struct CGRect)_frameForLabelAtIndex:(unsigned int)arg1;
 - (id)_dequeueLabel;
@@ -53,7 +53,6 @@
 - (void)_recycleLabel:(id)arg1 forKey:(id)arg2;
 - (id)_textForLabelAtIndex:(unsigned int)arg1;
 - (void)_reuseLabelsWithRange:(struct _NSRange)arg1 contentOffset:(struct CGPoint)arg2;
-- (float)_startingLocation;
 - (void)_layoutScrollView;
 - (struct _NSRange)_visibleLabelsRange;
 - (void)_updateMetrics;

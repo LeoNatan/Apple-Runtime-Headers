@@ -114,6 +114,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)_extensionsEnabled;
 - (void)resetExtensionsState;
 - (void)disableUnsignedExtensionsIfNecessary;
+- (void)_writeExtensionsStateToKeychain;
+- (BOOL)_hasAnyEnabledExtensionsInKeychain;
 - (void)appExtensionBlacklistDidChange;
 - (void)findExtensions;
 - (void)loadEnabledExtensions;

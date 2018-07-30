@@ -27,8 +27,6 @@
 @property(readonly, nonatomic) CALayer *reflectionLayer; // @synthesize reflectionLayer=mReflectionLayer;
 @property(readonly, nonatomic) CALayer *shadowLayer; // @synthesize shadowLayer=mShadowLayer;
 - (id)textureForContext:(id)arg1;
-- (id)magicMoveAttributesWithShapeAttributes:(_Bool)arg1;
-- (void)setMagicMoveTextureAttributes:(id)arg1;
 - (id)pathSourceForSelectionHighlightBehavior;
 - (_Bool)shouldShowSelectionHighlight;
 - (_Bool)shouldHideSelectionHighlightDueToRectangularPath;

@@ -9,7 +9,7 @@
 #import "CXProviderHostProtocol.h"
 #import "CXProviderVendorProtocol.h"
 
-@class NSBundle, NSObject<OS_dispatch_queue>, NSString;
+@class NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface CXCallSource : NSObject <CXProviderHostProtocol, CXProviderVendorProtocol>
 {
@@ -28,6 +28,7 @@
 - (oneway void)actionCompleted:(id)arg1;
 - (oneway void)requestTransaction:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)reportCallWithUUID:(id)arg1 crossDeviceIdentifier:(id)arg2 changedBytesOfDataUsed:(long long)arg3;
+- (oneway void)reportCallWithUUID:(id)arg1 changedMeterLevel:(float)arg2 forDirection:(long long)arg3;
 - (oneway void)reportCallWithUUID:(id)arg1 changedFrequencyData:(id)arg2 forDirection:(long long)arg3;
 - (oneway void)reportAudioFinishedForCallWithUUID:(id)arg1;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 connectedAtDate:(id)arg2;
@@ -41,8 +42,8 @@
 @property(readonly, nonatomic, getter=isPermittedToUsePrivateAPI) _Bool permittedToUsePrivateAPI;
 @property(readonly, nonatomic, getter=isPermittedToUsePublicAPI) _Bool permittedToUsePublicAPI;
 @property(readonly, nonatomic) int processIdentifier;
-@property(readonly, copy, nonatomic) NSBundle *bundle;
-@property(readonly, copy, nonatomic) NSString *displayName;
+@property(readonly, copy, nonatomic) NSURL *bundleURL;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) id <CXProviderVendorProtocol> vendorProtocolDelegate;
 @property(readonly, copy) NSString *description;

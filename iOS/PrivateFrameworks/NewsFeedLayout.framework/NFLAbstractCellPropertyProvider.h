@@ -19,6 +19,7 @@
     NSString *_plistName;
 }
 
++ (id)plistProvider;
 + (id)publisherTitleFontSmall;
 + (id)publisherTitleFontLarge;
 @property(retain, nonatomic) NSString *plistName; // @synthesize plistName=_plistName;

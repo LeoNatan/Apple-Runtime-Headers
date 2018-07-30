@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADShadowEffect.h>
 
-__attribute__((visibility("hidden")))
 @interface OADPresetShadowEffect : OADShadowEffect
 {
     int mPresetShadowType;

@@ -81,6 +81,7 @@
 - (_Bool)canHelpRestoreZoneName:(id)arg1;
 - (void)loadLocalCachesFromStore;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (void)handleSyncCompletion;
 - (void)manualDirty;
 @property(readonly, nonatomic, getter=isDirty) _Bool dirty;
 - (void)forceSyncWithCompletion:(CDUnknownBlockType)arg1;

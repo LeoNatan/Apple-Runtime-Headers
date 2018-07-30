@@ -16,6 +16,7 @@
     NMUNowPlayingIndicatorView *_indicatorView;
     NTKNowPlayingIndicatorProvider *_imageProvider;
     UIColor *_color;
+    _Bool _colorHasBeenUpdated;
     UIColor *_overrideColor;
 }
 

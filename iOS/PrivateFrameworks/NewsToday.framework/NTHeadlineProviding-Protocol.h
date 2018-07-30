@@ -20,6 +20,7 @@
 @property(readonly, copy, nonatomic) NSObject<NTHeadlineAdElement> *adElement;
 @property(readonly, copy, nonatomic) NSObject<NTHeadlineAnalyticsElementProviding> *analyticsElement;
 @property(readonly, nonatomic, getter=isBoundToContext) _Bool boundToContext;
+@property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) _Bool hiddenFromAutoFavorites;
 @property(readonly, nonatomic, getter=isHiddenFromFeeds) _Bool hiddenFromFeeds;
 @property(readonly, nonatomic) _Bool supportsSavingForLater;
 @property(readonly, nonatomic) _Bool displaysWithLeadingCellAppearance;

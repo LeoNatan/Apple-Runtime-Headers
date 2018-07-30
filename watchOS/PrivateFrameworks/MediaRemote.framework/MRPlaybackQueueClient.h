@@ -6,22 +6,19 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface MRPlaybackQueueClient : NSObject
 {
-    NSMutableArray *_clients;
+    NSMutableDictionary *_controllers;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
-- (id)description;
-- (void)removeClientIfPredicate:(CDUnknownBlockType)arg1;
 - (void)_handleOriginRemovedNotification:(id)arg1;
 - (void)_handleApplicationRemovedNotification:(id)arg1;
 - (void)_handlePlayerPathRemovedNotification:(id)arg1;
-- (id)playbackQueueClientForPlayerPath:(id)arg1;
-@property(readonly, nonatomic) NSArray *playbackQueueClients;
+- (id)subscriptionControllerForPlayerPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
 

@@ -58,7 +58,7 @@
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(retain) HKNanoSyncPairedDevicesSnapshot *pairedDevicesSnapshot; // @synthesize pairedDevicesSnapshot=_pairedDevicesSnapshot;
 - (void).cxx_destruct;
-- (void)foregroundClientProcessesDidChange:(id)arg1;
+- (void)foregroundClientProcessesDidChange:(id)arg1 previouslyForegroundBundleIdentifiers:(id)arg2;
 - (void)_didReceiveChangeRequest;
 - (id)diagnosticDescription;
 - (id)_queue_nanoSyncKeyValueDomain;
@@ -77,6 +77,10 @@
 - (void)_queue_receiveAuthorizationResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_receiveAuthorizationRequest:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_requestAuthorizationForRequestRecord:(id)arg1 syncStore:(id)arg2 requestSentHandler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_queue_companionUserNotificationRequestDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
+- (void)_queue_recieveCompanionUserNotificationResponse:(id)arg1 syncStore:(id)arg2;
+- (void)_queue_recieveCompanionUserNotificationRequest:(id)arg1 syncStore:(id)arg2;
+- (void)_queue_sendCompanionUserNotificationRequest:(id)arg1 syncStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_queue_startWorkoutAppRequestDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_recieveStartWorkoutAppResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_recieveStartWorkoutAppRequest:(id)arg1 syncStore:(id)arg2;
@@ -86,7 +90,6 @@
 - (void)_watchOffWristNotification:(id)arg1;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)_workoutSamplesWereAssociated:(id)arg1;
-- (void)_achievementsWereAdded:(id)arg1;
 - (void)_userPreferencesDidChange:(id)arg1;
 - (void)_userCharacteristicsDidChange:(id)arg1;
 - (void)_unregisterForSyncTriggers;
@@ -133,6 +136,9 @@
 - (void)_logOutgoingMessageError:(id)arg1;
 - (void)_logIncomingResponse:(id)arg1;
 - (void)_logIncomingRequest:(id)arg1;
+- (void)messageCenterDidReceiveCompanionUserNotificationError:(id)arg1;
+- (void)messageCenterDidReceiveCompanionUserNotificationResponse:(id)arg1;
+- (void)messageCenterDidReceiveCompanionUserNotificationRequest:(id)arg1;
 - (void)messageCenterDidReceiveStartWorkoutAppError:(id)arg1;
 - (void)messageCenterDidReceiveStartWorkoutAppResponse:(id)arg1;
 - (void)messageCenterDidReceiveStartWorkoutAppRequest:(id)arg1;
@@ -162,8 +168,10 @@
 - (void)_addDaytonaVersionMessageHandlersToMessageCenter:(id)arg1;
 - (void)_queue_setUpMessageCentersIfNecessary;
 - (_Bool)_queue_finishInitializationAfterFirstUnlockIfNecessaryWithError:(id *)arg1;
+- (void)sendCompanionUserNotificationRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendStartWorkoutAppRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestAuthorizationForRequestRecord:(id)arg1 requestSentHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)unitTest_performWithActiveSyncStore:(CDUnknownBlockType)arg1;
 - (void)updatePairedDevicesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resetSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)waitForLastChanceSyncWithDevicePairingID:(id)arg1 timeout:(double)arg2 completion:(CDUnknownBlockType)arg3;

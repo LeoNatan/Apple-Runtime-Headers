@@ -9,11 +9,12 @@
 #import "_UNNotificationContentExtensionLegacyDelegate.h"
 #import "_UNNotificationExtensionRemoteInterface.h"
 
-@class NSString, UIViewController<UNNotificationContentExtension>;
+@class NSString, UIScrollViewDelayedTouchesBeganGestureRecognizer, UIViewController<UNNotificationContentExtension>;
 
 @interface _UNNotificationExtensionRemoteViewController : UIViewController <_UNNotificationContentExtensionLegacyDelegate, _UNNotificationExtensionRemoteInterface>
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _invalidationOnceFlag
+    UIScrollViewDelayedTouchesBeganGestureRecognizer *_touchDelayGestureRecognizer;
     _Bool _didCheckActionResponseDelegate;
     UIViewController<UNNotificationContentExtension> *_extensionViewController;
     id <_UNNotificationExtensionHostInterface> _hostService;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) UIViewController<UNNotificationContentExtension> *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)delayed:(id)arg1;
 - (void)_invalidateExtensionContext;
 - (void)_setupExtensionViewController:(id)arg1;
 - (id)notificationExtensionContext;
@@ -41,6 +43,7 @@
 - (void)_restoreInputViews;
 - (void)_preserveInputViews;
 - (void)notificationContentExtensionDismiss:(id)arg1;
+- (void)notificationContentExtensionDefaultAction:(id)arg1;
 - (void)notificationContentExtension:(id)arg1 setDismissEnabled:(_Bool)arg2;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
@@ -50,6 +53,8 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidLoad;
+- (void)loadView;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)addChildViewController:(id)arg1;
 - (void)_willAppearInRemoteViewController:(id)arg1;

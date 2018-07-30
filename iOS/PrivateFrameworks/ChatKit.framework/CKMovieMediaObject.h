@@ -23,6 +23,8 @@
     struct CGSize _pxSize;
 }
 
++ (id)playButtonPreviewForUIImage:(id)arg1 scale:(double)arg2 contentAlignmentInsets:(struct UIEdgeInsets)arg3;
++ (struct CGImage *)playButtonPreviewForCGImage:(struct CGImage *)arg1 scale:(double)arg2 isFromMe:(_Bool)arg3;
 + (_Bool)isPreviewable;
 + (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
@@ -40,14 +42,18 @@
 @property(nonatomic) _Bool hasVideoTrack; // @synthesize hasVideoTrack=_hasVideoTrack;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 - (void).cxx_destruct;
+- (_Bool)validatePreviewFormat;
+- (_Bool)generatePreviewOutOfProcess;
 - (void)updateVideoInfo;
 - (_Bool)hasNoVideoTrack;
 - (id)previewItemTitle;
 - (void)export:(id)arg1;
 - (_Bool)canExport;
 - (struct CGSize)bbSize;
+- (id)bbPreviewFillToSize:(struct CGSize)arg1;
 - (id)generateThumbnailFillToSize:(struct CGSize)arg1 contentAlignmentInsets:(struct UIEdgeInsets)arg2;
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (id)generatePreviewFromThumbnail:(id)arg1 width:(double)arg2 orientation:(BOOL)arg3;
 - (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (Class)previewBalloonViewClass;
 - (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;

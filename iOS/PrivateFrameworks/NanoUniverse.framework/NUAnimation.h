@@ -8,43 +8,44 @@
 
 @interface NUAnimation : NSObject
 {
-    // Error parsing type: , name: _from
-    // Error parsing type: , name: _to
     // Error parsing type: , name: _ctrl1
     // Error parsing type: , name: _ctrl2
     // Error parsing type: [75], name: _values
     int _valuesCount;
-    int _frameInterval;
-    float _startTime;
-    float _duration;
     float _prevTime;
     float _pauseTime;
-    float _delay;
-    unsigned long long _key;
-    id <NUAnimatable> _animatable;
     _Bool _repeat;
     _Bool _paused;
-    id <NUAnimationObserver> _observer;
+    float _startTime;
+    float _duration;
+    float _delay;
+    int _frameInterval;
     unsigned long long _function;
+    unsigned long long _key;
+    id <NUAnimatable> _animatable;
+    id <NUAnimationObserver> _observer;
+    // Error parsing type: , name: _from
+    // Error parsing type: , name: _to
 }
 
-@property(nonatomic) _Bool repeat; // @synthesize repeat=_repeat;
-@property(nonatomic) int frameInterval; // @synthesize frameInterval=_frameInterval;
 @property(nonatomic) __weak id <NUAnimationObserver> observer; // @synthesize observer=_observer;
-@property(nonatomic) unsigned long long function; // @synthesize function=_function;
-@property(retain, nonatomic) id <NUAnimatable> animatable; // @synthesize animatable=_animatable;
+@property(nonatomic) __weak id <NUAnimatable> animatable; // @synthesize animatable=_animatable;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;
-@property(nonatomic) float delay; // @synthesize delay=_delay;
+@property(nonatomic) unsigned long long function; // @synthesize function=_function;
+@property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic, getter=isRepeat) _Bool repeat; // @synthesize repeat=_repeat;
 // Error parsing type for property to:
 // Property attributes: T,N,V_to
 
 // Error parsing type for property from:
 // Property attributes: T,N,V_from
 
+@property(nonatomic) int frameInterval; // @synthesize frameInterval=_frameInterval;
+@property(nonatomic) float delay; // @synthesize delay=_delay;
 @property(nonatomic) float duration; // @synthesize duration=_duration;
 @property(nonatomic) float startTime; // @synthesize startTime=_startTime;
 - (void).cxx_destruct;
-@property(nonatomic) _Bool pause; // @dynamic pause;
+- (void)apply:(float)arg1;
 - (_Bool)update:(float)arg1;
 - (id)initWithAnimatable:(id)arg1 value:(unsigned long long)arg2 key: /* Error: Ran out of types for this method. */;
 - (id)initWithAnimatable:(id)arg1 from:(unsigned long long)arg2 to:key: /* Error: Ran out of types for this method. */;

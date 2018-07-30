@@ -6,9 +6,9 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface SKAttributeValue : NSObject <NSCoding>
+@interface SKAttributeValue : NSObject <NSSecureCoding>
 {
     long long _type;
     float floatValues[4];
@@ -19,7 +19,9 @@
 + (id)valueWithVectorFloat3: /* Error: Ran out of types for this method. */;
 + (id)valueWithVectorFloat2: /* Error: Ran out of types for this method. */;
 + (id)valueWithFloat:(float)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
+- (_Bool)isEqualToAttributeValue:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

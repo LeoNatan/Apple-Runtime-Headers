@@ -8,20 +8,27 @@
 
 #import "NSCopying.h"
 
+@class CLKDevice;
+
 @interface NTKLayoutRule : NSObject <NSCopying>
 {
     _Bool _clipsToReferenceFrame;
+    CLKDevice *_device;
     long long _horizontalLayout;
     long long _verticalLayout;
     struct CGRect _referenceFrame;
+    struct CGAffineTransform _transform;
 }
 
-+ (id)layoutRuleWithReferenceFrame:(struct CGRect)arg1 horizontalLayout:(long long)arg2 verticalLayout:(long long)arg3 clip:(_Bool)arg4;
-+ (id)layoutRuleWithReferenceFrame:(struct CGRect)arg1 horizontalLayout:(long long)arg2 verticalLayout:(long long)arg3;
++ (id)layoutRuleForDevice:(id)arg1 withReferenceFrame:(struct CGRect)arg2 horizontalLayout:(long long)arg3 verticalLayout:(long long)arg4 clip:(_Bool)arg5 transform:(struct CGAffineTransform)arg6;
++ (id)layoutRuleForDevice:(id)arg1 withReferenceFrame:(struct CGRect)arg2 horizontalLayout:(long long)arg3 verticalLayout:(long long)arg4;
+@property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(nonatomic) _Bool clipsToReferenceFrame; // @synthesize clipsToReferenceFrame=_clipsToReferenceFrame;
 @property(nonatomic) long long verticalLayout; // @synthesize verticalLayout=_verticalLayout;
 @property(nonatomic) long long horizontalLayout; // @synthesize horizontalLayout=_horizontalLayout;
 @property(nonatomic) struct CGRect referenceFrame; // @synthesize referenceFrame=_referenceFrame;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+- (void).cxx_destruct;
 - (id)description;
 - (void)validate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -34,6 +41,7 @@
 - (double)calculateLayoutFrameYOriginForBoundsSize:(struct CGSize)arg1;
 - (double)calculateLayoutFrameXOriginForBoundsSize:(struct CGSize)arg1;
 - (id)layoutRuleByConvertingToCoordinateSpaceWithFrame:(struct CGRect)arg1;
+- (id)initForDevice:(id)arg1;
 
 @end
 

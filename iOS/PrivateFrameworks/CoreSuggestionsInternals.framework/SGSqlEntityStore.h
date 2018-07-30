@@ -8,7 +8,7 @@
 
 #import "CSSearchableIndexDelegate.h"
 
-@class NSCache, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, SGBloomFilter, SGDatabaseJournal, SGJournal, SGKeyValueCacheManager, SGSpotlightContactsAdapter, SGSqliteDatabase, SGSuggestHistory;
+@class NSCache, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, SGBloomFilter, SGDatabaseJournal, SGJournal, SGKeyValueCacheManager, SGSGtoCNContactsCacheUpdateAdapter, SGSpotlightContactsAdapter, SGSqliteDatabase, SGSuggestHistory;
 
 @interface SGSqlEntityStore : NSObject <CSSearchableIndexDelegate>
 {
@@ -27,6 +27,7 @@
     // Error parsing type: {atomic_flag="_Value"AB}, name: _isClosed
     SGJournal *_journal;
     SGSpotlightContactsAdapter *_spotlightContactsAdapter;
+    SGSGtoCNContactsCacheUpdateAdapter *_sgToCNContactsCacheUpdateAdapter;
     unsigned long long _parentMessagesLimit;
     NSSet *_serializedContactEntityIDs;
     unsigned long long _serializedContactsLimit;
@@ -68,8 +69,11 @@
 + (id)defaultPath;
 + (id)defaultPathCreatingSuggestionsDirectoryIfNeeded:(_Bool)arg1;
 + (void)clearMigrationCompletedForPaths;
++ (id)cnContactIdentifiersForContact:(id)arg1;
++ (id)cnContactIdentifiersSpotlightQueryStringForContact:(id)arg1;
 + (id)journalNameForDbPath:(id)arg1;
 @property(readonly) SGKeyValueCacheManager *kvCacheManager; // @synthesize kvCacheManager=_kvCacheManager;
+@property(readonly) SGSGtoCNContactsCacheUpdateAdapter *sgToCNContactsCacheUpdateAdapter; // @synthesize sgToCNContactsCacheUpdateAdapter=_sgToCNContactsCacheUpdateAdapter;
 @property(readonly) SGSpotlightContactsAdapter *spotlightContactsAdapter; // @synthesize spotlightContactsAdapter=_spotlightContactsAdapter;
 @property(readonly, nonatomic) _Bool waitForMigrations; // @synthesize waitForMigrations=_waitForMigrations;
 @property(readonly, nonatomic) _Bool isEphemeral; // @synthesize isEphemeral=_isEphemeral;
@@ -108,13 +112,16 @@
 - (id)_filterOutOlderVersionsOfPseudoEvents:(id)arg1;
 - (id)eventFromSqlResult:(struct sqlite3_stmt *)arg1;
 - (id)contactIdsMergedWithMasterEntityId:(id)arg1;
-- (id)suggestContactsByTag:(id)arg1;
 - (id)suggestContactMatchesByContactDetailTag:(id)arg1;
 - (id)suggestContactByRecordId:(id)arg1;
+- (id)storageContactByRecordId:(id)arg1;
 - (id)suggestContactByIdentityKey:(id)arg1 parentKey:(id)arg2;
 - (id)suggestContactByKey:(id)arg1;
+- (id)storageContactByKey:(id)arg1;
 - (id)suggestContactMatchesByEmailAddress:(id)arg1;
+- (id)suggestContactMatchesByEmailAddress:(id)arg1 isMaybe:(_Bool)arg2;
 - (id)suggestContactMatchesByPhoneNumber:(id)arg1;
+- (id)suggestContactMatchesByPhoneNumber:(id)arg1 isMaybe:(_Bool)arg2;
 - (id)allContactsMasterEntityIdsLimitedTo:(unsigned long long)arg1;
 - (id)allContactsLimitedTo:(unsigned long long)arg1;
 - (id)_queryForAllContactsWithLimit;
@@ -124,17 +131,14 @@
 - (id)suggestContactMatchesWithContact:(id)arg1 limitTo:(unsigned long long)arg2;
 - (id)_rankSGContacts:(id)arg1 bySimilarityToContact:(id)arg2;
 - (double)_scoreSGContact:(id)arg1 bySimilarityToContact:(id)arg2 cnContactFullname:(id)arg3;
-- (id)_buildUnknownMatchContactMatchForStorageContact:(id)arg1 preprocessSgContact:(CDUnknownBlockType)arg2;
 - (id)_buildUnknownMatchContactMatchForSGContact:(id)arg1;
-- (id)_buildContactMatchForStorageContact:(id)arg1 fromQuery:(id)arg2 tokens:(id)arg3 matchInfo:(id)arg4 preprocessSgContact:(CDUnknownBlockType)arg5;
 - (void)filterOutRejectedDetailsFromContact:(id)arg1;
-- (id)suggestStorageContactsWithContact:(id)arg1 limitTo:(unsigned long long)arg2;
-- (struct _PASTuple3 *)suggestStorageContactsAndTokensWithQuery:(id)arg1 limitTo:(unsigned long long)arg2;
+- (id)suggestContactsWithContact:(id)arg1 limitTo:(unsigned long long)arg2;
 - (id)suggestContactsWithPrefix:(id)arg1 limitTo:(unsigned long long)arg2;
 - (id)suggestContactsByMasterEntityQuery:(id)arg1 limit:(unsigned long long)arg2 bindings:(CDUnknownBlockType)arg3;
-- (id)_storageContactsForMasterEntityIds:(id)arg1;
+- (id)_contactsForMasterEntityIds:(id)arg1;
 - (id)masterEntityIDsForMasterEntityQuery:(id)arg1 bindings:(CDUnknownBlockType)arg2;
-- (id)suggestContactByMasterEntityId:(long long)arg1;
+- (id)storageContactByMasterEntityId:(long long)arg1;
 - (_Bool)contactIsDisplayable:(id)arg1;
 - (id)parentKeysForDuplicateKey:(id)arg1;
 - (id)mostRecentParentKeyForDuplicateKey:(id)arg1;
@@ -247,7 +251,7 @@
 - (void)registerCachePrecomputationWithCTS;
 - (void)registerSentTextMessage:(id)arg1;
 - (_Bool)mayHaveSentMessageToHandle:(id)arg1;
-- (id)_normalizeHandle:(id)arg1;
+- (id)normalizeHandleForRecipientFilterAndRemoveFromDetailsCache:(id)arg1;
 - (void)registerSentMailMessage:(id)arg1;
 - (_Bool)mayHaveSentMessageToEmail:(id)arg1;
 - (_Bool)recentsContainSomeOfEmails:(id)arg1 phoneNumbers:(id)arg2 instantMessageAddresses:(id)arg3;
@@ -297,8 +301,7 @@
 - (void)_trimSerializedContacts;
 - (id)serializedEntityIds;
 - (id)loadAllSerializedContacts;
-- (id)loadSerializedContact:(id)arg1;
-- (void)deleteSerializedContact:(id)arg1;
+- (id)loadSerializedContactForId:(long long)arg1;
 - (void)deleteSerializedContactsForIdSet:(id)arg1;
 - (void)deleteSerializedContactForId:(long long)arg1;
 - (void)writeSerializedContactAndUpdateEntityIDSet:(id)arg1;
@@ -312,8 +315,8 @@
 - (id)loadContactDetailsWithWhereClause:(id)arg1 onPrep:(CDUnknownBlockType)arg2 type:(unsigned long long)arg3 dedupeAgainst:(id)arg4;
 - (id)loadEventByKey:(id)arg1;
 - (id)loadContactDetailsForRecordId:(id)arg1 type:(unsigned long long)arg2;
-- (id)loadContactByRecordId:(id)arg1;
-- (id)loadContactByRecordId:(id)arg1 error:(id *)arg2;
+- (id)loadStorageContactByRecordId:(id)arg1;
+- (id)loadStorageContactByRecordId:(id)arg1 error:(id *)arg2;
 - (id)loadContactForStorageContact:(id)arg1 usingSerializedContactCache:(_Bool)arg2;
 - (id)loadEventByRecordId:(id)arg1;
 - (id)loadEntitiesByEntityKey:(id)arg1 entityType:(long long)arg2 resolveDuplicates:(CDUnknownBlockType)arg3;
@@ -321,14 +324,19 @@
 - (id)_loadMessageByKey:(id)arg1;
 - (id)loadOriginByRecordId:(id)arg1;
 - (id)loadEntityByRecordId:(id)arg1;
+- (void)refreshSuggestionsContact:(id)arg1;
 - (void)_deltaSyncContactsWithChangeHistory:(id)arg1;
 - (void)_fullSyncContactsInBatches:(id)arg1;
-- (void)syncContactsInBatches:(id)arg1;
+- (void)syncContactsWithStore:(id)arg1;
+- (void)setHasFullSync;
+- (_Bool)needsFullSync;
+- (void)_fullSyncContactsWithStore:(id)arg1;
 - (void)clearChangeHistory:(id)arg1;
 - (void)updateCNContactMatches:(id)arg1;
 - (void)_enqueueBatchOfCNContactIds:(id)arg1;
 - (id)_popBatchOfCNContactIds;
-- (id)cnContactMatchesForRecordId:(id)arg1;
+- (id)_pendingCNContactIdsJobCache;
+- (id)cnContactMatchesForRecordId:(id)arg1 found:(_Bool *)arg2;
 - (id)loadAllPrecomputedContactMatches;
 - (id)prematchedContactIdentifiers;
 - (void)deleteAllCNContactMatchesForEntityID:(long long)arg1;
@@ -338,6 +346,7 @@
 - (id)loadCNContactMatchesForContact:(id)arg1 andGetMaxEntityId:(long long *)arg2;
 - (void)writeCNContactMatchAndUpdateSetForContact:(id)arg1 withMatches:(id)arg2 andMaxEntityID:(long long)arg3;
 - (void)writeCNContactMatchForContact:(id)arg1 withMatches:(id)arg2 andMaxEntityID:(long long)arg3;
+- (void)writeCNContactMissForRecordId:(id)arg1;
 - (long long)getMaxEntityId;
 - (void)stopJournaling;
 - (void)startJournaling;
@@ -438,6 +447,7 @@
 - (void)logConfirmPercentAfterContactConfirmation;
 - (void)_logConfirmPercentWithConfirmCount:(double)arg1 rejectCount:(double)arg2 domain:(id)arg3 suffix:(id)arg4;
 - (double)incStatsCounterWithKey:(id)arg1;
+- (double)incStatsCounterWithKey:(id)arg1 byValue:(double)arg2;
 - (id)loadStatsCounterWithKey:(id)arg1;
 - (void)storeStatsCounterWithKey:(id)arg1 value:(double)arg2;
 

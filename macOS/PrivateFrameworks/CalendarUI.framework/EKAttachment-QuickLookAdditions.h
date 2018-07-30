@@ -11,6 +11,9 @@
 @class NSString, NSURL;
 
 @interface EKAttachment (QuickLookAdditions) <QLPreviewItem>
+- (void)saveWithPanel;
+- (int)openWithApplicationURL:(id)arg1;
+@property(readonly) NSString *previewItemTitle;
 @property(readonly) NSURL *previewItemURL;
 
 // Remaining properties
@@ -18,7 +21,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) id previewItemDisplayState;
-@property(readonly) NSString *previewItemTitle;
 @property(readonly) Class superclass;
 @end
 

@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface VNFaceExpressionDetector : VNDetector
 {
     struct shared_ptr<vision::mod::LandmarkAttributes> m_FaceAttributesImpl;
-    _Bool mModelFilesWereMemmapped;
+    _Bool modelFilesWereMemmapped;
     id <VNModelFile> m_LandmarkRefinerModelFileHandle;
 }
 
@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1 error:(id *)arg2;
+- (_Bool)completeInitializationAndReturnError:(id *)arg1;
 
 @end
 

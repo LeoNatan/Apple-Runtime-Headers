@@ -9,6 +9,8 @@
 @class AVControlsContainerViewController, NSImage, NSString, NSView;
 
 @protocol AVControlsContainerViewControllerContent <NSObject>
+@property(readonly) double layoutWidth;
+@property(readonly) double minimumWidth;
 @property(readonly) BOOL movableControlsContentView;
 @property(readonly) CDStruct_83cd8af5 controlsContentViewMargin;
 @property(readonly) struct CGSize intrinsicControlsContentViewSize;

@@ -12,15 +12,23 @@
 
 @interface CNLSApplicationWorkspace : NSObject <CNLSApplicationWorkspace>
 {
+    id <CNSchedulerProvider> _schedulerProvider;
 }
 
-+ (id)launchServices;
 + (id)remoteAdapter;
++ (id)inProcessLaunchServices;
++ (id)launchServices;
+@property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
+- (void).cxx_destruct;
+- (void)openSensitiveURLInBackground:(id)arg1 withOptions:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)openSensitiveURLInBackground:(id)arg1 withOptions:(id)arg2;
 - (void)openUserActivity:(id)arg1 inApplication:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applicationsForUserActivityType:(id)arg1;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)observableForApplicationsChangedWithSchedulerProvider:(id)arg1;
+- (id)initWithSchedulerProvider:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

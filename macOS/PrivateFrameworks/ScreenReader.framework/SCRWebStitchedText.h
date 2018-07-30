@@ -6,7 +6,7 @@
 
 #import <ScreenReader/SCRTextField.h>
 
-@class NSArray, NSAttributedString, NSMutableArray, NSString;
+@class NSArray, NSAttributedString, NSMutableArray, NSString, SCRWebStitchedTextContent;
 
 __attribute__((visibility("hidden")))
 @interface SCRWebStitchedText : SCRTextField
@@ -14,14 +14,16 @@ __attribute__((visibility("hidden")))
     NSArray *_uiElements;
     NSMutableArray *_uiElementTextRanges;
     struct CGRect _bounds;
-    NSString *__stitchedTextContent;
-    NSAttributedString *__stitchedAttributedTextContent;
+    NSString *__stitchedTextValueDescription;
+    NSAttributedString *__stitchedAttributedValueDescription;
+    SCRWebStitchedTextContent *__stitchedTextContent;
 }
 
 + (id)stitchedTextForElement:(id)arg1 textChildUIElement:(id)arg2 index:(unsigned long long *)arg3;
 + (id)stitchedTextForElement:(id)arg1 textChildUIElement:(id)arg2;
-@property(copy, nonatomic) NSAttributedString *_stitchedAttributedTextContent; // @synthesize _stitchedAttributedTextContent=__stitchedAttributedTextContent;
-@property(copy, nonatomic) NSString *_stitchedTextContent; // @synthesize _stitchedTextContent=__stitchedTextContent;
+@property(retain, nonatomic) SCRWebStitchedTextContent *_stitchedTextContent; // @synthesize _stitchedTextContent=__stitchedTextContent;
+@property(copy, nonatomic) NSAttributedString *_stitchedAttributedValueDescription; // @synthesize _stitchedAttributedValueDescription=__stitchedAttributedValueDescription;
+@property(copy, nonatomic) NSString *_stitchedTextValueDescription; // @synthesize _stitchedTextValueDescription=__stitchedTextValueDescription;
 - (BOOL)elementRepresentsUIElement:(id)arg1;
 - (BOOL)shouldNavigate;
 - (BOOL)shouldMap;

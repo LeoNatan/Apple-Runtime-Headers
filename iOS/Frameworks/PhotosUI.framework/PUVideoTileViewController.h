@@ -8,20 +8,20 @@
 
 #import "PUAssetViewModelChangeObserver.h"
 #import "PUBrowsingVideoPlayerChangeObserver.h"
-#import "PUVideoPlayerViewDelegate.h"
 
-@class ISWrappedAVPlayer, NSString, PUAssetViewModel, PUBrowsingVideoPlayer, PUMediaProvider, PUVideoPlayerView;
+@class ISWrappedAVPlayer, NSString, PUAssetViewModel, PUBrowsingVideoPlayer, PUMediaProvider, PXVideoPlayerView, UIImage;
 
 __attribute__((visibility("hidden")))
-@interface PUVideoTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUVideoPlayerViewDelegate, PUBrowsingVideoPlayerChangeObserver>
+@interface PUVideoTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver>
 {
     id _playerObserver;
+    UIImage *_preloadedImage;
     _Bool _canPlayVideo;
     _Bool __isDisplayingFullQualityImage;
     int __currentImageRequestID;
     PUAssetViewModel *_assetViewModel;
     PUMediaProvider *_mediaProvider;
-    PUVideoPlayerView *__playerView;
+    PXVideoPlayerView *__playerView;
     id <PUDisplayAsset> _asset;
     PUBrowsingVideoPlayer *__browsingVideoPlayer;
     ISWrappedAVPlayer *__player;
@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setTargetSize:) struct CGSize _targetSize; // @synthesize _targetSize=__targetSize;
 @property(nonatomic, setter=_setCurrentImageRequestID:) int _currentImageRequestID; // @synthesize _currentImageRequestID=__currentImageRequestID;
 @property(retain, nonatomic, setter=_setAsset:) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
-@property(retain, nonatomic, setter=_setPlayerView:) PUVideoPlayerView *_playerView; // @synthesize _playerView=__playerView;
+@property(retain, nonatomic, setter=_setPlayerView:) PXVideoPlayerView *_playerView; // @synthesize _playerView=__playerView;
 @property(nonatomic) _Bool canPlayVideo; // @synthesize canPlayVideo=_canPlayVideo;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleBrowsingVideoPlayer:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
-- (void)videoPlayerView:(id)arg1 isReadyForDisplayDidChange:(_Bool)arg2;
+- (void)videoPlayerView:(id)arg1 isDisplayingPlaceholerDidChange:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool _isDisplayingVideo;
 - (void)_updateVideo;
 - (void)_updateImage;

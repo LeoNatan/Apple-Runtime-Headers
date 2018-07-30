@@ -6,17 +6,18 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class PKRegion;
 
-@interface SKRegion : NSObject <NSCopying, NSCoding>
+@interface SKRegion : NSObject <NSCopying, NSSecureCoding>
 {
     PKRegion *_region;
 }
 
 + (id)infiniteRegion;
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (void)containsPoints:(const float *)arg1 locationStride:(long long)arg2 results:(char *)arg3 resultsStride:(long long)arg4 count:(int)arg5;
 - (BOOL)containsPoint:(struct CGPoint)arg1;
@@ -30,6 +31,7 @@
 - (id)initWithSize:(struct CGSize)arg1;
 - (id)initWithRadius:(float)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)isEqualToRegion:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) const struct CGPath *path;

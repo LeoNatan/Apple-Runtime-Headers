@@ -11,9 +11,16 @@
 }
 
 - (unsigned int)constantOffsetAtIndex:(unsigned int)arg1;
+@property(readonly) unsigned int hashSignature;
+@property(readonly) unsigned int hashMask;
+@property(readonly) unsigned int hashOffset;
+@property(readonly) unsigned int hashValue;
 @property(readonly) unsigned int alignment; // @dynamic alignment;
 @property(readonly) unsigned int encodedLength; // @dynamic encodedLength;
 @property(readonly) _Bool bufferLayoutMatchesFrontEndLayout; // @dynamic bufferLayoutMatchesFrontEndLayout;
+- (unsigned long long)uniqueIdentifierForIndirectCommandBufferAtIndex:(unsigned int)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned int)arg3;
+- (unsigned long long)uniqueIdentifierForComputePipelineAtIndex:(unsigned int)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned int)arg3;
+- (unsigned long long)uniqueIdentifierForRenderPipelineAtIndex:(unsigned int)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned int)arg3;
 - (unsigned int)uniqueIdentifierForSamplerAtIndex:(unsigned int)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned int)arg3;
 - (unsigned int)uniqueIdentifierForTextureAtIndex:(unsigned int)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned int)arg3;
 - (void *)virtualAddressForBufferAtIndex:(unsigned int)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned int)arg3;

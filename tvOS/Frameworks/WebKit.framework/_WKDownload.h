@@ -16,6 +16,7 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+@property(readonly, nonatomic) _Bool wasUserInitiated;
 @property(readonly, copy, nonatomic) NSArray *redirectChain;
 @property(readonly, nonatomic) __weak WKWebView *originatingWebView;
 @property(readonly, nonatomic) NSURLRequest *request;

@@ -12,7 +12,6 @@
 
 @class CNScrollableContainerView, NSMutableArray, NSString, NSTableView;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionTableViewController : NSObject <NSTableViewDataSource, NSTableViewDelegate, ABCardCollectionViewPresentation>
 {
     NSTableView *_tableView;
@@ -29,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (void)tableView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
+- (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (BOOL)shouldOverwriteAnimationFlagWhenScrollingToItemAtIndex:(unsigned long long)arg1;

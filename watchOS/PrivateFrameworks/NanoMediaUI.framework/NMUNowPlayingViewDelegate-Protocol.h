@@ -11,7 +11,6 @@
 @protocol NMUNowPlayingViewDelegate <NSObject>
 
 @optional
-- (void)nowPlayingViewReceivedTapOnApplicationIcon:(NMUNowPlayingView *)arg1;
 - (void)nowPlayingViewReceivedTapOnTrackTitles:(NMUNowPlayingView *)arg1;
 @end
 

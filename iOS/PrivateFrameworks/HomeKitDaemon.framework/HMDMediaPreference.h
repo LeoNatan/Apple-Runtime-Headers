@@ -4,32 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/HMDPreference.h>
+#import "HMFPreference.h"
 
 #import "HMFObject.h"
 
-@class HMDSystemPreference, NSString;
+@class HMFSystemPreference, NSArray, NSString;
 
-@interface HMDMediaPreference : HMDPreference <HMFObject>
+@interface HMDMediaPreference : HMFPreference <HMFObject>
 {
-    HMDSystemPreference *_homeKitPreference;
+    HMFSystemPreference *_homeKitPreference;
 }
 
 + (void)load;
-@property(readonly) HMDSystemPreference *homeKitPreference; // @synthesize homeKitPreference=_homeKitPreference;
+@property(readonly) HMFSystemPreference *homeKitPreference; // @synthesize homeKitPreference=_homeKitPreference;
 - (void).cxx_destruct;
 - (id)stringValue;
 - (id)numberValue;
 - (_Bool)boolValue;
-@property(readonly, copy) HMDPreference *airPlay2Preference;
-@property(readonly, copy) HMDPreference *appleMediaPreference;
+@property(readonly, copy) HMFPreference *airPlay2Preference;
+@property(readonly, copy) HMFPreference *appleMediaPreference;
 @property(readonly, copy) NSString *propertyDescription;
 - (id)initWithKey:(id)arg1 options:(unsigned long long)arg2 defaultValue:(id)arg3;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
 @property(readonly) Class superclass;
 
 @end

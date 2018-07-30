@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_proxyShare;
-+ (CDStruct_7c9a8e9f *)_proxyNonGCPoolPointer;
 - (id)objectsAtIndexes:(id)arg1;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (void)getObjects:(id *)arg1 range:(struct _NSRange)arg2;

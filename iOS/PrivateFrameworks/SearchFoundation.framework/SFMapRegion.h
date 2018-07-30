@@ -14,7 +14,12 @@
 
 @interface SFMapRegion : NSObject <SFMapRegion, NSSecureCoding, NSCopying>
 {
-    CDStruct_d6cfdf4e _has;
+    struct {
+        unsigned int southLat:1;
+        unsigned int westLng:1;
+        unsigned int northLat:1;
+        unsigned int eastLng:1;
+    } _has;
     double _southLat;
     double _westLng;
     double _northLat;

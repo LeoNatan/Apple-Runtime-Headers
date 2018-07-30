@@ -24,7 +24,6 @@
 - (_Bool)_allowRecoveryKey;
 - (_Bool)_allowDataRecovery;
 - (_Bool)_allowFollowUps;
-- (id)_preflightContext:(id)arg1;
 - (void)generateRandomRecoveryKeyWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteRecoveryKeyWithContext:(id)arg1 uiProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)generateNewRecoveryKeyWithContext:(id)arg1 uiProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -48,7 +47,6 @@
 - (void)startCircleApplicationApprovalServerWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)repairCloudDataProtectionStateWithContext:(id)arg1 uiProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleCloudDataProtectionStateWithContext:(id)arg1 uiProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)fetchManateeAvailabilityWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithConnection:(id)arg1 entitlements:(unsigned long long)arg2 clientType:(unsigned long long)arg3;
 
 @end

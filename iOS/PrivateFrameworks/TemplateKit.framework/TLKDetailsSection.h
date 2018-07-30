@@ -14,10 +14,9 @@
     NSArray *_details;
 }
 
-@property(retain) NSArray *details; // @synthesize details=_details;
-@property(retain) TLKMultilineText *title; // @synthesize title=_title;
+@property(retain, nonatomic) NSArray *details; // @synthesize details=_details;
+@property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-- (id)observableProperties;
 
 @end
 

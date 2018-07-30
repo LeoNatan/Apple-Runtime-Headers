@@ -21,6 +21,7 @@
 }
 
 + (id)_swapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4 smallCapsBaseFont:(id)arg5;
++ (id)_eventTimeAndCountdown:(id)arg1 suppressCountdown:(_Bool)arg2 suppressCommaSeparator:(_Bool)arg3 abbreviated:(_Bool)arg4;
 + (id)extraLarge:(id)arg1;
 + (id)smallUtility:(id)arg1;
 + (id)circular:(id)arg1 isMedium:(_Bool)arg2;

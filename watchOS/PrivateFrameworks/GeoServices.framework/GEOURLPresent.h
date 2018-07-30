@@ -10,6 +10,7 @@
 
 @class GEOURLOptions, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOURLPresent : PBCodable <NSCopying>
 {
     NSMutableArray *_items;

@@ -6,6 +6,7 @@
 
 #import <ProtectedCloudStorage/PCSCKKSOperation.h>
 
+__attribute__((visibility("hidden")))
 @interface PCSCKKSOperationBlock : PCSCKKSOperation
 {
     CDUnknownBlockType _block;

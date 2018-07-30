@@ -122,7 +122,7 @@ __attribute__((visibility("hidden")))
 - (void)_cancelDownloadForEntry:(id)arg1 withError:(id)arg2;
 - (void)_cancelDownloadForEntry:(id)arg1;
 - (void)stopAllDownloads;
-- (void)startWK2DownloadForRequest:(id)arg1 mayOpenWhenDone:(BOOL)arg2 allowOverwrite:(BOOL)arg3 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg4 path:(id)arg5 tags:(id)arg6;
+- (void)startWK2DownloadForRequest:(id)arg1 mayOpenWhenDone:(BOOL)arg2 allowOverwrite:(BOOL)arg3 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg4 path:(id)arg5 tags:(id)arg6 isUsingSavePanel:(BOOL)arg7;
 - (void)startWK2DownloadForRequest:(id)arg1 mayOpenWhenDone:(BOOL)arg2 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg3;
 - (void)download:(id)arg1 didFailWithError:(id)arg2;
 - (void)downloadDidFinish:(id)arg1;

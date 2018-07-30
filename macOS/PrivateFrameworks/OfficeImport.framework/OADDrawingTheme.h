@@ -8,7 +8,6 @@
 
 @class OADColorContext, OADColorMap, OADColorScheme, OADFontScheme, OADStyleMatrix;
 
-__attribute__((visibility("hidden")))
 @interface OADDrawingTheme : NSObject
 {
     OADStyleMatrix *mStyleMatrix;
@@ -19,11 +18,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) OADColorContext *colorContext; // @synthesize colorContext=mColorContext;
 @property(readonly, nonatomic) OADFontScheme *fontScheme; // @synthesize fontScheme=mFontScheme;
 @property(readonly, nonatomic) OADStyleMatrix *styleMatrix; // @synthesize styleMatrix=mStyleMatrix;
+- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) id <OADColorPalette> colorPalette;
 @property(readonly, nonatomic) OADColorMap *colorMap;
 @property(readonly, nonatomic) OADColorScheme *colorScheme;
-- (void)dealloc;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)applyThemeOverrides:(id)arg1 colorMapOverride:(id)arg2;

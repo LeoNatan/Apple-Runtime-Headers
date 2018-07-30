@@ -8,7 +8,6 @@
 
 @class CUIPSDGradient, NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface CUIThemeSchemaRendition : CUIThemeRendition
 {
     NSDictionary *cuiInfo;
@@ -39,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForState:(unsigned short)arg1;
 - (id)typeLocalizedString;
 - (id)description;
+- (unsigned short)appearance;
 - (unsigned short)layer;
 - (unsigned short)identifier;
 - (unsigned short)keyScale;

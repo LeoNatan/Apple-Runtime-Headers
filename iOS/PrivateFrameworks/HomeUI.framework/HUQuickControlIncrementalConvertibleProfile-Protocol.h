@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@protocol HUQuickControlIncrementalConvertibleProfile <NSObject>
-- (double)percentageValueForViewValue:(id)arg1;
-- (id)viewValueForPercentageValue:(double)arg1 round:(_Bool)arg2;
+@class HFNumberValueConstraints;
 
-@optional
-@property(nonatomic) _Bool hasSecondaryValue;
+@protocol HUQuickControlIncrementalConvertibleProfile <NSObject>
+@property(readonly, nonatomic) _Bool hasSecondaryValue;
+@property(readonly, nonatomic) HFNumberValueConstraints *secondaryValueConstraints;
+@property(readonly, nonatomic) HFNumberValueConstraints *primaryValueConstraints;
 @end
 

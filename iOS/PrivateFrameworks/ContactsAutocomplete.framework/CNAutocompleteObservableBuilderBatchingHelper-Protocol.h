@@ -12,7 +12,9 @@
 - (_Bool)batchAtIndexIncludesServer:(unsigned long long)arg1;
 - (NSArray *)batchedObservables;
 - (void)addCalendarServerObservable:(CNObservable *)arg1;
+- (void)addCachedCalendarServerObservable:(CNObservable *)arg1;
 - (void)addDirectoryServerObservable:(CNObservable *)arg1;
+- (void)addCachedDirectoryServerObservable:(CNObservable *)arg1;
 - (void)addSupplementalObservable:(CNObservable *)arg1;
 - (void)addDuetObservable:(CNObservable *)arg1;
 - (void)addSuggestionsObservable:(CNObservable *)arg1;

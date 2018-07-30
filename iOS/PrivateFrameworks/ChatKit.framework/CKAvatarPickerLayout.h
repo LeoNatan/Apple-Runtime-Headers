@@ -10,7 +10,6 @@
 
 @interface CKAvatarPickerLayout : UICollectionViewLayout
 {
-    _Bool _isAnimatedLayoutChange;
     unsigned long long _layoutMode;
     id <CKAvatarPickerLayoutDelegate> _delegate;
     UICollectionViewLayoutAttributes *_titleSupplementaryAttr;
@@ -19,17 +18,8 @@
     NSArray *_cutoutAttrCollection;
     UICollectionViewLayoutAttributes *_leftShadowDecorationAttr;
     UICollectionViewLayoutAttributes *_rightShadowDecorationAttr;
-    NSArray *_fromAttrCollection;
-    NSArray *_fromSupplementaryAttrCollection;
-    NSArray *_fromCutoutAttrCollection;
-    UICollectionViewLayoutAttributes *_fromTitleSupplementaryAttr;
 }
 
-@property(nonatomic) _Bool isAnimatedLayoutChange; // @synthesize isAnimatedLayoutChange=_isAnimatedLayoutChange;
-@property(retain, nonatomic) UICollectionViewLayoutAttributes *fromTitleSupplementaryAttr; // @synthesize fromTitleSupplementaryAttr=_fromTitleSupplementaryAttr;
-@property(copy, nonatomic) NSArray *fromCutoutAttrCollection; // @synthesize fromCutoutAttrCollection=_fromCutoutAttrCollection;
-@property(retain, nonatomic) NSArray *fromSupplementaryAttrCollection; // @synthesize fromSupplementaryAttrCollection=_fromSupplementaryAttrCollection;
-@property(retain, nonatomic) NSArray *fromAttrCollection; // @synthesize fromAttrCollection=_fromAttrCollection;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *rightShadowDecorationAttr; // @synthesize rightShadowDecorationAttr=_rightShadowDecorationAttr;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *leftShadowDecorationAttr; // @synthesize leftShadowDecorationAttr=_leftShadowDecorationAttr;
 @property(copy, nonatomic) NSArray *cutoutAttrCollection; // @synthesize cutoutAttrCollection=_cutoutAttrCollection;
@@ -55,19 +45,11 @@
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (void)_setupBannerLayout;
 - (void)_setupPancakeLayout;
-- (void)_setupExpandedLayout;
-- (struct _NSRange)_collapseableRange;
-- (double)_collectionViewCollapseProgress;
-- (long long)_pancakeCount;
-- (double)_expandedBoundWidthForCount:(long long)arg1;
 - (double)_avatarBoundWidthLayoutMode:(unsigned long long)arg1;
 - (double)_avatarBoundWidth;
 - (unsigned long long)_itemCount;
 - (_Bool)_canShowShadowClipping;
 - (id)nameLayoutAttributesCollectionAtPoint:(struct CGPoint)arg1;
-@property(readonly, nonatomic) _Bool shouldFillOutFromCenter;
-- (void)cleanupAnimationCache;
-- (void)prepareForAnimation;
 - (void)invalidateLayoutAndCache;
 - (id)initWithLayoutMode:(unsigned long long)arg1;
 

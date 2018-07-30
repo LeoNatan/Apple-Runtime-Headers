@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface BCSURLAction : BCSAction
 {
     NSArray *_appLinks;
-    id <BCSCodePayload> _codePayload;
     LSApplicationProxy *_applicationProxy;
     _Bool _deviceDataIsUnavailable;
     NSURL *_appStoreSearchURLForUnsupportedScheme;
@@ -21,7 +20,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) _Bool hasPreferredAppLink; // @synthesize hasPreferredAppLink=_hasPreferredAppLink;
 - (void).cxx_destruct;
-- (_Bool)_isCodeFromQRScanner;
+- (_Bool)_isCodeFromQRScannerInCamera;
 - (_Bool)_shouldBlockHandlingURL:(id)arg1;
 - (_Bool)_shouldOpenInAppForAppLink:(id)arg1;
 - (id)_actionDescriptionWithoutTargetApplicationForURL:(id)arg1;
@@ -38,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)debugDescriptionExtraInfoDictionary;
 - (id)defaultActionTargetApplicationBundleIdentifier;
 - (id)localizedDefaultActionDescription;
+- (id)localizedDefaultActionTitle;
 - (id)url;
 - (id)urlThatCanBeOpened;
 - (id)initWithData:(id)arg1 codePayload:(id)arg2;

@@ -15,6 +15,7 @@
     // Error parsing type: AB, name: _disabled
     _Bool _wantsHTML;
     _Bool _wantsText;
+    _Bool _setupStarted;
     _Bool _setupComplete;
     _Bool _skipFileProviderItems;
     int _supportedJobs;
@@ -32,6 +33,7 @@
 @property(nonatomic) double minDate; // @synthesize minDate=_minDate;
 @property(nonatomic) _Bool skipFileProviderItems; // @synthesize skipFileProviderItems=_skipFileProviderItems;
 @property(nonatomic) _Bool setupComplete; // @synthesize setupComplete=_setupComplete;
+@property(nonatomic) _Bool setupStarted; // @synthesize setupStarted=_setupStarted;
 @property(nonatomic) _Bool wantsText; // @synthesize wantsText=_wantsText;
 @property(nonatomic) _Bool wantsHTML; // @synthesize wantsHTML=_wantsHTML;
 // Error parsing type for property requestCount:
@@ -43,6 +45,7 @@
 @property(readonly, nonatomic) NSArray *contentTypes; // @synthesize contentTypes=_contentTypes;
 @property(readonly, nonatomic) NSSet *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 - (void).cxx_destruct;
+- (void)donateRelevantActions:(id)arg1 bundleID:(id)arg2;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
@@ -54,6 +57,7 @@
 - (void)receiverRequestStart;
 @property(readonly, nonatomic) _Bool unresponsive;
 - (_Bool)canRun;
+- (_Bool)disabled;
 - (void)enableReceiver;
 - (void)disableReceiver;
 - (_Bool)_wantsContentType:(id)arg1;

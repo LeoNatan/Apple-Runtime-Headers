@@ -11,9 +11,11 @@
 }
 
 + (id)_defaultColor;
+- (void)tintColorDidChange;
 - (struct CGPoint)baselinePoint;
 - (id)effectiveTextColor;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)_updateTextColor;
 
 @end
 

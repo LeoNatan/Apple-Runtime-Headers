@@ -14,7 +14,7 @@
     NSString *_shieldText;
     NSString *_shieldLocale;
     long long _shieldType;
-    CDStruct_87ab733e _shieldColor;
+    CDStruct_b3fd5d76 _shieldColor;
     NSString *_labelText;
     NSString *_labelLocale;
     void *_transitLinkID;
@@ -24,12 +24,11 @@
 @property(readonly, nonatomic) void *transitLinkID; // @synthesize transitLinkID=_transitLinkID;
 @property(readonly, nonatomic) NSString *labelLocale; // @synthesize labelLocale=_labelLocale;
 @property(readonly, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;
-@property(readonly, nonatomic) CDStruct_87ab733e shieldColor; // @synthesize shieldColor=_shieldColor;
+@property(readonly, nonatomic) CDStruct_b3fd5d76 shieldColor; // @synthesize shieldColor=_shieldColor;
 @property(readonly, nonatomic) long long shieldType; // @synthesize shieldType=_shieldType;
 @property(readonly, nonatomic) NSString *shieldLocale; // @synthesize shieldLocale=_shieldLocale;
 @property(readonly, nonatomic) NSString *shieldText; // @synthesize shieldText=_shieldText;
 @property(readonly, nonatomic) GEOMapItemIdentifier *identifier; // @synthesize identifier=_identifier;
-- (id).cxx_construct;
 @property(readonly, nonatomic) unsigned long long featureID;
 - (id)description;
 - (void)dealloc;

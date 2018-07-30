@@ -10,6 +10,7 @@
 
 @class GEOLatLng, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOTransitAppLaunchFeedbackCollection : PBCodable <NSCopying>
 {
     double _timestamp;

@@ -37,6 +37,7 @@
 - (void)_handleServiceFailureNotification:(id)arg1;
 - (void)_handleServiceFailureForServiceID:(id)arg1 notification:(id)arg2;
 - (void)_fetchImageForAccount;
+- (BOOL)hasMailConfigured;
 - (id)appleAccount;
 - (void)handleAEEvents:(id)arg1;
 - (void)enableFailureSheetsAndShow:(BOOL)arg1;

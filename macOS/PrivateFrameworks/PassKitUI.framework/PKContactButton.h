@@ -23,6 +23,9 @@
 - (id)_buttonTitle;
 - (id)_imageGlyph;
 - (void)buttonAction:(id)arg1;
+- (id)_backgroundCirclePathInRect:(struct CGRect)arg1;
+- (void)drawFocusRingMask;
+- (struct CGRect)focusRingMaskBounds;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithType:(unsigned long long)arg1 value:(id)arg2;
 

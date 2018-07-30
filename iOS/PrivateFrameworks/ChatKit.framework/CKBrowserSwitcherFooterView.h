@@ -14,8 +14,11 @@
 
 @interface CKBrowserSwitcherFooterView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 {
-    UICollectionView *_collectionView;
     CKAppStripLayout *_appStripLayout;
+    UICollectionView *_collectionView;
+    UIView *_predictiveTypeSnapshotView;
+    UIView *_visibleView;
+    id <CKAppStripPredictiveTypeTransition> _animator;
     struct UIEdgeInsets _minifiedContentInsets;
     _Bool _isMagnified;
     _Bool _isDoingMagnificationAnimation;
@@ -26,23 +29,28 @@
     UILongPressGestureRecognizer *_touchTracker;
     _Bool _hasTouches;
     _Bool _scrollsLastUsedAppIconIntoView;
+    _Bool _hideShinyStatus;
     _Bool _minifiesOnSelection;
     id <CKBrowserSwitcherFooterViewDelegate> _delegate;
     id <CKBrowserSwitcherFooterViewDataSource> _dataSource;
+    double _snapshotVerticalOffset;
     UIView *_grayLine;
-    UIView *_bottomGrayLine;
 }
 
-@property(retain, nonatomic) UIView *bottomGrayLine; // @synthesize bottomGrayLine=_bottomGrayLine;
 @property(retain, nonatomic) UIView *grayLine; // @synthesize grayLine=_grayLine;
+@property(nonatomic) double snapshotVerticalOffset; // @synthesize snapshotVerticalOffset=_snapshotVerticalOffset;
 @property(nonatomic) _Bool minifiesOnSelection; // @synthesize minifiesOnSelection=_minifiesOnSelection;
 @property(retain, nonatomic) CKAppStripLayout *appStripLayout; // @synthesize appStripLayout=_appStripLayout;
+@property(nonatomic) _Bool hideShinyStatus; // @synthesize hideShinyStatus=_hideShinyStatus;
 @property(nonatomic) _Bool scrollsLastUsedAppIconIntoView; // @synthesize scrollsLastUsedAppIconIntoView=_scrollsLastUsedAppIconIntoView;
 @property(nonatomic) _Bool isMagnified; // @synthesize isMagnified=_isMagnified;
 @property(nonatomic) __weak id <CKBrowserSwitcherFooterViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CKBrowserSwitcherFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)collectionView;
+- (void)_updateVisibilityState;
+- (void)animateAppStripVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updatePredictiveTypeSnapshot:(id)arg1;
 - (void)reloadData;
 - (void)installedAppsChanged:(id)arg1;
 - (void)updateCollectionView:(id)arg1;
@@ -64,9 +72,12 @@
 - (void)minifyImmediately:(_Bool)arg1;
 - (void)touchTrackerTrackedTouches:(id)arg1;
 - (void)appsLongPressed:(id)arg1;
+- (double)contentHeight;
+- (void)clearSelection;
 - (void)resetScrollPosition;
 - (void)selectPluginAtIndexPath:(id)arg1;
 - (void)setInitiallySelectedPluginIfNeeded;
+@property(nonatomic) _Bool showBorders;
 - (void)layoutSubviews;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;

@@ -8,13 +8,12 @@
 
 #import "EKFrozenMeltedPair.h"
 #import "EKProtocolMutableObject.h"
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
 
-@class EKBatchChangeInfo, EKChangeSet, EKEventStore, EKFrozenObject, NSDictionary, NSManagedObjectID, NSMutableDictionary, NSString;
+@class EKBatchChangeInfo, EKChangeSet, EKEventStore, EKFrozenObject, EKObjectValidationContext, NSDictionary, NSManagedObjectID, NSMutableDictionary, NSString;
 
-@interface EKObject : NSObject <EKFrozenMeltedPair, EKProtocolMutableObject, NSCopying, NSCoding, NSMutableCopying>
+@interface EKObject : NSObject <EKFrozenMeltedPair, EKProtocolMutableObject, NSCopying, NSMutableCopying>
 {
     NSManagedObjectID *managedObjectID;
     unsigned long long _cachedHash;
@@ -23,6 +22,7 @@
     NSMutableDictionary *__cachedMeltedObjects;
     NSDictionary *_additionalFrozenProperties;
     NSMutableDictionary *__cachedValues;
+    EKObjectValidationContext *__validationContext;
     NSString *_eventStoreIdentifier;
     EKFrozenObject *_backingObject;
     EKBatchChangeInfo *_batchChangeInfo;
@@ -68,6 +68,7 @@
 + (id)objectWithObject:(id)arg1;
 + (id)actionStringsPluralDisplayName;
 + (id)actionStringsDisplayName;
++ (BOOL)_isWeakRelationMeltedObject:(id)arg1 forKey:(id)arg2;
 + (BOOL)isMeltedAndNotWeakRelationshipObject:(id)arg1 forKey:(id)arg2;
 + (id)knownImmutableKeys;
 + (id)knownDerivedRelationshipKeys;
@@ -81,6 +82,7 @@
 @property(retain, nonatomic) EKBatchChangeInfo *batchChangeInfo; // @synthesize batchChangeInfo=_batchChangeInfo;
 @property(retain, nonatomic) EKFrozenObject *backingObject; // @synthesize backingObject=_backingObject;
 @property(retain, nonatomic) NSString *eventStoreIdentifier; // @synthesize eventStoreIdentifier=_eventStoreIdentifier;
+@property(retain, nonatomic) EKObjectValidationContext *_validationContext; // @synthesize _validationContext=__validationContext;
 @property(retain, nonatomic) NSMutableDictionary *_cachedValues; // @synthesize _cachedValues=__cachedValues;
 @property(retain, nonatomic) NSDictionary *additionalFrozenProperties; // @synthesize additionalFrozenProperties=_additionalFrozenProperties;
 @property(retain, nonatomic) NSMutableDictionary *_cachedMeltedObjects; // @synthesize _cachedMeltedObjects=__cachedMeltedObjects;
@@ -102,6 +104,7 @@
 - (BOOL)isCompletelyEqual:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *semanticIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (BOOL)_validateNotDeleted:(id *)arg1;
 - (BOOL)_isPropertyUnavailable:(id)arg1 convertToFullObjectIfUnavailable:(BOOL)arg2;
@@ -119,6 +122,7 @@
 - (BOOL)_reset;
 - (void)reset;
 - (void)rollback;
+- (id)previouslySavedObject;
 - (id)changedKeysAgainstObject:(id)arg1;
 - (void)markAsCommitted;
 - (void)markAsSaved;
@@ -126,13 +130,6 @@
 - (void)markAsDeleted;
 - (void)markAsNotNew;
 - (void)markAsNew;
-- (id)_existingObjectForDecodedIdentifier:(id)arg1;
-- (BOOL)_useExistingObjectWhenDecoding;
-- (BOOL)_shouldEncodeValue:(id)arg1 forKey:(id)arg2;
-- (void)_encodeValueForKey:(id)arg1 withCoder:(id)arg2;
-- (void)encodeWithCoder:(id)arg1;
-- (void)_decodeValueForKey:(id)arg1 withCoder:(id)arg2;
-- (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) BOOL hasChanges;
@@ -157,6 +154,7 @@
 - (void)removeWithSpan:(long long)arg1;
 - (BOOL)saveWithSpan:(long long)arg1 error:(id *)arg2;
 - (void)saveWithSpan:(long long)arg1;
+- (id)privacyDescription;
 - (void)emptyMeltedCacheForKeys:(id)arg1;
 - (void)_emptyMeltedCacheForKey:(id)arg1;
 - (void)emptyMeltedCache;
@@ -203,7 +201,6 @@
 - (void)addChangesFromObject:(id)arg1 except:(id)arg2;
 - (void)addChangesFromObject:(id)arg1;
 - (id)_previousValueForKey:(id)arg1;
-- (id)previouslySavedObject;
 - (BOOL)_areOnlyChangedKeys:(id)arg1;
 - (BOOL)_isOnlyChangedKey:(id)arg1;
 - (BOOL)_hasChangesForKey:(id)arg1 checkUnsaved:(BOOL)arg2;

@@ -8,38 +8,42 @@
 
 #import "FMFSessionDelegateInternal.h"
 
-@class FMFHandle, NSArray, NSMutableDictionary, NSString, UIAlertController;
+@class FMFHandle, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, UIAlertController;
 
 @interface FMFLocationSharingViewController : PSListController <FMFSessionDelegateInternal>
 {
     _Bool _isMyLocationEnabled;
     _Bool _useFamilyCirclePhotos;
     _Bool _useFamilyCirclePhotosLoaded;
-    NSArray *_allFollowersHandles;
-    NSArray *_followersHandles;
+    _Bool _areSpecifiersLoaded;
     NSArray *_followersSpecifiers;
     NSArray *_familySpecifiers;
+    NSArray *_deviceSpecifiers;
+    NSArray *_allFollowersHandles;
+    NSArray *_followersHandles;
     NSMutableDictionary *_dsidToFamilyPhoto;
     NSArray *_hashedFamilyDsids;
-    void *_addressBook;
     FMFHandle *_lastSelectedHandle;
     NSArray *_familyMembers;
     UIAlertController *_genericErrorAlert;
+    NSObject<OS_dispatch_queue> *_specifiersQueue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *specifiersQueue; // @synthesize specifiersQueue=_specifiersQueue;
+@property(nonatomic) _Bool areSpecifiersLoaded; // @synthesize areSpecifiersLoaded=_areSpecifiersLoaded;
 @property(nonatomic) _Bool useFamilyCirclePhotosLoaded; // @synthesize useFamilyCirclePhotosLoaded=_useFamilyCirclePhotosLoaded;
 @property(nonatomic) _Bool useFamilyCirclePhotos; // @synthesize useFamilyCirclePhotos=_useFamilyCirclePhotos;
 @property(retain, nonatomic) UIAlertController *genericErrorAlert; // @synthesize genericErrorAlert=_genericErrorAlert;
 @property(retain, nonatomic) NSArray *familyMembers; // @synthesize familyMembers=_familyMembers;
 @property(nonatomic) _Bool isMyLocationEnabled; // @synthesize isMyLocationEnabled=_isMyLocationEnabled;
 @property(retain, nonatomic) FMFHandle *lastSelectedHandle; // @synthesize lastSelectedHandle=_lastSelectedHandle;
-@property(nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain, nonatomic) NSArray *hashedFamilyDsids; // @synthesize hashedFamilyDsids=_hashedFamilyDsids;
 @property(retain, nonatomic) NSMutableDictionary *dsidToFamilyPhoto; // @synthesize dsidToFamilyPhoto=_dsidToFamilyPhoto;
-@property(retain, nonatomic) NSArray *familySpecifiers; // @synthesize familySpecifiers=_familySpecifiers;
-@property(retain, nonatomic) NSArray *followersSpecifiers; // @synthesize followersSpecifiers=_followersSpecifiers;
 @property(retain, nonatomic) NSArray *followersHandles; // @synthesize followersHandles=_followersHandles;
 @property(retain, nonatomic) NSArray *allFollowersHandles; // @synthesize allFollowersHandles=_allFollowersHandles;
+@property(retain, nonatomic) NSArray *deviceSpecifiers; // @synthesize deviceSpecifiers=_deviceSpecifiers;
+@property(retain, nonatomic) NSArray *familySpecifiers; // @synthesize familySpecifiers=_familySpecifiers;
+@property(retain, nonatomic) NSArray *followersSpecifiers; // @synthesize followersSpecifiers=_followersSpecifiers;
 - (void).cxx_destruct;
 - (void)networkReachabilityUpdated:(_Bool)arg1;
 - (void)didReceiveServerError:(id)arg1;
@@ -56,7 +60,7 @@
 - (void)removeFollower:(id)arg1;
 - (void)addShareActionToContactViewController:(id)arg1;
 - (void)addRemoveActionToContactViewController:(id)arg1;
-- (void *)recordForHandle:(id)arg1;
+- (id)identifierForHandle:(id)arg1;
 - (id)reverseString:(id)arg1;
 - (id)stringByKeepingCharacterSet:(id)arg1 inString:(id)arg2;
 - (_Bool)phoneNumberMatches:(id)arg1 phone2:(id)arg2;
@@ -75,16 +79,19 @@
 - (id)_specifierForHandle:(id)arg1;
 - (_Bool)noMeDeviceSelected:(id)arg1;
 - (id)sortedFollowersWithCombinedRecords:(id)arg1;
+- (id)_defaultSpecifiers;
+- (void)_loadSpecifiers;
 - (void)_loadFamilyMemberPhotos;
 - (void)_loadFamilyMembers:(_Bool)arg1;
 - (id)specifiers;
-- (void)abChanged:(id)arg1;
+- (void)contactStoreDidChange:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

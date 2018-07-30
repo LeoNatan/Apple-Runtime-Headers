@@ -18,8 +18,10 @@
     id _executionTransation;
     _Bool _finished;
     _Bool _waitForRemoteToBeCancelled;
+    _Bool _nonDiscretionary;
 }
 
+@property(nonatomic) _Bool nonDiscretionary; // @synthesize nonDiscretionary=_nonDiscretionary;
 @property(nonatomic) _Bool waitForRemoteToBeCancelled; // @synthesize waitForRemoteToBeCancelled=_waitForRemoteToBeCancelled;
 @property(retain, nonatomic) NSObject<BRCancellable> *remoteOperation; // @synthesize remoteOperation=_remoteOperation;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_queue;

@@ -21,6 +21,7 @@
 
 + (id)_orderedDisplayTypeContextResults:(id)arg1;
 + (id)_minMaxStatisticsFromChartPoints:(id)arg1 dateInterval:(id)arg2;
++ (void)enumerateDisplayTypeContextsWithBlock:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 @property(retain, nonatomic) NSMutableDictionary *sampleResults; // @synthesize sampleResults=_sampleResults;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;

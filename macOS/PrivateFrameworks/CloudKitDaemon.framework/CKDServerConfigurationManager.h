@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)CKStatusReportArray;
 - (void)expireConfigurationForContext:(id)arg1;
 - (void)expireGlobalConfiguration;
+- (void)_writeOutiCloudHostnames:(id)arg1;
 - (void)_behaviorOptionsChanged:(id)arg1;
 - (void)_dropAllConfigurations;
 - (void)_reallyDropAllConfigurations;

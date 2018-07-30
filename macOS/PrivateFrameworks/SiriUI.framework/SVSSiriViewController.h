@@ -209,6 +209,7 @@ __attribute__((visibility("hidden")))
 - (void)siriSessionDidReceiveSpeechPartialResultCommand:(id)arg1;
 - (void)siriSessionDidReceiveSpeechRecognizedCommand:(id)arg1;
 - (void)siriSessionRequestsDismissal;
+- (void)siriSessionOpenApplicationWithBundleID:(id)arg1 URL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)siriSessionOpenURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)siriSessionSupportsSpeechSynthesis:(BOOL)arg1;
 - (void)siriSessionDidReceiveOpenLinkCommand:(id)arg1;

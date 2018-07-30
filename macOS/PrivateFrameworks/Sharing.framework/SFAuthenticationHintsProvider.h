@@ -38,6 +38,7 @@
 - (unsigned int)uidForUserName:(id)arg1;
 - (id)hintsProviderProxy;
 - (BOOL)connectionHasEntitlement;
+- (void)authenticateAccountWithAppleID:(id)arg1 password:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)event:(long long)arg1 eventHints:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)deactivateWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)activate:(id)arg1 userName:(id)arg2 sessionUnlocked:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;

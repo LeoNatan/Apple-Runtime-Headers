@@ -21,7 +21,9 @@
 @property(retain) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
 - (id)contactForIdentifier:(id)arg1;
+- (void)fetchContactsForIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchContactForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)cachedContactsForIdentifiers:(id)arg1;
 - (id)cachedContactForIdentifier:(id)arg1;
 - (id)init;
 

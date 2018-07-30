@@ -8,6 +8,7 @@
 
 #import "UIPDFSelectionLayer.h"
 
+__attribute__((visibility("hidden")))
 @interface UIPDFPageContentLayer : CALayer <UIPDFSelectionLayer>
 {
     CALayer *_selectionLayer;

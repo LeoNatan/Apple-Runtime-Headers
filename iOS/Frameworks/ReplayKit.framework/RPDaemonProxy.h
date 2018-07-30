@@ -25,6 +25,7 @@
 - (oneway void)setMicrophoneEnabledPersistent:(_Bool)arg1;
 - (oneway void)setHasUserConsentForMicrophone:(_Bool)arg1;
 - (oneway void)setHasUserConsentForCamera:(_Bool)arg1;
+- (oneway void)synchronousIsBroadcastingWithPreferredExtension:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (oneway void)synchronousGetCurrentState:(CDUnknownBlockType)arg1;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(_Bool)arg3;
 - (oneway void)recordingTimerDidUpdate:(id)arg1;
@@ -33,8 +34,8 @@
 - (oneway void)captureHandlerWithSample:(id)arg1 timingData:(id)arg2;
 - (oneway void)updateBroadcastURL:(id)arg1;
 - (oneway void)updateBroadcastServiceInfo:(id)arg1;
-- (oneway void)stopRecordingWithError:(id)arg1 movieURL:(id)arg2;
-- (oneway void)updateScreenRecordingState:(_Bool)arg1;
+- (oneway void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
+- (oneway void)updateScreenRecordingState;
 - (oneway void)reportCameraUsage:(int)arg1;
 - (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 - (oneway void)setMicrophoneEnabled:(_Bool)arg1;

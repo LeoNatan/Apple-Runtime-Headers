@@ -13,6 +13,8 @@
 + (id)siriui_dynamicMediumWeightBodySizeFont;
 + (id)siriui_dynamicThinWeightBodySizeFont;
 + (id)siriui_dynamicLightWeightBodySizeFont;
++ (float)siriui_preferredDynamicBodySubtextSize;
++ (float)siriui_preferredDynamicBodySize;
 + (id)siriui_dynamicTitle0Font;
 + (id)siriui_dynamicBodyFont;
 + (id)siriui_dynamicHeaderFont;

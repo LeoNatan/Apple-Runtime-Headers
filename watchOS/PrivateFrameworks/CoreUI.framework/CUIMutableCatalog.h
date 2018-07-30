@@ -16,6 +16,7 @@
 - (void)insertCGImage:(struct CGImage *)arg1 withName:(id)arg2 andDescription:(id)arg3;
 - (void)removeImageNamed:(id)arg1 scale:(float)arg2 idiom:(int)arg3 subtype:(int)arg4;
 - (void)insertCGImage:(struct CGImage *)arg1 name:(id)arg2 scale:(float)arg3 idiom:(int)arg4 subtype:(int)arg5;
+- (id)_baseImageKeyForName:(id)arg1;
 - (id)_baseKeyForName:(id)arg1;
 - (unsigned int)_storageRefForRendition:(id)arg1 representsODRContent:(_Bool *)arg2;
 - (void)dealloc;

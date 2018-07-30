@@ -8,7 +8,6 @@
 
 @class NSLock, NSMutableSet;
 
-__attribute__((visibility("hidden")))
 @interface MNVehicleDetector : NSObject
 {
     NSLock *_observerLock;

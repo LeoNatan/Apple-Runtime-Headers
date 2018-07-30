@@ -9,6 +9,7 @@
 @class FMFHandle, NSString;
 
 @protocol FMFXPCInternalServerProtocol <FMFXPCServerProtocol>
+- (oneway void)showShareMyLocationiCloudSettingsOffAlert;
 - (oneway void)getDataForPerformanceRequest:(void (^)(NSData *, NSError *))arg1;
 - (oneway void)sessionHandleReport:(void (^)(NSDictionary *))arg1;
 - (oneway void)dumpStateWithCompletion:(void (^)(NSDictionary *))arg1;

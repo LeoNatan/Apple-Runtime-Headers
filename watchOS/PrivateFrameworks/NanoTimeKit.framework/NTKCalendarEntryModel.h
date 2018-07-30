@@ -6,13 +6,14 @@
 
 #import <NanoTimeKit/NTKTimelineEntryModel.h>
 
-@class NSDate, NSString, NSURL;
+@class NSArray, NSDate, NSString, NSURL;
 
 @interface NTKCalendarEntryModel : NTKTimelineEntryModel
 {
     _Bool _displayAsTomorrow;
     _Bool _displayAsConflicting;
     _Bool _displayAsFirstInDay;
+    _Bool _overlappingDates;
     NSString *_identifier;
     NSDate *_eventStartDate;
     NSDate *_eventEndDate;
@@ -23,6 +24,7 @@
     unsigned int _overlappingEventCount;
     unsigned int _eventsInDayCount;
     NSURL *_launchURL;
+    NSArray *_eventColors;
 }
 
 + (id)_entryForTemplateDescription:(id)arg1 family:(int)arg2;
@@ -39,9 +41,13 @@
 + (id)_modularSmallCalendarImageProvider;
 + (id)smallUtility:(id)arg1;
 + (id)_swapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4 smallCapsBaseFont:(id)arg5 timeZone:(id)arg6 options:(unsigned int)arg7;
++ (id)contentForSignatureRectangular:(id)arg1;
++ (id)contentForLargeModular:(id)arg1;
 + (id)largeModular:(id)arg1;
+@property(retain, nonatomic) NSArray *eventColors; // @synthesize eventColors=_eventColors;
 @property(retain, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
 @property(nonatomic) unsigned int eventsInDayCount; // @synthesize eventsInDayCount=_eventsInDayCount;
+@property(nonatomic) _Bool overlappingDates; // @synthesize overlappingDates=_overlappingDates;
 @property(nonatomic) unsigned int overlappingEventCount; // @synthesize overlappingEventCount=_overlappingEventCount;
 @property(nonatomic) _Bool displayAsFirstInDay; // @synthesize displayAsFirstInDay=_displayAsFirstInDay;
 @property(nonatomic) _Bool displayAsConflicting; // @synthesize displayAsConflicting=_displayAsConflicting;

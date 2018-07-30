@@ -8,6 +8,7 @@
 
 @class NSImage;
 
+__attribute__((visibility("hidden")))
 @interface NSTemplatizingImageRep : NSImageRep
 {
     NSImage *_sourceImage;

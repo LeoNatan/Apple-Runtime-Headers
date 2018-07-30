@@ -43,16 +43,6 @@
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1 fractionDigits:(unsigned int)arg2;
 + (id)postfixCharacterForMagnitude:(unsigned int)arg1 unitMagnitude:(unsigned int *)arg2;
 + (id)BlankValueString;
-+ (void)resetLocale;
-+ (_Bool)localeUsesASCIIDigits;
-+ (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(_Bool)arg3;
-+ (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(_Bool)arg3 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg4;
-+ (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(_Bool)arg3;
-+ (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(_Bool)arg3 groupingSeparators:(_Bool)arg4;
-+ (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(_Bool)arg3 groupingSeparators:(_Bool)arg4 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg5;
-+ (id)_formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(_Bool)arg3 groupingSeparators:(_Bool)arg4;
-+ (id)percentSymbol;
-+ (id)PercentFormatter;
 + (id)symbolForURL:(id)arg1;
 + (id)urlForStock:(id)arg1;
 + (id)urlForStockSymbol:(id)arg1;
@@ -81,6 +71,11 @@
 @property(retain, nonatomic) NSString *companyName; // @synthesize companyName=_companyName;
 @property(retain, nonatomic) NSString *symbol; // @synthesize symbol=_symbol;
 - (void).cxx_destruct;
+- (id)formattedPriceDroppingFractionDigitsIfLengthExceeds:(unsigned long long)arg1;
+- (id)formattedChangePercent:(_Bool)arg1;
+@property(readonly, nonatomic) NSString *formattedChangePercent;
+@property(readonly, nonatomic) NSString *formattedChange;
+@property(readonly, nonatomic) NSString *formattedPrice;
 @property(readonly, nonatomic) NSString *marketStatusDescription;
 - (void)_updatePricePrecision;
 - (void)updateMetadataWithDictionary:(id)arg1 forTime:(double)arg2;
@@ -97,12 +92,9 @@
 - (_Bool)isQuoteStale;
 - (double)_updateInterval;
 - (_Bool)marketIsOpen;
-- (id)formattedChangePercent:(_Bool)arg1 includePercentSign:(_Bool)arg2;
-- (id)formattedChangePercent:(_Bool)arg1;
 - (_Bool)isIndex;
 - (_Bool)changeIsZero;
 - (_Bool)changeIsNegative;
-- (id)formattedPrice;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)archiveDictionary;
@@ -110,7 +102,6 @@
 - (id)initWithDictionary:(id)arg1;
 - (void)populateFromDictionary:(id)arg1;
 - (id)description;
-- (void)resetLocale;
 
 @end
 

@@ -29,6 +29,5 @@
 - (void)requestKeys:(NSDictionary *)arg1 withReply:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)syncKeys:(NSDictionary *)arg1 withReply:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)getAllClients:(void (^)(NSDictionary *, NSError *))arg1;
-- (void)getPCSKeyHash:(void (^)(NSData *, NSError *))arg1;
 @end
 

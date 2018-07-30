@@ -16,8 +16,8 @@
     struct CGRect _oldDocFrame;
     NSCursor *_cursor;
     id _scrollAnimationHelper;
-    struct __cvFlags {
-        unsigned int :1;
+    struct {
+        unsigned int unused:1;
         unsigned int onlyUncovered:1;
         unsigned int reflectScroll:1;
         unsigned int usedByCell:1;
@@ -80,7 +80,7 @@
 - (BOOL)_scrollInProgress;
 - (void)scrollToPoint:(struct CGPoint)arg1;
 - (BOOL)_needsClipViewAncestorDidScroll;
-- (void)_nonLayerBackedImmediateScrollToPoint:(struct CGPoint)arg1;
+- (void)_oldImmediateScrollToPoint:(struct CGPoint)arg1;
 - (void)_immediateScrollToPoint:(struct CGPoint)arg1;
 - (void)_invalidateFocusRingIfItBleedsIntoOurBounds;
 - (void)_invalidateIntersectionsWithSiblingViews;
@@ -160,6 +160,7 @@
 - (void)_pinDocRect;
 - (void)updateConstraints;
 - (unsigned long long)_effectiveAutoresizingMask;
+- (void)viewDidMoveToSuperview;
 - (void)updateLayer;
 - (Class)_classToCheckForWantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;
@@ -177,9 +178,7 @@
 - (id)_newShadowOfSize:(struct CGSize)arg1 fromOffset:(struct CGPoint)arg2 inImage:(id)arg3;
 - (void)setDrawsContentShadow:(BOOL)arg1;
 - (BOOL)drawsContentShadow;
-- (unsigned long long)_backgroundFillOperation;
 - (id)makeBackingLayer;
-- (BOOL)_canUseTiledBackingLayer;
 @property BOOL drawsBackground;
 @property(copy) NSColor *backgroundColor;
 - (BOOL)_isUsedByCell;
@@ -199,8 +198,6 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)_drawsNothing;
 - (void)setLayer:(id)arg1;
-- (id)ibShadowedSubviews;
-- (BOOL)ibHasResolved14284306;
 
 @end
 

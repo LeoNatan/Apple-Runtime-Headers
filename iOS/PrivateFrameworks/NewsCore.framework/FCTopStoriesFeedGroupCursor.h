@@ -11,7 +11,7 @@
 @interface FCTopStoriesFeedGroupCursor : FCFeedGroupEmittingCursor
 {
     _Bool _collapsed;
-    NSDate *_version;
+    NSDate *_publishDate;
     NSArray *_articleIDs;
     NSDate *_optionalStoriesLastRefreshDate;
 }
@@ -20,7 +20,7 @@
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(copy, nonatomic) NSDate *optionalStoriesLastRefreshDate; // @synthesize optionalStoriesLastRefreshDate=_optionalStoriesLastRefreshDate;
 @property(copy, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
-@property(copy, nonatomic) NSDate *version; // @synthesize version=_version;
+@property(copy, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

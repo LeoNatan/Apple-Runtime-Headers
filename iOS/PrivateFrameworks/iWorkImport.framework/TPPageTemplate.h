@@ -9,12 +9,15 @@
 #import "TPMasterDrawableProvider.h"
 #import "TSDDrawableContainerInfo.h"
 #import "TSKDocumentObject.h"
+#import "TSKModel.h"
+#import "TSKModelRootIndexProvider.h"
 #import "TSSPropertySource.h"
+#import "TSWPStorageParentStatisticsFilter.h"
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSObject<TSDContainerInfo>, NSString, TPDrawablesZOrder, TSDInfoGeometry, TSPObject<TSDOwningAttachment>;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSObject<TSDContainerInfo>, NSString, TPDrawablesZOrder, TSDFill, TSDInfoGeometry, TSPObject<TSDOwningAttachment>;
 
 __attribute__((visibility("hidden")))
-@interface TPPageTemplate : TSPObject <TSKDocumentObject, TSDDrawableContainerInfo, TPMasterDrawableProvider, TSSPropertySource>
+@interface TPPageTemplate : TSPObject <TSKDocumentObject, TSDDrawableContainerInfo, TPMasterDrawableProvider, TSSPropertySource, TSKModelRootIndexProvider, TSKModel, TSWPStorageParentStatisticsFilter>
 {
     _Bool _headersFootersMatchPreviousPage;
     _Bool _hideHeadersFooters;
@@ -22,17 +25,21 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_placeholderDrawables;
     TPDrawablesZOrder *_drawablesZOrder;
     NSString *_name;
+    TSDFill *_backgroundFill;
 }
 
 + (_Bool)isUserDefinedTag:(id)arg1;
 + (_Bool)needsObjectUUID;
 @property(nonatomic) _Bool hideHeadersFooters; // @synthesize hideHeadersFooters=_hideHeadersFooters;
+@property(retain, nonatomic) TSDFill *backgroundFill; // @synthesize backgroundFill=_backgroundFill;
 @property(nonatomic) _Bool headersFootersMatchPreviousPage; // @synthesize headersFootersMatchPreviousPage=_headersFootersMatchPreviousPage;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) TPDrawablesZOrder *drawablesZOrder; // @synthesize drawablesZOrder=_drawablesZOrder;
 @property(retain, nonatomic) NSMutableDictionary *placeholderDrawables; // @synthesize placeholderDrawables=_placeholderDrawables;
 @property(retain, nonatomic) NSMutableArray *masterDrawables; // @synthesize masterDrawables=_masterDrawables;
 - (void).cxx_destruct;
+- (_Bool)containsModelObject:(id)arg1;
+- (id)topLevelParentInfoForInfo:(id)arg1;
 - (void)removeMasterDrawable:(id)arg1 suppressDOLC:(_Bool)arg2;
 - (void)addMasterDrawables:(id)arg1 atIndex:(unsigned long long)arg2 insertContext:(id)arg3 suppressDOLC:(_Bool)arg4;
 - (void)addMasterDrawable:(id)arg1 atIndex:(unsigned long long)arg2 insertContext:(id)arg3 suppressDOLC:(_Bool)arg4;
@@ -71,6 +78,9 @@ __attribute__((visibility("hidden")))
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
+- (id)childEnumerator;
+- (long long)modelRootIndex;
+- (_Bool)statisticsShouldExcludeContainedStorage:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfDerivedPagesInDocument;
 - (unsigned long long)templatePreviewPageIndex;
 - (unsigned long long)templateIndex;

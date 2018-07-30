@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _started;
     unsigned short _serviceType;
+    struct NSMutableDictionary *_driverSnapShot;
     long long _reporterID;
     NSObject<OS_dispatch_queue> *_sessionReportingQueue;
     NSMutableArray *_aggregatedPayloadData;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableArray *aggregatedPayloadData; // @synthesize aggregatedPayloadData=_aggregatedPayloadData;
 @property(retain) NSObject<OS_dispatch_queue> *sessionReportingQueue; // @synthesize sessionReportingQueue=_sessionReportingQueue;
 @property long long reporterID; // @synthesize reporterID=_reporterID;
+@property(retain) NSMutableDictionary *driverSnapShot; // @synthesize driverSnapShot=_driverSnapShot;
 @property(nonatomic) unsigned short serviceType; // @synthesize serviceType=_serviceType;
 @property _Bool started; // @synthesize started=_started;
 - (void).cxx_destruct;

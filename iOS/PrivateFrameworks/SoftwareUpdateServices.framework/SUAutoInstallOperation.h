@@ -33,9 +33,10 @@
 - (_Bool)_isValidTillDate:(id)arg1;
 - (_Bool)_isValidForScheduling;
 - (_Bool)_isEffectivelyScheduled;
+- (void)_noteAutoInstallOperationPasscodePolicyChanged:(unsigned long long)arg1;
 - (void)_noteAutoInstallOperationIsReadyToInstall:(CDUnknownBlockType)arg1;
 - (void)_noteAutoInstallOperationDidConsent;
-- (void)_noteAutoInstallOperationDidExpire;
+- (void)_noteAutoInstallOperationDidExpireWithError:(id)arg1;
 - (void)_noteAutoInstallOperationWasCancelled;
 - (id)uniqueIdentifier;
 - (void)encodeWithCoder:(id)arg1;

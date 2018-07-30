@@ -6,6 +6,7 @@
 
 #import "NSRemoteView.h"
 
+__attribute__((visibility("hidden")))
 @interface NCRemoteViewHostRemoteView : NSRemoteView
 {
 }

@@ -9,7 +9,7 @@
 #import "GSAdditionStoring.h"
 #import "GSAdditionStoringPrivate.h"
 
-@class NSURL;
+@class NSObject<OS_dispatch_queue>, NSURL;
 
 @interface GSTemporaryStorage : NSObject <GSAdditionStoringPrivate, GSAdditionStoring>
 {
@@ -17,6 +17,7 @@
     NSURL *_documentURL;
     NSURL *_stagingURL;
     int _lockFd;
+    NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 @property(retain) NSURL *documentURL; // @synthesize documentURL=_documentURL;

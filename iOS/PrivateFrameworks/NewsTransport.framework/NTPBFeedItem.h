@@ -30,6 +30,7 @@
     _Bool _hasVideo;
     _Bool _isExplicitContent;
     _Bool _isFromBlockedStorefront;
+    _Bool _isHiddenFromAutoFavorites;
     _Bool _isPaid;
     struct {
         unsigned int contentType:1;
@@ -44,11 +45,13 @@
         unsigned int hasVideo:1;
         unsigned int isExplicitContent:1;
         unsigned int isFromBlockedStorefront:1;
+        unsigned int isHiddenFromAutoFavorites:1;
         unsigned int isPaid:1;
     } _has;
 }
 
 + (Class)topicIDsType;
+@property(nonatomic) _Bool isHiddenFromAutoFavorites; // @synthesize isHiddenFromAutoFavorites=_isHiddenFromAutoFavorites;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores *scores; // @synthesize scores=_scores;
 @property(nonatomic) long long publisherArticleVersion; // @synthesize publisherArticleVersion=_publisherArticleVersion;
 @property(nonatomic) _Bool hasVideo; // @synthesize hasVideo=_hasVideo;
@@ -76,6 +79,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsHiddenFromAutoFavorites;
 @property(readonly, nonatomic) _Bool hasScores;
 @property(nonatomic) _Bool hasPublisherArticleVersion;
 @property(nonatomic) _Bool hasHasVideo;

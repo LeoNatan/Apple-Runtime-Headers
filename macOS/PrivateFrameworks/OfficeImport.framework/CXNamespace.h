@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface CXNamespace : NSObject
 {
     const char *mUri;
@@ -21,12 +20,12 @@ __attribute__((visibility("hidden")))
 + (BOOL)isNamespaceSupported:(const char *)arg1;
 + (void)registerNamespace:(id)arg1;
 @property(retain, nonatomic) CXNamespace *fallbackNamespace; // @synthesize fallbackNamespace=mFallbackNamespace;
+- (void).cxx_destruct;
 - (const char *)fallbackUri;
 - (const char *)uri;
 - (BOOL)containsAttribute:(struct _xmlAttr *)arg1;
 - (BOOL)containsNode:(struct _xmlNode *)arg1;
 - (id)initUnsupportedNsWithUri:(const char *)arg1;
-- (void)dealloc;
 - (id)initWithUri:(const char *)arg1 fallbackNamespace:(id)arg2;
 - (id)initWithUri:(const char *)arg1;
 - (id)init;

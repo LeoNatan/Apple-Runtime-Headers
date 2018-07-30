@@ -25,6 +25,7 @@
 - (void)layoutSubviews;
 - (void)_calculateLayoutFrames;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)updateContentsForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1;
 - (void)_setUpDrawingContentView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

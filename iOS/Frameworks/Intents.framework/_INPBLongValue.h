@@ -7,32 +7,34 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBLongValue.h"
 
-@class PBUnknownFields, _INPBValueMetadata;
+@class NSString, _INPBValueMetadata;
 
-@interface _INPBLongValue : PBCodable <NSCopying>
+@interface _INPBLongValue : PBCodable <_INPBLongValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_01ef6375 _has;
     long long _value;
     _INPBValueMetadata *_valueMetadata;
-    CDStruct_01ef6375 _has;
 }
 
-+ (id)options;
-@property(nonatomic) long long value; // @synthesize value=_value;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(nonatomic) long long value; // @synthesize value=_value;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasValue;
 @property(readonly, nonatomic) _Bool hasValueMetadata;
+@property(nonatomic) _Bool hasValue;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

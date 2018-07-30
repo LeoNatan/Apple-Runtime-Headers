@@ -49,6 +49,7 @@
 - (void)scheduleArchiveJobs;
 - (void)handleFailure:(long long)arg1 forArchiveEntry:(id)arg2;
 - (BOOL)isInterrupted;
+- (void)deprecateTables;
 - (void)runActivityWithLastCompletedDate:(id)arg1;
 - (void)disable;
 - (void)enable;

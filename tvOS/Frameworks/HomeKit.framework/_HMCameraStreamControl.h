@@ -22,9 +22,9 @@
 - (void)_handleVideoStopResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
 - (void)_stopStream;
 - (void)stopStream;
-- (void)_handleVideoStreamStartResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
-- (void)_handleNegotiateStreamResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
-- (void)_startStreamWithPraeferences:(id)arg1;
+- (void)_handleVideoStreamStartResponse:(id)arg1 streamPreferences:(id)arg2 error:(id)arg3 sessionID:(id)arg4;
+- (void)_handleNegotiateStreamResponse:(id)arg1 streamPreferences:(id)arg2 error:(id)arg3 sessionID:(id)arg4;
+- (void)_startStreamWithPreferences:(id)arg1;
 - (void)startStreamWithPreferences:(id)arg1;
 - (void)_handleVideoStreamStopped:(id)arg1;
 - (void)_registerNotificationHandlers;

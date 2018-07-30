@@ -6,19 +6,21 @@
 
 #import "HMFObject.h"
 
+#import "NSCopying.h"
+#import "NSMutableCopying.h"
+
 @class HMDAccount, HMDApplicationData, NSArray, NSString, NSUUID;
 
-@interface HMDHomeData : HMFObject
+@interface HMDHomeData : HMFObject <NSCopying, NSMutableCopying>
 {
-    _Bool _accessAllowedWhenLocked;
     NSArray *_homes;
     NSArray *_accessories;
     NSUUID *_primaryHomeUUID;
     NSUUID *_lastCurrentHomeUUID;
-    long long _dataVersion;
     long long _schemaVersion;
+    long long _dataVersion;
     NSUUID *_dataTag;
-    NSArray *_uuidsOfRemovedHomes;
+    NSArray *_UUIDsOfRemovedHomes;
     NSArray *_cloudZones;
     NSArray *_incomingInvitations;
     unsigned long long _assistantGenerationCounter;
@@ -29,9 +31,12 @@
     HMDApplicationData *_applicationData;
     long long _residentEnabledState;
     HMDAccount *_account;
+    NSArray *_remoteAccounts;
+    _Bool _accessAllowedWhenLocked;
 }
 
 @property(readonly, nonatomic) _Bool accessAllowedWhenLocked; // @synthesize accessAllowedWhenLocked=_accessAllowedWhenLocked;
+@property(readonly, copy, nonatomic) NSArray *remoteAccounts; // @synthesize remoteAccounts=_remoteAccounts;
 @property(readonly, nonatomic) HMDAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) long long residentEnabledState; // @synthesize residentEnabledState=_residentEnabledState;
 @property(readonly, copy, nonatomic) HMDApplicationData *applicationData; // @synthesize applicationData=_applicationData;
@@ -42,16 +47,17 @@
 @property(readonly, nonatomic) unsigned long long assistantGenerationCounter; // @synthesize assistantGenerationCounter=_assistantGenerationCounter;
 @property(readonly, copy, nonatomic) NSArray *incomingInvitations; // @synthesize incomingInvitations=_incomingInvitations;
 @property(readonly, copy, nonatomic) NSArray *cloudZones; // @synthesize cloudZones=_cloudZones;
-@property(readonly, copy, nonatomic) NSArray *uuidsOfRemovedHomes; // @synthesize uuidsOfRemovedHomes=_uuidsOfRemovedHomes;
+@property(readonly, copy, nonatomic) NSArray *UUIDsOfRemovedHomes; // @synthesize UUIDsOfRemovedHomes=_UUIDsOfRemovedHomes;
 @property(readonly, copy, nonatomic) NSUUID *dataTag; // @synthesize dataTag=_dataTag;
-@property(readonly, nonatomic) long long schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(nonatomic) long long dataVersion; // @synthesize dataVersion=_dataVersion;
+@property(readonly, nonatomic) long long schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(readonly, copy, nonatomic) NSUUID *lastCurrentHomeUUID; // @synthesize lastCurrentHomeUUID=_lastCurrentHomeUUID;
 @property(readonly, copy, nonatomic) NSUUID *primaryHomeUUID; // @synthesize primaryHomeUUID=_primaryHomeUUID;
 @property(readonly, copy, nonatomic) NSArray *accessories; // @synthesize accessories=_accessories;
 @property(readonly, copy, nonatomic) NSArray *homes; // @synthesize homes=_homes;
 - (void).cxx_destruct;
-- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 lastCurrentHomeUUID:(id)arg4 dataVersion:(long long)arg5 schemaVersion:(long long)arg6 dataTag:(id)arg7 uuidsOfRemovedHomes:(id)arg8 cloudZones:(id)arg9 incomingInvitations:(id)arg10 assistantGenerationCounter:(unsigned long long)arg11 currentDevice:(id)arg12 pendingReasonSaved:(id)arg13 pendingUserManagementOperations:(id)arg14 unprocessedOperationIdentifiers:(id)arg15 applicationData:(id)arg16 residentEnabledState:(long long)arg17 account:(id)arg18 accessAllowedWhenLocked:(_Bool)arg19;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

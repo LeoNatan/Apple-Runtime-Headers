@@ -13,6 +13,7 @@
     id _reserved;
     NSMenu *rolloverMenu;
     CALayer *rolloverLayer;
+    CALayer *innerBorderLayer;
     NSView *owner;
     NSArray *shareServices;
     NSArray *mainServices;

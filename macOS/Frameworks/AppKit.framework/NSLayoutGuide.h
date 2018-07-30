@@ -60,6 +60,7 @@
 - (id)left;
 - (id)trailing;
 - (id)leading;
+- (int)nsis_orientationHintForVariable:(id)arg1;
 - (id)nsis_descriptionOfVariable:(id)arg1;
 - (BOOL)nsis_valueOfVariableIsUserObservable:(id)arg1;
 - (BOOL)nsis_shouldIntegralizeVariable:(id)arg1;
@@ -69,6 +70,8 @@
 - (id)_widthVariable;
 - (id)_minYVariable;
 - (id)_minXVariable;
+- (id)nsli_boundsHeightVariable;
+- (id)nsli_boundsWidthVariable;
 - (id)nsli_heightVariable;
 - (id)nsli_widthVariable;
 - (id)nsli_minYVariable;

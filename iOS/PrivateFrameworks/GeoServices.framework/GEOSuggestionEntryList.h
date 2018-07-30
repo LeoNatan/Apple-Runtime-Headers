@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOSuggestionEntryList : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

@@ -31,11 +31,12 @@
 + (id)processHandleForAuditToken:(id)arg1;
 + (id)processHandle;
 @property(copy, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
-@property(readonly, retain, nonatomic) BSMachPortTaskNameRight *taskNameRight; // @synthesize taskNameRight=_taskNameRight;
+@property(readonly, nonatomic) BSMachPortTaskNameRight *taskNameRight; // @synthesize taskNameRight=_taskNameRight;
 @property(copy, nonatomic) NSString *jobLabel; // @synthesize jobLabel=_jobLabel;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleID;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
@@ -49,7 +50,7 @@
 - (id)valueForEntitlement:(id)arg1;
 - (_Bool)hasEntitlement:(id)arg1;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
-@property(readonly, retain, nonatomic) BSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
+@property(readonly, nonatomic) BSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 - (void)dealloc;
 - (id)_initWithPID:(int)arg1 bundleID:(id)arg2;
 - (id)initWithConnection:(id)arg1;

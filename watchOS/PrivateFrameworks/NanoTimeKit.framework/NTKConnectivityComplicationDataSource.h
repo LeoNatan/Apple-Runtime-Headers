@@ -15,8 +15,8 @@
     NTKConnectivityModel *_model;
 }
 
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) NTKConnectivityModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
 - (void)connectivityModelConnectivityDidChange:(id)arg1;
@@ -29,7 +29,7 @@
 - (id)currentSwitcherTemplate;
 - (id)_currentTimelineEntry;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

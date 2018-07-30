@@ -8,7 +8,6 @@
 
 @class TCMessageEntry;
 
-__attribute__((visibility("hidden")))
 @interface TCMessageException : NSException
 {
     TCMessageEntry *m_entry;
@@ -20,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)exceptionWithUntaggedMessage:(id)arg1;
 + (id)exceptionWithMessage:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 - (id)description;
 - (id)getEntry;
-- (void)dealloc;
 - (id)initWithUntaggedMessage:(id)arg1;
 - (id)initWithMessage:(id)arg1;
 

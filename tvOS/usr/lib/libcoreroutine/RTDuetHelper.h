@@ -38,13 +38,13 @@
 - (void)shutdown;
 - (id)initWithQueue:(id)arg1 duetEventStream:(long long)arg2 locationTagger:(id)arg3 defaultsManager:(id)arg4;
 - (id)init;
-- (void)_fetchAudioEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_fetchBluetoothEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_fetchStarkEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_fetchMicroLocationEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_fetchDeviceFirstWakeupEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_fetchNowPlayingEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchAppLaunchEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchStarkEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchNowPlayingEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchAudioEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchDeviceFirstWakeupEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchMicroLocationEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchBluetoothEventsWithStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

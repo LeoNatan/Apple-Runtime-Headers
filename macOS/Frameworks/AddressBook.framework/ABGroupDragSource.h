@@ -8,7 +8,6 @@
 
 @class ABGroup, ABRecordContext, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupDragSource : NSObject
 {
     ABRecordContext *_recordContext;

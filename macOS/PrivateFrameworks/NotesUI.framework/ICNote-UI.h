@@ -31,6 +31,7 @@
 - (void)updateModificationDateAndChangeCount;
 - (void)saveAfterDelay;
 - (void)save;
+- (struct NSImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 imageScaling:(unsigned long long *)arg3 showAsFileIcon:(char *)arg4 isMovie:(char *)arg5 movieDuration:(CDStruct_1b6d18a9 *)arg6 attachment:(id *)arg7;
 - (struct NSImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 imageScaling:(unsigned long long *)arg3 showAsFileIcon:(char *)arg4 isMovie:(char *)arg5 movieDuration:(CDStruct_1b6d18a9 *)arg6;
 - (id)attachmentFromRemoteFileWrapper:(id)arg1;
 - (id)attachmentFromLegacyAttachmentFileWrapper:(id)arg1;

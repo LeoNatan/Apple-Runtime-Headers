@@ -8,6 +8,7 @@
 
 @class CPTable, CPZone;
 
+__attribute__((visibility("hidden")))
 @interface CPTableMaker : NSObject
 {
     CPZone *tableZone;

@@ -6,12 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSData, PKDSPContext;
+@class PKDSPContext;
 
 @interface PKDeviceScorer : NSObject
 {
-    NSData *_lastDeviceScoreIdentifier;
-    NSData *_lastDeviceScore;
     double _deviceScoreTimeout;
     PKDSPContext *_context;
 }

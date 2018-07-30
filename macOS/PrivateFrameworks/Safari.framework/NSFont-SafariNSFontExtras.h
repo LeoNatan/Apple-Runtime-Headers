@@ -7,6 +7,7 @@
 #import "NSFont.h"
 
 @interface NSFont (SafariNSFontExtras)
++ (id)safari_highLegibilityAlternateFontForFont:(id)arg1;
 + (id)safari_systemSmallCapsFontWithSize:(double)arg1 weight:(double)arg2;
 @property(readonly, nonatomic) double safari_heightOfSingleLineOfText;
 @end

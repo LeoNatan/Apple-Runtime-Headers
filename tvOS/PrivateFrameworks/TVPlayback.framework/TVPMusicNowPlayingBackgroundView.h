@@ -37,6 +37,7 @@
 - (void)_willResignActive;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didMoveToWindow;
+- (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithImage:(id)arg1;

@@ -42,6 +42,7 @@
 - (struct CGRect)rectForIndex:(int)arg1;
 - (void)keyDown:(id)arg1;
 - (BOOL)acceptsFirstResponder;
+- (void)drawFocusRingOnRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 pinLength:(long long)arg2 supportsRTL:(BOOL)arg3;

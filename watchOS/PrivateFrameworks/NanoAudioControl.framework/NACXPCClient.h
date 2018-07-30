@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)beginObservingAudioRoutesForCategory:(id)arg1;
 - (void)audioRoutesForCategory:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)setSystemMuted:(_Bool)arg1;
+- (void)setHapticState:(int)arg1;
 - (void)setProminentHapticEnabled:(_Bool)arg1;
 - (void)setHapticIntensity:(float)arg1;
 - (void)setMuted:(_Bool)arg1 target:(id)arg2;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)systemMutedState:(CDUnknownBlockType)arg1;
 - (void)prominentHapticEnabled:(CDUnknownBlockType)arg1;
 - (void)hapticIntensity:(CDUnknownBlockType)arg1;
+- (void)hapticState:(CDUnknownBlockType)arg1;
 - (void)mutedStateForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)volumeControlAvailabilityForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)volumeValueForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;

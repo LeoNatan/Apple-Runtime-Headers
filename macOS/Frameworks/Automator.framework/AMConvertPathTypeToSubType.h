@@ -11,7 +11,6 @@
 }
 
 - (id)runWithInput:(id)arg1 error:(id *)arg2;
-- (id)initWithDefinition:(id)arg1 fromArchive:(BOOL)arg2;
 
 @end
 

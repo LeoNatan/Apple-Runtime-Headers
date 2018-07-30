@@ -35,6 +35,7 @@
 @property unsigned int softenSize; // @synthesize softenSize=_softenSize;
 @property unsigned int blurSize; // @synthesize blurSize=_blurSize;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)effectType;
 - (id)init;
 - (id)initWithEffectFromPreset:(id)arg1 atIndex:(unsigned int)arg2;

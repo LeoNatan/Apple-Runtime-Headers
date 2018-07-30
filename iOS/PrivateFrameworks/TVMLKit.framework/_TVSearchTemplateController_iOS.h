@@ -26,6 +26,8 @@
 
 @property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+- (id)_sanitizedText;
+- (_Bool)_isAtWordEnd;
 - (void)_keyboardDidChangeFrame:(id)arg1;
 - (void)_setNonResultsView:(id)arg1;
 - (void)_updateKeyboardText;

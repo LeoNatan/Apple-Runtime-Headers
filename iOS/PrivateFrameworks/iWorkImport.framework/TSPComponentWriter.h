@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSHashTable, NSMapTable, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSSet, NSString, TSPArchiverManager, TSPComponent, TSPMutableComponentObjectUUIDMap, TSPObject, TSPObjectReferenceMap;
+@class NSHashTable, NSMapTable, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSSet, NSString, TSPArchiverManager, TSPComponent, TSPMutableComponentObjectUUIDMap, TSPObject, TSPObjectReferenceMap, TSPReferenceOrderedSet;
 
 __attribute__((visibility("hidden")))
 @interface TSPComponentWriter : NSObject
@@ -21,21 +21,21 @@ __attribute__((visibility("hidden")))
     id <TSPComponentWriteChannel> _writeChannel;
     TSPArchiverManager *_archiverManager;
     NSObject<OS_dispatch_semaphore> *_delegateSemaphore;
-    NSHashTable *_archivedObjects;
+    TSPReferenceOrderedSet *_archivedObjects;
     NSMapTable *_archivedObjectsDictionary;
     TSPMutableComponentObjectUUIDMap *_componentObjectUUIDMap;
     struct vector<TSP::ObjectStackEntry, std::__1::allocator<TSP::ObjectStackEntry>> _objectStack;
     NSObject<OS_dispatch_group> *_writeGroup;
     NSObject<OS_dispatch_queue> *_writeQueue;
-    NSHashTable *_weakReferences;
+    TSPReferenceOrderedSet *_weakReferences;
     NSHashTable *_lazyReferences;
     NSHashTable *_dataReferences;
     NSMutableSet *_featureInfos;
-    NSHashTable *_analyzedCommandToModelReferences;
-    NSHashTable *_commandToModelReferences;
-    NSHashTable *_newCommandToModelReferences;
-    NSHashTable *_indirectCommandToModelExternalReferences;
-    NSHashTable *_externalReferences;
+    TSPReferenceOrderedSet *_analyzedCommandToModelReferences;
+    TSPReferenceOrderedSet *_commandToModelReferences;
+    TSPReferenceOrderedSet *_newCommandToModelReferences;
+    TSPReferenceOrderedSet *_indirectCommandToModelExternalReferences;
+    TSPReferenceOrderedSet *_externalReferences;
     unsigned long long _objectTargetType;
     struct {
         unsigned int success:1;

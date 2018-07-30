@@ -15,6 +15,9 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     NSMutableDictionary *_observersByDataType;
+    struct os_unfair_lock_s _synchronousObserverLock;
+    NSMutableDictionary *_synchronousObserversBySampleType;
+    _Bool _needsSynchronousNotification;
     unsigned long long _openTransactions;
     NSMutableDictionary *_pendingObjectsBySampleType;
     NSNumber *_lastAnchor;
@@ -29,6 +32,12 @@
 - (void)openObserverTransaction;
 - (id)_queue_observersForDataType:(id)arg1 createIfNil:(_Bool)arg2;
 - (id)_queue_observersForKey:(id)arg1 createIfNil:(_Bool)arg2;
+- (void)_notifySynchronousObserversForDeletedObjectTypes:(id)arg1 anchor:(id)arg2;
+- (void)_notifySynchronousObserversIfPossible;
+- (void)removeSynchronousObserver:(id)arg1 forSampleType:(id)arg2;
+- (void)addSynchronousObserver:(id)arg1 forSampleType:(id)arg2;
+- (_Bool)_synchronousObserverLock_hasSynchronousObserverForSampleType:(id)arg1;
+- (id)_synchronousObserverLock_synchronousObserverSetForSampleType:(id)arg1;
 - (id)_observersForDataType:(id)arg1;
 - (id)_queue_observersAllTypesCreateIfNil:(_Bool)arg1;
 - (id)_observersForAllTypes;

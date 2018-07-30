@@ -8,6 +8,7 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVUnreachableAssetInspectorLoader : AVAssetInspectorLoader
 {
     int _figError;

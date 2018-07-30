@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSManagedObjectModel;
+@class NSArray, _PFModelMap;
 
 __attribute__((visibility("hidden")))
 @interface NSConstraintValidator : NSObject
 {
-    NSManagedObjectModel *_model;
+    _PFModelMap *_modelMap;
+    NSArray *_entities;
     id *_cachesByEntity;
 }
 
@@ -22,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)registerObject:(id)arg1;
 - (void)dealloc;
 - (void)_addConstraintRoot:(id)arg1 forEntity:(id)arg2;
-- (id)initWithManagedObjectModel:(id)arg1;
+- (id)initWithManagedObjectContext:(id)arg1;
 
 @end
 

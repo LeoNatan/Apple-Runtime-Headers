@@ -14,7 +14,9 @@
 
 @interface SFButton : NSObject <SFButton, NSSecureCoding, NSCopying>
 {
-    CDStruct_e4e3bb5e _has;
+    struct {
+        unsigned int isSelected:1;
+    } _has;
     _Bool _isSelected;
     SFImage *_image;
     SFImage *_selectedImage;

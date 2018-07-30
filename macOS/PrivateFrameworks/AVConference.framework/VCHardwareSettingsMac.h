@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) unsigned int maxActiveVideoDecoders;
+@property(readonly, nonatomic) unsigned int maxActiveVideoEncoders;
 @property(readonly, nonatomic) BOOL useSoftFramerateSwitching;
 @property(readonly, nonatomic) int hardwareScore;
 @property(readonly, nonatomic) NSString *machineName;

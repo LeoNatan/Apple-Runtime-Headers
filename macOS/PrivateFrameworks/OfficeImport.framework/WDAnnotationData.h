@@ -8,7 +8,6 @@
 
 @class NSDate, NSString, WDText;
 
-__attribute__((visibility("hidden")))
 @interface WDAnnotationData : NSObject
 {
     WDText *mText;
@@ -16,7 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *mOwner;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setOwner:(id)arg1;
 - (id)owner;
 - (void)setDate:(id)arg1;

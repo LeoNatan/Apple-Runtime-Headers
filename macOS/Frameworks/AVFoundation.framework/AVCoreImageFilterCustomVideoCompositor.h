@@ -10,6 +10,7 @@
 
 @class CIContext, NSDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCoreImageFilterCustomVideoCompositor : NSObject <AVVideoCompositing>
 {
     NSObject<OS_dispatch_group> *_filteringRequestsInFlight;

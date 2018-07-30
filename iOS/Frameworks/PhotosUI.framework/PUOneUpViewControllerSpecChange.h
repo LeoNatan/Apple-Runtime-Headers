@@ -30,10 +30,16 @@ __attribute__((visibility("hidden")))
     _Bool _bufferingIndicatorSizeChanged;
     _Bool _shouldUseCompactCommentsTitleChanged;
     _Bool _tileInitialContentModeChanged;
+    _Bool _shouldCounterrotateReviewScreenBarsChanged;
     _Bool _shouldPinContentToTopChanged;
+    _Bool _shouldLayoutReviewScreenControlBarVerticallyChanged;
+    _Bool _shouldPlaceScrubberInScrubberBarChanged;
 }
 
+@property(nonatomic, setter=_setShouldPlaceScrubberInScrubberBarChanged:) _Bool shouldPlaceScrubberInScrubberBarChanged; // @synthesize shouldPlaceScrubberInScrubberBarChanged=_shouldPlaceScrubberInScrubberBarChanged;
+@property(nonatomic, setter=_setShouldLayoutReviewScreenControlBarVerticallyChanged:) _Bool shouldLayoutReviewScreenControlBarVerticallyChanged; // @synthesize shouldLayoutReviewScreenControlBarVerticallyChanged=_shouldLayoutReviewScreenControlBarVerticallyChanged;
 @property(nonatomic, setter=_setShouldPinContentToTopChanged:) _Bool shouldPinContentToTopChanged; // @synthesize shouldPinContentToTopChanged=_shouldPinContentToTopChanged;
+@property(nonatomic, setter=_setShouldCounterrotateReviewScreenBarsChanged:) _Bool shouldCounterrotateReviewScreenBarsChanged; // @synthesize shouldCounterrotateReviewScreenBarsChanged=_shouldCounterrotateReviewScreenBarsChanged;
 @property(nonatomic, setter=_setTileInitialContentModeChanged:) _Bool tileInitialContentModeChanged; // @synthesize tileInitialContentModeChanged=_tileInitialContentModeChanged;
 @property(nonatomic, setter=_setShouldUseCompactCommentsTitleChanged:) _Bool shouldUseCompactCommentsTitleChanged; // @synthesize shouldUseCompactCommentsTitleChanged=_shouldUseCompactCommentsTitleChanged;
 @property(nonatomic, setter=_setBufferingIndicatorSizeChanged:) _Bool bufferingIndicatorSizeChanged; // @synthesize bufferingIndicatorSizeChanged=_bufferingIndicatorSizeChanged;

@@ -21,7 +21,7 @@
     _Bool _paused;
 }
 
-+ (id)_frameImagesForArtworkName:(id)arg1;
++ (id)_frameImagesForArtworkName:(id)arg1 forDevice:(id)arg2;
 @property(readonly, nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 - (void).cxx_destruct;
 - (void)setTintColors:(id)arg1;

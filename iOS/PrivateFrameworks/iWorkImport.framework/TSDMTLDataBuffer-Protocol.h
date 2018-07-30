@@ -17,19 +17,21 @@
 + (id <TSDMTLDataBuffer>)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 device:(id <MTLDevice>)arg3;
 + (id <TSDGLDataBuffer>)newDataBufferWithVertexAttributes:(NSArray *)arg1 quadParticleCount:(unsigned long long)arg2 device:(id <MTLDevice>)arg3;
 + (id <TSDMTLDataBuffer>)newDataBufferWithVertexAttributes:(NSArray *)arg1 meshSize:(struct CGSize)arg2 device:(id <MTLDevice>)arg3;
-+ (id <TSDMTLDataBuffer>)newDataBufferWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 doubleBuffered:(_Bool)arg4 device:(id <MTLDevice>)arg5;
++ (id <TSDMTLDataBuffer>)newDataBufferWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 device:(id <MTLDevice>)arg4;
 @property(readonly) unsigned long long centerAttributeIndex;
 @property(readonly) unsigned long long texCoordAttributeIndex;
 @property(readonly) unsigned long long positionAttributeIndex;
 @property(nonatomic) unsigned long long metalDrawMode;
 - (void)updateMetalDataBufferAttributes:(NSArray *)arg1 withBlock:(void (^)(struct *, unsigned long long))arg2;
 - (void)updateDataBufferAttributesWithBlock:(void (^)(struct *, unsigned long long))arg1;
+- (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2 advanceDynamicBuffer:(_Bool)arg3;
 - (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2;
+- (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2 range:(struct _NSRange)arg3 advanceDynamicBuffer:(_Bool)arg4;
 - (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2 range:(struct _NSRange)arg3;
 - (void)encodeWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2;
 - (void)disableWithDevice:(id <MTLDevice>)arg1;
 - (void)enableDataBuffer;
 - (id)initWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5;
-- (id)initWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 doubleBuffered:(_Bool)arg4;
+- (id)initWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 bufferCount:(unsigned long long)arg4;
 @end
 

@@ -15,6 +15,7 @@
 {
     NSDictionary *_formatDictionary;
     struct opaqueCMFormatDescription *_formatDescription;
+    CDStruct_79c71658 _previewDimensions;
 }
 
 + (_Bool)supportsSecureCoding;

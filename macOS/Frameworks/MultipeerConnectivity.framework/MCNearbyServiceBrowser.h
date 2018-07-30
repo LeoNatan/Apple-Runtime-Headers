@@ -53,6 +53,7 @@
 - (void)syncReceivedData:(id)arg1 fromPeer:(id)arg2;
 - (void)syncSendData:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)syncHandleInviteTimeout:(id)arg1 forPeer:(id)arg2;
+- (void)syncHandleDeclinedInviteWithInfo:(id)arg1;
 - (void)syncHandleInviteResponse:(id)arg1 fromPeer:(id)arg2;
 - (void)syncInvitePeer:(id)arg1 toSession:(id)arg2 withContext:(id)arg3 timeout:(double)arg4;
 - (void)syncSendDictionary:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

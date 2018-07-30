@@ -12,34 +12,21 @@
 
 @interface CEMDeviceInformationCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadQueries;
 }
 
-+ (id)allowedReasons;
-+ (id)ErrorResponses_ErrorResponsesItem_allowedStatusKeys;
-+ (id)ErrorResponses_allowedStatusKeys;
-+ (id)QueryResponses_AutoSetupAdminAccountsItem_allowedStatusKeys;
-+ (id)QueryResponses_OSUpdateSettings_allowedStatusKeys;
-+ (id)QueryResponses_OrganizationInfo_allowedStatusKeys;
-+ (id)QueryResponses_allowedStatusKeys;
-+ (id)allowedStatusKeys;
-+ (id)Queries_allowedPayloadKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withQueries:(id)arg2;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadQueries:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusErrorResponses_ErrorResponsesItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusErrorResponses_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusQueryResponses_AutoSetupAdminAccountsItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusQueryResponses_OSUpdateSettings_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusQueryResponses_OrganizationInfo_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusQueryResponses_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadQueries_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSArray *payloadQueries; // @synthesize payloadQueries=_payloadQueries;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (BOOL)mustBeSupervised;
-@property(readonly, nonatomic) NSArray *payloadQueries;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

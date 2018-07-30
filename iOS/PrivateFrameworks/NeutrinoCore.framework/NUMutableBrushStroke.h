@@ -12,6 +12,7 @@
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)applyTransform:(struct CGAffineTransform)arg1;
+- (void)appendPoints:(CDStruct_869f9c67 *)arg1 pointCount:(long long)arg2;
 - (void)appendPoint:(CDStruct_869f9c67)arg1;
 - (id)points;
 - (id)initWithRadius:(float)arg1 softness:(float)arg2 opacity:(float)arg3 pressureMode:(long long)arg4;

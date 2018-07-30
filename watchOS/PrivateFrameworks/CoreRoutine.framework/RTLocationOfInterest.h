@@ -9,15 +9,14 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSString, NSUUID;
+@class NSArray, NSString, NSUUID, RTMapItem;
 
 @interface RTLocationOfInterest : NSObject <NSCopying, NSSecureCoding>
 {
     NSUUID *_identifier;
     int _type;
     int _typeSource;
-    id <GEOMapItem> _geoMapItem;
-    int _geoMapItemSource;
+    RTMapItem *_mapItem;
     NSArray *_visits;
     NSString *_customLabel;
     double _latitude;
@@ -32,8 +31,7 @@
 + (id)locationOfInterestTypeToString:(int)arg1;
 @property(readonly, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property(readonly, nonatomic) NSArray *visits; // @synthesize visits=_visits;
-@property(readonly, nonatomic) int geoMapItemSource; // @synthesize geoMapItemSource=_geoMapItemSource;
-@property(readonly, nonatomic) id <GEOMapItem> geoMapItem; // @synthesize geoMapItem=_geoMapItem;
+@property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) int typeSource; // @synthesize typeSource=_typeSource;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
@@ -43,7 +41,6 @@
 @property(readonly, nonatomic) double latitude; // @synthesize latitude=_latitude;
 - (void).cxx_destruct;
 - (int)recentCompare:(id)arg1;
-- (id)nameFromMapItem:(id)arg1;
 - (id)nameFromType:(int)arg1;
 @property(readonly, nonatomic) NSString *preferredName;
 - (id)description;
@@ -52,7 +49,9 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 confidence:(double)arg4 identifier:(id)arg5 type:(int)arg6 typeSource:(int)arg7 geoMapItem:(id)arg8 geoMapItemSource:(int)arg9 visits:(id)arg10 customLabel:(id)arg11;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 confidence:(double)arg4 identifier:(id)arg5 type:(int)arg6 typeSource:(int)arg7 visits:(id)arg8 customLabel:(id)arg9 mapItem:(id)arg10;
+- (id)init;
+@property(readonly, nonatomic) int geoMapItemSource;
 
 @end
 

@@ -15,6 +15,7 @@
     int _recognitionType;
     int _recognitionMode;
     NSCharacterSet *_activeCharacterSet;
+    int _contentType;
     struct CHNeuralNetwork *_engine;
     struct CHNeuralNetwork *_freeformEngine;
     NSObject<OS_dispatch_queue> *_recognitionQueue;
@@ -43,6 +44,8 @@
 + (unsigned int)_decodeTempDelayedSegmentID:(unsigned int)arg1;
 + (unsigned int)_encodeTempDelayedSegmentID:(unsigned int)arg1;
 + (double)_computeEditPenalizationFromString:(id)arg1 toReferenceString:(id)arg2 withSuffix:(id)arg3 withCaseSensitivity:(_Bool)arg4 withFirstLetterCaseSensitivity:(_Bool)arg5 withDiacriticSensitivity:(_Bool)arg6 withDiacriticsCharSet:(id)arg7 withConsumableStrokesCharSet:(id)arg8 outputSuffix:(id *)arg9 lexiconExtraCharacters:(id *)arg10 firstLetterCaseFlipped:(_Bool *)arg11;
++ (_Bool)_shouldUseLexiconsForContentType:(int)arg1;
++ (_Bool)_shouldAutoCapitalizeForContentType:(int)arg1;
 + (id)wordsForCustomLexicon;
 @property(retain, nonatomic) NSMutableIndexSet *lastCharacterStrokeIndexes; // @synthesize lastCharacterStrokeIndexes=_lastCharacterStrokeIndexes;
 @property(nonatomic) unsigned int lastCharacterStrokeCount; // @synthesize lastCharacterStrokeCount=_lastCharacterStrokeCount;
@@ -68,6 +71,7 @@
 @property(nonatomic) struct CHNeuralNetwork *freeformEngine; // @synthesize freeformEngine=_freeformEngine;
 @property(nonatomic) struct CHNeuralNetwork *engine; // @synthesize engine=_engine;
 @property(nonatomic) struct CGSize minimumDrawingSize; // @synthesize minimumDrawingSize=_minimumDrawingSize;
+@property(nonatomic) int contentType; // @synthesize contentType=_contentType;
 @property(retain, nonatomic) NSCharacterSet *activeCharacterSet; // @synthesize activeCharacterSet=_activeCharacterSet;
 @property(nonatomic) int recognitionMode; // @synthesize recognitionMode=_recognitionMode;
 @property(nonatomic) int recognitionType; // @synthesize recognitionType=_recognitionType;

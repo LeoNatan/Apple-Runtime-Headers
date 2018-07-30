@@ -40,10 +40,12 @@
 @property(nonatomic) long long tracklistSource; // @synthesize tracklistSource=_tracklistSource;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 - (void).cxx_destruct;
+- (void)getRepresentativeMetadataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getPlaybackContextWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <MPCPlaybackIntentDataSource> tracklistDataSource;
 - (id)description;
+- (id)init;
 
 @end
 

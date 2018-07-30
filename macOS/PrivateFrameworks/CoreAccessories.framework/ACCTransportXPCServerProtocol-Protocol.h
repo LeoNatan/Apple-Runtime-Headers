@@ -10,6 +10,8 @@
 
 @protocol ACCTransportXPCServerProtocol <NSObject>
 - (void)processIncomingData:(NSData *)arg1 forEndpointWithUUID:(NSString *)arg2 withReply:(void (^)(BOOL))arg3;
+- (void)identifierForEndpointWithUUID:(NSString *)arg1 withReply:(void (^)(NSString *))arg2;
+- (void)identifierForConnectionWithUUID:(NSString *)arg1 withReply:(void (^)(NSString *))arg2;
 - (void)propertiesForEndpointWithUUID:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;
 - (void)propertiesForConnectionWithUUID:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;
 - (void)accessoryInfoForEndpointWithUUID:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;

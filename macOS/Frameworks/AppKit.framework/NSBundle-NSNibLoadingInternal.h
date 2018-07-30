@@ -19,7 +19,6 @@
 + (void)popNibPath;
 + (void)pushNibPath:(id)arg1;
 + (id)_nibFileToLoadFromListOfFiles:(id)arg1 atNibPath:(id)arg2 isKeyed:(char *)arg3;
-- (BOOL)_safeLoadNibNamed:(id)arg1 owner:(id)arg2 topLevelObjects:(id *)arg3;
 - (BOOL)loadNibFile:(id)arg1 externalNameTable:(id)arg2 options:(id)arg3 withZone:(struct _NSZone *)arg4;
 @end
 

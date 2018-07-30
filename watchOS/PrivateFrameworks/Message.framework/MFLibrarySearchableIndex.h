@@ -7,10 +7,11 @@
 #import "NSObject.h"
 
 #import "MFDiagnosticsGenerator.h"
+#import "MFSearchableIndexSchedulable.h"
 
-@class MFCancelationToken, MFCoalescer, MFLazyCache, MFWeakSet, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSString, _MFLibrarySearchableIndexBudgetConfiguration, _MFLibrarySearchableIndexPendingRemovals;
+@class MFCancelationToken, MFLazyCache, MFWeakSet, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSString, _MFLibrarySearchableIndexPendingRemovals;
 
-@interface MFLibrarySearchableIndex : NSObject <MFDiagnosticsGenerator>
+@interface MFLibrarySearchableIndex : NSObject <MFDiagnosticsGenerator, MFSearchableIndexSchedulable>
 {
     NSString *_indexName;
     MFCancelationToken *_cancelationToken;
@@ -21,9 +22,6 @@
     unsigned int _throttledIndexingBatchSize;
     unsigned int _throttledDataSourceBatchSize;
     unsigned int _currentMaximumBatchSize;
-    MFCoalescer *_budgetCoalescer;
-    double _remainingIndexingBudget;
-    int _remainingIndexingBudgetOverage;
     NSObject<OS_os_activity> *_batchIndexingActivity;
     NSMutableArray *_pendingItems;
     NSMutableSet *_pendingDomainRemovals;
@@ -42,15 +40,18 @@
     _Bool _scheduledProcessing;
     _Bool _scheduledRefresh;
     _Bool _scheduledVerification;
+    _Bool _dataSourceIndexingPermitted;
     id <MFLibrarySearchableIndexDataSource> _dataSource;
-    _MFLibrarySearchableIndexBudgetConfiguration *_budgetConfiguration;
+    id <MFSearchableIndexSchedulableDelegate> _schedulableDelegate;
 }
 
 + (void)_saveLocalClientState:(id)arg1;
 + (id)_localClientState;
 + (id)_localClientStateURL;
-@property(readonly, nonatomic) _MFLibrarySearchableIndexBudgetConfiguration *budgetConfiguration; // @synthesize budgetConfiguration=_budgetConfiguration;
-@property(nonatomic) id <MFLibrarySearchableIndexDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) __weak id <MFSearchableIndexSchedulableDelegate> schedulableDelegate; // @synthesize schedulableDelegate=_schedulableDelegate;
+@property(nonatomic) __weak id <MFLibrarySearchableIndexDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic, getter=isDataSourceIndexingPermitted) _Bool dataSourceIndexingPermitted; // @synthesize dataSourceIndexingPermitted=_dataSourceIndexingPermitted;
+- (void).cxx_destruct;
 - (id)identifiersMatchingCriterion:(id)arg1;
 - (void)removeAllItems;
 - (void)removeItemsForDomainIdentifier:(id)arg1;
@@ -67,7 +68,6 @@
 - (void)_processRefreshRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_getDomainRemovals:(id *)arg1 identifierRemovals:(id *)arg2;
 - (id)_consumeBatchOfSize:(unsigned int)arg1;
-- (void)_logIndexingPowerEventWithIdentifier:(id)arg1 additionalEventData:(id)arg2 usePersistentLog:(_Bool)arg3;
 - (void)_scheduleDataSourceRefresh;
 - (void)_scheduleProcessPendingItems;
 - (void)_queueTransitionActive:(_Bool)arg1;
@@ -100,14 +100,9 @@
 - (void)_registerDistantFutureSpotlightVerification;
 - (void)_scheduleSpotlightVerificationOnIndexingQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_scheduleSpotlightVerification;
-- (void)setRemainingIndexingBudget:(double)arg1 shouldPersist:(_Bool)arg2;
-- (void)_persistRemainingIndexingBudgetValue:(id)arg1;
-- (void)_scheduleResetIndexingBudgetTimer;
-- (void)_resetIndexingBudgetTimer;
-- (double)persistedRemainingIndexingBudget;
-- (id)_budgetPersistenceKey;
-- (void)_powerStateChanged;
+@property(readonly, copy, nonatomic) NSString *indexName;
 @property(readonly, nonatomic) unsigned int pendingIndexItemsCount;
+- (void)_powerStateChanged;
 - (id)copyDiagnosticInformation;
 - (void)addMiddleware:(id)arg1;
 - (void)dealloc;

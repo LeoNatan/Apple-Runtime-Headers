@@ -135,6 +135,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithDocumentLanguageIdentifier:(id)arg1;
 - (id)localeIdentifierWithLanguageScriptAndRegionOnly;
 - (id)localeIdentifierWithLanguageAndRegionOnly;
+- (id)languageIdentifierWithLanguageAndRegionOnly;
 - (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2 useAutoupdating:(_Bool)arg3;
 - (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2;
 - (id)allLocalizedFunctions;

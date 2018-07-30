@@ -7,6 +7,7 @@
 #import "NSData.h"
 
 @interface NSData (AppleAccount)
+- (id)aa_compressedData:(int)arg1;
 - (id)aa_hexString;
 @end
 

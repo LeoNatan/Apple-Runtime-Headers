@@ -28,8 +28,8 @@
 + (id)_templateForWorkout:(id)arg1 family:(long long)arg2;
 + (id)_unknownTemplateForFamily:(long long)arg1;
 + (id)_workoutTintColor;
-+ (_Bool)acceptsComplicationFamily:(long long)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned long long)arg1;
++ (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) HKObserverQuery *workoutObservationQuery; // @synthesize workoutObservationQuery=_workoutObservationQuery;
 @property(retain, nonatomic) HKSampleQuery *lastWorkoutQuery; // @synthesize lastWorkoutQuery=_lastWorkoutQuery;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
@@ -61,7 +61,7 @@
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 @end
 

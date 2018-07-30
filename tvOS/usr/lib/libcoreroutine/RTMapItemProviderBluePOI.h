@@ -25,14 +25,14 @@
 - (void).cxx_destruct;
 - (_Bool)harvestVisits:(id)arg1 mapItem:(id)arg2 error:(id *)arg3;
 - (_Bool)submitHarvest:(id)arg1 error:(id *)arg2;
-- (id)poiHarvestForFingerprint:(id)arg1 mapItem:(id)arg2 referenceLocation:(id)arg3 error:(id *)arg4;
+- (id)poiHarvestForFingerprint:(id)arg1 mapItem:(id)arg2 referenceLocation:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
 - (id)filterByDistance:(id)arg1 location:(id)arg2 thresholdForUnknownLabel:(double)arg3 error:(id *)arg4;
 - (id)mapItemsWithinDistance:(double)arg1 location:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
-- (id)mapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 error:(id *)arg3;
+- (id)mapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
 - (id)motionActivitesFrom:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (id)locationsFrom:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (id)locationsForAccessPoints:(id)arg1 error:(id *)arg2;
-- (id)accessPointsForFingerprint:(id)arg1 error:(id *)arg2;
+- (id)accessPointsForFingerprint:(id)arg1 endDate:(id)arg2 error:(id *)arg3;
 - (id)fingerprintsBetweenStartDate:(id)arg1 endDate:(id)arg2 error:(id *)arg3;
 - (id)initWithDistanceCalculator:(id)arg1 fingerprintManager:(id)arg2 locationManager:(id)arg3 mapServiceManager:(id)arg4 motionActivityManager:(id)arg5;
 - (id)init;

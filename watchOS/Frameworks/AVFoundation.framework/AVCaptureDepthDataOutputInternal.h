@@ -16,8 +16,9 @@
     _Bool alwaysDiscardsLateDepthData;
     _Bool filteringEnabled;
     NSObject<OS_dispatch_queue> *depthDataQueue;
-    struct OpaqueFigSimpleMutex *remoteQueueMutex;
-    void *remoteReceiverQueue;
+    struct OpaqueFigSimpleMutex *queueMutex;
+    void *remoteQueueReceiver;
+    void *localQueue;
 }
 
 - (void)dealloc;

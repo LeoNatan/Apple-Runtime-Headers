@@ -6,19 +6,22 @@
 
 #import <AppKit/NSAppearance.h>
 
-@class NSBundle;
+@class NSBundle, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSBuiltinAppearance : NSAppearance
 {
     NSBundle *_systemAppearanceBundle;
+    NSString *_publicName;
 }
 
+- (id)appearanceByApplyingTintColor:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)_bundleResourceName;
-- (id)_appearanceForSourceListTableView;
 - (BOOL)_isBuiltinAppearance;
 - (void)dealloc;
-- (id)initWithBundleResourceName:(id)arg1;
+- (id)name;
+- (id)initWithBundleResourceName:(id)arg1 publicName:(id)arg2;
 
 @end
 

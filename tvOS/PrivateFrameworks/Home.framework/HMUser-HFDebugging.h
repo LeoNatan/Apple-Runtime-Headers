@@ -6,14 +6,12 @@
 
 #import "HMUser.h"
 
-#import "HFPrettyDescription.h"
-#import "HFStateDumpSerializable.h"
+#import "HFStateDumpBuildable.h"
 
 @class NSString;
 
-@interface HMUser (HFDebugging) <HFPrettyDescription, HFStateDumpSerializable>
-- (id)hf_serializedStateDumpRepresentation;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+@interface HMUser (HFDebugging) <HFStateDumpBuildable>
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

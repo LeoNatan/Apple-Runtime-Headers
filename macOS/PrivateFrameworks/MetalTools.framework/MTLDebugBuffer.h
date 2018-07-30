@@ -6,7 +6,7 @@
 
 #import <MetalTools/MTLToolsBuffer.h>
 
-@class MTLDebugDevice, MTLDebugResource, MTLDebugResourceAccessTracker, NSMutableArray;
+@class MTLDebugDevice, MTLDebugResource, MTLDebugResourceAccessTracker, MTLIndirectCommandBufferDescriptor, NSMutableArray;
 
 @interface MTLDebugBuffer : MTLToolsBuffer
 {
@@ -18,14 +18,18 @@
     BOOL _purgeableStateHasBeenSet;
     BOOL _isContentsPointerExposed;
     BOOL _isContentExposedToCPU;
+    unsigned int _maxIndirectCommandCount;
     unsigned int _checksum;
     const void *_pointer;
     unsigned long long _purgeableState;
+    MTLIndirectCommandBufferDescriptor *_indirectCommandBufferDescriptor;
 }
 
 @property(nonatomic) BOOL isContentExposedToCPU; // @synthesize isContentExposedToCPU=_isContentExposedToCPU;
 @property(nonatomic) unsigned int checksum; // @synthesize checksum=_checksum;
 @property(readonly, nonatomic) BOOL isContentsPointerExposed; // @synthesize isContentsPointerExposed=_isContentsPointerExposed;
+@property(readonly, nonatomic) unsigned int maxIndirectCommandCount; // @synthesize maxIndirectCommandCount=_maxIndirectCommandCount;
+@property(readonly, nonatomic) MTLIndirectCommandBufferDescriptor *indirectCommandBufferDescriptor; // @synthesize indirectCommandBufferDescriptor=_indirectCommandBufferDescriptor;
 @property(readonly, nonatomic) BOOL purgeableStateHasBeenSet; // @synthesize purgeableStateHasBeenSet=_purgeableStateHasBeenSet;
 @property(readonly, nonatomic) unsigned long long purgeableState; // @synthesize purgeableState=_purgeableState;
 @property(readonly, nonatomic) const void *pointer; // @synthesize pointer=_pointer;
@@ -53,6 +57,7 @@
 - (id)heap;
 - (void)dealloc;
 - (void)_initResourceTrackingWithDevice:(id)arg1;
+- (id)initWithIndirectCommandBuffer:(id)arg1 descriptor:(id)arg2 maxCount:(unsigned long long)arg3 device:(id)arg4 options:(unsigned long long)arg5;
 - (id)initWithBuffer:(id)arg1 device:(id)arg2 bytes:(const void *)arg3 options:(unsigned long long)arg4;
 - (id)initWithBuffer:(id)arg1 heap:(id)arg2 device:(id)arg3 options:(unsigned long long)arg4;
 - (id)initWithBuffer:(id)arg1 device:(id)arg2 options:(unsigned long long)arg3;

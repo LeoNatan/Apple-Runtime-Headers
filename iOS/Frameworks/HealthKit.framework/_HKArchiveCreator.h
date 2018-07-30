@@ -19,8 +19,10 @@
 @property(readonly, copy, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
 - (void).cxx_destruct;
 - (void)closeArchive;
+- (void)_addDataOfSize:(long long)arg1 toPathInArchive:(id)arg2 fromByteProvider:(CDUnknownBlockType)arg3;
 - (void)addDataToArchive:(id)arg1 pathInArchive:(id)arg2;
 - (void)addFileToArchive:(id)arg1 pathInArchive:(id)arg2;
+- (long long)writeData:(const void *)arg1 ofLength:(unsigned long long)arg2;
 - (_Bool)archiveIsValid;
 - (void)dealloc;
 - (id)initWithFileHandle:(id)arg1 archiveType:(long long)arg2;

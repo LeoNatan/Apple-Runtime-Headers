@@ -6,21 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSMutableDictionary, NSString, NSURL;
+@class NSDictionary, NSMutableDictionary, NSURL;
 
 @interface PKRemoteAssetManifest : NSObject
 {
     NSURL *_fileURL;
+    NSURL *_passURL;
     NSMutableDictionary *_remoteAssets;
-    NSString *_name;
 }
 
++ (Class)_remoteAssestManifestItemClassWithValues:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *remoteAssets; // @synthesize remoteAssets=_remoteAssets;
-@property(readonly, nonatomic) __weak NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
-- (id)deviceSpecificAsset;
 - (id)deviceSpecificAssetForScreenScale:(double)arg1 suffix:(id)arg2;
+- (id)deviceSpecificAsset;
 - (id)initWithFileURL:(id)arg1 passURL:(id)arg2 error:(id *)arg3;
 
 @end

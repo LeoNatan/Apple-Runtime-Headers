@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVAssetWriterTerminalHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterClientInitiatedTerminalHelper : AVAssetWriterTerminalHelper
 {
     int _terminalStatus;

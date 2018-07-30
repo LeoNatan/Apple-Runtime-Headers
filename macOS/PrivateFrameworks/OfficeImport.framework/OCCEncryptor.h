@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OCCEncryptor : NSObject
 {
     NSString *mOutputFilename;
@@ -17,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (id)allocTempFileWithBase:(id)arg1 filename:(id *)arg2;
 @property(readonly, nonatomic) NSString *outputFilename; // @synthesize outputFilename=mOutputFilename;
+- (void).cxx_destruct;
 - (BOOL)encryptIntoOutputFile;
 - (BOOL)encrypt;
 - (id)initWithStreamer:(struct OCCStreamer *)arg1;

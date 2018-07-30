@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_unsafeRectForPart:(unsigned long long)arg1;
 - (struct CGRect)expandedRectForPart:(unsigned long long)arg1;
 - (double)knobEndInset;
-- (BOOL)allowsVibrancyForAppearance:(id)arg1;
 - (struct __CFDictionary *)copyCoreUITrackOptions;
 - (struct __CFDictionary *)copyCoreUIKnobOptions;
 - (struct __CFDictionary *)copyCoreUIOptions;

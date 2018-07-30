@@ -11,9 +11,9 @@
     _Bool _editing;
 }
 
-+ (id)_localizedNameOverrideForCustomEditMode:(int)arg1;
-+ (_Bool)_customEditMode:(int)arg1 hasActionForOption:(id)arg2;
-+ (_Bool)_customEditModeIsRows:(int)arg1;
++ (id)_localizedNameOverrideForCustomEditMode:(int)arg1 forDevice:(id)arg2;
++ (_Bool)_customEditMode:(int)arg1 hasActionForOption:(id)arg2 forDevice:(id)arg3;
++ (_Bool)_customEditModeIsRows:(int)arg1 forDevice:(id)arg2;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
 - (unsigned int)_indexOfOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (id)_optionAtIndex:(unsigned int)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;

@@ -14,6 +14,7 @@
 - (oneway void)setBroadcastURL:(NSString *)arg1;
 - (oneway void)setHasUserConsentForMicrophone:(_Bool)arg1;
 - (oneway void)setHasUserConsentForCamera:(_Bool)arg1;
+- (oneway void)synchronousIsBroadcastingWithPreferredExtension:(NSString *)arg1 handler:(void (^)(_Bool))arg2;
 - (oneway void)synchronousGetCurrentState:(void (^)(NSDictionary *))arg1;
 - (oneway void)clientDidResignActive;
 - (oneway void)clientDidBecomeActive;

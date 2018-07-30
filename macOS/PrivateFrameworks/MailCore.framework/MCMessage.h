@@ -109,8 +109,6 @@
 @property(readonly) NSDate *dateSent;
 @property double dateReceivedAsTimeIntervalSince1970;
 @property(readonly) NSDate *dateReceived;
-@property(readonly, nonatomic) BOOL shouldImmediatelyCalculateSnippets;
-@property(readonly, nonatomic) BOOL supportsSnippets;
 - (void)_setSubject:(id)arg1 prefixLength:(unsigned char)arg2;
 - (void)setSubject:(id)arg1 prefixLength:(unsigned long long)arg2;
 @property(copy) NSString *subject;

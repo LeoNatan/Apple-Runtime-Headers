@@ -6,17 +6,17 @@
 
 #import "SFSafariViewController.h"
 
-@class UITapGestureRecognizer;
+@class ADHomeButtonHandler;
 
 @interface ADWebViewActionViewController : SFSafariViewController
 {
-    UITapGestureRecognizer *_homeButtonGestureRecognizer;
+    ADHomeButtonHandler *_homeButtonHandler;
 }
 
-@property(retain, nonatomic) UITapGestureRecognizer *homeButtonGestureRecognizer; // @synthesize homeButtonGestureRecognizer=_homeButtonGestureRecognizer;
-- (void)_homeButtonTapped:(id)arg1;
+@property(retain, nonatomic) ADHomeButtonHandler *homeButtonHandler; // @synthesize homeButtonHandler=_homeButtonHandler;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)dismissView;
 - (void)dealloc;
 
 // Remaining properties

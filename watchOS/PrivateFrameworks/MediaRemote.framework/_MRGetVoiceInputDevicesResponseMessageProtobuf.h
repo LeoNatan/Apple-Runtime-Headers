@@ -10,9 +10,15 @@
 
 @interface _MRGetVoiceInputDevicesResponseMessageProtobuf : PBCodable <NSCopying>
 {
-    CDStruct_084d6ede _deviceIDs;
+    struct {
+        unsigned int *list;
+        unsigned int count;
+        unsigned int size;
+    } _deviceIDs;
     unsigned int _errorCode;
-    CDStruct_70a7dc3e _has;
+    struct {
+        unsigned int errorCode:1;
+    } _has;
 }
 
 @property(nonatomic) unsigned int errorCode; // @synthesize errorCode=_errorCode;

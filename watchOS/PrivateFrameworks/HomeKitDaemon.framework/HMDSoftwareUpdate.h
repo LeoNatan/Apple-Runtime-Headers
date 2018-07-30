@@ -12,7 +12,7 @@
 #import "HMFObject.h"
 #import "NSSecureCoding.h"
 
-@class HMDAccessory, HMDSoftwareUpdateModel, HMFMessageDispatcher, HMFSoftwareVersion, HMSoftwareUpdateDocumentationMetadata, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class HMDAccessory, HMDSoftwareUpdateModel, HMFMessageDispatcher, HMFSoftwareVersion, HMSoftwareUpdateDocumentationMetadata, NSArray, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
 
 @interface HMDSoftwareUpdate : HMFObject <HMFLogging, HMFObject, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, NSSecureCoding>
 {
@@ -67,9 +67,12 @@
 - (id)initWithModel:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSSet *messageReceiverChildren;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
 @property(readonly) Class superclass;
 
 @end

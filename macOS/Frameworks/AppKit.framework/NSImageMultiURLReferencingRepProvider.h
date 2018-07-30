@@ -10,6 +10,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface NSImageMultiURLReferencingRepProvider : NSObject <NSCopying>
 {
     NSArray *_urls;

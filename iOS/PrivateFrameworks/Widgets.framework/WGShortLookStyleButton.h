@@ -6,13 +6,13 @@
 
 #import "UIControl.h"
 
-@class MTFontProvider, MTMaterialView, NSString, UILabel;
+@class BSUIFontProvider, MTMaterialView, NSString, UILabel;
 
 @interface WGShortLookStyleButton : UIControl
 {
     MTMaterialView *_backgroundView;
     UILabel *_titleLabel;
-    MTFontProvider *_fontProvider;
+    BSUIFontProvider *_fontProvider;
     double _dimension;
     _Bool _backgroundBlurred;
 }

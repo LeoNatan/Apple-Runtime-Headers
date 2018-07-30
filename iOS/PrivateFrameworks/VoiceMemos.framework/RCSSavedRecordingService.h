@@ -25,7 +25,10 @@
 }
 
 + (_Bool)isRunningInSavedRecordingDaemon;
++ (void)setChangeToken:(id)arg1;
++ (id)changeToken;
 + (id)sharedService;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) NSSet *compositionAVURLsBeingModified; // @synthesize compositionAVURLsBeingModified=_compositionAVURLsBeingModified;
 @property(retain, nonatomic) NSSet *compositionAVURLsBeingExported; // @synthesize compositionAVURLsBeingExported=_compositionAVURLsBeingExported;
 - (void).cxx_destruct;
@@ -45,18 +48,27 @@
 - (oneway void)updateSearchMetadataWithRecordingURIsToInsert:(id)arg1 recordingURIsToUpdate:(id)arg2 recordingURIsToDelete:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (oneway void)clearAndReloadSearchMetadataWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (oneway void)reloadExistingSearchMetadataWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)checkRecordingAvailability:(CDUnknownBlockType)arg1;
+- (oneway void)__fetchAllAccessTokens:(CDUnknownBlockType)arg1;
+- (oneway void)_fetchAllAccessTokens:(CDUnknownBlockType)arg1;
 - (oneway void)fetchCompositionAVURLsBeingModified:(CDUnknownBlockType)arg1;
 - (oneway void)fetchCompositionAVURLsBeingExported:(CDUnknownBlockType)arg1;
 - (oneway void)enableOrphanHandlingWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (oneway void)disableOrphanHandlingWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (oneway void)enableOrphanedFragmentCleanupForCompositionAVURL:(id)arg1;
 - (oneway void)disableOrphanedFragmentCleanupForCompositionAVURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (oneway void)endAccessSessionWithToken:(id)arg1;
+- (oneway void)endAccessSessionWithToken:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (oneway void)prepareToTrimCompositionAVURL:(id)arg1 accessRequestHandler:(CDUnknownBlockType)arg2;
 - (oneway void)prepareToExportCompositionAVURL:(id)arg1 cacheWaveform:(_Bool)arg2 accessRequestHandler:(CDUnknownBlockType)arg3;
 - (oneway void)prepareToPreviewCompositionAVURL:(id)arg1 accessRequestHandler:(CDUnknownBlockType)arg2;
 - (oneway void)prepareToCaptureToCompositionAVURL:(id)arg1 accessRequestHandler:(CDUnknownBlockType)arg2;
+- (oneway void)expungeRecordingsFromCloud:(CDUnknownBlockType)arg1;
+- (oneway void)exportRecordingsToCloud:(CDUnknownBlockType)arg1;
+- (oneway void)importRecordingsFromCloud:(CDUnknownBlockType)arg1;
+- (oneway void)disableCloudRecordingsSaveLocalCopies:(_Bool)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (oneway void)enableCloudRecordingsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (oneway void)importRecordingWithSourceAudioURL:(id)arg1 name:(id)arg2 date:(id)arg3 importCompletionBlock:(CDUnknownBlockType)arg4;
+- (oneway void)performDatabaseMigrationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)closeServiceConnection;
 - (void)openServiceConnection;
 - (void)dealloc;

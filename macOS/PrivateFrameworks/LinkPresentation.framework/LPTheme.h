@@ -43,7 +43,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
-- (id)CSSTextForThemeProperty:(id)arg1;
+- (id)CSSTextForProperty:(id)arg1 withValue:(id)arg2 allowsAlternateProperties:(BOOL)arg3;
+- (id)CSSTextForThemeProperty:(id)arg1 allowsAlternateProperties:(BOOL)arg2;
+- (id)valueForThemeProperty:(id)arg1;
 - (id)CSSCustomPropertiesForThemePropertiesInSet:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithStyle:(long long)arg1 icon:(id)arg2 platform:(long long)arg3;

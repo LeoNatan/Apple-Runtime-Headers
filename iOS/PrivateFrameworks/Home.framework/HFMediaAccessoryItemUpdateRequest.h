@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) id <HFMediaValueSource> mediaValueSource; // @synthesize mediaValueSource=_mediaValueSource;
 - (void).cxx_destruct;
+- (id)_parentMediaSystem;
 - (id)accessories;
 - (id)_disambiguateMultipleAccessoryResponses:(id)arg1 forMediaSystem:(id)arg2;
 - (id)updateWithOptions:(id)arg1;

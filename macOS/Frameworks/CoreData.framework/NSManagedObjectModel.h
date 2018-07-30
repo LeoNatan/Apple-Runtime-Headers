@@ -17,7 +17,7 @@
 {
     id _dataForOptimization;
     id *_optimizationHints;
-    id _localizationPolicy;
+    id *_additionalPrivateIvars;
     NSMutableDictionary *_entities;
     NSMutableDictionary *_configurations;
     NSMutableDictionary *_fetchRequestTemplates;
@@ -38,10 +38,10 @@
 + (id)modelByMergingModels:(id)arg1;
 + (id)mergedModelFromBundles:(id)arg1;
 + (void)initialize;
-+ (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id *)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (long long)_debugOptimizedModelLayout;
++ (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id *)arg2;
 - (BOOL)isConfiguration:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
 @property(readonly, copy) NSDictionary *entityVersionHashesByName;
 @property(copy) NSSet *versionIdentifiers;
@@ -67,12 +67,11 @@
 - (void)dealloc;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)init;
-- (id)_modelForVersionHashes:(id)arg1;
 - (id)versionHash;
 - (void)_addEntity:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1 forStoreMetadata:(id)arg2;
 - (id)_optimizedEncoding:(id *)arg1;
-- (id)initWithContentsOfOptimizedURL:(id)arg1;
+@property(nonatomic, setter=_setModelsReferenceIDOffset:) long long _modelsReferenceIDOffset;
 - (id)_versionIdentifiersAsArray;
 - (void)_restoreValidation;
 - (void)_stripForMigration;
@@ -105,6 +104,8 @@
 - (BOOL)_isConfiguration:(id)arg1 inStyle:(unsigned long long)arg2 compatibleWithStoreMetadata:(id)arg3;
 - (id)immutableCopy;
 - (id)_initWithContentsOfURL:(id)arg1 options:(unsigned long long)arg2;
+- (id)_modelForVersionHashes:(id)arg1;
+- (id)initWithContentsOfOptimizedURL:(id)arg1;
 
 @end
 

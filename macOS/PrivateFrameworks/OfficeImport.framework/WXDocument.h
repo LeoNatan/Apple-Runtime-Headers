@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface WXDocument : NSObject
 {
 }
 
 + (id)documentFrom:(id)arg1 reader:(id)arg2 cancel:(id)arg3 asThumbnail:(BOOL)arg4;
-+ (void)initialize;
++ (id)notePositionEnumMap;
++ (id)noteRestartEnumMap;
 + (void)readDocumentSettings:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)readDocument:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)readSources:(id)arg1 to:(id)arg2 state:(id)arg3;

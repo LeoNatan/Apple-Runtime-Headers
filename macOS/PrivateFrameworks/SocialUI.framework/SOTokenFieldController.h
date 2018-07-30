@@ -50,6 +50,7 @@
 - (id)tokenField:(id)arg1 setUpTokenAttachmentCell:(id)arg2 forRepresentedObject:(id)arg3;
 - (void)_registerTokenAttachmentCell:(id)arg1;
 - (void)_updateHandleTokenFromNotification:(id)arg1;
+- (id)tokenAttachmentCellEffectiveAppearance:(id)arg1;
 - (unsigned long long)tokenField:(id)arg1 styleForRepresentedObject:(id)arg2;
 - (id)tokenField:(id)arg1 displayStringForRepresentedObject:(id)arg2;
 - (id)tokenField:(id)arg1 shouldAddObjects:(id)arg2 atIndex:(unsigned long long)arg3;
@@ -60,7 +61,7 @@
 - (BOOL)tokenAttachmentCellHasErrorState:(id)arg1;
 - (BOOL)tokenAttachmentCell:(id)arg1 doubleClickedInRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)tokenAttachmentCell:(id)arg1 willBeDestroyedWithRepresentedObject:(id)arg2;
-- (BOOL)tokenAttachmentCellShouldShowDedicingBackground:(id)arg1;
+- (BOOL)tokenAttachmentCellShouldShowDecidingBackground:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)_showErrorMessageForHandle:(id)arg1;
 - (BOOL)_showContactCardForIMHandle:(id)arg1;

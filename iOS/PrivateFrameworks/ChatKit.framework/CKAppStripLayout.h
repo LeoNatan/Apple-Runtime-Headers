@@ -16,11 +16,13 @@
     NSArray *_supplementryMagnifiedAttributes;
     _Bool _inLayoutModeTransition;
     _Bool _shouldDimPluginCells;
+    _Bool _shouldShowCellBorders;
     unsigned long long _layoutMode;
 }
 
 + (double)maxHeight;
 + (double)minHeight;
+@property(nonatomic) _Bool shouldShowCellBorders; // @synthesize shouldShowCellBorders=_shouldShowCellBorders;
 @property(nonatomic) _Bool shouldDimPluginCells; // @synthesize shouldDimPluginCells=_shouldDimPluginCells;
 @property(nonatomic) unsigned long long layoutMode; // @synthesize layoutMode=_layoutMode;
 - (void).cxx_destruct;

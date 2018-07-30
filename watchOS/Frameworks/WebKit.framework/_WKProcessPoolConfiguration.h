@@ -22,6 +22,11 @@
 @property(nonatomic) _Bool shouldTakeUIBackgroundAssertion;
 @property(nonatomic) _Bool alwaysRunsAtBackgroundPriority;
 @property(copy, nonatomic) NSString *CTDataConnectionServiceType;
+@property(nonatomic) _Bool suppressesConnectionTerminationOnSystemChange;
+@property(nonatomic) _Bool pageCacheEnabled;
+@property(nonatomic) _Bool processSwapsOnWindowOpenWithOpener;
+@property(nonatomic) _Bool alwaysKeepAndReuseSwappedProcesses;
+@property(nonatomic) _Bool processSwapsOnNavigation;
 @property(nonatomic) int presentingApplicationPID;
 @property(nonatomic) _Bool shouldCaptureAudioInUIProcess;
 @property(nonatomic) _Bool allowsCellularAccess;

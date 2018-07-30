@@ -11,7 +11,6 @@
 }
 
 + (id)snapshotForComposition:(id)arg1 size:(struct CGSize)arg2;
-+ (id)defaultUIConfiguration;
 
 @end
 

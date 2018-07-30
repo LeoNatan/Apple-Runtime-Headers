@@ -8,16 +8,15 @@
 
 @class MFPGraphicsState;
 
-__attribute__((visibility("hidden")))
 @interface MFPGraphicsContainer : NSObject
 {
     MFPGraphicsState *mParentGraphicsState;
     struct CGAffineTransform mContainerTransform;
 }
 
+- (void).cxx_destruct;
 - (struct CGAffineTransform)containerTransform;
 - (id)parentGraphicsState;
-- (void)dealloc;
 - (id)initWithParentGraphicsState:(id)arg1 containerTransform:(struct CGAffineTransform)arg2;
 
 @end

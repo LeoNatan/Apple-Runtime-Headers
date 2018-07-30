@@ -63,7 +63,6 @@
 - (id)_queue_daysSinceFirstCalorieGoal;
 - (id)_dateAsDays:(id)arg1;
 - (void)_queue_updateCalendarSummaryForWristOnSettings:(id)arg1;
-- (void)_queue_updateAchievementStatisticsForWristOnSettings:(id)arg1;
 - (void)logStandHourDidStand:(_Bool)arg1 date:(id)arg2;
 - (void)logWristOffNow;
 - (void)logWristOnNowIsFirst:(_Bool)arg1;

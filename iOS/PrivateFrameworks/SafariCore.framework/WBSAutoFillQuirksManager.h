@@ -8,19 +8,24 @@
 
 #import "WBSRemotePlistControllerDelegate.h"
 
-@class NSString, WBSAutoFillAssociatedDomainsManager, WBSPasswordGenerationManager, WBSRemotePlistController;
+@class NSString, WBSAutoFillAssociatedDomainsManager, WBSPasswordAuditingEligibleDomainsManager, WBSPasswordGenerationManager, WBSRemotePlistController;
 
 @interface WBSAutoFillQuirksManager : NSObject <WBSRemotePlistControllerDelegate>
 {
     WBSPasswordGenerationManager *_passwordGenerationManager;
     WBSAutoFillAssociatedDomainsManager *_associatedDomainsManager;
     WBSRemotePlistController *_remotePlistController;
+    WBSPasswordAuditingEligibleDomainsManager *_passwordAuditingEligibleDomainsManager;
+    _Bool _shouldAttemptToDownloadConfiguration;
 }
 
+@property(nonatomic) _Bool shouldAttemptToDownloadConfiguration; // @synthesize shouldAttemptToDownloadConfiguration=_shouldAttemptToDownloadConfiguration;
 - (void).cxx_destruct;
+- (id)_domainsIneligibleForPasswordAuditingFromCurrentSnapshot;
 - (id)_domainsWithAssociatedCredentialsFromCurrentSnapshot;
 - (id)_passwordRequirementsByDomainFromCurrentSnapshot;
 - (void)didDownloadPlistForRemotePlistController:(id)arg1;
+@property(readonly, nonatomic) WBSPasswordAuditingEligibleDomainsManager *passwordAuditingEligibleDomainsManager;
 @property(readonly, nonatomic) WBSAutoFillAssociatedDomainsManager *associatedDomainsManager;
 @property(readonly, nonatomic) WBSPasswordGenerationManager *passwordGenerationManager;
 - (void)prepareForTermination;

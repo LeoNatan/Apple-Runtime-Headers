@@ -9,12 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface FI_TPropertyTextFieldController : FI_IPropertyValueController
 {
-    _Bool _autoAdjustHeightToFit;
 }
 
-@property _Bool autoAdjustHeightToFit; // @synthesize autoAdjustHeightToFit=_autoAdjustHeightToFit;
-- (_Bool)adjustSize:(_Bool)arg1;
-- (void)initCommon;
++ (id)keyPathsForValuesAffectingShouldBeVisible;
+- (_Bool)shouldBeVisible;
 
 @end
 

@@ -6,7 +6,6 @@
 
 #import <OfficeImport/WDPicture.h>
 
-__attribute__((visibility("hidden")))
 @interface WDOleObject : WDPicture
 {
 }

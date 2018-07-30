@@ -27,6 +27,7 @@
 @property(nonatomic) _Bool useDebugDescription; // @synthesize useDebugDescription=_useDebugDescription;
 @property(retain, nonatomic) NSString *activeMultilinePrefix; // @synthesize activeMultilinePrefix=_activePrefix;
 @property(nonatomic) int activeComponent; // @synthesize activeComponent=_activeComponent;
+- (void).cxx_destruct;
 - (id)build;
 - (id)appendFormat:(id)arg1;
 - (id)appendString:(id)arg1;
@@ -73,7 +74,6 @@
 - (id)appendObject:(id)arg1 withName:(id)arg2;
 - (id)appendSuper;
 - (id)_activeComponentString;
-- (void)dealloc;
 - (id)initWithObject:(id)arg1;
 
 @end

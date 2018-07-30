@@ -25,7 +25,6 @@
 @property(readonly, nonatomic) HKInspectableValueCollection *lowValue; // @synthesize lowValue=_lowValue;
 - (void).cxx_destruct;
 - (void)_setUnitString:(id)arg1;
-- (double)_doubleForCodedQuantity:(id)arg1;
 - (double)_doubleForValue:(id)arg1;
 - (double)_doubleForValueCollection:(id)arg1;
 @property(readonly, nonatomic) _Bool hasRenderableContent;

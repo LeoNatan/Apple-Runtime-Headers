@@ -29,6 +29,9 @@
 - (void)setTitle:(id)arg1;
 @property(readonly, copy, nonatomic) INSpeakableString *title;
 - (id)initWithTitle:(id)arg1 content:(id)arg2 groupName:(id)arg3;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

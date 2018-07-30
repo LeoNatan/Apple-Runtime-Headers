@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OITSUImage.h>
 
-__attribute__((visibility("hidden")))
 @interface OI_TSUImageM : OITSUImage
 {
 }
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)initWithCGImage:(struct CGImage *)arg1;
 + (id)init;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (id)initWithNSImage:(id)arg1;
 
 @end
 

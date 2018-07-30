@@ -39,6 +39,8 @@
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)prepareForReuse;
 - (void)setBgColor:(id)arg1 highlightBgColor:(id)arg2 cornerRadius:(double)arg3;
+- (void)_updateForAccessibilityChange;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

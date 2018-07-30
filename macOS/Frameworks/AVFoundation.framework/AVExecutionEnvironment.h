@@ -14,8 +14,6 @@
 
 + (void)resetPlatformIdentifierForQueue:(id)arg1;
 + (void)setPlatformIdentifier:(id)arg1 forQueue:(id)arg2;
-+ (void)resetCurrentPlatformIdentifier;
-+ (void)setCurrentPlatformIdentifier:(id)arg1;
 + (id)currentPlatformIdentifier;
 + (id)sharedExecutionEnvironment;
 + (void)initialize;

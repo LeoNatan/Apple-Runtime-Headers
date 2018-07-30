@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTitleBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSWindowTitleBinder : NSTitleBinder
 {
 }

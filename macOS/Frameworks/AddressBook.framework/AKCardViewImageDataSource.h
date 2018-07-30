@@ -8,7 +8,6 @@
 
 @class ABCardViewImage, CNContactStore;
 
-__attribute__((visibility("hidden")))
 @interface AKCardViewImageDataSource : NSObject
 {
     ABCardViewImage *_updatedImage;

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSDisplayPatternBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDisplayPatternTitleBinder : NSDisplayPatternBinder
 {
 }

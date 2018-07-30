@@ -38,6 +38,7 @@
     unsigned long long _minimumDiskSize;
     unsigned long long _maximumDiskSize;
     NSString *_diskIdentifier;
+    NSString *_contentDiskIdentifier;
     NSString *_protocol;
 }
 
@@ -55,6 +56,7 @@
 @property BOOL isInternal; // @synthesize isInternal=_isInternal;
 @property BOOL isDiskImage; // @synthesize isDiskImage=_isDiskImage;
 @property(retain) NSString *protocol; // @synthesize protocol=_protocol;
+@property(readonly) NSString *contentDiskIdentifier; // @synthesize contentDiskIdentifier=_contentDiskIdentifier;
 @property(retain) NSString *diskIdentifier; // @synthesize diskIdentifier=_diskIdentifier;
 @property BOOL canBeDeleted; // @synthesize canBeDeleted=_canBeDeleted;
 @property unsigned long long maximumDiskSize; // @synthesize maximumDiskSize=_maximumDiskSize;

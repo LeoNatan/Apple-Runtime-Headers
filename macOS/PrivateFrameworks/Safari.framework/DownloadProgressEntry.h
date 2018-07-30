@@ -8,7 +8,7 @@
 
 #import "NSFilePresenter.h"
 
-@class BrowserWindowController, DownloadFile, DownloadFileUnarchiver, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSURLDownload, NSURLRequest, NSURLResponse, WBSCoalescedAsynchronousWriter;
+@class BrowserWindowController, DownloadFile, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSURLDownload, NSURLRequest, NSURLResponse, WBSCoalescedAsynchronousWriter, WBSDownloadFileUnarchiver;
 
 __attribute__((visibility("hidden")))
 @interface DownloadProgressEntry : NSObject <NSFilePresenter>
@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
     NSDictionary *_resumeInformation;
     NSURLDownload *_download;
-    DownloadFileUnarchiver *_fileUnarchiver;
+    WBSDownloadFileUnarchiver *_fileUnarchiver;
     WBSCoalescedAsynchronousWriter *_plistWriter;
     NSDate *_startDate;
     BOOL _openWhenDone;
@@ -47,6 +47,8 @@ __attribute__((visibility("hidden")))
     BOOL _observingFileLocation;
     NSObject<OS_dispatch_queue> *_cachedBundlePathAccessQueue;
     NSTimer *_reportUpdatedProgressTimer;
+    id <SandboxExtensionToken> _sandboxTokenForContainingDirectory;
+    NSObject<OS_dispatch_queue> *_downloadSandboxTokenQueue;
     BOOL _shouldUseRequestURLAsOriginURLIfNecessary;
     BOOL _didShowStorageManagerUI;
     NSArray *_tags;
@@ -79,10 +81,13 @@ __attribute__((visibility("hidden")))
 - (void)_stopReportingProgress;
 - (void)_startReportingProgress;
 - (void)_reportUpdatedProgress;
+- (void)_setProgressFileURL:(id)arg1;
 - (void)_startPostProcessingIfDone;
 - (void)_initializeResumeInformationForDownload;
 - (void)_endWithPostDownloadError:(id)arg1;
 - (id)_createDownloadBundleInDirectory:(id)arg1 withFilename:(id)arg2;
+- (void)_obtainSandboxExtensionTokenForContainingDirectoryOfDownloadAtURL:(id)arg1;
+- (id)_extensionTokenForContainingDirectoryOfDownloadAtURL:(id)arg1;
 - (unsigned long long)_requiredAdditionalSpaceAtDirectoryPath:(id)arg1;
 - (unsigned long long)_fileSystemFreeSizeAtDirectoryPath:(id)arg1;
 - (BOOL)_notEnoughFreeDiskSpaceAtDirectoryPath:(id)arg1;
@@ -111,7 +116,6 @@ __attribute__((visibility("hidden")))
 - (id)_postDownloadPath;
 - (id)_postDownloadFile;
 - (void)_autoOpenWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_updateCachedSecurityAssessment;
 - (void)_moveFilesFromBundleWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_replaceExistingFile:(id)arg1 atURL:(id)arg2 withFileAtURL:(id)arg3 tags:(id)arg4;
 - (BOOL)_open;
@@ -162,6 +166,7 @@ __attribute__((visibility("hidden")))
 - (long long)bytesLoaded;
 - (id)URL;
 - (void)setResponse:(id)arg1 bytesLoaded:(long long)arg2;
+- (void)setDownloadFileWithPath:(id)arg1 isUsingSavePanel:(BOOL)arg2;
 - (void)setDownloadFileWithPath:(id)arg1;
 - (void)_setDownloadFileWithPath:(id)arg1;
 - (void)willRemove;

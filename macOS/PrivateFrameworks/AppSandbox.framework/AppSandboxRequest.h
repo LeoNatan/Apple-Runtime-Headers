@@ -25,8 +25,9 @@
 
 + (id)appSandboxRequestForApplicationAtURL:(id)arg1 error:(id *)arg2;
 + (id)appSandboxRequestForPid:(int)arg1 error:(id *)arg2;
++ (id)implicitIosmacProfilePaths;
++ (id)implicitMacosProfilePaths;
 + (id)implicitProfilePaths;
-+ (id)_importedProfilePaths;
 + (id)profileSnippetFileName;
 + (BOOL)_setFatalError:(id *)arg1 forRequest:(id)arg2 withMessage:(id)arg3;
 @property(nonatomic) BOOL disableContainerRepair; // @synthesize disableContainerRepair=_disableContainerRepair;
@@ -45,8 +46,6 @@
 - (BOOL)_profileTimestampsAreValid;
 - (id)_makeSandboxProfileWithValidationInfo:(id)arg1 error:(id *)arg2;
 - (id)_makeSandboxProfileValidationInfoWithContainerId:(id)arg1 containerRootPath:(id)arg2 error:(id *)arg3;
-- (void)_errorLog:(id)arg1;
-- (void)_debugLog:(id)arg1;
 - (id)initWithCodeIdentity:(id)arg1;
 - (id)initWithCodeIdentity:(id)arg1 entitlements:(id)arg2;
 

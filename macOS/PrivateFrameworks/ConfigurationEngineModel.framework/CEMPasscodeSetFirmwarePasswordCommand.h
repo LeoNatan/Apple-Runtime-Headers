@@ -12,21 +12,25 @@
 
 @interface CEMPasscodeSetFirmwarePasswordCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadCurrentPassword;
+    NSString *_payloadNewPassword;
+    NSNumber *_payloadAllowOroms;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withNewPassword:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withCurrentPassword:(id)arg2 withNewPassword:(id)arg3 withAllowOroms:(id)arg4;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowOroms; // @synthesize payloadAllowOroms=_payloadAllowOroms;
+@property(copy, nonatomic) NSString *payloadNewPassword; // @synthesize payloadNewPassword=_payloadNewPassword;
+@property(copy, nonatomic) NSString *payloadCurrentPassword; // @synthesize payloadCurrentPassword=_payloadCurrentPassword;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (BOOL)mustBeSupervised;
-@property(readonly, nonatomic) NSNumber *payloadAllowOroms;
-@property(readonly, nonatomic) NSString *payloadNewPassword;
-@property(readonly, nonatomic) NSString *payloadCurrentPassword;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

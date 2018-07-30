@@ -41,6 +41,7 @@
 - (void)_removeAllUserContentFilters;
 - (void)_removeUserContentFilter:(id)arg1;
 - (void)_addUserContentFilter:(id)arg1;
+- (void)_addUserScriptImmediately:(id)arg1;
 - (void)_removeAllUserScriptsAssociatedWithUserContentWorld:(id)arg1;
 - (void)_removeUserScript:(id)arg1;
 

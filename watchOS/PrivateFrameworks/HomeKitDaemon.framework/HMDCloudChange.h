@@ -7,10 +7,11 @@
 #import "HMFObject.h"
 
 #import "HMDBackingStoreChangeObject.h"
+#import "HMDBackingStoreRecordMapping.h"
 
 @class CKRecord, CKRecordID, HMDBackingStoreModelObject, HMDCloudRecord, NSArray, NSMutableSet, NSSet, NSString, NSUUID;
 
-@interface HMDCloudChange : HMFObject <HMDBackingStoreChangeObject>
+@interface HMDCloudChange : HMFObject <HMDBackingStoreChangeObject, HMDBackingStoreRecordMapping>
 {
     HMDBackingStoreModelObject *_objectChange;
     HMDCloudRecord *_cloudRecord;
@@ -32,6 +33,8 @@
 - (void)resetRecord;
 - (void)updateChangeWithRecord:(id)arg1;
 @property(readonly, nonatomic) CKRecordID *recordID;
+@property(readonly, nonatomic) NSString *type;
+@property(readonly, nonatomic) NSString *recordName;
 @property(readonly, nonatomic) CKRecord *record;
 - (void)updateWithObjectChange:(id)arg1;
 - (void)updateDeletedCloudRecord:(id)arg1;
@@ -47,7 +50,10 @@
 @property(readonly, nonatomic, getter=isDeleted) _Bool deleteChange;
 @property(readonly, nonatomic, getter=isUpdated) _Bool updateChange;
 @property(readonly, nonatomic, getter=isAdded) _Bool addChange;
+@property(readonly, nonatomic) NSUUID *uuid;
 @property(readonly, nonatomic) NSUUID *objectID;
+@property(readonly, nonatomic) NSUUID *parentUuid;
+@property(readonly, nonatomic) NSUUID *parentObjectID;
 @property(readonly, nonatomic) NSSet *dependentUUIDs;
 @property(readonly, nonatomic) HMDBackingStoreModelObject *change;
 @property(readonly, copy) NSString *description;

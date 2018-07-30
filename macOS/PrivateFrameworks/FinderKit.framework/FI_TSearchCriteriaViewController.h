@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
 {
     id <TSearchCriteriaViewControllerDelegate> _delegate;
     struct TKeyValueBinder _criteriaRuleEditorRowsBinder;
-    struct TNSRef<NSMutableArray *, void> _customFieldsArray;
-    struct TNSRef<NSArray *, void> _rootSliceAttributes;
-    struct TNSRef<NSMutableArray<NSMutableDictionary *>*, void> _boundRulesArray;
-    struct TNSRef<FI_TSearchCriteriaSheetController *, void> _sheetController;
-    struct TNSRef<FI_TMDUserSearch *, void> _search;
+    struct TNSRef<NSMutableArray, void> _customFieldsArray;
+    struct TNSRef<NSArray, void> _rootSliceAttributes;
+    struct TNSRef<NSMutableArray<NSMutableDictionary *>, void> _boundRulesArray;
+    struct TNSRef<FI_TSearchCriteriaSheetController, void> _sheetController;
+    struct TNSRef<FI_TMDUserSearch, void> _search;
 }
 
 + (id)itemDisplayValueForCriterion:(id)arg1;

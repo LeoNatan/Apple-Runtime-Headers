@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) UINavigationController *modalRootViewController; // @synthesize modalRootViewController=_modalRootViewController;
 - (void).cxx_destruct;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)_forceOrientationBackToSupportedOrientation;
 - (void)_willRotateNotification:(id)arg1;
 - (void)_dismissAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_isDismissing;

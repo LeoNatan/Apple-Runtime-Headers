@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-#import "SPCompanionConnectionDelegate.h"
+#import "SPExtensionConnectionDelegate.h"
 
-@class NSString, NSUUID, SPCompanionConnection;
+@class NSString, NSUUID, SPExtensionConnection;
 
-@interface SPComplicationConnection : NSObject <SPCompanionConnectionDelegate>
+@interface SPComplicationConnection : NSObject <SPExtensionConnectionDelegate>
 {
-    SPCompanionConnection *_companionConnection;
+    SPExtensionConnection *_extensionConnection;
     NSString *_bundleID;
     _Bool _extensionDelegateHandlesBackgroundTasks;
     id <SPComplicationConnectionDelegate> _delegate;
@@ -25,8 +25,8 @@
 @property(nonatomic) __weak id <SPComplicationConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool extensionDelegateHandlesBackgroundTasks; // @synthesize extensionDelegateHandlesBackgroundTasks=_extensionDelegateHandlesBackgroundTasks;
 - (void).cxx_destruct;
-- (void)companionConnectionDirectExtensionConnectionWasInvalidated:(id)arg1;
-- (void)companionConnection:(id)arg1 directXPCSetupDidFailWithError:(id)arg2;
+- (void)extensionConnectionDirectExtensionConnectionWasInvalidated:(id)arg1;
+- (void)extensionConnection:(id)arg1 directXPCSetupDidFailWithError:(id)arg2;
 - (void)complicationIconForFamily:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)beginWakeWithCPULimits;
 - (void)endWakeSession;
@@ -35,8 +35,8 @@
 - (void)releaseProcessAssertionOnComplicationEndWake;
 - (void)takeComplicationAssertionWithCPULimits:(_Bool)arg1;
 @property(readonly, nonatomic) NSString *UUID;
-- (id)_onQueue__createCompanionConnection;
-- (id)_companionConnection;
+- (id)_onQueue__createExtensionConnection;
+- (id)_extensionConnection;
 - (void)dealloc;
 - (id)initWithBundleID:(id)arg1 delegate:(id)arg2;
 - (id)initWithBundleID:(id)arg1;

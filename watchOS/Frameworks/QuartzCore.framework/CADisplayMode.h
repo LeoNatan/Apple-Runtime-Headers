@@ -6,18 +6,14 @@
 
 #import "NSObject.h"
 
-@class CADisplay, NSString;
+@class NSString;
 
 @interface CADisplayMode : NSObject
 {
-    struct Mode _mode;
-    CADisplay *_dpy;
-    unsigned long _width;
-    unsigned long _height;
+    struct CADisplayModePriv *_priv;
 }
 
 + (id)_displayModeWithMode:(struct Mode)arg1 display:(id)arg2;
-- (id).cxx_construct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

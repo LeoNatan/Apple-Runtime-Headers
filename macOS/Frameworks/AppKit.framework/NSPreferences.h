@@ -27,6 +27,7 @@
     double _constrainedWidth;
     id _currentModule;
     void *_reserved;
+    BOOL _needsCentering;
 }
 
 + (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -56,7 +57,6 @@
 - (id)_setupPreferencesPanelForOwnerAtIndex:(long long)arg1;
 - (id)_setupPreferencesPanelForOwner:(id)arg1;
 - (void)showPreferencesPanel;
-- (struct CGSize)preferencesContentSize;
 - (void)_setupUI;
 - (void)_setupToolbar;
 - (void)addPreferenceNamed:(id)arg1 owner:(id)arg2;

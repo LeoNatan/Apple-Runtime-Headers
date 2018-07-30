@@ -7,28 +7,31 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBRequestRideIntentResponse.h"
 
-@class PBUnknownFields, _INPBRideStatus;
+@class NSString, _INPBRideStatus;
 
-@interface _INPBRequestRideIntentResponse : PBCodable <NSCopying>
+@interface _INPBRequestRideIntentResponse : PBCodable <_INPBRequestRideIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBRideStatus *_rideStatus;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBRideStatus *rideStatus; // @synthesize rideStatus=_rideStatus;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasRideStatus;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

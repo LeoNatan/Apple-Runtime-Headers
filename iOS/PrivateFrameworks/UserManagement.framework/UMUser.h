@@ -28,6 +28,7 @@
     NSString *_givenName;
     NSString *_familyName;
     NSURL *_photoURL;
+    NSString *_userAuxiliaryString;
     id __photo;
     NSDate *_creationDate;
     NSDate *_lastLoginDate;
@@ -70,6 +71,7 @@
 @property(copy, nonatomic) NSDate *lastLoginDate; // @synthesize lastLoginDate=_lastLoginDate;
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) id _photo; // @synthesize _photo=__photo;
+@property(copy, nonatomic) NSString *userAuxiliaryString; // @synthesize userAuxiliaryString=_userAuxiliaryString;
 @property(copy, nonatomic) NSURL *photoURL; // @synthesize photoURL=_photoURL;
 @property(copy, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
@@ -92,6 +94,7 @@
 @property(copy, nonatomic) NSString *displayName;
 - (struct dqblk)_diskQuota;
 @property(readonly, nonatomic) double passcodeBackOffInterval;
+- (_Bool)inFirstLoginSession;
 - (void)fetchAttributesIfNeeded;
 - (_Bool)fetchAttributesWithOutError:(id *)arg1;
 - (id)init;

@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class NSMutableAttributedString, NSString;
+@class NSAttributedString, NSMutableAttributedString, NSString;
 
 @interface SCROBrailleChunk : NSObject <NSCopying>
 {
@@ -29,11 +29,13 @@
     NSMutableAttributedString *_brailleString;
     NSMutableAttributedString *_pendingBraille;
     NSString *_originalText;
+    NSAttributedString *_originalBraille;
     struct _NSRange _brailleFocus;
     struct _NSRange __textFocus;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) NSAttributedString *originalBraille; // @synthesize originalBraille=_originalBraille;
 @property(nonatomic) struct _NSRange _textFocus; // @synthesize _textFocus=__textFocus;
 @property(copy, nonatomic) NSString *originalText; // @synthesize originalText=_originalText;
 @property(retain, nonatomic) NSMutableAttributedString *pendingBraille; // @synthesize pendingBraille=_pendingBraille;
@@ -73,7 +75,7 @@
 - (void)_retranslateWithTextPositionsRange:(struct _NSRange)arg1;
 @property(readonly, nonatomic) unsigned long long textLength;
 @property(readonly, nonatomic) unsigned long long length;
-- (long long)token;
+@property(readonly, nonatomic) long long token;
 - (_Bool)isFocusedOrSelected;
 - (_Bool)hasSelection;
 - (_Bool)focused;
@@ -82,10 +84,11 @@
 - (void)_translateAsTechnicalTextWithPrimaryTable:(_Bool)arg1;
 - (void)_translateWithTextPositionsRange:(struct _NSRange)arg1;
 - (struct _NSRange)_adjustedTextRangeForBrailleTranslation:(struct _NSRange)arg1;
+- (void)translate:(_Bool)arg1;
 - (void)translate;
 - (id)_tableIdentifierForLanguage:(id)arg1;
 - (id)description;
-- (id)initWithText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 textFocus:(struct _NSRange *)arg6 contractionMode:(int)arg7 showEightDot:(_Bool)arg8 showDotsSevenAndEight:(_Bool)arg9 technical:(_Bool)arg10 isEditableText:(_Bool)arg11 isPadding:(_Bool)arg12;
+- (id)initWithText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 textFocus:(struct _NSRange *)arg6 contractionMode:(int)arg7 showEightDot:(_Bool)arg8 showDotsSevenAndEight:(_Bool)arg9 technical:(_Bool)arg10 isEditableText:(_Bool)arg11 isPadding:(_Bool)arg12 editingString:(id)arg13;
 - (id)initWithText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 textFocus:(struct _NSRange *)arg6 contractionMode:(int)arg7 showEightDot:(_Bool)arg8 showDotsSevenAndEight:(_Bool)arg9 technical:(_Bool)arg10 isEditableText:(_Bool)arg11;
 - (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange *)arg3 token:(long long)arg4 textFocus:(struct _NSRange *)arg5 contractionMode:(int)arg6 showEightDot:(_Bool)arg7 showDotsSevenAndEight:(_Bool)arg8 technical:(_Bool)arg9 isEditableText:(_Bool)arg10;
 - (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange *)arg3 token:(long long)arg4 textFocus:(struct _NSRange *)arg5 contractionMode:(int)arg6 showEightDot:(_Bool)arg7 showDotsSevenAndEight:(_Bool)arg8 isEditableText:(_Bool)arg9;

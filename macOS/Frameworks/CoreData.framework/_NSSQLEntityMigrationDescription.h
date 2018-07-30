@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_pendingTransforms;
 }
 
-@property(readonly) int migrationType; // @synthesize migrationType=_migrationType;
-@property(readonly) NSEntityMapping *entityMapping; // @synthesize entityMapping=_entityMapping;
-@property(readonly) NSSQLEntity *destinationEntity; // @synthesize destinationEntity=_dstEntity;
-@property(readonly) NSSQLEntity *sourceEntity; // @synthesize sourceEntity=_srcEntity;
+@property(readonly, nonatomic) int migrationType; // @synthesize migrationType=_migrationType;
+@property(readonly, nonatomic) NSEntityMapping *entityMapping; // @synthesize entityMapping=_entityMapping;
+@property(readonly, nonatomic) NSSQLEntity *destinationEntity; // @synthesize destinationEntity=_dstEntity;
+@property(readonly, nonatomic) NSSQLEntity *sourceEntity; // @synthesize sourceEntity=_srcEntity;
 - (id)nextPropertyTransform;
 - (id)transformedManyToManys;
 - (id)removedManyToManys;
@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)_generateSQLValueMappingsWithMigrationContext:(struct _NSSQLMigrationContext)arg1;
 - (id)description;
 - (void)dealloc;
+- (void)_changeToCopyMigrationType;
 - (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;
 
 @end

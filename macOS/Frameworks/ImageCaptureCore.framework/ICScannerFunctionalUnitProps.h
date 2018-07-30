@@ -8,6 +8,7 @@
 
 @class ICScannerDevice, ICScannerImageRep, NSArray, NSMutableDictionary, NSMutableIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface ICScannerFunctionalUnitProps : NSObject
 {
     unsigned long long _pixelDataType;
@@ -89,7 +90,6 @@
 @property struct CGImage *overviewImage; // @synthesize overviewImage=_overviewImage;
 @property(readonly) NSMutableDictionary *currentSettings;
 - (id)initWithDictionary:(id)arg1 andScanner:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 
 @end

@@ -12,9 +12,11 @@
 
 @interface CKDPShare : PBCodable <NSCopying>
 {
+    NSString *_displayedHostname;
     NSString *_etag;
     NSMutableArray *_invitedKeyToRemoves;
     CKDPProtectionInfo *_invitedPcs;
+    NSString *_origin;
     NSMutableArray *_participants;
     NSMutableArray *_potentialMatchs;
     int _publicAccess;
@@ -22,9 +24,11 @@
     CKDPShareIdentifier *_shareId;
     NSData *_shortTokenHash;
     NSString *_shortTokenRoutingKey;
+    _Bool _anonymousPublicAccess;
     _Bool _publisherModel;
     struct {
         unsigned int publicAccess:1;
+        unsigned int anonymousPublicAccess:1;
         unsigned int publisherModel:1;
     } _has;
 }
@@ -32,7 +36,9 @@
 + (Class)invitedKeyToRemoveType;
 + (Class)potentialMatchType;
 + (Class)participantType;
+@property(retain, nonatomic) NSString *origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) NSData *shortTokenHash; // @synthesize shortTokenHash=_shortTokenHash;
+@property(retain, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(retain, nonatomic) NSMutableArray *invitedKeyToRemoves; // @synthesize invitedKeyToRemoves=_invitedKeyToRemoves;
 @property(retain, nonatomic) NSMutableArray *potentialMatchs; // @synthesize potentialMatchs=_potentialMatchs;
 @property(retain, nonatomic) NSString *shortTokenRoutingKey; // @synthesize shortTokenRoutingKey=_shortTokenRoutingKey;
@@ -51,7 +57,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasOrigin;
 @property(readonly, nonatomic) _Bool hasShortTokenHash;
+@property(readonly, nonatomic) _Bool hasDisplayedHostname;
+@property(nonatomic) _Bool hasAnonymousPublicAccess;
+@property(nonatomic) _Bool anonymousPublicAccess; // @synthesize anonymousPublicAccess=_anonymousPublicAccess;
 @property(nonatomic) _Bool hasPublisherModel;
 @property(nonatomic) _Bool publisherModel; // @synthesize publisherModel=_publisherModel;
 - (id)invitedKeyToRemoveAtIndex:(unsigned long long)arg1;

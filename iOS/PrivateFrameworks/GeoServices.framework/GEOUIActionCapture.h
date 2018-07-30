@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOUIActionCapture : PBCodable <NSCopying>
 {
     double _duration;

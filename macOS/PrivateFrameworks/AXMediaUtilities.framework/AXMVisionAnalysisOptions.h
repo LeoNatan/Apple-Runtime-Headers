@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class AXMLanguage, NSSet;
+@class AXMLanguage, NSArray, NSSet;
 
 @interface AXMVisionAnalysisOptions : NSObject <NSSecureCoding>
 {
@@ -25,11 +25,13 @@
     long long _clientID;
     AXMLanguage *_textDetectionLanguage;
     NSSet *_spellCheckingLanguages;
+    NSArray *_ignoredLayerContextIDs;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)voiceOverOptions;
 + (id)defaultOptions;
+@property(retain, nonatomic) NSArray *ignoredLayerContextIDs; // @synthesize ignoredLayerContextIDs=_ignoredLayerContextIDs;
 @property(nonatomic) BOOL includeImageInResult; // @synthesize includeImageInResult=_includeImageInResult;
 @property(retain, nonatomic) NSSet *spellCheckingLanguages; // @synthesize spellCheckingLanguages=_spellCheckingLanguages;
 @property(retain, nonatomic) AXMLanguage *textDetectionLanguage; // @synthesize textDetectionLanguage=_textDetectionLanguage;

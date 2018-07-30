@@ -20,7 +20,7 @@
     float _titleBaselineOffset;
 }
 
-+ (id)attributesForTemplate:(id)arg1;
++ (id)attributesForTemplate:(id)arg1 forDevice:(id)arg2;
 @property(nonatomic) float titleBaselineOffset; // @synthesize titleBaselineOffset=_titleBaselineOffset;
 @property(retain, nonatomic) CLKFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(nonatomic) float minimumFontSize; // @synthesize minimumFontSize=_minimumFontSize;

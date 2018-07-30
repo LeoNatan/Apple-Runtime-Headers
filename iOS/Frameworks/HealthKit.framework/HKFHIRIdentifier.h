@@ -28,6 +28,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)SQLWildcardIdentifierForContainedResourcesIdentifierOnly;
 - (id)SQLWildcardIdentifierForContainedResources;
 - (id)parentResourceIdentifierWithError:(id *)arg1;
 - (id)identifierForContainedResourceWithIdentifier:(id)arg1 error:(id *)arg2;

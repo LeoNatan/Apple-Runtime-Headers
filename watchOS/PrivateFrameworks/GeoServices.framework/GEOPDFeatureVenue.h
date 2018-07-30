@@ -10,6 +10,7 @@
 
 @class GEOPDVenueContainer, NSMutableArray, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDFeatureVenue : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

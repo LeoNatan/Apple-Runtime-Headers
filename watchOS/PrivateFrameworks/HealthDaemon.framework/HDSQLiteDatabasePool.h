@@ -8,42 +8,38 @@
 
 #import "HDDiagnosticObject.h"
 
-@class NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString;
+@class NSCondition, NSMapTable, NSMutableSet, NSObject<OS_dispatch_semaphore>, NSString;
 
 @interface HDSQLiteDatabasePool : NSObject <HDDiagnosticObject>
 {
-    NSObject<OS_dispatch_queue> *_cacheQueue;
+    NSCondition *_cacheCondition;
     NSMutableSet *_cache;
     unsigned int _cacheGeneration;
-    NSObject<OS_dispatch_queue> *_checkoutQueue;
+    int _cacheSize;
+    int _concurrentReaderLimit;
+    // Error parsing type: Ai, name: _count
+    struct os_unfair_lock_s _checkoutLock;
     NSMapTable *_checkoutMap;
     NSObject<OS_dispatch_semaphore> *_readerSemaphore;
     NSObject<OS_dispatch_semaphore> *_writerSemaphore;
-    unsigned int _cacheSize;
-    int _backgroundReadersWaiting;
-    int _writersWaiting;
     id <HDSQLiteDatabasePoolDelegate> _delegate;
-    unsigned int _maxConcurrentBackgroundReaders;
-    unsigned int _maxConcurrentWriters;
 }
 
-@property(readonly) unsigned int maxConcurrentWriters; // @synthesize maxConcurrentWriters=_maxConcurrentWriters;
-@property(readonly) unsigned int maxConcurrentBackgroundReaders; // @synthesize maxConcurrentBackgroundReaders=_maxConcurrentBackgroundReaders;
-@property id <HDSQLiteDatabasePoolDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <HDSQLiteDatabasePoolDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)_didFlushDatabases:(id)arg1;
-- (id)_semaphoreForDatabaseType:(int)arg1 waitCounter:(int **)arg2;
-- (id)_databaseWithType:(int)arg1 error:(id *)arg2;
-@property unsigned int cacheSize;
+- (id)_semaphoreForCheckOutOptions:(unsigned int)arg1;
+- (id)_removeDatabaseFromCheckoutMap:(id)arg1;
+- (void)_addDatabaseWrapperToCheckoutMap:(id)arg1;
 - (void)flush;
 - (void)checkInDatabase:(id)arg1 flushImmediately:(_Bool)arg2;
-- (id)writerDatabaseWithError:(id *)arg1;
-- (id)readerDatabaseWithPriority:(int)arg1 error:(id *)arg2;
-@property(readonly) unsigned int writersWaiting;
-@property(readonly) unsigned int backgroundReadersWaiting;
+- (id)checkOutDatabaseWithOptions:(unsigned int)arg1 error:(id *)arg2;
+@property(readonly) int concurrentReaderLimit;
+@property(readonly) int cacheSize;
+@property(readonly) int count;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1 maxConcurrentBackgroundReaders:(unsigned int)arg2;
+- (id)initWithConcurrentReaderLimit:(int)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

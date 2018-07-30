@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_remoteSideEntitlementCache;
 }
 
-- (id)_valueForEntitlement:(id)arg1 auditToken:(CDStruct_6ad76789)arg2;
+- (id)_valueForEntitlement:(id)arg1 auditToken:(CDStruct_4c969caf)arg2;
 - (_Bool)removeProxy:(id)arg1;
 - (void)addProxy:(id)arg1;
 - (void)dealloc;

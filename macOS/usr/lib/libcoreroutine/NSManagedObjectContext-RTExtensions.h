@@ -7,11 +7,7 @@
 #import "NSManagedObjectContext.h"
 
 @interface NSManagedObjectContext (RTExtensions)
-- (void)saveContext:(CDUnknownBlockType)arg1;
-- (id)saveContextAndWait;
-- (BOOL)removeAllWithEntityDescription:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
-- (BOOL)removeAllExcept:(id)arg1 entityDescription:(id)arg2 error:(id *)arg3;
-- (id)findAllWithEntityDescription:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 error:(id *)arg4;
-- (id)findFirstMatchingWithEntityDescription:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
+- (BOOL)deleteAllWithEntityName:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
+- (id)fetchAllWithEntityName:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 error:(id *)arg4;
 @end
 

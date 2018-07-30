@@ -9,15 +9,18 @@
 @interface AVCSessionConfiguration : NSObject
 {
     unsigned long long _maxRemoteParticipants;
-    long long _sessionType;
+    long long _sessionMode;
+    id _reportingHierarchyToken;
 }
 
-+ (long long)sessionTypeWithClientSessionType:(long long)arg1;
-+ (long long)clientSessionTypeWithSessionType:(long long)arg1;
-@property(nonatomic) long long sessionType; // @synthesize sessionType=_sessionType;
++ (long long)sessionModeWithClientSessionMode:(long long)arg1;
++ (long long)clientSessionModeWithSessionMode:(long long)arg1;
+@property(copy, nonatomic) id reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
+@property(nonatomic) long long sessionMode; // @synthesize sessionMode=_sessionMode;
 @property(nonatomic) unsigned long long maxRemoteParticipants; // @synthesize maxRemoteParticipants=_maxRemoteParticipants;
 - (id)dictionary;
 - (void)setUpWithDictionary:(id)arg1;
+- (void)dealloc;
 
 @end
 

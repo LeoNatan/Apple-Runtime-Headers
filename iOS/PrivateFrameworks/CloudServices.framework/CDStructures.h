@@ -10,6 +10,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct ccdh_gp;
+
 struct ccdigest_info;
 
 struct ccmode_cbc;
@@ -20,7 +22,7 @@ struct ccrng_state;
 
 struct ccses_crypto_t {
     struct ccdigest_info *_field1;
-    CDUnion_089e675c _field2;
+    struct ccdh_gp *_field2;
     struct ccmode_ecb *_field3;
     struct ccmode_ecb *_field4;
     struct ccmode_cbc *_field5;
@@ -33,12 +35,8 @@ struct ccses_crypto_t {
 };
 
 struct ccsrp_ctx {
-    struct ccsrp_ctx_header _field1;
-};
-
-struct ccsrp_ctx_header {
     struct ccdigest_info *_field1;
-    CDUnion_089e675c _field2;
+    struct ccdh_gp *_field2;
     struct ccrng_state *_field3;
     struct {
         unsigned int :1;
@@ -49,30 +47,4 @@ struct ccsrp_ctx_header {
     unsigned char _field5[7];
     unsigned long long _field6[1];
 };
-
-struct cczp;
-
-#pragma mark Typedef'd Structures
-
-typedef struct CDStruct_183601bc;
-
-#pragma mark Typedef'd Unions
-
-typedef union {
-    unsigned long long *_field1;
-    struct cczp *_field2;
-} CDUnion_1ea3dc14;
-
-typedef union {
-    union {
-        unsigned long long *_field1;
-        struct cczp *_field2;
-        CDUnion_1ea3dc14 _field3;
-    } _field1;
-    CDStruct_183601bc *_field2;
-    union {
-        CDUnion_1ea3dc14 _field1;
-        CDStruct_183601bc *_field2;
-    } _field3;
-} CDUnion_089e675c;
 

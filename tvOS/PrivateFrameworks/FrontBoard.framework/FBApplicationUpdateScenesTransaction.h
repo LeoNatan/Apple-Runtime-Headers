@@ -22,7 +22,8 @@
 }
 
 @property(nonatomic) _Bool waitsForSceneCommits; // @synthesize waitsForSceneCommits=_waitsForSceneCommits;
-@property(readonly, retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+- (void).cxx_destruct;
 - (void)updateSceneTransactionDidCommitUpdate:(id)arg1;
 - (void)updateSceneTransactionWillCommitUpdate:(id)arg1;
 - (void)updateSceneTransactionWillUpdateScene:(id)arg1;
@@ -46,8 +47,7 @@
 - (void)_updateSceneWithIdentifier:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
 - (void)updateSceneWithIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 initialClientSettingsProvider:(CDUnknownBlockType)arg5;
 - (void)updateSceneWithIdentifier:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
-@property(readonly, retain, nonatomic) FBApplicationProcess *process; // @dynamic process;
-- (void)dealloc;
+@property(readonly, nonatomic) FBApplicationProcess *process; // @dynamic process;
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(CDUnknownBlockType)arg2;
 
 // Remaining properties

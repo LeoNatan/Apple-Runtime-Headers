@@ -44,13 +44,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
-- (id)description;
-- (id)debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;
 - (id)shortDescription;
 - (id)initWithOwnerName:(id)arg1 uuid:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly) Class superclass;
 
 @end
 

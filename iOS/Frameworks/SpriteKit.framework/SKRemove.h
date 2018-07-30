@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)removeFromParent;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;

@@ -20,6 +20,7 @@
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
 + (id)_sampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 sampleType:(id)arg5 startDate:(double)arg6 endDate:(double)arg7;
++ (id)_newSampleFromDatesWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 device:(id)arg4 metadata:(id)arg5 config:(CDUnknownBlockType)arg6;
 + (id)_newSampleWithType:(id)arg1 startDate:(double)arg2 endDate:(double)arg3 device:(id)arg4 metadata:(id)arg5 config:(CDUnknownBlockType)arg6;
 @property(nonatomic, getter=_endTimestamp, setter=_setEndTimestamp:) double endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(nonatomic, getter=_startTimestamp, setter=_setStartTimestamp:) double startTimestamp; // @synthesize startTimestamp=_startTimestamp;
@@ -28,9 +29,12 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
+- (void)_setEndDate:(id)arg1;
+- (void)_setStartDate:(id)arg1;
 @property(readonly) NSDate *endDate;
 @property(readonly) NSDate *startDate;
-@property(readonly) HKSampleType *sampleType;
+- (void)_setType:(id)arg1;
+@property(readonly, copy) HKSampleType *sampleType;
 - (void)_setSampleType:(id)arg1;
 - (long long)_externalSyncObjectCode;
 - (id)_validateConfiguration;

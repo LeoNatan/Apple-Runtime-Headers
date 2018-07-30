@@ -13,7 +13,6 @@
     VCPCNNBlock *_blocks[200];
     short _quantFactor;
     BOOL _useGPU;
-    BOOL _executed;
     VCPCNNMetalContext *_context;
     VCPCNNData *_output;
 }

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AVApplePortraitMetadata, AVCameraCalibrationData, AVCaptureBracketedStillImageSettings, AVCapturePhotoSettings, AVCaptureResolvedPhotoSettings, AVDepthData, NSDictionary, NSString;
+@class AVApplePortraitMetadata, AVCameraCalibrationData, AVCaptureBracketedStillImageSettings, AVCapturePhotoSettings, AVCaptureResolvedPhotoSettings, AVDepthData, AVPortraitEffectsMatte, NSDictionary, NSString;
 
 @interface AVCapturePhotoInternal : NSObject
 {
@@ -23,6 +23,8 @@
     AVCapturePhotoSettings *unresolvedSettings;
     AVDepthData *depthData;
     _Bool didTryToDecodeDepthData;
+    AVPortraitEffectsMatte *portraitEffectsMatte;
+    _Bool didTryToDecodePortraitEffectsMatte;
     _Bool isRawPhoto;
     AVCaptureBracketedStillImageSettings *bracketSettings;
     unsigned long long sequenceCount;

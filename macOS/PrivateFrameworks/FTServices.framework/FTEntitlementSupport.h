@@ -21,7 +21,6 @@
 - (BOOL)_registerForCTEntitlementNotifications;
 - (void)_updateEntitlementStatusUsingCTEntitlementsInfo:(struct __CFDictionary *)arg1;
 - (void)_entitlementStatusChanged;
-- (void)_registrationStateChanged;
 - (id)_rawEntitlementValue;
 @property(readonly, nonatomic) NSDictionary *registrationState;
 @property(readonly, nonatomic) BOOL faceTimeNonWiFiEntitled;

@@ -7,13 +7,12 @@
 #import "NSObject.h"
 
 #import "CIMMecabraEngineProvider.h"
-#import "IMKCandidateControllerDelegate.h"
 #import "IMKCandidateSelectionViewDelegate.h"
 #import "TIMecabraEnvironmentProvider.h"
 
-@class CIMCandidate, CIMCandidateSorter, CIMDebugLogger, CIMInputController, CIMMecabraContext, CIMPreferences, IMKCandidateController, NSArray, NSEvent, NSString, TIMecabraEnvironment;
+@class CIMCandidate, CIMCandidateSorter, CIMDebugLogger, CIMInputController, CIMMecabraContext, CIMPreferences, IMKCandidates, NSArray, NSAttributedString, NSEvent, NSString, NSView, TIMecabraEnvironment;
 
-@interface CIMBaseEngine : NSObject <CIMMecabraEngineProvider, IMKCandidateControllerDelegate, IMKCandidateSelectionViewDelegate, TIMecabraEnvironmentProvider>
+@interface CIMBaseEngine : NSObject <CIMMecabraEngineProvider, IMKCandidateSelectionViewDelegate, TIMecabraEnvironmentProvider>
 {
     BOOL _currentCandidatesHaveExtendedEmoji;
     BOOL _facemarksCandidateWindowTriggered;
@@ -32,15 +31,15 @@
     unsigned short _keyCode;
     TIMecabraEnvironment *_mecabraEnvironment;
     NSArray *_candidates;
-    id _client;
+    NSString *_displayMethod;
     CIMInputController *_inputController;
     NSString *_inputModeName;
     CIMCandidate *_savedCandidate;
     CIMCandidate *_previousCandidate;
     unsigned long long _scriptType;
-    NSString *_currentSortingMethod;
     CIMCandidateSorter *_candidateSorter;
     NSString *_characters;
+    NSString *_currentSortingMethod;
     NSEvent *_event;
     unsigned long long _modifierFlags;
     NSArray *_punctuationCandidates;
@@ -59,10 +58,10 @@
 @property(nonatomic) unsigned long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(nonatomic) unsigned short keyCode; // @synthesize keyCode=_keyCode;
 @property(retain, nonatomic) NSEvent *event; // @synthesize event=_event;
+@property(copy, nonatomic) NSString *currentSortingMethod; // @synthesize currentSortingMethod=_currentSortingMethod;
 @property(nonatomic) unsigned short charCode; // @synthesize charCode=_charCode;
 @property(copy, nonatomic) NSString *characters; // @synthesize characters=_characters;
 @property(retain, nonatomic) CIMCandidateSorter *candidateSorter; // @synthesize candidateSorter=_candidateSorter;
-@property(copy, nonatomic) NSString *currentSortingMethod; // @synthesize currentSortingMethod=_currentSortingMethod;
 @property(readonly, nonatomic, getter=isInlineEmpty) BOOL inlineEmpty; // @synthesize inlineEmpty=_inlineEmpty;
 @property(nonatomic) struct _NSRange trackingRange; // @synthesize trackingRange=_trackingRange;
 @property BOOL punctuationWindowTriggeredViaFacemarkInput; // @synthesize punctuationWindowTriggeredViaFacemarkInput=_punctuationWindowTriggeredViaFacemarkInput;
@@ -75,8 +74,8 @@
 @property(nonatomic) BOOL isShowingCandidates; // @synthesize isShowingCandidates=_isShowingCandidates;
 @property(nonatomic) __weak CIMInputController *inputController; // @synthesize inputController=_inputController;
 @property(nonatomic) BOOL facemarksCandidateWindowTriggered; // @synthesize facemarksCandidateWindowTriggered=_facemarksCandidateWindowTriggered;
+@property(copy, nonatomic) NSString *displayMethod; // @synthesize displayMethod=_displayMethod;
 @property BOOL currentCandidatesHaveExtendedEmoji; // @synthesize currentCandidatesHaveExtendedEmoji=_currentCandidatesHaveExtendedEmoji;
-@property __weak id client; // @synthesize client=_client;
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
 @property(readonly, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
 - (void).cxx_destruct;
@@ -86,6 +85,8 @@
 @property(readonly, nonatomic) BOOL selectionShouldBeReflectedInTouchBar;
 - (void)didHandleSecondaryCandidateSelected:(id)arg1;
 - (void)didHandleSecondaryCandidateSelectionChanged:(id)arg1;
+- (void)didHandleCandidateSelected:(id)arg1 candidateController:(id)arg2;
+- (void)didHandleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
 - (id)predictionCandidatesWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
 - (id)candidatesForInputString:(id)arg1;
 - (id)inputStringForCharacters:(id)arg1;
@@ -101,18 +102,22 @@
 - (id)rightContextWithSelectedRange:(struct _NSRange)arg1;
 - (id)leftContextWithSelectedRange:(struct _NSRange)arg1;
 - (id)textFromCursorPosition:(long long)arg1 selectedRange:(struct _NSRange)arg2;
-- (id)currentInlineText;
+@property(readonly, nonatomic) NSAttributedString *currentInlineText;
 - (id)localizedSortingMethods;
+- (id)internalNameForLocalizedSortingMethod:(id)arg1;
 - (id)localizedTitleForSortingMethod:(id)arg1;
+- (id)dictionaryForScriptType:(unsigned long long)arg1;
 - (id)defaultDisplayMethod;
-- (id)informationView;
+@property(readonly, nonatomic) NSView *informationView;
 - (BOOL)shouldUpdateExistingCandidates;
+- (void)updateCandidateController:(id)arg1;
+- (id)makeScrubbingCandidateController;
+- (id)makeCandidateController;
+- (unsigned long long)panelType;
 - (id)textClient;
-- (long long)windowType;
-- (id)displayMethod;
 - (id)sortingMethods;
-- (id)candidatesForSortingMethod:(id)arg1;
-- (id)candidateDataForDisplayMethod:(id)arg1 candidateController:(id)arg2;
+- (id)candidateListDictionaryWithSortingMethod:(id)arg1;
+- (id)candidateListDictionaryWithCandidates:(id)arg1;
 - (void)didSelectSortingMode:(id)arg1;
 @property(readonly, nonatomic) BOOL forceNoIncrementalSearchPositioning;
 - (double)numberOfColumns;
@@ -178,7 +183,8 @@
 - (void)showSubstitutionCandidatesForSelectedTextWithOnScreenWindow:(BOOL)arg1;
 - (void)showPunctationCandidates;
 - (void)doCommandBySelector:(SEL)arg1 withUserInfo:(id)arg2;
-@property(readonly, nonatomic) IMKCandidateController *candidateController;
+@property(readonly, nonatomic) IMKCandidates *candidateController;
+@property(readonly) id client;
 - (void)dealloc;
 - (id)initWithScriptType:(unsigned long long)arg1 withInputController:(id)arg2;
 

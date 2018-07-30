@@ -13,7 +13,7 @@
 
 @property(readonly) struct __Mecabra *mecabraRef; // @synthesize mecabraRef=_mecabraRef;
 - (void)dealloc;
-- (id)initWithMecabraRef:(struct __Mecabra *)arg1;
+- (id)initWithInputMethodType:(int)arg1 learningDictionaryDirectoryURL:(struct __CFURL *)arg2 creationOptions:(unsigned long long)arg3;
 
 @end
 

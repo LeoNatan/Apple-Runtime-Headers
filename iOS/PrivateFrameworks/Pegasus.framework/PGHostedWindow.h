@@ -8,6 +8,7 @@
 
 @class PGHostedWindowHostingHandle;
 
+__attribute__((visibility("hidden")))
 @interface PGHostedWindow : _UIHostedWindow
 {
 }

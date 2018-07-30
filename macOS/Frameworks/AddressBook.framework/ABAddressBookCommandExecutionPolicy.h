@@ -8,7 +8,6 @@
 
 @class ABAddressBook;
 
-__attribute__((visibility("hidden")))
 @interface ABAddressBookCommandExecutionPolicy : ABCommandExecutionPolicy
 {
     ABAddressBook *_addressBook;

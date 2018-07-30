@@ -6,54 +6,31 @@
 
 #import "NSObject.h"
 
-#import "PFCloudKitSerializerDelegate.h"
-
-@class CKDatabase, CKRecordZone, NSCKImportOperation, NSCloudKitMirroringDelegateOptions, NSCloudKitMirroringRequest, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPersistentStore, NSPersistentStoreCoordinator, NSSQLCore, NSString, NSURL, PFCloudKitStoreMonitor;
+@class NSArray, NSCloudKitMirroringDelegateMetadata, NSCloudKitMirroringImportRequest, NSMutableArray, PFCloudKitImporterOptions;
 
 __attribute__((visibility("hidden")))
-@interface PFCloudKitImporter : NSObject <PFCloudKitSerializerDelegate>
+@interface PFCloudKitImporter : NSObject
 {
-    CKDatabase *_database;
-    CKRecordZone *_zone;
-    NSSQLCore *_store;
-    NSPersistentStoreCoordinator *_coordinator;
-    NSMutableArray *_resolvedRelationships;
-    NSCKImportOperation *_importOperation;
-    PFCloudKitStoreMonitor *_monitor;
-    NSCloudKitMirroringDelegateOptions *_options;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    NSMutableDictionary *_assetPathToSafeSaveURL;
-    NSURL *_assetStorageURL;
-    NSCloudKitMirroringRequest *_request;
+    PFCloudKitImporterOptions *_options;
+    NSCloudKitMirroringImportRequest *_request;
+    NSArray *_workItems;
+    NSMutableArray *_workItemResults;
+    NSCloudKitMirroringDelegateMetadata *_metadata;
 }
 
-@property(readonly, nonatomic) NSURL *assetStorageURL; // @synthesize assetStorageURL=_assetStorageURL;
-@property(readonly, nonatomic) NSCloudKitMirroringRequest *request; // @synthesize request=_request;
-@property(readonly, nonatomic) NSDictionary *assetPathToSafeSaveURL; // @synthesize assetPathToSafeSaveURL=_assetPathToSafeSaveURL;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *options; // @synthesize options=_options;
-@property(readonly, nonatomic) PFCloudKitStoreMonitor *monitor; // @synthesize monitor=_monitor;
-@property(readonly, nonatomic) NSCKImportOperation *importOperation; // @synthesize importOperation=_importOperation;
-@property(readonly, nonatomic) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-@property(readonly, nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
-@property(readonly, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;
-@property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
-- (id)cloudKitSerializer:(id)arg1 safeSaveURLForAsset:(id)arg2;
-- (void)cloudKitSerializer:(id)arg1 resolvedPendingRelationship:(id)arg2;
-- (void)cloudKitSerializer:(id)arg1 failedToUpdateRelationship:(id)arg2 withError:(id)arg3;
-- (void)removeDownloadedAssetFiles;
-- (void)processAccumulatedChangesForServerChangeToken:(id)arg1 withAccumulatedUpdates:(id)arg2 andDeletes:(id)arg3 completion:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) NSArray *workItems; // @synthesize workItems=_workItems;
+@property(readonly, nonatomic) NSArray *workItemResults; // @synthesize workItemResults=_workItemResults;
+@property(readonly, nonatomic) NSCloudKitMirroringDelegateMetadata *metadata; // @synthesize metadata=_metadata;
+@property(readonly, nonatomic) NSCloudKitMirroringImportRequest *request; // @synthesize request=_request;
+@property(readonly, copy, nonatomic) PFCloudKitImporterOptions *options; // @synthesize options=_options;
+- (void)workItemFinished:(id)arg1 withResult:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)dequeueWorkItem;
+- (void)processWorkItemsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)processDatabaseImportContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)databaseFetchFinishWithContext:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)importIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1 request:(id)arg2 store:(id)arg3 workQueue:(id)arg4 zone:(id)arg5 andDatabase:(id)arg6;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithOptions:(id)arg1 request:(id)arg2;
 
 @end
 

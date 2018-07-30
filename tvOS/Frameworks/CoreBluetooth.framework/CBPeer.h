@@ -13,6 +13,7 @@
 @interface CBPeer : NSObject <NSCopying>
 {
     _Bool _isLinkEncrypted;
+    unsigned char _connectedTransport;
     NSUUID *_identifier;
     unsigned long long _mtuLength;
     long long _pairingState;
@@ -21,6 +22,7 @@
     CBManager *_manager;
 }
 
+@property(nonatomic) unsigned char connectedTransport; // @synthesize connectedTransport=_connectedTransport;
 @property(nonatomic) __weak CBManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) long long role; // @synthesize role=_role;
 @property(nonatomic) _Bool isLinkEncrypted; // @synthesize isLinkEncrypted=_isLinkEncrypted;

@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)inFlightDiffsForItem:(id)arg1 zone:(id)arg2;
 - (BOOL)isItemInSyncUpAndInFlight:(id)arg1 inZone:(id)arg2;
 - (BOOL)isItemInSyncUpAndInFlight:(id)arg1;
-- (unsigned long long)finishSyncUpForItem:(id)arg1 inZone:(id)arg2;
+- (unsigned long long)finishSyncUpForItem:(id)arg1 inZone:(id)arg2 success:(BOOL)arg3;
 - (void)prepareItemForSyncUp:(id)arg1 inFlightDiffs:(unsigned long long)arg2 inZone:(id)arg3;
 - (void)deleteSyncUpJobsForItem:(id)arg1;
 - (void)createSyncUpJobForItem:(id)arg1 inZone:(id)arg2;

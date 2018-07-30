@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NRDeviceCollectionDiff, NRDeviceCollectionHistory, NRMutableDeviceCollection, NSDate;
+@class NRDeviceCollectionDiff, NRDeviceCollectionHistory, NRMutableDeviceCollection, NRPBDeviceCollectionHistoryEntry, NSDate;
 
 @interface NRDeviceCollectionHistoryEntry : NSObject <NSSecureCoding, NSCopying>
 {
@@ -32,6 +32,8 @@
 @property(readonly, nonatomic) NRMutableDeviceCollection *state;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) NRPBDeviceCollectionHistoryEntry *protobuf;
+- (id)initWithProtobuf:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistory:(id)arg1 index:(unsigned long long)arg2 date:(id)arg3 diff:(id)arg4 switchIndex:(unsigned int)arg5;

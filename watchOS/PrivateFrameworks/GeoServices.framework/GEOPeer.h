@@ -8,7 +8,6 @@
 
 @class GEODaemon, GEOProxyClient, NSMutableDictionary, NSObject<OS_xpc_object>, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOPeer : NSObject
 {
     GEODaemon *_daemon;

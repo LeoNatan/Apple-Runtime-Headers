@@ -8,15 +8,15 @@
 
 #import "NSCopying.h"
 
-@class NSMutableArray;
+@class IKMutableArray;
 
 @interface IKCSSDeclarationList : NSObject <NSCopying>
 {
-    NSMutableArray *_declarations;
+    IKMutableArray *_declarations;
     struct _NSRange _range;
 }
 
-@property(readonly, nonatomic) NSMutableArray *declarations; // @synthesize declarations=_declarations;
+@property(readonly, nonatomic) IKMutableArray *declarations; // @synthesize declarations=_declarations;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 - (void).cxx_destruct;
 - (id)description;

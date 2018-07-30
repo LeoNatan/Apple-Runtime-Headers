@@ -10,9 +10,19 @@
 {
 }
 
++ (BOOL)isFeatureDisabledError:(id)arg1;
++ (BOOL)isRecordNotFoundError:(id)arg1;
++ (id)realErrorForError:(id)arg1;
++ (id)errorsPerZoneIDForPartialFailureError:(id)arg1;
++ (id)errorsPerRecordIDForPartialFailureError:(id)arg1;
++ (id)_filteredPartialFailureError:(id)arg1 itemClass:(Class)arg2;
++ (BOOL)isPartialFailureError:(id)arg1;
++ (id)CPLErrorForCloudKitError:(id)arg1 scopeIdentifiers:(id)arg2 withRequestUUIDs:(id)arg3 description:(id)arg4 arguments:(struct __va_list_tag [1])arg5;
++ (id)CPLErrorForCloudKitError:(id)arg1 scopeIdentifiers:(id)arg2 withRequestUUIDs:(id)arg3 description:(id)arg4;
 + (id)CPLErrorForCloudKitError:(id)arg1 withRequestUUIDs:(id)arg2 description:(id)arg3 arguments:(struct __va_list_tag [1])arg4;
 + (id)CPLErrorForCloudKitError:(id)arg1 withRequestUUIDs:(id)arg2 description:(id)arg3;
 + (id)bestErrorForUnderlyingError:(id)arg1;
++ (id)_bestErrorForUnderlyingError:(id)arg1 scopeIdentifiers:(id)arg2;
 + (id)_rejectionReasonFromPartialError:(id)arg1 identifier:(id)arg2;
 + (id)_betterErrorForRecordId:(id)arg1 recordError:(id)arg2;
 + (BOOL)_isCKErrorForRejectedRecord:(id)arg1;

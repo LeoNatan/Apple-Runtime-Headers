@@ -40,7 +40,7 @@ struct Object {
         struct StringImpl *_field3;
     } _field4;
     struct HashMap<WTF::String, WTF::RefPtr<WTF::JSONImpl::Value, WTF::DumbPtrTraits<WTF::JSONImpl::Value>>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<WTF::JSONImpl::Value, WTF::DumbPtrTraits<WTF::JSONImpl::Value>>>> _field5;
-    struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _field6;
+    struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> _field6;
 };
 
 struct RWIAugmentableInspectorControllerClient;
@@ -61,11 +61,10 @@ struct String;
 
 struct StringImpl;
 
-struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> {
     struct String *_field1;
     unsigned int _field2;
     unsigned int _field3;
-    unsigned int _field4;
 };
 
 struct unique_ptr<RWIAugmentableInspectorControllerClient, std::__1::default_delete<RWIAugmentableInspectorControllerClient>> {

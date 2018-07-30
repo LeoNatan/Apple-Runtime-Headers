@@ -12,27 +12,33 @@
 
 @interface CEMSystemXsanVolumePreferencesDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadOnlyMount;
+    NSArray *_payloadDenyMount;
+    NSArray *_payloadDenyDLC;
+    NSArray *_payloadPreferDLC;
+    NSNumber *_payloadUseDLC;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withOnlyMount:(id)arg2 withDenyMount:(id)arg3 withDenyDLC:(id)arg4 withPreferDLC:(id)arg5 withUseDLC:(id)arg6;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadUseDLC; // @synthesize payloadUseDLC=_payloadUseDLC;
+@property(copy, nonatomic) NSArray *payloadPreferDLC; // @synthesize payloadPreferDLC=_payloadPreferDLC;
+@property(copy, nonatomic) NSArray *payloadDenyDLC; // @synthesize payloadDenyDLC=_payloadDenyDLC;
+@property(copy, nonatomic) NSArray *payloadDenyMount; // @synthesize payloadDenyMount=_payloadDenyMount;
+@property(copy, nonatomic) NSArray *payloadOnlyMount; // @synthesize payloadOnlyMount=_payloadOnlyMount;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadUseDLC;
-@property(readonly, nonatomic) NSArray *payloadPreferDLC;
-@property(readonly, nonatomic) NSArray *payloadDenyDLC;
-@property(readonly, nonatomic) NSArray *payloadDenyMount;
-@property(readonly, nonatomic) NSArray *payloadOnlyMount;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 {
     GEOVectorTile *_modelTile;
     double _contentScale;
+    long long _source;
+    unsigned char _originalLoadReason;
     float _maximumStyleZ;
     float _textureScale;
     shared_ptr_a3c46825 _styleManager;
@@ -20,6 +22,8 @@ __attribute__((visibility("hidden")))
     VKMapTileList *_fragments;
 }
 
+@property(readonly, nonatomic) unsigned char originalLoadReason; // @synthesize originalLoadReason=_originalLoadReason;
+@property(readonly, nonatomic) long long source; // @synthesize source=_source;
 @property(nonatomic) double contentScale; // @synthesize contentScale=_contentScale;
 @property(readonly, nonatomic) VKMapTileList *fragments; // @synthesize fragments=_fragments;
 @property(nonatomic) float maximumStyleZ; // @synthesize maximumStyleZ=_maximumStyleZ;
@@ -31,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, nonatomic) long long vectorType;
-- (id)initWithKey:(const struct VKTileKey *)arg1 modelTile:(id)arg2 styleManager:(shared_ptr_a3c46825)arg3 sharedResources:(id)arg4 contentScale:(double)arg5 device:(struct Device *)arg6;
+- (id)initWithKey:(const struct VKTileKey *)arg1 modelTile:(id)arg2 userInfo:(id)arg3 styleManager:(shared_ptr_a3c46825)arg4 sharedResources:(id)arg5 contentScale:(double)arg6 device:(struct Device *)arg7;
 - (id)initWithKey:(const struct VKTileKey *)arg1;
 
 @end

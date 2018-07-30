@@ -25,8 +25,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)newFenceHandleForContext:(id)arg1;
 + (id)newSystemFenceHandle;
-@property(readonly, retain, nonatomic) BSMachPortSendRight *trigger; // @synthesize trigger=_preFenceTrigger;
+@property(readonly, nonatomic) BSMachPortSendRight *trigger; // @synthesize trigger=_preFenceTrigger;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -39,6 +41,7 @@
 @property(readonly, nonatomic) unsigned long long fenceName;
 - (void)dealloc;
 - (id)init;
+- (id)_initWithFence:(id)arg1;
 - (id)_initWithFenceName:(unsigned long long)arg1 fence:(id)arg2 preFence:(id)arg3 preFenceTrigger:(id)arg4 shouldTrace:(_Bool)arg5;
 
 // Remaining properties

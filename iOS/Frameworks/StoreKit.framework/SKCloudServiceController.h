@@ -17,6 +17,7 @@
 
 + (void)requestAuthorization:(CDUnknownBlockType)arg1;
 + (long long)authorizationStatus;
+- (void).cxx_destruct;
 - (void)_updateCapabilitiesWithResponse:(id)arg1 postNotification:(_Bool)arg2;
 - (void)_handleInvalidation;
 - (void)_playbackCapabilitiesDidChangeNotification;

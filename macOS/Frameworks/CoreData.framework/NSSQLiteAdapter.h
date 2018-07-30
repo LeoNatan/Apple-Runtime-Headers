@@ -30,6 +30,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)generateTriggerForEntity:(id)arg1 alreadyCreated:(struct __CFDictionary *)arg2 correlations:(struct __CFDictionary *)arg3 batchHistory:(struct __CFDictionary *)arg4 fragments:(id)arg5 error:(id *)arg6;
 - (id)generateDeleteHistoryTriggerForEntity:(id)arg1 error:(id *)arg2;
 - (id)generateTriggerStatementsForEntity:(id)arg1 usingRelationshipCleanupSQL:(id)arg2 error:(id *)arg3;
+- (id)generateBatchDeleteUpdateHistoryStatementEntity:(id)arg1 andRelationship:(id)arg2 useInverse:(BOOL)arg3;
+- (id)generateBatchDeleteUpdateHistoryStatementEntity:(id)arg1 andRelationship:(id)arg2;
+- (BOOL)generateBatchDeleteUpdateHistoryTriggerForEntity:(id)arg1 andRelationship:(id)arg2 batchHistory:(struct __CFDictionary *)arg3 error:(id *)arg4;
 - (id)createCleanupSQLForRelationship:(id)arg1 existing:(struct __CFDictionary *)arg2 correlationTableTriggers:(struct __CFDictionary *)arg3 batchHistory:(struct __CFDictionary *)arg4 error:(id *)arg5;
 - (id)newCreateTriggersForEntity:(id)arg1 existingRtreeTables:(id)arg2;
 - (id)newCreateIndexStatementsForEntity:(id)arg1;
@@ -51,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (id)newSimplePrimaryKeyUpdateStatementForEntity:(id)arg1;
 - (id)newPrimaryKeyInitializeStatementForEntity:(id)arg1 withInitialMaxPK:(long long)arg2;
 - (id)newCreatePrimaryKeyTableStatement;
+- (id)newCreateTempTableStatementForEntity:(id)arg1 withAttributesToConstrain:(id)arg2;
 - (id)newCreateTableStatementForEntity:(id)arg1;
 - (BOOL)generateCorrelationTableTriggerStatementsForRelationship:(id)arg1 existing:(struct __CFDictionary *)arg2 correlationTableTriggers:(struct __CFDictionary *)arg3 error:(id *)arg4;
 - (id)newCorrelationReorderStatementForRelationship:(id)arg1;

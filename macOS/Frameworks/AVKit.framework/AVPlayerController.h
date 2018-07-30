@@ -10,7 +10,7 @@
 #import "AVTouchBarPlaybackControlsControlling.h"
 #import "NSUserInterfaceValidations.h"
 
-@class AVFragmentedMovieMinder, AVFunctionBarMediaSelectionOption, AVOutputContextController, AVPlayer, AVTouchBarMediaSelectionOption, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL;
+@class AVAsset, AVFragmentedMovieMinder, AVFunctionBarMediaSelectionOption, AVObservationController, AVOutputContextController, AVPlayer, AVTouchBarMediaSelectionOption, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL;
 
 @interface AVPlayerController : NSResponder <AVFunctionBarPlaybackControlsControlling, AVTouchBarPlaybackControlsControlling, NSUserInterfaceValidations>
 {
@@ -33,13 +33,9 @@
     double _rateAtEventBegan;
     NSObject<OS_dispatch_queue> *_seekQueue;
     BOOL _ignoreRateKeyValueChange;
+    void *_observationInfo;
+    BOOL _inspectionSuspended;
     id _updateAtMinMaxTimePeriodicObserverToken;
-    id _timebaseEffectiveRateObserver;
-    id _timebaseTimeJumpedObserver;
-    id _playerItemTimeJumpedObserver;
-    id _playerItemDidPlayToEndTimeObserver;
-    id _systemWillSleepObserver;
-    id _currentLocaleDidChangeObserver;
     CDUnknownBlockType _listenerBlock;
     CDUnknownBlockType _retryPlayingImmediatelyBlock;
     BOOL _shouldPlayImmediately;
@@ -66,6 +62,7 @@
     BOOL _atMaxTime;
     BOOL _atMinTime;
     BOOL _scrubbing;
+    BOOL _pictureInPictureSupported;
     BOOL _seekingInternal;
     BOOL _seeking;
     BOOL _composable;
@@ -75,6 +72,10 @@
     BOOL _preventingIdleDisplaySleep;
     BOOL _disablingAutomaticTermination;
     AVPlayer *_player;
+    AVObservationController *_observationController;
+    AVAsset *_currentAssetIfReady;
+    NSObject<OS_dispatch_queue> *_assetInspectionQueue;
+    AVAsset *_assetBeingPrepared;
     AVValueTiming *_timing;
     AVValueTiming *_minTiming;
     AVValueTiming *_maxTiming;
@@ -83,16 +84,13 @@
     NSArray *_contentChapters;
     NSArray *_availableMetadataFormats;
     double _rateBeforeScrubBegan;
+    struct CGSize _presentationSize;
     CDStruct_1b6d18a9 _seekToTimeInternal;
-    CDStruct_1b6d18a9 _cachedContentDuration;
-    CDStruct_1b6d18a9 _forwardPlaybackEndTime;
-    CDStruct_1b6d18a9 _reversePlaybackEndTime;
 }
 
 + (id)keyPathsForValuesAffectingShouldDisableAutomaticTermination;
 + (id)keyPathsForValuesAffectingShouldPreventIdleDisplaySleep;
 + (id)keyPathsForValuesAffectingShouldPreventIdleSystemSleep;
-+ (id)keyPathsForValuesAffectingSegmentDuration;
 + (id)keyPathsForValuesAffectingOutputContext;
 + (id)keyPathsForValuesAffectingExternalPlaybackAirPlayDeviceLocalizedName;
 + (id)keyPathsForValuesAffectingExternalPlaybackType;
@@ -113,14 +111,18 @@
 + (id)keyPathsForValuesAffectingHasTrimmableContent;
 + (id)keyPathsForValuesAffectingHasSeekableLiveStreamingContent;
 + (id)keyPathsForValuesAffectingHasLiveStreamingContent;
++ (id)keyPathsForValuesAffectingStreaming;
 + (id)keyPathsForValuesAffectingHasContentChapters;
 + (id)keyPathsForValuesAffectingHasEnabledVideo;
 + (id)keyPathsForValuesAffectingHasVideo;
 + (id)keyPathsForValuesAffectingHasEnabledAudio;
 + (id)keyPathsForValuesAffectingLoadedTimeRanges;
++ (id)keyPathsForValuesAffectingSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingCurrentTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingContentDurationWithinEndTimes;
++ (id)keyPathsForValuesAffectingForwardPlaybackEndTime;
 + (id)keyPathsForValuesAffectingMaxTime;
++ (id)keyPathsForValuesAffectingReversePlaybackEndTime;
 + (id)keyPathsForValuesAffectingMinTime;
 + (id)keyPathsForValuesAffectingCurrentTime;
 + (id)keyPathsForValuesAffectingContentDimensions;
@@ -133,8 +135,8 @@
 + (id)keyPathsForValuesAffectingPlaying;
 + (id)keyPathsForValuesAffectingCanPlay;
 + (id)keyPathsForValuesAffectingCompletelySeekable;
-+ (id)keyPathsForValuesAffectingSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingError;
++ (id)keyPathsForValuesAffectingReadyToPlay;
 + (id)keyPathsForValuesAffectingStatus;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCurrentLegibleFunctionBarMediaSelectionOption;
@@ -151,9 +153,6 @@
 + (id)keyPathsForValuesAffectingHasAudioTouchBarMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasTouchBarMediaSelectionOptions;
 @property(readonly) AVOutputContextController *outputContextController; // @synthesize outputContextController=_outputContextController;
-@property CDStruct_1b6d18a9 reversePlaybackEndTime; // @synthesize reversePlaybackEndTime=_reversePlaybackEndTime;
-@property CDStruct_1b6d18a9 forwardPlaybackEndTime; // @synthesize forwardPlaybackEndTime=_forwardPlaybackEndTime;
-@property CDStruct_1b6d18a9 cachedContentDuration; // @synthesize cachedContentDuration=_cachedContentDuration;
 @property(getter=isDisablingAutomaticTermination) BOOL disablingAutomaticTermination; // @synthesize disablingAutomaticTermination=_disablingAutomaticTermination;
 @property(getter=isPreventingIdleDisplaySleep) BOOL preventingIdleDisplaySleep; // @synthesize preventingIdleDisplaySleep=_preventingIdleDisplaySleep;
 @property(getter=isPreventingIdleSystemSleep) BOOL preventingIdleSystemSleep; // @synthesize preventingIdleSystemSleep=_preventingIdleSystemSleep;
@@ -171,6 +170,12 @@
 @property(retain) AVValueTiming *maxTiming; // @synthesize maxTiming=_maxTiming;
 @property(retain) AVValueTiming *minTiming; // @synthesize minTiming=_minTiming;
 @property(retain) AVValueTiming *timing; // @synthesize timing=_timing;
+@property(getter=isPictureInPictureSupported) BOOL pictureInPictureSupported; // @synthesize pictureInPictureSupported=_pictureInPictureSupported;
+@property(retain) AVAsset *assetBeingPrepared; // @synthesize assetBeingPrepared=_assetBeingPrepared;
+@property(retain) NSObject<OS_dispatch_queue> *assetInspectionQueue; // @synthesize assetInspectionQueue=_assetInspectionQueue;
+@property(retain) AVAsset *currentAssetIfReady; // @synthesize currentAssetIfReady=_currentAssetIfReady;
+@property struct CGSize presentationSize; // @synthesize presentationSize=_presentationSize;
+@property(readonly) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(getter=isScrubbing) BOOL scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(getter=isAtMinTime) BOOL atMinTime; // @synthesize atMinTime=_atMinTime;
 @property(getter=isAtMaxTime) BOOL atMaxTime; // @synthesize atMaxTime=_atMaxTime;
@@ -181,13 +186,13 @@
 - (BOOL)shouldPreventIdleSystemSleep;
 - (BOOL)preventsIdleSleep;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;
 - (void)_cancelPendingSeeksIfNeeded;
 - (void)setCanUseNetworkResourcesForLiveStreamingWhilePaused:(BOOL)arg1;
 - (BOOL)canUseNetworkResourcesForLiveStreamingWhilePaused;
 - (void)stopUsingNetworkResourcesForLiveStreamingWhilePaused;
 - (void)startUsingNetworkResourcesForLiveStreamingWhilePaused;
-- (double)segmentDuration;
 - (void)togglePictureInPicture:(id)arg1;
 @property(readonly) BOOL canTogglePictureInPicture;
 @property(getter=isPictureInPictureActive) BOOL pictureInPictureActive;
@@ -195,8 +200,8 @@
 - (id)outputContext;
 - (id)externalPlaybackAirPlayDeviceLocalizedName;
 - (long long)externalPlaybackType;
-- (BOOL)isPlayingOnSecondScreen;
 - (BOOL)isExternalPlaybackActive;
+- (BOOL)isPlayingOnSecondScreen;
 - (BOOL)isPlayingOnExternalScreen;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (BOOL)allowsExternalPlayback;
@@ -247,24 +252,33 @@
 - (BOOL)hasTrimmableContent;
 - (BOOL)hasSeekableLiveStreamingContent;
 - (BOOL)hasLiveStreamingContent;
+- (BOOL)isStreaming;
 - (BOOL)hasContentChapters;
 @property(readonly) BOOL hasEnabledVideo;
 - (BOOL)hasVideo;
 @property(readonly) BOOL hasEnabledAudio;
 - (id)loadedTimeRanges;
+@property(readonly) NSArray *seekableTimeRanges;
 - (double)currentTimeWithinEndTimes;
+@property(readonly) NSDate *currentOrEstimatedDate;
 @property(readonly) NSDate *currentDate;
 - (double)contentDurationWithinEndTimes;
+- (void)_setMinTiming:(id)arg1 maxTiming:(id)arg2;
+- (void)setForwardPlaybackEndTime:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)forwardPlaybackEndTime;
 - (void)setMaxTime:(double)arg1;
 - (double)maxTime;
+- (void)setReversePlaybackEndTime:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)reversePlaybackEndTime;
 - (void)setMinTime:(double)arg1;
 - (double)minTime;
 - (double)currentTime;
 - (struct CGSize)contentDimensions;
-- (BOOL)isStreaming;
 - (float)nominalFrameRate;
 @property(readonly) double contentDuration;
 - (BOOL)hasContent;
+- (void)setInspectionSuspended:(BOOL)arg1;
+- (BOOL)isInspectionSuspended;
 - (void)toggleMuted:(id)arg1;
 - (void)setMuted:(BOOL)arg1;
 - (BOOL)isMuted;
@@ -291,15 +305,18 @@
 - (void)_retryPlayImmediatelyIfNeeded;
 - (void)setRate:(double)arg1;
 - (double)rate;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_observeValueForKeyPath:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3;
 - (BOOL)isCompletelySeekable;
-@property(readonly) NSArray *seekableTimeRanges;
 @property(readonly) NSError *error;
+@property(readonly, getter=isReadyToPlay) BOOL readyToPlay;
 @property(readonly) long long status;
 - (id)_queuePlayer;
+- (void)setObservationInfo:(void *)arg1;
+- (void *)observationInfo;
+- (void)startKVO;
 - (void)dealloc;
-- (id)init;
 - (id)initWithPlayer:(id)arg1;
+- (id)init;
 @property(retain) AVFunctionBarMediaSelectionOption *currentLegibleFunctionBarMediaSelectionOption;
 @property(readonly) NSArray *legibleFunctionBarMediaSelectionOptions;
 - (BOOL)hasLegibleFunctionBarMediaSelectionOptions;

@@ -11,15 +11,20 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTagCircleImageView : FI_TImageView
 {
-    NSNumber *_colorNumber;
+    struct TNSRef<NSNumber, void> _colorNumber;
+    struct TKeyValueBinder _colorNumberBinder;
 }
 
-@property(nonatomic) NSNumber *colorNumber; // @synthesize colorNumber=_colorNumber;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (BOOL)accessibilityIsIgnored;
 - (void)updateImage;
 - (void)setBackgroundStyle:(long long)arg1;
 - (long long)backgroundStyle;
-- (void)setObjectValue:(id)arg1;
+@property(nonatomic) NSNumber *colorNumber; // @dynamic colorNumber;
+- (void)viewWillMoveToSuperview:(id)arg1;
+- (void)dealloc;
+- (void)awakeFromNib;
 
 @end
 

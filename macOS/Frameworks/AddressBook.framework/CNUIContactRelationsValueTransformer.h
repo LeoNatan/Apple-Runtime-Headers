@@ -6,7 +6,6 @@
 
 #import "NSValueTransformer.h"
 
-__attribute__((visibility("hidden")))
 @interface CNUIContactRelationsValueTransformer : NSValueTransformer
 {
 }

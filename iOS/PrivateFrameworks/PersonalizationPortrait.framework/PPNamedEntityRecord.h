@@ -4,36 +4,46 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "_PASZonedObject.h"
 
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString, PPNamedEntity, PPSource;
 
-@interface PPNamedEntityRecord : NSObject <NSCopying, NSMutableCopying>
+@interface PPNamedEntityRecord : _PASZonedObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
     PPNamedEntity *_entity;
     PPSource *_source;
-    unsigned long long _algorithm;
-    double _initialScore;
-    double _decayRate;
     NSString *_extractionOsBuild;
-    unsigned long long _extractionAssetVersion;
+    float _initialScore;
+    float _decayRate;
+    unsigned short _extractionAssetVersion;
+    unsigned char _algorithm;
+    unsigned char _changeType;
 }
 
++ (id)describeChangeType:(unsigned char)arg1;
 + (id)describeAlgorithm:(unsigned long long)arg1;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) unsigned long long extractionAssetVersion; // @synthesize extractionAssetVersion=_extractionAssetVersion;
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned char changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *extractionOsBuild; // @synthesize extractionOsBuild=_extractionOsBuild;
-@property(readonly, nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
-@property(readonly, nonatomic) double initialScore; // @synthesize initialScore=_initialScore;
-@property(readonly, nonatomic) unsigned long long algorithm; // @synthesize algorithm=_algorithm;
 @property(readonly, nonatomic) PPSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) PPNamedEntity *entity; // @synthesize entity=_entity;
+- (void).cxx_destruct;
+- (_Bool)isEqualToNamedEntityRecord:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)description;
+@property(readonly, nonatomic) unsigned long long extractionAssetVersion;
+@property(readonly, nonatomic) double decayRate;
+@property(readonly, nonatomic) double initialScore;
+@property(readonly, nonatomic) unsigned long long algorithm;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

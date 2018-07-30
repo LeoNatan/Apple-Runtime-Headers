@@ -16,8 +16,8 @@
     long long _photosGraphVersion;
     NSDictionary *_transientMemoryProperties;
     NSDate *_creationDate;
-    int _category;
-    int _subcategory;
+    unsigned int _category;
+    unsigned int _subcategory;
     unsigned int _notificationState;
     _Bool _rejected;
     _Bool _favorite;
@@ -42,14 +42,15 @@
     NSDictionary *_photosGraphProperties;
 }
 
++ (unsigned int)_contextualScoreForMemory:(id)arg1;
 + (id)fetchBestRecentMemoryWithOptions:(id)arg1;
-+ (id)stringForSubcategory:(int)arg1;
-+ (id)stringForCategory:(int)arg1;
++ (id)stringForSubcategory:(unsigned int)arg1;
++ (id)stringForCategory:(unsigned int)arg1;
 + (id)assetListPredicateFromQueryHintObjects:(id)arg1;
 + (id)titleFontNameFromMovieData:(id)arg1;
 + (id)movieDataWithTitleFontName:(id)arg1;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)identifierCode;
 + (_Bool)managedObjectSupportsRejectedState;
 + (_Bool)managedObjectSupportsPendingState;
@@ -58,8 +59,8 @@
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 + (void)generateMemoriesWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (id)memoryTreeLevelWithOptions:(id)arg1;
-+ (id)fetchTransientMemoriesWithOptions:(id)arg1;
++ (id)memoryTreeLevelWithOptions:(id)arg1 photoLibrary:(id)arg2;
++ (id)fetchTransientMemoriesWithOptions:(id)arg1 photoLibrary:(id)arg2;
 + (id)_fetchOptionsForTransientMemoryAssetsWithOptions:(id)arg1;
 + (id)transientMemoryWithDictionary:(id)arg1;
 @property(readonly, nonatomic) PHMemoryFeature *blacklistedFeature; // @synthesize blacklistedFeature=_blacklistedFeature;
@@ -74,8 +75,8 @@
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite; // @synthesize favorite=_favorite;
 @property(readonly, nonatomic, getter=isRejected) _Bool rejected; // @synthesize rejected=_rejected;
 @property(readonly, nonatomic) unsigned int notificationState; // @synthesize notificationState=_notificationState;
-@property(readonly, nonatomic) int subcategory; // @synthesize subcategory=_subcategory;
-@property(readonly, nonatomic) int category; // @synthesize category=_category;
+@property(readonly, nonatomic) unsigned int subcategory; // @synthesize subcategory=_subcategory;
+@property(readonly, nonatomic) unsigned int category; // @synthesize category=_category;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *photosGraphProperties; // @synthesize photosGraphProperties=_photosGraphProperties;
 @property(readonly, nonatomic) _Bool isGreat;

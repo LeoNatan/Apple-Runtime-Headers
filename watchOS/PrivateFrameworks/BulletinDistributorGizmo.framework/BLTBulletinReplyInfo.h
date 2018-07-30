@@ -11,14 +11,16 @@
 @interface BLTBulletinReplyInfo : NSObject
 {
     _Bool _replySent;
-    _Bool _ignoresQuietMode;
+    _Bool _overridesDND;
     BLTBulletinReplyInfoCompanionInfo *_companionInfo;
     CDUnknownBlockType _reply;
     NSDate *_gizmoPublicationDate;
     NSString *_sectionID;
+    NSString *_contactIdentifier;
 }
 
-@property(nonatomic) _Bool ignoresQuietMode; // @synthesize ignoresQuietMode=_ignoresQuietMode;
+@property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
+@property(nonatomic) _Bool overridesDND; // @synthesize overridesDND=_overridesDND;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(retain, nonatomic) NSDate *gizmoPublicationDate; // @synthesize gizmoPublicationDate=_gizmoPublicationDate;
 @property(copy, nonatomic) CDUnknownBlockType reply; // @synthesize reply=_reply;

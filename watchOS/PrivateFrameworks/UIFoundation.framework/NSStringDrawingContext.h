@@ -35,6 +35,7 @@
         unsigned int _cachesLayout:1;
         unsigned int _usesSimpleTextEffects:1;
         unsigned int _activeRenderers:4;
+        unsigned int _applicationPlatformContext:3;
     } _sdcFlags;
 }
 
@@ -51,6 +52,8 @@
 @property(nonatomic) struct CGRect totalBounds; // @synthesize totalBounds=_totalBounds;
 @property(nonatomic) float actualScaleFactor; // @synthesize actualScaleFactor=_actualScaleFactor;
 @property(nonatomic) float minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;
+- (void)setApplicationFrameworkContext:(int)arg1;
+- (int)applicationFrameworkContext;
 @property(nonatomic) unsigned int activeRenderers;
 @property(nonatomic) _Bool usesSimpleTextEffects;
 @property(nonatomic) _Bool cachesLayout;
@@ -63,6 +66,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)init;
 @property(nonatomic) float minimumTrackingAdjustment; // @dynamic minimumTrackingAdjustment;
 
 @end

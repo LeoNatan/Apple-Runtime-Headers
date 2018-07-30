@@ -25,7 +25,6 @@
 
 + (_Bool)relaunchPID:(int)arg1;
 - (id)apps;
-- (id)_apps:(id)arg1;
 - (unsigned long long)cancel;
 - (unsigned long long)finalize;
 - (unsigned long long)relaunch;

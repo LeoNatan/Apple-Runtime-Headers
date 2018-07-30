@@ -20,9 +20,9 @@
 }
 
 @property(retain, nonatomic) id <PMLTransformerProtocol> transformer; // @synthesize transformer=_transformer;
-@property(retain, nonatomic) NSString *featuresModelId; // @synthesize featuresModelId=_featuresModelId;
-@property(retain, nonatomic) NSString *featuresVersion; // @synthesize featuresVersion=_featuresVersion;
-@property(retain, nonatomic) NSString *language; // @synthesize language=_language;
+@property(copy, nonatomic) NSString *featuresModelId; // @synthesize featuresModelId=_featuresModelId;
+@property(copy, nonatomic) NSString *featuresVersion; // @synthesize featuresVersion=_featuresVersion;
+@property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) unsigned long long ngrams; // @synthesize ngrams=_ngrams;
 @property(nonatomic) unsigned long long window; // @synthesize window=_window;
 @property(retain, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;

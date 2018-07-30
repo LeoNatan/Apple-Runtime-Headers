@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)schemaTuplesWithAvailableAnimationsForPart:(const CDStruct_26b2aa83 *)arg1 withList:(id)arg2;
-- (id)schemaTuplesWithAvailableDimensionsForPart:(const CDStruct_26b2aa83 *)arg1 withList:(id)arg2;
+- (id)schemaTuplesWithAvailableDimensionsForPart:(const CDStruct_26b2aa83 *)arg1 withList:(id)arg2 isEffect:(BOOL)arg3;
 - (id)schemaTuplesWithAvailableScalesForPart:(const CDStruct_26b2aa83 *)arg1 withList:(id)arg2;
 - (id)schemaTuplesWithAvailableDrawingLayersForPart:(const CDStruct_26b2aa83 *)arg1 withList:(id)arg2;
 - (id)schemaTuplesWithAvailableStatesForPart:(const CDStruct_26b2aa83 *)arg1 withList:(id)arg2;

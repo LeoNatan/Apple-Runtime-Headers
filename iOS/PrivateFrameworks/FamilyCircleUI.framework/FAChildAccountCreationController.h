@@ -67,6 +67,7 @@
 - (void)_startRemoteUILoaderWithRequest:(id)arg1;
 - (void)prepareForDismiss;
 - (void)loadRemoteUI;
+- (id)initWithAccountManager:(id)arg1;
 - (id)initWithAppleAccount:(id)arg1 grandSlamSigner:(id)arg2;
 
 // Remaining properties

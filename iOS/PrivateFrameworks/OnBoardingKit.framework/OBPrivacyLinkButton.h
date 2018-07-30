@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) OBTintInheritingImageView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (id)labelText;
 - (id)_textViewFont;
 - (struct _NSRange)_rangeForButtonText;
 - (id)viewForLastBaselineLayout;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)titleForState:(unsigned long long)arg1;
 - (void)_updateButtonColorWithColor:(id)arg1;
 - (void)tintColorDidChange;
+- (void)layoutSubviews;
 - (id)initWithCaption:(id)arg1 buttonText:(id)arg2 image:(id)arg3 imageSize:(struct CGSize)arg4 useLargeIcon:(_Bool)arg5;
 
 @end

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned char columnIndex; // @synthesize columnIndex=mColumnIndex;
 @property(readonly, nonatomic) unsigned long long filterIndex; // @synthesize filterIndex=mFilterIndex;
 - (id)description;
+- (void)enumerateRulesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)filterByClearingRules;
 - (id)filterByRemovingRuleAtIndex:(unsigned long long)arg1;
 - (id)filterByAddingRule:(id)arg1;

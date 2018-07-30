@@ -6,11 +6,22 @@
 
 #import <PhotosUICore/PXMediaProvider.h>
 
-@interface PXUIMediaProvider : PXMediaProvider
+#import "PXUIImageProvider.h"
+
+@class NSString;
+
+@interface PXUIMediaProvider : PXMediaProvider <PXUIImageProvider>
 {
 }
 
 - (long long)requestImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
+- (long long)requestCGImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

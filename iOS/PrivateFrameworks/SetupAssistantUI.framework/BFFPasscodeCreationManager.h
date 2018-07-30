@@ -31,6 +31,7 @@
 - (void)reset;
 - (void)acceptWeakPasscode:(_Bool)arg1;
 - (void)transitionToNextPasscodeStateForInput:(id)arg1;
+- (id)_mainQueue;
 - (void)_applyPasscode;
 - (_Bool)isSimplePasscodeEntry;
 @property(readonly, nonatomic) NSString *constraintInstructions;

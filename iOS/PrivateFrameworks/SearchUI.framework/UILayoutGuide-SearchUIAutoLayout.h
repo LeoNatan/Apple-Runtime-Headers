@@ -12,7 +12,7 @@
 
 @interface UILayoutGuide (SearchUIAutoLayout) <SearchUIAutoLayoutItem>
 - (_Bool)isContainedByItem:(id)arg1;
-- (id)containerView;
+- (id)containingView;
 - (id)view;
 
 // Remaining properties

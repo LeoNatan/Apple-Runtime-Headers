@@ -24,7 +24,7 @@
 
 + (id)settingsControllerModule;
 + (id)_luminanceRows;
-+ (id)_lightOverlayRows;
++ (id)_overlayRows;
 + (id)_backdropRows;
 + (id)_luminanceRow;
 + (id)sharedMaterialSettings;

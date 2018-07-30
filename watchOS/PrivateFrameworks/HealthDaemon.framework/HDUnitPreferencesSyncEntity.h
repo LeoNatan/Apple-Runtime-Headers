@@ -6,7 +6,11 @@
 
 #import <HealthDaemon/HDKeyValueSyncEntity.h>
 
-@interface HDUnitPreferencesSyncEntity : HDKeyValueSyncEntity
+#import "HDNanoSyncEntity.h"
+
+@class NSString;
+
+@interface HDUnitPreferencesSyncEntity : HDKeyValueSyncEntity <HDNanoSyncEntity>
 {
 }
 
@@ -16,6 +20,12 @@
 + (int)category;
 + (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (int)nanoSyncObjectType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

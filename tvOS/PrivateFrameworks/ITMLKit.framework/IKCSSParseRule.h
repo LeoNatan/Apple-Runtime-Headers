@@ -6,18 +6,18 @@
 
 #import <ITMLKit/IKCSSParseObject.h>
 
-@class IKCSSParseBlock, NSArray;
+@class IKArray, IKCSSParseBlock;
 
 @interface IKCSSParseRule : IKCSSParseObject
 {
-    NSArray *_prelude;
+    IKArray *_prelude;
     IKCSSParseBlock *_block;
     struct _NSRange __endRange;
 }
 
 @property(nonatomic, setter=_setEndRange:) struct _NSRange _endRange; // @synthesize _endRange=__endRange;
 @property(retain, nonatomic) IKCSSParseBlock *block; // @synthesize block=_block;
-@property(retain, nonatomic) NSArray *prelude; // @synthesize prelude=_prelude;
+@property(retain, nonatomic) IKArray *prelude; // @synthesize prelude=_prelude;
 - (void).cxx_destruct;
 - (id)description;
 - (struct _NSRange)range;

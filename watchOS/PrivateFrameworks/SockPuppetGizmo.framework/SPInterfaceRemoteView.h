@@ -15,7 +15,6 @@
     NSBundle *_bundle;
     NSString *_stringsFileName;
     _Bool _hasIntrinsicHeight;
-    _Bool _isNativeInterfaceObject;
     NSDictionary *_itemDescriptionForIB;
     NSDictionary *_companionProperty;
     int _interfaceAlignment;
@@ -27,18 +26,15 @@
     id _setPropertiesTarget;
     SEL _setPropertiesAction;
     NSDictionary *_itemDescription;
-    unsigned int _savedContextId;
     struct CGSize _cachedContainerSize;
     struct CGSize _cachedSize;
     struct CGSize _interfacePlistSize;
 }
 
 + (Class)layerClass;
-@property unsigned int savedContextId; // @synthesize savedContextId=_savedContextId;
 @property(retain) NSDictionary *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property(nonatomic) SEL setPropertiesAction; // @synthesize setPropertiesAction=_setPropertiesAction;
 @property(nonatomic) id setPropertiesTarget; // @synthesize setPropertiesTarget=_setPropertiesTarget;
-@property(readonly, nonatomic) _Bool isNativeInterfaceObject; // @synthesize isNativeInterfaceObject=_isNativeInterfaceObject;
 @property(readonly, nonatomic) _Bool hasIntrinsicHeight; // @synthesize hasIntrinsicHeight=_hasIntrinsicHeight;
 @property(readonly, nonatomic) struct CGSize interfacePlistSize; // @synthesize interfacePlistSize=_interfacePlistSize;
 @property(nonatomic) float widthAdjustment; // @synthesize widthAdjustment=_widthAdjustment;
@@ -57,7 +53,7 @@
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (void)setTarget:(id)arg1 forPropertiesChanged:(SEL)arg2;
 - (id)allProperties;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -77,6 +77,10 @@
 @property(readonly, nonatomic) BOOL hasAnalyticMetadata;
 @property(nonatomic) BOOL hasNeedLatency;
 @property(nonatomic) BOOL needLatency;
+- (id)pdSpatialEventLookupParametersForParameters:(id)arg1;
+- (id)pdSpatialEventLookupParametersArrayForParameters:(id)arg1;
+- (id)pdSpatialPlaceLookupParametersForParameters:(id)arg1;
+- (id)pdSpatialPlaceLookupParametersArrayForParameters:(id)arg1;
 - (int)resultProviderID;
 - (BOOL)hasResultProviderID;
 - (BOOL)isAlwaysCacheable;
@@ -87,8 +91,10 @@
 - (BOOL)isForwardGeocoderRequest;
 - (id)initForDatasetCheckWithTraits:(id)arg1;
 - (BOOL)isBrandLookupRequest;
+- (id)initWithSpatialEventLookupParameters:(id)arg1 traits:(id)arg2;
+- (id)initWithSpatialPlaceLookupParameters:(id)arg1 traits:(id)arg2;
 - (id)initForGeoIpLookupWithIpAddress:(id)arg1 traits:(id)arg2;
-- (id)initForWifiFingerprintLookupWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 traits:(id)arg4;
+- (id)initForWifiFingerprintLookupWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 entryTime:(unsigned long long)arg4 exitTime:(unsigned long long)arg5 traits:(id)arg6;
 - (id)initForBrandLookupWithIMessageUid:(id)arg1 traits:(id)arg2;
 - (id)initForNearestTransitStationWithLine:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 traits:(id)arg3;
 - (id)initForSearchFieldPlaceholderWithTraits:(id)arg1;

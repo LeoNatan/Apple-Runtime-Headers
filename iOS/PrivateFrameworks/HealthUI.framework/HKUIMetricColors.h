@@ -6,19 +6,17 @@
 
 #import "NSObject.h"
 
-@class UIColor;
+@class HKGradient, UIColor;
 
 @interface HKUIMetricColors : NSObject
 {
     UIColor *_keyColor;
-    UIColor *_gradientTopColor;
-    UIColor *_gradientBottomColor;
+    HKGradient *_gradient;
     UIColor *_contextViewPrimaryTextColor;
     UIColor *_contextViewSecondaryTextColor;
     UIColor *_contextViewInfoButtonGlyphColor;
     UIColor *_contextViewInfoButtonBackgroundColor;
-    UIColor *_contextViewChartGradientTopColor;
-    UIColor *_contextViewChartGradientBottomColor;
+    HKGradient *_contentViewChartGradient;
 }
 
 + (id)workoutContextViewColors;
@@ -39,14 +37,12 @@
 + (id)conditionsClinicalColors;
 + (id)allergiesClinicalColors;
 + (id)metricColorsForHeartRateContext:(long long)arg1;
-@property(retain, nonatomic) UIColor *contextViewChartGradientBottomColor; // @synthesize contextViewChartGradientBottomColor=_contextViewChartGradientBottomColor;
-@property(retain, nonatomic) UIColor *contextViewChartGradientTopColor; // @synthesize contextViewChartGradientTopColor=_contextViewChartGradientTopColor;
+@property(retain, nonatomic) HKGradient *contentViewChartGradient; // @synthesize contentViewChartGradient=_contentViewChartGradient;
 @property(retain, nonatomic) UIColor *contextViewInfoButtonBackgroundColor; // @synthesize contextViewInfoButtonBackgroundColor=_contextViewInfoButtonBackgroundColor;
 @property(retain, nonatomic) UIColor *contextViewInfoButtonGlyphColor; // @synthesize contextViewInfoButtonGlyphColor=_contextViewInfoButtonGlyphColor;
 @property(retain, nonatomic) UIColor *contextViewSecondaryTextColor; // @synthesize contextViewSecondaryTextColor=_contextViewSecondaryTextColor;
 @property(retain, nonatomic) UIColor *contextViewPrimaryTextColor; // @synthesize contextViewPrimaryTextColor=_contextViewPrimaryTextColor;
-@property(retain, nonatomic) UIColor *gradientBottomColor; // @synthesize gradientBottomColor=_gradientBottomColor;
-@property(retain, nonatomic) UIColor *gradientTopColor; // @synthesize gradientTopColor=_gradientTopColor;
+@property(retain, nonatomic) HKGradient *gradient; // @synthesize gradient=_gradient;
 @property(retain, nonatomic) UIColor *keyColor; // @synthesize keyColor=_keyColor;
 - (void).cxx_destruct;
 

@@ -14,6 +14,7 @@
     _Bool _shouldShowGridView;
     _Bool _QRBannersEnabledInSettings;
     _Bool _forceEnableQRBanners;
+    _Bool _didAcknowledgeQRCodeDescription;
     _Bool _shouldCaptureHDREV0;
     _Bool _shouldUseModernHDRBehavior;
     _Bool _didAcknowledgePortraitModeDescription;
@@ -23,7 +24,6 @@
     _Bool _shouldDisableCameraSwitchingDuringVideoRecording;
     _Bool _lockAsShutterEnabled;
     _Bool _shouldDelayRemotePersistence;
-    _Bool _capturesOnTouchDown;
     _Bool _burstFollowsEncoderSettings;
     _Bool __preferHEVCWhenAvailable;
     CAMCaptureConfiguration *_captureConfiguration;
@@ -35,7 +35,7 @@
     long long _squareModeLastCapturedEffectFilterType;
     long long _portraitModeLastCapturedEffectFilterType;
     NSDate *_resetTimeoutDate;
-    double _burstDelayAfterTouchDownCapture;
+    long long _preferredMinimumFreeBytes;
     long long _overriddenBackCaptureInterval;
     long long _overriddenFrontCaptureInterval;
     NSUserDefaults *__underlyingUserDefaults;
@@ -52,9 +52,8 @@
 @property(retain, nonatomic, getter=_underlyingUserDefaults, setter=_setUnderlyingUserDefaults:) NSUserDefaults *_underlyingUserDefaults; // @synthesize _underlyingUserDefaults=__underlyingUserDefaults;
 @property(readonly, nonatomic) long long overriddenFrontCaptureInterval; // @synthesize overriddenFrontCaptureInterval=_overriddenFrontCaptureInterval;
 @property(readonly, nonatomic) long long overriddenBackCaptureInterval; // @synthesize overriddenBackCaptureInterval=_overriddenBackCaptureInterval;
+@property(readonly, nonatomic) long long preferredMinimumFreeBytes; // @synthesize preferredMinimumFreeBytes=_preferredMinimumFreeBytes;
 @property(readonly, nonatomic) _Bool burstFollowsEncoderSettings; // @synthesize burstFollowsEncoderSettings=_burstFollowsEncoderSettings;
-@property(readonly, nonatomic) double burstDelayAfterTouchDownCapture; // @synthesize burstDelayAfterTouchDownCapture=_burstDelayAfterTouchDownCapture;
-@property(readonly, nonatomic) _Bool capturesOnTouchDown; // @synthesize capturesOnTouchDown=_capturesOnTouchDown;
 @property(readonly, nonatomic) _Bool shouldDelayRemotePersistence; // @synthesize shouldDelayRemotePersistence=_shouldDelayRemotePersistence;
 @property(readonly, nonatomic, getter=isLockAsShutterEnabled) _Bool lockAsShutterEnabled; // @synthesize lockAsShutterEnabled=_lockAsShutterEnabled;
 @property(readonly, nonatomic) _Bool shouldDisableCameraSwitchingDuringVideoRecording; // @synthesize shouldDisableCameraSwitchingDuringVideoRecording=_shouldDisableCameraSwitchingDuringVideoRecording;
@@ -71,6 +70,7 @@
 @property(nonatomic) _Bool didAcknowledgePortraitModeDescription; // @synthesize didAcknowledgePortraitModeDescription=_didAcknowledgePortraitModeDescription;
 @property(readonly, nonatomic) _Bool shouldUseModernHDRBehavior; // @synthesize shouldUseModernHDRBehavior=_shouldUseModernHDRBehavior;
 @property(readonly, nonatomic) _Bool shouldCaptureHDREV0; // @synthesize shouldCaptureHDREV0=_shouldCaptureHDREV0;
+@property(nonatomic) _Bool didAcknowledgeQRCodeDescription; // @synthesize didAcknowledgeQRCodeDescription=_didAcknowledgeQRCodeDescription;
 @property(nonatomic) _Bool forceEnableQRBanners; // @synthesize forceEnableQRBanners=_forceEnableQRBanners;
 @property(readonly, nonatomic) _Bool QRBannersEnabledInSettings; // @synthesize QRBannersEnabledInSettings=_QRBannersEnabledInSettings;
 @property(readonly, nonatomic) _Bool shouldShowGridView; // @synthesize shouldShowGridView=_shouldShowGridView;
@@ -83,8 +83,9 @@
 @property(readonly, nonatomic) _Bool shouldShowQRBanners;
 - (_Bool)shouldResetCaptureConfiguration;
 - (void)writePreferences;
-- (_Bool)readPreferencesWithLaunchOptions:(id)arg1 emulationMode:(long long)arg2 callActive:(_Bool)arg3;
+- (_Bool)readPreferencesWithOverrides:(id)arg1 emulationMode:(long long)arg2 callActive:(_Bool)arg3;
 - (long long)_sanitizeLightingType:(long long)arg1 forMode:(long long)arg2;
+- (long long)ppt_readPortraitLightingType;
 - (long long)_sanitizeEffectFilterType:(long long)arg1 forMode:(long long)arg2;
 - (id)filterTypesForMode:(long long)arg1;
 

@@ -29,12 +29,6 @@ struct __DDExpressionPosition {
     int _field4;
 };
 
-struct __DDPermutation {
-    unsigned short _field1;
-    unsigned short _field2;
-    unsigned short _field3[0];
-};
-
 struct __DDQueryOffset {
     unsigned int :32;
     unsigned int :32;

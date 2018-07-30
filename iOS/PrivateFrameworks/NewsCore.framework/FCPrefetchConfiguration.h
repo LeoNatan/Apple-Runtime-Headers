@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class NTPBPrefetchConfig;
+@class NSDictionary, NTPBPrefetchConfig;
 
 @interface FCPrefetchConfiguration : NSObject
 {
     NTPBPrefetchConfig *_pbConfig;
+    NSDictionary *_configDict;
     _Bool _backgroundFetchEnabled;
     _Bool _shouldPrefetchForYouFeed;
     double _minimumBackgroundFetchInterval;
@@ -26,6 +27,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithConfigDictionary:(id)arg1;
 - (id)initWithPBPrefetchConfig:(id)arg1;
 - (id)initWithDefaults;
 

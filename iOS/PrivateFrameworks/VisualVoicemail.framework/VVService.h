@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "VMTranscriptionService.h"
+#import "VMStateRequestControllerDelegate.h"
 
-@class NSArray, NSError, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSRecursiveLock, NSString, VMStateRequestController, VMVoicemailTranscriptionController, VMVoicemailTranscriptionTask;
+@class CTXPCServiceSubscriptionContext, NSArray, NSDictionary, NSError, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSRecursiveLock, NSString, VMStateRequestController, VMTranscriptionService, VVVerifier;
 
-@interface VVService : NSObject <VMTranscriptionService>
+@interface VVService : NSObject <VMStateRequestControllerDelegate>
 {
     NSRecursiveLock *_lock;
     long long _capabilities;
@@ -38,14 +38,18 @@
     } _serviceFlags;
     NSMutableDictionary *_stateRequestAttemptCount;
     NSString *_serviceIdentifier;
-    VMVoicemailTranscriptionController *_transcriptionController;
-    VMVoicemailTranscriptionTask *_transcriptionTask;
+    NSString *_serviceDestinationID;
+    VMTranscriptionService *_transcriptionService;
+    VVVerifier *_verifier;
+    CTXPCServiceSubscriptionContext *_context;
     unsigned long long _numFailedAttemptsToSyncOverWifi;
     struct __CFString *_lastConnectionTypeUsed;
+    NSDictionary *_accountDictionary;
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
     VMStateRequestController *_stateRequestController;
 }
 
++ (id)accountDictionaryForURL:(id)arg1;
 + (void)releaseInsomniaAssertion;
 + (void)obtainInsomniaAssertion;
 + (void)_setInsomniaStateSupressed:(_Bool)arg1;
@@ -54,19 +58,18 @@
 + (struct __CTServerConnection *)CTServerConnection;
 + (_Bool)sharedServiceIsSubscribed;
 + (_Bool)_lockedSharedServiceIsSubscribed;
-+ (id)sharedService;
-+ (void)_handleSIMChanged;
++ (id)serviceWithIdentifier:(id)arg1 context:(id)arg2;
 + (void)_subscriptionStateChanged;
-+ (_Bool)_vvmAssertionReady;
-+ (_Bool)_waitingForInsomniaStateToBecomeActive;
 + (void)initialize;
-+ (id)transcriptionLanguageCodes;
 @property(readonly, nonatomic) VMStateRequestController *stateRequestController; // @synthesize stateRequestController=_stateRequestController;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
+@property(retain, nonatomic) NSDictionary *accountDictionary; // @synthesize accountDictionary=_accountDictionary;
 @property(nonatomic) struct __CFString *lastConnectionTypeUsed; // @synthesize lastConnectionTypeUsed=_lastConnectionTypeUsed;
 @property(nonatomic) unsigned long long numFailedAttemptsToSyncOverWifi; // @synthesize numFailedAttemptsToSyncOverWifi=_numFailedAttemptsToSyncOverWifi;
-@property(retain, nonatomic) VMVoicemailTranscriptionTask *transcriptionTask; // @synthesize transcriptionTask=_transcriptionTask;
-@property(retain, nonatomic) VMVoicemailTranscriptionController *transcriptionController; // @synthesize transcriptionController=_transcriptionController;
+@property(readonly, nonatomic) CTXPCServiceSubscriptionContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) VVVerifier *verifier; // @synthesize verifier=_verifier;
+@property(retain, nonatomic) VMTranscriptionService *transcriptionService; // @synthesize transcriptionService=_transcriptionService;
+@property(retain, nonatomic) NSString *serviceDestinationID; // @synthesize serviceDestinationID=_serviceDestinationID;
 @property(retain, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 - (void).cxx_destruct;
 - (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
@@ -75,6 +78,7 @@
 - (void)incrementAttemptCountForStateRequest:(id)arg1;
 - (long long)attemptCountForStateRequest:(id)arg1;
 - (void)handleVVServiceDataAvailableNotification:(id)arg1;
+- (void)handleVoicemailInfoUpdate:(id)arg1;
 - (struct __CFString *)dataConnectionServiceTypeOverride;
 - (void)scheduleImmediateSynchronizeRetryOverCellular;
 - (_Bool)lastUsedConnectionTypeWasCellular;
@@ -170,28 +174,21 @@
 - (id)mailboxName;
 - (void)kill;
 - (void)setSubscribed:(_Bool)arg1;
+- (id)accountParamsAtFilePath:(id)arg1;
+- (id)parametersFilePathForUUIDString:(id)arg1;
 - (_Bool)isVVMAvailableOverWiFi;
 - (_Bool)isSubscribed;
 - (long long)capabilities;
-- (void)retranscribeAllVoicemails;
 - (void)dealloc;
-- (id)init;
+- (id)initWithServiceIdentifier:(id)arg1 context:(id)arg2;
 - (void)_callStatusChanged;
 - (void)_carrierBundleChanged;
+- (void)handleDataContextDeactivated;
 - (void)_dataAvailabilityChanged;
 - (void)_dataRoamingStatusChanged;
 - (_Bool)doTrashCompaction;
 - (_Bool)shouldTrashCompactRecord:(void *)arg1;
 - (double)trashCompactionAge;
-- (void)handleAFLanguageCodeDidChangeNotification:(id)arg1;
-- (_Bool)isSupportedTranscriptionLanguageCode:(id)arg1;
-- (void)reportTranscriptionRatedAccurate:(_Bool)arg1 forRecord:(const void *)arg2;
-- (void)reportTranscriptionProblemForRecord:(const void *)arg1;
-- (unsigned long long)failureReasonForError:(id)arg1;
-- (void)processTranscriptForRecord:(const void *)arg1 priority:(long long)arg2 completion:(CDUnknownBlockType)arg3;
-@property(readonly, nonatomic, getter=isTranscriptionAvailable) _Bool transcriptionAvailable;
-- (void)unloadTranscriptionService;
-- (void)loadTranscriptionService;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -27,6 +27,7 @@
     NSDateFormatter *_shortDateFormatter;
     NSDateFormatter *_dayOfTheWeekDateFormatter;
     id <PLMomentGenerationDataManagement> _momentDataManager;
+    id <PLMomentGenerationDataManagement_Private> _privateMomentDataManager;
     _Bool _analyzingAllMoments;
     _Bool _skippedMomentsDuringAnalysis;
     _Bool _passSuccess;
@@ -98,7 +99,7 @@
 - (id)_localizedNamesForNameInfoArray:(id)arg1 namesUsed:(id)arg2 includeHome:(_Bool)arg3 outAddedHome:(_Bool *)arg4;
 - (id)_simpleNamesForNameInfoArray:(id)arg1;
 - (id)_dominantPlacesInPlaceInfoArray:(id)arg1 orderType:(unsigned long long)arg2 totalPlaceCount:(unsigned long long)arg3 includeAllPlaces:(_Bool)arg4 includeHome:(_Bool)arg5 homeAtEnd:(_Bool)arg6 atLastLevel:(_Bool)arg7 outOtherNonDominantPlaces:(id)arg8;
-- (_Bool)_markInvalidLowQualityAssetsInMoment:(id)arg1 withCurrentProviderId:(id)arg2;
+- (id)_markInvalidLowQualityAssetsInMoment:(id)arg1 withCurrentProviderId:(id)arg2;
 - (void)_updateInfoForAllMomentsWithReAnalyzeType:(unsigned long long)arg1;
 - (_Bool)_canProcessMoments;
 - (void)_setLocationDataValidForMomentId:(id)arg1;
@@ -126,6 +127,7 @@
 - (void)_processNextAnalysisTransaction;
 - (void)_analysisDidComplete:(_Bool)arg1;
 - (void)_analysisComplete;
+- (void)_incrementalSaveAndRefresh;
 - (void)_saveDataIfReachedObjectChangeThreshold;
 - (void)_saveDataIfNeededAfterTimeDiff:(double)arg1;
 - (void)_saveNow;
@@ -161,7 +163,7 @@
 - (void)_saveGlobalMetadata;
 - (void)_fetchServerVersionInfo;
 - (void)_updateLocalServerVersionInfo:(id)arg1;
-- (_Bool)_markInvalidOutOfDateAssetsInMoment:(id)arg1 forCurrentCountryVersionMap:(id)arg2 withCurrentProviderId:(id)arg3;
+- (id)_markInvalidOutOfDateAssetsInMoment:(id)arg1 forCurrentCountryVersionMap:(id)arg2 withCurrentProviderId:(id)arg3;
 - (_Bool)_loadServerVersionInfo;
 - (void)_updateDateFormattersForLocale:(id)arg1;
 - (_Bool)setVersionInfoURLIfAvailable:(id)arg1;

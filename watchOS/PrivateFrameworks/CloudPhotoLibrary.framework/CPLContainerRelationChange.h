@@ -15,6 +15,7 @@
 }
 
 + (id)relationWithItemIdentifier:(id)arg1 containerIdentifier:(id)arg2;
++ (id)relationWithItemScopedIdentifier:(id)arg1 containerIdentifier:(id)arg2;
 + (id)relationToContainerWithIdentifier:(id)arg1;
 @property(retain, nonatomic) CPLContainerRelation *relation; // @synthesize relation=_relation;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
@@ -23,14 +24,18 @@
 - (_Bool)supportsDeletion;
 - (_Bool)validateFullRecord;
 - (id)description;
-- (id)identifierForQuarantine;
+- (id)scopedIdentifierForQuarantine;
 - (void)setSecondaryIdentifier:(id)arg1;
 - (id)secondaryIdentifier;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
+- (void)setContainerScopedIdentifier:(id)arg1;
+- (id)containerScopedIdentifier;
+- (void)setItemScopedIdentifier:(id)arg1;
+- (id)itemScopedIdentifier;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
-- (id)identifiersForMapping;
+- (id)scopedIdentifiersForMapping;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(_Bool)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
 
 @end

@@ -13,7 +13,9 @@
 @interface CPLCloudKitResourcesDownloadTask : CPLCloudKitTransportTask <CPLEngineTransportResourcesDownloadTask>
 {
     _CPLCloudKitDownloadGroup *_downloadGroup;
-    NSMutableArray *_remainingTasks;
+    NSMutableArray *_remainingPrivateTasks;
+    NSMutableArray *_remainingSharedTasks;
+    NSMutableArray *_currentRemainingTasks;
     NSArray *_downloadTasks;
     CDUnknownBlockType _completionHandler;
 }
@@ -22,18 +24,20 @@
 @property(copy, nonatomic) NSArray *downloadTasks; // @synthesize downloadTasks=_downloadTasks;
 - (void).cxx_destruct;
 - (void)runOperations;
-- (void)_downloadNextGroupWithZoneID:(id)arg1;
-- (void)_downloadCurrentGroupWithZoneID:(id)arg1;
+- (void)_downloadNextGroup;
+- (void)_downloadCurrentGroup;
 - (void)_finishRemainingTasksWithError:(id)arg1;
-- (void)_groupTasks;
 - (void)cancelDownloadTask:(id)arg1;
 - (id)initWithController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties
+@property(nonatomic, getter=isBackgroundTask) BOOL backgroundTask;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isForcedTask) BOOL forcedTask;
 @property(nonatomic) BOOL foreground;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isHighPriorityBackground) BOOL highPriorityBackground;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) id <CPLEngineTransportGroup> transportGroup;
 

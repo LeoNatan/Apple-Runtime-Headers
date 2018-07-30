@@ -7,51 +7,53 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBGetFileInformationIntent.h"
 
-@class PBUnknownFields, _INPBIntentMetadata, _INPBString;
+@class NSString, _INPBIntentMetadata, _INPBString;
 
-@interface _INPBGetFileInformationIntent : PBCodable <NSCopying>
+@interface _INPBGetFileInformationIntent : PBCodable <_INPBGetFileInformationIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBString *_entityName;
-    int _entityType;
-    _INPBIntentMetadata *_intentMetadata;
-    int _propertyName;
-    int _qualifier;
     struct {
         unsigned int entityType:1;
         unsigned int propertyName:1;
         unsigned int qualifier:1;
     } _has;
+    int _entityType;
+    int _propertyName;
+    int _qualifier;
+    _INPBString *_entityName;
+    _INPBIntentMetadata *_intentMetadata;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
+@property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
+@property(nonatomic) int propertyName; // @synthesize propertyName=_propertyName;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) int entityType; // @synthesize entityType=_entityType;
+@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (int)StringAsQualifier:(id)arg1;
 - (id)qualifierAsString:(int)arg1;
 @property(nonatomic) _Bool hasQualifier;
-@property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
 - (int)StringAsPropertyName:(id)arg1;
 - (id)propertyNameAsString:(int)arg1;
 @property(nonatomic) _Bool hasPropertyName;
-@property(nonatomic) int propertyName; // @synthesize propertyName=_propertyName;
-@property(readonly, nonatomic) _Bool hasEntityName;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
 - (int)StringAsEntityType:(id)arg1;
 - (id)entityTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasEntityType;
-@property(nonatomic) int entityType; // @synthesize entityType=_entityType;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasEntityName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

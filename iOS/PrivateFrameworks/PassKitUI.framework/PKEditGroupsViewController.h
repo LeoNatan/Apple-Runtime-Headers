@@ -24,9 +24,11 @@
     UITableView *_tableView;
     id <UIViewControllerPreviewing> _previewingContext;
     NSMutableArray *_actions;
+    struct CGSize _imageSizeNeeded;
 }
 
 - (void).cxx_destruct;
+- (_Bool)passExistsWithUniqueIdentifier:(id)arg1;
 - (void)prefetchItemsAtIndexPaths:(id)arg1;
 - (id)passAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
@@ -56,7 +58,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initInEditingMode:(_Bool)arg1;
+- (id)initInEditingMode:(_Bool)arg1 existingGroupsController:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

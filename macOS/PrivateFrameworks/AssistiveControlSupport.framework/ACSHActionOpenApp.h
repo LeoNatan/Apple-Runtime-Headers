@@ -26,7 +26,7 @@
 - (id)icon;
 - (void)performWithEventSourceData:(id)arg1;
 - (id)paramDictionaryForSaving;
-- (void)_initWithPlistDictionary:(id)arg1;
+- (void)_configureWithPlistDictionary:(id)arg1;
 - (id)paramDescription;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -15,7 +15,6 @@
     NSPointerArray *_observers;
     _Bool _selectingAssets;
     _Bool _selectingTargetAlbum;
-    _Bool _targetAlbumIsNewLocalAlbum;
     long long _status;
     PUPhotoSelectionManager *_photoSelectionManager;
     PHAssetCollection *_sourceAlbum;
@@ -32,7 +31,6 @@
 @property(copy, nonatomic) CDUnknownBlockType bannerGenerator; // @synthesize bannerGenerator=_bannerGenerator;
 @property(nonatomic) long long promptLocation; // @synthesize promptLocation=_promptLocation;
 @property(copy, nonatomic) NSString *localizedPrompt; // @synthesize localizedPrompt=_localizedPrompt;
-@property(nonatomic) _Bool targetAlbumIsNewLocalAlbum; // @synthesize targetAlbumIsNewLocalAlbum=_targetAlbumIsNewLocalAlbum;
 @property(retain, nonatomic) NSString *targetAlbumName; // @synthesize targetAlbumName=_targetAlbumName;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *targetAlbum; // @synthesize targetAlbum=_targetAlbum;
 @property(copy, nonatomic) NSOrderedSet *transferredAssets; // @synthesize transferredAssets=_transferredAssets;
@@ -47,6 +45,8 @@
 - (void)removeSessionInfoObserver:(id)arg1;
 - (void)addSessionInfoObserver:(id)arg1;
 - (id)init;
+- (_Bool)hasLocalTargetAlbum;
+- (_Bool)hasTargetAlbum;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

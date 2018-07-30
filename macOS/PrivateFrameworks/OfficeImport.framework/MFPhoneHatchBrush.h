@@ -8,7 +8,6 @@
 
 @class OITSUColor;
 
-__attribute__((visibility("hidden")))
 @interface MFPhoneHatchBrush : MFPhoneBrush
 {
     OITSUColor *m_colour;
@@ -17,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)patternNameForHatchStyle:(int)arg1;
 + (id)hatchBrushWithColour:(id)arg1 in_style:(int)arg2;
+- (void).cxx_destruct;
 - (void)fillPath:(id)arg1 in_path:(id)arg2;
-- (void)dealloc;
 - (id)initWithColour:(id)arg1 in_style:(int)arg2;
 
 @end

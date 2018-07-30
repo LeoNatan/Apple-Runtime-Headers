@@ -8,6 +8,7 @@
 
 @class NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVOutputDeviceDiscoverySessionInternal : NSObject
 {
     NSObject<OS_dispatch_queue> *ivarAccessQueue;

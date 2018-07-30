@@ -7,23 +7,27 @@
 #import "UIView.h"
 
 #import "TLKObservable.h"
+#import "TLKObserver.h"
 
-@class NSString, TLKObserver;
+@class NSString;
 
-@interface TLKView : UIView <TLKObservable>
+@interface TLKView : UIView <TLKObserver, TLKObservable>
 {
+    _Bool inBatchUpdate;
+    id <TLKObserver> observer;
     unsigned long long _style;
     UIView *_containerView;
-    TLKObserver *_viewObserver;
 }
 
++ (void)makeContainerShadowCompatible:(id)arg1;
++ (void)enableShadow:(_Bool)arg1 forView:(id)arg2;
 + (Class)layerClass;
 + (struct UIEdgeInsets)defaultInsets;
-@property(retain) TLKObserver *viewObserver; // @synthesize viewObserver=_viewObserver;
 @property(retain) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
+@property _Bool inBatchUpdate; // @synthesize inBatchUpdate;
+@property __weak id <TLKObserver> observer; // @synthesize observer;
 - (void).cxx_destruct;
-- (void)dealloc;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (_Bool)supportsAsynchronousMeasurement;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
@@ -35,12 +39,12 @@
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
-- (id)observableProperties;
 - (void)styleDidChange:(unsigned long long)arg1;
 - (void)observedPropertiesChanged;
 - (void)setContainer:(id)arg1 withInsets:(struct UIEdgeInsets)arg2;
 - (void)setContainerWithDefaultInsets:(id)arg1;
 - (void)layoutMarginsDidChange;
+- (void)propertiesDidChange;
 - (id)init;
 
 // Remaining properties

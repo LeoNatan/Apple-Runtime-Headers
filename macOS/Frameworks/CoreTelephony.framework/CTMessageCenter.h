@@ -15,11 +15,18 @@
 - (BOOL)simulateDeferredMessage;
 - (BOOL)simulateSmsReceived:(id)arg1;
 - (BOOL)getCharacterCount:(long long *)arg1 andMessageSplitThreshold:(long long *)arg2 forSmsText:(id)arg3;
+- (BOOL)getCharacterCountForSub:(id)arg1 count:(long long *)arg2 andMessageSplitThreshold:(long long *)arg3 forSmsText:(id)arg4;
+- (BOOL)sendSMSWithText:(id)arg1 text:(id)arg2 serviceCenter:(id)arg3 toAddress:(id)arg4 withMoreToFollow:(BOOL)arg5 withID:(unsigned int)arg6;
 - (BOOL)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 withMoreToFollow:(BOOL)arg4 withID:(unsigned int)arg5;
+- (BOOL)sendSMSWithText:(id)arg1 text:(id)arg2 serviceCenter:(id)arg3 toAddress:(id)arg4 trackingID:(unsigned int *)arg5;
 - (BOOL)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 trackingID:(unsigned int *)arg4;
+- (BOOL)sendSMSWithText:(id)arg1 text:(id)arg2 serviceCenter:(id)arg3 toAddress:(id)arg4 withID:(unsigned int)arg5;
 - (BOOL)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 withID:(unsigned int)arg4;
+- (BOOL)sendSMSWithText:(id)arg1 text:(id)arg2 serviceCenter:(id)arg3 toAddress:(id)arg4;
 - (BOOL)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3;
+- (BOOL)isMmsConfiguredForSub:(id)arg1;
 - (BOOL)isMmsConfigured;
+- (BOOL)isMmsEnabledForSub:(id)arg1;
 - (BOOL)isMmsEnabled;
 - (void)setDeliveryReportsEnabled:(BOOL)arg1;
 - (CDStruct_1ef3fb1f)isDeliveryReportsEnabled:(char *)arg1;
@@ -38,7 +45,7 @@
 - (CDStruct_1ef3fb1f)send:(id)arg1;
 - (CDStruct_1ef3fb1f)sendMMS:(id)arg1;
 - (void)sendMessageAsSmsToShortCodeRecipients:(id)arg1 andReplaceData:(id *)arg2;
-- (CDStruct_1ef3fb1f)sendMMSFromData:(id)arg1 messageId:(unsigned int)arg2;
+- (CDStruct_1ef3fb1f)sendMMSFromData:(id)arg1 messageId:(unsigned int)arg2 subSlot:(long long)arg3;
 - (CDStruct_1ef3fb1f)sendSMS:(id)arg1 withMoreToFollow:(BOOL)arg2 trackingID:(unsigned int *)arg3;
 - (void)dealloc;
 - (id)init;

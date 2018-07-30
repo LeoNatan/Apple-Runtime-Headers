@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OITSUPair.h>
 
-__attribute__((visibility("hidden")))
 @interface OITSUMutablePair : OITSUPair
 {
 }

@@ -8,6 +8,7 @@
 
 @class NSData, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface NSPersistentUIWindowSnapshotter : NSObject
 {
     NSURL *_persistentStateDirectoryURL;

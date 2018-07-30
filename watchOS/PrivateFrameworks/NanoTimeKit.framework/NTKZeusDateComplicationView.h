@@ -17,13 +17,15 @@
 }
 
 - (void).cxx_destruct;
+- (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
+- (void)applyPalette:(id)arg1;
 - (struct CGRect)contentFrame;
 - (void)layoutSubviews;
 - (void)_updateImage;
 - (void)setStyle:(unsigned int)arg1;
 - (id)init;
 - (unsigned int)desiredDateComplicationDateStyle;
-- (void)setDateComplicationText:(id)arg1 forDateStyle:(unsigned int)arg2;
+- (void)setDateComplicationText:(id)arg1 withDayRange:(struct _NSRange)arg2 forDateStyle:(unsigned int)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

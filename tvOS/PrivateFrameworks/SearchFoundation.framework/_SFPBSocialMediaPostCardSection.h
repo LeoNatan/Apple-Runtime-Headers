@@ -13,14 +13,6 @@
 
 @interface _SFPBSocialMediaPostCardSection : PBCodable <_SFPBSocialMediaPostCardSection, NSSecureCoding>
 {
-    struct {
-        unsigned int canBeHidden:1;
-        unsigned int hasTopPadding:1;
-        unsigned int hasBottomPadding:1;
-        unsigned int separatorStyle:1;
-        unsigned int nameNoWrap:1;
-        unsigned int nameMaxLines:1;
-    } _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;
@@ -70,24 +62,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasFootnote;
-@property(readonly, nonatomic) _Bool hasTimestamp;
-@property(readonly, nonatomic) _Bool hasPicture;
-@property(readonly, nonatomic) _Bool hasPost;
-@property(readonly, nonatomic) _Bool hasProfilePicture;
-@property(readonly, nonatomic) _Bool hasVerifiedGlyph;
-@property(readonly, nonatomic) _Bool hasHandle;
-@property(readonly, nonatomic) _Bool hasNameMaxLines;
-@property(readonly, nonatomic) _Bool hasNameNoWrap;
-@property(readonly, nonatomic) _Bool hasName;
-@property(readonly, nonatomic) _Bool hasBackgroundColor;
-@property(readonly, nonatomic) _Bool hasSeparatorStyle;
-@property(readonly, nonatomic) _Bool hasType;
-@property(readonly, nonatomic) _Bool hasHasBottomPadding;
-@property(readonly, nonatomic) _Bool hasHasTopPadding;
-@property(readonly, nonatomic) _Bool hasCanBeHidden;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerTitle;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

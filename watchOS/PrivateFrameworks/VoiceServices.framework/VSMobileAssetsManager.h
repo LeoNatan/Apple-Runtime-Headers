@@ -36,10 +36,12 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheConcurrentQueue; // @synthesize cacheConcurrentQueue=_cacheConcurrentQueue;
 - (void).cxx_destruct;
+- (void)populateVoiceData:(id)arg1 fromAsset:(id)arg2;
 - (id)voiceDataFromAsset:(id)arg1;
 - (id)_localVoiceForLanguage:(id)arg1 gender:(long)arg2;
 - (id)_builtInVoiceForLanguage:(id)arg1;
 - (id)legacyLocalVocalizerVoiceAssetForLanguage:(id)arg1;
+- (_Bool)_purgeAsset:(id)arg1;
 - (_Bool)purgeAsset:(id)arg1;
 - (void)_downloadAsset:(id)arg1 withOptions:(id)arg2 progressHandler:(CDUnknownBlockType)arg3;
 - (void)_downloadAsset:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;

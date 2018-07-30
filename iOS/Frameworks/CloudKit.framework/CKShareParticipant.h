@@ -18,14 +18,13 @@
     _Bool _createdInProcess;
     _Bool _acceptedInProcess;
     CKUserIdentity *_userIdentity;
-    long long _type;
+    long long _role;
     long long _acceptanceStatus;
     long long _permission;
     NSString *_participantID;
     CKRecordID *_shareRecordID;
     NSString *_inviterID;
-    CKUserIdentity *_originalUserIdentity;
-    long long _originalParticipantType;
+    long long _originalParticipantRole;
     long long _originalAcceptanceStatus;
     long long _originalPermission;
     NSData *_protectionInfo;
@@ -39,8 +38,7 @@
 @property(nonatomic) _Bool createdInProcess; // @synthesize createdInProcess=_createdInProcess;
 @property(nonatomic) long long originalPermission; // @synthesize originalPermission=_originalPermission;
 @property(nonatomic) long long originalAcceptanceStatus; // @synthesize originalAcceptanceStatus=_originalAcceptanceStatus;
-@property(nonatomic) long long originalParticipantType; // @synthesize originalParticipantType=_originalParticipantType;
-@property(retain, nonatomic) CKUserIdentity *originalUserIdentity; // @synthesize originalUserIdentity=_originalUserIdentity;
+@property(nonatomic) long long originalParticipantRole; // @synthesize originalParticipantRole=_originalParticipantRole;
 @property(retain, nonatomic) NSString *inviterID; // @synthesize inviterID=_inviterID;
 @property(nonatomic) _Bool isOrgAdminUser; // @synthesize isOrgAdminUser=_isOrgAdminUser;
 @property(nonatomic) _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
@@ -48,12 +46,13 @@
 @property(retain, nonatomic) NSString *participantID; // @synthesize participantID=_participantID;
 @property(nonatomic) long long permission; // @synthesize permission=_permission;
 @property(nonatomic) long long acceptanceStatus; // @synthesize acceptanceStatus=_acceptanceStatus;
-@property(nonatomic) long long type; // @synthesize type=_type;
+@property(nonatomic) long long role; // @synthesize role=_role;
 @property(retain, nonatomic) CKUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)unifiedContactsInStore:(id)arg1 keysToFetch:(id)arg2 error:(id *)arg3;
+@property(nonatomic) long long type;
 - (void)_stripPersonalInfo;
 - (id)debugDescription;
 - (id)description;
@@ -62,6 +61,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithUserIdentity:(id)arg1;
+- (id)_init;
 
 @end
 

@@ -25,6 +25,7 @@
 + (void)_forceGameControllerFramework;
 + (id)_websiteDataURLForContainerWithURL:(id)arg1 bundleIdentifierIfNotInContainer:(id)arg2;
 + (id)_websiteDataURLForContainerWithURL:(id)arg1;
++ (id)_allProcessPoolsForTesting;
 + (id)_sharedProcessPool;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -41,16 +42,24 @@
 - (void)_setAllowsAnySSLCertificateForServiceWorker:(_Bool)arg1;
 @property(nonatomic, getter=_isStorageAccessAPIEnabled, setter=_setStorageAccessAPIEnabled:) _Bool _storageAccessAPIEnabled;
 @property(nonatomic, getter=_isCookieStoragePartitioningEnabled, setter=_setCookieStoragePartitioningEnabled:) _Bool _cookieStoragePartitioningEnabled;
+- (unsigned long long)_serviceWorkerProcessCount;
 - (unsigned long long)_pluginProcessCount;
 - (void)_preconnectToServer:(id)arg1;
 - (unsigned long long)_webPageContentProcessCount;
+- (unsigned long long)_webProcessCountIgnoringPrewarmed;
+- (unsigned long long)_prewarmedWebProcessCount;
+- (void)_makeNextNetworkProcessLaunchFailForTesting;
+- (void)_makeNextWebProcessLaunchFailForTesting;
 - (unsigned long long)_webProcessCount;
 - (void)_syncNetworkProcessCookies;
 - (int)_storageProcessIdentifier;
 - (int)_networkProcessIdentifier;
-- (void)_terminateServiceWorkerProcess;
+- (void)_disableServiceWorkerProcessTerminationDelay;
+- (void)_terminateServiceWorkerProcesses;
 - (void)_terminateNetworkProcess;
 - (void)_terminateStorageProcess;
+- (void)_clearSupportedPlugins;
+- (void)_addSupportedPlugin:(id)arg1 named:(id)arg2 withMimeTypes:(id)arg3 withExtensions:(id)arg4;
 - (void)_setAutomationSession:(id)arg1;
 - (void)_automationCapabilitiesDidChange;
 - (void)_warmInitialProcess;
@@ -62,6 +71,7 @@
 - (void)_setCookieAcceptPolicy:(unsigned long long)arg1;
 - (void)_setCanHandleHTTPSServerTrustEvaluation:(_Bool)arg1;
 - (void)_setMaximumNumberOfProcesses:(unsigned long long)arg1;
+- (void)_registerURLSchemeAsCanDisplayOnlyIfCanRequest:(id)arg1;
 - (void)_registerURLSchemeServiceWorkersCanHandle:(id)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 

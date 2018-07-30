@@ -21,6 +21,7 @@
     PKPaymentPreferenceButtonCell *_sizingButtonCell;
     PKPaymentPass *_paymentPassForBillingErrors;
     PKPaymentPass *_currentlySelectedPaymentPass;
+    NSArray *_latestPreferences;
     NSArray *_preferences;
     int _style;
     UITableView *_tableView;
@@ -76,7 +77,8 @@
 - (id)_cellForNamePreference:(id)arg1 row:(unsigned int)arg2;
 - (id)_cellForPreference:(id)arg1 row:(unsigned int)arg2;
 - (void)setErrors:(id)arg1 animated:(_Bool)arg2;
-- (void)setErrors:(id)arg1 pass:(id)arg2 animated:(_Bool)arg3;
+- (void)setErrors:(id)arg1 otherPass:(id)arg2 animated:(_Bool)arg3;
+- (void)setErrors:(id)arg1 selectedPass:(id)arg2 animated:(_Bool)arg3;
 - (void)clearErrorsForPreference:(Class)arg1;
 - (void)_cleanupInlineEdits;
 - (void)_startInlineEditingForPreference:(id)arg1 inSection:(unsigned int)arg2;

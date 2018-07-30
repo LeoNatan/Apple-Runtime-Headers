@@ -10,7 +10,9 @@
 
 @interface FKTextDetector : NSObject
 {
-    struct *_sessions[8];
+    struct FKSession *_sessions[8];
+    struct CGSize _size;
+    struct CGRect _roi;
     unsigned int _timeDownscale[8];
     unsigned int _timeBinarizer[8];
     unsigned int _timeConcomps[8];

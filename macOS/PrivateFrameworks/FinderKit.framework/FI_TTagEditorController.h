@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
     struct TFENodeVector _nodes;
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
-    struct TNSRef<NSArray *, void> _originalTagAttributes;
+    struct TNSRef<NSArray, void> _originalTagAttributes;
     _Bool _canceled;
     struct TNotificationCenterObserver _tagRegistryChangedObserver;
     struct TNotificationCenterObserver _didEndEditingObserver;

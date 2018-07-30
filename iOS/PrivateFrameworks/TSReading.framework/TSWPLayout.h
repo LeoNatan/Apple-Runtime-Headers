@@ -118,6 +118,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) struct __CFLocale *hyphenationLocale;
 @property(readonly, nonatomic) _Bool pushAscendersIntoColumn;
+@property(readonly, nonatomic) double reservedWidthWhenTruncating;
 @property(readonly) Class superclass;
 
 @end

@@ -8,6 +8,7 @@
 
 @class NSArray, NSLayoutConstraint;
 
+__attribute__((visibility("hidden")))
 @interface PUCropHandleView : UIView
 {
     _Bool _lineWeightHeavy;

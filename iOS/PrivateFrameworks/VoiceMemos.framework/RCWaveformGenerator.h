@@ -6,21 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSError, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSOperationQueue, RCExtAudioFilePipe;
+@class NSError, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, RCExtAudioFilePipe;
 
 @interface RCWaveformGenerator : NSObject
 {
     long long _state;
     NSObject<OS_dispatch_semaphore> *_digestPausedSemaphore;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
     double _totalDigestedTime;
     double _totalFlushedTime;
+    double _lastFlushingTime;
     NSHashTable *_weakObservers;
     NSMutableArray *_internalFinishedLoadingBlockUUIDs;
     NSMutableArray *_internalFinishedLoadingBlocks;
     RCExtAudioFilePipe *_activeExtAudioFile;
-    NSOperationQueue *_loadingQueue;
     struct PowerMeter _samplePowerMeter;
     _Bool _isSampleRateKnown;
     vector_7584168e _powerLevelBuffer;
@@ -42,28 +41,27 @@
 @property(readonly, nonatomic) double segmentFlushInterval; // @synthesize segmentFlushInterval=_segmentFlushInterval;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_onLoadingQueue_appendPowerMeterValuesFromRawAudioData:(void *)arg1 frameCount:(long long)arg2 format:(const struct AudioStreamBasicDescription *)arg3 isPredigest:(_Bool)arg4;
-- (void)_onLoadingQueue_appendSegment:(id)arg1;
-- (void)_onLoadingQueue_pushAveragePowerLevel:(float)arg1;
-- (void)_onLoadingQueue_digestAveragePowerLevel:(float)arg1;
-- (void)_onLoadingQueue_flushRemainingData;
-- (void)_onLoadingQueue_flushWithNextSegmentWithEndTime:(double)arg1 isPredigest:(_Bool)arg2;
-- (void)_onLoadingQueue_flushWaveformSegment:(id)arg1;
-- (void)_appendAveragePowerLevelsByDigestingWaveformSegments:(id)arg1;
+- (void)_onQueue_appendPowerMeterValuesFromRawAudioData:(void *)arg1 frameCount:(long long)arg2 format:(const struct AudioStreamBasicDescription *)arg3 isPredigest:(_Bool)arg4;
+- (void)_onQueue_appendSegment:(id)arg1;
+- (void)_onQueue_pushAveragePowerLevel:(float)arg1;
+- (void)_onQueue_digestAveragePowerLevel:(float)arg1;
+- (void)_onQueue_flushRemainingData;
+- (void)_onQueue_flushWithNextSegmentWithEndTime:(double)arg1 isPredigest:(_Bool)arg2;
+- (void)_onQueue_flushWaveformSegment:(id)arg1;
+- (_Bool)_appendAveragePowerLevelsByDigestingWaveformSegments:(id)arg1;
 - (id)synchronouslyApproximateWaveformForAVContentURL:(id)arg1 byReadingCurrentFileAheadTimeRange:(CDStruct_73a5d3ca)arg2;
 - (void)_onQueue_appendAveragePowerLevelsByDigestingTimeRange:(CDStruct_73a5d3ca)arg1 inExtAudioFile:(id)arg2 sourceFormat:(struct AudioStreamBasicDescription *)arg3 outputFormat:(struct AudioStreamBasicDescription *)arg4;
 - (void)_appendAveragePowerLevelsByDigestingTimeRange:(CDStruct_73a5d3ca)arg1 inExtAudioFile:(id)arg2 sourceFormat:(struct AudioStreamBasicDescription *)arg3 outputFormat:(struct AudioStreamBasicDescription *)arg4;
-- (void)_appendPowerMeterValuesFromDataInAudioFile:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
+- (_Bool)_appendPowerMeterValuesFromDataInAudioFile:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
+- (void)_appendPowerMeterValuesFromAudioPCMBuffer:(id)arg1;
 - (void)_appendPowerMeterValuesFromSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)_appendAveragePowerLevel:(float)arg1;
-- (void)_performObserversBlock:(CDUnknownBlockType)arg1;
-- (void)_performInternalFinishedLoadingBlocksAndFinishObservers;
-- (void)_performLoadingFinishedBlock:(CDUnknownBlockType)arg1 internalBlockUUID:(id)arg2 isTimeout:(_Bool)arg3;
-- (void)_finishLoadingByTerminating:(_Bool)arg1 loadingFinishedBlockTimeoutDate:(id)arg2 loadingFinishedBlock:(CDUnknownBlockType)arg3;
-- (_Bool)_isCanceled;
-- (double)totalDigestedTime;
+- (void)_onQueue_performObserversBlock:(CDUnknownBlockType)arg1;
+- (void)_onQueue_performInternalFinishedLoadingBlocksAndFinishObservers;
+- (void)_onQueue_performLoadingFinishedBlock:(CDUnknownBlockType)arg1 internalBlockUUID:(id)arg2 isTimeout:(_Bool)arg3;
+- (void)async_finishLoadingByTerminating:(_Bool)arg1 loadingFinishedBlockTimeout:(unsigned long long)arg2 loadingFinishedBlock:(CDUnknownBlockType)arg3;
 - (double)totalFlushedTime;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)terminateLoadingImmediately;
 @property(nonatomic) _Bool paused;
 - (void)beginLoading;
@@ -74,6 +72,7 @@
 - (_Bool)appendAveragePowerLevel:(float)arg1;
 - (_Bool)appendAveragePowerLevelsByDigestingWaveformSegments:(id)arg1;
 - (_Bool)appendAveragePowerLevelsByDigestingContentsOfAudioFileURL:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
+- (_Bool)appendAveragePowerLevelsByDigestingAudioPCMBuffer:(id)arg1;
 - (_Bool)appendAveragePowerLevelsByDigestingSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)flushPendingCapturedSampleBuffers;
 - (void)removeSegmentOutputObserver:(id)arg1;

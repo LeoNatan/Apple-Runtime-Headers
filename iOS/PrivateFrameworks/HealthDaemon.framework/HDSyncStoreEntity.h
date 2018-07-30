@@ -11,7 +11,7 @@
 }
 
 + (long long)protectionClass;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 + (id)_predicateWithStoreUUID:(id)arg1 type:(long long)arg2;
 + (id)existingSyncStoreEntityWithUUID:(id)arg1 database:(id)arg2 error:(id *)arg3;

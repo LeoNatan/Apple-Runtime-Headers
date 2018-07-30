@@ -26,6 +26,15 @@ struct NSObject {
     Class _field1;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
+struct os_unfair_recursive_lock_s {
+    struct os_unfair_lock_s ourl_lock;
+    unsigned int ourl_count;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

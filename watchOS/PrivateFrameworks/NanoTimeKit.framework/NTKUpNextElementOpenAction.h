@@ -17,13 +17,7 @@
 @property(readonly, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
-- (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)_performWithContext:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithURL:(id)arg1 applicationID:(id)arg2;
-- (id)init;
 
 @end
 

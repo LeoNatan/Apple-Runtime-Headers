@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <AppKit/_NSDrawingHandlerView.h>
 
 @class NSString, NSTextView, NSTrackingArea;
 
-@interface NSDataDetectionIndicatorView : NSView
+__attribute__((visibility("hidden")))
+@interface NSDataDetectionIndicatorView : _NSDrawingHandlerView
 {
     NSTrackingArea *_trackingArea;
     id _dataResult;

@@ -35,7 +35,7 @@
 - (void)nearby:(id)arg1 didReceiveData:(id)arg2 fromPeer:(id)arg3;
 - (void)nearby:(id)arg1 didSendData:(id)arg2 toPeer:(id)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didDisconnectFromPeer:(id)arg2 error:(id)arg3;
-- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 error:(id)arg3;
+- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 transport:(long long)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didLosePeer:(id)arg2 type:(long long)arg3;
 - (void)nearby:(id)arg1 didDiscoverType:(long long)arg2 withData:(id)arg3 fromPeer:(id)arg4 peerInfo:(id)arg5;
 - (void)nearby:(id)arg1 didFailToStartScanningForType:(long long)arg2 WithError:(id)arg3;

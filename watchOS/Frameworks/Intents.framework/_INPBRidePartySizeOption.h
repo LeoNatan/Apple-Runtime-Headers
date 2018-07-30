@@ -7,34 +7,37 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBRidePartySizeOption.h"
 
-@class NSString, PBUnknownFields, _INPBPriceRangeValue, _INPBRangeValue;
+@class NSString, _INPBPriceRangeValue, _INPBRangeValue;
 
-@interface _INPBRidePartySizeOption : PBCodable <NSCopying>
+@interface _INPBRidePartySizeOption : PBCodable <_INPBRidePartySizeOption, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBRangeValue *_partySizeRange;
     _INPBPriceRangeValue *_priceRange;
     NSString *_sizeDescription;
 }
 
-+ (id)options;
+@property(copy, nonatomic) NSString *sizeDescription; // @synthesize sizeDescription=_sizeDescription;
 @property(retain, nonatomic) _INPBPriceRangeValue *priceRange; // @synthesize priceRange=_priceRange;
-@property(retain, nonatomic) NSString *sizeDescription; // @synthesize sizeDescription=_sizeDescription;
 @property(retain, nonatomic) _INPBRangeValue *partySizeRange; // @synthesize partySizeRange=_partySizeRange;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasPriceRange;
 @property(readonly, nonatomic) _Bool hasSizeDescription;
+@property(readonly, nonatomic) _Bool hasPriceRange;
 @property(readonly, nonatomic) _Bool hasPartySizeRange;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

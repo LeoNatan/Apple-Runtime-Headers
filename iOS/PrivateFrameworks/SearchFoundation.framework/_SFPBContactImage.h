@@ -9,13 +9,17 @@
 #import "NSSecureCoding.h"
 #import "_SFPBContactImage.h"
 
-@class NSData, NSString;
+@class NSArray, NSData, NSString;
 
 @interface _SFPBContactImage : PBCodable <_SFPBContactImage, NSSecureCoding>
 {
+    _Bool _threeDTouchEnabled;
     NSString *_contactIdentifier;
+    NSArray *_contactIdentifiers;
 }
 
+@property(nonatomic) _Bool threeDTouchEnabled; // @synthesize threeDTouchEnabled=_threeDTouchEnabled;
+@property(copy, nonatomic) NSArray *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
@@ -26,7 +30,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasContactIdentifier;
+- (id)contactIdentifiersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)contactIdentifiersCount;
+- (void)addContactIdentifiers:(id)arg1;
+- (void)clearContactIdentifiers;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

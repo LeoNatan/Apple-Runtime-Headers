@@ -126,7 +126,7 @@ __attribute__((visibility("hidden")))
 - (void)announceArrival;
 - (BOOL)_shouldAnnounceArrival;
 - (BOOL)shouldAnnounceArrival;
-- (id)addWindowChangedDescriptionToRequest:(id)arg1;
+- (void)addWindowChangedDescriptionToRequest:(id)arg1;
 - (id)tabChangedDescriptionForTab:(id)arg1;
 - (void)handleFocusedTabChanged:(id)arg1;
 - (void)_removeWindowObservers;

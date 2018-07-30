@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *metricsDictionary;
 @property(readonly, copy, nonatomic) NSData *subscriptionKeyBagData;
 @property(readonly, copy, nonatomic) NSError *serverError;
 @property(readonly, copy, nonatomic) NSData *leaseInfoData;

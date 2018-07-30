@@ -18,6 +18,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType requestCompletionBlock; // @synthesize requestCompletionBlock=_requestCompletionBlock;
 @property(readonly, copy, nonatomic) NSCloudKitMirroringRequestOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
+- (BOOL)validateForUseWithStore:(id)arg1 error:(id *)arg2;
 - (id)description;
 - (unsigned long long)requestType;
 - (void)dealloc;

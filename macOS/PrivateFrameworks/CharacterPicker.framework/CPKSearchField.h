@@ -6,32 +6,33 @@
 
 #import "NSSearchField.h"
 
-@class CPKEmojiIMViewController, CPKSearchFieldPopoverTouchBarItem, NSDictionary;
+#import "CPKNavigationSender.h"
 
-__attribute__((visibility("hidden")))
-@interface CPKSearchField : NSSearchField
+@class NSString;
+
+@interface CPKSearchField : NSSearchField <CPKNavigationSender>
 {
-    CPKSearchField *_altSearchField;
-    BOOL _alreadyFocused;
-    NSDictionary *_emojiBatState;
-    CPKEmojiIMViewController *_emojiBarController;
-    CPKSearchFieldPopoverTouchBarItem *_popoverItem;
+    BOOL _hasActiveNavigationTarget;
+    BOOL _hasKeyFocus;
+    id <CPKNavigationDelegate> _navigationDelegate;
 }
 
 + (Class)cellClass;
-@property(retain) CPKSearchFieldPopoverTouchBarItem *popoverItem; // @synthesize popoverItem=_popoverItem;
-@property CPKEmojiIMViewController *emojiBarController; // @synthesize emojiBarController=_emojiBarController;
-@property(retain) NSDictionary *emojiBatState; // @synthesize emojiBatState=_emojiBatState;
-@property(retain) CPKSearchField *altSearchField; // @synthesize altSearchField=_altSearchField;
+@property BOOL hasKeyFocus; // @synthesize hasKeyFocus=_hasKeyFocus;
+@property(readonly, nonatomic) id <CPKNavigationDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
+@property(readonly, nonatomic) BOOL hasActiveNavigationTarget; // @synthesize hasActiveNavigationTarget=_hasActiveNavigationTarget;
+- (void)_changeHavingKeyFocus:(BOOL)arg1;
+- (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (void)setStringValue:(id)arg1;
-- (void)characterPickerPopoverDidClosed;
-- (void)notifySearchResults:(id)arg1;
-- (void)dealloc;
-- (void)dismissEmojiIMViewController:(id)arg1;
-- (void)searchButtonClickedOnEmojiIMViewController:(id)arg1;
-- (void)emojiIMViewController:(id)arg1 characterSelected:(id)arg2;
-- (id)initWithFrame:(struct CGRect)arg1 emojiBarState:(id)arg2;
+- (void)setHasActiveNavigationTarget:(BOOL)arg1;
+- (void)setNavigationDelegate:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

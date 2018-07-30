@@ -9,12 +9,19 @@
 @class NSString;
 
 @interface WFTemperature (NWKLocalizedAndFormatted)
++ (id)nwkTemperatureStringDashesThatAllowsDisplayOfTemperatureUnit:(_Bool)arg1;
++ (id)nwkLocalizedStaleTemperatureWithoutUnit;
++ (id)nwkLocalizedStaleTemperatureWithDegreeSymbol;
++ (id)nwkLocalizedStaleTemperatureWithUnit;
 + (id)nwkStaleFormattedTemperature;
 + (id)nwkStaleTemperature;
 + (_Bool)nwkIsCelsiusPreferred;
 + (void)setCelsiusPreferred:(_Bool)arg1;
 + (void)initialize;
-@property(readonly, nonatomic) NSString *nwkLocalizedTemperature;
-@property(readonly, nonatomic) NSString *nwkLocalizedFormattedTemperature;
+@property(readonly, nonatomic) NSString *nwkLocalizedTemperatureWithoutUnit;
+@property(readonly, nonatomic) NSString *nwkLocalizedTemperatureWithDegreeSymbol;
+@property(readonly, nonatomic) NSString *nwkLocalizedTemperatureWithUnit;
+- (id)nwkLocalizedMeasurement;
+@property(readonly, nonatomic) double nwkLocalizedTemperatureValue;
 @end
 

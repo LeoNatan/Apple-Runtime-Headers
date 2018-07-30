@@ -139,7 +139,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain, nonatomic) NSString *groupName;
 - (id)initWithResult:(id)arg1;
-- (id)displayName;
+@property(retain, nonatomic) NSString *displayName;
 - (id)initWithContentType:(id)arg1 displayName:(id)arg2;
 - (void)_setCategory:(id)arg1;
 

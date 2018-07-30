@@ -54,6 +54,7 @@
 @property(nonatomic) long long labelScaleFactor;
 @property(nonatomic) BOOL showsVenues;
 @property(nonatomic) BOOL showsBuildings;
+@property(nonatomic) BOOL showsPointLabels;
 @property(nonatomic) BOOL showsPointsOfInterest;
 @property(nonatomic) BOOL localizeLabels;
 - (void)_transferSettingsFrom:(id)arg1 to:(id)arg2;

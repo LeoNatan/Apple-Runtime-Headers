@@ -17,6 +17,9 @@
     TVContentIdentifier *_container;
 }
 
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
++ (id)readableTypeIdentifiersForItemProvider;
++ (id)writableTypeIdentifiersForItemProvider;
 + (id)_contentIdentifierWithFlattenedRepresentation:(id)arg1 rootContainer:(id)arg2;
 + (id)contentIdentifierWithContentIdentifier:(id)arg1;
 + (_Bool)supportsSecureCoding;
@@ -25,6 +28,7 @@
 @property(readonly, copy, nonatomic) TVContentIdentifier *container; // @synthesize container=_container;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)_flattenedRepresentation;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

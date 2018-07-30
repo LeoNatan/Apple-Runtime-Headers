@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_canonicalizeMessageURL:(id)arg1;
 + (long long)_dataTypeForSchemeIfSupportedByDataDetectors:(id)arg1;
++ (id)parseURL:(id)arg1;
 + (id)parseString:(id)arg1;
 
 // Remaining properties

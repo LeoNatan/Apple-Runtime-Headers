@@ -17,6 +17,7 @@
 
 @property(readonly, nonatomic) MFCertificateTrustInfo *encryptionCertificateTrustInfo; // @synthesize encryptionCertificateTrustInfo=_encryptionCertificateTrustInfo;
 @property(readonly, nonatomic) MFCertificateTrustInfo *signingCertificateTrustInfo; // @synthesize signingCertificateTrustInfo=_signingCertificateTrustInfo;
+- (void)reevaluateTrustWithNetworkAccessAllowed;
 @property(readonly, nonatomic) MFError *error;
 @property(readonly, nonatomic) _Bool hasSeparateSigningAndEncryptionCertificates;
 - (void)dealloc;

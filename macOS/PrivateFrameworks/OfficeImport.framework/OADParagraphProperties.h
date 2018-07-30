@@ -8,7 +8,6 @@
 
 @class NSArray, OADBulletColor, OADBulletFont, OADBulletProperties, OADBulletSize, OADTextSpacing;
 
-__attribute__((visibility("hidden")))
 @interface OADParagraphProperties : OADCharacterProperties
 {
     int mLevel;
@@ -44,6 +43,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -109,7 +109,6 @@ __attribute__((visibility("hidden")))
 - (void)setLineSpacing:(id)arg1;
 - (id)lineSpacing;
 - (BOOL)hasLineSpacing;
-- (void)dealloc;
 - (id)initWithDefaults;
 - (id)init;
 

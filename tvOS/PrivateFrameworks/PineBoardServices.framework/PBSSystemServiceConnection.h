@@ -41,7 +41,6 @@
 - (id)_createProxyAccessGroupForServiceName:(id)arg1;
 - (void)_updateServiceProxyHandle:(id *)arg1 forService:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)_setupXPCConnection;
-- (void)appTransitionDidFail;
 - (void)prepareForDefaultKioskAppTransitionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startDefaultKioskAppTransitionForType:(long long)arg1 animationDuration:(double)arg2 animationFence:(id)arg3 delay:(double)arg4;
 - (void)startDefaultKioskAppTransitionWithAnimationFence:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -13,7 +13,7 @@
 
 @class FBDisplayLayoutTransition, FBSceneClientProviderInvalidationAction, NSMapTable, NSMutableDictionary, NSString;
 
-@interface FBSystemApp : UIApplication <FBSceneClient, FBSSceneUpdater, BKSSystemApplicationDelegate, FBSceneClientProvider>
+@interface FBSystemApp : UIApplication <BKSSystemApplicationDelegate, FBSceneClient, FBSSceneUpdater, FBSceneClientProvider>
 {
     struct __CFBoolean *_darkboot;
     struct __CFBoolean *_wasDarkboot;
@@ -21,6 +21,7 @@
     FBSceneClientProviderInvalidationAction *_invalidationAction;
     NSMutableDictionary *_localSceneInfoByIdentifier;
     NSMapTable *_hostsByIdentifier;
+    id _didFinishLaunchingObserver;
 }
 
 + (_Bool)systemApplicationIsAliveForWatchdog:(id)arg1;
@@ -34,7 +35,10 @@
 + (_Bool)shouldCheckInWithBackboard;
 + (_Bool)rendersLocally;
 + (_Bool)registerAsSystemApp;
++ (id)sharedApplicationInfoProvider;
 + (id)sharedApplicationLibrary;
++ (void)_instantiateAppInfoProvider;
+- (void).cxx_destruct;
 - (void)scene:(id)arg1 sendMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;

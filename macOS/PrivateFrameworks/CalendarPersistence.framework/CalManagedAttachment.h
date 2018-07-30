@@ -37,6 +37,7 @@
 @property(readonly, retain) NSURL *urlOnDisk;
 @property(retain) NSURL *url;
 - (void)willRefresh:(BOOL)arg1;
+- (id)keysOnlyRelevantToNetworkDetails;
 - (void)setAttachmentIDOnServer:(id)arg1;
 @property(readonly, retain) NSString *attachmentIDOnServer;
 @property(retain) NSURL *urlOnServer;

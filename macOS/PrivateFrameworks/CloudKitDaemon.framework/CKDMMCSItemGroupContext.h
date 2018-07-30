@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (void)_cleanupMMCSRegisterItems;
 - (BOOL)_setupMMCSItemsWithError:(id *)arg1;
 - (BOOL)_setupGetMMCSItemsWithError:(id *)arg1;
+- (BOOL)_setupPutContentMetadataMMCSItemsWithError:(id *)arg1;
 - (BOOL)_setupPutMMCSItemsWithError:(id *)arg1;
 - (BOOL)_setupRegisterMMCSItemsWithError:(id *)arg1;
 - (id)findTrackedMMCSItemByItemID:(unsigned long long)arg1;

@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)_defaultSelectedComplicationSlot;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
 - (_Bool)_option:(id)arg1 migratesToValidOption:(id *)arg2 forCustomEditMode:(int)arg3;
 - (unsigned int)_indexOfOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
@@ -22,7 +22,7 @@
 - (id)_complicationSlotDescriptors;
 - (void)_handleLocaleNumberSystemChange;
 - (void)dealloc;
-- (id)init;
+- (void)_commonInit;
 - (id)_complicationMigrationPaths;
 - (int)_editModeForOldEncodingIndex:(int)arg1;
 

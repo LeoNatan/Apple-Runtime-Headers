@@ -14,7 +14,7 @@
 }
 
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

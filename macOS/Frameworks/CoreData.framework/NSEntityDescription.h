@@ -43,7 +43,8 @@
         unsigned int _hasUniqueProperties:1;
         unsigned int _validationUniqueProperties:1;
         unsigned int _isPersistentHistoryEntity:1;
-        unsigned int _reservedEntityDescription:19;
+        unsigned int _hasAttributesWithFileBackedFutures:1;
+        unsigned int _reservedEntityDescription:17;
     } _entityDescriptionFlags;
     void *_extraIvars;
     NSMutableDictionary *_userInfo;
@@ -99,15 +100,14 @@
 - (id)_indexElementFromJSONArray:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
-- (id)_propertyWithRenamingIdentifier:(id)arg1;
-- (id)knownKeysMappingStrategy;
 - (void)_addProperty:(id)arg1;
 - (void)_addSubentity:(id)arg1;
+- (id)keypathsToPrefetchForDeletePropagation;
 - (id)elementID;
 - (void)setElementID:(id)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
+- (BOOL)_isSchemaEqual:(id)arg1;
 - (BOOL)_hasUniquedAttributeWithName:(id)arg1;
 - (id)_extensionsOfParentConstraint:(id)arg1;
 - (BOOL)_constraintIsExtension:(id)arg1;
@@ -129,6 +129,7 @@
 - (BOOL)_hasPropertiesStoredInTruthFile;
 - (BOOL)_hasPropertiesIndexedBySpotlight;
 - (BOOL)_hasAttributesWithExternalDataReferences;
+- (BOOL)_hasAttributesWithFileBackedFutures;
 - (void)_restoreValidation;
 - (BOOL)_skipValidation;
 - (void)_stripForMigration;
@@ -184,6 +185,10 @@
 - (id)_keypathsToPrefetchForDeletePropagation;
 - (id)_keypathsToPrefetchForDeletePropagationPrefixedWith:(id)arg1 toDepth:(long long)arg2 processedEntities:(id)arg3;
 - (void)_nukeMOClassName__;
+- (id)knownKeysMappingStrategy;
+- (id)_propertyWithRenamingIdentifier:(id)arg1;
+- (id)_uniquenessConstraintsAsFetchIndexes;
+- (id)_constraintAsIndex:(id)arg1;
 
 @end
 

@@ -9,14 +9,14 @@
 #import "UIGestureRecognizerDelegate.h"
 #import "UIScrollViewDelegate.h"
 
-@class MediaControlsCollectionViewCountData, NSArray, NSIndexSet, NSMutableDictionary, NSMutableSet, NSString, UIScrollView, UIViewController<MediaControlsCollectionItemViewController>, _MediaControlsTapHoldGestureRecognizer;
+@class MediaControlsCollectionViewCountData, NSArray, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIScrollView, UIViewController<MediaControlsCollectionItemViewController>, _MediaControlsTapHoldGestureRecognizer;
 
 @interface MediaControlsCollectionViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 {
     NSMutableDictionary *_activeViewControllers;
     UIViewController<MediaControlsCollectionItemViewController> *_inactiveSelectedViewController;
     NSMutableSet *_inactiveViewControllers;
-    CDUnknownBlockType _pendingUpdates;
+    NSMutableArray *_pendingUpdates;
     struct UIEdgeInsets _controlCenterEdgeInsets;
     struct CGSize _lastKnownEnvironmentSize;
     long long _animatedSelectionCount;
@@ -27,6 +27,7 @@
     _Bool _isPerformingBatchUpdates;
     _Bool _needsReloadData;
     MediaControlsCollectionViewCountData *_countData;
+    long long _highlightedItemIndex;
     _Bool _appeared;
     id <MediaControlsCollectionViewDataSource> _dataSource;
     id <MediaControlsCollectionViewDelegate> _delegate;
@@ -66,6 +67,7 @@
 - (void)_beginAppearanceTransitionForChildViewControllers:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_endAppearanceTransitionForChildViewControllerIfNeeded:(id)arg1;
 - (void)_beginAppearanceTransitionIfNeeded:(_Bool)arg1 forChildViewController:(id)arg2 animated:(_Bool)arg3;
+- (void)_setHighlighted:(_Bool)arg1 forViewController:(id)arg2;
 - (void)_setHighlighted:(_Bool)arg1 forViewControllerAtIndex:(long long)arg2;
 - (void)_removeViewController:(id)arg1;
 - (void)_removeInactiveViewControllersFromHierarchy;
@@ -99,6 +101,7 @@
 - (double)_regularItemHeight;
 - (long long)_closestItemAtPoint:(struct CGPoint)arg1;
 - (void)_dequeueAndPerformBatchUpdatesIfNeeded;
+- (_Bool)_canPerformBatchUpdates;
 - (void)scrollToSelectedItemAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) NSIndexSet *visibleIndexes;
 - (long long)itemAtPoint:(struct CGPoint)arg1;

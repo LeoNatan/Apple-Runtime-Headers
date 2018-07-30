@@ -9,14 +9,14 @@
 #import "MPQueueBehaviorManaging.h"
 #import "NSSecureCoding.h"
 
-@class MPModelPlayEvent, MPMutableBidirectionalDictionary, NSData, NSDictionary, NSMutableDictionary, NSString;
+@class MPModelPlayEvent, MSVMutableBidirectionalDictionary, NSData, NSDictionary, NSMutableDictionary, NSString;
 
 @interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, NSSecureCoding>
 {
     long long _repeatType;
     long long _shuffleType;
     NSMutableDictionary *_nextStartTimes;
-    MPMutableBidirectionalDictionary *_exportableItemIDs;
+    MSVMutableBidirectionalDictionary *_exportableItemIDs;
     _Bool _requiresQueueChangeVerification;
     id <MPQueueFeederDelegate> _delegate;
     unsigned long long _state;

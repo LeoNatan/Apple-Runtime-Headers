@@ -6,19 +6,30 @@
 
 #import "NSObject.h"
 
-@class NSURL;
+@class NSDictionary, NSString, NSURL;
 
 @interface IMSPIAttachment : NSObject
 {
+    NSString *_guid;
     NSURL *_fileUrl;
     long long _fileTransferState;
+    NSString *_uti;
+    _Bool _isSticker;
+    _Bool _isOutgoing;
+    NSDictionary *_attributionInfo;
 }
 
+@property(retain) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
+@property _Bool isOutgoing; // @synthesize isOutgoing=_isOutgoing;
+@property _Bool isSticker; // @synthesize isSticker=_isSticker;
+@property(retain) NSString *uti; // @synthesize uti=_uti;
+@property(retain) NSString *guid; // @synthesize guid=_guid;
 @property long long fileTransferState; // @synthesize fileTransferState=_fileTransferState;
 @property(retain) NSURL *fileUrl; // @synthesize fileUrl=_fileUrl;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithFileUrl:(id)arg1 transferState:(long long)arg2;
+- (id)bundleID;
+- (id)initWithGuid:(id)arg1 fileUrl:(id)arg2 transferState:(long long)arg3 uti:(id)arg4 isSticker:(_Bool)arg5 isOutgoing:(_Bool)arg6 attributionInfo:(id)arg7;
 
 @end
 

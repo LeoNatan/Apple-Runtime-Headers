@@ -33,13 +33,9 @@
         int _field15;
         char _field16[2048];
         int _field17;
-        struct _cups_md5_state_s {
-            unsigned int _field1[2];
-            unsigned int _field2[4];
-            unsigned char _field3[64];
-        } _field18;
+        unsigned char _field18[88];
         char _field19[256];
-        int _field20;
+        unsigned int _field20;
         struct SSLContext *_field21;
         int _field22;
         struct fd_set *_field23;

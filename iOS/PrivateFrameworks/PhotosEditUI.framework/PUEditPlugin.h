@@ -8,6 +8,7 @@
 
 @class NSExtension, NSString, UIImage, _PUEditPluginApplicationExtensionActivity;
 
+__attribute__((visibility("hidden")))
 @interface PUEditPlugin : NSObject
 {
     _PUEditPluginApplicationExtensionActivity *__applicationExtensionActivity;

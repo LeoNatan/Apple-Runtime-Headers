@@ -42,7 +42,6 @@
 - (void)addChangeWithDeletedRecordID:(id)arg1;
 - (void)addChangeWithRecord:(id)arg1;
 - (void)addChangeWithObjectChange:(id)arg1;
-- (id)transactionStoreRowIDsForObjectID:(id)arg1;
 @property(readonly, nonatomic) NSArray *processedTransactionStoreRowIDs;
 @property(readonly, nonatomic) NSArray *allTransactionStoreRowIDs;
 @property(readonly, nonatomic) CKRecordID *privateZoneRootRecordID;

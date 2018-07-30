@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface VKBuildingTile : VKSkewingVectorTile
 {
-    vector_dc840c5c _facadeTextures;
+    vector_73877b71 _facadeTextures;
     NSMutableArray *_polygonGroups[3];
     VK3DObjectSubTile *_objectSubTile;
     struct unique_ptr<ggl::Texture2D, std::__1::default_delete<ggl::Texture2D>> _shadowTexture;
@@ -50,12 +50,12 @@ __attribute__((visibility("hidden")))
 - (void)_fillShadowAreasInContext:(struct CGContext *)arg1 data:(char *)arg2;
 - (Box_3fb92e00)_shadowBounds;
 - (id)polygonGroupsForTextureAtIndex:(unsigned long long)arg1;
-- (const vector_dc840c5c *)facadeTextures;
+- (const vector_73877b71 *)facadeTextures;
 - (unsigned long long)numberOfFacadeTextures;
 - (void)buildMeshesWithTriangulator:(id)arg1 device:(Device_9226c869 *)arg2 prepareExtrusion:(BOOL)arg3;
-- (void)confirmBuildingSuppression:(CDStruct_42db872d *)arg1;
+- (void)confirmBuildingSuppression:(CDStruct_aced5902 *)arg1;
 - (void)dealloc;
-- (id)initWithKey:(const struct VKTileKey *)arg1 modelTile:(id)arg2 prepareExtrusion:(BOOL)arg3 styleManager:(shared_ptr_a3c46825)arg4 sharedResources:(id)arg5 contentScale:(double)arg6 device:(Device_9226c869 *)arg7;
+- (id)initWithKey:(const struct VKTileKey *)arg1 modelTile:(id)arg2 userInfo:(id)arg3 prepareExtrusion:(BOOL)arg4 styleManager:(shared_ptr_a3c46825)arg5 sharedResources:(id)arg6 contentScale:(double)arg7 device:(Device_9226c869 *)arg8;
 @property(readonly, nonatomic) struct FogInfo *fogInfo;
 @property(readonly, nonatomic) shared_ptr_696716c4 shadowViewConstantData;
 @property(readonly, nonatomic) struct Texture2D *shadowTexture;

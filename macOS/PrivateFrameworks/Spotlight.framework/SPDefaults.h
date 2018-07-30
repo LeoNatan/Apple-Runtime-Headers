@@ -20,7 +20,6 @@
     BOOL _webSearchEnabled;
     BOOL _spotlightSuggestionsDisabled;
     BOOL _demoEnabled;
-    BOOL _cornerMaskEnabled;
     BOOL _clearOnClose;
     BOOL _didShowFTE;
     BOOL _customAppPreview;
@@ -49,7 +48,6 @@
 @property(readonly) long long parsecMaxResults; // @synthesize parsecMaxResults=_parsecMaxResults;
 @property BOOL didShowFTE; // @synthesize didShowFTE=_didShowFTE;
 @property BOOL clearOnClose; // @synthesize clearOnClose=_clearOnClose;
-@property(getter=isCornerMaskEnabled) BOOL cornerMaskEnabled; // @synthesize cornerMaskEnabled=_cornerMaskEnabled;
 @property(getter=isDemoEnabled) BOOL demoEnabled; // @synthesize demoEnabled=_demoEnabled;
 @property(getter=areSpotlightSuggestionsDisabled) BOOL spotlightSuggestionsDisabled; // @synthesize spotlightSuggestionsDisabled=_spotlightSuggestionsDisabled;
 @property(getter=isWebSearchEnabled) BOOL webSearchEnabled; // @synthesize webSearchEnabled=_webSearchEnabled;

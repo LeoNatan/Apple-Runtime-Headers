@@ -9,8 +9,10 @@
 @interface BKMatchPearlOperation : BKMatchOperation
 {
     BOOL _longTimeout;
+    BOOL _shouldAutoRetry;
 }
 
+@property(nonatomic) BOOL shouldAutoRetry; // @synthesize shouldAutoRetry=_shouldAutoRetry;
 @property(nonatomic) BOOL longTimeout; // @synthesize longTimeout=_longTimeout;
 - (BOOL)startNewMatchAttemptWithError:(id *)arg1;
 

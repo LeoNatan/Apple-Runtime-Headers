@@ -17,17 +17,21 @@
     NSObject<OS_dispatch_queue> *_scheduledQueue;
     NSObject<OS_dispatch_queue> *_hidQueue;
     CDUnknownBlockType _clientCallbackBlockDisplayState;
+    CDUnknownBlockType _clientCallbackBlockHarmonyState;
     CDUnknownBlockType _displayStateNotificationHandler;
     int _displayStateNotificationToken;
     CDUnknownBlockType _coreBrightnessClientCallback;
     BrightnessSystemClientInternal *_coreBrightnessClient;
     long long _displayState;
+    long long _harmonyState;
 }
 
 - (id)copyPropertyForKey:(id)arg1;
 - (_Bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)unregisterDisplayStateUpdateCallback;
 - (_Bool)registerDisplayStateUpdateCallbackWithBlock:(CDUnknownBlockType)arg1;
+- (void)unregisterHarmonyStateUpdateCallback;
+- (_Bool)registerHarmonyStateUpdateCallbackWithBlock:(CDUnknownBlockType)arg1;
 - (void)unscheduleWithDispatchQueue:(id)arg1;
 - (void)scheduleWithDispatchQueue:(id)arg1;
 - (void)flushPropertyCache;
@@ -43,6 +47,7 @@
 - (_Bool)dimToStep:(long long)arg1 withCoefficient:(float)arg2;
 - (_Bool)dimToStep:(long long)arg1 withPeriod:(float)arg2;
 - (_Bool)dimToStep:(long long)arg1 withPeriod:(float)arg2 andCoefficient:(float)arg3;
+@property(readonly) long long harmonyState; // @synthesize harmonyState=_harmonyState;
 @property(readonly) long long displayState; // @synthesize displayState=_displayState;
 - (_Bool)turnOffWithPeriod:(float)arg1;
 - (_Bool)turnOnWithPeriod:(float)arg1;

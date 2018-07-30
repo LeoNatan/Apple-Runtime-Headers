@@ -32,6 +32,7 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (_Bool)_needsForegroundContainerView;
+- (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
@@ -43,6 +44,7 @@
 - (float)_bottomComplicationAlphaForEditMode:(int)arg1;
 - (float)_timeAlphaForEditMode:(int)arg1;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
+- (struct CGRect)_timeViewFrame;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
@@ -58,7 +60,7 @@
 - (void)_setupLogoViews;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 @end
 

@@ -6,12 +6,18 @@
 
 #import <CoreUI/CUIThemeRendition.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface _CUIThemeColorRendition : CUIThemeRendition
 {
     const struct _csicolor *_csiColor;
+    NSString *_colorName;
 }
 
+- (void)dealloc;
+- (_Bool)substituteWithSystemColor;
+- (id)systemColorName;
 - (const struct _csicolor *)csiColor;
 - (id)_initWithCSIHeader:(const struct _csiheader *)arg1;
 

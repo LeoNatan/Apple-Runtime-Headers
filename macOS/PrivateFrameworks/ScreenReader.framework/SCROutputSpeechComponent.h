@@ -73,7 +73,8 @@ __attribute__((visibility("hidden")))
 - (id)lastSpokenString;
 - (void)dealloc;
 - (id)init;
-- (BOOL)_makeSubstitutionsInAction:(id)arg1 stringsFileName:(id)arg2;
+- (BOOL)_makeSubstitutionsInAction:(id)arg1 stringsFileName:(id)arg2 verbosityLevel:(long long)arg3 ranges:(id)arg4;
+- (BOOL)_makeSubstitutionsInAction:(id)arg1 stringsFileName:(id)arg2 verbosityLevel:(long long)arg3;
 - (int)typeForCharacter:(int)arg1;
 - (int)typeForComposedCharacter:(id)arg1;
 - (id)_createSubstitutionStringForPunctuationString:(id)arg1 punctuationTable:(id)arg2 stringsFileName:(id)arg3;

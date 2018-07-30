@@ -10,6 +10,7 @@
 
 @class GEOLatLng, GEOStructuredAddress, NSData, NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDVendorSpecificPlaceRefinementParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

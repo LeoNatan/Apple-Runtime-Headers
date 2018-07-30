@@ -11,9 +11,6 @@
 @protocol PUICDictationViewControllerDelegatePrivate <PUICDictationViewControllerDelegate>
 
 @optional
-- (void)dictationViewControllerRequestsBacklightAssertionRelease:(PUICDictationViewController *)arg1;
-- (void)dictationViewControllerRequestsBacklightAssertionRenewal:(PUICDictationViewController *)arg1;
-- (void)dictationViewControllerRequestsBacklightAssertion:(PUICDictationViewController *)arg1;
 - (void)dictationViewControllerDidSelectAudio:(PUICDictationViewController *)arg1;
 - (UIImage *)imageForAudioRecordingOfWidth:(float)arg1 color:(UIColor *)arg2 powerLevels:(NSArray *)arg3;
 - (void)dictationViewController:(PUICDictationViewController *)arg1 finishedRecordingAudio:(NSFileHandle *)arg2;

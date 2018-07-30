@@ -10,7 +10,7 @@
 
 @interface NTSectionPresencePersonalizationOperation : FCOperation
 {
-    id <FRReadonlyPersonalizationAggregateStore> _aggregateStore;
+    id <FCReadonlyPersonalizationAggregateStore> _aggregateStore;
     FCPersonalizationTreatment *_personalizationTreatment;
     NSArray *_absoluteRequests;
     NSArray *_relativeRequests;
@@ -23,7 +23,7 @@
 @property(copy, nonatomic) NSArray *relativeRequests; // @synthesize relativeRequests=_relativeRequests;
 @property(copy, nonatomic) NSArray *absoluteRequests; // @synthesize absoluteRequests=_absoluteRequests;
 @property(copy, nonatomic) FCPersonalizationTreatment *personalizationTreatment; // @synthesize personalizationTreatment=_personalizationTreatment;
-@property(retain, nonatomic) id <FRReadonlyPersonalizationAggregateStore> aggregateStore; // @synthesize aggregateStore=_aggregateStore;
+@property(retain, nonatomic) id <FCReadonlyPersonalizationAggregateStore> aggregateStore; // @synthesize aggregateStore=_aggregateStore;
 - (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

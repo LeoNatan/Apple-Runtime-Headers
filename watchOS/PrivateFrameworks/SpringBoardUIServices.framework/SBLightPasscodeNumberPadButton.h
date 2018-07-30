@@ -8,16 +8,22 @@
 
 #import "SBUIPasscodeNumberPadButton.h"
 
-@class NSString;
+@class NSString, UIColor;
 
 @interface SBLightPasscodeNumberPadButton : TPNumberPadLightStyleButton <SBUIPasscodeNumberPadButton>
 {
+    UIColor *_reduceTransparencyButtonColor;
 }
 
++ (float)highlightedCircleViewAlpha;
++ (float)unhighlightedCircleViewAlpha;
++ (_Bool)_shouldUseAlternativeCirlceViewAlphas;
 + (_Bool)usesTelephonyGlyphsWhereAvailable;
 + (float)_numberPadButtonOuterCircleDiameter;
 + (struct UIEdgeInsets)paddingOutsideRing;
 + (struct CGSize)defaultSize;
+@property(retain, nonatomic) UIColor *reduceTransparencyButtonColor; // @synthesize reduceTransparencyButtonColor=_reduceTransparencyButtonColor;
+- (void).cxx_destruct;
 - (id)stringCharacter;
 - (int)characterType;
 - (id)initForCharacter:(unsigned int)arg1;

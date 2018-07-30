@@ -15,6 +15,8 @@
 
 + (id)sharedAWDLogger;
 @property(copy) NSData *activeAID; // @synthesize activeAID=_activeAID;
+- (void)postAWDMobileSoftwareUpdateException:(unsigned int)arg1;
+- (void)postAWDFelicaStateChangeEvent:(id)arg1;
 - (void)postAWDHCEEndEvent;
 - (void)postAWDHCEStateChangeEvent:(unsigned int)arg1;
 - (void)postAWDHCEStartEvent:(id)arg1;
@@ -47,7 +49,7 @@
 - (void)postAWDHCIStartOfTransactionEventWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
 - (void)postAWDCardIngestionReaderStateChangeWithType:(unsigned int)arg1 errorCode:(unsigned int)arg2;
 - (void)postAWDCardIngestionSessionStateChange:(id)arg1;
-- (void)postAWDExpressTransactionEventFor:(unsigned int)arg1 started:(_Bool)arg2;
+- (void)postAWDExpressTransactionEvent:(id)arg1;
 - (void)postAWDCRSActivationTimerExpiredWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
 - (void)postAWDSESelectEventWithAID:(id)arg1;
 - (void)postAWDCRSDeAuthWithStatus:(unsigned int)arg1;

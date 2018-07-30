@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *material; // @dynamic material;
 @property(getter=isOrderedIn) BOOL orderedIn; // @dynamic orderedIn;
 @property double saturation; // @dynamic saturation;
+@property(retain) struct CGColor *tintColor; // @dynamic tintColor;
 @property(readonly, retain) NSCGSWindow *window; // @dynamic window;
 @end
 

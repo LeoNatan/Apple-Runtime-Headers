@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OISFUZipDeflateOutputStream : NSObject <SFUOutputStream>
 {
     id <SFUOutputStream> mOutputStream;

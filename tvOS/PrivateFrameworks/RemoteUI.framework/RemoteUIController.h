@@ -59,7 +59,7 @@
 - (id)viewControllerForAlertPresentation;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (id)parser:(id)arg1 createPageWithName:(id)arg2 attributes:(id)arg3;
-- (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)sessionConfigurationForLoader:(id)arg1;
 - (void)refreshTopModelWithModel:(id)arg1;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 topActionSignal:(id)arg3;

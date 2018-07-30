@@ -6,16 +6,17 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSMutableDictionary;
 
-@interface GKEntity : NSObject <NSCopying, NSCoding>
+@interface GKEntity : NSObject <NSCopying, NSSecureCoding>
 {
     NSMutableDictionary *_components;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)entity;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -6,9 +6,12 @@
 
 #import "NSObject.h"
 
+@class NSData;
+
 @protocol MapsSuggestionsSourceProxy <NSObject>
-- (void)forceEarlyUpdateWithCompletionBlock:(void (^)(void))arg1;
-- (void)stopMonitoringWithCompletionBlock:(void (^)(void))arg1;
-- (void)startMonitoringWithCompletionBlock:(void (^)(void))arg1;
+- (void)removeEntryData:(NSData *)arg1 behavior:(int)arg2 handler:(void (^)(void))arg3;
+- (void)forceEarlyUpdateForType:(int)arg1 handler:(void (^)(void))arg2;
+- (void)stopMonitoringWithHandler:(void (^)(void))arg1;
+- (void)startMonitoringWithHandler:(void (^)(void))arg1;
 @end
 

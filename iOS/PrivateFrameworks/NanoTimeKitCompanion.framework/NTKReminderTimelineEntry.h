@@ -20,14 +20,7 @@
 
 + (id)loadingEntryForFamily:(long long)arg1;
 + (id)lockedEntryForFamily:(long long)arg1;
-+ (id)_colorReminderImageProvider;
 + (id)_analogReminderImageProvider;
-+ (id)_modularXLReminderImageProvider;
-+ (id)_modularSmallReminderImageProvider;
-+ (id)_reminderImageXLarge;
-+ (id)_reminderImageModular;
-+ (id)_reminderImageVictory;
-+ (id)_reminderImageColorAnalog;
 + (id)_reminderImageAnalog;
 @property(nonatomic) unsigned long long overlappingReminderCount; // @synthesize overlappingReminderCount=_overlappingReminderCount;
 @property(nonatomic) _Bool displayAsConflicting; // @synthesize displayAsConflicting=_displayAsConflicting;
@@ -36,12 +29,8 @@
 @property(retain, nonatomic) NSString *primaryReminderTitle; // @synthesize primaryReminderTitle=_primaryReminderTitle;
 @property(retain, nonatomic) NSDate *dueDate; // @synthesize dueDate=_dueDate;
 - (void).cxx_destruct;
-- (id)_createCircularTemplateMedium:(_Bool)arg1;
 - (id)_createLargeUtilityTemplate;
-- (id)_createSmallUtilityTemplate;
 - (id)_createLargeModularTemplate;
-- (id)_createExtraLargeTemplate;
-- (id)_createSmallModularTemplate;
 - (id)templateForComplicationFamily:(long long)arg1;
 - (id)description;
 

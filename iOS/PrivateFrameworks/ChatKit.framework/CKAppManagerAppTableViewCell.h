@@ -22,7 +22,6 @@
 - (void)appToggleTapped:(id)arg1;
 - (void)setToggleVisible:(_Bool)arg1 editable:(_Bool)arg2 isOn:(_Bool)arg3;
 - (void)prepareForReuse;
-- (void)layoutSubviews;
 - (void)layoutMarginsDidChange;
 
 @end

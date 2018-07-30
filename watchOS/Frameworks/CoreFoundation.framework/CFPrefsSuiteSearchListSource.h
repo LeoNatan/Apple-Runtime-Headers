@@ -6,12 +6,15 @@
 
 #import <CoreFoundation/CFPrefsSearchListSource.h>
 
+__attribute__((visibility("hidden")))
 @interface CFPrefsSuiteSearchListSource : CFPrefsSearchListSource
 {
 }
 
+- (void)handleRemoteChangeNotificationForDomainIdentifier:(struct __CFString *)arg1;
 - (void)_notifyObserversOfChangeFromValuesForKeys:(id)arg1 toValuesForKeys:(id)arg2;
-- (void)_deferredNotify:(id)arg1 ofChangesFromDictionary:(struct __CFDictionary *)arg2 toDictionary:(struct __CFDictionary *)arg3;
+- (void)deferredNotifyCausedByLocalWriteOfChangesToKey:(struct __CFString *)arg1 fromValue:(void *)arg2 toValue:(void *)arg3;
+- (void)deferredNotifyCausedByLoadingOfChangesFromDictionary:(struct __CFDictionary *)arg1 toDictionary:(struct __CFDictionary *)arg2;
 
 @end
 

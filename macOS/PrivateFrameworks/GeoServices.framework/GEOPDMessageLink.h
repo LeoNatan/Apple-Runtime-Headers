@@ -10,6 +10,7 @@
 
 @class GEOTimezone, NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDMessageLink : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

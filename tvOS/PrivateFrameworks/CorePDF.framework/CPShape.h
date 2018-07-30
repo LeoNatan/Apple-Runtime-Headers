@@ -8,6 +8,7 @@
 
 #import "CPDisposable.h"
 
+__attribute__((visibility("hidden")))
 @interface CPShape : CPGraphicObject <CPDisposable>
 {
     long long mcid;

@@ -10,7 +10,6 @@
 
 @class GEOPDCaptionedPhoto, GEOPDPhoto, NSArray, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface _GEOPlaceDataPhoto : NSObject <GEOMapItemPhoto>
 {
     GEOPDPhoto *_photo;

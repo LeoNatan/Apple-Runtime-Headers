@@ -10,6 +10,7 @@
 
 @class CPCharSequence, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface CPTextLine : CPTextObject <CPDisposable>
 {
     CPCharSequence *charSequence;

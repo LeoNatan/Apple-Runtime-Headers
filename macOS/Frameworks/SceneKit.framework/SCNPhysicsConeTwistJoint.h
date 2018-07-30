@@ -25,6 +25,7 @@
 
 + (id)jointWithBody:(id)arg1 frame:(struct CATransform3D)arg2;
 + (id)jointWithBodyA:(id)arg1 frameA:(struct CATransform3D)arg2 bodyB:(id)arg3 frameB:(struct CATransform3D)arg4;
++ (BOOL)supportsSecureCoding;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_willRemoveFromPhysicsWorld:(id)arg1;

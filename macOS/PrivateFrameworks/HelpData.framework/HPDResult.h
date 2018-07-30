@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *isDuplicateApp;
 @property(readonly, copy) NSString *appVersion;
+@property(readonly, copy) NSString *appID;
 @property(readonly, copy) NSString *bookID;
 @property(readonly, copy) NSString *summary;
 @property(readonly, copy) NSString *url;

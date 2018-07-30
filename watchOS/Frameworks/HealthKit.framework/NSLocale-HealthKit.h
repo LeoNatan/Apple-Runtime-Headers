@@ -8,5 +8,7 @@
 
 @interface NSLocale (HealthKit)
 + (_Bool)hk_isUSLocale;
++ (id)hk_testableAutoupdatingCurrentLocale;
++ (void)hk_setTestLocale:(id)arg1;
 @end
 

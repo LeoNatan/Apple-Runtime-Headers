@@ -8,7 +8,7 @@
 
 #import "RTPersistenceMirroringDelegate.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, RTDefaultsManager, RTInvocationDispatcher, RTKeepAliveTransaction, RTMemoryTransaction, RTPersistenceManager, RTPersistenceMirroringPolicy, RTPowerAssertion;
+@class NSObject<OS_dispatch_queue>, NSString, RTDefaultsManager, RTInvocationDispatcher, RTKeepAliveTransaction, RTMemoryTransaction, RTPersistenceManager, RTPersistenceMirroringPolicy, RTPowerAssertion, RTXPCActivityManager;
 
 @interface RTPersistenceMirroringManager : NSObject <RTPersistenceMirroringDelegate>
 {
@@ -20,6 +20,7 @@
     RTKeepAliveTransaction *_keepAliveTransaction;
     RTInvocationDispatcher *_dispatcher;
     RTPersistenceMirroringPolicy *_mirroringPolicy;
+    RTXPCActivityManager *_xpcActivityManager;
 }
 
 - (void).cxx_destruct;
@@ -29,7 +30,8 @@
 - (void)performMirroringRequestWithType:(long long)arg1 affectedStore:(id)arg2 qualityOfService:(long long)arg3 managedObjectContext:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)performMirroringRequestWithType:(long long)arg1 affectedStore:(id)arg2 qualityOfService:(long long)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)dealloc;
-- (id)initWithPersistenceManager:(id)arg1 defaultsManager:(id)arg2;
+- (void)shutdown;
+- (id)initWithPersistenceManager:(id)arg1 defaultsManager:(id)arg2 xpcActivityManager:(id)arg3;
 - (id)init;
 
 // Remaining properties

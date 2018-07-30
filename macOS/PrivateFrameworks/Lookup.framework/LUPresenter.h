@@ -48,7 +48,6 @@
 - (id)animationControllerForTerm:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3 options:(id)arg4;
 - (void)postPopoverWillCloseNotification;
 - (void)commonLUPresenterTeardown;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

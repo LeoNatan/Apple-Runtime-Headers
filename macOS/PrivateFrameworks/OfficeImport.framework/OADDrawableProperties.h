@@ -21,6 +21,7 @@
     unsigned int mWrdInline:1;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -47,7 +48,7 @@
 - (BOOL)hasOrientedBounds;
 - (void)setOrientedBounds:(id)arg1;
 - (id)orientedBounds;
-- (void)dealloc;
+- (id)orientedBoundsForCharts;
 - (id)initWithDefaults;
 
 @end

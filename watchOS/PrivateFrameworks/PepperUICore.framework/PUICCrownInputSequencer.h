@@ -15,9 +15,15 @@
     _Bool _crownInverted;
     _Bool _uiIsInverted;
     double _crownInputSuppressionTimeInterval;
+    _Bool _currentAndTargetOffsetDiverged;
+    float _targetOffset;
     CADisplayLink *_displayLink;
     double _lastDisplayLinkFiredTimeInterval;
     double _enqueuedRotationalDelta;
+    float _tension;
+    float _friction;
+    float _velocity;
+    double _accumulatedSpringDeltaTime;
     CDStruct_32e70f54 *_runningAverageRotationalDelta;
     CDStruct_32e70f54 *_runningAverageRotationalVelocity;
     double _appliedInertialDelta;
@@ -43,6 +49,7 @@
     _Bool _continuous;
     _Bool _rubberBandingEnabled;
     _Bool _wantsCrownIndicatorStyledForTouchInput;
+    _Bool _useExternalTimeSource;
     int _crownIndicatorMode;
     id <PUICCrownInputSequencerDelegate> _delegate;
     CDUnknownBlockType _curve;
@@ -61,6 +68,7 @@
 @property(nonatomic) __weak id <PUICCrownInputSequencerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) double offsetPerRevolution; // @synthesize offsetPerRevolution=_offsetPerRevolution;
 @property(nonatomic, getter=_screenPointsPerRevolution, setter=_setScreenPointsPerRevolution:) double screenPointsPerRevolution; // @synthesize screenPointsPerRevolution=_screenPointsPerRevolution;
+@property(nonatomic) _Bool useExternalTimeSource; // @synthesize useExternalTimeSource=_useExternalTimeSource;
 @property(copy, nonatomic) CDUnknownBlockType curve; // @synthesize curve=_curve;
 @property(nonatomic) double decelerationEpsilon; // @synthesize decelerationEpsilon=_decelerationEpsilon;
 @property(nonatomic) double decelerationRate; // @synthesize decelerationRate=_decelerationRate;
@@ -99,6 +107,8 @@
 - (double)_calculateInertialVelocityForAverageInputVelocity:(double)arg1 withCurrentOffset:(double)arg2;
 - (void)stopVelocityTrackingAndDecelerationImmediately;
 - (void)_stopDeceleratingImmediately;
+- (void)_updateWithTimestamp:(double)arg1;
+- (void)updateWithTimestamp:(double)arg1;
 - (void)_displayLinkFired:(id)arg1;
 - (void)_updateDisplayLink;
 - (_Bool)_needsDisplayLink;
@@ -127,6 +137,7 @@
 - (void)setOffset:(double)arg1 suppressIndicatorVisibilityChanges:(_Bool)arg2;
 - (void)_hideCrownIndicator;
 - (void)_setOffset:(double)arg1 notifyDelegate:(_Bool)arg2 suppressIndicatorVisibilityChanges:(_Bool)arg3;
+- (void)_setOffset:(double)arg1 notifyDelegate:(_Bool)arg2 suppressIndicatorVisibilityChanges:(_Bool)arg3 updateTargetOffset:(_Bool)arg4;
 - (void)_updateIndicatorIfNecessary;
 - (void)dealloc;
 - (id)init;

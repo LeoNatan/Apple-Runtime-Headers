@@ -6,35 +6,30 @@
 
 #import "UIView.h"
 
-#import "SBFScreenFadeReplicatable.h"
+@class NSString, SBUILegibilityLabel, UIFont, _UILegibilitySettings;
 
-@class NSHashTable, NSString, SBUILegibilityLabel, UIFont, UIView<SBFScreenFadeReplicatable>, _UILegibilitySettings;
-
-@interface SBFLockScreenDateSubtitleView : UIView <SBFScreenFadeReplicatable>
+@interface SBFLockScreenDateSubtitleView : UIView
 {
-    NSHashTable *_replicatedViews;
     SBUILegibilityLabel *_label;
-    UIView<SBFScreenFadeReplicatable> *_accessoryView;
-    UIView<SBFScreenFadeReplicatable> *_backgroundView;
+    UIView *_accessoryView;
+    UIView *_backgroundView;
     _UILegibilitySettings *_legibilitySettings;
     float _strength;
     float _customInterItemSpacing;
 }
 
 + (float)scaledFontSize:(float)arg1 withMaximumFontSizeCategory:(id)arg2;
++ (CDStruct_818bb265)labelFontMetrics;
 + (id)labelFont;
 @property(nonatomic) float customInterItemSpacing; // @synthesize customInterItemSpacing=_customInterItemSpacing;
 @property(nonatomic) float strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-@property(retain, nonatomic) UIView<SBFScreenFadeReplicatable> *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(retain, nonatomic) UIView<SBFScreenFadeReplicatable> *accessoryView; // @synthesize accessoryView=_accessoryView;
+@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) float baselineOffsetFromBottom;
 @property(readonly, nonatomic) float baselineOffsetFromOrigin;
 - (float)interItemSpacing;
-- (void)_enumerateReplicateViews:(CDUnknownBlockType)arg1;
-- (id)_createReplicateView;
-- (id)replicate;
 - (struct CGRect)backgroundViewFrame;
 - (struct CGRect)subtitleLabelFrame;
 - (struct CGRect)accessoryViewFrame;
@@ -46,12 +41,6 @@
 - (void)dealloc;
 - (id)initWithString:(id)arg1 accessoryView:(id)arg2;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

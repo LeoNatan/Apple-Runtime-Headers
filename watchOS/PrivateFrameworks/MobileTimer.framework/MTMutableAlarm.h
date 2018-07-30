@@ -18,6 +18,7 @@
 @property(nonatomic) unsigned int active; // @dynamic active;
 @property(nonatomic, getter=isActiveForThisDevice) _Bool activeForThisDevice; // @dynamic activeForThisDevice;
 @property(nonatomic) _Bool allowsSnooze; // @dynamic allowsSnooze;
+@property(nonatomic) _Bool bedtimeDoNotDisturb; // @dynamic bedtimeDoNotDisturb;
 @property(nonatomic) unsigned int bedtimeHour; // @dynamic bedtimeHour;
 @property(nonatomic) unsigned int bedtimeMinute; // @dynamic bedtimeMinute;
 @property(nonatomic) unsigned int bedtimeReminderMinutes; // @dynamic bedtimeReminderMinutes;

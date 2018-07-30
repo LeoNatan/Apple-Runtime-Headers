@@ -10,6 +10,7 @@
 
 @class NSBitmapImageRep;
 
+__attribute__((visibility("hidden")))
 @interface NSAnimationInfo : NSObject <NSCopying>
 {
     struct CGRect _startFrame;

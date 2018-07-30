@@ -13,24 +13,24 @@
 @interface CPLCloudKitSetupTask : CPLCloudKitBaseSetupTask <CPLEngineTransportSetupTask>
 {
     CDUnknownBlockType _completionHandler;
-    BOOL _createIfNecessary;
-    NSString *_libraryZoneName;
+    BOOL _shouldUpdateDisabledFeatures;
 }
 
-+ (long long)zoneIndexFromZoneName:(id)arg1;
-@property(copy, nonatomic) NSString *libraryZoneName; // @synthesize libraryZoneName=_libraryZoneName;
-@property(nonatomic) BOOL createIfNecessary; // @synthesize createIfNecessary=_createIfNecessary;
+@property(readonly, nonatomic) BOOL shouldUpdateDisabledFeatures; // @synthesize shouldUpdateDisabledFeatures=_shouldUpdateDisabledFeatures;
 - (void).cxx_destruct;
 - (void)runOperations;
-- (void)createRecordZoneWithID:(id)arg1;
 - (void)fetchUserRecord;
-- (id)initWithController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchDisabledFeaturesWithUserRecord:(id)arg1;
+- (id)initWithController:(id)arg1 updateDisabledFeatures:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties
+@property(nonatomic, getter=isBackgroundTask) BOOL backgroundTask;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isForcedTask) BOOL forcedTask;
 @property(nonatomic) BOOL foreground;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isHighPriorityBackground) BOOL highPriorityBackground;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) id <CPLEngineTransportGroup> transportGroup;
 

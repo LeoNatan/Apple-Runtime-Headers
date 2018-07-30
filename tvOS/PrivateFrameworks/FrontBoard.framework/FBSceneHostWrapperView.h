@@ -24,6 +24,8 @@
     NSMapTable *_layerAlphaMapTable;
     NSMutableSet *_hiddenLayers;
     unsigned long long _appearanceStyle;
+    _Bool _usingDefaultClippingDisabled;
+    _Bool _usingDefaultHostViewTransform;
     UIColor *_backgroundColorWhileNotHosting;
     UIColor *_backgroundColorWhileHosting;
     unsigned long long _hostedLayerTypes;
@@ -34,18 +36,20 @@
     _Bool _usingDefaultMinificationFilterName;
     _Bool _clippingDisabled;
     id <FBSceneHostViewDelegate> _delegate;
+    struct CGAffineTransform _hostViewTransform;
 }
 
 @property(readonly, copy, nonatomic) NSString *requester; // @synthesize requester=_requester;
+@property(nonatomic) struct CGAffineTransform hostViewTransform; // @synthesize hostViewTransform=_hostViewTransform;
+@property(nonatomic, getter=isClippingDisabled) _Bool clippingDisabled; // @synthesize clippingDisabled=_clippingDisabled;
 @property(copy, nonatomic) NSString *minificationFilterName; // @synthesize minificationFilterName=_minificationFilterName;
 @property(nonatomic) unsigned long long renderingMode; // @synthesize renderingMode=_renderingMode;
 @property(nonatomic) unsigned long long hostedLayerTypes; // @synthesize hostedLayerTypes=_hostedLayerTypes;
 @property(nonatomic) unsigned long long appearanceStyle; // @synthesize appearanceStyle=_appearanceStyle;
 @property(nonatomic) id <FBSceneHostViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic, getter=isClippingDisabled) _Bool clippingDisabled; // @synthesize clippingDisabled=_clippingDisabled;
-@property(readonly, retain, nonatomic) NSSet *hiddenLayers; // @synthesize hiddenLayers=_hiddenLayers;
+@property(readonly, nonatomic) NSSet *hiddenLayers; // @synthesize hiddenLayers=_hiddenLayers;
 @property(retain, nonatomic) FBSceneLayerHostContainerView *hostContainerView; // @synthesize hostContainerView=_hostContainerView;
-@property(readonly, retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
+@property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -59,12 +63,13 @@
 - (void)sceneLayerManager:(id)arg1 didRepositionLayer:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
 - (id)window;
 - (id)_hitTest:(struct CGPoint)arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
-@property(readonly, retain, nonatomic) NSSet *hostingDisabledLayers;
+@property(readonly, nonatomic) NSSet *hostingDisabledLayers;
 @property(retain, nonatomic) UIColor *backgroundColorWhileNotHosting;
 @property(retain, nonatomic) UIColor *backgroundColorWhileHosting;
 @property(readonly, nonatomic) double level;
 @property(readonly, nonatomic) struct CGRect referenceFrame;
 @property(readonly, nonatomic, getter=isHosting) _Bool hosting;
+- (void)_updateFrameAndTransform;
 - (void)_setAppearanceStyle:(unsigned long long)arg1 force:(_Bool)arg2;
 - (id)_stringForAppearanceStyle;
 - (void)_toggleBackgroundColorIfNecessary;
@@ -76,6 +81,8 @@
 - (void)setDefaultMinificationFilterName:(id)arg1;
 - (void)setDefaultRenderingMode:(unsigned long long)arg1;
 - (void)setDefaultHostedLayerTypes:(unsigned long long)arg1;
+- (void)setDefaultHostViewTransform:(struct CGAffineTransform)arg1;
+- (void)setDefaultClippingDisabled:(_Bool)arg1;
 - (void)setLayer:(id)arg1 hidden:(_Bool)arg2;
 - (void)setLayer:(id)arg1 alpha:(double)arg2;
 - (void)updateBackgroundColor;

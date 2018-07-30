@@ -6,16 +6,24 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+#import "NFFrameworkAssembly.h"
 
-@interface SXFrameworkAssembly : NSObject
+@class NSArray, NSString;
+
+@interface SXFrameworkAssembly : NSObject <NFFrameworkAssembly>
 {
     NSArray *_assemblies;
 }
 
-@property(readonly, nonatomic) NSArray *assemblies; // @synthesize assemblies=_assemblies;
+@property(readonly, copy, nonatomic) NSArray *assemblies; // @synthesize assemblies=_assemblies;
 - (void).cxx_destruct;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -14,17 +14,23 @@
 {
     PQLRawInjection *_injection;
     Class _objcClass;
+    id _defaultValue;
 }
 
++ (id)dateType;
 + (id)stringType;
 + (id)dataType;
 + (id)integerType;
 - (void).cxx_destruct;
+- (id)rawInjectionForValue:(id)arg1;
+- (id)_valueForBindableValue:(id)arg1;
+- (id)_bindableValueForValue:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (int)bindWithStatement:(struct sqlite3_stmt *)arg1 startingAtIndex:(int)arg2;
+- (id)defaultValueForNull;
 @property(readonly, nonatomic) NSData *sql;
-@property(readonly, nonatomic) Class objcClass;
-- (id)initWithTypeName:(const char *)arg1 objcClass:(Class)arg2;
+- (Class)objcClass;
+- (id)initWithTypeName:(const char *)arg1 defaultValue:(id)arg2 objcClass:(Class)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

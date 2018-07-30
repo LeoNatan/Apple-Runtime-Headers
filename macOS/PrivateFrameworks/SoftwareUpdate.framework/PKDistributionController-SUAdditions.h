@@ -7,6 +7,7 @@
 #import "PKDistributionController.h"
 
 @interface PKDistributionController (SUAdditions)
+- (void)_selectMajorOSInfoChoice;
 - (void)_selectRootSoftwareUpdateChoice;
 @end
 

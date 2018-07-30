@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain) NSError *immediateError; // @synthesize immediateError=_immediateError;
 @property(readonly) unsigned long long ident; // @synthesize ident=_ident;
+- (void)set_discretionaryOverride:(long long)arg1;
 - (id)_timingData;
 - (void)setTaskDescription:(id)arg1;
 - (void)_onSessionQueue_disavow;

@@ -8,6 +8,7 @@
 
 @class AVOutputSettings, NSArray, NSDictionary, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputConfigurationState : NSObject
 {
     NSString *_mediaType;
@@ -34,8 +35,10 @@
     long long _chunkSize;
     NSString *_mediaDataLocation;
     NSURL *_sampleReferenceBaseURL;
+    _Bool _maximizePowerEfficiency;
 }
 
+@property(nonatomic) _Bool maximizePowerEfficiency; // @synthesize maximizePowerEfficiency=_maximizePowerEfficiency;
 @property(copy, nonatomic) NSURL *sampleReferenceBaseURL; // @synthesize sampleReferenceBaseURL=_sampleReferenceBaseURL;
 @property(copy, nonatomic) NSString *mediaDataLocation; // @synthesize mediaDataLocation=_mediaDataLocation;
 @property(nonatomic) long long preferredMediaChunkSize; // @synthesize preferredMediaChunkSize=_chunkSize;

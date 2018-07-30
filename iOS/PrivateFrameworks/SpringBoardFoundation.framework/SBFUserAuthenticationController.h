@@ -11,7 +11,7 @@
 #import "SBFPasscodeFieldChangeObserver.h"
 #import "SBFUserAuthenticationModelDelegate.h"
 
-@class NSDate, NSHashTable, NSMutableArray, NSString, PCPersistentTimer, SBFAuthenticationAssertion, SBFAuthenticationAssertionManager, SBFMobileKeyBag;
+@class NSDate, NSHashTable, NSMutableArray, NSString, PCPersistentTimer, SBFAuthenticationAssertion, SBFAuthenticationAssertionManager, SBFMobileKeyBag, SBFMobileKeyBagState;
 
 @interface SBFUserAuthenticationController : NSObject <SBFMobileKeyBagObserver, SBFUserAuthenticationModelDelegate, SBFAuthenticationStatusProvider, SBFPasscodeFieldChangeObserver>
 {
@@ -29,6 +29,7 @@
     PCPersistentTimer *_unblockTimer;
     long long _cachedAuthFlag;
     _Bool _inSecureMode;
+    SBFMobileKeyBagState *_cachedExtendedState;
 }
 
 @property(retain, nonatomic, getter=_policy, setter=_setPolicy:) id <SBFAuthenticationPolicy> policy; // @synthesize policy=_policy;
@@ -67,6 +68,7 @@
 - (void)_setAuthState:(long long)arg1;
 - (void)_invalidateCachedPasscodeLockState;
 - (void)_setup_runLoopObserverIfNecessary;
+- (id)_cachedLockStateExtended;
 - (_Bool)_isUserAuthenticated;
 - (_Bool)_isInGracePeriodState;
 - (_Bool)_isInBioUnlockState;

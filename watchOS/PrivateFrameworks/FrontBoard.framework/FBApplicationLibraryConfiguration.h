@@ -22,8 +22,8 @@
 @property(nonatomic) _Bool allowConcurrentLoading; // @synthesize allowConcurrentLoading=_allowConcurrentLoading;
 @property(retain, nonatomic) Class applicationPlaceholderClass; // @synthesize applicationPlaceholderClass=_applicationPlaceholderClass;
 @property(retain, nonatomic) Class applicationInfoClass; // @synthesize applicationInfoClass=_applicationInfoClass;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

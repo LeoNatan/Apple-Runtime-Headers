@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) NSString *selectedText; // @synthesize selectedText=_selectedText;
 @property(readonly, nonatomic) NSString *markedText; // @synthesize markedText=_markedText;
 @property(readonly, nonatomic) NSString *contextBeforeInput; // @synthesize contextBeforeInput=_contextBeforeInput;
+- (void).cxx_destruct;
 - (_Bool)documentIsEmpty;
 - (id)description;
 - (unsigned long long)hash;
@@ -37,7 +38,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContextBefore:(id)arg1 markedText:(id)arg2 selectedText:(id)arg3 contextAfter:(id)arg4 selectedRangeInMarkedText:(struct _NSRange)arg5;
-- (void)dealloc;
 - (id)documentStateAfterCursorAdjustment:(long long)arg1;
 - (id)documentStateAfterReplacingText:(id)arg1 withText:(id)arg2;
 - (id)documentStateAfterCollapsingSelection;

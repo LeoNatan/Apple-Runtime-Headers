@@ -65,7 +65,6 @@ __attribute__((visibility("hidden")))
 - (id)_widgetExtensionContext;
 - (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize)arg2;
 - (void)_clientLargestSupportedDisplayModeDidChange;
-- (struct UIEdgeInsets)_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(_Bool *)arg2;
 - (void)_performUpdateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_shouldRemoveViewFromHierarchyOnDisappear;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

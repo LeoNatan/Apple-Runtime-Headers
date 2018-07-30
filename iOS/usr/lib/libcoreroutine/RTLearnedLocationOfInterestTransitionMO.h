@@ -6,7 +6,7 @@
 
 #import "NSManagedObject.h"
 
-@class NSDate, NSUUID, RTLearnedLocationOfInterestMO;
+@class NSDate, NSNumber, NSUUID, RTLearnedLocationOfInterestMO;
 
 @interface RTLearnedLocationOfInterestTransitionMO : NSManagedObject
 {
@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSDate *expirationDate; // @dynamic expirationDate;
 @property(retain, nonatomic) NSUUID *identifier; // @dynamic identifier;
 @property(retain, nonatomic) RTLearnedLocationOfInterestMO *locationOfInterest; // @dynamic locationOfInterest;
+@property(copy, nonatomic) NSNumber *predominantMotionActivityType; // @dynamic predominantMotionActivityType;
 @property(copy, nonatomic) NSDate *startDate; // @dynamic startDate;
 @property(copy, nonatomic) NSDate *stopDate; // @dynamic stopDate;
 @property(retain, nonatomic) NSUUID *visitIdentifierDestination; // @dynamic visitIdentifierDestination;

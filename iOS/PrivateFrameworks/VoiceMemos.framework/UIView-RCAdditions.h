@@ -31,7 +31,6 @@
 - (void)rc_updateConstraintsAndLayoutSubtree;
 - (id)rc_autolayoutView;
 - (_Bool)rc_canAnimate;
-@property(nonatomic, setter=rc_setCharge:) float rc_charge;
 - (void)rc_showAllViewBoundsRecursively:(_Bool)arg1;
 @end
 

@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSViewAnimator.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSViewAnimator_NSButton : _NSViewAnimator
 {
 }

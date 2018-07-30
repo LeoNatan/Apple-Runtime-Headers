@@ -10,6 +10,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCNewCertificateDetailsViewController : UITableViewController <PSStateRestoration>
 {
     id _certificateTrust;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface MSSearchSessionController : NSObject
 {
@@ -15,8 +15,10 @@
     unsigned long long _percentOfMessagesIndexed;
     NSMutableArray *_mutableSessionEngagements;
     id <MSSearchSessionControllerDataSource> _dataSource;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak id <MSSearchSessionControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSMutableArray *mutableSessionEngagements; // @synthesize mutableSessionEngagements=_mutableSessionEngagements;
 @property(readonly, nonatomic) int emailProvider; // @synthesize emailProvider=_emailProvider;
@@ -35,8 +37,7 @@
 - (void)recordUserDidSelectMessage:(id)arg1 isTopHit:(BOOL)arg2 messageListIndex:(long long)arg3 spotlightListIndex:(long long)arg4;
 - (void)_recordUserDidNotSelectAnyMessage;
 - (void)updateLastEngagementSearchResultCount:(unsigned long long)arg1;
-- (void)_addNewEngagementWithAWDAtoms:(id)arg1 searchScope:(BOOL)arg2 suggestionsEngagements:(id)arg3;
-- (void)addNewEngagementWithSuggestions:(id)arg1 searchScope:(BOOL)arg2;
+- (void)addNewEngagementWithAWDAtoms:(id)arg1 searchScope:(BOOL)arg2 suggestionsEngagements:(id)arg3;
 - (void)addNewEngagementWithAtoms:(id)arg1 searchScope:(BOOL)arg2 suggestionsEngagement:(id)arg3;
 - (void)endSession;
 @property(readonly, copy, nonatomic) NSArray *sessionEngagements;

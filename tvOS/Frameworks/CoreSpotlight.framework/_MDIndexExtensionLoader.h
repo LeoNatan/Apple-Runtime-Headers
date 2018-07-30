@@ -6,17 +6,27 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSObject<OS_dispatch_queue>;
+@class NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface _MDIndexExtensionLoader : NSObject
 {
+    _Bool _extensionsCacheNeedsLoad;
     id _matchingContext;
     NSObject<OS_dispatch_queue> *_queue;
     NSDictionary *_extensionsByBundleId;
     NSDictionary *_fileProviderBundleMap;
+    NSMutableArray *_containerPaths;
+    NSMutableArray *_queueLabels;
+    NSMutableArray *_containerIDs;
+    NSMutableArray *_extensionIdentifiers;
 }
 
 + (id)_matchDictionary;
+@property _Bool extensionsCacheNeedsLoad; // @synthesize extensionsCacheNeedsLoad=_extensionsCacheNeedsLoad;
+@property(retain, nonatomic) NSMutableArray *extensionIdentifiers; // @synthesize extensionIdentifiers=_extensionIdentifiers;
+@property(retain, nonatomic) NSMutableArray *containerIDs; // @synthesize containerIDs=_containerIDs;
+@property(retain, nonatomic) NSMutableArray *queueLabels; // @synthesize queueLabels=_queueLabels;
+@property(retain, nonatomic) NSMutableArray *containerPaths; // @synthesize containerPaths=_containerPaths;
 @property(retain, nonatomic) NSDictionary *fileProviderBundleMap; // @synthesize fileProviderBundleMap=_fileProviderBundleMap;
 @property(retain, nonatomic) NSDictionary *extensionsByBundleId; // @synthesize extensionsByBundleId=_extensionsByBundleId;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -25,9 +35,12 @@
 - (id)fetchFileProviderBundleMap;
 - (id)_loadExtensionsSynchronously;
 - (void)stopLookingForExtensions;
+- (void)buildExtensionsCacheWithMatchUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)startLookingForExtensionsWithMatchUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)findExtensionsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)_filterIndexExtensions:(id)arg1;
+- (void)writeExtensionsCacheToDisk;
+- (void)buildExtensionsFromCache;
 - (id)init;
 
 @end

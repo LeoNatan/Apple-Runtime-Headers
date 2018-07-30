@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     NSString *_tableName;
 }
 
-@property(readonly, retain) NSString *tableName; // @synthesize tableName=_tableName;
+@property(readonly, retain, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 - (id)bulkUpdateStatementsForStore:(id)arg1;
 - (id)dropStatementsForStore:(id)arg1;
 - (id)createStatementsForStore:(id)arg1;

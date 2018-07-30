@@ -22,6 +22,7 @@
 }
 
 @property(readonly) unsigned long long state; // @synthesize state=_state;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)_didEndSession;
 - (void)_didStartSession:(id)arg1;

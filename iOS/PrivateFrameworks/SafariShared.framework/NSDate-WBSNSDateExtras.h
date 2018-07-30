@@ -12,6 +12,7 @@
 + (id)safari_dateOfMidnightNumberOfDaysAgo:(long long)arg1;
 - (id)safari_stringsFromDateForLocaleIdentifiers:(id)arg1;
 - (id)_safari_stringWithDashSeparatorWithDateFormatter:(id)arg1;
+@property(readonly, nonatomic) double safari_timeIntervalUntilNow;
 - (_Bool)safari_isNowOrInRecentPast;
 - (_Bool)safari_isInclusivelyBetweenDate:(id)arg1 andDate:(id)arg2;
 - (id)safari_startOfDay;

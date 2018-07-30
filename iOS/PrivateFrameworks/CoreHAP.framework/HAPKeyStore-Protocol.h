@@ -19,6 +19,7 @@
 - (_Bool)removeControllerKeyPairForIdentifier:(NSString *)arg1 leaveTombstone:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)getCurrentiCloudIdentifier:(id *)arg1 controllerPairingIdentifier:(id *)arg2 error:(id *)arg3;
 - (_Bool)updateCurrentiCloudIdentifier:(NSString *)arg1 controllerPairingIdentifier:(NSString *)arg2 error:(id *)arg3;
+- (_Bool)removeControllerKeyPairLeaveTombstone:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)removeControllerKeyPairWithError:(id *)arg1;
 - (_Bool)updateActiveControllerPairingIdentifier:(NSString *)arg1;
 - (_Bool)getAllAvailableControllerPublicKeys:(id *)arg1 secretKeys:(id *)arg2 userNames:(id *)arg3 error:(id *)arg4;

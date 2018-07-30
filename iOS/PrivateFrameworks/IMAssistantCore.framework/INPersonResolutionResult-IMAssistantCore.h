@@ -8,7 +8,6 @@
 
 @interface INPersonResolutionResult (IMAssistantCore)
 + (_Bool)__imcore__containsNonSuccess:(id)arg1;
-+ (id)__imcore__unsupportedForRecipients:(id)arg1;
 - (_Bool)__imcore__isSuccess;
 @end
 

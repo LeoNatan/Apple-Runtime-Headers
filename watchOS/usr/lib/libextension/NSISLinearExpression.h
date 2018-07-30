@@ -7,36 +7,24 @@
 #import "NSObject.h"
 
 #import "NSFastEnumeration.h"
-#import "NSISRowBody.h"
 
-@class NSString;
+@class NSISEngine;
 
-@interface NSISLinearExpression : NSObject <NSISRowBody, NSFastEnumeration>
+@interface NSISLinearExpression : NSObject <NSFastEnumeration>
 {
-    unsigned int inline_capacity;
-    unsigned int var_count;
-    double constant;
-    union {
-        struct {
-            id stored_extern_marker;
-            struct *slab;
-            unsigned int capacity;
-        } extern_data;
-        struct {
-            unsigned long aligner;
-        } inline_slab;
-        unsigned char padding[36];
-    } data;
+    NSISEngine *engine;
+    CDStruct_b1b42f93 linExp;
 }
 
++ (id)acquireFromPoolForUseCase:(int)arg1 engine:(id)arg2;
 + (id)acquireFromPoolForUseCase:(int)arg1;
++ (id)newExpressionWithCapacity:(unsigned int)arg1 engine:(id)arg2;
 + (id)newExpressionWithCapacity:(unsigned int)arg1;
 + (void)initialize;
 - (id)copyContentsAndReturnToPool;
 - (void)returnToPool;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
-- (id)init;
-- (id)initWithInlineCapacity:(unsigned int)arg1;
+- (id)initWithInlineCapacity:(unsigned int)arg1 engine:(id)arg2;
 - (void)verifyInternalIntegrity;
 - (void)scaleBy:(double)arg1;
 - (id)variablesArray;
@@ -44,7 +32,7 @@
 - (_Bool)enumerateVariablesAndCoefficientsUntil:(CDUnknownBlockType)arg1;
 - (void)enumerateVariables:(CDUnknownBlockType)arg1;
 - (void)enumerateVariablesAndCoefficients:(CDUnknownBlockType)arg1;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(CDUnknownBlockType)arg3 processVariableDroppedFromReceiver:(CDUnknownBlockType)arg4;
 - (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(CDUnknownBlockType)arg4 processVariableDroppedFromReceiver:(CDUnknownBlockType)arg5;
 - (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2;
@@ -60,13 +48,12 @@
 - (void)setCoefficient:(double)arg1 forVariable:(id)arg2;
 - (double)coefficientForVariable:(id)arg1;
 - (void)removeVariable:(id)arg1;
-@property(readonly) unsigned int hash;
+@property(readonly) NSISEngine *engine;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
+- (id)initWithEngine:(id)arg1;
+- (id)init;
 
 @end
 

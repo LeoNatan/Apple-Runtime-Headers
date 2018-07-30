@@ -31,6 +31,8 @@
 + (id)nfl_blue;
 + (id)nfl_green;
 + (id)nfl_yellow;
++ (id)nfl_keyHighlightedColor;
++ (id)nfl_keyColor;
 + (id)nfl_defaultSystemTintColor;
 + (id)nfl_colorWithHexString:(id)arg1;
 - (id)nfl_colorOrBlackIfTooBright;

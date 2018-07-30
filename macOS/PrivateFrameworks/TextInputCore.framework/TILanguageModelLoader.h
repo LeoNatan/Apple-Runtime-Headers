@@ -62,7 +62,6 @@
 - (void)clearDynamicLearningCaches;
 @property(readonly, nonatomic) NSArray *staticResourcePaths;
 - (id)initWithInputMode:(id)arg1 dynamicResourcePath:(id)arg2 mobileAssets:(id)arg3 usesLinguisticContext:(BOOL)arg4;
-- (void)dealloc;
 
 @end
 

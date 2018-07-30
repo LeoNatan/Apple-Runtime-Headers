@@ -13,14 +13,14 @@
 @interface NFEWSAccountProxy : ICNFMCAccountProxy <NFAccountProxy>
 {
     NSMutableDictionary *_foldersByObjectID;
-    BOOL _useExternalURL;
     EWSExchangeServiceBinding *_exchangeServiceBinding;
+    BOOL _useExternalURL;
 }
 
 + (id)_newExtendedFieldTypeForPropertyId:(long long)arg1;
 + (id)_extendedFieldsForEWSNoteType;
+@property(readonly) EWSExchangeServiceBinding *exchangeServiceBinding; // @synthesize exchangeServiceBinding=_exchangeServiceBinding;
 @property(nonatomic) BOOL useExternalURL; // @synthesize useExternalURL=_useExternalURL;
-@property(retain) EWSExchangeServiceBinding *exchangeServiceBinding; // @synthesize exchangeServiceBinding=_exchangeServiceBinding;
 - (void).cxx_destruct;
 - (BOOL)responseCodeIsFatal:(long long)arg1;
 - (id)_sendMessage:(id)arg1;
@@ -69,6 +69,7 @@
 - (void)updateMailboxListFromServer;
 - (id)mailboxProxyForMailbox:(id)arg1;
 - (BOOL)isServerReachable;
+- (void)recreateExchangeServiceBinding;
 - (id)parentACAccount;
 - (void)dealloc;
 - (id)initWithManagedObject:(id)arg1;

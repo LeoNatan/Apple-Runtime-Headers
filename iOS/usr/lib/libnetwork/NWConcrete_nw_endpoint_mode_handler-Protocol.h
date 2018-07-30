@@ -14,6 +14,6 @@
 - (void)startWithHandler:(NWConcrete_nw_endpoint_handler *)arg1;
 
 @optional
-- (void)applyWithHandler:(NWConcrete_nw_endpoint_handler *)arg1 toChildren:(_Bool (^)(NWConcrete_nw_endpoint_handler *))arg2;
+- (_Bool)applyWithHandler:(NWConcrete_nw_endpoint_handler *)arg1 toChildren:(_Bool (^)(NWConcrete_nw_endpoint_handler *))arg2;
 @end
 

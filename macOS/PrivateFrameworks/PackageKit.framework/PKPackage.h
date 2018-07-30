@@ -29,9 +29,7 @@
 - (void)_populateComponentSubpaths;
 @property(readonly) NSURL *fileURL;
 @property(readonly) PKArchive *archive;
-- (BOOL)_extractFilesForBundleComponent:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
 - (BOOL)extractFilesForBundleComponent:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
-- (id)firmwareComponentsOfType:(long long)arg1;
 - (id)firmwareComponents;
 - (id)subpathsForComponent:(id)arg1;
 - (id)componentForIdentifier:(id)arg1;
@@ -57,6 +55,7 @@
 - (id)_staticObsoleteFiles;
 - (id)BOMData;
 - (id)initWithURL:(id)arg1;
+- (id)firmwareComponentsOfType:(long long)arg1;
 
 @end
 

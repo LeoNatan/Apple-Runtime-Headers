@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 {
     struct TMutex _lock;
     id <TDesktopInlinePreviewDataSource> _dataSource;
-    struct TNSRef<QLInlinePreviewController *, void> _rolloverInlinePreviewController;
-    struct TNSRef<QLInlinePreviewController *, void> _playInlinePreviewController;
-    struct TNSRef<QLInlinePreviewController *, void> _mouseInlinePreviewController;
+    struct TNSRef<QLInlinePreviewController, void> _rolloverInlinePreviewController;
+    struct TNSRef<QLInlinePreviewController, void> _playInlinePreviewController;
+    struct TNSRef<QLInlinePreviewController, void> _mouseInlinePreviewController;
 }
 
 - (id).cxx_construct;

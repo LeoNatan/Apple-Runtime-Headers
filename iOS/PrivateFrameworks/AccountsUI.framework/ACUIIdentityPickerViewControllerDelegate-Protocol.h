@@ -9,7 +9,6 @@
 @class ACUIIdentityPickerViewController, NSArray, NSString;
 
 @protocol ACUIIdentityPickerViewControllerDelegate <NSObject>
-- (_Bool)allowEditingForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1;
 - (NSArray *)emailAddressesForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1;
 - (struct __SecTrust *)copyTrustForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1 identity:(struct __SecIdentity *)arg2;
 - (NSArray *)copyIdentitiesForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1;
@@ -17,5 +16,9 @@
 - (void)identityPickerController:(ACUIIdentityPickerViewController *)arg1 setPropertyEnabled:(_Bool)arg2 withIdentity:(struct __SecIdentity *)arg3;
 - (struct __SecIdentity *)selectedIdentityForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1;
 - (_Bool)isPropertyEnabledForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1;
+
+@optional
+- (unsigned long long)configurationOptionsForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1;
+- (_Bool)allowEditingForIdentityPickerController:(ACUIIdentityPickerViewController *)arg1;
 @end
 

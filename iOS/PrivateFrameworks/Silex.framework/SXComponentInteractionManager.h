@@ -44,6 +44,7 @@
 - (void)handleTapGesture:(id)arg1;
 - (void)commitViewController:(id)arg1;
 - (id)previewViewControllerForLocation:(struct CGPoint)arg1;
+- (_Bool)hasInteractionForLocation:(struct CGPoint)arg1;
 - (id)initWithInteractionHandlerManager:(id)arg1 viewport:(id)arg2;
 
 // Remaining properties

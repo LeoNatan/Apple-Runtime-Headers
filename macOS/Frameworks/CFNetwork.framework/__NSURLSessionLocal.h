@@ -23,13 +23,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_outstandingTasks;
     NSObject<OS_dispatch_queue> *_invalidateQueue;
     CDUnknownBlockType _invalidateCallback;
-    const struct XURLCache *_xCache;
     const struct XCookieStorage *_xCookies;
     const struct XCredentialStorage *_xCreds;
-    _Bool _xCacheInitComplete;
     _Bool _xCookiesInitComplete;
     _Bool _xCredsInitComplete;
-    struct mutex _xCacheStorageInitLock;
     struct mutex _xCookieStorageInitLock;
     struct mutex _xCredStorageInitLock;
     NSArray *_localProtocolClassesForDefaultSession;
@@ -86,8 +83,7 @@ __attribute__((visibility("hidden")))
 - (const struct XCredentialStorage *)_createXCredentialStorage0;
 - (const struct XCookieStorage *)_createXCookieStorage;
 - (const struct XCookieStorage *)_createXCookieStorage0;
-- (const struct XURLCache *)_createXURLCache;
-- (const struct XURLCache *)_createXURLCache0;
+- (void)_withXURLCache:(CDUnknownBlockType)arg1;
 - (struct _CFHSTSPolicy *)_copyHSTSPolicy;
 - (void)_onqueue_completeInvalidation:(BOOL)arg1;
 - (struct XTubeManager *)_actualTubeManager;
@@ -113,7 +109,7 @@ __attribute__((visibility("hidden")))
 - (void)addConnectionlessTask:(id)arg1;
 - (id)copyTasks;
 - (void)replaceTask:(id)arg1 withTask:(id)arg2;
-- (Class)sessionConnectionClass;
+- (Class)sessionConnectionClass:(id)arg1;
 - (id)connToTask:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

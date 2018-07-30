@@ -153,7 +153,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (struct CGRect)layerFrameInScaledCanvas;
 - (id)hitRepChrome:(struct CGPoint)arg1;
-- (id)hitRep:(struct CGPoint)arg1;
+- (id)hitRep:(struct CGPoint)arg1 withPrecision:(_Bool)arg2;
 @property(readonly, nonatomic) long long selectionType;
 @property(readonly, nonatomic) TSTCellSelection *selection;
 @property(readonly, nonatomic) struct CGRect canvasVisibleRect;

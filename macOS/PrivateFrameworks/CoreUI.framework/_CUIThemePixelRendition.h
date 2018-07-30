@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     CUIRenditionSliceInformation *_sliceInformation;
     _CSIRenditionBlockData *_cachedBlockDataBGRX;
     _CSIRenditionBlockData *_cachedBlockDataRGBX;
+    _CSIRenditionBlockData *_cachedBlockDataGray;
     unsigned long long _sourceRowbytes;
     NSMutableArray *_layers;
     struct CGSize _unslicedSize;

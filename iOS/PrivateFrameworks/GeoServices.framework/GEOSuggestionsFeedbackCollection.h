@@ -10,6 +10,7 @@
 
 @class GEOPDAutocompleteEntry, NSData;
 
+__attribute__((visibility("hidden")))
 @interface GEOSuggestionsFeedbackCollection : PBCodable <NSCopying>
 {
     struct GEOSessionID _sessionID;

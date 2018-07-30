@@ -4,24 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSResponder.h"
+#import "NSViewController.h"
 
 #import "NSOutlineViewDataSource.h"
 
-@class BarBackground, BookmarksSearcher, BrowserViewController, NSButton, NSSearchField, NSString, NSTableColumn, NSTextField, OutlineViewPlus, WBSFaviconRequestsController, WebBookmark;
+@class BookmarksSearcher, KeyLoopSplicingContainerView, NSBox, NSButton, NSLayoutConstraint, NSScrollView, NSSearchField, NSString, NSTableColumn, NSTextField, OutlineViewPlus, WBSFaviconRequestsController, WebBookmark;
 
 __attribute__((visibility("hidden")))
-@interface BookmarksViewController : NSResponder <NSOutlineViewDataSource>
+@interface BookmarksViewController : NSViewController <NSOutlineViewDataSource>
 {
+    NSLayoutConstraint *_mainContentViewTopConstraint;
     BOOL _draggingUndeletableBookmarks;
     BOOL _abortedDraggingBookmarks;
     BookmarksSearcher *_searcher;
     NSTableColumn *_hiddenAddressColumn;
     BOOL _bookmarkChangeIsExpected;
     WBSFaviconRequestsController *_requestsController;
-    BarBackground *_rootView;
+    id <BookmarksViewControllerDelegate> _delegate;
     WebBookmark *_selectedCollection;
-    BrowserViewController *_browserViewController;
+    NSBox *_mainContentView;
+    NSScrollView *_scrollView;
     OutlineViewPlus *_outlineView;
     NSTableColumn *_bookmarkColumn;
     NSButton *_contentModificationButton;
@@ -33,6 +35,8 @@ __attribute__((visibility("hidden")))
 + (void)setDraggedBookmarks:(id)arg1;
 + (id)dateVisitedColumnTitle;
 + (id)parentColumnTitle;
++ (id)historyPageTitle;
++ (id)bookmarksPageTitle;
 + (id)draggedBookmarks;
 + (float)bottomGradientHeight;
 @property(nonatomic) __weak NSTextField *titleField; // @synthesize titleField=_titleField;
@@ -41,9 +45,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSButton *contentModificationButton; // @synthesize contentModificationButton=_contentModificationButton;
 @property(nonatomic) __weak NSTableColumn *bookmarkColumn; // @synthesize bookmarkColumn=_bookmarkColumn;
 @property(nonatomic) __weak OutlineViewPlus *outlineView; // @synthesize outlineView=_outlineView;
-@property(nonatomic) __weak BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
+@property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(nonatomic) __weak NSBox *mainContentView; // @synthesize mainContentView=_mainContentView;
 @property(retain, nonatomic) WebBookmark *selectedCollection; // @synthesize selectedCollection=_selectedCollection;
-@property(nonatomic) __weak BarBackground *rootView; // @synthesize rootView=_rootView;
+@property(nonatomic) __weak id <BookmarksViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_instrumentUserDidActivateBookmark:(id)arg1 viaContextMenu:(BOOL)arg2;
 - (long long)_numberOfFixedBookmarkFoldersInTopBookmark;
@@ -51,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (struct TabPlacementHint)tabPlacementHint;
 - (BOOL)optionKeyDown;
 - (BOOL)handleKeyDown:(id)arg1;
-- (id)_browserWindow;
+- (id)_bookmarksUndoController;
 - (void)_setSearchResultMatchCount:(unsigned long long)arg1;
 - (void)_clearSearch;
 - (void)_setSearchString:(id)arg1;
@@ -81,14 +86,12 @@ __attribute__((visibility("hidden")))
 - (CDUnknownBlockType)_redoNewBookmarkCompletionBlockForUndoInfo:(id)arg1;
 - (CDUnknownBlockType)_redoNewBookmarkPreflightBlock;
 - (BOOL)moveBookmarks:(id)arg1 toNewFolder:(id)arg2;
-- (id)makeNewContentsFolderWithTitle:(id)arg1 positionIgnoresSelection:(BOOL)arg2;
+- (id)makeNewContentsFolderWithTitle:(id)arg1 atRow:(long long)arg2 positionIgnoresSelection:(BOOL)arg3;
 - (void)_deleteContentItems:(id)arg1;
 - (void)deleteSelectedContentItems;
 - (id)collectBookmarksToMoveToNewFolder;
 - (void)changeAddressForBookmark:(id)arg1 to:(id)arg2;
-- (unsigned long long)_writeContentItems:(id)arg1 fromView:(id)arg2 toPasteboard:(id)arg3;
 - (void)prepareForDraggingBookmarks:(id)arg1 fromView:(id)arg2;
-- (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
 - (id)dragImageForRowCount:(int)arg1 dragImageOffset:(struct CGPoint *)arg2;
 - (id)dragImageWithoutBadge;
 - (void)cleanUpAfterDraggingBookmarksWithOperation:(unsigned long long)arg1;
@@ -121,7 +124,7 @@ __attribute__((visibility("hidden")))
 - (void)endEditing;
 - (void)_editBookmark:(id)arg1 columnID:(id)arg2;
 - (id)selectedContentItems;
-- (BOOL)_isShowingHistory;
+@property(readonly, nonatomic, getter=isShowingHistory) BOOL showingHistory;
 - (BOOL)isShowingFilteredBookmarks;
 - (void)updateParentColumnVisibility;
 - (void)updateCollectionSpecificColumns;
@@ -158,20 +161,21 @@ __attribute__((visibility("hidden")))
 - (void)_unregisterNotifications;
 - (void)stopObservingWhileOffScreen;
 - (void)startObservingWhileOnScreen;
-- (void)awakeFromNib;
+- (void)viewDidLoad;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)dealloc;
-- (id)_initWithBrowserViewController:(id)arg1;
-- (id)initWithBrowserViewController:(id)arg1;
+- (id)init;
 - (unsigned long long)_searchResultsCount;
 - (void)focusSearchField;
 - (void)removeBookmarks:(id)arg1;
 - (void)changeTitleOfBookmark:(id)arg1 to:(id)arg2;
 - (void)showBookmarksCollection:(id)arg1;
 - (id)pageTitle;
-- (void)willSwitchOutOfView;
+- (void)viewWillDisappear;
 - (void)_updateTitleField;
-- (void)switchedIntoView;
+- (void)updateViewConstraints;
+- (void)viewDidAppear;
+- (void)viewWillAppear;
 - (void)invalidate;
 - (BOOL)outlineView:(id)arg1 wantsDFRAccessoriesForEditedRow:(long long)arg2 tableColumn:(id)arg3;
 - (void)outlineViewItemDidExpand:(id)arg1;
@@ -190,15 +194,14 @@ __attribute__((visibility("hidden")))
 - (void)outlineView:(id)arg1 setObjectValue:(id)arg2 forTableColumn:(id)arg3 byItem:(id)arg4;
 - (id)outlineView:(id)arg1 objectValueForTableColumn:(id)arg2 byItem:(id)arg3;
 - (long long)outlineView:(id)arg1 numberOfChildrenOfItem:(id)arg2;
-- (id)outlineView:(id)arg1 namesOfPromisedFilesDroppedAtDestination:(id)arg2 forDraggedItems:(id)arg3;
+- (id)outlineView:(id)arg1 pasteboardWriterForItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (unsigned long long)outlineView:(id)arg1 draggingSourceOperationMaskForLocal:(BOOL)arg2;
 - (void)outlineView:(id)arg1 draggedImage:(id)arg2 endedAt:(struct CGPoint)arg3 operation:(unsigned long long)arg4;
+- (void)outlineView:(id)arg1 draggingSession:(id)arg2 willBeginAtPoint:(struct CGPoint)arg3 forItems:(id)arg4;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
 - (void)paste:(id)arg1;
-- (BOOL)handleScrollEventAsSwipeGesture:(id)arg1;
-- (BOOL)_view:(id)arg1 supportsScrollEventAsSwipeGesture:(id)arg2;
 - (void)_editTitleOfBookmark:(id)arg1;
 - (void)_editSelectedBookmarkTitle:(id)arg1;
 - (void)_editAddressOfBookmark:(id)arg1;
@@ -214,6 +217,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(retain) KeyLoopSplicingContainerView *view; // @dynamic view;
 
 @end
 

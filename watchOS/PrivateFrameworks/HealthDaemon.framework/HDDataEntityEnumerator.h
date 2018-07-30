@@ -6,13 +6,14 @@
 
 #import <HealthDaemon/HDSQLiteQueryDescriptor.h>
 
-@class HDProfile, HKObjectType, NSArray, NSMutableDictionary, NSNumber, NSSet, _HKFilter;
+@class HDProfile, HKObjectType, NSArray, NSMutableDictionary, NSNumber, NSSet, NSString, _HKFilter;
 
 @interface HDDataEntityEnumerator : HDSQLiteQueryDescriptor
 {
     HDProfile *_profile;
     NSMutableDictionary *_encodingOptions;
     _Bool _useLeftJoin;
+    _Bool _ignoreEntityClassAdditionalPredicateForEnumeration;
     _Bool _improveJoinOrderingForStartDateIndexSelection;
     HKObjectType *_objectType;
     _HKFilter *_filter;
@@ -21,9 +22,12 @@
     NSNumber *_anchor;
     NSNumber *_deletedObjectsAnchor;
     NSArray *_sortDescriptors;
+    NSString *_lastSQL;
 }
 
+@property(readonly, copy, nonatomic) NSString *lastSQL; // @synthesize lastSQL=_lastSQL;
 @property(nonatomic) _Bool improveJoinOrderingForStartDateIndexSelection; // @synthesize improveJoinOrderingForStartDateIndexSelection=_improveJoinOrderingForStartDateIndexSelection;
+@property(nonatomic) _Bool ignoreEntityClassAdditionalPredicateForEnumeration; // @synthesize ignoreEntityClassAdditionalPredicateForEnumeration=_ignoreEntityClassAdditionalPredicateForEnumeration;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) NSNumber *deletedObjectsAnchor; // @synthesize deletedObjectsAnchor=_deletedObjectsAnchor;
 @property(retain, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;

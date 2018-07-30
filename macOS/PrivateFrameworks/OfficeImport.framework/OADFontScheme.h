@@ -8,7 +8,6 @@
 
 @class NSString, OADFontCollection;
 
-__attribute__((visibility("hidden")))
 @interface OADFontScheme : NSObject
 {
     NSString *_name;
@@ -19,12 +18,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) OADFontCollection *minorFont; // @synthesize minorFont=_minorFont;
 @property(readonly, nonatomic) OADFontCollection *majorFont; // @synthesize majorFont=_majorFont;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (void)validateFontScheme;
 - (id)fontForId:(int)arg1;
 - (BOOL)isEmpty;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

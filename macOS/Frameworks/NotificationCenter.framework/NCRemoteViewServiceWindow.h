@@ -6,15 +6,18 @@
 
 #import "NSPanel.h"
 
+#import "NCMaterialDelegate.h"
+
 @class NSVisualEffectView;
 
-@interface NCRemoteViewServiceWindow : NSPanel
+__attribute__((visibility("hidden")))
+@interface NCRemoteViewServiceWindow : NSPanel <NCMaterialDelegate>
 {
-    _Bool _darkAppearance;
     unsigned int _effectiveDisplay;
+    unsigned long long _pluginAppearance;
 }
 
-@property(nonatomic) _Bool darkAppearance; // @synthesize darkAppearance=_darkAppearance;
+@property(nonatomic) unsigned long long pluginAppearance; // @synthesize pluginAppearance=_pluginAppearance;
 @property(nonatomic) unsigned int effectiveDisplay; // @synthesize effectiveDisplay=_effectiveDisplay;
 - (void)printViews;
 - (void)_setEventMask:(long long)arg1;
@@ -23,7 +26,11 @@
 - (id)animationForKey:(id)arg1;
 - (BOOL)_shouldAutoFlattenLayerTree;
 - (BOOL)canBecomeKeyWindow;
+- (void)appearanceChanged:(_Bool)arg1;
+- (void)materialChanged:(unsigned char)arg1;
+- (void)_setupPluginAppearance;
 @property(readonly, nonatomic) NSVisualEffectView *contentView;
+- (void)dealloc;
 - (id)initWithDarkAppearance:(_Bool)arg1;
 
 @end

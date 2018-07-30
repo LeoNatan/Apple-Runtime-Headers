@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class SKNode;
 
-@interface SKConstraint : NSObject <NSCoding, NSCopying>
+@interface SKConstraint : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _enabled;
     SKNode *_referenceNode;
@@ -34,11 +34,13 @@
 + (id)positionX:(id)arg1 Y:(id)arg2;
 + (id)positionY:(id)arg1;
 + (id)positionX:(id)arg1;
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) SKNode *referenceNode; // @synthesize referenceNode=_referenceNode;
 @property _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
+- (_Bool)isEqualToConstraint:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
     unsigned long long _timestamp;
     int _appLinkActivationOpenStrategy;
     int _barcodeDataType;
+    int _barcodeSourceType;
     int _barcodeURLType;
     int _clientType;
     struct {
         unsigned int timestamp:1;
         unsigned int appLinkActivationOpenStrategy:1;
         unsigned int barcodeDataType:1;
+        unsigned int barcodeSourceType:1;
         unsigned int barcodeURLType:1;
         unsigned int clientType:1;
     } _has;
@@ -35,6 +37,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsBarcodeSourceType:(id)arg1;
+- (id)barcodeSourceTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasBarcodeSourceType;
+@property(nonatomic) int barcodeSourceType; // @synthesize barcodeSourceType=_barcodeSourceType;
 - (int)StringAsAppLinkActivationOpenStrategy:(id)arg1;
 - (id)appLinkActivationOpenStrategyAsString:(int)arg1;
 @property(nonatomic) _Bool hasAppLinkActivationOpenStrategy;

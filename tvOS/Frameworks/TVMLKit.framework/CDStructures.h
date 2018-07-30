@@ -82,6 +82,28 @@ typedef struct {
     double bottom;
 } CDStruct_13b0aa87;
 
+typedef struct {
+    long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
+
+typedef struct {
+    double _field1;
+    double _field2;
+    double _field3;
+    struct _NSRange _field4;
+} CDStruct_6408a1ed;
+
+typedef struct {
+    union {
+        struct UIEdgeInsets insetValue;
+        double doubleValue;
+    } ;
+    _Bool isValueSet;
+} CDStruct_81add385;
+
 // Ambiguous groups
 typedef struct {
     unsigned int layoutBelowDisabled:1;

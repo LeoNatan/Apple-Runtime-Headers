@@ -8,6 +8,7 @@
 
 @class NSSharedKeySet;
 
+__attribute__((visibility("hidden")))
 @interface NSSharedKeyDictionary : NSMutableDictionary
 {
     NSSharedKeySet *_keyMap;

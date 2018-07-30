@@ -12,12 +12,10 @@
 + (void)composeEMailToPeople:(id)arg1;
 + (BOOL)usesAlternateStatusImages;
 + (id)imageForStatus:(unsigned long long)arg1;
-+ (void)_loadShapedStatusImages;
-+ (void)_loadStatusImages;
 + (void)_personChangedForMonogram:(id)arg1;
 + (void)_registerForPersonChanges;
 + (id)monogramWithDiameter:(double)arg1 style:(long long)arg2;
-+ (id)largerGenericPicture;
++ (id)_cachedContacts;
 + (id)genericPicture;
 + (id)handleAvatarCache;
 - (id)fmfSiblingHandles;

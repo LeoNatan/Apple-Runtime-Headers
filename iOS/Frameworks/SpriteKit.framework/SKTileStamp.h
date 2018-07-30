@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 __attribute__((visibility("hidden")))
-@interface SKTileStamp : NSObject <NSCoding>
+@interface SKTileStamp : NSObject <NSSecureCoding>
 {
     unsigned int _columns;
     unsigned int _rows;
@@ -17,8 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tileStampWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 tileData:(unsigned int *)arg3;
++ (_Bool)supportsSecureCoding;
 - (id)tileDefinitionsForTileMap:(id)arg1;
 - (void)setTileData:(unsigned int *)arg1 size:(unsigned long long)arg2;
+- (_Bool)isEqualToNode:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 tileData:(unsigned int *)arg3;

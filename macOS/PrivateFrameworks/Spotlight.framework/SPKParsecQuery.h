@@ -24,6 +24,7 @@
 + (void)parsecEnabled:(BOOL)arg1;
 + (BOOL)isWebSearchEnabled;
 + (BOOL)isParsecEnabled;
++ (BOOL)isQuerySupported:(unsigned long long)arg1;
 + (void)getFTEParameters;
 + (BOOL)isSiri;
 + (void)shouldSetClientAsSiri:(BOOL)arg1;

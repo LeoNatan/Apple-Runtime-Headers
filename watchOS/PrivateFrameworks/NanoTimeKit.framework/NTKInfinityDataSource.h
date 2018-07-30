@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class CLKDevice, NSArray;
 
 @interface NTKInfinityDataSource : NSObject
 {
+    CLKDevice *_device;
     NSArray *_listings;
     int _numberOfTotalActions;
     int _numberOfTotalMagicMoments;
@@ -38,7 +39,7 @@
 - (id)listingsOfTypes:(id)arg1 withAttributes:(id)arg2 recentlyUsed:(id)arg3;
 - (id)listingsForCharacter:(unsigned int)arg1 ofTypes:(id)arg2 withAttributes:(id)arg3 recentlyUsed:(id)arg4;
 - (id)listingsForCharacter:(unsigned int)arg1;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 
 @end
 

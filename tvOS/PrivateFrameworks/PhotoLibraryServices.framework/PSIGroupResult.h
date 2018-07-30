@@ -8,44 +8,65 @@
 
 #import "NSCopying.h"
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, PSIDatabase;
+@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PSIGroupResult : NSObject <NSCopying>
 {
-    PSIDatabase *_idx;
-    PSIDatabase *_heldIdx;
+    id <PSIGroupResultDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_owningContentString;
     NSMutableArray *_assetUUIDs;
+    NSMutableArray *_collectionResults;
+    NSMutableArray *_tripResults;
     _Bool _didFetchOwningContentString;
     float _score;
-    NSArray *_searchTokens;
-    PSIGroupResult *_additionalGroupResult;
+    NSString *_transientToken;
     NSArray *_groups;
-    struct __CFArray *_assetIds;
+    const struct __CFArray *_assetIds;
+    const struct __CFArray *_collectionIds;
+    const struct __CFArray *_tripIds;
 }
 
-@property(nonatomic) __weak PSIDatabase *idx; // @synthesize idx=_idx;
-@property(retain, nonatomic) struct __CFArray *assetIds; // @synthesize assetIds=_assetIds;
+@property(nonatomic) __weak id <PSIGroupResultDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) const struct __CFArray *tripIds; // @synthesize tripIds=_tripIds;
+@property(retain, nonatomic) const struct __CFArray *collectionIds; // @synthesize collectionIds=_collectionIds;
+@property(retain, nonatomic) const struct __CFArray *assetIds; // @synthesize assetIds=_assetIds;
 @property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(nonatomic) float score; // @synthesize score=_score;
-@property(retain, nonatomic) PSIGroupResult *additionalGroupResult; // @synthesize additionalGroupResult=_additionalGroupResult;
-@property(retain, nonatomic) NSArray *searchTokens; // @synthesize searchTokens=_searchTokens;
+@property(copy, nonatomic) NSString *transientToken; // @synthesize transientToken=_transientToken;
 - (void).cxx_destruct;
+- (void)resolveObjectsWithAssetCache:(id)arg1 collectionCache:(id)arg2 tripCache:(id)arg3;
+- (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 tripResults:(_Bool)arg3 assetCountLimit:(unsigned long long)arg4 collectionCountLimit:(unsigned long long)arg5 tripCountLimit:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 tripResults:(_Bool)arg3 count:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchNextAssetUUIDs:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)_prepareForFetchWithCount:(unsigned long long)arg1 outRange:(struct _NSRange *)arg2 outFetchOwningContentString:(_Bool *)arg3;
+- (id)_prepareForFetchWithAssetCountLimit:(unsigned long long)arg1 collectionCountLimit:(unsigned long long)arg2 tripCountLimit:(unsigned long long)arg3 outAssetRange:(struct _NSRange *)arg4 outCollectionRange:(struct _NSRange *)arg5 outTripRange:(struct _NSRange *)arg6 outFetchOwningContentString:(_Bool *)arg7;
+@property(readonly) NSArray *tripResults;
+@property(readonly) NSArray *collectionResults;
 @property(readonly) NSArray *assetUUIDs;
 @property(readonly) NSString *owningContentString;
+- (id)dateFilterGroupSnapshot;
+- (id)searchTextGroupSnapshot;
+- (_Bool)isMatchedByIdentifierAtIndex:(long long)arg1;
+- (_Bool)isContentStringTextSearchableAtIndex:(long long)arg1;
 - (long long)categoryAtIndex:(long long)arg1;
-- (unsigned long long)tokenCount;
-@property(readonly, retain, nonatomic) NSArray *matchRanges;
+- (id)contentStringAtIndex:(long long)arg1;
+- (id)matchRangesAtIndex:(long long)arg1;
+- (id)tokensAtIndex:(long long)arg1;
+- (unsigned long long)groupCount;
+@property(readonly, retain, nonatomic) NSArray *groupsMatchRanges;
+@property(readonly, retain, nonatomic) NSArray *lookupIdentifiers;
 @property(readonly, retain, nonatomic) NSArray *contentStrings;
+@property(readonly, retain, nonatomic) NSArray *groupsSearchTokens;
 @property(readonly, nonatomic) unsigned long long matchCount;
+@property(readonly, nonatomic) unsigned long long tripMatchCount;
+@property(readonly, nonatomic) unsigned long long collectionMatchCount;
+@property(readonly, nonatomic) unsigned long long assetMatchCount;
 - (id)unitTestDescription;
+- (id)debugDescription;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithQueue:(id)arg1;
 
 @end
 

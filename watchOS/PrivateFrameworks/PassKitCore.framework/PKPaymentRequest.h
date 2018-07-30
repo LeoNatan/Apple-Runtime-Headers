@@ -57,6 +57,7 @@
 + (id)paymentBillingAddressInvalidErrorWithKey:(id)arg1 localizedDescription:(id)arg2;
 + (id)paymentShippingAddressInvalidErrorWithKey:(id)arg1 localizedDescription:(id)arg2;
 + (id)paymentContactInvalidErrorWithContactField:(id)arg1 localizedDescription:(id)arg2;
++ (id)errorFromDictionary:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (int)version;
 + (id)availableNetworks;

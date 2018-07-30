@@ -6,7 +6,6 @@
 
 #import <OfficeImport/WBOfficeArt.h>
 
-__attribute__((visibility("hidden")))
 @interface WBPicture : WBOfficeArt
 {
 }

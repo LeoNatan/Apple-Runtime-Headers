@@ -6,13 +6,14 @@
 
 #import "NSViewController.h"
 
+#import "NCMaterialDelegate.h"
 #import "NCRemotePlugInClient.h"
 #import "NCRemoteViewServiceHostProtocol.h"
 #import "NSRemoteViewDelegate.h"
 
 @class CALayer, NCRemotePlugIn, NCRemoteViewHostRemoteView, NSDictionary, NSLayoutConstraint, NSMutableArray, NSObject<OS_dispatch_source>, NSString, NSView;
 
-@interface NCRemoteViewHostViewController : NSViewController <NCRemotePlugInClient, NSRemoteViewDelegate, NCRemoteViewServiceHostProtocol>
+@interface NCRemoteViewHostViewController : NSViewController <NCRemotePlugInClient, NSRemoteViewDelegate, NCMaterialDelegate, NCRemoteViewServiceHostProtocol>
 {
     unsigned long long _lastSizeUpdateNumber;
     NSLayoutConstraint *_contentHeightConstraint;
@@ -45,6 +46,8 @@
 - (void)_installSnapshot:(id)arg1;
 - (void)_loadSnapshot;
 - (void)_remotePreferredSizeChanged:(struct CGSize)arg1;
+- (void)appearanceChanged:(_Bool)arg1;
+- (void)materialChanged:(unsigned char)arg1;
 - (void)remoteViewHostRequestSizeChange:(struct CGSize)arg1 updateNumber:(unsigned long long)arg2 fencePort:(id)arg3;
 - (void)remoteViewHostSnapshotData:(id)arg1 scale:(double)arg2 result:(unsigned long long)arg3;
 - (BOOL)remotePlugInDidDie:(id)arg1;

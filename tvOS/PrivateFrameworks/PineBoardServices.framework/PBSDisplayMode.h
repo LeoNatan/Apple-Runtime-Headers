@@ -58,7 +58,7 @@
 @property(readonly, nonatomic) _Bool isVirtual;
 @property(readonly, nonatomic) struct CGSize pointSize;
 - (long long)aspectRatio;
-@property(readonly, nonatomic, getter=isAboveBandwithThreshold) _Bool aboveBandwithThreshold;
+@property(readonly, nonatomic, getter=isAboveBandwidthThreshold) _Bool aboveBandwithThreshold;
 @property(readonly, nonatomic) _Bool isValid;
 - (id)initWithCADisplayMode:(id)arg1 usePineBoardPolicy:(_Bool)arg2 encodedPromotedModes:(id)arg3;
 - (id)init;

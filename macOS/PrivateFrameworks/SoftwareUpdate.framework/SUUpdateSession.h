@@ -19,6 +19,7 @@
     NSMutableDictionary *_factoredInstallSizeByKey;
     NSMutableDictionary *_downloadDoneBlocksByKey;
     NSMutableDictionary *_completionSemaphoreByKey;
+    NSMutableDictionary *_bridgeOSUpdatePrepareFinishedSemaphoresByKey;
     long long _foregroundTransactions;
     long long _backgroundTransactions;
     NSMutableDictionary *_assertionByTransactionID;
@@ -43,11 +44,13 @@
 - (void)_stopTransactionWithID:(long long)arg1;
 - (BOOL)_startTransactionForForeground:(BOOL)arg1 withProducts:(id)arg2 includingInstall:(BOOL)arg3 outTransactionID:(long long *)arg4;
 - (long long)activeBackgroundTransactions;
+- (id)productKeysInActiveForegroundTransactions;
 - (long long)activeForegroundTransactions;
 - (void)personalizeProducts:(id)arg1 inForeground:(BOOL)arg2;
-- (void)prepareBridgeOSUpdateForProducts:(id)arg1 inForeground:(BOOL)arg2;
 - (BOOL)personalizationRequiredForProducts:(id)arg1;
-- (BOOL)bridgeOSPrepareRequiredForProducts:(id)arg1;
+- (void)prepareBridgeOSUpdateForProduct:(id)arg1 inForeground:(BOOL)arg2;
+- (id)_productWithBridgeOSUpdateToPrepare:(id)arg1;
+- (BOOL)_shouldEnableBridgeOSPreparePhaseDuringDownloadForProducts:(id)arg1;
 - (id)combinedStatusForUpdatesWithProductKeys:(id)arg1 individualStatus:(id *)arg2;
 - (id)statusForUpdateWithProductKey:(id)arg1;
 - (void)fixupStatusForLocalUpdateWithProductKey:(id)arg1;

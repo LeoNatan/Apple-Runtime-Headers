@@ -23,9 +23,9 @@
     struct RetainPtr<_WKRemoteObjectRegistry> _remoteObjectRegistry;
     struct RetainPtr<WKScrollView> _scrollView;
     struct RetainPtr<WKContentView> _contentView;
-    _Bool _overridesMinimumLayoutSize;
-    struct CGSize _minimumLayoutSizeOverride;
-    struct optional<WebCore::FloatSize> _lastSentMinimumLayoutSize;
+    _Bool _overridesViewLayoutSize;
+    struct CGSize _viewLayoutSizeOverride;
+    struct optional<WebCore::FloatSize> _lastSentViewLayoutSize;
     _Bool _overridesMaximumUnobscuredSize;
     struct CGSize _maximumUnobscuredSizeOverride;
     struct optional<WebCore::FloatSize> _lastSentMaximumUnobscuredSize;
@@ -51,8 +51,9 @@
     _Bool _needsResetViewStateAfterCommitLoadForMainFrame;
     unsigned long long _firstPaintAfterCommitLoadTransactionID;
     int _dynamicViewportUpdateMode;
+    unsigned long long _currentDynamicViewportSizeUpdateID;
     struct CATransform3D _resizeAnimationTransformAdjustments;
-    struct optional<unsigned long long> _resizeAnimationTransformTransactionID;
+    float _animatedResizeOriginalContentWidth;
     struct RetainPtr<UIView> _resizeAnimationView;
     float _lastAdjustmentForScroller;
     struct optional<CGRect> _frozenVisibleContentRect;
@@ -74,20 +75,24 @@
     _Bool _currentlyAdjustingScrollViewInsetsForKeyboard;
     _Bool _delayUpdateVisibleContentRects;
     _Bool _hadDelayedUpdateVisibleContentRects;
-    int _activeAnimatedResizeCount;
-    struct Vector<WTF::Function<void ()>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _snapshotsDeferredDuringResize;
+    _Bool _waitingForEndAnimatedResize;
+    _Bool _waitingForCommitAfterAnimatedResize;
+    struct Vector<WTF::Function<void ()>, 0, WTF::CrashOnOverflow, 16> _callbacksDeferredDuringResize;
     struct RetainPtr<NSMutableArray> _stableStatePresentationUpdateCallbacks;
     struct RetainPtr<WKPasswordView> _passwordView;
     _Bool _hasScheduledVisibleRectUpdate;
     _Bool _visibleContentRectUpdateScheduledFromScrollViewInStableState;
-    struct Vector<WTF::BlockPtr<void ()>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _visibleContentRectUpdateCallbacks;
+    struct Vector<WTF::BlockPtr<void ()>, 0, WTF::CrashOnOverflow, 16> _visibleContentRectUpdateCallbacks;
     unsigned int _dragInteractionPolicy;
+    struct MonotonicTime _timeOfRequestForVisibleContentRectUpdate;
+    struct MonotonicTime _timeOfLastVisibleContentRectUpdate;
 }
 
 + (_Bool)handlesURLScheme:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)urlSchemeHandlerForURLScheme:(id)arg1;
+@property(readonly, nonatomic) _Bool _haveSetObscuredInsets;
 - (void)_setAvoidsUnsafeArea:(_Bool)arg1;
 - (void)_updateScrollViewInsetAdjustmentBehavior;
 @property(readonly, nonatomic) WKPasswordView *_passwordView;
@@ -111,6 +116,9 @@
 - (void)_didSameDocumentNavigationForMainFrame:(int)arg1;
 - (void)_didFailLoadForMainFrame;
 - (void)_didFinishLoadForMainFrame;
+- (void)_didCompleteAnimatedResize;
+- (void)_cancelAnimatedResize;
+- (void)_didStartProvisionalLoadForMainFrame;
 - (void)_updateVisibleContentRects;
 - (struct CGRect)_contentBoundsExtendedForRubberbandingWithScale:(float)arg1;
 - (void)_scheduleVisibleContentRectUpdateAfterScrollInView:(id)arg1;
@@ -122,7 +130,8 @@
 - (void)_frameOrBoundsChanged;
 - (void)_dispatchSetDeviceOrientation:(int)arg1;
 - (void)_dispatchSetMaximumUnobscuredSize:(struct FloatSize)arg1;
-- (void)_dispatchSetMinimumLayoutSize:(struct FloatSize)arg1;
+- (void)_dispatchSetViewLayoutSize:(struct FloatSize)arg1;
+- (struct FloatSize)activeViewLayoutSize:(const struct CGRect *)arg1;
 - (struct UIEdgeInsets)_scrollViewSystemContentInset;
 - (void)_enclosingScrollerScrollingEnded:(id)arg1;
 - (void)_didScroll;
@@ -162,16 +171,20 @@
 - (void)_restorePageStateToUnobscuredCenter:(optional_c1d3839d)arg1 scale:(double)arg2;
 - (void)_restorePageScrollPosition:(optional_c1d3839d)arg1 scrollOrigin:(struct FloatPoint)arg2 previousObscuredInset:(RectEdges_0629eaa8)arg3 scale:(double)arg4;
 - (void)_couldNotRestorePageState;
-- (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint)arg2 nextValidLayerTreeTransactionID:(unsigned long long)arg3;
 - (void)_layerTreeCommitComplete;
 - (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction *)arg1;
+- (void)_didCommitLayerTreeDuringAnimatedResize:(const struct RemoteLayerTreeTransaction *)arg1;
 - (struct FloatRect)visibleRectInViewCoordinates;
 - (void)_didCommitLoadForMainFrame;
+- (void)_didRelaunchProcess;
 - (void)_processDidExit;
 @property(readonly, nonatomic) struct UIEdgeInsets _computedUnobscuredSafeAreaInset;
-@property(readonly, nonatomic) struct UIEdgeInsets _computedContentInset;
+- (struct UIEdgeInsets)_computedContentInset;
+@property(readonly, nonatomic) struct UIEdgeInsets _computedObscuredInset;
 - (unsigned int)_effectiveObscuredInsetEdgesAffectedBySafeArea;
-- (struct CGPoint)_adjustedContentOffset:(struct CGPoint)arg1;
+- (struct CGPoint)_contentOffsetAdjustedForObscuredInset:(struct CGPoint)arg1;
+- (struct CGPoint)_initialContentOffsetForScrollView;
+- (void)_videoControlsManagerDidChange;
 - (void)_updateScrollViewBackground;
 - (void)_didInvokeUIScrollViewDelegateCallback;
 - (void)_willInvokeUIScrollViewDelegateCallback;
@@ -194,7 +207,6 @@
 - (void)_transliterateChinese:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)_share:(id)arg1;
-- (void)_reanalyze:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
@@ -212,7 +224,7 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 @property(nonatomic, setter=_setDragInteractionPolicy:) unsigned int _dragInteractionPolicy;
 - (void)_didRemoveAttachment:(id)arg1;
-- (void)_didInsertAttachment:(id)arg1;
+- (void)_didInsertAttachment:(id)arg1 withSource:(id)arg2;
 - (void)_didChangeEditorState;
 @property(nonatomic, setter=_setViewportSizeForCSSViewportUnits:) struct CGSize _viewportSizeForCSSViewportUnits;
 @property(nonatomic) _Bool allowsLinkPreview;
@@ -263,7 +275,6 @@
 - (id)_viewForFindUI;
 - (void)_clearOverrideLayoutParameters;
 - (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize)arg1 maximumUnobscuredSizeOverride:(struct CGSize)arg2;
-- (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize)arg1 minimumLayoutSizeForMinimalUI:(struct CGSize)arg2 maximumUnobscuredSizeOverride:(struct CGSize)arg3;
 - (void)_snapshotRect:(struct CGRect)arg1 intoImageOfWidth:(float)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_setOverlaidAccessoryViewsInset:(struct CGSize)arg1;
 - (void)_resizeWhileHidingContentWithUpdates:(CDUnknownBlockType)arg1;
@@ -281,7 +292,7 @@
 @property(nonatomic, setter=_setUnobscuredSafeAreaInsets:) struct UIEdgeInsets _unobscuredSafeAreaInsets;
 @property(nonatomic, setter=_setObscuredInsetEdgesAffectedBySafeArea:) unsigned int _obscuredInsetEdgesAffectedBySafeArea;
 @property(nonatomic, setter=_setObscuredInsets:) struct UIEdgeInsets _obscuredInsets;
-- (void)_setMinimumLayoutSizeOverride:(struct CGSize)arg1;
+- (void)_setViewLayoutSizeOverride:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize _minimumLayoutSizeOverride;
 - (void)_setPageMuted:(unsigned int)arg1;
 @property(nonatomic, setter=_setMediaCaptureEnabled:) _Bool _mediaCaptureEnabled;
@@ -360,15 +371,20 @@
 @property(readonly, nonatomic) WKBrowsingContextHandle *_handle;
 @property(readonly, nonatomic) id _remoteObjectRegistry;
 @property(nonatomic, getter=_isEditable, setter=_setEditable:) _Bool _editable;
+- (void)_denyNextUserMediaRequest;
+- (void)_setDefersLoadingForTesting:(_Bool)arg1;
 - (_Bool)_completeBackSwipeForTesting;
 - (_Bool)_beginBackSwipeForTesting;
+- (void)_simulateTextEntered:(id)arg1;
 - (void)_simulateLongPressActionAtLocation:(struct CGPoint)arg1;
 @property(readonly, nonatomic) struct CGRect _dragCaretRect;
 - (void)_executeEditCommand:(id)arg1 argument:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_disableBackForwardSnapshotVolatilityForTesting;
 - (void)_doAfterNextVisibleContentRectUpdate:(CDUnknownBlockType)arg1;
 - (void)_doAfterNextPresentationUpdateWithoutWaitingForPainting:(CDUnknownBlockType)arg1;
+- (void)_doAfterNextPresentationUpdateWithoutWaitingForAnimatedResizeForTesting:(CDUnknownBlockType)arg1;
 - (void)_doAfterNextPresentationUpdate:(CDUnknownBlockType)arg1;
+- (void)_internalDoAfterNextPresentationUpdate:(CDUnknownBlockType)arg1 withoutWaitingForPainting:(_Bool)arg2 withoutWaitingForAnimatedResize:(_Bool)arg3;
 - (float)_pageScale;
 - (void)_setPageScale:(float)arg1 withOrigin:(struct CGPoint)arg2;
 - (void)_requestActiveNowPlayingSessionInfo:(CDUnknownBlockType)arg1;
@@ -384,7 +400,11 @@
 - (void)_didShowForcePressPreview;
 - (void)didEndFormControlInteraction;
 - (void)didStartFormControlInteraction;
+@property(readonly, nonatomic) NSString *formInputLabel;
+@property(readonly, nonatomic) NSString *textContentTypeForTesting;
+@property(readonly, nonatomic) NSString *selectFormPopoverTitle;
 - (void)selectFormAccessoryPickerRow:(int)arg1;
+- (void)setTimePickerValueToHour:(int)arg1 minute:(int)arg2;
 - (void)dismissFormAccessoryView;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)keyboardAccessoryBarPrevious;
@@ -392,6 +412,7 @@
 - (struct CGPoint)_convertPointFromViewToContents:(struct CGPoint)arg1;
 - (struct CGPoint)_convertPointFromContentsToView:(struct CGPoint)arg1;
 @property(readonly, nonatomic) struct CGRect _contentVisibleRect;
+- (id)_fullScreenPlaceholderView;
 - (void)_accessibilityClearSelection;
 - (void)_accessibilityStoreSelection;
 - (void)_accessibilityRetrieveRectsAtSelectionOffset:(int)arg1 withText:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -402,7 +423,6 @@
 @property(readonly, copy, nonatomic) NSArray *certificateChain;
 - (void)_setFormDelegate:(id)arg1;
 - (id)_formDelegate;
-- (void)_wheelChangedWithEvent:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

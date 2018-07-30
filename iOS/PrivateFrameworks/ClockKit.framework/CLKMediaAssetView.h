@@ -8,7 +8,7 @@
 
 #import "CLKVideoPlayerViewDelegate.h"
 
-@class AVSynchronizedLayer, CALayer, CLKMediaAsset, CLKVideoPlayerView, NSString, UIImageView;
+@class AVSynchronizedLayer, CALayer, CLKDevice, CLKMediaAsset, CLKVideoPlayerView, NSString, UIImageView;
 
 @interface CLKMediaAssetView : UIView <CLKVideoPlayerViewDelegate>
 {
@@ -23,17 +23,19 @@
     CALayer *_posterLayer;
     long long _preparedForOperation;
     long long _transitionOperation;
+    CLKDevice *_device;
     id <CLKMediaAssetViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <CLKMediaAssetViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) CLKMediaAsset *mediaAsset; // @synthesize mediaAsset=_mediaAsset;
 - (void).cxx_destruct;
 - (void)fadeFromCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fadeToCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hideCurtainView;
 - (void)showCurtainView;
-- (void)videoPlayerViewDidFinishPlayingVideoToEnd:(id)arg1;
+- (void)videoPlayerViewDidBeginPlayingQueuedVideo:(id)arg1;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
 - (void)_reset;
@@ -56,7 +58,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

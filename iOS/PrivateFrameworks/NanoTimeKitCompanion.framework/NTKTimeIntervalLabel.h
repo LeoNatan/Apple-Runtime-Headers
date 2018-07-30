@@ -6,10 +6,11 @@
 
 #import "UIView.h"
 
-@class CLKFont, NSMutableArray, NSMutableDictionary, NSString, UIColor, UILabel;
+@class CLKDevice, CLKFont, NSMutableArray, NSMutableDictionary, NSString, UIColor, UILabel;
 
 @interface NTKTimeIntervalLabel : UIView
 {
+    CLKDevice *_device;
     double _time;
     double _currentTextTime;
     _Bool _showSubSeconds;
@@ -60,10 +61,10 @@
 @property(readonly, nonatomic) double actualWidth;
 - (void)calculateMetrics;
 - (id)_localImageForDigit:(unsigned long long)arg1;
-- (id)initWithMonospacedFontOfSize:(double)arg1;
-- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3;
+- (id)initWithMonospacedFontOfSize:(double)arg1 forDevice:(id)arg2;
+- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3 forDevice:(id)arg4;
 - (void)dealloc;
-- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3 signed:(_Bool)arg4;
+- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3 signed:(_Bool)arg4 forDevice:(id)arg5;
 
 @end
 

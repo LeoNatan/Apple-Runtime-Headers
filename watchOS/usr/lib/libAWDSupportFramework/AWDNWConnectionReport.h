@@ -8,6 +8,8 @@
 
 #import "NSCopying.h"
 
+@class NSMutableArray, NSString;
+
 @interface AWDNWConnectionReport : PBCodable <NSCopying>
 {
     unsigned long long _bestRTT;
@@ -39,18 +41,22 @@
     unsigned long long _proxyMilliseconds;
     unsigned long long _rTTvariance;
     unsigned long long _resolutionMilliseconds;
+    unsigned long long _secondsSinceInterfaceChange;
     unsigned long long _smoothedRTT;
     unsigned long long _synRetransmissionCount;
     unsigned long long _timestamp;
     unsigned long long _tlsMilliseconds;
     unsigned long long _trafficClass;
+    NSMutableArray *_activities;
     int _appleApp;
     int _appleHost;
     int _connectedAddressFamily;
     int _connectedInterfaceType;
     int _connectionMode;
+    NSString *_connectionUUID;
     int _failureReason;
     int _firstAddressFamily;
+    NSString *_processName;
     int _stackLevel;
     int _tlsVersion;
     int _usedProxyType;
@@ -59,6 +65,7 @@
     _Bool _firstParty;
     _Bool _ipv4Available;
     _Bool _ipv6Available;
+    _Bool _isDaemon;
     _Bool _multipathConfigured;
     _Bool _resolutionRequired;
     _Bool _synthesizedExtraIPv6Address;
@@ -101,6 +108,7 @@
         unsigned int proxyMilliseconds:1;
         unsigned int rTTvariance:1;
         unsigned int resolutionMilliseconds:1;
+        unsigned int secondsSinceInterfaceChange:1;
         unsigned int smoothedRTT:1;
         unsigned int synRetransmissionCount:1;
         unsigned int timestamp:1;
@@ -121,6 +129,7 @@
         unsigned int firstParty:1;
         unsigned int ipv4Available:1;
         unsigned int ipv6Available:1;
+        unsigned int isDaemon:1;
         unsigned int multipathConfigured:1;
         unsigned int resolutionRequired:1;
         unsigned int synthesizedExtraIPv6Address:1;
@@ -136,6 +145,12 @@
     } _has;
 }
 
++ (Class)activitiesType;
+@property(retain, nonatomic) NSString *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
+@property(retain, nonatomic) NSMutableArray *activities; // @synthesize activities=_activities;
+@property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
+@property(nonatomic) _Bool isDaemon; // @synthesize isDaemon=_isDaemon;
+@property(nonatomic) unsigned long long secondsSinceInterfaceChange; // @synthesize secondsSinceInterfaceChange=_secondsSinceInterfaceChange;
 @property(nonatomic) unsigned long long multipathBytesOutInitial; // @synthesize multipathBytesOutInitial=_multipathBytesOutInitial;
 @property(nonatomic) unsigned long long multipathBytesInInitial; // @synthesize multipathBytesInInitial=_multipathBytesInInitial;
 @property(nonatomic) unsigned long long multipathBytesOutWiFi; // @synthesize multipathBytesOutWiFi=_multipathBytesOutWiFi;
@@ -196,6 +211,14 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasConnectionUUID;
+- (id)activitiesAtIndex:(unsigned int)arg1;
+- (unsigned int)activitiesCount;
+- (void)addActivities:(id)arg1;
+- (void)clearActivities;
+@property(readonly, nonatomic) _Bool hasProcessName;
+@property(nonatomic) _Bool hasIsDaemon;
+@property(nonatomic) _Bool hasSecondsSinceInterfaceChange;
 @property(nonatomic) _Bool hasMultipathBytesOutInitial;
 @property(nonatomic) _Bool hasMultipathBytesInInitial;
 @property(nonatomic) _Bool hasMultipathBytesOutWiFi;
@@ -287,6 +310,7 @@
 @property(nonatomic) _Bool hasSystemProxyConfigured;
 @property(nonatomic) _Bool hasTriggeredPath;
 @property(nonatomic) _Bool hasTimestamp;
+- (void)dealloc;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_nw_endpoint>, NSObject<OS_nw_interface>, NSObject<nw_listener_inbox_delegate>;
+@class NSObject<OS_nw_endpoint>, NSObject<OS_nw_interface>, NSObject<OS_nw_parameters>, NSObject<nw_listener_inbox_delegate>;
 
 __attribute__((visibility("hidden")))
 @interface nw_listener_inbox : NSObject
@@ -14,12 +14,13 @@ __attribute__((visibility("hidden")))
     NSObject<nw_listener_inbox_delegate> *_delegate;
     NSObject<OS_nw_endpoint> *_local_endpoint;
     NSObject<OS_nw_interface> *_interface;
+    NSObject<OS_nw_parameters> *_parameters;
 }
 
 @property(readonly, nonatomic) NSObject<OS_nw_interface> *interface; // @synthesize interface=_interface;
 @property(readonly, nonatomic) NSObject<OS_nw_endpoint> *local_endpoint; // @synthesize local_endpoint=_local_endpoint;
 - (void).cxx_destruct;
-- (void)cancel;
+- (BOOL)cancel;
 - (id)initWithDelegate:(id)arg1;
 
 @end

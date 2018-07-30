@@ -13,14 +13,17 @@
     ArouetRecognitionManager *_recognitionManager;
     NSDate *_lastPrewarmDate;
     NSString *_language;
+    NSString *_textContentType;
 }
 
+@property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 - (void).cxx_destruct;
 - (void)_loadRecognitionManagerIfNeeded;
 - (void)prewarmIfNeeded;
 - (void)prewarm;
 - (id)initWithLanguage:(id)arg1;
+- (id)initWithLanguage:(id)arg1 textContentType:(id)arg2;
 @property(readonly, nonatomic) ArouetRecognitionManager *recognitionManager;
 
 @end

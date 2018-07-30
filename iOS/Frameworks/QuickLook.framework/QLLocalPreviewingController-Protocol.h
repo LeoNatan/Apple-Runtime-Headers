@@ -21,6 +21,7 @@
 - (void)previewIsAppearingWithProgress:(double)arg1;
 - (void)previewWillAppear:(_Bool)arg1;
 - (void)previewBecameFullScreen:(_Bool)arg1 animated:(_Bool)arg2;
+- (_Bool)canShowNavBar;
 - (_Bool)canShowToolBar;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;

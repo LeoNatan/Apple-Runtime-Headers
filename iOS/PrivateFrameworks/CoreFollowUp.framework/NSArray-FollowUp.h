@@ -7,6 +7,7 @@
 #import "NSArray.h"
 
 @interface NSArray (FollowUp)
+- (id)fl_multiMap:(CDUnknownBlockType)arg1;
 - (id)fl_map:(CDUnknownBlockType)arg1;
 @end
 

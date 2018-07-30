@@ -19,6 +19,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)triggerWithDate:(id)arg1 timeZone:(id)arg2 repeatInterval:(unsigned long long)arg3 repeatCalendar:(id)arg4;
 + (id)triggerWithDate:(id)arg1 timeZone:(id)arg2 remainingRepeatCount:(int)arg3 totalRepeatCount:(int)arg4 repeatInterval:(unsigned long long)arg5 repeatCalendar:(id)arg6;
 @property(nonatomic) unsigned long long repeatInterval; // @synthesize repeatInterval=_repeatInterval;
 @property(nonatomic) int totalRepeatCount; // @synthesize totalRepeatCount=_totalRepeatCount;

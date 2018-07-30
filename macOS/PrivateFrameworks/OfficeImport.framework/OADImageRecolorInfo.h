@@ -8,19 +8,18 @@
 
 @class NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface OADImageRecolorInfo : NSObject
 {
     NSDictionary *mColors;
     NSDictionary *mFills;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)fills;
 - (id)colors;
-- (void)dealloc;
 - (id)initWithColors:(id)arg1 fills:(id)arg2;
 
 @end

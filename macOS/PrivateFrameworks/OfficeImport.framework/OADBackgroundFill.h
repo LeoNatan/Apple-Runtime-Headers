@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADFill.h>
 
-__attribute__((visibility("hidden")))
 @interface OADBackgroundFill : OADFill
 {
 }

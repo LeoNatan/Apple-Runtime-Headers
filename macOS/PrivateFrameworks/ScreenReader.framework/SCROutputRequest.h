@@ -54,7 +54,7 @@
 - (id)nonInterruptibleQueueIdentifiers;
 - (void)setInterruptsOutputRequests:(BOOL)arg1 excluding:(id)arg2;
 - (void)setInterruptsOutputRequests:(BOOL)arg1;
-- (void)addVariant:(int)arg1 object:(id)arg2;
+- (void)addVariant:(long long)arg1 object:(id)arg2;
 - (void)addNotificationEventWithTag:(int)arg1 eventInfo:(id)arg2;
 - (void)addNotificationEventWithTag:(int)arg1;
 - (void)addRepeatingSoundWithIdentifier:(id)arg1 category:(id)arg2 interval:(double)arg3;

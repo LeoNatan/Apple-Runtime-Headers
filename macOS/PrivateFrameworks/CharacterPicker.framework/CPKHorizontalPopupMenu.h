@@ -6,13 +6,16 @@
 
 #import "NSPanel.h"
 
+__attribute__((visibility("hidden")))
 @interface CPKHorizontalPopupMenu : NSPanel
 {
-    long long _selectedIndex;
     BOOL _doubleClicked;
+    long long _selectedIndex;
+    CDUnknownBlockType _drawingBlock;
 }
 
-+ (id)menuWithHorizontalItems:(id)arg1 cellSize:(struct CGSize)arg2;
++ (id)menuWithHorizontalItems:(id)arg1 cellSize:(struct CGSize)arg2 drawingBlock:(CDUnknownBlockType)arg3;
+@property CDUnknownBlockType drawingBlock; // @synthesize drawingBlock=_drawingBlock;
 @property(readonly) BOOL doubleClicked; // @synthesize doubleClicked=_doubleClicked;
 @property(readonly) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

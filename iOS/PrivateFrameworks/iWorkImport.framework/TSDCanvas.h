@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
     _Bool mAllowsFontSubpixelQuantization;
     _Bool mSuppressesShadowsAndReflections;
     _Bool mSuppressesShapeText;
-    _Bool mShouldRenderAudioObjectsInNonInteractiveCanvas;
+    _Bool mShouldRenderInvisibleContentForNonInteractiveCanvas;
     double i_viewScaleForAudioObjectsInNonInteractiveCanvas;
 }
 
@@ -52,7 +52,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double viewScale; // @synthesize viewScale=mViewScale;
 @property(nonatomic) struct CGSize unscaledSize; // @synthesize unscaledSize=mUnscaledSize;
 @property(nonatomic) double i_viewScaleForAudioObjectsInNonInteractiveCanvas; // @synthesize i_viewScaleForAudioObjectsInNonInteractiveCanvas;
-@property(nonatomic) _Bool i_shouldRenderAudioObjectsInNonInteractiveCanvas; // @synthesize i_shouldRenderAudioObjectsInNonInteractiveCanvas=mShouldRenderAudioObjectsInNonInteractiveCanvas;
+@property(nonatomic) _Bool shouldRenderInvisibleContentForNonInteractiveCanvas; // @synthesize shouldRenderInvisibleContentForNonInteractiveCanvas=mShouldRenderInvisibleContentForNonInteractiveCanvas;
 @property(nonatomic) _Bool suppressesShapeText; // @synthesize suppressesShapeText=mSuppressesShapeText;
 @property(nonatomic) _Bool suppressesShadowsAndReflections; // @synthesize suppressesShadowsAndReflections=mSuppressesShadowsAndReflections;
 @property(nonatomic) _Bool allowsFontSubpixelQuantization; // @synthesize allowsFontSubpixelQuantization=mAllowsFontSubpixelQuantization;

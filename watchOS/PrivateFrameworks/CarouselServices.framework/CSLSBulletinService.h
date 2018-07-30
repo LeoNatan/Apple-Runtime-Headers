@@ -19,7 +19,7 @@
 - (void)_disconnect;
 - (void)_performServerQuery:(CDUnknownBlockType)arg1;
 - (void)getBulletinSettings:(CDUnknownBlockType)arg1;
-- (void)enableNotifications:(_Bool)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)setNotificationsLevel:(int)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeSectionWithSectionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearAllBulletinsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)clearBulletinWithSectionID:(id)arg1 publisherMatchID:(id)arg2 feed:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;

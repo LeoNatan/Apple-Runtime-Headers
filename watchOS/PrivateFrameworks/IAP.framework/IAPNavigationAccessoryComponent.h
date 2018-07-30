@@ -11,6 +11,8 @@
 @interface IAPNavigationAccessoryComponent : NSObject
 {
     _Bool _isEnabled;
+    _Bool _requestSourceName;
+    _Bool _requestSourceSupportsRouteGuidance;
     _Bool __enabledModified;
     unsigned int _identifier;
     NSString *_name;
@@ -22,6 +24,8 @@
 }
 
 @property _Bool _enabledModified; // @synthesize _enabledModified=__enabledModified;
+@property _Bool requestSourceSupportsRouteGuidance; // @synthesize requestSourceSupportsRouteGuidance=_requestSourceSupportsRouteGuidance;
+@property _Bool requestSourceName; // @synthesize requestSourceName=_requestSourceName;
 @property unsigned int maxCapacity_GuidanceManeuver; // @synthesize maxCapacity_GuidanceManeuver=_maxCapacity_GuidanceManeuver;
 @property unsigned int maxLength_ManeuverDescription; // @synthesize maxLength_ManeuverDescription=_maxLength_ManeuverDescription;
 @property unsigned int maxLength_PostManeuverRoadName; // @synthesize maxLength_PostManeuverRoadName=_maxLength_PostManeuverRoadName;

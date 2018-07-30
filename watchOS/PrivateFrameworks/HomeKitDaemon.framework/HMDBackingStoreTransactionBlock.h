@@ -35,6 +35,7 @@
 - (void)runWithoutSave:(CDUnknownBlockType)arg1;
 - (void)run;
 - (void)run:(CDUnknownBlockType)arg1;
+- (void)addObjects:(id)arg1;
 - (void)add:(id)arg1 withMessage:(id)arg2;
 - (void)add:(id)arg1;
 - (id)initWithBackingStore:(id)arg1 options:(id)arg2 label:(id)arg3;

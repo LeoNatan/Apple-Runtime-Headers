@@ -12,22 +12,10 @@
 
 @interface _MPCPlayerChangeItemCommand : _MPCPlayerCommand <MPCPlayerChangeItemCommand>
 {
-    _Bool _supportsPreviousItem;
-    _Bool _supportsPreviousSection;
-    _Bool _supportsPreviousChapter;
-    _Bool _supportsNextItem;
-    _Bool _supportsNextSection;
-    _Bool _supportsNextChapter;
-    _Bool _supportsJumpToItem;
+    unsigned long long _changeItemSupport;
 }
 
-@property(nonatomic) _Bool supportsJumpToItem; // @synthesize supportsJumpToItem=_supportsJumpToItem;
-@property(nonatomic) _Bool supportsNextChapter; // @synthesize supportsNextChapter=_supportsNextChapter;
-@property(nonatomic) _Bool supportsNextSection; // @synthesize supportsNextSection=_supportsNextSection;
-@property(nonatomic) _Bool supportsNextItem; // @synthesize supportsNextItem=_supportsNextItem;
-@property(nonatomic) _Bool supportsPreviousChapter; // @synthesize supportsPreviousChapter=_supportsPreviousChapter;
-@property(nonatomic) _Bool supportsPreviousSection; // @synthesize supportsPreviousSection=_supportsPreviousSection;
-@property(nonatomic) _Bool supportsPreviousItem; // @synthesize supportsPreviousItem=_supportsPreviousItem;
+@property(readonly, nonatomic) unsigned long long changeItemSupport; // @synthesize changeItemSupport=_changeItemSupport;
 - (id)changeToItem:(id)arg1;
 - (id)changeToSection:(id)arg1;
 - (id)nextChapter;
@@ -36,6 +24,7 @@
 - (id)previousChapter;
 - (id)previousSection;
 - (id)previousItem;
+- (id)initWithResponse:(id)arg1 changeItemSupport:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

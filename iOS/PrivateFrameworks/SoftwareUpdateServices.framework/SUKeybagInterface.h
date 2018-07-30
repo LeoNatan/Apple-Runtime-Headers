@@ -30,6 +30,7 @@
 - (_Bool)persistKeybagStash;
 - (_Bool)createInstallationKeybagForDescriptor:(id)arg1 withSecret:(id)arg2 forUnattendedInstall:(_Bool)arg3;
 - (int)installationKeybagStateForDescriptor:(id)arg1;
+- (_Bool)hadFirstUnlock;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 @property(readonly, nonatomic) _Bool isPasscodeLocked;

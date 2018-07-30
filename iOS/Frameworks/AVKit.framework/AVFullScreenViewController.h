@@ -10,16 +10,12 @@
 
 @interface AVFullScreenViewController : UIViewController
 {
-    _Bool _canChangeStatusBarHidden;
-    UIView *_presentationBackgroundView;
     id <AVFullScreenViewControllerDelegate> _delegate;
     UIView *_contentView;
 }
 
 @property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
-@property(nonatomic) _Bool canChangeStatusBarHidden; // @synthesize canChangeStatusBarHidden=_canChangeStatusBarHidden;
 @property(nonatomic) __weak id <AVFullScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) UIView *presentationBackgroundView; // @synthesize presentationBackgroundView=_presentationBackgroundView;
 - (void).cxx_destruct;
 - (long long)preferredWhitePointAdaptivityStyle;
 - (_Bool)prefersHomeIndicatorAutoHidden;
@@ -29,12 +25,11 @@
 - (_Bool)modalPresentationCapturesStatusBarAppearance;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
+- (void)viewWillMoveToWindow:(id)arg1;
 - (_Bool)canBecomeFirstResponder;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)keyCommands;
-- (void)fullScreenPresentationWillBegin;
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1 presentingViewController:(id)arg2 sourceView:(id)arg3;
 
 @end
 

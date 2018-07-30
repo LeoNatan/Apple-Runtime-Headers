@@ -8,18 +8,17 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface PBSlideState : NSObject
 {
     NSMutableDictionary *mBuildOrderMap;
     unsigned int mCurrentGroupId;
 }
 
+- (void).cxx_destruct;
 - (unsigned int)generateGroupId;
 - (id)buildOrderMap;
 - (void)addBuild:(id)arg1 order:(unsigned int)arg2;
 - (void)reset;
-- (void)dealloc;
 - (id)init;
 
 @end

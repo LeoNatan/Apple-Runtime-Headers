@@ -8,10 +8,11 @@
 
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString, PPSource, PPTopic;
 
-@interface PPTopicRecord : NSObject <NSCopying, NSMutableCopying>
+@interface PPTopicRecord : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
     PPTopic *_topic;
     PPSource *_source;
@@ -24,6 +25,7 @@
 }
 
 + (id)describeAlgorithm:(unsigned long long)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned long long extractionAssetVersion; // @synthesize extractionAssetVersion=_extractionAssetVersion;
 @property(readonly, nonatomic) NSString *extractionOsBuild; // @synthesize extractionOsBuild=_extractionOsBuild;
 @property(readonly, nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;
@@ -35,6 +37,8 @@
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

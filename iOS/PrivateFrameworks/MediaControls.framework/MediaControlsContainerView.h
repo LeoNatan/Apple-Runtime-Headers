@@ -23,6 +23,7 @@
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateStyle;
 @property(retain, nonatomic) MPCPlayerResponse *response;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

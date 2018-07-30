@@ -8,14 +8,20 @@
 
 #import "NSCopying.h"
 
-@class NSData, NSString;
+@class NSData, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKPaymentInternal : NSObject <NSCopying>
 {
+    NSString *_applicationUsername;
+    NSString *_partnerIdentifier;
+    NSString *_partnerTransactionIdentifier;
     NSString *_productIdentifier;
     long long _quantity;
     NSData *_requestData;
-    NSString *_applicationUsername;
+    NSDictionary *_requestParameters;
+    BOOL _simulatesAskToBuyInSandbox;
+    BOOL _isStoreOriginated;
 }
 
 - (void).cxx_destruct;

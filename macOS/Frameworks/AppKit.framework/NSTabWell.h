@@ -8,6 +8,7 @@
 
 @class NSRulerMarker;
 
+__attribute__((visibility("hidden")))
 @interface NSTabWell : NSView
 {
     NSRulerMarker *_prototype;

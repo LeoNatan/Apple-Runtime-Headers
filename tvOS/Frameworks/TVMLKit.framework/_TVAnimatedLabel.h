@@ -48,10 +48,10 @@
 - (void)_startMarqueeIfNeeded;
 - (_Bool)_shouldCycle;
 - (void)_clearLabelTextContents;
-- (void)_prepareNextMarquee;
-- (void)_nextAttributedString;
-- (id)_imageForText:(_Bool)arg1;
+- (void)_prepareNextMarqueeWithDelay:(double)arg1;
+- (id)_rasterizedTextWithMarquee:(_Bool)arg1;
 - (void)drawTextInRect:(struct CGRect)arg1;
+- (_Bool)_isRTL;
 - (void)stopAndResetScrollWithDuration:(double)arg1;
 - (void)stopAnimatingWithoutResetWithDuration:(double)arg1;
 - (void)stopAnimating;

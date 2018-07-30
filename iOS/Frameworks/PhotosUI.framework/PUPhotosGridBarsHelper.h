@@ -10,7 +10,6 @@
 
 @class NSArray, NSObject<OS_dispatch_queue>, NSString, PUPhotoSelectionManager;
 
-__attribute__((visibility("hidden")))
 @interface PUPhotosGridBarsHelper : NSObject <PUPhotoSelectionManagerChangeObserver>
 {
     _Bool _isPerformingUpdates;

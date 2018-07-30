@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSConditionLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, VMUProcessDescription, VMUTaskMemoryCache;
+@class NSConditionLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, VMUProcessDescription;
 
 @interface VMUSampler : NSObject
 {
@@ -15,13 +15,12 @@
     unsigned int _task;
     _Bool _needTaskPortDealloc;
     _Bool _recordThreadStates;
-    _Bool _taskIs64Bit;
     _Bool _sampling;
     unsigned int _numberOfCopiedBacktraces;
     NSString *_processName;
     VMUProcessDescription *_processDescription;
     struct _CSTypeRef _symbolicator;
-    VMUTaskMemoryCache *_memCache;
+    unsigned int _suspensionToken;
     struct sampling_context_t *_samplingContext;
     NSMapTable *_lastThreadBacktraceMap;
     unsigned int *_previousThreadList;
@@ -53,7 +52,6 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)writeOutput:(id)arg1 append:(_Bool)arg2;
-- (id)createOutput;
 - (id)outputString;
 - (id)stopSamplingAndReturnCallNode;
 - (void)forceStop;
@@ -88,7 +86,7 @@
 - (id)sampleAllThreadsOnceWithFramePointers:(_Bool)arg1;
 - (void)_runSamplingThread;
 - (void)_fixupStacks:(id)arg1;
-- (unsigned long long)recordSampleTo:(id)arg1 beginTime:(double)arg2 endTime:(double)arg3 thread:(unsigned int)arg4 recordFramePointers:(_Bool)arg5;
+- (unsigned long long)recordSampleTo:(id)arg1 beginTime:(double)arg2 endTime:(double)arg3 thread:(unsigned int)arg4 recordFramePointers:(_Bool)arg5 clearMemoryCache:(_Bool)arg6;
 - (void)_checkDispatchThreadLimits;
 - (void)initializeSamplingContextWithOptions:(int)arg1;
 - (void)_makeTimeshare;

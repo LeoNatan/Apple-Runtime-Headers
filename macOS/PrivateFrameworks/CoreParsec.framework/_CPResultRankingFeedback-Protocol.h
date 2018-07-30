@@ -10,15 +10,11 @@
 
 @protocol _CPResultRankingFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasPersonalizationScore;
 @property(nonatomic) double personalizationScore;
-@property(readonly, nonatomic) BOOL hasLocalResultPosition;
 @property(nonatomic) unsigned int localResultPosition;
 @property(copy, nonatomic) NSArray *duplicateResults;
 @property(copy, nonatomic) NSArray *hiddenResults;
-@property(readonly, nonatomic) BOOL hasResult;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

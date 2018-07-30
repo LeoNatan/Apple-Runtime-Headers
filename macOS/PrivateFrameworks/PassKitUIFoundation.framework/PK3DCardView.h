@@ -28,6 +28,7 @@
 - (void)setRollPitch: /* Error: Ran out of types for this method. */;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)renderSceneWithTextures:(id)arg1 shaders:(id)arg2;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

@@ -8,6 +8,7 @@
 
 @class NSString, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface MCItemDetail : NSObject
 {
     _Bool _showCheckmarkView;

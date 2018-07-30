@@ -39,8 +39,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_shouldAutoFlattenLayerTree;
 - (void)sendEvent:(id)arg1;
 - (void)addAuxiliaryView:(id)arg1 alignedTileID:(unsigned long long)arg2;
-- (BOOL)_shouldAutoDecSubLevel;
-- (BOOL)_shouldAutoIncSubLevel;
 - (BOOL)_ignoreForFullScreenTransition;
 - (id)initWithActiveTileID:(unsigned long long)arg1 coverTileID:(unsigned long long)arg2 coveredWindowTileFrame:(struct CGRect)arg3 parentSpaceID:(unsigned long long)arg4 ignoreEvents:(BOOL)arg5 screen:(id)arg6 joinTileID:(unsigned long long)arg7;
 

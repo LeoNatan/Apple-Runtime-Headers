@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSData, NSDictionary, NSMutableDictionary, NSString, VCNetworkAddress;
+@class NSData, NSDictionary, NSMutableDictionary, NSString, VCMediaStreamMultiwayConfig, VCNetworkAddress;
 
 __attribute__((visibility("hidden")))
 @interface VCMediaStreamConfig : NSObject
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     long long _SRTPCipherSuite;
     _Bool _rtpTimeOutEnabled;
     double _rtpTimeOutInterval;
+    unsigned int _cellularUniqueTag;
     _Bool _rtcpEnabled;
     double _rtcpSendInterval;
     long long _SRTCPCipherSuite;
@@ -31,10 +32,10 @@ __attribute__((visibility("hidden")))
     double _rtcpTimeOutInterval;
     unsigned short _rtcpRemotePort;
     _Bool _rateAdaptationEnabled;
-    unsigned int _datagramChannelToken;
+    VCMediaStreamMultiwayConfig *_multiwayConfig;
 }
 
-@property(nonatomic) unsigned int datagramChannelToken; // @synthesize datagramChannelToken=_datagramChannelToken;
+@property(retain, nonatomic) VCMediaStreamMultiwayConfig *multiwayConfig; // @synthesize multiwayConfig=_multiwayConfig;
 @property(nonatomic, getter=isRateAdaptationEnabled) _Bool rateAdaptationEnabled; // @synthesize rateAdaptationEnabled=_rateAdaptationEnabled;
 @property(readonly, nonatomic) NSDictionary *txPayloadMap; // @synthesize txPayloadMap=_txPayloadMap;
 @property(readonly, nonatomic) NSDictionary *rxPayloadMap; // @synthesize rxPayloadMap=_rxPayloadMap;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *receiveMasterKey; // @synthesize receiveMasterKey=_receiveMasterKey;
 @property(retain, nonatomic) NSData *sendMasterKey; // @synthesize sendMasterKey=_sendMasterKey;
 @property(nonatomic) unsigned long long recommendedMTU; // @synthesize recommendedMTU=_recommendedMTU;
+@property(nonatomic) unsigned int cellularUniqueTag; // @synthesize cellularUniqueTag=_cellularUniqueTag;
 @property(nonatomic) double rtcpTimeOutInterval; // @synthesize rtcpTimeOutInterval=_rtcpTimeOutInterval;
 @property(nonatomic) double rtpTimeOutInterval; // @synthesize rtpTimeOutInterval=_rtpTimeOutInterval;
 @property(nonatomic, getter=isRTCPTimeOutEnabled) _Bool rtcpTimeOutEnabled; // @synthesize rtcpTimeOutEnabled=_rtcpTimeOutEnabled;

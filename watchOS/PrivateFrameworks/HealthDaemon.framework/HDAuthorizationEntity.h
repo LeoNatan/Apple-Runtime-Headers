@@ -12,7 +12,8 @@
 
 + (id)propertyForSyncProvenance;
 + (id)uniquedColumns;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
 + (int)protectionClass;
 + (id)_predicateForTypes:(id)arg1;
@@ -23,17 +24,21 @@
 + (void)_addAuthorizationWithRow:(struct HDSQLiteRow *)arg1 toCodableCollection:(id)arg2;
 + (id)_propertiesForCodableAuthorization;
 + (_Bool)_resetAuthorizationStatusesWithPredicate:(id)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (_Bool)_setAuthorizationStatuses:(id)arg1 authorizationRequests:(id)arg2 sourceEntity:(id)arg3 dateModified:(id)arg4 syncProvenance:(long long)arg5 objectAnchor:(long long)arg6 database:(id)arg7 error:(id *)arg8;
-+ (_Bool)_insertAuthorizationWithSourceIdentifier:(long long)arg1 dataTypeCode:(int)arg2 authorizationStatus:(int)arg3 authorizationRequest:(int)arg4 modificationDate:(double)arg5 syncProvenance:(long long)arg6 objectAnchor:(long long)arg7 modificationEpoch:(id)arg8 database:(id)arg9 error:(id *)arg10;
-+ (_Bool)_insertCodableAuthorizations:(id)arg1 sourceEntity:(id)arg2 syncProvenance:(long long)arg3 objectAnchor:(unsigned long long)arg4 database:(id)arg5 error:(id *)arg6;
++ (_Bool)_setAuthorizationStatuses:(id)arg1 authorizationRequests:(id)arg2 authorizationModes:(id)arg3 sourceEntity:(id)arg4 dateModified:(id)arg5 syncProvenance:(long long)arg6 objectAnchor:(long long)arg7 options:(unsigned int)arg8 profile:(id)arg9 database:(id)arg10 error:(id *)arg11;
++ (_Bool)_insertAuthorizationWithSourceIdentifier:(long long)arg1 dataTypeCode:(int)arg2 authorizationStatus:(int)arg3 authorizationRequest:(int)arg4 authorizationMode:(int)arg5 modificationDate:(id)arg6 currentDate:(id)arg7 syncProvenance:(long long)arg8 objectAnchor:(long long)arg9 modificationEpoch:(id)arg10 options:(unsigned int)arg11 database:(id)arg12 error:(id *)arg13;
++ (_Bool)_insertCodableAuthorizations:(id)arg1 sourceEntity:(id)arg2 syncProvenance:(long long)arg3 objectAnchor:(long long)arg4 currentDate:(id)arg5 options:(unsigned int)arg6 database:(id)arg7 error:(id *)arg8;
++ (id)_sourceEntityForCodableSourceAuthorization:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
 + (_Bool)_insertCodableSourceAuthorizations:(id)arg1 overwriteExisting:(_Bool)arg2 syncStore:(id)arg3 profile:(id)arg4 error:(id *)arg5;
 + (_Bool)resetAllAuthorizationStatusesWithProfile:(id)arg1 error:(id *)arg2;
 + (_Bool)resetAuthorizationStatusesForBundleIdentifier:(id)arg1 profile:(id)arg2 error:(id *)arg3;
++ (id)_allSourcesRequestingTypes:(id)arg1 additionalPredicate:(id)arg2 profile:(id)arg3 error:(id *)arg4;
++ (id)allSourcesRequestingTypes:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)authorizationRecordsBySourceForType:(id)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (_Bool)setAuthorizationStatuses:(id)arg1 authorizationRequests:(id)arg2 sourceEntity:(id)arg3 profile:(id)arg4 error:(id *)arg5;
++ (_Bool)setAuthorizationStatuses:(id)arg1 authorizationRequests:(id)arg2 authorizationModes:(id)arg3 sourceEntity:(id)arg4 options:(unsigned int)arg5 profile:(id)arg6 error:(id *)arg7;
 + (id)_maxObjectPersistentIDForProfile:(id)arg1 error:(id *)arg2;
 + (_Bool)setAuthorizationStatuses:(id)arg1 sourceEntity:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)modificationDateForSourceEntity:(id)arg1 type:(id)arg2 profile:(id)arg3 error:(id *)arg4;
++ (id)readAuthorizationStatusesByTypeForBundleIdentifier:(id)arg1 types:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)authorizationRecordsByTypeForBundleIdentifier:(id)arg1 types:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)authorizationStatusesForBundleIdentifier:(id)arg1 types:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 

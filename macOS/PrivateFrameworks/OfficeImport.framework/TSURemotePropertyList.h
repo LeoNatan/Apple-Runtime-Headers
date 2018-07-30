@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface TSURemotePropertyList : NSObject
 {
     NSURL *_remoteURL;
@@ -28,11 +27,15 @@ __attribute__((visibility("hidden")))
 - (double)timeIntervalUntilNextUpdate;
 - (id)validateUserDefaultsDownloadURL:(id)arg1;
 - (void)checkForUpdateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)arrayForKey:(id)arg1;
 - (id)dictionaryForKey:(id)arg1;
 - (id)URLForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)updateIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)processDidResume:(id)arg1;
+- (void)processWillSuspend:(id)arg1;
+- (void)startUpdateTimer;
 - (void)dealloc;
 - (id)initWithRemoteURL:(id)arg1 localURL:(id)arg2;
 - (id)init;

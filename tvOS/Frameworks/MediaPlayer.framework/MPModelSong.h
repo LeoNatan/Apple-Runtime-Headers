@@ -62,6 +62,7 @@
 + (_Bool)storeItemMetadataRequestNeedsPersonalizationForIdentifiers:(id)arg1;
 + (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (id)artworkCatalog;
+- (id)humanDescription;
 - (id)mediaItemPropertyValues;
 - (struct MPLibraryAddStatusObserverConfiguration)libraryAddStatusObserverConfiguration;
 - (long long)libraryRemovalSupportedOptions;

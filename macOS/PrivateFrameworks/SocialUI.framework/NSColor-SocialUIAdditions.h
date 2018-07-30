@@ -7,12 +7,15 @@
 #import "NSColor.h"
 
 @interface NSColor (SocialUIAdditions)
++ (id)progressBarBusinessColor;
++ (id)progressBariMessageColor;
++ (id)progressBarSMSColor;
++ (id)mapViewContainerBorderColor;
 + (id)primaryContrastColorForBusinessChat:(id)arg1;
 + (id)secondaryBrandColorForBusinessChat:(id)arg1;
 + (id)primaryBrandColorForBusinessChat:(id)arg1;
++ (id)colorWithWebColor:(id)arg1;
 + (id)businessToFieldGray;
-+ (id)businessChatGrayAlt;
-+ (id)businessChatGray;
 + (id)iMessageBlue;
 + (id)borderlessControlBlue;
 + (id)messagesTintColor;

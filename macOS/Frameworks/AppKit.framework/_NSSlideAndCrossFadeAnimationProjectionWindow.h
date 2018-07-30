@@ -8,6 +8,7 @@
 
 @class CALayer;
 
+__attribute__((visibility("hidden")))
 @interface _NSSlideAndCrossFadeAnimationProjectionWindow : _NSBorderlessLayerTreeProjectionWindow
 {
     CALayer *beforeLayer;

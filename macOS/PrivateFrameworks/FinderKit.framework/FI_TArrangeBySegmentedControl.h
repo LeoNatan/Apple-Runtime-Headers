@@ -6,18 +6,18 @@
 
 #import "NSSegmentedControl.h"
 
-@class FI_TArrangeByMenuController;
+@class FIArrangeByMenuController;
 
 __attribute__((visibility("hidden")))
 @interface FI_TArrangeBySegmentedControl : NSSegmentedControl
 {
-    struct TNSRef<FI_TArrangeByMenuController *, void> _arrangeByMenuController;
+    struct TNSRef<FIArrangeByMenuController, void> _arrangeByMenuController;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
-@property(retain, nonatomic) FI_TArrangeByMenuController *arrangeByMenuController; // @dynamic arrangeByMenuController;
+@property(retain, nonatomic) FIArrangeByMenuController *arrangeByMenuController; // @dynamic arrangeByMenuController;
 
 @end
 

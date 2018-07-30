@@ -13,11 +13,13 @@ __attribute__((visibility("hidden")))
 {
     _NMUTransportControlButtonTouchHighlightMaskView *_touchHighlightCircularMaskView;
     float _imageScaleForTouchState;
+    float _marginValue;
     id <NMUTransportControlsTouchHighlightProvider> _touchHighlightProvider;
 }
 
 + (id)button;
 @property(nonatomic) __weak id <NMUTransportControlsTouchHighlightProvider> touchHighlightProvider; // @synthesize touchHighlightProvider=_touchHighlightProvider;
+@property(nonatomic) float marginValue; // @synthesize marginValue=_marginValue;
 @property(nonatomic) float imageScaleForTouchState; // @synthesize imageScaleForTouchState=_imageScaleForTouchState;
 - (void).cxx_destruct;
 - (void)_createTouchHighlightViewIfNecessary;

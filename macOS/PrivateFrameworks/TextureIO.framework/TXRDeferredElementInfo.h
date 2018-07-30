@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSObject<OS_dispatch_semaphore>;
 
+__attribute__((visibility("hidden")))
 @interface TXRDeferredElementInfo : NSObject
 {
     NSObject<OS_dispatch_semaphore> *_infoLoaded;

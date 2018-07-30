@@ -17,6 +17,7 @@
 // Remaining properties
 @property(copy, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(retain, nonatomic) _DKEventMO *event; // @dynamic event;
+@property(copy, nonatomic) NSDate *localCreationDate; // @dynamic localCreationDate;
 @property(retain, nonatomic) NSSet *relationObject; // @dynamic relationObject;
 @property(retain, nonatomic) NSSet *relationSubject; // @dynamic relationSubject;
 @property(retain, nonatomic) _DKSourceMO *source; // @dynamic source;

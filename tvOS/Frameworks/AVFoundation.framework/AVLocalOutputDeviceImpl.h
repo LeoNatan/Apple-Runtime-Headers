@@ -10,6 +10,7 @@
 
 @class AVOutputDevice, NSArray, NSData, NSDictionary, NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVLocalOutputDeviceImpl : NSObject <AVOutputDeviceImpl>
 {
     AVOutputDevice *_parentDevice;
@@ -18,6 +19,9 @@
 @property __weak AVOutputDevice *parentOutputDevice; // @synthesize parentOutputDevice=_parentDevice;
 - (void).cxx_destruct;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(readonly, nonatomic) _Bool canFetchMediaDataFromSender;
+@property(readonly, nonatomic) _Bool canPlayEncryptedProgressiveDownloadAssets;
 @property(readonly, nonatomic) _Bool canRelayCommunicationChannel;
 @property(readonly, nonatomic) _Bool canCommunicateWithAllLogicalDeviceMembers;
 @property(readonly, nonatomic) _Bool isLogicalDeviceLeader;

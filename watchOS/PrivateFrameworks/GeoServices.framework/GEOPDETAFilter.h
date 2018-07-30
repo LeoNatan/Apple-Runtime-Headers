@@ -10,6 +10,7 @@
 
 @class GEOAutomobileOptions, GEOTransitOptions, GEOWalkingOptions, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDETAFilter : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

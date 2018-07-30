@@ -30,10 +30,6 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct NSNumber {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     float top;
     float left;

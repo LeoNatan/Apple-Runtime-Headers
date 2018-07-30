@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface NSFileWatcher : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    int _pid;
+    CDStruct_4c969caf _auditToken;
     NSURL *_url;
     CDUnknownBlockType _observer;
     _Bool _isWatching;
@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)watchItem;
 - (void)handleFSEventPath:(id)arg1 flags:(unsigned int)arg2 id:(unsigned long long)arg3;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 forProcessIdentifier:(int)arg2;
+- (id)initWithQueue:(id)arg1 auditToken:(CDStruct_4c969caf)arg2;
 
 @end
 

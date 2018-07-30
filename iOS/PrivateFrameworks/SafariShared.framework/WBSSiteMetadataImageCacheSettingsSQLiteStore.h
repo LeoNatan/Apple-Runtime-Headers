@@ -13,6 +13,7 @@
     WBSSQLiteDatabase *_database;
     _Bool _isClosed;
     NSObject<OS_dispatch_queue> *_databaseQueue;
+    long long _protectionType;
     NSURL *_databaseURL;
 }
 
@@ -45,6 +46,7 @@
 - (void)dealloc;
 - (void)_closeDatabase;
 - (void)close;
+- (id)initWithDatabaseURL:(id)arg1 protectionType:(long long)arg2;
 - (id)initWithDatabaseURL:(id)arg1;
 
 @end

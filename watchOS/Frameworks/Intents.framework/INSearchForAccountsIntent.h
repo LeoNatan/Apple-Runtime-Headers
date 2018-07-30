@@ -31,6 +31,9 @@
 - (void)setAccountNickname:(id)arg1;
 @property(readonly, copy, nonatomic) INSpeakableString *accountNickname;
 - (id)initWithAccountNickname:(id)arg1 accountType:(int)arg2 organizationName:(id)arg3 requestedBalanceType:(int)arg4;
+- (id)_categoryVerb;
+- (int)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

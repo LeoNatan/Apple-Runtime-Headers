@@ -10,6 +10,7 @@
 
 @class GEOAdditionalEnabledMarkets, GEOAutomobileOptions, GEOClientCapabilities, GEOCommonOptions, GEOLocation, GEOPDABClientDatasetMetadata, GEOTFTrafficSnapshot, GEOTransitOptions, GEOWalkingOptions, GEOWaypoint, GEOWaypointTyped, NSData, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOETARequest : PBRequest <NSCopying>
 {
     struct GEOSessionID _sessionID;

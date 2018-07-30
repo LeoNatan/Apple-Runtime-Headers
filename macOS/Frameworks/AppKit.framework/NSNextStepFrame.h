@@ -65,9 +65,10 @@
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
-- (void)_drawTitleStringIn:(struct CGRect)arg1 withColor:(double)arg2;
 - (void)_calcTextRect:(struct CGRect *)arg1;
 - (struct CGRect)titlebarRect;
+- (BOOL)isOpaque;
+- (id)fontSmoothingBackgroundColor;
 - (void)updateLayer;
 - (Class)_classToCheckForWantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;
@@ -103,7 +104,7 @@
 - (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
 - (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
 - (id)opaqueAncestor;
-- (BOOL)isOpaque;
+- (void)backgroundColorChanged:(id)arg1;
 - (void)shapeWindow;
 - (struct CGSRegionObject *)_createWindowOpaqueShape;
 - (struct CGRect)_windowOpaqueRect;

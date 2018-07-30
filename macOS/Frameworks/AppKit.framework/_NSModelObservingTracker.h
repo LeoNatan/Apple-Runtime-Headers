@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSMutableIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface _NSModelObservingTracker : NSObject
 {
     id _modelObserver;

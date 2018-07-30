@@ -6,9 +6,13 @@
 
 #import "PDPassLibraryInAppExportedInterface.h"
 
-@class CLLocation, NSArray, NSString, PKCatalog, PKContact, PKDisplayProfile, PKFieldProperties, PKPass;
+@class CLLocation, NSArray, NSSet, NSString, PKCatalog, PKContact, PKDisplayProfile, PKFieldProperties, PKPass;
 
 @protocol PDPassLibraryExtendedExportedInterface <PDPassLibraryInAppExportedInterface>
+- (void)getDataForBundleResources:(NSSet *)arg1 objectUniqueIdentifier:(NSString *)arg2 handler:(void (^)(NSDictionary *))arg3;
+- (void)spotlightDeleteIndexEntriesForAllPassesWithCompletion:(void (^)(NSError *))arg1;
+- (void)spotlightReindexPassesWithUniqueIDs:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)spotlightReindexAllPassesWithCompletion:(void (^)(NSError *))arg1;
 - (void)isPassbookVisibleWithHandler:(void (^)(_Bool))arg1;
 - (void)isRemovingPassesOfType:(unsigned long long)arg1 handler:(void (^)(_Bool))arg2;
 - (void)enabledValueAddedServicePassesWithHandler:(void (^)(NSArray *))arg1;
@@ -40,7 +44,6 @@
 - (void)getPassesWithUniqueIdentifiers:(NSArray *)arg1 handler:(void (^)(NSArray *))arg2;
 - (void)presentContactlessInterfaceForPassWithUniqueIdentifier:(NSString *)arg1 fromSource:(long long)arg2 handler:(void (^)(_Bool))arg3;
 - (void)presentContactlessInterfaceForDefaultPassFromSource:(long long)arg1 handler:(void (^)(_Bool))arg2;
-- (void)requestContactlessInterfaceSuppressionWithHandler:(void (^)(_Bool))arg1;
 - (void)openWalletUIWithRelevantPass:(NSString *)arg1;
 - (void)openDigitalIssuanceUIForIdentifier:(NSString *)arg1 withCompletion:(void (^)(_Bool))arg2;
 - (void)openPaymentUIWithCompletion:(void (^)(_Bool))arg1;

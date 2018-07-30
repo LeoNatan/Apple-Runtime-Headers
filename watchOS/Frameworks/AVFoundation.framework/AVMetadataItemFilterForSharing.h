@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVMetadataItemFilter.h>
 
+__attribute__((visibility("hidden")))
 @interface AVMetadataItemFilterForSharing : AVMetadataItemFilter
 {
 }

@@ -20,6 +20,7 @@
 @property double initialEstimate; // @synthesize initialEstimate=_initialEstimate;
 @property(retain) OSInstallOptions *options; // @synthesize options=_options;
 @property NSObject *delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)nextProgressPhaseAfterCompletion;
 - (id)packagesDirectory;
 - (id)initWithOptions:(id)arg1;

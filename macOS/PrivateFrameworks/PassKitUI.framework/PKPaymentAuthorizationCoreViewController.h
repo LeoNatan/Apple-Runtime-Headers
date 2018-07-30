@@ -16,7 +16,7 @@
 #import "PKPaymentAuthorizationStateMachineDelegate.h"
 #import "PKPostalAddressEditorViewControllerDelegate.h"
 
-@class NSArray, NSString, PKContactEditorViewController, PKContinuityPaymentService, PKPaymentAuthorizationChildViewController, PKPaymentAuthorizationDataController, PKPaymentAuthorizationDataModel, PKPaymentAuthorizationErrorViewController, PKPaymentAuthorizationLayout, PKPaymentAuthorizationMainViewController, PKPaymentAuthorizationPassphraseEntryViewController, PKPaymentAuthorizationStateMachine, PKPaymentService, PKPaymentWebService, PKPostalAddressEditorViewController;
+@class NSArray, NSString, PKContactEditorViewController, PKContinuityPaymentService, PKInAppPaymentService, PKPaymentAuthorizationChildViewController, PKPaymentAuthorizationDataController, PKPaymentAuthorizationDataModel, PKPaymentAuthorizationErrorViewController, PKPaymentAuthorizationLayout, PKPaymentAuthorizationMainViewController, PKPaymentAuthorizationPassphraseEntryViewController, PKPaymentAuthorizationStateMachine, PKPaymentService, PKPaymentWebService, PKPostalAddressEditorViewController;
 
 @interface PKPaymentAuthorizationCoreViewController : NSViewController <PKPaymentAuthorizationMainViewControllerDelegate, PKPostalAddressEditorViewControllerDelegate, PKContactEditorViewControllerDelegate, PKPaymentAuthorizationErrorViewControllerDelegate, PKPaymentAuthorizationPassphraseEntryViewControllerDelegate, PKPaymentAuthorizationStateMachineDelegate, PKPaymentAuthorizationDataControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentAuthorizationServiceProtocol>
 {
@@ -38,6 +38,7 @@
     CDUnknownBlockType _pendingPrepareCompletionBlock;
     CDUnknownBlockType _pendingContactCompletionBlock;
     PKPaymentService *_paymentService;
+    PKInAppPaymentService *_inAppPaymentService;
     PKPaymentWebService *_paymentWebService;
     PKContinuityPaymentService *_continuityPaymentService;
     PKPaymentAuthorizationDataController *_dataController;
@@ -52,6 +53,7 @@
 @property(retain, nonatomic) PKPaymentAuthorizationDataController *dataController; // @synthesize dataController=_dataController;
 @property(retain, nonatomic) PKContinuityPaymentService *continuityPaymentService; // @synthesize continuityPaymentService=_continuityPaymentService;
 @property(retain, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
+@property(retain, nonatomic) PKInAppPaymentService *inAppPaymentService; // @synthesize inAppPaymentService=_inAppPaymentService;
 @property(retain, nonatomic) PKPaymentService *paymentService; // @synthesize paymentService=_paymentService;
 @property(nonatomic) BOOL didSendDidPresent; // @synthesize didSendDidPresent=_didSendDidPresent;
 @property(nonatomic) BOOL delayingSleep; // @synthesize delayingSleep=_delayingSleep;
@@ -112,8 +114,8 @@
 - (void)paymentAuthorizationDataController:(id)arg1 willEditExistingBillingAddress:(id)arg2 errors:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)paymentAuthorizationDataController:(id)arg1 willAddNewBillingAddressWithCompletion:(CDUnknownBlockType)arg2;
 - (void)paymentAuthorizationDataController:(id)arg1 didSelectBillingAddress:(id)arg2;
-- (void)paymentAuthorizationDataController:(id)arg1 didSelectRemotePaymentInstrument:(id)arg2;
-- (void)paymentAuthorizationDataController:(id)arg1 didSelectPaymentPass:(id)arg2;
+- (void)paymentAuthorizationDataController:(id)arg1 didSelectRemotePaymentInstrument:(id)arg2 paymentApplication:(id)arg3;
+- (void)paymentAuthorizationDataController:(id)arg1 didSelectPaymentPass:(id)arg2 paymentApplication:(id)arg3;
 - (BOOL)handleTransitionToSuccessFromState:(unsigned long long)arg1 withParam:(id)arg2;
 - (BOOL)handleTransitionToContinuitySearchFromState:(unsigned long long)arg1 withParam:(id)arg2;
 - (BOOL)handleTransitionToFatalErrorFromState:(unsigned long long)arg1 withParam:(id)arg2;

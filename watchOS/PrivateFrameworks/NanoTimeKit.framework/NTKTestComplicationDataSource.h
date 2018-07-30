@@ -11,8 +11,8 @@
 }
 
 + (float)_percentOfDayCompletedForDate:(id)arg1;
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)roundDateDownToNearestHour:(id)arg1;
 - (id)timelineEntryForFamily:(int)arg1 forDate:(id)arg2;
 - (void)getDesiredUpdateIntervalWithHandler:(CDUnknownBlockType)arg1;

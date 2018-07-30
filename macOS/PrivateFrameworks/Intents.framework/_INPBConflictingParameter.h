@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBConflictingParameter.h"
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBConflictingParameter : PBCodable <NSCopying>
+@interface _INPBConflictingParameter : PBCodable <_INPBConflictingParameter, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_alternateItems;
+    struct _has;
+    NSArray *_alternateItems;
     NSString *_keyPath;
 }
 
 + (Class)alternateItemsType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *alternateItems; // @synthesize alternateItems=_alternateItems;
-@property(retain, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
+@property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
+@property(copy, nonatomic) NSArray *alternateItems; // @synthesize alternateItems=_alternateItems;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) BOOL hasKeyPath;
 - (id)alternateItemsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)alternateItemsCount;
+@property(readonly, nonatomic) unsigned long long alternateItemsCount;
 - (void)addAlternateItems:(id)arg1;
 - (void)clearAlternateItems;
-@property(readonly, nonatomic) BOOL hasKeyPath;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

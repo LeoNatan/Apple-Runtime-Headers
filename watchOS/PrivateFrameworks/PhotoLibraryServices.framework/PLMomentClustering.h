@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CLGeocoder, NSArray, NSMutableDictionary, NSSet, PLMomentNodeCache;
+@class NSArray, NSMutableDictionary, NSSet, PLMomentNodeCache;
 
 @interface PLMomentClustering : NSObject
 {
@@ -27,7 +27,6 @@
     unsigned int __numberOfVisitedNodes;
     unsigned int __totalNumberOfNodes;
     PLMomentNodeCache *__nodeCache;
-    CLGeocoder *__geocoder;
     NSMutableDictionary *__markedNodesByObjectID;
     NSMutableDictionary *__clustersByObjectID;
     NSMutableDictionary *__clustersByNodeObjectID;
@@ -41,11 +40,10 @@
     double _spatialJoinThreshold;
 }
 
-+ (double)maximumClusterTime;
++ (double)maximumClusterDuration;
 @property(readonly, nonatomic) NSMutableDictionary *_clustersByNodeObjectID; // @synthesize _clustersByNodeObjectID=__clustersByNodeObjectID;
 @property(readonly, nonatomic) NSMutableDictionary *_clustersByObjectID; // @synthesize _clustersByObjectID=__clustersByObjectID;
 @property(readonly, nonatomic) NSMutableDictionary *_markedNodesByObjectID; // @synthesize _markedNodesByObjectID=__markedNodesByObjectID;
-@property(readonly, nonatomic) CLGeocoder *_geocoder; // @synthesize _geocoder=__geocoder;
 @property(readonly, nonatomic) PLMomentNodeCache *_nodeCache; // @synthesize _nodeCache=__nodeCache;
 @property(nonatomic, setter=_setTotalNumberOfNodes:) unsigned int _totalNumberOfNodes; // @synthesize _totalNumberOfNodes=__totalNumberOfNodes;
 @property(nonatomic, setter=_setNumberOfVisitedNodes:) unsigned int _numberOfVisitedNodes; // @synthesize _numberOfVisitedNodes=__numberOfVisitedNodes;
@@ -85,7 +83,6 @@
 - (id)neighborsOfNode:(id)arg1;
 - (id)temporalSnapshotOfNode:(id)arg1 withRange:(double)arg2;
 - (id)clustersWithNodes:(id)arg1 sigma:(double)arg2 theta:(double)arg3;
-- (void)generateClustersForAssets:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)generateClustersForAssets:(id)arg1;
 - (void)dealloc;
 - (id)initWithManagedMoments:(id)arg1;

@@ -14,6 +14,7 @@
 {
     NSMutableArray *_accountOwners;
     NSMutableArray *_allergyRecords;
+    NSMutableArray *_clinicalRecords;
     NSMutableArray *_conditionRecords;
     NSMutableArray *_diagnosticTestReports;
     NSMutableArray *_diagnosticTestResults;
@@ -25,6 +26,7 @@
     NSMutableArray *_vaccinationRecords;
 }
 
++ (Class)clinicalRecordType;
 + (Class)unknownRecordType;
 + (Class)accountOwnerType;
 + (Class)procedureRecordType;
@@ -36,6 +38,7 @@
 + (Class)medicationRecordType;
 + (Class)medicationDispenseRecordType;
 + (Class)medicationOrderType;
+@property(retain, nonatomic) NSMutableArray *clinicalRecords; // @synthesize clinicalRecords=_clinicalRecords;
 @property(retain, nonatomic) NSMutableArray *unknownRecords; // @synthesize unknownRecords=_unknownRecords;
 @property(retain, nonatomic) NSMutableArray *accountOwners; // @synthesize accountOwners=_accountOwners;
 @property(retain, nonatomic) NSMutableArray *procedureRecords; // @synthesize procedureRecords=_procedureRecords;
@@ -57,6 +60,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)clinicalRecordAtIndex:(unsigned long long)arg1;
+- (unsigned long long)clinicalRecordsCount;
+- (void)addClinicalRecord:(id)arg1;
+- (void)clearClinicalRecords;
 - (id)unknownRecordAtIndex:(unsigned long long)arg1;
 - (unsigned long long)unknownRecordsCount;
 - (void)addUnknownRecord:(id)arg1;

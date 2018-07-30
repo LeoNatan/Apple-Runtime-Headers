@@ -18,9 +18,9 @@
     id <CHPointFIFODrawingTarget> _drawingTarget;
     NSView *_view;
     // Error parsing type: , name: _lastPoint
-    vector_92aa34b2 _prevPoints;
-    vector_92aa34b2 _points;
-    vector_92aa34b2 _controlPoints;
+    vector_74a7c1d0 _prevPoints;
+    vector_74a7c1d0 _points;
+    vector_74a7c1d0 _controlPoints;
 }
 
 +     // Error parsing type: 68@0:8163248f64, name: interpolateFromPoint:toPoint:controlPoint:time:
@@ -29,9 +29,9 @@
 // Error parsing type for property lastPoint:
 // Property attributes: T,N,V_lastPoint
 
-@property(nonatomic) vector_37c07815 controlPoints; // @synthesize controlPoints=_controlPoints;
-@property(nonatomic) vector_37c07815 points; // @synthesize points=_points;
-@property(nonatomic) vector_37c07815 prevPoints; // @synthesize prevPoints=_prevPoints;
+@property(nonatomic) vector_027a6188 controlPoints; // @synthesize controlPoints=_controlPoints;
+@property(nonatomic) vector_027a6188 points; // @synthesize points=_points;
+@property(nonatomic) vector_027a6188 prevPoints; // @synthesize prevPoints=_prevPoints;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(nonatomic) struct CGPath *path; // @synthesize path=_path;
 @property(copy) CDUnknownBlockType emissionHandler; // @synthesize emissionHandler=_emissionHandler;

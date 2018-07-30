@@ -19,6 +19,8 @@
 @property(retain) NSSet *components; // @synthesize components=_components;
 @property unsigned int identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (_Bool)requestedSourceSupportsRouteGuidanceForAnyComponent;
+- (_Bool)requestedSourceNameForAnyComponent;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

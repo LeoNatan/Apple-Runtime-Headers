@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessoryCategory, HMSetupAccessoryPayload, NSString, NSUUID;
+@class HMAccessoryCategory, HMSetupAccessoryBrowsingRequest, HMSetupAccessoryPayload, NSString, NSUUID;
 
 @interface HMSetupAccessoryDescription : NSObject <NSCopying, NSSecureCoding>
 {
@@ -31,7 +31,9 @@
     NSString *_appIdentifier;
     NSUUID *_homeUUID;
     NSString *_homeName;
+    NSString *_suggestedRoomName;
     HMSetupAccessoryPayload *_setupAccessoryPayload;
+    HMSetupAccessoryBrowsingRequest *_accessoryBrowsingRequest;
     HMAccessoryCategory *_accessoryCategory;
 }
 
@@ -39,7 +41,9 @@
 + (id)setupAccessoryProgressAsString:(long long)arg1;
 @property(nonatomic) _Bool legacyAPI; // @synthesize legacyAPI=_legacyAPI;
 @property(retain, nonatomic) HMAccessoryCategory *accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
+@property(retain, nonatomic) HMSetupAccessoryBrowsingRequest *accessoryBrowsingRequest; // @synthesize accessoryBrowsingRequest=_accessoryBrowsingRequest;
 @property(retain, nonatomic) HMSetupAccessoryPayload *setupAccessoryPayload; // @synthesize setupAccessoryPayload=_setupAccessoryPayload;
+@property(copy, nonatomic) NSString *suggestedRoomName; // @synthesize suggestedRoomName=_suggestedRoomName;
 @property(readonly, nonatomic) NSString *homeName; // @synthesize homeName=_homeName;
 @property(readonly, nonatomic) NSUUID *homeUUID; // @synthesize homeUUID=_homeUUID;
 @property(nonatomic) _Bool addAndSetupAccessories; // @synthesize addAndSetupAccessories=_addAndSetupAccessories;
@@ -70,6 +74,7 @@
 - (void)updateWithSetupAccessoryPayload:(id)arg1;
 - (id)initToSetupAccessoriesWithSetupAccessoryPayload:(id)arg1 appID:(id)arg2 homeName:(id)arg3 homeUUID:(id)arg4 trustedOrigin:(_Bool)arg5;
 - (id)initToSetupAccessoriesWithSetupAccessoryPayload:(id)arg1 appID:(id)arg2 homeName:(id)arg3 homeUUID:(id)arg4;
+- (id)initToSetupAccessories:(id)arg1 legacyAPI:(_Bool)arg2 homeName:(id)arg3 homeUUID:(id)arg4 trustedOrigin:(_Bool)arg5 browseRequest:(id)arg6;
 - (id)initToSetupAccessories:(id)arg1 legacyAPI:(_Bool)arg2 homeName:(id)arg3 homeUUID:(id)arg4 trustedOrigin:(_Bool)arg5;
 - (id)initToSetupAccessories:(id)arg1 legacyAPI:(_Bool)arg2 homeName:(id)arg3 homeUUID:(id)arg4;
 - (id)initWithAccessoryUUID:(id)arg1 accessoryName:(id)arg2 appID:(id)arg3 homeName:(id)arg4 homeUUID:(id)arg5 trustedOrigin:(_Bool)arg6;

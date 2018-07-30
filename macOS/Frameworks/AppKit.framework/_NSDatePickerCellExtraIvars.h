@@ -8,6 +8,7 @@
 
 @class NSButtonCell, NSColor, NSDate, NSDateComponents, NSNumberFormatter, NSTimer, _NSDatePickerArrowCell;
 
+__attribute__((visibility("hidden")))
 @interface _NSDatePickerCellExtraIvars : NSObject
 {
     _NSDatePickerArrowCell *_arrowLeftCell;

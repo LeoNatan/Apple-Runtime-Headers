@@ -6,26 +6,27 @@
 
 #import "NSObject.h"
 
+#import "INCacheableContainer.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class INPerson, NSDate, NSNumber, NSString;
 
-@interface INCallRecord : NSObject <NSCopying, NSSecureCoding>
+@interface INCallRecord : NSObject <INCacheableContainer, NSCopying, NSSecureCoding>
 {
     NSString *_identifier;
     NSDate *_dateCreated;
     INPerson *_caller;
     int _callRecordType;
-    int _callCapability;
     NSNumber *_callDuration;
     NSNumber *_unseen;
+    int _callCapability;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) int callCapability; // @synthesize callCapability=_callCapability;
 @property(readonly, copy, nonatomic) NSNumber *unseen; // @synthesize unseen=_unseen;
 @property(readonly, copy, nonatomic) NSNumber *callDuration; // @synthesize callDuration=_callDuration;
-@property(readonly, nonatomic) int callCapability; // @synthesize callCapability=_callCapability;
 @property(readonly, nonatomic) int callRecordType; // @synthesize callRecordType=_callRecordType;
 @property(readonly, copy, nonatomic) INPerson *caller; // @synthesize caller=_caller;
 @property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
@@ -33,13 +34,19 @@
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
-- (id)description;
-- (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (id)initWithIdentifier:(id)arg1 dateCreated:(id)arg2 caller:(id)arg3 callRecordType:(int)arg4 callCapability:(int)arg5 callDuration:(id)arg6 unseen:(id)arg7;
+- (void)_intents_updateContainerWithCache:(id)arg1;
+- (id)_intents_cacheableObjects;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

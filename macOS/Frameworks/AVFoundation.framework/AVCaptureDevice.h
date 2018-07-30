@@ -14,6 +14,9 @@
 }
 
 + (id)_linkedDevicesLock;
++ (void)initialize;
++ (void)requestAccessForMediaType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (long long)authorizationStatusForMediaType:(id)arg1;
 + (id)CMIOBundleIdentifier;
 + (id)deviceWithUniqueID:(id)arg1;
 + (id)defaultDeviceWithMediaType:(id)arg1;

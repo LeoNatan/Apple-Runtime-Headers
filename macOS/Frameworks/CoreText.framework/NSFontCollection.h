@@ -15,6 +15,7 @@
 {
 }
 
++ (id)archivableDescriptorsFrom:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (BOOL)renameFontCollectionWithName:(id)arg1 visibility:(unsigned long long)arg2 toName:(id)arg3 error:(id *)arg4;
 + (BOOL)hideFontCollectionWithName:(id)arg1 visibility:(unsigned long long)arg2 error:(id *)arg3;

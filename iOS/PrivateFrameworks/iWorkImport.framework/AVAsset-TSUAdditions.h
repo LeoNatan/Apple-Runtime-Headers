@@ -7,7 +7,11 @@
 #import "AVAsset.h"
 
 @interface AVAsset (TSUAdditions)
++ (id)keyPathsForValuesAffectingTsu_isPlayable;
++ (id)tsu_playableKeysWithKeys:(id)arg1;
 + (id)keyPathsForValuesAffectingNaturalSizeWithPreferredTransforms;
+- (_Bool)p_doesTrack:(id)arg1 matchCodecTypes:(id)arg2;
+@property(readonly, nonatomic) _Bool tsu_isPlayable;
 @property(readonly, nonatomic) struct CGSize naturalSizeWithPreferredTransforms;
 @end
 

@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class CALayer, IKViewElement, UILabel, _TVImageView, _TVVibrantLabel, _TVVisualEffectView, _UIFloatingContentView;
+@class CALayer, IKViewElement, UIColor, UILabel, _TVImageView, _TVVisualEffectLabel, _TVVisualEffectView, _UIFloatingContentView;
 
 __attribute__((visibility("hidden")))
 @interface _TVButtonLockup : UIView
@@ -17,7 +17,9 @@ __attribute__((visibility("hidden")))
     UILabel *_textView;
     UILabel *_textMask;
     CALayer *_imageMask;
-    _TVVibrantLabel *_vibrantLabel;
+    _TVVisualEffectLabel *_vibrantLabel;
+    UIColor *__backgroundColor;
+    UIColor *_highlightColor;
     _Bool _disabled;
     long long _backdropStyle;
     long long _vibrantLabelThemeOverride;
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
+@property(copy, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) UILabel *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) long long vibrantLabelThemeOverride; // @synthesize vibrantLabelThemeOverride=_vibrantLabelThemeOverride;
@@ -38,6 +41,8 @@ __attribute__((visibility("hidden")))
 - (void)_selectButtonAction:(id)arg1;
 - (void)_updateImageMask;
 - (void)_updateForFocusStateChange;
+- (void)_updateForAccessibilityChange;
+- (void)_updateTextForAccessibilityAndFocus;
 - (long long)_focusedSound;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
@@ -47,6 +52,8 @@ __attribute__((visibility("hidden")))
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;
+- (void)setBackgroundColor:(id)arg1;
+- (id)backgroundColor;
 - (void)setText:(id)arg1 minimumScale:(double)arg2 maxNumberOfLines:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 blurEffectStyle:(long long)arg2 groupName:(id)arg3;

@@ -13,7 +13,7 @@
 @optional
 - (void)connection:(IDSConnection *)arg1 incomingMessage:(NSDictionary *)arg2 fromID:(NSString *)arg3;
 - (void)connection:(IDSConnection *)arg1 didHintCheckingTransportLogWithReason:(long long)arg2;
-- (void)connection:(IDSConnection *)arg1 identifier:(NSString *)arg2 hasBeenDeliveredWithContext:(id)arg3;
+- (void)connection:(IDSConnection *)arg1 identifier:(NSString *)arg2 fromID:(NSString *)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)connection:(IDSConnection *)arg1 identifier:(NSString *)arg2 didSendWithSuccess:(_Bool)arg3 error:(NSError *)arg4 context:(IDSMessageContext *)arg5;
 - (void)connection:(IDSConnection *)arg1 connectedDevicesChanged:(NSArray *)arg2;
 - (void)connection:(IDSConnection *)arg1 nearbyDevicesChanged:(NSArray *)arg2;

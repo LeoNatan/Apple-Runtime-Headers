@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol IMKCandidate <NSObject>
+@property(copy, nonatomic) NSString *annotation;
 @property(readonly, copy, nonatomic) NSString *text;
 @end
 

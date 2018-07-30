@@ -6,17 +6,17 @@
 
 #import "NSObject.h"
 
-@class HDDatabaseValueCache, HDProfile, NSNumber, NSObject<OS_dispatch_queue>;
+@class HDDatabaseValueCache, HDProfile, NSNumber;
 
 @interface HDDeviceManager : NSObject
 {
     HDProfile *_profile;
-    NSNumber *_deviceForNoneID;
-    NSObject<OS_dispatch_queue> *_queue;
     HDDatabaseValueCache *_devicesByPersistentID;
     HDDatabaseValueCache *_deviceEntitiesByDevice;
+    NSNumber *_noneDeviceID;
 }
 
+@property(copy) NSNumber *noneDeviceID; // @synthesize noneDeviceID=_noneDeviceID;
 @property(retain, nonatomic) HDDatabaseValueCache *deviceEntitiesByDevice; // @synthesize deviceEntitiesByDevice=_deviceEntitiesByDevice;
 @property(retain, nonatomic) HDDatabaseValueCache *devicesByPersistentID; // @synthesize devicesByPersistentID=_devicesByPersistentID;
 - (void).cxx_destruct;

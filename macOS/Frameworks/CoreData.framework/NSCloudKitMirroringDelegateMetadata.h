@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CKServerChangeToken, NSPersistentHistoryToken, NSPersistentStore, NSString;
+@class NSDictionary, NSPersistentHistoryToken, NSPersistentStore, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSCloudKitMirroringDelegateMetadata : NSObject
@@ -18,23 +18,38 @@ __attribute__((visibility("hidden")))
     BOOL _hasInitializedZoneSubscription;
     NSString *_ckIdentityRecordName;
     BOOL _hasCheckedCKIdentity;
-    CKServerChangeToken *_previousServerChangeToken;
+    NSDictionary *_keyToPreviousServerChangeToken;
     NSPersistentHistoryToken *_lastHistoryToken;
 }
 
 + (id)allDefaultsKeys;
+@property(readonly, nonatomic) NSDictionary *keyToPreviousServerChangeToken; // @synthesize keyToPreviousServerChangeToken=_keyToPreviousServerChangeToken;
 @property(readonly, nonatomic) BOOL hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(readonly, nonatomic) BOOL loaded; // @synthesize loaded=_loaded;
 @property(readonly, nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+- (id)_keyForDatabaseScope:(long long)arg1;
+- (id)_keyForDatabase:(id)arg1;
+- (id)_keyForZoneName:(id)arg1 owner:(id)arg2 databseScope:(long long)arg3;
+- (id)_keyForZoneWithID:(id)arg1 inDatabase:(id)arg2;
 - (BOOL)save:(id *)arg1;
+- (BOOL)updateStoreMetadata:(id *)arg1;
 - (BOOL)load:(id *)arg1;
 @property(retain, nonatomic) NSPersistentHistoryToken *lastHistoryToken;
-@property(retain, nonatomic) CKServerChangeToken *previousServerChangeToken;
+- (unsigned long long)countChangeTokens;
+- (void)_setChangeToken:(id)arg1 forKey:(id)arg2;
+- (void)purgeCachedChangeTokens;
+- (void)setChangeToken:(id)arg1 forDatabase:(id)arg2;
+- (void)setChangeToken:(id)arg1 forZoneWithID:(id)arg2 inDatabase:(id)arg3;
+- (id)changeTokenForDatabase:(id)arg1;
+- (id)changeTokenForZoneWithID:(id)arg1 inDatabase:(id)arg2;
 @property(nonatomic) BOOL hasCheckedCKIdentity;
 @property(retain, nonatomic, setter=setCKIdentityRecordName:) NSString *ckIdentityRecordName;
 @property(nonatomic) BOOL hasInitializedZoneSubscription;
 @property(nonatomic) BOOL hasInitializedZone;
+- (id)cliDescription;
+- (id)description;
+- (BOOL)safeDictionary:(id)arg1 isEqualToDictionary:(id)arg2;
 - (BOOL)safeString:(id)arg1 isEqualToString:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

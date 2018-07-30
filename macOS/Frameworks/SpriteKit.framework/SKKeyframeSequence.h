@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSMutableArray;
 
-@interface SKKeyframeSequence : NSObject <NSCoding, NSCopying>
+@interface SKKeyframeSequence : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned long long _count;
     NSMutableArray *_values;
@@ -21,6 +21,7 @@
     struct SKCKeyframeSequence *_cKeyframeSequence;
 }
 
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (double)getKeyframeTimeForIndex:(unsigned long long)arg1;
 - (id)sampleAtTime:(double)arg1;
@@ -45,6 +46,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
 - (id)init;
+- (BOOL)isEqualToSequence:(id)arg1;
 - (id)initWithCount:(unsigned long long)arg1;
 
 @end

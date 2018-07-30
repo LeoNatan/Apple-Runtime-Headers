@@ -18,6 +18,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL primaryImage;
 @property(readonly, nonatomic) BOOL shouldHighlight;
 @property(readonly) Class superclass;
 @end

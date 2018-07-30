@@ -13,7 +13,7 @@
 
 @interface FIIconHeaderView : NSView <NSCollectionViewSectionHeaderView, NSCollectionViewSectionHeaderViewPrivate>
 {
-    struct TNSRef<FI_TIconCollectionGroupHeaderView *, void> _headerView;
+    struct TNSRef<FI_TIconCollectionGroupHeaderView, void> _headerView;
 }
 
 - (id).cxx_construct;
@@ -29,7 +29,6 @@
 @property(copy) NSString *titleStr; // @dynamic titleStr;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)isFlipped;
-- (BOOL)isOpaque;
 - (void)initCommon;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

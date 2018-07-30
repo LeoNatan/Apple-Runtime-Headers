@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class LAContext, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, TKToken;
+@class LAContext, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, TKToken;
 
 @interface TKTokenSession : NSObject
 {
@@ -27,6 +27,7 @@
 @property __weak id <TKTokenSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) TKToken *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name;
 - (void)terminate;
 - (_Bool)handleOperation:(int)arg1 auditToken:(CDStruct_6ad76789)arg2 event:(id)arg3 reply:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (_Bool)handleCopyIdentitiesEvent:(id)arg1 reply:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -41,9 +42,9 @@
 - (_Bool)handleGetPublicKeyEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)handleGetObjectAccessControlEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)handleEvaluateAccessControlEvent:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 reply:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)evaluateAuthOperation:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 context:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)evaluateAuthOperation:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 retry:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)finalizeAuthOperation:(id)arg1 evaluatedAuthOperation:(id)arg2 auditToken:(CDStruct_6ad76789)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)evaluateAuthOperation:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)evaluateAuthOperation:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)endRequest;
 - (_Bool)beginRequest:(int)arg1 error:(id *)arg2;
 - (void)controlWithAttributes:(id)arg1 reply:(CDUnknownBlockType)arg2;

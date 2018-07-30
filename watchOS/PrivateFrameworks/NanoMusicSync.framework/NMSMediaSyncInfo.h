@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString;
+@class NSDictionary;
 
 @interface NMSMediaSyncInfo : NSObject
 {
     int _notifyToken;
-    NSString *_targetIdentifier;
     NSDictionary *_info;
     unsigned int _target;
 }
@@ -19,7 +18,6 @@
 + (id)_syncInfoDirectory;
 @property(readonly, nonatomic) unsigned int target; // @synthesize target=_target;
 @property(retain, nonatomic) NSDictionary *info; // @synthesize info=_info;
-@property(readonly, nonatomic) NSString *targetIdentifier; // @synthesize targetIdentifier=_targetIdentifier;
 - (void).cxx_destruct;
 - (id)_syncInfoFilePath;
 - (id)_targetIdentifier;
@@ -28,10 +26,10 @@
 - (id)_preferencesApplicationID;
 - (void)_readInfo;
 - (void)_registerForInfoChanged;
+- (_Bool)_hasItemsForContainer:(id)arg1;
 - (_Bool)_isValid;
 - (id)userInfoForItem:(id)arg1;
 - (id)userInfoForContainer:(id)arg1;
-- (unsigned int)itemCountForContainer:(id)arg1;
 - (unsigned int)playabilityForContainer:(id)arg1;
 - (float)progressForItem:(id)arg1;
 - (float)progressForContainer:(id)arg1;

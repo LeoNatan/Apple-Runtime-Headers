@@ -17,6 +17,7 @@
     UIColor *_foregroundColor;
 }
 
++ (id)defaultDecoration;
 @property(copy, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(copy, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;

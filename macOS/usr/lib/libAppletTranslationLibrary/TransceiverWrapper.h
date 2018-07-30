@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)applyScript:(id)arg1 error:(id *)arg2;
 - (id)transceiveAndCheckSW:(id)arg1 inArray:(id)arg2 error:(id *)arg3;
 - (id)transceiveAndCheckSW:(id)arg1 error:(id *)arg2;
+- (id)transceiveBytesAndCheckSW:(const char *)arg1 length:(unsigned long long)arg2 inArray:(id)arg3 error:(id *)arg4;
+- (id)transceiveBytesAndCheckSW:(const char *)arg1 length:(unsigned long long)arg2 error:(id *)arg3;
 - (void)dumpAPDUs:(CDUnknownBlockType)arg1;
 - (id)transceive:(id)arg1 error:(id *)arg2;
 - (id)initWithTransceiver:(id)arg1;

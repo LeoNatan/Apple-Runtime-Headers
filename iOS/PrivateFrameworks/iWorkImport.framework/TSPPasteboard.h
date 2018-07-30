@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (id)valueForPasteboardType:(id)arg1;
 - (id)stringForPasteboardType:(id)arg1;
 - (id)dataForPasteboardType:(id)arg1;
+- (_Bool)canLoadItemsOfClass:(Class)arg1;
 - (_Bool)containsAnyPasteboardTypeInArray:(id)arg1;
 - (_Bool)containsPasteboardTypes:(id)arg1;
 - (id)pasteboardTypes;

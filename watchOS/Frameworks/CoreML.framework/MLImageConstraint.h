@@ -9,22 +9,26 @@
 #import "MLFeatureValueConstraint.h"
 #import "NSCopying.h"
 
+@class MLImageSizeConstraint;
+
 @interface MLImageConstraint : NSObject <MLFeatureValueConstraint, NSCopying>
 {
+    int _pixelsHigh;
+    int _pixelsWide;
+    MLImageSizeConstraint *_sizeConstraint;
     unsigned int _pixelType;
-    int _imageWidth;
-    int _imageHeight;
 }
 
++ (unsigned int)imagePixelTypeFromOSType:(unsigned long)arg1;
 + (id)_stringForOSType:(unsigned long)arg1;
-+ (id)constraintForBGRImageWithWidth:(long long)arg1 height:(long long)arg2;
-+ (id)constraintForRGBImageWithWidth:(long long)arg1 height:(long long)arg2;
-+ (id)constraintForGrayImageWithWidth:(long long)arg1 height:(long long)arg2;
-+ (id)constraintWithWidth:(long long)arg1 height:(long long)arg2 osType:(unsigned long)arg3;
++ (id)constraintWithPixelsWide:(int)arg1 pixelsHigh:(int)arg2 pixelType:(unsigned int)arg3;
++ (id)constraintWithPixelsWide:(int)arg1 pixelsHigh:(int)arg2 pixelType:(unsigned int)arg3 sizeConstraint:(id)arg4;
 + (_Bool)osType:(unsigned long)arg1 isAcceptedForPixelType:(unsigned int)arg2;
-@property(readonly, nonatomic) int pixelsHigh; // @synthesize pixelsHigh=_imageHeight;
-@property(readonly, nonatomic) int pixelsWide; // @synthesize pixelsWide=_imageWidth;
 @property(readonly) unsigned int pixelType; // @synthesize pixelType=_pixelType;
+@property(readonly, nonatomic) MLImageSizeConstraint *sizeConstraint; // @synthesize sizeConstraint=_sizeConstraint;
+@property(readonly, nonatomic) int pixelsWide; // @synthesize pixelsWide=_pixelsWide;
+@property(readonly, nonatomic) int pixelsHigh; // @synthesize pixelsHigh=_pixelsHigh;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long imageWidth;
 @property(readonly) unsigned long long imageHeight;
 @property(readonly) unsigned long osType;
@@ -33,7 +37,7 @@
 - (_Bool)isAllowedValue:(id)arg1 error:(id *)arg2;
 - (id)_stringForAllowedOSTypes;
 @property(readonly, nonatomic) unsigned long pixelFormatType;
-- (id)initWithWidth:(long long)arg1 height:(long long)arg2 pixelType:(unsigned int)arg3;
+- (id)initWithPixelsWide:(int)arg1 pixelsHigh:(int)arg2 pixelType:(unsigned int)arg3 sizeConstraint:(id)arg4;
 
 @end
 

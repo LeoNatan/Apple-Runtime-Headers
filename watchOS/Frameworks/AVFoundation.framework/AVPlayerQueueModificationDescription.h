@@ -8,6 +8,7 @@
 
 @class AVPlayerItem;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerQueueModificationDescription : NSObject
 {
     int _modificationType;

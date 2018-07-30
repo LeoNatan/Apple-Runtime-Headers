@@ -14,6 +14,7 @@
 - (_Bool)canProvideSettingsViewController;
 - (id)contextualViewController;
 - (id)_curationDebugStringForDictionary:(id)arg1 asset:(id)arg2;
+- (id)saliencyStringForAsset:(id)arg1;
 - (_Bool)canProvideContextualViewController;
 - (_Bool)canProvideConsoleDescription;
 - (id)title;

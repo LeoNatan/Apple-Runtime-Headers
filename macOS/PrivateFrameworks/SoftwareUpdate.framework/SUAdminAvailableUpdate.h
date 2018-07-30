@@ -18,6 +18,7 @@
     BOOL _allowedToUseDoItLater;
     BOOL _isRecommended;
     BOOL _adminDeferred;
+    BOOL _autoUpdateEligible;
     NSDate *_adminDeferralDate;
     NSString *_productKey;
     NSString *_title;
@@ -39,6 +40,7 @@
 @property(readonly) double downloadPercentComplete; // @synthesize downloadPercentComplete=_downloadPercentComplete;
 @property(readonly) NSError *lastError; // @synthesize lastError=_lastError;
 @property(readonly) long long installStatus; // @synthesize installStatus=_installStatus;
+@property(readonly, getter=isAutoUpdateEligible) BOOL autoUpdateEligible; // @synthesize autoUpdateEligible=_autoUpdateEligible;
 @property(readonly) NSString *productBuildVersion; // @synthesize productBuildVersion=_productBuildVersion;
 @property(readonly) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(readonly) NSDate *postDate; // @synthesize postDate=_postDate;

@@ -28,7 +28,7 @@
 @property long long cellularFallbackFlags; // @synthesize cellularFallbackFlags=_cellularFallbackFlags;
 @property(getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
-@property(readonly) _Bool hasNonDefaultRules;
+@property(readonly, nonatomic) _Bool hasNonDefaultRules;
 - (id)copyPathRuleSigningIdentifiers;
 - (_Bool)removePathRuleBySigningIdentifier:(id)arg1;
 - (id)copyPathRuleBySigningIdentifier:(id)arg1;

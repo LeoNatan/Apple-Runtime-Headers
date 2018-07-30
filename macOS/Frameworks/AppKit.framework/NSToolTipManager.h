@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSMapTable, NSTimer, NSToolTip, NSWindow;
+@class NSCustomToolTipDrawView, NSDate, NSMapTable, NSTimer, NSToolTip, NSWindow;
 
 @interface NSToolTipManager : NSObject
 {
@@ -22,6 +22,8 @@
     NSWindow *lastToolTipWindow;
     NSWindow *_expansionToolTipWindow;
     NSToolTip *_currentExpansionToolTip;
+    NSCustomToolTipDrawView *_toolTipDrawView;
+    NSCustomToolTipDrawView *_expansionDrawView;
 }
 
 + (BOOL)isCurrentMouseLocationAboveWindow:(id)arg1;

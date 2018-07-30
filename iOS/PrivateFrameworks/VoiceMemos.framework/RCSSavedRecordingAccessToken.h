@@ -17,14 +17,14 @@
     _Bool _exclusive;
     long long _accessIntent;
     NSURL *_compositionAVURL;
-    NSUUID *_identifier;
     NSString *_accessName;
+    NSUUID *_identifier;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)tokenWithName:(id)arg1 accessIntent:(long long)arg2 compositionAVURL:(id)arg3;
-@property(readonly, copy, nonatomic) NSString *accessName; // @synthesize accessName=_accessName;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(readonly, copy, nonatomic) NSString *accessName; // @synthesize accessName=_accessName;
 @property(readonly, nonatomic) NSURL *compositionAVURL; // @synthesize compositionAVURL=_compositionAVURL;
 @property(readonly, nonatomic, getter=isExclusive) _Bool exclusive; // @synthesize exclusive=_exclusive;
 @property(readonly, nonatomic) long long accessIntent; // @synthesize accessIntent=_accessIntent;

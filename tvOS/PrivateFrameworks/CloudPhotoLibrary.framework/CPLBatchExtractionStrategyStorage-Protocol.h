@@ -6,17 +6,17 @@
 
 #import "NSObject.h"
 
-@class CPLRecordChange, NSString;
+@class CPLRecordChange, CPLScopedIdentifier, NSString;
 
 @protocol CPLBatchExtractionStrategyStorage <NSObject>
-- (_Bool)hasChanges;
+- (_Bool)hasChangesInScopeWithIdentifier:(NSString *)arg1;
 - (_Bool)removeChange:(CPLRecordChange *)arg1 error:(id *)arg2;
-- (id <NSFastEnumeration>)allChanges;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 secondaryIdentifier:(NSString *)arg2;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 relatedIdentifier:(NSString *)arg2;
-- (id <NSFastEnumeration>)allNonDeletedChangesWithClass:(Class)arg1;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 changeType:(unsigned long long)arg2;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 trashed:(_Bool)arg2;
-- (CPLRecordChange *)changeWithIdentifier:(NSString *)arg1;
+- (id <NSFastEnumeration>)allChangesWithScopeIdentifier:(NSString *)arg1;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 secondaryScopedIdentifier:(CPLScopedIdentifier *)arg2;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 relatedScopedIdentifier:(CPLScopedIdentifier *)arg2;
+- (id <NSFastEnumeration>)allNonDeletedChangesWithClass:(Class)arg1 scopeIdentifier:(NSString *)arg2;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 scopeIdentifier:(NSString *)arg2 changeType:(unsigned long long)arg3;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 scopeIdentifier:(NSString *)arg2 trashed:(_Bool)arg3;
+- (CPLRecordChange *)changeWithScopedIdentifier:(CPLScopedIdentifier *)arg1;
 @end
 

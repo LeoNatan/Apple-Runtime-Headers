@@ -8,7 +8,6 @@
 
 #import "OAXClient.h"
 
-__attribute__((visibility("hidden")))
 @interface OAXClient : NSObject <OAXClient>
 {
 }

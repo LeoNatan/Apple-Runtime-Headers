@@ -19,6 +19,7 @@
 @property(copy, nonatomic) NSArray *data;
 @property(retain, nonatomic) SFTableAlignmentSchema *alignmentSchema;
 @property(copy, nonatomic) NSString *tableIdentifier;
+@property(copy, nonatomic) NSArray *richData;
 @property(retain, nonatomic) SFColor *backgroundColor;
 @property(nonatomic) int separatorStyle;
 @property(copy, nonatomic) NSString *type;

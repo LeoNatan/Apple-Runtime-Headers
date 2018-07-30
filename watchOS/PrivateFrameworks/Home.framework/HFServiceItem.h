@@ -46,14 +46,15 @@
 - (unsigned int)_effectiveLoadingStateForSuggestedLoadingState:(unsigned int)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+- (id)_descriptionBuilder;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (id)initWithValueSource:(id)arg1 service:(id)arg2;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

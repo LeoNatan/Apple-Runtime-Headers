@@ -66,6 +66,7 @@
 - (void)becomeKeyWindow;
 - (struct CGRect)constrainFrameRect:(struct CGRect)arg1 toScreen:(id)arg2;
 - (void)_windowMovedToRect:(struct CGRect)arg1;
+- (void)_resetDragMargins;
 - (void)_termWindowIfOwner;
 - (void)_reallyDoOrderWindow:(long long)arg1 relativeTo:(long long)arg2 findKey:(BOOL)arg3 forCounter:(BOOL)arg4 force:(BOOL)arg5 isModal:(BOOL)arg6;
 - (void)_oldPlaceWindow:(struct CGRect)arg1;

@@ -18,10 +18,12 @@
     EKEventEditor *_editor;
     EKEventEditViewController *_strongSelf;
     int _transitionForModalViewPresentation;
+    NSString *_suggestionKey;
 }
 
 + (void)setDefaultDatesForEvent:(id)arg1;
 + (id)eventEditViewControllerWithEvent:(id)arg1 eventStore:(id)arg2 editViewDelegate:(id)arg3;
+@property(retain, nonatomic) NSString *suggestionKey; // @synthesize suggestionKey=_suggestionKey;
 @property(nonatomic) int transitionForModalViewPresentation; // @synthesize transitionForModalViewPresentation=_transitionForModalViewPresentation;
 @property(retain, nonatomic) EKEventEditViewController *strongSelf; // @synthesize strongSelf=_strongSelf;
 @property(retain, nonatomic) EKEventEditor *editor; // @synthesize editor=_editor;
@@ -32,6 +34,8 @@
 @property(nonatomic) float editorNavBarRightContentInset;
 @property(nonatomic) float editorNavBarLeftContentInset;
 @property(retain, nonatomic) UIColor *editorBackgroundColor;
+- (void)focusTitle;
+- (void)focusAndSelectStartDate;
 - (void)focusAndSelectTitle;
 - (_Bool)hasUnsavedChanges;
 - (_Bool)willPresentDialogOnSave;

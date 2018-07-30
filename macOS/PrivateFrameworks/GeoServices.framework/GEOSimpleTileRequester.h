@@ -9,7 +9,7 @@
 #import "GEOSimpleTileRequesterOperationDelegate.h"
 #import "GEOSimpleTileRequesterSubclass.h"
 
-@class GEODataSession, GEOTileRequestBalancer, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_os_activity>, NSObject<OS_voucher>, NSString;
+@class GEODataSession, GEOTileKeyMap, GEOTileRequestBalancer, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_os_activity>, NSObject<OS_voucher>, NSString;
 
 @interface GEOSimpleTileRequester : GEOTileRequester <GEOSimpleTileRequesterSubclass, GEOSimpleTileRequesterOperationDelegate>
 {
@@ -26,9 +26,9 @@
     BOOL _cancelled;
     BOOL _subclassImplementsTileEdition;
     BOOL _hasRemainingTileKeys;
+    GEOTileKeyMap *_signpostIDs;
 }
 
-+ (unsigned char)eTagType;
 @property(readonly, nonatomic) GEOTileRequestBalancer *balancer; // @synthesize balancer=_balancer;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -45,11 +45,11 @@
 - (void)_cancelKey:(struct _GEOTileKey)arg1;
 - (void)cancelKey:(const struct _GEOTileKey *)arg1;
 - (void)_cancel;
+- (void)_generateEndSignpostEventIfNecessary:(struct _GEOTileKey)arg1;
 - (void)cancel;
 - (void)_cancelAllRunningOperations;
 - (void)_cleanup;
-- (id)newRequestWithType:(int)arg1 URL:(id)arg2 xpcRequest:(id)arg3 entityTag:(id)arg4 cachedData:(id)arg5 allowedRequestMode:(BOOL)arg6 requestCounterTicket:(id)arg7;
-- (void)_startOperation:(id)arg1;
+- (id)newRequestWithType:(int)arg1 URL:(id)arg2 useProxyAuth:(BOOL)arg3 entityTag:(id)arg4 cachedData:(id)arg5 allowedRequestMode:(BOOL)arg6 timeout:(double)arg7 requestCounterTicket:(id)arg8;
 - (void)createRequest:(id *)arg1 localizationRequest:(id *)arg2 forKey:(const struct _GEOTileKey *)arg3;
 - (id)_createOperationsForTileKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2;
 - (void)_notifyDelegateDone:(CDUnknownBlockType)arg1;
@@ -59,16 +59,19 @@
 - (void)start;
 @property(readonly, nonatomic, getter=isRunning) BOOL running;
 - (id)initWithTileRequest:(id)arg1 delegateQueue:(id)arg2 delegate:(id)arg3;
+- (BOOL)shouldParticipateInBalancerScheduling;
 - (void)didStartOperationsForAllTileKeys;
-- (void)startOperations:(id)arg1;
-- (id)createOperationsForTileKey:(struct _GEOTileKey)arg1 priority:(unsigned int)arg2;
+- (unsigned long long)estimatedNumberOfOperationsForTileKey:(struct _GEOTileKey)arg1;
+- (void)createAndStartOperationsForTileKeys:(id)arg1;
 - (unsigned int)tileEditionForKey:(const struct _GEOTileKey *)arg1;
 - (id)editionHeader;
 - (id)mergeBaseTile:(id)arg1 withLocalizationTile:(id)arg2;
 - (id)mergeBaseTileEtag:(id)arg1 withLocalizationTileEtag:(id)arg2;
 - (BOOL)tileDataIsCacheableForTileKey:(const struct _GEOTileKey *)arg1;
+- (BOOL)needsLocalizationForKey:(const struct _GEOTileKey *)arg1;
 - (id)localizationURLForTileKey:(const struct _GEOTileKey *)arg1;
 - (id)newXPCDataRequestForTileKey:(const struct _GEOTileKey *)arg1;
+- (BOOL)useProxyAuthForTileKey:(const struct _GEOTileKey *)arg1;
 - (id)urlForTileKey:(const struct _GEOTileKey *)arg1;
 - (BOOL)allowsCookies;
 - (int)checksumMethodForIncomingTileDataWithKey:(struct _GEOTileKey *)arg1;

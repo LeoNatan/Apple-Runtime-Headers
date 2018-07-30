@@ -8,12 +8,12 @@
 
 @class EXReadState;
 
-__attribute__((visibility("hidden")))
 @interface EXOfficeArtState : OAXDrawingState
 {
     EXReadState *mExcelState;
 }
 
+- (void).cxx_destruct;
 - (id)excelState;
 - (id)initWithExcelState:(id)arg1;
 

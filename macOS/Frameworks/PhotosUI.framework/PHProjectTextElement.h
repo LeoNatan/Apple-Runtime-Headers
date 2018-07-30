@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+- (id)description:(BOOL)arg1;
 - (id)initWithText:(id)arg1 textAttributes:(id)arg2 type:(long long)arg3 weight:(id)arg4 placement:(struct CGRect)arg5;
 - (id)initWithAttributedText:(id)arg1 type:(long long)arg2 weight:(id)arg3 placement:(struct CGRect)arg4;
 - (id)initWithText:(id)arg1 type:(long long)arg2 weight:(id)arg3 placement:(struct CGRect)arg4;

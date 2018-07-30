@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)magnifyWithEvent:(id)arg1;
 - (void)willStartExitAnimation;
 - (void)mouseDown:(id)arg1;
-- (void)_viewDidChangeAppearance:(id)arg1;
+- (void)updateLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)buildBrailleLineWithFocusedElement:(id)arg1;
 - (void)sendBrailleLineWithElement:(id)arg1 focusThrough:(BOOL)arg2 forceRebuild:(BOOL)arg3;
 - (id)description;
+- (id)_defaultLocalizedStringForCommandKey:(id)arg1;
 - (id)typeDescription;
 - (void)handleInteractionOutput:(id)arg1 forCommand:(id)arg2 withStatus:(BOOL)arg3;
 - (BOOL)moveToLastVisibleElementWithEvent:(id)arg1 request:(id)arg2;

@@ -13,7 +13,8 @@
 
 - (void).cxx_destruct;
 - (id)_newResponseForProducts:(id)arg1 invalidIdentifiers:(id)arg2;
-- (void)issueRequestForIdentifier:(id)arg1;
+- (void)_handleReply:(id)arg1;
+- (void)_start;
 - (id)initWithProductIdentifiers:(id)arg1;
 - (id)init;
 

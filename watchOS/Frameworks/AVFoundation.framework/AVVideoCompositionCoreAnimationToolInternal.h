@@ -8,6 +8,7 @@
 
 @class CALayer, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVVideoCompositionCoreAnimationToolInternal : NSObject
 {
     CALayer *animationLayer;

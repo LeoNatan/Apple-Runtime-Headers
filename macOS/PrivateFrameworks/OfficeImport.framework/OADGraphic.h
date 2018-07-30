@@ -6,12 +6,12 @@
 
 #import <OfficeImport/OADDrawable.h>
 
-__attribute__((visibility("hidden")))
 @interface OADGraphic : OADDrawable
 {
     OADGraphic *mMasterGraphic;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)geometry;
 - (void)setMasterGraphic:(id)arg1;

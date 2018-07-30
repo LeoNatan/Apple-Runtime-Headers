@@ -48,9 +48,11 @@
     NSString *_attributionText;
     NSURL *_attributionURL;
     SFImage *_attributionGlyph;
+    NSArray *_richDescriptions;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSArray *richDescriptions; // @synthesize richDescriptions=_richDescriptions;
 @property(retain, nonatomic) SFImage *attributionGlyph; // @synthesize attributionGlyph=_attributionGlyph;
 @property(copy, nonatomic) NSURL *attributionURL; // @synthesize attributionURL=_attributionURL;
 @property(copy, nonatomic) NSString *attributionText; // @synthesize attributionText=_attributionText;

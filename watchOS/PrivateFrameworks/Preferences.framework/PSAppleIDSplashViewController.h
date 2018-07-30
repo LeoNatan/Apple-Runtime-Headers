@@ -6,14 +6,15 @@
 
 #import <Preferences/PSListController.h>
 
+#import "AKAppleIDAuthenticationInAppContextPasswordDelegate.h"
 #import "RemoteUIControllerDelegate.h"
 
-@class AKAppleIDAuthenticationController, CNMonogrammer, NSString, NSTimer, PSSpecifier, RemoteUIController, UIActivityIndicatorView, UIBarButtonItem, UIImageView;
+@class AKAppleIDAuthenticationController, CNMonogrammer, NSString, NSTimer, PSSpecifier, RemoteUIController, UIActivityIndicatorView, UIBarButtonItem;
 
-@interface PSAppleIDSplashViewController : PSListController <RemoteUIControllerDelegate>
+@interface PSAppleIDSplashViewController : PSListController <AKAppleIDAuthenticationInAppContextPasswordDelegate, RemoteUIControllerDelegate>
 {
     AKAppleIDAuthenticationController *_authController;
-    UIImageView *_silhouetteView;
+    CDUnknownBlockType _passwordHandler;
     UIActivityIndicatorView *_spinner;
     UIBarButtonItem *_spinnerBarItem;
     UIBarButtonItem *_nextButtonBarItem;
@@ -21,7 +22,8 @@
     CNMonogrammer *_monogrammer;
     PSSpecifier *_createNewAccountButtonSpecifier;
     PSSpecifier *_createNewAccountGroupSpecifier;
-    PSSpecifier *_signInButtonSpecifier;
+    PSSpecifier *_passwordSpecifier;
+    PSSpecifier *_userSpecifier;
     NSString *_username;
     NSString *_password;
     id _textFieldTextDidChangeObserver;
@@ -38,10 +40,9 @@
 @property(nonatomic) _Bool shouldShowCreateAppleIDButton; // @synthesize shouldShowCreateAppleIDButton=_shouldShowCreateAppleIDButton;
 @property(nonatomic, setter=setPresentedModally:) _Bool isPresentedModally; // @synthesize isPresentedModally=_isPresentedModally;
 - (void).cxx_destruct;
+- (void)_cancelPasswordDelegateIfNecessary;
+- (void)context:(id)arg1 needsPasswordWithCompletion:(CDUnknownBlockType)arg2;
 - (void)remoteUIControllerDidDismiss:(id)arg1;
-- (void)_idleTimerFired;
-- (void)_allowSleepAndDimming;
-- (void)_preventSleepAndDimming;
 - (_Bool)_shouldShowCancelDone;
 - (_Bool)_runningInMail;
 - (id)_monogrammer;
@@ -77,14 +78,14 @@
 - (float)_heightForCreateNewAccountSpecifierWithWidth:(float)arg1;
 - (_Bool)_shouldAnchorCreateAccountButton;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)_presentAppleIDPrivacyInformationPane;
 - (id)_specifierForGroupWithiForgotLink;
 - (id)_specifiersForCreateNewAccount;
-- (id)_specifiersForSignInButton;
-- (id)_specifiersForLoginForm;
+- (void)_reloadPasswordSpecifier;
+- (id)_specifierForLoginPasswordForm;
+- (id)_specifierForLoginUserForm;
 - (id)specifiers;
 - (void)dealloc;
 - (id)serviceIcon;

@@ -25,6 +25,7 @@
 @property(nonatomic) __weak id <PUActivityDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak PUActivityItemSourceController *itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void).cxx_destruct;
+- (id)createActivityBundleImageConfigurationForBundle:(id)arg1 imageNamed:(id)arg2 activityCategory:(long long)arg3;
 - (void)tearDownForCompletion;
 - (void)updateActivityViewControllerVisibileShareActions;
 - (id)pu_activitySettingsImageNamed:(id)arg1;

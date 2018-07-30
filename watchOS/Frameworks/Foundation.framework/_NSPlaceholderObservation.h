@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (oneway void)release;
 - (id)retain;
 - (id)initWithObservable:(id)arg1 observer:(id)arg2;
+- (id)initWithObservable:(id)arg1 blockSink:(CDUnknownBlockType)arg2 tag:(int)arg3;
 
 @end
 

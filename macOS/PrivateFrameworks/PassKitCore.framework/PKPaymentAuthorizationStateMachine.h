@@ -120,6 +120,7 @@
 - (void)continuityPaymentCoordinatorDidTimeoutUpdatePaymentDevices:(id)arg1;
 - (void)didReceivePaymentAuthorizationStatus:(long long)arg1;
 - (void)didReceivePaymentAuthorizationResult:(id)arg1;
+- (void)didAuthenticateWithAuthenticatorEvaluationResponse:(id)arg1;
 - (void)didAuthenticateWithCredential:(id)arg1;
 - (void)didReceivePaymentMethodCompleteWithSummaryItems:(id)arg1;
 - (void)didReceivePaymentMethodCompleteWithUpdate:(id)arg1;

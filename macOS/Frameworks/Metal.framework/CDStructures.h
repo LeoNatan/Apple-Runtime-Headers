@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class MTLIOAccelBuffer, MTLIOAccelDevice, MTLIOAccelDevice<MTLDevice>, MTLIOAccelDeviceShmem, MTLIOAccelDeviceShmemPool, MTLIOAccelHeap, MTLIOAccelPooledResource, MTLIOAccelResource, MTLIOAccelResourcePool, MTLPipelineBufferDescriptorArrayInternal, MTLRenderPassColorAttachmentDescriptorArrayInternal, MTLRenderPipelineColorAttachmentDescriptorArrayInternal, MTLResourceAllocationInfo, MTLResourceList, MTLStageInputOutputDescriptor, MTLStencilDescriptorInternal, MTLVertexDescriptorInternal, NSString;
+@class MTLIOAccelBuffer, MTLIOAccelDevice, MTLIOAccelDevice<MTLDevice>, MTLIOAccelDeviceShmem, MTLIOAccelDeviceShmemPool, MTLIOAccelHeap, MTLIOAccelPooledResource, MTLIOAccelResource, MTLIOAccelResourcePool, MTLPipelineBufferDescriptorArrayInternal, MTLRenderPassColorAttachmentDescriptorArrayInternal, MTLRenderPipelineColorAttachmentDescriptorArrayInternal, MTLResourceAllocationInfo, MTLResourceList, MTLStageInputOutputDescriptor, MTLStencilDescriptorInternal, MTLVertexDescriptorInternal, NSDictionary, NSString;
 
 #pragma mark Blocks
 
@@ -25,9 +25,9 @@ struct IOAccelGetResourceInfoReturnData {
     unsigned int _field1;
     unsigned short _field2;
     unsigned short _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    unsigned long long _field6;
     unsigned char _field7;
     unsigned char _field8;
     unsigned char _field9;
@@ -37,6 +37,12 @@ struct IOAccelGetResourceInfoReturnData {
     unsigned char _field13[2];
     unsigned int _field14;
     unsigned long long _field15[0];
+};
+
+struct IOAccelKernelCommandSignalOrWaitEventArgs {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned long long _field3;
 };
 
 struct IOAccelNewResourceArgs {
@@ -50,8 +56,8 @@ struct IOAccelNewResourceData {
     unsigned short _field4;
     unsigned short _field5;
     unsigned short _field6;
-    unsigned int _field7;
-    unsigned int _field8;
+    unsigned long long _field7;
+    unsigned long long _field8;
     unsigned char _field9;
     unsigned char _field10;
     unsigned char _field11;
@@ -62,16 +68,11 @@ struct IOAccelNewResourceData {
         struct {
             unsigned long long _field1;
             unsigned long long _field2;
-            unsigned int _field3;
-            unsigned int _field4;
+            unsigned long long _field3;
+            unsigned long long _field4;
             unsigned int _field5;
-            unsigned int _field6[1];
         } _field1;
-        struct {
-            unsigned int _field1;
-            unsigned int _field2;
-            unsigned long long _field3[3];
-        } _field2;
+        CDStruct_ad4b0dbd _field2;
         struct {
             unsigned int _field1;
             unsigned int _field2;
@@ -79,14 +80,15 @@ struct IOAccelNewResourceData {
             unsigned int _field4;
             unsigned long long _field5[2];
         } _field3;
+        CDStruct_ad4b0dbd _field4;
     } _field15;
 };
 
 struct IOAccelResourceInfo {
     struct __IOSurface *iosurface;
+    unsigned int resourceSize:56;
+    unsigned int iosurfaceField:8;
     unsigned int resourceID;
-    unsigned int resourceSize;
-    unsigned int iosurfaceField;
 };
 
 struct IOAccelResourceList {
@@ -105,6 +107,8 @@ struct IOAccelResourceList {
     void *_field13;
 };
 
+struct IOAccelSegmentKernelCommmandListHeader;
+
 struct IOAccelSegmentListHeader {
     unsigned long long _field1;
     unsigned int _field2;
@@ -112,9 +116,11 @@ struct IOAccelSegmentListHeader {
     struct IOAccelSegmentResourceListHeader _field4[0];
 };
 
+struct IOAccelSegmentListShmemHeader;
+
 struct IOAccelSegmentResourceDescriptorGroup {
     unsigned int _field1[6];
-    unsigned int _field2[6];
+    unsigned long long _field2[6];
     unsigned short _field3[6];
     unsigned short _field4;
     unsigned short _field5;
@@ -173,8 +179,12 @@ struct MTLComputePipelineDescriptorPrivate {
     NSString *label;
     id computeFunction;
     char threadGroupSizeIsMultipleOfThreadExecutionWidth;
+    unsigned short maxTotalThreadsPerThreadgroup;
     MTLStageInputOutputDescriptor *stageInputDescriptor;
+    NSDictionary *driverCompilerOptions;
     MTLPipelineBufferDescriptorArrayInternal *buffers;
+    char forceResourceIndex;
+    unsigned int resourceIndex;
 };
 
 struct MTLConstantStorage {
@@ -200,6 +210,7 @@ struct MTLFunctionData {
     unsigned long long bitCodeFileSize;
     unsigned long long publicArgumentsOffset;
     unsigned long long privateArgumentsOffset;
+    unsigned long long sourceArchiveOffset;
     unsigned short airMajorVersion;
     unsigned short airMinorVersion;
     unsigned short languageMajorVersion;
@@ -220,6 +231,7 @@ struct MTLHeapDescriptorPrivate {
 struct MTLIOAccelBufferHeap {
     MTLIOAccelBuffer *buffers[64];
     struct MTLRangeAllocator allocators[64];
+    unsigned int allocations[64];
     unsigned int count;
 };
 
@@ -259,6 +271,16 @@ struct MTLIOAccelCommandBufferStorage {
     id _field21;
     id *_field22;
     unsigned int _field23;
+    unsigned long long _field24;
+    struct IOAccelSegmentListShmemHeader *_field25;
+    struct IOAccelSegmentKernelCommmandListHeader *_field26;
+    unsigned int _field27;
+    unsigned int _field28;
+    int _field29;
+    int _field30;
+    unsigned int _field31;
+    struct IOAccelSegmentResourceListHeader *_field32;
+    struct IOAccelSegmentResourceDescriptorGroup *_field33;
 };
 
 struct MTLIOAccelCommandBufferStoragePool {
@@ -269,10 +291,22 @@ struct MTLIOAccelCommandBufferStoragePool {
     id _field5;
 };
 
+struct MTLIndirectCommandBufferHeader {
+    unsigned long long headerSize;
+    unsigned int commandTypes;
+    char inheritPipelineState;
+    char inheritBuffers;
+    unsigned char maxVertexBufferBindCount;
+    unsigned char maxFragmentBufferBindCount;
+    unsigned char maxKernelBufferBindCount;
+    unsigned long long size;
+};
+
 struct MTLLibraryBuilder {
     id _field1;
     struct map<MTLLibraryIdentifier, MTLLibraryContainer *, std::__1::less<MTLLibraryIdentifier>, std::__1::allocator<std::__1::pair<const MTLLibraryIdentifier, MTLLibraryContainer *>>> _field2;
     id _field3;
+    struct MTLPipelineCollection *_field4;
 };
 
 struct MTLLibraryContainer {
@@ -293,6 +327,24 @@ struct MTLLibraryData {
     id _field4;
 };
 
+struct MTLMotionEstimationPipelineDescriptorPrivate {
+    unsigned long long textureWidth;
+    unsigned long long textureHeight;
+};
+
+struct MTLMotionEstimatorCapabilitiesPrivate {
+    unsigned long long maxTextureWidth;
+    unsigned long long maxTextureHeight;
+    unsigned long long macroBlockWidth;
+    unsigned long long macroBlockHeight;
+    unsigned long long regionWidth;
+    unsigned long long regionHeight;
+    unsigned long long precisionNumerator;
+    unsigned long long precisionDenominator;
+    unsigned long long minTextureWidth;
+    unsigned long long minTextureHeight;
+};
+
 struct MTLPipelineBufferDescriptorPrivate {
     union {
         struct {
@@ -301,6 +353,8 @@ struct MTLPipelineBufferDescriptorPrivate {
         CDStruct_914d909e ;
     } ;
 };
+
+struct MTLPipelineCollection;
 
 struct MTLProgramObject {
     struct VariantList<4> _field1;
@@ -313,9 +367,9 @@ struct MTLProgramObject {
 struct MTLRangeAllocator {
     struct MTLRangeAllocatorElement *elements;
     unsigned int numElements;
-    unsigned int capacity;
-    unsigned int capacityIncrement;
-    unsigned int defaultAlignmentMask;
+    unsigned long long capacity;
+    unsigned long long capacityIncrement;
+    unsigned long long defaultAlignmentMask;
 };
 
 struct MTLRangeAllocatorElement;
@@ -331,10 +385,12 @@ struct MTLRenderPassAttachmentDescriptorPrivate {
     CDStruct_3ead2808 clearColor;
     double clearDepth;
     unsigned int clearStencil;
+    unsigned long long stencilResolveFilter;
     id resolveTexture;
     unsigned long long resolveLevel;
     unsigned long long resolveSlice;
     unsigned long long resolveDepthPlane;
+    unsigned long long resolveFilter;
     unsigned long long width;
     unsigned long long height;
 };
@@ -382,6 +438,7 @@ struct MTLRenderPipelineDescriptorPrivate {
     unsigned long long tessellationFactorStepFunction;
     unsigned long long tessellationOutputWindingOrder;
     unsigned long long postVertexDumpBufferIndex;
+    char supportIndirectCommandBuffers;
     union {
         unsigned long long sampleCount;
         unsigned long long rasterSampleCount;
@@ -404,21 +461,26 @@ struct MTLRenderPipelineDescriptorPrivate {
             unsigned int private3:1;
             unsigned int private4:1;
             unsigned int private5:1;
-            unsigned int pad:3;
+            unsigned int twoSideEnabled:1;
+            unsigned int pointSizeOutputVS:1;
+            unsigned int pointCoordLowerLeft:1;
             unsigned int pointSmoothEnabled:1;
             unsigned int clipDistanceEnableMask:8;
             unsigned int alphaTestFunc:3;
             unsigned int alphaTestEnabled:1;
             unsigned int logicOp:4;
             unsigned int logicOpEnabled:1;
+            unsigned int forceResourceIndex:1;
         } ;
     } ;
+    unsigned int resourceIndex;
     NSString *label;
     id vertexFunction;
     id fragmentFunction;
     MTLVertexDescriptorInternal *vertexDescriptor;
     MTLPipelineBufferDescriptorArrayInternal *vertexBuffers;
     MTLPipelineBufferDescriptorArrayInternal *fragmentBuffers;
+    NSDictionary *driverCompilerOptions;
 };
 
 struct MTLResourceListEntry;
@@ -436,6 +498,7 @@ struct MTLSamplerDescriptorPrivate {
             unsigned int borderColor:2;
             unsigned int compareFunction:3;
             unsigned int supportArgumentBuffers:1;
+            unsigned int forceResourceIndex:1;
         } ;
         unsigned int miscHash;
     } ;
@@ -453,6 +516,19 @@ struct MTLSamplerDescriptorPrivate {
     } ;
     unsigned long long maxAnisotropy;
     NSString *label;
+    unsigned int resourceIndex;
+};
+
+struct MTLSharedEventHandlePrivate {
+    unsigned int _field1;
+    id _field2;
+    unsigned long long _field3;
+};
+
+struct MTLSharedTextureHandlePrivate {
+    struct __IOSurface *_field1;
+    id _field2;
+    id _field3;
 };
 
 struct MTLStatSampleRec {
@@ -468,6 +544,11 @@ struct MTLStencilDescriptorPrivate {
     unsigned long long depthStencilPassOperation;
     unsigned int readMask;
     unsigned int writeMask;
+};
+
+struct MTLSyncDispatch {
+    struct MTLSyncDispatch *_field1;
+    CDUnknownBlockType _field2;
 };
 
 struct MTLTargetDeviceArch {
@@ -496,6 +577,9 @@ struct MTLTextureDescriptorPrivate {
     unsigned long long storageMode;
     unsigned long long resourceOptions;
     unsigned long long resolvedUsage;
+    char allowGPUOptimizedContents;
+    char forceResourceIndex;
+    unsigned int resourceIndex;
 };
 
 struct MTLVRTextureBounds {
@@ -503,6 +587,11 @@ struct MTLVRTextureBounds {
     float _field2;
     float _field3;
     float _field4;
+};
+
+struct MessageTracerBacktraceInfo {
+    int nFrames;
+    void *callstack[32];
 };
 
 struct NSObject {
@@ -571,8 +660,8 @@ struct _MTLIOAccelResource {
     MTLResourceAllocationInfo *cachedAllocationInfo;
     MTLIOAccelHeap *heap;
     MTLIOAccelResource *resource;
-    unsigned int offset;
-    unsigned int length;
+    unsigned long long offset;
+    unsigned long long length;
     char pinned;
 };
 
@@ -607,6 +696,8 @@ struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
 };
+
+struct __IOSurface;
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, _MTLIndirectArgumentBufferLayout *>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, _MTLIndirectArgumentBufferLayout *>, void *>*> *_field1;
@@ -738,7 +829,7 @@ typedef struct {
     float maxLineWidth;
     float maxPointSize;
     unsigned int maxVisibilityQueryOffset;
-    unsigned int maxBufferLength;
+    unsigned int padmaxBufferLength;
     unsigned int minConstantBufferAlignmentBytes;
     unsigned int minBufferNoCopyAlignmentBytes;
     unsigned int maxTextureWidth1D;
@@ -758,15 +849,27 @@ typedef struct {
     unsigned int maxComputeThreadgroupMemoryAlignmentBytes;
     unsigned int maxInterpolatedComponents;
     unsigned int maxTessellationFactor;
+    unsigned int maxIndirectBuffers;
+    unsigned int maxIndirectTextures;
+    unsigned int maxIndirectSamplers;
+    unsigned int maxIndirectSamplersPerDevice;
     unsigned int maxViewportCount;
     unsigned int maxCustomSamplePositions;
-} CDStruct_b3e7dfa1;
+    unsigned int maxTextureBufferWidth;
+    unsigned long long maxBufferLength;
+} CDStruct_df0ba0f9;
 
 typedef struct {
     unsigned int _field1;
     unsigned int _field2;
     unsigned int _field3;
 } CDStruct_32a7f38a;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned long long _field3[3];
+} CDStruct_ad4b0dbd;
 
 typedef struct {
     unsigned int _field1;

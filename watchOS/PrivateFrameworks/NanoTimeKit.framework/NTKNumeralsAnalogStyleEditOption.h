@@ -10,12 +10,12 @@
 {
 }
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)_orderedValues;
-+ (int)indexForNumeralsStyle:(unsigned int)arg1;
-+ (id)availableOrderedValues;
-+ (id)optionWithStyle:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (int)indexForNumeralsStyle:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)availableOrderedValuesForDevice:(id)arg1;
++ (id)optionWithStyle:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
 @property(readonly, nonatomic) unsigned int style;
 

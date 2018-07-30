@@ -8,7 +8,7 @@
 
 #import "FCContentContextInternal.h"
 
-@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagRecordSource, FCWebArchiveSource, FCWidgetSectionConfigRecordSource, NSString;
+@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray, NSString;
 
 @interface FCContentContextInternal : NSObject <FCContentContextInternal>
 {
@@ -16,7 +16,6 @@
     FCTagRecordSource *_tagRecordSource;
     FCChannelMembershipController *_channelMembershipController;
     FCResourceRecordSource *_resourceRecordSource;
-    FCWebArchiveSource *_webArchiveSource;
     FCArticleListRecordSource *_articleListRecordSource;
     FCPurchaseLookupRecordSource *_purchaseLookupRecordSource;
     FCForYouConfigRecordSource *_forYouConfigRecordSource;
@@ -31,13 +30,13 @@
 @property(retain, nonatomic) FCForYouConfigRecordSource *forYouConfigRecordSource; // @synthesize forYouConfigRecordSource=_forYouConfigRecordSource;
 @property(retain, nonatomic) FCPurchaseLookupRecordSource *purchaseLookupRecordSource; // @synthesize purchaseLookupRecordSource=_purchaseLookupRecordSource;
 @property(retain, nonatomic) FCArticleListRecordSource *articleListRecordSource; // @synthesize articleListRecordSource=_articleListRecordSource;
-@property(retain, nonatomic) FCWebArchiveSource *webArchiveSource; // @synthesize webArchiveSource=_webArchiveSource;
 @property(retain, nonatomic) FCResourceRecordSource *resourceRecordSource; // @synthesize resourceRecordSource=_resourceRecordSource;
 @property(retain, nonatomic) FCChannelMembershipController *channelMembershipController; // @synthesize channelMembershipController=_channelMembershipController;
 @property(retain, nonatomic) FCTagRecordSource *tagRecordSource; // @synthesize tagRecordSource=_tagRecordSource;
 @property(retain, nonatomic) FCArticleRecordSource *articleRecordSource; // @synthesize articleRecordSource=_articleRecordSource;
 - (void).cxx_destruct;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSArray *recordSources;
 - (id)init;
 
 // Remaining properties

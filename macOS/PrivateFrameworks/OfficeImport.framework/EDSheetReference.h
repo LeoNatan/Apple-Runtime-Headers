@@ -6,7 +6,6 @@
 
 #import <OfficeImport/EDReference.h>
 
-__attribute__((visibility("hidden")))
 @interface EDSheetReference : EDReference
 {
     unsigned long long mSheetIndex;

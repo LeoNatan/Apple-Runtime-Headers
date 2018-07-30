@@ -6,17 +6,21 @@
 
 #import "NSManagedObject.h"
 
-@class NSData, NSDate, NSNumber, NSString;
+@class NSData, NSDate, NSNumber, NSString, NSUUID, RTMapItemMO;
 
 @interface RTVehicleEventMO : NSManagedObject
 {
+    RTMapItemMO *cachedMapItem;
 }
 
 + (id)managedObjectWithVehicleEvent:(id)arg1 inManagedObjectContext:(id)arg2;
+@property(retain, nonatomic) RTMapItemMO *cachedMapItem; // @synthesize cachedMapItem;
+- (void).cxx_destruct;
+- (void)setMapItem:(id)arg1;
+- (id)mapItem;
 
 // Remaining properties
 @property(copy, nonatomic) NSDate *date; // @dynamic date;
-@property(retain, nonatomic) NSData *geoMapItem; // @dynamic geoMapItem;
 @property(copy, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(copy, nonatomic) NSDate *locDate; // @dynamic locDate;
 @property(copy, nonatomic) NSNumber *locLatitude; // @dynamic locLatitude;
@@ -24,6 +28,7 @@
 @property(copy, nonatomic) NSNumber *locReferenceFrame; // @dynamic locReferenceFrame;
 @property(copy, nonatomic) NSNumber *locUncertainty; // @dynamic locUncertainty;
 @property(copy, nonatomic) NSNumber *locationQuality; // @dynamic locationQuality;
+@property(copy, nonatomic) NSUUID *mapItemIdentifier; // @dynamic mapItemIdentifier;
 @property(copy, nonatomic) NSString *notes; // @dynamic notes;
 @property(retain, nonatomic) NSData *photoData; // @dynamic photoData;
 @property(copy, nonatomic) NSNumber *userSetLocation; // @dynamic userSetLocation;

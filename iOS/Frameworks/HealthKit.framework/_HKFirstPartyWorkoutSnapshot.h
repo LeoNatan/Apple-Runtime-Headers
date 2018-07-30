@@ -19,7 +19,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)workoutSnapshotWithState:(long long)arg1 activityType:(unsigned long long)arg2 startDate:(id)arg3 workoutEvents:(id)arg4;
++ (id)firstPartyWorkoutSnapshotWithCurrentWorkoutSnapshot:(id)arg1;
 @property(readonly, nonatomic) NSArray *workoutEvents; // @synthesize workoutEvents=_workoutEvents;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;

@@ -12,10 +12,12 @@
 
 @interface HUItemTableModuleController : NSObject <HUItemTableTextEditingController>
 {
+    id <HUItemTableModuleControllerHosting> _host;
     HFItemModule *_module;
 }
 
 @property(readonly, nonatomic) HFItemModule *module; // @synthesize module=_module;
+@property(nonatomic) __weak id <HUItemTableModuleControllerHosting> host; // @synthesize host=_host;
 - (void).cxx_destruct;
 - (id)textFieldForVisibleItem:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1 item:(id)arg2;

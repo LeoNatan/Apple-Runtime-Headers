@@ -4,18 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <Automator/AMWorkflowPersonality.h>
+#import <Automator/AMInputOutputWorkflowPersonality.h>
 
-@interface AMServiceWorkflowPersonality : AMWorkflowPersonality
+@class NSArray, NSDictionary;
+
+@interface AMServiceWorkflowPersonality : AMInputOutputWorkflowPersonality
 {
 }
 
-- (id)pluginHeaderViewController;
-- (BOOL)finishSavingDocument:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
+- (BOOL)installationCompleteForWorkflowReturningShowCompleted:(id)arg1 atURL:(id)arg2;
+- (void)_revealPreferencesForPresentationMode:(unsigned long long)arg1;
+- (void)_revealPreferencesForSinglePresentationMode:(unsigned long long)arg1;
+- (void)_openKeyboardServicesPreferencePane;
+- (void)_openExtensionsPreferencePaneWithExtensionPointIdentifier:(id)arg1;
+- (void)_openPreferencePaneAtURL:(id)arg1 withPlistParameters:(id)arg2;
+- (BOOL)finishSavingWorkflow:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
+- (BOOL)updateFileWrapper:(id)arg1 forWorkflowMetaData:(id)arg2 documentType:(id)arg3 error:(id *)arg4;
 - (id)infoPlistForWorkflowMetaData:(id)arg1 error:(id *)arg2;
-- (id)_infoPlistForServicesDocumentWithMetadata:(id)arg1;
-- (id)infoStringForCompleteInstallationWithMetaData:(id)arg1;
+- (id)_infoPlistForServiceWorkflowWithMetadata:(id)arg1;
+- (id)pluginHeaderViewController;
 - (id)imageRepresentation;
+@property(readonly, copy, nonatomic) NSDictionary *_servicesPlistStringsByPresentationMode;
+@property(readonly, copy, nonatomic) NSArray *allPresentationModes;
+- (BOOL)allowsRevealInAutomatorOnInstallation;
+- (id)infoStringForInitialInstallationWithMetaData:(id)arg1;
 - (id)personalitySettingsDictionary;
 
 @end

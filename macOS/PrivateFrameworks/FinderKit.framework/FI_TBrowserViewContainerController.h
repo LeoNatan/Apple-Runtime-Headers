@@ -6,18 +6,19 @@
 
 #import <FinderKit/FI_TViewController.h>
 
-@class FI_TBottomBarController, FI_TBrowserSplitViewController, FI_TContainerLayoutManager, FI_TSearchSliceController;
+@class FI_TBrowserSplitViewController, FI_TContainerLayoutManager, FI_TPathBarController, FI_TSearchSliceController;
 
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserViewContainerController : FI_TViewController
 {
-    struct TNSRef<NSViewController *, void> _bannerViewController;
-    struct TNSRef<FI_TBrowserSplitViewController *, void> _browserSplitViewController;
-    struct TNSRef<FI_TSearchSliceController *, void> _searchSliceController;
-    struct TNSRef<FI_TBottomBarController *, void> _bottomBarController;
+    struct TNSRef<NSViewController, void> _bannerViewController;
+    struct TNSRef<FI_TBrowserSplitViewController, void> _browserSplitViewController;
+    struct TNSRef<FI_TSearchSliceController, void> _searchSliceController;
+    struct TNSRef<FI_TPathBarController, void> _pathBarController;
     FI_TContainerLayoutManager *_containerLayoutManager;
-    struct TNSRef<NSMutableArray<NSLayoutConstraint *>*, void> _layoutConstraints;
+    struct TNSRef<NSMutableArray<NSLayoutConstraint *>, void> _layoutConstraints;
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationCenterObservers;
+    int _folderSharingBannerType;
 }
 
 - (id).cxx_construct;
@@ -26,12 +27,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSearchSliceViewVisible;
 - (id)searchSliceView;
 @property(readonly, retain, nonatomic) FI_TSearchSliceController *searchSliceController; // @dynamic searchSliceController;
-- (void)setBottomBarTarget:(const struct TFENode *)arg1 selectedNodes:(const struct TFENodeVector *)arg2;
-- (_Bool)configureBottomBar:(_Bool)arg1 browserContainerController:(id)arg2;
-- (_Bool)isBottomBarVisible;
-- (id)bottomBarView;
-@property(readonly, retain, nonatomic) FI_TBottomBarController *bottomBarController;
+- (void)setPathBarTarget:(const struct TFENode *)arg1 selectedNodes:(const struct TFENodeVector *)arg2;
+- (_Bool)configurePathBar:(_Bool)arg1 browserContainerController:(id)arg2;
+- (_Bool)isPathBarVisible;
+- (id)pathBarView;
+@property(readonly, retain, nonatomic) FI_TPathBarController *pathBarController;
 - (void)configureBannerView:(const struct TFENode *)arg1 selectedNodes:(const struct TFENode *)arg2 isInColumnView:(_Bool)arg3 isBackupBrowser:(_Bool)arg4;
+- (_Bool)targetIsInsideSharedFolder;
 - (id)newBannerViewWrapperWithBanner:(id)arg1;
 @property(readonly, nonatomic) _Bool bannerViewIsVisible; // @dynamic bannerViewIsVisible;
 - (id)bannerView;

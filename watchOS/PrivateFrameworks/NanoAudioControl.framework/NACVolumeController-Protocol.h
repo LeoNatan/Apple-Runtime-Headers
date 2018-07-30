@@ -8,8 +8,9 @@
 
 @protocol NACVolumeController <NSObject>
 @property(nonatomic, getter=isProminentHapticEnabled) _Bool prominentHapticEnabled;
-@property(nonatomic, getter=isSystemMuted) _Bool systemMuted;
 @property(nonatomic) float hapticIntensity;
+@property(nonatomic) int hapticState;
+@property(nonatomic, getter=isSystemMuted) _Bool systemMuted;
 @property(readonly, nonatomic) float EUVolumeLimit;
 @property(readonly, nonatomic) float volumeValue;
 @property(readonly, nonatomic, getter=isMuted) _Bool muted;

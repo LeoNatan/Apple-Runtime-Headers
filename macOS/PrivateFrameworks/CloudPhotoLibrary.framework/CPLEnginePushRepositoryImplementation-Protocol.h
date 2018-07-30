@@ -6,25 +6,28 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class CPLExtractedBatch, CPLRecordChange, NSString;
+@class CPLExtractedBatch, CPLRecordChange, CPLScopeFilter, CPLScopedIdentifier, NSString;
 
 @protocol CPLEnginePushRepositoryImplementation <CPLEngineStorageImplementation>
-@property(readonly, nonatomic) BOOL hasChanges;
-@property(readonly, nonatomic) unsigned long long countOfChanges;
-- (BOOL)deleteChangeWithIdentifier:(NSString *)arg1 discardedUploadIdentifier:(id *)arg2 error:(id *)arg3;
-- (BOOL)deleteChangeWithIdentifier:(NSString *)arg1 error:(id *)arg2;
-- (id <NSFastEnumeration>)allChangesWithBlock:(CPLRecordChange * (^)(CPLRecordChange *))arg1;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 secondaryIdentifier:(NSString *)arg2 block:(CPLRecordChange * (^)(CPLRecordChange *))arg3;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 relatedIdentifier:(NSString *)arg2 block:(CPLRecordChange * (^)(CPLRecordChange *))arg3;
-- (id <NSFastEnumeration>)allNonDeletedChangesWithClass:(Class)arg1 block:(CPLRecordChange * (^)(CPLRecordChange *))arg2;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 changeType:(unsigned long long)arg2 block:(CPLRecordChange * (^)(CPLRecordChange *))arg3;
-- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 trashed:(BOOL)arg2 block:(CPLRecordChange * (^)(CPLRecordChange *))arg3;
-- (CPLRecordChange *)changeWithIdentifier:(NSString *)arg1 block:(CPLRecordChange * (^)(CPLRecordChange *))arg2;
+- (BOOL)isEmpty;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 discardedUploadIdentifiers:(id *)arg4 error:(id *)arg5;
+- (BOOL)deleteChangeWithScopedIdentifier:(CPLScopedIdentifier *)arg1 discardedUploadIdentifier:(id *)arg2 error:(id *)arg3;
+- (BOOL)deleteChangeWithScopedIdentifier:(CPLScopedIdentifier *)arg1 error:(id *)arg2;
+- (id <NSFastEnumeration>)allChangesWithScopeIdentifier:(NSString *)arg1 block:(CPLRecordChange * (^)(CPLRecordChange *))arg2;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 secondaryScopedIdentifier:(CPLScopedIdentifier *)arg2 block:(CPLRecordChange * (^)(CPLRecordChange *))arg3;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 relatedScopedIdentifier:(CPLScopedIdentifier *)arg2 block:(CPLRecordChange * (^)(CPLRecordChange *))arg3;
+- (id <NSFastEnumeration>)allNonDeletedChangesWithClass:(Class)arg1 scopeIdentifier:(NSString *)arg2 block:(CPLRecordChange * (^)(CPLRecordChange *))arg3;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 scopeIdentifier:(NSString *)arg2 changeType:(unsigned long long)arg3 block:(CPLRecordChange * (^)(CPLRecordChange *))arg4;
+- (id <NSFastEnumeration>)allChangesWithClass:(Class)arg1 scopeIdentifier:(NSString *)arg2 trashed:(BOOL)arg3 block:(CPLRecordChange * (^)(CPLRecordChange *))arg4;
+- (CPLRecordChange *)changeWithScopedIdentifier:(CPLScopedIdentifier *)arg1 block:(CPLRecordChange * (^)(CPLRecordChange *))arg2;
 - (CPLExtractedBatch *)storedExtractedBatch;
 - (BOOL)storeExtractedBatch:(CPLExtractedBatch *)arg1 error:(id *)arg2;
 - (BOOL)deleteAllChangesWithError:(id *)arg1;
-- (BOOL)hasSomeChangeWithIdentifier:(NSString *)arg1;
+- (BOOL)hasSomeChangeWithScopedIdentifier:(CPLScopedIdentifier *)arg1;
 - (BOOL)reinjectChange:(CPLRecordChange *)arg1 dequeueOrder:(long long)arg2 discardedUploadIdentifier:(id *)arg3 overwrittenRecord:(char *)arg4 error:(id *)arg5;
 - (BOOL)storeChange:(CPLRecordChange *)arg1 uploadIdentifier:(NSString *)arg2 discardedUploadIdentifier:(id *)arg3 error:(id *)arg4;
+- (BOOL)hasChangesWithScopeFilter:(CPLScopeFilter *)arg1;
+- (BOOL)hasChangesInScopeWithIdentifier:(NSString *)arg1;
+- (unsigned long long)countOfChangesInScopeWithIdentifier:(NSString *)arg1;
 @end
 

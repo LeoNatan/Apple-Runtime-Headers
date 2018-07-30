@@ -24,18 +24,18 @@
     NSString *_phonemes;
     NSSet *_languages;
     NSSet *_voiceIds;
-    NSSet *_bundleIdentifiers;
     NSUUID *_uuid;
+    NSSet *_bundleIdentifiers;
     struct _NSRange _replacementRange;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) _Bool isUserSubstitution; // @synthesize isUserSubstitution=_isUserSubstitution;
 @property(readonly, nonatomic) _Bool isReplacementTextSurroundedByPunctuation; // @synthesize isReplacementTextSurroundedByPunctuation=_isReplacementTextSurroundedByPunctuation;
 @property(readonly, nonatomic) _Bool isReplacementTextAllPunctuation; // @synthesize isReplacementTextAllPunctuation=_isReplacementTextAllPunctuation;
 @property(copy, nonatomic) NSSet *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(nonatomic) _Bool appliesToAllApps; // @synthesize appliesToAllApps=_appliesToAllApps;
+@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) struct _NSRange replacementRange; // @synthesize replacementRange=_replacementRange;
 @property(nonatomic) _Bool ignoreCase; // @synthesize ignoreCase=_ignoreCase;
 @property(nonatomic) _Bool active; // @synthesize active=_active;

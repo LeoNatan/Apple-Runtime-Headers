@@ -17,12 +17,12 @@
 + (id)eventWithName:(id)arg1 handler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (_Bool)isEqualToEvent:(id)arg1;
 - (void)_execute;
 - (void)executeFromEventQueue;
 - (void)execute;
 - (id)description;
-- (void)dealloc;
 
 @end
 

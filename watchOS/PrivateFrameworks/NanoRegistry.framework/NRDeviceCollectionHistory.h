@@ -7,15 +7,19 @@
 #import "NSObject.h"
 
 #import "NRMutableStateParentDelegate.h"
+#import "NSCopying.h"
 #import "NSFastEnumeration.h"
 #import "NSSecureCoding.h"
 
-@class NRMutableDeviceCollection, NRSwitchRecordCollection, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet;
+@class NRMutableDeviceCollection, NRPBDeviceCollectionHistory, NRSwitchRecordCollection, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet;
 
-@interface NRDeviceCollectionHistory : NSObject <NRMutableStateParentDelegate, NSSecureCoding, NSFastEnumeration>
+@interface NRDeviceCollectionHistory : NSObject <NRMutableStateParentDelegate, NSCopying, NSSecureCoding, NSFastEnumeration>
 {
     NSMutableOrderedSet *_observers;
-    _Bool _dirty;
+    int _maxHistoryDepth;
+    // Error parsing type: AB, name: _atomicDirty
+    struct os_unfair_lock_s _observerLock;
+    struct os_unfair_lock_s _cacheLock;
     NRMutableDeviceCollection *_deviceCollection;
     NSMutableArray *_history;
     NRSwitchRecordCollection *_switchRecords;
@@ -33,14 +37,15 @@
 @property(retain, nonatomic) NSMutableArray *history; // @synthesize history=_history;
 @property(nonatomic) unsigned long long startIndex; // @synthesize startIndex=_startIndex;
 @property(readonly, nonatomic) NRMutableDeviceCollection *deviceCollection; // @synthesize deviceCollection=_deviceCollection;
-@property(readonly, nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToHistory:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)description;
-- (void)notifyObserversWithEntry:(id)arg1;
+- (void)invalidate;
+- (void)notifyHistoryObserversWithEntry:(id)arg1;
 - (id)deviceIDAtSwitchIndex:(unsigned long)arg1 date:(id *)arg2;
 - (id)switchDeviceIDFromDiff:(id)arg1;
 @property(readonly, nonatomic) unsigned long switchIndex;
@@ -58,8 +63,12 @@
 - (id)_mostRecentStateBefore:(id)arg1;
 - (unsigned int)_findIndexInHistoryStateCache:(id)arg1 type:(unsigned int)arg2;
 - (id)stateAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) NRPBDeviceCollectionHistory *protobuf;
+- (id)initWithProtobuf:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)_createIndex;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly, nonatomic) _Bool dirty;
 - (id)init;
 
 @end

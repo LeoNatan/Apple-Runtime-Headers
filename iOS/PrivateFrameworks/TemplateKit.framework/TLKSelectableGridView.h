@@ -24,17 +24,16 @@
 @property(retain) NSMutableArray *buttons; // @synthesize buttons=_buttons;
 @property(retain) NUIContainerGridView *gridView; // @synthesize gridView=_gridView;
 @property __weak id <TLKSelectableGridViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) NSArray *tuples; // @synthesize tuples=_tuples;
+@property(retain, nonatomic) NSArray *tuples; // @synthesize tuples=_tuples;
 - (void).cxx_destruct;
 - (id)arrangedEntrySubviews;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)selectableGridButtonPressed:(id)arg1;
-@property long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (id)_createButton;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (void)observedPropertiesChanged;
 - (void)styleDidChange:(unsigned long long)arg1;
-- (id)observableProperties;
 - (id)init;
 
 // Remaining properties

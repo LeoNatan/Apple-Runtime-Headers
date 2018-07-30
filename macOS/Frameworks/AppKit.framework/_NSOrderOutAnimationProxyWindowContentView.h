@@ -8,6 +8,7 @@
 
 @class NSBitmapImageRep;
 
+__attribute__((visibility("hidden")))
 @interface _NSOrderOutAnimationProxyWindowContentView : NSView
 {
     NSBitmapImageRep *snapshot;

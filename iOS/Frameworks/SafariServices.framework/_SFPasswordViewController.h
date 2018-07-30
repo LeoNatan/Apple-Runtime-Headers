@@ -23,6 +23,11 @@
 - (void)_dismissPasswordViewController;
 - (void)remoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)remoteViewControllerWillDismiss:(id)arg1;
+- (id)childViewControllerForWhitePointAdaptivityStyle;
+- (id)childViewControllerForStatusBarStyle;
+- (id)childViewControllerForStatusBarHidden;
+- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (void)_connectToService;
 - (void)_setUpServiceProxyIfNeeded;
 - (id)_connectToServiceWithCompletion:(CDUnknownBlockType)arg1;

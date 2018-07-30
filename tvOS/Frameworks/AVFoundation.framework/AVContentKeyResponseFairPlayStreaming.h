@@ -8,6 +8,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface AVContentKeyResponseFairPlayStreaming : AVContentKeyResponse
 {
     NSData *_keyData;

@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface _NSCGSWindowOrderingProperties : NSObject
 {
     NSMapTable *_levelByWindow;
-    NSMapTable *_subLevelByWindow;
     NSMapTable *_orderingGroupByWindow;
     NSMutableSet *_disassociateFromSpacesIfOrderedOut;
     NSMutableSet *_reassociateWithSpacesByGeometry;
@@ -23,13 +22,13 @@ __attribute__((visibility("hidden")))
 - (void)addWindow:(id)arg1 toOrderingGroupBelowWindow:(id)arg2;
 - (void)addWindow:(id)arg1 toOrderingGroupAboveWindow:(id)arg2;
 - (id)orderingGroupForWindow:(id)arg1;
+- (void)unlockWindowSublevel:(id)arg1;
+- (void)lockWindow:(id)arg1 toAbsoluteSublevel:(int)arg2;
 - (BOOL)willReassociateWithSpacesByGeometry:(id)arg1;
 - (BOOL)willDisassociateFromSpacesIfOrderedOut:(id)arg1;
 - (void)reassociateWithSpacesByGeometry:(id)arg1;
 - (void)disassociateFromSpacesIfOrderedOut:(id)arg1;
 - (void)setDesiredSpace:(unsigned long long)arg1 forWindow:(id)arg2;
-- (void)setSubLevel:(int)arg1 forWindow:(id)arg2;
-- (int)subLevelForWindow:(id)arg1;
 - (void)setLevel:(int)arg1 forWindow:(id)arg2;
 - (int)levelForWindow:(id)arg1;
 - (void)dealloc;

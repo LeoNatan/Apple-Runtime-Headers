@@ -8,14 +8,14 @@
 
 #import "IKJSPlayer.h"
 
-@class IKAppPlayerBridge, IKDOMDocument, IKJSMediaItem, IKJSPlaylist, NSDate, NSMutableDictionary, NSNumber, NSString;
+@class IKAppPlayerBridge, IKDOMDocument, IKJSMediaItem, IKJSPlaylist, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSString;
 
 @interface IKJSPlayer : IKJSEventListenerObject <IKJSPlayer>
 {
     IKJSPlaylist *_playlist;
     long long _playerState;
     _Bool _holdingSelfReference;
-    NSMutableDictionary *_observedMetadataKeys;
+    NSMutableDictionary *_timedMetadataListeners;
     NSMutableDictionary *_timeListeners;
     NSMutableDictionary *_boundaryListeners;
     IKAppPlayerBridge *_bridge;
@@ -23,20 +23,9 @@
 
 @property(readonly, nonatomic) IKAppPlayerBridge *bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
+- (_Bool)_timedMetadataDidChangeWithExtraInfo:(id)arg1;
 - (void)_removeManagedReference;
 - (void)_addManagedReference;
-- (void)transportBarVisibilityDidChange:(_Bool)arg1;
-- (_Bool)shouldChangeToMediaAtIndex:(unsigned long long)arg1;
-- (void)playbackDidStall:(double)arg1;
-- (void)playbackError:(id)arg1 shouldStopDueToError:(_Bool)arg2;
-- (void)timeBoundaryDidCross:(double)arg1;
-- (void)timeIntervalElapsed:(double)arg1 time:(double)arg2;
-- (void)currentMediaItemDurationDidChange:(double)arg1;
-- (void)timedMetadataDidChange:(id)arg1 value:(id)arg2;
-- (_Bool)requestSeekToTime:(double *)arg1 currentTime:(double)arg2;
-- (_Bool)shouldHandleStateEvent:(id)arg1;
-- (void)stateWillChange:(id)arg1;
-- (void)stateDidChange:(id)arg1;
 - (void)removeEventListener:(id)arg1:(id)arg2;
 - (void)addEventListener:(id)arg1:(id)arg2:(id)arg3;
 @property(readonly, nonatomic) NSString *playbackState;
@@ -49,18 +38,23 @@
 - (void)play;
 - (void)present;
 - (long long)state;
+@property(copy, nonatomic) NSDictionary *contextMenuData;
+@property(nonatomic) _Bool muted;
+@property(nonatomic) _Bool showsResumeMenu;
+@property(readonly, nonatomic) NSArray *currentMediaItemErrorLogs;
+@property(readonly, nonatomic) NSArray *currentMediaItemAccessLogs;
 @property(readonly, nonatomic) IKJSMediaItem *previousMediaItem;
 @property(readonly, nonatomic) IKJSMediaItem *nextMediaItem;
 @property(readonly, nonatomic) IKJSMediaItem *currentMediaItem;
 @property(readonly, nonatomic) NSNumber *currentMediaItemDuration;
 @property(readonly, nonatomic) NSDate *currentMediaItemDate;
 - (void)seekToTime:(double)arg1;
+@property(retain, nonatomic) NSDictionary *userInfo;
 @property(retain, nonatomic) IKJSPlaylist *playlist;
 @property(retain, nonatomic) IKDOMDocument *interactiveOverlayDocument;
 @property(nonatomic) _Bool interactiveOverlayDismissable;
 @property(retain, nonatomic) IKDOMDocument *overlayDocument;
-- (void)mediaItemDidChange:(long long)arg1;
-- (void)mediaItemWillChange:(long long)arg1;
+- (_Bool)dispatchEvent:(id)arg1 userInfo:(id)arg2;
 - (void)dealloc;
 - (id)initWithAppContext:(id)arg1 bridge:(id)arg2;
 - (id)init;

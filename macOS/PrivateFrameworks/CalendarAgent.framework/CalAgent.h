@@ -60,6 +60,9 @@
 - (void)tearDownMemorySensor;
 - (void)setUpSignalHandler;
 - (void)setUpMemorySensor;
+- (void)clearOldPersistentHistoryEntries;
+- (void)scheduleEveryOtherDayTasks;
+- (void)scheduleDailyTasks;
 - (void)start;
 - (void)setupCoreDataServer;
 

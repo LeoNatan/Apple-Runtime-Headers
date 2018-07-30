@@ -16,6 +16,7 @@
 - (void)sendActivationConfirmation:(id)arg1 uuid:(id)arg2 context:(id)arg3;
 - (void)sendActivationRequest:(id)arg1 uuid:(id)arg2 context:(id)arg3;
 - (void)sendPPIDInfoRequest:(id)arg1 model:(id)arg2 token:(id)arg3 uuid:(id)arg4 context:(id)arg5;
+- (void)getPPIDInfo:(id)arg1 model:(id)arg2 cert:(id)arg3 context:(id)arg4;
 - (id)initWithDelegate:(id)arg1;
 
 @end

@@ -49,6 +49,7 @@
 - (void)acceptTransfer:(id)arg1 path:(id)arg2;
 - (void)failTransfer:(id)arg1 error:(id)arg2;
 - (void)resetTransferAndPostError:(id)arg1 error:(id)arg2;
+- (void)failTransferPreviewGeneration:(id)arg1;
 - (void)resetTransfer:(id)arg1 andPostReason:(long long)arg2;
 - (void)failTransfer:(id)arg1 reason:(long long)arg2;
 - (void)endTransfer:(id)arg1 overrideFinalFileName:(id)arg2;

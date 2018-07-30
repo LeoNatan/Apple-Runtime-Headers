@@ -7,6 +7,7 @@
 #import "NSAttributedString.h"
 
 @interface NSAttributedString (SCROAttributedStringExtras)
+- (id)scrAttributedStringByTrimmingTrailingNewlines;
 - (id)deepCopyWithZone:(struct _NSZone *)arg1;
 - (_Bool)getRange:(struct _NSRange *)arg1 ofAttribute:(id)arg2 withValue:(id)arg3;
 - (_Bool)getRange:(struct _NSRange *)arg1 ofAttribute:(id)arg2;

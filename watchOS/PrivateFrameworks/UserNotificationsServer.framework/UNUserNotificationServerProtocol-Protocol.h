@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSNumber, NSSet, NSString, UNNotificationRequest;
+@class NSArray, NSNumber, NSSet, NSString, UNNotificationContent, UNNotificationRequest;
 
 @protocol UNUserNotificationServerProtocol <NSObject>
 - (void)setBadgeString:(NSString *)arg1 forBundleIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(NSError *))arg3;
@@ -19,11 +19,11 @@
 - (void)removeDeliveredNotificationsWithIdentifiers:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (void)getDeliveredNotificationsForBundleIdentifier:(NSString *)arg1 withCompletionHandler:(void (^)(NSArray *))arg2;
 - (void)removeAllPendingNotificationRequestsForBundleIdentifier:(NSString *)arg1;
-- (void)removeSimilarNotificationRequests:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(void))arg3;
+- (void)removeSimilarNotificationRequests:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (void)removePendingNotificationRequestsWithIdentifiers:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (void)getPendingNotificationRequestsForBundleIdentifier:(NSString *)arg1 withCompletionHandler:(void (^)(NSArray *))arg2;
-- (void)setNotificationRequests:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(void))arg3;
-- (void)addNotificationRequests:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(void))arg3;
+- (void)setNotificationRequests:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2;
+- (void)replaceContentForRequestWithIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 replacementContent:(UNNotificationContent *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)addNotificationRequest:(UNNotificationRequest *)arg1 forBundleIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(NSError *))arg3;
 - (void)setNotificationCategories:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (void)getNotificationCategoriesForBundleIdentifier:(NSString *)arg1 withCompletionHandler:(void (^)(NSSet *))arg2;

@@ -10,6 +10,7 @@
 
 @protocol CPLEngineStorageImplementation <CPLPlatformImplementation>
 - (BOOL)_checkSuperWasCalled;
+- (NSDictionary *)statusPerScopeIndex;
 - (NSDictionary *)statusDictionary;
 - (NSString *)status;
 - (void)writeTransactionDidSucceed;

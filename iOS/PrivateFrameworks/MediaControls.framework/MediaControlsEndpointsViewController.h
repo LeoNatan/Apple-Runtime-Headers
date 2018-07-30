@@ -73,6 +73,7 @@
 - (void)setDisplayMode:(long long)arg1;
 - (void)dismissMediaControlsPanelViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
+- (void)mediaControlsPanelViewController:(id)arg1 willToggleRoutingPicker:(_Bool)arg2;
 - (void)mediaControlsPanelViewController:(id)arg1 didToggleRoutingPicker:(_Bool)arg2;
 - (void)stopPrewarming;
 - (void)startPrewarming;

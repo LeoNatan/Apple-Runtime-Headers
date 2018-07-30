@@ -10,7 +10,6 @@
 
 @class MFBrush, MFFont, MFPalette, MFPath, MFPen, MFTransform, NSMutableArray, NSObject<MFDeviceDriver>, OITSUColor;
 
-__attribute__((visibility("hidden")))
 @interface MFDeviceContext : NSObject <NSCopying>
 {
     NSObject<MFDeviceDriver> *m_driver;
@@ -44,6 +43,7 @@ __attribute__((visibility("hidden")))
 + (id)deviceContextWithDriver:(id)arg1;
 @property(nonatomic) BOOL clippingIsRestarted; // @synthesize clippingIsRestarted=m_clippingIsRestarted;
 @property(readonly, nonatomic) NSMutableArray *clippingPaths; // @synthesize clippingPaths=m_clippingPaths;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setRop2:(int)arg1;
 - (int)getRop2;
@@ -90,7 +90,6 @@ __attribute__((visibility("hidden")))
 - (void)setTextUpdateCP:(_Bool)arg1;
 - (void)setPenPosition:(struct CGPoint)arg1;
 - (struct CGPoint)getPenPosition;
-- (void)dealloc;
 - (id)initWithDriver:(id)arg1;
 
 @end

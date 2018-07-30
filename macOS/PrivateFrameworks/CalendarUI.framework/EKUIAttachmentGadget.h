@@ -13,7 +13,7 @@
 #import "QLPreviewPanelDelegate.h"
 #import "QLSeamlessOpenerDelegate.h"
 
-@class EKUIAttachmentTableView, EKUITextButton, NSArray, NSDictionary, NSLayoutConstraint, NSString, NSView;
+@class EKAttachment, EKUIAttachmentTableView, EKUITextButton, NSArray, NSDictionary, NSLayoutConstraint, NSString, NSView;
 
 @interface EKUIAttachmentGadget : EKUIIsolateableSingleViewGadget <QLSeamlessOpenerDelegate, QLPreviewPanelDelegate, QLPreviewPanelDataSource, CalUIResizingTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource>
 {
@@ -24,9 +24,11 @@
     NSView *_container;
     NSArray *_attachmentConstraints;
     NSDictionary *_viewMetrics;
+    EKAttachment *_selectedAttachment;
 }
 
 + (id)interestedChangeKeys;
+@property __weak EKAttachment *selectedAttachment; // @synthesize selectedAttachment=_selectedAttachment;
 @property(retain) NSDictionary *viewMetrics; // @synthesize viewMetrics=_viewMetrics;
 @property(retain) NSArray *attachmentConstraints; // @synthesize attachmentConstraints=_attachmentConstraints;
 @property(retain) NSView *container; // @synthesize container=_container;
@@ -35,6 +37,7 @@
 @property(retain) EKUITextButton *addButton; // @synthesize addButton=_addButton;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
 - (void).cxx_destruct;
+- (void)removeAttachment:(id)arg1;
 - (id)seamlessOpener:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)seamlessOpener:(id)arg1 sourceFrameOnScreenForPreviewItem:(id)arg2;
 - (void)updateActiveQLDelegate;
@@ -47,20 +50,13 @@
 - (BOOL)_shouldShowPlusButton;
 - (BOOL)_shouldShowAddAttachmentsLabel;
 - (void)_launchFilePicker:(id)arg1;
-- (void)removeSelectedFiles;
-- (void)attachmentTableDoubleClick:(id)arg1;
-- (id)_getAttachmentsAtIndices:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
-- (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (long long)rowHeight;
 - (long long)_numberOfRows;
-- (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
-- (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
-- (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (id)claimedPboardTypes;
 - (double)horizontalInset;
 - (BOOL)isEditable;

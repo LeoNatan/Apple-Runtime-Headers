@@ -8,15 +8,14 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface EDWarnings : NSObject
 {
     NSMutableArray *mWarnings;
 }
 
+- (void).cxx_destruct;
 - (void)reportWarningsWithAssociatedObject:(id)arg1;
 - (void)addWarning:(id)arg1;
-- (void)dealloc;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class GEOTileLoader, NSString;
 
 __attribute__((visibility("hidden")))
 @interface GEOMapFeatureTileFinder : NSObject
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     int _tileScale;
     int _tileSetStyle;
     NSString *_tileLoaderClientIdentifier;
+    GEOTileLoader *_tileLoader;
 }
 
 - (void).cxx_destruct;
@@ -24,7 +25,9 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (id)findTilesAround:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 allowNetwork:(BOOL)arg3 queue:(id)arg4 handler:(CDUnknownBlockType)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)findTileWithKey:(struct _GEOTileKey)arg1 allowNetwork:(BOOL)arg2 queue:(id)arg3 handler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)initWithZoomLevel:(unsigned long long)arg1 tileSize:(int)arg2 tileScale:(int)arg3 tileSetStyle:(int)arg4 tileLoader:(id)arg5;
 - (id)initWithZoomLevel:(unsigned long long)arg1 tileSize:(int)arg2 tileScale:(int)arg3 tileSetStyle:(int)arg4;
+- (id)initWithTileLoader:(id)arg1;
 
 @end
 

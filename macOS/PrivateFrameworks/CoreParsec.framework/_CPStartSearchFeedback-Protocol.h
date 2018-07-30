@@ -10,15 +10,10 @@
 
 @protocol _CPStartSearchFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasQueryId;
 @property(nonatomic) unsigned long long queryId;
-@property(readonly, nonatomic) BOOL hasTriggerEvent;
 @property(nonatomic) int triggerEvent;
-@property(readonly, nonatomic) BOOL hasUuid;
 @property(copy, nonatomic) NSString *uuid;
-@property(readonly, nonatomic) BOOL hasInput;
 @property(copy, nonatomic) NSString *input;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

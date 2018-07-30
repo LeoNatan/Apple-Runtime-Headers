@@ -39,6 +39,7 @@
 @property(readonly, nonatomic) TIMobileAssetMediator *mobileAssetMediator; // @synthesize mobileAssetMediator=_mobileAssetMediator;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType enabledInputModeIdentifiersProviderBlock; // @synthesize enabledInputModeIdentifiersProviderBlock=_enabledInputModeIdentifiersProviderBlock;
+- (void).cxx_destruct;
 - (BOOL)purgeAsset:(id)arg1;
 - (id)purgeableAssets;
 - (void)performMaintenance;

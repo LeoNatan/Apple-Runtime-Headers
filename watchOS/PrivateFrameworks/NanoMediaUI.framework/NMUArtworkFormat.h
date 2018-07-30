@@ -14,6 +14,7 @@
 
 + (id)menuArtworkFormat;
 + (id)listArtworkFormat;
++ (id)trackListHeaderArtworkFormat;
 + (id)gridArtworkFormat;
 + (id)stackArtworkFormat;
 @property(nonatomic) float scale; // @synthesize scale=_scale;

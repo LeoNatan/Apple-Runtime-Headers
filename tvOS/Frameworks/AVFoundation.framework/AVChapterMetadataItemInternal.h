@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVChapterMetadataItemInternal : NSObject
 {
     AVWeakReference *weakReference;

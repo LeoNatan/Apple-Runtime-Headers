@@ -28,7 +28,7 @@
 - (void)completeWithError:(id)arg1;
 - (void)processResponse:(id)arg1;
 - (id)_headerValueFromType:(unsigned long long)arg1;
-- (void)signRequest:(id)arg1;
+- (void)signRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)handleAuthKitActionAttribute:(id)arg1;
 - (id)initWithRequestConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)tearDownContext;

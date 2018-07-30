@@ -20,6 +20,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)_experimentalFeatures;
 @property(readonly) struct Object *_apiObject;
+@property(nonatomic, setter=_setStorageAccessPromptsEnabled:) _Bool _storageAccessPromptsEnabled;
 @property(nonatomic) _Bool javaScriptCanOpenWindowsAutomatically;
 @property(nonatomic) _Bool javaScriptEnabled;
 @property(nonatomic) double minimumFontSize;
@@ -28,8 +29,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)init;
+@property(nonatomic, setter=_setShouldEnableTextAutosizingBoost:) _Bool _shouldEnableTextAutosizingBoost;
 @property(nonatomic, setter=_setDOMPasteAllowed:) _Bool _domPasteAllowed;
 @property(nonatomic, setter=_setJavaScriptCanAccessClipboard:) _Bool _javaScriptCanAccessClipboard;
+@property(nonatomic, setter=_setPunchOutWhiteBackgroundsInDarkMode:) _Bool _punchOutWhiteBackgroundsInDarkMode;
+@property(nonatomic, setter=_setColorFilterEnabled:) _Bool _colorFilterEnabled;
+@property(nonatomic, setter=_setAVFoundationEnabled:) _Bool _avFoundationEnabled;
 @property(nonatomic, setter=_setEditableLinkBehavior:) long long _editableLinkBehavior;
 @property(nonatomic, setter=_setShouldAllowUserInstalledFonts:) _Bool _shouldAllowUserInstalledFonts;
 @property(nonatomic, setter=_setWebRTCLegacyAPIEnabled:) _Bool _webRTCLegacyAPIEnabled;

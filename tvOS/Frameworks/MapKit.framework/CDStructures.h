@@ -12,6 +12,25 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CATransform3D {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    double _field5;
+    double _field6;
+    double _field7;
+    double _field8;
+    double _field9;
+    double _field10;
+    double _field11;
+    double _field12;
+    double _field13;
+    double _field14;
+    double _field15;
+    double _field16;
+};
+
 struct CGAffineTransform {
     double a;
     double b;
@@ -45,11 +64,7 @@ struct GEOJunctionElement {
     int _field1;
     int _field2;
     int _field3;
-    struct {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-    } _field4;
+    CDStruct_81fb2dc1 _field4;
 };
 
 struct Matrix<double, 2, 1> {
@@ -68,6 +83,11 @@ struct UIEdgeInsets {
     double left;
     double bottom;
     double right;
+};
+
+struct UIOffset {
+    double horizontal;
+    double vertical;
 };
 
 struct UIViewController {
@@ -264,6 +284,12 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    unsigned int hasCoordinate:1;
+    unsigned int hasTitle:1;
+    unsigned int hasSubtitle:1;
+} CDStruct_81fb2dc1;
 
 typedef struct {
     long long x;

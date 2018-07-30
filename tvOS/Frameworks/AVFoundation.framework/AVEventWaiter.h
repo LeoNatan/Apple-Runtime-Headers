@@ -8,6 +8,7 @@
 
 @class NSCondition;
 
+__attribute__((visibility("hidden")))
 @interface AVEventWaiter : NSObject
 {
     NSCondition *_condition;

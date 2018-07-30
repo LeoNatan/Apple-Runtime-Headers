@@ -10,7 +10,7 @@
 
 @interface ICDrawingInputController : NSObject
 {
-    vector_c0e7c5b2 _drawPoints;
+    vector_930301b0 _drawPoints;
     NSObject<OS_dispatch_queue> *_inputQueue;
     NSObject<OS_dispatch_queue> *_outputQueue;
     id <ICDrawingInputControllerDelegate> _delegate;
@@ -20,7 +20,7 @@
     double _inputScale;
     float _smoothingKernel[7];
     long long _immutableCount;
-    vector_c0e7c5b2 _updatedDrawPoints;
+    vector_930301b0 _updatedDrawPoints;
     BOOL _drawingEndedButNotFinished;
     NSObject<OS_dispatch_semaphore> *_drawingWaitForFinishSemaphore;
     BOOL _isSnappedToRuler;
@@ -76,7 +76,7 @@
 - (void)drawingEndedWithPreCompletion:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_drawingAddPoint:(CDStruct_57911ed6)arg1;
 - (void)drawingAddPoint:(CDStruct_57911ed6)arg1;
-- (void)drawingAddPoints:(vector_c0e7c5b2)arg1;
+- (void)drawingAddPoints:(vector_930301b0)arg1;
 - (void)removePredictedTouches;
 - (void)updateImmutableCount;
 - (void)drawingUpdateAllPoints;
@@ -91,8 +91,8 @@
 - (CDStruct_57911ed6)calculateVelocityForNewPoint:(CDStruct_57911ed6)arg1 previousPoint:(CDStruct_57911ed6)arg2;
 - (CDStruct_57911ed6)calculateVelocityForFirstPoint:(CDStruct_57911ed6)arg1;
 - (void)reset;
-- (unsigned long long)copyInputUpdatedRangeFromIndex:(unsigned long long)arg1 into:(vector_c0e7c5b2 *)arg2;
-- (vector_c0e7c5b2 *)getInputUpdatedRangeFromIndex:(inout unsigned long long *)arg1;
+- (unsigned long long)copyInputUpdatedRangeFromIndex:(unsigned long long)arg1 into:(vector_930301b0 *)arg2;
+- (vector_930301b0 *)getInputUpdatedRangeFromIndex:(inout unsigned long long *)arg1;
 - (vector_d46ea067 *)getUpdatedRangeFromIndex:(inout unsigned long long *)arg1;
 - (ICDrawingInputProvider_d48c6870 *)outputFilter;
 @property(readonly) BOOL lastPointIsMasked;

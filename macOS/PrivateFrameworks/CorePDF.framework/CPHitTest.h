@@ -8,6 +8,7 @@
 
 @class CPPage, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPHitTest : NSObject
 {
     CPPage *page;

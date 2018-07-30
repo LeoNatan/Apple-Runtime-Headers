@@ -8,7 +8,6 @@
 
 @class CUIImage;
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDImageLayer : CUIPSDLayer
 {
     CUIImage *_image;

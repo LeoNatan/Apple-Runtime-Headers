@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSString, NSView, VisualTabPickerThumbnailView;
+@class NSImage, NSString, NSView, VisualTabPickerThumbnailView;
 
 @protocol VisualTabPickerThumbnailDataSource <NSObject>
+- (NSImage *)siteIconForVisualTabPickerThumbnailView:(VisualTabPickerThumbnailView *)arg1;
 - (int)muteButtonStateForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1;
 - (BOOL)shouldShowMuteButtonForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1;
 - (struct CGRect)visibleBoundsForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1;

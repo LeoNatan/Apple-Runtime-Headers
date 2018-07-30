@@ -10,9 +10,10 @@ __attribute__((visibility("hidden")))
 @interface NSVB_ViewServiceImplicitAnimationEncodingProxy : NSVB_TargetedProxy
 {
     id _controlMessageTarget;
+    unsigned int _windowFrameAnimationInProgress:1;
 }
 
-+ (id)proxyEncodingAnimationsForTarget:(id)arg1 controlMessageTarget:(id)arg2;
++ (id)proxyEncodingAnimationsForTarget:(id)arg1 controlMessageTarget:(id)arg2 windowFrameAnimationInProgress:(BOOL)arg3;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
 

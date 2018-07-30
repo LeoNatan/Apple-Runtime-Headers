@@ -4,19 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "HMFMessageDestination.h"
+#import <HomeKitDaemon/HMDRemoteMessageDestination.h>
 
-@class HMDDevice;
+@class HMDDevice, HMDDeviceHandle;
 
-@interface HMDRemoteDeviceMessageDestination : HMFMessageDestination
+@interface HMDRemoteDeviceMessageDestination : HMDRemoteMessageDestination
 {
     HMDDevice *_device;
+    HMDDeviceHandle *_preferredHandle;
 }
 
 + (id)shortDescription;
-+ (id)allMessageDestinations;
+@property(copy, nonatomic) HMDDeviceHandle *preferredHandle; // @synthesize preferredHandle=_preferredHandle;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+- (id)remoteDestinationString;
 - (id)description;
 - (id)debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;

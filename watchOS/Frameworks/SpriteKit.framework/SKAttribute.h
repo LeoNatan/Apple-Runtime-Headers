@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface SKAttribute : NSObject <NSCoding>
+@interface SKAttribute : NSObject <NSSecureCoding>
 {
     int _type;
     NSString *_name;
@@ -18,12 +18,14 @@
 }
 
 + (id)attributeWithName:(id)arg1 type:(int)arg2;
++ (_Bool)supportsSecureCoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) int type;
 @property(readonly, nonatomic) NSString *name;
 - (const basic_string_8c74bb18 *)getNameString;
 - (id)initWithName:(id)arg1 type:(int)arg2;
+- (_Bool)isEqualToAttribute:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

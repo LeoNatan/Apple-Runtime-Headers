@@ -11,6 +11,7 @@
 @protocol SFDescriptionCardSection <SFTitleCardSection>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(copy, nonatomic) NSArray *richDescriptions;
 @property(retain, nonatomic) SFImage *attributionGlyph;
 @property(copy, nonatomic) NSURL *attributionURL;
 @property(copy, nonatomic) NSString *attributionText;

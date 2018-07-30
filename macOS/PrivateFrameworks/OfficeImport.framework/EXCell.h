@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface EXCell : NSObject
 {
 }
 
 + (void)edCellFromXmlCellElement:(struct _xmlNode *)arg1 edRowInfo:(struct EDRowInfo **)arg2 edRowBlock:(id)arg3 edRowBlocks:(id)arg4 state:(id)arg5;
-+ (void)initialize;
++ (id)xmlErrorStringValueEnumMap;
 + (int)edErrorFromXmlErrorString:(id)arg1;
 + (double)dateTimeNumberFromXmlDateString:(id)arg1 state:(id)arg2;
 + (_Bool)edBoolFromXmlBoolString:(id)arg1;

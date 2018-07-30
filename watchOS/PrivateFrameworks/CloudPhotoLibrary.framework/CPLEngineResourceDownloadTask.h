@@ -6,7 +6,7 @@
 
 #import <CloudPhotoLibrary/CPLResourceTransferTask.h>
 
-@class CPLResource, NSMutableArray, NSString;
+@class CPLResource, NSData, NSMutableArray, NSString;
 
 @interface CPLEngineResourceDownloadTask : CPLResourceTransferTask
 {
@@ -15,6 +15,7 @@
     unsigned int _preemptingCount;
     _Bool _cancelledByEngine;
     CPLResource *_cloudResource;
+    NSData *_transportScope;
     unsigned int _taskIdentifierForQueue;
     NSString *_clientBundleID;
     id <CPLEngineTransportResourcesDownloadTask> _transportTask;
@@ -38,6 +39,7 @@
 @property(nonatomic, getter=isCancelledByEngine) _Bool cancelledByEngine; // @synthesize cancelledByEngine=_cancelledByEngine;
 @property(retain, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(nonatomic) unsigned int taskIdentifierForQueue; // @synthesize taskIdentifierForQueue=_taskIdentifierForQueue;
+@property(retain, nonatomic) NSData *transportScope; // @synthesize transportScope=_transportScope;
 @property(retain, nonatomic) CPLResource *cloudResource; // @synthesize cloudResource=_cloudResource;
 - (void).cxx_destruct;
 - (void)noteTaskHasBeenPreempted;

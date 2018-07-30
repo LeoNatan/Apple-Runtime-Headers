@@ -53,11 +53,13 @@
 @property(nonatomic) int lineFocus; // @synthesize lineFocus=_lineFocus;
 - (void).cxx_destruct;
 - (id)description;
+- (void)translate:(_Bool)arg1;
 - (void)translate;
 - (struct _NSRange)rangeOfBrailleCellRepresentingCharacterAtIndex:(unsigned long long)arg1;
 - (void)enumerateChunksOfText:(id)arg1 selection:(struct _NSRange *)arg2 focus:(struct _NSRange *)arg3 paddingRange:(struct _NSRange)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (void)addChunk:(id)arg1 forToken:(long long)arg2;
-- (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 focus:(struct _NSRange *)arg6 technical:(_Bool)arg7 isEditableText:(_Bool)arg8 paddingRange:(struct _NSRange)arg9;
+- (void)replaceObjectInChunkArrayAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 focus:(struct _NSRange *)arg6 technical:(_Bool)arg7 isEditableText:(_Bool)arg8 paddingRange:(struct _NSRange)arg9 editingString:(id)arg10;
 - (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 focus:(struct _NSRange *)arg6 technical:(_Bool)arg7 isEditableText:(_Bool)arg8;
 - (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange *)arg3 token:(long long)arg4 focus:(struct _NSRange *)arg5 technical:(_Bool)arg6 isEditableText:(_Bool)arg7;
 - (void)addText:(id)arg1 selection:(struct _NSRange *)arg2 token:(long long)arg3 focus:(struct _NSRange *)arg4 technical:(_Bool)arg5 isEditableText:(_Bool)arg6;

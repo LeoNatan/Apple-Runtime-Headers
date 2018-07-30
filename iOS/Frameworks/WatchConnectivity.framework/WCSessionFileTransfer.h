@@ -8,20 +8,28 @@
 
 #import "NSSecureCoding.h"
 
-@class NSError, NSString, WCSessionFile;
+@class NSDate, NSError, NSProgress, NSString, WCSessionFile;
 
 @interface WCSessionFileTransfer : NSObject <NSSecureCoding>
 {
     _Bool _transferring;
     WCSessionFile *_file;
+    NSProgress *_progress;
+    NSDate *_transferDate;
     NSString *_transferIdentifier;
     NSError *_transferError;
+    NSProgress *_internalProgress;
+    id _progressToken;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain) id progressToken; // @synthesize progressToken=_progressToken;
+@property(retain) NSProgress *internalProgress; // @synthesize internalProgress=_internalProgress;
 @property(retain) NSError *transferError; // @synthesize transferError=_transferError;
 @property(copy) NSString *transferIdentifier; // @synthesize transferIdentifier=_transferIdentifier;
+@property(retain, nonatomic) NSDate *transferDate; // @synthesize transferDate=_transferDate;
 @property(nonatomic, getter=isTransferring) _Bool transferring; // @synthesize transferring=_transferring;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) WCSessionFile *file; // @synthesize file=_file;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
@@ -29,6 +37,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+- (void)initializeProgress;
 - (long long)compare:(id)arg1;
 - (void)cancel;
 - (id)initWithFile:(id)arg1;

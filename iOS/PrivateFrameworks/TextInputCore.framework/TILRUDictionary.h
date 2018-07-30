@@ -17,6 +17,7 @@
 }
 
 + (id)dictionaryWithMaximumCapacity:(unsigned long long)arg1;
+- (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeAllObjects;

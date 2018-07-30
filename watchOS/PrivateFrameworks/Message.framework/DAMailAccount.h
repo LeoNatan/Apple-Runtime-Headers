@@ -70,7 +70,7 @@
 + (id)folderIDForRelativePath:(id)arg1 accountID:(id *)arg2;
 + (Class)_accountConduitClass;
 @property(retain, nonatomic) MFMailboxUid *virtualAllSearchMailbox; // @synthesize virtualAllSearchMailbox=_virtualAllSearchMailbox;
-- (id)unsupportedContinuationTypes;
+- (id)unsupportedHandoffTypes;
 - (id)fetchLimits;
 - (_Bool)supportsMailDrop;
 - (_Bool)isManaged;

@@ -6,30 +6,28 @@
 
 #import <ViewBridge/NSVB_TargetedProxy.h>
 
-#import "_UIViewServiceUIBehaviorInterface.h"
+#import "NSVB_ViewServiceUIBehaviorInterface.h"
 
 @class NSString, NSVB_ViewServiceFencingControlProxy;
 
 __attribute__((visibility("hidden")))
-@interface NSVB_ViewServiceBehaviorProxy : NSVB_TargetedProxy <_UIViewServiceUIBehaviorInterface>
+@interface NSVB_ViewServiceBehaviorProxy : NSVB_TargetedProxy <NSVB_ViewServiceUIBehaviorInterface>
 {
     unsigned int _scope;
     NSVB_ViewServiceFencingControlProxy *_fencingControlProxy;
-    int __automatic_invalidation_retainCount;
-    BOOL __automatic_invalidation_invalidated;
+    struct os_unfair_lock_s _retainReleaseLock;
 }
 
 + (id)activeFencePort;
-+ (id)proxyWrappingExportedObject:(id)arg1 forCommunicationAtScope:(unsigned int)arg2 exportedProtocol:(id)arg3;
++ (id)proxyWrappingExportedObject:(id)arg1 forCommunicationAtScope:(unsigned int)arg2 withServiceMarshal:(id)arg3 exportedProtocol:(id)arg4;
 @property(readonly) unsigned int scope; // @synthesize scope=_scope;
 - (void)dealloc;
-@property(readonly, copy) NSString *description;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
 - (oneway void)release;
+- (void)__vbSuperRelease;
 - (id)retain;
-- (int)__automatic_invalidation_logic;
+- (void)__vbWithLockPerform:(CDUnknownBlockType)arg1;
+- (struct os_unfair_lock_s *)retainReleaseLock;
+@property(readonly, copy) NSString *description;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

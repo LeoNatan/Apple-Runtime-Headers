@@ -26,7 +26,6 @@
 - (BOOL)prepareForPerformingRequests:(id)arg1 error:(id *)arg2;
 - (BOOL)prepareForPerformingRequestsOfClass:(id)arg1 error:(id *)arg2;
 - (id)init;
-- (id)clusterContextWithOptions:(id)arg1 allowingCreation:(BOOL)arg2 error:(id *)arg3;
 
 @end
 

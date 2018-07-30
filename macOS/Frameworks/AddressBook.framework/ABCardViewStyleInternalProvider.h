@@ -8,16 +8,15 @@
 
 @class ABCardViewStyle, ABCardViewStyleProvider;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewStyleInternalProvider : NSProxy
 {
     ABCardViewStyle *_style;
     ABCardViewStyleProvider *_styleProvider;
 }
 
-@property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
-@property(retain, nonatomic) ABCardViewStyle *style; // @synthesize style=_style;
-- (void)dealloc;
+@property(readonly, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
+@property(readonly, nonatomic) ABCardViewStyle *style; // @synthesize style=_style;
+- (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)targetForSelector:(SEL)arg1;

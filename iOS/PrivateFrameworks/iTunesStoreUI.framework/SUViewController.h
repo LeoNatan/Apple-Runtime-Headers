@@ -87,6 +87,7 @@
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
 - (void)resetRestoredContext;
+- (id)navigationController;
 @property(readonly, retain, nonatomic) SUNavigationItem *navigationItem; // @dynamic navigationItem;
 - (id)moreListSelectedImage;
 - (id)moreListImage;

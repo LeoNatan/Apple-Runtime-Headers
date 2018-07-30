@@ -9,9 +9,9 @@
 #import "PXCollectionFetchOperationDelegate.h"
 #import "PXPhotoLibraryUIChangeObserver.h"
 
-@class NSArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, PHCollectionList, PHFetchResult, PHPhotoLibrary, PXPhotoKitCollectionsDataSource, PXPhotoKitCollectionsDataSourceManagerConfiguration;
+@class NSArray, NSMutableDictionary, NSMutableSet, NSObject<OS_os_log>, NSOperationQueue, NSString, PHCollectionList, PHFetchResult, PHPhotoLibrary, PXPhotoKitCollectionsDataSource, PXPhotoKitCollectionsDataSourceManagerConfiguration;
 
-@interface PXPhotoKitCollectionsDataSourceManager : PXCollectionsDataSourceManager <PXPhotoLibraryUIChangeObserver, PXCollectionFetchOperationDelegate>
+@interface PXPhotoKitCollectionsDataSourceManager : PXCollectionsDataSourceManager <PXCollectionFetchOperationDelegate, PXPhotoLibraryUIChangeObserver>
 {
     PHCollectionList *_collectionList;
     PHFetchResult *_collectionsFetchResult;
@@ -25,6 +25,8 @@
     _Bool _needsBackgroundFetching;
     _Bool _initiatedBackgroundFetching;
     _Bool _resumedBackgroundFetching;
+    _Bool _publishChangesScheduledOnRunLoop;
+    NSMutableDictionary *_fetchResultsByPendingChangedCollections;
     NSMutableSet *_changedSubCollections;
     _Bool _isPhotoLibraryEmpty;
     NSMutableDictionary *__subCollectionActiveCountFetchOperations;
@@ -44,13 +46,17 @@
 @property(readonly, nonatomic) NSMutableDictionary *_subCollectionActiveKeyAssetsFetchOperations; // @synthesize _subCollectionActiveKeyAssetsFetchOperations=__subCollectionActiveKeyAssetsFetchOperations;
 @property(readonly, nonatomic) NSMutableDictionary *_subCollectionActiveCountFetchOperations; // @synthesize _subCollectionActiveCountFetchOperations=__subCollectionActiveCountFetchOperations;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_os_log> *dataSourceManagerLog;
+@property(readonly, nonatomic) long long numberOfPendingKeyAssetFetches;
+- (void)waitUntilBackgroundFetchingFinishedWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)stopCoalescingAndPublishFetchResultChanges;
+- (void)startCoalescingFetchResultChanges;
 - (_Bool)canReorderCollection:(id)arg1;
 - (_Bool)canRenameCollection:(id)arg1;
 - (_Bool)canDeleteCollection:(id)arg1;
 - (_Bool)canEditAlbums;
 - (_Bool)containsAnyAssets:(id)arg1;
-- (long long)countForCollection:(id)arg1;
-- (_Bool)isCountAvailableForCollection:(id)arg1;
+- (_Bool)_isImportsAssetCollection:(id)arg1;
 - (_Bool)_isPlacesAlbumAssetCollection:(id)arg1;
 - (_Bool)_needsFetchResultForCollection:(id)arg1;
 - (_Bool)_needsKeyAssetsFetchResultForCollection:(id)arg1;
@@ -58,16 +64,21 @@
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (id)_subitemChangeDetailsByItemBySection;
 - (id)_changedSubCollectionIndexesBySections;
-- (_Bool)_updateCachedSubCollectionFetchResultsForChange:(id)arg1 removedObjects:(id)arg2 changedObjects:(id)arg3;
+- (_Bool)_updateCachedSubCollectionFetchResultsForChange:(id)arg1 fetchResultChangeDetails:(id)arg2;
 - (id)uncachedKeyAssetFetchResultForSubCollection:(id)arg1;
 - (id)_cachedKeyAssetFetchResultForSubCollection:(id)arg1;
 - (_Bool)isCachedFetchResultOutdatedForCollection:(id)arg1;
 - (id)uncachedFetchResultForSubCollection:(id)arg1;
 - (id)fetchResultForSubCollection:(id)arg1;
+- (_Bool)hasAssetsFetchResultForCollection:(id)arg1;
 - (id)assetsFetchResultForCollection:(id)arg1;
 - (id)keyAssetsFetchResultForCollection:(id)arg1;
+- (void)_endSignpostForFetchOperation:(id)arg1;
+- (void)collectionFetchOperationDidCancel:(id)arg1;
 - (void)collectionFetchOperationDidComplete:(id)arg1;
-- (void)_updateDataSourceForChangeOnCollectionAtIndexPath:(id)arg1;
+- (void)collectionFetchOperationDidBegin:(id)arg1;
+- (void)_publishPendingCollectionChanges;
+- (void)_updateDataSourceForChangeOnCollection:(id)arg1 withFetchResult:(id)arg2;
 - (void)_updateKeyAssetsCacheForCollection:(id)arg1 withFetchResult:(id)arg2 otherFetchResultsByAssetCollection:(id)arg3;
 - (void)_fetchKeyAssetsForCollection:(id)arg1;
 - (void)_resumeKeyAssetsFetchOperations;
@@ -75,6 +86,7 @@
 - (void)_fetchAndUpdateCountsForCollection:(id)arg1;
 - (void)_resumeFetchOperations;
 - (void)resumeBackgroundFetchingIfNeeded;
+- (void)_initiateBackgroundFetchingIfNeededForCollection:(id)arg1;
 - (void)initiateBackgroundFetchingIfNeeded;
 - (void)_recursivelyCollectCollectionsIn:(id)arg1 fetchResult:(id)arg2;
 - (void)_recursivelyEnumerateAssetCollectionsInFetchResult:(id)arg1 block:(CDUnknownBlockType)arg2;
@@ -84,15 +96,16 @@
 - (long long)estimatedCountForAssetCollection:(id)arg1;
 - (void)_enumerateAllPhotoKitCollectionsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_updateCollectionIndexMappingForFilteredFetchResults;
-- (void)_updateFilteredCollectionsFetchResults;
-- (void)_getCollectionListBySectionsFromUnfilteredFetchResult:(id)arg1 collectionList:(id)arg2 collectionListBySections:(id *)arg3 collectionsFetchResultBySection:(id *)arg4;
+- (_Bool)_shouldIncludeCollection:(id)arg1;
+- (struct PXTwoTuple *)_filterFetchResult:(id)arg1;
+- (struct PXTwoTuple *)_getSectionedCollectionListAndFetchResultsFromFetchResult:(id)arg1;
 - (_Bool)_isEmpty;
 - (unsigned long long)_fixedOrderPriorityForVirtualCollection:(id)arg1;
 - (id)createInitialDataSource;
+- (void)_updateFilteredCollectionsFetchResults;
 - (id)_newDataSource;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, nonatomic) PXPhotoKitCollectionsDataSource *dataSource; // @dynamic dataSource;

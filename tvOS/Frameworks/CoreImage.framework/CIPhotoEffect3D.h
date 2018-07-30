@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *inputThreshold; // @synthesize inputThreshold;
 @property(retain, nonatomic) CIImage *inputDepthMap; // @synthesize inputDepthMap;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage;
+- (int)_maxVersionBG;
 - (int)_maxVersion;
 - (id)outputImage;
 - (id)applyCubeWithName:(id)arg1 toImage:(id)arg2;

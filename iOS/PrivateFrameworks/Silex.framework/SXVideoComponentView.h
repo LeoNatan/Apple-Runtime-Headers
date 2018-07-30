@@ -14,7 +14,7 @@
 #import "SXVideoPlayerViewControllerDelegate.h"
 #import "SXViewportChangeListener.h"
 
-@class ADBannerView, NSString, SXAdController, SXPosterFrameView, SXVideoAnalyticsRouter, SXVideoComponentAnalyticsReporting, SXVideoPlayerViewController, SXVideoPlayerViewControllerManager, SXVolumeProvider;
+@class ADBannerView, NSString, SVVolumeProvider, SXAdController, SXPosterFrameView, SXVideoAnalyticsRouter, SXVideoComponentAnalyticsReporting, SXVideoPlayerViewController, SXVideoPlayerViewControllerManager;
 
 @interface SXVideoComponentView : SXMediaComponentView <SXViewportChangeListener, SXMediaPlaybackDelegate, SXVideoPlayerViewControllerDelegate, SXVideoPlayerViewControllerDataSource, SXVideoAdProviderDataSource, SXReachabilityObserver, SXFullscreenVideoPlaybackCandidate>
 {
@@ -29,7 +29,7 @@
     SXVideoAnalyticsRouter *_analyticsRouter;
     SXVideoComponentAnalyticsReporting *_videoComponentAnalyticsReporter;
     id <SXScrollObserverManager> _scrollObserverManager;
-    SXVolumeProvider *_volumeProvider;
+    SVVolumeProvider *_volumeProvider;
     SXVideoPlayerViewControllerManager *_videoPlayerViewControllerManager;
     id <SXBookmarkManager> _bookmarkManager;
     ADBannerView *_bannerView;
@@ -40,7 +40,7 @@
 @property(nonatomic) __weak ADBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(readonly, nonatomic) id <SXBookmarkManager> bookmarkManager; // @synthesize bookmarkManager=_bookmarkManager;
 @property(readonly, nonatomic) SXVideoPlayerViewControllerManager *videoPlayerViewControllerManager; // @synthesize videoPlayerViewControllerManager=_videoPlayerViewControllerManager;
-@property(readonly, nonatomic) SXVolumeProvider *volumeProvider; // @synthesize volumeProvider=_volumeProvider;
+@property(readonly, nonatomic) SVVolumeProvider *volumeProvider; // @synthesize volumeProvider=_volumeProvider;
 @property(readonly, nonatomic) id <SXScrollObserverManager> scrollObserverManager; // @synthesize scrollObserverManager=_scrollObserverManager;
 @property(retain, nonatomic) SXVideoComponentAnalyticsReporting *videoComponentAnalyticsReporter; // @synthesize videoComponentAnalyticsReporter=_videoComponentAnalyticsReporter;
 @property(retain, nonatomic) SXVideoAnalyticsRouter *analyticsRouter; // @synthesize analyticsRouter=_analyticsRouter;

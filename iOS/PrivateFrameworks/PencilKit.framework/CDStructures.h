@@ -10,20 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AnimatingStroke {
-    id _field1;
-    struct unique_ptr<PKBSplineFilter, std::__1::default_delete<PKBSplineFilter>> _field2;
-    struct unique_ptr<PKOutputTimeFilter, std::__1::default_delete<PKOutputTimeFilter>> _field3;
-    struct unique_ptr<PKInputInputProvider, std::__1::default_delete<PKInputInputProvider>> _field4;
-    long long _field5;
-    _Bool _field6;
-    struct CGRect _field7;
-    struct CGRect _field8;
-    double _field9;
-    unsigned int _field10;
-    CDUnknownBlockType _field11;
-};
-
 struct CATransform3D {
     double m11;
     double m12;
@@ -116,6 +102,8 @@ struct PKAzimuthFilter {
     double _field10;
     long long _field11;
     id _field12;
+    _Bool _field13;
+    _Bool _field14;
 };
 
 struct PKBSplineFilter;
@@ -200,10 +188,13 @@ struct PKFunction;
 
 struct PKFunctionPiecewiseBezier {
     CDUnknownFunctionPointerType *_field1;
-    struct vector<double, std::__1::allocator<double>> _field2;
-    struct vector<double, std::__1::allocator<double>> _field3;
-    struct vector<double, std::__1::allocator<double>> _field4;
-    struct vector<std::__1::vector<double, std::__1::allocator<double>>, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double>>>> _field5;
+    vector_b67dfe3a _field2;
+    vector_b67dfe3a _field3;
+    vector_b67dfe3a _field4;
+    vector_b67dfe3a _field5;
+    vector_b67dfe3a _field6;
+    struct vector<std::__1::vector<double, std::__1::allocator<double>>, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double>>>> _field7;
+    struct vector<std::__1::vector<double, std::__1::allocator<double>>, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double>>>> _field8;
 };
 
 struct PKInputInputProvider;
@@ -249,7 +240,54 @@ struct PKInputToOutputFilter {
     id _field10;
 };
 
-struct PKOutputFunction;
+struct PKMetalInputProvider;
+
+struct PKMetalPaintKernelUniforms {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
+struct PKMetalPaintStrokePoint {
+    float _field1;
+};
+
+struct PKMetalParticleKernelUniforms {
+    float _field1;
+    float _field2;
+    float _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    _Bool _field7;
+    _Bool _field8;
+    _Bool _field9;
+    _Bool _field10;
+};
+
+struct PKMetalParticleStrokePoint {
+    unsigned int _field1;
+    float _field2;
+    float _field3;
+    struct half _field4;
+    struct half _field5;
+    struct half _field6;
+    struct half _field7;
+    unsigned short _field8;
+    unsigned short _field9;
+};
+
+struct PKMetalUberFragmentUniforms {
+    float _field1;
+    float _field2;
+};
+
+struct PKOutputFunction {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unique_ptr_94812230 _field5;
+};
 
 struct PKOutputTimeFilter;
 
@@ -389,14 +427,6 @@ struct StrokeID {
     CDStruct_8a1bf2a3 _field5;
 };
 
-struct StrokeVertex {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-};
-
 struct Transform;
 
 struct UIEdgeInsets {
@@ -475,11 +505,19 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsign
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, DKDGLShader *>, void *>*> *__next_;
 };
 
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*> *__next_;
+};
+
 struct __wrap_iter<_PKStrokePoint *> {
     struct _PKStrokePoint *_field1;
 };
 
 struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>;
+
+struct half {
+    unsigned short _field1;
+};
 
 struct pair<long, double>;
 
@@ -497,13 +535,19 @@ struct unique_ptr<PKBSplineFilter, std::__1::default_delete<PKBSplineFilter>> {
 
 struct unique_ptr<PKFunction, std::__1::default_delete<PKFunction>> {
     struct __compressed_pair<PKFunction *, std::__1::default_delete<PKFunction>> {
-        struct PKFunction *_field1;
-    } _field1;
+        struct PKFunction *__value_;
+    } __ptr_;
 };
 
 struct unique_ptr<PKInputInputProvider, std::__1::default_delete<PKInputInputProvider>> {
     struct __compressed_pair<PKInputInputProvider *, std::__1::default_delete<PKInputInputProvider>> {
         struct PKInputInputProvider *_field1;
+    } _field1;
+};
+
+struct unique_ptr<PKMetalInputProvider, std::__1::default_delete<PKMetalInputProvider>> {
+    struct __compressed_pair<PKMetalInputProvider *, std::__1::default_delete<PKMetalInputProvider>> {
+        struct PKMetalInputProvider *_field1;
     } _field1;
 };
 
@@ -609,6 +653,17 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } __ptr_;
 };
 
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
 struct unique_ptr<std::__1::basic_string<char>, std::__1::default_delete<std::__1::basic_string<char>>> {
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::default_delete<std::__1::basic_string<char>>> {
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
@@ -647,12 +702,43 @@ struct unordered_map<unsigned long long, DKDGLShader *, std::__1::hash<unsigned 
     } __table_;
 };
 
-struct vector<AnimatingStroke, std::__1::allocator<AnimatingStroke>> {
+struct unordered_map<unsigned long long, PKMetalShader *, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, PKMetalShader *>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, std::__1::hash<unsigned long long>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, PKMetalShader *>, std::__1::equal_to<unsigned long long>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct vector<(anonymous namespace)::AnimatingStroke, std::__1::allocator<(anonymous namespace)::AnimatingStroke>> {
     struct AnimatingStroke *__begin_;
     struct AnimatingStroke *__end_;
-    struct __compressed_pair<AnimatingStroke *, std::__1::allocator<AnimatingStroke>> {
+    struct __compressed_pair<(anonymous namespace)::AnimatingStroke *, std::__1::allocator<(anonymous namespace)::AnimatingStroke>> {
         struct AnimatingStroke *__value_;
     } __end_cap_;
+};
+
+struct vector<(anonymous namespace)::StrokeVertex, std::__1::allocator<(anonymous namespace)::StrokeVertex>> {
+    struct StrokeVertex *__begin_;
+    struct StrokeVertex *__end_;
+    struct __compressed_pair<(anonymous namespace)::StrokeVertex *, std::__1::allocator<(anonymous namespace)::StrokeVertex>> {
+        struct StrokeVertex *__value_;
+    } __end_cap_;
+};
+
+struct vector<CGPoint, std::__1::allocator<CGPoint>> {
+    struct CGPoint *_field1;
+    struct CGPoint *_field2;
+    struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint>> {
+        struct CGPoint *_field1;
+    } _field3;
 };
 
 struct vector<PB::Data, std::__1::allocator<PB::Data>> {
@@ -676,6 +762,22 @@ struct vector<PKInputPoint, std::__1::allocator<PKInputPoint>> {
     CDStruct_183601bc *__end_;
     struct __compressed_pair<PKInputPoint *, std::__1::allocator<PKInputPoint>> {
         CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
+struct vector<PKMetalPaintStrokePoint, std::__1::allocator<PKMetalPaintStrokePoint>> {
+    struct PKMetalPaintStrokePoint *__begin_;
+    struct PKMetalPaintStrokePoint *__end_;
+    struct __compressed_pair<PKMetalPaintStrokePoint *, std::__1::allocator<PKMetalPaintStrokePoint>> {
+        struct PKMetalPaintStrokePoint *__value_;
+    } __end_cap_;
+};
+
+struct vector<PKMetalParticleStrokePoint, std::__1::allocator<PKMetalParticleStrokePoint>> {
+    struct PKMetalParticleStrokePoint *__begin_;
+    struct PKMetalParticleStrokePoint *__end_;
+    struct __compressed_pair<PKMetalParticleStrokePoint *, std::__1::allocator<PKMetalParticleStrokePoint>> {
+        struct PKMetalParticleStrokePoint *__value_;
     } __end_cap_;
 };
 
@@ -704,11 +806,11 @@ struct vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint>> {
 };
 
 struct vector<double, std::__1::allocator<double>> {
-    double *_field1;
-    double *_field2;
+    double *__begin_;
+    double *__end_;
     struct __compressed_pair<double *, std::__1::allocator<double>> {
-        double *_field1;
-    } _field3;
+        double *__value_;
+    } __end_cap_;
 };
 
 struct vector<long, std::__1::allocator<long>> {
@@ -784,15 +886,64 @@ struct vector<std::__1::unique_ptr<versioned_document::Version, std::__1::defaul
 };
 
 struct vector<std::__1::vector<double, std::__1::allocator<double>>, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double>>>> {
-    struct vector<double, std::__1::allocator<double>> *_field1;
-    struct vector<double, std::__1::allocator<double>> *_field2;
+    vector_b67dfe3a *_field1;
+    vector_b67dfe3a *_field2;
     struct __compressed_pair<std::__1::vector<double, std::__1::allocator<double>>*, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double>>>> {
-        struct vector<double, std::__1::allocator<double>> *_field1;
+        vector_b67dfe3a *_field1;
     } _field3;
 };
 
 #if 0
 // Names with conflicting types:
+typedef struct {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+} StrokeVertex_e2fc4686;
+
+typedef struct {
+    float _field1;
+    float _field2;
+    struct half _field3;
+    struct half _field4;
+    struct half _field5;
+    struct half _field6;
+} StrokeVertex_afa3f00a;
+
+typedef struct {
+    id _field1;
+    id _field2;
+    _Bool _field3;
+    struct unique_ptr<PKBSplineFilter, std::__1::default_delete<PKBSplineFilter>> _field4;
+    struct unique_ptr<PKOutputTimeFilter, std::__1::default_delete<PKOutputTimeFilter>> _field5;
+    struct unique_ptr<PKMetalInputProvider, std::__1::default_delete<PKMetalInputProvider>> _field6;
+    long long _field7;
+    _Bool _field8;
+    struct CGRect _field9;
+    struct CGRect _field10;
+    double _field11;
+    unsigned int _field12;
+    _Bool _field13;
+    CDUnknownBlockType _field14;
+} AnimatingStroke_ce9a05aa;
+
+typedef struct {
+    id _field1;
+    struct unique_ptr<PKBSplineFilter, std::__1::default_delete<PKBSplineFilter>> _field2;
+    struct unique_ptr<PKOutputTimeFilter, std::__1::default_delete<PKOutputTimeFilter>> _field3;
+    struct unique_ptr<PKInputInputProvider, std::__1::default_delete<PKInputInputProvider>> _field4;
+    long long _field5;
+    _Bool _field6;
+    struct CGRect _field7;
+    struct CGRect _field8;
+    double _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    CDUnknownBlockType _field12;
+} AnimatingStroke_8a96ff6b;
+
 typedef struct {
     CDUnknownFunctionPointerType *_field1;
     struct unique_ptr<drawing::Rectangle, std::__1::default_delete<drawing::Rectangle>> _field2;
@@ -811,6 +962,13 @@ typedef struct {
 #endif
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned long long x;
+    unsigned long long y;
+    unsigned long long width;
+    unsigned long long height;
+} CDStruct_5f3a0cd7;
 
 typedef struct {
     unsigned int :1;
@@ -857,12 +1015,6 @@ typedef struct {
     float y;
 } CDStruct_6e3f967a;
 
-typedef struct {
-    int arcType;
-    _Bool before;
-    double snapAngle;
-} CDStruct_cfd08fee;
-
 typedef struct CDStruct_183601bc;
 
 typedef struct {
@@ -897,6 +1049,18 @@ typedef struct {
             unsigned int :3;
             unsigned int :1;
             unsigned int :4;
+            unsigned int :8;
+        } _field1;
+        unsigned long long _field2;
+    } _field1;
+} CDStruct_f4fa7470;
+
+typedef struct {
+    union {
+        struct {
+            unsigned int :3;
+            unsigned int :1;
+            unsigned int :4;
         } _field1;
         unsigned long long _field2;
     } _field1;
@@ -920,9 +1084,17 @@ typedef struct PKInputProvider<_PKStrokePoint> {
 
 typedef struct unique_ptr<PKFunction, std::__1::default_delete<PKFunction>> {
     struct __compressed_pair<PKFunction *, std::__1::default_delete<PKFunction>> {
-        struct PKFunction *_field1;
-    } _field1;
-} unique_ptr_61416811;
+        struct PKFunction *__value_;
+    } __ptr_;
+} unique_ptr_94812230;
+
+typedef struct vector<CGPoint, std::__1::allocator<CGPoint>> {
+    struct CGPoint *_field1;
+    struct CGPoint *_field2;
+    struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint>> {
+        struct CGPoint *_field1;
+    } _field3;
+} vector_e1abc270;
 
 typedef struct vector<PKInputPoint, std::__1::allocator<PKInputPoint>> {
     CDStruct_183601bc *__begin_;
@@ -947,4 +1119,12 @@ typedef struct vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint>> {
         struct _PKStrokePoint *__value_;
     } __end_cap_;
 } vector_03cfcf00;
+
+typedef struct vector<double, std::__1::allocator<double>> {
+    double *__begin_;
+    double *__end_;
+    struct __compressed_pair<double *, std::__1::allocator<double>> {
+        double *__value_;
+    } __end_cap_;
+} vector_b67dfe3a;
 

@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)vacuumHTMLDatabase;
 - (void)vacuum;
 - (void)timerFired:(id)arg1;
 - (void)stopDatabaseVacuumPolicy;

@@ -12,7 +12,7 @@
 
 @interface TTMergeableStringSelection : NSObject <TTMergeableStringIDTracker>
 {
-    vector_8c432507 _selectionRanges;
+    vector_0ee2fe7a _selectionRanges;
     unsigned long long _selectionAffinity;
 }
 
@@ -28,7 +28,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)hasTopoIDsThatCanChange;
 - (void)updateTopoIDRange:(struct TopoIDRange)arg1 toNewRangeID:(struct TopoIDRange)arg2;
-- (vector_8c432507 *)selectionRanges;
+- (vector_0ee2fe7a *)selectionRanges;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -51,7 +51,9 @@
 - (id)sourceForApplicationIdentifier:(id)arg1 createOrUpdateIfNecessary:(_Bool)arg2 entitlements:(id)arg3 name:(id)arg4 error:(id *)arg5;
 - (id)createOrUpdateSourceForClient:(id)arg1 error:(id *)arg2;
 - (id)sourceForClient:(id)arg1 error:(id *)arg2;
-- (id)sourceForClinicalAccountIdentifier:(id)arg1 provenance:(long long)arg2 createIfNecessary:(_Bool)arg3 error:(id *)arg4;
+- (id)_sourceFromEphemeralSource:(id)arg1 provenance:(long long)arg2 createOrUpdateIfNecessary:(_Bool)arg3 error:(id *)arg4;
+- (id)publicSourceForGatewayExternalIdentifier:(id)arg1 provenance:(long long)arg2 createOrUpdateIfNecessary:(_Bool)arg3 nameOnCreateOrUpdate:(id)arg4 error:(id *)arg5;
+- (id)privateSourceForClinicalAccountIdentifier:(id)arg1 provenance:(long long)arg2 createOrUpdateIfNecessary:(_Bool)arg3 nameOnCreateOrUpdate:(id)arg4 error:(id *)arg5;
 - (id)healthAppSourceWithError:(id *)arg1;
 - (id)localDeviceSourceWithError:(id *)arg1;
 - (id)_predicateForSourceBundleIdentifier:(id)arg1 localOnly:(_Bool)arg2;

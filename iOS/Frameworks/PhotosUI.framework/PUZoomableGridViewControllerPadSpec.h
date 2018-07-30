@@ -6,7 +6,6 @@
 
 #import <PhotosUI/PUZoomableGridViewControllerSpec.h>
 
-__attribute__((visibility("hidden")))
 @interface PUZoomableGridViewControllerPadSpec : PUZoomableGridViewControllerSpec
 {
 }

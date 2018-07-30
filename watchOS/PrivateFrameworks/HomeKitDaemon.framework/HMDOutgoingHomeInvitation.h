@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
+- (id)emptyModelObjectWithChangeType:(unsigned int)arg1;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)_transactionOutgoingInvitiationUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) NSArray *operationIdentifiers; // @synthesize operationIdentifiers=_operationIdentifiers;
 @property(readonly, nonatomic) NSArray *operations;
 - (void)updateInvitationState:(int)arg1;
+- (void)notifyStateChangedForMessage:(id)arg1;
 - (_Bool)refreshDisplayName;
 - (void)updateUser:(id)arg1;
 - (id)describeWithFormat;
@@ -44,11 +46,15 @@
 @property(readonly, nonatomic) NSArray *accessoryInvitationsInformation;
 - (void)cancel;
 @property(readonly, nonatomic, getter=isComplete) _Bool complete;
-- (id)description;
-- (id)debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (id)shortDescription;
 - (id)initWithUUID:(id)arg1 invitee:(id)arg2 invitationState:(int)arg3 forHome:(id)arg4 expiryDate:(id)arg5 messageIdentifier:(id)arg6;
 - (id)initWithInvitee:(id)arg1 invitationState:(int)arg2 forHome:(id)arg3 expiryDate:(id)arg4 messageIdentifier:(id)arg5;
+
+// Remaining properties
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

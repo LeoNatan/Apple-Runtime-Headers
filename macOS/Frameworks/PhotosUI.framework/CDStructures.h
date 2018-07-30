@@ -25,6 +25,11 @@ struct CGSize {
     double height;
 };
 
+struct CLLocationCoordinate2D {
+    double latitude;
+    double longitude;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

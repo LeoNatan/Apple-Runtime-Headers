@@ -7,6 +7,6 @@
 #import "NSImage.h"
 
 @interface NSImage (IMKAdditions)
-- (void)drawInvertedInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;
+- (void)drawInvertedInRect:(struct CGRect)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3;
 @end
 

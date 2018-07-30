@@ -6,22 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSArray, RTLearnedPlace, RTLearnedPlaceTypeInferenceStats;
+@class RTLearnedPlace, RTLearnedPlaceTypeInferenceStats;
 
 @interface RTLearnedPlaceTypeInferencePlaceStats : NSObject
 {
-    RTLearnedPlace *_place;
-    NSArray *_visits;
     RTLearnedPlaceTypeInferenceStats *_stats;
+    RTLearnedPlace *_place;
+    unsigned long long _visitsCount;
 }
 
 + (id)extractWeeklyStatsFromDailyStats:(id)arg1;
 + (id)extractDailyStatsFromVisits:(id)arg1;
 + (double)extractTopMedianDwellTimeFromVisits:(id)arg1;
 + (id)visitsWithDwellTimeBetweenDateRange:(id)arg1 start:(id)arg2 end:(id)arg3;
+@property(nonatomic) unsigned long long visitsCount; // @synthesize visitsCount=_visitsCount;
+@property(retain, nonatomic) RTLearnedPlace *place; // @synthesize place=_place;
 @property(readonly, nonatomic) RTLearnedPlaceTypeInferenceStats *stats; // @synthesize stats=_stats;
-@property(readonly, nonatomic) NSArray *visits; // @synthesize visits=_visits;
-@property(readonly, nonatomic) RTLearnedPlace *place; // @synthesize place=_place;
 - (void).cxx_destruct;
 - (id)description;
 - (void)log;

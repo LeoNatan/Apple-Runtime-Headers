@@ -8,7 +8,6 @@
 
 @class NSDateFormatter, NSObject<OS_dispatch_queue>;
 
-__attribute__((visibility("hidden")))
 @interface TSUStdioLogSink : NSObject
 {
     NSObject<OS_dispatch_queue> *_logQueue;

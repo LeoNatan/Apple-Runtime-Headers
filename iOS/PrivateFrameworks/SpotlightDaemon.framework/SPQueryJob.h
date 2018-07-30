@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithSIJob:(struct __SIJobRef *)arg1 dataclass:(id)arg2 resultsHandler:(CDUnknownBlockType)arg3;
+- (id)initWithSIJob:(struct __SIJobRef *)arg1 dataclass:(id)arg2 eventHandler:(CDUnknownBlockType)arg3 resultsHandler:(CDUnknownBlockType)arg4;
 
 @end
 

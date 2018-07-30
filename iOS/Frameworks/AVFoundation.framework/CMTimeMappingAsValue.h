@@ -6,6 +6,7 @@
 
 #import "NSValue.h"
 
+__attribute__((visibility("hidden")))
 @interface CMTimeMappingAsValue : NSValue
 {
     CDStruct_82206317 _timeMapping;

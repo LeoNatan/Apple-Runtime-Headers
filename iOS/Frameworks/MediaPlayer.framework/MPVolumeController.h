@@ -8,22 +8,20 @@
 
 #import "MPVolumeControllerDataSourceDelegate.h"
 
-@class MPAVController, NSString;
+@class NSString;
 
 @interface MPVolumeController : NSObject <MPVolumeControllerDataSourceDelegate>
 {
     id <MPVolumeControllerDataSource> _dataSource;
-    int _userRecentlyChangedVolumeCount;
+    int _volumeChangeCoalescingCount;
     id <MPVolumeControllerDelegate> _delegate;
-    MPAVController *_player;
 }
 
-@property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
 @property(retain, nonatomic) id <MPVolumeControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <MPVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSString *volumeAudioCategory;
 - (_Bool)muted;
+@property(copy, nonatomic) NSString *volumeAudioCategory;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeAudioCategory:(id)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeWarning:(long long)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeEUVolumeLimitEnforced:(_Bool)arg2;
@@ -37,7 +35,7 @@
 @property(readonly, nonatomic) float EUVolumeLimit;
 @property(readonly, nonatomic) long long volumeWarningState;
 @property(readonly, nonatomic) _Bool volumeWarningEnabled;
-- (void)_userChangedVolume;
+- (void)setVolume:(float)arg1 withNoticationDelay:(float)arg2;
 - (void)getVolumeValueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)adjustVolumeValue:(float)arg1;
 - (void)updateVolumeValue;

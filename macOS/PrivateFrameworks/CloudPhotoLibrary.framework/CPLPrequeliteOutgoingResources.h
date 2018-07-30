@@ -22,10 +22,11 @@
     BOOL _storageHasChangedDuringThisTransaction;
 }
 
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 discardedResources:(id *)arg4 error:(id *)arg5;
 - (void)writeTransactionDidFail;
+- (id)statusPerScopeIndex;
 - (id)status;
 - (id)recordsDesignation;
-- (BOOL)resetWithError:(id *)arg1;
 @property(readonly, nonatomic) unsigned long long sizeOfOriginalResourcesToUpload;
 @property(readonly, nonatomic) unsigned long long sizeOfResourcesToUpload;
 - (void)_cacheUploadSizesIfNecessary;

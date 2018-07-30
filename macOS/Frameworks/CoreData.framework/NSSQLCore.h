@@ -7,11 +7,12 @@
 #import <CoreData/NSPersistentStore.h>
 
 #import "NSFilePresenter.h"
+#import "NSSQLModelProvider.h"
 
 @class NSData, NSDictionary, NSGenerationalRowCache, NSMutableDictionary, NSOperationQueue, NSSQLCoreDispatchManager, NSSQLModel, NSSQLiteAdapter, NSSQLiteConnection, NSSet, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
-@interface NSSQLCore : NSPersistentStore <NSFilePresenter>
+@interface NSSQLCore : NSPersistentStore <NSFilePresenter, NSSQLModelProvider>
 {
     NSSQLModel *_model;
     NSSQLiteAdapter *_adapter;
@@ -23,11 +24,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_storeMetadata;
     NSString *_externalDataReferencesDirectory;
     NSString *_externalDataLinksDirectory;
+    NSString *_fileBackedFuturesPath;
     int _transactionInMemorySequence;
     BOOL _metadataIsClean;
     struct _sqlCoreFlags {
         unsigned int useSyntaxColoredLogging:1;
-        unsigned int checkedExternalReferences:1;
+        unsigned int hasExternalDataReferences:1;
         unsigned int fileProtectionType:3;
         unsigned int notifyFOKChanges:1;
         unsigned int initializationComplete:1;
@@ -37,15 +39,22 @@ __attribute__((visibility("hidden")))
         unsigned int persistentHistoryTracking:1;
         unsigned int hasAncillaryModels:1;
         unsigned int createdAncillaryModelTables:1;
-        unsigned int _RESERVED:20;
+        unsigned int postRemoteNotify:1;
+        unsigned int hasFileBackedFutures:1;
+        unsigned int isInMemory:1;
+        unsigned int _RESERVED:16;
     } _sqlCoreFlags;
     NSSQLiteConnection *_queryGenerationTrackingConnection;
     NSDictionary *_ancillaryModels;
     NSDictionary *_ancillarySQLModels;
     NSDictionary *_historyTrackingOptions;
+    NSDictionary *_transactionStringPKForName;
     NSData *_dbKey;
+    BOOL _remoteStoresDidChange;
+    int _remoteNotificationToken;
 }
 
++ (BOOL)dropPersistentHistoryforPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id *)arg5;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)cachedModelForPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
@@ -64,9 +73,14 @@ __attribute__((visibility("hidden")))
 + (int)debugDefault;
 + (void)setColoredLoggingDefault:(BOOL)arg1;
 + (void)setDebugDefault:(int)arg1;
+- (id)transactionStringPKForName:(id)arg1;
+- (void)addTransactionStringName:(id)arg1 forPK:(id)arg2;
 - (id)entitiesToExclude;
 - (id)entitiesToInclude;
+- (id)notifyPostName;
 - (BOOL)hasHistoryTracking;
+@property(readonly, nonatomic) BOOL isInMemory;
+- (void)_dropHistoryTables;
 - (id)dbKey;
 - (void)_setHasAncillaryModels:(BOOL)arg1;
 - (void)setCreatedAncillaryModelTables:(BOOL)arg1;
@@ -141,6 +155,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isUbiquitized;
 - (void)dispatchRequest:(id)arg1 withRetries:(long long)arg2;
 - (id)dispatchManager;
+@property(readonly) BOOL remoteStoresDidChange;
+- (void)recordRemoteQueryGenerationDidChange;
 - (id)reopenQueryGenerationWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)currentQueryGeneration;
@@ -162,8 +178,10 @@ __attribute__((visibility("hidden")))
 - (id)safeguardLocationForFileWithUUID:(id)arg1;
 - (id)externalLocationForFileWithUUID:(id)arg1;
 - (id)externalDataReferencesDirectory;
-- (void)_disconnectAllConnections;
+- (id)fileBackedFuturesDirectory;
+- (id)_supportDirectoryPath;
 - (void)setConnectionsAreLocal:(BOOL)arg1;
+- (void)_disconnectAllConnections;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (id)obtainPermanentIDsForObjects:(id)arg1 error:(id *)arg2;
@@ -184,8 +202,9 @@ __attribute__((visibility("hidden")))
 - (id)rowCacheForContext:(id)arg1;
 - (id)rowCacheForGeneration:(id)arg1;
 - (void)dealloc;
+- (void)_postChangeNotificationWithTransactionID:(id)arg1;
+- (void)_setupObserver;
 - (BOOL)loadMetadata:(id *)arg1;
-- (id)_loadAndSetMetadataReadOnly;
 - (id)_loadAndSetMetadata;
 - (void)_ensureDatabaseMatchesModel;
 - (BOOL)_fixPrimaryKeyTablesUsingConnection:(id)arg1;
@@ -207,7 +226,7 @@ __attribute__((visibility("hidden")))
 - (struct _NSScalarObjectID *)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (struct _NSScalarObjectID *)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
-- (Class)objectIDFactoryForPersistentHistoryEntity:(id)arg1;
+- (Class)newObjectIDFactoryForPersistentHistoryEntity:(id)arg1;
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (Class)objectIDFactoryForEntity:(id)arg1;
 - (Class)_objectIDClass;

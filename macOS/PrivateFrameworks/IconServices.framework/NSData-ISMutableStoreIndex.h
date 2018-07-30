@@ -7,9 +7,7 @@
 #import "NSData.h"
 
 @interface NSData (ISMutableStoreIndex)
-+ (id)_ISMutableStoreIndex_mappedDataWithCapacity:(unsigned long long)arg1;
 + (id)_ISMutableStoreIndex_mappedDataWithURL:(id)arg1;
-- (BOOL)_ISMutableStoreIndex_addValue:(CDStruct_dd73ed19 *)arg1 forKey:(unsigned long long)arg2;
 - (BOOL)_ISMutableStoreIndex_makeBackedByFileAtURL:(id)arg1;
 @end
 

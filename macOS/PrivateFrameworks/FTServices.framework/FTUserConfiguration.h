@@ -6,12 +6,16 @@
 
 #import "NSObject.h"
 
+@class NSNumber, NSString;
+
 @interface FTUserConfiguration : NSObject
 {
 }
 
 + (id)sharedInstance;
 @property(readonly, nonatomic) BOOL _nonWifiFaceTimeEntitled;
+@property(readonly, copy, nonatomic) NSNumber *selectedPhoneNumberRegistrationSubscriptionNumber;
+@property(copy, nonatomic) NSString *selectedPhoneNumberRegistrationSubscriptionLabel;
 @property(nonatomic) BOOL allowAnyNetwork;
 @property(nonatomic) BOOL cellularFaceTimeEnabled;
 - (BOOL)nonBluetoothAllowedForBundleId:(id)arg1;

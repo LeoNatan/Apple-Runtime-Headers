@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class FIUIWorkoutActivityType, NPSDomainAccessor, NPSManager, NSMutableArray, NSMutableDictionary;
+@class FIUIWorkoutActivityType, FIUIWorkoutDefaultMetricsProvider, NPSDomainAccessor, NPSManager, NSMutableArray, NSMutableDictionary;
 
 @interface FIUIWorkoutSettingsManager : NSObject
 {
@@ -14,6 +14,7 @@
     NSMutableDictionary *_settingsByActivityType;
     NSMutableDictionary *_settingOverridesByMetric;
     NSMutableArray *_enabledMetrics;
+    FIUIWorkoutDefaultMetricsProvider *_defaultMetricsProvider;
     NPSDomainAccessor *_domainAccessor;
     NPSManager *_syncManager;
 }
@@ -24,6 +25,8 @@
 - (void)_writeToDomain;
 - (void)_migratePaceViewSettingIfNeeded;
 - (void)_readFromDomain;
+- (_Bool)_hasUserMadeMetricChangesToWorkoutType:(id)arg1 enabledMetrics:(id)arg2 settingOverridesByMetric:(id)arg3 metricFormatVersion:(id)arg4;
+- (_Bool)_enabledMetricsAreDefaultAfterPaceMigration:(id)arg1 workoutActivityType:(id)arg2;
 - (void)reloadMetrics;
 - (long long)disabledIndexForMetricType:(unsigned long long)arg1;
 - (void)moveMetricType:(unsigned long long)arg1 toEnabledIndex:(long long)arg2;

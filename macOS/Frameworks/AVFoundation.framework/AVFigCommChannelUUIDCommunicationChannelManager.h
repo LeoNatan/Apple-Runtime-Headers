@@ -10,6 +10,7 @@
 
 @class AVFigRoutingContextOutputContextImpl, AVOutputContextCommunicationChannel, AVWeakReference, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigCommChannelUUIDCommunicationChannelManager : NSObject <AVFigRoutingContextCommunicationChannelManager>
 {
     AVFigRoutingContextOutputContextImpl *_parentOutputContextImpl;

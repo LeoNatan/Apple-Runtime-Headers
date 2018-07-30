@@ -6,11 +6,12 @@
 
 #import "UISlider.h"
 
+#import "AVExternalGestureRecognizerPreventing.h"
 #import "AVPlaybackControlsViewItem.h"
 
 @class AVVolumeWarningView, NSNumber, NSString, UIImageView;
 
-@interface AVVolumeSlider : UISlider <AVPlaybackControlsViewItem>
+@interface AVVolumeSlider : UISlider <AVExternalGestureRecognizerPreventing, AVPlaybackControlsViewItem>
 {
     _Bool _included;
     _Bool _collapsed;
@@ -33,6 +34,7 @@
 @property(nonatomic, getter=isIncluded) _Bool included; // @synthesize included=_included;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
 - (void).cxx_destruct;
+- (_Bool)_shouldTrackTouchAtPoint:(struct CGPoint)arg1;
 - (void)setValue:(float)arg1 animated:(_Bool)arg2;
 - (struct CGRect)trackRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3;
@@ -47,7 +49,7 @@
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)intrinsicContentSize;
-- (void)willMoveToWindow:(id)arg1;
+- (_Bool)avkit_shouldPreventExternalGestureRecognizerAtPoint:(struct CGPoint)arg1;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
 - (id)initWithFrame:(struct CGRect)arg1;
 

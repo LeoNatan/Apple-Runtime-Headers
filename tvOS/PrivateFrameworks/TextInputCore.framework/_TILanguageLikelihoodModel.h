@@ -24,7 +24,6 @@
 - (id)rankedLanguagesForRecipient:(id)arg1;
 - (void)addEvidence:(id)arg1 timestamp:(double)arg2 adaptationType:(int)arg3 forRecipient:(id)arg4 app:(id)arg5 language:(id)arg6;
 @property(readonly, nonatomic) void *languageLikelihoodModelRef; // @synthesize languageLikelihoodModelRef=_languageLikelihoodModelRef;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

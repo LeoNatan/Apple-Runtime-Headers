@@ -139,13 +139,14 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsDisplay;
 - (void)validate;
 - (_Bool)isStrokeEditing;
-- (_Bool)isZoomedEditing;
+- (_Bool)suppressFrozenHeadersForEditing;
 - (_Bool)inFindReplaceMode;
 - (_Bool)inPrintPreviewMode;
 - (id)inspectorGeometry;
 - (struct CGRect)alignmentFrame;
 - (int)wrapFitType;
 - (id)initialInfoGeometry;
+- (id)computeInfoGeometryFromPureLayoutGeometry:(id)arg1;
 - (id)computeLayoutGeometry;
 - (id)layoutGeometryFromInfo;
 - (struct CGPoint)capturedInfoPositionForAttachment;

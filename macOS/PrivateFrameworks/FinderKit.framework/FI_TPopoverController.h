@@ -8,44 +8,31 @@
 
 #import "NSPopoverDelegate.h"
 
-@class FI_TBaseBrowserViewController, FI_TPopover, NSString;
+@class FI_TPopover, FI_TPopoverContentViewController, NSAppearance, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FI_TPopoverController : NSObject <NSPopoverDelegate>
 {
-    struct TNSRef<FI_TViewController *, void> _contentViewController;
-    struct TNSRef<FI_TLayoutBinder *, void> _contentViewLayoutBinder;
-    struct TNSRef<FI_TPopover *, void> _popover;
-    struct TFENode _popoverTargetNode;
-    long long _behavior;
-    struct TNSRef<NSMutableArray *, void> _popoverSubviewDatas;
-    FI_TBaseBrowserViewController *_browserViewController;
+    FI_TPopoverContentViewController *_contentViewController;
+    FI_TPopover *_popover;
+    struct TNSRef<NSArray, void> _topLevelNibObjects;
     _Bool _releasedWhenClosed;
 }
 
 @property(nonatomic) _Bool releasedWhenClosed; // @synthesize releasedWhenClosed=_releasedWhenClosed;
-@property(readonly, nonatomic) struct TFENode targetNode; // @synthesize targetNode=_popoverTargetNode;
-@property(nonatomic) FI_TBaseBrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
-@property(nonatomic) long long behavior; // @synthesize behavior=_behavior;
+@property(readonly, retain, nonatomic) FI_TPopover *popover; // @synthesize popover=_popover;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)browserViewWillMoveToWindow:(id)arg1;
-- (void)aboutToTearDownPopover;
+@property(nonatomic) double width; // @dynamic width;
+@property(retain, nonatomic) NSAppearance *appearance;
+@property(nonatomic) long long behavior; // @dynamic behavior;
+@property(readonly, nonatomic) _Bool isShown; // @dynamic isShown;
 - (void)popoverWillClose:(id)arg1;
 - (void)closePopover;
-- (void)updatePopoverPosition;
 - (void)showPopoverRelativeToRect:(struct CGRect)arg1 relativeView:(id)arg2 preferredEdge:(unsigned long long)arg3;
-- (void)showPopoverOverNode:(const struct TFENode *)arg1 browserViewController:(id)arg2 preferredEdge:(unsigned long long)arg3;
 - (void)removeSubview:(id)arg1;
 - (void)addSubview:(id)arg1;
-- (_Bool)useSeparatorsBetweenSubviews;
-- (void)setWidth:(double)arg1;
-- (void)setPopoverTargetNode:(const struct TFENode *)arg1;
-- (const struct TFENode *)popoverTargetNode;
-@property(readonly, nonatomic) _Bool isShown; // @dynamic isShown;
-@property(readonly, retain, nonatomic) FI_TPopover *popoverNoLoad; // @dynamic popoverNoLoad;
-@property(readonly, retain, nonatomic) FI_TPopover *popover; // @dynamic popover;
-- (Class)popoverClass;
+- (void)aboutToTearDown;
 - (void)dealloc;
 - (id)init;
 - (id)initWithWidth:(double)arg1;

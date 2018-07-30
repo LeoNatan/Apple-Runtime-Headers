@@ -10,6 +10,7 @@
 
 @class NSMutableArray, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDMapsIdentifierPlaceLookupParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

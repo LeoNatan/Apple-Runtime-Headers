@@ -8,6 +8,7 @@
 
 @class AVMediaFileType, AVWeakReference, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigAssetWriterTrack : NSObject
 {
     AVWeakReference *_weakReference;

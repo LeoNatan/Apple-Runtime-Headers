@@ -4,14 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
-@interface DMFSetMaximumResidentUsersRequest : CATTaskRequest
+@interface DMFSetMaximumResidentUsersRequest : DMFTaskRequest
 {
     unsigned long long _count;
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

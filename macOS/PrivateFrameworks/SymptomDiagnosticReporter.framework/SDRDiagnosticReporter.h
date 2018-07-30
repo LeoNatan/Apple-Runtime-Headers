@@ -15,13 +15,14 @@
     id <SDRDiagnosticReporterDelegate> _delegate;
 }
 
++ (BOOL)isABCEnabled;
 + (void)initialize;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <SDRDiagnosticReporterDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)getAutoBugCaptureConfiguration:(CDUnknownBlockType)arg1;
+- (void)purgeAutoBugCaptureFilesWithSubPaths:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getAllDiagnosticCasesWithReply:(CDUnknownBlockType)arg1;
-- (BOOL)postAWDEvent:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (BOOL)assertFactString:(id)arg1 module:(id)arg2 asSymptom:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (BOOL)triggerRemoteSessionForSignature:(id)arg1 caseGroupID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (BOOL)getDiagnosticPayloadsForSignatures:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (BOOL)addSignatureContentForSession:(id)arg1 key:(id)arg2 content:(id)arg3 reply:(CDUnknownBlockType)arg4;

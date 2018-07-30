@@ -28,7 +28,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
-- (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
+- (id)initWithDictionary:(id)arg1 bundle:(id)arg2 privateBundle:(id)arg3;
 
 @end
 

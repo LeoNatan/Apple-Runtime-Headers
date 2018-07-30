@@ -10,6 +10,7 @@
 
 @class BLControl, NSMutableDictionary, NSString, NSXPCListener;
 
+__attribute__((visibility("hidden")))
 @interface BrightnessSystemInternal : NSObject <NSXPCListenerDelegate>
 {
     BLControl *bl;

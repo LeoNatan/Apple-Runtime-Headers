@@ -13,11 +13,14 @@
     id <MTScheduledListDelegate> _delegate;
     NSMutableOrderedSet *_orderedScheduledAlerts;
     NSMutableOrderedSet *_orderedScheduledNotifications;
+    NSMutableOrderedSet *_orderedScheduledEvents;
     NSMutableDictionary *_scheduledAlertMap;
 }
 
++ (id)_nextScheduledObjectInSets:(id)arg1;
 + (void)_sort:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *scheduledAlertMap; // @synthesize scheduledAlertMap=_scheduledAlertMap;
+@property(retain, nonatomic) NSMutableOrderedSet *orderedScheduledEvents; // @synthesize orderedScheduledEvents=_orderedScheduledEvents;
 @property(retain, nonatomic) NSMutableOrderedSet *orderedScheduledNotifications; // @synthesize orderedScheduledNotifications=_orderedScheduledNotifications;
 @property(retain, nonatomic) NSMutableOrderedSet *orderedScheduledAlerts; // @synthesize orderedScheduledAlerts=_orderedScheduledAlerts;
 @property(nonatomic) __weak id <MTScheduledListDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,11 +34,14 @@
 - (void)_unschedule:(id)arg1;
 - (void)unschedule:(id)arg1;
 - (void)reset;
-- (id)nextScheduledAlertWithTriggerType:(unsigned long long)arg1;
+- (id)_scheduledListForTriggerType:(unsigned long long)arg1;
+- (id)nextScheduledObjectWithTriggerType:(unsigned long long)arg1;
+- (id)nextScheduledObject;
 - (id)nextScheduledAlertOrNotification;
 - (id)nextScheduledAlert;
-- (id)scheduledAlertsToFireInInterval:(id)arg1;
-- (id)scheduledAlertsToFireBeforeDate:(id)arg1;
+- (id)scheduledObjectsToFireInInterval:(id)arg1;
+- (id)scheduledObjectsToFireBeforeDate:(id)arg1;
+@property(readonly, nonatomic) NSArray *scheduledObjects;
 @property(readonly, nonatomic) NSArray *scheduledAlertsAndNotifications;
 @property(readonly, nonatomic) NSArray *scheduledAlerts;
 @property(readonly, nonatomic) unsigned long long numberOfScheduledAlertsAndNotifications;

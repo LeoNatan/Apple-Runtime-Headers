@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class MPIdentifierSet, NSMutableDictionary;
+@class MPIdentifierSet, NSMutableDictionary, NSString;
 
 @interface MPModelObject : NSObject <NSCopying, NSSecureCoding>
 {
@@ -47,6 +47,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
+@property(readonly, nonatomic) NSString *humanDescription;
 - (id)description;
 - (id)copyWithIdentifiers:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)initWithIdentifiers:(id)arg1 block:(CDUnknownBlockType)arg2;

@@ -20,8 +20,9 @@
 - (void).cxx_destruct;
 - (void)_removeRunningTask:(id)arg1;
 - (void)_addRunningTask:(id)arg1;
+- (_Bool)needsMigrationForNewTileGroup:(id)arg1 inResourceManifest:(id)arg2 oldTileGroup:(id)arg3 dataSet:(id)arg4;
 - (id)taskForNewTileGroup:(id)arg1 oldTileGroup:(id)arg2 activeScales:(id)arg3 activeScenarios:(id)arg4 updateType:(int)arg5;
-- (id)taskForNewTileGroup:(id)arg1 inResourceManifest:(id)arg2 oldTileGroup:(id)arg3 activeScales:(id)arg4 activeScenarios:(id)arg5 updateType:(int)arg6;
+- (id)taskForNewTileGroup:(id)arg1 inResourceManifest:(id)arg2 oldTileGroup:(id)arg3 activeScales:(id)arg4 activeScenarios:(id)arg5 dataSet:(id)arg6 updateType:(int)arg7;
 - (id)initWithManifestConfiguration:(id)arg1 mapLayerDataManager:(id)arg2;
 
 // Remaining properties

@@ -4,9 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#pragma mark Function Pointers and Blocks
-
-typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
+#pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
@@ -44,37 +42,6 @@ struct _NSRange {
     unsigned long long length;
 };
 
-struct flock {
-    long long _field1;
-    long long _field2;
-    int _field3;
-    short _field4;
-    short _field5;
-};
-
-struct fsid {
-    int _field1[2];
-};
-
-struct statfs {
-    unsigned int _field1;
-    int _field2;
-    unsigned long long _field3;
-    unsigned long long _field4;
-    unsigned long long _field5;
-    unsigned long long _field6;
-    unsigned long long _field7;
-    struct fsid _field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    unsigned int _field12;
-    char _field13[16];
-    char _field14[1024];
-    char _field15[1024];
-    unsigned int _field16[8];
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -83,13 +50,6 @@ typedef struct {
     _Bool _field3;
     _Bool _field4;
 } CDStruct_8024420c;
-
-typedef struct {
-    unsigned long long _field1;
-    id *_field2;
-    unsigned long long *_field3;
-    unsigned long long _field4[5];
-} CDStruct_70511ce9;
 
 typedef struct {
     long long version;

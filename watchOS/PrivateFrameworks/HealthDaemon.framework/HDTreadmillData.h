@@ -72,7 +72,7 @@
 @property(readonly, nonatomic) double instantaneousSpeed;
 @property(readonly, nonatomic) _Bool instantaneousSpeedIsSet;
 - (id)description;
-- (id)init;
+- (id)_init;
 - (id)allFields;
 - (id)generateDatums:(id)arg1;
 

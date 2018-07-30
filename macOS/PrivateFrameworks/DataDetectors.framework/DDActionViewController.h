@@ -8,7 +8,7 @@
 
 #import "NSRemoteViewDelegate.h"
 
-@class DDActionContext, DDButtonBar, DDDataDetectorsViewHost, NSBox, NSMapTable, NSRemoteView, NSURL;
+@class DDActionContext, DDButtonBar, DDDataDetectorsViewHost, NSMapTable, NSRemoteView, NSURL;
 
 @interface DDActionViewController : NSViewController <NSRemoteViewDelegate>
 {
@@ -16,11 +16,9 @@
     NSURL *_url;
     BOOL _local;
     NSRemoteView *_remoteView;
-    NSBox *_calloutTint;
     BOOL _isObserving;
     BOOL _bridgeBurnt;
     BOOL _presentationEndedSignaled;
-    BOOL _hasArrow;
     unsigned long long _actionType;
     DDDataDetectorsViewHost *_localViewController;
     NSMapTable *_localBridge;
@@ -36,7 +34,6 @@
 @property BOOL editionMode; // @synthesize editionMode=_editionMode;
 @property BOOL editedContent; // @synthesize editedContent=_editedContent;
 @property __weak id <DDActionViewPresenter> presenter; // @synthesize presenter=_presenter;
-@property(retain) NSBox *calloutTint; // @synthesize calloutTint=_calloutTint;
 @property(retain) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
 - (void).cxx_destruct;
 - (BOOL)viewShouldDragOldestAncestorWindow:(id)arg1;

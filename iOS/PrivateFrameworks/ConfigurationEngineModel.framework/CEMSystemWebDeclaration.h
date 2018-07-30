@@ -12,29 +12,37 @@
 
 @interface CEMSystemWebDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadForceLimitAdTracking;
+    NSNumber *_payloadSafariAllowAutoFill;
+    NSNumber *_payloadSafariForceFraudWarning;
+    NSNumber *_payloadSafariAllowJavaScript;
+    NSNumber *_payloadSafariAllowPopups;
+    NSNumber *_payloadSafariAcceptCookies;
+    NSNumber *_payloadForceAuthenticationBeforeAutoFill;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withForceLimitAdTracking:(id)arg2 withSafariAllowAutoFill:(id)arg3 withSafariForceFraudWarning:(id)arg4 withSafariAllowJavaScript:(id)arg5 withSafariAllowPopups:(id)arg6 withSafariAcceptCookies:(id)arg7 withForceAuthenticationBeforeAutoFill:(id)arg8;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadForceAuthenticationBeforeAutoFill; // @synthesize payloadForceAuthenticationBeforeAutoFill=_payloadForceAuthenticationBeforeAutoFill;
+@property(copy, nonatomic) NSNumber *payloadSafariAcceptCookies; // @synthesize payloadSafariAcceptCookies=_payloadSafariAcceptCookies;
+@property(copy, nonatomic) NSNumber *payloadSafariAllowPopups; // @synthesize payloadSafariAllowPopups=_payloadSafariAllowPopups;
+@property(copy, nonatomic) NSNumber *payloadSafariAllowJavaScript; // @synthesize payloadSafariAllowJavaScript=_payloadSafariAllowJavaScript;
+@property(copy, nonatomic) NSNumber *payloadSafariForceFraudWarning; // @synthesize payloadSafariForceFraudWarning=_payloadSafariForceFraudWarning;
+@property(copy, nonatomic) NSNumber *payloadSafariAllowAutoFill; // @synthesize payloadSafariAllowAutoFill=_payloadSafariAllowAutoFill;
+@property(copy, nonatomic) NSNumber *payloadForceLimitAdTracking; // @synthesize payloadForceLimitAdTracking=_payloadForceLimitAdTracking;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadForceAuthenticationBeforeAutoFill;
-@property(readonly, nonatomic) NSNumber *payloadSafariAcceptCookies;
-@property(readonly, nonatomic) NSNumber *payloadSafariAllowPopups;
-@property(readonly, nonatomic) NSNumber *payloadSafariAllowJavaScript;
-@property(readonly, nonatomic) NSNumber *payloadSafariForceFraudWarning;
-@property(readonly, nonatomic) NSNumber *payloadSafariAllowAutoFill;
-@property(readonly, nonatomic) NSNumber *payloadForceLimitAdTracking;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

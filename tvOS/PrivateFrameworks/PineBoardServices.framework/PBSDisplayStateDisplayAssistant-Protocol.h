@@ -6,13 +6,15 @@
 
 #import "PBSDisplayStateMutation.h"
 
-@class NSNumber, NSString, PBSDisplayMode;
+@class NSNumber, NSString, PBSDisplayAssistantPresentationRequest;
 
 @protocol PBSDisplayStateDisplayAssistant <PBSDisplayStateMutation>
-- (void)displayAssistantDidCompleteForInvocation:(NSNumber *)arg1;
-- (void)displayAssistantDidStartForInvocation:(NSNumber *)arg1;
+- (void)displayAssistantDidCompleteForKind:(NSNumber *)arg1;
+- (void)displayAssistantDidStartForKind:(NSNumber *)arg1;
+- (void)removeCableCheckHistory;
+- (void)resetPoorCableWarnings;
 - (void)forgetDisplaysForDisplayAssistant;
-- (void)presentDisplayAssistantForInvocation:(NSNumber *)arg1 destinationDisplayMode:(PBSDisplayMode *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)presentDisplayAssistantWithRequest:(PBSDisplayAssistantPresentationRequest *)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)handleRegionChangeWithNewCountryCode:(NSString *)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;
 @end
 

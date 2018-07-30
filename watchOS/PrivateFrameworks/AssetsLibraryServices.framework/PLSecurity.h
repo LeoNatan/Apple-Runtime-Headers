@@ -10,7 +10,6 @@
 {
 }
 
-+ (_Bool)canSkipUserPromptsForProcessWithName:(id)arg1 identifier:(int)arg2;
 + (_Bool)isEntitledForCloudSharingData;
 + (_Bool)connectionIsEntitledForPhotoKit:(id)arg1;
 + (_Bool)isEntitledForPhotoKit;
@@ -19,8 +18,12 @@
 + (_Bool)connection:(id)arg1 hasEntitlement:(id)arg2;
 + (id)connection:(id)arg1 valueForEntitlement:(id)arg2;
 + (id)connection:(id)arg1 valuesForEntitlements:(id)arg2;
++ (_Bool)auditToken:(CDStruct_6ad76789)arg1 hasEntitlement:(id)arg2;
 + (_Bool)secTask:(struct __SecTask *)arg1 hasEntitlement:(id)arg2;
 + (id)_secTask:(struct __SecTask *)arg1 grantedEntitlements:(id)arg2;
++ (unsigned int)assetsdEntitlementTypesForConnection:(id)arg1;
++ (unsigned int)assetsdEntitlementTypesForCurrentProcess;
++ (unsigned int)assetsdEntitlementTypesFromSecTask:(struct __SecTask *)arg1;
 
 @end
 

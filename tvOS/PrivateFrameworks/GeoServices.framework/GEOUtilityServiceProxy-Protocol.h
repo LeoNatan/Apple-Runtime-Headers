@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 @protocol GEOUtilityServiceProxy <NSObject>
 - (void)getCurrentGeoServicesState:(NSObject<OS_dispatch_queue> *)arg1 callback:(void (^)(GEOServicesState *, NSError *))arg2;
+- (NSString *)getGeoServicesCacheDirectoryPath;
+- (NSString *)getHomeDirectoryPath;
 @end
 

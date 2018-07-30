@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)moveTo:(struct CGPoint)arg1 duration:(double)arg2;
 + (id)moveByX:(double)arg1 y:(double)arg2 duration:(double)arg3;
 + (id)moveBy:(struct CGPoint)arg1 duration:(double)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

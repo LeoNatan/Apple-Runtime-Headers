@@ -16,6 +16,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)isValid:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long videoResolution; // @synthesize videoResolution=_videoResolution;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithVideoResolutionType:(unsigned long long)arg1;

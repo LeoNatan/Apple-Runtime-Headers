@@ -36,7 +36,6 @@
 - (void)display;
 - (void)_reenableAppNap:(id)arg1;
 - (void)_temporarilyDisableAppNap;
-- (BOOL)_needsTigerDockContextBehavior;
 @property(retain) NSView *contentView;
 - (struct CGSize)_getSizeFromDock;
 @property(readonly) struct CGSize size;

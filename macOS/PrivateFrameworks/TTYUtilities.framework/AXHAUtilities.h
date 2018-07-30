@@ -12,9 +12,6 @@
 
 + (id)objectFromXDCObject:(id)arg1;
 + (id)XDCObjectFromObject:(id)arg1;
-+ (id)messagePayloadFromDictionary:(id)arg1 andIdentifier:(unsigned long long)arg2;
-+ (id)copyXPCMessageFromDictionary:(id)arg1 inReplyToXPCMessage:(id)arg2 error:(id *)arg3;
-+ (id)dictionaryFromXPCMessage:(id)arg1 error:(id *)arg2;
 
 @end
 

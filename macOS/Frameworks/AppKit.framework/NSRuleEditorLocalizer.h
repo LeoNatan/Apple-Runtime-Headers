@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface NSRuleEditorLocalizer : NSObject
 {
     NSMutableArray *_default;

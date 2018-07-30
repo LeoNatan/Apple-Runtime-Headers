@@ -73,7 +73,6 @@ __attribute__((visibility("hidden")))
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-@property(nonatomic, getter=isIndexDisplayEnabled) _Bool indexDisplayEnabled;
 - (void)updateWithViewElement:(id)arg1 cellMetrics:(struct TVCellMetrics)arg2;
 - (void)dealloc;
 

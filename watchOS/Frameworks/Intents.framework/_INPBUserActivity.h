@@ -7,34 +7,37 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBUserActivity.h"
 
-@class NSData, NSString, PBUnknownFields;
+@class NSData, NSString;
 
-@interface _INPBUserActivity : PBCodable <NSCopying>
+@interface _INPBUserActivity : PBCodable <_INPBUserActivity, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSData *_data;
     NSString *_title;
     NSString *_uri;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;
+@property(copy, nonatomic) NSString *uri; // @synthesize uri=_uri;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasData;
-@property(readonly, nonatomic) _Bool hasTitle;
 @property(readonly, nonatomic) _Bool hasUri;
+@property(readonly, nonatomic) _Bool hasTitle;
+@property(readonly, nonatomic) _Bool hasData;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

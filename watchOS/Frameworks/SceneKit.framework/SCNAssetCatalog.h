@@ -28,7 +28,7 @@
 - (id)animationNamed:(id)arg1;
 - (id)sceneNamed:(id)arg1;
 - (id)sceneWithURL:(id)arg1;
-- (void)cacheObject:(id)arg1 forKey:(id)arg2;
+- (void)cacheObject:(id)arg1 withTimestamp:(double)arg2 forKey:(id)arg3;
 - (id)URLOfResourceNamed:(id)arg1;
 - (void)dealloc;
 

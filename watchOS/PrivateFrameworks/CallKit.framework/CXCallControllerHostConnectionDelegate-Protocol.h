@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-@class CXCallControllerHostConnection, CXTransaction, NSString;
+@class CXCallControllerHostConnection, CXTransaction;
 
 @protocol CXCallControllerHostConnectionDelegate <NSObject>
-- (void)callControllerHostConnection:(CXCallControllerHostConnection *)arg1 requestTransaction:(CXTransaction *)arg2 forExtensionIdentifier:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
+- (void)callControllerHostConnection:(CXCallControllerHostConnection *)arg1 requestTransaction:(CXTransaction *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)callControllerHostConnection:(CXCallControllerHostConnection *)arg1 requestCalls:(void (^)(NSArray *))arg2;
 - (void)callControllerHostConnectionInvalidated:(CXCallControllerHostConnection *)arg1;
 @end

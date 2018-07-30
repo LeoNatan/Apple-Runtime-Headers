@@ -32,6 +32,8 @@
 @property(nonatomic) float yThreshold; // @synthesize yThreshold=_yThreshold;
 @property(nonatomic) float xThreshold; // @synthesize xThreshold=_xThreshold;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
+@property(nonatomic) __weak id <BKSAccelerometerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)_orientationDidChange;
 - (id)_orientationEventsThread;
 - (int)currentDeviceOrientation;
@@ -42,7 +44,6 @@
 @property(nonatomic) _Bool accelerometerEventsEnabled;
 - (void)dealloc;
 - (id)init;
-@property(nonatomic) id <BKSAccelerometerDelegate> delegate;
 
 @end
 

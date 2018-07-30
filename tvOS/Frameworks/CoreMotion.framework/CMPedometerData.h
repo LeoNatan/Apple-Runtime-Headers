@@ -28,10 +28,14 @@
     NSNumber *fIsOdometerPace;
     NSNumber *fNumberOfPushes;
     NSNumber *fWorkoutType;
+    NSNumber *fElevationAscended;
+    NSNumber *fElevationDescended;
 }
 
 + (id)maxPedometerEntries;
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) NSNumber *elevationDescended;
+@property(readonly, nonatomic) NSNumber *elevationAscended;
 @property(readonly, nonatomic) NSNumber *workoutType;
 @property(readonly, nonatomic) NSNumber *numberOfPushes;
 - (_Bool)isOdometerPace;
@@ -53,7 +57,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(long long)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15;
+- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(long long)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15 elevationAscended:(id)arg16 elevationDescended:(id)arg17;
 
 @end
 

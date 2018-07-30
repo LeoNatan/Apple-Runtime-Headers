@@ -8,6 +8,7 @@
 
 @class NSArray, NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditEffectCell : UICollectionViewCell
 {
     NSLayoutConstraint *_bottomLabelConstraint;

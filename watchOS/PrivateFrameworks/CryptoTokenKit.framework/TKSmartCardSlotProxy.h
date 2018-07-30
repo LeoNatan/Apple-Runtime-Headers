@@ -10,6 +10,7 @@
 
 @class NSHashTable, TKSmartCardSlot;
 
+__attribute__((visibility("hidden")))
 @interface TKSmartCardSlotProxy : NSObject <TKProtocolSmartCardSlotNotification>
 {
     TKSmartCardSlot *_slot;

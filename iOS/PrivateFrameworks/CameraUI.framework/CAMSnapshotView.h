@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) long long desiredAspectRatio; // @synthesize desiredAspectRatio=_desiredAspectRatio;
 @property(readonly, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 - (void).cxx_destruct;
+- (void)prepareForResumingUsingCrossfade;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_removeAnimationOnView:(id)arg1 forKey:(id)arg2;
 - (void)removeInflightBlurAnimations;

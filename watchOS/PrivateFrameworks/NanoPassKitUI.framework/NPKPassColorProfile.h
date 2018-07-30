@@ -24,7 +24,6 @@
     float _regularLighteningAlpha;
 }
 
-+ (id)npkProfileForPassDescription:(id)arg1;
 + (id)npkProfileForDisplayProfile:(id)arg1;
 @property(readonly, nonatomic) float regularLighteningAlpha; // @synthesize regularLighteningAlpha=_regularLighteningAlpha;
 @property(readonly, nonatomic) float overlayLighteningAlpha; // @synthesize overlayLighteningAlpha=_overlayLighteningAlpha;

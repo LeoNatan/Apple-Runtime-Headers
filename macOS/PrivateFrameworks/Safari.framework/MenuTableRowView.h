@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_setDefaultKeyViewLoop;
 - (long long)interiorBackgroundStyle;
-- (void)setSelected:(BOOL)arg1;
 - (BOOL)isEmphasized;
 
 @end

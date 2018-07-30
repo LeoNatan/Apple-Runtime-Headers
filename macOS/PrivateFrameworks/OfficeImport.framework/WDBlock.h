@@ -8,7 +8,6 @@
 
 @class WDText;
 
-__attribute__((visibility("hidden")))
 @interface WDBlock : NSObject
 {
     WDText *mText;

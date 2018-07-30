@@ -6,6 +6,9 @@
 
 #import "NSObject.h"
 
+@class NSAppearance;
+
+__attribute__((visibility("hidden")))
 @interface NSSnapshotContextSignature : NSObject
 {
     struct CGRect _modelLogicalRect;
@@ -13,6 +16,7 @@
     struct CGRect _modelPixelDrawingRect;
     struct CGColorSpace *_colorSpace;
     unsigned long long _imageInterpolation;
+    NSAppearance *_appearance;
 }
 
 - (BOOL)isApplicableForRect:(struct CGRect)arg1 context:(id)arg2 hints:(id)arg3;

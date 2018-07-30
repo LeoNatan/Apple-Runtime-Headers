@@ -13,12 +13,12 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGAffineTransform {
-    double a;
-    double b;
-    double c;
-    double d;
-    double tx;
-    double ty;
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    double _field5;
+    double _field6;
 };
 
 struct CGPoint {
@@ -34,15 +34,6 @@ struct CGRect {
 struct CGSize {
     double width;
     double height;
-};
-
-struct CLLocationCoordinate2D {
-    double _field1;
-    double _field2;
-};
-
-struct NSObject {
-    Class _field1;
 };
 
 struct UIEdgeInsets {
@@ -80,29 +71,4 @@ typedef struct {
     CDUnknownFunctionPointerType release;
     CDUnknownFunctionPointerType copyDescription;
 } CDStruct_4210025a;
-
-typedef struct {
-    struct {
-        double x;
-        double y;
-    } origin;
-    struct {
-        double width;
-        double height;
-    } size;
-} CDStruct_02837cd9;
-
-typedef struct {
-    struct CLLocationCoordinate2D _field1;
-    struct {
-        double _field1;
-        double _field2;
-    } _field2;
-} CDStruct_2b0c6e0b;
-
-// Ambiguous groups
-typedef struct {
-    double _field1;
-    double _field2;
-} CDStruct_c3b9c2ee;
 

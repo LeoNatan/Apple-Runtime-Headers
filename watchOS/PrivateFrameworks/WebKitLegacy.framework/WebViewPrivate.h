@@ -86,7 +86,6 @@ __attribute__((visibility("hidden")))
     id <WebGeolocationProvider> _geolocationProvider;
     id <WebDeviceOrientationProvider> m_deviceOrientationProvider;
     id <WebNotificationProvider> _notificationProvider;
-    id <WebUserMediaClient> m_userMediaClient;
     struct RefPtr<WebCore::HistoryItem, WTF::DumbPtrTraits<WebCore::HistoryItem>> _globalHistoryItem;
     _Bool interactiveFormValidationEnabled;
     int validationMessageTimerMagnification;

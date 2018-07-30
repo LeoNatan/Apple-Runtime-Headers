@@ -9,13 +9,14 @@
 #import "SL_OOPAuthFlowDelegate.h"
 #import "UIWebViewDelegate.h"
 
-@class NSString, NSURLRequest;
+@class NSString, NSURLRequest, SLWebClient;
 
 @interface SLYahooAuthFlowController : NSObject <SL_OOPAuthFlowDelegate, UIWebViewDelegate>
 {
     NSURLRequest *_requestWithAuthorizationCode;
     CDUnknownBlockType _completion;
     NSString *_yahooJapanUserName;
+    SLWebClient *_webClient;
 }
 
 - (void).cxx_destruct;
@@ -28,6 +29,7 @@
 - (id)authURLForUsername:(id)arg1;
 - (void)setAuthFlowCompletion:(CDUnknownBlockType)arg1;
 - (id)initialRedirectURL;
+- (id)initWithType:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

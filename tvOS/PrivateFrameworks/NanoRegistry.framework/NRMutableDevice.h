@@ -9,23 +9,24 @@
 #import "NRMutableStateParentDelegate.h"
 #import "NSFastEnumeration.h"
 
-@class NSMutableDictionary, NSUUID;
+@class NRPBMutableDevice, NSMutableDictionary, NSUUID;
 
 @interface NRMutableDevice : NRMutableStateBase <NRMutableStateParentDelegate, NSFastEnumeration>
 {
+    NRPBMutableDevice *_protobuf;
     NSMutableDictionary *_properties;
-    NSMutableDictionary *_childMap;
 }
 
++ (id)enclosedClassTypes;
++ (_Bool)supportsSecureCoding;
++ (id)diffFrom:(id)arg1 to:(id)arg2;
++ (void)parseDiff:(id)arg1 forPropertyChange:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 + (id)diffsToClearStatusCodeAndCompatibilityState;
 + (id)diffsToSetStatusCode:(unsigned long long)arg1 andCompatibilityState:(unsigned short)arg2;
 + (id)diffsToPair:(_Bool)arg1 withDate:(id)arg2;
 + (id)diffsToActivate:(_Bool)arg1 withDate:(id)arg2;
-+ (id)enclosedClassTypes;
-+ (_Bool)supportsSecureCoding;
-+ (id)diffFrom:(id)arg1 to:(id)arg2;
-@property(retain, nonatomic) NSMutableDictionary *childMap; // @synthesize childMap=_childMap;
 @property(retain, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
+@property(retain, nonatomic) NRPBMutableDevice *protobuf; // @synthesize protobuf=_protobuf;
 - (void).cxx_destruct;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -35,21 +36,24 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithProtobuf:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_createIndex:(id)arg1;
 - (void)child:(id)arg1 didApplyDiff:(id)arg2;
 - (id)applyDiff:(id)arg1 upOnly:(_Bool)arg2 notifyParent:(_Bool)arg3 unconditional:(_Bool)arg4;
-- (_Bool)supportsCapability:(id)arg1;
 - (unsigned long long)count;
+- (id)allPropertyNames;
+- (id)propertyForName:(id)arg1;
+- (void)invalidate;
+- (void)removePropertyForName:(id)arg1;
+- (void)setProperty:(id)arg1 forName:(id)arg2;
+- (id)init;
+- (_Bool)supportsCapability:(id)arg1;
 @property(readonly, nonatomic) _Bool migratable;
 @property(readonly, nonatomic) _Bool isArchived;
 @property(readonly, nonatomic) _Bool isActive;
 @property(readonly, nonatomic) _Bool isPaired;
 @property(readonly, nonatomic) NSUUID *pairingID;
-- (id)allPropertyNames;
-- (id)propertyForName:(id)arg1;
-- (void)removePropertyForName:(id)arg1;
-- (void)setProperty:(id)arg1 forName:(id)arg2;
-- (id)init;
 
 @end
 

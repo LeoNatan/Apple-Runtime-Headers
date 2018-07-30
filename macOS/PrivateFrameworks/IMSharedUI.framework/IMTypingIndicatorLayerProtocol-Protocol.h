@@ -8,10 +8,11 @@
 
 @protocol IMTypingIndicatorLayerProtocol <NSObject>
 @property(nonatomic) BOOL hasDarkBackground;
+- (void)startGrowAnimation;
 - (void)stopAnimation;
 - (void)stopPulseAnimation;
 - (void)startPulseAnimation;
 - (void)startShrinkAnimationWithCompletionBlock:(void (^)(void))arg1;
-- (void)startGrowAnimation;
+- (void)startGrowAnimationWithCompletionBlock:(void (^)(void))arg1;
 @end
 

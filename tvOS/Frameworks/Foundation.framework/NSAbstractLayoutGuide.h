@@ -30,6 +30,7 @@
 @property(readonly) NSISVariable *minXVariable; // @synthesize minXVariable=_minXVariable;
 @property(readonly) struct CGRect layoutFrame; // @synthesize layoutFrame=_layoutFrame;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
+- (int)nsis_orientationHintForVariable:(id)arg1;
 - (id)nsis_descriptionOfVariable:(id)arg1;
 - (_Bool)nsis_valueOfVariableIsUserObservable:(id)arg1;
 - (_Bool)nsis_shouldIntegralizeVariable:(id)arg1;

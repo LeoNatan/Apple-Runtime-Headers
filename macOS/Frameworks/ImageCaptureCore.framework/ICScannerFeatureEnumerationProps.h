@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface ICScannerFeatureEnumerationProps : NSObject
 {
     unsigned long long _indexOfCurrentValue;
@@ -25,7 +26,6 @@
 @property id defaultValue;
 @property id currentValue;
 - (id)getValidatedValue:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 
 @end

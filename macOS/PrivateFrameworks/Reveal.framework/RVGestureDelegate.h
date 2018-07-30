@@ -19,9 +19,11 @@ __attribute__((visibility("hidden")))
     RVItem *_item;
     NSFindIndicator<NSImmediateActionAnimationController> *_indicator;
     BOOL _lookupFlavor;
+    id <RVGestureDelegate> specializedController;
 }
 
 @property BOOL lookupFlavor; // @synthesize lookupFlavor=_lookupFlavor;
+@property(retain) id <RVGestureDelegate> specializedController; // @synthesize specializedController;
 @property(retain) RVItem *item; // @synthesize item=_item;
 @property(retain) RVPresentingContext *presenter; // @synthesize presenter=_presenter;
 @property(retain) id <NSImmediateActionAnimationController> actualGestureDelegate; // @synthesize actualGestureDelegate=_actualGestureDelegate;

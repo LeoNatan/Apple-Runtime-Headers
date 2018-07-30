@@ -8,14 +8,15 @@
 
 #import "CPLEngineSyncManagerImplementation.h"
 
-@class NSProgress, NSString;
+@class NSString, _CPLProgress;
 
 @interface CPLBaseSyncManager : CPLPlatformObject <CPLEngineSyncManagerImplementation>
 {
     BOOL _foreground;
-    NSProgress *_progress;
+    _CPLProgress *_progress;
     unsigned long long _currentState;
     BOOL _closed;
+    BOOL _overridingForeground;
 }
 
 - (void).cxx_destruct;

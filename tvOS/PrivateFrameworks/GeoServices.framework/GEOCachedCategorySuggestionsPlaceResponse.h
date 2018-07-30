@@ -10,6 +10,7 @@
 
 @class GEOPDPlaceResponse, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOCachedCategorySuggestionsPlaceResponse : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

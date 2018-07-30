@@ -18,22 +18,26 @@
     NSString *_detectedDataType;
     NSString *_category;
     NSArray *_applicationBundleIDs;
+    NSArray *_headerInputTypes;
 }
 
-@property(retain) NSArray *applicationBundleIDs; // @synthesize applicationBundleIDs=_applicationBundleIDs;
-@property(retain) NSString *category; // @synthesize category=_category;
-@property(retain) NSString *detectedDataType; // @synthesize detectedDataType=_detectedDataType;
-@property(retain) NSString *textContent; // @synthesize textContent=_textContent;
-@property(retain) NSString *automatorTypeID; // @synthesize automatorTypeID=_automatorTypeID;
-@property(retain) NSString *fileType; // @synthesize fileType=_fileType;
-@property(retain) NSArray *utiTypes; // @synthesize utiTypes=_utiTypes;
-@property(retain) NSString *name; // @synthesize name=_name;
++ (BOOL)headerInputTypes:(id)arg1 haveConnectionToActionInputTypes:(id)arg2 conservativeConversionOnly:(BOOL)arg3 returningLength:(unsigned long long *)arg4;
+@property(copy) NSArray *headerInputTypes; // @synthesize headerInputTypes=_headerInputTypes;
+@property(copy) NSArray *applicationBundleIDs; // @synthesize applicationBundleIDs=_applicationBundleIDs;
+@property(copy) NSString *category; // @synthesize category=_category;
+@property(copy) NSString *detectedDataType; // @synthesize detectedDataType=_detectedDataType;
+@property(copy) NSString *textContent; // @synthesize textContent=_textContent;
+@property(copy) NSString *automatorTypeID; // @synthesize automatorTypeID=_automatorTypeID;
+@property(copy) NSString *fileType; // @synthesize fileType=_fileType;
+@property(copy) NSArray *utiTypes; // @synthesize utiTypes=_utiTypes;
+@property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCustomApplicationType;
 - (void)addApplicationBundleID:(id)arg1;
 - (id)description;
+@property(readonly, nonatomic) NSString *headerInputType;
 - (id)initWithApplicationBundleID:(id)arg1 customUTI:(id)arg2;
-- (id)initWithName:(id)arg1 utiTypes:(id)arg2 fileType:(id)arg3 automatorTypeID:(id)arg4 textContent:(id)arg5 detectedDataType:(id)arg6 category:(id)arg7;
+- (id)initWithName:(id)arg1 utiTypes:(id)arg2 fileType:(id)arg3 automatorTypeID:(id)arg4 textContent:(id)arg5 detectedDataType:(id)arg6 headerInputTypes:(id)arg7 category:(id)arg8;
 
 @end
 

@@ -8,12 +8,13 @@
 
 #import "RTPurgable.h"
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSString, RTBBDataProvider, RTDefaultsManager, RTGeoRouteStore, RTLearnedLocationManager, RTLocationStore, RTMapAccess, RTMetricManager, RTMotionActivityManager, RTPersistenceManager, RTPlatform, RTReachabilityManager;
+@class NSObject<OS_dispatch_queue>, NSString, RTBBDataProvider, RTBatteryManager, RTDefaultsManager, RTGeoRouteStore, RTLearnedLocationManager, RTLocationStore, RTMapAccess, RTMetricManager, RTMotionActivityManager, RTPersistenceManager, RTPlatform, RTReachabilityManager;
 
 @interface RTRouteManager : NSObject <RTPurgable>
 {
     BOOL _learningInProgress;
     BOOL _allowPersistRoutes;
+    BOOL _chargerConnected;
     NSObject<OS_dispatch_queue> *_queue;
     RTLocationStore *_locationStore;
     RTLearnedLocationManager *_learnedLocationManager;
@@ -27,18 +28,21 @@
     RTReachabilityManager *_reachabilityManager;
     RTGeoRouteStore *_geoRouteStore;
     RTMotionActivityManager *_motionActivityManager;
+    RTBatteryManager *_batteryManager;
     double _minMotionAutomotiveRatio;
     double _sampleRateForLearning;
     double _maxLocationUncertainty;
-    NSArray *_recentTransitions;
+    long long _reachability;
 }
 
-@property(retain, nonatomic) NSArray *recentTransitions; // @synthesize recentTransitions=_recentTransitions;
+@property(nonatomic) BOOL chargerConnected; // @synthesize chargerConnected=_chargerConnected;
+@property(nonatomic) long long reachability; // @synthesize reachability=_reachability;
 @property(nonatomic) BOOL allowPersistRoutes; // @synthesize allowPersistRoutes=_allowPersistRoutes;
 @property(nonatomic) double maxLocationUncertainty; // @synthesize maxLocationUncertainty=_maxLocationUncertainty;
 @property(nonatomic) double sampleRateForLearning; // @synthesize sampleRateForLearning=_sampleRateForLearning;
 @property(nonatomic) double minMotionAutomotiveRatio; // @synthesize minMotionAutomotiveRatio=_minMotionAutomotiveRatio;
 @property(nonatomic) BOOL learningInProgress; // @synthesize learningInProgress=_learningInProgress;
+@property(retain, nonatomic) RTBatteryManager *batteryManager; // @synthesize batteryManager=_batteryManager;
 @property(retain, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(retain, nonatomic) RTGeoRouteStore *geoRouteStore; // @synthesize geoRouteStore=_geoRouteStore;
 @property(retain, nonatomic) RTReachabilityManager *reachabilityManager; // @synthesize reachabilityManager=_reachabilityManager;
@@ -68,6 +72,8 @@
 - (void)_sortRoutes:(id)arg1 toLocationOfInterestWithIdentifier:(id)arg2 fromLocation:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)sortRoutes:(id)arg1 toLocationOfInterestWithIdentifier:(id)arg2 fromLocation:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_persistRoute:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)onReachabilityNotification:(id)arg1;
+- (void)onBatteryNotification:(id)arg1;
 - (void)onLearnedLocationManagerNotification:(id)arg1;
 - (void)_learnRoutesSinceLastProcessedDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)_learnRoutesBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
@@ -76,16 +82,18 @@
 - (void)_learnRoutesForTransitions:(id)arg1 currentTransitionIndex:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_buildTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)_locationOfInterestForVisit:(id)arg1 fromLocationsOfInterest:(id)arg2;
-- (void)_fetchRoutesWithPredicate:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_fetchAllRoutesWithHandler:(CDUnknownBlockType)arg1;
-- (void)fetchAllRoutesWithHandler:(CDUnknownBlockType)arg1;
-- (void)_fetchRoutesBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchRoutesWithPredicate:(id)arg1 includeLocations:(BOOL)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchAllRoutesWithHandler:(CDUnknownBlockType)arg1 includeLocations:(BOOL)arg2;
+- (void)fetchAllRoutesWithHandler:(CDUnknownBlockType)arg1 includeLocations:(BOOL)arg2;
+- (void)_fetchRoutesBetweenStartDate:(id)arg1 endDate:(id)arg2 includeLocations:(BOOL)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)fetchRoutesBetweenStartDate:(id)arg1 endDate:(id)arg2 includeLocations:(BOOL)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_fetchRoutesToLocationOfInterestWithIdentifier:(id)arg1 fromLocationOfInterestWithIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchRoutesToLocationOfInterestWithIdentifier:(id)arg1 fromLocationOfInterestWithIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchPredictedRoutesToLocationOfInterestWithIdentifier:(id)arg1 fromLocation:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_invalidateMapAccess;
 - (void)shutdown;
 - (void)_setup;
-- (id)initWithLocationStore:(id)arg1 learnedLocationManager:(id)arg2 defaultsManager:(id)arg3 persistenceManager:(id)arg4 routeFinderClass:(Class)arg5 platform:(id)arg6 bbDataProvider:(id)arg7 metricManager:(id)arg8 reachabilityManager:(id)arg9 geoRouteStore:(id)arg10 motionActivityManager:(id)arg11;
+- (id)initWithLocationStore:(id)arg1 learnedLocationManager:(id)arg2 defaultsManager:(id)arg3 persistenceManager:(id)arg4 routeFinderClass:(Class)arg5 platform:(id)arg6 bbDataProvider:(id)arg7 metricManager:(id)arg8 reachabilityManager:(id)arg9 geoRouteStore:(id)arg10 motionActivityManager:(id)arg11 batteryManager:(id)arg12;
 - (id)init;
 - (void)_submitMetricLearnedRouteInstanceWithNumberOfInputLocations:(int)arg1 numberOfFilteredLocations:(int)arg2 length:(int)arg3 recoveryTime:(int)arg4 failureReason:(int)arg5 latitude:(double)arg6 longitude:(double)arg7 majorGapLength:(int)arg8 locationTypeDistribution:(id)arg9 roadClassDistribution:(id)arg10;
 - (void)_submitMetricRankRoutesInstanceWithNumberOfInputRoutes:(int)arg1 highestRankedRouteScore:(int)arg2;

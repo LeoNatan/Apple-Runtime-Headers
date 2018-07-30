@@ -6,7 +6,7 @@
 
 #import <ImageCaptureCore/ICDevice.h>
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ICCameraDevice : ICDevice
 {
@@ -24,6 +24,9 @@
 - (BOOL)updateMediaPresentation;
 @property unsigned long long mediaPresentation;
 - (BOOL)setDefaultMediaPresentation:(unsigned long long)arg1;
+- (void)createMediaCatalog;
+- (void)saveAsMediaCatalog;
+- (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void *)arg4;
 - (void)retrieveDataForFiles;
 - (void)requestThumbnailsForFiles:(id)arg1;
 - (void)requestMetadataForFiles:(id)arg1;
@@ -31,18 +34,18 @@
 - (void)addToGetMetadataQueue:(id)arg1;
 - (void)addToGetThumbnailQueue:(id)arg1;
 - (void)registerForNotifications:(id)arg1 options:(id)arg2;
+- (long long)cameraFilesContentSizeInBytes;
 - (void)popMediaFiles:(id)arg1;
 - (void)pushMediaFiles:(id)arg1;
 - (void)removeCameraFileFromIndex:(id)arg1;
+- (void)indexCameraFileDate:(id)arg1;
+- (void)indexCameraFileUUID:(id)arg1;
 - (void)addCameraFileToIndex:(id)arg1;
 - (void)removeCameraFolderFromIndex:(id)arg1;
 - (void)addCameraFolderToIndex:(id)arg1;
 - (void)removeMediaFiles:(id)arg1;
 - (void)removeMediaFile:(id)arg1;
-- (BOOL)addMediaFile:(id)arg1;
-- (BOOL)commitAddFile:(id)arg1;
-- (BOOL)shouldAddFile:(id)arg1;
-- (id)addCameraFiles:(id)arg1;
+- (BOOL)addMediaFiles:(id)arg1;
 - (void)storageAvailable;
 - (void)removeFolder:(id)arg1;
 - (void)addFolder:(id)arg1;
@@ -82,14 +85,19 @@
 - (void)registerForImageCaptureEventNotifications:(id)arg1;
 - (void)handleContent:(id)arg1;
 - (void)updateMediaFilesCount:(id)arg1;
+- (void)displayVirtualCameraCreationWithCount;
 - (void)displayEnumerationNotificationIfNeeded;
 - (void)displayLockedNotificationIfNeeded;
 - (BOOL)updateAppleProperties:(id)arg1;
 - (BOOL)handleCommandCompletion:(id)arg1;
 - (id)filesOfType:(id)arg1;
+- (id)cameraFileIndexesMatchingDateCriteria:(id)arg1;
+- (id)cameraFileWithUUID:(id)arg1;
 - (id)cameraFileWithObjectID:(unsigned long long)arg1;
 - (id)cameraFolderWithObjectID:(unsigned long long)arg1;
 - (BOOL)legacyDevice;
+- (void)setAppleRelatedUUIDSupport:(unsigned long long)arg1;
+- (BOOL)supportsMediaFormatCatalog;
 @property(readonly) NSArray *mediaFiles;
 @property(readonly) NSArray *contents;
 - (void)setTetheredCaptureEnabled:(BOOL)arg1;
@@ -120,7 +128,6 @@
 @property(readonly) BOOL batteryLevelAvailable;
 @property(readonly) unsigned long long contentCatalogPercentCompleted;
 @property(readonly) NSString *mountPoint;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)description;
@@ -129,6 +136,7 @@
 - (void)bringupCameraProperties;
 - (void)teardownCameraProperties;
 - (void)setteardownPhase:(BOOL)arg1;
+@property(readonly) NSObject<OS_dispatch_queue> *mediaProcessingQueue;
 - (BOOL)teardownPhase;
 - (void)initializeCameraProperties:(id)arg1;
 - (void)cleanupDeviceWithErrorCode:(id)arg1;

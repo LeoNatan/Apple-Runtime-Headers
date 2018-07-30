@@ -8,7 +8,7 @@
 
 #import "MMWebKitViewControllerDelegate.h"
 
-@class ACAccountStore, CDPStateUIController, MMWebKitViewController, NSDictionary, NSError, NSString, NSWindow;
+@class ACAccountStore, CDPStateUIController, MMWebKitViewController, NSArray, NSDictionary, NSError, NSString, NSWindow;
 
 @interface iCloudSignInFlowController : NSObject <MMWebKitViewControllerDelegate>
 {
@@ -21,16 +21,16 @@
     MMWebKitViewController *_webKitViewController;
     NSString *_username;
     ACAccountStore *_accountStore;
-    NSDictionary *_dataclassesToEnable;
-    NSDictionary *_dataclassesToEnableAnyway;
+    NSArray *_dataclassesToEnable;
+    NSArray *_dataclassesToEnableAnyway;
     CDUnknownBlockType _iCloudCompletion;
     NSError *_errorToReturn;
 }
 
 @property(retain) NSError *errorToReturn; // @synthesize errorToReturn=_errorToReturn;
 @property(readonly) CDUnknownBlockType iCloudCompletion; // @synthesize iCloudCompletion=_iCloudCompletion;
-@property(retain, nonatomic) NSDictionary *dataclassesToEnableAnyway; // @synthesize dataclassesToEnableAnyway=_dataclassesToEnableAnyway;
-@property(retain, nonatomic) NSDictionary *dataclassesToEnable; // @synthesize dataclassesToEnable=_dataclassesToEnable;
+@property(retain, nonatomic) NSArray *dataclassesToEnableAnyway; // @synthesize dataclassesToEnableAnyway=_dataclassesToEnableAnyway;
+@property(retain, nonatomic) NSArray *dataclassesToEnable; // @synthesize dataclassesToEnable=_dataclassesToEnable;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;

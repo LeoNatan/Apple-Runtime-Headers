@@ -13,7 +13,7 @@
 #import "_SFNavigationBarURLButtonDelegate.h"
 #import "_UIBasicAnimationFactory.h"
 
-@class NSArray, NSAttributedString, NSString, NSTimer, SFCrossfadingImageView, SFNavigationBarReaderButton, SFWebsiteNotSecureMessageView, UIButton, UIColor, UIImageView, UILabel, UILongPressGestureRecognizer, UITextField, _SFDimmingButton, _SFDismissButton, _SFFluidProgressView, _SFNavigationBarBackdrop, _SFNavigationBarItem, _SFNavigationBarLabelsContainer, _SFNavigationBarURLButton, _SFToolbar, _UIBackdropViewSettings;
+@class NSArray, NSAttributedString, NSString, NSTimer, SFCrossfadingImageView, SFDismissButton, SFNavigationBarReaderButton, SFWebsiteNotSecureMessageView, UIButton, UIColor, UIImageView, UILabel, UILongPressGestureRecognizer, UITextField, _SFDimmingButton, _SFFluidProgressView, _SFNavigationBarBackdrop, _SFNavigationBarItem, _SFNavigationBarLabelsContainer, _SFNavigationBarURLButton, _SFToolbar, _UIBackdropViewSettings;
 
 @interface _SFNavigationBar : UIView <UIGestureRecognizerDelegate, _SFFluidProgressViewDelegate, _SFNavigationBarURLButtonDelegate, _UIBasicAnimationFactory, UIDragInteractionDelegate_Private, UIDropInteractionDelegate_Private>
 {
@@ -59,7 +59,7 @@
     double _cancelButtonIntrinsicWidth;
     _Bool _readerButtonWillShow;
     NSTimer *_readerAvailabilityLabelHideTimer;
-    _SFDismissButton *_dismissButton;
+    SFDismissButton *_dismissButton;
     UIView *_dismissButtonContainer;
     unsigned long long _inputMode;
     _Bool _preferredBarTintColorIsDark;
@@ -70,7 +70,6 @@
     _Bool _usingLightControls;
     _Bool _controlsHidden;
     _Bool _expanded;
-    _Bool _usesUnscaledBackdrop;
     _Bool _backdropGroupDisabled;
     _Bool _suppressesBlur;
     _SFNavigationBarItem *_item;
@@ -103,7 +102,6 @@
 @property(nonatomic) __weak id <_SFNavigationBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(nonatomic, getter=isBackdropGroupDisabled) _Bool backdropGroupDisabled; // @synthesize backdropGroupDisabled=_backdropGroupDisabled;
-@property(nonatomic) _Bool usesUnscaledBackdrop; // @synthesize usesUnscaledBackdrop=_usesUnscaledBackdrop;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) _UIBackdropViewSettings *customBackdropSettings; // @synthesize customBackdropSettings=_customBackdropSettings;

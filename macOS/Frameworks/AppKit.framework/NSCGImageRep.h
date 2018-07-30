@@ -9,10 +9,6 @@
 @interface NSCGImageRep : NSImageRep
 {
     struct CGImage *_cgImage;
-    unsigned int reserved1;
-    unsigned int reserved2;
-    unsigned int reserved3;
-    unsigned int reserved4;
 }
 
 + (void)initialize;

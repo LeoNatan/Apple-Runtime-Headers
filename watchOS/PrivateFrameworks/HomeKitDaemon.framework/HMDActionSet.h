@@ -60,6 +60,7 @@
 - (void)_handleReplaceActionValueRequest:(id)arg1;
 - (void)_handleRenameActionSetTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleRenameRequest:(id)arg1;
+- (void)_removeDonatedIntent;
 - (void)_handleRemoveActionTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleRemoveAction:(id)arg1 message:(id)arg2;
 - (void)_handleRemoveActionRequest:(id)arg1;
@@ -68,7 +69,9 @@
 - (void)_handleAddActionRequest:(id)arg1;
 - (void)_registerForMessages;
 - (id)actionWithUUID:(id)arg1;
+- (void)invalidate;
 - (void)removeAccessory:(id)arg1;
+@property(readonly, nonatomic) NSUUID *spiClientIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (id)messageDestination;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;

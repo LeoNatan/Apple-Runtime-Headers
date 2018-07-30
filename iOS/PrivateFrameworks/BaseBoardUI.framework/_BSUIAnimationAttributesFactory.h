@@ -13,6 +13,7 @@
     _UIViewAnimationAttributes *_attributes;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -20,7 +21,6 @@
 - (id)factoryWithTimingFunction:(id)arg1;
 - (double)delay;
 - (double)duration;
-- (void)dealloc;
 - (id)_initWithSettings:(id)arg1;
 - (id)_initWithAttributes:(id)arg1;
 

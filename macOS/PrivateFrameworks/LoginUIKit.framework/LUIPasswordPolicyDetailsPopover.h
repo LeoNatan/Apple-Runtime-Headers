@@ -13,6 +13,7 @@
 + (id)controllerWithStyle:(int)arg1;
 - (void)dealloc;
 - (id)viewController;
+- (int)type;
 
 @end
 

@@ -21,6 +21,7 @@
 + (id)sharedController;
 - (void).cxx_destruct;
 - (void)_timebaseEffectiveRateChangedNotification;
+- (id)_createContextDictionaryWithSiriReferenceIdentifier:(id)arg1 siriWHAMetricsInfo:(id)arg2;
 - (void)_attemptPlaybackStartReportingEventWithPlayer:(id)arg1;
 - (void)_attemptLikelyToKeepUpReportingEventWithPlayer:(id)arg1;
 - (void)_willReloadWithPlaybackContextNotification:(id)arg1;

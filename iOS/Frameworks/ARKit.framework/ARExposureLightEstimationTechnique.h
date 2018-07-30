@@ -11,10 +11,12 @@
 @interface ARExposureLightEstimationTechnique : ARTechnique
 {
     NSObject<OS_dispatch_semaphore> *_resultSemaphore;
-    float _lastTemperature;
-    float _lastLightIntensity;
+    float _temperature;
+    float _lightIntensity;
+    struct ExponentialSmoother<float> _smoother;
 }
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (id)processData:(id)arg1;

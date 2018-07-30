@@ -14,13 +14,14 @@
     TIKeyboardConfiguration *_keyboardConfig;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) TIKeyboardConfiguration *keyboardConfig; // @synthesize keyboardConfig=_keyboardConfig;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
+- (void).cxx_destruct;
 - (id)shortDescription;
 - (id)textSummary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (void)applyToStatistic:(id)arg1;
 
 @end

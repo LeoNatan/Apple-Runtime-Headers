@@ -86,8 +86,10 @@
 - (id)_orderedDevicesForElection;
 - (void)_electResidentDevice;
 - (void)electResidentDevice;
+- (void)__currentDeviceUpdated:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleCurrentDeviceUpdated:(id)arg1;
 - (void)handleCurrentDeviceChanged:(id)arg1;
+- (void)__handleAppleAccountResolved:(id)arg1;
 - (void)_handleResidentDeviceUpdateEnabled:(id)arg1;
 - (void)notifyUpdatedPrimaryResident:(id)arg1;
 - (void)notifyClientsOfUpdatedResidentDevice:(id)arg1;

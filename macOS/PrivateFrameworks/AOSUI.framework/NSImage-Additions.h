@@ -7,6 +7,7 @@
 #import "NSImage.h"
 
 @interface NSImage (Additions)
++ (id)imageNameForBundleID:(id)arg1;
 + (id)dialogImageForBundleIdentifer:(id)arg1;
 + (id)imageForApp:(id)arg1;
 + (id)imageWithIconType:(unsigned int)arg1;

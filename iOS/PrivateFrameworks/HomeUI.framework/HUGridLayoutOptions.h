@@ -18,6 +18,7 @@
     _Bool _editing;
     unsigned long long _contentColorStyle;
     long long _scrollDirection;
+    unsigned long long _columnStyle;
     UIFont *_headlineFont;
     UIFont *_statusItemFont;
     UIFont *_statusDetailsFont;
@@ -50,16 +51,11 @@
     struct UIEdgeInsets _sectionTitleMargin;
 }
 
-+ (id)_defaultOptionsForViewSize:(struct CGSize)arg1 overrideSizeSubclass:(id)arg2;
++ (unsigned long long)_numberOfColumnsForFlexibleWidthStyleWithSizeSubclass:(long long)arg1;
++ (id)defaultOptionsForViewSize:(struct CGSize)arg1 columnStyle:(unsigned long long)arg2 overrideSizeSubclass:(id)arg3;
++ (id)defaultOptionsForViewSize:(struct CGSize)arg1 columnStyle:(unsigned long long)arg2;
 + (id)defaultOptionsForViewSize:(struct CGSize)arg1 overrideSizeSubclass:(long long)arg2;
 + (id)defaultOptionsForViewSize:(struct CGSize)arg1;
-+ (double)preferredControlCenterModuleHeightForViewWidth:(double)arg1;
-+ (CDStruct_4bcfbbae)controlCenterGridLayoutForDesignType:(unsigned long long)arg1 itemType:(unsigned long long)arg2 sizeSubclass:(unsigned long long)arg3;
-+ (CDStruct_4bcfbbae)_controlCenterModuleGridLayoutForItemType:(unsigned long long)arg1 sizeSubclass:(unsigned long long)arg2;
-+ (unsigned long long)_controlCenterModuleHCFNumberOfColumnsForSizeSubclass:(unsigned long long)arg1;
-+ (id)_legacyControlCenterLayoutOptionsForViewSize:(struct CGSize)arg1 layoutStyle:(long long)arg2 itemType:(unsigned long long)arg3;
-+ (id)_controlCenterModuleLayoutOptionsForViewSize:(struct CGSize)arg1 itemType:(unsigned long long)arg2;
-+ (id)controlCenterLayoutOptionsForDesignType:(unsigned long long)arg1 viewSize:(struct CGSize)arg2 layoutStyle:(long long)arg3 itemType:(unsigned long long)arg4;
 @property(retain, nonatomic) NSNumber *overrideViewSizeSubclass; // @synthesize overrideViewSizeSubclass=_overrideViewSizeSubclass;
 @property(copy, nonatomic) HUNavigationBarLayoutOptions *navigationBarOptions; // @synthesize navigationBarOptions=_navigationBarOptions;
 @property(copy, nonatomic) HUGridServiceCellLayoutOptions *serviceCellOptions; // @synthesize serviceCellOptions=_serviceCellOptions;
@@ -92,6 +88,7 @@
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) _Bool statusHidden; // @synthesize statusHidden=_statusHidden;
 @property(nonatomic) _Bool headlineHidden; // @synthesize headlineHidden=_headlineHidden;
+@property(nonatomic) unsigned long long columnStyle; // @synthesize columnStyle=_columnStyle;
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(readonly, nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(nonatomic) unsigned long long contentColorStyle; // @synthesize contentColorStyle=_contentColorStyle;
@@ -107,13 +104,15 @@
 @property(readonly, nonatomic) double headlineCellHeight;
 @property(readonly, nonatomic) double cameraCellHeight;
 @property(readonly, nonatomic) double cameraCellWidth;
+- (double)_pointWidthForFlexibleColumnStyleWithFractionalNumberOfColumns:(double)arg1 totalNumberOfColumns:(long long)arg2 totalWidth:(double)arg3;
+- (double)_pointWidthForFixedColumnStyleWithFractionalNumberOfColumns:(double)arg1;
+- (double)_pointWidthForFractionalNumberOfColumns:(double)arg1;
 - (double)pointWidthForNumberOfColumns:(long long)arg1;
 @property(readonly, nonatomic) double pointWidthForFullWidthCell;
-- (long long)numberOfCameraCellsPerRow;
 @property(readonly, nonatomic) long long numberOfColumns;
 @property(readonly, nonatomic) long long cellSizeSubclass;
 @property(readonly, nonatomic) long long viewSizeSubclass;
-- (id)initWithViewSize:(struct CGSize)arg1 overrideSizeSubclass:(id)arg2;
+- (id)initWithViewSize:(struct CGSize)arg1 columnStyle:(unsigned long long)arg2 overrideSizeSubclass:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

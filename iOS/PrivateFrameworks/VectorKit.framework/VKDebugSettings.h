@@ -22,6 +22,8 @@
     _Bool _paintJunctions;
     _Bool _paintCoastlines;
     _Bool _paintBuildingNormals;
+    _Bool _paintLoadReason;
+    _Bool _showPreliminaryInfo;
     _Bool _disableRoute;
     _Bool _labelHighlighting;
     _Bool _transitHighlighting;
@@ -49,6 +51,8 @@
     _Bool _hideServerPositionedRoadFeatures;
     _Bool _hideServerPositionedTransitFeatures;
     _Bool _keepTooCloseServerPositionedTransitFeatures;
+    _Bool _overrideNeworkDefaultsBaseSSLPMSwitch;
+    _Bool _labelBaseSSLPMEnabled;
     _Bool _labelHideLineFeatures;
     _Bool _labelHidePointFeatures;
     _Bool _paintTrafficSkeleton;
@@ -137,13 +141,12 @@
     unsigned long long _arSwipeGesture;
     unsigned long long _arPinchGesture;
     _Bool _arRenderAtNativeRate;
-    struct unordered_map<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup>>>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup>>>>>> _customLandmarks;
+    struct unique_ptr<(anonymous namespace)::CustomLandmarksContainer, std::__1::default_delete<(anonymous namespace)::CustomLandmarksContainer>> _customLandmarks;
     _Bool _paintPoiTiles;
     _Bool _paintLandcoverTiles;
     _Bool _paintVenues;
     _Bool _labelCollideContinuously;
     _Bool _useStaticTrafficFeed;
-    _Bool _newRouteTraffic;
     _Bool _showNavCameraDebugConsoleProperties;
     _Bool _showNavCameraDebugOverlay;
     _Bool _disableStylesheetAnimations;
@@ -246,12 +249,13 @@
 @property(nonatomic) _Bool prioritizeTrafficSkeleton; // @synthesize prioritizeTrafficSkeleton=_prioritizeTrafficSkeleton;
 @property(nonatomic) _Bool texturedTrafficCasing; // @synthesize texturedTrafficCasing=_texturedTrafficCasing;
 @property(nonatomic) _Bool showTrafficCasing; // @synthesize showTrafficCasing=_showTrafficCasing;
-@property(nonatomic) _Bool newRouteTraffic; // @synthesize newRouteTraffic=_newRouteTraffic;
 @property(nonatomic) _Bool useStaticTrafficFeed; // @synthesize useStaticTrafficFeed=_useStaticTrafficFeed;
 @property(nonatomic) _Bool loadGreenTraffic; // @synthesize loadGreenTraffic=_loadGreenTraffic;
 @property(nonatomic) _Bool paintTrafficSkeleton; // @synthesize paintTrafficSkeleton=_paintTrafficSkeleton;
 @property(nonatomic) _Bool labelHidePointFeatures; // @synthesize labelHidePointFeatures=_labelHidePointFeatures;
 @property(nonatomic) _Bool labelHideLineFeatures; // @synthesize labelHideLineFeatures=_labelHideLineFeatures;
+@property(nonatomic) _Bool labelBaseSSLPMEnabled; // @synthesize labelBaseSSLPMEnabled=_labelBaseSSLPMEnabled;
+@property(nonatomic) _Bool overrideNeworkDefaultsBaseSSLPMSwitch; // @synthesize overrideNeworkDefaultsBaseSSLPMSwitch=_overrideNeworkDefaultsBaseSSLPMSwitch;
 @property(nonatomic) _Bool keepTooCloseServerPositionedTransitFeatures; // @synthesize keepTooCloseServerPositionedTransitFeatures=_keepTooCloseServerPositionedTransitFeatures;
 @property(nonatomic) _Bool hideServerPositionedTransitFeatures; // @synthesize hideServerPositionedTransitFeatures=_hideServerPositionedTransitFeatures;
 @property(nonatomic) _Bool hideServerPositionedRoadFeatures; // @synthesize hideServerPositionedRoadFeatures=_hideServerPositionedRoadFeatures;
@@ -280,6 +284,8 @@
 @property(nonatomic) _Bool transitHighlighting; // @synthesize transitHighlighting=_transitHighlighting;
 @property(nonatomic) _Bool labelHighlighting; // @synthesize labelHighlighting=_labelHighlighting;
 @property(nonatomic) _Bool disableRoute; // @synthesize disableRoute=_disableRoute;
+@property(nonatomic) _Bool showPreliminaryInfo; // @synthesize showPreliminaryInfo=_showPreliminaryInfo;
+@property(nonatomic) _Bool paintLoadReason; // @synthesize paintLoadReason=_paintLoadReason;
 @property(nonatomic) _Bool paintBuildingNormals; // @synthesize paintBuildingNormals=_paintBuildingNormals;
 @property(nonatomic) _Bool paintCoastlines; // @synthesize paintCoastlines=_paintCoastlines;
 @property(nonatomic) _Bool paintJunctions; // @synthesize paintJunctions=_paintJunctions;

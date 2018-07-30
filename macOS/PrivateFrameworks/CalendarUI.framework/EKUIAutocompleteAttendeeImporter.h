@@ -11,7 +11,7 @@
 }
 
 + (id)attendeeForString:(id)arg1 inAddressBook:(id)arg2;
-+ (id)personForString:(id)arg1 inAddressBook:(id)arg2;
++ (id)personForString:(id)arg1 inAddressBook:(id)arg2 matchType:(long long *)arg3;
 
 @end
 

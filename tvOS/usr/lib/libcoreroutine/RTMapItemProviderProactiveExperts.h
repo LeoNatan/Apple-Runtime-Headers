@@ -8,22 +8,22 @@
 
 #import "RTMapItemProvider.h"
 
-@class NSString, RTConnectionsLocationManager, RTMapServiceManager;
+@class NSString, RTMapServiceManager, RTPersonalizationPortraitManager;
 
 @interface RTMapItemProviderProactiveExperts : RTMapItemProviderBase <RTMapItemProvider>
 {
-    RTConnectionsLocationManager *_connectionsLocationManager;
+    RTPersonalizationPortraitManager *_personalizationPortraitManager;
     RTMapServiceManager *_mapServiceManager;
 }
 
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
-@property(retain, nonatomic) RTConnectionsLocationManager *connectionsLocationManager; // @synthesize connectionsLocationManager=_connectionsLocationManager;
+@property(retain, nonatomic) RTPersonalizationPortraitManager *personalizationPortraitManager; // @synthesize personalizationPortraitManager=_personalizationPortraitManager;
 - (void).cxx_destruct;
 - (id)_mapItemsWithConnectionsLocations:(id)arg1;
 - (id)_filterConnectionLocations:(id)arg1 location:(id)arg2 distance:(double)arg3 error:(id *)arg4;
 - (id)_recentLocationsFrom:(id)arg1 error:(id *)arg2;
 - (id)mapItemsWithinDistance:(double)arg1 location:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
-- (id)initWithConnectionsLocationManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3;
+- (id)initWithPersonalizationPortraitManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3;
 - (id)init;
 
 // Remaining properties

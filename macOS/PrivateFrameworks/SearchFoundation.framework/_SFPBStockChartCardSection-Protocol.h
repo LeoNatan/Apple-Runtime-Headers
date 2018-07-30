@@ -10,25 +10,15 @@
 
 @protocol _SFPBStockChartCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasChartData;
 @property(copy, nonatomic) NSData *chartData;
-@property(readonly, nonatomic) BOOL hasThirdPartyContentURL;
 @property(retain, nonatomic) _SFPBURL *thirdPartyContentURL;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
 @property(nonatomic) int separatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
 @property(copy, nonatomic) NSString *type;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
 @property(nonatomic) BOOL hasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
 @property(nonatomic) BOOL hasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
 @property(nonatomic) BOOL canBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
 - (id)initWithDictionary:(NSDictionary *)arg1;

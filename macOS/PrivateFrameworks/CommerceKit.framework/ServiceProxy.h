@@ -13,7 +13,9 @@
 + (id)commerceClient;
 + (id)commerceClientInterface;
 + (id)_commerceConnection;
++ (id)commerceSynchronousServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 + (id)commerceSynchronousService;
++ (id)commerceServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 + (id)commerceService;
 + (id)commerceServiceInterface;
 

@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, _NSPredicateEditorTree;
 
+__attribute__((visibility("hidden")))
 @interface _NSPredicateEditorRowNode : NSObject
 {
     _NSPredicateEditorTree *tree;

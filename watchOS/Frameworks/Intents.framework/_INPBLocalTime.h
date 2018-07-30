@@ -7,43 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBLocalTime.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBLocalTime : PBCodable <NSCopying>
+@interface _INPBLocalTime : PBCodable <_INPBLocalTime, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    long long _hourOfDay;
-    long long _millisOfSecond;
-    long long _minuteOfHour;
-    long long _secondOfMinute;
     struct {
         unsigned int hourOfDay:1;
         unsigned int millisOfSecond:1;
         unsigned int minuteOfHour:1;
         unsigned int secondOfMinute:1;
     } _has;
+    long long _hourOfDay;
+    long long _millisOfSecond;
+    long long _minuteOfHour;
+    long long _secondOfMinute;
 }
 
-+ (id)options;
-@property(nonatomic) long long hourOfDay; // @synthesize hourOfDay=_hourOfDay;
-@property(nonatomic) long long minuteOfHour; // @synthesize minuteOfHour=_minuteOfHour;
 @property(nonatomic) long long secondOfMinute; // @synthesize secondOfMinute=_secondOfMinute;
+@property(nonatomic) long long minuteOfHour; // @synthesize minuteOfHour=_minuteOfHour;
 @property(nonatomic) long long millisOfSecond; // @synthesize millisOfSecond=_millisOfSecond;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+@property(nonatomic) long long hourOfDay; // @synthesize hourOfDay=_hourOfDay;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasHourOfDay;
-@property(nonatomic) _Bool hasMinuteOfHour;
 @property(nonatomic) _Bool hasSecondOfMinute;
+@property(nonatomic) _Bool hasMinuteOfHour;
 @property(nonatomic) _Bool hasMillisOfSecond;
+@property(nonatomic) _Bool hasHourOfDay;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,14 +6,13 @@
 
 #import "UIView.h"
 
-@class NSMutableDictionary, UIColor;
+@class UIColor;
 
 @interface CUISNotificationCenterCellPlatterView : UIView
 {
     struct CGRect _bounds;
     UIColor *_color;
     _Bool _requiresNewImage;
-    NSMutableDictionary *_backgroundCache;
     UIColor *_platterBackgroundColor;
     unsigned int _roundedCorners;
 }

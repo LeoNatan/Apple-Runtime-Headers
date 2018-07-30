@@ -8,6 +8,7 @@
 
 @class NSArray, NSDate, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVDateRangeMetadataGroupInternal : NSObject
 {
     NSDate *startDate;

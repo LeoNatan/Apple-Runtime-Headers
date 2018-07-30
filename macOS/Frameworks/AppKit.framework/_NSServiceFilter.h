@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, _NSServiceEntry;
+@class NSArray, NSSet, _NSServiceEntry;
 
 @interface _NSServiceFilter : NSObject
 {
@@ -20,6 +20,7 @@
     id textLanguage;
     NSArray *linkSchemes;
     NSArray *nonstandardContentTypes;
+    NSSet *menuLocations;
     struct {
         unsigned int contentTypeWebURL:1;
         unsigned int contentTypeAnyURL:1;
@@ -33,17 +34,15 @@
         unsigned int requiresAnyCharacterBeFullWidth:1;
         unsigned int requiresNonIdentityTraditionalToSimpleConversion:1;
         unsigned int requiresNonIdentitySimpleToTraditionalConversion:1;
-        unsigned int hasMenuLocation:1;
-        unsigned int menuLocationServices:1;
-        unsigned int menuLocationContext:1;
         unsigned int disqualified:1;
         unsigned int sense:1;
-        unsigned int reserved:15;
+        unsigned int reserved:18;
     } flags;
 }
 
 + (BOOL)isCJKInputSourceEnabled;
 - (void)dealloc;
+- (void)_setMenuLocations:(id)arg1;
 - (unsigned long long)serviceCategory;
 - (id)dataDetectorTypes;
 - (BOOL)isRequiredContext;

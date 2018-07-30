@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTableViewCellMockElement.h>
 
+__attribute__((visibility("hidden")))
 @interface NSTableViewListCellMockElement : NSTableViewCellMockElement
 {
 }

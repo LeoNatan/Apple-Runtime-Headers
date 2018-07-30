@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray, NSMutableOrderedSet, NSSet, SCNAuthoringEnvironment2, SCNManipulator;
+@class NSArray, NSMutableArray, NSMutableOrderedSet, NSSet, SCNAuthoringEnvironment2, SCNManipulator, SCNNode;
 
 @interface SCNAuthoringEnvironment : NSObject
 {
     struct __C3DEngineContext *_engineContext;
     id <SCNSceneRenderer> _sceneRenderer;
+    _Bool _sceneRendererIsSCNView;
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _noColorProgram
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _colorOnlyProgram
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _colorAndTextureProgram
@@ -19,9 +20,6 @@
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _wireframeProgram
     CDStruct_4aabc75a _logsInfo;
     CDStruct_4aabc75a _boldLogsInfo;
-    CDStruct_4aabc75a _upArrowInfo;
-    CDStruct_4aabc75a _xyQuadrantInfo;
-    CDStruct_4aabc75a _xyQuadrantRingInfo;
     CDStruct_4aabc75a _dynamicLinesInfo;
     CDStruct_4aabc75a _dynamicLinesNoDepthTestInfo;
     CDStruct_4aabc75a _dynamicTrianglesInfo;
@@ -41,6 +39,10 @@
     unsigned short _quadrantIndicesCount;
     const void *_quadrantRingIndicesOffset;
     unsigned short _quadrantRingIndicesCount;
+    double _timedRecordingExpirationTime;
+    unsigned char _timedRecordingBuffer[64000];
+    unsigned int _timedRecordingBufferStart;
+    unsigned int _timedRecordingBufferEnd;
     long long _authoringDisplayMask;
     unsigned int _hasLighting:1;
     _Bool _shouldSnapOnGrid;
@@ -55,13 +57,16 @@
     NSSet *_initialSelection;
     NSMutableOrderedSet *_selection;
     NSArray *_selectedNodes;
+    _Bool _isOrbiting;
     float _lastGridDistance;
     double _gridUnit;
     NSMutableArray *_visibleManipulableItems;
     void *_wireframeRenderer;
+    unsigned int _consoleLineCount;
     struct {
         _Bool initialized;
         _Bool showFullStatistics;
+        _Bool showRenderOptionsPanel;
         float fps;
         float waitDisplayLinkTime;
         long long pressedButtonIndex;
@@ -69,15 +74,85 @@
         struct __CFString *shortString;
         struct __CFString *internalString;
         unsigned int lightingStatistics[9];
-        struct __C3DEngineStats stats;
+        struct __C3DEngineStats {
+            unsigned int verticesProcessed;
+            unsigned int primitivesProcessed;
+            unsigned int drawCount;
+            unsigned int drawStep;
+            unsigned int frameCount;
+            unsigned int fboSwitches;
+            unsigned int vboSwitches;
+            unsigned int attSwitches;
+            unsigned int attEnabling;
+            unsigned int iboSwitches;
+            unsigned int vaoSwitches;
+            unsigned int prgSwitches;
+            unsigned int texSwitches;
+            unsigned int rssSwitches;
+            unsigned int getCount;
+            unsigned int uniformFloatSent;
+            unsigned int uniformIntSent;
+            unsigned int uniformVector2Sent;
+            unsigned int uniformVector3Sent;
+            unsigned int uniformVector4Sent;
+            unsigned int uniformMatrix4Sent;
+            unsigned int vboUploaded;
+            unsigned int iboUploaded;
+            unsigned int texUploaded;
+            double cpuTime;
+            double cstrTime;
+            double phyTime;
+            double prtTime;
+            double animTime;
+            double skinTime;
+            double mrphTime;
+            double rendTime;
+            double twoDTime;
+            double delegateTime;
+            double glFlushTime;
+            double waitDisplayLinkTime;
+            double drawableWaitTime;
+            double gpuTime;
+            double lastDisplayLinkTime;
+            unsigned int prgCount;
+            unsigned int texCount;
+            unsigned int fboCount;
+            unsigned int vboCount;
+            unsigned int rboCount;
+            unsigned int iboCount;
+            unsigned int cboCount;
+            unsigned int vaoCount;
+            unsigned int fboMemory;
+            unsigned int rboMemory;
+            unsigned int vboMemory;
+            unsigned int iboMemory;
+            unsigned int cboMemory;
+            unsigned int texMemory;
+            unsigned int backBufferMemory;
+            unsigned int depthBuffersMemory;
+            unsigned int onlineShaderCount;
+            double onlineShaderCompilationTime;
+            unsigned int renderPipelineCount;
+            double renderPipelineCompilationTime;
+            unsigned int computePipelineCount;
+            double computePipelineCompilationTime;
+            double frmAvgTime;
+            double frmMinTime;
+            double frmMaxTime;
+            double frameTimeHistory[60];
+            unsigned int frameTimeCurrentIndex;
+            double startTime;
+            double lastFrameTime;
+        } stats;
     } _statisticsInfo;
     float _drawScale;
-    SCNManipulator *_manipulator;
     id _delegate;
     SCNAuthoringEnvironment2 *_authEnv2;
 }
 
++ (id)authoringEnvironmentForSceneRenderer:(id)arg1 createIfNeeded:(_Bool)arg2;
 + (id)authoringEnvironmentForSceneRenderer:(id)arg1;
++ (id)rendererForSceneRenderer:(id)arg1;
 + (long long)defaultAuthoringDisplayMask;
 @property(nonatomic) _Bool surroundToSelect; // @synthesize surroundToSelect=_surroundToSelect;
 @property(nonatomic) _Bool graphicalSelectionEnabled; // @synthesize graphicalSelectionEnabled=_graphicalSelectionEnabled;
@@ -91,8 +166,9 @@
 - (void)drawString:(id)arg1 atPoint:(struct CGPoint)arg2 color:(id)arg3;
 - (void)drawLineFromPoint:(struct SCNVector3)arg1 toPoint:(struct SCNVector3)arg2 color:(id)arg3;
 - (_Bool)didTapAtPoint:(struct CGPoint)arg1;
+- (void)endOrbiting;
+- (void)beginOrbiting;
 - (void)saveInitialSelection;
-- (void)_updateManipulatorTargets;
 - (void)beginEditingNodes:(id)arg1;
 - (void)beginEditingNode:(id)arg1;
 - (id)selectedItems;
@@ -100,9 +176,15 @@
 - (void)cancelEdition;
 @property(nonatomic) long long authoringDisplayMask;
 @property(readonly, nonatomic) SCNManipulator *manipulator;
+@property(readonly, nonatomic) SCNNode *authoringOverlayLayer;
+- (void)sceneDidChange:(id)arg1;
 - (void)update;
+- (id)authoringEnvironment2;
+- (void)setupAuthoringEnv2;
+- (void)_setupAuthoringEnv2:(id)arg1;
 @property(nonatomic) _Bool selectionIsReadonly;
 @property(readonly, nonatomic) struct SCNMatrix4 viewMatrix;
+- (id)renderer;
 @property(readonly) id <SCNSceneRenderer> sceneRenderer;
 - (id)_initWithEngineContext:(struct __C3DEngineContext *)arg1;
 - (id)init;

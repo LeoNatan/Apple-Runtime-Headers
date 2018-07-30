@@ -26,8 +26,6 @@
 - (NSLayoutRect *)nsli_layoutRect;
 - (NSISVariable *)nsli_boundsHeightVariable;
 - (NSISVariable *)nsli_boundsWidthVariable;
-- (NSISVariable *)nsli_heightVariable;
-- (NSISVariable *)nsli_widthVariable;
 - (NSISVariable *)nsli_minYVariable;
 - (NSISVariable *)nsli_minXVariable;
 - (double)nsli_marginOffsetForAttribute:(long long)arg1;

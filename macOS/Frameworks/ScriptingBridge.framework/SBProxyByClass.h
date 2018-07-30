@@ -14,7 +14,9 @@ __attribute__((visibility("hidden")))
 
 - (id)description;
 - (unsigned int)codeInContext:(id)arg1;
+- (id)initWithData:(id)arg1 andProperties:(id)arg2;
 - (id)initWithClass:(Class)arg1 properties:(id)arg2 data:(id)arg3;
+- (id)initWithContext:(id)arg1 specifier:(const struct AEDesc *)arg2;
 
 @end
 

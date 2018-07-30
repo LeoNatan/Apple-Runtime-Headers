@@ -12,12 +12,12 @@
 
 @interface SXVASTAnalyticsEventInfoFactory : NSObject <SXVASTAnalyticsEventInfoFactory>
 {
-    id <SXVisibilityMonitoring> _visibilityMonitor;
-    id <SXVolumeProviding> _volumeProvider;
+    id <SVVisibilityMonitoring> _visibilityMonitor;
+    id <SVVolumeProviding> _volumeProvider;
 }
 
-@property(readonly, nonatomic) id <SXVolumeProviding> volumeProvider; // @synthesize volumeProvider=_volumeProvider;
-@property(readonly, nonatomic) id <SXVisibilityMonitoring> visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
+@property(readonly, nonatomic) id <SVVolumeProviding> volumeProvider; // @synthesize volumeProvider=_volumeProvider;
+@property(readonly, nonatomic) id <SVVisibilityMonitoring> visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
 - (void).cxx_destruct;
 - (id)createAnalyticsProgressEventInfoForQuartile:(unsigned long long)arg1 withMetadata:(id)arg2;
 - (id)createAnalyticsEventInfoWithMetadata:(id)arg1;

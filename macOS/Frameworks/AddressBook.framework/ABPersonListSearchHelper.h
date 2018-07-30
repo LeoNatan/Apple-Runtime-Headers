@@ -8,7 +8,6 @@
 
 @class ABPersonListController, CNPublishingSubject, NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ABPersonListSearchHelper : NSObject
 {
     NSDictionary *_cachedPersonEntriesByIdentifier;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSError, NSViewServiceMarshal, NSWindow;
+@class NSError, NSProxy<NSXPCProxyCreating>, NSViewServiceMarshal, NSWindow;
 
 __attribute__((visibility("hidden")))
 @interface NSServiceViewControllerAuxiliary : NSObject
@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     unsigned long long adjustLayoutInProgress;
     NSError *leastRecentError;
     unsigned int hostSDKVersion;
+    NSProxy<NSXPCProxyCreating> *_remoteViewControllerProxy;
+    struct os_unfair_lock_s _retainReleaseLock;
 }
 
 - (BOOL)hasOwnWindow;

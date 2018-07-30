@@ -6,19 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, PLOperator;
+@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, PLOperator;
 
 @interface PLNSNotificationOperatorComposition : NSObject
 {
     NSArray *_notificationNames;
     CDUnknownBlockType _operatorBlock;
     PLOperator *_operator;
+    NSOperationQueue *_operationQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSMutableArray *_notificationObservers;
 }
 
 @property(retain) NSMutableArray *notificationObservers; // @synthesize notificationObservers=_notificationObservers;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(retain) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property __weak PLOperator *operator; // @synthesize operator=_operator;
 @property(copy, nonatomic) CDUnknownBlockType operatorBlock; // @synthesize operatorBlock=_operatorBlock;
 @property(retain) NSArray *notificationNames; // @synthesize notificationNames=_notificationNames;

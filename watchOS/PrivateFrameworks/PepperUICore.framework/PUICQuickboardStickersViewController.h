@@ -6,10 +6,16 @@
 
 #import <PepperUICore/PUICQuickboardEmojiToSelectViewController.h>
 
-@interface PUICQuickboardStickersViewController : PUICQuickboardEmojiToSelectViewController
+#import "PUICQuickboardModalNavigationControllerContextProvider.h"
+
+@interface PUICQuickboardStickersViewController : PUICQuickboardEmojiToSelectViewController <PUICQuickboardModalNavigationControllerContextProvider>
 {
+    id <PUICRecentsViewDelegate> _recentsViewDelegate;
 }
 
+@property(nonatomic) __weak id <PUICRecentsViewDelegate> recentsViewDelegate; // @synthesize recentsViewDelegate=_recentsViewDelegate;
+- (void).cxx_destruct;
+- (void)viewDidLoad;
 - (id)initWithDelegate:(id)arg1;
 
 @end

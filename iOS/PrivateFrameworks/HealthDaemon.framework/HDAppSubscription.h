@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class HKObjectType, NSString;
 
 @interface HDAppSubscription : NSObject
 {
@@ -29,6 +29,7 @@
 - (void)setLastAnchor:(unsigned long long)arg1;
 - (void)setLastAckTime:(long long)arg1;
 - (void)setUpdateFrequency:(unsigned long long)arg1;
+@property(readonly, copy, nonatomic) HKObjectType *objectType;
 - (id)initWithBundleIdentifier:(id)arg1 dataCode:(long long)arg2;
 - (id)init;
 

@@ -40,12 +40,14 @@
     long long _shareMode;
     long long _userRole;
     NSString *_payloadUUID;
+    unsigned long long _addedBy;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)networkProfileWithNetworkProfile:(id)arg1;
 + (id)networkProfile;
 + (id)allNetworkProfiles;
+@property unsigned long long addedBy; // @synthesize addedBy=_addedBy;
 @property(copy) NSString *payloadUUID; // @synthesize payloadUUID=_payloadUUID;
 @property long long userRole; // @synthesize userRole=_userRole;
 @property(copy) NSArray *bssidList; // @synthesize bssidList=_bssidList;

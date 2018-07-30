@@ -173,8 +173,9 @@ struct EncodeStats {
     unsigned short *_field19;
     unsigned int _field20;
     _Bool _field21;
-    int _field22;
+    _Bool _field22;
     int _field23;
+    int _field24;
 };
 
 struct FigLivePhotoDetectedFaceV1Struct {
@@ -238,6 +239,7 @@ struct Frame {
     struct MotionResult motion_result_;
     float interestingness_;
     float obstruction_;
+    float colorfulness_score_;
     struct Histogram histogram_;
 };
 
@@ -291,6 +293,24 @@ struct Kernel {
     float *_field1;
     unsigned long long _field2;
     unsigned long long _field3;
+};
+
+struct LandmarkDetector {
+    int _field1;
+    int _field2;
+    int _field3;
+    int _field4;
+    int _field5;
+    int _field6;
+    int _field7;
+    _Bool _field8;
+    float *_field9;
+    float *_field10;
+    float *_field11;
+    int *_field12;
+    struct ZPoint *_field13;
+    struct RegressionTree *_field14;
+    CDUnknownFunctionPointerType _field15;
 };
 
 struct MetaDataAnalysis {
@@ -424,6 +444,8 @@ struct ObstructionAnalysis {
 
 struct ObstructionSegment;
 
+struct OpaqueVTImageRotationSession;
+
 struct PreEncodeAnalysis {
     _Bool _field1;
     _Bool _field2;
@@ -479,6 +501,8 @@ struct QualityAnalysis {
 
 struct QualitySegment;
 
+struct RegressionTree;
+
 struct RotationAnalysis {
     struct Vector<ma::RotationSegment *> _field1;
     struct RotationSegment *_field2;
@@ -492,7 +516,13 @@ struct RotationAnalysis {
 
 struct RotationSegment;
 
-struct Rotator;
+struct Rotator {
+    struct __CVPixelBufferPool *_field1;
+    int _field2;
+    int _field3;
+    int _field4;
+    struct OpaqueVTImageRotationSession *_field5;
+};
 
 struct SMPTETime {
     short mSubframes;
@@ -642,6 +672,8 @@ struct Vector<unsigned int> {
 struct Vector<unsigned short> {
     struct __CFArray *_field1;
 };
+
+struct ZPoint;
 
 struct __CFArray;
 

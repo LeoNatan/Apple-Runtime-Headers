@@ -6,16 +6,14 @@
 
 #import <FinderKit/FI_TLayer.h>
 
-#import "CAAnimationDelegate.h"
-
-@class NSColor, NSString;
+@class NSColor;
 
 __attribute__((visibility("hidden")))
-@interface FI_TCircularProgressLayer : FI_TLayer <CAAnimationDelegate>
+@interface FI_TCircularProgressLayer : FI_TLayer
 {
     double _endAngle;
     double _animationDuration;
-    struct TNSRef<NSColor *, void> _fillColor;
+    struct TNSRef<NSColor, void> _fillColor;
     _Bool _progressAnimationCompleted;
     function_b1fce659 _progressDidCompleteHandler;
 }
@@ -25,22 +23,16 @@ __attribute__((visibility("hidden")))
 @property double endAngle; // @synthesize endAngle=_endAngle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)callProgressAnimationDidCompleteHandlerIfNeeded;
 @property(readonly, nonatomic) _Bool isProgressAnimationCompleted; // @dynamic isProgressAnimationCompleted;
 - (void)setProgressDidCompleteHandler:(const function_b1fce659 *)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 @property(retain, nonatomic) NSColor *fillColor; // @dynamic fillColor;
-@property(nonatomic) double percentComplete; // @dynamic percentComplete;
+@property(nonatomic) double fractionComplete; // @dynamic fractionComplete;
 - (void)setEndAngleAnimated:(double)arg1;
 - (id)actionForKey:(id)arg1;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

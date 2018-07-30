@@ -43,6 +43,11 @@ __attribute__((visibility("hidden")))
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)setDoubleClickHandler:(const function_b1fce659 *)arg1;
 - (void)setClickHandler:(const function_b1fce659 *)arg1;
+- (void)viewDidChangeBackingProperties;
+- (void)viewDidMoveToSuperview;
+- (void)viewWillMoveToSuperview:(id)arg1;
+- (void)viewDidMoveToWindow;
+- (void)viewWillMoveToWindow:(id)arg1;
 - (void)awakeCommon;
 - (void)initCommon;
 - (void)awakeFromNib;

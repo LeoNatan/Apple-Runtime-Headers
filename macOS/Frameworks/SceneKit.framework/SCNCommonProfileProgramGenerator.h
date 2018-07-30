@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)deferredGeneratorWithProfile:(int)arg1;
 + (id)generatorWithProfile:(int)arg1;
 - (void)releaseProgramForResource:(id)arg1;
-- (struct __C3DFXProgram *)programWithHashCode:(struct __C3DRendererElementProgramHashCode *)arg1 engineContext:(struct __C3DEngineContext *)arg2 trackedResource:(id)arg3 introspectionDataPtr:(CDStruct_5d961f59 *)arg4;
+- (struct __C3DFXProgram *)programWithHashCode:(struct __C3DProgramHashCode *)arg1 engineContext:(struct __C3DEngineContext *)arg2 trackedResource:(id)arg3 introspectionDataPtr:(CDStruct_5d961f59 *)arg4;
 - (void)emptyShaderCache;
 @property(readonly, nonatomic) int profile;
 - (void)dealloc;

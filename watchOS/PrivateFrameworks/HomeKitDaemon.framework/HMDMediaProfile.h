@@ -26,10 +26,10 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
-- (void)updateWithResponses:(id)arg1 message:(id)arg2;
 - (void)sessionAudioControlUpdated:(id)arg1;
-- (void)_sessionPlaybackStateUpdated:(id)arg1 forceNotifyXPCClients:(_Bool)arg2;
 - (void)handleSessionPlaybackStateUpdatedNotification:(id)arg1;
+- (void)_sessionPlaybackStateUpdated:(id)arg1 notifyXPCClients:(_Bool)arg2;
+- (void)updateWithResponses:(id)arg1 message:(id)arg2;
 - (void)_handleMediaSessionSetAudioControl:(id)arg1;
 - (void)_handleRefreshPlayback:(id)arg1;
 - (void)handleMediaResponses:(id)arg1 message:(id)arg2;

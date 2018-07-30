@@ -6,24 +6,27 @@
 
 #import <AppContainer/ASBContainer.h>
 
-@class CodeIdentity, NSString, NSURL;
+@class CodeIdentity, NSDictionary, NSRegularExpression, NSString, NSURL;
 
 @interface ASBMutableContainer : ASBContainer
 {
     CodeIdentity *_owner;
     BOOL _created;
+    NSDictionary *varMap;
+    NSRegularExpression *matchVars;
+    BOOL _pathSpecOnce;
     NSString *_backupPath;
 }
 
-+ (id)containerForApplicationAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
-+ (id)containerForCodeIdentity:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
-+ (id)containerForApplicationAtURL:(id)arg1 error:(id *)arg2;
-+ (id)containerForCodeIdentity:(id)arg1 error:(id *)arg2;
-+ (id)containerWithURL:(id)arg1 error:(id *)arg2;
-+ (void)synchronizedContainerForCodeIdentity:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
++ (id)containerForApplicationAtURL:(id)arg1 withHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
++ (id)containerForCodeIdentity:(id)arg1 withHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
++ (id)containerForApplicationAtURL:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
++ (id)containerForCodeIdentity:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
++ (void)synchronizedContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
 @property(readonly) BOOL isNewlyCreatedContainer; // @synthesize isNewlyCreatedContainer=_created;
 @property(readonly) CodeIdentity *ownerCode; // @synthesize ownerCode=_owner;
 - (void).cxx_destruct;
+- (id)evaluatePathSpecification:(id)arg1 usingFileManager:(id)arg2 error:(id *)arg3;
 - (void)setSandboxProfileDataValidationInfo:(id)arg1;
 - (void)setSandboxProfileData:(id)arg1;
 - (BOOL)upgradeAndReturnError:(id *)arg1;
@@ -35,12 +38,12 @@
 - (BOOL)backupFile:(id)arg1 usingFileManager:(id)arg2 error:(id *)arg3;
 - (void)setRequirementACL:(id)arg1;
 @property(readonly) NSString *containerIdentifier;
-- (id)initWithApplicationAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
-- (id)initWithCodeIdentity:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
-- (id)initWithNewContainerForCodeIdentity:(id)arg1 ignoringMigrationFailures:(BOOL)arg2 error:(id *)arg3;
-- (id)initWithCodeIdentity:(id)arg1 error:(id *)arg2;
-- (id)initWithPath:(id)arg1 codeIdentity:(id)arg2 error:(id *)arg3;
-- (id)initWithPath:(id)arg1 error:(id *)arg2;
+- (id)initWithApplicationAtURL:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
+- (id)initWithCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
+- (id)initWithNewContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 ignoringMigrationFailures:(BOOL)arg3 error:(id *)arg4;
+- (id)initWithCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 error:(id *)arg3;
+- (id)initWithHomeDirectory:(id)arg1 andContainerPath:(id)arg2 codeIdentity:(id)arg3 error:(id *)arg4;
+- (id)initWithHomeDirectory:(id)arg1 andContainerPath:(id)arg2 error:(id *)arg3;
 
 @end
 

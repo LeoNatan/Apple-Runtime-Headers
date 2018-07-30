@@ -60,6 +60,7 @@
 - (long long)photosFaceRepresentationSourceHeight;
 - (long long)photosFaceRepresentationSourceWidth;
 - (id)syncDescription;
+- (id)momentShare;
 - (id)cplFullRecord;
 @property(readonly, retain, nonatomic) id localID;
 - (_Bool)isSyncableChange;
@@ -67,8 +68,10 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSDate *adjustmentVersion; // @dynamic adjustmentVersion;
+@property(nonatomic) unsigned short ageType; // @dynamic ageType;
 @property(retain, nonatomic) PLManagedAsset *asset; // @dynamic asset;
 @property(readonly, nonatomic) _Bool assetVisible; // @dynamic assetVisible;
+@property(nonatomic) unsigned short baldType; // @dynamic baldType;
 @property(nonatomic) double blurScore; // @dynamic blurScore;
 @property(nonatomic) double centerX; // @dynamic centerX;
 @property(nonatomic) double centerY; // @dynamic centerY;
@@ -79,18 +82,18 @@
 @property(nonatomic) short confirmedFaceCropGenerationState; // @dynamic confirmedFaceCropGenerationState;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(nonatomic) double expressionConfidence; // @dynamic expressionConfidence;
-@property(nonatomic) double expressionScore1; // @dynamic expressionScore1;
-@property(nonatomic) double expressionScore2; // @dynamic expressionScore2;
-@property(nonatomic) double expressionScore3; // @dynamic expressionScore3;
-@property(nonatomic) int expressionType1; // @dynamic expressionType1;
-@property(nonatomic) int expressionType2; // @dynamic expressionType2;
-@property(nonatomic) int expressionType3; // @dynamic expressionType3;
+@property(nonatomic) unsigned short eyeMakeupType; // @dynamic eyeMakeupType;
+@property(nonatomic) unsigned short eyesState; // @dynamic eyesState;
 @property(nonatomic) int faceAlgorithmVersion; // @dynamic faceAlgorithmVersion;
 @property(retain, nonatomic) PLFaceCrop *faceCrop; // @dynamic faceCrop;
 @property(retain, nonatomic) PLDetectedFaceGroup *faceGroup; // @dynamic faceGroup;
 @property(retain, nonatomic) PLDetectedFaceGroup *faceGroupBeingKeyFace; // @dynamic faceGroupBeingKeyFace;
 @property(retain, nonatomic) PLDetectedFaceprint *faceprint; // @dynamic faceprint;
+@property(nonatomic) unsigned short facialHairType; // @dynamic facialHairType;
+@property(nonatomic) unsigned short genderType; // @dynamic genderType;
+@property(nonatomic) unsigned short glassesType; // @dynamic glassesType;
+@property(retain, nonatomic) NSString *groupingIdentifier; // @dynamic groupingIdentifier;
+@property(nonatomic) unsigned short hairColorType; // @dynamic hairColorType;
 @property(nonatomic) _Bool hasSmile; // @dynamic hasSmile;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool hidden; // @dynamic hidden;
@@ -99,6 +102,7 @@
 @property(nonatomic) _Bool isRightEyeClosed; // @dynamic isRightEyeClosed;
 @property(nonatomic) double leftEyeX; // @dynamic leftEyeX;
 @property(nonatomic) double leftEyeY; // @dynamic leftEyeY;
+@property(nonatomic) unsigned short lipMakeupType; // @dynamic lipMakeupType;
 @property(nonatomic) _Bool manual; // @dynamic manual;
 @property(retain, nonatomic) NSString *masterIdentifier; // @dynamic masterIdentifier;
 @property(nonatomic) double mouthX; // @dynamic mouthX;
@@ -106,8 +110,6 @@
 @property(nonatomic) int nameSource; // @dynamic nameSource;
 @property(retain, nonatomic) PLPerson *person; // @dynamic person;
 @property(retain, nonatomic) PLPerson *personBeingKeyFace; // @dynamic personBeingKeyFace;
-@property(nonatomic) double posePitch; // @dynamic posePitch;
-@property(nonatomic) double poseRoll; // @dynamic poseRoll;
 @property(nonatomic) double poseYaw; // @dynamic poseYaw;
 @property(nonatomic) int qualityMeasure; // @dynamic qualityMeasure;
 @property(retain, nonatomic) NSSet *rejectedPersons; // @dynamic rejectedPersons;
@@ -115,6 +117,7 @@
 @property(nonatomic) double rightEyeX; // @dynamic rightEyeX;
 @property(nonatomic) double rightEyeY; // @dynamic rightEyeY;
 @property(nonatomic) double size; // @dynamic size;
+@property(nonatomic) unsigned short smileType; // @dynamic smileType;
 @property(nonatomic) long long sourceHeight; // @dynamic sourceHeight;
 @property(nonatomic) long long sourceWidth; // @dynamic sourceWidth;
 @property(readonly) Class superclass;

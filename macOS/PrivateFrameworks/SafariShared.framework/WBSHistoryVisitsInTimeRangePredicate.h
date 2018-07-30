@@ -20,7 +20,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)new;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)evaluateServiceVisit:(id)arg1;
@@ -29,7 +28,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 urlString:(id)arg3 urlHash:(id)arg4 urlSalt:(id)arg5;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

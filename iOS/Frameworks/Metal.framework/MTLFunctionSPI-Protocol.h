@@ -6,13 +6,15 @@
 
 #import "MTLFunction.h"
 
-@class MTLFunctionReflection, MTLType, NSArray, NSString;
+@class MTLFunctionReflection, MTLType, NSArray, NSData, NSString;
 
 @protocol MTLFunctionSPI <MTLFunction>
 @property(readonly) NSArray *arguments;
 @property(readonly) MTLType *returnType;
+@property(readonly, copy) NSString *unpackedFilePath;
 @property(readonly) long long lineNumber;
 @property(readonly, copy) NSString *filePath;
+- (NSData *)bitcodeData;
 - (const CDStruct_41a22ec7 *)bitCodeHash;
 - (id <MTLIndirectArgumentEncoder>)newIndirectArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2;
 - (id <MTLIndirectArgumentEncoder>)newIndirectArgumentEncoderWithBufferIndex:(unsigned long long)arg1;

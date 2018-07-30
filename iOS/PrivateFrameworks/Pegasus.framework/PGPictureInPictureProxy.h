@@ -13,6 +13,7 @@
 @interface PGPictureInPictureProxy : NSObject <PGPictureInPictureExportedInterface>
 {
     struct CGSize _preferredContentSize;
+    struct CGRect _initialLayerFrame;
     _Bool _isPictureInPicturePossible;
     _Bool _isPictureInPictureActive;
     _Bool _isPictureInPictureSuspended;
@@ -31,6 +32,7 @@
     _Bool _isHostedWindowSizeChangeDuringPinchGesture;
     id <PGPictureInPictureProxyDelegate> _delegate;
     struct {
+        unsigned int pictureInPictureProxyInterfaceOrientationForTransitionAnimation:1;
         unsigned int pictureInPictureProxyViewFrameForTransitionAnimation:1;
         unsigned int pictureInPictureProxy_willStartPictureInPictureWithAnimationType:1;
         unsigned int pictureInPictureProxy_didStartPictureInPictureWithAnimationType:1;
@@ -66,6 +68,7 @@
 - (oneway void)pictureInPictureStopRequestedAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (oneway void)pictureInPictureStartRequestedAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (struct CGRect)_viewFrameForTransitionAnimationAssumeApplicationActive:(_Bool)arg1;
+- (long long)_interfaceOrientationForTransitionAnimationAssumeApplicationActive:(_Bool)arg1;
 - (void)_stopPictureInPictureAnimated:(_Bool)arg1 activateApplicationIfNeededAndRestoreUserInterface:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_startPictureInPictureAnimated:(_Bool)arg1 enteringBackground:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -73,6 +76,7 @@
 - (void)setPlaybackProgress:(double)arg1 playbackRate:(double)arg2;
 - (void)stopPictureInPictureAndRestoreUserInterface:(_Bool)arg1;
 - (void)startPictureInPicture;
+- (void)viewFrameForInteractiveTransitionAnimationWhenEnteringBackgroundDidChangeForViewController;
 - (void)preferredContentSizeDidChangeForViewController;
 - (void)setLoadedTimeRanges:(id)arg1;
 - (id)loadedTimeRanges;

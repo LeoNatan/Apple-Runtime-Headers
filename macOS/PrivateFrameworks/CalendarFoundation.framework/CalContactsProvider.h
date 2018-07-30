@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
+#import "CalContactsProviderProtocol.h"
+
 @class CNContactStore, CNReputationStore;
 
-@interface CalContactsProvider : NSObject
+@interface CalContactsProvider : NSObject <CalContactsProviderProtocol>
 {
     CNContactStore *_store;
     CNReputationStore *_reputationStore;

@@ -8,7 +8,6 @@
 
 @interface NSDateInterval (HealthKit)
 + (id)hk_dateIntervalForDayFromDate:(id)arg1 calendar:(id)arg2;
-+ (id)hk_dateIntervalWithStartDate:(id)arg1 endDate:(id)arg2;
 + (id)hk_dateIntervalWithStart:(double)arg1 end:(double)arg2;
 - (_Bool)hk_containsTime:(double)arg1;
 - (id)hk_midDate;

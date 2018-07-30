@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface BU_TValidatingDateFormatter : NSDateFormatter
 {
-    struct TNSRef<BU_TValidatingDateFormatter *, void> _timeOnlyFormatter;
+    struct TNSRef<BU_TValidatingDateFormatter, void> _timeOnlyFormatter;
 }
 
 - (id).cxx_construct;

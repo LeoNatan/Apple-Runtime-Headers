@@ -26,8 +26,10 @@ __attribute__((visibility("hidden")))
     BOOL _allowLargePackets;
     BOOL _isFull;
     int _operatingMode;
+    unsigned char _priority;
 }
 
+@property(readonly, nonatomic) unsigned char priority; // @synthesize priority=_priority;
 @property(nonatomic) int bundlingScheme; // @synthesize bundlingScheme=_bundlingScheme;
 @property(nonatomic) unsigned int timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) int payload; // @synthesize payload=_payload;
@@ -37,10 +39,11 @@ __attribute__((visibility("hidden")))
 - (void)unlock;
 - (void)lock;
 - (void)initLock;
+- (void)updatePriority:(unsigned char)arg1;
 - (void)resetBuffer;
 - (BOOL)bundleAudioLegacy:(void *)arg1 numInputBytes:(unsigned int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4;
 - (BOOL)_copyInputBytes:(void *)arg1 numInputBytes:(unsigned int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4;
-- (BOOL)bundleAudio:(void *)arg1 numInputBytes:(unsigned int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4 voiceActivity:(BOOL)arg5;
+- (BOOL)bundleAudio:(void *)arg1 numInputBytes:(unsigned int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4 voiceActivity:(BOOL)arg5 priority:(unsigned char)arg6;
 - (BOOL)bundleAudioRFC3640:(void *)arg1 numInputBytes:(unsigned int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4;
 - (char *)accessUnitDataSectionHead;
 - (unsigned int)accessUnitHeaderSectionSizeMaximum;

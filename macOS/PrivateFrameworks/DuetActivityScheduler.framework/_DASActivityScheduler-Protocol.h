@@ -6,11 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDate, NSDictionary, _DASActivity;
+@class NSArray, NSDictionary, _DASActivity;
 
 @protocol _DASActivityScheduler <NSObject>
-- (void)updateKBDownloadedOnWifi:(unsigned long long)arg1 downloadedOnCell:(unsigned long long)arg2 uploadedOnWifi:(unsigned long long)arg3 uploadedOnCell:(unsigned long long)arg4 forActivity:(_DASActivity *)arg5;
-- (void)updateActivity:(_DASActivity *)arg1 withPriority:(unsigned long long)arg2 startAfter:(NSDate *)arg3 startBefore:(NSDate *)arg4 options:(NSDictionary *)arg5;
+- (void)updateActivity:(_DASActivity *)arg1 withParameters:(NSDictionary *)arg2;
 - (void)activityCanceled:(_DASActivity *)arg1;
 - (void)activityCompleted:(_DASActivity *)arg1;
 - (void)submitActivities:(NSArray *)arg1;

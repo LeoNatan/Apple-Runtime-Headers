@@ -10,9 +10,7 @@
 
 @protocol _SFPBNamedProtobufMessage <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasProtobufMessageName;
 @property(copy, nonatomic) NSString *protobufMessageName;
-@property(readonly, nonatomic) BOOL hasProtobufMessageData;
 @property(copy, nonatomic) NSData *protobufMessageData;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

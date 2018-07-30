@@ -8,12 +8,15 @@
 
 @class NSString, RCComposition;
 
+__attribute__((visibility("hidden")))
 @interface _RCCompositionUndoItem : NSObject
 {
     RCComposition *_composition;
     NSString *_reasonAccessTokenName;
+    long long _indexInUndoStack;
 }
 
+@property(nonatomic) long long indexInUndoStack; // @synthesize indexInUndoStack=_indexInUndoStack;
 @property(nonatomic) NSString *reasonAccessTokenName; // @synthesize reasonAccessTokenName=_reasonAccessTokenName;
 @property(copy, nonatomic) RCComposition *composition; // @synthesize composition=_composition;
 - (void).cxx_destruct;

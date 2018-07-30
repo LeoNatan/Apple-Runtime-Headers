@@ -31,6 +31,9 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)valuesForPaths:(id)arg1 inContextsMatching:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)removeObjects:(id)arg1 fromArrayAtPath:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)addObjects:(id)arg1 toArrayAtPath:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)addObjects:(id)arg1 andRemoveObjects:(id)arg2 forArrayAtPath:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)setObject:(id)arg1 forPath:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)evaluatePredicate:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)deregisterCallback:(id)arg1;

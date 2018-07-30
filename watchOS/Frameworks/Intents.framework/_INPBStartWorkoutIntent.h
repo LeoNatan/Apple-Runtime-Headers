@@ -7,52 +7,54 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBStartWorkoutIntent.h"
 
-@class PBUnknownFields, _INPBDataString, _INPBDouble, _INPBIntentMetadata;
+@class NSString, _INPBDataString, _INPBDouble, _INPBIntentMetadata;
 
-@interface _INPBStartWorkoutIntent : PBCodable <NSCopying>
+@interface _INPBStartWorkoutIntent : PBCodable <_INPBStartWorkoutIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct {
+        unsigned int isOpenEnded:1;
+        unsigned int workoutGoalUnitType:1;
+        unsigned int workoutLocationType:1;
+    } _has;
+    _Bool _isOpenEnded;
     _INPBDouble *_goalValue;
     _INPBIntentMetadata *_intentMetadata;
     int _workoutGoalUnitType;
     int _workoutLocationType;
     _INPBDataString *_workoutName;
-    _Bool _isOpenEnded;
-    struct {
-        unsigned int workoutGoalUnitType:1;
-        unsigned int workoutLocationType:1;
-        unsigned int isOpenEnded:1;
-    } _has;
 }
 
-+ (id)options;
-@property(nonatomic) _Bool isOpenEnded; // @synthesize isOpenEnded=_isOpenEnded;
-@property(retain, nonatomic) _INPBDouble *goalValue; // @synthesize goalValue=_goalValue;
 @property(retain, nonatomic) _INPBDataString *workoutName; // @synthesize workoutName=_workoutName;
+@property(nonatomic) int workoutLocationType; // @synthesize workoutLocationType=_workoutLocationType;
+@property(nonatomic) int workoutGoalUnitType; // @synthesize workoutGoalUnitType=_workoutGoalUnitType;
+@property(nonatomic) _Bool isOpenEnded; // @synthesize isOpenEnded=_isOpenEnded;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBDouble *goalValue; // @synthesize goalValue=_goalValue;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasIsOpenEnded;
+@property(readonly, nonatomic) _Bool hasWorkoutName;
 - (int)StringAsWorkoutLocationType:(id)arg1;
 - (id)workoutLocationTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasWorkoutLocationType;
-@property(nonatomic) int workoutLocationType; // @synthesize workoutLocationType=_workoutLocationType;
 - (int)StringAsWorkoutGoalUnitType:(id)arg1;
 - (id)workoutGoalUnitTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasWorkoutGoalUnitType;
-@property(nonatomic) int workoutGoalUnitType; // @synthesize workoutGoalUnitType=_workoutGoalUnitType;
-@property(readonly, nonatomic) _Bool hasGoalValue;
-@property(readonly, nonatomic) _Bool hasWorkoutName;
+@property(nonatomic) _Bool hasIsOpenEnded;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasGoalValue;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

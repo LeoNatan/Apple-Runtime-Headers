@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 #import "RTDataProviderProtocol.h"
 
 @class NSArray, NSError, NSMutableArray, NSString, RTInvocationDispatcher, RTPurgeManager;
 
-@interface RTDataProvider : RTNotifier <RTDataProviderProtocol>
+@interface RTDataProvider : RTService <RTDataProviderProtocol>
 {
     NSMutableArray *_cachedData;
     _Bool _cachedDataNeedsCopyOnWrite;
@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (void)fetchDataProviderStatus:(CDUnknownBlockType)arg1;
 - (void)onMemoryWarningNotification:(id)arg1;
-- (void)shutdown;
+- (void)_shutdown;
 - (void)addObserverInternal:(id)arg1 notificationName:(id)arg2;
 - (void)removeObserverInternal:(id)arg1 notificationName:(id)arg2;
 - (void)__fetchDataWithFilterPredicates:(id)arg1 sortDescriptors:(id)arg2 handler:(CDUnknownBlockType)arg3;

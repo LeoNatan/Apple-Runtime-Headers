@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "NSMenuItemValidation.h"
 #import "NSValidatedUserInterfaceItem.h"
 
 @class NSImage, NSMenuItem, NSString, NSToolbar, NSView;
 
-@interface NSToolbarItem : NSObject <NSCopying, NSValidatedUserInterfaceItem>
+@interface NSToolbarItem : NSObject <NSCopying, NSMenuItemValidation, NSValidatedUserInterfaceItem>
 {
     NSToolbar *_toolbar;
     NSImage *_image;
@@ -48,7 +49,10 @@
         unsigned int sizeHasBeenSet:1;
         unsigned int stateWasDisabledBeforeSheet:1;
         unsigned int wantsToBeCentered:1;
-        unsigned int RESERVED:7;
+        unsigned int isMeasuring:1;
+        unsigned int ignoresEncodedMinMaxValue:1;
+        unsigned int usesStaticMinMaxValues:1;
+        unsigned int RESERVED:4;
     } _tbiFlags;
     id _tbiReserved;
     id _itemViewer;
@@ -77,24 +81,28 @@
 - (id)extensionService;
 @property(readonly) BOOL allowsDuplicatesInToolbar;
 @property(retain) NSImage *image;
+- (BOOL)isSpace;
+- (BOOL)isMeasuring;
+- (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 stretchesContent:(BOOL)arg3;
+- (struct CGSize)_textOrSearchFieldAdjustedMinOrMaxSize:(BOOL)arg1 withSize:(struct CGSize)arg2;
 - (struct CGSize)_scalableMaxSize;
 - (struct CGSize)_scalableMinSize;
-- (struct CGSize)_textOrSearchFieldAdjustedMinOrMaxSize:(BOOL)arg1;
 - (BOOL)_shouldApplyTextFieldAdjustment;
 - (BOOL)_shouldApplySearchFieldAdjustment;
 - (void)setPreferredWidthRatio:(double)arg1;
 - (double)preferredWidthRatio;
 @property struct CGSize maxSize;
 @property struct CGSize minSize;
+- (void)_setIgnoresMinMaxSizes:(BOOL)arg1;
+- (BOOL)_ignoresMinMaxSizes;
 - (BOOL)_canUserSetVisibilityPriority;
 - (double)_resizeWeight;
 - (BOOL)_resizeWeightSharedWithDuplicateItems;
 @property long long visibilityPriority;
 @property(retain) NSView *view;
 - (void)_forceSetView:(id)arg1;
+- (BOOL)_autocalculatesSize;
 - (void)_setSizesToFittingSizeIfBaseLocalized;
-- (void)_autorecalculateSizesIfNotSetExplicitly;
-- (void)_autorecalculateMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2;
 - (BOOL)_isCustomItemType;
 @property long long tag;
 - (double)_interlabelPadding;
@@ -105,6 +113,7 @@
 - (BOOL)_applicableLabelIsEnabledAtIndex:(long long)arg1 forDisplayMode:(unsigned long long)arg2 isInPalette:(BOOL)arg3;
 - (BOOL)_isEnabledAndHasEnabledSubitem;
 @property(getter=isEnabled) BOOL enabled;
+- (void)_reallySetEnabled:(BOOL)arg1;
 @property SEL action;
 @property __weak id target;
 - (void)_standardCustomMenuFormRepresentationClicked:(id)arg1;
@@ -150,6 +159,8 @@
 @property(readonly) __weak NSToolbar *toolbar;
 - (int)itemType;
 @property(readonly, copy) NSString *itemIdentifier;
+- (void)_restoreToolbarItemAfterConfigPanel;
+- (void)_prepareToolbarItemForConfigPanel;
 - (void)_restoreToolbarItemAfterSheet;
 - (void)_prepareToolbarItemForSheet;
 - (void)_validateInPresenceOfSheet;
@@ -159,7 +170,6 @@
 - (void)_validateMenuFormRepresentation:(id)arg1;
 - (id)_itemMenuInPaletteForEvent:(id)arg1;
 - (BOOL)_wantsCopyForInsertionIntoToolbar:(id)arg1 isPalette:(BOOL)arg2;
-- (BOOL)_wantsImageWrapperForInsertionIntoPaletteToolbar:(id)arg1;
 - (BOOL)_shouldValidateMenuFormRepresentation;
 - (void)_validateAsCommonItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -170,6 +180,7 @@
 - (void)_setItemIdentifier:(id)arg1;
 - (id)initWithItemIdentifier:(id)arg1;
 - (id)initWithType:(int)arg1 itemIdentifier:(id)arg2;
+@property(readonly, copy) NSString *description;
 - (void)_toolbarItemCommonInit;
 - (void)_loadViewIfNecessary;
 - (id)_allocDefaultView;
@@ -194,6 +205,7 @@
 - (void)_setToolbar:(id)arg1;
 - (BOOL)_isUserRemovable;
 - (void)_setIsUserRemovable:(BOOL)arg1;
+- (id)_viewForPopoverAnchor;
 - (id)_menuFormRepresentation;
 - (id)_view;
 - (int)_itemType;
@@ -203,6 +215,11 @@
 - (void)_beginDrawForDragging;
 - (void)_setSizeHasBeenSet:(BOOL)arg1;
 - (BOOL)_sizeHasBeenSet;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

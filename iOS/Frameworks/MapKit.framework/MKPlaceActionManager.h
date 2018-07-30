@@ -10,7 +10,6 @@
 
 @class MKPlaceCardActionItem, NSString, TUCallProvider;
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceActionManager : NSObject <MKPlaceActionManagerProtocol>
 {
     MKPlaceCardActionItem *_favoriteActionItem;
@@ -37,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)reportAProblemFooterAction;
 - (id)shortPlacecardFooterActions;
 - (id)createFooterActions;
+- (void)addLayoutInfoIfNeeded:(id)arg1;
 - (void)_enableStoreAction;
 - (id)createRowActions;
 - (id)favoriteItemForFooter:(_Bool)arg1;

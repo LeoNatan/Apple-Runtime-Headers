@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double suggestionUpdateFrequency; // @synthesize suggestionUpdateFrequency=_suggestionUpdateFrequency;
 @property(readonly, nonatomic) double locationUpdateInterval; // @synthesize locationUpdateInterval=_locationUpdateInterval;
 - (void).cxx_destruct;
-- (void)acquireDesiredResourcePolicy;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;
@@ -35,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)setCurrentAudioOutputSetting:(id)arg1;
 - (void)setHFPPreference:(BOOL)arg1 forSetting:(id)arg2;
 - (void)setGuidancePromptsEnabled:(BOOL)arg1;
+- (void)setHeadingOrientation:(int)arg1;
 - (void)stopCurrentGuidancePrompt;
 - (void)vibrateForPrompt:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)repeatCurrentTrafficAlertWithReply:(CDUnknownBlockType)arg1;

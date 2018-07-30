@@ -15,9 +15,11 @@
     _Bool _deleteFromDBOnly;
 }
 
++ (id)lightweightReimportDirectoryNameWithGUID:(id)arg1 cloudPersonID:(id)arg2;
 + (id)cloudOwnerDisplayNameWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 includingEmail:(_Bool)arg5 allowsEmail:(_Bool)arg6;
 + (id)localizedSharedByLabelWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 isOwned:(_Bool)arg5 allowsEmail:(_Bool)arg6;
 + (id)allCloudSharedAlbumsInLibrary:(id)arg1;
++ (id)cloudSharedAlbumWithObjectID:(id)arg1 managedObjectContext:(id)arg2;
 + (id)cloudSharedAlbumWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)entityName;
 + (id)entityInManagedObjectContext:(id)arg1;
@@ -103,7 +105,6 @@
 @property(readonly, nonatomic) _Bool isRecentlyAddedAlbum;
 @property(readonly, nonatomic) _Bool isStandInAlbum;
 @property(readonly, nonatomic) _Bool isUserLibraryAlbum;
-@property(readonly, nonatomic) _Bool isWallpaperAlbum;
 @property(retain, nonatomic) PLManagedAsset *keyAsset;
 @property(readonly, retain, nonatomic) NSNumber *kind;
 @property(readonly, nonatomic) int kindValue;

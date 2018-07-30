@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface PUTileTree : NSObject <NSCopying>
 {
     _Bool _useUniqueLeafs;

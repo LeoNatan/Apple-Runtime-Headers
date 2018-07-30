@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, PHProjectExtensionContext, PHProjectInfo;
+@class NSArray, NSString, PHProjectExtensionContext, PHProjectInfo;
 
 @protocol PHProjectExtensionController <NSObject>
 - (void)finishProjectWithCompletionHandler:(void (^)(void))arg1;
@@ -15,5 +15,6 @@
 
 @optional
 @property(readonly, copy, nonatomic) NSArray *supportedProjectTypes;
+- (id <PHProjectTypeDescriptionDataSource>)typeDescriptionDataSourceForCategory:(NSString *)arg1 invalidator:(id <PHProjectTypeDescriptionInvalidator>)arg2;
 @end
 

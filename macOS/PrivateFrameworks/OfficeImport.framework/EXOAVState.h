@@ -8,12 +8,12 @@
 
 @class EXReadState;
 
-__attribute__((visibility("hidden")))
 @interface EXOAVState : OAVReadState
 {
     EXReadState *mEXReadState;
 }
 
+- (void).cxx_destruct;
 - (id)exState;
 - (id)initWithEXReadState:(id)arg1 packagePart:(id)arg2;
 

@@ -6,18 +6,15 @@
 
 #import <network/nw_listener_inbox.h>
 
-@class NSObject<OS_nw_parameters>;
-
 __attribute__((visibility("hidden")))
 @interface nw_listener_inbox_socket : nw_listener_inbox
 {
-    NSObject<OS_nw_parameters> *_parameters;
     void *_source;
     int _sockfd_for_logging_only_do_not_close_or_use;
+    unsigned char _ipProtocol;
 }
 
-- (void).cxx_destruct;
-- (void)cancel;
+- (BOOL)cancel;
 - (id)initWithParameters:(id)arg1 delegate:(id)arg2;
 - (id)description;
 - (id)initWithSocket:(int)arg1 parameters:(id)arg2 delegate:(id)arg3;

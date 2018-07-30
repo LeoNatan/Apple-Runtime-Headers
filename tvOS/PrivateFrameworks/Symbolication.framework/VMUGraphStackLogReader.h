@@ -11,7 +11,6 @@
 
 @class NSSet, NSString, VMUDebugTimer, VMUProcessObjectGraph, VMURangeToStringMap, VMUVMRegionTracker;
 
-__attribute__((visibility("hidden")))
 @interface VMUGraphStackLogReader : VMUStackLogReaderBase <NSSecureCoding, VMUStackLogReader>
 {
     struct _CSTypeRef _symbolicator;
@@ -19,22 +18,7 @@ __attribute__((visibility("hidden")))
     VMUDebugTimer *_debugTimer;
     unsigned int _nodeNamespaceSize;
     unsigned int *_nodeToStackIdTable;
-    struct {
-        void *_field1;
-        unsigned long long _field2;
-        unsigned long long _field3;
-        unsigned long long _field4;
-        unsigned long long _field5;
-        unsigned int _field6;
-        int _field7;
-        unsigned int _field8;
-        unsigned int _field9;
-        unsigned int _field10;
-        struct _opaque_pthread_rwlock_t {
-            long long _field1;
-            char _field2[192];
-        } _field11;
-    } *_backtraceUniquingTable;
+    struct vmu_backtrace_uniquing_table_t *_backtraceUniquingTable;
     VMURangeToStringMap *_functionNameRanges;
     VMURangeToStringMap *_sourceInfoRanges;
 }
@@ -49,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (long long)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(_Bool)arg3 stackFramesBuffer:(unsigned long long *)arg4;
 - (long long)getFramesForNode:(unsigned int)arg1 inLiteZone:(_Bool)arg2 stackFramesBuffer:(unsigned long long *)arg3;
 - (int)enumerateRecords:(CDUnknownBlockType)arg1;
-@property(readonly) _Bool usesLiteMode;
 @property(readonly) _Bool inspectingLiveProcess;
 @property(readonly) _Bool is64bit;
 - (struct _VMURange)sourceLineRangeContainingPCaddress:(unsigned long long)arg1;
@@ -79,6 +62,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) VMUVMRegionTracker *regionTracker;
 @property(readonly) Class superclass;
 @property(readonly) unsigned int task;
+@property(readonly) _Bool usesLiteMode;
 
 @end
 

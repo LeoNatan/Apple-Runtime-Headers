@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSSQLiteAdapter *_adapter;
     NSMappingModel *_mappingModel;
     NSSQLiteConnection *_connection;
+    NSArray *_tableGenerationSQL;
     NSArray *_existingTableNames;
     NSMutableDictionary *_reindexedEntities;
     NSMutableDictionary *_reindexedPropertiesByEntity;
@@ -31,13 +32,15 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_attributeExtensionsToUpdate;
     NSMutableArray *_indexesToCreate;
     NSMutableArray *_indexesToDrop;
+    NSMutableDictionary *_historyMigrationPropertyDataForEntityCache;
 }
 
 + (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;
 + (BOOL)_annotatesMigrationMetadata;
-@property(readonly) NSSQLModel *srcModel; // @synthesize srcModel=_srcModel;
-@property(readonly) NSSQLModel *dstModel; // @synthesize dstModel=_dstModel;
-@property(readonly) NSSQLiteAdapter *adapter; // @synthesize adapter=_adapter;
+@property(retain, nonatomic) NSMutableDictionary *historyMigrationCache; // @synthesize historyMigrationCache=_historyMigrationPropertyDataForEntityCache;
+@property(readonly, nonatomic) NSSQLModel *srcModel; // @synthesize srcModel=_srcModel;
+@property(readonly, nonatomic) NSSQLModel *dstModel; // @synthesize dstModel=_dstModel;
+@property(readonly, nonatomic) NSSQLiteAdapter *adapter; // @synthesize adapter=_adapter;
 - (id)updateStatementsForHistoryChanges;
 - (BOOL)deleteStatementsForHistory;
 - (BOOL)shiftTombstones;
@@ -46,12 +49,15 @@ __attribute__((visibility("hidden")))
 - (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 tableMigrationType:(int)arg3;
 - (void)_populateTableMigrationDescriptions;
 - (void)_populateEntityMigrationDescriptionsAndEntityMap;
+- (BOOL)_sourceTableIsClean:(id)arg1;
 - (id)tableMigrationDescriptionForEntity:(id)arg1;
 - (id)entityMigrationDescriptionForEntity:(id)arg1;
 - (void)_determineAncillaryModelIndexesForMigration;
 - (void)_determineAttributeTriggerToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
 - (void)_determineRTreeExtensionsToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
+- (void)_determineUniquenessConstraintsToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (void)_determineIndexesToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
+- (CDUnknownBlockType)_indexMigrationBlockForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (void)_determineReindexedEntitiesAndAffectedProperties;
 - (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
 - (id)createStatementsForUpdatingEntityKeys;

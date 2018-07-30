@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *entityName; // @synthesize entityName=_entityName;
 @property(readonly, nonatomic) NSData *ckRecordSystemFields; // @synthesize ckRecordSystemFields=_ckRecordSystemFields;
 @property(readonly, nonatomic) NSString *ckRecordID; // @synthesize ckRecordID=_ckRecordID;
-- (BOOL)updateRelationshipValueUsingImportContext:(id)arg1 andManagedObjectContext:(id)arg2 error:(id *)arg3;
+- (BOOL)updateRelationshipValueUsingImportContext:(id)arg1 andManagedObjectContext:(id)arg2 isDelete:(BOOL)arg3 error:(id *)arg4;
 - (void)setPending:(BOOL)arg1 deleted:(BOOL)arg2 uploaded:(BOOL)arg3;
 - (void)setBindValue:(id)arg1;
 - (void)updatePKNumFromInsert:(long long)arg1;

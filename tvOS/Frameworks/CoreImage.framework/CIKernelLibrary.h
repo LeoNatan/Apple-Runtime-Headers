@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)libraryWithData:(id)arg1 error:(id *)arg2;
++ (id)internalLibraryWithName:(id)arg1 device:(id)arg2;
 - (id)newFunctionWithName:(id)arg1 device:(id)arg2;
 - (id)functionWithName:(id)arg1;
+- (id)externFunctionNames;
 @property(readonly) unsigned long long functionCount;
 - (void)dealloc;
 - (id)initWithData:(id)arg1 error:(id *)arg2;

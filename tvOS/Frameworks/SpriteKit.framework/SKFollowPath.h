@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)followPath:(struct CGPath *)arg1 speed:(double)arg2;
 + (id)followPath:(struct CGPath *)arg1 asOffset:(_Bool)arg2 orientToPath:(_Bool)arg3 duration:(double)arg4;
 + (id)followPath:(struct CGPath *)arg1 duration:(double)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)reversedAction;
 - (void)dealloc;

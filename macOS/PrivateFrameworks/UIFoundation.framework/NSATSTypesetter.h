@@ -30,7 +30,7 @@
 + (void)initialize;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 remainingRect:(struct CGRect *)arg2;
 - (CDUnion_09a75e3c *)_lineFragmentRectForProposedRectArgs;
-- (CDStruct_9b8416ed *)_allocateAuxData;
+- (CDStruct_3fda14a5 *)_allocateAuxData;
 - (double)baselineOffsetInLayoutManager:(id)arg1 glyphIndex:(unsigned long long)arg2;
 - (struct _NSRange)layoutCharactersInRange:(struct _NSRange)arg1 forLayoutManager:(id)arg2 maximumNumberOfLineFragments:(unsigned long long)arg3;
 - (void)layoutGlyphsInLayoutManager:(id)arg1 startingAtGlyphIndex:(unsigned long long)arg2 maxNumberOfLineFragments:(unsigned long long)arg3 nextGlyphIndex:(unsigned long long *)arg4;
@@ -50,6 +50,8 @@
 - (id)paragraphArbitrator;
 - (void)setLineBreakStrategy:(unsigned long long)arg1;
 - (unsigned long long)lineBreakStrategy;
+- (void)setLimitsLayoutForSuspiciousContents:(BOOL)arg1;
+- (BOOL)limitsLayoutForSuspiciousContents;
 - (void)setDefaultTighteningFactor:(double)arg1;
 - (double)defaultTighteningFactor;
 - (unsigned long long)_sweepDirectionForGlyphAtIndex:(long long)arg1;

@@ -18,7 +18,7 @@
     id <CTCarrierSpaceClientDelegate> _delegate;
 }
 
-@property(nonatomic) id <CTCarrierSpaceClientDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <CTCarrierSpaceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)fetchDataPlanMetrics:(CDUnknownBlockType)arg1;
@@ -44,6 +44,7 @@
 - (void)invalidate;
 - (void)ping:(CDUnknownBlockType)arg1;
 - (id)initWithQueue:(struct dispatch_queue_s *)arg1 andListenerEndpoint:(id)arg2;
+- (void)dealloc;
 - (id)init;
 - (id)initWithQueue:(struct dispatch_queue_s *)arg1;
 - (id)_proxyWithErrorHandler:(CDUnknownBlockType)arg1;

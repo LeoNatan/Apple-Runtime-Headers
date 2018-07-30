@@ -17,6 +17,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)validate:(id)arg1 width:(unsigned int *)arg2 height:(unsigned int *)arg3;
 - (unsigned int)getSamplePositions:(CDStruct_6e3f967a *)arg1 count:(unsigned int)arg2;
 - (void)setSamplePositions:(const CDStruct_6e3f967a *)arg1 count:(unsigned int)arg2;
+- (_Bool)openGLModeEnabled;
+- (void)setOpenGLModeEnabled:(_Bool)arg1;
+- (_Bool)isDitherEnabled;
+- (void)setDitherEnabled:(_Bool)arg1;
 - (_Bool)fineGrainedBackgroundVisibilityEnabled;
 - (void)setFineGrainedBackgroundVisibilityEnabled:(_Bool)arg1;
 - (unsigned int)renderTargetHeight;

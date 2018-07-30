@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)objectForAttribute:(id)arg1;
 - (void)performAction:(id)arg1 delegate:(id)arg2;
 - (void)nonBlockingActionsAreComplete;
-- (void)_dispatchNonBlockingActionsAreComplete;
+- (void)dispatchNonBlockingActionsAreComplete;
 - (int)preflightSequentialSteps:(id)arg1 runnerName:(id)arg2;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;

@@ -13,11 +13,15 @@
 @interface GEOLogMsgEventClientACSuggestions : PBCodable <NSCopying>
 {
     NSMutableArray *_entries;
+    int _keypressStatus;
     NSString *_query;
     NSMutableArray *_queryTokens;
     int _selectedIndex;
+    int _trigger;
     struct {
+        unsigned int keypressStatus:1;
         unsigned int selectedIndex:1;
+        unsigned int trigger:1;
     } _has;
 }
 
@@ -36,6 +40,14 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsKeypressStatus:(id)arg1;
+- (id)keypressStatusAsString:(int)arg1;
+@property(nonatomic) _Bool hasKeypressStatus;
+@property(nonatomic) int keypressStatus; // @synthesize keypressStatus=_keypressStatus;
+- (int)StringAsTrigger:(id)arg1;
+- (id)triggerAsString:(int)arg1;
+@property(nonatomic) _Bool hasTrigger;
+@property(nonatomic) int trigger; // @synthesize trigger=_trigger;
 @property(nonatomic) _Bool hasSelectedIndex;
 @property(nonatomic) int selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (id)entriesAtIndex:(unsigned long long)arg1;

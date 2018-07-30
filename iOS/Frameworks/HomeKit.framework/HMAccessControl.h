@@ -8,21 +8,20 @@
 
 #import "NSSecureCoding.h"
 
-@class HMUser, NSObject<OS_dispatch_queue>;
+@class HMFUnfairLock, HMUser;
 
 @interface HMAccessControl : NSObject <NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
     HMUser *_user;
     unsigned long long _cachedHash;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
+@property(readonly, nonatomic) unsigned long long cachedHash; // @synthesize cachedHash=_cachedHash;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly) unsigned long long cachedHash; // @synthesize cachedHash=_cachedHash;
 @property __weak HMUser *user; // @synthesize user=_user;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

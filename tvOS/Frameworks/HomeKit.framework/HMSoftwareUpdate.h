@@ -10,10 +10,11 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessory, HMFSoftwareVersion, HMSoftwareUpdateDocumentation, HMSoftwareUpdateDocumentationMetadata, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMAccessory, HMFSoftwareVersion, HMFUnfairLock, HMSoftwareUpdateDocumentation, HMSoftwareUpdateDocumentationMetadata, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface HMSoftwareUpdate : NSObject <HMFMessageReceiver, HMObjectMerge, NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
     NSUUID *_identifier;
     NSUUID *_uniqueIdentifier;
     long long _state;
@@ -24,12 +25,10 @@
     unsigned long long _downloadSize;
     _HMContext *_context;
     HMAccessory *_accessory;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly) unsigned long long downloadSize; // @synthesize downloadSize=_downloadSize;

@@ -26,6 +26,7 @@
 @property(nonatomic) double vignettingPower;
 @property(nonatomic) double bloomBlurRadius;
 @property(nonatomic) double bloomIntensity;
+@property(nonatomic) unsigned long long bloomIteration;
 @property(nonatomic) double bloomThreshold;
 @property(nonatomic) double maximumExposure;
 @property(nonatomic) double minimumExposure;

@@ -10,7 +10,7 @@
 #import "CNFRegWizardControllerDelegate.h"
 #import "IMCloudKitEventHandler.h"
 
-@class CKFilteringListController, CKNSExtension, NSString;
+@class CKFilteringListController, CKMultipleCTSubscriptionsController, CKNSExtension, IMCTXPCServiceSubscriptionInfo, NSString;
 
 @interface CKSettingsMessagesController : CNFRegListController <CNFRegWizardControllerDelegate, AKAppleIDAuthenticationDelegate, IMCloudKitEventHandler>
 {
@@ -18,6 +18,9 @@
     int _profileToken;
     CKFilteringListController *_filteringController;
     id _beginMappingID;
+    CKMultipleCTSubscriptionsController *_mmsMessagingController;
+    CKMultipleCTSubscriptionsController *_mmsAllowsGroupMessagingController;
+    IMCTXPCServiceSubscriptionInfo *_ctSubscriptionInfo;
     CKNSExtension *_ckExtension;
 }
 
@@ -25,6 +28,9 @@
 + (int)currentMessageAutoKeepOptionForType:(int)arg1;
 + (_Bool)currentMessageAutoKeepForType:(int)arg1;
 @property(retain, nonatomic) CKNSExtension *ckExtension; // @synthesize ckExtension=_ckExtension;
+@property(retain, nonatomic) IMCTXPCServiceSubscriptionInfo *ctSubscriptionInfo; // @synthesize ctSubscriptionInfo=_ctSubscriptionInfo;
+@property(retain, nonatomic) CKMultipleCTSubscriptionsController *mmsAllowsGroupMessagingController; // @synthesize mmsAllowsGroupMessagingController=_mmsAllowsGroupMessagingController;
+@property(retain, nonatomic) CKMultipleCTSubscriptionsController *mmsMessagingController; // @synthesize mmsMessagingController=_mmsMessagingController;
 @property(retain) id beginMappingID; // @synthesize beginMappingID=_beginMappingID;
 @property(retain, nonatomic) CKFilteringListController *filteringController; // @synthesize filteringController=_filteringController;
 - (void).cxx_destruct;
@@ -96,6 +102,7 @@
 - (void)setMadridEnabled:(id)arg1 specifier:(id)arg2;
 - (id)isMadridEnabled:(id)arg1;
 - (id)madridSwitchSpecifierIdentifiers;
+- (_Bool)shouldShowIDSSubscriptions;
 - (_Bool)shouldShowMadridSwitch;
 - (_Bool)_isMadridSwitchOn;
 - (_Bool)_isMadridAccountOperational;
@@ -114,6 +121,8 @@
 - (id)deliveryReceiptSpecifierIdentifiers;
 - (_Bool)shouldShowDeliveryReceipts;
 - (void)setSpecifierLoading:(id)arg1 loading:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)_setupMultipleSubscriptionsMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(_Bool)arg2;
+- (void)_setupMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(_Bool)arg2;
 - (id)specifiers;
 - (void)newCarrierNotification;
 - (_Bool)shouldReloadSpecifiersOnResume;

@@ -11,6 +11,7 @@
 @interface SHKDimAndShadowWindow : SHKBorderlessEffectWindow
 {
     BOOL animatesTransitions;
+    CALayer *groupLayer;
     CALayer *dimLayer;
     CALayer *shadowLayer;
     CALayer *shadowCenterKnockoutLayer;

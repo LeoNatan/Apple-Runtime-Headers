@@ -8,17 +8,19 @@
 
 #import "NSSecureCoding.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface PBSMediaRemoteSiriContext : NSObject <NSSecureCoding>
 {
     NSString *_sourceName;
     NSString *_requestorBundleID;
+    NSDictionary *_testingContext;
     NSString *_deviceID;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
+@property(copy, nonatomic, setter=_setTestingContext:) NSDictionary *testingContext; // @synthesize testingContext=_testingContext;
 @property(copy, nonatomic, setter=_setRequestorBundleID:) NSString *requestorBundleID; // @synthesize requestorBundleID=_requestorBundleID;
 @property(copy, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;
 - (void).cxx_destruct;

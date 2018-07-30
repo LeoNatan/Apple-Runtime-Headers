@@ -10,10 +10,11 @@
 #import "UIScrollViewDelegate.h"
 #import "_NTKFaceEditPageViewDelegate.h"
 
-@class NSMutableArray, NSString, NTKPageDotsView, PUICClientSideAnimation, UIButton, UIScrollView, UIView<NTKKeylineView>, UIViewController<NTKFaceViewCustomEditing>;
+@class CLKDevice, NSMutableArray, NSString, NTKPageDotsView, PUICClientSideAnimation, UIButton, UIScrollView, UIView<NTKKeylineView>, UIViewController<NTKFaceViewCustomEditing>;
 
 @interface NTKFaceEditView : UIView <UIScrollViewDelegate, _NTKFaceEditPageViewDelegate, NTKClockHardwareInput>
 {
+    CLKDevice *_device;
     NTKPageDotsView *_pageDots;
     UIScrollView *_pageScrollView;
     NSMutableArray *_pageViews;
@@ -28,6 +29,7 @@
     _Bool _inModalCustomEditing;
     UIButton *_customEditingCancelButton;
     UIView<NTKKeylineView> *_customEditingKeyline;
+    UIView *_backgroundFillView;
     id <NTKFaceEditViewDelegate> _delegate;
     UIButton *_customEditingConfirmButton;
 }
@@ -60,10 +62,6 @@
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)deactivateWithCompletion:(CDUnknownBlockType)arg1;
-- (void)willDeactivate;
-- (void)activate;
-- (void)willActivate;
 - (void)setForEditMode:(int)arg1 gestureDiscreteScrollHandler:(CDUnknownBlockType)arg2;
 - (void)setForEditMode:(int)arg1 gestureDidScrollHandler:(CDUnknownBlockType)arg2;
 - (void)setForEditMode:(int)arg1 gestureDidStopHandler:(CDUnknownBlockType)arg2;
@@ -71,22 +69,29 @@
 - (void)setForEditMode:(int)arg1 numberOfLisaValues:(unsigned int)arg2 currentValue:(unsigned int)arg3 valueHeight:(float)arg4;
 - (void)removeAllKeylinesForEditMode:(int)arg1;
 - (void)selectKeylineForKey:(id)arg1 editMode:(int)arg2;
+- (void)setLabelActiveAreaInsets:(struct UIEdgeInsets)arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)setLabelAlignment:(unsigned int)arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)setLabelText:(id)arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)setDeselectedKeylineFrame:(struct CGRect)arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)setSelectedKeylineFrame:(struct CGRect)arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)addKeyline:(id)arg1 forKey:(id)arg2 tappable:(_Bool)arg3 editMode:(int)arg4;
+- (void)setInfoText:(id)arg1 forEditMode:(int)arg2;
+- (void)setBackgroundFillAlpha:(float)arg1;
+- (void)deactivateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)willDeactivate;
+- (void)activate;
+- (void)willActivate;
 @property(nonatomic) int editMode;
 - (struct CGPoint)pageOffsetFromCenter:(int)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (void)_cancelCustomEditing;
 - (void)_confirmCustomEditing;
 - (void)_exitModalCustomEditing;
 - (void)_enterModalCustomEditing;
 @property(readonly, nonatomic) UIViewController<NTKFaceViewCustomEditing> *editingContentViewController;
 - (void)setEditingContentViewController:(id)arg1 forEditMode:(int)arg2;
-- (id)initWithEditModes:(id)arg1;
+- (void)dealloc;
+- (id)initWithEditModes:(id)arg1 forDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

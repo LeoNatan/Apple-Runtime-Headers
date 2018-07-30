@@ -10,11 +10,6 @@
 {
 }
 
-- (id)removeActionFromUsingActionName:(id)arg1 usingActionNumber:(long long)arg2;
-- (id)editActionOfUsingActionName:(id)arg1 usingActionNumber:(long long)arg2;
-- (id)attachedScripts;
-- (id)attachActionToUsing:(id)arg1;
-- (id)items;
 - (id)folders;
 - (id)filePackages;
 - (id)files;

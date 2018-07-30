@@ -8,17 +8,16 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface OADTableGrid : NSObject
 {
     NSMutableArray *mColumns;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)addColumn;
 - (id)columnAtIndex:(unsigned long long)arg1;
 - (unsigned long long)columnCount;
-- (void)dealloc;
 - (id)init;
 - (void)flipColumnsRTL;
 

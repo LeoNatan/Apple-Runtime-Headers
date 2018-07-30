@@ -6,19 +6,9 @@
 
 #import "NSObject.h"
 
-@class NSString, NTPBCoverArticlesConfig;
-
 @interface FCCoverArticlesConfiguration : NSObject
 {
-    NTPBCoverArticlesConfig *_coverArticlesConfig;
-    NSString *_feedID;
 }
-
-@property(readonly, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
-- (void).cxx_destruct;
-- (unsigned long long)hash;
-- (_Bool)isEqual:(id)arg1;
-- (id)initWithPBCoverArticleConfig:(id)arg1;
 
 @end
 

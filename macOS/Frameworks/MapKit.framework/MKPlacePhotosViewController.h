@@ -29,6 +29,7 @@
     unsigned long long _photosCount;
     MKMapItem *_mapItem;
     NSLayoutConstraint *_heightConstraint;
+    NSLayoutConstraint *_bottomConstraint;
     NSArray *_photos;
     unsigned long long _mode;
     unsigned long long _originalMode;

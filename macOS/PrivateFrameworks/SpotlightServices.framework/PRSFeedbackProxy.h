@@ -15,7 +15,7 @@
     PARSession *_listener;
 }
 
-@property(retain, nonatomic) PARSession *listener; // @synthesize listener=_listener;
+@property(nonatomic) __weak PARSession *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
 - (void)reportFeedback:(id)arg1 queryId:(long long)arg2;
 - (void)cardViewDidAppear:(id)arg1;

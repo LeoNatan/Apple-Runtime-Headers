@@ -15,18 +15,19 @@
 }
 
 + (_Bool)transportSupportsDevice:(id)arg1;
++ (int)priorityForMessage:(id)arg1;
 + (unsigned int)restriction;
 @property(readonly, nonatomic) HMDCompanionManager *companionManager; // @synthesize companionManager=_companionManager;
 @property(readonly, nonatomic) HMDWatchManager *watchManager; // @synthesize watchManager=_watchManager;
 - (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
-- (id)sendMessage:(id)arg1 destination:(id)arg2 timeout:(double)arg3 options:(unsigned int)arg4 error:(id *)arg5;
+- (id)sendMessage:(id)arg1 fromHandle:(id)arg2 destination:(id)arg3 priority:(int)arg4 timeout:(double)arg5 options:(unsigned int)arg6 error:(id *)arg7;
 - (_Bool)isDeviceConnected:(id)arg1;
-- (id)idsDeviceForDevice:(id)arg1;
 - (_Bool)canSendMessage:(id)arg1;
 - (int)awdTransportType;
 - (id)watchDeviceForDevice:(id)arg1;
-- (id)deviceForDestination:(id)arg1;
+- (id)deviceForHandle:(id)arg1;
+- (id)deviceForSenderContext:(id)arg1;
 - (id)remoteMessageFromMessage:(id)arg1;
 - (int)qualityOfService;
 - (_Bool)isSecure;

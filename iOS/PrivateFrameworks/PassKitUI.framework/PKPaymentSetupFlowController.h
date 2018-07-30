@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)pushQueuedCredentialViewController:(id)arg1 ontoNavigationController:(id)arg2 pruningHierarchy:(_Bool)arg3 animated:(_Bool)arg4;
 - (id)nextQueuedCredentialViewControllerWithSetupProduct:(id)arg1 allowsManualEntry:(_Bool)arg2;
-- (id)manualEntryPaymentSetupViewControllerForProduct:(id)arg1;
+- (id)manualEntryPaymentSetupViewControllerForProduct:(id)arg1 allowsSelectingBank:(_Bool)arg2;
 - (id)_paymentSetupViewControllerForAssociatedCredential:(id)arg1 product:(id)arg2 allowsManualEntry:(_Bool)arg3;
 - (id)paymentSetupViewControllerForAssociatedCredentials:(id)arg1 product:(id)arg2 allowsManualEntry:(_Bool)arg3;
 - (id)intialPaymentSetupViewControllerForMode:(long long)arg1 allowsManualEntry:(_Bool)arg2;

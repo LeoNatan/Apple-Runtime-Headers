@@ -6,43 +6,43 @@
 
 #import "NSObject.h"
 
-#import "NSISRowBody.h"
+@class NSISEngine;
 
-@class NSMutableArray, NSString;
-
-@interface NSISObjectiveLinearExpression : NSObject <NSISRowBody>
+@interface NSISObjectiveLinearExpression : NSObject
 {
+    NSISEngine *_engine;
     struct __CFDictionary *_priorityMap;
-    NSMutableArray *_variablesSortedByPriorityVectors;
+    struct __CFArray *_variablesSortedByPriorityVectors;
     struct __CFData *_constant;
 }
 
-- (void)verifyInternalIntegrity;
-- (void)leadingPriority:(double *)arg1 andValue:(double *)arg2 forVariable:(id)arg3;
-- (id)restrictedVariableWithCoefficientOfLargestNegativeMagnitude;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(CDUnknownBlockType)arg3 processVariableDroppedFromReceiver:(CDUnknownBlockType)arg4;
-- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(CDUnknownBlockType)arg4 processVariableDroppedFromReceiver:(CDUnknownBlockType)arg5;
-- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2;
-- (void)addExpression:(id)arg1 priority:(double)arg2 times:(double)arg3 processVariableNewToReceiver:(CDUnknownBlockType)arg4 processVariableDroppedFromReceiver:(CDUnknownBlockType)arg5;
-- (void)addVariable:(id)arg1 priority:(double)arg2 times:(double)arg3 processVariableNewToReceiver:(CDUnknownBlockType)arg4 processVariableDroppedFromReceiver:(CDUnknownBlockType)arg5;
-- (void)addVariable:(id)arg1 priority:(double)arg2 times:(double)arg3;
-- (void)setPriorityVector:(struct __CFData *)arg1 forKnownAbsentVariable:(id)arg2;
+- (id)restrictedVariableWithCoefficientOfLargestNegativeMagnitude;
 - (void)removeVariable:(id)arg1;
-- (struct __CFData *)priorityVectorForVariable:(id)arg1;
+- (void)addVariable:(id)arg1 priority:(double)arg2 times:(double)arg3;
+- (void)verifyInternalIntegrity;
+- (void)leadingPriority:(double *)arg1 andValue:(double *)arg2 forVar:(CDStruct_fcd6c539)arg3;
+- (BOOL)restrictedVarWithCoefficientOfLargestNegativeMagnitudeOutVar:(CDStruct_fcd6c539 *)arg1;
+- (void)replaceVar:(CDStruct_fcd6c539)arg1 withExpression:(CDStruct_9ac54d62 *)arg2 processVarNewToReceiver:(CDUnknownBlockType)arg3 processVarDroppedFromReceiver:(CDUnknownBlockType)arg4;
+- (void)replaceVar:(CDStruct_fcd6c539)arg1 withVarPlusDelta:(double)arg2 timesVar:(CDStruct_fcd6c539)arg3 processVarNewToReceiver:(CDUnknownBlockType)arg4 processVarDroppedFromReceiver:(CDUnknownBlockType)arg5;
+- (void)replaceVar:(CDStruct_fcd6c539)arg1 withVarPlusDelta:(double)arg2;
+- (void)addExpression:(CDStruct_9ac54d62 *)arg1 priority:(double)arg2 times:(double)arg3 processVarNewToReceiver:(CDUnknownBlockType)arg4 processVarDroppedFromReceiver:(CDUnknownBlockType)arg5;
+- (void)addVar:(CDStruct_fcd6c539)arg1 priority:(double)arg2 times:(double)arg3 processVarNewToReceiver:(CDUnknownBlockType)arg4 processVarDroppedFromReceiver:(CDUnknownBlockType)arg5;
+- (void)addVar:(CDStruct_fcd6c539)arg1 priority:(double)arg2 times:(double)arg3;
+- (void)setPriorityVector:(struct __CFData *)arg1 forKnownAbsentVar:(CDStruct_fcd6c539)arg2;
+- (void)removeVar:(CDStruct_fcd6c539)arg1;
+- (int)valueRestrictionForVar:(CDStruct_fcd6c539)arg1;
+- (struct __CFData *)priorityVectorForVar:(CDStruct_fcd6c539)arg1;
 - (unsigned long long)variableCount;
-- (void)enumerateVariables:(CDUnknownBlockType)arg1;
+- (void)enumerateVars:(CDUnknownBlockType)arg1;
 - (BOOL)constantTermIsZero;
 - (void)incrementConstantWithPriorityVector:(struct __CFData *)arg1 timesScalarCoefficient:(double)arg2;
 - (void)incrementConstantWithPriority:(double)arg1 value:(double)arg2;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (void)dealloc;
-- (id)initWithLinearExpression:(id)arg1 priority:(double)arg2;
+- (id)initWithLinearExpression:(CDStruct_9ac54d62 *)arg1 priority:(double)arg2 engine:(id)arg3;
+- (id)initWithEngine:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

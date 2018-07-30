@@ -38,8 +38,8 @@
 - (void)coolDown;
 - (void)warmUp;
 @property(nonatomic) unsigned long long level;
-- (void)turnFlashlightOff;
-- (void)turnFlashlightOn;
+- (void)turnFlashlightOffForReason:(id)arg1;
+- (void)turnFlashlightOnForReason:(id)arg1;
 - (id)init;
 
 @end

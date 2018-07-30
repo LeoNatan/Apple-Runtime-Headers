@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     NSString *_host;
 }
 
-+ (id)authenticationDialogConfigurationWithChallenge:(const struct AuthenticationChallenge *)arg1 currentURL:(id)arg2 shouldOfferToRemember:(BOOL)arg3;
++ (id)authenticationDialogConfigurationWithChallenge:(id)arg1 currentURL:(id)arg2 shouldOfferToRemember:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL shouldOfferToRemember; // @synthesize shouldOfferToRemember=_shouldOfferToRemember;
 @property(readonly, copy, nonatomic) NSString *host; // @synthesize host=_host;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;

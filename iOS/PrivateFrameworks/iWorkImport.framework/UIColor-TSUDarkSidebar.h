@@ -45,6 +45,9 @@
 + (id)tsu_insertPaneBackgroundColor;
 + (id)tsu_sidebarNavigationBarBackgroundColor;
 + (id)tsu_sidebarNavigationBarTintColor;
++ (id)tsu_styleUpdateButtonLightColor;
++ (id)tsu_styleUpdateButtonDarkColor;
++ (id)tsu_sidebarHighContrastBackgroundColor;
 + (id)tsu_sidebarBackgroundColor;
 + (id)tsu_sliderThumbTintColor;
 + (id)tsu_sliderMaximumTrackTintColor;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 + (id)appendSubpathToURL:(id)arg1 pathString:(id)arg2 isDirectory:(BOOL)arg3;
 + (void)showPromptForExtensionDisabledBecauseItHasRequestedAdditionalPermissions:(id)arg1 extensionIdentifier:(id)arg2;
 + (id)accessLevelStringForAccessLevel:(int)arg1;
-+ (id)userVisibleWebsiteAccessWithWebsiteAccessLevel:(int)arg1 allowedDomains:(Vector_e82a6a67)arg2 hasInjectedContent:(BOOL)arg3;
-+ (id)userVisibleWebsiteAccessWithWebsiteAccessLevel:(int)arg1 allowedDomains:(Vector_e82a6a67)arg2 allowedDomainsForHeaderInjection:(Vector_e82a6a67)arg3 hasInjectedContent:(BOOL)arg4;
++ (id)userVisibleWebsiteAccessWithWebsiteAccessLevel:(int)arg1 allowedDomains:(Vector_851fab59)arg2 hasInjectedContent:(BOOL)arg3;
++ (id)userVisibleWebsiteAccessWithWebsiteAccessLevel:(int)arg1 allowedDomains:(Vector_851fab59)arg2 allowedDomainsForHeaderInjection:(Vector_851fab59)arg3 hasInjectedContent:(BOOL)arg4;
 + (id)userVisibleWebsiteAccessForContentBlocker;
 
 @end

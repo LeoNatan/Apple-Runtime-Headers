@@ -28,6 +28,7 @@
 @property(readonly) unsigned long long hash;
 - (id)initWithImage:(id)arg1;
 - (id)_initWithImage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
 

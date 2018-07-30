@@ -15,6 +15,8 @@
 
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(getter=isTabBarEnabled) BOOL tabBarEnabled; // @dynamic tabBarEnabled;
+- (id)plusTab;
 - (void)removeWindow:(id)arg1;
 - (void)insertWindow:(id)arg1 atIndex:(long long)arg2;
 - (void)addWindow:(id)arg1;

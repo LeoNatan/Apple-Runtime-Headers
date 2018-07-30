@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)validatedLayoutForAnchoredDrawable:(id)arg1;
 - (id)validatedLayoutForInlineDrawable:(id)arg1;
 - (id)p_validatedLayoutForDrawable:(id)arg1 inContainingLayout:(id)arg2;
+- (_Bool)excludeFromNearestVisibleRectSearchForSelectionPath:(id)arg1;
 - (struct CGPoint)activityLineUnscaledEndPointForSearchReference:(id)arg1;
 - (struct CGPoint)calculatePointFromSearchReference:(id)arg1;
 - (void)addAttachmentLayout:(id)arg1;
@@ -88,7 +89,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)needsInflation;
 - (struct CGRect)p_rectForSelection:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (struct CGRect)rectForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
-- (struct CGRect)rectInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1;
+- (id)rectsInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1 attachedType:(long long)arg2;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectForSelection:(id)arg1;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;

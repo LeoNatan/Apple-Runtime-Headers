@@ -8,7 +8,6 @@
 
 @class NSColor, NSDictionary, NSMenuItem, NSPopUpButtonCell, NSTextFieldCell;
 
-__attribute__((visibility("hidden")))
 @interface ABLabelPopUpButton : NSPopUpButton
 {
     NSDictionary *mLabelAttributes;

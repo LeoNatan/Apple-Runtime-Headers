@@ -19,8 +19,6 @@
 - (id)toolTip;
 - (const struct __CFDictionary *)createDictionaryRef;
 - (void)commonInit;
-- (id)finishInitWithActionDictionary:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2;
-- (void)lazyInit;
 - (id)initWithActionDictionary:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2 forPage:(id)arg3;
 - (id)description;
 @property(copy, nonatomic) NSURL *URL;

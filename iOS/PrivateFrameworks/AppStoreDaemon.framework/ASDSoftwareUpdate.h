@@ -13,6 +13,7 @@
 
 @interface ASDSoftwareUpdate : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _downloaded;
     _Bool _perDevice;
     _Bool _profileValidated;
     NSArray *_blockedBy;
@@ -32,6 +33,7 @@
 @property(readonly, nonatomic) NSDictionary *rawUpdateDictionary; // @synthesize rawUpdateDictionary=_rawUpdateDictionary;
 @property(nonatomic, getter=isProfileValidated) _Bool profileValidated; // @synthesize profileValidated=_profileValidated;
 @property(nonatomic, getter=isPerDevice) _Bool perDevice; // @synthesize perDevice=_perDevice;
+@property(nonatomic, getter=isDownloaded) _Bool downloaded; // @synthesize downloaded=_downloaded;
 @property(copy, nonatomic) NSDate *installDate; // @synthesize installDate=_installDate;
 @property(copy, nonatomic) NSArray *blockedBy; // @synthesize blockedBy=_blockedBy;
 - (void).cxx_destruct;

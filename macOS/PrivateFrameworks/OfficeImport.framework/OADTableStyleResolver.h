@@ -8,7 +8,6 @@
 
 @class OADTable, OADTableProperties, OADTableStyle;
 
-__attribute__((visibility("hidden")))
 @interface OADTableStyleResolver : NSObject
 {
     OADTable *mTable;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct OADTFTemplateMatrix<OADStroke *> *mStrokes[2];
 }
 
+- (void).cxx_destruct;
 - (void)flatten;
 - (void)applyResolvedStyling;
 - (void)applyResolvedPartStyle:(id)arg1 leftStroke:(id)arg2 rightStroke:(id)arg3 topStroke:(id)arg4 bottomStroke:(id)arg5 toCell:(id)arg6;

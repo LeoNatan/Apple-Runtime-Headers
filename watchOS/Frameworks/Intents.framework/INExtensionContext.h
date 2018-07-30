@@ -13,6 +13,7 @@
 @interface INExtensionContext : NSExtensionContext <INExtensionContextVending>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    _Bool _isPrivateExtension;
     id <INIntentHandlerProvidingPrivate> _extensionHandler;
     id _activeHandlerForIntent;
 }
@@ -52,6 +53,8 @@
 - (oneway void)resolveIntentSlots:(id)arg1 forIntent:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) id <INIntentHandlerProvidingPrivate> _extensionHandler; // @synthesize _extensionHandler;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
+- (id)initWithInputItems:(id)arg1 extension:(id)arg2;
+- (id)initWithInputItems:(id)arg1 privateIntentHandlerProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

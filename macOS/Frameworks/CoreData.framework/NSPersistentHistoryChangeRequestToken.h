@@ -17,13 +17,19 @@ __attribute__((visibility("hidden")))
     NSDate *_date;
     long long _resultType;
     BOOL _delete;
+    BOOL _transactionFromToken;
+    unsigned long long _fetchLimit;
+    unsigned long long _fetchBatchSize;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) BOOL delete; // @synthesize delete=_delete;
-@property(readonly) long long resultType; // @synthesize resultType=_resultType;
-@property(readonly, retain) NSDate *date; // @synthesize date=_date;
-@property(readonly, retain) NSDictionary *token; // @synthesize token=_token;
+@property(readonly, nonatomic) unsigned long long fetchBatchSize; // @synthesize fetchBatchSize=_fetchBatchSize;
+@property(readonly, nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
+@property(readonly, nonatomic) BOOL transactionFromToken; // @synthesize transactionFromToken=_transactionFromToken;
+@property(readonly, nonatomic) BOOL delete; // @synthesize delete=_delete;
+@property(readonly, nonatomic) long long resultType; // @synthesize resultType=_resultType;
+@property(readonly, retain, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(readonly, retain, nonatomic) NSDictionary *token; // @synthesize token=_token;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

@@ -22,6 +22,9 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+- (void)setConversationIdentifiers:(id)arg1;
+@property(readonly, nonatomic) int conversationIdentifiersOperator;
+@property(readonly, copy, nonatomic) NSArray *conversationIdentifiers;
 - (void)setSpeakableGroupNames:(id)arg1;
 @property(readonly, nonatomic) int speakableGroupNamesOperator;
 @property(readonly, copy, nonatomic) NSArray *speakableGroupNames;
@@ -44,7 +47,10 @@
 - (void)setRecipients:(id)arg1;
 @property(readonly, nonatomic) int recipientsOperator;
 @property(readonly, copy, nonatomic) NSArray *recipients;
-- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 speakableGroupNames:(id)arg8;
+- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 speakableGroupNames:(id)arg8 conversationIdentifiers:(id)arg9;
+- (id)_categoryVerb;
+- (int)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 - (id)attributeSet;
@@ -57,6 +63,7 @@
 - (int)groupNamesOperator;
 - (void)setGroupNames:(id)arg1;
 - (id)groupNames;
+- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 speakableGroupNames:(id)arg8;
 - (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 groupNames:(id)arg8;
 
 // Remaining properties

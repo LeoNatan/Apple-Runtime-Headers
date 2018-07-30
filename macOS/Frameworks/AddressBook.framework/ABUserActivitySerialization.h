@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)phoneNumbersForPerson:(id)arg1;
-+ (id)emailAddressesForPerson:(id)arg1;
-+ (id)availableUUIDsForPerson:(id)arg1;
++ (id)distinctPhoneNumbersForPerson:(id)arg1;
++ (id)distinctEmailAddressesForPerson:(id)arg1;
++ (id)allAvailableUUIDsForPerson:(id)arg1;
 + (BOOL)isPersonACompany:(id)arg1;
 + (id)userActivityTitleWithRecords:(id)arg1;
 + (id)userActivityPayloadWithRecords:(id)arg1 shouldUnify:(BOOL)arg2;

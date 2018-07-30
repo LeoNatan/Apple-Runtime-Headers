@@ -34,12 +34,14 @@
     long long _queryID;
     NSString *_completionString;
     NSArray *_completionAttributes;
+    double _currentTime;
     // Error parsing type: T, name: _fuzzyMask
     // Error parsing type: T, name: _fuzzyMatch
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned char flags; // @synthesize flags=_flags;
+@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(retain, nonatomic) NSArray *completionAttributes; // @synthesize completionAttributes=_completionAttributes;
 @property(retain, nonatomic) NSString *completionString; // @synthesize completionString=_completionString;
 // Error parsing type for property fuzzyMatch:

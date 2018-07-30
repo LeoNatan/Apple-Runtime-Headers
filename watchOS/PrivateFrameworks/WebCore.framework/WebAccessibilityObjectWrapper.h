@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)previousMarkerForCharacterOffset:(struct CharacterOffset *)arg1;
 - (id)nextMarkerForCharacterOffset:(struct CharacterOffset *)arg1;
 - (id)textMarkerForPoint:(struct CGPoint)arg1;
-- (id)rectsForSelectionRects:(const Vector_871663bb *)arg1;
+- (id)rectsForSelectionRects:(const Vector_2a2f4e8a *)arg1;
 - (id)textRectsFromMarkers:(id)arg1 withText:(id)arg2;
 - (id)textMarkerRangeFromMarkers:(id)arg1 withText:(id)arg2;
 - (RefPtr_033e7b31)rangeFromMarkers:(id)arg1 withText:(id)arg2;
@@ -117,6 +117,7 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityLinkedElement;
 - (id)accessibilityFlowToElements;
 - (_Bool)accessibilityRequired;
+- (id)accessibilityLinkRelationshipType;
 - (_Bool)accessibilityCanSetValue;
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1;
 - (id)_accessibilityNextElementsWithCount:(unsigned long)arg1;
@@ -126,11 +127,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)containsUnnaturallySegmentedChildren;
 - (struct CGRect)accessibilityFrame;
 - (struct CGPoint)accessibilityActivationPoint;
+- (struct CGRect)accessibilityVisibleContentRect;
 - (struct CGRect)accessibilityElementRect;
 - (struct CGRect)convertRectToScreenSpace:(struct IntRect *)arg1;
 - (struct CGPoint)convertPointToScreenSpace:(struct FloatPoint *)arg1;
 - (_Bool)accessibilityScroll:(int)arg1;
 - (_Bool)_accessibilityScrollToVisible;
+- (_Bool)accessibilityPerformEscape;
 - (struct CGPoint)_accessibilityConvertPointToViewSpace:(struct CGPoint)arg1;
 - (id)accessibilityURL;
 - (id)accessibilityHint;
@@ -157,6 +160,7 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityRoleDescription;
 - (float)_accessibilityMaxValue;
 - (float)_accessibilityMinValue;
+- (_Bool)_accessibilityIsStrongPasswordField;
 - (_Bool)_accessibilityValueIsAutofilled;
 - (_Bool)_accessibilityHasTouchEventListener;
 - (_Bool)fileUploadButtonReturnsValueInTitle;

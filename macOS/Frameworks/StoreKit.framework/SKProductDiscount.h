@@ -14,13 +14,19 @@
 }
 
 - (void).cxx_destruct;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (void)_setSubscriptionPeriod:(id)arg1;
+- (void)_setPriceLocale:(id)arg1;
+- (void)_setPrice:(id)arg1;
+- (void)_setPaymentMode:(unsigned long long)arg1;
+- (void)_setNumberOfPeriods:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long paymentMode;
 @property(readonly, nonatomic) unsigned long long numberOfPeriods;
 @property(readonly, nonatomic) SKProductSubscriptionPeriod *subscriptionPeriod;
-- (void)setLocale:(id)arg1;
 @property(readonly, nonatomic) NSLocale *priceLocale;
 @property(readonly, nonatomic) NSDecimalNumber *price;
-- (id)initWithDictionary:(id)arg1;
 - (id)init;
 
 @end

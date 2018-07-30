@@ -19,12 +19,13 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned long long mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
-@property(retain, nonatomic) NSDateComponents *intervalComponents; // @synthesize intervalComponents=_intervalComponents;
+@property(copy, nonatomic) NSDateComponents *intervalComponents; // @synthesize intervalComponents=_intervalComponents;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
-@property(retain, nonatomic) NSDate *anchorDate; // @synthesize anchorDate=_anchorDate;
+@property(copy, nonatomic) NSDate *anchorDate; // @synthesize anchorDate=_anchorDate;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

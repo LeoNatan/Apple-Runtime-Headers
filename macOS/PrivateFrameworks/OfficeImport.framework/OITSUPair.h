@@ -10,7 +10,6 @@
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
 
-__attribute__((visibility("hidden")))
 @interface OITSUPair : NSObject <NSCopying, NSMutableCopying, NSCoding>
 {
     id mFirst;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;
+- (long long)compare:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

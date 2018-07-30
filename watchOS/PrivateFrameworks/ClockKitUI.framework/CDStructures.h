@@ -33,6 +33,7 @@ struct CLKUIAtlasBackingStructure {
     unsigned int planes;
     unsigned int planeLength;
     unsigned int bytesPerPixel;
+    unsigned int mipCount;
     unsigned char format;
     unsigned char filter;
     unsigned char wrap;
@@ -41,12 +42,19 @@ struct CLKUIAtlasBackingStructure {
 
 struct CLKUIGLUniforms {
     int rotation;
+    int dialRadius;
     int sampleRadius;
     int sampleCenter;
     int primaryTexture;
     int primaryTextureRect;
     int secondaryTexture;
     int secondaryTextureRect;
+    int aspect;
+};
+
+struct CLKUIQuadSize {
+    int _field1;
+    int _field2;
 };
 
 struct NSNumber {
@@ -66,4 +74,32 @@ typedef struct {
     double latitude;
     double longitude;
 } CDStruct_2c43369c;
+
+typedef struct {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    float _field7;
+    float _field8;
+    float _field9;
+    float _field10;
+    float _field11;
+    float _field12;
+    float _field13;
+    float _field14;
+    float _field15;
+    float _field16;
+    float _field17;
+    float _field18;
+    float _field19;
+    float _field20;
+    float _field21;
+    float _field22;
+    float _field23;
+    float _field24;
+    float _field25;
+} CDStruct_b122c5d1;
 

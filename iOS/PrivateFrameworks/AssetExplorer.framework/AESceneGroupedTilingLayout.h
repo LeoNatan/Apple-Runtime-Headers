@@ -8,13 +8,13 @@
 
 @class AEProgressViewModelSnapshot;
 
+__attribute__((visibility("hidden")))
 @interface AESceneGroupedTilingLayout : PXAssetsTilingLayout
 {
     struct CGRect *_sectionBounds;
-    long long _contentGridColumns;
     struct CGRect _cachedCameraTileFrame;
     struct CGSize _cachedGradientOverlaySize;
-    _Bool _isPortraitOrientation;
+    _Bool _portraitOrientation;
     AEProgressViewModelSnapshot *_progressSnapshot;
     id <AEBrowserLayoutDelegate> _delegate;
     long long _layoutStyle;
@@ -24,7 +24,7 @@
 
 @property(readonly, nonatomic) id <AETileLayoutInfo> _gradientTileLayoutInfo; // @synthesize _gradientTileLayoutInfo=__gradientTileLayoutInfo;
 @property(readonly, nonatomic) id <AETileLayoutInfo> _cameraTileLayoutInfo; // @synthesize _cameraTileLayoutInfo=__cameraTileLayoutInfo;
-@property(nonatomic, setter=setIsPotraitOrientaion:) _Bool isPortraitOrientation; // @synthesize isPortraitOrientation=_isPortraitOrientation;
+@property(nonatomic, getter=isPortraitOrientation) _Bool portraitOrientation; // @synthesize portraitOrientation=_portraitOrientation;
 @property(readonly, nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) __weak id <AEBrowserLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AEProgressViewModelSnapshot *progressSnapshot; // @synthesize progressSnapshot=_progressSnapshot;

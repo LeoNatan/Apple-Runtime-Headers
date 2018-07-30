@@ -11,7 +11,7 @@
 @interface NSXPCConnection (TUCallServicesAdditions)
 + (id)callServicesClientXPCInterface;
 + (id)callServicesDaemonDelegateXPCInterface;
-@property(readonly, nonatomic) NSString *processBundleIdentifier;
-@property(readonly, nonatomic) NSString *processName;
+@property(readonly, copy, nonatomic) NSString *processBundleIdentifier;
+@property(readonly, copy, nonatomic) NSString *processName;
 @end
 

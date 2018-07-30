@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface VSAudioPreviewDelegate : NSObject <AVAudioPlayerDelegate>
 {
     CDUnknownBlockType _completion;

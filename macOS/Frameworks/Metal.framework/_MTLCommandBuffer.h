@@ -16,6 +16,8 @@
     struct MTLDispatch *_scheduledDispatchListTail;
     struct MTLDispatch *_completedDispatchList;
     struct MTLDispatch *_completedDispatchListTail;
+    struct MTLSyncDispatch *_syncDispatchList;
+    struct MTLSyncDispatch *_syncDispatchListTail;
     struct _opaque_pthread_mutex_t _mutex;
     struct _opaque_pthread_cond_t {
         long long __sig;
@@ -53,6 +55,8 @@
     _MTLCommandBuffer<MTLCommandBuffer> *_statCommandBuffer;
     struct os_unfair_lock_s _sampleLock;
     BOOL _ownedByParallelEncoder;
+    BOOL _wakeOnCommit;
+    NSMutableArray *_retainedObjects;
     unsigned long long _globalTraceObjectID;
     unsigned long long _labelTraceID;
     BOOL _StatEnabled;
@@ -84,6 +88,10 @@
 @property(readonly) BOOL synchronousDebugMode; // @synthesize synchronousDebugMode=_synchronousDebugMode;
 @property(readonly) BOOL retainedReferences; // @synthesize retainedReferences=_retainedReferences;
 @property(copy) NSString *label; // @synthesize label=_label;
+- (id)computeCommandEncoderWithDispatchType:(unsigned long long)arg1;
+- (void)executeSynchronizationNotifications:(int)arg1 scope:(unsigned long long)arg2 resources:(const id *)arg3 count:(unsigned long long)arg4;
+- (void)executeSynchronizationNotifications:(int)arg1;
+- (void)addSynchronizationNotification:(CDUnknownBlockType)arg1;
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;
 @property(readonly, nonatomic) double GPUEndTime;
@@ -100,6 +108,7 @@
 - (void)setCurrentCommandEncoder:(id)arg1;
 - (BOOL)skipRender;
 - (void)kernelSubmitTime;
+- (void)_addRetainedObject:(id)arg1;
 - (void)didCompleteWithStartTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 error:(id)arg3;
 - (void)runPerfCounterCallbackWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *userDictionary;
@@ -114,6 +123,7 @@
 - (void)presentDrawable:(id)arg1;
 - (void)addScheduledHandler:(CDUnknownBlockType)arg1;
 - (void)commitAndReset;
+- (BOOL)commitAndWaitUntilSubmitted;
 - (void)commitAndHold;
 - (void)commit;
 - (void)enqueue;

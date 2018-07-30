@@ -14,10 +14,6 @@
 
 @interface _CPCustomFeedback : PBCodable <_CPProcessableFeedback, _CPCustomFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int feedbackType:1;
-    } _has;
     int _feedbackType;
     unsigned long long _timestamp;
     NSData *_jsonFeedback;
@@ -35,9 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasFeedbackType;
-@property(readonly, nonatomic) BOOL hasJsonFeedback;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

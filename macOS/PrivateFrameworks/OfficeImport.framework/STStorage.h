@@ -6,7 +6,6 @@
 
 #import <OfficeImport/STSStgObject.h>
 
-__attribute__((visibility("hidden")))
 @interface STStorage : STSStgObject
 {
     struct _Storage *m_pCStorage;

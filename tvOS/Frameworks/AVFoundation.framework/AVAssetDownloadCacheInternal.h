@@ -8,6 +8,7 @@
 
 @class AVAsset;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetDownloadCacheInternal : NSObject
 {
     AVAsset *asset;

@@ -32,16 +32,16 @@
 - (_Bool)isEnabled;
 - (id)newAssetFetchOptions;
 - (void)cooldown;
-- (void)startup;
 - (id)sceneTaxonomyHash;
 - (void)performSceneClassificationOnAssetWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)localizedLabelForSceneIdentifier:(unsigned int)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)searchResultNodesForSceneIdentifiers:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)searchResultNodesForSceneClassifications:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)sceneNodesForSceneIdentifiers:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)configureRequest:(id)arg1 algorithmUmbrellaVersion:(unsigned int)arg2;
 - (id)_performAnalysisOfAssetResource:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3;
 - (id)_performAndPersistAnalysisWithHandler:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3;
-- (id)_performAndPersistAnalysisOfImageData:(id)arg1 withOrientation:(unsigned long long)arg2 withAttributes:(id)arg3 forAsset:(id)arg4;
+- (id)_performAndPersistAnalysisOfImageData:(id)arg1 withOrientation:(unsigned int)arg2 withAttributes:(id)arg3 forAsset:(id)arg4;
 - (id)_performAndPersistAnalysisOfImageFileAtURL:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3;
 - (id)_computeImageprintForAsset:(id)arg1 usingRequestHandler:(id)arg2 error:(id *)arg3;
 - (id)_performSceneClassificationOfAsset:(id)arg1 usingRequestHandler:(id)arg2;
@@ -49,6 +49,7 @@
 - (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
 - (struct CGImage *)_newCGImageRefForAssetResourceFileURL:(id)arg1 orientation:(unsigned long long *)arg2 error:(id *)arg3;
 - (_Bool)_reclassificationOfSceneNeededForAsset:(id)arg1;
+- (void)pingSceneWorkerWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)initWithPhotoAnalysisManager:(id)arg1 dataLoader:(id)arg2;
 
 @end

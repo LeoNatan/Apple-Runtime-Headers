@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSSet, NSTouchDevice;
 
+__attribute__((visibility("hidden")))
 @interface NSEventAuxiliary : NSObject
 {
     NSSet *touches;

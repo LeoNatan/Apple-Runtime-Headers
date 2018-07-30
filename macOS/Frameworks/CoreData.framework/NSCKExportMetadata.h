@@ -4,21 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <CoreData/NSManagedObject.h>
 
-@class NSDate, NSSet, NSUUID;
+@class NSDate, NSPersistentHistoryToken, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface NSCKExportMetadata : NSObject
+@interface NSCKExportMetadata : NSManagedObject
 {
-    NSDate *_exportedAt;
-    NSUUID *_exportUUID;
-    NSSet *_operations;
 }
 
-@property(readonly, nonatomic) NSSet *operations; // @synthesize operations=_operations;
-@property(readonly, nonatomic) NSUUID *exportUUID; // @synthesize exportUUID=_exportUUID;
-@property(readonly, nonatomic) NSDate *exportedAt; // @synthesize exportedAt=_exportedAt;
 
+// Remaining properties
+@property(retain, nonatomic) NSDate *exportedAt; // @dynamic exportedAt;
+@property(retain, nonatomic) NSPersistentHistoryToken *historyToken; // @dynamic historyToken;
+@property(retain, nonatomic) NSString *identifier; // @dynamic identifier;
+@property(retain, nonatomic) NSSet *operations; // @dynamic operations;
 @end
 

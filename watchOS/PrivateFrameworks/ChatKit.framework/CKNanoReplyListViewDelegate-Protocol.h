@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class CKNanoReplyListView, NSString, UIView;
+@class CKNanoReplyListView, NSNumber, NSString, UIView;
 
 @protocol CKNanoReplyListViewDelegate <NSObject>
+@property(copy, nonatomic) NSNumber *messageItemListNumber;
 - (void)replyListView:(CKNanoReplyListView *)arg1 tappedTextReply:(NSString *)arg2 view:(UIView *)arg3;
 @end
 

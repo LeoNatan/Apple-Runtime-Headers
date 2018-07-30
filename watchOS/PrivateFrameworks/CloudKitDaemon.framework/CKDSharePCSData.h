@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned int _serviceType;
     NSString *_shareEtag;
     int _publicPermission;
-    int _myParticipantType;
+    int _myParticipantRole;
     int _myParticipantPermission;
     struct _OpaquePCSShareProtection *_myParticipantPCS;
     NSData *_myParticipantPCSData;
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSData *myParticipantPCSData; // @synthesize myParticipantPCSData=_myParticipantPCSData;
 @property(nonatomic) struct _OpaquePCSShareProtection *myParticipantPCS; // @synthesize myParticipantPCS=_myParticipantPCS;
 @property(nonatomic) int myParticipantPermission; // @synthesize myParticipantPermission=_myParticipantPermission;
-@property(nonatomic) int myParticipantType; // @synthesize myParticipantType=_myParticipantType;
+@property(nonatomic) int myParticipantRole; // @synthesize myParticipantRole=_myParticipantRole;
 @property(nonatomic) int publicPermission; // @synthesize publicPermission=_publicPermission;
 @property(retain, nonatomic) NSString *shareEtag; // @synthesize shareEtag=_shareEtag;
 @property(nonatomic) unsigned int serviceType; // @synthesize serviceType=_serviceType;

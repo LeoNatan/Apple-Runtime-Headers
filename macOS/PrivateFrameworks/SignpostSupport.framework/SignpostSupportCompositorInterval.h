@@ -28,6 +28,8 @@
 - (BOOL)isEqualToSignpostSupportCompositorInterval:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithStartContinuousTime:(unsigned long long)arg1 endContinuousTime:(unsigned long long)arg2 contributingPids:(id)arg3;
+- (id)humanReadableDictionaryRepresentation;
+- (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;
 - (id)serializeableDictionary;
 

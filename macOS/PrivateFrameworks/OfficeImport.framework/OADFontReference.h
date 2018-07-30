@@ -10,13 +10,13 @@
 
 @class OADColor;
 
-__attribute__((visibility("hidden")))
 @interface OADFontReference : NSObject <NSCopying>
 {
     int mIndex;
     OADColor *mColor;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)applyToParagraphProperties:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)color;
 - (void)setIndex:(int)arg1;
 - (int)index;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

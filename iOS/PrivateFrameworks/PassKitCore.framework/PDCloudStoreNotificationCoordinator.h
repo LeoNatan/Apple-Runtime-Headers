@@ -6,33 +6,39 @@
 
 #import "NSObject.h"
 
-#import "PDCloudStoreManagerDelegate.h"
+#import "PDCloudStoreContainerDelegate.h"
 #import "PDPushNotificationConsumer.h"
 #import "PDScheduledActivityClient.h"
+#import "PKCloudStoreCoordinatorDelegate.h"
 
-@class CKServerChangeToken, NSHashTable, NSObject<OS_dispatch_queue>, NSSet, NSString, PDCloudStoreManager, PDPushNotificationManager, PKPaymentTransactionProcessor;
+@class NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, PDApplePayCloudStoreContainer, PDPassCloudStoreContainer, PDPushNotificationManager;
 
-@interface PDCloudStoreNotificationCoordinator : NSObject <PDPushNotificationConsumer, PDCloudStoreManagerDelegate, PDScheduledActivityClient>
+@interface PDCloudStoreNotificationCoordinator : NSObject <PDPushNotificationConsumer, PDCloudStoreContainerDelegate, PDScheduledActivityClient, PKCloudStoreCoordinatorDelegate>
 {
     NSHashTable *_observers;
     PDPushNotificationManager *_pushNotificationManager;
-    id <PDCloudStoreDataSource> _cloudStoreDataSource;
-    PKPaymentTransactionProcessor *_transactionProcessor;
-    PDCloudStoreManager *_cloudStoreManager;
-    CKServerChangeToken *_currentServerChangeToken;
     NSObject<OS_dispatch_queue> *_workQueue;
-    NSObject<OS_dispatch_queue> *_proactiveFetchQueue;
     NSSet *_pushTopics;
-    _Bool _isProcessingCloudStorePushNotification;
-    _Bool _shouldProcessCloudStoreNotification;
+    NSMutableArray *_containers;
+    NSMutableDictionary *_containersCurrentlyProcessingPushNotifications;
+    NSMutableDictionary *_containersThatShouldProcessPushNotifications;
+    PDApplePayCloudStoreContainer *_applePayContainer;
+    PDPassCloudStoreContainer *_passContainer;
 }
 
++ (void)invalidateServerChangeTokens;
 + (_Bool)canInitalizeCloudStoreWithWebService:(id)arg1;
+@property(retain, nonatomic) PDPassCloudStoreContainer *passContainer; // @synthesize passContainer=_passContainer;
+@property(retain, nonatomic) PDApplePayCloudStoreContainer *applePayContainer; // @synthesize applePayContainer=_applePayContainer;
 - (void).cxx_destruct;
 - (void)_unregisterForPushNotifications;
 - (void)_registerForPushNotifications;
+- (id)_containerForItemType:(unsigned long long)arg1;
+- (id)_errorWithCode:(long long)arg1 description:(id)arg2;
+- (id)_containerWithIdentifier:(id)arg1;
+- (id)_containerWithZoneName:(id)arg1;
 - (void)applyPushNotificationToken:(id)arg1;
-- (void)_processCloudStorePushNotification;
+- (void)_processCloudStorePushNotificationForContainer:(id)arg1;
 - (void)handlePushNotificationForTopic:(id)arg1 userInfo:(id)arg2;
 - (id)pushNotificationTopics;
 - (void)_unscheduleBackgroundContainerSetupActivities;
@@ -44,34 +50,29 @@
 - (void)_scheduleCloudStoreContainerSetupBackgroundActivityWithNextInterval:(unsigned long long)arg1;
 - (void)_performCloudStoreContainerInitalizationBackgroundActivityWithCurrentInterval:(unsigned long long)arg1 nextBackgroundInterval:(unsigned long long)arg2;
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
-- (_Bool)canSyncTransactionFromCloudKitForPassUniqueIdentifier:(id)arg1;
-- (_Bool)canSyncTransactionToCloudKitWithBackingData:(_Bool)arg1 passUniqueIdentifier:(id)arg2 serviceIdentifier:(id)arg3;
-- (void)simulateCloudStorePushWithCompletion:(CDUnknownBlockType)arg1;
-- (void)resetContainerWithHandler:(CDUnknownBlockType)arg1;
-- (void)allItemsOfClassType:(Class)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)invalidateCloudStore;
-- (void)initalizeCloudStoreIfNecessaryWithHandler:(CDUnknownBlockType)arg1;
-- (id)cloudStoreSpecificKeysForItem:(id)arg1;
-- (void)requestUpdatesForPassUniqueIdenitifer:(id)arg1;
-- (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchAndStoreChangesWithCompletion:(CDUnknownBlockType)arg1;
-- (void)removeItemsWithRecordNames:(id)arg1 itemClass:(Class)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)noteCloudSyncPassesSwitchChanged;
 - (void)resetApplePayManateeViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkTLKsMissingWithCompletion:(CDUnknownBlockType)arg1;
-- (void)cloudStoreStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
-- (void)cloudStoreManagerShouldUnscheduleAllBackgroundActivities:(id)arg1;
-- (void)cloudStoreManager:(id)arg1 didChangeContainerState:(unsigned long long)arg2;
-- (void)cloudStoreManager:(id)arg1 createdZoneWithName:(id)arg2;
-- (void)_cloudStoreInitializationAndShouldTryToScheudleBackgroundActivities:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_cloudStoreInitializationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)cloudStoreContainerShouldUnscheduleAllBackgroundActivities:(id)arg1;
+- (void)cloudStoreContainer:(id)arg1 didChangeContainerState:(unsigned long long)arg2;
+- (void)cloudStoreContainer:(id)arg1 createdZoneWithName:(id)arg2;
+- (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)simulateCloudStorePushForContainerIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)resetContainerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)cloudStoreSpecificKeysForItem:(id)arg1;
+- (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)cloudStoreStatusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_initialCloudDatabaseSetupForContainer:(id)arg1 shouldScheduleBackgroundActivity:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_initialCloudDatabaseSetupForContainer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)initWithPushNotificationManager:(id)arg1;
+- (void)removeItemsWithRecordNames:(id)arg1 itemClass:(Class)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)canSyncTransactionFromCloudKitForPassUniqueIdentifier:(id)arg1;
+- (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithPushNotificationManager:(id)arg1 dataSource:(id)arg2 transactionProcessor:(id)arg3 initalizeCloudStoreManager:(_Bool)arg4;
-- (id)initWithPushNotificationManager:(id)arg1 dataSource:(id)arg2 transactionProcessor:(id)arg3;
-- (void)resetContainerWithCompletion:(CDUnknownBlockType)arg1;
-- (void)initalizeCloudStoreIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithPushNotificationManager:(id)arg1 dataSource:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

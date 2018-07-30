@@ -16,17 +16,17 @@
 {
     PKPassView *_passView;
     PKPassFooterContentView *_contentView;
-    PKPaymentSessionHandle *_sessionHandle;
     NSObject<OS_dispatch_source> *_sessionStartTimer;
     int _paymentApplicationState;
     _Bool _isBackgrounded;
     _Bool _isAssistantActive;
     _Bool _acquiringSession;
     unsigned int _sessionToken;
+    NSObject<OS_dispatch_group> *_sessionDelayGroup;
+    PKPaymentSessionHandle *_sessionHandle;
     _Bool _invalidated;
     unsigned char _visibility;
     unsigned char _contentViewVisibility;
-    NSObject<OS_dispatch_group> *_sessionDelayGroup;
     int _state;
     id <PKPassFooterViewDelegate> _delegate;
 }
@@ -46,14 +46,16 @@
 - (void)_setContentView:(id)arg1 animated:(_Bool)arg2;
 - (void)_configureForValueAddedServiceWithContext:(id)arg1;
 - (void)_configureForPersonalizedPaymentApplicationWithContext:(id)arg1;
-- (void)_acquireContactlessInterfaceSessionWithHandler:(CDUnknownBlockType)arg1;
-- (void)_startContactlessInterfaceSessionWithSessionAvailable:(CDUnknownBlockType)arg1 sessionUnavailable:(CDUnknownBlockType)arg2;
+- (void)_acquireContactlessInterfaceSessionWithSessionToken:(unsigned int)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_startContactlessInterfaceSessionWithContext:(id)arg1 sessionAvailable:(CDUnknownBlockType)arg2 sessionUnavailable:(CDUnknownBlockType)arg3;
 - (id)_contentViewForPaymentApplicationWithContext:(id)arg1;
 - (void)_configureForState:(int)arg1 context:(id)arg2 passView:(id)arg3;
-- (void)foregroundActiveArbiter:(id)arg1 didUpdateDeactivationReasons:(unsigned int)arg2;
-- (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)_updateForNonForegroundActivePresentationAnimated:(_Bool)arg1;
 - (void)_updateForForegroundActivePresentationIfNecessaryAnimated:(_Bool)arg1;
+- (unsigned int)suppressedContentForContentView:(id)arg1;
+- (_Bool)isPassFooterContentViewInGroup:(id)arg1;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateDeactivationReasons:(unsigned int)arg2;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)passFooterContentViewDidEndAuthenticating:(id)arg1;
 - (void)passFooterContentViewDidBeginAuthenticating:(id)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(id)arg1;

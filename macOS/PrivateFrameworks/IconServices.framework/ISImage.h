@@ -6,24 +6,32 @@
 
 #import "NSObject.h"
 
-@class NSData;
+@class NSUUID;
 
 @interface ISImage : NSObject
 {
-    NSData *_data;
+    struct CGImage *_CGImage;
+    NSUUID *_uuid;
+    struct CGSize _size;
+    double _scale;
+    BOOL _placeholder;
 }
 
-+ (struct CGImage *)newCGImageWithDataSource:(id)arg1;
-+ (struct CGImage *)newCGImageWithCacheFileURL:(id)arg1;
 + (struct CGColorSpace *)defaultCGColorSpace;
 + (id)imageDestinationPropertiesForScale:(unsigned int)arg1;
 + (BOOL)writeCGImage:(struct CGImage *)arg1 toURL:(id)arg2;
++ (struct CGImage *)newCGImageWithDataSource:(id)arg1;
++ (struct CGImage *)newCGImageWithCacheFileURL:(id)arg1;
++ (struct CGImage *)newCGImageWithContentsOfURL:(id)arg1;
+@property(readonly) BOOL placeholder; // @synthesize placeholder=_placeholder;
+@property(readonly) double scale; // @synthesize scale=_scale;
+@property(readonly) struct CGSize size; // @synthesize size=_size;
+@property(readonly) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;
+@property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
-- (struct CGImageBlockSet *)copyCGImageBlockSetWithProvider:(struct CGImageProvider *)arg1;
-- (void)_getImageBuffer:(void **)arg1 size:(unsigned long long *)arg2;
-- (CDStruct_9d4bab76 *)_header;
-@property(readonly) BOOL hasData; // @dynamic hasData;
-- (id)initWithData:(id)arg1;
+- (void)dealloc;
+- (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2;
+- (id)initWithData:(id)arg1 uuid:(id)arg2;
 
 @end
 

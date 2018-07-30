@@ -10,20 +10,16 @@
 #import "WBSPerSitePreferenceManagerDefaultsDelegate.h"
 #import "WBSPerSitePreferenceManagerStorageDelegate.h"
 
-@class NSString, WBSPerSitePreference, WBSPerSitePreferenceValue, WBSPerSitePreferencesSQLiteStore;
+@class NSString, WBSPerSitePreference, WBSPerSitePreferencesSQLiteStore;
 
 @interface WBSAutomaticReaderActivationManager : WBSPerSitePreferenceManager <WBSPerSitePreferenceManagerStorageDelegate, WBSPerSitePreferenceManagerDefaultsDelegate, WBSPerSitePreferenceBinaryToggleItemManager>
 {
     WBSPerSitePreferencesSQLiteStore *_perSitePreferencesStore;
-    WBSPerSitePreferenceValue *_doNotAutomaticallyEnableReaderOnLoad;
-    WBSPerSitePreferenceValue *_automaticallyEnableReaderOnLoad;
     WBSPerSitePreference *_readerPreference;
 }
 
 @property(readonly, nonatomic) WBSPerSitePreference *readerPreference; // @synthesize readerPreference=_readerPreference;
 - (void).cxx_destruct;
-- (id)_defaultPreferenceValue;
-- (id)_perSitePreferenceValue:(_Bool)arg1;
 - (void)_submitOptInOutStateForAnalyticsGivenAutomaticReaderIsNotGloballyEnabled;
 - (void)submitOptInOutStateForAnalytics;
 - (void)setAutomaticReaderEnabledByDefault:(_Bool)arg1 removingExistingPreferencesForSites:(_Bool)arg2;
@@ -37,6 +33,7 @@
 - (long long)preferencesStoreKeyForPreference:(id)arg1;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;
 - (void)didUpdatePreference:(id)arg1 toValue:(id)arg2 forDomain:(id)arg3;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
 - (id)initWithPerSitePreferencesStore:(id)arg1;

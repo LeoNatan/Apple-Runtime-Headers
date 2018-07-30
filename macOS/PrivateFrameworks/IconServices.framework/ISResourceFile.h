@@ -6,18 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSURL;
+@class NSData, NSURL;
 
 @interface ISResourceFile : NSObject
 {
-    struct OpaqueResourceFileRef *_resourceFileRef;
+    NSData *_resourceFileData;
+    struct OpaqueMappedResourceFileRef *_resourceFileRef;
     NSURL *_url;
-    int _status;
 }
 
-@property int status; // @synthesize status=_status;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-@property struct OpaqueResourceFileRef *resourceFileRef; // @synthesize resourceFileRef=_resourceFileRef;
+@property struct OpaqueMappedResourceFileRef *resourceFileRef; // @synthesize resourceFileRef=_resourceFileRef;
+@property(retain) NSData *resourceFileData; // @synthesize resourceFileData=_resourceFileData;
 - (void).cxx_destruct;
 - (id)resourcesForType:(unsigned int)arg1;
 - (id)resourceForType:(unsigned int)arg1 resID:(short)arg2;

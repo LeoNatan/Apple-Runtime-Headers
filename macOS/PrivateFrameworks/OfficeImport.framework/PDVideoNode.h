@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PDMediaNode.h>
 
-__attribute__((visibility("hidden")))
 @interface PDVideoNode : PDMediaNode
 {
     BOOL mIsFullScreen;

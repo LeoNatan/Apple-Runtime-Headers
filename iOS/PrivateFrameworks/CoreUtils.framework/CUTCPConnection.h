@@ -29,15 +29,14 @@
     unsigned long long _ifExtendedFlags;
     unsigned int _ifFlags;
     unsigned int _ifIndex;
-    unsigned char _ifMACAddress[6];
     unsigned int _ifMedia;
     char _ifName[17];
-    unsigned int _ifTransportType;
     CDUnion_fab80606 _peerAddr;
     CDUnion_fab80606 _selfAddr;
     int _defaultPort;
     unsigned int _flags;
     int _keepAliveSeconds;
+    unsigned int _netTransportType;
     int _socketFD;
     double _connectTimeoutSecs;
     double _dataTimeoutSecs;
@@ -53,6 +52,7 @@
 
 @property(copy, nonatomic) CDUnknownBlockType serverInvalidationHandler; // @synthesize serverInvalidationHandler=_serverInvalidationHandler;
 @property(nonatomic) int socketFD; // @synthesize socketFD=_socketFD;
+@property(readonly, nonatomic) unsigned int netTransportType; // @synthesize netTransportType=_netTransportType;
 @property(retain, nonatomic) CUNetLinkManager *netLinkManager; // @synthesize netLinkManager=_netLinkManager;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) int keepAliveSeconds; // @synthesize keepAliveSeconds=_keepAliveSeconds;

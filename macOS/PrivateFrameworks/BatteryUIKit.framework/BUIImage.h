@@ -36,6 +36,7 @@
 @property(retain) NSImage *splitBatteryHeadImage; // @synthesize splitBatteryHeadImage=_splitBatteryHeadImage;
 @property(retain) NSImage *splitBatteryEndImage; // @synthesize splitBatteryEndImage=_splitBatteryEndImage;
 - (void).cxx_destruct;
+- (id)tintImage:(id)arg1 withColor:(id)arg2;
 - (id)_imagesForBattery:(id)arg1;
 @property(readonly) NSImage *batteryChimeFill;
 @property(readonly) NSImage *batteryChimeOutline;

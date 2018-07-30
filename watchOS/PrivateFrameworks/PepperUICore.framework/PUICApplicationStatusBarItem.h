@@ -52,6 +52,9 @@
 - (_Bool)_isTitleInteractive:(_Bool)arg1;
 - (_Bool)statusBarAppContextIsTitleInteractive;
 @property(nonatomic, getter=isTitleInteractive) _Bool titleInteractive;
+- (float)_inset:(_Bool)arg1;
+- (float)statusBarAppContextTitleInset;
+@property(nonatomic) float inset;
 - (float)_titleBaseLine:(_Bool)arg1;
 - (float)statusBarAppContextTitleBaseLine;
 @property(nonatomic) float titleBaseLine;

@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSObject<OS_dispatch_queue>;
+#import "AXIDCManagerSecurityDelegate.h"
 
-@interface AXHASecurityHelper : NSObject
+@class NSArray, NSObject<OS_dispatch_queue>, NSString;
+
+@interface AXHASecurityHelper : NSObject <AXIDCManagerSecurityDelegate>
 {
     struct OpaqueSecIdentityRef *_appleIDIdentity;
     NSObject<OS_dispatch_queue> *_securityQueue;
@@ -28,6 +30,12 @@
 - (void)appleIDDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -18,6 +18,7 @@
 @property(retain, nonatomic) TIKeyboardSecureCandidateRenderer *secureCandidateRenderer; // @synthesize secureCandidateRenderer=_secureCandidateRenderer;
 @property(readonly, nonatomic) _Bool hasHandledInput; // @synthesize hasHandledInput=_hasHandledInput;
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
+- (void).cxx_destruct;
 - (long long)deletionCountForString:(id)arg1;
 - (void)lastAcceptedCandidateCorrected;
 - (void)candidateRejected:(id)arg1;
@@ -31,17 +32,15 @@
 - (id)generateReplacementsForString:(id)arg1 keyLayout:(id)arg2;
 - (id)handleAcceptedCandidate:(id)arg1 keyboardState:(id)arg2;
 - (void)generateCandidatesWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)generateAutocorrectionsWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)generateAutocorrectionsWithKeyboardState:(id)arg1;
+- (void)generateAutocorrectionsWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange)arg2 candidateHandler:(id)arg3;
 - (id)handleKeyboardInput:(id)arg1;
 - (id)keyboardConfiguration;
 - (void)syncToKeyboardState:(id)arg1;
 - (void)resume;
 - (void)suspend;
 @property(readonly, nonatomic) NSString *currentInputModeIdentifier;
-- (id)initWithInputMode:(id)arg1;
+- (id)initWithInputMode:(id)arg1 keyboardState:(id)arg2;
 - (id)init;
-- (void)dealloc;
 - (id)configurationPropertyList;
 - (void)storeLanguageModelDynamicDataIncludingCache;
 - (void)clearHumanReadableTrace;

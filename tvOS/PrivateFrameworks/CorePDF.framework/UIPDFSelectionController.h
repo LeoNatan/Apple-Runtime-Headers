@@ -8,6 +8,7 @@
 
 @class UIPDFPageView;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFSelectionController : NSObject
 {
     UIPDFPageView *_pageView;

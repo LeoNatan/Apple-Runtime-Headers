@@ -25,6 +25,11 @@
 @property __weak PLStorageOperator *storageOperator; // @synthesize storageOperator=_storageOperator;
 - (void).cxx_destruct;
 - (void)logTimeEntry;
+- (int)bucketTimeStampForDate:(id)arg1 withTimeReference:(long long)arg2 withBucketInterval:(int)arg3;
+- (double)hourBucketBaseSnapOffsetWithMonotonicTime:(long long)arg1;
+- (double)timeZoneHourBucketShift:(double)arg1;
+- (double)hourBucketBaseSnapOffsetWithMonotonicTimeNow:(long long)arg1;
+- (id)bucketNSDate:(id)arg1 withBucketInterval:(int)arg2;
 - (void)unregisterForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(long long)arg2;
 - (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)convertTime:(id)arg1 fromTimeReference:(long long)arg2 toTimeReference:(long long)arg3;

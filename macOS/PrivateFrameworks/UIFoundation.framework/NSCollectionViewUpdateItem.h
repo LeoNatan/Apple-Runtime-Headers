@@ -17,9 +17,9 @@
     id _reserved[11];
 }
 
-@property(readonly, nonatomic) long long updateAction; // @synthesize updateAction=_updateAction;
-@property(readonly, nonatomic) NSIndexPath *indexPathAfterUpdate; // @synthesize indexPathAfterUpdate=_finalIndexPath;
-@property(readonly, nonatomic) NSIndexPath *indexPathBeforeUpdate; // @synthesize indexPathBeforeUpdate=_initialIndexPath;
+@property(readonly) long long updateAction; // @synthesize updateAction=_updateAction;
+@property(readonly) NSIndexPath *indexPathAfterUpdate; // @synthesize indexPathAfterUpdate=_finalIndexPath;
+@property(readonly) NSIndexPath *indexPathBeforeUpdate; // @synthesize indexPathBeforeUpdate=_initialIndexPath;
 - (void).cxx_destruct;
 - (long long)inverseCompareIndexPaths:(id)arg1;
 - (long long)compareIndexPaths:(id)arg1;

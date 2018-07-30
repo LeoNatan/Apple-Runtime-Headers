@@ -8,7 +8,7 @@
 
 #import "PARSessionDelegate.h"
 
-@class NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSSet, NSString, PARSession, PRSFeedbackProxy, PRSRankingServerKnobs, SSPlistDataReader;
+@class NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSSet, NSString, PARSession, PRSFeedbackProxy, PRSRankingServerKnobs, SSPlistDataReader;
 
 @interface PRSSearchSession : NSObject <PARSessionDelegate>
 {
@@ -19,13 +19,15 @@
     NSDictionary *_sqfData;
     NSDictionary *_serverFeatures;
     NSString *_userAgent;
+    _Bool _parsecFeedbackAllowed;
     PRSFeedbackProxy *_listener;
+    BOOL _configuredSession;
     NSObject<OS_dispatch_queue> *_clientQueue;
     double _sessionStartTime;
     NSArray *_supportedServices;
     NSString *_modelL2Version;
-    NSString *_modelL3Version;
     PARSession *_session;
+    NSObject<OS_dispatch_source> *_quiescenceTimer;
     double _retryAfter;
 }
 
@@ -33,9 +35,10 @@
 + (id)currentKeyboardLayout;
 + (void)initialize;
 @property double retryAfter; // @synthesize retryAfter=_retryAfter;
+@property(retain) NSObject<OS_dispatch_source> *quiescenceTimer; // @synthesize quiescenceTimer=_quiescenceTimer;
+@property BOOL configuredSession; // @synthesize configuredSession=_configuredSession;
 @property(retain) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(retain) PARSession *session; // @synthesize session=_session;
-@property(readonly, nonatomic) NSString *modelL3Version; // @synthesize modelL3Version=_modelL3Version;
 @property(readonly, nonatomic) NSString *modelL2Version; // @synthesize modelL2Version=_modelL2Version;
 @property(readonly, nonatomic) NSArray *supportedServices; // @synthesize supportedServices=_supportedServices;
 @property(nonatomic) double sessionStartTime; // @synthesize sessionStartTime=_sessionStartTime;
@@ -50,6 +53,7 @@
 - (void)pruneCache;
 - (void)getCachedQueries:(id *)arg1 results:(id *)arg2 webSearch:(BOOL)arg3;
 - (void)queryCompleted:(id)arg1;
+@property(readonly, nonatomic) double suggestionsRenderTimeout;
 @property(readonly, nonatomic) double searchRenderTimeout;
 - (id)resourceWithID:(id)arg1;
 - (void)getFTEStringsWithReply:(CDUnknownBlockType)arg1;

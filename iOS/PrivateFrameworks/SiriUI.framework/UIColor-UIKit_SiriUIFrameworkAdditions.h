@@ -29,6 +29,8 @@
 + (id)siriui_glyphColor;
 + (id)siriui_platterMaskingColor;
 + (id)siriui_lightMaskingColor;
++ (id)siriui_transparantHighlightedButtonColor;
++ (id)siriui_transparantButtonColor;
 + (id)siriui_maskingColor;
 + (id)siriui_keylineColorStark;
 + (id)siriui_platterKeylineColor;

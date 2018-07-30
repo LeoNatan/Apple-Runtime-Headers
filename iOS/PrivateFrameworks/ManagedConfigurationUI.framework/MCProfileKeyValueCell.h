@@ -8,6 +8,7 @@
 
 @class NSArray, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface MCProfileKeyValueCell : UITableViewCell
 {
     UILabel *_keyLabel;

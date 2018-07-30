@@ -10,6 +10,7 @@
 
 @class GEOABConfigValue, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOABConfigKeyValuePair : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

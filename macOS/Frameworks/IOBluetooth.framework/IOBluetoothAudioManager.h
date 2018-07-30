@@ -30,8 +30,8 @@
 + (unsigned int)defaultDeviceIDForOutput:(BOOL)arg1;
 + (unsigned int)currentSystemInput;
 + (unsigned int)currentSystemOutput;
++ (void)startPFC:(id)arg1;
 + (void)disconnectAudioDevice:(id)arg1;
-+ (void)configureAndSwitchAudioDevice:(id)arg1;
 + (void)configureAudioDevice:(id)arg1;
 + (BOOL)setAudioDevice:(unsigned int)arg1 isOutput:(BOOL)arg2;
 + (BOOL)isBluetoothDevice:(unsigned int)arg1;

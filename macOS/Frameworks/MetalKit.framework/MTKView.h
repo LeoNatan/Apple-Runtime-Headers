@@ -88,6 +88,8 @@
 - (void)_resizeDrawable;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)displayLayer:(id)arg1;
+- (void)viewDidMoveToWindow;
+- (void)_updateToNativeScale;
 - (struct CGSize)_pixelSizeFromPointSize:(struct CGSize)arg1;
 - (void)draw;
 @property(readonly, nonatomic) MTLRenderPassDescriptor *currentRenderPassDescriptor;
@@ -116,7 +118,7 @@
 - (void)_dumpFramerate:(double)arg1 withFilename:(id)arg2;
 - (BOOL)exportToTargaAtLocation:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 size:(unsigned long long)arg4 bytes:(void *)arg5;
 - (void)getEnvironmentSettings;
-- (void)initCommon;
+- (void)__initCommon;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

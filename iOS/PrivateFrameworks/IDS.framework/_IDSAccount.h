@@ -23,8 +23,10 @@
     NSMapTable *_registrationDelegateToInfo;
     _Bool _devicesLoaded;
     _Bool _isEnabled;
+    NSString *_loginID;
 }
 
+@property(retain, nonatomic) NSString *loginID; // @synthesize loginID=_loginID;
 - (void).cxx_destruct;
 - (void)deactivateAndPurgeIdentify;
 - (void)_reregisterAndReidentify:(_Bool)arg1;
@@ -84,7 +86,6 @@
 @property(readonly, nonatomic) NSString *pushTopic;
 @property(readonly, nonatomic) NSString *primaryServiceName;
 @property(readonly, nonatomic) NSString *serviceName;
-@property(retain, nonatomic) NSString *loginID;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) NSArray *handles;
 - (_Bool)_isInvisibleAlias:(id)arg1;

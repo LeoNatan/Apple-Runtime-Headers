@@ -24,8 +24,10 @@
 @property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 @property(readonly, nonatomic) NSSet *senderIdentifiers; // @synthesize senderIdentifiers=_senderIdentifiers;
 @property(readonly, nonatomic) NSSet *recipientIdentifiers; // @synthesize recipientIdentifiers=_recipientIdentifiers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *senderIdentifier; // @dynamic senderIdentifier;
 @property(readonly, nonatomic) BOOL mostRecentTextEntryIsByMe;
+@property(readonly, nonatomic) NSString *mostRecentTextEntryLogString;
 @property(readonly, nonatomic) NSString *mostRecentNonSenderTextEntry;
 @property(readonly, nonatomic) NSString *aggregateText;
 - (BOOL)hasPendingEntries;
@@ -40,7 +42,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)assertCheckpointForCoding;
-- (void)dealloc;
 - (id)initWithRecipientIdentifiers:(id)arg1;
 - (id)initWithRecipientIdentifiers:(id)arg1 senderIdentifier:(id)arg2;
 - (id)initWithRecipientIdentifiers:(id)arg1 senderIdentifiers:(id)arg2;

@@ -8,19 +8,22 @@
 
 @interface NSWorkspace (SafariNSWorkspaceExtras)
 + (id)safari_userDesktopDirectory;
-- (id)safari_desktopImageURLsForAllScreensAndSpaces;
 - (BOOL)safari_haveQuicktimePlayer;
 - (BOOL)safari_haveiTunes;
 - (id)createZipArchive:(id)arg1;
 - (BOOL)isFilePackageOrAliasToFilePackageAtPath:(id)arg1;
 - (id)downloadAssessmentForPath:(id)arg1;
 - (void)sendNotificationsForFinishedDownloadAtPath:(id)arg1;
+- (BOOL)safari_createInternetLocationFileAtURL:(id)arg1 withURL:(id)arg2 title:(id)arg3 error:(id *)arg4;
 - (id)createInternetLocationFileInDirectory:(id)arg1 withURL:(id)arg2 title:(id)arg3;
+- (id)safari_internetLocationFileNameForURL:(id)arg1 title:(id)arg2;
 - (id)URLForInternetLocationFileAtPath:(id)arg1;
 - (BOOL)URL:(id *)arg1 title:(id *)arg2 forInternetLocationFileAtPath:(id)arg3;
+- (id)safari_internetLocationFileTypeForURL:(id)arg1;
 - (id)internetLocationFileExtensionForURL:(id)arg1;
 - (BOOL)isInternetLocationFileAtPath:(id)arg1;
 - (id)_internetLocationFileExtensionsArray;
+- (id)_safari_internetLocationFileTypes;
 - (id)_internetLocationFileExtensions;
 - (void)safari_moveFileToTrash:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)infoForLaunchedApplicationAtPath:(id)arg1;
@@ -31,7 +34,6 @@
 - (id)infoForLaunchedApplicationWithBundleID:(id)arg1 preferringPath:(id)arg2;
 - (BOOL)safari_revealFile:(id)arg1;
 - (BOOL)openURL:(id)arg1 withApplicationWithBundleIdentifier:(id)arg2;
-- (BOOL)openWebClipWidgetWithURL:(id)arg1 positionWidgetAtPoint:(struct CGPoint)arg2;
 - (BOOL)openURL:(id)arg1 withApplicationAtPath:(id)arg2;
 - (BOOL)fileHasQuarantineAttributesAtPath:(id)arg1;
 - (BOOL)removeFileFromQuarantineAtPath:(id)arg1;

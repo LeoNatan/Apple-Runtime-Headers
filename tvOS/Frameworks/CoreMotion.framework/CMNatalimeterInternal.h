@@ -14,8 +14,6 @@
     NSObject<OS_dispatch_queue> *fInternalQueue;
     NSObject<OS_dispatch_source> *fWatchdogTimer;
     _Bool fStartedUpdates;
-    _Bool fResendActivityOverrideOnInterrupt;
-    long long fActivityOverride;
     CDUnknownBlockType fHandler;
 }
 
@@ -27,7 +25,6 @@
 - (void)_handleQueryResponse:(shared_ptr_bdcc6d0f)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_queryAbsoluteNatalimetryDataSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_queryAbsoluteNatalimetryDataSinceRecord:(long long)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (void)_setSession:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_teardown;
 - (void)dealloc;
 - (id)init;

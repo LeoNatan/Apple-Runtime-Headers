@@ -11,7 +11,7 @@
 @protocol UIElementProtocol <NSObject>
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1 forApplication:(struct __AXUIElement *)arg2 contextId:(unsigned int)arg3;
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1;
-+ (void)applyElementAttributeCacheScheme:(int)arg1;
++ (void)applyElementAttributeCacheScheme:(unsigned long long)arg1;
 - (_Bool)isMockElement;
 - (struct _NSRange)nextCursorRangeInDirection:(unsigned long long)arg1 unit:(unsigned long long)arg2 outputRange:(struct _NSRange *)arg3 currentCursorRange:(struct _NSRange)arg4;
 - (struct _NSRange)nextCursorRangeInDirection:(unsigned long long)arg1 unit:(unsigned long long)arg2 outputRange:(struct _NSRange *)arg3;

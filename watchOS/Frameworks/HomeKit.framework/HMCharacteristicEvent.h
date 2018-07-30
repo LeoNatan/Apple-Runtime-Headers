@@ -31,11 +31,11 @@
 - (id)_serializeForAdd;
 - (void)_updateTriggerValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateTriggerValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithCharacteristic:(id)arg1 triggerValue:(id)arg2;
-- (id)initWithDict:(id)arg1 characteristic:(id)arg2 triggerValue:(id)arg3;
 @property(copy, nonatomic) id <NSCopying> triggerValue; // @synthesize triggerValue=_triggerValue;
 - (void)setCharacteristic:(id)arg1;
 @property(readonly, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
+- (id)initWithCharacteristic:(id)arg1 triggerValue:(id)arg2;
+- (id)initWithDict:(id)arg1 characteristic:(id)arg2 triggerValue:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

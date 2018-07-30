@@ -12,14 +12,18 @@
 
 @interface CKTruncatedTextBalloonView : CKHyperlinkBalloonView <NSLayoutManagerDelegate>
 {
+    _Bool _avoidTextLineBreaks;
     UIImageView *_chevron;
 }
 
 @property(retain, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
+@property(nonatomic) _Bool avoidTextLineBreaks; // @synthesize avoidTextLineBreaks=_avoidTextLineBreaks;
 - (void).cxx_destruct;
 - (void)prepareForDisplay;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(struct UIEdgeInsets *)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)configureForMessagePart:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -18,8 +18,6 @@
     NSMutableArray *_windows;
     NSMutableArray *_savers;
     NSString *_commandLineModuleName;
-    BOOL _debug;
-    BOOL _background;
     BOOL _mainOnly;
     BOOL _isRunning;
     BOOL _runFromPref;
@@ -63,7 +61,6 @@
 - (void)setDelegate:(id)arg1;
 @property BOOL runFromPref;
 @property(readonly) int retCode;
-@property(getter=isBackground) BOOL background;
 - (void)readjustDisplays;
 - (void)unpauseScreenSaver;
 - (void)pauseScreenSaver;
@@ -81,6 +78,7 @@
 - (void)_performFadeWithMode:(int)arg1 time:(float)arg2;
 - (BOOL)_mouseInteractivityEnabled;
 - (id)_initAndGetModule;
+- (id)_incompatibleArchitectureModuleForModuleName:(id)arg1;
 - (id)_defaultModuleForLoginWindow;
 - (void)_addMyselfToPermittedFrontASNList;
 - (void)_timedHideCursor;

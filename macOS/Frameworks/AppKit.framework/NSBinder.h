@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface NSBinder : NSObject <NSCoding>
 {
     id _object;
@@ -128,8 +129,6 @@
 - (BOOL)canApplyValueTransformer:(id)arg1 toBinding:(id)arg2;
 - (BOOL)_isBooleanBinding:(id)arg1;
 - (Class)valueClassForBinding:(id)arg1;
-- (BOOL)isBindingKeyOptional:(id)arg1;
-- (BOOL)isBindingKeyless:(id)arg1;
 - (BOOL)bindingRunsAlerts:(id)arg1;
 - (BOOL)isBindingReadOnly:(id)arg1;
 - (BOOL)canAddBinding:(id)arg1 toController:(id)arg2;

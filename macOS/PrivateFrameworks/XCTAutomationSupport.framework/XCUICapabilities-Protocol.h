@@ -9,9 +9,13 @@
 @class NSDictionary, NSString;
 
 @protocol XCUICapabilities <NSObject>
+@property(readonly) id <XCUICapabilities> bridgedProcessCapabilities;
+@property(readonly) BOOL automationSessionSupportsAnimationsIdleNotifications;
+@property(readonly) BOOL automationSessionSupportsMainRunLoopIdleNotifications;
+@property(readonly) BOOL automationSessionSupportsAttributeFetching;
 @property(readonly) NSDictionary *truncatedValueSnapshotParameter;
 @property(readonly) NSString *truncatedValueAttribute;
 @property(readonly) BOOL supportsTruncatedValue;
-@property(readonly) BOOL supportsAutomationSessions;
+@property(readonly) long long automationSessionSupport;
 @end
 

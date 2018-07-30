@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _numOfAXChildren;
 }
 
+- (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (id)typeDescription;
 - (void)handleSelectionChange:(id)arg1;

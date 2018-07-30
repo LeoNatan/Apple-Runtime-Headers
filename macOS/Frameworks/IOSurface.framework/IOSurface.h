@@ -23,6 +23,7 @@
 @property(readonly) BOOL allowsPixelSizeCasting;
 - (void)decrementUseCount;
 - (void)incrementUseCount;
+- (BOOL)isSysMemOnly;
 - (BOOL)isDisplayable;
 @property(readonly, getter=isInUse) BOOL inUse;
 @property(readonly) int localUseCount;

@@ -7,6 +7,6 @@
 @class CalendarEventLoader;
 
 @protocol CalendarEventLoaderDelegate
-- (void)calendarEventLoader:(CalendarEventLoader *)arg1 occurrencesDidUpdateBetweenStart:(double)arg2 end:(double)arg3;
+- (void)calendarEventLoader:(CalendarEventLoader *)arg1 occurrencesDidUpdateBetweenStart:(double)arg2 end:(double)arg3 wasEmptyLoad:(_Bool)arg4;
 @end
 

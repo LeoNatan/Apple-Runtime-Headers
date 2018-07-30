@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OCDEncryptedReader.h>
 
-__attribute__((visibility("hidden")))
 @interface OCBReader : OCDEncryptedReader
 {
     struct OcBinaryReader *mBinaryReader;
@@ -25,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct OCCEncryptionInfoReader *encryptionInfoReader;
 - (void)closeFile;
 - (void)dealloc;
-- (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (id)initWithCancelDelegate:(id)arg1;
 
 @end
 

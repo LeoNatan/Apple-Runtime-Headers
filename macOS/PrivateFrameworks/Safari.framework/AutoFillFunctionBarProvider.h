@@ -16,7 +16,7 @@
 __attribute__((visibility("hidden")))
 @interface AutoFillFunctionBarProvider : NSObject <AutoFillCandidateListBarItemControllerDelegate, NSTouchBarDelegate, FormAutoFillCompletionControllerObserver, NSTouchBarProvider>
 {
-    Vector_24b72aae _currentCompletionListItems;
+    Vector_9c080eda _currentCompletionListItems;
     NSCustomTouchBarItem *_autoFillLabelFunctionBarItem;
     AutoFillCandidateListBarItemController *_autoFillCandidateListBarItemController;
     NSTouchBar *_functionBar;
@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <AutoFillFunctionBarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)didShowAutoFillQuickTypeForItem:(const struct CompletionListItem *)arg1;
+- (BOOL)didShowAutoFillQuickTypeForItem:(const struct CompletionListItem *)arg1;
 - (id)textForCompletionListItem:(const struct CompletionListItem *)arg1;
 - (id)imageForCompletionListItem:(const struct CompletionListItem *)arg1;
 - (void)candidateListBarItemController:(id)arg1 didSelectCandidateAtIndex:(unsigned long long)arg2;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)_candidateBarTextAttributesForMultiLineLabel;
 - (id)_candidateBarTextAttributesForSingleLineLabel;
 - (unsigned long long)numberOfCandidatesForCandidateListBarItemController:(id)arg1;
-- (void)formAutoFillController:(id)arg1 didRefreshCompletionListItems:(const Vector_24b72aae *)arg2;
+- (void)formAutoFillController:(id)arg1 didRefreshCompletionListItems:(const Vector_9c080eda *)arg2;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)_autoFillCandidateListFunctionBarItem;
 - (id)_autoFillCandidateListBarItemController;

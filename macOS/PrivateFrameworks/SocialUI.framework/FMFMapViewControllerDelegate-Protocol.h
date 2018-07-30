@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class ABRecord, CNContact, FMFHandle, FMFMapViewController, NSImage, NSView;
+@class ABRecord, CNContact, FMFHandle, FMFMapViewController, NSView;
 
 @protocol FMFMapViewControllerDelegate <NSObject>
 
@@ -14,7 +14,6 @@
 - (CNContact *)annotationContactForHandle:(FMFHandle *)arg1;
 - (ABRecord *)annotationABRecordForHandle:(FMFHandle *)arg1;
 - (NSView *)titleViewForSelectedHandle;
-- (NSImage *)annotationImageForHandle:(FMFHandle *)arg1;
 - (void)fmfMapViewController:(FMFMapViewController *)arg1 didReceiveLocation:(id <MKAnnotation>)arg2;
 - (void)fmfMapViewController:(FMFMapViewController *)arg1 regionDidChangeAnimated:(BOOL)arg2;
 - (void)fmfMapViewController:(FMFMapViewController *)arg1 regionWillChangeAnimated:(BOOL)arg2;

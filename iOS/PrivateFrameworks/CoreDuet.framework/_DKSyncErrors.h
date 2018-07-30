@@ -10,11 +10,18 @@
 {
 }
 
++ (id)temporaryFailure;
++ (id)missingHighWaterMark;
++ (id)invalidResponse;
++ (id)invalidRequest;
++ (id)invalidData;
 + (id)failedToFetchChanges;
 + (id)failedToApplyRemoteChanges;
 + (id)couldNotSaveForSync;
 + (id)unavailableForCurrentUser;
 + (id)disabled;
++ (id)internalFailure;
++ (id)domain;
 
 @end
 

@@ -19,13 +19,13 @@
 + (id)sharedTIContactManager;
 + (void)setSharedTIContactManager:(id)arg1;
 @property(readonly, copy, nonatomic) NSUUID *contactCollectionUUID; // @synthesize contactCollectionUUID;
+- (void).cxx_destruct;
 - (void)handleMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 - (void)keyboardActivityDidTransition:(id)arg1;
 - (void)unload;
 - (void)removeContactObserver:(CDUnknownBlockType)arg1;
 - (void)getOnce:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)addContactObserver:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

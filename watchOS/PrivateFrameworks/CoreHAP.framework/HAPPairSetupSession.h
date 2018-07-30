@@ -23,10 +23,12 @@
     NSData *_sessionWriteKey;
     NSMutableData *_sessionReadNonce;
     NSMutableData *_sessionWriteNonce;
+    NSData *_certificate;
 }
 
 + (_Bool)isValidSetupCode:(id)arg1;
 + (void)initialize;
+@property(retain, nonatomic) NSData *certificate; // @synthesize certificate=_certificate;
 @property(retain, nonatomic) NSMutableData *sessionWriteNonce; // @synthesize sessionWriteNonce=_sessionWriteNonce;
 @property(retain, nonatomic) NSMutableData *sessionReadNonce; // @synthesize sessionReadNonce=_sessionReadNonce;
 @property(retain, nonatomic) NSData *sessionWriteKey; // @synthesize sessionWriteKey=_sessionWriteKey;
@@ -43,6 +45,7 @@
 - (id)decryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id *)arg3;
 - (id)encryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id *)arg3;
 - (_Bool)isSecureSession;
+- (id)getCertificate;
 - (void)generateSessionKeys;
 - (void)_stopWithError:(id)arg1;
 - (void)stopWithError:(id)arg1;

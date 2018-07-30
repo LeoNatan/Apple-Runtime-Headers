@@ -10,6 +10,7 @@
 
 @class GEOPDViewportInfo, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDNearbySearchParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

@@ -12,15 +12,15 @@
 
 @interface PKStrokeGenerator : NSObject <PKInputProvider>
 {
-    vector_0f1b893d _drawPoints;
-    vector_5de2d2d9 _outputPoints;
+    vector_58517711 _drawPoints;
+    vector_03cfcf00 _outputPoints;
     long long _outputImmutableCount;
     BOOL _inputHasChanged;
     NSObject<OS_dispatch_queue> *_inputQueue;
     PKStroke *_currentStroke;
     long long _currentInputType;
     long long _immutableCount;
-    vector_0f1b893d _updatedDrawPoints;
+    vector_58517711 _updatedDrawPoints;
     BOOL _drawingEndedButNotFinished;
     NSObject<OS_dispatch_semaphore> *_drawingWaitForFinishSemaphore;
     BOOL _useRuler;
@@ -51,7 +51,8 @@
     struct CGAffineTransform _rulerTransform;
 }
 
-+ (vector_0f1b893d)inputPointsFromPath:(struct CGPath *)arg1;
++ (vector_58517711)inputPointsFromPath:(struct CGPath *)arg1 velocityForDistanceFunction:(CDUnknownBlockType)arg2;
++ (vector_58517711)inputPointsFromPoints:(vector_e1abc270)arg1 velocityForDistanceFunction:(CDUnknownBlockType)arg2;
 + (void)initialize;
 @property(nonatomic) double inputScale; // @synthesize inputScale=_inputScale;
 @property double eraserIndicatorAlpha; // @synthesize eraserIndicatorAlpha=_eraserIndicatorAlpha;
@@ -81,12 +82,15 @@
 @property(nonatomic) struct CGAffineTransform rulerTransform; // @synthesize rulerTransform=_rulerTransform;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)strokeFromPath:(struct CGPath *)arg1 ink:(id)arg2 inputScale:(double)arg3;
+- (id)strokeFromPoints:(struct CGPoint *)arg1 count:(unsigned long long)arg2 ink:(id)arg3 inputScale:(double)arg4;
+- (id)strokeFromPath:(struct CGPath *)arg1 ink:(id)arg2 inputScale:(double)arg3 velocityForDistanceFunction:(CDUnknownBlockType)arg4;
+- (id)_strokeFromInputPoints:(vector_58517711 *)arg1 ink:(id)arg2 inputScale:(double)arg3;
 - (void)drawingCancelledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)drawingEndedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_drawingAddPoint:(CDStruct_57911ed6)arg1;
+- (void)closeStroke;
 - (void)addPoint:(CDStruct_57911ed6)arg1;
-- (void)addPoints:(vector_0f1b893d)arg1;
+- (void)addPoints:(vector_58517711)arg1;
 - (void)removePredictedTouches;
 - (void)updateImmutableCount;
 - (void)drawingUpdateAllPoints;
@@ -95,9 +99,9 @@
 - (struct _PKStrokePoint)outputPoint:(CDStruct_57911ed6)arg1 baseValues:(struct _PKStrokePoint)arg2;
 - (struct _PKStrokePoint)outputCurrentStrokePoint:(CDStruct_57911ed6)arg1;
 - (void)reset;
-- (unsigned long long)copyInputUpdatedRangeFromIndex:(unsigned long long)arg1 into:(vector_0f1b893d *)arg2;
-- (vector_0f1b893d *)getInputUpdatedRangeFromIndex:(inout unsigned long long *)arg1;
-- (vector_5de2d2d9 *)getUpdatedRangeFromIndex:(inout unsigned long long *)arg1;
+- (unsigned long long)copyInputUpdatedRangeFromIndex:(unsigned long long)arg1 into:(vector_58517711 *)arg2;
+- (vector_58517711 *)getInputUpdatedRangeFromIndex:(inout unsigned long long *)arg1;
+- (vector_03cfcf00 *)getUpdatedRangeFromIndex:(inout unsigned long long *)arg1;
 - (PKInputProvider_28cf270a *)outputFilter;
 @property(readonly) BOOL lastPointIsMasked;
 - (void)updateRulerSnapping;

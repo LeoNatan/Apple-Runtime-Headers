@@ -27,6 +27,9 @@
 - (void)setLocked:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *locked;
 - (id)initWithLocked:(id)arg1 carName:(id)arg2;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

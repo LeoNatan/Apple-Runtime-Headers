@@ -6,19 +6,16 @@
 
 #import "NSObject.h"
 
-@class SBSSecureAppAction;
+@class SBSLockScreenContentAssertion;
 
 @interface SBSSecureAppAssertion : NSObject
 {
-    SBSSecureAppAction *_actualAssertion;
-    CDUnknownBlockType _errorHandler;
+    SBSLockScreenContentAssertion *_actualAssertion;
 }
 
 + (id)acquireSecureAppAssertionWithType:(unsigned long long)arg1 errorHandler:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic, getter=_errorHandler, setter=_setErrorHandler:) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
-@property(retain, nonatomic) SBSSecureAppAction *actualAssertion; // @synthesize actualAssertion=_actualAssertion;
+@property(retain, nonatomic) SBSLockScreenContentAssertion *actualAssertion; // @synthesize actualAssertion=_actualAssertion;
 - (void).cxx_destruct;
-- (void)_acquireAssertionWithSecureAppType:(unsigned long long)arg1;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithType:(unsigned long long)arg1 errorHandler:(CDUnknownBlockType)arg2;

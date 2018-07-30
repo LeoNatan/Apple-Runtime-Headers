@@ -16,6 +16,7 @@
     long long _cellState;
 }
 
+- (void).cxx_destruct;
 - (id)identifier;
 - (BOOL)visible;
 - (BOOL)startSelected;
@@ -28,7 +29,6 @@
 - (BOOL)enabled;
 - (void)setEnabled:(BOOL)arg1;
 - (id)choice;
-- (void)dealloc;
 - (id)initWithChoiceItems:(id)arg1 title:(id)arg2 identifier:(id)arg3 canBeDisabled:(BOOL)arg4;
 
 @end

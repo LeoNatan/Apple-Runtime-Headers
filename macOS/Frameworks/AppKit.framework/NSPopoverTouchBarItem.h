@@ -51,8 +51,6 @@
 @property(retain) NSString *collapsedRepresentationLabel;
 @property(retain) NSImage *collapsedRepresentationImage;
 @property(retain) NSView *collapsedRepresentation;
-- (void)setPopoverFunctionBar:(id)arg1;
-- (id)popoverFunctionBar;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;

@@ -10,7 +10,7 @@
 {
 }
 
-- (BOOL)finishSavingDocument:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
+- (BOOL)finishSavingWorkflow:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
 - (id)personalitySettingsDictionary;
 
 @end

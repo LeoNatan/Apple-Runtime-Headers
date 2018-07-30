@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     double _simplificationEpsilonPoints;
     double _viewUnitsPerPoint;
     id <VKRouteLineObserverProtocol> _observer;
-    vector_8449fd58 _sections;
-    struct fast_shared_ptr<md::RouteLineSection> _userLocationSection;
+    vector_78427fd2 _sections;
+    struct fast_shared_ptr<md::RouteLineSection, std::allocator> _userLocationSection;
     struct PolylineCoordinate _userLocationIndex;
     Matrix_8746f91e _userLocation;
     double _lastTrafficTimeStamp;
@@ -33,12 +33,13 @@ __attribute__((visibility("hidden")))
     double _builtViewUnitsPerPoint;
 }
 
+@property(readonly, nonatomic) VKPolylineOverlayRenderRegion *renderRegion; // @synthesize renderRegion=_renderRegion;
 @property(nonatomic) id <VKRouteLineObserverProtocol> observer; // @synthesize observer=_observer;
 @property(nonatomic) double simplificationEpsilonPoints; // @synthesize simplificationEpsilonPoints=_simplificationEpsilonPoints;
 @property BOOL hasNewRoadMatches; // @synthesize hasNewRoadMatches=_hasNewRoadMatches;
 @property(readonly, nonatomic) VKPolylineOverlay *overlay; // @synthesize overlay=_overlay;
 @property(readonly, nonatomic) Box_3d7e3c2c bounds; // @synthesize bounds=_bounds;
-@property(readonly, nonatomic) vector_8449fd58 sections; // @synthesize sections=_sections;
+@property(readonly, nonatomic) vector_78427fd2 sections; // @synthesize sections=_sections;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (double)boundsUnitsPerMeter;

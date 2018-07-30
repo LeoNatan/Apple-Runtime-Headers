@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSData, NSHashTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVStreamSessionInternal : NSObject
 {
     AVWeakReference *_welf;

@@ -25,9 +25,11 @@
 - (id)retrieveOOBDataForPeer:(id)arg1;
 - (void)respondToPairingRequest:(id)arg1 type:(long long)arg2 accept:(BOOL)arg3 data:(id)arg4;
 - (void)unpairPeer:(id)arg1;
+- (void)pairPeer:(id)arg1 options:(id)arg2;
 - (void)pairPeer:(id)arg1 useMITM:(BOOL)arg2;
 - (void)pairPeer:(id)arg1;
 - (id)retrievePairedPeers;
+- (BOOL)isPeerMagicPaired:(id)arg1;
 - (BOOL)isPeerCloudPaired:(id)arg1;
 - (BOOL)isPeerPaired:(id)arg1;
 - (void)updateRegistration;

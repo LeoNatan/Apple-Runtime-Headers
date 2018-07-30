@@ -12,35 +12,51 @@
 
 @interface CEMSystemiCloudDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowCloudBackup;
+    NSNumber *_payloadAllowCloudDocumentSync;
+    NSNumber *_payloadAllowFindMyFriendsModification;
+    NSNumber *_payloadAllowPhotoStream;
+    NSNumber *_payloadAllowSharedStream;
+    NSNumber *_payloadAllowCloudPhotoLibrary;
+    NSNumber *_payloadAllowCloudBookmarks;
+    NSNumber *_payloadAllowCloudMail;
+    NSNumber *_payloadAllowCloudCalendar;
+    NSNumber *_payloadAllowCloudReminders;
+    NSNumber *_payloadAllowCloudAddressBook;
+    NSNumber *_payloadAllowCloudNotes;
+    NSNumber *_payloadAllowCloudDesktopAndDocuments;
+    NSNumber *_payloadAllowCloudKeychainSync;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowCloudBackup:(id)arg2 withAllowCloudDocumentSync:(id)arg3 withAllowFindMyFriendsModification:(id)arg4 withAllowPhotoStream:(id)arg5 withAllowSharedStream:(id)arg6 withAllowCloudPhotoLibrary:(id)arg7 withAllowCloudBookmarks:(id)arg8 withAllowCloudMail:(id)arg9 withAllowCloudCalendar:(id)arg10 withAllowCloudReminders:(id)arg11 withAllowCloudAddressBook:(id)arg12 withAllowCloudNotes:(id)arg13 withAllowCloudDesktopAndDocuments:(id)arg14 withAllowCloudKeychainSync:(id)arg15;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudKeychainSync; // @synthesize payloadAllowCloudKeychainSync=_payloadAllowCloudKeychainSync;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudDesktopAndDocuments; // @synthesize payloadAllowCloudDesktopAndDocuments=_payloadAllowCloudDesktopAndDocuments;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudNotes; // @synthesize payloadAllowCloudNotes=_payloadAllowCloudNotes;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudAddressBook; // @synthesize payloadAllowCloudAddressBook=_payloadAllowCloudAddressBook;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudReminders; // @synthesize payloadAllowCloudReminders=_payloadAllowCloudReminders;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudCalendar; // @synthesize payloadAllowCloudCalendar=_payloadAllowCloudCalendar;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudMail; // @synthesize payloadAllowCloudMail=_payloadAllowCloudMail;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudBookmarks; // @synthesize payloadAllowCloudBookmarks=_payloadAllowCloudBookmarks;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudPhotoLibrary; // @synthesize payloadAllowCloudPhotoLibrary=_payloadAllowCloudPhotoLibrary;
+@property(copy, nonatomic) NSNumber *payloadAllowSharedStream; // @synthesize payloadAllowSharedStream=_payloadAllowSharedStream;
+@property(copy, nonatomic) NSNumber *payloadAllowPhotoStream; // @synthesize payloadAllowPhotoStream=_payloadAllowPhotoStream;
+@property(copy, nonatomic) NSNumber *payloadAllowFindMyFriendsModification; // @synthesize payloadAllowFindMyFriendsModification=_payloadAllowFindMyFriendsModification;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudDocumentSync; // @synthesize payloadAllowCloudDocumentSync=_payloadAllowCloudDocumentSync;
+@property(copy, nonatomic) NSNumber *payloadAllowCloudBackup; // @synthesize payloadAllowCloudBackup=_payloadAllowCloudBackup;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudKeychainSync;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudDesktopAndDocuments;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudNotes;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudAddressBook;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudReminders;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudCalendar;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudMail;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudBookmarks;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudPhotoLibrary;
-@property(readonly, nonatomic) NSNumber *payloadAllowSharedStream;
-@property(readonly, nonatomic) NSNumber *payloadAllowPhotoStream;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudDocumentSync;
-@property(readonly, nonatomic) NSNumber *payloadAllowCloudBackup;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

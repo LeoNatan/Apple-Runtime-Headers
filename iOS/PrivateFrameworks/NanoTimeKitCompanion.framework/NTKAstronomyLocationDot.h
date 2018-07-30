@@ -6,11 +6,12 @@
 
 #import "UIView.h"
 
-@class UIColor;
+@class CLKDevice, UIColor;
 
 @interface NTKAstronomyLocationDot : UIView
 {
     _Bool _animating;
+    CLKDevice *_device;
     UIColor *_outerDotColor;
     double _outerDotDiameter;
     UIColor *_innerDotColor;
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) UIColor *innerDotColor; // @synthesize innerDotColor=_innerDotColor;
 @property(nonatomic) double outerDotDiameter; // @synthesize outerDotDiameter=_outerDotDiameter;
 @property(retain, nonatomic) UIColor *outerDotColor; // @synthesize outerDotColor=_outerDotColor;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)stopAnimation;
@@ -41,8 +43,8 @@
 - (double)defaultOuterDotDiameter;
 - (id)defaultColor;
 - (id)makeDot;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithDefaultSize;
+- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
+- (id)initForDevice:(id)arg1;
 
 @end
 

@@ -12,6 +12,7 @@
 
 @class CPMemoryOwner;
 
+__attribute__((visibility("hidden")))
 @interface CPCharSequence : NSObject <NSCopying, CPCopying, CPDisposable>
 {
     unsigned int length;

@@ -25,6 +25,9 @@
 - (void)setVisualCodeType:(int)arg1;
 @property(readonly, nonatomic) int visualCodeType;
 - (id)initWithVisualCodeType:(int)arg1;
+- (id)_categoryVerb;
+- (int)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

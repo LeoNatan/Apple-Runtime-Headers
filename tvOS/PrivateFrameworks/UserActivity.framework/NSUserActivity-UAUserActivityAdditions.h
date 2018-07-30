@@ -9,6 +9,10 @@
 @class NSUUID;
 
 @interface NSUserActivity (UAUserActivityAdditions)
++ (_Bool)_registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (_Bool)_finishUserInfoUpdate;
+- (unsigned long long)_beginUserInfoUpdate:(id)arg1;
+@property(readonly) unsigned long long _userInfoChangeCount;
 - (id)_copyWithNewUUID;
 @property(readonly, copy) NSUUID *_originalUniqueIdentifier;
 @end

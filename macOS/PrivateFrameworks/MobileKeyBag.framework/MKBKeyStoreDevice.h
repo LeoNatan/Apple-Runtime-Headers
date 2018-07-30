@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (id)migrateUserSession:(id)arg1 fromPath:(id)arg2 withSecret:(id)arg3 withOpaqueData:(id)arg4 withreturnedError:(id *)arg5;
 - (id)createUserSession:(id)arg1 withSecret:(id)arg2 withOpaqueData:(id)arg3 withreturnedError:(id *)arg4;
 - (id)loadUserSession:(id)arg1 withSecret:(id)arg2 withreturnedError:(id *)arg3;
+- (int)Event:(int)arg1;
 - (int)migrateFS;
 - (int)isKeyRollingWithKeyStatus:(int *)arg1;
 - (int)stashVerifywithValidity:(int *)arg1;

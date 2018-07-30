@@ -4,3 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#pragma mark Blocks
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned int offset;
+    unsigned int width;
+    unsigned int height;
+    unsigned int bytesPerRow;
+    unsigned int bytesPerElement;
+    unsigned int elementWidth;
+    unsigned int elementHeight;
+} CDStruct_6c6f70a4;
+
+typedef struct {
+    unsigned long long clientAddress;
+    unsigned int surfaceID;
+    unsigned int pixelFormat;
+    unsigned int retainCount;
+    unsigned int yCbCrMatrix;
+    unsigned int cacheMode;
+    unsigned int mapCacheAttribute;
+    unsigned int purgeableState;
+    unsigned int purgeableStateAPI;
+    unsigned int allocOffset;
+    unsigned int allocSize;
+    unsigned char isGlobal;
+    unsigned char isAllocated;
+    unsigned char isWired;
+    unsigned char pad;
+} CDStruct_0dba196d;
+

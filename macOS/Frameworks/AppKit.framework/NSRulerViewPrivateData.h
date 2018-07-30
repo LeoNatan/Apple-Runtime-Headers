@@ -6,14 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray;
+@class NSMutableArray, NSView;
 
+__attribute__((visibility("hidden")))
 @interface NSRulerViewPrivateData : NSObject
 {
     id _accessibilityPanelController;
     NSMutableArray *_markerLines;
     id _draggingMarkerView;
     id _formattedHashLabelCache;
+    NSView *_contentView;
     struct {
         unsigned int _showTooltip:1;
         unsigned int _rtlLayoutDirection:1;

@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)updateConnectionInfo:(id)arg1;
+- (id)synchronousRemoteProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)_updateExportedObject;
 - (void)_didInvalidateConnection;

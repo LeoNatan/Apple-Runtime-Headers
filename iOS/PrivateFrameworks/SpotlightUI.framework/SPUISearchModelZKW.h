@@ -13,16 +13,12 @@
     NSObject<OS_dispatch_queue> *_queryProcessor;
     _Bool _shouldCacheResults;
     _Bool _newQuery;
-    _Bool _clearedQuerySuggestions;
     SPZKWSession *_session;
 }
 
-@property _Bool clearedQuerySuggestions; // @synthesize clearedQuerySuggestions=_clearedQuerySuggestions;
 @property(retain, nonatomic) SPZKWSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
-- (id)sections;
-- (void)clearQuerySuggestions;
-- (void)cacheZKWQuery;
+- (void)updateWithQueryContext:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

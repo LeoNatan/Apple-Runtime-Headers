@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     struct function<void (const TFENodeVector &, const TError &)> _promiseDragCompletionCallback;
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
     struct TFENode _dropTargetNode;
-    vector_e0f53d80 _rawNamesOfPendingPromisedNodes;
+    vector_757c8b87 _rawNamesOfPendingPromisedNodes;
     struct shared_ptr<TPromiseDragReceiverThread> _receiverThread;
 }
 

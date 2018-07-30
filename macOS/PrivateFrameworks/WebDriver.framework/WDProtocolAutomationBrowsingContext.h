@@ -6,11 +6,9 @@
 
 #import "RWIProtocolJSONObject.h"
 
-#import "RemoteBrowsingContext.h"
-
 @class NSString, WDProtocolAutomationPoint, WDProtocolAutomationSize;
 
-@interface WDProtocolAutomationBrowsingContext : RWIProtocolJSONObject <RemoteBrowsingContext>
+@interface WDProtocolAutomationBrowsingContext : RWIProtocolJSONObject
 {
 }
 
@@ -22,13 +20,6 @@
 - (id)initWithHandle:(id)arg1 active:(BOOL)arg2 url:(id)arg3 windowSize:(id)arg4 windowOrigin:(id)arg5;
 - (id)initWithProtocolObject:(id)arg1;
 - (id)initWithPayload:(id)arg1;
-@property(readonly, nonatomic) struct CGRect windowFrame;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -11,6 +11,7 @@
 @interface PLFileSystemAssetImporter : NSObject
 {
     PLPhotoLibrary *_photoLibrary;
+    NSString *_mediaDirectoryPath;
     NSString *_photoLibraryStoreUUID;
     NSMutableIndexSet *_thumbIndexes;
     _Bool _hasProcessedAnyAssets;
@@ -20,7 +21,6 @@
     unsigned long long _thumbnailBatchFetchSize;
 }
 
-+ (id)_mediaDirectoryPath;
 @property(nonatomic) unsigned long long thumbnailBatchFetchSize; // @synthesize thumbnailBatchFetchSize=_thumbnailBatchFetchSize;
 @property(retain, nonatomic) NSMutableDictionary *existingOIDsByUUID; // @synthesize existingOIDsByUUID=_existingOIDsByUUID;
 @property(retain, nonatomic) NSMutableDictionary *existingUUIDsByUppercasePath; // @synthesize existingUUIDsByUppercasePath=_existingUUIDsByUppercasePath;
@@ -38,6 +38,7 @@
 - (id)assetURLisInDatabase:(id)arg1;
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
 - (void)dealloc;
+- (id)mediaDirectoryPathWithPhotoLibrary:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 
 @end

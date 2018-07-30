@@ -16,8 +16,9 @@
 }
 
 + (id)specificationsFromHostBundle:(id)arg1;
-@property(readonly, retain, nonatomic) NSString *requiredClassOrProtocolName; // @synthesize requiredClassOrProtocolName=_classOrProtocolName;
+@property(readonly, nonatomic) NSString *requiredClassOrProtocolName; // @synthesize requiredClassOrProtocolName=_classOrProtocolName;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -25,7 +26,6 @@
 - (id)description;
 - (_Bool)matchesPluginBundle:(id)arg1;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
-- (void)dealloc;
 - (id)initWithPlistSpecification:(id)arg1;
 
 @end

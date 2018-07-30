@@ -10,6 +10,7 @@
 
 @class NSString, TKTokenDriver;
 
+__attribute__((visibility("hidden")))
 @interface TKTokenDriverContext : NSExtensionContext <TKTokenDriverProtocol>
 {
     BOOL _invalidated;

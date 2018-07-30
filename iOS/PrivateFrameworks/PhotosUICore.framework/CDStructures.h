@@ -74,10 +74,17 @@ struct PXDisplayVelocity {
 struct PXFaceTileImageParams {
     struct CGSize targetSize;
     unsigned long long cropFactor;
-    _Bool round;
+    unsigned long long style;
     _Bool cropBounded;
     _Bool acceptsVeryLowQuality;
     _Bool wantsNonVisibleFaceCompletion;
+};
+
+struct PXGadgetUpdateFlags {
+    _Bool collectionNeedsUpdate;
+    _Bool currentGadgetSpecNeedsUpdate;
+    _Bool gadgetLoadingNeedsUpdate;
+    _Bool loadRemaingGadgetsAfterViewAppeared;
 };
 
 struct PXMagazineOrigin {
@@ -93,6 +100,21 @@ struct PXMagazineRect {
 struct PXMagazineSize {
     long long _field1;
     long long _field2;
+};
+
+struct PXMediaProviderThumbnailDataFormat {
+    unsigned long long _field1;
+    unsigned short _field2;
+    unsigned short _field3;
+};
+
+struct PXMediaProviderThumbnailDataSpec {
+    struct PXMediaProviderThumbnailDataFormat _field1;
+    unsigned short _field2;
+    unsigned short _field3;
+    unsigned short _field4;
+    unsigned short _field5;
+    unsigned short _field6;
 };
 
 struct PXMemoryFontsSpecIdentifier {
@@ -149,6 +171,8 @@ struct PXTileInfo {
     struct CGSize imageSize;
     struct CGSize minimumSize;
     _Bool hasCaption;
+    _Bool hasLikes;
+    long long commentCount;
     _Bool isBatchStart;
 };
 
@@ -167,6 +191,10 @@ struct PXTileState {
     void *_field12;
     void *_field13;
     unsigned long long _field14;
+};
+
+struct PXTwoTuple {
+    Class _field1;
 };
 
 struct PXViewSpecDescriptor {
@@ -190,6 +218,11 @@ struct UIFont {
     Class _field1;
 };
 
+struct UIOffset {
+    double horizontal;
+    double vertical;
+};
+
 struct _LayoutContext {
     struct UIEdgeInsets contentInsets;
     struct CGSize itemSize;
@@ -197,6 +230,7 @@ struct _LayoutContext {
     struct CGSize size;
     unsigned long long numberOfColumns;
     unsigned long long numberOfRows;
+    long long layoutAxis;
 };
 
 struct _NSRange {
@@ -223,6 +257,8 @@ struct _PXLayoutGeometry {
     struct CGAffineTransform _field4;
     float _field5;
     long long _field6;
+    struct CGRect _field7;
+    struct CGSize _field8;
 };
 
 struct _PXValueAnimationSpec {
@@ -266,11 +302,34 @@ struct unordered_map<PXTileIdentifier, unsigned long, std::__1::hash<PXTileIdent
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long needsUpdate;
+    unsigned long long updated;
+    _Bool isPerformingUpdate;
+} CDStruct_d97c9657;
+
+typedef struct {
+    unsigned long long _field1;
+    id *_field2;
+    unsigned long long *_field3;
+    unsigned long long _field4[5];
+} CDStruct_70511ce9;
+
+typedef struct {
     double minValue;
     double maxValue;
     double totalValue;
     unsigned long long count;
 } CDStruct_4bbd3430;
+
+typedef struct {
+    double vertical;
+    double horizontal;
+} CDStruct_f0658562;
+
+typedef struct {
+    long long _field1;
+    float _field2;
+} CDStruct_fd7332cd;
 
 typedef struct {
     long long value;
@@ -286,19 +345,10 @@ typedef struct {
 
 typedef struct {
     struct CLLocationCoordinate2D _field1;
-    struct {
-        double _field1;
-        double _field2;
-    } _field2;
-} CDStruct_26e8d939;
+    CDStruct_f0658562 _field2;
+} CDStruct_88bcc19c;
 
 // Ambiguous groups
-typedef struct {
-    _Bool respondsToItemIndexPathAtLocation;
-    _Bool respondsToItemIndexPathClosestLeadingLocation;
-    _Bool respondsToItemIndexPathClosestAboveLocation;
-} CDStruct_d45a99d3;
-
 typedef struct {
     _Bool respondsToProgressDidChange;
     _Bool respondsToStatusDidChange;
@@ -307,6 +357,10 @@ typedef struct {
 typedef struct {
     _Bool button;
 } CDStruct_6d279c03;
+
+typedef struct {
+    _Bool imageView;
+} CDStruct_637f5cce;
 
 typedef struct {
     _Bool selectedIndexPaths;

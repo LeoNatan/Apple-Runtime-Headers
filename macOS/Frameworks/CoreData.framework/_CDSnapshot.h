@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)alloc;
 + (Class)classForEntity:(id)arg1;
 + (void)initialize;
++ (void)resetGeneratedClasses;
 - (id)_snapshot_;
 @property(readonly, nonatomic) NSManagedObjectID *objectID;
 @property(readonly, nonatomic) NSEntityDescription *entity;

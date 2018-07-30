@@ -39,11 +39,11 @@
 @property BOOL alwaysAllowHTTPS; // @synthesize alwaysAllowHTTPS;
 @property BOOL whitelistEnabled; // @synthesize whitelistEnabled;
 @property BOOL filterEnabled; // @synthesize filterEnabled;
-- (id)description;
-- (BOOL)isURL:(id)arg1 onList:(id)arg2;
-- (id)pronounceOnPageURLString:(id)arg1 shouldFilter:(char *)arg2;
 - (BOOL)isURLAllowed:(id)arg1 reason:(id *)arg2 shouldFilter:(char *)arg3 foundOnList:(char *)arg4;
 - (BOOL)isURLAllowed:(id)arg1;
+- (BOOL)isURL:(id)arg1 onList:(id)arg2;
+- (id)description;
+- (id)pronounceOnPageURLString:(id)arg1 shouldFilter:(char *)arg2;
 - (void)dealloc;
 - (id)initWithPreferences:(id)arg1;
 - (id)init;

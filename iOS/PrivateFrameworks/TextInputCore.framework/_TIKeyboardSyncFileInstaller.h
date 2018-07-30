@@ -13,6 +13,7 @@
     _KSFileEntry *_entry;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)valid;
 - (void)invalidate;

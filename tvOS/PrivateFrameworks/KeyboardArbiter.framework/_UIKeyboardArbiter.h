@@ -55,8 +55,11 @@
 - (void)reevaluateHardwareKeyboardClient;
 - (void)runOperations:(CDUnknownBlockType)arg1 onHandler:(id)arg2;
 - (void)attemptConnection;
+- (void)retrieveClientDebugInformationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)captureStateForDebug;
 - (void)retrieveDebugInformationWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
+- (id)_descriptionWithScene:(_Bool)arg1;
 - (void)dealloc;
 - (void)resume;
 - (id)initWithLink:(id)arg1;

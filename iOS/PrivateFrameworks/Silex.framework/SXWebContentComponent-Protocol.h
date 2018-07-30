@@ -6,9 +6,10 @@
 
 #import "SXComponent.h"
 
-@class NSURL;
+@class NSString, NSURL;
 
 @protocol SXWebContentComponent <SXComponent>
+@property(readonly, nonatomic) NSString *resourceIdentifier;
 @property(readonly, nonatomic) NSURL *URL;
 @end
 

@@ -14,7 +14,6 @@
 
 @interface _CPSuggestionEngagementFeedback : PBCodable <_CPProcessableFeedback, _CPSuggestionEngagementFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
     _CPSearchSuggestionForFeedback *_suggestion;
 }
@@ -30,8 +29,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasSuggestion;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

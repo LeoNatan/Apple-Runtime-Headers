@@ -11,11 +11,13 @@
 #import "PLDismissableViewController.h"
 #import "PLInvitationRecordsObserver.h"
 #import "PLRootLibraryNavigationController.h"
+#import "PXChangeObserver.h"
+#import "PXSettingsKeyObserver.h"
 #import "UINavigationControllerDelegate.h"
 
-@class NSArray, NSMutableDictionary, NSMutableIndexSet, NSString, PUImportViewController, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, UINavigationController;
+@class NSArray, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_os_log>, NSString, PUImportViewController, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, PUTabbedLibraryViewModel, PXForYouBadgeManager, UINavigationController;
 
-@interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLInvitationRecordsObserver, PLDismissableViewController, PLRootLibraryNavigationController, UINavigationControllerDelegate>
+@interface PUTabbedLibraryViewController : UITabBarController <PXSettingsKeyObserver, PXChangeObserver, PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLInvitationRecordsObserver, PLDismissableViewController, PLRootLibraryNavigationController, UINavigationControllerDelegate>
 {
     PUTabbedLibraryViewControllerSpec *_spec;
     PUSessionInfo *_sessionInfo;
@@ -24,22 +26,31 @@
     NSMutableDictionary *_filteredAlbumListsByContentMode;
     PUMomentsZoomLevelManager *_zoomLevelManager;
     NSMutableIndexSet *_everDisplayedContentModes;
+    PUTabbedLibraryViewModel *_viewModel;
+    _Bool _px_hidesTabBarForRegularHorizontalSizeClass;
     _Bool _shouldNavigateToAllPhotosAlbum;
     PUImportViewController *_importViewController;
+    id <PUTabbedLibraryViewControllerContainerDelegate> _containerDelegate;
     NSArray *_excludedContentModes;
+    PXForYouBadgeManager *_badgeManager;
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
-+ (void)initialize;
-@property(copy, nonatomic) NSArray *excludedContentModes; // @synthesize excludedContentModes=_excludedContentModes;
+@property(retain, nonatomic) PXForYouBadgeManager *badgeManager; // @synthesize badgeManager=_badgeManager;
 @property(nonatomic) _Bool shouldNavigateToAllPhotosAlbum; // @synthesize shouldNavigateToAllPhotosAlbum=_shouldNavigateToAllPhotosAlbum;
+@property(copy, nonatomic) NSArray *excludedContentModes; // @synthesize excludedContentModes=_excludedContentModes;
+@property(nonatomic) __weak id <PUTabbedLibraryViewControllerContainerDelegate> containerDelegate; // @synthesize containerDelegate=_containerDelegate;
+@property(nonatomic, setter=px_setHidesTabBarForRegularHorizontalSizeClass:) _Bool px_hidesTabBarForRegularHorizontalSizeClass; // @synthesize px_hidesTabBarForRegularHorizontalSizeClass=_px_hidesTabBarForRegularHorizontalSizeClass;
 @property(retain, nonatomic) PUImportViewController *importViewController; // @synthesize importViewController=_importViewController;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *tabbedLibraryLog;
 - (id)px_navigateToMemoryWithLocalIdentifier:(id)arg1;
 - (struct CGRect)px_frameForTabItem:(unsigned long long)arg1 inCoordinateSpace:(id)arg2;
 - (id)ppt_navigationControllerForContentMode:(int)arg1;
 - (void)prepareForDefaultImageSnapshot;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
@@ -56,9 +67,15 @@
 - (_Bool)assetIsAvailableForNavigation:(id)arg1 inAlbum:(struct NSObject *)arg2;
 - (id)_tabRootViewControllerInNavigationController:(id)arg1;
 - (id)_snapBackRootViewControllerInNavigationController:(id)arg1;
-- (id)navigateToMemoryWithLocalIdentifier:(id)arg1;
+- (void)navigateToPeopleAlbumAnimated:(_Bool)arg1 revealPersonWithLocalIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)navigateToMemoryWithLocalIdentifier:(id)arg1;
+- (void)_handleFetchedMomentShare:(id)arg1 error:(id)arg2 timedOut:(_Bool)arg3;
+- (void)navigateToMomentShareWithURL:(id)arg1 animated:(_Bool)arg2;
+- (void)navigateToInvitationCMMWithIdentifier:(id)arg1 animated:(_Bool)arg2;
+- (void)navigateToSuggestedCMMWithIdentifier:(id)arg1 animated:(_Bool)arg2;
 - (void)navigateToRevealTheMostRecentMemoryAnimated:(_Bool)arg1;
 - (id)_navigateToMemories;
+- (id)_navigateToForYou;
 - (_Bool)assetIsAvailableForNavigationInMoments:(id)arg1 refetchSectionsIfNeeded:(_Bool)arg2;
 - (_Bool)assetIsAvailableForNavigationInMoments:(id)arg1;
 - (struct NSObject *)_availableAlbumToNavigateToAsset:(id)arg1 preferredAlbum:(struct NSObject *)arg2;
@@ -73,10 +90,9 @@
 - (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)navigateToCloudFeedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)navigateToOneUpForAsset:(id)arg1 inAssetContainer:(id)arg2 animated:(_Bool)arg3;
-- (void)navigateToLastYearPhotosSearchAnimated:(_Bool)arg1;
-- (void)navigateToPhotosSearchAnimated:(_Bool)arg1;
+- (void)navigateToOneYearAgoSearch;
 - (void)navigateToPhotosContentBottomAnimated:(_Bool)arg1;
-- (void)navigateToAsset:(id)arg1 animated:(_Bool)arg2;
+- (void)navigateToAsset:(id)arg1 openOneUp:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_navigateToContentMode:(int)arg1 defaultLocationIfNeverDisplayed:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)navigateToContentMode:(int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)navigateToComment:(id)arg1 forAsset:(id)arg2 animated:(_Bool)arg3;
@@ -88,6 +104,8 @@
 - (void)_navigateToAlbum:(struct NSObject *)arg1 andPerformAction:(int)arg2 initiallyHidden:(_Bool)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)_navigateToDefaultLocationInNavigationController:(id)arg1 animated:(_Bool)arg2;
 - (void)navigateToInitialLocationInNavigationController:(id)arg1;
+- (void)_updateTabBarVisibilityForHorizontalSizeClass:(long long)arg1;
+- (void)_updateRootViewControllersInNavigationControllers:(id)arg1 tabBarHidden:(_Bool)arg2;
 - (void)_enumerateViewControllersWithBlock:(CDUnknownBlockType)arg1;
 - (void)_didFinishPostingNotifications:(id)arg1;
 - (void)invitationRecordsDidChange:(id)arg1;
@@ -95,11 +113,10 @@
 - (void)assetContainerListDidChange:(id)arg1;
 - (void)_libraryDidChange:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_updateSharedStreamsTabBadge;
+- (void)_updateSharedAlbumBadges;
 - (void)updateDisplayedTabsAnimated:(_Bool)arg1;
 - (_Bool)_isNavigationControllerBadged:(id)arg1;
 - (id)_navigationControllerForContentMode:(int)arg1;
-- (void)_setTabBarItemForController:(id)arg1 contentMode:(int)arg2;
 - (id)newRootViewControllerForContentMode:(int)arg1;
 - (id)_newNavigationControllerWithRootController:(id)arg1;
 - (id)_existingNavigationControllerForContentMode:(int)arg1;
@@ -107,17 +124,22 @@
 - (int)contentModeForTabIdentifier:(unsigned long long)arg1;
 - (unsigned long long)tabIdentifierForContentMode:(int)arg1;
 @property(nonatomic) int selectedContentMode;
-- (_Bool)shouldShowTabForContentMode:(int)arg1;
 @property(readonly, nonatomic) UINavigationController *selectedNavigationController;
+@property(readonly, nonatomic) NSArray *rootViewControllers;
 - (int)_contentModeForNavigationController:(id)arg1;
 - (int)_contentModeForAlbum:(struct NSObject *)arg1;
 - (struct NSObject *)_albumListForContentMode:(int)arg1;
 - (_Bool)pu_shouldSelectViewController:(id)arg1;
 - (void)setImportViewController:(id)arg1 animated:(_Bool)arg2;
+- (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)dealloc;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithSpec:(id)arg1;
 
 // Remaining properties

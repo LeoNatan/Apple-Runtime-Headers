@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface APSMultiUserMode : NSObject
 {
     BOOL _isMultiUser;

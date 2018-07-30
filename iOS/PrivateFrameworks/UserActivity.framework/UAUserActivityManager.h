@@ -38,6 +38,7 @@
 @property(readonly) _Bool supportsActivityContinuation; // @synthesize supportsActivityContinuation=_supportsActivityContinuation;
 @property _Bool registeredForAppResignationMessages; // @synthesize registeredForAppResignationMessages=_registeredForAppResignationMessages;
 - (void).cxx_destruct;
+- (_Bool)registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)registerForApplicationDeactivateIfNecessary;
 - (void)sendCurrentActivityToIndexer:(id)arg1;
 - (void)sendToIndexerIfAppropriate:(id)arg1 force:(_Bool)arg2;

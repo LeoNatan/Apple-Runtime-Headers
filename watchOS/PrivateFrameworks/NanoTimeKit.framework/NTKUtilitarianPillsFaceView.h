@@ -10,6 +10,11 @@
 {
 }
 
+- (id)_visibleComplicationSlots;
+- (void)_updateComplicationOverlapHiding;
+- (void)_removeComplicationOverlapHiding;
+- (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (struct CGPoint)_dateComplicationCenterOffset;
 - (struct CGPoint)_dateComplicationRightAlignment;
 - (void)_configureComplicationFactory:(id)arg1;
@@ -18,6 +23,7 @@
 - (id)_keylineViewForDensityEditing;
 - (id)_utilityComplicationSlots;
 - (Class)_utilitarianSceneClass;
+- (void)_loadScene;
 
 @end
 

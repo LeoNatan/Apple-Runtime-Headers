@@ -12,11 +12,8 @@ __attribute__((visibility("hidden")))
     _Bool _dimmed;
 }
 
-+ (Class)cellClass;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 - (void)_windowChangedKeyState;
-- (_Bool)isSelected;
-- (void)setBackgroundStyle:(long long)arg1;
 - (void)updateTextColor;
 - (void)initCommon;
 

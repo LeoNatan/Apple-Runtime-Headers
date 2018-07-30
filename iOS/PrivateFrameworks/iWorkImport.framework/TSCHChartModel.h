@@ -79,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (int)cachedChartMediatorGridDirection;
 - (id)cachedDataFormatterPersistableStyleObjectAtSeriesIndex:(unsigned long long)arg1;
 - (id)cachedDataFormatterPersistableStyleObjectForID:(id)arg1;
+- (void)disableCachingMediatorDataDuringBlock:(CDUnknownBlockType)arg1;
 - (void)setShouldCacheMediatorData:(_Bool)arg1;
 @property(readonly, nonatomic) NSArray *seriesList;
 - (id)axisForID:(id)arg1;

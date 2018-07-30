@@ -15,6 +15,11 @@
 
 @property(readonly, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 - (void).cxx_destruct;
+- (id)_personFromIntent:(id)arg1;
+- (unsigned int)_hashForIntent:(id)arg1;
+- (_Bool)_isIntent:(id)arg1 equalToOther:(id)arg2;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)performActionWithContext:(id)arg1;
 - (id)initWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 userActivity:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;

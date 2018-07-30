@@ -8,10 +8,11 @@
 
 #import "NSCopying.h"
 
-@class NSString;
+@class NSString, NTPBAlternateHeadline;
 
 @interface NTPBTodayWidgetHeadlineExposure : PBCodable <NSCopying>
 {
+    NTPBAlternateHeadline *_alternateHeadline;
     NSString *_articleId;
     NSString *_sourceChannelId;
     NSString *_webEmbedId;
@@ -32,6 +33,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NTPBAlternateHeadline *alternateHeadline; // @synthesize alternateHeadline=_alternateHeadline;
 @property(retain, nonatomic) NSString *webEmbedId; // @synthesize webEmbedId=_webEmbedId;
 @property(nonatomic) int widgetArticleCountInSection; // @synthesize widgetArticleCountInSection=_widgetArticleCountInSection;
 @property(nonatomic) int widgetArticleCount; // @synthesize widgetArticleCount=_widgetArticleCount;
@@ -50,6 +52,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAlternateHeadline;
 @property(readonly, nonatomic) _Bool hasWebEmbedId;
 - (int)StringAsWidgetContentType:(id)arg1;
 - (id)widgetContentTypeAsString:(int)arg1;

@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned int mAttributes;
     unsigned int mVbo;
     struct _NSRange mVertexRange;
-    vector_8a3ef5f6 mContiguousVertexStorage;
+    vector_b8c3c0c5 mContiguousVertexStorage;
     struct vector<VertexGroup, std::__1::allocator<VertexGroup>> mVertexHistory;
     struct vector<std::__1::pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))>, std::__1::allocator<std::__1::pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))>>> mNonCollisionSegments;
     // Error parsing type: , name: U_COLOR
@@ -72,7 +72,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)snapshot;
-- (void)updateVertexControllerWithData:(vector_8a3ef5f6)arg1 range:(struct _NSRange)arg2 allowWet:(BOOL)arg3;
+- (void)updateVertexControllerWithData:(vector_b8c3c0c5)arg1 range:(struct _NSRange)arg2 allowWet:(BOOL)arg3;
 - (void)updateVertexControllerWithDataRange:(struct _NSRange)arg1 allowWet:(BOOL)arg2;
 - (void)didBeginNewStroke;
 - (void)didCompleteStroke;
@@ -94,7 +94,7 @@ __attribute__((visibility("hidden")))
 - (void)updateDryCycleIncludingComposite:(BOOL)arg1;
 - (void)updateWet;
 - (struct CGRect)getVertexBounds;
-- (struct CGRect)regionWithVertices:(vector_8a3ef5f6)arg1 withInflationAmount:(float)arg2;
+- (struct CGRect)regionWithVertices:(vector_b8c3c0c5)arg1 withInflationAmount:(float)arg2;
 - (void)update;
 - (_Bool)detectCollision:: /* Error: Ran out of types for this method. */;
 - (void)addPoints:(id)arg1 withSegmentLength:(unsigned long long)arg2;

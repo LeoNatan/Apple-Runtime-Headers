@@ -9,8 +9,12 @@
 @class NSDictionary, PKCloudStoreRecord;
 
 @protocol PKCloudStoreCoding <NSSecureCoding>
+- (unsigned long long)itemType;
 - (NSDictionary *)recordTypesAndNames;
 - (void)encodeWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 - (id)initWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
+
+@optional
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 @end
 

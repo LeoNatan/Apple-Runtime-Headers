@@ -62,13 +62,14 @@
 - (void)refreshBackingErrorsWithCalendarIdentifiers:(id)arg1 sourceIdentifiers:(id)arg2;
 - (void)refreshBackingErrors;
 - (id)errors;
+- (void)removeNotificationsWithManagedObjectIDs:(id)arg1;
 - (void)removeNotificationWithIdentifier:(id)arg1;
 - (id)notificationIdentifiersForSourceWithIdentifier:(id)arg1;
 - (id)notificationIdentifiersForCalendarWithIdentifier:(id)arg1;
 - (void)useBackingNotifications:(id)arg1;
 - (id)_calendarOrSourceIdentifierForNotification:(id)arg1;
-- (void)addBackingNotification:(id)arg1 forCalendarOrSourceIdentifier:(id)arg2;
-- (void)addBackingNotifications:(id)arg1;
+- (void)addOrUpdateBackingNotification:(id)arg1 forCalendarOrSourceIdentifier:(id)arg2;
+- (void)addOrUpdateBackingNotifications:(id)arg1;
 - (void)refreshBackingNotificationsWithCalendarIdentifiers:(id)arg1 sourceIdentifiers:(id)arg2;
 - (void)refreshBackingNotifications;
 - (id)fetchBackingNotificationsWithCalendarIdentifiers:(id)arg1 sourceIdentifiers:(id)arg2;
@@ -117,6 +118,8 @@
 - (id)itemIdentifiersInCalendars:(id)arg1;
 - (id)itemIdentifiers;
 - (void)removeItemsWithManagedObjectIDs:(id)arg1;
+- (id)trackedObjectIDsInManagedObjectIDs:(id)arg1;
+- (id)itemsWithManagedObjectIDs:(id)arg1;
 - (void)removeItemsWithoutIdentifiers:(id)arg1;
 - (void)_removeTrackedItemWithIdentifier:(id)arg1 removeExceptions:(BOOL)arg2 thisAndFuture:(BOOL)arg3;
 - (void)removeItemWithIdentifier:(id)arg1;

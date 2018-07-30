@@ -57,6 +57,11 @@
     BOOL _siriConnectionUsesPeerManagedSync;
     Class _peerProviderClass;
     NSMutableArray *_outgoingCommandsWithSendCompletions;
+    BOOL _primaryConnectionViable;
+    BOOL _betterPathAvailable;
+    long long _secondaryConnectionOpenState;
+    id <SiriCoreConnectionProvider> _secondaryConnectionProvider;
+    BOOL _dispatchedSnapshotMetrics;
 }
 
 @property(nonatomic) BOOL deviceIsInWalkaboutExperimentGroup; // @synthesize deviceIsInWalkaboutExperimentGroup=_deviceIsInWalkaboutExperimentGroup;
@@ -101,6 +106,8 @@
 - (BOOL)_hasReadACEHeader;
 - (BOOL)_consumeHTTPHeaderWithData:(id)arg1 bytesRead:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)_hasReadHTTPHeader;
+- (void)connectionProviderReceivedBetterRouteNotification:(id)arg1;
+- (void)connectionProvider:(id)arg1 receivedViabilityChangeNotification:(BOOL)arg2;
 - (void)connectionProvider:(id)arg1 receivedError:(id)arg2;
 - (void)stopHeartBeat;
 - (void)startHeartBeat;
@@ -132,11 +139,16 @@
 - (void)_initializeBufferedGeneralOutputDataWithInitialPayload:(BOOL)arg1;
 - (id)_aceHeaderData;
 - (id)_httpHeaderData;
+- (void)_forceTriggerRetry;
+- (void)_cancelSecondaryConnection;
+- (void)_startSecondaryConnection;
+- (void)updateActiveBackgroundConnectionWithSecondary;
 - (void)cancel;
 - (void)_startNetworkProviderWithInfo:(id)arg1;
 - (void)_updateBuffersForInitialPayload:(id)arg1 bufferedLength:(unsigned long long)arg2 forceReconnect:(BOOL)arg3;
 - (id)_getInitialPayloadWithBufferedLength:(unsigned long long *)arg1 forceReconnect:(BOOL)arg2;
 - (Class)_providerClass;
+- (void)_setNetworkProvider:(id)arg1;
 - (void)_startWithConnectionInfo:(id)arg1 proposedFallbackMethod:(long long)arg2 allowFallbackToNewMethod:(BOOL)arg3;
 - (void)startWithConnectionInfo:(id)arg1;
 - (long long)_nextConnectionMethod;

@@ -12,16 +12,17 @@
 {
     NSString *_buildVersion;
     NSString *_productVersion;
-    NSString *_UUID;
     _Bool _serviceDebugging;
     _Bool _isNetworkReachable;
     NSString *_requestCountryCode;
     NSString *_requestLanguageCode;
     NSString *_acceptLanguageCode;
+    NSString *_UUID;
 }
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
+@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
 - (id)signedRequestForURL:(id)arg1 parameters:(id)arg2;
 - (id)stocksYQLBaseURL;
@@ -34,7 +35,6 @@
 - (id)defaultBacksideLogoURL;
 - (id)fullQuoteURLOverrideForStock:(id)arg1;
 - (id)_urlStringWithHost:(id)arg1;
-- (id)UUID;
 - (id)financeRequestAttributes;
 - (void)addStocksHeadersToPostRequest:(id)arg1;
 - (id)_stocksAcceptLanguage;

@@ -4,13 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <NanoTimeKit/NTKRelevanceProvider.h>
+#import "NSObject.h"
 
 @class NSDate, NSDateInterval;
 
-@interface NTKDateRelevanceProvider : NTKRelevanceProvider
+@interface NTKDateRelevanceProvider : NSObject
 {
-    _Bool _initialRelevanceDateWasProvided;
     NSDateInterval *_interval;
     NSDate *_initialRelevanceDate;
     NSDate *_irrelevantDate;
@@ -22,14 +21,6 @@
 @property(readonly, nonatomic) NSDate *initialRelevanceDate; // @synthesize initialRelevanceDate=_initialRelevanceDate;
 @property(readonly, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
 - (void).cxx_destruct;
-- (void)_localeDidChange;
-- (id)_defaultInitialRelevanceDateForDate:(id)arg1;
-- (void)_loadDatesWithEventInterval:(id)arg1 irrelevantDate:(id)arg2 initialRelevanceDate:(id)arg3;
-- (id)description;
-- (unsigned int)_hash;
-- (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithEventInterval:(id)arg1 becomesIrrelevantDate:(id)arg2 firstBecomesRelevantDate:(id)arg3 recentDuration:(double)arg4;
 - (id)initWithEventInterval:(id)arg1 becomesIrrelevantDate:(id)arg2 firstBecomesRelevantDate:(id)arg3;
 - (id)initWithEventInterval:(id)arg1 firstBecomesRelevantDate:(id)arg2;

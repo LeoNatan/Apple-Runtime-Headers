@@ -8,6 +8,7 @@
 
 @protocol MSPCloudRequest <NSObject>
 @property(readonly, nonatomic) BOOL shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
+- (void)setNetworkBehaviorIsDiscretionary:(BOOL)arg1;
 - (void)addCloudAccessCompletionBlock:(void (^)(BOOL, NSError *))arg1;
 
 @optional

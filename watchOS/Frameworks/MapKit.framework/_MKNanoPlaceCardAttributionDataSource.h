@@ -6,14 +6,10 @@
 
 #import <MapKit/_MKNanoPlaceCardSectionData.h>
 
-@class _MKNanoPlaceCardAttributionView;
-
 @interface _MKNanoPlaceCardAttributionDataSource : _MKNanoPlaceCardSectionData
 {
-    _MKNanoPlaceCardAttributionView *_cell;
 }
 
-- (void).cxx_destruct;
 - (void)notifyDelegateForActionAtRow:(unsigned int)arg1;
 - (id)cellForRow:(unsigned int)arg1 inTableView:(id)arg2;
 - (id)initWithMapItem:(id)arg1;

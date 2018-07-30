@@ -31,7 +31,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithR:(double)arg1 G:(double)arg2 B:(double)arg3 A:(double)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 @end
 

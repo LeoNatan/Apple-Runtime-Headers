@@ -6,7 +6,6 @@
 
 #import <AddressBook/CNUIContactNameOrder.h>
 
-__attribute__((visibility("hidden")))
 @interface _CNUIGivenNameFirstNameOrder : CNUIContactNameOrder
 {
 }

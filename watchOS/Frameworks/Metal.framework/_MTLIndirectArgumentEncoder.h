@@ -26,6 +26,12 @@
 - (void)setIndirectArgumentBuffer:(id)arg1 offset:(unsigned int)arg2;
 - (void)setIndirectArgumentBuffer:(id)arg1 startOffset:(unsigned int)arg2 arrayElement:(unsigned int)arg3;
 - (void *)constantDataAtIndex:(unsigned int)arg1;
+- (void)setIndirectCommandBuffers:(const id *)arg1 withRange:(struct _NSRange)arg2;
+- (void)setIndirectCommandBuffer:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setComputePipelineStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
+- (void)setComputePipelineState:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setRenderPipelineStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
+- (void)setRenderPipelineState:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setSamplerStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setSamplerState:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setTextures:(const id *)arg1 withRange:(struct _NSRange)arg2;

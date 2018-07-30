@@ -11,7 +11,7 @@
 @protocol CPLEngineOutgoingResourcesImplementation <CPLEngineStorageImplementation>
 @property(readonly, nonatomic) unsigned long long sizeOfOriginalResourcesToUpload;
 @property(readonly, nonatomic) unsigned long long sizeOfResourcesToUpload;
-- (BOOL)resetWithError:(id *)arg1;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 discardedResources:(id *)arg4 error:(id *)arg5;
 - (unsigned long long)countOfOriginalOthers;
 - (unsigned long long)countOfOriginalVideos;
 - (unsigned long long)countOfOriginalImages;

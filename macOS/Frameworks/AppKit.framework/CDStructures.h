@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSAppearance, NSData;
+@class NSAppearance, NSColor, NSData;
 
 #pragma mark Function Pointers and Blocks
 
@@ -93,8 +93,6 @@ struct CGSize {
     double width;
     double height;
 };
-
-struct CGSnappingInfo;
 
 struct CMNamedColorPageInfoEntryType {
     unsigned short _field1;
@@ -216,13 +214,6 @@ struct NSMenuUserKeyEquivalentInfo_t {
     unsigned char _field3;
 };
 
-struct NSNavSimpleButtonState {
-    long long _field1;
-    char _field2;
-    char _field3;
-    char _field4;
-};
-
 struct NSThreadPrivate {
     unsigned int _field1;
     struct __CFRunLoopObserver *_field2;
@@ -238,11 +229,10 @@ struct NSThreadPrivate {
     long long _field12;
     id _field13;
     id _field14;
-    unsigned long long _field15;
-    long long _field16;
+    long long _field15;
+    id _field16;
     id _field17;
-    id _field18;
-    struct auxFlags _field19;
+    struct auxFlags _field18;
 };
 
 struct NSToolbarFullScreenContentViewLayout_t {
@@ -261,19 +251,14 @@ struct NSVisualEffectViewInternal {
     id _field2;
     id _field3;
     id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
+    long long _field5;
+    long long _field6;
+    long long _field7;
     long long _field8;
-    long long _field9;
-    long long _field10;
-    long long _field11;
-    long long _field12;
-    id _field13;
-    id _field14;
-    id _field15;
-    id _field16;
-    id _field17;
+    id _field9;
+    id _field10;
+    id _field11;
+    id _field12;
 };
 
 struct NSWindowBatchOrderingTriplet {
@@ -355,6 +340,7 @@ struct OpaqueCoreDrag {
     struct __CFRunLoopTimer *_field64;
     double _field65;
     double _field66;
+    long long _field67;
 };
 
 struct OpaqueEventRef;
@@ -1464,6 +1450,7 @@ struct _NSModalSession {
     id _field18;
     CDUnknownBlockType _field19;
     id _field20;
+    char _field21;
 };
 
 struct _NSNibFlags {
@@ -1642,6 +1629,10 @@ struct __va_list_tag {
     void *_field4;
 };
 
+struct _mach_right_send {
+    unsigned int mrs_name;
+};
+
 struct _opaque_pthread_mutex_t {
     long long __sig;
     char __opaque[56];
@@ -1818,21 +1809,6 @@ typedef struct {
 } CDStruct_fadd2e06;
 
 typedef struct {
-    CDStruct_d2b197d1 _field1;
-    CDStruct_d2b197d1 _field2;
-    CDStruct_d2b197d1 _field3;
-    id *_field4;
-    CDStruct_d2b197d1 _field5;
-    id *_field6;
-    CDStruct_d2b197d1 _field7;
-    CDStruct_d2b197d1 _field8;
-    CDStruct_d2b197d1 _field9;
-    id *_field10;
-    id _field11;
-    id _field12;
-} CDStruct_a0cecc03;
-
-typedef struct {
     struct CGSize _field1;
     struct CGSize _field2;
     long long _field3;
@@ -1863,8 +1839,15 @@ typedef struct {
     double backingScaleFactor;
     char isFlipped;
     NSAppearance *appearance;
+    NSColor *trackFillColor;
     char drawsBackground;
-} CDStruct_afd5e463;
+    long long numberOfTickMarks;
+    char animatesCollapse;
+    double collapseAnimation_KnobClipProgress;
+    double collapseAnimation_KnobOpacityProgress;
+    double collapseAnimation_KnobCornerRadius;
+    double collapseAnimation_TrackOpacityProgress;
+} CDStruct_5a39c0a2;
 
 typedef struct {
     unsigned int :4;
@@ -1876,6 +1859,14 @@ typedef struct {
         struct __CFDictionary *_field3;
     } _field1;
 } CDStruct_d48118a8;
+
+typedef struct {
+    char _field1;
+    char _field2;
+    struct CGRect _field3;
+    struct CGSize _field4;
+    struct CGSize _field5;
+} CDStruct_a26f6e08;
 
 typedef struct {
     char _field1;
@@ -1894,12 +1885,12 @@ typedef struct {
     double _field14;
     struct CGRect *_field15;
     unsigned long long _field16;
-    struct CGSnappingInfo *_field17;
+    id _field17;
     char _field18;
     unsigned long long _field19;
     unsigned long long _field20;
     unsigned long long _field21;
-} CDStruct_a42fe1e7;
+} CDStruct_222f2799;
 
 typedef struct {
     long long _field1;

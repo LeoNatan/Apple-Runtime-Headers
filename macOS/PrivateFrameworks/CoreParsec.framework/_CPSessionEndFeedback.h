@@ -14,10 +14,6 @@
 
 @interface _CPSessionEndFeedback : PBCodable <_CPProcessableFeedback, _CPSessionEndFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int reason:1;
-    } _has;
     int _reason;
     unsigned long long _timestamp;
 }
@@ -32,8 +28,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasReason;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 @property(readonly, nonatomic) BOOL requiresQueryId;
 

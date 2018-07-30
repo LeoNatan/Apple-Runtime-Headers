@@ -6,13 +6,14 @@
 
 #import <MediaPlayer/MPModelObject.h>
 
-@class MPArtworkCatalog, MPModelMovie, MPModelPlaylist, MPModelSong, MPModelTVEpisode;
+@class MPArtworkCatalog, MPModelMovie, MPModelPlaylist, MPModelSocialPerson, MPModelSong, MPModelTVEpisode;
 
 @interface MPModelPlaylistEntry : MPModelObject
 {
 }
 
 + (id)___artworkCatalog_KEY;
++ (id)__socialContributor_KEY;
 + (id)__movie_KEY;
 + (id)__tvEpisode_KEY;
 + (id)__song_KEY;
@@ -27,6 +28,8 @@
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredStoreLibraryPersonalizationProperties;
 - (long long)type;
+- (id)anyObject;
+- (id)humanDescription;
 - (id)mediaItemPropertyValues;
 - (struct MPLibraryAddStatusObserverConfiguration)libraryAddStatusObserverConfiguration;
 - (long long)libraryRemovalSupportedOptions;
@@ -42,6 +45,7 @@
 @property(retain, nonatomic) MPModelMovie *movie; // @dynamic movie;
 @property(retain, nonatomic) MPModelPlaylist *playlist; // @dynamic playlist;
 @property(nonatomic) long long position; // @dynamic position;
+@property(retain, nonatomic) MPModelSocialPerson *socialContributor; // @dynamic socialContributor;
 @property(retain, nonatomic) MPModelSong *song; // @dynamic song;
 @property(retain, nonatomic) MPModelTVEpisode *tvEpisode; // @dynamic tvEpisode;
 

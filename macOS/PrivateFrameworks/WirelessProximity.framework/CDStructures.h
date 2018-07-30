@@ -11,29 +11,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    unsigned int timestamp:1;
-} CDStruct_b5306035;
-
-typedef struct {
     long long screenOnInterval;
     long long screenOffInterval;
     long long window;
 } CDStruct_9e3626a3;
-
-// Ambiguous groups
-typedef struct {
-    unsigned int timestamp:1;
-    unsigned int result:1;
-    unsigned int type:1;
-} CDStruct_c9c8d349;
-
-typedef struct {
-    unsigned int timestamp:1;
-    unsigned int result:1;
-} CDStruct_04e1f385;
-
-typedef struct {
-    unsigned int timestamp:1;
-    unsigned int type:1;
-} CDStruct_1769069f;
 

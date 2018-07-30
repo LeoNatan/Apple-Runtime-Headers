@@ -11,7 +11,7 @@
     _Bool _drawBackgroundOpaque;
 }
 
-+ (id)genericViewForPassDescription:(id)arg1 withFrame:(struct CGRect)arg2;
++ (id)genericViewForPass:(id)arg1 withFrame:(struct CGRect)arg2;
 @property(nonatomic) _Bool drawBackgroundOpaque; // @synthesize drawBackgroundOpaque=_drawBackgroundOpaque;
 
 @end

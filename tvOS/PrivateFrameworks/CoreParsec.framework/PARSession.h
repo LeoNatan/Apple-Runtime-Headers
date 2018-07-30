@@ -9,27 +9,25 @@
 #import "SFFeedbackListener.h"
 #import "SFResourceLoader.h"
 
-@class NSFileManager, NSString, NSXPCConnection, PARBag, PARRanker, PARSearchClient, PARSessionConfiguration;
+@class NSFileManager, NSString, NSXPCConnection, PARBag, PARSearchClient, PARSessionConfiguration;
 
 @interface PARSession : NSObject <SFFeedbackListener, SFResourceLoader>
 {
     NSFileManager *_fileManager;
     PARBag *_bag;
+    // Error parsing type: AB, name: _sampled
     PARSearchClient *_client;
-    id <PARSessionDelegate> _delegate;
-    PARRanker *_ranker;
     PARSessionConfiguration *_configuration;
+    id <PARSessionDelegate> _delegate;
 }
 
 + (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 startImmediately:(_Bool)arg3;
 + (id)sessionWithConfiguration:(id)arg1;
 + (id)sharedSession;
 + (id)sharedPARSessionWithConfiguration:(id)arg1;
-@property(retain, nonatomic) PARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-@property(retain) PARRanker *ranker; // @synthesize ranker=_ranker;
 @property __weak id <PARSessionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain) PARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) PARSearchClient *client; // @synthesize client=_client;
-@property(retain) PARBag *bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
 - (void)sendCBAEngagementFeedback:(id)arg1 query:(unsigned long long)arg2;
 - (void)reportFeedback:(id)arg1 queryId:(unsigned long long)arg2;
@@ -50,7 +48,6 @@
 - (void)didErrorOccur:(id)arg1;
 - (void)didEngageCardSection:(id)arg1;
 - (void)didEngageResult:(id)arg1;
-- (void)captureMapsResultsDisplayedFeedback:(id)arg1;
 - (void)didRankSections:(id)arg1;
 - (void)didEndSearch:(id)arg1;
 - (void)didStartSearch:(id)arg1;
@@ -66,6 +63,7 @@
 - (void)loadTask:(id)arg1;
 - (id)taskWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)awaitBag;
+@property(retain) PARBag *bag;
 @property(readonly, nonatomic) NSXPCConnection *connection;
 - (void)start;
 - (id)initWithConfiguration:(id)arg1 connection:(id)arg2 delegate:(id)arg3 startImmediately:(_Bool)arg4;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class IMSPIHandle, NSArray, NSAttributedString, NSDate, NSString, NSURL;
+@class IMSPIHandle, LPLinkMetadata, NSArray, NSAttributedString, NSDate, NSString, NSURL, PKCurrencyAmount;
 
 @interface IMSPIMessage : NSObject
 {
@@ -35,8 +35,12 @@
     NSString *_bundleId;
     long long _messageType;
     NSString *_displayAppName;
+    LPLinkMetadata *_richLinkMetadata;
+    PKCurrencyAmount *_peerPaymentAmount;
 }
 
+@property(retain) PKCurrencyAmount *peerPaymentAmount; // @synthesize peerPaymentAmount=_peerPaymentAmount;
+@property(retain) LPLinkMetadata *richLinkMetadata; // @synthesize richLinkMetadata=_richLinkMetadata;
 @property(retain) NSString *displayAppName; // @synthesize displayAppName=_displayAppName;
 @property long long messageType; // @synthesize messageType=_messageType;
 @property(retain) NSString *bundleId; // @synthesize bundleId=_bundleId;

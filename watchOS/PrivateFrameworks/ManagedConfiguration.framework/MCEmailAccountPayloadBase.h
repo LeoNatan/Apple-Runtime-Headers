@@ -15,6 +15,10 @@
     _Bool _SMIMEEnabled;
     _Bool _isRecentsSyncingDisabled;
     _Bool _isMailDropEnabled;
+    _Bool _SMIMESigningUserOverrideable;
+    _Bool _SMIMESigningIdentityUserOverrideable;
+    _Bool _SMIMEEncryptByDefaultUserOverrideable;
+    _Bool _SMIMEEncryptionIdentityUserOverrideable;
     _Bool _SMIMEPerMessageSwitchEnabled;
     NSNumber *_SMIMESigningEnabled;
     NSString *_SMIMESigningIdentityUUID;
@@ -39,9 +43,13 @@
 @property(nonatomic) _Bool SMIMEPerMessageSwitchEnabled; // @synthesize SMIMEPerMessageSwitchEnabled=_SMIMEPerMessageSwitchEnabled;
 @property(retain, nonatomic) NSData *SMIMEEncryptionIdentityPersistentID; // @synthesize SMIMEEncryptionIdentityPersistentID=_SMIMEEncryptionIdentityPersistentID;
 @property(retain, nonatomic) NSData *SMIMESigningIdentityPersistentID; // @synthesize SMIMESigningIdentityPersistentID=_SMIMESigningIdentityPersistentID;
+@property(nonatomic) _Bool SMIMEEncryptionIdentityUserOverrideable; // @synthesize SMIMEEncryptionIdentityUserOverrideable=_SMIMEEncryptionIdentityUserOverrideable;
 @property(retain, nonatomic) NSString *SMIMEEncryptionIdentityUUID; // @synthesize SMIMEEncryptionIdentityUUID=_SMIMEEncryptionIdentityUUID;
+@property(nonatomic) _Bool SMIMEEncryptByDefaultUserOverrideable; // @synthesize SMIMEEncryptByDefaultUserOverrideable=_SMIMEEncryptByDefaultUserOverrideable;
 @property(retain, nonatomic) NSNumber *SMIMEEncryptionEnabled; // @synthesize SMIMEEncryptionEnabled=_SMIMEEncryptionEnabled;
+@property(nonatomic) _Bool SMIMESigningIdentityUserOverrideable; // @synthesize SMIMESigningIdentityUserOverrideable=_SMIMESigningIdentityUserOverrideable;
 @property(retain, nonatomic) NSString *SMIMESigningIdentityUUID; // @synthesize SMIMESigningIdentityUUID=_SMIMESigningIdentityUUID;
+@property(nonatomic) _Bool SMIMESigningUserOverrideable; // @synthesize SMIMESigningUserOverrideable=_SMIMESigningUserOverrideable;
 @property(retain, nonatomic) NSNumber *SMIMESigningEnabled; // @synthesize SMIMESigningEnabled=_SMIMESigningEnabled;
 @property(nonatomic) _Bool isMailDropEnabled; // @synthesize isMailDropEnabled=_isMailDropEnabled;
 @property(nonatomic) _Bool isRecentsSyncingDisabled; // @synthesize isRecentsSyncingDisabled=_isRecentsSyncingDisabled;
@@ -50,6 +58,7 @@
 @property(nonatomic) _Bool preventMove; // @synthesize preventMove=_preventMove;
 - (void).cxx_destruct;
 - (_Bool)containsSensitiveUserInformation;
+- (void)addSMIMEEncryptionPayloadKeysTo:(id)arg1;
 - (id)payloadDescriptionKeyValueSections;
 - (id)description;
 - (id)stubDictionary;

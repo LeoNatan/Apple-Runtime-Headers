@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSCache, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString;
+@class NSCache, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface SGSqliteDatabase : NSObject
 {
@@ -18,15 +18,8 @@
     NSString *_filename;
     NSCache *_queryCache;
     NSMutableDictionary *_sqlarrays;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    NSOperationQueue *_operationQueue;
-    struct _opaque_pthread_t {
-        long long _field1;
-        struct __darwin_pthread_handler_rec *_field2;
-        char _field3[8176];
-    } *_threadInQueue;
-    struct _opaque_pthread_mutex_t _threadInQueueLock;
+    struct _opaque_pthread_mutex_t _lock;
+    NSMutableArray *_statementsToFinalizeAsync;
     _Bool _currentExclusivity;
     _Bool _isInMemory;
 }
@@ -53,6 +46,11 @@
 @property(readonly, nonatomic) _Bool isInMemory; // @synthesize isInMemory=_isInMemory;
 @property(readonly, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;
+- (void)vacuum;
+- (unsigned long long)vacuumMode;
+- (unsigned long long)_pagesToVacuum;
+- (unsigned long long)freelistCount;
+- (unsigned long long)pageCount;
 - (void)performIntegrityCheck;
 - (id)languageForFTSTable:(id)arg1;
 - (unsigned long long)numberOfRowsInTable:(id)arg1;
@@ -90,7 +88,6 @@
 - (void)simulateOnDiskDatabase;
 - (void)closePermanently;
 - (void)dealloc;
-- (void)withDbLockNonblocking:(CDUnknownBlockType)arg1;
 - (id)initWithFilename:(id)arg1 flags:(int)arg2 error:(id *)arg3;
 - (_Bool)_handle_sqlite_error_code:(int)arg1 error:(id)arg2 onError:(CDUnknownBlockType)arg3;
 - (_Bool)_handle_SQLITE_AUTH_USER:(id)arg1 onError:(CDUnknownBlockType)arg2;

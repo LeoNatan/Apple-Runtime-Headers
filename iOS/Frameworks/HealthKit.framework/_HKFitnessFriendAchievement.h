@@ -13,25 +13,21 @@
 @interface _HKFitnessFriendAchievement : HKSample <NSCopying>
 {
     NSUUID *_friendUUID;
-    NSString *_definitionIdentifier;
+    NSString *_templateUniqueName;
     NSDate *_completedDate;
     NSNumber *_value;
-    unsigned long long _workoutActivityType;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)fitnessFriendAchievementFromHKAchievement:(id)arg1;
-+ (id)achievementWithDefinitionIdentifier:(id)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned long long)arg4 friendUUID:(id)arg5;
-@property(nonatomic) unsigned long long workoutActivityType; // @synthesize workoutActivityType=_workoutActivityType;
++ (id)achievementWithTemplateUniqueName:(id)arg1 completedDate:(id)arg2 value:(id)arg3 friendUUID:(id)arg4;
 @property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSDate *completedDate; // @synthesize completedDate=_completedDate;
-@property(retain, nonatomic) NSString *definitionIdentifier; // @synthesize definitionIdentifier=_definitionIdentifier;
+@property(retain, nonatomic) NSString *templateUniqueName; // @synthesize templateUniqueName=_templateUniqueName;
 @property(retain, nonatomic) NSUUID *friendUUID; // @synthesize friendUUID=_friendUUID;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)hkAchievementFromFriendAchievement;
 
 @end
 

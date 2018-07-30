@@ -13,22 +13,19 @@
 @interface AVPlaybackControlsRoutePickerView : AVRoutePickerView <AVPlaybackControlsViewItem>
 {
     AVButton *_customButton;
-    _Bool _collapsed;
-    _Bool _included;
     _Bool _hasAlternateAppearance;
     _Bool _hasFullScreenAppearance;
-    struct CGSize _extrinsicContentSize;
 }
 
 @property(nonatomic) _Bool hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) _Bool hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
-@property(nonatomic, getter=isIncluded) _Bool included; // @synthesize included=_included;
-@property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
-@property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateButtonAppearance;
 @property(readonly, nonatomic) AVButton *customButton;
+@property(nonatomic) struct CGSize extrinsicContentSize;
+@property(nonatomic, getter=isCollapsed) _Bool collapsed;
+@property(nonatomic, getter=isIncluded) _Bool included;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
 
 // Remaining properties

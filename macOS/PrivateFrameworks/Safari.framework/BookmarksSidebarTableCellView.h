@@ -6,7 +6,7 @@
 
 #import "NSTableCellView.h"
 
-@class NSImage, NSLayoutConstraint, NSTextField, RolloverImageButton;
+@class FaviconView, NSImage, NSLayoutConstraint, NSTextField, RolloverImageButton;
 
 __attribute__((visibility("hidden")))
 @interface BookmarksSidebarTableCellView : NSTableCellView
@@ -16,12 +16,14 @@ __attribute__((visibility("hidden")))
     id <BookmarksSidebarTableCellViewDelegate> _delegate;
     NSImage *_bookmarkIconImage;
     NSLayoutConstraint *_textFieldRightMarginConstraintWhenEditing;
+    FaviconView *_faviconView;
     NSTextField *_bookmarkTitleTextField;
     RolloverImageButton *_removeButton;
 }
 
 @property(nonatomic) __weak RolloverImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(nonatomic) __weak NSTextField *bookmarkTitleTextField; // @synthesize bookmarkTitleTextField=_bookmarkTitleTextField;
+@property(nonatomic) __weak FaviconView *faviconView; // @synthesize faviconView=_faviconView;
 @property(retain, nonatomic) NSLayoutConstraint *textFieldRightMarginConstraintWhenEditing; // @synthesize textFieldRightMarginConstraintWhenEditing=_textFieldRightMarginConstraintWhenEditing;
 @property(retain, nonatomic) NSImage *bookmarkIconImage; // @synthesize bookmarkIconImage=_bookmarkIconImage;
 @property(nonatomic) BOOL usesFavoriteStyle; // @synthesize usesFavoriteStyle=_usesFavoriteStyle;

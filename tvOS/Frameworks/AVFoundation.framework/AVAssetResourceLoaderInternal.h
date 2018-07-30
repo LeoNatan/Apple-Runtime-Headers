@@ -6,8 +6,9 @@
 
 #import "NSObject.h"
 
-@class AVAssetClientURLRequestHelper, AVAssetCustomURLBridgeForNSURLSession, AVWeakReference, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperation, NSOperationQueue, NSURLSession;
+@class AVAssetClientURLRequestHelper, AVAssetCustomURLBridgeForNSURLSession, AVWeakReference, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSURLSession;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetResourceLoaderInternal : NSObject
 {
     AVAssetClientURLRequestHelper *URLRequestHelper;
@@ -27,10 +28,7 @@
     long long makeResourceLoaderURLSessionSupportStuffOnlyOnce;
     NSURLSession *URLSession;
     AVAssetCustomURLBridgeForNSURLSession *bridgeBetweenHandlerAndSession;
-    NSOperation *waitForAssetURLSessionStuffOperation;
     NSOperationQueue *URLSessionOperationQueue;
-    id <NSURLSessionDataDelegate> URLSessionDataDelegate;
-    id <NSURLSessionDataDelegate> shimURLSessionDataDelegate;
 }
 
 @end

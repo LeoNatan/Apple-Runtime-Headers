@@ -8,7 +8,6 @@
 
 @class EDCollection, EDReference, EDResources, NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDPivotTable : NSObject
 {
     EDResources *mResources;
@@ -74,6 +73,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pivotTableWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (id)pageFields;
 - (id)pivotAreas;
@@ -184,7 +184,6 @@ __attribute__((visibility("hidden")))
 - (id)columnHeaderCaption;
 - (void)setStyle:(id)arg1;
 - (id)style;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setStyleIndex:(unsigned long long)arg1;
 - (unsigned long long)styleIndex;

@@ -8,7 +8,6 @@
 
 @class CNObservable, CNPublishingSubject;
 
-__attribute__((visibility("hidden")))
 @interface ABClickableTextView : NSTextView
 {
     CNPublishingSubject *_mouseDownObservable;

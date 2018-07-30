@@ -92,11 +92,11 @@
 - (void)_notifyBackgroundFetchCompletedWithLogMessage:(id)arg1;
 - (BOOL)_setGateway:(id)arg1;
 - (id)_checkOutGateway;
-- (void)_mergeItems:(id)arg1 intoAuxiliaryList:(long long)arg2;
-- (void)_setAuxiliaryList:(id)arg1 forType:(long long)arg2;
-- (id)_getAuxiliaryListForType:(long long)arg1;
+- (void)_mergeItems:(id)arg1 intoAuxiliaryList:(unsigned long long)arg2;
+- (void)_setAuxiliaryList:(id)arg1 forType:(unsigned long long)arg2;
+- (id)_getAuxiliaryListForType:(unsigned long long)arg1;
 - (void)_removeUidFromAuxiliaryLists:(id)arg1;
-- (void)_addItem:(id)arg1 toAuxiliaryList:(long long)arg2;
+- (void)_addItem:(id)arg1 toAuxiliaryList:(unsigned long long)arg2;
 - (void)_discardSyncProgressSoFar;
 - (BOOL)_syncChangedMessagesOnly;
 - (void)_setAttachmentNamesForMessage:(id)arg1;

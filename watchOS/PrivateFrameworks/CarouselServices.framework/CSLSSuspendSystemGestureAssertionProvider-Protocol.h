@@ -10,6 +10,6 @@
 
 @protocol CSLSSuspendSystemGestureAssertionProvider <NSObject>
 - (void)releaseSuspendSystemGestureAssertion:(NSString *)arg1 pid:(int)arg2;
-- (void)takeSuspendSystemGestureAssertion:(NSString *)arg1 pid:(int)arg2;
+- (void)takeSuspendSystemGestureAssertion:(NSString *)arg1 withEdges:(unsigned int)arg2 pid:(int)arg3;
 @end
 

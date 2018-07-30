@@ -16,6 +16,7 @@
 
 + (_Bool)_writeImagesWithDurations:(id)arg1 toCPBitmapURL:(id)arg2 imageProvider:(CDUnknownBlockType)arg3 frameProcessor:(CDUnknownBlockType)arg4;
 + (_Bool)writeImagesWithDurations:(id)arg1 toCPBitmapURL:(id)arg2 imageProvider:(CDUnknownBlockType)arg3;
++ (id)imageWithContentsOfCPBitmapURL:(id)arg1;
 + (id)animatedImageWithContentsOfCPBitmapURL:(id)arg1;
 + (id)filenameExtension;
 + (_Bool)_writeImagesWithDurations:(id)arg1 toOutputStream:(id)arg2 imageProvider:(CDUnknownBlockType)arg3 frameProcessor:(CDUnknownBlockType)arg4;

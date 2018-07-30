@@ -6,19 +6,15 @@
 
 #import <MapKit/_MKNanoPlaceCardSectionData.h>
 
-@class _MKNanoPlaceCardHeaderView;
-
 @interface _MKNanoPlaceCardHeaderDataSource : _MKNanoPlaceCardSectionData
 {
-    _MKNanoPlaceCardHeaderView *_cell;
     _Bool _showsAddress;
 }
 
 @property(nonatomic) _Bool showsAddress; // @synthesize showsAddress=_showsAddress;
-- (void).cxx_destruct;
 - (void)notifyDelegateForActionAtRow:(unsigned int)arg1;
 - (id)cellForRow:(unsigned int)arg1 inTableView:(id)arg2;
-- (id)initWithMapItem:(id)arg1;
+- (id)initWithMapItem:(id)arg1 showsAddress:(_Bool)arg2;
 - (int)numberOfRows;
 - (id)title;
 

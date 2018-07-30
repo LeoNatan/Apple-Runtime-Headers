@@ -20,10 +20,10 @@
 @property(nonatomic) unsigned long long serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)dealloc;
 
 @end
 

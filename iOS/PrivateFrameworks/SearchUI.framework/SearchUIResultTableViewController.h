@@ -41,7 +41,6 @@
 - (void)sendVisibleFeedbackIfNecessary;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)indexPathToSelectForKeyboardOnQuickReturn;
-- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)tableView:(id)arg1 didEndDisplayingHeaderView:(id)arg2 forSection:(long long)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -55,6 +54,8 @@
 - (id)viewControllerForIndexPath:(id)arg1 isPeek:(_Bool)arg2;
 - (void)performExpansion:(_Bool)arg1 withSectionIndex:(unsigned long long)arg2;
 - (_Bool)sectionIsClearable:(id)arg1;
+- (void)expandCellsIfNeeded;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)clearResultsFromSection:(id)arg1;
 - (void)toggleExpansionForSection:(id)arg1;
@@ -62,9 +63,10 @@
 @property(readonly, nonatomic) double headerHeight;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
-- (void)openUserActivityForResult:(id)arg1;
-- (_Bool)defaultApplicationExistsAndSupportsOpenInPlaceForResult:(id)arg1 open:(_Bool)arg2;
 - (_Bool)downloadDemotedAppIfNecessaryForBundleIdentifier:(id)arg1;
+- (_Bool)defaultApplicationExistsAndSupportsOpenInPlaceForFileURL:(id)arg1 performOpenIfSo:(_Bool)arg2;
+- (_Bool)defaultApplicationExistsAndSupportsOpenInPlaceForResult:(id)arg1;
+- (void)fetchURLForFileResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)handleSelectionOfResult:(id)arg1;
 - (unsigned long long)handleSelectionAtIndexPath:(id)arg1 wasPop:(_Bool)arg2;
 - (void)didEngageResult:(id)arg1;
@@ -73,9 +75,10 @@
 - (unsigned long long)indexOfSection:(id)arg1;
 - (_Bool)sectionShouldBeExpanded:(id)arg1;
 - (void)updateDataModel;
-- (void)reloadResult:(id)arg1 inResultSection:(id)arg2;
-- (void)replaceResult:(id)arg1 withResult:(id)arg2 inResultSection:(id)arg3;
-- (void)updateWithResultSections:(id)arg1;
+- (void)replaceResult:(id)arg1 withResult:(id)arg2;
+- (_Bool)updateMustAccountForLayout;
+- (void)scrollTableToTop;
+- (void)updateWithResultSections:(id)arg1 scrollToTop:(_Bool)arg2;
 - (id)init;
 
 // Remaining properties

@@ -10,6 +10,7 @@
 
 @class CPChunk, CPCluster;
 
+__attribute__((visibility("hidden")))
 @interface CPCompoundGraphicMaker : NSObject <CPDisposable>
 {
     CPChunk *parentChunk;

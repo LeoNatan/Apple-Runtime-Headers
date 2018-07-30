@@ -31,6 +31,7 @@
 - (void)dismissDialogView:(id)arg1 withAdditionalAnimations:(CDUnknownBlockType)arg2 forDialogController:(id)arg3;
 - (void)presentDialogView:(id)arg1 withAdditionalAnimations:(CDUnknownBlockType)arg2 forDialogController:(id)arg3;
 - (int)webProcessIDForDialogController:(id)arg1;
+@property(readonly, nonatomic) UIView *effectiveViewToLayOut;
 - (void)setPlaceholderImage:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *evOrganizationName;
 - (void)didEndFormControlInteraction;

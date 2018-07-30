@@ -8,6 +8,7 @@
 
 @class AVAssetResourceLoader, AVCMNotificationDispatcher, AVWeakReference;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetClientURLRequestHelper : NSObject
 {
     AVWeakReference *_weakReferenceToSelf;

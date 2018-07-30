@@ -56,7 +56,6 @@
 - (void)_playerStateChanged:(id)arg1;
 - (long long)currentEndpointDeviceTypeForPlaybackViewController:(id)arg1;
 - (void)playbackViewControllerUserWillInitiatePlayback:(id)arg1;
-- (_Bool)playbackViewController:(id)arg1 didSelectHistoryMediaItem:(id)arg2 player:(id)arg3;
 - (void)playbackViewController:(id)arg1 controlsForMediaItem:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)playbackViewControllerProvidesCustomControls:(id)arg1;
 - (void)contextMenuForMediaItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

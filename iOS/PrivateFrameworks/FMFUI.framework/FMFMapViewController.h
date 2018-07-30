@@ -38,7 +38,6 @@
     NSSet *__internalHandlesShowingLocations;
     FMFMapOptionsViewController *_mapOptionsVC;
     FMFTitleView *_titleView;
-    void *_addressBook;
     UIBarButtonItem *_userTrackingButtonItem;
     UIBarButtonItem *_directionsBarButtonItem;
     UIBarButtonItem *_infoBarButtonItem;
@@ -61,7 +60,6 @@
 @property(retain, nonatomic) UIBarButtonItem *infoBarButtonItem; // @synthesize infoBarButtonItem=_infoBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *directionsBarButtonItem; // @synthesize directionsBarButtonItem=_directionsBarButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *userTrackingButtonItem; // @synthesize userTrackingButtonItem=_userTrackingButtonItem;
-@property(nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain, nonatomic) FMFTitleView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) FMFMapOptionsViewController *mapOptionsVC; // @synthesize mapOptionsVC=_mapOptionsVC;
 @property(nonatomic) _Bool wasToolbarPreviouslyHidden; // @synthesize wasToolbarPreviouslyHidden=_wasToolbarPreviouslyHidden;
@@ -91,7 +89,6 @@
 - (void)_updateTitleViewLocation:(id)arg1;
 - (id)titleViewForSelectedHandle;
 - (id)annotationImageForAnnotation:(id)arg1 andHandle:(id)arg2;
-- (id)annotationImageForHandle:(id)arg1;
 - (void)hideCachedMap;
 - (void)mapViewDidFinishRenderingMap;
 - (void)didReceiveLocationForDelegateCallback:(id)arg1;
@@ -146,6 +143,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)didReceiveMemoryWarning;
 - (void)loadCachedLocationsForHandles;
+- (void)_enablePreloadedHandles:(id)arg1;
 - (void)enablePreloadedHandles;
 - (void)loadDelegate;
 - (void)destroySession;

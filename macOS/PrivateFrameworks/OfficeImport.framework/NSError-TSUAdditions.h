@@ -7,15 +7,19 @@
 #import "NSError.h"
 
 @interface NSError (TSUAdditions)
++ (id)tsu_errorWithError:(id)arg1 alertTitle:(id)arg2 alertMessage:(id)arg3 additionalUserInfo:(id)arg4;
 + (id)tsu_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3 underlyingError:(id)arg4;
 + (id)tsu_errorWithDomain:(id)arg1 code:(long long)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4 userInfo:(id)arg5;
 + (id)tsu_errorWithDomain:(id)arg1 code:(long long)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4;
 + (id)tsu_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)tsu_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3 recoverySuggestion:(id)arg4;
-- (BOOL)tsu_isCancelError;
-- (BOOL)tsu_isOutOfSpaceError;
+- (BOOL)tsu_isErrorPassingTest:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) BOOL tsu_isNoSuchFileError;
+@property(readonly, nonatomic) BOOL tsu_isCancelError;
+@property(readonly, nonatomic) BOOL tsu_isOutOfSpaceError;
 - (id)tsu_localizedAlertMessage;
 - (id)tsu_localizedAlertTitle;
+- (id)tsu_errorPreservingCancel;
 - (id)tsu_errorPreservingAlertTitle;
 @end
 

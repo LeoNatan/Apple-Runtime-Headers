@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)stop;
 - (void)resume;
 - (void)pause;
+@property(readonly) NSData *bookmarkDataIfAvailable;
 @property(readonly) NSData *bookmarkData;
 @property(readonly) NSURL *URLIfAvailable;
 - (id)URLAndReturnError:(id *)arg1;

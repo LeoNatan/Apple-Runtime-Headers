@@ -15,8 +15,10 @@
     id _baseObject;
     id _parent;
     MTLDebugHeap *_heap;
+    _Bool _hasTrackedMakeAliasable;
 }
 
+@property _Bool hasTrackedMakeAliasable; // @synthesize hasTrackedMakeAliasable=_hasTrackedMakeAliasable;
 @property(readonly) id baseObject; // @synthesize baseObject=_baseObject;
 - (BOOL)doesAliasAnyResources:(const id *)arg1 count:(unsigned long long)arg2;
 - (BOOL)doesAliasAllResources:(const id *)arg1 count:(unsigned long long)arg2;

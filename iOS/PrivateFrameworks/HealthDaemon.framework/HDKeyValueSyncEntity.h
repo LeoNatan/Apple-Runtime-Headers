@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-#import "HDNanoSyncEntity.h"
 #import "HDSyncEntity.h"
 
 @class NSString;
 
-@interface HDKeyValueSyncEntity : NSObject <HDNanoSyncEntity, HDSyncEntity>
+@interface HDKeyValueSyncEntity : NSObject <HDSyncEntity>
 {
 }
 
@@ -24,8 +23,6 @@
 + (id)_syncObjectPredicateWithPredicate:(id)arg1;
 + (id)syncEntityIdentifier;
 + (long long)category;
-+ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
-+ (int)nanoSyncObjectType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

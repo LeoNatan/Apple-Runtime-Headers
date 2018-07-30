@@ -27,8 +27,8 @@
 - (void).cxx_destruct;
 - (void)_applyTypeOverlay:(id)arg1;
 @property(readonly, nonatomic) unsigned int fieldInfoCount;
-- (void)memoizeSwiftField:(id)arg1 withName:(const char *)arg2 offset:(unsigned int)arg3 kind:(unsigned int)arg4 typeref:(unsigned long long)arg5;
-- (id)swiftFieldWithName:(const char *)arg1 offset:(unsigned int)arg2 kind:(unsigned int)arg3 typeref:(unsigned long long)arg4;
+- (void)memoizeSwiftField:(id)arg1 withName:(const char *)arg2 offset:(unsigned int)arg3 kind:(unsigned int)arg4 typeref:(struct swift_typeref_interop)arg5;
+- (id)swiftFieldWithName:(const char *)arg1 offset:(unsigned int)arg2 kind:(unsigned int)arg3 typeref:(struct swift_typeref_interop)arg4;
 - (id)fieldInfoForIndex:(unsigned int)arg1;
 - (unsigned int)indexForFieldInfo:(id)arg1;
 - (unsigned int)addFieldInfo:(id)arg1;

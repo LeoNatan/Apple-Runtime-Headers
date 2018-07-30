@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSObject<OS_dispatch_queue>, NSTimer, PLEntryNotificationOperatorComposition;
+@class NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, PLEntryNotificationOperatorComposition;
 
 @interface PLTimer : NSObject
 {
@@ -14,7 +14,7 @@
     NSDate *_fireDate;
     NSObject<OS_dispatch_queue> *_queue;
     CDUnknownBlockType _block;
-    NSTimer *_timer;
+    NSObject<OS_dispatch_source> *_timer;
     double _interval;
     double _tolerance;
     id _userInfo;
@@ -30,13 +30,15 @@
 @property BOOL repeats; // @synthesize repeats=_repeats;
 @property double tolerance; // @synthesize tolerance=_tolerance;
 @property double interval; // @synthesize interval=_interval;
-@property(retain) NSTimer *timer; // @synthesize timer=_timer;
+@property(retain) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)handleTimerFire;
 @property(retain, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(nonatomic) BOOL timerActive;
+- (void)arm;
+- (void)invalidate;
 - (void)fire;
 - (void)dealloc;
 - (id)initWithFireDate:(id)arg1 withInterval:(double)arg2 withTolerance:(double)arg3 repeats:(BOOL)arg4 withUserInfo:(id)arg5 withQueue:(id)arg6 withBlock:(CDUnknownBlockType)arg7;

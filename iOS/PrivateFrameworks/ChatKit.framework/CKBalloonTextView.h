@@ -16,6 +16,7 @@
     id <CKBalloonTextViewInteractionDelegate> _interactionDelegate;
 }
 
++ (id)textView;
 @property(nonatomic) __weak id <CKBalloonTextViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 - (void).cxx_destruct;

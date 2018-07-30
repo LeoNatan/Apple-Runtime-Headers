@@ -11,7 +11,6 @@
 
 @class GEOAlert, NSString, _GEOTransitRoutingIncidentMessage;
 
-__attribute__((visibility("hidden")))
 @interface _GEODirectionsError : NSObject <GEODirectionsError, NSSecureCoding>
 {
     GEOAlert *_alert;

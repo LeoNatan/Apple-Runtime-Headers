@@ -7,66 +7,105 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentMetadata.h"
 
-@class NSString, PBUnknownFields, _INPBString;
+@class NSArray, NSString, _INPBImageValue, _INPBString;
 
-@interface _INPBIntentMetadata : PBCodable <NSCopying>
+@interface _INPBIntentMetadata : PBCodable <_INPBIntentMetadata, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    CDStruct_95bda58d _RequiredEntitlements;
-    NSString *_LaunchId;
-    NSString *_SystemExtensionBundleId;
-    NSString *_intentDescription;
-    NSString *_intentId;
-    int _triggerMethod;
-    _INPBString *_userUtterance;
-    BOOL _backgroundLaunch;
-    BOOL _confirmed;
+    CDStruct_95bda58d _requiredEntitlements;
     struct {
-        unsigned int triggerMethod:1;
+        unsigned int executionContext:1;
+        unsigned int intentCategory:1;
         unsigned int backgroundLaunch:1;
         unsigned int confirmed:1;
+        unsigned int triggerMethod:1;
+        unsigned int userConfirmationRequired:1;
     } _has;
+    BOOL _backgroundLaunch;
+    BOOL _confirmed;
+    BOOL _userConfirmationRequired;
+    int _executionContext;
+    int _intentCategory;
+    int _triggerMethod;
+    NSString *_categoryVerb;
+    _INPBImageValue *_defaultImageValue;
+    NSString *_launchId;
+    NSString *_nanoLaunchId;
+    NSString *_systemExtensionBundleId;
+    NSString *_intentDescription;
+    NSString *_intentId;
+    NSString *_originatingDeviceIdsIdentifier;
+    NSArray *_parameterImages;
+    NSString *_suggestedInvocationPhrase;
+    _INPBString *_userUtterance;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *intentDescription; // @synthesize intentDescription=_intentDescription;
-@property(retain, nonatomic) NSString *SystemExtensionBundleId; // @synthesize SystemExtensionBundleId=_SystemExtensionBundleId;
-@property(retain, nonatomic) NSString *intentId; // @synthesize intentId=_intentId;
++ (Class)parameterImagesType;
+@property(retain, nonatomic) _INPBString *userUtterance; // @synthesize userUtterance=_userUtterance;
+@property(nonatomic) BOOL userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
+@property(nonatomic) int triggerMethod; // @synthesize triggerMethod=_triggerMethod;
+@property(copy, nonatomic) NSString *suggestedInvocationPhrase; // @synthesize suggestedInvocationPhrase=_suggestedInvocationPhrase;
+@property(copy, nonatomic) NSArray *parameterImages; // @synthesize parameterImages=_parameterImages;
+@property(copy, nonatomic) NSString *originatingDeviceIdsIdentifier; // @synthesize originatingDeviceIdsIdentifier=_originatingDeviceIdsIdentifier;
+@property(copy, nonatomic) NSString *intentId; // @synthesize intentId=_intentId;
+@property(copy, nonatomic) NSString *intentDescription; // @synthesize intentDescription=_intentDescription;
 @property(nonatomic) BOOL confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic) BOOL backgroundLaunch; // @synthesize backgroundLaunch=_backgroundLaunch;
-@property(retain, nonatomic) NSString *LaunchId; // @synthesize LaunchId=_LaunchId;
-@property(retain, nonatomic) _INPBString *userUtterance; // @synthesize userUtterance=_userUtterance;
+@property(copy, nonatomic) NSString *systemExtensionBundleId; // @synthesize systemExtensionBundleId=_systemExtensionBundleId;
+@property(copy, nonatomic) NSString *nanoLaunchId; // @synthesize nanoLaunchId=_nanoLaunchId;
+@property(copy, nonatomic) NSString *launchId; // @synthesize launchId=_launchId;
+@property(nonatomic) int intentCategory; // @synthesize intentCategory=_intentCategory;
+@property(nonatomic) int executionContext; // @synthesize executionContext=_executionContext;
+@property(retain, nonatomic) _INPBImageValue *defaultImageValue; // @synthesize defaultImageValue=_defaultImageValue;
+@property(copy, nonatomic) NSString *categoryVerb; // @synthesize categoryVerb=_categoryVerb;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (int)StringAsRequiredEntitlements:(id)arg1;
-- (id)RequiredEntitlementsAsString:(int)arg1;
-- (void)setRequiredEntitlements:(int *)arg1 count:(unsigned long long)arg2;
-- (int)RequiredEntitlementAtIndex:(unsigned long long)arg1;
-- (void)addRequiredEntitlement:(int)arg1;
-- (void)clearRequiredEntitlements;
-@property(readonly, nonatomic) int *RequiredEntitlements;
-@property(readonly, nonatomic) unsigned long long RequiredEntitlementsCount;
-@property(readonly, nonatomic) BOOL hasIntentDescription;
-@property(readonly, nonatomic) BOOL hasSystemExtensionBundleId;
+@property(readonly, nonatomic) BOOL hasUserUtterance;
+@property(nonatomic) BOOL hasUserConfirmationRequired;
 - (int)StringAsTriggerMethod:(id)arg1;
 - (id)triggerMethodAsString:(int)arg1;
 @property(nonatomic) BOOL hasTriggerMethod;
-@property(nonatomic) int triggerMethod; // @synthesize triggerMethod=_triggerMethod;
+@property(readonly, nonatomic) BOOL hasSuggestedInvocationPhrase;
+- (id)parameterImagesAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long parameterImagesCount;
+- (void)addParameterImages:(id)arg1;
+- (void)clearParameterImages;
+@property(readonly, nonatomic) BOOL hasOriginatingDeviceIdsIdentifier;
 @property(readonly, nonatomic) BOOL hasIntentId;
+@property(readonly, nonatomic) BOOL hasIntentDescription;
 @property(nonatomic) BOOL hasConfirmed;
 @property(nonatomic) BOOL hasBackgroundLaunch;
+@property(readonly, nonatomic) BOOL hasSystemExtensionBundleId;
+- (int)StringAsRequiredEntitlements:(id)arg1;
+- (id)requiredEntitlementsAsString:(int)arg1;
+- (int)requiredEntitlementAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long requiredEntitlementsCount;
+- (void)addRequiredEntitlement:(int)arg1;
+- (void)clearRequiredEntitlements;
+@property(readonly, nonatomic) int *requiredEntitlements;
+- (void)setRequiredEntitlements:(int *)arg1 count:(unsigned long long)arg2;
+@property(readonly, nonatomic) BOOL hasNanoLaunchId;
 @property(readonly, nonatomic) BOOL hasLaunchId;
-@property(readonly, nonatomic) BOOL hasUserUtterance;
-- (void)dealloc;
+- (int)StringAsIntentCategory:(id)arg1;
+- (id)intentCategoryAsString:(int)arg1;
+@property(nonatomic) BOOL hasIntentCategory;
+- (int)StringAsExecutionContext:(id)arg1;
+- (id)executionContextAsString:(int)arg1;
+@property(nonatomic) BOOL hasExecutionContext;
+@property(readonly, nonatomic) BOOL hasDefaultImageValue;
+@property(readonly, nonatomic) BOOL hasCategoryVerb;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

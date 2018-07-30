@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol MTLRenderPipelineState <NSObject>
+@property(readonly) _Bool supportIndirectCommandBuffers;
 @property(readonly) unsigned long long imageblockSampleLength;
 @property(readonly) _Bool threadgroupSizeMatchesTileSize;
 @property(readonly) unsigned long long maxTotalThreadsPerThreadgroup;

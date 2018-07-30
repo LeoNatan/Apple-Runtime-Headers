@@ -84,6 +84,7 @@
 - (void)setWasDataDetected:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL wasDataDetected;
 @property(nonatomic) BOOL hasDataDetectorResults;
+@property(nonatomic) BOOL isCorrupt;
 @property(readonly, nonatomic) BOOL isFromExternalSource;
 @property(readonly, nonatomic) BOOL wasDowngraded;
 @property(readonly, nonatomic) BOOL isSent;

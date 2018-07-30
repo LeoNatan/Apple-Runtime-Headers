@@ -35,6 +35,7 @@
 - (void)updateTimeText;
 - (id)effectiveAttributedText;
 - (id)effectiveFont;
+- (id)viewForLastBaselineLayout;
 - (double)_lastLineBaseline;
 - (void)setShowsDesignator:(_Bool)arg1;
 - (void)setStyle:(id)arg1;
@@ -45,7 +46,7 @@
 @property(readonly, nonatomic) struct CGSize intrinsicSize;
 @property(readonly, nonatomic) UIView *view;
 - (void)dealloc;
-- (id)initWithTimeFormatter:(id)arg1 options:(unsigned long long)arg2 labelFactory:(CDUnknownBlockType)arg3;
+- (id)initWithForDevice:(id)arg1 timeFormatter:(id)arg2 options:(unsigned long long)arg3 labelFactory:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

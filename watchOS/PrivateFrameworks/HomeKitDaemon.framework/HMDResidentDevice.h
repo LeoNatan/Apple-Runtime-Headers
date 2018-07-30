@@ -9,19 +9,19 @@
 #import "HMDBackingStoreObjectProtocol.h"
 #import "HMFDumpState.h"
 #import "HMFLogging.h"
-#import "HMFMerging.h"
 #import "NSSecureCoding.h"
 
-@class HMDDevice, HMDHome, HMDResidentDeviceManager, NSString, NSUUID;
+@class HMDDevice, HMDHome, HMDResidentDeviceManager, HMFUnfairLock, NSString, NSUUID;
 
-@interface HMDResidentDevice : HMFObject <HMFDumpState, HMFLogging, HMFMerging, NSSecureCoding, HMDBackingStoreObjectProtocol>
+@interface HMDResidentDevice : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, NSSecureCoding>
 {
+    HMFUnfairLock *__lock;
     _Bool _enabled;
     _Bool _confirmed;
     _Bool _reachable;
     _Bool _lowBattery;
-    NSUUID *_identifier;
     HMDDevice *_device;
+    NSUUID *_identifier;
     int _batteryState;
     HMDHome *_home;
     HMDResidentDeviceManager *_residentDeviceManager;
@@ -38,21 +38,21 @@
 @property(nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 @property(nonatomic, getter=isConfirmed) _Bool confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-@property(retain, nonatomic) HMDDevice *device; // @synthesize device=_device;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) HMDDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
-- (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
-- (void)_handleResidentDeviceUpdateConfirmed:(_Bool)arg1;
-- (void)_handleResidentDeviceUpdateEnabled:(_Bool)arg1;
-- (_Bool)_handleResidentDeviceUpdateDeviceWithUUID:(id)arg1;
-- (void)_residentDeviceModelUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
-- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
-- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)dumpState;
-- (_Bool)mergeObject:(id)arg1;
-- (_Bool)_updateDevice:(id)arg1;
+- (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
+- (void)_handleResidentDeviceUpdateConfirmed:(_Bool)arg1;
+- (void)_handleResidentDeviceUpdateEnabled:(_Bool)arg1;
+- (void)_residentDeviceModelUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (void)__deviceUpdated:(id)arg1;
+- (void)__deviceAdded:(id)arg1;
+- (void)__accountAdded:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsMediaSystem;
 @property(readonly, nonatomic) _Bool supportsSharedEventTriggerActivation;
 @property(readonly, nonatomic) unsigned int status;
@@ -63,8 +63,11 @@
 - (id)descriptionWithPointer:(_Bool)arg1;
 - (id)shortDescription;
 @property(readonly, nonatomic) unsigned int capabilities;
-- (id)initWithDevice:(id)arg1 home:(id)arg2;
-- (id)initWithModel:(id)arg1 residentDeviceManager:(id)arg2;
+@property(readonly, getter=isBlocked) _Bool blocked;
+- (void)configureWithHome:(id)arg1;
+- (void)dealloc;
+- (id)initWithDevice:(id)arg1;
+- (id)initWithModel:(id)arg1;
 - (id)init;
 
 // Remaining properties

@@ -19,6 +19,7 @@
 }
 
 @property(readonly, nonatomic) NSArray *profiles; // @synthesize profiles=_provisioningProfiles;
+- (void).cxx_destruct;
 - (void)_acceptApplicationSignatureIdentity;
 - (_Bool)_workQueue_signatureNeedsExplicitUserTrust;
 - (id)_workQueue_expirationDateForProvisioningProfile;
@@ -26,7 +27,6 @@
 - (unsigned int)trustStateWithTrustRequiredReasons:(unsigned int *)arg1;
 - (unsigned int)trustState;
 - (void)acknowledgeTrust;
-- (void)dealloc;
 - (id)_initWithApplicationInfo:(id)arg1 andProvisioningProfiles:(id)arg2 isManaged:(_Bool)arg3;
 
 @end

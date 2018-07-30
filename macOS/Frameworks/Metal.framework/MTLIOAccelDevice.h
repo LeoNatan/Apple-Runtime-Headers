@@ -29,8 +29,8 @@
     unsigned long long _videoRam;
     unsigned long long _sharedMemorySize;
     unsigned int _accelID;
-    unsigned long long _segmentByteThreshold;
     int _numCommandBuffers;
+    unsigned long long _segmentByteThreshold;
     struct MTLIOAccelBufferHeap _bufferHeaps[16];
     NSObject<OS_dispatch_queue> *_device_dispatch_queue;
     unsigned int _fenceAllocatedCount;
@@ -39,7 +39,6 @@
     unsigned int _fenceBitmapCount;
     unsigned long long *_fenceAllocationBitmap;
     Class _bufferClass;
-    unsigned long long _resourceMemoryAllocated;
     unsigned long long _registryID;
 }
 
@@ -47,6 +46,8 @@
 + (void)registerAcceleratorService:(id)arg1;
 @property(readonly) unsigned int acceleratorPort; // @synthesize acceleratorPort=_acceleratorPort;
 @property(readonly) int numCommandBuffers; // @synthesize numCommandBuffers=_numCommandBuffers;
+- (unsigned long long)maxBufferLength;
+- (id)newEvent;
 - (void)_removeResource:(id)arg1;
 - (void)_addResource:(id)arg1;
 @property(readonly) unsigned long long currentAllocatedSize;
@@ -56,13 +57,14 @@
 @property(readonly) BOOL supportPriorityBand;
 - (void)setIndirectArgumentBufferDecodingData:(id)arg1;
 - (id)indirectArgumentBufferDecodingData;
+- (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newIndirectArgumentEncoderWithLayout:(id)arg1;
 - (id)newIndirectArgumentBufferLayoutWithStructType:(id)arg1;
 - (void)releaseFenceIndex:(unsigned int)arg1;
 - (id)newFence;
 - (id)newCommandQueueWithDescriptor:(id)arg1;
-- (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(int)arg4 length:(int)arg5;
-- (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(int)arg3 heapIndex:(short *)arg4 bufferIndex:(short *)arg5 bufferOffset:(int *)arg6;
+- (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(unsigned long long)arg4 length:(unsigned long long)arg5;
+- (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(unsigned long long)arg3 heapIndex:(short *)arg4 bufferIndex:(short *)arg5 bufferOffset:(unsigned long long *)arg6;
 - (short)heapIndexWithOptions:(unsigned long long)arg1;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
 @property(readonly, getter=isRemovable) BOOL removable;

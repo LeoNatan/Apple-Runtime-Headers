@@ -24,6 +24,7 @@
     int _wifiSetupState;
     double _wifiSetupSecs;
     int _finishState;
+    unsigned int _repairFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_idsIdentifier;
     SFDevice *_peerDevice;
@@ -32,6 +33,7 @@
 }
 
 @property(nonatomic) unsigned long long triggerMs; // @synthesize triggerMs=_triggerMs;
+@property(nonatomic) unsigned int repairFlags; // @synthesize repairFlags=_repairFlags;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(readonly, copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;

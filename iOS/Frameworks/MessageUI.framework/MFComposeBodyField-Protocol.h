@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class MFAttachment, MFFuture, NSArray, NSData, NSDictionary, NSString, NSURL;
+@class DOMDocument, MFAttachment, MFFuture, NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @protocol MFComposeBodyField <NSObject>
 @property(nonatomic, getter=isDirty) _Bool dirty;
@@ -29,6 +29,7 @@
 - (struct CGRect)rectOfElementWithID:(NSString *)arg1;
 - (MFFuture *)htmlString;
 - (void)getHTMLStringsAttachmentsCharsetsAndPlainTextAlternative:(void (^)(NSString *, NSArray *, NSArray *, MFPlainTextDocument *))arg1;
+- (MFFuture *)plainTextContentFromDOMDocument:(DOMDocument *)arg1;
 - (MFFuture *)plainTextContent;
 - (MFFuture *)containsRichText;
 - (void)addMailAttributesBeforeDisplayHidingTrailingEmptyQuotes:(_Bool)arg1;

@@ -14,14 +14,13 @@
 {
 }
 
-- (BOOL)resetWithError:(id *)arg1;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (unsigned long long)countOfQuarantinedRecords;
-- (BOOL)isRecordWithIdentifierQuarantined:(id)arg1;
-- (BOOL)removeQuarantinedRecordsWithIdentifier:(id)arg1 removed:(char *)arg2 error:(id *)arg3;
-- (BOOL)addQuarantinedRecordsWithIdentifier:(id)arg1 reason:(id)arg2 error:(id *)arg3;
+- (BOOL)isRecordWithScopedIdentifierQuarantined:(id)arg1;
+- (BOOL)removeQuarantinedRecordsWithScopedIdentifier:(id)arg1 removed:(char *)arg2 error:(id *)arg3;
+- (BOOL)addQuarantinedRecordsWithScopedIdentifier:(id)arg1 reason:(id)arg2 error:(id *)arg3;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
-- (BOOL)_createStorage;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

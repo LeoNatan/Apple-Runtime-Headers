@@ -9,11 +9,10 @@
 #import "AKAppleIDAuthenticationLimitedUIProvider.h"
 #import "NSSecureCoding.h"
 
-@class AKAnisetteData, AKDevice, AKNativeAccountRecoveryController, NSArray, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class AKAnisetteData, AKDevice, NSArray, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
 
 @interface AKAppleIDAuthenticationContext : NSObject <AKAppleIDAuthenticationLimitedUIProvider, NSSecureCoding>
 {
-    id <CDPStateUIProvider> _cdpUiProvider;
     NSString *_generatedCode;
     NSNumber *_latitude;
     NSNumber *_longitude;
@@ -26,7 +25,6 @@
     AKDevice *_proxiedDevice;
     AKDevice *_companionDevice;
     NSString *_interpolatedReason;
-    AKNativeAccountRecoveryController *_nativeRecoveryController;
     unsigned long long _attemptIndex;
     _Bool _isProxyingForApp;
     _Bool _shouldSendIdentityTokenForRemoteUI;
@@ -43,6 +41,7 @@
     _Bool _isTriggeredByNotification;
     _Bool _isEphemeral;
     _Bool _shouldOfferSecurityUpgrade;
+    _Bool _needsRepair;
     _Bool _shouldPromptForPasswordOnly;
     _Bool _shouldUpdatePersistentServiceTokens;
     _Bool _shouldRequestRecoveryPET;
@@ -102,13 +101,14 @@
 @property(nonatomic) _Bool shouldRequestRecoveryPET; // @synthesize shouldRequestRecoveryPET=_shouldRequestRecoveryPET;
 @property(copy, nonatomic, setter=setHasEmptyPassword:) NSNumber *hasEmptyPassword; // @synthesize hasEmptyPassword=_hasEmptyPassword;
 @property(copy, nonatomic, setter=setAppleIDLoginEnabled:) NSNumber *isAppleIDLoginEnabled; // @synthesize isAppleIDLoginEnabled=_isAppleIDLoginEnabled;
-@property(copy, nonatomic) id <AKAnisetteServiceProtocol> anisetteDataProvider; // @synthesize anisetteDataProvider=_anisetteDataProvider;
+@property(retain, nonatomic) id <AKAnisetteServiceProtocol> anisetteDataProvider; // @synthesize anisetteDataProvider=_anisetteDataProvider;
 @property(nonatomic) _Bool shouldUpdatePersistentServiceTokens; // @synthesize shouldUpdatePersistentServiceTokens=_shouldUpdatePersistentServiceTokens;
 @property(nonatomic) _Bool shouldPromptForPasswordOnly; // @synthesize shouldPromptForPasswordOnly=_shouldPromptForPasswordOnly;
 @property(nonatomic) unsigned long long authenticationType; // @synthesize authenticationType=_authenticationType;
-@property(copy) NSString *helpBook; // @synthesize helpBook=_helpBook;
-@property(copy) NSString *helpAnchor; // @synthesize helpAnchor=_helpAnchor;
-@property(retain) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSString *helpBook; // @synthesize helpBook=_helpBook;
+@property(copy, nonatomic) NSString *helpAnchor; // @synthesize helpAnchor=_helpAnchor;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) _Bool needsRepair; // @synthesize needsRepair=_needsRepair;
 @property(nonatomic) _Bool shouldOfferSecurityUpgrade; // @synthesize shouldOfferSecurityUpgrade=_shouldOfferSecurityUpgrade;
 @property(retain, nonatomic) id clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(copy, nonatomic) NSDictionary *httpHeadersForRemoteUI; // @synthesize httpHeadersForRemoteUI=_httpHeadersForRemoteUI;
@@ -127,7 +127,6 @@
 @property(nonatomic) _Bool shouldAllowAppleIDCreation; // @synthesize shouldAllowAppleIDCreation=_shouldAllowAppleIDCreation;
 @property(nonatomic) _Bool isUsernameEditable; // @synthesize isUsernameEditable=_isUsernameEditable;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
-@property(retain, nonatomic) id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(nonatomic) unsigned long long _attemptIndex; // @synthesize _attemptIndex;
 @property(readonly, nonatomic) _Bool _shouldSkipInitialReachabilityCheck; // @synthesize _shouldSkipInitialReachabilityCheck;
 @property(copy, nonatomic, setter=_setMessage:) NSString *_message; // @synthesize _message;
@@ -154,8 +153,6 @@
 - (void)dismissBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool _requiresPasswordInput;
 - (void)presentBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
-- (void)dismissNativeRecoveryUIWithCompletion:(CDUnknownBlockType)arg1;
-- (void)presentNativeRecoveryUIWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) AKDevice *companionDevice;
 @property(copy, nonatomic) AKDevice *proxiedDevice;
 @property(copy, nonatomic) NSString *serviceIdentifier;

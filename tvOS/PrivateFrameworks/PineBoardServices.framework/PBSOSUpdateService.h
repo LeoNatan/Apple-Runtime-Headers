@@ -11,12 +11,25 @@
 }
 
 + (id)sharedInstance;
+- (void)purgeAssetsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)purgeableAssetSpaceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)obliterateDataPreservingPaths:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)cancelUpdate;
-- (void)isUpdateRunningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)restore;
+- (void)cancelUpdate;
+- (void)installUpdate:(id)arg1 withOptions:(id)arg2 withResult:(CDUnknownBlockType)arg3;
+- (void)purgeDownload:(CDUnknownBlockType)arg1;
+- (void)cancelDownload:(CDUnknownBlockType)arg1;
+- (void)startDownload:(CDUnknownBlockType)arg1;
+- (void)checkForUpdatesWithConditions:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)checkForUpdateViaMDM;
 - (void)checkForUpdate;
+- (void)setAssetDownloadIsDiscretionary:(_Bool)arg1;
+- (void)currentDownload:(CDUnknownBlockType)arg1;
+- (void)isUpdate:(id)arg1 readyForInstallation:(CDUnknownBlockType)arg2;
+- (void)isUpdateRunningWithCompletion:(CDUnknownBlockType)arg1;
+- (void)isDownloading:(CDUnknownBlockType)arg1;
+- (void)isCheckingForUpdates:(CDUnknownBlockType)arg1;
+- (void)setManagerClientDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

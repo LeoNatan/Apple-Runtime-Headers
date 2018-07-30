@@ -6,6 +6,7 @@
 
 #import <CoreBrightness/DisplayALSManager.h>
 
+__attribute__((visibility("hidden")))
 @interface AmbientDisplayALSManager : DisplayALSManager
 {
     float _userOffset;

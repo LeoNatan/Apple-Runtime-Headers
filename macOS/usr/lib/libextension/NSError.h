@@ -28,6 +28,8 @@
 + (void)_web_addErrorsWithCodesAndDescriptions:(id)arg1 inDomain:(id)arg2;
 + (void)_registerFormatter:(CDUnknownFunctionPointerType)arg1 forErrorKey:(id)arg2 parameters:(const char *)arg3;
 + (void)_registerBuiltInFormatters;
++ (void)_setFileNameLocalizationEnabled:(BOOL)arg1;
++ (id)_readCorruptErrorWithFormat:(id)arg1;
 - (unsigned long long)_cfTypeID;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -57,8 +59,8 @@
 - (id)_web_initWithDomain_nowarn:(id)arg1 code:(long long)arg2 URL:(id)arg3;
 - (id)_cocoaErrorString:(id)arg1;
 - (id)_cocoaErrorString:(id)arg1 fromBundle:(id)arg2 tableName:(id)arg3;
-- (id)_formatCocoaErrorString:(id)arg1 parameters:(const char *)arg2 applicableFormatters:(struct **)arg3 count:(long long)arg4;
-- (long long)_collectApplicableUserInfoFormatters:(struct **)arg1 max:(long long)arg2;
+- (id)_formatCocoaErrorString:(id)arg1 parameters:(const char *)arg2 applicableFormatters:(CDStruct_183601bc **)arg3 count:(long long)arg4;
+- (long long)_collectApplicableUserInfoFormatters:(CDStruct_183601bc **)arg1 max:(long long)arg2;
 - (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

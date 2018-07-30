@@ -6,7 +6,7 @@
 
 #import "NSView.h"
 
-@class FIFinderViewGutsController, NSArray, NSURL;
+@class FIFinderViewGutsController, NSArray, NSLayoutConstraint, NSURL;
 
 @interface FIFinderView : NSView
 {
@@ -14,17 +14,25 @@
     id _controller;
     id _reserved;
     _Bool _downloadsUbiquitousContents;
+    _Bool _animatingCollapse;
+    NSLayoutConstraint *_gutsBottomConstraint;
+    NSLayoutConstraint *_gutsWidthConstraint;
+    NSArray *_collapseAnimationConstraints;
 }
 
 + (void)checkForLeaksAfterCloseAll;
+@property(retain, nonatomic) NSArray *collapseAnimationConstraints; // @synthesize collapseAnimationConstraints=_collapseAnimationConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *gutsWidthConstraint; // @synthesize gutsWidthConstraint=_gutsWidthConstraint;
+@property _Bool animatingCollapse; // @synthesize animatingCollapse=_animatingCollapse;
+@property(retain, nonatomic) NSLayoutConstraint *gutsBottomConstraint; // @synthesize gutsBottomConstraint=_gutsBottomConstraint;
 @property(nonatomic) _Bool downloadsUbiquitousContents; // @synthesize downloadsUbiquitousContents=_downloadsUbiquitousContents;
 @property(retain, nonatomic) FIFinderViewGutsController *controller; // @synthesize controller=_controller;
 - (double)fauxToolbarHeightForAppCentric:(BOOL)arg1 runningAsAService:(BOOL)arg2;
+- (BOOL)hasCollapseButton;
 - (BOOL)shouldEnableTagsButton;
 - (void)cacheTagsButton:(id)arg1;
 - (BOOL)shouldEnableShareButton;
 - (void)cacheShareButton:(id)arg1;
-- (void)associateWithLocationPopUp:(id)arg1;
 - (void)setMediaBrowserShownTypes:(unsigned long long)arg1;
 - (void)endPreviewPanelControl:(id)arg1;
 - (void)beginPreviewPanelControl:(id)arg1;
@@ -36,6 +44,8 @@
 - (void)disableHistoryAndDoWork:(CDUnknownBlockType)arg1;
 - (id)documentsDirectoryURL;
 - (BOOL)showGotoWithInitialFilename:(id)arg1;
+@property BOOL hideExtension; // @dynamic hideExtension;
+@property BOOL offersHideExtension; // @dynamic offersHideExtension;
 @property BOOL showsNewDocumentButton; // @dynamic showsNewDocumentButton;
 @property BOOL isSavePanel; // @dynamic isSavePanel;
 @property BOOL allowsMultipleSelection; // @dynamic allowsMultipleSelection;
@@ -60,6 +70,14 @@
 @property int viewStyle;
 @property(retain) NSURL *rootDirectoryURL;
 @property(retain) NSURL *directoryURL;
+- (void)setTopAccessory:(id)arg1;
+- (id)whereLabelTrailingLayoutAnchor;
+- (id)whereLabelLeadingLayoutAnchor;
+- (id)locationAreaTrailingLayoutAnchor;
+- (id)locationAreaLeadingLayoutAnchor;
+- (void)finishAnimation:(BOOL)arg1;
+- (void)prepForAnimatedTransition:(BOOL)arg1;
+- (void)setExpanded:(BOOL)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)windowOrderedOut;

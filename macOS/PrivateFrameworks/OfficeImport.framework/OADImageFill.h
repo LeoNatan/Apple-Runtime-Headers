@@ -21,6 +21,7 @@
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setStyleColor:(id)arg1;
@@ -45,7 +46,6 @@
 - (BOOL)isAnythingOverridden;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

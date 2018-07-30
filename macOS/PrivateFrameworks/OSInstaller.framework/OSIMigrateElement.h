@@ -24,8 +24,12 @@
     SMPaths *_pather;
 }
 
++ (void)removeFlag:(int)arg1 fromPath:(id)arg2;
++ (BOOL)moveFilesAtPaths:(id)arg1 toPreservationFolderAtPath:(id)arg2;
++ (id)validPathsForPreservation:(id)arg1 onMountpoint:(id)arg2 ignoreFiles:(id)arg3;
 + (BOOL)setupMigrationWithTarget:(id)arg1 error:(id *)arg2;
 @property(retain) SMPaths *pather; // @synthesize pather=_pather;
+- (void).cxx_destruct;
 - (void)migrationRequestCompletedState:(unsigned long long)arg1 advancingTo:(unsigned long long)arg2 withErrorsAndWarnings:(id)arg3;
 - (void)engineStartedWithRequestUUID:(id)arg1 migrationType:(unsigned long long)arg2;
 - (void)engineMinutesRemaining:(id)arg1 transferRate:(id)arg2;
@@ -41,7 +45,6 @@
 - (id)localizedStatusString;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 - (id)initWithOptions:(id)arg1 isServer:(BOOL)arg2;
 
 @end

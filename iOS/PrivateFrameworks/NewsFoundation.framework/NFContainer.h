@@ -9,11 +9,10 @@
 #import "NFDefinitionContainer.h"
 #import "NFRegistrationContainer.h"
 
-@class NFCallbackStore, NFContainerPool, NSMutableDictionary, NSString;
+@class NFCallbackStore, NFContainerPool, NFProxyResolver, NSMutableDictionary, NSString;
 
 @interface NFContainer : NSObject <NFDefinitionContainer, NFRegistrationContainer>
 {
-    id <NFResolver> _resolver;
     NSMutableDictionary *_definitions;
     NFContainerPool *_pool;
     NFCallbackStore *_callbackStore;
@@ -24,11 +23,12 @@
 @property(retain, nonatomic) NFCallbackStore *callbackStore; // @synthesize callbackStore=_callbackStore;
 @property(retain, nonatomic) NFContainerPool *pool; // @synthesize pool=_pool;
 @property(retain, nonatomic) NSMutableDictionary *definitions; // @synthesize definitions=_definitions;
-@property(retain, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
 - (void).cxx_destruct;
 - (void)validateDefinitionsWithProxyResolver:(id)arg1;
 - (id)register:(id)arg1 name:(id)arg2 createDefinitionBlock:(CDUnknownBlockType)arg3;
 - (id)definitionForKey:(id)arg1;
+@property(readonly, nonatomic) id <NFResolver> resolver;
+@property(readonly, nonatomic) NFProxyResolver *proxyResolver;
 - (id)unsafeRegisterForKey:(id)arg1 name:(id)arg2 factory:(CDUnknownBlockType)arg3;
 - (id)registerProtocol:(id)arg1 name:(id)arg2 factory:(CDUnknownBlockType)arg3;
 - (id)registerProtocol:(id)arg1 factory:(CDUnknownBlockType)arg2;

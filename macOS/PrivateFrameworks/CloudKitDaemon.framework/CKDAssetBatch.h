@@ -30,11 +30,16 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
-- (BOOL)isEmpty;
+- (BOOL)isEmptyOfRereferencesAssets;
+- (BOOL)isEmptyOfAssets;
+- (BOOL)isRereferenceAssetBatch;
 - (BOOL)isPackageSectionBatch;
 - (id)firstMMCSItemError;
+- (void)failIfNotDoneAllRegularAndSectionAndRereferenceItemsWithError:(id)arg1;
+@property(readonly, nonatomic) NSArray *allRegularAndSectionAndRereferenceItems;
 - (id)allMMCSAndSectionItems;
 @property(readonly, nonatomic) NSArray *allMMCSSectionItems;
+@property(readonly, nonatomic) NSArray *allRereferenceMMCSItems;
 @property(readonly, nonatomic) NSArray *allMMCSItems;
 @property(readonly) unsigned int size;
 @property(readonly) unsigned int sizeUpperBound;

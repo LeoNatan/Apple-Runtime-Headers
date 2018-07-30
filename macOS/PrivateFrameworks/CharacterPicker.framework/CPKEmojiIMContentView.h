@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)setSearchResults:(id)arg1;
 - (void)_initializeDeferredContents;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)viewDidMoveToWindow;
 - (void)dealloc;
 - (void)_secondaryInit;
 - (id)initWithState:(id)arg1;

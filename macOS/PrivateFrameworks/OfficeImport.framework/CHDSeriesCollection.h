@@ -8,13 +8,13 @@
 
 @class CHDChart;
 
-__attribute__((visibility("hidden")))
 @interface CHDSeriesCollection : EDSortedCollection
 {
     CHDChart *mChart;
 }
 
 + (id)seriesCollectionWithChart:(id)arg1;
+- (void).cxx_destruct;
 - (id)firstNonEmptySeries;
 - (unsigned long long)nonEmptySeriesCount;
 - (unsigned long long)addObject:(id)arg1;

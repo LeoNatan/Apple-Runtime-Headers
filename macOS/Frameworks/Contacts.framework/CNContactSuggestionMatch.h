@@ -8,7 +8,6 @@
 
 @class NSString, SGContact, SGContactMatch;
 
-__attribute__((visibility("hidden")))
 @interface CNContactSuggestionMatch : NSObject
 {
     SGContact *_contact;

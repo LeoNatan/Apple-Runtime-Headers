@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "MTNotificationPoster.h"
+#import "MTNotificationCenter.h"
 
 @class NSString;
 
-@interface MTDistributedNotificationPoster : NSObject <MTNotificationPoster>
+@interface MTDistributedNotificationPoster : NSObject <MTNotificationCenter>
 {
 }
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CNChangeHistoryAnchor, CNChangeHistoryFetchRequest, CNChangeHistoryResult, CNContact, CNContactFetchRequest, CNContactStore, CNContactsEnvironment, CNContainer, CNObservable, CNPolicy, CNSaveRequest, NSArray, NSDictionary, NSNumber, NSPredicate, NSString, NSURL;
+@class CNChangeHistoryAnchor, CNChangeHistoryFetchRequest, CNChangeHistoryResult, CNContact, CNContactFetchRequest, CNContactStore, CNContactsEnvironment, CNContainer, CNManagedConfiguration, CNObservable, CNPolicy, CNSaveRequest, NSArray, NSData, NSDictionary, NSNumber, NSPredicate, NSString, NSURL;
 
 @protocol CNDataMapper <NSObject>
 - (NSString *)defaultContainerIdentifier;
@@ -22,7 +22,7 @@
 - (CNObservable *)contactObservableForFetchRequest:(CNContactFetchRequest *)arg1;
 - (BOOL)requestAccessForEntityType:(long long)arg1 error:(id *)arg2;
 - (void)requestAccessForEntityType:(long long)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
-- (id)initWithContactsEnvironment:(CNContactsEnvironment *)arg1;
+- (id)initWithContactsEnvironment:(CNContactsEnvironment *)arg1 managedConfiguration:(CNManagedConfiguration *)arg2;
 
 @optional
 - (NSArray *)_smartGroupsMatchingPredicate:(NSPredicate *)arg1 contactStore:(CNContactStore *)arg2;
@@ -35,6 +35,8 @@
 - (NSArray *)_customPropertyValuesForRecordWithIdentifier:(NSString *)arg1 error:(id *)arg2;
 - (id)_createInfo;
 - (NSArray *)_allCustomProperties;
+- (BOOL)writeFavoritesPropertyListData:(NSData *)arg1 toPath:(NSString *)arg2 error:(id *)arg3;
+- (NSArray *)favoritesEntryDictionariesAtPath:(NSString *)arg1 error:(id *)arg2;
 - (BOOL)clearChangeHistoryForClientIdentifier:(NSString *)arg1 toChangeAnchor:(CNChangeHistoryAnchor *)arg2 error:(id *)arg3;
 - (CNChangeHistoryResult *)changeHistoryWithFetchRequest:(CNChangeHistoryFetchRequest *)arg1 error:(id *)arg2;
 - (BOOL)unregisterChangeHistoryClientIdentifier:(NSString *)arg1 error:(id *)arg2;
@@ -51,6 +53,7 @@
 - (BOOL)setMeContact:(CNContact *)arg1 error:(id *)arg2;
 - (NSArray *)groupsWithIdentifiers:(NSArray *)arg1 error:(id *)arg2;
 - (void)setNotificationSource:(id)arg1;
+- (NSNumber *)contactCountForFetchRequest:(CNContactFetchRequest *)arg1 error:(id *)arg2;
 - (NSNumber *)unifiedContactCountWithError:(id *)arg1;
 - (NSString *)identifierWithError:(id *)arg1;
 @end

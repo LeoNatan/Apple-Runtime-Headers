@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSData, NSDate, NSString, NSUUID, RTLocation, RTLocationOfInterest;
+@class NSData, NSDate, NSString, NSUUID, RTLocation, RTLocationOfInterest, RTMapItem;
 
 @interface RTVehicleEvent : NSObject <NSCopying, NSSecureCoding>
 {
@@ -23,7 +23,7 @@
     NSString *_notes;
     NSUUID *_identifier;
     NSData *_photo;
-    id <GEOMapItem> _geoMapItem;
+    RTMapItem *_mapItem;
     unsigned int _locationQuality;
     RTLocationOfInterest *_nearbyLocationOfInterest;
 }
@@ -34,7 +34,7 @@
 @property(copy, nonatomic) RTLocationOfInterest *nearbyLocationOfInterest; // @synthesize nearbyLocationOfInterest=_nearbyLocationOfInterest;
 @property(nonatomic) _Bool usualLocation; // @synthesize usualLocation=_usualLocation;
 @property(nonatomic) unsigned int locationQuality; // @synthesize locationQuality=_locationQuality;
-@property(retain, nonatomic) id <GEOMapItem> geoMapItem; // @synthesize geoMapItem=_geoMapItem;
+@property(retain, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(retain, nonatomic) NSData *photo; // @synthesize photo=_photo;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *notes; // @synthesize notes=_notes;
@@ -49,7 +49,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithDate:(id)arg1 location:(id)arg2 vehicleIdentifier:(id)arg3 userSetLocation:(_Bool)arg4 notes:(id)arg5 identifier:(id)arg6 photo:(id)arg7 geoMapItem:(id)arg8 confirmed:(_Bool)arg9;
+- (id)initWithDate:(id)arg1 location:(id)arg2 vehicleIdentifier:(id)arg3 userSetLocation:(_Bool)arg4 notes:(id)arg5 identifier:(id)arg6 photo:(id)arg7 mapItem:(id)arg8 confirmed:(_Bool)arg9;
 - (id)initWithDate:(id)arg1;
 - (id)init;
 

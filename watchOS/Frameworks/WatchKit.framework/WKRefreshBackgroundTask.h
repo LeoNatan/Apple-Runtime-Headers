@@ -13,9 +13,9 @@
     id <NSSecureCoding><NSObject> _userInfoStorage;
     _Bool _completed;
     _Bool _requiresCompletion;
+    NSUUID *_userInfoUUID;
     id <NSSecureCoding><NSObject> _userInfo;
     CDUnknownBlockType _taskCompletion;
-    NSUUID *_userInfoUUID;
     NSURL *_userInfoPath;
     NSUUID *_barTaskUUID;
 }
@@ -25,7 +25,6 @@
 @property(nonatomic) _Bool requiresCompletion; // @synthesize requiresCompletion=_requiresCompletion;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) NSURL *userInfoPath; // @synthesize userInfoPath=_userInfoPath;
-@property(retain, nonatomic) NSUUID *userInfoUUID; // @synthesize userInfoUUID=_userInfoUUID;
 @property(copy, nonatomic) CDUnknownBlockType taskCompletion; // @synthesize taskCompletion=_taskCompletion;
 @property(readonly) id <NSSecureCoding><NSObject> userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
@@ -33,6 +32,7 @@
 - (void)cleanupStorage;
 - (id)fileURLForUserInfoUUID:(id)arg1;
 - (id)userInfoStorageURL;
+@property(copy, nonatomic) NSUUID *userInfoUUID; // @synthesize userInfoUUID=_userInfoUUID;
 - (id)_userInfo;
 - (void)storeUserInfo:(id)arg1;
 - (void)setTaskCompletedWithSnapshot:(_Bool)arg1;

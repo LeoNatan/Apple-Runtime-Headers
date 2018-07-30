@@ -22,7 +22,8 @@
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
-@property(readonly, nonatomic) id <FBSWorkspaceClientDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <FBSWorkspaceClientDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)queue_connectionWasInterrupted;
 - (void)queue_handleMessage:(id)arg1;
 - (id)_loggingProem;

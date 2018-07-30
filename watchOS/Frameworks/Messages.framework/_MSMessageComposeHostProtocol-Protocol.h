@@ -6,18 +6,24 @@
 
 #import "NSObject.h"
 
-@class BKSAnimationFenceHandle, MSMessage, MSRichLink, NSURL, UIImage, _MSMessageMediaPayload;
+@class BKSAnimationFenceHandle, MSMessage, MSRichLink, NSData, NSString, NSURL, UIImage, _MSMessageMediaPayload;
 
 @protocol _MSMessageComposeHostProtocol <NSObject>
-- (void)_requestResize;
 - (void)_openURL:(NSURL *)arg1 completionHandler:(void (^)(_Bool))arg2;
 - (void)_remoteViewDidBecomeReadyForDisplay;
 - (void)_updateSnapshotForNextLaunch:(UIImage *)arg1;
+- (void)_dismissAndPresentPhotosApp;
 - (void)_dismiss;
-- (void)_requestPresentationStyleExpanded:(_Bool)arg1;
+- (void)_requestPresentationStyle:(unsigned int)arg1;
 - (void)_startDragMediaItem:(_MSMessageMediaPayload *)arg1 frameInRemoteView:(struct CGRect)arg2 fence:(BKSAnimationFenceHandle *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)_stageRichLink:(MSRichLink *)arg1 skipShelf:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)_stageMediaItem:(_MSMessageMediaPayload *)arg1 skipShelf:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)_stageAppItem:(MSMessage *)arg1 skipShelf:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
+
+@optional
+- (void)_removeAssetArchiveWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)_stageAssetArchive:(NSData *)arg1 skipShelf:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)_contentDidLoad;
+- (void)_requestResize;
 @end
 

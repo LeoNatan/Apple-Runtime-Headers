@@ -132,7 +132,7 @@
 - (id)_credentialItemWithAccountIdentifier:(id)arg1 serviceName:(id)arg2;
 - (_Bool)_handleAccountAdd:(id)arg1 withDataclassActions:(id)arg2 error:(id *)arg3;
 - (_Bool)_handleAccountMod:(id)arg1 withDataclassActions:(id)arg2 withError:(id *)arg3;
-- (void)_noteAccountStoreDidSaveAccountsWithAccountTypeIdentifiers:(id)arg1 accountIdentifiers:(id)arg2;
+- (void)_delegate_accountStoreDidSaveAccount:(id)arg1;
 - (void)_setAccountManagedObjectRelationships:(id)arg1 withAccount:(id)arg2 oldAccount:(id)arg3 error:(id *)arg4;
 - (_Bool)_canSaveAccount:(id)arg1;
 - (id)_dataclassWithName:(id)arg1 createIfNecessary:(_Bool)arg2;

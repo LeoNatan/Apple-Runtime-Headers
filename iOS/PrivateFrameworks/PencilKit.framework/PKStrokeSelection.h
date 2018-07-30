@@ -31,9 +31,9 @@
 - (id)strokeDataForSelection;
 - (id)imageDataForSelection;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct CGRect)boundsWithoutLasso;
 - (struct CGRect)bounds;
-- (id)allStrokes;
 - (id)initWithStrokes:(id)arg1 lassoStroke:(id)arg2 drawing:(id)arg3;
 
 // Remaining properties

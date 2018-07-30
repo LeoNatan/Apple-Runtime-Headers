@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 - (void).cxx_destruct;
 - (BOOL)_shouldShowItemAtIndex:(long long)arg1;
-- (id)_itemOffsets;
-- (id)_itemWidths;
+- (void)_recomputeItemOffsets;
+- (void)_recomputeItemWidths;
 - (long long)_numberOfItems;
 - (long long)_selectedIndex;
-- (void)invalidateLayout;
+- (void)prepareLayout;
 - (id)layoutAttributesForItemsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndex:(long long)arg1;
 - (BOOL)shouldInvalidateLayoutForChangeFromVisibleRect:(struct CGRect)arg1 toVisibleRect:(struct CGRect)arg2;

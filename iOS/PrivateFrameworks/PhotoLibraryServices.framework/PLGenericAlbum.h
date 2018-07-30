@@ -62,7 +62,6 @@
 + (id)syncProgressAlbumInLibrary:(id)arg1;
 + (id)trashBinAlbumInLibrary:(id)arg1;
 + (id)iTunesLibraryAlbumInLibrary:(id)arg1;
-+ (id)wallpaperAlbumInLibrary:(id)arg1;
 + (id)allPhotoStreamAssetsAlbumInLibrary:(id)arg1;
 + (id)allNonPhotoStreamAssetsAlbumInLibrary:(id)arg1;
 + (id)allFavoritesAlbumInLibrary:(id)arg1;
@@ -126,7 +125,6 @@
 @property(readonly, nonatomic) _Bool isPhotoStreamAlbum;
 @property(readonly, nonatomic) _Bool isOwnPhotoStreamAlbum;
 @property(readonly, nonatomic) _Bool isSmartAlbum;
-@property(readonly, nonatomic) _Bool isWallpaperAlbum;
 @property(readonly, nonatomic) _Bool isPanoramasAlbum;
 @property(readonly, nonatomic) _Bool isCameraAlbum;
 @property(readonly, nonatomic) _Bool isLibrary;
@@ -158,15 +156,17 @@
 - (id)childKeyForOrdering;
 - (id)childManagedObject;
 - (void)dealloc;
+- (id)momentShare;
 - (id)cplFullRecord;
 @property(readonly, retain, nonatomic) id localID;
 - (void)applyPropertiesFromAlbumChange:(id)arg1;
 - (id)cplAlbumChangeInPhotoLibrary:(id)arg1;
-- (id)_itemIdentifier;
+- (id)_scopedIdentifier;
 
 // Remaining properties
 @property(readonly, retain, nonatomic) NSOrderedSet *assets; // @dynamic assets;
 @property(nonatomic) unsigned long long batchSize;
+@property(nonatomic) short cloudDeleteState; // @dynamic cloudDeleteState;
 @property(retain, nonatomic) NSString *cloudGUID; // @dynamic cloudGUID;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;
 @property(readonly, copy) NSString *debugDescription;

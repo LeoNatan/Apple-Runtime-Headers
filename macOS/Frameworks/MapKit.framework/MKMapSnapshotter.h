@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
+- (id)_appearanceForSnapshot;
 - (void)_performSnapshot;
 - (void)_setupCustomFeaturesForAnnotationViewsIfNeeded;
 - (void)startWithQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

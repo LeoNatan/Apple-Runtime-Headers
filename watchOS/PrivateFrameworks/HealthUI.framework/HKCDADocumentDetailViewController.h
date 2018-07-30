@@ -30,6 +30,7 @@
 - (void)changeReportDisplayed:(id)arg1;
 - (void)_replaceLastArrangedViewWith:(id)arg1;
 - (void)_navigationBarDividingLine:(_Bool)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithReportData:(id)arg1;

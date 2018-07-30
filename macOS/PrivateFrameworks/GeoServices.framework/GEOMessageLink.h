@@ -8,7 +8,6 @@
 
 @class GEOPDMessageLink, NSString, NSTimeZone;
 
-__attribute__((visibility("hidden")))
 @interface GEOMessageLink : NSObject
 {
     GEOPDMessageLink *_messageLink;

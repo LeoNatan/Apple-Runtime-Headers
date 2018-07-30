@@ -9,6 +9,8 @@
 @class NSArray;
 
 @protocol CSCoreSpeechServiceListenerDelegate <NSObject>
+- (oneway void)getFirstPassRunningMode:(void (^)(long long))arg1;
+- (oneway void)requestUpdatedSATAudio:(void (^)(_Bool))arg1;
 - (oneway void)clearTriggerCount:(void (^)(void))arg1;
 - (oneway void)getTriggerCount:(void (^)(unsigned long long))arg1;
 - (oneway void)setDelayInterstitialSounds:(NSArray *)arg1 level:(long long)arg2 completion:(void (^)(NSError *))arg3;

@@ -13,7 +13,7 @@
 - (unsigned long long)scrubbingObscured12ElementBottomIndex;
 - (id)scrubbingObscuredCollectionNodes;
 - (void)applyTransitionFraction:(double)arg1 fromDensity:(unsigned long long)arg2 toDensity:(unsigned long long)arg3;
-- (id)initWithSize:(struct CGSize)arg1;
+- (id)initWithSize:(struct CGSize)arg1 forDevice:(id)arg2;
 
 @end
 

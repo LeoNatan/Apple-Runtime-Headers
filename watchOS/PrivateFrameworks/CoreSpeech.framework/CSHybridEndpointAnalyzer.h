@@ -96,6 +96,7 @@
 @property(readonly, nonatomic) double lastStartOfVoiceActivityTime;
 @property(readonly, nonatomic) double lastEndOfVoiceActivityTime;
 - (void)reset;
+- (void)_readClientLagParametersFromHEPAsset:(id)arg1;
 - (void)resetForNewRequestWithSampleRate:(unsigned int)arg1;
 - (void)recordingStoppedForReason:(unsigned int)arg1;
 - (void)preheat;

@@ -6,10 +6,12 @@
 
 #import "NSObject.h"
 
-@class MTLCompileOptions, MTLComputePipelineDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLTextureDescriptor, NSArray, NSBundle, NSObject<OS_dispatch_data>, NSString, NSURL;
+@class MTLCompileOptions, MTLComputePipelineDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLIndirectCommandBufferDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLSharedEventHandle, MTLSharedTextureHandle, MTLTextureDescriptor, NSArray, NSBundle, NSObject<OS_dispatch_data>, NSString, NSURL;
 
 @protocol MTLDevice <NSObject>
+@property(readonly) unsigned long long maxBufferLength;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
+@property(readonly) unsigned long long maxArgumentBufferSamplerCount;
 @property(readonly) unsigned long long maxThreadgroupMemoryLength;
 @property(readonly) unsigned long long currentAllocatedSize;
 @property(readonly, getter=areRasterOrderGroupsSupported) BOOL rasterOrderGroupsSupported;
@@ -23,8 +25,13 @@
 @property(readonly) CDStruct_14f26992 maxThreadsPerThreadgroup;
 @property(readonly) unsigned long long registryID;
 @property(readonly) NSString *name;
+- (id <MTLSharedEvent>)newSharedEventWithHandle:(MTLSharedEventHandle *)arg1;
+- (id <MTLSharedEvent>)newSharedEvent;
+- (id <MTLEvent>)newEvent;
+- (id <MTLIndirectCommandBuffer>)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id <MTLArgumentEncoder>)newArgumentEncoderWithArguments:(NSArray *)arg1;
 - (void)getDefaultSamplePositions:(CDStruct_6e3f967a *)arg1 count:(unsigned long long)arg2;
+- (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
@@ -47,6 +54,8 @@
 - (id <MTLLibrary>)newDefaultLibraryWithBundle:(NSBundle *)arg1 error:(id *)arg2;
 - (id <MTLLibrary>)newDefaultLibrary;
 - (id <MTLSamplerState>)newSamplerStateWithDescriptor:(MTLSamplerDescriptor *)arg1;
+- (id <MTLTexture>)newSharedTextureWithHandle:(MTLSharedTextureHandle *)arg1;
+- (id <MTLTexture>)newSharedTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
 - (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface *)arg2 plane:(unsigned long long)arg3;
 - (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
 - (id <MTLDepthStencilState>)newDepthStencilStateWithDescriptor:(MTLDepthStencilDescriptor *)arg1;

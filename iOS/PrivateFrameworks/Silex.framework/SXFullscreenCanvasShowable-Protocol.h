@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class SXFullscreenCanvasController, SXFullscreenCaption, SXImageView, UIGestureRecognizer, UIView;
+@class SXFullscreenCanvasController, SXFullscreenCanvasViewController, SXFullscreenCaption, SXImageView, UIGestureRecognizer, UIView;
 
 @protocol SXFullscreenCanvasShowable <NSObject>
 - (_Bool)requestInteractivityFocusForFullScreenCanvasController:(SXFullscreenCanvasController *)arg1;
@@ -15,7 +15,7 @@
 - (struct CGRect)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 originalFrameForShowable:(id <SXFullscreenCanvasShowable>)arg2 onCanvasView:(UIView *)arg3 viewIndex:(unsigned long long)arg4;
 - (SXImageView *)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 originalViewForShowable:(id <SXFullscreenCanvasShowable>)arg2 viewIndex:(unsigned long long)arg3;
 - (unsigned long long)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 viewIndexForPoint:(struct CGPoint)arg2 inShowable:(id <SXFullscreenCanvasShowable>)arg3;
-- (UIView *)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 canvasViewForShowable:(id <SXFullscreenCanvasShowable>)arg2;
+- (SXFullscreenCanvasViewController *)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 canvasViewControllerForShowable:(id <SXFullscreenCanvasShowable>)arg2 completionBlock:(void (^)(void))arg3;
 - (void)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 shouldAddGestureView:(UIView *)arg2 forShowable:(id <SXFullscreenCanvasShowable>)arg3;
 - (unsigned long long)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 numberOfViewsForShowable:(id <SXFullscreenCanvasShowable>)arg2;
 

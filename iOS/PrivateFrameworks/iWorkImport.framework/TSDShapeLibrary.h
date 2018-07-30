@@ -14,9 +14,10 @@ __attribute__((visibility("hidden")))
 @interface TSDShapeLibrary : NSObject <TSDShapeSearchResultProviding>
 {
     NSArray *_categories;
+    long long _dataLoadStatus;
     TSULocale *_locale;
     NSArray *_categorySort;
-    unsigned long long _dataLoadStatus;
+    long long _searchIndexStatus;
     NSDictionary *_library;
     NSURL *_libraryURL;
     TSDShapeSearchIndex *_searchIndex;
@@ -24,36 +25,36 @@ __attribute__((visibility("hidden")))
     NSSet *_shapeIDsToRemove;
 }
 
-+ (void)loadDataInBackground;
++ (void)loadDataWithCompletion:(CDUnknownBlockType)arg1;
 + (id)sharedLibrary;
 @property(readonly, nonatomic) NSSet *p_shapeIDsToRemove; // @synthesize p_shapeIDsToRemove=_shapeIDsToRemove;
 @property(retain, nonatomic) NSCache *p_shapeCache; // @synthesize p_shapeCache=_shapeCache;
 @property(retain, nonatomic) TSDShapeSearchIndex *p_searchIndex; // @synthesize p_searchIndex=_searchIndex;
 @property(retain, nonatomic) NSURL *p_libraryURL; // @synthesize p_libraryURL=_libraryURL;
 @property(retain, nonatomic) NSDictionary *p_library; // @synthesize p_library=_library;
-@property(nonatomic) unsigned long long p_dataLoadStatus; // @synthesize p_dataLoadStatus=_dataLoadStatus;
+@property(nonatomic) long long p_searchIndexStatus; // @synthesize p_searchIndexStatus=_searchIndexStatus;
 @property(retain, nonatomic) NSArray *p_categorySort; // @synthesize p_categorySort=_categorySort;
 @property(readonly, nonatomic) TSULocale *locale; // @synthesize locale=_locale;
+@property(readonly, nonatomic) long long dataLoadStatus; // @synthesize dataLoadStatus=_dataLoadStatus;
 - (void).cxx_destruct;
 - (id)p_libraryByRemovingBlacklistedShapes:(id)arg1;
 - (id)p_shapeIDByLocalizationKeyFromLibrary:(id)arg1;
 - (id)p_shapeDictionariesByIDFromLibrary:(id)arg1;
 - (id)p_keywordDelimiterFromLibrary:(id)arg1;
 - (id)p_shapeDictionariesByID;
-- (id)p_keywordDelimiter;
 - (id)p_sortedCategoriesFromLibrary:(id)arg1;
 - (id)p_parseLibraryFromJSON;
 - (void)p_createSearchIndexWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (_Bool)p_shouldLoadCategoriesAndSearchIndex;
 - (void)p_cacheDataAfterParsingWithSearchIndex:(id)arg1;
-- (void)p_loadDataOnMainThread;
-- (void)p_loadDataInBackground;
+- (void)p_loadDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)p_loadCategoriesAndSearchIndexIfNeeded;
+- (long long)p_setupLibrary;
 - (void)p_setupLibraryIfNeeded;
 - (id)shapeFromSearchResult:(id)arg1;
 - (id)resultsForSearchTerm:(id)arg1;
 - (id)shapeWithLocalizationKey:(id)arg1;
 - (id)shapeWithID:(id)arg1;
+- (void)setDataLoadStatus:(long long)arg1;
 @property(readonly, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 - (id)initWithShapeLibraryURL:(id)arg1 categorySortURL:(id)arg2 locale:(id)arg3;
 

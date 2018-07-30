@@ -11,6 +11,7 @@
     BOOL _canResizeWindow;
     BOOL _useWideSpacing;
     BOOL _showCalendarPopUp;
+    BOOL _showEventSuggestions;
     BOOL _isReadOnly;
     BOOL _miniInspector;
     BOOL _showLinksAsText;
@@ -46,6 +47,7 @@
 @property BOOL isReadOnly; // @synthesize isReadOnly=_isReadOnly;
 @property double rightDividerMargin; // @synthesize rightDividerMargin=_rightDividerMargin;
 @property double leftDividerMargin; // @synthesize leftDividerMargin=_leftDividerMargin;
+@property BOOL showEventSuggestions; // @synthesize showEventSuggestions=_showEventSuggestions;
 @property BOOL showCalendarPopUp; // @synthesize showCalendarPopUp=_showCalendarPopUp;
 @property BOOL useWideSpacing; // @synthesize useWideSpacing=_useWideSpacing;
 @property double smallLabelFontSize; // @synthesize smallLabelFontSize=_smallLabelFontSize;

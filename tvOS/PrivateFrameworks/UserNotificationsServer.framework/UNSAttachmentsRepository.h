@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSURL;
+@class NSURL, UNSKeyedDictionaryRepository;
 
 @interface UNSAttachmentsRepository : NSObject
 {
+    UNSKeyedDictionaryRepository *_referencesRepository;
     NSURL *_directoryURL;
 }
 
@@ -18,6 +19,10 @@
 - (id)_attachmentDirectoryForBundleIdentifier:(id)arg1;
 - (id)_fileURLForDigestString:(id)arg1 extension:(id)arg2 bundleIdentifier:(id)arg3;
 - (void)ensureIntegrityUsingNotificationIdentifiersForBundleIdentifiers:(id)arg1;
+- (void)_performAttachmentReferencesMigrationForBundleIdentifier:(id)arg1;
+- (void)_performAttachmentFilesMigration;
+- (void)_performAttachmentReferencesMigration;
+- (void)performMigration;
 - (unsigned long long)_transformNotificationIdentifiersForRepositoryURL:(id)arg1 bundleIdentifier:(id)arg2 usingTransformBlock:(CDUnknownBlockType)arg3;
 - (void)_transformAttachmentsForBundleIdentifier:(id)arg1 usingTransformBlock:(CDUnknownBlockType)arg2;
 - (void)_removeAllReferencesForBundleIdentifier:(id)arg1;
@@ -27,11 +32,13 @@
 - (void)_removeRepositoryURL:(id)arg1;
 - (void)removeReferenceToRepositoryURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
 - (id)moveFileIntoRepositoryFromFileURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
+- (id)referencesForBundleIdentifier:(id)arg1;
+- (id)allBundleIdentifiers;
 - (_Bool)isValidRepositoryURL:(id)arg1 forBundleIdentifier:(id)arg2;
 - (_Bool)isRepositoryURL:(id)arg1;
 - (id)_claimedRepositoryURLsForBundleIdentifier:(id)arg1;
 - (id)bundleIdentifiersClaimingAttachments;
-- (id)initWithDirectoryURL:(id)arg1;
+- (id)initWithDirectory:(id)arg1;
 
 @end
 

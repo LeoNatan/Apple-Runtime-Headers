@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "TSDContainerInfo.h"
+#import "TSKModelRootIndexProvider.h"
 
 @class NSArray, NSObject<TSDContainerInfo>, NSObject<TSWPTopicNumberHints>, NSString, TPPageHint, TPPageInfo, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPStorage;
 
 __attribute__((visibility("hidden")))
-@interface TPBodyInfo : NSObject <TSDContainerInfo>
+@interface TPBodyInfo : NSObject <TSDContainerInfo, TSKModelRootIndexProvider>
 {
     TPPageInfo *_pageInfo;
 }
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isFloatingAboveText) _Bool floatingAboveText;
 @property(readonly, nonatomic) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+- (long long)modelRootIndex;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (void)setPrimitiveGeometry:(id)arg1;
 @property(copy, nonatomic) TSDInfoGeometry *geometry;

@@ -6,6 +6,8 @@
 
 #import "NSObject.h"
 
+@class CLKDevice;
+
 @interface NTKNumeralsAnalogFaceConfiguration : NSObject
 {
     _Bool _areAllComplicationsOff;
@@ -13,14 +15,17 @@
     unsigned int _colorSchemeUnits;
     unsigned int _selectedStyle;
     int _utilitySlot;
+    CLKDevice *_device;
 }
 
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int utilitySlot; // @synthesize utilitySlot=_utilitySlot;
 @property(readonly, nonatomic) _Bool areAllComplicationsOff; // @synthesize areAllComplicationsOff=_areAllComplicationsOff;
 @property(readonly, nonatomic) unsigned int selectedStyle; // @synthesize selectedStyle=_selectedStyle;
 @property(readonly, nonatomic) unsigned int colorSchemeUnits; // @synthesize colorSchemeUnits=_colorSchemeUnits;
 @property(readonly, nonatomic) unsigned int faceColor; // @synthesize faceColor=_faceColor;
-- (id)initWithFaceColor:(unsigned int)arg1 colorSchemeUnits:(unsigned int)arg2 areAllComplicationsOff:(_Bool)arg3 utilitySlot:(int)arg4 selectedStyle:(unsigned int)arg5;
+- (void).cxx_destruct;
+- (id)initWithFaceColor:(unsigned int)arg1 colorSchemeUnits:(unsigned int)arg2 areAllComplicationsOff:(_Bool)arg3 utilitySlot:(int)arg4 selectedStyle:(unsigned int)arg5 forDevice:(id)arg6;
 
 @end
 

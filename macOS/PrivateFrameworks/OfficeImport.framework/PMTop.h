@@ -4,32 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <OfficeImport/CMTop.h>
+#import <OfficeImport/QLTop.h>
 
 #import "OIProgressiveReaderDelegate.h"
 
-@class CMArchiveManager, PMPresentationMapper, PMState;
-
 __attribute__((visibility("hidden")))
-@interface PMTop : CMTop <OIProgressiveReaderDelegate>
+@interface PMTop : QLTop <OIProgressiveReaderDelegate>
 {
-    CMArchiveManager *_archiver;
-    PMState *_state;
-    PMPresentationMapper *_mapper;
-    BOOL _xml;
 }
 
-+ (void)fillHTMLArchiveForPowerPointData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
-+ (void)fillHTMLArchiveForPowerPointFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
-+ (void)fillHTMLArchiveForPowerPointFrom:(id)arg1 inMemory:(BOOL)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
-- (void).cxx_destruct;
-- (void)readFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
-- (void)readData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
++ (BOOL)supportsProgressiveMapping;
 - (BOOL)isCancelled;
-- (void)readerDidEndDocument:(id)arg1;
-- (void)readerDidReadElement:(id)arg1 atIndex:(unsigned long long)arg2 inDocument:(id)arg3 isLastElement:(BOOL)arg4;
-- (void)readerDidStartDocument:(id)arg1 withElementCount:(long long)arg2;
-- (void)readFrom:(id)arg1 inMemory:(BOOL)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
+- (Class)stateClass;
+- (Class)mapperClassForIndexing:(BOOL)arg1;
+- (void)readFile:(id)arg1 orData:(id)arg2 dataFileName:(id)arg3 format:(unsigned long long)arg4 archiver:(id)arg5 forIndexing:(BOOL)arg6;
+- (Class)readerClassForXMLDocuments;
+- (Class)readerClassForBinaryDocuments;
+- (void)initializeClasses;
 
 @end
 

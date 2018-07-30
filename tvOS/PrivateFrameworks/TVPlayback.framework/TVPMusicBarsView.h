@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class NSArray;
+@class NSArray, NSObject;
 
 __attribute__((visibility("hidden")))
 @interface TVPMusicBarsView : UIView
@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSArray *_barViews;
     float _repeatCount;
     long long _musicBarsStyle;
+    NSObject *_didBecomeActiveNotification;
 }
 
 - (void).cxx_destruct;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)resumeAnimatingIfNeeded;
 - (void)didMoveToWindow;
 - (struct CGSize)intrinsicContentSize;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

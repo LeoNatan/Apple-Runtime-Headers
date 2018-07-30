@@ -8,12 +8,12 @@
 
 @class NSMutableString;
 
-__attribute__((visibility("hidden")))
 @interface OAVStyle : NSObject
 {
     NSMutableString *_string;
 }
 
+- (void).cxx_destruct;
 - (id)styleAttributeValue;
 - (void)addPropertyWithName:(id)arg1 value:(id)arg2;
 - (id)init;

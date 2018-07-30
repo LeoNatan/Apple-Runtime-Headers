@@ -14,10 +14,9 @@
     NSArray *_data;
 }
 
-@property _Bool isSubHeader; // @synthesize isSubHeader=_isSubHeader;
-@property(retain) NSArray *data; // @synthesize data=_data;
+@property(nonatomic) _Bool isSubHeader; // @synthesize isSubHeader=_isSubHeader;
+@property(retain, nonatomic) NSArray *data; // @synthesize data=_data;
 - (void).cxx_destruct;
-- (id)observableProperties;
 
 @end
 

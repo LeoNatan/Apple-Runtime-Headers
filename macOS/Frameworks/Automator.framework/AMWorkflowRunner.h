@@ -39,9 +39,12 @@
     NSProgress *_actionProgress;
     NSMapTable *_childProgressesByAction;
     NSMutableArray *_progressValueObservedList;
+    NSMutableArray *_actionOperationObservedList;
 }
 
 + (id)progressForWorkflow:(id)arg1;
++ (id)_operationKeysToObserve;
+@property(retain) NSMutableArray *actionOperationObservedList; // @synthesize actionOperationObservedList=_actionOperationObservedList;
 @property(retain) NSMapTable *childProgressesByAction; // @synthesize childProgressesByAction=_childProgressesByAction;
 @property(retain) NSProgress *actionProgress; // @synthesize actionProgress=_actionProgress;
 @property(retain) NSProgress *workflowProgress; // @synthesize workflowProgress=_workflowProgress;
@@ -101,6 +104,9 @@
 - (void)_removeProgressObservingForActionIfNeeded:(id)arg1;
 - (void)_addProgressObservingForActionIfNeeded:(id)arg1;
 - (void)_clearAllProgressObserving;
+- (void)_clearAllActionOperationObserving;
+- (void)_unobserveActionOperation:(id)arg1;
+- (void)_observeActionOperation:(id)arg1;
 - (void)workflowCompleted;
 - (void)runAction:(id)arg1 withInput:(id)arg2 loopParent:(id)arg3;
 - (void)runNextActionAndConvertDataFromAction:(id)arg1;
@@ -115,6 +121,7 @@
 @property(readonly, getter=isPaused) BOOL paused;
 @property(readonly, getter=isRunning) BOOL running;
 @property(readonly, getter=isIdle) BOOL idle;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

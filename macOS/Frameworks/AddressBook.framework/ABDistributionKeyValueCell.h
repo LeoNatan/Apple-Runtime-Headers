@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABPeoplePickerPropertyCell.h>
 
-__attribute__((visibility("hidden")))
 @interface ABDistributionKeyValueCell : ABPeoplePickerPropertyCell
 {
 }

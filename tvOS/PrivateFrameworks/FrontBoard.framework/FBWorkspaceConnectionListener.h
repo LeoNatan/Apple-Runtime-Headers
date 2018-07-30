@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)handleIncomingConnection:(id)arg1 forService:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

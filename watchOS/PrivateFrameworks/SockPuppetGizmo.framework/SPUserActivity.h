@@ -21,6 +21,7 @@
 - (void)invalidateActivity;
 - (void)setWithActivityType:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
 - (void)setWithActivityType:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3 teamID:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)setWithActivity:(id)arg1;
 - (id)init;
 
 @end

@@ -8,7 +8,6 @@
 
 @class EDTable;
 
-__attribute__((visibility("hidden")))
 @interface EPTableStyleFlattener : EPStyleFlattener
 {
     EDTable *mTable;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
     unsigned long long mTotalsRowCount;
 }
 
+- (void).cxx_destruct;
 - (void)clearCache;
 - (void)cacheSizes:(id)arg1 inObject:(id)arg2;
 - (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;

@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSLock, NSMutableSet;
 
+__attribute__((visibility("hidden")))
 @interface _PFSpotlightHelper : NSObject
 {
     NSMutableSet *_registeredStores;

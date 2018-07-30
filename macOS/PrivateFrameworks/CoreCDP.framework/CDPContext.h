@@ -9,10 +9,11 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class AKCircleRequestContext, CUMessageSession, KCAESGCMDuplexSession, NSDictionary, NSNumber, NSString;
+@class AKCircleRequestContext, CUMessageSession, KCAESGCMDuplexSession, NSDictionary, NSMutableArray, NSNumber, NSString;
 
 @interface CDPContext : NSObject <NSSecureCoding, NSCopying>
 {
+    NSMutableArray *_signInMetricsStack;
     BOOL _isHSA2Account;
     BOOL _isFederatedAccount;
     BOOL _didUseSMSVerification;
@@ -40,6 +41,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)_metricsQueue;
++ (id)preflightContext:(id)arg1;
 @property(nonatomic) BOOL idmsMasterKeyRecovery; // @synthesize idmsMasterKeyRecovery=_idmsMasterKeyRecovery;
 @property(nonatomic) BOOL idmsRecovery; // @synthesize idmsRecovery=_idmsRecovery;
 @property(copy, nonatomic) NSString *_recoveryToken; // @synthesize _recoveryToken=__recoveryToken;
@@ -65,6 +68,10 @@
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
 - (void).cxx_destruct;
+- (struct __CFData *)encodedTopLevelMetric;
+- (id)topLevelMetric;
+- (void)stopMetric:(id)arg1 withAttributes:(id)arg2;
+- (id)startMetricForEventName:(id)arg1;
 - (void)augmentWithCredentialsFromContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateWithAuthenticationResults:(id)arg1;

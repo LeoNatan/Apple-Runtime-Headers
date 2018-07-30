@@ -6,13 +6,18 @@
 
 #import "NSVisualEffectView.h"
 
+__attribute__((visibility("hidden")))
 @interface _NCCardViewControllerView : NSVisualEffectView
 {
-    BOOL _darkAppearance;
+    BOOL _forceDarkCompatibleLook;
+    BOOL _darkLook;
+    unsigned long long _cardMaterial;
 }
 
-@property(readonly) BOOL darkAppearance; // @synthesize darkAppearance=_darkAppearance;
-- (id)initWithDarkAppearance:(BOOL)arg1;
+@property(readonly) unsigned long long cardMaterial; // @synthesize cardMaterial=_cardMaterial;
+- (void)updateLayer;
+- (void)_setupAppearance:(_Bool)arg1;
+- (id)initWithCardMaterial:(unsigned long long)arg1;
 
 @end
 

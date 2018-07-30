@@ -8,14 +8,20 @@
 
 #import "_GEOLocationShifterProxy.h"
 
-@class NSString;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _GEOLocationShifterRemoteProxy : NSObject <_GEOLocationShifterProxy>
 {
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
+- (unsigned int)locationShiftFunctionVersion;
+- (BOOL)isLocationShiftRequiredForCoordinate:(CDStruct_c3b9c2ee)arg1;
+- (BOOL)isLocationShiftEnabled;
 - (void)shiftLatLng:(id)arg1 auditToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

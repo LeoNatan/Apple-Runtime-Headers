@@ -39,7 +39,7 @@
 - (void)_didFinishLoadWithError:(id)arg1;
 - (void)_didReceiveHTTPResponse:(id)arg1;
 - (_Bool)_receivedValidResponse:(id)arg1;
-- (void)_decorateServerUIRequest:(id)arg1;
+- (void)_decorateServerUIRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_loadRequestMain:(id)arg1;
 - (void)_loadURL:(id)arg1 postBody:(id)arg2;
 - (void)presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;

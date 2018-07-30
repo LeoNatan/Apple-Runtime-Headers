@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (double)contentsScale;
 - (_Bool)forcesPlacementOnTop;
 @property(readonly, nonatomic) struct CGRect boundsForStandardKnobs;
+- (void)willLayoutAndRenderInBackground;
 - (void)i_configureFontSmoothingForContext:(struct CGContext *)arg1 layer:(id)arg2;
 - (void)recursivelyDrawChildrenInContext:(struct CGContext *)arg1;
 - (void)recursivelyDrawInContext:(struct CGContext *)arg1;

@@ -46,9 +46,9 @@
 - (double)_energyBurnedInKilocalories;
 - (void)reset;
 @property(setter=_setKnownFields:) unsigned long long knownFields;
-@property(retain, setter=_setDailyBriskMinutesStatistics:) NSArray *dailyBriskMinutesStatistics;
+@property(copy, setter=_setDailyBriskMinutesStatistics:) NSArray *dailyBriskMinutesStatistics;
 @property(readonly) _Bool hasDailyBriskMinutesStatistics;
-@property(retain, setter=_setDailyEnergyBurnedStatistics:) NSArray *dailyEnergyBurnedStatistics;
+@property(copy, setter=_setDailyEnergyBurnedStatistics:) NSArray *dailyEnergyBurnedStatistics;
 @property(readonly) _Bool hasDailyEnergyBurnedStatistics;
 @property(readonly) _Bool hasFlightsClimbed;
 @property(setter=_setFlightsClimbed:) long long flightsClimbed;

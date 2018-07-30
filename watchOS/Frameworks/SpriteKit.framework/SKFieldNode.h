@@ -30,6 +30,7 @@
 + (id)radialGravityField;
 + (id)vortexField;
 + (id)dragField;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic, getter=isExclusive) _Bool exclusive; // @synthesize exclusive=_exclusive;
 - (void).cxx_destruct;
 - (_Bool)isEqualToNode:(id)arg1;

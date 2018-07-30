@@ -22,14 +22,15 @@
 - (void)downloadInstallAssistantForTags:(NSArray *)arg1 bundleIdentifier:(NSString *)arg2;
 - (void)dsidLessDownloadHeartbeat;
 - (void)dsidLessDownloadWithItemIdentifier:(unsigned long long)arg1 bundleIdentifier:(NSString *)arg2 externalVersionIdentifier:(long long)arg3 options:(NSDictionary *)arg4 replyBlock:(void (^)(BOOL, long long, NSString *, NSError *))arg5;
-- (void)processMDMManifestURL:(NSURL *)arg1 options:(NSDictionary *)arg2 storeClientType:(long long)arg3 replyBlock:(void (^)(BOOL, NSArray *, NSError *))arg4;
+- (void)processMDMManifest:(NSDictionary *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(BOOL, NSArray *, NSError *))arg3;
+- (void)processMDMManifestAtURL:(NSURL *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(BOOL, NSArray *, NSError *))arg3;
 - (void)vppManagedAppsWithReplyBlock:(void (^)(NSArray *))arg1;
 - (void)reloadAvailableVPPUpdatesWithReplyBlock:(void (^)(NSArray *, BOOL))arg1;
 - (void)availableVPPUpdatesWithReplyBlock:(void (^)(NSArray *))arg1;
 - (void)redownloadWithItemIdentifier:(long long)arg1 bundleIdentifier:(NSString *)arg2 storeClientType:(long long)arg3 replyBlock:(void (^)(BOOL, long long, NSString *, NSError *))arg4;
 - (void)showInvite:(NSURL *)arg1 organizationName:(NSString *)arg2 storeClientType:(long long)arg3;
 - (void)laterDidNotOccurWithDueToACPower:(BOOL)arg1;
-- (void)nowIsLaterWithMode:(long long)arg1 countdownDeferred:(BOOL)arg2;
+- (void)nowIsLaterWithMode:(long long)arg1 countdownDeferred:(BOOL)arg2 replyBlock:(void (^)(BOOL))arg3;
 - (void)updatesForTags:(NSArray *)arg1 replyBlock:(void (^)(NSArray *))arg2;
 - (void)didInteractivelyPurchaseItemIdentifier:(unsigned long long)arg1 success:(BOOL)arg2;
 - (void)willInteractivelyPurchaseItemIdentifier:(unsigned long long)arg1 replyBlock:(void (^)(BOOL))arg2;

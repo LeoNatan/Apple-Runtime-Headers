@@ -7,48 +7,50 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBShareFileIntentResponse.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBShareFileIntentResponse : PBCodable <NSCopying>
+@interface _INPBShareFileIntentResponse : PBCodable <_INPBShareFileIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_recipients;
-    int _shareMode;
-    BOOL _confirm;
-    BOOL _success;
     struct {
-        unsigned int shareMode:1;
         unsigned int confirm:1;
+        unsigned int shareMode:1;
         unsigned int success:1;
     } _has;
+    BOOL _confirm;
+    BOOL _success;
+    int _shareMode;
+    NSArray *_recipients;
 }
 
 + (Class)recipientsType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) BOOL success; // @synthesize success=_success;
+@property(nonatomic) int shareMode; // @synthesize shareMode=_shareMode;
+@property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) BOOL confirm; // @synthesize confirm=_confirm;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (id)recipientsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)recipientsCount;
-- (void)addRecipients:(id)arg1;
-- (void)clearRecipients;
+@property(nonatomic) BOOL hasSuccess;
 - (int)StringAsShareMode:(id)arg1;
 - (id)shareModeAsString:(int)arg1;
 @property(nonatomic) BOOL hasShareMode;
-@property(nonatomic) int shareMode; // @synthesize shareMode=_shareMode;
-@property(nonatomic) BOOL hasSuccess;
+- (id)recipientsAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long recipientsCount;
+- (void)addRecipients:(id)arg1;
+- (void)clearRecipients;
 @property(nonatomic) BOOL hasConfirm;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

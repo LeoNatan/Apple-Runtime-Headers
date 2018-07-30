@@ -10,6 +10,7 @@
 
 @class GEORPUserCredentials, NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEORPProblemOptInRequest : PBRequest <NSCopying>
 {
     NSData *_devicePushToken;

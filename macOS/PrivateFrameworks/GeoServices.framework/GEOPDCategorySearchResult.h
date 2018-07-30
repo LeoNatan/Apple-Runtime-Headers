@@ -10,6 +10,7 @@
 
 @class GEOMapRegion, GEOPDRelatedSearchSuggestion, GEOPDSearchClientBehavior, NSMutableArray, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDCategorySearchResult : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

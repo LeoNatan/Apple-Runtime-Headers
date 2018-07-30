@@ -15,6 +15,7 @@
 + (id)launchAppWithIntentWithDictionary:(id)arg1 context:(id)arg2;
 + (id)launchAppWithIntent;
 - (BOOL)requiresResponse;
+@property(retain, nonatomic) SAIntentGroupProtobufMessage *handledIntentResponse;
 @property(retain, nonatomic) SAIntentGroupProtobufMessage *handledIntent;
 - (id)encodedClassName;
 - (id)groupIdentifier;

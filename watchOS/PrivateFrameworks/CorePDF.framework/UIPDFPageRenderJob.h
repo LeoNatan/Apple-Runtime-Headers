@@ -8,6 +8,7 @@
 
 @class UIImage, UIPDFPage, UIPDFPageRenderOperation;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFPageRenderJob : NSObject
 {
     UIPDFPage *_page;

@@ -9,13 +9,14 @@
 #import "PUICTableViewDataSource.h"
 #import "PUICTableViewDelegate.h"
 
-@class NSArray, NSAttributedString, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, PUICHyphenatedLabel, PUICTableView, PUICTableViewCell;
+@class NSArray, NSAttributedString, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, PUICHyphenatedLabel, PUICTableView, PUICTableViewCell, UIView;
 
 @interface CUISBulletinActionMenu : NSObject <PUICTableViewDataSource, PUICTableViewDelegate>
 {
+    UIView *_footerContainer;
     NSAttributedString *_footerText;
     PUICHyphenatedLabel *_footerHelpTextLabel;
-    struct CGSize _footerlabelSize;
+    struct CGSize _footerSize;
     PUICTableView *_tableView;
     PUICTableViewCell *_selectedActionCell;
     id <CUISBulletinActionMenuDelegate> _delegate;

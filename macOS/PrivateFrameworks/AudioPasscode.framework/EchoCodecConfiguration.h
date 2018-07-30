@@ -8,8 +8,10 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface EchoCodecConfiguration : AUPasscodeCodecConfiguration <NSCopying>
 {
+    _Bool _hfNoiseFillingFlag;
     float _delayForBit0;
     float _delayForBit1;
     float _syncDetectThreshold;
@@ -19,11 +21,12 @@
     unsigned long long _frameSize;
     unsigned long long _numFrameRepeat;
     unsigned long long _randomSeed;
-    unsigned long long _hfNoiseFillingFlag;
+    unsigned long long _algorithmVersionNumber;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned long long hfNoiseFillingFlag; // @synthesize hfNoiseFillingFlag=_hfNoiseFillingFlag;
+@property(nonatomic) unsigned long long algorithmVersionNumber; // @synthesize algorithmVersionNumber=_algorithmVersionNumber;
+@property(nonatomic) _Bool hfNoiseFillingFlag; // @synthesize hfNoiseFillingFlag=_hfNoiseFillingFlag;
 @property(nonatomic) float hpfCutOffFreq; // @synthesize hpfCutOffFreq=_hpfCutOffFreq;
 @property(nonatomic) float noiseGainDB; // @synthesize noiseGainDB=_noiseGainDB;
 @property(nonatomic) float echoGainDB; // @synthesize echoGainDB=_echoGainDB;
@@ -35,6 +38,7 @@
 @property(nonatomic) unsigned long long frameSize; // @synthesize frameSize=_frameSize;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCommandLineArgs:(id)arg1;
+- (id)initWithCapabilityData:(id)arg1;
 - (id)commandLineOptions;
 - (void)setDefaultValues;
 - (id)init;

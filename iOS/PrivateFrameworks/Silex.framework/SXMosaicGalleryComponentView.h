@@ -72,7 +72,7 @@
 - (void)fullScreenCanvasController:(id)arg1 didShowShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
 - (void)fullScreenCanvasController:(id)arg1 didHideShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
 - (id)fullScreenCanvasController:(id)arg1 captionForShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
-- (id)fullScreenCanvasController:(id)arg1 canvasViewForShowable:(id)arg2;
+- (id)fullScreenCanvasController:(id)arg1 canvasViewControllerForShowable:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (_Bool)requestInteractivityFocusForFullScreenCanvasController:(id)arg1;
 - (id)documentColumnLayoutForGalleryLayouter:(id)arg1;
 - (_Bool)galleryLayouter:(id)arg1 viewIsCurrentlyFullscreenForItemAtIndex:(unsigned long long)arg2;

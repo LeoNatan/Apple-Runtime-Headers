@@ -12,12 +12,11 @@
 #import "PKPassGroupViewDelegate.h"
 #import "PKPaymentServiceDelegate.h"
 
-@class NSMutableArray, NSMutableDictionary, NSString, NSTimer, PKGroup, PKPGSVSectionHeaderContext, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView;
+@class NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSTimer, PKPGSVSectionHeaderContext, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView;
 
 @interface PKPassGroupStackView : UIScrollView <PKPassGroupViewDelegate, PKPassDeleteAnimationControllerDelegate, PKPaymentServiceDelegate, PKPassFooterViewDelegate, PKPassDeleteHandler>
 {
     PKPassGroupView *_modallyPresentedGroupView;
-    PKGroup *_modallyPresentedGroup;
     NSMutableArray *_passPileViews;
     unsigned int _modalGroupIndex;
     int _scrollingTestState;
@@ -63,7 +62,6 @@
     _Bool _hasSuspendedTransition;
     int _suspendedNextState;
     NSMutableArray *_suspendedTransitionCompletionHandlers;
-    _Bool _inPassthroughHitTest;
     PKReusablePassViewQueue *_reusableCardViewQueue;
     PKPassGroupView *_reorderedGroupView;
     unsigned int _initialIndexOfReorderedGroup;
@@ -89,11 +87,11 @@
     PKPassthroughView *_headerContainerView;
     PKPassthroughView *_subheaderContainerView;
     PKPassthroughView *_passContainerView;
-    NSMutableArray *_passthroughViews;
     PKSecureElement *_secureElement;
     _Bool _delegateWantsTopContentSeparation;
     _Bool _delegateWantsBottomContentSeparation;
     _Bool _wantsBacklightRamping;
+    NSNumber *_featuredGroupID;
     _Bool _footerSuppressed;
     _Bool _staggerPileAnimations;
     id <PKPassGroupStackViewDatasource> _datasource;
@@ -121,18 +119,18 @@
 - (_Bool)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
 - (void)deleteAnimationController:(id)arg1 didComplete:(_Bool)arg2;
 - (void)deleteAnimationControllerWillBeginDeleteAnimation:(id)arg1;
+- (unsigned int)suppressedContentForPassFooter:(id)arg1;
+- (_Bool)isPassFooterViewInGroup:(id)arg1;
 - (void)groupViewDidUpdatePageControlVisibility:(id)arg1;
 - (_Bool)groupView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
 - (void)groupView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
-- (void)groupView:(id)arg1 frontmostPassViewDidChange:(id)arg2;
-- (void)groupView:(id)arg1 resizeButtonPressedForPass:(id)arg2 withBarcode:(_Bool)arg3;
-- (struct CGRect)groupView:(id)arg1 targetPageControlFrameForProposedFrame:(struct CGRect)arg2;
+- (void)groupView:(id)arg1 frontmostPassViewDidChange:(id)arg2 withContext:(id)arg3;
 - (int)groupViewContentModeForFrontmostPassWhenPiled:(id)arg1 withDefaultContentMode:(int)arg2;
 - (int)groupViewContentModeForFrontmostPassWhenStacked:(id)arg1;
 - (id)groupViewReusablePassViewQueue:(id)arg1;
 - (unsigned int)groupViewPassesSuppressedContent:(id)arg1;
-- (void)groupViewFrontPassDidResize:(id)arg1 animated:(_Bool)arg2;
-- (_Bool)groupViewShouldAllowPassResize:(id)arg1;
+- (void)groupViewFrontPassDidUpdateBarcodeVisibility:(id)arg1 animated:(_Bool)arg2;
+- (_Bool)groupViewCanShowBarcode:(id)arg1;
 - (void)groupView:(id)arg1 panned:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
 - (_Bool)groupViewShouldAllowPanning:(id)arg1;
 - (void)groupViewPanDidEnd:(id)arg1;
@@ -142,8 +140,6 @@
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(id)arg1;
 - (void)paymentDeviceDidBecomeUnavailable;
 - (void)paymentDeviceDidBecomeAvailable;
-- (void)paymentDeviceDidLeaveRestrictedMode;
-- (void)paymentDeviceDidEnterRestrictedMode;
 - (void)_cancelSuspendedTransition;
 - (void)_resumeSuspendedTransition;
 - (void)_suspendTransition;
@@ -163,9 +159,7 @@
 - (id)_groupViewAtIndex:(unsigned int)arg1;
 - (void)_reverseEnumerateLoadedGroupViews:(CDUnknownBlockType)arg1;
 - (void)_enumerateLoadedGroupViews:(CDUnknownBlockType)arg1;
-- (id)_sortedDescendingGroupViewIndexes;
-- (id)_sortedAscendingGroupViewIndexes;
-- (id)_groupBeforeSeparatorGroup;
+- (id)_sortedGroupViewIndexes;
 - (id)_separatorGroup;
 - (id)_firstHeaderContext;
 - (_Bool)_isModalPresentationAllowedForSingleGroup;
@@ -179,7 +173,7 @@
 - (void)_animateGroupViewForUndo:(id)arg1 toIndex:(unsigned int)arg2;
 - (void)_reorderPositionChangedForReorderedGroupViewWithVelocity:(struct CGPoint)arg1;
 - (unsigned int)_indexOfReorderedGroupView;
-- (void)_adjustSeparationGroupAndPassViewsForReordering;
+- (void)_adjustGroupViewsForReordering;
 - (void)_stopAutoscrollTimer;
 - (void)_autoscrollForReordering:(id)arg1;
 - (void)_autoscrollIfNecessary;
@@ -287,6 +281,7 @@
 - (void)updateHeaderAndSubheaderViewsIfNecessary;
 - (void)tilePassesEagerly:(_Bool)arg1;
 - (void)presentDiff:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentPassWithUniqueID:(id)arg1 withContext:(id)arg2;
 - (void)presentPassWithUniqueID:(id)arg1;
 - (void)moveGroup:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)deleteGroup:(id)arg1 atIndex:(unsigned int)arg2;

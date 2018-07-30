@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)fillShadowAreasInContext:(struct CGContext *)arg1;
 - (Box_3fb92e00)shadowBounds;
 - (_Bool)heightAtPoint:(const Matrix_8746f91e *)arg1 outZ:(float *)arg2 outBuildingId:(unsigned long long *)arg3;
-- (_Bool)_createMeshForObjects:(CDStruct_2da3f85a *)arg1 count:(unsigned long long)arg2;
+- (_Bool)_createMeshForObjectsInModelTile:(id)arg1 count:(unsigned long long)arg2;
 - (void)_read3DObjects:(vector_25c79282 *)arg1 fromDiskForTileKey:(const struct _GEOTileKey *)arg2;
 - (void)_replaceThreeBuldingsInModelTile:(id)arg1 objects:(vector_25c79282 *)arg2;
 - (void)dealloc;

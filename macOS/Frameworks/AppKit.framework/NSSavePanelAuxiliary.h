@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-@class FITagEditorView, NSAlert, NSArray, NSBox, NSButton, NSDictionary, NSLayoutConstraint, NSSavePanelAlertStyleContentView, NSString, NSTextField, NSURL, NSView, _NSCollapsibleFinderKitContainer;
+@class FIFinderView, FITagEditorView, NSAlert, NSArray, NSBox, NSButton, NSDictionary, NSLayoutConstraint, NSSavePanelAlertStyleContentView, NSString, NSTextField, NSURL, NSView;
 
 @interface NSSavePanelAuxiliary : NSObject
 {
     SEL modalDelegateDidEndSelector;
     void *contextInfo;
-    double _distanceBetweenExtensionCheckAndNewFolderOrDocumentButton;
     id modalDelegate;
     NSAlert *currentAlert;
     id <NSOpenSavePanelDelegate> delegate;
@@ -23,18 +22,17 @@
     unsigned int _showNewDocumentButton:1;
     unsigned int _showRevertOriginalDocumentButton:1;
     unsigned int _revertOriginalDocumentChanges:1;
-    unsigned int _hideExtension:1;
     unsigned int _showTagField:1;
     unsigned int _clientWillSetTags:1;
     unsigned int _clientSetADirectory:1;
     unsigned int _runningAsAService:1;
     unsigned int _showOptionsButton:1;
     unsigned int _canSendSynchronousMessagesToRemote:1;
-    unsigned int _animatingSetFrame:1;
+    unsigned int _animatingExpandCollapse:1;
     unsigned int _iCloudOpenPanel:1;
     unsigned int _remoteAccessoryViewAvailable:1;
     unsigned int _customTitleSet:1;
-    unsigned int _reserved:14;
+    unsigned int _reserved:15;
     CDUnknownBlockType _completionHandler;
     NSButton *_dontSaveButton;
     NSButton *_newDocumentButton;
@@ -43,10 +41,13 @@
     NSBox *_navBottomSeparator;
     NSBox *_accessoryBottomSeparator;
     NSSavePanelAlertStyleContentView *_alertStyleContentView;
-    NSLayoutConstraint *_alertTrailingSpaceConstraint;
-    NSLayoutConstraint *_alertLeadingAlignmentConstraint;
     NSLayoutConstraint *_alertLeadingTextAlignmentConstraint;
+    NSLayoutConstraint *_textCenteringConstraint;
+    NSLayoutConstraint *_extrasSeparatorConstraint;
     double _alertStyleMinWidth;
+    FIFinderView *_finderKitView;
+    NSURL *_lastFinderKitDirectoryURL;
+    NSArray *_lastFinderKitSelectedURLs;
     NSArray *_enabledFileTypes;
     NSArray *_fauxFilePackageTypes;
     NSURL *_overwritingAlertSuppressionURL;
@@ -57,19 +58,23 @@
     NSArray *_tags;
     NSArray *_initialTags;
     NSString *_lastNameFieldText;
-    unsigned long long _sandboxPermissions;
+    const char *_sandboxPermissions;
     NSDictionary *_sandboxExtensions;
     NSArray *_beginWithFileNames;
     int _remotePID;
     CDStruct_4c969caf _auditToken;
-    struct CGSize _accessoryViewLegacySize;
-    BOOL _accessoryViewWantsCentering;
+    struct CGSize _remoteAccessoryViewDesiredSize;
     NSLayoutConstraint *_widthCollapsingConstraint;
     NSLayoutConstraint *_navPanelCollapsingConstraint;
     NSLayoutConstraint *_navPanelWidthConstraint;
-    _NSCollapsibleFinderKitContainer *_collapsingFinderKitContainer;
     NSLayoutConstraint *_accessoryViewForcedHeightConstraint;
     NSLayoutConstraint *_accessoryViewForcedWidthConstraint;
+    NSLayoutConstraint *_marginConstraint1;
+    NSLayoutConstraint *_marginConstraint2;
+    NSLayoutConstraint *_marginConstraint3;
+    NSLayoutConstraint *_marginConstraint4;
+    NSLayoutConstraint *_finderKitMarginConstraint;
+    NSLayoutConstraint *_marginConstraint6;
 }
 
 - (void).cxx_destruct;

@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface PKPassField : NSObject <NSSecureCoding>
 {
@@ -20,11 +20,19 @@
     NSString *_changeMessage;
     int _textAlignment;
     int _cellStyle;
+    unsigned int _row;
     unsigned int _dataDetectorTypes;
+    NSDictionary *_semantics;
+    int _foreignReferenceType;
+    NSString *_foreignReferenceIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *foreignReferenceIdentifier; // @synthesize foreignReferenceIdentifier=_foreignReferenceIdentifier;
+@property(nonatomic) int foreignReferenceType; // @synthesize foreignReferenceType=_foreignReferenceType;
+@property(copy, nonatomic) NSDictionary *semantics; // @synthesize semantics=_semantics;
 @property(nonatomic) unsigned int dataDetectorTypes; // @synthesize dataDetectorTypes=_dataDetectorTypes;
+@property(nonatomic) unsigned int row; // @synthesize row=_row;
 @property(nonatomic) int cellStyle; // @synthesize cellStyle=_cellStyle;
 @property(nonatomic) int textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSString *changeMessage; // @synthesize changeMessage=_changeMessage;
@@ -34,7 +42,6 @@
 @property(nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)description;
-- (_Bool)isEqual:(id)arg1;
 - (void)flushCachedValue;
 @property(readonly) __weak NSString *value;
 - (void)encodeWithCoder:(id)arg1;

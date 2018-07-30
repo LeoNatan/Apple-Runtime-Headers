@@ -6,25 +6,30 @@
 
 #import <iWorkImport/TSDRep.h>
 
-#import "TSDContainerRep.h"
 #import "TSDImageDrawingDataSource.h"
+#import "TSKChangeSourceObserver.h"
+#import "TSWPContainerTextEditingRep.h"
 
 @class NSArray, NSObject<TSDContainerInfo>, NSString, TSAGalleryLayout, TSDImageDrawingHelper, TSWPRep;
 
 __attribute__((visibility("hidden")))
-@interface TSAGalleryRep : TSDRep <TSDContainerRep, TSDImageDrawingDataSource>
+@interface TSAGalleryRep : TSDRep <TSWPContainerTextEditingRep, TSDImageDrawingDataSource, TSKChangeSourceObserver>
 {
     TSDImageDrawingHelper *_drawingHelper;
     TSWPRep *_captionRep;
 }
 
 + (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
++ (struct CGAffineTransform)p_textureRenderTransformRelativeToTextureRect:(struct CGRect)arg1 forRep:(id)arg2 isMagicMove:(_Bool)arg3;
++ (struct CGRect)p_textureRectForRep:(id)arg1 isMagicMove:(_Bool)arg2;
++ (struct CGAffineTransform)p_textureLayoutTransformInRootForRep:(id)arg1 isMagicMove:(_Bool)arg2;
 @property(readonly, nonatomic) TSWPRep *captionRep; // @synthesize captionRep=_captionRep;
 - (void).cxx_destruct;
 - (void)p_announceNewItemForAccessibilityIfNeeded;
 - (void)didDisplayTextureWithDescription:(id)arg1 isAtEndOfBuild:(_Bool)arg2;
 - (id)p_newTextureForStage:(unsigned long long)arg1 isIncoming:(_Bool)arg2 includeImage:(_Bool)arg3 includeCaption:(_Bool)arg4 size:(struct CGSize)arg5 offset:(struct CGPoint)arg6 renderTransform:(struct CGAffineTransform)arg7;
 - (id)textureForDescription:(id)arg1;
+- (id)p_emptyPlaceholderImage;
 - (id)imageDrawingHelperThumbnailAdjustedImageData:(id)arg1;
 - (id)imageDrawingHelperAdjustedImageData:(id)arg1;
 - (_Bool)imageDrawingHelperImageHasAlpha:(id)arg1;
@@ -33,7 +38,9 @@ __attribute__((visibility("hidden")))
 - (id)imageDrawingHelperThumbnailImageData:(id)arg1;
 - (id)imageDrawingHelperImageData:(id)arg1;
 - (void)invalidateCurrentItem;
+- (void)p_drawImageInContext:(struct CGContext *)arg1 forLayer:(_Bool)arg2;
 - (void)drawInContext:(struct CGContext *)arg1;
+@property(readonly, nonatomic) TSWPRep *containedRep;
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelector:(SEL)arg1;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;

@@ -6,28 +6,33 @@
 
 #import "UIView.h"
 
-#import "UIWebViewDelegate.h"
+#import "WKNavigationDelegate.h"
+#import "WKUIDelegate.h"
 
-@class NSString, UIWebView;
+@class NSString, WKUserContentController, WKWebView;
 
-@interface HUInlineWebContainerView : UIView <UIWebViewDelegate>
+@interface HUInlineWebContainerView : UIView <WKUIDelegate, WKNavigationDelegate>
 {
-    UIWebView *_webView;
+    WKWebView *_webView;
     NSString *_HTMLContent;
     id <HUInlineWebContainerViewDelegate> _delegate;
+    double _estimatedHeight;
+    WKUserContentController *_contentController;
 }
 
+@property(readonly, nonatomic) WKUserContentController *contentController; // @synthesize contentController=_contentController;
+@property(nonatomic) double estimatedHeight; // @synthesize estimatedHeight=_estimatedHeight;
 @property(nonatomic) __weak id <HUInlineWebContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *HTMLContent; // @synthesize HTMLContent=_HTMLContent;
-@property(readonly, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
+@property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (_Bool)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint)arg2;
-- (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
+- (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
+- (_Bool)webView:(id)arg1 shouldPreviewElement:(id)arg2;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (id)_defaultFont;
 - (double)heightForWidth:(double)arg1;
 - (void)layoutSubviews;
-- (void)setUserStyleSheet:(id)arg1;
+- (void)setUserStyleSheet;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

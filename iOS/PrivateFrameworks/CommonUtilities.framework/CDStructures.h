@@ -14,6 +14,10 @@ struct in_addr {
     unsigned int _field1;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 struct sockaddr_in {
     unsigned char _field1;
     unsigned char _field2;

@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVTrackReaderInspector.h>
 
+__attribute__((visibility("hidden")))
 @interface AVCompositionTrackReaderInspector : AVTrackReaderInspector
 {
     struct OpaqueFigMutableComposition *_figMutableComposition;

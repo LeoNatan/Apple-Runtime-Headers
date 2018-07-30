@@ -176,7 +176,6 @@
 - (void)_updateConstraints;
 - (void)_updateSheet;
 @property(readonly) BOOL showSecondaryDeviceTypeField;
-- (BOOL)hasDataToMerge;
 - (void)iCloudDesktopPressed:(BOOL)arg1 withRow:(id)arg2;
 - (void)optimizeStoragePressed:(id)arg1;
 - (id)outlineView:(id)arg1 rowViewForItem:(id)arg2;
@@ -195,7 +194,6 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)monitorGlobalActivity;
 - (void)confirmUserWantsToDisableiCloudDriveAndDesktopWithDialogCompletion:(CDUnknownBlockType)arg1;
-- (BOOL)hasPreflightAction;
 - (void)_serviceEnableChanged:(id)arg1;
 - (void)willSelect;
 - (void)didBecomeActive;

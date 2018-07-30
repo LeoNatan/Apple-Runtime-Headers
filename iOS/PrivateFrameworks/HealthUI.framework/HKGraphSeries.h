@@ -39,6 +39,8 @@
     UIColor *_offScreenIndicatorColor;
 }
 
++ (void)drawInnerDotMarkerInContext:(struct CGContext *)arg1 outColor:(struct CGColor *)arg2 inColor:(struct CGColor *)arg3 x:(double)arg4 y:(double)arg5 radius:(double)arg6;
++ (void)drawFilledMarkerInContext:(struct CGContext *)arg1 color:(struct CGColor *)arg2 x:(double)arg3 y:(double)arg4 radius:(double)arg5;
 @property(retain, nonatomic) UIColor *offScreenIndicatorColor; // @synthesize offScreenIndicatorColor=_offScreenIndicatorColor;
 @property(retain, nonatomic) UIView *cachedYAxisAccessoryView; // @synthesize cachedYAxisAccessoryView=_cachedYAxisAccessoryView;
 @property(retain, nonatomic) id <HKGraphSeriesAxisScalingRule> axisScalingRule; // @synthesize axisScalingRule=_axisScalingRule;
@@ -58,6 +60,7 @@
 @property(retain, nonatomic) NSArray *titleLegendEntries; // @synthesize titleLegendEntries=_titleLegendEntries;
 @property(retain, nonatomic) HKGraphSeriesDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (_Bool)untransformedChartPointsForTimeScope:(long long)arg1 range:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)findVisibleBlockCoordinatesForChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5;
 - (double)distanceFromTouchPoint:(struct CGPoint)arg1 inChartRect:(struct CGRect)arg2 xAxis:(id)arg3 zoomScale:(double)arg4 contentOffset:(struct CGPoint)arg5 xAxisTransform:(struct CGAffineTransform)arg6;
 - (void)deselectPath;
@@ -65,6 +68,7 @@
 - (_Bool)isHighlighted;
 - (id)closestXCoordinateRange;
 - (CDStruct_f3788345)selectedPathRange;
+- (void)updateLegendsForTimeScope:(long long)arg1 range:(id)arg2;
 - (id)marginsForYAxis:(id)arg1 chartRect:(struct CGRect)arg2;
 - (_Bool)supportsMultiTouchSelection;
 - (id)coordinatesForBlock:(id)arg1 blockPath:(CDStruct_6ca94699)arg2 xAxis:(id)arg3 yAxis:(id)arg4;
@@ -83,8 +87,6 @@
 - (struct UIEdgeInsets)yAxisAccessoryViewEdgeInsets;
 - (struct CGSize)yAxisAccessoryViewSize;
 - (void)enumerateCoordinatesInChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5 roundToViewScale:(_Bool)arg6 exclusionOptions:(long long)arg7 block:(CDUnknownBlockType)arg8;
-- (void)enumerateCoordinatesInChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5 roundToViewScale:(_Bool)arg6 rejectPointsOutOfChartRect:(_Bool)arg7 block:(CDUnknownBlockType)arg8;
-- (void)enumerateCoordinatesInChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5 roundToViewScale:(_Bool)arg6 block:(CDUnknownBlockType)arg7;
 - (_Bool)containsCoordinatesInChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5;
 - (struct CGAffineTransform)coordinateTransformForChartRect:(struct CGRect)arg1 xAxisTransform:(struct CGAffineTransform)arg2;
 - (void)drawWithChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 zoomLevelConfiguration:(id)arg5 xAxisTransform:(struct CGAffineTransform)arg6 inContext:(struct CGContext *)arg7 secondaryRenderContext:(id)arg8;
@@ -95,10 +97,12 @@
 - (double)yAxisDifferenceToPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
 - (double)xAxisDistanceFromPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
 - (double)distanceFromPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
+- (struct UIEdgeInsets)virtualMarginInsets;
 - (id)valueRangeForYAxisWithXAxisRange:(id)arg1 dateZoom:(long long)arg2 chartRect:(struct CGRect)arg3;
 - (id)_expandYRange:(id)arg1 withXRange:(id)arg2 dateZoom:(long long)arg3 chartRect:(struct CGRect)arg4;
-- (void)autoscaleYAxisWithYAxisRange:(id)arg1 chartRect:(struct CGRect)arg2 animated:(_Bool)arg3;
-- (void)autoscaleYAxisWithValueRange:(id)arg1 yAxisRange:(id)arg2 xAxis:(id)arg3 dateZoom:(long long)arg4 chartRect:(struct CGRect)arg5 animated:(_Bool)arg6;
+- (void)cancelInFlightAutoscale;
+- (void)autoscaleYAxisWithYAxisRange:(id)arg1 chartRect:(struct CGRect)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)autoscaleYAxisWithValueRange:(id)arg1 yAxisRange:(id)arg2 xAxis:(id)arg3 dateZoom:(long long)arg4 chartRect:(struct CGRect)arg5 animated:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)autoscaleYAxisIfNecessaryWithValueRange:(id)arg1 yAxisRange:(id)arg2 xAxis:(id)arg3 dateZoom:(long long)arg4 chartRect:(struct CGRect)arg5;
 - (_Bool)shouldInvertAxis;
 - (id)visibleValueRange;

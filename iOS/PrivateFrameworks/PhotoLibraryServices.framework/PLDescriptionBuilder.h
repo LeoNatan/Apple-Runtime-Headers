@@ -13,6 +13,7 @@
     NSObject *_object;
     NSMutableString *_description;
     NSString *_separator;
+    long long _indent;
     NSString *_indentString;
     _PLDescriptionStyle *_style;
 }

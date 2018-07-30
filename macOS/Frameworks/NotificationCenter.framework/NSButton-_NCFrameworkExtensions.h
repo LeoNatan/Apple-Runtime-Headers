@@ -6,13 +6,13 @@
 
 #import "NSButton.h"
 
-#import "NCMaterialReducedTransparencyDelegate.h"
+#import "NCMaterialDelegate.h"
 
 @class NSString;
 
-@interface NSButton (_NCFrameworkExtensions) <NCMaterialReducedTransparencyDelegate>
-- (void)increasedContrastChanged:(_Bool)arg1;
-- (void)reducedTransparencyChanged:(_Bool)arg1;
+@interface NSButton (_NCFrameworkExtensions) <NCMaterialDelegate>
+- (void)appearanceChanged:(_Bool)arg1;
+- (void)materialChanged:(unsigned char)arg1;
 - (void)_actuallySetImages:(id)arg1;
 @property(retain) NSString *_ncImageAssetName;
 @end

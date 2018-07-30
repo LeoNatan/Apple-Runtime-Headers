@@ -7,6 +7,7 @@
 #import "UIColor.h"
 
 @interface UIColor (FUSystemColorExtensions)
++ (id)fu_platterMintColor;
 + (id)fu_platterTealBlueColor;
 + (id)fu_platterDaliTealColor;
 + (id)fu_platterPurpleColor;

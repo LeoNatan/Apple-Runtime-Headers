@@ -8,20 +8,19 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface OADTableRow : NSObject
 {
     NSMutableArray *mCells;
     float mHeight;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setHeight:(float)arg1;
 - (float)height;
 - (id)addCell;
 - (id)cellAtIndex:(unsigned long long)arg1;
 - (unsigned long long)cellCount;
-- (void)dealloc;
 - (id)init;
 - (void)flipCellsRTL;
 

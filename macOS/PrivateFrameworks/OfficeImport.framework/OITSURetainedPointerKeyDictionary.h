@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OITSUNoCopyDictionary.h>
 
-__attribute__((visibility("hidden")))
 @interface OITSURetainedPointerKeyDictionary : OITSUNoCopyDictionary
 {
 }

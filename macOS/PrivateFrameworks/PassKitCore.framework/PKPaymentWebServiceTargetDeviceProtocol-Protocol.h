@@ -10,6 +10,7 @@
 
 @protocol PKPaymentWebServiceTargetDeviceProtocol <NSObject>
 - (unsigned long long)secureElementOwnershipStateForCurrentUser;
+- (void)claimSecureElementForCurrentUserWithCompletion:(void (^)(BOOL))arg1;
 - (BOOL)claimSecureElementForCurrentUser;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 validateTransferPreconditionsWithCompletion:(void (^)(BOOL, NSError *))arg2;
 - (void)downloadAllPaymentPassesForPaymentWebService:(PKPaymentWebService *)arg1;
@@ -47,6 +48,7 @@
 - (BOOL)supportsCredentialType:(long long)arg1;
 - (BOOL)supportsExpressMode:(NSString *)arg1;
 - (BOOL)supportsExpressModeForExpressPassType:(long long)arg1;
+- (BOOL)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (BOOL)secureElementIsAvailable;
 - (BOOL)felicaSecureElementIsAvailable;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 handlePotentialExpressPass:(PKPaymentPass *)arg2 withCompletionHandler:(void (^)(NSSet *))arg3;

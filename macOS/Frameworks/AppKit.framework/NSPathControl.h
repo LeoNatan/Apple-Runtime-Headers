@@ -26,6 +26,7 @@
 - (void)draggingExited:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
+- (void)_cleanUpTransientDragState;
 - (void)_updateDropTargetForDraggingInfo:(id)arg1;
 - (void)_updateDropTargetToCell:(id)arg1;
 - (void)_ensureDragContext;
@@ -68,6 +69,7 @@
 - (BOOL)_isFirstResponder;
 - (void)updateTrackingAreas;
 - (void)_removeTrackingRects;
+- (id)_preferredAppearance;
 @property(copy) NSAttributedString *placeholderAttributedString;
 @property(copy) NSString *placeholderString;
 @property(copy) NSArray *allowedTypes;

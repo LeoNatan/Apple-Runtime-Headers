@@ -16,10 +16,10 @@
 
 @property(retain) OSInstallOptions *installOptions; // @synthesize installOptions=_installOptions;
 @property(retain) NSArray *packagePaths; // @synthesize packagePaths=_packagePaths;
+- (void).cxx_destruct;
 - (id)operationName;
 - (double)estimatedTimeToComplete;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 - (id)initWithOptions:(id)arg1 packagePaths:(id)arg2;
 
 @end

@@ -8,6 +8,7 @@
 
 @class NSTableColumn;
 
+__attribute__((visibility("hidden")))
 @interface NSOutlineColumnMockGroup : NSObject
 {
     long long _row;

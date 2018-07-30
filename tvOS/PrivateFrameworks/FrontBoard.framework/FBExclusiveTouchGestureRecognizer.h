@@ -24,7 +24,7 @@
 - (id)description;
 
 // Remaining properties
-@property(nonatomic) id <FBExclusiveTouchGestureRecognizerDelegate> delegate; // @dynamic delegate;
+@property(nonatomic) __weak id <FBExclusiveTouchGestureRecognizerDelegate> delegate; // @dynamic delegate;
 
 @end
 

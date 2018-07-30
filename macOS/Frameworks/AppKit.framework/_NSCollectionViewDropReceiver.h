@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     BOOL _acceptedDrop;
     BOOL _exitedDrag;
     struct CGPoint _lastDraggingLocation;
+    unsigned long long _lastDraggingSourceOperationMask;
 }
 
 + (id)dropReceiverWithCollectionView:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class SCNRenderTarget;
+@class SCNMTLComputePipeline, SCNMTLRenderPipeline, SCNRenderTarget;
 
 __attribute__((visibility("hidden")))
 @interface SCNSSAOPass : NSObject
@@ -17,29 +17,29 @@ __attribute__((visibility("hidden")))
     unsigned long long _sampleCount;
     unsigned long long _downsample;
     BOOL _cameraOrtho;
+    BOOL _VRRendering;
     SCNRenderTarget *_aoRenderTarget;
     id <MTLTexture> _depthMinMaxOffsetTexture;
     id <MTLTexture> _aoTexture[2];
-    id <MTLRenderPipelineState> _aoPipelineState;
-    id <MTLComputePipelineState> _downsamplePipelineState;
-    id <MTLComputePipelineState> _blurXPipelineState;
-    id <MTLComputePipelineState> _blurYPipelineState;
-    id <MTLComputePipelineState> _upsamplingPipelineState;
+    SCNMTLRenderPipeline *_aoPipeline;
+    SCNMTLComputePipeline *_downsamplePipelineState;
+    SCNMTLComputePipeline *_blurXPipelineState;
+    SCNMTLComputePipeline *_blurYPipelineState;
+    SCNMTLComputePipeline *_upsamplingPipelineState;
     struct {
-        float projScale;
+        float projectionInfo__VRTransform__projScale;
         float radius;
         float radius2;
         float bias;
         float intensity;
         float depthThreshold;
         float normalThreshold;
-        float zMax;
-        int projectionInfo__scale;
+        int scale;
     } _uniforms;
 }
 
 - (void)executeWithContext:(CDStruct_b9d91b93 *)arg1;
--     // Error parsing type: v40@0:8@16@24^{__C3DCamera={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]})dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})fffffffffffffffffffff{?=fffffii}^{__C3DEffectSlot}Q^{__C3DFXTechnique}}32, name: _createFramebufferDependantResourcesWithRenderContext:renderPassDesc:camera:
+-     // Error parsing type: v48@0:8@16@24^{__C3DCamera={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]}){?=[4]}dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})ffffffffffffifffffffff{?=fffffii}^{__C3DEffectSlot}Q^{__C3DFXTechnique}}32^{__C3DFXPassInstance=^{__C3DFXPass}q^{__C3DFXPassInstance}CBC[6^{__C3DArray}]{__C3DCullingContext=^{__C3DEnginePipeline}[6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})]ICCCB^{__C3DFXPass}^v^{__C3DNode}^{__C3DNode}BBBBBBBQQ^v^{__C3DScene}^{__C3DEngineContext}dd(?={?=ffff})(C3DMatrix4x4=[16f][4]{?=[4]})(C3DMatrix4x4=[16f][4]{?=[4]})[6{?=^{?}II}]B^?}^{__C3DNode}}40, name: _createFramebufferDependantResourcesWithRenderContext:renderPassDesc:camera:passInstance:
 - (void)setupWithContext:(CDStruct_b9d91b93 *)arg1;
 - (void)dealloc;
 

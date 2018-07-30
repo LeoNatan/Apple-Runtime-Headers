@@ -14,7 +14,6 @@
 
 @interface _CPErrorFeedback : PBCodable <_CPProcessableFeedback, _CPErrorFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
     _CPError *_error;
     _CPError *_underlyingError;
@@ -32,9 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasUnderlyingError;
-@property(readonly, nonatomic) BOOL hasError;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 @property(readonly, nonatomic) BOOL requiresQueryId;
 - (id)initWithError:(id)arg1;

@@ -6,11 +6,11 @@
 
 #import <ITMLKit/IKCSSMediaQueryList.h>
 
-@class NSMutableArray;
+@class IKMutableArray;
 
 @interface IKCSSMediaQueryOrList : IKCSSMediaQueryList
 {
-    NSMutableArray *_queryList;
+    IKMutableArray *_queryList;
 }
 
 - (void).cxx_destruct;

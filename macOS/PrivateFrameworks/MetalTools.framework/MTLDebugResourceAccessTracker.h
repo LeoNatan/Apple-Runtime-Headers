@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 + (void)recordResourceAccessesForStencilAttachmentWithDescriptor:(id)arg1 forEndEncoding:(BOOL)arg2 deferredAttachments:(struct ResourceTrackingDeferredAttachments *)arg3;
 + (void)recordResourceAccessesForDepthAttachmentWithDescriptor:(id)arg1 forEndEncoding:(BOOL)arg2 deferredAttachments:(struct ResourceTrackingDeferredAttachments *)arg3;
 + (void)recordResourceAccessesForColorAttachmentsWithDescriptor:(id)arg1 renderPipelineState:(id)arg2 forEndEncoding:(BOOL)arg3 deferredAttachments:(struct ResourceTrackingDeferredAttachments *)arg4;
-+ (void)recordRenderTargetAccessesForEndEncoding:(BOOL)arg1 descriptor:(id)arg2 renderPipelineState:(id)arg3 depthStencilState:(id)arg4 deferredAttachments:(struct ResourceTrackingDeferredAttachments *)arg5 viewport:(CDStruct_8727d297 *)arg6 viewportCount:(unsigned int)arg7 scissor:(CDStruct_33dcf794 *)arg8 scissorCount:(unsigned int)arg9;
-+ (void)recordWritableBuffersOnCommandBuffer:(id)arg1 reflectionArguments:(id)arg2 bufferFuncArgsPtr:(CDStruct_db34bedf *)arg3 textureFuncArgsPtr:(CDStruct_db34bedf *)arg4;
-+ (void)resourceTrackingRecordAccessesToArguments:(id)arg1 bufferFuncArgsPtr:(CDStruct_db34bedf *)arg2 textureFuncArgsPtr:(CDStruct_db34bedf *)arg3;
++ (void)recordRenderTargetAccessesForEndEncoding:(BOOL)arg1 descriptor:(id)arg2 renderPipelineState:(id)arg3 depthStencilState:(id)arg4 deferredAttachments:(struct ResourceTrackingDeferredAttachments *)arg5;
++ (BOOL)hasValidViewports:(CDStruct_8727d297 *)arg1 viewportCount:(unsigned int)arg2 scissorRects:(CDStruct_33dcf794 *)arg3 scissorRectCount:(unsigned int)arg4;
++ (void)resourceTrackingRecordAccessesToArguments:(id)arg1 bufferFuncArgsPtr:(CDStruct_db34bedf *)arg2 textureFuncArgsPtr:(CDStruct_db34bedf *)arg3 buffersBoundForWrite:(id)arg4 texturesBoundForWrite:(id)arg5;
 - (unsigned int)conclude;
 - (void)accessedBy:(int)arg1 frame:(unsigned int)arg2 accessTypes:(unsigned int)arg3;
 - (void)reset;

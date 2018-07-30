@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class BBBulletin, NSString;
 
 @protocol NNMKSyncStateManagerDelegate <NSObject>
-- (void)syncStateManager:(id <NNMKSyncStateManager>)arg1 didAcknowledgeNotificationPayload:(void (^)(void))arg2 forRecordId:(NSString *)arg3;
+- (void)syncStateManager:(id <NNMKSyncStateManager>)arg1 didAcknowledgeForwardNotificationPayload:(void (^)(_Bool))arg2 forBulletin:(BBBulletin *)arg3;
 - (void)syncStateManagerDidInvalidateSyncSession:(id <NNMKSyncStateManager>)arg1 syncSessionIdentifier:(NSString *)arg2;
 - (void)syncStateManagerDidBeginSyncSession:(id <NNMKSyncStateManager>)arg1 syncSessionType:(NSString *)arg2 syncSessionIdentifier:(NSString *)arg3;
 - (void)syncStateManagerDidChangePairedDevice:(id <NNMKSyncStateManager>)arg1;

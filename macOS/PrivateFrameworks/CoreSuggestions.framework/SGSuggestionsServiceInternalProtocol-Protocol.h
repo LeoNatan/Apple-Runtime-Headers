@@ -6,10 +6,11 @@
 
 #import "_SGSuggestionsServiceBaseProtocol.h"
 
-@class NSArray, NSDate, NSString, NSURL;
+@class NSArray, NSData, NSDate, NSString, NSURL;
 
 @protocol SGSuggestionsServiceInternalProtocol <_SGSuggestionsServiceBaseProtocol>
 - (void)deleteCloudKitZoneWithCompletion:(void (^)(NSError *))arg1;
+- (void)suggestionsFromEmailContent:(NSString *)arg1 headers:(NSData *)arg2 source:(NSString *)arg3 options:(unsigned long long)arg4 withCompletion:(void (^)(NSArray *, NSError *))arg5;
 - (void)suggestionsFromMockData:(id)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
 - (BOOL)sleep:(id *)arg1;
 - (void)sleepWithCompletion:(void (^)(NSError *))arg1;
@@ -18,6 +19,8 @@
 - (void)removeAllStoredPseudoContactsWithCompletion:(void (^)(NSError *))arg1;
 - (void)drainQueueCompletelyWithCompletion:(void (^)(NSError *))arg1;
 - (BOOL)sendRTCLogs:(id *)arg1;
+- (void)suggestionsFromRFC822Data:(NSData *)arg1 source:(NSString *)arg2 options:(unsigned long long)arg3 withCompletion:(void (^)(NSArray *, NSError *))arg4;
+- (NSArray *)suggestionsFromRFC822Data:(NSData *)arg1 source:(NSString *)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (void)realtimeSuggestionsFromURL:(NSURL *)arg1 title:(NSString *)arg2 HTMLPayload:(NSString *)arg3 extractionDate:(NSDate *)arg4 withCompletion:(void (^)(NSArray *, NSError *))arg5;
 - (void)clearCachesFully:(BOOL)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (BOOL)clearCachesFully:(BOOL)arg1 error:(id *)arg2;

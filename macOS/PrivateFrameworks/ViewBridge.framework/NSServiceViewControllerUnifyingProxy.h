@@ -13,12 +13,18 @@ __attribute__((visibility("hidden")))
 {
     NSProxy<NSXPCProxyCreating> *_clientProxy;
     NSProxy<NSXPCProxyCreating> *_animationSyncProxy;
+    struct os_unfair_lock_s _retainReleaseLock;
 }
 
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)initWithClientProxy:(id)arg1 andAnimationSyncProxy:(id)arg2 withErrorHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
+- (oneway void)release;
+- (void)__vbSuperRelease;
+- (id)retain;
+- (void)__vbWithLockPerform:(CDUnknownBlockType)arg1;
+- (struct os_unfair_lock_s *)retainReleaseLock;
 
 @end
 

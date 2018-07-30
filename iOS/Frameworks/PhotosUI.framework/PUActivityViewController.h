@@ -21,14 +21,18 @@
     double _currentAssetPreparationProgress;
     PUProgressIndicatorView *_preparationProgressView;
     _Bool _isDismissed;
+    _Bool _shouldUpdateVisibleItemsWhenReady;
+    _Bool _readyForInteraction;
     NSArray *_photosActivities;
     id <PUActivityViewControllerDelegate> _delegate;
 }
 
++ (_Bool)_wantsMomentShareLinkForActivity:(id)arg1 assetCount:(long long)arg2;
 + (_Bool)needsConfidentialityCheckForActivityType:(id)arg1;
 + (id)photosApplicationActivities;
 + (id)defaultActivityTypeOrder;
 + (_Bool)_isOutboundShareActivity:(id)arg1;
+@property(nonatomic, getter=isReadyForInteraction) _Bool readyForInteraction; // @synthesize readyForInteraction=_readyForInteraction;
 @property(nonatomic) __weak id <PUActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *photosActivities; // @synthesize photosActivities=_photosActivities;
 - (void).cxx_destruct;
@@ -40,7 +44,8 @@
 - (void)_performActivity:(id)arg1;
 - (_Bool)_shouldShowSystemActivityType:(id)arg1;
 - (void)setCompletionWithItemsHandler:(CDUnknownBlockType)arg1;
-- (void)updateVisibleShareActions;
+- (void)_handlePostReadyToInteractUpdatesIfNeeded;
+- (void)updateVisibileShareActionsIfNeeded;
 - (void)setAssetItems:(id)arg1;
 - (void)removeAssetItem:(id)arg1;
 - (void)addAssetItem:(id)arg1;
@@ -49,7 +54,9 @@
 - (void)mailActivity:(id)arg1 displayVideoRemakerProgressView:(id)arg2;
 - (void)setAggregateKey:(struct __CFString *)arg1;
 - (void)_presentConfidentialityWarningWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_prepareAssetProgressForActivity:(id)arg1;
+- (void)_performMomentShareLinkPreparationForActivity:(id)arg1;
+- (void)_performIndividualItemSourcePreparationForActivity:(id)arg1;
+- (void)_prepareAssetsForActivity:(id)arg1;
 - (void)_showSharingWasInterruptedForError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_removePreparationProgressView;
 - (void)_showPreparationProgressView:(id)arg1 withCancelationHandler:(CDUnknownBlockType)arg2;
@@ -58,6 +65,7 @@
 - (void)_handleUserCancelWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_activity:(id)arg1 didComplete:(_Bool)arg2;
 - (void)_updateTopBorderView;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)dealloc;
 - (id)initWithAssetItems:(id)arg1 photosApplicationActivities:(id)arg2;

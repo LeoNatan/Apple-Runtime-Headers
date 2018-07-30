@@ -33,6 +33,8 @@ __attribute__((visibility("hidden")))
 + (id)tagsFromNames:(id)arg1;
 + (id)tagsFromTagAttr:(id)arg1;
 + (id)tagInfoWithName:(id)arg1 tagNode:(const struct TFENode *)arg2 labelIndex:(short)arg3;
++ (void)setLabelColorForNewTag:(short)arg1;
++ (short)labelColorForNewTag;
 + (id)tagInfoWithName:(id)arg1 tagNode:(const struct TFENode *)arg2;
 + (id)tagInfoWithDiscoveredName:(id)arg1;
 + (id)tagInfoWithName:(id)arg1;

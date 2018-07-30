@@ -4,11 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "PTSettingsKeyObserver.h"
 
-@class NSString, _UISettings;
-
-@protocol _UISettingsKeyObserver <NSObject>
-- (void)settings:(_UISettings *)arg1 changedValueForKey:(NSString *)arg2;
+@protocol _UISettingsKeyObserver <PTSettingsKeyObserver>
 @end
 

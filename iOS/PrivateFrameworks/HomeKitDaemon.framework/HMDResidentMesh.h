@@ -27,9 +27,11 @@
     long long _startupTickCount;
     HMFTimer *_devicesChangedTimer;
     NSSet *_primaryResidentForHomes;
+    HMFTimer *_linkQualityMonitorTimer;
 }
 
 + (id)logCategory;
+@property(readonly, nonatomic) HMFTimer *linkQualityMonitorTimer; // @synthesize linkQualityMonitorTimer=_linkQualityMonitorTimer;
 @property(retain, nonatomic) NSSet *primaryResidentForHomes; // @synthesize primaryResidentForHomes=_primaryResidentForHomes;
 @property(readonly, nonatomic) HMFTimer *devicesChangedTimer; // @synthesize devicesChangedTimer=_devicesChangedTimer;
 @property(nonatomic) long long startupTickCount; // @synthesize startupTickCount=_startupTickCount;
@@ -50,7 +52,11 @@
 - (id)dumpState;
 - (id)_dumpState;
 - (void)_flushWorkQueue;
-- (id)deviceForAccessory:(id)arg1;
+- (id)_availableResidentsForHome:(id)arg1;
+- (id)deviceForAccessory:(id)arg1 residentOrder:(unsigned long long)arg2 reachableResidents:(unsigned long long *)arg3;
+- (id)_residentMapForAccessories:(id)arg1;
+- (id)balancedResidentMapForAccessories:(id)arg1;
+- (id)bestResidentForAccessory:(id)arg1;
 - (void)_handleMeshUpdateMessage:(id)arg1;
 - (void)_handleMeshUpdateRequestMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 payload:(id)arg2 target:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
@@ -65,6 +71,7 @@
 - (void)_buildResidentsWithElection:(id)arg1 device:(id)arg2;
 - (void)_deviceIsNotReachable:(id)arg1;
 - (void)_deviceIsReachable:(id)arg1;
+- (void)_updateAccessoryLinkQuality;
 - (void)timerDidFire:(id)arg1;
 - (void)__deviceResidentChanged:(id)arg1;
 - (void)__rebuildResidents:(id)arg1;

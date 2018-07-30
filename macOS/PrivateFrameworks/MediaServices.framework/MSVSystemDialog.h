@@ -17,7 +17,6 @@
     MSVSystemDialogOptions *_options;
 }
 
-+ (id)passwordAlertWithOptions:(id)arg1;
 + (id)systemDialogWithOptions:(id)arg1;
 @property(readonly, nonatomic) NSArray *textFields; // @synthesize textFields=_textFields;
 @property(readonly, nonatomic) MSVSystemDialogOptions *options; // @synthesize options=_options;

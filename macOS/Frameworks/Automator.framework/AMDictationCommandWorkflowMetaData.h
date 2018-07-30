@@ -26,7 +26,7 @@
 - (void).cxx_destruct;
 - (void)updateDictationCommandProperties:(id)arg1;
 - (void)updateDictationCommandPropertiesWithURL:(id)arg1;
-- (void)syncMetaDataForDocument:(id)arg1;
+- (void)syncMetaDataForWorkflow:(id)arg1 atURL:(id)arg2;
 - (id)metaData;
 - (void)setFromDictionary:(id)arg1;
 - (id)initWithPersonality:(id)arg1;

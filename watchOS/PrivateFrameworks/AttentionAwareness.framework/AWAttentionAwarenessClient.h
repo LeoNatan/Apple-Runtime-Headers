@@ -8,15 +8,13 @@
 
 #import "AWFrameworkClient.h"
 
-@class AWAttentionAwarenessConfiguration, AWAttentionEvent, AWClientPollWaiter, AWSchedulerManager, NSObject<OS_dispatch_queue>, NSString;
+@class AWAttentionAwarenessConfiguration, AWAttentionEvent, AWClientPollWaiter, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AWAttentionAwarenessClient : NSObject <AWFrameworkClient>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    AWSchedulerManager *_schedulerManager;
-    id <AWScheduler> _scheduler;
     AWClientPollWaiter *_pollWaiter;
-    id <AWRemoteClient> _remoteClient;
+    id <NSXPCProxyCreating> _remoteClientProxy;
     unsigned long long _suspensionCount;
     _Bool _invalidated;
     NSObject<OS_dispatch_queue> *_clientQueue;
@@ -34,6 +32,7 @@
 - (void)notifyEvent:(id)arg1;
 - (_Bool)invalidateWithError:(id *)arg1;
 - (_Bool)suspendWithError:(id *)arg1;
+- (_Bool)invalidateRemoteClientWithError:(id *)arg1;
 - (_Bool)resumeWithError:(id *)arg1;
 - (id)reconnect;
 - (_Bool)cancelPollForAttentionWithError:(id *)arg1;
@@ -43,6 +42,7 @@
 - (_Bool)resetAttentionLostTimeoutWithError:(id *)arg1;
 @property(readonly, retain, nonatomic) AWAttentionEvent *lastEvent;
 - (_Bool)invokeRequiringClient:(_Bool)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (_Bool)_invokeRequiringClient:(_Bool)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (void)setConfiguration:(id)arg1 shouldReset:(_Bool)arg2;
 - (id)init;
 

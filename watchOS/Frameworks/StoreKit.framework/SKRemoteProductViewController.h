@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 @property(nonatomic) __weak SKStoreProductViewController *productViewController; // @synthesize productViewController=_productViewController;
+- (void).cxx_destruct;
 - (void)setStatusBarStyle:(id)arg1 animated:(id)arg2;
 - (void)setStatusBarHidden:(id)arg1 withAnimation:(id)arg2;
 - (void)promptForStarRating;

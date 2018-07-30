@@ -16,23 +16,17 @@
     NSURLSessionTask *_dataTask;
     NSURLRequest *_request;
     NSMutableData *_rawData;
-    _Bool _taggedAsInvalid;
 }
 
 + (_Bool)shouldGenerateOfflineData;
 + (void)setShouldGenerateOfflineData:(_Bool)arg1;
 + (void)saveDebugString;
 + (void)appendDebugString:(id)arg1;
-@property(nonatomic, getter=hasBeenTaggedAsInvalid) _Bool taggedAsInvalid; // @synthesize taggedAsInvalid=_taggedAsInvalid;
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (id)YQLLanguageCode;
 - (id)YQLCountryCode;
-- (id)objectOfClass:(Class)arg1 withDictionaryKeyPath:(id)arg2 inJSONObject:(id)arg3;
-- (id)arrayWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2 wrapResultIfDictionary:(_Bool)arg3;
-- (id)dictionaryWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2;
-- (id)objectWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2;
 - (id)aggregateDictionaryDomain;
 - (void)cancelAndInvalidate;
 - (void)cancel;
@@ -44,6 +38,7 @@
 - (_Bool)isLoading;
 - (void)loadRequest:(id)arg1;
 - (id)taskForRequest:(id)arg1 delegate:(id)arg2;
+- (void)_loadDefaultSessionIfNeeded;
 - (void)_createDefaultSession;
 - (void)dealloc;
 - (id)init;

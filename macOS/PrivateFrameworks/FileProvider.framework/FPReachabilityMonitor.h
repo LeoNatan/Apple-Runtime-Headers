@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidate;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(readonly, nonatomic) BOOL isNetworkReachable;
+- (BOOL)isNetworkReachableForBundle:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

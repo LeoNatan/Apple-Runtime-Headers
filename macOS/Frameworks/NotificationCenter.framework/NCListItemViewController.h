@@ -6,8 +6,9 @@
 
 #import "NSViewController.h"
 
-@class NCLineView, NCListViewDeleteButton, NSButton, NSLayoutConstraint, NSView, _NCShieldView;
+@class NCListViewDeleteButton, NSBox, NSButton, NSLayoutConstraint, NSView, _NCShieldView;
 
+__attribute__((visibility("hidden")))
 @interface NCListItemViewController : NSViewController
 {
     NSViewController *_contentViewController;
@@ -41,10 +42,10 @@
     _NCShieldView *_shieldView;
     NSLayoutConstraint *_leftRemoveConstraint;
     NSLayoutConstraint *_deleteButtonWidthConstraint;
-    NCLineView *_dividerLine;
+    NSBox *_dividerLine;
 }
 
-@property(nonatomic) __weak NCLineView *dividerLine; // @synthesize dividerLine=_dividerLine;
+@property(nonatomic) __weak NSBox *dividerLine; // @synthesize dividerLine=_dividerLine;
 @property(nonatomic) __weak NSLayoutConstraint *deleteButtonWidthConstraint; // @synthesize deleteButtonWidthConstraint=_deleteButtonWidthConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *leftRemoveConstraint; // @synthesize leftRemoveConstraint=_leftRemoveConstraint;
 @property(nonatomic) __weak _NCShieldView *shieldView; // @synthesize shieldView=_shieldView;

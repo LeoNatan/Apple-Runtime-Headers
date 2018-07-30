@@ -24,6 +24,7 @@
     unsigned long long _pauseMergeForScrollingCounter;
 }
 
++ (id)attributedStringToPasteWithAdaptedParagraphStyles:(id)arg1 pasteRange:(struct _NSRange)arg2 textStorage:(id)arg3;
 + (void)filterAttachmentsForPrintingInAttributedString:(id)arg1;
 + (double)extraBulletWidthForNumberedListWithMaxItemNumber:(id)arg1 textFont:(struct UIFont *)arg2;
 + (double)indentForStyle:(id)arg1 range:(struct _NSRange)arg2 attributedString:(id)arg3 textView:(struct UITextView *)arg4;

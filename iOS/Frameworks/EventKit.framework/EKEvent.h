@@ -15,6 +15,7 @@
     EKStructuredLocation *_cachedLocationPrediction;
     NSDate *_cachedLocationPredictionExpirationDate;
     _Bool _locationPredictionFrozen;
+    _Bool _locationPredictionAllowed;
     EKReadWriteLock *_locationPredictionLock;
     _Bool _occurrenceIsAllDay;
     _Bool _requiresDetachDueToSnoozedAlarm;
@@ -29,6 +30,8 @@
 + (id)generateUniqueIDWithEvent:(id)arg1 originalEvent:(id)arg2 calendar:(id)arg3;
 + (long long)_eventAvailabilityForParticipantStatus:(long long)arg1 supportedEventAvailabilities:(unsigned long long)arg2 isAllDayEvent:(_Bool)arg3;
 + (id)eventWithEventStore:(id)arg1;
++ (id)knownKeysToUseForFutureChanges;
++ (id)knownKeysToSkipForFutureChanges;
 + (id)knownRelationshipMultiValueKeys;
 + (id)knownRelationshipSingleValueKeys;
 + (Class)frozenClass;
@@ -90,6 +93,10 @@
 - (void)_clearExceptionDatesAndUpdateDetachedOriginalDates;
 - (void)_applyTimeChangesToMaster;
 - (id)_updateMasterDate:(id)arg1 forChangeToOccurrenceDate:(id)arg2 fromOriginalOccurrenceDate:(id)arg3;
+- (_Bool)_isSignificantlyDetachedComparedToMaster:(id)arg1 shouldIgnorePartStat:(_Bool)arg2;
+@property(readonly, nonatomic) _Bool isSignificantlyDetachedIgnoringParticipation;
+@property(readonly, nonatomic) _Bool isSignificantlyDetached;
+- (void)_propagateChangesToDetachedEvents:(id)arg1 significantlyDetachedEvents:(id)arg2 startDateOffset:(id)arg3 duration:(id)arg4 calendar:(id)arg5;
 - (_Bool)commitWithSpan:(long long)arg1 error:(id *)arg2;
 - (void)_willCommit;
 - (id)_generateNewUniqueID;
@@ -98,6 +105,7 @@
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)_refreshDateForKey:(id)arg1;
 - (_Bool)refresh;
+- (id)privacyDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool allowsParticipationStatusModifications;
 - (_Bool)hasValidEventAction;
@@ -133,6 +141,7 @@
 - (_Bool)isTentative;
 @property(retain, nonatomic) NSURL *conferenceURL;
 - (id)actions;
+- (void)setLocationPredictionAllowed:(_Bool)arg1;
 - (void)setPredictedLocationFrozen:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool hasPredictedLocation;
 - (void)rejectPredictedLocation;
@@ -189,8 +198,7 @@
 @property(nonatomic) long long locationPredictionState;
 - (void)setNeedsOccurrenceCacheUpdate:(_Bool)arg1;
 - (_Bool)needsOccurrenceCacheUpdate;
-- (void)setStatus:(long long)arg1;
-@property(readonly, nonatomic) long long status;
+@property(nonatomic) long long status;
 - (CDStruct_79f9e052)endDatePinnedForAllDay;
 - (CDStruct_79f9e052)startDatePinnedForAllDay;
 @property(readonly, nonatomic) CDStruct_79f9e052 endDateGr;

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTableViewCellProxy.h>
 
+__attribute__((visibility("hidden")))
 @interface NSTableViewChildCellProxy : NSTableViewCellProxy
 {
 }

@@ -9,6 +9,8 @@
 @class NSData, NSDictionary, NSString, NSUUID;
 
 @protocol ACXDeviceConnectionProtocol <NSObject>
+- (void)cancelUpdatePendingForCompanionApp:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)setUpdatePendingForCompanionApp:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)updatePreferencesForApplicationWithIdentifier:(NSString *)arg1 preferences:(NSDictionary *)arg2 forDeviceWithPairingID:(NSUUID *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)fetchProvisioningProfilesForApplicationWithBundleID:(NSString *)arg1 forDeviceWithPairingID:(NSUUID *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)fetchProvisioningProfilesForDeviceWithPairingID:(NSUUID *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;

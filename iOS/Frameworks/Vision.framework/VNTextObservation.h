@@ -4,23 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <Vision/VNDetectedObjectObservation.h>
+#import <Vision/VNRectangleObservation.h>
 
 @class NSArray, NSString;
 
-@interface VNTextObservation : VNDetectedObjectObservation
+@interface VNTextObservation : VNRectangleObservation
 {
     NSArray *_characterBoxes;
     NSString *_text;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)textObservationWithBoundingBox:(struct CGRect)arg1;
 - (void).cxx_destruct;
 - (void)setText:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *text;
-- (void)setCharacterBoxes:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *characterBoxes;
+@property(copy, nonatomic) NSArray *characterBoxes;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -8,7 +8,7 @@
 
 @interface NSData (HKUUID)
 - (unsigned long long)hk_countOfUUIDs;
-- (id)hk_stripCorruptedUUIDs;
+- (void)hk_enumerateUUIDBytesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)hk_enumerateUUIDsUsingBlock:(CDUnknownBlockType)arg1;
 @end
 

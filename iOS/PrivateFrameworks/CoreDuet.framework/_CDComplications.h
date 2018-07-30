@@ -6,16 +6,14 @@
 
 #import "NSObject.h"
 
-@class CDAttribute, CDSession, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSUserDefaults;
+@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSUserDefaults;
 
 @interface _CDComplications : NSObject
 {
     NSObject<OS_dispatch_queue> *complicationQueue;
-    CDSession *session;
     int deviceChangeToken;
     NSUserDefaults *pushLimits;
     NSMutableDictionary *meterTokens;
-    CDAttribute *attribute;
     NSDictionary *_activeComplications;
 }
 

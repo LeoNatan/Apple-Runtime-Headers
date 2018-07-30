@@ -10,7 +10,6 @@
 
 @class NSMutableArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface LOGMSGEVENTLogMsgEventTableBookingSession : PBCodable <NSCopying>
 {
     long long _blurredBookingTimestamp;

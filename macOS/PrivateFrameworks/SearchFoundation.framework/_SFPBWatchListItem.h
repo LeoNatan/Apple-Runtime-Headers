@@ -44,16 +44,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasWatchLiveTextFormat;
-@property(readonly, nonatomic) BOOL hasAddedToUpNextText;
-@property(readonly, nonatomic) BOOL hasAddToUpNextText;
-@property(readonly, nonatomic) BOOL hasInUpNextText;
-@property(readonly, nonatomic) BOOL hasPurchaseOfferTextFormat;
-@property(readonly, nonatomic) BOOL hasInstallButtonTitle;
-@property(readonly, nonatomic) BOOL hasOpenButtonTitle;
-@property(readonly, nonatomic) BOOL hasContinueInTextFormat;
-@property(readonly, nonatomic) BOOL hasSeasonEpisodeTextFormat;
-@property(readonly, nonatomic) BOOL hasWatchListIdentifier;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

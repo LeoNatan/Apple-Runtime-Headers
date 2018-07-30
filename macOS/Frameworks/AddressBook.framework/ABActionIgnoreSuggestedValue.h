@@ -10,7 +10,6 @@
 
 @class ABCollectionViewItem, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABActionIgnoreSuggestedValue : NSObject <ABActionDelegate>
 {
     NSString *_property;

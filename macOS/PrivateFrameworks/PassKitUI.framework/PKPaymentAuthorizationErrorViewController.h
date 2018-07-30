@@ -6,13 +6,14 @@
 
 #import <PassKitUI/PKPaymentAuthorizationChildViewController.h>
 
-@class NSButton, NSString, NSTextField;
+@class NSButton, NSImageView, NSString, NSTextField;
 
 @interface PKPaymentAuthorizationErrorViewController : PKPaymentAuthorizationChildViewController
 {
     long long _mode;
     NSString *_deviceName;
     id <PKPaymentAuthorizationErrorViewControllerDelegate> _delegate;
+    NSImageView *_paymentLogoImageView;
     NSTextField *_titleTextField;
     NSTextField *_messageTextField;
     NSButton *_okButton;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) NSButton *okButton; // @synthesize okButton=_okButton;
 @property(retain, nonatomic) NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
 @property(retain, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
+@property(retain, nonatomic) NSImageView *paymentLogoImageView; // @synthesize paymentLogoImageView=_paymentLogoImageView;
 @property(nonatomic) __weak id <PKPaymentAuthorizationErrorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;

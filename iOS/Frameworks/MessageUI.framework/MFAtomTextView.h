@@ -11,7 +11,7 @@
 #import "UITextInputPrivate.h"
 #import "UITextViewDelegate.h"
 
-@class NSArray, NSDictionary, NSIndexSet, NSLayoutConstraint, NSMutableArray, NSString, UIButton, UIColor, UIFont, UIImage, UIInputContextHistory, UILabel, UIScrollView, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _MFAtomFieldEditor, _MFAtomTextViewBaselineLayoutStrut, _UITextFieldRoundedRectBackgroundViewNeue;
+@class NSArray, NSDictionary, NSIndexSet, NSLayoutConstraint, NSMutableArray, NSString, RTIInputSystemSourceSession, UIButton, UIColor, UIFont, UIImage, UIInputContextHistory, UILabel, UIScrollView, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _MFAtomFieldEditor, _MFAtomTextViewBaselineLayoutStrut, _UITextFieldRoundedRectBackgroundViewNeue;
 
 @interface MFAtomTextView : UIControl <NSLayoutManagerDelegate, UITextViewDelegate, UITextInputPrivate, UITextInput>
 {
@@ -193,6 +193,7 @@
 
 // Remaining properties
 @property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;
+@property(readonly, nonatomic) RTIInputSystemSourceSession *_rtiSourceSession;
 @property(nonatomic) long long _textInputSource;
 @property(nonatomic) _Bool acceptsDictationSearchResults;
 @property(nonatomic) _Bool acceptsEmoji;
@@ -222,6 +223,7 @@
 @property(nonatomic) _Bool forceEnableDictation;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) _Bool hidePrediction;
 @property(retain, nonatomic) UIInputContextHistory *inputContextHistory;
 @property(nonatomic) __weak id <UITextInputDelegate> inputDelegate; // @dynamic inputDelegate;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;
@@ -236,6 +238,7 @@
 @property(nonatomic) _Bool loadKeyboardsForSiriLanguage;
 @property(readonly, nonatomic) UITextRange *markedTextRange; // @dynamic markedTextRange;
 @property(copy, nonatomic) NSDictionary *markedTextStyle; // @dynamic markedTextStyle;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(copy, nonatomic) NSString *recentInputIdentifier;
 @property(copy, nonatomic) NSString *responseContext;
 @property(nonatomic) _Bool returnKeyGoesToNextResponder;

@@ -6,22 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSString, SKDisk;
+@class NSString, OSInstallOptions;
 
 @interface OSIDebuggerTool : NSObject
 {
-    SKDisk *_target;
+    BOOL _shouldFailAtStart;
+    OSInstallOptions *_options;
     NSString *_opToFail;
-    double _failAtProgress;
 }
 
-@property double failAtProgress; // @synthesize failAtProgress=_failAtProgress;
 @property(retain) NSString *opToFail; // @synthesize opToFail=_opToFail;
-@property(retain) SKDisk *target; // @synthesize target=_target;
-- (void)updateStatusWithQueueElement:(id)arg1 progress:(double)arg2;
+@property(retain) OSInstallOptions *options; // @synthesize options=_options;
+@property BOOL shouldFailAtStart; // @synthesize shouldFailAtStart=_shouldFailAtStart;
+- (void).cxx_destruct;
+- (BOOL)shouldFailAtQueueElement:(id)arg1;
 - (BOOL)loadDebuggerPropertyList;
-- (void)dealloc;
-- (id)initWithTarget:(id)arg1;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

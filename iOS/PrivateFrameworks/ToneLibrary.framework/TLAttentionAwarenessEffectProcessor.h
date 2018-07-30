@@ -34,6 +34,7 @@
 - (_Bool)start;
 - (void)setEffectParameters:(CDStruct_4922f917)arg1 effectMixFadeDuration:(double)arg2;
 @property(nonatomic) CDStruct_4922f917 effectParameters;
+- (void)dealloc;
 - (id)initWithProcessingFormat:(id)arg1 framesPerRender:(unsigned int)arg2 effectParameters:(CDStruct_4922f917)arg3;
 
 @end

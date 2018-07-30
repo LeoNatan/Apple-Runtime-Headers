@@ -12,6 +12,7 @@
 - (id)volumeRelativePath;
 - (id)volumeName;
 - (id)volumePath;
+- (BOOL)isOnCaseSensitiveVolume;
 - (id)stringByRemovingPrefix:(id)arg1;
 - (id)stringByRemovingPathPrefix:(id)arg1;
 @end

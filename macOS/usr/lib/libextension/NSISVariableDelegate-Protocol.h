@@ -10,8 +10,10 @@
 
 @protocol NSISVariableDelegate <NSObject>
 - (BOOL)nsis_valueOfVariableIsUserObservable:(NSISVariable *)arg1;
-- (BOOL)nsis_shouldIntegralizeVariable:(NSISVariable *)arg1;
 - (NSString *)nsis_descriptionOfVariable:(NSISVariable *)arg1;
 - (void)nsis_valueOfVariable:(NSISVariable *)arg1 didChangeInEngine:(NSISEngine *)arg2;
+
+@optional
+- (int)nsis_orientationHintForVariable:(NSISVariable *)arg1;
 @end
 

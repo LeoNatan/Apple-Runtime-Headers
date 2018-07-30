@@ -6,12 +6,15 @@
 
 #import "NSObject.h"
 
+#import "VNRequestRevisionProviding.h"
+
 @class NSString, NSUUID;
 
 __attribute__((visibility("hidden")))
-@interface VNTracker : NSObject
+@interface VNTracker : NSObject <VNRequestRevisionProviding>
 {
     struct shared_ptr<vision::mod::ObjectTrackerAbstract> mTrackerImpl;
+    unsigned long long _requestRevision;
     long long _trackedFrameNumber;
     NSUUID *_key;
     NSString *_level;
@@ -23,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSUUID *key; // @synthesize key=_key;
 @property struct CGRect lastTrackedBBox; // @synthesize lastTrackedBBox=_lastTrackedBBox;
 @property long long trackedFrameNumber; // @synthesize trackedFrameNumber=_trackedFrameNumber;
+@property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)_updateTrackerWithModifiedBBoxForImageBuffer:(id)arg1 error:(id *)arg2;

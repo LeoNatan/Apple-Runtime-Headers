@@ -6,11 +6,13 @@
 
 #import <DigitalTouchShared/ETMessage.h>
 
-@class SKSpriteNode;
+@class NSMutableArray, SKSpriteNode;
 
 @interface ETAngerMessage : ETMessage
 {
     SKSpriteNode *_anger;
+    NSMutableArray *_points;
+    NSMutableArray *_delays;
     double _duration;
     struct CGPoint _normalizedCenter;
 }
@@ -21,10 +23,13 @@
 - (void).cxx_destruct;
 - (double)messageDuration;
 - (id)messageTypeAsString;
+- (void)setNormalizedPoint:(struct CGPoint)arg1 atRelativeTime:(double)arg2 inScene:(id)arg3;
 - (void)stopPlaying;
+- (void)_updateCenterFromNormalizedPoint:(struct CGPoint)arg1 inScene:(id)arg2;
 - (void)displayInScene:(id)arg1;
 - (id)archiveData;
 - (id)initWithArchiveData:(id)arg1;
+- (id)init;
 
 @end
 

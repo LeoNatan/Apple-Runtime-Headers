@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "BSDescriptionProviding.h"
+#import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface BKSHIDEventDescriptor : NSObject <NSSecureCoding, BSDescriptionProviding>
+@interface BKSHIDEventDescriptor : NSObject <NSSecureCoding, BSDescriptionProviding, NSCopying>
 {
     unsigned int _hidEventType;
 }
@@ -24,6 +25,7 @@
 @property(readonly) unsigned int hidEventType; // @synthesize hidEventType=_hidEventType;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)describes:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

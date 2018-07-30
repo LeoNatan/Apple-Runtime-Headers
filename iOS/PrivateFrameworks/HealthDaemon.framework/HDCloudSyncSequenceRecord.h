@@ -35,11 +35,14 @@
 @property(readonly, nonatomic) unsigned long long changeIndex; // @synthesize changeIndex=_changeIndex;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 - (void).cxx_destruct;
+- (void)_unitTest_setChildRecordCount:(unsigned long long)arg1;
 - (id)description;
 - (void)incrementChildRecordCount;
 - (void)updateSyncAnchorMapWithSyncAnchorMap:(id)arg1;
 - (void)incrementChangeIndex;
 - (void)setProtocolVersion:(int)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)initForSequenceSlot:(long long)arg1 syncAnchorMap:(id)arg2 active:(_Bool)arg3 changeIndex:(unsigned long long)arg4 childRecordCount:(unsigned long long)arg5 baselineEpoch:(unsigned long long)arg6 includedIdentifiers:(id)arg7 protocolVersion:(int)arg8 storeRecordID:(id)arg9 record:(id)arg10 schemaVersion:(long long)arg11;
 - (id)initForSequenceSlot:(long long)arg1 syncAnchorMap:(id)arg2 changeIndex:(unsigned long long)arg3 baselineEpoch:(unsigned long long)arg4 includedIdentifiers:(id)arg5 storeRecord:(id)arg6;
 

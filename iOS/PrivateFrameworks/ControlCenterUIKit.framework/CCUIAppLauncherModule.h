@@ -8,7 +8,7 @@
 
 #import "CCUIContentModule.h"
 
-@class CCUIContentModuleContext, NSBundle, NSString, NSURL, UIImage, UIViewController, UIViewController<CCUIContentModuleContentViewController>;
+@class CCUIContentModuleContext, NSBundle, NSString, NSURL, UIImage, UIViewController<CCUIContentModuleBackgroundViewController>, UIViewController<CCUIContentModuleContentViewController>;
 
 @interface CCUIAppLauncherModule : NSObject <CCUIContentModule>
 {
@@ -33,7 +33,7 @@
 - (id)init;
 
 // Remaining properties
-@property(readonly, nonatomic) UIViewController *backgroundViewController;
+@property(readonly, nonatomic) UIViewController<CCUIContentModuleBackgroundViewController> *backgroundViewController;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

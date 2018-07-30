@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)defaultSectionInfo;
 - (id)sectionIdentifier;
+- (id)sectionParameters;
 - (id)displayNameForSubsectionID:(id)arg1;
 - (id)defaultSubsectionInfos;
 - (void)handleBulletinActionResponse:(id)arg1;

@@ -18,7 +18,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool localizeLabels; // @synthesize localizeLabels=_localizeLabels;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3;
+- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3 userInfo:(id)arg4;
+- (struct TaskQueue *)tileDecodeQueue;
 - (unsigned char)_labelTileType;
 - (_Bool)shouldObeyHybridUnavailableRegions;
 - (long long)defaultMaximumZoomLevel;

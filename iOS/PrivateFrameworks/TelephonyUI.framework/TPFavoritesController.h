@@ -16,26 +16,22 @@
     NSCache *_contactCache;
     CNContactStore *_contactStore;
     NSArray *_favoritesEntries;
-    CNFavorites *_favoritesReadManager;
-    CNFavorites *_favoritesWriteManager;
+    CNFavorites *_favoritesManager;
     NSCache *_transportNameCache;
     unsigned long long _prefetchCount;
     NSObject<OS_dispatch_queue> *_completionDispatchQueue;
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
-    NSObject<OS_dispatch_queue> *_favoritesWriteManagerDispatchQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *favoritesWriteManagerDispatchQueue; // @synthesize favoritesWriteManagerDispatchQueue=_favoritesWriteManagerDispatchQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *completionDispatchQueue; // @synthesize completionDispatchQueue=_completionDispatchQueue;
 @property(readonly, nonatomic) unsigned long long prefetchCount; // @synthesize prefetchCount=_prefetchCount;
+@property(readonly, nonatomic) CNFavorites *favoritesManager; // @synthesize favoritesManager=_favoritesManager;
 - (void).cxx_destruct;
 - (void)providersChangedForProviderManager:(id)arg1;
-- (void)handleCNContactStoreDidChangeNotification:(id)arg1;
+- (void)handleContactsFavoritesDidChangeNotification:(id)arg1;
 @property(readonly, nonatomic) NSCache *transportNameCache; // @synthesize transportNameCache=_transportNameCache;
 @property(copy, nonatomic) NSArray *favoritesEntries; // @synthesize favoritesEntries=_favoritesEntries;
-@property(readonly, nonatomic) CNFavorites *favoritesWriteManager; // @synthesize favoritesWriteManager=_favoritesWriteManager;
-@property(retain, nonatomic) CNFavorites *favoritesReadManager; // @synthesize favoritesReadManager=_favoritesReadManager;
 @property(readonly, nonatomic) NSCache *contactCache; // @synthesize contactCache=_contactCache;
 @property(readonly, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 - (id)transportNameCacheKeyForFavoritesEntry:(id)arg1;

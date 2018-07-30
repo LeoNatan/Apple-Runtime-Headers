@@ -37,7 +37,7 @@
 @property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 - (void).cxx_destruct;
 - (void)airplaneModeChanged;
-- (void)connectionStatusDidChange:(unsigned int)arg1 lastConnection:(id)arg2;
+- (void)connectionStatusDidChange:(unsigned int)arg1;
 - (_Bool)_isAirplaneModeEnabled;
 - (void)_tearDownLoadingView;
 - (void)stopAnimating;

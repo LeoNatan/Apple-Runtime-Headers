@@ -11,9 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)_textWithShadowAttributes;
-- (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)attributedTitle;
+- (BOOL)_shouldDrawTextWithDisabledAppearance;
 - (BOOL)_canBecomeDefaultButtonCell;
 - (id)_purpleButton;
 - (void)_commonPurpleButtonCellInit;

@@ -40,10 +40,12 @@
 @property(nonatomic) unsigned long long signpostId; // @synthesize signpostId=_signpostId;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *scopeString;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 name:(id)arg3 signpostId:(unsigned long long)arg4 scope:(unsigned long long)arg5 timebaseRatio:(double)arg6 attributes:(id)arg7;
+- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (id)serializeableDictionary;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
 
 @end
 

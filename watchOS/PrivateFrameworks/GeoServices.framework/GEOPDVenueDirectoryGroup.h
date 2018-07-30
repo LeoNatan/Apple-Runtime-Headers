@@ -10,6 +10,7 @@
 
 @class GEOPDVenueLabel, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDVenueDirectoryGroup : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

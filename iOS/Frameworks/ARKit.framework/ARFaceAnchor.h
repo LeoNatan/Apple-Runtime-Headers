@@ -8,7 +8,7 @@
 
 #import "ARTrackable.h"
 
-@class ARFaceGeometry, ARFaceTrackingData, NSDictionary, NSString;
+@class ARFaceGeometry, ARFaceTrackingData, NSDictionary, NSError, NSString;
 
 @interface ARFaceAnchor : ARAnchor <ARTrackable>
 {
@@ -16,11 +16,15 @@
     _Bool _isTracked;
     ARFaceGeometry *_geometry;
     ARFaceTrackingData *_trackingData;
+    NSError *_trackingError;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)blendShapeToMirroredBlendShapeMapping;
++ (id)mirroredBlendShapeMapping;
 + (id)blendShapeMapping;
 + (void)initialize;
+@property(retain, nonatomic) NSError *trackingError; // @synthesize trackingError=_trackingError;
 @property(nonatomic) _Bool isTracked; // @synthesize isTracked=_isTracked;
 @property(retain, nonatomic) ARFaceTrackingData *trackingData; // @synthesize trackingData=_trackingData;
 @property(readonly, nonatomic) ARFaceGeometry *geometry; // @synthesize geometry=_geometry;
@@ -29,9 +33,20 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;
-- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithAnchor:(id)arg1;
+-     // Error parsing type: 16@0:8, name: gazePoint
+// Error parsing type for property lookAtPoint:
+// Property attributes: T,R,N
+
+// Error parsing type for property rightEyeTransform:
+// Property attributes: T{?=[4]},R,N
+
+// Error parsing type for property leftEyeTransform:
+// Property attributes: T{?=[4]},R,N
+
 -     // Error parsing type: r^16@0:8, name: imageVertices
 @property(readonly, nonatomic) NSDictionary *blendShapes;
+- (id)initWithExistingFaceAnchor:(id)arg1 tracked:(_Bool)arg2 trackingError:(id)arg3;
 - (id)initWithIdentifier:(id)arg1 trackingData:(id)arg2;
 
 // Remaining properties

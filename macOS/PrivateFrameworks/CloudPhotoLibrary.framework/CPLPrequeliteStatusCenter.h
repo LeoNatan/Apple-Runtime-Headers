@@ -12,23 +12,22 @@
 
 @interface CPLPrequeliteStatusCenter : CPLPrequeliteStorage <CPLEngineStatusCenterImplementation>
 {
-    CPLPrequeliteVariable *_generationCounter;
+    CPLPrequeliteVariable *_generationVar;
 }
 
 - (void).cxx_destruct;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (id)status;
-- (BOOL)resetWithError:(id *)arg1;
-- (BOOL)discardNotificationForRecordWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)discardNotificationForRecordWithScopedIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)acknowledgeChangedStatus:(id)arg1 hasBeenDeleted:(char *)arg2 error:(id *)arg3;
 - (id)statusChangesMaximumCount:(unsigned long long)arg1;
-- (id)statusForRecordWithIdentifier:(id)arg1;
+- (id)statusForRecordWithScopedIdentifier:(id)arg1;
 - (BOOL)addStatus:(id)arg1 error:(id *)arg2;
 - (BOOL)getNewGeneration:(unsigned long long *)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) BOOL hasStatusChanges;
 - (BOOL)openWithError:(id *)arg1;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
-- (BOOL)_createStorage;
 - (id)initWithAbstractObject:(id)arg1;
 
 // Remaining properties

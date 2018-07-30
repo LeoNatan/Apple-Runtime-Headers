@@ -6,11 +6,13 @@
 
 #import <AssistiveControlSupport/ACSHPanelElement.h>
 
-@class NSArray, NSString;
+@class ACSHKeyboardData, NSArray, NSString;
 
 @interface ACSHPanel : ACSHPanelElement
 {
     BOOL _hidesAssistiveDock;
+    BOOL _viewingZoomScaleIsDefault;
+    BOOL __viewingZoomNonProportionalScaleFactorIsHorizontal;
     BOOL _hidesAssistiveDockContextualButtons;
     BOOL _hidesAdjustments;
     BOOL _hidesHomeButton;
@@ -26,6 +28,7 @@
     double _viewingAlpha;
     NSString *_keyboardPhysicalType;
     long long _keyboardHWType;
+    double __viewingZoomNonProportionalScaleFactor;
     unsigned long long _showLocation;
     unsigned long long _displayOrder;
     unsigned long long _scanStyle;
@@ -35,10 +38,10 @@
     struct CGRect _postContextButtonRect;
 }
 
-+ (id)panelByMergingPanels:(id)arg1 basePanel:(id)arg2 verticalNotHorizontal:(BOOL)arg3 orientation:(unsigned long long)arg4;
++ (id)panelByMergingPanels:(id)arg1 basePanel:(id)arg2 verticalNotHorizontal:(BOOL)arg3 generalOrientation:(unsigned long long)arg4 customOptionsMapTable:(id)arg5;
 + (struct CGSize)defaultIconPadding;
 + (struct CGSize)defaultIconSize;
-+ (double)windowPaddingForZoomScale:(double)arg1;
++ (struct CGSize)windowPaddingForZoomScale:(double)arg1 nonProportionalScaleFactor:(double)arg2 isHorizontal:(BOOL)arg3;
 + (double)windowPaddingZoomScaleFactor;
 + (Class)classForDict:(id)arg1;
 @property(nonatomic) struct CGRect postContextButtonRect; // @synthesize postContextButtonRect=_postContextButtonRect;
@@ -55,21 +58,23 @@
 @property(nonatomic) unsigned long long displayOrder; // @synthesize displayOrder=_displayOrder;
 @property(nonatomic) unsigned long long showLocation; // @synthesize showLocation=_showLocation;
 @property(nonatomic) BOOL hidesAssistiveDockContextualButtons; // @synthesize hidesAssistiveDockContextualButtons=_hidesAssistiveDockContextualButtons;
+@property(nonatomic) BOOL _viewingZoomNonProportionalScaleFactorIsHorizontal; // @synthesize _viewingZoomNonProportionalScaleFactorIsHorizontal=__viewingZoomNonProportionalScaleFactorIsHorizontal;
+@property(nonatomic) double _viewingZoomNonProportionalScaleFactor; // @synthesize _viewingZoomNonProportionalScaleFactor=__viewingZoomNonProportionalScaleFactor;
 @property(nonatomic) long long keyboardHWType; // @synthesize keyboardHWType=_keyboardHWType;
 @property(retain, nonatomic) NSString *keyboardPhysicalType; // @synthesize keyboardPhysicalType=_keyboardPhysicalType;
+@property(nonatomic) double viewingZoomScale; // @synthesize viewingZoomScale=_viewingZoomScale;
 @property(retain, nonatomic) NSArray *preContextButtons; // @synthesize preContextButtons=_preContextButtons;
 @property(retain, nonatomic) NSArray *postContextButtons; // @synthesize postContextButtons=_postContextButtons;
 @property(retain, nonatomic) NSArray *associatedApplications; // @synthesize associatedApplications=_associatedApplications;
 @property(nonatomic) BOOL hidesAssistiveDock; // @synthesize hidesAssistiveDock=_hidesAssistiveDock;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (void)mergePanel:(id)arg1 withRelativePosition:(unsigned long long)arg2 orientation:(unsigned long long)arg3;
-- (void)_updateRectAndGroupingForOrderedElements:(id)arg1;
-- (id)_groupForPanelElements:(id)arg1;
-- (id)_alphabeticallySortedElementsForPanelElements:(id)arg1;
-- (id)createAlphabeticallyOrderedPanel;
+- (void)mergePanel:(id)arg1 withRelativePosition:(unsigned long long)arg2 orientation:(unsigned long long)arg3 panelDistance:(double)arg4;
 @property(readonly, nonatomic) BOOL hasGroupAsTopLevelElement;
+@property(readonly, nonatomic) ACSHKeyboardData *keyboardDataBasedOnPanelMetadata;
+@property(readonly, nonatomic) ACSHKeyboardData *bestGuessKeyboardData;
 @property(readonly, nonatomic) BOOL isDefaultKeyboard;
+@property(readonly, nonatomic) BOOL isMinimizedPanel;
 @property(readonly, nonatomic) BOOL isDevicesPanel;
 @property(readonly, nonatomic) BOOL isSystemKeyboardPanel;
 @property(readonly, nonatomic) BOOL isSystemPanel;
@@ -81,19 +86,22 @@
 - (id)soundIdentifierForItemAtIndexPath:(id)arg1;
 - (id)spokenDescriptionForItemAtIndexPath:(id)arg1;
 - (void)updateToKeyboardLayout:(id)arg1;
-- (void)updateForModifiers:(unsigned long long)arg1 lockedModifiers:(unsigned long long)arg2 deadKeyState:(unsigned int)arg3;
+- (void)updateForModifiers:(unsigned long long)arg1 lockedModifiers:(unsigned long long)arg2 deadKeyState:(unsigned int)arg3 autoShift:(BOOL)arg4;
 - (BOOL)updateContextButtonRects;
 - (void)_setContextButtons:(id)arg1 forLocalContextButtons:(id *)arg2;
 - (void)setPanelElements:(id)arg1;
 @property(nonatomic) unsigned long long screenPosition; // @dynamic screenPosition;
 @property(nonatomic) double viewingAlpha; // @synthesize viewingAlpha=_viewingAlpha;
-- (void)updateViewingZoomScale:(double)arg1 saveToPreferences:(BOOL)arg2;
-@property(nonatomic) double viewingZoomScale; // @synthesize viewingZoomScale=_viewingZoomScale;
+- (double)viewingZoomNonProportionalFactorReturningHorizontalNotVertical:(char *)arg1;
+- (void)updateViewingZoomScale:(double)arg1 nonProportionalScaleFactor:(double)arg2 horizontalNotVertical:(BOOL)arg3 saveToPreferences:(BOOL)arg4;
+- (void)updateViewingZoomScaleIsDefault:(BOOL)arg1;
+- (void)setViewingZoomScaleIsDefault:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL viewingZoomScaleIsDefault; // @synthesize viewingZoomScaleIsDefault=_viewingZoomScaleIsDefault;
 - (id)dictionaryForSaving;
 - (id)descriptionForDepth:(unsigned long long)arg1;
 - (void)setMinimizeButton:(BOOL)arg1;
-- (void)_initWithPlistDictionary:(id)arg1;
-@property(readonly, nonatomic) double windowPadding;
+- (void)_configureWithPlistDictionary:(id)arg1;
+@property(readonly, nonatomic) struct CGSize windowPadding;
 
 @end
 

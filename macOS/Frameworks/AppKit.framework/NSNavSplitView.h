@@ -10,7 +10,5 @@
 {
 }
 
-- (id)dividerColor;
-
 @end
 

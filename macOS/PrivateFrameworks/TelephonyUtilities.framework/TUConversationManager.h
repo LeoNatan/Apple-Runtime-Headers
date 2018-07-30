@@ -8,22 +8,30 @@
 
 #import "TUConversationManagerDataSourceDelegate.h"
 
-@class NSMapTable, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class NSMapTable, NSObject<OS_dispatch_queue>, NSSet, NSString, TUConversationMediaController;
 
 @interface TUConversationManager : NSObject <TUConversationManagerDataSourceDelegate>
 {
+    TUConversationMediaController *_mediaController;
     NSObject<OS_dispatch_queue> *_queue;
     id <TUConversationManagerDataSource> _dataSource;
     NSMapTable *_delegateToQueue;
 }
 
++ (BOOL)supportsEffects;
++ (BOOL)allowsVideo;
++ (BOOL)supportsConversations;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) id <TUConversationManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)serverDisconnectedForDataSource:(id)arg1 oldConversationsByGroupUUID:(id)arg2;
 - (void)conversationsChangedForDataSource:(id)arg1 oldConversationsByGroupUUID:(id)arg2;
+- (void)buzzMember:(id)arg1 conversation:(id)arg2;
+- (void)addRemoteMembers:(id)arg1 toConversation:(id)arg2;
+@property(readonly, nonatomic) TUConversationMediaController *mediaController; // @synthesize mediaController=_mediaController;
 - (void)registerWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)conversationWithGroupUUID:(id)arg1;
+- (id)activeConversationWithRemoteMembers:(id)arg1;
 - (id)activeConversationWithGroupUUID:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *activeConversations;
 - (void)removeDelegate:(id)arg1;

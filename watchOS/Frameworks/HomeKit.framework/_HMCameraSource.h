@@ -8,16 +8,14 @@
 
 #import "HMFMessageReceiver.h"
 
-@class HMCameraView, HMDelegateCaller, HMFMessageDispatcher, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMCameraView, HMFUnfairLock, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface _HMCameraSource : NSObject <HMFMessageReceiver>
 {
+    HMFUnfairLock *_lock;
     HMCameraView *_cameraView;
+    _HMContext *_context;
     NSNumber *_aspectRatio;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMFMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDelegateCaller *_delegateCaller;
     NSUUID *_profileUniqueIdentifier;
     NSNumber *_slotIdentifier;
     NSString *_sessionID;
@@ -26,16 +24,13 @@
 @property(readonly, copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, copy, nonatomic) NSNumber *slotIdentifier; // @synthesize slotIdentifier=_slotIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *profileUniqueIdentifier; // @synthesize profileUniqueIdentifier=_profileUniqueIdentifier;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, copy, nonatomic) NSNumber *aspectRatio; // @synthesize aspectRatio=_aspectRatio;
+@property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 @property(nonatomic) __weak HMCameraView *cameraView; // @synthesize cameraView=_cameraView;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
-- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 profileUniqueIdentifier:(id)arg6 aspectRatio:(id)arg7;
+- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 context:(id)arg3 profileUniqueIdentifier:(id)arg4 aspectRatio:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class NSColor, NSFont;
 
+__attribute__((visibility("hidden")))
 @interface NSTextTemplate : NSViewTemplate
 {
     id _contents;

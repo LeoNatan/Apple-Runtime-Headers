@@ -13,25 +13,25 @@
 
 @interface INBillDetails : NSObject <NSCopying, NSSecureCoding>
 {
-    long long _billType;
-    long long _paymentStatus;
     INBillPayee *_billPayee;
     INCurrencyAmount *_amountDue;
     INCurrencyAmount *_minimumDue;
     INCurrencyAmount *_lateFee;
     NSDateComponents *_dueDate;
     NSDateComponents *_paymentDate;
+    long long _billType;
+    long long _paymentStatus;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) long long paymentStatus; // @synthesize paymentStatus=_paymentStatus;
+@property(nonatomic) long long billType; // @synthesize billType=_billType;
 @property(copy, nonatomic) NSDateComponents *paymentDate; // @synthesize paymentDate=_paymentDate;
 @property(copy, nonatomic) NSDateComponents *dueDate; // @synthesize dueDate=_dueDate;
 @property(copy, nonatomic) INCurrencyAmount *lateFee; // @synthesize lateFee=_lateFee;
 @property(copy, nonatomic) INCurrencyAmount *minimumDue; // @synthesize minimumDue=_minimumDue;
 @property(copy, nonatomic) INCurrencyAmount *amountDue; // @synthesize amountDue=_amountDue;
 @property(copy, nonatomic) INBillPayee *billPayee; // @synthesize billPayee=_billPayee;
-@property(nonatomic) long long paymentStatus; // @synthesize paymentStatus=_paymentStatus;
-@property(nonatomic) long long billType; // @synthesize billType=_billType;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;

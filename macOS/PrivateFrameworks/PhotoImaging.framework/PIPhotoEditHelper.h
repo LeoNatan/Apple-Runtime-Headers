@@ -10,16 +10,20 @@
 {
 }
 
-+ (id)pipelineFiltersForShowingOriginal;
++ (id)pipelineFiltersForRAWShowingOriginalWithGeometry;
++ (id)pipelineFiltersForShowingOriginalWithGeometry;
++ (id)pipelineFiltersForOriginalGeometry;
 + (id)pipelineFiltersForCropping;
 + (id)filterNameForEffectName:(id)arg1;
 + (id)effectNameForFilterName:(id)arg1;
 + (BOOL)isSupportedAutoLoopRecipe:(id)arg1;
++ (BOOL)isPortraitStageEffect:(id)arg1;
 + (BOOL)isPortraitEffect:(id)arg1;
 + (BOOL)is3DEffect:(id)arg1;
 + (void)removeAssetIdentifierFromMetadataArray:(id)arg1;
 + (void)addAssetIdentifier:(id)arg1 toMetadataArray:(id)arg2;
 + (void)addAssetIdentifier:(id)arg1 toMetadataDictionary:(id)arg2;
++ (id)portraitEffectsMatteRenderRequestWithComposition:(id)arg1;
 + (id)depthDataRenderRequestWithComposition:(id)arg1;
 + (id)imageExportRequestWithComposition:(id)arg1 format:(id)arg2 wideGamut:(BOOL)arg3;
 + (id)newJPEGExportFormatWithCompressionQuality:(double)arg1;
@@ -41,6 +45,8 @@
 + (id)livePhotoSourceWithPhotoSource:(id)arg1 videoSource:(id)arg2;
 + (id)videoSourceWithURL:(id)arg1;
 + (id)imageSourceWithCIImage:(id)arg1 orientation:(long long)arg2;
++ (id)imageSourceWithURL:(id)arg1 type:(id)arg2 proxyImage:(id)arg3 orientation:(long long)arg4 useEmbeddedPreview:(BOOL)arg5;
++ (id)imageSourceWithURL:(id)arg1 type:(id)arg2 useEmbeddedPreview:(BOOL)arg3;
 + (id)imageSourceWithURL:(id)arg1 type:(id)arg2 proxyImage:(id)arg3 orientation:(long long)arg4;
 + (id)imageSourceWithURL:(id)arg1 type:(id)arg2;
 + (void)initialize;

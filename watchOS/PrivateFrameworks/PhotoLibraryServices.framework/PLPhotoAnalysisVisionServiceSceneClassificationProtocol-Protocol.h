@@ -7,6 +7,7 @@
 @class NSDictionary, NSString;
 
 @protocol PLPhotoAnalysisVisionServiceSceneClassificationProtocol
+- (void)pingSceneWorkerWithOptions:(NSDictionary *)arg1 context:(NSDictionary *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)performSceneClassificationOnAssetWithLocalIdentifier:(NSString *)arg1 context:(NSDictionary *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 @end
 

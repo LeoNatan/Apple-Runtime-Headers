@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
++ (id)temporaryObjectContextDelegateWithPackageDataForWrite:(id)arg1 additionalDocumentPropertiesForWrite:(id)arg2;
 @property(nonatomic) _Bool ignoreDocumentSupport; // @synthesize ignoreDocumentSupport=_ignoreDocumentSupport;
 @property(readonly, nonatomic) NSSet *persistenceWarnings; // @synthesize persistenceWarnings=_persistenceWarnings;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;

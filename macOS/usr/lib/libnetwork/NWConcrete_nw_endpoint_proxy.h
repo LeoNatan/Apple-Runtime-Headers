@@ -10,6 +10,7 @@
 
 @class NSObject<OS_nw_array>, NSObject<OS_xpc_object>, NSString, NWConcrete_nw_endpoint_handler;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_endpoint_proxy : NSObject <OS_nw_endpoint_proxy>
 {
     NSObject<OS_nw_array> *child_endpoint_handlers;
@@ -18,13 +19,15 @@
     NWConcrete_nw_endpoint_handler *connected_child;
     NSObject<OS_xpc_object> *proxy_settings;
     NSObject<OS_xpc_object> *parsed_proxy_settings;
-    _Bool direct_prohibited;
     struct __CFURL *url;
     NSObject<OS_nw_array> *pac_resolvers;
+    unsigned int direct_prohibited:1;
+    unsigned int synthesized_url:1;
+    unsigned int __pad_bits:6;
 }
 
 - (void).cxx_destruct;
-- (void)applyWithHandler:(id)arg1 toChildren:(CDUnknownBlockType)arg2;
+- (_Bool)applyWithHandler:(id)arg1 toChildren:(CDUnknownBlockType)arg2;
 - (void)updatePathWithHandler:(id)arg1;
 - (void)cancelWithHandler:(id)arg1 forced:(BOOL)arg2;
 - (void)startWithHandler:(id)arg1;

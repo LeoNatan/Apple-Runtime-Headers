@@ -8,7 +8,6 @@
 
 @class GEOPDQuickLinkItem, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOQuickLink : NSObject
 {
     GEOPDQuickLinkItem *_quickLinkItem;

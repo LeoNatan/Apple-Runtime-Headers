@@ -6,22 +6,19 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class CPLRecordChange, NSString;
+@class CPLRecordChange, CPLScopedIdentifier;
 
 @protocol CPLEngineClientCacheImplementation <CPLEngineStorageImplementation>
-@property(readonly, nonatomic) unsigned long long estimatedLocalLibraryAssetCount;
-@property(readonly, nonatomic) unsigned long long estimatedLocalLibrarySize;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (void)fillRelatedIdentifiersInChange:(CPLRecordChange *)arg1;
-- (BOOL)resetWithError:(id *)arg1;
-- (BOOL)storeEstimatedLocalLibrarySize:(unsigned long long)arg1 estimatedAssetCount:(unsigned long long)arg2 error:(id *)arg3;
-- (unsigned long long)countOfRecordsWithRelatedIdentifier:(NSString *)arg1 class:(Class)arg2;
-- (BOOL)hasRecordWithRelatedIdentifier:(NSString *)arg1 class:(Class)arg2;
-- (id <NSFastEnumeration>)recordsWithRelatedIdentifier:(NSString *)arg1 class:(Class)arg2;
-- (id <NSFastEnumeration>)recordsWithRelatedIdentifier:(NSString *)arg1;
-- (BOOL)hasRecordWithIdentifier:(NSString *)arg1;
-- (NSString *)relatedIdentifierForRecordWithIdentifier:(NSString *)arg1;
-- (CPLRecordChange *)recordWithIdentifier:(NSString *)arg1;
-- (BOOL)deleteRecordWithIdentifier:(NSString *)arg1 error:(id *)arg2;
+- (unsigned long long)countOfRecordsWithRelatedScopedIdentifier:(CPLScopedIdentifier *)arg1 class:(Class)arg2;
+- (BOOL)hasRecordWithRelatedScopedIdentifier:(CPLScopedIdentifier *)arg1 class:(Class)arg2;
+- (id <NSFastEnumeration>)recordsWithRelatedScopedIdentifier:(CPLScopedIdentifier *)arg1 class:(Class)arg2;
+- (id <NSFastEnumeration>)recordsWithRelatedScopedIdentifier:(CPLScopedIdentifier *)arg1;
+- (BOOL)hasRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1;
+- (CPLScopedIdentifier *)relatedScopedIdentifierForRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1;
+- (CPLRecordChange *)recordWithScopedIdentifier:(CPLScopedIdentifier *)arg1;
+- (BOOL)deleteRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 error:(id *)arg2;
 - (BOOL)updateRecord:(CPLRecordChange *)arg1 error:(id *)arg2;
 - (BOOL)addRecord:(CPLRecordChange *)arg1 error:(id *)arg2;
 @end

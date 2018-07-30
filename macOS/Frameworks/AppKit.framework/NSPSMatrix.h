@@ -8,6 +8,7 @@
 
 #import "NSCoding.h"
 
+__attribute__((visibility("hidden")))
 @interface NSPSMatrix : NSObject <NSCoding>
 {
     double matrixElements[12];

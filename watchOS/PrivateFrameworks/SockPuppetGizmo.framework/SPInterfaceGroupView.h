@@ -8,12 +8,13 @@
 
 #import "SPInterfaceItem.h"
 
-@class NSArray, NSBundle, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, UIColor;
+@class NSArray, NSBundle, NSDictionary, NSMutableArray, NSString, SPIBContainerView, SPIBOuterScrollView, UIColor;
 
 @interface SPInterfaceGroupView : UIImageView <SPInterfaceItem>
 {
     _Bool _clipsContentsVertically;
     _Bool _isNotification;
+    _Bool _isNotificationLinkedOnOrAfterGlory;
     _Bool _isVerticalPage;
     _Bool _isNativeInterfaceObject;
     _Bool _isSection;
@@ -31,6 +32,8 @@
     int _groupViewLayout;
     NSMutableArray *_gestureRecognizerDescriptions;
     NSDictionary *_itemDescriptionForIB;
+    SPIBOuterScrollView *_ibOuterScrollView;
+    SPIBContainerView *_ibContainerView;
     NSDictionary *_companionProperty;
     int _interfaceAlignment;
     int _verticalInterfaceAlignment;
@@ -43,13 +46,12 @@
     NSString *_stringsFileName;
     UIColor *_renderedBackgroundColor;
     NSArray *_allAnimationImages;
-    NSObject<OS_dispatch_queue> *_sendQueue;
     struct CGSize _interfacePlistSize;
     double _defaultDuration;
     struct UIEdgeInsets _margins;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> *sendQueue; // @synthesize sendQueue=_sendQueue;
++ (void)initialize;
 @property(nonatomic) _Bool allowsOverlap; // @synthesize allowsOverlap=_allowsOverlap;
 @property(nonatomic) _Bool defaultAnimate; // @synthesize defaultAnimate=_defaultAnimate;
 @property(nonatomic) double defaultDuration; // @synthesize defaultDuration=_defaultDuration;
@@ -76,10 +78,13 @@
 @property(nonatomic) int interfaceAlignment; // @synthesize interfaceAlignment=_interfaceAlignment;
 @property(nonatomic) _Bool isNativeInterfaceObject; // @synthesize isNativeInterfaceObject=_isNativeInterfaceObject;
 @property(copy, nonatomic) NSDictionary *companionProperty; // @synthesize companionProperty=_companionProperty;
+@property(nonatomic) __weak SPIBContainerView *ibContainerView; // @synthesize ibContainerView=_ibContainerView;
+@property(nonatomic) __weak SPIBOuterScrollView *ibOuterScrollView; // @synthesize ibOuterScrollView=_ibOuterScrollView;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
 @property(retain, nonatomic) NSMutableArray *gestureRecognizerDescriptions; // @synthesize gestureRecognizerDescriptions=_gestureRecognizerDescriptions;
 @property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
 @property(nonatomic) _Bool isVerticalPage; // @synthesize isVerticalPage=_isVerticalPage;
+@property(nonatomic) _Bool isNotificationLinkedOnOrAfterGlory; // @synthesize isNotificationLinkedOnOrAfterGlory=_isNotificationLinkedOnOrAfterGlory;
 @property(nonatomic) _Bool isNotification; // @synthesize isNotification=_isNotification;
 @property(nonatomic) _Bool clipsContentsVertically; // @synthesize clipsContentsVertically=_clipsContentsVertically;
 @property(nonatomic) int groupViewLayout; // @synthesize groupViewLayout=_groupViewLayout;
@@ -88,6 +93,7 @@
 - (void)_addGestureRecognizerData:(id)arg1 viewToAssociate:(id)arg2;
 - (void)_setStaticNotificationImageAttachmentURL:(id)arg1;
 - (void)setStaticNotificationAttachmentURL:(id)arg1 ofType:(int)arg2;
+- (void)setStaticNotificationSubtitleLabelText:(id)arg1;
 - (void)setStaticNotificationTitleLabelText:(id)arg1;
 - (void)setStaticNotificationAlertLabelText:(id)arg1;
 - (void)applyTableCellDefaultAppearance;
@@ -108,7 +114,7 @@
 - (void)setInterfaceItemValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;
 - (_Bool)_setInterfaceItemValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;
 - (id)allProperties;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 // Remaining properties

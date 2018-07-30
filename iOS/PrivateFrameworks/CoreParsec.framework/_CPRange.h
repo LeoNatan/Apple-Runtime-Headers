@@ -13,10 +13,6 @@
 
 @interface _CPRange : PBCodable <_CPRange, NSSecureCoding>
 {
-    struct {
-        unsigned int location:1;
-        unsigned int length:1;
-    } _has;
     unsigned long long _location;
     unsigned long long _length;
 }
@@ -31,8 +27,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasLength;
-@property(readonly, nonatomic) _Bool hasLocation;
 - (_Bool)requiresQueryId;
 
 // Remaining properties

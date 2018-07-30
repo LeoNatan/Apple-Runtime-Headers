@@ -8,37 +8,40 @@
 
 #import "HDHealthDaemonReadyObserver.h"
 
-@class HDDataAggregatorConfiguration, HDDataCollectionManager, HKObjectType, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
+@class HDDataAggregatorConfiguration, HDDataCollectionManager, HKObjectType, NSLock, NSMapTable, NSString;
 
 @interface HDDataAggregator : NSObject <HDHealthDaemonReadyObserver>
 {
-    NSMapTable *_queue_collectorRegistry;
-    HDDataAggregatorConfiguration *_queue_configuration;
-    _Bool _queue_hasStartedCollectors;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSLock *_lock;
+    NSMapTable *_lock_collectorRegistry;
+    HDDataAggregatorConfiguration *_lock_configuration;
+    // Error parsing type: AB, name: _hasStartedCollectors
+    _Bool _lock_canStartCollectors;
     HDDataCollectionManager *_dataCollectionManager;
 }
 
 @property(readonly, nonatomic) __weak HDDataCollectionManager *dataCollectionManager; // @synthesize dataCollectionManager=_dataCollectionManager;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (id)diagnosticDescription;
 - (void)daemonReady:(id)arg1;
-- (void)queue_registeredCollectorsDidChange;
-- (void)queue_configurationDidChange;
+- (id)configurationForCollector:(id)arg1;
+- (void)recomputeCollectorConfiguration;
+@property(readonly, copy, nonatomic) HKObjectType *objectType;
+- (void)dataCollector:(id)arg1 didCollectSensorData:(id)arg2 device:(id)arg3;
 - (id)_keyValueDomain;
-- (void)_queue_startCollector:(id)arg1;
-- (void)_queue_startCollectors;
-- (_Bool)queue_didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
-- (_Bool)queue_persistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 source:(id)arg4 device:(id)arg5 error:(id *)arg6;
-- (id)queue_allCollectors;
+- (void)_startCollector:(id)arg1;
+- (void)_considerStartingCollectors;
+- (_Bool)didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
+- (_Bool)persistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 source:(id)arg4 device:(id)arg5 error:(id *)arg6;
 - (void)dataCollector:(id)arg1 didCollectSensorDatum:(id)arg2 device:(id)arg3;
 - (void)dataCollector:(id)arg1 didCollectSensorDatum:(id)arg2;
 - (void)dataCollector:(id)arg1 didChangeState:(id)arg2;
+- (id)allCollectors;
 - (void)unregisterDataCollector:(id)arg1;
 - (void)registerDataCollector:(id)arg1 state:(id)arg2;
-- (id)queue_configuration;
-- (void)setConfiguration:(id)arg1;
-@property(readonly, copy, nonatomic) HKObjectType *objectType;
+@property(copy) HDDataAggregatorConfiguration *configuration;
+- (void)requestAggregationThroughDate:(id)arg1 mode:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (double)defaultDataCollectionInterval;
 - (id)initWithDataCollectionManager:(id)arg1;
 
 // Remaining properties

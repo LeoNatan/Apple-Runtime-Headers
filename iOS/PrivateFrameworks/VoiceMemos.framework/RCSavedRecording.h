@@ -6,51 +6,64 @@
 
 #import "NSManagedObject.h"
 
+#import "RCMutableRecording.h"
 #import "UIActivityItemSource.h"
 
-@class AVAsset, CSSearchableItem, NSDate, NSString, NSURL;
+@class AVAsset, CLLocation, CSSearchableItem, NSDate, NSString, NSURL;
 
-@interface RCSavedRecording : NSManagedObject <UIActivityItemSource>
+@interface RCSavedRecording : NSManagedObject <RCMutableRecording, UIActivityItemSource>
 {
     AVAsset *_avAsset;
-    NSString *_path;
     _Bool _pathWasInvalid;
     _Bool _ignoreChangeForEntityRevision;
     _Bool _hasPendingChangeAffectingEntityRevision;
+    long long revisionID;
 }
 
 + (id)localizedStringForRecordingLabel:(long long)arg1;
 + (id)propertiesAffectingEntityRevision;
 + (id)searchableItemIdentifierForSavedRecordingURI:(id)arg1;
 + (id)savedRecordingURIForSearchableItemIdentifier:(id)arg1;
+@property(nonatomic) long long revisionID; // @synthesize revisionID;
 @property(readonly, nonatomic) _Bool hasPendingChangeAffectingEntityRevision; // @synthesize hasPendingChangeAffectingEntityRevision=_hasPendingChangeAffectingEntityRevision;
 - (void).cxx_destruct;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)_activityURLCreateIfNecessary:(_Bool)arg1;
 - (void)_validatePath;
 @property(readonly, nonatomic) AVAsset *avAsset;
+@property(readonly, nonatomic) _Bool evicted;
+- (void)setEditing:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool editing;
+- (void)setManuallyRenamed:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool manuallyRenamed;
+- (void)setPlayable:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool playable;
+- (void)setEvictionDate:(id)arg1;
+@property(readonly, copy, nonatomic) NSDate *evictionDate;
 - (id)detailLabel;
 - (id)_labelAllowingEmptyString:(_Bool)arg1;
 @property(readonly, copy, nonatomic) NSURL *URIRepresentation;
 @property(readonly, copy, nonatomic) NSURL *url;
-@property(copy, nonatomic) NSString *path; // @dynamic path;
-@property(nonatomic, getter=isSynced) _Bool synced;
-@property(nonatomic, getter=isPendingRestore) _Bool pendingRestore; // @dynamic pendingRestore;
+- (void)setPath:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *path;
 @property(nonatomic) long long recordingID;
-@property(nonatomic) long long iTunesPersistentID;
+- (void)setITunesPersistentID:(long long)arg1;
+@property(readonly, nonatomic) long long iTunesPersistentID;
 - (void)setCustomLabel:(id)arg1;
-- (id)customLabel;
-@property(copy, nonatomic) NSString *titleDisallowingEmptyString; // @dynamic titleDisallowingEmptyString;
+@property(readonly, copy, nonatomic) NSString *customLabel;
+@property(readonly, copy, nonatomic) NSString *titleDisallowingEmptyString;
 - (id)label;
-@property(copy, nonatomic) NSString *title; // @dynamic title;
-- (id)name;
-- (void)setName:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *title;
+- (void)setTitle:(id)arg1;
+@property(copy, nonatomic) NSString *name;
 - (void)setLabelPreset:(long long)arg1;
 - (long long)labelPreset;
-@property(nonatomic) double duration;
+- (void)setLocation:(id)arg1;
+@property(readonly, copy, nonatomic) CLLocation *location;
+- (void)setDuration:(double)arg1;
+@property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) _Bool isContentBeingModified;
 - (void)willSave;
 - (void)willChangeValueForKey:(id)arg1;
@@ -59,11 +72,14 @@
 @property(readonly, copy, nonatomic) CSSearchableItem *searchableItem;
 
 // Remaining properties
-@property(copy, nonatomic) NSDate *date; // @dynamic date;
+@property(readonly, copy, nonatomic) NSDate *date; // @dynamic date;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool pendingRestore;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool synced;
+@property(readonly, copy, nonatomic) NSString *uniqueID;
 
 @end
 

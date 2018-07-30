@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OITSUImage.h>
 
-__attribute__((visibility("hidden")))
 @interface OITSUCGImage : OITSUImage
 {
     struct CGImage *mCGImage;

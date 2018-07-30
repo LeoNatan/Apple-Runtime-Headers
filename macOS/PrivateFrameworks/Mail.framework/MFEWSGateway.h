@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class MFEWSAccount, MFEWSConnection, NSDictionary, NSMutableArray, NSOperationQueue;
 
-@interface MFEWSGateway : NSObject <NSCoding>
+@interface MFEWSGateway : NSObject <NSSecureCoding>
 {
     NSMutableArray *_offlineRequests;
     MFEWSAccount *_account;
@@ -20,6 +20,7 @@
 
 + (id)newTemporaryItemId;
 + (id)keyPathsForValuesAffectingRequestResponseQueue;
++ (BOOL)supportsSecureCoding;
 + (id)operationActivityLog;
 @property(copy, nonatomic) NSDictionary *savedOfflineToRealEWSIdStrings; // @synthesize savedOfflineToRealEWSIdStrings=_savedOfflineToRealEWSIdStrings;
 @property(readonly, nonatomic) NSOperationQueue *syncOperationQueue; // @synthesize syncOperationQueue=_syncOperationQueue;

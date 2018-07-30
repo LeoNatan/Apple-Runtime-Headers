@@ -14,17 +14,21 @@
 #import "PUICQuickboardLanguageControllerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class ArouetButton, ArouetCandidateSelectionSession, ArouetCandidateViewController, ArouetCandidatesIndicatorView, ArouetCandidatesManager, ArouetCandidatesResult, ArouetInputView, ArouetLanguageSpec, ArouetPrewarmer, ArouetRecognitionManager, ArouetRecognitionResult, ArouetTextInputModel, ArouetTextInputView, ArouetTextServices, ArouetUserInteractionMonitor, CSLSAlertSuppressionAssertion, NSString, NSTimer, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
+@class ArouetButton, ArouetCandidateSelectionSession, ArouetCandidateViewController, ArouetCandidatesIndicatorView, ArouetCandidatesManager, ArouetCandidatesResult, ArouetInputView, ArouetLanguageSpec, ArouetPrewarmer, ArouetRecognitionManager, ArouetRecognitionResult, ArouetTextInputModel, ArouetTextInputView, ArouetTextServices, ArouetUserInteractionMonitor, CSLSAlertSuppressionAssertion, CSLSSuspendSystemGestureAssertion, NSString, NSTimer, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 
 @interface PUICQuickboardArouetViewController : PUICQuickboardViewController <PUICQuickboardLanguageControllerDelegate, ArouetInputDelegate, ArouetTextInputModelChangesObserver, ArouetCandidateViewControllerDelegate, ArouetCandidateManagerDelegate, PUICCrownInputSequencerDelegate, UIGestureRecognizerDelegate>
 {
+    _Bool _showsArouetCancelButton;
+    _Bool _showsArouetAcceptButton;
     _Bool _didPrewarmRecognizer;
     _Bool _recognitionInProgress;
     _Bool _candidatesIndicatorIsVisible;
     _Bool _needsUpdateDisplayedText;
     _Bool _didDisableOrbGesture;
-    _Bool _buttonTitlesNeedUpdate;
+    _Bool _buttonsNeedUpdate;
     _Bool _longDeleteInProgress;
+    int _minTextLengthForEnablingAccept;
+    NSString *_textContentType;
     ArouetInputView *_inkView;
     ArouetRecognitionManager *_recognitionManager;
     ArouetPrewarmer *_prewarmer;
@@ -37,6 +41,7 @@
     ArouetCandidateSelectionSession *_candidateSelectionSession;
     ArouetTextInputModel *_textInputModel;
     ArouetTextInputView *_textInputView;
+    NSString *_pendingInputText;
     UIPanGestureRecognizer *__scrollDrawDeciderRecognizer;
     UITapGestureRecognizer *__textTapRecognizer;
     ArouetLanguageSpec *_languageSpec;
@@ -46,21 +51,25 @@
     ArouetButton *_spaceButton;
     ArouetButton *_deleteButton;
     CSLSAlertSuppressionAssertion *_alertSuppressionAssertion;
+    CSLSSuspendSystemGestureAssertion *_systemGesturesSuppressionAssertion;
     ArouetButton *_arouetCancelButton;
     ArouetButton *_arouetAcceptButton;
     UIView *_punchoutView;
     CDUnknownBlockType _recognitionCompletion;
+    struct _NSRange _pendingInputTextSelectionRange;
     struct CGPoint _panGestureLastPoint;
 }
 
 + (_Bool)supportsLanguage:(id)arg1;
++ (_Bool)supportsLanguage:(id)arg1 textContentType:(id)arg2;
 @property(copy, nonatomic) CDUnknownBlockType recognitionCompletion; // @synthesize recognitionCompletion=_recognitionCompletion;
 @property(nonatomic) __weak UIView *punchoutView; // @synthesize punchoutView=_punchoutView;
 @property(nonatomic) _Bool longDeleteInProgress; // @synthesize longDeleteInProgress=_longDeleteInProgress;
-@property(nonatomic) _Bool buttonTitlesNeedUpdate; // @synthesize buttonTitlesNeedUpdate=_buttonTitlesNeedUpdate;
+@property(nonatomic) _Bool buttonsNeedUpdate; // @synthesize buttonsNeedUpdate=_buttonsNeedUpdate;
 @property(retain, nonatomic) ArouetButton *arouetAcceptButton; // @synthesize arouetAcceptButton=_arouetAcceptButton;
 @property(retain, nonatomic) ArouetButton *arouetCancelButton; // @synthesize arouetCancelButton=_arouetCancelButton;
 @property(nonatomic) struct CGPoint panGestureLastPoint; // @synthesize panGestureLastPoint=_panGestureLastPoint;
+@property(retain, nonatomic) CSLSSuspendSystemGestureAssertion *systemGesturesSuppressionAssertion; // @synthesize systemGesturesSuppressionAssertion=_systemGesturesSuppressionAssertion;
 @property(retain, nonatomic) CSLSAlertSuppressionAssertion *alertSuppressionAssertion; // @synthesize alertSuppressionAssertion=_alertSuppressionAssertion;
 @property(nonatomic) _Bool didDisableOrbGesture; // @synthesize didDisableOrbGesture=_didDisableOrbGesture;
 @property(retain, nonatomic) ArouetButton *deleteButton; // @synthesize deleteButton=_deleteButton;
@@ -72,6 +81,8 @@
 @property(nonatomic) _Bool needsUpdateDisplayedText; // @synthesize needsUpdateDisplayedText=_needsUpdateDisplayedText;
 @property(retain, nonatomic) UITapGestureRecognizer *_textTapRecognizer; // @synthesize _textTapRecognizer=__textTapRecognizer;
 @property(retain, nonatomic) UIPanGestureRecognizer *_scrollDrawDeciderRecognizer; // @synthesize _scrollDrawDeciderRecognizer=__scrollDrawDeciderRecognizer;
+@property(nonatomic) struct _NSRange pendingInputTextSelectionRange; // @synthesize pendingInputTextSelectionRange=_pendingInputTextSelectionRange;
+@property(copy, nonatomic) NSString *pendingInputText; // @synthesize pendingInputText=_pendingInputText;
 @property(retain, nonatomic) ArouetTextInputView *textInputView; // @synthesize textInputView=_textInputView;
 @property(retain, nonatomic) ArouetTextInputModel *textInputModel; // @synthesize textInputModel=_textInputModel;
 @property(retain, nonatomic) ArouetCandidateSelectionSession *candidateSelectionSession; // @synthesize candidateSelectionSession=_candidateSelectionSession;
@@ -87,14 +98,18 @@
 @property(retain, nonatomic) ArouetPrewarmer *prewarmer; // @synthesize prewarmer=_prewarmer;
 @property(retain, nonatomic) ArouetRecognitionManager *recognitionManager; // @synthesize recognitionManager=_recognitionManager;
 @property(retain, nonatomic) ArouetInputView *inkView; // @synthesize inkView=_inkView;
+@property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
+@property(nonatomic) int minTextLengthForEnablingAccept; // @synthesize minTextLengthForEnablingAccept=_minTextLengthForEnablingAccept;
 - (void).cxx_destruct;
+- (unsigned int)inputType;
 - (float)relativeTextCursorPosition;
+- (id)recentDeletionsAtLocation:(int)arg1;
 - (id)characterHistory;
 - (void)handwritingWasCommitted;
 - (void)handwritingWasRecognized:(id)arg1;
 - (void)handwritingRecognitionDidEnd;
 - (void)handwritingRecognitionDidStart;
-- (void)_loadRecognitionManagerIfNeeded;
+- (void)_updateRecognitionManager;
 - (void)drawingDidEnd;
 - (void)drawingDidStart;
 - (void)_wheelChangedWithEvent:(id)arg1;
@@ -105,7 +120,9 @@
 - (void)candidateViewControllerSelectedCandidateIndexDidChange:(id)arg1;
 - (id)candidateManager:(id)arg1 transliterationVariantsForString:(id)arg2;
 - (_Bool)candidateManager:(id)arg1 shouldExcludeCandidate:(id)arg2;
-- (void)updateInputForCurrentLanguage;
+- (void)updateTextInputModel;
+- (void)_updateConfigurationForCurrentTypeAndLanguage;
+- (void)setInputText:(id)arg1 selectionRange:(struct _NSRange)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)endCandidateSelectionSession;
@@ -114,12 +131,17 @@
 @property(readonly, nonatomic) _Bool candidatesIndicatorShouldBeVisible;
 - (void)updateCandidatesIndicatorAnimated:(_Bool)arg1 fadeInAfterADelay:(_Bool)arg2;
 - (void)updateCandidateViewControllerAnimated:(_Bool)arg1;
-- (void)generateCandidateResultsForSelectedRange:(struct _NSRange)arg1;
+- (void)generateCandidateResultsForSelectedRange:(struct _NSRange)arg1 isInsertion:(_Bool)arg2;
 - (void)setLastCandidatesResult:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool candidateListShouldBeVisible;
+@property(nonatomic) _Bool showsCancelButton;
+- (void)setShowsAcceptButton:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setShowsAcceptButton:(_Bool)arg1;
+- (_Bool)showsAcceptButton;
+@property(nonatomic) _Bool disablesAcceptOnEmptyText;
 - (void)updateControlsInteractionEnabled;
-- (void)updateButtonTitlesIfNeeded;
-- (void)updateTextViewContentAndSelectionAnimated:(_Bool)arg1;
+- (void)updateButtonsIfNeeded;
+- (void)_updateTextViewContentAndSelectionWithInsertionRange:(struct _NSRange)arg1 animated:(_Bool)arg2;
 - (void)handleTapAtCharacterIndex:(int)arg1 isBeforeStart:(_Bool)arg2 isAfterEnd:(_Bool)arg3;
 - (void)handleTextTapGesture:(id)arg1;
 - (void)handleScrollPan:(id)arg1;
@@ -137,6 +159,7 @@
 - (void)handleUIApplicationDidBecomeActiveNotification:(id)arg1;
 - (void)handleUIApplicationDidEnterBackgroundNotification:(id)arg1;
 - (void)handleUIApplicationWillEnterForegroundNotification:(id)arg1;
+@property(nonatomic) _Bool passwordEntryMode;
 - (void)setConfirmationType:(unsigned int)arg1;
 - (_Bool)canBecomeFirstResponder;
 - (void)dealloc;
@@ -152,6 +175,9 @@
 - (void)_performLocaleLayoutAdjustments;
 - (struct CGRect)_minimumTitleBoundsForButton:(id)arg1;
 - (id)initWithDelegate:(id)arg1 prewarmer:(id)arg2;
+- (id)initWithDelegate:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)_commonArouetViewControllerInit;
 - (void)drawAndRecognizeTestInputWithCompletion:(CDUnknownBlockType)arg1;
 
 // Remaining properties

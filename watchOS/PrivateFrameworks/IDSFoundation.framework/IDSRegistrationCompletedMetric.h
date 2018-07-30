@@ -8,10 +8,11 @@
 
 #import "CUTAWDMetric.h"
 #import "CUTCoreAnalyticsMetric.h"
+#import "CUTRTCMetric.h"
 
 @class NSDictionary, NSString, PBCodable<NSCopying>;
 
-@interface IDSRegistrationCompletedMetric : NSObject <CUTCoreAnalyticsMetric, CUTAWDMetric>
+@interface IDSRegistrationCompletedMetric : NSObject <CUTCoreAnalyticsMetric, CUTAWDMetric, CUTRTCMetric>
 {
     int _registrationType;
     NSString *_serviceIdentifier;
@@ -26,6 +27,7 @@
 @property(readonly, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(readonly, nonatomic) int registrationType; // @synthesize registrationType=_registrationType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned short rtcType;
 @property(readonly, nonatomic) PBCodable<NSCopying> *awdRepresentation;
 @property(readonly) unsigned long awdIdentifier;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

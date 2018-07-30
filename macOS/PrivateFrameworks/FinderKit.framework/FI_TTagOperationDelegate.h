@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTagOperationDelegate : NSObject <IAsyncNodeOperationDelegateProtocol>
 {
-    struct TMutex fLock;
+    struct mutex fLock;
     struct TConditionVariable fCondition;
 }
 

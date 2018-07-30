@@ -13,16 +13,19 @@
 @interface PKExpressTransactionState : NSObject <NSSecureCoding>
 {
     _Bool _processing;
-    NSString *_expressMode;
+    int _technologyType;
+    NSString *_paymentApplicationIdentifier;
+    NSString *_passUniqueIdentifier;
     unsigned int _receivedEvents;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned int receivedEvents; // @synthesize receivedEvents=_receivedEvents;
 @property(nonatomic, getter=isProcessing) _Bool processing; // @synthesize processing=_processing;
-@property(copy, nonatomic) NSString *expressMode; // @synthesize expressMode=_expressMode;
+@property(retain, nonatomic) NSString *passUniqueIdentifier; // @synthesize passUniqueIdentifier=_passUniqueIdentifier;
+@property(copy, nonatomic) NSString *paymentApplicationIdentifier; // @synthesize paymentApplicationIdentifier=_paymentApplicationIdentifier;
+@property(nonatomic) int technologyType; // @synthesize technologyType=_technologyType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) int expressType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

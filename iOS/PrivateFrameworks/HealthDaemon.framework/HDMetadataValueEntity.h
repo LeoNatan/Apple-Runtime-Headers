@@ -16,7 +16,7 @@
 + (id)deleteStatementForObjectMetadataWithDatabase:(id)arg1;
 + (long long)protectionClass;
 + (id)indices;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 
 @end

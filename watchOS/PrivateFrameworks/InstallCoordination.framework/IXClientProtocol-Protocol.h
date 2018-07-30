@@ -61,8 +61,8 @@
 - (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 hasInitialODRAssetPromises:(void (^)(_Bool, NSError *))arg2;
 - (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 getInitialODRAssetPromises:(void (^)(NSArray *, NSError *))arg2;
 - (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 setInitialODRAssetPromiseUUIDs:(NSArray *)arg2 completion:(void (^)(NSError *))arg3;
-- (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 isUserInitiated:(void (^)(_Bool, NSError *))arg2;
-- (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 setUserInitiated:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
+- (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 importanceWithCompletion:(void (^)(unsigned int, NSError *))arg2;
+- (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 setImportance:(unsigned int)arg2 completion:(void (^)(NSError *))arg3;
 - (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 hasAutoEnabledExtensionTypes:(void (^)(_Bool, NSError *))arg2;
 - (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 setAutoEnabledExtensionTypes:(NSArray *)arg2 completion:(void (^)(NSError *))arg3;
 - (oneway void)_remote_IXSCoordinatedAppInstall:(NSUUID *)arg1 hasInstallOptions:(void (^)(_Bool, NSError *))arg2;
@@ -81,7 +81,7 @@
 - (void)_remote_displayUserPresentableErrorForApp:(NSString *)arg1 code:(int)arg2;
 - (void)_remote_registerTransientObserver:(NSXPCListenerEndpoint *)arg1 forClientIdentifiers:(NSSet *)arg2 respondingToSelectors:(unsigned int)arg3;
 - (void)_remote_registerObserverMachServiceName:(NSString *)arg1 forClientIdentifiers:(NSSet *)arg2 respondingToSelectors:(unsigned int)arg3;
-- (void)_remote_uninstallAppWithBundleID:(NSString *)arg1 requestUserConfirmation:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
+- (void)_remote_uninstallAppWithBundleID:(NSString *)arg1 requestUserConfirmation:(_Bool)arg2 waitForDeletion:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
 - (void)_remote_prioritizeCoordinatorForAppWithBundleID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)_remote_setIsPaused:(_Bool)arg1 forCoordinatorForAppWithBundleID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)_remote_cancelCoordinatorsForAppsWithBundleIDs:(NSArray *)arg1 reason:(NSError *)arg2 client:(unsigned int)arg3 completion:(void (^)(NSError *))arg4;

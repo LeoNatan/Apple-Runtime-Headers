@@ -8,11 +8,12 @@
 
 #import "NSColorPickingCustom.h"
 
-@class NSMenuItem, NSMutableDictionary, NSPopUpButton, NSString;
+@class NSMenuItem, NSMutableDictionary, NSPopUpButton, NSString, NSView;
 
+__attribute__((visibility("hidden")))
 @interface NSColorPickerUser : NSColorPicker <NSColorPickingCustom>
 {
-    id userPickerView;
+    NSView *_userPickerView;
     id tiffView;
     id reserved1;
     id renamePanelController;
@@ -29,6 +30,7 @@
     NSMenuItem *spectrumMenuItem;
 }
 
+@property(retain) NSView *userPickerView; // @synthesize userPickerView=_userPickerView;
 - (void)remove:(id)arg1;
 - (void)_remove:(id)arg1;
 - (BOOL)_removeOrRename:(id)arg1;
@@ -53,7 +55,6 @@
 - (BOOL)supportsMode:(long long)arg1;
 - (id)buttonToolTip;
 - (double)_insertionOrder;
-- (BOOL)pasteItemUpdate:(id)arg1;
 - (id)provideNewView:(BOOL)arg1;
 - (id)initWithPickerMask:(unsigned long long)arg1 colorPanel:(id)arg2;
 - (BOOL)saveImageNamed:(id)arg1 andShowWarnings:(BOOL)arg2;

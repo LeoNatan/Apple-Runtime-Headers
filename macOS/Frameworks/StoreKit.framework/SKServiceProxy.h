@@ -8,6 +8,7 @@
 
 @class NSLock, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface SKServiceProxy : NSObject
 {
     NSLock *_serviceConnectionLock;
@@ -15,6 +16,8 @@
 }
 
 + (id)serviceProxy;
++ (id)inAppClientInterface;
++ (id)inAppServiceInterface;
 - (void).cxx_destruct;
 - (id)inAppService;
 - (id)inAppServiceWithErrorHandler:(CDUnknownBlockType)arg1;

@@ -8,10 +8,11 @@
 
 #import "NSCopying.h"
 
-@class NSString;
+@class NSData, NSString;
 
 @interface NTPBOptInButtonExposure : PBCodable <NSCopying>
 {
+    NSData *_groupViewExposureId;
     int _optInButtonLocation;
     NSString *_optInButtonLocationId;
     int _optInButtonType;
@@ -21,6 +22,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(retain, nonatomic) NSString *optInButtonLocationId; // @synthesize optInButtonLocationId=_optInButtonLocationId;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -31,6 +33,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasGroupViewExposureId;
 @property(readonly, nonatomic) _Bool hasOptInButtonLocationId;
 @property(nonatomic) _Bool hasOptInButtonLocation;
 @property(nonatomic) int optInButtonLocation; // @synthesize optInButtonLocation=_optInButtonLocation;

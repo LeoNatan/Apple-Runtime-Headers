@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSString;
+@class NSArray, NSBridgedTextCorrectionController, NSBridgedTextSubstitutionController, NSBridgedTextTouchBarController, NSString, TITextInputTraits;
 
 @interface NSTextInputContext : NSObject
 {
@@ -38,10 +38,16 @@
         unsigned int _unmarkbeforeinsert:1;
         unsigned int _completionHandlingClient:1;
     } _ticFlags;
+    TITextInputTraits *_tiTextInputTraits;
+    NSBridgedTextTouchBarController *_bridgedTextTouchBarController;
+    NSBridgedTextCorrectionController *_bridgedTextCorrectionController;
+    NSBridgedTextSubstitutionController *_bridgedTextSubstitutionController;
+    struct _NSRange tiSelectedTextRange;
 }
 
 + (id)localeForInputSource:(id)arg1;
 + (id)localizedNameForInputSource:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentInputContext_withFirstResponderSync:(BOOL)arg1;
 + (id)currentInputContext;
 + (void)initialize;
@@ -51,12 +57,17 @@
 + (void)updateInputContexts;
 + (id)inputContextWithClient:(id)arg1;
 + (void)_applicationDeactivated:(id)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)keyPathsForValuesAffectingKeyboardInputSourceOverlayVisible;
 + (BOOL)currentKeyboardInputSourceParticipatesInTouchBar;
 + (void)cycleToNextInputKeyboardLayout:(id)arg1;
 + (void)cycleToNextInputScript:(id)arg1;
 @property(readonly) id <NSTextInputClient> client; // @synthesize client=_client;
+@property(retain) NSBridgedTextSubstitutionController *bridgedTextSubstitutionController; // @synthesize bridgedTextSubstitutionController=_bridgedTextSubstitutionController;
+@property(retain) NSBridgedTextCorrectionController *bridgedTextCorrectionController; // @synthesize bridgedTextCorrectionController=_bridgedTextCorrectionController;
+@property(retain) NSBridgedTextTouchBarController *bridgedTextTouchBarController; // @synthesize bridgedTextTouchBarController=_bridgedTextTouchBarController;
+@property struct _NSRange tiSelectedTextRange; // @synthesize tiSelectedTextRange;
+@property(retain) TITextInputTraits *tiTextInputTraits; // @synthesize tiTextInputTraits=_tiTextInputTraits;
+- (void)doCommandBySelector:(SEL)arg1 completionHandlerWithResult:(CDUnknownBlockType)arg2;
 - (unsigned long long)incrementalSearchClientGeometry;
 - (BOOL)drawsVerticallyForCharacterAtIndex:(unsigned long long)arg1;
 - (long long)windowLevel;
@@ -100,6 +111,7 @@
 - (void)tryHandleTSMEvent_firstRectInRangeLoop_withContext:(struct HandleTSMEventCompletionContext *)arg1 setupForDispatch:(CDUnknownBlockType)arg2 loopCondition:(CDUnknownBlockType)arg3 dispatchWorkEach:(CDUnknownBlockType)arg4 eachLoopCompletion:(CDUnknownBlockType)arg5 continuation:(CDUnknownBlockType)arg6;
 - (void)do_HandleTSMEvent_firstRectInRangeLoop:(struct HandleTSMEventCompletionContext *)arg1 whileCondition:(CDUnknownBlockType)arg2 dispatchWorkEach:(CDUnknownBlockType)arg3 eachLoopCompletion:(CDUnknownBlockType)arg4 continuation:(CDUnknownBlockType)arg5;
 - (void)tryHandleTSMEvent_baselineDeltaForCharacterAtIndex_withContext:(struct HandleTSMEventCompletionContext *)arg1 dispatchCondition:(CDUnknownBlockType)arg2 furtherDispatchCondition:(CDUnknownBlockType)arg3 dispatchWork:(CDUnknownBlockType)arg4 continuation:(CDUnknownBlockType)arg5;
+- (void)tryHandleTSMEvent_attributedString_attributedSubstringForProposedRange_withContext:(struct HandleTSMEventCompletionContext *)arg1 dispatchCondition:(CDUnknownBlockType)arg2 dispatchWork:(CDUnknownBlockType)arg3 dispatchFurtherCondition:(CDUnknownBlockType)arg4 dispatchFurtherWork:(CDUnknownBlockType)arg5 continuation:(CDUnknownBlockType)arg6;
 - (void)tryHandleTSMEvent_attributedSubstringForProposedRange_withContext:(struct HandleTSMEventCompletionContext *)arg1 dispatchCondition:(CDUnknownBlockType)arg2 dispatchWork:(CDUnknownBlockType)arg3 continuation:(CDUnknownBlockType)arg4;
 - (void)tryHandleTSMEvent_drawsVerticallyForCharacterAtIndex_withContext:(struct HandleTSMEventCompletionContext *)arg1 dispatchCondition:(CDUnknownBlockType)arg2 dispatchWork:(CDUnknownBlockType)arg3 continuation:(CDUnknownBlockType)arg4;
 - (void)tryHandleTSMEvent_attributedString_withContext:(struct HandleTSMEventCompletionContext *)arg1 dispatchCondition:(CDUnknownBlockType)arg2 dispatchWork:(CDUnknownBlockType)arg3 continuation:(CDUnknownBlockType)arg4;
@@ -117,6 +129,9 @@
 - (BOOL)isSecureInputMode;
 - (void)setKeyBindingManager:(id)arg1;
 - (id)keyBindingManager;
+- (BOOL)_isIOSMacClientNonTextEditing;
+- (BOOL)_isIOSMacClientTextEditing;
+- (BOOL)_isIOSMacClient;
 - (BOOL)_isAsyncTextInputClient;
 - (void)_handleCommand:(SEL)arg1;
 - (void)_handleText:(id)arg1;
@@ -140,6 +155,49 @@
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)doCommandBySelector:(SEL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(nonatomic, setter=setRTISelectedTextRange:) struct _NSRange rtiSelectedTextRange; // @dynamic rtiSelectedTextRange;
+- (BOOL)doCommandBySelectorWithResult:(SEL)arg1;
+- (void)convertToHalfWidth:(id)arg1;
+- (void)convertToFullWidth:(id)arg1;
+- (void)convertToTraditionalChinese:(id)arg1;
+- (void)convertToSimplifiedChinese:(id)arg1;
+- (void)capitalizeWord:(id)arg1;
+- (void)lowercaseWord:(id)arg1;
+- (void)uppercaseWord:(id)arg1;
+- (void)replaceTextInSelection:(id)arg1;
+- (void)addLinksInSelection:(id)arg1;
+- (void)replaceDashesInSelection:(id)arg1;
+- (void)replaceQuotesInSelection:(id)arg1;
+- (void)toggleAutomaticTextReplacement:(id)arg1;
+- (void)toggleAutomaticDashSubstitution:(id)arg1;
+- (void)toggleAutomaticLinkDetection:(id)arg1;
+- (void)toggleAutomaticQuoteSubstitution:(id)arg1;
+- (void)orderFrontSubstitutionsPanel:(id)arg1;
+- (void)ignoreSpelling:(id)arg1;
+- (void)changeSpelling:(id)arg1;
+- (void)toggleAutomaticSpellingCorrection:(id)arg1;
+- (void)toggleGrammarChecking:(id)arg1;
+- (void)toggleContinuousSpellChecking:(id)arg1;
+- (void)checkSpelling:(id)arg1;
+- (void)showGuessPanel:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
+- (void)prepareContextMenu:(id)arg1;
+- (BOOL)drawsVerticallyForCharacterAtIndex_RTI:(unsigned long long)arg1;
+- (double)baselineDeltaForCharacterAtIndex_RTI:(unsigned long long)arg1;
+- (double)fractionOfDistanceThroughGlyphForPoint_RTI:(struct CGPoint)arg1;
+- (id)attributedString_RTI;
+- (unsigned long long)characterIndexForPoint_RTI:(struct CGPoint)arg1;
+- (struct CGRect)firstRectForCharacterRange_RTI:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
+- (id)validAttributesForMarkedText_RTI;
+- (id)attributedSubstringForProposedRange_RTI:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
+- (BOOL)hasMarkedText_RTI;
+- (struct _NSRange)markedRange_RTI;
+- (struct _NSRange)selectedRange_RTI;
+- (void)unmarkText_RTI;
+- (void)setMarkedText_RTI:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
+- (void)doCommandBySelector_RTI:(SEL)arg1 resultHandler:(CDUnknownBlockType)arg2;
+- (void)doCommandBySelector_RTI:(SEL)arg1;
+- (void)insertText_RTI:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (void)updateFunctionRowItemState;
 - (id)generateFunctionRowItemIdentifiers;
 - (void)setFunctionRowItemIdentifiers:(id)arg1;

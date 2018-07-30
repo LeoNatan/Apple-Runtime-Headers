@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class MCDPCItem, MCDPCModel, NSIndexPath, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
+@class MCDPCItem, MCDPCModel, NSIndexPath, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MCDPCContainer : NSObject
 {
@@ -14,9 +14,6 @@
     NSIndexPath *_indexPath;
     MCDPCItem *_rootItem;
     MCDPCModel *_model;
-    NSMapTable *_cachedItemsByIndicies;
-    NSMapTable *_cachedIndiciesByIdentifier;
-    NSObject<OS_dispatch_queue> *_serialAccessContainerQueue;
     _Bool _showPlaybackProgress;
     struct {
         unsigned int didInvalidateRootItem:1;
@@ -26,8 +23,14 @@
     } __supportedDelegateCalls;
     long long _cachedCount;
     id <MCDPCContainerDelegate> _delegate;
+    NSObject<OS_dispatch_queue> *_serialAccessContainerQueue;
+    NSMutableDictionary *_cachedIndiciesByIdentifier;
+    NSMutableDictionary *_cachedItemsByIndicies;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *cachedItemsByIndicies; // @synthesize cachedItemsByIndicies=_cachedItemsByIndicies;
+@property(retain, nonatomic) NSMutableDictionary *cachedIndiciesByIdentifier; // @synthesize cachedIndiciesByIdentifier=_cachedIndiciesByIdentifier;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialAccessContainerQueue; // @synthesize serialAccessContainerQueue=_serialAccessContainerQueue;
 @property(nonatomic) __weak id <MCDPCContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool showPlaybackProgress; // @synthesize showPlaybackProgress=_showPlaybackProgress;
 @property(nonatomic) long long cachedCount; // @synthesize cachedCount=_cachedCount;
@@ -36,17 +39,21 @@
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) __weak MCDPCItem *rootItem; // @synthesize rootItem=_rootItem;
 - (void).cxx_destruct;
+- (id)cachedIndexByIdentifier:(id)arg1;
 - (id)cachedItemForIdentifier:(id)arg1;
 - (id)cachedItemForIndex:(long long)arg1;
 - (void)getChildrenInRange:(struct _NSRange)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getCountOfChildrenWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getNowPlayingIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getPlaybackProgressSupportForChildrenWithCompletion:(CDUnknownBlockType)arg1;
-- (void)getRootItemWithCompletion:(CDUnknownBlockType)arg1;
+- (void)beginLoadingItemWithCompletion:(CDUnknownBlockType)arg1;
+- (void)beginLoadingItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)isValidForRefreshedParent:(id)arg1;
 - (void)refreshWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchContentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateRootItemWithCompletion:(CDUnknownBlockType)arg1;
 - (id)containerAtIndex:(long long)arg1;
+- (id)containerForItem:(id)arg1;
 - (void)setCount:(long long)arg1;
 @property(readonly, nonatomic) long long showCurrentlyPlayingIndex;
 - (void)setShowPlaybackProgress:(_Bool)arg1;

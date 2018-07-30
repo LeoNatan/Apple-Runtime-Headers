@@ -8,6 +8,7 @@
 
 @class BKSTouchDeliveryPolicyAssertion, PGHostedWindowHostingHandle, _UIRemoteView;
 
+__attribute__((visibility("hidden")))
 @interface PGLayerHostView : UIView
 {
     _UIRemoteView *_remoteView;

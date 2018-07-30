@@ -12,6 +12,7 @@
     _Bool _diagonalsAllowed;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)graphFromGridStartingAt:(int)arg1 width:(int)arg2 height:(_Bool)arg3 diagonalsAllowed:(Class)arg4 nodeClass: /* Error: Ran out of types for this method. */;
 + (id)graphFromGridStartingAt:(int)arg1 width:(int)arg2 height:(_Bool)arg3 diagonalsAllowed: /* Error: Ran out of types for this method. */;
 @property(readonly, nonatomic) _Bool diagonalsAllowed; // @synthesize diagonalsAllowed=_diagonalsAllowed;

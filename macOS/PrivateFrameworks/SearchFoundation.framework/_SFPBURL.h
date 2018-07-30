@@ -26,7 +26,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasAddress;
 - (id)initWithNSURL:(id)arg1;
 
 // Remaining properties

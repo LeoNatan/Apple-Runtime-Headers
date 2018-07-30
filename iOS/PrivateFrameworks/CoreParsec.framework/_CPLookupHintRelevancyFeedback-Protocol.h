@@ -10,17 +10,11 @@
 
 @protocol _CPLookupHintRelevancyFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasContext;
 @property(copy, nonatomic) NSString *context;
-@property(readonly, nonatomic) _Bool hasGrade;
 @property(nonatomic) int grade;
-@property(readonly, nonatomic) _Bool hasDiscarded;
 @property(nonatomic) _Bool discarded;
-@property(readonly, nonatomic) _Bool hasDomain;
 @property(copy, nonatomic) NSString *domain;
-@property(readonly, nonatomic) _Bool hasHintRange;
 @property(retain, nonatomic) _CPRange *hintRange;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

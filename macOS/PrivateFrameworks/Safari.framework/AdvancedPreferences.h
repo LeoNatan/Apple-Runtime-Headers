@@ -6,7 +6,7 @@
 
 #import <Safari/PreferencesModule.h>
 
-@class NSButton, NSComboBox, NSPopUpButton, NSTextField, NSView, PlugInAutoStartData;
+@class EnableDevelopMenuButtonHostViewController, NSButton, NSComboBox, NSPopUpButton, NSTextField, NSView, PlugInAutoStartData;
 
 __attribute__((visibility("hidden")))
 @interface AdvancedPreferences : PreferencesModule
@@ -26,19 +26,21 @@ __attribute__((visibility("hidden")))
     PlugInAutoStartData *_plugInStartDataEditor;
     NSTextField *_plugInStartTallyField;
     NSButton *_plugInStartDetailsButton;
+    EnableDevelopMenuButtonHostViewController *_remoteDevelopMenuButtonViewController;
     NSView *_contentView;
     NSTextField *_smartSearchFieldSectionLabel;
     NSButton *_smartSearchFieldShowsFullURLCheckbox;
     NSButton *_saveReadingListItemsAutomaticallyCheckbox;
+    NSView *_includeDevelopMenuButtonContainerView;
 }
 
++ (void)setShowDevelopMenu:(BOOL)arg1;
+@property(nonatomic) __weak NSView *includeDevelopMenuButtonContainerView; // @synthesize includeDevelopMenuButtonContainerView=_includeDevelopMenuButtonContainerView;
 @property(nonatomic) __weak NSButton *saveReadingListItemsAutomaticallyCheckbox; // @synthesize saveReadingListItemsAutomaticallyCheckbox=_saveReadingListItemsAutomaticallyCheckbox;
 @property(nonatomic) __weak NSButton *smartSearchFieldShowsFullURLCheckbox; // @synthesize smartSearchFieldShowsFullURLCheckbox=_smartSearchFieldShowsFullURLCheckbox;
 @property(nonatomic) __weak NSTextField *smartSearchFieldSectionLabel; // @synthesize smartSearchFieldSectionLabel=_smartSearchFieldSectionLabel;
 @property(nonatomic) __weak NSView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (void)_updateCheckbox:(id)arg1 fromPreferenceKey:(id)arg2;
-- (void)_updateCheckbox:(id)arg1 isChecked:(BOOL)arg2 determinedFromPreferenceKey:(id)arg3;
 - (id)helpAnchor;
 - (void)moduleWasInstalled;
 - (void)moduleWillBeRemoved;
@@ -73,8 +75,8 @@ __attribute__((visibility("hidden")))
 - (void)disableUserStyleSheet:(id)arg1;
 - (void)takeStyleSheetFromMenuItem:(id)arg1;
 - (void)updateStyleSheetMenu;
-- (id)styleSheetPathPreference;
-- (void)setStyleSheetPathPreference:(id)arg1;
+- (id)_styleSheetPathPreference;
+- (void)_setStyleSheetPathPreference:(id)arg1;
 - (BOOL)userStyleSheetEnabled;
 - (void)setUserStyleSheetEnabled:(_Bool)arg1;
 - (void)openProxyPreferences:(id)arg1;

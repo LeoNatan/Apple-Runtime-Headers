@@ -17,6 +17,12 @@
 + (id)sharedInstance;
 @property(retain) id <IMDMessagePTaskStore> messagePTaskStore; // @synthesize messagePTaskStore=_messagePTaskStore;
 @property(retain) NSString *modificationStamp; // @synthesize modificationStamp=_lastModificationStamp;
+- (void)_broadcastToForceReloadChats;
+- (void)_broadcastUpdateForMergedChatWithPersonCentricIDIfNeeded:(id)arg1 updatedHandleID:(id)arg2;
+- (id)_allHandlesOnAllChats;
+- (_Bool)updateHandle:(id)arg1 forMessage:(id)arg2 WithPC:(id)arg3 onService:(id)arg4;
+- (_Bool)updatePersonCentricIDForHandlesInChatWithMessage:(id)arg1 fromIdentifier:(id)arg2 personCentricID:(id)arg3 chat:(id)arg4;
+- (id)_chatRegistry;
 - (void)setChatIsFiltered:(_Bool)arg1 withChatGuid:(id)arg2;
 - (void)deleteChat:(id)arg1;
 - (void)removeMessageWithGUID:(id)arg1 fromChat:(id)arg2;

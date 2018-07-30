@@ -23,7 +23,6 @@
     void *_contextInfo;
     NSPrintInfo *_presentedPrintInfo;
     NSWindowController *_windowController;
-    id _reserved[2];
 }
 
 + (id)printPanel;

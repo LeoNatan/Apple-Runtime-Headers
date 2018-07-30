@@ -14,6 +14,7 @@
 }
 
 + (long long)authorizationStatus;
++ (_Bool)isAllDayElevationAvailable;
 + (_Bool)isPedometerEventTrackingAvailable;
 + (_Bool)isCadenceAvailable;
 + (_Bool)isPaceAvailable;
@@ -31,6 +32,7 @@
 - (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)queryPedometerDataSinceRecord:(long long)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)_startPedometerUpdatesSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (id)_pedometerDataWithRecordID:(long long)arg1;
 - (void)stopPedometerUpdates;
 - (void)startPedometerUpdatesFromDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

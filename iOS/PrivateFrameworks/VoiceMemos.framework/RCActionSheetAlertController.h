@@ -6,6 +6,7 @@
 
 #import "UIAlertController.h"
 
+__attribute__((visibility("hidden")))
 @interface RCActionSheetAlertController : UIAlertController
 {
 }

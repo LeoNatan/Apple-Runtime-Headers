@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSData *bloomFilterData; // @synthesize bloomFilterData=_bloomFilterData;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

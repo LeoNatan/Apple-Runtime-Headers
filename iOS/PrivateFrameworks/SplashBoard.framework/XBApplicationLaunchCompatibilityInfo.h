@@ -37,7 +37,7 @@
 @property(readonly, nonatomic) _Bool allowsSavingLaunchImages;
 @property(readonly, copy) NSString *description;
 - (id)initWithBundle:(id)arg1;
-- (void)set_launchInterfaces:(id)arg1;
+- (void)_setLaunchInterfaces:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;

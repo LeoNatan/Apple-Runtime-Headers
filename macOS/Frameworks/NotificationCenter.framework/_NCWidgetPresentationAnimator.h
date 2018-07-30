@@ -10,6 +10,7 @@
 
 @class NSExtensionContext, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NCWidgetPresentationAnimator : NSObject <NSViewControllerPresentationAnimator>
 {
     NSExtensionContext *_context;

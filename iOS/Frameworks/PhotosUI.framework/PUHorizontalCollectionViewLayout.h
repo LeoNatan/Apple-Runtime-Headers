@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGRect collectionViewBounds;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (struct CGSize)collectionViewContentSize;

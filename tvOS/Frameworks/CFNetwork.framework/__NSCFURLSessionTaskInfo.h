@@ -24,6 +24,7 @@
     _Bool __hasSZExtractor;
     _Bool __doesSZExtractorConsumeExtractedData;
     _Bool _initializedWithAVAsset;
+    unsigned int _qos;
     unsigned long long _identifier;
     unsigned long long _taskKind;
     double _creationTime;
@@ -44,6 +45,7 @@
     unsigned long long _retryCount;
     unsigned long long _lowThroughputTimerRetryCount;
     long long _basePriority;
+    long long _discretionaryOverride;
     NSString *_uniqueIdentifier;
     NSString *_storagePartitionIdentifier;
     long long _bytesPerSecondLimit;
@@ -103,6 +105,8 @@
 @property long long bytesPerSecondLimit; // @synthesize bytesPerSecondLimit=_bytesPerSecondLimit;
 @property(copy) NSString *storagePartitionIdentifier; // @synthesize storagePartitionIdentifier=_storagePartitionIdentifier;
 @property(copy) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property unsigned int qos; // @synthesize qos=_qos;
+@property long long discretionaryOverride; // @synthesize discretionaryOverride=_discretionaryOverride;
 @property(getter=isDiscretionary) _Bool discretionary; // @synthesize discretionary=_discretionary;
 @property long long basePriority; // @synthesize basePriority=_basePriority;
 @property _Bool shouldCancelOnDisconnect; // @synthesize shouldCancelOnDisconnect=_shouldCancelOnDisconnect;

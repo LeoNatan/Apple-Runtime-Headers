@@ -7,7 +7,7 @@
 #import "AdAnalyzable.h"
 #import "NSObject.h"
 
-@class ADMRAIDAction, NSError, NSString, UIView, UIViewController;
+@class ADLayoutOptions, ADMRAIDAction, NSError, NSString, UIView, UIViewController;
 
 @protocol ADAdRecipient <NSObject, AdAnalyzable>
 @property(nonatomic) long long lastErrorCode;
@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) UIViewController *presentingViewController;
 @property(readonly, nonatomic) UIView *adSpaceView;
 @property(readonly, nonatomic) long long options;
+@property(retain, nonatomic) ADLayoutOptions *layoutOptions;
 @property(readonly, nonatomic) int internalAdType;
 - (void)adlibManagedVideoAdDidToggleToMute:(_Bool)arg1;
 - (void)adlibManagedVideoAdDidTapVideo;

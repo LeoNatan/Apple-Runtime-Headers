@@ -10,7 +10,6 @@
 {
 }
 
-- (id)items;
 - (id)folders;
 - (id)filePackages;
 - (id)files;

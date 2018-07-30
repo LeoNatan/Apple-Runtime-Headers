@@ -6,20 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSCalendar, NSDate, NSString, NSUUID;
+@class HDAssertion, NSCalendar, NSDate, NSString, NSUUID;
 
 @interface HDSyncSession : NSObject
 {
-    _Bool _attemptWhileLocking;
     id <HDSyncSessionDelegate> _delegate;
     id <HDSyncStore> _syncStore;
     NSUUID *_sessionUUID;
     NSDate *_startDate;
     NSCalendar *_calendar;
     NSString *_reason;
+    HDAssertion *_databaseAccessibilityAssertion;
+    double _databaseAccessibilityTimeout;
 }
 
-@property(readonly, nonatomic) _Bool attemptWhileLocking; // @synthesize attemptWhileLocking=_attemptWhileLocking;
+@property(nonatomic) double databaseAccessibilityTimeout; // @synthesize databaseAccessibilityTimeout=_databaseAccessibilityTimeout;
+@property(retain, nonatomic) HDAssertion *databaseAccessibilityAssertion; // @synthesize databaseAccessibilityAssertion=_databaseAccessibilityAssertion;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -38,7 +40,7 @@
 - (_Bool)syncDidBeginWithProfile:(id)arg1 error:(id *)arg2;
 - (void)syncWillBegin;
 - (id)init;
-- (id)initWithSyncStore:(id)arg1 attemptWhileLocking:(_Bool)arg2 reason:(id)arg3 delegate:(id)arg4;
+- (id)initWithSyncStore:(id)arg1 reason:(id)arg2 delegate:(id)arg3;
 
 @end
 

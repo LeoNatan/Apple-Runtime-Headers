@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;
 - (id)viewController;
+- (int)type;
 - (void)showRelativeToView:(id)arg1 preferredEdge:(unsigned long long)arg2;
 - (void)setUIEnabled:(BOOL)arg1;
 - (void)close;

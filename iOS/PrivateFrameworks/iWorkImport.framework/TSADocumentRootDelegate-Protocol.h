@@ -12,6 +12,7 @@
 @property(readonly, nonatomic) NSString *name;
 
 @optional
+@property(readonly, nonatomic) _Bool isClosedOrClosing;
 @property(readonly) TSACollaborationErrorAction *collaborationDisallowedErrorAction;
 @property(readonly, nonatomic) TSADocumentInfo *documentInfo;
 @property(readonly, nonatomic) NSString *documentCachePath;

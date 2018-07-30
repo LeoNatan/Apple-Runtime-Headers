@@ -46,6 +46,7 @@
 - (void)_presentContactAppleSupportAlertWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_contactAppleSupportAlertControllerForPass:(id)arg1;
 - (void)_presentIdentityVerificationWithManualTrigger:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_presentActivationFlowWithUserInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentActivationFlowWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_paymentWebService;
 - (id)_peerPaymentPass;
@@ -53,6 +54,9 @@
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (unsigned long long)currentPeerPaymentAccountResolution;
+- (void)_presentFlowForAccountResolution:(unsigned long long)arg1 manuallyTriggered:(_Bool)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)presentFlowForAccountResolution:(unsigned long long)arg1 manuallyTriggered:(_Bool)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)presentFlowForAccountResolution:(unsigned long long)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentFlowForAccountResolution:(unsigned long long)arg1 manuallyTriggered:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentFlowForAccountResolution:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentResolutionForCurrentAccountStateWithCompletion:(CDUnknownBlockType)arg1;

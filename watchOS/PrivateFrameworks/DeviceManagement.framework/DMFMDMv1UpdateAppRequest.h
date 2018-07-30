@@ -17,6 +17,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (Class)whitelistedClassForResultObject;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) NSString *VPNUUIDString; // @synthesize VPNUUIDString=_VPNUUIDString;
 @property(nonatomic) unsigned int managementOptions; // @synthesize managementOptions=_managementOptions;

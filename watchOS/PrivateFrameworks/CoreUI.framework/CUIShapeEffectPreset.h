@@ -14,8 +14,10 @@
     float _minimumShadowSpread;
 }
 
++ (int)cgBlendModeFromCUIEffectBlendMode:(unsigned int)arg1;
 + (unsigned int)cuiEffectBlendModeFromCGBlendMode:(int)arg1;
 + (id)requiredEffectParametersForEffectType:(unsigned int)arg1;
+@property(nonatomic) float scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property float minimumShadowSpread; // @synthesize minimumShadowSpread=_minimumShadowSpread;
 - (id)debugDescription;
 - (void)addEffectsFromPreset:(id)arg1;

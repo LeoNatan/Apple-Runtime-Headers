@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     float _progress;
 }
 
+- (BOOL)_subclassHasVibrancyIncompatibleDrawing;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_drawProgressBarWithCellFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)updateWithProgress:(float)arg1;

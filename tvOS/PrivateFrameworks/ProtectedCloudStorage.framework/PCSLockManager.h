@@ -8,6 +8,7 @@
 
 @class NSHashTable, NSObject<OS_os_log>;
 
+__attribute__((visibility("hidden")))
 @interface PCSLockManager : NSObject
 {
     NSHashTable *_observers;

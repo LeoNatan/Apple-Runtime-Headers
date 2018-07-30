@@ -4,20 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <AddressBook/ABSearchHighlightFormatter.h>
+#import "NSFormatter.h"
 
-@class ABCNPhoneNumberDetector;
+@class CNCache;
 
-@interface ABPhoneFormatter : ABSearchHighlightFormatter
+@interface ABPhoneFormatter : NSFormatter
 {
-    ABCNPhoneNumberDetector *_phoneNumberDetector;
+    CNCache *_formattedPhoneNumbersCache;
 }
 
++ (id)stringForPhoneNumber:(id)arg1 options:(unsigned long long)arg2;
++ (id)localizedStringByStandardizingPhoneNumber:(id)arg1;
++ (id)phoneNumberDetector;
++ (id)generateOnlyPhoneCharactersSet;
++ (id)onlyPhoneCharactersSet;
++ (BOOL)stringContainsOnlyPhoneCharacters:(id)arg1;
++ (id)formatRawPhoneNumber:(id)arg1;
 + (id)sharedPhoneFormatter;
+@property(readonly, nonatomic) CNCache *formattedPhoneNumbersCache; // @synthesize formattedPhoneNumbersCache=_formattedPhoneNumbersCache;
 - (void).cxx_destruct;
-- (id)stringForPhoneNumber:(id)arg1 options:(unsigned long long)arg2;
-- (id)localizedStringByStandardizingPhoneNumber:(id)arg1;
-- (BOOL)stringContainsOnlyPhoneCharacters:(id)arg1;
 - (BOOL)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (void)setFormatAutosaveName:(id)arg1;

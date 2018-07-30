@@ -11,17 +11,20 @@
 @interface PHLivePhotoRequestOptions : NSObject <NSCopying>
 {
     _Bool _networkAccessAllowed;
+    _Bool _routeToNewImageManager;
     int _version;
     int _deliveryMode;
     CDUnknownBlockType _progressHandler;
 }
 
+@property(nonatomic) _Bool routeToNewImageManager; // @synthesize routeToNewImageManager=_routeToNewImageManager;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic, getter=isNetworkAccessAllowed) _Bool networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
 @property(nonatomic) int deliveryMode; // @synthesize deliveryMode=_deliveryMode;
 @property(nonatomic) int version; // @synthesize version=_version;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 
 @end
 

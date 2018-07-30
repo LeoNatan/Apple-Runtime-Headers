@@ -24,6 +24,9 @@
 @property(copy, nonatomic) NSURL *keyCertificateURL; // @synthesize keyCertificateURL=_keyCertificateURL;
 @property(nonatomic, getter=isiTunesStoreStream) _Bool iTunesStoreStream; // @synthesize iTunesStoreStream=_isiTunesStoreStream;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *alternateKeyServerURL;
+@property(readonly, copy, nonatomic) NSURL *alternateKeyCertificateURL;
+@property(readonly, copy, nonatomic) NSURL *alternatePlaylistURL;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithItemResponseDictionary:(id)arg1;
 

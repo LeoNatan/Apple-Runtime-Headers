@@ -9,19 +9,18 @@
 #import "HMFHTTPServerDelegate.h"
 #import "HMFTimerDelegate.h"
 
-@class HMFHTTPServer, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMFHTTPServer, HMFUnfairLock, NSArray, NSDictionary, NSMutableArray, NSString, NSUUID;
 
 @interface HMDHTTPServerMessageTransport : HMFObject <HMFHTTPServerDelegate, HMFTimerDelegate>
 {
+    HMFUnfairLock *_lock;
     NSMutableArray *_clientConnections;
     HMFHTTPServer *_server;
     id <HMDHTTPServerMessageTransportDelegate> _delegate;
     NSUUID *_identifier;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (id)shortDescription;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMDHTTPServerMessageTransportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HMFHTTPServer *server; // @synthesize server=_server;

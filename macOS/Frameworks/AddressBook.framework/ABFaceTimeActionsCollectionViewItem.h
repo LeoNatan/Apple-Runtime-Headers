@@ -6,20 +6,28 @@
 
 #import <AddressBook/ABCollectionViewItem.h>
 
-__attribute__((visibility("hidden")))
+@class ABCommunicationButtonsController, ABFaceTimeCommunicationsBridge;
+
 @interface ABFaceTimeActionsCollectionViewItem : ABCollectionViewItem
 {
     BOOL _availableForFaceTime;
+    ABFaceTimeCommunicationsBridge *_faceTimeBridge;
+    ABCommunicationButtonsController *_buttonsController;
 }
 
+@property(retain, nonatomic) ABCommunicationButtonsController *buttonsController; // @synthesize buttonsController=_buttonsController;
+@property(retain, nonatomic) ABFaceTimeCommunicationsBridge *faceTimeBridge; // @synthesize faceTimeBridge=_faceTimeBridge;
 @property(nonatomic) BOOL availableForFaceTime; // @synthesize availableForFaceTime=_availableForFaceTime;
+- (void).cxx_destruct;
 - (BOOL)supportsClickToEdit;
-- (void)updateFaceTimeButtons;
+- (void)datumViewWantsActionGlyphs:(id)arg1;
 - (void)updateView;
 - (void)_updateViewValue;
 - (id)_localizedLabel;
 - (id)_labelMenuItems;
 - (id)faceTimeRowView;
+- (void)didInsertIntoCollectionView:(id)arg1;
+- (id)init;
 
 @end
 

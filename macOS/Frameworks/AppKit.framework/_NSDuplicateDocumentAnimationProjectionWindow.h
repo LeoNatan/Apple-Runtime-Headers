@@ -8,6 +8,7 @@
 
 @class NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface _NSDuplicateDocumentAnimationProjectionWindow : _NSSlideAndCrossFadeAnimationProjectionWindow
 {
     NSWindow *sourceWindow;

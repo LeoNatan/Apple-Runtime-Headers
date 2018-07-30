@@ -27,6 +27,7 @@
 - (void)setCarName:(id)arg1;
 @property(readonly, copy, nonatomic) INSpeakableString *carName;
 - (id)initWithCarName:(id)arg1 signals:(unsigned long long)arg2;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

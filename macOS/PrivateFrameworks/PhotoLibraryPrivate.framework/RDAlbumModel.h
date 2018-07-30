@@ -14,6 +14,7 @@
 
 + (Class)tableClass;
 + (id)localIdentifierCode;
+@property(copy, nonatomic) NSString *projectExtensionRenderedPreviewUuid;
 @property(copy, nonatomic) NSString *projectDocumentType;
 @property(copy, nonatomic) NSData *projectExtensionData;
 @property(copy, nonatomic) NSString *projectExtensionIdentifier;

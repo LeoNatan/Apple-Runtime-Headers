@@ -6,6 +6,9 @@
 
 #import <AppKit/NSColorSpaceSliders.h>
 
+@class NSView;
+
+__attribute__((visibility("hidden")))
 @interface NSCMYKSliders : NSColorSpaceSliders
 {
     id cyanSlider;
@@ -16,10 +19,11 @@
     id yellowText;
     id magentaText;
     id blackText;
-    id cmykView;
+    NSView *_cmykView;
 }
 
 + (id)genericColorSpace;
+@property(retain) NSView *cmykView; // @synthesize cmykView=_cmykView;
 - (void)_adjustControls:(id)arg1 andSetColor:(BOOL)arg2;
 - (void)adjustControls:(id)arg1;
 - (BOOL)worksWhenModal;
@@ -29,6 +33,7 @@
 - (void)setMatchedColor:(id)arg1;
 - (id)fieldEditableControl;
 - (id)provideNewSubview:(id)arg1;
+- (void)dealloc;
 
 @end
 

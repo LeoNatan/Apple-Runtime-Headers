@@ -8,6 +8,7 @@
 
 @class AVExternalDevice, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVExternalDeviceScreenBorrowToken : NSObject
 {
     AVExternalDevice *_externalDevice;

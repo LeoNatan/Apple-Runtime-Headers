@@ -8,6 +8,7 @@
 
 @class NSSavePanel;
 
+__attribute__((visibility("hidden")))
 @interface NSNavNameFieldFormatter : NSFormatter
 {
     NSSavePanel *_panel;

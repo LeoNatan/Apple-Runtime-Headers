@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEORPProblemOptInResponse : PBCodable <NSCopying>
 {
     int _statusCode;

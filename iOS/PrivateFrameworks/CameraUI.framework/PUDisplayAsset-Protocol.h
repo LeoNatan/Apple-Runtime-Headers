@@ -36,5 +36,8 @@
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) unsigned long long mediaType;
 - (unsigned long long)isContentEqualTo:(id <PUDisplayAsset>)arg1;
+
+@optional
+- (id <PUAssetDestinationAssetCopyProperties>)destinationAssetCopyProperties;
 @end
 

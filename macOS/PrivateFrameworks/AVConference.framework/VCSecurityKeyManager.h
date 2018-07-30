@@ -6,22 +6,29 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, VCMasterKeyIndex;
 
 __attribute__((visibility("hidden")))
 @interface VCSecurityKeyManager : NSObject
 {
     NSMutableDictionary *_sendKeys;
     NSMutableDictionary *_receiveKeys;
-    unsigned int _latestSendKeyIndex;
-    unsigned int _latestReceiveKeyIndex;
+    VCMasterKeyIndex *_latestSendKeyIndex;
+    VCMasterKeyIndex *_latestReceiveKeyIndex;
+    VCMasterKeyIndex *_keyIndexNotReceived;
     BOOL _isSendKeysCleanUpPending;
     BOOL _isReceiveKeysCleanUpPending;
     id _delegate;
     NSObject<OS_dispatch_queue> *_keyManagerQueue;
+    BOOL _isKeyIndexNotReceivedReported;
+    double _lastKeyIndexNotReceived;
+    id _reportingAgentWeak;
+    BOOL _isDuplicateKeyReported;
+    NSMutableArray *_unknownKeyIndexList;
 }
 
 - (void)updateSendKeyMaterialWithIndex:(id)arg1 delay:(double)arg2;
+- (struct opaqueRTCReporting *)reportingAgent;
 - (void)pruneRecvKeyMaterialWithDelay:(double)arg1;
 - (void)pruneSendKeyMaterialWithDelay:(double)arg1;
 - (id)getLatestRecvKeyMaterial;
@@ -31,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)addSecurityKeyMaterial:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 reportingAgent:(struct opaqueRTCReporting *)arg2;
 
 @end
 

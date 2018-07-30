@@ -8,6 +8,7 @@
 
 @class NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface VSKeepAlive : NSObject
 {
     NSXPCConnection *_serverConnection;

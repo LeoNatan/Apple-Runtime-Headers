@@ -13,15 +13,17 @@
 @interface ASFriendListQuery : HKQuery <ASFriendListQueryClientInterface>
 {
     CDUnknownBlockType _updateHandler;
+    int _mostRecentToken;
 }
 
++ (id)clientInterfaceProtocol;
++ (_Bool)supportsTaskServers;
 - (void).cxx_destruct;
 - (void)queue_deliverError:(id)arg1;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;
 - (void)queue_queryDidDeactivate:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)client_deliverArchivedFriendList:(id)arg1 queryUUID:(id)arg2;
+- (void)client_deliverFriendList:(id)arg1 queryUUID:(id)arg2;
 - (id)initWithUpdateHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties

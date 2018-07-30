@@ -13,8 +13,10 @@
     int _needsSpotlightReindex;
 }
 
-- (void)performSpotlightReindexIfNeededWithHandler:(CDUnknownBlockType)arg1;
++ (_Bool)_setMobileMailNeedsSpotlightReIndex:(_Bool)arg1;
++ (_Bool)_mobileMailNeedsSpotlightReIndex;
 - (void)noteNeedsSpotlightReindex;
+- (void)performSpotlightReindexIfNeededWithHandler:(CDUnknownBlockType)arg1;
 - (void)resetTTRPromptAndForceReindex;
 - (_Bool)needsRebuildMessageInfoIndex;
 - (void)noteRebuildMessageInfoIndex;

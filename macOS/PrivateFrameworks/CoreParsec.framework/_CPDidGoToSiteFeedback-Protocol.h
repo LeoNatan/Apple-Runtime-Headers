@@ -10,9 +10,7 @@
 
 @protocol _CPDidGoToSiteFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasInput;
 @property(copy, nonatomic) NSString *input;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

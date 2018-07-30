@@ -14,7 +14,9 @@
 
 @interface SFText : NSObject <SFText, NSSecureCoding, NSCopying>
 {
-    CDStruct_6afdaceb _has;
+    struct {
+        unsigned int maxLines:1;
+    } _has;
     NSString *_text;
     unsigned long long _maxLines;
 }

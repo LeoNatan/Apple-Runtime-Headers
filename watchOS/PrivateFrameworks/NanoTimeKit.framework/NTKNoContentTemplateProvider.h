@@ -14,7 +14,7 @@
 + (id)_directAccessImageForIdentifier:(id)arg1 family:(int)arg2;
 + (id)_cachedOrDirectAccessImageForIdentifier:(id)arg1 family:(int)arg2;
 + (id)_displayNameForClientIdentifier:(id)arg1;
-+ (id)templateForClientIdentifier:(id)arg1 family:(int)arg2;
++ (id)templateForClientIdentifier:(id)arg1 family:(int)arg2 device:(id)arg3;
 
 @end
 

@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class AMPersonalityChooserItem, AMPluginHeaderViewController, AMWorkflowMetaData, NSDictionary, NSImage, NSString;
+@class AMPluginHeaderViewController, AMTemplateChooserItem, AMWorkflowMetaData, NSArray, NSDictionary, NSImage, NSString;
 
 @interface AMWorkflowPersonality : NSObject
 {
     NSDictionary *_settingsDictionary;
-    AMPersonalityChooserItem *_personalityChooserItem;
+    AMTemplateChooserItem *_templateChooserItem;
 }
 
 + (id)workflowPersonalityForTypeIdentifier:(id)arg1;
@@ -21,24 +21,26 @@
 + (id)applicationWorkflowPersonality;
 + (id)generalWorkflowPersonality;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) AMPersonalityChooserItem *personalityChooserItem;
+- (BOOL)installationCompleteForWorkflowReturningShowCompleted:(id)arg1 atURL:(id)arg2;
+@property(readonly, nonatomic) BOOL allowsRevealInAutomatorOnInstallation;
+@property(readonly, nonatomic) NSArray *templateChooserItems;
 @property(readonly, nonatomic) AMPluginHeaderViewController *pluginHeaderViewController;
 @property(readonly, nonatomic) NSString *headerViewString;
 @property(readonly, nonatomic) AMWorkflowMetaData *defaultWorkflowMetaData;
 @property(readonly, nonatomic) Class workflowMetaDataClass;
-- (BOOL)canSaveDocument:(id)arg1 error:(id *)arg2;
+- (BOOL)canSaveWorkflow:(id)arg1 atURL:(id)arg2 forInstallation:(BOOL)arg3 error:(id *)arg4;
 - (id)infoPlistForWorkflowMetaData:(id)arg1 error:(id *)arg2;
-- (BOOL)finishSavingDocument:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
+- (BOOL)finishSavingWorkflow:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
+- (BOOL)updateFileWrapper:(id)arg1 forWorkflowMetaData:(id)arg2 documentType:(id)arg3 error:(id *)arg4;
 @property(readonly, nonatomic) BOOL hasHeaderView;
-@property(readonly, nonatomic) struct CGSize templateImageInset;
-@property(readonly, nonatomic) double templateImageDimension;
-@property(readonly, copy, nonatomic) NSString *templateDescription;
+- (id)templateDescription;
 - (BOOL)shouldShowInTemplates;
 @property(readonly, copy, nonatomic) NSString *installationAccessoryViewNibName;
 - (id)infoStringForCompleteInstallationWithMetaData:(id)arg1;
+- (id)infoStringForInitialInstallationWithMetaData:(id)arg1;
+@property(readonly, nonatomic) BOOL showInTitlebar;
 @property(readonly, nonatomic) NSImage *imageRepresentation;
 @property(readonly, copy, nonatomic) NSString *unlocalizedWorkflowType;
-@property(readonly, copy, nonatomic) NSString *infoStringForInstallation;
 @property(readonly, copy, nonatomic) NSString *headerInputType;
 @property(readonly, nonatomic) BOOL allowsRenaming;
 @property(readonly, copy, nonatomic) NSString *libraryDirectoryPathComponent;
@@ -49,7 +51,7 @@
 @property(readonly, copy, nonatomic) NSString *documentType;
 @property(readonly, copy, nonatomic) NSString *workflowTypeIdentifier;
 @property(readonly, nonatomic) BOOL isPluginType;
-- (id)settingsDictionary;
+@property(readonly, nonatomic) NSDictionary *settingsDictionary;
 - (id)init;
 @property(readonly, nonatomic) NSDictionary *personalitySettingsDictionary;
 - (id)_createDefaultPersonalitySettingsDictionary;

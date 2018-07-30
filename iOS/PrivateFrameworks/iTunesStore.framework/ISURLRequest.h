@@ -6,18 +6,19 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSData, NSDictionary, NSInputStream, NSLock, NSString, NSURL, SSMutableURLRequestProperties;
 
-@interface ISURLRequest : NSObject <NSCoding, NSCopying>
+@interface ISURLRequest : NSObject <NSSecureCoding, NSCopying>
 {
     NSLock *_lock;
     SSMutableURLRequestProperties *_properties;
 }
 
 + (id)requestWithURL:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)requestProperties;
 @property(retain) NSArray *URLs;

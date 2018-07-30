@@ -8,7 +8,6 @@
 
 @class NSData, NSString, NSURL, QLItem;
 
-__attribute__((visibility("hidden")))
 @interface QLDataFetcher : QLItemFetcher
 {
     NSData *_data;

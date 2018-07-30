@@ -8,6 +8,7 @@
 
 @class NSArray, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface _PGPlaybackProgressIndicatorRangesView : UIView
 {
     UIColor *_rangeColor;

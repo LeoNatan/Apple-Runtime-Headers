@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityAttributeNames;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)setState:(long long)arg1;
-- (void)_fillBackground:(struct CGRect)arg1 withAlternateColor:(BOOL)arg2;
+- (id)_interiorBackgroundFillColor;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_updateTitle;
 - (id)_textAttributes;
-- (void)_addSourceListAttributes:(id)arg1 darkBackground:(BOOL)arg2;
-- (void)_addLegacySourceListAttributes:(id)arg1 darkBackground:(BOOL)arg2;
+- (void)_addSourceListAttributes:(id)arg1 emphasizedBackground:(BOOL)arg2;
+- (void)_addLegacySourceListAttributes:(id)arg1 emphasizedBackground:(BOOL)arg2;
 - (BOOL)_hasRolloverContentArt;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 

@@ -80,7 +80,7 @@
 - (void)flushForScheduler:(id)arg1;
 - (void)flushAllChanges;
 - (id)persistentStateDirectoryURL;
-- (id)init;
+- (id)initWithBundleID:(id)arg1;
 - (void)dealloc;
 - (id)copyPersistentCarbonWindowDictionariesAtTimeOfAppLaunch;
 - (void)deletePersistentWindow:(unsigned int)arg1;

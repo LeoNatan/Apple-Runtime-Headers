@@ -10,18 +10,18 @@
 #import "PUICDictationViewControllerDelegatePrivate.h"
 #import "PUICQuickboardEmojiViewControllerDelegatePrivate.h"
 
-@class NSArray, NSAttributedString, NSData, NSString, PUICAnimatedImageView, PUICHighlightingView, PUICPlaceholderTextView, PUICQuickboardLanguageController, PUICSideBySideButtonsView, UIGestureRecognizer, UIImage, UIImageView, UIScrollView, UIView;
+@class NSArray, NSAttributedString, NSData, NSString, PUICAnimatedImageView, PUICButton, PUICHighlightingView, PUICPlaceholderTextView, PUICQuickboardLanguageController, UIGestureRecognizer, UIImage, UIImageView, UIScrollView, UIStackView, UIView;
 
 @interface PUICQuickboardCompositionViewController : UIViewController <PUICDictationViewControllerDelegatePrivate, CSLPIButtonHandlerProtocol, PUICQuickboardEmojiViewControllerDelegatePrivate>
 {
-    UIView *_referenceView;
-    UIView *_containerView;
     PUICHighlightingView *_recipientsContainer;
     PUICPlaceholderTextView *_recipientsTextView;
     PUICHighlightingView *_subjectContainer;
     PUICPlaceholderTextView *_subjectTextView;
     PUICHighlightingView *_messageContainer;
     PUICPlaceholderTextView *_messageTextView;
+    UIView *_buttonSpacingView;
+    UIStackView *_menuView;
     UIView *_messageContentView;
     _Bool _messageHasOtherContent;
     UIView *_composeViewTapped;
@@ -29,7 +29,8 @@
     NSArray *_subjectTextViewConstraints;
     PUICAnimatedImageView *_animatedEmojiView;
     NSArray *_animatedEmojiViewConstraints;
-    PUICSideBySideButtonsView *_buttonsView;
+    PUICButton *_sendButton;
+    PUICButton *_cancelButton;
     UIGestureRecognizer *_recipientsFieldSelectionRecognizer;
     _Bool _needsContentRevealedOnQuickboardDismissal;
     _Bool _prefersStatusBarHidden;
@@ -126,6 +127,8 @@
 - (void)highlightButton:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)addConstraints;
+- (id)createPlaceHolderTextView;
+- (id)createHighlightingView;
 - (void)loadView;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

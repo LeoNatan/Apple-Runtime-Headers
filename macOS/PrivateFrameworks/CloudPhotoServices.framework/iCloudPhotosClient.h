@@ -8,10 +8,11 @@
 
 #import "ICPServiceClientDelegate.h"
 
-@class CPSCloudPhotoLibraryServiceClient, ICPMyPhotoStreamServiceClient, ICPSharedPhotoStreamServiceClient, NSObject<ICPAgentApplication>, NSObject<OS_dispatch_queue>, NSSet;
+@class CPSCloudPhotoLibraryServiceClient, ICPMyPhotoStreamServiceClient, ICPSharedPhotoStreamServiceClient, NSObject<ICPAgentApplication>, NSObject<OS_dispatch_queue>, NSObject<OS_os_log>, NSSet;
 
 @interface iCloudPhotosClient : ICPServiceClient <ICPServiceClientDelegate>
 {
+    NSObject<OS_os_log> *_log;
     BOOL _connectionWasActiveWhenInvalidatedByEndpointConnection;
     long long _state;
     NSSet *_enabledServiceIdentifiers;

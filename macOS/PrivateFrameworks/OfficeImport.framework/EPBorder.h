@@ -6,7 +6,6 @@
 
 #import <OfficeImport/EDBorder.h>
 
-__attribute__((visibility("hidden")))
 @interface EPBorder : EDBorder
 {
     unsigned long long mPrecedence;

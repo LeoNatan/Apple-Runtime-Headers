@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)useProxyAuth;
 - (id)overrideURLs;
 - (id)serviceURLs;
 - (void)reloadManifestDataWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -13,6 +13,7 @@
     SKTexture *_velocityTexture;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) SKTexture *velocityTexture; // @synthesize velocityTexture=_velocityTexture;
 - (void).cxx_destruct;
 // Error parsing type for property velocity:

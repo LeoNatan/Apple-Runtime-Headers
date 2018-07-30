@@ -9,10 +9,12 @@
 #import "NSXPCListenerDelegate.h"
 #import "RTClientListenerProtocol.h"
 
-@class NSMutableDictionary, NSString, RTAccountManager, RTActionManager, RTAssetManager, RTAuthorizationManager, RTDeviceLocationPredictor, RTDiagnostics, RTEventAgentManager, RTEventModelProvider, RTFingerprintManager, RTLearnedLocationManager, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMetricManager, RTPredictedApplicationManager, RTPredictedContentManager, RTPurgeManager, RTRouteManager, RTScenarioTriggerManager, RTVehicleLocationProvider, RTVisitManager, RTWiFiManager;
+@class NSMutableDictionary, NSString, NSXPCInterface, RTAccountManager, RTActionManager, RTAssetManager, RTAuthorizationManager, RTDeviceLocationPredictor, RTDiagnostics, RTEventAgentManager, RTEventModelProvider, RTFingerprintManager, RTLearnedLocationManager, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMetricManager, RTPredictedApplicationManager, RTPurgeManager, RTRouteManager, RTScenarioTriggerManager, RTVehicleLocationProvider, RTVisitManager, RTWiFiManager;
 
 @interface RTClientListener : RTXPCListener <RTClientListenerProtocol, NSXPCListenerDelegate>
 {
+    NSXPCInterface *_frameworkInterface;
+    NSXPCInterface *_daemonInterface;
     NSMutableDictionary *_persistedClients;
     RTPredictedApplicationManager *_predictedApplicationManager;
     RTScenarioTriggerManager *_scenarioTriggerManager;
@@ -30,7 +32,6 @@
     RTDiagnostics *_diagnostics;
     RTLearnedLocationManager *_learnedLocationManager;
     RTRouteManager *_routeManager;
-    RTPredictedContentManager *_predictedContentManager;
     RTAccountManager *_accountManager;
     RTMetricManager *_metricManager;
     RTFingerprintManager *_fingerprintManager;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
 @property(retain, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(retain, nonatomic) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
-@property(retain, nonatomic) RTPredictedContentManager *predictedContentManager; // @synthesize predictedContentManager=_predictedContentManager;
 @property(retain, nonatomic) RTRouteManager *routeManager; // @synthesize routeManager=_routeManager;
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) RTDiagnostics *diagnostics; // @synthesize diagnostics=_diagnostics;
@@ -67,9 +67,10 @@
 - (void)saveDaemonClient:(id)arg1;
 - (id)handleRestorationForDaemonClient:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)_setupConnection:(id)arg1 forClient:(id)arg2;
 - (id)handleClientConnection:(id)arg1;
 - (void)_setup;
-- (id)initWithDeviceLocationPredictor:(id)arg1 scenarioTriggerManager:(id)arg2 vehicleLocationProvider:(id)arg3 predictedApplicationManager:(id)arg4 actionManager:(id)arg5 eventModelProvider:(id)arg6 visitManager:(id)arg7 authorizationManager:(id)arg8 purgeManager:(id)arg9 assetManager:(id)arg10 locationStore:(id)arg11 locationManager:(id)arg12 eventAgentManager:(id)arg13 diagnostics:(id)arg14 learnedLocationManager:(id)arg15 routeManager:(id)arg16 predictedContentManager:(id)arg17 accountManager:(id)arg18 metricManager:(id)arg19 fingerprintManager:(id)arg20 wifiManager:(id)arg21 mapServiceManager:(id)arg22;
+- (id)initWithAccountManager:(id)arg1 actionManager:(id)arg2 assetManager:(id)arg3 authorizationManager:(id)arg4 deviceLocationPredictor:(id)arg5 diagnostics:(id)arg6 eventAgentManager:(id)arg7 eventModelProvider:(id)arg8 fingerprintManager:(id)arg9 learnedLocationManager:(id)arg10 locationManager:(id)arg11 locationStore:(id)arg12 mapServiceManager:(id)arg13 metricManager:(id)arg14 predictedApplicationManager:(id)arg15 purgeManager:(id)arg16 routeManager:(id)arg17 scenarioTriggerManager:(id)arg18 vehicleLocationProvider:(id)arg19 visitManager:(id)arg20 wifiManager:(id)arg21;
 - (id)init;
 
 // Remaining properties

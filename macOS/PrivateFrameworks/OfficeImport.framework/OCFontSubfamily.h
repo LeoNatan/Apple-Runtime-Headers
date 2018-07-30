@@ -8,7 +8,6 @@
 
 @class NSString, OCFontMetadata;
 
-__attribute__((visibility("hidden")))
 @interface OCFontSubfamily : NSObject
 {
     NSString *_name;
@@ -18,7 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)fontSubfamilyWithName:(id)arg1 metadata:(id)arg2;
 @property(readonly, nonatomic) OCFontMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 metadata:(id)arg2;
 
 @end

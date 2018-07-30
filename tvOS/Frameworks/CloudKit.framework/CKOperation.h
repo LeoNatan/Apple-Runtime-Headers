@@ -6,7 +6,7 @@
 
 #import "NSOperation.h"
 
-@class CKOperationConfiguration, CKOperationGroup, CKOperationInfo, CKOperationMMCSRequestOptions, CKOperationMetrics, CKPlaceholderOperation, CKTimeLogger, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSObject<OS_os_transaction>, NSObject<OS_voucher>, NSString;
+@class CKEventMetric, CKOperationConfiguration, CKOperationGroup, CKOperationInfo, CKOperationMMCSRequestOptions, CKOperationMetrics, CKPlaceholderOperation, CKTimeLogger, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSObject<OS_os_transaction>, NSObject<OS_voucher>, NSString;
 
 @interface CKOperation : NSOperation
 {
@@ -14,7 +14,9 @@
     NSObject<OS_voucher> *_clientVoucher;
     NSObject<OS_os_activity> *_osActivity;
     _Bool _isOutstandingOperation;
+    _Bool _usesBackgroundSession;
     _Bool _isFinished;
+    _Bool _isFinishingOnCallbackQueue;
     _Bool _clouddConnectionInterrupted;
     _Bool _queueHasStarted;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -25,11 +27,11 @@
     CKOperationGroup *_group;
     NSString *_operationID;
     NSObject<OS_dispatch_source> *_timeoutSource;
-    long long _usesBackgroundSessionOverride;
     NSError *_cancelError;
     NSMutableArray *_savedRequestUUIDs;
     NSMutableDictionary *_savedResponseHTTPHeadersByRequestUUID;
     NSMutableDictionary *_savedW3CNavigationTimingByRequestUUID;
+    CKEventMetric *_operationMetric;
     CKPlaceholderOperation *_placeholderOperation;
     NSError *_error;
     NSString *_sectionID;
@@ -53,14 +55,16 @@
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(nonatomic) _Bool clouddConnectionInterrupted; // @synthesize clouddConnectionInterrupted=_clouddConnectionInterrupted;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(readonly, nonatomic) _Bool isFinishingOnCallbackQueue; // @synthesize isFinishingOnCallbackQueue=_isFinishingOnCallbackQueue;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(retain) CKPlaceholderOperation *placeholderOperation; // @synthesize placeholderOperation=_placeholderOperation;
+@property(readonly, nonatomic) CKEventMetric *operationMetric; // @synthesize operationMetric=_operationMetric;
 @property(retain, nonatomic) NSMutableDictionary *savedW3CNavigationTimingByRequestUUID; // @synthesize savedW3CNavigationTimingByRequestUUID=_savedW3CNavigationTimingByRequestUUID;
 @property(retain, nonatomic) NSMutableDictionary *savedResponseHTTPHeadersByRequestUUID; // @synthesize savedResponseHTTPHeadersByRequestUUID=_savedResponseHTTPHeadersByRequestUUID;
 @property(retain, nonatomic) NSMutableArray *savedRequestUUIDs; // @synthesize savedRequestUUIDs=_savedRequestUUIDs;
 @property(retain, nonatomic) NSError *cancelError; // @synthesize cancelError=_cancelError;
+@property(nonatomic) _Bool usesBackgroundSession; // @synthesize usesBackgroundSession=_usesBackgroundSession;
 @property(nonatomic) _Bool isOutstandingOperation; // @synthesize isOutstandingOperation=_isOutstandingOperation;
-@property(nonatomic) long long usesBackgroundSessionOverride; // @synthesize usesBackgroundSessionOverride=_usesBackgroundSessionOverride;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timeoutSource; // @synthesize timeoutSource=_timeoutSource;
 @property(copy, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
 @property(retain, nonatomic) CKOperationGroup *group; // @synthesize group=_group;
@@ -84,6 +88,7 @@
 - (_Bool)allowsCellularAccess;
 - (void)setContainer:(id)arg1;
 - (id)container;
+@property(readonly, nonatomic) NSString *flowControlKey;
 - (_Bool)_wantsFlowControl;
 - (long long)qualityOfService;
 - (void)setQualityOfService:(long long)arg1;
@@ -96,7 +101,6 @@
 - (void)_handleStatisticsCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)_handleCheckpointCallback:(id)arg1;
-@property(nonatomic) _Bool usesBackgroundSession;
 - (id)daemon;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;

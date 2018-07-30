@@ -42,6 +42,7 @@
 - (void)_closeConnectionAndCompact:(BOOL)arg1 allowNetworking:(BOOL)arg2;
 - (id)serverInterfaceForMailbox:(id)arg1 error:(id *)arg2;
 - (id)newCleanUpOperation;
+- (long long)qualityOfService;
 - (void)setOperation:(id)arg1;
 - (id)operation;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

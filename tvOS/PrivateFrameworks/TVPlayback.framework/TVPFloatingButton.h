@@ -14,20 +14,24 @@
 {
     _UIFloatingContentView *_floatingView;
     UILongPressGestureRecognizer *_selectRecognizer;
+    CDUnknownBlockType _primaryActionHandler;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType primaryActionHandler; // @synthesize primaryActionHandler=_primaryActionHandler;
 - (void).cxx_destruct;
 - (void)_updateFloatingTintColor;
 - (void)_selectButtonAction:(id)arg1;
+- (void)_handlePrimaryAction;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (id)preferredFocusEnvironments;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (_Bool)canBecomeFocused;
+- (id)preferredFocusEnvironments;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 @property(readonly, nonatomic) UIView *contentView;
 @property(nonatomic) double cornerRadius;
+- (_Bool)_isEligibleForFocusInteraction;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

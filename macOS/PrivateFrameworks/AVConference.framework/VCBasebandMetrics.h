@@ -6,10 +6,13 @@
 
 #import "NSObject.h"
 
+@class VCRateControlMediaController;
+
 __attribute__((visibility("hidden")))
 @interface VCBasebandMetrics : NSObject
 {
-    CDStruct_f402fb06 _lastBasebandNotification;
+    VCRateControlMediaController *_mediaController;
+    CDStruct_b203c80d _lastBasebandNotification;
     double _bdcd;
     double _normalizedBDCD;
     double _normalizedDelay;
@@ -41,6 +44,7 @@ __attribute__((visibility("hidden")))
     void *_logBasebandDump;
 }
 
+@property(retain, nonatomic) VCRateControlMediaController *mediaController; // @synthesize mediaController=_mediaController;
 @property(nonatomic) BOOL isTargetBitrateStabilized; // @synthesize isTargetBitrateStabilized=_isTargetBitrateStabilized;
 @property(nonatomic) unsigned int targetBitrate; // @synthesize targetBitrate=_targetBitrate;
 - (void)enableBasebandLogDump:(void *)arg1;
@@ -49,7 +53,8 @@ __attribute__((visibility("hidden")))
 - (void)normalizeBDCD:(double)arg1;
 - (void)calculateBitratesAndDelays:(unsigned int)arg1 totalQueueDepth:(unsigned int)arg2;
 - (void)addInfoListWithNotificationArrivalTime:(double)arg1 transmittedBytes:(unsigned int)arg2;
-- (CDStruct_5cb394a5)getBasebandMetricsWithNotification:(CDStruct_f402fb06 *)arg1;
+- (CDStruct_48a7b5a5)getBasebandMetricsWithNotification:(CDStruct_b203c80d *)arg1;
+- (void)dealloc;
 
 @end
 

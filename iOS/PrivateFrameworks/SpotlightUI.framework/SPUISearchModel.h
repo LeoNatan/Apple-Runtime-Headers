@@ -17,6 +17,7 @@
     _Bool _springBoardIsActive;
     _Bool _infinitePatience;
     _Bool _queryComplete;
+    _Bool _queryDelayedFinished;
     _Bool _queryDidFinish;
     _Bool _forceStableResults;
     SFResultSection *_searchThroughSection;
@@ -36,10 +37,12 @@
 @property(readonly) SFResultSection *searchThroughSection; // @synthesize searchThroughSection=_searchThroughSection;
 @property _Bool forceStableResults; // @synthesize forceStableResults=_forceStableResults;
 @property _Bool queryDidFinish; // @synthesize queryDidFinish=_queryDidFinish;
+@property _Bool queryDelayedFinished; // @synthesize queryDelayedFinished=_queryDelayedFinished;
 @property _Bool queryComplete; // @synthesize queryComplete=_queryComplete;
 @property _Bool infinitePatience; // @synthesize infinitePatience=_infinitePatience;
 @property _Bool springBoardIsActive; // @synthesize springBoardIsActive=_springBoardIsActive;
 - (void).cxx_destruct;
+- (void)updateWithQueryContext:(id)arg1;
 - (void)invalidate;
 - (void)resultsDidBecomeInvalid:(id)arg1;
 - (void)invalidateQuery:(id)arg1;
@@ -52,7 +55,7 @@
 - (void)disableUpdates;
 - (void)enableUpdates;
 - (void)updatesEnabled;
-- (void)updatesDispabled;
+- (void)updatesDisabled;
 - (void)invalidateCurrentQuery;
 - (void)deactivate;
 - (void)activate;

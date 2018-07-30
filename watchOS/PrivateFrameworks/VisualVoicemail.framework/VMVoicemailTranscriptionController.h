@@ -19,8 +19,10 @@
     NSProgress *_transcriptionProgress;
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
     NSMapTable *_delegateToQueue;
+    id <VMTranscriptionService> _transcriptionService;
 }
 
+@property(retain, nonatomic) id <VMTranscriptionService> transcriptionService; // @synthesize transcriptionService=_transcriptionService;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(nonatomic) __weak VMTranscriptionAssetModelOperation *assetModelOperation; // @synthesize assetModelOperation=_assetModelOperation;

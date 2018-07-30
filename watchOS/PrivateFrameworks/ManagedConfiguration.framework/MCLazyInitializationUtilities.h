@@ -12,8 +12,7 @@
 
 + (void)initAssertionServices;
 + (void)initSpringBoardServices;
-+ (void)initMobileCoreServices;
-+ (void)initServerAccounts;
++ (void)initCoreServices;
 + (void)initSetupAssistant;
 + (void)initLoggingSupport;
 + (void)initDAEAS;

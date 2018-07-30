@@ -8,7 +8,6 @@
 
 @class ODDFillColorList;
 
-__attribute__((visibility("hidden")))
 @interface ODDColorTransformStyleLabel : NSObject
 {
     ODDFillColorList *mFillColors;
@@ -19,6 +18,7 @@ __attribute__((visibility("hidden")))
     ODDFillColorList *mTextEffectColors;
 }
 
+- (void).cxx_destruct;
 - (void)applyToShapeStyle:(id)arg1 index:(unsigned int)arg2 count:(unsigned int)arg3 state:(id)arg4;
 - (void)setTextEffectColors:(id)arg1;
 - (id)textEffectColors;
@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (id)lineColors;
 - (void)setFillColors:(id)arg1;
 - (id)fillColors;
-- (void)dealloc;
 
 @end
 

@@ -6,50 +6,51 @@
 
 #import "UIView.h"
 
-@class NSArray, NTKPolygonCylinderView;
+@class NSArray, UIView<NTKEditOptionContainerView>;
 
 @interface NTKEditOptionPickerView : UIView
 {
-    NSArray *_rows;
-    unsigned long long _visibleRowBufferSize;
+    NSArray *_options;
+    unsigned long long _visibleOptionBufferSize;
     CDUnknownBlockType _optionToViewMapper;
     _Bool _active;
-    NTKPolygonCylinderView *_cylinderView;
-    unsigned long long _numberOfSides;
-    UIView *_selectedOptionView;
-    unsigned long long _numberOfRows;
-    unsigned long long _selectedRowIndex;
+    unsigned long long _numberOfOptions;
+    unsigned long long _selectedOptionIndex;
+    UIView<NTKEditOptionContainerView> *_containerView;
     struct UIEdgeInsets _padding;
+    struct CGAffineTransform _contentTransform;
 }
 
-@property(nonatomic) unsigned long long selectedRowIndex; // @synthesize selectedRowIndex=_selectedRowIndex;
-@property(readonly, nonatomic) unsigned long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;
+@property(retain, nonatomic) UIView<NTKEditOptionContainerView> *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
-@property(readonly, nonatomic) UIView *selectedOptionView; // @synthesize selectedOptionView=_selectedOptionView;
+@property(nonatomic) unsigned long long selectedOptionIndex; // @synthesize selectedOptionIndex=_selectedOptionIndex;
+@property(nonatomic) struct CGAffineTransform contentTransform; // @synthesize contentTransform=_contentTransform;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
-@property(nonatomic) unsigned long long numberOfSides; // @synthesize numberOfSides=_numberOfSides;
 @property(copy, nonatomic) CDUnknownBlockType optionToViewMapper; // @synthesize optionToViewMapper=_optionToViewMapper;
-@property(readonly, nonatomic) NTKPolygonCylinderView *cylinderView; // @synthesize cylinderView=_cylinderView;
+@property(readonly, nonatomic) unsigned long long numberOfOptions; // @synthesize numberOfOptions=_numberOfOptions;
 - (void).cxx_destruct;
-- (void)_enumerateFaceViewsWithBlock:(CDUnknownBlockType)arg1;
-- (void)_rotateAnimatedToSelectedRowFromRow:(unsigned long long)arg1;
-- (void)_rotateToSelectedRow;
-- (void)_willDisplayFaceView:(id)arg1;
-- (void)_configureFaceView:(id)arg1 forOption:(id)arg2;
-- (Class)_cylinderFaceViewClass;
-- (void)_tileCylinderForRotationDirection:(long long)arg1;
-- (id)_selectedFaceView;
-- (id)_faceViewAtFaceIndex:(unsigned long long)arg1;
-- (struct CGRect)_frameForCylinderView;
+- (void)_enumerateSideViewsWithBlock:(CDUnknownBlockType)arg1;
+- (void)_transitionAnimatedToSelectedOptionFromIndex:(unsigned long long)arg1;
+- (void)_transitionToSelectedOption;
+- (void)_willDisplaySideView:(id)arg1;
+- (void)_configureSideView:(id)arg1 forOption:(id)arg2;
+- (Class)_sideViewClass;
+- (id)_newContainerView;
+- (void)_tileContainerForTransitionDirection:(long long)arg1;
+- (id)_selectedSideView;
+- (id)_sideViewAtIndex:(unsigned long long)arg1;
+- (struct CGRect)_frameForContainerView;
 - (void)applyRubberBandingFraction:(double)arg1;
 - (void)applyBreathingScale:(double)arg1;
 - (void)layoutSubviews;
 - (void)setTransitionFraction:(double)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
-- (void)setSelectedRowIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
+- (void)setSelectedOptionIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (id)optionAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) id selectedOption;
 - (void)decrementSelection;
 - (void)incrementSelection;
+@property(nonatomic) unsigned long long numberOfSides;
+- (void)_updateContainer;
 - (id)description;
 - (id)initWithOptions:(id)arg1 selectedOption:(id)arg2;
 

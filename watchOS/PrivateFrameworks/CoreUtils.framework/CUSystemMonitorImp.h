@@ -8,7 +8,7 @@
 
 #import "CXCallObserverDelegate.h"
 
-@class CUBluetoothClient, CUWiFiManager, CXCallObserver, NSData, NSObject<OS_dispatch_queue>, NSString;
+@class CUBluetoothClient, CUNetInterfaceMonitor, CUSystemMonitor, CUWiFiManager, CXCallObserver, NSArray, NSData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CUSystemMonitorImp : NSObject <CXCallObserverDelegate>
@@ -20,10 +20,23 @@ __attribute__((visibility("hidden")))
     CUBluetoothClient *_bluetoothClient;
     CXCallObserver *_callObserver;
     int _activeCallCount;
+    _Bool _familyFailed;
+    NSArray *_familyMembers;
+    _Bool _familyObserving;
+    CUSystemMonitor *_familyPrimaryIPMonitor;
+    int _familyUpdatedToken;
+    CUNetInterfaceMonitor *_netInterfaceMonitor;
+    unsigned int _netFlags;
+    CDUnion_fab80606 _primaryIPv4Addr;
+    CDUnion_fab80606 _primaryIPv6Addr;
     int _powerSourceToken;
     _Bool _powerUnlimited;
     _Bool _primaryAppleIDIsHSA2;
     _Bool _primaryAppleIDObserving;
+    CDStruct_83abfce7 _rotatingIdentifier48;
+    NSData *_rotatingIdentifierData;
+    CUSystemMonitor *_rotatingIdentifierBluetoothAddressMonitor;
+    NSObject<OS_dispatch_source> *_rotatingIdentifierTimer;
     _Bool _screenLocked;
     int _screenLockedToken;
     _Bool _screenOn;
@@ -38,6 +51,8 @@ __attribute__((visibility("hidden")))
 - (void)_wifiMonitorStateChanged:(_Bool)arg1;
 - (void)_wifiMonitorStop;
 - (void)_wifiMonitorStart;
+- (void)_firstUnlockMonitorStop;
+- (void)_firstUnlockMonitorStart;
 - (void)_screenSaverMonitorStop;
 - (void)_screenSaverMonitorStart;
 - (void)_screenChanged:(_Bool)arg1;
@@ -46,11 +61,18 @@ __attribute__((visibility("hidden")))
 - (void)_screenLockedChanged;
 - (void)_screenLockedMonitorStop;
 - (void)_screenLockedMonitorStart;
+- (void)_rotatingIdentifierTimerReset:(_Bool)arg1;
+- (void)_rotatingIdentifierTimerFired;
+- (void)_rotatingIdentifierBTUpdated;
+- (void)_rotatingIdentifierMonitorStop;
+- (void)_rotatingIdentifierMonitorStart;
 - (void)_primaryAppleIDChanged:(id)arg1;
 - (void)_primaryAppleIDMonitorStop;
 - (void)_primaryAppleIDMonitorStart;
 - (void)_powerUnlimitedMonitorStop;
 - (void)_powerUnlimitedMonitorStart;
+- (void)_netInterfaceMonitorStop;
+- (void)_netInterfaceMonitorStart;
 - (void)_meDeviceMonitorStop;
 - (void)_meDeviceMonitorStart;
 - (int)_activeCallCountUnached;

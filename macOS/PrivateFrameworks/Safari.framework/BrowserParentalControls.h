@@ -14,20 +14,19 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedParentalControls;
-- (void)notifyFamilyControlsParentChangedBookmarks:(id)arg1;
-- (BOOL)shouldFillWithBuiltInBookmarks;
-- (BOOL)adultContentFilterEnabled;
-- (BOOL)parentalControlsEnabled;
-- (void)dealloc;
-- (id)init;
 - (void)_mcxPreferencesChanged:(id)arg1;
 - (BOOL)_userHasWebSiteRestrictions;
 - (BOOL)_isManagedUser;
-- (void *)_familyControlsFramework;
 - (void)_updateAdultContentFilterEnabled;
 - (BOOL)_adultContentFilterEnabled;
 - (void)_updateParentalControlsEnabled;
 - (BOOL)_parentalControlsEnabled;
+- (void)notifyFamilyControlsParentChangedBookmarks:(id)arg1;
+@property(readonly, nonatomic) BOOL shouldFillWithBuiltInBookmarks;
+@property(readonly, nonatomic) BOOL adultContentFilterEnabled; // @synthesize adultContentFilterEnabled=_adultContentFilterEnabled;
+@property(readonly, nonatomic) BOOL parentalControlsEnabled; // @synthesize parentalControlsEnabled=_parentalControlsEnabled;
+- (void)dealloc;
+- (id)init;
 
 @end
 

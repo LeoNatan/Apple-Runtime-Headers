@@ -14,6 +14,7 @@
     NSWindow *_attachedToParent;
 }
 
+- (void)setShownAboveComboBox:(BOOL)arg1;
 - (void)orderOut:(id)arg1;
 - (void)makeKeyAndOrderFront:(id)arg1;
 - (void)orderWindow:(long long)arg1 relativeTo:(long long)arg2;
@@ -23,7 +24,7 @@
 - (void)_attachToParentWindow;
 - (void)_commonAwake;
 - (BOOL)hasShadow;
-- (void)setShownAboveComboBox:(BOOL)arg1;
+- (unsigned long long)shadowOptions;
 - (BOOL)hasKeyAppearance;
 - (BOOL)canBecomeVisibleWithoutLogin;
 - (BOOL)isKeyWindow;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 @property(copy) CDUnknownBlockType readHandler; // @synthesize readHandler=_readHandler;
 - (void)removeDatagramChannel:(id)arg1;
-- (id)datagramChannelWithIDSDestination:(id)arg1;
-- (id)datagramChannelWithToken:(unsigned int)arg1;
+- (void)executeBlockForIDSDestination:(id)arg1 blockToExecute:(CDUnknownBlockType)arg2;
+- (void)executeBlockForToken:(unsigned int)arg1 blockToExecute:(CDUnknownBlockType)arg2;
 - (_Bool)setupDatagramChannel:(id)arg1 eventHandler:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (id)addDatagramChannelWithDestination:(id)arg1 eventHandler:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (id)addDatagramChannelWithDescriptor:(int)arg1 eventHandler:(CDUnknownBlockType)arg2 error:(id *)arg3;

@@ -10,23 +10,26 @@
 
 @class NSObject<OS_nw_endpoint>, NSString, NWConcrete_nw_connection;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_unique_connection : NSObject <OS_nw_unique_connection>
 {
     NSObject<OS_nw_endpoint> *endpoint;
-    char service[430];
-    unsigned long long sequenceNumber;
+    char service[436];
+    unsigned long long receivedSequenceNumber;
+    unsigned long long uniqueID;
     unsigned char uuid[16];
     NWConcrete_nw_connection *connection;
-    _Bool isIncoming;
+    int dupedSocketFD;
+    unsigned int isIncoming:1;
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

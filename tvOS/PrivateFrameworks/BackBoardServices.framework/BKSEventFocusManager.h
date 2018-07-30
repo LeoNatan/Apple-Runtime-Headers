@@ -6,22 +6,21 @@
 
 #import "NSObject.h"
 
-#import "BKSEventFocusManagerClientInterface.h"
+@class NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, NSXPCConnection;
 
-@class NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, NSXPCConnection;
-
-@interface BKSEventFocusManager : NSObject <BKSEventFocusManagerClientInterface>
+@interface BKSEventFocusManager : NSObject
 {
     id <BKSEventFocusIPCInterface> _ipcInterface;
     NSObject<OS_dispatch_queue> *_focusClientQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
+    unsigned long long _propertyUpdateGeneration;
     _Bool _needsFlush;
     _Bool _systemAppControlsFocusOnMainDisplay;
     int _pid;
     NSMutableSet *_currentState;
     NSMutableDictionary *_pendingStatesByPriority;
     NSXPCConnection *_connection;
-    NSHashTable *_focusChangeObservers;
+    NSMapTable *_infoPerFocusChangeObserver;
     NSSet *_cachedFocusedDeferralProperties;
     NSString *_clientIdentifier;
 }
@@ -30,12 +29,14 @@
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSSet *cachedFocusedDeferralProperties; // @synthesize cachedFocusedDeferralProperties=_cachedFocusedDeferralProperties;
-@property(retain, nonatomic) NSHashTable *focusChangeObservers; // @synthesize focusChangeObservers=_focusChangeObservers;
+@property(retain, nonatomic) NSMapTable *infoPerFocusChangeObserver; // @synthesize infoPerFocusChangeObserver=_infoPerFocusChangeObserver;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) _Bool systemAppControlsFocusOnMainDisplay; // @synthesize systemAppControlsFocusOnMainDisplay=_systemAppControlsFocusOnMainDisplay;
 @property(nonatomic) _Bool needsFlush; // @synthesize needsFlush=_needsFlush;
-@property(readonly, retain, nonatomic) NSMutableDictionary *pendingStatesByPriority; // @synthesize pendingStatesByPriority=_pendingStatesByPriority;
-@property(readonly, retain, nonatomic) NSMutableSet *currentState; // @synthesize currentState=_currentState;
+@property(readonly, nonatomic) NSMutableDictionary *pendingStatesByPriority; // @synthesize pendingStatesByPriority=_pendingStatesByPriority;
+@property(readonly, nonatomic) NSMutableSet *currentState; // @synthesize currentState=_currentState;
+- (void).cxx_destruct;
+- (void)_syncObserverState;
 - (void)reallyFlushWithSet:(id)arg1;
 - (void)flush;
 - (void)_rebuildPendingStatesByPriority;
@@ -43,7 +44,7 @@
 - (void)setForegroundApplicationOnMainDisplay:(id)arg1 pid:(int)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (void)deferEventsForClientWithProperties:(id)arg1 toClientWithProperties:(id)arg2 withPriority:(int)arg3;
 - (void)deferEventsForClientWithProperties:(id)arg1 toClientWithProperties:(id)arg2;
 - (void)touchDetachedForIdentifier:(unsigned int)arg1 context:(unsigned int)arg2 pid:(int)arg3;
@@ -53,11 +54,6 @@
 - (void)dealloc;
 - (id)initWithIPCInterface:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

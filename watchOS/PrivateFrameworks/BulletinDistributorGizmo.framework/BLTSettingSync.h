@@ -8,7 +8,7 @@
 
 #import "BLTWatchKitAppListDelegate.h"
 
-@class BLTSectionIdentifierMapper, BLTSectionInfoList, BLTSectionInfoStore, BLTWatchKitAppList, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class BLTSectionIdentifierMapper, BLTSectionInfoList, BLTSectionInfoStore, BLTWatchKitAppList, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BLTSettingSync : BLTSettingSyncInternal <BLTWatchKitAppListDelegate>
 {
@@ -16,6 +16,7 @@
     NSMutableArray *_incomingSectionInfoQueue;
     NSObject<OS_dispatch_queue> *_queue;
     BLTWatchKitAppList *_watchKitAppList;
+    NSMutableDictionary *_savedOverrides;
     id <BLTSettingSyncDelegate> _delegate;
     BLTSectionInfoStore *_sectionInfoStore;
     BLTSectionInfoList *_sectionInfoList;
@@ -28,7 +29,12 @@
 - (void)watchKitAppList:(id)arg1 added:(id)arg2 removed:(id)arg3;
 - (void)_handleReceivedUpdatedSectionInfoForSectionID:(id)arg1;
 - (id)_queue_overriddenSectionInfoForSectionID:(id)arg1;
-- (void)enableNotifications:(_Bool)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 fromRemote:(_Bool)arg4;
+- (void)setNotificationsGrouping:(int)arg1 sectionID:(id)arg2;
+- (void)setNotificationsLevel:(unsigned int)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 fromRemote:(_Bool)arg4;
+- (void)_queue_setNotificationsLevel:(id)arg1 grouping:(id)arg2 sectionID:(id)arg3 sectionInfo:(id)arg4;
+- (void)_queue_updateSectionInfoWithSavedOverrideForSectionID:(id)arg1;
+- (void)_queue_updateSectionInfoWithSavedOverrides;
+- (void)_queue_updateOverrideInfoForSectionID:(id)arg1 level:(id)arg2 bbGrouping:(id)arg3;
 - (void)removeSectionWithSectionID:(id)arg1;
 - (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3;
 - (void)setSectionInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;

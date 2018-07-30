@@ -12,6 +12,7 @@
 
 @interface NARApplication : NSObject <NSSecureCoding>
 {
+    _Bool _supportsForegroundApplication;
     unsigned long long _sequenceNumber;
     NSString *_launchServicesBundleType;
     NSString *_parentApplicationBundleIdentifier;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) NSDictionary *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
 @property(retain, nonatomic) NSDictionary *infoPlist; // @synthesize infoPlist=_infoPlist;
 @property(retain, nonatomic) NARApplicationState *appState; // @synthesize appState=_appState;
+@property(nonatomic) _Bool supportsForegroundApplication; // @synthesize supportsForegroundApplication=_supportsForegroundApplication;
 @property(retain, nonatomic) NSArray *appTags; // @synthesize appTags=_appTags;
 @property(readonly, copy, nonatomic) NSString *parentApplicationBundleIdentifier; // @synthesize parentApplicationBundleIdentifier=_parentApplicationBundleIdentifier;
 @property(copy, nonatomic) NSString *launchServicesBundleType; // @synthesize launchServicesBundleType=_launchServicesBundleType;

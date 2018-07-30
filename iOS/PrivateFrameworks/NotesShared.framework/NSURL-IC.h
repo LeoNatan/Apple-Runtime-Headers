@@ -9,6 +9,7 @@
 @class NSString;
 
 @interface NSURL (IC)
++ (id)ic_urlFromWeblocFileAtURL:(id)arg1;
 @property(readonly, nonatomic) long long ic_fileSize;
 @property(readonly, nonatomic) NSString *ic_UTI;
 @property(readonly, nonatomic) _Bool isSupportedAsAttachment;

@@ -6,9 +6,11 @@
 
 #import "PLMomentRefreshable.h"
 
-@class CLLocation, NSData, NSDate, NSObject<NSCopying>, NSString;
+@class CLLocation, NSArray, NSData, NSDate, NSObject<NSCopying>, NSString;
 
 @protocol PLMomentAssetData <PLMomentRefreshable>
+@property(nonatomic) double curationScore;
+@property(nonatomic) _Bool favorite;
 @property(readonly, retain, nonatomic) NSData *placeAnnotationData;
 @property(nonatomic) _Bool shiftedLocationIsValid;
 @property(retain, nonatomic) CLLocation *shiftedLocation;
@@ -21,6 +23,7 @@
 - (NSString *)globalUUID;
 - (_Bool)isDeleted;
 - (_Bool)visibilityStateIsEqualToState:(short)arg1;
+- (NSArray *)assetComparisonSortDescriptors;
 - (long long)compareToAsset:(id <PLMomentAssetData>)arg1;
 
 @optional
@@ -33,7 +36,6 @@
 @property(nonatomic) long long height;
 @property(nonatomic) short kindSubtype;
 @property(nonatomic) short kind;
-@property(nonatomic) _Bool favorite;
 @property(nonatomic) double duration;
 @property(retain, nonatomic) NSDate *modificationDate;
 @property(readonly, retain, nonatomic) NSString *uuid;

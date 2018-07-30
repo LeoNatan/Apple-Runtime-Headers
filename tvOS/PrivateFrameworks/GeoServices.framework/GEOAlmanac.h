@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)description;
 - (_Bool)isDayLightForDate:(id)arg1;
 - (_Bool)isDayLightForTime:(double)arg1;
 @property(readonly, nonatomic) _Bool isDayLight;

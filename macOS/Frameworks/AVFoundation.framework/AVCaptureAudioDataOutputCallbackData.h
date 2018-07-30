@@ -8,6 +8,7 @@
 
 @class AVCaptureAudioDataOutput, AVCaptureConnection;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureAudioDataOutputCallbackData : NSObject
 {
     AVCaptureAudioDataOutput *_output;

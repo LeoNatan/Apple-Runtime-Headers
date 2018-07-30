@@ -45,7 +45,6 @@
 - (oneway void)speechRecordingWillBeginWithInputAudioPowerXPCWrapper:(id)arg1;
 - (oneway void)aceConnectionWillRetryOnError:(id)arg1;
 - (oneway void)shouldSpeakChanged:(BOOL)arg1;
-- (oneway void)handleIntent:(id)arg1 inBackgroundAppWithBundleId:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (oneway void)extensionRequestFinishedForApplication:(id)arg1 error:(id)arg2;
 - (oneway void)extensionRequestWillStartForApplication:(id)arg1;
 - (oneway void)cacheImage:(id)arg1;
@@ -54,11 +53,13 @@
 - (oneway void)acousticIDRequestDidFinishWithSuccess:(BOOL)arg1;
 - (oneway void)musicWasDetected;
 - (oneway void)acousticIDRequestWillStart;
+- (oneway void)getClockContext:(CDUnknownBlockType)arg1;
 - (oneway void)getBulletinContext:(CDUnknownBlockType)arg1;
 - (oneway void)quickStopWasHandledWithActions:(unsigned long long)arg1;
 - (oneway void)requestRequestedDismissAssistant;
 - (oneway void)requestRequestedOpenURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)requestRequestedOpenApplicationWithBundleID:(id)arg1 URL:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (oneway void)requestHandleCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)requestDidReceiveCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)startUIRequestWithText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_connectionDelegate;

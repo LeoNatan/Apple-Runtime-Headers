@@ -11,6 +11,7 @@
 @interface CUISBulletinDefaultClientViewController : CUISBulletinClientViewController
 {
     NSString *_title;
+    NSString *_subtitle;
     NSString *_message;
     UIImage *_imageAttachment;
     CUISAlertLongLookContentView *_contentView;
@@ -21,8 +22,11 @@
 - (id)headerBlurContentView;
 - (_Bool)wantsHeaderBlur;
 - (void)loadView;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 message:(id)arg3 avAttachment:(id)arg4;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 message:(id)arg3 imageAttachment:(id)arg4;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 avAttachment:(id)arg3;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 imageAttachment:(id)arg3;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 message:(id)arg3 imageAttachment:(id)arg4 avAttachment:(id)arg5;
 
 @end
 

@@ -15,6 +15,7 @@
     const struct __CFData *_persistentRef;
 }
 
++ (id)new;
 @property(readonly, nonatomic) const struct __CFData *persistentRef; // @synthesize persistentRef=_persistentRef;
 - (void).cxx_destruct;
 - (id)debugDescription;
@@ -39,6 +40,7 @@
 - (void)dealloc;
 - (id)initWithPersistentRef:(const struct __CFData *)arg1 properties:(id)arg2;
 - (id)initWithPersistentRef:(const struct __CFData *)arg1;
+- (id)init;
 
 @end
 

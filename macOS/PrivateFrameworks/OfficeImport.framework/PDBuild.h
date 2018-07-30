@@ -8,13 +8,13 @@
 
 @class OADDrawable;
 
-__attribute__((visibility("hidden")))
 @interface PDBuild : NSObject
 {
     BOOL mIsAnimateBackground;
     OADDrawable *mDrawable;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)drawable;
 - (void)setIsAnimateBackground:(BOOL)arg1;
 - (BOOL)isAnimateBackground;
-- (void)dealloc;
 - (id)init;
 
 @end

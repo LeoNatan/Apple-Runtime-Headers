@@ -21,6 +21,7 @@
 - (_Bool)copySurfaceStorage:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toPoint:(CDStruct_912cb5d2)arg3 device:(id)arg4;
 - (void)writeBufferRegion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)readBufferRegion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)debugQuickLookObject;
 
 // Remaining properties
 @property(readonly) NUColorSpace *colorSpace;

@@ -9,6 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TICloudAccountManager : NSObject
 {
+    struct TriStateBool fLoggedIntoICloud;
     struct TriStateBool fICloudDriveEnabled;
     struct TriStateBool fUserHasDeclinedUpgrade;
     struct TriStateBool fFirstSyncComplete;
@@ -16,7 +17,7 @@ __attribute__((visibility("hidden")))
     struct TriStateBool fSynchingDocuments;
     struct TriStateBool fIsOverQuota;
     struct TriStateBool fAppSynchingDocuments;
-    struct TNSRef<BRContainer *, void> fDefaultContainer;
+    struct TNSRef<BRContainer, void> fDefaultContainer;
 }
 
 + (_Bool)isMaxTier;
@@ -25,6 +26,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)documentsIsInTheCloud;
 + (_Bool)desktopIsInTheCloud;
 + (_Bool)shouldDisambiguateDesktopAndDocuments;
++ (_Bool)signedIniCloud;
++ (_Bool)iCloudAccountManagementAvailable;
 + (_Bool)showICloudDriveContent;
 + (_Bool)firstSyncCompleted;
 + (_Bool)userHasDeclinedUpgrade;
@@ -40,8 +43,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)isOverQuota;
 - (_Bool)firstSyncHasCompleted;
 - (_Bool)hasDeclinedUpgrade;
+- (_Bool)isSignedIntoICloud;
 - (_Bool)isSynchingDocuments;
-- (_Bool)updateLoginState:(_Bool)arg1 userHasDeclinedUpgrade:(_Bool)arg2 firstSyncDownComplete:(_Bool)arg3 syncDesktop:(_Bool)arg4 syncDocuments:(_Bool)arg5;
+- (_Bool)updateLoginState:(_Bool)arg1 userHasDeclinedUpgrade:(_Bool)arg2 firstSyncDownComplete:(_Bool)arg3 syncDesktop:(_Bool)arg4 syncDocuments:(_Bool)arg5 loggedIntoIcloud:(_Bool)arg6;
 - (void)computeLoginState;
 - (void)computeIsOverQuota;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

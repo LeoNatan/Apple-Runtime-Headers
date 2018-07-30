@@ -8,7 +8,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface SFBLEData : NSObject
 {
     NSData *_data;

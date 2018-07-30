@@ -46,12 +46,13 @@
 - (_Bool)_queue_resetAuthorizationRecordsForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (void)_queue_endAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 error:(id)arg2;
 - (void)_queue_beginAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_queue_finishRequestGroup:(id)arg1 error:(id)arg2;
+- (id)_validateRequiredAuthorizationWithRequestGroup:(id)arg1;
+- (void)_queue_requestGroupDidFinishPrompting:(id)arg1 error:(id)arg2;
 - (void)_queue_handleNextAuthorizationRequestGroup;
-- (_Bool)_needsAuthorizationForRequestGroup:(id)arg1 overwriteAuthorizationStatus:(_Bool)arg2 error:(id *)arg3;
+- (int)_authorizationRequestStatusForClientBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 updateAuthorizationStatuses:(_Bool)arg4 error:(id *)arg5;
 - (void)_queue_cancelAuthorizationRequestsWithIdentifiers:(id)arg1;
 - (void)_queue_enqueueAuthorizationRequestWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2 writeTypes:(id)arg3 readTypes:(id)arg4 authorizationNeededHandler:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
-- (void)_queue_setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_queue_setAuthorizationStatuses:(id)arg1 authorizationModes:(id)arg2 forBundleIdentifier:(id)arg3 options:(unsigned int)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)applicationsUninstalledNotification:(id)arg1;
 - (void)requestRemoteAuthorizationForRequestRecord:(id)arg1 requestSentHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)openAppForAuthorization:(id)arg1 sessionIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -61,7 +62,9 @@
 - (void)cancelAuthorizationRequestsWithIdentifiers:(id)arg1;
 - (void)handleAuthorizationRequestsForBundleIdentifier:(id)arg1 promptHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)enqueueAuthorizationRequestForBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 authorizationNeededHandler:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)hasRequiredAuthorizationStatusesForBundleIdentifier:(id)arg1 requiredReadTypes:(id)arg2 error:(id *)arg3;
+- (int)authorizationRequestStatusForClientBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 error:(id *)arg4;
+- (void)setAuthorizationStatuses:(id)arg1 authorizationModes:(id)arg2 forBundleIdentifier:(id)arg3 options:(unsigned int)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 

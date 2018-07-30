@@ -8,21 +8,22 @@
 
 #import "CalUIDayViewGadgetDataSource.h"
 
-@class CalUIDayViewGadget, EKEventStore, NSArray, NSDate, NSObject<OS_dispatch_group>, NSSet, NSString;
+@class CalUIDayViewGadget, EKEventStore, NSArray, NSDate, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface CalUIDayViewGadgetController : NSViewController <CalUIDayViewGadgetDataSource>
 {
     CalUIDayViewGadget *_view;
     EKEventStore *_eventStore;
-    NSArray *_previewEvents;
+    NSArray *_internalPreviewEvents;
+    NSArray *_timedEvents;
+    NSArray *_allDayEvents;
+    NSObject<OS_dispatch_queue> *_loadEventsSerialQueue;
     NSDate *_dayOfInterest;
     NSDate *_lastRefresh;
     CDUnknownBlockType _mouseDownBlock;
     NSSet *_disabledCalendars;
     NSDate *_startOfDay;
     NSDate *_endOfDay;
-    NSArray *_timedEvents;
-    NSArray *_allDayEvents;
     CalUIDayViewGadget *_dayViewGadget;
     NSArray *_dedupedPreviewEvents;
     id <CalUIDayViewGadgetAppearanceDelegate> _appearanceDelegate;
@@ -33,8 +34,6 @@
 @property(retain) NSArray *dedupedPreviewEvents; // @synthesize dedupedPreviewEvents=_dedupedPreviewEvents;
 @property(retain) CalUIDayViewGadget *dayViewGadget; // @synthesize dayViewGadget=_dayViewGadget;
 @property(retain) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-@property(readonly, nonatomic) NSArray *allDayEvents; // @synthesize allDayEvents=_allDayEvents;
-@property(readonly, nonatomic) NSArray *timedEvents; // @synthesize timedEvents=_timedEvents;
 @property(readonly, nonatomic) NSDate *endOfDay; // @synthesize endOfDay=_endOfDay;
 @property(readonly, nonatomic) NSDate *startOfDay; // @synthesize startOfDay=_startOfDay;
 @property(retain) NSSet *disabledCalendars; // @synthesize disabledCalendars=_disabledCalendars;
@@ -42,20 +41,27 @@
 @property(retain) NSDate *lastRefresh; // @synthesize lastRefresh=_lastRefresh;
 @property(retain, nonatomic) NSDate *dayOfInterest; // @synthesize dayOfInterest=_dayOfInterest;
 - (void).cxx_destruct;
-@property(retain) NSArray *previewEvents;
+@property(readonly, nonatomic) NSArray *timedEvents;
+- (void)setTimedEvents:(id)arg1;
+@property(readonly, nonatomic) NSArray *allDayEvents;
+- (void)setAllDayEvents:(id)arg1;
+@property(retain) NSArray *internalPreviewEvents;
+- (id)previewEvents;
 - (BOOL)isPreviewEvent:(id)arg1;
+- (void)setPreviewEvents:(id)arg1;
 - (void)loadView;
 - (void)dealloc;
 - (void)sizeChanged;
 - (void)setupWithAppearanceDelegate:(id)arg1 mouseDownBlock:(CDUnknownBlockType)arg2;
 - (void)setupWithAppearanceDelegate:(id)arg1;
-- (void)loadEvents;
+- (void)loadEventsWithPreviewEvents:(id)arg1;
 - (void)localeChanged:(id)arg1;
 - (void)calendarsChangedNotification;
 - (void)disabledCalendarsChanged:(id)arg1;
 - (void)calendarChanged:(id)arg1;
 - (void)refreshAsync;
 - (void)refreshShouldForceDisplay:(BOOL)arg1;
+- (void)prepareForLoadingEvents;
 @property(readonly) BOOL eventStoreAccessGranted;
 @property(readonly) NSObject<OS_dispatch_group> *eventStoreReadyGroup;
 - (id)initWithEventStore:(id)arg1;

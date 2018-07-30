@@ -13,8 +13,12 @@
     long long _style;
     id _target;
     SEL _action;
+    _Bool _showAsPause;
+    _Bool __didConfigureForPause;
 }
 
+@property(nonatomic, setter=_setDidConfigureForPause:) _Bool _didConfigureForPause; // @synthesize _didConfigureForPause=__didConfigureForPause;
+@property(nonatomic) _Bool showAsPause; // @synthesize showAsPause=_showAsPause;
 - (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;

@@ -40,6 +40,8 @@
 - (BOOL)_hasLayerAsAuxiliaryTrack;
 - (void)setInstructions:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *instructions;
+- (void)setRenderScale:(float)arg1;
+@property(readonly, nonatomic) float renderScale;
 - (void)setRenderSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize renderSize;
 - (void)setSourceTrackIDForFrameTiming:(int)arg1;

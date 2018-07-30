@@ -33,6 +33,7 @@
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;
+- (id)iconForUTI:(id)arg1;
 - (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)stop;
 - (void)start;

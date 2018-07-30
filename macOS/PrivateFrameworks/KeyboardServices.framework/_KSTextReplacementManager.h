@@ -8,7 +8,7 @@
 
 #import "_KSTextReplacementSyncProtocol.h"
 
-@class NSObject<OS_dispatch_queue>, NSObject<_KSTextReplacementStoreProtocol>, NSString, _KSTextReplacementCKStore, _KSTextReplacementLegacyStore;
+@class NSObject<OS_dispatch_queue>, NSObject<_KSTextReplacementSyncProtocol>, NSString, _KSTextReplacementCKStore, _KSTextReplacementLegacyStore;
 
 @interface _KSTextReplacementManager : NSObject <_KSTextReplacementSyncProtocol>
 {
@@ -19,7 +19,7 @@
     BOOL _didCheckMigrationOnCloud;
     _KSTextReplacementCKStore *_ckStore;
     _KSTextReplacementLegacyStore *_legacyStore;
-    NSObject<_KSTextReplacementStoreProtocol> *_textReplacementStore;
+    NSObject<_KSTextReplacementSyncProtocol> *_textReplacementStore;
     NSString *_directoryPath;
     id <_KSMigrationDelegate> _delegate;
 }
@@ -31,7 +31,7 @@
 @property(nonatomic) BOOL pendingMigration; // @synthesize pendingMigration=_pendingMigration;
 @property(nonatomic) BOOL didMigrateForCurrentAccount; // @synthesize didMigrateForCurrentAccount=_didMigrateForCurrentAccount;
 @property(copy, nonatomic) NSString *directoryPath; // @synthesize directoryPath=_directoryPath;
-@property(retain, nonatomic) NSObject<_KSTextReplacementStoreProtocol> *textReplacementStore; // @synthesize textReplacementStore=_textReplacementStore;
+@property(retain, nonatomic) NSObject<_KSTextReplacementSyncProtocol> *textReplacementStore; // @synthesize textReplacementStore=_textReplacementStore;
 @property(retain, nonatomic) _KSTextReplacementLegacyStore *legacyStore; // @synthesize legacyStore=_legacyStore;
 @property(retain, nonatomic) _KSTextReplacementCKStore *ckStore; // @synthesize ckStore=_ckStore;
 - (void).cxx_destruct;
@@ -56,7 +56,7 @@
 - (void)accountDidChange:(id)arg1;
 - (BOOL)shouldMigrateToCloudKit;
 - (id)initWithDirectoryPath:(id)arg1;
-- (id)initWithDirectoryPath:(id)arg1 ignoreMigrationBatchCheck:(BOOL)arg2 forceCloudKitSync:(BOOL)arg3;
+- (id)initWithDirectoryPath:(id)arg1 ignoreMigrationBatchCheck:(BOOL)arg2 syncMode:(int)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

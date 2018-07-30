@@ -8,6 +8,7 @@
 
 @class BRCloudPathComponentDisplayMetadata, NSAttributedString, NSNumber, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface NSFileLocationComponent : NSObject
 {
     NSURL *_url;

@@ -23,12 +23,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)attributeDescriptions;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)description;
-- (id)debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
 - (id)initWithPairingKeyData:(id)arg1;
 - (id)init;
 

@@ -10,6 +10,7 @@
 
 @class AVOutputContextCommunicationChannel, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigCommChannelUUIDOutputContextCommunicationChannelImpl : NSObject <AVOutputContextCommunicationChannelImpl>
 {
     AVOutputContextCommunicationChannel *_parentChannel;

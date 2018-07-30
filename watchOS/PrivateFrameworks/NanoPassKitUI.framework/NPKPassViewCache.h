@@ -18,8 +18,8 @@
 @property(retain, nonatomic) NSMutableArray *viewsInOrderOfUse; // @synthesize viewsInOrderOfUse=_viewsInOrderOfUse;
 - (void).cxx_destruct;
 - (void)_trimCachedViewsIfNecessary;
-- (void)_handlePassesChanged:(id)arg1;
-- (id)cachedPassViewForDescription:(id)arg1;
+- (void)clearCache;
+- (id)cachedPassViewForPass:(id)arg1;
 - (void)addCachedPassView:(id)arg1;
 - (void)dealloc;
 - (id)init;

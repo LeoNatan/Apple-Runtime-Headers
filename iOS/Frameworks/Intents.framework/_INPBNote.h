@@ -7,13 +7,15 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBNote.h"
 
-@class NSMutableArray, NSString, PBUnknownFields, _INPBDataString, _INPBDateTime;
+@class NSArray, NSString, _INPBDataString, _INPBDateTime;
 
-@interface _INPBNote : PBCodable <NSCopying>
+@interface _INPBNote : PBCodable <_INPBNote, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_contents;
+    struct _has;
+    NSArray *_contents;
     _INPBDateTime *_createdDateTime;
     _INPBDataString *_groupName;
     NSString *_identifier;
@@ -22,32 +24,33 @@
 }
 
 + (Class)contentType;
-+ (id)options;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) _INPBDateTime *modifiedDateTime; // @synthesize modifiedDateTime=_modifiedDateTime;
-@property(retain, nonatomic) _INPBDateTime *createdDateTime; // @synthesize createdDateTime=_createdDateTime;
-@property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
-@property(retain, nonatomic) NSMutableArray *contents; // @synthesize contents=_contents;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
+@property(retain, nonatomic) _INPBDateTime *modifiedDateTime; // @synthesize modifiedDateTime=_modifiedDateTime;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
+@property(retain, nonatomic) _INPBDateTime *createdDateTime; // @synthesize createdDateTime=_createdDateTime;
+@property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasIdentifier;
+@property(readonly, nonatomic) _Bool hasTitle;
 @property(readonly, nonatomic) _Bool hasModifiedDateTime;
-@property(readonly, nonatomic) _Bool hasCreatedDateTime;
+@property(readonly, nonatomic) _Bool hasIdentifier;
 @property(readonly, nonatomic) _Bool hasGroupName;
+@property(readonly, nonatomic) _Bool hasCreatedDateTime;
 - (id)contentAtIndex:(unsigned long long)arg1;
-- (unsigned long long)contentsCount;
+@property(readonly, nonatomic) unsigned long long contentsCount;
 - (void)addContent:(id)arg1;
 - (void)clearContents;
-@property(readonly, nonatomic) _Bool hasTitle;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

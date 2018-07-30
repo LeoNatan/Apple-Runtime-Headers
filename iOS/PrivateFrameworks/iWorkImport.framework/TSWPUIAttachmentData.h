@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint location; // @synthesize location=_location;
 @property(readonly, nonatomic) TSWPUIGraphicalAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+- (void)adjustAlignmentBy:(double)arg1;
 - (id)initWithAttachment:(id)arg1 location:(struct CGPoint)arg2 charIndex:(long long)arg3;
 
 @end

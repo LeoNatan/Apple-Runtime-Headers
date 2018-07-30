@@ -10,15 +10,15 @@
 #import "NSDraggingDestination.h"
 #import "NSMenuDelegate.h"
 
-@class CALayer, NSColor, NSString, NSTrackingArea;
+@class BackgroundColorView, CALayer, NSColor, NSString, NSTitlebarSeparatorView, NSTrackingArea;
 
 __attribute__((visibility("hidden")))
 @interface NewTabButton : NSButton <NSMenuDelegate, NSDraggingDestination, ButtonInTabSyncGroup>
 {
     NSTrackingArea *_trackingArea;
     NSColor *_backgroundColor;
-    CALayer *_topBorderLayer;
-    CALayer *_leadingBorderLayer;
+    NSTitlebarSeparatorView *_topBorderView;
+    BackgroundColorView *_leadingBorderView;
     CALayer *_backgroundLayer;
     BOOL _mouseIsOverButton;
     BOOL _syncedWithOtherButton;
@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)_setBackgroundColor:(id)arg1 withAnimation:(id)arg2;
 - (void)_updateButtonHighlightWhenPressed:(BOOL)arg1 hovered:(BOOL)arg2 notifyButtonInTabSyncGroupDelegate:(BOOL)arg3;
 - (void)_updateButtonHighlightWhenPressed:(BOOL)arg1 hovered:(BOOL)arg2;
+- (void)drawRect:(struct CGRect)arg1;
 - (BOOL)allowsVibrancy;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

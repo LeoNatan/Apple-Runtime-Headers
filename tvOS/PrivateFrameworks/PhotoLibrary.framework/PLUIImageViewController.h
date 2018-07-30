@@ -6,13 +6,14 @@
 
 #import "UIViewController.h"
 
+#import "PLCropOverlayDelegate.h"
 #import "PLImageLoadingQueueDelegate.h"
 #import "PLPhotoTileViewControllerDelegate.h"
 #import "PLVideoViewDelegate.h"
 
 @class NSString, NSURL, PLCropOverlay, PLImageCache, PLImageLoadingQueue, PLImageSource, PLManagedAsset, PLPhotoTileViewController, PLProgressView, PLVideoRemaker, PLVideoView, UIImage;
 
-@interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate>
+@interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate, PLCropOverlayDelegate>
 {
     PLManagedAsset *_photo;
     struct CGImage *_imageRef;

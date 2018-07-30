@@ -14,6 +14,7 @@
 
 @interface MarkupViewController : NSViewController <MUContentViewControllerDelegate, NSTouchBarDelegate, NSWindowDelegate>
 {
+    BOOL _wantsToolbarAndPadding;
     BOOL _sourceContentIsLoaded;
     BOOL _viewDidAppearWasDoneOnce;
     BOOL _alreadyLoggedSavingForThisDocument;
@@ -37,6 +38,7 @@
 
 + (id)cleanImageMetadataFromData:(id)arg1;
 + (BOOL)hasPrivateImageMetadata:(id)arg1;
++ (id)supportedOutputTypes;
 @property BOOL cropToolEnabled; // @synthesize cropToolEnabled=_cropToolEnabled;
 @property(copy, nonatomic) NSString *hostProcessBundleIdentifier; // @synthesize hostProcessBundleIdentifier=_hostProcessBundleIdentifier;
 @property BOOL encryptPrivateMetadata; // @synthesize encryptPrivateMetadata=_encryptPrivateMetadata;
@@ -56,6 +58,7 @@
 @property(retain) id sourceContent; // @synthesize sourceContent=_sourceContent;
 @property(nonatomic) __weak NSView *contentViewHolder; // @synthesize contentViewHolder=_contentViewHolder;
 @property(nonatomic) __weak NSStackView *toolBarViewHolder; // @synthesize toolBarViewHolder=_toolBarViewHolder;
+@property BOOL wantsToolbarAndPadding; // @synthesize wantsToolbarAndPadding=_wantsToolbarAndPadding;
 - (void).cxx_destruct;
 - (void)_someViewDidChangeFrame:(id)arg1;
 - (void)_updateBorderOverlayView;
@@ -63,6 +66,7 @@
 - (BOOL)_writeToDataConsumer:(struct CGDataConsumer *)arg1 embedSourceImageAndEditModel:(BOOL)arg2 error:(id *)arg3;
 - (id)_outputContentType;
 - (id)_sourceContentType;
+- (void)editDetectedForAnnotationController:(id)arg1;
 - (id)annotationControllerOfContentViewController:(id)arg1 willSetToolbarItems:(id)arg2;
 - (struct CGRect)positioningRectForCandidatePickerForContentViewController:(id)arg1;
 - (void)positionSketchOverlay:(id)arg1 forContentViewController:(id)arg2;
@@ -79,11 +83,13 @@
 - (void)redo:(id)arg1;
 - (void)undo:(id)arg1;
 - (void)performActionForSender:(id)arg1;
+- (void)revert;
 - (BOOL)_validateItem:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)keyUp:(id)arg1;
 - (void)keyDown:(id)arg1;
+@property BOOL allEditingDisabled;
 - (void)addToolbarButton:(id)arg1;
 - (id)createArchivedModelData;
 - (id)dataRepresentationWithError:(id *)arg1;
@@ -93,6 +99,7 @@
 @property(readonly, nonatomic) NSString *outputType;
 - (void)setData:(id)arg1 withArchivedModelData:(id)arg2;
 - (void)setImage:(id)arg1 withArchivedModelData:(id)arg2;
+- (void)setFileURL:(id)arg1 withArchivedModelData:(id)arg2 preloadedView:(id)arg3;
 - (void)setFileURL:(id)arg1 withArchivedModelData:(id)arg2;
 - (id)filteredToolbarItemsForItems:(id)arg1 fromController:(id)arg2;
 - (id)_getUndoManager:(BOOL)arg1;
@@ -107,6 +114,7 @@
 - (struct CGRect)window:(id)arg1 willPositionSheet:(id)arg2 usingRect:(struct CGRect)arg3;
 - (void)windowWillClose:(id)arg1;
 - (void)viewDidAppear;
+- (void)_loadContentWithPreloadedView:(id)arg1;
 - (void)_loadContent;
 - (void)viewDidLoad;
 - (void)loadView;
@@ -116,7 +124,9 @@
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)awakeFromNib;
 - (id)init;
+- (id)initWithToolbar:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

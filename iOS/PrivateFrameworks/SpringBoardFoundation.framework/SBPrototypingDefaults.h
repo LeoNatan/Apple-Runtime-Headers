@@ -13,7 +13,6 @@
 - (void)_bindAndRegisterDefaults;
 
 // Remaining properties
-@property(nonatomic) _Bool actLikeCustomerInstall; // @dynamic actLikeCustomerInstall;
 @property(nonatomic) _Bool allowPrototypeSettings; // @dynamic allowPrototypeSettings;
 @property(nonatomic) _Bool prototypeSettingsNeedsMigration; // @dynamic prototypeSettingsNeedsMigration;
 

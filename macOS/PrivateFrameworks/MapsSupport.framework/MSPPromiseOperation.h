@@ -28,6 +28,7 @@
 - (void)cancel;
 - (void)_invokeCompletionsAndEnd;
 - (void)endWithNewFetchedData:(BOOL)arg1 error:(id)arg2;
+- (void)setNetworkBehaviorIsDiscretionary:(BOOL)arg1;
 - (void)addCloudAccessCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)start;
 - (void)_setExecuting:(BOOL)arg1 finished:(BOOL)arg2;

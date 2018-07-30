@@ -27,6 +27,10 @@ struct CGSize {
     float height;
 };
 
+struct NSData {
+    Class _field1;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -35,4 +39,9 @@ typedef struct {
     unsigned long *_field3;
     unsigned long _field4[5];
 } CDStruct_11f37819;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int version:1;
+} CDStruct_f20694ce;
 

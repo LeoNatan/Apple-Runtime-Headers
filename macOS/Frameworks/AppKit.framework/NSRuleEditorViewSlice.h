@@ -10,6 +10,7 @@
 
 @class NSColor, NSRuleEditor;
 
+__attribute__((visibility("hidden")))
 @interface NSRuleEditorViewSlice : NSView <NSCoding>
 {
     NSRuleEditor *_ruleEditor;
@@ -47,7 +48,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (BOOL)containsDisplayValue:(id)arg1;
-- (struct CGShading *)_backgroundShader;
 - (id)_curveColorForIndentation:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 ruleEditorView:(id)arg2;
 

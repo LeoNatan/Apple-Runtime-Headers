@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSData, NSMutableDictionary, NSString, _ACPluginDB;
+@class NSData, NSMutableArray, NSMutableDictionary, NSString, _ACPluginDB;
 
 __attribute__((visibility("hidden")))
 @interface _ACPluginDBDirectory : NSObject <NSSecureCoding>
@@ -22,6 +22,9 @@ __attribute__((visibility("hidden")))
     double mCurrentModificationDate;
     NSData *mCarbonComponentHash;
     BOOL mComponentsLoadable;
+    NSMutableArray *mChangedBundlePaths;
+    unsigned long long mNrOfPathsChanged;
+    _Bool mShouldRescan;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -31,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)loadAllComponents:(struct AudioComponentVector *)arg1;
 - (void)monitorDirectory;
 - (void)eventStreamCallback:(id)arg1 flags:(const unsigned int *)arg2;
+- (void)bundlesChanged:(id)arg1 shouldRescan:(_Bool)arg2;
 - (BOOL)updateCarbonComponentHash;
 - (_Bool)refreshModificationDate;
 - (void)encodeWithCoder:(id)arg1;

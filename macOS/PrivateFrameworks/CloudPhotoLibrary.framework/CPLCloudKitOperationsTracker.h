@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (id)statusDictionary;
 - (id)status;
+- (void)cancelBlockedTasksIncludingBackground:(BOOL)arg1;
 - (void)cancelAllOperationsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)taskDidFinish:(id)arg1;
 - (void)taskHasBeenCancelled:(id)arg1;

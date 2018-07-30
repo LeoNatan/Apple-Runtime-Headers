@@ -7,6 +7,6 @@
 #import "NSBundle.h"
 
 @interface NSBundle (UserNotifications)
-+ (id)un_safeBundleWithURL:(id)arg1;
++ (id)userNotificationsBundleWithIdentifier:(id)arg1;
 @end
 

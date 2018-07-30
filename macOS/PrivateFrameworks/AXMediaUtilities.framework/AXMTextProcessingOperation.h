@@ -6,19 +6,21 @@
 
 #import "NSObject.h"
 
-@class AXMLanguage, NSLocale;
+@class AXMDiagnostics, AXMLanguage, NSLocale;
 
 @interface AXMTextProcessingOperation : NSObject
 {
     AXMLanguage *_language;
+    AXMDiagnostics *_diagnostics;
 }
 
-+ (id)operationWithSystemLanguage;
-+ (id)operationWithLanguage:(id)arg1;
++ (id)operationWithSystemLanguage:(id)arg1;
++ (id)operationWithLanguage:(id)arg1 diagnostics:(id)arg2;
+@property(retain, nonatomic) AXMDiagnostics *diagnostics; // @synthesize diagnostics=_diagnostics;
 @property(readonly, nonatomic) AXMLanguage *language; // @synthesize language=_language;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSLocale *lexiconLocale;
-- (id)_initWithLanguage:(id)arg1;
+- (id)_initWithLanguage:(id)arg1 diagnostics:(id)arg2;
 
 @end
 

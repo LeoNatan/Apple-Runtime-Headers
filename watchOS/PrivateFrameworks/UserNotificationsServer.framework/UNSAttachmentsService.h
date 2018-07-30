@@ -23,7 +23,6 @@
 + (id)_attachmentURLsRemovedByReplaceUpdate:(id)arg1;
 + (id)_notificationIdentifiersForNotificationRecords:(id)arg1;
 + (id)_stagingDirectory;
-+ (id)_defaultRepositoryDirectory;
 - (void).cxx_destruct;
 - (void)_notificationIdentifiersForBundleIdentifier:(id)arg1 replyOnQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_repositoryDidPerformUpdates:(id)arg1 forBundleIdentifier:(id)arg2;
@@ -31,10 +30,10 @@
 - (void)pendingNotificationRepository:(id)arg1 didPerformUpdates:(id)arg2 forBundleIdentifier:(id)arg3;
 - (void)notificationRepository:(id)arg1 didPerformUpdates:(id)arg2 forBundleIdentifier:(id)arg3;
 - (void)_queue_applicationDidUninstall:(id)arg1;
-- (void)_queue_applicationsDidUninstall:(id)arg1;
-- (void)applicationsDidUninstall:(id)arg1;
-- (void)_queue_getAttachmentDataForAttachment:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)getAttachmentDataForAttachment:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_queue_notificationSourcesDidUninstall:(id)arg1;
+- (void)notificationSourcesDidUninstall:(id)arg1;
+- (id)_queue_getAttachmentDataForAttachment:(id)arg1 bundleIdentifier:(id)arg2 error:(id *)arg3;
+- (id)attachmentDataForAttachment:(id)arg1 bundleIdentifier:(id)arg2 error:(id *)arg3;
 - (void)_queue_deleteAttachmentDataForNotificationRecord:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_queue_deleteAttachmentDataForNotificationRecords:(id)arg1 bundleIdentifier:(id)arg2;
 - (id)_temporaryAttachmentFileURL;
@@ -42,11 +41,11 @@
 - (id)_queue_validatedRepositoryURLForNotificationAttachment:(id)arg1 request:(id)arg2 bundleIdentifier:(id)arg3 bundleProxy:(id)arg4 error:(id *)arg5;
 - (id)_queue_resolvedURLForNotificationAttachment:(id)arg1 request:(id)arg2 bundleIdentifier:(id)arg3 bundleProxy:(id)arg4 error:(id *)arg5;
 - (id)_queue_resolveAttachmentsForRequest:(id)arg1 bundleIdentifier:(id)arg2 bundleProxy:(id)arg3 error:(id *)arg4;
-- (void)resolveAttachmentsSkippingErrorsForRequest:(id)arg1 bundleIdentifier:(id)arg2 bundleProxy:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)resolveAttachmentsForRequest:(id)arg1 bundleIdentifier:(id)arg2 bundleProxy:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)resolveAttachmentsSkippingErrorsForRequest:(id)arg1 bundleIdentifier:(id)arg2 bundleProxy:(id)arg3;
+- (id)resolveAttachmentsForRequest:(id)arg1 bundleIdentifier:(id)arg2 bundleProxy:(id)arg3 error:(id *)arg4;
 - (void)_queue_ensureIntegrityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)ensureIntegrityWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithNotificationRepository:(id)arg1 notificationSchedulingService:(id)arg2 pendingNotificationRepository:(id)arg3;
+- (id)initWithAttachmentsRepository:(id)arg1 notificationRepository:(id)arg2 notificationSchedulingService:(id)arg3 pendingNotificationRepository:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

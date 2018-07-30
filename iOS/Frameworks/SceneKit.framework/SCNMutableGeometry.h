@@ -6,6 +6,7 @@
 
 #import <SceneKit/SCNGeometry.h>
 
+__attribute__((visibility("hidden")))
 @interface SCNMutableGeometry : SCNGeometry
 {
 }

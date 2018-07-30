@@ -25,6 +25,7 @@
 - (void)harvestedSuggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)harvestedSuggestionsFromMessage:(id)arg1 bundleIdentifier:(id)arg2 options:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)suggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)isMessageEligibleForSuggestions:(id)arg1;
 - (void)sendContextForMessage:(id)arg1;
 - (void)setupContextIfNeededForConversation:(id)arg1;
 - (id)_remoteSuggestionManager;

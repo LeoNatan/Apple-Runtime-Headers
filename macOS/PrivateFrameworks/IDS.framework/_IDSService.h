@@ -18,7 +18,6 @@
     IDSAccountController *_accountController;
     NSMutableDictionary *_uniqueIDToConnection;
     NSSet *_commands;
-    NSString *_rerouteService;
     NSMapTable *_delegateToInfo;
     id _delegateContext;
     NSMutableDictionary *_protobufSelectors;
@@ -30,6 +29,7 @@
     unsigned int _listenerCaps;
     NSObject<OS_xpc_object> *_connection;
     IDSGroupContextController *_groupContextController;
+    NSMutableDictionary *_uniqueIDToProgress;
     IDSQuickSwitchAcknowledgementTracker *_acknowledgementTracker;
     CDUnknownBlockType _pendingRegisteredIdentitiesBlock;
 }
@@ -71,6 +71,7 @@
 - (id)firstRoutableInternetDestinationForSelf;
 - (id)deviceForFromID:(id)arg1;
 - (id)uriForFromID:(id)arg1;
+- (BOOL)getProgressUpdateForIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)cancelIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
 - (BOOL)sendData:(id)arg1 priority:(long long)arg2 options:(id)arg3 identifier:(id *)arg4 error:(id *)arg5;
@@ -94,8 +95,10 @@
 @property(readonly, nonatomic) IDSAccount *iCloudAccount;
 @property(readonly, copy, nonatomic) NSString *serviceDomain;
 @property(nonatomic, getter=isPretendingToBeFull) BOOL pretendingToBeFull;
+- (void)connection:(id)arg1 account:(id)arg2 receivedGroupSessionParticipantDataUpdate:(id)arg3;
+- (void)connection:(id)arg1 account:(id)arg2 receivedGroupSessionParticipantUpdate:(id)arg3;
 - (void)connection:(id)arg1 account:(id)arg2 sessionInviteReceived:(id)arg3 fromID:(id)arg4 transportType:(id)arg5 options:(id)arg6 context:(id)arg7 messageContext:(id)arg8;
-- (void)connection:(id)arg1 identifier:(id)arg2 hasBeenDeliveredWithContext:(id)arg3;
+- (void)connection:(id)arg1 identifier:(id)arg2 fromID:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)connection:(id)arg1 identifier:(id)arg2 didSendWithSuccess:(BOOL)arg3 error:(id)arg4 context:(id)arg5;
 - (void)connection:(id)arg1 identifier:(id)arg2 alternateCallbackID:(id)arg3 willSendToDestinations:(id)arg4 skippedDestinations:(id)arg5 registrationPropertyToDestinations:(id)arg6;
 - (void)connection:(id)arg1 messageIdentifier:(id)arg2 alternateCallbackID:(id)arg3 updatedWithResponseCode:(long long)arg4 error:(id)arg5 lastCall:(BOOL)arg6 messageContext:(id)arg7;

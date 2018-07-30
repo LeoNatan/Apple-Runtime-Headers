@@ -8,11 +8,11 @@
 
 #import "NUIContainerStackViewDelegate.h"
 
-@class NSMutableDictionary, NSString, SearchUIAccessoryViewController, SearchUIThumbnailView, TLKDetailsView, TLKStackView, UIButton;
+@class NSMutableDictionary, NSString, SearchUIAccessoryViewController, SearchUIImageView, TLKDetailsView, TLKStackView, UIButton;
 
 @interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate>
 {
-    SearchUIThumbnailView *_thumbnailView;
+    SearchUIImageView *_thumbnailView;
     UIButton *_buttonView;
     TLKDetailsView *_detailsView;
     TLKStackView *_innerStackView;
@@ -29,7 +29,7 @@
 @property(retain) TLKStackView *innerStackView; // @synthesize innerStackView=_innerStackView;
 @property(retain) TLKDetailsView *detailsView; // @synthesize detailsView=_detailsView;
 @property(retain) UIButton *buttonView; // @synthesize buttonView=_buttonView;
-@property(retain) SearchUIThumbnailView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
+@property(retain) SearchUIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 - (void).cxx_destruct;
 - (void)buttonPressed;
 - (long long)containerStackView:(id)arg1 alignmentForArrangedSubview:(id)arg2;

@@ -8,7 +8,6 @@
 
 @class CNPostalAddress, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface ABMapsLaunchRequest : NSObject
 {
     BOOL _presentDirections;

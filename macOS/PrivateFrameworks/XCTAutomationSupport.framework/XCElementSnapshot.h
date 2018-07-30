@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSDictionary, NSEnumerator, NSIndexPath, NSString, NSValue, XCAccessibilityElement, XCUIApplication;
+@class NSArray, NSDictionary, NSEnumerator, NSIndexPath, NSSet, NSString, NSValue, XCAccessibilityElement, XCUIApplication;
 
 @interface XCElementSnapshot : NSObject <NSSecureCoding, NSCopying>
 {
@@ -20,6 +20,7 @@
     BOOL _hasFocus;
     BOOL _hasKeyboardFocus;
     BOOL _isTruncatedValue;
+    int _bridgedProcessID;
     XCUIApplication *_application;
     unsigned long long _generation;
     id <XCTElementSnapshotAttributeDataSource> _dataSource;
@@ -42,7 +43,8 @@
     struct CGRect _frame;
 }
 
-+ (id)snapshotAttributesForElementSnapshotKeyPaths:(id)arg1;
++ (id)axAttributesForSnapshotAttributes:(id)arg1;
++ (id)axAttributesForElementSnapshotKeyPaths:(id)arg1;
 + (id)elementWithAccessibilityElement:(id)arg1;
 + (BOOL)supportsSecureCoding;
 @property XCElementSnapshot *parent; // @synthesize parent=_parent;
@@ -51,11 +53,14 @@
 @property BOOL isTruncatedValue; // @synthesize isTruncatedValue=_isTruncatedValue;
 @property(copy) NSDictionary *additionalAttributes; // @synthesize additionalAttributes=_additionalAttributes;
 - (void).cxx_destruct;
+@property(readonly) BOOL isMacOS;
 @property(readonly) BOOL isTopLevelTouchBarElement;
 @property(readonly) BOOL isTouchBarElement;
 - (BOOL)_isAncestorOfElement:(id)arg1;
 - (BOOL)_isDescendantOfElement:(id)arg1;
+@property(readonly) NSSet *uniqueDescendantSubframes;
 @property(readonly) NSArray *suggestedHitpoints;
+- (BOOL)isRemote;
 @property(readonly) XCElementSnapshot *rootElement;
 @property(readonly) double centerY;
 @property(readonly) double centerX;
@@ -83,13 +88,15 @@
 - (id)elementSnapshotMatchingAccessibilityElement:(id)arg1;
 - (void)enumerateDescendantsUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long depth;
+- (id)dictionaryRepresentationWithAttributes:(id)arg1;
 @property(readonly, copy) NSString *sparseTreeDescription;
 @property(readonly, copy) NSString *compactDescription;
 @property(readonly, copy) NSString *pathDescription;
 @property(readonly) NSString *recursiveDescriptionIncludingAccessibilityElement;
 @property(readonly) NSString *recursiveDescription;
-- (id)recursiveDescriptionWithIndent:(id)arg1 includeAccessibilityElement:(BOOL)arg2;
+- (id)recursiveDescriptionWithIndent:(id)arg1 includeAccessibilityElement:(BOOL)arg2 includingPointers:(BOOL)arg3;
 - (id)debugDescription;
+- (id)descriptionIncludingPointers:(BOOL)arg1;
 - (id)description;
 @property(copy) NSArray *children; // @synthesize children=_children;
 @property(copy) NSArray *userTestingAttributes; // @synthesize userTestingAttributes=_userTestingAttributes;
@@ -97,6 +104,8 @@
 @property long long horizontalSizeClass; // @synthesize horizontalSizeClass=_horizontalSizeClass;
 @property unsigned long long traits; // @synthesize traits=_traits;
 @property BOOL isMainWindow; // @synthesize isMainWindow=_isMainWindow;
+@property int bridgedProcessID; // @synthesize bridgedProcessID=_bridgedProcessID;
+@property(readonly, getter=isBridged) BOOL bridged;
 @property(getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property BOOL hasFocus; // @synthesize hasFocus=_hasFocus;

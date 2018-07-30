@@ -18,6 +18,7 @@
 + (id)persistentStoreCoordinatorAddPersistentStoreIfNecessary:(BOOL)arg1;
 + (id)persistentStoreCoordinator;
 + (void)addPersistentStoreIfNeeded;
++ (id)managedObjectModel;
 + (BOOL)isAppSandboxed;
 + (BOOL)isRunningInNotes;
 + (void)setStoreCoordinatorIsReadOnly:(BOOL)arg1;

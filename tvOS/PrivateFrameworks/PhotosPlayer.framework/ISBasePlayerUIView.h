@@ -27,6 +27,7 @@
     ISWrappedAVAudioSession *_wrappedAudioSession;
     id <ISBasePlayerUIViewChangeObserver> __changeObserver;
     struct CGPoint _scaleAnchorOffset;
+    struct CGRect _contentsRect;
 }
 
 + (Class)playerClass;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) UIView *_containerView; // @synthesize _containerView=__containerView;
 @property(readonly, nonatomic) ISVideoPlayerUIView *_videoView; // @synthesize _videoView=__videoView;
 @property(readonly, nonatomic) UIImageView *_photoView; // @synthesize _photoView=__photoView;
+@property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
 @property(retain, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
 @property(retain, nonatomic) UIView *customPhotoView; // @synthesize customPhotoView=_customPhotoView;
 @property(nonatomic) struct CGPoint scaleAnchorOffset; // @synthesize scaleAnchorOffset=_scaleAnchorOffset;

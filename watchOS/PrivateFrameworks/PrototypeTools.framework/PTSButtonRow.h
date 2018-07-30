@@ -4,14 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <PrototypeTools/PTSRow.h>
+#import <PrototypeTools/PTButtonRow.h>
 
-@interface PTSButtonRow : PTSRow
+@interface PTSButtonRow : PTButtonRow
 {
 }
-
-+ (id)rowWithTitle:(id)arg1 action:(id)arg2;
-- (Class)rowTableViewCellClass;
 
 @end
 

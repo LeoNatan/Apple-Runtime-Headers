@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class AMAction, AMWorkflowController, AMWorkflowMetaData, AMWorkflowPersonality, NSArray, NSAttributedString, NSDictionary, NSMutableArray, NSString, NSURL, NSUndoManager;
+@class AMType, AMWorkflowController, AMWorkflowMetaData, AMWorkflowPersonality, NSArray, NSAttributedString, NSDictionary, NSMapTable, NSMutableArray, NSString, NSURL, NSUndoManager;
 
 @interface AMWorkflow : NSObject <NSCopying>
 {
@@ -44,6 +44,7 @@
 + (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 variablesDictionary:(id)arg3 error:(id *)arg4;
 + (id)workflowWithPropertyList:(id)arg1 url:(id)arg2 forRunning:(BOOL)arg3 error:(id *)arg4;
 + (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 error:(id *)arg3;
+@property(retain, nonatomic) NSMapTable *_loadingErrorsByAction; // @synthesize _loadingErrorsByAction=_future2;
 @property unsigned long long updateCount; // @synthesize updateCount=_updateCount;
 @property(retain, nonatomic, getter=_workflowMetaData, setter=_setWorkflowMetaData:) AMWorkflowMetaData *_workflowMetaData; // @synthesize _workflowMetaData=_future;
 @property(retain) NSArray *loadingErrors; // @synthesize loadingErrors=_loadingErrors;
@@ -60,7 +61,13 @@
 @property(retain) NSDictionary *savedPropertyList; // @synthesize savedPropertyList=_savedPropertyList;
 @property(copy) NSString *UUID; // @synthesize UUID=_uuid;
 - (void).cxx_destruct;
-- (id)preflightForRunningReturningError;
+- (void)_thirdPartyActionsAllowedChanged:(id)arg1;
+- (void)_reloadThirdPartyActions;
+- (void)reloadActionsForIdentifiers:(id)arg1;
+- (void)_reloadActionWithoutNotifying:(id)arg1;
+- (id)_loadedActionOrPlaceholderForActionDictionary:(id)arg1 isViewVisible:(id)arg2 isTigerWorkflow:(BOOL)arg3 error:(id *)arg4;
+- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
+- (id)preflightForRunningWithModeReturningError:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSDictionary *_warningMessageDictOnRun;
 - (id)_suggestedTestingActionBundleID;
 @property(readonly, nonatomic) NSUndoManager *_undoManager;
@@ -74,9 +81,11 @@
 - (void)removeConnectionsForAction:(id)arg1;
 - (void)removeOutputConnectionsForAction:(id)arg1;
 @property(readonly, nonatomic) BOOL _shouldShowWorkflowHeaderOutputConnection;
+@property(readonly, nonatomic) AMType *_automaticallyGuessedInputType;
+- (BOOL)_firstActionToConnectToHeaderViewHasPotentialConnectionToInputType:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *_workflowOutputTypeNames;
 - (id)_lastActionProvidingOutput;
-@property(readonly, nonatomic) AMAction *_firstActionToConnectToHeaderView;
+- (id)_actionToConnectToHeaderViewForDrawingConnectionPoint:(BOOL)arg1;
 - (void)removeInputConnectionsForAction:(id)arg1;
 - (void)evaluateConnectionForActionConnector:(id)arg1;
 - (void)displayInheritedTypesForAction:(id)arg1 fromAction:(id)arg2;
@@ -125,11 +134,14 @@
 - (void)_removeActionsInRange:(struct _NSRange)arg1;
 - (void)removeActions:(id)arg1;
 - (void)removeAction:(id)arg1;
+- (void)_removeActionWithoutNotifying:(id)arg1;
 - (void)_removeAction:(id)arg1;
+- (void)_clearLoadingErrorsForAction:(id)arg1;
 - (id)_addActionWithBundleIdentifier:(id)arg1;
 - (void)finishAddingAction:(id)arg1;
 - (void)insertActions:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertAction:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)_insertActionWithoutNotifying:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)addActions:(id)arg1;
 - (void)addAction:(id)arg1;
 - (id)actionForUUID:(id)arg1;
@@ -146,6 +158,7 @@
 - (BOOL)readFromPropertyList:(id)arg1 variablesDictionary:(id)arg2 error:(id *)arg3;
 - (BOOL)checkDocumentVersion:(id)arg1;
 @property(retain, nonatomic, getter=_workflowPersonality, setter=_setWorkflowPersonality:) AMWorkflowPersonality *_workflowPersonality;
+- (void)_configureForWorkflowPersonality:(id)arg1 templateWorkflowMetaData:(id)arg2;
 @property(readonly, nonatomic) NSString *_headerInputType;
 @property(readonly, nonatomic) NSString *version;
 @property(readonly, nonatomic) NSArray *outputTypes;

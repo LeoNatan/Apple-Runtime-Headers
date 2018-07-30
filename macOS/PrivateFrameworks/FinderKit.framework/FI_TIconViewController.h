@@ -12,14 +12,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)itemIdentifier;
+- (void)setUseActiveAppearance:(_Bool)arg1;
 - (id)_titleViews;
-- (BOOL)_hasOpaquePartsInRect:(struct CGRect)arg1;
 - (void)updateHighlightedOrSelectedAppearance;
 - (void)setSelected:(BOOL)arg1;
 - (void)setHighlightState:(long long)arg1;
 - (id)iconViewNoLoad;
 - (id)iconView;
-- (BOOL)_viewControllerSupports10_10Features;
 - (void)loadView;
 
 @end

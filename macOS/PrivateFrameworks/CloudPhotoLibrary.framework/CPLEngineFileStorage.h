@@ -35,6 +35,7 @@
 - (BOOL)compactStorageIncludeOriginals:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)_compactStorageIncludeOriginals:(BOOL)arg1 desiredFreeSpace:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)tryToFreeDiskSpace:(unsigned long long)arg1 actuallyFreedSpace:(unsigned long long *)arg2 error:(id *)arg3;
+- (BOOL)resetWithError:(id *)arg1;
 - (BOOL)compactStorage:(id *)arg1;
 - (BOOL)discardAllRetainedFileURLsWithError:(id *)arg1;
 - (BOOL)releaseFileURL:(id)arg1 error:(id *)arg2;

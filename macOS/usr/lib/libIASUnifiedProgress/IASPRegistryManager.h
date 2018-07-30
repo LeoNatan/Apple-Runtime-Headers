@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)setEFIUpdateStartPercentage:(BOOL)arg1 andStopPercentage:(BOOL)arg2;
 + (float)startingPercentage;
 + (void)setPhases:(id)arg1;
 + (id)phases;

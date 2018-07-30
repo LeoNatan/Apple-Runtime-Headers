@@ -11,6 +11,7 @@
 @protocol FMFSessionDelegate <NSObject>
 
 @optional
+- (void)didUpdateFences:(NSSet *)arg1;
 - (void)didUpdateFavoriteHandles:(NSArray *)arg1;
 - (void)didReceiveServerError:(NSError *)arg1;
 - (void)didUpdatePendingOffersForHandles:(NSSet *)arg1;

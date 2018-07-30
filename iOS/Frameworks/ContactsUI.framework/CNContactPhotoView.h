@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 
 + (id)supportedPasteboardTypes;
 + (_Bool)requiresConstraintBasedLayout;
++ (struct CGSize)defaultSize;
 @property(nonatomic) _Bool acceptsImageDrop; // @synthesize acceptsImageDrop=_acceptsImageDrop;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;

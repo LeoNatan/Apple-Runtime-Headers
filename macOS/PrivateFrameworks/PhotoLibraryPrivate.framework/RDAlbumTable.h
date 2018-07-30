@@ -56,6 +56,7 @@
     LiKeyPath *_projectExtensionIdentifierKeyPath;
     LiKeyPath *_projectExtensionDataKeyPath;
     LiKeyPath *_projectDocumentTypeKeyPath;
+    LiKeyPath *_projectExtensionRenderedPreviewUuidKeyPath;
 }
 
 + (SEL)deletedModelIdsMulticasterSelector;
@@ -65,6 +66,7 @@
 + (id)tableName;
 + (id)modelName;
 + (Class)modelClass;
+@property(readonly, nonatomic) LiKeyPath *projectExtensionRenderedPreviewUuidKeyPath; // @synthesize projectExtensionRenderedPreviewUuidKeyPath=_projectExtensionRenderedPreviewUuidKeyPath;
 @property(readonly, nonatomic) LiKeyPath *projectDocumentTypeKeyPath; // @synthesize projectDocumentTypeKeyPath=_projectDocumentTypeKeyPath;
 @property(readonly, nonatomic) LiKeyPath *projectExtensionDataKeyPath; // @synthesize projectExtensionDataKeyPath=_projectExtensionDataKeyPath;
 @property(readonly, nonatomic) LiKeyPath *projectExtensionIdentifierKeyPath; // @synthesize projectExtensionIdentifierKeyPath=_projectExtensionIdentifierKeyPath;

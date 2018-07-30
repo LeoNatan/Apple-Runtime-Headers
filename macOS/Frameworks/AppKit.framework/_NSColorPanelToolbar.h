@@ -10,6 +10,7 @@
 
 @class NSColorPanel, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSColorPanelToolbar : NSToolbar <NSToolbarDelegate>
 {
     NSColorPanel *colorPanel;

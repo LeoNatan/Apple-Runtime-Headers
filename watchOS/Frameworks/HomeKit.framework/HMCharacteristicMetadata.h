@@ -9,10 +9,11 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMFUnfairLock, NSArray, NSNumber, NSString, NSUUID;
 
 @interface HMCharacteristicMetadata : NSObject <NSSecureCoding, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     NSNumber *_minimumValue;
     NSNumber *_maximumValue;
     NSNumber *_stepValue;
@@ -21,18 +22,15 @@
     NSString *_units;
     NSString *_manufacturerDescription;
     NSArray *_validValues;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
 @property(copy, nonatomic) NSArray *validValues; // @synthesize validValues=_validValues;
 @property(copy, nonatomic) NSString *manufacturerDescription; // @synthesize manufacturerDescription=_manufacturerDescription;
 @property(copy, nonatomic) NSString *units; // @synthesize units=_units;
@@ -41,6 +39,7 @@
 @property(retain, nonatomic) NSNumber *stepValue; // @synthesize stepValue=_stepValue;
 @property(retain, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(retain, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

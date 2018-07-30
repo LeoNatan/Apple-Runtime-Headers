@@ -11,7 +11,7 @@
 #import "TUCallRequest.h"
 #import "TUVideoRequest.h"
 
-@class CNContactStore, IDSDestination, NSArray, NSString, NSURL, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle;
+@class CNContactStore, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentityClient;
 
 @interface TUDialRequest : NSObject <TUCallRequest, TUVideoRequest, NSSecureCoding, NSCopying>
 {
@@ -24,7 +24,9 @@
     BOOL _endpointOnCurrentDevice;
     BOOL _sos;
     BOOL _redial;
+    BOOL _shouldSuppressInCallUI;
     NSString *_uniqueProxyIdentifier;
+    TUSenderIdentityClient *_senderIdentityClient;
     TUCallProvider *_provider;
     long long _dialType;
     TUHandle *_handle;
@@ -35,17 +37,15 @@
     TUCallProviderManager *_providerManager;
     CDUnknownBlockType _isEmergencyNumberBlock;
     CDUnknownBlockType _isEmergencyNumberOrIsWhitelistedBlock;
+    NSDate *_dateDialed;
     NSString *_endpointIDSDestinationURI;
+    NSUUID *_localSenderIdentityUUID;
     long long _originatingUIType;
     struct CGSize _localPortraitAspectRatio;
     struct CGSize _localLandscapeAspectRatio;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (CDUnknownBlockType)contactIdentifierToCallIdentifierTransformBlock;
-+ (void)setContactIdentifierToCallIdentifierTransformBlock:(CDUnknownBlockType)arg1;
-+ (CDUnknownBlockType)callIdentifierToContactIdentifierTransformBlock;
-+ (void)setCallIdentifierToContactIdentifierTransformBlock:(CDUnknownBlockType)arg1;
 + (void)setCallProviderManagerGeneratorBlock:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)callProviderManagerGeneratorBlock;
 + (long long)originatingUITypeForString:(id)arg1;
@@ -58,12 +58,15 @@
 + (id)stringForTTYType:(long long)arg1;
 + (long long)handleTypeForQueryItem:(id)arg1;
 + (id)stringForDialType:(long long)arg1;
+@property(nonatomic) BOOL shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
 @property(nonatomic, getter=isRedial) BOOL redial; // @synthesize redial=_redial;
 @property(nonatomic, getter=isSOS, setter=setSOS:) BOOL sos; // @synthesize sos=_sos;
 @property(nonatomic) long long originatingUIType; // @synthesize originatingUIType=_originatingUIType;
+@property(copy, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
 @property(copy, nonatomic) NSString *endpointIDSDestinationURI; // @synthesize endpointIDSDestinationURI=_endpointIDSDestinationURI;
 @property(nonatomic) BOOL endpointOnCurrentDevice; // @synthesize endpointOnCurrentDevice=_endpointOnCurrentDevice;
 @property(nonatomic) BOOL hostOnCurrentDevice; // @synthesize hostOnCurrentDevice=_hostOnCurrentDevice;
+@property(retain, nonatomic) NSDate *dateDialed; // @synthesize dateDialed=_dateDialed;
 @property(copy, nonatomic) CDUnknownBlockType isEmergencyNumberOrIsWhitelistedBlock; // @synthesize isEmergencyNumberOrIsWhitelistedBlock=_isEmergencyNumberOrIsWhitelistedBlock;
 @property(copy, nonatomic) CDUnknownBlockType isEmergencyNumberBlock; // @synthesize isEmergencyNumberBlock=_isEmergencyNumberBlock;
 @property(readonly, nonatomic) TUCallProviderManager *providerManager; // @synthesize providerManager=_providerManager;
@@ -103,7 +106,9 @@
 @property(readonly, copy, nonatomic) NSArray *validityErrors;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 @property(readonly, nonatomic) NSUserActivity *userActivity;
+- (id)shouldSuppressInCallUIQueryItem;
 - (id)endpointIDSDestinationURIQueryItem;
+- (id)redialURLQueryItem;
 - (id)sosURLQueryItem;
 - (id)noPromptURLQueryItem;
 - (id)originatingUIURLQueryItem;
@@ -113,6 +118,7 @@
 - (id)suppressAssistURLQueryItem;
 - (id)forceAssistURLQueryItem;
 - (id)audioSourceIdentifierURLQueryItem;
+- (id)localSenderIdentityUUIDURLQueryItem;
 - (id)providerCustomIdentifierURLQueryItem;
 - (id)contactIdentifierURLQueryItem;
 - (id)isVoicemailURLQueryItem;
@@ -120,16 +126,15 @@
 - (id)URLHost;
 - (id)URLScheme;
 @property(readonly, nonatomic) NSURL *URL;
-- (id)callIdentifierQueryItemName;
+- (id)legacyAddressBookIdentifierQueryItemName;
 - (id)contactIdentifierFromURLComponents:(id)arg1;
-- (id)callIdentifierFromURLComponents:(id)arg1;
 - (id)handleFromURL:(id)arg1;
 - (id)destinationIDFromURL:(id)arg1;
 - (id)callProviderFromURLComponents:(id)arg1 video:(char *)arg2;
 - (BOOL)boolValueForQueryItemWithName:(id)arg1 inURLComponents:(id)arg2;
-@property(retain, nonatomic) NSString *callIdentifier;
 @property(readonly, nonatomic) IDSDestination *endpointIDSDestination;
 @property(copy, nonatomic) NSString *destinationID;
+@property(readonly, nonatomic) TUSenderIdentityClient *senderIdentityClient; // @synthesize senderIdentityClient=_senderIdentityClient;
 @property(readonly, nonatomic) CNContactStore *contactStore;
 @property(readonly, nonatomic) BOOL useTTY;
 @property(readonly, nonatomic) int service;

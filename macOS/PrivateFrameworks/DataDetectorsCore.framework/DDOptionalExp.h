@@ -6,6 +6,7 @@
 
 #import <DataDetectorsCore/DDRepeatMax.h>
 
+__attribute__((visibility("hidden")))
 @interface DDOptionalExp : DDRepeatMax
 {
 }

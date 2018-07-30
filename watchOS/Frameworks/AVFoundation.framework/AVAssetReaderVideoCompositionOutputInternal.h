@@ -8,6 +8,7 @@
 
 @class AVCustomVideoCompositorSession, AVVideoComposition, AVVideoOutputSettings, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetReaderVideoCompositionOutputInternal : NSObject
 {
     NSArray *videoTracks;

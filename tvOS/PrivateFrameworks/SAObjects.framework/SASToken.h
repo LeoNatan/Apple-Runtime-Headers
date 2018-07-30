@@ -24,6 +24,7 @@
 @property(copy, nonatomic) NSString *recognitionStability;
 @property(copy, nonatomic) NSString *phoneSequence;
 @property(copy, nonatomic) NSString *originalText;
+@property(copy, nonatomic) NSString *ipaPhoneSequence;
 @property(copy, nonatomic) NSNumber *endTime;
 @property(copy, nonatomic) NSNumber *confidenceScore;
 @property(nonatomic) _Bool addSpaceAfter;

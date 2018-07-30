@@ -32,7 +32,7 @@
 - (void)_flushCaches;
 - (id)_tilesInMapRect:(CDStruct_02837cd9)arg1 zoomScale:(float)arg2 contentScale:(float)arg3;
 - (int)_zoomLevelForScale:(float)arg1;
-- (void)_loadTile:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (void)_loadTile:(const struct _GEOTileKey *)arg1 result:(CDUnknownBlockType)arg2;
 - (struct _GEOTileKey)_keyForPath:(CDStruct_a1199def)arg1;
 - (void)loadTileAtPath:(CDStruct_a1199def)arg1 result:(CDUnknownBlockType)arg2;
 - (id)URLForTilePath:(CDStruct_a1199def)arg1;

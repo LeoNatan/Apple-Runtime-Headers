@@ -18,19 +18,25 @@ __attribute__((visibility("hidden")))
     unsigned int _homeButtonHapticKind;
     NSData *_nanoRegistryData;
     unsigned int _version;
+    _Bool _autoUpdateEnabled;
     _Bool _findMyiPhoneOptIn;
     _Bool _locationServicesOptIn;
+    _Bool _screenTimeEnabled;
     _Bool _siriOptIn;
     struct {
         unsigned int appAnalyticsOptIn:1;
         unsigned int deviceAnalyticsOptIn:1;
         unsigned int homeButtonHapticKind:1;
+        unsigned int autoUpdateEnabled:1;
         unsigned int findMyiPhoneOptIn:1;
         unsigned int locationServicesOptIn:1;
+        unsigned int screenTimeEnabled:1;
         unsigned int siriOptIn:1;
     } _has;
 }
 
+@property(nonatomic) _Bool autoUpdateEnabled; // @synthesize autoUpdateEnabled=_autoUpdateEnabled;
+@property(nonatomic) _Bool screenTimeEnabled; // @synthesize screenTimeEnabled=_screenTimeEnabled;
 @property(nonatomic) _Bool siriOptIn; // @synthesize siriOptIn=_siriOptIn;
 @property(nonatomic) _Bool findMyiPhoneOptIn; // @synthesize findMyiPhoneOptIn=_findMyiPhoneOptIn;
 @property(nonatomic) _Bool locationServicesOptIn; // @synthesize locationServicesOptIn=_locationServicesOptIn;
@@ -49,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasAutoUpdateEnabled;
+@property(nonatomic) _Bool hasScreenTimeEnabled;
 @property(nonatomic) _Bool hasSiriOptIn;
 @property(nonatomic) _Bool hasFindMyiPhoneOptIn;
 @property(nonatomic) _Bool hasLocationServicesOptIn;

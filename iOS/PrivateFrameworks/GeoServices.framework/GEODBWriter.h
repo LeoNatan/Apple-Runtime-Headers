@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class GEOCountryConfiguration, GEOResourceManifestManager, NSDictionary, NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GEODBWriter : NSObject
 {
@@ -47,6 +47,8 @@
     NSString *_devicePostureCountry;
     NSString *_devicePostureRegion;
     _Bool _canCreateDebugTable;
+    GEOResourceManifestManager *_manifestManager;
+    GEOCountryConfiguration *_countryConfiguration;
 }
 
 @property(readonly, nonatomic) NSString *devicePostureRegion; // @synthesize devicePostureRegion=_devicePostureRegion;
@@ -59,7 +61,7 @@
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
 - (void)setExpirationRecords:(CDStruct_e4886f83 *)arg1 count:(unsigned long long)arg2;
-- (void)evaluateDevicePostureAgainstCurrentManifest;
+- (void)evaluateDevicePostureAgainstCurrentManifest:(id)arg1;
 - (void)deleteData:(const struct _GEOTileKey *)arg1;
 - (void)_deleteKey:(struct _GEOTileKey)arg1;
 - (void)pendingWritesForKeys:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -93,11 +95,12 @@
 - (_Bool)prepareSingleStatement:(struct sqlite3_stmt **)arg1 forSql:(id)arg2;
 - (void)_createTables;
 - (void)_closeDB;
+- (void)_finalizeStatements;
 - (void)flushPendingWrites;
 - (void)_countryChanged:(id)arg1;
-- (void)_editionUpdate:(id)arg1;
 - (void)_deviceLocked;
 - (void)_localeChanged:(id)arg1;
+- (id)initWithPath:(id)arg1 pragmaOverrides:(id)arg2 manifestManager:(id)arg3 countryConfiguration:(id)arg4;
 - (id)initWithPath:(id)arg1 pragmaOverrides:(id)arg2;
 - (id)initWithPath:(id)arg1;
 

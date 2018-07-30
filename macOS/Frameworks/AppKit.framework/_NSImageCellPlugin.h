@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSImageViewPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSImageCellPlugin : _NSImageViewPlugin
 {
 }

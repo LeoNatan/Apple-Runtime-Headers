@@ -14,33 +14,42 @@
 {
     NSString *_identifier;
     UIColor *_color;
-    double _widthMultiplier;
-    unsigned long long _version;
+    double _weight;
     PKInkBehavior *_behavior;
+    unsigned long long _version;
+    NSString *_variant;
 }
 
-+ (id)inkWithIdentifier:(id)arg1 color:(id)arg2 version:(unsigned long long)arg3;
++ (double)defaultOpacityForIdentifier:(id)arg1;
++ (double)defaultWeightForIdentifier:(id)arg1;
++ (id)inkFromInk:(id)arg1 withBehavior:(id)arg2;
++ (id)inkFromInk:(id)arg1 color:(id)arg2;
++ (id)inkFromDictionary:(id)arg1 color:(id)arg2 identifier:(id)arg3;
++ (id)inkWithIdentifier:(id)arg1 color:(id)arg2 variant:(id)arg3;
++ (id)inkWithIdentifier:(id)arg1 color:(id)arg2 version:(unsigned long long)arg3 variant:(id)arg4;
 + (id)inkWithIdentifier:(id)arg1 color:(id)arg2;
-+ (id)inkWithIdentifier:(id)arg1 color:(id)arg2 widthMultiplier:(double)arg3;
++ (id)inkWithIdentifier:(id)arg1 color:(id)arg2 weight:(double)arg3;
 + (id)identifierForCommandType:(unsigned int)arg1 wantsObjectErase:(_Bool)arg2;
 + (unsigned int)commandTypeForIdentifier:(id)arg1 wantsObjectErase:(_Bool)arg2;
-@property(retain, nonatomic) PKInkBehavior *behavior; // @synthesize behavior=_behavior;
+@property(readonly, nonatomic) NSString *variant; // @synthesize variant=_variant;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
-@property(readonly, nonatomic) double widthMultiplier; // @synthesize widthMultiplier=_widthMultiplier;
+@property(retain, nonatomic) PKInkBehavior *behavior; // @synthesize behavior=_behavior;
+@property(nonatomic) double weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualInk:(id)arg1;
+- (unsigned long long)hashValueForFloat:(double)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) NSString *localizedName;
-- (id)initWithIdentifier:(id)arg1 color:(id)arg2 version:(unsigned long long)arg3 widthMultiplier:(double)arg4;
-- (id)initWithIdentifier:(id)arg1 color:(id)arg2 version:(unsigned long long)arg3;
+- (id)initWithIdentifier:(id)arg1 color:(id)arg2 version:(unsigned long long)arg3 variant:(id)arg4 behavior:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 color:(id)arg2 version:(unsigned long long)arg3 variant:(id)arg4 weight:(double)arg5;
+- (id)initWithIdentifier:(id)arg1 color:(id)arg2 version:(unsigned long long)arg3 variant:(id)arg4;
 - (id)init;
 - (void)saveToArchive:(struct Ink *)arg1;
-- (id)initWithArchive:(const struct Ink *)arg1;
+- (id)initWithArchive:(const struct Ink *)arg1 serializationVersion:(unsigned long long)arg2;
 
 @end
 

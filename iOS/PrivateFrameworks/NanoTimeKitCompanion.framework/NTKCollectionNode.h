@@ -6,10 +6,11 @@
 
 #import "SKNode.h"
 
-@class NSArray, SKAction;
+@class CLKDevice, NSArray, SKAction;
 
 @interface NTKCollectionNode : SKNode
 {
+    CLKDevice *_device;
     NSArray *_nodes;
     SKAction *_appearAction;
     SKAction *_disappearAction;
@@ -17,34 +18,34 @@
     double _radius;
 }
 
-+ (id)labels3_10_90Chrono;
-+ (id)labels3Chrono;
-+ (id)labels6_10_40Chrono;
-+ (id)labels6Chrono;
-+ (id)ticks6Chrono;
-+ (id)labels30Chrono;
-+ (id)ticks30Chrono;
-+ (id)labels60Chrono;
-+ (id)hoursChrono;
-+ (id)ticks60Chrono;
-+ (id)ticksColorAnalog;
-+ (id)hours12ZeusWithFont:(long long)arg1;
-+ (id)hours12;
-+ (id)hours4;
-+ (id)minutesUtilitarian;
-+ (id)minutesPills;
-+ (id)ticksPills;
-+ (id)ticks240;
-+ (id)ticks120;
-+ (id)ticks60;
-+ (id)ticks60Utilitarian;
-+ (float)innerRadius;
-+ (float)outerRadius;
++ (id)labels3_10_90ChronoForDevice:(id)arg1;
++ (id)labels3ChronoForDevice:(id)arg1;
++ (id)labels6_10_40ChronoForDevice:(id)arg1;
++ (id)labels6ChronoForDevice:(id)arg1;
++ (id)ticks6ChronoForDevice:(id)arg1;
++ (id)labels30ChronoForDevice:(id)arg1;
++ (id)ticks30ChronoForDevice:(id)arg1;
++ (id)labels60ChronoForDevice:(id)arg1;
++ (id)hoursChronoForDevice:(id)arg1;
++ (id)ticks60ChronoForDevice:(id)arg1;
++ (id)ticksColorAnalogForDevice:(id)arg1;
++ (id)hours12ForDevice:(id)arg1;
++ (id)hours4ForDevice:(id)arg1;
++ (id)minutesUtilitarianForDevice:(id)arg1;
++ (id)minutesPillsForDevice:(id)arg1;
++ (id)ticksPillsForDevice:(id)arg1;
++ (id)ticks240ForDevice:(id)arg1;
++ (id)ticks120ForDevice:(id)arg1;
++ (id)ticks60ForDevice:(id)arg1;
++ (id)ticks60UtilitarianForDevice:(id)arg1;
++ (float)innerRadiusForDevice:(id)arg1;
++ (float)outerRadiusForDevice:(id)arg1;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(copy, nonatomic) CDUnknownBlockType animateBlock; // @synthesize animateBlock=_animateBlock;
 @property(retain, nonatomic) SKAction *disappearAction; // @synthesize disappearAction=_disappearAction;
 @property(retain, nonatomic) SKAction *appearAction; // @synthesize appearAction=_appearAction;
 @property(retain, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
+@property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)createSubNodes;
 - (void)scaleNodes:(id)arg1 fraction:(double)arg2;
@@ -60,8 +61,8 @@
 - (void)appearAnimated;
 - (void)applyAppearanceFraction:(double)arg1;
 - (void)applyAppearanceFraction:(double)arg1 inverted:(_Bool)arg2;
-- (id)initWithName:(id)arg1 nodes:(id)arg2 animateBlock:(CDUnknownBlockType)arg3;
-- (id)init;
+- (id)initForDevice:(id)arg1 withName:(id)arg2 nodes:(id)arg3 animateBlock:(CDUnknownBlockType)arg4;
+- (id)initForDevice:(id)arg1;
 
 @end
 

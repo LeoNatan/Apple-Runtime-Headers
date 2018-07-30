@@ -6,7 +6,7 @@
 
 #import <VideoProcessing/VCPVideoAnalyzer.h>
 
-@class NSMutableDictionary, VCPVideoActivityDescriptor;
+@class NSMutableDictionary, VCPFrameAnalysisStats;
 
 @interface VCPFullVideoAnalyzer : VCPVideoAnalyzer
 {
@@ -18,19 +18,23 @@
     struct MetaDataAnalysis *_metadataAnalysis;
     struct IrisAnalysis *_irisAnalysis;
     struct FrameBuffer _frameBuffer;
+    struct Histogram _idealHistogram;
     BOOL _isTimelapse;
     BOOL _isIris;
     BOOL _isSlowMo;
     int _orientation;
     BOOL _finalized;
     BOOL _hasInterestingScene;
+    BOOL _isCaptureAnalysis;
     NSMutableDictionary *_privateResults;
-    VCPVideoActivityDescriptor *_videoActivityDescriptor;
+    VCPFrameAnalysisStats *_videoFrameAnalysis;
+    float _actionScore;
 }
 
-@property(readonly) VCPVideoActivityDescriptor *videoActivityDescriptor; // @synthesize videoActivityDescriptor=_videoActivityDescriptor;
+@property float actionScore; // @synthesize actionScore=_actionScore;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (float)computeExposureScoreOfFrame:(struct Frame *)arg1;
 - (void)reviseFrameTrackScore:(struct Frame *)arg1 saliencyRegions:(id)arg2;
 - (void)setNextCaptureFrame:(struct __CVBuffer *)arg1;
 - (float)getSceneSwichFrequency;
@@ -44,7 +48,8 @@
 - (void)prepareVideoAnalysisByScenes:(id)arg1;
 - (int)seedAnalyzersWithPixelBuffer:(struct __CVBuffer *)arg1 startTime:(CDStruct_1b6d18a9)arg2;
 - (void)dealloc;
-- (id)initWithVideoTrack:(id)arg1 withMetaOrientation:(id)arg2 withPrivateResults:(id)arg3 isTimelapse:(BOOL)arg4 isIris:(BOOL)arg5 irisPhotoOffsetSec:(float)arg6 irisPhotoExposureSec:(float)arg7 slowMoRate:(float)arg8;
+- (id)initWithVideoTrack:(id)arg1 withMetaOrientation:(id)arg2 withPrivateResults:(id)arg3 withFrameStats:(id)arg4 isTimelapse:(BOOL)arg5 isIris:(BOOL)arg6 irisPhotoOffsetSec:(float)arg7 irisPhotoExposureSec:(float)arg8 slowMoRate:(float)arg9;
+- (id)initWithTransform:(struct CGAffineTransform)arg1;
 
 @end
 

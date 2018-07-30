@@ -10,6 +10,7 @@
 
 @class NSMutableArray, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDRestaurantReservationLink : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

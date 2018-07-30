@@ -6,7 +6,7 @@
 
 #import <AppKit/NSVisualEffectView.h>
 
-@class NSThemeFrame, NSTrackingArea;
+@class NSThemeFrame, NSTitlebarContainerView, NSTrackingArea;
 
 __attribute__((visibility("hidden")))
 @interface NSTitlebarView : NSVisualEffectView
@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
     BOOL _transparent;
     NSTrackingArea *_buttonGroupTrackingArea;
     NSThemeFrame *_associatedThemeFrame;
+    NSTitlebarContainerView *_containerView;
 }
 
 @property NSThemeFrame *associatedThemeFrame; // @synthesize associatedThemeFrame=_associatedThemeFrame;
 - (id)_titleTextFieldView;
-- (id)titleFont;
 - (id)menuForEvent:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
@@ -29,12 +29,15 @@ __attribute__((visibility("hidden")))
 - (void)updateTrackingAreas;
 - (void)_removeTrackingAreaIfNeeded;
 @property BOOL transparent;
+- (void)viewDidMoveToWindow;
+- (id)_preferredAppearance;
+- (BOOL)_isHUDWindow;
 - (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (void)dealloc;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;
-- (BOOL)_shouldAddBorderLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)titleFont;
 - (id)accessibilityChildrenAttribute;
 - (BOOL)accessibilityIsIgnored;
 

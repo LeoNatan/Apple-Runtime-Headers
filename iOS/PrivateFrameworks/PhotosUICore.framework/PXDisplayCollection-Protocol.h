@@ -8,5 +8,27 @@
 #import "NSObject.h"
 
 @protocol PXDisplayCollection <NSObject, NSCopying>
+@property(readonly, nonatomic) _Bool px_isMemoriesVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isPeopleVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isPlacesVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isMacSyncedFacesFolder;
+@property(readonly, nonatomic) _Bool px_isMacSyncedEventsFolder;
+@property(readonly, nonatomic) _Bool px_isMacSyncedAlbum;
+@property(readonly, nonatomic) _Bool px_isFavoriteMemoriesSmartFolder;
+@property(readonly, nonatomic) _Bool px_isSmartFolder;
+@property(readonly, nonatomic) _Bool px_isFolder;
+@property(readonly, nonatomic) _Bool px_isOwnedSharedAlbum;
+@property(readonly, nonatomic) _Bool px_isSharedAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentlyDeletedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentlyAddedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isHiddenSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isFavoritesSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isAllPhotosSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isMediaTypeSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isMyPhotoStreamAlbum;
+@property(readonly, nonatomic) _Bool px_isImportedAlbum;
+@property(readonly, nonatomic) _Bool px_isStandInAlbum;
 @end
 

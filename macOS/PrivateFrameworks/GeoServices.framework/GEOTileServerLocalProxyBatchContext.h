@@ -15,10 +15,16 @@ __attribute__((visibility("hidden")))
     GEOTileKeyList *_interestList;
     GEOTileKeyList *_networkList;
     GEOTileKeyList *_pendingNetworkList;
+    GEOTileKeyList *_cacheMissNoDataList;
+    GEOTileKeyList *_cacheMissStaleDataList;
+    unsigned char _loadReason;
     GEOTileRequester *_tileRequester;
 }
 
 @property(retain, nonatomic) GEOTileRequester *tileRequester; // @synthesize tileRequester=_tileRequester;
+@property(nonatomic) unsigned char loadReason; // @synthesize loadReason=_loadReason;
+@property(retain, nonatomic) GEOTileKeyList *cacheMissStaleDataList; // @synthesize cacheMissStaleDataList=_cacheMissStaleDataList;
+@property(retain, nonatomic) GEOTileKeyList *cacheMissNoDataList; // @synthesize cacheMissNoDataList=_cacheMissNoDataList;
 @property(retain, nonatomic) GEOTileKeyList *pendingNetworkList; // @synthesize pendingNetworkList=_pendingNetworkList;
 @property(retain, nonatomic) GEOTileKeyList *networkList; // @synthesize networkList=_networkList;
 @property(retain, nonatomic) GEOTileKeyList *interestList; // @synthesize interestList=_interestList;

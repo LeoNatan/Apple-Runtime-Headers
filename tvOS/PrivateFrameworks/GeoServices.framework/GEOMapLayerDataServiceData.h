@@ -10,6 +10,7 @@
 
 @class GEOMapLayerDataServiceLayer, GEOMapLayerDataServiceLayerIndex, GEOMapLayerDataServiceVersion;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapLayerDataServiceData : PBCodable <NSCopying>
 {
     GEOMapLayerDataServiceLayerIndex *_index;

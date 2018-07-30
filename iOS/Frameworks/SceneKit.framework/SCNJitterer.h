@@ -8,6 +8,7 @@
 
 @class NSObject<OS_dispatch_source>;
 
+__attribute__((visibility("hidden")))
 @interface SCNJitterer : NSObject
 {
     _Bool _enabled;

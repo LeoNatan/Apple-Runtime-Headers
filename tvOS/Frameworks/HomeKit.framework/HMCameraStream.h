@@ -15,6 +15,8 @@
 
 @property(retain, nonatomic) _HMCameraStream *stream; // @synthesize stream=_stream;
 - (void).cxx_destruct;
+- (id)audioVolume;
+- (void)updateAudioVolume:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateAudioStreamSetting:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setAudioStreamSetting:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long audioStreamSetting;

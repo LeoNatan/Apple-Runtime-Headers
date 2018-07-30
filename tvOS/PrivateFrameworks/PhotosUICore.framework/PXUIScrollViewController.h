@@ -16,14 +16,20 @@
     _PXUIScrollView *_scrollView;
     _Bool _isUpdatingContentBounds;
     UIView *_contentView;
+    _Bool _isScrollingToTop;
 }
 
+@property(nonatomic, setter=setScrollingToTop:) _Bool isScrollingToTop; // @synthesize isScrollingToTop=_isScrollingToTop;
 - (void).cxx_destruct;
+- (void)scrollViewDidScrollToTop:(id)arg1;
+- (_Bool)scrollViewShouldScrollToTop:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollView:(id)arg1 willBeginScrollingAnimationTowardsContentEdges:(unsigned long long)arg2;
 - (void)scrollViewDidLayoutSubviews:(id)arg1;
 - (void)scrollViewWillLayoutSubviews:(id)arg1;
 - (id)contentCoordinateSpace;
@@ -38,6 +44,7 @@
 - (void)scrollViewLayoutIfNeeded;
 - (void)setScrollViewNeedsLayout;
 - (void)scrollRectToVisible:(struct CGRect)arg1 avoidingContentInsetEdges:(unsigned long long)arg2 animated:(_Bool)arg3;
+- (void)setVisibleOrigin:(struct CGPoint)arg1;
 - (void)removeGestureRecognizer:(id)arg1;
 - (void)addGestureRecognizer:(id)arg1;
 - (void)addSubviewToScrollView:(struct NSObject *)arg1;

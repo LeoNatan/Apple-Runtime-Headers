@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupSearchingContext : NSObject
 {
     id <ABContactSearching> _searchNode;

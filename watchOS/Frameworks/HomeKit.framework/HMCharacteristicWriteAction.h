@@ -22,17 +22,16 @@
 + (id)_lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
 - (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
-- (void)_configure:(id)arg1 actionSet:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)_handleUpdates:(id)arg1;
 - (id)_serializeForAdd;
 - (void)_updateTargetValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateTargetValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2;
 @property(copy, nonatomic) id targetValue; // @synthesize targetValue=_targetValue;
 @property(retain, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (id)init;
+- (void)__configureWithContext:(id)arg1 actionSet:(id)arg2;
+- (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

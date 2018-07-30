@@ -63,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)createWebClip:(id)arg1;
 - (void)setShouldOpenWindowBehindFrontmost:(BOOL)arg1;
 - (BOOL)shouldOpenWindowBehindFrontmost;
-- (void)tryMultipleURLs:(unique_ptr_d9da4b2f)arg1 httpReferrer:(id)arg2;
+- (void)tryMultipleURLs:(unique_ptr_aba2cdfe)arg1 httpReferrer:(id)arg2;
 @property(readonly, nonatomic) WebViewController *currentBrowserOrOverlayViewController;
 @property(readonly, nonatomic) BrowserViewController *currentBrowserViewControllerIgnoringVisualTabPickerVisibility;
 - (void)_sharePageViaMail:(id)arg1;

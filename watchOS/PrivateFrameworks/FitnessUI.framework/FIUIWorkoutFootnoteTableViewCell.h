@@ -12,7 +12,7 @@
 {
     UILabel *_titleLabel;
     UILabel *_footnoteLabel;
-    UIView *_lineView;
+    UIView *_dividerView;
     NSString *_titleText;
     NSString *_footnoteText;
 }

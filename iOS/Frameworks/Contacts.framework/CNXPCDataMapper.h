@@ -24,6 +24,8 @@
 @property(retain, nonatomic) id <CNContactsLogger> logger; // @synthesize logger=_logger;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+- (_Bool)writeFavoritesPropertyListData:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
+- (id)favoritesEntryDictionariesAtPath:(id)arg1 error:(id *)arg2;
 - (id)verifyIndexWithError:(id *)arg1;
 - (_Bool)reindexSearchableItemsWithIdentifiers:(id)arg1 error:(id *)arg2;
 - (_Bool)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id *)arg3;
@@ -51,6 +53,7 @@
 - (_Bool)fetchAndDecodeEncodedContactsForFetchRequest:(id)arg1 error:(id *)arg2 cancelationToken:(id)arg3 batchHandler:(CDUnknownBlockType)arg4;
 - (_Bool)fetchContactsForFetchRequest:(id)arg1 error:(id *)arg2 batchHandler:(CDUnknownBlockType)arg3;
 - (id)contactObservableForFetchRequest:(id)arg1;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
 - (id)remoteResultForSelector:(SEL)arg1 parameters:(id)arg2 error:(id *)arg3;
 - (id)remoteResultForSelector:(SEL)arg1 query:(id)arg2 queryParameter:(id)arg3 error:(id *)arg4;

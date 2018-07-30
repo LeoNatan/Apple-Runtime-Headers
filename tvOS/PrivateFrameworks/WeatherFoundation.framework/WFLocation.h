@@ -53,6 +53,7 @@
 - (id)initWithLocalDataRepresentation:(id)arg1;
 - (id)localDataRepresentation;
 @property(readonly, nonatomic) _Bool shouldQueryForAirQualityData;
+- (id)countriesSupportAQI;
 - (id)sunsetForDate:(id)arg1;
 - (id)sunriseForDate:(id)arg1;
 - (_Bool)isDayForDate:(id)arg1;

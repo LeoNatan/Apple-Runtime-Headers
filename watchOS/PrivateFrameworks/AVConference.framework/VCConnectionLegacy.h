@@ -27,8 +27,11 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *localInterfaceTypeString;
 - (_Bool)matchesSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
 - (void)getSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
+@property unsigned int uplinkBitrateCap;
+@property unsigned int downlinkBitrateCap;
 @property(readonly) NSUUID *connectionUUID;
-@property int cellularMTU;
+@property int connectionMTU;
+- (int)cellularMTU;
 @property int remoteCellTech;
 @property int localCellTech;
 @property(readonly) int remoteConnectionType;
@@ -36,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned short relayChannelNumber;
 @property(readonly) _Bool isReplaceOnly;
 @property(readonly) _Bool isUpgraded;
+@property(readonly) _Bool serverIsDegraded;
 @property(readonly) _Bool isVPN;
 @property(readonly) int connectionId;
 @property(readonly) _Bool isRelay;

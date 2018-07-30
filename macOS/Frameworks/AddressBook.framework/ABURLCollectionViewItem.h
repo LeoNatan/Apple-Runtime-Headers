@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCollectionViewItem.h>
 
-__attribute__((visibility("hidden")))
 @interface ABURLCollectionViewItem : ABCollectionViewItem
 {
 }

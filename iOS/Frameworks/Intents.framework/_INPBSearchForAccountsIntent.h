@@ -7,48 +7,50 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSearchForAccountsIntent.h"
 
-@class PBUnknownFields, _INPBDataString, _INPBIntentMetadata;
+@class NSString, _INPBDataString, _INPBIntentMetadata;
 
-@interface _INPBSearchForAccountsIntent : PBCodable <NSCopying>
+@interface _INPBSearchForAccountsIntent : PBCodable <_INPBSearchForAccountsIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBDataString *_accountNickname;
-    int _accountType;
-    _INPBIntentMetadata *_intentMetadata;
-    _INPBDataString *_organizationName;
-    int _requestedBalanceType;
     struct {
         unsigned int accountType:1;
         unsigned int requestedBalanceType:1;
     } _has;
+    int _accountType;
+    int _requestedBalanceType;
+    _INPBDataString *_accountNickname;
+    _INPBIntentMetadata *_intentMetadata;
+    _INPBDataString *_organizationName;
 }
 
-+ (id)options;
+@property(nonatomic) int requestedBalanceType; // @synthesize requestedBalanceType=_requestedBalanceType;
 @property(retain, nonatomic) _INPBDataString *organizationName; // @synthesize organizationName=_organizationName;
-@property(retain, nonatomic) _INPBDataString *accountNickname; // @synthesize accountNickname=_accountNickname;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) int accountType; // @synthesize accountType=_accountType;
+@property(retain, nonatomic) _INPBDataString *accountNickname; // @synthesize accountNickname=_accountNickname;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (int)StringAsRequestedBalanceType:(id)arg1;
 - (id)requestedBalanceTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRequestedBalanceType;
-@property(nonatomic) int requestedBalanceType; // @synthesize requestedBalanceType=_requestedBalanceType;
 @property(readonly, nonatomic) _Bool hasOrganizationName;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
 - (int)StringAsAccountType:(id)arg1;
 - (id)accountTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasAccountType;
-@property(nonatomic) int accountType; // @synthesize accountType=_accountType;
 @property(readonly, nonatomic) _Bool hasAccountNickname;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

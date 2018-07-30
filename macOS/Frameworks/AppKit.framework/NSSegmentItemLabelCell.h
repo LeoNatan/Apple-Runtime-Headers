@@ -16,8 +16,11 @@ __attribute__((visibility("hidden")))
 
 + (id)_getParentSegmentedControlViewFromView:(id)arg1;
 @property(retain, nonatomic) NSString *widgetName; // @synthesize widgetName=_widgetName;
+- (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (BOOL)accessibilityIsIgnored;
 - (void)dealloc;
+- (id)_textAttributes;
+- (id)_effectiveStyleEffectConfigurationInView:(id)arg1;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 - (long long)interiorBackgroundStyle;
 - (struct __CFString *)_coreUIWidgetName;

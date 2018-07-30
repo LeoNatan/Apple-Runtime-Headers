@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) CNContactStore *contactStore; // @dynamic contactStore;
 @property(copy, nonatomic) NSArray *contacts; // @dynamic contacts;
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <CNAvatarViewControllerDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) id <CNUIPRLikenessResolver> likenessResolver; // @dynamic likenessResolver;

@@ -6,20 +6,14 @@
 
 #import <HealthDaemon/HDJournalEntry.h>
 
-@class _HKAchievement;
-
 @interface _HDAchievementInsertionJournalEntry : HDJournalEntry
 {
-    _HKAchievement *_achievement;
 }
 
 + (_Bool)supportsSecureCoding;
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
-@property(readonly, nonatomic) _HKAchievement *achievement; // @synthesize achievement=_achievement;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithAchievement:(id)arg1;
 
 @end
 

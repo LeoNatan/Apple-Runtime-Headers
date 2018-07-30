@@ -6,10 +6,11 @@
 
 #import "UICollectionViewFlowLayout.h"
 
-@class NSDictionary, NSIndexPath, NSSet, NTKUpNextCollectionViewFlowLayoutAttributes;
+@class CLKDevice, NSDictionary, NSIndexPath, NSSet, NTKUpNextCollectionViewFlowLayoutAttributes;
 
 @interface NTKUpNextCollectionViewFlowLayout : UICollectionViewFlowLayout
 {
+    CLKDevice *_device;
     NSDictionary *_layoutInfo;
     NSDictionary *_headerLayoutInfo;
     NTKUpNextCollectionViewFlowLayoutAttributes *_decorationLayoutInfo;
@@ -19,6 +20,7 @@
     _Bool _needsInsetsUpdate;
     _Bool _useFixedLowTransitionLayout;
     _Bool _snappingEnabled;
+    _Bool _showingAllAttributes;
     double _topItemsAlpha;
     double _headerAlpha;
     double _topItemsShift;
@@ -28,21 +30,28 @@
     double _topOffsetForSnapping;
     double _topOffsetForScrolling;
     double _lowTransitionScale;
+    double _lowTransitionShift;
     double _highTransitionScale;
     double _highTransitionShift;
+    double _maximumDarkeningAmount;
     double _highTransitionBottomOffset;
     NSIndexPath *_indexPathToSnapTo;
     double _snappingOffset;
+    NSSet *_dwellIndexPathes;
 }
 
 + (Class)layoutAttributesClass;
+@property(readonly, nonatomic) NSSet *dwellIndexPathes; // @synthesize dwellIndexPathes=_dwellIndexPathes;
 @property(nonatomic) double snappingOffset; // @synthesize snappingOffset=_snappingOffset;
 @property(retain, nonatomic) NSIndexPath *indexPathToSnapTo; // @synthesize indexPathToSnapTo=_indexPathToSnapTo;
+@property(nonatomic, getter=isShowingAllAttributes) _Bool showingAllAttributes; // @synthesize showingAllAttributes=_showingAllAttributes;
 @property(nonatomic, getter=isSnappingEnabled) _Bool snappingEnabled; // @synthesize snappingEnabled=_snappingEnabled;
 @property(nonatomic) double highTransitionBottomOffset; // @synthesize highTransitionBottomOffset=_highTransitionBottomOffset;
+@property(nonatomic) double maximumDarkeningAmount; // @synthesize maximumDarkeningAmount=_maximumDarkeningAmount;
 @property(nonatomic) _Bool useFixedLowTransitionLayout; // @synthesize useFixedLowTransitionLayout=_useFixedLowTransitionLayout;
 @property(nonatomic) double highTransitionShift; // @synthesize highTransitionShift=_highTransitionShift;
 @property(nonatomic) double highTransitionScale; // @synthesize highTransitionScale=_highTransitionScale;
+@property(nonatomic) double lowTransitionShift; // @synthesize lowTransitionShift=_lowTransitionShift;
 @property(nonatomic) double lowTransitionScale; // @synthesize lowTransitionScale=_lowTransitionScale;
 @property(nonatomic) double topOffsetForScrolling; // @synthesize topOffsetForScrolling=_topOffsetForScrolling;
 @property(nonatomic) double topOffsetForSnapping; // @synthesize topOffsetForSnapping=_topOffsetForSnapping;
@@ -60,12 +69,14 @@
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
+- (void)_updateVisibilityForLayoutAttributes:(id)arg1 inBounds:(struct CGRect)arg2;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)flowLayoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (void)finalizeCollectionViewUpdates;
+- (_Bool)isLastIndexPathWithContent:(id)arg1;
 - (void)prepareLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;

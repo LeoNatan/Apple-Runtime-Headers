@@ -8,6 +8,6 @@
 
 @interface NSMutableDictionary (MediaAnalysisPauseResume)
 - (void)vcp_removeSyncPoint;
-- (void)vcp_setSyncPoint:(const CDStruct_1b6d18a9 *)arg1;
+- (void)vcp_setSyncPoint:(CDStruct_1b6d18a9)arg1;
 @end
 

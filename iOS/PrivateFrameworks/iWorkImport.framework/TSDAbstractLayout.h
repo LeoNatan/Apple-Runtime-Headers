@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint lastInterimPosition; // @synthesize lastInterimPosition=mLastInterimPosition;
 @property(nonatomic) TSDAbstractLayout *parent; // @synthesize parent=mParent;
 @property(copy, nonatomic) TSDLayoutGeometry *geometry; // @synthesize geometry=mGeometry;
+- (id)childLayoutContainingPossibleDescendentLayout:(id)arg1;
 - (_Bool)supportsCalloutAttributes;
 - (_Bool)canRotateChildLayout:(id)arg1;
 - (_Bool)supportsFlipping;
@@ -57,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (id)additionalDependenciesForChildLayout:(id)arg1;
 - (id)layoutsForProvidingGuidesForChildLayouts;
 - (id)parentLayoutForProvidingGuides;
+- (_Bool)exclusivelyProvidesGuidesForChildLayouts;
 - (_Bool)providesGuidesForChildLayouts;
 - (_Bool)isRootLayoutForInspectorGeometry;
 - (_Bool)isAxisAlignedUnflippedInRoot;

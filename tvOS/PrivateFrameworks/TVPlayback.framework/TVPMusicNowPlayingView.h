@@ -6,27 +6,25 @@
 
 #import "UIView.h"
 
-@class MPAVRoute, MPRouteLabel, NSArray, NSLayoutConstraint, TVPAudioNowPlayingItemConfigurationObject, TVPCollectionView, TVPMusicBarsView, TVPMusicNowPlayingBackgroundView, TVPRoundButton, UIButton, UIImage, UIImageView, UILabel, UIStackView, UIVisualEffectView, _TVPMusicArtworkImageView;
+#import "UIGestureRecognizerDelegate.h"
 
-@interface TVPMusicNowPlayingView : UIView
+@class MPAVRoute, MPRouteLabel, NSArray, NSIndexPath, NSLayoutConstraint, NSString, TVPAudioNowPlayingItemConfigurationObject, TVPCollectionView, TVPMusicBarsView, TVPMusicNowPlayingBackgroundContainerView, TVPMusicNowPlayingCollectionViewFlowLayout, TVPRoundButton, UIFocusGuide, UIImage, UIImageView, UILabel, UILayoutGuide, UILongPressGestureRecognizer, UIStackView, UITapGestureRecognizer, _TVPMusicArtworkImageView, _TVPMusicNowPlayingFocusableView;
+
+@interface TVPMusicNowPlayingView : UIView <UIGestureRecognizerDelegate>
 {
-    UIView *_backgroundView;
-    UIView *_coverArtPlaceholder;
-    _TVPMusicArtworkImageView *_coverArtView;
-    UIVisualEffectView *_backgroundBlurView;
-    UIImageView *_backgroundImageView;
-    TVPMusicNowPlayingBackgroundView *_animatedBackgroundView;
+    TVPMusicNowPlayingBackgroundContainerView *_backgroundView;
+    UILayoutGuide *_artworkLayoutGuide;
+    UILayoutGuide *_labelMarginLayoutGuide;
+    NSLayoutConstraint *_labelTopMarginConstraint;
+    UIFocusGuide *_collectionViewFocusGuide;
+    UIFocusGuide *_controlsContainerFocusGuide;
+    UIFocusGuide *_nothingPlayingFocusGuide;
+    _TVPMusicArtworkImageView *_placeholderImageView;
     UIView *_containerView;
     UIView *_controlsContainerView;
-    id <TVPMusicNowPlayingImage> _artworkImage;
-    NSLayoutConstraint *_coverArtWidthConstraint;
-    NSLayoutConstraint *_coverArtHeightConstraint;
-    NSLayoutConstraint *_songBaselineConstraint;
-    _Bool _isAnimatingCover;
     UILabel *_songLabel;
     UILabel *_artistAlbumLabel;
     UILabel *_radioStationLabel;
-    UIButton *_contextMenuButton;
     UIView *_lastFocusedView;
     UIImageView *_explicitBadge;
     UIImage *_explicitBadgeImage;
@@ -35,27 +33,39 @@
     UIStackView *_rightControlsView;
     TVPRoundButton *_shuffleButton;
     TVPRoundButton *_repeatButton;
+    id <TVPMusicNowPlayingImage> _backgroundImage;
+    _TVPMusicNowPlayingFocusableView *_leftEdgeFocusDetectionView;
+    _TVPMusicNowPlayingFocusableView *_rightEdgeFocusDetectionView;
     _Bool _musicBarsVisible;
     _Bool _playlistVisible;
-    _Bool _showAnimatedBackground;
     _Bool _nothingPlaying;
     _Bool _repeatVisible;
     _Bool _shuffleVisible;
     _Bool _shuffleEnabled;
+    _Bool _backgroundSnapshotPaused;
     _Bool _highlighted;
     id <TVPMusicNowPlayingViewDelegate> _nowPlayingDelegate;
     TVPAudioNowPlayingItemConfigurationObject *_nowPlayingInfo;
-    id <TVPMusicNowPlayingImage> _backgroundImage;
     TVPMusicBarsView *_musicBarsView;
     TVPCollectionView *_playlistCollectionView;
-    NSArray *_controls;
+    NSArray *_controlItems;
     UIView *_routePickerControl;
     MPAVRoute *_audioRoute;
     long long _repeatMode;
-    struct CGSize _artworkImageSize;
+    TVPRoundButton *_contextMenuButton;
+    NSArray *_controls;
+    UIView *_coverArtPlaceholder;
+    UITapGestureRecognizer *_playPauseGestureRecognizer;
+    UILongPressGestureRecognizer *_restGestureRecognizer;
 }
 
+@property(readonly, nonatomic) UILongPressGestureRecognizer *restGestureRecognizer; // @synthesize restGestureRecognizer=_restGestureRecognizer;
+@property(readonly, nonatomic) UITapGestureRecognizer *playPauseGestureRecognizer; // @synthesize playPauseGestureRecognizer=_playPauseGestureRecognizer;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
+@property(retain, nonatomic) UIView *coverArtPlaceholder; // @synthesize coverArtPlaceholder=_coverArtPlaceholder;
+@property(retain, nonatomic) NSArray *controls; // @synthesize controls=_controls;
+@property(readonly, nonatomic) TVPRoundButton *contextMenuButton; // @synthesize contextMenuButton=_contextMenuButton;
+@property(nonatomic, getter=isBackgroundSnapshotPaused) _Bool backgroundSnapshotPaused; // @synthesize backgroundSnapshotPaused=_backgroundSnapshotPaused;
 @property(nonatomic, getter=isShuffleEnabled) _Bool shuffleEnabled; // @synthesize shuffleEnabled=_shuffleEnabled;
 @property(nonatomic) _Bool shuffleVisible; // @synthesize shuffleVisible=_shuffleVisible;
 @property(nonatomic) long long repeatMode; // @synthesize repeatMode=_repeatMode;
@@ -63,15 +73,11 @@
 @property(nonatomic) _Bool nothingPlaying; // @synthesize nothingPlaying=_nothingPlaying;
 @property(retain, nonatomic) MPAVRoute *audioRoute; // @synthesize audioRoute=_audioRoute;
 @property(retain, nonatomic) UIView *routePickerControl; // @synthesize routePickerControl=_routePickerControl;
-@property(nonatomic) _Bool showAnimatedBackground; // @synthesize showAnimatedBackground=_showAnimatedBackground;
-@property(retain, nonatomic) NSArray *controls; // @synthesize controls=_controls;
+@property(retain, nonatomic) NSArray *controlItems; // @synthesize controlItems=_controlItems;
 @property(readonly, nonatomic) TVPCollectionView *playlistCollectionView; // @synthesize playlistCollectionView=_playlistCollectionView;
-@property(nonatomic) struct CGSize artworkImageSize; // @synthesize artworkImageSize=_artworkImageSize;
-@property(retain, nonatomic) id <TVPMusicNowPlayingImage> artworkImage; // @synthesize artworkImage=_artworkImage;
 @property(nonatomic, getter=isPlaylistVisible) _Bool playlistVisible; // @synthesize playlistVisible=_playlistVisible;
 @property(readonly, nonatomic) TVPMusicBarsView *musicBarsView; // @synthesize musicBarsView=_musicBarsView;
 @property(nonatomic, getter=isMusicBarsVisible) _Bool musicBarsVisible; // @synthesize musicBarsVisible=_musicBarsVisible;
-@property(retain, nonatomic) id <TVPMusicNowPlayingImage> backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) TVPAudioNowPlayingItemConfigurationObject *nowPlayingInfo; // @synthesize nowPlayingInfo=_nowPlayingInfo;
 @property(nonatomic) __weak id <TVPMusicNowPlayingViewDelegate> nowPlayingDelegate; // @synthesize nowPlayingDelegate=_nowPlayingDelegate;
 - (void).cxx_destruct;
@@ -79,19 +85,24 @@
 - (void)_setHighlighted:(_Bool)arg1 forLabel:(id)arg2;
 - (id)_addLabel;
 - (void)_dissolveFromPlaylistWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_selectedContextMenu:(id)arg1;
+- (void)_selectedContextMenu;
 - (_Bool)_isNothingPlaying;
-- (void)_reloadBackgroundImage;
-- (void)_setShowAnimatedBackground:(_Bool)arg1;
-- (void)_backgroundContrastChanged:(id)arg1;
+- (void)_restGestureRecognized:(id)arg1;
+- (void)_playPausePressedGestureRecognized:(id)arg1;
+- (void)_updateEdgeFocusDetectionState;
+- (void)_reloadBackgroundImageWithImage:(id)arg1;
+- (void)setBackgroundSnapshotView:(id)arg1;
+- (void)setBackgroundImage:(id)arg1;
+- (void)setAnimatedBackgroundImage:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)shuffleButtonAction;
 - (void)repeatButtonAction;
 - (_Bool)isShuffleVisible;
 - (_Bool)isRepeatVisible;
 - (void)setFocusToDataView;
-- (_Bool)allowArtworkFocus;
-- (void)setAllowArtworkFocus:(_Bool)arg1;
-@property(nonatomic, getter=isArtworkVisible) _Bool artworkVisible;
+- (void)setArtworkVisible:(_Bool)arg1;
+- (_Bool)isArtworkVisible;
 - (void)setPlaylistVisible:(_Bool)arg1 wasSelected:(_Bool)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setPlaylistVisible:(_Bool)arg1 wasSelected:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)allowInteraction:(_Bool)arg1;
@@ -102,18 +113,27 @@
 - (void)layoutSubviews;
 - (void)_setNowPlayingInfo:(id)arg1;
 - (void)_configureNowPlayingView;
-- (void)setArtworkImage:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)setArtworkImage:(id)arg1 animated:(_Bool)arg2;
+- (void)_updateControlsPreferredFocus;
+@property(retain, nonatomic) NSIndexPath *singleCoverIndexPath;
+- (void)setSingleCoverIndexPath:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusEnvironments;
 @property(readonly, nonatomic, getter=isControlFocused) _Bool controlFocused;
-- (id)_constraintsForLayout:(long long)arg1;
+- (id)_constraintsForLayout;
 - (id)_routePickerTextColorForFocusState:(_Bool)arg1;
+@property(readonly, nonatomic) TVPMusicNowPlayingCollectionViewFlowLayout *collectionViewFlowLayout;
 - (void)_updateRoutePickerTextColorForCurrentFocusState;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateRoutePickerLabel;
-- (id)initWithFrame:(struct CGRect)arg1 layout:(long long)arg2;
+- (void)willMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 layout:(long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

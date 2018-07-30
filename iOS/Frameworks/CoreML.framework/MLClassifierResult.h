@@ -6,30 +6,30 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString;
+@class MLFeatureValue, NSDictionary;
 
 @interface MLClassifierResult : NSObject
 {
-    NSString *_predictedClassString;
-    NSDictionary *_classStringProbability;
+    MLFeatureValue *_predictedClass;
+    NSDictionary *_classProbability;
     long long _predictedClassFeatureType;
     id <MLFeatureProvider> _additionalFeatures;
 }
 
++ (id)resultWithClassProbability:(id)arg1 additionalFeatures:(id)arg2 classLabelOfMaxProbability:(id)arg3;
 + (id)resultWithIntClassProbability:(id)arg1 additionalFeatures:(id)arg2;
 + (id)resultWithStringClassProbability:(id)arg1 additionalFeatures:(id)arg2;
 + (id)resultWithIntClassProbability:(id)arg1;
 + (id)resultWithStringClassProbability:(id)arg1;
 @property(readonly) id <MLFeatureProvider> additionalFeatures; // @synthesize additionalFeatures=_additionalFeatures;
 @property(readonly) long long predictedClassFeatureType; // @synthesize predictedClassFeatureType=_predictedClassFeatureType;
-@property(readonly) NSDictionary *classStringProbability; // @synthesize classStringProbability=_classStringProbability;
-@property(readonly) NSString *predictedClassString; // @synthesize predictedClassString=_predictedClassString;
+@property(readonly) NSDictionary *classProbability; // @synthesize classProbability=_classProbability;
+@property(readonly) MLFeatureValue *predictedClass; // @synthesize predictedClass=_predictedClass;
 - (void).cxx_destruct;
+- (id)initWithClassProbability:(id)arg1 additionalFeatures:(id)arg2 classLabelOfMaxProbability:(id)arg3;
+- (id)initWithIntClassProbability:(id)arg1 classFeatureType:(long long)arg2 additionalFeatures:(id)arg3;
 - (id)initWithStringClassProbability:(id)arg1 classFeatureType:(long long)arg2 additionalFeatures:(id)arg3;
 - (id)asFeatureDictionaryWithPredictedClassDescription:(id)arg1 classProbabilityDescription:(id)arg2;
-- (id)classProbabilitiesWithTypedClass;
-- (id)intClassProbability;
-- (id)predictedClassFeatureValue;
 
 @end
 

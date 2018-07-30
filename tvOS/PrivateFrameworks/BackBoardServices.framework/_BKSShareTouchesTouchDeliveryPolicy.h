@@ -20,12 +20,12 @@
 @property(readonly, nonatomic) unsigned int childContextId; // @synthesize childContextId=_childContextId;
 - (void)setAssertionEndpoint:(id)arg1;
 - (id)assertionEndpoint;
+- (void).cxx_destruct;
 - (id)matchSharingTouchesPolicy:(CDUnknownBlockType)arg1 orCancelTouchesPolicy:(CDUnknownBlockType)arg2 orCombinedPolicy:(CDUnknownBlockType)arg3;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithChildContextId:(unsigned int)arg1 hostContextId:(unsigned int)arg2;
 

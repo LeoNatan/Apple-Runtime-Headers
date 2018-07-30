@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 + (void)initialize;
 - (void)appResignedActive;
 - (void)searchFieldCancel;
-- (_Bool)validateViewAsFlow:(id)arg1;
 - (void)configureAccessoryViews:(id)arg1;
 - (void)saveShowSidebarStateToPrefs;
 - (_Bool)shouldShowSidebarSplitter;

@@ -9,16 +9,23 @@
 @class NSArray, NSDictionary, NSString, NSURL, SFFormAutoFillFrameHandle;
 
 @protocol SFFormAutoFiller <NSObject>
+- (void)automaticPasswordSheetDimissedInFrame:(SFFormAutoFillFrameHandle *)arg1 focusedPasswordControlUniqueID:(NSString *)arg2;
+- (void)removeAutomaticPasswordVisualTreatmentInFrame:(SFFormAutoFillFrameHandle *)arg1 passwordControlUniqueIDs:(NSArray *)arg2;
+- (void)removeAutomaticPasswordElementsInFrame:(SFFormAutoFillFrameHandle *)arg1 focusedPasswordControlUniqueID:(NSString *)arg2 passwordControlUniqueIDs:(NSArray *)arg3;
+- (void)substitutePasswordElementsWithAutomaticPasswordElementsInFrame:(SFFormAutoFillFrameHandle *)arg1 formID:(long long)arg2 focusedPasswordControlUniqueID:(NSString *)arg3 passwordControlUniqueIDs:(NSArray *)arg4 automaticPassword:(NSString *)arg5 blurAfterSubstitution:(_Bool)arg6 completionHandler:(void (^)(NSArray *))arg7;
 - (void)resumeLoadingAfterSavingFormData;
 - (void)clearAutoFillMetadata;
-- (void)collectMetadataForTextField:(NSString *)arg1 inFrame:(SFFormAutoFillFrameHandle *)arg2 atURL:(NSURL *)arg3 completionHandler:(void (^)(WBSFormMetadata *, NSDictionary *))arg4;
+- (void)collectMetadataForTextField:(NSString *)arg1 inFrame:(SFFormAutoFillFrameHandle *)arg2 atURL:(NSURL *)arg3 completionHandler:(void (^)(WBSFormMetadata *, WBSFormControlMetadata *))arg4;
 - (void)collectFormMetadataForPrefillingAtURL:(NSURL *)arg1;
 - (void)collectURLsForPrefillingAtURL:(NSURL *)arg1;
+- (void)focusFormForStreamlinedLogin:(long long)arg1 inFrame:(SFFormAutoFillFrameHandle *)arg2;
+- (void)autoFillOneTimeCodeFieldsInFrame:(SFFormAutoFillFrameHandle *)arg1 withValue:(NSString *)arg2;
 - (void)setFormControls:(NSArray *)arg1 areAutoFilled:(_Bool)arg2 andClearField:(NSString *)arg3 inFrame:(SFFormAutoFillFrameHandle *)arg4;
 - (void)fillTextField:(NSString *)arg1 inFrame:(SFFormAutoFillFrameHandle *)arg2 withGeneratedPassword:(NSString *)arg3;
 - (void)annotateForm:(long long)arg1 inFrame:(SFFormAutoFillFrameHandle *)arg2 withValues:(NSDictionary *)arg3;
 - (void)autoFillForm:(long long)arg1 inFrame:(SFFormAutoFillFrameHandle *)arg2 withGeneratedPassword:(NSString *)arg3;
 - (void)autoFillFormSynchronouslyInFrame:(SFFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2;
+- (void)autoFillFormAsynchronouslyInFrame:(SFFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(_Bool)arg3 focusFieldAfterFilling:(_Bool)arg4 fieldToFocus:(NSString *)arg5 submitForm:(_Bool)arg6;
 - (void)autoFillFormAsynchronouslyInFrame:(SFFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(_Bool)arg3 focusFieldAfterFilling:(_Bool)arg4 fieldToFocus:(NSString *)arg5;
 - (void)autoFillFormAsynchronouslyInFrame:(SFFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(_Bool)arg3 selectFieldAfterFilling:(NSString *)arg4;
 @end

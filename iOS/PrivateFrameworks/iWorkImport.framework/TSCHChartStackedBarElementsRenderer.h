@@ -11,5 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)renderRoundedCornerElementStrokeIntoContext:(struct CGContext *)arg1 stroke:(id)arg2 clippingPath:(struct CGPath *)arg3 elementRenderRect:(struct CGRect)arg4;
+- (struct CGPath *)clippingPathForRect:(struct CGRect)arg1 inGroupIndex:(unsigned long long)arg2 withContext:(struct CGContext *)arg3 relativelyPositive:(_Bool)arg4 stackRects:(id)arg5;
+- (id)stackRectsWithContext:(struct CGContext *)arg1;
+
 @end
 

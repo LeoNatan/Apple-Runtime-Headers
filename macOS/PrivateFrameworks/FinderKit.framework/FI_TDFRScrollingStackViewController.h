@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface FI_TDFRScrollingStackViewController : FI_TViewController
 {
     struct TFENodeVector _targetNodes;
-    struct TNSRef<NSStackView *, void> _stackView;
+    struct TNSRef<NSStackView, void> _stackView;
     function_b1fce659 _viewWillAppearCallback;
     function_b1fce659 _viewWillDisappearCallback;
 }

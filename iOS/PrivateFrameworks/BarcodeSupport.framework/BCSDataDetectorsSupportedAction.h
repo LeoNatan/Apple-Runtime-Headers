@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)localizedDefaultActionDescription;
 - (id)localizedActionDescription;
 - (id)url;
-- (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 codePayload:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

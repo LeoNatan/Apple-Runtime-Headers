@@ -21,6 +21,7 @@
 + (id)_standardSiriAppURL;
 + (BOOL)isSiriRunning;
 + (id)sharedInstance;
++ (void)initialize;
 @property(retain, nonatomic) NSXPCConnection *connectionToSiri; // @synthesize connectionToSiri=_connectionToSiri;
 - (void).cxx_destruct;
 - (void)_dismissSiriFromSource:(long long)arg1 completionBlock:(CDUnknownBlockType)arg2;

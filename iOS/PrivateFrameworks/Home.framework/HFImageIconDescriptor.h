@@ -12,9 +12,11 @@
 
 @interface HFImageIconDescriptor : NSObject <HFIconDescriptor>
 {
+    _Bool _isDemoModeDescriptor;
     NSString *_imageIdentifier;
 }
 
+@property(nonatomic) _Bool isDemoModeDescriptor; // @synthesize isDemoModeDescriptor=_isDemoModeDescriptor;
 @property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
 - (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
@@ -22,6 +24,7 @@
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithDemoModeImageIdentifier:(id)arg1;
 - (id)initWithImageIdentifier:(id)arg1;
 
 // Remaining properties

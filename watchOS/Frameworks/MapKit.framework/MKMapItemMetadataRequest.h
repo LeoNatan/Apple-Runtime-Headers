@@ -8,7 +8,6 @@
 
 @class MKMapItem, NSURL, NSURLRequest;
 
-__attribute__((visibility("hidden")))
 @interface MKMapItemMetadataRequest : NSObject
 {
     MKMapItem *_mapItem;

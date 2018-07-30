@@ -17,7 +17,7 @@
     UILabel *_noDataLabel;
     UIFont *_detailFont;
     UIFont *_suffixFont;
-    UIView *_lineView;
+    UIView *_dividerView;
     NSString *_detailString;
     NSString *_suffixString;
     UIColor *_textColor;

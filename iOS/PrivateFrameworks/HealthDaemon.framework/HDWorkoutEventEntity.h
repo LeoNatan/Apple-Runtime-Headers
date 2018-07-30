@@ -10,16 +10,20 @@
 {
 }
 
-+ (id)_decodeMetadataFromData:(id)arg1;
-+ (_Bool)enumerateEventsForWorkout:(long long)arg1 withStatement:(id)arg2 error:(id *)arg3 eventHandler:(CDUnknownBlockType)arg4;
-+ (id)statementForEnumeratingEventsForWorkoutInDatabase:(id)arg1 error:(id *)arg2;
++ (id)workoutEventsForOwner:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
++ (_Bool)enumerateEventsForOwner:(long long)arg1 withStatement:(id)arg2 error:(id *)arg3 eventHandler:(CDUnknownBlockType)arg4;
++ (id)statementForEnumeratingEventsForOwnerInDatabase:(id)arg1 error:(id *)arg2;
 + (id)deleteStatementForWorkoutEventsWithDatabase:(id)arg1;
-+ (id)workoutEventsWithWorkoutID:(id)arg1 database:(id)arg2 error:(id *)arg3;
-+ (_Bool)insertWorkoutEventsFromWorkout:(id)arg1 workoutPersistentID:(id)arg2 database:(id)arg3 error:(id *)arg4;
-+ (id)insertWorkoutEventWithWorkoutID:(id)arg1 dateInterval:(id)arg2 eventType:(long long)arg3 metadata:(id)arg4 database:(id)arg5 error:(id *)arg6;
++ (id)workoutEventsWithOwnerID:(id)arg1 database:(id)arg2 error:(id *)arg3;
++ (_Bool)insertWorkoutEventsFromWorkout:(id)arg1 ownerID:(id)arg2 database:(id)arg3 error:(id *)arg4;
++ (id)insertPersistableWorkoutEvent:(id)arg1 ownerID:(id)arg2 database:(id)arg3 error:(id *)arg4;
 + (long long)protectionClass;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
++ (Class)workoutEventClass;
 + (id)databaseTable;
++ (id)ownerEntityReferenceColumn;
++ (Class)ownerEntityClass;
 
 @end
 

@@ -10,8 +10,9 @@
 #import "NSDraggingInfoPrivate.h"
 #import "NSDraggingInfo_Private.h"
 
-@class NSMutableSet, NSString, NSWindow;
+@class NSImage, NSMutableSet, NSPasteboard, NSString, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSDragDestination : NSObject <NSDraggingInfo, NSDraggingInfoPrivate, NSDraggingInfo_Private>
 {
     NSWindow *_window;
@@ -69,6 +70,7 @@
 @property(setter=_setLastDragLocation:) struct CGPoint _lastDragLocation; // @synthesize _lastDragLocation;
 @property(setter=_setLastDragTimestamp:) double _lastDragTimestamp; // @synthesize _lastDragTimestamp;
 @property(setter=_setDragID:) unsigned int _dragID; // @synthesize _dragID;
+- (void).cxx_destruct;
 @property(readonly) long long springLoadingHighlight;
 - (long long)_deviceID;
 - (void)resetSpringLoading;
@@ -118,17 +120,17 @@
 @property BOOL animatesToDestination;
 @property long long draggingFormation;
 - (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
-- (long long)draggingSequenceNumber;
+@property(readonly) long long draggingSequenceNumber;
 - (long long)_draggingStage;
 - (double)_draggingFargo;
 - (double)_draggingForce;
-- (id)draggingSource;
-- (id)draggingPasteboard;
-- (id)draggedImage;
-- (struct CGPoint)draggedImageLocation;
-- (struct CGPoint)draggingLocation;
-- (unsigned long long)draggingSourceOperationMask;
-- (id)draggingDestinationWindow;
+@property(readonly) id draggingSource;
+@property(readonly) NSPasteboard *draggingPasteboard;
+@property(readonly) NSImage *draggedImage;
+@property(readonly) struct CGPoint draggedImageLocation;
+@property(readonly) struct CGPoint draggingLocation;
+@property(readonly) unsigned long long draggingSourceOperationMask;
+@property(readonly) NSWindow *draggingDestinationWindow;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 @property(setter=_setNeedUpdateTimer:) BOOL _needUpdateTimer;

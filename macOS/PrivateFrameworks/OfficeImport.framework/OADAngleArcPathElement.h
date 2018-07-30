@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADPathElement.h>
 
-__attribute__((visibility("hidden")))
 @interface OADAngleArcPathElement : OADPathElement
 {
     struct OADAdjustPoint mCenter;

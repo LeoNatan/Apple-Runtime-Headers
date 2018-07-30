@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABBidirectionalDictionary.h>
 
-__attribute__((visibility("hidden")))
 @interface ABMutableBidirectionalDictionary : ABBidirectionalDictionary
 {
 }

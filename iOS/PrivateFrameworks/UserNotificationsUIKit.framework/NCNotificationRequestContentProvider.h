@@ -13,13 +13,17 @@
 @interface NCNotificationRequestContentProvider : NSObject <NCNotificationStaticContentProviding>
 {
     id <NCNotificationStaticContentProvidingDelegate> _delegate;
+    NSArray *_overriddenActions;
     NCNotificationRequest *_notificationRequest;
 }
 
 @property(retain, nonatomic) NCNotificationRequest *notificationRequest; // @synthesize notificationRequest=_notificationRequest;
+@property(copy, nonatomic) NSArray *overriddenActions; // @synthesize overriddenActions=_overriddenActions;
 @property(nonatomic) __weak id <NCNotificationStaticContentProvidingDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_appBundleIdentifer;
+@property(readonly, nonatomic) unsigned long long coalesceCount;
+@property(readonly, copy, nonatomic) NSArray *currentActions;
 @property(readonly, nonatomic) _Bool showsTextInputOnAppearance;
 @property(readonly, copy, nonatomic) CDUnknownBlockType closeAction;
 @property(readonly, copy, nonatomic) CDUnknownBlockType clearAction;
@@ -29,6 +33,7 @@
 @property(readonly, nonatomic) NSArray *interfaceActions;
 @property(readonly, nonatomic) UIImage *thumbnail;
 @property(readonly, nonatomic) unsigned long long messageNumberOfLines;
+@property(readonly, copy, nonatomic) NSString *summaryText;
 @property(readonly, copy, nonatomic) NSString *secondaryText;
 @property(readonly, copy, nonatomic) NSString *primarySubtitleText;
 @property(readonly, copy, nonatomic) NSString *primaryText;
@@ -36,7 +41,7 @@
 @property(readonly, nonatomic, getter=isDateAllDay) _Bool dateAllDay;
 @property(readonly, copy, nonatomic) NSDate *date;
 @property(readonly, copy, nonatomic) NSString *title;
-@property(readonly, nonatomic) UIImage *icon;
+@property(readonly, nonatomic) NSArray *icons;
 - (id)init;
 - (id)initWithNotificationRequest:(id)arg1;
 

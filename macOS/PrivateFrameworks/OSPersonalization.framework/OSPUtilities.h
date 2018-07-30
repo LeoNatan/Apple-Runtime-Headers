@@ -10,6 +10,7 @@
 {
 }
 
++ (id)weakStringConstant:(id)arg1;
 + (id)mountPointPrefixForFile:(id)arg1;
 + (BOOL)isRunningAppleInternalBuild;
 + (id)sandboxURLWithLabel:(id)arg1;

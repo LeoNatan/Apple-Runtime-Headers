@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSError, SBObject;
 
+__attribute__((visibility("hidden")))
 @interface SBProxy : NSProxy
 {
     SBObject *_createdObject;
@@ -27,7 +28,12 @@
 - (unsigned int)codeInContext:(id)arg1;
 - (void)setLastError:(id)arg1;
 - (id)lastError;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)initWithData:(id)arg1 andProperties:(id)arg2;
+- (id)initWithProperties:(id)arg1;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

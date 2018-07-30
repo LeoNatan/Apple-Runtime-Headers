@@ -6,6 +6,7 @@
 
 #import <CorePDF/CPGraphicRegion.h>
 
+__attribute__((visibility("hidden")))
 @interface CPShapeRegion : CPGraphicRegion
 {
 }

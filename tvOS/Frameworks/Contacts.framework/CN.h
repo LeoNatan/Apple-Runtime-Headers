@@ -31,6 +31,7 @@
 + (unsigned long long)indexOfPreferredContactsForUnifying:(id)arg1 includingMainStoreContacts:(_Bool)arg2;
 + (Class)defaultDataMapperClass;
 + (id)mapsDataDescription;
++ (id)preferredChannelDescription;
 + (id)callAlertDescription;
 + (id)textAlertDescription;
 + (id)phonemeDataDescription;

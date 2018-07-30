@@ -6,16 +6,16 @@
 
 #import "NSCollectionViewItem.h"
 
-@class CNRecentLikenessesViewController, NSTextField, NSView;
+@class CNLikenessSelectionView, CNRecentLikenessesViewController, NSTextField;
 
 @interface CNLikenessCollectionItem : NSCollectionViewItem
 {
     CNRecentLikenessesViewController *_recentsViewController;
     NSTextField *_label;
-    NSView *_selectionView;
+    CNLikenessSelectionView *_selectionView;
 }
 
-@property(retain) NSView *selectionView; // @synthesize selectionView=_selectionView;
+@property(retain, nonatomic) CNLikenessSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property __weak NSTextField *label; // @synthesize label=_label;
 @property __weak CNRecentLikenessesViewController *recentsViewController; // @synthesize recentsViewController=_recentsViewController;
 - (void).cxx_destruct;

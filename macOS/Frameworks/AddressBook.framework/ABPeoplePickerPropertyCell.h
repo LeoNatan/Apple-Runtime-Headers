@@ -8,7 +8,6 @@
 
 @class NSIndexSet;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerPropertyCell : NSTextFieldCell
 {
     NSIndexSet *_selectedSubrowIndexes;

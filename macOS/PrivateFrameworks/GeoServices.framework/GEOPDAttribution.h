@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDAttribution : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
@@ -21,6 +22,7 @@
 }
 
 + (Class)attributionUrlType;
++ (id)attributionForAnnotatedItemList:(id)arg1 placeData:(id)arg2;
 + (id)attributionForPlaceDataRestaurantReservationLink:(id)arg1;
 + (id)attributionForPlaceDataEncyclopedia:(id)arg1;
 + (id)attributionForPlaceDataEntity:(id)arg1;

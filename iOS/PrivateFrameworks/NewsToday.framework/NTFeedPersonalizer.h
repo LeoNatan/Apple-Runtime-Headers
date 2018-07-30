@@ -13,7 +13,7 @@
 @interface NTFeedPersonalizer : NSObject <FCFeedPersonalizing>
 {
     FCPersonalizationTreatment *_personalizationTreatment;
-    id <FRReadonlyPersonalizationAggregateStore> _readonlyPersonalizationAggregateStore;
+    id <FCReadonlyPersonalizationAggregateStore> _readonlyPersonalizationAggregateStore;
     double _articleDiversificationSimilarityExpectationStart;
     double _articleDiversificationSimilarityExpectationEnd;
     double _articleDiversificationUniquePublisherExpectationSlope;
@@ -30,7 +30,7 @@
 @property(nonatomic) double articleDiversificationUniquePublisherExpectationSlope; // @synthesize articleDiversificationUniquePublisherExpectationSlope=_articleDiversificationUniquePublisherExpectationSlope;
 @property(nonatomic) double articleDiversificationSimilarityExpectationEnd; // @synthesize articleDiversificationSimilarityExpectationEnd=_articleDiversificationSimilarityExpectationEnd;
 @property(nonatomic) double articleDiversificationSimilarityExpectationStart; // @synthesize articleDiversificationSimilarityExpectationStart=_articleDiversificationSimilarityExpectationStart;
-@property(retain, nonatomic) id <FRReadonlyPersonalizationAggregateStore> readonlyPersonalizationAggregateStore; // @synthesize readonlyPersonalizationAggregateStore=_readonlyPersonalizationAggregateStore;
+@property(retain, nonatomic) id <FCReadonlyPersonalizationAggregateStore> readonlyPersonalizationAggregateStore; // @synthesize readonlyPersonalizationAggregateStore=_readonlyPersonalizationAggregateStore;
 @property(copy, nonatomic) FCPersonalizationTreatment *personalizationTreatment; // @synthesize personalizationTreatment=_personalizationTreatment;
 - (void).cxx_destruct;
 - (id)limitArticlesByMinimumArticleQuality:(id)arg1;
@@ -42,7 +42,9 @@
 - (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2;
 - (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2 preselectedArticles:(id)arg3;
 - (id)sortArticles:(id)arg1;
+- (id)sortArticles:(id)arg1 configurationSet:(long long)arg2;
 - (id)sortArticles:(id)arg1 options:(long long)arg2;
+- (id)sortArticles:(id)arg1 options:(long long)arg2 configurationSet:(long long)arg3;
 - (void)prepareAutoFavoritesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)prepareForUseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithPersonalizationTreatment:(id)arg1 readonlyPersonalizationAggregateStore:(id)arg2 articleDiversificationSimilarityExpectationStart:(double)arg3 articleDiversificationSimilarityExpectationEnd:(double)arg4 articleDiversificationUniquePublisherExpectationSlope:(double)arg5 articleDiversificationUniquePublisherExpectationYIntercept:(double)arg6 todayData:(id)arg7;

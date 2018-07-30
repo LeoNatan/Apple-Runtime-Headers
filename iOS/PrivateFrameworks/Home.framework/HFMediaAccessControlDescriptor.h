@@ -18,6 +18,7 @@
 }
 
 + (id)na_identity;
++ (_Bool)accessClassificationSupportsPassword:(unsigned long long)arg1;
 + (id)descriptorWithAccess:(unsigned long long)arg1 requiresPassword:(_Bool)arg2 password:(id)arg3;
 + (id)defaultAccessControl;
 @property(readonly, copy, nonatomic) NSString *accessPassword; // @synthesize accessPassword=_accessPassword;
@@ -27,6 +28,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool accessSupportsPassword;
 - (id)init;
 - (id)initWithAccess:(unsigned long long)arg1 requiresPassword:(_Bool)arg2 password:(id)arg3;
 

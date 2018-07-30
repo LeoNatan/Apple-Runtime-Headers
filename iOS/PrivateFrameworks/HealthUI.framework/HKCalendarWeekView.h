@@ -48,6 +48,7 @@
 - (Class)cellClass;
 - (void)pressedOnCalendarDay:(long long)arg1 cell:(id)arg2 down:(_Bool)arg3;
 - (void)selectedCalendarDay:(id)arg1;
+- (id)_getDayCellWithTouchLocation:(struct CGPoint)arg1;
 - (id)_getDayCellWithTouches:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

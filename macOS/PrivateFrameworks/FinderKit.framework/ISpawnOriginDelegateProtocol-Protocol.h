@@ -14,6 +14,6 @@
 - (struct CGRect)globalZoomRectForNode:(const struct TFENode *)arg1;
 
 @optional
-- (QLPreviewView *)quickLookSharedPreviewViewForPreviewNode:(const struct TFENode *)arg1;
+- (QLPreviewView *)quickLookSharedPreviewView;
 @end
 

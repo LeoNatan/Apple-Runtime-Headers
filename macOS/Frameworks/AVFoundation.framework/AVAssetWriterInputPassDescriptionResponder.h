@@ -8,6 +8,7 @@
 
 @class AVAssetWriterInputPassDescription, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputPassDescriptionResponder : NSObject
 {
     NSObject<OS_dispatch_queue> *_callbackQueue;

@@ -19,8 +19,9 @@
 - (id)textLabelForCell:(id)arg1;
 - (id)imageViewForCell:(id)arg1;
 - (float)defaultDetailTextLabelFontSizeForCell:(id)arg1;
-- (float)_PUICDetailLabelBaselineFromBottom;
-- (float)_PUICLabelBaselineSpacing;
+- (float)_textLabelBaselineFromTop;
+- (float)_detailLabelBaselineFromBottom;
+- (float)_labelToLabelBaselineSpacing;
 - (float)_defaultHeightForCell:(id)arg1;
 
 @end

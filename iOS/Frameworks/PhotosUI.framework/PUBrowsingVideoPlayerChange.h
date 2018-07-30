@@ -6,7 +6,6 @@
 
 #import <PhotosUI/PUViewModelChange.h>
 
-__attribute__((visibility("hidden")))
 @interface PUBrowsingVideoPlayerChange : PUViewModelChange
 {
     _Bool _playStateDidChange;

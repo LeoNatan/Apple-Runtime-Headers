@@ -60,7 +60,7 @@
 - (void)setSession:(id)arg1;
 - (void)expire;
 - (BOOL)hasProtector;
-- (int)_attachToContentKeySession:(id)arg1;
+- (int)_attachToContentKeySession:(id)arg1 failedSinceAlreadyAttachedToAnotherSession:(char *)arg2;
 @property(readonly, nonatomic) BOOL mayRequireContentKeysForMediaDataProcessing;
 
 // Remaining properties

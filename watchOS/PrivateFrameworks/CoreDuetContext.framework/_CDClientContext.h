@@ -43,6 +43,9 @@
 - (void).cxx_destruct;
 - (id)valuesForKeyPaths:(id)arg1 inContextsMatchingPredicate:(id)arg2;
 - (id)localContext;
+- (_Bool)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
+- (_Bool)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2;
+- (_Bool)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2;
 - (_Bool)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (_Bool)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
 - (void)handleRegistrationCompleted:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -58,6 +61,8 @@
 - (id)lastModifiedDateForContextualKeyPath:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)objectForContextualKeyPath:(id)arg1;
+- (void)setCachedValueIfClientHasRegistrations:(id)arg1 forKeyPath:(id)arg2;
+- (id)cachedValueIfClientHasRegistrationsForKeyPath:(id)arg1;
 - (_Bool)hasKnowledgeOfContextualKeyPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithEndpoint:(id)arg1;

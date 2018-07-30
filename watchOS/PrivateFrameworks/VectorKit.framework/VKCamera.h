@@ -8,6 +8,7 @@
 
 @class VKFootprint, VKViewVolume;
 
+__attribute__((visibility("hidden")))
 @interface VKCamera : NSObject
 {
     struct RunLoopController *_runLoopController;

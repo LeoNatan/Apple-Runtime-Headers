@@ -34,12 +34,15 @@
     _Bool isInstant;
     _Bool isHistorical;
     long long pollingPeriod;
+    _Bool shouldSaveCurrentEventOnShutdown;
+    NSString *knowledgeBaseMetadataClass;
     NSString *_keyPathString;
 }
 
 + (id)eventStreamPropertiesFromDictionary:(id)arg1;
 @property(readonly, nonatomic) NSString *keyPathString; // @synthesize keyPathString=_keyPathString;
 @property(readonly, nonatomic) long long pollingPeriod; // @synthesize pollingPeriod;
+@property(readonly, nonatomic) _Bool shouldSaveCurrentEventOnShutdown; // @synthesize shouldSaveCurrentEventOnShutdown;
 @property(readonly, nonatomic) _Bool isHistorical; // @synthesize isHistorical;
 @property(readonly, nonatomic) _Bool isInstant; // @synthesize isInstant;
 @property(readonly, nonatomic) long long statisticsType; // @synthesize statisticsType;
@@ -61,6 +64,7 @@
 @property(readonly, nonatomic) _Bool futureEvent; // @synthesize futureEvent;
 @property(readonly, nonatomic) long long valueType; // @synthesize valueType;
 @property(readonly, nonatomic) NSString *descriptionString; // @synthesize descriptionString;
+@property(readonly, nonatomic) NSString *knowledgeBaseMetadataClass; // @synthesize knowledgeBaseMetadataClass;
 @property(readonly, nonatomic) NSString *knowledgeBaseName; // @synthesize knowledgeBaseName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name;
 - (void).cxx_destruct;

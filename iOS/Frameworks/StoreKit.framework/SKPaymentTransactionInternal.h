@@ -8,8 +8,10 @@
 
 @class NSArray, NSData, NSDate, NSError, NSString, SKPayment, SKPaymentTransaction;
 
+__attribute__((visibility("hidden")))
 @interface SKPaymentTransactionInternal : NSObject
 {
+    NSString *_uuid;
     NSArray *_downloads;
     NSError *_error;
     SKPaymentTransaction *_originalTransaction;
@@ -21,7 +23,8 @@
     long long _transactionState;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)init;
 
 @end
 

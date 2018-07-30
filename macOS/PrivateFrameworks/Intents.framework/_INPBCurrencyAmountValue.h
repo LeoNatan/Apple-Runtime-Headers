@@ -7,34 +7,37 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBCurrencyAmountValue.h"
 
-@class NSString, PBUnknownFields, _INPBDecimalNumberValue, _INPBValueMetadata;
+@class NSString, _INPBDecimalNumberValue, _INPBValueMetadata;
 
-@interface _INPBCurrencyAmountValue : PBCodable <NSCopying>
+@interface _INPBCurrencyAmountValue : PBCodable <_INPBCurrencyAmountValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBDecimalNumberValue *_amount;
     NSString *_currencyCode;
     _INPBValueMetadata *_valueMetadata;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
-@property(retain, nonatomic) _INPBDecimalNumberValue *amount; // @synthesize amount=_amount;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
+@property(retain, nonatomic) _INPBDecimalNumberValue *amount; // @synthesize amount=_amount;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) BOOL hasValueMetadata;
 @property(readonly, nonatomic) BOOL hasCurrencyCode;
 @property(readonly, nonatomic) BOOL hasAmount;
-@property(readonly, nonatomic) BOOL hasValueMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

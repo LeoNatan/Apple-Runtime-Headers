@@ -6,16 +6,15 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
+@class HMFUnfairLock, NSMutableArray;
 
 @interface HMPendingRequests : NSObject
 {
-    NSObject<OS_dispatch_queue> *_workQueue;
+    HMFUnfairLock *_lock;
     NSMutableArray *_contextLists;
 }
 
 @property(retain, nonatomic) NSMutableArray *contextLists; // @synthesize contextLists=_contextLists;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
 - (id)removeMediaSystemBuilderForIdentifier:(id)arg1;
 - (void)addMediaSystemBuilder:(id)arg1 andCompletionBlock:(id)arg2 forIdentifier:(id)arg3;

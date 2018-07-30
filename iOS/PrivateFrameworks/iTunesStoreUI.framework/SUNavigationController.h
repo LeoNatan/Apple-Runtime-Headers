@@ -22,6 +22,7 @@
 @property(nonatomic, getter=isSkLoading) _Bool skLoading; // @synthesize skLoading=_skLoading;
 @property(retain, nonatomic) SUSection *section; // @synthesize section=_section;
 @property(retain, nonatomic) SUClientInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
+- (void).cxx_destruct;
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (_Bool)clearsWeakScriptReferences;
 - (_Bool)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(long long)arg2;

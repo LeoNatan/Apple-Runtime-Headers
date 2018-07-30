@@ -7,6 +7,8 @@
 #import "NSManagedObject.h"
 
 @interface NSManagedObject (PLManagedObject)
+- (id)truncatedDescriptionWithPropertyKeys:(id)arg1;
+- (id)pointerDescription;
 - (id)pl_shortDescription;
 @end
 

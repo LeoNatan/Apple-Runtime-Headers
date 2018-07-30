@@ -6,31 +6,50 @@
 
 #import "NSManagedObject.h"
 
-@class NSDate, NSNumber, NSString;
+@class NSDate, NSNumber, NSSet, NSString, NSUUID;
 
 @interface CallRecord : NSManagedObject
 {
 }
 
++ (id)fetchRequest;
+@property(readonly, nonatomic) _Bool supportsServiceProvider;
+@property(readonly, nonatomic) _Bool supportsRemoteParticipantHandles;
+@property(readonly, nonatomic) _Bool supportsOutgoingLocalParticipantUUID;
+@property(readonly, nonatomic) _Bool supportsLocalParticipantUUID;
+@property(readonly, nonatomic) _Bool supportsHandleType;
+@property(readonly, nonatomic) _Bool supportsCallCategory;
+- (id)compositeServiceProviderForContext:(id)arg1;
+- (id)compositeRemoteParticipantHandlesForContext:(id)arg1;
+- (id)compositeOutgoingLocalParticipantUUIDForContext:(id)arg1;
+- (id)compositeLocalParticipantUUIDForContext:(id)arg1;
+- (id)compositeHandleTypeForContext:(id)arg1;
+- (id)compositeCallCategoryForContext:(id)arg1;
+@property(readonly, copy, nonatomic) NSSet *chRemoteParticipantHandles;
+@property(readonly, nonatomic) long long chHandleType;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *address; // @dynamic address;
-@property(retain, nonatomic) NSNumber *answered; // @dynamic answered;
-@property(retain, nonatomic) NSNumber *call_category; // @dynamic call_category;
-@property(retain, nonatomic) NSNumber *calltype; // @dynamic calltype;
-@property(retain, nonatomic) NSDate *date; // @dynamic date;
-@property(retain, nonatomic) NSString *device_id; // @dynamic device_id;
-@property(retain, nonatomic) NSNumber *disconnected_cause; // @dynamic disconnected_cause;
-@property(retain, nonatomic) NSNumber *duration; // @dynamic duration;
-@property(retain, nonatomic) NSNumber *face_time_data; // @dynamic face_time_data;
-@property(retain, nonatomic) NSNumber *handle_type; // @dynamic handle_type;
-@property(retain, nonatomic) NSString *iso_country_code; // @dynamic iso_country_code;
-@property(retain, nonatomic) NSString *location; // @dynamic location;
-@property(retain, nonatomic) NSString *name; // @dynamic name;
-@property(retain, nonatomic) NSNumber *number_availability; // @dynamic number_availability;
-@property(retain, nonatomic) NSNumber *originated; // @dynamic originated;
-@property(retain, nonatomic) NSNumber *read; // @dynamic read;
-@property(retain, nonatomic) NSString *service_provider; // @dynamic service_provider;
-@property(retain, nonatomic) NSString *unique_id; // @dynamic unique_id;
+@property(copy, nonatomic) NSNumber *answered; // @dynamic answered;
+@property(copy, nonatomic) NSNumber *call_category; // @dynamic call_category;
+@property(copy, nonatomic) NSNumber *calltype; // @dynamic calltype;
+@property(copy, nonatomic) NSDate *date; // @dynamic date;
+@property(copy, nonatomic) NSNumber *disconnected_cause; // @dynamic disconnected_cause;
+@property(copy, nonatomic) NSNumber *duration; // @dynamic duration;
+@property(copy, nonatomic) NSNumber *face_time_data; // @dynamic face_time_data;
+@property(copy, nonatomic) NSNumber *handle_type; // @dynamic handle_type;
+@property(copy, nonatomic) NSString *iso_country_code; // @dynamic iso_country_code;
+@property(copy, nonatomic) NSUUID *localParticipantUUID; // @dynamic localParticipantUUID;
+@property(retain, nonatomic) NSString *local_address; // @dynamic local_address;
+@property(copy, nonatomic) NSString *location; // @dynamic location;
+@property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) NSNumber *number_availability; // @dynamic number_availability;
+@property(copy, nonatomic) NSNumber *originated; // @dynamic originated;
+@property(copy, nonatomic) NSUUID *outgoingLocalParticipantUUID; // @dynamic outgoingLocalParticipantUUID;
+@property(copy, nonatomic) NSNumber *read; // @dynamic read;
+@property(retain, nonatomic) NSSet *remoteParticipantHandles; // @dynamic remoteParticipantHandles;
+@property(copy, nonatomic) NSString *service_provider; // @dynamic service_provider;
+@property(copy, nonatomic) NSString *unique_id; // @dynamic unique_id;
+
 @end
 

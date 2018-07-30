@@ -8,7 +8,7 @@
 
 #import "WBSSiteMetadataProvider.h"
 
-@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class NSArray, NSColor, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface WBSBookmarkFolderTouchIconProvider : NSObject <WBSSiteMetadataProvider>
 {
@@ -18,6 +18,7 @@
     id <WBSSiteMetadataProviderDelegate> _providerDelegate;
 }
 
++ (BOOL)_appUsesLeftToRightLayout;
 @property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (void).cxx_destruct;
 - (id)_drawTouchIconForRequest:(id)arg1;
@@ -29,6 +30,7 @@
 - (void)stopWatchingUpdatesForRequest:(id)arg1;
 - (void)prepareResponseForRequest:(id)arg1 allowDelayedResponse:(BOOL)arg2;
 - (id)responseForRequest:(id)arg1 willProvideUpdates:(char *)arg2;
+@property(readonly) NSColor *backgroundColor;
 - (void)didCreateTouchIcon:(id)arg1;
 - (id)touchIconRequestForBookmark:(id)arg1 inFolderWithRequest:(id)arg2;
 - (id)displayableFolderContentsForRequest:(id)arg1;
@@ -44,6 +46,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL providesFavicons;
 @property(readonly) Class superclass;
 
 @end

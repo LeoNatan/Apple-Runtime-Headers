@@ -48,6 +48,7 @@
 - (double)maximumThrottleSeconds;
 - (int)defaultRetryAfter;
 - (BOOL)shouldDecryptRecordsBeforeSave;
+- (BOOL)allowExpiredDNSBehavior;
 - (unsigned long long)maxBatchSize;
 - (double)flowControlRegenerationOverride;
 - (long long)flowControlBudgetOverride;
@@ -127,8 +128,6 @@
 - (BOOL)sendDebugHeader;
 - (void)setModTimeInAssetCacheEviction:(BOOL)arg1;
 - (BOOL)useModTimeInAssetCacheEviction;
-- (void)setUseBackgroundSessions:(BOOL)arg1;
-- (BOOL)useBackgroundSessions;
 - (void)setCompressRequests:(BOOL)arg1;
 - (BOOL)compressRequests;
 - (void)setShouldProfileSQL:(BOOL)arg1;
@@ -149,10 +148,6 @@
 - (void)setOperationTimeout:(double)arg1;
 - (double)operationTimeout;
 - (BOOL)highPriorityURLDelegates;
-- (void)setDefaultResourceTimeout:(double)arg1;
-- (double)defaultResourceTimeout;
-- (void)setDefaultRequestTimeout:(double)arg1;
-- (double)defaultRequestTimeout;
 - (unsigned long long)recordCacheSizeLimit;
 - (void)setCachedRecordExpiryTime:(int)arg1;
 - (int)cachedRecordExpiryTime;

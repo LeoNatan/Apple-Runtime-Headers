@@ -8,7 +8,6 @@
 
 @class NSArray, NSCharacterSet, NSMutableArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OITSUDurationLocaleSpecificStorage : NSObject
 {
     NSString *_weekLongSingularString;

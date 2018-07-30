@@ -12,6 +12,12 @@
 
 @interface IKJSNavigationDocument : IKJSObject <IKJSNavigationDocument>
 {
+    struct {
+        _Bool hasClear;
+        _Bool hasSetDocuments;
+        _Bool hasPresentModal;
+        _Bool hasDismissModal;
+    } _delegateSelectors;
     id <IKAppNavigationController> _navigationControllerDelegate;
 }
 
@@ -28,6 +34,7 @@
 - (void)dismissModal;
 - (void)presentModal:(id)arg1:(id)arg2;
 - (void)pushDocument:(id)arg1:(id)arg2;
+- (void)setDocuments:(id)arg1:(id)arg2;
 @property(readonly, retain, nonatomic) NSArray *documents;
 - (id)initWithAppContext:(id)arg1 navigationController:(id)arg2;
 

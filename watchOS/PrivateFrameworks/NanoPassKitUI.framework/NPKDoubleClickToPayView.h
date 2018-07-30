@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) UIStackView *contentStackView; // @synthesize contentStackView=_contentStackView;
 - (void).cxx_destruct;
 - (void)_setupBounceAnimation;
+- (id)viewForLastBaselineLayout;
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect)arg1;
 

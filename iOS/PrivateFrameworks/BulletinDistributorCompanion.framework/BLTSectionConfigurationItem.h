@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class NSArray, NSNumber;
 
 @interface BLTSectionConfigurationItem : NSObject
 {
@@ -15,10 +15,20 @@
     _Bool _alwaysSyncSettings;
     _Bool _alwaysAlert;
     _Bool _optOutOfWaitForUserIdle;
+    _Bool _applyWhitelistToChildSections;
+    _Bool _optOutOfNotificationTuning;
+    _Bool _hasLegacyMapInUserInfo;
+    _Bool _hasLegacyMapInContext;
     NSArray *_whitelistedSubtypes;
     NSArray *_blacklistedCategories;
+    NSNumber *_watchVersionThatUsesUserInfoForContext;
 }
 
+@property(retain, nonatomic) NSNumber *watchVersionThatUsesUserInfoForContext; // @synthesize watchVersionThatUsesUserInfoForContext=_watchVersionThatUsesUserInfoForContext;
+@property(nonatomic) _Bool hasLegacyMapInContext; // @synthesize hasLegacyMapInContext=_hasLegacyMapInContext;
+@property(nonatomic) _Bool hasLegacyMapInUserInfo; // @synthesize hasLegacyMapInUserInfo=_hasLegacyMapInUserInfo;
+@property(nonatomic) _Bool optOutOfNotificationTuning; // @synthesize optOutOfNotificationTuning=_optOutOfNotificationTuning;
+@property(nonatomic) _Bool applyWhitelistToChildSections; // @synthesize applyWhitelistToChildSections=_applyWhitelistToChildSections;
 @property(nonatomic) _Bool optOutOfWaitForUserIdle; // @synthesize optOutOfWaitForUserIdle=_optOutOfWaitForUserIdle;
 @property(nonatomic) _Bool alwaysAlert; // @synthesize alwaysAlert=_alwaysAlert;
 @property(retain, nonatomic) NSArray *blacklistedCategories; // @synthesize blacklistedCategories=_blacklistedCategories;

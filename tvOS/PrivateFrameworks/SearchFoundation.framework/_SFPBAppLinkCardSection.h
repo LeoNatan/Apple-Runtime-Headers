@@ -13,7 +13,6 @@
 
 @interface _SFPBAppLinkCardSection : PBCodable <_SFPBAppLinkCardSection, NSSecureCoding>
 {
-    CDStruct_5ff9a38c _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;
@@ -53,16 +52,6 @@
 - (unsigned long long)appLinksCount;
 - (void)addAppLinks:(id)arg1;
 - (void)clearAppLinks;
-@property(readonly, nonatomic) _Bool hasSubtitle;
-@property(readonly, nonatomic) _Bool hasTitle;
-@property(readonly, nonatomic) _Bool hasBackgroundColor;
-@property(readonly, nonatomic) _Bool hasSeparatorStyle;
-@property(readonly, nonatomic) _Bool hasType;
-@property(readonly, nonatomic) _Bool hasHasBottomPadding;
-@property(readonly, nonatomic) _Bool hasHasTopPadding;
-@property(readonly, nonatomic) _Bool hasCanBeHidden;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerTitle;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

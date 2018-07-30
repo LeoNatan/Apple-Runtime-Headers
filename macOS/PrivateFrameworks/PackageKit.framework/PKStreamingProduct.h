@@ -18,7 +18,7 @@
 }
 
 + (BOOL)canInitWithURL:(id)arg1;
-@property(copy) NSError *currentError; // @synthesize currentError=_currentError;
+@property(readonly, copy) NSError *currentError; // @synthesize currentError=_currentError;
 @property unsigned long long state; // @synthesize state=_state;
 - (id)_archiveForTrustEvaluation;
 - (id)initByLoadingProductAtURL:(id)arg1 error:(id *)arg2;

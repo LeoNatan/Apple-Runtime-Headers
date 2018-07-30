@@ -6,10 +6,13 @@
 
 #import "UITableViewCell.h"
 
-@class NSString, WBSSavedPassword;
+@class NSString, UIColor, UILabel, UIView, WBSSavedPassword;
 
 @interface _WBUPasswordPickerTableViewCell : UITableViewCell
 {
+    UILabel *_monogramLabel;
+    UIView *_monogramBackgroundView;
+    UIColor *_monogramBackgroundColor;
     WBSSavedPassword *_savedPassword;
     NSString *_searchPattern;
 }
@@ -20,6 +23,11 @@
 - (void)webui_copyPassword;
 - (void)webui_copyUserName;
 - (void)setSavedPassword:(id)arg1 searchPattern:(id)arg2;
+- (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_refreshMonogramViewBackgroundColorIfNeeded;
+- (void)showPlaceholderImageForDomain:(id)arg1 backgroundColor:(id)arg2;
+- (void)setIcon:(id)arg1;
 
 @end
 

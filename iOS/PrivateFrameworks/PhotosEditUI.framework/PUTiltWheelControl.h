@@ -10,6 +10,7 @@
 
 @class NSString, PUTiltWheel, PUTiltWheelTriangleView, PXUISnappingController;
 
+__attribute__((visibility("hidden")))
 @interface PUTiltWheelControl : UIControl <PUTiltWheelDataSource>
 {
     _Bool __needsDataReload;

@@ -6,30 +6,63 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, PSIDatabase;
+@class NSArray, NSDictionary, NSMutableDictionary, NSString, PSIParse;
 
 @interface PSIQuery : NSObject
 {
-    PSIDatabase *_idx;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    CDUnknownBlockType _earlyNotificationHandler;
-    _Bool _didStart;
-    _Bool _isCanceled;
-    _Bool _isWildcardQuery;
-    int _queryId;
+    id <PSIQueryDelegate> _delegate;
+    PSIParse *_baseParse;
+    _Bool _baseParseCouldHaveResults;
+    NSArray *_datedParses;
+    NSArray *_wordEmbeddingParses;
+    NSArray *_identifierTokens;
+    NSMutableDictionary *_groupIdsByTokenKey;
+    NSDictionary *_substitutionsByStringToken;
+    // Error parsing type: AB, name: _didStart
+    // Error parsing type: AB, name: _isCanceled
+    _Bool _usesPrefixBasedWordEmbedding;
+    _Bool _useWildcardText;
+    NSArray *_queryTokens;
     NSString *_searchText;
+    unsigned long long _wordEmbeddingMode;
+    NSDictionary *_substitutions;
+    unsigned long long _numberOfNextKeywordSuggestionToProcess;
+    NSArray *_nextKeywordSuggestions;
 }
 
-@property(readonly, nonatomic) _Bool isWildcardQuery; // @synthesize isWildcardQuery=_isWildcardQuery;
-@property(readonly, nonatomic) int queryId; // @synthesize queryId=_queryId;
++ (void)bootstrap;
++ (id)datedParsesWithBaseParse:(id)arg1;
++ (_Bool)enumerateDatedParsesWithParse:(id)arg1 currentTokenIndex:(unsigned long long)arg2 potentialComboAttributes:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
++ (_Bool)tokenIsEligibleForDateParsing:(id)arg1;
++ (id)dateAttributesFromToken:(id)arg1;
++ (id)dateFilterWithAttributes:(id)arg1 andAttributes:(id)arg2;
++ (id)dateFilterByCombiningDateFilter:(id)arg1 withDateFilter:(id)arg2;
++ (id)dateFilterWithAttributes:(id)arg1;
+@property(readonly, nonatomic) _Bool useWildcardText; // @synthesize useWildcardText=_useWildcardText;
+@property(retain, nonatomic) NSArray *nextKeywordSuggestions; // @synthesize nextKeywordSuggestions=_nextKeywordSuggestions;
+@property(nonatomic) unsigned long long numberOfNextKeywordSuggestionToProcess; // @synthesize numberOfNextKeywordSuggestionToProcess=_numberOfNextKeywordSuggestionToProcess;
+@property(retain, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;
+@property(nonatomic) _Bool usesPrefixBasedWordEmbedding; // @synthesize usesPrefixBasedWordEmbedding=_usesPrefixBasedWordEmbedding;
+@property(nonatomic) unsigned long long wordEmbeddingMode; // @synthesize wordEmbeddingMode=_wordEmbeddingMode;
 @property(readonly, copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
+@property(readonly, copy, nonatomic) NSArray *queryTokens; // @synthesize queryTokens=_queryTokens;
 - (void).cxx_destruct;
+- (id)description;
+- (void)_postProcessPersonGroupsInGroupArrays:(id)arg1;
+- (id)suggestionWhitelistedScenes;
+- (void)enumerateParsesWithMode:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)computeSuggestions;
+- (id)processParse:(id)arg1;
+- (_Bool)recursiveAddToGroupResults:(id)arg1 aggregate:(id)arg2 atIndex:(unsigned long long)arg3 outOf:(unsigned long long)arg4 inGroupArrays:(id)arg5 dateFilter:(id)arg6;
+- (void)processWordEmbeddings;
+- (void)processDates;
+- (void)bootstrap;
+- (struct __CFSet *)_idsOfGroupsMatchingToken:(id)arg1;
+- (struct __CFSet *)_idsOfGroupsMatchingString:(id)arg1 categories:(id)arg2 textIsSearchable:(_Bool)arg3;
 @property(readonly, getter=isCanceled) _Bool canceled;
 - (void)cancel;
 - (void)runWithResultsHandler:(CDUnknownBlockType)arg1;
-- (void)setEarlyResultsNotificationHandler:(CDUnknownBlockType)arg1;
-- (void)dealloc;
-- (id)initWithQueryId:(int)arg1 index:(id)arg2 searchText:(id)arg3 isWildcardQuery:(_Bool)arg4;
+- (id)initWithQueryTokens:(id)arg1 searchText:(id)arg2 useWildcardText:(_Bool)arg3 delegate:(id)arg4;
 
 @end
 

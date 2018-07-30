@@ -8,41 +8,39 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSArray, NSDictionary, NSNumber, NSString;
+@class CEMAccountLDAPDeclaration_CommunicationServiceRules, NSArray, NSNumber, NSString;
 
 @interface CEMAccountLDAPDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadLDAPAccountDescription;
+    NSString *_payloadLDAPAccountHostName;
+    NSNumber *_payloadLDAPAccountUseSSL;
+    NSArray *_payloadLDAPSearchSettings;
+    CEMAccountLDAPDeclaration_CommunicationServiceRules *_payloadCommunicationServiceRules;
+    NSString *_payloadLDAPCredentials;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withLDAPAccountHostName:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withLDAPAccountDescription:(id)arg2 withLDAPAccountHostName:(id)arg3 withLDAPAccountUseSSL:(id)arg4 withLDAPSearchSettings:(id)arg5 withCommunicationServiceRules:(id)arg6 withLDAPCredentials:(id)arg7;
 + (id)restrictionPayloadKeys;
-+ (id)CommunicationServiceRules_DefaultServiceHandlers_allowedPayloadKeys;
-+ (id)CommunicationServiceRules_allowedPayloadKeys;
-+ (id)LDAPSearchSettingsItem_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadCommunicationServiceRules_DefaultServiceHandlers:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadCommunicationServiceRules:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadLDAPSearchSettingsItem:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadCommunicationServiceRules_DefaultServiceHandlers_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadCommunicationServiceRules_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadLDAPSearchSettingsItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadLDAPCredentials; // @synthesize payloadLDAPCredentials=_payloadLDAPCredentials;
+@property(copy, nonatomic) CEMAccountLDAPDeclaration_CommunicationServiceRules *payloadCommunicationServiceRules; // @synthesize payloadCommunicationServiceRules=_payloadCommunicationServiceRules;
+@property(copy, nonatomic) NSArray *payloadLDAPSearchSettings; // @synthesize payloadLDAPSearchSettings=_payloadLDAPSearchSettings;
+@property(copy, nonatomic) NSNumber *payloadLDAPAccountUseSSL; // @synthesize payloadLDAPAccountUseSSL=_payloadLDAPAccountUseSSL;
+@property(copy, nonatomic) NSString *payloadLDAPAccountHostName; // @synthesize payloadLDAPAccountHostName=_payloadLDAPAccountHostName;
+@property(copy, nonatomic) NSString *payloadLDAPAccountDescription; // @synthesize payloadLDAPAccountDescription=_payloadLDAPAccountDescription;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSString *payloadLDAPCredentials;
-@property(readonly, nonatomic) NSDictionary *payloadCommunicationServiceRules;
-@property(readonly, nonatomic) NSArray *payloadLDAPSearchSettings;
-@property(readonly, nonatomic) NSNumber *payloadLDAPAccountUseSSL;
-@property(readonly, nonatomic) NSString *payloadLDAPAccountHostName;
-@property(readonly, nonatomic) NSString *payloadLDAPAccountDescription;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

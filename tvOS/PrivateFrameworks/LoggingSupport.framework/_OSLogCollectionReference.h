@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     _OSLogDirectoryReference *_UUIDTextReference;
 }
 
-+ (id)localDBRef;
++ (id)localDBRefWithError:(id *)arg1;
 + (id)referenceWithURL:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) _OSLogDirectoryReference *UUIDTextReference; // @synthesize UUIDTextReference=_UUIDTextReference;
 @property(readonly, nonatomic) _OSLogDirectoryReference *timesyncReference; // @synthesize timesyncReference=_timesyncReference;

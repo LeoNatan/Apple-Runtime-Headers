@@ -6,6 +6,7 @@
 
 #import <AppKit/NSButton.h>
 
+__attribute__((visibility("hidden")))
 @interface NSRuleEditorButton : NSButton
 {
 }

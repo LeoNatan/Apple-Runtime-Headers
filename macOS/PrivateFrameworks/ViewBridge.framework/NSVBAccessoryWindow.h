@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _orderingInProgress;
 }
 
+@property(readonly, nonatomic) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
 @property unsigned int notificationsRegistered; // @synthesize notificationsRegistered=_notificationsRegistered;
 - (void)orderWindow:(long long)arg1 relativeTo:(long long)arg2;
 - (BOOL)makeFirstResponder:(id)arg1;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)superSetFrame:(struct CGRect)arg1 display:(BOOL)arg2;
 - (void)_accessoryViewFrameDidChange:(id)arg1;
 - (id)nextResponder;
+- (void)updateConstraintsIfNeeded;
 - (void)dealloc;
 - (id)initWithContentRect:(struct CGRect)arg1 forRemoteView:(id)arg2;
 - (void)invalidate;

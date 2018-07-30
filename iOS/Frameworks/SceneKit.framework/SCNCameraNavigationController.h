@@ -29,9 +29,13 @@
     _Bool _translationAllowed;
     _Bool _didEverFocusNode;
     _Bool _isSceneBoundingSphereComputed;
+    _Bool _cameraTargetComputed;
     _Bool _pinchShouldMoveCamera;
     _Bool _shouldUpdateTarget;
     _Bool _shouldIgnoreMomentumEvents;
+    _Bool _isOrbiting;
+    _Bool _recordingPointOfViewEvents;
+    _Bool _mouseDown;
     CDUnion_915c2b1f _sceneBoundingSphere;
     // Error parsing type: , name: _translationOrigin
     float _initialZoom;
@@ -43,6 +47,7 @@
     double _rotationSensitivity;
     struct CGPoint _initialInputLocation;
     struct CGPoint _lastInputLocation;
+    struct CGPoint _accumulatedDrag;
     double _lastRotationAngle;
     struct os_unfair_lock_s _drawAtTimeLock;
     struct {
@@ -91,6 +96,8 @@
 @property(nonatomic) id <SCNCameraNavigationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)__didChangePointOfView;
+- (void)__willChangePointOfView;
 - (void)_translateToViewPoint:(struct CGPoint)arg1;
 - (void)_computeTranslationOrigin3DFromPoint:(struct CGPoint)arg1;
 - (_Bool)_pointOfViewUsesOrthographicProjection;
@@ -137,8 +144,9 @@
 - (void)zoomBy:(float)arg1;
 - (void)zoomBy:(float)arg1 animate:(_Bool)arg2;
 - (void)rotateOf:(double)arg1;
-- (float)_browseScale;
+- (float)_targetDistance;
 - (float)_translationCoef;
+- (float)_cappedTranslationDelta:(float)arg1;
 - (void)_switchToFreeViewCamera;
 - (void)_installFreeViewCameraIfNeeded;
 - (void)_prepareFreeViewCamera;

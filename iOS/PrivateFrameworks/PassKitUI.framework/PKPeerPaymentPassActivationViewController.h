@@ -4,26 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIViewController.h"
+#import <PassKitUI/PKExplanationViewController.h>
 
 #import "AAUIDeviceToDeviceEncryptionHelperDelegate.h"
 #import "PKExplanationViewControllerDelegate.h"
+#import "PKExplanationViewDelegate.h"
 #import "PKPaymentSetupViewControllerDelegate.h"
 #import "RemoteUIControllerDelegate.h"
 
-@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentWebService, PKTableHeaderView, RemoteUIController, UIImage;
+@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentSetupFlowHeroView, PKPeerPaymentWebService, RemoteUIController, UIImage;
 
-@interface PKPeerPaymentPassActivationViewController : UIViewController <PKPaymentSetupViewControllerDelegate, AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate, RemoteUIControllerDelegate>
+@interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <PKPaymentSetupViewControllerDelegate, AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate, RemoteUIControllerDelegate, PKExplanationViewDelegate>
 {
     PKPaymentProvisioningController *_provisioningController;
-    long long _setupContext;
     PKPeerPaymentCredential *_credential;
     id <PKPaymentSetupViewControllerDelegate> _delegate;
     unsigned long long _state;
     PKPeerPaymentWebService *_peerPaymentWebService;
     RemoteUIController *_termsController;
-    PKTableHeaderView *_headerView;
     UIImage *_passSnapShot;
+    _Bool _shouldShowAddDebitCardViewController;
+    PKPeerPaymentSetupFlowHeroView *_heroView;
     _Bool _presentedDeviceToDeviceEncryptionFlow;
 }
 
@@ -37,17 +38,19 @@
 - (void)_presentDeviceToDeviceEncryptionFlow;
 - (void)_presentIdentityVerificationWithError:(id)arg1;
 - (void)_presentTermsAndConditionsWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_bodyStringForState;
 - (id)_titleStringForState;
-- (_Bool)_hasDebitCard;
+- (void)_handleActivatedState;
 - (void)_setState:(unsigned long long)arg1;
 - (void)_presentActivationFailedErrorAlert;
-- (void)_setShowCheckmark:(_Bool)arg1;
 - (void)_setShowSpinner:(_Bool)arg1;
 - (void)_provisionPeerPaymentPass;
 - (void)_resetApplyPayManateeView;
 - (void)_presentMissingTLKsAlert;
 - (void)_checkCloudStoreState;
 - (void)_beginSetup;
+- (_Bool)_shouldShowAddDebitCardViewController;
+- (void)_presentAddDebitCardViewController;
 - (struct CGSize)_snapshotSize;
 - (void)_processCloudStorePCSError;
 - (void)_initalizeCloudStoreWithTargetDevice:(id)arg1 ifNecessaryWithCompletion:(CDUnknownBlockType)arg2;
@@ -56,7 +59,8 @@
 - (void)explanationViewControllerDidSelectCancel:(id)arg1;
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
-- (void)viewWillLayoutSubviews;
+- (void)explanationViewDidSelectSetupLater:(id)arg1;
+- (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 credential:(id)arg4 passSnapShot:(id)arg5;
 

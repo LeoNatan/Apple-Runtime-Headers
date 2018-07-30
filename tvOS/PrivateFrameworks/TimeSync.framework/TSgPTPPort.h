@@ -17,7 +17,7 @@
     __TSgPTPPortNotification *_portForNotification;
     NSObject<OS_dispatch_queue> *_internalPropertyUpdateQueue;
     unsigned short _portNumber;
-    long long _portRole;
+    int _portRole;
     NSObject<OS_dispatch_queue> *_propertyUpdateQueue;
 }
 
@@ -25,11 +25,11 @@
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (id)gPTPPortWithService:(unsigned int)arg1;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyUpdateQueue; // @synthesize propertyUpdateQueue=_propertyUpdateQueue;
-@property(nonatomic) long long portRole; // @synthesize portRole=_portRole;
+@property(nonatomic) int portRole; // @synthesize portRole=_portRole;
 @property(nonatomic) unsigned short portNumber; // @synthesize portNumber=_portNumber;
 - (void)dealloc;
-@property(readonly, nonatomic) long long portType; // @dynamic portType;
-- (long long)_portRole;
+@property(readonly, nonatomic) int portType; // @dynamic portType;
+- (int)_portRole;
 - (unsigned short)_portNumber;
 - (void)serviceTerminated;
 - (_Bool)stopAutomaticPropertyUpdates;

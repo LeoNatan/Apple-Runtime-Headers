@@ -11,13 +11,14 @@
 __attribute__((visibility("hidden")))
 @interface CPKSearchFieldEditor : NSTextView
 {
-    BOOL _navigateSelection;
-    NSCell *_ownerCell;
+    BOOL _hasActiveNavigationTarget;
     BOOL _isRTLLayout;
+    NSCell *_ownerCell;
 }
 
 @property BOOL isRTLLayout; // @synthesize isRTLLayout=_isRTLLayout;
 @property NSCell *ownerCell; // @synthesize ownerCell=_ownerCell;
+@property BOOL hasActiveNavigationTarget; // @synthesize hasActiveNavigationTarget=_hasActiveNavigationTarget;
 - (void)cancelOperation:(id)arg1;
 - (void)insertNewlineIgnoringFieldEditor:(id)arg1;
 - (void)insertNewline:(id)arg1;
@@ -39,12 +40,13 @@ __attribute__((visibility("hidden")))
 - (void)moveForward:(id)arg1;
 - (BOOL)allowsVibrancy;
 - (BOOL)_isEmpty;
-- (void)navigationFocusDidMoved:(id)arg1;
-- (void)_postNavigationNotification:(id)arg1 userInfo:(id)arg2;
-- (void)_postNavigationFocusMovedWithDirection:(long long)arg1;
-- (void)_postCategorySelectionMove:(long long)arg1;
-- (void)_postCharacterSelectionMove:(long long)arg1 onTarget:(long long)arg2;
-- (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
+- (id)_ownerSearchField;
+- (id)_delegateWithSelector:(SEL)arg1;
+- (void)_postNavigationCancel;
+- (void)_postNavigationConfirm;
+- (void)_postNavigationFocusMovedWithDirection:(int)arg1;
+- (void)_postCharacterSelectionMove:(int)arg1 onTarget:(int)arg2;
+- (void)doCommandBySelector:(SEL)arg1;
 - (void)didChangeText;
 - (void)dealloc;
 - (id)init;

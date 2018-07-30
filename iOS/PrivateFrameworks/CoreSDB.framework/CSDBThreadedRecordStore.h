@@ -20,7 +20,7 @@
 - (void)performBlock:(CDUnknownBlockType)arg1 afterDelay:(double)arg2;
 - (void)performBlock:(CDUnknownBlockType)arg1 waitUntilDone:(_Bool)arg2;
 - (_Bool)ownsCurrentThreadOtherwiseAssert:(_Bool)arg1;
-- (void)registerClass:(const CDStruct_2cac97d9 *)arg1;
+- (void)registerClass:(const CDStruct_47876580 *)arg1;
 - (void)teardownDatabase;
 - (void)_teardownDatabaseOnQueue;
 - (void)setupDatabaseWithAllowLocalMigration:(_Bool)arg1 pathBlock:(CDUnknownBlockType)arg2 setupStoreHandler:(CDUnknownFunctionPointerType)arg3 connectionInitializer:(CDUnknownFunctionPointerType)arg4 versionChecker:(CDUnknownFunctionPointerType)arg5 migrationHandler:(CDUnknownFunctionPointerType)arg6 schemaVersion:(int)arg7 dataProtectionClass:(unsigned int)arg8 registerBlock:(CDUnknownBlockType)arg9;

@@ -9,10 +9,10 @@
 @class NSArray, VMVoicemailTranscriptionController, VMVoicemailTranscriptionTask;
 
 @protocol VMTranscriptionService <NSObject>
++ (_Bool)isTranscriptionAvailable;
 + (NSArray *)transcriptionLanguageCodes;
 @property(retain, nonatomic) VMVoicemailTranscriptionTask *transcriptionTask;
 @property(retain, nonatomic) VMVoicemailTranscriptionController *transcriptionController;
-@property(readonly, nonatomic, getter=isTranscriptionAvailable) _Bool transcriptionAvailable;
 - (void)reportTranscriptionRatedAccurate:(_Bool)arg1 forRecord:(const void *)arg2;
 - (void)reportTranscriptionProblemForRecord:(const void *)arg1;
 - (void)processTranscriptForRecord:(const void *)arg1 priority:(long long)arg2 completion:(void (^)(_Bool))arg3;

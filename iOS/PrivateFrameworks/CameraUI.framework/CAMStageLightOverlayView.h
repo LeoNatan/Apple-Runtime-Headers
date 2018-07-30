@@ -22,6 +22,8 @@
     CAMStageLightAnimator *__animator;
 }
 
++ (struct CGRect)circleFrameForBounds:(struct CGRect)arg1 orientation:(long long)arg2 bottomContentInset:(double)arg3;
++ (double)_circleDiameterForBounds:(struct CGRect)arg1 orientation:(long long)arg2;
 @property(retain, nonatomic, setter=_setAnimator:) CAMStageLightAnimator *_animator; // @synthesize _animator=__animator;
 @property(readonly, nonatomic) CAGradientLayer *_gradientLayer; // @synthesize _gradientLayer=__gradientLayer;
 @property(nonatomic, setter=_setActiveTimerID:) unsigned long long _activeTimerID; // @synthesize _activeTimerID=__activeTimerID;
@@ -35,7 +37,6 @@
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGRect)_circleFrameForOrientation:(long long)arg1;
-- (double)_circleDiameterForOrientation:(long long)arg1;
 - (void)_updateAnimatorState;
 - (void)_updateShadowViewsAnimated:(_Bool)arg1;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;

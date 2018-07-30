@@ -17,7 +17,6 @@
     NSString *_calendarIdentifier;
 }
 
-+ (id)characterSetForNormalize;
 @property(copy, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

@@ -18,9 +18,8 @@
     NSImageView *_imageView;
 }
 
-@property NSImageView *imageView; // @synthesize imageView=_imageView;
-@property NSTextField *textField; // @synthesize textField=_textField;
 @property(retain) id objectValue; // @synthesize objectValue=_objectValue;
+- (void).cxx_destruct;
 @property(readonly) NSArray *draggingImageComponents;
 - (void)layout;
 - (void)viewWillDraw;
@@ -44,8 +43,11 @@
 - (BOOL)preservesContentDuringLiveResize;
 - (id)_autounbinder;
 @property long long backgroundStyle;
+- (void)_setBackgroundStyleForSubtree:(long long)arg1;
 - (oneway void)release;
 - (void)dealloc;
+@property NSImageView *imageView;
+@property NSTextField *textField;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

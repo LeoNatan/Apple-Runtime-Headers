@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "_CDContext.h"
+#import "_CDLocalContext.h"
 
-@class NSObject<NSCopying><NSSecureCoding>, _CDContextValue, _CDContextualKeyPath;
+@class NSArray, NSObject<NSCopying><NSSecureCoding>, _CDContextValue, _CDContextualKeyPath;
 
-@protocol _CDContextInternal <_CDContext>
+@protocol _CDContextInternal <_CDLocalContext>
+- (_CDContextValue *)addObjects:(NSArray *)arg1 andRemoveObjects:(NSArray *)arg2 fromArrayAtKeyPath:(_CDContextualKeyPath *)arg3 valueDidChange:(_Bool *)arg4;
 - (void)setContextValue:(_CDContextValue *)arg1 forContextualKeyPath:(_CDContextualKeyPath *)arg2;
 - (_CDContextValue *)setObject:(NSObject<NSCopying><NSSecureCoding> *)arg1 returningMetadataForContextualKeyPath:(_CDContextualKeyPath *)arg2;
 - (_CDContextValue *)propertiesForContextualKeyPath:(_CDContextualKeyPath *)arg1;

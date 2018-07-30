@@ -12,8 +12,6 @@
 {
 }
 
-- (id)truncatedDescriptionWithPropertyKeys:(id)arg1;
-- (id)pointerDescription;
 - (void)willSave;
 - (_Bool)isSyncableChange;
 - (_Bool)supportsCloudUpload;

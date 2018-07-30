@@ -41,6 +41,9 @@
     NSString *_touchIDContinueToken;
 }
 
++ (struct __CFString *)buttonTitleKeyForCFUserNotificationButtonTag:(unsigned long)arg1;
++ (unsigned long)buttonTagForCFUserNotificationButtonTitleKey:(struct __CFString *)arg1;
++ (void)_initializeStaticButtonTitleKeyAndTagMapping;
 + (int)displayCountForKey:(id)arg1;
 @property(copy) NSString *touchIDContinueToken; // @synthesize touchIDContinueToken=_touchIDContinueToken;
 @property(readonly) SSPaymentSheet *paymentSheet; // @synthesize paymentSheet=_paymentSheet;
@@ -69,6 +72,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (int)_kindForString:(id)arg1;
 - (id)buyParams;
+- (id)orderedButtonTitleKeysForCFUserNotification;
 - (id)valueForUserInfoKey:(id)arg1;
 - (void)setValue:(void *)arg1 forCFUserNotificationKey:(struct __CFString *)arg2;
 - (void)setValue:(id)arg1 forUserInfoKey:(id)arg2;

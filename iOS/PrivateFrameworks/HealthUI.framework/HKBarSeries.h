@@ -14,10 +14,12 @@
     HKStrokeStyle *_selectedStrokeStyle;
     HKFillStyle *_unselectedFillStyle;
     HKFillStyle *_selectedFillStyle;
+    HKStrokeStyle *_tiledStrokeStyle;
     struct CGSize _cornerRadii;
 }
 
 @property(nonatomic) struct CGSize cornerRadii; // @synthesize cornerRadii=_cornerRadii;
+@property(retain, nonatomic) HKStrokeStyle *tiledStrokeStyle; // @synthesize tiledStrokeStyle=_tiledStrokeStyle;
 @property(retain, nonatomic) HKFillStyle *selectedFillStyle; // @synthesize selectedFillStyle=_selectedFillStyle;
 @property(retain, nonatomic) HKFillStyle *unselectedFillStyle; // @synthesize unselectedFillStyle=_unselectedFillStyle;
 @property(retain, nonatomic) HKStrokeStyle *selectedStrokeStyle; // @synthesize selectedStrokeStyle=_selectedStrokeStyle;

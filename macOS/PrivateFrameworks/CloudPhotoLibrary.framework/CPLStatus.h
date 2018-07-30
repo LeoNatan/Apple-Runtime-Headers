@@ -6,16 +6,18 @@
 
 #import "NSObject.h"
 
-@class CPLAccountFlags, NSData, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
+@class CPLAccountFlags, NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
 
 @interface CPLStatus : NSObject
 {
+    BOOL _forCPL;
     NSURL *_statusFileURL;
     NSMutableDictionary *_status;
     NSObject<OS_dispatch_queue> *_lock;
 }
 
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *disabledFeatures;
 @property(copy, nonatomic) NSData *accountFlagsData;
 @property(readonly, nonatomic) CPLAccountFlags *accountFlags;
 @property(nonatomic, getter=isConnectedToNetwork) BOOL connectedToNetwork;
@@ -38,9 +40,12 @@
 @property(copy, nonatomic) NSDate *lastCompletePrefetchDate;
 @property(copy, nonatomic) NSDate *lastSuccessfulSyncDate;
 - (void)refetchFromDisk;
+- (BOOL)_deleteInitialSyncMarkerWithError:(id *)arg1;
 - (BOOL)writeInitialSyncMarker:(id *)arg1;
+- (BOOL)_writeInitialSyncMarkerForDate:(id)arg1 error:(id *)arg2;
 - (void)_save;
 - (void)_loadIfNecessary;
+- (id)initWithClientLibraryBaseURLForCPLEngine:(id)arg1;
 - (id)initWithClientLibraryBaseURL:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class FMDFMMAccountInfo, NSData, NSString;
+@class NSData, NSString;
 
 @protocol FMDFMMProtocol <NSObject>
 - (oneway void)shouldResumeCardsForUser:(NSString *)arg1 usingCallback:(void (^)(BOOL, NSError *))arg2;
@@ -14,6 +14,5 @@
 - (oneway void)clearFMMAccountsWithCompletion:(void (^)(NSError *))arg1;
 - (oneway void)retrieveFMMAccountUsingCallback:(void (^)(FMDFMMAccountInfo *, NSError *))arg1;
 - (oneway void)removeFMMAccountWithUsername:(NSString *)arg1 withAuthData:(NSData *)arg2 usingCallback:(void (^)(NSError *))arg3;
-- (oneway void)addFMMAccount:(FMDFMMAccountInfo *)arg1 withAuthData:(NSData *)arg2 usingCallback:(void (^)(NSError *))arg3;
 @end
 

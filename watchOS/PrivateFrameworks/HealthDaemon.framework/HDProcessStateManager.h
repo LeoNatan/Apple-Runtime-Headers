@@ -30,6 +30,9 @@
 - (void)_queue_handleProcessInfoChangedWithAllPreviousProcessInfos:(id)arg1;
 - (void)_queue_handleBackboardApplicationInfoChanged:(id)arg1;
 - (void)_handleBackboardApplicationInfoChanged:(id)arg1;
+- (int)processIdentifierForApplicationIdentifier:(id)arg1;
+- (_Bool)applicationIsForeground:(id)arg1;
+- (id)bundleVersionStringForProcessIdentifier:(int)arg1;
 - (_Bool)isApplicationStateForegroundForBundleIdentifier:(id)arg1;
 - (_Bool)isApplicationStateSuspendedForBundleIdentifier:(id)arg1;
 - (unsigned int)_getApplicationStateForBundleIdentifier:(id)arg1;

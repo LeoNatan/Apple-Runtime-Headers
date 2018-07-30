@@ -27,8 +27,6 @@ __attribute__((visibility("hidden")))
 - (void)_NS_accumulateSuggestedScale:(double *)arg1:(double *)arg2;
 - (void)setNeedsLayout;
 - (void)setLayoutManager:(id)arg1;
-- (BOOL)NS_needsLinearMaskOverlayForFontSmoothing;
-- (void)_renderSublayersInContext:(struct CGContext *)arg1;
 - (void)_renderForegroundInContext:(struct CGContext *)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)display;

@@ -7,6 +7,7 @@
 @class RPPeopleDiscovery;
 
 @protocol RPPeopleXPCDaemonInterface
+- (void)xpcPeopleDiscoveryUpdate:(RPPeopleDiscovery *)arg1;
 - (void)xpcPeopleDiscoveryActivate:(RPPeopleDiscovery *)arg1 completion:(void (^)(NSError *))arg2;
 @end
 

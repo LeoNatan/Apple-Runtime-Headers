@@ -13,15 +13,15 @@
 @interface MPVolumeControllerSystemDataSource : NSObject <MPVolumeControllerDataSource>
 {
     _Bool _debugVolumeWarning;
-    id <MPVolumeControllerDataSourceDelegate> _delegate;
-    float _volume;
-    _Bool _muted;
-    _Bool _volumeControlAvailable;
     _Bool _volumeInitialized;
     _Bool _volumeControlCapabilitiesInitialized;
+    _Bool _volumeControlAvailable;
+    _Bool _muted;
     _Bool _volumeWarningEnabled;
+    float _volume;
     float _EUVolumeLimit;
     NSString *_volumeAudioCategory;
+    id <MPVolumeControllerDataSourceDelegate> _delegate;
     NSString *_volumeControlLabel;
     long long _volumeWarningState;
 }

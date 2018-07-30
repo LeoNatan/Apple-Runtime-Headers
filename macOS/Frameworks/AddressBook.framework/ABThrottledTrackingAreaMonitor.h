@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface ABThrottledTrackingAreaMonitor : NSObject
 {
     CDUnknownBlockType _updateHandler;
+    BOOL _mouseInTrackingArea;
 }
 
+@property(nonatomic, getter=isMouseInTrackingArea) BOOL mouseInTrackingArea; // @synthesize mouseInTrackingArea=_mouseInTrackingArea;
 - (void)sendUpdate:(id)arg1;
+- (void)resendUpdate;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)dealloc;

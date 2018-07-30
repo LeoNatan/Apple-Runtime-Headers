@@ -10,6 +10,8 @@
 
 @optional
 @property(readonly) BOOL shouldRetainExportedObject;
+- (void)constraintsDidChangeInFrameOfAccessoryWindowOfView:(NSRemoteView *)arg1;
+- (void)accessoryWindowOfViewWillUpdateConstraintsIfNeeded:(NSRemoteView *)arg1;
 - (BOOL)windowOfViewShouldResignKey:(NSRemoteView *)arg1;
 - (BOOL)windowOfViewShouldBecomeKey:(NSRemoteView *)arg1;
 - (BOOL)viewShouldDragOldestAncestorWindow:(NSRemoteView *)arg1;

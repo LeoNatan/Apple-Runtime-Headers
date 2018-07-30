@@ -15,11 +15,14 @@
     NSString *_label;
     id <MTLDevice> _device;
     MTLIndirectArgumentBufferEmulationData *_iabEmulationData;
+    _Bool _supportIndirectCommandBuffers;
+    unsigned long long _uniqueIdentifier;
 }
 
 @property(retain, nonatomic) MTLIndirectArgumentBufferEmulationData *IABEmulationData; // @synthesize IABEmulationData=_iabEmulationData;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly) NSString *label; // @synthesize label=_label;
+@property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly, copy) NSString *description;
 - (id)formattedDescription:(unsigned int)arg1;
 - (void)dealloc;

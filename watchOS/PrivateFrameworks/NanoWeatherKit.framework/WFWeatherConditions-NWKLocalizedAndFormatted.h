@@ -15,7 +15,11 @@
 + (void)initialize;
 @property(readonly, nonatomic) double nwkPrecipitationChance;
 @property(readonly, nonatomic) NSString *nwkLocalizedPrecipitationChance;
+- (id)_nwkFormattedHighLowTemperaturesWithFormat:(id)arg1;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedCondensedHighLowTemperatures;
 @property(readonly, nonatomic) NSString *nwkLocalizedFormattedHighLowTemperatures;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedLowTemperature;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedHighTemperature;
 @property(readonly, nonatomic) NSString *nwkLocalizedDescription;
 @property(readonly, nonatomic) NSString *nwkLocalizedDescriptionShort;
 - (id)nwkLocalizedDescriptionKey;

@@ -9,7 +9,9 @@
 @interface BKEvent : NSObject
 {
     unsigned char _cls;
+    _Bool _isStart;
     _Bool _isTerminal;
+    _Bool _isMetadata;
     _Bool _isHigh;
     _Bool _isLow;
     unsigned int _event;
@@ -17,12 +19,14 @@
 
 @property(readonly) _Bool isLow; // @synthesize isLow=_isLow;
 @property(readonly) _Bool isHigh; // @synthesize isHigh=_isHigh;
+@property(readonly) _Bool isMetadata; // @synthesize isMetadata=_isMetadata;
 @property(readonly) _Bool isTerminal; // @synthesize isTerminal=_isTerminal;
+@property(readonly) _Bool isStart; // @synthesize isStart=_isStart;
 @property(readonly) unsigned int event; // @synthesize event=_event;
 @property(readonly) unsigned char cls; // @synthesize cls=_cls;
 - (void)encodeEventValue:(unsigned int *)arg1 secondValue:(unsigned int *)arg2;
 - (id)description;
-- (void)setIsTerminal;
+- (void)setProperties;
 - (id)initWithEncodedEventOrCode:(unsigned int)arg1;
 - (id)initWithEventOrCode:(unsigned long long)arg1;
 

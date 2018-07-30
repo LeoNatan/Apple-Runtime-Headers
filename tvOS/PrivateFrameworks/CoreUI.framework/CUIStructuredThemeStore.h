@@ -24,6 +24,9 @@
 }
 
 - (void)clearRenditionCache;
+- (id)appearances;
+- (id)nameForAppearanceIdentifier:(unsigned short)arg1;
+- (unsigned short)appearanceIdentifierForName:(id)arg1;
 - (id)catalogGlobals;
 - (id)imagesWithName:(id)arg1;
 - (id)allImageNames;
@@ -40,7 +43,6 @@
 - (id)lookupAssetForKey:(struct _renditionkeytoken *)arg1;
 - (id)debugDescriptionForKeyList:(const struct _renditionkeytoken *)arg1;
 - (const struct _renditionkeyfmt *)renditionKeyFormat;
-- (void)_getKeyForAssetInOtherLookGroupClosestToKey:(struct _renditionkeytoken *)arg1 foundAsset:(_Bool *)arg2;
 - (void)_getKeyForAssetClosestToKey:(struct _renditionkeytoken *)arg1 foundAsset:(_Bool *)arg2;
 - (id)convertRenditionKeyToKeyData:(struct _renditionkeytoken *)arg1;
 - (id)_newRenditionKeyDataFromKey:(struct _renditionkeytoken *)arg1;
@@ -69,6 +71,7 @@
 - (long long)maximumRenditionKeyTokenCount;
 - (unsigned long long)colorSpaceID;
 @property(readonly, copy) NSString *debugDescription;
+- (id)store;
 @property(nonatomic) unsigned long long themeIndex;
 - (id)bundleID;
 

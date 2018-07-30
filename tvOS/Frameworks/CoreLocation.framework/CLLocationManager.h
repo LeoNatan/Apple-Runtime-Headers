@@ -93,7 +93,6 @@
 - (void)onClientEventRegionState:(id)arg1;
 - (void)onClientEventRegion:(id)arg1;
 - (void)onClientEventError:(id)arg1;
-- (void)onClientEventHistoricLocation:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventLocationUnavailable:(id)arg1;

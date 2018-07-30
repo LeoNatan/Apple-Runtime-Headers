@@ -22,6 +22,15 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+@property(copy, nonatomic) NSString *memoryName;
+@property(copy, nonatomic) NSArray *geographicalFeatures;
+@property(readonly, nonatomic) int geographicalFeaturesOperator;
+@property(copy, nonatomic) NSArray *activities;
+@property(readonly, nonatomic) int activitiesOperator;
+@property(copy, nonatomic) NSArray *places;
+@property(readonly, nonatomic) int placesOperator;
+@property(copy, nonatomic) NSArray *events;
+@property(readonly, nonatomic) int eventsOperator;
 - (void)setPeopleInPhoto:(id)arg1;
 @property(readonly, nonatomic) int peopleInPhotoOperator;
 @property(readonly, copy, nonatomic) NSArray *peopleInPhoto;
@@ -39,6 +48,9 @@
 - (void)setDateCreated:(id)arg1;
 @property(readonly, copy, nonatomic) INDateComponentsRange *dateCreated;
 - (id)initWithDateCreated:(id)arg1 locationCreated:(id)arg2 albumName:(id)arg3 searchTerms:(id)arg4 includedAttributes:(unsigned int)arg5 excludedAttributes:(unsigned int)arg6 peopleInPhoto:(id)arg7;
+- (id)_categoryVerb;
+- (int)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

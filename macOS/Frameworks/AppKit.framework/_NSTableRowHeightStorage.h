@@ -10,6 +10,7 @@
 
 @class NSTableView;
 
+__attribute__((visibility("hidden")))
 @interface _NSTableRowHeightStorage : NSObject <NSCopying>
 {
     NSTableView *_tableView;
@@ -54,6 +55,7 @@
 - (struct CGRect)computeRectOfRow:(long long)arg1;
 - (struct CGRect)_normalComputeRectOfRow:(long long)arg1 assumingExists:(BOOL)arg2;
 - (struct CGRect)_variableComputeRectOfRow:(long long)arg1;
+- (double)_standardFullGroupHeight;
 - (double)_standardFullRowHeight;
 - (void)_ensureRowHeights;
 - (void)_createRowHeightsArray;

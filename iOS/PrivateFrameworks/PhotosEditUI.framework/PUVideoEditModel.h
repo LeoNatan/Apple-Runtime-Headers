@@ -8,6 +8,7 @@
 
 @class PFVideoAVObjectBuilder;
 
+__attribute__((visibility("hidden")))
 @interface PUVideoEditModel : PUViewModel
 {
     _Bool _isSlomo;

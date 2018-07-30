@@ -10,6 +10,7 @@
 @class INDateComponentsRange, NSArray;
 
 @protocol INSearchForMessagesIntentExport <NSObject, JSExport>
+@property(copy) NSArray *conversationIdentifiers;
 @property(copy) NSArray *speakableGroupNames;
 @property(copy) NSArray *notificationIdentifiers;
 @property(copy) NSArray *identifiers;

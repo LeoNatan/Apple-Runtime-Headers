@@ -10,32 +10,28 @@
 
 @interface VNDetectBarcodesRequest : VNImageBasedRequest
 {
-    NSArray *_symbologies;
-    NSString *_locateMode;
 }
 
++ (id)availableLocateModes;
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
 + (id)supportedSymbologies;
 + (id)_allBarcodeSymbologies;
 + (id)barcodeSymbologyForACBSBarcodeType:(id)arg1;
 + (id)ACBSBarcodeTypeForBarcodeSymbology:(id)arg1;
++ (Class)configurationClass;
 + (void)initialize;
-@property(copy, nonatomic) NSString *locateMode; // @synthesize locateMode=_locateMode;
-- (void).cxx_destruct;
 - (void)applyConfigurationOfRequest:(id)arg1;
+@property(copy, nonatomic) NSString *locateMode;
 @property(copy, nonatomic) NSArray *symbologies;
-- (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (BOOL)internalPerformInContext:(id)arg1 error:(id *)arg2;
-- (id)_barcodesDetectedInImageBuffer:(id)arg1 usingACBSConfig:(struct ACBSConfig *)arg2 error:(id *)arg3;
-- (id)newBarcodeObservationForACBSBarcodeInfo:(id)arg1 imageWidth:(unsigned long long)arg2 imageHeight:(unsigned long long)arg3 roiCroppingPixelRect:(struct CGRect)arg4 scanConfidence:(float)arg5 error:(id *)arg6;
+- (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)_barcodesDetectedInImageBuffer:(id)arg1 usingACBSConfig:(struct ACBSConfig *)arg2 requestRevision:(unsigned long long)arg3 error:(id *)arg4;
+- (id)newBarcodeObservationForACBSBarcodeInfo:(id)arg1 imageWidth:(unsigned long long)arg2 imageHeight:(unsigned long long)arg3 roiCroppingPixelRect:(struct CGRect)arg4 scanConfidence:(float)arg5 requestRevision:(unsigned long long)arg6 error:(id *)arg7;
 - (BOOL)_getCornerPointsFromCodeLocationPoints:(id)arg1 bottomLeft:(struct CGPoint *)arg2 topLeft:(struct CGPoint *)arg3 topRight:(struct CGPoint *)arg4 bottomRight:(struct CGPoint *)arg5;
 - (struct ACBSConfig *)_createACBSConfigAndReturnError:(id *)arg1;
 - (int)_ACBarcodeRecognizerLocateMode;
 - (id)_newVNBarcodeSymbologyPDF417DescriptorForACBSBarcodeInfo:(id)arg1;
 - (id)_newVNBarcodeSymbologyAztecDescriptorForACBSBarcodeInfo:(id)arg1;
 - (id)_newVNBarcodeSymbologyQRDescriptorForACBSBarcodeInfo:(id)arg1;
-- (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
 
 @end
 

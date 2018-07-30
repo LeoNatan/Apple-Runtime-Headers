@@ -18,6 +18,7 @@
 - (void)peerTrackingAvailable;
 - (void)peerTrackingFull;
 - (void)lostPeer:(id)arg1 ofType:(unsigned char)arg2;
+- (void)foundPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (void)failedToStartTrackingPeer:(id)arg1 error:(id)arg2;
 - (void)stoppedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (void)startedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;

@@ -8,15 +8,21 @@
 
 #import "NSSecureCoding.h"
 
+@class NSArray;
+
+__attribute__((visibility("hidden")))
 @interface EchoCodecCapability : AUPasscodeCodecCapability <NSSecureCoding>
 {
+    NSArray *_algorithmVersionNumbers;
     struct _NSRange _frameSizeRange;
     struct _NSRange _numFrameRepeatRange;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) NSArray *algorithmVersionNumbers; // @synthesize algorithmVersionNumbers=_algorithmVersionNumbers;
 @property(readonly, nonatomic) struct _NSRange numFrameRepeatRange; // @synthesize numFrameRepeatRange=_numFrameRepeatRange;
 @property(readonly, nonatomic) struct _NSRange frameSizeRange; // @synthesize frameSizeRange=_frameSizeRange;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

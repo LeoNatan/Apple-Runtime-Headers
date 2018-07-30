@@ -10,17 +10,24 @@
 
 @interface OSIRepairDiskElement : OSIInstallQueueElement
 {
-    NSError *_error;
     BOOL _repairCompleted;
+    NSError *_error;
 }
 
+@property BOOL repairCompleted; // @synthesize repairCompleted=_repairCompleted;
+@property(retain) NSError *error; // @synthesize error=_error;
+- (void).cxx_destruct;
 - (double)estimatedTimeToComplete;
-- (BOOL)_isKextCacheRunning;
+- (BOOL)_isVolumeInComplexAPFSContainer:(id)arg1;
+- (void)_disableQuotasForDiskWithMountPoint:(id)arg1;
+- (id)_skManager;
+- (id)_disksToUnmountForDisk:(id)arg1;
+- (BOOL)_checkFilesystemAndRepair:(BOOL)arg1;
+- (BOOL)_attemptVerify;
 - (BOOL)_attemptRepair;
 - (id)localizedStatusString;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 
 @end
 

@@ -11,9 +11,8 @@
 #import "_MKInfoCardChildViewControllerAnalyticsDelegate.h"
 #import "_MKStackViewDelegate.h"
 
-@class MKPlaceSectionRowView, NSArray, NSLayoutConstraint, NSString, NSURL, UIImageView, UILayoutGuide, _MKDataHeaderModel, _MKLocalizedHoursBuilder, _MKTokenAttributedString, _MKUILabel;
+@class MKPlaceSectionRowView, NSArray, NSLayoutConstraint, NSString, NSURL, UIImageView, UILayoutGuide, UIView, _MKDataHeaderModel, _MKLocalizedHoursBuilder, _MKTokenAttributedString, _MKUILabel;
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <_MKStackViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKETAProviderObserver>
 {
     unsigned long long _layout;
@@ -24,7 +23,7 @@ __attribute__((visibility("hidden")))
     _MKUILabel *_firstLabel;
     _MKUILabel *_secondLabel;
     _MKUILabel *_thirdLabel;
-    _MKUILabel *_thirdDisplayedLabel;
+    UIView *_thirdDisplayedLabel;
     NSArray *_constraints;
     UILayoutGuide *_leadingGuide;
     NSURL *_logoURL;
@@ -64,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_mapItemShouldDisplayDistance:(id)arg1;
 - (void)ETAProviderUpdated:(id)arg1;
 - (void)_loadLogo;
-- (_Bool)_willShowDistance;
+- (_Bool)_isLikelyToShowDistance;
 - (void)_setupDatas;
 - (id)_localizedHours;
 - (id)_openStateString;

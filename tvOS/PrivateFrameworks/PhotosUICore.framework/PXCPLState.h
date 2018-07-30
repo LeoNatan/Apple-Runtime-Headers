@@ -21,10 +21,10 @@
     _Bool _isExceedingQuota;
     _Bool _isClientVersionTooOld;
     _Bool _isOffline;
+    float _itemsToUploadProgress;
     NSDate *_syncDate;
     NSDate *_exitDate;
     unsigned long long _numberOfItemsToUpload;
-    double _itemsToUploadProgress;
     unsigned long long _numberOfItemsToAdd;
     unsigned long long _numberOfOriginalsToDownload;
     unsigned long long _numberOfItemsFailingToUpload;
@@ -43,7 +43,7 @@
 @property(nonatomic) unsigned long long numberOfItemsFailingToUpload; // @synthesize numberOfItemsFailingToUpload=_numberOfItemsFailingToUpload;
 @property(nonatomic) unsigned long long numberOfOriginalsToDownload; // @synthesize numberOfOriginalsToDownload=_numberOfOriginalsToDownload;
 @property(nonatomic) unsigned long long numberOfItemsToAdd; // @synthesize numberOfItemsToAdd=_numberOfItemsToAdd;
-@property(nonatomic) double itemsToUploadProgress; // @synthesize itemsToUploadProgress=_itemsToUploadProgress;
+@property(nonatomic) float itemsToUploadProgress; // @synthesize itemsToUploadProgress=_itemsToUploadProgress;
 @property(nonatomic) unsigned long long numberOfItemsToUpload; // @synthesize numberOfItemsToUpload=_numberOfItemsToUpload;
 @property(copy, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
 @property(copy, nonatomic) NSDate *syncDate; // @synthesize syncDate=_syncDate;

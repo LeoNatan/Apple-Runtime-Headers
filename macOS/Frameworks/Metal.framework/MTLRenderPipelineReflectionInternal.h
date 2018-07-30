@@ -19,6 +19,11 @@ __attribute__((visibility("hidden")))
     NSArray *_vertexArguments;
     NSArray *_fragmentArguments;
     NSDictionary *_performanceStatistics;
+    unsigned int _traceBufferIndex;
+    NSArray *_constantSamplerUniqueIdentifiers;
+    NSArray *_constantSamplerDescriptors;
+    NSDictionary *_vertexResourceBindingIndexRemappingTable;
+    NSDictionary *_fragmentResourceBindingIndexRemappingTable;
 }
 
 - (id)description;
@@ -30,6 +35,15 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)postVertexDumpStride;
 - (id)vertexBuiltInArguments;
 - (CDStruct_6b0207e2)usageFlags;
+- (void)setFragmentResourceBindingIndexRemappingTable:(id)arg1;
+- (id)fragmentResourceBindingIndexRemappingTable;
+- (void)setVertexResourceBindingIndexRemappingTable:(id)arg1;
+- (id)vertexResourceBindingIndexRemappingTable;
+- (void)setConstantSamplerDescriptorsFromBitmasks:(unsigned long long *)arg1 count:(unsigned long long)arg2;
+- (void)setConstantSamplerUniqueIdentifiers:(id)arg1;
+- (id)constantSamplerDescriptors;
+- (id)constantSamplerUniqueIdentifiers;
+- (unsigned int)traceBufferIndex;
 - (id)performanceStatistics;
 - (void)setPerformanceStatistics:(id)arg1;
 - (void)dealloc;

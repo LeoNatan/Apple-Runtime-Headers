@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) long long shieldSize; // @synthesize shieldSize=_shieldSize;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artwork; // @synthesize artwork=_artwork;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL primaryImage;
 @property(readonly, nonatomic) BOOL shouldHighlight;
 - (id)badgeImageToDisplayWithScreenScale:(double)arg1;
 - (id)imageToDisplayWithScreenScale:(double)arg1;

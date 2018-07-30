@@ -34,7 +34,6 @@
 @property(nonatomic) __weak id <MNNavigationSessionManagerDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 - (void).cxx_destruct;
-- (void)acquireDesiredResourcePolicy;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;
@@ -88,9 +87,9 @@
 - (id)init;
 - (unsigned long long)_stateTypeForState:(id)arg1;
 - (void)_changeToDesiredLocationProviderType;
+- (void)_acquireDesiredResourcePolicyAfterDelay:(double)arg1;
 - (void)transitionToState:(id)arg1;
 - (void)setCurrentState:(id)arg1;
-@property(readonly, nonatomic) MNResourceManager *resourceManager;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

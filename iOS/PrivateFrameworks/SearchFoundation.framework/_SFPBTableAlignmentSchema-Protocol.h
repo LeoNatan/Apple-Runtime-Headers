@@ -10,7 +10,6 @@
 
 @protocol _SFPBTableAlignmentSchema <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasMetadata;
 @property(retain, nonatomic) _SFPBStringDictionary *metadata;
 @property(copy, nonatomic) NSArray *tableColumnAlignments;
 - (id)initWithDictionary:(NSDictionary *)arg1;

@@ -14,7 +14,10 @@
 
 @interface SFApiResults : NSObject <SFApiResults, NSSecureCoding, NSCopying>
 {
-    CDStruct_60289f39 _has;
+    struct {
+        unsigned int status:1;
+        unsigned int resultType:1;
+    } _has;
     int _status;
     int _resultType;
     NSArray *_flights;

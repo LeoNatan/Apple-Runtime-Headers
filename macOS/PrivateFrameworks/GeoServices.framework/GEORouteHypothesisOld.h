@@ -8,7 +8,6 @@
 
 @class GEOLocation, NSDate, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEORouteHypothesisOld : NSObject
 {
     GEOLocation *_lastLocation;

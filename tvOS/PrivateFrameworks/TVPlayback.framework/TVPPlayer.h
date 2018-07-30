@@ -8,7 +8,7 @@
 
 #import "TVPAVFPlayback.h"
 
-@class AVPlayer, AVPlayerItem, AVQueuePlayer, NSArray, NSDate, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSObject<TVPMediaItem>, NSObject<TVPPlayerItemMetadataPopulator>, NSString, NSTimer, TVPAudioOption, TVPChapter, TVPChapterCollection, TVPDateRange, TVPExternalImagePlayer, TVPInterstitial, TVPInterstitialCollection, TVPMediaItemLoader, TVPPlaybackState, TVPPlayerBookmarkMonitor, TVPPlayerItem, TVPPlayerReporter, TVPPlaylist, TVPProgressiveJumpingScrubber, TVPSubtitleOption, TVPTimeRange, TVSStateMachine;
+@class AVPlayer, AVPlayerItem, AVQueuePlayer, NSArray, NSDate, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSObject<TVPMediaItem>, NSString, NSTimer, TVPAudioOption, TVPChapter, TVPChapterCollection, TVPDateRange, TVPExternalImagePlayer, TVPInterstitial, TVPInterstitialCollection, TVPMediaItemLoader, TVPPlaybackState, TVPPlayerBookmarkMonitor, TVPPlayerItem, TVPPlayerReporter, TVPPlaylist, TVPProgressiveJumpingScrubber, TVPSubtitleOption, TVPTimeRange, TVSStateMachine;
 
 @interface TVPPlayer : NSObject <TVPAVFPlayback>
 {
@@ -43,7 +43,6 @@
     _Bool _initialMediaItemHasCompletedInitialLoading;
     float _volume;
     float _cachedAVPlayerRate;
-    float _previousAVPlayerRate;
     id <TVPPlaybackDelegate> _delegate;
     id <TVPASyncPlaybackDelegate> _asyncDelegate;
     NSString *_name;
@@ -75,13 +74,13 @@
     long long _numOutstandingSeeks;
     NSHashTable *_videoViewWeakReferences;
     NSMutableSet *_mediaItemLoaders;
+    NSArray *_pendingSelectedMediaArray;
     TVPPlayerItem *_currentPlayerItem;
     NSDate *_dateBeingSeekedTo;
     NSDate *_playbackDateAtStartOfSeek;
     long long _currentDirectionOfPlaylistChange;
     id _chapterBoundaryTimeObserverToken;
     TVPExternalImagePlayer *_externalImagePlayer;
-    NSTimer *_unexpectedRateChangeTimer;
     id _interstitialBoundaryTimeObserverToken;
     TVPProgressiveJumpingScrubber *_progressiveJumpingScrubber;
     NSTimer *_HDCPUnprotectedTooLongTimer;
@@ -97,7 +96,6 @@
     TVPPlayerItem *_playerItemFromCacheManager;
     double _startPosition;
     CDUnknownBlockType _highFrequencyElapsedTimeObserverBlock;
-    NSObject<TVPPlayerItemMetadataPopulator> *_playerItemMetadataPopulator;
     AVPlayerItem *_unqueuedPlayerItem;
     CDUnknownBlockType _AVKitExternalImageScanningUpdateBlock;
     struct CGSize _currentMediaItemPresentationSize;
@@ -127,7 +125,6 @@
 @property(copy, nonatomic) CDUnknownBlockType AVKitExternalImageScanningUpdateBlock; // @synthesize AVKitExternalImageScanningUpdateBlock=_AVKitExternalImageScanningUpdateBlock;
 @property(retain, nonatomic) AVPlayerItem *unqueuedPlayerItem; // @synthesize unqueuedPlayerItem=_unqueuedPlayerItem;
 @property(nonatomic) _Bool createsPlayerItemButDoesNotEnqueue; // @synthesize createsPlayerItemButDoesNotEnqueue=_createsPlayerItemButDoesNotEnqueue;
-@property(nonatomic) __weak NSObject<TVPPlayerItemMetadataPopulator> *playerItemMetadataPopulator; // @synthesize playerItemMetadataPopulator=_playerItemMetadataPopulator;
 @property(copy, nonatomic) CDUnknownBlockType highFrequencyElapsedTimeObserverBlock; // @synthesize highFrequencyElapsedTimeObserverBlock=_highFrequencyElapsedTimeObserverBlock;
 @property(nonatomic) _Bool usesLegacyDelegateBehavior; // @synthesize usesLegacyDelegateBehavior=_usesLegacyDelegateBehavior;
 @property(nonatomic) _Bool asyncDelegateInProgress; // @synthesize asyncDelegateInProgress=_asyncDelegateInProgress;
@@ -139,7 +136,6 @@
 @property(retain, nonatomic) NSArray *cachedSeekableTimeRanges; // @synthesize cachedSeekableTimeRanges=_cachedSeekableTimeRanges;
 @property(retain, nonatomic) NSArray *cachedLoadedTimeRanges; // @synthesize cachedLoadedTimeRanges=_cachedLoadedTimeRanges;
 @property(nonatomic) CDStruct_1b6d18a9 cachedDuration; // @synthesize cachedDuration=_cachedDuration;
-@property(nonatomic) float previousAVPlayerRate; // @synthesize previousAVPlayerRate=_previousAVPlayerRate;
 @property(nonatomic) float cachedAVPlayerRate; // @synthesize cachedAVPlayerRate=_cachedAVPlayerRate;
 @property(retain, nonatomic) TVPAudioOption *cachedSelectedAudioOption; // @synthesize cachedSelectedAudioOption=_cachedSelectedAudioOption;
 @property(retain, nonatomic) NSArray *playbackEndTimeBoundaryObserverTokens; // @synthesize playbackEndTimeBoundaryObserverTokens=_playbackEndTimeBoundaryObserverTokens;
@@ -152,7 +148,6 @@
 @property(retain, nonatomic) TVPProgressiveJumpingScrubber *progressiveJumpingScrubber; // @synthesize progressiveJumpingScrubber=_progressiveJumpingScrubber;
 @property(nonatomic) CDStruct_1b6d18a9 cachedElapsedTime; // @synthesize cachedElapsedTime=_cachedElapsedTime;
 @property(retain, nonatomic) id interstitialBoundaryTimeObserverToken; // @synthesize interstitialBoundaryTimeObserverToken=_interstitialBoundaryTimeObserverToken;
-@property(retain, nonatomic) NSTimer *unexpectedRateChangeTimer; // @synthesize unexpectedRateChangeTimer=_unexpectedRateChangeTimer;
 @property(retain, nonatomic) TVPExternalImagePlayer *externalImagePlayer; // @synthesize externalImagePlayer=_externalImagePlayer;
 @property(retain, nonatomic) id chapterBoundaryTimeObserverToken; // @synthesize chapterBoundaryTimeObserverToken=_chapterBoundaryTimeObserverToken;
 @property(nonatomic) long long currentDirectionOfPlaylistChange; // @synthesize currentDirectionOfPlaylistChange=_currentDirectionOfPlaylistChange;
@@ -166,6 +161,7 @@
 @property(nonatomic) _Bool currentPlayerItemContainsDates; // @synthesize currentPlayerItemContainsDates=_currentPlayerItemContainsDates;
 @property(retain, nonatomic) TVPPlayerItem *currentPlayerItem; // @synthesize currentPlayerItem=_currentPlayerItem;
 @property(nonatomic) _Bool loadingInitialItemInPlaylist; // @synthesize loadingInitialItemInPlaylist=_loadingInitialItemInPlaylist;
+@property(copy, nonatomic) NSArray *pendingSelectedMediaArray; // @synthesize pendingSelectedMediaArray=_pendingSelectedMediaArray;
 @property(nonatomic) _Bool pausesOnHDCPProtectionDown; // @synthesize pausesOnHDCPProtectionDown=_pausesOnHDCPProtectionDown;
 @property(nonatomic) CDStruct_1b6d18a9 lastTimeSentToAVKitImageHandler; // @synthesize lastTimeSentToAVKitImageHandler=_lastTimeSentToAVKitImageHandler;
 @property(nonatomic) _Bool sendsPlayerReports; // @synthesize sendsPlayerReports=_sendsPlayerReports;
@@ -196,6 +192,11 @@
 @property(nonatomic) __weak id <TVPPlaybackDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
+- (void)_populatePlayerItem:(id)arg1 withUpNextInfoFromCurrentMediaItem:(id)arg2 nextMediaItem:(id)arg3 playlist:(id)arg4;
+- (void)_populatePlayerItem:(id)arg1 withMetadataFromMediaItem:(id)arg2;
+- (void)_configurePlayerItemForExternalImageScrubbing:(id)arg1;
+- (_Bool)_getStringForTitleLabel:(id *)arg1 subtitleLabel:(id *)arg2 forMediaItem:(id)arg3;
+- (id)_avContentProposalForProposal:(id)arg1 previewImage:(id)arg2;
 - (void)_updateMediaRemoteManager;
 - (id)_bitRateString:(double)arg1;
 - (void)_logAccessLogEvents;
@@ -257,8 +258,7 @@
 - (void)_currentPlayerItemWillChange;
 - (void)_avPlayerTimeDidChangeTo:(CDStruct_1b6d18a9)arg1;
 - (void)_outputObscuredDidChangeTo:(_Bool)arg1 dueToKVONotification:(_Bool)arg2;
-- (void)_cancelOutstandingUnexpectedPauseEvents;
-- (void)_avPlayerRateDidChangeUnexpectedly:(id)arg1;
+- (void)_timeControlStatusDidChangeTo:(long long)arg1;
 - (void)_avPlayerRateDidChangeTo:(float)arg1;
 - (void)_playlistNextMediaItemDidChangeWithContext:(id)arg1;
 - (void)_postCurrentMediaItemDidChangeNotificationWithDirection:(id)arg1 reason:(id)arg2 didHitBeginningOfPlaylist:(_Bool)arg3 didHitEndOfPlaylist:(_Bool)arg4;
@@ -295,6 +295,8 @@
 - (id)errorLog;
 - (id)accessLog;
 @property(readonly, nonatomic) AVPlayer *avPlayer;
+- (void)_selectMediaArray:(id)arg1 withItem:(id)arg2;
+- (void)selectMediaArray:(id)arg1;
 - (long long)currentScanMode;
 - (void)removeWeakReferenceToVideoView:(id)arg1;
 - (void)addWeakReferenceToVideoView:(id)arg1;

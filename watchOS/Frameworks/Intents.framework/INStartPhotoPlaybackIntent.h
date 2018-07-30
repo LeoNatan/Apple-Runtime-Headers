@@ -39,6 +39,9 @@
 - (void)setDateCreated:(id)arg1;
 @property(readonly, copy, nonatomic) INDateComponentsRange *dateCreated;
 - (id)initWithDateCreated:(id)arg1 locationCreated:(id)arg2 albumName:(id)arg3 searchTerms:(id)arg4 includedAttributes:(unsigned int)arg5 excludedAttributes:(unsigned int)arg6 peopleInPhoto:(id)arg7;
+- (id)_categoryVerb;
+- (int)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

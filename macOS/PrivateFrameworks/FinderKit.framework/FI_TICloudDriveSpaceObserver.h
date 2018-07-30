@@ -10,8 +10,8 @@ __attribute__((visibility("hidden")))
 @interface FI_TICloudDriveSpaceObserver : NSObject
 {
     long long _freeSpace;
-    struct TNSRef<NSOperationQueue *, void> _operationQueue;
-    struct TNSRef<NSTimer *, void> _pollingTimer;
+    struct TNSRef<NSOperationQueue, void> _operationQueue;
+    struct TNSRef<NSTimer, void> _pollingTimer;
 }
 
 + (void)fetchFreeSpaceNow;

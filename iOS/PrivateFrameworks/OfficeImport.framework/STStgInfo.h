@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)setName:(id)arg1;
 - (id)getName;
 - (void)dealloc;
-- (id)initWithStgInfo:(struct _StgInfo *)arg1;
+- (id)initWithStgInfo:(const struct _StgInfo *)arg1;
 - (id)init;
 
 @end

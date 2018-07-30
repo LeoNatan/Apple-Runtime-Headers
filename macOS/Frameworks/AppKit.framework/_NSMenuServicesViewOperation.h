@@ -8,6 +8,7 @@
 
 @class NSImage, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSMenuServicesViewOperation : NSOperation
 {
     NSString *path;

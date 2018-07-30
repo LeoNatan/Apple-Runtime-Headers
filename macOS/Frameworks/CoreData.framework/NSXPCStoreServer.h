@@ -9,7 +9,7 @@
 #import "NSXPCListenerDelegate.h"
 #import "NSXPCServerProtocol.h"
 
-@class NSArray, NSDictionary, NSManagedObjectModel, NSMapTable, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCListener, NSXPCStoreServerNotificationManager, NSXPCStoreServerRequestHandlingPolicy;
+@class NSArray, NSDictionary, NSManagedObjectModel, NSMapTable, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCListener, NSXPCStoreServerRequestHandlingPolicy;
 
 @interface NSXPCStoreServer : NSObject <NSXPCServerProtocol, NSXPCListenerDelegate>
 {
@@ -23,12 +23,13 @@
     NSXPCListener *_listener;
     NSXPCStoreServerRequestHandlingPolicy *_policy;
     NSMapTable *_connectionToCoordinatorMap;
-    NSXPCStoreServerNotificationManager *_observer;
+    BOOL _postRemoteChangeNotifications;
 }
 
 + (void)initialize;
 + (unsigned long long)debugDefault;
 - (oneway void)handleRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)postRemoteChangeNotificationForContext:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)retainedCacheForConnection:(id)arg1;
 - (void)removeCachesForConnection:(id)arg1;
@@ -44,6 +45,7 @@
 - (id)errorHandlingDelegate;
 - (id)initForStoreWithURL:(id)arg1 usingModelAtURL:(id)arg2 options:(id)arg3 policy:(id)arg4;
 - (id)initForStoreWithURL:(id)arg1 usingModel:(id)arg2 options:(id)arg3 policy:(id)arg4;
+- (id)handlePersistentHistoryTokenRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handlePersistentHistoryRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handleBatchDeleteRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handleQueryGenerationReleaseRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
@@ -60,7 +62,7 @@
 - (id)handleObtainRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)unpackQueryGeneration:(id)arg1 withContext:(id)arg2;
 - (id)localGenerationForXPCToken:(id)arg1 withContext:(id)arg2;
-- (id)XPCEncodableGenerationTokenForOriginal:(id)arg1 inContext:(id)arg2;
+- (id)retainedXPCEncodableGenerationTokenForOriginal:(id)arg1 inContext:(id)arg2;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
 
 // Remaining properties

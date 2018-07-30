@@ -49,6 +49,7 @@
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) unsigned long long mediaType;
 @property(readonly, nonatomic) NSDate *modificationDate;
+@property(readonly, nonatomic) unsigned long long originalResourceChoice;
 @property(readonly, nonatomic) unsigned long long pixelHeight;
 @property(readonly, nonatomic) unsigned long long pixelWidth;
 @property(readonly, nonatomic) long long playbackStyle;

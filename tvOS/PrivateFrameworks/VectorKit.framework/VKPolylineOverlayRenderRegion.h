@@ -13,19 +13,17 @@ __attribute__((visibility("hidden")))
 {
     NSSet *_tiles;
     Box_3d7e3c2c _visibleRect;
-    Box_3d7e3c2c _snappingRect;
-    vector_d0224be8 _rectsForSnapping;
     struct vector<VKTileKey, std::__1::allocator<VKTileKey>> _snappedTileKeys;
+    struct MultiRectRegion _snappingRegion;
 }
 
-@property(readonly, nonatomic) Box_3d7e3c2c snappingRect; // @synthesize snappingRect=_snappingRect;
 @property(readonly, nonatomic) Box_3d7e3c2c visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(readonly, nonatomic) NSSet *tiles; // @synthesize tiles=_tiles;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (const vector_d0224be8 *)rectsForSnapping;
 - (_Bool)isEquivalentToNewRegion:(id)arg1;
 - (void)dealloc;
+- (const struct MultiRectRegion *)snappingRegion;
 - (id)initForKeysInView:(id)arg1 tiles:(id)arg2 allowsSnapping:(_Bool)arg3;
 
 @end

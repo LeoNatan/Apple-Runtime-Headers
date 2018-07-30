@@ -6,9 +6,11 @@
 
 #import "UIView.h"
 
-@class _NTKPolygonCylinderTransformView;
+#import "NTKEditOptionContainerView.h"
 
-@interface NTKPolygonCylinderView : UIView
+@class NSString, _NTKPolygonCylinderTransformView;
+
+@interface NTKPolygonCylinderView : UIView <NTKEditOptionContainerView>
 {
     _NTKPolygonCylinderTransformView *_transformView;
     float _rotationAngle;
@@ -20,13 +22,20 @@
 - (void)_setRotationAngle:(float)arg1;
 - (float)_rotationAngleForFaceIndex:(int)arg1;
 - (void)layoutSubviews;
-- (void)rotateToFraction:(float)arg1 fromFaceAtIndex:(int)arg2 toFaceAtIndex:(int)arg3;
-- (void)rotateToFaceAtIndex:(int)arg1;
-- (void)enumerateFaceViewsWithBlock:(CDUnknownBlockType)arg1;
-- (id)viewForFaceAtIndex:(unsigned int)arg1;
-- (void)setView:(id)arg1 forFaceAtIndex:(unsigned int)arg2;
-@property(readonly, nonatomic) unsigned int numberOfFaces;
-- (id)initWithNumberOfFaces:(unsigned int)arg1;
+- (void)transitionToFraction:(float)arg1 fromSideAtIndex:(unsigned int)arg2 toSideAtIndex:(unsigned int)arg3;
+- (void)transitionToSideAtIndex:(unsigned int)arg1;
+- (void)enumerateSideViewsWithBlock:(CDUnknownBlockType)arg1;
+- (id)viewForSideAtIndex:(unsigned int)arg1;
+- (void)setView:(id)arg1 forSideAtIndex:(unsigned int)arg2;
+@property(readonly, nonatomic) unsigned int numberOfVisibleSides;
+@property(nonatomic) unsigned int numberOfSides;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

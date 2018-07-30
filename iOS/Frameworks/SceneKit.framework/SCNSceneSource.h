@@ -19,6 +19,7 @@
     NSDictionary *_sceneSourceOptions;
 }
 
++ (void)patchColorSecureDecodingIfNeeded;
 + (id)sceneFileTypes;
 + (id)sceneTypes;
 + (id)sceneSourceWithData:(id)arg1 options:(id)arg2;
@@ -37,6 +38,7 @@
 - (_Bool)_appendToEntries:(id)arg1 entriesWithType:(unsigned long long)arg2 passingTest:(CDUnknownBlockType)arg3 entryObjectConstructor:(CDUnknownBlockType)arg4;
 - (id)identifiersOfEntriesWithClass:(Class)arg1;
 - (id)entryWithIdentifier:(id)arg1 withClass:(Class)arg2;
+- (id)c3dDataRepresentation;
 - (struct __C3DLibrary *)library;
 - (struct __C3DSceneSource *)sceneSourceRef;
 - (id)propertyForKey:(id)arg1;

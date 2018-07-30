@@ -8,7 +8,6 @@
 
 @class ABGroupListController, NSArray, NSPasteboard;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupDragScope : NSObject
 {
     ABGroupListController *_viewController;

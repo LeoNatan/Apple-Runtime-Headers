@@ -6,7 +6,7 @@
 
 #import <CoreChineseEngine/CIMBaseEngine.h>
 
-@class CIMCandidate, CIMMecabraEngine, NSArray, NSString, NSViewController;
+@class CIMCandidate, CIMMecabraEngine, NSString, NSViewController;
 
 @interface CIMPinyinEngine : CIMBaseEngine
 {
@@ -40,22 +40,22 @@
 - (void)updateTextReplacementEntries;
 - (id)mecabraEnvironment;
 - (id)currentInlineText;
-- (long long)windowType;
 - (BOOL)shouldUpdateExistingCandidates;
 - (id)higherOrderDataProvider;
 - (int)mecabraInputMethodType;
 @property(readonly, nonatomic) CIMCandidate *selectedMecabraCandidate;
 - (id)inputString;
-@property(readonly, nonatomic) NSArray *sortingMethods;
+- (id)sortingMethods;
 - (void)hideCandidateWindow;
 - (id)informationView;
-- (id)candidatesForSortingMethod:(id)arg1;
-- (id)attributedAnnotationSurfaceWithSyllablesAndAnnotations:(id)arg1;
+- (id)candidateListDictionaryWithSortingMethod:(id)arg1;
 - (id)insertApostrophesForPinyinString:(void *)arg1;
 - (BOOL)isUsingSortingBar;
 - (Class)onscreenCandidateWindowClass;
 - (BOOL)shouldShowStrokeInformationWindow;
 - (BOOL)shouldShowStrokeInformationWindowForCandidates:(id)arg1;
+- (void)updateCandidateController:(id)arg1;
+- (unsigned long long)panelType;
 - (void)enterStrokeSequence;
 - (void)forgetSelectedWord;
 - (void)selectNextTone;
@@ -72,10 +72,10 @@
 - (void)performPageNavigationRight:(id)arg1;
 - (void)performPageNavigationLeft:(id)arg1;
 - (BOOL)handleKeyEvent;
-- (void)didHandleCandidateSelectionChanged:(id)arg1;
+- (void)didHandleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
 - (void)didHandleCandidateSelected:(id)arg1 isSecondary:(BOOL)arg2;
 - (void)didHandleSecondaryCandidateSelected:(id)arg1;
-- (void)didHandleCandidateSelected:(id)arg1;
+- (void)didHandleCandidateSelected:(id)arg1 candidateController:(id)arg2;
 - (void)commitInlineForSpecialWindow;
 - (id)composedText;
 - (void)reset;

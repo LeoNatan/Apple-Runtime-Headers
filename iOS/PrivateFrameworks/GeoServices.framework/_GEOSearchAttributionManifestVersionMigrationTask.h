@@ -8,7 +8,7 @@
 
 #import "GEOActiveTileGroupMigrationTask.h"
 
-@class GEOActiveTileGroup, GEOReportedProgress, GEOSearchAttributionManifest, GEOSearchAttributionManifestVersionMigrator, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSURLSession, NSURLSessionDataTask;
+@class GEOActiveTileGroup, GEOReportedProgress, GEOSearchAttributionManifest, GEOSearchAttributionManifestVersionMigrator, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSURL, NSURLSession, NSURLSessionDataTask;
 
 __attribute__((visibility("hidden")))
 @interface _GEOSearchAttributionManifestVersionMigrationTask : NSObject <GEOActiveTileGroupMigrationTask>
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     GEOSearchAttributionManifestVersionMigrator *_migrator;
     NSObject<OS_dispatch_queue> *_workQueue;
     _Bool _running;
-    NSString *_newSearchAttributionManifestURL;
+    NSURL *_newSearchAttributionManifestURL;
     GEOActiveTileGroup *_oldTileGroup;
     CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_callbackQueue;

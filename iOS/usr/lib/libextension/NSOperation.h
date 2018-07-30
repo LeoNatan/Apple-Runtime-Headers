@@ -15,6 +15,7 @@
     int _private1b;
 }
 
++ (_Bool)_removesDependenciesAfterFinish;
 + (id)currentOperation;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)keyPathsForValuesAffectingIsCancelled;
@@ -34,6 +35,7 @@
 - (void)start;
 - (void)main;
 @property(readonly, copy) NSArray *dependencies;
+- (void)removeAllDependencies;
 - (void)removeDependency:(id)arg1;
 - (void)addDependency:(id)arg1;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;

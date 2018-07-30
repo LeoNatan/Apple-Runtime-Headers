@@ -35,10 +35,12 @@
     NSDictionary *_deltaPackage;
     NSError *_localCachingError;
     long long _localFullPackageFailureCount;
+    long long _hashAlgorithm;
 }
 
 + (id)assetWithURL:(id)arg1 type:(long long)arg2;
 + (BOOL)supportsSecureCoding;
+@property long long hashAlgorithm; // @synthesize hashAlgorithm=_hashAlgorithm;
 @property long long subType; // @synthesize subType=_subType;
 @property(retain) NSError *localCachingError; // @synthesize localCachingError=_localCachingError;
 @property long long localFullPackageFailureCount; // @synthesize localFullPackageFailureCount=_localFullPackageFailureCount;

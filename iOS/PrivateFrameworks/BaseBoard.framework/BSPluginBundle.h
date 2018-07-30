@@ -20,13 +20,14 @@
 }
 
 + (id)bundleWithPath:(id)arg1 availableSpecifications:(id)arg2;
-@property(readonly, retain, nonatomic) Class principalClass; // @synthesize principalClass=_principalClass;
-@property(readonly, retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
+@property(readonly, nonatomic) Class principalClass; // @synthesize principalClass=_principalClass;
+@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(copy, nonatomic) NSString *requiredClassOrProtocolName; // @synthesize requiredClassOrProtocolName=_requiredClassOrProtocolName;
 @property(copy, nonatomic) NSString *specifiedClassName; // @synthesize specifiedClassName=_specifiedClassName;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -36,7 +37,6 @@
 - (_Bool)loadPlugin;
 @property(readonly, nonatomic, getter=isLoaded) _Bool loaded; // @dynamic loaded;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @dynamic valid;
-- (void)dealloc;
 - (id)initWithBundle:(id)arg1;
 
 @end

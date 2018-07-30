@@ -8,6 +8,7 @@
 
 @class NSButton, NSMutableDictionary, NSSavePanel, NSString, NSTextField;
 
+__attribute__((visibility("hidden")))
 @interface NSNavFilepathInputController : NSWindowController
 {
     id _target;

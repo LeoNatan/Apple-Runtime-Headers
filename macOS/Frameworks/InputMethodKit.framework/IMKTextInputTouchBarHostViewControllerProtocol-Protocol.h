@@ -5,6 +5,6 @@
 //
 
 @protocol IMKTextInputTouchBarHostViewControllerProtocol
-- (void)setAllowsCollapsingCandidateList:(BOOL)arg1 reply:(void (^)(struct CGSize))arg2;
+- (void)setAllowsCollapsingCandidateList:(BOOL)arg1;
 @end
 

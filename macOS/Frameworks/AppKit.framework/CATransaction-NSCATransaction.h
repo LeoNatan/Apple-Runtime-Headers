@@ -7,6 +7,7 @@
 #import "CATransaction.h"
 
 @interface CATransaction (NSCATransaction)
++ (BOOL)NS_tryAggressiveCommit;
 + (void)NS_setFlushesWithDisplayRefresh;
 + (void)NS_apply:(long long)arg1 block:(CDUnknownBlockType)arg2;
 @end

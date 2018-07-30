@@ -10,7 +10,6 @@
 
 @class ABCardViewPersonMapper, CNContact, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewMultiValuePrivateFieldTransformer : NSObject <ABCardViewMultiValueTransformer>
 {
     ABCardViewPersonMapper *_personMapper;

@@ -26,6 +26,8 @@
 - (_Bool)validateFullRecord;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
+- (void)setPersonScopedIdentifier:(id)arg1;
+- (id)personScopedIdentifier;
 - (_Bool)supportsDirectDeletion;
 - (_Bool)supportsDeletion;
 

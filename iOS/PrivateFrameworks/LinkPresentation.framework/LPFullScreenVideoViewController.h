@@ -8,7 +8,7 @@
 
 #import "UIGestureRecognizerDelegate.h"
 
-@class AVPlayer, AVPlayerController, CALayer, LPControlsSuppressingAVPlayerViewController, LPSwipeDownTracker, LPVideoView, NSString, UIPanGestureRecognizer, __AVPlayerLayerView;
+@class AVPlayer, AVPlayerController, CALayer, LPControlsSuppressingAVPlayerViewController, LPVideoView, NSString, PHSwipeDownTracker, UIPanGestureRecognizer, __AVPlayerLayerView;
 
 __attribute__((visibility("hidden")))
 @interface LPFullScreenVideoViewController : UIViewController <UIGestureRecognizerDelegate>
@@ -16,7 +16,8 @@ __attribute__((visibility("hidden")))
     LPVideoView *_sourceView;
     LPControlsSuppressingAVPlayerViewController *_playerViewController;
     UIPanGestureRecognizer *_slideGesture;
-    LPSwipeDownTracker *_swipeDownTracker;
+    PHSwipeDownTracker *_swipeDownTracker;
+    struct CGRect _swipeDownInitialBounds;
     CALayer *_videoMaskLayer;
     __AVPlayerLayerView *_playerLayerView;
     AVPlayerController *_playerController;

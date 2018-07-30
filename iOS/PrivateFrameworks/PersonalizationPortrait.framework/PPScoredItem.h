@@ -4,27 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "_PASZonedObject.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@class NSObject<NSCopying>;
+@class NSObject<NSCopying><NSSecureCoding>;
 
-@interface PPScoredItem : NSObject <NSCopying>
+@interface PPScoredItem : _PASZonedObject <NSCopying, NSSecureCoding>
 {
-    NSObject<NSCopying> *_item;
+    NSObject<NSCopying><NSSecureCoding> *_item;
     double _score;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
-@property(readonly, nonatomic) NSObject<NSCopying> *item; // @synthesize item=_item;
+@property(readonly, nonatomic) NSObject<NSCopying><NSSecureCoding> *item; // @synthesize item=_item;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToScoredItem:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1 score:(double)arg2;
-- (void)dealloc;
 
 @end
 

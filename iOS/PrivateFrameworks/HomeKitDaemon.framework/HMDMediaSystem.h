@@ -22,9 +22,9 @@
     HMDApplicationData *_appData;
     HMDAccessorySettingGroup *_rootSettings;
     HMDMediaSession *_mediaSession;
+    NSString *_configuredName;
     NSUUID *_uuid;
     HMDHome *_home;
-    NSArray *_accessories;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMFMessageDispatcher *_msgDispatcher;
@@ -44,9 +44,10 @@
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) NSArray *accessories; // @synthesize accessories=_accessories;
 @property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(retain, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 @property(readonly, copy) NSSet *messageReceiverChildren;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
@@ -66,8 +67,8 @@
 @property(retain, nonatomic) HMDAccessorySettingGroup *rootSettings; // @synthesize rootSettings=_rootSettings;
 @property(retain, nonatomic) HMDApplicationData *appData; // @synthesize appData=_appData;
 @property(retain, nonatomic) HMDMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
+@property(readonly, nonatomic) NSArray *accessories;
 @property(retain, nonatomic) NSArray *components; // @synthesize components=_components;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)serialize;
 - (void)handleRemovedAccessory:(id)arg1;
 - (void)handleHomeDataFetchedNotification:(id)arg1;

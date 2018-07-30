@@ -15,7 +15,7 @@
 }
 
 - (id)queryItemForName:(id)arg1 value:(id)arg2;
-- (id)URLForAction:(id)arg1;
+- (id)URLForAction:(id)arg1 type:(long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

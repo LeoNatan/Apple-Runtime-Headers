@@ -24,10 +24,12 @@
     MDLMaterialPropertyNode *_node;
     MDLMaterialProperty *_overrider;
     MDLMaterialProperty *_overridee;
+    _Bool _isDefaultValue;
     unsigned long long _type;
     // Error parsing type: {?="columns"[4]}, name: _matrix4x4
 }
 
+@property(nonatomic) _Bool isDefaultValue; // @synthesize isDefaultValue=_isDefaultValue;
 // Error parsing type for property matrix4x4:
 // Property attributes: T{?=[4]},N,V_matrix4x4
 

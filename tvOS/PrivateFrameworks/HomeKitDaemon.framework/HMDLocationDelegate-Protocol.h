@@ -11,7 +11,6 @@
 @protocol HMDLocationDelegate <NSObject>
 
 @optional
-- (void)getReachableIPAccessory:(unsigned long long *)arg1 btleAccessory:(unsigned long long *)arg2 mediaAccessory:(unsigned long long *)arg3;
 - (void)didDetermineLocation:(CLLocation *)arg1;
 - (void)didExitRegion:(CLRegion *)arg1;
 - (void)didEnterRegion:(CLRegion *)arg1;

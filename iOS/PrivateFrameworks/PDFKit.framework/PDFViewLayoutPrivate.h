@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _Bool delegateKnowsDisplayBox;
     _Bool delegateKnowsDisplayRTL;
     _Bool delegateKnowsDisplaysDirection;
+    _Bool delegateKnowsDocumentMargins;
     _Bool delegateKnowsIsUsingPageViewController;
     PDFDocument *document;
     unsigned long long pageCount;

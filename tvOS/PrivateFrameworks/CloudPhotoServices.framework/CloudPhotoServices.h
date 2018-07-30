@@ -13,14 +13,19 @@
 }
 
 + (id)_minionConnection;
-+ (void)_createVideoResourcesFromInputURL:(id)arg1 withItemIdentifier:(id)arg2 videoAdjustments:(id)arg3 resourceType:(unsigned long long)arg4 forIris:(_Bool)arg5 destinationDirectory:(id)arg6 outputResources:(id)arg7;
++ (void)_createVideoResourcesFromInputURL:(id)arg1 withItemScopedIdentifier:(id)arg2 videoAdjustments:(id)arg3 resourceType:(unsigned long long)arg4 forIris:(_Bool)arg5 destinationDirectory:(id)arg6 outputResources:(id)arg7;
++ (unsigned int)videoCodecFourCharCodeNumberForAVAsset:(id)arg1;
++ (_Bool)_shouldGenerateLargeVideoDerivativeForAVAsset:(id)arg1;
++ (_Bool)shouldGenerateVideoDerivativeForAVAsset:(id)arg1 forResourceType:(unsigned long long)arg2 adjusted:(_Bool)arg3;
 + (void)_generateVideoDerivativeResourcesFromInputResource:(id)arg1 withCPLAdjustments:(id)arg2 destinationDirectory:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-+ (void)_createPosterFrameResourcesFromInputURL:(id)arg1 withItemIdentifier:(id)arg2 destinationDirectory:(id)arg3 outputResources:(id)arg4;
-+ (id)_createCPLResourceFromURL:(id)arg1 withResourceType:(unsigned long long)arg2 uniformTypeIdentifier:(id)arg3 itemIdentifier:(id)arg4;
-+ (void)_createJPEGResourcesFromInputJPEGURL:(id)arg1 resourceTypes:(id)arg2 withItemIdentifier:(id)arg3 destinationDirectory:(id)arg4 outputResources:(id)arg5 convertToSRGB:(_Bool)arg6;
-+ (id)_filenameForResourceWithItemIdentifier:(id)arg1 resourceType:(unsigned long long)arg2 extension:(id)arg3;
++ (void)_createPosterFrameResourcesFromInputURL:(id)arg1 withItemScopedIdentifier:(id)arg2 destinationDirectory:(id)arg3 outputResources:(id)arg4;
++ (id)_createCPLResourceFromURL:(id)arg1 withResourceType:(unsigned long long)arg2 uniformTypeIdentifier:(id)arg3 itemScopedIdentifier:(id)arg4;
++ (void)_createJPEGResourcesFromInputJPEGURL:(id)arg1 resourceTypes:(id)arg2 withItemScopedIdentifier:(id)arg3 destinationDirectory:(id)arg4 outputResources:(id)arg5 convertToSRGB:(_Bool)arg6;
++ (id)_filenameForResourceWithItemScopedIdentifier:(id)arg1 resourceType:(unsigned long long)arg2 extension:(id)arg3;
 + (unsigned long long)_bestImageResourceTypeForPixelCount:(long long)arg1;
 + (void)_generateImageDerivativeResourcesFromInputResource:(id)arg1 destinationDirectory:(id)arg2 isAdjusted:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)generateFullSizeJPEGIfNecessaryFromInputResource:(id)arg1 destinationDirectory:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (id)workQueue;
 + (void)generateDerivativeResourcesFromInputResource:(id)arg1 withAdjustments:(id)arg2 destinationDirectory:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (_Bool)isUnsupportedOriginalFormatError:(id)arg1;
 + (id)singlePassTranscodeVideoAtURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

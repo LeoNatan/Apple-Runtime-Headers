@@ -6,15 +6,26 @@
 
 #import <Vision/VNDetector.h>
 
+#import "VNDetectorIdealImageSizeProviding.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface VNRectangleDetector : VNDetector
+@interface VNRectangleDetector : VNDetector <VNDetectorIdealImageSizeProviding>
 {
     float *_perMeshPtr;
 }
 
++ (id)supportedImageSizeSetForOptions:(id)arg1;
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
+- (_Bool)needsMetalContext;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

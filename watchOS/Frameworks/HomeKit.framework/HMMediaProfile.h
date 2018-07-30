@@ -10,16 +10,14 @@
 #import "HMMediaObject.h"
 #import "_HMMediaProfileDelegate.h"
 
-@class HMAccessorySettings, HMHome, HMMediaSession, NSObject<OS_dispatch_queue>, NSString;
+@class HMAccessorySettings, HMHome, HMMediaSession, NSString;
 
 @interface HMMediaProfile : HMAccessoryProfile <_HMMediaProfileDelegate, HMMediaObject, HMAccessorySettingsContainer>
 {
     NSString *_routeUID;
     id <HMMediaProfileDelegate> _delegate;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property __weak id <HMMediaProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;

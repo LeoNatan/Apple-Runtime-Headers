@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "SXVisiblePercentageProviding.h"
+#import "SVVisiblePercentageProviding.h"
 
 @class NSString;
 
-@interface SXVideoPlayerAdSlotVisiblePercentageProvider : NSObject <SXVisiblePercentageProviding>
+@interface SXVideoPlayerAdSlotVisiblePercentageProvider : NSObject <SVVisiblePercentageProviding>
 {
 }
 

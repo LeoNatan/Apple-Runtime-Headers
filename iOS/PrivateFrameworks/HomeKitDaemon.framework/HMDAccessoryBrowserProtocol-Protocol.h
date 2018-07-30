@@ -38,7 +38,7 @@
 - (void)cancelPairingWithAccessory:(HMDUnpairedHAPAccessory *)arg1 error:(NSError *)arg2;
 - (void)handleSetupCodeAvailable:(HMDUnpairedHAPAccessory *)arg1;
 - (void)didReceiveUserConsentResponseForSetupAccessoryDescription:(HMSetupAccessoryDescription *)arg1 consent:(_Bool)arg2;
-- (void)pairAccessoryWithDescription:(HMSetupAccessoryDescription *)arg1 homeName:(NSString *)arg2 neeedsUserConfirmation:(_Bool)arg3 progressHandler:(void (^)(NSUUID *, NSString *, NSString *, HMAccessoryCategory *, long long, unsigned long long))arg4 completionHandler:(void (^)(HAPAccessoryServer *, NSUUID *, long long, unsigned long long, NSError *))arg5;
+- (void)pairAccessoryWithDescription:(HMSetupAccessoryDescription *)arg1 homeName:(NSString *)arg2 needsUserConfirmation:(_Bool)arg3 progressHandler:(void (^)(NSUUID *, NSString *, NSString *, HMAccessoryCategory *, long long, unsigned long long))arg4 completionHandler:(void (^)(HAPAccessoryServer *, NSUUID *, long long, unsigned long long, NSError *))arg5;
 - (void)pairAccessory:(HMDUnpairedHAPAccessory *)arg1 homeName:(NSString *)arg2 setupCode:(NSString *)arg3 setupCodeProvider:(void (^)(HMDUnpairedHAPAccessory *, NSString *, void (^)(NSString *, NSError *)))arg4 completionHandler:(void (^)(HAPAccessoryServer *, NSUUID *, long long, unsigned long long, NSError *))arg5;
 - (void)registerProgressHandler:(void (^)(NSUUID *, NSString *, NSString *, HMAccessoryCategory *, long long, unsigned long long))arg1 unpairedAccessoryUUID:(NSUUID *)arg2;
 - (void)removeDelegate:(id <HMDAccessoryBrowserDelegate>)arg1;

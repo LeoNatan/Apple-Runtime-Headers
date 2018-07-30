@@ -15,9 +15,8 @@
 
 @interface SCNLight : NSObject <SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding>
 {
-    // Error parsing type: ^{__C3DLight={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}{C3DColor4=(?=[4f]{?=ffff})}iffffffff{C3DColor4=(?=[4f]{?=ffff})}fffffCCQBb1b1b1b1b1b1b1b1b1ddd^{__C3DEffectSlot}^{__C3DEffectSlot}if^{__C3DFXTechnique}^v^{__CFData}}, name: _light
+    struct __C3DLight *_light;
     unsigned int _isPresentationInstance:1;
-    unsigned int _goboProjectShadows:1;
     unsigned int _castsShadow:1;
     unsigned int _usesDeferredShadows:1;
     unsigned int _usesModulatedMode:1;
@@ -47,6 +46,13 @@
     double _zNear;
     double _zFar;
     double _shadowBias;
+    long long _probeType;
+    long long _probeUpdateType;
+    _Bool _parallaxCorrectionEnabled;
+    // Error parsing type: , name: _probeExtents
+    // Error parsing type: , name: _probeOffset
+    // Error parsing type: , name: _parallaxExtentsFactor
+    // Error parsing type: , name: _parallaxCenterOffset
     float _attenuationStartDistance;
     float _attenuationEndDistance;
     float _attenuationFalloffExponent;
@@ -54,15 +60,15 @@
     float _spotOuterAngle;
     float _spotFalloffExponent;
     SCNMaterialProperty *_gobo;
-    SCNMaterialProperty *_ies;
     NSURL *_IESProfileURL;
     SCNTechnique *_technique;
     NSData *_sphericalHarmonics;
-    id <MTLTexture> _probeTexture;
+    SCNMaterialProperty *_probeEnvironment;
+    NSArray *_probeTextureMipsArray;
 }
 
 + (_Bool)supportsSecureCoding;
-+     // Error parsing type: @24@0:8^{__C3DLight={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}{C3DColor4=(?=[4f]{?=ffff})}iffffffff{C3DColor4=(?=[4f]{?=ffff})}fffffCCQBb1b1b1b1b1b1b1b1b1ddd^{__C3DEffectSlot}^{__C3DEffectSlot}if^{__C3DFXTechnique}^v^{__CFData}}16, name: lightWithLightRef:
++ (id)lightWithLightRef:(struct __C3DLight *)arg1;
 + (id)light;
 + (id)lightWithMDLLightProbe:(id)arg1;
 + (id)lightWithMDLLight:(id)arg1;
@@ -73,6 +79,21 @@
 - (void)_customEncodingOfSCNLight:(id)arg1;
 @property(retain, nonatomic) NSURL *IESProfileURL;
 @property(readonly, nonatomic) SCNMaterialProperty *gobo;
+- (id)probeEnvironment;
+- (void)setProbeOffset: /* Error: Ran out of types for this method. */;
+-     // Error parsing type: 16@0:8, name: probeOffset
+- (void)setProbeExtents: /* Error: Ran out of types for this method. */;
+-     // Error parsing type: 16@0:8, name: probeExtents
+- (void)setParallaxExtentsFactor: /* Error: Ran out of types for this method. */;
+-     // Error parsing type: 16@0:8, name: parallaxExtentsFactor
+- (void)setParallaxCenterOffset: /* Error: Ran out of types for this method. */;
+-     // Error parsing type: 16@0:8, name: parallaxCenterOffset
+- (void)setParallaxCorrectionEnabled:(_Bool)arg1;
+- (_Bool)parallaxCorrectionEnabled;
+- (void)setProbeUpdateType:(long long)arg1;
+- (long long)probeUpdateType;
+- (void)setProbeType:(long long)arg1;
+- (long long)probeType;
 @property(nonatomic) long long shadowMode;
 - (void)set_shadowCascadeDebugFactor:(double)arg1;
 - (double)_shadowCascadeDebugFactor;
@@ -122,14 +143,15 @@
 @property(readonly, copy, nonatomic) NSData *sphericalHarmonicsCoefficients;
 - (void)set_sphericalHarmonics:(id)arg1;
 - (id)_sphericalHarmonics;
-- (void)set_probeTexture:(id)arg1;
-- (id)_probeTexture;
+- (void)set_probeTextureMipsArray:(id)arg1;
+- (id)_probeTextureMipsArray;
 - (id)attributeForKey:(id)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;
@@ -167,9 +189,9 @@
 @property(copy, nonatomic) NSString *name;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
--     // Error parsing type: ^{__C3DLight={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}{C3DColor4=(?=[4f]{?=ffff})}iffffffff{C3DColor4=(?=[4f]{?=ffff})}fffffCCQBb1b1b1b1b1b1b1b1b1ddd^{__C3DEffectSlot}^{__C3DEffectSlot}if^{__C3DFXTechnique}^v^{__CFData}}16@0:8, name: lightRef
--     // Error parsing type: @24@0:8^{__C3DLight={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}{C3DColor4=(?=[4f]{?=ffff})}iffffffff{C3DColor4=(?=[4f]{?=ffff})}fffffCCQBb1b1b1b1b1b1b1b1b1ddd^{__C3DEffectSlot}^{__C3DEffectSlot}if^{__C3DFXTechnique}^v^{__CFData}}16, name: initPresentationLightWithLightRef:
--     // Error parsing type: @24@0:8^{__C3DLight={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}{C3DColor4=(?=[4f]{?=ffff})}iffffffff{C3DColor4=(?=[4f]{?=ffff})}fffffCCQBb1b1b1b1b1b1b1b1b1ddd^{__C3DEffectSlot}^{__C3DEffectSlot}if^{__C3DFXTechnique}^v^{__CFData}}16, name: initWithLightRef:
+- (struct __C3DLight *)lightRef;
+- (id)initPresentationLightWithLightRef:(struct __C3DLight *)arg1;
+- (id)initWithLightRef:(struct __C3DLight *)arg1;
 - (id)init;
 
 // Remaining properties

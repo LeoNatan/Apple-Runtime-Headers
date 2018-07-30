@@ -11,15 +11,30 @@
 @interface AVCaptureConnection : NSObject
 {
     AVCaptureConnectionInternal *_internal;
+    BOOL _supportsVideoStabilization;
+    BOOL _videoStabilizationEnabled;
+    BOOL _enablesVideoStabilizationWhenAvailable;
+    BOOL _cameraIntrinsicMatrixDeliverySupported;
+    BOOL _cameraIntrinsicMatrixDeliveryEnabled;
+    double _videoMaxScaleAndCropFactor;
+    long long _preferredVideoStabilizationMode;
+    long long _activeVideoStabilizationMode;
 }
 
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 + (void)initialize;
+@property(nonatomic, getter=isCameraIntrinsicMatrixDeliveryEnabled) BOOL cameraIntrinsicMatrixDeliveryEnabled; // @synthesize cameraIntrinsicMatrixDeliveryEnabled=_cameraIntrinsicMatrixDeliveryEnabled;
+@property(readonly, nonatomic, getter=isCameraIntrinsicMatrixDeliverySupported) BOOL cameraIntrinsicMatrixDeliverySupported; // @synthesize cameraIntrinsicMatrixDeliverySupported=_cameraIntrinsicMatrixDeliverySupported;
+@property(nonatomic) BOOL enablesVideoStabilizationWhenAvailable; // @synthesize enablesVideoStabilizationWhenAvailable=_enablesVideoStabilizationWhenAvailable;
+@property(readonly, nonatomic, getter=isVideoStabilizationEnabled) BOOL videoStabilizationEnabled; // @synthesize videoStabilizationEnabled=_videoStabilizationEnabled;
+@property(readonly, nonatomic, getter=isVideoStabilizationSupported) BOOL supportsVideoStabilization; // @synthesize supportsVideoStabilization=_supportsVideoStabilization;
+@property(readonly, nonatomic) long long activeVideoStabilizationMode; // @synthesize activeVideoStabilizationMode=_activeVideoStabilizationMode;
+@property(nonatomic) long long preferredVideoStabilizationMode; // @synthesize preferredVideoStabilizationMode=_preferredVideoStabilizationMode;
+@property(readonly, nonatomic) double videoMaxScaleAndCropFactor; // @synthesize videoMaxScaleAndCropFactor=_videoMaxScaleAndCropFactor;
 - (void)_mixerNodeFormatDescriptionDidChangeFromPropertyListener;
 - (void)_splitterNodeFormatDescriptionDidChangeFromPropertyListener;
-- (void)setVideoScaleAndCropFactor:(double)arg1;
-- (double)videoScaleAndCropFactor;
+@property(nonatomic) double videoScaleAndCropFactor;
 - (double)maxVideoScaleAndCropFactor;
 @property(nonatomic) CDStruct_1b6d18a9 videoMaxFrameDuration;
 @property(readonly, nonatomic, getter=isVideoMaxFrameDurationSupported) BOOL supportsVideoMaxFrameDuration;

@@ -9,7 +9,7 @@
 #import "NSSNewsAnalyticsArticleViewingSessionTracker.h"
 #import "NUVideoPlayerEventTracker.h"
 
-@class NSArray, NSData, NSSNewsAnalyticsEventAnnotator, NSString, NTPBEvent, NUNewsAnalyticsVideoPlayerEventTrackerConfiguration;
+@class NSOrderedSet, NSSNewsAnalyticsEventAnnotator, NSString, NTPBEvent, NUNewsAnalyticsVideoPlayerEventTrackerConfiguration;
 
 @interface NUNewsAnalyticsVideoPlayerEventTracker : NSObject <NUVideoPlayerEventTracker, NSSNewsAnalyticsArticleViewingSessionTracker>
 {
@@ -20,8 +20,7 @@
     NUNewsAnalyticsVideoPlayerEventTrackerConfiguration *_configuration;
     NSSNewsAnalyticsEventAnnotator *_eventAnnotator;
     id <NSSNewsAnalyticsSessionManager> _sessionManager;
-    NSArray *_videoItems;
-    NSData *_leadingVideoItemSessionID;
+    NSOrderedSet *_videoItems;
     id <NUVideoItem> _currentVideo;
     NTPBEvent *_articleHostViewExposureEvent;
 }
@@ -31,8 +30,7 @@
 @property(nonatomic) int currentVideoPlayMethod; // @synthesize currentVideoPlayMethod=_currentVideoPlayMethod;
 @property(copy, nonatomic) id <NUVideoItem> currentVideo; // @synthesize currentVideo=_currentVideo;
 @property(nonatomic) _Bool playbackFinishedForLastVideo; // @synthesize playbackFinishedForLastVideo=_playbackFinishedForLastVideo;
-@property(readonly, copy, nonatomic) NSData *leadingVideoItemSessionID; // @synthesize leadingVideoItemSessionID=_leadingVideoItemSessionID;
-@property(readonly, copy, nonatomic) NSArray *videoItems; // @synthesize videoItems=_videoItems;
+@property(readonly, copy, nonatomic) NSOrderedSet *videoItems; // @synthesize videoItems=_videoItems;
 @property(readonly, nonatomic) __weak id <NSSNewsAnalyticsSessionManager> sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) NSSNewsAnalyticsEventAnnotator *eventAnnotator; // @synthesize eventAnnotator=_eventAnnotator;
 @property(readonly, copy, nonatomic) NUNewsAnalyticsVideoPlayerEventTrackerConfiguration *configuration; // @synthesize configuration=_configuration;
@@ -41,7 +39,7 @@
 - (id)_currentArticleViewingSessionID;
 - (id)_currentArticleID;
 - (id)_articleViewingSessionIDForVideoItem:(id)arg1;
-- (unsigned long long)_displayRankOfVideoItem:(id)arg1;
+- (int)_rankInVideoPlaylistOfVideoItem:(id)arg1;
 - (id)_widgetEngagementForVideoItem:(id)arg1;
 - (id)_eventObjectWithLinkTapEvent:(id)arg1;
 - (id)_linkTapEventWithLinkType:(int)arg1 forVideoItem:(id)arg2;
@@ -77,7 +75,9 @@
 - (void)playbackResumedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackStartedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackInitiatedWithVideoItem:(id)arg1 metadata:(id)arg2;
-- (id)initWithConfiguration:(id)arg1 observer:(id)arg2 sessionManager:(id)arg3 userIDProvider:(id)arg4 videoItems:(id)arg5 leadingVideoItemSessionID:(id)arg6;
+- (void)videoDidDisappearWithVideoItem:(id)arg1;
+- (void)videoDidAppearWithVideoItem:(id)arg1;
+- (id)initWithConfiguration:(id)arg1 observer:(id)arg2 sessionManager:(id)arg3 userIDProvider:(id)arg4 videoItems:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,23 +13,7 @@
     void *ctx;
     void *plan;
     CDStruct_2bc666a5 net;
-    struct {
-        void *data;
-        void *reserved;
-        unsigned long long dim[4];
-        unsigned long long stride[4];
-        unsigned long long width;
-        unsigned long long height;
-        unsigned long long channels;
-        unsigned long long batch_number;
-        unsigned long long sequence_length;
-        unsigned long long stride_width;
-        unsigned long long stride_height;
-        unsigned long long stride_channels;
-        unsigned long long stride_batch_number;
-        unsigned long long stride_sequence_length;
-        int storage_type;
-    } output_blob;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> output_layer_name;
     id <MTLCommandQueue> queue;
     id <MTLDevice> device;
     NSObject<OS_dispatch_queue> *dispatch_queue;

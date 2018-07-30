@@ -38,6 +38,7 @@
 - (id)initWithBundleName:(id)arg1;
 - (id)initWithBundlePath:(id)arg1;
 - (id)initWithBundle:(id)arg1;
+- (id)initWithData:(id)arg1 hashData:(id)arg2 signatureData:(id)arg3 certData:(id)arg4;
 
 @end
 

@@ -23,6 +23,7 @@
 -     // Error parsing type: v32@0:8r^{?=[4]}16Q24, name: setFloat4x4Array:count:
 - (id)initWithElementCount:(unsigned long long)arg1;
 - (void)clear;
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 time:(double)arg2;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1;
 - (struct VtValue)defaultVtValue;
 @property(readonly, nonatomic) unsigned long long precision;

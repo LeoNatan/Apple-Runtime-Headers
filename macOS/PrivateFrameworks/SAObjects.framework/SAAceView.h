@@ -22,6 +22,7 @@
 @property(copy, nonatomic) NSNumber *listenAfterSpeaking;
 @property(copy, nonatomic) NSNumber *deferredRendering;
 @property(retain, nonatomic) id <SAAceSerializable> context;
+@property(nonatomic) BOOL canUseServerTTS;
 @property(nonatomic) BOOL canBeRefreshed;
 - (id)encodedClassName;
 - (id)groupIdentifier;

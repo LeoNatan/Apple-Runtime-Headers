@@ -99,6 +99,7 @@
 - (void)draggingExited:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
+- (id)effectiveAppearance;
 - (BOOL)allowsVibrancy;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 formatter:(id)arg2;

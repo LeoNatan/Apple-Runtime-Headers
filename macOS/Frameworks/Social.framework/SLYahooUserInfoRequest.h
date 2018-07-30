@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)urlRequestWithToken:(id)arg1;
++ (id)urlRequestWithToken:(id)arg1 forURL:(id)arg2;
 
 @end
 

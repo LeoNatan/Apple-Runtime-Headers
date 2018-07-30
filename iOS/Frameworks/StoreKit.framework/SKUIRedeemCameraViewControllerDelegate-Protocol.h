@@ -9,9 +9,9 @@
 @class NSString, SKUIRedeem, SKUIRedeemCameraViewController;
 
 @protocol SKUIRedeemCameraViewControllerDelegate <NSObject>
-- (void)redeemCameraViewController:(SKUIRedeemCameraViewController *)arg1 didFinishWithRedeem:(SKUIRedeem *)arg2;
 
 @optional
 - (void)overrideRedeemOperationWithCode:(NSString *)arg1 cameraRecognized:(_Bool)arg2 completion:(void (^)(SKUIRedeem *, NSError *))arg3;
+- (void)redeemCameraViewController:(SKUIRedeemCameraViewController *)arg1 didFinishWithRedeem:(SKUIRedeem *)arg2;
 @end
 

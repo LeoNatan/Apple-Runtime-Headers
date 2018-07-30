@@ -34,6 +34,7 @@
 - (id)initWithAmount:(id)arg1 balanceType:(long long)arg2 currencyCode:(id)arg3;
 - (id)initWithAmount:(id)arg1 currencyCode:(id)arg2;
 - (id)initWithAmount:(id)arg1 balanceType:(long long)arg2;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
 @end
 

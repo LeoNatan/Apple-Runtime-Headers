@@ -10,6 +10,7 @@
 {
 }
 
++ (id)iconDescriptorForAccessoryCategoryType:(id)arg1;
 + (id)iconDescriptorForAccessoryCategory:(id)arg1;
 + (id)allIconDescriptorsForServiceType:(id)arg1 serviceSubtype:(id)arg2;
 + (id)allIconDescriptorsForService:(id)arg1;

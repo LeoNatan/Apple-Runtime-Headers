@@ -36,6 +36,8 @@
 + (id)properties;
 + (BOOL)needsLayoutForKey:(id)arg1;
 + (id)layerWithRemoteClientId:(unsigned int)arg1;
+@property BOOL allowsGroupOpacity;
+@property BOOL allowsEdgeAntialiasing;
 @property BOOL drawsAsynchronously;
 @property double rasterizationScale;
 @property BOOL rasterizationPrefersDisplayCompositing;
@@ -102,6 +104,7 @@
 - (void)_colorSpaceDidChange;
 - (void)_display;
 - (void)display;
+- (int)_overrideImageFormat;
 - (void)_renderBorderInContext:(struct CGContext *)arg1;
 - (void)_renderSublayersInContext:(struct CGContext *)arg1;
 - (void)_renderForegroundInContext:(struct CGContext *)arg1;
@@ -173,6 +176,7 @@
 - (oneway void)release;
 - (BOOL)retainWeakReference;
 - (id)retain;
+- (void)addConstraint:(id)arg1;
 - (id)stateTransitionFrom:(id)arg1 to:(id)arg2;
 - (id)dependentStatesOfState:(id)arg1;
 - (id)stateWithName:(id)arg1;
@@ -185,7 +189,6 @@
 - (void)_scrollRect:(struct CGRect)arg1 fromLayer:(id)arg2;
 - (void)scrollPoint:(struct CGPoint)arg1;
 - (void)_scrollPoint:(struct CGPoint)arg1 fromLayer:(id)arg2;
-- (void)addConstraint:(id)arg1;
 @property BOOL acceleratesDrawing;
 @property struct CGSize backgroundColorPhase;
 @property struct CGSize sizeRequisition;
@@ -210,10 +213,8 @@
 @property BOOL canDrawConcurrently;
 @property BOOL literalContentsCenter;
 @property BOOL hitTestsAsOpaque;
+@property BOOL hitTestsContentsAlphaChannel;
 @property BOOL allowsHitTesting;
-@property BOOL allowsGroupOpacity;
-@property BOOL allowsEdgeAntialiasing;
-@property BOOL allowsContentsRectCornerMasking;
 - (void)setFlipped:(BOOL)arg1;
 - (BOOL)isFlipped;
 - (BOOL)floating;
@@ -224,6 +225,7 @@
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (void)layerDidChangeDisplay:(unsigned int)arg1;
+- (id)recursiveDescription;
 @property(copy) NSArray *presentationModifiers;
 - (void)removePresentationModifier:(id)arg1;
 - (void)addPresentationModifier:(id)arg1;
@@ -267,17 +269,9 @@
 
 // Remaining properties
 @property(copy) NSArray *constraints; // @dynamic constraints;
-@property unsigned int layoutFlags; // @dynamic layoutFlags;
 @property struct CGSize margin; // @dynamic margin;
-@property struct CGSize spacing; // @dynamic spacing;
 @property(copy) NSArray *stateTransitions; // @dynamic stateTransitions;
 @property(copy) NSArray *states; // @dynamic states;
-@property unsigned int tableColumn; // @dynamic tableColumn;
-@property unsigned int tableColumns; // @dynamic tableColumns;
-@property unsigned int tableRow; // @dynamic tableRow;
-@property unsigned int tableRows; // @dynamic tableRows;
-@property(copy) NSString *wrappedDirection; // @dynamic wrappedDirection;
-@property(copy) NSString *wrappedOrigin; // @dynamic wrappedOrigin;
 
 @end
 

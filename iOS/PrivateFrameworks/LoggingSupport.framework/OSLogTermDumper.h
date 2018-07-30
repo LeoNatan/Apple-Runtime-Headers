@@ -11,13 +11,15 @@
     struct os_trace_blob_s _ob;
     unsigned short _last_attrs;
     unsigned char _ob_slop[1];
-    int _fd;
     _Bool _fancy;
+    int _fd;
+    unsigned char _colorMode;
     unsigned short _cur_attrs;
 }
 
 @property(nonatomic) unsigned short style; // @synthesize style=_cur_attrs;
-@property(readonly, nonatomic, getter=isFancy) _Bool fancy; // @synthesize fancy=_fancy;
+@property(readonly, nonatomic) _Bool isFancy; // @synthesize isFancy=_fancy;
+@property(readonly, nonatomic) unsigned char colorMode; // @synthesize colorMode=_colorMode;
 - (void)putUUID:(unsigned char [16])arg1;
 - (void)puts:(const char *)arg1;
 - (unsigned int)format:(const char *)arg1;
@@ -30,11 +32,12 @@
 - (void)flush:(_Bool)arg1;
 - (void)endEditing;
 - (void)beginEditing;
+- (void)_resetAttrsForNewline;
 - (void)_flushAttrs;
 - (void)startPager;
 - (void)dealloc;
 - (void)close;
-- (id)initWithFd:(int)arg1 forceFancy:(_Bool)arg2;
+- (id)initWithFd:(int)arg1 colorMode:(unsigned char)arg2;
 - (id)init;
 - (void)resetStyle;
 @property(nonatomic) unsigned char fgColor;

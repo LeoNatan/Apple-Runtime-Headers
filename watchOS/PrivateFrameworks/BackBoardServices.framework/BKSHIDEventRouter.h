@@ -21,8 +21,9 @@
 + (id)defaultSystemAppEventRouter;
 + (id)defaultEventRouters;
 + (id)routerWithDestination:(int)arg1;
-@property(readonly, retain) NSSet *hidEventDescriptors; // @synthesize hidEventDescriptors=_hidEventDescriptors;
+@property(readonly) NSSet *hidEventDescriptors; // @synthesize hidEventDescriptors=_hidEventDescriptors;
 @property(readonly) int destination; // @synthesize destination=_destination;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)stringForDestination:(int)arg1;
@@ -34,7 +35,6 @@
 - (_Bool)specifiesDescriptor:(id)arg1;
 - (void)removeHIDEventDescriptors:(id)arg1;
 - (void)addHIDEventDescriptors:(id)arg1;
-- (void)dealloc;
 - (id)initWithDestination:(int)arg1 hidEventDescriptors:(id)arg2;
 - (id)initWithDestination:(int)arg1;
 

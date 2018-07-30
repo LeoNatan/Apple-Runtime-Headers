@@ -20,6 +20,7 @@
 
 + (void)addNSError:(id)arg1 toXPCArgumentDictionary:(id)arg2;
 + (id)defaultManager;
+- (void)deregisterBlocksForService;
 - (void)registerBlocksForService;
 - (id)textStreamWithStreamToken:(long long)arg1;
 - (void)vcMediaStream:(id)arg1 didUpdateVideoConfiguration:(_Bool)arg2 error:(id)arg3 dictionary:(id)arg4;

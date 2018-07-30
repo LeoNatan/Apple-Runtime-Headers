@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class JSValue, JSVirtualMachine, JSWrapperMap, NSString;
+@class JSValue, JSVirtualMachine, NSString;
 
 @interface JSContext : NSObject
 {
@@ -33,7 +33,7 @@
 @property(copy) NSString *name;
 @property(readonly) JSVirtualMachine *virtualMachine;
 @property(readonly) JSValue *globalObject;
-@property(readonly, retain) JSWrapperMap *wrapperMap;
+- (id)wrapperMap;
 @property(retain) JSValue *exception;
 - (id)evaluateScript:(id)arg1 withSourceURL:(id)arg2;
 - (id)evaluateScript:(id)arg1;

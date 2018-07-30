@@ -68,6 +68,7 @@
 - (struct __CFSet *)createDictHashTable:(BOOL)arg1;
 - (BOOL)registerLanguage:(id)arg1 byVendor:(id)arg2;
 @property id <NSSpellServerDelegate> delegate;
+- (void)dealloc;
 
 @end
 

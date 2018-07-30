@@ -8,6 +8,7 @@
 
 @class NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSOneLevelViewBuffer : NSViewBuffer
 {
     NSWindow *_window;

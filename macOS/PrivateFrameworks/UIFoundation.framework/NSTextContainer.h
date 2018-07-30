@@ -35,10 +35,12 @@
     double _minimumWidth;
     long long _layoutOrientation;
     NSDictionary *_attributesForExtraLineFragment;
+    long long _applicationFrameworkContext;
 }
 
 + (void)initialize;
 - (id)description;
+- (void)setLayoutOrientation:(long long)arg1;
 @property(readonly) long long layoutOrientation; // @dynamic layoutOrientation;
 - (BOOL)containsPoint:(struct CGPoint)arg1;
 @property(readonly, getter=isSimpleRectangularTextContainer) BOOL simpleRectangularTextContainer;
@@ -67,13 +69,16 @@
 - (id)initWithSize:(struct CGSize)arg1;
 - (id)initWithContainerSize:(struct CGSize)arg1;
 - (void)_commonInit;
+- (struct NSEdgeInsets)textContainerInsetsForView_iOS:(id)arg1;
 - (double)minimumLineFragmentWidth;
 - (void)setMinimumLineFragmentWidth:(double)arg1;
 - (void)coordinateAccess:(CDUnknownBlockType)arg1;
+- (struct NSEdgeInsets)textContainerInsetsForView:(id)arg1;
 - (void)_containerTextViewFrameChanged:(id)arg1;
 - (void)_resizeAccordingToTextView:(id)arg1;
 - (BOOL)_containerObservesTextViewFrameChanges;
 - (void)_setContainerObservesTextViewFrameChanges:(BOOL)arg1;
+- (struct NSEdgeInsets)textContainerInsetsForView_macOS:(id)arg1;
 
 @end
 

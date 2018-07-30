@@ -8,7 +8,7 @@
 
 #import "IDSServiceDelegate.h"
 
-@class IDSService, NSMutableDictionary, NSString, NSTimer;
+@class BKSProcessAssertion, IDSService, NSMutableDictionary, NSString, NSTimer;
 
 @interface PBBridgeIDSServiceDelegate : NSObject <IDSServiceDelegate>
 {
@@ -17,8 +17,10 @@
     NSTimer *_transportReachabilityTimer;
     NSMutableDictionary *_inflightMessages;
     NSMutableDictionary *_pendingMessages;
+    BKSProcessAssertion *_suspendAssertion;
 }
 
+@property(retain, nonatomic) BKSProcessAssertion *suspendAssertion; // @synthesize suspendAssertion=_suspendAssertion;
 @property(retain, nonatomic) NSMutableDictionary *pendingMessages; // @synthesize pendingMessages=_pendingMessages;
 @property(retain, nonatomic) NSMutableDictionary *inflightMessages; // @synthesize inflightMessages=_inflightMessages;
 @property(retain, nonatomic) NSTimer *transportReachabilityTimer; // @synthesize transportReachabilityTimer=_transportReachabilityTimer;

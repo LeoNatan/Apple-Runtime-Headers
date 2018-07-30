@@ -6,9 +6,11 @@
 
 #import <NewsCore/FCHeadline.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCHeadlineThumbnail, FCInterestToken, FCTopStoriesStyleConfiguration, NSArray, NSDate, NSString, NSURL, NTPBArticleRecord;
+#import "FCHeadlineStocksFields.h"
 
-@interface FCArticleHeadline : FCHeadline
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCInterestToken, FCTopStoriesStyleConfiguration, NSArray, NSDate, NSString, NSURL, NTPBArticleRecord;
+
+@interface FCArticleHeadline : FCHeadline <FCHeadlineStocksFields>
 {
     _Bool _hasThumbnail;
     _Bool _sponsored;
@@ -19,6 +21,9 @@
     _Bool _showMinimalChrome;
     _Bool _boundToContext;
     _Bool _hiddenFromFeeds;
+    _Bool _pressRelease;
+    _Bool _hiddenFromAutoFavorites;
+    _Bool _webEmbedsEnabled;
     _Bool _paid;
     _Bool _canBePurchased;
     NSString *_versionIdentifier;
@@ -29,6 +34,7 @@
     unsigned long long _contentType;
     NSString *_title;
     NSString *_titleCompact;
+    FCHeadlineExperimentalTitleMetadata *_experimentalTitleMetadata;
     NSString *_primaryAudience;
     NSDate *_publishDate;
     long long _publisherArticleVersion;
@@ -84,7 +90,10 @@
 - (id)coverArt;
 - (void)setPaid:(_Bool)arg1;
 - (_Bool)isPaid;
+- (_Bool)webEmbedsEnabled;
 - (long long)minimumNewsVersion;
+- (_Bool)isHiddenFromAutoFavorites;
+- (_Bool)isPressRelease;
 - (_Bool)isHiddenFromFeeds;
 - (_Bool)isBoundToContext;
 - (_Bool)showMinimalChrome;
@@ -145,11 +154,14 @@
 - (void)setPublishDate:(id)arg1;
 - (id)publishDate;
 - (id)primaryAudience;
+- (void)setExperimentalTitleMetadata:(id)arg1;
+- (id)experimentalTitleMetadata;
 - (void)setTitleCompact:(id)arg1;
 - (id)titleCompact;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void)setContentType:(unsigned long long)arg1;
 - (unsigned long long)contentType;
+- (void)setClusterID:(id)arg1;
 - (id)clusterID;
 - (id)referencedArticleID;
 - (void)setArticleID:(id)arg1;
@@ -159,12 +171,17 @@
 - (id)versionIdentifier;
 - (void).cxx_destruct;
 - (id)publisherID;
+@property(readonly, copy, nonatomic) NSString *stocksScoresJSON;
+@property(readonly, copy, nonatomic) NSString *stocksMetadataJSON;
+@property(readonly, copy, nonatomic) NSString *stocksClusterID;
+- (id)stocksFields;
+- (id)publisherSpecifiedArticleIDs;
 - (id)articleRecirculationConfigJSON;
 - (id)backingArticleRecordData;
 - (id)endOfArticleTopicIDs;
 - (id)contentManifestWithContext:(id)arg1;
 - (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
-- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7;
+- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7 experimentalTitleProvider:(id)arg8;
 - (id)init;
 
 @end

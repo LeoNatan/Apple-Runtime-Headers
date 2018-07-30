@@ -9,6 +9,5 @@
 @interface NSObject (MKAbstractAnnotationContainerViewExtras)
 - (BOOL)_mapkit_isInternalAnnotationView;
 - (BOOL)_mapkit_isInternalAnnotation;
-- (BOOL)_mapkit_internalAnnotationAllowsCustomView;
 @end
 

@@ -6,10 +6,30 @@
 
 #import "NSObject.h"
 
-@class HMAccessory, HMMediaSystem, HMMediaSystemRole, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
+#import "HMAccessoryDelegatePrivate.h"
+#import "HMHomeDelegate.h"
+#import "HMHomeDelegatePrivate.h"
+#import "HMHomeManagerDelegate.h"
+#import "HMHomeManagerDelegatePrivate.h"
+#import "HMMediaSystemDelegate.h"
+#import "HMUserDelegatePrivate.h"
 
-@interface CUHomeKitManager : NSObject
+@class HMAccessory, HMHomeManager, HMMediaSystem, HMMediaSystemRole, HMUser, NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+
+@interface CUHomeKitManager : NSObject <HMAccessoryDelegatePrivate, HMHomeDelegate, HMHomeDelegatePrivate, HMHomeManagerDelegate, HMHomeManagerDelegatePrivate, HMMediaSystemDelegate, HMUserDelegatePrivate>
 {
+    int _homeKitPrefsNotifyToken;
+    HMHomeManager *_homeManager;
+    BOOL _homeManagerDidUpdateHomes;
+    struct NSMutableDictionary *_homes;
+    NSDictionary *_selfAccessoryAppData;
+    BOOL _selfAccessoryEnabled;
+    NSUUID *_selfAccessoryRoomID;
+    BOOL _selfAccessoryMediaAccessEnabled;
+    BOOL _selfAccessoryMediaSystemEnabled;
+    BOOL _selfAccessorySiriAccessEnabled;
+    HMUser *_selfAccessoryUser;
+    struct NSMutableDictionary *_users;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
     struct LogCategory *_ucat;
@@ -23,7 +43,6 @@
     CDUnknownBlockType _invalidationHandler;
     CDUnknownBlockType _stateChangedHandler;
     HMAccessory *_selfAccessory;
-    NSDictionary *_selfAccessoryAppData;
     CDUnknownBlockType _selfAccessoryAppDataChangedHandler;
     CDUnknownBlockType _selfAccessoryUpdatedHandler;
     NSString *_selfAccessoryMediaAccessPassword;
@@ -58,19 +77,56 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)user:(id)arg1 didUpdateAssistantAccessControl:(id)arg2 forHome:(id)arg3;
+- (void)accessoryDidUpdateApplicationData:(id)arg1;
+- (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
+- (void)mediaSystem:(id)arg1 didUpdateComponents:(id)arg2;
+- (void)home:(id)arg1 didRemoveMediaSystem:(id)arg2;
+- (void)home:(id)arg1 didAddMediaSystem:(id)arg2;
+- (void)home:(id)arg1 didUpdateMediaPassword:(id)arg2;
+- (void)home:(id)arg1 didUpdateMediaPeerToPeerEnabled:(BOOL)arg2;
+- (void)home:(id)arg1 didUpdateMinimumMediaUserPrivilege:(long long)arg2;
+- (void)home:(id)arg1 didRemoveUser:(id)arg2;
+- (void)home:(id)arg1 didAddUser:(id)arg2;
+- (void)home:(id)arg1 didUpdateRoom:(id)arg2 forAccessory:(id)arg3;
+- (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
+- (void)home:(id)arg1 didAddAccessory:(id)arg2;
+- (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;
+- (void)homeManager:(id)arg1 didAddHome:(id)arg2;
+- (void)homeManagerDidUpdateHomes:(id)arg1;
+- (void)homeManagerDidUpdateDataSyncState:(id)arg1;
+- (id)_selfAccessoryMediaSystemUncached:(id *)arg1;
+- (BOOL)_isOwnerOfHome:(id)arg1;
+- (id)_cuPairingIdentityWithHMFPairingIdentity:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (id)_bestUserAndLabel:(id *)arg1;
+- (void)_findPairedPeerWithContext:(id)arg1 label:(id)arg2 pairingIdentity:(id)arg3 error:(id)arg4;
+- (void)_findPairedPeerWithContext:(id)arg1;
 - (void)_findPairedPeer:(id)arg1 options:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)findPairedPeer:(id)arg1 options:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_getPairingIdentityCompleted:(id)arg1 options:(unsigned long long)arg2 error:(id)arg3 label:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_getPairingIdentityForUserWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_getPairingIdentityForAccessoryWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getPairingIdentityWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateUsers;
 - (void)_updateState;
+- (void)_updateSelfAccessorySiriAccess;
+- (void)_updateSelfAccessoryMediaSystem;
+- (void)_updateSelfAccessoryMediaAccess;
+- (void)_updateSelfAccessoryIfNeeded;
+- (void)_updateHomes;
 - (void)_invalidated;
 - (void)invalidate;
 - (void)_interrupted;
-- (void)_activate;
+- (void)_activateIfNeeded;
 - (void)activate;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

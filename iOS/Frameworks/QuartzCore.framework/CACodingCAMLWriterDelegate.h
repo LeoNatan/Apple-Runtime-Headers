@@ -13,14 +13,17 @@
 __attribute__((visibility("hidden")))
 @interface CACodingCAMLWriterDelegate : NSObject <CAMLWriterDelegate>
 {
-    NSString *_resource_dir;
+    NSString *_resourceDir;
     int _serial;
-    NSString *_image_format;
-    NSDictionary *_image_encode_options;
+    NSString *_imageFormat;
+    NSDictionary *_imageEncodeOptions;
+    _Bool _skipHiddenLayers;
 }
 
-@property(copy) NSDictionary *image_encode_options; // @synthesize image_encode_options=_image_encode_options;
-@property(copy) NSString *image_format; // @synthesize image_format=_image_format;
+@property _Bool skipHiddenLayers; // @synthesize skipHiddenLayers=_skipHiddenLayers;
+@property(copy) NSDictionary *imageEncodeOptions; // @synthesize imageEncodeOptions=_imageEncodeOptions;
+@property(copy) NSString *imageFormat; // @synthesize imageFormat=_imageFormat;
+- (_Bool)CAMLWriter:(id)arg1 shouldEncodeObject:(id)arg2;
 - (id)CAMLWriter:(id)arg1 URLForResource:(id)arg2;
 - (id)CAMLWriter:(id)arg1 typeForObject:(id)arg2;
 - (id)initWithResourceDir:(id)arg1;

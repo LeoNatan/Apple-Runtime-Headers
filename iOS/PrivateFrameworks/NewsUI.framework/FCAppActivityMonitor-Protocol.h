@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @protocol FCAppActivityMonitor <NSObject>
+- (void)removeObserver:(id <FCAppActivityObserving>)arg1;
 - (void)addObserver:(id <FCAppActivityObserving>)arg1;
 @end
 

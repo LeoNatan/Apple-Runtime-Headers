@@ -13,18 +13,18 @@
 @interface CLSContext : CLSObject <CLSRelationable>
 {
     _Bool _active;
+    NSURL *_universalLinkURL;
+    NSString *_title;
+    NSString *_topic;
     NSArray *_path;
+    NSString *_currentActivityID;
+    NSString *_contentStoreIdentifier;
+    long long _displayOrder;
     NSString *_identifier;
     long long _type;
-    long long __authorizationStatus;
     NSString *_storeIdentifier;
     NSString *_storeTeamID;
-    NSString *__currentActivityID;
-    NSString *__topic;
-    NSString *__title;
-    NSURL *__universalLinkURL;
-    long long __displayOrder;
-    NSString *__contentStoreIdentifier;
+    long long _authorizationStatus;
 }
 
 + (id)reservedContextTypes;
@@ -34,24 +34,17 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)conformsToProtocol:(id)arg1;
 + (id)relations;
-@property(copy, nonatomic) NSString *_contentStoreIdentifier; // @synthesize _contentStoreIdentifier=__contentStoreIdentifier;
-@property(nonatomic) long long _displayOrder; // @synthesize _displayOrder=__displayOrder;
-@property(retain, nonatomic) NSURL *_universalLinkURL; // @synthesize _universalLinkURL=__universalLinkURL;
-@property(copy, nonatomic) NSString *_title; // @synthesize _title=__title;
-@property(copy, nonatomic) NSString *_topic; // @synthesize _topic=__topic;
-@property(copy, nonatomic) NSString *_currentActivityID; // @synthesize _currentActivityID=__currentActivityID;
+@property(nonatomic) long long authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
+@property(copy, nonatomic) NSArray *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *storeTeamID; // @synthesize storeTeamID=_storeTeamID;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
-@property(nonatomic) long long _authorizationStatus; // @synthesize _authorizationStatus=__authorizationStatus;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) NSArray *_path; // @synthesize _path;
 - (void).cxx_destruct;
 - (long long)effectiveAuthorizationStatus;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 - (void)setPathAndGenerateObjectID:(id)arg1;
-@property(readonly, nonatomic) NSArray *path; // @dynamic path;
 - (void)resignActive;
 - (void)becomeActive;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
@@ -59,9 +52,9 @@
 @property(nonatomic) long long displayOrder;
 @property(retain, nonatomic) NSURL *universalLinkURL;
 @property(copy, nonatomic) NSString *title;
+@property(copy, nonatomic) NSString *currentActivityID;
 @property(copy, nonatomic) NSString *topic;
 - (void)descendantMatchingIdentifierPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(nonatomic) long long authorizationStatus;
 - (void)removeFromParent;
 - (id)childContextWithIdentifier:(id)arg1;
 - (void)addChildContext:(id)arg1;

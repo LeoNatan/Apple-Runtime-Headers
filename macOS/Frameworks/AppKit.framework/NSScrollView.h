@@ -6,12 +6,13 @@
 
 #import <AppKit/NSView.h>
 
+#import "NSGestureRecognizerDelegate.h"
 #import "NSScrollerImpPairDelegate.h"
 #import "NSTextFinderBarContainer.h"
 
 @class NSClipView, NSColor, NSCursor, NSRulerView, NSScroller, NSString;
 
-@interface NSScrollView : NSView <NSScrollerImpPairDelegate, NSTextFinderBarContainer>
+@interface NSScrollView : NSView <NSScrollerImpPairDelegate, NSGestureRecognizerDelegate, NSTextFinderBarContainer>
 {
     NSScroller *_vScroller;
     NSScroller *_hScroller;
@@ -19,19 +20,19 @@
     NSClipView *_headerClipView;
     NSView *_cornerView;
     id _ruler;
-    struct __SFlags {
-        unsigned int RESERVED:3;
+    struct {
+        unsigned int RESERVED1:3;
         unsigned int unarchiving:1;
         unsigned int registeredForWindowWillClose:1;
         unsigned int findBarPosition:2;
         unsigned int predominantAxisScrolling:1;
         unsigned int hContentElasticity:2;
         unsigned int vContentElasticity:2;
-        unsigned int unused:1;
+        unsigned int RESERVED2:1;
         unsigned int findBarVisible:1;
         unsigned int autoforwardsScrollWheelEvents:1;
         unsigned int autohidesScrollers:1;
-        unsigned int hasCustomLineBorderColor:1;
+        unsigned int RESERVED3:1;
         unsigned int focusRingNeedsRedisplay:1;
         unsigned int skipRemoveSuperviewCheck:1;
         unsigned int doesNotDrawBackground:1;
@@ -52,6 +53,7 @@
     NSRulerView *_verticalRuler;
 }
 
++ (void)_drawCornerWidgetInRect:(struct CGRect)arg1 withSmallSize:(BOOL)arg2;
 + (BOOL)automaticallyNotifiesObserversOfDocumentView;
 + (id)keyPathsForValuesAffectingDocumentView;
 + (struct CGSize)contentSizeForFrameSize:(struct CGSize)arg1 hasHorizontalScroller:(BOOL)arg2 hasVerticalScroller:(BOOL)arg3 borderType:(unsigned long long)arg4;
@@ -93,7 +95,7 @@
 - (void)willRemoveSubview:(id)arg1;
 - (void)removeFromSuperview;
 - (id)_contentView;
-- (id)_headerClipView;
+@property(readonly) NSClipView *_headerClipView;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_conditionallyReflectScrolledClipView;
@@ -197,7 +199,6 @@
 - (void)_layoutLayerPiecesIfNeeded;
 - (void)_updateCornerViewForLayer;
 - (void)_drawCornerViewInRect:(struct CGRect)arg1;
-- (BOOL)_corneViewIsSmallSize;
 - (void)_removeCornerViewForLayer;
 - (void)_setCornerViewForLayer:(id)arg1;
 - (id)_cornerViewForLayer;
@@ -216,9 +217,6 @@
 @property(retain) NSView *documentView;
 - (BOOL)_fixHeaderAndCornerViews;
 - (BOOL)_documentViewWantsHeaderView;
-- (BOOL)_updateGrowBoxForWindowFrameChange;
-- (void)_fixGrowBox;
-- (BOOL)_ownsWindowGrowBox;
 @property long long scrollerKnobStyle;
 @property long long scrollerStyle;
 - (id)hitTest:(struct CGPoint)arg1;
@@ -249,7 +247,6 @@
 - (void)_addUnderTitlebarNotifications;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)scrollRectToVisible:(const struct CGRect *)arg1 fromView:(id)arg2;
-- (BOOL)_desiredLayerSizeMeritsTiledBackingLayer:(struct CGSize)arg1;
 - (void)viewWillDraw;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)_unregisterForWindowWillClose;
@@ -285,7 +282,7 @@
 - (void)_pulseOverlayScrollers;
 - (void)_overlayScroller:(id)arg1 didBecomeShown:(BOOL)arg2;
 - (BOOL)_overlayScrollersShown;
-- (void)_viewDidChangeAppearance:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)viewDidChangeBackingProperties;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)_updateTrackingAreasWithInvalidCursorRects:(BOOL)arg1;
@@ -345,8 +342,7 @@
 - (struct CGRect)_boundsInsetForBorder;
 - (void)setAutoforwardsScrollWheelEvents:(BOOL)arg1;
 - (BOOL)autoforwardsScrollWheelEvents;
-- (id)_lineBorderColor;
-- (void)_setLineBorderColor:(id)arg1;
+@property(retain, nonatomic, setter=_setLineBorderColor:) NSColor *_lineBorderColor;
 - (void)scrollerImpPair:(id)arg1 updateScrollerStyleForNewRecommendedScrollerStyle:(long long)arg2;
 - (void)scrollerImpPair:(id)arg1 setContentAreaNeedsDisplayInRect:(struct CGRect)arg2;
 - (BOOL)scrollerImpPair:(id)arg1 isContentPointVisible:(struct CGPoint)arg2;

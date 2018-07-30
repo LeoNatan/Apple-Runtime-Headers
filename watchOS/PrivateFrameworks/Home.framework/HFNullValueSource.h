@@ -7,14 +7,20 @@
 #import "NSObject.h"
 
 #import "HFCharacteristicValueSource.h"
+#import "HFMediaValueSource.h"
 
-@class NSString;
+@class NSError, NSString;
 
-@interface HFNullValueSource : NSObject <HFCharacteristicValueSource>
+@interface HFNullValueSource : NSObject <HFCharacteristicValueSource, HFMediaValueSource>
 {
 }
 
 + (id)na_identity;
+@property(readonly, nonatomic) NSError *cachedPlaybackStateWriteError;
+@property(readonly, nonatomic) _Bool hasPendingWrites;
+- (id)writePlaybackState:(int)arg1;
+- (int)lastPlaybackStateForProfile;
+@property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)commitTransactionWithReason:(id)arg1;

@@ -8,21 +8,20 @@
 
 #import "ContinuousPageViewDelegate.h"
 
-@class BrowserTabViewItem, ContinuousPageView, NSString;
+@class ContinuousPageView, NSString, TabContentViewController;
 
 __attribute__((visibility("hidden")))
 @interface ContinuousBrowserPageViewController : NSViewController <ContinuousPageViewDelegate>
 {
-    BrowserTabViewItem *_browserTabViewItem;
+    TabContentViewController *_tabContentViewController;
     id _currentItem;
+    double _topContentInset;
 }
 
+@property(nonatomic) double topContentInset; // @synthesize topContentInset=_topContentInset;
 @property(retain, nonatomic) id currentItem; // @synthesize currentItem=_currentItem;
-@property(readonly, nonatomic) __weak BrowserTabViewItem *browserTabViewItem; // @synthesize browserTabViewItem=_browserTabViewItem;
+@property(readonly, nonatomic) __weak TabContentViewController *tabContentViewController; // @synthesize tabContentViewController=_tabContentViewController;
 - (void).cxx_destruct;
-- (void)_didUpdateBrowserWKViewInTabContentView:(id)arg1;
-- (id)_tabContentView;
-- (void)_installContinuousPageViewIfNeeded;
 - (double)topContentInsetForContinuousPageView:(id)arg1;
 - (BOOL)continuousPageView:(id)arg1 pageViewHasFooterBanner:(id)arg2 pageItem:(id)arg3;
 - (BOOL)continuousPageView:(id)arg1 pageViewHasHeaderBanner:(id)arg2 pageItem:(id)arg3;
@@ -36,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (id)continuousPageView:(id)arg1 pageViewForItem:(id)arg2;
 - (id)continuousPageView:(id)arg1 itemAfter:(id)arg2;
 - (id)continuousPageView:(id)arg1 itemBefore:(id)arg2;
-- (void)didMoveToBrowserTabViewItem:(id)arg1;
 - (void)exitContinuousMode;
 - (void)loadItem:(id)arg1;
 - (void)resetAllPageWithHeaderViewControllers;
@@ -44,7 +42,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain, nonatomic) ContinuousPageView *continuousPageView;
 - (void)viewDidAppear;
 - (void)loadView;
-- (id)initWithBrowserTabViewItem:(id)arg1;
+- (id)initWithTabContentViewController:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

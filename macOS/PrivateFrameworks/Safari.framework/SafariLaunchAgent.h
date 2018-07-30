@@ -6,14 +6,33 @@
 
 #import "NSObject.h"
 
+#import "AuthenticationSessionRequestServerDelegate.h"
 #import "SafariLaunchAgentProtocol.h"
 
+@class AuthenticationSessionRequestServer, NSString;
+
 __attribute__((visibility("hidden")))
-@interface SafariLaunchAgent : NSObject <SafariLaunchAgentProtocol>
+@interface SafariLaunchAgent : NSObject <AuthenticationSessionRequestServerDelegate, SafariLaunchAgentProtocol>
 {
+    AuthenticationSessionRequestServer *_authenticationSessionRequestServer;
+    unsigned long long _requestsWaitingToBeEnqueued;
 }
 
+- (void).cxx_destruct;
+- (void)_tellSafariAuthenticationSessionRequestsAreAvailable;
+- (void)authenticationSessionRequestServerDidFinishAllRequests:(id)arg1;
+- (void)authenticationSessionRequestServerNeedsClientToReconnect:(id)arg1;
+- (void)didFulfillAuthenticationSessionRequest:(id)arg1 withCallbackURL:(id)arg2 error:(id)arg3;
+- (void)connectToAuthenticationSessionRequestClientWithEndpoint:(id)arg1;
+- (void)askSafariToCancelAuthenticationSessionWithUUID:(id)arg1;
+- (void)askSafariToBeginAuthenticationSessionWithUUID:(id)arg1 url:(id)arg2 callbackURLScheme:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)launchSafariToURL:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

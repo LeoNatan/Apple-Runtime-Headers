@@ -19,16 +19,15 @@
 }
 
 + (id)formattedTextWithString:(id)arg1;
-@property unsigned long long maxLines; // @synthesize maxLines=_maxLines;
-@property(retain) NSString *string; // @synthesize string=_string;
-@property long long verticalTextAlignment; // @synthesize verticalTextAlignment=_verticalTextAlignment;
-@property long long color; // @synthesize color=_color;
-@property _Bool isEmphasized; // @synthesize isEmphasized=_isEmphasized;
-@property _Bool isBold; // @synthesize isBold=_isBold;
+@property(nonatomic) unsigned long long maxLines; // @synthesize maxLines=_maxLines;
+@property(retain, nonatomic) NSString *string; // @synthesize string=_string;
+@property(nonatomic) long long verticalTextAlignment; // @synthesize verticalTextAlignment=_verticalTextAlignment;
+@property(nonatomic) long long color; // @synthesize color=_color;
+@property(nonatomic) _Bool isEmphasized; // @synthesize isEmphasized=_isEmphasized;
+@property(nonatomic) _Bool isBold; // @synthesize isBold=_isBold;
 - (void).cxx_destruct;
 - (_Bool)hasContent;
 - (id)description;
-- (id)observableProperties;
 
 @end
 

@@ -7,12 +7,14 @@
 #import "NSObject.h"
 
 #import "DEDSecureArchiving.h"
+#import "NSCopying.h"
 
-@class NSString;
+@class DEDExtensionIdentifier, NSString;
 
-@interface DEDExtension : NSObject <DEDSecureArchiving>
+@interface DEDExtension : NSObject <DEDSecureArchiving, NSCopying>
 {
     NSString *_identifier;
+    DEDExtensionIdentifier *_dedExtensionIdentifier;
     NSString *_name;
 }
 
@@ -20,8 +22,10 @@
 + (id)extensionWithDEExtension:(id)arg1;
 + (id)extensionWithDicionary:(id)arg1;
 @property(retain) NSString *name; // @synthesize name=_name;
+@property(retain) DEDExtensionIdentifier *dedExtensionIdentifier; // @synthesize dedExtensionIdentifier=_dedExtensionIdentifier;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (id)serialize;
 

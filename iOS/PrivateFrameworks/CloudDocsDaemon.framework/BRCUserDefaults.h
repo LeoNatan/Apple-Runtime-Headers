@@ -25,6 +25,8 @@
 + (id)defaultsForMangledID:(id)arg1;
 + (id)_userDefaultsManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double eventMetricTimeout;
+@property(readonly, nonatomic) unsigned long long computeEvictableBatchSize;
 @property(readonly, nonatomic) unsigned long long applyCountToSignalFaultsLive;
 @property(readonly, nonatomic) unsigned long long fieldsToMoveOutOfTrashMask;
 @property(readonly, nonatomic) unsigned long long utiCacheSize;

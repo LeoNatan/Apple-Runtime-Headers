@@ -6,12 +6,15 @@
 
 #import "CKBrowserViewControllerSendDelegate.h"
 
-@class NSURL, UIViewController<CKPluginEntryViewController>;
+@class NSData, NSString, NSURL, UIViewController<CKPluginEntryViewController>;
 
 @protocol CKPhotoBrowserViewControllerSendDelegate <CKBrowserViewControllerSendDelegate>
+- (void)stageAssetArchive:(NSData *)arg1 skipShelf:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (NSURL *)workingDraftDirForPluginIdentifier:(NSString *)arg1;
 - (NSURL *)workingDirForDraft;
 - (void)showPhotosBrowser;
 - (void)dismissEntryViewShelf;
+- (void)showEntryViewShelf:(UIViewController<CKPluginEntryViewController> *)arg1 forPlugin:(NSString *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)showEntryViewShelf:(UIViewController<CKPluginEntryViewController> *)arg1;
 @end
 

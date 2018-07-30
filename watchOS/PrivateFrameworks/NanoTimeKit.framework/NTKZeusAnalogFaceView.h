@@ -6,21 +6,22 @@
 
 #import <NanoTimeKit/NTKSpriteKitAnalogFaceView.h>
 
-@class NTKZeusAnalogScene;
+@class NTKZeusAnalogScene, NTKZeusColorPalette, UIView;
 
 @interface NTKZeusAnalogFaceView : NTKSpriteKitAnalogFaceView
 {
     _Bool _isEditing;
-    _Bool _showHandsInColorEditing;
+    _Bool _isHandsVisibleInColorEditing;
+    NTKZeusColorPalette *_palette;
+    UIView *_cornerView;
 }
 
++ (id)_supportedComplicationSlots;
+- (void).cxx_destruct;
 - (_Bool)_timeViewBehindContentForEditMode:(int)arg1;
 - (struct CGPoint)_timeTravelStatusModuleCenter;
 - (void)_prepareForStatusChange:(_Bool)arg1;
 - (float)_verticalPaddingForStatusBar;
-- (id)_handInlayColorForFaceColor:(unsigned int)arg1;
-- (id)_handStrokeColorForFaceColor:(unsigned int)arg1;
-- (id)_secondHandColorForFaceColor:(unsigned int)arg1;
 - (float)_numbersAlphaForEditMode:(int)arg1;
 - (float)_handAlphaForEditing:(_Bool)arg1;
 - (float)_secondHandAlphaForDensity:(unsigned int)arg1 isEditing:(_Bool)arg2;
@@ -33,14 +34,19 @@
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_updateDateComplicationPositionIfNecessary;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
+- (void)_unloadSnapshotContentViews;
+- (void)_loadSnapshotContentViews;
+- (void)setOverrideDate:(id)arg1 duration:(double)arg2;
+- (struct CGSize)_sceneSize;
 - (void)_prepareTimeViewForReuse:(id)arg1;
 - (void)_configureReusableTimeView:(id)arg1;
 - (void)_loadScene;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, nonatomic) NTKZeusAnalogScene *analogScene; // @dynamic analogScene;

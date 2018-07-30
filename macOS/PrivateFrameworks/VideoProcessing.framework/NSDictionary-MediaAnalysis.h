@@ -11,6 +11,7 @@
 - (id)vcp_fingerprint;
 - (id)vcp_results;
 - (double)vcp_quality;
+- (unsigned long long)vcp_statsFlags;
 - (unsigned long long)vcp_flags;
 - (unsigned long long)vcp_types;
 - (id)vcp_dateAnalyzed;

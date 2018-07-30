@@ -6,11 +6,12 @@
 
 #import <ChatKit/CKRecipientSelectionController.h>
 
+#import "TPPillViewDelegate.h"
 #import "UITextFieldDelegate.h"
 
 @class NSArray, NSString;
 
-@interface CKComposeRecipientSelectionController : CKRecipientSelectionController <UITextFieldDelegate>
+@interface CKComposeRecipientSelectionController : CKRecipientSelectionController <UITextFieldDelegate, TPPillViewDelegate>
 {
     CDUnknownBlockType _sendBlock;
 }
@@ -30,6 +31,7 @@
 - (void)addRecipient:(id)arg1;
 @property(readonly, nonatomic) NSArray *proposedRecipients;
 @property(readonly, nonatomic) NSArray *expandedRecipients;
+- (void)_updatePillViewIfNeededIfIsNewConversation:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)dealloc;
 

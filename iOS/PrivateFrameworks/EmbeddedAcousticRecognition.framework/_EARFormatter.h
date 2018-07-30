@@ -17,6 +17,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)formattedRecognitionWithNBestList:(id)arg1;
+- (id)formattedStringWithStrings:(id)arg1 preToPostItnArray:(id)arg2 task:(id)arg3;
+- (id)formattedStringWithStrings:(id)arg1 preToPostItnArray:(id)arg2;
 - (id)formattedStringWithStrings:(id)arg1 task:(id)arg2;
 - (id)formattedStringWithStrings:(id)arg1;
 - (basic_string_23d93216)getOrthography:(const vector_2f7ba0dc *)arg1;

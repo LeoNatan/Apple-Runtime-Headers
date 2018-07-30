@@ -6,7 +6,7 @@
 
 #import "UIScrollView.h"
 
-@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary;
+@class NSArray, NSHashTable, NSIndexPath, NSMutableArray, NSMutableDictionary;
 
 @interface PUICTiledLayoutView : UIScrollView
 {
@@ -17,9 +17,11 @@
     NSMutableDictionary *__tileByClassQueue;
     unsigned int _beginUpdatesCount;
     NSIndexPath *_pinnedIndexPath;
+    NSHashTable *_ownedTileViews;
     CDStruct_ec62c677 __visibleRange;
 }
 
+@property(retain, nonatomic) NSHashTable *ownedTileViews; // @synthesize ownedTileViews=_ownedTileViews;
 @property(nonatomic) CDStruct_ec62c677 _visibleRange; // @synthesize _visibleRange=__visibleRange;
 @property(retain, nonatomic) NSIndexPath *pinnedIndexPath; // @synthesize pinnedIndexPath=_pinnedIndexPath;
 @property(nonatomic) unsigned int beginUpdatesCount; // @synthesize beginUpdatesCount=_beginUpdatesCount;

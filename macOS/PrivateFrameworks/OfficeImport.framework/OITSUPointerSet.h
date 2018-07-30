@@ -6,7 +6,6 @@
 
 #import "NSSet.h"
 
-__attribute__((visibility("hidden")))
 @interface OITSUPointerSet : NSSet
 {
     struct __CFSet *mSet;

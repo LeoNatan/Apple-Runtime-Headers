@@ -18,7 +18,6 @@
 - (id)colorSyncModeForGrayOverview;
 - (id)colorSyncModeForRGBOverview;
 - (id)initWithDictionary:(id)arg1 andScanner:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 @property unsigned long long documentType;
 @property(readonly) struct CGSize documentSize;

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OS_dispatch_queue_serial : OS_dispatch_queue <OS_dispatch_queue_serial>
 {
 }

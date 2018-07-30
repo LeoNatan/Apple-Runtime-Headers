@@ -14,8 +14,12 @@
     NSMutableDictionary *_settings;
 }
 
++ (void)setLogPeakRenderCIUsuage:(_Bool)arg1;
++ (_Bool)logPeakRenderCIUsuage;
 + (void)setImageLayerDebug:(_Bool)arg1;
 + (_Bool)imageLayerDebug;
++ (void)setPipelineSourceURL:(id)arg1;
++ (id)pipelineSourceURL;
 + (void)setPlatformHasWideColor:(_Bool)arg1;
 + (_Bool)platformHasWideColor;
 + (void)setRenderVideoLive:(_Bool)arg1;

@@ -6,20 +6,42 @@
 
 #import <Vision/VNImageBasedRequest.h>
 
-@interface VNCreateSceneprintRequest : VNImageBasedRequest
+#import "VNImageIdealImageSizeProviding.h"
+
+@class NSArray, NSString, VNCanceller;
+
+@interface VNCreateSceneprintRequest : VNImageBasedRequest <VNImageIdealImageSizeProviding>
 {
-    _Bool _returnAllResults;
+    VNCanceller *_canceller;
 }
 
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
-@property(nonatomic) _Bool returnAllResults; // @synthesize returnAllResults=_returnAllResults;
-- (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
++ (Class)configurationClass;
++ (const CDStruct_7d93034e *)revisionAvailability;
+- (void).cxx_destruct;
+- (_Bool)internalCancelInContext:(id)arg1 error:(id *)arg2;
+- (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)newDefaultDetectorOptionsForRequestRevision:(unsigned long long)arg1;
 - (void)applyConfigurationOfRequest:(id)arg1;
-- (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
+- (_Bool)hasCancellationHook;
+- (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
+@property(nonatomic) unsigned long long imageCropAndScaleOption;
+@property(nonatomic) _Bool useCenterTileOnly;
+@property(nonatomic) _Bool returnAllResults;
 - (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
+- (id)_applicableDetectorAndReturnError:(id *)arg1;
+- (id)_applicableDetectorForRequestRevision:(unsigned long long)arg1 applicableDetectorOptions:(id *)arg2 error:(id *)arg3;
+- (id)_detectorTypeForRequestRevision:(unsigned long long)arg1 options:(id)arg2 error:(id *)arg3;
+@property(readonly) NSArray *supportedImageSizeSet;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

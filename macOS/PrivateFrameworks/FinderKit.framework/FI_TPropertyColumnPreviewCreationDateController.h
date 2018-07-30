@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FinderKit/FI_TPropertyCreationDateController.h>
+#import <FinderKit/FI_TPropertyColumnPreviewDateTextFieldController.h>
 
 __attribute__((visibility("hidden")))
-@interface FI_TPropertyColumnPreviewCreationDateController : FI_TPropertyCreationDateController
+@interface FI_TPropertyColumnPreviewCreationDateController : FI_TPropertyColumnPreviewDateTextFieldController
 {
 }
 

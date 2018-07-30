@@ -26,9 +26,17 @@
     NSURL *_authenticationURL;
     NSURL *_appStoreRoomURL;
     NSArray *_appAdamIDs;
+    NSString *_providerArtworkTemplateURL;
+    NSString *_providerAppArtworkTemplateURL;
+    NSNumber *_appPlacementPosition;
+    NSString *_userToken;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *userToken; // @synthesize userToken=_userToken;
+@property(copy, nonatomic) NSNumber *appPlacementPosition; // @synthesize appPlacementPosition=_appPlacementPosition;
+@property(copy, nonatomic) NSString *providerAppArtworkTemplateURL; // @synthesize providerAppArtworkTemplateURL=_providerAppArtworkTemplateURL;
+@property(copy, nonatomic) NSString *providerArtworkTemplateURL; // @synthesize providerArtworkTemplateURL=_providerArtworkTemplateURL;
 @property(copy, nonatomic) NSArray *appAdamIDs; // @synthesize appAdamIDs=_appAdamIDs;
 @property(copy, nonatomic) NSURL *appStoreRoomURL; // @synthesize appStoreRoomURL=_appStoreRoomURL;
 @property(copy, nonatomic) NSURL *authenticationURL; // @synthesize authenticationURL=_authenticationURL;

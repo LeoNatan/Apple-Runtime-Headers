@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABDateCollectionViewItem.h>
 
-__attribute__((visibility("hidden")))
 @interface ABBirthdayCollectionViewItem : ABDateCollectionViewItem
 {
 }

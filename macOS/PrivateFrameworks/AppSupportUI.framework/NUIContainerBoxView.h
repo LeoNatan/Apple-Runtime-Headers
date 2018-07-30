@@ -26,10 +26,10 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)arrangedDescription;
-- (BOOL)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
+- (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
 - (struct CGSize)calculateArrangedSizeFittingSize:(struct CGSize)arg1;
 - (BOOL)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(BOOL)arg1;
-- (void)populateBoxArrangementCells:(vector_0b89710d *)arg1;
+- (void)populateBoxArrangementCells:(vector_eb457d57 *)arg1;
 - (long long)_effectiveVerticalAlignmentForArrangedSubview:(id)arg1;
 - (long long)_effectiveHorizontalAlignmentForArrangedSubview:(id)arg1;
 - (void)setBaselineRelativeArrangement:(BOOL)arg1;

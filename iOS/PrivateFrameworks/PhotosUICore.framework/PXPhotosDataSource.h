@@ -26,7 +26,6 @@
     NSMutableDictionary *_infoForAssetCollection;
     _Bool _backgroundFetchOriginSectionChanged;
     _Bool _needToStartBackgroundFetch;
-    _Bool _isBackgroundFetching;
     _Bool _interruptBackgroundFetch;
     NSMutableDictionary *_pendingResultsByAssetCollection;
     NSObject<OS_dispatch_queue> *_pendingResultsIsolationQueue;
@@ -38,8 +37,12 @@
     NSMutableDictionary *_weightByAssetCache;
     NSArray *_filterPersons;
     _Bool _hideHiddenAssets;
+    NSArray *_fetchPropertySets;
+    long long _curationType;
     _Bool _reverseSortOrder;
-    _Bool _curate;
+    _Bool _wantsCurationByDefault;
+    _Bool _isBackgroundFetching;
+    _Bool _allowNextChangeDeliveryOnAllRunLoopModes;
     unsigned long long _options;
     unsigned long long _versionIdentifier;
     PHFetchResult *_collectionListFetchResult;
@@ -54,9 +57,11 @@
 
 + (id)_emptyAssetsFetchResult;
 + (id)_curationSharedBackgroundQueue;
+@property(nonatomic) _Bool allowNextChangeDeliveryOnAllRunLoopModes; // @synthesize allowNextChangeDeliveryOnAllRunLoopModes=_allowNextChangeDeliveryOnAllRunLoopModes;
+@property(readonly, nonatomic) _Bool isBackgroundFetching; // @synthesize isBackgroundFetching=_isBackgroundFetching;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic, setter=_setPreviousCollectionsCount:) unsigned long long _previousCollectionsCount; // @synthesize _previousCollectionsCount=__previousCollectionsCount;
-@property(nonatomic) _Bool curate; // @synthesize curate=_curate;
+@property(nonatomic) _Bool wantsCurationByDefault; // @synthesize wantsCurationByDefault=_wantsCurationByDefault;
 @property(nonatomic) _Bool reverseSortOrder; // @synthesize reverseSortOrder=_reverseSortOrder;
 @property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(copy, nonatomic) NSSet *allowedUUIDs; // @synthesize allowedUUIDs=_allowedUUIDs;
@@ -96,6 +101,13 @@
 @property(readonly, nonatomic) _Bool isEmpty;
 - (id)uncuratedAssetsInSection:(long long)arg1;
 - (id)curatedAssetsInSection:(long long)arg1;
+- (id)uncuratedAssetsForAssetCollection:(id)arg1;
+- (id)curatedAssetsForAssetCollection:(id)arg1;
+- (_Bool)isCuratedAssetsFutilelyForAssetCollection:(id)arg1;
+- (_Bool)isCuratedAssetsEmptyForAssetCollection:(id)arg1;
+- (_Bool)hasCurationForAssetCollection:(id)arg1;
+- (_Bool)wantsCurationForAssetCollection:(id)arg1;
+@property(readonly, nonatomic) _Bool wantsCurationForFirstAssetCollection;
 - (void)refetchResultsForAssetCollection:(id)arg1;
 - (void)clearResultsForAssetCollection:(id)arg1;
 - (void)stopExcludingAssets:(id)arg1;
@@ -107,6 +119,7 @@
 - (id)indexPathForLastAsset;
 - (id)indexPathForFirstAsset;
 - (id)assetReferenceAtIndexPath:(id)arg1;
+- (id)assetReferenceForAsset:(id)arg1 containedInAssetCollectionWithType:(long long)arg2;
 - (id)indexPathForAssetReference:(id)arg1;
 - (id)indexPathForAssetWithUUID:(id)arg1 orBurstIdentifier:(id)arg2 hintIndexPath:(id)arg3 hintCollection:(id)arg4;
 - (long long)indexForAsset:(id)arg1 inCollection:(id)arg2 hintIndex:(long long)arg3;
@@ -127,8 +140,7 @@
 - (id)firstAssetCollection;
 - (long long)numberOfItemsInSection:(long long)arg1;
 - (long long)numberOfSections;
-@property(readonly, nonatomic) _Bool curatedIsEmpty;
-@property(readonly, nonatomic) _Bool curatedFutilely;
+- (void)setWantsCuration:(_Bool)arg1 forAssetCollection:(id)arg2;
 - (void)_incrementVersionIdentifier;
 @property(readonly, nonatomic) _Bool isImmutable;
 - (void)pauseChangeDeliveryFor:(double)arg1;
@@ -136,7 +148,6 @@
 - (void)registerChangeObserver:(id)arg1;
 - (id)_sectionCache;
 - (unsigned long long)_cachedSectionForAssetCollection:(id)arg1;
-@property(readonly, nonatomic) long long estimatedAllCount;
 @property(readonly, nonatomic) long long estimatedOtherCount;
 @property(readonly, nonatomic) long long estimatedVideosCount;
 @property(readonly, nonatomic) long long estimatedPhotosCount;

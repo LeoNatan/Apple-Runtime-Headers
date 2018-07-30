@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)supportedContentTypes;
 + (Class)transformerClass;
 - (void).cxx_destruct;
+- (struct CGSize)imageSize;
 - (id)draggableView;
 - (id)parallaxView;
 - (void)transitionWillFinish:(_Bool)arg1 didComplete:(_Bool)arg2;

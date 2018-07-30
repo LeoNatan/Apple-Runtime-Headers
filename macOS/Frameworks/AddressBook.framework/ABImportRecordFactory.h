@@ -8,7 +8,6 @@
 
 @class ABRecordContext, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ABImportRecordFactory : NSObject
 {
     ABRecordContext *_recordContext;

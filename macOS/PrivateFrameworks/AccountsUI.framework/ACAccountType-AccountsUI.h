@@ -10,7 +10,6 @@
 + (id)chineseAccountTypes;
 + (id)internetAccountTypes;
 + (id)secondaryAccountTypes;
-+ (id)socialAccountTypes;
 + (id)primaryAccountTypes;
 + (id)accountTypeForHostname:(id)arg1;
 - (id)localizedName;
@@ -19,7 +18,6 @@
 - (id)userNameFieldLabel;
 - (BOOL)isSecondary;
 - (BOOL)isPrimary;
-- (BOOL)isSocial;
 - (id)logoXL;
 - (id)logo;
 - (id)squareIcon;

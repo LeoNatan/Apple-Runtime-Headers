@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSString, NSURL, WAKWindow, WebFixedPositionContent, WebIndicateLayer, WebInspector, WebNodeHighlight, WebPreferences, WebVideoFullscreenController;
+@class NSMutableSet, NSString, NSURL, WAKWindow, WebFixedPositionContent, WebFullScreenController, WebIndicateLayer, WebInspector, WebNodeHighlight, WebPreferences, WebVideoFullscreenController;
 
 __attribute__((visibility("hidden")))
 @interface WebViewPrivate : NSObject
@@ -88,11 +88,11 @@ __attribute__((visibility("hidden")))
     struct RefPtr<LayerFlushController, WTF::DumbPtrTraits<LayerFlushController>> layerFlushController;
     struct CGSize lastLayoutSize;
     WebVideoFullscreenController *fullscreenController;
+    WebFullScreenController *newFullscreenController;
     WebIndicateLayer *indicateLayer;
     id <WebGeolocationProvider> _geolocationProvider;
     id <WebDeviceOrientationProvider> m_deviceOrientationProvider;
     id <WebNotificationProvider> _notificationProvider;
-    id <WebUserMediaClient> m_userMediaClient;
     struct RefPtr<WebCore::HistoryItem, WTF::DumbPtrTraits<WebCore::HistoryItem>> _globalHistoryItem;
     _Bool interactiveFormValidationEnabled;
     int validationMessageTimerMagnification;

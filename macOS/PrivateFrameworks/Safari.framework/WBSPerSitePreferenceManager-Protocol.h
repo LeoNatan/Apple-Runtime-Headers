@@ -6,17 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSSet, NSString, WBSPerSitePreference, WBSPerSitePreferenceTimeout, WBSPerSitePreferenceValue;
+@class NSArray, NSSet, NSString, WBSPerSitePreference, WBSPerSitePreferenceTimeout;
 
 @protocol WBSPerSitePreferenceManager <NSObject>
 @property(nonatomic) __weak id <WBSPerSitePreferenceManagerDelegate> delegate;
 - (void)removePreferenceValuesForDomains:(NSSet *)arg1 fromPreference:(WBSPerSitePreference *)arg2 completionHandler:(void (^)(BOOL))arg3;
 - (void)getAllDomainsConfiguredForPreference:(WBSPerSitePreference *)arg1 usingBlock:(void (^)(NSSet *))arg2;
-- (void)setDefaultValue:(WBSPerSitePreferenceValue *)arg1 ofPreference:(WBSPerSitePreference *)arg2 completionHandler:(void (^)(BOOL))arg3;
-- (void)getDefaultPreferenceValueForPreference:(WBSPerSitePreference *)arg1 completionHandler:(void (^)(WBSPerSitePreferenceValue *))arg2;
-- (void)getValueOfPreference:(WBSPerSitePreference *)arg1 forDomain:(NSString *)arg2 withTimeout:(WBSPerSitePreferenceTimeout *)arg3 usingBlock:(void (^)(WBSPerSitePreferenceValue *, BOOL))arg4;
-- (void)setValue:(WBSPerSitePreferenceValue *)arg1 ofPreference:(WBSPerSitePreference *)arg2 forDomain:(NSString *)arg3 completionHandler:(void (^)(BOOL))arg4;
+- (NSString *)localizedStringForValue:(id)arg1 inPreference:(WBSPerSitePreference *)arg2;
+- (void)setDefaultValue:(id)arg1 ofPreference:(WBSPerSitePreference *)arg2 completionHandler:(void (^)(BOOL))arg3;
+- (void)getDefaultPreferenceValueForPreference:(WBSPerSitePreference *)arg1 completionHandler:(void (^)(id))arg2;
+- (void)getValueOfPreference:(WBSPerSitePreference *)arg1 forDomain:(NSString *)arg2 withTimeout:(WBSPerSitePreferenceTimeout *)arg3 usingBlock:(void (^)(id, BOOL))arg4;
+- (void)setValue:(id)arg1 ofPreference:(WBSPerSitePreference *)arg2 forDomain:(NSString *)arg3 completionHandler:(void (^)(BOOL))arg4;
 - (NSArray *)valuesForPreference:(WBSPerSitePreference *)arg1;
 - (NSArray *)preferences;
+
+@optional
+- (BOOL)preferenceAppliesToHighLevelDomains:(WBSPerSitePreference *)arg1;
 @end
 

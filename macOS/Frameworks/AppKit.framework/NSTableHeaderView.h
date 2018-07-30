@@ -6,9 +6,11 @@
 
 #import <AppKit/NSView.h>
 
-@class NSImage, NSTableView;
+#import "NSViewToolTipOwner.h"
 
-@interface NSTableHeaderView : NSView
+@class NSImage, NSString, NSTableView;
+
+@interface NSTableHeaderView : NSView <NSViewToolTipOwner>
 {
     NSTableView *_tableView;
     long long _resizedColumn;
@@ -24,7 +26,8 @@
     unsigned int _wantsTranslucency:1;
     unsigned int _addedBlurToClipView:1;
     unsigned int _usedNewHeight:1;
-    unsigned int _reserved:24;
+    unsigned int _drawsBackground:1;
+    unsigned int _reserved:23;
     BOOL _skipDrawingSeparator;
     id _viewDataX;
 }
@@ -57,6 +60,7 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidMoveToSuperview;
+- (unsigned long long)_vibrantBlendingStyleForSubtree;
 - (void)_removeBackgroundView;
 - (void)_setBackgroundView:(id)arg1;
 - (id)_backgroundView;
@@ -66,9 +70,10 @@
 - (void)_addOrRemoveBlurViewAsNecessary;
 - (id)_makeBlurBackgroundViewWithFrame:(struct CGRect)arg1;
 - (BOOL)_hasTranslucency;
-- (BOOL)_canAddBlurView;
 - (void)_setWantsTranslucency:(BOOL)arg1;
 - (BOOL)_wantsTranslucency;
+- (BOOL)drawsBackground;
+- (void)setDrawsBackground:(BOOL)arg1;
 - (id)_preferredAppearance;
 - (void)_viewBasedRawRect:(struct CGRect)arg1;
 - (void)_switchToNonViewBasedIfNeeded;
@@ -109,7 +114,6 @@
 - (void)_doModifySelectionWithEvent:(id)arg1 onColumn:(long long)arg2;
 - (void)_drawColumnHeaderWithIndexes:(id)arg1;
 - (BOOL)_drawingEndSeparator;
-- (id)_rectsForMultiClippedContentDrawing;
 - (BOOL)_hasRowHeaderColumn;
 - (struct CGRect)_rowHeaderScrollableContentVisibleRect;
 - (struct CGRect)_rowHeaderFixedContentRect;
@@ -125,7 +129,7 @@
 - (id)_preparedHeaderCellAtColumn:(long long)arg1;
 - (void)drawBackgroundOverhangInRect:(struct CGRect)arg1;
 - (void)_drawHeaderFillerInRect:(struct CGRect)arg1 matchLastState:(BOOL)arg2;
-- (id)_vibrancyFilter;
+- (int)_vibrancyBlendMode;
 - (BOOL)allowsVibrancy;
 - (id)_preparedHeaderFillerCell;
 - (void)_tableView:(id)arg1 didRemoveTableColumnAtIndex:(long long)arg2;
@@ -152,6 +156,12 @@
 - (id)accessibilityRoleAttribute;
 - (unsigned long long)accessibilityColumnForChild:(id)arg1;
 - (id)accessibilityChildForColumn:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

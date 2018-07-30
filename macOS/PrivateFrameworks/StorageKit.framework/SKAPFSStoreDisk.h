@@ -20,7 +20,6 @@
 - (id)container;
 - (BOOL)canResize;
 - (id)description;
-- (BOOL)matchesDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)minimalDictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;

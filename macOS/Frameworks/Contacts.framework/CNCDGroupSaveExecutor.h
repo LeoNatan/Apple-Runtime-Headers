@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     CNCDSaveContext *_saveContext;
 }
 
+@property(readonly, nonatomic) CNCDSaveContext *saveContext; // @synthesize saveContext=_saveContext;
 - (void).cxx_destruct;
 - (void)enumerateAddedGroups:(CDUnknownBlockType)arg1;
 - (void)updateGroupSnapshots;

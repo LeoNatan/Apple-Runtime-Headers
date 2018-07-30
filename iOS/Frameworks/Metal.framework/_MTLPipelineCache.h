@@ -14,8 +14,10 @@
 {
     _Bool _writable;
     struct MTLCompilerCache *_compilerCache;
+    _Bool _disableRunTimeCompilation;
 }
 
+@property _Bool disableRunTimeCompilation; // @synthesize disableRunTimeCompilation=_disableRunTimeCompilation;
 @property(readonly) _Bool writable; // @synthesize writable=_writable;
 - (void)write;
 @property(readonly) struct MTLCompilerCache *cache; // @synthesize cache=_compilerCache;

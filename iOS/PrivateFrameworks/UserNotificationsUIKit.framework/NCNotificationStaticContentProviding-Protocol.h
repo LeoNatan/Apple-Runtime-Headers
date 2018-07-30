@@ -9,6 +9,9 @@
 @class NSArray, NSDate, NSString, NSTimeZone, UIImage;
 
 @protocol NCNotificationStaticContentProviding <NSObject>
+@property(readonly, copy, nonatomic) NSArray *currentActions;
+@property(copy, nonatomic) NSArray *overriddenActions;
+@property(readonly, nonatomic) unsigned long long coalesceCount;
 @property(readonly, nonatomic) _Bool showsTextInputOnAppearance;
 @property(readonly, nonatomic) unsigned long long messageNumberOfLines;
 @property(readonly, nonatomic) NSArray *interfaceActions;
@@ -17,6 +20,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType clearAction;
 @property(readonly, copy, nonatomic) CDUnknownBlockType cancelAction;
 @property(readonly, nonatomic) UIImage *thumbnail;
+@property(readonly, copy, nonatomic) NSString *summaryText;
 @property(readonly, copy, nonatomic) NSString *secondaryText;
 @property(readonly, copy, nonatomic) NSString *primarySubtitleText;
 @property(readonly, copy, nonatomic) NSString *primaryText;
@@ -24,7 +28,7 @@
 @property(readonly, nonatomic, getter=isDateAllDay) _Bool dateAllDay;
 @property(readonly, copy, nonatomic) NSDate *date;
 @property(readonly, copy, nonatomic) NSString *title;
-@property(readonly, nonatomic) UIImage *icon;
+@property(readonly, nonatomic) NSArray *icons;
 @property(nonatomic) __weak id <NCNotificationStaticContentProvidingDelegate> delegate;
 @end
 

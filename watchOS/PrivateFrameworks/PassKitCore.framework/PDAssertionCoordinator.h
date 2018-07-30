@@ -7,23 +7,42 @@
 #import <PassKitCore/PDXPCService.h>
 
 #import "PDAssertionCoordinatorExportedInterface.h"
+#import "PDAssertionRequestDelegate.h"
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PKEntitlementWhitelist;
 
-@interface PDAssertionCoordinator : PDXPCService <PDAssertionCoordinatorExportedInterface>
+@interface PDAssertionCoordinator : PDXPCService <PDAssertionRequestDelegate, PDAssertionCoordinatorExportedInterface>
 {
     NSMutableDictionary *_assertionsByType;
     NSObject<OS_dispatch_queue> *_coordinatorSerialQueue;
+    PKEntitlementWhitelist *_whitelist;
+    int _suppressionPermissionState;
+    NSMutableArray *_pendingAssertionRequests;
+    _Bool _isForegroundApplication;
     id <PDAssertionCoordinatorDelegate> _delegate;
+    NSString *_bundleIdentifier;
 }
 
+@property(nonatomic) _Bool isForegroundApplication; // @synthesize isForegroundApplication=_isForegroundApplication;
+@property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <PDAssertionCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)cancelPendingAssertionRequests;
+- (void)processPendingAssertionRequests;
 - (id)assertionsOfType:(unsigned int)arg1;
+- (void)invalidateAssertionsForBackgroundApplicationState;
 - (void)invalidateAllAssertions;
+- (void)assertionRequestDidTimeout:(id)arg1;
+- (void)_processPendingAssertionRequests;
+- (void)_cancelPendingAssertionRequest:(id)arg1;
+- (void)_addRequestForAssertion:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_acquireAssertion:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_acquireContactlessInterfaceSuppressionAssertion:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_showAlertForContactlessInterfaceSuppression;
+- (void)assertionOfType:(unsigned int)arg1 withIdentifier:(id)arg2 isValid:(CDUnknownBlockType)arg3;
+- (void)assertionOfType:(unsigned int)arg1 withIdentifier:(id)arg2 shouldInvalidateWhenBackgrounded:(_Bool)arg3;
 - (void)invalidateAssertionOfType:(unsigned int)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)acquireAssertionOfType:(unsigned int)arg1 withIdentifier:(id)arg2 reason:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)assertionExistsOfType:(unsigned int)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)initWithConnection:(id)arg1;
 
 // Remaining properties

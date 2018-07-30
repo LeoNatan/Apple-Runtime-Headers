@@ -11,6 +11,7 @@
 
 @class NSArray, NSColor, NSString, NSTouchBarColorPickerSlider;
 
+__attribute__((visibility("hidden")))
 @interface NSTouchBarColorPickerSliders : NSControl <NSTouchBarColorPickerSliderMinimizationDelegate, NSTouchBarColorPickerView>
 {
     NSArray *_componentSliders;

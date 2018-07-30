@@ -9,8 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface FI_TArrangeByMenuItem : NSMenuItem
 {
-    struct TNSRef<NSString *, void> _titleWhileHidden;
-    struct TNSRef<NSAttributedString *, void> _attributedTitleWhileHidden;
+    struct TNSRef<NSString, void> _titleWhileHidden;
+    struct TNSRef<NSAttributedString, void> _attributedTitleWhileHidden;
 }
 
 - (id).cxx_construct;

@@ -6,27 +6,39 @@
 
 #import "UIView.h"
 
-@class NSSet, SBUICAPackageView, _UILegibilitySettings;
+@class NSSet, SBUICAPackageView, SBUIFaceIDCameraGlyphView, UIColor, _UILegibilitySettings;
 
 @interface SBUIProudLockIconView : UIView
 {
     int _state;
-    _UILegibilitySettings *_legibilitySettings;
     SBUICAPackageView *_lockView;
     NSSet *_imageLayers;
+    SBUIFaceIDCameraGlyphView *_cameraCoveredView;
+    _UILegibilitySettings *_legibilitySettings;
+    UIColor *_contentColor;
+    double _durationOnCameraCoveredGlyphBeforeCoaching;
 }
 
+@property(retain, nonatomic) UIColor *contentColor; // @synthesize contentColor=_contentColor;
+@property(nonatomic) double durationOnCameraCoveredGlyphBeforeCoaching; // @synthesize durationOnCameraCoveredGlyphBeforeCoaching=_durationOnCameraCoveredGlyphBeforeCoaching;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
+@property(readonly, nonatomic) SBUIFaceIDCameraGlyphView *cameraCoveredView; // @synthesize cameraCoveredView=_cameraCoveredView;
 @property(nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
-- (id)_activeViewForState:(int)arg1;
+- (float)_alphaForActiveViewForState:(int)arg1;
+- (struct CGAffineTransform)_outgoingTransformForView:(id)arg1 fromState:(int)arg2;
+- (struct CGAffineTransform)_transformForActiveViewForState:(int)arg1;
+- (struct CGAffineTransform)_incomingTransformForActiveView:(id)arg1 forState:(int)arg2;
+- (id)_activeViewsForState:(int)arg1;
+- (id)_defaultAnimationSettingsForTransitionFromViews:(id)arg1 andState:(int)arg2 toViews:(id)arg3 andState:(int)arg4;
+- (id)_alphaAnimationSettingsForTransitionFromViews:(id)arg1 andState:(int)arg2 toViews:(id)arg3 andState:(int)arg4 forIncomingViews:(_Bool)arg5;
+- (id)_transformAnimationSettingsForTransitionFromViews:(id)arg1 andState:(int)arg2 toViews:(id)arg3 andState:(int)arg4 forIncomingViews:(_Bool)arg5;
 - (void)_transitionToState:(int)arg1 animated:(_Bool)arg2 options:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_forEachLayerInHierarchy:(id)arg1 perform:(CDUnknownBlockType)arg2;
 - (void)setState:(int)arg1 animated:(_Bool)arg2 options:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setState:(int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setState:(int)arg1 animated:(_Bool)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)init;
 
 @end
 

@@ -8,7 +8,5 @@
 
 @interface NSButton (ABAdditions)
 - (void)setABTextColor:(id)arg1;
-- (id)abTextColor;
-- (void)abReplaceTitleTextWithImage;
 @end
 

@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ABButtonCell : NSButtonCell
 {
     NSMutableDictionary *_regularImages;

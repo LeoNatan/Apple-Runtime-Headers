@@ -6,41 +6,68 @@
 
 #import "NSObject.h"
 
-@class MRAVEndpoint, MRAVRoutingDiscoverySession, NSArray, NSMutableSet, NSSet, NSString, NSTimer;
+@class MRAVEndpoint, MRAVRoutingDiscoverySession, NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSSet, NSString;
 
 @interface MRAVReconnaissanceSession : NSObject
 {
     double _timeoutTimerTimeout;
+    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSMutableSet *_localMatchingDevicesFound;
     _Bool _useWeakMatching;
+    _Bool _returnPartialResults;
     _Bool _searchInProgress;
+    _Bool _shouldWaitForUnanimousEndpoints;
     unsigned int _endpointFeatures;
+    MRAVRoutingDiscoverySession *_discoverySession;
+    NSArray *_matchingLogicalDeviceIDs;
     NSSet *_matchingOutputDeviceUIDsSet;
     NSString *_matchingOutputDeviceGroupID;
-    MRAVRoutingDiscoverySession *_discoverySession;
     id _discoverySessionCallbackToken;
     CDUnknownBlockType _callback;
-    NSTimer *_timeoutTimer;
+    NSObject<OS_dispatch_source> *_timeoutTimer;
+    NSObject<OS_dispatch_queue> *_callbackSyncQueue;
     NSMutableSet *_matchingDevicesFound;
+    NSMutableArray *_matchingEndpointsFound;
     MRAVEndpoint *_unanimousEndpoint;
+    NSArray *_availableOutputDevices;
+    NSArray *_availableEndpoints;
+    NSArray *_lastProcessedOutputDevices;
+    NSArray *_lastProcessedEndpoints;
+    unsigned long long _updatesReceived;
 }
 
+@property(retain, nonatomic) NSArray *lastProcessedEndpoints; // @synthesize lastProcessedEndpoints=_lastProcessedEndpoints;
+@property(retain, nonatomic) NSArray *lastProcessedOutputDevices; // @synthesize lastProcessedOutputDevices=_lastProcessedOutputDevices;
+@property(nonatomic) unsigned long long updatesReceived; // @synthesize updatesReceived=_updatesReceived;
+@property(retain, nonatomic) NSArray *availableEndpoints; // @synthesize availableEndpoints=_availableEndpoints;
+@property(retain, nonatomic) NSArray *availableOutputDevices; // @synthesize availableOutputDevices=_availableOutputDevices;
 @property(retain, nonatomic) MRAVEndpoint *unanimousEndpoint; // @synthesize unanimousEndpoint=_unanimousEndpoint;
+@property(retain, nonatomic) NSMutableArray *matchingEndpointsFound; // @synthesize matchingEndpointsFound=_matchingEndpointsFound;
 @property(retain, nonatomic) NSMutableSet *matchingDevicesFound; // @synthesize matchingDevicesFound=_matchingDevicesFound;
+@property(nonatomic) _Bool shouldWaitForUnanimousEndpoints; // @synthesize shouldWaitForUnanimousEndpoints=_shouldWaitForUnanimousEndpoints;
 @property(nonatomic) _Bool searchInProgress; // @synthesize searchInProgress=_searchInProgress;
-@property(retain, nonatomic) NSTimer *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackSyncQueue; // @synthesize callbackSyncQueue=_callbackSyncQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) id discoverySessionCallbackToken; // @synthesize discoverySessionCallbackToken=_discoverySessionCallbackToken;
-@property(retain, nonatomic) MRAVRoutingDiscoverySession *discoverySession; // @synthesize discoverySession=_discoverySession;
 @property(retain, nonatomic) NSString *matchingOutputDeviceGroupID; // @synthesize matchingOutputDeviceGroupID=_matchingOutputDeviceGroupID;
 @property(retain, nonatomic) NSSet *matchingOutputDeviceUIDsSet; // @synthesize matchingOutputDeviceUIDsSet=_matchingOutputDeviceUIDsSet;
+@property(copy, nonatomic) NSArray *matchingLogicalDeviceIDs; // @synthesize matchingLogicalDeviceIDs=_matchingLogicalDeviceIDs;
+@property(nonatomic) _Bool returnPartialResults; // @synthesize returnPartialResults=_returnPartialResults;
 @property(nonatomic) _Bool useWeakMatching; // @synthesize useWeakMatching=_useWeakMatching;
+@property(retain, nonatomic) MRAVRoutingDiscoverySession *discoverySession; // @synthesize discoverySession=_discoverySession;
 @property(readonly, nonatomic) unsigned int endpointFeatures; // @synthesize endpointFeatures=_endpointFeatures;
 - (void).cxx_destruct;
-- (void)_endSearch;
-- (void)_concludeSearch;
-- (void)_timeoutTimerFired:(id)arg1;
+- (void)_onQueue_endSearch;
+- (void)_onQueue_concludeSearch;
+- (void)_onQueue_cancelSearch;
+- (void)_onQueue_timeoutTimerFired;
+- (void)_processSearchLoop;
 - (void)_discoverySessionEndpointsChangedCallback:(id)arg1;
+- (void)_discoverySessionOutputDevicesChangedCallback:(id)arg1;
+- (void)_onQueue_updateCachedOutputDevices:(id)arg1 endpoints:(id)arg2;
 - (void)cancelSearch;
+- (void)beginSearchWithTimeout:(double)arg1 endpointsCompletion:(CDUnknownBlockType)arg2;
 - (void)beginSearchWithTimeout:(double)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSArray *matchingOutputDeviceUIDs;
 - (void)dealloc;

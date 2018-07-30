@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, UIButton, UILongPressGestureRecognizer, _UIBackdropView;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditToolbar : UIView <PUPhotoEditLayoutStaticAdaptable>
 {
     UIView *_mainToolbarContainer;

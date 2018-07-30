@@ -27,6 +27,7 @@
 - (void)_handleBarButtonItem:(id)arg1;
 - (Class)_firstPossiblePerformerForActionType:(id)arg1;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
+- (id)alertActionForActionType:(id)arg1;
 - (id)previewActionGroupForActionType:(id)arg1;
 - (id)previewActionForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;

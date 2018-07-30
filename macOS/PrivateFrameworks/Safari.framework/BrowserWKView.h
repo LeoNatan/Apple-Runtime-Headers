@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     BOOL _isVisible;
     BOOL _forPagePreviews;
     BOOL _overrideMaintainsInactiveSelectionForVoiceOver;
+    id <BrowserViewIconLoadingDelegate> _iconDelegate;
     NSUUID *_uuid;
     NSArray *_previewWKViews;
     id <NSTouchBarProvider> _alternateFunctionBarProvider;
@@ -33,7 +34,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldBlockFirstResponder; // @synthesize shouldBlockFirstResponder=_shouldBlockFirstResponder;
 @property(nonatomic) BOOL shouldBlockAllKeyEvents; // @synthesize shouldBlockAllKeyEvents=_shouldBlockAllKeyEvents;
 @property(nonatomic) BOOL shouldBlockAllMouseEvents; // @synthesize shouldBlockAllMouseEvents=_shouldBlockAllMouseEvents;
+@property(nonatomic) __weak id <BrowserViewIconLoadingDelegate> iconDelegate; // @synthesize iconDelegate=_iconDelegate;
 - (void).cxx_destruct;
+- (void)_shouldLoadIconWithParameters:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)touchBar;
 - (BOOL)resignFirstResponder;
 - (BOOL)_isBlockingWKViewMouseTracking;

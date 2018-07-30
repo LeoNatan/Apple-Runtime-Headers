@@ -32,6 +32,7 @@
 - (void)textDidChange:(id)arg1;
 - (void)adjustTextViewSize;
 - (double)preferredHeightForWidth:(double)arg1;
+- (struct CGSize)preferredSizeForSize:(struct CGSize)arg1;
 - (void)dealloc;
 - (void)setSendProgressIndex:(unsigned long long)arg1;
 - (void)updateUtterance:(id)arg1;

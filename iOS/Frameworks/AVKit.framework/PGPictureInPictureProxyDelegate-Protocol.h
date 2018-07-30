@@ -20,5 +20,6 @@
 - (void)pictureInPictureProxy:(PGPictureInPictureProxy *)arg1 didStartPictureInPictureWithAnimationType:(long long)arg2;
 - (void)pictureInPictureProxy:(PGPictureInPictureProxy *)arg1 willStartPictureInPictureWithAnimationType:(long long)arg2;
 - (struct CGRect)pictureInPictureProxyViewFrameForTransitionAnimation:(PGPictureInPictureProxy *)arg1;
+- (long long)pictureInPictureProxyInterfaceOrientationForTransitionAnimation:(PGPictureInPictureProxy *)arg1;
 @end
 

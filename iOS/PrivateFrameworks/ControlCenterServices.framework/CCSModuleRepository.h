@@ -8,7 +8,7 @@
 
 #import "LSApplicationWorkspaceObserverProtocol.h"
 
-@class NSArray, NSDictionary, NSHashTable, NSObject<BSDefaultObserver>, NSSet, NSString;
+@class NSArray, NSDictionary, NSHashTable, NSObject<BSDefaultObserver>, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface CCSModuleRepository : NSObject <LSApplicationWorkspaceObserverProtocol>
 {
@@ -20,47 +20,51 @@
     struct MGNotificationTokenStruct *_mobileGestaltNotificationToken;
     NSHashTable *_observers;
     NSObject<BSDefaultObserver> *_internalDefaultsObserver;
-    _Bool _ignoreWhitelist;
     NSSet *_loadableModuleIdentifiers;
+    _Bool _ignoreWhitelist;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_callOutQueue;
 }
 
 + (id)_defaultModuleIdentifierWhitelist;
 + (id)_defaultModuleDirectories;
 + (id)repositoryWithDefaults;
 + (id)_deviceFamily;
-@property(nonatomic) _Bool ignoreWhitelist; // @synthesize ignoreWhitelist=_ignoreWhitelist;
-@property(readonly, copy, nonatomic) NSSet *loadableModuleIdentifiers; // @synthesize loadableModuleIdentifiers=_loadableModuleIdentifiers;
 - (void).cxx_destruct;
-- (void)_unregisterForInternalPreferenceChanges;
-- (void)_registerForInternalPreferenceChanges;
-- (void)_stopObservingGestaltQuestions;
-- (void)_startObservingMobileGestaltQuestions:(id)arg1 withChangeHandler:(CDUnknownBlockType)arg2;
-- (id)_gestaltQuestionsForModuleMetadata:(id)arg1;
-- (void)_updateGestaltQuestionsForModuleMetadata:(id)arg1;
-- (id)_filterModuleMetadataByGestalt:(id)arg1;
-- (void)_unregisterForVisiblityPreferenceChanges;
-- (void)_registerForVisiblityPreferenceChanges;
-- (id)_filterModuleMetadataByVisibilityPreference:(id)arg1;
-- (_Bool)_arrayContainsInterestingApplicationProxy:(id)arg1;
-- (id)_associatedBundleIdentifiersForModuleMetadata:(id)arg1;
-- (void)_updateInterestingBundleIdentifiersForModuleMetadata:(id)arg1;
-- (id)_filterModuleMetadataByAssociatedBundleAvailability:(id)arg1;
-- (id)_loadAllModuleMetadata;
-- (id)_moduleIdentifiersForMetadata:(id)arg1;
-- (void)_updateLoadableModuleMetadataForAvailableModuleMetadata:(id)arg1;
-- (void)_updateAvailableModuleMetadataForAllModuleMetadata:(id)arg1;
-- (void)_updateAllModuleMetadataForAllModuleMetadata:(id)arg1;
-- (void)_updateLoadableModuleMetadata;
+- (void)_queue_unregisterForInternalPreferenceChanges;
+- (void)_queue_registerForInternalPreferenceChanges;
+- (void)_queue_stopObservingGestaltQuestions;
+- (void)_queue_startObservingMobileGestaltQuestions:(id)arg1 withChangeHandler:(CDUnknownBlockType)arg2;
+- (id)_queue_gestaltQuestionsForModuleMetadata:(id)arg1;
+- (void)_queue_updateGestaltQuestionsForModuleMetadata:(id)arg1;
+- (id)_queue_filterModuleMetadataByGestalt:(id)arg1;
+- (void)_queue_unregisterForVisiblityPreferenceChanges;
+- (void)_queue_registerForVisiblityPreferenceChanges;
+- (id)_queue_filterModuleMetadataByVisibilityPreference:(id)arg1;
+- (_Bool)_queue_arrayContainsInterestingApplicationProxy:(id)arg1;
+- (id)_queue_associatedBundleIdentifiersForModuleMetadata:(id)arg1;
+- (void)_queue_updateInterestingBundleIdentifiersForModuleMetadata:(id)arg1;
+- (id)_queue_filterModuleMetadataByAssociatedBundleAvailability:(id)arg1;
+- (id)_queue_loadAllModuleMetadata;
+- (id)_queue_moduleIdentifiersForMetadata:(id)arg1;
+- (void)_queue_updateLoadableModuleMetadataForAvailableModuleMetadata:(id)arg1;
+- (void)_queue_updateAvailableModuleMetadataForAllModuleMetadata:(id)arg1;
+- (void)_queue_updateAllModuleMetadataForAllModuleMetadata:(id)arg1;
+- (void)_queue_updateLoadableModuleMetadata;
+- (void)_queue_updateAvailableModuleMetadata;
 - (void)_updateAvailableModuleMetadata;
+- (void)_queue_updateAllModuleMetadata;
 - (void)_updateAllModuleMetadata;
 - (void)_applicationsDidChange:(id)arg1;
 - (void)applicationStateDidChange:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
-- (void)_runBlockOnObservers:(CDUnknownBlockType)arg1;
+- (void)_queue_runBlockOnObservers:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)moduleMetadataForModuleIdentifier:(id)arg1;
+- (void)_queue_setIgnoreWhitelist:(_Bool)arg1;
+@property(readonly, copy, nonatomic) NSSet *loadableModuleIdentifiers;
 - (void)dealloc;
 - (id)_initWithDirectoryURLs:(id)arg1 whitelistedModuleIdentifiers:(id)arg2;
 

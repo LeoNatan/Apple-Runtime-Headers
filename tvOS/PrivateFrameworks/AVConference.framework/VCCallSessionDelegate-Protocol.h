@@ -42,6 +42,7 @@
 - (void)remoteAudioDidPause:(_Bool)arg1 callID:(unsigned int)arg2;
 - (void)session:(VCCallSession *)arg1 didPauseVideo:(_Bool)arg2 error:(NSError *)arg3;
 - (void)session:(VCCallSession *)arg1 didPauseAudio:(_Bool)arg2 error:(NSError *)arg3;
+- (void)session:(VCCallSession *)arg1 isSendingAudio:(_Bool)arg2 error:(NSError *)arg3;
 - (_Bool)session:(VCCallSession *)arg1 didStopVideoIO:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)session:(VCCallSession *)arg1 receivedRemoteFrame:(struct __CVBuffer *)arg2 atTime:(CDStruct_1b6d18a9)arg3 withScreenAttributes:(VideoAttributes *)arg4 videoAttributes:(VideoAttributes *)arg5 isFirstFrame:(_Bool)arg6 isVideoPaused:(_Bool)arg7;
 - (void)session:(VCCallSession *)arg1 didStopWithError:(NSError *)arg2;

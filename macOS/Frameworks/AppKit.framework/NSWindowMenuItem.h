@@ -8,6 +8,7 @@
 
 @class NSString, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSWindowMenuItem : NSObject
 {
     NSWindow *_window;

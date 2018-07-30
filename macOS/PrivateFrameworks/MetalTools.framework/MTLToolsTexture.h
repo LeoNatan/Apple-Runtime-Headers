@@ -20,16 +20,20 @@
 @property(readonly) id <MTLBuffer> buffer; // @synthesize buffer=_buffer;
 @property(readonly) id <MTLTexture> parentTexture; // @synthesize parentTexture=_parentTexture;
 @property(readonly, nonatomic) MTLToolsPointerArray *views; // @synthesize views=_views;
+@property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly) BOOL isDrawable;
 @property(readonly) unsigned long long numFaces;
 @property(readonly) unsigned long long iosurfacePlane;
 @property(readonly) struct __IOSurface *iosurface;
+- (id)newSharedTextureHandle;
 - (void)didModifyData;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1;
 - (void)replaceRegion:(CDStruct_1e3be3a8)arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6;
 - (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 bytesPerImage:(unsigned long long)arg3 fromRegion:(CDStruct_1e3be3a8)arg4 mipmapLevel:(unsigned long long)arg5 slice:(unsigned long long)arg6;
+@property(readonly) BOOL allowGPUOptimizedContents;
 @property(readonly, getter=isFramebufferOnly) BOOL framebufferOnly;
+@property(readonly, getter=isShareable) BOOL shareable;
 @property(readonly) unsigned long long arrayLength;
 @property(readonly) unsigned long long sampleCount;
 @property(readonly) unsigned long long mipmapLevelCount;
@@ -43,11 +47,13 @@
 - (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 fromRegion:(CDStruct_1e3be3a8)arg3 mipmapLevel:(unsigned long long)arg4;
 - (void)copyFromPixels:(const void *)arg1 rowBytes:(unsigned long long)arg2 imageBytes:(unsigned long long)arg3 toSlice:(unsigned long long)arg4 mipmapLevel:(unsigned long long)arg5 origin:(CDStruct_14f26992)arg6 size:(CDStruct_14f26992)arg7;
 - (void)copyFromSlice:(unsigned long long)arg1 mipmapLevel:(unsigned long long)arg2 origin:(CDStruct_14f26992)arg3 size:(CDStruct_14f26992)arg4 toPixels:(void *)arg5 rowBytes:(unsigned long long)arg6 imageBytes:(unsigned long long)arg7;
+@property(readonly) unsigned long long resourceIndex;
 @property(readonly) unsigned long long bufferBytesPerRow;
 @property(readonly) unsigned long long bufferOffset;
 @property(readonly) unsigned long long parentRelativeSlice;
 @property(readonly) unsigned long long parentRelativeLevel;
 @property(readonly) id <MTLResource> rootResource;
+- (id)realRootResource;
 - (void)acceptVisitor:(id)arg1;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 buffer:(id)arg3;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 parentTexture:(id)arg3;
@@ -69,7 +75,6 @@
 @property(readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) Class superclass;
-@property(readonly) unsigned long long uniqueIdentifier;
 
 @end
 

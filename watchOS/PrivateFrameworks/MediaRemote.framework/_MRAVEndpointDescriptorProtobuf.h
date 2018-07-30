@@ -12,20 +12,25 @@
 
 @interface _MRAVEndpointDescriptorProtobuf : PBCodable <NSCopying>
 {
+    int _connectionType;
     _MRAVOutputDeviceDescriptorProtobuf *_designatedGroupLeader;
     NSString *_instanceIdentifier;
     NSString *_name;
     NSMutableArray *_outputDevices;
     NSString *_uniqueIdentifier;
+    _Bool _canModifyGroupMembership;
     _Bool _isLocalEndpoint;
     _Bool _isProxyGroupPlayer;
     struct {
+        unsigned int connectionType:1;
+        unsigned int canModifyGroupMembership:1;
         unsigned int isLocalEndpoint:1;
         unsigned int isProxyGroupPlayer:1;
     } _has;
 }
 
 + (Class)outputDevicesType;
+@property(nonatomic) _Bool canModifyGroupMembership; // @synthesize canModifyGroupMembership=_canModifyGroupMembership;
 @property(nonatomic) _Bool isProxyGroupPlayer; // @synthesize isProxyGroupPlayer=_isProxyGroupPlayer;
 @property(retain, nonatomic) NSString *instanceIdentifier; // @synthesize instanceIdentifier=_instanceIdentifier;
 @property(nonatomic) _Bool isLocalEndpoint; // @synthesize isLocalEndpoint=_isLocalEndpoint;
@@ -43,6 +48,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasCanModifyGroupMembership;
+- (int)StringAsConnectionType:(id)arg1;
+- (id)connectionTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasConnectionType;
+@property(nonatomic) int connectionType; // @synthesize connectionType=_connectionType;
 @property(nonatomic) _Bool hasIsProxyGroupPlayer;
 @property(readonly, nonatomic) _Bool hasInstanceIdentifier;
 @property(nonatomic) _Bool hasIsLocalEndpoint;

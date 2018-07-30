@@ -22,7 +22,8 @@
     struct _migrationManagerFlags {
         unsigned int _migrationWasCancelled:1;
         unsigned int _usesStoreSpecificMigrationManager:1;
-        unsigned int _reservedMigrationManager:30;
+        unsigned int _migrationWasInPlace:1;
+        unsigned int _reservedMigrationManager:29;
     } _migrationManagerFlags;
     NSError *_migrationCancellationError;
     id _reserved1;
@@ -31,6 +32,7 @@
     id _reserved4;
 }
 
++ (BOOL)_canMigrateWithMappingModel:(id)arg1;
 + (BOOL)_performSanityCheckForMapping:(id)arg1 fromSourceModel:(id)arg2 toDestinationModel:(id)arg3;
 + (void)setMigrationDebugLevel:(int)arg1;
 + (int)migrationDebugLevel;
@@ -66,6 +68,8 @@
 - (id)_migrationContext;
 - (id)fetchRequestForSourceEntityNamed:(id)arg1 predicateString:(id)arg2;
 - (id)fetchRequestForSourceEntityNamed:(id)arg1 predicateString:(id)arg2 includesSubentities:(BOOL)arg3;
+- (void)_setPerformedInPlaceMigration:(BOOL)arg1;
+- (BOOL)_performedInPlaceMigration;
 
 @end
 

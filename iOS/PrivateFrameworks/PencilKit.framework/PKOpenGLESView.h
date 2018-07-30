@@ -6,13 +6,12 @@
 
 #import "UIView.h"
 
-@class CAEAGLLayer, PKInternalDrawingView;
+@class CAEAGLLayer;
 
 @interface PKOpenGLESView : UIView
 {
     _Bool _isWideGamut;
     _Bool _isFixedPixelSize;
-    PKInternalDrawingView *_drawingView;
     struct CGSize _fixedPixelSize;
 }
 
@@ -20,18 +19,10 @@
 @property(readonly, nonatomic) struct CGSize fixedPixelSize; // @synthesize fixedPixelSize=_fixedPixelSize;
 @property(readonly, nonatomic) _Bool isFixedPixelSize; // @synthesize isFixedPixelSize=_isFixedPixelSize;
 @property(readonly, nonatomic) _Bool isWideGamut; // @synthesize isWideGamut=_isWideGamut;
-@property(nonatomic) __weak PKInternalDrawingView *drawingView; // @synthesize drawingView=_drawingView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CAEAGLLayer *glLayer;
 - (id)initWithFrame:(struct CGRect)arg1 andPixelSize:(struct CGSize)arg2 isWideGamut:(_Bool)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 isWideGamut:(_Bool)arg2;
 - (void)initLayer;
-- (_Bool)accessibilityActivate;
-- (id)pkaxScrollHint;
-- (struct CGPoint)accessibilityActivationPoint;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
-- (_Bool)isAccessibilityElement;
 
 @end
 

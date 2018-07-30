@@ -11,6 +11,7 @@
 
 @class CPDocument, CPPage, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPObject : NSObject <NSCopying, CPCopying>
 {
     CPObject *parent;

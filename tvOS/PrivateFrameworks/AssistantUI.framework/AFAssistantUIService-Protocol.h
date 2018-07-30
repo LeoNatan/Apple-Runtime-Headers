@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AFAudioPlaybackRequest, AFConnection, AceObject<SAAceCommand>, INImage, INIntent, NSDictionary, NSError, NSString, NSURL;
+@class AFAudioPlaybackRequest, AFConnection, AceObject<SAAceCommand>, INImage, NSDictionary, NSError, NSString, NSURL;
 
 @protocol AFAssistantUIService <NSObject>
 
@@ -21,7 +21,6 @@
 - (void)assistantConnection:(AFConnection *)arg1 didStartAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 willStartAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 startUIRequestWithText:(NSString *)arg2 completion:(void (^)(_Bool))arg3;
-- (void)assistantConnection:(AFConnection *)arg1 handleIntent:(INIntent *)arg2 inBackgroundAppWithBundleId:(NSString *)arg3 reply:(void (^)(INIntentResponse *, NSError *))arg4;
 - (void)assistantConnection:(AFConnection *)arg1 extensionRequestFinishedForApplication:(NSString *)arg2 error:(NSError *)arg3;
 - (void)assistantConnection:(AFConnection *)arg1 extensionRequestWillStartForApplication:(NSString *)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 wantsToCacheImage:(INImage *)arg2;

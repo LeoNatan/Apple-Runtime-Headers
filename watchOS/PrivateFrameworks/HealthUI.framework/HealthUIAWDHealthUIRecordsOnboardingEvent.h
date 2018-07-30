@@ -15,10 +15,7 @@
     unsigned long long _timestamp;
     NSString *_gatewayURL;
     int _type;
-    struct {
-        unsigned int timestamp:1;
-        unsigned int type:1;
-    } _has;
+    CDStruct_1769069f _has;
 }
 
 @property(retain, nonatomic) NSString *gatewayURL; // @synthesize gatewayURL=_gatewayURL;

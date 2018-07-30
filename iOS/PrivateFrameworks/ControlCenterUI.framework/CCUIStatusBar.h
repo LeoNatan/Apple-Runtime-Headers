@@ -6,36 +6,47 @@
 
 #import "UIView.h"
 
-@class UIStatusBar, UIStatusBarStyleRequest;
+@class UIStatusBarStyleRequest, UIStatusBar_Modern;
 
 @interface CCUIStatusBar : UIView
 {
-    UIStatusBar *_compactTrailingStatusBar;
-    UIStatusBar *_extendedLeadingStatusBar;
-    UIStatusBar *_extendedTrailingStatusBar;
+    UIStatusBar_Modern *_compactTrailingStatusBar;
+    UIStatusBar_Modern *_expandedStatusBar;
+    double _trailingMarginDelta;
     id <CCUIStatusBarDelegate> _delegate;
     unsigned long long _leadingState;
     unsigned long long _trailingState;
+    double _verticalAlignmentDelta;
+    double _maxCompactScaleFactor;
     struct UIEdgeInsets _compactEdgeInsets;
     struct UIEdgeInsets _expandedEdgeInsets;
+    struct CGAffineTransform _compactScaleTransform;
 }
 
+@property(readonly, nonatomic) double maxCompactScaleFactor; // @synthesize maxCompactScaleFactor=_maxCompactScaleFactor;
+@property(readonly, nonatomic) double verticalAlignmentDelta; // @synthesize verticalAlignmentDelta=_verticalAlignmentDelta;
 @property(nonatomic) struct UIEdgeInsets expandedEdgeInsets; // @synthesize expandedEdgeInsets=_expandedEdgeInsets;
 @property(nonatomic) struct UIEdgeInsets compactEdgeInsets; // @synthesize compactEdgeInsets=_compactEdgeInsets;
 @property(nonatomic) unsigned long long trailingState; // @synthesize trailingState=_trailingState;
 @property(nonatomic) unsigned long long leadingState; // @synthesize leadingState=_leadingState;
 @property(nonatomic) __weak id <CCUIStatusBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_updateCompactTrailingStatusBarStyleRequest;
+- (void)_updateCompactTrailingStatusBarStyleRequestAndAvoidanceFrame;
 - (void)controlCenterApplyPrimaryContentShadow;
+- (void)_updateShadow;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
+@property(nonatomic) struct CGAffineTransform compactScaleTransform; // @synthesize compactScaleTransform=_compactScaleTransform;
+@property(nonatomic) long long orientation; // @dynamic orientation;
 @property(nonatomic) double expandedTrailingAlpha; // @dynamic expandedTrailingAlpha;
 @property(nonatomic) double compactTrailingAlpha; // @dynamic compactTrailingAlpha;
 @property(nonatomic) double leadingAlpha; // @dynamic leadingAlpha;
-@property(readonly, copy, nonatomic) UIStatusBarStyleRequest *compactStyleRequest; // @dynamic compactStyleRequest;
+- (struct CGRect)compactAvoidanceFrame;
+@property(readonly, copy, nonatomic) UIStatusBarStyleRequest *compactTrailingStyleRequest; // @dynamic compactTrailingStyleRequest;
+- (void)_updateMetricsIfNeeded;
+- (void)prepareForPresentation;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

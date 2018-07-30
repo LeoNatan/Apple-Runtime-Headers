@@ -25,7 +25,7 @@
 - (void)applyTransitionFraction:(float)arg1 fromTimeScale:(unsigned int)arg2 toTimeScale:(unsigned int)arg3;
 - (id)ticksForTimeScale:(unsigned int)arg1;
 - (id)labelsForTimeScale:(unsigned int)arg1;
-- (id)initWithRadius:(float)arg1;
+- (id)initWithRadius:(float)arg1 forDevice:(id)arg2;
 
 @end
 

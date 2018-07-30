@@ -16,6 +16,7 @@
 + (BOOL)_hasRenderLayerSubclass;
 + (id)defaultValueForKey:(id)arg1;
 + (id)CA_attributes;
+@property(copy) NSArray *interpolations;
 @property(copy) NSString *type;
 @property struct CGPoint endPoint;
 @property struct CGPoint startPoint;

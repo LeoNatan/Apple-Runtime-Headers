@@ -19,6 +19,7 @@
 
 @property(nonatomic) __weak id <GEOEnvironmentsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)activeEnvironment;
 - (void)removeCustomEnvironment:(id)arg1;
 - (void)addCustomEnvironment:(id)arg1;
 - (id)environmentInfosForSection:(long long)arg1;

@@ -13,20 +13,24 @@
 @interface IMMessagePartChatItem : IMMessageChatItem <IMVisibleAssociatedMessageHost>
 {
     NSAttributedString *_text;
+    NSAttributedString *_fallbackCorruptText;
     long long _index;
     struct _NSRange _messagePartRange;
     NSArray *_visibleAssociatedMessageChatItems;
     NSArray *_messageEditChatItems;
     _Bool _isBusiness;
+    _Bool _chatInScrutinyMode;
 }
 
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
-+ (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(_Bool)arg2 isBusiness:(_Bool)arg3 hasKnownParticipants:(_Bool)arg4;
++ (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(_Bool)arg2 isBusiness:(_Bool)arg3 parentChatIsSpam:(_Bool)arg4 hasKnownParticipants:(_Bool)arg5;
 + (_Bool)_isWhiteListedURL:(id)arg1;
 + (id)_defaultRichLinkWhiteList;
 + (id)_newMessagePartsForMessageItem:(id)arg1;
 + (id)_guidForMessage:(id)arg1 url:(id)arg2;
 + (_Bool)_testingSupportsURL:(id)arg1;
+@property(readonly, copy, nonatomic) NSAttributedString *fallbackCorruptText; // @synthesize fallbackCorruptText=_fallbackCorruptText;
+@property(nonatomic) _Bool chatInScrutinyMode; // @synthesize chatInScrutinyMode=_chatInScrutinyMode;
 @property(readonly, nonatomic) NSArray *messageEditChatItems; // @synthesize messageEditChatItems=_messageEditChatItems;
 @property(retain, nonatomic, setter=_setVisibleAssociatedMessageChatItems:) NSArray *visibleAssociatedMessageChatItems; // @synthesize visibleAssociatedMessageChatItems=_visibleAssociatedMessageChatItems;
 @property(nonatomic) struct _NSRange messagePartRange; // @synthesize messagePartRange=_messagePartRange;
@@ -37,6 +41,7 @@
 - (void)_setMessageEditChatItems:(id)arg1;
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange)arg4 visibleAssociatedMessageChatItems:(id)arg5;
 - (id)_initWithItem:(id)arg1 messagePartRange:(struct _NSRange)arg2;
+@property(readonly, nonatomic) _Bool isCorrupt;
 @property(nonatomic) _Bool isBusiness; // @synthesize isBusiness=_isBusiness;
 - (_Bool)canDelete;
 - (id)copyWithZone:(struct _NSZone *)arg1;

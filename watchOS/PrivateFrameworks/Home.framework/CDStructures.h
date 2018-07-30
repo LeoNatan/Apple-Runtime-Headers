@@ -34,3 +34,8 @@ typedef struct {
     unsigned long _field4[5];
 } CDStruct_11f37819;
 
+typedef struct {
+    float _field1;
+    float _field2;
+} CDStruct_b2fbf00d;
+

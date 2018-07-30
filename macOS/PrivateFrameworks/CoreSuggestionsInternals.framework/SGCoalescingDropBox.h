@@ -15,6 +15,7 @@
     CDUnknownBlockType _makeEmptyBox;
     CDUnknownBlockType _handler;
     id _box;
+    struct _opaque_pthread_mutex_t _handlerLock;
     struct _opaque_pthread_mutex_t _boxLock;
     int _outstanding;
     struct _opaque_pthread_cond_t {

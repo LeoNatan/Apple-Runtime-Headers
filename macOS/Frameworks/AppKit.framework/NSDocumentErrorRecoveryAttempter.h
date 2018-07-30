@@ -8,6 +8,7 @@
 
 @class NSDocument, NSIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface NSDocumentErrorRecoveryAttempter : NSObject
 {
     NSDocument *_document;

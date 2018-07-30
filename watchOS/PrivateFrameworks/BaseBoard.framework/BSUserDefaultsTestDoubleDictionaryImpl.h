@@ -13,6 +13,7 @@
     NSMutableDictionary *_dictionary;
 }
 
+- (void).cxx_destruct;
 - (void)registerDefaults:(id)arg1;
 - (void)setURL:(id)arg1 forKey:(id)arg2;
 - (void)setBool:(_Bool)arg1 forKey:(id)arg2;

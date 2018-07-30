@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSNumber;
+#import "NAIdentifiable.h"
 
-@interface HFNumberRange : NSObject
+@class NSNumber, NSString;
+
+@interface HFNumberRange : NSObject <NAIdentifiable>
 {
     unsigned int _type;
     NSNumber *_maxValue;
@@ -16,6 +18,8 @@
     NSNumber *_minValue;
 }
 
++ (id)na_identity;
++ (id)rangeWithFloatRange:(CDStruct_b2fbf00d)arg1;
 + (id)valueWithValue:(id)arg1;
 + (id)rangeWithMaxValue:(id)arg1 minValue:(id)arg2;
 @property(copy, nonatomic) NSNumber *minValue; // @synthesize minValue=_minValue;
@@ -23,8 +27,21 @@
 @property(copy, nonatomic) NSNumber *maxValue; // @synthesize maxValue=_maxValue;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)intersectRange:(id)arg1;
+- (id)unionRange:(id)arg1;
+- (id)mapValue:(id)arg1 fromRange:(id)arg2;
+- (id)percentageValueForValue:(id)arg1;
+@property(readonly, nonatomic) CDStruct_b2fbf00d floatRangeValue;
+@property(readonly, copy, nonatomic) NSNumber *spanValue;
 - (id)initWithType:(unsigned int)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

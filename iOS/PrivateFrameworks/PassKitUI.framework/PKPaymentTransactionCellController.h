@@ -33,7 +33,7 @@
 - (id)_transactionCellValueLabelFontForPass:(id)arg1;
 - (double)paymentTransactionCellHeightForPass:(id)arg1;
 - (id)_relativeDateAndStatusForTransaction:(id)arg1;
-- (void)configureCell:(id)arg1 forTransaction:(id)arg2 paymentPass:(id)arg3 detailStyle:(long long)arg4 avatarViewDelegate:(id)arg5;
+- (void)configureCell:(id)arg1 forTransaction:(id)arg2 paymentPass:(id)arg3 detailStyle:(long long)arg4 deviceName:(id)arg5 avatarViewDelegate:(id)arg6;
 - (id)initWithContactResolver:(id)arg1;
 
 @end

@@ -14,11 +14,6 @@
 
 @interface _CPSectionRankingFeedback : PBCodable <_CPProcessableFeedback, _CPSectionRankingFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int localSectionPosition:1;
-        unsigned int personalizationScore:1;
-    } _has;
     unsigned int _localSectionPosition;
     unsigned long long _timestamp;
     NSArray *_results;
@@ -40,14 +35,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasPersonalizationScore;
-@property(readonly, nonatomic) BOOL hasLocalSectionPosition;
-@property(readonly, nonatomic) BOOL hasSection;
 - (id)resultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resultsCount;
 - (void)addResults:(id)arg1;
 - (void)clearResults;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

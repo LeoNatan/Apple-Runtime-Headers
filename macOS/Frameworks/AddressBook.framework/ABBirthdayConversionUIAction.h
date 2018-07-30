@@ -10,7 +10,6 @@
 
 @class ABCollectionViewItem, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABBirthdayConversionUIAction : NSObject <ABCollectionMultiPropertyAction>
 {
     NSString *_targetPropertyKey;

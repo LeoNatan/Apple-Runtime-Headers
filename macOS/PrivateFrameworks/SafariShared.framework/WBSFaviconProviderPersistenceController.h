@@ -21,6 +21,8 @@
     CDUnknownBlockType _setUpCompletionHandler;
     NSObject<OS_dispatch_queue> *_internalQueue;
     long long _controllerState;
+    struct CGSize _preferredIconSize;
+    BOOL _isReadOnly;
     NSURL *_databaseURL;
     NSURL *_diskCacheURL;
 }
@@ -43,7 +45,9 @@
 - (void)removeAllIconsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeIconWithPageURLString:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)linkPageURLString:(id)arg1 toIconURLString:(id)arg2 isPrivate:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)setIconData:(id)arg1 forPageURLString:(id)arg2 iconURLString:(id)arg3 iconSize:(struct CGSize)arg4 isPrivate:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)rejectedResourceInfoForPageURLString:(id)arg1 iconURLString:(id)arg2 includingPrivateData:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)setIconIsRejectedResource:(BOOL)arg1 forPageURLString:(id)arg2 iconURLString:(id)arg3 isPrivate:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)setIconData:(id)arg1 forPageURLString:(id)arg2 iconURLString:(id)arg3 iconSize:(struct CGSize)arg4 hasGeneratedResolutions:(BOOL)arg5 isPrivate:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (id)_imageFromURL:(id)arg1;
 - (long long)_faviconStatusFromWBSSQLStoreStatus:(long long)arg1;
 - (void)_finishSetUpWithStatus:(long long)arg1;
@@ -51,7 +55,7 @@
 - (void)savePendingChangesBeforeTermination;
 - (void)closeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)openAndCheckIntegrity:(BOOL)arg1 createIfNeeded:(BOOL)arg2 fallBackToMemoryStoreIfError:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)initWithPersistenceBaseURL:(id)arg1 databaseName:(id)arg2;
+- (id)initWithPersistenceBaseURL:(id)arg1 databaseName:(id)arg2 preferredIconSize:(struct CGSize)arg3 isReadOnly:(BOOL)arg4;
 - (id)init;
 
 // Remaining properties

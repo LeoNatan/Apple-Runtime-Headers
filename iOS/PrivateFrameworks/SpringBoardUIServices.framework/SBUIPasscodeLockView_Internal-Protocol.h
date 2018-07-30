@@ -6,9 +6,15 @@
 
 #import "SBUIPasscodeLockView.h"
 
-@class NSString;
+@class NSString, SBUIProudLockContainerViewController;
 
 @protocol SBUIPasscodeLockView_Internal <SBUIPasscodeLockView>
+@property(nonatomic) CDStruct_4613c6c6 proudLockConfiguration;
+@property(retain, nonatomic) SBUIProudLockContainerViewController *overrideProudLockContainerViewController;
+- (void)didEndTransitionToState:(long long)arg1;
+- (void)willEndTransitionToState:(long long)arg1;
+- (void)updateTransitionWithProgress:(double)arg1;
+- (void)beginTransitionToState:(long long)arg1;
 - (void)_resumeBiometricMatchingAdvisory:(_Bool)arg1;
 - (void)_overrideBiometricMatchingEnabled:(_Bool)arg1 forReason:(NSString *)arg2;
 

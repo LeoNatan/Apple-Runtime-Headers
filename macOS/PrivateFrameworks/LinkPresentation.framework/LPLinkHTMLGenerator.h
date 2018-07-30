@@ -27,6 +27,7 @@
     BOOL _everBuiltView;
     BOOL _useVariablesWhenUsingInlineStyles;
     BOOL _includeClassNamesWhenUsingInlineStyles;
+    BOOL _includeDarkInterfaceInlineStyles;
     BOOL _allowsTapToLoad;
     BOOL _useInlineStyles;
     BOOL _applyCornerRadiusToLink;
@@ -55,6 +56,7 @@
 @property(nonatomic) BOOL useInlineStyles; // @synthesize useInlineStyles=_useInlineStyles;
 @property(nonatomic) __weak id <LPLinkHTMLGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setAllowsTapToLoad:) BOOL _allowsTapToLoad; // @synthesize _allowsTapToLoad;
+@property(nonatomic, setter=_setIncludeDarkInterfaceInlineStyles:) BOOL _includeDarkInterfaceInlineStyles; // @synthesize _includeDarkInterfaceInlineStyles;
 @property(nonatomic, setter=_setIncludeClassNamesWhenUsingInlineStyles:) BOOL _includeClassNamesWhenUsingInlineStyles; // @synthesize _includeClassNamesWhenUsingInlineStyles;
 @property(nonatomic, setter=_setUseVariablesWhenUsingInlineStyles:) BOOL _useVariablesWhenUsingInlineStyles; // @synthesize _useVariablesWhenUsingInlineStyles;
 - (void).cxx_destruct;

@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADEmbeddedMediaFile.h>
 
-__attribute__((visibility("hidden")))
 @interface OADQTStubFile : OADEmbeddedMediaFile
 {
     BOOL isAudioOnly;

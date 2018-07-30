@@ -8,16 +8,15 @@
 
 @class OADBlipRef;
 
-__attribute__((visibility("hidden")))
 @interface OADImageBulletProperties : OADBulletProperties
 {
     OADBlipRef *mImage;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)image;
-- (void)dealloc;
 - (id)initWithBlipRef:(id)arg1;
 
 @end

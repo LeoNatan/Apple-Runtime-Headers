@@ -15,12 +15,13 @@
 }
 
 + (id)sharedResourceManager;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
+@property(retain, nonatomic) ML3LanguageResources *cachedResources; // @synthesize cachedResources=_cachedResources;
 - (void).cxx_destruct;
 - (id)_buildLanguageResources;
-- (void)_fetchLanguageResourcesFromMediaLibraryService:(CDUnknownBlockType)arg1;
 - (void)invalidateCachedResources;
-- (void)fetchLanguageResourcesWithCompletion:(CDUnknownBlockType)arg1;
-- (id)init;
+@property(readonly, nonatomic) ML3LanguageResources *resources;
+- (id)_init;
 
 @end
 

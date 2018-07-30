@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
+- (_Bool)interactionShouldBegin:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (id)backgroundColorForMagnifier;
 - (void)setUpGestureRecognizers;
 - (void)setUpGestureDependenciesWithScrollView:(id)arg1;

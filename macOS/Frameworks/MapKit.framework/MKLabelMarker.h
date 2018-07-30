@@ -34,9 +34,6 @@
 @property(readonly) unsigned long long featureID;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;
 @property(readonly) struct CGRect calloutAnchorRect;
-- (id)debugAnchorPointString;
-- (struct CGPoint)screenPointToScrollRelativeToWithCanvasSize:(struct CGSize)arg1 canvasScale:(double)arg2;
-- (struct CGPoint)calloutAnchorPointWithCanvasSize:(struct CGSize)arg1 canvasScale:(double)arg2 snapToPixels:(BOOL)arg3;
 @property(readonly, copy, nonatomic) NSString *title;
 - (id)vkLabelMarker;
 - (BOOL)isEqual:(id)arg1;

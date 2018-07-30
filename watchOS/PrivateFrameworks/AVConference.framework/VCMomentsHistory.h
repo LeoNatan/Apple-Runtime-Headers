@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (void)startVideoRecording:(id)arg1 timestamp:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getLivePhotoWithTransactionID:(id)arg1 timestamp:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getPhotoWithTransactionID:(id)arg1 Timestamp:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setFrameRate:(float)arg1;
 - (void)updateRemoteScreenAttributes:(id)arg1;
 - (void)addLocalVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 cameraStatusBits:(unsigned char)arg2 timestamp:(unsigned int)arg3;
 - (void)addRemoteAudioSample:(struct opaqueVCAudioBufferList *)arg1 timestamp:(unsigned int)arg2;

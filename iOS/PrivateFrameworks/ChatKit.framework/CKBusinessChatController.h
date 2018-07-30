@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)cleanUpBizNavBarIfNecessary;
 - (void)setupBizNavBarIfNecessary;
+- (void)_addressBookChanged:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;

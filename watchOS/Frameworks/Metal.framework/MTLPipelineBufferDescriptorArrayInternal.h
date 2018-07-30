@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)_descriptorAtIndex:(unsigned int)arg1;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 
 @end

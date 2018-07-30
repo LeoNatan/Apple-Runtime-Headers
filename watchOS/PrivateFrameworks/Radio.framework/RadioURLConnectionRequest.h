@@ -6,6 +6,7 @@
 
 #import "SSURLConnectionRequest.h"
 
+__attribute__((visibility("hidden")))
 @interface RadioURLConnectionRequest : SSURLConnectionRequest
 {
 }

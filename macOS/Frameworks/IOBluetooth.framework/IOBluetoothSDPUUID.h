@@ -12,6 +12,7 @@
     void *_mReserved;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)withSDPUUIDRef:(struct OpaqueIOBluetoothObjectRef *)arg1;
 + (id)uuid32:(unsigned int)arg1;
 + (id)uuid16:(unsigned short)arg1;

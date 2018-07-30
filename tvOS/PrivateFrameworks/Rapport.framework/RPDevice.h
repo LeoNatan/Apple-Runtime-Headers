@@ -80,6 +80,7 @@
 - (unsigned int)updateWithMobileDevice:(id)arg1;
 - (unsigned int)updateWithBonjourDevice:(id)arg1;
 - (void)_updateTXTDictionary:(id)arg1;
+- (id)descriptionWithLevel:(int)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

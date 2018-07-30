@@ -18,6 +18,7 @@
     GEOAutomobileOptions *_automobileOptions;
 }
 
++ (void)load;
 + (id)defaultCachePath;
 + (id)defaultEngine;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
@@ -29,9 +30,11 @@
 - (id)fakeSource;
 - (id)strategy;
 - (id)manager;
+- (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)loadStorageFromFile:(id)arg1 callback:(CDUnknownBlockType)arg2 callbackQueue:(id)arg3;
 - (_Bool)loadStorageFromFile:(id)arg1;
 - (_Bool)saveStorageToFile:(id)arg1;
-- (void)hintRefreshOfType:(unsigned long long)arg1;
+- (void)hintRefreshOfType:(long long)arg1;
 - (id)currentLocation;
 - (void)removeAdditionalFilter:(id)arg1 forSink:(id)arg2;
 - (void)addAdditionalFilter:(id)arg1 forSink:(id)arg2;

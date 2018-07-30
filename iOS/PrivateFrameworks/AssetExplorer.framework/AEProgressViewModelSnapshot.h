@@ -8,6 +8,7 @@
 
 @class NSDictionary, PXIndexPathSet;
 
+__attribute__((visibility("hidden")))
 @interface AEProgressViewModelSnapshot : NSObject
 {
     unsigned long long _correspondingDataSourceIdentifier;

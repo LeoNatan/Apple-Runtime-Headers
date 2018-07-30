@@ -17,6 +17,7 @@
     NSString *_minorBuildLetterString;
 }
 
++ (id)currentBuildVersionString;
 @property(readonly, copy, nonatomic) NSString *minorBuildLetterString; // @synthesize minorBuildLetterString=_minorBuildLetterString;
 @property(readonly, nonatomic) int minorBuildNumber; // @synthesize minorBuildNumber=_minorBuildNumber;
 @property(readonly, copy, nonatomic) NSString *majorBuildLetterString; // @synthesize majorBuildLetterString=_majorBuildLetterString;

@@ -10,7 +10,7 @@
 #import "MapsSuggestionsObject.h"
 #import "MapsSuggestionsSourceDelegate.h"
 
-@class CLLocation, GEOAutomobileOptions, MapsSuggestionsFakeSource, MapsSuggestionsTracker, NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+@class CLLocation, GEOAutomobileOptions, MapsSuggestionsCanKicker, MapsSuggestionsFakeSource, MapsSuggestionsTracker, NSDate, NSHashTable, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MapsSuggestionsManager : NSObject <MapsSuggestionsObject, MapsSuggestionsSourceDelegate, MapsSuggestionsLocationUpdaterDelegate>
 {
@@ -20,17 +20,16 @@
     MapsSuggestionsTracker *_tracker;
     NSDate *_etaValidUntil;
     struct NSMutableSet *_sources;
-    struct NSMutableSet *_sinks;
+    NSHashTable *_sinks;
     struct NSMutableDictionary *_storage;
     struct NSArray *_latestResults;
     NSObject<OS_dispatch_queue> *_gatheringQueue;
     NSObject<OS_dispatch_queue> *_storageQueue;
     _Bool _dirtyFlag;
     int _defaultTansportType;
-    NSObject<OS_dispatch_source> *_invalidateSinksOnExpiredTimer;
-    NSObject<OS_dispatch_source> *_wipeStaleETATimer;
-    NSObject<OS_dispatch_source> *_updateAllSourcesDeferTimer;
-    double _updateAllSourcesDeferTime;
+    MapsSuggestionsCanKicker *_expiredEntryInvalidator;
+    MapsSuggestionsCanKicker *_wipeStaleETAWiper;
+    MapsSuggestionsCanKicker *_deferredSourcesUpdater;
     int _style;
     int _mapType;
     GEOAutomobileOptions *_automobileOptions;
@@ -47,7 +46,7 @@
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) id <MapsSuggestionsStrategy> strategy; // @synthesize strategy=_strategy;
 - (void).cxx_destruct;
-- (void)hintRefreshOfType:(unsigned int)arg1;
+- (void)hintRefreshOfType:(int)arg1;
 - (void)sendInvalidateToAllSinks;
 - (void)awaitStorageQueue;
 - (void)awaitGatheringQueue;
@@ -57,16 +56,20 @@
 - (struct NSArray *)storageForSource:(id)arg1;
 - (id)dumpStorage;
 - (struct NSDictionary *)storage;
-- (void)setTitleFormatter:(id)arg1 forType:(unsigned int)arg2;
+- (_Bool)removeEntry:(id)arg1 behavior:(int)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)setTitleFormatter:(id)arg1 forType:(int)arg2;
 - (void)trackerRefreshedETAsUntil:(id)arg1;
 - (unsigned long)clearAllEntriesFromSource:(struct NSString *)arg1;
 - (unsigned long)_deleteEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
 - (unsigned long)deleteEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
 - (_Bool)_removeEntry:(id)arg1 sourceName:(struct NSString *)arg2;
+- (_Bool)_removeEntry:(id)arg1;
 - (unsigned long)addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2 deleteMissing:(_Bool)arg3;
 - (unsigned long)_addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
 - (unsigned long)addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
 - (id)currentBestLocation;
+- (_Bool)_loadStorageFromFile:(id)arg1;
+- (_Bool)loadStorageFromFile:(id)arg1 callback:(CDUnknownBlockType)arg2 callbackQueue:(id)arg3;
 - (_Bool)loadStorageFromFile:(id)arg1;
 - (_Bool)saveStorageToFile:(id)arg1;
 - (struct NSArray *)_filteredEntries:(struct NSArray *)arg1 forSink:(struct NSString *)arg2 limit:(unsigned int)arg3;
@@ -91,13 +94,14 @@
 - (void)_startAllSources;
 - (void)scheduleUpdateAllSourcesOnce;
 - (void)_updateAllSourcesOnce;
+- (void)_updateSource:(id)arg1 forType:(int)arg2 repeat:(_Bool)arg3;
 - (void)_updateSource:(id)arg1 repeat:(_Bool)arg2;
 - (void)_startSource:(id)arg1;
 - (void)_updateCurrentLocation:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 - (void)updateLocation:(id)arg1;
 - (void)dealloc;
-- (id)initWithStrategy:(id)arg1 locationUpdater:(id)arg2 fetchETA:(_Bool)arg3;
+- (id)initWithStrategy:(id)arg1 locationUpdater:(id)arg2 ETARequirements:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

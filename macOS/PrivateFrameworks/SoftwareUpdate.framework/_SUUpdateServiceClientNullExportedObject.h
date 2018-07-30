@@ -14,6 +14,7 @@
 {
 }
 
+- (void)updatesQueuedForLaterDidChange;
 - (void)hiddenUpdatesDidChange;
 - (void)catalogURLDidChange;
 - (void)authChallengeWasReceived:(id)arg1 handled:(char *)arg2;

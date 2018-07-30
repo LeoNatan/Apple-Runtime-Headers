@@ -22,7 +22,6 @@
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;
 - (void)queue_queryDidDeactivate:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)client_dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
 

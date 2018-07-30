@@ -14,6 +14,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (id)pluginManagerForBundle:(id)arg1;
 - (id)mainPluginManager;
 - (void)registerPluginsFromBundle:(id)arg1;

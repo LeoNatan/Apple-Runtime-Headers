@@ -25,6 +25,7 @@
 }
 
 + (id)messageWithLibraryID:(unsigned int)arg1;
+- (unsigned long long)fileSize;
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
 - (void)_forceLoadOfMessageSummaryFromProtectedStore;
 - (id)attachmentStorageLocation;

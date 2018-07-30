@@ -33,10 +33,12 @@
 - (void)disconnectFromPeer:(id)arg1;
 - (void)updatedNotificationState:(BOOL)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 withPeripheral:(id)arg4;
 - (void)discoveredCharacteristicsAndServices:(id)arg1 forPeripheral:(id)arg2;
+- (void)connectedDeviceOverLEPipe:(id)arg1;
 - (void)connectedDevice:(id)arg1 withError:(id)arg2 shouldDiscover:(BOOL)arg3;
 - (void)connectToPeer:(id)arg1;
 - (void)deviceDiscovered:(id)arg1;
 - (void)lostPeer:(id)arg1 ofType:(unsigned char)arg2;
+- (void)foundPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (void)stoppedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (void)stopTrackingPeer:(id)arg1 forType:(long long)arg2;
 - (void)failedToStartTrackingPeer:(id)arg1 error:(id)arg2;

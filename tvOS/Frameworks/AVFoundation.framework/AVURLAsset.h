@@ -83,7 +83,7 @@
 - (void)expire;
 - (_Bool)_attachedToExternalContentKeySession;
 - (id)contentKeySession;
-- (int)_attachToContentKeySession:(id)arg1;
+- (int)_attachToContentKeySession:(id)arg1 failedSinceAlreadyAttachedToAnotherSession:(_Bool *)arg2;
 @property(readonly, nonatomic) _Bool mayRequireContentKeysForMediaDataProcessing;
 - (id)_installHandlerForNSURLSessionConfiguration:(id)arg1 queue:(id)arg2;
 

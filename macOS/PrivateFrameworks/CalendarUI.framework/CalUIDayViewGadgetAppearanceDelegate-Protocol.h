@@ -39,7 +39,7 @@
 @property(readonly) BOOL shouldAllDayEventsShowColorBar;
 @property(readonly) BOOL shouldDisplayPreviewEventsAsTentative;
 @property(readonly) BOOL shouldDisplayCurrentTime;
-@property(readonly) char *shouldAlwaysDrawAllDayArea;
+@property(readonly) BOOL shouldAlwaysDrawAllDayArea;
 @property(readonly) NSColor *allDaySeparatorColor;
 @property(readonly) double allDaySeparatorHeight;
 @property(readonly) BOOL shouldDrawAllDaySeparator;

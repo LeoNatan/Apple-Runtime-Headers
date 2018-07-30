@@ -10,9 +10,11 @@
 {
 }
 
++ (id)serializedKeyImage;
 + (id)intentHandlingStatus;
 + (id)donatedBySiri;
 + (id)intentVerb;
++ (id)intentType;
 + (id)intentClass;
 + (id)serializedInteraction;
 

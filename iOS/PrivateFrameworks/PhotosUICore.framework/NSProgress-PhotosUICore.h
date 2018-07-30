@@ -7,7 +7,6 @@
 #import "NSProgress.h"
 
 @interface NSProgress (PhotosUICore)
-@property(readonly, nonatomic, getter=px_isComplete) _Bool px_complete;
 - (void)_px_performSimulatedWorkStep:(long long)arg1;
 - (void)px_appendSimulatedProgressWithDuration:(double)arg1 pendingUnitCount:(short)arg2;
 - (void)px_appendChild:(id)arg1 withPendingUnitCount:(long long)arg2;

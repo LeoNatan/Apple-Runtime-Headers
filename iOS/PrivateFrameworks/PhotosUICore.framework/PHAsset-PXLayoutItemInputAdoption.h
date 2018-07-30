@@ -15,9 +15,11 @@
 @property(readonly, nonatomic) struct CGSize size;
 
 // Remaining properties
+@property(readonly, nonatomic) struct CGRect acceptableCropRect;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) struct CGRect preferredCropRect;
 @property(readonly) Class superclass;
 @end
 

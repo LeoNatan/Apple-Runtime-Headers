@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)_tileUpdateComplete;
 - (long long)displayBox;
 - (void)setNeedsTilesUpdate;
+- (id)renderingProperties;
 - (id)geometryInterface;
 - (id)page;
 - (void)dealloc;

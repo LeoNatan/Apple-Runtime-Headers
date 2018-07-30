@@ -52,6 +52,7 @@
 - (void)addFaces:(id)arg1;
 - (void)clearRepresentativeFace:(id)arg1 inTransactionContext:(id)arg2;
 - (void)removeKeyFaceTypeOnFace:(id)arg1 inTransactionContext:(id)arg2;
+- (id)sortedVersions;
 @property(readonly, nonatomic) NSString *cloudIdentifierOrUuid;
 - (void)setVerifiedType:(long long)arg1;
 - (void)setIsVerified:(BOOL)arg1;

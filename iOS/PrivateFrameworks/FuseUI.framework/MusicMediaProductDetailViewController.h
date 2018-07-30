@@ -83,7 +83,6 @@
 - (void)_cancelEditing;
 @property(readonly, nonatomic) UIScrollView *containerScrollView;
 - (id)previewMenuItems;
-- (_Bool)music_allowsMetricsEvents;
 - (void)mediaProductHeaderContentViewControllerDidUpdateEditableText:(id)arg1;
 - (void)mediaProductHeaderContentViewController:(id)arg1 didSelectShareButton:(id)arg2;
 - (void)mediaProductHeaderContentViewControllerDidTapEdit:(id)arg1;

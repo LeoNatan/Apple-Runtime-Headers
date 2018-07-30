@@ -16,13 +16,12 @@
     _Bool _advertising;
     _Bool _configurationInProgress;
     _Bool _browsingForAccessory;
-    _Bool _startAdvertisingForKeyTransferIfNeeded;
     long long _homeConfigurationState;
     TVCSAccessory *_localAccessory;
     HMAccessory *_browsedCurrentHMAccessory;
     HMHomeManager *_homeManager;
     HMAccessoryBrowser *_accessoryBrowser;
-    NSObject<OS_dispatch_queue> *_homeManagerQ;
+    NSObject<OS_dispatch_queue> *_homeManagerQueue;
     NSArray *_cachedOwnedHomes;
 }
 
@@ -30,9 +29,8 @@
 + (id)keyPathsForValuesAffectingLocalAccessory;
 + (id)sharedInstance;
 @property(copy, nonatomic, getter=_cachedOwnedHomes, setter=_setCachedOwnedHomes:) NSArray *cachedOwnedHomes; // @synthesize cachedOwnedHomes=_cachedOwnedHomes;
-@property(retain) NSObject<OS_dispatch_queue> *homeManagerQ; // @synthesize homeManagerQ=_homeManagerQ;
+@property(readonly, getter=_homeManagerQueue) NSObject<OS_dispatch_queue> *homeManagerQueue; // @synthesize homeManagerQueue=_homeManagerQueue;
 @property(retain) HMAccessoryBrowser *accessoryBrowser; // @synthesize accessoryBrowser=_accessoryBrowser;
-@property _Bool startAdvertisingForKeyTransferIfNeeded; // @synthesize startAdvertisingForKeyTransferIfNeeded=_startAdvertisingForKeyTransferIfNeeded;
 @property(retain) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) HMAccessory *browsedCurrentHMAccessory; // @synthesize browsedCurrentHMAccessory=_browsedCurrentHMAccessory;
 @property(nonatomic, getter=isBrowsingForAccessory) _Bool browsingForAccessory; // @synthesize browsingForAccessory=_browsingForAccessory;
@@ -46,6 +44,7 @@
 - (void)moveOrAddLocalAccessoryToRoom:(id)arg1 inHome:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_addLocalAccessoryToRoom:(id)arg1 inHome:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_moveLocalAccessoryToRoom:(id)arg1 inHome:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_setLocalAccessory:(id)arg1 homeConfigurationState:(long long)arg2;
 - (void)_updateAccessoryState;
 - (void)_queueCalculateCurrentStateAndFindLocalAccessory;
 - (void)_calculateCurrentStateAndFindLocalAccessory;
@@ -72,7 +71,7 @@
 - (void)forgetHomeConfiguration:(CDUnknownBlockType)arg1;
 - (void)reloadHomeConfiguration;
 - (void)loadHomeConfiguration:(_Bool)arg1;
-- (id)init;
+- (id)_init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

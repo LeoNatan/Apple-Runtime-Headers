@@ -11,14 +11,18 @@
 }
 
 + (id)UTITypes;
+- (_Bool)validatePreviewFormat;
+- (id)bbPreviewFillToSize:(struct CGSize)arg1;
 - (CDUnknownBlockType)imageEdgeEnhancementBlockIfNecessary;
 - (_Bool)needsAnimation;
 - (void)saveAnimatedPreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
-- (id)generateThumbnailsForWidth:(float)arg1 orientation:(BOOL)arg2;
-- (id)thumbnailAtIndex:(unsigned int)arg1 forWidth:(float)arg2 orientation:(BOOL)arg3;
-- (id)scaledThumbnailFromThumbnail:(id)arg1 forWidth:(float)arg2;
+- (id)generateThumbnailsForWidth:(float)arg1 isSticker:(_Bool)arg2 orientation:(BOOL)arg3;
+- (id)thumbnailAtIndex:(unsigned int)arg1 forWidth:(float)arg2 imageData:(id)arg3 isSticker:(_Bool)arg4 orientation:(BOOL)arg5;
+- (id)scaledThumbnailFromThumbnail:(id)arg1 forWidth:(float)arg2 isSticker:(_Bool)arg3;
 - (id)savedAnimatedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (id)notificationCenter;
+- (_Bool)generatePreviewOutOfProcess;
+- (id)generateAndPersistAnimatedPreviewFromImageData:(id)arg1 forWidth:(float)arg2 withTransferGUID:(id)arg3 isSticker:(_Bool)arg4;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)animatedImageForWidth:(float)arg1;
 

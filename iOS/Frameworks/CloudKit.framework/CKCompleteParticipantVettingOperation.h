@@ -18,12 +18,14 @@
     NSString *_routingKey;
     NSData *_encryptedKey;
     NSString *_baseToken;
+    NSString *_displayedHostname;
     NSURL *_reconstructedShareURL;
     CKShareMetadata *_shareMetadata;
 }
 
 @property(retain, nonatomic) CKShareMetadata *shareMetadata; // @synthesize shareMetadata=_shareMetadata;
 @property(copy, nonatomic) NSURL *reconstructedShareURL; // @synthesize reconstructedShareURL=_reconstructedShareURL;
+@property(copy, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(copy, nonatomic) NSString *baseToken; // @synthesize baseToken=_baseToken;
 @property(copy, nonatomic) NSData *encryptedKey; // @synthesize encryptedKey=_encryptedKey;
 @property(copy, nonatomic) NSString *routingKey; // @synthesize routingKey=_routingKey;
@@ -40,7 +42,7 @@
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType completeParticipantVettingCompletionBlock; // @synthesize completeParticipantVettingCompletionBlock=_completeParticipantVettingCompletionBlock;
-- (id)initWithVettingToken:(id)arg1 vettingRecord:(id)arg2;
+- (id)initWithVettingToken:(id)arg1 vettingRecord:(id)arg2 displayedHostname:(id)arg3;
 - (id)init;
 
 @end

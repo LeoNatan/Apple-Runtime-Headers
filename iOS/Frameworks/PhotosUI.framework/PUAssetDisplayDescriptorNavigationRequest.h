@@ -48,7 +48,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUAssetReference *targetAssetReference; // @synthesize targetAssetReference=_targetAssetReference;
 @property(retain, nonatomic) PUBrowsingViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
-- (id)_errorMessage;
+- (id)_infoMessage;
 - (id)_navigationRequestError;
 - (void)_cleanUpWhenDone;
 - (void)_finishRequest;

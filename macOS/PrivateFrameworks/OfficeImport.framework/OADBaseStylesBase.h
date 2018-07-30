@@ -8,7 +8,6 @@
 
 @class OADColorScheme, OADFontScheme, OADStyleMatrix;
 
-__attribute__((visibility("hidden")))
 @interface OADBaseStylesBase : NSObject
 {
     OADColorScheme *mColorScheme;
@@ -19,8 +18,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) OADFontScheme *fontScheme; // @synthesize fontScheme=mFontScheme;
 @property(retain, nonatomic) OADStyleMatrix *styleMatrix; // @synthesize styleMatrix=mStyleMatrix;
 @property(retain, nonatomic) OADColorScheme *colorScheme; // @synthesize colorScheme=mColorScheme;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

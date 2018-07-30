@@ -28,6 +28,7 @@
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 @property(copy, nonatomic) NSUUID *userDictionaryUUID; // @synthesize userDictionaryUUID=_userDictionaryUUID;
+- (void).cxx_destruct;
 - (void)handleIdleTimeout;
 - (void)keyboardActivityDidTransition:(id)arg1;
 - (void)decrementRecentClientCountAfterDelay;

@@ -8,15 +8,3 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Typedef'd Structures
-
-// Ambiguous groups
-typedef struct {
-    unsigned int timestamp:1;
-    unsigned int triggerEvent:1;
-} CDStruct_c6e3878d;
-
-typedef struct {
-    unsigned int timestamp:1;
-} CDStruct_b5306035;
-

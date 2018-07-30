@@ -14,6 +14,7 @@
     AssetCollectionInfo *_currentAssetCollectionInfo;
     NSMutableArray *_pendingDownloadNotifications;
     _Bool _isVideo;
+    _Bool _isPhotoIris;
     NSString *_currentFilePath;
     NSString *_currentCloudAssetGUID;
     unsigned long long _currentCloudAssetMediaAssetType;
@@ -40,6 +41,7 @@
 @property(retain, nonatomic) NSDictionary *mstreamdInfoDictionary; // @synthesize mstreamdInfoDictionary=_mstreamdInfoDictionary;
 @property(nonatomic) long long jobType; // @synthesize jobType=_jobType;
 @property(retain, nonatomic) NSArray *cloudAssetGUIDsToDelete; // @synthesize cloudAssetGUIDsToDelete=_cloudAssetGUIDsToDelete;
+@property(nonatomic) _Bool isPhotoIris; // @synthesize isPhotoIris=_isPhotoIris;
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
 @property(retain, nonatomic) NSArray *assetCollectionInfos; // @synthesize assetCollectionInfos=_assetCollectionInfos;
 @property(retain, nonatomic) MSASAssetCollection *currentCloudAssetCollection; // @synthesize currentCloudAssetCollection=_currentCloudAssetCollection;
@@ -64,7 +66,7 @@
 - (_Bool)_processSaveAssetWithPlaceholderKind:(short)arg1 withAssetDataFilePath:(id)arg2;
 - (void)_processInFlightCommentsForAsset:(id)arg1 inAlbum:(id)arg2 inPhotoLibrary:(id)arg3;
 - (_Bool)_parseISO6709String:(id)arg1 outLatitude:(double *)arg2 outLongitude:(double *)arg3;
-- (_Bool)_createPlaceHolderInSharedAlbum:(id)arg1;
+- (id)_createPlaceHolderInSharedAlbum:(id)arg1;
 - (void)executeDaemonOperationSaveAssetJobType;
 - (short)placeHolderKindFromAssetMetadataType:(unsigned long long)arg1;
 - (_Bool)isProcessingThumbnail;

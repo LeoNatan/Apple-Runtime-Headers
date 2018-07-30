@@ -6,7 +6,13 @@
 
 #import "UIFocusEnvironment.h"
 
+@class UIFocusMovementHint;
+
 @protocol UIFocusItem <UIFocusEnvironment>
+@property(readonly, nonatomic) struct CGRect frame;
 @property(readonly, nonatomic) _Bool canBecomeFocused;
+
+@optional
+- (void)didHintFocusMovement:(UIFocusMovementHint *)arg1;
 @end
 

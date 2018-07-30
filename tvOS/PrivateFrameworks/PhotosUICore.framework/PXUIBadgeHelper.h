@@ -14,6 +14,11 @@
 + (void)getText:(id *)arg1 textOffset:(struct CGPoint *)arg2 forBadgeInfo:(struct PXAssetBadgeInfo)arg3 style:(long long)arg4;
 + (void)getImage:(id *)arg1 imageOffset:(struct CGPoint *)arg2 forBadgeInfo:(struct PXAssetBadgeInfo)arg3 style:(long long)arg4;
 + (id)debugBackgroundImageWithBadges:(unsigned long long)arg1;
++ (id)suggestionFacesImage;
++ (id)suggestionGreatPhotoImage;
++ (id)suggestionRecentFavoriteImage;
++ (id)suggestionRecentlyEditedImage;
++ (id)suggestionOnThisDayImage;
 + (id)cloudBadgeImage;
 + (id)panoramaBadgeImage;
 + (id)favoritesCollectionBadgeImage;

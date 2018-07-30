@@ -9,15 +9,17 @@
 #import "HMDCameraRemoteStreamReceiverDestinationProtocol.h"
 #import "IDSSessionDelegate.h"
 
-@class IDSSession, NSObject<OS_dispatch_queue>, NSString;
+@class HMDCameraIDSSessionInviterDeviceVerifier, IDSSession, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HMDCameraIDSSessionReceiver : HMDCameraIDSSessionHandler <IDSSessionDelegate, HMDCameraRemoteStreamReceiverDestinationProtocol>
 {
     id <HMDCameraIDSSessionReceiverDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
+    HMDCameraIDSSessionInviterDeviceVerifier *_sessionInviterDeviceVerifier;
 }
 
 + (id)logCategory;
+@property(readonly, nonatomic) HMDCameraIDSSessionInviterDeviceVerifier *sessionInviterDeviceVerifier; // @synthesize sessionInviterDeviceVerifier=_sessionInviterDeviceVerifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HMDCameraIDSSessionReceiverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -32,7 +34,7 @@
 @property(readonly, nonatomic) NSString *remoteDestination;
 @property(readonly, nonatomic) IDSSession *session;
 - (id)logIdentifier;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 delegate:(id)arg3 delegateQueue:(id)arg4;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 sessionInviterDeviceVerifier:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

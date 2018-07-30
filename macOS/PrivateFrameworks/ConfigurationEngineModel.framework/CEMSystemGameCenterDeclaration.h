@@ -12,25 +12,29 @@
 
 @interface CEMSystemGameCenterDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowGameCenter;
+    NSNumber *_payloadAllowMultiplayerGaming;
+    NSNumber *_payloadAllowAddingGameCenterFriends;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowGameCenter:(id)arg2 withAllowMultiplayerGaming:(id)arg3 withAllowAddingGameCenterFriends:(id)arg4;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowAddingGameCenterFriends; // @synthesize payloadAllowAddingGameCenterFriends=_payloadAllowAddingGameCenterFriends;
+@property(copy, nonatomic) NSNumber *payloadAllowMultiplayerGaming; // @synthesize payloadAllowMultiplayerGaming=_payloadAllowMultiplayerGaming;
+@property(copy, nonatomic) NSNumber *payloadAllowGameCenter; // @synthesize payloadAllowGameCenter=_payloadAllowGameCenter;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowAddingGameCenterFriends;
-@property(readonly, nonatomic) NSNumber *payloadAllowMultiplayerGaming;
-@property(readonly, nonatomic) NSNumber *payloadAllowGameCenter;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGRect)tileRectForSpaceWithID:(unsigned long long)arg1;
 + (id)spaceWithContentWindowID:(unsigned int)arg1;
++ (BOOL)hasTransitionForWindowID:(unsigned int)arg1 ofClass:(Class)arg2;
 + (BOOL)hasTransitionForWindowID:(unsigned int)arg1;
 + (BOOL)hasSpaceEnteringOrExitingFullScreen;
 + (id)fullScreenSpaceEnteringFullScreen;
@@ -74,10 +75,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _NSFullScreenBackdropController *backdropController; // @synthesize backdropController=_backdropController;
 @property(nonatomic) _NSFullScreenContentController *contentController; // @synthesize contentController=_contentController;
 @property(readonly, nonatomic) unsigned long long tileSpaceID; // @synthesize tileSpaceID=_tileSpaceID;
+- (void)_showTileDividerWindows;
+- (void)_hideTileDividerWindows;
 - (void)_removeEastTileDividerWindow;
 - (void)_removeWestTileDividerWindow;
 - (void)_removeTileDividerWindows;
+- (void)_reshapeTileDividerWindows;
 - (void)_updateTileDividerWindows;
+- (unsigned long long)_effectiveSpaceResizeDirections;
 - (void)replaceContentWithSnapshotForClose;
 - (BOOL)isPerformingExternalCloseAnimation;
 - (void)beginSeparateExternalCloseAnimation;
@@ -116,6 +121,7 @@ __attribute__((visibility("hidden")))
 - (void)interruptTransitions;
 - (void)removeTransition:(id)arg1;
 - (void)startTransition:(id)arg1;
+- (void)_didBeginExitTransition;
 - (BOOL)isExitingFullScreen;
 - (BOOL)isEnteringFullScreen;
 - (BOOL)isInFullScreen;
@@ -131,6 +137,8 @@ __attribute__((visibility("hidden")))
 - (void)hideOverlayWindow;
 - (void)showOverlayWindowFromFrame:(struct CGRect)arg1 blurContent:(BOOL)arg2;
 - (BOOL)showingOverlayWindowFrame;
+- (void)_endOverlayPresentation:(id)arg1;
+- (void)_beginOverlayPresentation:(id)arg1;
 - (void)cancelSiblingOverlayAnimations;
 - (void)removeSiblingOverlayWindow;
 - (void)updateSiblingOverlayWindow;
@@ -139,7 +147,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)showingSiblingTileOverlayWindow;
 - (void)performResizeCrossfadeIfNeeded;
 - (void)prepareResizeCrossfadeOverlayWithDuration:(double)arg1 resize:(BOOL)arg2;
-- (void)_cancelResizeCrosfadeAnimation;
+- (void)_cancelResizeCrossfadeAnimation;
 - (void)suppressFetchingNewTileSize;
 - (id)perfTestResizeWindow;
 - (void)_menuBarRevealUpdated:(float)arg1;

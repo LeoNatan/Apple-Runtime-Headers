@@ -10,6 +10,7 @@
 
 @class LAUIAuthenticationViewController;
 
+__attribute__((visibility("hidden")))
 @interface LAUIAuthenticationViewControllerUIDelegate : NSObject <LAUIDelegate>
 {
     LAUIAuthenticationViewController *_viewController;

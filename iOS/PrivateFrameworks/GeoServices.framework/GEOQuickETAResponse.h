@@ -8,7 +8,6 @@
 
 @class GEOLocation, GEOQuickETATransitDeparturesInfo, NSMutableArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOQuickETAResponse : NSObject
 {
     GEOLocation *_sourceLocation;

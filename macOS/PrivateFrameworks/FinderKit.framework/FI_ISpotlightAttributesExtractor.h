@@ -6,23 +6,25 @@
 
 #import <FinderKit/FI_IPropertyDictionaryExtractor.h>
 
-@class NSArray;
-
 __attribute__((visibility("hidden")))
 @interface FI_ISpotlightAttributesExtractor : FI_IPropertyDictionaryExtractor
 {
-    NSArray *_attributeNames;
+    struct TNSRef<NSArray<NSString *>, void> _attributeNames;
 }
 
-- (id)mergeAttributes:(id)arg1 withNewAttributes:(id)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)mergeAttributes:(id)arg1 withNewAttributes:(id)arg2 forNode:(const struct TFENode *)arg3;
 - (id)whichAttributeValues;
 - (void)flush;
-- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 - (_Bool)needsUpdateForProperty:(unsigned int)arg1;
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
+- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
+- (id)attributeNamesForNodes:(const struct TFENodeVector *)arg1;
+-     // Error parsing type: v32@0:8r^{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}16r^{atomic<bool>=AB}24, name: prefetchValueOnSecondaryThread:cancelled:
 - (id)attributeNamesForNode:(const struct TFENode *)arg1;
 - (id)defaultValue;
-- (void)dealloc;
+- (id)init;
 
 @end
 

@@ -18,6 +18,7 @@
 }
 
 + (id)_queue;
+- (void).cxx_destruct;
 - (void)invalidate;
 - (id)description;
 - (void)dealloc;

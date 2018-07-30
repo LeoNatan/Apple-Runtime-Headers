@@ -9,8 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTagOperation : FI_IAsyncNodeOperation
 {
-    // Error parsing type: ^{TTagsTask=^^?i{atomic<bool>=AB}BQ{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}{shared_ptr<TUndoableAction>=^{TUndoableAction}^{__shared_weak_count}}}, name: _task
-    struct TNSRef<FI_TTagOperationDelegate *, void> _opDelegate;
+    shared_ptr_68874bd0 _task;
+    struct TNSRef<FI_TTagOperationDelegate, void> _opDelegate;
 }
 
 - (id).cxx_construct;
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (int)startSubOperation:(unsigned int)arg1;
 - (void)configureOperationRecord:(struct TOperationRecord *)arg1 forIndex:(unsigned long long)arg2;
 - (struct TString)authorizationPrompt;
--     // Error parsing type: @32@0:8r^{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}16^{TTagsTask=^^?i{atomic<bool>=AB}BQ{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}{shared_ptr<TUndoableAction>=^{TUndoableAction}^{__shared_weak_count}}}24, name: initWithNodes:forTask:
+- (id)initWithNodes:(const struct TFENodeVector *)arg1 forTask:(const shared_ptr_68874bd0 *)arg2;
 
 @end
 

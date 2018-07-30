@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OADColorScheme : NSObject <NSCopying>
 {
     NSString *mName;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(copy, nonatomic) NSString *name; // @synthesize name=mName;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -28,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (id)colorForIndex:(int)arg1;
 - (unsigned long long)colorCount;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

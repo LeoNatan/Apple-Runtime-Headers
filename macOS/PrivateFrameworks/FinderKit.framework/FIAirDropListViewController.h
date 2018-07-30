@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _hoverOverCellRect;
     double _establishedHoverOverCellAt;
     double _lastUpdatedDataSourceAt;
-    struct TNSRef<CNAvatarCache *, void> _avatarCache;
-    struct TNSRef<NSTrackingArea *, void> _trackingArea;
+    struct TNSRef<CNAvatarCache, void> _avatarCache;
+    struct TNSRef<NSTrackingArea, void> _trackingArea;
     _Bool _repopulating;
-    struct TNSRef<FI_TDFRScrollingStackViewController *, void> _dfrAirDropParticipantsViewController;
-    struct TNSRef<NSImage *, void> _closeImage;
-    struct TNSRef<NSImage *, void> _blankImage;
+    struct TNSRef<FI_TDFRScrollingStackViewController, void> _dfrAirDropParticipantsViewController;
+    struct TNSRef<NSImage, void> _closeImage;
+    struct TNSRef<NSImage, void> _blankImage;
 }
 
 - (id).cxx_construct;

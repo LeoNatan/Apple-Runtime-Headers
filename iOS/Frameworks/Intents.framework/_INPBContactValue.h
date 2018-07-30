@@ -7,71 +7,100 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBContactValue.h"
 
-@class NSMutableArray, NSString, PBUnknownFields, _INPBContactHandle, _INPBImageValue, _INPBValueMetadata;
+@class NSArray, NSString, _INPBContactHandle, _INPBImageValue, _INPBValueMetadata;
 
-@interface _INPBContactValue : PBCodable <NSCopying>
+@interface _INPBContactValue : PBCodable <_INPBContactValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_aliases;
+    struct {
+        unsigned int isMe:1;
+        unsigned int suggestionType:1;
+    } _has;
+    _Bool _isMe;
+    int _suggestionType;
+    NSArray *_aliases;
     _INPBContactHandle *_contactHandle;
     NSString *_customIdentifier;
     NSString *_firstName;
     NSString *_fullName;
+    NSString *_handle;
     _INPBImageValue *_image;
     NSString *_lastName;
+    NSString *_middleName;
+    NSString *_namePrefix;
+    NSString *_nameSuffix;
     NSString *_nickName;
+    NSString *_phoneticFirstName;
+    NSString *_phoneticLastName;
+    NSString *_phoneticMiddleName;
+    NSString *_phoneticNamePrefix;
+    NSString *_phoneticNameSuffix;
     NSString *_relationship;
-    int _suggestionType;
     _INPBValueMetadata *_valueMetadata;
-    _Bool _isMe;
-    struct {
-        unsigned int suggestionType:1;
-        unsigned int isMe:1;
-    } _has;
 }
 
 + (Class)aliasesType;
-+ (id)options;
-@property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
-@property(retain, nonatomic) NSMutableArray *aliases; // @synthesize aliases=_aliases;
-@property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
-@property(retain, nonatomic) NSString *relationship; // @synthesize relationship=_relationship;
-@property(retain, nonatomic) NSString *customIdentifier; // @synthesize customIdentifier=_customIdentifier;
-@property(retain, nonatomic) _INPBContactHandle *contactHandle; // @synthesize contactHandle=_contactHandle;
-@property(retain, nonatomic) _INPBImageValue *image; // @synthesize image=_image;
-@property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
-@property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
-@property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(nonatomic) int suggestionType; // @synthesize suggestionType=_suggestionType;
+@property(copy, nonatomic) NSString *relationship; // @synthesize relationship=_relationship;
+@property(copy, nonatomic) NSString *phoneticNameSuffix; // @synthesize phoneticNameSuffix=_phoneticNameSuffix;
+@property(copy, nonatomic) NSString *phoneticNamePrefix; // @synthesize phoneticNamePrefix=_phoneticNamePrefix;
+@property(copy, nonatomic) NSString *phoneticMiddleName; // @synthesize phoneticMiddleName=_phoneticMiddleName;
+@property(copy, nonatomic) NSString *phoneticLastName; // @synthesize phoneticLastName=_phoneticLastName;
+@property(copy, nonatomic) NSString *phoneticFirstName; // @synthesize phoneticFirstName=_phoneticFirstName;
+@property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
+@property(copy, nonatomic) NSString *nameSuffix; // @synthesize nameSuffix=_nameSuffix;
+@property(copy, nonatomic) NSString *namePrefix; // @synthesize namePrefix=_namePrefix;
+@property(copy, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
+@property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
+@property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
+@property(retain, nonatomic) _INPBImageValue *image; // @synthesize image=_image;
+@property(copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
+@property(copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
+@property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
+@property(copy, nonatomic) NSString *customIdentifier; // @synthesize customIdentifier=_customIdentifier;
+@property(retain, nonatomic) _INPBContactHandle *contactHandle; // @synthesize contactHandle=_contactHandle;
+@property(copy, nonatomic) NSArray *aliases; // @synthesize aliases=_aliases;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasNickName;
-- (id)aliasesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)aliasesCount;
-- (void)addAliases:(id)arg1;
-- (void)clearAliases;
+@property(readonly, nonatomic) _Bool hasValueMetadata;
 - (int)StringAsSuggestionType:(id)arg1;
 - (id)suggestionTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSuggestionType;
-@property(nonatomic) int suggestionType; // @synthesize suggestionType=_suggestionType;
-@property(nonatomic) _Bool hasIsMe;
 @property(readonly, nonatomic) _Bool hasRelationship;
+@property(readonly, nonatomic) _Bool hasPhoneticNameSuffix;
+@property(readonly, nonatomic) _Bool hasPhoneticNamePrefix;
+@property(readonly, nonatomic) _Bool hasPhoneticMiddleName;
+@property(readonly, nonatomic) _Bool hasPhoneticLastName;
+@property(readonly, nonatomic) _Bool hasPhoneticFirstName;
+@property(readonly, nonatomic) _Bool hasNickName;
+@property(readonly, nonatomic) _Bool hasNameSuffix;
+@property(readonly, nonatomic) _Bool hasNamePrefix;
+@property(readonly, nonatomic) _Bool hasMiddleName;
+@property(readonly, nonatomic) _Bool hasLastName;
+@property(nonatomic) _Bool hasIsMe;
+@property(readonly, nonatomic) _Bool hasImage;
+@property(readonly, nonatomic) _Bool hasHandle;
+@property(readonly, nonatomic) _Bool hasFullName;
+@property(readonly, nonatomic) _Bool hasFirstName;
 @property(readonly, nonatomic) _Bool hasCustomIdentifier;
 @property(readonly, nonatomic) _Bool hasContactHandle;
-@property(readonly, nonatomic) _Bool hasImage;
-@property(readonly, nonatomic) _Bool hasFullName;
-@property(readonly, nonatomic) _Bool hasLastName;
-@property(readonly, nonatomic) _Bool hasFirstName;
-@property(readonly, nonatomic) _Bool hasValueMetadata;
+- (id)aliasesAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long aliasesCount;
+- (void)addAliases:(id)arg1;
+- (void)clearAliases;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

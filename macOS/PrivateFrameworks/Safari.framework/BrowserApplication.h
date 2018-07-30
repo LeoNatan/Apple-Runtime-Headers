@@ -8,12 +8,11 @@
 
 #import "AppControllerTouchBarProviderDelegate.h"
 #import "NSTouchBarProvider.h"
-#import "SecureUIEventSanitizer.h"
 
-@class AppControllerTouchBarProvider, NSMutableArray, NSObject, NSString, NSTimer, NSTouchBar, QuitTimePerformanceMonitor;
+@class AppControllerTouchBarProvider, NSObject, NSString, NSTimer, NSTouchBar, QuitTimePerformanceMonitor;
 
 __attribute__((visibility("hidden")))
-@interface BrowserApplication : NSApplication <AppControllerTouchBarProviderDelegate, NSTouchBarProvider, SecureUIEventSanitizer>
+@interface BrowserApplication : NSApplication <AppControllerTouchBarProviderDelegate, NSTouchBarProvider>
 {
     BOOL _isProcessingContextMenuEvent;
     BOOL _isClosingAllWindows;
@@ -35,7 +34,6 @@ __attribute__((visibility("hidden")))
     unsigned int _logPowerUsageRandomNumber;
     NSTimer *_usageLoggingTimer;
     double _usageLoggingTimeRemaining;
-    NSMutableArray *_secureUIs;
     AppControllerTouchBarProvider *_touchBarProvider;
     QuitTimePerformanceMonitor *_quitTimePerformanceMonitor;
 }
@@ -74,9 +72,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_shouldLogPowerUsage;
 - (BOOL)_isOnBatteryPower;
 - (void)sendEvent:(id)arg1;
-- (void)_checkSecureUIsForUntrustedEvent:(id)arg1;
-- (void)endSecureUI:(id)arg1;
-- (void)beginSecureUI:(id)arg1;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;
 - (SEL)currentAction;
 - (id)targetForAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;

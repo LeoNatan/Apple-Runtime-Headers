@@ -30,6 +30,9 @@ __attribute__((visibility("hidden")))
 - (void)registerSOSClassTypeMappings;
 - (double)maximumAspectRatioForPreviewImage;
 - (double)mimimumAspectRatioForPreviewImage;
+- (id)stringForEquationChoiceUseEQKitButtonTitle;
+- (id)stringForEquationChoiceBody;
+- (id)stringForEquationChoiceTitle;
 - (id)stringForDocumentViewOnlyMessage;
 - (id)stringForDocumentViewOnlyTitle;
 - (id)stringForOwnerHasCollabEnabledMessage;
@@ -69,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCollaboratorConflictDetails;
 - (id)stringForUpdatingDocumentWithoutServiceType;
 - (id)stringForCollaboratorConflict;
+- (id)equationEditorAPDID;
 - (id)templateTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
 - (id)documentTypeDisplayName;

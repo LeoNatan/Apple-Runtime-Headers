@@ -23,8 +23,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_atsState;
     NSMutableDictionary *_altSvc;
     NSMutableSet *_h2BlacklistedHosts;
+    NSMutableDictionary *_coalescing;
 }
 
+- (void)set_coalescing:(id)arg1;
+- (id)_coalescing;
 - (void)set_h2BlacklistedHosts:(id)arg1;
 - (id)_h2BlacklistedHosts;
 - (void)set_altSvc:(id)arg1;

@@ -9,10 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface FI_TListHeaderCellView : NSTableCellView
 {
-    struct TNSRef<FI_TImageView *, void> _tagImageView;
-    struct TNSRef<FI_TImageView *, void> _titleImageView;
-    struct TNSRef<FI_TUpdateLayerView *, void> _rightSeparatorView;
-    struct TNSRef<FI_TUpdateLayerView *, void> _leftSeparatorView;
+    struct TNSRef<FI_TImageView, void> _tagImageView;
+    struct TNSRef<FI_TImageView, void> _titleImageView;
+    struct TNSRef<FI_TUpdateLayerView, void> _rightSeparatorView;
+    struct TNSRef<FI_TUpdateLayerView, void> _leftSeparatorView;
     double _rightTextMargin;
     double _leftTextMargin;
     _Bool _isSortAscending;
@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (void)setTitleImage:(id)arg1;
 - (void)setTagImage:(id)arg1;
 - (void)cloneFrom:(id)arg1;
-- (BOOL)isOpaque;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

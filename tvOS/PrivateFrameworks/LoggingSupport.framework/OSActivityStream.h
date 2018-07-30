@@ -6,19 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSCompoundPredicate, NSMutableDictionary, NSMutableSet, NSString, OSLogDevice;
+@class NSCompoundPredicate, NSMutableDictionary, NSMutableSet, OSLogDevice, _OSLogStreamFilter;
 
 @interface OSActivityStream : NSObject
 {
     struct os_activity_stream_s *_stream;
     NSMutableSet *_pids;
-    NSMutableSet *_proc_names;
-    NSString *_waitforProcessName;
     void *_deviceSearchSession;
     void *_deviceEventSession;
     _Bool _delegateStreamErrorLess;
     _Bool _delegateStreamWithError;
     _Bool _delegateHasDidFail;
+    _OSLogStreamFilter *_streamFilter;
     id <OSDeviceDelegate> _deviceDelegate;
     id <OSActivityStreamDelegate> _delegate;
     unsigned long long _options;
@@ -45,11 +44,8 @@
 - (void)startRemote;
 - (_Bool)streamEvent:(id)arg1 error:(id)arg2;
 - (void)start;
-- (int)maxProcs;
 - (void)addFilterForActivity:(id)arg1 andBinary:(id)arg2;
-- (void)addProcessName:(id)arg1;
 - (void)addProcessID:(int)arg1;
-- (void)waitForProcessName:(id)arg1;
 - (id)initWithDevice:(void *)arg1;
 @property(nonatomic) unsigned long long events;
 - (void)dealloc;

@@ -7,13 +7,14 @@
 #import <GeoServices/GEOTileLoader.h>
 
 #import "GEOExperimentConfigurationObserver.h"
+#import "GEOPListStateCapturing.h"
 #import "GEOResourceManifestTileGroupObserver.h"
 #import "GEOTileServerProxyDelegate.h"
 
 @class GEOTileLoaderConfiguration, GEOTileLoaderUsage, GEOTilePool, GEOTileServerProxy, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 __attribute__((visibility("hidden")))
-@interface GEOTileLoaderInternal : GEOTileLoader <GEOTileServerProxyDelegate, GEOResourceManifestTileGroupObserver, GEOExperimentConfigurationObserver>
+@interface GEOTileLoaderInternal : GEOTileLoader <GEOPListStateCapturing, GEOTileServerProxyDelegate, GEOResourceManifestTileGroupObserver, GEOExperimentConfigurationObserver>
 {
     struct list<LoadItem, std::__1::allocator<LoadItem>> _loadItems;
     NSObject<OS_dispatch_queue> *_isolationQueue;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
     struct deque<ErrorInfo, std::__1::allocator<ErrorInfo>> _recentErrors;
     GEOTileLoaderUsage *_usage;
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
+    unsigned long long _stateCaptureHandle;
 }
 
 - (id).cxx_construct;
@@ -81,12 +83,15 @@ __attribute__((visibility("hidden")))
 - (void)setSortPoint:(const CDStruct_c3b9c2ee *)arg1;
 - (void)_timerFired;
 - (void)_requestOnlineTiles;
-- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 qos:(unsigned int)arg6 callbackQ:(id)arg7 beginNetwork:(CDUnknownBlockType)arg8 callback:(CDUnknownBlockType)arg9;
-- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 callbackQ:(id)arg6 beginNetwork:(CDUnknownBlockType)arg7 callback:(CDUnknownBlockType)arg8;
-- (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 qos:(unsigned int)arg5 callbackQ:(id)arg6 beginNetwork:(CDUnknownBlockType)arg7 callback:(CDUnknownBlockType)arg8;
-- (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 callbackQ:(id)arg5 beginNetwork:(CDUnknownBlockType)arg6 callback:(CDUnknownBlockType)arg7;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 qos:(unsigned int)arg7 signpostID:(unsigned long long)arg8 callbackQ:(id)arg9 beginNetwork:(CDUnknownBlockType)arg10 callback:(CDUnknownBlockType)arg11;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 qos:(unsigned int)arg7 callbackQ:(id)arg8 beginNetwork:(CDUnknownBlockType)arg9 callback:(CDUnknownBlockType)arg10;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 signpostID:(unsigned long long)arg7 callbackQ:(id)arg8 beginNetwork:(CDUnknownBlockType)arg9 callback:(CDUnknownBlockType)arg10;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 reason:(unsigned char)arg6 callbackQ:(id)arg7 beginNetwork:(CDUnknownBlockType)arg8 callback:(CDUnknownBlockType)arg9;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 reason:(unsigned char)arg5 qos:(unsigned int)arg6 signpostID:(unsigned long long)arg7 callbackQ:(id)arg8 beginNetwork:(CDUnknownBlockType)arg9 callback:(CDUnknownBlockType)arg10;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 reason:(unsigned char)arg5 qos:(unsigned int)arg6 callbackQ:(id)arg7 beginNetwork:(CDUnknownBlockType)arg8 callback:(CDUnknownBlockType)arg9;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 reason:(unsigned char)arg5 callbackQ:(id)arg6 beginNetwork:(CDUnknownBlockType)arg7 callback:(CDUnknownBlockType)arg8;
 - (_Bool)reprioritizeKey:(const struct _GEOTileKey *)arg1 forClient:(id)arg2 newPriority:(unsigned int)arg3;
-- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 proxyClient:(id)arg5 options:(unsigned long long)arg6 qos:(unsigned int)arg7 callbackQ:(id)arg8 beginNetwork:(CDUnknownBlockType)arg9 callback:(CDUnknownBlockType)arg10;
+- (void)loadKey:(const struct _GEOTileKey *)arg1 additionalInfo:(const CDStruct_58878026 *)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 proxyClient:(id)arg5 options:(unsigned long long)arg6 reason:(unsigned char)arg7 qos:(unsigned int)arg8 signpostID:(unsigned long long)arg9 callbackQ:(id)arg10 beginNetwork:(CDUnknownBlockType)arg11 callback:(CDUnknownBlockType)arg12;
 - (_Bool)_cancelIfNeeded:(__list_iterator_aef25af4 *)arg1;
 - (void)_cancel:(__list_iterator_aef25af4 *)arg1 err:(id)arg2;
 - (void)closeForClient:(id)arg1;
@@ -101,6 +106,7 @@ __attribute__((visibility("hidden")))
 - (int)networkHits;
 - (int)diskHits;
 - (int)memoryHits;
+- (id)captureStatePlistWithHints:(struct os_state_hints_s *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

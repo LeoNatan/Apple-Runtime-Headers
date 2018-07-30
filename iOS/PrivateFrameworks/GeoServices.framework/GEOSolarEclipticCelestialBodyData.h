@@ -14,7 +14,8 @@
 
 @property(readonly, nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(readonly, nonatomic) double latitude; // @synthesize latitude=_latitude;
-- (id)initWithJulianDay:(double)arg1 body:(long long)arg2;
+- (id)initWithJulianDay:(double)arg1 body:(long long)arg2 useHighPrecision:(_Bool)arg3;
+- (id)initWithDate:(id)arg1 body:(long long)arg2 useHighPrecision:(_Bool)arg3;
 - (id)initWithDate:(id)arg1 body:(long long)arg2;
 
 @end

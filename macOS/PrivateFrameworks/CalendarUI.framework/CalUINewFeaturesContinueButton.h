@@ -14,8 +14,6 @@
 @property(copy, nonatomic) CDUnknownBlockType removeButtonBlock; // @synthesize removeButtonBlock=_removeButtonBlock;
 - (void).cxx_destruct;
 - (void)_handleContinueButtonClick;
-- (void)_setButtonAppearanceTint;
-- (void)drawRect:(struct CGRect)arg1;
 - (id)init;
 
 @end

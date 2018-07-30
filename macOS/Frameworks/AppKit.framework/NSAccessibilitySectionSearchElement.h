@@ -8,6 +8,7 @@
 
 @class NSMutableSet;
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilitySectionSearchElement : NSObject
 {
     id _element;

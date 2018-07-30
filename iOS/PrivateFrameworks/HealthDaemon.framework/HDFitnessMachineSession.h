@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class HDEnhancedFTMSData, HDFitnessMachineDataCharacteristicBase, HDFitnessMachineStatus, HDHealthServiceOOBInfo, HKHealthService, NSArray, NSData, NSDate, NSString, NSUUID, _HKFitnessMachine;
+@class HDEnhancedFTMSData, HDFitnessMachineDataCharacteristicBase, HDFitnessMachineSessionRecoveryConfiguration, HDFitnessMachineStatus, HDHealthServiceOOBInfo, HKHealthService, NSArray, NSData, NSDate, NSString, NSUUID, _HKFitnessMachine;
 
 @interface HDFitnessMachineSession : NSObject
 {
@@ -33,6 +33,7 @@
     NSArray *_oobDataArray;
 }
 
++ (id)serviceFromRecoveryConfiguration:(id)arg1;
 @property(retain, nonatomic) NSArray *oobDataArray; // @synthesize oobDataArray=_oobDataArray;
 @property(readonly, nonatomic) _Bool waitingOnActivityType; // @synthesize waitingOnActivityType=_waitingOnActivityType;
 @property(readonly, nonatomic) _Bool waitingOnBluetoothConnection; // @synthesize waitingOnBluetoothConnection=_waitingOnBluetoothConnection;
@@ -64,7 +65,8 @@
 @property(readonly, nonatomic) NSString *nfcSessionID;
 @property(readonly, nonatomic) _Bool dataTransferRequirementsComplete;
 - (void)setFitnessMachineName:(id)arg1 type:(unsigned long long)arg2 identifier:(id)arg3;
-- (id)initWithSessionConfiguration:(id)arg1;
+@property(readonly, nonatomic) HDFitnessMachineSessionRecoveryConfiguration *recoveryConfiguration;
+- (id)initWithRecoveryConfiguration:(id)arg1;
 - (id)init;
 - (id)initWithNFCSessionIDData:(id)arg1;
 - (id)_initWithFitnessMachineSessionUUID:(id)arg1;

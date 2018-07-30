@@ -25,6 +25,7 @@
 @property struct CGRect bounds;
 @property(retain) CALayer *layer;
 - (void)dealloc;
+- (void)setDestination:(id)arg1;
 - (id)_initWithMTLTexture:(id)arg1 options:(id)arg2;
 - (id)_initWithCGLContext:(void *)arg1 options:(id)arg2;
 - (id)_initWithOptions:(id)arg1;

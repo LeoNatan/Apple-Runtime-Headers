@@ -8,7 +8,7 @@
 
 @interface PHAdjustmentData (PUPhotoEditing)
 - (long long)_pu_baseOrientationForAsset:(id)arg1;
-- (_Bool)pu_loadPhotoEditModel:(id)arg1 forAsset:(id)arg2;
+- (_Bool)pu_loadPhotoEditModel:(id)arg1 forAsset:(id)arg2 rawEditingAllowed:(_Bool)arg3;
 - (_Bool)pu_isPenultimateAvailable;
 - (long long)pu_penultimateState;
 - (long long)pu_adjustmentWorkVersion;

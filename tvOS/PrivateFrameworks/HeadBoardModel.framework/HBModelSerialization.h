@@ -12,6 +12,7 @@
 
 + (id)_rawFolderFromITunesFolder:(id)arg1;
 + (id)rawFolderFromITunesRepresentation:(id)arg1;
++ (id)applicationIdentifiersFromITunesRepresentation:(id)arg1;
 + (id)_formattedPlistItemsFromRootFolderDict:(id)arg1 incrementingOrderId:(unsigned long long)arg2;
 + (id)_rawRootItemFromPlistRepresentation:(id)arg1;
 + (void)formatAndSavePlistContentFromURL:(id)arg1;

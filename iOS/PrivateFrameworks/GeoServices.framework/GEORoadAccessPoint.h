@@ -15,15 +15,18 @@
     PBUnknownFields *_unknownFields;
     int _drivingDirection;
     GEOLatLng *_location;
+    unsigned int _significance;
     int _walkingDirection;
     _Bool _isApproximate;
     struct {
         unsigned int drivingDirection:1;
+        unsigned int significance:1;
         unsigned int walkingDirection:1;
         unsigned int isApproximate:1;
     } _has;
 }
 
+@property(nonatomic) unsigned int significance; // @synthesize significance=_significance;
 @property(nonatomic) _Bool isApproximate; // @synthesize isApproximate=_isApproximate;
 @property(retain, nonatomic) GEOLatLng *location; // @synthesize location=_location;
 - (void).cxx_destruct;
@@ -37,6 +40,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasSignificance;
 - (int)StringAsDrivingDirection:(id)arg1;
 - (id)drivingDirectionAsString:(int)arg1;
 @property(nonatomic) _Bool hasDrivingDirection;

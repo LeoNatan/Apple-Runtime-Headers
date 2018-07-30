@@ -4,18 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FrontBoardServices/FBSSystemServiceFacilityClient.h>
+#import <FrontBoardServices/FBSServiceFacilityClient.h>
 
-@interface FBSOrientationObserverClient : FBSSystemServiceFacilityClient
+@interface FBSOrientationObserverClient : FBSServiceFacilityClient
 {
     id <FBSOrientationObserverClientDelegate> _delegate;
     unsigned int _interest;
 }
 
+- (void).cxx_destruct;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (void)configureConnectMessage:(id)arg1;
+- (void)_getActiveInterfaceOrientationSynchronously:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)registerOrientationInterest:(unsigned int)arg1;
 - (void)activeInterfaceOrientationWithCompletion:(CDUnknownBlockType)arg1;
+- (long long)activeInterfaceOrientation;
 - (void)invalidate;
 - (id)initWithDelegate:(id)arg1 calloutQueue:(id)arg2;
 

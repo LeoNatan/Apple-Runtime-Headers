@@ -10,6 +10,7 @@
 
 @class NSArray, NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigRoutingContextCommandOutputDeviceConfiguration : NSObject <AVOutputDeviceConfigurationRetrieval>
 {
     struct __CFDictionary *_response;

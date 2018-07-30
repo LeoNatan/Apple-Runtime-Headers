@@ -7,6 +7,6 @@
 #import "GEOQuickETARequest.h"
 
 @interface GEOQuickETARequest (RTExtras)
-- (id)initWithOrigin:(id)arg1 destinationPLOI:(id)arg2;
+- (id)initWithOrigin:(id)arg1 destinationPLOI:(id)arg2 destinationGeoMapItem:(id)arg3;
 @end
 

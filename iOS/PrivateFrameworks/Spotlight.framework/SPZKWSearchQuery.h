@@ -11,15 +11,16 @@
 @interface SPZKWSearchQuery : SPQueryTask
 {
     NSArray *_mutableSections;
-    _Bool _springBoardIsActive;
+    unsigned long long _queryID;
 }
 
-@property _Bool springBoardIsActive; // @synthesize springBoardIsActive=_springBoardIsActive;
++ (void)initialize;
+@property unsigned long long queryID; // @synthesize queryID=_queryID;
 - (void).cxx_destruct;
 - (id)unsafeSessionEntityString;
 - (id)unsafeSections;
-- (id)unsafeLocalSuggestions;
-- (id)unsafeSuggestions;
+- (void)start;
+- (void)addApplicationResultsFromPredictionResponse:(id)arg1 toSection:(id)arg2 queryIdent:(unsigned long long)arg3;
 
 @end
 

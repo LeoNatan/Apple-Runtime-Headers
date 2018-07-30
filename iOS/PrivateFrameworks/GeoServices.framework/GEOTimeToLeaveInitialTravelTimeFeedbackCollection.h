@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOTimeToLeaveInitialTravelTimeFeedbackCollection : PBCodable <NSCopying>
 {
     int _travelTime;
@@ -27,8 +28,6 @@
 - (id)travelTimeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTravelTime;
 @property(nonatomic) int travelTime; // @synthesize travelTime=_travelTime;
-- (id)initWithTravelTime:(double)arg1;
-- (int)bucketValueForTravelTime:(double)arg1;
 
 @end
 

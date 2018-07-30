@@ -6,9 +6,11 @@
 
 #import "PSListController.h"
 
-@class NSMutableArray, PSSpecifier, UISwitch;
+#import "DevicePINControllerDelegate.h"
 
-@interface PSUIRestrictionsController : PSListController
+@class NSMutableArray, NSString, PSSpecifier, UISwitch;
+
+@interface PSUIRestrictionsController : PSListController <DevicePINControllerDelegate>
 {
     UISwitch *_delayedSwitch;
     _Bool _delayedValue;
@@ -22,6 +24,8 @@
 + (void)formatSearchEntries:(id)arg1 parent:(id)arg2;
 @property(retain, nonatomic) NSMutableArray *mcRestrictionFeatures; // @synthesize mcRestrictionFeatures=_mcRestrictionFeatures;
 - (void).cxx_destruct;
+- (void)didAcceptSetPIN;
+- (void)didAcceptRemovePIN;
 - (_Bool)_isSignedInToStore;
 - (_Bool)_mesaIsEnabledForStore;
 - (id)contentRestriction:(id)arg1;
@@ -59,7 +63,6 @@
 - (void)setCapabilityEnabled:(id)arg1 specifier:(id)arg2;
 - (id)siriContentRestrictionState:(id)arg1;
 - (_Bool)siriContentRestrictionsLockedDown;
-- (id)webContentRestrictionState:(id)arg1;
 - (id)featureValue:(id)arg1;
 - (_Bool)featureRestricted:(id)arg1;
 - (void)setFeatureValue:(id)arg1 specifier:(id)arg2;
@@ -72,6 +75,12 @@
 - (_Bool)_isiTunesUInstalled;
 - (_Bool)_isPodcastsInstalled;
 - (_Bool)_isiBooksInstalled;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

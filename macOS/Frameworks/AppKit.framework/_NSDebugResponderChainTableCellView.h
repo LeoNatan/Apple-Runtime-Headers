@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) NSTextField *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
-- (void)setBackgroundStyle:(long long)arg1;
 - (void)layout;
 - (BOOL)isFlipped;
 - (void)dealloc;

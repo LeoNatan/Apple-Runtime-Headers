@@ -18,8 +18,12 @@ __attribute__((visibility("hidden")))
     BOOL _octetAligned;
     BOOL _dtmf;
     unsigned int _networkPayload;
+    unsigned short _evsChannelAwareOffset;
+    BOOL _evsHeaderFullOnly;
 }
 
+@property(nonatomic) BOOL evsHeaderFullOnly; // @synthesize evsHeaderFullOnly=_evsHeaderFullOnly;
+@property(nonatomic) unsigned short evsChannelAwareOffset; // @synthesize evsChannelAwareOffset=_evsChannelAwareOffset;
 @property(nonatomic) unsigned int networkPayload; // @synthesize networkPayload=_networkPayload;
 @property(nonatomic, getter=isDTMF) BOOL dtmf; // @synthesize dtmf=_dtmf;
 @property(nonatomic, getter=isOctetAligned) BOOL octetAligned; // @synthesize octetAligned=_octetAligned;

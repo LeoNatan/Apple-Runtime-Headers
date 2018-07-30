@@ -29,7 +29,9 @@
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (id)_synthesizedCatalogDictionaryFromLocalDirectoryURL:(id)arg1 options:(unsigned long long)arg2;
 - (BOOL)_parseFromDictionary:(id)arg1 error:(id *)arg2;
+- (id)initWithLocalProductsDirectoryURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)initWithXMLData:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 
 // Remaining properties

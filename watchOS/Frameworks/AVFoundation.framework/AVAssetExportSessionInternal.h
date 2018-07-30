@@ -8,6 +8,7 @@
 
 @class AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVMetadataItemFilter, AVVideoComposition, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetExportSessionInternal : NSObject
 {
     struct OpaqueFigAssetExportSession *figExportSession;

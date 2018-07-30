@@ -34,7 +34,7 @@
 - (void)eraseAnisetteWithCompletion:(CDUnknownBlockType)arg1;
 - (void)syncAnisetteWithSIMData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)provisionAnisetteWithCompletion:(CDUnknownBlockType)arg1;
-- (void)setResponseFromDictionary:(id)arg1;
+- (void)setResponseFromData:(id)arg1;
 - (id)responsePayload;
 - (BOOL)hasResponse;
 - (id)requestPayload;

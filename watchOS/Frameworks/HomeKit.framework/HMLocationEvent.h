@@ -34,10 +34,10 @@
 - (void)_retrieveLocationEvent;
 - (void)_updateRegion:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateRegion:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3 msgDispatcher:(id)arg4;
+@property(retain, nonatomic) CLRegion *region; // @synthesize region=_region;
+- (void)__configureWithContext:(id)arg1 eventTrigger:(id)arg2;
 - (id)initWithDict:(id)arg1 region:(id)arg2;
 - (id)initWithRegion:(id)arg1;
-@property(retain, nonatomic) CLRegion *region; // @synthesize region=_region;
 
 @end
 

@@ -6,9 +6,8 @@
 
 #import "NSObject.h"
 
-@class CIContext, CIImage, NSDictionary, NSURL, VNImageSourceManager;
+@class CIContext, CIImage, NSDictionary, VNImageSourceManager;
 
-__attribute__((visibility("hidden")))
 @interface VNImageBuffer : NSObject
 {
     struct __CVBuffer *_origPixelBuffer;
@@ -24,15 +23,20 @@ __attribute__((visibility("hidden")))
 
 + (struct CGColorSpace *)copyColorspaceForFormat:(unsigned int)arg1 bitmapInfo:(unsigned int *)arg2;
 + (int)_helpReadOrientationFromOptionsDictionary:(id)arg1;
++ (struct __CFDictionary *)pixelBufferAttributes;
 - (void).cxx_destruct;
 - (_Bool)_useCoreImageForFormat:(unsigned int)arg1;
+- (id)_optionsWithOverridingOptions:(id)arg1;
+- (id)augmentedCroppedBuffersWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 format:(unsigned int)arg3 cropRect:(struct CGRect)arg4 options:(id)arg5 augmentationOptions:(id)arg6 error:(id *)arg7;
+- (id)augmentedBuffersWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 format:(unsigned int)arg3 options:(id)arg4 augmentationOptions:(id)arg5 error:(id *)arg6;
+- (struct __CVBuffer *)_baseCVPixelBuffer;
+- (id)_baseCIImage;
 - (void)purgeCachedRepresentations;
 - (struct __CVBuffer *)createCroppedBufferWithMaxSideLengthOf:(unsigned long long)arg1 andCropBounds:(struct CGRect)arg2 andPixelFormat:(unsigned int)arg3 andOptions:(id)arg4 error:(id *)arg5;
 - (struct __CVBuffer *)createBufferWithMaxSideLengthOf:(unsigned long long)arg1 andPixelFormat:(unsigned int)arg2 andOptions:(id)arg3 error:(id *)arg4;
 - (struct CGRect)makeClippedRectAgainstImageExtentUsingOriginalRect:(struct CGRect)arg1;
 - (_Bool)processInChunksOfSize:(unsigned long long)arg1 overlapFraction:(float)arg2 options:(id)arg3 roi:(struct CGRect)arg4 handler:(CDUnknownBlockType)arg5 error:(id *)arg6;
-- (_Bool)isBufferInMemoryWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 format:(unsigned int)arg3;
-@property(readonly) NSURL *fileURL;
+- (id)fileURL;
 - (id)imageProperties;
 -     // Error parsing type: B24@0:8^{?=[3]}16, name: getCameraIntrinsicsAvailable:
 - (_Bool)getCameraOpticalCenterIfAvailable:(struct CGPoint *)arg1;
@@ -41,7 +45,11 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long width;
 - (void)calculateOrientationCorrectedImageDimensions;
 - (int)orientation;
+- (struct __CVBuffer *)cropAndScaleBufferWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 cropRect:(struct CGRect)arg3 format:(unsigned int)arg4 imageCropAndScaleOption:(unsigned long long)arg5 options:(id)arg6 error:(id *)arg7 calculatedNormalizedOriginOffset:(struct CGPoint *)arg8 calculatedScaleX:(double *)arg9 calculatedScaleY:(double *)arg10;
 - (struct __CVBuffer *)croppedBufferWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 format:(unsigned int)arg3 cropRect:(struct CGRect)arg4 options:(id)arg5 error:(id *)arg6;
+- (_Bool)_cropImageSourceManager:(id)arg1 outBuffer:(struct __CVBuffer **)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 format:(unsigned int)arg5 cropRect:(struct CGRect)arg6 performCrop:(_Bool)arg7 options:(id)arg8 error:(id *)arg9;
+- (_Bool)_cropCIImage:(id)arg1 outBuffer:(struct __CVBuffer **)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 format:(unsigned int)arg5 cropRect:(struct CGRect)arg6 performCrop:(_Bool)arg7 options:(id)arg8 error:(id *)arg9;
+- (_Bool)_cropCVPixelBuffer:(struct __CVBuffer *)arg1 outBuffer:(struct __CVBuffer **)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 format:(unsigned int)arg5 cropRect:(struct CGRect)arg6 performCrop:(_Bool)arg7 options:(id)arg8 error:(id *)arg9;
 - (struct __CVBuffer *)bufferWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 format:(unsigned int)arg3 options:(id)arg4 error:(id *)arg5;
 - (struct __CVBuffer *)originalPixelBuffer;
 - (void)dealloc;
@@ -49,8 +57,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)initWithCIImage:(id)arg1 options:(id)arg2;
 - (id)initWithCGImage:(struct CGImage *)arg1 options:(id)arg2;
-- (id)initWithBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
-- (id)initWithBufferOrImage:(id)arg1 options:(id)arg2;
+- (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
 - (id)initWithOptions:(id)arg1;
 
 @end

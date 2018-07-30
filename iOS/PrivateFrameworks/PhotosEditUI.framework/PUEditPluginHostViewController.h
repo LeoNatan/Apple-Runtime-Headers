@@ -10,6 +10,7 @@
 
 @class NSNumber, NSString, PUEditPlugin;
 
+__attribute__((visibility("hidden")))
 @interface PUEditPluginHostViewController : UIViewController <PLDismissableViewController>
 {
     _Bool __extensionDidBeginContentEditing;

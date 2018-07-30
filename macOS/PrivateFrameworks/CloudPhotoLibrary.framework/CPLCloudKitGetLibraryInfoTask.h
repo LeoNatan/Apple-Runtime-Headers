@@ -8,24 +8,31 @@
 
 #import "CPLEngineTransportGetLibraryInfoTask.h"
 
-@class NSString;
+@class CPLCloudKitScope, CPLEngineScope, NSString;
 
 @interface CPLCloudKitGetLibraryInfoTask : CPLCloudKitSimpleRecordFetchTask <CPLEngineTransportGetLibraryInfoTask>
 {
     CDUnknownBlockType _completionHandler;
-    BOOL _shouldUpdateState;
+    long long _originalScopeType;
+    CPLCloudKitScope *_cloudKitScope;
+    CPLEngineScope *_scope;
 }
 
-@property(nonatomic) BOOL shouldUpdateState; // @synthesize shouldUpdateState=_shouldUpdateState;
+@property(readonly, nonatomic) CPLEngineScope *scope; // @synthesize scope=_scope;
+@property(readonly, nonatomic) CPLCloudKitScope *cloudKitScope; // @synthesize cloudKitScope=_cloudKitScope;
 - (void).cxx_destruct;
+- (void)_determineScopeTypeAndFetchLibraryInfo;
 - (void)runOperations;
-- (id)initWithController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithController:(id)arg1 cloudKitScope:(id)arg2 scope:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
+@property(nonatomic, getter=isBackgroundTask) BOOL backgroundTask;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isForcedTask) BOOL forcedTask;
 @property(nonatomic) BOOL foreground;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isHighPriorityBackground) BOOL highPriorityBackground;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) id <CPLEngineTransportGroup> transportGroup;
 

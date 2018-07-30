@@ -24,8 +24,7 @@
     } _flags;
     void *_temporaryIDClass;
     id _coreSpotlightDelegate;
-    int _activeRequests;
-    int _reserved32;
+    void *_reserved1;
 }
 
 + (Class)migrationManagerClass;
@@ -66,9 +65,8 @@
 - (id)currentQueryGeneration;
 - (BOOL)supportsGenerationalQuerying;
 - (BOOL)supportsConcurrentRequestHandling;
-- (void)decrementInUseCounter;
-- (void)incrementInUseCounter;
 - (id)externalRecordsPath;
+- (void)_setupObserver;
 - (id)_storeInfoForEntityDescription:(id)arg1;
 - (void)_didLoadMetadata;
 - (void)_setMetadataDirty:(BOOL)arg1;

@@ -12,14 +12,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)_localizedNameForActionForValue:(unsigned int)arg1;
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
-+ (id)_localizedNameForValue:(unsigned int)arg1;
-+ (_Bool)_valueIsValid:(unsigned int)arg1;
-+ (id)_optionWithValue:(unsigned int)arg1;
++ (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_localizedNameForActionForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_nameLocalizationKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_localizedNameForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (_Bool)_valueIsValid:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_optionWithValue:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_faceBundleStringToValueDict;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
+- (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;
 - (id)JSONObjectRepresentation;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

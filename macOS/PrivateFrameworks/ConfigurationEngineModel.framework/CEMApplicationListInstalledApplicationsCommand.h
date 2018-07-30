@@ -12,21 +12,21 @@
 
 @interface CEMApplicationListInstalledApplicationsCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadIdentifiers;
 }
 
-+ (id)allowedReasons;
-+ (id)InstalledApplicationListItem_allowedStatusKeys;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withIdentifiers:(id)arg2;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusInstalledApplicationListItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSArray *payloadIdentifiers; // @synthesize payloadIdentifiers=_payloadIdentifiers;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (BOOL)mustBeSupervised;
-@property(readonly, nonatomic) NSArray *payloadIdentifiers;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

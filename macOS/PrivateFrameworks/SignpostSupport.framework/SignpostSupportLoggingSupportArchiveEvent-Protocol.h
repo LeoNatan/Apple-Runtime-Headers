@@ -9,6 +9,10 @@
 @class NSString, NSUUID;
 
 @protocol SignpostSupportLoggingSupportArchiveEvent <NSObject>
+@property(nonatomic) int tz_dsttime;
+@property(nonatomic) int tz_minuteswest;
+@property(nonatomic) int tv_usec;
+@property(nonatomic) long long tv_sec;
 @property(retain, nonatomic) NSString *processName;
 @property(retain, nonatomic) NSString *processImagePath;
 @property(retain, nonatomic) NSUUID *processImageUUID;
@@ -16,5 +20,6 @@
 @property(nonatomic) unsigned long long processUniqueID;
 @property(nonatomic) int processID;
 @property(nonatomic) unsigned long long _machContinuousTimestamp;
+- (NSString *)startWallTimeStringWithTimeZone:(NSString *)arg1;
 @end
 

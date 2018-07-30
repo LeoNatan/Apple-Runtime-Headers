@@ -9,7 +9,7 @@
 #import "NSCoding.h"
 #import "NSCopying.h"
 
-@class NSArray, NSDate, NSDictionary, NSString, NSURL, PDFAction, PDFAnnotationPopup, PDFAnnotationPrivateVars, PDFBorder, PDFDestination, PDFPage, UIColor, UIFont;
+@class NSArray, NSDate, NSDictionary, NSString, NSURL, PDFAction, PDFAnnotationPrivateVars, PDFBorder, PDFDestination, PDFPage, UIColor, UIFont;
 
 @interface PDFAnnotation : NSObject <NSCopying, NSCoding>
 {
@@ -173,7 +173,7 @@
 - (_Bool)shouldBurnIn;
 - (void)setIsSignature:(_Bool)arg1;
 - (_Bool)isSignature;
-@property(retain, nonatomic) PDFAnnotationPopup *popup;
+@property(retain, nonatomic) PDFAnnotation *popup;
 @property(copy, nonatomic) NSString *userName;
 @property(copy, nonatomic) NSDate *modificationDate;
 - (void)_restorePropertiesAfterSetBounds;
@@ -183,6 +183,7 @@
 @property(nonatomic) __weak PDFPage *page;
 - (void)removeAKAnnotationAdaptor;
 - (void)setupAKAnnotationAdaptorIfNecessary;
+- (void)_releaseDictionaryRef;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

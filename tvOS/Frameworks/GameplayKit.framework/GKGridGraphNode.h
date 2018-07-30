@@ -11,6 +11,7 @@
     struct GKCGridGraphNode *_cGridGraphNode;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)nodeWithGridPosition: /* Error: Ran out of types for this method. */;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

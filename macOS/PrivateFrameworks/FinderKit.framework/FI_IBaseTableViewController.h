@@ -12,17 +12,18 @@ __attribute__((visibility("hidden")))
 @interface FI_IBaseTableViewController : FI_TViewController
 {
     NSObjectController *_dataSource;
-    NSIndexSet *_columnIndexesToResizeToFitContents;
+    struct TNSRef<NSIndexSet, void> _columnIndexesToResizeToFitContents;
+    TNSWeakPtr_a131d41e _updateColumnWidthsToFitContentsToken;
     struct TKeyValueObserver _arrangedObjectsObserver;
 }
 
-@property(retain, nonatomic) NSIndexSet *columnIndexesToResizeToFitContents; // @synthesize columnIndexesToResizeToFitContents=_columnIndexesToResizeToFitContents;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)arrangedObjectsChanged;
 - (void)updateColumnWidthsToFitContents;
 - (id)selectionIndexesForProposedSelection:(id)arg1;
 - (void)addColumn:(id)arg1;
+@property(retain, nonatomic) NSIndexSet *columnIndexesToResizeToFitContents; // @dynamic columnIndexesToResizeToFitContents;
 - (void)setView:(id)arg1;
 - (id)_dataSource;
 - (Class)dataSourceClass;

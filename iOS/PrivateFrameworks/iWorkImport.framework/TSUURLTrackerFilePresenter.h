@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _hasStarted;
     NSData *_bookmarkDataIfAvailable;
+    _Bool _forceEncodingBookmarkData;
     NSError *_latestError;
     id <TSUURLTrackerDelegate> _delegate;
     NSOperationQueue *_presentedItemOperationQueue;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)stop;
 - (void)pause;
 - (void)startOrResume;
+@property(readonly) NSData *bookmarkDataIfAvailable;
 - (id)_bookmarkData;
 @property(readonly) NSData *bookmarkData;
 - (id)_URLAndReturnError:(id *)arg1;

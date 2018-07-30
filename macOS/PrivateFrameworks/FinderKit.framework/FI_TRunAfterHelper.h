@@ -6,20 +6,34 @@
 
 #import "NSObject.h"
 
+#import "TMarkTornDown.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface FI_TRunAfterHelper : NSObject
+@interface FI_TRunAfterHelper : NSObject <TMarkTornDown>
 {
-    unsigned long long _postID;
-    unsigned long long _owningTargetID;
-    unique_function_acfb320d _functor;
+    unsigned long long _validatorID;
+    unique_function_63952f55 _functor;
+    _Bool _onMainThread;
+    struct TNSRef<FI_TRunAfterHelper, void> _strongSelf;
+    struct TSpinLock _strongSelfRunAfterLock;
+    _Bool _cancelled;
 }
 
-+ (unsigned long long)postFunctor:(unique_function_acfb320d *)arg1 withOwningTargetID:(unsigned long long)arg2 delayInSec:(double)arg3;
-@property unsigned long long postID; // @synthesize postID=_postID;
++ (TNSWeakPtr_a131d41e)postFunctor:(unique_function_63952f55 *)arg1 withValidatorID:(unsigned long long)arg2 delayInSec:(double)arg3 onMainThread:(_Bool)arg4;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)cancel;
 - (void)post;
-- (id)initWithFunctor:(unique_function_acfb320d *)arg1 withOwningTargetID:(unsigned long long)arg2;
+@property(readonly, getter=isTornDown) _Bool tornDown;
+- (id)initWithFunctor:(unique_function_63952f55 *)arg1 withValidatorID:(unsigned long long)arg2 onMainThread:(_Bool)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -72,6 +72,13 @@ struct CAColorMatrix {
     float m45;
 };
 
+struct CADisplayModePriv {
+    struct Mode _field1;
+    id _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+};
+
 struct CADoublePoint {
     double x;
     double y;
@@ -230,10 +237,11 @@ struct Context {
     unsigned int _field16;
     struct ObjectCache *_field17;
     id _field18;
-    unsigned int _field19;
-    float _field20;
-    struct Commit *_field21;
-    struct Generic _field22;
+    id _field19;
+    unsigned int _field20;
+    float _field21;
+    struct Commit *_field22;
+    struct Generic _field23;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -254,7 +262,8 @@ struct Data {
     unsigned int :4;
     unsigned int :4;
     unsigned int :4;
-    unsigned int :4;
+    unsigned int :5;
+    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -312,6 +321,9 @@ struct Display {
     unsigned int _field20;
     struct DisplayShmemInfo _field21;
     unsigned int _field22;
+    unsigned int _field23;
+    _Bool _field24;
+    int _field25;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -413,15 +425,15 @@ struct List<void (^)()>;
 struct Mode {
     union {
         struct {
-            unsigned int width:16;
-            unsigned int height:16;
-            unsigned int refresh_rate:24;
-            unsigned int is_virtual:1;
-            unsigned int pixel_format:4;
-            unsigned int color_range:2;
-        } s;
-        unsigned long long uint64;
-    } u;
+            unsigned int :16;
+            unsigned int :16;
+            unsigned int :24;
+            unsigned int :1;
+            unsigned int :4;
+            unsigned int :2;
+        } _field1;
+        unsigned long long _field2;
+    } _field1;
 };
 
 struct ModeSet {
@@ -518,10 +530,10 @@ struct Server {
     unsigned int _field16;
     struct Context *_field17;
     struct Renderer *_field18;
-    double _field19;
+    struct Bounds _field19;
     double _field20;
     double _field21;
-    struct __CFDictionary *_field22;
+    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -651,8 +663,6 @@ struct _CAEAGLNativeWindow {
     id _field19;
     struct Atomic _field20;
     unsigned int _field21;
-    struct Mutex _field22;
-    CDUnknownBlockType _field23;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -699,6 +709,7 @@ struct _CAMLWriterPriv {
     struct __CFString *_field5;
     struct __CFSet *_field6;
     int _field7;
+    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;

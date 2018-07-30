@@ -10,7 +10,6 @@
 
 @class CNUIUserActionItem, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNCollectionUserActionItem : NSObject <ABCollectionAction>
 {
     CNUIUserActionItem *_actionItem;

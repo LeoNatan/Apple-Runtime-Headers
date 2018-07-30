@@ -8,20 +8,19 @@
 
 @class NSMutableDictionary, TSUUUIDSetStore;
 
-__attribute__((visibility("hidden")))
 @interface TSUUUIDSubsetCreator : NSObject
 {
     TSUUUIDSetStore *_uuidSetStore;
-    vector_dadc1b26 _baseUuidVector;
+    vector_4dc5f307 _baseUuidVector;
     NSMutableDictionary *_createdSubsetsByRange;
 }
 
 @property(readonly) TSUUUIDSetStore *uuidSetStore; // @synthesize uuidSetStore=_uuidSetStore;
-@property(readonly) const vector_dadc1b26 *baseUuidVector; // @synthesize baseUuidVector=_baseUuidVector;
+@property(readonly) const vector_4dc5f307 *baseUuidVector; // @synthesize baseUuidVector=_baseUuidVector;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned int)uuidSetStoreIndexForIndexesInRange:(struct _NSRange)arg1;
-- (id)initWithUuidSetStore:(id)arg1 baseUuidVector:(const vector_dadc1b26 *)arg2;
+- (id)initWithUuidSetStore:(id)arg1 baseUuidVector:(const vector_4dc5f307 *)arg2;
 
 @end
 

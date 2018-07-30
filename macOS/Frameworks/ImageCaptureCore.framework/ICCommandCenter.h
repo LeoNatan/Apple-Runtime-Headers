@@ -10,6 +10,7 @@
 
 @class NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface ICCommandCenter : NSObject <icddProtocol>
 {
     int _selfPID;
@@ -31,7 +32,6 @@
 - (BOOL)sendMessageCmd:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (id)getConnection;
-- (void)finalize;
 - (void)dealloc;
 - (void)sendCommand:(id)arg1 from:(id)arg2;
 - (void)handleCompletionError:(id)arg1;

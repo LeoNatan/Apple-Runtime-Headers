@@ -34,6 +34,7 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
     BOOL _everHadDelegate;
     NSMutableArray *_queuedDelegateBlocks;
+    NSString *_processName;
     APSPerAppTokenMap *_perAppTokenMap;
     void *_dynamicStore;
     double _reconnectDelay;
@@ -43,6 +44,7 @@
     BOOL _isShutdown;
     BOOL _enablePushDuringSleep;
     NSArray *_pushWakeTopics;
+    NSArray *_criticalWakeTopics;
 }
 
 + (id)preference:(id)arg1;
@@ -66,6 +68,8 @@
 @property(readonly, nonatomic) BOOL isShutdown; // @synthesize isShutdown=_isShutdown;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
+- (void)setCriticalWakeTopics:(id)arg1;
+- (void)_setCriticalWakeTopics:(id)arg1;
 - (void)setPushWakeTopics:(id)arg1;
 - (void)_setPushWakeTopics:(id)arg1;
 - (void)setEnabledTopicsAreInteractive:(BOOL)arg1;
@@ -74,6 +78,7 @@
 - (void)registerForConsoleUserChangeNotifications;
 - (void)performOSXDeallocation;
 - (void)_rerequestPerAppTokens;
+- (void)confirmReceiptForMessage:(id)arg1;
 - (void)requestKeepAlive;
 - (void)invalidateTokenForTopic:(id)arg1 identifier:(id)arg2;
 - (void)_sendPerAppTokenRequestForTopic:(id)arg1 identifier:(id)arg2;
@@ -85,13 +90,15 @@
 - (BOOL)hasIdentity;
 - (void)_deliverToken:(id)arg1 forTopic:(id)arg2 identifier:(id)arg3;
 - (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 error:(id)arg2;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 checkpointTraceData:(id)arg2 error:(id)arg3;
 - (void)_deliverConnectionStatusFromDealloc:(BOOL)arg1;
 - (void)_deliverConnectionStatusChange:(BOOL)arg1;
-- (void)_deliverPublicToken:(id)arg1;
-- (void)_deliverPublicTokenOnIvarQueue:(id)arg1;
+- (void)_deliverPublicToken:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)_deliverPublicTokenOnIvarQueue:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_deliverDidReconnectOnIvarQueue;
 - (void)_deliverMessage:(id)arg1;
 - (void)_dispatch_async_to_ivarQueue:(CDUnknownBlockType)arg1;
+- (void)_addCriticalWakeTopicsToXPCMessage:(id)arg1;
 - (void)_addPushWakeTopicsToXPCMessage:(id)arg1;
 - (void)_addEnableStatusNotificationsToXPCMessage:(id)arg1;
 - (void)_addUsesAppLaunchStatsToXPCMessage:(id)arg1;
@@ -104,6 +111,9 @@
 @property(nonatomic) unsigned long long largeMessageSize;
 @property(nonatomic) unsigned long long messageSize;
 @property(readonly, retain, nonatomic) NSData *publicToken;
+- (id)opportunisticTopics;
+- (id)ignoredTopics;
+- (id)enabledTopics;
 - (void)setIgnoredTopics:(id)arg1;
 - (void)setOpportunisticTopics:(id)arg1;
 - (void)setEnabledTopics:(id)arg1;

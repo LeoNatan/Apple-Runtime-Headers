@@ -6,11 +6,11 @@
 
 #import <HomeKitDaemon/HMDUser.h>
 
-@class NSString;
+@class HMDDevice;
 
 @interface HMDResidentUser : HMDUser
 {
-    NSString *_deviceIdentifier;
+    HMDDevice *_device;
     unsigned long long _configurationState;
 }
 
@@ -20,15 +20,20 @@
 - (id)encodingRemoteDisplayName;
 - (id)initWithCoder:(id)arg1;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
-- (id)modelObjectWithChangeType:(unsigned long long)arg1;
-- (_Bool)mergeFromUser:(id)arg1 dataVersion:(long long)arg2;
-- (_Bool)configureWithIDSDevice:(id)arg1;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)legacyUser;
+@property unsigned long long configurationState; // @synthesize configurationState=_configurationState;
+- (_Bool)updateWithDevice:(id)arg1;
+- (void)setDevice:(id)arg1;
+@property(readonly) HMDDevice *device; // @synthesize device=_device;
+- (void)registerIdentity;
 - (_Bool)requiresMakoSupport;
+- (id)displayName;
 - (_Bool)refreshDisplayName;
-@property(nonatomic) unsigned long long configurationState; // @synthesize configurationState=_configurationState;
-- (void)setDeviceIdentifier:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-- (id)initWithUserID:(id)arg1 displayName:(id)arg2 forHomeIdentifier:(id)arg3 uuid:(id)arg4 pairingIdentity:(id)arg5 deviceIdentifier:(id)arg6 configurationState:(unsigned long long)arg7;
+- (id)deviceIdentifier;
+- (id)userID;
+- (void)configureWithHome:(id)arg1;
+- (id)initWithDevice:(id)arg1 home:(id)arg2 pairingIdentity:(id)arg3 configurationState:(unsigned long long)arg4;
 - (id)initWithModelObject:(id)arg1;
 
 @end

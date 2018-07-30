@@ -7,32 +7,35 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPaymentMethod.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBPaymentMethod : PBCodable <NSCopying>
+@interface _INPBPaymentMethod : PBCodable <_INPBPaymentMethod, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_values;
+    struct _has;
+    NSArray *_values;
 }
 
 + (Class)valueType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
+@property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)valueAtIndex:(unsigned int)arg1;
-- (unsigned int)valuesCount;
+@property(readonly, nonatomic) unsigned int valuesCount;
 - (void)addValue:(id)arg1;
 - (void)clearValues;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

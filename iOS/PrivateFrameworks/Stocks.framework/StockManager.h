@@ -49,7 +49,6 @@
 - (void)handleSyncedDataChanged:(id)arg1;
 - (void)reloadStocksFromDefaults;
 - (id)_defaultStockDictionaries;
-- (id)_localeStocks;
 - (id)stockForURL:(id)arg1;
 - (void)dealloc;
 - (id)init;

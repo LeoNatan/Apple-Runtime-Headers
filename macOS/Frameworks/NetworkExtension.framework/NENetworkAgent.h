@@ -50,6 +50,7 @@
 // Remaining properties
 @property(nonatomic, getter=isNetworkProvider) BOOL networkProvider;
 @property(nonatomic, getter=isNexusProvider) BOOL nexusProvider;
+@property(nonatomic) BOOL requiresAssert;
 @property(nonatomic, getter=isSpecificUseOnly) BOOL specificUseOnly;
 @property(nonatomic) BOOL supportsBrowseRequests;
 

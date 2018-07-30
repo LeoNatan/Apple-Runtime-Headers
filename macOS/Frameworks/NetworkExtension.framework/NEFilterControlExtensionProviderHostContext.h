@@ -24,6 +24,8 @@
 - (void)provideURLAppendStringMap:(id)arg1;
 - (void)provideRemediationMap:(id)arg1;
 - (void)notifyRulesChanged;
+- (void)handleReport:(id)arg1;
+- (void)handleNewFlow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

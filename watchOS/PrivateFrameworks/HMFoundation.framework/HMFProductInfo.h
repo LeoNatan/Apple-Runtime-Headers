@@ -15,6 +15,7 @@
 {
     int _productPlatform;
     int _productClass;
+    int _productVariant;
     HMFSoftwareVersion *_softwareVersion;
 }
 
@@ -24,18 +25,20 @@
 + (id)shortDescription;
 + (id)productInfo;
 @property(readonly, nonatomic) HMFSoftwareVersion *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
+@property(readonly) int productVariant; // @synthesize productVariant=_productVariant;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) int productClass; // @synthesize productClass=_productClass;
-@property(readonly, nonatomic) int productPlatform; // @synthesize productPlatform=_productPlatform;
+@property(readonly) int productClass; // @synthesize productClass=_productClass;
+@property(readonly) int productPlatform; // @synthesize productPlatform=_productPlatform;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (id)debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;
 - (id)shortDescription;
+- (id)initWithPlatform:(int)arg1 class:(int)arg2 variant:(int)arg3 softwareVersion:(id)arg4;
 - (id)initWithPlatform:(int)arg1 class:(int)arg2 softwareVersion:(id)arg3;
 - (id)init;
 

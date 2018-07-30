@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class BBAttachmentMetadata, BBBulletin, BBObserver, BBSectionInfo, BBSectionParameters, BBThumbnailSizeConstraints, NSArray, NSData, NSSet, NSString, UIImage;
+@class BBAttachmentMetadata, BBBulletin, BBObserver, BBSectionInfo, BBSectionParameters, BBThumbnailSizeConstraints, NSData, NSSet, NSString, UIImage;
 
 @protocol BBObserverDelegate <NSObject>
 
@@ -24,14 +24,10 @@
 - (void)observer:(BBObserver *)arg1 noteServerReceivedResponseForBulletin:(BBBulletin *)arg2;
 - (void)observer:(BBObserver *)arg1 noteServerConnectionStateChanged:(_Bool)arg2;
 - (void)observer:(BBObserver *)arg1 noteInvalidatedBulletinIDs:(NSSet *)arg2;
-- (void)observer:(BBObserver *)arg1 noteAlertBehaviorOverrideStateChanged:(unsigned long long)arg2;
-- (void)observer:(BBObserver *)arg1 noteAlertBehaviorOverridesChanged:(unsigned long long)arg2;
 - (void)observer:(BBObserver *)arg1 purgeReferencesToBulletinID:(NSString *)arg2;
 - (void)observer:(BBObserver *)arg1 noteSectionParametersChanged:(BBSectionParameters *)arg2 forSectionID:(NSString *)arg3;
 - (void)observer:(BBObserver *)arg1 removeSection:(NSString *)arg2;
 - (void)observer:(BBObserver *)arg1 updateSectionInfo:(BBSectionInfo *)arg2;
-- (void)observer:(BBObserver *)arg1 updateSectionOrder:(NSArray *)arg2;
-- (void)observer:(BBObserver *)arg1 updateSectionOrderRule:(long long)arg2;
 - (void)observer:(BBObserver *)arg1 removeBulletin:(BBBulletin *)arg2;
 - (void)observer:(BBObserver *)arg1 removeBulletin:(BBBulletin *)arg2 forFeed:(unsigned long long)arg3;
 - (void)observer:(BBObserver *)arg1 modifyBulletin:(BBBulletin *)arg2;

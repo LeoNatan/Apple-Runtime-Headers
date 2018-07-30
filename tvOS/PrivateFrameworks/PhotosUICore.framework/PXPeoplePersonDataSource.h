@@ -41,7 +41,7 @@
 - (void)stopListeningForChanges;
 - (void)startListeningForChanges;
 - (id)initWithName:(id)arg1 personFetchType:(unsigned long long)arg2 fetchLimit:(unsigned long long)arg3;
-- (id)initWithName:(id)arg1 personFetchType:(unsigned long long)arg2 objects:(id)arg3;
+- (id)initWithName:(id)arg1 personFetchType:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

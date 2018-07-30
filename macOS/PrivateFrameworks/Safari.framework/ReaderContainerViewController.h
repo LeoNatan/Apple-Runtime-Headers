@@ -6,7 +6,7 @@
 
 #import "NSViewController.h"
 
-@class NSColor, NSView, ReaderViewController;
+@class NSColor, NSView, ReaderContainerView, ReaderViewController;
 
 __attribute__((visibility("hidden")))
 @interface ReaderContainerViewController : NSViewController
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     double _amountOfContinuousReadingViewBannerThatIsVisible;
     long long _animationState;
     BOOL _deactivationIsAnimated;
+    long long _theme;
     ReaderViewController *_readerViewController;
     CDUnknownBlockType _deactivationAnimationDidFinishBlock;
 }
@@ -23,9 +24,9 @@ __attribute__((visibility("hidden")))
 + (id)_moveAnimationWithStartingRect:(struct CGRect)arg1 endingRect:(struct CGRect)arg2;
 + (id)_fadeAnimationWithStartingOpacity:(double)arg1 endingOpacity:(double)arg2;
 @property(copy) CDUnknownBlockType deactivationAnimationDidFinishBlock; // @synthesize deactivationAnimationDidFinishBlock=_deactivationAnimationDidFinishBlock;
-@property(nonatomic) __weak ReaderViewController *readerViewController; // @synthesize readerViewController=_readerViewController;
+@property(retain, nonatomic) ReaderViewController *readerViewController; // @synthesize readerViewController=_readerViewController;
+@property(nonatomic) long long theme; // @synthesize theme=_theme;
 - (void).cxx_destruct;
-- (void)setTheme:(long long)arg1;
 @property(readonly) NSColor *backgroundColor;
 - (struct CGRect)_frameBelowTheViewFrame;
 - (double)_currentBackgroundViewOpacity;
@@ -33,12 +34,16 @@ __attribute__((visibility("hidden")))
 - (void)_updateReaderWKViewFromFrame:(struct CGRect)arg1 toFrame:(struct CGRect)arg2 backgroundViewFromOpacity:(double)arg3 toOpacity:(double)arg4 animated:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)finishAsynchronousDeactivation;
 - (void)deactivateWithAnimation:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_didReplaceReaderViewController:(id)arg1;
 @property(readonly, getter=isAnimatingDeactivation) BOOL animatingDeactivation;
 @property(readonly, getter=isAnimatingActivation) BOOL animatingActivation;
 - (void)activateWithAnimation:(BOOL)arg1 verticalScrollOffsetOfBrowserPage:(double)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)viewDidDisappear;
-- (id)initWithReaderViewController:(id)arg1;
-- (id)init;
+- (void)viewDidLoad;
+- (void)loadView;
+
+// Remaining properties
+@property(retain) ReaderContainerView *view; // @dynamic view;
 
 @end
 

@@ -13,20 +13,20 @@
 
 @interface DMFAppManagementInformation : NSObject <NSCopying, NSSecureCoding>
 {
-    NSString *_displayName;
     unsigned int _state;
     unsigned int _options;
     NSString *_redemptionCode;
     NSString *_unusedRedemptionCode;
+    NSString *_displayName;
 }
 
 + (id)stringForState:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *unusedRedemptionCode; // @synthesize unusedRedemptionCode=_unusedRedemptionCode;
 @property(copy, nonatomic) NSString *redemptionCode; // @synthesize redemptionCode=_redemptionCode;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
-@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
 - (id)_stringForOptions:(unsigned int)arg1;
 - (id)description;

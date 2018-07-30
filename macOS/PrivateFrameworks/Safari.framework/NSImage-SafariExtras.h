@@ -25,6 +25,7 @@
 + (id)safari_imageWithImage:(id)arg1 tintColor:(id)arg2;
 + (id)safari_TIFFNamed:(id)arg1;
 + (id)safari_PNGNamed:(id)arg1;
+@property(readonly, nonatomic) BOOL safari_isEntirelyDark;
 - (id)safari_imageByRoundingCornersWithRadius:(double)arg1;
 @property(readonly, nonatomic) BOOL safari_transparencyAnalysisResultIsNotOpaque;
 @property(nonatomic, setter=safari_setTransparencyAnalysisResult:) long long safari_transparencyAnalysisResult;

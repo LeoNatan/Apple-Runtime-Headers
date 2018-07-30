@@ -22,6 +22,8 @@
 + (_Bool)isFaceTimePhotosRestricted;
 + (void)setFaceTimePhotosEnabled:(_Bool)arg1;
 + (_Bool)isFaceTimePhotosEnabled;
++ (void)setFaceTimePhotosEnabledGenerator:(CDUnknownBlockType)arg1;
++ (CDUnknownBlockType)faceTimePhotosEnabledGenerator;
 + (_Bool)isFaceTimePhotosEnabledByDefault;
 @property(readonly, nonatomic) NSMutableDictionary *callByVideoStreamToken; // @synthesize callByVideoStreamToken=_callByVideoStreamToken;
 @property(readonly, nonatomic) NSMutableDictionary *capabilitiesByVideoStreamToken; // @synthesize capabilitiesByVideoStreamToken=_capabilitiesByVideoStreamToken;

@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) __weak HMDMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
 - (void).cxx_destruct;
+- (_Bool)isMediaSystemContainer;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSUUID *parentUUID;
 - (void)auditRootSettingsGroup:(unsigned int)arg1;

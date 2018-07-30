@@ -53,11 +53,15 @@ struct JSObject {
     unsigned char _field4;
     unsigned char _field5;
     struct AuxiliaryBarrier<JSC::Butterfly *> _field6;
-    unsigned int _field7;
 };
 
 struct JSValue {
     union EncodedValueDescriptor u;
+};
+
+struct JSWeakValue {
+    int m_tag;
+    union WeakValueUnion m_value;
 };
 
 struct OpaqueJSValue;
@@ -82,14 +86,13 @@ struct Weak<JSC::JSString> {
     struct WeakImpl *m_impl;
 };
 
+struct Weak<JSC::Structure> {
+    struct WeakImpl *m_impl;
+};
+
 struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>;
 
 struct WeakImpl;
-
-struct WeakValueRef {
-    int m_tag;
-    union WeakValueUnion u;
-};
 
 struct _NSRange {
     unsigned long long _field1;
@@ -103,7 +106,7 @@ struct pair<JSC::JSObject *, JSC::JSObject *> {
 
 struct unique_ptr<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>, std::__1::default_delete<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>>> {
     struct __compressed_pair<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>*, std::__1::default_delete<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>>> {
-        struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>> *__first_;
+        struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>> *__value_;
     } __ptr_;
 };
 
@@ -127,8 +130,8 @@ union EncodedValueDescriptor {
 };
 
 union WeakValueUnion {
-    struct JSValue m_primitive;
-    struct Weak<JSC::JSObject> m_object;
-    struct Weak<JSC::JSString> m_string;
+    struct JSValue primitive;
+    struct Weak<JSC::JSObject> object;
+    struct Weak<JSC::JSString> string;
 };
 

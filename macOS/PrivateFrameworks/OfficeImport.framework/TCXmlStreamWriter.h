@@ -6,21 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet;
+@class NSMutableSet, TCXmlTextWriterProvider;
 
-__attribute__((visibility("hidden")))
 @interface TCXmlStreamWriter : NSObject
 {
-    struct _xmlTextWriter *mStreamAPI;
+    TCXmlTextWriterProvider *mTextWriterProvider;
     unsigned int mCurrentDepth;
-    BOOL mContentAdded;
+    BOOL mContentAddedToTopElement;
     NSMutableSet *mAddedIds;
 }
 
-+ (BOOL)cleanUpXmlTextWriter:(struct _xmlTextWriter *)arg1;
-+ (struct _xmlTextWriter *)createXmlTextWriterWithBuffer:(struct _xmlOutputBuffer *)arg1;
-+ (struct _xmlTextWriter *)createXmlTextWriterAtEntry:(id)arg1 inOutputStream:(id)arg2 isCompressed:(BOOL)arg3;
-+ (struct _xmlTextWriter *)createXmlTextWriterWithContext:(id)arg1;
 + (BOOL)writeAnchorTargetToStream:(struct _xmlTextWriter *)arg1 name:(id)arg2;
 + (BOOL)writeDtdToStream:(struct _xmlTextWriter *)arg1 name:(id)arg2 pubid:(id)arg3 sysid:(id)arg4 subset:(id)arg5;
 + (BOOL)writeNamespaceToStream:(struct _xmlTextWriter *)arg1 prefix:(id)arg2 uri:(const char *)arg3;
@@ -31,6 +26,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)startElementInStream:(struct _xmlTextWriter *)arg1 name:(id)arg2 prefix:(id)arg3 ns:(const char *)arg4;
 + (BOOL)startPlainElementInStream:(struct _xmlTextWriter *)arg1 name:(id)arg2;
 + (void)resetElementIds;
++ (id)newXmlStreamWriterWithZipEntryName:(id)arg1 outputStream:(id)arg2 isCompressed:(BOOL)arg3;
+- (void).cxx_destruct;
 - (BOOL)writeAnchorTarget:(id)arg1;
 - (BOOL)writeDtd:(id)arg1 pubid:(id)arg2 sysid:(id)arg3 subset:(id)arg4;
 - (BOOL)writeNamespace:(id)arg1 uri:(const char *)arg2;
@@ -45,15 +42,20 @@ __attribute__((visibility("hidden")))
 - (BOOL)writeAttribute:(id)arg1 boolContent:(BOOL)arg2 prefix:(id)arg3 ns:(const char *)arg4;
 - (BOOL)writeAttribute:(id)arg1 intContent:(long long)arg2 prefix:(id)arg3 ns:(const char *)arg4;
 - (BOOL)writeAttribute:(id)arg1 content:(id)arg2 prefix:(id)arg3 ns:(const char *)arg4;
-- (BOOL)endElementsToBase;
+- (BOOL)endElementsToDepth:(unsigned int)arg1;
+- (unsigned int)currentDepth;
 - (BOOL)writeString:(id)arg1;
 - (BOOL)endElement;
 - (BOOL)startPlainElement:(id)arg1;
 - (BOOL)startElement:(id)arg1 prefix:(id)arg2 ns:(const char *)arg3;
-- (BOOL)contentAdded;
+- (BOOL)contentAddedToTopElement;
 - (struct _xmlTextWriter *)textWriter;
+- (id)textWriterProvider;
+- (BOOL)tearDown;
+- (BOOL)setUp;
+- (BOOL)isWriting;
 - (void)dealloc;
-- (id)initWithTextWriter:(struct _xmlTextWriter *)arg1;
+- (id)initWithTextWriterProvider:(id)arg1;
 
 @end
 

@@ -20,6 +20,8 @@
 @property(nonatomic) int aggregateType; // @synthesize aggregateType=_aggregateType;
 @property(nonatomic) long long totalSampleCount; // @synthesize totalSampleCount=_totalSampleCount;
 @property(nonatomic) double value; // @synthesize value=_value;
+- (id)dictionaryRepresentation;
+- (id)description;
 - (void)scalarMultiply:(double)arg1;
 - (void)add:(id)arg1;
 - (long long)compare:(id)arg1;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     struct TRef<__CFRunLoopSource *, TRetainReleasePolicy<CFRunLoopSourceRef>> _localEventSource;
     _Bool _hideSuggestionsWindowOnMouseUp;
     _Bool _isShowingSuggestionsWindow;
+    struct TNSRef<NSLayoutConstraint, void> _widthConstraint;
     struct TNotificationCenterObserver _tfWillMoveToWindowObserver;
     struct TNotificationCenterObserver _tfDidMoveToWindowObserver;
     struct TNotificationCenterObserver _tfFrameDidChangeObserver;
     struct TNotificationCenterObserver _tfSuperScrollViewDidScrollObserver;
-    struct TNotificationCenterObserver _tfWindowWillZoomClosedObserver;
     struct TNotificationCenterObserver _tfWindowWillCloseObserver;
     struct TNotificationCenterObserver _tfWindowDidResizeObserver;
 }
@@ -43,9 +43,10 @@ __attribute__((visibility("hidden")))
 - (void)tokenFieldWillMoveToWindow:(id)arg1;
 - (void)stopObservingTokenFieldWindow;
 - (void)startObservingTokenFieldWindow:(id)arg1;
+- (id)superScrollView;
 - (void)setTaggingTokenField:(id)arg1;
 - (void)dealloc;
-- (id)initWithSuggestionsTable:(id)arg1 taggingTokenField:(id)arg2;
+- (id)initWithSuggestionsViewController:(id)arg1 taggingTokenField:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

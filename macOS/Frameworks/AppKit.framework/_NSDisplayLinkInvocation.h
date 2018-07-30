@@ -6,6 +6,7 @@
 
 #import <AppKit/NSDisplayLinkInvocation.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSDisplayLinkInvocation : NSDisplayLinkInvocation
 {
     double _timestamp;

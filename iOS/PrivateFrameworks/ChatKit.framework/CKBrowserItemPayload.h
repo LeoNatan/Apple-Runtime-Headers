@@ -37,6 +37,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)__ck_urlFromTextBodyForRichLink;
 - (id)mediaObjectFromPayload;
+- (id)transcoderUserInfo;
 - (_Bool)shouldSendAsRichLink;
 - (_Bool)shouldSendAsText;
 - (_Bool)shouldSendAsMediaObject;

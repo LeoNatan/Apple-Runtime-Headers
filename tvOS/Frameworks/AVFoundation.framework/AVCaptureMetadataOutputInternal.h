@@ -15,9 +15,11 @@
     NSArray *metadataObjectTypes;
     struct CGRect rectOfInterest;
     _Bool faceTrackingMetadataObjectTypesAvailable;
+    _Bool offlineVideoStabilizationMotionMetadataObjectTypesAvailable;
     AVWeakReference *weakReference;
-    struct OpaqueFigSimpleMutex *remoteQueueMutex;
-    void *remoteReceiverQueue;
+    struct OpaqueFigSimpleMutex *queueMutex;
+    void *remoteQueueReceiver;
+    void *localQueue;
     NSObject<OS_dispatch_queue> *objectQueue;
 }
 

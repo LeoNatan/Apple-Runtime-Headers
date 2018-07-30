@@ -6,16 +6,18 @@
 
 #import "UINavigationController.h"
 
+#import "PLDismissableViewController.h"
 #import "UINavigationControllerDelegate.h"
 
 @class NSString, PUAbstractNavigationBanner, UIViewController, _UINavigationControllerPalette;
 
-@interface PUNavigationController : UINavigationController <UINavigationControllerDelegate>
+@interface PUNavigationController : UINavigationController <PLDismissableViewController, UINavigationControllerDelegate>
 {
     _Bool _pu_preventsAutorotation;
     CDUnknownBlockType _ppt_onDidShowViewControllerBlock;
     PUAbstractNavigationBanner *__banner;
     _UINavigationControllerPalette *__palette;
+    id <PXNavigationRoot> _navigationRoot;
     unsigned long long _pu_supportedInterfaceOrientations;
     long long __barStyle;
     UIViewController *__currentToolbarViewController;
@@ -24,12 +26,14 @@
 + (_Bool)_shouldForwardViewWillTransitionToSize;
 @property(nonatomic, setter=_setCurrentToolbarViewController:) __weak UIViewController *_currentToolbarViewController; // @synthesize _currentToolbarViewController=__currentToolbarViewController;
 @property(nonatomic, setter=_setBarStyle:) long long _barStyle; // @synthesize _barStyle=__barStyle;
-@property(nonatomic) _Bool pu_preventsAutorotation; // @synthesize pu_preventsAutorotation=_pu_preventsAutorotation;
-@property(nonatomic) unsigned long long pu_supportedInterfaceOrientations; // @synthesize pu_supportedInterfaceOrientations=_pu_supportedInterfaceOrientations;
+@property(readonly, nonatomic) _Bool pu_preventsAutorotation; // @synthesize pu_preventsAutorotation=_pu_preventsAutorotation;
+@property(readonly, nonatomic) unsigned long long pu_supportedInterfaceOrientations; // @synthesize pu_supportedInterfaceOrientations=_pu_supportedInterfaceOrientations;
+@property(retain, nonatomic) id <PXNavigationRoot> navigationRoot; // @synthesize navigationRoot=_navigationRoot;
 @property(retain, nonatomic, setter=_setPalette:) _UINavigationControllerPalette *_palette; // @synthesize _palette=__palette;
 @property(retain, nonatomic, setter=_setBanner:) PUAbstractNavigationBanner *_banner; // @synthesize _banner=__banner;
 @property(copy, nonatomic, setter=ppt_setOnDidShowViewControllerBlock:) CDUnknownBlockType ppt_onDidShowViewControllerBlock; // @synthesize ppt_onDidShowViewControllerBlock=_ppt_onDidShowViewControllerBlock;
 - (void).cxx_destruct;
+- (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (_Bool)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
@@ -42,9 +46,12 @@
 - (id)_extendedToolbar;
 - (void)viewController:(id)arg1 willSetupInitialBarsVisibilityOnViewWillAppearAnimated:(_Bool)arg2;
 - (void)_updateBarStyle;
+- (void)_removeNavigationDisplayModeButtonItem;
+- (void)_insertNavigationDisplayModeButtonItem;
 - (void)pu_navigationTransitionDidEnd:(id)arg1;
 - (void)pu_setPreventsAutorotation:(_Bool)arg1;
 - (void)pu_setSupportedInterfaceOrientations:(unsigned long long)arg1;
+- (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_commonPUNavigationControllerInitialization;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;

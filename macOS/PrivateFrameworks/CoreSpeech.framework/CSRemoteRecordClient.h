@@ -6,18 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, OS_remote_device_browser, OS_xpc_remote_connection;
+@class CSDispatchGroup, NSObject<OS_dispatch_queue>, OS_remote_device, OS_remote_device_browser, OS_xpc_remote_connection;
 
 @interface CSRemoteRecordClient : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     OS_xpc_remote_connection *_connection;
     OS_remote_device_browser *_deviceBrowser;
-    NSObject<OS_dispatch_group> *_deviceWaitingGroup;
+    CSDispatchGroup *_deviceWaitingGroup;
     BOOL _isRemoteRecording;
     id <CSRemoteRecordClientDelegate> _delegate;
+    OS_remote_device *_device;
 }
 
+@property(retain, nonatomic) OS_remote_device *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CSRemoteRecordClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (BOOL)hasPendingTwoShotBeep;

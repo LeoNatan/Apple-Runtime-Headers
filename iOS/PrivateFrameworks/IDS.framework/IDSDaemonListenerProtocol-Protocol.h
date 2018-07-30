@@ -13,6 +13,8 @@
 @optional
 - (void)iMessageReportSpamCheckUnknownResponseForRequestID:(NSString *)arg1 status:(long long)arg2 abusive:(_Bool)arg3 delay:(double)arg4 withError:(NSError *)arg5;
 - (void)registrationControlStatusResponseForRequestID:(long long)arg1 requestID:(NSString *)arg2 withError:(NSError *)arg3;
+- (void)registrationControlResponseForRequestID:(NSString *)arg1 withBoolAnswer:(_Bool)arg2 additionalContextData:(NSData *)arg3 andError:(NSError *)arg4;
+- (void)registrationControlResponseForRequestID:(NSString *)arg1 withBoolAnswer:(_Bool)arg2 andError:(NSError *)arg3;
 - (void)registrationControlResponseForRequestID:(NSString *)arg1 withError:(NSError *)arg2;
 - (void)applecareResponseForRequestID:(NSString *)arg1 withError:(NSError *)arg2;
 - (void)localPairingResponseForRequestID:(NSString *)arg1 withError:(NSError *)arg2 pairedDevices:(NSArray *)arg3;
@@ -51,19 +53,24 @@
 - (void)localDeviceInfo:(NSDictionary *)arg1;
 - (void)xpcObject:(NSObject<OS_xpc_object> *)arg1 objectContext:(NSDictionary *)arg2;
 - (void)openedSocket:(NSObject<OS_xpc_object> *)arg1 forHandlerID:(NSString *)arg2 error:(NSError *)arg3;
+- (void)groupSession:(NSString *)arg1 didReceiveReport:(NSArray *)arg2;
 - (void)allocationDone:(NSString *)arg1 sessionInfo:(NSDictionary *)arg2;
-- (void)groupStatusNotifier:(NSString *)arg1 didUpdateEvents:(NSSet *)arg2 forGroupID:(NSString *)arg3;
-- (void)groupStatusNotifier:(NSString *)arg1 didUpdateActiveGroup:(NSDictionary *)arg2;
-- (void)groupStatusNotifier:(NSString *)arg1 didUpdateActiveGroups:(NSSet *)arg2;
+- (void)receivedGroupSessionParticipantDataUpdate:(NSDictionary *)arg1 forTopic:(NSString *)arg2 toIdentifier:(NSString *)arg3 fromID:(NSString *)arg4;
+- (void)receivedGroupSessionParticipantUpdate:(NSDictionary *)arg1 forTopic:(NSString *)arg2 toIdentifier:(NSString *)arg3 fromID:(NSString *)arg4;
+- (void)session:(NSString *)arg1 didReceiveActiveParticipants:(NSArray *)arg2 success:(_Bool)arg3;
 - (void)session:(NSString *)arg1 didGetGroupSessionParticipants:(NSArray *)arg2 requestID:(NSNumber *)arg3 error:(NSNumber *)arg4;
 - (void)session:(NSString *)arg1 participantDidLeaveGroupWithInfo:(NSDictionary *)arg2;
 - (void)session:(NSString *)arg1 participantDidJoinGroupWithInfo:(NSDictionary *)arg2;
 - (void)sessionDidLeaveGroup:(NSString *)arg1 error:(NSError *)arg2;
+- (void)sessionDidJoinGroup:(NSString *)arg1 participantUpdateDictionary:(NSDictionary *)arg2 error:(NSError *)arg3;
+- (void)sessionDidJoinGroup:(NSString *)arg1 participantInfo:(NSDictionary *)arg2 error:(NSError *)arg3;
 - (void)sessionDidJoinGroup:(NSString *)arg1 participantsInfo:(NSArray *)arg2 error:(NSError *)arg3;
+- (void)session:(NSString *)arg1 didReceiveReport:(NSArray *)arg2;
 - (void)session:(NSString *)arg1 muted:(_Bool)arg2;
 - (void)session:(NSString *)arg1 audioEnabled:(_Bool)arg2;
 - (void)session:(NSString *)arg1 invitationSentToTokens:(NSSet *)arg2 shouldBreakBeforeMake:(_Bool)arg3;
 - (void)groupSessionEnded:(NSString *)arg1 withReason:(unsigned int)arg2 error:(NSError *)arg3;
+- (void)groupSessionDidTerminate:(NSString *)arg1;
 - (void)sessionEnded:(NSString *)arg1 withReason:(unsigned int)arg2 error:(NSError *)arg3;
 - (void)sessionStarted:(NSString *)arg1;
 - (void)sessionEndReceived:(NSString *)arg1 fromID:(NSString *)arg2 withData:(NSData *)arg3;
@@ -73,6 +80,8 @@
 - (void)sessionAcceptReceived:(NSString *)arg1 fromID:(NSString *)arg2 withData:(NSData *)arg3;
 - (void)sessionInvitationReceivedWithPayload:(NSDictionary *)arg1 forTopic:(NSString *)arg2 sessionID:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 transportType:(NSNumber *)arg6;
 - (void)IDQueryCompletedWithFromURI:(NSString *)arg1 idStatusUpdates:(NSDictionary *)arg2 service:(NSString *)arg3 success:(_Bool)arg4 error:(NSError *)arg5;
+- (void)didFetchPhoneUserSubscriptionSource:(NSNumber *)arg1 requestUUID:(NSString *)arg2 error:(NSError *)arg3;
+- (void)didSetPhoneUserSubscriptionSource:(NSNumber *)arg1 requestUUID:(NSString *)arg2 error:(NSError *)arg3;
 - (void)didGeneratePhoneAuthenticationSignature:(NSData *)arg1 nonce:(NSData *)arg2 certificate:(NSData *)arg3 inputData:(NSData *)arg4 requestUUID:(NSString *)arg5 error:(NSError *)arg6;
 - (void)didAuthenticatePhoneWithAuthenticationCertificateData:(NSData *)arg1 requestUUID:(NSString *)arg2 error:(NSError *)arg3;
 - (void)account:(NSString *)arg1 localDeviceRemoved:(NSDictionary *)arg2;
@@ -101,7 +110,7 @@
 - (void)groupShareReceived:(NSData *)arg1 withGUID:(NSString *)arg2 forTopic:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 context:(NSDictionary *)arg6;
 - (void)OTRTestCallback:(NSString *)arg1 time:(double)arg2 error:(NSError *)arg3;
 - (void)protobufReceived:(NSDictionary *)arg1 withGUID:(NSString *)arg2 forTopic:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 context:(NSDictionary *)arg6;
-- (void)messageIdentifier:(NSString *)arg1 forTopic:(NSString *)arg2 toIdentifier:(NSString *)arg3 hasBeenDeliveredWithContext:(NSDictionary *)arg4;
+- (void)messageIdentifier:(NSString *)arg1 forTopic:(NSString *)arg2 toIdentifier:(NSString *)arg3 fromIdentifier:(NSString *)arg4 hasBeenDeliveredWithContext:(NSDictionary *)arg5;
 - (void)messageIdentifier:(NSString *)arg1 alternateCallbackID:(NSString *)arg2 forAccount:(NSString *)arg3 willSendToDestinations:(NSArray *)arg4 skippedDestinations:(NSArray *)arg5 registrationPropertyToDestinations:(NSDictionary *)arg6;
 - (void)messageIdentifier:(NSString *)arg1 alternateCallbackID:(NSString *)arg2 forAccount:(NSString *)arg3 updatedWithResponseCode:(long long)arg4 error:(NSError *)arg5 lastCall:(_Bool)arg6 context:(NSDictionary *)arg7;
 - (void)accessoryReportMessageReceived:(NSString *)arg1 accessoryID:(NSString *)arg2 controllerID:(NSString *)arg3 withGUID:(NSString *)arg4 forTopic:(NSString *)arg5 toIdentifier:(NSString *)arg6 fromID:(NSString *)arg7 context:(NSDictionary *)arg8;

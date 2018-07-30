@@ -29,8 +29,7 @@
 - (void)positionItemsInBounds:(struct CGRect)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_cacheDisplayScaleIfNeeded;
 - (struct CGSize)layoutSizeFittingSize:(struct CGSize)arg1;
-- (BOOL)supportsAsynchronousMeasurement;
-- (void)populateBoxArrangementCells:(vector_0b89710d *)arg1;
+- (void)populateBoxArrangementCells:(vector_eb457d57 *)arg1;
 - (void)reloadData;
 @property(nonatomic, getter=isBaselineRelativeArrangement) BOOL baselineRelativeArrangement;
 @property(readonly, nonatomic) __weak id <NUIBoxArrangementDataSource> dataSource;

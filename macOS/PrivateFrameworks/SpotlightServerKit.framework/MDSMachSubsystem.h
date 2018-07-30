@@ -22,8 +22,8 @@
 - (void)shutdown;
 - (id)initWithQueue:(id)arg1;
 - (void)unregisterPort:(unsigned int)arg1;
-- (void)registerPort:(unsigned int)arg1;
-- (void)registerPort:(unsigned int)arg1 withCallback:(CDUnknownFunctionPointerType)arg2;
+- (void)registerPort:(unsigned int)arg1 rights:(unsigned long long)arg2;
+- (void)registerPort:(unsigned int)arg1 withCallback:(CDUnknownFunctionPointerType)arg2 rights:(unsigned long long)arg3;
 - (void)machPortNotify:(CDStruct_c91b0553 *)arg1 object:(id)arg2;
 - (void)unregisterForNoSendersNotification:(unsigned int)arg1;
 - (BOOL)registerForNoSendersNotification:(unsigned int)arg1 withSelector:(SEL)arg2 andObject:(id)arg3;

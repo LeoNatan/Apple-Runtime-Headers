@@ -27,6 +27,7 @@
 - (void)_didChange;
 - (void)_willChange;
 - (void)enumerateObserversUsingBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) unsigned long long currentChanges;
 - (void)signalChange:(unsigned long long)arg1;
 - (void)didPublishChanges;
 - (void)didPerformChanges;

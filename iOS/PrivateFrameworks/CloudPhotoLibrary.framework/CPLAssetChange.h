@@ -6,10 +6,11 @@
 
 #import <CloudPhotoLibrary/CPLItemChange.h>
 
-@class CLLocation, CPLAdjustments, CPLFaceAnalysisReference, CPLPlaceAnnotation, NSArray, NSData, NSDate, NSNumber, NSString;
+@class CLLocation, CPLAdjustments, CPLFaceAnalysisReference, CPLPlaceAnnotation, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface CPLAssetChange : CPLItemChange
 {
+    NSDictionary *_resourcePerResourceType;
     _Bool _favorite;
     _Bool _hidden;
     NSString *_masterIdentifier;
@@ -99,7 +100,7 @@
 @property(copy, nonatomic) NSDate *lastSharedDate; // @synthesize lastSharedDate=_lastSharedDate;
 @property(copy, nonatomic) NSString *masterIdentifier; // @synthesize masterIdentifier=_masterIdentifier;
 - (void).cxx_destruct;
-- (id)identifiersForQuarantine;
+- (id)scopeIdentifiersForQuarantine;
 - (unsigned long long)fullChangeTypeForFullRecord;
 - (_Bool)_canLowerQuota;
 @property(copy, nonatomic) CPLFaceAnalysisReference *faces;
@@ -108,20 +109,21 @@
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (_Bool)supportsDeletion;
 - (_Bool)supportsResources;
-- (id)allRelatedIdentifiers;
+- (id)allRelatedScopedIdentifiers;
 - (long long)dequeueOrder;
-- (void)awakeFromStorage;
-- (void)prepareForStorage;
+- (void)copyDerivativesFromRecordIfPossible:(id)arg1;
+- (id)resourceForType:(unsigned long long)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
+- (void)setMasterScopedIdentifier:(id)arg1;
+- (id)masterScopedIdentifier;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (id)propertiesDescription;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
-- (id)identifiersForMapping;
-- (id)proposedCloudIdentifierWithError:(id *)arg1;
+- (id)scopedIdentifiersForMapping;
 - (_Bool)validateRecordForTracker:(id)arg1;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(_Bool)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
 

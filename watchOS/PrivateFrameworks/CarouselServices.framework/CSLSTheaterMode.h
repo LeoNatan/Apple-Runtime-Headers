@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)didChangeState:(_Bool)arg1;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
+- (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (id)init;
 

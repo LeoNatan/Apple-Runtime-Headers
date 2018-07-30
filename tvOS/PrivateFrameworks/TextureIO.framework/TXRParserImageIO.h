@@ -10,6 +10,7 @@
 
 @class NSString, TXRImageInfo, TXRTextureInfo;
 
+__attribute__((visibility("hidden")))
 @interface TXRParserImageIO : NSObject <TXRParser>
 {
     TXRTextureInfo *_textureInfo;

@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSObject<OS_nw_connection>, nw_listener_inbox;
+@class NSObject<OS_nw_connection>, NSObject<OS_nw_error>, nw_listener_inbox;
 
 @protocol nw_listener_inbox_delegate
-- (void)handleInboxFailed:(nw_listener_inbox *)arg1 error:(struct __CFError *)arg2;
+- (void)handleInboxCancelComplete:(nw_listener_inbox *)arg1;
+- (void)handleInboxFailed:(nw_listener_inbox *)arg1 error:(NSObject<OS_nw_error> *)arg2;
 - (void)handleInbound:(NSObject<OS_nw_connection> *)arg1 addProtocolInbox:(BOOL)arg2;
 @end
 

@@ -8,7 +8,6 @@
 
 @class IKViewElement, NSString, UIColor, UILabel, _TVImageView;
 
-__attribute__((visibility("hidden")))
 @interface _TVButton : UIControl
 {
     UIColor *__backgroundColor;

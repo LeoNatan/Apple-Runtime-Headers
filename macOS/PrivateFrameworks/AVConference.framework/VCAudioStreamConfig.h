@@ -6,7 +6,7 @@
 
 #import <AVConference/VCMediaStreamConfig.h>
 
-@class NSDictionary, NSMutableDictionary, VCAudioStreamMultiwayConfig;
+@class NSArray, NSDictionary, NSMutableDictionary, NSMutableSet;
 
 __attribute__((visibility("hidden")))
 @interface VCAudioStreamConfig : VCMediaStreamConfig
@@ -16,19 +16,26 @@ __attribute__((visibility("hidden")))
     long long _audioStreamMode;
     BOOL _latencySensitiveMode;
     NSMutableDictionary *_codecConfigurations;
-    VCAudioStreamMultiwayConfig *_multiwayConfig;
     BOOL _redEnabled;
     unsigned char _numRedundantPayloads;
+    NSMutableSet *_supportedNumRedundantPayload;
+    BOOL _enableMaxBitrateOnNoChangeCMR;
+    BOOL _forceEVSWideBand;
+    float _volume;
 }
 
+@property(nonatomic) float volume; // @synthesize volume=_volume;
+@property(nonatomic) BOOL forceEVSWideBand; // @synthesize forceEVSWideBand=_forceEVSWideBand;
+@property(nonatomic) BOOL enableMaxBitrateOnNoChangeCMR; // @synthesize enableMaxBitrateOnNoChangeCMR=_enableMaxBitrateOnNoChangeCMR;
 @property(nonatomic) unsigned char numRedundantPayloads; // @synthesize numRedundantPayloads=_numRedundantPayloads;
 @property(readonly, nonatomic, getter=isRedEnabled) BOOL redEnabled; // @synthesize redEnabled=_redEnabled;
-@property(retain, nonatomic) VCAudioStreamMultiwayConfig *multiwayConfig; // @synthesize multiwayConfig=_multiwayConfig;
 @property(readonly, nonatomic) NSDictionary *codecConfigurations; // @synthesize codecConfigurations=_codecConfigurations;
 @property(nonatomic, getter=isLatencySensitiveMode) BOOL latencySensitiveMode; // @synthesize latencySensitiveMode=_latencySensitiveMode;
 @property(nonatomic) unsigned long long maxPtime; // @synthesize maxPtime=_maxPtime;
 @property(nonatomic) unsigned long long ptime; // @synthesize ptime=_ptime;
 @property(nonatomic) long long audioStreamMode; // @synthesize audioStreamMode=_audioStreamMode;
+@property(readonly, nonatomic) NSArray *supportedNumRedundantPayload;
+- (void)addSupportedNumRedundantPayload:(unsigned int)arg1;
 - (void)addCodecConfiguration:(id)arg1;
 - (BOOL)setupDTMFCodecWithClientDictionary:(id)arg1;
 - (BOOL)setupCNCodecWithClientDictionary:(id)arg1;

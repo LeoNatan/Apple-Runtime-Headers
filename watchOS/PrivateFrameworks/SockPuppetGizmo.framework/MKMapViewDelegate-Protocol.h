@@ -32,6 +32,7 @@
 - (void)mapViewDidFailLoadingMap:(MKMapView *)arg1 withError:(NSError *)arg2;
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)arg1;
 - (void)mapViewWillStartLoadingMap:(MKMapView *)arg1;
+- (void)mapViewDidChangeVisibleRegion:(MKMapView *)arg1;
 - (void)mapView:(MKMapView *)arg1 regionDidChangeAnimated:(_Bool)arg2;
 - (void)mapView:(MKMapView *)arg1 regionWillChangeAnimated:(_Bool)arg2;
 @end

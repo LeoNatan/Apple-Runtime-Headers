@@ -13,11 +13,17 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)addFreeWindow:(CDStruct_d1b93830)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)_addFreeWindow:(const CDStruct_d1b93830 *)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (BOOL)viewService:(int)arg1 hasHostApp:(int)arg2;
+- (id)hostAppConnectionForListenerEndpoint:(id)arg1;
+- (id)hostAppEndpointForProcessIdentifier:(int)arg1;
+- (BOOL)trustedToAddFreeWindowToArbitraryHostApp;
 - (void)windowForContextID:(unsigned int)arg1 fromViewService:(int)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)hostApp:(int)arg1 description:(CDUnknownBlockType)arg2;
 - (id)hostAppDescription:(int)arg1;
-- (void)hostAppStartingWith:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (BOOL)hostAppStartingWith:(id)arg1;
+- (void)hostAppStartingWith:(id)arg1 endpoint:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (BOOL)hostAppStartingWith:(id)arg1 endpoint:(id)arg2;
 
 @end
 

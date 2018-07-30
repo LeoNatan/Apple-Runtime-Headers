@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSData, NSString;
+@class NSArray, NSData, NSManagedObjectID, NSSQLCore, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _NSPersistentHistoryTransaction : NSPersistentHistoryTransaction <NSSecureCoding>
@@ -22,25 +22,30 @@ __attribute__((visibility("hidden")))
     NSString *_contextName;
     NSString *_author;
     NSData *_queryGeneration;
+    NSSQLCore *_store;
+    NSManagedObjectID *_backingObjectID;
 }
 
 + (BOOL)supportsSecureCoding;
 - (id)_userInfoFromChanges;
 - (id)objectIDNotification;
+- (id)_backingObjectID;
 - (id)author;
 - (id)contextName;
 - (id)processID;
 - (id)bundleID;
 - (id)storeID;
-- (id)queryGenerationToken;
+- (id)postQueryGenerationToken;
+- (id)initialQueryGenerationToken;
 - (id)token;
 - (long long)transactionNumber;
 - (id)changes;
+- (void)_setChanges:(id)arg1;
 - (id)timestamp;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithTransactionRow:(long long)arg1 storeID:(id)arg2 bundleID:(id)arg3 processID:(id)arg4 contextName:(id)arg5 author:(id)arg6 queryGeneration:(id)arg7 timestamp:(double)arg8 changes:(id)arg9;
+- (id)initWithDictionary:(id)arg1 andObjectID:(id)arg2;
 
 @end
 

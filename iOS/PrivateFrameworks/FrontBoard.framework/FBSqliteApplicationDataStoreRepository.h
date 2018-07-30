@@ -24,6 +24,7 @@
 + (id)_generateParameterizedQuery:(id)arg1 forKeyList:(id)arg2 outBindings:(id *)arg3;
 + (id)_objectForResultRow:(id)arg1 index:(unsigned long long)arg2;
 + (_Bool)_objectRequiresSerialization:(id)arg1;
+- (void).cxx_destruct;
 - (_Bool)_inAlternateSystemApp;
 - (void)_dbQueue_createTables;
 - (long long)_dbQueue_databaseVersion;
@@ -55,13 +56,12 @@
 - (void)removeObjectForKey:(id)arg1 forApplication:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3;
 - (void)close;
-- (void)objectForKeys:(id)arg1 forAllApplicationsWithResult:(CDUnknownBlockType)arg2;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(CDUnknownBlockType)arg3;
+- (id)allObjectsForKeys:(id)arg1;
 - (id)objectForKey:(id)arg1 forApplication:(id)arg2;
 - (_Bool)containsKey:(id)arg1 forApplication:(id)arg2;
 - (id)keysForApplication:(id)arg1;
 - (id)applicationIdentifiersWithState;
-@property(nonatomic) id <FBApplicationDataStoreRepositoryReadingDelegate> delegate;
+@property(nonatomic) __weak id <FBApplicationDataStoreRepositoryReadingDelegate> delegate;
 - (void)dealloc;
 - (id)initWithStorePath:(id)arg1;
 

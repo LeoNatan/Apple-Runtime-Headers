@@ -12,6 +12,8 @@ __attribute__((visibility("hidden")))
 @interface VisualTabPickerSnapshotCache : NSObject
 {
     NSObject<OS_dispatch_queue> *_snapshotRequestProcessingQueue;
+    NSMutableDictionary *_snapshotProviderIdentifiersToThumbnailTypes;
+    NSMutableDictionary *_thumbnailTypesToSnapshotProviderArrays;
     NSMutableDictionary *_thumbnailTypesToPendingRequestBlocks;
     NSMutableDictionary *_thumbnailTypesToCachedSnapshots;
     unsigned long long _disableSnapshottingCount;
@@ -20,10 +22,13 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_takeSnapshotWithProvider:(id)arg1 requireFastPath:(BOOL)arg2;
 - (BOOL)_providerCanUseFastSnapshotPath:(id)arg1;
+- (void)_cleanUpScheduledRequestsForKey:(id)arg1;
+- (void)_removeSnapshotProviderFromScheduledRequest:(id)arg1;
 - (void)_scheduleSnapshotRequestWithProvider:(id)arg1 thumbnailViewType:(long long)arg2;
 - (void)disableSnapshotting;
 - (void)enableSnapshotting;
 - (id)cachedSnapshotWithProvider:(id)arg1;
+- (void)cancelSnapshotRequestForProvider:(id)arg1;
 - (void)takeSnapshotWithProvider:(id)arg1;
 - (id)init;
 

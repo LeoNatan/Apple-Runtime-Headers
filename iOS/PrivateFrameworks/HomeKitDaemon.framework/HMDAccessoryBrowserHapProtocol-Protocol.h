@@ -10,6 +10,6 @@
 - (void)updateStateForIdentifier:(NSString *)arg1 stateNumber:(NSNumber *)arg2;
 - (void)configureAccessory:(HMDHAPAccessory *)arg1 trackState:(_Bool)arg2 connectionPriority:(_Bool)arg3;
 - (void)updateBroadcastKeyForIdentifer:(NSString *)arg1 key:(NSData *)arg2 keyUpdatedStateNumber:(NSNumber *)arg3 keyUpdatedTime:(double)arg4;
-- (void)retrieveCurrentStateForIdentifer:(NSString *)arg1 onQueue:(NSObject<OS_dispatch_queue> *)arg2 withCompletion:(void (^)(NSNumber *, _Bool))arg3;
+- (void)retrieveCurrentStateForIdentifer:(NSString *)arg1 onQueue:(NSObject<OS_dispatch_queue> *)arg2 withCompletion:(void (^)(NSNumber *, _Bool, unsigned long long))arg3;
 @end
 

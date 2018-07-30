@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     double _dividerThickness;
 }
 
+- (void)_resetUserPreferredThicknessAfterUserResizeWithDelay;
 - (BOOL)isOpaque;
 - (void)viewDidEndLiveResize;
 - (void)animatePosition:(double)arg1 ofDividerAtIndex:(unsigned long long)arg2;

@@ -11,7 +11,6 @@
 @protocol CNDCoreTelephonyServices <NSObject>
 - (void)_CTServerConnectionUnregisterForNotification:(struct __CTServerConnection *)arg1:(const struct __CFString *)arg2;
 - (void)_CTServerConnectionRegisterBlockForNotification:(struct __CTServerConnection *)arg1:(const struct __CFString *)arg2:(void (^)(struct __CFDictionary *))arg3;
-- (void)_CTServerConnectionCopyPhoneNumber:(struct __CTServerConnection *)arg1:(int)arg2:(id *)arg3:(id *)arg4:(id *)arg5:(id *)arg6;
 - (struct __CTServerConnection *)_CTServerConnectionCreateOnTargetQueue:(const struct __CFAllocator *)arg1:(const struct __CFString *)arg2:(NSObject<OS_dispatch_queue> *)arg3:(void (^)(struct __CFString *, struct __CFDictionary *))arg4;
 @end
 

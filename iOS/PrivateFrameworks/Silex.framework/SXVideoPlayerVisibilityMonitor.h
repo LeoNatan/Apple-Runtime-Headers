@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-#import "SXVisibilityMonitoring.h"
+#import "SVVisibilityMonitoring.h"
 
-@class NSMutableArray, NSString, SXVisibilityMonitor;
+@class NSMutableArray, NSString, SVVisibilityMonitor;
 
-@interface SXVideoPlayerVisibilityMonitor : NSObject <SXVisibilityMonitoring>
+@interface SXVideoPlayerVisibilityMonitor : NSObject <SVVisibilityMonitoring>
 {
-    SXVisibilityMonitor *_visibilityMonitor;
+    SVVisibilityMonitor *_visibilityMonitor;
     NSMutableArray *_willAppearBlocks;
     NSMutableArray *_didAppearBlocks;
     NSMutableArray *_visiblePercentageBlocks;
@@ -25,7 +25,7 @@
 @property(readonly, nonatomic) NSMutableArray *visiblePercentageBlocks; // @synthesize visiblePercentageBlocks=_visiblePercentageBlocks;
 @property(readonly, nonatomic) NSMutableArray *didAppearBlocks; // @synthesize didAppearBlocks=_didAppearBlocks;
 @property(readonly, nonatomic) NSMutableArray *willAppearBlocks; // @synthesize willAppearBlocks=_willAppearBlocks;
-@property(retain, nonatomic) SXVisibilityMonitor *visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
+@property(retain, nonatomic) SVVisibilityMonitor *visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
 - (void).cxx_destruct;
 - (void)onDidDisappear:(CDUnknownBlockType)arg1;
 - (void)onWillDisappear:(CDUnknownBlockType)arg1;
@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) double visiblePercentage;
 @property(readonly, nonatomic) __weak id object;
 @property(readonly, nonatomic) _Bool appeared;
+@property(readonly, nonatomic) unsigned long long state;
 - (void)configureVisibilityMonitor:(id)arg1;
 - (id)initWithVisibilityMonitor:(id)arg1;
 

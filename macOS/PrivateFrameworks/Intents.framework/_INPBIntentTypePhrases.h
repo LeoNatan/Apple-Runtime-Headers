@@ -7,34 +7,37 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentTypePhrases.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentType;
+@class NSArray, NSString, _INPBIntentType;
 
-@interface _INPBIntentTypePhrases : PBCodable <NSCopying>
+@interface _INPBIntentTypePhrases : PBCodable <_INPBIntentTypePhrases, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBIntentType *_intentType;
-    NSMutableArray *_intentVocabularyExamples;
+    NSArray *_intentVocabularyExamples;
 }
 
-+ (Class)intentVocabularyExamplesType;
-@property(retain, nonatomic) NSMutableArray *intentVocabularyExamples; // @synthesize intentVocabularyExamples=_intentVocabularyExamples;
+@property(copy, nonatomic) NSArray *intentVocabularyExamples; // @synthesize intentVocabularyExamples=_intentVocabularyExamples;
 @property(retain, nonatomic) _INPBIntentType *intentType; // @synthesize intentType=_intentType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)intentVocabularyExamplesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)intentVocabularyExamplesCount;
+@property(readonly, nonatomic) unsigned long long intentVocabularyExamplesCount;
 - (void)addIntentVocabularyExamples:(id)arg1;
 - (void)clearIntentVocabularyExamples;
 @property(readonly, nonatomic) BOOL hasIntentType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTagInfoRegistry : NSObject <TCoalescingNodeObserverProtocol>
 {
-    struct TNSRef<NSMutableDictionary *, void> _registry;
+    struct TNSRef<NSMutableDictionary, void> _registry;
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
     struct TReadWriteLock _lock;
     int _discoveringTags;

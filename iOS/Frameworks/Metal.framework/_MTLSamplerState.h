@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "MTLSamplerState.h"
+#import "MTLSamplerStateSPI.h"
 
 @class NSString;
 
-@interface _MTLSamplerState : NSObject <MTLSamplerState>
+@interface _MTLSamplerState : NSObject <MTLSamplerStateSPI>
 {
     id <MTLDevice> _device;
     NSString *_label;

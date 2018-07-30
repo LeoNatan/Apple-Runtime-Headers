@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSString;
+@class CADChangeTrackingClientId, NSString;
 
 @interface CADDatabaseInitializationOptions : NSObject <NSSecureCoding>
 {
@@ -16,7 +16,7 @@
     _Bool _unitTesting;
     int _databaseInitOptions;
     int _management;
-    NSString *_clientIDSuffix;
+    CADChangeTrackingClientId *_changeTrackingClientId;
     NSString *_databasePath;
 }
 
@@ -25,7 +25,7 @@
 @property(retain, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 @property(nonatomic) int management; // @synthesize management=_management;
 @property(nonatomic) _Bool enablePropertyModificationLogging; // @synthesize enablePropertyModificationLogging=_enablePropertyModificationLogging;
-@property(retain, nonatomic) NSString *clientIDSuffix; // @synthesize clientIDSuffix=_clientIDSuffix;
+@property(retain, nonatomic) CADChangeTrackingClientId *changeTrackingClientId; // @synthesize changeTrackingClientId=_changeTrackingClientId;
 @property(nonatomic) int databaseInitOptions; // @synthesize databaseInitOptions=_databaseInitOptions;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

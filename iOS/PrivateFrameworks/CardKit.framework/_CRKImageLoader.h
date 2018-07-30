@@ -8,10 +8,11 @@
 
 #import "SFResourceLoader.h"
 
-@class NSString;
+@class INUIImageLoader, NSString;
 
 @interface _CRKImageLoader : NSObject <SFResourceLoader>
 {
+    INUIImageLoader *_imageLoader;
     _Bool _active;
     id <_CRKImageLoaderDelegate> _delegate;
 }

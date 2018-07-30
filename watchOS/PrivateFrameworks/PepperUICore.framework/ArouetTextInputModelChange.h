@@ -11,8 +11,10 @@
     _Bool _inputTextDidChange;
     _Bool _displayTextDidChange;
     _Bool _selectedRangeDidChange;
+    struct _NSRange _insertionRange;
 }
 
+@property(nonatomic) struct _NSRange insertionRange; // @synthesize insertionRange=_insertionRange;
 @property(nonatomic) _Bool selectedRangeDidChange; // @synthesize selectedRangeDidChange=_selectedRangeDidChange;
 @property(nonatomic) _Bool displayTextDidChange; // @synthesize displayTextDidChange=_displayTextDidChange;
 @property(nonatomic) _Bool inputTextDidChange; // @synthesize inputTextDidChange=_inputTextDidChange;

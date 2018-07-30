@@ -9,8 +9,11 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
+@class NSDictionary;
+
 @interface UNNotificationSettings : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _providesAppNotificationSettings;
     int _authorizationStatus;
     int _soundSetting;
     int _badgeSetting;
@@ -20,11 +23,18 @@
     int _carPlaySetting;
     int _alertStyle;
     int _showPreviewsSetting;
+    int _criticalAlertSetting;
+    NSDictionary *_topicsSettings;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 alertStyle:(int)arg8 showPreviewsSetting:(int)arg9;
++ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10 providesAppNotificationSettings:(_Bool)arg11 topicsSettings:(id)arg12;
++ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10 providesAppNotificationSettings:(_Bool)arg11;
++ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10;
 + (id)emptySettings;
+@property(readonly, nonatomic) NSDictionary *topicsSettings; // @synthesize topicsSettings=_topicsSettings;
+@property(readonly, nonatomic) _Bool providesAppNotificationSettings; // @synthesize providesAppNotificationSettings=_providesAppNotificationSettings;
+@property(readonly, nonatomic) int criticalAlertSetting; // @synthesize criticalAlertSetting=_criticalAlertSetting;
 @property(readonly, nonatomic) int showPreviewsSetting; // @synthesize showPreviewsSetting=_showPreviewsSetting;
 @property(readonly, nonatomic) int alertStyle; // @synthesize alertStyle=_alertStyle;
 @property(readonly, nonatomic) int carPlaySetting; // @synthesize carPlaySetting=_carPlaySetting;
@@ -34,13 +44,15 @@
 @property(readonly, nonatomic) int badgeSetting; // @synthesize badgeSetting=_badgeSetting;
 @property(readonly, nonatomic) int soundSetting; // @synthesize soundSetting=_soundSetting;
 @property(readonly, nonatomic) int authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 alertStyle:(int)arg8 showPreviewsSetting:(int)arg9;
+- (_Bool)hasEnabledSettings;
+- (id)initWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10 providesAppNotificationSettings:(_Bool)arg11 topicsSettings:(id)arg12;
 
 @end
 

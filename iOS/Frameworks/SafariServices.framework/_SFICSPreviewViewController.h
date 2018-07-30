@@ -17,8 +17,10 @@
     UIBarButtonItem *_activityBarButtonItem;
     UIBarButtonItem *_doneBarButtonItem;
     EKICSPreviewController *_icsController;
+    CDUnknownBlockType _beforeDismissHandler;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType beforeDismissHandler; // @synthesize beforeDismissHandler=_beforeDismissHandler;
 - (void).cxx_destruct;
 - (void)_updateNavigationBarItems;
 - (void)_ensureLeftBarButtonItemsIncludesDoneItem:(id)arg1;
@@ -29,6 +31,7 @@
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (id)popViewControllerAnimated:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithFilePath:(id)arg1 sourceURL:(id)arg2;

@@ -8,6 +8,7 @@
 
 @class NSIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface _NSBrowserDragSourceContext : NSObject
 {
     long long draggedColumn;

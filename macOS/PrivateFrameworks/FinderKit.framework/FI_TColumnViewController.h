@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 {
     struct TFENode _draggingSourceContainer;
     _Bool _selectedItemNeedsPreviewView;
-    struct TNSRef<FI_TColumnPreviewController *, void> _previewViewController;
+    struct TNSRef<FI_TColumnPreviewController, void> _previewViewController;
     _Bool _showIcons;
     _Bool _showPreviewColumn;
     _Bool _showsSize;
@@ -29,19 +29,19 @@ __attribute__((visibility("hidden")))
     struct TAliasesTargets _resolvedAliasTable;
     struct StColumnOptimizer *_optimizer;
     struct TFENode _brokenAlias;
-    struct TNSRef<NSTimer *, void> _delayedContainerSynchingTimer;
+    struct TNSRef<NSTimer, void> _delayedContainerSynchingTimer;
     struct TColumnOptimizerContainers _delayedContainers;
     struct shared_ptr<TColumnPreviewQTEjectHelper> _ejectHelper;
     long long _columnIndexOriginatingDrag;
     _Bool _nextSelectionAllowsRetarget;
     _Bool _settingSelectionPath;
     _Bool _bumpedIn;
+    TNSWeakPtr_a131d41e _showDelayedPreviewToken;
     struct TNotificationCenterObserver _adjustColumnWidthAutomaticallyObserver;
     struct TNotificationCenterObserver _userDidResizeColumnsObserver;
     struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _viewSettingsBinders;
 }
 
-+ (double)columnViewDelayBeforeDisplay;
 @property(nonatomic) _Bool nextSelectionAllowsRetarget; // @synthesize nextSelectionAllowsRetarget=_nextSelectionAllowsRetarget;
 @property(nonatomic) int arrangeBy; // @synthesize arrangeBy=_arrangeBy;
 @property(nonatomic) _Bool delayedOpening; // @synthesize delayedOpening=_delayedOpening;
@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (id)selectedItemsForColumn:(long long)arg1;
 - (BOOL)browser:(id)arg1 acceptDrop:(id)arg2 atRow:(long long)arg3 column:(long long)arg4 dropOperation:(unsigned long long)arg5;
 - (unsigned long long)browser:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long *)arg3 column:(long long *)arg4 dropOperation:(unsigned long long *)arg5;
+- (void)mouseDown:(id)arg1;
 - (void)commonPostMouseDown:(id)arg1;
 - (BOOL)browser:(id)arg1 canDragRowsWithIndexes:(id)arg2 inColumn:(long long)arg3 withEvent:(id)arg4;
 - (BOOL)browser:(id)arg1 writeRowsWithIndexes:(id)arg2 inColumn:(long long)arg3 toPasteboard:(id)arg4;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (struct CGImage *)newRestoreImageForNode:(const struct TFENode *)arg1 outRect:(struct CGRect *)arg2;
 - (id)makeDragImageForNode:(const struct TFENode *)arg1 inView:(id)arg2 includeIcon:(_Bool)arg3 includeText:(_Bool)arg4 outTextFrame:(struct CGRect *)arg5;
 - (void)updateDraggingItemsForDrag:(id)arg1 dropTargetView:(id)arg2;
-- (struct CGSize)dragFlockingFrameSizeForDropTargetView:(id)arg1;
 - (id)makeCellViewForDragImage:(const struct TFENode *)arg1 inBrowserTableView:(id)arg2;
 @property(nonatomic) double preferredColumnWidth;
 - (void)columnViewConfigurationDidChange;
@@ -106,7 +106,7 @@ __attribute__((visibility("hidden")))
 - (void)handleNodeChangedPropertyMap:(const unordered_map_f886f0c5 *)arg1 forBrowserTableView:(id)arg2;
 - (void)attemptToSelectPendingNodes;
 - (void)reusingDataSource;
-- (void)dataSourceChanged:(const vector_f56638af *)arg1;
+- (void)dataSourceChanged:(const vector_274a36ec *)arg1;
 - (struct TFENodeVector)sortedGroups:(const struct TFENodeVector *)arg1 forContainerNode:(const struct TFENode *)arg2;
 - (int)editingSelectionType;
 - (void)updateSTFEditorLocation;
@@ -128,7 +128,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)updateRowHeights;
 - (void)unbindViewSettings;
 - (void)privateBindSettings;
-- (struct CGSize)idealViewSize;
+- (struct CGSize)idealContentSize;
 - (struct CGRect)iconFrameForNode:(const struct TFENode *)arg1;
 - (struct CGRect)frameForNode:(const struct TFENode *)arg1;
 - (double)rowHeightForVariableIconAndText;
@@ -146,6 +146,8 @@ __attribute__((visibility("hidden")))
 - (void)setSelectedItems:(id)arg1 inColumn:(long long)arg2 byExtendingSelection:(_Bool)arg3;
 - (void)updateSubviewContentInsets:(struct NSEdgeInsets)arg1;
 - (void)handleMoveToTrashCommand:(const struct TFENodeVector *)arg1 immediately:(_Bool)arg2;
+- (void)reloadIconsInView;
+- (id)popoverAnchorViewForNode:(const struct TFENode *)arg1;
 - (struct TFENodeVector)nodesWithViews;
 - (_Bool)isItem:(id)arg1 expandedAtRow:(long long)arg2 column:(long long)arg3;
 - (_Bool)containsNode:(const struct TFENode *)arg1;
@@ -155,6 +157,7 @@ __attribute__((visibility("hidden")))
 - (struct TFENode)currentNode;
 - (void)alias:(const struct TFENode *)arg1 resolvedAs:(const struct TFENode *)arg2 temporaryNode:(const struct TFENode *)arg3;
 - (_Bool)handleKeyDown:(id)arg1 currentKey:(unsigned short)arg2;
+- (_Bool)shouldDelayNextPreviewPaneRetargetForCurrentKey:(unsigned short)arg1;
 - (void)selectAll:(id)arg1;
 - (void)setFocusToColumn:(long long)arg1;
 - (long long)columnWithKeyboardFocus;
@@ -182,9 +185,9 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)getTargetSelection:(struct TFENodeVector *)arg1 includeTarget:(_Bool)arg2 upTo:(unsigned long long)arg3;
 - (unsigned long long)getSelectedNodesInFocus:(struct TFENodeVector *)arg1 upTo:(unsigned long long)arg2;
 - (unsigned long long)getSelectedNodes:(struct TFENodeVector *)arg1 forContainer:(const struct TFENode *)arg2 upTo:(unsigned long long)arg3;
-- (unsigned long long)getSelectedNodes:(struct TFENodeVector *)arg1 upTo:(unsigned long long)arg2;
 - (unsigned long long)getSelectedNodes:(struct TFENodeVector *)arg1 inColumn:(long long)arg2;
-- (unsigned long long)getSelectedNodes:(struct TFENodeVector *)arg1 inColumn:(long long)arg2 upTo:(unsigned long long)arg3;
+- (unsigned long long)getSelectedNodesFromView:(struct TFENodeVector *)arg1 upTo:(unsigned long long)arg2;
+- (unsigned long long)getSelectedNodesFromView:(struct TFENodeVector *)arg1 inColumn:(long long)arg2 upTo:(unsigned long long)arg3;
 - (void)getNodes:(struct TFENodeVector *)arg1 fromSet:(id)arg2 forColumn:(long long)arg3 upTo:(unsigned long long)arg4;
 - (struct TFENode)nodeOrContainerAtIndex:(long long)arg1 inColumn:(long long)arg2;
 - (struct TFENode)nodeAtIndex:(unsigned long long)arg1 inColumn:(long long)arg2;
@@ -199,7 +202,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldShowChildrenForNode:(const struct TFENode *)arg1;
 - (struct StColumnOptimizer *)setOptimizer:(struct StColumnOptimizer *)arg1;
 - (void)setGrouping:(_Bool)arg1;
-- (unsigned int)viewStyle;
+- (int)viewStyle;
 - (void)restoreBrowserViewState:(id)arg1;
 - (id)browserViewState;
 - (_Bool)makeBrowserViewFirstResponder;

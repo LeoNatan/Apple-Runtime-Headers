@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOSearchAttributionManifest : PBCodable <NSCopying>
 {
     double _timestamp;

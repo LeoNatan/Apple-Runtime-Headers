@@ -54,6 +54,7 @@
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (struct UIEdgeInsets)_keylineLabelActiveAreaInsetsForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
@@ -79,7 +80,7 @@
 - (void)_applyFrozen;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 @end
 

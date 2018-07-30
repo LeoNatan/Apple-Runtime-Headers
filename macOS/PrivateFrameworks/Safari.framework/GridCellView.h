@@ -8,12 +8,11 @@
 
 #import "NSAccessibilityElement.h"
 #import "NSTextFieldDelegate.h"
-#import "StartPageTabDialogAppearanceHandling.h"
 
 @class GridViewImageView, NSArray, NSMenu, NSPressGestureRecognizer, NSString, NSTextField;
 
 __attribute__((visibility("hidden")))
-@interface GridCellView : NSView <NSTextFieldDelegate, NSAccessibilityElement, StartPageTabDialogAppearanceHandling>
+@interface GridCellView : NSView <NSTextFieldDelegate, NSAccessibilityElement>
 {
     NSArray *_constraints;
     BOOL _needsAccessoryViewConstraintUpdate;
@@ -57,8 +56,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGSize accessoryViewInset;
 @property(nonatomic) BOOL drawsImageBorder;
 @property(nonatomic) long long highlightState;
-- (void)setAppearanceForStartPageDidDismissTabDialog;
-- (void)setAppearanceForStartPageWillPresentTabDialog;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)_hideMenus;
 - (void)_endEditing;

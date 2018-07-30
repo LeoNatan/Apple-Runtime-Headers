@@ -6,7 +6,7 @@
 
 #import "UITableViewCell.h"
 
-@class MKMapItem, MKStarRatingView, MKTransitInfoLabelView, UIFont, UIImageView, UILabel, UIView, _MKAutoLayoutContext;
+@class MKMapItem, MKStarRatingView, MKTransitInfoLabelView, NSMutableArray, UIFont, UIImageView, UILabel, UIView;
 
 @interface _MKNanoPlaceCardHeaderView : UITableViewCell
 {
@@ -20,18 +20,18 @@
     MKTransitInfoLabelView *_transitInfoView;
     MKStarRatingView *_ratingView;
     UIImageView *_keyLine;
-    _MKAutoLayoutContext *_layoutContext;
     UIFont *_bodyFont;
-    _Bool _showsAddress;
+    NSMutableArray *_fontBasedConstraints;
+    NSMutableArray *_mapItemBasedConstraints;
     MKMapItem *_mapItem;
+    _Bool _showsAddress;
 }
 
-@property(nonatomic) _Bool showsAddress; // @synthesize showsAddress=_showsAddress;
-@property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
-- (void)updateConstraints;
-- (void)_updateAddressLabel;
+- (void)updateFontBasedConstraints;
+- (void)updateMapItemBasedContraints;
+- (void)setMapItem:(id)arg1 showsAddress:(_Bool)arg2;
 - (void)textSizeChanged;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

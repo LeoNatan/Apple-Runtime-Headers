@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface PRCandidate : NSObject
 {
     NSArray *_candidateWords;

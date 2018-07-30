@@ -10,7 +10,10 @@
 {
 }
 
-- (void)fetchRecordWithNames:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchRecordWithScopedIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchRecordWithNames:(id)arg1 inScope:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchRecordWithNames:(id)arg1 fetchResources:(BOOL)arg2 inScope:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_fetchRecordsWithIDs:(id)arg1 fetchResources:(BOOL)arg2 type:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithController:(id)arg1;
 
 @end

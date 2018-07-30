@@ -13,9 +13,24 @@
     double _countdownDuration;
 }
 
++ (id)_extraLargeImageProvider;
++ (id)_utilitarianSmallImageProvider;
++ (id)_circularMediumImageProvider;
++ (id)_circularSmallImageProvider;
++ (id)_modularSmallImageProvider;
 @property(nonatomic) double countdownDuration; // @synthesize countdownDuration=_countdownDuration;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
+- (id)_relativeDateTextProviderForTimeInterval:(double)arg1 paused:(_Bool)arg2;
+- (id)_textProviderForTimeAtState:(unsigned int)arg1 withUnknownText:(id)arg2;
+- (id)_textProviderForTimeAtState:(unsigned int)arg1;
+- (id)_newExtraLargeTemplate;
+- (id)_newLargeFlatUtilityTemplate;
+- (id)_newSmallFlatUtilityTemplate;
+- (id)_newCircularMediumTemplate;
+- (id)_newCircularSmallTemplate;
+- (id)_newLargeModularTemplate;
+- (id)_newSmallModularTemplate;
 - (id)templateForComplicationFamily:(int)arg1;
 
 @end

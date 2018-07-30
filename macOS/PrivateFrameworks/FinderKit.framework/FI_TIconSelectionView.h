@@ -13,11 +13,14 @@ __attribute__((visibility("hidden")))
     _Bool _showBorder;
 }
 
++ (double)selectionPaddingForIconSize:(const struct CGSize *)arg1;
 @property(nonatomic) _Bool showBorder; // @synthesize showBorder=_showBorder;
 @property(nonatomic) struct CGSize iconSize; // @synthesize iconSize=_iconSize;
 - (BOOL)accessibilityIsIgnored;
 - (void)setHidden:(BOOL)arg1;
 - (void)updateLayer;
+- (double)cornerRadius;
+- (double)borderWidth;
 - (id)borderColor;
 - (id)_backgroundColor;
 - (void)initCommon;

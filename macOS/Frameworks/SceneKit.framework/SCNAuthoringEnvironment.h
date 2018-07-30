@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray, NSMutableOrderedSet, NSSet, SCNAuthoringEnvironment2, SCNManipulator;
+@class NSArray, NSMutableArray, NSMutableOrderedSet, NSSet, SCNAuthoringEnvironment2, SCNManipulator, SCNNode;
 
 @interface SCNAuthoringEnvironment : NSObject
 {
     struct __C3DEngineContext *_engineContext;
     id <SCNSceneRenderer> _sceneRenderer;
+    _Bool _sceneRendererIsSCNView;
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _noColorProgram
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _colorOnlyProgram
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _colorAndTextureProgram
@@ -19,9 +20,6 @@
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _wireframeProgram
     CDStruct_4aabc75a _logsInfo;
     CDStruct_4aabc75a _boldLogsInfo;
-    CDStruct_4aabc75a _upArrowInfo;
-    CDStruct_4aabc75a _xyQuadrantInfo;
-    CDStruct_4aabc75a _xyQuadrantRingInfo;
     CDStruct_4aabc75a _dynamicLinesInfo;
     CDStruct_4aabc75a _dynamicLinesNoDepthTestInfo;
     CDStruct_4aabc75a _dynamicTrianglesInfo;
@@ -41,6 +39,10 @@
     unsigned short _quadrantIndicesCount;
     const void *_quadrantRingIndicesOffset;
     unsigned short _quadrantRingIndicesCount;
+    double _timedRecordingExpirationTime;
+    unsigned char _timedRecordingBuffer[64000];
+    unsigned int _timedRecordingBufferStart;
+    unsigned int _timedRecordingBufferEnd;
     long long _authoringDisplayMask;
     unsigned int _hasLighting:1;
     BOOL _shouldSnapOnGrid;
@@ -55,13 +57,16 @@
     NSSet *_initialSelection;
     NSMutableOrderedSet *_selection;
     NSArray *_selectedNodes;
+    BOOL _isOrbiting;
     float _lastGridDistance;
     double _gridUnit;
     NSMutableArray *_visibleManipulableItems;
     void *_wireframeRenderer;
+    unsigned int _consoleLineCount;
     struct {
         _Bool initialized;
         _Bool showFullStatistics;
+        _Bool showRenderOptionsPanel;
         float fps;
         float waitDisplayLinkTime;
         long long pressedButtonIndex;
@@ -72,12 +77,13 @@
         struct __C3DEngineStats stats;
     } _statisticsInfo;
     float _drawScale;
-    SCNManipulator *_manipulator;
     id _delegate;
     SCNAuthoringEnvironment2 *_authEnv2;
 }
 
++ (id)authoringEnvironmentForSceneRenderer:(id)arg1 createIfNeeded:(BOOL)arg2;
 + (id)authoringEnvironmentForSceneRenderer:(id)arg1;
++ (id)rendererForSceneRenderer:(id)arg1;
 + (long long)defaultAuthoringDisplayMask;
 @property(nonatomic) BOOL surroundToSelect; // @synthesize surroundToSelect=_surroundToSelect;
 @property(nonatomic) BOOL graphicalSelectionEnabled; // @synthesize graphicalSelectionEnabled=_graphicalSelectionEnabled;
@@ -94,11 +100,13 @@
 - (BOOL)mouseMoved:(id)arg1;
 - (BOOL)mouseUp:(id)arg1;
 - (BOOL)mouseDown:(id)arg1;
+- (void)flagsChanged:(id)arg1;
 @property(readonly, nonatomic) BOOL selecting;
 - (void)setSelecting:(BOOL)arg1;
+- (void)endOrbiting;
+- (void)beginOrbiting;
 - (void)saveInitialSelection;
 - (void)_updateSelectionWithSelectionFrame:(unsigned long long)arg1;
-- (void)_updateManipulatorTargets;
 - (void)beginEditingNodes:(id)arg1;
 - (void)beginEditingNode:(id)arg1;
 - (id)selectedItems;
@@ -106,9 +114,15 @@
 - (void)cancelEdition;
 @property(nonatomic) long long authoringDisplayMask;
 @property(readonly, nonatomic) SCNManipulator *manipulator;
+@property(readonly, nonatomic) SCNNode *authoringOverlayLayer;
+- (void)sceneDidChange:(id)arg1;
 - (void)update;
+- (id)authoringEnvironment2;
+- (void)setupAuthoringEnv2;
+- (void)_setupAuthoringEnv2:(id)arg1;
 @property(nonatomic) BOOL selectionIsReadonly;
 @property(readonly, nonatomic) struct CATransform3D viewMatrix;
+- (id)renderer;
 @property(readonly) id <SCNSceneRenderer> sceneRenderer;
 - (id)_initWithEngineContext:(struct __C3DEngineContext *)arg1;
 - (id)init;

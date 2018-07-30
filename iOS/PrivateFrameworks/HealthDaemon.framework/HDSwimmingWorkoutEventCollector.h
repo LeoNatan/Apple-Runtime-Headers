@@ -27,7 +27,7 @@
 - (void)_queue_querySwimDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_queue_stopCollection;
 - (void)_queue_startCollectionWithSessionId:(id)arg1;
-- (void)immediateUpdateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)requestPendingEventsThroughDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)supportsWorkoutActivityType:(unsigned long long)arg1;
 - (void)stop;
 - (void)startWithSessionId:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import "UIViewController.h"
 
-@class AVNowPlayingInfoController, AVPlayer, AVPlayerController, AVPlayerLayerView, AVRemoteCommandController, AVUnsupportedContentIndicatorView, AVWatchPlaybackControlsViewController, NSString, NSTimer;
+@class AVNowPlayingInfoController, AVPlayer, AVPlayerController, AVRemoteCommandController, AVUnsupportedContentIndicatorView, AVWatchPlaybackControlsViewController, NSString, NSTimer, __AVPlayerLayerView;
 
 @interface AVPlayerViewController : UIViewController
 {
@@ -16,7 +16,7 @@
     AVNowPlayingInfoController *_nowPlayingInfoController;
     AVRemoteCommandController *_remoteCommandController;
     AVUnsupportedContentIndicatorView *_unsupportedContentIndicatorView;
-    AVPlayerLayerView *_playerLayerView;
+    __AVPlayerLayerView *_playerLayerView;
     AVWatchPlaybackControlsViewController *_playbackControlsViewController;
     _Bool _playbackControlsViewVisibilityNeedsUpdate;
     int _playbackControlsViewVisibilityCounter;
@@ -76,6 +76,7 @@
 - (void)showPlaybackControlsViewForTouchDown;
 - (void)togglePlayback:(id)arg1;
 - (void)doneButtonTapped:(id)arg1;
+- (id)initWithPlayerLayerView:(id)arg1;
 
 @end
 

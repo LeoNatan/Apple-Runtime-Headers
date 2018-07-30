@@ -72,6 +72,7 @@
 @property(copy) NSArray *tabViewItems;
 - (void)removeChildViewControllerAtIndex:(long long)arg1;
 - (void)insertChildViewController:(id)arg1 atIndex:(long long)arg2;
+- (void)setChildViewControllers:(id)arg1;
 - (void)updateViewConstraints;
 - (void)setWindowTabsDelegate:(id)arg1;
 - (id)windowTabsDelegate;

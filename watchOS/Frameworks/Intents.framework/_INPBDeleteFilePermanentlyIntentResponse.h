@@ -7,35 +7,36 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBDeleteFilePermanentlyIntentResponse.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBDeleteFilePermanentlyIntentResponse : PBCodable <NSCopying>
+@interface _INPBDeleteFilePermanentlyIntentResponse : PBCodable <_INPBDeleteFilePermanentlyIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _Bool _confirm;
-    _Bool _success;
     struct {
         unsigned int confirm:1;
         unsigned int success:1;
     } _has;
+    _Bool _confirm;
+    _Bool _success;
 }
 
-+ (id)options;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(nonatomic) _Bool confirm; // @synthesize confirm=_confirm;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(nonatomic) _Bool hasSuccess;
 @property(nonatomic) _Bool hasConfirm;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

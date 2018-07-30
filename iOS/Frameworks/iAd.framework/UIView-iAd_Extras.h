@@ -8,6 +8,7 @@
 
 @interface UIView (iAd_Extras)
 - (struct CGRect)_iAd_screenFrame;
+- (_Bool)_iAd_isFeldsparClientVisibleFastInSize:(struct CGSize)arg1;
 - (_Bool)_iAd_isFeldsparClientVisibleFast;
 - (_Bool)_iAd_isVisibleFast;
 - (_Bool)_iAd_isVisible:(CDUnknownBlockType)arg1;

@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@interface SKWarpGeometry : NSObject <NSCopying, NSCoding>
+@interface SKWarpGeometry : NSObject <NSCopying, NSSecureCoding>
 {
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) BOOL isIdentityWarp;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

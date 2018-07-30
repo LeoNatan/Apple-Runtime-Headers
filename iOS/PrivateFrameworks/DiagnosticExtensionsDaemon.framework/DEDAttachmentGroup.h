@@ -8,7 +8,7 @@
 
 #import "DEDSecureArchiving.h"
 
-@class DEDBugSession, NSArray, NSString, NSURL;
+@class DEDBugSession, DEDExtensionIdentifier, NSArray, NSString, NSURL;
 
 @interface DEDAttachmentGroup : NSObject <DEDSecureArchiving>
 {
@@ -18,11 +18,13 @@
     NSString *_displayName;
     NSString *_extensionID;
     NSArray *_attachmentItems;
+    DEDExtensionIdentifier *_dedExtensionIdentifier;
 }
 
 + (id)archivedClasses;
 + (id)groupWithDEGroup:(id)arg1 identifier:(id)arg2;
 + (id)groupWithDictionary:(id)arg1;
+@property(retain, nonatomic) DEDExtensionIdentifier *dedExtensionIdentifier; // @synthesize dedExtensionIdentifier=_dedExtensionIdentifier;
 @property(retain) NSArray *attachmentItems; // @synthesize attachmentItems=_attachmentItems;
 @property(retain) NSString *extensionID; // @synthesize extensionID=_extensionID;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;

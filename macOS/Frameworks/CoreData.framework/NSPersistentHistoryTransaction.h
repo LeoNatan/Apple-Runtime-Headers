@@ -22,7 +22,8 @@
 @property(readonly, copy) NSString *bundleID;
 @property(readonly, copy) NSString *storeID;
 @property(readonly) long long transactionNumber;
-- (id)queryGenerationToken;
+- (id)postQueryGenerationToken;
+- (id)initialQueryGenerationToken;
 @property(readonly) NSPersistentHistoryToken *token;
 @property(readonly, copy) NSArray *changes;
 @property(readonly, copy) NSDate *timestamp;

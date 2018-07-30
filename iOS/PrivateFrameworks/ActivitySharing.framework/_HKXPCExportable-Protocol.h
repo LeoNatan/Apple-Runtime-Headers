@@ -14,6 +14,7 @@
 - (NSXPCInterface *)exportedInterface;
 
 @optional
+- (void)connectionConfigured;
 - (void)connectionInterrupted;
 @end
 

@@ -51,6 +51,7 @@
 - (oneway void)resetCallProvisionalStates;
 - (oneway void)_handleCurrentCallsChanged:(id)arg1 callsDisconnected:(id)arg2;
 - (oneway void)handleCurrentCallsChanged:(id)arg1 callDisconnected:(id)arg2;
+- (oneway void)handleMeterLevelChangedTo:(float)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(id)arg3;
 - (oneway void)handleFrequencyChangedTo:(id)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(id)arg3;
 - (oneway void)handleRoutesByUniqueIdentifierUpdated:(id)arg1;
 - (oneway void)setClientCapabilities:(id)arg1;
@@ -85,7 +86,7 @@
 - (oneway void)unholdCallWithUniqueProxyIdentifier:(id)arg1;
 - (oneway void)holdCallWithUniqueProxyIdentifier:(id)arg1;
 - (oneway void)answerCallWithRequest:(id)arg1;
-- (oneway void)joinConversationWithRequest:(id)arg1;
+- (id)joinConversationWithRequest:(id)arg1;
 - (id)dialWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) id <TUCallContainerPrivate> callContainer;
 - (void)handleServerDisconnect;

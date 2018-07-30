@@ -53,7 +53,7 @@
 + (id)entityName;
 + (id)_PFPlaceHolderSingleton;
 + (Class)classForEntity:(id)arg1;
-+ (CDStruct_977f6bcf *)_PFMOClassFactoryData;
++ (CDStruct_1e30fb15 *)_PFMOClassFactoryData;
 - (id)initWithContext:(id)arg1;
 - (id)objectIDsForRelationshipNamed:(id)arg1;
 @property(readonly, nonatomic) BOOL hasPersistentChangedValues;
@@ -66,6 +66,7 @@
 - (id)changedValues;
 - (id)committedValuesForKeys:(id)arg1;
 - (id)dictionaryWithValuesForKeys:(id)arg1;
+- (id)dictionaryWithPropertyValues;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
 - (void)setPrimitiveValue:(id)arg1 forKey:(id)arg2;
 - (id)primitiveValueForKey:(id)arg1;

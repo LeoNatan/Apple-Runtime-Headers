@@ -16,10 +16,8 @@
 + (id)noNameStringWithForegroundColor:(id)arg1;
 + (BOOL)shouldEmphasizeRange:(struct _NSRange)arg1 ofName:(id)arg2;
 + (id)attributedStringForName:(id)arg1 emphasisRange:(struct _NSRange)arg2 withForegroundColor:(id)arg3;
-+ (id)attributedStringForName:(id)arg1 emphasisRange:(struct _NSRange)arg2;
-+ (id)darkAttributedStringForName:(id)arg1 emphasisRange:(struct _NSRange)arg2 useSecondaryAppearance:(BOOL)arg3;
-+ (id)seconaryDarkAttributedStringForName:(id)arg1 emphasisRange:(struct _NSRange)arg2;
 + (id)darkAttributedStringForName:(id)arg1 emphasisRange:(struct _NSRange)arg2;
++ (id)attributedStringForName:(id)arg1 emphasisRange:(struct _NSRange)arg2;
 
 @end
 

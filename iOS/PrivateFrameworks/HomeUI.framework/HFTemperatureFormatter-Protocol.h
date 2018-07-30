@@ -10,7 +10,11 @@
 @class NSString;
 
 @protocol HFTemperatureFormatter <NSObject, NSCopying>
+@property(nonatomic) unsigned long long maximumFractionDigits;
 @property(copy, nonatomic) NSString *fallbackTemperatureString;
 @property(nonatomic) _Bool inputIsCelsius;
+
+@optional
+@property(nonatomic) unsigned long long minimumFractionDigits;
 @end
 

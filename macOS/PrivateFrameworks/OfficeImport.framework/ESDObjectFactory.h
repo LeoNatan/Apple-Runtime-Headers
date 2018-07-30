@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface ESDObjectFactory : NSObject
 {
     struct EshObjectFactory *eshObjectFactory;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)threadLocalFactory;
+- (void).cxx_destruct;
 - (void)setEshFactory:(struct EshObjectFactory *)arg1;
 - (void)restoreHostEshFactory;
 - (void)replaceHostEshFactoryWith:(struct EshObjectFactory *)arg1;

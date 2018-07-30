@@ -6,6 +6,7 @@
 
 #import <NotificationCenter/NCRemoteViewService.h>
 
+__attribute__((visibility("hidden")))
 @interface NCWidgetViewService : NCRemoteViewService
 {
 }

@@ -8,7 +8,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface OISFUMemoryDataRepresentation : OISFUDataRepresentation
 {
     NSData *mData;

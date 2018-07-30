@@ -11,6 +11,7 @@
 }
 
 + (id)defaultPropertiesToLoad;
+- (id)semanticIdentifier;
 - (void)setProposedStartDateStatus:(int)arg1;
 - (int)proposedStartDateStatus;
 - (id)invitedBy;

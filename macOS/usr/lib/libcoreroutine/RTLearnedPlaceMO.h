@@ -6,7 +6,7 @@
 
 #import <coreroutine/RTCloudManagedObject.h>
 
-@class NSData, NSDate, NSNumber, NSSet, NSString, NSUUID;
+@class NSData, NSNumber, NSSet, NSString, RTMapItemMO;
 
 @interface RTLearnedPlaceMO : RTCloudManagedObject
 {
@@ -15,14 +15,13 @@
 + (id)managedObjectWithPlace:(id)arg1 managedObject:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)managedObjectWithPlace:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchRequest;
-- (void)willSave;
+- (void)didSave;
 
 // Remaining properties
 @property(copy, nonatomic) NSString *customLabel; // @dynamic customLabel;
-@property(copy, nonatomic) NSDate *mapItemCreationDate; // @dynamic mapItemCreationDate;
+@property(retain, nonatomic) RTMapItemMO *mapItem; // @dynamic mapItem;
 @property(retain, nonatomic) id <GEOMapItem> mapItemGeoMapItem; // @dynamic mapItemGeoMapItem;
 @property(retain, nonatomic) NSData *mapItemGeoMapItemHandle; // @dynamic mapItemGeoMapItemHandle;
-@property(retain, nonatomic) NSUUID *mapItemIdentifier; // @dynamic mapItemIdentifier;
 @property(copy, nonatomic) NSNumber *mapItemSource; // @dynamic mapItemSource;
 @property(copy, nonatomic) NSNumber *type; // @dynamic type;
 @property(copy, nonatomic) NSNumber *typeSource; // @dynamic typeSource;

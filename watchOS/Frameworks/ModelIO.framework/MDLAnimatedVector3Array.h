@@ -20,6 +20,7 @@
 -     // Error parsing type: I24@0:4^8I12d16, name: getFloat3Array:maxCount:atTime:
 -     // Error parsing type: v24@0:4r^8I12d16, name: setDouble3Array:count:atTime:
 -     // Error parsing type: v24@0:4r^8I12d16, name: setFloat3Array:count:atTime:
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (struct VtValue)defaultVtValue;
 - (unsigned int)precision;

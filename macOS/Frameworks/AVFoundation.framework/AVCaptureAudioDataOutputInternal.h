@@ -8,6 +8,7 @@
 
 @class AVCaptureAudioSettings, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureAudioDataOutputInternal : NSObject
 {
     id <AVCaptureAudioDataOutputSampleBufferDelegate> delegate;

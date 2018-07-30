@@ -27,6 +27,7 @@
 + (void)notifySOSTriggerMechanismChanged;
 + (_Bool)deviceSupportsSOS;
 + (_Bool)shouldTriggerSOS;
++ (void)triggerSOSWithUUID:(id)arg1 triggerMechanism:(int)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)triggerSOSWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)triggerSOSWithCompletion:(CDUnknownBlockType)arg1;
 + (void)triggerSOS;

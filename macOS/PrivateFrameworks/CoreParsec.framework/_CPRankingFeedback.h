@@ -14,10 +14,6 @@
 
 @interface _CPRankingFeedback : PBCodable <_CPProcessableFeedback, _CPRankingFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int blendingDuration:1;
-    } _has;
     unsigned long long _timestamp;
     double _blendingDuration;
     NSArray *_sections;
@@ -39,8 +35,6 @@
 - (unsigned long long)sectionsCount;
 - (void)addSections:(id)arg1;
 - (void)clearSections;
-@property(readonly, nonatomic) BOOL hasBlendingDuration;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

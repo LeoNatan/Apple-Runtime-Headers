@@ -19,6 +19,7 @@
     NSString *_deviceID;
     NSString *_name;
     NSString *_model;
+    NSString *_osVersion;
     NSString *_modelDisplayName;
     NSString *_modelSmallPhotoURL3x;
     NSString *_modelSmallPhotoURL2x;
@@ -26,7 +27,6 @@
     NSString *_modelLargePhotoURL3x;
     NSString *_modelLargePhotoURL2x;
     NSString *_modelLargePhotoURL1x;
-    NSString *_osVersion;
     NSString *_deviceDetailUri;
     NSString *_deviceDetailHttpMethod;
     NSString *_FMIPDeviceID;
@@ -51,7 +51,6 @@
 @property(readonly, nonatomic) _Bool fmipEnabled; // @synthesize fmipEnabled=_fmipEnabled;
 @property(readonly, nonatomic) NSString *deviceDetailHttpMethod; // @synthesize deviceDetailHttpMethod=_deviceDetailHttpMethod;
 @property(readonly, nonatomic) NSString *deviceDetailUri; // @synthesize deviceDetailUri=_deviceDetailUri;
-@property(readonly, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) NSString *modelLargePhotoURL1x; // @synthesize modelLargePhotoURL1x=_modelLargePhotoURL1x;
 @property(readonly, nonatomic) NSString *modelLargePhotoURL2x; // @synthesize modelLargePhotoURL2x=_modelLargePhotoURL2x;
 @property(readonly, nonatomic) NSString *modelLargePhotoURL3x; // @synthesize modelLargePhotoURL3x=_modelLargePhotoURL3x;
@@ -59,6 +58,7 @@
 @property(readonly, nonatomic) NSString *modelSmallPhotoURL2x; // @synthesize modelSmallPhotoURL2x=_modelSmallPhotoURL2x;
 @property(readonly, nonatomic) NSString *modelSmallPhotoURL3x; // @synthesize modelSmallPhotoURL3x=_modelSmallPhotoURL3x;
 @property(readonly, nonatomic) NSString *modelDisplayName; // @synthesize modelDisplayName=_modelDisplayName;
+@property(readonly, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;

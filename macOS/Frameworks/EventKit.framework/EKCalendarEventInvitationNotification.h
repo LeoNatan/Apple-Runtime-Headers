@@ -11,7 +11,10 @@
 }
 
 + (id)conflictsForNotifications:(id)arg1;
++ (void)clearCachedConflictsForNotifications:(id)arg1;
 - (BOOL)couldBeJunk;
+- (id)phoneNumber;
+- (id)emailAddress;
 - (id)sendersPhoneNumber;
 - (id)sendersEmail;
 - (id)conflicts;

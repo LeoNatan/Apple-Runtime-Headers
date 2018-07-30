@@ -14,12 +14,12 @@
 }
 
 @property(readonly, nonatomic) NSDictionary *receiptProperties; // @synthesize receiptProperties=_properties;
+- (void).cxx_destruct;
 - (_Bool)_wantsVPP;
 - (_Bool)_wantsRevoked;
 - (_Bool)_wantsExpired;
-- (void)_sendXPCMessage;
 - (void)_handleReply:(id)arg1;
-- (void)dealloc;
+- (void)_start;
 - (id)initWithReceiptProperties:(id)arg1;
 
 @end

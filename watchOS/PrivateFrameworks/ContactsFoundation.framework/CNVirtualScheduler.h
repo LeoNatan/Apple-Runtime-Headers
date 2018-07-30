@@ -22,6 +22,11 @@
 
 + (unsigned int)timeWithDelay:(double)arg1 fromClock:(unsigned int)arg2;
 + (id)providerWithScheduler:(id)arg1;
+@property(readonly, nonatomic) _Bool isPerforming; // @synthesize isPerforming=_isPerforming;
+@property(readonly, nonatomic) _Bool isStarted; // @synthesize isStarted=_isStarted;
+@property(readonly, nonatomic) CNQueue *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) unsigned int stopTime; // @synthesize stopTime=_stopTime;
+@property(readonly, nonatomic) unsigned int nextSchedulableTick; // @synthesize nextSchedulableTick=_nextSchedulableTick;
 @property(readonly) unsigned int clock; // @synthesize clock=_clock;
 - (void).cxx_destruct;
 - (_Bool)hasJobsScheduled;
@@ -32,7 +37,7 @@
 - (void)start;
 - (unsigned int)_nextSchedulableTick;
 - (id)_scheduleBlock:(CDUnknownBlockType)arg1 atTime:(unsigned int)arg2;
-- (double)timestamp;
+@property(readonly) double timestamp;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2 qualityOfService:(unsigned int)arg3;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2;
 - (id)performCancelableBlock:(CDUnknownBlockType)arg1 qualityOfService:(unsigned int)arg2;

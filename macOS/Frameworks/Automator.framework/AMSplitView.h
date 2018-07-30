@@ -6,7 +6,7 @@
 
 #import "NSSplitView.h"
 
-@class NSImage, NSLayoutConstraint;
+@class NSImage, NSLayoutConstraint, NSString;
 
 @interface AMSplitView : NSSplitView
 {
@@ -33,12 +33,15 @@
 - (void)hideSubview:(id)arg1;
 - (void)drawDividerInRect:(struct CGRect)arg1;
 - (void)setPosition:(double)arg1 ofDividerAtIndex:(long long)arg2;
-- (id)dividerColor;
+- (double)positionOfDividerAtIndex:(long long)arg1;
 - (double)dividerThickness;
 - (void)setDividerStyle:(long long)arg1;
 - (BOOL)usesCustomDivider;
 - (void)dealloc;
+- (void)applyExpandedPosition;
+- (void)updateExpandedPositionWithProposedPosition:(double)arg1 ofSubViewAt:(long long)arg2;
 - (void)_autosaveSubviewLayoutIfNecessary;
+@property(readonly, nonatomic) NSString *_expandedPositionUserDefaultsName;
 - (id)initWithCoder:(id)arg1;
 
 @end

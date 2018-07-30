@@ -15,10 +15,16 @@
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didStartStream:(_Bool)arg2 error:(NSError *)arg3;
 
 @optional
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 requestKeyFrameGenerationWithStreamID:(unsigned short)arg2;
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didSwitchFromStreamID:(unsigned short)arg2 toStreamID:(unsigned short)arg3;
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveFirstVideoFrameWithTime:(CDStruct_1b6d18a9)arg2;
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 priorityDidChange:(unsigned char)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didUpdateVideoConfiguration:(_Bool)arg2 error:(NSError *)arg3 dictionary:(NSDictionary *)arg4;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 uplinkQualityDidChange:(NSDictionary *)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 downlinkQualityDidChange:(NSDictionary *)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveTTYCharacter:(unsigned short)arg2;
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 remoteMediaStalled:(_Bool)arg2;
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didSwitchToAudioStreamWithID:(unsigned short)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 updateFrequencyLevel:(NSData *)arg2 isInputMeter:(_Bool)arg3;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveDTMFEventWithDigit:(BOOL)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveRTCPPackets:(NSArray *)arg2;

@@ -14,12 +14,13 @@
     TIKeyboardCandidateResultSet *_resultSet;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) TIKeyboardCandidateResultSet *resultSet; // @synthesize resultSet=_resultSet;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
+- (void).cxx_destruct;
 - (id)shortDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (void)applyToStatistic:(id)arg1;
 
 @end

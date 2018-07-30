@@ -20,6 +20,7 @@
 - (void)operationFinished:(id)arg1;
 - (void)trackOperation:(id)arg1;
 - (BOOL)mailboxIsUserVisibleUsingDataSource:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *mailboxNameWithoutPII;
 - (id)description;
 - (id)init;
 - (id)initWithMailboxName:(id)arg1;

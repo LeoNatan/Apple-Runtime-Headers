@@ -33,6 +33,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int layoutState; // @synthesize layoutState=mLayoutState;
 @property(readonly, nonatomic) TSDLayoutGeometry *originalGeometry; // @synthesize originalGeometry=mBaseGeometry;
 @property(readonly, nonatomic) NSObject<TSDInfo> *info; // @synthesize info=mInfo;
+- (struct CGRect)convertNaturalRectToUnscaledCanvas:(struct CGRect)arg1;
+- (struct CGRect)convertNaturalRectFromUnscaledCanvas:(struct CGRect)arg1;
+- (struct CGPoint)convertNaturalPointFromUnscaledCanvas:(struct CGPoint)arg1;
 - (void)p_invalidateConnectedLayouts;
 - (void)removeConnectedLayout:(id)arg1;
 - (void)addConnectedLayout:(id)arg1;
@@ -41,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (_Bool)canvasShouldScrollForSelectionPath:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
-- (struct CGRect)rectInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1;
+- (id)rectsInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1 attachedType:(long long)arg2;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForZoomingToSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForSelectionPath:(id)arg1;
@@ -61,6 +64,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *additionalGuides;
 @property(readonly, nonatomic) _Bool shouldProvideSizingGuides;
 @property(readonly, nonatomic) _Bool shouldDisplayGuides;
+- (void)updateLayoutGeometryInPreparationForPartitioning;
 - (_Bool)allowIntersectionOfChildLayout:(id)arg1;
 - (_Bool)orderedBefore:(id)arg1;
 - (struct CGSize)maximumFrameSizeForChild:(id)arg1;

@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_proxyShare;
-+ (CDStruct_7c9a8e9f *)_proxyNonGCPoolPointer;
 - (id)objectEnumerator;
 - (id)member:(id)arg1;
 - (unsigned long long)count;

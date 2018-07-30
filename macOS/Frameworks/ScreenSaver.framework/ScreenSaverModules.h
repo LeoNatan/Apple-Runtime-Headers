@@ -17,18 +17,22 @@
 
 + (id)sharedInstance;
 - (void)_dropCrashReporterBreadCrumbForModule:(id)arg1;
+- (id)defaultModuleName;
 - (Class)classForModule:(id)arg1;
+- (BOOL)_moduleNeedsAcceleration:(id)arg1;
 - (id)loadModule:(id)arg1 frame:(struct CGRect)arg2 isPreview:(BOOL)arg3;
 - (id)sortedModulesForType:(id)arg1;
 - (void)findModulesWithOrder:(id)arg1 forceRebuild:(BOOL)arg2;
+- (id)randomModule;
+- (id)defaultModule;
+- (id)basicModule;
+- (id)basicModuleName;
 - (id)pathForModuleName:(id)arg1;
 - (id)findAll32BitModules;
 - (id)findAllModules;
 - (id)findModuleWithName:(id)arg1;
 - (id)moduleWithName:(id)arg1;
 - (id)moduleNames;
-- (id)basicModule;
-- (id)basicModuleName;
 - (BOOL)modulePathIsAppleModule:(id)arg1;
 - (id)_directoriesInSearchDomain;
 - (void)setModuleSearchDomains:(unsigned long long)arg1;

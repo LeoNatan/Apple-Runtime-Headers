@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned int _desiredCommuteSessionState;
 }
 
++ (id)noDestinationStateFromStateManager:(id)arg1;
 @property(nonatomic) unsigned int desiredCommuteSessionState; // @synthesize desiredCommuteSessionState=_desiredCommuteSessionState;
 - (void)commuteSession:(id)arg1 didUpdateDestinations:(id)arg2;
 - (void)startNavigationForRouteDetails:(id)arg1 handler:(CDUnknownBlockType)arg2;

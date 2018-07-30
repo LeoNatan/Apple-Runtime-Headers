@@ -7,5 +7,7 @@
 #import "INPersonResolutionResult.h"
 
 @interface INPersonResolutionResult (IMAssistantCore)
++ (_Bool)__imcore__containsNonSuccess:(id)arg1;
+- (_Bool)__imcore__isSuccess;
 @end
 

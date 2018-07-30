@@ -8,6 +8,7 @@
 
 @class NSBitmapImageRep;
 
+__attribute__((visibility("hidden")))
 @interface NSIconRefImageRep : NSImageRep
 {
     struct OpaqueIconRef *_iconRef;

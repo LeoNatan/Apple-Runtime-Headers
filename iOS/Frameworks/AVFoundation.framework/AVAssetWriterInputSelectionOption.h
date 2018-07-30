@@ -8,6 +8,7 @@
 
 @class AVAssetWriterInput, NSArray, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputSelectionOption : AVMediaSelectionOption
 {
     AVAssetWriterInput *_input;

@@ -14,7 +14,7 @@
 + (_Bool)_drawSingleLineSecureHeaders:(id)arg1 secureContents:(id)arg2 layoutTraits:(id)arg3 renderTraits:(id)arg4 contexts:(struct __CFArray *)arg5 availableWidth:(double)arg6 truncationSentinel:(id)arg7 abortInsteadOfTruncating:(_Bool)arg8;
 + (void)_drawTwoLineCellsWithSecureHeaders:(id)arg1 secureContents:(id)arg2 layoutTraits:(id)arg3 renderTraits:(id)arg4 contexts:(struct __CFArray *)arg5 availableWidth:(double)arg6 truncationSentinel:(id)arg7;
 + (void)_drawLineFromCellAtIndex:(unsigned long long)arg1 ofResponse:(id)arg2 atYCoordinate:(double)arg3 inContext:(struct CGContext *)arg4 withAvailableWidth:(double)arg5;
-+ (struct CGColor *)_newCgColorWithTraitsColor:(id)arg1 invertColor:(_Bool)arg2;
++ (struct CGColor *)_newCgColorWithTraitsColor:(id)arg1;
 + (_Bool)_isAllSingleLineStrings:(id)arg1;
 + (id)_defaultLayoutTraitsForTraits:(id)arg1;
 + (double)_totalWidthForCell:(unsigned long long)arg1 fromTextRunResponses:(id)arg2;

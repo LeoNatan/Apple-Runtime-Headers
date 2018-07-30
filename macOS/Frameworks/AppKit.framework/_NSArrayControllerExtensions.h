@@ -8,6 +8,7 @@
 
 @class NSArray, NSArrayController, NSPredicate;
 
+__attribute__((visibility("hidden")))
 @interface _NSArrayControllerExtensions : NSObject
 {
     NSArrayController *_controller;

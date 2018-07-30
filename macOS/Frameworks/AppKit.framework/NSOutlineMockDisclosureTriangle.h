@@ -8,6 +8,7 @@
 
 @class NSOutlineView, NSTableColumn;
 
+__attribute__((visibility("hidden")))
 @interface NSOutlineMockDisclosureTriangle : NSObject
 {
     long long _row;

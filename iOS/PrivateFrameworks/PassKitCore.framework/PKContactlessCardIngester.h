@@ -6,23 +6,24 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class NSNumberFormatter, NSObject<OS_dispatch_queue>, NSString, PKPaymentProvisioningMethodMetadata;
 
 @interface PKContactlessCardIngester : NSObject
 {
     _Bool _listening;
     NSString *_pushTopic;
-    NSDictionary *_readerModeMetadata;
+    PKPaymentProvisioningMethodMetadata *_readerModeProvisioningMetadata;
+    NSNumberFormatter *_currencyNumberFormatter;
     id <PKContactlessCardIngesterDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_contactlessCardIngesterQueue;
     CDUnknownBlockType _cardSessionTokenCompletionHandler;
     CDUnknownBlockType _disableCardCompletionHandler;
 }
 
-+ (id)_displayableErrorForSPStatusCode:(unsigned long long)arg1 seldError:(id)arg2;
 + (id)debugDescriptionForStatus:(unsigned long long)arg1;
 + (_Bool)isSupported;
 - (void).cxx_destruct;
+- (id)_displayableErrorForSPStatusCode:(unsigned long long)arg1 seldError:(id)arg2;
 - (void)_startListeningToRemoteAdminEventsIfRequired;
 - (void)_stopListeningToRemoteAdminEvents;
 - (void)_ingestCardWithCardSessionToken:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -14,6 +14,7 @@
     NSData *_seed;
 }
 
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (void)dropValuesWithCount:(unsigned long long)arg1;
 - (BOOL)nextBool;

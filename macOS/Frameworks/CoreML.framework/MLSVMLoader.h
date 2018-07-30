@@ -8,11 +8,19 @@
 
 #import "MLModelSpecificationLoader.h"
 
+@class NSString;
+
 @interface MLSVMLoader : NSObject <MLModelSpecificationLoader>
 {
 }
 
-+ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
++ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

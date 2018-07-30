@@ -14,6 +14,7 @@
 - (void)loader:(RUILoader *)arg1 receivedObjectModel:(RUIObjectModel *)arg2 actionSignal:(unsigned long long)arg3;
 - (void)loader:(RUILoader *)arg1 didFailWithError:(NSError *)arg2;
 - (NSURLSessionConfiguration *)sessionConfigurationForLoader:(RUILoader *)arg1;
+- (void)loader:(RUILoader *)arg1 willLoadRequest:(NSURLRequest *)arg2 redirectResponse:(NSURLResponse *)arg3 completionHandler:(void (^)(NSURLRequest *, NSError *))arg4;
 - (NSURLRequest *)loader:(RUILoader *)arg1 willLoadRequest:(NSURLRequest *)arg2 redirectResponse:(NSURLResponse *)arg3;
 - (void)loader:(RUILoader *)arg1 didReceiveChallenge:(NSURLAuthenticationChallenge *)arg2 completionHandler:(void (^)(long long, NSURLCredential *))arg3;
 - (void)loader:(RUILoader *)arg1 didReceiveHTTPResponse:(NSHTTPURLResponse *)arg2;

@@ -24,13 +24,13 @@
 - (void)_resourceQueue_invalidateAndWait;
 - (id)_resourceQueue_profileForIdentifier:(id)arg1;
 - (_Bool)_resourceQueue_deleteProfile:(id)arg1 error:(id *)arg2;
-- (void)_resourceQueue_createProfileOfType:(long long)arg1 name:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_resourceQueue_createProfileOfType:(long long)arg1 name:(id)arg2 error:(id *)arg3;
 - (void)_resourceQueue_loadSecondaryProfiles;
 - (void)_resourceQueue_setProfile:(id)arg1 forIdentifier:(id)arg2;
 - (void)invalidateAndWait;
-- (void)getAllProfilesWithCompletion:(CDUnknownBlockType)arg1;
+- (id)allProfileIdentifiers;
 - (void)deleteProfile:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)createProfileOfType:(long long)arg1 displayName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)createProfileOfType:(long long)arg1 displayName:(id)arg2 error:(id *)arg3;
 - (void)setProfile:(id)arg1 forIdentifier:(id)arg2;
 - (id)profileForIdentifier:(id)arg1;
 - (id)initWithDaemon:(id)arg1;

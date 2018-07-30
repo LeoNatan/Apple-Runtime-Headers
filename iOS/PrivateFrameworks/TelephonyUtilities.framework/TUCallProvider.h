@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSData, NSSet, NSString, NSURL, TUSandboxExtendedURL;
+@class NSArray, NSData, NSOrderedSet, NSSet, NSString, NSURL, TUSandboxExtendedURL;
 
 @interface TUCallProvider : NSObject <NSSecureCoding, NSCopying>
 {
@@ -27,6 +27,7 @@
     NSString *_bundleIdentifier;
     NSArray *_emergencyLabeledHandles;
     NSArray *_handoffIdentifiers;
+    NSOrderedSet *_prioritizedSenderIdentities;
     TUSandboxExtendedURL *_sandboxExtendedRingtoneSoundURL;
     NSURL *_originalRingtoneSoundURL;
     NSData *_iconTemplateImageData;
@@ -43,6 +44,7 @@
 @property(copy, nonatomic) NSData *iconTemplateImageData; // @synthesize iconTemplateImageData=_iconTemplateImageData;
 @property(retain, nonatomic) NSURL *originalRingtoneSoundURL; // @synthesize originalRingtoneSoundURL=_originalRingtoneSoundURL;
 @property(retain, nonatomic) TUSandboxExtendedURL *sandboxExtendedRingtoneSoundURL; // @synthesize sandboxExtendedRingtoneSoundURL=_sandboxExtendedRingtoneSoundURL;
+@property(copy, nonatomic) NSOrderedSet *prioritizedSenderIdentities; // @synthesize prioritizedSenderIdentities=_prioritizedSenderIdentities;
 @property(copy, nonatomic) NSArray *handoffIdentifiers; // @synthesize handoffIdentifiers=_handoffIdentifiers;
 @property(copy, nonatomic) NSArray *emergencyLabeledHandles; // @synthesize emergencyLabeledHandles=_emergencyLabeledHandles;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
@@ -61,14 +63,18 @@
 - (unsigned long long)hash;
 - (_Bool)isEqualToCallProvider:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (id)senderIdentities;
+- (void)setSenderIdentities:(id)arg1;
 @property(retain, nonatomic) NSURL *ringtoneSoundURL;
 - (id)inCallUIBundleIdentifier;
 - (id)displayAppBundleIdentifier;
-- (id)bundle;
+- (id)senderIdentityForHandle:(id)arg1;
+- (id)senderIdentityForAccountUUID:(id)arg1;
 - (_Bool)hasRestrictionsInRetailEnvironment;
 - (_Bool)prefersShowingInCallUI;
 - (_Bool)supportsShowingInCallUI;
 - (_Bool)isSystemProvider;
+- (_Bool)isTinCanProvider;
 @property(readonly, nonatomic, getter=isFaceTimeProvider) _Bool faceTimeProvider;
 @property(readonly, nonatomic, getter=isTelephonyProvider) _Bool telephonyProvider;
 - (_Bool)supportsHandleType:(long long)arg1;

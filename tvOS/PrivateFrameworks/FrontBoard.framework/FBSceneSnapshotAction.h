@@ -14,7 +14,8 @@
     BKSProcessAssertion *_assertion;
 }
 
-@property(readonly, retain, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
+@property(readonly, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithScene:(id)arg1 requests:(id)arg2 expirationInterval:(double)arg3 responseHandler:(CDUnknownBlockType)arg4;
 

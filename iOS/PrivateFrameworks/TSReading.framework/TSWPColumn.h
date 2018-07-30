@@ -32,6 +32,7 @@
     _Bool _textIsVertical;
 }
 
++ (struct CGColor *)computeSingleColorWithColumns:(id)arg1;
 + (id)columnForCharIndex:(unsigned long long)arg1 eol:(_Bool)arg2 withColumns:(id)arg3;
 + (struct CGRect)boundsRectForSelection:(id)arg1 columnArray:(id)arg2 includeRuby:(_Bool)arg3;
 + (id)pathForHighlightWithRange:(struct _NSRange)arg1 columnArray:(id)arg2 pathStyle:(int)arg3;
@@ -102,8 +103,13 @@
 - (double)horizontalOffsetForCharIndex:(unsigned long long)arg1 lineFragmentIndex:(unsigned long long)arg2 bumpPastHyphen:(_Bool)arg3 allowPastLineBounds:(_Bool)arg4;
 - (CDStruct_50f584da)lineMetricsAtCharIndex:(unsigned long long)arg1 allowEndOfLine:(_Bool)arg2;
 - (double)baselineOfLineFragmentAtCharIndex:(unsigned long long)arg1;
+- (CDStruct_7660b417)heightInfoOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (struct _NSRange)rangeOfLineFragmentAtIndex:(unsigned long long)arg1;
+- (_Bool)isEmptyLineFragmentAtIndex:(unsigned long long)arg1;
+- (_Bool)isTruncatedLineFragmentAtIndex:(unsigned long long)arg1;
+- (double)typographicGlyphExtentOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (struct CGRect)labelBoundsOfLineFragmentAtIndex:(unsigned long long)arg1;
+- (struct CGRect)typographicBoundsOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (struct CGRect)boundsOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (void)makeEmpty:(unsigned long long)arg1 layoutResultFlags:(int)arg2;
 - (unsigned long long)lineFragmentCountForBaseline:(double)arg1;

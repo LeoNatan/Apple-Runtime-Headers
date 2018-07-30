@@ -8,6 +8,7 @@
 
 @class UIImage, UIImageView, UIView;
 
+__attribute__((visibility("hidden")))
 @interface LoadingViewController : UIViewController
 {
     _Bool _imageIsFullScreen;

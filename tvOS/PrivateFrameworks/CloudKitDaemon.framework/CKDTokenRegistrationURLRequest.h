@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *apsToken; // @synthesize apsToken=_apsToken;
 - (void).cxx_destruct;
 - (id)requestDidParseProtobufObject:(id)arg1;
+- (id)sourceApplicationSecondaryIdentifier;
+- (id)sourceApplicationBundleIdentifier;
 - (id)generateRequestOperations;
 - (id)requestOperationClasses;
 - (int)operationType;

@@ -41,6 +41,7 @@
 - (int)_authorizationStatusWithType:(id)arg1;
 - (void)commitAuthorizationStatuses;
 - (void)setEnabled:(_Bool)arg1 forAllTypesInSection:(int)arg2 commit:(_Bool)arg3;
+@property(readonly, nonatomic) _Bool anyTypeRequested;
 - (_Bool)anyTypeEnabled;
 - (_Bool)allTypesEnabled;
 - (id)_enabledSubTypesForType:(id)arg1 inSection:(int)arg2;

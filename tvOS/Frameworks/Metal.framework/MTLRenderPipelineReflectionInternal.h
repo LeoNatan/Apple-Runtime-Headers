@@ -19,6 +19,9 @@ __attribute__((visibility("hidden")))
     NSArray *_vertexArguments;
     NSArray *_fragmentArguments;
     NSDictionary *_performanceStatistics;
+    unsigned int _traceBufferIndex;
+    NSArray *_constantSamplerUniqueIdentifiers;
+    NSArray *_constantSamplerDescriptors;
 }
 
 - (id)description;
@@ -30,6 +33,11 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)postVertexDumpStride;
 - (id)vertexBuiltInArguments;
 - (CDStruct_7ce1aa5b)usageFlags;
+- (void)setConstantSamplerDescriptorsFromBitmasks:(unsigned long long *)arg1 count:(unsigned long long)arg2;
+- (void)setConstantSamplerUniqueIdentifiers:(id)arg1;
+- (id)constantSamplerDescriptors;
+- (id)constantSamplerUniqueIdentifiers;
+- (unsigned int)traceBufferIndex;
 - (id)performanceStatistics;
 - (void)setPerformanceStatistics:(id)arg1;
 - (void)dealloc;

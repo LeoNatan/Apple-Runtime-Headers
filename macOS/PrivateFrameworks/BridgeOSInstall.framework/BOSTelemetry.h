@@ -29,6 +29,7 @@
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 - (void).cxx_destruct;
+- (void)__submitToInstallerDiagnostics;
 - (void)_submitToInstallerDiagnostics;
 - (id)_shortDescriptionForAction:(unsigned long long)arg1;
 - (id)_summaryForLogging;

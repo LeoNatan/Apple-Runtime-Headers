@@ -26,7 +26,7 @@
 + (int)mapToDBMErrorCode:(id)arg1;
 + (int)versionForDBAtLocation:(id)arg1;
 + (id)modelForDBAtLocation:(id)arg1;
-+ (int)getVersionForMappingModel:(id)arg1;
++ (int)versionForManagedObjectModel:(id)arg1;
 + (id)instanceWithModelURL:(id)arg1;
 + (int)isDataStoreAtURLInitialized:(id)arg1 withModelAtURL:(id)arg2;
 + (id)getPersistentCoordinator:(id)arg1;

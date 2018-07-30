@@ -10,9 +10,7 @@
 {
 }
 
-+ (id)confirmationRequiredWithValueToConfirm:(int)arg1;
 + (id)confirmationRequiredWithLocationSearchTypeToConfirm:(int)arg1;
-+ (id)successWithResolvedValue:(int)arg1;
 + (id)successWithResolvedLocationSearchType:(int)arg1;
 
 @end

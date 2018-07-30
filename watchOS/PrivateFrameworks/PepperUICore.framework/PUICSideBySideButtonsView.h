@@ -13,6 +13,7 @@
     PUICButton *_leadingButton;
     PUICButton *_trailingButton;
     _Bool _shouldCalculateFontSize;
+    _Bool _isLTR;
     _Bool _primaryButtonEnabled;
     _Bool _secondaryButtonEnabled;
     NSString *_primaryButtonTitle;
@@ -23,9 +24,17 @@
     unsigned int _controlEvents;
     UIColor *_primaryColor;
     float _primaryButtonPlatterAlpha;
+    UIColor *_primaryTextColor;
+    float _secondaryButtonPlatterAlpha;
+    float _primaryTextFontWeight;
+    float _secondaryTextFontWeight;
 }
 
 + (void)_setupSideBySideButtonsSpec;
+@property(nonatomic) float secondaryTextFontWeight; // @synthesize secondaryTextFontWeight=_secondaryTextFontWeight;
+@property(nonatomic) float primaryTextFontWeight; // @synthesize primaryTextFontWeight=_primaryTextFontWeight;
+@property(nonatomic) float secondaryButtonPlatterAlpha; // @synthesize secondaryButtonPlatterAlpha=_secondaryButtonPlatterAlpha;
+@property(retain, nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_primaryTextColor;
 @property(nonatomic) float primaryButtonPlatterAlpha; // @synthesize primaryButtonPlatterAlpha=_primaryButtonPlatterAlpha;
 @property(retain, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
 @property(nonatomic) unsigned int controlEvents; // @synthesize controlEvents=_controlEvents;

@@ -30,7 +30,6 @@
 + (id)sharedInstanceWithQueue:(id)arg1 daemonDelegate:(id)arg2 shouldRegister:(BOOL)arg3;
 + (id)sharedInstance;
 + (id)sharedContactStore;
-+ (id)sharedAddressBook;
 @property(copy, nonatomic) CDUnknownBlockType disconnectCallPreflight; // @synthesize disconnectCallPreflight=_disconnectCallPreflight;
 @property(nonatomic) struct CGSize localPortraitAspectRatio; // @synthesize localPortraitAspectRatio=_localPortraitAspectRatio;
 @property(nonatomic) struct CGSize localLandscapeAspectRatio; // @synthesize localLandscapeAspectRatio=_localLandscapeAspectRatio;
@@ -56,9 +55,12 @@
 - (BOOL)isHoldAllowed;
 - (BOOL)isMergeable;
 - (BOOL)isSwappable;
+- (id)activeConversationForCall:(id)arg1;
 - (void)enteredBackgroundForAllCalls;
 - (void)willEnterBackgroundForAllCalls;
 - (void)enteredForegroundForCall:(id)arg1;
+- (id)joinConversationWithConversationRequest:(id)arg1;
+- (BOOL)launchAppForJoinRequest:(id)arg1;
 - (void)joinConversationWithRequest:(id)arg1;
 - (void)pullHostedCallsFromPairedHostDevice;
 - (void)pushHostedCallsToDestination:(id)arg1;
@@ -93,16 +95,11 @@
 - (void)answerCall:(id)arg1;
 - (void)sendFieldModeDigits:(id)arg1 forProvider:(id)arg2;
 - (void)launchAppForDialRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_dial:(id)arg1 callID:(id)arg2 provider:(id)arg3 video:(BOOL)arg4 sourceIdentifier:(id)arg5 dialType:(long long)arg6;
-- (id)_dial:(id)arg1 callID:(id)arg2 service:(int)arg3 sourceIdentifier:(id)arg4 dialType:(long long)arg5;
-- (id)dialEmergency:(id)arg1 sourceIdentifier:(id)arg2;
-- (id)dialEmergency:(id)arg1;
-- (id)dial:(id)arg1 callID:(id)arg2 service:(int)arg3;
-- (id)dial:(id)arg1 service:(int)arg2;
 - (id)_dialWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dialWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)dialWithRequest:(id)arg1;
 - (BOOL)canDialWithRequest:(id)arg1;
+- (BOOL)_isEmergencyDialRequest:(id)arg1;
 - (BOOL)_canDialWithRequest:(id)arg1 shouldUseRelay:(char *)arg2;
 - (BOOL)_isCallingAvailableOnSecondaryDeviceWithRelayCallingAvailability:(int)arg1 isProviderAvailable:(BOOL)arg2 isRelayAllowed:(BOOL)arg3 isEmergency:(BOOL)arg4 supportsBasebandCalling:(BOOL)arg5 shouldUseRelay:(char *)arg6;
 - (BOOL)_existingCallsAllowDialRequest:(id)arg1 allowVoiceWithData:(BOOL)arg2;

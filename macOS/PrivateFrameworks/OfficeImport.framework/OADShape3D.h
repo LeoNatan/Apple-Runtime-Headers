@@ -10,7 +10,6 @@
 
 @class OADBevel, OADColor;
 
-__attribute__((visibility("hidden")))
 @interface OADShape3D : NSObject <NSCopying>
 {
     OADBevel *mTopBevel;
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)nullShape3D;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -44,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (void)setTopBevel:(id)arg1;
 - (id)topBevel;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,9 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class NSArray, NSString;
 
 @protocol BLTSettingsServiceServerExportedInterface <NSObject>
+- (void)removeApplicationInfoObserver;
+- (void)addApplicationInfoObserver;
+- (void)applicationInfoForBundleID:(NSString *)arg1 iconSize:(unsigned int)arg2 completion:(void (^)(BLTSettingsApplicationInfo *))arg3;
 - (void)removeMuteNotificationsObserver;
 - (void)addMuteNotificationsObserver;
 - (void)removeAllowsNotificationsObserverForSectionIDs:(NSArray *)arg1;

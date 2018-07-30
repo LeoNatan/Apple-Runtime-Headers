@@ -18,20 +18,24 @@ __attribute__((visibility("hidden")))
     id _otherUpdates;
 }
 
+- (void)enumerateReordersOIDsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateReordersUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)hasReorders;
 - (void)enumerateMasterReordersPart2UsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateMasterReordersOIDsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateMasterReordersUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)hasMasterReorders;
+- (void)enumerateDeletesOIDsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateDeletesUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)hasDeletes;
+- (void)enumerateInsertsOIDsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateInsertsUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)hasInserts;
 - (id)_organizeValues:(id)arg1;
 - (void)trackReorders:(id)arg1 forObjectWithID:(id)arg2;
 - (void)trackInserts:(id)arg1 deletes:(id)arg2 reorders:(id)arg3 forObjectWithID:(id)arg4;
 - (void)dealloc;
-@property(readonly) NSSQLManyToMany *relationship; // @synthesize relationship=_relationship;
+@property(readonly, nonatomic) NSSQLManyToMany *relationship; // @synthesize relationship=_relationship;
 - (id)initForRelationship:(id)arg1;
 
 @end

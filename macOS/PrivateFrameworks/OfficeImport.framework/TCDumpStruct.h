@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface TCDumpStruct : TCDumpType
 {
     long long mSize;
@@ -17,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mMembers;
 }
 
+- (void).cxx_destruct;
 - (void)fromBinary:(struct __sFILE *)arg1 toXml:(struct _xmlNode *)arg2 state:(id)arg3;
-- (void)dealloc;
 - (id)initWithSizeFieldName:(id)arg1 sizeCorrection:(int)arg2 members:(id)arg3;
 - (id)initWithSizeFieldName:(id)arg1 members:(id)arg2;
 - (id)initWithSize:(long long)arg1 members:(id)arg2;

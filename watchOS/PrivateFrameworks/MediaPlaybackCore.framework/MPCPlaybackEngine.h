@@ -23,9 +23,11 @@
     _MPCMediaRemotePublisher *_mediaRemotePublisher;
     _MPCReportingController *_reportingController;
     _MPCLeaseManager *_leaseManager;
+    NSString *_audioSessionCategory;
 }
 
 + (void)preheatPlayback;
+@property(copy, nonatomic) NSString *audioSessionCategory; // @synthesize audioSessionCategory=_audioSessionCategory;
 @property(nonatomic, getter=isSystemMusicApplication) _Bool systemMusicApplication; // @synthesize systemMusicApplication=_systemMusicApplication;
 @property(readonly, nonatomic) _MPCLeaseManager *leaseManager; // @synthesize leaseManager=_leaseManager;
 @property(readonly, nonatomic) _MPCReportingController *reportingController; // @synthesize reportingController=_reportingController;

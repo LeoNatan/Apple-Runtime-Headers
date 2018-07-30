@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned int _shouldSeparateStroke:1;
     unsigned int _shouldAddParameterizedStroke:1;
     unsigned int _shouldReverseStrokeDrawing:1;
+    unsigned int _shouldSeparateGroupedTextures:1;
     unsigned int _shouldSeparateText:1;
     unsigned int _shouldIgnoreScaleInSourceImage:1;
     unsigned int _shouldDistortToFit:1;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldIgnoreScaleInSourceImage; // @synthesize shouldIgnoreScaleInSourceImage=_shouldIgnoreScaleInSourceImage;
 @property(nonatomic) _Bool shouldForceTextureGeneration; // @synthesize shouldForceTextureGeneration=_shouldForceTextureGeneration;
 @property(nonatomic) _Bool shouldSeparateText; // @synthesize shouldSeparateText=_shouldSeparateText;
+@property(nonatomic) _Bool shouldSeparateGroupedTextures; // @synthesize shouldSeparateGroupedTextures=_shouldSeparateGroupedTextures;
 @property(nonatomic) _Bool shouldReverseStrokeDrawing; // @synthesize shouldReverseStrokeDrawing=_shouldReverseStrokeDrawing;
 @property(nonatomic) _Bool shouldAddParameterizedStroke; // @synthesize shouldAddParameterizedStroke=_shouldAddParameterizedStroke;
 @property(nonatomic) _Bool shouldSeparateStroke; // @synthesize shouldSeparateStroke=_shouldSeparateStroke;

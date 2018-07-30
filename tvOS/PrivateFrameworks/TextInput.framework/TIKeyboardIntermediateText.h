@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(readonly, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
+- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) struct _NSRange selectedRange;
 - (unsigned long long)hash;
@@ -32,7 +33,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned long long)arg3 searchString:(id)arg4;
 
 @end

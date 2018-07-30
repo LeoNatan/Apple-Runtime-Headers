@@ -13,8 +13,11 @@
     id _internal;
 }
 
+- (void).cxx_destruct;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (_Bool)mergeWithServerTransaction:(id)arg1;
+- (id)initWithServerTransaction:(id)arg1;
 @property(readonly, nonatomic) NSString *_transactionIdentifier;
 - (void)_setTransactionState:(long long)arg1;
 - (void)_setTransactionReceipt:(id)arg1;
@@ -27,6 +30,7 @@
 - (_Bool)mergeWithTransaction:(id)arg1;
 @property(readonly, nonatomic) NSString *matchingIdentifier;
 - (_Bool)canMergeWithTransaction:(id)arg1;
+- (id)UUID;
 @property(readonly, nonatomic) long long transactionState;
 @property(readonly, nonatomic) NSData *transactionReceipt;
 @property(readonly, nonatomic) NSString *transactionIdentifier;
@@ -35,7 +39,6 @@
 @property(readonly, nonatomic) SKPaymentTransaction *originalTransaction;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) NSArray *downloads;
-- (void)dealloc;
 - (id)initWithPayment:(id)arg1;
 - (id)init;
 

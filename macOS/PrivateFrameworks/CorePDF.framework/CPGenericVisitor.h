@@ -8,6 +8,7 @@
 
 #import "CPVisitor.h"
 
+__attribute__((visibility("hidden")))
 @interface CPGenericVisitor : NSObject <CPVisitor>
 {
 }

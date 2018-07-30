@@ -27,6 +27,7 @@
     PKPeerPaymentService *_peerPaymentService;
     PKPeerPaymentContactResolver *_transactionFooterContactResolver;
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionController;
+    _Bool _fieldDetectShouldEmulateExpress;
     id <UICoordinateSpace> _fixedScreenCoordinateSpace;
     PKFooterTransactionView *_transactionView;
     UIView *_summaryView;
@@ -65,27 +66,31 @@
     CDStruct_973bafd3 _foregroundActiveState;
     unsigned int _deactivationReasons;
     _Bool _isVisible;
-    _Bool _valueAddedServiceInfoViewHidden;
     _Bool _waitingForPasses;
+    _Bool _VASInfoViewHidden;
+    _Bool _VASInfoViewWillShow;
+    _Bool _VASInfoViewSuppressedTransactionUpdate;
     double _lastFieldExitTime;
     _Bool _pendingAutomaticAuthorization;
+    _Bool _pendingPerformAuthorization;
     NSNumber *_pendingPresentationContextState;
     double _lastFingerOnTime;
     double _lastTransactionTime;
     NSObject<OS_dispatch_source> *_summaryAuthenticationTimer;
-    int _style;
     _Bool _encounteredTerminalFailure;
     NSMutableArray *_valueAddedPasses;
+    _Bool _didBecomeHiddenWhileAuthorized;
 }
 
++ (_Bool)shouldAutomaticallyAuthorizeForPassType:(unsigned int)arg1 withContext:(id)arg2;
 - (void).cxx_destruct;
 - (void)_processValueAddedServiceTransactionsForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_processPaymentTransactionForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)_hasValueAddedServicePasses;
 - (void)_setValueAddedServicePasses:(id)arg1;
 - (float)_valueAddedServiceInfoViewTopMargin;
-- (void)_setValueAddedServiceInfoViewHidden:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_setValueAddedServiceInfoViewHidden:(_Bool)arg1;
+- (void)_updateVASInfoViewSuppressedTransactionIfNecessary;
+- (void)_setVASInfoViewHidden:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_showTerminalIsRequestingPaymentError;
 - (void)_showTerminalIsNotRequestingPaymentError;
 - (_Bool)_shouldShowTerminalIsNotRequestingPaymentError;
@@ -96,11 +101,13 @@
 - (_Bool)_passContainsPaymentApplication:(id)arg1;
 - (_Bool)_authenticationAllowed;
 - (_Bool)_isDemoMode;
-- (_Bool)_isSummaryViewVisible;
 - (_Bool)_isTransactionViewVisible;
+- (_Bool)_isVASInfoViewVisible;
+- (_Bool)_isSummaryViewVisible;
 - (_Bool)_showTransactionViewDuringPayment;
 - (_Bool)_shouldDisplayTransactionView;
 - (_Bool)_showPeerPaymentAccountResolutionView;
+- (_Bool)_maintainAuthorizationAfterTransaction;
 - (_Bool)_showSummaryState;
 - (void)_stopBiometricRecognitionAnimationWithSuccess:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_startBiometricRecognitionAnimation;
@@ -119,7 +126,7 @@
 - (void)_executeTransitionCompletionHandlers:(_Bool)arg1;
 - (void)_addTransitionCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_endTransition:(_Bool)arg1;
-- (void)_transitionViewsAnimated:(_Bool)arg1;
+- (void)_transitionViewsFromPayState:(int)arg1 animated:(_Bool)arg2;
 - (void)_commitPendingPayStateAnimated:(_Bool)arg1;
 - (void)_transitionToState:(int)arg1 withTextOverride:(id)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_dismissPile;
@@ -221,11 +228,10 @@
 - (void)didBecomeVisibleAnimated:(_Bool)arg1;
 - (void)willBecomeVisibleAnimated:(_Bool)arg1;
 - (_Bool)isPassAuthorized;
-- (void)_layoutValueAddedServiceSubviews;
-- (void)_layoutPaymentSubviews;
+- (float)_topMargin;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 pass:(id)arg2 context:(id)arg3 paymentSession:(id)arg4 paymentService:(id)arg5;
+- (id)initWithPass:(id)arg1 context:(id)arg2 paymentSession:(id)arg3 paymentService:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,34 +6,45 @@
 
 #import <PhotosUI/PUFeedCell.h>
 
-#import "UITextViewDelegate.h"
+#import "PXSharedAlbumInvitationViewDelegate.h"
 
-@class NSString, UIButton, UITextView, UIView;
+@class NSString, PXFeedInvitationSectionInfo, PXSharedAlbumHeaderView, PXSharedAlbumInvitationView, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
-@interface PUFeedInvitationCell : PUFeedCell <UITextViewDelegate>
+@interface PUFeedInvitationCell : PUFeedCell <PXSharedAlbumInvitationViewDelegate>
 {
-    NSString *_title;
-    NSString *_inviterDisplayName;
-    NSString *_inviteeDisplayName;
-    _Bool _offerToReportAsJunk;
-    UITextView *__textView;
-    UIButton *__acceptButon;
-    UIButton *__declineButton;
-    UIView *__bottomSeparatorView;
+    _Bool _useInPopover;
+    _Bool _showHeader;
+    _Bool _showFooter;
+    PXFeedInvitationSectionInfo *_invitationSectionInfo;
+    UIView *_separatorView;
+    PXSharedAlbumHeaderView *_headerView;
+    PXSharedAlbumInvitationView *_invitationView;
+    UILabel *_dateLabel;
 }
 
-@property(retain, nonatomic, setter=_setBottomSeparatorView:) UIView *_bottomSeparatorView; // @synthesize _bottomSeparatorView=__bottomSeparatorView;
-@property(retain, nonatomic, setter=_setDeclineButton:) UIButton *_declineButton; // @synthesize _declineButton=__declineButton;
-@property(retain, nonatomic, setter=_setAcceptButton:) UIButton *_acceptButon; // @synthesize _acceptButon=__acceptButon;
-@property(retain, nonatomic, setter=_setTextView:) UITextView *_textView; // @synthesize _textView=__textView;
+@property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
+@property(retain, nonatomic) PXSharedAlbumInvitationView *invitationView; // @synthesize invitationView=_invitationView;
+@property(retain, nonatomic) PXSharedAlbumHeaderView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
+@property(nonatomic) _Bool showFooter; // @synthesize showFooter=_showFooter;
+@property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
+@property(nonatomic) _Bool useInPopover; // @synthesize useInPopover=_useInPopover;
+@property(retain, nonatomic) PXFeedInvitationSectionInfo *invitationSectionInfo; // @synthesize invitationSectionInfo=_invitationSectionInfo;
 - (void).cxx_destruct;
-- (void)_reportJunkButtonAction:(id)arg1;
-- (void)_replyButtonAction:(id)arg1;
+- (void)sharedAlbumInvitationView:(id)arg1 presentViewController:(id)arg2;
+- (void)sharedAlbumInvitationViewDidReportAsJunk:(id)arg1;
+- (void)sharedAlbumInvitationView:(id)arg1 didAccept:(_Bool)arg2;
 - (id)_delegate;
-- (void)setTitle:(id)arg1 inviterDisplayName:(id)arg2 inviteeDisplayName:(id)arg3 offerToReportAsJunk:(_Bool)arg4;
-- (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
-- (void)_updateTextView;
+- (struct CGSize)_performLayoutInRect:(struct CGRect)arg1 updateSubviewFrames:(_Bool)arg2;
+- (void)_updateFooter;
+- (void)_updateDate;
+- (void)_updateInvitationView;
+- (void)_updateHeaderView;
+- (void)_updateColors;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)tintColorDidChange;
+- (void)prepareForReuse;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

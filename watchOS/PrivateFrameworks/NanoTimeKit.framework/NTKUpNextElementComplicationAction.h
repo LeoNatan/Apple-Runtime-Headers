@@ -15,11 +15,6 @@
 
 @property(readonly, nonatomic) NSString *slotIdentifier; // @synthesize slotIdentifier=_slotIdentifier;
 - (void).cxx_destruct;
-- (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)_performWithContext:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSlotIdentifier:(id)arg1;
 
 @end

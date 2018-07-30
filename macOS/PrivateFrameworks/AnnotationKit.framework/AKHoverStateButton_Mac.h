@@ -15,12 +15,8 @@
 @property BOOL eventsCurrentlyInside; // @synthesize eventsCurrentlyInside=_eventsCurrentlyInside;
 @property(retain) id viewEventMonitor; // @synthesize viewEventMonitor=_viewEventMonitor;
 - (void).cxx_destruct;
-- (void)setTitleColor:(id)arg1;
-- (void)mouseExited:(id)arg1;
-- (void)mouseEntered:(id)arg1;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
-- (void)awakeFromNib;
 
 @end
 

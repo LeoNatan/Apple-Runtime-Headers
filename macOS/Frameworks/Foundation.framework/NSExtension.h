@@ -8,10 +8,11 @@
 
 #import "_NSExtensionContextHosting.h"
 
-@class NSArray, NSBundle, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class NSArray, NSBundle, NSDictionary, NSMutableDictionary, NSSet, NSString, NSUUID;
 
 @interface NSExtension : NSObject <_NSExtensionContextHosting>
 {
+    struct os_unfair_lock_s _unfairLock;
     NSString *_identifier;
     NSString *_version;
     NSDictionary *_attributes;
@@ -24,6 +25,8 @@
     id __stashedPlugInConnection;
     id <PKPlugIn> __plugIn;
     NSBundle *__extensionBundle;
+    NSString *__localizedName;
+    NSString *__localizedShortName;
     CDUnknownBlockType __requestPostCompletionBlock;
     CDUnknownBlockType __requestPostCompletionBlockWithItems;
     NSMutableDictionary *__extensionExpirationIdentifiers;
@@ -31,7 +34,6 @@
     NSMutableDictionary *__extensionContexts;
     NSSet *__allowedErrorClasses;
     NSUUID *_connectionUUID;
-    NSObject<OS_dispatch_queue> *__safePluginQueue;
 }
 
 + (void)endMatchingExtensions:(id)arg1;
@@ -40,6 +42,7 @@
 + (void)extensionWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)extensionWithIdentifier:(id)arg1 excludingDisabledExtensions:(BOOL)arg2 error:(id *)arg3;
 + (id)extensionWithIdentifier:(id)arg1 error:(id *)arg2;
++ (void)extensionsWithMatchingAttributes:(id)arg1 synchronously:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)extensionsWithMatchingAttributes:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)extensionsWithMatchingAttributes:(id)arg1 error:(id *)arg2;
 + (BOOL)_shouldLogExtensionDiscovery;
@@ -47,7 +50,6 @@
 + (id)predicateForActivationRule:(id)arg1;
 + (BOOL)evaluateActivationRule:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
 + (void)initializeFiltering;
-@property NSObject<OS_dispatch_queue> *_safePluginQueue; // @synthesize _safePluginQueue=__safePluginQueue;
 @property(copy) NSUUID *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
 @property(copy, setter=_setAllowedErrorClasses:) NSSet *_allowedErrorClasses; // @synthesize _allowedErrorClasses=__allowedErrorClasses;
 @property(retain, setter=_setExtensionContexts:) NSMutableDictionary *_extensionContexts; // @synthesize _extensionContexts=__extensionContexts;
@@ -55,6 +57,8 @@
 @property(retain, setter=_setExtensionExpirationsIdentifiers:) NSMutableDictionary *_extensionExpirationIdentifiers; // @synthesize _extensionExpirationIdentifiers=__extensionExpirationIdentifiers;
 @property(copy) CDUnknownBlockType _requestPostCompletionBlockWithItems; // @synthesize _requestPostCompletionBlockWithItems=__requestPostCompletionBlockWithItems;
 @property(copy) CDUnknownBlockType _requestPostCompletionBlock; // @synthesize _requestPostCompletionBlock=__requestPostCompletionBlock;
+@property(copy) NSString *_localizedShortName; // @synthesize _localizedShortName=__localizedShortName;
+@property(copy) NSString *_localizedName; // @synthesize _localizedName=__localizedName;
 @property(retain, nonatomic, setter=_setExtensionBundle:) NSBundle *_extensionBundle; // @synthesize _extensionBundle=__extensionBundle;
 @property(retain, setter=_setPlugIn:) id <PKPlugIn> _plugIn; // @synthesize _plugIn=__plugIn;
 @property(retain) id _stashedPlugInConnection; // @synthesize _stashedPlugInConnection=__stashedPlugInConnection;
@@ -68,11 +72,13 @@
 @property(copy) NSString *version; // @synthesize version=_version;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)_dropAssertion;
+- (id)extensionContexts;
 - (void)_kill:(int)arg1;
 - (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(CDUnknownBlockType)arg2;
 - (void)_safelyEndUsing:(CDUnknownBlockType)arg1;
+- (id)newAssertionToBeginUsingPluginWithError:(id *)arg1;
 - (void)_safelyBeginUsing_withAssertion:(CDUnknownBlockType)arg1;
-- (void)_safelyBeginUsing_withAssertion_onSafeQueue:(CDUnknownBlockType)arg1;
+- (void)_safelyBeginUsingSynchronously:(BOOL)arg1 withAssertion_onSafeQueue:(CDUnknownBlockType)arg2;
 - (void)_safelyBeginUsing:(CDUnknownBlockType)arg1;
 - (int)_plugInProcessIdentifier;
 - (BOOL)_wantsProcessPerRequest;
@@ -90,8 +96,12 @@
 - (void)_didCreateExtensionContext:(id)arg1;
 - (int)pidForRequestIdentifier:(id)arg1;
 - (void)cancelExtensionRequestWithIdentifier:(id)arg1;
+- (id)beginExtensionRequestWithInputItems:(id)arg1 error:(id *)arg2;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 error:(id *)arg3;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_reallyBeginExtensionRequestWithContext:(id)arg1 extensionServiceConnection:(id)arg2 listenerEndpoint:(id)arg3 synchronously:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)_newExtensionContextAndGetConnection:(id *)arg1 assertion:(id)arg2 inputItems:(id)arg3;
 - (void)_reallyBeginExtensionRequestWithInputItems:(id)arg1 processAssertion:(id)arg2 listenerEndpoint:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_bareExtensionServiceConnection;
 - (BOOL)attemptOptOut:(id *)arg1;

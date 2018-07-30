@@ -13,10 +13,10 @@
     RCCompositionController *_compositionController;
 }
 
-+ (id)_newPresentedPrepareFailureAlertControllerForComposition:(id)arg1;
-+ (id)_newPresentedPrepareAlertControllerForComposition:(id)arg1 dismissHandler:(CDUnknownBlockType)arg2;
-+ (void)prepareToShareComposition:(id)arg1 ignoringInteraction:(_Bool)arg2 shouldContinuePreparingBlock:(CDUnknownBlockType)arg3 preparedHandler:(CDUnknownBlockType)arg4;
-+ (void)presentInViewController:(id)arg1 composition:(id)arg2 ignoringInteraction:(_Bool)arg3 shouldContinuePreparingBlock:(CDUnknownBlockType)arg4 preparedToPresentBlock:(CDUnknownBlockType)arg5;
++ (id)_newPresentedPrepareFailureAlertControllerForComposition:(id)arg1 source:(id)arg2;
++ (id)_newPresentedPrepareAlertControllerForComposition:(id)arg1 source:(id)arg2 dismissHandler:(CDUnknownBlockType)arg3;
++ (void)prepareToShareComposition:(id)arg1 ignoringInteraction:(_Bool)arg2 source:(id)arg3 shouldContinuePreparingBlock:(CDUnknownBlockType)arg4 preparedHandler:(CDUnknownBlockType)arg5;
++ (void)presentInViewController:(id)arg1 source:(id)arg2 composition:(id)arg3 ignoringInteraction:(_Bool)arg4 shouldContinuePreparingBlock:(CDUnknownBlockType)arg5 preparedToPresentBlock:(CDUnknownBlockType)arg6;
 + (id)unsupportedActivityTypes;
 @property(readonly, nonatomic) RCCompositionController *compositionController; // @synthesize compositionController=_compositionController;
 - (void).cxx_destruct;

@@ -8,7 +8,6 @@
 
 @class ABAddressBook, NSArray, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface ABPersonListDragExportHelper : NSObject
 {
     NSArray *_personIdentifiers;

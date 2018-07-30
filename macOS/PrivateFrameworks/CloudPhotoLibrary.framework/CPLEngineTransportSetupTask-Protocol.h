@@ -6,9 +6,6 @@
 
 #import "CPLEngineTransportTask.h"
 
-@class NSString;
-
 @protocol CPLEngineTransportSetupTask <CPLEngineTransportTask>
-@property(copy, nonatomic) NSString *libraryZoneName;
 @end
 

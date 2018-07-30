@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct CGSize maxSize;
 @property(readonly) struct CGSize contentClippingSize;
 - (struct CGSize)sizeForBridgeKey:(id)arg1;
-- (void)updateViewConstraints;
 - (void)dealloc;
 - (void)maintainObserversForTouchBarItem:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -40,8 +39,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) double itemPadding;
 @property(readonly) unsigned long long itemPosition;
+@property(readonly) double preferredTrailingPosition;
 @property(readonly) double preferredZOrder;
 @property(readonly) long long priorityIndex;
 @property(readonly) Class superclass;

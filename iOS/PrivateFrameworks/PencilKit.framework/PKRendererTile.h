@@ -6,37 +6,36 @@
 
 #import "CALayer.h"
 
-@class NSArray, PKRendererController;
+@class NSArray;
 
 @interface PKRendererTile : CALayer
 {
     // Error parsing type: Aq, name: _renderCount
     _Bool _outOfDate;
-    PKRendererController *_rendererController;
+    id <PKRendererControllerProtocol> _rendererController;
     long long _level;
-    long long _yOffset;
     NSArray *_renderedStrokes;
+    struct CGPoint _offset;
     struct CGRect _drawingFrame;
 }
 
-+ (struct CGRect)layerFrameForLevel:(long long)arg1 yOffset:(long long)arg2 frameScale:(double)arg3;
-+ (double)tileHeightForLevel:(long long)arg1 scale:(double)arg2;
++ (struct CGRect)layerFrameForLevel:(long long)arg1 offset:(struct CGPoint)arg2;
++ (double)tileSizeForLevel:(long long)arg1;
 @property _Bool outOfDate; // @synthesize outOfDate=_outOfDate;
-@property(retain, nonatomic) NSArray *renderedStrokes; // @synthesize renderedStrokes=_renderedStrokes;
-@property(readonly, nonatomic) long long yOffset; // @synthesize yOffset=_yOffset;
+@property(copy, nonatomic) NSArray *renderedStrokes; // @synthesize renderedStrokes=_renderedStrokes;
+@property(readonly, nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) long long level; // @synthesize level=_level;
-@property __weak PKRendererController *rendererController; // @synthesize rendererController=_rendererController;
+@property __weak id <PKRendererControllerProtocol> rendererController; // @synthesize rendererController=_rendererController;
 @property(readonly, nonatomic) struct CGRect drawingFrame; // @synthesize drawingFrame=_drawingFrame;
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 @property(readonly) long long renderCount;
 - (void)cancel;
-- (id)splitForScale:(double)arg1;
 - (void)update;
 - (void)updateFrameForScale:(double)arg1;
 - (void)dealloc;
-- (id)initWithLevel:(long long)arg1 yOffset:(long long)arg2 frameScale:(double)arg3;
+- (id)initWithLevel:(long long)arg1 offset:(struct CGPoint)arg2 drawingScale:(double)arg3;
 
 @end
 

@@ -15,6 +15,7 @@
     AVAssetImageGenerator *_imageGenerator;
     AVVideoTrackThumbnailManager *_thumbnailManager;
     NSMutableDictionary *_thumbnailLayers;
+    struct CGSize _lastThumbnailGenerationSize;
     AVPlayerLayer *_trimThumbnailPlayerLayer;
     AVPlayerControllerTimeResolver *_timeResolver;
     BOOL _didStartThumbnailGeneration;

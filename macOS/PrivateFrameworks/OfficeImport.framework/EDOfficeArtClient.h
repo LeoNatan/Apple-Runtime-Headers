@@ -11,7 +11,6 @@
 
 @class EDAnchor, EDComment, EDSheet, EDTextBox, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient>
 {
     EDSheet *mSheet;
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool mIsBoundsSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)hasText;
 - (void)setComment:(id)arg1;
@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (id)anchor;
 - (void)setClientState:(id)arg1;
 - (id)clientState;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

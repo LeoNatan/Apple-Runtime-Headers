@@ -20,6 +20,7 @@
     unsigned int _flags;
     unsigned int _identifier;
     unsigned int _protocolVersion;
+    NSString *_receiverDestinationID;
     unsigned int _remoteUID;
     NSString *_senderDestinationID;
     VMTranscriptMessage *_transcript;
@@ -34,6 +35,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *receiverDestinationID; // @synthesize receiverDestinationID=_receiverDestinationID;
 @property(nonatomic) unsigned int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(retain, nonatomic) VMAudioMessage *audio; // @synthesize audio=_audio;
 @property(retain, nonatomic) VMTranscriptMessage *transcript; // @synthesize transcript=_transcript;
@@ -56,6 +58,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasReceiverDestinationID;
 @property(nonatomic) _Bool hasProtocolVersion;
 @property(readonly, nonatomic) _Bool hasAudio;
 @property(readonly, nonatomic) _Bool hasTranscript;

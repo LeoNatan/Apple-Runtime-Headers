@@ -8,6 +8,7 @@
 
 @class NSLocale, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVMetadataEnumerator : NSEnumerator
 {
     struct OpaqueFigMetadataReader *_reader;

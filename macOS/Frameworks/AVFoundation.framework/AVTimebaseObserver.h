@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
+__attribute__((visibility("hidden")))
 @interface AVTimebaseObserver : NSObject
 {
     NSObject<OS_dispatch_queue> *_timerQueue;

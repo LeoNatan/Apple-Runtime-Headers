@@ -8,6 +8,7 @@
 
 @class NSImageView, NSLayoutManager, NSView;
 
+__attribute__((visibility("hidden")))
 @interface NSDocumentTextAttachmentScrollView : NSScrollView
 {
     NSImageView *_imageView;

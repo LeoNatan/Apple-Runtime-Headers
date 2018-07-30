@@ -10,7 +10,7 @@
 #import "UIKeyInput.h"
 #import "UITextInputTraits.h"
 
-@class DevicePINKeypadContainerView, NSString, UIKeyboard, UITransitionView, UIView<PINEntryView>;
+@class DevicePINKeypadContainerView, NSString, UIKeyboard, UITextInputPasswordRules, UITransitionView, UIView<PINEntryView>;
 
 @interface DevicePINPane : PSEditingPane <UIKeyInput, UITextInputTraits, PSPINEntryViewDelegate>
 {
@@ -89,6 +89,7 @@
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(readonly) unsigned long long hash;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) long long returnKeyType;
 @property(nonatomic) long long smartDashesType;
 @property(nonatomic) long long smartInsertDeleteType;

@@ -8,6 +8,7 @@
 
 @class NSDictionary, _NSObjectAnimator;
 
+__attribute__((visibility("hidden")))
 @interface _NSTouchBarAuxiliary : NSObject
 {
     _NSObjectAnimator *_animator;

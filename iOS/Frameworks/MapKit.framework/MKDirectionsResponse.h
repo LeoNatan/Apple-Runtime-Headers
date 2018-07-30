@@ -30,7 +30,7 @@
 @property(readonly, retain, nonatomic) NSString *_incidentDescription;
 - (id)_route;
 @property(readonly, nonatomic) double _typicalTrafficRatio;
-- (id)_completeRoutesFromRouteSet;
+- (void)_completeRoutesFromRouteSet;
 - (id)_initWithGEORouteResponse:(id)arg1 routeRequest:(id)arg2 request:(id)arg3 origin:(id)arg4 destination:(id)arg5;
 
 @end

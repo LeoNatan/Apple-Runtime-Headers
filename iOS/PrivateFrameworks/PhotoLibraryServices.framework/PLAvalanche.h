@@ -37,7 +37,7 @@
 + (void)_updateMembershipForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(_Bool)arg5 allowDissolve:(_Bool)arg6 inLibrary:(id)arg7;
 + (id)_updatePropertiesForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(_Bool)arg5 setFirstPick:(_Bool)arg6 allowDissolve:(_Bool)arg7;
 + (void)_handleUpdatesForContextWillSave:(id)arg1;
-+ (void)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2 deleteNonPicks:(_Bool)arg3 allowDissolve:(_Bool)arg4;
++ (id)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2 deleteNonPicks:(_Bool)arg3 allowDissolve:(_Bool)arg4;
 + (void)disolveBurstForAssets:(id)arg1;
 + (_Bool)isValidBurstWithAssets:(id)arg1;
 + (unsigned long long)countForAvalancheUUID:(id)arg1 inLibrary:(id)arg2;

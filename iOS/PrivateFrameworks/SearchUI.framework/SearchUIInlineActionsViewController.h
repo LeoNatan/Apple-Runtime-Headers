@@ -38,6 +38,7 @@
 - (void).cxx_destruct;
 - (void)contactInlineActionsViewController:(id)arg1 willPerformActionOfType:(id)arg2;
 - (id)hostingViewControllerForController:(id)arg1;
+- (void)updateWithContact:(id)arg1;
 - (void)updateWithResult:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)didPressActionView:(id)arg1 longPress:(_Bool)arg2;

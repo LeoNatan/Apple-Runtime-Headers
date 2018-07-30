@@ -17,6 +17,8 @@
     NSString *__string;
 }
 
++ (id)stringByConvertingToHTML:(id)arg1;
++ (id)charactersForEntityNames;
 @property(readonly, nonatomic) NSString *_string; // @synthesize _string=__string;
 @property(copy, nonatomic) CDUnknownBlockType parsedErrorBlock; // @synthesize parsedErrorBlock=_parsedErrorBlock;
 @property(copy, nonatomic) CDUnknownBlockType parsedMarkupElementEndBlock; // @synthesize parsedMarkupElementEndBlock=_parsedMarkupElementEndBlock;

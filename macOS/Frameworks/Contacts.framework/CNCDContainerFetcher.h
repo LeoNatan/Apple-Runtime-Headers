@@ -8,7 +8,6 @@
 
 @class CNCDPersistenceContext, NSPredicate;
 
-__attribute__((visibility("hidden")))
 @interface CNCDContainerFetcher : NSObject
 {
     NSPredicate *_predicate;

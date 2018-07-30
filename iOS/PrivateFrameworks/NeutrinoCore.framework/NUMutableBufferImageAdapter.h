@@ -20,7 +20,6 @@
 - (_Bool)copySurfaceStorage:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toPoint:(CDStruct_912cb5d2)arg3 device:(id)arg4;
 - (void)writeBufferRegion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)initWithBuffer:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
-- (id)init;
 - (id)initWithMutableBuffer:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
 
 // Remaining properties

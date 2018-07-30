@@ -8,12 +8,11 @@
 
 #import "ParsecTableCellView.h"
 
-@class NSImageView, NSString, NSTextField;
+@class NSImageView, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface ParsecSportsAttributionTableCellView : UnifiedFieldCompletionStyledTableCellView <ParsecTableCellView>
 {
-    NSString *_identifierOfDisplayedParsecResult;
     id <ParsecTableCellViewDelegate> _delegate;
     NSTextField *_label;
     NSImageView *_icon;
@@ -22,7 +21,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSImageView *icon; // @synthesize icon=_icon;
 @property(nonatomic) __weak NSTextField *label; // @synthesize label=_label;
 @property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy, nonatomic) NSString *identifierOfDisplayedParsecResult; // @synthesize identifierOfDisplayedParsecResult=_identifierOfDisplayedParsecResult;
 - (void).cxx_destruct;
 - (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;
 

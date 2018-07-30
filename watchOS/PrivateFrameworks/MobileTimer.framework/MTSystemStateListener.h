@@ -22,6 +22,7 @@
 @property(nonatomic) _Bool restoreDoneHandled; // @synthesize restoreDoneHandled=_restoreDoneHandled;
 @property(nonatomic) __weak id <MTSystemStateDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)handledLiveDarwinNotifications;
 - (void)handleNotification:(id)arg1;

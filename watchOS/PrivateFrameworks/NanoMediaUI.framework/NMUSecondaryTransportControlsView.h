@@ -15,6 +15,7 @@
 - (id)_imageForRightTransportControl:(id)arg1;
 - (id)_imageForMiddleTransportControl:(id)arg1;
 - (id)_imageForLeftTransportControl:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

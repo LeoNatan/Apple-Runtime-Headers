@@ -6,30 +6,36 @@
 
 #import "UIPresentationController.h"
 
-#import "NCLongLookPresentationController.h"
+#import "PLExpandedPlatterPresentationController.h"
 
-@class MTMaterialView, NCLongLookPresentationControllerHelper, NSString, UIViewController;
+@class MTMaterialView, NSString, PLExpandedPlatterPresentationControllerHelper, UIPanGestureRecognizer, UIViewController;
 
-@interface NCLongLookDefaultPresentationController : UIPresentationController <NCLongLookPresentationController>
+@interface NCLongLookDefaultPresentationController : UIPresentationController <PLExpandedPlatterPresentationController>
 {
     UIViewController *_sourceViewController;
-    NCLongLookPresentationControllerHelper *_presentationControllerHelper;
+    PLExpandedPlatterPresentationControllerHelper *_presentationControllerHelper;
     MTMaterialView *_backgroundMaterialView;
     _Bool _presenting;
-    id <NCLongLookPresentationControllerDelegate> _longLookPresentationControllerDelegate;
+    id <NCLongLookDefaultPresentationControllerDelegate> _presentationControllerDelegate;
 }
 
++ (struct CGRect)useableContainerViewBoundsForExpandedPlatter:(id)arg1 inContainerViewWithBounds:(struct CGRect)arg2;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
-@property(nonatomic) __weak id <NCLongLookPresentationControllerDelegate> longLookPresentationControllerDelegate; // @synthesize longLookPresentationControllerDelegate=_longLookPresentationControllerDelegate;
+@property(nonatomic) __weak id <NCLongLookDefaultPresentationControllerDelegate> presentationControllerDelegate; // @synthesize presentationControllerDelegate=_presentationControllerDelegate;
 - (void).cxx_destruct;
 - (_Bool)_shouldPresentInCurrentContext;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)longLookAnimatorDidFinishFirstResponderChanges:(id)arg1;
-- (void)longLookAnimator:(id)arg1 willBeginDismissalAnimationWithTransitionContext:(id)arg2;
-- (void)longLookAnimator:(id)arg1 willBeginPresentationAnimationWithTransitionContext:(id)arg2;
+- (void)viewControllerAnimatorDidFinishFirstResponderChanges:(id)arg1;
+- (void)viewControllerAnimator:(id)arg1 willBeginDismissalAnimationWithTransitionContext:(id)arg2;
+- (void)viewControllerAnimator:(id)arg1 willBeginPresentationAnimationWithTransitionContext:(id)arg2;
+- (struct CGRect)finalDismissalFrameOfPresentingViewInContainerView;
+- (struct CGRect)initialPresentationFrameOfPresentingViewInContainerView;
+- (struct CGRect)initialFrameOfPresentedViewInContainerView;
+- (struct CGRect)finalPresentationFrameOfPresentingViewInContainerView;
 @property(nonatomic) double additionalHomeAffordanceSpacing;
+@property(nonatomic) __weak UIPanGestureRecognizer *homeAffordancePanGesture;
 @property(nonatomic, getter=isHomeAffordanceVisible) _Bool homeAffordanceVisible;
 - (void)completeDismissal;
 - (void)hintDismissalWithCommitProgress:(double)arg1 overallProgress:(double)arg2;
@@ -38,7 +44,6 @@
 - (struct CGRect)frameOfPresentedViewInContainerView;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 - (void)dismissalTransitionWillBegin;
-- (void)presentationTransitionDidEnd:(_Bool)arg1;
 - (void)presentationTransitionWillBegin;
 - (_Bool)_shouldMakePresentedViewControllerFirstResponder;
 - (struct CGRect)_frameForTransitionViewInPresentationSuperview:(id)arg1;

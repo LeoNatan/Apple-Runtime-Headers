@@ -10,7 +10,7 @@
 
 @interface NTPersonalizationFeatureCTRLookupOperation : FCOperation
 {
-    id <FRReadonlyPersonalizationAggregateStore> _aggregateStore;
+    id <FCReadonlyPersonalizationAggregateStore> _aggregateStore;
     FCPersonalizationTreatment *_personalizationTreatment;
     NSArray *_lookupRequests;
     CDUnknownBlockType _lookupCompletion;
@@ -21,7 +21,7 @@
 @property(copy, nonatomic) CDUnknownBlockType lookupCompletion; // @synthesize lookupCompletion=_lookupCompletion;
 @property(copy, nonatomic) NSArray *lookupRequests; // @synthesize lookupRequests=_lookupRequests;
 @property(copy, nonatomic) FCPersonalizationTreatment *personalizationTreatment; // @synthesize personalizationTreatment=_personalizationTreatment;
-@property(retain, nonatomic) id <FRReadonlyPersonalizationAggregateStore> aggregateStore; // @synthesize aggregateStore=_aggregateStore;
+@property(retain, nonatomic) id <FCReadonlyPersonalizationAggregateStore> aggregateStore; // @synthesize aggregateStore=_aggregateStore;
 - (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

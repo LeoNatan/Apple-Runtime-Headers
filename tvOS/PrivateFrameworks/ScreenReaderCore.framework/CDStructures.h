@@ -25,6 +25,11 @@ struct CGSize {
     double height;
 };
 
+struct ProcessSerialNumber {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
 struct SCRCFingerState {
     unsigned long long identifier;
     int xDirection;
@@ -39,7 +44,7 @@ struct SCRCFingerState {
     struct CGPoint startTouchPoint;
     struct CGPoint mostRecentTouchPoint;
     struct CGPoint lastDownPoint;
-    double orbValue;
+    double pressure;
     double altitude;
     double azimuth;
 };

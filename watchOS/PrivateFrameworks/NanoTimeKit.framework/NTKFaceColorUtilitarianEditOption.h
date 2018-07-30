@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)_localizedNameForValue:(unsigned int)arg1;
++ (id)_localizedNameForValue:(unsigned int)arg1 forDevice:(id)arg2;
 
 @end
 

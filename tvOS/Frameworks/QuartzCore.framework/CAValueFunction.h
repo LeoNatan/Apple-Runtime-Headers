@@ -16,7 +16,6 @@
     void *_impl;
 }
 
-+ (void)CAMLParserEndElement:(id)arg1 content:(id)arg2;
 + (void)CAMLParserStartElement:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)functionWithName:(id)arg1;

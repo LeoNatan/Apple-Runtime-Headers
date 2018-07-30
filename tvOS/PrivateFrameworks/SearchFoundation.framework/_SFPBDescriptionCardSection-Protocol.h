@@ -6,59 +6,41 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSDictionary, NSString, _SFPBColor, _SFPBImage, _SFPBPunchout, _SFPBText, _SFPBURL;
+@class NSArray, NSData, NSDictionary, NSString, _SFPBColor, _SFPBImage, _SFPBPunchout, _SFPBRichText, _SFPBText, _SFPBURL;
 
 @protocol _SFPBDescriptionCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasAttributionGlyph;
+@property(copy, nonatomic) NSArray *richDescriptions;
 @property(retain, nonatomic) _SFPBImage *attributionGlyph;
-@property(readonly, nonatomic) _Bool hasAttributionURL;
 @property(retain, nonatomic) _SFPBURL *attributionURL;
-@property(readonly, nonatomic) _Bool hasAttributionText;
 @property(copy, nonatomic) NSString *attributionText;
-@property(readonly, nonatomic) _Bool hasTextAlign;
 @property(nonatomic) int textAlign;
-@property(readonly, nonatomic) _Bool hasImageAlign;
 @property(nonatomic) int imageAlign;
-@property(readonly, nonatomic) _Bool hasDescriptionExpand;
 @property(nonatomic) _Bool descriptionExpand;
-@property(readonly, nonatomic) _Bool hasDescriptionWeight;
 @property(nonatomic) int descriptionWeight;
-@property(readonly, nonatomic) _Bool hasDescriptionSize;
 @property(nonatomic) int descriptionSize;
-@property(readonly, nonatomic) _Bool hasTitleWeight;
 @property(nonatomic) int titleWeight;
-@property(readonly, nonatomic) _Bool hasTitleNoWrap;
 @property(nonatomic) _Bool titleNoWrap;
-@property(readonly, nonatomic) _Bool hasImage;
 @property(retain, nonatomic) _SFPBImage *image;
-@property(readonly, nonatomic) _Bool hasExpandText;
 @property(copy, nonatomic) NSString *expandText;
-@property(readonly, nonatomic) _Bool hasDescriptionText;
 @property(retain, nonatomic) _SFPBText *descriptionText;
-@property(readonly, nonatomic) _Bool hasSubtitle;
 @property(copy, nonatomic) NSString *subtitle;
-@property(readonly, nonatomic) _Bool hasTitle;
 @property(copy, nonatomic) NSString *title;
-@property(readonly, nonatomic) _Bool hasBackgroundColor;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;
-@property(readonly, nonatomic) _Bool hasSeparatorStyle;
 @property(nonatomic) int separatorStyle;
-@property(readonly, nonatomic) _Bool hasType;
 @property(copy, nonatomic) NSString *type;
-@property(readonly, nonatomic) _Bool hasHasBottomPadding;
 @property(nonatomic) _Bool hasBottomPadding;
-@property(readonly, nonatomic) _Bool hasHasTopPadding;
 @property(nonatomic) _Bool hasTopPadding;
-@property(readonly, nonatomic) _Bool hasCanBeHidden;
 @property(nonatomic) _Bool canBeHidden;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerTitle;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
+- (_SFPBRichText *)richDescriptionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)richDescriptionsCount;
+- (void)addRichDescriptions:(_SFPBRichText *)arg1;
+- (void)clearRichDescriptions;
 - (_SFPBPunchout *)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(_SFPBPunchout *)arg1;

@@ -9,6 +9,7 @@
 @class IKJSMediaItem, JSValue, NSArray;
 
 @protocol IKJSPlaylist <JSExport>
+@property(nonatomic) long long repeatMode;
 @property(nonatomic) long long endAction;
 @property(readonly, nonatomic) unsigned long long length;
 - (IKJSMediaItem *)item:(long long)arg1;

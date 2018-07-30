@@ -17,6 +17,7 @@
     NSArray *_controlNodes;
     id <MDLMeshBufferAllocator> _allocator;
     unsigned int _vertexCount;
+    unsigned int _subdivisionScheme;
 }
 
 + (id)newEllipticalConeWithHeight:(float)arg1 radii:(unsigned int)arg2 radialSegments:(unsigned int)arg3 verticalSegments:(int)arg4 geometryType:(_Bool)arg5 inwardNormals:(id)arg6 allocator: /* Error: Ran out of types for this method. */;
@@ -28,6 +29,7 @@
 + (id)newCapsuleWithHeight:(float)arg1 radii:(unsigned int)arg2 radialSegments:(unsigned int)arg3 verticalSegments:(unsigned int)arg4 hemisphereSegments:(int)arg5 geometryType:(_Bool)arg6 inwardNormals:(id)arg7 allocator: /* Error: Ran out of types for this method. */;
 + (id)newPlaneWithDimensions:(int)arg1 segments:(id)arg2 geometryType:allocator: /* Error: Ran out of types for this method. */;
 + (id)newCylinderWithHeight:(float)arg1 radii:(unsigned int)arg2 radialSegments:(unsigned int)arg3 verticalSegments:(int)arg4 geometryType:(_Bool)arg5 inwardNormals:(id)arg6 allocator: /* Error: Ran out of types for this method. */;
+@property(nonatomic) unsigned int subdivisionScheme; // @synthesize subdivisionScheme=_subdivisionScheme;
 @property(nonatomic) unsigned int vertexCount; // @synthesize vertexCount=_vertexCount;
 @property(readonly, retain, nonatomic) id <MDLMeshBufferAllocator> allocator; // @synthesize allocator=_allocator;
 - (id).cxx_construct;
@@ -54,10 +56,12 @@
 - (id)initCapsuleWithExtent:(unsigned int)arg1 cylinderSegments:(_Bool)arg2 hemisphereSegments:(int)arg3 inwardNormals:(id)arg4 geometryType:allocator: /* Error: Ran out of types for this method. */;
 - (id)initPlaneWithExtent:(int)arg1 segments:(id)arg2 geometryType:allocator: /* Error: Ran out of types for this method. */;
 - (_Bool)makeVerticesUniqueAndReturnError:(id *)arg1;
+- (id)description;
 - (void)makeVerticesUnique;
 - (void)flipTextureCoordinatesInAttributeNamed:(id)arg1;
 - (void)addUnwrappedTextureCoordinatesForAttributeNamed:(id)arg1;
 - (void)addNormalsWithAttributeNamed:(id)arg1 creaseThreshold:(float)arg2;
+- (_Bool)triangulate;
 - (void)_calculateFaceNormalsFromPositions:(float *)arg1 positionStride:(int)arg2 normals:(float *)arg3 normalStride:(int)arg4 creaseThreshold:(float)arg5;
 - (void)addOrthTanBasisForTextureCoordinateAttributeNamed:(id)arg1 normalAttributeNamed:(id)arg2 tangentAttributeNamed:(id)arg3;
 - (void)addTangentBasisForTextureCoordinateAttributeNamed:(id)arg1 normalAttributeNamed:(id)arg2 tangentAttributeNamed:(id)arg3;

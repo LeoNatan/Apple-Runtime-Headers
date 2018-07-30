@@ -13,6 +13,7 @@
 @interface _HKFitnessFriendActivitySnapshot (CloudKitCodingSupport) <ASCloudKitCodable>
 + (id)_fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2 uploadedDate:(id)arg3;
 + (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2 uploadedDate:(id)arg3;
++ (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1;
 + (struct _HKFitnessFriendActivitySnapshot *)fitnessFriendActivitySnapshotWithRecord:(id)arg1 friendUUID:(id)arg2;
 - (id)recordWithZoneID:(id)arg1;

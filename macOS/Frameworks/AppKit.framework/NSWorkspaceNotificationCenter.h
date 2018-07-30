@@ -8,6 +8,7 @@
 
 @class NSHashTable, NSLock, NSWorkspace;
 
+__attribute__((visibility("hidden")))
 @interface NSWorkspaceNotificationCenter : NSNotificationCenter
 {
     NSWorkspace *_workspace;

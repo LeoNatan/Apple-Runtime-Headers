@@ -29,6 +29,10 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long encodedLength;
 - (void)dealloc;
 - (id)initWithLayout:(id)arg1 device:(id)arg2;
+- (void)setComputePipelineStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
+- (void)setComputePipelineState:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)setRenderPipelineStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
+- (void)setRenderPipelineState:(id)arg1 atIndex:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSCell.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarItemViewerLabelCell : NSCell
 {
 }

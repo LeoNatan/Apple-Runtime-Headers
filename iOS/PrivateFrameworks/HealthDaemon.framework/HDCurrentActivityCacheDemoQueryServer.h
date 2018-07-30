@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <HealthDaemon/HDQueryServer.h>
+#import <HealthDaemon/HDCurrentActivityCacheQueryServer.h>
 
-@interface HDCurrentActivityCacheDemoQueryServer : HDQueryServer
+@interface HDCurrentActivityCacheDemoQueryServer : HDCurrentActivityCacheQueryServer
 {
 }
 
 - (id)_demoStatisticsForStandHours;
 - (id)_demoStatisticsForDataTypeIdentifier:(id)arg1 unit:(id)arg2;
 - (void)_queue_start;
+- (_Bool)shouldObserveActivityCache;
 - (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 
 @end

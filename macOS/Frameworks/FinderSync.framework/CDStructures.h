@@ -12,7 +12,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct TNSRef<NSURL *, void> {
+struct TNSRef<NSURL, void> {
     NSURL *fRef;
 };
 

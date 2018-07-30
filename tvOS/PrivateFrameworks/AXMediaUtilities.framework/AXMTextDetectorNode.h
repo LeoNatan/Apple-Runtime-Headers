@@ -33,6 +33,7 @@
 - (void).cxx_destruct;
 - (void)evaluate:(id)arg1;
 - (void)_evaluateWithVisionFlavor:(id)arg1;
+- (_Bool)validateVisionKitSoftLinkSymbols;
 - (id)_visionTextDetectionOptionForLangauge:(id)arg1;
 - (void)_evaluateWithFutharkFlavor:(id)arg1;
 - (_Bool)shouldEvaluate:(id)arg1;

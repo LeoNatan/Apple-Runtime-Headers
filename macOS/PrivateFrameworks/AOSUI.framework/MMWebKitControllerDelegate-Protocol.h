@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class JSContext, MMWebKitController, NSError, NSURLResponse, NSWindow, WebFrame, WebView;
+@class JSContext, MMWebKitController, NSError, NSMutableURLRequest, NSURLResponse, NSWindow, WebFrame, WebView;
 
 @protocol MMWebKitControllerDelegate <NSObject>
 
 @optional
 - (NSWindow *)mmWebKitControllerWindow;
+- (void)mmWebKitControllerWillSendRequest:(MMWebKitController *)arg1 willSendRequest:(NSMutableURLRequest *)arg2;
 - (void)mmWebKitControllerDidReceiveResponse:(MMWebKitController *)arg1 didReceiveResponse:(NSURLResponse *)arg2;
 - (void)mmWebKitControllerDidFinishLoading:(MMWebKitController *)arg1;
 - (void)mmWebKitControllerDidFailLoading:(MMWebKitController *)arg1 error:(NSError *)arg2;

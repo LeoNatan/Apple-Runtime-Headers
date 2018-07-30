@@ -24,6 +24,7 @@
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSURL *documentEnclosingURL;
 - (void)dealloc;
+- (id)initForReadingWithData:(id)arg1 secure:(_Bool)arg2;
 
 @end
 

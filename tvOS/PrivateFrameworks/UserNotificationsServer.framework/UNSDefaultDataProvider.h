@@ -9,42 +9,50 @@
 #import "BBRemoteDataProvider.h"
 #import "UNSNotificationCategoryRepositoryObserver.h"
 #import "UNSNotificationRepositoryObserver.h"
+#import "UNSNotificationTopicRepositoryObserver.h"
 
-@class BBDataProviderProxy, BSCFBundle, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, UNSApplicationLauncher, UNSAttachmentsService, UNSNotificationCategoryRepository, UNSNotificationRepository;
+@class BBDataProviderProxy, BBSectionIcon, BBSectionInfo, BSCFBundle, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, UNSApplicationLauncher, UNSAttachmentsService, UNSDaemonLauncher, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationSourceDescription, UNSNotificationTopicRepository;
 
-@interface UNSDefaultDataProvider : NSObject <UNSNotificationRepositoryObserver, UNSNotificationCategoryRepositoryObserver, BBRemoteDataProvider>
+@interface UNSDefaultDataProvider : NSObject <UNSNotificationRepositoryObserver, UNSNotificationCategoryRepositoryObserver, UNSNotificationTopicRepositoryObserver, BBRemoteDataProvider>
 {
-    NSString *_sectionID;
-    NSString *_universalApplicationIdentifier;
-    BSCFBundle *_appBundle;
-    NSURL *_dataContainerURL;
+    BBSectionIcon *_sectionIcon;
+    BSCFBundle *_bundle;
+    _Bool _suppressUserAuthorizationPrompt;
+    UNSNotificationSourceDescription *_notificationSourceDescription;
     UNSApplicationLauncher *_appLauncher;
+    UNSDaemonLauncher *_daemonLauncher;
     UNSNotificationRepository *_notificationRepository;
     UNSNotificationCategoryRepository *_categoryRepository;
+    UNSNotificationTopicRepository *_topicRepository;
     UNSAttachmentsService *_attachmentsService;
     BBDataProviderProxy *_proxy;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_primaryAttachments;
     NSMutableDictionary *_primaryAttachmentMetadata;
     NSMutableDictionary *_categoryToParamSubType;
+    BBSectionInfo *_sectionInfo;
 }
 
+@property(retain, nonatomic) BBSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 @property(retain, nonatomic) BBDataProviderProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+- (id)_sectionIconForNotificationSourceDescription:(id)arg1;
+- (id)_sectionIconVariantForImageName:(id)arg1 bundlePath:(id)arg2 format:(long long)arg3;
 - (id)primaryAttachmentDataForRecordID:(id)arg1;
 - (id)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2;
 - (float)attachmentAspectRatioForRecordID:(id)arg1;
 - (void)_addAttachments:(id)arg1 toBulletinRequest:(id)arg2;
 - (void)_queue_withdrawBulletinForNotification:(id)arg1;
 - (void)_queue_addBulletinForNotification:(id)arg1;
+- (void)_queue_modifyBulletinForNotification:(id)arg1;
 - (void)_queue_notificationRepositoryDidPerformUpdates:(id)arg1;
+- (void)topicRepository:(id)arg1 didChangeTopicsForBundleIdentifier:(id)arg2;
 - (void)categoryRepository:(id)arg1 didChangeCategoriesForBundleIdentifier:(id)arg2;
 - (void)notificationRepository:(id)arg1 didPerformUpdates:(id)arg2 forBundleIdentifier:(id)arg3;
 - (_Bool)syncsBulletinDismissal;
 - (id)_unarchiveNotificationFromData:(id)arg1;
 - (void)_handleBulletinActionResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleBulletinActionResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)noteSectionInfoDidChange:(id)arg1;
 - (id)sectionIdentifier;
 - (id)sortDescriptors;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
@@ -52,34 +60,35 @@
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
 - (id)notificationRecords;
 - (id)_allBulletinsWithMaxCount:(unsigned long long)arg1 sinceDate:(id)arg2;
-- (_Bool)_allowInCarPlayForCategoryIdentifier:(id)arg1;
-- (_Bool)_isDestructiveForUNAction:(id)arg1;
-- (_Bool)_isAuthenticationRequiredForUNAction:(id)arg1;
-- (id)_BBActionBehaviorParametersForUNAction:(id)arg1;
-- (long long)_BBActionBehaviorForUNAction:(id)arg1;
-- (unsigned long long)_BBActivationModeForUNAction:(id)arg1;
-- (id)_BBActionFromUIUserNotificationAction:(id)arg1;
-- (id)_BBActionsFromUIUserNotificationActions:(id)arg1;
+- (id)_actionFromActionRecord:(id)arg1;
+- (id)_actionsFromActionRecords:(id)arg1;
 - (id)_categoryForIdentifier:(id)arg1;
-- (id)_UNActionsForNormalLayoutForCategory:(id)arg1;
-- (id)_actionsForNormalLayoutForCategory:(id)arg1;
-- (id)_UNActionsForCompactLayoutForCategory:(id)arg1;
-- (id)_actionsForCompactLayoutForCategory:(id)arg1;
+- (id)_allCategories;
+- (id)_supplementaryActionsForForCategoryRecord:(id)arg1;
+- (id)_silenceActionForCategory:(id)arg1;
 - (id)_dismissActionForCategory:(id)arg1;
-- (id)_defaultActionWithTitle:(id)arg1;
+- (id)_defaultActionWithNotification:(id)arg1;
 - (_Bool)_isResourceValidForPath:(id)arg1 withContainerPath:(id)arg2;
 - (id)_pathForSoundName:(id)arg1;
+- (id)_queue_applicableSectionInfosForSubsectionIDs:(id)arg1;
+- (_Bool)_queue_supportsCriticalAlertsForSubsectionIDs:(id)arg1;
 - (id)_queue_bulletinForNotification:(id)arg1;
 - (id)universalSectionIdentifier;
+- (id)displayNameForSubsectionID:(id)arg1;
+- (id)_topicForIdentifier:(id)arg1;
+- (id)defaultSubsectionInfos;
 - (id)defaultSectionInfo;
+- (id)sectionDisplayName;
+- (id)sectionIcon;
 - (id)sectionParameters;
+- (id)_localizeClientString:(id)arg1 inBundle:(id)arg2;
 - (_Bool)_isPushDataProvider;
 - (void)invalidate;
 - (void)uninstall;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
-- (void)setApplicationDescription:(id)arg1;
-- (id)initWithApplicationDescription:(id)arg1 applicationLauncher:(id)arg2 categoryRepository:(id)arg3 notificationRepository:(id)arg4 attachmentsService:(id)arg5 queue:(id)arg6;
+- (void)setNotificationSourceDescription:(id)arg1;
+- (id)initWithNotificationSourceDescription:(id)arg1 applicationLauncher:(id)arg2 daemonLauncher:(id)arg3 categoryRepository:(id)arg4 notificationRepository:(id)arg5 topicRepository:(id)arg6 attachmentsService:(id)arg7 queue:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

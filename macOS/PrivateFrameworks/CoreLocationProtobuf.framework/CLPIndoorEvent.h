@@ -8,10 +8,11 @@
 
 #import "NSCopying.h"
 
-@class CLPIndoorCMAttitude, CLPIndoorCMPedometer, CLPIndoorMotionActivity, CLPIndoorPressure, CLPIndoorWifiScan, CLPLocation;
+@class CLPBundleId, CLPIndoorCMAttitude, CLPIndoorCMPedometer, CLPIndoorMotionActivity, CLPIndoorPressure, CLPIndoorWifiScan, CLPLocation;
 
 @interface CLPIndoorEvent : PBCodable <NSCopying>
 {
+    CLPBundleId *_bundleId;
     CLPIndoorCMAttitude *_cmAttitude;
     CLPIndoorCMPedometer *_cmPedometer;
     CLPLocation *_location;
@@ -24,6 +25,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) CLPBundleId *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain, nonatomic) CLPIndoorWifiScan *wifiScan; // @synthesize wifiScan=_wifiScan;
 @property(retain, nonatomic) CLPIndoorPressure *pressure; // @synthesize pressure=_pressure;
 @property(retain, nonatomic) CLPIndoorMotionActivity *motionActivity; // @synthesize motionActivity=_motionActivity;
@@ -40,6 +42,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasBundleId;
 @property(readonly, nonatomic) BOOL hasWifiScan;
 @property(readonly, nonatomic) BOOL hasPressure;
 @property(readonly, nonatomic) BOOL hasMotionActivity;

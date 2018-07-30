@@ -11,6 +11,8 @@
 + (void)_clearCachedFonts;
 + (id)scaled_eventTitleFontAtCurrentContentSize;
 + (id)__timeFeatures;
++ (_Bool)ncs_shouldUseChineseFont;
++ (id)ncs_sectionHeaderFont;
 + (id)ncs_eventTitleFont;
 + (id)ncs_footnote1ShortTimeFeaturesFont;
 + (id)ncs_footnote1ShortFont;

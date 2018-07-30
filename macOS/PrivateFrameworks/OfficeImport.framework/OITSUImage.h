@@ -6,16 +6,15 @@
 
 #import "NSObject.h"
 
-@class NSImage;
+@class NSImage, TSUOnce;
 
-__attribute__((visibility("hidden")))
 @interface OITSUImage : NSObject
 {
     struct CGImage *mCachedSliceableImage;
     struct __CFDictionary *mImageSlices;
-    long long mImageSliceCacheLock;
+    TSUOnce *mImageSlicesOnce;
     id mCachedSystemImage;
-    long long mCachedImageLock;
+    TSUOnce *mCachedImageOnce;
 }
 
 + (id)imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(int)arg3;
@@ -25,7 +24,6 @@ __attribute__((visibility("hidden")))
 + (id)imageNamed:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)imageWithNSImage:(id)arg1;
-+ (id)noisePatternWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 factor:(double)arg3;
 - (void)drawInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 stretchingCenterWidthBy:(double)arg3;
 - (struct CGImage *)CGImageForContentsScale:(double)arg1;
 - (id)stretchedImageOfSize:(struct CGSize)arg1 leftCapWidth:(double)arg2 rightCapWidth:(double)arg3 topCapHeight:(double)arg4 bottomCapHeight:(double)arg5;

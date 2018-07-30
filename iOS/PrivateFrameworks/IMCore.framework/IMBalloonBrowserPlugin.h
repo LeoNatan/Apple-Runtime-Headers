@@ -12,7 +12,7 @@
 
 - (_Bool)isBetaPlugin;
 - (id)version;
-- (id)initWithIdentifier:(id)arg1 browserDisplayName:(id)arg2 browserImageName:(id)arg3 browserClass:(Class)arg4;
+- (id)initWithIdentifier:(id)arg1 browserDisplayName:(id)arg2 browserImageName:(id)arg3 browserClass:(Class)arg4 presentationContext:(unsigned long long)arg5;
 - (id)initWithIdentifier:(id)arg1 browserDisplayName:(id)arg2 browserImageName:(id)arg3;
 
 @end

@@ -6,25 +6,24 @@
 
 #import <CoreData/NSSQLStoreRequestContext.h>
 
-@class NSFetchRequest, NSPersistentHistoryChangeRequest, NSSQLiteStatement;
+@class NSFetchRequest, NSPersistentHistoryChangeRequest;
 
 __attribute__((visibility("hidden")))
 @interface NSSQLPersistentHistoryChangeRequestContext : NSSQLStoreRequestContext
 {
-    NSSQLiteStatement *_changeRequestStatement;
     NSFetchRequest *_fetchRequest;
+    BOOL _shouldUseBatches;
 }
 
+@property(readonly, nonatomic) BOOL shouldUseBatches; // @synthesize shouldUseBatches=_shouldUseBatches;
 - (BOOL)executeRequestUsingConnection:(id)arg1;
-- (id)_changeFromResult:(id)arg1 withTransaction:(id)arg2 andTombstoneCache:(id)arg3;
+- (id)_changeFromResult:(id)arg1 withTransaction:(id)arg2;
 - (id)_transactionFromResult:(id)arg1 withChanges:(id)arg2;
 - (id)_processResult:(id)arg1;
-- (void)executePrologue;
 - (BOOL)isWritingRequest;
-@property(readonly, nonatomic) NSSQLiteStatement *changeRequestStatement;
-- (void)_createChangeRequestStatement;
 - (id)createDeleteTransactionsRequestContext;
 - (id)createRequestContextForChangesWithTransactionIDs:(id)arg1;
+- (id)fetchRequestContextForChanges;
 - (id)createCountRequestContextForChanges;
 - (id)fetchRequestDescribingChanges;
 @property(readonly, nonatomic) NSPersistentHistoryChangeRequest *request;

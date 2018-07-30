@@ -7,8 +7,8 @@
 @class NSArray;
 
 @protocol NSOpenAndSavePanelServiceExportedToRemoteViewProtocol
+- (void)setRemoteAccessoryViewDesiredSize:(struct CGSize)arg1;
 - (void)processAppRespondedEnabledStates:(NSArray *)arg1 forReplyToken:(unsigned long long)arg2;
-- (void)setAccessoryViewMinSize:(struct CGSize)arg1 wantsToCenter:(BOOL)arg2;
 - (void)validateVisibleColumns;
 @end
 

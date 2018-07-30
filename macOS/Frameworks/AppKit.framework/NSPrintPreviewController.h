@@ -8,6 +8,7 @@
 
 @class NSMapTable, NSPrintThumbnailView, NSSegmentedControl, NSTextField, NSView;
 
+__attribute__((visibility("hidden")))
 @interface NSPrintPreviewController : NSViewController
 {
     struct CGSize _maxViewFrameSize;

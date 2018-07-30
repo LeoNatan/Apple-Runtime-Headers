@@ -6,25 +6,27 @@
 
 #import "NSObject.h"
 
-@class CLKUIMmapFile, EAGLContext, NSBundle, NSMutableArray, NSMutableDictionary;
+@class CLKDevice, CLKUIMmapFile, EAGLContext, NSBundle, NSMutableArray, NSMutableDictionary;
 
 @interface NTKCharacterResourceLoader : NSObject
 {
+    CLKDevice *_device;
     EAGLContext *_context;
     NSBundle *_bundle;
     unsigned long long _clients;
     CLKUIMmapFile *_commonBankLatn;
     CLKUIMmapFile *_commonBankArab;
+    CLKUIMmapFile *_commonBankDeva;
     CLKUIMmapFile *_minnieBank;
     CLKUIMmapFile *_mickeyBank;
     struct NTKCharacterPrograms _programs;
     NSMutableDictionary *_mapping;
     NSMutableArray *_array;
-    NSMutableArray *_arrayByLocale[2];
+    NSMutableArray *_arrayByLocale[3];
 }
 
-+ (void)_deallocInstance;
-+ (id)sharedInstance;
++ (void)_deallocInstanceForDevice:(id)arg1;
++ (id)sharedInstanceForDevice:(id)arg1;
 @property(readonly, nonatomic) EAGLContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (unsigned int)programUniformLocation:(unsigned long long)arg1 uniform:(int)arg2;
@@ -41,7 +43,7 @@
 - (void)prime;
 - (void)_asyncDeallocInstance;
 - (void)dealloc;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 
 @end
 

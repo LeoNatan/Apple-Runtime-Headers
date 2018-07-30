@@ -9,6 +9,8 @@
 @class NNMKResendScheduler, NSArray, NSDate, NSDictionary, NSString;
 
 @protocol NNMKResendSchedulerDelegate <NNMKDeviceRegistryHolder>
+- (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestRetrySendingVIPListWithResendInterval:(unsigned long long)arg2;
+- (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestRetrySendingAccountIdentifier:(NSString *)arg2 resendInterval:(unsigned long long)arg3;
 - (unsigned long long)resendScheduler:(NNMKResendScheduler *)arg1 didRequestNewResendIntervalForPreviousResendInterval:(unsigned long long)arg2 errorCode:(long long)arg3;
 - (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestDequeueIDSIdentifierForResend:(NSString *)arg2;
 - (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestEnqueueIDSIdentifierForResend:(NSString *)arg2 date:(NSDate *)arg3 silent:(_Bool)arg4;
@@ -19,7 +21,7 @@
 - (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestRetrySendingContentForMessageId:(NSString *)arg2 highPriority:(_Bool)arg3;
 - (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestRetrySendingMessageDeletions:(NSDictionary *)arg2 deletionsMessageIds:(NSArray *)arg3 resendInterval:(unsigned long long)arg4;
 - (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestRetrySendingMessageWithIds:(NSArray *)arg2;
-- (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestToRetrySendMailboxSelectionWithResendInterval:(unsigned long long)arg2;
+- (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestRetrySendingMailboxSelectionWithResendInterval:(unsigned long long)arg2;
 - (void)resendScheduler:(NNMKResendScheduler *)arg1 didRequestRetryFullSyncForMailboxes:(NSArray *)arg2;
 @end
 

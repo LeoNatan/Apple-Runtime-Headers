@@ -24,7 +24,6 @@
 - (void)startCircleApplicationApprovalServer:(CDUnknownBlockType)arg1;
 - (void)repairCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;
-- (void)fetchManateeAvailabilityWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isManateeAvailable:(id *)arg1;
 
 @end

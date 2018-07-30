@@ -6,14 +6,16 @@
 
 #import <PhotoLibraryServices/PLManagedObject.h>
 
+#import "PLCloudDeletable.h"
 #import "PLSyncablePerson.h"
 
 @class NSDictionary, NSSet, NSString, PLDetectedFace, PLDetectedFaceGroup;
 
-@interface PLPerson : PLManagedObject <PLSyncablePerson>
+@interface PLPerson : PLManagedObject <PLSyncablePerson, PLCloudDeletable>
 {
 }
 
++ (id)fetchFinalMergeTargetPersonForPersonWithUUID:(id)arg1 context:(id)arg2;
 + (_Bool)resetAllWithError:(id *)arg1;
 + (id)predicateForPersistence;
 + (id)predicateForVisibleKeyFace;
@@ -24,12 +26,14 @@
 + (void)batchFetchAssociatedPersonByFaceGroupUUIDWithFaceGroupUUIDs:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)fetchPersonCountByAssetUUIDForAssetUUIDs:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
 + (void)batchFetchPersonsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
-+ (void)batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 inManagedObjectContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)_batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 inManagedObjectContext:(id)arg3 error:(id *)arg4;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1 inManagedObjectContext:(id)arg2;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1;
++ (id)cloudUUIDKeyForDeletion;
++ (long long)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)personsWithUUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)personsWithPersonUri:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)allPersonsInManagedObjectContext:(id)arg1;
@@ -75,6 +79,8 @@
 - (id)mutableRejectedFaces;
 - (id)mutableFaces;
 - (void)willSave;
+@property(readonly, copy) NSString *cloudUUIDForDeletion;
+@property(readonly) long long cloudDeletionType;
 - (void)prepareForDeletion;
 - (_Bool)shouldIndexForSearch;
 - (id)syncDescription;
@@ -86,12 +92,14 @@
 @property(readonly, retain, nonatomic) id localID;
 - (void)setCPLSyncedMergeTarget:(id)arg1;
 - (id)cplPersonChange;
+- (id)momentShare;
 - (id)cplFullRecord;
 - (_Bool)isSyncableChange;
 - (_Bool)supportsCloudUpload;
 
 // Remaining properties
 @property(retain, nonatomic) PLDetectedFaceGroup *associatedFaceGroup; // @dynamic associatedFaceGroup;
+@property(nonatomic) short cloudDeleteState; // @dynamic cloudDeleteState;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;
 @property(nonatomic) int cloudVerifiedType; // @dynamic cloudVerifiedType;
 @property(retain, nonatomic) NSSet *clusterRejectedFaces; // @dynamic clusterRejectedFaces;

@@ -12,12 +12,10 @@
 
 @interface VNImageBasedRequest : VNRequest <VNFaceObservationAcceptingInternal>
 {
-    struct CGRect _regionOfInterest;
-    NSArray *_inputFaceObservations;
 }
 
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
-- (void).cxx_destruct;
++ (Class)configurationClass;
 - (id)validatedInputFaceObservationsClippedToRegionOfInterest:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)getOptionalValidatedInputFaceObservations:(id *)arg1 clippedToRegionOfInterest:(_Bool)arg2 error:(id *)arg3;
 - (id)_faceObservationsForRegionOfInterestContainingFaceObservations:(id)arg1;
@@ -27,11 +25,9 @@
 - (struct CGRect)regionOfInterestNonIntegralPixelRectForWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
 - (_Bool)isFullCoverageRegionOfInterest;
 - (_Bool)validateConfigurationAndReturnError:(id *)arg1;
-@property(nonatomic) struct CGRect regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
+@property(nonatomic) struct CGRect regionOfInterest;
 - (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
+- (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

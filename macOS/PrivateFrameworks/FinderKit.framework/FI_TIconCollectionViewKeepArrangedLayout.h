@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TIconCollectionViewKeepArrangedLayout : NSCollectionViewFlowLayout
 {
-    struct vector<double, std::__1::allocator<double>> _columnOffsets;
+    vector_b67dfe3a _columnOffsets;
     _Bool _isJustifiedLayout;
 }
 
@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)_adjustItemLayoutAttributes:(id)arg1 byXOffset:(double)arg2;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (void)setInterItemSpacingForIconSize:(const struct CGSize *)arg1 titleOnBottom:(_Bool)arg2;
-- (id)init;
 
 @end
 

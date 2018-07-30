@@ -24,6 +24,7 @@
     _Bool _isVideoPaused;
     _Bool _isMediaStalled;
     _Bool _isVideoDegraded;
+    _Bool _isVideoSuspended;
     _Bool _hasReceivedLastFrame;
     _Bool _shouldDisplayVideoInfoLayer;
     VideoAttributes *_remoteScreenAttributes;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) VideoAttributes *remoteScreenAttributes; // @synthesize remoteScreenAttributes=_remoteScreenAttributes;
 @property(nonatomic) _Bool isVideoPaused; // @synthesize isVideoPaused=_isVideoPaused;
 @property(nonatomic) _Bool isMediaStalled; // @synthesize isMediaStalled=_isMediaStalled;
+@property(nonatomic) _Bool isVideoSuspended; // @synthesize isVideoSuspended=_isVideoSuspended;
 @property(nonatomic) _Bool isVideoDegraded; // @synthesize isVideoDegraded=_isVideoDegraded;
 @property(nonatomic) _Bool hasReceivedLastFrame; // @synthesize hasReceivedLastFrame=_hasReceivedLastFrame;
 @property(nonatomic) _Bool hasReceivedFirstFrame; // @synthesize hasReceivedFirstFrame=_hasReceivedFirstFrame;
@@ -54,6 +56,7 @@
 - (void)insertSubLayerInLayer:(id)arg1 videoMode:(int)arg2 videoSlot:(id)arg3;
 - (void)remoteVideoServerDidDie;
 - (void)releaseQueueForStreamToken:(long long)arg1;
+- (void)remoteVideoDidSuspend:(_Bool)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidDegrade:(_Bool)arg1 streamToken:(long long)arg2;
 - (void)remoteMediaDidStall:(_Bool)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidPause:(_Bool)arg1 streamToken:(long long)arg2;

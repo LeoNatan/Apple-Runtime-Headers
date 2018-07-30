@@ -8,15 +8,14 @@
 
 @class ODDLayoutNode;
 
-__attribute__((visibility("hidden")))
 @interface ODDLayout : NSObject
 {
     ODDLayoutNode *mRootNode;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)rootNode;
-- (void)dealloc;
 - (id)init;
 
 @end

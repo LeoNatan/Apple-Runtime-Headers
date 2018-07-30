@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak CombinedFavoritesGridViewController *combinedFavoritesGridViewController; // @synthesize combinedFavoritesGridViewController=_combinedFavoritesGridViewController;
 - (void).cxx_destruct;
 - (id)menuForEvent:(id)arg1;
-- (id)effectiveAppearance;
 
 @end
 

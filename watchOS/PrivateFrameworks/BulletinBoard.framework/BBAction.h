@@ -74,10 +74,10 @@
 @property(nonatomic) _Bool canBypassPinLock;
 - (id)bundleID;
 - (id)url;
-- (_Bool)hasInteractiveAction;
-- (_Bool)hasRemoteViewAction;
-- (_Bool)hasPluginAction;
-- (_Bool)hasLaunchAction;
+@property(readonly, nonatomic) _Bool hasInteractiveAction;
+@property(readonly, nonatomic) _Bool hasRemoteViewAction;
+@property(readonly, nonatomic) _Bool hasPluginAction;
+@property(readonly, nonatomic) _Bool hasLaunchAction;
 - (void)setCallblock:(CDUnknownBlockType)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;

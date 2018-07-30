@@ -17,7 +17,6 @@
 }
 
 + (BOOL)isSkypeAvailableWithEnvironment:(id)arg1;
-+ (id)applicationProxiesForIntent:(id)arg1 environment:(id)arg2;
 @property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <CNUIUserActionDiscoveringEnvironment> discoveringEnvironment; // @synthesize discoveringEnvironment=_discoveringEnvironment;
 - (void).cxx_destruct;

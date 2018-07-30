@@ -6,6 +6,7 @@
 
 #import "NSArray.h"
 
+__attribute__((visibility("hidden")))
 @interface _NSControllerArrayProxy : NSArray
 {
     id _controller;

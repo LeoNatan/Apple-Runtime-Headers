@@ -6,6 +6,7 @@
 
 #import <SceneKit/SCNPhysicsField.h>
 
+__attribute__((visibility("hidden")))
 @interface SCNPhysicsVortexField : SCNPhysicsField
 {
 }

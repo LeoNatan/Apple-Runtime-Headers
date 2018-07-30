@@ -7,6 +7,8 @@
 #import "NSString.h"
 
 @interface NSString (ContactsFoundationPhoneNumbers)
++ (id)_cn_phoneNumberSanitizeCharacters;
++ (id)_cn_LTRControlCharacters;
 @property(readonly) _Bool _cn_requiresPhoneNumberSanitizing;
 - (id)_cn_stringBySanitizingPhoneNumber;
 @end

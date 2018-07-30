@@ -19,6 +19,7 @@
 @property(nonatomic) int playbackState; // @synthesize playbackState=_playbackState;
 @property(retain, nonatomic) NAFuture *writeFuture; // @synthesize writeFuture=_writeFuture;
 - (void).cxx_destruct;
+- (id)description;
 - (id)init;
 
 @end

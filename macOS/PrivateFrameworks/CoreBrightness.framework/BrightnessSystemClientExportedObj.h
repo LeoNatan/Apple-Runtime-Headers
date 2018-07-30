@@ -10,6 +10,7 @@
 
 @class BrightnessSystemClientInternal, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface BrightnessSystemClientExportedObj : NSObject <BacklightSystemDelegateXpcProtocol>
 {
     CDUnknownBlockType clientBlock;

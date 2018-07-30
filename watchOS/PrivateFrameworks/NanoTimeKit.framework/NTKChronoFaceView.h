@@ -89,13 +89,17 @@
 - (void)_configureComplicationAlphasForFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
+- (_Bool)_isComplicationSlotInsideDial:(id)arg1;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
+- (id)_slotForUtilitySlot:(int)arg1;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_canStartTimeScrubbing;
 - (void)_layoutForegroundContainerView;
@@ -112,7 +116,7 @@
 - (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NTKChronoScene *chronoScene;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

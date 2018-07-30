@@ -15,6 +15,7 @@
     NSUndoManager *_recipientBarUndoManager;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSUndoManager *recipientBarUndoManager; // @synthesize recipientBarUndoManager=_recipientBarUndoManager;
 @property(copy, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
 - (void).cxx_destruct;

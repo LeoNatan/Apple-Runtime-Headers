@@ -10,6 +10,7 @@
 
 @class ASReachabilityStatusCache, IDSBatchIDQueryController, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ASReachabilityQueryOperation : NSOperation <IDSBatchIDQueryControllerDelegate>
 {
     _Bool _finished;

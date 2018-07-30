@@ -8,16 +8,18 @@
 
 @class NSArray, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface NSWindowTabMergeAnimation : NSAnimation
 {
-    NSArray *_windowsToAnimate;
+    NSMutableArray *_windowsToAnimate;
+    NSMutableArray *_coverWindows;
     NSMutableArray *_windowFromRects;
     NSArray *_targetTabFrames;
-    NSMutableArray *_coverWindows;
     CDUnknownBlockType _completionHandler;
 }
 
 - (void).cxx_destruct;
+- (void)_stopAnimation:(int)arg1 withDisplayLink:(id)arg2;
 - (void)setCurrentProgress:(float)arg1;
 - (void)_doAnimationWork;
 - (void)_finished;

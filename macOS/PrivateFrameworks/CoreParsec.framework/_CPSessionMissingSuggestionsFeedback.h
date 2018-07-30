@@ -14,7 +14,6 @@
 
 @interface _CPSessionMissingSuggestionsFeedback : PBCodable <_CPProcessableFeedback, _CPSessionMissingSuggestionsFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
     NSArray *_suggestions;
 }
@@ -34,7 +33,6 @@
 - (unsigned long long)suggestionsCount;
 - (void)addSuggestions:(id)arg1;
 - (void)clearSuggestions;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 @property(readonly, nonatomic) BOOL requiresQueryId;
 

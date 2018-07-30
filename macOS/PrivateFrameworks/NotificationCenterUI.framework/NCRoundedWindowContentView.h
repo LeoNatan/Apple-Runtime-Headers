@@ -6,9 +6,12 @@
 
 #import "NSVisualEffectView.h"
 
+#import "NCMaterialDelegate.h"
+
 @class CALayer, NCMaterialLayer, NSTrackingArea;
 
-@interface NCRoundedWindowContentView : NSVisualEffectView
+__attribute__((visibility("hidden")))
+@interface NCRoundedWindowContentView : NSVisualEffectView <NCMaterialDelegate>
 {
     CALayer *_shadowImageLayer;
     CALayer *_hitLayer;
@@ -35,12 +38,16 @@
     CALayer *_containerLayer;
     BOOL _handledForceTouch;
     NSTrackingArea *_trackingArea;
+    BOOL _isEffectiveDark;
+    unsigned char _materialStyle;
+    BOOL _isDark;
     id <NCRoundedWindowContentDelegate> _delegate;
 }
 
 + (double)shadowMargin;
 + (double)cornerRadius;
 @property(nonatomic) __weak id <NCRoundedWindowContentDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) BOOL isDark; // @synthesize isDark=_isDark;
 - (void).cxx_destruct;
 - (void)_closeButtonPressed:(id)arg1;
 - (void)setFrameOrigin:(struct CGPoint)arg1;
@@ -55,7 +62,9 @@
 - (id)_dragCursor;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)updateConstraints;
+- (void)updateLayer;
 - (void)layout;
+- (void)_checkAppearance;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)viewDidChangeBackingProperties;
 @property(readonly, nonatomic) BOOL isDraggingEdge;
@@ -64,7 +73,9 @@
 - (void)_updateLayerMasksToBoundsFromView;
 - (BOOL)clipsToBounds;
 - (void)awakeFromNib;
-- (void)setAppearance:(id)arg1;
+- (void)appearanceChanged:(_Bool)arg1;
+- (void)materialChanged:(unsigned char)arg1;
+- (void)_setupAppearanceOverrides;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

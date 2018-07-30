@@ -21,6 +21,7 @@
     NSString *_vertexFunctionName;
     NSString *_fragmentFunctionName;
     NSString *_name;
+    NSString *_sourceFile;
     NSMutableDictionary *_semanticInfos;
     BOOL _opaque;
     id _library;
@@ -54,6 +55,8 @@
 @property(copy, nonatomic) NSString *fragmentFunctionName;
 @property(copy, nonatomic) NSString *vertexFunctionName;
 @property(nonatomic, getter=isOpaque) BOOL opaque;
+- (id)sourceFile;
+- (void)setSourceFile:(id)arg1;
 - (id)name;
 - (int)shadingLanguage;
 - (void)setName:(id)arg1;

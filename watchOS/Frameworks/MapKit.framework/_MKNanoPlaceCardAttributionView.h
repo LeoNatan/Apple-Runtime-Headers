@@ -6,20 +6,20 @@
 
 #import "UITableViewCell.h"
 
-@class UIImageView, UILabel, _MKAutoLayoutContext, _MKMapItemAttribution;
+@class NSLayoutConstraint, UIImageView, UILabel, _MKMapItemAttribution;
 
 __attribute__((visibility("hidden")))
 @interface _MKNanoPlaceCardAttributionView : UITableViewCell
 {
     UIImageView *_imageView;
     UILabel *_label;
-    _MKAutoLayoutContext *_lastLayoutContext;
+    NSLayoutConstraint *_imageViewHeightConstraint;
     _MKMapItemAttribution *_attribution;
 }
 
 @property(retain, nonatomic) _MKMapItemAttribution *attribution; // @synthesize attribution=_attribution;
 - (void).cxx_destruct;
-- (void)updateConstraints;
+- (void)prepareForReuse;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

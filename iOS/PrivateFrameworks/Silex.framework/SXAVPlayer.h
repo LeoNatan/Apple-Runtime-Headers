@@ -8,7 +8,7 @@
 
 #import "AVPlayerItemDelegate.h"
 
-@class NSString, SXKeyValueObserver;
+@class NSString, SVKeyValueObserver;
 
 @interface SXAVPlayer : AVPlayer <AVPlayerItemDelegate>
 {
@@ -22,17 +22,17 @@
     double _duration;
     double _frameRate;
     id _timeObserver;
-    SXKeyValueObserver *_timeControlStatusObserver;
-    SXKeyValueObserver *_statusObserver;
-    SXKeyValueObserver *_durationObserver;
-    SXKeyValueObserver *_loadedTimeRangesObserver;
+    SVKeyValueObserver *_timeControlStatusObserver;
+    SVKeyValueObserver *_statusObserver;
+    SVKeyValueObserver *_durationObserver;
+    SVKeyValueObserver *_loadedTimeRangesObserver;
     CDStruct_1b6d18a9 _cumulativeTimePlayed;
 }
 
-@property(retain, nonatomic) SXKeyValueObserver *loadedTimeRangesObserver; // @synthesize loadedTimeRangesObserver=_loadedTimeRangesObserver;
-@property(retain, nonatomic) SXKeyValueObserver *durationObserver; // @synthesize durationObserver=_durationObserver;
-@property(retain, nonatomic) SXKeyValueObserver *statusObserver; // @synthesize statusObserver=_statusObserver;
-@property(retain, nonatomic) SXKeyValueObserver *timeControlStatusObserver; // @synthesize timeControlStatusObserver=_timeControlStatusObserver;
+@property(retain, nonatomic) SVKeyValueObserver *loadedTimeRangesObserver; // @synthesize loadedTimeRangesObserver=_loadedTimeRangesObserver;
+@property(retain, nonatomic) SVKeyValueObserver *durationObserver; // @synthesize durationObserver=_durationObserver;
+@property(retain, nonatomic) SVKeyValueObserver *statusObserver; // @synthesize statusObserver=_statusObserver;
+@property(retain, nonatomic) SVKeyValueObserver *timeControlStatusObserver; // @synthesize timeControlStatusObserver=_timeControlStatusObserver;
 @property(nonatomic) CDStruct_1b6d18a9 cumulativeTimePlayed; // @synthesize cumulativeTimePlayed=_cumulativeTimePlayed;
 @property(retain, nonatomic) id timeObserver; // @synthesize timeObserver=_timeObserver;
 @property(nonatomic) double frameRate; // @synthesize frameRate=_frameRate;

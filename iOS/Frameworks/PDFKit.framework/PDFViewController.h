@@ -15,24 +15,29 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)_performDoubleTapAtLocation:(struct CGPoint)arg1;
 - (void)setActiveSelection:(id)arg1;
 - (void)_clearSelection;
 - (void)clearSelection;
-- (id)_getPagePoint:(struct CGPoint *)arg1 forGesture:(id)arg2;
-- (id)_annotationAtGesture:(id)arg1;
-- (int)_canLollipopDrag:(id)arg1;
-- (void)_updateLollipopDrag:(id)arg1;
-- (void)_updateWordDrag:(id)arg1;
-- (_Bool)_canWordDrag:(id)arg1;
+- (id)_getPagePoint:(struct CGPoint *)arg1 forGestureLocation:(struct CGPoint)arg2;
+- (id)_annotationAtGestureLocation:(struct CGPoint)arg1;
+- (int)_canLollipopDragAtLocation:(struct CGPoint)arg1 locationOfFirstTouch:(struct CGPoint)arg2 gestureType:(unsigned long long)arg3;
+- (void)_updateLollipopDragAtLocation:(struct CGPoint)arg1;
+- (void)_updateWordDragAtLocation:(struct CGPoint)arg1;
+- (_Bool)_canWordDragAtLocation:(struct CGPoint)arg1;
+- (void)_annotationHitLongPress:(id)arg1 gestureState:(long long)arg2 location:(struct CGPoint)arg3;
 - (_Bool)_shouldHandleAnnotation:(id)arg1;
-- (void)_updateState:(int)arg1 forGesture:(id)arg2;
+- (void)_updateState:(int)arg1 forGesture:(unsigned long long)arg2 atLocation:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
+- (int)textSelectionState;
 - (void)showTextSelectionMenu:(_Bool)arg1;
 - (void)_showTextSelectionMenu;
 - (void)_hideTextSelectionMenu;
 - (_Bool)isDraggingLollipop;
-- (_Bool)isTouchingLollipop:(id)arg1;
+- (_Bool)isTouchingLollipopAtLocation:(struct CGPoint)arg1 locationOfFirstTouch:(struct CGPoint)arg2 gestureType:(unsigned long long)arg3;
+- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (void)handleGesture:(id)arg1;
-- (void)_annotationHit:(id)arg1;
+- (unsigned long long)_typeForGestureRecognizer:(id)arg1;
+- (void)_annotationHit:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (void)_doButtonHit:(id)arg1;
 - (void)_handleButtonHit:(id)arg1;
 - (void)_postAnnotationHitNotification:(id)arg1;

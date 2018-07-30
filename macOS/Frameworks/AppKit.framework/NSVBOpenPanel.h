@@ -11,6 +11,7 @@
 }
 
 + (id)openPanel;
+- (BOOL)isMovable;
 - (BOOL)canBecomeMainWindow;
 - (BOOL)preventsApplicationTerminationWhenModal;
 - (void)beginForDirectory:(id)arg1 file:(id)arg2 types:(id)arg3 modelessDelegate:(id)arg4 didEndSelector:(SEL)arg5 contextInfo:(void *)arg6;

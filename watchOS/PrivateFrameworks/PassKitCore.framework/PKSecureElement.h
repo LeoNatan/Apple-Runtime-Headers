@@ -20,13 +20,19 @@
     CDUnknownBlockType _secureElementSessionPostlude;
     NSHashTable *_observers;
     NSLock *_observersLock;
+    _Bool _registeredForHardwareUpdates;
 }
 
 + (id)secureElementIdentifiers;
 + (id)primarySecureElementIdentifier;
++ (_Bool)isInFailForward;
 + (_Bool)hardwareSupportsExpressMode:(id)arg1;
 + (_Bool)supportsExpressMode:(id)arg1 byHardware:(_Bool *)arg2;
 + (_Bool)supportsExpressMode:(id)arg1;
++ (_Bool)hardwareSupportsExpressForAutomaticSelectionTechnologyType:(int)arg1;
++ (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(int)arg1;
++ (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(int)arg1 byHardware:(_Bool *)arg2;
++ (id)sharedSecureElement;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *ownerUserUUID;
 @property(readonly, nonatomic) NSArray *secureElementIdentifiers;
@@ -65,6 +71,8 @@
 - (void)pairingStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)SEPPairingInfoWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initializeSecureElementQueuingServerConnection:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_updateHardwareManagerListener;
+- (void)contactlessPaymentPassesAvailableDidChange;
 - (void)dealloc;
 - (id)init;
 

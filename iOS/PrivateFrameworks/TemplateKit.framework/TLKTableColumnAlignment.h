@@ -13,12 +13,11 @@
     long long _dataAlignment;
 }
 
-@property _Bool isEqualWidth; // @synthesize isEqualWidth=_isEqualWidth;
-@property long long dataAlignment; // @synthesize dataAlignment=_dataAlignment;
-@property unsigned long long columnAlignment; // @synthesize columnAlignment=_columnAlignment;
+@property(nonatomic) _Bool isEqualWidth; // @synthesize isEqualWidth=_isEqualWidth;
+@property(nonatomic) long long dataAlignment; // @synthesize dataAlignment=_dataAlignment;
+@property(nonatomic) unsigned long long columnAlignment; // @synthesize columnAlignment=_columnAlignment;
 - (id)description;
 - (long long)textAlignment;
-- (id)observableProperties;
 
 @end
 

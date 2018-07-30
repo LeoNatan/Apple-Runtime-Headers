@@ -8,6 +8,7 @@
 
 @class MCDetailsHeaderContentView;
 
+__attribute__((visibility("hidden")))
 @interface MCDetailsHeaderCell : UITableViewCell
 {
     MCDetailsHeaderContentView *_headerView;

@@ -8,7 +8,6 @@
 
 #import "PUDisplayLocationProvider.h"
 
-__attribute__((visibility("hidden")))
 @interface PUDisplayLocationProvider : NSObject <PUDisplayLocationProvider>
 {
     id <UICoordinateSpace> __coordinateSpace;

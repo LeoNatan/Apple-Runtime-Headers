@@ -8,11 +8,11 @@
 
 @interface PXMemoriesRelatedSettings : PXSettings
 {
-    _Bool _enableUI;
     _Bool _enableFeedbackUI;
     _Bool _enableFeedbackComboUI;
     _Bool _enableMemoriesLivingOnFeedback;
     _Bool _enableManualRefreshUI;
+    _Bool _fakePeopleProximity;
     _Bool _enableMemoryBlurryHeader;
     double _refreshPhotoKitTimeout;
     double _widgetRefreshTimeInterval;
@@ -33,11 +33,11 @@
 @property(nonatomic) long long minimumNumberOfCuratedAssetsForInterestingMoments; // @synthesize minimumNumberOfCuratedAssetsForInterestingMoments=_minimumNumberOfCuratedAssetsForInterestingMoments;
 @property(nonatomic) double widgetRefreshTimeInterval; // @synthesize widgetRefreshTimeInterval=_widgetRefreshTimeInterval;
 @property(nonatomic) double refreshPhotoKitTimeout; // @synthesize refreshPhotoKitTimeout=_refreshPhotoKitTimeout;
+@property(nonatomic) _Bool fakePeopleProximity; // @synthesize fakePeopleProximity=_fakePeopleProximity;
 @property(nonatomic) _Bool enableManualRefreshUI; // @synthesize enableManualRefreshUI=_enableManualRefreshUI;
 @property(nonatomic) _Bool enableMemoriesLivingOnFeedback; // @synthesize enableMemoriesLivingOnFeedback=_enableMemoriesLivingOnFeedback;
 @property(nonatomic) _Bool enableFeedbackComboUI; // @synthesize enableFeedbackComboUI=_enableFeedbackComboUI;
 @property(nonatomic) _Bool enableFeedbackUI; // @synthesize enableFeedbackUI=_enableFeedbackUI;
-@property(nonatomic) _Bool enableUI; // @synthesize enableUI=_enableUI;
 - (void)performPostSaveActions;
 - (void)setDefaultValues;
 - (id)parentSettings;

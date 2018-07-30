@@ -37,6 +37,7 @@
 - (void)setEntityTypes:(unsigned long long)arg1;
 @property(readonly) unsigned long long entityTypes;
 - (id)initWithEntityTypes:(unsigned long long)arg1 entityNames:(id)arg2 sourceType:(id)arg3 sourceName:(id)arg4 destinationType:(id)arg5 destinationName:(id)arg6 properties:(id)arg7;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 @property(copy) NSSet *entityTypeSet;

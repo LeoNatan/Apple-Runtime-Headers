@@ -12,24 +12,27 @@
 
 @interface CEMSecurityCertificatePreferenceDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadName;
+    NSString *_payloadCertificateIdentifier;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withName:(id)arg2 withCertificateIdentifier:(id)arg3;
++ (id)buildWithIdentifier:(id)arg1 withName:(id)arg2 withCertificateIdentifier:(id)arg3;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadCertificateIdentifier; // @synthesize payloadCertificateIdentifier=_payloadCertificateIdentifier;
+@property(copy, nonatomic) NSString *payloadName; // @synthesize payloadName=_payloadName;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSString *payloadCertificateIdentifier;
-@property(readonly, nonatomic) NSString *payloadName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

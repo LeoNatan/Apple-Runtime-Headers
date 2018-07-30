@@ -10,6 +10,7 @@
 
 @class NSImage;
 
+__attribute__((visibility("hidden")))
 @interface _NSButtonImage : NSObject <NSCoding>
 {
     NSImage *image;

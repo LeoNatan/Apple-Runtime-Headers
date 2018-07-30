@@ -7,6 +7,7 @@
 #import "NSMutableAttributedString.h"
 
 @interface NSMutableAttributedString (IC_UI)
+- (void)ic_addForgroundColorInRangesWhereNoColorAlreadyExists:(struct NSColor *)arg1;
 - (void)setParagraphStyleForWritingDirection:(long long)arg1 andAlignment:(BOOL)arg2;
 @end
 

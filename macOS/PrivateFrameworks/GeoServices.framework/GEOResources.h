@@ -10,7 +10,6 @@
 
 @class GEOVersionManifest, NSMutableArray, NSString, PBUnknownFields;
 
-__attribute__((visibility("hidden")))
 @interface GEOResources : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_announcementsSupportedLanguages;
     NSString *_announcementsURL;
     NSMutableArray *_attributions;
+    NSString *_authProxyURL;
     NSString *_authToken;
     NSString *_backgroundDispatcherURL;
     NSString *_backgroundRevGeoURL;
@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_textures;
     NSMutableArray *_tileGroups;
     NSMutableArray *_tileSets;
+    NSMutableArray *_urlInfoSets;
     GEOVersionManifest *_versionManifest;
     NSString *_wifiConnectionQualityProbeURL;
     NSMutableArray *_xmlChecksums;
@@ -70,6 +71,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
++ (Class)urlInfoSetType;
 + (Class)dataSetURLOverrideType;
 + (Class)dataSetType;
 + (Class)resourceType;
@@ -89,6 +91,8 @@ __attribute__((visibility("hidden")))
 + (Class)styleSheetType;
 + (Class)tileSetType;
 + (Class)tileGroupType;
+@property(retain, nonatomic) NSMutableArray *urlInfoSets; // @synthesize urlInfoSets=_urlInfoSets;
+@property(retain, nonatomic) NSString *authProxyURL; // @synthesize authProxyURL=_authProxyURL;
 @property(retain, nonatomic) NSString *wifiConnectionQualityProbeURL; // @synthesize wifiConnectionQualityProbeURL=_wifiConnectionQualityProbeURL;
 @property(retain, nonatomic) NSString *backgroundRevGeoURL; // @synthesize backgroundRevGeoURL=_backgroundRevGeoURL;
 @property(retain, nonatomic) NSString *bluePOIDispatcherURL; // @synthesize bluePOIDispatcherURL=_bluePOIDispatcherURL;
@@ -150,6 +154,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)urlInfoSetAtIndex:(unsigned long long)arg1;
+- (unsigned long long)urlInfoSetsCount;
+- (void)addUrlInfoSet:(id)arg1;
+- (void)clearUrlInfoSets;
+@property(readonly, nonatomic) BOOL hasAuthProxyURL;
 @property(readonly, nonatomic) BOOL hasWifiConnectionQualityProbeURL;
 @property(readonly, nonatomic) BOOL hasBackgroundRevGeoURL;
 @property(readonly, nonatomic) BOOL hasBluePOIDispatcherURL;
@@ -259,6 +268,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)tileGroupsCount;
 - (void)addTileGroup:(id)arg1;
 - (void)clearTileGroups;
+- (id)preferedURLSetFor:(id)arg1;
 - (void)workAround24919568IfNecessary;
 - (void)convertFromLegacyFormat;
 

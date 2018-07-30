@@ -21,7 +21,6 @@
 + (id)actionMoveContentsOf:(id)arg1 to:(id)arg2;
 + (id)actionMoveFrom:(id)arg1 to:(id)arg2;
 + (id)actionWithName:(id)arg1 arguments:(id)arg2 error:(id *)arg3;
-+ (id)evaluatePathSpecification:(id)arg1 withContainer:(id)arg2 usingFileManager:(id)arg3 error:(id *)arg4;
 - (BOOL)performWithContainer:(id)arg1 usingFileManager:(id)arg2 error:(id *)arg3;
 - (id)description;
 

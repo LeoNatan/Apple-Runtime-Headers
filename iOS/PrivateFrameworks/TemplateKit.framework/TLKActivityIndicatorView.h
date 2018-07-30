@@ -17,11 +17,10 @@
 
 @property(retain) TLKVibrantLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
-@property(retain) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
+@property(retain, nonatomic) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
 - (void).cxx_destruct;
 - (id)subtitleLabelText;
 - (void)observedPropertiesChanged;
-- (id)observableProperties;
 - (void)styleDidChange:(unsigned long long)arg1;
 - (id)init;
 

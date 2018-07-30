@@ -8,16 +8,20 @@
 
 #import "HAPRelayAccessoryDelegate.h"
 #import "HMDAccessoryIdentify.h"
+#import "HMDAccessoryMinimumUserPrivilegeCapable.h"
+#import "HMDAccessoryUserManagement.h"
+#import "HMDServiceOwner.h"
 #import "HMDTimeInformationMonitorDelegate.h"
 #import "HMFTimerDelegate.h"
 
-@class HAPPairingIdentity, HMDCharacteristic, HMFTimer, NSArray, NSData, NSDate, NSMapTable, NSMutableArray, NSMutableSet, NSNumber, NSSet, NSString;
+@class HMDAccessorySymptomHandler, HMDCharacteristic, HMDDataStreamController, HMDTargetControllerManager, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSMapTable, NSMutableArray, NSMutableSet, NSNumber, NSSet, NSString;
 
-@interface HMDHAPAccessory : HMDAccessory <HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate, HMDAccessoryIdentify>
+@interface HMDHAPAccessory : HMDAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMDServiceOwner, HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate, HMDAccessoryIdentify, HMDAccessoryUserManagement>
 {
     NSMutableArray *_transportInformationInstances;
     _Bool _relayEnabled;
     _Bool _timeInformationServiceExists;
+    _Bool _supportsTargetController;
     _Bool _keyGenerationInProgress;
     _Bool _supportsRelay;
     unsigned char _keyGenerationType;
@@ -32,6 +36,9 @@
     NSData *_broadcastKey;
     NSNumber *_keyUpdatedStateNumber;
     NSDate *_keyUpdatedTime;
+    NSArray *_targetUUIDs;
+    HMDTargetControllerManager *_targetControllerManager;
+    HMDAccessorySymptomHandler *_symptomsHandler;
     NSString *_uniqueIdentifier;
     long long _certificationStatus;
     unsigned long long _activationAttempts;
@@ -47,6 +54,7 @@
     HMFTimer *_timeInformationTimer;
     HMFTimer *_systemTimeInformationTimer;
     NSSet *_cameraProfiles;
+    HMDDataStreamController *_dataStreamController;
     NSMapTable *_serverIDToHAPAccessoryTable;
 }
 
@@ -55,6 +63,7 @@
 + (unsigned long long)getAWDTransportTypeWithLinkType:(long long)arg1;
 + (Class)transactionClass;
 @property(retain, nonatomic) NSMapTable *serverIDToHAPAccessoryTable; // @synthesize serverIDToHAPAccessoryTable=_serverIDToHAPAccessoryTable;
+@property(retain, nonatomic) HMDDataStreamController *dataStreamController; // @synthesize dataStreamController=_dataStreamController;
 @property(retain, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 @property(nonatomic) _Bool systemTimeNeedsUpdate; // @synthesize systemTimeNeedsUpdate=_systemTimeNeedsUpdate;
 @property(retain, nonatomic) HMFTimer *systemTimeInformationTimer; // @synthesize systemTimeInformationTimer=_systemTimeInformationTimer;
@@ -79,6 +88,10 @@
 @property(copy, nonatomic) NSData *broadcastKey; // @synthesize broadcastKey=_broadcastKey;
 @property(retain, nonatomic) NSString *relayIdentifier; // @synthesize relayIdentifier=_relayIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSNumber *hapInstanceId;
+- (id)backingStoreTransactionWithName:(id)arg1;
+- (id)createUpdateServiceTransationWithServiceUUID:(id)arg1;
+- (void)makeServiceNameConsistent:(id)arg1 withName:(id)arg2;
 - (id)messageReceiverChildren;
 - (id)backingStoreObjects:(long long)arg1;
 - (void)populateModelObject:(id)arg1 version:(long long)arg2;
@@ -93,6 +106,8 @@
 - (void)readInitialRequiredCharacteristicsForBTLEAccessory:(CDUnknownBlockType)arg1;
 - (id)getOrCreateServiceUpdateTransactionForKey:(id)arg1 fromDictionary:(id)arg2;
 - (void)requestResource:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)anyIPServer;
+- (id)primaryIPServer;
 - (id)dumpSimpleState;
 - (id)dumpState;
 - (_Bool)isNotificationEnabled;
@@ -104,10 +119,13 @@
 - (void)accessory:(id)arg1 didActivateRelayWithError:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateRelayState:(unsigned long long)arg2;
 - (void)accessory:(id)arg1 didUpdateRelayEnabled:(_Bool)arg2;
+- (void)__updateNotifyingCharactersiticStateNumber:(id)arg1;
+- (void)notifyingCharacteristicStateNumberUpdated:(id)arg1;
 - (void)_handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)accessoryDidBecomeUnreachable:(id)arg1;
 - (void)accessoryDidBecomeReachable:(id)arg1;
+- (void)_handleConfigureTargets:(id)arg1;
 - (void)_handleKeyRefreshTimerFired;
 - (void)_removeBackedoffAccessoryForStateNumber:(id)arg1;
 - (void)backOffAccessoryForStateNumber:(id)arg1;
@@ -121,11 +139,14 @@
 - (long long)reachableTransports;
 - (void)setReachability:(_Bool)arg1 serverIdentifier:(id)arg2 linkType:(long long)arg3;
 - (void)_updateReachability;
+- (id)findServiceWithServiceType:(id)arg1;
 - (id)findCharacteristicType:(id)arg1 forServiceType:(id)arg2;
 - (id)findCharacteristic:(id)arg1;
 - (id)findCharacteristic:(id)arg1 forService:(id)arg2;
 - (id)findService:(id)arg1;
+- (void)_evaluateLocalOperation:(long long)arg1 state:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateStateForTrackedAccessory:(id)arg1 stateNumber:(id)arg2;
+- (void)updateTrackedAccessoryStateNumber:(id)arg1;
 - (void)_retrieveStateForTrackedAccessory:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)_containsSecureCharacteristic;
 - (_Bool)_shouldTrackAccessoryWithPriority:(_Bool *)arg1;
@@ -167,6 +188,8 @@
 - (void)notifyValue:(id)arg1 previousValue:(id)arg2 error:(id)arg3 forCharacteristic:(id)arg4 requestMessage:(id)arg5;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_getSymptomHandler;
+- (_Bool)shouldConfigureTargetController;
 - (id)hmdCharacteristicForInstanceId:(id)arg1;
 - (id)hmdCharacteristicFromHapCharacteristic:(id)arg1;
 - (void)_readCharacteristicValues:(id)arg1 localOperationRequired:(_Bool)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5 errorBlock:(CDUnknownBlockType)arg6;
@@ -174,7 +197,7 @@
 - (void)readCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_writeCharacteristicValues:(id)arg1 localOperationRequired:(_Bool)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5 errorBlock:(CDUnknownBlockType)arg6;
 - (void)writeCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)supportsUserManagement;
+@property(readonly) _Bool supportsUserManagement;
 - (void)_performOperation:(long long)arg1 linkType:(long long)arg2 operationBlock:(CDUnknownBlockType)arg3 errorBlock:(CDUnknownBlockType)arg4;
 - (void)performOperation:(long long)arg1 linkType:(long long)arg2 operationBlock:(CDUnknownBlockType)arg3 errorBlock:(CDUnknownBlockType)arg4;
 - (_Bool)matchesHAPAccessoryWithServerIdentifier:(id)arg1 linkType:(long long *)arg2;
@@ -221,16 +244,31 @@
 - (id)transportInformationInstances;
 - (void)removeBridgedAccessory:(id)arg1;
 - (void)addBridgedAccessory:(id)arg1;
+- (void)updateButtonConfigurationForTarget:(id)arg1;
+- (void)acknowledgeTargetControlService:(id)arg1 active:(_Bool)arg2;
+- (void)autoConfigureTargetController;
+- (void)_autoConfigureTargetController;
+- (void)_configureTargetControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_notifyClientsOfTargetControlSupportUpdate;
+- (unsigned long long)targetControllerTicksPerSecond;
+- (id)targetControllerButtonConfiguration;
+- (void)updateTarget:(id)arg1 name:(id)arg2 buttonConfiguration:(id)arg3;
+- (void)removeTarget:(id)arg1;
+- (void)addTarget:(id)arg1 buttonConfiguration:(id)arg2;
+- (_Bool)supportsTargetController;
+- (_Bool)_supportsMediaAccessControl;
 - (void)_handleServiceRemovedTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleAddServiceTransaction:(id)arg1 message:(id)arg2;
 - (id)serviceWithUUID:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *services;
+@property(readonly, copy) HMFPairingIdentity *pairingIdentity;
 - (void)pairingsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)removeUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)addUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isSecuritySessionOpen;
 - (void)verifyPairingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)isPrimary;
 - (void)savePublicKeyToKeychain;
-@property(readonly, copy, nonatomic) HAPPairingIdentity *pairingIdentity;
 - (void)setPairingUsername:(id)arg1 publicKey:(id)arg2;
 - (void)handlePairedStateChange:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isPaired) _Bool paired;
@@ -271,6 +309,18 @@
 - (void)setCurrentTimeCharacteristic:(id)arg1;
 - (id)_currentTimeCharacteristic;
 @property(readonly, nonatomic) __weak HMDCharacteristic *currentTimeCharacteristic; // @synthesize currentTimeCharacteristic=_currentTimeCharacteristic;
+- (void)handleUpdatedPassword:(id)arg1;
+- (void)handleUpdatedMinimumUserPrivilege:(long long)arg1;
+- (_Bool)supportsMinimumUserPrivilege;
+@property(retain, nonatomic) HMDAccessorySymptomHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
+- (_Bool)providesHashRouteID;
+- (void)updateTargetUUIDs:(id)arg1;
+- (void)_saveTargetUUIDs:(id)arg1;
+- (void)saveTargetUUIDs:(id)arg1;
+@property(retain, nonatomic) HMDTargetControllerManager *targetControllerManager; // @synthesize targetControllerManager=_targetControllerManager;
+@property(retain, nonatomic) NSArray *targetUUIDs; // @synthesize targetUUIDs=_targetUUIDs;
+- (void)evaluateSymptomHandler;
+- (_Bool)_doesAccessoryProvideServiceOfType:(id)arg1;
 @property(copy, nonatomic) NSData *setupHash; // @synthesize setupHash=_setupHash;
 - (void)setBroadcastKey:(id)arg1 keyUpdatedStateNumber:(id)arg2 keyUpdatedTime:(id)arg3;
 - (void)_updateBroadcastKey:(id)arg1 keyUpdatedStateNumber:(id)arg2 keyUpdatedTime:(double)arg3;
@@ -288,6 +338,18 @@
 - (void)dealloc;
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
 - (id)init;
+- (void)_updateSiriAudioFormat:(id)arg1;
+- (void)setSelectedSiriAudioConfiguration:(id)arg1;
+- (_Bool)_resolveSupportedSiriInputType:(id)arg1;
+- (_Bool)_resolveAudioAbility:(id)arg1;
+- (void)getSupportedSiriAudioConfiguration:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool supportsSiri;
+- (void)sendTargetControlWhoAmIWithIdentifier:(unsigned int)arg1;
+- (_Bool)canAcceptBulkSendListeners;
+- (void)removeDataStreamBulkSendListener:(id)arg1;
+- (void)addDataStreamBulkSendListener:(id)arg1 fileType:(id)arg2;
+- (void)_removeDataStreamController:(id)arg1;
+- (void)_createDataStreamController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

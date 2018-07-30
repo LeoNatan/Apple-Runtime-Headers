@@ -19,7 +19,6 @@
     int _ppdCreationNum;
     void *_ppdNodes;
     void *_ppdPriv;
-    id _reserved[3];
 }
 
 + (id)printerWithType:(id)arg1;

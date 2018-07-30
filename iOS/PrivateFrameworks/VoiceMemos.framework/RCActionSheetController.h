@@ -38,7 +38,7 @@
 - (void)dismissWithActionIndex:(long long)arg1;
 - (void)cancel;
 - (void)showInView:(id)arg1 actionHandlerBlock:(CDUnknownBlockType)arg2;
-- (void)showInViewController:(id)arg1 actionHandlerBlock:(CDUnknownBlockType)arg2;
+- (void)showInViewController:(id)arg1 source:(id)arg2 actionHandlerBlock:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 cancelTitle:(id)arg2 actionTitles:(id)arg3 accessoryViewController:(id)arg4;
 

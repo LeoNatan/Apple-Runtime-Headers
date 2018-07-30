@@ -30,6 +30,7 @@
     CDUnknownBlockType _enqueuePreloadedPhotoCompletion;
     NSMutableArray *_preloaded;
     NSMutableArray *_toload;
+    unsigned int _deviceSizeClass;
     NTKCachedPhoto *_presentedPhoto;
 }
 
@@ -40,8 +41,8 @@
 - (id)_analysisCacheKeyFor:(id)arg1;
 - (id)_analysisForAlignment:(unsigned int)arg1;
 - (void)_updateImageToBlur;
-- (void)_updateReader;
-- (void)_updateContents;
+- (void)_updateReader:(_Bool)arg1;
+- (void)_updateContents:(_Bool)arg1;
 - (void)_operationIsDone;
 - (_Bool)_canOperationProceed:(unsigned long long)arg1;
 - (void)_updateDateAttributesAnimated:(_Bool)arg1;
@@ -70,9 +71,7 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)_applyFrozen;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)init;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

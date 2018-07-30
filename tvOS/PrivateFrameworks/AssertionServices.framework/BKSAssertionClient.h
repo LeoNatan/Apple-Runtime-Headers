@@ -8,6 +8,7 @@
 
 @class BKSAssertionClientMultiplexer, BKSProcessAssertionClient, BKSTerminationAssertionClient;
 
+__attribute__((visibility("hidden")))
 @interface BKSAssertionClient : NSObject
 {
     BKSAssertionClientMultiplexer *_multiplexer;

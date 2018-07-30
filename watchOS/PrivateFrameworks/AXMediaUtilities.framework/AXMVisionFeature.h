@@ -41,7 +41,9 @@
 
 + (id)flattenedFeatureList:(id)arg1;
 + (void)_append:(id)arg1 toList:(id)arg2;
-+ (id)debugNameForFeatureType:(unsigned int)arg1;
++ (id)nameForFaceExpression:(int)arg1;
++ (id)nameForOCRType:(int)arg1;
++ (id)nameForFeatureType:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)featureWithAssetMetadata:(id)arg1;
 + (id)featureWithColorInfo:(id)arg1 canvasSize:(struct CGSize)arg2;

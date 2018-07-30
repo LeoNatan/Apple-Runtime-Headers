@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (long long)tagForType;
 - (void)_rvMenuItemAction;
 - (id)initWithTitle:(id)arg1 presenter:(id)arg2 item:(id)arg3 documentContext:(id)arg4 presentingContext:(id)arg5 options:(id)arg6;
 

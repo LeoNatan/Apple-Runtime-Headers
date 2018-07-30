@@ -15,6 +15,7 @@
     UIImageView *_contentImageView;
 }
 
++ (void)initialize;
 - (void).cxx_destruct;
 @property(copy, nonatomic) UIImage *contentImage; // @dynamic contentImage;
 @property(copy, nonatomic) UIImage *accessoryImage; // @dynamic accessoryImage;

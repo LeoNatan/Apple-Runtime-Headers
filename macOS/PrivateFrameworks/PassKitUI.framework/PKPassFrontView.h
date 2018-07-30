@@ -9,7 +9,7 @@
 #import "NSSharingServiceDelegate.h"
 #import "NSSharingServicePickerDelegate.h"
 
-@class NSButton, NSImage, NSMutableArray, NSString, NSView, PKImageView, PKPassTextField;
+@class NSArray, NSButton, NSImage, NSMutableArray, NSString, NSView, PKImageView, PKPassTextField;
 
 @interface PKPassFrontView : PKPassView <NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 {
@@ -17,8 +17,8 @@
     NSMutableArray *_primaryFieldViews;
     NSView *_secondaryFieldsView;
     NSMutableArray *_secondaryFieldViews;
-    NSView *_auxFieldsView;
-    NSMutableArray *_auxFieldViews;
+    NSArray *_auxFieldsView;
+    NSArray *_auxFieldViews;
     NSView *_headerFieldsView;
     NSMutableArray *_headerFieldViews;
     PKPassTextField *_logoTextField;
@@ -36,7 +36,6 @@
 @property(readonly) NSButton *infoButton; // @synthesize infoButton=_infoButton;
 - (void).cxx_destruct;
 - (struct CGRect)sharingService:(id)arg1 opaqueFrameForSourceWindow:(id)arg2;
-- (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (id)sharingService:(id)arg1 transitionImageForShareItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (struct CGRect)sharingService:(id)arg1 sourceFrameOnScreenForShareItem:(id)arg2;
@@ -63,7 +62,8 @@
 - (void)_layoutPrimaryFields;
 - (void)_layoutLogoTextField;
 - (void)_layoutFields:(id)arg1 type:(long long)arg2 usingFieldViews:(id)arg3 inContentView:(id)arg4 withFrame:(struct CGRect)arg5;
-- (struct CGRect)auxFieldsBounds;
+- (id)_rebucketAuxiliaryFields:(id)arg1;
+- (struct CGRect)auxFieldsBounds:(unsigned long long)arg1;
 - (struct CGRect)secondaryFieldsBounds;
 - (struct CGRect)primaryFieldsBounds;
 - (struct CGRect)_barcodeBoxRectWithBarcodeImage:(id)arg1 infoString:(id)arg2 imageRect:(struct CGRect *)arg3;

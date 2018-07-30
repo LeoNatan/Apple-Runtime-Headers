@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (Class)sensorDatumClassForAggregator:(id)arg1;
 - (id)identifierForDataAggregator:(id)arg1;
 - (id)sourceForDataAggregator:(id)arg1;
 - (id)deviceForDataAggregator:(id)arg1;
@@ -35,7 +36,7 @@
 - (void)_queue_stateDidChange;
 - (void)_queue_stopHeartRateCollection;
 - (void)_queue_startHeartRateCollection;
-- (void)_queue_startHeartRateServices:(id)arg1;
+- (_Bool)_queue_startHeartRateServices:(id)arg1;
 - (void)startOneShotCollectionForService:(id)arg1;
 - (void)_queue_service:(id)arg1 sessionDidDisconnect:(unsigned long long)arg2;
 - (void)_queue_service:(id)arg1 sessionDidConnect:(unsigned long long)arg2;

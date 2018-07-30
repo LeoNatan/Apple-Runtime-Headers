@@ -14,6 +14,7 @@
 {
 }
 
++ (const CDStruct_d47b9615 *)dependentRequestCompatability;
 - (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
 - (void)_determineFacesToProcessFrom:(id)arg1 outputFacesThatNeedNoProcessing:(id)arg2 outputFacesThatNeedProcessing:(id)arg3 outputFacesThatNeed2DLandmarks:(id)arg4;
 - (long long)dependencyProcessingOrdinality;

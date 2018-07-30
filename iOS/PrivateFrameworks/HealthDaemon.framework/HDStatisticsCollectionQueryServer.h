@@ -8,23 +8,32 @@
 
 #import "HDDataObserver.h"
 
-@class HDStatisticsBuilder, HKStatisticsCollection, NSDate, NSMutableArray, NSNumber, NSString;
+@class HDStatisticsCollectionCalculator, HDStatisticsCollectionCalculatorDefaultDataSource, HDStatisticsCollectionCalculatorDefaultSourceOrderProvider, NSDate, NSMutableArray, NSNumber, NSString, _HKDateIntervalCollection;
 
 @interface HDStatisticsCollectionQueryServer : HDQueryServer <HDDataObserver>
 {
-    NSNumber *_startAnchor;
-    HKStatisticsCollection *_statisticsCollection;
-    HDStatisticsBuilder *_statisticsBuilder;
+    _HKDateIntervalCollection *_intervalCollection;
+    HDStatisticsCollectionCalculatorDefaultDataSource *_dataSource;
+    HDStatisticsCollectionCalculatorDefaultSourceOrderProvider *_sourceOrderProvider;
+    HDStatisticsCollectionCalculator *_calculator;
     NSMutableArray *_addedSamples;
     NSNumber *_addedSamplesAnchor;
+    _Bool _addedSamplesRequireProtectedData;
     _Bool _deliveredInitialResults;
     _Bool _deliversUpdates;
     unsigned long long _mergeStrategy;
     NSDate *_anchorDate;
     unsigned long long _statisticsOptions;
     CDUnknownBlockType _unitTest_queryServerStatisticsEnumerationHandler;
+    CDUnknownBlockType _unitTest_queryServerUpdateStatisticsHandler;
+    CDUnknownBlockType _unitTest_queryServerUnableToUpdateStatisticsHandler;
 }
 
++ (_Bool)supportsAnchorBasedAuthorization;
++ (id)requiredEntitlements;
++ (Class)queryClass;
+@property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerUnableToUpdateStatisticsHandler; // @synthesize unitTest_queryServerUnableToUpdateStatisticsHandler=_unitTest_queryServerUnableToUpdateStatisticsHandler;
+@property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerUpdateStatisticsHandler; // @synthesize unitTest_queryServerUpdateStatisticsHandler=_unitTest_queryServerUpdateStatisticsHandler;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerStatisticsEnumerationHandler; // @synthesize unitTest_queryServerStatisticsEnumerationHandler=_unitTest_queryServerStatisticsEnumerationHandler;
 @property(readonly, nonatomic) unsigned long long statisticsOptions; // @synthesize statisticsOptions=_statisticsOptions;
 @property(readonly, nonatomic) NSDate *anchorDate; // @synthesize anchorDate=_anchorDate;
@@ -32,15 +41,18 @@
 - (_Bool)_queue_objectIsRelevant:(id)arg1;
 - (void)_queue_deliverUpdatedStatistics:(id)arg1 error:(id)arg2;
 - (void)_queue_fetchAndDeliverAllStatisticsInitial:(_Bool)arg1;
+- (void)_queue_sendAccumulatedStatistics:(id)arg1 isFinal:(_Bool)arg2 statisticsCount:(long long *)arg3 shouldResetStatistics:(_Bool *)arg4;
 - (void)_queue_updateStatistics;
 - (void)_scheduleFetchAndDeliver;
 - (void)_scheduleUpdateStatistics;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
+- (_Bool)_shouldObserveDatabaseProtectedDataAvailability;
+- (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (void)_queue_start;
 - (_Bool)_shouldListenForUpdates;
-- (id)requiredEntitlements;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

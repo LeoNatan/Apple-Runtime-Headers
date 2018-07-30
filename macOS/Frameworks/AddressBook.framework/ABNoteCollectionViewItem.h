@@ -8,19 +8,19 @@
 
 @class ABUndoManager;
 
-__attribute__((visibility("hidden")))
 @interface ABNoteCollectionViewItem : ABCollectionViewItem
 {
     BOOL mHasSuspendedSuddenTermination;
     ABUndoManager *_undoManager;
+    id <CNCancelable> _deferredSaveToken;
 }
 
++ (id)log;
+@property(retain, nonatomic) id <CNCancelable> deferredSaveToken; // @synthesize deferredSaveToken=_deferredSaveToken;
 - (void).cxx_destruct;
 - (BOOL)supportsClickToEdit;
 - (void)deferredSave;
 - (void)requestDeferredSave;
-- (void)enableSuddenTermination;
-- (void)disableSuddenTermination;
 - (void)setValueEditable:(BOOL)arg1;
 - (id)noteRowView;
 - (void)setNoteInsertionPoint:(unsigned long long)arg1;
@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldDrawDivider;
 - (void)_updateTextView:(id)arg1 withValue:(id)arg2;
 - (void)_updateViewValue;
+- (void)dealloc;
 
 @end
 

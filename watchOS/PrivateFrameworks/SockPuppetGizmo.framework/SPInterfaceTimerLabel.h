@@ -10,8 +10,10 @@
 
 @interface SPInterfaceTimerLabel : SPInterfaceLabel
 {
+    _Bool _inNotificationUI;
     _Bool _timerEnabled;
     _Bool _countdown;
+    _Bool _checkedIsInNotificationUI;
     NSDateComponentsFormatter *_formatter;
     NSDate *_date;
     NSTimer *_timer;
@@ -20,6 +22,7 @@
     struct CGSize _cachedSize;
 }
 
+@property(nonatomic) _Bool checkedIsInNotificationUI; // @synthesize checkedIsInNotificationUI=_checkedIsInNotificationUI;
 @property(copy, nonatomic) NSNumber *forcedTimeInterval; // @synthesize forcedTimeInterval=_forcedTimeInterval;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
@@ -29,6 +32,7 @@
 @property(nonatomic) _Bool timerEnabled; // @synthesize timerEnabled=_timerEnabled;
 @property(retain, nonatomic) NSDateComponentsFormatter *formatter; // @synthesize formatter=_formatter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isInNotificationUI) _Bool inNotificationUI; // @synthesize inNotificationUI=_inNotificationUI;
 - (void)contentSizeCategoryDidChange;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (void)applyMonospaceNumbers;
@@ -36,7 +40,7 @@
 - (void)updateTimer;
 - (void)updateText;
 - (void)dealloc;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CADisplayLink, NSObject<OS_dispatch_queue>;
+@class CADisplayLink, NSObject<OS_dispatch_queue>, SCNRecursiveLock;
 
 __attribute__((visibility("hidden")))
 @interface SCNDisplayLink : NSObject
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     _Bool _invalidated;
     double _lastFrameTime;
     float _preferredFrameRate;
+    SCNRecursiveLock *_runningLock;
     // Error parsing type: Ai, name: _queuedFrameCount
 }
 

@@ -10,10 +10,11 @@
 {
 }
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)_orderedValues;
-+ (id)optionWithAsset:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (id)optionWithAsset:(unsigned int)arg1 forDevice:(id)arg2;
+- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
 - (id)_valueToFaceBundleStringDict;
 @property(readonly, nonatomic) unsigned int asset;
 

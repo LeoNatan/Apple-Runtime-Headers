@@ -8,7 +8,6 @@
 
 @class OADFill, OADStroke, OADTableCell3DProperties;
 
-__attribute__((visibility("hidden")))
 @interface OADTableCellProperties : NSObject
 {
     OADStroke *mLeftStroke;
@@ -37,6 +36,7 @@ __attribute__((visibility("hidden")))
     BOOL mIsTextHorizontalOverflowOverridden;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isTextHorizontalOverflowOverridden;
 - (void)setTextHorizontalOverflow:(unsigned char)arg1;
@@ -81,7 +81,6 @@ __attribute__((visibility("hidden")))
 - (id)leftStroke;
 - (void)setStrokeOfType:(int)arg1 toValue:(id)arg2;
 - (id)stroke:(int)arg1;
-- (void)dealloc;
 
 @end
 

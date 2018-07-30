@@ -19,12 +19,16 @@
 + (id)statusBarGlobalContextFont:(id)arg1;
 + (id)statusBarGlobalContextFontDescriptor:(id)arg1;
 + (float)statusBarGlobalContextFontPointSize:(id)arg1;
++ (float)statusBarGlobalContextInset:(id)arg1;
 + (float)statusBarGlobalContextFontBaseLine:(id)arg1;
 + (id)statusBarAppContextFont:(id)arg1;
 + (id)statusBarAppContextFontDescriptor:(id)arg1;
 + (float)statusBarAppContextFontPointSize:(id)arg1;
++ (float)statusBarAppContextInset:(id)arg1;
 + (float)statusBarAppContextFontBaseLine:(id)arg1;
 + (float)statusBarHeight:(id)arg1;
++ (id)defaultLayoutMetricsForDeviceVariant:(int)arg1;
++ (id)layoutMetricsForOptions:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (_Bool)ignoreVisibleAssertionsForGlobalContextVisibleFrame;

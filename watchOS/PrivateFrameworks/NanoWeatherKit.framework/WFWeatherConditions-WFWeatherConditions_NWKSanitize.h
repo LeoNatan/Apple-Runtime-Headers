@@ -8,5 +8,6 @@
 
 @interface WFWeatherConditions (WFWeatherConditions_NWKSanitize)
 - (void)nwk_sanitizeDateComponents;
+- (void)nwk_ensureFutureExpirationDate;
 @end
 

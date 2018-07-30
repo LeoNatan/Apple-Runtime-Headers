@@ -8,7 +8,6 @@
 
 @class ABPeoplePickerController;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerScope : NSObject
 {
     ABPeoplePickerController *_peoplePickerController;

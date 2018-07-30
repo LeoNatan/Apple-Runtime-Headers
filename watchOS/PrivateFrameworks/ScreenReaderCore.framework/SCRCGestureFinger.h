@@ -10,15 +10,15 @@
 {
     unsigned int _identifier;
     struct CGPoint _location;
-    float _orbValue;
+    float _pressure;
 }
 
 - (unsigned int)type;
-- (float)orbValue;
+- (float)pressure;
 - (struct CGPoint)location;
 - (unsigned int)identifier;
 - (id)description;
-- (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint)arg2 orbValue:(float)arg3;
+- (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint)arg2 pressure:(float)arg3;
 
 @end
 

@@ -7,43 +7,50 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBStartVideoCallIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBIntentMetadata;
 
-@interface _INPBStartVideoCallIntent : PBCodable <NSCopying>
+@interface _INPBStartVideoCallIntent : PBCodable <_INPBStartVideoCallIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_fbf2c6cd _has;
     int _audioRoute;
-    NSMutableArray *_contacts;
+    NSArray *_contacts;
     _INPBIntentMetadata *_intentMetadata;
-    struct {
-        unsigned int audioRoute:1;
-    } _has;
+    NSArray *_targetContacts;
 }
 
++ (Class)targetContactsType;
 + (Class)contactType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
+@property(copy, nonatomic) NSArray *targetContacts; // @synthesize targetContacts=_targetContacts;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
+@property(nonatomic) int audioRoute; // @synthesize audioRoute=_audioRoute;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+- (id)targetContactsAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int targetContactsCount;
+- (void)addTargetContacts:(id)arg1;
+- (void)clearTargetContacts;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
 - (id)contactAtIndex:(unsigned int)arg1;
-- (unsigned int)contactsCount;
+@property(readonly, nonatomic) unsigned int contactsCount;
 - (void)addContact:(id)arg1;
 - (void)clearContacts;
 - (int)StringAsAudioRoute:(id)arg1;
 - (id)audioRouteAsString:(int)arg1;
 @property(nonatomic) _Bool hasAudioRoute;
-@property(nonatomic) int audioRoute; // @synthesize audioRoute=_audioRoute;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,12 +6,12 @@
 
 #import "NSViewController.h"
 
-@class AVKeyValueObservationController, AVTouchBarMediaSelectionOption, NSMutableArray;
+@class AVObservationController, AVTouchBarMediaSelectionOption, NSMutableArray;
 
 @interface AVTouchBarMediaSelectionButtonViewController : NSViewController
 {
     NSMutableArray *_bindings;
-    AVKeyValueObservationController *_keyValueObservationController;
+    AVObservationController *_keyValueObservationController;
     id <AVTouchBarMediaSelectionControlling> _playerController;
     id <AVTouchBarMediaSelectionButtonViewControllerDelegate> _delegate;
     AVTouchBarMediaSelectionOption *_previouslySelectedTouchBarLegibleMediaSelectionOption;

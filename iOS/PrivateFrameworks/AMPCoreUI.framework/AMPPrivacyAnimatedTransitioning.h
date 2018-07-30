@@ -10,6 +10,7 @@
 
 @class NSString, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface AMPPrivacyAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
 {
     _Bool _presentation;

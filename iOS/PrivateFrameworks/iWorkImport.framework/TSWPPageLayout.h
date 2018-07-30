@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)i_clearHeaderFooterLayouts;
-- (void)i_insertValidatedHeaderFooterLayouts;
+- (id)i_insertValidatedHeaderFooterLayouts;
 - (_Bool)i_updateHeaderFooterLayouts;
 - (struct CGRect)borderRectForHeaderFooter:(long long)arg1 atIndex:(long long)arg2;
 - (void)p_updateHeaderFooterClipAndBorderRect;

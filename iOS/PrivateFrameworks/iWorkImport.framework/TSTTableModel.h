@@ -433,7 +433,6 @@ __attribute__((visibility("hidden")))
 - (void)resetStyles:(id)arg1;
 - (void)p_clearDefaultStyles;
 - (void)setStylesheetForUpgradeToSingleStylesheet:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

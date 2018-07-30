@@ -9,8 +9,9 @@
 @protocol IKAppPlaylist
 
 @optional
-@property(readonly, nonatomic) __weak IKAppPlaylistBridge *bridge;
-@property(nonatomic) long long endPlayAction;
+@property(readonly, nonatomic) IKAppPlaylistBridge *bridge;
+@property(nonatomic) long long repeatMode;
+@property(nonatomic) long long endAction;
 @property(readonly) unsigned long long count;
 - (id <IKAppMediaItem>)objectAtIndex:(unsigned long long)arg1;
 - (NSArray *)objectsAtIndexes:(NSIndexSet *)arg1;

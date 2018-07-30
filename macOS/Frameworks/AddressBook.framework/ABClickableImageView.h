@@ -6,7 +6,6 @@
 
 #import "NSImageView.h"
 
-__attribute__((visibility("hidden")))
 @interface ABClickableImageView : NSImageView
 {
 }

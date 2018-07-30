@@ -19,7 +19,6 @@
 @property(retain) NSXPCConnection *progressAppConnection; // @synthesize progressAppConnection=_progressAppConnection;
 - (void)dealloc;
 - (id)init;
-- (void)writePhaseRangeToNVRAMForPhase:(id)arg1;
 - (BOOL)currentlyShowingUI;
 - (BOOL)currentlyHasProgressInfo;
 - (float)currentProgress;

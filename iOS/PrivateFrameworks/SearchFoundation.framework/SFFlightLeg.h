@@ -14,7 +14,9 @@
 
 @interface SFFlightLeg : NSObject <SFFlightLeg, NSSecureCoding, NSCopying>
 {
-    CDStruct_47fe53f2 _has;
+    struct {
+        unsigned int status:1;
+    } _has;
     int _status;
     NSDate *_departurePublishedTime;
     NSDate *_departureActualTime;

@@ -13,7 +13,7 @@
 #import "TSPProxyObjectMapping.h"
 #import "TSPProxyObjectWriting.h"
 
-@class NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL, TSPArchiverManager, TSPObjectContext, TSURetainedPointerKeyDictionary;
+@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL, TSPArchiverManager, TSPObjectContext, TSPReferenceOrderedSet, TSURetainedPointerKeyDictionary;
 
 __attribute__((visibility("hidden")))
 @interface TSPEncoderWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPObjectModifyDelegate, TSPProxyObjectWriting, TSPProxyObjectMapping>
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool _didStopCapturingSnapshots;
     NSMutableArray *_dataFinalizeHandlers;
     NSObject<OS_dispatch_queue> *_accessQueue;
-    NSHashTable *_delayedObjects;
+    TSPReferenceOrderedSet *_delayedObjects;
     _Bool _hasProxyObjects;
     TSURetainedPointerKeyDictionary *_proxyObjectMap;
     TSPObjectContext *_context;

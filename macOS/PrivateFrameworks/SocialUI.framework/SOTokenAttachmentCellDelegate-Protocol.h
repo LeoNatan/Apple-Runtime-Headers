@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSView, SOTokenAttachmentCell;
+@class NSAppearance, NSView, SOTokenAttachmentCell;
 
 @protocol SOTokenAttachmentCellDelegate <NSObject>
+- (NSAppearance *)tokenAttachmentCellEffectiveAppearance:(SOTokenAttachmentCell *)arg1;
 - (void)tokenAttachmentCell:(SOTokenAttachmentCell *)arg1 willBeDestroyedWithRepresentedObject:(id)arg2;
-- (BOOL)tokenAttachmentCellShouldShowDedicingBackground:(SOTokenAttachmentCell *)arg1;
+- (BOOL)tokenAttachmentCellShouldShowDecidingBackground:(SOTokenAttachmentCell *)arg1;
 - (BOOL)tokenAttachmentCellHasErrorState:(SOTokenAttachmentCell *)arg1;
 - (BOOL)tokenAttachmentCell:(SOTokenAttachmentCell *)arg1 doubleClickedInRect:(struct CGRect)arg2 ofView:(NSView *)arg3;
 

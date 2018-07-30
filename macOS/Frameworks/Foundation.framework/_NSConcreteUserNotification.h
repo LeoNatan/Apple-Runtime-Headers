@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _style;
     unsigned long long _displayStyle;
     long long _activationType;
-    unsigned long long _badgeCount;
+    long long _badgeCount;
     BOOL _hasActionButton;
     BOOL _presented;
     BOOL _snoozed;
@@ -106,8 +106,8 @@ __attribute__((visibility("hidden")))
 - (id)_dateString;
 - (void)set_eventDate:(id)arg1;
 - (id)_eventDate;
-- (void)set_badgeCount:(unsigned long long)arg1;
-- (unsigned long long)_badgeCount;
+- (void)set_badgeCount:(long long)arg1;
+- (long long)_badgeCount;
 - (double)_snoozedDate;
 - (double)_snoozeInterval;
 - (BOOL)_snoozed;

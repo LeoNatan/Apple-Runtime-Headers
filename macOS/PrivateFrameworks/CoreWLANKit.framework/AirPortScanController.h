@@ -28,7 +28,6 @@
 + (id)__tetherDeviceCellularSignalImageListForTetherDevice:(id)arg1 paddingAfter:(double)arg2;
 + (id)__tetherDeviceBatteryImageForTetherDevice:(id)arg1 paddingAfter:(double)arg2;
 + (unsigned long long)barsForSignal:(int)arg1 mappedTransmitRate:(int)arg2;
-@property(retain) NSWindow *window; // @synthesize window=_window;
 @property(retain) NSWindowController *currentDialog; // @synthesize currentDialog=_currentDialog;
 @property(retain) NSMenu *savedMenu; // @synthesize savedMenu=_savedMenu;
 @property(retain) CWScanManager *scanManager; // @synthesize scanManager=_scanManager;
@@ -75,6 +74,7 @@
 - (id)scanMenu;
 - (void)menuDidClose:(id)arg1;
 - (id)_menuWithScan:(BOOL)arg1;
+@property(readonly) NSWindow *window; // @dynamic window;
 - (void)logMessageTracerJoinPath;
 - (void)joinNetwork:(id)arg1;
 - (void)joinPasspointNetwork:(id)arg1 profile:(id)arg2;
@@ -86,6 +86,8 @@
 - (void)addUnconfiguredBaseStationMenuItemsToMenu:(id)arg1 scanResults:(id)arg2;
 - (void)addIBSSMenuItemsToMenu:(id)arg1 scanResults:(id)arg2;
 - (void)addInfrastructureMenuItemsToMenu:(id)arg1 scanResults:(id)arg2;
+- (BOOL)__isPasspointProfilePresent;
+- (id)__findMatchingPasspointProfile:(id)arg1 anqpElements:(id)arg2;
 - (void)addCurrentNetworkMenuItemToMenu:(id)arg1 currentNetwork:(id)arg2;
 - (id)menuItemForScanResult:(id)arg1 withAction:(SEL)arg2;
 - (id)menuItemForCurrentNetwork:(id)arg1;

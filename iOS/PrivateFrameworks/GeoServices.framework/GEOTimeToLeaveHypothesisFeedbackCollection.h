@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOTimeToLeaveHypothesisFeedbackCollection : PBCodable <NSCopying>
 {
     double _earliestArrivalOffset;
@@ -61,8 +62,6 @@
 - (id)departureAsString:(int)arg1;
 @property(nonatomic) _Bool hasDeparture;
 @property(nonatomic) int departure; // @synthesize departure=_departure;
-- (id)initWithEarlyDepartureDelta:(double)arg1 lateDepartureDelta:(double)arg2 earlyArrivalDelta:(double)arg3 lateArrivalDelta:(double)arg4 rerouteCount:(unsigned long long)arg5 uiNotification:(unsigned long long)arg6;
-- (int)bucketValueForTimeDelta:(double)arg1;
 
 @end
 

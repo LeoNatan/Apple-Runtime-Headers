@@ -6,6 +6,7 @@
 
 #import <AppleScriptObjC/BAGenericObject.h>
 
+__attribute__((visibility("hidden")))
 @interface BAGenericObjectNoDeleteOSAID : BAGenericObject
 {
 }

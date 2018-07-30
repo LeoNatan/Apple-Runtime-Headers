@@ -8,18 +8,16 @@
 
 #import "ParsecTableCellView.h"
 
-@class NSString, NSTrackingArea;
+@class NSTrackingArea;
 
 __attribute__((visibility("hidden")))
 @interface ParsecTableCellViewWithActionButton : UnifiedFieldCompletionStyledTableCellView <ParsecTableCellView>
 {
     NSTrackingArea *_trackingArea;
-    NSString *_identifierOfDisplayedParsecResult;
     id <ParsecTableCellViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy, nonatomic) NSString *identifierOfDisplayedParsecResult; // @synthesize identifierOfDisplayedParsecResult=_identifierOfDisplayedParsecResult;
 - (void).cxx_destruct;
 - (id)_actionButton;
 - (void)_configureActionButtonWithImage:(id)arg1 caption:(id)arg2;

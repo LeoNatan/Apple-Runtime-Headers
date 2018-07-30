@@ -14,6 +14,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

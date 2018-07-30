@@ -16,10 +16,10 @@
 
 @property(nonatomic) _Bool orderOut; // @synthesize orderOut=_orderOut;
 @property(retain, nonatomic) FBSSceneLayer *layer; // @synthesize layer=_layer;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)description;
-- (void)dealloc;
 
 @end
 

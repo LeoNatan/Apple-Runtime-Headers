@@ -10,6 +10,7 @@
 
 @class AVWeakReference, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVURLAuthenticationChallenge : NSURLAuthenticationChallenge <AVAssetResourceLoaderRequest>
 {
     AVWeakReference *_weakReference;

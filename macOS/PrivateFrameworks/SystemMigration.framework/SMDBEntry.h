@@ -30,7 +30,6 @@
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)convertEntry:(id)arg1 toClass:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)replaceValue:(id)arg1 withNewValue:(id)arg2;

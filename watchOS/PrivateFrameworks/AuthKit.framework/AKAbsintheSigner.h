@@ -15,6 +15,7 @@
 
 + (id)sharedSigner;
 - (void).cxx_destruct;
+- (void)signatureForURLRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)signatureForURLRequest:(id)arg1;
 
 @end

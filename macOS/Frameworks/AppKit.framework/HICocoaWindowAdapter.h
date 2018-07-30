@@ -8,6 +8,7 @@
 
 @class NSGraphicsContext;
 
+__attribute__((visibility("hidden")))
 @interface HICocoaWindowAdapter : NSWindow
 {
     struct OpaqueWindowPtr *_windowRef;
@@ -28,6 +29,7 @@
 @property unsigned int cwFlags; // @synthesize cwFlags=_cwFlags;
 - (void)_enableFlushWindowWithoutPerformingFlush;
 - (void)enableFlushWindow;
+- (void)_resetDragMargins;
 - (BOOL)_implicitlyTileable;
 - (BOOL)_allowsOrdering;
 - (void)_setEventMask:(unsigned long long)arg1;

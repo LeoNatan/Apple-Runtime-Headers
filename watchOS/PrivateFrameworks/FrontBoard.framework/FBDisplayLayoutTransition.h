@@ -27,6 +27,7 @@
 @property(copy, nonatomic) NSString *transitionReason; // @synthesize transitionReason=_transitionReason;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) int displayType; // @synthesize displayType=_displayType;
+- (void).cxx_destruct;
 - (void)endTransition;
 - (void)beginTransition;
 - (id)description;

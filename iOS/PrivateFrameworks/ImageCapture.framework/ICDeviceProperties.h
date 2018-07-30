@@ -8,6 +8,7 @@
 
 @class DeviceManager, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ICDeviceProperties : NSObject
 {
     id _delegate;
@@ -39,7 +40,6 @@
 @property(retain) NSString *name; // @synthesize name=_name;
 @property DeviceManager *deviceManager; // @synthesize deviceManager=_deviceManager;
 @property id delegate; // @synthesize delegate=_delegate;
-- (void)finalize;
 - (void)dealloc;
 @property struct CGImage *icon; // @dynamic icon;
 

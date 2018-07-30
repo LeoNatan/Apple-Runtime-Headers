@@ -9,10 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface PerSitePreferencePopUpButton : NSPopUpButton
 {
+    BOOL _allowsVibrancy;
 }
 
 + (Class)cellClass;
-- (BOOL)allowsVibrancy;
+@property(nonatomic) BOOL allowsVibrancy;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

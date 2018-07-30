@@ -15,11 +15,15 @@
     CNCache *_cache;
 }
 
++ (id)companyImageNameForDiameter:(double)arg1;
++ (id)imageNameForDiameter:(double)arg1;
 @property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
 - (unsigned long long)_cnui_likenessType;
 - (id)_cnui_likenessForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)_cnui_likenessForSize:(struct CGSize)arg1;
+- (struct CGImage *)_cnui_roundedRectImageForSize:(struct CGSize)arg1 scale:(double)arg2;
+- (struct CGImage *)_cnui_circularImageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (struct CGImage *)renderRoundedRectImageForSilhouetteImage:(struct CGImage *)arg1 size:(struct CGSize)arg2 scale:(double)arg3;
 - (struct CGImage *)renderCircularImageForSilhouetteImage:(struct CGImage *)arg1 size:(struct CGSize)arg2 scale:(double)arg3;
 - (id)init;

@@ -140,6 +140,12 @@ struct TfPointerAndBits<const VtValue::_TypeInfo> {
     struct _TypeInfo *_ptrAndBits;
 };
 
+struct TfRefBase;
+
+struct TfRefPtr<UsdStage> {
+    struct TfRefBase *_field1;
+};
+
 struct TfToken {
     struct TfPointerAndBits<const TfToken::_Rep> _field1;
 };
@@ -151,6 +157,16 @@ struct UsdAttribute {
     struct Usd_PrimDataHandle _field2;
     struct SdfPath _field3;
     struct TfToken _field4;
+};
+
+struct UsdShadeInput {
+    struct UsdAttribute _field1;
+};
+
+struct UsdShadeMaterial {
+    CDUnknownFunctionPointerType *_field1;
+    struct Usd_PrimDataHandle _field2;
+    struct SdfPath _field3;
 };
 
 struct Usd_PrimData;
@@ -200,11 +216,17 @@ struct __sbuf {
     int _field2;
 };
 
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *_field1;
+};
+
 struct a8;
 
 struct aligned_storage_imp<8, 8> {
     union data_t data_;
 };
+
+struct internal_state;
 
 struct intrusive_ptr<const Sdf_PathNode> {
     struct Sdf_PathNode *_field1;
@@ -212,6 +234,18 @@ struct intrusive_ptr<const Sdf_PathNode> {
 
 struct intrusive_ptr<const Usd_PrimData> {
     struct Usd_PrimData *_field1;
+};
+
+struct map<std::__1::basic_string<char>, UsdPrim, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, UsdPrim>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
 };
 
 struct mutex {
@@ -313,6 +347,23 @@ struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
     } __end_cap_;
 };
 
+struct z_stream_s {
+    char *next_in;
+    unsigned int avail_in;
+    unsigned long long total_in;
+    char *next_out;
+    unsigned int avail_out;
+    unsigned long long total_out;
+    char *msg;
+    struct internal_state *state;
+    CDUnknownFunctionPointerType zalloc;
+    CDUnknownFunctionPointerType zfree;
+    void *opaque;
+    int data_type;
+    unsigned long long adler;
+    unsigned long long reserved;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -322,7 +373,28 @@ typedef struct {
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
 
+typedef struct {
+    unsigned short _field1;
+    unsigned short _field2;
+} CDStruct_d65e47c4;
+
 // Template types
+typedef struct TfRefPtr<UsdStage> {
+    struct TfRefBase *_field1;
+} TfRefPtr_0090d76d;
+
+typedef struct map<std::__1::basic_string<char>, UsdPrim, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, UsdPrim>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, UsdPrim>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+} map_9fbcb906;
+
 typedef struct vector<float, std::__1::allocator<float>> {
     float *_field1;
     float *_field2;

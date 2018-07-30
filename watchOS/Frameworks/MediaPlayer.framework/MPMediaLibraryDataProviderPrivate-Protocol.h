@@ -30,6 +30,7 @@
 - (void)performStoreItemLibraryImport:(MPStoreItemLibraryImport *)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
 - (MIPMultiverseIdentifier *)multiverseIdentifierForCollectionWithPersistentID:(long long)arg1 groupingType:(int)arg2;
 - (MIPMultiverseIdentifier *)multiverseIdentifierForTrackWithPersistentID:(long long)arg1;
+- (_Bool)deleteDatabaseProperty:(NSString *)arg1;
 - (_Bool)setValue:(id)arg1 forDatabaseProperty:(NSString *)arg2;
 - (id)valueForDatabaseProperty:(NSString *)arg1;
 - (NSString *)localizedSectionHeaderForSectionIndex:(unsigned int)arg1;
@@ -65,6 +66,8 @@
 - (_Bool)performTransactionWithBlock:(_Bool (^)(void))arg1;
 - (long long)itemPersistentIDForStoreID:(long long)arg1;
 - (_Bool)collectionExistsContainedWithinSyncIDs:(NSArray *)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
+- (_Bool)collectionExistsWithCloudUniversalLibraryID:(NSString *)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
+- (_Bool)collectionExistsWithSagaID:(long long)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
 - (_Bool)collectionExistsWithStoreID:(long long)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
 - (_Bool)collectionExistsWithName:(NSString *)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
 - (_Bool)collectionExistsContainedWithinPersistentIDs:(const unsigned long long *)arg1 count:(unsigned long)arg2 groupingType:(int)arg3 existentPID:(unsigned long long *)arg4;

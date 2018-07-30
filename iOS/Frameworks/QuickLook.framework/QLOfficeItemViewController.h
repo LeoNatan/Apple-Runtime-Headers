@@ -6,18 +6,21 @@
 
 #import <QuickLook/QLItemAggregatedViewController.h>
 
-@class QLItem;
+@class QLPDFItemViewController, QLWKWebItemViewController;
 
 __attribute__((visibility("hidden")))
 @interface QLOfficeItemViewController : QLItemAggregatedViewController
 {
-    QLItem *_previewItem;
+    QLWKWebItemViewController *_webViewController;
+    QLPDFItemViewController *_pdfViewController;
 }
 
 + (_Bool)providesCustomPrinter;
 + (id)supportedContentTypes;
 + (Class)transformerClass;
 + (_Bool)shouldBeRemoteForContentType:(id)arg1;
+@property(retain, nonatomic) QLPDFItemViewController *pdfViewController; // @synthesize pdfViewController=_pdfViewController;
+@property(retain, nonatomic) QLWKWebItemViewController *webViewController; // @synthesize webViewController=_webViewController;
 - (void).cxx_destruct;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

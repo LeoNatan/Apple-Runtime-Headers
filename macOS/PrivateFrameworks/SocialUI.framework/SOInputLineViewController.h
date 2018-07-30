@@ -13,7 +13,7 @@
 #import "SOInputLineDelegate.h"
 #import "SOTranscriptEffectPickerDelegate.h"
 
-@class AVAudioPlayer, AVAudioRecorder, CPKPopover, IMAccount, NSAttributedString, NSButton, NSLayoutConstraint, NSPopover, NSStackView, NSString, NSTextField, NSTextStorage, NSView, SOFlexibleScrollView, SOInputLine, SOPreviewingWaveformContainerView, SORecordingWaveformContainerView, SORecordingWaveformView;
+@class AVAudioPlayer, AVAudioRecorder, CPKPopover, IMAccount, NSAttributedString, NSButton, NSLayoutConstraint, NSPopover, NSStackView, NSString, NSTextField, NSTextStorage, NSView, SOFlexibleScrollView, SOInputLine, SOInputLineContainer, SOPreviewingWaveformContainerView, SORecordingWaveformContainerView, SORecordingWaveformView;
 
 @interface SOInputLineViewController : SOChatViewController <CPKPopoverDelegate, NSTouchBarDelegate, SOTranscriptEffectPickerDelegate, NSUserInterfaceValidations, SOInputLineDelegate, AVAudioRecorderDelegate>
 {
@@ -28,7 +28,7 @@
     BOOL _showStopRecordingButton;
     int _viewControllerMode;
     id <SOInputLineViewControllerDelegate> _delegate;
-    NSView *_inputBorderView;
+    SOInputLineContainer *_inputLineContainer;
     SOFlexibleScrollView *_scrollView;
     SOInputLine *_inputLine;
     double _leadingTextInputMargin;
@@ -58,7 +58,6 @@
     NSString *_expressiveSendStyleID;
 }
 
-+ (id)soInputLineViewBorderColor;
 @property(retain, nonatomic) NSString *expressiveSendStyleID; // @synthesize expressiveSendStyleID=_expressiveSendStyleID;
 @property(nonatomic) __weak NSPopover *effectPickerPopover; // @synthesize effectPickerPopover=_effectPickerPopover;
 @property(retain, nonatomic) AVAudioPlayer *player; // @synthesize player=_player;
@@ -92,7 +91,7 @@
 @property(nonatomic) double leadingTextInputMargin; // @synthesize leadingTextInputMargin=_leadingTextInputMargin;
 @property(retain, nonatomic) SOInputLine *inputLine; // @synthesize inputLine=_inputLine;
 @property(retain, nonatomic) SOFlexibleScrollView *scrollView; // @synthesize scrollView=_scrollView;
-@property(retain, nonatomic) NSView *inputBorderView; // @synthesize inputBorderView=_inputBorderView;
+@property(retain, nonatomic) SOInputLineContainer *inputLineContainer; // @synthesize inputLineContainer=_inputLineContainer;
 @property(nonatomic) __weak id <SOInputLineViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -121,6 +120,7 @@
 - (BOOL)inputLine:(id)arg1 canAttachFilesAtURLs:(id)arg2;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)audioRecorderDidFinishRecording:(id)arg1 successfully:(BOOL)arg2;
+- (void)_appearanceChanged:(id)arg1;
 - (void)_updateTouchBar:(id)arg1;
 - (void)_updateEdgeInsets;
 - (void)_cleanupRecording;
@@ -130,10 +130,12 @@
 - (void)_updateVoiceMetering;
 - (void)_inputLineUpdateVoiceMetering:(id)arg1;
 - (void)_inputLineUpdateTimeStamp:(id)arg1;
+- (void)_updateAudioTimeStamp:(id)arg1;
 - (void)startRecording;
 - (void)_transitionInputLineIntoMessaging;
 - (void)_transitionInputLineIntoPreviewRecording;
 - (void)_transitionInputLineIntoRecording;
+- (void)updateAudioMessageButtonForAppearance;
 - (void)_updateAudioMessageButtonVisibilty;
 - (void)_updateEffectPickerButtonVisibility;
 - (void)_updateSmileyButtonVisibility;

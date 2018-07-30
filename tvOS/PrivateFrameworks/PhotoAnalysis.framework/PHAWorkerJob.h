@@ -13,6 +13,8 @@
 @interface PHAWorkerJob : NSObject <NSCopying>
 {
     _Bool _disableReactionCheck;
+    _Bool _producedAssetMetadataChanges;
+    _Bool _isGraphUpdateJob;
     _Bool _ignoreFurtherResults;
     _Bool _treatMissingResultsAsFailures;
     _Bool _isReactionJob;
@@ -31,6 +33,8 @@
 @property(nonatomic) unsigned long long countOfFailedStarts; // @synthesize countOfFailedStarts=_countOfFailedStarts;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic) _Bool ignoreFurtherResults; // @synthesize ignoreFurtherResults=_ignoreFurtherResults;
+@property _Bool isGraphUpdateJob; // @synthesize isGraphUpdateJob=_isGraphUpdateJob;
+@property _Bool producedAssetMetadataChanges; // @synthesize producedAssetMetadataChanges=_producedAssetMetadataChanges;
 @property(nonatomic) _Bool disableReactionCheck; // @synthesize disableReactionCheck=_disableReactionCheck;
 @property(readonly, nonatomic) short workerType; // @synthesize workerType=_workerType;
 @property(readonly, nonatomic) unsigned long long scenario; // @synthesize scenario=_scenario;

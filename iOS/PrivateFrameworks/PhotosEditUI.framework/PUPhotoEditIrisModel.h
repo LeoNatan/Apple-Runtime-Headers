@@ -10,6 +10,7 @@
 
 @class PLPhotoEditModel, PUPhotoEditIrisModelChange;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditIrisModel : PUViewModel <NSCopying>
 {
     _Bool _videoEnabled;

@@ -17,6 +17,8 @@
 - (void).cxx_destruct;
 - (void)performWithEventSourceData:(id)arg1;
 - (unsigned long long)actionType;
+- (id)dictionaryForSaving;
+- (id)init;
 
 @end
 

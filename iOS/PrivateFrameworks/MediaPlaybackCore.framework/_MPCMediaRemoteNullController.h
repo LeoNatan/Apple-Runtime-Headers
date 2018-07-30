@@ -17,7 +17,6 @@
 
 + (_Bool)_shouldRegisterForNotifications;
 - (void).cxx_destruct;
-- (void)updateOptimisticStateForCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)invalidateAllTokens;
 - (id)contentItemArtworkForContentItemIdentifier:(id)arg1 artworkIdentifier:(id)arg2 size:(struct CGSize)arg3;
 - (long long)contentItemArtworkCacheStateForIdentifier:(id)arg1 size:(struct CGSize)arg2;

@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CXNamespace.h>
 
-__attribute__((visibility("hidden")))
 @interface CXUnqualifiedNamespace : CXNamespace
 {
 }

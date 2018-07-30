@@ -18,11 +18,13 @@
 @property(readonly, nonatomic) unsigned long long extractionType; // @synthesize extractionType=_extractionType;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
-- (_Bool)isEqualToSuggestion:(id)arg1;
+- (_Bool)isEqualToLabeledObject:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)localizedLabel;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLabel:(id)arg1 extractionType:(unsigned long long)arg2 recordId:(id)arg3 origin:(id)arg4;
+- (id)initWithLabel:(id)arg1 extractionType:(unsigned long long)arg2 recordId:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

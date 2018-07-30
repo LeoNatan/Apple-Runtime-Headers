@@ -10,12 +10,13 @@
 
 @interface HFAccessoryInfoItem : HFItem
 {
-    HMAccessory *_accessory;
     unsigned int _infoType;
+    HMAccessory *_accessory;
 }
 
-@property(nonatomic) unsigned int infoType; // @synthesize infoType=_infoType;
++ (id)localizedStringForCharacteristic:(id)arg1;
 @property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
+@property(nonatomic) unsigned int infoType; // @synthesize infoType=_infoType;
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithAccessory:(id)arg1 infoType:(unsigned int)arg2;

@@ -33,6 +33,7 @@
     SEL _buttonAction;
     SEL _controllerLoadAction;
     _Bool _showContentString;
+    id _weakUserInfo;
 }
 
 + (long long)keyboardTypeForString:(id)arg1;
@@ -46,6 +47,7 @@
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(long long)arg6 edit:(Class)arg7;
 + (id)deleteButtonSpecifierWithName:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 @property(nonatomic) _Bool showContentString; // @synthesize showContentString=_showContentString;
+@property(nonatomic) __weak id weakUserInfo; // @synthesize weakUserInfo=_weakUserInfo;
 @property(nonatomic) SEL controllerLoadAction; // @synthesize controllerLoadAction=_controllerLoadAction;
 @property(nonatomic) SEL buttonAction; // @synthesize buttonAction=_buttonAction;
 @property(nonatomic) SEL confirmationCancelAction; // @synthesize confirmationCancelAction=_confirmationCancelAction;
@@ -91,6 +93,7 @@
 - (void)removePropertyForKey:(id)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
+- (id)initWithName:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(long long)arg6 edit:(Class)arg7;
 - (id)init;
 - (_Bool)versionLabelEnabled;
 - (void)setVersionLabelEnabled:(_Bool)arg1;

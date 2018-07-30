@@ -8,6 +8,7 @@
 
 @class NSError;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterFailedTerminalHelper : AVAssetWriterTerminalHelper
 {
     NSError *_terminalError;

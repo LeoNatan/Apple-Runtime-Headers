@@ -13,6 +13,7 @@
 }
 
 + (Class)frozenClass;
+- (id)semanticIdentifier;
 - (id)timestampAsDate;
 - (void)setTimestampAsDate:(id)arg1;
 @property(nonatomic) double timestamp;

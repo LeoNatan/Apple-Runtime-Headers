@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "FBSystemServiceFacility.h"
+#import "FBSServiceFacility.h"
 
 #import "SBRemoteAlertControllerDelegate.h"
 
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface SBRemoteAlertServer : FBSystemServiceFacility <SBRemoteAlertControllerDelegate>
+@interface SBRemoteAlertServer : FBSServiceFacility <SBRemoteAlertControllerDelegate>
 {
     Class _remoteAlertControllerClass;
     NSObject<OS_dispatch_queue> *_queue;
@@ -24,12 +24,11 @@
 - (void)queue_remoteAlertControllerDidChangeActivationState:(id)arg1;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (void)noteClientDidDisconnect:(id)arg1;
-- (id)prerequisiteMilestones;
 - (void)_queue_notifyClients:(id)arg1 remoteAlertForToken:(id)arg2 didInvalidateWithReason:(long long)arg3 underlyingError:(id)arg4;
 - (id)_queue_addControllerWithDefinition:(id)arg1 token:(id)arg2 context:(id)arg3 forClient:(id)arg4;
 - (void)dealloc;
 - (id)initWithRemoteAlertControllerClass:(Class)arg1;
-- (id)initWithIdentifier:(id)arg1 queue:(id)arg2 clientAuthenticator:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 queue:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

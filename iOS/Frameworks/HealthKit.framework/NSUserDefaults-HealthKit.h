@@ -8,5 +8,6 @@
 
 @interface NSUserDefaults (HealthKit)
 - (void)hk_removeObjectsForKeysWithPrefix:(id)arg1;
+- (_Bool)hk_keyExists:(id)arg1;
 @end
 

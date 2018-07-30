@@ -11,10 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface MRExternalDeviceTransport : NSObject
 {
+    long _connectionType;
     _Bool _requiresCustomPairing;
+    NSString *_uid;
 }
 
+@property(readonly, nonatomic) long connectionType; // @synthesize connectionType=_connectionType;
 @property(readonly, nonatomic) _Bool requiresCustomPairing; // @synthesize requiresCustomPairing=_requiresCustomPairing;
+@property(readonly, nonatomic) NSString *uid; // @synthesize uid=_uid;
+- (void).cxx_destruct;
 - (void)reset;
 - (_Bool)getInputStream:(id *)arg1 outputStream:(id *)arg2;
 @property(readonly, nonatomic) NSError *error;

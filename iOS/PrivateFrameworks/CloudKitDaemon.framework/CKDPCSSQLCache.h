@@ -16,12 +16,17 @@ __attribute__((visibility("hidden")))
     unsigned long long _cacheHitCount;
 }
 
++ (void)_evictPCSSQLCachesForAppContainerTuples:(id)arg1;
++ (void)evictPCSSQLCachesForKnownClientContexts;
++ (void)registerPCSSQLCacheEvictionActivity;
++ (id)globalPCSSQLCacheEvictionQueue;
 + (id)pathForContext:(id)arg1;
 @property unsigned long long cacheHitCount; // @synthesize cacheHitCount=_cacheHitCount;
 @property unsigned long long cacheRequestCount; // @synthesize cacheRequestCount=_cacheRequestCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recordQueue; // @synthesize recordQueue=_recordQueue;
 - (void).cxx_destruct;
 - (id)CKStatusReportArray;
+- (void)clearInvalidatedCacheEntriesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearCache;
 - (void)removePCSDataForItemsInShareWithID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)removePCSDataForItemsInZoneWithID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

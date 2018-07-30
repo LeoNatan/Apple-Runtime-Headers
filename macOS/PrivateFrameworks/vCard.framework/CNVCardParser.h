@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class CNVCardDateComponentsParser, CNVCardLexer, CNVCardMutableNameComponents, CNVCardSelectorMap, NSArray, NSData, NSDateComponents, NSMutableArray, NSMutableDictionary, NSMutableString, NSString;
+@class CNVCardDateComponentsParser, CNVCardLexer, CNVCardMutableNameComponents, CNVCardReadingOptions, CNVCardSelectorMap, NSArray, NSData, NSDateComponents, NSMutableArray, NSMutableDictionary, NSMutableString, NSString;
 
 @interface CNVCardParser : NSObject
 {
+    CNVCardReadingOptions *_options;
     CNVCardLexer *_lexer;
     NSData *_data;
     unsigned long long _defaultEncoding;
@@ -42,6 +43,7 @@
     NSData *_imageData;
     NSString *_imageGroup;
     NSString *_imageReference;
+    unsigned long long _startingPositionOfCurrentProperty;
     NSArray *_itemParameters;
     NSString *_grouping;
     unsigned long long _encoding;
@@ -50,10 +52,15 @@
 }
 
 + (unsigned long long)inferredStringEncodingFromData:(id)arg1;
++ (id)parseData:(id)arg1 options:(id)arg2 resultFactory:(id)arg3;
 + (id)parseData:(id)arg1 resultFactory:(id)arg2;
 + (id)newParameterSelectorMap;
 + (id)newParsingSelectorMap;
 + (BOOL)parseFirstResultInData:(id)arg1 resultBuilder:(id)arg2;
++ (unsigned long long)countOfCardsInData:(id)arg1;
+@property(readonly, nonatomic) CNVCardReadingOptions *options; // @synthesize options=_options;
+@property(copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
+@property(readonly, nonatomic) id <CNVCardParsedResultBuilder> resultBuilder; // @synthesize resultBuilder=_resultBuilder;
 - (void).cxx_destruct;
 - (long long)currentPosition;
 - (BOOL)atEOF;
@@ -61,6 +68,7 @@
 - (id)parseBase64Data;
 - (id)parseUnknownValueStartingAtPosition:(unsigned long long)arg1;
 - (id)parseArrayValue;
+- (id)unparsedStringForCurrentProperty;
 - (id)parseRemainingLine;
 - (BOOL)advancePastSemicolon;
 - (id)parseStringValue;
@@ -162,6 +170,7 @@
 - (id)pool_nextResultWithFactory:(id)arg1 progressLength:(long long *)arg2;
 - (id)nextResultWithFactory:(id)arg1 progressLength:(long long *)arg2;
 - (id)resultsWithFactory:(id)arg1;
+- (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)initWithData:(id)arg1;
 
 @end

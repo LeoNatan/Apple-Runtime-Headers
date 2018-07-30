@@ -4,8 +4,6 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSObject<OS_xpc_object>;
-
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -78,11 +76,6 @@ typedef struct {
     id _field3;
     CDUnknownBlockType _field4;
 } CDStruct_7eb2cf46;
-
-typedef struct {
-    unsigned int port;
-    NSObject<OS_xpc_object> *endpoint;
-} CDStruct_2873f8fa;
 
 typedef struct {
     unsigned int _field1;

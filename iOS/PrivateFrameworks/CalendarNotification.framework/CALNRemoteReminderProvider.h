@@ -49,7 +49,6 @@
 - (id)titleStringForAlertInfo:(id)arg1;
 - (id)defaultURLForAlertInfo:(id)arg1;
 - (id)viewActionForAlertInfo:(id)arg1;
-- (id)closeActionForAlertInfo:(id)arg1;
 - (id)_bulletinRequestForReminder:(id)arg1;
 - (void)_updateBulletinRequest:(id)arg1 forReminder:(id)arg2;
 - (id)bulletinRequestWithCalendarNotification:(id)arg1;

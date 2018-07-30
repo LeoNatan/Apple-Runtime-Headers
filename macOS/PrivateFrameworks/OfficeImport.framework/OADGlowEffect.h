@@ -8,13 +8,13 @@
 
 @class OADColor;
 
-__attribute__((visibility("hidden")))
 @interface OADGlowEffect : OADEffect
 {
     OADColor *mColor;
     float mRadius;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (float)radius;
 - (void)setColor:(id)arg1;
 - (id)color;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

@@ -15,6 +15,7 @@
 - (void)remoteVideoClient:(AVCRemoteVideoClient *)arg1 remoteScreenAttributesDidChange:(VideoAttributes *)arg2;
 - (void)remoteVideoServerDidDie:(AVCRemoteVideoClient *)arg1;
 - (void)remoteVideoClientDidReceiveLastFrame:(AVCRemoteVideoClient *)arg1;
+- (void)remoteVideoClient:(AVCRemoteVideoClient *)arg1 videoDidSuspend:(BOOL)arg2;
 - (void)remoteVideoClient:(AVCRemoteVideoClient *)arg1 videoDidDegrade:(BOOL)arg2;
 - (void)remoteVideoClient:(AVCRemoteVideoClient *)arg1 remoteMediaDidStall:(BOOL)arg2;
 - (void)remoteVideoClient:(AVCRemoteVideoClient *)arg1 remoteVideoDidPause:(BOOL)arg2;

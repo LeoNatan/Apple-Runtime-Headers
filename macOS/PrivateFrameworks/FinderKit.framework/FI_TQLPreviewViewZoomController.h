@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)seamlessCloserSourcePreviewViewForPreviewItem:(id)arg1;
 - (id)seamlessCloserTransitionImageForPreviewItem:(id)arg1 contentRect:(struct CGRect *)arg2;
 - (struct CGRect)seamlessCloserSourceFrameOnScreenForPreviewItem:(id)arg1;
-- (id)quickLookSharedPreviewViewForPreviewNode:(const struct TFENode *)arg1;
+- (id)quickLookSharedPreviewView;
 - (id)window;
 - (id)zoomImageForNode:(const struct TFENode *)arg1 contentRect:(struct CGRect *)arg2;
 - (struct CGRect)globalZoomRectForNode:(const struct TFENode *)arg1;

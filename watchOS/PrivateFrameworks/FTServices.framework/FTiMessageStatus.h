@@ -6,23 +6,17 @@
 
 #import "NSObject.h"
 
+@class FTServiceStatus;
+
 @interface FTiMessageStatus : NSObject
 {
-    _Bool _supportsiMessage;
-    int _iMessageAllowedToken;
-    _Bool _blockPost;
+    FTServiceStatus *_serviceStatus;
 }
 
 + (id)sharedInstance;
-@property(nonatomic) _Bool blockPost; // @synthesize blockPost=_blockPost;
-@property _Bool supportsiMessage; // @synthesize supportsiMessage=_supportsiMessage;
-@property(nonatomic) int iMessageAllowedToken; // @synthesize iMessageAllowedToken=_iMessageAllowedToken;
-- (_Bool)_noCache_iMessageAllowed;
-- (void)_removeObservers;
-- (void)_addObservers;
-- (void)_reload;
+@property(readonly, nonatomic) FTServiceStatus *serviceStatus; // @synthesize serviceStatus=_serviceStatus;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool iMessageSupported;
-- (void)dealloc;
 - (id)initPrivate;
 
 @end

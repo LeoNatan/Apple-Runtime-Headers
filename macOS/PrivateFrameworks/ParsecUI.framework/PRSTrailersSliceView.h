@@ -46,7 +46,6 @@
 - (void)mouseEntered:(id)arg1;
 - (BOOL)_isValidTrailerIndex:(long long)arg1;
 - (long long)_indexForTrackingAreaEvent:(id)arg1;
-- (void)appearanceChanged:(id)arg1;
 - (void)updateTrackingAreas;
 - (void)_removeTrackingAreas;
 - (void)_sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;

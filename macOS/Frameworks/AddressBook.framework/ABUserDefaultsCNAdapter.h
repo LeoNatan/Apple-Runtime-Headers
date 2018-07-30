@@ -10,7 +10,6 @@
 
 @class ABUserDefaults, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABUserDefaultsCNAdapter : NSObject <CNFoundationUserDefaults>
 {
     ABUserDefaults *_userDefaults;

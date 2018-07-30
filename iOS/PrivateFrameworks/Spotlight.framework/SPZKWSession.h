@@ -11,8 +11,7 @@
 }
 
 + (id)cachedZKWAppBundleIDs;
-- (id)newQuery:(_Bool)arg1;
-- (id)init;
+- (id)queryWithContext:(id)arg1;
 
 @end
 

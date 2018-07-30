@@ -6,12 +6,16 @@
 
 #import "NSView.h"
 
-__attribute__((visibility("hidden")))
+@class NSColor;
+
 @interface ABSearchElementSetView : NSView
 {
+    NSColor *_backgroundColor;
 }
 
+@property(nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (struct CGSize)intrinsicContentSize;
+- (void)updateLayer;
 - (BOOL)isFlipped;
 
 @end

@@ -35,6 +35,7 @@
 - (void)_updateContentTransform;
 - (void)_updateAlpha;
 @property(nonatomic) unsigned long long chevronState; // @dynamic chevronState;
+@property(nonatomic) struct CGAffineTransform compactScaleTransform; // @dynamic compactScaleTransform;
 @property(readonly, nonatomic) struct CGRect contentBounds; // @dynamic contentBounds;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

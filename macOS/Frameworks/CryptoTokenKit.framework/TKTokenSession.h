@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class LAContext, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, TKToken;
+@class LAContext, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, TKToken;
 
 @interface TKTokenSession : NSObject
 {
@@ -27,6 +27,7 @@
 @property __weak id <TKTokenSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) TKToken *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name;
 - (void)terminate;
 - (BOOL)handleOperation:(long long)arg1 auditToken:(CDStruct_6ad76789)arg2 event:(id)arg3 reply:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (BOOL)handleCopyIdentitiesEvent:(id)arg1 reply:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -41,10 +42,10 @@
 - (BOOL)handleGetPublicKeyEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)handleGetObjectAccessControlEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)handleEvaluateAccessControlEvent:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 reply:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)evaluateAuthOperation:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 context:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)evaluateAuthOperation:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 retry:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)finalizeAuthOperation:(id)arg1 evaluatedAuthOperation:(id)arg2 auditToken:(CDStruct_6ad76789)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)auditAuthOperation:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 success:(BOOL)arg3 error:(id)arg4;
-- (void)evaluateAuthOperation:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)evaluateAuthOperation:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)endRequest;
 - (BOOL)beginRequest:(long long)arg1 error:(id *)arg2;
 - (void)controlWithAttributes:(id)arg1 reply:(CDUnknownBlockType)arg2;

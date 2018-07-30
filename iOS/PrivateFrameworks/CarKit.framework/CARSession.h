@@ -8,27 +8,36 @@
 
 #import "CARSessionCommandDelegate.h"
 
-@class CARInputDeviceManager, CARSessionConfiguration, NSNumber, NSString;
+@class CARInputDeviceManager, CARSessionConfiguration, NSArray, NSNumber, NSString;
 
 @interface CARSession : NSObject <CARSessionCommandDelegate>
 {
+    struct OpaqueFigEndpoint *_endpoint;
     _Bool _authenticated;
     CARSessionConfiguration *_configuration;
     CARInputDeviceManager *_inputDeviceManager;
+    NSArray *_screenInfo;
+    NSArray *_screenIDs;
 }
 
+@property(copy, nonatomic) NSArray *screenIDs; // @synthesize screenIDs=_screenIDs;
+@property(copy, nonatomic) NSArray *screenInfo; // @synthesize screenInfo=_screenInfo;
 @property(retain, nonatomic) CARInputDeviceManager *inputDeviceManager; // @synthesize inputDeviceManager=_inputDeviceManager;
 @property(readonly, nonatomic, getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(readonly, nonatomic) CARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (void)sendCommand:(id)arg1 withParameters:(id)arg2;
+- (void)_fetchAuthenticationStatus;
+- (id)_endpointValueForKey:(struct __CFString *)arg1;
+- (struct OpaqueFigEndpoint *)endpoint;
 @property(readonly, copy) NSString *description;
-- (id)requestTurnByTurnNavigationOwnership;
 - (void)takeScreenForConnection;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
 - (id)borrowScreenForClient:(id)arg1 reason:(id)arg2;
 - (_Bool)recognizingSpeech;
-- (_Bool)ownsTurnByTurnNavigation;
+- (void)releaseTurnByTurnOwnership;
+- (void)requestTurnByTurnOwnership;
+- (unsigned long long)navigationOwner;
 - (_Bool)ownsScreen;
 - (void)requestCarUIForURL:(id)arg1;
 - (void)requestCarUI;
@@ -36,7 +45,7 @@
 @property(readonly, copy, nonatomic) NSNumber *electronicTollCollectionAvailable;
 @property(readonly, copy, nonatomic) NSNumber *limitUserInterfaces;
 @property(readonly, copy, nonatomic) NSNumber *nightMode;
-- (id)initWithFigEndpoint:(id)arg1;
+- (id)initWithFigEndpoint:(struct OpaqueFigEndpoint *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -21,7 +21,7 @@
 @property(nonatomic) int visibility; // @synthesize visibility=_visibility;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
-- (void)_sendXPCMessage;
+- (void)_start;
 - (void)_handleReply:(id)arg1;
 - (id)initWithVisibility:(int)arg1 productId:(id)arg2 bundleId:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithVisibility:(int)arg1 productId:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

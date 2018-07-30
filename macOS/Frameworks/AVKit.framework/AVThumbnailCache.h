@@ -12,9 +12,11 @@
 {
     unsigned long long _maximumCacheSize;
     NSString *_cacheDirectoryPath;
+    unsigned long long _currentCacheSize;
 }
 
 + (void)initialize;
+@property(nonatomic) unsigned long long currentCacheSize; // @synthesize currentCacheSize=_currentCacheSize;
 - (void).cxx_destruct;
 - (id)_randomDataOfLength:(unsigned long long)arg1;
 - (id)_createKeyForKeyUUID:(id)arg1;
@@ -30,7 +32,7 @@
 - (unsigned long long)_directorySize:(id)arg1;
 - (BOOL)_ensureDirectoryExistsAtPath:(id)arg1;
 - (id)_cacheDirectoryPath;
-- (BOOL)_cleanUpCachesDirectory:(id)arg1 excludeAssetCachesDirectoryPath:(id)arg2;
+- (BOOL)_cleanUpCacheDirectoryExcludingAssetCachesDirectoryPath:(id)arg1;
 - (id)_loadCachedThumbnailsFromAssetCachesDirectory:(id)arg1 encryptionKey:(id)arg2 assetModificationDate:(id)arg3;
 - (BOOL)_saveThumbnail:(id)arg1 inDirectory:(id)arg2 encryptionKey:(id)arg3;
 - (BOOL)cacheThumbnail:(id)arg1 assetURL:(id)arg2;

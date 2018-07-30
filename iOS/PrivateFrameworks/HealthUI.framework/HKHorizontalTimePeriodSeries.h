@@ -16,16 +16,12 @@
     UIImage *_selectedPointMarkerImage;
     UIColor *_fillColor;
     double _lineWidth;
-    double _topInsetPercentage;
-    double _lineSpacingPercentage;
     NSArray *_enumerationValueOrdering;
     NSDictionary *_valueLabels;
 }
 
 @property(retain, nonatomic) NSDictionary *valueLabels; // @synthesize valueLabels=_valueLabels;
 @property(retain, nonatomic) NSArray *enumerationValueOrdering; // @synthesize enumerationValueOrdering=_enumerationValueOrdering;
-@property(nonatomic) double lineSpacingPercentage; // @synthesize lineSpacingPercentage=_lineSpacingPercentage;
-@property(nonatomic) double topInsetPercentage; // @synthesize topInsetPercentage=_topInsetPercentage;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) UIImage *selectedPointMarkerImage; // @synthesize selectedPointMarkerImage=_selectedPointMarkerImage;
@@ -42,7 +38,10 @@
 - (double)distanceFromPoint:(struct CGPoint)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect)arg3;
 - (_Bool)supportsMultiTouchSelection;
 - (id)coordinatesForBlock:(id)arg1 blockPath:(CDStruct_6ca94699)arg2 xAxis:(id)arg3 yAxis:(id)arg4;
-- (double)yCoordinateForLevel:(id)arg1 axisRect:(struct CGRect)arg2;
+- (double)offsetForCoordinate:(id)arg1 axisRect:(struct CGRect)arg2;
+- (double)offsetForEnumerationRect:(struct CGRect)arg1;
+- (struct CGRect)enumerationRectForLevel:(long long)arg1 axisRect:(struct CGRect)arg2;
+- (long long)_enumeratedLevelForCoordinate:(id)arg1;
 - (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect)arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform)arg4 renderContext:(struct CGContext *)arg5 secondaryRenderContext:(id)arg6;
 
 // Remaining properties

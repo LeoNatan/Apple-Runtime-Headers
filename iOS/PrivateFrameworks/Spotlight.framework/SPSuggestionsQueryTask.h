@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)searchDaemonLocalSuggestionsData:(id)arg1;
+- (unsigned int)_lexiconTokenIDForToken:(id)arg1 lexicon:(struct _LXLexicon *)arg2;
 - (void)searchDaemonSuggestionsArray:(id)arg1;
 - (void)clearInternal:(int)arg1 invalidate:(_Bool)arg2;
 - (id)unsafeSections;
@@ -35,6 +36,7 @@
 - (id)suggestionsDebugLog:(id)arg1;
 - (id)displayedText;
 - (_Bool)readyToUpdate;
+- (id)initForSession:(id)arg1 withQuery:(id)arg2;
 
 @end
 

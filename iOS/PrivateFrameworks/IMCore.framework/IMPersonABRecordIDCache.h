@@ -18,6 +18,7 @@
 + (id)sharedInstance;
 @property(nonatomic) double coalescingPeriod; // @synthesize coalescingPeriod=_coalescingPeriod;
 - (void).cxx_destruct;
+- (unsigned long long)versionNumber;
 - (id)abUniqueID;
 - (id)cachedRecordResultForQuery:(id)arg1 sequenceNumber:(long long)arg2;
 - (void)setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 sequenceNumber:(long long)arg4;

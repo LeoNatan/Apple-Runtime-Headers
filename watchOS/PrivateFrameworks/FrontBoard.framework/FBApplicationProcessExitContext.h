@@ -25,6 +25,7 @@
 @property(copy, nonatomic) FBProcessState *stateBeforeExiting; // @synthesize stateBeforeExiting=_stateBeforeExiting;
 @property(readonly, nonatomic) int terminationReason; // @synthesize terminationReason=_terminationReason;
 @property(readonly, nonatomic) unsigned int exitReason; // @synthesize exitReason=_exitReason;
+- (void).cxx_destruct;
 - (_Bool)fairPlayFailure;
 - (_Bool)consideredJetsam;
 @property(readonly, nonatomic) int terminationSignal;
@@ -36,7 +37,6 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)initWithExitReason:(unsigned int)arg1 terminationReason:(int)arg2;
 
 // Remaining properties

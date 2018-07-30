@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) MTXPCConnectionListenerProvider *connectionListenerProvider; // @synthesize connectionListenerProvider=_connectionListenerProvider;
 @property(readonly, nonatomic) MTTimerStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+- (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)nextTimerDidChange:(id)arg1;
 - (void)source:(id)arg1 didDismissTimer:(id)arg2;

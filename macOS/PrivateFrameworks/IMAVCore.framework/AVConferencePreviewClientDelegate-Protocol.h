@@ -9,6 +9,7 @@
 @protocol AVConferencePreviewClientDelegate
 
 @optional
+- (void)cameraDidBecomeInterruptedForForUniqueID:(NSString *)arg1 reason:(long long)arg2;
 - (void)cameraDidBecomeAvailableForUniqueID:(NSString *)arg1;
 - (void)didGetSnapshot:(NSData *)arg1;
 - (void)didReceiveCommError;

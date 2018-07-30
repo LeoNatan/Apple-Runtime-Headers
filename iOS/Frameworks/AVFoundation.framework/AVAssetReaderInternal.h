@@ -8,6 +8,7 @@
 
 @class AVAsset, AVWeakReference, NSError, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetReaderInternal : NSObject
 {
     AVWeakReference *weakReference;

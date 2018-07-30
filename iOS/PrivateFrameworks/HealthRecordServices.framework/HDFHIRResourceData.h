@@ -26,6 +26,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)JSONDictionaryWithError:(id *)arg1;
 - (id)initWithData:(id)arg1 sourceURL:(id)arg2 FHIRVersion:(id)arg3;
 - (id)init;
 

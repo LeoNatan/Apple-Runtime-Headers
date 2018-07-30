@@ -8,6 +8,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface AVCameraCalibrationDataInternal : NSObject
 {
     // Error parsing type: {?="columns"[3]}, name: intrinsicMatrix

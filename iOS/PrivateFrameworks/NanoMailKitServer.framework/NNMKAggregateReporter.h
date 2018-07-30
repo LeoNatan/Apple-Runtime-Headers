@@ -52,6 +52,30 @@
 + (void)reportMessageDeletionReceivedForMessageWithId:(id)arg1 fullSyncVersion:(unsigned long long)arg2 dateSynced:(id)arg3;
 + (void)reportMessageUpdateReceivedForMessageWithId:(id)arg1 fullSyncVersion:(unsigned long long)arg2 dateSynced:(id)arg3;
 + (void)reportMessageReceivedWithId:(id)arg1 willGenerateNotification:(_Bool)arg2 fullSyncVersion:(unsigned long long)arg3 dateSynced:(id)arg4;
++ (void)reportDisplayingTextMessage;
++ (void)reportDisplayingHtmlMessage;
++ (void)reportWebKitLinkTapped;
++ (void)reportWebKitZoomInteraction;
++ (void)reportWebKitRenderingProcessCrash;
++ (void)reportTextContentRenderingTime:(double)arg1;
++ (void)reportHtmlContentRenderingTime:(double)arg1;
++ (void)reportFetchResumeCloud;
++ (void)reportFetchResumeInRange;
++ (void)reportFetchResumeStandalone;
++ (void)reportFetchManualCloud;
++ (void)reportFetchManualInRange;
++ (void)reportFetchManualStandalone;
++ (void)reportStandaloneAttachmentDownloadFailed;
++ (void)reportStandaloneContentDownloadFailed;
++ (void)reportStandaloneMessageDeliveryFailed;
++ (void)reportStandaloneFetchFailed;
++ (void)reportCredentialsExpired;
++ (void)reportSyncAccountsStandaloneNotSupportCount:(unsigned long long)arg1;
++ (void)reportSyncAccountsStandalonePendingCount:(unsigned long long)arg1;
++ (void)reportSyncAccountsStandaloneActiveCount:(unsigned long long)arg1;
++ (void)reportMessageDeliveryDuration:(double)arg1;
++ (void)reportContentDownloadDuration:(double)arg1;
++ (void)reportAttachmentDownloadDuration:(double)arg1;
 
 @end
 

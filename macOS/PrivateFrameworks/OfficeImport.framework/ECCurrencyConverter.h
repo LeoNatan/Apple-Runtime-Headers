@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ECCurrencyConverter : NSObject
 {
     NSMutableDictionary *mXlToLassoCurrencyCode;
@@ -18,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)currencyConverter;
+- (void).cxx_destruct;
 - (int)xlAccountFormatFromLasso:(id)arg1;
 - (id)xlCurrencyCodeFromLasso:(id)arg1;
 - (id)lassoCurrencyCodeFromXl:(id)arg1;
-- (void)dealloc;
 - (id)lassoCurrencyCodeForDollar;
 - (void)populateDictionaries;
 

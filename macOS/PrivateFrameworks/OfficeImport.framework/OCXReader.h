@@ -8,7 +8,6 @@
 
 @class OCPZipPackage;
 
-__attribute__((visibility("hidden")))
 @interface OCXReader : OCDEncryptedReader
 {
     OCPZipPackage *mZipPackage;
@@ -16,13 +15,13 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) OCPZipPackage *zipPackage; // @synthesize zipPackage=mZipPackage;
+- (void).cxx_destruct;
 - (id)read;
 - (BOOL)start;
 - (void)restartReaderToUseDecryptedDocument;
 - (BOOL)retainDecryptorWithErrorCode:(int *)arg1;
 - (_Bool)isBinaryReader;
 - (BOOL)verifyFileFormat;
-- (void)dealloc;
 
 @end
 

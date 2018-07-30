@@ -10,7 +10,7 @@
 #import "NSFileProviderItem_Private.h"
 #import "NSSecureCoding.h"
 
-@class BRFileObjectID, NSData, NSDate, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSPersonNameComponents, NSString, NSURL;
+@class BRFileObjectID, NSArray, NSData, NSDate, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSPersonNameComponents, NSString, NSURL;
 
 @interface BRQueryItem : NSObject <NSFileProviderItem_Private, NSSecureCoding, NSCopying>
 {
@@ -174,8 +174,11 @@
 @property(readonly, getter=fp_isUbiquitous) BOOL fp_ubiquitous;
 @property(readonly, nonatomic) NSNumber *isDownloadRequested;
 @property(readonly, nonatomic) BOOL isTrashed;
+@property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
+@property(readonly, nonatomic) NSString *preformattedOwnerName;
 @property(readonly, copy) NSString *providerIdentifier;
 @property(readonly) Class superclass;
+@property(readonly, copy) NSArray *tags;
 
 @end
 

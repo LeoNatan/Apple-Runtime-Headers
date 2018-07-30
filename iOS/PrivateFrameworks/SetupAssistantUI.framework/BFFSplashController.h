@@ -45,6 +45,7 @@
 - (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)_updateTrayVisibility;
+- (void)updateBleedViewLayout;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)updateBleedColor;
 - (void)viewWillDisappear:(_Bool)arg1;

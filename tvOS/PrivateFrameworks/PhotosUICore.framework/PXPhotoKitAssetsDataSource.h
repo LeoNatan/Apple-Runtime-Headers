@@ -25,7 +25,10 @@
 - (_Bool)containsMultipleItems;
 - (_Bool)containsAnyItems;
 - (id)startingAssetReference;
+- (_Bool)hasCurationForAssetCollection:(id)arg1;
+- (id)keyAssetsForAssetCollectionAtSectionIndexPath:(struct PXSimpleIndexPath)arg1;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
+- (id)objectsInIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
 - (long long)numberOfItemsInSection:(long long)arg1;
@@ -33,6 +36,8 @@
 - (id)description;
 - (unsigned long long)identifier;
 - (id)initWithImmutablePhotosDataSource:(id)arg1 withChange:(id)arg2;
+- (id)photosGraphSuggestedContributions;
+- (_Bool)isAssetAtIndexPathPartOfCuratedSet:(struct PXSimpleIndexPath)arg1;
 
 @end
 

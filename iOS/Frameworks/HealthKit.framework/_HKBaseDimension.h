@@ -23,9 +23,11 @@ __attribute__((visibility("hidden")))
 + (id)_uniquedDimensionWithName:(id)arg1 configuration:(CDUnknownBlockType)arg2;
 + (id)nullDimension;
 + (id)titer;
++ (id)hearingSensitivity;
 + (id)equivalents;
 + (id)nonConvertibleIU;
 + (id)nonConvertibleMole;
++ (id)frequency;
 + (id)conductance;
 + (id)temperature;
 + (id)time;

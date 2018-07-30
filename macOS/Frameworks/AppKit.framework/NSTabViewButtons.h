@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property NSTabView *tabView; // @synthesize tabView=_tabView;
-- (id)_vibrancyFilter;
 - (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;

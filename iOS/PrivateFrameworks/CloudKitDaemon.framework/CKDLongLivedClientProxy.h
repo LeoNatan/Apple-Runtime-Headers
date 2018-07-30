@@ -22,6 +22,7 @@
 - (id)apsEnvironmentEntitlement;
 - (id)_clientPrefixEntitlement;
 - (id)applicationIdentifier;
+- (_Bool)hasNonLegacyShareURLEntitlement;
 - (id)serviceNameForContainerMapEntitlement;
 - (_Bool)hasDisplaysSystemAcceptPromptEntitlement;
 - (_Bool)hasParticipantPIIEntitlement;

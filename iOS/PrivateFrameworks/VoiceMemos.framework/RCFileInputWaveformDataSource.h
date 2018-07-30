@@ -14,15 +14,19 @@
     double _cachedDuration;
     float _loadingProgress;
     NSURL *_AVFileURL;
+    double _destinationBeginTime;
+    CDStruct_73a5d3ca _sourceTimeRange;
 }
 
+@property(nonatomic) CDStruct_73a5d3ca sourceTimeRange; // @synthesize sourceTimeRange=_sourceTimeRange;
+@property(nonatomic) double destinationBeginTime; // @synthesize destinationBeginTime=_destinationBeginTime;
 @property(readonly, copy, nonatomic) NSURL *AVFileURL; // @synthesize AVFileURL=_AVFileURL;
 - (void).cxx_destruct;
 - (double)duration;
 - (void)saveGeneratedWaveformIfNecessary;
 - (id)synchronouslyApproximateWaveformSegmentsByReadingCurrentFileAheadTimeRange:(CDStruct_73a5d3ca)arg1;
 - (_Bool)setPaused:(_Bool)arg1;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)startLoading;
 - (void)setLoadingProgress:(float)arg1;
 - (float)loadingProgress;

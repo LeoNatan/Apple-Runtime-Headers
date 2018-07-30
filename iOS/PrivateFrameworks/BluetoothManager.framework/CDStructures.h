@@ -15,5 +15,6 @@ typedef struct {
     _Bool _field2;
     _Bool _field3;
     _Bool _field4;
-} CDStruct_8024420c;
+    _Bool _field5;
+} CDStruct_df7f102b;
 

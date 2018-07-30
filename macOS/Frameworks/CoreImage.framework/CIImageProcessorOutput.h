@@ -14,12 +14,15 @@ __attribute__((visibility("hidden")))
     id <MTLCommandBuffer> _cmdBuffer;
 }
 
+- (id)metalContext;
+- (unsigned int)contextID;
+- (struct CGColorSpace *)workingColorSpace;
 - (_Bool)metalCommandBufferRequested;
 @property(readonly, nonatomic) id <MTLCommandBuffer> metalCommandBuffer;
 @property(readonly, nonatomic) id <MTLTexture> metalTexture;
 @property(readonly, nonatomic) void *baseAddress;
 - (void)dealloc;
--     // Error parsing type: @76@0:8^{__IOSurface=}16{Texture=(?={?=II}^v^{_cl_mem})}24B32{CGRect={CGPoint=dd}{CGSize=dd}}36^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQiB[1024{TreeCacheElement=Q^{Kernel}}]Q^{ObjectCache<CI::Node>}^{ObjectCache<CI::Node>}dd@^{RenderTask}iBBQ@@}68, name: initWithSurface:texture:allowSRGB:bounds:context:
+-     // Error parsing type: @76@0:8^{__IOSurface=}16{Texture=(?={?=II}^v^{_cl_mem})}24B32{CGRect={CGPoint=dd}{CGSize=dd}}36^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}i{atomic<bool>=AB}i^{Context}Q@@}68, name: initWithSurface:texture:allowSRGB:bounds:context:
 
 // Remaining properties
 @property(readonly, nonatomic) unsigned long long bytesPerRow;

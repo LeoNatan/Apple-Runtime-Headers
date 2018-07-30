@@ -13,7 +13,6 @@
     BOOL _avoidsEmptySelection;
     BOOL _loopsSelection;
     BOOL _userEditable;
-    int _delegateFlags;
     id <SOOrderedSetControllerDelegate> _delegate;
     CDUnknownBlockType _comparatorBlock;
     CDUnknownBlockType _filterBlock;
@@ -28,7 +27,6 @@
 @property(retain, nonatomic) NSMutableOrderedSet *mutableFilteredContents; // @synthesize mutableFilteredContents=_mutableFilteredContents;
 @property(readonly, retain, nonatomic) _NotificationObserver *resortNotificationObserver; // @synthesize resortNotificationObserver=_resortNotificationObserver;
 @property(retain, nonatomic) NSMutableOrderedSet *mutableContents; // @synthesize mutableContents=_mutableContents;
-@property(nonatomic) int delegateFlags; // @synthesize delegateFlags=_delegateFlags;
 @property(readonly, nonatomic, getter=isUserEditable) BOOL userEditable; // @synthesize userEditable=_userEditable;
 @property(nonatomic) BOOL loopsSelection; // @synthesize loopsSelection=_loopsSelection;
 @property(nonatomic) BOOL avoidsEmptySelection; // @synthesize avoidsEmptySelection=_avoidsEmptySelection;
@@ -73,6 +71,7 @@
 - (void)moveObjectFromContentsAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)removeObjectFromContentsAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inContentsAtIndex:(unsigned long long)arg2;
+- (void)restoreContents:(id)arg1;
 - (id)objectInContentsAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long countOfContents;
 @property(copy, nonatomic) NSOrderedSet *contents; // @dynamic contents;

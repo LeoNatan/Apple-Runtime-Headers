@@ -8,6 +8,7 @@
 
 @class UIImage, UIView;
 
+__attribute__((visibility("hidden")))
 @interface _SiriTVUIFloatingContentView : _UIFloatingContentView
 {
     UIView *_unfocusedShadowView;

@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OAXClient.h>
 
-__attribute__((visibility("hidden")))
 @interface WXOfficeArtClient : OAXClient
 {
 }

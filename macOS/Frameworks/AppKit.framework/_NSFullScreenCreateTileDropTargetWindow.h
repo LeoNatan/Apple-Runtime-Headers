@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 - (void)moveToSpace;
 - (void)animateRevealWithAdditionalMoveBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)animateHideWithAdditionalMoveBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (BOOL)isRevealed;
 - (BOOL)isAnimating;
 - (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2;
 - (void)setDropRect:(struct CGRect)arg1 collapsedRect:(struct CGRect)arg2;
 - (void)_setWindowTag;
 - (BOOL)_ignoreForFullScreenTransition;
-- (BOOL)_shouldAutoIncSubLevel;
 - (BOOL)canBecomeMainWindow;
 - (BOOL)canBecomeKeyWindow;
 - (BOOL)_canMiniaturize;
@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canBeSnappingTarget;
 - (BOOL)_allowsSnapping;
 - (BOOL)_shouldSnapWindowsClientSide;
-- (BOOL)_shouldAutoDecSubLevel;
 - (id)initWithController:(id)arg1;
 
 @end

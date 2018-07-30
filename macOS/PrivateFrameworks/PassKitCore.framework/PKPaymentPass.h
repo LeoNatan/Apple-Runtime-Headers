@@ -24,6 +24,7 @@
     BOOL _requiresTransferSerialNumberBasedProvisioning;
     NSString *_primaryAccountIdentifier;
     NSString *_primaryAccountNumberSuffix;
+    long long _cardType;
     NSSet *_associatedApplicationIdentifiers;
     NSSet *_associatedWebDomains;
     NSString *_sanitizedPrimaryAccountNumber;
@@ -76,9 +77,11 @@
 @property(copy, nonatomic) NSString *sanitizedPrimaryAccountNumber; // @synthesize sanitizedPrimaryAccountNumber=_sanitizedPrimaryAccountNumber;
 @property(copy, nonatomic) NSSet *associatedWebDomains; // @synthesize associatedWebDomains=_associatedWebDomains;
 @property(copy, nonatomic) NSSet *associatedApplicationIdentifiers; // @synthesize associatedApplicationIdentifiers=_associatedApplicationIdentifiers;
+@property(nonatomic) long long cardType; // @synthesize cardType=_cardType;
 @property(copy, nonatomic) NSString *primaryAccountNumberSuffix; // @synthesize primaryAccountNumberSuffix=_primaryAccountNumberSuffix;
 @property(copy, nonatomic) NSString *primaryAccountIdentifier; // @synthesize primaryAccountIdentifier=_primaryAccountIdentifier;
 - (void).cxx_destruct;
+- (BOOL)shouldSuppressNoChargeAmount;
 - (id)sortedPaymentApplications:(id)arg1 ascending:(BOOL)arg2;
 - (id)_launchURLForPassAction:(id)arg1;
 - (id)addValueURL;
@@ -95,6 +98,7 @@
 @property(readonly, nonatomic) unsigned long long activationState;
 - (unsigned long long)_activationStateForApplicationState:(long long)arg1;
 - (BOOL)hasContactlessDevicePaymentApplicationsAvailable;
+- (id)deviceContactlessPaymentApplications;
 - (long long)effectiveContactlessPaymentApplicationState;
 - (id)sanitizedDeviceAccountNumber;
 @property(readonly) __weak NSString *deviceAccountNumberSuffix;

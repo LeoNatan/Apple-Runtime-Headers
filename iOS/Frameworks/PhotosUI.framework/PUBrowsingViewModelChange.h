@@ -23,8 +23,10 @@
     _Bool _secondScreenSizeDidChange;
     _Bool _chromeVisibilityDidChange;
     _Bool _presentingOverOneUpDidChange;
+    _Bool _reviewScreenBarsModelDidChange;
 }
 
+@property(nonatomic, setter=_setReviewScreenBarsModelDidChange:) _Bool reviewScreenBarsModelDidChange; // @synthesize reviewScreenBarsModelDidChange=_reviewScreenBarsModelDidChange;
 @property(nonatomic, setter=_setPresentingOverOneUpDidChange:) _Bool presentingOverOneUpDidChange; // @synthesize presentingOverOneUpDidChange=_presentingOverOneUpDidChange;
 @property(nonatomic, setter=_setChromeVisibilityDidChange:) _Bool chromeVisibilityDidChange; // @synthesize chromeVisibilityDidChange=_chromeVisibilityDidChange;
 @property(nonatomic, setter=_setSecondScreenSizeDidChange:) _Bool secondScreenSizeDidChange; // @synthesize secondScreenSizeDidChange=_secondScreenSizeDidChange;

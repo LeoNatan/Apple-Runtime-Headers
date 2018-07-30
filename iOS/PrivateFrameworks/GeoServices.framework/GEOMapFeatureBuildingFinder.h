@@ -6,12 +6,17 @@
 
 #import <GeoServices/GEOMapFeatureAccessFinder.h>
 
+@class GEOTileLoader;
+
 __attribute__((visibility("hidden")))
 @interface GEOMapFeatureBuildingFinder : GEOMapFeatureAccessFinder
 {
+    GEOTileLoader *_tileLoader;
 }
 
+- (void).cxx_destruct;
 - (id)findBuildingsNear:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 handler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)initWithTileLoader:(id)arg1;
 
 @end
 

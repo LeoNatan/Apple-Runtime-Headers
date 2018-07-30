@@ -120,6 +120,10 @@
 - (void)showAllSettings:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)refreshReceiveRelayCallsSettingsAnimated:(_Bool)arg1;
 - (void)showReceiveRelayCallsSettings:(_Bool)arg1 animated:(_Bool)arg2;
+- (id)callerIDFooterText;
+- (void)refreshiMessageCallerIDExtraText:(_Bool)arg1;
+- (_Bool)shouldShowExtraTextForiMessageCallerID;
+- (_Bool)isiMessageCallerIDNonDefault;
 - (_Bool)shouldShowReceiveThumperCalls;
 - (_Bool)shouldShowReceiveRelayCalls;
 - (_Bool)shouldShowICSSettingsBundleSpecifiers;

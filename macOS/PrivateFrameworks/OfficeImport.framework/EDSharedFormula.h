@@ -8,7 +8,6 @@
 
 @class EDReference;
 
-__attribute__((visibility("hidden")))
 @interface EDSharedFormula : EDFormula
 {
     _Bool _forceNonBaseFormula;
@@ -23,13 +22,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int rowBaseOrOffset; // @synthesize rowBaseOrOffset=_rowBaseOrOffset;
 @property(nonatomic) _Bool forceNonBaseFormula; // @synthesize forceNonBaseFormula=_forceNonBaseFormula;
 @property(nonatomic) unsigned long long baseFormulaIndex; // @synthesize baseFormulaIndex=_baseFormulaIndex;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isSharedFormula;
 - (id)warningWithRowBlocks:(id)arg1;
 - (_Bool)isBaseFormula;
 - (id)baseFormulaWithRowBlocks:(id)arg1;
 - (_Bool)convertTokensToShared;
-- (void)dealloc;
 - (id)init;
 - (id)initWithFormula:(id)arg1;
 - (void)updateBaseFormulaRangeWithRow:(int)arg1 column:(int)arg2;

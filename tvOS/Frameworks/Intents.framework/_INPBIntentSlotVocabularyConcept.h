@@ -7,34 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentSlotVocabularyConcept.h"
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBIntentSlotVocabularyConcept : PBCodable <NSCopying>
+@interface _INPBIntentSlotVocabularyConcept : PBCodable <_INPBIntentSlotVocabularyConcept, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSString *_identifier;
-    NSMutableArray *_synonyms;
+    NSArray *_synonyms;
 }
 
 + (Class)synonymsType;
-@property(retain, nonatomic) NSMutableArray *synonyms; // @synthesize synonyms=_synonyms;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSArray *synonyms; // @synthesize synonyms=_synonyms;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)synonymsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)synonymsCount;
+@property(readonly, nonatomic) unsigned long long synonymsCount;
 - (void)addSynonyms:(id)arg1;
 - (void)clearSynonyms;
 @property(readonly, nonatomic) _Bool hasIdentifier;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

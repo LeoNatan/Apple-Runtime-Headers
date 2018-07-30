@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (void)renderLabelsWithWedgeLayoutInfo:(id)arg1 paragraphStyle:(id)arg2 context:(struct CGContext *)arg3;
 - (void)p_renderIntoContext:(struct CGContext *)arg1 visible:(struct CGRect)arg2;
 - (struct CGLayer *)p_newPreRenderedImageWithContext:(struct CGContext *)arg1 wedgePath:(struct CGPath *)arg2 fullWedgePath:(struct CGPath *)arg3 fill:(id)arg4 stroke:(id)arg5 shadow:(id)arg6 outUserSpaceLayerBounds:(struct CGRect *)arg7;
-- (struct CGLayer *)p_newCGLayerForUserSpaceRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2 outUserSpaceLayerBounds:(struct CGRect *)arg3;
 - (void)p_drawLinePathsIntoContext:(struct CGContext *)arg1 linePath:(struct CGPath *)arg2 tailPath:(struct CGPath *)arg3 headPath:(struct CGPath *)arg4 fillTail:(_Bool)arg5 fillHead:(_Bool)arg6 stroke:(id)arg7;
 - (void)p_drawWedgePathIntoContext:(struct CGContext *)arg1 path:(struct CGPath *)arg2 fill:(id)arg3 stroke:(id)arg4 opacity:(double)arg5 withinBounds:(struct CGRect)arg6;
 - (void)p_drawOnlyShadow:(id)arg1 forImage:(struct CGLayer *)arg2 intoRect:(struct CGRect)arg3 intoContext:(struct CGContext *)arg4 atViewScale:(double)arg5 usingBlendMode:(int)arg6 opacity:(double)arg7;

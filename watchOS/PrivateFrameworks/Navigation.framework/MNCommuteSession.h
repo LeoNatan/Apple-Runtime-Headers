@@ -11,11 +11,9 @@
 
 @class MNCommuteDestinationUpdater, MNLocation, MNLocationHistory, MNNavigationTraceManager, MNObserverHashTable<MNCommuteSessionObserver>, MNSuggestionsManager, NSArray, NSMutableDictionary, NSString, NSTimer;
 
-__attribute__((visibility("hidden")))
 @interface MNCommuteSession : NSObject <MNCommuteDestinationUpdaterDelegate, MNCommuteDestinationObserver>
 {
     MNObserverHashTable<MNCommuteSessionObserver> *_observers;
-    NSTimer *_stateChangeTimer;
     NSMutableDictionary *_suggestions;
     NSArray *_rankedDestinations;
     id _rankedDestinationsSync;
@@ -28,8 +26,10 @@ __attribute__((visibility("hidden")))
     MNSuggestionsManager *_suggestionsManager;
     unsigned int _commuteSessionState;
     MNCommuteDestinationUpdater *_comparisonDestinationStartTime;
+    unsigned int _requestedCommuteSessionState;
 }
 
+@property(nonatomic) unsigned int requestedCommuteSessionState; // @synthesize requestedCommuteSessionState=_requestedCommuteSessionState;
 @property(nonatomic) __weak MNCommuteDestinationUpdater *comparisonDestinationStartTime; // @synthesize comparisonDestinationStartTime=_comparisonDestinationStartTime;
 @property(readonly, nonatomic) MNNavigationTraceManager *traceManager; // @synthesize traceManager=_traceManager;
 @property(nonatomic) unsigned int commuteSessionState; // @synthesize commuteSessionState=_commuteSessionState;

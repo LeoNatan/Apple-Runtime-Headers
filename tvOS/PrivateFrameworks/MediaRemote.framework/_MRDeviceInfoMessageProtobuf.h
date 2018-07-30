@@ -33,6 +33,7 @@
     NSString *_uniqueIdentifier;
     _Bool _allowsPairing;
     _Bool _connected;
+    _Bool _isGroupLeader;
     _Bool _isProxyGroupPlayer;
     _Bool _supportsACL;
     _Bool _supportsExtendedMotion;
@@ -47,6 +48,7 @@
         unsigned int sharedQueueVersion:1;
         unsigned int allowsPairing:1;
         unsigned int connected:1;
+        unsigned int isGroupLeader:1;
         unsigned int isProxyGroupPlayer:1;
         unsigned int supportsACL:1;
         unsigned int supportsExtendedMotion:1;
@@ -57,6 +59,7 @@
 }
 
 + (Class)groupedDevicesType;
+@property(nonatomic) _Bool isGroupLeader; // @synthesize isGroupLeader=_isGroupLeader;
 @property(retain, nonatomic) NSMutableArray *groupedDevices; // @synthesize groupedDevices=_groupedDevices;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) NSString *groupUID; // @synthesize groupUID=_groupUID;
@@ -93,6 +96,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsGroupLeader;
 - (id)groupedDevicesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)groupedDevicesCount;
 - (void)addGroupedDevices:(id)arg1;

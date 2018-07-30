@@ -27,11 +27,13 @@
 - (BOOL)validateFullRecord;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
+- (void)setPersonScopedIdentifier:(id)arg1;
+- (id)personScopedIdentifier;
 - (BOOL)supportsDirectDeletion;
 - (BOOL)supportsDeletion;
 - (void)fillMissingCKAssetProperties:(id)arg1 withCKRecord:(id)arg2;
-- (id)initWithCKRecord:(id)arg1 ckAssetProperties:(id)arg2;
-- (void)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 tempCKAssetURL:(id)arg3;
+- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
+- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
 
 @end
 

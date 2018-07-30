@@ -7,30 +7,25 @@
 #import "NSObject.h"
 
 #import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSData, NSString;
 
-@interface UNSRemoteNotificationClient : NSObject <NSCoding>
+@interface UNSRemoteNotificationClient : NSObject <NSCoding, NSSecureCoding>
 {
     NSString *_tokenIdentifier;
     NSString *_environment;
     NSData *_lastKnownDeviceToken;
-    _Bool _wantsPush;
-    NSString *_pushDisabledReason;
 }
 
-+ (id)validEnvironmentFromEnvironment:(id)arg1;
++ (_Bool)supportsSecureCoding;
 + (void)initialize;
-@property(nonatomic, getter=doesWantPush) _Bool wantsPush; // @synthesize wantsPush=_wantsPush;
-@property(retain, nonatomic) NSString *pushDisabledReason; // @synthesize pushDisabledReason=_pushDisabledReason;
-@property(retain, nonatomic) NSData *lastKnownDeviceToken; // @synthesize lastKnownDeviceToken=_lastKnownDeviceToken;
-@property(retain, nonatomic) NSString *environment; // @synthesize environment=_environment;
-@property(readonly, retain, nonatomic) NSString *tokenIdentifier; // @synthesize tokenIdentifier=_tokenIdentifier;
+@property(copy, nonatomic) NSData *lastKnownDeviceToken; // @synthesize lastKnownDeviceToken=_lastKnownDeviceToken;
+@property(copy, nonatomic) NSString *environment; // @synthesize environment=_environment;
+@property(copy, nonatomic) NSString *tokenIdentifier; // @synthesize tokenIdentifier=_tokenIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (_Bool)wantsPushWithCoder:(id)arg1;
-- (id)init;
 
 @end
 

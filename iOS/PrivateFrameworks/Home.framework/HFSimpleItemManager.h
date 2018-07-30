@@ -8,17 +8,21 @@
 
 @interface HFSimpleItemManager : HFItemManager
 {
+    CDUnknownBlockType _homeCreator;
+    CDUnknownBlockType _itemModuleCreator;
+    CDUnknownBlockType _itemProviderCreator;
     CDUnknownBlockType _itemComparator;
-    CDUnknownBlockType _itemProvidersCreator;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType itemProvidersCreator; // @synthesize itemProvidersCreator=_itemProvidersCreator;
 @property(copy, nonatomic) CDUnknownBlockType itemComparator; // @synthesize itemComparator=_itemComparator;
+@property(copy, nonatomic) CDUnknownBlockType itemProviderCreator; // @synthesize itemProviderCreator=_itemProviderCreator;
+@property(copy, nonatomic) CDUnknownBlockType itemModuleCreator; // @synthesize itemModuleCreator=_itemModuleCreator;
+@property(copy, nonatomic) CDUnknownBlockType homeCreator; // @synthesize homeCreator=_homeCreator;
 - (void).cxx_destruct;
+- (id)_homeFuture;
 - (CDUnknownBlockType)_comparatorForSectionIdentifier:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
-- (id)initWithDelegate:(id)arg1;
-- (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
+- (id)_buildItemModulesForHome:(id)arg1;
 - (id)initWithDelegate:(id)arg1 itemProvidersCreator:(CDUnknownBlockType)arg2;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2 itemProvidersCreator:(CDUnknownBlockType)arg3;
 

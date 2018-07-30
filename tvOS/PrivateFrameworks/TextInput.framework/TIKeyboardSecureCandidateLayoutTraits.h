@@ -30,12 +30,12 @@
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *headerTraitsInOnlyLine; // @synthesize headerTraitsInOnlyLine=_headerTraitsInOnlyLine;
 @property(nonatomic) unsigned int headerInliningBehavior; // @synthesize headerInliningBehavior=_headerInliningBehavior;
 @property(nonatomic) _Bool forceSingleLineLayout; // @synthesize forceSingleLineLayout=_forceSingleLineLayout;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 @end
 

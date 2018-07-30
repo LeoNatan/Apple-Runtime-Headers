@@ -41,6 +41,7 @@
 - (void)registerForConfigUpdateNotifications;
 - (void)reloadTopLevelNodes;
 - (id)copyLegacyLoggingDefaultsConvertedToNamespaces;
+- (_Bool)shouldProcessNamespace:(id)arg1;
 - (void)configureRootConfigurationNode;
 - (void)configureUserNotificationNode;
 - (void)configureStandardOutNode;

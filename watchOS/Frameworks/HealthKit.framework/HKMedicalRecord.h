@@ -36,16 +36,12 @@
 @property(readonly, copy, nonatomic) NSString *note; // @synthesize note=_note;
 - (void).cxx_destruct;
 - (id)_validateConfiguration;
-- (id)_redactedCopyForEnteredInError;
-- (id)_redactedCopyForEnteredInErrorWithConfig:(CDUnknownBlockType)arg1;
 - (void)_setSortDate:(id)arg1;
 - (void)_setExtractionVersion:(int)arg1;
 - (void)_setFHIRIdentifier:(id)arg1;
 - (void)_setModifiedDate:(id)arg1;
 - (void)_setEnteredInError:(_Bool)arg1;
 - (void)_setNote:(id)arg1;
-- (void)_setEndDate:(id)arg1;
-- (void)_setStartDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

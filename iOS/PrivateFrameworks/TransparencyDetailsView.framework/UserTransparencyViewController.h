@@ -6,11 +6,11 @@
 
 #import "UIViewController.h"
 
-#import "UIWebViewDelegate.h"
+#import "WKNavigationDelegate.h"
 
-@class ADUserTransparencyResponse, NSString, UIActivityIndicatorView, UILabel, UINavigationBar, UIWebView;
+@class ADUserTransparencyResponse, NSString, UIActivityIndicatorView, UILabel, UINavigationBar, WKWebView;
 
-@interface UserTransparencyViewController : UIViewController <UIWebViewDelegate>
+@interface UserTransparencyViewController : UIViewController <WKNavigationDelegate>
 {
     UIActivityIndicatorView *activityIndicator;
     id <UserTransparencyViewControllerDelegate> _delegate;
@@ -23,11 +23,11 @@
     UILabel *_errorLabel;
     double _statusBarOffset;
     UINavigationBar *_transparencyNavBar;
-    UIWebView *_myUserPrivacyWebView;
+    WKWebView *_myUserPrivacyWebView;
 }
 
 @property(nonatomic) _Bool isiPad; // @synthesize isiPad=_isiPad;
-@property(retain, nonatomic) UIWebView *myUserPrivacyWebView; // @synthesize myUserPrivacyWebView=_myUserPrivacyWebView;
+@property(retain, nonatomic) WKWebView *myUserPrivacyWebView; // @synthesize myUserPrivacyWebView=_myUserPrivacyWebView;
 @property(retain, nonatomic) UINavigationBar *transparencyNavBar; // @synthesize transparencyNavBar=_transparencyNavBar;
 @property(nonatomic) double statusBarOffset; // @synthesize statusBarOffset=_statusBarOffset;
 @property(retain, nonatomic) UILabel *errorLabel; // @synthesize errorLabel=_errorLabel;
@@ -41,13 +41,14 @@
 - (id)bundleForTransparencyDetailsViewFramework;
 - (id)normalizeChineseLanguage:(id)arg1;
 - (void)_reportUserTransparencyViewControllerEventWithType:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)loadWebView;
 - (void)immediatelyLoadViewControllerBeforeNetworkRequest;
 - (void)_closeViewController:(id)arg1;
 - (void)_hideErrorMessage;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (void)webViewDidFinishLoad:(id)arg1;
+- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)_showErrorMessage:(id)arg1;
 - (void)errorDelegate;
 - (void)presentViewDelegate;

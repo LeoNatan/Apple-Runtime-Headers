@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface EXPane : NSObject
 {
 }
 
 + (id)edPaneFromXMLPaneElement:(struct _xmlNode *)arg1;
-+ (void)initialize;
++ (id)paneStateEnumMap;
++ (id)activePaneTypeEnumMap;
 + (int)edActivePaneEnumFromString:(id)arg1;
 
 @end

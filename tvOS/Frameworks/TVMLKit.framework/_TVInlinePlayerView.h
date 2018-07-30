@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_makePlayerViewControllerWithPlayer:(id)arg1;
-+ (_Bool)_usesAVKit;
 @property(nonatomic) _Bool playerViewEnabled; // @synthesize playerViewEnabled=_playerViewEnabled;
 @property(nonatomic) _Bool usesFocusedState; // @synthesize usesFocusedState=_usesFocusedState;
 @property(retain, nonatomic) UIView *playerView; // @synthesize playerView=_playerView;

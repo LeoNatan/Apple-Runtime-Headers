@@ -39,6 +39,7 @@
 - (id)initWithConnection:(id)arg1;
 
 // Remaining properties
+@property(copy) NSDictionary *_userInfo; // @dynamic _userInfo;
 @property(readonly) NSDictionary *bundleInfoDictionary;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;

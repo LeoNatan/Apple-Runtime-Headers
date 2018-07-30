@@ -28,7 +28,7 @@
 }
 
 + (id)_currentCalendar;
-@property(readonly, retain, nonatomic) NSDate *timeZoneRelativeStartDate; // @synthesize timeZoneRelativeStartDate=_timeZoneRelativeStartDate;
+@property(readonly, nonatomic) NSDate *timeZoneRelativeStartDate; // @synthesize timeZoneRelativeStartDate=_timeZoneRelativeStartDate;
 @property(nonatomic) _Bool isTimestamp; // @synthesize isTimestamp=_isTimestamp;
 @property(nonatomic) long long labelType; // @synthesize labelType=_labelType;
 @property(nonatomic) __weak id <BSUIDateLabelDelegate> delegate; // @synthesize delegate=_delegate;

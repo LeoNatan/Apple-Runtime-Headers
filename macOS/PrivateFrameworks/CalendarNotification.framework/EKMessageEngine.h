@@ -10,7 +10,6 @@
 
 @interface EKMessageEngine : EKNotificationEngine
 {
-    BOOL _hasNeverPostedBefore;
     NSMutableDictionary *_allMessages;
     unsigned long long _calendarBadgeCount;
     unsigned long long _reminderBadgeCount;
@@ -25,7 +24,6 @@
 @property unsigned long long reminderBadgeCount; // @synthesize reminderBadgeCount=_reminderBadgeCount;
 @property unsigned long long calendarBadgeCount; // @synthesize calendarBadgeCount=_calendarBadgeCount;
 @property(retain) NSMutableDictionary *allMessages; // @synthesize allMessages=_allMessages;
-@property BOOL hasNeverPostedBefore; // @synthesize hasNeverPostedBefore=_hasNeverPostedBefore;
 - (void).cxx_destruct;
 - (void)_performClickingActionForMessage:(id)arg1;
 - (void)_performActionForMessage:(id)arg1;
@@ -70,7 +68,6 @@
 - (BOOL)_handlesDismissalForType:(id)arg1;
 - (id)_interestingNotifications;
 - (void)_performAction;
-- (id)initWithEventStore:(id)arg1 actionQueue:(id)arg2 timerQueue:(id)arg3 notificationDelegate:(id)arg4;
 
 @end
 

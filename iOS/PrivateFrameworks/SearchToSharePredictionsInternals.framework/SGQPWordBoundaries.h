@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface SGQPWordBoundaries : NSObject
 {
     struct vector<bool, std::__1::allocator<bool>> _left;

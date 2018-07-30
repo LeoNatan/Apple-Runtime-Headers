@@ -12,6 +12,7 @@
 
 @class MCQuestionPane, NSString, UILabel, UITableView, UITextField;
 
+__attribute__((visibility("hidden")))
 @interface MCQuestionView : UIView <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     UILabel *_labelAboveField;

@@ -12,11 +12,13 @@ __attribute__((visibility("hidden")))
 @interface PrivateBrowsingExplanationBanner : Banner
 {
     RolloverImageButton *_closeButton;
+    NSTextField *_titleText;
     NSTextField *_descriptionText;
 }
 
 + (int)bannerSortOrder;
 @property(nonatomic) __weak NSTextField *descriptionText; // @synthesize descriptionText=_descriptionText;
+@property(nonatomic) __weak NSTextField *titleText; // @synthesize titleText=_titleText;
 @property(nonatomic) __weak RolloverImageButton *closeButton; // @synthesize closeButton=_closeButton;
 - (void).cxx_destruct;
 - (id)bannerNibName;

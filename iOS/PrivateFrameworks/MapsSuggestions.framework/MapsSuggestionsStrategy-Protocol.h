@@ -17,8 +17,10 @@
 - (void)addImprover:(id <MapsSuggestionsImprover>)arg1;
 - (void)removeAllFilters;
 - (void)removeFilter:(id <MapsSuggestionsFilter>)arg1;
-- (void)addFilter:(id <MapsSuggestionsFilter>)arg1;
-- (_Bool)shouldKeepEntry:(MapsSuggestionsEntry *)arg1;
+- (void)addPostFilter:(id <MapsSuggestionsFilter>)arg1;
+- (void)addPreFilter:(id <MapsSuggestionsFilter>)arg1;
+- (_Bool)postFiltersKept:(MapsSuggestionsEntry *)arg1;
+- (_Bool)preFiltersKept:(MapsSuggestionsEntry *)arg1;
 - (struct NSArray *)topSuggestionsWithSourceEntries:(struct NSDictionary *)arg1 error:(id *)arg2;
 @end
 

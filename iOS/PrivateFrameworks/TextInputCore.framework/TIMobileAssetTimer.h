@@ -15,6 +15,7 @@
 
 + (id)nextFireDateForDate:(id)arg1;
 + (id)scheduledTimerWithExpirationHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithExpirationHandler:(CDUnknownBlockType)arg1;
 

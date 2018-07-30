@@ -16,11 +16,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_prefersButtonTitleNaturalBaseline;
 - (BOOL)_prefersMoreHorizontalContentIndicators;
 - (BOOL)_optionsMustContainTintColor;
-- (id)_appearanceForStandardTableView;
-- (id)_appearanceForSourceListTableView;
 - (id)_bundleResourceName;
-- (id)name;
-- (BOOL)_backstoppedByDefaultAppearance;
 
 @end
 

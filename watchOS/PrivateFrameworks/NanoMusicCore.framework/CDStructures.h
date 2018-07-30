@@ -10,8 +10,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CGSize {
-    float _field1;
-    float _field2;
+struct _NSRange {
+    unsigned int _field1;
+    unsigned int _field2;
 };
 

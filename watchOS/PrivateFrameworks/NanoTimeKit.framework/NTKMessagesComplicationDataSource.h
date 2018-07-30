@@ -13,8 +13,8 @@
     CKNanoComplicationDataSource *_messagesDataSourceProxy;
 }
 
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) CKNanoComplicationDataSource *messagesDataSourceProxy; // @synthesize messagesDataSourceProxy=_messagesDataSourceProxy;
 - (void).cxx_destruct;
 - (void)_timelineInvalidated;
@@ -27,7 +27,7 @@
 - (id)currentSwitcherTemplate;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 @end
 

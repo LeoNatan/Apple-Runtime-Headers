@@ -37,8 +37,8 @@ struct CGSize {
 };
 
 struct CLLocationCoordinate2D {
-    double _field1;
-    double _field2;
+    double latitude;
+    double longitude;
 };
 
 struct NSObject {
@@ -67,6 +67,39 @@ struct PLImageTableEntryFooter_s {
     unsigned int _field2;
     unsigned int _field3;
     int _field4;
+};
+
+struct PLPrimaryDataStoreKeyStrategy_FilePath_KeyStruct {
+    unsigned int strategy:8;
+    unsigned int relation:3;
+};
+
+struct PLPrimaryDataStore_CPLKeyStrategy_KeyStruct {
+    unsigned int strategy:8;
+    unsigned int isMutation:1;
+    unsigned int isMasterThumb:1;
+    unsigned int cplType:5;
+    unsigned int fileType:2;
+};
+
+struct PLPrimaryDataStore_DCIMCaptureStrategy_KeyStruct {
+    unsigned int strategy:8;
+    unsigned int directoryNumber:10;
+    unsigned int fileNumber:14;
+    unsigned int fileType:7;
+    unsigned int isMasterThumb:1;
+};
+
+struct PLSharedStreamsDataStoreKeyStruct {
+    unsigned int resourceType:8;
+    char albumCloudGUID[37];
+    char cloudPersonID[11];
+    char filename[13];
+};
+
+struct PLThumbnailDataStoreKeyStruct {
+    unsigned int type:3;
+    unsigned int index:29;
 };
 
 struct _NSRange {
@@ -147,6 +180,11 @@ typedef struct {
 } CDStruct_627e0f85;
 
 typedef struct CDStruct_183601bc;
+
+typedef struct {
+    CDStruct_1b6d18a9 _field1;
+    CDStruct_1b6d18a9 _field2;
+} CDStruct_5c5366e1;
 
 typedef struct {
     int _field1;

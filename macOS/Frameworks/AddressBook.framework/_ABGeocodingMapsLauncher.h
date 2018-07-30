@@ -8,7 +8,6 @@
 
 @class CLGeocoder;
 
-__attribute__((visibility("hidden")))
 @interface _ABGeocodingMapsLauncher : ABMapsLauncher
 {
     CLGeocoder *_geocoder;

@@ -20,10 +20,10 @@
 @property(readonly, nonatomic) NSArray *regions; // @synthesize regions=_regions;
 @property(readonly, nonatomic) NSArray *inputModeLevels; // @synthesize inputModeLevels=_inputModeLevels;
 @property(readonly, nonatomic) NSArray *types; // @synthesize types=_types;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithTypes:(id)arg1 inputModeLevels:(id)arg2 regions:(id)arg3;
 
 @end

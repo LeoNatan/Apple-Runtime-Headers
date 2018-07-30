@@ -53,6 +53,10 @@
 @property(readonly) BOOL passesAllAccess; // @synthesize passesAllAccess=_passesAllAccess;
 - (void).cxx_destruct;
 - (void)_probeEntitlementsWithConnection:(id)arg1;
+- (id)_stringValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask *)arg2;
+- (id)_arrayValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask *)arg2;
+- (BOOL)_boolValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask *)arg2;
+- (void *)_copyValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask *)arg2;
 - (BOOL)isEntitledForMerchantSession:(id)arg1;
 - (BOOL)isEntitledForPaymentRequest:(id)arg1;
 - (BOOL)supportsWebPayments;

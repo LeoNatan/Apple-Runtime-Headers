@@ -6,20 +6,28 @@
 
 #import "NSObject.h"
 
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+
 @interface CSAudioFileReader : NSObject
 {
     struct OpaqueExtAudioFile *_fFile;
-    short *_deinterleavedData;
-    long long _frameSize;
-    unsigned int _sampleByteDepth;
-    unsigned int _numChannels;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_source> *_audioFeedTimer;
+    double _bufferDuration;
+    struct AudioStreamBasicDescription _outASBD;
+    id <CSAudioFileReaderDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) unsigned int numChannels; // @synthesize numChannels=_numChannels;
+@property(nonatomic) __weak id <CSAudioFileReaderDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)close;
 - (id)readSamplesFromChannelIdx:(unsigned int)arg1;
-- (_Bool)loadAllSamples;
 - (void)dealloc;
+- (void)stopRecording;
+- (void)_readAudioBufferAndFeed;
+- (_Bool)startRecording;
+- (_Bool)prepareRecording:(id)arg1;
+- (_Bool)setRecordBufferDuration:(double)arg1;
 - (id)initWithURL:(id)arg1;
 
 @end

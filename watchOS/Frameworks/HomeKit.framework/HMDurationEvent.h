@@ -18,6 +18,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_updateDuration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -25,8 +27,6 @@
 - (id)_serializeForAdd;
 - (void)_handleEventUpdatedNotification:(id)arg1;
 - (void)setOffset:(double)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithDict:(id)arg1 duration:(double)arg2;
 - (id)initWithDuration:(double)arg1;
 

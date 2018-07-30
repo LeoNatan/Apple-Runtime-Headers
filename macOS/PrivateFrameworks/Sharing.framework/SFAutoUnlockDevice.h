@@ -19,6 +19,8 @@
     BOOL _supportsAlwaysDirect;
     BOOL _supportsAuthPrompts;
     BOOL _supportsEncryption;
+    BOOL _supportsAdvertisingUnlocked;
+    BOOL _supportsConnectionCache;
     NSString *_modelDescription;
     NSUUID *_bluetoothID;
     NSUUID *_proxyBluetoothID;
@@ -30,6 +32,8 @@
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) long long majorOSVersion; // @synthesize majorOSVersion=_majorOSVersion;
+@property(nonatomic) BOOL supportsConnectionCache; // @synthesize supportsConnectionCache=_supportsConnectionCache;
+@property(nonatomic) BOOL supportsAdvertisingUnlocked; // @synthesize supportsAdvertisingUnlocked=_supportsAdvertisingUnlocked;
 @property(nonatomic) BOOL supportsEncryption; // @synthesize supportsEncryption=_supportsEncryption;
 @property(nonatomic) BOOL supportsAuthPrompts; // @synthesize supportsAuthPrompts=_supportsAuthPrompts;
 @property(nonatomic) BOOL supportsAlwaysDirect; // @synthesize supportsAlwaysDirect=_supportsAlwaysDirect;

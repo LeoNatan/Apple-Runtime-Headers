@@ -23,7 +23,7 @@
 - (BOOL)isAvailableSystemWide;
 - (BOOL)supportsEnumeration;
 - (id)bundleURL;
-- (id)_initWithIdentifier:(id)arg1 domain:(id)arg2 localizedName:(id)arg3 storageURL:(id)arg4 supportedFileTypes:(id)arg5 type:(long long)arg6 bundleURL:(id)arg7 supportsEnumeration:(BOOL)arg8 isAvailableSystemWide:(BOOL)arg9 isReadOnly:(BOOL)arg10 isEnabled:(BOOL)arg11 containingBundleIdentifier:(id)arg12;
+- (id)_initWithIdentifier:(id)arg1 domain:(id)arg2 localizedName:(id)arg3 storageURL:(id)arg4 supportedFileTypes:(id)arg5 type:(long long)arg6 bundleURL:(id)arg7 supportsEnumeration:(BOOL)arg8 isAvailableSystemWide:(BOOL)arg9 isReadOnly:(BOOL)arg10 isEnabled:(BOOL)arg11 containingBundleIdentifier:(id)arg12 usesUniqueItemIdentifiers:(BOOL)arg13;
 - (id)initWithProperties:(id)arg1 domain:(id)arg2;
 
 @end

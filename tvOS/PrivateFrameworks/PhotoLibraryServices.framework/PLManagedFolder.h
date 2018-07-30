@@ -7,16 +7,19 @@
 #import <PhotoLibraryServices/PLGenericAlbum.h>
 
 #import "PLAlbumContainer.h"
+#import "PLCloudDeletable.h"
 
 @class NSOrderedSet, NSString;
 
-@interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer>
+@interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer, PLCloudDeletable>
 {
     _Bool _needsPersistenceUpdate;
     _Bool _needsFixedOrderKeysComplianceUpdate;
 }
 
 + (id)validKindsForPersistence;
++ (id)cloudUUIDKeyForDeletion;
++ (long long)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)localizedRecoveredTitle;
 + (id)childKeyForOrdering;
 + (id)entityInManagedObjectContext:(id)arg1;
@@ -70,6 +73,8 @@
 - (unsigned long long)approximateCount;
 - (id)mutableAssets;
 - (id)assets;
+@property(readonly, copy) NSString *cloudUUIDForDeletion;
+@property(readonly) long long cloudDeletionType;
 - (void)prepareForDeletion;
 - (void)didSave;
 - (void)willSave;
@@ -78,6 +83,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSOrderedSet *childCollections; // @dynamic childCollections;
+@property(nonatomic) short cloudDeleteState;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

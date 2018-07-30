@@ -24,11 +24,13 @@
 + (id)entitlementsForCurrentTaskWithError:(id *)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *entitlementValues; // @synthesize entitlementValues=_entitlementValues;
 - (void).cxx_destruct;
+- (id)description;
 - (id)_typesFromIdentifierArray:(id)arg1;
 - (id)typesForReadAuthorizationOverride;
 - (id)typesForWriteAuthorizationOverride;
 - (id)valueForEntitlement:(id)arg1;
 - (id)stringForEntitlement:(id)arg1;
+- (_Bool)hasAccessEntitlementWithIdentifer:(id)arg1;
 - (_Bool)hasEntitlement:(id)arg1;
 - (id)applicationIdentifier;
 - (id)_initWithEntitlementValues:(id)arg1;

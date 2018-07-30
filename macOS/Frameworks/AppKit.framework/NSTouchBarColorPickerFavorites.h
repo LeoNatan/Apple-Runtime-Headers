@@ -12,6 +12,7 @@
 
 @class NSArray, NSCollectionView, NSColor, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSTouchBarColorPickerFavorites : NSControl <NSCollectionViewDelegate, NSCollectionViewDataSource, NSTouchBarColorPickerView>
 {
     NSCollectionView *_collectionView;

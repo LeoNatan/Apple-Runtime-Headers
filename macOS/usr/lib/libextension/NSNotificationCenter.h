@@ -29,6 +29,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)_initWithCFNotificationCenter:(struct __CFNotificationCenter *)arg1;
 
 @end
 

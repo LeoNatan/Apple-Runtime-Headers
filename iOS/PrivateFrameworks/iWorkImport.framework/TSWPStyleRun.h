@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long runLength; // @synthesize runLength=_runLength;
 @property(nonatomic) unsigned long long charIndex; // @synthesize charIndex=_charIndex;
 - (void).cxx_destruct;
+- (_Bool)coalesceWith:(id)arg1;
 
 @end
 

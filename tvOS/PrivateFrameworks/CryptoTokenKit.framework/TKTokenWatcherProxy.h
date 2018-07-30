@@ -10,6 +10,7 @@
 
 @class TKTokenWatcher;
 
+__attribute__((visibility("hidden")))
 @interface TKTokenWatcherProxy : NSObject <TKProtocolTokenWatcher>
 {
     TKTokenWatcher *_watcher;

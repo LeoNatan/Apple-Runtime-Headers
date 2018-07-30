@@ -65,6 +65,7 @@
     OADColorMap *mColorMap;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setColorMap:(id)arg1;
 - (id)colorMap;
@@ -194,7 +195,6 @@
 - (id)styleSheet;
 - (void)removeObjPointer:(id)arg1;
 - (void)addObjPointer:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

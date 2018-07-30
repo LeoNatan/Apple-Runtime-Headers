@@ -31,6 +31,7 @@
 - (id)bundlePath;
 - (void)setBundlePath:(id)arg1;
 - (void)_issueUpdateNotificationsWithCallback:(CDUnknownBlockType)arg1;
+- (BOOL)_updateAssetMetadataUsingQueryResults:(id)arg1;
 - (void)_updateAssetMetadata;
 - (id)pathsForResourcesWithNames:(id)arg1;
 - (id)pathsForResourcesWithNames:(id)arg1 assetVersion:(unsigned long long *)arg2;

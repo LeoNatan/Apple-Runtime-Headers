@@ -10,6 +10,7 @@
 
 @class AVOutputContextDestinationChange, AVWeakReference, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigRoutingContextRouteChangeOperation : AVOperation <AVDestinationChangeResultSource>
 {
     AVWeakReference *_weakObserver;

@@ -10,8 +10,8 @@
 
 @protocol SPGizmoApplicationProtocol <NSObject>
 - (void)appBeginBackgroundUIUpdate;
-- (void)setExtensionIsDebugging:(_Bool)arg1 isNative:(_Bool)arg2;
-- (void)fetchConnectionIdentifierWithReply:(void (^)(NSString *, NSString *, NSDictionary *))arg1;
+- (void)setExtensionIsDebugging:(_Bool)arg1;
+- (void)fetchConnectionIdentifierWithMetricsTimestamp:(double)arg1 extensionLaunchedForRemoteExtensionConnection:(_Bool)arg2 reply:(void (^)(NSString *, NSString *, NSDictionary *))arg3;
 - (void)receivePushPagingScrollTableRow:(NSString *)arg1 row:(int)arg2 seguesByRowName:(NSDictionary *)arg3 rowNamesAndContextIDs:(NSArray *)arg4;
 - (void)receiveSetViewController:(NSString *)arg1 values:(NSArray *)arg2;
 - (void)receiveSetViewController:(NSString *)arg1 key:(NSString *)arg2 property:(NSString *)arg3 value:(id)arg4;
@@ -19,7 +19,6 @@
 - (void)receiveData:(NSData *)arg1;
 - (void)receiveData:(NSData *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
 - (void)extensionGotUnknownControllerID:(NSString *)arg1;
-- (void)companionDaemonDidRestart;
 - (void)extensionDidTerminate;
 @end
 

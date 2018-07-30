@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
     id _context;
     NSThread *_thread;
-    BOOL _requireWiFi;
     NSString *_deviceCountry;
     NSString *_deviceRegion;
 }

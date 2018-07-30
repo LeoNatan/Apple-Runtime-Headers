@@ -17,6 +17,7 @@
 
 + (id)simpleParserWithHelpGenerator:(CDUnknownBlockType)arg1 version:(id)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)parserWithHandler:(CDUnknownBlockType)arg1;
++ (id)enumValueForArgument:(id)arg1 withMapping:(id)arg2 error:(id *)arg3;
 + (id)numberValueForArgument:(id)arg1 error:(id *)arg2;
 + (id)boolValueForArgument:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;

@@ -10,6 +10,7 @@
 
 @class NSObject<OS_nw_array>, NSObject<OS_nw_resolver>, NSString, NWConcrete_nw_endpoint_handler;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_endpoint_resolver : NSObject <OS_nw_endpoint_resolver>
 {
     NSObject<OS_nw_resolver> *resolver;
@@ -28,7 +29,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)applyWithHandler:(id)arg1 toChildren:(CDUnknownBlockType)arg2;
+- (_Bool)applyWithHandler:(id)arg1 toChildren:(CDUnknownBlockType)arg2;
 - (void)updatePathWithHandler:(id)arg1;
 - (void)cancelWithHandler:(id)arg1 forced:(BOOL)arg2;
 - (void)startWithHandler:(id)arg1;

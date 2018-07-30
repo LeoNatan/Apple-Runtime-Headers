@@ -13,10 +13,6 @@
 
 @interface _CPSearchSuggestionForFeedback : PBCodable <_CPSearchSuggestionForFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int score:1;
-        unsigned int type:1;
-    } _has;
     int _type;
     NSString *_identifier;
     NSString *_suggestion;
@@ -40,12 +36,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasFbr;
-@property(readonly, nonatomic) _Bool hasType;
-@property(readonly, nonatomic) _Bool hasScore;
-@property(readonly, nonatomic) _Bool hasQuery;
-@property(readonly, nonatomic) _Bool hasSuggestion;
-@property(readonly, nonatomic) _Bool hasIdentifier;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

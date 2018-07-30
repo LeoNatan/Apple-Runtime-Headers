@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_additionalVerticalOffsetForTilesAtRow;
     NSMutableDictionary *_cachedSnapshots;
     unsigned long long _currentMaximumNumberOfContainersPerRow;
-    double _leftGridOffset;
+    double _leadingGridOffset;
     double _tileWidth;
     double _tileHeight;
     BOOL _didStartEntryAnimation;
@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <NSVisualTabPickerGridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (double)_additionalHeightTakenByStackedTilesForRow:(unsigned long long)arg1;
-- (void)_getHorizontalLeftOffset:(double *)arg1 rightOffset:(double *)arg2;
+- (void)_getHorizontalLeadingOffset:(double *)arg1 trailingOffset:(double *)arg2;
 - (void)_computeArrayOfTabItemsPerContainer;
 - (void)_addCreateNewTabContainerView;
 - (void)_addContainerViewAtIndex:(unsigned long long)arg1 isVisible:(BOOL)arg2;

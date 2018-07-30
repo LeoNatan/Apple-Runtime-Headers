@@ -20,6 +20,7 @@
 - (unsigned long long)getFloatArray:(float *)arg1 maxCount:(unsigned long long)arg2 atTime:(double)arg3;
 - (void)setDoubleArray:(const double *)arg1 count:(unsigned long long)arg2 atTime:(double)arg3;
 - (void)setFloatArray:(const float *)arg1 count:(unsigned long long)arg2 atTime:(double)arg3;
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (struct VtValue)defaultVtValue;
 - (unsigned long long)precision;

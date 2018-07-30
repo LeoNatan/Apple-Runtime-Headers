@@ -22,22 +22,22 @@ __attribute__((visibility("hidden")))
     struct __CFRunLoopObserver *_runloopObserver;
     NSValue *_controlViewStorage;
     NSValue *_buttonCellStorage;
+    BOOL _currentlyAddingSubview;
 }
 
-- (struct CGColor *)_colorForState:(long long)arg1;
-- (struct CGColor *)_colorForHighlight:(BOOL)arg1;
-- (struct CGSize)_fauxAnimationLayerSizeForOptions:(id)arg1;
-- (id)_FauxCUIMakeButtonAnimation:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)terminate;
 - (void)shortCircuitDeferredAnimationConfigurationIfNeeded;
 - (void)_deferredConfigureTriggered;
 - (void)_deferAnimationConfiguration;
 - (BOOL)startPendingAnimationWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (id)_resolvedButtonAppearance;
 - (struct __CFString *)_cuiSizeValue;
 - (void)cancelPreviousCompletionBlock;
 - (void)_validateTransitionParameters;
 - (id)_buildCUIOptions;
-- (void)_showPlaceholderLayer;
+- (id)_coreUIWidgetName;
+- (BOOL)_showPlaceholderLayer;
 - (void)_configureCurrentAnimation;
 - (void)animateFromOldState:(long long)arg1 oldHighlight:(BOOL)arg2;
 @property(readonly) long long status;

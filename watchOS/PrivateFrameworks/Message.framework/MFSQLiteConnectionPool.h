@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSLock, NSMutableSet, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>;
+@class NSLock, NSMutableSet, NSObject<OS_dispatch_semaphore>;
 
 @interface MFSQLiteConnectionPool : NSObject
 {
@@ -23,7 +23,6 @@
     int _backgroundReadersWaiting;
     NSObject<OS_dispatch_semaphore> *_writerSemaphore;
     int _writersWaiting;
-    NSObject<OS_dispatch_source> *_terminationTimer;
 }
 
 @property(readonly) unsigned int maxConcurrentBackgroundReaders; // @synthesize maxConcurrentBackgroundReaders=_maxConcurrentBackgroundReaders;
@@ -33,9 +32,7 @@
 @property(readonly) unsigned int maxConcurrentWriters;
 - (unsigned int)maxConcurrentReaders;
 @property unsigned int cacheSize;
-- (void)_interruptActiveConnections;
-- (void)interruptConnectionsAfterDelay:(double)arg1;
-- (void)cancelTerminationTimer;
+- (void)detachProtectedDatabase;
 - (void)flush;
 - (void)checkInConnection:(id)arg1;
 - (id)_semaphoreForConnectionType:(unsigned int)arg1 waitCounter:(int **)arg2;

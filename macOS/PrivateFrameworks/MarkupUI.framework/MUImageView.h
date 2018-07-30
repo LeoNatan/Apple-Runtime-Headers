@@ -8,7 +8,6 @@
 
 @class AKController, NSCursor;
 
-__attribute__((visibility("hidden")))
 @interface MUImageView : IKImageView2
 {
     AKController *_annotationController;

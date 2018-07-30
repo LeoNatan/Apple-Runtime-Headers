@@ -25,6 +25,30 @@ struct CGSize {
     double height;
 };
 
+struct KCAPHeader {
+    struct Rect _field1;
+    struct Rect _field2;
+    short _field3;
+    struct MainKCAPArray _field4[0];
+};
+
+struct MainKCAPArray {
+    short _field1;
+    struct Point _field2[0];
+};
+
+struct Point {
+    short _field1;
+    short _field2;
+};
+
+struct Rect {
+    short _field1;
+    short _field2;
+    short _field3;
+    short _field4;
+};
+
 struct UCKeyboardLayout {
     unsigned short _field1;
     unsigned short _field2;

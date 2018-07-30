@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface STPropertyStorage : NSObject
 {
     struct _SsrwPropertyStorage *m_pPropertyStorage;
@@ -22,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (short)getShortDocumentPropertyWithId:(int)arg1;
 - (int)getLongDocumentPropertyWithId:(int)arg1;
 - (id)getDocumentPropertyWithId:(int)arg1 propType:(int *)arg2;
-- (void)dealloc;
 - (void)close;
 - (id)initWithPropertyStorage:(struct _SsrwPropertyStorage *)arg1;
 

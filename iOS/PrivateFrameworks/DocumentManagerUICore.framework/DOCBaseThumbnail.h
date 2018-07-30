@@ -16,7 +16,7 @@
 {
     _Bool _representativeIcon;
     _Bool _needsUpdate;
-    unsigned int _qos_queue;
+    _Bool _isInteractive;
     DOCThumbnailCache *_cache;
     double _scale;
     id <DOCThumbnail> _fallback;
@@ -28,11 +28,11 @@
     struct CGSize _size;
 }
 
-@property(readonly, nonatomic) unsigned int qos_queue; // @synthesize qos_queue=_qos_queue;
 @property(readonly, nonatomic) NSOperation *operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(readonly, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(retain, nonatomic) id <DOCThumbnail> fallback; // @synthesize fallback=_fallback;
@@ -54,10 +54,10 @@
 @property(readonly, nonatomic) _Bool isRepresentativeIcon;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading;
 - (void)setNeedsUpdate;
-- (id)createOperationWithSize:(struct CGSize)arg1 scale:(double)arg2 style:(unsigned long long)arg3;
+- (id)createOperationWithSize:(struct CGSize)arg1 scale:(double)arg2 style:(unsigned long long)arg3 isInteractive:(_Bool)arg4;
 - (void)kickstart;
 - (void)dealloc;
-- (id)initWithCache:(id)arg1 queueLabel:(const char *)arg2 size:(struct CGSize)arg3 scale:(double)arg4 fallback:(id)arg5 style:(unsigned long long)arg6 qos:(unsigned int)arg7;
+- (id)initWithCache:(id)arg1 queueLabel:(const char *)arg2 size:(struct CGSize)arg3 scale:(double)arg4 fallback:(id)arg5 style:(unsigned long long)arg6 isInteractive:(_Bool)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

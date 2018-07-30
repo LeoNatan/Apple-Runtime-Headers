@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSharedReadOnly;
 - (unsigned long long)writingDirectionForStorage;
 - (_Bool)validateUIState:(id)arg1;
-- (unsigned long long)writingDirection;
 @property(readonly, nonatomic) _Bool isShowcastAllowed;
 - (void)prepareForSavingAsTemplate;
 - (void)preprocessForSaveAsTheme;

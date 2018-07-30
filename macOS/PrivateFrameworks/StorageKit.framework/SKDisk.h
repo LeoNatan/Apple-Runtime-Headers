@@ -106,6 +106,7 @@
 - (id)_DAVolumeUUIDForDisk:(id)arg1;
 - (id)_DAVolumeUUIDForDiskIdentifier:(id)arg1;
 - (id)description;
+- (BOOL)convertToAPFSWithPreboot:(id)arg1 andProgress:(CDUnknownBlockType)arg2 andCompletionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)convertToAPFSWithProgress:(CDUnknownBlockType)arg1 andCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)dryRunConvertToAPFSWithProgress:(CDUnknownBlockType)arg1 andCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)fixIncorrectlySizedPartitionMapWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -142,6 +143,7 @@
 - (BOOL)ejectWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)mountWithOptions:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)mountWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (BOOL)unmountWithOptions:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)unmountWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)enableJournalingWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)enablePermissionsWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -154,6 +156,7 @@
 - (BOOL)setBootWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)setBootOnceWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)canBoot;
+@property(readonly) NSString *contentDiskIdentifier;
 - (void)expireCache;
 - (void)expireCacheWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)canResize;

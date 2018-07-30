@@ -30,8 +30,8 @@
     NSCharacterSet *_emoticonMiddleCharSet;
     NSCharacterSet *_emoticonBottomCharSet;
     NSObject<OS_dispatch_queue> *__charSetRulesQueue;
-    map_2d68ca7b _strokeMaxPenalties;
-    map_07959174 _signatureUniChar;
+    map_0512c6b1 _strokeMaxPenalties;
+    map_fc1db4e5 _signatureUniChar;
 }
 
 + (unsigned long long)characterType:(unsigned int)arg1;
@@ -39,8 +39,8 @@
 + (unsigned long long)expectedMaxStrokeCount:(unsigned int)arg1;
 + (id)sharedCharacterSetRules;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *_charSetRulesQueue; // @synthesize _charSetRulesQueue=__charSetRulesQueue;
-@property(nonatomic) map_07959174 signatureUniChar; // @synthesize signatureUniChar=_signatureUniChar;
-@property(nonatomic) map_2d68ca7b strokeMaxPenalties; // @synthesize strokeMaxPenalties=_strokeMaxPenalties;
+@property(nonatomic) map_fc1db4e5 signatureUniChar; // @synthesize signatureUniChar=_signatureUniChar;
+@property(nonatomic) map_0512c6b1 strokeMaxPenalties; // @synthesize strokeMaxPenalties=_strokeMaxPenalties;
 @property(retain, nonatomic) NSCharacterSet *emoticonBottomCharSet; // @synthesize emoticonBottomCharSet=_emoticonBottomCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonMiddleCharSet; // @synthesize emoticonMiddleCharSet=_emoticonMiddleCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonTopCharSet; // @synthesize emoticonTopCharSet=_emoticonTopCharSet;

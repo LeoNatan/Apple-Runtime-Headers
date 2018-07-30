@@ -8,6 +8,7 @@
 
 @class AVAssetWriterConfigurationState, AVMediaFileType, AVWeakReference, NSArray, NSError, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterHelper : NSObject
 {
     AVAssetWriterConfigurationState *_configurationState;

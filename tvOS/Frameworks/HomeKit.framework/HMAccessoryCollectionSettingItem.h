@@ -9,21 +9,20 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessoryCollectionSetting, NSData, NSObject<OS_dispatch_queue>, NSUUID;
+@class HMAccessoryCollectionSetting, HMFUnfairLock, NSData, NSUUID;
 
 @interface HMAccessoryCollectionSettingItem : NSObject <NSCopying, NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
     id <NSObject><NSCopying><NSSecureCoding> _value;
     NSData *_serializedValue;
     NSUUID *_identifier;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMAccessoryCollectionSetting *_setting;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)shortDescription;
 @property __weak HMAccessoryCollectionSetting *setting; // @synthesize setting=_setting;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

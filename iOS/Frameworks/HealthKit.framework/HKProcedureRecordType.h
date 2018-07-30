@@ -11,7 +11,7 @@
 }
 
 + (id)procedureRecordType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

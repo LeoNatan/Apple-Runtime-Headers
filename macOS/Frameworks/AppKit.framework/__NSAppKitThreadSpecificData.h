@@ -8,6 +8,7 @@
 
 @class NSMapTable;
 
+__attribute__((visibility("hidden")))
 @interface __NSAppKitThreadSpecificData : NSObject
 {
     void *NSPThreadSelf;
@@ -23,8 +24,8 @@
     id NSAlertCache;
     id reserved2;
     id reserved3;
-    id reserved4;
-    unsigned int reserved5;
+    id NSCurrentDisplayCycle;
+    unsigned int NSCurrentDisplayCycleTransactionSeed;
     id NSDisplayOperationStack;
     id NSColorPickerWheelImageCache;
     id NSPeriodicEventSource;

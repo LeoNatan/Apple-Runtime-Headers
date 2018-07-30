@@ -30,9 +30,9 @@
 - (id)description;
 @property(readonly, nonatomic) NSString *resourceTypeDescription;
 - (id)propertyKeys;
-- (id)cloudResourceForRecordWithIdentifier:(id)arg1;
-- (void)enumerateRecordIdentifiersAndResourcesWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) NSArray *recordIdentifiers;
+- (id)cloudResourceForRecordWithScopedIdentifier:(id)arg1;
+- (void)enumerateRecordScopedIdentifiersAndTasksWithBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSArray *recordScopedIdentifiers;
 @property(readonly, nonatomic) BOOL shouldBoostPriority;
 @property(readonly, nonatomic) double downloadProgress;
 @property(readonly, nonatomic) NSArray *allSourceBundleIdentifiers;
@@ -40,10 +40,10 @@
 @property(readonly, nonatomic) BOOL hasDownloadTasks;
 - (BOOL)cancelDownloadTask:(id)arg1;
 - (void)allDownloadsDidFailWithError:(id)arg1;
-- (void)resourceWithRecordIdentifier:(id)arg1 didFailToDownloadWithError:(id)arg2;
-- (void)resourceWithRecordIdentifier:(id)arg1 didDownloadCKAsset:(id)arg2 withFingerPrint:(id)arg3;
-- (void)resourceWithRecordIdentifier:(id)arg1 didProgress:(double)arg2;
-- (void)resourceWithRecordIdentifierDidStart:(id)arg1 operationID:(id)arg2;
+- (void)resourceWithRecordScopedIdentifier:(id)arg1 didFailToDownloadWithError:(id)arg2;
+- (void)resourceWithRecordScopedIdentifier:(id)arg1 didDownloadCKAsset:(id)arg2 withFingerPrint:(id)arg3;
+- (void)resourceWithRecordScopedIdentifier:(id)arg1 didProgress:(double)arg2;
+- (void)resourceWithRecordScopedIdentifierDidStart:(id)arg1 operationID:(id)arg2;
 - (void)allDownloadsDidStartWithOperationID:(id)arg1;
 - (BOOL)addDownloadTask:(id)arg1;
 - (id)initWithResourceType:(unsigned long long)arg1;

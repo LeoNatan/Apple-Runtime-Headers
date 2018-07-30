@@ -10,8 +10,11 @@
 {
 }
 
++ (id)suggestedInvocationPhrase;
++ (id)contentDescription;
 + (id)userActivityRequiredString;
 + (id)expirationDate;
++ (id)isEligibleForPrediction;
 + (id)isPubliclyIndexable;
 + (id)itemRelatedContentURL;
 + (id)itemRelatedUniqueIdentifier;

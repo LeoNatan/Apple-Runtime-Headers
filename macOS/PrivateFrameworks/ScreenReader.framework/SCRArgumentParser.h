@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)_stopAndPlayMessage:(BOOL)arg1;
 - (void)stop;
 - (void)stopDueToSigTerm;
-- (void)_tearDownMachServicesWithReturnValue:(int)arg1 startupPort:(unsigned int)arg2 runningPort:(unsigned int)arg3;
+- (void)_tearDownMachServicesWithReturnValue:(int)arg1;
 - (int)run;
 - (BOOL)wasLastShutdownPlanned;
 - (unsigned long long)_securitySessionID;

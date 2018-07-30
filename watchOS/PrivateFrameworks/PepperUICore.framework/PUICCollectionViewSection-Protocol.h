@@ -17,5 +17,6 @@
 - (void)configureHeaderView:(UICollectionReusableView *)arg1;
 - (void)configureCell:(UICollectionViewCell *)arg1 forItem:(int)arg2;
 - (int)numberOfItems;
+- (_Bool)showHeader;
 @end
 

@@ -11,6 +11,7 @@
 @protocol NACIDSClientDelegate <NSObject>
 - (void)client:(NACIDSClient *)arg1 prominentHapticStateDidChange:(_Bool)arg2;
 - (void)client:(NACIDSClient *)arg1 hapticIntensityDidChange:(float)arg2;
+- (void)client:(NACIDSClient *)arg1 hapticStateDidChange:(int)arg2;
 - (void)client:(NACIDSClient *)arg1 systemMutedStateDidChange:(_Bool)arg2;
 - (void)client:(NACIDSClient *)arg1 routeObservationCancelledForCategory:(NSString *)arg2;
 - (void)client:(NACIDSClient *)arg1 audioRoutes:(NSArray *)arg2 didChangeForCategory:(NSString *)arg3;

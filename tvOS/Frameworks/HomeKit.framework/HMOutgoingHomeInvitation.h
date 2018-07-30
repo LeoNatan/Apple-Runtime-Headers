@@ -6,11 +6,11 @@
 
 #import <HomeKit/HMHomeInvitation.h>
 
-@class HMThreadSafeMutableArrayCollection, HMUser, NSArray;
+@class HMMutableArray, HMUser, NSArray;
 
 @interface HMOutgoingHomeInvitation : HMHomeInvitation
 {
-    HMThreadSafeMutableArrayCollection *_accessoryInvitations;
+    HMMutableArray *_accessoryInvitations;
     HMUser *_invitee;
 }
 
@@ -20,13 +20,13 @@
 @property(readonly, nonatomic) HMUser *invitee; // @synthesize invitee=_invitee;
 - (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
-- (_Bool)_mergeWithNewAccessoryInvitations:(id)arg1 operations:(id)arg2;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
-- (void)_cancelInviteWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)cancelInviteWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)_mergeWithNewAccessoryInvitations:(id)arg1 operations:(id)arg2;
+- (void)_cancelInviteWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)cancelInviteWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSArray *accessoryInvitations;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (id)initWithInvitationData:(id)arg1 home:(id)arg2;
 
 @end

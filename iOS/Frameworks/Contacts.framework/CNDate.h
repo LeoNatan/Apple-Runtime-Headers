@@ -12,6 +12,8 @@
 
 + (id)dayComponentsFromDate:(id)arg1;
 + (id)dateFromDayComponents:(id)arg1;
++ (id)gmtChineseCalendar;
++ (id)gmtIslamicCalendar;
 + (id)gmtBuddhistCalendar;
 + (id)gmtJapaneseCalendar;
 + (id)gmtGregorianCalendar;

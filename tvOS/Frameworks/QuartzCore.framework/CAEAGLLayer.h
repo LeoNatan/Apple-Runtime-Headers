@@ -27,7 +27,6 @@
 @property(readonly) struct _EAGLWindowObject *nativeWindow;
 - (void)didChangeValueForKey:(id)arg1;
 - (_Bool)shouldArchiveValueForKey:(id)arg1;
-- (void)setPresentationHandler:(CDUnknownBlockType)arg1;
 @property double inputTime;
 @property _Bool lowLatency;
 @property unsigned long long maximumDrawableCount;

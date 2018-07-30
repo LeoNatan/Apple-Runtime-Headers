@@ -6,6 +6,7 @@
 
 #import <AssertionServices/BKSBaseAssertionClient.h>
 
+__attribute__((visibility("hidden")))
 @interface BKSProcessAssertionClient : BKSBaseAssertionClient
 {
 }

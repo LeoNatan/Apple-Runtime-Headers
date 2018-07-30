@@ -28,11 +28,11 @@
     unsigned long long m_bufferOffset;
 }
 
+- (void).cxx_destruct;
 - (id)allTokensForString:(id)arg1;
 - (struct _NSRange)rangeOfCurrentToken;
 - (struct _NSRange)advanceToNextToken;
 - (void)setString:(id)arg1 withSearchRange:(struct _NSRange)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

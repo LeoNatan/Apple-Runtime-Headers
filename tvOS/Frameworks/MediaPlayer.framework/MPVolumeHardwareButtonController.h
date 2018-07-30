@@ -25,6 +25,8 @@
 - (void)_volumeDownButtonTouchDown:(id)arg1;
 - (void)_volumeUpButtonTouchUp:(id)arg1;
 - (void)_volumeUpButtonTouchDown:(id)arg1;
+- (void)handleVolumeUpButton;
+- (void)handleVolumeDownButton;
 - (void)handleVolumeButtonWithType:(long long)arg1 down:(_Bool)arg2;
 - (void)cancelVolumeEvent;
 - (void)decreaseVolume;

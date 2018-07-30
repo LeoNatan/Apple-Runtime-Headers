@@ -15,6 +15,7 @@
 
 + (id)pl_imageWithStoredJPEGData:(id)arg1;
 - (void)dealloc;
+- (struct CGImage *)CGImage;
 - (id)pl_imageJPEGData;
 
 @end

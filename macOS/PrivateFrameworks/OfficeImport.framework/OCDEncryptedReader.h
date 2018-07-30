@@ -8,16 +8,15 @@
 
 @class OCCDecryptor;
 
-__attribute__((visibility("hidden")))
 @interface OCDEncryptedReader : OCDReader
 {
     OCCDecryptor *mDecryptor;
 }
 
 @property(readonly, nonatomic) OCCDecryptor *decryptor; // @synthesize decryptor=mDecryptor;
+- (void).cxx_destruct;
 - (BOOL)retainDecryptorWithErrorCode:(int *)arg1;
 - (void)useUnencryptedDocument;
-- (void)dealloc;
 - (id)defaultPassphrase;
 - (void)restartReaderToUseDecryptedDocument;
 

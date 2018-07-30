@@ -32,7 +32,6 @@
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) NSMutableArray *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) CLLocation *lastPlacemarkLocation; // @synthesize lastPlacemarkLocation=_lastPlacemarkLocation;
-@property(retain) CLPlacemark *currentPlacemark; // @synthesize currentPlacemark=_currentPlacemark;
 - (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
@@ -40,6 +39,7 @@
 - (_Bool)isLocationBasedAdsEnabled;
 - (id)obfuscatedLocation;
 - (id)currentLocation;
+@property(retain) CLPlacemark *currentPlacemark; // @synthesize currentPlacemark=_currentPlacemark;
 - (void)updatePlacemark;
 - (void)stop;
 - (void)start;

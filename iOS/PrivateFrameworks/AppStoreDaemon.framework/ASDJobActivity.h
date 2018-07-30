@@ -16,7 +16,9 @@
     _Bool _cancelIfDuplicate;
     _Bool _explicitContent;
     _Bool _hasMessagesExtension;
+    _Bool _hasWatchApp;
     _Bool _isAutomatic;
+    _Bool _isCompatibilityUpdate;
     _Bool _isDeviceBasedVPP;
     _Bool _isGameCenterEnabled;
     _Bool _isInQueue;
@@ -110,7 +112,9 @@
 @property(nonatomic) _Bool isInQueue; // @synthesize isInQueue=_isInQueue;
 @property(nonatomic) _Bool isGameCenterEnabled; // @synthesize isGameCenterEnabled=_isGameCenterEnabled;
 @property(nonatomic) _Bool isDeviceBasedVPP; // @synthesize isDeviceBasedVPP=_isDeviceBasedVPP;
+@property(nonatomic) _Bool isCompatibilityUpdate; // @synthesize isCompatibilityUpdate=_isCompatibilityUpdate;
 @property(nonatomic) _Bool isAutomatic; // @synthesize isAutomatic=_isAutomatic;
+@property(nonatomic) _Bool hasWatchApp; // @synthesize hasWatchApp=_hasWatchApp;
 @property(nonatomic) _Bool hasMessagesExtension; // @synthesize hasMessagesExtension=_hasMessagesExtension;
 @property(copy, nonatomic) NSNumber *genreID; // @synthesize genreID=_genreID;
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;

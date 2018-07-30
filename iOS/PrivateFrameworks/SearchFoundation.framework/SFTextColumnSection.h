@@ -14,7 +14,10 @@
 
 @interface SFTextColumnSection : NSObject <SFTextColumnSection, NSSecureCoding, NSCopying>
 {
-    CDStruct_82065ba4 _has;
+    struct {
+        unsigned int textNoWrap:1;
+        unsigned int textWeight:1;
+    } _has;
     _Bool _textNoWrap;
     NSArray *_textLines;
     unsigned long long _textWeight;

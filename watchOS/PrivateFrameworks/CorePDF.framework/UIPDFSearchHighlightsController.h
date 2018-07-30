@@ -8,6 +8,7 @@
 
 @class NSMutableArray, UIPDFPageView, UIPDFSelection;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFSearchHighlightsController : NSObject
 {
     NSMutableArray *_searchHighlightLayers;

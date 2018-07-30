@@ -8,6 +8,7 @@
 
 @class NSConditionLock, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface VSRecognitionResultHandlingThread : NSObject
 {
     id <VSRecognitionResultHandlingThreadDelegate> _delegate;

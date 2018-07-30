@@ -75,7 +75,6 @@
 - (void)migrateWallpaperOptionsForImageIfNecessaryForVariant:(long long)arg1 representingVariants:(long long)arg2;
 - (void)performMigrationWithFailureHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfCachedStaticImages;
-- (void)preheatImageCacheForVariant:(long long)arg1;
 - (void)clearCacheForVariants:(long long)arg1;
 - (_Bool)setWallpaperConfigurationFromDefaultWallpaperConfiguration:(id)arg1 forVariants:(long long)arg2;
 - (_Bool)setWallpaperConfigurationFromDefaultWallpaperConfigurationSet:(id)arg1;

@@ -26,5 +26,7 @@
 - (void)playbackPausedWithVideoItem:(id <NUVideoItem>)arg1 metadata:(NUVideoMetadata *)arg2;
 - (void)playbackStartedWithVideoItem:(id <NUVideoItem>)arg1 metadata:(NUVideoMetadata *)arg2;
 - (void)playbackInitiatedWithVideoItem:(id <NUVideoItem>)arg1 metadata:(NUVideoMetadata *)arg2;
+- (void)videoDidDisappearWithVideoItem:(id <NUVideoItem>)arg1;
+- (void)videoDidAppearWithVideoItem:(id <NUVideoItem>)arg1;
 @end
 

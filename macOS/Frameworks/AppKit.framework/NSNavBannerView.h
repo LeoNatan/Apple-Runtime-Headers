@@ -6,15 +6,24 @@
 
 #import <AppKit/NSView.h>
 
+@class NSBannerView;
+
 @interface NSNavBannerView : NSView
 {
-    int _bannerType;
+    NSBannerView *_bannerView;
+    long long _bannerType;
 }
 
-- (void)_windowChangedKeyState;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)_drawBannerBackgroundInRect:(struct CGRect)arg1;
-@property int bannerType;
+- (id)_preferredAppearance;
+- (unsigned long long)_vibrantBlendingStyleForSubtree;
+- (struct CGSize)intrinsicContentSize;
+@property long long bannerType;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (void)dealloc;
+- (void)_commonInit;
+- (unsigned long long)_currentBannerStyle;
 
 @end
 

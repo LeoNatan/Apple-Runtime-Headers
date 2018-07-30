@@ -11,6 +11,7 @@
 
 @class CPPage, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPZoneBorder : NSObject <NSCopying, CPCopying>
 {
     struct CGRect bounds;

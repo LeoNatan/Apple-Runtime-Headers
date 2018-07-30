@@ -11,19 +11,12 @@
 @protocol _CPValue <NSObject>
 @property(readonly, nonatomic) unsigned long long whichKind;
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasBytes_value;
 @property(copy, nonatomic) NSData *bytes_value;
-@property(readonly, nonatomic) _Bool hasList_value;
 @property(retain, nonatomic) _CPListValue *list_value;
-@property(readonly, nonatomic) _Bool hasStruct_value;
 @property(retain, nonatomic) _CPStruct *struct_value;
-@property(readonly, nonatomic) _Bool hasBool_value;
 @property(nonatomic) _Bool bool_value;
-@property(readonly, nonatomic) _Bool hasString_value;
 @property(copy, nonatomic) NSString *string_value;
-@property(readonly, nonatomic) _Bool hasNumber_value;
 @property(nonatomic) double number_value;
-@property(readonly, nonatomic) _Bool hasNull_value;
 @property(nonatomic) int null_value;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

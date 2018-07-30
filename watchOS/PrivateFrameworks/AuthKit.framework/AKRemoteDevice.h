@@ -13,12 +13,18 @@
 @interface AKRemoteDevice : NSObject <NSSecureCoding>
 {
     _Bool _trusted;
+    _Bool _inCircle;
     NSString *_name;
     NSString *_serialNumber;
     NSString *_buildNumber;
     NSString *_operatingSystemName;
     NSString *_operatingSystemVersion;
     NSString *_model;
+    NSString *_colorCode;
+    NSString *_enclosureColorCode;
+    NSString *_coverGlassColorCode;
+    NSString *_housingColorCode;
+    NSString *_backingColorCode;
     NSDate *_lastUpdatedDate;
     NSString *_machineId;
 }
@@ -26,7 +32,13 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *machineId; // @synthesize machineId=_machineId;
 @property(readonly, copy, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
+@property(readonly, nonatomic) _Bool inCircle; // @synthesize inCircle=_inCircle;
 @property(readonly, nonatomic) _Bool trusted; // @synthesize trusted=_trusted;
+@property(readonly, copy, nonatomic) NSString *backingColorCode; // @synthesize backingColorCode=_backingColorCode;
+@property(readonly, copy, nonatomic) NSString *housingColorCode; // @synthesize housingColorCode=_housingColorCode;
+@property(readonly, copy, nonatomic) NSString *coverGlassColorCode; // @synthesize coverGlassColorCode=_coverGlassColorCode;
+@property(readonly, copy, nonatomic) NSString *enclosureColorCode; // @synthesize enclosureColorCode=_enclosureColorCode;
+@property(readonly, copy, nonatomic) NSString *colorCode; // @synthesize colorCode=_colorCode;
 @property(readonly, copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, copy, nonatomic) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(readonly, copy, nonatomic) NSString *operatingSystemName; // @synthesize operatingSystemName=_operatingSystemName;

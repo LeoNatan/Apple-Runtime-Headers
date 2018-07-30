@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSString, UIImage, WGWidgetListEditViewController;
+@class NSArray, NSDictionary, NSString, WGWidgetListEditViewController;
 
 @protocol WGWidgetListEditViewControllerDataSource <NSObject>
 - (_Bool)widgetListEditViewControllerShouldIncludeInternalWidgets:(WGWidgetListEditViewController *)arg1;
-- (UIImage *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 iconForItemWithIdentifier:(NSString *)arg2;
+- (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 requestsIconForItemWithIdentifier:(NSString *)arg2 withHandler:(void (^)(UIImage *))arg3;
 - (NSString *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 displayNameForItemWithIdentifier:(NSString *)arg2;
 - (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 acknowledgeInterfaceItemsWithIdentifiers:(NSArray *)arg2;
 - (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 setEnabled:(_Bool)arg2 forItemsWithIdentifiers:(NSArray *)arg3;

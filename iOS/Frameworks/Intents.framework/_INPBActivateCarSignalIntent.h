@@ -7,41 +7,43 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBActivateCarSignalIntent.h"
 
-@class PBUnknownFields, _INPBDataString, _INPBIntentMetadata;
+@class NSString, _INPBDataString, _INPBIntentMetadata;
 
-@interface _INPBActivateCarSignalIntent : PBCodable <NSCopying>
+@interface _INPBActivateCarSignalIntent : PBCodable <_INPBActivateCarSignalIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _signals;
+    struct _has;
     _INPBDataString *_carName;
     _INPBIntentMetadata *_intentMetadata;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (int)StringAsSignals:(id)arg1;
 - (id)signalsAsString:(int)arg1;
-- (void)setSignals:(int *)arg1 count:(unsigned long long)arg2;
 - (int)signalsAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long signalsCount;
 - (void)addSignals:(int)arg1;
 - (void)clearSignals;
 @property(readonly, nonatomic) int *signals;
-@property(readonly, nonatomic) unsigned long long signalsCount;
-@property(readonly, nonatomic) _Bool hasCarName;
+- (void)setSignals:(int *)arg1 count:(unsigned long long)arg2;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
-- (void)dealloc;
+@property(readonly, nonatomic) _Bool hasCarName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

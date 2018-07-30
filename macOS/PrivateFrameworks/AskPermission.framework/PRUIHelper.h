@@ -11,6 +11,7 @@
 }
 
 + (id)sharedInstance;
+- (void)presentDialog:(id)arg1 dialogOption:(long long)arg2 accountDSID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)showStorePreviewWindowForRequest:(id)arg1 fromFamilyMember:(id)arg2 withRequestString:(id)arg3 delegate:(id)arg4;
 - (void)promptForApprovalSignInWithRequest:(id)arg1 localApproval:(BOOL)arg2 statusToSet:(unsigned long long)arg3 familyMembers:(id)arg4 explanation:(id)arg5 delegate:(id)arg6;
 - (id)remoteObjectWithErrorHandler:(CDUnknownBlockType)arg1;

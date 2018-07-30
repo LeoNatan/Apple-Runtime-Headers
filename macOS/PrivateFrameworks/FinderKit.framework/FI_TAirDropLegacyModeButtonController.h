@@ -11,8 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface FI_TAirDropLegacyModeButtonController : FI_TViewController
 {
-    struct TNSRef<FI_TAirDropDiscoveryController *, void> _discoveryController;
-    struct TNSRef<FI_TAirDropLegacyModePopoverViewController *, void> _popoverViewContoller;
+    struct TNSRef<FI_TAirDropDiscoveryController, void> _discoveryController;
+    struct TNSRef<FI_TAirDropLegacyModePopoverViewController, void> _popoverViewContoller;
     struct TNotificationCenterObserver _popoverWillCloseObserver;
 }
 

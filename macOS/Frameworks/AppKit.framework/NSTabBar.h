@@ -14,7 +14,7 @@
 #import "NSTabButtonDelegate.h"
 #import "NSTabDraggingDestination.h"
 
-@class CABackdropLayer, CALayer, NSArray, NSMapTable, NSMutableArray, NSScrollView, NSString, NSTabBarEmptyRegionPlaceholderButton, NSTabButton, NSTrackingArea;
+@class CABackdropLayer, NSArray, NSBackgroundColorView, NSMapTable, NSMutableArray, NSScrollView, NSString, NSTabBarEmptyRegionPlaceholderButton, NSTabButton, NSTitlebarSeparatorView, NSTrackingArea;
 
 @interface NSTabBar : NSView <NSDetachedTabDraggingImageToWindowTransitionControllerDelegate, NSMorphingDragImageControllerDragSource, NSAnimationDelegate, NSDraggingDestination, NSTabButtonDelegate, NSTabBarSyncedButtonDelegate, NSTabDraggingDestination>
 {
@@ -49,7 +49,8 @@
     NSView *_backgroundView;
     NSView *_maskingContainerView;
     CABackdropLayer *_backdropLayer;
-    CALayer *_topBorderLayer;
+    NSBackgroundColorView *_backgroundColorView;
+    NSTitlebarSeparatorView *_topBorderSeparatorView;
     NSView *_pinnedTabsContainer;
     unsigned long long _numberOfPinnedTabs;
     unsigned long long _numberOfPinnedTabsForLayout;
@@ -81,6 +82,7 @@
 }
 
 + (id)accessibilityLabelForNumberOfTabs:(unsigned long long)arg1 andNumberOfPinnedTabs:(unsigned long long)arg2;
++ (id)_tabBarColorNamed:(id)arg1;
 @property(nonatomic) __weak id <NSTabBarSyncedButton> buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion; // @synthesize buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion=_buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion;
 @property(nonatomic) __weak NSView *lastKeyView; // @synthesize lastKeyView=_lastKeyView;
 @property(nonatomic) __weak NSView *firstKeyView; // @synthesize firstKeyView=_firstKeyView;
@@ -183,9 +185,7 @@
 - (void)addTabBarViewItem:(id)arg1;
 @property(copy) NSArray *tabBarViewItems;
 @property BOOL forcesActiveWindowState; // @dynamic forcesActiveWindowState;
-- (void)_viewDidChangeAppearance:(id)arg1;
 - (void)updateLayer;
-- (BOOL)_isDark;
 - (BOOL)wantsUpdateLayer;
 - (void)_scrollToButtonAtIndex:(unsigned long long)arg1 canScrollSelectedButton:(BOOL)arg2;
 - (struct CGRect)_rectWithUnstackedButtons;
@@ -255,6 +255,7 @@
 - (void)_beginAnimationGrouping;
 - (BOOL)_shouldLayOutButtonsNow;
 - (void)_clipViewBoundsChanged:(id)arg1;
+- (struct CGRect)_contentBounds;
 - (BOOL)isOpaque;
 - (BOOL)allowsVibrancy;
 - (BOOL)_isInFullscreenToolbarWindow;

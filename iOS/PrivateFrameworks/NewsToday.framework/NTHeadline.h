@@ -17,6 +17,7 @@
     _Bool _supportsSavingForLater;
     _Bool _boundToContext;
     _Bool _hiddenFromFeeds;
+    _Bool _hiddenFromAutoFavorites;
     NSString *_title;
     NSString *_titleCompact;
     NSString *_shortExcerpt;
@@ -55,6 +56,7 @@
 @property(copy, nonatomic) NTHeadlinePersonalizationMetadata *personalizationMetadata; // @synthesize personalizationMetadata=_personalizationMetadata;
 @property(copy, nonatomic) NTPBHeadlineAdElement *adElement; // @synthesize adElement=_adElement;
 @property(copy, nonatomic) NTPBHeadlineAnalyticsElement *analyticsElement; // @synthesize analyticsElement=_analyticsElement;
+@property(nonatomic, getter=isHiddenFromAutoFavorites) _Bool hiddenFromAutoFavorites; // @synthesize hiddenFromAutoFavorites=_hiddenFromAutoFavorites;
 @property(nonatomic, getter=isHiddenFromFeeds) _Bool hiddenFromFeeds; // @synthesize hiddenFromFeeds=_hiddenFromFeeds;
 @property(nonatomic, getter=isBoundToContext) _Bool boundToContext; // @synthesize boundToContext=_boundToContext;
 @property(nonatomic) _Bool supportsSavingForLater; // @synthesize supportsSavingForLater=_supportsSavingForLater;

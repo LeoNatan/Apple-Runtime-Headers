@@ -6,7 +6,6 @@
 
 #import <CoreUI/CUIPSDLayerBaseRef.h>
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDLayerRef : CUIPSDLayerBaseRef
 {
 }
@@ -23,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)imageIsZeroSizeImage:(_Bool *)arg1;
 - (id)image;
 - (struct CGImage *)createCGImage;
-- (void)dealloc;
 - (id)initWithImageRef:(id)arg1 layerIndex:(unsigned int)arg2;
 
 @end

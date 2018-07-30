@@ -8,7 +8,9 @@
 
 @protocol _DKDaemonInterface
 - (void)confirmDatabaseConnectionWithReply:(void (^)(_Bool, NSError *))arg1;
+- (void)sourceDeviceIdentityWithReply:(void (^)(NSObject *, NSError *))arg1;
 - (void)deleteRemoteState:(void (^)(_Bool, NSError *))arg1;
+- (void)synchronizeWithUrgency:(unsigned int)arg1 client:(NSString *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)synchronizeWithReply:(void (^)(_Bool, NSError *))arg1;
 - (void)deleteAllEventsMatchingPredicate:(NSPredicate *)arg1 reply:(void (^)(unsigned int, NSError *))arg2;
 - (void)deleteAllEventsInEventStreamNamed:(NSString *)arg1 reply:(void (^)(unsigned int, NSError *))arg2;

@@ -8,7 +8,6 @@
 
 @class NSCountedSet, NSObject<OS_dispatch_queue>;
 
-__attribute__((visibility("hidden")))
 @interface OITSUXPCMainController : NSObject
 {
     NSCountedSet *mConnectionHandlers;

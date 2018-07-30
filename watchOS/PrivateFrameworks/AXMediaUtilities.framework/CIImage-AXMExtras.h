@@ -7,8 +7,8 @@
 #import "CIImage.h"
 
 @interface CIImage (AXMExtras)
-- (void)saveToURL:(id)arg1 withOrientation:(int)arg2;
-- (void)writeImageInAllOrientationsToDirectoryAtURL:(id)arg1;
+- (void)saveToURL:(id)arg1 withOrientation:(int)arg2 diagnostics:(id)arg3;
+- (void)writeImageInAllOrientationsToDirectoryAtURL:(id)arg1 diagnostics:(id)arg2;
 - (id)rotatedImageWithInterfaceOrientation:(int)arg1 isMirrored:(_Bool)arg2 appliedImageOrientation:(int *)arg3;
 - (id)rotatedImageWithInterfaceOrientation:(int)arg1 displayOrientation:(int)arg2 appliedImageOrientation:(int *)arg3;
 - (int)_imageOrientationForInterfaceOrientation:(int)arg1 isMirrored:(_Bool)arg2;

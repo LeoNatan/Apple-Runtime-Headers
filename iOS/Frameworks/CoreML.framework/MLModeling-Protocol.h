@@ -10,7 +10,7 @@
 @property(readonly) MLModelMetadata *metadata;
 @property(readonly) MLModelInterface *interface;
 @property(readonly, nonatomic) MLModelDescription *modelDescription;
-- (id <MLFeatureFrame>)batchPredict:(id <MLFeatureFrame>)arg1 error:(id *)arg2;
+- (id <MLBatchProvider>)predictionsFromBatch:(id <MLBatchProvider>)arg1 options:(MLPredictionOptions *)arg2 error:(id *)arg3;
 - (id <MLFeatureProvider>)predictionFromFeatures:(id <MLFeatureProvider>)arg1 options:(MLPredictionOptions *)arg2 error:(id *)arg3;
 - (id <MLFeatureProvider>)predictionFromFeatures:(id <MLFeatureProvider>)arg1 error:(id *)arg2;
 @end

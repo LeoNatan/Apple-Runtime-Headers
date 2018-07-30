@@ -20,7 +20,7 @@
 @property(readonly, nonatomic) SXFormattedText *formattedText; // @synthesize formattedText=_formattedText;
 - (void).cxx_destruct;
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
-- (id)initWithFormattedText:(id)arg1 indexPath:(CDStruct_2fea82da)arg2 actionProvider:(id)arg3 dataSource:(id)arg4;
+- (id)initWithFormattedText:(id)arg1 indexPath:(CDStruct_2fea82da)arg2 smartFieldFactory:(id)arg3 dataSource:(id)arg4;
 
 @end
 

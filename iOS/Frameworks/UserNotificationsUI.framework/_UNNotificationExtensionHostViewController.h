@@ -32,8 +32,10 @@
 @property(nonatomic) __weak id <_UNNotificationExtensionHostDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_extensionRequestsToSetDismissEnabled:(_Bool)arg1;
+- (void)_extensionSetUserNotificationActions:(id)arg1;
 - (void)_extensionSetTitle:(id)arg1;
 - (void)_extensionRequestsDismiss;
+- (void)_extensionRequestsDefaultAction;
 - (void)_extensionAudioAccessoryViewContextId:(unsigned int)arg1;
 - (void)_extensionMediaPlayingPaused;
 - (void)_extensionMediaPlayingStarted;
@@ -44,10 +46,12 @@
 - (void)_extensionWantsToReceiveActionResponses:(_Bool)arg1;
 - (void)_extensionDidCompleteNotificationResponse:(id)arg1 withOption:(unsigned long long)arg2;
 - (void)_extensionDidUpdateControls;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (_Bool)__shouldRemoteViewControllerFenceOperations;
 
 @end
 

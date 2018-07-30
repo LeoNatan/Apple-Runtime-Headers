@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CKAccountOverrideInfo, CKContainerID, CKDMescalSession, CKDOperation, CKDServerConfiguration, CKDURLRequest, NSBundle, NSDictionary, NSString, NSURL;
+@class CKAccountOverrideInfo, CKContainerID, CKDMescalSession, CKDOperation, CKDServerConfiguration, CKDURLRequest, NSDictionary, NSString, NSURL;
 
 @protocol CKDAccountInfoProvider <NSObject>
 @property(readonly, nonatomic) CKAccountOverrideInfo *fakeAccountInfo;
@@ -23,12 +23,13 @@
 - (void)iCloudAuthTokenWithCompletionHandler:(void (^)(NSString *, NSError *))arg1;
 - (void)renewCloudKitAuthTokenWithReason:(NSString *)arg1 shouldForce:(BOOL)arg2 failedToken:(NSString *)arg3 completionHandler:(void (^)(BOOL, NSError *))arg4;
 - (void)cloudKitAuthTokenWithCompletionHandler:(void (^)(NSString *, NSError *))arg1;
+- (NSString *)sharingURLHostname;
+- (NSString *)displayedHostname;
 - (NSString *)regionCode;
 - (NSString *)languageCode;
 - (NSString *)serverPreferredPushEnvironment;
 - (NSString *)deviceName;
 - (NSString *)hardwareID;
-- (NSBundle *)applicationBundle;
 - (NSString *)bundleID;
 - (CKContainerID *)containerID;
 - (NSString *)containerScopedUserID;

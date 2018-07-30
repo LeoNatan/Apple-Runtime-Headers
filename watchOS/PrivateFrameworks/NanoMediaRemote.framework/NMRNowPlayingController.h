@@ -22,6 +22,7 @@
     _Bool _shouldObservePlaybackQueue;
     id <NMRNowPlayingControllerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _observerLock;
     unsigned int _filteringOptions;
 }
 
@@ -44,6 +45,7 @@
 - (void)originObserver:(id)arg1 didUpdatePlaybackStateForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingApplicationBundleIdentifierForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingInfoForOrigin:(id)arg2;
+- (void)prepareLocalOriginObserverForNewPlaybackIntent;
 - (void)setOriginCommandHandler:(id)arg1 forOrigin:(id)arg2;
 - (void)setOriginObserver:(id)arg1 forOrigin:(id)arg2;
 @property(nonatomic) _Bool shouldObservePlaybackQueue;

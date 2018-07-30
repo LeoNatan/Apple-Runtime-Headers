@@ -8,7 +8,6 @@
 
 @class NSString, OADBaseStyles, OADDrawableDefaults;
 
-__attribute__((visibility("hidden")))
 @interface OADTheme : NSObject
 {
     NSString *mName;
@@ -19,10 +18,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) OADDrawableDefaults *drawableDefaults; // @synthesize drawableDefaults=mDrawableDefaults;
 @property(retain, nonatomic) OADBaseStyles *baseStyles; // @synthesize baseStyles=mBaseStyles;
 @property(copy, nonatomic) NSString *name; // @synthesize name=mName;
+- (void).cxx_destruct;
 - (id)description;
 - (void)validateTheme;
 - (_Bool)isEmpty;
-- (void)dealloc;
 - (id)init;
 
 @end

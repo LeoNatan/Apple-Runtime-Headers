@@ -10,7 +10,6 @@
 {
 }
 
-+ (unsigned int)maxNumLoggingFiles;
 + (float)daysBeforeRemovingLogFiles;
 + (int)csAudioProcessingQueuePriority;
 + (unsigned short)zeroFilterApproxAbsSpeechThreshold;
@@ -21,6 +20,7 @@
 + (double)inputRecordingBufferDuration;
 + (id)inputRecordingSampleRateConverterAlgorithm;
 + (int)inputRecordingEncoderAudioQuality;
++ (unsigned long)EncryptionAudioSampleByteDepth;
 + (unsigned long)inputRecordingSampleByteDepth;
 + (unsigned long)inputRecordingSampleBitDepth;
 + (float)inputRecordingDurationInSecs;

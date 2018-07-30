@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, RTDeviceLocationPredictor, RTEventManager, RTLearnedLocationManager, RTLearnedLocationOfInterest, RTLocationManager, RTVisitManager;
+@class NSObject<OS_dispatch_queue>, RTDeviceLocationPredictor, RTEventManager, RTLearnedLocationManager, RTLocationManager, RTVisitManager;
 
 @interface RTActionManager : NSObject
 {
-    RTLearnedLocationOfInterest *_currentLocationOfInterest;
+    unsigned long long _currentLocationOfInterestType;
+    struct CLLocationCoordinate2D _currentLocationOfInterestCoordinate;
     RTDeviceLocationPredictor *_deviceLocationPredictor;
     RTLocationManager *_locationManager;
     RTEventManager *_eventManager;

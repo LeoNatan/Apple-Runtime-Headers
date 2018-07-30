@@ -15,15 +15,19 @@
     unsigned int _dtmfTimestampRate;
     unsigned int _ptime;
     unsigned int _maxPtime;
+    unsigned int _channelAwareOffset;
     int _audioStreamMode;
     unsigned int _codecRateModeMask;
     int _preferredCodecRateMode;
     _Bool _octetAligned;
+    _Bool _headerFullOnly;
     _Bool _dtxEnabled;
     _Bool _latencySensitiveMode;
+    _Bool _enableMaxBitrateOnNoChangeCMR;
     unsigned int _numRedundantPayloads;
     unsigned int _txRedPayloadType;
     unsigned int _rxRedPayloadType;
+    float _volume;
 }
 
 + (int)clientCodecRateModeForCodecRateMode:(int)arg1;
@@ -34,6 +38,8 @@
 + (int)streamModeWithClientStreamMode:(int)arg1;
 + (int)clientCodecTypeWithCodecType:(int)arg1;
 + (int)codecTypeWithClientCodecType:(int)arg1;
+@property(nonatomic) float volume; // @synthesize volume=_volume;
+@property(nonatomic) _Bool enableMaxBitrateOnNoChangeCMR; // @synthesize enableMaxBitrateOnNoChangeCMR=_enableMaxBitrateOnNoChangeCMR;
 @property(nonatomic) unsigned int rxRedPayloadType; // @synthesize rxRedPayloadType=_rxRedPayloadType;
 @property(nonatomic) unsigned int txRedPayloadType; // @synthesize txRedPayloadType=_txRedPayloadType;
 @property(nonatomic) unsigned int numRedundantPayloads; // @synthesize numRedundantPayloads=_numRedundantPayloads;
@@ -41,7 +47,9 @@
 @property(nonatomic) int preferredCodecRateMode; // @synthesize preferredCodecRateMode=_preferredCodecRateMode;
 @property(nonatomic) unsigned int codecRateModeMask; // @synthesize codecRateModeMask=_codecRateModeMask;
 @property(nonatomic, getter=isDTXEnabled) _Bool dtxEnabled; // @synthesize dtxEnabled=_dtxEnabled;
+@property(nonatomic, getter=isHeaderFullOnly) _Bool headerFullOnly; // @synthesize headerFullOnly=_headerFullOnly;
 @property(nonatomic, getter=isOctectAligned) _Bool octetAligned; // @synthesize octetAligned=_octetAligned;
+@property(nonatomic) unsigned int channelAwareOffset; // @synthesize channelAwareOffset=_channelAwareOffset;
 @property(nonatomic) unsigned int maxPtime; // @synthesize maxPtime=_maxPtime;
 @property(nonatomic) unsigned int ptime; // @synthesize ptime=_ptime;
 @property(nonatomic) unsigned int dtmfTimestampRate; // @synthesize dtmfTimestampRate=_dtmfTimestampRate;

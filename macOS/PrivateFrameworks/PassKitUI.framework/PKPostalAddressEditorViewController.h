@@ -9,7 +9,7 @@
 #import "PKAutocompleteTextFieldDelegate.h"
 #import "PKContactLabelMenuControllerDelegate.h"
 
-@class CNContact, CNPostalAddressFormattingSpecification, NSArray, NSButton, NSComboBox, NSDictionary, NSPopUpButton, NSSet, NSStackView, NSString, NSTextField, PKContactCountryPopUpButton, PKContactLabelMenuController, PKContactTextField;
+@class CNContact, CNPostalAddressFormattingSpecification, NSArray, NSButton, NSComboBox, NSDictionary, NSImageView, NSPopUpButton, NSSet, NSStackView, NSString, NSTextField, PKContactCountryPopUpButton, PKContactLabelMenuController, PKContactTextField;
 
 @interface PKPostalAddressEditorViewController : PKPaymentAuthorizationChildViewController <PKAutocompleteTextFieldDelegate, PKContactLabelMenuControllerDelegate>
 {
@@ -20,6 +20,7 @@
     NSArray *_errors;
     id <PKPostalAddressEditorViewControllerDelegate> _delegate;
     NSSet *_requiredFields;
+    NSImageView *_paymentLogoImageView;
     NSTextField *_typeTextField;
     NSTextField *_promptTextField;
     NSStackView *_controlsAndNamesStackView;
@@ -74,6 +75,7 @@
 @property(retain, nonatomic) NSStackView *controlsAndNamesStackView; // @synthesize controlsAndNamesStackView=_controlsAndNamesStackView;
 @property(retain, nonatomic) NSTextField *promptTextField; // @synthesize promptTextField=_promptTextField;
 @property(retain, nonatomic) NSTextField *typeTextField; // @synthesize typeTextField=_typeTextField;
+@property(retain, nonatomic) NSImageView *paymentLogoImageView; // @synthesize paymentLogoImageView=_paymentLogoImageView;
 @property(retain, nonatomic) NSSet *requiredFields; // @synthesize requiredFields=_requiredFields;
 @property(nonatomic) __weak id <PKPostalAddressEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *errors; // @synthesize errors=_errors;

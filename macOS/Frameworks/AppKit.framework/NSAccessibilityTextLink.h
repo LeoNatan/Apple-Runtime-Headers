@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAccessibilityMockUIElement.h>
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilityTextLink : NSAccessibilityMockUIElement
 {
     struct _NSRange _characterRange;

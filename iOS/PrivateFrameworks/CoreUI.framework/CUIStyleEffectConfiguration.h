@@ -13,6 +13,7 @@
     long long _state;
     long long _presentationState;
     long long _value;
+    unsigned long long _dimension1;
     _Bool _useSimplifiedEffect;
     _Bool _foregroundColorShouldTintEffects;
     double _brightnessMultiplier;
@@ -25,6 +26,7 @@
 @property(nonatomic) double brightnessMultiplier; // @synthesize brightnessMultiplier=_brightnessMultiplier;
 @property(nonatomic) _Bool foregroundColorShouldTintEffects; // @synthesize foregroundColorShouldTintEffects=_foregroundColorShouldTintEffects;
 @property(nonatomic) _Bool useSimplifiedEffect; // @synthesize useSimplifiedEffect=_useSimplifiedEffect;
+@property(nonatomic) unsigned long long dimension1; // @synthesize dimension1=_dimension1;
 @property(nonatomic) long long value; // @synthesize value=_value;
 @property(nonatomic) long long presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) long long state; // @synthesize state=_state;

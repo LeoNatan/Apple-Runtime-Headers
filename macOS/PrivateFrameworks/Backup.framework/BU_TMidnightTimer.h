@@ -9,9 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface BU_TMidnightTimer : NSObject
 {
-    struct TNSRef<NSTimer *, void> _midnightTimer;
-    struct TNSRef<NSDate *, void> _midnightFireDate;
-    struct TNSRef<NSDateComponents *, void> _dateComponents;
+    struct TNSRef<NSTimer, void> _midnightTimer;
+    struct TNSRef<NSDate, void> _midnightFireDate;
+    struct TNSRef<NSDateComponents, void> _dateComponents;
+    struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _observers;
+    TNSWeakPtr_6f98b07a _checkTimerAndFireDateToken;
 }
 
 - (id).cxx_construct;
@@ -20,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)_checkTimerAndFireDate;
 - (void)_setUpMidnightTimer;
 - (void)_midnightPassed;
-- (void)_systemTimeChanged:(id)arg1;
+- (void)_systemTimeChanged;
 - (void)postNotificationIfDayChanged;
 - (void)aboutToTearDown;
 - (id)init;

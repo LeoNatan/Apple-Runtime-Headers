@@ -35,7 +35,7 @@
 - (id)iCloudAccountForAppleID:(id)arg1;
 - (BOOL)hasPrimaryiCloudAccountForAltDSID:(id)arg1;
 - (BOOL)hasPrimaryiCloudAccountForAppleID:(id)arg1;
-- (void)removeUnusedAuthKitAccounts;
+- (void)removeUnusedAndDuplicateAuthKitAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)activeServiceNamesForAccount:(id)arg1;
 - (id)servicesUsingAccount:(id)arg1;
 - (void)setAccount:(id)arg1 inUse:(BOOL)arg2 byService:(long long)arg3;
@@ -62,6 +62,9 @@
 - (id)passwordResetTokenForAccount:(id)arg1;
 - (id)continuationTokenForAccount:(id)arg1;
 - (id)hearbeatTokenForAccount:(id)arg1;
+- (void)setRepairState:(unsigned long long)arg1 forAccount:(id)arg2;
+- (unsigned long long)repairStateForAccount:(id)arg1;
+- (BOOL)needsRepairForAccount:(id)arg1;
 - (void)setAuthenticationMode:(unsigned long long)arg1 forAccount:(id)arg2;
 - (unsigned long long)authenticationModeForAccount:(id)arg1;
 - (void)setSecurityLevel:(unsigned long long)arg1 forAccount:(id)arg2;

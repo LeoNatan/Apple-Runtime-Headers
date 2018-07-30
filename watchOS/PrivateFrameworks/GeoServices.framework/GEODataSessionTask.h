@@ -11,9 +11,8 @@
 #import "GEODataSessionTaskRulesObserver.h"
 #import "GEOStateCapturing.h"
 
-@class GEOClientMetrics, GEODataSession, GEODataURLSessionTask, GEODataXPCSessionTask, NSData, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_os_activity>, NSString, NSURL;
+@class GEOClientMetrics, GEODataSession, GEODataURLSessionTask, NSData, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_os_activity>, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface GEODataSessionTask : NSObject <GEODataSessionTaskDelegate, GEODataSessionTaskRulesObserver, GEOStateCapturing, GEODataSessionTask>
 {
     id <GEODataSessionTaskDelegate> _delegate;
@@ -24,7 +23,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_os_activity> *_activity;
     id <GEODataSessionTask> _completedSubtask;
     GEODataURLSessionTask *_urlTask;
-    GEODataXPCSessionTask *_xpcTask;
+    GEODataSessionTask *_xpcTask;
     int _requestKind;
     unsigned long long _stateCaptureHandle;
     unsigned int _taskIdentifier;
@@ -40,7 +39,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak GEODataSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) int requestKind; // @synthesize requestKind=_requestKind;
 @property(retain, nonatomic) id <GEODataSessionTask> completedSubtask; // @synthesize completedSubtask=_completedSubtask;
-@property(retain, nonatomic) GEODataXPCSessionTask *xpcTask; // @synthesize xpcTask=_xpcTask;
+@property(retain, nonatomic) GEODataSessionTask *xpcTask; // @synthesize xpcTask=_xpcTask;
 @property(retain, nonatomic) GEODataURLSessionTask *urlTask; // @synthesize urlTask=_urlTask;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sessionIsolation; // @synthesize sessionIsolation=_sessionIsolation;

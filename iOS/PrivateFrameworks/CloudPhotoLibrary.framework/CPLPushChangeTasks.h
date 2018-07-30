@@ -21,11 +21,13 @@
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)invalidRecordIdentifiers;
+- (id)invalidRecordScopedIdentifiers;
 - (id)description;
 - (id)_descriptionFromTasksByType:(id)arg1;
 @property(readonly, nonatomic) _Bool hasTasks;
-- (void)addTask:(long long)arg1 forRecordWithIdentifier:(id)arg2;
+- (void)addTask:(long long)arg1 forRecordWithScopedIdentifier:(id)arg2;
 - (void)enumerateTasksWithBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateScopedTasksWithBlock:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

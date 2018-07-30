@@ -17,11 +17,13 @@
 
 @property(readonly, nonatomic) NSDictionary *fileURLsBySection; // @synthesize fileURLsBySection=_fileURLsBySection;
 - (void).cxx_destruct;
+- (id)inputForItem:(id)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
 - (long long)numberOfItemsInSection:(long long)arg1;
 - (long long)numberOfSections;
 - (id)initWithFileURLsBySection:(id)arg1;
+- (id)photosGraphSuggestedContributions;
 
 @end
 

@@ -22,7 +22,8 @@
 @property(readonly, nonatomic) Class elementClass; // @synthesize elementClass=_elementClass;
 @property(readonly, nonatomic) long long displayType; // @synthesize displayType=_displayType;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, retain, nonatomic) FBSDisplayLayoutElement *element; // @synthesize element=_element;
+@property(readonly, nonatomic) FBSDisplayLayoutElement *element; // @synthesize element=_element;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

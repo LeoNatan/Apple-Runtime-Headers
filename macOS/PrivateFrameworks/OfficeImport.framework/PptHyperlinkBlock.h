@@ -8,13 +8,13 @@
 
 @class ESDContainer, ESDObject;
 
-__attribute__((visibility("hidden")))
 @interface PptHyperlinkBlock : NSObject
 {
     ESDContainer *mInteractiveInfoContainerHolder;
     ESDObject *mTxInteractiveInfoAtomHolder;
 }
 
+- (void).cxx_destruct;
 - (void)setTxInteractiveInfoAtomHolder:(id)arg1;
 - (struct PptTxInteracInfoAtom *)txtInteractiveInfoAtom;
 - (void)setInteractiveInfoContainerHolder:(id)arg1;

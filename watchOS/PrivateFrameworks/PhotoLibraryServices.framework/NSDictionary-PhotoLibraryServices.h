@@ -7,5 +7,6 @@
 #import "NSDictionary.h"
 
 @interface NSDictionary (PhotoLibraryServices)
+- (id)_pl_prettyDescriptionWithIndent:(int)arg1;
 @end
 

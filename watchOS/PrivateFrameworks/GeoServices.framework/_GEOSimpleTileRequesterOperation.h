@@ -31,12 +31,14 @@ __attribute__((visibility("hidden")))
     int _attempts;
     int _checksumMethod;
     unsigned int _tileEdition;
-    unsigned char _eTagType;
     _Bool _finished;
+    _Bool _existingCachedDataCurrent;
     // Error parsing type: AI, name: _priority
     GEODataSession *_dataSession;
+    unsigned long long _signpostID;
 }
 
+@property(readonly, nonatomic, getter=isExistingCachedDataCurrent) _Bool existingCachedDataCurrent; // @synthesize existingCachedDataCurrent=_existingCachedDataCurrent;
 @property(retain, nonatomic) GEOClientMetrics *clientMetrics; // @synthesize clientMetrics=_clientMetrics;
 @property(retain, nonatomic) NSString *responseEtag; // @synthesize responseEtag=_responseEtag;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
@@ -50,9 +52,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEODataSessionTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property struct _GEOTileKey key; // @synthesize key=_key;
-@property(nonatomic) unsigned char eTagType; // @synthesize eTagType=_eTagType;
 @property(retain, nonatomic) NSObject<OS_os_activity> *parentTileActivity; // @synthesize parentTileActivity=_parentTileActivity;
 @property(retain, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
+@property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(readonly, nonatomic) GEODataRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) GEODataSession *dataSession; // @synthesize dataSession=_dataSession;
 - (void).cxx_destruct;

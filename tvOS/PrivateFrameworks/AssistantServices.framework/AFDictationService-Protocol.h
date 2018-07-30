@@ -13,6 +13,7 @@
 - (oneway void)getInstalledOfflineLanguagesWithCompletion:(void (^)(NSArray *))arg1;
 - (oneway void)_sendEngagementFeedback:(long long)arg1 voiceQueryIdentifier:(NSString *)arg2;
 - (oneway void)_startDictationWithURL:(NSURL *)arg1 isNarrowBand:(_Bool)arg2 language:(NSString *)arg3 options:(AFDictationOptions *)arg4;
+- (oneway void)recordAWDSuccessMetrics;
 - (oneway void)recordFailureMetricsForError:(NSError *)arg1;
 - (oneway void)endSession;
 - (oneway void)preheatWithRecordDeviceIdentifier:(NSString *)arg1;

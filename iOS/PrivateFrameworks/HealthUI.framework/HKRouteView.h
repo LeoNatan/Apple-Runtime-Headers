@@ -23,6 +23,8 @@
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)layoutSubviews;
 - (void)setLocationReadings:(id)arg1;
+- (void)_displayMapRouteForLocationReadings;
+- (void)_addAnnotation:(id)arg1 isStartPoint:(_Bool)arg2;
 - (void)_toggleMapType;
 - (id)routeImageForSharing;
 - (void)_setRouteMapType:(unsigned long long)arg1;

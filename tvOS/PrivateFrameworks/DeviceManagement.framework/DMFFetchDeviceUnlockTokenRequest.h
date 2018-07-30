@@ -4,16 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSString;
 
-@interface DMFFetchDeviceUnlockTokenRequest : CATTaskRequest
+@interface DMFFetchDeviceUnlockTokenRequest : DMFTaskRequest
 {
     NSString *_secret;
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
 @property(copy, nonatomic) NSString *secret; // @synthesize secret=_secret;
 - (void).cxx_destruct;

@@ -30,7 +30,6 @@
 - (void)_registerCacheDeleteCallbacks;
 - (id)_validVolume:(id)arg1;
 - (id)initWithCacheDeleteID:(id)arg1;
-- (_Bool)shouldIncreaseCacheSizeBy:(unsigned long long)arg1 urgency:(int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

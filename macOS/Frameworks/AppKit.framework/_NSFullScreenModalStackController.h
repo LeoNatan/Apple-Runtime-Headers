@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)createModalStackForWindow:(id)arg1;
 - (void)tearDownAnyModalStateAnimating:(BOOL)arg1;
 - (void)tearDownAnyModalState;
+- (void)_setFrontWindow:(id)arg1;
 - (void)registerForNotifications:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;

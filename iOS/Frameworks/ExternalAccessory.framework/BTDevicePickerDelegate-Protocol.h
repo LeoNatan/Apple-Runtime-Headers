@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class BTDevicePicker, BluetoothDevice;
+@class BTDevicePicker;
 
 @protocol BTDevicePickerDelegate <NSObject>
 
 @optional
-- (void)devicePicker:(BTDevicePicker *)arg1 didDismissWithResult:(long long)arg2 device:(BluetoothDevice *)arg3;
+- (void)devicePicker:(BTDevicePicker *)arg1 didDismissWithResult:(long long)arg2 device:(id)arg3;
 @end
 

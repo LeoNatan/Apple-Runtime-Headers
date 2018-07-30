@@ -6,35 +6,46 @@
 
 #import "NSObject.h"
 
-@class MSUProduct, MSUProductManager, NSArray, NSDictionary, NSError, NSNumber, NSObject<OS_dispatch_semaphore>, NSURL, PKDistribution;
+@class MSUProduct, MSUProductManager, NSArray, NSDictionary, NSError, NSNumber, NSObject<OS_dispatch_semaphore>, NSString, NSURL, PKDistribution, PKDownloader, PKPackageSourceManager;
 
 @interface BOSPredicateUpdateProductManager : NSObject
 {
     MSUProduct *_product;
+    NSString *_productBridgeVersion;
     NSDictionary *_macOSInstallationAuxInfo;
     MSUProductManager *_productManager;
+    PKPackageSourceManager *_sourceManager;
     NSError *_error;
     NSURL *_catalogURL;
     NSURL *_catalogURLOverride;
     unsigned long long _catalogOptionsOverride;
     NSNumber *_stagedUpdatesOnlyOverride;
+    PKDownloader *_downloader;
     NSObject<OS_dispatch_semaphore> *_downloaderFinished;
+    NSURL *_destinationURL;
     CDUnknownBlockType _downloadProgressHandler;
     NSArray *_localPackageSpecifiers;
 }
 
 @property(retain) NSArray *localPackageSpecifiers; // @synthesize localPackageSpecifiers=_localPackageSpecifiers;
 @property(copy) CDUnknownBlockType downloadProgressHandler; // @synthesize downloadProgressHandler=_downloadProgressHandler;
+@property(retain) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(retain) NSObject<OS_dispatch_semaphore> *downloaderFinished; // @synthesize downloaderFinished=_downloaderFinished;
+@property(retain) PKDownloader *downloader; // @synthesize downloader=_downloader;
 @property(retain) NSNumber *stagedUpdatesOnlyOverride; // @synthesize stagedUpdatesOnlyOverride=_stagedUpdatesOnlyOverride;
 @property unsigned long long catalogOptionsOverride; // @synthesize catalogOptionsOverride=_catalogOptionsOverride;
 @property(retain) NSURL *catalogURLOverride; // @synthesize catalogURLOverride=_catalogURLOverride;
 @property(retain) NSURL *catalogURL; // @synthesize catalogURL=_catalogURL;
 @property(retain) NSError *error; // @synthesize error=_error;
+@property(retain) PKPackageSourceManager *sourceManager; // @synthesize sourceManager=_sourceManager;
 @property(retain) MSUProductManager *productManager; // @synthesize productManager=_productManager;
 @property(retain) NSDictionary *macOSInstallationAuxInfo; // @synthesize macOSInstallationAuxInfo=_macOSInstallationAuxInfo;
+@property(retain) NSString *productBridgeVersion; // @synthesize productBridgeVersion=_productBridgeVersion;
 @property(retain) MSUProduct *product; // @synthesize product=_product;
 - (void).cxx_destruct;
+- (void)_tryAlternateSourceInvalidatingPackageReference:(id)arg1 reason:(int)arg2 downloader:(id)arg3 error:(id)arg4;
+- (id)_destinationURLForPackageReference:(id)arg1 destinationDirectoryURL:(id)arg2;
+- (BOOL)_queueRequiredPackagesReferencesWithDownloader:(id)arg1 destinationDirectoryURL:(id)arg2;
 - (BOOL)_downloadPackagesForProductToDirectory:(id)arg1;
 - (BOOL)_findProductMatchingPredicate:(id)arg1;
 - (BOOL)_evaluateProductsInCatalogWithPredicate:(id)arg1;
@@ -44,6 +55,7 @@
 - (id)_catalogEvaluationPredicate;
 - (void)downloadProductToDirectory:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)findProductWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)addDownloadCacheWithURL:(id)arg1;
 - (void)setStagedUpdatesOnly:(BOOL)arg1;
 @property(readonly) NSURL *bridgeOSSoftwareUpdateEventRecordingServiceURL;
 @property(readonly) PKDistribution *distribution;

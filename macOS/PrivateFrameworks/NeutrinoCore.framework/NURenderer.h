@@ -16,7 +16,7 @@
     CIContext *_context;
 }
 
-+ (id)_renderContextOptionsWithOptions:(id)arg1;
++ (id)_renderContextOptionsWithOptions:(id)arg1 nameSuffix:(id)arg2;
 + (BOOL)allowClampToAlpha;
 + (BOOL)defaultUseHalfFloat;
 + (int)workingFormat;

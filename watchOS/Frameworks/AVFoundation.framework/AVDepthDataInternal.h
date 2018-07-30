@@ -8,6 +8,7 @@
 
 @class AVCameraCalibrationData, NSData;
 
+__attribute__((visibility("hidden")))
 @interface AVDepthDataInternal : NSObject
 {
     struct __CVBuffer *pixelBuffer;

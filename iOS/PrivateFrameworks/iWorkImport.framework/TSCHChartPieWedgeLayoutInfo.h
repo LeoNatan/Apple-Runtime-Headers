@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class NSArray, TSCHChartPieWedgeElement;
+@class NSArray, NSNumber, TSCHChartPieWedgeElement;
 
 __attribute__((visibility("hidden")))
 @interface TSCHChartPieWedgeLayoutInfo : NSObject <NSCopying>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     TSCHChartPieWedgeElement *mWedgeElement;
     NSArray *mPieLabels;
     struct CGAffineTransform mCombinedLabelTransformIntoPieChartCoordinateSpace;
+    NSNumber *mEnableCalloutLine;
 }
 
 @property(nonatomic) struct CGAffineTransform combinedLabelTransformIntoPieChartCoordinateSpace; // @synthesize combinedLabelTransformIntoPieChartCoordinateSpace=mCombinedLabelTransformIntoPieChartCoordinateSpace;

@@ -13,12 +13,12 @@
 
 @property(readonly, nonatomic) float minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 - (void)_setupGraphViewSelectionStyle;
-- (id)_buildGraphViewWithLabelDimension:(id)arg1;
+- (id)_buildGraphViewWithLabelDimension:(id)arg1 labelEndings:(int)arg2;
 - (void)_pinView:(id)arg1 toParentView:(id)arg2;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithMinimumHeight:(float)arg1;
-- (id)initWithMinimumHeight:(float)arg1 labelDimension:(id)arg2;
+- (id)initWithMinimumHeight:(float)arg1 labelDimension:(id)arg2 labelEndings:(int)arg3;
 
 @end
 

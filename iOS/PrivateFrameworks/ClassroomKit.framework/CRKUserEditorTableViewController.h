@@ -17,14 +17,14 @@
     long long mNumberOfSections;
     long long mMeCardSwitchCellSection;
     long long mUserCellSection;
-    _Bool _showsPhoneticName;
-    _Bool _showsFamilyNameName;
+    _Bool _showPhoneticName;
+    _Bool _showFamilyNameFirst;
     id <CRKUserEditorTableViewControllerDelegate> _delegate;
     CRKUser *_user;
 }
 
-@property(nonatomic) _Bool showsFamilyNameName; // @synthesize showsFamilyNameName=_showsFamilyNameName;
-@property(nonatomic) _Bool showsPhoneticName; // @synthesize showsPhoneticName=_showsPhoneticName;
+@property(nonatomic, getter=shouldShowFamilyNameFirst) _Bool showFamilyNameFirst; // @synthesize showFamilyNameFirst=_showFamilyNameFirst;
+@property(nonatomic, getter=shouldShowPhoneticName) _Bool showPhoneticName; // @synthesize showPhoneticName=_showPhoneticName;
 @property(retain, nonatomic) CRKUser *user; // @synthesize user=_user;
 @property(nonatomic) __weak id <CRKUserEditorTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

@@ -6,16 +6,13 @@
 
 #import "NSObject.h"
 
-@class ManagedPlugInHostPolicy, NSArray, NSDate, NSMapTable, NSMutableDictionary, NSString, WBSPerSitePreference;
+@class NSArray, NSDate, NSMapTable, NSMutableDictionary, NSString, WBSPerSitePreference;
 
 __attribute__((visibility("hidden")))
 @interface ManagedPlugIn : NSObject
 {
     NSMutableDictionary *_hostnamesToPolicies;
     NSMapTable *_browserViewControllerToPageURL;
-    ManagedPlugInHostPolicy *_appleWildcardPolicyForAppleConnectPlugIn;
-    BOOL _hasCheckedIsAppleConnectPlugIn;
-    BOOL _isAppleConnectPlugIn;
     BOOL _eligibleForWhitelisting;
     BOOL _runUnsandboxedOnFirstVisit;
     BOOL _updateWasAvailableWhenUnavailableDialogWasLastShown;
@@ -26,6 +23,7 @@ __attribute__((visibility("hidden")))
     BOOL _blockedForCompatibility;
     BOOL _pluginUpdateAvailable;
     BOOL _sandboxed;
+    BOOL _supported;
     BOOL _isOffByDefault;
     int _firstVisitPolicy;
     unsigned int _loadPolicy;
@@ -42,9 +40,9 @@ __attribute__((visibility("hidden")))
     NSDate *_lastUsedDate;
 }
 
-+ (BOOL)_plugInAtURL:(id)arg1 meetsCodeSigningRequirement:(id)arg2 andMatchesIdentifier:(id)arg3;
 @property(readonly, nonatomic) BOOL isOffByDefault; // @synthesize isOffByDefault=_isOffByDefault;
 @property(retain, nonatomic) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
+@property(readonly, nonatomic, getter=isSupported) BOOL supported; // @synthesize supported=_supported;
 @property(nonatomic) __weak id <ManagedPlugInDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WBSPerSitePreference *preference; // @synthesize preference=_preference;
 @property(nonatomic, getter=isSandboxed) BOOL sandboxed; // @synthesize sandboxed=_sandboxed;
@@ -68,9 +66,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL isAppleConnectPlugIn; // @synthesize isAppleConnectPlugIn=_isAppleConnectPlugIn;
-- (id)appleWildcardPolicyForAppleConnectPlugIn;
-- (void)createWildcardAppleSubdomainPoliciesForAppleConnectPlugInIfNecessary;
 - (BOOL)updateHostPolicy:(id)arg1 knownToUsePlugIn:(BOOL)arg2;
 - (void)setEligibleForWhitelistedAskPolicy:(BOOL)arg1;
 @property(readonly, nonatomic) NSArray *nonBlockHostPolicies;
@@ -101,7 +96,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isUnsafe;
 - (id)blockedPluginHostPoliciesForDisplayIncludingSyntheticPoliciesForOpenURLs:(id)arg1;
 @property(readonly, nonatomic) NSArray *blockedPluginHostPolicies;
-- (id)initWithPlugInInfo:(id)arg1;
+- (id)initWithPlugInInfo:(id)arg1 isSupported:(BOOL)arg2;
 - (id)init;
 
 @end

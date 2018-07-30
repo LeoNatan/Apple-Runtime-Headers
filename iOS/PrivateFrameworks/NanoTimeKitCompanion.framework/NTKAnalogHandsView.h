@@ -8,7 +8,7 @@
 
 #import "NTKTimeView.h"
 
-@class NSCalendar, NSDate, NSNumber, NSString, NSTimer, NTKColoringImageView, NTKHandView, UIColor;
+@class CALayer, CLKDevice, NSCalendar, NSDate, NSNumber, NSString, NSTimer, NTKColoringImageView, NTKHandView, UIColor;
 
 @interface NTKAnalogHandsView : UIView <NTKTimeView>
 {
@@ -20,10 +20,18 @@
     NSNumber *_displayLinkToken;
     NSTimer *_animationUpdateTimer;
     double _timeOffset;
+    CALayer *_minuteHandDot;
+    CALayer *_secondHandDot;
+    CALayer *_minuteHandTransitionBodyLayer;
+    CALayer *_minuteHandTransitionStemLayer;
+    CALayer *_minuteHandTransitionPegLayer;
+    CALayer *_hourHandTransitionBodyLayer;
+    CALayer *_hourHandTransitionStemLayer;
     _Bool _timeScrubbing;
     _Bool _frozen;
     _Bool _showDebugClientSideHands;
     _Bool _shouldRestoreSecondHandAfterScrubbing;
+    CLKDevice *_device;
     NTKHandView *_hourHandView;
     NTKHandView *_minuteHandView;
     NTKHandView *_secondHandView;
@@ -48,9 +56,11 @@
 @property(readonly, nonatomic) _Bool timeScrubbing; // @synthesize timeScrubbing=_timeScrubbing;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
+@property(retain, nonatomic) CALayer *minuteHandDot; // @synthesize minuteHandDot=_minuteHandDot;
 @property(retain, nonatomic) NTKHandView *secondHandView; // @synthesize secondHandView=_secondHandView;
 @property(retain, nonatomic) NTKHandView *minuteHandView; // @synthesize minuteHandView=_minuteHandView;
 @property(retain, nonatomic) NTKHandView *hourHandView; // @synthesize hourHandView=_hourHandView;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)_accessibilityInvalidateElements;
 - (void)_repointDebugHandsToCurrentTime;
@@ -60,12 +70,18 @@
 - (void)_enumerateSecondHandViewsWithBlock:(CDUnknownBlockType)arg1;
 - (id)displayTime;
 - (void)_significantTimeChanged;
+- (void)_addHourMinuteHandsTransitionLayers;
+- (void)_removeHourMinuteHandsTransitionLayers;
 - (void)_removeColorTransitionViews;
-- (void)applyColor:(id)arg1;
-- (void)applyTransitionFraction:(double)arg1 fromColor:(id)arg2 toColor:(id)arg3;
+- (void)applySecondHandDotColor:(id)arg1;
+- (void)applySecondHandColor:(id)arg1;
+- (void)applySecondHandTransitionFraction:(double)arg1 fromColor:(id)arg2 toColor:(id)arg3;
+- (void)applyHourMinuteHandsTransitionFraction:(double)arg1 fromStrokeColor:(id)arg2 fromFillColor:(id)arg3 toStrokeColor:(id)arg4 toFillColor:(id)arg5;
+- (void)applyHourMinuteHandsStrokeColor:(id)arg1 fillColor:(id)arg2;
 - (void)endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)scrubToDate:(id)arg1 animated:(_Bool)arg2;
 - (void)startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)setupDefaultMinuteHandDotIfNecessary;
 - (_Bool)_canRunTimeAnimation;
 - (void)_stopTimeAnimation;
 - (void)_startNewTimeAnimation;
@@ -76,7 +92,7 @@
 - (void)_enumerateHandViews:(CDUnknownBlockType)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initForDevice:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

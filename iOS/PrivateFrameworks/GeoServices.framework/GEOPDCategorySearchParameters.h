@@ -10,6 +10,7 @@
 
 @class GEOPDRecentRouteInfo, GEOPDViewportInfo, NSData, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDCategorySearchParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

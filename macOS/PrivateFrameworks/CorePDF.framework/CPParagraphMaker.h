@@ -8,6 +8,7 @@
 
 @class CPPage, CPZone, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPParagraphMaker : NSObject
 {
     NSMutableArray *avail;

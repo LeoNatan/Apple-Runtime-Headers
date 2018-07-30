@@ -13,33 +13,33 @@
 
 @interface NUSpheroid : NSObject <NUAnimatable, NURotatable>
 {
+    NUScene *_scene;
+    _Bool _visible;
+    _Bool _facing;
     unsigned int _type;
-    unsigned int _programType;
     NUSpheroid *_parent;
     float _distance;
-    float _angle;
-    float _radius;
-    float _rotation;
-    float _radiusScale;
-    float _opacity;
     float _distanceScale;
+    float _angle;
+    float _rotation;
+    float _opacity;
+    float _radius;
+    float _radiusScale;
+    unsigned int _programType;
+    unsigned int _spriteType;
+    // Error parsing type: , name: _light
     // Error parsing type: , name: _colorize
     // Error parsing type: , name: _position
-    // Error parsing type: , name: _light
-    unsigned int _spriteType;
     struct CLLocationCoordinate2D _homeCoordinate;
     struct CLLocationCoordinate2D _centerCoordinate;
-    unsigned int _visible:1;
-    unsigned int _facing:1;
-    NUScene *_scene;
 }
 
-@property(nonatomic) _Bool facing; // @synthesize facing=_facing;
-@property(nonatomic) _Bool visible; // @synthesize visible=_visible;
+@property(nonatomic, getter=isFacing) _Bool facing; // @synthesize facing=_facing;
+@property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
+@property(nonatomic) struct CLLocationCoordinate2D centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
 @property(nonatomic) struct CLLocationCoordinate2D homeCoordinate; // @synthesize homeCoordinate=_homeCoordinate;
 @property(nonatomic) unsigned int spriteType; // @synthesize spriteType=_spriteType;
 @property(readonly, nonatomic) unsigned int programType; // @synthesize programType=_programType;
-@property(nonatomic) float rotation; // @synthesize rotation=_rotation;
 // Error parsing type for property light:
 // Property attributes: T,R,N,V_light
 
@@ -47,27 +47,27 @@
 // Property attributes: T,R,N,V_position
 
 @property(nonatomic) float radiusScale; // @synthesize radiusScale=_radiusScale;
+@property(readonly, nonatomic) float radius; // @synthesize radius=_radius;
 // Error parsing type for property colorize:
 // Property attributes: T,N,V_colorize
 
 @property(nonatomic) float opacity; // @synthesize opacity=_opacity;
-@property(readonly, nonatomic) float radius; // @synthesize radius=_radius;
+@property(nonatomic) float rotation; // @synthesize rotation=_rotation;
 @property(nonatomic) float angle; // @synthesize angle=_angle;
+@property(nonatomic) float distanceScale; // @synthesize distanceScale=_distanceScale;
 @property(nonatomic) float distance; // @synthesize distance=_distance;
 @property(readonly, nonatomic) NUSpheroid *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)setCenter:(struct CGPoint)arg1;
-@property(nonatomic) struct CLLocationCoordinate2D centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
 - (void)_updateCamera;
 - (void)setCenterCoordinate:(struct CLLocationCoordinate2D)arg1 animated:(_Bool)arg2;
 - (void)setAnimatedFloat:(unsigned int)arg1 forKey: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: 12@0:4I8, name: animatedFloatForKey:
 - (void)centerOnCity:(id)arg1;
 - (void)updateSunLocationForDate:(id)arg1;
--     // Error parsing type: v28@0:4@8^f12^f16^20^f24, name: date:toRotation:toAngle:toLight:toDistance:
+-     // Error parsing type: v32@0:4@8^f12^f16^20^f24^f28, name: date:toRotation:toAngle:toLight:toDistance:toRadius:
 -     // Error parsing type: v20@0:4@8^12^16, name: date:toCameraPosition:toCameraTarget:
-@property(nonatomic) float distanceScale; // @dynamic distanceScale;
 - (void)_updatePositionFromAngle;
 - (id)initWithScene:(id)arg1 parent:(id)arg2 type:(unsigned int)arg3;
 

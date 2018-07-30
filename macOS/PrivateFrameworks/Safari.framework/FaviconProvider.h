@@ -8,7 +8,7 @@
 
 #import "FaviconProviderHistoryBookmarkAdapterDelegate.h"
 
-@class FaviconProviderHistoryBookmarkAdapter, FaviconProviderIconControllerDatabaseStore, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class FaviconProviderHistoryBookmarkAdapter, FaviconProviderIconControllerDatabaseStore, NSCache, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface FaviconProvider : WBSFaviconProvider <FaviconProviderHistoryBookmarkAdapterDelegate>
@@ -19,19 +19,25 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_knownURLsDuringMigration;
     FaviconProviderHistoryBookmarkAdapter *_historyAndBookmarksAdapter;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    NSCache *_monogramTitleToImageCache;
 }
 
 - (void).cxx_destruct;
 - (void)faviconProviderHistoryBookmarkAdapter:(id)arg1 didFlushURLString:(id)arg2;
 - (void)faviconProviderHistoryBookmarkAdapter:(id)arg1 didEstablishKnownURLStrings:(id)arg2;
 - (void)faviconProviderHistoryBookmarkAdapterCouldNotEstablishKnownURLs:(id)arg1;
-- (BOOL)_shouldCoalesceKnownURLsDuringMigration;
 - (void)_removeIconControllerSQLiteFilesIfNeeded;
+- (id)_monogramForTitle:(id)arg1 url:(id)arg2;
+- (id)fallbackIconForRequest:(id)arg1;
+- (id)_topSitesPlaceholderImageForSize:(struct CGSize)arg1;
+- (id)_favoritesPlaceholderImageForSize:(struct CGSize)arg1;
+- (id)_bookmarksPlaceholderImageForSize:(struct CGSize)arg1;
+- (id)_historyPlaceholderImageForSize:(struct CGSize)arg1;
+- (id)builtInIconForRequest:(id)arg1;
 - (void)cleanUpAfterPersistenceSetUpDidSucceed:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)imageForRequestDuringPersistenceSetUp:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setUpPersistenceAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithIconDatabasePathURL:(id)arg1 persistenceBaseURL:(id)arg2 persistenceName:(id)arg3;
-- (id)initWithPersistenceBaseURL:(id)arg1 persistenceName:(id)arg2;
+- (id)initWithIconDatabasePathURL:(id)arg1 persistenceBaseURL:(id)arg2 persistenceName:(id)arg3 preferredIconSize:(struct CGSize)arg4 atScale:(double)arg5 allScales:(id)arg6 shouldCheckIntegrityWhenOpeningDatabaseBlock:(CDUnknownBlockType)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,18 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary;
+@class CPBitmapStore, NSMutableDictionary;
 
 @interface ICLetterpressImageCache : NSObject
 {
     NSMutableDictionary *_imageCache;
+    CPBitmapStore *_serializedCache;
 }
 
++ (id)serializedCacheKeyForImageNamed:(id)arg1 tintColor:(id)arg2 scale:(double)arg3;
 + (id)letterpressedImageForImage:(id)arg1 tintColor:(id)arg2 scale:(double)arg3;
 + (id)sharedCache;
+@property(retain, nonatomic) CPBitmapStore *serializedCache; // @synthesize serializedCache=_serializedCache;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
-- (id)imageNamed:(id)arg1 tintColor:(id)arg2;
+- (void)purge;
+- (id)imageNamed:(id)arg1 tintColor:(id)arg2 version:(unsigned long long)arg3;
 - (id)init;
 
 @end

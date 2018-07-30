@@ -10,7 +10,6 @@
 
 @class CNCDPersistenceStack, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNCoreDataMapperX : NSObject <CNDataMapper>
 {
     CNCDPersistenceStack *_persistenceStack;
@@ -49,7 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)contactObservableForFetchRequest:(id)arg1;
 - (void)setNotificationSource:(id)arg1;
 - (id)initWithPersistenceStack:(id)arg1;
-- (id)initWithContactsEnvironment:(id)arg1;
+- (id)initWithContactsEnvironment:(id)arg1 managedConfiguration:(id)arg2;
 - (id)init;
 
 // Remaining properties

@@ -13,7 +13,6 @@
 @interface MFAttachment : NSObject <MFCancelable>
 {
     MFAttachmentManager *_attachmentManager;
-    _Bool _isDataAvailableLocally;
     MFAttachmentPlaceholder *_placeholder;
     NSProgress *_downloadProgress;
     _Bool _isAutoArchive;
@@ -23,12 +22,12 @@
     NSString *_disposition;
     CDUnknownBlockType _fetchCompletionBlock;
     id <MFDataConsumer> _customConsumer;
-    unsigned int _lastProgressBytes;
+    long long _lastProgressBytes;
     double _lastProgressTime;
 }
 
 @property(nonatomic) double lastProgressTime; // @synthesize lastProgressTime=_lastProgressTime;
-@property(nonatomic) unsigned int lastProgressBytes; // @synthesize lastProgressBytes=_lastProgressBytes;
+@property(nonatomic) long long lastProgressBytes; // @synthesize lastProgressBytes=_lastProgressBytes;
 @property(retain, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(nonatomic) MFAttachmentManager *attachmentManager; // @synthesize attachmentManager=_attachmentManager;
 @property(nonatomic) _Bool wantsCompletionBlockOffMainThread; // @synthesize wantsCompletionBlockOffMainThread=_wantsCompletionBlockOffMainThread;
@@ -79,7 +78,7 @@
 - (id)filterData:(id)arg1;
 - (id)fileURL;
 - (void)resetProgress;
-- (void)updateProgressWithCurrentBytes:(unsigned int)arg1;
+- (void)updateProgressWithCurrentBytes:(long long)arg1;
 @property(retain, nonatomic) MFMailDropMetadata *mailDropMetadata; // @dynamic mailDropMetadata;
 @property _Bool isPlaceholder; // @dynamic isPlaceholder;
 - (id)fetchPlaceholderData;

@@ -46,7 +46,8 @@
 - (void)_extensionsWereGloballyDisabled;
 - (BOOL)_contentBlockerIsEnabledWithComposedIdentifier:(id)arg1;
 - (BOOL)_contentBlockerIsEnabledForSafariExtensionHelper:(id)arg1 inSafariWithKeychainAccount:(long long)arg2;
-- (void)_writeContentBlockersState:(id)arg1;
+- (void)_writeContentBlockersStateToKeychain;
+- (BOOL)_hasAnyEnabledContentBlockers;
 - (id)_readContentBlockersState;
 - (id)_composedIdentifierForEnabledStateOfContentBlocker:(id)arg1;
 - (id)_composedIdentifierForEnabledStateOfContentBlockerWithBundleIdentifier:(id)arg1 developerIdentifier:(id)arg2;

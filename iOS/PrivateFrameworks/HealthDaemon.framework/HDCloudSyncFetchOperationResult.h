@@ -8,34 +8,28 @@
 
 #import "NSCopying.h"
 
-@class HDCloudSyncMasterRecord, NSMutableDictionary, NSSet, NSUUID;
+@class HDCloudSyncOperationConfiguration, HDCloudSyncZone, NSDictionary, NSSet;
 
 @interface HDCloudSyncFetchOperationResult : NSObject <NSCopying>
 {
+    HDCloudSyncOperationConfiguration *_configuration;
     long long _status;
-    NSMutableDictionary *_storeRecordsCacheMap;
-    HDCloudSyncMasterRecord *_masterRecord;
-    NSSet *_recordZoneIDs;
-    NSUUID *_syncStorePushIdentifier;
-    NSSet *_syncStorePullIdentifierSet;
-    NSSet *_abandonedStoreIdentifierSet;
-    NSSet *_reclaimedIdentifierSet;
+    NSDictionary *_zonesByIdentifier;
+    HDCloudSyncZone *_primaryPushZone;
 }
 
-@property(copy, nonatomic) NSSet *reclaimedIdentifierSet; // @synthesize reclaimedIdentifierSet=_reclaimedIdentifierSet;
-@property(copy, nonatomic) NSSet *abandonedStoreIdentifierSet; // @synthesize abandonedStoreIdentifierSet=_abandonedStoreIdentifierSet;
-@property(copy, nonatomic) NSSet *syncStorePullIdentifierSet; // @synthesize syncStorePullIdentifierSet=_syncStorePullIdentifierSet;
-@property(copy, nonatomic) NSUUID *syncStorePushIdentifier; // @synthesize syncStorePushIdentifier=_syncStorePushIdentifier;
-@property(copy, nonatomic) NSSet *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
-@property(retain, nonatomic) HDCloudSyncMasterRecord *masterRecord; // @synthesize masterRecord=_masterRecord;
-@property(retain, nonatomic) NSMutableDictionary *storeRecordsCacheMap; // @synthesize storeRecordsCacheMap=_storeRecordsCacheMap;
-@property(nonatomic) long long status; // @synthesize status=_status;
+@property(readonly, nonatomic) HDCloudSyncZone *primaryPushZone; // @synthesize primaryPushZone=_primaryPushZone;
+@property(readonly, nonatomic) NSDictionary *zonesByIdentifier; // @synthesize zonesByIdentifier=_zonesByIdentifier;
+@property(readonly, nonatomic) long long status; // @synthesize status=_status;
+@property(readonly, nonatomic) HDCloudSyncOperationConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
-- (id)_storeDescriptionForStoreIdentifer:(id)arg1;
+- (id)masterZoneForContainerID:(id)arg1;
+@property(readonly, nonatomic) NSSet *pullZones;
+@property(readonly, nonatomic) NSSet *seizedZones;
+- (id)_storeDescriptionForZone:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithStatus:(long long)arg1;
-- (id)initWithStatus:(long long)arg1 storeRecordsCacheMap:(id)arg2 syncStorePushIdentifier:(id)arg3 syncStorePullIdentifiers:(id)arg4 abandonedStoreIdentifiers:(id)arg5 reclaimedIdentifiers:(id)arg6;
+- (id)initWithStatus:(long long)arg1 configuration:(id)arg2 zonesByIdentifier:(id)arg3;
 
 @end
 

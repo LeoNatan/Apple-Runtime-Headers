@@ -23,6 +23,10 @@
 - (struct CGSize)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 sizeForRowAtIndexPath:(NSIndexPath *)arg3 proposedSize:(struct CGSize)arg4;
 - (void)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 referenceMaximumLength:(double *)arg3 minimumNumberOfTilesToOmit:(long long *)arg4 forSection:(long long)arg5;
 - (id)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 batchIDForTileAtIndexPath:(NSIndexPath *)arg3;
+- (struct CGSize)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 commentSizeForTileAtIndexPath:(NSIndexPath *)arg3 commentIndex:(long long)arg4 proposedSize:(struct CGSize)arg5;
+- (long long)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 commentCountForTileAtIndexPath:(NSIndexPath *)arg3;
+- (struct CGSize)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 likesSizeForTileAtIndexPath:(NSIndexPath *)arg3 proposedSize:(struct CGSize)arg4;
+- (_Bool)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 shouldShowLikesForTileAtIndexPath:(NSIndexPath *)arg3;
 - (struct CGSize)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 captionSizeForTileAtIndexPath:(NSIndexPath *)arg3 proposedSize:(struct CGSize)arg4;
 - (_Bool)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 shouldShowCaptionForTileAtIndexPath:(NSIndexPath *)arg3;
 - (struct CGSize)collectionView:(UICollectionView *)arg1 layout:(PUFeedCollectionViewLayout *)arg2 mininumSizeForTileAtIndexPath:(NSIndexPath *)arg3;

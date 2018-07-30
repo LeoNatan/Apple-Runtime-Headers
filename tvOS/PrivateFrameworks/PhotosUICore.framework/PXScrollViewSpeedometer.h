@@ -12,6 +12,7 @@
 
 @interface PXScrollViewSpeedometer : PXObservable <PXScrollViewControllerObserver>
 {
+    _Bool _hasRampedUpForCurrentAnimatedScroll;
     PXScrollViewController *_scrollViewController;
     long long _regime;
     long long _previousRegime;
@@ -19,10 +20,13 @@
     NSTimer *__timeoutTimer;
     long long __nextRegime;
     long long __nextRegimeCount;
-    struct CGPoint _scrollSpeed;
+    struct CGPoint _scrollVelocity;
+    struct CGPoint _scrollAcceleration;
     struct CGRect __lastVisibleRect;
 }
 
+@property(nonatomic) _Bool hasRampedUpForCurrentAnimatedScroll; // @synthesize hasRampedUpForCurrentAnimatedScroll=_hasRampedUpForCurrentAnimatedScroll;
+@property(nonatomic) struct CGPoint scrollAcceleration; // @synthesize scrollAcceleration=_scrollAcceleration;
 @property(nonatomic, setter=_setNextRegimeCount:) long long _nextRegimeCount; // @synthesize _nextRegimeCount=__nextRegimeCount;
 @property(nonatomic, setter=_setNextRegime:) long long _nextRegime; // @synthesize _nextRegime=__nextRegime;
 @property(retain, nonatomic, setter=_setTimeoutTimer:) NSTimer *_timeoutTimer; // @synthesize _timeoutTimer=__timeoutTimer;
@@ -30,21 +34,25 @@
 @property(nonatomic, setter=_setLastVisibleRect:) struct CGRect _lastVisibleRect; // @synthesize _lastVisibleRect=__lastVisibleRect;
 @property(readonly, nonatomic) long long previousRegime; // @synthesize previousRegime=_previousRegime;
 @property(readonly, nonatomic) long long regime; // @synthesize regime=_regime;
-@property(nonatomic, setter=_setScrollSpeed:) struct CGPoint scrollSpeed; // @synthesize scrollSpeed=_scrollSpeed;
+@property(nonatomic) struct CGPoint scrollVelocity; // @synthesize scrollVelocity=_scrollVelocity;
 @property(readonly, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 - (void).cxx_destruct;
 - (void)_handleTimeoutTimer:(id)arg1;
 - (void)_rescheduleTimeout;
-- (long long)_newRegimeForScrollSpeed:(struct CGPoint)arg1;
 - (double)fastUpperThreshold;
 - (double)fastLowerThreshold;
 - (double)mediumUpperThreshold;
 - (double)mediumLowerThreshold;
 - (void)_setPreviousRegime:(long long)arg1;
 - (void)_setRegime:(long long)arg1;
+- (void)_handleScrollEvent:(id)arg1 didScrollingEnd:(_Bool)arg2;
+- (void)scrollViewControllerDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewControllerWillBeginScrollingAnimation:(id)arg1 towardsContentEdges:(unsigned long long)arg2;
 - (void)scrollViewControllerDidEndScrolling:(id)arg1;
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
+- (void)_updateScrollRegime;
+- (void)didPerformChanges;
 @property(readonly, copy) NSString *description;
 - (id)mutableChangeObject;
 - (id)init;

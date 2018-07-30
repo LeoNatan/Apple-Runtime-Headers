@@ -6,10 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSNumber;
+@class NSDictionary, NSNumber, NSString;
 
 @protocol SignpostSerializable <NSObject>
 + (NSNumber *)serializationTypeNumber;
+- (NSString *)humanReadableType;
+- (NSDictionary *)humanReadableDictionaryRepresentation;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (NSDictionary *)serializeableDictionary;
 @end

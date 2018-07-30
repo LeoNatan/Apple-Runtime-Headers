@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)containerCellularSettings;
-- (BOOL)isCellularEnabledForContainerID:(id)arg1;
+- (BOOL)isCellularEnabled;
 
 @end
 

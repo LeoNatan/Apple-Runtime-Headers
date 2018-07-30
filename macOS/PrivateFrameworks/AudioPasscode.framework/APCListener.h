@@ -23,6 +23,7 @@
 @property(copy, nonatomic) CDUnknownBlockType retrievedDataHandler; // @synthesize retrievedDataHandler=_retrievedDataHandler;
 - (void).cxx_destruct;
 - (void)stopListening;
+- (void)startListeningWithError:(id *)arg1;
 - (void)startListening;
 - (id)initWithCodecConfiguration:(id)arg1;
 - (id)initWithConfigurationData:(struct NSData *)arg1;

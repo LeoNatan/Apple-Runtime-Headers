@@ -7,30 +7,34 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBBuildId.h"
 
-@class NSString, PBUnknownFields;
+@class NSString;
 
-@interface _INPBBuildId : PBCodable <NSCopying>
+@interface _INPBBuildId : PBCodable <_INPBBuildId, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSString *_buildNumber;
     NSString *_versionNumber;
 }
 
-@property(retain, nonatomic) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
-@property(retain, nonatomic) NSString *versionNumber; // @synthesize versionNumber=_versionNumber;
+@property(copy, nonatomic) NSString *versionNumber; // @synthesize versionNumber=_versionNumber;
+@property(copy, nonatomic) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasBuildNumber;
 @property(readonly, nonatomic) BOOL hasVersionNumber;
+@property(readonly, nonatomic) BOOL hasBuildNumber;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

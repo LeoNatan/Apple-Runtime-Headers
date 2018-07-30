@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
+#import "BSXPCCoding.h"
 #import "NSSecureCoding.h"
 
-@class AFSiriRequest, NSXPCListenerEndpoint;
+@class AFSiriRequest, NSString, NSXPCListenerEndpoint;
 
-@interface AFSiriTask : NSObject <NSSecureCoding>
+@interface AFSiriTask : NSObject <NSSecureCoding, BSXPCCoding>
 {
     AFSiriRequest *_request;
     NSXPCListenerEndpoint *_remoteResponseListenerEndpoint;
@@ -30,8 +31,13 @@
 - (void)failWithError:(id)arg1;
 - (id)_responseHandlerConnection;
 - (id)request;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)_initWithRequest:(id)arg1 remoteResponseListenerEndpoint:(id)arg2 usageResultListenerEndpoint:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

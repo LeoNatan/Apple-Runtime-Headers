@@ -32,6 +32,7 @@
     _Bool _wordWrapEnabled;
     unsigned int _persistentKeyModifiers;
     long long _uiStringCachedLineOffset;
+    NSAttributedString *_uiEditingCachedString;
     NSMutableArray *_displayModeStack;
     SCROBrailleDisplayHistory *_history;
     NSAttributedString *_mainString;
@@ -46,9 +47,14 @@
     _Bool _isValid;
     int _inputAccessMode;
     NSAttributedString *_blankUIString;
+    CDUnknownBlockType _eventHandled;
+    CDUnknownBlockType _alertDisappeared;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) CDUnknownBlockType alertDisappeared; // @synthesize alertDisappeared=_alertDisappeared;
+@property(copy, nonatomic) CDUnknownBlockType eventHandled; // @synthesize eventHandled=_eventHandled;
+@property(readonly, nonatomic) SCROBrailleDisplayManagedQueue *managedDisplayQueue; // @synthesize managedDisplayQueue=_managedDisplayQueue;
 - (void).cxx_destruct;
 - (void)setKeyboardHelpIsOn:(_Bool)arg1;
 - (void)endUpdates;
@@ -150,7 +156,7 @@
 - (void)_setLineDescriptorCallbackEnabledHandler:(id)arg1;
 - (void)_displayModeHandler:(id)arg1;
 - (void)_exitCurrentDisplayMode;
-- (void)_wordWrapEnabledHandler:(id)arg1;
+- (void)wordWrapEnabledHandler:(id)arg1;
 - (void)automaticBrailleTranslationHandler:(id)arg1;
 - (void)_persistentKeyModifiersHandler:(id)arg1;
 - (void)inputContractionModeHandler:(id)arg1;

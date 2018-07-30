@@ -9,21 +9,20 @@
 #import "HMFMessageReceiver.h"
 #import "HMObjectMerge.h"
 
-@class HMAccessory, HMSoftwareUpdate, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMAccessory, HMFUnfairLock, HMSoftwareUpdate, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface HMSoftwareUpdateController : NSObject <HMFMessageReceiver, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     HMSoftwareUpdate *_availableUpdate;
     HMAccessory *_accessory;
     id <HMSoftwareUpdateControllerDelegate> _delegate;
     NSUUID *_uniqueIdentifier;
     _HMContext *_context;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (id)logCategory;
 + (id)namespace;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property __weak id <HMSoftwareUpdateControllerDelegate> delegate; // @synthesize delegate=_delegate;

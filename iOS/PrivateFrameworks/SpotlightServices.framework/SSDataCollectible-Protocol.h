@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSString;
+@class NSString;
 
 @protocol SSDataCollectible <NSObject>
+- (_Bool)serializeToJSON:(void *)arg1 valuesOnly:(_Bool)arg2;
 - (NSString *)dataCollectionBundle;
-- (NSMutableDictionary *)dataCollectionRepresentation;
 @end
 

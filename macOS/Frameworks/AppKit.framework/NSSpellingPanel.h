@@ -6,6 +6,7 @@
 
 #import <AppKit/NSPanel.h>
 
+__attribute__((visibility("hidden")))
 @interface NSSpellingPanel : NSPanel
 {
 }

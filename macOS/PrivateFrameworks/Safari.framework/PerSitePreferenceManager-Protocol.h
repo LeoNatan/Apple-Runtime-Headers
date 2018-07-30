@@ -6,12 +6,12 @@
 
 #import "WBSPerSitePreferenceManager.h"
 
-@class NSWindow, WBSPerSitePreferenceValue;
+@class NSWindow;
 
 @protocol PerSitePreferenceManager <WBSPerSitePreferenceManager>
 
 @optional
 - (BOOL)isConfigurable;
-- (WBSPerSitePreferenceValue *)preferenceValueToSelectWhenAttemptingToSelectPreference:(WBSPerSitePreferenceValue *)arg1 inWindow:(NSWindow *)arg2;
+- (id)preferenceValueToSelectWhenAttemptingToSelectPreference:(id)arg1 inWindow:(NSWindow *)arg2;
 @end
 

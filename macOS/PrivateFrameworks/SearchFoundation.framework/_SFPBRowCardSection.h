@@ -13,18 +13,6 @@
 
 @interface _SFPBRowCardSection : PBCodable <_SFPBRowCardSection, NSSecureCoding>
 {
-    struct {
-        unsigned int canBeHidden:1;
-        unsigned int hasTopPadding:1;
-        unsigned int hasBottomPadding:1;
-        unsigned int separatorStyle:1;
-        unsigned int imageIsRightAligned:1;
-        unsigned int keyNoWrap:1;
-        unsigned int keyWeight:1;
-        unsigned int valueNoWrap:1;
-        unsigned int valueWeight:1;
-        unsigned int cardPaddingBottom:1;
-    } _has;
     BOOL _canBeHidden;
     BOOL _hasTopPadding;
     BOOL _hasBottomPadding;
@@ -86,30 +74,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasTrailingSubtitle;
-@property(readonly, nonatomic) BOOL hasLeadingSubtitle;
-@property(readonly, nonatomic) BOOL hasCardPaddingBottom;
-@property(readonly, nonatomic) BOOL hasValueWeight;
-@property(readonly, nonatomic) BOOL hasValueNoWrap;
-@property(readonly, nonatomic) BOOL hasValue;
-@property(readonly, nonatomic) BOOL hasKeyWeight;
-@property(readonly, nonatomic) BOOL hasKeyNoWrap;
-@property(readonly, nonatomic) BOOL hasKey;
-@property(readonly, nonatomic) BOOL hasAttributionImage;
-@property(readonly, nonatomic) BOOL hasRightText;
-@property(readonly, nonatomic) BOOL hasLeftText;
-@property(readonly, nonatomic) BOOL hasTrailingText;
-@property(readonly, nonatomic) BOOL hasLeadingText;
-@property(readonly, nonatomic) BOOL hasImageIsRightAligned;
-@property(readonly, nonatomic) BOOL hasImage;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

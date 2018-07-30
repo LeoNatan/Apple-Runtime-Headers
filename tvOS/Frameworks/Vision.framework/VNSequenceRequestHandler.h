@@ -26,18 +26,28 @@
 - (void)cancelAllRequests;
 - (_Bool)prepareForPerformingRequests:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareForPerformingRequestsOfClass:(id)arg1 error:(id *)arg2;
+- (_Bool)performRequests:(id)arg1 onImageSpecifier:(id)arg2 gatheredForensics:(id *)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onImageSpecifier:(id)arg2 error:(id *)arg3;
+- (_Bool)performRequests:(id)arg1 onImageData:(id)arg2 orientation:(unsigned int)arg3 gatheredForensics:(id *)arg4 error:(id *)arg5;
 - (_Bool)performRequests:(id)arg1 onImageData:(id)arg2 orientation:(unsigned int)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onImageData:(id)arg2 error:(id *)arg3;
+- (_Bool)performRequests:(id)arg1 onImageURL:(id)arg2 orientation:(unsigned int)arg3 gatheredForensics:(id *)arg4 error:(id *)arg5;
+- (_Bool)performRequests:(id)arg1 onImageURL:(id)arg2 gatheredForensics:(id *)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onImageURL:(id)arg2 orientation:(unsigned int)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onImageURL:(id)arg2 error:(id *)arg3;
+- (_Bool)performRequests:(id)arg1 onCIImage:(id)arg2 orientation:(unsigned int)arg3 gatheredForensics:(id *)arg4 error:(id *)arg5;
+- (_Bool)performRequests:(id)arg1 onCIImage:(id)arg2 gatheredForensics:(id *)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onCIImage:(id)arg2 orientation:(unsigned int)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onCIImage:(id)arg2 error:(id *)arg3;
+- (_Bool)performRequests:(id)arg1 onCGImage:(struct CGImage *)arg2 orientation:(unsigned int)arg3 gatheredForensics:(id *)arg4 error:(id *)arg5;
+- (_Bool)performRequests:(id)arg1 onCGImage:(struct CGImage *)arg2 gatheredForensics:(id *)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onCGImage:(struct CGImage *)arg2 orientation:(unsigned int)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onCGImage:(struct CGImage *)arg2 error:(id *)arg3;
+- (_Bool)performRequests:(id)arg1 onCVPixelBuffer:(struct __CVBuffer *)arg2 orientation:(unsigned int)arg3 gatheredForensics:(id *)arg4 error:(id *)arg5;
+- (_Bool)performRequests:(id)arg1 onCVPixelBuffer:(struct __CVBuffer *)arg2 gatheredForensics:(id *)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onCVPixelBuffer:(struct __CVBuffer *)arg2 orientation:(unsigned int)arg3 error:(id *)arg4;
 - (_Bool)performRequests:(id)arg1 onCVPixelBuffer:(struct __CVBuffer *)arg2 error:(id *)arg3;
-- (_Bool)_performRequests:(id)arg1 onUnvettedImageBuffer:(id)arg2 error:(id *)arg3;
+- (_Bool)_performRequests:(id)arg1 onUnvettedImageBuffer:(id)arg2 gatheredForensics:(id *)arg3 error:(id *)arg4;
 - (id)init;
 
 @end

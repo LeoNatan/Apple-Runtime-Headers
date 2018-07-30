@@ -8,7 +8,7 @@
 
 #import "VMUStackLogReader.h"
 
-@class NSMapTable, NSSet, NSString, VMUVMRegionTracker;
+@class NSMapTable, NSMutableDictionary, NSSet, NSString, VMUVMRegionTracker;
 
 @interface VMUStackLogReaderBase : NSObject <VMUStackLogReader>
 {
@@ -16,10 +16,13 @@
     VMUVMRegionTracker *_regionTracker;
     NSMapTable *_addressToSymbolicationMap;
     NSSet *_excludedFrames;
+    NSMutableDictionary *_binaryImagePathToIdentifierMap;
+    BOOL _usesLiteMode;
 }
 
 @property(retain, nonatomic) NSSet *excludedFrames; // @synthesize excludedFrames=_excludedFrames;
 @property(readonly) VMUVMRegionTracker *regionTracker; // @synthesize regionTracker=_regionTracker;
+@property(readonly) BOOL usesLiteMode; // @synthesize usesLiteMode=_usesLiteMode;
 @property(readonly) unsigned int task; // @synthesize task=_task;
 - (void).cxx_destruct;
 - (id)sourceFileNameAndLineNumberForPCaddress:(unsigned long long)arg1 fullPath:(BOOL)arg2;
@@ -35,10 +38,10 @@
 - (long long)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(BOOL)arg3 stackFramesBuffer:(unsigned long long *)arg4;
 - (long long)getFramesForNode:(unsigned int)arg1 inLiteZone:(BOOL)arg2 stackFramesBuffer:(unsigned long long *)arg3;
 - (int)enumerateRecords:(CDUnknownBlockType)arg1;
-@property(readonly) BOOL usesLiteMode;
 @property(readonly) BOOL inspectingLiveProcess;
 @property(readonly) BOOL is64bit;
 - (id)symbolicatedBacktraceForFrames:(unsigned long long *)arg1 frameCount:(long long)arg2 options:(unsigned long long)arg3;
+- (id)identifierForBinaryImagePath:(id)arg1;
 - (id)symbolicatedBacktraceForStackID:(unsigned long long)arg1 isLiteZone:(BOOL)arg2 options:(unsigned long long)arg3;
 - (id)symbolicatedBacktraceForNode:(unsigned int)arg1 nodeDetails:(CDStruct_599faf0f)arg2 isLiteZone:(BOOL)arg3 options:(unsigned long long)arg4;
 

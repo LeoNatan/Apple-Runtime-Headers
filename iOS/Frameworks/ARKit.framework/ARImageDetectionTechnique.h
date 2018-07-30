@@ -4,39 +4,42 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <ARKit/ARTechnique.h>
+#import <ARKit/ARImageBasedTechnique.h>
 
-@class ARImageDetectionResultData, NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class ARImageDetectionResultData, ARODTHandleManager, NSArray, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
 
-@interface ARImageDetectionTechnique : ARTechnique
+@interface ARImageDetectionTechnique : ARImageBasedTechnique
 {
     NSArray *_referenceImages;
-    NSMutableDictionary *_detectionCountByImageID;
-    struct OpaqueVTPixelTransferSession *_vtPixelTransferSession;
-    struct __CVPixelBufferPool *_grayPixelBufferPool;
-    ARImageDetectionResultData *_latestResultData;
     NSObject<OS_dispatch_queue> *_processDataQueue;
     NSObject<OS_dispatch_semaphore> *_loadingSemaphore;
     NSObject<OS_dispatch_semaphore> *_dataSemaphore;
     NSObject<OS_dispatch_semaphore> *_detectionSemaphore;
     ARImageDetectionResultData *_referenceImageData;
-    unsigned long long _numberOfSkippedFrames;
-    unsigned long long _numberOfFramesBetweenDetectionCalls;
     _Bool _finishedLoadingImages;
-    _Bool _continousDetection;
-    _Bool _estimateScale;
-    _Bool _redetectOnSignificantEvent;
-    unsigned long long _estimateScaleCount;
-    ARImageDetectionResultData *_currentDetectionResultData;
+    _Bool _tracking;
+    _Bool _deterministicMode;
+    struct shared_ptr<arkit::KeyMapBuffer<const void *, std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>>> _poseBuffer;
+    _Bool _needsWorldTrackingPoseData;
+    ARODTHandleManager *_odtTHandleManger;
     NSDictionary *_referenceImageMap;
 }
 
-@property(retain) NSDictionary *referenceImageMap; // @synthesize referenceImageMap=_referenceImageMap;
-@property(readonly, copy, nonatomic) ARImageDetectionResultData *currentDetectionResultData; // @synthesize currentDetectionResultData=_currentDetectionResultData;
+@property(readonly) NSDictionary *referenceImageMap; // @synthesize referenceImageMap=_referenceImageMap;
+@property(readonly) ARODTHandleManager *odtTHandleManger; // @synthesize odtTHandleManger=_odtTHandleManger;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
+- (void)_loadReferenceImages;
 @property(readonly, nonatomic) _Bool finishedLoadingImages;
+- (_Bool)deterministicMode;
+- (long long)captureBehavior;
+- (double)requiredTimeInterval;
+- (_Bool)syncWithProcessedImage;
 - (unsigned long long)requiredSensorDataTypes;
+- (id)initWithReferenceImages:(id)arg1 maximumNumberOfTrackedImages:(long long)arg2 continuousDetection:(_Bool)arg3 deterministicMode:(_Bool)arg4 processingQueue:(id)arg5;
+- (id)initWithReferenceImages:(id)arg1 maximumNumberOfTrackedImages:(long long)arg2 processingQueue:(id)arg3;
+- (id)initWithReferenceImages:(id)arg1 maximumNumberOfTrackedImages:(long long)arg2;
 - (id)initWithReferenceImages:(id)arg1;
 
 @end

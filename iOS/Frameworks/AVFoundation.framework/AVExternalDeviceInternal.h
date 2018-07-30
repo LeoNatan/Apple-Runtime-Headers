@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSArray, NSData, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVExternalDeviceInternal : NSObject
 {
     struct OpaqueFigEndpoint *_figEndpoint;

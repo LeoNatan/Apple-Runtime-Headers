@@ -7,40 +7,52 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentResponse.h"
 
-@class PBUnknownFields, _INPBIntentResponsePayloadFailure, _INPBIntentResponsePayloadSuccess, _INPBUserActivity;
+@class NSString, _INPBIntentResponsePayloadFailure, _INPBIntentResponsePayloadSuccess, _INPBUserActivity;
 
-@interface _INPBIntentResponse : PBCodable <NSCopying>
+@interface _INPBIntentResponse : PBCodable <_INPBIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBIntentResponsePayloadFailure *_PayloadFailure;
-    _INPBIntentResponsePayloadSuccess *_PayloadSuccess;
+    struct {
+        unsigned int requiresAuthentication:1;
+        unsigned int requiresProtectedData:1;
+        unsigned int type:1;
+    } _has;
+    _Bool _requiresAuthentication;
+    _Bool _requiresProtectedData;
+    _INPBIntentResponsePayloadFailure *_payloadFailure;
+    _INPBIntentResponsePayloadSuccess *_payloadSuccess;
     int _type;
     _INPBUserActivity *_userActivity;
-    CDStruct_f953fb60 _has;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBUserActivity *userActivity; // @synthesize userActivity=_userActivity;
-@property(retain, nonatomic) _INPBIntentResponsePayloadFailure *PayloadFailure; // @synthesize PayloadFailure=_PayloadFailure;
-@property(retain, nonatomic) _INPBIntentResponsePayloadSuccess *PayloadSuccess; // @synthesize PayloadSuccess=_PayloadSuccess;
+@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) _Bool requiresProtectedData; // @synthesize requiresProtectedData=_requiresProtectedData;
+@property(nonatomic) _Bool requiresAuthentication; // @synthesize requiresAuthentication=_requiresAuthentication;
+@property(retain, nonatomic) _INPBIntentResponsePayloadSuccess *payloadSuccess; // @synthesize payloadSuccess=_payloadSuccess;
+@property(retain, nonatomic) _INPBIntentResponsePayloadFailure *payloadFailure; // @synthesize payloadFailure=_payloadFailure;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasUserActivity;
-@property(readonly, nonatomic) _Bool hasPayloadFailure;
-@property(readonly, nonatomic) _Bool hasPayloadSuccess;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) _Bool hasRequiresProtectedData;
+@property(nonatomic) _Bool hasRequiresAuthentication;
+@property(readonly, nonatomic) _Bool hasPayloadSuccess;
+@property(readonly, nonatomic) _Bool hasPayloadFailure;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

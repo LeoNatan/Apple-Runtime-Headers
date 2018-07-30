@@ -6,28 +6,36 @@
 
 #import <iWorkImport/TSPObject.h>
 
+#import "TSDChangeableInfo.h"
 #import "TSDModelContainer.h"
 #import "TSDMutableContainerInfo.h"
 #import "TSKDocumentObject.h"
 
-@class NSArray, NSMutableArray, NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSPObject<TSDOwningAttachment>;
+@class NSArray, NSMutableArray, NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails;
 
 __attribute__((visibility("hidden")))
-@interface TSDContainerInfo : TSPObject <TSDMutableContainerInfo, TSKDocumentObject, TSDModelContainer>
+@interface TSDContainerInfo : TSPObject <TSDMutableContainerInfo, TSKDocumentObject, TSDModelContainer, TSDChangeableInfo>
 {
-    TSDInfoGeometry *mGeometry;
-    NSObject<TSDContainerInfo> *mParentInfo;
-    NSMutableArray *mChildInfos;
+    TSDInfoGeometry *_geometry;
+    NSObject<TSDContainerInfo> *_parentInfo;
+    NSMutableArray *_childInfos;
+    TSSPropertySetChangeDetails *_changes;
 }
 
-@property(nonatomic) NSObject<TSDContainerInfo> *parentInfo; // @synthesize parentInfo=mParentInfo;
-@property(copy, nonatomic) TSDInfoGeometry *geometry; // @synthesize geometry=mGeometry;
+@property(nonatomic) NSObject<TSDContainerInfo> *parentInfo; // @synthesize parentInfo=_parentInfo;
+@property(copy, nonatomic) TSDInfoGeometry *geometry; // @synthesize geometry=_geometry;
+- (void).cxx_destruct;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
+- (id)endCollectingChanges;
+- (void)willChangeProperties:(id)arg1;
+- (void)willChangeProperty:(int)arg1;
+- (void)beginCollectingChanges;
+@property(readonly, nonatomic) _Bool isUserModifiable;
 - (void)replaceChildInfo:(id)arg1 with:(id)arg2;
 - (void)removeChildInfo:(id)arg1;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
@@ -68,6 +76,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsCollaborativeEditing;
 
 @end
 

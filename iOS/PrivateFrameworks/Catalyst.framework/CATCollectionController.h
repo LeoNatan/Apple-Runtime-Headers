@@ -64,7 +64,7 @@
 @property(readonly) NSArray *selectedObjects;
 @property(copy) NSIndexSet *selectionIndexes; // @synthesize selectionIndexes=_selectionIndexes;
 @property(retain) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
-@property(retain) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
+@property(copy) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property _Bool automaticallyRearrangesObjects; // @synthesize automaticallyRearrangesObjects=_automaticallyRearrangesObjects;
 @property __weak id <CATCollectionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 

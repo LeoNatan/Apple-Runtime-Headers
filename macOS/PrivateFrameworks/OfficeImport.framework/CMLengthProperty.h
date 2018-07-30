@@ -6,6 +6,7 @@
 
 #import <OfficeImport/CMProperty.h>
 
+__attribute__((visibility("hidden")))
 @interface CMLengthProperty : CMProperty
 {
     double value;

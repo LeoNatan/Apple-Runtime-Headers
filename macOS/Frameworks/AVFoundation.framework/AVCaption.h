@@ -39,8 +39,6 @@
 @property(readonly, nonatomic) NSString *text;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

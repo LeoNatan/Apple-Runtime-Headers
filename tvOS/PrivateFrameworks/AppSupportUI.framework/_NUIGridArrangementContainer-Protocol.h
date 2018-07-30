@@ -9,5 +9,9 @@
 @protocol _NUIGridArrangementContainer <NUIArrangementContainer>
 - (void)populateGridArrangementDimension:(vector_b8a5df6e *)arg1 withCells:(const vector_f8404f95 *)arg2 axis:(long long)arg3;
 - (void)populateGridArrangementCells:(vector_f8404f95 *)arg1;
+
+@optional
+- (_Bool)shouldCancelMeasurementForCompressionInAxis:(long long)arg1;
+- (_Bool)canCancelMeasurementForCompression;
 @end
 

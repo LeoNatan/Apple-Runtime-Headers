@@ -34,6 +34,7 @@
 - (void).cxx_destruct;
 - (unsigned int)updateWithBonjourDeviceInfo:(id)arg1;
 - (void)_updateTXTDictionary:(id)arg1;
+- (void)reconfirm;
 - (id)copyConnectionStringWithFlags:(unsigned long long)arg1 error:(id *)arg2;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;

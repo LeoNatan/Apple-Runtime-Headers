@@ -29,7 +29,7 @@
 
 + (void)initialize;
 + (id)_numericIndicatorFormatter;
-+ (id)_numericIndicatorCell;
++ (id)_numericIndicatorField;
 + (id)tabStopContextMenuForMarker:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)_tabStopContextMenuAction:(id)arg1;
 + (id)decimalTabMarkerWithRulerView:(id)arg1 location:(double)arg2;

@@ -35,8 +35,11 @@
         unsigned int subtype:1;
         unsigned int nbool:1;
     } _has;
+    _Bool _hasCacheMessage;
 }
 
+@property(retain, nonatomic) SPProtoCacheMessage *cacheMessage; // @synthesize cacheMessage=_cacheMessage;
+@property(readonly, nonatomic) _Bool hasCacheMessage; // @synthesize hasCacheMessage=_hasCacheMessage;
 @property(retain, nonatomic) NSData *object; // @synthesize object=_object;
 @property(nonatomic) _Bool nbool; // @synthesize nbool=_nbool;
 @property(nonatomic) unsigned int nuint32; // @synthesize nuint32=_nuint32;
@@ -47,7 +50,6 @@
 @property(nonatomic) double ndouble; // @synthesize ndouble=_ndouble;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-@property(retain, nonatomic) SPProtoCacheMessage *cacheMessage; // @synthesize cacheMessage=_cacheMessage;
 @property(nonatomic) int subtype; // @synthesize subtype=_subtype;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
@@ -70,7 +72,6 @@
 @property(nonatomic) _Bool hasNdouble;
 @property(readonly, nonatomic) _Bool hasText;
 @property(readonly, nonatomic) _Bool hasKey;
-@property(readonly, nonatomic) _Bool hasCacheMessage;
 @property(nonatomic) _Bool hasSubtype;
 
 @end

@@ -4,10 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#import "PUICQuickboardController.h"
+
 @class NSString, PUICClassicEmojiView;
 
-@protocol PUICRecentEmojiViewDelegate
-@property(readonly, nonatomic) NSString *primaryLanguage;
+@protocol PUICRecentEmojiViewDelegate <PUICQuickboardController>
+- (void)recentEmojiView:(PUICClassicEmojiView *)arg1 didSelectEmojiCategory:(NSString *)arg2;
 - (void)recentEmojiView:(PUICClassicEmojiView *)arg1 didSelectEmojiString:(NSString *)arg2;
 @end
 

@@ -6,18 +6,24 @@
 
 #import "UIView.h"
 
-@class CLKImageProvider, UIColor, UIImage, UIImageView;
+#import "NTKUpNextBaseCellContentsLayerProvider.h"
 
-@interface NTKUpNextImageView : UIView
+@class CALayer, CLKImageProvider, NSString, NTKUpNextBaseCell, UIColor, UIImage, UIImageView;
+
+@interface NTKUpNextImageView : UIView <NTKUpNextBaseCellContentsLayerProvider>
 {
     UIImageView *_foregroundImageView;
     UIImageView *_backgroundImageView;
+    CALayer *_foregroundAccentBackdrop;
     UIImageView *_foregroundAccentImageView;
+    NTKUpNextBaseCell *_parentCell;
     UIColor *_fallbackTintColor;
     CLKImageProvider *_imageProvider;
     UIImage *_overrideImage;
+    NSString *_compositingFilter;
 }
 
+@property(retain, nonatomic) NSString *compositingFilter; // @synthesize compositingFilter=_compositingFilter;
 @property(retain, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
 @property(retain, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(retain, nonatomic) UIColor *fallbackTintColor; // @synthesize fallbackTintColor=_fallbackTintColor;
@@ -27,7 +33,15 @@
 - (_Bool)_hasMultipartImages;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (struct CGRect)contentsLayerBoundsForLayout:(id)arg1;
+- (id)contentsLayer;
+- (id)initWithFrame:(struct CGRect)arg1 parentCell:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

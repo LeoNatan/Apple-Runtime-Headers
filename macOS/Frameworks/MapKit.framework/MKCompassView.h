@@ -6,23 +6,22 @@
 
 #import "NSView.h"
 
-@class CAGradientLayer, CALayer, CATextLayer;
+@class MKBlurBackingLayer, MKCompassLayer;
 
 @interface MKCompassView : NSView
 {
-    BOOL _wasDragged;
-    BOOL _innerClick;
-    struct CGPoint _clickPosition;
     BOOL _enabled;
-    CALayer *rotationLayer;
-    CALayer *tiltLayer;
-    CATextLayer *textLayer;
-    CAGradientLayer *gradientLayer;
+    double _mapHeading;
+    MKBlurBackingLayer *_blurLayer;
+    MKCompassLayer *_displayLayer;
+    MKCompassLayer *_maskLayer;
     long long _outerRingTooltipTag;
     long long _innerDiscTooltipTag;
     long long _innerDiscTrackingRectTag;
 }
 
++ (double)diameter;
+@property(nonatomic) double mapHeading; // @synthesize mapHeading=_mapHeading;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
@@ -34,15 +33,18 @@
 - (void)updateHighlight;
 - (void)viewDidMoveToWindow;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
+- (BOOL)isPointInNorthEastHalf:(struct CGPoint)arg1;
 - (BOOL)isPointInOuterRing:(struct CGPoint)arg1;
 - (BOOL)isPointInInnerPortion:(struct CGPoint)arg1;
-- (void)resetCompassFlatWithMapPitch:(double)arg1 pitchEnabled:(BOOL)arg2;
-- (void)resetNeedleToNorthWithMapYaw:(double)arg1;
+- (void)resetCompassFlatWithMapPitch:(double)arg1 pitchEnabled:(BOOL)arg2 mapType:(long long)arg3 changeButtonTextWithPitch:(BOOL)arg4;
 - (void)updateAccessibilityDescriptionWithAngle:(double)arg1;
-- (void)viewDidChangeBackingProperties;
-- (void)setupCompassForDPI:(BOOL)arg1;
+- (void)layout;
+- (void)updateBlurVisibility;
+- (void)viewDidChangeEffectiveAppearance;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (BOOL)canBecomeKeyView;
-- (void)commonInit;
+- (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)accessibilityIsIgnored;

@@ -10,6 +10,9 @@
 {
 }
 
++ (id)imageWithURL:(id)arg1 closetToPreferredSize:(struct CGSize)arg2;
++ (id)multiResolutionImageFromImageData:(id)arg1 withPreferredSize:(struct CGSize)arg2 atScales:(id)arg3 didGenerateResolutions:(_Bool *)arg4;
++ (struct CGSize)sizeOfImageWithData:(id)arg1 closestToPreferredSize:(struct CGSize)arg2 isMultiResolution:(_Bool *)arg3;
 + (long long)computeRelativeSize:(struct CGSize)arg1 referenceSize:(struct CGSize)arg2;
 + (_Bool)isFaviconSize:(struct CGSize)arg1 morePreferrableThanFaviconSize:(struct CGSize)arg2 givenDesiredSize:(struct CGSize)arg3;
 

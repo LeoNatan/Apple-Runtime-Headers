@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)setupViewControllerDidDismiss:(id)arg1;
-- (id)_specifiersForOtherServerAccounts;
 - (id)_specifiersForOtherCalendarAccounts;
 - (id)_specifiersForOtherContactsAccounts;
 - (id)_specifiersForOtherMailAccounts;

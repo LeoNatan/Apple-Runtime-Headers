@@ -6,10 +6,12 @@
 
 #import "NSCopying.h"
 #import "NSObject.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@protocol SFKeychainItemAttributes <NSObject, NSCopying>
+@protocol SFKeychainItemAttributes <NSObject, NSCopying, NSSecureCoding>
+@property(readonly, copy, nonatomic) NSString *persistentIdentifier;
 @property(copy, nonatomic) NSString *localizedDescription;
 @property(copy, nonatomic) NSString *localizedLabel;
 @end

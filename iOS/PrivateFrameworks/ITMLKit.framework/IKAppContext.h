@@ -10,15 +10,17 @@
 #import "IKJSInspectorControllerDelegate.h"
 #import "ISURLOperationDelegate.h"
 
-@class IKAppCache, IKJSArrayBufferStore, IKJSFoundation, IKJSInspectorController, IKViewElementRegistry, JSContext, NSError, NSMutableArray, NSNumber, NSObject<OS_dispatch_source>, NSString;
+@class IKAppCache, IKJSArrayBufferStore, IKJSFoundation, IKJSInspectorController, IKViewElementRegistry, JSContext, NSError, NSMutableArray, NSNumber, NSObject<OS_dispatch_source>, NSString, NSThread, NSURL;
 
 @interface IKAppContext : NSObject <ISURLOperationDelegate, IKAppCacheDelegate, IKJSInspectorControllerDelegate>
 {
+    NSThread *_validThread;
     IKJSArrayBufferStore *_arrayBufferStore;
     struct __CFRunLoop *_jsThreadRunLoop;
     struct __CFRunLoopSource *_jsThreadRunLoopSource;
     NSObject<OS_dispatch_source> *_lowMemoryWarningSource;
     _Bool _respondsToTraitCollection;
+    _Bool _isAirplaneModeEnabled;
     struct {
         _Bool respondsToHighlightViewForOneElement;
         _Bool respondsToHighlightViewsForManyElements;
@@ -30,6 +32,7 @@
     _Bool _mescalPrimeEnabledForXHRRequests;
     _Bool _trusted;
     _Bool _canAccessPendingQueue;
+    _Bool _running;
     _Bool _privileged;
     _Bool _appUsesDefaultStyleSheets;
     id <IKApplication> _app;
@@ -45,6 +48,7 @@
     NSError *_responseError;
     id _reloadData;
     NSMutableArray *_pendingQueue;
+    NSURL *_resolvedBootURL;
     NSMutableArray *_postEvaluationBlocks;
     IKJSFoundation *_jsFoundation;
     IKViewElementRegistry *_viewElementRegistry;
@@ -54,14 +58,15 @@
 + (_Bool)isInFactoryMode;
 + (void)registerPrivateProtocols:(id)arg1 forClass:(Class)arg2;
 + (id)currentAppContext;
-+ (void)load;
 @property(retain, nonatomic) IKJSInspectorController *webInspectorController; // @synthesize webInspectorController=_webInspectorController;
 @property(readonly, nonatomic) _Bool appUsesDefaultStyleSheets; // @synthesize appUsesDefaultStyleSheets=_appUsesDefaultStyleSheets;
 @property(readonly, nonatomic) IKViewElementRegistry *viewElementRegistry; // @synthesize viewElementRegistry=_viewElementRegistry;
 @property(nonatomic, getter=isPrivileged) _Bool privileged; // @synthesize privileged=_privileged;
 @property(retain, nonatomic) IKJSFoundation *jsFoundation; // @synthesize jsFoundation=_jsFoundation;
 @property(retain, nonatomic) NSMutableArray *postEvaluationBlocks; // @synthesize postEvaluationBlocks=_postEvaluationBlocks;
+@property(readonly, copy, nonatomic) NSURL *resolvedBootURL; // @synthesize resolvedBootURL=_resolvedBootURL;
 @property(retain, nonatomic) NSMutableArray *pendingQueue; // @synthesize pendingQueue=_pendingQueue;
+@property(getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(retain, nonatomic) id reloadData; // @synthesize reloadData=_reloadData;
 @property(retain, nonatomic) NSError *responseError; // @synthesize responseError=_responseError;
 @property(copy, nonatomic) NSString *responseScript; // @synthesize responseScript=_responseScript;
@@ -80,6 +85,7 @@
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) __weak id <IKApplication> app; // @synthesize app=_app;
 - (void).cxx_destruct;
+- (void)_networkPropertiesChanged:(id)arg1;
 - (void)handleCacheUpdate;
 - (void)appCache:(id)arg1 didUpdateWithChecksum:(id)arg2;
 - (void)unregisterLoaderWithIdentifier:(id)arg1;
@@ -110,6 +116,7 @@
 - (void)_addStopRecordToPendingQueueWithReload:(_Bool)arg1;
 - (void)_startWithScript:(id)arg1 scriptUrl:(id)arg2 wasLoadedFromFallback:(_Bool)arg3;
 - (void)_startWithURL:(id)arg1 urlTrusted:(_Bool)arg2;
+- (_Bool)_prepareStartWithURL:(id)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)handleReloadWithUrgencyType:(unsigned long long)arg1 minInterval:(double)arg2 data:(id)arg3;
@@ -125,6 +132,7 @@
 - (void)resumeWithOptions:(id)arg1;
 - (void)suspendWithOptions:(id)arg1;
 - (void)start;
+- (void)dealloc;
 - (id)initWithApplication:(id)arg1 mode:(unsigned long long)arg2 delegate:(id)arg3;
 - (id)initWithApplication:(id)arg1 mode:(unsigned long long)arg2 cache:(_Bool)arg3 delegate:(id)arg4;
 @property(readonly, nonatomic) IKJSArrayBufferStore *arrayBufferStore;

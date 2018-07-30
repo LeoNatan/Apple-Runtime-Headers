@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface __NSWindowData : NSObject
 {
     id window;
     long long windowNum;
-    long long realWindowNum;
     struct _flags {
         unsigned int visible:1;
         unsigned int hidesOnDeactivate:1;

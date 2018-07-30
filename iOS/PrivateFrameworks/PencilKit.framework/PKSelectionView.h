@@ -42,7 +42,6 @@
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (void)dragInteraction:(id)arg1 session:(id)arg2 willEndWithOperation:(unsigned long long)arg3;
 - (void)animateViewToOriginalPosition;
-- (void)makeViewAliveAtLocation:(struct CGPoint)arg1;
 - (void)dragInteraction:(id)arg1 sessionDidMove:(id)arg2;
 - (void)_dragWillBegin;
 - (void)dragInteraction:(id)arg1 sessionWillBegin:(id)arg2;

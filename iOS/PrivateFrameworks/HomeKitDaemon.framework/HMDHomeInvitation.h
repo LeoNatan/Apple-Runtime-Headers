@@ -44,6 +44,7 @@
 - (void)accept;
 - (void)updateTimer:(unsigned long long)arg1 clientQueue:(id)arg2;
 - (void)updateInvitationState:(long long)arg1;
+- (void)notifyStateChangedForMessage:(id)arg1;
 @property(readonly, nonatomic, getter=isDeclined) _Bool declined;
 @property(readonly, nonatomic, getter=isAccepted) _Bool accepted;
 @property(readonly, nonatomic, getter=isPending) _Bool pending;

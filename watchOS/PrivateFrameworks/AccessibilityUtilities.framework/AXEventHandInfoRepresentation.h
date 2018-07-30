@@ -42,6 +42,7 @@
 @property(nonatomic) unsigned int eventType; // @synthesize eventType=_eventType;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool isStylus;
 - (id)accessibilityEventRepresentationTabularDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

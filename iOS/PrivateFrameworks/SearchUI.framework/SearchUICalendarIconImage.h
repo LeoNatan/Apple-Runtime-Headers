@@ -6,11 +6,9 @@
 
 #import <SearchUI/SearchUIAppIconImage.h>
 
-#import "NSSecureCoding.h"
-
 @class NSDate;
 
-@interface SearchUICalendarIconImage : SearchUIAppIconImage <NSSecureCoding>
+@interface SearchUICalendarIconImage : SearchUIAppIconImage
 {
     NSDate *_date;
 }

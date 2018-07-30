@@ -8,7 +8,7 @@
 
 #import "BSXPCCoding.h"
 
-@class BSSettings, NSArray, NSDate, NSString;
+@class BSSettings, NSArray, NSDate, NSString, SSEnvironmentDescriptionAppleInternalOptions, SSImageSurface, SSUIServiceOptions;
 
 @interface SSEnvironmentDescription : NSObject <BSXPCCoding>
 {
@@ -16,31 +16,34 @@
     NSString *_identifier;
     NSString *_sessionIdentifier;
     unsigned long long _presentationMode;
-    _Bool _isFromMainScreen;
-    struct CGImage *_imageSurface;
+    SSImageSurface *_imageSurface;
     double _imageScale;
+    SSUIServiceOptions *_serviceOptions;
     NSDate *_date;
+    SSEnvironmentDescriptionAppleInternalOptions *_appleInternalOptions;
     struct CGSize _imagePixelSize;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
+@property(retain, nonatomic) SSEnvironmentDescriptionAppleInternalOptions *appleInternalOptions; // @synthesize appleInternalOptions=_appleInternalOptions;
+@property(copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-@property(nonatomic) _Bool isFromMainScreen; // @synthesize isFromMainScreen=_isFromMainScreen;
+@property(retain, nonatomic) SSUIServiceOptions *serviceOptions; // @synthesize serviceOptions=_serviceOptions;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(nonatomic) double imageScale; // @synthesize imageScale=_imageScale;
 @property(nonatomic) struct CGSize imagePixelSize; // @synthesize imagePixelSize=_imagePixelSize;
-@property(nonatomic) struct CGImage *imageSurface; // @synthesize imageSurface=_imageSurface;
+@property(retain, nonatomic) SSImageSurface *imageSurface; // @synthesize imageSurface=_imageSurface;
 @property(readonly, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BSSettings *bsSettings;
 @property(readonly, nonatomic) NSArray *elementUnitRects;
-- (struct CGSize)_imagePointSize;
+@property(readonly, nonatomic) struct CGSize imagePointSize;
 @property(readonly, nonatomic) NSString *briefDescription;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithDisplayLayout:(id)arg1;
+- (void)takeElementsFromDisplayLayout:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

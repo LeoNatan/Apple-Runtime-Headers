@@ -36,6 +36,7 @@
     float _speed;
     float _speedAccuracy;
     float _verticalAccuracy;
+    _Bool _isFromLocationController;
     _Bool _motionVehicleConnected;
     _Bool _motionVehicleConnectedStateChanged;
     struct {
@@ -54,12 +55,14 @@
         unsigned int speed:1;
         unsigned int speedAccuracy:1;
         unsigned int verticalAccuracy:1;
+        unsigned int isFromLocationController:1;
         unsigned int motionVehicleConnected:1;
         unsigned int motionVehicleConnectedStateChanged:1;
     } _has;
 }
 
 + (Class)appBundleIdIndicesType;
+@property(nonatomic) _Bool isFromLocationController; // @synthesize isFromLocationController=_isFromLocationController;
 @property(retain, nonatomic) CLPSatelliteReport *satReport; // @synthesize satReport=_satReport;
 @property(nonatomic) float horzUncSemiMajAz; // @synthesize horzUncSemiMajAz=_horzUncSemiMajAz;
 @property(nonatomic) float horzUncSemiMin; // @synthesize horzUncSemiMin=_horzUncSemiMin;
@@ -95,6 +98,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsFromLocationController;
 @property(readonly, nonatomic) _Bool hasSatReport;
 @property(nonatomic) _Bool hasHorzUncSemiMajAz;
 @property(nonatomic) _Bool hasHorzUncSemiMin;

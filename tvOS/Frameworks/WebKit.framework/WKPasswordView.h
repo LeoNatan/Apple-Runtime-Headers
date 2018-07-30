@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)showInScrollView:(id)arg1;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) NSString *documentName;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 documentName:(id)arg2;
 
 @end

@@ -13,7 +13,7 @@
 #import "CAMPreviewViewSubjectIndicatorDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CAMBurstIndicatorView, CAMExposureResult, CAMFocusIndicatorView, CAMFocusResult, CAMMotionController, CAMPreviewView, CAMStageLightOverlayView, CAMSubjectIndicatorView, CAMTimelapseController, CUCaptureController, NSDate, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer;
+@class CAMBurstIndicatorView, CAMExposureResult, CAMFocusIndicatorView, CAMFocusResult, CAMMachineReadableCodeResult, CAMMotionController, CAMPreviewView, CAMStageLightOverlayView, CAMSubjectIndicatorView, CAMTimelapseController, CUCaptureController, NSArray, NSDate, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer;
 
 @interface CAMPreviewViewController : UIViewController <UIGestureRecognizerDelegate, CAMFocusDelegate, CAMExposureDelegate, CAMFocusIndicatorViewDelegate, CAMPreviewViewSubjectIndicatorDelegate, CAMFacesDelegate>
 {
@@ -26,6 +26,8 @@
     id <CAMPreviewViewControllerDelegate> _delegate;
     long long _layoutStyle;
     long long _shallowDepthOfFieldStatus;
+    CAMMachineReadableCodeResult *_cachedSignificantMRCResult;
+    NSArray *_cachedMRCResults;
     long long _lightingType;
     CUCaptureController *__captureController;
     CAMTimelapseController *__timelapseController;
@@ -77,11 +79,13 @@
 @property(readonly, nonatomic) CAMFocusIndicatorView *_continuousIndicator; // @synthesize _continuousIndicator=__continuousIndicator;
 @property(readonly, nonatomic) CAMBurstIndicatorView *_burstIndicator; // @synthesize _burstIndicator=__burstIndicator;
 @property(nonatomic, getter=_isChangingModeOrDevice, setter=_setChangingModeOrDevice:) _Bool _changingModeOrDevice; // @synthesize _changingModeOrDevice=__changingModeOrDevice;
-@property(readonly, nonatomic) long long _device; // @synthesize _device=__device;
-@property(readonly, nonatomic) long long _mode; // @synthesize _mode=__mode;
+@property(nonatomic, setter=_setDevice:) long long _device; // @synthesize _device=__device;
+@property(nonatomic, setter=_setMode:) long long _mode; // @synthesize _mode=__mode;
 @property(readonly, nonatomic) __weak CAMTimelapseController *_timelapseController; // @synthesize _timelapseController=__timelapseController;
 @property(readonly, nonatomic) CUCaptureController *_captureController; // @synthesize _captureController=__captureController;
 @property(nonatomic) long long lightingType; // @synthesize lightingType=_lightingType;
+@property(retain, nonatomic) NSArray *cachedMRCResults; // @synthesize cachedMRCResults=_cachedMRCResults;
+@property(retain, nonatomic) CAMMachineReadableCodeResult *cachedSignificantMRCResult; // @synthesize cachedSignificantMRCResult=_cachedSignificantMRCResult;
 @property(nonatomic) long long shallowDepthOfFieldStatus; // @synthesize shallowDepthOfFieldStatus=_shallowDepthOfFieldStatus;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) __weak id <CAMPreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -94,10 +98,9 @@
 - (_Bool)_shouldSuppressNewPortraitModeTrackedSubjectIndicators;
 - (_Bool)_shouldShowPortraitModeTrackedSubjectIndicatorsForLightingType:(long long)arg1;
 - (_Bool)_shouldShowStageLightOverlayActive;
-- (_Bool)_shouldShowStageLightOverlayViewForMode:(long long)arg1 lightingType:(long long)arg2;
+- (_Bool)_shouldShowStageLightOverlayViewForMode:(long long)arg1 device:(long long)arg2 lightingType:(long long)arg3 shallowDepthOfFieldStatus:(long long)arg4;
 - (_Bool)_shouldShowPortraitModeIndicatorViews;
 - (void)_createPortraitModeCenteredIndicatorViewIfNecessary;
-- (void)handleTapAtPoint:(struct CGPoint)arg1;
 - (void)focusOnNormalizedPoint:(struct CGPoint)arg1;
 - (void)_applicationDidEnterBackground;
 - (void)notifyCaptureSessionDidStopRunning;
@@ -157,6 +160,16 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)_hideMRCIndicatorsAnimated:(_Bool)arg1;
+- (void)_cancelDelayedMRCIndicatorsFadeOut;
+- (void)_fadeOutMRCIndicatorView:(id)arg1 withIdentifier:(id)arg2 animated:(_Bool)arg3;
+- (void)_fadeOutMRCIndicators;
+- (void)_fadeOutMRCIndicatorsAfterDelay:(double)arg1;
+- (void)_updateMRCIndicator:(id)arg1 forMRC:(id)arg2;
+- (void)_fadeInMRCIndicator:(id)arg1 forMRC:(id)arg2;
+- (void)_updateMRCIndicators;
+- (void)_updateMRCIndicatorsIfNecessary;
+- (_Bool)_shouldAllowMRCIndicators;
 - (void)_hidePortaitModeTrackedSubjectIndicatorsAnimated:(_Bool)arg1;
 - (void)_updatePortraitModeTrackedSubjectIndicatorsWithFaceResults:(id)arg1;
 - (_Bool)_shouldUpdateIndicatorSizeFrom:(struct CGSize)arg1 to:(struct CGSize)arg2 minimumAreaChangeThreshold:(double)arg3 minimumAreaFractionChangeThreshold:(double)arg4;
@@ -193,7 +206,7 @@
 - (void)_showUIForResetFocusAndExposure;
 - (_Bool)_shouldShowContinuousIndicator;
 - (long long)_interfaceOrientation;
-- (void)_updateForOrientation;
+- (void)_updateForOrientationAnimated:(_Bool)arg1;
 - (void)_createAspectRatioToggleDoubleTapGestureRecognizerIfNecessary;
 - (void)_createExposureBiasPanGestureRecognizerIfNecessary;
 - (void)_createLongPressToLockGestureRecognizersIfNecessary;

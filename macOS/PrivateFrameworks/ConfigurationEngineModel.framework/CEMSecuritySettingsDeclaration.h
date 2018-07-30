@@ -12,27 +12,33 @@
 
 @interface CEMSecuritySettingsDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowUntrustedTLSPrompt;
+    NSNumber *_payloadAllowOTAPKIUpdates;
+    NSNumber *_payloadForceEncryptedBackup;
+    NSNumber *_payloadAllowEraseContentAndSettings;
+    NSNumber *_payloadAllowEnablingRestrictions;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowUntrustedTLSPrompt:(id)arg2 withAllowOTAPKIUpdates:(id)arg3 withForceEncryptedBackup:(id)arg4 withAllowEraseContentAndSettings:(id)arg5 withAllowEnablingRestrictions:(id)arg6;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowEnablingRestrictions; // @synthesize payloadAllowEnablingRestrictions=_payloadAllowEnablingRestrictions;
+@property(copy, nonatomic) NSNumber *payloadAllowEraseContentAndSettings; // @synthesize payloadAllowEraseContentAndSettings=_payloadAllowEraseContentAndSettings;
+@property(copy, nonatomic) NSNumber *payloadForceEncryptedBackup; // @synthesize payloadForceEncryptedBackup=_payloadForceEncryptedBackup;
+@property(copy, nonatomic) NSNumber *payloadAllowOTAPKIUpdates; // @synthesize payloadAllowOTAPKIUpdates=_payloadAllowOTAPKIUpdates;
+@property(copy, nonatomic) NSNumber *payloadAllowUntrustedTLSPrompt; // @synthesize payloadAllowUntrustedTLSPrompt=_payloadAllowUntrustedTLSPrompt;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowEnablingRestrictions;
-@property(readonly, nonatomic) NSNumber *payloadAllowEraseContentAndSettings;
-@property(readonly, nonatomic) NSNumber *payloadForceEncryptedBackup;
-@property(readonly, nonatomic) NSNumber *payloadAllowOTAPKIUpdates;
-@property(readonly, nonatomic) NSNumber *payloadAllowUntrustedTLSPrompt;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

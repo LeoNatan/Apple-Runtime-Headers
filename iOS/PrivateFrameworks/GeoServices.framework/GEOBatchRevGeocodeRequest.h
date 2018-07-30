@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOBatchRevGeocodeRequest : PBRequest <NSCopying>
 {
     CDStruct_95bda58d _additionalPlaceTypes;

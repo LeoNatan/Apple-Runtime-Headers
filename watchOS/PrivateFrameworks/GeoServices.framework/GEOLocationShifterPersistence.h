@@ -8,7 +8,6 @@
 
 @class GEOSQLiteDB, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOLocationShifterPersistence : NSObject
 {
     NSString *_dbPath;

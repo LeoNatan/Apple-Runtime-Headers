@@ -10,7 +10,7 @@
 
 @protocol AFUISpeechSynthesisLocalDelegate <NSObject>
 - (_Bool)speechSynthesisConnectionIsRecording:(AFUISpeechSynthesis *)arg1;
-- (void)speechSynthesisWillStartSpeaking:(AFUISpeechSynthesis *)arg1;
+- (void)speechSynthesis:(AFUISpeechSynthesis *)arg1 prepareForSpeakingWithCompletion:(void (^)(unsigned int, NSError *))arg2;
 - (void)stopCurrentRecordingForSpeechSynthesis:(AFUISpeechSynthesis *)arg1;
 @end
 

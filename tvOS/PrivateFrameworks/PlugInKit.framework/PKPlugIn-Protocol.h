@@ -38,6 +38,7 @@
 - (void)setHostPrincipal:(id)arg1 withProtocol:(Protocol *)arg2;
 - (void)endUsing:(void (^)(NSError *))arg1;
 - (_Bool)useBundle:(NSString *)arg1 error:(id *)arg2;
+- (_Bool)beginUsingWithError:(id *)arg1;
 - (void)beginUsing:(void (^)(NSError *))arg1;
 @end
 

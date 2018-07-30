@@ -10,6 +10,15 @@
 @class CLPlacemark, INDateComponentsRange, NSArray, NSString;
 
 @protocol INSearchForPhotosIntentExport <NSObject, JSExport>
+@property(copy, nonatomic) NSString *memoryName;
+@property(readonly, nonatomic) int geographicalFeaturesOperator;
+@property(copy, nonatomic) NSArray *geographicalFeatures;
+@property(readonly, nonatomic) int activitiesOperator;
+@property(copy, nonatomic) NSArray *activities;
+@property(readonly, nonatomic) int placesOperator;
+@property(copy, nonatomic) NSArray *places;
+@property(readonly, nonatomic) int eventsOperator;
+@property(copy, nonatomic) NSArray *events;
 @property(copy, nonatomic) NSArray *peopleInPhoto;
 @property(nonatomic) unsigned int excludedAttributes;
 @property(nonatomic) unsigned int includedAttributes;

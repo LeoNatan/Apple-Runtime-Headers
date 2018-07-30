@@ -51,6 +51,7 @@
 - (id)_preferredLocalSafariApplications;
 - (void)findOrLaunchLocalApplication:(id)arg1;
 - (void)findOrLaunchSuitableLocalApplication;
+- (BOOL)canLaunchBrowserWithName:(id)arg1 version:(id)arg2;
 @property(readonly, nonatomic) WDProtocolBackendProxy *backendProxy;
 - (void)disconnectSession;
 - (void)sendMessageToBackend:(id)arg1;
@@ -59,6 +60,8 @@
 @property(readonly, nonatomic) RWIDrivable *remoteDrivable;
 @property(readonly, copy, nonatomic) NSDictionary *forwardedCapabilities;
 @property(readonly, copy, nonatomic) NSString *sessionIdentifier;
+@property(readonly, copy, nonatomic) NSString *hostVersion;
+@property(readonly, copy, nonatomic) NSString *hostName;
 @property(readonly, nonatomic) long long hostType;
 @property(nonatomic) __weak id <WDSessionHostDelegate> delegate;
 - (id)initWithType:(long long)arg1 target:(id)arg2;

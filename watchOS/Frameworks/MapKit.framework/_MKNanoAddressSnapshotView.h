@@ -6,11 +6,10 @@
 
 #import "UIView.h"
 
-@class MKMapItem, MKMapSnapshot, MKMapSnapshotter, MKPinAnnotationView, MKUserLocationView, PUICActivityIndicatorView, UIColor, UIFont, UIImageView, UILabel, _MKAutoLayoutContext;
+@class MKMapItem, MKMapSnapshot, MKMapSnapshotter, MKPinAnnotationView, MKUserLocationView, PUICActivityIndicatorView, UIColor, UIFont, UIImageView, UILabel;
 
 @interface _MKNanoAddressSnapshotView : UIView
 {
-    _MKAutoLayoutContext *_context;
     MKMapSnapshotter *_activeSnapshotter;
     MKMapItem *_mapItem;
     CDStruct_02837cd9 _overrideMapRect;
@@ -19,10 +18,6 @@
     UILabel *_textLabel;
     UIView *_blurView;
     UIImageView *_mapImageView;
-    UIImageView *_upperLeftCorner;
-    UIImageView *_upperRightCorner;
-    UIImageView *_lowerLeftCorner;
-    UIImageView *_lowerRightCorner;
     struct CGSize _lastSnapshotSize;
     CDStruct_02837cd9 _lastSnapshotMapRect;
     unsigned int _lastSnapshotMapType;
@@ -47,8 +42,6 @@
 - (void)setMapItem:(id)arg1 visibleMapRect:(CDStruct_02837cd9)arg2;
 - (void)layoutSubviews;
 - (id)_annotationViewToDisplay;
-- (void)updateConstraints;
-- (void)preloadSnapshotForWidth:(float)arg1;
 - (void)textSizeChanged;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

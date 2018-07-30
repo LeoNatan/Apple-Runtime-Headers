@@ -16,6 +16,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)publish;
 - (BOOL)writeToTarget;
 - (id)_filePath;

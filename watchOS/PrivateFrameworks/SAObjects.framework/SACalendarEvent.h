@@ -16,7 +16,9 @@
 + (id)event;
 @property(copy, nonatomic) NSString *title;
 @property(copy, nonatomic) NSString *timeZoneId;
+@property(copy, nonatomic) NSString *status;
 @property(copy, nonatomic) NSDate *startDate;
+@property(copy, nonatomic) NSString *selfParticipantStatus;
 @property(copy, nonatomic) NSArray *recurrences;
 @property(copy, nonatomic) NSNumber *readOnly;
 @property(copy, nonatomic) NSString *notes;

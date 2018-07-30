@@ -10,6 +10,7 @@
 
 @class GEOABExperimentAssignment, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying>
 {
     NSMutableArray *_abExperimentAssignments;

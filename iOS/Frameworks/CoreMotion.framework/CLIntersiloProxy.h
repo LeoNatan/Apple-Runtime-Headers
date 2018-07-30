@@ -6,19 +6,17 @@
 
 #import "NSProxy.h"
 
-@class CLIntersiloInterface, CLSilo;
+@class CLSilo;
 
 @interface CLIntersiloProxy : NSProxy
 {
     id <CLIntersiloProxyDelegateProtocol> _delegate;
     CLSilo *_delegateSilo;
-    CLIntersiloInterface *_proxiedInterface;
 }
 
-+ (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 recipientName:(id)arg3 withInboundInterface:(id)arg4 andOutboundInterface:(id)arg5;
++ (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 recipientName:(id)arg3;
 + (Class)recipientRepresentingClass;
 + (Class)initiatorRepresentingClass;
-@property(readonly, copy, nonatomic) CLIntersiloInterface *proxiedInterface; // @synthesize proxiedInterface=_proxiedInterface;
 @property(readonly, nonatomic) __weak CLSilo *delegateSilo; // @synthesize delegateSilo=_delegateSilo;
 @property(readonly, nonatomic) __weak id <CLIntersiloProxyDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -29,9 +27,8 @@
 - (void)registerDelegate:(id)arg1 inSilo:(id)arg2;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (_Bool)conformsToProtocol:(id)arg1;
-- (id)initWithProxiedInterface:(id)arg1 delegateObject:(id)arg2 delegateSilo:(id)arg3;
-- (id)initWithProxiedInterface:(id)arg1;
+- (id)initWithDelegateObject:(id)arg1 delegateSilo:(id)arg2;
+- (id)init;
 
 @end
 

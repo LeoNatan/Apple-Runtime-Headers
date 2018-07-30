@@ -14,17 +14,17 @@
 
 @interface ARImageDetectionResultData : NSObject <ARResultData, NSCopying, NSSecureCoding>
 {
+    _Bool _detectionOnly;
+    _Bool _providesWorldTrackingCameraPose;
     ARCamera *_currentCamera;
     NSArray *_detectedImages;
-    // Error parsing type: {?="columns"[4]}, name: _cameraTransformAtDetection
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *detectedImages; // @synthesize detectedImages=_detectedImages;
-// Error parsing type for property cameraTransformAtDetection:
-// Property attributes: T{?=[4]},N,V_cameraTransformAtDetection
-
+@property(copy, nonatomic) NSArray *detectedImages; // @synthesize detectedImages=_detectedImages;
 @property(copy, nonatomic) ARCamera *currentCamera; // @synthesize currentCamera=_currentCamera;
+@property(nonatomic) _Bool providesWorldTrackingCameraPose; // @synthesize providesWorldTrackingCameraPose=_providesWorldTrackingCameraPose;
+@property(nonatomic) _Bool detectionOnly; // @synthesize detectionOnly=_detectionOnly;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

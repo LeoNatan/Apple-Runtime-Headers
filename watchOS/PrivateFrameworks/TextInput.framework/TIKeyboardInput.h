@@ -40,10 +40,10 @@
 @property(nonatomic, getter=isBackspace) _Bool backspace; // @synthesize backspace=_backspace;
 @property(copy, nonatomic) id <NSCopying><NSObject><NSSecureCoding> object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 @property(nonatomic, getter=isDoubleSpace) _Bool doubleSpace;
 @property(nonatomic, getter=isSynthesizedByAcceptingCandidate) _Bool synthesizedByAcceptingCandidate;
 @property(nonatomic, getter=isGesture) _Bool gesture;

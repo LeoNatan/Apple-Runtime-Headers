@@ -6,25 +6,19 @@
 
 #import "UIScrollView.h"
 
-#import "_UIMultilineTextContentSizing.h"
+@class NUIMultilineSizingHelper, UIView;
 
-@class NSString, UIView;
-
-@interface NUIContentScrollView : UIScrollView <_UIMultilineTextContentSizing>
+@interface NUIContentScrollView : UIScrollView
 {
-    double _preferredMaxLayoutWidth;
-    struct {
-        unsigned int determiningPreferredMaxLayoutWidth:1;
-        unsigned int inSecondConstraintsPass:1;
-    } _containerViewFlags;
-    UIView *_contentView;
+    NUIMultilineSizingHelper *_multilineSizeHelper;
+    UIView *_documentView;
     long long _horizontalAlignment;
     long long _verticalAlignment;
 }
 
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
-@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(retain, nonatomic) UIView *documentView; // @synthesize documentView=_documentView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)viewForLastBaselineLayout;
@@ -36,17 +30,14 @@
 - (void)_setInSecondConstraintsPass:(_Bool)arg1;
 - (void)_prepareForSecondIntrinsicContentSizeCalculationWithLayoutEngineBounds:(struct CGRect)arg1;
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
+- (_Bool)_needsDoubleUpdateConstraintsPass;
+- (struct CGSize)intrinsicContentSize;
 - (void)updateConstraints;
-- (_Bool)_nui_needsDoubleUpdateConstraintsPass;
-- (id)initWithCoder:(id)arg1;
+- (_Bool)isLayoutSizeDependentOnPerpendicularAxis;
+- (id)initWithDocumentView:(id)arg1;
+@property(retain, nonatomic) UIView *contentView;
 - (id)initWithContentView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

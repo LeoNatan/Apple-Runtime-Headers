@@ -15,7 +15,7 @@
 
 @interface SCNCamera : NSObject <SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding>
 {
-    // Error parsing type: ^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]})dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})fffffffffffffffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}, name: _camera
+    // Error parsing type: ^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]}){?=[4]}dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})ffffffffffffifffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}, name: _camera
     unsigned int _isPresentationInstance:1;
     unsigned int _custom:1;
     unsigned int _legacyFov:1;
@@ -59,6 +59,7 @@
     int _exposureAdaptationMode;
     float _bloomIntensity;
     float _bloomThreshold;
+    int _bloomIteration;
     float _bloomBlurRadius;
     float _motionBlurIntensity;
     float _vignettingPower;
@@ -82,7 +83,7 @@
 + (id)keyPathsForValuesAffectingFocalLength;
 + (id)keyPathsForValuesAffectingFieldOfView;
 + (id)camera;
-+     // Error parsing type: @12@0:4^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]})dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})fffffffffffffffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8, name: cameraWithCameraRef:
++     // Error parsing type: @12@0:4^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]}){?=[4]}dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})ffffffffffffifffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8, name: cameraWithCameraRef:
 + (id)cameraWithMDLCamera:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -96,7 +97,7 @@
 @property(readonly, nonatomic) SCNMaterialProperty *colorGrading;
 - (struct SCNMatrix4)projectionTransformWithViewportSize:(struct CGSize)arg1;
 @property(nonatomic) struct SCNMatrix4 projectionTransform;
--     // Error parsing type: ^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]})dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})fffffffffffffffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8@0:4, name: cameraRef
+-     // Error parsing type: ^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]}){?=[4]}dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})ffffffffffffifffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8@0:4, name: cameraRef
 - (_Bool)useLegacyFov;
 - (void)setYMag:(double)arg1;
 - (double)yMag;
@@ -153,6 +154,8 @@
 @property(nonatomic) float colorFringeIntensity;
 @property(nonatomic) float colorFringeStrength;
 @property(nonatomic) unsigned int categoryBitMask;
+- (void)setBloomIteration:(int)arg1;
+- (int)bloomIteration;
 @property(nonatomic) float bloomThreshold;
 @property(nonatomic) float bloomIntensity;
 @property(nonatomic) float bloomBlurRadius;
@@ -174,6 +177,7 @@
 - (id)presentationCamera;
 @property(copy, nonatomic) SCNTechnique *technique;
 - (void)_syncObjCModel;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;
@@ -206,8 +210,8 @@
 @property(copy, nonatomic) NSString *name;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
--     // Error parsing type: @12@0:4^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]})dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})fffffffffffffffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8, name: initPresentationCameraWithCameraRef:
--     // Error parsing type: @12@0:4^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]})dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})fffffffffffffffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8, name: initWithCameraRef:
+-     // Error parsing type: @12@0:4^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]}){?=[4]}dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})ffffffffffffifffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8, name: initPresentationCameraWithCameraRef:
+-     // Error parsing type: @12@0:4^{__C3DCamera={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}{?=b1b1b1b1b1b1b1dddfd(C3DMatrix4x4=[16f][4]{?=[4]}){?=[4]}dd}ffffiib1b1b1b1C(C3DMatrix4x4=[16f][4]{?=[4]})ffffffffffffifffffffff{?=fffffii}^{__C3DEffectSlot}I^{__C3DFXTechnique}}8, name: initWithCameraRef:
 - (id)init;
 - (id)debugQuickLookData;
 - (id)debugQuickLookObject;

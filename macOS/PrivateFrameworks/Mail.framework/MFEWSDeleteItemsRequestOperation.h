@@ -6,16 +6,17 @@
 
 #import <Mail/MFEWSRequestOperation.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSString;
 
-@interface MFEWSDeleteItemsRequestOperation : MFEWSRequestOperation <NSCoding>
+@interface MFEWSDeleteItemsRequestOperation : MFEWSRequestOperation <NSSecureCoding>
 {
     NSArray *_EWSItemIds;
     NSString *_folderIdString;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *folderIdString; // @synthesize folderIdString=_folderIdString;
 @property(readonly, copy, nonatomic) NSArray *EWSItemIds; // @synthesize EWSItemIds=_EWSItemIds;
 - (void).cxx_destruct;

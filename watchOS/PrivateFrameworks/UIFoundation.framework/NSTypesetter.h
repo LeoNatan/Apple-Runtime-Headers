@@ -78,6 +78,8 @@
 - (int)_baseWritingDirection;
 - (id)_ellipsisFontForFont:(id)arg1;
 - (_Bool)_allowsEllipsisGlyphSubstitution;
+- (void)setApplicationFrameworkContext:(int)arg1;
+- (int)applicationFrameworkContext;
 - (CDUnion_a04c68c6 *)_lineFragmentRectForProposedRectArgs;
 - (void)_updateParagraphStyleCache:(id)arg1;
 - (unsigned int)_getRemainingNominalParagraphRange:(struct _NSRange *)arg1 andParagraphSeparatorRange:(struct _NSRange *)arg2 charactarIndex:(unsigned int)arg3 layoutManager:(id)arg4 string:(id)arg5;
@@ -87,8 +89,8 @@
 - (_Bool)_forceOriginalFontBaseline;
 - (void)finalize;
 - (void)dealloc;
-- (CDStruct_6c9b9d05 *)_getAuxData;
-- (CDStruct_6c9b9d05 *)_allocateAuxData;
+- (CDStruct_41b73d0b *)_getAuxData;
+- (CDStruct_41b73d0b *)_allocateAuxData;
 
 @end
 

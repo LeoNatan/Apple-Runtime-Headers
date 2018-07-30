@@ -8,6 +8,7 @@
 
 @class NSMapTable;
 
+__attribute__((visibility("hidden")))
 @interface _NSBinderPluginRegistry : NSObject
 {
     NSMapTable *_registry;

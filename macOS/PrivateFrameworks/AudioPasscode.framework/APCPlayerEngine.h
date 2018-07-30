@@ -8,6 +8,7 @@
 
 @class AUPasscodeEncoder, AVAudioEngine, AVAudioPCMBuffer, AVAudioPlayerNode, AVAudioSession, AVAudioUnit, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface APCPlayerEngine : NSObject
 {
     AVAudioSession *_session;

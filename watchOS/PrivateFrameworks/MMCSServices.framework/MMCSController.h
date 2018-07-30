@@ -6,19 +6,27 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSRecursiveLock;
 
 @interface MMCSController : NSObject
 {
     int _connectionBehavior;
     NSMutableDictionary *_transfers;
+    NSMutableDictionary *_transferIDToContextMap;
+    NSRecursiveLock *_transferIDContextMapLock;
 }
 
++ (void)preMMCSWarm:(id)arg1;
+@property(retain) NSRecursiveLock *transferIDContextMapLock; // @synthesize transferIDContextMapLock=_transferIDContextMapLock;
+@property(readonly) NSMutableDictionary *transferIDToContextMap; // @synthesize transferIDToContextMap=_transferIDToContextMap;
 @property(readonly) NSMutableDictionary *transfers; // @synthesize transfers=_transfers;
 @property int connectionBehavior; // @synthesize connectionBehavior=_connectionBehavior;
 - (id)getContentHeadersAsString;
 - (id)parseContentHeaderAsDictionary:(id)arg1 treatValuesAsArrays:(_Bool)arg2;
-- (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 authToken:(id)arg4 preauthenticate:(_Bool)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (void)cancelPutRequestID:(id)arg1;
+- (void)removeRequestorContext:(id)arg1 transferID:(id)arg2;
+- (void)addRequestorContext:(id)arg1 transferID:(id)arg2;
+- (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 transferID:(id)arg4 authToken:(id)arg5 preauthenticate:(_Bool)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (void)getFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 authToken:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (_Bool)unregisterFiles:(id)arg1;
 - (void)registerFilesForUpload:(id)arg1 withPreauthentication:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;

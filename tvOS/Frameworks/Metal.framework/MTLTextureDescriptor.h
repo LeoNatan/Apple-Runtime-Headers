@@ -12,6 +12,7 @@
 {
 }
 
++ (id)textureBufferDescriptorWithPixelFormat:(unsigned long long)arg1 width:(unsigned long long)arg2 resourceOptions:(unsigned long long)arg3 usage:(unsigned long long)arg4;
 + (id)textureCubeDescriptorWithPixelFormat:(unsigned long long)arg1 size:(unsigned long long)arg2 mipmapped:(_Bool)arg3;
 + (id)texture2DDescriptorWithPixelFormat:(unsigned long long)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 mipmapped:(_Bool)arg4;
 + (id)allocWithZone:(struct _NSZone *)arg1;
@@ -19,12 +20,15 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
+@property(nonatomic) _Bool allowGPUOptimizedContents; // @dynamic allowGPUOptimizedContents;
 @property(nonatomic) unsigned long long arrayLength; // @dynamic arrayLength;
 @property(nonatomic) unsigned long long cpuCacheMode; // @dynamic cpuCacheMode;
 @property(nonatomic) unsigned long long depth; // @dynamic depth;
+@property(nonatomic) _Bool forceResourceIndex; // @dynamic forceResourceIndex;
 @property(nonatomic) unsigned long long height; // @dynamic height;
 @property(nonatomic) unsigned long long mipmapLevelCount; // @dynamic mipmapLevelCount;
 @property(nonatomic) unsigned long long pixelFormat; // @dynamic pixelFormat;
+@property(nonatomic) unsigned long long resourceIndex; // @dynamic resourceIndex;
 @property(nonatomic) unsigned long long resourceOptions; // @dynamic resourceOptions;
 @property(nonatomic) unsigned long long sampleCount; // @dynamic sampleCount;
 @property(nonatomic) unsigned long long storageMode; // @dynamic storageMode;

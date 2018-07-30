@@ -12,7 +12,7 @@
 
 + (long long)protectionClass;
 + (id)uniquedColumns;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 + (id)_predicateForSyncEntityIdentifier:(id)arg1 syncStore:(id)arg2;
 + (id)_predicateForSyncStore:(id)arg1;
@@ -23,7 +23,8 @@
 + (_Bool)enumerateSyncAnchorsForStoreID:(long long)arg1 database:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 + (_Bool)resetSyncStore:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (_Bool)resetReceivedAnchorsForStore:(id)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (_Bool)_getAnchorsForProperty:(id)arg1 set:(id)arg2 store:(id)arg3 profile:(id)arg4 error:(id *)arg5;
++ (_Bool)_getAnchorsForProperty:(id)arg1 anchorMap:(id)arg2 store:(id)arg3 profile:(id)arg4 error:(id *)arg5;
++ (_Bool)getAckedAnchorsWithMap:(id)arg1 store:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (_Bool)getNextAnchorsWithMap:(id)arg1 store:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (_Bool)getReceivedAnchorsWithMap:(id)arg1 store:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (long long)receivedAnchorForEntityIdentifier:(id)arg1 store:(id)arg2 profile:(id)arg3 error:(id *)arg4;

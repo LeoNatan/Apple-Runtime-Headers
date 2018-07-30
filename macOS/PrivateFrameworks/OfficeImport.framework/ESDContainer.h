@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface ESDContainer : ESDObject
 {
     NSMutableArray *mChildren;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 + (void)readChildrenOfObject:(struct EshObject *)arg1 reader:(struct OcReader *)arg2 toArray:(id)arg3;
 + (void)pbReadChildrenOfObject:(struct EshObject *)arg1 toArray:(id)arg2 state:(id)arg3;
+- (void).cxx_destruct;
 - (void)writeToWriter:(struct OcWriter *)arg1;
 - (id)containerChildAt:(unsigned long long)arg1;
 - (id)containerChildOfType:(unsigned short)arg1 instance:(short)arg2 mustExist:(BOOL)arg3;
@@ -37,13 +37,12 @@ __attribute__((visibility("hidden")))
 - (id)childAt:(unsigned long long)arg1;
 - (unsigned long long)childCount;
 - (struct EshContainer *)eshContainer;
-- (void)dealloc;
 - (id)initFromReader:(struct OcReader *)arg1 type:(unsigned short)arg2 version:(unsigned short)arg3;
 - (id)initWithEshObject:(struct EshObject *)arg1;
 - (id)shapeContainer;
 - (struct EshGroup *)eshGroup;
-- (id)ebInitWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
-- (id)pbInitWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
+- (id)initForExcelBinaryWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
+- (id)initPBWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
 - (void)addCStringWithChar2String:(const unsigned short *)arg1 instance:(int)arg2;
 - (void)addCStringWithNSString:(id)arg1 instance:(int)arg2;
 - (id)addPptEshClientChildOfType:(unsigned short)arg1;

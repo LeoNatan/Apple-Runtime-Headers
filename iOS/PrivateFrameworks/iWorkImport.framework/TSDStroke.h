@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=i_setCap:) int i_cap; // @synthesize i_cap=mCap;
 @property(nonatomic) double i_width; // @synthesize i_width=mWidth;
 @property(copy, nonatomic) TSUColor *i_color; // @synthesize i_color=mColor;
+- (_Bool)canDrawWithOtherStroke:(id)arg1;
 - (id)strokeByTransformingByTransform:(struct CGAffineTransform)arg1;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;

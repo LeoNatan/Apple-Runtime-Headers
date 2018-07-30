@@ -120,12 +120,11 @@
 - (BOOL)copyWasCompletedForPath:(id)arg1;
 - (void)copyCompletedForPaths:(id)arg1;
 - (void)copyCompletedForPath:(id)arg1;
-- (id)usersToDeleteOnDestinationSystem:(id)arg1;
+- (id)usersToReplaceOnDestinationSystem:(id)arg1;
 - (id)description;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (void)addFileGroupingPath:(unsigned long long)arg1;
 - (void)removeUserToTransferWithOldShortName:(id)arg1;
-- (void)addUserToTransfer:(id)arg1 excludedPaths:(id)arg2 overwriteTargetName:(id)arg3;
+- (void)addUserToTransfer:(id)arg1 excludedPaths:(id)arg2 overwriteTargetName:(id)arg3 additionalKeyValues:(id)arg4;
 - (void)addMessages:(id)arg1;
 - (void)addMessage:(id)arg1;
 - (id)dictionaryDescription;

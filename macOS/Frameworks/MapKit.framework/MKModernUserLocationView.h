@@ -32,6 +32,7 @@
 - (void)_setMapRotationRadians:(double)arg1;
 - (void)_updateInnerCourseRotation;
 - (void)viewDidChangeBackingProperties;
+- (void)updateLayer;
 - (void)_updateAccuracyColors;
 - (void)_updateLayers;
 - (void)animateGemPop;

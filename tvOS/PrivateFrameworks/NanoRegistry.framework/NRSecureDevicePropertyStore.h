@@ -9,19 +9,19 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface NRSecureDevicePropertyStore : NSObject <NSSecureCoding, NSCopying>
 {
     NSMutableDictionary *_IDToProperty;
     NSMutableDictionary *_propertyToID;
+    NSObject<OS_dispatch_queue> *_dirtyQueue;
     _Bool _dirty;
 }
 
 + (id)classTypes;
 + (id)enclosedClassTypes;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
@@ -29,6 +29,9 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
+- (void)forceImportSecureProperties:(id)arg1;
+- (void)forceWriteSecurePropertyID:(id)arg1 withValue:(id)arg2;
 - (unsigned long long)count;
 - (id)allSecurePropertyIDs;
 - (id)securePropertyForID:(id)arg1;

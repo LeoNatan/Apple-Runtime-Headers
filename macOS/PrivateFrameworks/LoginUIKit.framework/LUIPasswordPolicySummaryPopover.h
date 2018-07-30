@@ -12,6 +12,7 @@
 
 + (id)controllerWithStyle:(int)arg1;
 - (id)viewController;
+- (int)type;
 
 @end
 

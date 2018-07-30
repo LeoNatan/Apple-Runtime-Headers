@@ -25,6 +25,7 @@
 @property(retain) NSString *client; // @synthesize client=_client;
 @property(retain) OSPRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+- (void)__submitToInstallerDiagnostics;
 - (void)_submitToInstallerDiagnostics;
 - (id)_summaryForLogging;
 - (void)submitWithError:(id)arg1;

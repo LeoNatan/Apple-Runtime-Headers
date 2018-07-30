@@ -8,7 +8,7 @@
 
 #import "StockUpdaterDelegate.h"
 
-@class BackgroundStockUpdater, NSHashTable, NSMutableArray, NSString, NSURLSession;
+@class NSHashTable, NSMutableArray, NSString;
 
 @interface StockUpdateManager : NSObject <StockUpdaterDelegate>
 {
@@ -16,16 +16,12 @@
     NSMutableArray *_activeUpdaters;
     NSMutableArray *_inactiveUpdaters;
     NSHashTable *_updateObservers;
-    BackgroundStockUpdater *_backgroundUpdater;
 }
 
 + (id)sharedManager;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) BackgroundStockUpdater *backgroundUpdater;
-@property(readonly, nonatomic) NSURLSession *backgroundSession;
 - (void)_updaterDidCancelOrFinish:(id)arg1;
 - (void)_kickoffUpdater:(id)arg1 forStocks:(id)arg2 comprehensive:(_Bool)arg3 forceUpdate:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)_updateStocksBasic:(id)arg1 inUpdater:(id)arg2 forced:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)_updateStocksBasic:(id)arg1 forced:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)updateStaleStocksBasicWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateAllStocksBasicWithCompletion:(CDUnknownBlockType)arg1;
@@ -36,8 +32,6 @@
 - (void)updateStockComprehensive:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateStockComprehensive:(id)arg1;
 - (void)updateStocksComprehensive:(id)arg1;
-- (void)reestablishBackgroundSessionForManager:(id)arg1 stocks:(id)arg2 withFinishEventsHandler:(CDUnknownBlockType)arg3;
-- (void)backgroundUpdateAllStocksBasic:(id)arg1 earliestBeginDate:(id)arg2;
 - (void)reset;
 - (void)cancel;
 - (void)failWithError:(id)arg1;

@@ -8,7 +8,6 @@
 
 @class WBReader, WXReadState;
 
-__attribute__((visibility("hidden")))
 @interface WBOfficeArtReaderState : OABReaderState
 {
     WBReader *mReader;
@@ -17,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) int currentTextType; // @synthesize currentTextType=mCurrentTextType;
-@property(nonatomic) WBReader *reader; // @synthesize reader=mReader;
+@property(nonatomic) __weak WBReader *reader; // @synthesize reader=mReader;
+- (void).cxx_destruct;
 - (id)xmlDrawingState;
-- (void)dealloc;
 - (id)initWithClient:(Class)arg1;
 
 @end

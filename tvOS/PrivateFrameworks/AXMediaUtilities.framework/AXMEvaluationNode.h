@@ -20,6 +20,7 @@
 @property(nonatomic) unsigned long long effectivePriority; // @synthesize effectivePriority=_effectivePriority;
 @property(nonatomic) unsigned long long priority; // @synthesize priority=_priority;
 @property(nonatomic) double minimumConfidence; // @synthesize minimumConfidence=_minimumConfidence;
+- (id)_diagnosticNameForRequests:(id)arg1 diagnostics:(id)arg2;
 - (_Bool)shouldEvaluate:(id)arg1;
 - (void)evaluate:(id)arg1;
 - (void)resetEffectivePriority;

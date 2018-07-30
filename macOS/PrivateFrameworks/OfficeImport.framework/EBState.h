@@ -6,34 +6,32 @@
 
 #import "NSObject.h"
 
-@class EDResources, EDWorkbook, TCTracing;
+@class EDResources, EDWorkbook;
 
-__attribute__((visibility("hidden")))
 @interface EBState : NSObject
 {
     struct XlLinkTable *mXlLinkTable;
     struct XlNameTable *mXlNameTable;
-    ChVector_be6372b9 *mSheetNames;
+    ChVector_cc6fdd32 *mSheetNames;
     struct XlFormulaProcessor *mXlFormulaProcessor;
     EDWorkbook *mWorkbook;
     EDResources *mResources;
     id <TCCancelDelegate> mCancelDelegate;
-    TCTracing *mTracing;
 }
 
 @property(readonly, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
-- (id)tracing;
+- (void).cxx_destruct;
 - (BOOL)isCancelled;
 - (void)setResources:(id)arg1;
 - (id)resources;
 - (void)setWorkbook:(id)arg1;
 - (id)workbook;
 - (struct XlFormulaProcessor *)xlFormulaProcessor;
-- (ChVector_be6372b9 *)sheetNames;
+- (ChVector_cc6fdd32 *)sheetNames;
 - (struct XlNameTable *)xlNameTable;
 - (struct XlLinkTable *)xlLinkTable;
 - (void)dealloc;
-- (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (id)initWithCancelDelegate:(id)arg1;
 
 @end
 

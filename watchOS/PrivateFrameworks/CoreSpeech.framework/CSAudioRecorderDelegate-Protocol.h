@@ -21,6 +21,7 @@
 - (void)audioRecorderEndRecordInterruption:(CSAudioRecorder *)arg1;
 - (void)audioRecorderBeginRecordInterruption:(CSAudioRecorder *)arg1 withContext:(NSDictionary *)arg2;
 - (void)audioRecorderBeginRecordInterruption:(CSAudioRecorder *)arg1;
+- (void)audioRecorderDidFinishAlertPlayback:(CSAudioRecorder *)arg1 ofType:(int)arg2 error:(NSError *)arg3;
 - (void)audioRecorderRecordHardwareConfigurationDidChange:(CSAudioRecorder *)arg1 toConfiguration:(int)arg2;
 - (void)audioRecorderDidStopRecording:(CSAudioRecorder *)arg1 forReason:(int)arg2;
 - (void)audioRecorderDidStartRecording:(CSAudioRecorder *)arg1 successfully:(_Bool)arg2 error:(NSError *)arg3;

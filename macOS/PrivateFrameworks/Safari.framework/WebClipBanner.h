@@ -6,7 +6,7 @@
 
 #import <Safari/Banner.h>
 
-@class NSButton, NSTextField;
+@class NSButton, NSTextField, NSView, WebClipAddButtonHostViewController;
 
 __attribute__((visibility("hidden")))
 @interface WebClipBanner : Banner
@@ -14,17 +14,19 @@ __attribute__((visibility("hidden")))
     NSTextField *prompt;
     NSButton *cancelButton;
     NSButton *commitButton;
+    WebClipAddButtonHostViewController *_remoteAddButtonViewController;
+    NSView *_addButtonContainer;
 }
 
 + (BOOL)bannerHasBottomBorder;
 + (int)bannerSortOrder;
 + (id)bannerBackgroundImage;
+@property(nonatomic) __weak NSView *addButtonContainer; // @synthesize addButtonContainer=_addButtonContainer;
 - (void).cxx_destruct;
 - (void)_updateCommitButtonKeyEquivalent;
 - (void)_setPromptString:(id)arg1;
 - (void)firstResponderMightHaveChanged;
 - (void)confirmCropMode:(id)arg1;
-- (id)bannerControlTextAttributes;
 - (void)willUninstallBannerView;
 - (void)didInstallBannerView;
 - (void)willInstallBannerView;

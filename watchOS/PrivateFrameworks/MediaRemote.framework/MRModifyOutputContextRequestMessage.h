@@ -8,7 +8,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface MRModifyOutputContextRequestMessage : MRProtocolMessage
 {
 }

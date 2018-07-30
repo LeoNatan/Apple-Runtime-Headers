@@ -8,7 +8,6 @@
 
 @class NSArray, NSHashTable;
 
-__attribute__((visibility("hidden")))
 @interface _MKStackView : UIView
 {
     NSArray *_stackConstraints;

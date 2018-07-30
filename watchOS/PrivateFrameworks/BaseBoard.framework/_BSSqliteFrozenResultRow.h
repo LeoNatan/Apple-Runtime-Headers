@@ -19,6 +19,7 @@
     NSArray *_frozenDatas;
 }
 
+- (void).cxx_destruct;
 - (unsigned int)_indexForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)dataAtIndex:(unsigned int)arg1;
@@ -29,7 +30,6 @@
 - (id)keyAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
 - (_Bool)isValid;
-- (void)dealloc;
 - (id)initWithResultRow:(id)arg1;
 - (id)initWithStatement:(struct sqlite3_stmt *)arg1;
 

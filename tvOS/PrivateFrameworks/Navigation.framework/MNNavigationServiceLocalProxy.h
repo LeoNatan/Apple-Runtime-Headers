@@ -77,7 +77,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)_serviceStateForStateType:(unsigned long long)arg1;
 - (void)stateManager:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)stateManager:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
-- (void)acquireDesiredResourcePolicy;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;

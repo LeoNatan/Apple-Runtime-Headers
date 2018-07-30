@@ -30,6 +30,7 @@
 + (id)candidateLogsURLForBundle:(id)arg1;
 + (id)candidateLogsBasePath;
 + (id)submittedLogsURL;
++ (id)submittedLogsURLForUser:(id)arg1;
 + (id)logURLForCurrentTimeAndBundle:(id)arg1;
 + (id)relativePositionKey;
 + (id)sharedManager;
@@ -47,7 +48,7 @@
 - (void)userEngagedItemWithIdentifier:(id)arg1 forBundle:(id)arg2 forQuery:(id)arg3;
 - (void)queryWillFinishWithItems:(id)arg1 forClient:(id)arg2 forQuery:(id)arg3 anonymousDataCollectionAllowed:(_Bool)arg4;
 - (void)cleanUp;
-- (id)retrieveAndCopyFeedbackDataToSendInDirectory:(id)arg1;
+- (id)retrieveFeedbackURLToSendInDirectory:(id)arg1;
 - (void)deleteExpiredSubmittedLogs;
 - (void)deleteCandidateLogs;
 - (_Bool)dateIsExpired:(id)arg1;
@@ -57,7 +58,7 @@
 - (_Bool)_shouldDataCollectWithEngagedBundle:(id)arg1 withQueryId:(id)arg2 forClientBundle:(id)arg3;
 - (void)_updateUserDefaultsWithEngagedBundle:(id)arg1 andQueryID:(id)arg2 forClientBundle:(id)arg3;
 - (void)_increaseUserDefaultsEngagementCountForBundle:(id)arg1;
-- (void)_addQueryInfoToFeatureMetadata:(id)arg1 withQuery:(id)arg2 cepData:(id)arg3 forClient:(id)arg4 keyboardPrimaryLanguage:(id)arg5;
+- (void)_addQueryInfoToJSONWriter:(struct json_writer *)arg1 withQuery:(id)arg2 cepData:(id)arg3 forClient:(id)arg4 keyboardPrimaryLanguage:(id)arg5;
 - (void)_addRelativePositionToFeatureDict:(id)arg1 relativePosition:(id)arg2 forItem:(id)arg3;
 - (id)_relativePositionForItem:(id)arg1 inItems:(id)arg2 withIndexOfEngagedItem:(long long)arg3;
 - (id)_abandonedItemsFromItems:(id)arg1 withIndexOfEngagedItem:(unsigned long long)arg2;

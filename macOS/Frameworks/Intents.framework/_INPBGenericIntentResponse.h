@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBGenericIntentResponse.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBIntentMetadata;
 
-@interface _INPBGenericIntentResponse : PBCodable <NSCopying>
+@interface _INPBGenericIntentResponse : PBCodable <_INPBGenericIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBIntentMetadata *_metadata;
-    NSMutableArray *_properties;
+    NSArray *_properties;
 }
 
 + (Class)propertiesType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *properties; // @synthesize properties=_properties;
+@property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) _INPBIntentMetadata *metadata; // @synthesize metadata=_metadata;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)propertiesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)propertiesCount;
+@property(readonly, nonatomic) unsigned long long propertiesCount;
 - (void)addProperties:(id)arg1;
 - (void)clearProperties;
 @property(readonly, nonatomic) BOOL hasMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

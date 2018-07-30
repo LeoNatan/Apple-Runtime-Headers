@@ -6,11 +6,13 @@
 
 #import <Automator/_AMSystemEventsQuickTimeFile.h>
 
+@class _AMSystemEventsAudioData;
+
 @interface _AMSystemEventsAudioFile : _AMSystemEventsQuickTimeFile
 {
 }
 
-- (id)contents;
+@property(readonly, copy) _AMSystemEventsAudioData *contents;
 
 @end
 

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _alignment;
     long long _baseWritingDirection;
     _Bool _disableDeepClickLookUp;
+    _Bool _textGrowsUpwards;
     struct TFENode _configuredNode;
     FI_TRenameOperation *_renameOp;
     id <TShrinkToFitDelegateProtocol> _delegate;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)startEditingViaDelayTimer;
 - (void)startEditing:(_Bool)arg1;
 @property(nonatomic) long long maxNumLines;
+@property(nonatomic) _Bool textGrowsUpwards; // @synthesize textGrowsUpwards=_textGrowsUpwards;
 - (struct CGRect)globalFrame;
 - (int)editingSelectionType;
 - (void)setText:(id)arg1 selectionRange:(const struct _NSRange *)arg2;

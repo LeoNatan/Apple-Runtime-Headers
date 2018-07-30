@@ -43,8 +43,6 @@
     NSDictionary *_otherInfo;
 }
 
-+ (id)appleScriptLock;
-+ (void)initialize;
 @property(nonatomic) BOOL didChange; // @synthesize didChange=_didChange;
 @property(readonly, copy, nonatomic) NSDictionary *otherInfo; // @synthesize otherInfo=_otherInfo;
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;

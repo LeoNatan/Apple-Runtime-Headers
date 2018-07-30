@@ -23,11 +23,12 @@
 @property double migrationTime; // @synthesize migrationTime=_migrationTime;
 @property unsigned long long deletionSpeed; // @synthesize deletionSpeed=_deletionSpeed;
 @property unsigned long long extractorSpeed; // @synthesize extractorSpeed=_extractorSpeed;
+- (void).cxx_destruct;
 - (void)dumpFinalStats;
 - (void)populateStats;
 - (id)modelName;
 - (void)setTarget:(id)arg1;
-- (id)initWithDisk:(id)arg1;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

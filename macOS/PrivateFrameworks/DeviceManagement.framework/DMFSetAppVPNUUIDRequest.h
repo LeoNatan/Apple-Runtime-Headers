@@ -14,6 +14,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (BOOL)isPermittedOnUserConnection;
++ (BOOL)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(copy, nonatomic) NSString *UUIDString; // @synthesize UUIDString=_UUIDString;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

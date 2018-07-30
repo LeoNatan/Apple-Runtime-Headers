@@ -9,6 +9,8 @@
 @protocol PLMomentData_Private <PLMomentData>
 
 @optional
+@property(nonatomic) double approximateLongitude;
+@property(nonatomic) double approximateLatitude;
 @property(nonatomic) int cachedVideosCount;
 @property(nonatomic) int cachedPhotosCount;
 @end

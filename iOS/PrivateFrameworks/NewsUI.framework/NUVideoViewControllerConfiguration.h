@@ -7,11 +7,11 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
-#import "SXVideoViewControllerConfiguration.h"
+#import "SVVideoViewControllerConfiguration.h"
 
 @class NUVideoViewControllerAdConfiguration;
 
-@interface NUVideoViewControllerConfiguration : NSObject <NSCopying, SXVideoViewControllerConfiguration>
+@interface NUVideoViewControllerConfiguration : NSObject <NSCopying, SVVideoViewControllerConfiguration>
 {
     _Bool _preferredMuteState;
     _Bool _pagingAllowed;

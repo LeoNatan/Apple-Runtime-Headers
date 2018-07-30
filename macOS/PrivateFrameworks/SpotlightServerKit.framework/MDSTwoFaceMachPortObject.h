@@ -17,9 +17,11 @@
 
 - (void)dealloc;
 - (void)shutdown;
-- (void)addRunLoopSources;
 - (void)setBackgroundPort:(unsigned int)arg1;
 - (unsigned int)backgroundPort;
+- (unsigned long long)backgroundPortRights;
+- (void)addBackgroundMachDispatchLinks;
+- (void)setupBackgroundMachSubsystem;
 - (id)initWithDeferredShutdown:(BOOL)arg1;
 
 @end

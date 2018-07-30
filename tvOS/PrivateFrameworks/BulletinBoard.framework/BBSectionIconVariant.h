@@ -19,6 +19,7 @@
     NSString *_imagePath;
     NSString *_imageName;
     NSString *_bundlePath;
+    NSString *_applicationIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -27,6 +28,7 @@
 + (id)variantWithFormat:(long long)arg1 imageData:(id)arg2;
 + (id)_variantWithFormat:(long long)arg1;
 @property(nonatomic, getter=isPrecomposed) _Bool precomposed; // @synthesize precomposed=_precomposed;
+@property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(copy, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(copy, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;

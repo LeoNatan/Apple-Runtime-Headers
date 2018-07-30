@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)preload;
++ (id)indeterminateProgressSpinnerDarkInterface;
 + (id)indeterminateProgressSpinner;
 + (id)beatsOneLogo;
 + (id)musicPauseButton;

@@ -10,19 +10,19 @@
 
 @interface IMDCKMessageSyncController : IMDCKAbstractSyncController
 {
-    _Bool _shouldCheckDeviceConditions;
     CKServerChangeToken *_archivedRecordSyncToken;
     NSObject<OS_dispatch_queue> *_ckQueue;
     IMDRecordZoneManager *_recordZoneManager;
     id <IMDCKSyncTokenStore> _syncTokenStore;
     IMDCKMessageSyncCKOperationFactory *_CKOperationFactory;
     NSObject<OS_xpc_object> *_activity;
+    unsigned int _deviceConditionsToCheck;
     NSMutableDictionary *_visitedChats;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *visitedChats; // @synthesize visitedChats=_visitedChats;
-@property(nonatomic) _Bool shouldCheckDeviceConditions; // @synthesize shouldCheckDeviceConditions=_shouldCheckDeviceConditions;
+@property(nonatomic) unsigned int deviceConditionsToCheck; // @synthesize deviceConditionsToCheck=_deviceConditionsToCheck;
 @property NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) IMDCKMessageSyncCKOperationFactory *CKOperationFactory; // @synthesize CKOperationFactory=_CKOperationFactory;
 @property(retain, nonatomic) id <IMDCKSyncTokenStore> syncTokenStore; // @synthesize syncTokenStore=_syncTokenStore;
@@ -37,7 +37,7 @@
 - (void)clearLocalSyncState;
 - (void)deleteMessagesZone;
 - (void)deleteMessageSyncToken;
-- (void)syncMessagesWithSyncType:(int)arg1 shouldCheckDeviceConditions:(_Bool)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)syncMessagesWithSyncType:(int)arg1 deviceConditionsToCheck:(unsigned int)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_updateAllMessagesAsNotNeedingReUpload;
 - (void)_markAllUnsuccessFullSyncMessagesAsNeedingSync;
 - (_Bool)_shouldMarkAllMessagesAsNeedingSync;
@@ -58,6 +58,8 @@
 @property(retain, nonatomic) CKServerChangeToken *archivedRecordSyncToken; // @synthesize archivedRecordSyncToken=_archivedRecordSyncToken;
 - (void)_migrateSyncTokens;
 - (_Bool)_deviceConditionsAllowsMessageSync;
+- (_Bool)_deviceConditionsAllowsMessageSyncForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
+- (void)_updateDeviceCondictionsToCheckIfNeededForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
 - (void)_processRecordChange:(id)arg1;
 - (void)_writeDirtyMessagesToCloudKitWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_syncOperationGroupName;

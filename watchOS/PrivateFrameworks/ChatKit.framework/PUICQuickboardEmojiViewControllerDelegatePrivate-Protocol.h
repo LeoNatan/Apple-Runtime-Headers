@@ -6,12 +6,12 @@
 
 #import "PUICQuickboardEmojiViewControllerDelegate.h"
 
-@class CKBrowserItemPayload, IMSticker, PUICQuickboardViewController, UIView;
+@class CKBrowserItemPayload, IMSticker, UIView;
 
 @protocol PUICQuickboardEmojiViewControllerDelegatePrivate <PUICQuickboardEmojiViewControllerDelegate>
 
 @optional
-- (void)quickboard:(PUICQuickboardViewController *)arg1 didSelectSticker:(IMSticker *)arg2 preview:(UIView *)arg3;
-- (void)quickboard:(PUICQuickboardViewController *)arg1 didSelectItemPayload:(CKBrowserItemPayload *)arg2 preview:(UIView *)arg3;
+- (void)quickboard:(id <PUICQuickboardController>)arg1 didSelectSticker:(IMSticker *)arg2 preview:(UIView *)arg3;
+- (void)quickboard:(id <PUICQuickboardController>)arg1 didSelectItemPayload:(CKBrowserItemPayload *)arg2 preview:(UIView *)arg3;
 @end
 

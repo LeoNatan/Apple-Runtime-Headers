@@ -8,7 +8,6 @@
 
 @class ABCommunicationButtonsController, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ABCollectionFaceTimeRowView : ABCardCollectionRowView
 {
     ABCommunicationButtonsController *_buttonsController;

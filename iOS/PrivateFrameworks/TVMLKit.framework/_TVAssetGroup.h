@@ -10,14 +10,21 @@
 
 @interface _TVAssetGroup : NSObject
 {
+    _Bool _manifestDirty;
     long long _groupType;
     NSString *_cachePath;
     unsigned long long _maxCacheSize;
     unsigned long long _pruneCount;
     unsigned long long _currentCacheSize;
     NSMutableDictionary *_cacheRecords;
+    NSMutableDictionary *_assetKeysByTag;
+    NSMutableDictionary *_manifest;
 }
 
++ (id)_humanReadableStringForGroupType:(long long)arg1;
+@property(nonatomic, getter=isManifestDirty) _Bool manifestDirty; // @synthesize manifestDirty=_manifestDirty;
+@property(retain, nonatomic) NSMutableDictionary *manifest; // @synthesize manifest=_manifest;
+@property(retain, nonatomic) NSMutableDictionary *assetKeysByTag; // @synthesize assetKeysByTag=_assetKeysByTag;
 @property(retain, nonatomic) NSMutableDictionary *cacheRecords; // @synthesize cacheRecords=_cacheRecords;
 @property(nonatomic) unsigned long long currentCacheSize; // @synthesize currentCacheSize=_currentCacheSize;
 @property(nonatomic) unsigned long long pruneCount; // @synthesize pruneCount=_pruneCount;
@@ -25,10 +32,14 @@
 @property(retain, nonatomic) NSString *cachePath; // @synthesize cachePath=_cachePath;
 @property(nonatomic) long long groupType; // @synthesize groupType=_groupType;
 - (void).cxx_destruct;
-- (id)_humanReadableStringForGroupType:(long long)arg1;
+- (id)_manifestFilePath;
+- (void)_saveManifest;
+- (void)_updateManifestWithChange:(CDUnknownBlockType)arg1;
 - (id)description;
 - (void)updateAssetsFromFiles;
+- (void)_removeAssetInfoForKey:(id)arg1 removeFile:(_Bool)arg2;
 - (void)_removeAssetInfoForKey:(id)arg1;
+- (id)infoForAllAssetsWithTags:(id)arg1 queue:(id)arg2;
 - (id)infoForAllAssetsWithQueue:(id)arg1;
 - (void)removeAllAssetsWithQueue:(id)arg1;
 - (void)removeAssetInfoForKey:(id)arg1 queue:(id)arg2;

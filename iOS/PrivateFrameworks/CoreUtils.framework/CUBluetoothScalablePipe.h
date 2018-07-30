@@ -9,7 +9,7 @@
 #import "CBScalablePipeManagerDelegate.h"
 #import "CUReadWriteRequestable.h"
 
-@class CBScalablePipe, CBScalablePipeManager, CUReadRequest, CUWriteRequest, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+@class CBScalablePipe, CBScalablePipeManager, CUReadRequest, CUWriteRequest, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID;
 
 @interface CUBluetoothScalablePipe : NSObject <CBScalablePipeManagerDelegate, CUReadWriteRequestable>
 {
@@ -19,6 +19,8 @@
     struct channel *_btChannel;
     _Bool _btEndpointRegistering;
     _Bool _btEndpointRegistered;
+    int _btPeerHostState;
+    _Bool _btPeerKVORegistered;
     CBScalablePipe *_btPipe;
     CBScalablePipeManager *_btPipeManager;
     struct channel_ring_desc *_btReadRing;
@@ -36,16 +38,24 @@
     struct NSMutableArray *_writeRequests;
     NSObject<OS_dispatch_source> *_writeSource;
     _Bool _writeSuspended;
+    int _peerHostState;
+    int _priority;
     int _state;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_identifier;
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
+    NSUUID *_peerIdentifier;
+    CDUnknownBlockType _peerHostStateChangedHandler;
     CDUnknownBlockType _stateChangedHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType stateChangedHandler; // @synthesize stateChangedHandler=_stateChangedHandler;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
+@property(nonatomic) int priority; // @synthesize priority=_priority;
+@property(copy, nonatomic) CDUnknownBlockType peerHostStateChangedHandler; // @synthesize peerHostStateChangedHandler=_peerHostStateChangedHandler;
+@property(readonly, nonatomic) int peerHostState; // @synthesize peerHostState=_peerHostState;
+@property(copy, nonatomic) NSUUID *peerIdentifier; // @synthesize peerIdentifier=_peerIdentifier;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -56,6 +66,7 @@
 - (void)scalablePipeManager:(id)arg1 didUnregisterEndpoint:(id)arg2;
 - (void)scalablePipeManager:(id)arg1 didRegisterEndpoint:(id)arg2 error:(id)arg3;
 - (void)scalablePipeManagerDidUpdateState:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
 - (void)_abortWritesWithError:(id)arg1;
 - (unsigned long long)_writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
@@ -69,6 +80,7 @@
 - (void)_prepareReadRequest:(id)arg1;
 - (void)_processReads;
 - (void)readWithRequest:(id)arg1;
+- (void)_handleBTPeerHostStateChanged;
 - (void)_tearDownPipe;
 - (void)_setupPipe;
 - (void)_ensureStopped:(id)arg1;

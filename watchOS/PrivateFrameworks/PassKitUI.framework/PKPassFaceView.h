@@ -6,9 +6,12 @@
 
 #import <PassKitUI/WLEasyToHitCustomView.h>
 
-@class CAFilter, NSArray, NSMutableArray, NSMutableSet, PKLiveRenderedCardFaceView, PKPass, PKPassColorProfile, PKPassFaceTemplate, UIImage, UIImageView, UIView;
+#import "PKForegroundActiveArbiterObserver.h"
+#import "PKPaymentServiceDelegate.h"
 
-@interface PKPassFaceView : WLEasyToHitCustomView
+@class CAFilter, NSArray, NSMutableArray, NSMutableSet, NSString, PKLiveRenderedCardFaceView, PKPass, PKPassColorProfile, PKPassFaceTemplate, PKPaymentService, UIImage, UIImageView, UIView;
+
+@interface PKPassFaceView : WLEasyToHitCustomView <PKPaymentServiceDelegate, PKForegroundActiveArbiterObserver>
 {
     PKPass *_pass;
     PKPassColorProfile *_colorProfile;
@@ -21,7 +24,9 @@
     _Bool _resizablePartialImage;
     UIView *_contentView;
     UIImageView *_backgroundView;
+    UIImageView *_shadowBackgroundView;
     UIImage *_faceImage;
+    UIImage *_faceShadowImage;
     UIImage *_partialFaceImage;
     CAFilter *_dimmingFilter;
     float _dimmer;
@@ -31,6 +36,8 @@
     unsigned int _contentViewCreatedRegions;
     unsigned int _invariantViewCreatedRegions;
     _Bool _showsLiveRendering;
+    _Bool _foregroundActive;
+    PKPaymentService *_paymentService;
     _Bool _clipsContent;
     _Bool _allowBackgroundPlaceHolders;
     _Bool _liveMotionEnabled;
@@ -58,6 +65,12 @@
 @property(nonatomic) id <PKPassFaceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_handleTimeOrLocaleChange:(id)arg1;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
+- (void)_recreateFieldDerivedContent;
+- (void)_setBalances:(id)arg1;
+- (void)_updateForeignBalances;
+- (void)_createBucketsIfNecessary;
 - (id)_relevantBuckets;
 - (void)_setShowsBackgroundView:(_Bool)arg1;
 - (void)_setContentViewsAlpha:(float)arg1;
@@ -73,10 +86,11 @@
 - (void)createHeaderInvariantViews;
 @property(readonly, nonatomic) struct CGSize contentSize;
 - (id)passFaceTemplate;
-- (int)_validityStateForPass:(id)arg1;
+- (void)updateShadow:(float)arg1 animated:(_Bool)arg2 withDelay:(double)arg3;
 - (void)_presentDiffRecursivelyDiff:(id)arg1 forBucketAtIndex:(unsigned int)arg2 withBuckets:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentDiff:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)layoutSubviews;
+- (struct UIEdgeInsets)shadowBackgroundInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets shadowInsets;
 - (void)createContentViewsWithFade:(_Bool)arg1;
 - (void)setDimmer:(float)arg1 animated:(_Bool)arg2;
@@ -93,6 +107,12 @@
 - (void)setPass:(id)arg1 colorProfile:(id)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

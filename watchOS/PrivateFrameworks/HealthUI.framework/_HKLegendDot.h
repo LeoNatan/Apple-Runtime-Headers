@@ -6,17 +6,22 @@
 
 #import "UIView.h"
 
-@class UIColor;
+@class CALayer, UIColor;
 
 @interface _HKLegendDot : UIView
 {
     UIColor *_dotColor;
+    UIColor *_innerDotColor;
+    CALayer *_innerDotLayer;
 }
 
+@property(retain, nonatomic) CALayer *innerDotLayer; // @synthesize innerDotLayer=_innerDotLayer;
+@property(retain, nonatomic) UIColor *innerDotColor; // @synthesize innerDotColor=_innerDotColor;
 @property(retain, nonatomic) UIColor *dotColor; // @synthesize dotColor=_dotColor;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
-- (id)initWithColor:(id)arg1;
+- (void)layoutSublayersOfLayer:(id)arg1;
+- (id)init;
 
 @end
 

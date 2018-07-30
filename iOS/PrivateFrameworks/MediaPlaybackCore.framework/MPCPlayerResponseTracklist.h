@@ -10,6 +10,7 @@
 
 @interface MPCPlayerResponseTracklist : NSObject
 {
+    unsigned long long _changeItemSupport;
     NSString *_uniqueIdentifier;
     long long _lastChangeDirection;
     long long _upNextItemCount;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) long long lastChangeDirection; // @synthesize lastChangeDirection=_lastChangeDirection;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
+- (unsigned long long)_determineChangeItemSupport;
 - (id)disableModificationsCommand;
 - (id)changeItemCommand;
 - (id)shuffleCommand;

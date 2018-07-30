@@ -6,11 +6,15 @@
 
 #import "MapsSuggestionsObject.h"
 
+@class MapsSuggestionsEntry;
+
 @protocol MapsSuggestionsSource <MapsSuggestionsObject>
 + (unsigned int)disposition;
 + (_Bool)isEnabled;
 @property(nonatomic) __weak id <MapsSuggestionsSourceDelegate> delegate;
-- (_Bool)canProduceEntriesOfType:(unsigned int)arg1;
+- (_Bool)removeEntry:(MapsSuggestionsEntry *)arg1 behavior:(int)arg2 handler:(void (^)(void))arg3;
+- (_Bool)canProduceEntriesOfType:(int)arg1;
+- (double)updateSuggestionEntriesOfType:(int)arg1;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;

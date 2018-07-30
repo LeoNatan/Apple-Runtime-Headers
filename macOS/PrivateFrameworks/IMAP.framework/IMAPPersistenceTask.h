@@ -16,6 +16,7 @@
 - (long long)networkPriority;
 - (id)nextNetworkOperation;
 - (id)description;
+- (id)mailboxNameWithoutPII;
 - (id)initWithMailboxName:(id)arg1;
 - (id)initWithDataSource:(id)arg1;
 

@@ -17,7 +17,7 @@
 }
 
 @property(nonatomic) unsigned long long selectedRouteIndex; // @synthesize selectedRouteIndex=_selectedRouteIndex;
-@property(retain, nonatomic) NSData *routeID; // @synthesize routeID=_routeID;
+@property(copy, nonatomic) NSData *routeID; // @synthesize routeID=_routeID;
 @property(nonatomic) double endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(nonatomic) double startTimestamp; // @synthesize startTimestamp=_startTimestamp;
 - (void).cxx_destruct;

@@ -7,32 +7,42 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSearchForMessagesIntentResponse.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBSearchForMessagesIntentResponse : PBCodable <NSCopying>
+@interface _INPBSearchForMessagesIntentResponse : PBCodable <_INPBSearchForMessagesIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_messages;
+    struct _has;
+    NSArray *_messages;
+    NSArray *_searchResults;
 }
 
++ (Class)searchResultsType;
 + (Class)messagesType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
+@property(copy, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
+@property(copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+- (id)searchResultsAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long searchResultsCount;
+- (void)addSearchResults:(id)arg1;
+- (void)clearSearchResults;
 - (id)messagesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)messagesCount;
+@property(readonly, nonatomic) unsigned long long messagesCount;
 - (void)addMessages:(id)arg1;
 - (void)clearMessages;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

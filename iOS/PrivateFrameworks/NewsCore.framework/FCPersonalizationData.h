@@ -7,14 +7,14 @@
 #import <NewsCore/FCPrivateDataController.h>
 
 #import "FCAppActivityObserving.h"
-#import "FCAppConfigurationObserving.h"
+#import "FCCoreConfigurationObserving.h"
 #import "FCDerivedPersonalizationData.h"
 #import "FCOperationThrottlerDelegate.h"
 #import "FCUserInfoObserving.h"
 
 @class CKRecord, FCPersonalizationTreatment, FCUserInfo, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface FCPersonalizationData : FCPrivateDataController <FCOperationThrottlerDelegate, FCAppConfigurationObserving, FCUserInfoObserving, FCAppActivityObserving, FCDerivedPersonalizationData>
+@interface FCPersonalizationData : FCPrivateDataController <FCOperationThrottlerDelegate, FCCoreConfigurationObserving, FCUserInfoObserving, FCAppActivityObserving, FCDerivedPersonalizationData>
 {
     _Bool _attemptingUpload;
     NSMutableDictionary *_aggregates;
@@ -53,7 +53,7 @@
 - (void).cxx_destruct;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 - (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(_Bool)arg2;
-- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
+- (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
 - (id)aggregateForFeatureKey:(id)arg1;
 - (void)enumerateAggregatesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)aggregatesForFeatureKeys:(id)arg1;
@@ -79,6 +79,11 @@
 - (void)addObserver:(id)arg1;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3 userInfo:(id)arg4;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
+- (void)d_allResults:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)prepareAggregatesForUseWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)updateFeatures:(id)arg1 withAction:(unsigned long long)arg2 displayRank:(long long)arg3 groupRank:(long long)arg4 individually:(_Bool)arg5 configurableValues:(id)arg6 featuresUpdatedBlock:(CDUnknownBlockType)arg7;
+- (id)aggregatesForFeatures:(id)arg1;
+- (id)baselineAggregateWithConfigurableValues:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -9,20 +9,28 @@
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
 
-@class NSData, NSString;
+@class NSData, NSDictionary, NSString;
 
 @interface SKPayment : NSObject <NSCopying, NSMutableCopying>
 {
     id _internal;
 }
 
++ (id)paymentWithProductIdentifier:(id)arg1;
++ (id)paymentFromPurchaseIntentWithProduct:(id)arg1;
 + (id)paymentWithProduct:(id)arg1;
 - (void).cxx_destruct;
-@property(readonly, copy, nonatomic) NSString *applicationUsername;
+@property(readonly, copy, nonatomic) NSDictionary *requestParameters;
+@property(readonly, copy, nonatomic) NSString *partnerTransactionIdentifier;
+@property(readonly, copy, nonatomic) NSString *partnerIdentifier;
+@property(readonly, nonatomic) BOOL isStoreOriginated;
+@property(readonly, nonatomic) BOOL simulatesAskToBuyInSandbox;
 @property(readonly, copy, nonatomic) NSData *requestData;
 @property(readonly, nonatomic) long long quantity;
 @property(readonly, copy, nonatomic) NSString *productIdentifier;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+@property(readonly, copy, nonatomic) NSString *applicationUsername;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

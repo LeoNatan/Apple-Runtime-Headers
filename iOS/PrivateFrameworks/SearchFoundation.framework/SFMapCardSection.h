@@ -14,7 +14,15 @@
 
 @interface SFMapCardSection : SFCardSection <SFMapCardSection, NSSecureCoding, NSCopying>
 {
-    CDStruct_0edb3e2f _has;
+    struct {
+        unsigned int canBeHidden:1;
+        unsigned int hasTopPadding:1;
+        unsigned int hasBottomPadding:1;
+        unsigned int separatorStyle:1;
+        unsigned int interactive:1;
+        unsigned int sizeFormat:1;
+        unsigned int pinBehavior:1;
+    } _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;
@@ -32,9 +40,11 @@
     NSString *_footnoteLabel;
     NSString *_footnote;
     SFMapRegion *_boundingMapRegion;
+    NSArray *_pins;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSArray *pins; // @synthesize pins=_pins;
 @property(nonatomic) int pinBehavior; // @synthesize pinBehavior=_pinBehavior;
 @property(retain, nonatomic) SFMapRegion *boundingMapRegion; // @synthesize boundingMapRegion=_boundingMapRegion;
 @property(nonatomic) int sizeFormat; // @synthesize sizeFormat=_sizeFormat;

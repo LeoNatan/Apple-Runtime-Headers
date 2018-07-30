@@ -8,16 +8,17 @@
 #import "HFFavoritable.h"
 #import "HFGroupableItemProtocol.h"
 #import "HFHomeKitObject.h"
-#import "HFPrettyDescription.h"
 #import "HFReorderableHomeKitObject.h"
 #import "HFRoomContextProviding.h"
+#import "HFStateDumpBuildable.h"
+#import "HFSymptomFixableObject.h"
 #import "HFSymptomsHandlerVendor.h"
 #import "HFSymptomsVendor.h"
 #import "HMMediaObject.h"
 
 @class ACAccount, HFAccessorySettingAdapterManager, HFMediaProfileContainerSettingsValueManager, HFServiceNameComponents, HMAccessory, HMHome, HMMediaSession, NAFuture, NSSet, NSString;
 
-@protocol HFMediaProfileContainer <HMMediaObject, HFAccessoryVendor, HFHomeKitObject, HFPrettyDescription, HFReorderableHomeKitObject, HFFavoritable, HFRoomContextProviding, HFGroupableItemProtocol, HFSymptomsVendor, HFSymptomsHandlerVendor>
+@protocol HFMediaProfileContainer <HMMediaObject, HFAccessoryVendor, HFHomeKitObject, HFStateDumpBuildable, HFReorderableHomeKitObject, HFFavoritable, HFRoomContextProviding, HFGroupableItemProtocol, HFSymptomsVendor, HFSymptomsHandlerVendor, HFSymptomFixableObject>
 @property(readonly, nonatomic) HFMediaProfileContainerSettingsValueManager *hf_settingsValueManager;
 @property(readonly, nonatomic) id <HFMediaValueSource> hf_mediaValueSource;
 @property(readonly, nonatomic) HFAccessorySettingAdapterManager *hf_settingsAdapterManager;
@@ -27,8 +28,8 @@
 @property(readonly, nonatomic) NSString *hf_defaultName;
 @property(readonly, nonatomic) NSString *hf_editingName;
 @property(readonly, nonatomic) NSString *hf_prettyDescription;
-@property(readonly, nonatomic) _Bool hf_supportsMediaSystem;
 @property(readonly, nonatomic) _Bool hf_showsAudioSettings;
+@property(readonly, nonatomic) _Bool hf_supportsMediaSystem;
 @property(readonly, nonatomic) _Bool hf_supportsSoftwareUpdate;
 @property(readonly, nonatomic) _Bool hf_isReachable;
 @property(readonly, nonatomic) _Bool hf_isAppleMusicReachable;

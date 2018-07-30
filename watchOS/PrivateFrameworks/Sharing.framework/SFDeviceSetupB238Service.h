@@ -22,12 +22,15 @@
     _Bool _invalidateCalled;
     _Bool _iTunesCloudCompleted;
     int _iTunesCloudCompleteToken;
+    double _iTunesCloudWaitSeconds;
     _Bool _mediaSystemReady;
+    double _mediaSystemWaitSeconds;
     unsigned long long _peerFeatureFlags;
     SFClient *_sfClient;
     SFService *_sfService;
     SFSession *_sfSession;
     SFSiriClient *_siriClient;
+    _Bool _siriDidDeviceSetup;
     SFSiriDeviceSetupGreetingDetails *_siriGreetingDetails;
     _Bool _siriHeardWhatCanYouDo;
     _Bool _wifiSetupEnabled;

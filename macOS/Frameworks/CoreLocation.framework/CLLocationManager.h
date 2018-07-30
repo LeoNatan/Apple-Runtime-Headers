@@ -65,6 +65,9 @@
 @property(nonatomic, getter=isDynamicAccuracyReductionEnabled) BOOL dynamicAccuracyReductionEnabled;
 @property(nonatomic, getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
 @property(nonatomic, getter=isPersistentMonitoringEnabled) BOOL persistentMonitoringEnabled;
+- (void)requestAlwaysAuthorization;
+- (void)requestWhenInUseAuthorizationWithPrompt;
+- (void)requestWhenInUseAuthorization;
 - (void)onClientEventVehicleHeading:(id)arg1;
 - (void)onClientEventVehicleSpeed:(id)arg1;
 - (void)onClientEventInterrupted:(id)arg1;
@@ -84,7 +87,6 @@
 - (void)onClientEventRegionState:(id)arg1;
 - (void)onClientEventRegion:(id)arg1;
 - (void)onClientEventError:(id)arg1;
-- (void)onClientEventHistoricLocation:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventLocationUnavailable:(id)arg1;
@@ -92,6 +94,7 @@
 - (void)onClientEventAuthStatus:(id)arg1;
 - (void)onClientEvent:(int)arg1 supportInfo:(id)arg2;
 - (void)onRangingRequestTimeout;
+- (void)onLocationRequestTimeout;
 - (id)technologiesInUse;
 - (id)appsUsingLocationWithDetails;
 - (id)appsUsingLocation;
@@ -126,9 +129,11 @@
 @property(readonly, nonatomic) BOOL headingAvailable;
 - (void)disallowDeferredLocationUpdates;
 - (void)allowDeferredLocationUpdatesUntilTraveled:(double)arg1 timeout:(double)arg2;
+- (void)requestLocation;
 - (void)stopUpdatingLocation;
 - (void)startUpdatingLocation;
 - (void)startUpdatingLocationWithPrompt;
+- (void)markAsHavingReceivedLocation;
 @property(nonatomic) long long activityType;
 @property(copy, nonatomic) NSString *purpose;
 @property(nonatomic) BOOL privateMode;

@@ -25,6 +25,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)contactWithIdentifier:(id)arg1 type:(unsigned int)arg2 displayName:(id)arg3 personId:(id)arg4 personIdType:(unsigned int)arg5;
++ (unsigned int)convertDisplayType:(int)arg1;
++ (unsigned int)convertHandleType:(int)arg1;
 + (id)predicateForContact:(id)arg1;
 + (id)predicateForContactWithPersonId:(id)arg1 personIdType:(unsigned int)arg2;
 + (id)predicateForContactWithDisplayName:(id)arg1;
@@ -62,6 +64,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2 customIdentifier:(id)arg3 displayName:(id)arg4 displayType:(unsigned int)arg5 personId:(id)arg6 personIdType:(unsigned int)arg7;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2 displayName:(id)arg3 personId:(id)arg4 personIdType:(unsigned int)arg5;
+- (id)initWithINPerson:(id)arg1;
 - (id)contactPropertyWithOptionalMechanismHint:(int *)arg1;
 - (id)contactPropertyWithMechanismHint:(int)arg1;
 - (id)contactProperty;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSHashTable, NSObject<OS_dispatch_queue>, NSObject<OS_nw_path_evaluator>, SiriCoreWiFiManagerClient;
+@class NSHashTable, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_nw_path_evaluator>, SiriCoreWiFiManagerClient;
 
 @interface SiriCoreNetworkManager : NSObject
 {
@@ -26,21 +26,24 @@
     _Bool _symptomsBasedHistoricalWiFiQualityIsGood;
     _Bool _lastFetchInProgress;
     double _lastSuccessfulSymptomsFetch;
+    NSNumber *_lastSignalStrength;
+    unsigned int _subscriptionCount;
 }
 
 + (void)releaseDormancySuspendAssertion:(void *)arg1;
 + (void)acquireDormancySuspendAssertion:(const void **)arg1;
 + (int)connectionTypeForInterface:(id)arg1;
 + (id)connectionTypeForInterfaceName:(id)arg1 isCellular:(_Bool)arg2;
-+ (void)getCarrierName:(id *)arg1 andSignalStrength:(id *)arg2;
++ (void)getCarrierName:(id *)arg1 signalStrength:(id *)arg2 subscriptionCount:(id *)arg3;
 + (int)connectionSubTypeForCellularInterface;
 + (void)_ifnameTypeForName:(char *)arg1 isWiFi:(_Bool *)arg2 isCellular:(_Bool *)arg3;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (_Bool)_getConnectionSuccessRate:(id)arg1 hasMetric:(_Bool *)arg2;
-- (void)disableWiFiTimeout;
-- (void)enableWiFiTimeout;
+- (void)acquireWiFiAssertion:(int)arg1;
+- (void)releaseWiFiAssertion;
 - (void)forceFastDormancy;
+- (void)getSignalStrength:(id *)arg1 subscriptionCount:(unsigned int *)arg2;
 - (int)_reportWiFiHistoricalQuality;
 - (int)_reportWiFiInstantQuality;
 - (int)_reportCellularHistoricalQuality;

@@ -7,44 +7,47 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBAddTasksIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTaskList, _INPBTemporalEventTrigger;
+@class NSArray, NSString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTaskList, _INPBTemporalEventTrigger;
 
-@interface _INPBAddTasksIntent : PBCodable <NSCopying>
+@interface _INPBAddTasksIntent : PBCodable <_INPBAddTasksIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBIntentMetadata *_intentMetadata;
     _INPBSpatialEventTrigger *_spatialEventTrigger;
     _INPBTaskList *_targetTaskList;
-    NSMutableArray *_taskTitles;
+    NSArray *_taskTitles;
     _INPBTemporalEventTrigger *_temporalEventTrigger;
 }
 
 + (Class)taskTitlesType;
-+ (id)options;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
-@property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
-@property(retain, nonatomic) NSMutableArray *taskTitles; // @synthesize taskTitles=_taskTitles;
+@property(copy, nonatomic) NSArray *taskTitles; // @synthesize taskTitles=_taskTitles;
 @property(retain, nonatomic) _INPBTaskList *targetTaskList; // @synthesize targetTaskList=_targetTaskList;
+@property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasTemporalEventTrigger;
-@property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
 - (id)taskTitlesAtIndex:(unsigned int)arg1;
-- (unsigned int)taskTitlesCount;
+@property(readonly, nonatomic) unsigned int taskTitlesCount;
 - (void)addTaskTitles:(id)arg1;
 - (void)clearTaskTitles;
 @property(readonly, nonatomic) _Bool hasTargetTaskList;
+@property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

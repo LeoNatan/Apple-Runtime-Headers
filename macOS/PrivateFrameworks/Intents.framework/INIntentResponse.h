@@ -8,20 +8,25 @@
 
 #import "INCacheableContainer.h"
 #import "INGenericIntentResponse.h"
+#import "INImageProxyInjecting.h"
 #import "INIntentResponseExport.h"
+#import "INIntentSlotComposing.h"
+#import "INRuntimeObject.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSDictionary, NSString, NSUserActivity, _INPBGenericIntentResponse, _INPBIntentResponse;
+@class INIntentResponseCodableCode, INIntentResponseDescription, NSDictionary, NSString, NSUserActivity, PBCodable, _INPBIntentResponse;
 
-@interface INIntentResponse : NSObject <INCacheableContainer, INIntentResponseExport, INGenericIntentResponse, NSCopying, NSSecureCoding>
+@interface INIntentResponse : NSObject <INImageProxyInjecting, INIntentSlotComposing, INCacheableContainer, INIntentResponseExport, INGenericIntentResponse, INRuntimeObject, NSCopying, NSSecureCoding>
 {
-    _INPBGenericIntentResponse *_responseMessagePBRepresentation;
-    NSUserActivity *_userActivity;
-    _INPBIntentResponse *_backingStore;
+    BOOL __userConfirmationRequired;
     long long _code;
+    _INPBIntentResponse *_backingStore;
+    PBCodable *_responseMessagePBRepresentation;
+    NSUserActivity *_userActivity;
 }
 
++ (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (long long)_intentHandlingStatusFromCode:(long long)arg1;
 + (BOOL)_appLaunchRequestedFromCode:(long long)arg1;
 + (int)_typeFromCode:(long long)arg1;
@@ -31,11 +36,16 @@
 + (int)_errorCodeFromCode:(long long)arg1;
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
-@property(readonly, nonatomic) long long code; // @synthesize code=_code;
-@property(readonly, copy, nonatomic) _INPBIntentResponse *backingStore; // @synthesize backingStore=_backingStore;
-@property(readonly, copy) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
+@property(readonly, nonatomic) BOOL _userConfirmationRequired; // @synthesize _userConfirmationRequired=__userConfirmationRequired;
+@property(copy) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 - (void).cxx_destruct;
-- (id)_responseMessagePBRepresentation;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (id)valueForProperty:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
+- (id)valueForKey:(id)arg1;
+- (id)_inCodable;
+@property(retain, nonatomic, setter=_setResponseMessagePBRepresentation:) PBCodable *_responseMessagePBRepresentation; // @synthesize _responseMessagePBRepresentation;
 @property(copy) NSDictionary *propertiesByName;
 - (id)initWithPropertiesByName:(id)arg1;
 - (id)protoData;
@@ -43,17 +53,41 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, setter=_setRequiresProtectedData:) BOOL _requiresProtectedData;
+@property(nonatomic, setter=_setRequiresAuthentication:) BOOL _requiresAuthentication;
+@property(readonly, nonatomic) long long _type;
+@property(readonly, nonatomic) NSString *_className;
 @property(readonly, nonatomic) BOOL _shouldForwardIntentToApp;
+@property(readonly, nonatomic) INIntentResponseDescription *_instanceDescription;
+@property(readonly, nonatomic) INIntentResponseCodableCode *_intentResponseCodableCode;
+@property(readonly, nonatomic) long long _intentResponseCode;
 - (long long)_intentHandlingStatus;
+@property(retain, nonatomic, setter=_setPayloadResponseTypeName:) NSString *_payloadResponseTypeName;
 - (void)_setPayloadResponseMessageData:(id)arg1;
 - (id)_payloadResponseMessageData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) BOOL shouldOpenContainingApplication;
+@property(nonatomic) long long code; // @synthesize code=_code;
+@property(readonly, copy, nonatomic) _INPBIntentResponse *backingStore; // @synthesize backingStore=_backingStore;
+- (long long)_code;
+- (void)_setCode:(long long)arg1;
+- (BOOL)_commonInit;
 - (id)initWithBackingStore:(id)arg1;
+- (id)_initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)init;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)localizeValueOfSlotDescription:(id)arg1 forLanguage:(id)arg2;
+- (id)intentSlotDescriptions;
+@property(readonly) long long _intents_toggleState;
+- (id)_renderedResponseForLanguage:(id)arg1 requiresSiriCompatibility:(BOOL)arg2;
+- (id)_propertiesByNameForLanguage:(id)arg1;
+- (id)_responseTemplateForLanguage:(id)arg1 requiresSiriCompatibility:(BOOL)arg2;
+- (id)_responseTemplateForLanguage:(id)arg1;
+@property(readonly, nonatomic, getter=_isSuccess) BOOL _success;
+- (id)_originatingBundleIdentifier;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
 

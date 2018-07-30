@@ -9,7 +9,7 @@
 #import "NMUMenuTableViewControllerDelegate.h"
 #import "NMUTopLevelCollectionDelegate.h"
 
-@class MPIdentifierSet, NMUMenuTableViewController, NSIndexPath, NSString;
+@class MPIdentifierSet, NMUMenuTableViewController, NMUTopLevelCollectionSyncInfoController, NSIndexPath, NSString;
 
 @interface NMUTopLevelCollectionViewController : NMUMPModelCollectionViewController <NMUMenuTableViewControllerDelegate, NMUTopLevelCollectionDelegate>
 {
@@ -17,16 +17,18 @@
     _Bool _hasScrolledToBottom;
     NSIndexPath *_lastNotifiedFirstVisibleItemIndexPath;
     MPIdentifierSet *_lastNotifiedFirstVisibleItemIdentifiers;
+    NMUTopLevelCollectionSyncInfoController *_syncInfoController;
 }
 
+@property(retain, nonatomic) NMUTopLevelCollectionSyncInfoController *syncInfoController; // @synthesize syncInfoController=_syncInfoController;
 - (void).cxx_destruct;
-- (void)topLevelCollectionViewController:(id)arg1 didLandOnItemAtIndexPath:(id)arg2;
 - (void)_notifyDidLandOnItemIfNeeded;
 - (void)_updateSpinnersForVisibleItemAtIndexPath:(id)arg1;
 - (void)_setMarqueeViewsPaused:(_Bool)arg1;
 - (void)_scrollToFirstVisibleItemIfNeeded;
 - (void)_updateBackViewRevealHeight;
 - (void)_updateMenuViewVisibility;
+- (void)topLevelCollectionViewController:(id)arg1 didLandOnItemAtIndexPath:(id)arg2;
 - (void)menuTableViewControllerDidUpdateVisibleItems:(id)arg1;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
@@ -37,6 +39,7 @@
 - (void)contentLoader:(id)arg1 didUpdateModelResponseWithChangeDetails:(id)arg2;
 - (void)contentLoaderDidFinishLoadingContent:(id)arg1;
 - (void)contentLoaderWillBeginLoadingContent:(id)arg1;
+- (void)configureCell:(id)arg1 withModelObject:(id)arg2 atIndexPath:(id)arg3;
 - (void)setNeedsContentLoaderUpdate;
 - (void)scrollToItemWithIdentifiers:(id)arg1;
 - (void)viewDidLayoutSubviews;

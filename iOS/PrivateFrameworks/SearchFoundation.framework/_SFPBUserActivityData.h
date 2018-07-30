@@ -33,7 +33,6 @@
 - (void)addUserInfo:(id)arg1;
 - (void)clearUserInfo;
 - (void)setUserInfo:(id)arg1;
-@property(readonly, nonatomic) _Bool hasActivityType;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

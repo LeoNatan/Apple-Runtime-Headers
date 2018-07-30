@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSString, NSURL;
+@class NSOrderedSet, NSString, NSURL;
 
 @interface CKContextResult : NSObject <NSSecureCoding, NSCopying>
 {
@@ -20,9 +20,11 @@
     NSString *_portraitId;
     NSString *_category;
     NSString *_debug;
+    NSOrderedSet *_relatedItems;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSOrderedSet *relatedItems; // @synthesize relatedItems=_relatedItems;
 @property(copy, nonatomic) NSString *debug; // @synthesize debug=_debug;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *portraitId; // @synthesize portraitId=_portraitId;

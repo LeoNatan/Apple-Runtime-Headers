@@ -41,8 +41,8 @@ struct FloatRect {
 
 struct FrameTimeNormalizer {
     CDUnknownFunctionPointerType *_field1;
-    vector_4f732a7b _field2;
-    vector_4f732a7b _field3;
+    vector_0821a7d5 _field2;
+    vector_0821a7d5 _field3;
     unsigned int _field4;
     CDStruct_1b6d18a9 _field5;
     CDStruct_1b6d18a9 _field6;
@@ -115,7 +115,7 @@ struct vector<CMTime, std::__1::allocator<CMTime>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<CMTime *, std::__1::allocator<CMTime>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -123,7 +123,7 @@ struct vector<FloatPoint, std::__1::allocator<FloatPoint>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<FloatPoint *, std::__1::allocator<FloatPoint>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -139,7 +139,7 @@ struct vector<SP_FrameInfo, std::__1::allocator<SP_FrameInfo>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<SP_FrameInfo *, std::__1::allocator<SP_FrameInfo>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -177,17 +177,17 @@ typedef struct vector<CMTime, std::__1::allocator<CMTime>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<CMTime *, std::__1::allocator<CMTime>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
-} vector_4f732a7b;
+} vector_0821a7d5;
 
 typedef struct vector<FloatPoint, std::__1::allocator<FloatPoint>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<FloatPoint *, std::__1::allocator<FloatPoint>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
-} vector_5dae144b;
+} vector_f72cac12;
 
 typedef struct vector<ImageFeaturePair, std::__1::allocator<ImageFeaturePair>> {
     struct ImageFeaturePair *_field1;

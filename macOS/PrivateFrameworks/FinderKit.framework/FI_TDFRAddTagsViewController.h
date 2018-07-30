@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface FI_TDFRAddTagsViewController : FI_TDFRScrollingStackViewController <TCoalescingNodeObserverProtocol>
 {
     function_92f9ed64 _buttonAction;
-    struct map<TString, TNSRef<FI_TDFRTagButton *, void>, std::__1::less<TString>, std::__1::allocator<std::__1::pair<const TString, TNSRef<FI_TDFRTagButton *, void>>>> _tagNameToButtonMap;
+    struct map<TString, TNSRef<FI_TDFRTagButton, void>, std::__1::less<TString>, std::__1::allocator<std::__1::pair<const TString, TNSRef<FI_TDFRTagButton, void>>>> _tagNameToButtonMap;
     struct TNSWeakPtr<NSObject<TDFRTagsViewTagProviding>, void> _tagProvider;
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _targetNodesObserver;
     struct TNotificationCenterObserver _tagRegistryObserver;
@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)setButtonAction:(const function_92f9ed64 *)arg1;
 - (function_92f9ed64)buttonAction;
 @property(nonatomic) __weak NSObject<TDFRTagsViewTagProviding> *tagProvider;
-- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesChanged:(const map_3ec01adc *)arg2;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesChanged:(const map_253f12d2 *)arg2;
 - (void)setTargetNodes:(const struct TFENodeVector *)arg1;
 
 // Remaining properties

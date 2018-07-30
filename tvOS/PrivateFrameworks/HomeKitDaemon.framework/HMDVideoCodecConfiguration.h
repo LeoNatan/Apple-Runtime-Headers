@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/HMDCameraTLVBase.h>
+#import <HomeKitDaemon/HMDTLVBase.h>
 
-#import "HMDCameraTLVCreateParse.h"
+#import "HMDTLVCreateParse.h"
 #import "NSSecureCoding.h"
 
 @class HMDVideoCodec, HMDVideoCodecParameters, NSArray;
 
-@interface HMDVideoCodecConfiguration : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding>
+@interface HMDVideoCodecConfiguration : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding>
 {
     HMDVideoCodec *_videoCodec;
     HMDVideoCodecParameters *_codecParameters;

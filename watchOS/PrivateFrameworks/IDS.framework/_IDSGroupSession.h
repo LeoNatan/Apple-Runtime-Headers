@@ -9,7 +9,7 @@
 #import "IDSBaseSocketPairConnectionDelegate.h"
 #import "IDSDaemonListenerProtocol.h"
 
-@class CUTWeakReference, IDSBaseSocketPairConnection, NSArray, NSData, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class CUTWeakReference, IDSBaseSocketPairConnection, NSArray, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface _IDSGroupSession : NSObject <IDSDaemonListenerProtocol, IDSBaseSocketPairConnectionDelegate>
 {
@@ -18,6 +18,7 @@
     NSString *_uniqueID;
     NSString *_accountID;
     NSSet *_destinations;
+    NSString *_fromID;
     IDSBaseSocketPairConnection *_unreliableSocketPairConnection;
     CUTWeakReference *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
@@ -30,16 +31,13 @@
     unsigned int _preferredAddressFamily;
     _Bool _preferCellularForCallSetup;
     NSString *_clientUUID;
-    _Bool _disableEncryption;
-    _Bool _enableSingleChannelDirectMode;
     _Bool _alwaysSkipSelf;
     unsigned int _sessionEndedReason;
     NSMutableDictionary *_preferences;
     NSMutableDictionary *_sessionConfig;
     _Bool _useConfServer;
+    NSString *_stableGroupID;
     NSString *_groupID;
-    NSString *_participantID;
-    NSData *_participantData;
     NSDictionary *_participantInfo;
     struct cfs_client_s *_cfs_client;
     int _cfs_requestID;
@@ -57,19 +55,25 @@
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
-- (void)session:(id)arg1 didGetGroupSessionParticipants:(id)arg2 requestID:(id)arg3 error:(id)arg4;
+- (void)session:(id)arg1 didReceiveActiveParticipants:(id)arg2 success:(_Bool)arg3;
 - (void)session:(id)arg1 participantDidLeaveGroupWithInfo:(id)arg2;
 - (void)session:(id)arg1 participantDidJoinGroupWithInfo:(id)arg2;
 - (void)sessionDidLeaveGroup:(id)arg1 error:(id)arg2;
+- (void)sessionDidJoinGroup:(id)arg1 participantUpdateDictionary:(id)arg2 error:(id)arg3;
+- (void)sessionDidJoinGroup:(id)arg1 participantInfo:(id)arg2 error:(id)arg3;
 - (void)sessionDidJoinGroup:(id)arg1 participantsInfo:(id)arg2 error:(id)arg3;
 - (void)groupSessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
+- (void)groupSessionDidTerminate:(id)arg1;
+- (void)session:(id)arg1 didReceiveReport:(id)arg2;
+- (void)requestActiveParticipants;
 @property(readonly, nonatomic) unsigned int sessionEndedReason;
 - (void)setPreferences:(id)arg1;
-- (void)groupSessionParticipantsWithRequestID:(id)arg1;
 - (void)leaveGroupSession;
+- (void)joinWithOptions:(id)arg1;
 - (void)joinGroupSession;
 - (void)setParticipantInfo:(id)arg1;
-- (void)updateMembers:(id)arg1 forGroupID:(id)arg2 isTriggeredLocally:(_Bool)arg3;
+- (void)updateParticipantData:(id)arg1 withContext:(id)arg2;
+- (void)updateMembers:(id)arg1 withContext:(id)arg2 triggeredLocally:(_Bool)arg3;
 - (void)_cleanupSocketPairConnections;
 @property(readonly, nonatomic) NSString *uniqueID;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
@@ -78,7 +82,6 @@
 - (void)daemonDisconnected;
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3 delegateContext:(id)arg4;
-- (id)_initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3 delegateContext:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -21,8 +21,8 @@
     NSTimer *_geocodeRequestDelayTimer;
 }
 
-+ (_Bool)acceptsComplicationFamily:(long long)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned long long)arg1;
++ (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 @property(nonatomic) _Bool isWaitingForGeocodeRequest; // @synthesize isWaitingForGeocodeRequest=_isWaitingForGeocodeRequest;
 @property(retain, nonatomic) NSTimer *geocodeRequestDelayTimer; // @synthesize geocodeRequestDelayTimer=_geocodeRequestDelayTimer;
 @property(retain, nonatomic) CLLocation *delayedLocation; // @synthesize delayedLocation=_delayedLocation;
@@ -56,7 +56,7 @@
 - (void)becomeInactive;
 - (void)becomeActive;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

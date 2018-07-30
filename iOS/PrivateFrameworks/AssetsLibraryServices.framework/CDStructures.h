@@ -36,3 +36,7 @@ typedef struct {
     unsigned char _field16;
 } CDStruct_bd2f613f;
 
+typedef struct {
+    unsigned int _field1[8];
+} CDStruct_6ad76789;
+

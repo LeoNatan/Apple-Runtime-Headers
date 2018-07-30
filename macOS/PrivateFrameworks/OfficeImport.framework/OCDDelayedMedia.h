@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OCDDelayedNode.h>
 
-__attribute__((visibility("hidden")))
 @interface OCDDelayedMedia : OCDDelayedNode
 {
 }

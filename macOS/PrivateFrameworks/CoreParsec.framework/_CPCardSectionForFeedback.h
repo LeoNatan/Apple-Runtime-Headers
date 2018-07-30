@@ -32,10 +32,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasResultId;
-@property(readonly, nonatomic) BOOL hasActionDestination;
-@property(readonly, nonatomic) BOOL hasActionTarget;
-@property(readonly, nonatomic) BOOL hasCardSectionId;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

@@ -61,7 +61,7 @@
 - (void)_setReuseIdentifier:(id)arg1;
 - (id)reuseIdentifier;
 - (void)prepareForReuse;
-- (BOOL)_isTiltedInCollapsedSectionEndZone;
+- (BOOL)_isInCollapsedSectionEndZone;
 - (BOOL)_isHiddenForReuse;
 - (void)_setHiddenForReuse:(BOOL)arg1;
 - (void)_markAsDequeued;

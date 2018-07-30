@@ -55,6 +55,7 @@
 - (void)showMoreInfo:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (BOOL)canEnable:(id *)arg1;
+- (BOOL)hasDataToMerge;
 - (id)icon;
 - (id)_iconForError:(id)arg1;
 - (id)_fmmWarningIcon;

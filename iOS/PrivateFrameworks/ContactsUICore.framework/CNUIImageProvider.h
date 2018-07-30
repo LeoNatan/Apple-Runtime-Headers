@@ -13,6 +13,7 @@
 + (id)cacheKeyForImageResourceName:(id)arg1 template:(_Bool)arg2;
 + (id)uncachedImageForResource:(id)arg1 template:(_Bool)arg2;
 + (id)imageForResource:(id)arg1 template:(_Bool)arg2;
++ (id)imageForResource:(id)arg1 template:(_Bool)arg2 onCacheMiss:(CDUnknownBlockType)arg3;
 + (id)imageForResource:(id)arg1;
 
 @end

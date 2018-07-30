@@ -4,18 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <IMCore/IMCloudKitEventNotificationTest.h>
+#import <IMCore/IMCloudKitSyncProgressRuntimeTest.h>
 
 @class NSError;
 
-@interface IMCloudKitErrorProgressTest : IMCloudKitEventNotificationTest
+@interface IMCloudKitErrorProgressTest : IMCloudKitSyncProgressRuntimeTest
 {
     NSError *_error;
 }
 
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
-- (void)startTest;
+- (void)willUpdateSyncState:(id)arg1;
 - (id)initWithErrorCode:(int)arg1;
 
 @end

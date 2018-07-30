@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface __NSBlockVariable : NSObject
 {
     struct Block_byref *forwarding;

@@ -17,7 +17,6 @@
     NSString *_applicationName;
 }
 
-+ (void)initialize;
 - (void).cxx_destruct;
 - (id)_nowPlayingProviderForFamily:(int)arg1;
 - (id)_italicTextProviderForText:(id)arg1;

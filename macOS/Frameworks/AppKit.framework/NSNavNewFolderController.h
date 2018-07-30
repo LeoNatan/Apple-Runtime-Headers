@@ -8,6 +8,7 @@
 
 @class NSButton, NSSavePanel, NSTextField;
 
+__attribute__((visibility("hidden")))
 @interface NSNavNewFolderController : NSWindowController
 {
     NSSavePanel *_savePanel;

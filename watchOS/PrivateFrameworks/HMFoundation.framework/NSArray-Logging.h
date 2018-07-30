@@ -8,7 +8,6 @@
 
 @interface NSArray (Logging)
 - (id)describeElements:(CDUnknownBlockType)arg1;
-- (id)shortDescription;
 - (id)secureDescriptionWithBlacklistKeys:(id)arg1;
 - (id)secureDescriptionWithIndent:(id)arg1 newLine:(_Bool)arg2 blacklistedKeys:(id)arg3;
 @end

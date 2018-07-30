@@ -7,6 +7,7 @@
 @class GEOURLWithHeaders, NSData, NSObject<OS_xpc_object>, NSString;
 
 @protocol GEOSimpleTileRequesterSubclass
+- (BOOL)useProxyAuthForTileKey:(const struct _GEOTileKey *)arg1;
 - (GEOURLWithHeaders *)urlForTileKey:(const struct _GEOTileKey *)arg1;
 
 @optional
@@ -17,6 +18,7 @@
 - (NSString *)editionHeader;
 - (NSObject<OS_xpc_object> *)newXPCDataRequestForTileKey:(const struct _GEOTileKey *)arg1;
 - (int)checksumMethodForIncomingTileDataWithKey:(const struct _GEOTileKey *)arg1;
+- (BOOL)needsLocalizationForKey:(const struct _GEOTileKey *)arg1;
 - (GEOURLWithHeaders *)localizationURLForTileKey:(const struct _GEOTileKey *)arg1;
 @end
 

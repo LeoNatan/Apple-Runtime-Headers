@@ -9,7 +9,7 @@
 @class NSString;
 
 @protocol BLTLightsAndSirensSystemStateProvider <NSObject>
-- (_Bool)isAlertableBulletinInNonCriticalSection:(NSString *)arg1 ignoresQuietMode:(_Bool)arg2;
+- (_Bool)isAlertableBulletinInNonCriticalSection:(NSString *)arg1 overridesDND:(_Bool)arg2 contactIdentifier:(NSString *)arg3;
 - (_Bool)isWristDetectDisabled;
 - (_Bool)isDeviceConnected;
 @end

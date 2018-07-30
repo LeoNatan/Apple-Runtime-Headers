@@ -17,9 +17,11 @@
     NSMapTable *_optimisticScales;
     int _inFlightDisableOptimisticStateRequests;
     _Bool _shouldOverrideTracking;
+    _Bool _synced;
     MPVolumeSlider *_masterVolumeSlider;
 }
 
+@property(readonly, nonatomic) _Bool synced; // @synthesize synced=_synced;
 @property(readonly, nonatomic) MPVolumeSlider *masterVolumeSlider; // @synthesize masterVolumeSlider=_masterVolumeSlider;
 - (void).cxx_destruct;
 - (void)_setControlEventsForVolumeSlider:(id)arg1 add:(_Bool)arg2;
@@ -27,6 +29,8 @@
 - (void)_removeControlEventsForVolumeSlider:(id)arg1;
 - (void)_addControlEventsForVolumeSliders:(id)arg1;
 - (void)_addControlEventsForVolumeSlider:(id)arg1;
+- (void)syncSliders:(_Bool)arg1;
+- (void)_resetMasterVolumeSlider;
 - (void)_updateOptimisticValueCache;
 - (void)_resetOptimisticScales;
 - (float)_maxOptimisticValue;

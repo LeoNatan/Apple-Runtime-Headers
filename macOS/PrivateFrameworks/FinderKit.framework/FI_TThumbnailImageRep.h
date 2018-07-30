@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface FI_TThumbnailImageRep : NSBitmapImageRep
 {
     double _scaleFactor;
-    struct TNSRef<FI_TInlinePreviewData *, void> _inlinePreviewData;
+    struct TNSRef<FI_TInlinePreviewData, void> _inlinePreviewData;
 }
 
 @property(readonly) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;

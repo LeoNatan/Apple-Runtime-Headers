@@ -32,9 +32,9 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)_stop;
 - (void)_start;
-- (void)restartLocationUpdatesForDelegate:(id)arg1;
+- (id)restartLocationUpdatesForDelegate:(id)arg1;
 - (void)stopLocationUpdatesForDelegate:(id)arg1;
-- (void)startLocationUpdatesForDelegate:(id)arg1;
+- (id)startLocationUpdatesForDelegate:(id)arg1;
 - (void)dealloc;
 - (void)_initLocationManagers;
 - (id)init;

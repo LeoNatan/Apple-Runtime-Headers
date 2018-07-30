@@ -13,5 +13,6 @@
 
 @optional
 @property(readonly, nonatomic) _Bool shouldBindRowsTogether;
+- (NSArray *)showcaseRowMetricsForExpectedWidth:(double)arg1;
 @end
 

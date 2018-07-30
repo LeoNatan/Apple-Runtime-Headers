@@ -46,9 +46,9 @@
 - (void)updateClientSettingsWithTransitionBlock:(CDUnknownBlockType)arg1;
 - (void)updateClientSettingsWithBlock:(CDUnknownBlockType)arg1;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
-@property(readonly, retain, nonatomic) NSArray *layers;
-@property(readonly, retain, nonatomic) FBSSceneClientSettings *clientSettings;
-@property(readonly, retain, nonatomic) FBSSceneSettings *settings;
+@property(readonly, nonatomic) NSArray *layers;
+@property(readonly, nonatomic) FBSSceneClientSettings *clientSettings;
+@property(readonly, nonatomic) FBSSceneSettings *settings;
 @property(nonatomic) __weak id <FBSSceneDelegate> delegate;
 @property(readonly, copy, nonatomic) NSString *identifier;
 - (id)_init;

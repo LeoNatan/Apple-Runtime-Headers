@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSDictionary, NSString, NSUUID;
+@class NSArray, NSDictionary, NSString, NSUUID;
 
 @protocol SPGizmoAppServerProtocol <NSObject>
 - (void)extensionDelegate:(NSString *)arg1 handlesBGTasksDidChange:(_Bool)arg2;
@@ -15,29 +15,17 @@
 - (void)addPassesData:(NSArray *)arg1 serverIdentifier:(NSString *)arg2 clientIdentifier:(NSString *)arg3;
 - (void)retreiveTimingInfo:(int)arg1;
 - (void)resetTimingInfo;
-- (void)releaseBacklightAssertion:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)renewBacklightAssertion:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)startBacklightAssertion:(NSString *)arg1 clientIdentifier:(NSString *)arg2 reason:(int)arg3;
-- (void)processCacheDictionary:(NSDictionary *)arg1 serverIdentifier:(NSString *)arg2;
-- (void)processCacheDictionary:(NSDictionary *)arg1 serverIdentifier:(NSString *)arg2 completion:(void (^)(NSDictionary *))arg3;
 - (void)willDeactivateDataConnection:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)didActivateDataConnection:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)notificationUIWillResignActive:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)notificationUIDidBecomeActive:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)app:(NSString *)arg1 handleWatchTaskKeys:(NSDictionary *)arg2 reasonForSnapshot:(unsigned int)arg3 visibleVCID:(NSString *)arg4 barTaskUUID:(NSUUID *)arg5 clientIdentifier:(NSString *)arg6;
 - (void)appDidEndBackgroundBARTask:(NSString *)arg1 barTaskUUID:(NSUUID *)arg2 clientIdentifier:(NSString *)arg3;
 - (void)appDidBeginBackgroundBARTask:(NSString *)arg1 barTaskUUID:(NSUUID *)arg2 clientIdentifier:(NSString *)arg3;
 - (void)appDidEnterBackground:(NSString *)arg1;
 - (void)appWillEnterForeground:(NSString *)arg1;
-- (void)appWillResignActive:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)appDidBecomeActive:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)appDidResetContents:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)appDidFinishLaunching:(NSString *)arg1 clientIdentifier:(NSString *)arg2 didLaunchSuspended:(_Bool)arg3;
-- (void)sendDataToCompanion:(NSData *)arg1 serverIdentifier:(NSString *)arg2 clientIdentifier:(NSString *)arg3;
 
 @optional
-- (void)duetAppWillResignActive:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)duetAppDidBecomeActive:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)receiveServerIdentifier:(NSString *)arg1 clientIdentifier:(NSString *)arg2 extensionDidBeginUsingResults:(NSDictionary *)arg3;
 @end
 

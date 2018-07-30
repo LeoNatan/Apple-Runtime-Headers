@@ -6,17 +6,16 @@
 
 #import <OfficeImport/TSUUUIDSet.h>
 
-__attribute__((visibility("hidden")))
 @interface TSUMutableUUIDSet : TSUUUIDSet
 {
 }
 
-- (void)removeUuidsFromVector:(const vector_dadc1b26 *)arg1;
+- (void)removeUuidsFromVector:(const vector_4dc5f307 *)arg1;
 - (void)removeUuidsFromSet:(id)arg1;
-- (void)addUuidsFromVector:(const vector_dadc1b26 *)arg1;
+- (void)addUuidsFromVector:(const vector_4dc5f307 *)arg1;
 - (void)addUuidsFromSet:(id)arg1;
-- (void)removeUUIDs:(const unordered_set_3f00ed57 *)arg1;
-- (void)addUUIDs:(const unordered_set_3f00ed57 *)arg1;
+- (void)removeUUIDs:(const unordered_set_c6a929bd *)arg1;
+- (void)addUUIDs:(const unordered_set_c6a929bd *)arg1;
 - (BOOL)removeUUID:(const UUIDData_60906e89 *)arg1;
 - (BOOL)addUUID:(const UUIDData_60906e89 *)arg1;
 - (void)removeAllUuids;

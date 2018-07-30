@@ -23,6 +23,7 @@
     SKUIRedeemConfiguration *_redeemConfiguration;
     SKUIRedeemStepViewController *_inputViewController;
     long long _initialBarStyle;
+    _Bool _cameraRedeemVisible;
     _Bool _shouldPerformInitialOperationOnAppear;
     id <SKUIRedeemViewCameraOverrideDelegate> _cameraDelegate;
     UIBarButtonItem *_cancelButtonItem;
@@ -33,9 +34,11 @@
 @property(retain, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) __weak id <SKUIRedeemViewCameraOverrideDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
+@property(retain, nonatomic) SKUIRedeemConfiguration *redeemConfiguration; // @synthesize redeemConfiguration=_redeemConfiguration;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(copy, nonatomic) NSString *initialCode; // @synthesize initialCode=_initialCode;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
+@property(nonatomic) _Bool cameraRedeemVisible; // @synthesize cameraRedeemVisible=_cameraRedeemVisible;
 @property(nonatomic) _Bool attempsAutomaticRedeem; // @synthesize attempsAutomaticRedeem=_attempsAutomaticRedeem;
 - (void).cxx_destruct;
 - (void)_showNationalIdLoadingPage;

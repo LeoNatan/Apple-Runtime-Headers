@@ -9,6 +9,7 @@
 @interface UIColor (ArouetAdditions)
 + (id)arouetCandidateIndicatorColor;
 + (id)arouetSelectionOutlineColor;
++ (id)arouetPlaceholderTextColor;
 + (id)arouetCandidateListBackgroundColor;
 + (id)arouetCandidateFontColor;
 + (id)arouetCandidatesIndicatorBackgroundColor;

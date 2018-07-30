@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TICloudBadgeTextAttachmentCell : NSTextAttachmentCell
 {
-    struct TNSRef<NSFont *, void> _attachmentFont;
+    struct TNSRef<NSFont, void> _attachmentFont;
 }
 
 - (id).cxx_construct;

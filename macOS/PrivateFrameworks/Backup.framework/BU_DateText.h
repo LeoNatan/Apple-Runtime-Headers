@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (void)setDate:(struct TDate)arg1;
 - (struct CGSize)stringSize:(struct TString)arg1;
-- (BOOL)_needsVibrancy;
 
 @end
 

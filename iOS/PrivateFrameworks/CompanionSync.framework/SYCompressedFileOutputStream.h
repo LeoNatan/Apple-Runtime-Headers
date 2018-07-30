@@ -23,6 +23,7 @@
     int _class;
     struct gzFile_s *_file;
     long long _level;
+    struct os_unfair_lock_s _internalLock;
     _SYStreamGuts *_internal;
     CDUnknownBlockType _onOpenComplete;
     CDUnknownBlockType _onBytesAvailable;

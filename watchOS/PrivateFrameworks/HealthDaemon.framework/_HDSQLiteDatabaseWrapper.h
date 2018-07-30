@@ -6,22 +6,22 @@
 
 #import "NSObject.h"
 
-@class HDSQLiteDatabase;
+@class HDSQLiteDatabase, NSString;
 
 @interface _HDSQLiteDatabaseWrapper : NSObject
 {
     HDSQLiteDatabase *_database;
     unsigned int _generation;
-    int _type;
+    unsigned int _options;
     unsigned long long _threadID;
 }
 
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) unsigned long long threadID; // @synthesize threadID=_threadID;
 @property(readonly, nonatomic) unsigned int generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
-- (id)typeString;
+@property(readonly, copy, nonatomic) NSString *typeString;
 - (void)captureThreadInfo;
 - (id)initWithDatabase:(id)arg1 generation:(unsigned int)arg2;
 

@@ -36,8 +36,6 @@
 - (void)deleteCloudRecord:(id)arg1;
 - (void)updateCloudRecord:(id)arg1;
 - (void)addCloudRecord:(id)arg1;
-- (id)childCloudRecordsWithParentID:(id)arg1;
-- (void)_appendToChildren:(id)arg1 forParentIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)cloudRecordWithObjectID:(id)arg1;
 - (id)cloudRecordWithName:(id)arg1;
 - (_Bool)isRootRecord:(id)arg1;
@@ -46,6 +44,7 @@
 - (void)cloudRecordWithObjectIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cloudRecordWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cloudRecordWithNames:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchCloudRecordMap:(CDUnknownBlockType)arg1;
 - (_Bool)isRootRecordName:(id)arg1;
 @property(readonly, nonatomic) HMDCloudRecord *rootRecord;
 - (id)rootRecordModelObject;

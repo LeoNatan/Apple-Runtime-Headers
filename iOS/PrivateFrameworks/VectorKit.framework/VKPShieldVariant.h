@@ -129,8 +129,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasQuadIndex;
 @property(nonatomic) _Bool hasAtlasIndex;
 - (void)dealloc;
-- (struct CGImage *)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 atlasToImageCacheLock:(id)arg3 contentScale:(double)arg4 colors:(CDStruct_87ab733e *)arg5;
-- (Matrix_5173352a)_colorForMaskColor:(int)arg1 colors:(CDStruct_87ab733e *)arg2;
+- (struct CGImage *)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 atlasToImageCacheLock:(id)arg3 contentScale:(double)arg4 colors:(CDStruct_b3fd5d76 *)arg5;
+- (Matrix_5173352a)_colorForMaskColor:(int)arg1 colors:(CDStruct_b3fd5d76 *)arg2;
 
 @end
 

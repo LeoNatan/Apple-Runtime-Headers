@@ -10,13 +10,13 @@
 {
 }
 
-+ (id)_orderedValuesRestrictedByCurrentDeviceCollection;
-+ (id)_orderedValues;
-+ (_Bool)_valueIsValid:(unsigned long long)arg1;
-+ (id)optionsRestrictedByCurrentDeviceCollection;
-+ (unsigned long long)indexOfOption:(id)arg1;
-+ (id)optionAtIndex:(unsigned long long)arg1;
-+ (unsigned long long)numberOfOptions;
++ (id)_orderedValuesRestrictedByDevice:(id)arg1;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (_Bool)_valueIsValid:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)optionsRestrictedByDevice:(id)arg1;
++ (unsigned long long)indexOfOption:(id)arg1 forDevice:(id)arg2;
++ (id)optionAtIndex:(unsigned long long)arg1 forDevice:(id)arg2;
++ (unsigned long long)numberOfOptionsForDevice:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) unsigned long long _value; // @dynamic _value;

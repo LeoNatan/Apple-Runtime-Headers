@@ -19,7 +19,10 @@
 @property(copy, nonatomic) NSArray *records; // @synthesize records=_records;
 - (id)description;
 - (void)dealloc;
+- (id)initWithEmptyNdefMessage;
+- (id)initWithNFNdefMessage:(id)arg1;
 - (id)initWithNDEFRecords:(id)arg1;
+- (id)initWithNDEFPayloads:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

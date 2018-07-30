@@ -14,7 +14,6 @@
 {
     NSMutableDictionary *_iconViewMap;
     NSMutableArray *_reusableIconViews;
-    NSArray *_tableDataCopy;
     NSArray *_results;
     id <PSSpotlightSearchResultsControllerDelegate> _delegate;
     NSMutableArray *_tableData;
@@ -35,6 +34,8 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_updateIconViews:(_Bool)arg1;
 - (void)_removeIconViewForSection:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (double)iconWidth;
 - (id)_itemForIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;

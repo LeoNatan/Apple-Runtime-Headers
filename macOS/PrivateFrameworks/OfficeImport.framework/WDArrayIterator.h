@@ -8,13 +8,13 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface WDArrayIterator : WDIterator
 {
     NSArray *mArray;
     unsigned int mNextIndex;
 }
 
+- (void).cxx_destruct;
 - (id)next;
 - (BOOL)hasNext;
 - (id)initWithArray:(id)arg1;

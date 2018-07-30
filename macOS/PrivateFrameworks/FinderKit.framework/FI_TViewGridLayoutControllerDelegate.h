@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface FI_TViewGridLayoutControllerDelegate : NSObject <TGridLayoutControllerDelegate>
 {
     struct TSpinLock _lock;
-    struct TNSRef<FI_TDesktopGridLayout *, void> _gridLayout;
+    struct TNSRef<FI_TDesktopGridLayout, void> _gridLayout;
 }
 
 - (id).cxx_construct;

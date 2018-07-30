@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSMutableArray, PKPhysicsWorld;
 
-@interface PKPhysicsBody : NSObject <NSCopying, NSCoding>
+@interface PKPhysicsBody : NSObject <NSCopying, NSSecureCoding>
 {
     id <NSObject> _representedObject;
     struct b2BodyDef _bodyDef;
@@ -51,6 +51,7 @@
 + (id)initWithMarchingCubes:(struct PKCGrid *)arg1 pixelFrame:(struct CGRect)arg2;
 + (id)initWithQuadTree:(id)arg1;
 + (id)bodyWithOutline:(shared_ptr_2aaf3a07)arg1 offset:(struct CGPoint)arg2;
++ (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) CDUnknownBlockType postStepBlock; // @synthesize postStepBlock=_postStepBlock;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -59,6 +60,7 @@
 - (id)_descriptionFormat;
 - (id)_descriptionClassName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 @property(nonatomic, getter=isDynamic) _Bool dynamic;
 @property(nonatomic) double charge;
 @property(nonatomic) double friction;
@@ -109,6 +111,7 @@
 - (id)initWithBodies:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (_Bool)isEqualToBody:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)clearBox2DData;

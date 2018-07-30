@@ -10,14 +10,15 @@
 
 @class ABFaceTimeCommunicationsBridge, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCollectionItemMessagingAvailabilityHelper : NSObject <ABFaceTimeCommunicationsBridgeDelegate>
 {
     BOOL _availableForMessaging;
     ABFaceTimeCommunicationsBridge *_bridge;
     NSString *_endpoint;
+    id <ABCollectionItemMessagingAvailabilityHelperDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <ABCollectionItemMessagingAvailabilityHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic, getter=isAvailableForMessaging) BOOL availableForMessaging; // @synthesize availableForMessaging=_availableForMessaging;
 @property(retain, nonatomic) ABFaceTimeCommunicationsBridge *bridge; // @synthesize bridge=_bridge;

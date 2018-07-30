@@ -27,13 +27,15 @@
 @property(nonatomic) double minRecognitionDuration; // @synthesize minRecognitionDuration=_minRecognitionDuration;
 @property(readonly) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
 - (void).cxx_destruct;
-- (void)_loadRecognizerIfNeeded;
+- (int)_recognizerContentTypeForUITextContentType:(id)arg1;
+- (void)_updateRecognizer;
+- (_Bool)canUsePrewarmedRecognizerForLanguageSpec:(id)arg1;
 - (id)transliterationVariantsForString:(id)arg1;
 - (_Bool)isOVSString:(id)arg1;
 - (void)performOperationAfterCurentRecognitionRequest:(CDUnknownBlockType)arg1;
 - (void)cancelLastRecognitionRequest;
 - (void)prewarmRecognizer;
-- (void)requestRecognitionForDrawing:(id)arg1 prefixPromise:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestRecognitionForDrawing:(id)arg1 prefixPromise:(CDUnknownBlockType)arg2 recentDeletionsPromise:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)description;
 - (id)initWithLanguageSpec:(id)arg1;
 - (id)init;

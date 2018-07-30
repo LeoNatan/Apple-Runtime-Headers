@@ -8,6 +8,7 @@
 
 @class AVMediaDataRequester, AVScheduledAudioParameters, AVWeakReference, NSError, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVSampleBufferAudioRendererInternal : NSObject
 {
     NSString *audioOutputDeviceUniqueID;

@@ -21,6 +21,8 @@
 - (void)clearStoredLoginContext;
 - (id)storedLoginContext;
 - (void)performSilentICDPUpgrade;
+- (void)attemptPostRestoreRenewForAccount:(id)arg1 loginContext:(id)arg2 allowFollowUp:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)repeatedlyAttemptPostRestoreRenewForAccount:(id)arg1 loginContext:(id)arg2 numberOfAttemptsAllowed:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)runPostRestoreRenewCredentialsIfNeeded;
 - (void)enableDataClassesForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loginDelegateAccountsWithUsername:(id)arg1 password:(id)arg2 rawPassword:(id)arg3 skipiTunes:(_Bool)arg4 onlyAppleIDPlugin:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;

@@ -21,6 +21,7 @@
 @property(copy, setter=setCNRootFolderID:) NSString *cnRootFolderID;
 @property(copy, setter=setCNIdentityEmailAddress:) NSString *cnIdentityEmailAddress;
 @property(copy, setter=setCNExternalURL:) NSURL *cnExternalURL;
+@property(setter=setCNPeriodicRefreshInterval:) double cnPeriodicRefreshInterval;
 @property(setter=setCNServerSyncHasTakenPlace:) BOOL cnServerSyncHasTakenPlace;
 @property(setter=setCNLocalDataMigrationHasTakenPlace:) BOOL cnLocalDataMigrationHasTakenPlace;
 @property(setter=setCNUseSSL:) BOOL cnUseSSL;

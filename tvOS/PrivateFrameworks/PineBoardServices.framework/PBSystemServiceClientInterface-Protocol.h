@@ -9,7 +9,6 @@
 @class BKSAnimationFenceHandle, NSArray;
 
 @protocol PBSystemServiceClientInterface <NSObject>
-- (void)appTransitionDidFail;
 - (void)prepareForDefaultKioskAppTransitionWithCompletion:(void (^)(void))arg1;
 - (void)startDefaultKioskAppTransitionForType:(long long)arg1 animationDuration:(double)arg2 animationFence:(BKSAnimationFenceHandle *)arg3 delay:(double)arg4;
 - (void)startDefaultKioskAppTransitionWithAnimationFence:(BKSAnimationFenceHandle *)arg1 completion:(void (^)(void))arg2;

@@ -7,6 +7,7 @@
 @class NSDictionary, NSString;
 
 @protocol PKCorePlugInProtocol
+@property(copy) NSDictionary *_userInfo;
 - (void)prefsSetObject:(id)arg1 forKey:(NSString *)arg2 inPlugIn:(NSString *)arg3 result:(void (^)(void))arg4;
 - (void)prefsObjectForKey:(NSString *)arg1 inPlugIn:(NSString *)arg2 result:(void (^)(id))arg3;
 - (void)shutdownPlugIn;

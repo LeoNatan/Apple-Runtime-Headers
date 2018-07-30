@@ -6,6 +6,7 @@
 
 #import "NSView.h"
 
+__attribute__((visibility("hidden")))
 @interface _NCCardViewControllerContentView : NSView
 {
 }

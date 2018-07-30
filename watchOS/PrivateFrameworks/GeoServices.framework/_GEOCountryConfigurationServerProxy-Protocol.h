@@ -6,8 +6,10 @@
 
 #import "NSObject.h"
 
+@class NSObject<OS_dispatch_queue>;
+
 @protocol _GEOCountryConfigurationServerProxy <NSObject>
-@property(nonatomic) __weak id <_GEOCountryConfigurationServerProxyDelegate> delegate;
-- (void)updateCountryCode:(void (^)(NSError *))arg1;
+- (void)updateCountryCodeWithCallbackQueue:(NSObject<OS_dispatch_queue> *)arg1 callback:(void (^)(NSError *))arg2;
+- (id)initWithDelegate:(id <_GEOCountryConfigurationServerProxyDelegate>)arg1 delegateQueue:(NSObject<OS_dispatch_queue> *)arg2;
 @end
 

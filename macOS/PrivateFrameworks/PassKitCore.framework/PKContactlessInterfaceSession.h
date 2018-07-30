@@ -20,7 +20,7 @@
     PKFieldProperties *_fieldProperties;
     PKFieldProperties *_fieldPropertiesToLookup;
     unsigned long long _transactionStartTime;
-    BOOL _fieldPresent;
+    // Error parsing type: AB, name: _fieldPresent
     BOOL _handlingExpress;
     unsigned long long _expressActivity;
     BOOL _felicaStateChanged;
@@ -28,7 +28,7 @@
     id <PKContactlessInterfaceSessionDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _prioritySessionExists;
-    BOOL _persistentCardEmulation;
+    // Error parsing type: AB, name: _persistentCardEmulation
     unsigned char _cardEmulationMode;
 }
 
@@ -44,8 +44,8 @@
 - (void)loyaltyAndPaymentSession:(id)arg1 didFailDeferredAuthorization:(BOOL)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didSelectValueAddedService:(BOOL)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didSelectApplet:(id)arg2;
-- (void)loyaltyAndPaymentSession:(id)arg1 didDetectTechnology:(id)arg2;
-- (void)loyaltyAndPaymentSession:(id)arg1 didDetectField:(BOOL)arg2;
+- (void)loyaltyAndPaymentSessionDidExitField:(id)arg1;
+- (void)loyaltyAndPaymentSession:(id)arg1 didEnterFieldWithNotification:(id)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didPerformValueAddedServiceTransactions:(id)arg2;
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(id)arg1;
 - (void)loyaltyAndPaymentSession:(id)arg1 didExpireTransactionForApplet:(id)arg2;

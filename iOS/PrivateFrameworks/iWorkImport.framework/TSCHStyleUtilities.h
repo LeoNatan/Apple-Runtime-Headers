@@ -38,11 +38,14 @@ __attribute__((visibility("hidden")))
 + (double)bendedCalloutLineLabelExplosionValueFromPre2_4ExplosionValue:(double)arg1 chartModel:(id)arg2 bodySize:(struct CGSize)arg3;
 + (double)pieFamilyLabelExplosionMaximumPercentage;
 + (double)pieFamilyLabelExplosionMinimumPercentage;
++ (float)defaultCalloutLineThickness;
 + (double)p_pre2_4BendedCalloutLineLabelExplosionValueFromExplosionValue:(double)arg1 chartRadius:(double)arg2;
 + (double)p_bendedCalloutLineLabelExplosionValueFromPre2_4ExplosionValue:(double)arg1 chartRadius:(double)arg2;
 + (struct CGSize)bodySizeWithMinimumWedgeExplosionWithChartModel:(id)arg1 bodySize:(struct CGSize)arg2;
 + (float)defaultPieLabelExplosionPercentage;
 + (float)pre2_4DefaultPieLabelExplosionPercentageForCalloutLineCalculation;
++ (_Bool)shouldAnchorLabelsForSeries:(id)arg1 innerRadius:(double)arg2 calloutLineType:(int)arg3 defaultLabelExplosion:(double)arg4;
++ (_Bool)labelExplosionIsCenteredInWedgeWithInnerRadius:(double)arg1 labelExplosion:(double)arg2;
 + (float)defaultDonutLabelExplosionPercentage;
 + (float)centeredDonutLabelExplosionPercentageWithInnerRadius:(double)arg1;
 + (float)defaultInnerRadiusPercentageForIconRendering;

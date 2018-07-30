@@ -43,7 +43,7 @@
 - (_Bool)_setupContentViewForMode:(int)arg1;
 - (void)_resetPrewiredAVPlayer;
 - (void)_setPlayerGestureRecognizer:(id)arg1;
-- (void)_setupContentView;
+- (void)_setupContentViewWithOptions:(unsigned int)arg1;
 - (void)_setImage:(id)arg1;
 - (id)irisGestureRecognizer;
 @property(readonly, nonatomic) _Bool isIrisInteracting;

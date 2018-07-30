@@ -10,13 +10,14 @@
 {
 }
 
-+ (unsigned long long)highThresholdDataSizeLimit;
-+ (unsigned long long)lowThresholdDataSizeLimit;
-+ (unsigned long long)storeVersion;
-+ (id)storeFilename;
-+ (id)recordType;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
-- (id)desiredKeys;
+- (unsigned long long)highThresholdDataSizeLimit;
+- (unsigned long long)lowThresholdDataSizeLimit;
+- (unsigned long long)storeVersion;
+- (id)storeFilename;
+- (id)nonLocalizableKeys;
+- (int)pbRecordType;
+- (id)recordType;
 
 @end
 

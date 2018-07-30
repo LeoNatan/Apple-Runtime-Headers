@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSObject<OS_dispatch_source>;
+@class NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface _HKExpiringCompletionTimer : NSObject
 {
@@ -17,8 +17,10 @@
     _Bool _invalidated;
     CDUnknownBlockType _completion;
     NSDate *_startDate;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
 - (void)_invalidateAndInvokeCompletion:(_Bool)arg1 error:(id)arg2;
@@ -30,6 +32,7 @@
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (void)_cancelTimer;
 - (void)dealloc;
+- (id)initWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 
 @end

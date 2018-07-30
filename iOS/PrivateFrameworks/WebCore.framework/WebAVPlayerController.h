@@ -71,7 +71,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSString *externalPlaybackAirPlayDeviceLocalizedName; // @synthesize externalPlaybackAirPlayDeviceLocalizedName=_externalPlaybackAirPlayDeviceLocalizedName;
 @property long long externalPlaybackType; // @synthesize externalPlaybackType=_externalPlaybackType;
 @property(getter=isExternalPlaybackActive) _Bool externalPlaybackActive; // @synthesize externalPlaybackActive=_externalPlaybackActive;
-@property(readonly, getter=isPlayingOnSecondScreen) _Bool playingOnSecondScreen; // @synthesize playingOnSecondScreen=_playingOnSecondScreen;
+@property(nonatomic, getter=isPlayingOnSecondScreen) _Bool playingOnSecondScreen; // @synthesize playingOnSecondScreen=_playingOnSecondScreen;
 @property(retain) NSArray *legibleMediaSelectionOptions; // @synthesize legibleMediaSelectionOptions=_legibleMediaSelectionOptions;
 @property(retain) NSArray *audioMediaSelectionOptions; // @synthesize audioMediaSelectionOptions=_audioMediaSelectionOptions;
 @property(retain) NSArray *seekableTimeRanges; // @synthesize seekableTimeRanges=_seekableTimeRanges;
@@ -97,6 +97,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasSeekableLiveStreamingContent;
 - (void)updateMinMaxTiming;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)volumeChanged:(double)arg1;
+@property double volume;
 - (void)toggleMuted:(id)arg1;
 @property(getter=isMuted) _Bool muted;
 @property(getter=isPictureInPictureInterrupted) _Bool pictureInPictureInterrupted;

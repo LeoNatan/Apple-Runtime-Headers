@@ -34,12 +34,14 @@
 @property(copy, nonatomic) CDUnknownBlockType didFinishReadingBlock; // @synthesize didFinishReadingBlock=_didFinishReadingBlock;
 @property(copy, nonatomic) CDUnknownBlockType didReadDataBlock; // @synthesize didReadDataBlock=_didReadDataBlock;
 - (void).cxx_destruct;
+- (void)_stop;
 - (_Bool)_shouldHandleEvent;
 - (id)_compressedDataForData:(id)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)readAllDataIntoFileHandle:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)readAllDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)readAllDataWithError:(id *)arg1;
+- (void)stopWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stop;
 - (void)dealloc;
 - (void)start;

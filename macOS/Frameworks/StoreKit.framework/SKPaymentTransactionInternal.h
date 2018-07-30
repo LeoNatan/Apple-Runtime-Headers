@@ -6,32 +6,23 @@
 
 #import "NSObject.h"
 
-@class NSData, NSDate, NSDictionary, NSError, NSMutableArray, NSString, SKPayment, SKPaymentTransaction;
+@class NSArray, NSData, NSDate, NSError, NSString, SKPayment, SKPaymentTransaction;
 
+__attribute__((visibility("hidden")))
 @interface SKPaymentTransactionInternal : NSObject
 {
-    NSString *_UUID;
-    NSString *_transactionIdentifier;
-    long long _transactionState;
-    NSDate *_transactionDate;
-    SKPayment *_payment;
-    SKPaymentTransaction *_originalTransaction;
-    NSData *_transactionReceipt;
-    NSDictionary *_assets;
-    NSMutableArray *_downloads;
+    NSString *_uuid;
+    NSArray *_downloads;
     NSError *_error;
+    SKPaymentTransaction *_originalTransaction;
+    SKPayment *_payment;
+    NSString *_temporaryIdentifier;
+    NSDate *_transactionDate;
+    NSString *_transactionIdentifier;
+    NSData *_transactionReceipt;
+    long long _transactionState;
 }
 
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-@property(retain, nonatomic) NSMutableArray *downloads; // @synthesize downloads=_downloads;
-@property(retain, nonatomic) NSDictionary *assets; // @synthesize assets=_assets;
-@property(retain, nonatomic) NSData *transactionReceipt; // @synthesize transactionReceipt=_transactionReceipt;
-@property(retain, nonatomic) SKPaymentTransaction *originalTransaction; // @synthesize originalTransaction=_originalTransaction;
-@property(retain, nonatomic) SKPayment *payment; // @synthesize payment=_payment;
-@property(retain, nonatomic) NSDate *transactionDate; // @synthesize transactionDate=_transactionDate;
-@property(nonatomic) long long transactionState; // @synthesize transactionState=_transactionState;
-@property(retain, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
-@property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
 - (id)init;
 

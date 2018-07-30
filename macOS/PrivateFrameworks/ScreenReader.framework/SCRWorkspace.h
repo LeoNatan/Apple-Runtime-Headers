@@ -84,6 +84,7 @@
     BOOL _isKeyboardHelpEnabled;
     BOOL _isLoggedIn;
     BOOL _isScreenCurtainEnabled;
+    unsigned int __sleepAssertionID;
     SCRSpeechAttributeGuide *_speechAttributeGuide;
     SCRDFRManager *_dfrManager;
     NSDate *_lastFocusTimestamp;
@@ -92,10 +93,11 @@
     SCRSiriObserver *__siriObserver;
     SCRWorkspaceApplication *__workspaceApplication;
     SCRVisualsManager *__visualsManager;
+    long long __preventSleepRequestCount;
+    NSTimer *__sleepAssertionFailsafeTimer;
     SCRSystemKeyManager *_systemKeyManager;
 }
 
-+ (void)setVoiceOverInPreferencesEnabled:(BOOL)arg1 updateLoginWindowSettings:(BOOL)arg2;
 + (void)_stopAllSound;
 + (BOOL)isVoiceOverRunning;
 + (void)_invalidateWorkspace;
@@ -111,6 +113,9 @@
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3 warnOnMissingString:(BOOL)arg4;
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3;
 @property(retain, nonatomic) SCRSystemKeyManager *systemKeyManager; // @synthesize systemKeyManager=_systemKeyManager;
+@property(retain, nonatomic) NSTimer *_sleepAssertionFailsafeTimer; // @synthesize _sleepAssertionFailsafeTimer=__sleepAssertionFailsafeTimer;
+@property(nonatomic) long long _preventSleepRequestCount; // @synthesize _preventSleepRequestCount=__preventSleepRequestCount;
+@property(nonatomic) unsigned int _sleepAssertionID; // @synthesize _sleepAssertionID=__sleepAssertionID;
 @property(readonly, retain, nonatomic) SCRVisualsManager *_visualsManager; // @synthesize _visualsManager=__visualsManager;
 @property(readonly, retain, nonatomic) SCRWorkspaceApplication *_workspaceApplication; // @synthesize _workspaceApplication=__workspaceApplication;
 @property(retain, nonatomic, setter=_setSiriObserver:) SCRSiriObserver *_siriObserver; // @synthesize _siriObserver=__siriObserver;
@@ -122,7 +127,7 @@
 @property(nonatomic, setter=setLoggedIn:) BOOL isLoggedIn; // @synthesize isLoggedIn=_isLoggedIn;
 @property(nonatomic, setter=setKeyboardHelpEnabled:) BOOL isKeyboardHelpEnabled; // @synthesize isKeyboardHelpEnabled=_isKeyboardHelpEnabled;
 @property(nonatomic) int primaryBrailleDisplayToken; // @synthesize primaryBrailleDisplayToken=_primaryBrailleDisplayToken;
-- (BOOL)updateCapsLockModifierMask;
+- (void)updateCapsLockModifierMask;
 - (BOOL)isSafeToLaunchAnotherApp;
 - (void)_messageTraceIfNecessary;
 - (void)_messageTraceIfNecessary:(id)arg1;
@@ -196,6 +201,9 @@
 - (BOOL)shouldSkipRedundantLabels;
 - (void)setShouldSkipRedundantLabels:(BOOL)arg1;
 - (BOOL)toggleScreenCurtain;
+@property(nonatomic, getter=isPreventingSleep) BOOL preventSleep; // @dynamic preventSleep;
+- (void)_setPreventSleep:(id)arg1;
+- (void)_disablePreventSleep;
 - (void)updateSystemActivity;
 - (void)_updateSystemActivity;
 - (void)triggerVirtualKeyboardKey:(unsigned short)arg1 withModifierMask:(long long)arg2;
@@ -204,7 +212,7 @@
 - (void)_triggerKeyboardKeyString:(id)arg1;
 - (void)triggerCommand:(id)arg1 withInfo:(id)arg2 completionHandlerAfterEnqueueingOnMainThread:(CDUnknownBlockType)arg3;
 - (void)triggerCommand:(id)arg1 withInfo:(id)arg2;
-- (void)_triggerCommand:(id)arg1;
+- (void)triggerCommand:(id)arg1;
 - (void)triggerKeyboardKey:(id)arg1;
 - (void)_triggerKeyboardKey:(id)arg1;
 - (void)enqueueEvent:(id)arg1;
@@ -381,7 +389,6 @@
 - (void)openWindowsGuideEventHandler:(id)arg1;
 - (void)openApplicationsGuideEventHandler:(id)arg1;
 - (void)openGuideEventHandler:(id)arg1;
-- (void)openManualHandler:(id)arg1;
 - (void)virtualKeyboardPressForCommand:(id)arg1 request:(id)arg2;
 - (void)virtualKeyboardPressEventHandler:(id)arg1;
 - (void)virtualKeyboardModifierPressEventHandler:(id)arg1;

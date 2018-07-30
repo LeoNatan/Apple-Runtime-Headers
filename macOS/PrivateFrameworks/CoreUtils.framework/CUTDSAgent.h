@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _advertiserCount;
     unsigned long long _advertiseProviderCount;
     unsigned long long _advertiseSeekerCount;
+    unsigned long long _advertiseTriggerCount;
     BOOL _advertisingStartCalled;
     CDStruct_83abfce7 _bleAddress48;
+    BOOL _bleAddressOverride;
     BOOL _bleAddressValid;
     CUSystemMonitor *_bleAddressMonitor;
     CBCentralManager *_centralManager;

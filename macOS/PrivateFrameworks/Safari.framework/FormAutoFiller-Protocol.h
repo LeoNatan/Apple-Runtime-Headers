@@ -6,9 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSString, NSURL, _WKFrameHandle;
+@class NSArray, NSDictionary, NSString, NSURL, WBSFormControlMetadata, _WKFrameHandle;
 
 @protocol FormAutoFiller <NSObject>
+- (void)removeAutomaticPasswordVisualTreatmentInFrame:(_WKFrameHandle *)arg1 formID:(double)arg2 passwordControlUniqueIDs:(NSArray *)arg3;
+- (void)removeAutomaticPasswordElementsInFrame:(_WKFrameHandle *)arg1 formID:(double)arg2 focusedPasswordControlUniqueID:(NSString *)arg3 passwordControlUniqueIDs:(NSArray *)arg4;
+- (void)substitutePasswordElementsWithAutomaticPasswordElementsInFrame:(_WKFrameHandle *)arg1 formID:(double)arg2 focusedPasswordControlUniqueID:(NSString *)arg3 passwordControlUniqueIDs:(NSArray *)arg4 automaticPassword:(NSString *)arg5 blurAfterSubstitution:(BOOL)arg6;
 - (void)resumeLoadingAfterSavingFormData;
 - (void)textDidChangeDelayCompletedField:(NSString *)arg1 inFrame:(_WKFrameHandle *)arg2;
 - (void)collectMetadataForActiveForm:(void (^)(WBSFormMetadata *))arg1;
@@ -18,12 +21,13 @@
 - (void)collectEditedFormTextStatus:(void (^)(BOOL))arg1;
 - (void)recursivelyClearFormMetadataForFrames:(_WKFrameHandle *)arg1;
 - (void)disableSpellCheckInField:(NSString *)arg1 inFrame:(_WKFrameHandle *)arg2;
-- (void)showAddressAutoFillButtonInFieldIfStillFocused:(NSDictionary *)arg1 inFrame:(_WKFrameHandle *)arg2;
-- (void)replaceRange:(struct _NSRange)arg1 inField:(NSString *)arg2 inFrame:(_WKFrameHandle *)arg3 withString:(NSString *)arg4 andSelectTailStartingAt:(unsigned long long)arg5 completionHandler:(void (^)(NSDictionary *, WBSFormMetadata *))arg6;
+- (void)showAddressAutoFillButtonInFieldIfStillFocused:(WBSFormControlMetadata *)arg1 inFrame:(_WKFrameHandle *)arg2;
+- (void)replaceRange:(struct _NSRange)arg1 inField:(NSString *)arg2 inFrame:(_WKFrameHandle *)arg3 withString:(NSString *)arg4 andSelectTailStartingAt:(unsigned long long)arg5 completionHandler:(void (^)(WBSFormControlMetadata *, WBSFormMetadata *))arg6;
 - (void)setFormControls:(NSArray *)arg1 inFrame:(_WKFrameHandle *)arg2 asAutoFilled:(BOOL)arg3;
 - (void)selectRange:(struct _NSRange)arg1 inField:(NSString *)arg2 inFrame:(_WKFrameHandle *)arg3;
 - (void)fillField:(NSString *)arg1 inForm:(double)arg2 frame:(_WKFrameHandle *)arg3 withGeneratedPassword:(NSString *)arg4;
 - (void)fillForm:(double)arg1 inFrame:(_WKFrameHandle *)arg2 withPassword:(NSString *)arg3;
+- (void)autoFillOneTimeCodeFieldsInFrame:(_WKFrameHandle *)arg1 withValue:(NSString *)arg2;
 - (void)autoFillFormInFrame:(_WKFrameHandle *)arg1 withValuesAndUnfocusField:(NSDictionary *)arg2;
 - (void)preFillFormInFrame:(_WKFrameHandle *)arg1 withValues:(NSDictionary *)arg2;
 - (void)autoFillFormInFrame:(_WKFrameHandle *)arg1 withValues:(NSDictionary *)arg2 andFocusField:(NSString *)arg3;

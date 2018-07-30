@@ -10,11 +10,8 @@
 
 @protocol _CPError <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasCode;
 @property(nonatomic) double code;
-@property(readonly, nonatomic) _Bool hasReason;
 @property(copy, nonatomic) NSString *reason;
-@property(readonly, nonatomic) _Bool hasDomain;
 @property(copy, nonatomic) NSString *domain;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

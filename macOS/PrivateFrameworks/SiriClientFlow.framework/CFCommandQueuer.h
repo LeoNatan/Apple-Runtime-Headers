@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (id)initWithCommandIdentifier:(id)arg1;
 - (void)initQueuesWithIdentifier:(id)arg1;
-- (BOOL)isPluginTimeoutDisabled;
 - (void)dispatchCommand:(id)arg1 isOneWay:(BOOL)arg2 withServiceHelper:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)dispatchCommand:(id)arg1 withServiceHelper:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)dispatchOneWayCommand:(id)arg1 withServiceHelper:(id)arg2;

@@ -10,9 +10,10 @@
 
 @interface FIIconView : NSView
 {
-    struct TNSRef<FI_TIconView *, void> _iconView;
+    struct TNSRef<FI_TIconView, void> _iconView;
 }
 
++ (struct CGSize)idealSizeForTitleFontSize:(double)arg1 iconImageSize:(struct CGSize)arg2 gridSpacing:(unsigned long long)arg3 isTitleOnBottom:(BOOL)arg4 isTitleEnabled:(BOOL)arg5 isSubtitleEnabled:(BOOL)arg6;
 + (struct CGSize)idealSizeForTitleFontSize:(double)arg1 iconImageSize:(struct CGSize)arg2 gridSpacing:(unsigned long long)arg3 isTitleOnBottom:(BOOL)arg4 isSubtitleEnabled:(BOOL)arg5;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -34,11 +35,11 @@
 @property(copy) NSColor *titleFontColor; // @dynamic titleFontColor;
 @property double titleFontSize; // @dynamic titleFontSize;
 @property(copy) NSString *titleStr; // @dynamic titleStr;
+@property(getter=isTitleEnabled) _Bool titleEnabled; // @dynamic titleEnabled;
 @property(copy) NSImage *iconImage; // @dynamic iconImage;
 @property struct CGSize iconImageSize;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)isFlipped;
-- (BOOL)isOpaque;
 - (void)aboutToTearDown;
 - (void)initCommon;
 - (id)initWithFrame:(struct CGRect)arg1;

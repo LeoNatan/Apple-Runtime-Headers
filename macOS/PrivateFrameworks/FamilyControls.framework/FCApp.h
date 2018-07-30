@@ -33,7 +33,6 @@
 - (id)path;
 - (id)description;
 - (void)readBundleInfo;
-- (BOOL)validateCodeSig:(id *)arg1;
 - (id)plistRepresentation;
 - (id)_stringWithOSType:(unsigned int)arg1;
 - (id)_dictionary;

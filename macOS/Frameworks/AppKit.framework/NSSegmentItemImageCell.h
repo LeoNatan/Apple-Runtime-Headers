@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long imageState; // @synthesize imageState=_imageState;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;
-- (int)_effectiveBackgroundStyleInView:(id)arg1;
+- (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
 - (unsigned long long)_currentImageStateForView:(id)arg1;
 
 @end

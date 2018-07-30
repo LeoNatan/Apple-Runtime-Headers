@@ -127,6 +127,7 @@
 - (void)clearCategorySamples;
 @property(readonly, nonatomic) _Bool hasSource;
 @property(readonly, nonatomic) _Bool hasSourceBundleIdentifier;
+- (void)addClinicalRecord:(id)arg1;
 - (void)addUnknownRecord:(id)arg1;
 - (void)addAccountOwner:(id)arg1;
 - (void)addProcedureRecord:(id)arg1;

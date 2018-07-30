@@ -6,10 +6,12 @@
 
 #import "PUViewControllerSpec.h"
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditViewControllerSpec : PUViewControllerSpec
 {
 }
 
+@property(readonly, nonatomic) _Bool shouldDisplayCompactToolbar;
 @property(readonly, nonatomic) _Bool shouldDisplayExtensionButtonInMainToolbar;
 @property(readonly, nonatomic) _Bool shouldDisplaySecondaryToolButtonsInMainToolbar;
 @property(readonly, nonatomic) double toolbarLongSideMargin;

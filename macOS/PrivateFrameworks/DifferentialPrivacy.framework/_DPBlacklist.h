@@ -11,17 +11,23 @@
 @interface _DPBlacklist : NSObject
 {
     NSSet *_blacklist;
+    long long _version;
     NSString *_key;
 }
 
++ (id)extractKeyFromFileName:(id)arg1;
++ (BOOL)blacklistExistsWithKey:(id)arg1 inDirectory:(id)arg2;
++ (id)filePathWithKey:(id)arg1 inDirectory:(id)arg2;
 + (id)blacklistForKey:(id)arg1 fromConfigurationsFile:(id)arg2;
 + (void)removeBlackListForKey:(id)arg1;
++ (void)resetAllBlacklists;
 + (id)blacklistForKey:(id)arg1 systemBlacklistDirectory:(id)arg2 runtimeBlacklistDirectory:(id)arg3;
 + (void)initialize;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
+@property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSSet *blacklist; // @synthesize blacklist=_blacklist;
 - (void).cxx_destruct;
-- (id)initWithKey:(id)arg1 systemBlacklistDirectory:(id)arg2 runtimeBlacklistDirectory:(id)arg3;
+- (id)initWithKey:(id)arg1 fromConfigurationsFile:(id)arg2;
 - (id)init;
 
 @end

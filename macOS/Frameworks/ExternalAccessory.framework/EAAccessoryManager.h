@@ -99,7 +99,7 @@
 - (void)nmeaSentenceArrived:(id)arg1 forAccessoryUUID:(id)arg2;
 - (void)destinationSharingStatus:(BOOL)arg1 forDestinationUUID:(id)arg2 supportedParams:(id)arg3 forUUID:(id)arg4;
 - (void)stopDestinationSharingForUUID:(id)arg1;
-- (void)startDestinationSharingForUUID:(id)arg1;
+- (void)startDestinationSharingForUUID:(id)arg1 options:(unsigned long long)arg2;
 - (void)initialEAAccessoriesAttachedAfterClientConnection:(id)arg1;
 - (void)EAAccessoryLeft:(id)arg1;
 - (void)EAAccessoryArrived:(id)arg1;

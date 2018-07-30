@@ -28,6 +28,7 @@
 - (_Bool)isVisible;
 - (long long)displayBox;
 - (void)setNeedsTilesUpdate;
+- (PDFRenderingProperties *)renderingProperties;
 - (NSObject<PDFPageLayerGeometryInterface> *)geometryInterface;
 - (PDFPage *)page;
 - (id)initWithPage:(PDFPage *)arg1 geometryInterface:(NSObject<PDFPageLayerGeometryInterface> *)arg2 andRenderingProperties:(PDFRenderingProperties *)arg3;

@@ -11,6 +11,7 @@
 - (void)dd_makeLinksForResultsInAttributesOfType:(unsigned long long)arg1 context:(id)arg2 range:(struct _NSRange)arg3;
 - (void)dd_makeLinksForResultsInAttributesOfType:(unsigned long long)arg1 context:(id)arg2;
 - (void)dd_makeLinksForResultsInAttributesOfType:(unsigned long long)arg1 usingURLificationBlock:(CDUnknownBlockType)arg2 context:(id)arg3 range:(struct _NSRange)arg4;
+- (_Bool)dd_urlifyClientRange:(struct _NSRange)arg1 index:(unsigned long long)arg2 context:(id)arg3;
 - (_Bool)dd_urlifyResult:(id)arg1 withBlock:(CDUnknownBlockType)arg2 referenceDate:(id)arg3 context:(id)arg4;
 - (void)dd_appendUrl:(id)arg1 context:(id)arg2 range:(struct _NSRange)arg3 backedAttributes:(id)arg4;
 - (void)dd_resetResults:(_Bool)arg1;

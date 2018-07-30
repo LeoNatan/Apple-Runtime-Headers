@@ -8,7 +8,7 @@
 
 #import "AWRemoteClient.h"
 
-@class AWAttentionEvent, AWScheduler, NSArray, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
+@class AWAttentionAwarenessConfiguration, AWAttentionEvent, AWScheduler, NSArray, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
 __attribute__((visibility("hidden")))
 @interface AWRemoteClient : NSObject <AWRemoteClient>
@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _tagIndex;
     unsigned long long _eventMask;
     _Bool _samplingClient;
+    int _supportedEventsNotify;
+    AWAttentionAwarenessConfiguration *_lastConfig;
     double _lastNegativeEventTimeoutValueSec;
     NSArray *_attentionLostTimeoutsSec;
     _Bool _invalid;
@@ -56,11 +58,12 @@ __attribute__((visibility("hidden")))
 - (void)deliverPollEventType:(unsigned long long)arg1 event:(id)arg2;
 - (void)deliverEvent:(id)arg1;
 - (void)setClientConfig:(id)arg1 shouldReset:(_Bool)arg2;
+- (void)_reevaluateConfig;
 - (void)_setClientConfig:(id)arg1 shouldReset:(_Bool)arg2;
 - (void)invalidate;
 - (id)connection;
 - (id)description;
-- (id)initWithProxy:(id)arg1 connection:(id)arg2 clientConfig:(id)arg3;
+- (id)initWithProxy:(id)arg1 connection:(id)arg2 clientConfig:(id)arg3 error:(id *)arg4;
 
 @end
 

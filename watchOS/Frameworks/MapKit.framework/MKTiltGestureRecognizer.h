@@ -8,7 +8,6 @@
 
 @class UITouch;
 
-__attribute__((visibility("hidden")))
 @interface MKTiltGestureRecognizer : UIPanGestureRecognizer
 {
     UITouch *_touch1;

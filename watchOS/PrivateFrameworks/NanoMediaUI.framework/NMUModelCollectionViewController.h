@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UICollectionViewController.h"
+#import "PUICCollectionViewController.h"
 
 @class NSArray, NSHashTable;
 
-@interface NMUModelCollectionViewController : UICollectionViewController
+@interface NMUModelCollectionViewController : PUICCollectionViewController
 {
     NSHashTable *_registeredCellClasses;
     NSArray *_visibleTopItems;
@@ -22,7 +22,6 @@
 @property(nonatomic) __weak id <NMUModelCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)_setNeedsVisibleTopItemsUpdate;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;

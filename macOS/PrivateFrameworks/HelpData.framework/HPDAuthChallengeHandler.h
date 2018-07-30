@@ -18,6 +18,7 @@
     id <HPDAuthClientProtocol> _delegate;
 }
 
+@property(retain, nonatomic) HPDAuthenticationClient *authClient; // @synthesize authClient=_authClient;
 @property __weak id <HPDAuthClientProtocol> delegate; // @synthesize delegate=_delegate;
 @property long long resourceType; // @synthesize resourceType=_resourceType;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;

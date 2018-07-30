@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)flush;
 - (void)setPins:(id)arg1 forMapType:(unsigned int)arg2 displayStyle:(unsigned int)arg3 pinColor:(id)arg4 traits:(id)arg5;
 - (id)pinsWithMapType:(unsigned int)arg1 displayStyle:(unsigned int)arg2 pinColor:(id)arg3 traits:(id)arg4;
 - (id)init;

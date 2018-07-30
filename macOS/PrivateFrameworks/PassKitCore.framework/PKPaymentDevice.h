@@ -42,7 +42,7 @@
 - (void)provisioningDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)trustedDeviceEnrollmentInfo;
 - (id)configurationData;
-- (id)rewrapDataWithDeviceIdentifier:(id)arg1 certificates:(id)arg2;
+- (id)rewrapDataWithDeviceIdentifier:(id)arg1 certificates:(id)arg2 kextBlacklistVersion:(id)arg3;
 - (void)signData:(id)arg1 signatureEntanglementMode:(unsigned long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

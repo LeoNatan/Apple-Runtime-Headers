@@ -8,15 +8,17 @@
 
 #import "MSPlatform.h"
 
-@class NSData, NSString;
+@class ACAccountStore, NSData, NSString;
 
 @interface MSMSPlatform : NSObject <MSPlatform>
 {
     _Bool _isPerfLoggingEnabled;
     NSData *_pushToken;
+    ACAccountStore *_accountStore;
 }
 
 + (id)thePlatform;
+@property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(nonatomic) _Bool isPerfLoggingEnabled; // @synthesize isPerfLoggingEnabled=_isPerfLoggingEnabled;
 @property(retain, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
 - (void).cxx_destruct;

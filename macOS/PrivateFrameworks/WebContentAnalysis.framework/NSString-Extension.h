@@ -16,7 +16,6 @@
 - (id)fuzzyStringWithWordLength:(int)arg1;
 - (id)stringByConvertingSpacesInHTMLSpaces;
 - (id)stringByReplacingString:(id)arg1 withString:(id)arg2;
-- (id)stringByEscapingPrintfArguments;
 - (id)stringByRemovingWord:(id)arg1;
 - (struct _NSRange)rangeOfWord:(id)arg1;
 - (BOOL)containsWord:(id)arg1;

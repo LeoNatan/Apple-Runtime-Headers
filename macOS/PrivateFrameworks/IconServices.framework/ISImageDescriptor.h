@@ -6,34 +6,33 @@
 
 #import "NSObject.h"
 
-#import "NSSecureCoding.h"
+#import "NSCopying.h"
 
-@class NSDictionary, NSUUID;
-
-@interface ISImageDescriptor : NSObject <NSSecureCoding>
+@interface ISImageDescriptor : NSObject <NSCopying>
 {
     struct CGSize _size;
-    unsigned int _scale;
-    NSDictionary *_options;
-    BOOL _asyncRequest;
+    double _scale;
+    unsigned long long _variantOptions;
+    unsigned long long _badgeOptions;
+    unsigned long long _backgroundStyle;
 }
 
-+ (id)imageDescriptorWithBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(unsigned int)arg3 options:(id)arg4;
-+ (BOOL)supportsSecureCoding;
-@property(getter=isAsyncRequest) BOOL asyncRequest; // @synthesize asyncRequest=_asyncRequest;
-@property(readonly) NSDictionary *options; // @synthesize options=_options;
-@property(readonly) unsigned int scale; // @synthesize scale=_scale;
-@property(readonly) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
-@property(readonly, getter=isImageNullable) BOOL imageNullable;
-- (BOOL)checkValidationToken:(CDStruct_32a7f38a *)arg1;
-- (CDStruct_32a7f38a)validationToken;
-- (void)enumerateIconResourceInfoWithOptions:(id)arg1 block:(CDUnknownBlockType)arg2;
-@property(readonly) NSUUID *resourceUUID; // @dynamic resourceUUID;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithSize:(struct CGSize)arg1 scale:(unsigned int)arg2 options:(id)arg3;
+@property(nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
+@property(nonatomic) unsigned long long badgeOptions; // @synthesize badgeOptions=_badgeOptions;
+@property(nonatomic) unsigned long long variantOptions; // @synthesize variantOptions=_variantOptions;
+@property(nonatomic) double scale; // @synthesize scale=_scale;
+@property(nonatomic) struct CGSize size; // @synthesize size=_size;
+- (id)description;
+@property(readonly) double sanitizedScale;
+@property(readonly) struct CGSize sanitizedSize;
+@property(nonatomic) BOOL drawBorder;
+@property(nonatomic) BOOL shouldApplyMask;
+@property(nonatomic) unsigned long long shape;
+@property(nonatomic) BOOL selectedVariant;
+@property(nonatomic) BOOL templateVariant;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2;
+- (id)init;
 
 @end
 

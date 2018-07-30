@@ -10,6 +10,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGColorSpace;
+
 struct CGPoint {
     float x;
     float y;
@@ -44,6 +46,23 @@ struct _renditionkeyfmt {
 struct _renditionkeytoken {
     unsigned short identifier;
     unsigned short value;
+};
+
+struct vImage_Buffer {
+    void *data;
+    unsigned int height;
+    unsigned int width;
+    unsigned int rowBytes;
+};
+
+struct vImage_CGImageFormat {
+    unsigned int bitsPerComponent;
+    unsigned int bitsPerPixel;
+    struct CGColorSpace *colorSpace;
+    unsigned int bitmapInfo;
+    unsigned int version;
+    float *decode;
+    int renderingIntent;
 };
 
 #pragma mark Typedef'd Structures

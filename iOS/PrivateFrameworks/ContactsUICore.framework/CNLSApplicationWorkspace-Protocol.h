@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class CNApplicationProxy, CNObservable, NSArray, NSDictionary, NSString, NSUserActivity;
+@class CNApplicationProxy, CNObservable, NSArray, NSDictionary, NSString, NSURL, NSUserActivity;
 
 @protocol CNLSApplicationWorkspace <NSObject>
+- (void)openSensitiveURLInBackground:(NSURL *)arg1 withOptions:(NSDictionary *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
+- (void)openSensitiveURLInBackground:(NSURL *)arg1 withOptions:(NSDictionary *)arg2;
 - (void)openUserActivity:(NSUserActivity *)arg1 inApplication:(CNApplicationProxy *)arg2 options:(NSDictionary *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (CNApplicationProxy *)applicationForBundleIdentifier:(NSString *)arg1;
 - (NSArray *)applicationsForUserActivityType:(NSString *)arg1;

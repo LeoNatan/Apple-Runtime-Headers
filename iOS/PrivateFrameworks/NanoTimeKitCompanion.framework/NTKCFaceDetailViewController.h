@@ -118,7 +118,6 @@
 - (_Bool)_isEditOptionFullyVisible:(id)arg1;
 - (void)_setEditOption:(id)arg1 forMode:(long long)arg2;
 - (void)_setComplication:(id)arg1 forSlot:(id)arg2;
-- (void)_activeDeviceChanged;
 - (void)_loadLibrary;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

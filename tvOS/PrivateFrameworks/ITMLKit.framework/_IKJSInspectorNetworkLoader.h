@@ -28,7 +28,8 @@
 @property(readonly, copy) NSString *debugDescription;
 - (double)currentTimeIntervalSince1970;
 - (void)dispatchEventWithBlock:(CDUnknownBlockType)arg1;
-- (id)recordWithForResource:(long long)arg1 withInitiator:(long long)arg2;
+- (id)_recordForResource:(long long)arg1 withInitiator:(long long)arg2 synchronousOperation:(_Bool)arg3;
+- (id)recordForResource:(long long)arg1 withInitiator:(long long)arg2;
 - (id)initWithIdentifier:(id)arg1 parentIdentifier:(id)arg2 agent:(id)arg3 dispatcher:(id)arg4;
 
 // Remaining properties

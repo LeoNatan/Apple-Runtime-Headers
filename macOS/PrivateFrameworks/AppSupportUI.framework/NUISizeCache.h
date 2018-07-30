@@ -18,7 +18,7 @@
 - (void)insertSize:(struct CGSize)arg1 forTargetSize:(struct CGSize)arg2;
 - (BOOL)getSize:(struct CGSize *)arg1 forItem:(id)arg2 targetSize:(struct CGSize)arg3;
 - (void)dealloc;
-- (id)initForAsynchroniousAccess:(BOOL)arg1;
+- (id)initForAsynchronousAccess:(BOOL)arg1;
 
 @end
 

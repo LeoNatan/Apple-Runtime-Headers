@@ -8,36 +8,29 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSString;
+@class CEMApplicationLockDeclaration_App, NSString;
 
 @interface CEMApplicationLockDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    CEMApplicationLockDeclaration_App *_payloadApp;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withApp:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withApp:(id)arg2;
 + (id)restrictionPayloadKeys;
-+ (id)App_UserEnabledOptions_allowedPayloadKeys;
-+ (id)App_Options_allowedPayloadKeys;
-+ (id)App_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadApp_UserEnabledOptions:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadApp_Options:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadApp:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadApp_UserEnabledOptions_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadApp_Options_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadApp_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMApplicationLockDeclaration_App *payloadApp; // @synthesize payloadApp=_payloadApp;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSDictionary *payloadApp;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

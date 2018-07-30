@@ -11,6 +11,9 @@
 }
 
 + (id)currentEnvironment;
+- (id)stressBundleIdentifiers;
+- (id)supportedBundleIdentifiers;
+- (BOOL)stressMode;
 - (void)setFollowUpExtensionSupportEnabled:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL followUpZeroActionsForTheWorld;
 @property(readonly, nonatomic) BOOL followUpExtensionSupportEnabled;

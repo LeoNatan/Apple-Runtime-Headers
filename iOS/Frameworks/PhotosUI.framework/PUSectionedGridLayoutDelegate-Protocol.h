@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSIndexPath, NSIndexSet, NSString, PUSectionedGridLayout, PUSectionedGridLayoutInvalidationContext;
+@class NSIndexPath, NSIndexSet, PUSectionedGridLayout, PUSectionedGridLayoutInvalidationContext;
 
 @protocol PUSectionedGridLayoutDelegate <NSObject>
 
 @optional
-- (NSString *)sectionedGridLayoutName:(PUSectionedGridLayout *)arg1;
 - (void)sectionedGridLayoutWillPrepareLayout:(PUSectionedGridLayout *)arg1;
 - (double)sectionedGridLayout:(PUSectionedGridLayout *)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;
 - (double)sectionedGridLayout:(PUSectionedGridLayout *)arg1 sectionHeaderHeightForVisualSection:(long long)arg2;

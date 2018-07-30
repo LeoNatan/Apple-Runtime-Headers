@@ -8,7 +8,6 @@
 
 @class NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface OCPPackageRelationship : NSObject
 {
     NSString *mIdentifier;
@@ -17,11 +16,11 @@ __attribute__((visibility("hidden")))
     NSURL *mTargetLocation;
 }
 
+- (void).cxx_destruct;
 - (id)targetLocation;
 - (int)targetMode;
 - (id)type;
 - (id)identifier;
-- (void)dealloc;
 - (id)initWithXmlElement:(struct _xmlNode *)arg1 baseLocation:(id)arg2;
 - (void)readFromElement:(struct _xmlNode *)arg1 baseLocation:(id)arg2;
 

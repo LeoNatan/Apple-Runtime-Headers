@@ -10,9 +10,7 @@
 {
 }
 
-+ (id)confirmationRequiredWithValueToConfirm:(int)arg1;
 + (id)confirmationRequiredWithTaskStatusToConfirm:(int)arg1;
-+ (id)successWithResolvedValue:(int)arg1;
 + (id)successWithResolvedTaskStatus:(int)arg1;
 
 @end

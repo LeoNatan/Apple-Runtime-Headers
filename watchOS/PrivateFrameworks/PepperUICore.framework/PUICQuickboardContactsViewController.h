@@ -14,17 +14,19 @@
     unsigned int _contactFilter;
 }
 
++ (id)addPhoneNumberImage;
 + (id)addContactImage;
 @property(nonatomic) unsigned int contactFilter; // @synthesize contactFilter=_contactFilter;
 @property(retain, nonatomic) NSArray *recentContacts; // @synthesize recentContacts=_recentContacts;
 - (void).cxx_destruct;
+- (void)addPhoneNumberButtonTapped:(id)arg1;
 - (void)addContactButtonTapped:(id)arg1;
 - (id)contentUnavailableMessage;
 - (id)contentUnavailableTitle;
+- (_Bool)supportsArouetInput;
 - (id)additionalTrayButtons;
 - (void)didSelectListItem:(int)arg1;
 - (id)cellForListItem:(int)arg1;
-- (float)heightForListItem:(int)arg1 width:(float)arg2;
 - (int)numberOfListItems;
 - (id)initWithDelegate:(id)arg1;
 - (id)newCell;

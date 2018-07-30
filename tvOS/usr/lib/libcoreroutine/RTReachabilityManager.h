@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
-@interface RTReachabilityManager : RTNotifier
+@interface RTReachabilityManager : RTService
 {
     struct __SCNetworkReachability *_reachabilityRef;
     long long _currentReachability;
@@ -23,7 +23,7 @@
 - (void)setCurrentReachability:(long long)arg1;
 - (void)processReachabilityChange:(unsigned int)arg1;
 - (id)description;
-- (void)shutdown;
+- (void)_shutdown;
 - (void)_stopMonitoringReachability;
 - (void)_startMonitoringReachability;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;

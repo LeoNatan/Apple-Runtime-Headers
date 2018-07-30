@@ -8,7 +8,6 @@
 
 @class CUIPSDGradientEvaluator;
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDGradient : NSObject
 {
     CUIPSDGradientEvaluator *evaluator;

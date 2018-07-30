@@ -8,9 +8,12 @@
 
 @interface SPUIHeaderBlurView : UIVisualEffectView
 {
+    _Bool _useInPlaceFilteredBlur;
 }
 
+@property(nonatomic) _Bool useInPlaceFilteredBlur; // @synthesize useInPlaceFilteredBlur=_useInPlaceFilteredBlur;
 - (void)updateEffect;
+- (void)setTintColor:(id)arg1;
 - (id)init;
 
 @end

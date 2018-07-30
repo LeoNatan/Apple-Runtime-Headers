@@ -36,7 +36,7 @@
 - (void)_handleChatDeletionCompletionForRecordIDs:(id)arg1 error:(id)arg2;
 - (id)_copyRecordIDsToDelete;
 - (void)clearLocalSyncState;
-- (void)__syncChatsWithCloudKit:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)__syncChatsWithCloudKit:(int)arg1 attemptCount:(unsigned int)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)syncChatsWithCloudKit:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)syncChatsWithCloudKitWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateAllChatsAsNotNeedingReUpload;
@@ -47,9 +47,9 @@
 - (void)deleteChatZone;
 - (void)anyChatExistsOnServerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_anyChatExistsOnServerWithResultsLimit:(int)arg1 changeToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_syncChatsWithCloudKitWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_syncChatsWithCloudKitWithCompletionType:(int)arg1 syncChatsCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_resetSyncToken;
-- (void)_processFetchRecordChangesCompleted:(id)arg1 completion:(CDUnknownBlockType)arg2 isUsingStingRay:(_Bool)arg3;
+- (void)_processFetchRecordChangesCompleted:(id)arg1 completion:(CDUnknownBlockType)arg2 isUsingStingRay:(_Bool)arg3 syncType:(int)arg4;
 - (void)_processRecordZoneFetchCompletion:(id)arg1 zoneID:(id)arg2 clientChangeTokenData:(id)arg3 moreComing:(_Bool)arg4 error:(id)arg5;
 - (void)_processRecordZoneChangeTokenUpdated:(id)arg1 zoneID:(id)arg2 clienChangeToken:(id)arg3;
 - (void)_processRecordChanged:(id)arg1 isUsingStingRay:(_Bool)arg2;

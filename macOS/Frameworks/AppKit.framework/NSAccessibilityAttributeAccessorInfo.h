@@ -17,10 +17,12 @@ __attribute__((visibility("hidden")))
     SEL _getter;
     SEL _setter;
     long long _paramType;
+    BOOL _isBaseImplementationAcceptable;
 }
 
 + (id)_stringForAttributeType:(long long)arg1;
 + (id)stringArrayForEnumType:(long long)arg1;
+@property BOOL isBaseImplementationAcceptable; // @synthesize isBaseImplementationAcceptable=_isBaseImplementationAcceptable;
 @property(getter=isParameterized) BOOL parameterized; // @synthesize parameterized=_parameterized;
 @property SEL setter; // @synthesize setter=_setter;
 @property SEL getter; // @synthesize getter=_getter;

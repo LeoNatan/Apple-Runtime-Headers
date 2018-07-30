@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSDate *_currentDate;
 }
 
++ (void)initialize;
 @property(copy, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(nonatomic) CAMediaTimingFunction *mediaTimingFunction; // @synthesize mediaTimingFunction=_mediaTimingFunction;
 @property(nonatomic) double toPlaybackTime; // @synthesize toPlaybackTime=_toPlaybackTime;

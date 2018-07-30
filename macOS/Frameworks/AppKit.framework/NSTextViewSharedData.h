@@ -8,8 +8,9 @@
 
 #import "NSCoding.h"
 
-@class NSArray, NSAttributedString, NSCandidateListTouchBarItem, NSColor, NSDictionary, NSParagraphStyle, NSRulerView, NSSelectionArray, NSSharingServicePicker, NSTextContainer, NSTextFinder, NSTextInputContext, NSTextTouchBarItemController, NSTextView, NSTrackingArea, NSUndoManager, NSWindow;
+@class NSArray, NSAttributedString, NSCandidateListTouchBarItem, NSColor, NSDictionary, NSParagraphStyle, NSRulerView, NSSelectionArray, NSSharingServicePicker, NSTextContainer, NSTextFinder, NSTextInputContext, NSTextTouchBarItemController, NSTextView, NSTrackingArea, NSUndoManager, NSView, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSTextViewSharedData : NSObject <NSCoding>
 {
     struct __sdFlags {
@@ -50,8 +51,11 @@
     struct _NSRange _markedCharRange;
     NSDictionary *_markedAttributesDict;
     struct __CFRunLoopTimer *_blinkTimer;
+    NSView *_blinkingCaretView;
     NSTextContainer *_blinkContainer;
     struct CGRect _blinkRect;
+    int _blinkPhase;
+    double _blinkPhaseProgress;
     id _delegate;
     NSTextView *_notifyingTextView;
     NSColor *_backgroundColor;
@@ -104,7 +108,6 @@
     NSParagraphStyle *_defaultParagraphStyle;
     struct __CFRunLoopTimer *_toolTipTimer;
     struct CGPoint _toolTipPoint;
-    NSWindow *_toolTipWindow;
     NSTrackingArea *_toolTipTrackingArea;
     long long __reserved1;
     NSTextInputContext *_inputContext;
@@ -148,7 +151,8 @@
         unsigned int _textCompletionEnabled:1;
         unsigned int _pendingCandidateUpdate:1;
         unsigned int _pendingMarkForTextCheckingAfterChange:1;
-        unsigned int _pad:5;
+        unsigned int _usesBlinkTimerForDrawing:1;
+        unsigned int _pad:4;
     } _sdFlags3;
     unsigned long long _otherEnabledTextCheckingTypes;
     long long _previousCheckingSequenceNumber;
@@ -202,6 +206,8 @@
 - (void)setLinkTextAttributes:(id)arg1;
 - (void)setSelectedTextAttributes:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (id)insertionPointColorForBlink;
+- (BOOL)hasBlinkTimer;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

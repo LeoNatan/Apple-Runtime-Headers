@@ -8,7 +8,7 @@
 
 #import "NSFileProviderItem_Private.h"
 
-@class FPItem, NSData, NSDate, NSDictionary, NSError, NSNumber, NSPersonNameComponents, NSString, NSURL;
+@class FPItem, NSArray, NSData, NSDate, NSDictionary, NSError, NSNumber, NSPersonNameComponents, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface FPXEnumeratorAlternateContentsItem : NSObject <NSFileProviderItem_Private>
@@ -62,7 +62,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSURL *fileURL;
 @property(readonly, getter=fp_isUbiquitous) _Bool fp_ubiquitous;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
+@property(readonly, nonatomic) NSString *preformattedOwnerName;
 @property(readonly) Class superclass;
+@property(readonly, copy) NSArray *tags;
 @property(readonly, nonatomic) NSData *versionIdentifier;
 
 @end

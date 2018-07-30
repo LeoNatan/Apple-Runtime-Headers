@@ -6,27 +6,27 @@
 
 #import "NSObject.h"
 
-#import "NSCopying.h"
-#import "NSSecureCoding.h"
-
-@interface NRPairingCompatibilityVersionInfo : NSObject <NSCopying, NSSecureCoding>
+@interface NRPairingCompatibilityVersionInfo : NSObject
 {
     _Bool _isOverrideActive;
     int _pairingCompatibilityVersion;
     int _maxPairingCompatibilityVersion;
     int _minPairingCompatibilityVersion;
+    int _minQuickSwitchCompatibilityVersion;
 }
 
-+ (_Bool)supportsSecureCoding;
 + (id)systemVersions;
++ (id)stringFromCFPrefs:(id)arg1;
++ (id)numberFromCFPrefs:(id)arg1;
 @property(nonatomic) _Bool isOverrideActive; // @synthesize isOverrideActive=_isOverrideActive;
+@property(nonatomic) int minQuickSwitchCompatibilityVersion; // @synthesize minQuickSwitchCompatibilityVersion=_minQuickSwitchCompatibilityVersion;
 @property(nonatomic) int minPairingCompatibilityVersion; // @synthesize minPairingCompatibilityVersion=_minPairingCompatibilityVersion;
 @property(nonatomic) int maxPairingCompatibilityVersion; // @synthesize maxPairingCompatibilityVersion=_maxPairingCompatibilityVersion;
 @property(nonatomic) int pairingCompatibilityVersion; // @synthesize pairingCompatibilityVersion=_pairingCompatibilityVersion;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)initInternal;
+- (int)minPairingCompatibilityVersionForChipID:(id)arg1 name:(id)arg2 defaultVersion:(int)arg3;
+- (int)minQuickSwitchPairingCompatibilityVersionForChipID:(id)arg1;
+- (int)minPairingCompatibilityVersionForChipID:(id)arg1;
 
 @end
 

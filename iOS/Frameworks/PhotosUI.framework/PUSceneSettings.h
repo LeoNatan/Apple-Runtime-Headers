@@ -10,10 +10,12 @@ __attribute__((visibility("hidden")))
 @interface PUSceneSettings : PXSettings
 {
     _Bool _showConfidenceOverlay;
+    unsigned long long _inspectorSortOrder;
 }
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long inspectorSortOrder; // @synthesize inspectorSortOrder=_inspectorSortOrder;
 @property(nonatomic) _Bool showConfidenceOverlay; // @synthesize showConfidenceOverlay=_showConfidenceOverlay;
 - (void)setDefaultValues;
 - (id)parentSettings;

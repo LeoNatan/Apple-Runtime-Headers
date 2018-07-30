@@ -12,6 +12,7 @@
 
 @interface TVPMusicVideoPlayerViewController : UIViewController <UIViewControllerTransitioningDelegate>
 {
+    _Bool _viewVisible;
     id <TVPMusicVideoPlayerViewControllerDelegate> _delegate;
     AVPlayerViewController *_avPlayerViewController;
     AVPlayer *_avPlayer;
@@ -21,6 +22,7 @@
 
 @property(readonly, nonatomic) TVPMusicNowPlayingVideoView *interstitialView; // @synthesize interstitialView=_interstitialView;
 @property(readonly, nonatomic) TVPMusicNowPlayingVideoView *videoView; // @synthesize videoView=_videoView;
+@property(nonatomic, getter=isViewVisible) _Bool viewVisible; // @synthesize viewVisible=_viewVisible;
 @property(retain, nonatomic) AVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(readonly, nonatomic) AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
 @property(nonatomic) __weak id <TVPMusicVideoPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,6 +33,10 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) UIView *previewView;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

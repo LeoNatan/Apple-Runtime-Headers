@@ -11,7 +11,6 @@
 + (id)hf_symptomTypesSortedByPriority;
 + (void)initialize;
 - (id)hf_fakeSymptomsImplementationUsedForDebuggingPleaseDontTouchThisItIsFragileSwizzlingIsBadMKay;
-@property(readonly, nonatomic) _Bool hf_isFixingSymptom;
 - (id)hf_symptomsSortedByPriority;
 @end
 

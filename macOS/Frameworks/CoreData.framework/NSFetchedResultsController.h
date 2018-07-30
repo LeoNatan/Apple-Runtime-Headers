@@ -43,10 +43,10 @@
 + (void)initialize;
 + (unsigned long long)_insertIndexForObject:(id)arg1 inArray:(id)arg2 lowIdx:(long long)arg3 highIdx:(long long)arg4 sortDescriptors:(id)arg5;
 + (id)_CoreDataSectionCachesPath;
-@property(readonly) NSString *cacheName; // @synthesize cacheName=_cacheName;
-@property(readonly) NSString *sectionNameKeyPath; // @synthesize sectionNameKeyPath=_sectionNameKeyPath;
-@property(readonly) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
-@property(readonly) NSFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
+@property(readonly, nonatomic) NSString *cacheName; // @synthesize cacheName=_cacheName;
+@property(readonly, nonatomic) NSString *sectionNameKeyPath; // @synthesize sectionNameKeyPath=_sectionNameKeyPath;
+@property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
+@property(readonly, nonatomic) NSFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 - (long long)sectionForSectionIndexTitle:(id)arg1 atIndex:(long long)arg2;
 @property(readonly, nonatomic) NSArray *sections;
 - (id)_sections;
@@ -65,6 +65,7 @@
 - (id)_resolveSectionIndexTitleForSectionName:(id)arg1;
 - (void)_dumpSectionInfo;
 - (id)_sectionCachePath;
+- (void)_core_managedObjectContextDidSave:(id)arg1;
 - (void)_managedObjectContextDidSave:(id)arg1;
 - (BOOL)_updateCachedStoreInfo;
 - (void)_appendAffectedStoreInfoToData:(id)arg1 adjustedOffset:(long long *)arg2;

@@ -14,12 +14,14 @@
 }
 
 - (void).cxx_destruct;
+- (void)requestActiveParticipants;
 - (void)setPreferences:(id)arg1;
-- (void)groupSessionParticipantsWithRequestID:(id)arg1;
 - (void)leaveGroupSession;
+- (void)joinWithOptions:(id)arg1;
 - (void)joinGroupSession;
 - (void)setParticipantInfo:(id)arg1;
-- (void)updateMembers:(id)arg1 forGroupID:(id)arg2 isTriggeredLocally:(_Bool)arg3;
+- (void)updateParticipantData:(id)arg1 withContext:(id)arg2;
+- (void)updateMembers:(id)arg1 withContext:(id)arg2 triggeredLocally:(_Bool)arg3;
 - (id)_internal;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 @property(readonly, nonatomic) unsigned int sessionEndedReason;
@@ -28,6 +30,7 @@
 @property(readonly, nonatomic) NSString *sessionID;
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1 options:(id)arg2;
+- (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3;
 
 @end
 

@@ -12,5 +12,8 @@
 @property(readonly, copy, nonatomic) NSString *pluginIdentifier;
 - (id <HDProfileExtension>)extensionForProfile:(HDProfile *)arg1;
 - (id <HDHealthDaemonExtension>)extensionForHealthDaemon:(id <HDHealthDaemon>)arg1;
+
+@optional
++ (_Bool)shouldLoadPluginForDaemon:(id <HDHealthDaemon>)arg1;
 @end
 

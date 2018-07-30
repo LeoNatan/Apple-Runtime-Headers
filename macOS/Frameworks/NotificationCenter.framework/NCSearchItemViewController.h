@@ -6,6 +6,7 @@
 
 #import <NotificationCenter/NCListItemViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface NCSearchItemViewController : NCListItemViewController
 {
 }

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     int _inTetheredDemoMode;
     id <NSObject> _tetheredDemoNotificationToken;
     _Bool _waitingForAuthorization;
+    _Bool _isPairedLocationsEnable;
     _Bool _locationServicesPreferencesDialogEnabled;
     id <MKLocationProviderDelegate> _delegate;
     NSBundle *_effectiveBundle;

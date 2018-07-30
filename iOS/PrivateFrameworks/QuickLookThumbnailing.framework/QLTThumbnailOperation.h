@@ -28,12 +28,15 @@
 - (_Bool)isFinished;
 - (void).cxx_destruct;
 - (void)main;
-- (_Bool)_finishIfCancelled;
 - (void)_logOperationDuration;
+- (void)__finishWithError:(id)arg1;
+- (_Bool)_finishIfCancelled;
 - (void)_finishWithError:(id)arg1;
 - (void)_finish;
+- (void)cancel;
 - (void)start;
 - (_Bool)isConcurrent;
+- (_Bool)isAsynchronous;
 - (void)setExecuting:(_Bool)arg1;
 - (void)setFinished:(_Bool)arg1;
 - (id)initWithThumbnailRequest:(id)arg1;

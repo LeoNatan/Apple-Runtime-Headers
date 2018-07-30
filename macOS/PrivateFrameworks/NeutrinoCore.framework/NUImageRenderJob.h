@@ -14,6 +14,7 @@
     NUPurgeableStoragePool *_storagePool;
     id <NUPurgeableStorage> _renderDestination;
     NURegion *_regionToRender;
+    id <NUMutablePurgeableImage> _targetImage;
     NURegion *_renderedRegion;
     id <NUPurgeableImage> _renderedImage;
     CIRenderTask *_renderTask;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) CIRenderTask *renderTask; // @synthesize renderTask=_renderTask;
 @property(readonly, nonatomic) id <NUPurgeableImage> renderedImage; // @synthesize renderedImage=_renderedImage;
 @property(readonly, nonatomic) NURegion *renderedRegion; // @synthesize renderedRegion=_renderedRegion;
+@property(readonly, nonatomic) id <NUMutablePurgeableImage> targetImage; // @synthesize targetImage=_targetImage;
 @property(readonly, nonatomic) NURegion *regionToRender; // @synthesize regionToRender=_regionToRender;
 - (void).cxx_destruct;
 - (void)cleanUp;
@@ -36,7 +38,7 @@
 - (id)scalePolicy;
 - (id)newRenderPipelineStateForEvaluationMode:(long long)arg1;
 - (id)imageRequest;
-- (id)imageAccumulationNodeWithSize:(CDStruct_912cb5d2)arg1 format:(id)arg2 colorSpace:(id)arg3;
+- (id)imageAccumulationNodeWithImageSize:(CDStruct_912cb5d2)arg1 tileSize:(CDStruct_912cb5d2)arg2 format:(id)arg3 colorSpace:(id)arg4;
 - (id)initWithRequest:(id)arg1;
 - (id)initWithImageRequest:(id)arg1;
 

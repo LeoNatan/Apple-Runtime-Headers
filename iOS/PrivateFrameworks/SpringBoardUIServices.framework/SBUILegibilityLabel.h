@@ -8,7 +8,7 @@
 
 #import "SBUILegibility.h"
 
-@class NSArray, NSAttributedString, NSString, UIColor, UIFont, UILabel, UILayoutGuide, _UILegibilitySettings, _UILegibilityView;
+@class NSAttributedString, NSString, UIColor, UIFont, UILabel, _UILegibilitySettings, _UILegibilityView;
 
 @interface SBUILegibilityLabel : UIView <SBUILegibility>
 {
@@ -18,9 +18,6 @@
     double _strength;
     long long _options;
     double _scale;
-    NSArray *_legibilityConstraints;
-    UILayoutGuide *_firstBaselineLayoutGuide;
-    UILayoutGuide *_lastBaselineLayoutGuide;
     NSString *_string;
     UIFont *_font;
     NSAttributedString *_attributedText;
@@ -38,16 +35,15 @@
 - (void)_updateLegibilityView;
 - (_Bool)_needsColorImage;
 - (void)_updateLabelForLegibilitySettings;
-- (double)_layoutGuideOffsetFromBottom:(id)arg1;
 - (void)_markOurselfDirty;
 - (void)layoutSubviews;
+- (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (void)didMoveToWindow;
-@property(nonatomic) _Bool useColorFilters; // @dynamic useColorFilters;
 @property(readonly, nonatomic) double lastBaselineOffsetFromBottom;
 @property(readonly, nonatomic) double firstBaselineOffsetFromBottom;
 @property(readonly, nonatomic) struct UIEdgeInsets characterOverflowInsets;

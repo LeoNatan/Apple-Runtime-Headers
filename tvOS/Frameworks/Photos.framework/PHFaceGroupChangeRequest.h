@@ -58,6 +58,7 @@
 @property(readonly, nonatomic) NSString *managedEntityName;
 @property(nonatomic) long long unnamedFaceCount;
 @property(readonly, nonatomic) PHObjectPlaceholder *placeholderForCreatedFaceGroup;
+- (_Bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareForServicePreflightCheck:(id *)arg1;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;

@@ -27,7 +27,6 @@
 - (_Bool)_wantsQuadraHighResolutionForMode:(long long)arg1 device:(long long)arg2;
 - (_Bool)_shouldEnableLivePhotoCaptureForMode:(long long)arg1 device:(long long)arg2;
 - (_Bool)_isStillImageMode:(long long)arg1;
-- (_Bool)_isVideoMode:(long long)arg1;
 - (void)_performPostConfigurationSanityCheckForGraphConfiguration:(id)arg1 withContext:(id)arg2;
 - (void)_performPostConfigurationSetupForGraphConfiguration:(id)arg1 withContext:(id)arg2;
 - (id)_specificPreparePhotoSettingsCommandForGraphConfiguration:(id)arg1;
@@ -40,6 +39,7 @@
 - (id)userInfo;
 - (void)executeWithContext:(id)arg1;
 - (void)_sanitizeDeviceUsingContext:(id)arg1;
+- (id)sessionModificationLogReason;
 - (_Bool)requiresSessionModification;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

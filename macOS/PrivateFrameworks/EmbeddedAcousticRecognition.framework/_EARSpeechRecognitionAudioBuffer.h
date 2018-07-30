@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)_detachFromRecognizer;
 - (void)cancelRecognition;
+- (void)triggerServerSideEndPointer;
 - (void)endAudio;
 - (void)addAudioSampleData:(id)arg1;
 - (void)addAudioSamples:(const short *)arg1 count:(unsigned long long)arg2;

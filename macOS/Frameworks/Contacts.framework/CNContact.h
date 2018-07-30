@@ -79,6 +79,7 @@
     NSString *_searchIndex;
     NSString *_preferredLikenessSource;
     NSString *_preferredApplePersonaIdentifier;
+    NSString *_preferredChannel;
 }
 
 + (id)unifyContacts:(id)arg1;
@@ -127,6 +128,7 @@
 + (id)contactFromSuggestion:(id)arg1;
 + (id)predicateForSuggestionIdentifier:(unsigned long long)arg1;
 @property(readonly, copy) NSData *fullscreenImageData; // @synthesize fullscreenImageData=_fullscreenImageData;
+@property(readonly, copy) NSString *preferredChannel; // @synthesize preferredChannel=_preferredChannel;
 @property(readonly, copy) NSString *pronunciationFamilyName; // @synthesize pronunciationFamilyName=_pronunciationFamilyName;
 @property(readonly, copy) NSString *pronunciationGivenName; // @synthesize pronunciationGivenName=_pronunciationGivenName;
 @property(readonly, copy) NSString *sectionForSortingByFamilyName; // @synthesize sectionForSortingByFamilyName=_sectionForSortingByFamilyName;

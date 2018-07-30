@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, PKLinedPaper, PKRenderer, PKStrokeGenerator;
+#import "PKRendererControllerProtocol.h"
 
-@interface PKRendererController : NSObject
+@class NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, PKLinedPaper, PKRenderer, PKStrokeGenerator;
+
+@interface PKRendererController : NSObject <PKRendererControllerProtocol>
 {
     NSObject<OS_dispatch_queue> *_renderQueue;
     NSObject<OS_dispatch_semaphore> *_canBeginRenderSemaphore;
@@ -23,38 +25,39 @@
     unsigned int _resolveColorRenderbuffer;
     int renderbufferWidth;
     int renderbufferHeight;
-    BOOL _drawingCommands;
     PKStrokeGenerator *_inputController;
     PKLinedPaper *_linedPaper;
     PKRenderer *_renderer;
     double _inputScale;
-    struct CGSize _pixelSize;
     struct CGSize _actualSize;
+    struct CGSize _pixelSize;
     struct CGRect _viewScissor;
     struct CGAffineTransform _strokeTransform;
     struct CGAffineTransform _paperTransform;
     struct CGAffineTransform _renderTransform;
 }
 
-@property BOOL drawingCommands; // @synthesize drawingCommands=_drawingCommands;
 @property double inputScale; // @synthesize inputScale=_inputScale;
 @property struct CGAffineTransform renderTransform; // @synthesize renderTransform=_renderTransform;
 @property(retain, nonatomic) PKRenderer *renderer; // @synthesize renderer=_renderer;
-@property(retain, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
-@property(nonatomic) struct CGSize actualSize; // @synthesize actualSize=_actualSize;
-@property(nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
-@property(nonatomic) struct CGRect viewScissor; // @synthesize viewScissor=_viewScissor;
+@property(readonly, nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
+@property(readonly, nonatomic) struct CGSize actualSize; // @synthesize actualSize=_actualSize;
 @property(nonatomic) struct CGAffineTransform paperTransform; // @synthesize paperTransform=_paperTransform;
-@property(nonatomic) struct CGAffineTransform strokeTransform; // @synthesize strokeTransform=_strokeTransform;
+@property(nonatomic) struct CGRect viewScissor; // @synthesize viewScissor=_viewScissor;
+@property(retain, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
 @property(readonly, nonatomic) PKStrokeGenerator *inputController; // @synthesize inputController=_inputController;
+@property(nonatomic) struct CGAffineTransform strokeTransform; // @synthesize strokeTransform=_strokeTransform;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *renderQueue; // @synthesize renderQueue=_renderQueue;
 - (void).cxx_destruct;
+- (void)buildRenderCacheForStrokes:(id)arg1;
 - (void)drawingCancelledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)drawingCancelled;
 - (void)drawingEnded:(id)arg1 finishStrokeBlock:(CDUnknownBlockType)arg2;
 - (void)drawingBeganWithStroke:(id)arg1;
+- (void)_drawStrokesAfterClear:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 strokeTransform:(struct CGAffineTransform)arg3 useLayerContext:(BOOL)arg4 renderCompletion:(CDUnknownBlockType)arg5;
 - (void)drawStrokesAfterClear:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 strokeTransform:(struct CGAffineTransform)arg3 useLayerContext:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)drawStrokesAfterClear:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)renderStrokes:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 strokeTransform:(struct CGAffineTransform)arg3 imageClipRect:(struct CGRect)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)drawStrokes:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)drawStrokes:(id)arg1 renderIntermediateSteps:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)drawImage:(struct CGImage *)arg1 andMask:(struct CGImage *)arg2 clippedToStrokeSpaceRect:(struct CGRect)arg3;
@@ -62,38 +65,46 @@
 - (void)setBackgroundColor:(struct CGColor *)arg1;
 - (void)setBackgroundImage:(struct CGImage *)arg1;
 @property(nonatomic) double backboardPaperMultiply;
-@property(nonatomic) BOOL solidColorBackboard;
+- (BOOL)solidColorBackboard;
+- (void)setSolidColorBackboard:(BOOL)arg1;
 - (void)_renderDrawPoints;
 - (void)clear;
 - (void)finishRenderingAndPresent:(BOOL)arg1 stopBlock:(CDUnknownBlockType)arg2;
 - (BOOL)prerenderWithTransform:(struct CGAffineTransform)arg1 inputScale:(double)arg2 at:(double)arg3;
 - (void)setBufferSize:(struct CGSize)arg1;
+- (void)callBlockAfterPresenting:(CDUnknownBlockType)arg1;
+- (void)didFinishRendering:(CDUnknownBlockType)arg1;
 - (struct CGImage *)newCGImageWithClipRect:(struct CGRect)arg1;
 - (struct CGImage *)newCGImage;
 - (void)renderTilesIntoTiles:(id)arg1;
-- (void)renderTiles:(id)arg1;
-- (void)_copyIntoTilesFromRenderQueue:(id)arg1;
+- (void)renderTiles:(id)arg1 tileTransform:(struct CGAffineTransform)arg2;
+- (void)_copyIntoTilesFromRenderQueue:(id)arg1 tileTransform:(struct CGAffineTransform)arg2;
 - (void)copyIntoTiles:(id)arg1;
 - (BOOL)drawStrokes:(id)arg1 intoTile:(id)arg2 renderCount:(long long)arg3;
-- (void)setupNewTile:(id)arg1;
 - (void)didTeardownTile;
-- (struct CGRect)getContentsBoundsInStrokeSpace;
-- (struct CGRect)_getContentsBoundsInStrokeSpace;
 - (void)changeRenderSize;
 - (void)setPixelSize:(struct CGSize)arg1 actualSize:(struct CGSize)arg2;
 - (void)_deleteFramebuffer;
+- (void)cancelVSyncTimeoutBlock;
 - (BOOL)isAllRenderingCancelled;
 - (BOOL)isLongRunningRenderingCancelled;
 - (void)enableRendering;
 - (void)disableRendering;
+- (void)resumeLongRunningRendersAfterAllWorkIsDone;
 - (void)resumeLongRunningRenders;
 - (void)cancelLongRunningRenders;
 - (void)cancelAllRendering;
 - (void)setup;
 - (void)dealloc;
 - (void)teardown;
-- (id)initWithPixelSize:(struct CGSize)arg1 actualSize:(struct CGSize)arg2;
+- (id)initWithPixelSize:(struct CGSize)arg1 actualSize:(struct CGSize)arg2 renderQueue:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

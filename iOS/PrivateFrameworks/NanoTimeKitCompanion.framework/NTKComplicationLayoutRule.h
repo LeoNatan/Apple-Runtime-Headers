@@ -11,8 +11,9 @@
     struct UIEdgeInsets _keylinePadding;
 }
 
-+ (id)layoutRuleWithReferenceFrame:(struct CGRect)arg1 horizontalLayout:(long long)arg2 verticalLayout:(long long)arg3 keylinePadding:(struct UIEdgeInsets)arg4 clip:(_Bool)arg5;
-+ (id)layoutRuleWithReferenceFrame:(struct CGRect)arg1 horizontalLayout:(long long)arg2 verticalLayout:(long long)arg3 keylinePadding:(struct UIEdgeInsets)arg4;
++ (id)layoutRuleForDevice:(id)arg1 withReferenceFrame:(struct CGRect)arg2 horizontalLayout:(long long)arg3 verticalLayout:(long long)arg4 keylinePadding:(struct UIEdgeInsets)arg5 clip:(_Bool)arg6 transform:(struct CGAffineTransform)arg7;
++ (id)layoutRuleForDevice:(id)arg1 withReferenceFrame:(struct CGRect)arg2 horizontalLayout:(long long)arg3 verticalLayout:(long long)arg4 keylinePadding:(struct UIEdgeInsets)arg5 clip:(_Bool)arg6;
++ (id)layoutRuleForDevice:(id)arg1 withReferenceFrame:(struct CGRect)arg2 horizontalLayout:(long long)arg3 verticalLayout:(long long)arg4 keylinePadding:(struct UIEdgeInsets)arg5;
 @property(readonly, nonatomic) struct UIEdgeInsets keylinePadding; // @synthesize keylinePadding=_keylinePadding;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

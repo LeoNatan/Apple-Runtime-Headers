@@ -48,7 +48,7 @@ __attribute__((visibility("hidden")))
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 device:(id)arg3;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 quadParticleCount:(unsigned long long)arg2 device:(id)arg3;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 meshSize:(struct CGSize)arg2 device:(id)arg3;
-+ (id)newDataBufferWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 doubleBuffered:(_Bool)arg4 device:(id)arg5;
++ (id)newDataBufferWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 device:(id)arg4;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 textureFlipped:(_Bool)arg3;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2;
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3;
@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 + (id)newDataBufferWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 quadParticleCount:(unsigned long long)arg2;
 + (id)newDataBufferWithVertexAttributes:(id)arg1 meshSize:(struct CGSize)arg2;
-+ (id)newDataBufferWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 doubleBuffered:(_Bool)arg4;
++ (id)newDataBufferWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3;
 @property(readonly) unsigned long long centerAttributeIndex; // @synthesize centerAttributeIndex=_centerAttributeIndex;
 @property(readonly) unsigned long long texCoordAttributeIndex; // @synthesize texCoordAttributeIndex=_texCoordAttributeIndex;
 @property(readonly) unsigned long long positionAttributeIndex; // @synthesize positionAttributeIndex=_positionAttributeIndex;
@@ -80,12 +80,17 @@ __attribute__((visibility("hidden")))
 - (void)setCGFloat:(double)arg1 forAttribute:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)setGLfloat:(float)arg1 forAttribute:(id)arg2 atIndex:(unsigned long long)arg3;
 - (float)GLfloatForAttribute:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)drawWithEncoder:(id)arg1 atIndex:(unsigned long long)arg2 advanceDynamicBuffer:(_Bool)arg3;
 - (void)drawWithEncoder:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)drawWithEncoder:(id)arg1 atIndex:(unsigned long long)arg2 range:(struct _NSRange)arg3 advanceDynamicBuffer:(_Bool)arg4;
 - (void)drawWithEncoder:(id)arg1 atIndex:(unsigned long long)arg2 range:(struct _NSRange)arg3;
 - (void)encodeWithEncoder:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)disableWithDevice:(id)arg1;
+- (void)drawWithShader:(id)arg1 range:(struct _NSRange)arg2 deactivateShaderWhenDone:(_Bool)arg3 advanceDynamicBuffer:(_Bool)arg4;
 - (void)drawWithShader:(id)arg1 range:(struct _NSRange)arg2 deactivateShaderWhenDone:(_Bool)arg3;
+- (void)drawWithShader:(id)arg1 deactivateShaderWhenDone:(_Bool)arg2 advanceDynamicBuffer:(_Bool)arg3;
 - (void)drawWithShader:(id)arg1 deactivateShaderWhenDone:(_Bool)arg2;
+- (void)drawWithShader:(id)arg1 advanceDynamicBuffer:(_Bool)arg2;
 - (void)drawWithShader:(id)arg1;
 - (void)disableDataBufferWithShader:(id)arg1;
 - (void)enableDataBufferWithShader:(id)arg1;
@@ -98,8 +103,8 @@ __attribute__((visibility("hidden")))
 - (void)teardown;
 - (void)enableDataBuffer;
 - (id)initWithVertexRect:(struct CGRect)arg1 textureRect:(struct CGRect)arg2 meshSize:(struct CGSize)arg3 textureFlipped:(_Bool)arg4 includeCenterAttribute:(_Bool)arg5;
-- (id)initWithVertexAttributes:(id)arg1 meshSize:(struct CGSize)arg2;
-- (id)initWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 doubleBuffered:(_Bool)arg4;
+- (id)initWithVertexAttributes:(id)arg1 meshSize:(struct CGSize)arg2 bufferCount:(unsigned long long)arg3;
+- (id)initWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 bufferCount:(unsigned long long)arg4;
 - (void)p_setupGLElementArrayBufferIfNecessary;
 - (void)p_setupElementArrayBufferIfNecessary;
 

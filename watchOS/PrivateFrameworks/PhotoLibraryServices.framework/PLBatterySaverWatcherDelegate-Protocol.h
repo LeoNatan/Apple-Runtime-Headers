@@ -7,6 +7,6 @@
 #import "NSObject.h"
 
 @protocol PLBatterySaverWatcherDelegate <NSObject>
-- (void)batterySaverModeDidChange:(_Bool)arg1;
+- (void)batterySaverModeDidChange;
 @end
 

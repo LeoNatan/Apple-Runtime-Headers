@@ -8,6 +8,7 @@
 
 @class CALayer, CAShapeLayer, UIPDFPageView, UIView, UIWindow;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFMagnifierController : NSObject
 {
     UIWindow *_textEffectsWindow;

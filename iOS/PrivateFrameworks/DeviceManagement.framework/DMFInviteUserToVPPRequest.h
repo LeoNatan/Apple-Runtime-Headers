@@ -4,17 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSString, NSURL;
 
-@interface DMFInviteUserToVPPRequest : CATTaskRequest
+@interface DMFInviteUserToVPPRequest : DMFTaskRequest
 {
     NSURL *_URL;
     NSString *_originator;
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(copy, nonatomic) NSString *originator; // @synthesize originator=_originator;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;

@@ -15,6 +15,7 @@
     NSArray *_limitedPersistentIDs;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSArray *limitedPersistentIDs; // @synthesize limitedPersistentIDs=_limitedPersistentIDs;
 @property(readonly, nonatomic) ML3Container *container; // @synthesize container=_container;
 - (void).cxx_destruct;

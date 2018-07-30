@@ -112,10 +112,7 @@
 - (struct CGRect)focusRingMaskBoundsForFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawFocusRingMaskWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (int)_vibrancyBlendModeForControlView:(id)arg1;
-- (id)_vibrancyFilterForControlView:(id)arg1;
-- (BOOL)_allowsVibrancyForControlView:(id)arg1;
 - (BOOL)canSmoothFontsInFrame:(struct CGRect)arg1 forLayerBackedView:(id)arg2;
-- (BOOL)_funkyOptOutLogicThatShouldGoAwayForView:(id)arg1 semanticContext:(int)arg2;
 - (struct __CFDictionary *)_copyCoreUIBackgroundDrawOptionsForSegment:(long long)arg1 inView:(id)arg2 drawFlags:(unsigned long long *)arg3;
 - (long long)_segmentHighlightState:(long long)arg1;
 - (unsigned long long)_getVisualStateForSegment:(unsigned long long)arg1 andTrackingMode:(unsigned long long *)arg2 forApplicableStyle:(long long)arg3;
@@ -155,7 +152,7 @@
 - (void)_postRolloverNotification;
 - (long long)_segmentShowingRollover;
 - (void)setControlView:(id)arg1;
-- (void)_controlView:(id)arg1 didChangeAppearance:(id)arg2;
+- (void)_controlViewDidChangeEffectiveAppearance:(id)arg1;
 - (void)_invalidateSegmentSizes;
 - (void)setControlSize:(unsigned long long)arg1;
 - (void)setFont:(id)arg1;

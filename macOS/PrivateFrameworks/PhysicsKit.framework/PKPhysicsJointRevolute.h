@@ -13,6 +13,7 @@
     struct CGPoint _anchor;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint)arg3;
 @property(readonly) struct CGPoint anchor; // @synthesize anchor=_anchor;
 - (id).cxx_construct;
@@ -25,6 +26,7 @@
 @property(nonatomic) double upperAngleLimit;
 @property(nonatomic) double lowerAngleLimit;
 @property(nonatomic) BOOL shouldEnableLimits;
+- (BOOL)isEqualToRevoluteJoint:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint)arg3;

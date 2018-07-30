@@ -8,6 +8,7 @@
 
 @class AUPasscodeCodecConfiguration, AUPasscodeDecoder, AVAudioEngine, AVAudioSession, AVAudioUnit;
 
+__attribute__((visibility("hidden")))
 @interface APCListenerEngine : NSObject
 {
     AVAudioSession *_session;
@@ -20,7 +21,7 @@
 + (id)listenerWithCodecConfig:(id)arg1 queue:(id)arg2 dataReceivedHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (void).cxx_destruct;
 - (void)stopEngine;
-- (void)startEngine;
+- (void)startEngineWithError:(id *)arg1;
 - (void)makeEngineConnections;
 - (void)createEngineAndAttachNodes;
 - (void)setupAudioSession;

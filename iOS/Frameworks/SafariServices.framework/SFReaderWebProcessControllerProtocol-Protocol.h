@@ -9,6 +9,8 @@
 @class NSDictionary, NSNumber, NSString, WKBrowsingContextHandle;
 
 @protocol SFReaderWebProcessControllerProtocol <NSObject>
+- (void)willHideReader;
+- (void)didFinishPresentationUpdateAfterTransitioningToReader;
 - (void)prepareReaderContentForPrinting;
 - (void)decreaseReaderTextSize;
 - (void)increaseReaderTextSize;

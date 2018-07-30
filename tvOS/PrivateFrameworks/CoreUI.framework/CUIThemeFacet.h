@@ -12,7 +12,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface CUIThemeFacet : NSObject <CUIThemeImageSource, NSCopying, NSCoding>
 {
     struct _renditionkeytoken *_renditionKeyList;
@@ -55,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)thumbnailSize;
 - (id)thumbnail;
 - (id)displayName;
+- (id)properties;
 - (_Bool)isTintable;
 - (long long)renditionType;
 - (id)renditionKey;
@@ -96,7 +96,7 @@ __attribute__((visibility("hidden")))
 - (void)drawHighlightInFrame:(struct CGRect)arg1 alpha:(double)arg2 keyAdjustment:(id)arg3 context:(struct CGContext *)arg4;
 - (void)drawInFrame:(struct CGRect)arg1 alpha:(double)arg2 operation:(int)arg3 isFocused:(int)arg4 keyAdjustment:(id)arg5 context:(struct CGContext *)arg6;
 - (void)drawInFrame:(struct CGRect)arg1 alpha:(double)arg2 isFocused:(int)arg3 keyAdjustment:(id)arg4 context:(struct CGContext *)arg5;
-- (void)drawGradientInFrame:(struct CGRect)arg1 angle:(double)arg2 alpha:(double)arg3 operation:(int)arg4 isFocused:(int)arg5 keyAdjustment:(id)arg6 context:(struct CGContext *)arg7;
+- (void)drawGradientInFrame:(struct CGRect)arg1 angle:(double)arg2 alpha:(double)arg3 operation:(int)arg4 isFocused:(int)arg5 keyAdjustment:(id)arg6 context:(struct CGContext *)arg7 effects:(id)arg8;
 - (void)drawHighlightInFrame:(struct CGRect)arg1 alpha:(double)arg2 operation:(int)arg3 owner:(id)arg4 userInfo:(id)arg5 context:(struct CGContext *)arg6;
 - (void)drawInFrame:(struct CGRect)arg1 alpha:(double)arg2 operation:(int)arg3 owner:(id)arg4 userInfo:(id)arg5 context:(struct CGContext *)arg6;
 - (void)drawPulseInFrame:(struct CGRect)arg1 pulseValue:(double)arg2 owner:(id)arg3 userInfo:(id)arg4 context:(struct CGContext *)arg5;

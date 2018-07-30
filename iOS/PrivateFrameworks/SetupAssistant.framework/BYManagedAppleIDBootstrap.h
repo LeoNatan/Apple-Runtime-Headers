@@ -7,19 +7,25 @@
 #import "NSObject.h"
 
 #import "AKAppleIDAuthenticationDelegate.h"
+#import "SUNetworkObserver.h"
 
 @class AKAppleIDAuthenticationContext, NSString;
 
-@interface BYManagedAppleIDBootstrap : NSObject <AKAppleIDAuthenticationDelegate>
+@interface BYManagedAppleIDBootstrap : NSObject <AKAppleIDAuthenticationDelegate, SUNetworkObserver>
 {
     AKAppleIDAuthenticationContext *_authContext;
+    _Bool _shouldRetrySilentLoginUpgrade;
+    long long _silentLoginUpgradeRetryCount;
 }
 
 + (_Bool)isSettingUpMultiUser;
 + (_Bool)isMultiUser;
 + (id)delegateBundleIDsForManagedAccount;
 + (id)sharedManager;
+@property(nonatomic) long long silentLoginUpgradeRetryCount; // @synthesize silentLoginUpgradeRetryCount=_silentLoginUpgradeRetryCount;
+@property(nonatomic) _Bool shouldRetrySilentLoginUpgrade; // @synthesize shouldRetrySilentLoginUpgrade=_shouldRetrySilentLoginUpgrade;
 - (void).cxx_destruct;
+- (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)writeAccountConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_languageConfigurationDictionary;
 - (void)_upgradeShortLivedTokenCompletion:(CDUnknownBlockType)arg1;

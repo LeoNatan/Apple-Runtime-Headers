@@ -8,6 +8,7 @@
 
 @protocol BrowserContainerDelegate
 - (FI_TBrowserViewContainerController *)browserViewContainerControllerForContainer:(FI_TBrowserContainerController *)arg1;
+- (_Bool)shouldShowRecents;
 - (_Bool)containerValidateToolbarItem:(NSToolbarItem *)arg1;
 - (void)containerConnectBackupDelegate:(FI_TBrowserContainerController *)arg1;
 - (void)containerCloseContainer:(FI_TBrowserContainerController *)arg1;

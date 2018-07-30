@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AWDServerConnection, NFAWDVersionInfo, NFWeakReference, NSData, NSObject<OS_dispatch_queue>, NSUserDefaults;
+@class AWDServerConnection, NFAWDVersionInfo, NFWeakReference, NSCountedSet, NSData, NSObject<OS_dispatch_queue>, NSUserDefaults;
 
 @interface NFAWDLogger : NSObject
 {
@@ -27,11 +27,14 @@
     unsigned long long _previousExpressTransactionState;
     NSData *_restrictedModeID;
     NFWeakReference *_delegate;
+    NSCountedSet *_expressTransactionInfo;
     NSData *_activeAID;
 }
 
 + (id)sharedAWDLogger;
 @property(copy) NSData *activeAID; // @synthesize activeAID=_activeAID;
+- (void)postAWDMobileSoftwareUpdateException:(unsigned int)arg1;
+- (void)postAWDFelicaStateChangeEvent:(id)arg1;
 - (void)postAWDHCEEndEvent;
 - (void)postAWDHCEStateChangeEvent:(unsigned int)arg1;
 - (void)postAWDHCEStartEvent:(id)arg1;
@@ -71,7 +74,7 @@
 - (void)postAWDHCIStartOfTransactionEventWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
 - (void)postAWDCardIngestionReaderStateChangeWithType:(unsigned int)arg1 errorCode:(unsigned int)arg2;
 - (void)postAWDCardIngestionSessionStateChange:(id)arg1;
-- (void)postAWDExpressTransactionEventFor:(unsigned int)arg1 started:(BOOL)arg2;
+- (void)postAWDExpressTransactionEvent:(id)arg1;
 - (void)postAWDCRSActivationTimerExpiredWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
 - (void)postAWDSESelectEventWithAID:(id)arg1;
 - (void)postAWDCRSDeAuthWithStatus:(unsigned int)arg1;
@@ -87,6 +90,10 @@
 - (void)updateStats:(id)arg1 reset:(BOOL)arg2;
 - (void)_updateStats:(id)arg1 reset:(BOOL)arg2;
 - (void)enableQueryMetricsListener;
+- (void)_registerExpressTransactionStatisticMetric;
+- (void)_registerDeviceExceptionStatisticMetric;
+- (void)_registerGeneralStatisticMetric;
+- (void)_registerNFCVersionMetric;
 - (id)init;
 @property(nonatomic) __weak id <NFAWDLoggerDelegate> delegate;
 - (void)dealloc;

@@ -14,6 +14,7 @@
 {
     _Bool _read;
     _Bool _allDay;
+    _Bool _previewRestricted;
     BBBulletin *_bbBulletin;
     NSString *_bulletinID;
     NSString *_recordID;
@@ -34,6 +35,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(readonly, nonatomic) _Bool previewRestricted; // @synthesize previewRestricted=_previewRestricted;
 @property(readonly, copy, nonatomic) NSString *publisherBulletinID; // @synthesize publisherBulletinID=_publisherBulletinID;
 @property(readonly, copy, nonatomic) NSArray *intentIDs; // @synthesize intentIDs=_intentIDs;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;

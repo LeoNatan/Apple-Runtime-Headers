@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSControllerArrayProxyMutatorArray.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSControllerTreeProxyMutatorArray : _NSControllerArrayProxyMutatorArray
 {
 }

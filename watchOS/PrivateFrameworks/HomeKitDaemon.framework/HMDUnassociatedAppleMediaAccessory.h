@@ -36,7 +36,6 @@
 @property(retain) NSString *model; // @synthesize model=_model;
 - (id)descriptionWithPointer:(_Bool)arg1 additionalDescription:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 category:(id)arg3 messageDispatcher:(id)arg4;
-- (id)initWithIdentifier:(id)arg1 device:(id)arg2 messageDispatcher:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

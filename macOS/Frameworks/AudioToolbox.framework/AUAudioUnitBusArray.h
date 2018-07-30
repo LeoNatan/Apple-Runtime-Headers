@@ -16,10 +16,10 @@
     BOOL _countChangeable;
     AUAudioUnit *_ownerAudioUnit;
     long long _busType;
-    vector_07ddb480 _observers;
+    vector_e102d759 _observers;
 }
 
-@property(nonatomic) vector_07ddb480 observers; // @synthesize observers=_observers;
+@property(nonatomic) vector_e102d759 observers; // @synthesize observers=_observers;
 @property(readonly) long long busType; // @synthesize busType=_busType;
 @property(readonly) AUAudioUnit *ownerAudioUnit; // @synthesize ownerAudioUnit=_ownerAudioUnit;
 @property(readonly, getter=isCountChangeable) BOOL countChangeable; // @synthesize countChangeable=_countChangeable;

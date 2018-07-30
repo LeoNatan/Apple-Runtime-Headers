@@ -10,7 +10,6 @@
 
 @class NSArray, NSString, OADTableStyle;
 
-__attribute__((visibility("hidden")))
 @interface OADTableProperties : OADDrawableProperties <OADEffectsParent>
 {
     OADTableStyle *mStyle;
@@ -25,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)hasEffects;
 - (void)setEffects:(id)arg1;
@@ -47,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)rightToLeft;
 - (void)setStyle:(id)arg1;
 - (id)style;
-- (void)dealloc;
 - (id)initWithDefaults;
 
 // Remaining properties

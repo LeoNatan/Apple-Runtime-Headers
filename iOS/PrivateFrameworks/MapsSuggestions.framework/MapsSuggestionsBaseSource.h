@@ -23,7 +23,9 @@
 - (id)currentBestLocation;
 - (unsigned long long)deleteMyEntries:(struct NSArray *)arg1;
 - (unsigned long long)addOrUpdateMySuggestionEntries:(struct NSArray *)arg1 deleteMissing:(_Bool)arg2;
-- (_Bool)canProduceEntriesOfType:(unsigned long long)arg1;
+- (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)canProduceEntriesOfType:(long long)arg1;
+- (double)updateSuggestionEntriesOfType:(long long)arg1;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;

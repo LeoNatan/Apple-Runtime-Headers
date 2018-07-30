@@ -10,13 +10,9 @@
 
 @protocol _SFPBUserActivityInfo <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasUrlValue;
 @property(retain, nonatomic) _SFPBURL *urlValue;
-@property(readonly, nonatomic) _Bool hasStringValue;
 @property(copy, nonatomic) NSString *stringValue;
-@property(readonly, nonatomic) _Bool hasKey;
 @property(copy, nonatomic) NSString *key;
-@property(readonly, nonatomic) _Bool hasValueType;
 @property(nonatomic) int valueType;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

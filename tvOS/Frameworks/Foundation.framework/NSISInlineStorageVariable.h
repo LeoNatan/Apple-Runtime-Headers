@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 @property int valueRestriction; // @synthesize valueRestriction=_valueRestriction;
 @property(copy) NSString *name; // @synthesize name=_name;
 - (oneway void)dealloc;
+- (int)nsis_orientationHintForVariable:(id)arg1;
 - (_Bool)nsis_valueOfVariableIsUserObservable:(id)arg1;
-- (_Bool)nsis_shouldIntegralizeVariable:(id)arg1;
 - (id)nsis_descriptionOfVariable:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

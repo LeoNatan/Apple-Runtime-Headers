@@ -21,6 +21,7 @@
     NSDictionary *_generationOptions;
     _Bool _observingReachability;
     _Bool _isLightweightMigrationManager;
+    _Bool _simulatesTimeout;
     NSManagedObjectContext *_managedObjectContext;
     PLPhotoLibrary *_momentGenerationLibrary;
 }
@@ -32,6 +33,8 @@
 + (id)sharedMomentGenerationDataManager;
 @property(retain, nonatomic) PLPhotoLibrary *momentGenerationLibrary; // @synthesize momentGenerationLibrary=_momentGenerationLibrary;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
+@property(nonatomic) _Bool simulatesTimeout; // @synthesize simulatesTimeout=_simulatesTimeout;
+- (void)runPeriodicMaintenanceTasks:(unsigned long long)arg1 withTransaction:(id)arg2;
 - (id)_locationsOfInterest;
 - (id)locationsOfInterest;
 - (_Bool)needsLocationsOfInterestProcessing;
@@ -58,7 +61,7 @@
 - (id)momentListContainingDate:(id)arg1 forLevel:(short)arg2 wantsEarliest:(_Bool)arg3;
 - (id)momentsBetweenDate:(id)arg1 andDate:(id)arg2 sorted:(_Bool)arg3;
 - (id)momentsSinceDate:(id)arg1;
-- (id)momentsBetweenDateRanges:(id)arg1;
+- (id)momentsWithinDateInterval:(id)arg1;
 - (void)_removeKeepAlive;
 - (void)_updateKeepAlive;
 - (id)homeAddressDictionary;
@@ -71,6 +74,7 @@
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (id)momentAnalysisTransactionWithName:(const char *)arg1;
 - (void)invalidateLocationDataForAssetsInMoment:(id)arg1;
+- (void)invalidateLocationDataForAssetsWithOIDs:(id)arg1;
 - (id)generationOptions;
 - (unsigned long long)hardGenerationBatchSizeLimit;
 - (void)pendingChangesUpdated:(unsigned long long)arg1;
@@ -82,6 +86,7 @@
 - (_Bool)hasChanges;
 - (void)refreshAllObjects;
 - (void)refreshObject:(id)arg1 mergeChanges:(_Bool)arg2;
+- (id)momentsForAssetsWithUniqueIDs:(id)arg1 error:(id *)arg2;
 - (id)momentListWithUniqueID:(id)arg1 forLevel:(short)arg2 error:(id *)arg3;
 - (id)momentWithUniqueID:(id)arg1 error:(id *)arg2;
 - (id)assetsWithUniqueIDs:(id)arg1 error:(id *)arg2;
@@ -97,7 +102,9 @@
 - (id)deletedObjects;
 - (id)updatedObjects;
 - (id)insertedObjects;
+- (void)performDataTransaction:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2 priority:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)performDataTransaction:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)performBlock:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2 priority:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)performBlock:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)isMomentsSupportedOnPlatform;
 - (void)setupPhotoLibrary;

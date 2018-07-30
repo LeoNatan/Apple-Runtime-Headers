@@ -11,6 +11,7 @@
 
 @class BKSAssertionClientMultiplexer, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface BKSBaseAssertionClient : NSObject <BKSAssertionClientProtocol, BKSAssertionClientMultiplexerListening>
 {
     NSMapTable *_assertionHandlersByIdentifier;

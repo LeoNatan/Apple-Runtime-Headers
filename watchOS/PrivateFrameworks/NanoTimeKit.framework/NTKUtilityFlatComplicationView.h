@@ -12,6 +12,7 @@
 {
     UIView<NTKComplicationImageView> *_imageView;
     NTKColoringLabel *_label;
+    NTKColoringLabel *_activeLabel;
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;

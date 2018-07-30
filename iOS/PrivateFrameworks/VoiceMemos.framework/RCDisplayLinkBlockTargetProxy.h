@@ -6,6 +6,7 @@
 
 #import <VoiceMemos/RCDisplayLinkTargetProxy.h>
 
+__attribute__((visibility("hidden")))
 @interface RCDisplayLinkBlockTargetProxy : RCDisplayLinkTargetProxy
 {
     CDUnknownBlockType _handlerBlock;

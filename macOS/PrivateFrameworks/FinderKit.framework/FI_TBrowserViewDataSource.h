@@ -18,18 +18,18 @@ __attribute__((visibility("hidden")))
     struct TRef<NSObject<OS_dispatch_queue>*, TRetainReleasePolicy<dispatch_queue_t>> _workerSerialQueue;
     struct unique_ptr<TBlockingQueue, std::__1::default_delete<TBlockingQueue>> _callBackQueue;
     _Bool _isTornDown;
-    struct TNSRef<FI_TBVDSBulkConfigChangedState *, void> _bulkConfigChangedState;
-    unordered_map_4c4bc0f2 _nodeToChildrenDataMap;
+    struct TNSRef<FI_TBVDSBulkConfigChangedState, void> _bulkConfigChangedState;
+    unordered_map_9c9b7b32 _nodeToChildrenDataMap;
     _Bool _checkChildrenForTags;
-    struct TString _sortPropertyStr;
+    int _sortBy;
     _Bool _isSortInIncreasingOrder;
     _Bool _isSortFoldersFirst;
     struct unordered_map<TFENode, TGroupModeData, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TGroupModeData>>> _containerNodeToGroupDataMap;
-    struct TString _groupByPropertyStr;
-    struct unordered_map<TFENode, TNSRef<FI_TBVDSBusyStateIncrementer *, void>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<FI_TBVDSBusyStateIncrementer *, void>>>> _firstPopBusyStateIncrementers;
-    unsigned long long _busyStateRefCount;
+    int _groupBy;
+    struct unordered_map<TFENode, TNSRef<FI_TBVDSBusyStateIncrementer, void>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<FI_TBVDSBusyStateIncrementer, void>>>> _firstPopBusyStateIncrementers;
+    // Error parsing type: {atomic<unsigned long>="__a_"AQ}, name: _busyStateRefCount
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
-    unordered_set_9d385924 _alwaysVisibleNodes;
+    unordered_set_931aff12 _alwaysVisibleNodes;
     _Bool _isSwitchingViewStyles;
     struct unordered_map<TFENode, TOpenContainerOptions, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TOpenContainerOptions>>> _pendingNodeToOpenContainerOptions;
     struct unordered_map<TFENode, NodeNotificationOptions, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, NodeNotificationOptions>>> _pendingNodeToCloseContainerOptions;
@@ -44,12 +44,15 @@ __attribute__((visibility("hidden")))
 - (void)_modifyChildrenOfContainerAsync:(const struct TFENode *)arg1 withUnlockedFunctor:(const function_7b5bbfa5 *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openChildListUpdated:(const struct TFENode *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openSyncCompleted:(const struct TFENode *)arg2;
-- (void)handleOpenSyncCompletedAndChildListUpdated:(const struct TFENode *)arg1 containerNodeSet:(const unordered_set_9d385924 *)arg2 nodeToChildrenDataMapToModify:(unordered_map_4c4bc0f2 *)arg3 groupModeDataToModify:(struct TGroupModeData *)arg4 dataSourceChangedListToModify:(vector_f56638af *)arg5 isInGroupMode:(_Bool)arg6 checkChildrenForTags:(_Bool)arg7;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openSyncStarted:(const struct TFENode *)arg2;
+- (void)handleOpenSyncCompletedAndChildListUpdated:(const struct TFENode *)arg1 containerNodeSet:(const unordered_set_931aff12 *)arg2 nodeToChildrenDataMapToModify:(unordered_map_9c9b7b32 *)arg3 groupModeDataToModify:(struct TGroupModeData *)arg4 dataSourceChangedListToModify:(vector_274a36ec *)arg5 isInGroupMode:(_Bool)arg6 checkChildrenForTags:(_Bool)arg7;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 groupDefinitionChanged:(const struct TFENode *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesDeleted:(const struct TFENodeVector *)arg2 fromObservedNode:(const struct TFENode *)arg3;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 spotlightAttrSyncCompleted:(const struct TFENode *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesChanged:(const vector_614ab7ad *)arg2 inObservedNode:(const struct TFENode *)arg3;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesAdded:(const struct TFENodeVector *)arg2 toObservedNode:(const struct TFENode *)arg3;
+- (void)cancelDelayedNodeEventHandling;
+- (void)delayNodeEventHandling:(double)arg1;
 - (void)flushPendingEvents:(const function_b1fce659 *)arg1;
 - (struct TFENodeVector)typeSelectCandidates;
 - (struct TGroupManager *)_groupManagerForNode:(const struct TFENode *)arg1 calculateFolderSizes:(_Bool)arg2;
@@ -66,15 +69,16 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)numberOfGroupNodesForContainerNode:(const struct TFENode *)arg1;
 - (const struct TFENodeVector *)sortedGroupNodesForContainerNode:(const struct TFENode *)arg1;
 - (void)_rebuildOnWorkerQueue:(id)arg1;
-@property struct TString groupByPropertyStr; // @dynamic groupByPropertyStr;
+@property int groupBy; // @dynamic groupBy;
 - (_Bool)isInGroupMode;
 - (shared_ptr_0ec8498d)_newSortComparatorForContainerNode:(const struct TFENode *)arg1 calculateFolderSizes:(_Bool)arg2;
 - (shared_ptr_0ec8498d)_newGroupComparatorForContainerNode:(const struct TFENode *)arg1 withGroupManager:(struct TGroupManager *)arg2;
 - (void)_resortOnWorkerQueue:(id)arg1 completionHandler:(const function_b1fce659 *)arg2 forceResort:(_Bool)arg3;
-- (void)setSortPropertyStr:(struct TString)arg1 inIncreasingOrder:(_Bool)arg2 sortFoldersFirst:(_Bool)arg3 completionHandler:(const function_b1fce659 *)arg4;
-@property(readonly) struct TString sortPropertyStr; // @dynamic sortPropertyStr;
+- (void)setSortBy:(int)arg1 inIncreasingOrder:(_Bool)arg2 sortFoldersFirst:(_Bool)arg3 completionHandler:(const function_b1fce659 *)arg4;
+@property(readonly) int sortBy; // @dynamic sortBy;
 @property(readonly) _Bool isSortFoldersFirst; // @dynamic isSortFoldersFirst;
 @property(readonly) _Bool isSortInIncreasingOrder; // @dynamic isSortInIncreasingOrder;
+- (_Bool)isContainerNode:(const struct TFENode *)arg1;
 - (_Bool)isNode:(const struct TFENode *)arg1 childOfContainerNode:(const struct TFENode *)arg2;
 - (long long)indexForChild:(const struct TFENode *)arg1 forContainerNode:(const struct TFENode *)arg2;
 - (const struct TFENode *)childOfContainerNode:(const struct TFENode *)arg1 atIndex:(unsigned long long)arg2;
@@ -95,7 +99,7 @@ __attribute__((visibility("hidden")))
 - (void)_addFirstBVDSBusyStateIncrementerForNode:(const struct TFENode *)arg1;
 @property _Bool bulkConfigInProgress; // @dynamic bulkConfigInProgress;
 - (void)setAlwaysVisibleNodes:(const struct TFENodeVector *)arg1;
-- (const unordered_set_9d385924 *)alwaysVisibleNodes;
+- (const unordered_set_931aff12 *)alwaysVisibleNodes;
 - (void)adjustContainerNodeObserverOptions:(const vector_04525f4a *)arg1;
 - (void)_closeContainerNodesOnWorkerQueue:(const shared_ptr_73db28f7 *)arg1 busyStateIncrementer:(id)arg2 isSwitchingViewStyles:(_Bool)arg3;
 - (void)closeContainerNodes:(const vector_c133cd5b *)arg1;
@@ -105,7 +109,7 @@ __attribute__((visibility("hidden")))
 - (void)callOnMainThread:(const function_b1fce659 *)arg1;
 - (void)aboutToTearDown;
 - (void)dealloc;
-- (id)initWithSortPropertyStr:(const struct TString *)arg1 sortInIncreasingOrder:(_Bool)arg2 sortFoldersFirst:(_Bool)arg3 groupByPropertyStr:(const struct TString *)arg4 checkChildrenForTags:(_Bool)arg5;
+- (id)initWithSortBy:(int)arg1 sortInIncreasingOrder:(_Bool)arg2 sortFoldersFirst:(_Bool)arg3 groupBy:(int)arg4 checkChildrenForTags:(_Bool)arg5;
 - (id)init;
 
 // Remaining properties

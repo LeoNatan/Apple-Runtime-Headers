@@ -18,6 +18,7 @@
 - (id)summaryForContact:(id)arg1 matchInfo:(id)arg2;
 - (void)dealloc;
 - (id)init;
+- (id)summariesFutureForContactsIdentifiers:(id)arg1 matchInfos:(id)arg2 contactStore:(id)arg3 scheduler:(id)arg4;
 
 @end
 

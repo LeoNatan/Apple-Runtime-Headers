@@ -18,9 +18,7 @@
 - (void).cxx_destruct;
 - (void)confirmActivationForToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)requestActivationForToken:(id)arg1 withUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)requestMetadataForToken:(id)arg1 withUUID:(id)arg2 locale:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)requestMetadataForToken:(id)arg1 withUUID:(id)arg2 requestedLocale:(id)arg3 requestInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)requestMetadataForToken:(id)arg1 withUUID:(id)arg2 requestedLocale:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_init;
 - (id)init;
 

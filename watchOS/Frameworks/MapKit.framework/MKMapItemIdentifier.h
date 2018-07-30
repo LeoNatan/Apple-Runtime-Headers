@@ -24,6 +24,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithGEOMapItemIdentifier:(id)arg1;
 - (id)initWithMUID:(unsigned long long)arg1 resultProviderID:(int)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
+- (id)initWithMUID:(unsigned long long)arg1 coordinate:(struct CLLocationCoordinate2D)arg2;
 - (id)initWithMUID:(unsigned long long)arg1;
 - (id)init;
 

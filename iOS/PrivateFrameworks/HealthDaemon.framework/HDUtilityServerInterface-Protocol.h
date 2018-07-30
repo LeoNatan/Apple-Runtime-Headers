@@ -14,7 +14,6 @@
 - (void)remote_observeDataCollectionForType:(HKObjectType *)arg1 interval:(double)arg2 inBackground:(_Bool)arg3 hasRunningWorkout:(_Bool)arg4;
 - (void)remote_resetAWDTask:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_runAWDTask:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
-- (void)remote_setShouldIgnoreUnlockedState:(_Bool)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_restoreEntitlement:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_dropEntitlement:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_select:(NSArray *)arg1 from:(NSString *)arg2 where:(NSPredicate *)arg3 groupBy:(NSArray *)arg4 orderBy:(NSArray *)arg5 limit:(long long)arg6 completion:(void (^)(NSArray *, NSArray *, _Bool, NSError *))arg7;

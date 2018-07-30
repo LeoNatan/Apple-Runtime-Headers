@@ -32,7 +32,7 @@
 @property unsigned long long changeTag; // @synthesize changeTag=_changeTag;
 @property(nonatomic) __weak CLSDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(copy, nonatomic) CDUnknownBlockType dataChanged; // @synthesize dataChanged=_dataChanged;
-@property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
+@property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) NSString *observerID; // @synthesize observerID=_observerID;
 @property(getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;

@@ -12,10 +12,12 @@
 {
     NSString *_formatIdentifier;
     NSString *_formatVersion;
+    unsigned int _originalResourceChoice;
 }
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
+@property(readonly, nonatomic) unsigned int originalResourceChoice; // @synthesize originalResourceChoice=_originalResourceChoice;
 @property(readonly, nonatomic) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(readonly, nonatomic) NSString *formatIdentifier; // @synthesize formatIdentifier=_formatIdentifier;
 - (void).cxx_destruct;

@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface _PPTState : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;

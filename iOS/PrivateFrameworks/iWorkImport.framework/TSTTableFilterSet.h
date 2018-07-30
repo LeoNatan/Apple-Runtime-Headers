@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (id)ruleAtAbsoluteIndex:(unsigned long long)arg1;
 - (_Bool)rowIsShown:(unsigned short)arg1 withHiddenStateFormulaOwner:(id)arg2 withCalculationEngine:(id)arg3;
 - (_Bool)p_thresholdComparisonMatchesFilter:(long long)arg1 withPredicateType:(int)arg2;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)containsFilterRulesInUIDForm;
 - (id)copyByRewritingFilterRulesToGeometricFormWithContext:(id)arg1 withTableInfo:(id)arg2;

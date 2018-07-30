@@ -14,7 +14,7 @@
 {
     CMMotionManager *_motionManager;
     ARDeviceOrientationData *_currentOrientationData;
-    NSOperationQueue *_updateQueueDeviceMotion;
+    NSOperationQueue *_errorQueueDeviceMotion;
     double _previousCaptureEndingTimestamp;
     id <ARSensorDelegate> _delegate;
     long long _worldAlignment;

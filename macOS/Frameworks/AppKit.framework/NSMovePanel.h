@@ -74,6 +74,7 @@
 - (id)finderLocationPopUpRequestRecentPlaces:(id)arg1;
 - (void)finderLocationPopUp:(id)arg1 didChangeToDirectoryURL:(id)arg2;
 - (void)_configureMovePopUp;
+- (CDStruct_4c969caf)_hostAppAuditToken;
 - (id)_ubiquityContainerURLs;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 

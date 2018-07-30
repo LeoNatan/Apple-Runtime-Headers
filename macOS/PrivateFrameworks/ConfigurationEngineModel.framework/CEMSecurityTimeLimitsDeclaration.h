@@ -8,34 +8,31 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSNumber, NSString;
+@class CEMSecurityTimeLimitsDeclaration_TimeLimits, NSNumber, NSString;
 
 @interface CEMSecurityTimeLimitsDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadFamilyControlsEnabled;
+    CEMSecurityTimeLimitsDeclaration_TimeLimits *_payloadTimeLimits;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withFamilyControlsEnabled:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withFamilyControlsEnabled:(id)arg2 withTimeLimits:(id)arg3;
 + (id)restrictionPayloadKeys;
-+ (id)Allowance_allowedPayloadKeys;
-+ (id)TimeLimits_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadAllowance:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadTimeLimits:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadAllowance_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadTimeLimits_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMSecurityTimeLimitsDeclaration_TimeLimits *payloadTimeLimits; // @synthesize payloadTimeLimits=_payloadTimeLimits;
+@property(copy, nonatomic) NSNumber *payloadFamilyControlsEnabled; // @synthesize payloadFamilyControlsEnabled=_payloadFamilyControlsEnabled;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSDictionary *payloadTimeLimits;
-@property(readonly, nonatomic) NSNumber *payloadFamilyControlsEnabled;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

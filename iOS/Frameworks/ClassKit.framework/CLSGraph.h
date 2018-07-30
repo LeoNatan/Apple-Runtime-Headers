@@ -22,8 +22,12 @@
 - (void)enumerate:(CDUnknownBlockType)arg1;
 - (void)_enumerateVerticesInEdges:(struct NSHashTable *)arg1 skipingEdges:(struct NSHashTable *)arg2 enumerationBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateOutNeighboursOfVertex:(id)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
+- (id)outNeighboursOfVertex:(id)arg1;
 - (void)enumerateInNeighboursOfVertex:(id)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
+- (id)inNeighboursOfVertex:(id)arg1;
 - (void)enumerateNeighboursOfVertex:(id)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
+- (id)neighboursOfVertex:(id)arg1;
+- (void)removeSubtreeStartingAtVertex:(id)arg1;
 - (void)_removeEdgeFromVertexWithID:(id)arg1 toVertexWithID:(id)arg2;
 - (void)removeEdgeFromVertex:(id)arg1 toVertex:(id)arg2;
 - (void)removeVertex:(id)arg1;

@@ -22,7 +22,7 @@
     NSView *_accessoryView;
     NSDictionary *_cachedHashDict;
     double _cachedDocViewToRulerConversion;
-    struct CGPoint _cachedContentBoundsOrigin;
+    struct CGPoint _reservedRulerView2;
     NSRulerMarker *_draggingMarker;
     id _reservedRulerView1;
 }
@@ -35,7 +35,7 @@
 + (id)_labelCell;
 + (id)rulerLineColor;
 + (id)separatorColor;
-+ (id)backgroundColor;
++ (id)hashMarkColor;
 + (id)labelColor;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
@@ -45,9 +45,8 @@
 - (void)mouseDown:(id)arg1;
 - (BOOL)mouseDownCanMoveWindow;
 @property(readonly, getter=isFlipped) BOOL flipped;
-- (BOOL)isOpaque;
 - (void)setFrameSize:(struct CGSize)arg1;
-- (BOOL)preservesContentDuringLiveResize;
+- (void)_drawContentRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawRulerLines;
 - (void)drawMarkersInRect:(struct CGRect)arg1;
@@ -56,7 +55,6 @@
 - (void)setLabelString:(id)arg1 forValue:(id)arg2;
 - (id)labelStringForValue:(id)arg1;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
-- (void)drawBackgroundInRect:(struct CGRect)arg1;
 - (struct CGRect)_centerScanSeparatorRect:(struct CGRect)arg1;
 - (struct CGRect)_rectWithSingleThickness:(struct CGRect)arg1;
 - (void)invalidateHashMarks;
@@ -79,6 +77,7 @@
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithScrollView:(id)arg1 orientation:(unsigned long long)arg2;
+- (void)_commonInit;
 - (void)accessibilityPerformAction:(id)arg1;
 - (void)_addMarker:(id)arg1;
 - (void)_cancelAddMarker:(id)arg1;
@@ -112,11 +111,9 @@
 - (long long)userInterfaceLayoutDirection;
 - (double)_unitsForRulerLocation:(double)arg1;
 - (double)_unitsForClientLocation:(double)arg1;
-- (void)_recursiveDisplayRectIfNeededIgnoringOpacity:(struct CGRect)arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3 topView:(BOOL)arg4;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)_setDraggingMarker:(id)arg1;
 - (id)_draggingMarkerView;
-- (void)_bitBlitSourceRect:(struct CGRect)arg1 toDestinationRect:(struct CGRect)arg2;
 - (void)_scrollToMatchContentView;
 - (void)setDisplaysTooltips:(BOOL)arg1;
 - (BOOL)displaysTooltips;

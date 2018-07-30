@@ -18,6 +18,7 @@
 - (void)stop;
 - (void)cancel;
 - (void)main;
+- (id)init;
 
 @end
 

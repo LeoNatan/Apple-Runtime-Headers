@@ -7,23 +7,29 @@
 #import <CoreBrightness/CBModule.h>
 
 #import "CBContainerModuleProtocol.h"
+#import "CBStatusInfoProtocol.h"
 
-@class NSString;
+@class NSMutableDictionary, NSObject<OS_dispatch_source>, NSString;
 
-@interface CBDisplayModuleMacOS : CBModule <CBContainerModuleProtocol>
+__attribute__((visibility("hidden")))
+@interface CBDisplayModuleMacOS : CBModule <CBContainerModuleProtocol, CBStatusInfoProtocol>
 {
     _Bool _running;
     struct DSDevice *_device;
+    NSObject<OS_dispatch_source> *_delayedBrightnessCommitTimer;
+    NSMutableDictionary *_properties;
     BOOL _builtIn;
     unsigned long long _displayID;
 }
 
 @property(readonly) BOOL builtIn; // @synthesize builtIn=_builtIn;
 @property(readonly) unsigned long long displayID; // @synthesize displayID=_displayID;
+- (id)copyIdentifiers;
 - (void)handleNotificationForKey:(id)arg1 withProperty:(id)arg2;
 - (id)copyALCState;
 - (_Bool)displayGetLinearBrightness:(float *)arg1 forDynamicSlider:(_Bool)arg2;
 - (_Bool)displayGetBrightness:(float *)arg1;
+- (void)commitUserBrightness:(id)arg1;
 - (_Bool)displaySetBrightness:(float)arg1 withType:(int)arg2;
 - (_Bool)displaySetBrightnessSmooth:(float)arg1;
 - (_Bool)getIntegerValue:(long long *)arg1 forKey:(id)arg2;

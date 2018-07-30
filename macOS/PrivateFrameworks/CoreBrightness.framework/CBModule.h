@@ -8,6 +8,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSObject<OS_os_log>;
 
+__attribute__((visibility("hidden")))
 @interface CBModule : NSObject
 {
     CDUnknownBlockType _notificationBlock;

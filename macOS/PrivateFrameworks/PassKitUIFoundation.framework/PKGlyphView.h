@@ -8,15 +8,17 @@
 
 #import "PKFingerprintGlyphViewDelegate.h"
 
-@class CALayer, NSColor, NSMutableArray, NSString, PKCheckGlyphLayer, PKFingerprintGlyphView, PKMicaLayer, PKPhoneGlyphLayer;
+@class CALayer, LAUICheckmarkLayer, NSColor, NSMutableArray, NSObject<OS_dispatch_group>, NSString, PKFingerprintGlyphView, PKMicaLayer, PKPhoneGlyphLayer;
 
 @interface PKGlyphView : NSView <PKFingerprintGlyphViewDelegate>
 {
     long long _style;
     unsigned long long _transitionIndex;
     BOOL _transitioning;
+    BOOL _transitioningAnimated;
     long long _priorState;
     NSMutableArray *_transitionCompletionHandlers;
+    NSObject<OS_dispatch_group> *_lastAnimationGroup;
     double _lastAnimationWillFinish;
     BOOL _phoneWiggling;
     NSString *_phoneWiggleAnimationKey;
@@ -28,9 +30,10 @@
     } _layoutFlags;
     PKFingerprintGlyphView *_fingerprintView;
     PKPhoneGlyphLayer *_phoneLayer;
-    PKCheckGlyphLayer *_checkLayer;
+    LAUICheckmarkLayer *_checkLayer;
+    CALayer *_userIntentLayer;
     PKMicaLayer *_userIntentArrowLayer;
-    PKMicaLayer *_userIntentPhoneLayer;
+    PKMicaLayer *_userIntentDeviceLayer;
     double _phoneAspectRatio;
     CALayer *_customImageLayer;
     struct NSColor *_secondaryColor;
@@ -42,6 +45,7 @@
     struct NSEdgeInsets _customImageAlignmentEdgeInsets;
 }
 
++ (id)sharedStaticResources;
 + (BOOL)automaticallyNotifiesObserversOfState;
 @property(nonatomic) __weak id <PKGlyphViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
@@ -64,7 +68,7 @@
 - (void)_setSecondaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
 - (void)_setPrimaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
 - (void)_setRecognizedIfNecessaryWithTransitionIndex:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_updateCheckViewStateAnimated:(BOOL)arg1;
+- (void)_updateCheckViewStateAnimated:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_updateCustomImageLayerOpacityAnimated:(BOOL)arg1;
 - (void)_updateUserIntentLayoutAnimated:(BOOL)arg1;
 - (void)_endPhoneWiggle;
@@ -76,13 +80,14 @@
 - (void)_executeTransitionCompletionHandlers:(BOOL)arg1;
 - (void)setState:(long long)arg1 animated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setState:(long long)arg1;
+- (void)_executeAfterMinimumAnimationDurationForStateTransitionWithDelayRatio:(double)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_executeAfterMinimumAnimationDurationForStateTransition:(CDUnknownBlockType)arg1;
-- (double)_minimumAnimationDurationForStateTransition;
 - (void)_updateLastAnimationTimeWithAnimationOfDuration:(double)arg1;
 - (void)updateRasterizationScale:(double)arg1;
-- (void)viewDidChangeBackingProperties;
 - (void)_layoutContentLayer:(id)arg1;
 - (void)layout;
+- (void)viewDidChangeBackingProperties;
+- (void)viewDidMoveToWindow;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

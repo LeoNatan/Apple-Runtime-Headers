@@ -6,12 +6,12 @@
 
 #import <MapKit/MKPlaceSectionRowView.h>
 
-@class MKImageView, MKPlaceReviewAvatarGenerator, NSDate, NSLayoutConstraint, NSString, _MKUILabel;
+@class MKImageView, MKPlaceReviewAvatarGenerator, MKVibrancyAwareLabelView, NSDate, NSLayoutConstraint, NSString, _MKUILabel;
 
 @interface MKPlaceReviewsViewCell : MKPlaceSectionRowView
 {
     MKImageView *_pictureView;
-    _MKUILabel *_detailLabel;
+    MKVibrancyAwareLabelView *_detailLabel;
     _MKUILabel *_reviewLabel;
     NSLayoutConstraint *_reviewLabelTopConstraint;
     NSLayoutConstraint *_reviewLabelToAuthorLabelConstraint;

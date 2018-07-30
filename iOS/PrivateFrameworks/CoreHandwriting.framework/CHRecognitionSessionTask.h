@@ -39,7 +39,7 @@
 - (void)cancel;
 - (void)main;
 - (void)dealloc;
-- (id)initWithLocales:(id)arg1 preferredLocales:(id)arg2 strokeProvider:(id)arg3 inputResult:(id)arg4;
+- (id)initWithLocales:(id)arg1 preferredLocales:(id)arg2 strokeProvider:(id)arg3 inputResult:(id)arg4 recognitionQOSClass:(unsigned int)arg5;
 - (id)init;
 
 @end

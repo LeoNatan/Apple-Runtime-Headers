@@ -8,11 +8,12 @@
 
 #import "NSCopying.h"
 
-@class GEOMapItemInitialRequestData, GEOPDPlaceRefinementParameters, NSData;
+@class GEOMapItemClientAttributes, GEOMapItemInitialRequestData, GEOPDPlaceRefinementParameters;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapItemHandle : PBCodable <NSCopying>
 {
-    NSData *_compressedMapItemStorage;
+    GEOMapItemClientAttributes *_clientAttributes;
     int _handleType;
     GEOPDPlaceRefinementParameters *_placeRefinementParameters;
     GEOMapItemInitialRequestData *_placeRequestData;
@@ -21,7 +22,7 @@
     } _has;
 }
 
-@property(retain, nonatomic) NSData *compressedMapItemStorage; // @synthesize compressedMapItemStorage=_compressedMapItemStorage;
+@property(retain, nonatomic) GEOMapItemClientAttributes *clientAttributes; // @synthesize clientAttributes=_clientAttributes;
 @property(retain, nonatomic) GEOMapItemInitialRequestData *placeRequestData; // @synthesize placeRequestData=_placeRequestData;
 @property(retain, nonatomic) GEOPDPlaceRefinementParameters *placeRefinementParameters; // @synthesize placeRefinementParameters=_placeRefinementParameters;
 - (void).cxx_destruct;
@@ -34,7 +35,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasCompressedMapItemStorage;
+@property(readonly, nonatomic) _Bool hasClientAttributes;
 @property(readonly, nonatomic) _Bool hasPlaceRequestData;
 @property(readonly, nonatomic) _Bool hasPlaceRefinementParameters;
 - (int)StringAsHandleType:(id)arg1;

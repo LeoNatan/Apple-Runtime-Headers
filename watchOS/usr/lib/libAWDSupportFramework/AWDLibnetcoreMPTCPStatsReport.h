@@ -38,6 +38,7 @@
     unsigned long long _mptcpInteractiveAttempt;
     unsigned long long _mptcpInteractiveCellBytes;
     unsigned long long _mptcpInteractiveCellUsage;
+    unsigned long long _mptcpTriggeredCell;
     unsigned long long _mptcpWiFiProxy;
     struct {
         unsigned int mptcpAggregateAllBytes:1;
@@ -68,10 +69,12 @@
         unsigned int mptcpInteractiveAttempt:1;
         unsigned int mptcpInteractiveCellBytes:1;
         unsigned int mptcpInteractiveCellUsage:1;
+        unsigned int mptcpTriggeredCell:1;
         unsigned int mptcpWiFiProxy:1;
     } _has;
 }
 
+@property(nonatomic) unsigned long long mptcpTriggeredCell; // @synthesize mptcpTriggeredCell=_mptcpTriggeredCell;
 @property(nonatomic) unsigned long long mptcpWiFiProxy; // @synthesize mptcpWiFiProxy=_mptcpWiFiProxy;
 @property(nonatomic) unsigned long long mptcpCellProxy; // @synthesize mptcpCellProxy=_mptcpCellProxy;
 @property(nonatomic) unsigned long long mptcpCellDenied; // @synthesize mptcpCellDenied=_mptcpCellDenied;
@@ -110,6 +113,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasMptcpTriggeredCell;
 @property(nonatomic) _Bool hasMptcpWiFiProxy;
 @property(nonatomic) _Bool hasMptcpCellProxy;
 @property(nonatomic) _Bool hasMptcpCellDenied;

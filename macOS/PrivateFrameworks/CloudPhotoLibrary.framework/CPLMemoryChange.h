@@ -58,9 +58,9 @@
 - (BOOL)supportsDeletion;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
-- (id)identifiersForMapping;
-- (id)initWithCKRecord:(id)arg1 ckAssetProperties:(id)arg2;
-- (void)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 tempCKAssetURL:(id)arg3;
+- (id)scopedIdentifiersForMapping;
+- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
+- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
 
 @end
 

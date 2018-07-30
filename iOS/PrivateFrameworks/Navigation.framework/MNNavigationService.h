@@ -89,7 +89,7 @@
 - (void)navigationServiceProxy:(id)arg1 didUpdateActiveRouteDetails:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
-- (void)_reset;
+- (void)_resetDetails;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;
 @property(nonatomic) double tracePosition;
@@ -168,7 +168,7 @@
 - (_Bool)isOpenForClient:(id)arg1;
 - (void)closeForClient:(id)arg1;
 - (void)openForClient:(id)arg1;
-- (id)init;
+- (id)initPrivate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

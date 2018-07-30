@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDSeries.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDBar3DSeries : CHDSeries
 {
     int mShapeType;

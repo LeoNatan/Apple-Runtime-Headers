@@ -21,6 +21,9 @@
 @property(nonatomic) unsigned int numThisEncoder; // @synthesize numThisEncoder=_numThisEncoder;
 @property(nonatomic, getter=globalTraceObjectID) unsigned long long globalTraceObjectID; // @synthesize globalTraceObjectID=_globalTraceObjectID;
 @property(copy) NSString *label; // @synthesize label=_label;
+@property(readonly) unsigned int dispatchType; // @dynamic dispatchType;
+- (void)memoryBarrierNotificationWithResources:(const id *)arg1 count:(unsigned int)arg2;
+- (void)memoryBarrierNotificationWithScope:(unsigned int)arg1;
 @property(readonly, nonatomic, getter=getType) unsigned int type;
 - (void)filterCounterRangeWithFirstBatch:(unsigned int)arg1 lastBatch:(unsigned int)arg2 filterIndex:(unsigned int)arg3;
 - (void)popDebugGroup;

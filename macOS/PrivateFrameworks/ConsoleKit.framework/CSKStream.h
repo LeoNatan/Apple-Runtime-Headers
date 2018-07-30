@@ -89,6 +89,8 @@
 - (void)_scheduleEmptyResetEventForObserver:(id)arg1;
 - (void)_messageDelegateForSourceDidFinishIfNeeded;
 - (BOOL)isInitialized;
+- (void)resume;
+- (void)pause;
 - (void)cancel;
 - (void)start;
 - (BOOL)isAsynchronous;

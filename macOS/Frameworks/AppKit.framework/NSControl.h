@@ -34,7 +34,7 @@
 + (void)setCellClass:(Class)arg1;
 + (void)initialize;
 + (BOOL)accessibilityIsSingleCelled;
-- (id)_vibrancyFilter;
+- (int)_vibrancyBlendMode;
 - (BOOL)allowsVibrancy;
 - (BOOL)_performKeyEquivalent:(id)arg1 conditionally:(BOOL)arg2;
 - (void)setUsesSingleLineMode:(BOOL)arg1;
@@ -43,9 +43,9 @@
 - (void)setLineBreakMode:(unsigned long long)arg1;
 - (void)setBaseWritingDirection:(long long)arg1;
 - (long long)baseWritingDirection;
+- (void)_setBackgroundStyleForSubtree:(long long)arg1;
+- (long long)backgroundStyle;
 - (id)_backgroundColorForFontSmoothing;
-- (void)heartBeat:(CDStruct_fadd2e06 *)arg1;
-- (BOOL)_wantsHeartBeat;
 - (void)_windowChangedKeyState;
 - (void)rightMouseDown:(id)arg1;
 - (void)_rightMouseUpOrDown:(id)arg1;
@@ -102,6 +102,8 @@
 - (void)_didRemoveLayer;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
+- (void)_resetSupportsDirectLayerContentsCache;
+- (long long)_preferredLayerContentsRedrawPolicy;
 - (BOOL)_shouldShowFirstResponderForCell:(id)arg1;
 - (id)_findCurrentEditor;
 - (void)takeObjectValueFrom:(id)arg1;
@@ -119,7 +121,7 @@
 - (void)setFocusRingType:(unsigned long long)arg1;
 - (struct CGRect)focusRingMaskBounds;
 - (void)drawFocusRingMask;
-- (void)_viewDidChangeAppearance:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)resignKeyWindow;
 - (void)becomeKeyWindow;
 - (void)didBecomeActiveFirstResponder;
@@ -154,6 +156,7 @@
 @property BOOL ignoresMultiClick;
 - (void)setRepresentedObject:(id)arg1;
 - (id)representedObject;
+- (id)viewWithTag:(long long)arg1;
 - (long long)selectedTag;
 @property long long tag;
 @property SEL action;

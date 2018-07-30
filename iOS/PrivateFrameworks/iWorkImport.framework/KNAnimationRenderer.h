@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id plugin; // @synthesize plugin=_plugin;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
+- (void)prepareAnimationsAsynchronously;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;
 - (void)renderTextures;
 - (void)generateTextures;

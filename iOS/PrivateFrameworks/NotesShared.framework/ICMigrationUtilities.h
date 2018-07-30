@@ -10,6 +10,8 @@
 {
 }
 
++ (void)deleteMigratedHTMLAccountIfNecessaryForModernAccount:(id)arg1;
++ (void)deleteMigratedHTMLAccounts;
 + (void)updateAllLegacyAccountMigrationStates;
 + (void)updateLegacyAccountMigrationStateForModernAccount:(id)arg1;
 + (void)saveDidChooseToMigrate:(_Bool)arg1 didFinishMigration:(_Bool)arg2 didMigrateOnMac:(_Bool)arg3 toACAccount:(id)arg4 inStore:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;

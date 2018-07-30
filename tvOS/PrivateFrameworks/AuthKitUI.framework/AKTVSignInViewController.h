@@ -47,6 +47,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_handleMenuRecognizer:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)textEntryController:(id)arg1 didReceiveAutofillSuggestion:(id)arg2;
 - (void)textEntryControllerDidFinish:(id)arg1;
 - (void)_submitButtonPressed:(id)arg1;
 - (void)_textFieldTextDidChange:(id)arg1;

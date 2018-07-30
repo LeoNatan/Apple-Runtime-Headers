@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 
 - (id)fieldEditorForView:(id)arg1;
 - (void)dealloc;
+- (void)_privateInit;
+- (id)initWithCoder:(id)arg1;
 - (id)initTextCell:(id)arg1;
 
 @end

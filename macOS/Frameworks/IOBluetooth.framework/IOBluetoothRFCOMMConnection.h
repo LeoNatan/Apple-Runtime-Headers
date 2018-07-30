@@ -22,6 +22,7 @@
 + (id)getUniqueObjectDictionary:(BOOL)arg1;
 @property(retain) IOBluetoothDevice *device; // @synthesize device=mReferenceDevice;
 - (int)destroyChannel:(unsigned char)arg1;
+- (int)createNewFCChannel:(unsigned char)arg1 channel:(id)arg2;
 - (int)createNewChannel:(unsigned char)arg1 channel:(id)arg2;
 - (int)actOnNewConnection:(unsigned int)arg1;
 - (void)finalize;

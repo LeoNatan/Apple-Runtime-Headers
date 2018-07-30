@@ -43,6 +43,7 @@
     NSString *connectionID;
     _Bool cameraIntrinsicMatrixDeliverySupported;
     _Bool cameraIntrinsicMatrixDeliveryEnabled;
+    _Bool debugMetadataSidecarFileEnabled;
 }
 
 @end

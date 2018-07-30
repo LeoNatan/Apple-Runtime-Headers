@@ -13,12 +13,12 @@
     int _chunk;
 }
 
-- (int)doMaxPoolingChunkFour;
-- (int)doMaxPoolingChunkOne;
++ (id)poolingBlockWithPoolX:(int)arg1 poolY:(int)arg2 chunk:(int)arg3;
 - (BOOL)useGPU;
 - (BOOL)supportGPU;
 - (int)forward;
 - (int)constructBlock:(id)arg1 context:(id)arg2;
+- (int)initializeRest;
 - (id)initWithParameters:(int)arg1 poolY:(int)arg2 chunk:(int)arg3;
 
 @end

@@ -18,7 +18,12 @@
 + (void)shouldRegisterProtocol:(BOOL)arg1;
 @property long long previousMax; // @synthesize previousMax=_previousMax;
 @property int previousScaleFactor; // @synthesize previousScaleFactor=_previousScaleFactor;
+- (id)_imageDataForImage:(id)arg1;
+- (id)_templatedImageForURL:(id)arg1 inBundle:(id)arg2;
+- (BOOL)_isTemplateImage:(id)arg1;
+- (id)_imageNamed:(id)arg1 inBundle:(id)arg2;
 - (id)_requestResourceDataFromURL:(id)arg1;
+- (id)_loadTemplatedImageIfNeededFromURL:(id)arg1;
 - (id)requestResourceDataFromURL:(id)arg1;
 - (void)stopLoading;
 - (void)startLoading;

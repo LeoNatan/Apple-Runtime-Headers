@@ -9,13 +9,14 @@
 #import "TUCallCapabilitiesXPCClient.h"
 #import "TUCallCapabilitiesXPCServerActions.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, TUCallCapabilitiesState;
+@class NSMapTable, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, TUCallCapabilitiesState;
 
 @interface TUCallCapabilitiesXPCClient : NSObject <TUCallCapabilitiesXPCClient, TUCallCapabilitiesXPCServerActions>
 {
     int _token;
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_xpcConnection;
+    NSMapTable *_delegateToQueue;
     TUCallCapabilitiesState *_state;
 }
 
@@ -26,6 +27,7 @@
 + (void)setAsynchronousServer:(id)arg1;
 + (id)asynchronousServer;
 @property(retain, nonatomic) TUCallCapabilitiesState *state; // @synthesize state=_state;
+@property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) int token; // @synthesize token=_token;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -36,20 +38,24 @@
 - (void)invalidate;
 - (oneway void)cancelPinRequestFromPrimaryDevice;
 - (oneway void)requestPinFromPrimaryDevice;
-- (oneway void)invalidateAndRefreshThumperCallingProvisioningURL;
-- (oneway void)invalidateAndRefreshWiFiCallingProvisioningURL;
+- (oneway void)invalidateAndRefreshThumperCallingProvisioningURLForSenderIdentityWithUUID:(id)arg1;
+- (oneway void)invalidateAndRefreshWiFiCallingProvisioningURLForSenderIdentityWithUUID:(id)arg1;
 - (oneway void)endEmergencyCallbackMode;
+- (oneway void)setThumperCallingAllowedOnDefaultPairedDevice:(_Bool)arg1 forSenderIdentityWithUUID:(id)arg2;
+- (oneway void)setThumperCallingAllowed:(_Bool)arg1 onSecondaryDeviceWithID:(id)arg2 forSenderIdentityWithUUID:(id)arg3;
+- (oneway void)setThumperCallingEnabled:(_Bool)arg1 forSenderIdentityWithUUID:(id)arg2;
+- (oneway void)setVoLTECallingEnabled:(_Bool)arg1 forSenderIdentityWithUUID:(id)arg2;
+- (oneway void)setWiFiCallingRoamingEnabled:(_Bool)arg1 forSenderIdentityWithUUID:(id)arg2;
+- (oneway void)setWiFiCallingEnabled:(_Bool)arg1 forSenderIdentityWithUUID:(id)arg2;
 - (oneway void)setRelayCallingEnabled:(_Bool)arg1 forDeviceWithID:(id)arg2;
-- (oneway void)setThumperCallingAllowedOnDefaultPairedDevice:(_Bool)arg1;
-- (oneway void)setThumperCallingAllowed:(_Bool)arg1 onSecondaryDeviceWithID:(id)arg2;
 - (oneway void)setRelayCallingEnabled:(_Bool)arg1;
-- (oneway void)setThumperCallingEnabled:(_Bool)arg1;
-- (oneway void)setVoLTECallingEnabled:(_Bool)arg1;
-- (oneway void)setWiFiCallingRoamingEnabled:(_Bool)arg1;
-- (oneway void)setWiFiCallingEnabled:(_Bool)arg1;
+- (void)performDelegateCallbackBlock:(CDUnknownBlockType)arg1;
+- (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (id)synchronousServerWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)asynchronousServerWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)asynchronousServer;
+- (void)handleServerDisconnect;
 - (void)dealloc;
 - (id)init;
 

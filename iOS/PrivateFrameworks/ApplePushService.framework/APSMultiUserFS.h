@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface APSMultiUserFS : NSObject
 {
     NSString *_systemPathCache;

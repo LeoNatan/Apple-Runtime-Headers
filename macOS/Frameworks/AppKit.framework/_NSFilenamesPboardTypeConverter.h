@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSPboardTypeConverter.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSFilenamesPboardTypeConverter : _NSPboardTypeConverter
 {
 }

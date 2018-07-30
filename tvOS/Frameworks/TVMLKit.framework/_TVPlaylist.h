@@ -4,29 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "TVPPlaylist.h"
+#import "NSObject.h"
 
 #import "IKAppPlaylist.h"
 
-@class IKAppPlaylistBridge;
+@class IKAppPlaylistBridge, NSArray, NSMutableArray, TVPlaylist;
 
 __attribute__((visibility("hidden")))
-@interface _TVPlaylist : TVPPlaylist <IKAppPlaylist>
+@interface _TVPlaylist : NSObject <IKAppPlaylist>
 {
+    NSMutableArray *_mediaItems;
     IKAppPlaylistBridge *_bridge;
+    TVPlaylist *_publicObj;
 }
 
-+ (long long)_ikPlaylistEndActionFromTVSPlaylistEndAction:(long long)arg1;
-+ (long long)_tvsPlaylistEndActionFromIKPlaylistEndAction:(long long)arg1;
-+ (id)_ikPlaylistEndActionToTVSPlaylistEndActionMap;
+@property(readonly, nonatomic) TVPlaylist *publicObj; // @synthesize publicObj=_publicObj;
 @property(readonly, nonatomic) IKAppPlaylistBridge *bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
-@property(nonatomic) long long endPlayAction;
-@property(readonly) unsigned long long count;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id)objectsAtIndexes:(id)arg1;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
 - (void)removeObjectsAtIndexes:(id)arg1;
+@property(nonatomic) long long repeatMode;
+@property(nonatomic) long long endAction;
+@property(readonly) unsigned long long count;
+@property(readonly, copy, nonatomic) NSArray *mediaItems;
 - (id)initWithIKAppPlaylist:(id)arg1;
 
 @end

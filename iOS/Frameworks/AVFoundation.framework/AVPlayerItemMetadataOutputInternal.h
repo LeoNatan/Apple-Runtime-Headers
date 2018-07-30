@@ -8,6 +8,7 @@
 
 @class AVWeakReference, AVWeakReferencingDelegateStorage, NSArray, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerItemMetadataOutputInternal : NSObject
 {
     NSArray *metadataIdentifiers;

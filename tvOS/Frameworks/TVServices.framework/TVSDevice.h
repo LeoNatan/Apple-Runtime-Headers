@@ -14,6 +14,7 @@
 + (id)getMobileGestaltData:(struct __CFString *)arg1;
 + (id)getMobileGestaltString:(struct __CFString *)arg1;
 + (unsigned long long)getMobileGestaltUnsignedLongLong:(struct __CFString *)arg1;
++ (id)valueForNVRAMVariable:(id)arg1;
 + (_Bool)isActivated;
 + (unsigned long long)deviceCapacity;
 + (unsigned long long)applicationCapacity;

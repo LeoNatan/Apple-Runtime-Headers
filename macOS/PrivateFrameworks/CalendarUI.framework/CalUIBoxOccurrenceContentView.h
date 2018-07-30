@@ -196,7 +196,7 @@
 - (void)addTitleFieldIfNeeded;
 - (void)updateTravelTimeColors;
 - (void)rebuildString;
-- (struct CGColor *)newCurrentTextColor;
+- (id)newCurrentTextColor;
 - (void)updateAccountIconVerticalPositionConstraint;
 - (void)addOrRemoveAccountConstraints;
 - (void)addConstraintsWithVisualFormat:(id)arg1 options:(unsigned long long)arg2;

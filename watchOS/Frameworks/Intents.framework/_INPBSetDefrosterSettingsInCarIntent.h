@@ -7,40 +7,45 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSetDefrosterSettingsInCarIntent.h"
 
-@class PBUnknownFields, _INPBIntentMetadata;
+@class NSString, _INPBDataString, _INPBIntentMetadata;
 
-@interface _INPBSetDefrosterSettingsInCarIntent : PBCodable <NSCopying>
+@interface _INPBSetDefrosterSettingsInCarIntent : PBCodable <_INPBSetDefrosterSettingsInCarIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _defroster;
-    _INPBIntentMetadata *_intentMetadata;
-    _Bool _enable;
     struct {
         unsigned int defroster:1;
         unsigned int enable:1;
     } _has;
+    _Bool _enable;
+    _INPBDataString *_carName;
+    int _defroster;
+    _INPBIntentMetadata *_intentMetadata;
 }
 
-+ (id)options;
-@property(nonatomic) _Bool enable; // @synthesize enable=_enable;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) _Bool enable; // @synthesize enable=_enable;
+@property(nonatomic) int defroster; // @synthesize defroster=_defroster;
+@property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(nonatomic) _Bool hasEnable;
 - (int)StringAsDefroster:(id)arg1;
 - (id)defrosterAsString:(int)arg1;
 @property(nonatomic) _Bool hasDefroster;
-@property(nonatomic) int defroster; // @synthesize defroster=_defroster;
-@property(nonatomic) _Bool hasEnable;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasCarName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

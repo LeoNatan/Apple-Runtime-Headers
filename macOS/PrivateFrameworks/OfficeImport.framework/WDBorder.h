@@ -10,7 +10,6 @@
 
 @class OITSUColor;
 
-__attribute__((visibility("hidden")))
 @interface WDBorder : NSObject <NSCopying>
 {
     int mStyle;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
     BOOL mFrame;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setFrame:(BOOL)arg1;
@@ -41,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToBorder:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

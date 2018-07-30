@@ -8,7 +8,6 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSPredicate, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerSubrowObjectBuilder : NSObject
 {
     NSArray *_coreDataRecords;

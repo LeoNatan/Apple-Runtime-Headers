@@ -13,7 +13,8 @@
 @property(readonly, nonatomic) NSDate *publisherSpecifiedArticleIDsModifiedDate;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
-@property(readonly, nonatomic) _Bool isRealTimeTrackingEnabed;
+@property(readonly, nonatomic) _Bool isArticleReadCountReportingEnabled;
+@property(readonly, nonatomic) _Bool isRealTimeTrackingEnabled;
 @property(readonly, nonatomic) _Bool isHidden;
 @property(readonly, nonatomic) unsigned long long groupingEligibility;
 @property(readonly, nonatomic) NTPBPublisherPaidDescriptionStrings *publisherPaidDescriptionStrings;
@@ -40,6 +41,7 @@
 @property(readonly, copy, nonatomic) FCColor *groupTitleColor;
 @property(readonly, copy, nonatomic) id <FCFeedTheming> theme;
 @property(readonly, copy, nonatomic) NSString *coverArticleListID;
+@property(readonly, nonatomic) FCAssetHandle *feedNavImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *coverImageAssetHandle;
 @property(readonly, nonatomic) _Bool isSubscribable;
 @property(readonly, nonatomic) NSArray *relatedChannelIDsForOnboarding;

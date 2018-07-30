@@ -8,31 +8,31 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSString;
+@class CEMSecuritySingleSignOnDeclaration_Kerberos, NSString;
 
 @interface CEMSecuritySingleSignOnDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadName;
+    CEMSecuritySingleSignOnDeclaration_Kerberos *_payloadKerberos;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withName:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withName:(id)arg2 withKerberos:(id)arg3;
 + (id)restrictionPayloadKeys;
-+ (id)Kerberos_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadKerberos:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadKerberos_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMSecuritySingleSignOnDeclaration_Kerberos *payloadKerberos; // @synthesize payloadKerberos=_payloadKerberos;
+@property(copy, nonatomic) NSString *payloadName; // @synthesize payloadName=_payloadName;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSDictionary *payloadKerberos;
-@property(readonly, nonatomic) NSString *payloadName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

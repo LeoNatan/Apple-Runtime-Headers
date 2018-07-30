@@ -6,20 +6,21 @@
 
 #import "NSObject.h"
 
+#import "ARDictionaryCoding.h"
 #import "ARSensorData.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class ARFaceData, AVDepthData, NSDate, NSString;
 
-@interface ARImageData : NSObject <ARSensorData, NSCopying, NSSecureCoding>
+@interface ARImageData : NSObject <ARDictionaryCoding, ARSensorData, NSCopying, NSSecureCoding>
 {
     _Bool _mirrored;
-    _Bool _shouldRestrictFrameRate;
     float _exposureTargetOffset;
     float _temperature;
     double _timestamp;
     NSDate *_captureDate;
+    double _currentCaptureTimestamp;
     struct __CVBuffer *_pixelBuffer;
     unsigned long long _lensType;
     double _exposureDuration;
@@ -28,17 +29,14 @@
     double _depthDataTimestamp;
     long long _cameraPosition;
     long long _captureFramesPerSecond;
-    long long _renderFramesPerSecond;
+    struct CGSize _imageResolution;
     // Error parsing type: , name: _tangentialDistortion
     // Error parsing type: , name: _radialDistortion
     // Error parsing type: {?="columns"[3]}, name: _cameraIntrinsics
 }
 
 + (_Bool)supportsSecureCoding;
-+     // Error parsing type: {?=[3]}24@0:8@16, name: intrinsicsFromDeviceFormat:
 + (id)captureDateFromPresentationTimestamp:(CDStruct_1b6d18a9)arg1 session:(id)arg2;
-@property(nonatomic) _Bool shouldRestrictFrameRate; // @synthesize shouldRestrictFrameRate=_shouldRestrictFrameRate;
-@property(nonatomic) long long renderFramesPerSecond; // @synthesize renderFramesPerSecond=_renderFramesPerSecond;
 @property(nonatomic) long long captureFramesPerSecond; // @synthesize captureFramesPerSecond=_captureFramesPerSecond;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(nonatomic) double depthDataTimestamp; // @synthesize depthDataTimestamp=_depthDataTimestamp;
@@ -54,21 +52,25 @@
 // Property attributes: T,N,V_radialDistortion
 
 @property(nonatomic) unsigned long long lensType; // @synthesize lensType=_lensType;
+@property(nonatomic) struct CGSize imageResolution; // @synthesize imageResolution=_imageResolution;
 @property(nonatomic, getter=isMirrored) _Bool mirrored; // @synthesize mirrored=_mirrored;
 @property(nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 // Error parsing type for property cameraIntrinsics:
 // Property attributes: T{?=[3]},N,V_cameraIntrinsics
 
-@property(retain, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
+@property(nonatomic) double currentCaptureTimestamp; // @synthesize currentCaptureTimestamp=_currentCaptureTimestamp;
+@property(copy, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)encodeToDictionary;
+- (id)initWithDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) ARImageData *originalImage;
-@property(readonly, nonatomic) struct CGSize imageResolution;
 - (void)dealloc;
-- (id)initWithSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 captureFramePerSecond:(long long)arg2 renderFramePerSecond:(long long)arg3 captureDevice:(id)arg4 captureSession:(id)arg5;
+- (id)initWithSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 captureFramePerSecond:(long long)arg2 captureDevice:(id)arg3 captureSession:(id)arg4;
 - (id)initWithImageData:(id)arg1;
 
 // Remaining properties

@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)cacheInsertStatement:(id)arg1;
 - (id)insertStatement;
 - (void)clearCachedStatements;
+- (void)_clearSaveGeneratedCachedStatements;
 - (void)dealloc;
 - (id)initWithEntity:(id)arg1;
 

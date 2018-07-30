@@ -13,7 +13,7 @@
 @interface RWIManager : NSObject <RWIBaseManagerDelegate>
 {
     RWIBaseManager *_baseManager;
-    NSMutableDictionary *_inspectors;
+    NSMutableDictionary *_debuggers;
     struct _AMDeviceNotificationContext *_notificationRef;
     unsigned int _powerConnection;
     unsigned int _powerNotifier;
@@ -48,11 +48,7 @@
 - (void)socketSend:(id)arg1 fromSession:(id)arg2;
 - (void)socketSend:(id)arg1 fromDebugger:(id)arg2;
 - (void)socketSetupForSession:(id)arg1;
-- (void)socketSetupForDebugger:(id)arg1 paused:(BOOL)arg2;
-- (void)inspectorWindowWillClose:(id)arg1;
-- (void)_rejectAutomaticInspection:(id)arg1 sessionIdentifier:(id)arg2;
-- (void)_acceptAutomaticInspection:(id)arg1 response:(long long)arg2;
-- (void)_tryAutomaticInspection:(id)arg1 sessionIdentifier:(id)arg2;
+- (void)socketSetupForDebugger:(id)arg1 pauseImmediately:(BOOL)arg2;
 - (void)_removeCurrentMachineTarget;
 - (void)_createCurrentMachineTarget;
 - (void)_systemDidWake;
@@ -70,11 +66,11 @@
 - (void)createDrivableForSession:(id)arg1 usingApplication:(id)arg2;
 - (void)requestDriver:(id)arg1 shouldBeActive:(BOOL)arg2 forwardIfUnhandled:(BOOL)arg3;
 - (void)indicateDebuggable:(id)arg1 enabled:(BOOL)arg2;
-- (id)openInspectorForDebuggable:(id)arg1 paused:(BOOL)arg2;
+- (id)openChannelForDebuggable:(id)arg1;
+- (id)openInspectorForDebuggable:(id)arg1 pauseImmediately:(BOOL)arg2;
 @property(readonly, nonatomic) NSObject<_RWIRelayToClientMessageReceiver> *messageReceiver;
 @property(readonly, nonatomic) RWIApplication *currentApplication;
 @property(readonly, nonatomic) RWITarget *currentTarget;
-@property(readonly, nonatomic) NSSet *inspectors;
 @property(readonly, nonatomic) NSSet *capableTargets;
 @property(readonly, nonatomic) NSSet *readyTargets;
 @property(readonly, nonatomic) NSSet *targets;
@@ -90,11 +86,6 @@
 - (void)_createInitialTargets;
 - (void)dealloc;
 - (id)init;
-- (id)openInspectorForDebuggable:(id)arg1;
-- (id)openInspectorForWebView:(id)arg1;
-@property(readonly, nonatomic) NSSet *capableDevices; // @dynamic capableDevices;
-@property(readonly, nonatomic) NSSet *readyDevices; // @dynamic readyDevices;
-@property(readonly, nonatomic) NSSet *devices; // @dynamic devices;
 - (id)currentMachine;
 - (void)updateDriver:(id)arg1 toState:(BOOL)arg2;
 - (void)unmanageDriver:(id)arg1;

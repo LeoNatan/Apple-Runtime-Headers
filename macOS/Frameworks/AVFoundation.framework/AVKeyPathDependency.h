@@ -8,6 +8,7 @@
 
 @class AVKVODispatcher, AVTwoPartKeyPath, AVWeakReference, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVKeyPathDependency : NSObject
 {
     NSObject<OS_dispatch_queue> *_subObjectRegistrationQueue;

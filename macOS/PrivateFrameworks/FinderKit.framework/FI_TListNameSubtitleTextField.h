@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TListNameSubtitleTextField : FI_TListTextField
 {
-    struct TNSRef<NSLayoutConstraint *, void> _shortStringWidthConstraint;
+    struct TNSRef<NSLayoutConstraint, void> _shortStringWidthConstraint;
 }
 
 - (id).cxx_construct;

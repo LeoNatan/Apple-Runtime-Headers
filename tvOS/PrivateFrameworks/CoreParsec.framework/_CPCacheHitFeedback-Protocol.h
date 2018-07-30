@@ -10,13 +10,9 @@
 
 @protocol _CPCacheHitFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasUuid;
 @property(copy, nonatomic) NSString *uuid;
-@property(readonly, nonatomic) _Bool hasTriggerEvent;
 @property(nonatomic) int triggerEvent;
-@property(readonly, nonatomic) _Bool hasInput;
 @property(copy, nonatomic) NSString *input;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

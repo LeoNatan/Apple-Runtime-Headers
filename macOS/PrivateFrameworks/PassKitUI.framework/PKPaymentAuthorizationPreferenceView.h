@@ -27,7 +27,6 @@
 }
 
 + (id)_resizeImage:(id)arg1 toSize:(struct CGSize)arg2;
-+ (id)_emptyPaymentPassThumbnailOfSize:(struct CGSize)arg1;
 + (id)viewWithPaymentPreference:(id)arg1 atIndex:(unsigned long long)arg2;
 + (id)_viewWithCardPreference:(id)arg1 atIndex:(unsigned long long)arg2;
 + (id)_viewWithRemoteDevicePreference:(id)arg1 atIndex:(unsigned long long)arg2;

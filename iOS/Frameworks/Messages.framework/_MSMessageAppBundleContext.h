@@ -17,23 +17,31 @@
     UIViewController *_viewController;
     MSConversation *_activeConversation;
     unsigned long long _presentationStyle;
+    unsigned long long _presentationContext;
     id <_MSMessageComposeHostImplProtocol> _hostContext;
 }
 
 @property(retain, nonatomic) id <_MSMessageComposeHostImplProtocol> hostContext; // @synthesize hostContext=_hostContext;
+@property(nonatomic) unsigned long long presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) unsigned long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(readonly, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
 @property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> containingContext; // @synthesize containingContext=_containingContext;
 - (void).cxx_destruct;
+- (void)contentDidLoad;
 - (void)requestResize;
+- (void)dismissAndPresentPhotosApp;
 - (void)dismiss;
 - (void)requestPresentationStyle:(unsigned long long)arg1;
 - (void)requestPresentationStyleExpanded:(_Bool)arg1;
 - (void)startDragMediaItem:(id)arg1 frameInRemoteView:(struct CGRect)arg2 fence:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)removeAssetArchiveWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)stageAssetArchive:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageRichLink:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageMediaItem:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageAppItem:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_prepareForPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_didRemoveAssetArchiveWithIdentifier:(id)arg1;
 - (void)_handleTextInputPayload:(id)arg1 withPayloadID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_requestSnapshotWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentationDidChangeToPresentationState:(id)arg1;

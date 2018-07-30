@@ -7,13 +7,14 @@
 #import <ClassKit/CLSDataObserver.h>
 
 #import "CLSQuery.h"
+#import "NSLocking.h"
 
-@class NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class NSDate, NSMutableArray, NSString;
 
-@interface CLSQuery : CLSDataObserver <CLSQuery>
+@interface CLSQuery : CLSDataObserver <NSLocking, CLSQuery>
 {
     NSMutableArray *_results;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _lock;
     _Bool _executing;
     _Bool _shouldAddResultsToDataStore;
     _Bool _shouldFaultResults;
@@ -41,6 +42,8 @@
 - (oneway void)clientRemote_invalidate;
 - (void)reset;
 @property(readonly, copy) NSString *description;
+- (void)unlock;
+- (void)lock;
 - (id)initWithObjectType:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 error:(id *)arg4;
 
 // Remaining properties

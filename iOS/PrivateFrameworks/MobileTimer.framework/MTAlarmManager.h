@@ -18,6 +18,7 @@
 }
 
 + (id)daySettingToString:(unsigned long long)arg1 longVersion:(_Bool)arg2 everyWeekdayVersion:(_Bool)arg3 showNever:(_Bool)arg4;
++ (id)_filteredAlarms:(id)arg1 afterDate:(id)arg2 maxCount:(unsigned long long)arg3 filter:(CDUnknownBlockType)arg4;
 + (id)assistantSyncNotificationName;
 + (void)warmUp;
 @property(retain, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
@@ -39,9 +40,18 @@
 - (id)alarmWithIDString:(id)arg1;
 - (id)nextAlarmSync;
 - (id)sleepAlarmSync;
+- (id)nextAlarmsInRangeSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4;
+- (id)nextAlarmsInRangeSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3;
+- (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4;
 - (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeBedtimeNotification:(_Bool)arg3;
+- (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3;
 - (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2;
+- (id)_sortedNextAlarmsAfterDate:(id)arg1 includeSleepAlarm:(_Bool)arg2 includeBedtimeNotification:(_Bool)arg3;
+- (id)nextAlarmsInRange:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4;
+- (id)nextAlarmsInRange:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3;
+- (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4;
 - (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeBedtimeNotification:(_Bool)arg3;
+- (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3;
 - (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2;
 - (id)alarms;
 - (id)alarmsSyncIncludingSleepAlarm:(_Bool)arg1;

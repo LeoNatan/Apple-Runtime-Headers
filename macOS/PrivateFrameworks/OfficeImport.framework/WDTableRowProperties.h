@@ -10,7 +10,6 @@
 
 @class WDCharacterProperties, WDTableProperties;
 
-__attribute__((visibility("hidden")))
 @interface WDTableRowProperties : NSObject <NSCopying>
 {
     WDTableProperties *mTableProperties;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
     CDStruct_43955328 mTrackedProperties;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isHeaderOverridden;
@@ -50,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (int)resolveMode;
 - (id)characterProperties;
 - (id)tableProperties;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 - (id)init;
 - (void)addPropertiesValues:(CDStruct_43955328 *)arg1 to:(CDStruct_43955328 *)arg2;

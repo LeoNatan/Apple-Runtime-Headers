@@ -4,74 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <CloudPhotoLibrary/CPLEngineSyncTask.h>
+#import <CloudPhotoLibrary/CPLEngineMultiscopeSyncTask.h>
 
-@class CPLBatchExtractionStrategy, CPLChangeBatch, CPLEnginePushRepository, CPLEngineScheduler, CPLExtractedBatch, NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class CPLScopeFilter;
 
-@interface CPLPushToTransportTask : CPLEngineSyncTask
+@interface CPLPushToTransportTask : CPLEngineMultiscopeSyncTask
 {
-    NSObject<OS_dispatch_queue> *_lock;
-    CPLEnginePushRepository *_pushRepository;
-    CPLEngineScheduler *_scheduler;
-    CPLBatchExtractionStrategy *_currentStrategy;
-    CPLExtractedBatch *_extractedBatch;
-    CPLChangeBatch *_uploadBatch;
-    CPLChangeBatch *_batchToCommit;
-    NSArray *_uploadResourceTasks;
-    NSDictionary *_recordsWithGeneratedResources;
-    NSMutableDictionary *_recordsWithSparseResources;
-    NSMutableDictionary *_recordsWithForwardCompatibilityCheck;
-    NSMutableDictionary *_recordsWithUntrustedCloudCache;
-    NSMutableDictionary *_recordsWithResourcesToLookAhead;
-    NSMutableDictionary *_recordsToCheckForExistence;
-    NSMutableDictionary *_recordsNeedingToBeFullyFetched;
-    id <CPLEngineTransportCheckRecordsExistenceTask> _checkExistenceTask;
-    id <CPLEngineTransportUploadBatchTask> _uploadTask;
-    unsigned int _lastReportedProgress;
-    unsigned int _countOfPushedChanges;
-    NSString *_clientCacheIdentifier;
-    double _startOfIteration;
-    double _startOfDerivativesGeneration;
-    _Bool _generatingSomeDerivatives;
     _Bool _deferredCancel;
-    _Bool _shouldCheckResourcesAhead;
-    unsigned long long _estimatedSize;
-    unsigned int _estimatedCount;
-    _Bool _shouldSetupEstimatedSize;
-    id <CPLEngineTransportGroup> _transportGroup;
-    _Bool _shouldResetExceedingQuotaOnSuccess;
-    _Bool _isUsingOverQuotaStrategy;
-    _Bool _resetStrategy;
-    double _latestApproximativeUploadRate;
+    _Bool _highPriority;
+    CPLScopeFilter *_scopeFilter;
 }
 
+@property(retain, nonatomic) CPLScopeFilter *scopeFilter; // @synthesize scopeFilter=_scopeFilter;
+@property(nonatomic) _Bool highPriority; // @synthesize highPriority=_highPriority;
 - (void).cxx_destruct;
 - (id)taskIdentifier;
-- (void)_pushTaskDidFinishWithError:(id)arg1;
-- (void)cancel;
+- (void)taskDidFinishWithError:(id)arg1;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)cancel:(_Bool)arg1;
-- (void)resume;
-- (void)pause;
-- (void)launch;
-- (void)_doOneIteration;
-- (void)_generateNeededDerivatives;
-- (void)_generateDerivativesForNextRecord:(id)arg1;
-- (void)_deleteGeneratedResourcesAfterError:(id)arg1;
-- (void)_uploadBatch;
-- (void)_prepareUploadBatchWithTransaction:(id)arg1 andStore:(id)arg2;
-- (void)_checkForRecordExistence;
-- (void)_detectUpdatesNeedingExistenceCheck:(id)arg1;
-- (void)_updateChangeProperties:(id)arg1 withBaseChange:(id)arg2 withCopyProperty:(CDUnknownBlockType)arg3;
-- (_Bool)_reenqueueExtractedBatchWithRejectedRecords:(id)arg1 error:(id *)arg2;
-- (_Bool)_discardUploadedExtractedBatchWithError:(id *)arg1;
-- (_Bool)_markUploadedTasksDidFinishWithError:(id)arg1 error:(id *)arg2;
-- (_Bool)_prepareResourcesToUploadInBatch:(id)arg1 error:(id *)arg2;
-- (void)_requireExistenceCheckForRecords:(id)arg1;
-- (void)_popNextBatchAndContinue;
-- (id)initWithEngineLibrary:(id)arg1;
-
-// Remaining properties
-@property(retain) id <CPLPushToTransportTaskDelegate> delegate; // @dynamic delegate;
+- (_Bool)shouldSkipScopesWithMissingTransportScope;
+- (_Bool)shouldProcessScope:(id)arg1 inTransaction:(id)arg2;
+- (id)newScopedTaskWithScope:(id)arg1 transportScope:(id)arg2 clientCacheIdentifier:(id)arg3;
+- (id)enumerateScopesForTaskInTransaction:(id)arg1;
 
 @end
 

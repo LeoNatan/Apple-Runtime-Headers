@@ -8,6 +8,7 @@
 
 @class NSArray, VSRecognitionAction;
 
+__attribute__((visibility("hidden")))
 @interface VSRecognitionResultHandlingRequest : NSObject
 {
     id <VSRecognitionResultHandler> _handler;

@@ -8,14 +8,17 @@
 
 #import "PUICCrownInputSequencerDelegate.h"
 
-@class NSMutableDictionary, NSString;
+@class CLKDevice, NSMutableDictionary, NSString, UILabel;
 
 @interface _NTKFaceEditPageView : UIView <PUICCrownInputSequencerDelegate>
 {
+    CLKDevice *_device;
     NSMutableDictionary *_keylineContainers;
     _Bool _shouldBreatheOnKeylineSelection;
     _Bool _cleaningUpBreathing;
     NSString *_selectedKey;
+    UILabel *_infoLabel;
+    struct CGRect _prevLayoutRect;
     int _editMode;
     id <_NTKFaceEditPageViewDelegate> _delegate;
     UIView *_contentView;
@@ -37,6 +40,7 @@
 @property(nonatomic) __weak id <_NTKFaceEditPageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) int editMode; // @synthesize editMode=_editMode;
 - (void).cxx_destruct;
+- (void)layoutSubviews;
 - (void)_updateKeylineForKey:(id)arg1;
 - (void)_startSelectedKeylineBreathing;
 - (id)_keylineContainerForKey:(id)arg1;
@@ -47,15 +51,17 @@
 - (void)startBreathingAfterDelay:(double)arg1;
 - (void)startBreathing;
 - (void)applyRubberBandFraction:(float)arg1;
+- (void)setInfoText:(id)arg1;
 - (void)removeAllKeylines;
 - (void)selectKeylineForKey:(id)arg1;
+- (void)setLabelActiveAreaInsets:(struct UIEdgeInsets)arg1 forKey:(id)arg2;
 - (void)setLabelAlignment:(unsigned int)arg1 forKey:(id)arg2;
 - (void)setLabelText:(id)arg1 forKey:(id)arg2;
 - (void)setDeselectedKeylineFrame:(struct CGRect)arg1 forKey:(id)arg2;
 - (void)setSelectedKeylineFrame:(struct CGRect)arg1 forKey:(id)arg2;
 - (void)addKeyline:(id)arg1 forKey:(id)arg2 tappable:(_Bool)arg3;
 - (void)setNumberOfLisaValues:(unsigned int)arg1 currentValue:(unsigned int)arg2 valueHeight:(float)arg3;
-- (id)initWithEditMode:(int)arg1;
+- (id)initWithEditMode:(int)arg1 forDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

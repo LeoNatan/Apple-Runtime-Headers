@@ -6,12 +6,11 @@
 
 #import "MCMessage.h"
 
-#import "IMAPMessage.h"
 #import "IMAPPersistedMessage.h"
 
 @class MFLibraryCalendarEvent, MFLibraryStore, MFMailAccount, MFMailbox, NSDate, NSString;
 
-@interface MFLibraryMessage : MCMessage <IMAPMessage, IMAPPersistedMessage>
+@interface MFLibraryMessage : MCMessage <IMAPPersistedMessage>
 {
     long long _libraryID;
     MFLibraryStore *_dataSource;
@@ -32,6 +31,8 @@
 + (id)messageWithLibraryID:(long long)arg1;
 + (id)messageWithURL:(id)arg1;
 + (id)messagesWithURL:(id)arg1;
++ (id)messageIDFromMessageURL:(id)arg1;
++ (BOOL)isValidMessageID:(id)arg1;
 + (id)_residentMessageForLibraryID:(long long)arg1;
 + (void)_removeMessageFromResidentMessagesWithLibraryID:(long long)arg1;
 + (void)_removeMessagesFromResidentMessages:(id)arg1;
@@ -92,7 +93,6 @@
 - (id)messageIDHeaderDigest;
 - (id)cc;
 - (id)to;
-- (BOOL)supportsSnippets;
 - (id)sender;
 @property(readonly, copy) NSString *subject;
 @property(retain) MFLibraryCalendarEvent *calendarEvent;

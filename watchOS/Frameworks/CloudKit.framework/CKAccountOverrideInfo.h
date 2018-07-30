@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface CKAccountOverrideInfo : NSObject <NSCopying, NSSecureCoding>
 {
@@ -19,9 +19,13 @@
     NSString *_email;
     NSString *_password;
     NSString *_secondEmail;
+    NSDictionary *_accountPropertyOverrides;
+    NSDictionary *_overridesByDataclass;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSDictionary *overridesByDataclass; // @synthesize overridesByDataclass=_overridesByDataclass;
+@property(copy, nonatomic) NSDictionary *accountPropertyOverrides; // @synthesize accountPropertyOverrides=_accountPropertyOverrides;
 @property(nonatomic) _Bool accountWantsFlowControl; // @synthesize accountWantsFlowControl=_accountWantsFlowControl;
 @property(nonatomic) _Bool accountWantsPushRegistration; // @synthesize accountWantsPushRegistration=_accountWantsPushRegistration;
 @property(nonatomic) _Bool isUnitTestingAccount; // @synthesize isUnitTestingAccount=_isUnitTestingAccount;

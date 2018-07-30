@@ -17,7 +17,6 @@
 
 + (void)initialize;
 @property(readonly, nonatomic) id <AVFigRouteDiscovererFactory> routeDiscovererFactory; // @synthesize routeDiscovererFactory=_routeDiscovererFactory;
-- (struct OpaqueFigRouteDiscoverer *)createRouteDiscovererWithType:(int)arg1;
 - (id)outputDeviceDiscoverySessionOfClass:(Class)arg1 withDeviceFeatures:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)initWithRouteDiscovererFactory:(id)arg1;

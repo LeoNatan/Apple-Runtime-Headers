@@ -7,32 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSearchCallHistoryIntentResponse.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBSearchCallHistoryIntentResponse : PBCodable <NSCopying>
+@interface _INPBSearchCallHistoryIntentResponse : PBCodable <_INPBSearchCallHistoryIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_callRecords;
+    struct _has;
+    NSArray *_callRecords;
+    NSString *_dateCreated;
+    NSString *_status;
+    NSString *_targetContact;
 }
 
 + (Class)callRecordsType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *callRecords; // @synthesize callRecords=_callRecords;
+@property(copy, nonatomic) NSString *targetContact; // @synthesize targetContact=_targetContact;
+@property(copy, nonatomic) NSString *status; // @synthesize status=_status;
+@property(copy, nonatomic) NSString *dateCreated; // @synthesize dateCreated=_dateCreated;
+@property(copy, nonatomic) NSArray *callRecords; // @synthesize callRecords=_callRecords;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasTargetContact;
+@property(readonly, nonatomic) _Bool hasStatus;
+@property(readonly, nonatomic) _Bool hasDateCreated;
 - (id)callRecordsAtIndex:(unsigned int)arg1;
-- (unsigned int)callRecordsCount;
+@property(readonly, nonatomic) unsigned int callRecordsCount;
 - (void)addCallRecords:(id)arg1;
 - (void)clearCallRecords;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

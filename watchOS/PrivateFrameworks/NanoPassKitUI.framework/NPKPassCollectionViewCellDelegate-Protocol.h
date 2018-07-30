@@ -9,6 +9,7 @@
 @class NPKPassCollectionViewCell;
 
 @protocol NPKPassCollectionViewCellDelegate <NSObject>
+- (void)npkPassCollectionViewCellDidDisplayCell:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellDidReceiveNewZIndex:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellDidChangeSuperview:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellBeganDragging:(NPKPassCollectionViewCell *)arg1;

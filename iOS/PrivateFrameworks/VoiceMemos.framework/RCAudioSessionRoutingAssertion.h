@@ -12,16 +12,18 @@
 {
     NSString *_debugLabel;
     _Bool _requireAudioCategoryActive;
-    long long _priority;
     long long _routeDirection;
+    unsigned long long _sessionOptions;
+    long long _priority;
 }
 
 + (id)newCaptureAssertionNamed:(id)arg1;
 + (id)newPreviewAssertionNamed:(id)arg1;
 + (id)newForegroundAppAssertion;
 + (id)newForegroundAppAssertionRequiringActiveAudioSession:(_Bool)arg1;
-@property(readonly, nonatomic) long long routeDirection; // @synthesize routeDirection=_routeDirection;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
+@property(nonatomic) unsigned long long sessionOptions; // @synthesize sessionOptions=_sessionOptions;
+@property(readonly, nonatomic) long long routeDirection; // @synthesize routeDirection=_routeDirection;
 @property(readonly, nonatomic) _Bool requireAudioCategoryActive; // @synthesize requireAudioCategoryActive=_requireAudioCategoryActive;
 - (void).cxx_destruct;
 - (void)dealloc;

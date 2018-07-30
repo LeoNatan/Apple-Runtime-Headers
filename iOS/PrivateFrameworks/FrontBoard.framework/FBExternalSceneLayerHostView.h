@@ -21,7 +21,8 @@
     UIView<FBSceneHostView> *_hostView;
 }
 
-@property(readonly, retain, nonatomic) FBScene *targetScene; // @synthesize targetScene=_targetScene;
+@property(readonly, nonatomic) FBScene *targetScene; // @synthesize targetScene=_targetScene;
+- (void).cxx_destruct;
 - (void)sceneMonitor:(id)arg1 pairingStatusDidChangeForExternalSceneIDs:(id)arg2;
 - (void)_updateHostingState;
 - (void)_updateTargetScene;

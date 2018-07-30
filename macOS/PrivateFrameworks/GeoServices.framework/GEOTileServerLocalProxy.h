@@ -8,22 +8,26 @@
 
 #import "GEOResourceManifestTileGroupObserver.h"
 
-@class GEODBReader, GEODBWriter, NSLock, NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class GEOProactiveTileDownloader, GEOTileDB, NSLock, NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GEOTileServerLocalProxy : GEOTileServerProxy <GEOResourceManifestTileGroupObserver>
 {
-    GEODBWriter *_dbWriter;
-    GEODBReader *_dbReader;
+    GEOTileDB *_tileCache;
     NSString *_cacheLocation;
     NSMapTable *_providers;
     NSMutableArray *_inProgress;
     NSLock *_inProgressLock;
     NSObject<OS_dispatch_queue> *_workQueue;
+    GEOProactiveTileDownloader *_proactiveTileDownloader;
+    BOOL _updatingManifestForProactiveTileDownload;
 }
 
++ (void)enableCDSObserversIfNecessary;
 - (void).cxx_destruct;
-- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
+- (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
+- (void)generateRequestedFromTileLoaderEndSignpost:(unsigned long long)arg1;
+- (void)generateRequestedFromTileLoaderBeginSignpost:(unsigned long long)arg1;
 - (void)flushPendingWrites;
 - (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 - (void)endPreloadSession;
@@ -34,8 +38,8 @@
 - (void)tileRequesterFinished:(id)arg1;
 - (void)tileRequester:(id)arg1 receivedError:(id)arg2;
 - (void)tileRequester:(id)arg1 receivedData:(id)arg2 tileEdition:(unsigned int)arg3 tileSet:(unsigned int)arg4 etag:(id)arg5 forKey:(struct _GEOTileKey)arg6 userInfo:(id)arg7;
-- (id)userInfoForRequesterUserInfo:(id)arg1 tileEdition:(unsigned int)arg2 tileSet:(unsigned int)arg3 eTag:(id)arg4 bundleIdentifier:(id)arg5;
-- (void)loadTiles:(id)arg1 priorities:(const unsigned int *)arg2 hasAdditionalInfos:(const _Bool *)arg3 additionalInfos:(const CDStruct_58878026 *)arg4 options:(unsigned long long)arg5 client:(id)arg6;
+- (id)userInfoForRequesterUserInfo:(id)arg1 tileEdition:(unsigned int)arg2 tileSet:(unsigned int)arg3 eTag:(id)arg4 bundleIdentifier:(id)arg5 reason:(unsigned char)arg6;
+- (void)loadTiles:(id)arg1 priorities:(const unsigned int *)arg2 hasAdditionalInfos:(const _Bool *)arg3 additionalInfos:(const CDStruct_58878026 *)arg4 signpostIDs:(const unsigned long long *)arg5 reason:(unsigned char)arg6 options:(unsigned long long)arg7 client:(id)arg8;
 - (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2;
 - (void)cancel:(const struct _GEOTileKey *)arg1;
 - (void)close;

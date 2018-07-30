@@ -6,32 +6,22 @@
 
 #import <NanoPassKitUI/NPKPassView.h>
 
-@class PUICActionController, PUICActionGroup, PUICActionItem, UIImageView, UILabel, UIView;
+@class UIImageView, UILabel, UIView;
 
 @interface NPKHelperPaymentPassView : NPKPassView
 {
-    _Bool _orbEnabled;
     UIView *_platterView;
     UIImageView *_applePayLogoView;
     UILabel *_messageView;
-    PUICActionController *_actionController;
-    PUICActionGroup *_actionGroup;
-    PUICActionItem *_deleteActionItem;
 }
 
 + (id)applePayLogo;
 + (void)setShouldAppear:(_Bool)arg1;
 + (_Bool)shouldAppear;
-@property(retain, nonatomic) PUICActionItem *deleteActionItem; // @synthesize deleteActionItem=_deleteActionItem;
-@property(retain, nonatomic) PUICActionGroup *actionGroup; // @synthesize actionGroup=_actionGroup;
-@property(retain, nonatomic) PUICActionController *actionController; // @synthesize actionController=_actionController;
 @property(retain, nonatomic) UILabel *messageView; // @synthesize messageView=_messageView;
 @property(retain, nonatomic) UIImageView *applePayLogoView; // @synthesize applePayLogoView=_applePayLogoView;
 @property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
-@property(nonatomic, getter=isOrbEnabled) _Bool orbEnabled; // @synthesize orbEnabled=_orbEnabled;
 - (void).cxx_destruct;
-- (void)_stopShowingHelperView;
-- (_Bool)canProvideActionController;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;

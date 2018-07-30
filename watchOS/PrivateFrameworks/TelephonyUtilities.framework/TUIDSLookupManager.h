@@ -16,16 +16,20 @@
     id <TUIDSIDQueryController> _queryController;
     NSMutableDictionary *_idsFaceTimeVideoStatuses;
     NSMutableDictionary *_idsFaceTimeAudioStatuses;
+    NSMutableDictionary *_idsFaceTimeMultiwayStatuses;
     id <TUIDSBatchIDQueryController> _batchQuerySearchVideoController;
     id <TUIDSBatchIDQueryController> _batchQuerySearchAudioController;
+    id <TUIDSBatchIDQueryController> _batchQuerySearchMultiwayController;
     CDUnknownBlockType _batchQueryControllerCreationBlock;
 }
 
 + (_Bool)isAnyDestinationAvailableInDestinations:(id)arg1 usingCache:(id)arg2;
 + (id)sharedManager;
 @property(copy, nonatomic) CDUnknownBlockType batchQueryControllerCreationBlock; // @synthesize batchQueryControllerCreationBlock=_batchQueryControllerCreationBlock;
+@property(retain, nonatomic) id <TUIDSBatchIDQueryController> batchQuerySearchMultiwayController; // @synthesize batchQuerySearchMultiwayController=_batchQuerySearchMultiwayController;
 @property(retain, nonatomic) id <TUIDSBatchIDQueryController> batchQuerySearchAudioController; // @synthesize batchQuerySearchAudioController=_batchQuerySearchAudioController;
 @property(retain, nonatomic) id <TUIDSBatchIDQueryController> batchQuerySearchVideoController; // @synthesize batchQuerySearchVideoController=_batchQuerySearchVideoController;
+@property(readonly, nonatomic) NSMutableDictionary *idsFaceTimeMultiwayStatuses; // @synthesize idsFaceTimeMultiwayStatuses=_idsFaceTimeMultiwayStatuses;
 @property(readonly, nonatomic) NSMutableDictionary *idsFaceTimeAudioStatuses; // @synthesize idsFaceTimeAudioStatuses=_idsFaceTimeAudioStatuses;
 @property(readonly, nonatomic) NSMutableDictionary *idsFaceTimeVideoStatuses; // @synthesize idsFaceTimeVideoStatuses=_idsFaceTimeVideoStatuses;
 @property(readonly, nonatomic) id <TUIDSIDQueryController> queryController; // @synthesize queryController=_queryController;
@@ -34,8 +38,10 @@
 - (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
 - (void)beginQueryWithDestinations:(id)arg1;
 - (void)cancelQueries;
+- (_Bool)isFaceTimeMultiwayAvailableForAnyDestinationInDestinations:(id)arg1;
 - (_Bool)isFaceTimeAudioAvailableForAnyDestinationInDestinations:(id)arg1;
 - (_Bool)isFaceTimeVideoAvailableForAnyDestinationInDestinations:(id)arg1;
+- (_Bool)isFaceTimeMultiwayAvailableForItem:(id)arg1;
 - (_Bool)isFaceTimeAudioAvailableForItem:(id)arg1;
 - (_Bool)isFaceTimeVideoAvailableForItem:(id)arg1;
 - (void)dealloc;

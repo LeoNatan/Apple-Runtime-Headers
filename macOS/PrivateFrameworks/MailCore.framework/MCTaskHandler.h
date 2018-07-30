@@ -31,7 +31,7 @@
 - (void)cleanUp;
 - (void)_operationDidFinish:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (long long)_determineQOSForOperation:(id)arg1;
+@property(readonly, nonatomic) long long qualityOfService;
 @property(retain, nonatomic) MCTaskHandlerOperation *operation;
 - (void)dealloc;
 - (id)init;

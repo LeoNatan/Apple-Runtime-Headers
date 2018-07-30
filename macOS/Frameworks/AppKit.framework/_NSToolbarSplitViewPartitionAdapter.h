@@ -8,6 +8,7 @@
 
 @class NSSplitView, NSToolbarItem;
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarSplitViewPartitionAdapter : NSObject
 {
     NSSplitView *_splitView;

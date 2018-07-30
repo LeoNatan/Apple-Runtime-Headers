@@ -8,7 +8,6 @@
 
 @class NSArray, NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface TCFontFamily : NSObject
 {
     NSDictionary *_namesByLanguage;
@@ -17,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSArray *members; // @synthesize members=_members;
 @property(readonly, nonatomic) NSDictionary *namesByLanguage; // @synthesize namesByLanguage=_namesByLanguage;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)equivalentDictionary;
@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (id)memberForFullName:(id)arg1;
 - (id)memberForPSName:(id)arg1;
 - (id)bestMatchForStyling:(struct TCFontStyling)arg1;
-- (void)dealloc;
 - (id)initWithNamesByLanguage:(id)arg1 members:(id)arg2;
 
 @end

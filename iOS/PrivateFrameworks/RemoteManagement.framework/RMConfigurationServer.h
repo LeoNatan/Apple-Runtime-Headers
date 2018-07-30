@@ -14,8 +14,8 @@
     RMConfigurationServerDelegate *_delegate;
 }
 
-@property(retain) RMConfigurationServerDelegate *delegate; // @synthesize delegate=_delegate;
-@property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
+@property(retain, nonatomic) RMConfigurationServerDelegate *delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1;
 

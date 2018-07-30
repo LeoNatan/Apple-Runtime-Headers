@@ -13,17 +13,17 @@
 @property long long numberOfValidItemsForDrop;
 @property BOOL animatesToDestination;
 @property long long draggingFormation;
+@property(readonly) long long draggingSequenceNumber;
+@property(readonly) id draggingSource;
+@property(readonly) NSPasteboard *draggingPasteboard;
+@property(readonly) NSImage *draggedImage;
+@property(readonly) struct CGPoint draggedImageLocation;
+@property(readonly) struct CGPoint draggingLocation;
+@property(readonly) unsigned long long draggingSourceOperationMask;
+@property(readonly) NSWindow *draggingDestinationWindow;
 - (void)resetSpringLoading;
 - (void)enumerateDraggingItemsWithOptions:(unsigned long long)arg1 forView:(NSView *)arg2 classes:(NSArray *)arg3 searchOptions:(NSDictionary *)arg4 usingBlock:(void (^)(NSDraggingItem *, long long, char *))arg5;
 - (NSArray *)namesOfPromisedFilesDroppedAtDestination:(NSURL *)arg1;
 - (void)slideDraggedImageTo:(struct CGPoint)arg1;
-- (long long)draggingSequenceNumber;
-- (id)draggingSource;
-- (NSPasteboard *)draggingPasteboard;
-- (NSImage *)draggedImage;
-- (struct CGPoint)draggedImageLocation;
-- (struct CGPoint)draggingLocation;
-- (unsigned long long)draggingSourceOperationMask;
-- (NSWindow *)draggingDestinationWindow;
 @end
 

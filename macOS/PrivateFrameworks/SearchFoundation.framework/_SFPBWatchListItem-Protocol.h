@@ -10,25 +10,15 @@
 
 @protocol _SFPBWatchListItem <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasWatchLiveTextFormat;
 @property(copy, nonatomic) NSString *watchLiveTextFormat;
-@property(readonly, nonatomic) BOOL hasAddedToUpNextText;
 @property(copy, nonatomic) NSString *addedToUpNextText;
-@property(readonly, nonatomic) BOOL hasAddToUpNextText;
 @property(copy, nonatomic) NSString *addToUpNextText;
-@property(readonly, nonatomic) BOOL hasInUpNextText;
 @property(copy, nonatomic) NSString *inUpNextText;
-@property(readonly, nonatomic) BOOL hasPurchaseOfferTextFormat;
 @property(copy, nonatomic) NSString *purchaseOfferTextFormat;
-@property(readonly, nonatomic) BOOL hasInstallButtonTitle;
 @property(copy, nonatomic) NSString *installButtonTitle;
-@property(readonly, nonatomic) BOOL hasOpenButtonTitle;
 @property(copy, nonatomic) NSString *openButtonTitle;
-@property(readonly, nonatomic) BOOL hasContinueInTextFormat;
 @property(copy, nonatomic) NSString *continueInTextFormat;
-@property(readonly, nonatomic) BOOL hasSeasonEpisodeTextFormat;
 @property(copy, nonatomic) NSString *seasonEpisodeTextFormat;
-@property(readonly, nonatomic) BOOL hasWatchListIdentifier;
 @property(copy, nonatomic) NSString *watchListIdentifier;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -6,15 +6,15 @@
 
 #import "UIViewController.h"
 
-#import "TVDigitEntryViewControllerDelegate.h"
+#import "_TVDigitEntryViewControllerDelegate.h"
 
-@class NSString, TVDigitEntryViewController, UIView;
+@class NSString, UIView, _TVDigitEntryViewController;
 
-@interface TVRestrictionsPasscodeEntryViewController : UIViewController <TVDigitEntryViewControllerDelegate>
+@interface TVRestrictionsPasscodeEntryViewController : UIViewController <_TVDigitEntryViewControllerDelegate>
 {
     _Bool _wallpaperEnabled;
     UIView *_wallpaperView;
-    TVDigitEntryViewController *_passcodeEntryViewController;
+    _TVDigitEntryViewController *_passcodeEntryViewController;
     UIViewController *_guardedViewController;
     CDUnknownBlockType _completionHandler;
 }
@@ -23,7 +23,7 @@
 + (id)restrictionsPasscodeEntryViewControllerGuarding:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) UIViewController *guardedViewController; // @synthesize guardedViewController=_guardedViewController;
-@property(retain, nonatomic) TVDigitEntryViewController *passcodeEntryViewController; // @synthesize passcodeEntryViewController=_passcodeEntryViewController;
+@property(retain, nonatomic) _TVDigitEntryViewController *passcodeEntryViewController; // @synthesize passcodeEntryViewController=_passcodeEntryViewController;
 @property(retain, nonatomic) UIView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
 @property(nonatomic, getter=isWallpaperEnabled) _Bool wallpaperEnabled; // @synthesize wallpaperEnabled=_wallpaperEnabled;
 - (void).cxx_destruct;

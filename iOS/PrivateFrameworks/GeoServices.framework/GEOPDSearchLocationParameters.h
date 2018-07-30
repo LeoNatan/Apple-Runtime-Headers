@@ -10,6 +10,7 @@
 
 @class GEOPDTransportHint, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDSearchLocationParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

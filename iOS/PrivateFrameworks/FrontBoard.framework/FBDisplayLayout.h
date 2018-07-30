@@ -25,11 +25,12 @@
     int _displayBacklightToken;
 }
 
-@property(readonly, retain, nonatomic) FBSDisplayLayoutTransitionContext *currentTransitionContext; // @synthesize currentTransitionContext=_currentTransitionContext;
-@property(readonly, nonatomic) id <FBDisplayLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, retain, nonatomic) FBSDisplayLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
+@property(readonly, nonatomic) FBSDisplayLayoutTransitionContext *currentTransitionContext; // @synthesize currentTransitionContext=_currentTransitionContext;
+@property(readonly, nonatomic) __weak id <FBDisplayLayoutDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) FBSDisplayLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic) long long displayType; // @synthesize displayType=_displayType;
+- (void).cxx_destruct;
 - (void)displayMonitor:(id)arg1 willDisconnectIdentity:(id)arg2;
 - (void)displayMonitor:(id)arg1 didConnectIdentity:(id)arg2 withConfiguration:(id)arg3;
 - (void)_updateStateForTransition:(id)arg1;

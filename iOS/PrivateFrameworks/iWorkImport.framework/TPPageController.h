@@ -13,7 +13,7 @@
 #import "TSKChangeSourceObserver.h"
 #import "TSWPLayoutOwner.h"
 
-@class NSArray, NSMutableArray, NSString, TPDocumentRoot, TPFootnoteLayoutController, TPPageControllerCanvasDelegate, TPPageLayoutState, TPTextFlowLayoutController, TPTextWrapController, TSUMutablePointerSet, TSWPLayoutManager, TSWPLayoutMetricsCache, TSWPMutableDirtyRangeArray;
+@class NSArray, NSMutableArray, NSString, TPDocumentRoot, TPFootnoteLayoutController, TPPageControllerCanvasDelegate, TPPageLayoutState, TPTextFlowLayoutController, TPTextWrapController, TSUMutablePointerSet, TSWPLayoutManager, TSWPLayoutMetricsCache;
 
 __attribute__((visibility("hidden")))
 @interface TPPageController : NSObject <TPPageLayoutInfoProvider, TSKChangeSourceObserver, TSWPLayoutOwner, TPLayoutStateConsumer, TPLayoutStateProvider, TPBackgroundLayoutControllerDelegate>
@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: Ai, name: _isZooming
     _Bool _isObservingNotifications;
     multimap_41f9c887 _pageLayoutCache;
-    TSWPMutableDirtyRangeArray *_dirtyRanges;
     TPPageControllerCanvasDelegate *_offscreenSearchDelegate;
     TPFootnoteLayoutController *_footnoteLayoutController;
     _Bool _checkedForBackUp;
@@ -44,10 +43,12 @@ __attribute__((visibility("hidden")))
     TPPageLayoutState *_layoutState;
     NSMutableArray *_sectionHints;
     id <TPPageControllerDelegate> _delegate;
+    id <TPPageControllerObserver> _observer;
     TSWPLayoutManager *_bodyLayoutManager;
 }
 
 @property(readonly, nonatomic) TSWPLayoutManager *bodyLayoutManager; // @synthesize bodyLayoutManager=_bodyLayoutManager;
+@property(nonatomic) __weak id <TPPageControllerObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) __weak id <TPPageControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSMutableArray *sectionHints; // @synthesize sectionHints=_sectionHints;
 @property(readonly, nonatomic) TPPageLayoutState *layoutState; // @synthesize layoutState=_layoutState;
@@ -72,7 +73,6 @@ __attribute__((visibility("hidden")))
 - (id)p_pageHintForPageIndexPath:(id)arg1;
 - (id)p_sectionHintForPageIndex:(unsigned long long)arg1 forceLayout:(_Bool)arg2 allowAfterLayoutPoint:(_Bool)arg3;
 - (id)p_pageHintForPageIndex:(unsigned long long)arg1 forceLayout:(_Bool)arg2 allowAfterLayoutPoint:(_Bool)arg3;
-- (id)p_pageIndexPathForPageIndex:(unsigned long long)arg1 forceLayout:(_Bool)arg2 allowAfterLayoutPoint:(_Bool)arg3;
 - (void)p_updatePageCount;
 - (_Bool)p_didLayout;
 - (void)p_advanceSectionIndex;
@@ -97,6 +97,8 @@ __attribute__((visibility("hidden")))
 - (id)p_pageInfosForBodySelection:(id)arg1;
 - (void)p_processWidowsAndInflationForLayoutController:(id)arg1;
 - (unsigned long long)p_pageIndexForFootnoteIndex:(unsigned long long)arg1 forceLayout:(_Bool)arg2 searchAfterLayoutPoint:(_Bool)arg3;
+- (unsigned long long)p_pageHintIndexForAnchoredCharIndex:(unsigned long long)arg1;
+- (unsigned long long)p_pageHintIndexForCharIndex:(unsigned long long)arg1;
 - (unsigned long long)p_pageIndexForAnchoredCharIndex:(unsigned long long)arg1 forceLayout:(_Bool)arg2 searchAfterLayoutPoint:(_Bool)arg3;
 - (_Bool)p_couldBeFirstPageIndex:(unsigned long long)arg1 forPartitionedAttachmentCharIndex:(unsigned long long)arg2;
 - (unsigned long long)p_pageIndexContainingIndex:(unsigned long long)arg1 ofType:(int)arg2;
@@ -118,7 +120,6 @@ __attribute__((visibility("hidden")))
 - (void)p_setNeedsLayoutOnPageIndex:(unsigned long long)arg1;
 - (void)p_setNeedsLayoutFromSectionIndexToEnd:(unsigned long long)arg1;
 - (void)p_hasBodyChanged:(id)arg1;
-- (Class)p_pageInfoClass;
 - (void)p_didScroll:(id)arg1;
 - (void)p_willScroll:(id)arg1;
 - (void)p_didZoom:(id)arg1;
@@ -126,12 +127,12 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)p_firstPageColumn;
 - (unsigned long long)p_backupPageIndexForCharIndex:(unsigned long long)arg1;
 - (struct _NSRange)p_pageRangeAffectedByInfo:(id)arg1;
-- (_Bool)p_pageIndexIsAlternativePageNotInDocument:(unsigned long long)arg1;
 - (void)p_rebuildPageLayoutsContainingDrawableUUIDs:(id)arg1;
 - (void)p_performWithCachedPageLayouts:(CDUnknownBlockType)arg1;
 - (void)i_rebuildCachedLayoutChildrenFromStartPage:(unsigned long long)arg1 toEndPage:(unsigned long long)arg2 setNeedsLayout:(_Bool)arg3;
 - (void)preprocessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)processHeaderFooterPropertyChanged;
+- (unsigned long long)adjacentPageIndexForPageIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) double verticalPageSeparation;
 @property(readonly, nonatomic) double horizontalPageSeparation;
 - (void)invalidateAllPageLayoutsSizeAndPosition;
@@ -222,6 +223,7 @@ __attribute__((visibility("hidden")))
 - (id)masterDrawableProviderForPageIndex:(unsigned long long)arg1;
 - (_Bool)shouldHeaderFooterBeVisibleForPageIndex:(unsigned long long)arg1;
 - (id)headerFooterProviderForPageIndex:(unsigned long long)arg1;
+- (id)backgroundFillForPageIndex:(unsigned long long)arg1;
 - (_Bool)canProvideNumberingInfoForPageIndex:(unsigned long long)arg1;
 - (_Bool)canProvideInfoForPageIndex:(unsigned long long)arg1;
 - (id)i_flowLayoutController;
@@ -242,6 +244,7 @@ __attribute__((visibility("hidden")))
 - (id)i_topicHintsPriorToPageIndex:(unsigned long long)arg1;
 - (id)i_columnPriorToPageIndex:(unsigned long long)arg1;
 - (void)i_trimPageAtIndex:(unsigned long long)arg1 toCharIndex:(unsigned long long)arg2 removeFootnoteReferenceCount:(unsigned long long)arg3 removeAutoNumberFootnoteCount:(unsigned long long)arg4;
+- (id)i_pageIndexPathForPageIndex:(unsigned long long)arg1 forceLayout:(_Bool)arg2 allowAfterLayoutPoint:(_Bool)arg3;
 - (id)i_pageHintForPageIndex:(unsigned long long)arg1;
 - (void)d_toggleWrapAnimation;
 - (void)d_timeLayout;

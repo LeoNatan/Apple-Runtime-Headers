@@ -8,7 +8,6 @@
 
 @class NSProgressIndicator;
 
-__attribute__((visibility("hidden")))
 @interface ABBookSearchFieldCell : NSSearchFieldCell
 {
     NSProgressIndicator *_progressIndicator;

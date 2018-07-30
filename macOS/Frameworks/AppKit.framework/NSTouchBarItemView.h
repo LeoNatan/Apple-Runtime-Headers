@@ -10,8 +10,5 @@
 {
 }
 
-- (void)setFunctionBarItem:(id)arg1;
-- (id)functionBarItem;
-
 @end
 

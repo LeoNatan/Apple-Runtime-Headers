@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSMutableDictionary, OITSUNoCopyDictionary, WBOfficeArtReaderState, WDDocument;
 
-__attribute__((visibility("hidden")))
 @interface WBReader : OCBReader
 {
     struct WrdNoteTable *mFootnoteTable;
@@ -27,15 +26,18 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mAnnotationOwners;
     OITSUNoCopyDictionary *mIndexToStyles;
     OITSUNoCopyDictionary *mIndexToFonts;
-    WDDocument *mTargetDocument;
+    NSMutableDictionary *mPreviousFlowElement;
     WBOfficeArtReaderState *mOfficeArtState;
     struct vector<WBTextBoxReaderInfo, std::__1::allocator<WBTextBoxReaderInfo>> *mTextBoxes;
     BOOL mReportProgress;
     id mAnnotationRangeStart;
     NSMutableDictionary *mBookmarkIndexToAnnotationRangeStartMap;
+    WDDocument *mTargetDocument;
 }
 
-@property(nonatomic) WDDocument *targetDocument; // @synthesize targetDocument=mTargetDocument;
+@property(nonatomic) __weak WDDocument *targetDocument; // @synthesize targetDocument=mTargetDocument;
+@property(readonly) NSMutableDictionary *previousFlowElement; // @synthesize previousFlowElement=mPreviousFlowElement;
+- (void).cxx_destruct;
 - (struct WBTextBoxReaderInfo)textBoxInfoAtIndex:(unsigned long long)arg1;
 - (unsigned long long)textBoxCount;
 - (void)cacheTextBox:(id)arg1 withChainIndex:(unsigned short)arg2;
@@ -72,7 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)read;
 - (BOOL)start;
 - (void)dealloc;
-- (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (id)initWithCancelDelegate:(id)arg1;
 - (void)initialize;
 - (void)setAnnotationRangeStart:(id)arg1 forBookmarkIndex:(unsigned long long)arg2;
 - (id)annotationRangeStartForBookmarkIndex:(unsigned long long)arg1;

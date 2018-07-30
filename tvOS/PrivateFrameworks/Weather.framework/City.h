@@ -29,8 +29,8 @@
     NSArray *_dayForecasts;
     NSArray *_hourlyForecasts;
     NSString *_updateTimeString;
-    NSString *_woeid;
     NSString *_name;
+    NSString *_woeid;
     NSString *_state;
     NSString *_ISO3166CountryAbbreviation;
     WFTemperature *_temperature;
@@ -88,7 +88,7 @@
 @property(retain, nonatomic) NSError *lastUpdateError; // @synthesize lastUpdateError=_lastUpdateError;
 @property(retain, nonatomic) NSDate *timeZoneUpdateDate; // @synthesize timeZoneUpdateDate=_timeZoneUpdateDate;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
-@property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
+@property(copy) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSURL *deeplink; // @synthesize deeplink=_deeplink;
 @property(copy, nonatomic) NSURL *link; // @synthesize link=_link;
 @property(nonatomic) double precipitationPast24Hours; // @synthesize precipitationPast24Hours=_precipitationPast24Hours;
@@ -101,10 +101,10 @@
 @property(retain, nonatomic) WFTemperature *temperature; // @synthesize temperature=_temperature;
 @property(copy, nonatomic) NSString *ISO3166CountryAbbreviation; // @synthesize ISO3166CountryAbbreviation=_ISO3166CountryAbbreviation;
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *woeid; // @synthesize woeid=_woeid;
 @property(nonatomic, getter=isTransient) _Bool transient; // @synthesize transient=_transient;
 @property(nonatomic) _Bool isLocalWeatherCity; // @synthesize isLocalWeatherCity=_isLocalWeatherCity;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *updateTimeString; // @synthesize updateTimeString=_updateTimeString;
 - (void).cxx_destruct;
 - (_Bool)_dataIsValid;
@@ -128,6 +128,7 @@
 - (struct CLLocationCoordinate2D)coordinate;
 - (void)setCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(nonatomic) long long conditionCode; // @synthesize conditionCode=_conditionCode;
+- (id)getName;
 - (id)cityAndState;
 - (_Bool)isUpdatingOrNoData;
 - (_Bool)_isUpdating;

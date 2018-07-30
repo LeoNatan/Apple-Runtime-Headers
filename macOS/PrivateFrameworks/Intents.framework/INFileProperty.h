@@ -6,14 +6,13 @@
 
 #import "NSObject.h"
 
-#import "INCacheableContainer.h"
 #import "INFilePropertyExport.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class INDateComponentsRange, INPerson, NSNumber, NSString;
 
-@interface INFileProperty : NSObject <INCacheableContainer, INFilePropertyExport, NSCopying, NSSecureCoding>
+@interface INFileProperty : NSObject <INFilePropertyExport, NSCopying, NSSecureCoding>
 {
     NSString *_name;
     NSString *_qualifier;
@@ -42,8 +41,6 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)initWithName:(id)arg1 qualifier:(id)arg2 type:(id)arg3 dateComponentsRange:(id)arg4 person:(id)arg5 value:(id)arg6 quantity:(id)arg7;
-- (void)_intents_updateContainerWithCache:(id)arg1;
-- (id)_intents_cacheableObjects;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

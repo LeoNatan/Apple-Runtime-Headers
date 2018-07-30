@@ -16,6 +16,7 @@
     BOOL _allowsCellularAccess;
     BOOL _longLived;
     BOOL _preferAnonymousRequests;
+    BOOL _automaticallyRetryNetworkFailures;
     BOOL _allowsBackgroundNetworking;
     BOOL _shouldSkipZonePCSUpdate;
     BOOL _hasContainer;
@@ -23,6 +24,8 @@
     BOOL _hasLongLived;
     BOOL _hasTimeoutIntervalForRequest;
     BOOL _hasTimeoutIntervalForResource;
+    BOOL _hasAutomaticallyRetryNetworkFailures;
+    BOOL _hasDiscretionaryNetworkBehavior;
     BOOL _hasPreferAnonymousRequests;
     BOOL _hasAllowsBackgroundNetworking;
     BOOL _hasSourceApplicationBundleIdentifier;
@@ -34,6 +37,7 @@
     long long _qualityOfService;
     double _timeoutIntervalForRequest;
     double _timeoutIntervalForResource;
+    unsigned long long _discretionaryNetworkBehavior;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSDictionary *_additionalRequestHTTPHeaders;
@@ -47,6 +51,8 @@
 @property(nonatomic) BOOL hasSourceApplicationBundleIdentifier; // @synthesize hasSourceApplicationBundleIdentifier=_hasSourceApplicationBundleIdentifier;
 @property(nonatomic) BOOL hasAllowsBackgroundNetworking; // @synthesize hasAllowsBackgroundNetworking=_hasAllowsBackgroundNetworking;
 @property(nonatomic) BOOL hasPreferAnonymousRequests; // @synthesize hasPreferAnonymousRequests=_hasPreferAnonymousRequests;
+@property(nonatomic) BOOL hasDiscretionaryNetworkBehavior; // @synthesize hasDiscretionaryNetworkBehavior=_hasDiscretionaryNetworkBehavior;
+@property(nonatomic) BOOL hasAutomaticallyRetryNetworkFailures; // @synthesize hasAutomaticallyRetryNetworkFailures=_hasAutomaticallyRetryNetworkFailures;
 @property(nonatomic) BOOL hasTimeoutIntervalForResource; // @synthesize hasTimeoutIntervalForResource=_hasTimeoutIntervalForResource;
 @property(nonatomic) BOOL hasTimeoutIntervalForRequest; // @synthesize hasTimeoutIntervalForRequest=_hasTimeoutIntervalForRequest;
 @property(nonatomic) BOOL hasLongLived; // @synthesize hasLongLived=_hasLongLived;
@@ -62,11 +68,14 @@
 @property(nonatomic) BOOL allowsBackgroundNetworking; // @synthesize allowsBackgroundNetworking=_allowsBackgroundNetworking;
 @property(nonatomic) BOOL shouldSkipZonePCSUpdate; // @synthesize shouldSkipZonePCSUpdate=_shouldSkipZonePCSUpdate;
 @property(nonatomic) BOOL preferAnonymousRequests; // @synthesize preferAnonymousRequests=_preferAnonymousRequests;
+@property(nonatomic) unsigned long long discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
+@property(nonatomic) BOOL automaticallyRetryNetworkFailures; // @synthesize automaticallyRetryNetworkFailures=_automaticallyRetryNetworkFailures;
 @property(nonatomic) double timeoutIntervalForResource; // @synthesize timeoutIntervalForResource=_timeoutIntervalForResource;
 @property(nonatomic) double timeoutIntervalForRequest; // @synthesize timeoutIntervalForRequest=_timeoutIntervalForRequest;
 @property(nonatomic, getter=isLongLived) BOOL longLived; // @synthesize longLived=_longLived;
 @property(nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
+- (void)setQualityOfServiceWithoutQoSChecks:(long long)arg1;
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
 - (id)resolveAgainstGenericConfiguration:(id)arg1;
 - (id)init;

@@ -29,11 +29,11 @@
 + (id)recentInputAtPath:(id)arg1;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(nonatomic) _Bool needsSync; // @synthesize needsSync=_needsSync;
+- (void).cxx_destruct;
 - (void)storeIfNecessary;
 - (id)lexiconByRemovingEntry:(id)arg1;
 - (id)lexiconWithAdditionalEntry:(id)arg1 maximumSize:(long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 @end
 

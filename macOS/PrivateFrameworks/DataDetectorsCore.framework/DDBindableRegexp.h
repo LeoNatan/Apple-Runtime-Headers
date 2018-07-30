@@ -10,6 +10,7 @@
 
 @class DDBasicRegexp, DDBinderInfo, DDLocation;
 
+__attribute__((visibility("hidden")))
 @interface DDBindableRegexp : NSObject <NSCopying>
 {
     DDBinderInfo *_binderInfo;

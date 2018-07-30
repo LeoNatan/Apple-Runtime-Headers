@@ -14,10 +14,13 @@
     AVBackdropView *_backdropView;
 }
 
-@property(nonatomic) __weak AVBackdropView *backdropView; // @synthesize backdropView=_backdropView;
+@property(retain, nonatomic) AVBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(nonatomic) _Bool automaticallyDrawsRoundedCorners; // @synthesize automaticallyDrawsRoundedCorners=_automaticallyDrawsRoundedCorners;
 - (void).cxx_destruct;
 - (_Bool)_isContainedInOverlappingBackgroundView;
+- (void)_ensureOrRemoveBackdropView;
+- (void)didMoveToWindow;
+- (void)didMoveToSuperview;
 - (void)layoutSubviews;
 - (void)addSubview:(id)arg1 applyingMaterialStyle:(long long)arg2 tintEffectStyle:(long long)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;

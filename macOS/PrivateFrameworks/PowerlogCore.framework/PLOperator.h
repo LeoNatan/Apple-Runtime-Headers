@@ -63,6 +63,7 @@
 - (void)updateEntry:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)logEntries:(id)arg1 withGroupID:(id)arg2;
 - (void)logEntry:(id)arg1;
+- (void)logProportionateAggregateEntry:(id)arg1 withStartDate:(id)arg2 withEndDate:(id)arg3;
 - (void)enableBufferFlushTimer:(unsigned long long)arg1;
 - (void)flushBuffer;
 - (void)logFromCFCallback:(id)arg1;

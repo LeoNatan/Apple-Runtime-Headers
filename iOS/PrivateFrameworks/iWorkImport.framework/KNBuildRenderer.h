@@ -8,7 +8,7 @@
 
 #import "CAAnimationDelegate.h"
 
-@class CALayer, KNAnimatedBuild, KNAnimationInfo, KNBuildChunk, NSArray, NSMapTable, NSMutableArray, NSString, TSDDrawableInfo, TSDFPSCounter, TSDRep, TSDTextureDescription, TSDTextureSet;
+@class CALayer, KNAnimatedBuild, KNAnimationInfo, KNBuildChunk, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSString, TSDDrawableInfo, TSDFPSCounter, TSDRep, TSDTextureDescription, TSDTextureSet;
 
 __attribute__((visibility("hidden")))
 @interface KNBuildRenderer : KNAnimationRenderer <CAAnimationDelegate>
@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     _Bool _animationWillBeginPerformed;
     TSDFPSCounter *_FPSCounter;
     TSDTextureDescription *_textureDescription;
+    NSMutableSet *_texturesToTeardown;
 }
 
 @property(retain, nonatomic) TSDTextureDescription *textureDescription; // @synthesize textureDescription=_textureDescription;
@@ -67,7 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)updateAnimationsForLayerTime:(double)arg1;
 - (_Bool)addAnimationsAtLayerTime:(double)arg1;
 - (void)resetHighlightsBeforeAnimationOnTextureSet:(id)arg1;
-- (id)prepareAnimations;
+- (id)prepareAnimationsSynchronously;
 - (id)p_initializeTextureSetForEndOfBuild:(_Bool)arg1 endOfSlide:(_Bool)arg2 description:(id)arg3 isRenderingToContext:(_Bool)arg4;
 - (id)initializeTextureSetForEndOfBuild:(_Bool)arg1 endOfSlide:(_Bool)arg2 description:(id)arg3 isRenderingToContext:(_Bool)arg4;
 - (void)setGeometryAndActionAttributesOnTextureSet:(id)arg1 isAtEndOfBuild:(_Bool)arg2 isAtEndOfSlide:(_Bool)arg3 isRenderingToContext:(_Bool)arg4;

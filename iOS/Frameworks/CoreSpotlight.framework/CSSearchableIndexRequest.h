@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CSSearchableIndex, NSData, NSString;
+@class CSDataWrapper, CSSearchableIndex, NSData, NSString;
 
 @interface CSSearchableIndexRequest : NSObject
 {
@@ -22,6 +22,7 @@
     CDUnknownBlockType _completionBlock;
     CSSearchableIndex *_index;
     NSString *_label;
+    CSDataWrapper *_dataWrapper;
     unsigned long long _retryCount;
 }
 
@@ -33,12 +34,13 @@
 // Property attributes: TAI,N,V_requestID
 
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
+@property(retain, nonatomic) CSDataWrapper *dataWrapper; // @synthesize dataWrapper=_dataWrapper;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionDataBlock; // @synthesize completionDataBlock=_completionDataBlock;
 @property(copy, nonatomic) CDUnknownBlockType performBlock; // @synthesize performBlock=_performBlock;
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
+@property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) _Bool shouldThrottle; // @synthesize shouldThrottle=_shouldThrottle;
 @property(nonatomic) unsigned long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
 - (void).cxx_destruct;
@@ -47,7 +49,7 @@
 - (void)_finishWithError:(id)arg1;
 - (void)_perform;
 - (void)retryIfNecessaryWithError:(id)arg1;
-- (void)retryIfNecessaryWithError:(id)arg1 data:(id)arg2;
+- (void)retryIfNecessaryWithError:(id)arg1 dataWrapper:(id)arg2;
 - (void)_unthrottleIfNecessary;
 - (void)_throttleIfNecessary;
 - (id)description;

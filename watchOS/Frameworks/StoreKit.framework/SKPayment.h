@@ -19,6 +19,7 @@
 + (id)paymentWithProductIdentifier:(id)arg1;
 + (id)paymentFromPurchaseIntentWithProduct:(id)arg1;
 + (id)paymentWithProduct:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *requestParameters;
 @property(readonly, copy, nonatomic) NSString *partnerTransactionIdentifier;
 @property(readonly, copy, nonatomic) NSString *partnerIdentifier;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSString *applicationUsername;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

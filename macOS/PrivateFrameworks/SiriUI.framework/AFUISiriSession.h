@@ -36,6 +36,7 @@
 + (id)currentMicrophoneIdentifier;
 + (void)beginMonitoringSiriAvailability;
 + (unsigned long long)availabilityState;
++ (void)forceAvailabilityStateAvailable:(BOOL)arg1;
 @property(retain, nonatomic, getter=_currentSpeechRequestGroup, setter=_setCurrentSpeechRequestGroup:) NSObject<OS_dispatch_group> *currentSpeechRequestGroup; // @synthesize currentSpeechRequestGroup=_currentSpeechRequestGroup;
 @property(readonly, nonatomic, getter=_connection) AFConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) BOOL isProcessingAcousticIdRequest; // @synthesize isProcessingAcousticIdRequest=_isProcessingAcousticIdRequest;
@@ -97,6 +98,7 @@
 - (void)assistantConnectionDidDetectMusic:(id)arg1;
 - (void)assistantConnectionDismissAssistant:(id)arg1;
 - (void)assistantConnection:(id)arg1 shouldSpeak:(BOOL)arg2;
+- (void)assistantConnection:(id)arg1 openApplicationWithBundleID:(id)arg2 URL:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)assistantConnection:(id)arg1 openURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)assistantConnectionRequestFinished:(id)arg1;
 - (void)assistantConnection:(id)arg1 requestFailedWithError:(id)arg2 requestClass:(id)arg3;
@@ -125,7 +127,6 @@
 - (long long)_state;
 - (id)_stateMachine;
 - (void)_siriNetworkAvailabilityDidChange:(id)arg1;
-- (void)_voiceOverStatusDidChange:(id)arg1;
 - (void)_outputVoiceDidChange:(id)arg1;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1 delegateQueue:(id)arg2;

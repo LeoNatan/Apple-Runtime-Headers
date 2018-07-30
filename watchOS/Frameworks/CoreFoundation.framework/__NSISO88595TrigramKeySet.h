@@ -6,6 +6,7 @@
 
 #import <CoreFoundation/_NSSharedKeySetS.h>
 
+__attribute__((visibility("hidden")))
 @interface __NSISO88595TrigramKeySet : _NSSharedKeySetS
 {
 }

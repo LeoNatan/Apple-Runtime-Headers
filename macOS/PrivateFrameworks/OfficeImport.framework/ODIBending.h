@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface ODIBending : NSObject
 {
     float mSpaceWidth;

@@ -20,6 +20,7 @@
     BOOL _isLogging;
     BOOL _selectNewlyCreatedAnnotations;
     BOOL _shapeDetectionEnabled;
+    BOOL _useHighVisibilityDefaultInks;
     id <AKControllerDelegateProtocol> _delegate;
     AKModelController *_modelController;
     NSView *_toolbarView;
@@ -60,6 +61,7 @@
 + (id)akBundleIdentifier;
 + (id)akBundle;
 + (id)controllerWithDelegate:(id)arg1;
+@property(nonatomic) BOOL useHighVisibilityDefaultInks; // @synthesize useHighVisibilityDefaultInks=_useHighVisibilityDefaultInks;
 @property(nonatomic) __weak AKToolbarView *modernToolbarView; // @synthesize modernToolbarView=_modernToolbarView;
 @property(nonatomic) BOOL shapeDetectionEnabled; // @synthesize shapeDetectionEnabled=_shapeDetectionEnabled;
 @property(nonatomic) BOOL selectNewlyCreatedAnnotations; // @synthesize selectNewlyCreatedAnnotations=_selectNewlyCreatedAnnotations;
@@ -116,6 +118,7 @@
 - (id)currentPageController;
 - (BOOL)shouldDrawVariableStrokeDoodles;
 - (BOOL)_validateCutCopyDelete;
+- (BOOL)isDFRInitialized;
 - (void)removeNoteFromAnnotation:(id)arg1;
 - (void)addPopupToAnnotation:(id)arg1 openPopup:(BOOL)arg2;
 - (void)highlightableSelectionDidEndChanging;
@@ -142,9 +145,12 @@
 - (void)redo:(id)arg1;
 - (BOOL)validateUndo:(id)arg1;
 - (void)undo:(id)arg1;
+- (void)delayedUndoControllerSetup;
 - (id)toolbarButtonItemOfType:(unsigned long long)arg1 style:(unsigned long long)arg2;
 - (id)signaturesMenu;
+- (void)applyCurrentCrop;
 - (void)resetToDefaultToolMode;
+- (unsigned long long)toolMode;
 - (BOOL)handleEvent:(id)arg1;
 - (struct CGRect)contentAlignedRectForRect:(struct CGRect)arg1 onPageAtIndex:(unsigned long long)arg2;
 - (double)currentModelBaseScaleFactorForPageAtIndex:(unsigned long long)arg1;

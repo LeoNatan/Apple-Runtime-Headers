@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)clearAllData;
 - (void)_deleteUnusedSafariDesktopPictureFiles;
 - (void)_clearOCSPCache;
-- (void)_clearNonTemporalData;
+- (void)_clearNonTemporalDataIncludingFavicons:(BOOL)arg1;
 - (void)clearDataFromInterval:(id)arg1;
 - (void)clearOnlySafariHistoryFromInterval:(id)arg1;
 - (id)init;

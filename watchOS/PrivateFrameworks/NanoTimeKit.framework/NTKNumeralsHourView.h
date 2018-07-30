@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)_imageNameForStyle:(unsigned int)arg1 hour:(int)arg2;
 - (void)_applyTintColor:(id)arg1;
-- (id)_hourColorForFaceColor:(unsigned int)arg1 colorSchemeUnits:(unsigned int)arg2;
+- (id)_hourColorForDevice:(id)arg1 faceColor:(unsigned int)arg2 colorSchemeUnits:(unsigned int)arg3;
 - (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 faceConfiguration:(id)arg4;
 - (void)applyFaceColorFromFaceConfiguration:(id)arg1;
 - (void)layoutSubviews;

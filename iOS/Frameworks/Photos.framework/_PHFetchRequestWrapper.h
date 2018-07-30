@@ -8,22 +8,24 @@
 
 #import "NSCopying.h"
 
-@class NSFetchRequest, NSManagedObjectID;
+@class NSFetchRequest, NSManagedObjectID, NSSet;
 
 @interface _PHFetchRequestWrapper : NSObject <NSCopying>
 {
     unsigned long long _hash;
     NSFetchRequest *_fetchRequest;
     NSManagedObjectID *_containerIdentifier;
+    NSSet *_fetchPropertySets;
 }
 
+@property(readonly, nonatomic) NSSet *fetchPropertySets; // @synthesize fetchPropertySets=_fetchPropertySets;
 @property(readonly, nonatomic) NSManagedObjectID *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(readonly, nonatomic) NSFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 @property(readonly, nonatomic) unsigned long long hash; // @synthesize hash=_hash;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithFetchRequest:(id)arg1 containerIdentifier:(id)arg2;
+- (id)initWithFetchRequest:(id)arg1 containerIdentifier:(id)arg2 fetchPropertySets:(id)arg3;
 
 @end
 

@@ -6,9 +6,11 @@
 
 #import <AppKit/NSTitledFrame.h>
 
-@class NSButton, NSString, NSTitlebarContainerView, NSView;
+#import "NSViewLayerContentScaleDelegate.h"
 
-@interface NSThemeFrame : NSTitledFrame
+@class NSButton, NSString, NSTitlebarContainerView, NSView, NSVisualEffectView;
+
+@interface NSThemeFrame : NSTitledFrame <NSViewLayerContentScaleDelegate>
 {
     NSButton *toolbarButton;
     int _toolbarVisibleStatus;
@@ -27,7 +29,6 @@
         unsigned int suppressTitleBackgroundDrawing:1;
         unsigned int suppressTitleDrawing:1;
         unsigned int supresssBackgroundCellDrawing:1;
-        unsigned int alwaysShowTitlebar:1;
         unsigned int hasCachedWindowCornerSizes:1;
         unsigned int autoFlattenEnabled:1;
         unsigned int addingKnownSubview:1;
@@ -70,11 +71,11 @@
 + (double)_maxXWindowBorderWidth:(unsigned long long)arg1;
 + (double)_minXWindowBorderWidth:(unsigned long long)arg1;
 + (double)_windowBorderThickness:(unsigned long long)arg1;
++ (BOOL)automaticallyNotifiesObserversOf_backdropView;
 + (id)_cuiMaskOnlyOptionsForWindowType:(struct __CFString *)arg1 cornerMask:(unsigned long long)arg2 inRect:(struct CGRect)arg3;
 + (void)clearCornerMaskOnLayer:(id)arg1;
 + (void)drawBevel:(struct CGRect)arg1 inFrame:(struct CGRect)arg2 topCornerRounded:(BOOL)arg3 bottomCornerRounded:(BOOL)arg4;
 + (void)drawBevel:(struct CGRect)arg1 inFrame:(struct CGRect)arg2 topCornerRounded:(BOOL)arg3 bottomCornerRounded:(BOOL)arg4 isHUD:(BOOL)arg5 isDarkWindow:(BOOL)arg6;
-+ (void)maskWindowCornersWithMask:(unsigned long long)arg1 inRect:(struct CGRect)arg2 clipRect:(struct CGRect)arg3;
 + (id)_renameFieldForWindowWithStyleMask:(unsigned long long)arg1;
 + (id)containingThemeFrameFromView:(id)arg1;
 @property double titlebarAlphaValue;
@@ -113,15 +114,9 @@
 - (void)_renamingDidEndNormally:(BOOL)arg1;
 - (void)_didEnd:(BOOL)arg1 renameWithTitle:(id)arg2 editingRange:(struct _NSRange)arg3 grantHandler:(CDUnknownBlockType)arg4;
 - (void)_willStartRenameWithTitle:(id)arg1 editingRange:(struct _NSRange)arg2;
-- (struct CGRect)titlebarRectAssumingVisible;
 - (BOOL)_mouseInTitleRect:(id)arg1;
 - (BOOL)_mouseInPopupRect:(id)arg1;
 - (BOOL)_inactiveButtonsNeedMask;
-- (void)_drawGrowBoxWithClip:(struct CGRect)arg1;
-- (void)_drawGrowBoxWithClip:(struct CGRect)arg1 inRect:(struct CGRect)arg2 opaque:(BOOL)arg3;
-- (void)_coreUIDrawResizeBoxInRect:(struct CGRect)arg1 active:(BOOL)arg2;
-- (BOOL)_canDrawWindowGrowBox;
-- (struct CGRect)_growBoxRect;
 - (BOOL)_hasToolbar;
 - (BOOL)_hidingToolbar;
 - (BOOL)_hidingTitlebar;
@@ -133,7 +128,6 @@
 - (BOOL)_isResizable;
 - (BOOL)_isSheet;
 - (void)_setSheet:(BOOL)arg1;
-- (void)_windowDidChangeSheetParent;
 - (double)_sheetHeightAdjustment;
 - (BOOL)_isUtility;
 - (void)_resetTitleFont;
@@ -142,7 +136,6 @@
 - (struct CGRect)_maxYBorderRect;
 - (struct CGRect)_maxXBorderRect;
 - (struct CGRect)_minXBorderRect;
-- (struct CGRect)_maxXminYResizeRect;
 - (struct CGRect)_texturedMaxXminYResizeRect;
 - (double)_contentToFrameMaxYHeight;
 - (double)_contentToFrameMinYHeight;
@@ -151,8 +144,6 @@
 - (double)_maxXTitlebarDragWidth;
 - (double)_minXTitlebarDragWidth;
 - (double)_maxYTitlebarDragHeight;
-- (void)_resetDragMargins;
-- (struct CGRect)_draggableFrame;
 - (struct CGRect)_autosaveButtonRevealOverRect;
 @property double buttonRevealAmount; // @dynamic buttonRevealAmount;
 @property(readonly) double titleHeightToHideInFullScreen; // @dynamic titleHeightToHideInFullScreen;
@@ -310,6 +301,7 @@
 - (id)_toolbarView;
 - (BOOL)_toolbarIsManagedByExternalWindow;
 - (BOOL)_toolbarIsHidden;
+- (BOOL)_hasToolbarReservedSpace;
 - (BOOL)_toolbarIsShown;
 - (BOOL)_toolbarIsInTransition;
 - (void)_setToolbarVisibleStatus:(int)arg1;
@@ -323,20 +315,16 @@
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)setStyleMask:(unsigned long long)arg1;
 - (void)_updateBackdropView;
-- (long long)_internalVisualEffectViewMaterial;
-- (id)_containingBackdropView;
-- (BOOL)_shouldFakeContainingBackdropView;
+- (unsigned long long)_vibrantBlendingStyleForSubtree;
 - (BOOL)_shouldUseDarkAppearanceInHUDWindows;
-- (BOOL)_shouldUseMaterialsInHUDWindows;
 - (void)_setBackdropView:(id)arg1;
-- (id)_backdropView;
-- (BOOL)_needsBackdropView;
+@property(readonly) NSVisualEffectView *_backdropView;
+- (BOOL)_needsVisualEffectViewBackgroundWithMaterial:(long long *)arg1 blendingMode:(long long *)arg2;
 - (void)_updateTemporaryContentViewFrame;
 - (void)_unfloatTitlebarAndToolbarIfNeeded;
 - (void)_floatTitlebarAndToolbarFromInit:(BOOL)arg1;
 @property(retain) NSView *temporaryContentView; // @dynamic temporaryContentView;
 - (void)removeUnderTitlebarView:(id)arg1 withAssociatedWithView:(id)arg2;
-@property BOOL disableTitlebarBlurFilters;
 - (void)addUnderTitlebarView:(id)arg1 withAssociatedWithView:(id)arg2;
 - (void)_titleBarAssociatedViewFrameChanged:(id)arg1;
 - (void)_updateAllUnderTitlebarViews;
@@ -347,7 +335,6 @@
 - (void)titlebarAppearsTransparentChanged;
 - (BOOL)_titlebarViewAppearsTransparent;
 - (BOOL)_themeFrameShouldDrawTitlebar;
-- (void)_invalidateNeedsTitlebarSeparator;
 - (void)windowTitleModeChanged;
 - (void)_noteToolbarLayoutChanged;
 - (void)_setTitlebarViewController:(id)arg1;
@@ -361,22 +348,13 @@
 - (void)_moveTitlebarViewsToView:(id)arg1;
 - (struct CGRect)_currentTitlebarContainerViewFrame;
 - (BOOL)shouldStartWindowDragForEvent:(id)arg1;
-- (id)effectiveAppearance;
-- (id)_defaultWindowAppearance;
-- (void)setAppearance:(id)arg1;
-- (void)_updateTitlebarViewMaterialAndAppearance;
-- (id)_defaultTitlebarAppearance;
+- (id)_preferredAppearance;
+- (void)viewDidChangeEffectiveAppearance;
 - (id)_makeTitlebarViewWithFrame:(struct CGRect)arg1;
 - (void)_updateTitleSeparatorViewIfNeeded;
-- (id)_makeSeparatorAccessoryViewController;
-- (void)_setSeparatorAccessoryViewController:(id)arg1;
-- (id)_separatorAccessoryViewController;
-- (BOOL)_shouldAddTitlebarSeparatorView;
-- (BOOL)_tilebarViewNeedsTitlebarSeparator;
 - (void)_updateContentViewFrame;
 - (void)_setLayoutEngine:(id)arg1;
 - (void)_updateContentLayoutGuideFrame;
-- (struct CGRect)_behindWindowVisualEffectLayoutRect;
 - (struct CGRect)_contentLayoutRect;
 - (id)initWithFrame:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 owner:(id)arg3;
 - (BOOL)_canAddWindowTabs;
@@ -441,8 +419,6 @@
 - (double)contentAlpha;
 - (void)viewDidEndLiveResize;
 - (id)contentFill;
-- (id)_inactiveTexturedWindowColor;
-- (id)_activeTexturedWindowColor;
 - (BOOL)_isTexturedWindow;
 - (BOOL)_isHUDWindow;
 - (void)_didRemoveLayer;
@@ -481,13 +457,12 @@
 - (id)_cuiOptionsForHUDIncludeScaleKey:(BOOL)arg1;
 - (struct __CFString *)_currentThemeStateKey;
 - (struct CGRect)_backgroundLayerFrame;
-- (struct CGRect)_texturedTitleBarViewFrame;
-- (double)_textureWidth;
 - (id)opaqueAncestor;
 - (BOOL)isOpaque;
 - (void)updateLayer;
 - (BOOL)_titlebarViewShouldRoundCorners;
 - (void)_updateRoundCornerMaskWhenLayerBacked;
+- (void)windowCornerMaskChanged;
 - (void)_setCornerMaskIfNeeded;
 - (void)_clearCornerMaskIfNeeded;
 - (void)updateWindowCornerMaskOnLayer:(id)arg1 forTitlebar:(BOOL)arg2;
@@ -499,7 +474,6 @@
 - (void)setLayer:(id)arg1;
 - (void)drawFrame:(struct CGRect)arg1;
 - (void)_drawFrameRects:(struct CGRect)arg1;
-- (void)_drawResizeIndicators:(struct CGRect)arg1;
 - (void)_drawTitleBar:(struct CGRect)arg1;
 - (BOOL)_shouldDrawTitlebarTitle;
 - (BOOL)_titleVisibilityIsHidden;
@@ -529,6 +503,7 @@
 - (void)_invalidateAllButtons;
 - (void)_drawRectFrameNeedsDisplay:(BOOL)arg1;
 - (struct CGRect)_separatorRectForInactiveWindow;
+- (BOOL)_wantsToolbarHeightTitlebarWithoutToolbar;
 - (BOOL)_isOnePieceTitleAndToolbar;
 - (void)_setTextShadow:(BOOL)arg1;
 - (void)_drawFrameInterior:(struct CGRect *)arg1 clip:(struct CGRect)arg2;
@@ -571,9 +546,15 @@
 - (BOOL)_effectiveMovableByBottomBar;
 - (void)_setMovableByBottomBar:(BOOL)arg1;
 - (BOOL)_movableByBottomBar;
+- (struct CGRect)activationRect;
 - (BOOL)_isDarkWindow;
 - (BOOL)canSmoothFontsInLayer;
-- (struct CGSRegionObject *)_copyDragRegion;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

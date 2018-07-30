@@ -8,6 +8,7 @@
 
 @class CPBody, CPZone;
 
+__attribute__((visibility("hidden")))
 @interface CPTextBoxMaker : NSObject
 {
     CPBody *bodyZone;

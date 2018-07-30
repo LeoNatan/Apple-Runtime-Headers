@@ -11,13 +11,16 @@
 @interface CUISAlertLongLookContentView : UIView
 {
     PUICHyphenatedLabel *_titleLabel;
+    PUICHyphenatedLabel *_subtitleLabel;
     PUICHyphenatedLabel *_bodyLabel;
     UIImageView *_imageView;
     CUISAlertMovieView *_movieView;
     CUISAlertPlatterView *_background;
     struct CGSize _titleFitSize;
+    struct CGSize _subtitleFitSize;
     struct CGSize _bodyFitSize;
     NSString *_title;
+    NSString *_subtitle;
     NSString *_message;
     UIImage *_attachment;
     NSURL *_avAttachmentURL;
@@ -27,16 +30,21 @@
 @property(readonly, nonatomic) NSURL *avAttachmentURL; // @synthesize avAttachmentURL=_avAttachmentURL;
 @property(retain, nonatomic) UIImage *attachment; // @synthesize attachment=_attachment;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)preferredBlurView;
 - (void)updateBodyFitSize;
+- (void)updateSubtitleFitSize;
 - (void)updateTitleFitSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (struct CGRect)imageFrameForCurrentWidth;
 - (struct CGRect)mediaFrameForCurrentWidthWithSize:(struct CGSize)arg1;
-- (id)_initWithFrame:(struct CGRect)arg1 title:(id)arg2 message:(id)arg3 attachment:(id)arg4 avAttachment:(id)arg5 footerText:(id)arg6;
+- (id)_initWithFrame:(struct CGRect)arg1 title:(id)arg2 subtitle:(id)arg3 message:(id)arg4 attachment:(id)arg5 avAttachment:(id)arg6 footerText:(id)arg7;
+- (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 subtitle:(id)arg3 message:(id)arg4 footerText:(id)arg5;
+- (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 subtitle:(id)arg3 message:(id)arg4 avAttachment:(id)arg5;
+- (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 subtitle:(id)arg3 message:(id)arg4 attachment:(id)arg5;
 - (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 message:(id)arg3 avAttachment:(id)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 message:(id)arg3 footerText:(id)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 message:(id)arg3 attachment:(id)arg4;

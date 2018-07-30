@@ -18,7 +18,8 @@
 @property(nonatomic) _Bool isInstallSheetOpen; // @synthesize isInstallSheetOpen=_isInstallSheetOpen;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void)_sendXPCMessage;
+- (void).cxx_destruct;
+- (void)_start;
 - (void)_handleReply:(id)arg1;
 - (id)initWithAppBundleId:(id)arg1 isInstallSheetOpen:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

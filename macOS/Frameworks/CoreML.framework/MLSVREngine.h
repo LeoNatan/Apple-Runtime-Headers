@@ -8,6 +8,8 @@
 
 #import "MLModelSpecificationLoader.h"
 
+@class NSString;
+
 @interface MLSVREngine : NSObject <MLModelSpecificationLoader>
 {
     BOOL _isInputSizeLowerBoundOnly;
@@ -16,7 +18,7 @@
     struct svm_model *_model;
 }
 
-+ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 error:(id *)arg2;
++ (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
 @property BOOL freeModelOnDealloc; // @synthesize freeModelOnDealloc=_freeModelOnDealloc;
 @property struct svm_model *model; // @synthesize model=_model;
 @property(readonly) unsigned long long inputSize; // @synthesize inputSize=_inputSize;
@@ -28,6 +30,12 @@
 - (void)dealloc;
 - (id)initWithSVMModel:(struct svm_model *)arg1 freeOnDealloc:(BOOL)arg2 isInputSizeLowerBoundOnly:(BOOL)arg3 inputSize:(unsigned long long)arg4;
 - (id)initWithLibSVMFile:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -7,6 +7,6 @@
 #import "NSObject.h"
 
 @protocol TNodeTaskDelegateProtocol <NSObject>
-- (void)selectNodesForTask:(const struct TFENodeVector *)arg1;
+- (void)selectNodesForTask:(const struct TFENodeVector *)arg1 startEditing:(_Bool)arg2;
 @end
 

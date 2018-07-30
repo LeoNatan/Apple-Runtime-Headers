@@ -6,22 +6,26 @@
 
 #import <Vision/VNDetector.h>
 
-@class VNFaceBBoxAligner;
+#import "VNDetectorKeyProviding.h"
+
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface VNFaceDetector : VNDetector
+@interface VNFaceDetector : VNDetector <VNDetectorKeyProviding>
 {
-    struct shared_ptr<vision::mod::ObjectDetector_DCNFaceDetector> mFaceDetectorImpl;
-    VNFaceBBoxAligner *mBBoxAlignerImpl;
 }
 
 + (_Bool)shouldDumpDebugIntermediates;
-- (id).cxx_construct;
-- (void).cxx_destruct;
++ (Class)detectorClassForConfigurationOptions:(id)arg1 error:(id *)arg2;
++ (void)fullyPopulateConfigurationOptions:(id)arg1;
++ (void)recordDefaultConfigurationOptionsInDictionary:(id)arg1;
 - (void)purgeIntermediates;
-- (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
-- (struct __CVBuffer *)newCropAroundBounds:(struct CGRect)arg1 extendBoundsWithinImageBy:(float)arg2 fromImageBuffer:(id)arg3 error:(id *)arg4;
-- (id)initWithOptions:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

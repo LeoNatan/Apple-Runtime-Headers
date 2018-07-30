@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 @class RTDefaultsManager;
 
-@interface RTWalletManager : RTNotifier
+@interface RTWalletManager : RTService
 {
     RTDefaultsManager *_defaultsManager;
     double _maximumTransactionDistance;
@@ -28,7 +28,7 @@
 - (void)_setup;
 - (void)_unregisterForNotifications;
 - (void)_registerForNotifications;
-- (void)shutdown;
+- (void)_shutdown;
 - (id)initWithDefaultsManager:(id)arg1;
 - (id)init;
 

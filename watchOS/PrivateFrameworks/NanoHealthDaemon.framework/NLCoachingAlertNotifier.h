@@ -6,25 +6,28 @@
 
 #import "NSObject.h"
 
-#import "NLActivityAchievementDefinitionAlertObserver.h"
 #import "NLActivityCarouselServiceProvider.h"
 #import "NLActivityCoachingAlertObserver.h"
 #import "NLActivitySedentaryAlertObserver.h"
+#import "NLPredictedActivityAlertObserver.h"
 
-@class NSMutableSet<NLActivityAchievementDefinitionAlertObserver>, NSMutableSet<NLActivityCarouselServiceProvider>, NSMutableSet<NLActivityCoachingAlertObserver>, NSMutableSet<NLActivitySedentaryAlertObserver>, NSObject<OS_dispatch_queue>, NSString;
+@class NSMutableSet<NLActivityCarouselServiceProvider>, NSMutableSet<NLActivityCoachingAlertObserver>, NSMutableSet<NLActivitySedentaryAlertObserver>, NSMutableSet<NLPredictedActivityAlertObserver>, NSObject<OS_dispatch_queue>, NSString;
 
-@interface NLCoachingAlertNotifier : NSObject <NLActivitySedentaryAlertObserver, NLActivityCoachingAlertObserver, NLActivityAchievementDefinitionAlertObserver, NLActivityCarouselServiceProvider>
+@interface NLCoachingAlertNotifier : NSObject <NLActivitySedentaryAlertObserver, NLPredictedActivityAlertObserver, NLActivityCoachingAlertObserver, NLActivityCarouselServiceProvider>
 {
     NSMutableSet<NLActivitySedentaryAlertObserver> *_sedentaryObservers;
+    NSMutableSet<NLPredictedActivityAlertObserver> *_predictedActivityObservers;
     NSMutableSet<NLActivityCoachingAlertObserver> *_coachingObservers;
-    NSMutableSet<NLActivityAchievementDefinitionAlertObserver> *_achievementDefinitionAlertObservers;
     NSMutableSet<NLActivityCarouselServiceProvider> *_carouselServiceObservers;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
+- (void)hideAlertForPredictedActivityEnd:(id)arg1;
+- (void)showAlertForPredictedEndWorkoutActivity:(id)arg1;
+- (void)hideAlertForPredictedActivityStart:(id)arg1;
+- (void)showStartAlertForPredictedActivity:(id)arg1;
 - (void)fetchWellnessComplicationOnCurrentClockFaceWithCompletion:(CDUnknownBlockType)arg1;
-- (void)showAchievementDefinitionAlertForIdentifier:(id)arg1;
 - (void)showCoachingAlertRequests:(id)arg1;
 - (void)hideSedentaryActivityAlert;
 - (void)showSedentaryAlertOfType:(int)arg1 withTimeoutDate:(id)arg2 withActiveHourCount:(int)arg3 withTotalCount:(int)arg4 wheelchairUser:(_Bool)arg5 experimentInstance:(id)arg6;

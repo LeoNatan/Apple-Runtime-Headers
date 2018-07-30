@@ -6,6 +6,7 @@
 
 #import <CorePDF/CPRegion.h>
 
+__attribute__((visibility("hidden")))
 @interface CPColumn : CPRegion
 {
     _Bool hasCentredParagraph;

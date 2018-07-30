@@ -21,7 +21,8 @@
 - (void).cxx_destruct;
 - (CDUnknownBlockType)_clientQueueSuccessCompletion:(CDUnknownBlockType)arg1;
 - (void)_remoteProxy:(CDUnknownBlockType)arg1;
-- (void)consolidateRelationshipEventsForFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)friendWithRemoteUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)expireChangeTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchAreMultipleDevicesSharingDataForSnapshotIndex:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)clearFriendListWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cloudKitAccountStatusWithCompletion:(CDUnknownBlockType)arg1;
@@ -32,6 +33,10 @@
 - (void)removeFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setMuteEnabled:(_Bool)arg1 forFriendWithUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setActivityDataVisible:(_Bool)arg1 toFriendWithUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)completeCompetitionWithFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)ignoreCompetitionRequestFromFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)acceptCompetitionRequestFromFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)sendCompetitionRequestToFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)ignoreInviteRequestFromFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendWithdrawInviteRequestToFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)acceptInviteRequestFromFriendWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;

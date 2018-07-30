@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (unsigned int)maxNetworkBitrateMultiwayVideoOnWifi:(_Bool)arg1;
+- (unsigned int)maxNetworkBitrateMultiwayAudioOnWifi:(_Bool)arg1;
 - (id)init;
 
 @end

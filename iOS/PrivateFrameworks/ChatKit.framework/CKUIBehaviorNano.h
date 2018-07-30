@@ -23,6 +23,7 @@
 - (struct CGSize)messageAcknowledgmentTranscriptAcknowledgmentImageSize;
 - (struct UIEdgeInsets)messageAcknowledgmentTranscriptGlyphInset;
 - (struct CGSize)messageAcknowledgmentTranscriptBalloonSize;
+- (id)messageAcknowledgmentPickerBarBubbleImage;
 - (id)playButtonArrowImage;
 - (id)playButtonImage;
 - (id)contactAttachmentOrgFont;
@@ -50,6 +51,8 @@
 - (id)grayChevronImage;
 - (id)whiteChevronImage;
 - (id)gray_chevronImage;
+- (id)impactSkinnyBalloonName;
+- (id)impactBalloonName;
 - (id)strokedTaillessBalloonName;
 - (id)strokedBalloonName;
 - (id)skinnyTaillessBalloonName;
@@ -79,6 +82,10 @@
 - (_Bool)shouldAdjustWidthForSendFailure;
 - (_Bool)hyphenatesTextContent;
 - (_Bool)shouldUseDynamicGradient;
+- (id)orbShareLocationImage;
+- (id)orbDetailsImage;
+- (id)orbReplyImage;
+- (id)orbComposeImage;
 - (id)surfReplyImage;
 - (id)arouetReplyImage;
 - (id)digitalTouchReplyImage;

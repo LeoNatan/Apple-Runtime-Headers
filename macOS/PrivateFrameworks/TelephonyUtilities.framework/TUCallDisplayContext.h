@@ -14,6 +14,7 @@
 
 @interface TUCallDisplayContext : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
+    int _legacyAddressBookIdentifier;
     NSPersonNameComponents *_personNameComponents;
     NSString *_suggestedName;
     NSString *_label;
@@ -26,13 +27,12 @@
     NSString *_callDirectoryLocalizedExtensionContainingAppName;
     NSString *_callDirectoryExtensionIdentifier;
     NSString *_contactIdentifier;
-    NSString *_legacyAddressBookIdentifier;
     NSString *_name;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(copy, nonatomic) NSString *legacyAddressBookIdentifier; // @synthesize legacyAddressBookIdentifier=_legacyAddressBookIdentifier;
+@property(readonly, nonatomic) int legacyAddressBookIdentifier; // @synthesize legacyAddressBookIdentifier=_legacyAddressBookIdentifier;
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(copy, nonatomic) NSString *callDirectoryExtensionIdentifier; // @synthesize callDirectoryExtensionIdentifier=_callDirectoryExtensionIdentifier;
 @property(copy, nonatomic) NSString *callDirectoryLocalizedExtensionContainingAppName; // @synthesize callDirectoryLocalizedExtensionContainingAppName=_callDirectoryLocalizedExtensionContainingAppName;

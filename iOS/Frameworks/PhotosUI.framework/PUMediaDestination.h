@@ -16,9 +16,9 @@
 - (void)cancelRequestWithIdentifier:(int)arg1;
 - (_Bool)isSavingRequestWithIdentifier:(int)arg1;
 - (int)revertEditsForAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (int)saveInternalEditsForAsset:(id)arg1 usingPhotoEditModel:(id)arg2 version:(long long)arg3 livePhotoEditModel:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (int)saveInternalEditsForAsset:(id)arg1 usingPhotoEditModel:(id)arg2 version:(long long)arg3 livePhotoEditModel:(id)arg4 useRawIfAvailable:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (int)saveEditsByCopyingAsset:(id)arg1 withResourceURL:(id)arg2 usingContentEditingOutput:(id)arg3 livePhotoEditModel:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (int)saveEditsForAsset:(id)arg1 usingContentEditingOutput:(id)arg2 livePhotoEditModel:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (int)saveEditsForAsset:(id)arg1 usingContentEditingOutput:(id)arg2 livePhotoEditModel:(id)arg3 useRawIfAvailable:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 
 @end
 

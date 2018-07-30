@@ -10,6 +10,7 @@
 
 @class GEOPDDeparturePredicate, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDTransitScheduleFilter : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

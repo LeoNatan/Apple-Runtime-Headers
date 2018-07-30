@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDAxis.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDValueAxis : CHDAxis
 {
     _Bool mPercentageFormattingFlag;

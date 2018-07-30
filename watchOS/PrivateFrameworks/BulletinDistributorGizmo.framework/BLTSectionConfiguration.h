@@ -10,7 +10,6 @@
 {
 }
 
-- (void)_enableAlerts:(_Bool)arg1 inSectionInfo:(id)arg2;
 - (id)overriddenSectionInfos;
 
 @end

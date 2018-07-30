@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_proxyShare;
-+ (CDStruct_7c9a8e9f *)_proxyNonGCPoolPointer;
 - (void)unionSet:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)removeObject:(id)arg1;

@@ -18,6 +18,7 @@
     int _comparedToNow;
 }
 
+- (void).cxx_destruct;
 - (void)timerFiredWithValue:(unsigned int)arg1 forResolution:(unsigned int)arg2 comparedToNow:(int)arg3;
 - (id)constructLabelString;
 - (void)prepareForReuse;

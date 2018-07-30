@@ -8,6 +8,7 @@
 
 @class NSMenuItem, NSMenuKEUniquer;
 
+__attribute__((visibility("hidden")))
 @interface NSExtraMICData : NSObject
 {
     NSMenuItem *item;

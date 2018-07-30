@@ -15,12 +15,20 @@ __attribute__((visibility("hidden")))
     NSArray *_builtInArguments;
     NSDictionary *_performanceStatistics;
     CDStruct_596dc0d1 _flags;
+    unsigned int _traceBufferIndex;
+    NSArray *_constantSamplerUniqueIdentifiers;
+    NSArray *_constantSamplerDescriptors;
 }
 
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (id)builtInArguments;
 - (id)arguments;
+- (void)setConstantSamplerDescriptorsFromBitmasks:(unsigned long long *)arg1 count:(unsigned long long)arg2;
+- (void)setConstantSamplerUniqueIdentifiers:(id)arg1;
+- (id)constantSamplerDescriptors;
+- (id)constantSamplerUniqueIdentifiers;
+- (unsigned int)traceBufferIndex;
 - (CDStruct_596dc0d1)usageFlags;
 - (void)setPerformanceStatistics:(id)arg1;
 - (id)performanceStatistics;

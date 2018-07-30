@@ -8,7 +8,7 @@
 
 @interface CLRegionInternal : NSObject
 {
-    CDStruct_3afce72c _clientRegion;
+    CDStruct_5652eb1b _clientRegion;
 }
 
 @end

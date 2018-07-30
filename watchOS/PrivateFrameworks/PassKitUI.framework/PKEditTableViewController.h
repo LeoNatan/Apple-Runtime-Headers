@@ -10,7 +10,7 @@
 #import "PKEditTableNoPassesViewDelegate.h"
 #import "UITableViewDataSourcePrefetching.h"
 
-@class NSCache, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, PKEditTableNoPassesView, UITableView;
+@class NSCache, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PKEditPendingCacheRequest, PKEditTableNoPassesView, PKGroupsController, UITableView;
 
 @interface PKEditTableViewController : UITableViewController <UITableViewDataSourcePrefetching, PKEditTableNoPassesViewDelegate, PKEditPassesPerformanceTestResponder>
 {
@@ -24,10 +24,22 @@
     NSCache *_imageCache;
     unsigned int _imagesToKeep;
     NSObject<OS_dispatch_queue> *_queueCaching;
-    NSObject<OS_dispatch_queue> *_queuePending;
-    NSMutableArray *_pendingCachingRequests;
+    PKEditPendingCacheRequest *_currentCacheRequest;
+    _Bool _shouldProcessHighPriorityRequests;
+    NSMutableArray *_highPriorityRequests;
+    _Bool _shouldProcessLowPriorityRequests;
+    NSMutableArray *_lowPriorityRequests;
+    unsigned int _visibleRows;
+    NSMutableDictionary *_placeholdersPerPassStyle;
     int _testIteration;
+    float _snapshotDurationAverage;
+    NSMutableArray *_lastSnapshotDurations;
+    float _lastYOffset;
+    double _lastYOffsetTime;
+    _Bool _scrollingFast;
+    _Bool _dragging;
     id <PKEditTableViewControllerCachingDelegate> _cachingDelegate;
+    PKGroupsController *_existingGroupsController;
     int _performanceTest;
     NSString *_performanceTestName;
 }
@@ -35,6 +47,7 @@
 @property(nonatomic) int testIteration; // @synthesize testIteration=_testIteration;
 @property(retain, nonatomic) NSString *performanceTestName; // @synthesize performanceTestName=_performanceTestName;
 @property(nonatomic) int performanceTest; // @synthesize performanceTest=_performanceTest;
+@property(retain, nonatomic) PKGroupsController *existingGroupsController; // @synthesize existingGroupsController=_existingGroupsController;
 @property(nonatomic) __weak id <PKEditTableViewControllerCachingDelegate> cachingDelegate; // @synthesize cachingDelegate=_cachingDelegate;
 - (void).cxx_destruct;
 - (void)beginPassDeletionTestWithTestName:(id)arg1;
@@ -51,6 +64,10 @@
 - (void)findApps;
 - (void)noPassesViewFindAppsForWalletTapped:(id)arg1;
 - (void)noPassesViewScanCodeButtonTapped:(id)arg1;
+- (void)resumeRequestIfNoScrollingAfterTimeInterval:(double)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 prefetchRowsAtIndexPaths:(id)arg2;
@@ -61,16 +78,28 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_updateShouldProcessHighPriorityRequestsWithFastScrolling:(_Bool)arg1;
+- (void)_setShouldProcessLowPriorityRequests:(_Bool)arg1;
 - (unsigned int)_imagesToKeepOutsideVisibleCells;
 - (void)clearImageCacheForPass:(id)arg1;
-- (id)_cropImage:(id)arg1 toRect:(struct CGRect)arg2;
-- (id)_createPassStackWithPassImage:(id)arg1 size:(struct CGSize)arg2;
+- (id)_resizedImageWithImage:(id)arg1 alignmentSize:(struct CGSize)arg2;
+- (id)_cropImage:(id)arg1 toHeight:(float)arg2;
+- (id)_createPassStackWithPassImage:(id)arg1 withHeight:(float)arg2;
 - (id)_createImageForPass:(id)arg1 imageSize:(struct CGSize)arg2 cacheKey:(id)arg3 fullPass:(_Bool)arg4 stacked:(_Bool)arg5;
-- (void)processCacheRequest;
-- (void)_imageOfSize:(struct CGSize)arg1 forPass:(id)arg2 fullPass:(_Bool)arg3 stacked:(_Bool)arg4 synchronously:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)updateAverageSnapshotDuration:(double)arg1;
+- (void)removeRequestsWithCacheKey:(id)arg1;
+- (void)moveHighPriorityToLowPriorityWithCacheKey:(id)arg1;
+- (void)triageCacheRequest:(id)arg1;
+- (void)currentCacheRequestCompletedWithImage:(id)arg1 duration:(double)arg2;
+- (void)processCacheRequest:(id)arg1;
+- (void)_imageOfSize:(struct CGSize)arg1 forPass:(id)arg2 fullPass:(_Bool)arg3 stacked:(_Bool)arg4 synchronously:(_Bool)arg5 preemptive:(_Bool)arg6 placeholder:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
 - (id)mostRecentPassInGroup:(id)arg1;
 - (void)showNoPassesView:(_Bool)arg1;
-- (void)imageForPass:(id)arg1 stacked:(_Bool)arg2 synchronously:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)preemptivelyCacheImagesForPass:(id)arg1 stacked:(_Bool)arg2;
+- (void)imageForPass:(id)arg1 stacked:(_Bool)arg2 synchronously:(_Bool)arg3 placeholder:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)loadContentAndImageSetFromExistingPassForPass:(id)arg1;
+- (unsigned int)visibleRowsCount;
+- (void)generatePlaceholderImages;
 - (void)viewDidLoad;
 - (id)initWithStyle:(int)arg1;
 

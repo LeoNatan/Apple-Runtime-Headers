@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
+#import "NSEditorRegistration.h"
 #import "NSFilePresenter.h"
+#import "NSMenuItemValidation.h"
 #import "NSUIActivityProvider.h"
 #import "NSUserInterfaceValidations.h"
 
 @class NSArray, NSDate, NSOperationQueue, NSPrintInfo, NSPrintOperation, NSScriptObjectSpecifier, NSSet, NSString, NSURL, NSUndoManager, NSUserActivity, NSView, NSWindow;
 
-@interface NSDocument : NSObject <NSUIActivityProvider, NSFilePresenter, NSUserInterfaceValidations>
+@interface NSDocument : NSObject <NSUIActivityProvider, NSEditorRegistration, NSFilePresenter, NSMenuItemValidation, NSUserInterfaceValidations>
 {
     NSWindow *_window;
     id _windowControllers;
@@ -54,7 +56,8 @@
 + (BOOL)_parseName:(id *)arg1 number:(long long *)arg2 fromDisplayName:(id)arg3 withTemplate:(id)arg4;
 + (void)_handleConflictsForDocumentAtURL:(id)arg1 modalForWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)_handleConflictsForDocument:(id)arg1 atURL:(id)arg2 modalForWindow:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-+ (void)_resolveConflictsForDocument:(id)arg1 atURL:(id)arg2 byKeepingVersions:(id)arg3 otherVersions:(id)arg4 currentVersion:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
++ (void)_resolveConflictsForDocument:(id)arg1 atURL:(id)arg2 byKeepingVersions:(id)arg3 otherVersions:(id)arg4 currentVersion:(id)arg5 collectingURLsToOpen:(id)arg6 andErrors:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
++ (void)_promoteVersions:(id)arg1 atURL:(id)arg2 forDocument:(id)arg3 collectingURLsToOpen:(id)arg4 andErrors:(id)arg5;
 + (id)_willPresentConflictResolutionError:(id)arg1;
 + (BOOL)_conflictsExistForFileAtURL:(id)arg1;
 + (BOOL)_shouldShowUbiquityConflictPanel;
@@ -160,6 +163,7 @@
 - (void)_populateRevertToMenu:(id)arg1;
 - (void)_updateTitleForMenuItem:(id)arg1 originalTitle:(id)arg2;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)_canSave;
 - (id)fileNameExtensionForType:(id)arg1 saveOperation:(unsigned long long)arg2;
 - (id)writableTypesForSaveOperation:(unsigned long long)arg1;
@@ -317,6 +321,8 @@
 - (BOOL)prepareCloudSharingPanel:(id)arg1;
 - (void)shareUbiquitousDocument:(id)arg1;
 - (void)_handleConflicts;
+- (void)resolveConflictRemotelyWithFileVersion:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)willResolveConflictWithFileVersion:(id)arg1 continuer:(CDUnknownBlockType)arg2;
 - (void)willHandleConflictsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_isHandlingConflicts;
 - (void)_setHandlingConflicts:(BOOL)arg1;
@@ -491,7 +497,6 @@
 - (BOOL)writeToURL:(id)arg1 ofType:(id)arg2;
 - (BOOL)writeToFile:(id)arg1 ofType:(id)arg2 originalFile:(id)arg3 saveOperation:(unsigned long long)arg4;
 - (BOOL)writeToFile:(id)arg1 ofType:(id)arg2;
-- (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)saveToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 error:(id *)arg4;
 - (void)setFileName:(id)arg1;
 - (void)saveToFile:(id)arg1 saveOperation:(unsigned long long)arg2 delegate:(id)arg3 didSaveSelector:(SEL)arg4 contextInfo:(void *)arg5;
@@ -608,7 +613,6 @@
 - (void)_finishSavingToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 changeCount:(id)arg4;
 - (void)_prepareToSaveToURL:(id)arg1 forSaveOperation:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_checkFileModificationDateBeforeSavingToURL:(id)arg1 saveOperation:(unsigned long long)arg2;
-- (BOOL)_canAsynchronouslyWriteToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3;
 - (BOOL)_coordinateReadingContentsAndWritingItemAtURL:(id)arg1 error:(id *)arg2 byAccessor:(CDUnknownBlockType)arg3;
 - (void)_coordinateReadingContentsAndWritingItemAtURL:(id)arg1 byAccessor:(CDUnknownBlockType)arg2;
 - (void)_fileCoordinator:(id)arg1 coordinateReadingContentsAndWritingItemAtURL:(id)arg2 byAccessor:(CDUnknownBlockType)arg3;

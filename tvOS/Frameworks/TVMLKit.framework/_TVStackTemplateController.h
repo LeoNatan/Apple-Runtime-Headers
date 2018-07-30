@@ -6,9 +6,11 @@
 
 #import <TVMLKit/_TVStackCommonTemplateController.h>
 
-@class NSArray, NSIndexPath, UIView, UIViewController, _TVNeedsMoreContentEvaluator;
+#import "_TVStackViewDelegateFlowLayout.h"
 
-@interface _TVStackTemplateController : _TVStackCommonTemplateController
+@class NSArray, NSIndexPath, NSString, UIView, UIViewController, _TVNeedsMoreContentEvaluator;
+
+@interface _TVStackTemplateController : _TVStackCommonTemplateController <_TVStackViewDelegateFlowLayout>
 {
     NSArray *_viewControllers;
     NSArray *_stackSections;
@@ -24,9 +26,12 @@
 - (void)_updateBackgroundTintViewEffects;
 - (void)_updateBackgroundTintView;
 - (void)_configureBackgroundTintView;
+- (_Bool)_requiresShowcasing;
+- (double)_offsetToScrollStop:(id)arg1;
 - (void)_updateFirstItemRowIndexes;
 - (void)_buildStackSections;
 - (double)_maxViewWidth;
+- (_Bool)_didExtendContentForPeekMetrics:(CDStruct_6408a1ed *)arg1 above:(_Bool)arg2 initial:(_Bool)arg3;
 - (void)_adjustedContentOffsetForRowIndex:(long long)arg1 targetContentOffset:(struct CGPoint *)arg2;
 - (id)_viewControllerWithElement:(id)arg1 existingController:(id)arg2;
 - (_Bool)_updateWithCollectionListElement:(id)arg1 autoHighlightIndexPath:(id *)arg2;
@@ -34,6 +39,7 @@
 - (void)_embeddedListTemplateViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (id)_embeddedListTemplateViewFromDescendantView:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)collectionView:(id)arg1 showcaseFactorDidChangeForLayout:(id)arg2;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -42,6 +48,14 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
+- (_Bool)_shouldBlurForFocusedView:(id)arg1;
+- (_Bool)_isBackdropNeeded;
+- (long long)_blurEffectStyle;
+- (_Bool)_reconfigureOnAppearanceChange;
+- (id)scrollStopForEnteringSectionAtIndex:(long long)arg1 fromEdge:(long long)arg2;
+- (id)scrollStopForShowcaseTransition;
+- (void)showcaseFactorDidChange;
 - (struct UIEdgeInsets)collectionListMargin;
 - (long long)updateCollectionViewControllersAndForceReload:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -49,6 +63,12 @@
 - (void)viewDidLoad;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)viewControllers;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

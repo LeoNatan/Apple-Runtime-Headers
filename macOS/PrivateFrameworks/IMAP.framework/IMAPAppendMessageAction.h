@@ -6,16 +6,16 @@
 
 #import <IMAP/IMAPLocalMessageAction.h>
 
-@class MCMessage<IMAPMessage><IMAPPersistedMessage>;
+@class MCMessage<IMAPPersistedMessage>;
 
 @interface IMAPAppendMessageAction : IMAPLocalMessageAction
 {
-    MCMessage<IMAPMessage><IMAPPersistedMessage> *_message;
+    MCMessage<IMAPPersistedMessage> *_message;
     long long _flags;
 }
 
 @property(readonly, nonatomic) long long flags; // @synthesize flags=_flags;
-@property(readonly, nonatomic) MCMessage<IMAPMessage><IMAPPersistedMessage> *message; // @synthesize message=_message;
+@property(readonly, nonatomic) MCMessage<IMAPPersistedMessage> *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (id)newSyncOperationWithDataSource:(id)arg1;
 - (id)initWithMessageActionID:(long long)arg1 activityType:(id)arg2 mailbox:(id)arg3 userInitiated:(BOOL)arg4;

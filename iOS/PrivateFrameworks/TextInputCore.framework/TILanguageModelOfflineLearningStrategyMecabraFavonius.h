@@ -16,12 +16,12 @@
 }
 
 @property(readonly) TILanguageModelOfflineLearningTask *learningTask; // @synthesize learningTask=_learningTask;
+- (void).cxx_destruct;
 - (void)didFinishLearning;
 - (id)identifyLanguagesForMessages:(id)arg1;
 - (_Bool)learnMessages:(id)arg1 withRecipientRecords:(id)arg2;
 - (_Bool)incrementUsageCountsForMessages:(id)arg1 withAdaptationContext:(id)arg2;
 - (id)filterMessages:(id)arg1;
-- (void)dealloc;
 - (id)initWithClientIdentifier:(id)arg1;
 
 // Remaining properties

@@ -8,6 +8,7 @@
 
 @class NSData, NSDictionary, NSMutableArray, NSObject<OS_dispatch_semaphore>, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVMutableMovieInternal : NSObject
 {
     struct OpaqueFigMutableMovie *figMutableMovie;

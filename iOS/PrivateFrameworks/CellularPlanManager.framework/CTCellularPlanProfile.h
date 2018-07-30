@@ -17,6 +17,7 @@
     _Bool _isBootstrap;
     _Bool _isDisableNotAllowed;
     _Bool _isDeleteNotAllowed;
+    _Bool _requiresUserConsent;
     NSData *_profileId;
     NSString *_iccid;
 }
@@ -24,6 +25,7 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *iccid; // @synthesize iccid=_iccid;
 @property(copy, nonatomic) NSData *profileId; // @synthesize profileId=_profileId;
+@property(nonatomic) _Bool requiresUserConsent; // @synthesize requiresUserConsent=_requiresUserConsent;
 @property(nonatomic) _Bool isDeleteNotAllowed; // @synthesize isDeleteNotAllowed=_isDeleteNotAllowed;
 @property(nonatomic) _Bool isDisableNotAllowed; // @synthesize isDisableNotAllowed=_isDisableNotAllowed;
 @property(nonatomic) _Bool isBootstrap; // @synthesize isBootstrap=_isBootstrap;
@@ -33,7 +35,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithProfileId:(id)arg1 iccid:(id)arg2 selected:(_Bool)arg3 bootstrap:(_Bool)arg4 disableNotAllowed:(_Bool)arg5 deleteNotAllowed:(_Bool)arg6;
+- (id)initWithProfileId:(id)arg1 iccid:(id)arg2 selected:(_Bool)arg3 bootstrap:(_Bool)arg4 disableNotAllowed:(_Bool)arg5 deleteNotAllowed:(_Bool)arg6 requiresUserConsent:(_Bool)arg7;
 
 @end
 

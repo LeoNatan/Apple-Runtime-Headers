@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (id)falloffBy:(double)arg1 duration:(double)arg2;
 + (id)falloffTo:(double)arg1 duration:(double)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

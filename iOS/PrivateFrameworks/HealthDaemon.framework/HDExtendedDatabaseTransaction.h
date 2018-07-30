@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSUUID;
+@class HDDatabase, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSUUID;
 
 @interface HDExtendedDatabaseTransaction : NSObject
 {
     _Bool _pendingWorkDidSucceed;
     NSUUID *_transactionIdentifier;
-    id <HDHealthDatabase> _healthDatabase;
+    HDDatabase *_database;
     NSObject<OS_dispatch_queue> *_transactionQueue;
     NSObject<OS_dispatch_queue> *_dataQueue;
     NSObject<OS_dispatch_semaphore> *_completionSemaphore;
@@ -36,7 +36,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *completionSemaphore; // @synthesize completionSemaphore=_completionSemaphore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataQueue; // @synthesize dataQueue=_dataQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *transactionQueue; // @synthesize transactionQueue=_transactionQueue;
-@property(readonly, nonatomic) __weak id <HDHealthDatabase> healthDatabase; // @synthesize healthDatabase=_healthDatabase;
+@property(readonly, nonatomic) __weak HDDatabase *database; // @synthesize database=_database;
 @property(readonly, copy, nonatomic) NSUUID *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 - (void).cxx_destruct;
 - (void)_transaction_runTransactionWithOptions:(unsigned long long)arg1;
@@ -45,7 +45,7 @@
 - (_Bool)commitWithErrorOut:(id *)arg1;
 - (_Bool)performInTransactionWithErrorOut:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (void)dealloc;
-- (id)initInDatabase:(id)arg1 options:(unsigned long long)arg2 transactionTimeout:(double)arg3 continuationTimeout:(double)arg4 error:(id *)arg5;
+- (id)initWithDatabase:(id)arg1 options:(unsigned long long)arg2 transactionTimeout:(double)arg3 continuationTimeout:(double)arg4 error:(id *)arg5;
 
 @end
 

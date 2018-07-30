@@ -42,6 +42,7 @@
 - (id)RTFFromRange:(struct _NSRange)arg1 documentAttributes:(id)arg2;
 - (id)fileWrapperFromRange:(struct _NSRange)arg1 documentAttributes:(id)arg2 error:(id *)arg3;
 - (id)dataFromRange:(struct _NSRange)arg1 documentAttributes:(id)arg2 error:(id *)arg3;
+- (id)_appearanceToUseForSavingWithDocumentAttributes:(id)arg1;
 - (id)stringByStrippingAttachmentCharactersAndConvertingWritingDirectionToBidiControlCharactersFromRange:(struct _NSRange)arg1;
 - (BOOL)containsAttachments;
 - (BOOL)containsAttachmentsInRange:(struct _NSRange)arg1;

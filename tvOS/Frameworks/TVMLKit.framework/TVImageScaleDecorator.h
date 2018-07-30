@@ -10,8 +10,8 @@
 
 @interface TVImageScaleDecorator : TVImageDecorator
 {
-    _Bool _decoratedImageIsEquivalentToOriginal;
     _Bool _cornerContinuous;
+    _Bool _preservesAlpha;
     long long _scaleMode;
     double _focusedSizeIncrease;
     UIColor *_bgColor;
@@ -20,6 +20,7 @@
     struct TVCornerRadii _cornerRadii;
 }
 
+@property(nonatomic) _Bool preservesAlpha; // @synthesize preservesAlpha=_preservesAlpha;
 @property(copy, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
 @property(nonatomic) _Bool cornerContinuous; // @synthesize cornerContinuous=_cornerContinuous;
 @property(nonatomic) struct TVCornerRadii cornerRadii; // @synthesize cornerRadii=_cornerRadii;
@@ -32,7 +33,6 @@
 - (struct UIEdgeInsets)_paddingAdjustedForUpscaling;
 - (struct CGSize)_scaleToSizeAdjustedForUpscaling;
 - (id)_imageFixedForRotation:(id)arg1;
-- (void)_setDecoratedImageIsEquivalentToOriginal:(_Bool)arg1;
 - (_Bool)needsAlphaForImage:(id)arg1;
 - (double)_focusedSizeIncreaseFactor;
 - (id)decorate:(id)arg1 scaledWithSize:(struct CGSize)arg2 croppedToFit:(_Bool)arg3;

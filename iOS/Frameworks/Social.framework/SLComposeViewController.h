@@ -60,6 +60,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)_instantiateAndBeginExtensionIfNeeded;
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)_useCustomDimmingView;
 - (void)remoteViewController:(id)arg1 didTerminateWithError:(id)arg2;

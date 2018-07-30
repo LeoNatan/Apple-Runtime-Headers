@@ -8,7 +8,7 @@
 
 #import "CNContactPickerDelegate.h"
 #import "CNContactViewControllerDelegate.h"
-#import "MFComposeActivityContinuationOperationDelegate.h"
+#import "MFComposeActivityHandoffOperationDelegate.h"
 #import "MFComposeHeaderViewDelegate.h"
 #import "MFComposeImageSizeViewDelegate.h"
 #import "MFComposeRecipientTextViewDelegate.h"
@@ -24,9 +24,9 @@
 #import "UINavigationControllerDelegate.h"
 #import "UIPopoverPresentationControllerDelegate.h"
 
-@class CNContactPickerViewController, CNContactViewController, MFAddressPickerReformatter, MFAttachment, MFComposeActivityContinuationOperation, MFComposeImageSizeView, MFComposeRecipient, MFComposeRecipientTextView, MFComposeSubjectView, MFFuture, MFLANContinuationAgent, MFLock, MFMailAccountProxyGenerator, MFMailMarkup, MFMailPopoverManager, MFMailSignatureController, MFMailboxUid, MFMessageContentProgressLayer, MFModernComposeRecipientAtom, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, UIView<MFComposeBodyField>, _MFMailCompositionContext;
+@class CNContactPickerViewController, CNContactViewController, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeImageSizeView, MFComposeRecipient, MFComposeRecipientTextView, MFComposeSubjectView, MFFuture, MFLANHandoffAgent, MFLock, MFMailAccountProxyGenerator, MFMailMarkup, MFMailPopoverManager, MFMailSignatureController, MFMailboxUid, MFMessageContentProgressLayer, MFModernComposeRecipientAtom, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, UIView<MFComposeBodyField>, _MFMailCompositionContext;
 
-@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, CNContactViewControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityContinuationOperationDelegate, QLPreviewControllerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate, MFGroupDetailViewControllerDelegate, CNContactPickerDelegate>
+@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, CNContactViewControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityHandoffOperationDelegate, QLPreviewControllerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate, MFGroupDetailViewControllerDelegate, CNContactPickerDelegate>
 {
     id <MFMailComposeViewControllerDelegate> _delegate;
     id _autorotationDelegate;
@@ -67,7 +67,7 @@
     MFMailboxUid *_lastDraftMailboxUid;
     NSString *_initialTitle;
     MFLock *_autosaveLock;
-    id _autosaveIdentifier;
+    NSString *_autosaveIdentifier;
     MFSecureMIMECompositionManager *_secureCompositionManager;
     NSDictionary *_certificatesByRecipient;
     NSDictionary *_errorsByRecipient;
@@ -98,10 +98,10 @@
     UIKeyCommand *_sendKeyCommand;
     UIKeyCommand *_escapeKeyCommand;
     UIAlertController *_notifyConfirmation;
-    MFComposeActivityContinuationOperation *_continuationOperation;
-    UIProgressView *_continuationProgressView;
+    MFComposeActivityHandoffOperation *_handoffOperation;
+    UIProgressView *_handoffProgressView;
     MFMessageContentProgressLayer *_progressIndicatorView;
-    MFLANContinuationAgent *_LANContinuationAgent;
+    MFLANHandoffAgent *_LANHandoffAgent;
     NSObject<OS_dispatch_group> *_imageScalingGroup;
     unsigned short _lastTypedCharacter;
     NSTimer *_autosaveTimer;
@@ -162,18 +162,19 @@
 @property(nonatomic) id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_bodyTextChanged;
-- (void)activityContinuationOperationReceivedBytes:(id)arg1;
-- (void)activityContinuationOperation:(id)arg1 didFailWithError:(id)arg2;
-- (void)activityContinuationOperation:(id)arg1 didFinishSendingDataWithResult:(unsigned long long)arg2;
-- (void)activityContinuationOperation:(id)arg1 didFinishReceivingData:(id)arg2;
+- (void)activityHandoffOperationReceivedBytes:(id)arg1;
+- (void)activityHandoffOperation:(id)arg1 didFailWithError:(id)arg2;
+- (void)activityHandoffOperation:(id)arg1 didFinishSendingDataWithResult:(long long)arg2;
+- (void)activityHandoffOperation:(id)arg1 didFinishReceivingData:(id)arg2;
 - (void)userActivity:(id)arg1 didReceiveInputStream:(id)arg2 outputStream:(id)arg3;
-- (id)_copyMessageDataForActivityContinuation;
-- (void)handleLargeMessageComposeContinuationWithInputStream:(id)arg1 outputStream:(id)arg2 error:(id)arg3;
+- (id)_copyMessagePlainTextForDonation;
+- (id)_copyMessageDataForActivityHandoff;
+- (void)handleLargeMessageComposeHandoffWithInputStream:(id)arg1 outputStream:(id)arg2 error:(id)arg3;
 - (void)setProgressUIVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_makeComposeUserActivityCurrent;
 - (void)updateUserActivityState:(id)arg1;
-- (void)_hideContinuationProgressViewAnimated:(_Bool)arg1;
-- (void)_createAndAddContinuationProgressViewIfNecessary;
+- (void)_hideHandoffProgressViewAnimated:(_Bool)arg1;
+- (void)_createAndAddHandoffProgressViewIfNecessary;
 - (_Bool)_hasEncryptionIdentityError;
 - (_Bool)_wantsEncryption;
 - (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
@@ -271,6 +272,7 @@
 - (void)_focusBccHeaderCommandInvoked:(id)arg1;
 - (void)_tabKeyCommandInvoked:(id)arg1;
 - (_Bool)_isTabKeyCommandInvocationPossible;
+- (id)_messageToDonate;
 - (_Bool)canBecomeFirstResponder;
 - (void)_preferredContentSizeCategoryDidChange:(id)arg1;
 - (void)_popoverWillBePresented:(id)arg1;
@@ -334,7 +336,7 @@
 - (void)close:(id)arg1;
 - (void)_close;
 - (void)autosaveWithHandler:(CDUnknownBlockType)arg1;
-@property(retain, nonatomic) id <NSCoding> autosaveIdentifier;
+@property(retain, nonatomic) NSString *autosaveIdentifier;
 - (void)_autosaveTimerFired:(id)arg1;
 - (_Bool)_shouldAutosaveAfterTimerFiredWithInterval:(double)arg1;
 - (void)_setAutosaveIsValid:(_Bool)arg1;

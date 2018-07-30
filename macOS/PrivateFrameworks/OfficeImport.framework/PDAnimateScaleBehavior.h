@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PDAnimateBehavior.h>
 
-__attribute__((visibility("hidden")))
 @interface PDAnimateScaleBehavior : PDAnimateBehavior
 {
     struct CGPoint mTo;

@@ -8,5 +8,6 @@
 
 @interface UIImage (HFAdditions)
 - (id)imageWithNormalizedOrientation;
+@property(readonly, nonatomic) struct CGSize hf_sizeInScreenScale;
 @end
 

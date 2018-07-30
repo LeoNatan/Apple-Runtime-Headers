@@ -33,15 +33,12 @@ __attribute__((visibility("hidden")))
     BOOL _managedUsesContainer;
     BOOL _neverCache;
     BOOL _checkedForNonPrefsPlist;
-    BOOL _hasDrainedPendingChangesSinceLastReplyToOwner;
     BOOL _restrictedReadability;
     BOOL _waitingForDeviceUnlock;
     BOOL _watchingParentDirectory;
     BOOL _disableBackup;
-    BOOL _hasPreviouslyBeenUnableToDetermineSandboxAccess;
 }
 
-+ (void)removeObservationConnectionsForIdentifier:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)cleanUpAfterAcceptingMessage:(id)arg1;
 - (id)acceptMessage:(id)arg1;
@@ -52,7 +49,6 @@ __attribute__((visibility("hidden")))
 - (void)handleEUIDorEGIDMismatch;
 - (void)handleNeverCache;
 - (void)handleAvoidCache;
-- (id)copyCachedObservationConnectionForMessage:(id)arg1;
 - (void)setObserved:(BOOL)arg1 bySenderOfMessage:(id)arg2;
 - (void)stopNotifyingObserver:(id)arg1;
 - (int)validateMessage:(id)arg1 withNewKey:(id)arg2 newValue:(id)arg3 currentPlistData:(id)arg4 containerPath:(const char *)arg5 diagnosticMessage:(const char **)arg6;
@@ -69,7 +65,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)enqueueNewKey:(id)arg1 value:(id)arg2 size:(unsigned long long)arg3 encoding:(int)arg4;
 - (BOOL)hasObservers;
 - (void)drainPendingChanges;
-- (void)asyncNotifyObserversOfWriteFromConnection:(id)arg1;
+- (void)observingConnectionWasInvalidated:(id)arg1;
+- (void)asyncNotifyObserversOfWriteFromConnection:(id)arg1 message:(id)arg2;
 - (id)copyPropertyListValidatingPlist:(BOOL)arg1;
 - (id)copyPropertyListWithoutDrainingPendingChangesValidatingPlist:(BOOL)arg1;
 - (void)markNeedsToReloadFromDiskDueToFailedWrite;
@@ -81,14 +78,9 @@ __attribute__((visibility("hidden")))
 - (void)handleOpenForWritingFailureWithErrno:(int)arg1;
 - (void)setDirty:(BOOL)arg1;
 - (void)updateShmemEntry;
-- (BOOL)hasEverHadMultipleOwners;
-- (int)owner;
 - (short)shmemIndex;
 - (id)description;
 - (BOOL)byHost;
-- (void)removeOwner;
-- (void)addOwner:(id)arg1;
-- (void)transitionToMultiOwner;
 - (void)respondToFileWrittenToBehindOurBack;
 - (struct __CFString *)cloudConfigurationPath;
 - (struct __CFString *)container;

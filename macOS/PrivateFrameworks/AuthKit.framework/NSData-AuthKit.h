@@ -7,6 +7,7 @@
 #import "NSData.h"
 
 @interface NSData (AuthKit)
+- (id)ak_compressedData:(int)arg1;
 - (id)ak_hexString;
 @end
 

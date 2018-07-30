@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAccessibilityMockUIElement.h>
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilityStepperArrowButton : NSAccessibilityMockUIElement
 {
     BOOL _increments;

@@ -12,6 +12,7 @@
 
 @class AVAssetWriterInputMediaDataRequester, AVAssetWriterInputPassDescription, AVFigAssetWriterTrack, AVKeyPathDependencyManager, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputWritingHelper : AVAssetWriterInputHelper <AVAssetWriterInputMediaDataRequesterDelegate, AVWeakObservable, AVKeyPathDependencyHost>
 {
     AVFigAssetWriterTrack *_assetWriterTrack;

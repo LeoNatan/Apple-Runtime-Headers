@@ -43,7 +43,7 @@
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
-- (long long)_requestTypeOverride;
+- (id)_edgeCacheHint;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

@@ -39,6 +39,7 @@
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2;
 + (id)fetchMomentsBackingMemory:(id)arg1 options:(id)arg2;
 + (id)fetchMemoriesWithOptions:(id)arg1;
++ (id)fetchAssetCollectionsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsWithOptions:(id)arg1;
 + (id)fetchMomentsInMomentList:(id)arg1 options:(id)arg2;

@@ -16,6 +16,7 @@
 - (id)identifiersForRecords:(id)arg1;
 - (id)updatedRecordsInLocalNotification:(id)arg1;
 - (BOOL)isCardViewProcessingChanges;
+- (BOOL)isSaving;
 - (BOOL)shouldRefreshCardViewWithIdentifiers:(id)arg1 forNotification:(id)arg2;
 - (void)handleExternalNotification:(id)arg1;
 - (void)handleLocalNotification:(id)arg1;

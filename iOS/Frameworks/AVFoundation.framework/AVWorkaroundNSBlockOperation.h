@@ -6,6 +6,7 @@
 
 #import "NSBlockOperation.h"
 
+__attribute__((visibility("hidden")))
 @interface AVWorkaroundNSBlockOperation : NSBlockOperation
 {
 }

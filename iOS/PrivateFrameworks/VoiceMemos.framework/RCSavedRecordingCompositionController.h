@@ -6,21 +6,23 @@
 
 #import <VoiceMemos/RCCompositionController.h>
 
-@class NSURL;
+@class NSString;
 
 @interface RCSavedRecordingCompositionController : RCCompositionController
 {
-    NSURL *_savedRecordingURI;
+    NSString *_savedRecordingUUID;
 }
 
-+ (id)compositionControllerForExistingSavedRecordingURI:(id)arg1;
++ (id)compositionControllerForExistingSavedRecordingUUID:(id)arg1;
++ (id)compositionControllerForExistingSavedRecording:(id)arg1;
 + (id)compositionControllerForCreatingSavedRecording;
-@property(readonly, nonatomic) NSURL *savedRecordingURI; // @synthesize savedRecordingURI=_savedRecordingURI;
+@property(readonly, nonatomic) NSString *savedRecordingUUID; // @synthesize savedRecordingUUID=_savedRecordingUUID;
 - (void).cxx_destruct;
 - (void)performCompositionRedoWithRedoItem:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)performCompositionUndoWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)deleteCompositionFromFileSystemAndDatabase;
-- (id)initWithExistingSavedRecordingURI:(id)arg1;
+- (id)initWithExistingSavedRecordingUUID:(id)arg1;
+- (id)initWithExistingSavedRecording:(id)arg1;
 - (void)activeRecordingSessionWillFinish;
 - (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(CDStruct_73a5d3ca)arg2 isUndoable:(_Bool)arg3 isOverdub:(_Bool)arg4 sessionPreparedBlock:(CDUnknownBlockType)arg5 sessionFinishedBlock:(CDUnknownBlockType)arg6;
 - (void)setComposition:(id)arg1;

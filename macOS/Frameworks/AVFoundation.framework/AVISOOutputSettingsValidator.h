@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVMediaFileOutputSettingsValidator.h>
 
+__attribute__((visibility("hidden")))
 @interface AVISOOutputSettingsValidator : AVMediaFileOutputSettingsValidator
 {
 }

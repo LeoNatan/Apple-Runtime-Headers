@@ -8,6 +8,7 @@
 
 @class AVAssetWriterInput, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputGroupInternal : NSObject
 {
     NSArray *inputs;

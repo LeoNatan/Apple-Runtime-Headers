@@ -22,7 +22,6 @@
 + (_Bool)supportsSecureCoding;
 + (id)shortDescription;
 + (_Bool)isAccessorySupported:(id)arg1;
-@property(readonly) unsigned int options; // @synthesize options=_options;
 @property(readonly, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -30,6 +29,8 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSArray *accessories;
+@property(readonly) _Bool allowUnauthenticatedRequests;
+- (unsigned int)options;
 - (id)description;
 - (id)debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;

@@ -8,7 +8,6 @@
 
 @class OCXWriteState, TCXmlPrefixStreamWriter;
 
-__attribute__((visibility("hidden")))
 @interface PXAnimationWriteState : NSObject
 {
     unsigned long long mCommonTimeNodeDataId;
@@ -20,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) TCXmlPrefixStreamWriter *file; // @synthesize file=mFile;
 @property(retain, nonatomic) OCXWriteState *writeState; // @synthesize writeState=mWriteState;
+- (void).cxx_destruct;
 - (unsigned long long)mainSeqTimeNodeId;
 - (void)setMainSeqTimeNodeId:(unsigned long long)arg1;
 - (BOOL)hasMainSeqTimeNodeId;
 - (unsigned long long)newCommonTimeNodeDataId;
-- (void)dealloc;
 - (id)initWithWriteState:(id)arg1 file:(id)arg2;
 
 @end

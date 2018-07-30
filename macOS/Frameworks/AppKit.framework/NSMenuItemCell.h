@@ -38,8 +38,6 @@
 @property long long tag; // @dynamic tag;
 - (unsigned long long)mnemonicLocation;
 - (id)title;
-- (id)_highlightTextColor;
-- (id)_highlightColor;
 - (BOOL)isOpaque;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
@@ -50,6 +48,12 @@
 - (struct _NSRange)_characterRangeForPoint:(struct CGPoint)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)drawTitleWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawImageWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (void)_preeffectBaseImage:(id *)arg1 state:(unsigned long long *)arg2 backgroundStyle:(int *)arg3 inView:(id)arg4;
+- (unsigned long long)_interiorContentValueStateInView:(id)arg1;
+- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (BOOL)_preferAlternateContentForImage;
+- (BOOL)_preferAlternateContent;
+- (BOOL)_disabledForDrawingContent;
 - (void)drawStateImageWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawSeparatorItemWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)_separatorRectForCellFrame:(struct CGRect)arg1 isFlipped:(BOOL)arg2;

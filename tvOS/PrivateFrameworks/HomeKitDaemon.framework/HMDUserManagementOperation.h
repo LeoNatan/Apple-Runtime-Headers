@@ -31,6 +31,8 @@
     HMFTimer *_expirationTimer;
     double _backoffInterval;
     HMFTimer *_backoffTimer;
+    HMDAccessoryInvitation *_accessoryInvitation;
+    NSDictionary *_accessoryInvitationInformation;
 }
 
 + (id)operationWithDictionary:(id)arg1 home:(id)arg2;
@@ -38,6 +40,8 @@
 + (id)shortDescription;
 + (id)removeUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
 + (id)addUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
+@property(readonly, nonatomic) NSDictionary *accessoryInvitationInformation; // @synthesize accessoryInvitationInformation=_accessoryInvitationInformation;
+@property(readonly, nonatomic) HMDAccessoryInvitation *accessoryInvitation; // @synthesize accessoryInvitation=_accessoryInvitation;
 @property(retain, nonatomic) HMFTimer *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
 @property(readonly, nonatomic) double backoffInterval; // @synthesize backoffInterval=_backoffInterval;
 @property(readonly, nonatomic) HMFTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
@@ -56,9 +60,6 @@
 - (id)dictionaryEncoding;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *accessoryInvitationInformation;
-@property(readonly, nonatomic) HMDAccessoryInvitation *accessoryInvitation;
-- (long long)_accessoryInvitationState;
 - (_Bool)mergeWithOperation:(id)arg1;
 - (void)_removePairingFromHAPAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_addPairingToHAPAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

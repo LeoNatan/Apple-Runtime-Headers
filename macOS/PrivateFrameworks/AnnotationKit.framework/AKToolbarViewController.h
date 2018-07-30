@@ -13,6 +13,7 @@
     AKController *_controller;
 }
 
++ (BOOL)isOptionKeyPressed;
 + (unsigned long long)buttonTypeForToolbarButtonItemOfType:(unsigned long long)arg1;
 + (id)alternateImageForToolbarButtonItemOfType:(unsigned long long)arg1;
 + (id)imageForToolbarButtonItemOfType:(unsigned long long)arg1;

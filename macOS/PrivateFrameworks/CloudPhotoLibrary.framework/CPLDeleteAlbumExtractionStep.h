@@ -15,7 +15,7 @@
 - (id)shortDescription;
 - (BOOL)shouldResetFromThisStepWithIncomingChange:(id)arg1;
 - (BOOL)extractToBatch:(id)arg1 maximumCount:(unsigned long long)arg2 maximumResourceSize:(unsigned long long)arg3 error:(id *)arg4;
-- (id)initWithStorage:(id)arg1 maximumCount:(unsigned long long)arg2;
+- (id)initWithStorage:(id)arg1 scopeIdentifier:(id)arg2 maximumCount:(unsigned long long)arg3;
 
 @end
 

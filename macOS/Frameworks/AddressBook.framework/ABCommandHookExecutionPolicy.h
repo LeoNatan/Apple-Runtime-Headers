@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCommandExecutionPolicy.h>
 
-__attribute__((visibility("hidden")))
 @interface ABCommandHookExecutionPolicy : ABCommandExecutionPolicy
 {
     id <ABCommand> _command;

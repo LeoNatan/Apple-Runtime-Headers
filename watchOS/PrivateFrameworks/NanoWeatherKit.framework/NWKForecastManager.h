@@ -10,7 +10,7 @@
 #import "NWKLocationObservable.h"
 #import "NWKRoutineForecastObservable.h"
 
-@class NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NWKLocationConnection, NWKRoutineForecastConnection, WFLocation;
+@class NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, NWKLocationConnection, NWKRoutineForecastConnection, WFLocation;
 
 @interface NWKForecastManager : NSObject <NWKForecastConnectionDelegate, NWKLocationObservable, NWKRoutineForecastObservable>
 {
@@ -23,16 +23,18 @@
     NSObject<OS_dispatch_queue> *_forecastConnectionQueue;
     NSObject<OS_dispatch_queue> *_forecastsQueue;
     Class _forecastConnectionKind;
+    NSMutableDictionary *_ephemeralConnections;
+    NSTimer *_ephemeralConnectionCleanupTimer;
     NSHashTable *_observers;
     NWKLocationConnection *_locationConnection;
     NWKRoutineForecastConnection *_routineForecastConnection;
-    NSMutableDictionary *_ephemeralConnections;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *ephemeralConnections; // @synthesize ephemeralConnections=_ephemeralConnections;
 @property(retain, nonatomic) NWKRoutineForecastConnection *routineForecastConnection; // @synthesize routineForecastConnection=_routineForecastConnection;
 @property(retain, nonatomic) NWKLocationConnection *locationConnection; // @synthesize locationConnection=_locationConnection;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) NSTimer *ephemeralConnectionCleanupTimer; // @synthesize ephemeralConnectionCleanupTimer=_ephemeralConnectionCleanupTimer;
+@property(retain, nonatomic) NSMutableDictionary *ephemeralConnections; // @synthesize ephemeralConnections=_ephemeralConnections;
 @property(nonatomic) Class forecastConnectionKind; // @synthesize forecastConnectionKind=_forecastConnectionKind;
 @property(nonatomic, getter=shouldUseStaticLocationCache) _Bool useStaticLocationCache; // @synthesize useStaticLocationCache=_useStaticLocationCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *forecastsQueue; // @synthesize forecastsQueue=_forecastsQueue;
@@ -80,15 +82,18 @@
 - (void)pauseForecastConnectionForLocation:(id)arg1;
 - (void)pauseForecastConnectionForCoreLocation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pauseForecastConnectionForCoreLocation:(id)arg1;
+- (void)resumeConnectionsForLocationListAndLocations:(id)arg1 connectionKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)pauseAllConnectionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserverAndNotifyCurrentStaticLocationList:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_addObserver:(id)arg1 notifyCurrentStaticLocationList:(_Bool)arg2;
 - (_Bool)isLocationInStaticLocations:(id)arg1;
+- (unsigned int)indexOfLocationKeyInStaticLocations:(id)arg1;
 - (unsigned int)indexOfLocationInStaticLocations:(id)arg1;
 - (id)locationWithLocationKey:(id)arg1;
 - (id)locationWithLocationID:(id)arg1;
+- (id)forecastForLocation:(id)arg1;
 - (id)weatherForecastsGroupForLocation:(id)arg1;
 - (id)validConditionsForLocation:(id)arg1 forDate:(id)arg2;
 - (void)validConditionsForLocation:(id)arg1 forDate:(id)arg2 fetchHandler:(CDUnknownBlockType)arg3;
@@ -106,6 +111,8 @@
 - (id)_forecastConnectionForLocation:(id)arg1;
 - (void)_enumerateForecastConnectionsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_addForecastConnection:(id)arg1 forLocation:(id)arg2;
+- (void)removeLocationFromList:(id)arg1;
+- (void)addLocationToList:(id)arg1;
 - (id)initWithLocationConnectionKind:(Class)arg1 forecastConnectionKind:(Class)arg2 useStaticLocationCache:(_Bool)arg3;
 - (id)initWithLocationConnectionKind:(Class)arg1 forecastConnectionKind:(Class)arg2;
 - (id)initWithLocationConnectionKind:(Class)arg1;

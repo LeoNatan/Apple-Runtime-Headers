@@ -7,57 +7,62 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSetSeatSettingsInCarIntent.h"
 
-@class PBUnknownFields, _INPBInteger, _INPBIntentMetadata;
+@class NSString, _INPBDataString, _INPBInteger, _INPBIntentMetadata;
 
-@interface _INPBSetSeatSettingsInCarIntent : PBCodable <NSCopying>
+@interface _INPBSetSeatSettingsInCarIntent : PBCodable <_INPBSetSeatSettingsInCarIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct {
+        unsigned int enableCooling:1;
+        unsigned int enableHeating:1;
+        unsigned int enableMassage:1;
+        unsigned int relativeLevelSetting:1;
+        unsigned int seat:1;
+    } _has;
+    _Bool _enableCooling;
+    _Bool _enableHeating;
+    _Bool _enableMassage;
+    _INPBDataString *_carName;
     _INPBIntentMetadata *_intentMetadata;
     _INPBInteger *_level;
     int _relativeLevelSetting;
     int _seat;
-    _Bool _enableCooling;
-    _Bool _enableHeating;
-    _Bool _enableMassage;
-    struct {
-        unsigned int relativeLevelSetting:1;
-        unsigned int seat:1;
-        unsigned int enableCooling:1;
-        unsigned int enableHeating:1;
-        unsigned int enableMassage:1;
-    } _has;
 }
 
-+ (id)options;
+@property(nonatomic) int seat; // @synthesize seat=_seat;
+@property(nonatomic) int relativeLevelSetting; // @synthesize relativeLevelSetting=_relativeLevelSetting;
 @property(retain, nonatomic) _INPBInteger *level; // @synthesize level=_level;
-@property(nonatomic) _Bool enableMassage; // @synthesize enableMassage=_enableMassage;
-@property(nonatomic) _Bool enableCooling; // @synthesize enableCooling=_enableCooling;
-@property(nonatomic) _Bool enableHeating; // @synthesize enableHeating=_enableHeating;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) _Bool enableMassage; // @synthesize enableMassage=_enableMassage;
+@property(nonatomic) _Bool enableHeating; // @synthesize enableHeating=_enableHeating;
+@property(nonatomic) _Bool enableCooling; // @synthesize enableCooling=_enableCooling;
+@property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (int)StringAsRelativeLevelSetting:(id)arg1;
-- (id)relativeLevelSettingAsString:(int)arg1;
-@property(nonatomic) _Bool hasRelativeLevelSetting;
-@property(nonatomic) int relativeLevelSetting; // @synthesize relativeLevelSetting=_relativeLevelSetting;
-@property(readonly, nonatomic) _Bool hasLevel;
 - (int)StringAsSeat:(id)arg1;
 - (id)seatAsString:(int)arg1;
 @property(nonatomic) _Bool hasSeat;
-@property(nonatomic) int seat; // @synthesize seat=_seat;
-@property(nonatomic) _Bool hasEnableMassage;
-@property(nonatomic) _Bool hasEnableCooling;
-@property(nonatomic) _Bool hasEnableHeating;
+- (int)StringAsRelativeLevelSetting:(id)arg1;
+- (id)relativeLevelSettingAsString:(int)arg1;
+@property(nonatomic) _Bool hasRelativeLevelSetting;
+@property(readonly, nonatomic) _Bool hasLevel;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(nonatomic) _Bool hasEnableMassage;
+@property(nonatomic) _Bool hasEnableHeating;
+@property(nonatomic) _Bool hasEnableCooling;
+@property(readonly, nonatomic) _Bool hasCarName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

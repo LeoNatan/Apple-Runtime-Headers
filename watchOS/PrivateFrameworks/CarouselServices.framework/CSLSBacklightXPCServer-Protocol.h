@@ -6,14 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class CSLSBacklightAssertionSpecification, NSString;
 
 @protocol CSLSBacklightXPCServer <NSObject>
 - (void)releaseMinimumBrightnessAssertion:(NSString *)arg1;
 - (void)takeMinimumBrightnessAssertion:(NSString *)arg1 withMinimumNits:(float)arg2 fadeDuration:(float)arg3 withDisplay:(NSString *)arg4;
-- (void)releaseAssertionReason:(NSString *)arg1;
-- (void)tickleAssertionTimeout:(NSString *)arg1;
-- (void)takeAssertion:(NSString *)arg1 withReason:(NSString *)arg2 withDisplay:(NSString *)arg3 willPreventScreenOff:(_Bool)arg4 willPreventGestures:(_Bool)arg5 timeoutSeconds:(double)arg6;
+- (void)releaseAssertion:(NSString *)arg1;
+- (void)takeAssertion:(CSLSBacklightAssertionSpecification *)arg1 withUUID:(NSString *)arg2;
+- (void)endObserving;
+- (void)beginObserving;
+- (void)offForIdentifier:(NSString *)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
+- (void)onForIdentifier:(NSString *)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
 - (void)connect;
 @end
 

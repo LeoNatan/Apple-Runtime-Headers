@@ -16,11 +16,11 @@
     BKSSpringBoardDefaults *_lazy_springBoardDefaults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) BKSSpringBoardDefaults *springBoardDefaults;
 @property(readonly, retain, nonatomic) BKSPersistentConnectionDefaults *persistentConnectionDefaults;
 @property(readonly, retain, nonatomic) BKSIAPDefaults *iapDefaults;
 @property(readonly, retain, nonatomic) BKSLockdownDefaults *lockdownDefaults;
-- (void)dealloc;
 
 @end
 

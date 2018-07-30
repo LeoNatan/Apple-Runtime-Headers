@@ -14,8 +14,9 @@
 @interface PKPeerPaymentDocumentSubmissionIDCaptureViewController : UIViewController <PKPeerPaymentDocumentSubmissionControllerDelegate, PKPeerPaymentDocumentSubmissionViewControllerResponder>
 {
     PKPeerPaymentDocumentSubmissionController *_captureController;
-    PKCameraCaptureInstructionView *_cameraInstructionView;
     UIView *_cameraView;
+    UIView *_cameraInstructionContainerView;
+    PKCameraCaptureInstructionView *_cameraInstructionView;
     _Bool _reachedTimeout;
     NSTimer *_timerTryAgain;
     UIBarButtonItem *_buttonCancel;

@@ -29,7 +29,7 @@
     ACAccountStore *_iCloudAccountStore;
     ACAccount *_iCloudAccount;
     NSString *_iCloudUserID;
-    unsigned char _iCloudPropertiesCompleted;
+    int _iCloudAccountState;
     _Bool _homeiCloudEnabled;
     int _preflightiTunesState;
     SSAccount *_iTunesAccount;
@@ -51,7 +51,6 @@
     SFSession *_sfSession;
     _Bool _sfSessionSecured;
     int _sfSessionState;
-    unsigned long long _peerFeatureFlags;
     int _preAuthState;
     _Bool _preAuthStartedProgress;
     unsigned int _siriFlags;
@@ -87,15 +86,21 @@
     int _finishState;
     unsigned long long _finishStartTicks;
     double _finishSecs;
+    double _iTunesWaitSecs;
+    double _mediaSystemWaitSecs;
     double _totalSecs;
     _Bool _prefForceSiriGreeting;
     _Bool _liveOn;
+    _Bool _pauseAfterPreAuth;
+    unsigned char _stereoCounterpartColor;
     _Bool _touchRemoteEnabled;
     NSDictionary *_additionalMetrics;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SFDevice *_peerDevice;
+    NSDictionary *_preAuthResponse;
     UIViewController *_presentingViewController;
     unsigned int _testFlags;
+    CDUnknownBlockType _preAuthHandler;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _promptForAppleMusicHandler;
     CDUnknownBlockType _promptForHomeHandler;
@@ -112,6 +117,7 @@
     CDUnknownBlockType _promptForSiriLanguageHandler;
     CDUnknownBlockType _promptForStereoRoleHandler;
     CDUnknownBlockType _promptForStereoMultipleHandler;
+    unsigned long long _peerFeatureFlags;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType promptForStereoMultipleHandler; // @synthesize promptForStereoMultipleHandler=_promptForStereoMultipleHandler;
@@ -130,10 +136,15 @@
 @property(copy, nonatomic) CDUnknownBlockType promptForHomeHandler; // @synthesize promptForHomeHandler=_promptForHomeHandler;
 @property(copy, nonatomic) CDUnknownBlockType promptForAppleMusicHandler; // @synthesize promptForAppleMusicHandler=_promptForAppleMusicHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
+@property(copy, nonatomic) CDUnknownBlockType preAuthHandler; // @synthesize preAuthHandler=_preAuthHandler;
 @property(nonatomic) _Bool touchRemoteEnabled; // @synthesize touchRemoteEnabled=_touchRemoteEnabled;
 @property(nonatomic) unsigned int testFlags; // @synthesize testFlags=_testFlags;
+@property(readonly, nonatomic) unsigned char stereoCounterpartColor; // @synthesize stereoCounterpartColor=_stereoCounterpartColor;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
+@property(retain, nonatomic) NSDictionary *preAuthResponse; // @synthesize preAuthResponse=_preAuthResponse;
+@property(nonatomic) unsigned long long peerFeatureFlags; // @synthesize peerFeatureFlags=_peerFeatureFlags;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
+@property(nonatomic) _Bool pauseAfterPreAuth; // @synthesize pauseAfterPreAuth=_pauseAfterPreAuth;
 @property(nonatomic) _Bool liveOn; // @synthesize liveOn=_liveOn;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
@@ -168,6 +179,7 @@
 - (int)_runTerms;
 - (int)_runPersonalRequests;
 - (int)_runSiriLanguage;
+- (int)_runCheckAccount;
 - (void)_runPreAuthResponse:(id)arg1 error:(id)arg2;
 - (void)_runPreAuthRequest;
 - (int)_runPreAuth;
@@ -180,8 +192,10 @@
 - (void)termsAgreed;
 - (void)stereoMultiplePicked:(id)arg1;
 - (void)stereoRolePicked:(int)arg1;
-- (void)_speakPasscodeWithInstructions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_speakPasscodeWithInstructions:(id)arg1 languageCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)speakPasscodeWithInstructions:(id)arg1 languageCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)speakPasscodeWithInstructions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)speakPasscodeWithLanguageCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)speakPasscodeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)skipiTunesSignIn;
 - (void)skipAudioPasscode;

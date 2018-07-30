@@ -9,10 +9,11 @@
 #import "NSAccessibilitySlider.h"
 #import "NSSliderAccessoryContainer.h"
 #import "NSSliderCellControlView.h"
+#import "NSSliderTickMarksDelegate.h"
 
 @class NSColor, NSDictionary, NSSliderAccessory, NSString;
 
-@interface NSSlider : NSControl <NSSliderAccessoryContainer, NSSliderCellControlView, NSAccessibilitySlider>
+@interface NSSlider : NSControl <NSSliderAccessoryContainer, NSSliderCellControlView, NSSliderTickMarksDelegate, NSAccessibilitySlider>
 {
     NSDictionary *_tickMarkLayoutPoints;
 }
@@ -32,6 +33,24 @@
 - (BOOL)accessibilityPerformIncrement;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
+- (id)_preferredAppearance;
+- (void)_layoutComponentSubviewsIfNecessary;
+- (void)_clearComponentSubviewsAndRemoveFromSuperview:(BOOL)arg1;
+- (void)_clearComponentSubviews;
+- (void)_createComponentSubviews;
+- (void)_updateComponentSubviewRenderingState;
+- (id)_circularKnobView;
+- (void)_setCircularKnobView:(id)arg1;
+- (id)_dialView;
+- (void)_setDialView:(id)arg1;
+- (id)_knobView;
+- (void)_setKnobView:(id)arg1;
+- (id)_tickMarksView;
+- (void)_setTickMarksView:(id)arg1;
+- (id)_trackView;
+- (void)_setTrackView:(id)arg1;
+- (unsigned long long)_subviewRenderingMode;
+- (void)_setSubviewRenderingMode:(unsigned long long)arg1;
 - (void)_updateTickMarkConstraintPositionsIfNeeded;
 - (id)declaredLayoutConstraints;
 - (void)setUserInterfaceLayoutDirection:(long long)arg1;
@@ -94,12 +113,16 @@
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (struct CGSize)intrinsicContentSize;
 - (void)sizeToFit;
+- (void)drawRect:(struct CGRect)arg1;
+- (id)designatedFocusRingView;
 - (BOOL)isFlipped;
 - (void)dealloc;
 - (void)setCell:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)sliderCellDidInvalidateComponentRects:(id)arg1;
+- (void)updateCell:(id)arg1;
 - (void)sliderCellDidChangeSliderType:(id)arg1;
 - (void)sliderCellDidChangeControlSize:(id)arg1;
 - (void)sliderCellDidChangeTickMarkPosition:(id)arg1;

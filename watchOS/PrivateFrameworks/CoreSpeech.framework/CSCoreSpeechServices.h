@@ -10,9 +10,12 @@
 {
 }
 
-+ (void)clearTriggerCount;
-+ (unsigned int)getTriggerCount;
-+ (void)setDelayInterstitialSounds:(id)arg1 level:(int)arg2;
++ (int)getFirstPassRunningMode;
++ (void)requestUpdatedSATAudio;
++ (void)voiceTriggerRTModelForVersion:(unsigned int)arg1 minorVersion:(unsigned int)arg2 downloadedModels:(id)arg3 preinstalledModels:(id)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)fetchRemoteVoiceTriggerAssetForLanguageCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)installedVoiceTriggerAssetForLanguageCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (id)getCoreSpeechXPCConnection;
 + (id)getCoreSpeechServiceConnection;
 
 @end

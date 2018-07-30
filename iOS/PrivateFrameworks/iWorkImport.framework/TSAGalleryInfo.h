@@ -27,8 +27,11 @@ __attribute__((visibility("hidden")))
 
 + (Class)drawableInfoSubclassForClass:(Class)arg1 unarchiver:(id)arg2;
 + (_Bool)p_stylesAreEqualForOutgoingStorage:(id)arg1 incomingStorage:(id)arg2;
++ (id)p_defaultCaptionParagraphStylePropertiesWithFontSize:(double)arg1;
 + (void)addDefaultGalleryCaptionParagraphStyleIfNeededWithFontSize:(double)arg1 toStylesheet:(id)arg2;
 + (id)p_paragraphStyleWithLocalizedNameKey:(id)arg1 inStylesheet:(id)arg2;
++ (id)p_overrideCaptionParagraphStyleIdentifier;
++ (id)defaultGalleryCaptionParagraphStyleInStylesheet:(id)arg1;
 + (id)i_newCaptionStorageWithContext:(id)arg1;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
@@ -42,8 +45,11 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)chunkCountForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2;
 - (id)animationFilters;
 - (struct CGSize)targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+@property(readonly, nonatomic) _Bool supportsMultipleColumns;
 @property(readonly, nonatomic) _Bool storageChangesInvalidateWrap;
 @property(readonly, nonatomic) long long contentWritingDirection;
+@property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
 @property(readonly, nonatomic) _Bool textIsVertical;
@@ -59,7 +65,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *containedModels;
 @property(readonly, nonatomic) NSArray *childInfos;
 - (void)acceptVisitor:(id)arg1;
+- (id)childEnumeratorForUserSearch;
 - (id)childEnumerator;
+- (int)elementKind;
 - (_Bool)needsDownload;
 - (_Bool)supportsParentRotation;
 - (_Bool)isSelectable;
@@ -86,6 +94,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsCollaborativeEditing;
 
 @end
 

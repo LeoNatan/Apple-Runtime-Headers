@@ -102,7 +102,6 @@
 - (void)_setupAlternateControlButtonIfNecessary;
 - (void)_setupBlurView;
 - (_Bool)_shouldShowControlView;
-- (void)setshouldShowActiveControl:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 delegate:(id)arg2 sourceRect:(struct CGRect)arg3;
 
 @end

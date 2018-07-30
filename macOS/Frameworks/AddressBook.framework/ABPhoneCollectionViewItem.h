@@ -6,10 +6,11 @@
 
 #import <AddressBook/ABCollectionViewItem.h>
 
+#import "ABCollectionItemMessagingAvailabilityHelperDelegate.h"
+
 @class ABCollectionItemMessagingAvailabilityHelper, ABTTYServices;
 
-__attribute__((visibility("hidden")))
-@interface ABPhoneCollectionViewItem : ABCollectionViewItem
+@interface ABPhoneCollectionViewItem : ABCollectionViewItem <ABCollectionItemMessagingAvailabilityHelperDelegate>
 {
     ABCollectionItemMessagingAvailabilityHelper *_messagingHelper;
     ABTTYServices *_ttyServices;
@@ -18,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) ABTTYServices *ttyServices; // @synthesize ttyServices=_ttyServices;
 @property(retain, nonatomic) ABCollectionItemMessagingAvailabilityHelper *messagingHelper; // @synthesize messagingHelper=_messagingHelper;
 - (void).cxx_destruct;
+- (void)messagingAvailabilityDidChangeHelper:(id)arg1;
 - (BOOL)shouldShowGlyphButton:(id)arg1;
 - (void)didRemoveFromCollection:(id)arg1;
 - (void)startPhoneNumberAvailabilityLookup;

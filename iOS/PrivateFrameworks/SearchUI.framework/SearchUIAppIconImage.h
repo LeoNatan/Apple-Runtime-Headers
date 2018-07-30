@@ -6,32 +6,30 @@
 
 #import <SearchUI/SearchUIImage.h>
 
-#import "NSSecureCoding.h"
-
 @class NSString;
 
-@interface SearchUIAppIconImage : SearchUIImage <NSSecureCoding>
+@interface SearchUIAppIconImage : SearchUIImage
 {
+    NSString *_bundleIdentifier;
     unsigned long long _variant;
-    NSString *_bundleID;
 }
 
-+ (double)cornerRadiusForSmallSpotlightIcons;
-+ (double)cornerRadiusForHomeScreenIcons;
-+ (double)iconCornerRadiusForFormat:(int)arg1;
-+ (struct CGRect)visibleFrameForTinyIcons;
-+ (struct CGRect)visibleFrameForSmallSpotlightIcons;
-+ (struct CGRect)visibleFrameForHomeScreenIcons;
-+ (struct CGSize)homeScreenIconSize;
-+ (struct CGSize)tinyIconSize;
-@property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
++ (id)appIconForImage:(id)arg1 variant:(unsigned long long)arg2;
++ (double)cornerRadiusForVariant:(unsigned long long)arg1;
++ (struct CGSize)sizeForVariant:(unsigned long long)arg1;
++ (int)iconFormatForVariant:(unsigned long long)arg1;
++ (id)appIconForBundleIdentifier:(id)arg1 webClipIdentifier:(id)arg2 variant:(unsigned long long)arg3;
++ (id)appIconForResult:(id)arg1 variant:(unsigned long long)arg2;
++ (id)appIconForBundleIdentifier:(id)arg1 variant:(unsigned long long)arg2;
 @property(nonatomic) unsigned long long variant; // @synthesize variant=_variant;
+@property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (id)generateImageWithFormat:(int)arg1;
-@property(readonly) _Bool isValid;
 - (id)loadImage;
-- (void)setSize;
-- (id)initWithBundleID:(id)arg1 variant:(unsigned long long)arg2;
+- (void)setUiImage:(id)arg1;
+- (id)uiImage;
+- (_Bool)needsTinting;
+- (id)initWithBundleIdentifier:(id)arg1 variant:(unsigned long long)arg2;
 
 @end
 

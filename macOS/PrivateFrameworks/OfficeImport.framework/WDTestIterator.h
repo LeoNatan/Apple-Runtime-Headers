@@ -6,17 +6,16 @@
 
 #import <OfficeImport/WDIterator.h>
 
-__attribute__((visibility("hidden")))
 @interface WDTestIterator : WDIterator
 {
     WDIterator *mIterator;
     id mNext;
 }
 
+- (void).cxx_destruct;
 - (id)next;
 - (BOOL)hasNext;
 - (BOOL)test:(id)arg1;
-- (void)dealloc;
 - (id)initWithIterator:(id)arg1;
 
 @end

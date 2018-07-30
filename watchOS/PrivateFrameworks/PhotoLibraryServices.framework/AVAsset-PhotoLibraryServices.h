@@ -7,6 +7,7 @@
 #import "AVAsset.h"
 
 @interface AVAsset (PhotoLibraryServices)
+- (id)plVideoCodecFourCharCodeString;
 - (id)plVideoCodecName;
 @end
 

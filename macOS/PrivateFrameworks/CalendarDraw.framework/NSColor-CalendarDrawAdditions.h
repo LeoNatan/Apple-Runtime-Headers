@@ -14,6 +14,7 @@
 - (id)cd_soverWithColor:(id)arg1;
 - (double)cd_differenceFromColor:(id)arg1;
 - (double)cd_luminance;
+- (id)calendarForegroundColorForDarkBackground;
 - (id)calendarForegroundColor;
 @end
 

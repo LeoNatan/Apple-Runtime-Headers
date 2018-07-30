@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)_dumpLayer;
 - (void)dealloc;
 - (id)initWithFunctionRow:(id)arg1;
+- (BOOL)_isFunctionRowWindow;
 - (double)backingScaleFactor;
 - (id)colorSpace;
 - (BOOL)isVisible;

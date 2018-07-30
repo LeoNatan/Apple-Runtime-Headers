@@ -22,8 +22,8 @@
 - (_Bool)isAppleAudioDevice;
 - (void)setSyncGroup:(int)arg1 enabled:(_Bool)arg2;
 - (id)syncGroups;
-- (void)setSyncSettings:(CDStruct_8024420c)arg1;
-- (CDStruct_8024420c)syncSettings;
+- (void)setSyncSettings:(CDStruct_df7f102b)arg1;
+- (CDStruct_df7f102b)syncSettings;
 - (void)endVoiceCommand;
 - (void)startVoiceCommand;
 - (void)unpair;
@@ -42,6 +42,7 @@
 - (unsigned int)listeningMode;
 - (_Bool)setDoubleTapActionEx:(unsigned int)arg1 rightAction:(unsigned int)arg2;
 - (unsigned int)doubleTapActionEx:(unsigned int *)arg1 rightAction:(unsigned int *)arg2;
+- (_Bool)featureCapability:(int)arg1;
 - (unsigned int)doubleTapCapability;
 - (_Bool)setDoubleTapAction:(unsigned int)arg1;
 - (unsigned int)doubleTapAction;

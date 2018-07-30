@@ -6,12 +6,16 @@
 
 #import <ApplePushService/APSMessage.h>
 
-@class NSString;
+@class APSOutgoingMessageCheckpointTrace, NSString;
 
 @interface APSOutgoingMessage : APSMessage
 {
+    APSOutgoingMessageCheckpointTrace *_checkpointTrace;
 }
 
+@property(retain, nonatomic) APSOutgoingMessageCheckpointTrace *checkpointTrace; // @synthesize checkpointTrace=_checkpointTrace;
+- (long long)retries;
+- (void)setRetries:(long long)arg1;
 - (id)sentTimestamp;
 - (void)setSentTimestamp:(id)arg1;
 - (id)originator;
@@ -40,6 +44,9 @@
 - (id)timestamp;
 - (void)setMessageID:(unsigned long long)arg1;
 - (unsigned long long)messageID;
+- (void)encodeWithCoder:(id)arg1;
+- (void)dealloc;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

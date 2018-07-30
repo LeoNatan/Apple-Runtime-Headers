@@ -8,18 +8,14 @@
 
 @interface PRSTableView : NSTableView
 {
-    BOOL _isVibrant;
     id <PRSTableViewDelegate> _prsTableViewDelegate;
 }
 
-@property(nonatomic) BOOL isVibrant; // @synthesize isVibrant=_isVibrant;
 @property(retain, nonatomic) id <PRSTableViewDelegate> prsTableViewDelegate; // @synthesize prsTableViewDelegate=_prsTableViewDelegate;
 - (void).cxx_destruct;
 - (void)viewDidMoveToSuperview;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
-- (BOOL)allowsVibrancy;
 - (struct CGSize)intrinsicContentSize;
-- (void)awakeFromNib;
 
 @end
 

@@ -9,7 +9,7 @@
 #import "NTKControl.h"
 #import "NTKDateComplicationDisplay.h"
 
-@class CLKFont, NSString, UIColor, UILabel, UIView;
+@class CLKDevice, CLKFont, NSString, UIColor, UILabel, UIView;
 
 @interface NTKDateComplicationLabel : UIControl <NTKDateComplicationDisplay, NTKControl>
 {
@@ -18,13 +18,16 @@
     UILabel *_internalLabel;
     UIView *_highlightView;
     struct CGSize _cachedSize;
+    struct _NSRange _dayTextRange;
     _Bool _cachedSizeIsValid;
     _Bool _usesLegibility;
     _Bool _legibilityHidden;
     id <NTKComplicationDisplayObserver> displayObserver;
     int _sizeStyle;
+    int _accentType;
+    CLKDevice *_device;
     CLKFont *_font;
-    UIColor *_numberColor;
+    UIColor *_accentColor;
     unsigned int _overrideDateStyle;
     struct UIEdgeInsets _touchEdgeInsets;
 }
@@ -33,8 +36,10 @@
 @property(nonatomic) unsigned int overrideDateStyle; // @synthesize overrideDateStyle=_overrideDateStyle;
 @property(nonatomic) _Bool legibilityHidden; // @synthesize legibilityHidden=_legibilityHidden;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
-@property(retain, nonatomic) UIColor *numberColor; // @synthesize numberColor=_numberColor;
+@property(retain, nonatomic) UIColor *accentColor; // @synthesize accentColor=_accentColor;
 @property(retain, nonatomic) CLKFont *font; // @synthesize font=_font;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(readonly, nonatomic) int accentType; // @synthesize accentType=_accentType;
 @property(readonly, nonatomic) int sizeStyle; // @synthesize sizeStyle=_sizeStyle;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
 - (void).cxx_destruct;
@@ -54,10 +59,10 @@
 - (float)_firstLineBaselineOffsetFromBoundsTop;
 @property(retain, nonatomic) UIColor *textColor;
 - (id)_attributedStringAccentingNumbersInString:(id)arg1;
-- (void)setDateComplicationText:(id)arg1 forDateStyle:(unsigned int)arg2;
+- (void)setDateComplicationText:(id)arg1 withDayRange:(struct _NSRange)arg2 forDateStyle:(unsigned int)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
-- (id)initWithSizeStyle:(int)arg1;
+- (id)initWithSizeStyle:(int)arg1 accentType:(int)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

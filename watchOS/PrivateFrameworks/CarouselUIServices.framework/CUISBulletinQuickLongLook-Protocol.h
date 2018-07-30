@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CUISBulletinActionMenu, NSDictionary, NSSet, UIImage;
+@class CUISBulletinActionMenu, NSDictionary, NSSet, PUICActionGroup, UIImage;
 
 @protocol CUISBulletinQuickLongLook <NSObject>
 - (void)animateDismissLongLookWithCompletion:(void (^)(_Bool))arg1;
@@ -18,6 +18,7 @@
 - (void)setPresentationMode:(unsigned int)arg1;
 
 @optional
+- (PUICActionGroup *)actionGroup;
 - (void)quickboardDidDismissed;
 - (NSDictionary *)headerActionLaunchOptions;
 - (UIImage *)coalescingQuickLookIcon;

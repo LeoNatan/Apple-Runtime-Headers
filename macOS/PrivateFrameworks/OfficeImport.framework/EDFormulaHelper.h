@@ -10,7 +10,6 @@
 
 @class ECMappingContext, EDWorkbook, EDWorksheet, NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDFormulaHelper : NSObject <EFHelper>
 {
     EDWorkbook *mWorkbook;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
     ECMappingContext *mMappingContext;
 }
 
+- (void).cxx_destruct;
 - (int)columnNumber;
 - (int)rowNumber;
 - (id)workbook;
@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)resolveFirstSheet:(id)arg1 lastSheet:(id)arg2;
 - (unsigned long long)resolveSheet:(id)arg1;
 - (unsigned long long)resolveName:(id)arg1;
-- (void)dealloc;
 - (id)initWithWorkbook:(id)arg1 worksheet:(id)arg2 rowNumber:(int)arg3 columnNumber:(int)arg4;
 - (unsigned long long)createIndexWithType:(int)arg1 firstSheetIndex:(unsigned long long)arg2 lastSheetIndex:(unsigned long long)arg3;
 

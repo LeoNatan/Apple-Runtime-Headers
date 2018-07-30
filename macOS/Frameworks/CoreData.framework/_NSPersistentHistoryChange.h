@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSPersistentHistoryTransaction *_transaction;
     NSData *_columns;
     NSSQLEntity *_sqlEntity;
+    NSManagedObjectID *_backingObjectID;
 }
 
 + (id)_updatedPropertiesForEntity:(id)arg1 andData:(id)arg2;
@@ -27,16 +28,18 @@ __attribute__((visibility("hidden")))
 + (id)_dataMaskForEntity:(id)arg1 andDeltaMask:(struct __CFBitVector *)arg2;
 + (id)_propertyDataForEntity:(id)arg1 withSetOfPropertyNames:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (id)_backingObjectID;
 - (id)updatedProperties;
 - (long long)changeID;
 - (id)transaction;
+- (void)_setTransaction:(id)arg1;
 - (long long)changeType;
 - (id)changedObjectID;
 - (id)tombstone;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithChangeID:(long long)arg1 transaction:(id)arg2 objectID:(id)arg3 type:(long long)arg4 tombstone:(id)arg5 columns:(id)arg6 entity:(id)arg7;
+- (id)initWithDictionary:(id)arg1 andChangeObjectID:(id)arg2;
 
 @end
 

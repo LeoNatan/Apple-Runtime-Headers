@@ -7,37 +7,39 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentResponsePayloadSuccess.h"
 
-@class NSData, NSString, PBUnknownFields;
+@class NSData, NSString;
 
-@interface _INPBIntentResponsePayloadSuccess : PBCodable <NSCopying>
+@interface _INPBIntentResponsePayloadSuccess : PBCodable <_INPBIntentResponsePayloadSuccess, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSData *_responseMessageData;
-    NSString *_responseTypeName;
-    _Bool _shouldOpenContainingApplication;
     struct {
         unsigned int shouldOpenContainingApplication:1;
     } _has;
+    _Bool _shouldOpenContainingApplication;
+    NSData *_responseMessageData;
+    NSString *_responseTypeName;
 }
 
-+ (id)options;
 @property(nonatomic) _Bool shouldOpenContainingApplication; // @synthesize shouldOpenContainingApplication=_shouldOpenContainingApplication;
-@property(retain, nonatomic) NSString *responseTypeName; // @synthesize responseTypeName=_responseTypeName;
-@property(retain, nonatomic) NSData *responseMessageData; // @synthesize responseMessageData=_responseMessageData;
+@property(copy, nonatomic) NSString *responseTypeName; // @synthesize responseTypeName=_responseTypeName;
+@property(copy, nonatomic) NSData *responseMessageData; // @synthesize responseMessageData=_responseMessageData;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(nonatomic) _Bool hasShouldOpenContainingApplication;
 @property(readonly, nonatomic) _Bool hasResponseTypeName;
 @property(readonly, nonatomic) _Bool hasResponseMessageData;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

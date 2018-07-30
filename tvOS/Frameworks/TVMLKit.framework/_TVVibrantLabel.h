@@ -4,26 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <TVMLKit/_TVVisualEffectView.h>
-
-@class _TVLabel;
+#import <TVMLKit/_TVVisualEffectLabel.h>
 
 __attribute__((visibility("hidden")))
-@interface _TVVibrantLabel : _TVVisualEffectView
+@interface _TVVibrantLabel : _TVVisualEffectLabel
 {
-    _TVLabel *_label;
 }
 
-@property(retain, nonatomic) _TVLabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
-- (void)transferLayoutStylesFromElement:(id)arg1;
-- (struct UIEdgeInsets)tv_alignmentInsetsForExpectedWidth:(double)arg1;
-- (void)setLineBreakMode:(long long)arg1;
-- (void)setMarqueeRunning:(_Bool)arg1;
-- (void)setMarqueeEnabled:(_Bool)arg1;
-- (void)setHighlighted:(_Bool)arg1;
-- (void)layoutSubviews;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)_updateContentWithNewLabel:(id)arg1 oldLabel:(id)arg2;
 
 @end
 

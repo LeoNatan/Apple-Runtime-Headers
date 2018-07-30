@@ -9,14 +9,13 @@
 #import "GEOResourceManifestTileGroupObserver.h"
 #import "_GEOCountryConfigurationServerProxyDelegate.h"
 
-@class NSLock, NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GEOCountryConfiguration : NSObject <GEOResourceManifestTileGroupObserver, _GEOCountryConfigurationServerProxyDelegate>
 {
+    NSObject<OS_dispatch_queue> *_isolationQueue;
     NSString *_countryCode;
-    NSLock *_countryCodeLock;
     NSMutableArray *_updateCompletionHandlers;
-    NSLock *_supportedFeaturesLock;
     NSMutableDictionary *_supportedFeatures;
     double _urlAuthenticationTimeToLive;
     _Bool _hasURLAuthenticationTimeToLive;
@@ -31,11 +30,14 @@
 - (void)serverProxyProvidersDidChange:(id)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
-- (id)_countryDefaultForKey:(id)arg1 inCountry:(id)arg2 sourcePtr:(long long *)arg3;
+- (id)_countryDefaultForKey:(id)arg1 inCountry:(id)arg2 sourcePtr:(long long *)arg3 decoder:(CDUnknownBlockType)arg4;
+- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 decoder:(CDUnknownBlockType)arg3;
 - (id)defaultForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 sourcePtr:(long long *)arg3;
-- (id)_defaultForKey:(id)arg1 inCountry:(id)arg2 defaultValue:(id)arg3 sourcePtr:(long long *)arg4;
-@property(copy, nonatomic) NSString *countryCode;
+- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 sourcePtr:(long long *)arg3 decoder:(CDUnknownBlockType)arg4;
+- (id)_defaultForKey:(id)arg1 inCountry:(id)arg2 defaultValue:(id)arg3 sourcePtr:(long long *)arg4 decoder:(CDUnknownBlockType)arg5;
+- (id)_countryCodeOnIsolationQueue;
+@property(readonly, copy, nonatomic) NSString *countryCode;
 @property(readonly, nonatomic) double urlAuthenticationTimeToLive;
 @property(readonly, nonatomic) _Bool currentCountrySupportsCommute;
 @property(readonly, nonatomic) _Bool currentCountrySupportsCarIntegration;

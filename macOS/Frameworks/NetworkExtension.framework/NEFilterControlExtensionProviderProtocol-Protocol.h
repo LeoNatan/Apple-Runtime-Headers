@@ -6,6 +6,10 @@
 
 #import "NEFilterExtensionProviderProtocol.h"
 
+@class NEFilterFlow, NEFilterReport;
+
 @protocol NEFilterControlExtensionProviderProtocol <NEFilterExtensionProviderProtocol>
+- (void)handleReport:(NEFilterReport *)arg1;
+- (void)handleNewFlow:(NEFilterFlow *)arg1 completionHandler:(void (^)(NEFilterControlVerdict *))arg2;
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class BrightnessSystemClientExportedObj, NSMutableArray, NSXPCConnection;
+@class BrightnessSystemClientExportedObj, NSCondition, NSMutableArray, NSXPCConnection;
 
 @interface BrightnessSystemClientInternal : NSObject
 {
@@ -14,6 +14,8 @@
     id _remote;
     BrightnessSystemClientExportedObj *exportedObj;
     NSMutableArray *_clientProperties;
+    NSCondition *copyPropertyForKeyWaitCondition;
+    BOOL copyPropertyForKeyCompleted;
 }
 
 - (void)removeKeyFromClientProperties:(id)arg1;
@@ -27,8 +29,8 @@
 - (id)copyPropertyForKey:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)init;
-- (void)timerFire:(id)arg1;
 - (void)dealloc;
+- (void)stopXpcService;
 
 @end
 

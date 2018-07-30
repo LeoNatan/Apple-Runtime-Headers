@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class CLKFont, CLKTimeFormatter, CLKUITimeLabelStyle, NSAttributedString, UIColor, UIView;
+@class CLKDevice, CLKFont, CLKTimeFormatter, CLKUITimeLabelStyle, NSAttributedString, UIColor, UIView;
 
 @protocol _CLKUITimeLabelManager
 @property(nonatomic) _Bool showSeconds;
@@ -18,11 +18,12 @@
 - (CLKFont *)effectiveFont;
 - (void)sizeViewToFit;
 - (struct CGSize)sizeThatFits;
+- (UIView *)viewForLastBaselineLayout;
 - (float)_lastLineBaseline;
 - (void)setMaxWidth:(float)arg1;
 - (void)setShowsDesignator:(_Bool)arg1;
 - (void)setStyle:(CLKUITimeLabelStyle *)arg1;
 - (void)updateTimeText;
-- (id)initWithTimeFormatter:(CLKTimeFormatter *)arg1 options:(unsigned int)arg2 labelFactory:(UILabel * (^)(_Bool))arg3;
+- (id)initWithForDevice:(CLKDevice *)arg1 timeFormatter:(CLKTimeFormatter *)arg2 options:(unsigned int)arg3 labelFactory:(UILabel * (^)(_Bool))arg4;
 @end
 

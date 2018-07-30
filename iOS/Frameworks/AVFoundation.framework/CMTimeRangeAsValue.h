@@ -6,6 +6,7 @@
 
 #import "NSValue.h"
 
+__attribute__((visibility("hidden")))
 @interface CMTimeRangeAsValue : NSValue
 {
     CDStruct_e83c9415 _timeRange;

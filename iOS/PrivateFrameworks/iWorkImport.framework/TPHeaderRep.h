@@ -6,15 +6,18 @@
 
 #import <iWorkImport/TSWPHeaderRep.h>
 
-@class TPPaginatedPageInfo;
+@class NSTimer, TPPaginatedPageInfo;
 
 __attribute__((visibility("hidden")))
 @interface TPHeaderRep : TSWPHeaderRep
 {
     _Bool _hideKnobs;
+    NSTimer *editingDidBeginTimer;
 }
 
 @property(nonatomic) _Bool hideKnobs; // @synthesize hideKnobs=_hideKnobs;
+@property(retain, nonatomic) NSTimer *editingDidBeginTimer; // @synthesize editingDidBeginTimer;
+- (void).cxx_destruct;
 - (_Bool)p_isMiddleFooterRep;
 - (_Bool)p_isMiddleHeaderRep;
 - (_Bool)p_shouldCreateArrowKnobs;

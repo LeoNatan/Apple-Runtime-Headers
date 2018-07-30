@@ -23,6 +23,7 @@
 @property __weak NSObject<NEIPSecSASessionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)startBlackholeDetection:(unsigned int)arg1 incomingSA:(id)arg2 outgoingSA:(id)arg3;
 - (void)startIdleTimeout:(unsigned int)arg1 incomingSA:(id)arg2 outgoingSA:(id)arg3;
 - (_Bool)migrateSA:(id)arg1;
 - (_Bool)removeSA:(id)arg1;

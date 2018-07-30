@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (vector_e1abc270)occupyGridSpots:(unsigned long long)arg1;
 - (struct CGPoint)gridLocationInDirection:(int)arg1 fromAnchor:(const struct CGPoint *)arg2;
 - (struct CGPoint)nearestGridLocation:(struct CGPoint)arg1;
+- (unsigned long long)nextMajorIndexFromIndex:(unsigned long long)arg1;
 - (struct CGPoint)anchorForIndex:(unsigned long long)arg1;
 - (struct CGPoint)anchorAtGridLocation:(struct CGPoint)arg1;
 - (unsigned long long)numberOfGridSpots;

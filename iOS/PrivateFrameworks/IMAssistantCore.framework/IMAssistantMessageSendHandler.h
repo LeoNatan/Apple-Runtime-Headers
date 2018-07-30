@@ -8,21 +8,30 @@
 
 #import "INSendMessageIntentHandling.h"
 
-@class IMChatRegistry, NSString;
+@class NSString;
 
 @interface IMAssistantMessageSendHandler : IMAssistantMessageHandler <INSendMessageIntentHandling>
 {
-    IMChatRegistry *_chatRegistry;
+    NSString *_conversationIdentifierResolvedDuringRecipientResolution;
 }
 
-@property(retain, nonatomic) IMChatRegistry *chatRegistry; // @synthesize chatRegistry=_chatRegistry;
 - (void).cxx_destruct;
-- (void)resolveRecipients:(id)arg1 forIntent:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)recipientsResolutionFailureResultWithResult:(id)arg1 forRecipient:(id)arg2 amongRecipients:(id)arg3;
+- (id)handleResolutionResultForContact:(id)arg1 recipient:(id)arg2 account:(id)arg3;
+- (id)contactResolutionResultForContacts:(id)arg1 matchingRecipient:(id)arg2 account:(id)arg3;
+- (id)findValidMappingOfRequestedRecipientToChatParticipantAmongMatches:(id)arg1;
+- (_Bool)shouldContinueToExamineRelevantChatsWithMatches:(id)arg1 nextChat:(id)arg2;
+- (id)resolveRecipientsByFindingExistingRelevantChatsForRecipients:(id)arg1 withContacts:(id)arg2 fromChats:(id)arg3;
+- (id)contactsWithDuplicateNamesAmongContacts:(id)arg1;
+- (id)imHandleForAnonymousContact:(id)arg1 chatAccount:(id)arg2 recipient:(id)arg3;
+- (id)resolvedRecipientsFromChat:(id)arg1;
+- (void)resolveRecipients:(id)arg1 forIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)recipientDisambiguationResultsFromMultipleRelevantChats:(id)arg1;
 - (id)resolveMessageContentWithString:(id)arg1;
-- (long long)sendMessageWithText:(id)arg1 toChat:(id)arg2;
+- (long long)sendMessageWithText:(id)arg1 idsIdentifier:(id)arg2 toChat:(id)arg3;
 - (void)resolveSpeakableGroupNameForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveContentForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)resolveRecipientsForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)resolveRecipientsForSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties

@@ -17,7 +17,6 @@
     _Bool _allowsAdditiveAnimations;
 }
 
-+ (void)setGlobalSlowDownFactor:(double)arg1;
 + (double)globalSlowDownFactor;
 + (id)factoryWithAnimationAttributes:(id)arg1;
 + (void)addAlongsideAnimations:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
@@ -46,6 +45,7 @@
 + (id)factoryWithSettings:(id)arg1;
 @property(nonatomic) _Bool allowsAdditiveAnimations; // @synthesize allowsAdditiveAnimations=_allowsAdditiveAnimations;
 @property(readonly, copy, nonatomic) BSAnimationSettings *settings; // @synthesize settings=_settings;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -59,7 +59,6 @@
 @property(readonly, nonatomic) double duration;
 - (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned long long)arg2 actions:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)factoryWithTimingFunction:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)_initWithSettings:(id)arg1;
 

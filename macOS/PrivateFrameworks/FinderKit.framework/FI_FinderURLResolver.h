@@ -10,7 +10,8 @@ __attribute__((visibility("hidden")))
 @interface FI_FinderURLResolver : NSObject
 {
     struct TSpinLock _lock;
-    struct TNSRef<NSMutableDictionary *, void> _resolvedURLMap;
+    struct TNSRef<NSMutableDictionary, void> _resolvedURLMap;
+    TNSWeakPtr_a131d41e _resolutionCompletedToken;
     _Bool _tornDown;
 }
 

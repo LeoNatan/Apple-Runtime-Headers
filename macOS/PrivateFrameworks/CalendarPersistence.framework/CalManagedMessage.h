@@ -104,6 +104,7 @@
 - (BOOL)associatedWithNotificationCollection;
 - (void)updateContentsWithData:(id)arg1;
 @property(readonly, retain) NSData *contents;
+- (id)keysOnlyRelevantToNetworkDetails;
 - (void)awakeFromInsert;
 - (void)processForType:(int)arg1 inManagedObjectContext:(id)arg2;
 

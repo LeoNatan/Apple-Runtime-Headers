@@ -10,6 +10,10 @@
 {
 }
 
+- (void)executeCommandsInBuffer:(id)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned long long)arg3;
+- (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
+- (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
+- (void)memoryBarrierWithScope:(unsigned long long)arg1 afterStages:(unsigned long long)arg2 beforeStages:(unsigned long long)arg3;
 - (void)setEmulationFragmentSamplerStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setEmulationVertexSamplerStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setEmulationFragmentTextures:(const id *)arg1 withRange:(struct _NSRange)arg2;

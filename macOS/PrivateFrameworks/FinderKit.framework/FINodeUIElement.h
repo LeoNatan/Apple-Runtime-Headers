@@ -10,9 +10,9 @@ __attribute__((visibility("hidden")))
 @interface FINodeUIElement : NSObject
 {
     unsigned long long _index;
-    struct TNSRef<NSView *, void> _containerView;
+    struct TNSRef<NSView, void> _containerView;
     struct TFENode _node;
-    struct TNSRef<NSObject *, void> _parent;
+    struct TNSRef<NSObject, void> _parent;
 }
 
 @property(nonatomic) struct TFENode node; // @synthesize node=_node;

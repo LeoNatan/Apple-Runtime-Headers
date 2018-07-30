@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface _NSOutOfProcessLegacyColorPickerLoadingTemplate : NSObject <_NSColorPickerTemplate>
 {
     NSBundle *_bundle;
+    BOOL _requiresSandboxExtension;
 }
 
 - (void)createAndPrepareColorPickerWithInitialMask:(unsigned long long)arg1 colorPanel:(id)arg2 completionHandle:(CDUnknownBlockType)arg3;
 - (void)dealloc;
+- (id)initWithBundle:(id)arg1 requiresSandboxExtension:(BOOL)arg2;
 - (id)initWithBundle:(id)arg1;
 
 // Remaining properties

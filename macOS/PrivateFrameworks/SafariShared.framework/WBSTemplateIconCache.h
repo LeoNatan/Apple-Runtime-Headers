@@ -43,18 +43,10 @@
 - (BOOL)_templateIconRetainerIsReadyForCleanUp;
 - (void)_purgeUnneededTemplateIconsIfReady;
 - (void)_notifyDidLoadIconForHost:(id)arg1;
-- (void)_requestFallbackIconForHostIfNeeded:(id)arg1 saveToDisk:(BOOL)arg2;
-- (BOOL)_internalHasFallbackIconDataForHost:(id)arg1;
-- (BOOL)_hasFallbackIconDataForHost:(id)arg1;
-- (void)_didLoadFallbackConfiguration:(id)arg1;
-- (void)_downloadFallbackConfigurationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_generateFallbackThemeColorForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_imageForRequest:(id)arg1 getThemeColor:(id *)arg2;
-- (void)_refreshFallbackConfigurationIfNeeded;
-- (BOOL)_fallbackConfigurationNeedsRefresh;
 - (void)_upgradeCacheVersionIfNeeded;
 - (void)_removeTemplateIconsDataForHost:(id)arg1;
-- (void)_updateTemplateIconsDataForHost:(id)arg1 image:(id)arg2 themeColor:(id)arg3 isFallback:(BOOL)arg4 isSavedToDisk:(BOOL)arg5;
+- (void)_updateTemplateIconsDataForHost:(id)arg1 image:(id)arg2 themeColor:(id)arg3 isSavedToDisk:(BOOL)arg4;
 - (void)savePendingChangesBeforeTermination;
 - (void)purgeUnneededCacheEntries;
 - (void)emptyCaches;
@@ -67,8 +59,7 @@
 - (void)retainTemplateIconsForHosts:(id)arg1;
 - (void)retainTemplateIconForHost:(id)arg1;
 - (void)retainTemplateIconForURLString:(id)arg1;
-- (void)_saveTemplateIcon:(id)arg1 withThemeColor:(id)arg2 forHost:(id)arg3 isFallback:(BOOL)arg4 toDisk:(BOOL)arg5;
-- (void)resetTemplateIconForHost:(id)arg1;
+- (void)_saveTemplateIcon:(id)arg1 withThemeColor:(id)arg2 forHost:(id)arg3 toDisk:(BOOL)arg4;
 - (void)addTemplateIconAtURL:(id)arg1 withThemeColor:(id)arg2 forHost:(id)arg3 toDisk:(BOOL)arg4;
 - (id)_monogramForRequest:(id)arg1 themeColor:(id)arg2;
 - (void)_generateResponseForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -92,6 +83,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL providesFavicons;
 @property(readonly) Class superclass;
 
 @end

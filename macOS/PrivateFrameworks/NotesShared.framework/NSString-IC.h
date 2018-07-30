@@ -20,6 +20,6 @@
 @property(readonly, nonatomic) NSString *ic_sanitizedFilenameString;
 @property(readonly, nonatomic) NSString *ic_whitespaceAndNewlineCoalescedString;
 @property(readonly, nonatomic) NSString *ic_trimmedString;
-- (id)md5;
+- (id)ic_md5;
 @end
 

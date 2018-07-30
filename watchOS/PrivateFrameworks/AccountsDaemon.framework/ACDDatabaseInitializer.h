@@ -18,10 +18,15 @@
 }
 
 - (void).cxx_destruct;
+- (void)_removeBTMMType;
+- (void)_changeSocialAccountTypeObsoleteAttributes;
+- (void)_changeFacebookAndLinkedInAccountsToLegacyAccountTypes;
+- (void)_addLinkedInLegacyAccountType;
+- (void)_addiTunesStoreSandboxAccountType;
 - (void)_removeMessagesFromAOLSupportedDataclasses;
 - (void)_addObsoleteAttributeToAccountTypes;
-- (void)_changeFacebookAccountAccountType;
-- (void)_addFacebookLegacyAccountTypes;
+- (void)_changeFacebookAccountToLegacyAccountType;
+- (void)_addFacebookAndDAVLegacyAccountTypes;
 - (void)_removeAIMAccounts;
 - (void)_removeMessagesFromGoogleSupportedDataclasses;
 - (void)_setCloudKitAllowsMultipleAccounts;

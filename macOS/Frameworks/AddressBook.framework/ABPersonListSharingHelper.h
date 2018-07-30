@@ -11,7 +11,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABPersonListSharingHelper : NSObject <NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 {
 }

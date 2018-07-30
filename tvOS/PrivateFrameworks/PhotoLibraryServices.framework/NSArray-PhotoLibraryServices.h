@@ -10,6 +10,7 @@
 - (id)_pl_prettyDescriptionWithIndent:(long long)arg1;
 - (id)_pl_indexBy:(CDUnknownBlockType)arg1;
 - (id)_pl_groupBy:(CDUnknownBlockType)arg1;
+- (_Bool)_pl_any:(CDUnknownBlockType)arg1;
 - (id)_pl_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)_pl_flatMap:(CDUnknownBlockType)arg1;
 - (id)_pl_filter:(CDUnknownBlockType)arg1;

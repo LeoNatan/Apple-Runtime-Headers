@@ -57,6 +57,7 @@
 @property(readonly, nonatomic) unsigned long long numberOfDescendants;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 UUID:(id)arg2 group:(id)arg3;
+- (vector_06e666a8)indexesForShownCollectionsWithChildCount:(unsigned long long *)arg1;
 
 @end
 

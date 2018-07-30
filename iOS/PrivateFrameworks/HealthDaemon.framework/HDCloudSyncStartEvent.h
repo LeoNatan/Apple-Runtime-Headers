@@ -16,13 +16,15 @@
     NSNumber *_timeIntervalSinceLastSuccess;
 }
 
-+ (id)startEventWithProfile:(id)arg1 operation:(long long)arg2 operationIdentifier:(id)arg3 reason:(long long)arg4 options:(unsigned long long)arg5 syncContainerPrefix:(id)arg6 containerIdentifier:(id)arg7 syncIdentifier:(id)arg8;
-+ (id)startEventForOperation:(long long)arg1 operationIdentifier:(id)arg2 configuration:(id)arg3;
++ (id)startEventWithProfile:(id)arg1 operation:(long long)arg2 operationIdentifier:(id)arg3 reason:(long long)arg4 options:(unsigned long long)arg5 syncContainerPrefix:(id)arg6 containerIdentifier:(id)arg7 cloudKitIdentifier:(id)arg8 syncIdentifier:(id)arg9 repositorySettings:(unsigned long long)arg10;
++ (id)startEventForOperation:(long long)arg1 operationIdentifier:(id)arg2 configuration:(id)arg3 container:(id)arg4 cloudKitIdentifier:(id)arg5;
 @property(readonly, copy, nonatomic) NSNumber *timeIntervalSinceLastSuccess; // @synthesize timeIntervalSinceLastSuccess=_timeIntervalSinceLastSuccess;
 @property(readonly, copy, nonatomic) NSNumber *countSinceLastSuccess; // @synthesize countSinceLastSuccess=_countSinceLastSuccess;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (id)initWithProfile:(id)arg1 build:(id)arg2 internal:(_Bool)arg3 operation:(long long)arg4 reason:(long long)arg5 options:(unsigned long long)arg6 type:(long long)arg7 syncCirclePrefix:(id)arg8 containerID:(id)arg9 syncID:(id)arg10 operationID:(id)arg11;
+- (id)codableRepresentationForAWDSubmission;
+- (unsigned int)AWDMetricID;
+- (id)initWithProfile:(id)arg1 operation:(long long)arg2 reason:(long long)arg3 options:(unsigned long long)arg4 syncCirclePrefix:(id)arg5 containerID:(id)arg6 cloudKitIdentifier:(id)arg7 syncID:(id)arg8 operationID:(id)arg9 cloudKitManateeEnabled:(_Bool)arg10 internalSettingManateeEnabled:(_Bool)arg11;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

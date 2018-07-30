@@ -10,7 +10,7 @@
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
 
-@class NSDate, NSString, NSTimeZone, UIImage;
+@class NSArray, NSDate, NSString, NSTimeZone, UIImage;
 
 @interface NCNotificationContent : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying>
 {
@@ -19,7 +19,11 @@
     NSString *_subtitle;
     NSString *_message;
     NSString *_hiddenPreviewsBodyPlaceholder;
-    UIImage *_icon;
+    NSString *_categorySummaryFormat;
+    NSString *_summaryArgument;
+    unsigned long long _summaryArgumentCount;
+    NSArray *_icons;
+    NSArray *_carPlayIcons;
     UIImage *_attachmentImage;
     NSDate *_date;
     _Bool _dateAllDay;
@@ -32,7 +36,11 @@
 @property(readonly, nonatomic, getter=isDateAllDay) _Bool dateAllDay; // @synthesize dateAllDay=_dateAllDay;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) UIImage *attachmentImage; // @synthesize attachmentImage=_attachmentImage;
-@property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
+@property(readonly, nonatomic) NSArray *carPlayIcons; // @synthesize carPlayIcons=_carPlayIcons;
+@property(readonly, nonatomic) NSArray *icons; // @synthesize icons=_icons;
+@property(readonly, nonatomic) unsigned long long summaryArgumentCount; // @synthesize summaryArgumentCount=_summaryArgumentCount;
+@property(readonly, copy, nonatomic) NSString *summaryArgument; // @synthesize summaryArgument=_summaryArgument;
+@property(readonly, copy, nonatomic) NSString *categorySummaryFormat; // @synthesize categorySummaryFormat=_categorySummaryFormat;
 @property(readonly, copy, nonatomic) NSString *hiddenPreviewsBodyPlaceholder; // @synthesize hiddenPreviewsBodyPlaceholder=_hiddenPreviewsBodyPlaceholder;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -49,6 +57,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic) UIImage *carPlayIcon;
+@property(readonly, nonatomic) UIImage *icon;
 - (id)initWithNotificationContent:(id)arg1;
 
 // Remaining properties

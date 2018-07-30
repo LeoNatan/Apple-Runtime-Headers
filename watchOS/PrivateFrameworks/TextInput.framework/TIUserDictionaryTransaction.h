@@ -19,10 +19,10 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) TIUserDictionaryEntryValue *valueToInsert; // @synthesize valueToInsert=_valueToInsert;
 @property(retain, nonatomic) TIUserDictionaryEntryValue *valueToDelete; // @synthesize valueToDelete=_valueToDelete;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end
 

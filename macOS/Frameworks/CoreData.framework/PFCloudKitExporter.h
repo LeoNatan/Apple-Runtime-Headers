@@ -6,31 +6,31 @@
 
 #import "NSObject.h"
 
-@class CKDatabase, CKRecordZone, NSArray, NSCloudKitMirroringDelegateOptions, NSCloudKitMirroringRequest, NSObject<OS_dispatch_queue>, PFCloudKitMirroredRelationshipCache, PFCloudKitStoreMonitor;
+@class NSCloudKitMirroringRequest, NSObject<OS_dispatch_queue>, NSObject<PFCloudKitExporterDelegate>, PFCloudKitExportContext, PFCloudKitExporterOptions, PFCloudKitStoreMonitor;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitExporter : NSObject
 {
+    PFCloudKitExporterOptions *_options;
     PFCloudKitStoreMonitor *_monitor;
-    CKRecordZone *_zone;
-    CKDatabase *_database;
-    NSArray *_writtenAssetURLs;
-    NSCloudKitMirroringDelegateOptions *_options;
-    PFCloudKitMirroredRelationshipCache *_generatedCache;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSCloudKitMirroringRequest *_request;
+    NSObject<PFCloudKitExporterDelegate> *_delegate;
+    PFCloudKitExportContext *_exportContext;
 }
 
+@property(readonly, nonatomic) PFCloudKitExportContext *exportContext; // @synthesize exportContext=_exportContext;
+@property(nonatomic) __weak NSObject<PFCloudKitExporterDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSCloudKitMirroringRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(readonly, copy, nonatomic) PFCloudKitExporterOptions *options; // @synthesize options=_options;
+- (void).cxx_destruct;
 - (void)updateSystemFieldsForExportedRecords:(id)arg1 inManagedObjectContext:(id)arg2;
-- (BOOL)isPrivateTransaction:(id)arg1;
-- (BOOL)shouldExportManagedObject:(id)arg1;
-- (void)exportOperationForHistoryToken:(id)arg1 finishedWithSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)processRecordsToSave:(id)arg1 andRecordIDsToDelete:(id)arg2 historyTransactionID:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)exportOperationFinished:(id)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)executeOperationsInContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exportIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1 request:(id)arg2 store:(id)arg3 workQueue:(id)arg4 zone:(id)arg5 andDatabase:(id)arg6;
+- (id)initWithOptions:(id)arg1 request:(id)arg2 monitor:(id)arg3 workQueue:(id)arg4;
 
 @end
 

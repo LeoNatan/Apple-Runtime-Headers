@@ -8,7 +8,6 @@
 
 @class ABCardViewLinkedPerson;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewLinkedPersonValueTransformer : NSValueTransformer
 {
     ABCardViewLinkedPerson *_lastLinkedPerson;

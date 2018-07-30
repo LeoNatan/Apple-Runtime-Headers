@@ -8,19 +8,22 @@
 
 #import "CSAlarmMonitorDelegate.h"
 #import "CSMediaPlayingMonitorDelegate.h"
+#import "CSPhoneCallStateMonitorDelegate.h"
 #import "CSSpeechManagerDelegate.h"
 #import "CSTimerMonitorDelegate.h"
 #import "CSVoiceTriggerDelegate.h"
+#import "CSVolumeMonitorDelegate.h"
 
-@class CSAsset, NSObject<OS_dispatch_queue>, NSString, NSUserDefaults;
+@class CSAsset, CSSmartSiriVolumeEnablePolicy, NSObject<OS_dispatch_queue>, NSString, NSUserDefaults;
 
-@interface CSSmartSiriVolume : NSObject <CSMediaPlayingMonitorDelegate, CSAlarmMonitorDelegate, CSTimerMonitorDelegate, CSSpeechManagerDelegate, CSVoiceTriggerDelegate>
+@interface CSSmartSiriVolume : NSObject <CSMediaPlayingMonitorDelegate, CSAlarmMonitorDelegate, CSTimerMonitorDelegate, CSPhoneCallStateMonitorDelegate, CSVolumeMonitorDelegate, CSSpeechManagerDelegate, CSVoiceTriggerDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     struct unique_ptr<SmartSiriVolume, std::__1::default_delete<SmartSiriVolume>> _smartSiriVolumeNoiseLevel;
     struct unique_ptr<SmartSiriVolume, std::__1::default_delete<SmartSiriVolume>> _smartSiriVolumeLKFS;
     struct vector<float, std::__1::allocator<float>> _floatBuffer;
     NSUserDefaults *_defaults;
+    CSSmartSiriVolumeEnablePolicy *_ssvEnablePolicy;
     unsigned long long _startAnalyzeSampleCount;
     unsigned long long _samplesFed;
     unsigned long long _processedSampleCount;
@@ -29,9 +32,12 @@
     _Bool _shouldPauseLKFSProcess;
     _Bool _alarmSoundIsFiring;
     _Bool _timerSoundIsFiring;
+    _Bool _mediaIsPlaying;
+    _Bool _phoneCallIsActive;
     CSAsset *_currentAsset;
     float _musicVolumeDB;
     float _alarmVolume;
+    float _phoneCallVolume;
     unsigned long long _noiseLevelChannelBitset;
     unsigned long long _LKFSChannelBitset;
     unsigned int _energyBufferSize;
@@ -57,8 +63,11 @@
     float _userOffsetOutputRangeHigh;
     float _TTSVolumeLowerLimitDB;
     float _TTSVolumeUpperLimitDB;
+    float _noiseWeight;
+    id <CSSmartSiriVolumeDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <CSSmartSiriVolumeDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)_getMusicVolumeDB:(float)arg1;
@@ -66,6 +75,8 @@
 - (void)_setDefaultParameters;
 - (void)_setStartAnalyzeTime:(unsigned long long)arg1;
 - (void)_resetStartAnalyzeTime;
+- (void)CSPhoneCallStateMonitor:(id)arg1 didReceiveCallStateChanged:(_Bool)arg2;
+- (void)CSVolumeMonitor:(id)arg1 didReceivePhoneCallVolumeChanged:(float)arg2;
 - (void)CSVolumeMonitor:(id)arg1 didReceiveAlarmVolumeChanged:(float)arg2;
 - (void)CSVolumeMonitor:(id)arg1 didReceiveMusicVolumeChanged:(float)arg2;
 - (void)CSTimerMonitor:(id)arg1 didReceiveTimerChanged:(long long)arg2;
@@ -74,6 +85,7 @@
 - (float)_combineResultsWithOptimalFromNoise:(float)arg1 andOptimalFromLkfs:(float)arg2 withUserOffset:(float)arg3;
 - (float)_estimatedTTSVolume:(float)arg1 lowerLimit:(float)arg2 upperLimit:(float)arg3 TTSmappingInputRangeLow:(float)arg4 TTSmappingInputRangeHigh:(float)arg5 TTSmappingOutputRangeLow:(float)arg6 TTSmappingOutputRangeHigh:(float)arg7;
 - (float)_scaleInputWithInRangeOutRange:(float)arg1 minIn:(float)arg2 maxIn:(float)arg3 minOut:(float)arg4 maxOut:(float)arg5;
+- (float)_estimateSSVFromNoiseLevel:(float)arg1 LKFS:(float)arg2;
 - (float)estimatedTTSVolumeForNoiseLevelAndLKFS:(float)arg1 LKFS:(float)arg2;
 - (void)voiceTriggerDidDetectKeyword:(id)arg1;
 - (void)speechManagerDidStopForwarding:(id)arg1 forReason:(long long)arg2;
@@ -81,8 +93,8 @@
 - (void)speechManagerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
 - (void)reset;
-- (void)resumeSSVProcessing;
-- (void)pauseSSVProcessing;
+- (void)_resumeSSVProcessing;
+- (void)_pauseSSVProcessing;
 - (float)estimateSoundLevelbySoundType:(long long)arg1;
 - (void)_processAudioChunk:(id)arg1 soundType:(long long)arg2;
 - (void)prepareSoundLevelBufferFromSamples:(id)arg1 soundType:(long long)arg2 firedVoiceTriggerEvent:(_Bool)arg3 triggerStartTimeSampleOffset:(unsigned long long)arg4 triggerEndTimeSampleOffset:(unsigned long long)arg5;
@@ -91,6 +103,7 @@
 - (void)_setAsset:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)fetchInitSystemVolumes;
+- (void)initializePhoneCallState;
 - (void)initializeTimerState;
 - (void)initializeAlarmState;
 - (void)initializeMediaPlayingState;

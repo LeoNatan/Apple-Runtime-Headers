@@ -29,6 +29,7 @@
 - (void)_updateRadioAvailabilityWithStoreBagDictionary:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_reloadRadioRestriction;
 - (void)_reloadRadioBagAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_currentStoreFrontIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_currentStoreFrontIdentifier;
 - (_Bool)_calculateRadioRestricted;
 - (void)getRadioAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;

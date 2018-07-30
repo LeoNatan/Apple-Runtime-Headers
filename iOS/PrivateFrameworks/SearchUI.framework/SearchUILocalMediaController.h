@@ -12,6 +12,7 @@
 
 + (id)videoURLForMediaItem:(id)arg1;
 + (id)localMediaItemForPossibleAdamIDs:(id)arg1;
++ (void)initializeMediaLibrary;
 
 @end
 

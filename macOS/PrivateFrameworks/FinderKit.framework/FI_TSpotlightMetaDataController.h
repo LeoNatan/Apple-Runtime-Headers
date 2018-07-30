@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)handleNodeMDAttributesChanged:(const struct TFENode *)arg1 attributes:(id)arg2 isDisplayAttributes:(_Bool)arg3;
-- (_Bool)adjustSize:(_Bool)arg1;
 - (void)setView:(id)arg1;
 - (void)flush;
 - (id)spotlightMetaDataView;

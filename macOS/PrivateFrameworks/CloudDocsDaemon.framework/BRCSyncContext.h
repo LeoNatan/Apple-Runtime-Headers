@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class BRCAccountSession, BRCThrottleBase, BRCTransferStream, BRCUserDefaults, CDAttribute, CDBudget, CKContainer, CKContainerID, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+@class BRCAccountSession, BRCThrottleBase, BRCTransferStream, BRCUserDefaults, CKContainer, CKContainerID, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 __attribute__((visibility("hidden")))
 @interface BRCSyncContext : NSObject
@@ -14,11 +14,6 @@ __attribute__((visibility("hidden")))
     CKContainer *_ckContainer;
     NSString *_contextIdentifier;
     NSString *_sourceAppIdentifier;
-    CDAttribute *_duetAttribute;
-    CDBudget *_energyBudget;
-    CDBudget *_dataBudget;
-    NSString *_admissionTicket;
-    NSObject<OS_dispatch_queue> *_duetSetupQueue;
     BOOL _isShared;
     BOOL _isCancelled;
     int _notifyTokenForFramework;
@@ -44,8 +39,6 @@ __attribute__((visibility("hidden")))
 + (id)contextIdentifierForMangledID:(id)arg1;
 + (id)_contextIdentifierForMangledID:(id)arg1 metadata:(BOOL)arg2;
 + (id)_sourceAppIdentifierForMangledID:(id)arg1;
-@property(readonly, nonatomic) CDBudget *dataBudget; // @synthesize dataBudget=_dataBudget;
-@property(readonly, nonatomic) CDBudget *energyBudget; // @synthesize energyBudget=_energyBudget;
 @property(readonly, nonatomic) BOOL isShared; // @synthesize isShared=_isShared;
 @property(readonly, nonatomic) BRCTransferStream *downloadStream; // @synthesize downloadStream=_downloadStream;
 @property(readonly, nonatomic) BRCTransferStream *uploadStream; // @synthesize uploadStream=_uploadStream;
@@ -72,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)waitForAllOperations;
 - (void)cancel;
 - (void)resume;
+- (void)addOperation:(id)arg1 allowsCellularAccess:(id)arg2 nonDiscretionary:(id)arg3;
+- (void)addOperation:(id)arg1 nonDiscretionary:(BOOL)arg2;
 - (void)addOperation:(id)arg1 allowsCellularAccess:(id)arg2;
 - (void)addOperation:(id)arg1;
 - (BOOL)allowsCellularAccess;
@@ -80,9 +75,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CKContainerID *ckContainerID;
 @property(readonly, nonatomic) CKContainer *ckContainer;
 - (void)setupIfNeeded;
-@property(readonly, nonatomic) NSString *admissionTicket;
-- (void)_setupDuetIfNeeded;
-- (void)_setupDuetIfNeededInQueue;
 - (void)dealloc;
 - (id)initWithSession:(id)arg1 contextIdentifier:(id)arg2 sourceAppIdentifier:(id)arg3 isShared:(BOOL)arg4;
 - (id)description;

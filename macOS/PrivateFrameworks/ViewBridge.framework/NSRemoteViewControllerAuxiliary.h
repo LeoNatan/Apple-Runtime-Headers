@@ -13,10 +13,12 @@
 __attribute__((visibility("hidden")))
 @interface NSRemoteViewControllerAuxiliary : NSObject <NSRemoteViewDelegate>
 {
+    unsigned int _inhibitFirstResponder:1;
     NSRemoteViewController *_remoteViewController;
     NSString *_serviceBundleIdentifier;
     NSString *_serviceViewControllerClassName;
     NSError *_terminationError;
+    struct os_unfair_lock_s _retainReleaseLock;
 }
 
 - (BOOL)_invalid;

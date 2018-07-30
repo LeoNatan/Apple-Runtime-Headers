@@ -27,6 +27,7 @@
 @property(retain) DEDBugSessionConfiguration *config; // @synthesize config=_config;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+- (_Bool)isLoggedIn;
 - (id)_keyValuePairsForKey:(id)arg1 value:(id)arg2;
 - (id)_formEncodedBodyForDictionary:(id)arg1;
 - (id)contentTypeForParameterEncoding:(unsigned long long)arg1;

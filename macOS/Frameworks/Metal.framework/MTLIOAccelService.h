@@ -15,15 +15,18 @@ __attribute__((visibility("hidden")))
     struct IONotificationPort *_notifyPort;
     unsigned int _notifyObject;
     MTLIOAccelDevice<MTLDeviceSPI> *_weakDevice;
+    unsigned long long _registryID;
 }
 
 + (void)registerService:(unsigned int)arg1;
+@property(readonly) unsigned long long registryID; // @synthesize registryID=_registryID;
 @property(readonly) unsigned int acceleratorPort; // @synthesize acceleratorPort=_acceleratorPort;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)_wasTerminated;
 - (void)_safeEjectCancelled;
 - (void)_safeEjectRequested;
+- (id)weakDevice;
 - (void)_setDevice:(id)arg1;
 - (id)initWithAcceleratorPort:(unsigned int)arg1;
 

@@ -102,8 +102,6 @@
 - (void)async_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (id)setPrimitiveFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)saveSnippetsForMessages:(id)arg1;
-- (id)snippetsForMessages:(id)arg1;
-@property(readonly, nonatomic) BOOL supportsSnippets;
 - (id)colorForMessage:(id)arg1;
 - (void)addUniquedStrings:(id)arg1;
 - (void)setUniquedStrings:(id)arg1;
@@ -162,12 +160,8 @@
 @property(readonly, nonatomic) MFMailAccount *account;
 - (void)invalidateSavingChanges:(BOOL)arg1;
 - (void)saveChanges;
-- (void)cancelOpen;
 - (void)didOpenWithMessages:(id)arg1;
 - (void)willOpen;
-- (void)cleanupSynchronously;
-- (void)_cleanupSynchronouslyIfCancelOpenPosted;
-- (void)cleanupAsynchronously;
 - (void)updateMetadataAsynchronously;
 - (void)openSynchronously;
 - (void)openAsynchronouslyWithOptions:(unsigned int)arg1;

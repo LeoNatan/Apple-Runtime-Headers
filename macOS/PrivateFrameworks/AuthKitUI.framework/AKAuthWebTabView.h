@@ -136,6 +136,7 @@
 @property(copy) NSString *url; // @synthesize url=_url;
 @property(copy) NSString *viewName; // @synthesize viewName=_viewName;
 - (void).cxx_destruct;
+- (void)_displayAuthRight:(const char *)arg1 withCallback:(id)arg2;
 - (id)getAuthKitData:(id)arg1;
 - (void)wasNotifiedOfDataChange:(id)arg1;
 - (BOOL)shouldSelectToLocation:(id)arg1 toSection:(id)arg2;
@@ -152,9 +153,8 @@
 - (void)alternateNavigationButtonClicked:(id)arg1;
 - (void)rightNavigationButtonClicked:(id)arg1;
 - (void)leftNavigationButtonClicked:(id)arg1;
-- (void)validateLocalPasswordWithCompletion:(id)arg1;
-- (void)validateLocalPasswordWithTitle:(id)arg1 forcingReprompt:(BOOL)arg2 callback:(id)arg3;
 - (void)validateLocalPassword:(id)arg1;
+- (void)obtainAuthRight:(id)arg1;
 - (void)runAppleIDOptOut:(id)arg1;
 - (void)skipSignIn;
 - (void)dismiss:(id)arg1;

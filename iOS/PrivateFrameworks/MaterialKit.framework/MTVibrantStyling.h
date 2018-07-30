@@ -16,6 +16,7 @@
     NSString *_blendMode;
 }
 
++ (long long)highContrastStyleForPrivateStyle:(long long)arg1;
 + (id)vibrantStylingWithPrivateStyle:(long long)arg1;
 @property(readonly, copy, nonatomic) NSString *blendMode; // @synthesize blendMode=_blendMode;
 @property(readonly, nonatomic) double alpha; // @synthesize alpha=_alpha;

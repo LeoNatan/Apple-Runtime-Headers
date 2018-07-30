@@ -8,11 +8,10 @@
 
 #import "EKFrozenMeltedPair.h"
 #import "EKProtocolObject.h"
-#import "NSCoding.h"
 
 @class NSDictionary, NSManagedObjectID, NSString;
 
-@interface EKFrozenObject : NSObject <EKFrozenMeltedPair, EKProtocolObject, NSCoding>
+@interface EKFrozenObject : NSObject <EKFrozenMeltedPair, EKProtocolObject>
 {
     BOOL isNew;
     BOOL _isPartialObject;
@@ -34,12 +33,11 @@
 @property(nonatomic) BOOL isPartialObject; // @synthesize isPartialObject=_isPartialObject;
 @property(nonatomic) BOOL isNew; // @synthesize isNew;
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1 ignoringProperties:(id)arg2;
 - (BOOL)isCompletelyEqual:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *semanticIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)meltedObjectInStore:(id)arg1;

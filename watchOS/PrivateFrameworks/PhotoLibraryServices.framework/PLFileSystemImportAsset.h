@@ -6,25 +6,23 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSMutableSet, NSObject<PLAlbumProtocol>;
+@class NSMutableSet, NSObject<PLAlbumProtocol>;
 
 @interface PLFileSystemImportAsset : NSObject
 {
     NSMutableSet *_urls;
-    NSDate *_dateCreated;
     struct NSObject *_destinationAlbum;
     int assetKind;
 }
 
 @property(nonatomic) int assetKind; // @synthesize assetKind;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *destinationAlbum; // @synthesize destinationAlbum=_destinationAlbum;
-@property(retain, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(retain, nonatomic) NSMutableSet *urls; // @synthesize urls=_urls;
 - (id)description;
 - (int)compare:(id)arg1;
 - (void)dealloc;
 - (_Bool)isCameraKit;
-- (id)initWithURLs:(id)arg1 creationDate:(id)arg2 destinationAlbum:(struct NSObject *)arg3 assetKind:(int)arg4;
+- (id)initWithURLs:(id)arg1 destinationAlbum:(struct NSObject *)arg2 assetKind:(int)arg3;
 
 @end
 

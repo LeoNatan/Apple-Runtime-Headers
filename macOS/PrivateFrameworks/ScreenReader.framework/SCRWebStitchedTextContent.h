@@ -16,13 +16,14 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) NSMutableArray *lines; // @synthesize lines=_lines;
 - (void).cxx_destruct;
-- (void)addAttributedString:(id)arg1 atRect:(struct CGRect)arg2;
+- (void)addAttributedString:(id)arg1 atRect:(struct CGRect)arg2 forElement:(id)arg3;
 - (void)addString:(id)arg1 atRect:(struct CGRect)arg2;
 - (void)clearAll;
 - (id)description;
 - (id)attributedValueDescription;
 - (id)valueDescription;
-- (id)_buildAttributedDescriptionWithLineDelim:(id)arg1 phraseDelim:(id)arg2 tokenDelim:(id)arg3 includeLineNumbers:(BOOL)arg4;
+- (id)_buildAttributedDescriptionWithLineDelim:(id)arg1 phraseDelim:(id)arg2 tokenDelim:(id)arg3 includeLineNumbers:(BOOL)arg4 includeTokens:(BOOL)arg5;
+- (struct CGRect)boundsForRange:(struct _NSRange)arg1;
 - (id)lastLine;
 - (void)addLine;
 - (id)init;

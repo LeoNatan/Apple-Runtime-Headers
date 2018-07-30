@@ -20,6 +20,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void)_setIsUnique:(BOOL)arg1;
+- (BOOL)_isUnique;
 - (id)_compoundIndexRepresentation;
 - (BOOL)_isCompoundIndexCompatible;
 - (BOOL)_expressionIsCompoundIndexCompatible:(id)arg1;

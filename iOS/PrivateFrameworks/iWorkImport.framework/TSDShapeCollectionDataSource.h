@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long indexOfUserDefinedLibraryCategory;
 - (_Bool)hasUserDefinedShapesInCategoryAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *categoryNames;
+- (id)initWithBasicShapeLibrary:(id)arg1 userDefinedShapeLibrary:(id)arg2;
 - (id)initWithShapeLibrary:(id)arg1 basicShapeLibrary:(id)arg2 userDefinedShapeLibrary:(id)arg3;
 
 @end

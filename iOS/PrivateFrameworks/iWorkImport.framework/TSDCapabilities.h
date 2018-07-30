@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic) long long platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) _Bool isMetalCapable;
+- (struct CGSize)maximumMetalTextureSizeForDevice:(id)arg1;
 @property(readonly, nonatomic) struct CGSize maximumHardcodedTextureSize;
 - (struct CGSize)maximumTextureSizeWithGLContext:(id)arg1;
-@property(readonly, nonatomic) _Bool supportsPencil;
 @property(readonly, nonatomic) _Bool hasLightningPort;
 @property(readonly, nonatomic) _Bool isRendererH5OrBelow;
 @property(readonly, nonatomic) _Bool isRendererH4OrBelow;

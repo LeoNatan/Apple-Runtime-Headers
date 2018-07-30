@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TICloudNoDocumentsView : FI_TUpdateLayerView
 {
-    struct TNSRef<NSView *, void> _dropTargetView;
+    struct TNSRef<NSView, void> _dropTargetView;
 }
 
 - (id).cxx_construct;
@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 @property(retain, nonatomic) NSView *dropTargetView; // @dynamic dropTargetView;
-- (void)initCommon;
 
 @end
 

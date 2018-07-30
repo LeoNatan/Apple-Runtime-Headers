@@ -6,17 +6,18 @@
 
 #import <GameplayKit/GKComponent.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class GKBehavior;
 
-@interface GKAgent : GKComponent <NSCoding>
+@interface GKAgent : GKComponent <NSSecureCoding>
 {
     struct GKSimpleVehicle _vehicle;
     id <GKAgentDelegate> _delegate;
     GKBehavior *_behavior;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) GKBehavior *behavior; // @synthesize behavior=_behavior;
 @property(nonatomic) __weak id <GKAgentDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;

@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class UIColor;
+@class CLKDevice, UIColor;
 
 @interface NTKChronoPalette : NSObject
 {
     unsigned long long _paletteColor;
     _Bool _showsShadows;
+    CLKDevice *_device;
     UIColor *_backgroundColor;
     UIColor *_foregroundColor;
     UIColor *_tickColor;
@@ -27,7 +28,7 @@
 }
 
 + (id)interpolationFromPalette:(id)arg1 toPalette:(id)arg2 fraction:(double)arg3;
-+ (id)paletteWithColor:(unsigned long long)arg1;
++ (id)paletteForDevice:(id)arg1 withColor:(unsigned long long)arg2;
 @property(readonly, nonatomic) _Bool showsShadows; // @synthesize showsShadows=_showsShadows;
 @property(readonly, nonatomic) double largeTickValue; // @synthesize largeTickValue=_largeTickValue;
 @property(readonly, nonatomic) double smallTickValue; // @synthesize smallTickValue=_smallTickValue;
@@ -41,8 +42,10 @@
 @property(readonly, nonatomic) UIColor *tickColor; // @synthesize tickColor=_tickColor;
 @property(readonly, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
-- (id)_initWithColor:(unsigned long long)arg1;
+- (id)_initForDevice:(id)arg1 withColor:(unsigned long long)arg2;
+- (id)initForDevice:(id)arg1;
 
 @end
 

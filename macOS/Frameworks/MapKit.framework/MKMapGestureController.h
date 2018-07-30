@@ -30,6 +30,7 @@
     _MKDirectionalPanGestureRecognizer *_compassDragRotationGestureRecognizer;
     _MKDirectionalPanGestureRecognizer *_compassDragTiltGestureRecognizer;
     _MKDirectionalPanGestureRecognizer *_compassDragSimultaneousRotationGestureRecognizer;
+    BOOL _compassRotateBeganInPositiveDirection;
     _MKDirectionalArrowRecognizer *_arrowPanGestureRecognizer;
     _MKDirectionalArrowRecognizer *_arrowRotateGestureRecognizer;
     _MKDirectionalArrowRecognizer *_arrowZoomGestureRecognizer;

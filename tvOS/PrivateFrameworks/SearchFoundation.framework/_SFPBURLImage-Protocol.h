@@ -10,7 +10,6 @@
 
 @protocol _SFPBURLImage <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasUrlValue;
 @property(retain, nonatomic) _SFPBURL *urlValue;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

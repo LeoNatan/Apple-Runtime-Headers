@@ -11,7 +11,7 @@
 #import "HMFLogging.h"
 #import "HMFTimerDelegate.h"
 
-@class HMDAccountRegistry, HMDDevice, HMDRemoteDeviceMonitor, HMDRemoteIdentityRegistry, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class HMDAccountRegistry, HMDDevice, HMDRemoteDeviceMonitor, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HMDSecureRemoteSession : HMFMessageTransport <HMDSecureRemoteStreamDelegate, HMFLogging, HMFTimerDelegate, HMFDumpState>
 {
@@ -20,7 +20,6 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
     HMDRemoteDeviceMonitor *_deviceMonitor;
     HMDAccountRegistry *_accountRegistry;
-    HMDRemoteIdentityRegistry *_identityRegistry;
     unsigned long long _maximumRemoteStreams;
     NSMutableArray *_pendingMessages;
     NSMutableArray *_clientStreams;
@@ -37,7 +36,6 @@
 @property(readonly, nonatomic) NSMutableArray *clientStreams; // @synthesize clientStreams=_clientStreams;
 @property(readonly, nonatomic) NSMutableArray *pendingMessages; // @synthesize pendingMessages=_pendingMessages;
 @property(nonatomic) unsigned long long maximumRemoteStreams; // @synthesize maximumRemoteStreams=_maximumRemoteStreams;
-@property(readonly, nonatomic) HMDRemoteIdentityRegistry *identityRegistry; // @synthesize identityRegistry=_identityRegistry;
 @property(readonly, nonatomic) HMDAccountRegistry *accountRegistry; // @synthesize accountRegistry=_accountRegistry;
 @property(readonly, nonatomic) HMDRemoteDeviceMonitor *deviceMonitor; // @synthesize deviceMonitor=_deviceMonitor;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
@@ -70,7 +68,7 @@
 - (void)close;
 - (void)openWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithDevice:(id)arg1 deviceMonitor:(id)arg2 accountRegistry:(id)arg3 identityRegistry:(id)arg4;
+- (id)initWithDevice:(id)arg1 deviceMonitor:(id)arg2 accountRegistry:(id)arg3;
 - (id)init;
 
 // Remaining properties

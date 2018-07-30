@@ -8,7 +8,6 @@
 
 @class EDCollection;
 
-__attribute__((visibility("hidden")))
 @interface EDPivotConditionalFormat : NSObject
 {
     unsigned long long mPriority;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pivotConditionalFormat;
+- (void).cxx_destruct;
 - (id)description;
 - (id)pivotAreas;
 - (void)setScope:(int)arg1;
@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (int)type;
 - (void)setPriority:(unsigned long long)arg1;
 - (unsigned long long)priority;
-- (void)dealloc;
 - (id)init;
 
 @end

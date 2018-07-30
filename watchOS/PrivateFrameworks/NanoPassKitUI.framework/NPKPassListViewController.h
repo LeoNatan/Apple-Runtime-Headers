@@ -8,18 +8,23 @@
 
 #import "NPKCollectionViewDataSource.h"
 #import "NPKCollectionViewDelegate.h"
+#import "NPKPassActionControllerProtocol.h"
 #import "NPKPassCollectionViewCellDelegate.h"
 #import "PKFieldDetectorObserver.h"
+#import "PKGroupDelegate.h"
+#import "PKGroupsControllerDelegate.h"
+#import "PKPaymentServiceDelegate.h"
 #import "PUICSnapshotDelegate.h"
 #import "UICollectionViewDelegateFlowLayout.h"
 
-@class NPKActivatingUIAssertion, NPKCollectionView, NPKPassGroupPagingBar, NPKPassListLayout, NPKPaymentStatusView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NPKSinglePassLayout, NPKTransientPassAssertion, NPKTransitDetailTableViewController, NPKTransitionalSinglePassLayout, NSArray, NSNumber, NSString, PKFieldDetector, PUICContentUnavailableView;
+@class NPKActivatingUIAssertion, NPKCollectionView, NPKPassDetailTableViewController, NPKPassGroupPagingBar, NPKPassListLayout, NPKPaymentStatusView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NPKSinglePassLayout, NPKTransientPassAssertion, NPKTransitionalSinglePassLayout, NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString, PKFieldDetector, PKGroupsController, PKPass, PKPaymentService, PUICContentUnavailableView, UILabel;
 
-@interface NPKPassListViewController : UIViewController <NPKCollectionViewDataSource, UICollectionViewDelegateFlowLayout, NPKPassCollectionViewCellDelegate, NPKCollectionViewDelegate, PKFieldDetectorObserver, PUICSnapshotDelegate>
+@interface NPKPassListViewController : UIViewController <NPKCollectionViewDataSource, UICollectionViewDelegateFlowLayout, NPKPassCollectionViewCellDelegate, NPKCollectionViewDelegate, PKFieldDetectorObserver, PKGroupsControllerDelegate, PKGroupDelegate, PKPaymentServiceDelegate, PUICSnapshotDelegate, NPKPassActionControllerProtocol>
 {
-    NSArray *_currentPassDescriptions;
-    NSArray *_currentPaymentPassDescriptions;
-    NSArray *_currentStandardPassDescriptions;
+    NSArray *_currentPasses;
+    NSArray *_currentPaymentPasses;
+    NSArray *_currentStandardPasses;
+    NSMutableDictionary *_currentTransitPassProperties;
     NSNumber *_currentHelperViewAllowed;
     NSNumber *_currentPaymentSupportedInRegion;
     _Bool _transitioningLayout;
@@ -27,10 +32,13 @@
     _Bool _paymentStatusViewNeedsUpdate;
     _Bool _paymentStatusViewShouldBeVisible;
     _Bool _tableViewShouldBeVisible;
+    _Bool _isDisplayingBarcode;
     _Bool _showServiceModeForInitialPass;
     _Bool _passesHaveLoaded;
     _Bool _useTransitionalContentOffset;
     NPKActivatingUIAssertion *_activatingUIAssertion;
+    NSArray *_paymentPassDescriptionsForDisplay;
+    NSArray *_nonPaymentPassDescriptionsForDisplay;
     NPKPassListLayout *_passCollectionViewLayout;
     NPKTransitionalSinglePassLayout *_transitionalLayout;
     NPKSinglePassLayout *_singlePassLayout;
@@ -38,30 +46,41 @@
     NPKCollectionView *_passCollectionView;
     PUICContentUnavailableView *_contentUnavailableView;
     NPKPaymentStatusView *_paymentStatusView;
-    NPKTransitDetailTableViewController *_transitDetailTableViewController;
-    NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator *_transitDetailTableViewAnimationCoordinator;
+    PKPass *_selectedUnavailableAccessPass;
+    UILabel *_accessPassStatusLabel;
+    NPKPassDetailTableViewController *_passDetailTableViewController;
+    NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator *_passDetailTableViewAnimationCoordinator;
     NSString *_currentPaymentPassUniqueID;
     PKFieldDetector *_fieldDetector;
     NPKTransientPassAssertion *_transientPassAssertion;
     NSString *_initialPassUniqueID;
+    NSMutableArray *_workToPerformWhenPassesHaveLoaded;
     struct CGPoint *_originalCollectionViewContentOffset;
     NPKPassGroupPagingBar *_groupPagingBar;
+    PKGroupsController *_groupsController;
+    PKPaymentService *_paymentService;
     struct CGPoint _transitionalContentOffset;
 }
 
+@property(retain, nonatomic) PKPaymentService *paymentService; // @synthesize paymentService=_paymentService;
+@property(retain, nonatomic) PKGroupsController *groupsController; // @synthesize groupsController=_groupsController;
 @property(retain, nonatomic) NPKPassGroupPagingBar *groupPagingBar; // @synthesize groupPagingBar=_groupPagingBar;
 @property(nonatomic) struct CGPoint transitionalContentOffset; // @synthesize transitionalContentOffset=_transitionalContentOffset;
 @property(nonatomic) _Bool useTransitionalContentOffset; // @synthesize useTransitionalContentOffset=_useTransitionalContentOffset;
 @property(nonatomic) struct CGPoint *originalCollectionViewContentOffset; // @synthesize originalCollectionViewContentOffset=_originalCollectionViewContentOffset;
+@property(retain, nonatomic) NSMutableArray *workToPerformWhenPassesHaveLoaded; // @synthesize workToPerformWhenPassesHaveLoaded=_workToPerformWhenPassesHaveLoaded;
 @property(nonatomic) _Bool passesHaveLoaded; // @synthesize passesHaveLoaded=_passesHaveLoaded;
 @property(nonatomic) _Bool showServiceModeForInitialPass; // @synthesize showServiceModeForInitialPass=_showServiceModeForInitialPass;
 @property(retain, nonatomic) NSString *initialPassUniqueID; // @synthesize initialPassUniqueID=_initialPassUniqueID;
 @property(retain, nonatomic) NPKTransientPassAssertion *transientPassAssertion; // @synthesize transientPassAssertion=_transientPassAssertion;
 @property(retain, nonatomic) PKFieldDetector *fieldDetector; // @synthesize fieldDetector=_fieldDetector;
+@property(nonatomic) _Bool isDisplayingBarcode; // @synthesize isDisplayingBarcode=_isDisplayingBarcode;
 @property(retain, nonatomic) NSString *currentPaymentPassUniqueID; // @synthesize currentPaymentPassUniqueID=_currentPaymentPassUniqueID;
 @property(nonatomic) _Bool tableViewShouldBeVisible; // @synthesize tableViewShouldBeVisible=_tableViewShouldBeVisible;
-@property(retain, nonatomic) NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator *transitDetailTableViewAnimationCoordinator; // @synthesize transitDetailTableViewAnimationCoordinator=_transitDetailTableViewAnimationCoordinator;
-@property(retain, nonatomic) NPKTransitDetailTableViewController *transitDetailTableViewController; // @synthesize transitDetailTableViewController=_transitDetailTableViewController;
+@property(retain, nonatomic) NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator *passDetailTableViewAnimationCoordinator; // @synthesize passDetailTableViewAnimationCoordinator=_passDetailTableViewAnimationCoordinator;
+@property(retain, nonatomic) NPKPassDetailTableViewController *passDetailTableViewController; // @synthesize passDetailTableViewController=_passDetailTableViewController;
+@property(retain, nonatomic) UILabel *accessPassStatusLabel; // @synthesize accessPassStatusLabel=_accessPassStatusLabel;
+@property(retain, nonatomic) PKPass *selectedUnavailableAccessPass; // @synthesize selectedUnavailableAccessPass=_selectedUnavailableAccessPass;
 @property(nonatomic) _Bool paymentStatusViewShouldBeVisible; // @synthesize paymentStatusViewShouldBeVisible=_paymentStatusViewShouldBeVisible;
 @property(nonatomic) _Bool paymentStatusViewNeedsUpdate; // @synthesize paymentStatusViewNeedsUpdate=_paymentStatusViewNeedsUpdate;
 @property(nonatomic) _Bool paymentStatusViewAnimating; // @synthesize paymentStatusViewAnimating=_paymentStatusViewAnimating;
@@ -73,30 +92,52 @@
 @property(retain, nonatomic) NPKSinglePassLayout *singlePassLayout; // @synthesize singlePassLayout=_singlePassLayout;
 @property(retain, nonatomic) NPKTransitionalSinglePassLayout *transitionalLayout; // @synthesize transitionalLayout=_transitionalLayout;
 @property(retain, nonatomic) NPKPassListLayout *passCollectionViewLayout; // @synthesize passCollectionViewLayout=_passCollectionViewLayout;
+@property(readonly) NSArray *nonPaymentPassDescriptionsForDisplay; // @synthesize nonPaymentPassDescriptionsForDisplay=_nonPaymentPassDescriptionsForDisplay;
+@property(readonly) NSArray *paymentPassDescriptionsForDisplay; // @synthesize paymentPassDescriptionsForDisplay=_paymentPassDescriptionsForDisplay;
 @property(retain, nonatomic) NPKActivatingUIAssertion *activatingUIAssertion; // @synthesize activatingUIAssertion=_activatingUIAssertion;
 - (void).cxx_destruct;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
+- (void)group:(id)arg1 didMovePassFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)group:(id)arg1 didUpdatePass:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)group:(id)arg1 didInsertPass:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
+- (void)groupsController:(id)arg1 didInsertGroup:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)fieldDetectorDidEnterField:(id)arg1 withProperties:(id)arg2;
+@property(readonly, nonatomic) NSString *noContentMessage;
+@property(readonly, nonatomic) NSString *noContentTitle;
+@property(readonly, nonatomic) _Bool listViewAllowed;
+- (float)initialYOffset;
+- (id)paymentPassesForDisplay;
+- (id)nonPaymentPassesForDisplay;
+- (id)_passesForDisplayWithFilter:(CDUnknownBlockType)arg1;
 - (void)prepareForSnapshotWithReason:(unsigned int)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_shouldInvertPresentationForCardAtIndexPath:(id)arg1;
 - (_Bool)_showApplePayHelperCard;
 - (void)_setupPaymentStatusViewFrame;
+- (void)_setAccessPassStatusLabelFrame;
 - (struct CGRect)_paymentStatusViewFrame;
 - (void)setShowGroupPagingBar:(_Bool)arg1 numberOfItemsInGroup:(unsigned int)arg2 selectedIndexInGroup:(unsigned int)arg3;
 - (id)_allIndexPathsInGroupForPassWithIndexPath:(id)arg1;
 - (void)setPaymentStatusViewVisible:(_Bool)arg1 tableViewVisible:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)performWorkWhenPassesHaveLoaded:(CDUnknownBlockType)arg1;
 - (_Bool)_isPassAvailableAtIndexPath:(id)arg1;
-- (id)_descriptionForIndexPath:(id)arg1;
+- (id)_passForIndexPath:(id)arg1;
 - (id)_singleVisibleCollectionViewCell;
-- (id)_passDescriptionForSingleVisibleCell;
-- (_Bool)_visibleSinglePaymentPassHasUniqueIdentifier:(id)arg1;
+- (id)_passForSingleVisibleCell;
 - (void)_paymentPassNoLongerSelectedForCell:(id)arg1;
 - (void)_paymentPassSelectedForCell:(id)arg1;
 - (void)_individualPassCellSelected:(id)arg1;
+- (float)_heightForUnavailableAccessPassStatus;
+- (id)_unavailableAccessPassStringForPass:(id)arg1;
+- (void)_checkForUnavailableAccessPathAtIndex:(id)arg1;
 - (void)_collectionView:(id)arg1 tappedIndexPath:(id)arg2 animated:(_Bool)arg3 transitionType:(unsigned int)arg4;
 - (void)_handleServiceModeRequestChanged:(id)arg1;
+- (void)_handleWillEnterForeground:(id)arg1;
 - (void)_handleResignedActive:(id)arg1;
-- (void)_willDeletePaymentPass:(id)arg1;
 - (void)_handlePassesChanged:(id)arg1;
+- (void)_handleDefaultCardChanged;
 - (void)_handleBarcodeModeChanged:(id)arg1;
 - (void)_handleLocaleChanged:(id)arg1;
 - (void)_updateContentView;
@@ -106,10 +147,13 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (_Bool)npkCollectionViewShouldAdjustVerticalInsets;
 - (void)npkCollectionViewShouldOverrideSetContentOffset:(struct CGPoint *)arg1;
 - (void)npkCollectionViewDidAddSubview:(id)arg1;
 - (_Bool)canProvideActionController;
+- (id)actionControllerPresentationRequested:(id)arg1;
 - (id)actionController;
+- (void)npkPassCollectionViewCellDidDisplayCell:(id)arg1;
 - (void)npkPassCollectionViewCellDidReceiveNewZIndex:(id)arg1;
 - (void)npkPassCollectionViewCellDidChangeSuperview:(id)arg1;
 - (void)npkPassCollectionViewCellBeganDragging:(id)arg1;
@@ -118,26 +162,22 @@
 - (_Bool)npkCollectionViewIsShowingHelperCell;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)_removeSavedTransitPropertiesForPassWithUniqueID:(id)arg1;
+- (void)_saveCurrentTransitProperties:(id)arg1 forPassWithUniqueID:(id)arg2;
+- (id)currentTransitPropertiesForPass:(id)arg1;
 - (_Bool)currentPaymentSupportedInRegion;
 @property(readonly, nonatomic) _Bool currentHelperViewAllowed;
-@property(readonly, nonatomic) NSArray *currentStandardPassDescriptions;
-@property(readonly, nonatomic) NSArray *currentPaymentPassDescriptions;
-@property(readonly, nonatomic) NSArray *currentPassDescriptions;
-- (void)viewDidAppear:(_Bool)arg1;
+@property(readonly, nonatomic) NSArray *currentStandardPasses;
+@property(readonly, nonatomic) NSArray *currentPaymentPasses;
+@property(readonly, nonatomic) NSArray *currentPasses;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)selectCardWithUniqueID:(id)arg1 showDiff:(_Bool)arg2 showServiceMode:(_Bool)arg3 animated:(_Bool)arg4;
 - (void)selectCardWithUniqueID:(id)arg1 showDiff:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)dealloc;
+- (id)initWithGroupsController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)fieldDetectorDidEnterField:(id)arg1 withProperties:(id)arg2;
-@property(readonly, nonatomic) NSString *noContentMessage;
-@property(readonly, nonatomic) NSString *noContentTitle;
-@property(readonly, getter=isOrbEnabled) _Bool orbEnabled;
-@property(readonly, nonatomic) _Bool listViewAllowed;
-- (float)initialYOffset;
-@property(readonly) NSArray *paymentPassDescriptionsForDisplay;
-@property(readonly) NSArray *nonPaymentPassDescriptionsForDisplay;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 groupsController:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

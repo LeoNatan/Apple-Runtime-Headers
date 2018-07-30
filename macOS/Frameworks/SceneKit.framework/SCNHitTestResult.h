@@ -28,6 +28,21 @@
 @property(readonly, nonatomic) SCNNode *node;
 - (void)dealloc;
 - (id)initWithResult:(struct __C3DHitTestResult *)arg1;
+// Error parsing type for property simdModelTransform:
+// Property attributes: T{?=[4]},R,N
+
+// Error parsing type for property simdWorldNormal:
+// Property attributes: T,R,N
+
+// Error parsing type for property simdLocalNormal:
+// Property attributes: T,R,N
+
+// Error parsing type for property simdWorldCoordinates:
+// Property attributes: T,R,N
+
+// Error parsing type for property simdLocalCoordinates:
+// Property attributes: T,R,N
+
 
 @end
 

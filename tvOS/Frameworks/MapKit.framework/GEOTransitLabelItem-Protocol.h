@@ -11,6 +11,6 @@
 @protocol GEOTransitLabelItem <NSObject>
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> labelArtwork;
 @property(readonly, nonatomic) NSString *labelString;
-@property(readonly, nonatomic) long long type;
+@property(readonly, nonatomic) unsigned long long type;
 @end
 

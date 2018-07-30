@@ -18,14 +18,16 @@
     RTFingerprintStore *_fingerprintStore;
     RTScenarioTriggerManager *_scenarioTriggerManager;
     RTWiFiManager *_wifiManager;
-    NSDate *_startCollectAccessPoints;
-    unsigned long long _accessPointsCollectedPerFingerprint;
     unsigned long long _accessPointsFetchLimit;
+    unsigned long long _accessPointsCollectedPerFingerprint;
+    NSDate *_startCollectAccessPoints;
+    unsigned long long _settledState;
 }
 
-@property(nonatomic) unsigned long long accessPointsFetchLimit; // @synthesize accessPointsFetchLimit=_accessPointsFetchLimit;
-@property(nonatomic) unsigned long long accessPointsCollectedPerFingerprint; // @synthesize accessPointsCollectedPerFingerprint=_accessPointsCollectedPerFingerprint;
+@property(nonatomic) unsigned long long settledState; // @synthesize settledState=_settledState;
 @property(retain, nonatomic) NSDate *startCollectAccessPoints; // @synthesize startCollectAccessPoints=_startCollectAccessPoints;
+@property(nonatomic) unsigned long long accessPointsCollectedPerFingerprint; // @synthesize accessPointsCollectedPerFingerprint=_accessPointsCollectedPerFingerprint;
+@property(nonatomic) unsigned long long accessPointsFetchLimit; // @synthesize accessPointsFetchLimit=_accessPointsFetchLimit;
 @property(readonly, nonatomic) RTWiFiManager *wifiManager; // @synthesize wifiManager=_wifiManager;
 @property(readonly, nonatomic) RTScenarioTriggerManager *scenarioTriggerManager; // @synthesize scenarioTriggerManager=_scenarioTriggerManager;
 @property(readonly, nonatomic) RTFingerprintStore *fingerprintStore; // @synthesize fingerprintStore=_fingerprintStore;

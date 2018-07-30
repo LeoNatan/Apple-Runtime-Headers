@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)triggerAutoBugCaptureWithSubType:(id)arg1 userInfo:(id)arg2;
++ (void)triggerAutoBugCaptureWithType:(id)arg1 subType:(id)arg2 subtypeContext:(id)arg3 detectedProcess:(id)arg4;
 
 @end
 

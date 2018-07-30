@@ -11,6 +11,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface CBDisplayContainerDFR : CBContainer <CBContainerProtocol, CBHIDServiceProtocol>
 {
     struct __IOHIDServiceClient *_dfrService;

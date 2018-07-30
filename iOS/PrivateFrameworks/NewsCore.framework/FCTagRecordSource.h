@@ -10,26 +10,25 @@
 
 @interface FCTagRecordSource : FCRecordSource
 {
-    NSArray *_genericKeys;
+    NSArray *_nonLocalizableKeys;
     unsigned long long _desiredFieldOptions;
 }
 
 + (id)defaultCachePolicy;
-+ (unsigned long long)highThresholdDataSizeLimit;
-+ (unsigned long long)lowThresholdDataSizeLimit;
-+ (unsigned long long)storeVersion;
-+ (id)storeFilename;
-+ (id)recordType;
 @property(nonatomic) unsigned long long desiredFieldOptions; // @synthesize desiredFieldOptions=_desiredFieldOptions;
-- (id)genericKeys;
+- (id)nonLocalizableKeys;
 - (void).cxx_destruct;
 - (id)saveTagRecords:(id)arg1;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
-- (id)localizedKeysByOriginalKey;
+- (id)recordIDPrefix;
+- (unsigned long long)highThresholdDataSizeLimit;
+- (unsigned long long)lowThresholdDataSizeLimit;
+- (unsigned long long)storeVersion;
+- (id)storeFilename;
 - (id)localizableKeys;
-- (id)experimentalizedKeysByOriginalKey;
 - (id)experimentalizableKeys;
-- (id)desiredKeys;
+- (int)pbRecordType;
+- (id)recordType;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 desiredTagRecordFieldOptions:(unsigned long long)arg3;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 experimentalizableFieldsPostfix:(id)arg3 activeTreatmentID:(id)arg4;
 

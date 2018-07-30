@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TInlineProgressBaseHostLayer : FI_TLayer <CAAnimationDelegate>
 {
-    struct TNSRef<FI_TInlineProgressBarLayer *, void> _progressLayer;
+    struct TNSRef<FI_TInlineProgressBarLayer, void> _progressLayer;
     unsigned long long _animationCount;
     _Bool _cleanupWhenFinished;
     NSObject<CAAnimationDelegate> *_animationDelegate;

@@ -12,6 +12,8 @@
 {
     _Bool _skipInitialAction;
     _Bool _wantsNaming;
+    _Bool _wantsMergeCandidateSuggestions;
+    _Bool _wantsPostNaming;
     id <PXPerson> _sourcePerson;
     id <PXPerson> _targetPerson;
     unsigned long long _bootstrapType;
@@ -20,10 +22,15 @@
     CDUnknownBlockType _preCommitBlock;
     CDUnknownBlockType _cancelBlock;
     id <PXPeopleSuggestionManagerDataSource> _prefetchedDataSource;
+    id <PXCMMPersonSuggestion> _personSuggestion;
 }
 
++ (id)contextWithPersonSuggestion:(id)arg1;
 + (id)contextWithPerson:(id)arg1 type:(unsigned long long)arg2;
+@property(retain, nonatomic) id <PXCMMPersonSuggestion> personSuggestion; // @synthesize personSuggestion=_personSuggestion;
 @property(retain, nonatomic) id <PXPeopleSuggestionManagerDataSource> prefetchedDataSource; // @synthesize prefetchedDataSource=_prefetchedDataSource;
+@property(nonatomic) _Bool wantsPostNaming; // @synthesize wantsPostNaming=_wantsPostNaming;
+@property(nonatomic) _Bool wantsMergeCandidateSuggestions; // @synthesize wantsMergeCandidateSuggestions=_wantsMergeCandidateSuggestions;
 @property(nonatomic) _Bool wantsNaming; // @synthesize wantsNaming=_wantsNaming;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) CDUnknownBlockType preCommitBlock; // @synthesize preCommitBlock=_preCommitBlock;

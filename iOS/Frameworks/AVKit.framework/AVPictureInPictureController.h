@@ -9,10 +9,11 @@
 #import "AVPictureInPictureViewControllerDelegate.h"
 #import "PGPictureInPictureProxyDelegate.h"
 
-@class AVPictureInPictureViewController, AVPlayerController, AVPlayerLayer, NSObject<OS_dispatch_source>, NSString, PGPictureInPictureProxy, __AVPlayerLayerView;
+@class AVObservationController, AVPictureInPictureViewController, AVPlayerController, AVPlayerLayer, NSObject<OS_dispatch_source>, NSString, PGPictureInPictureProxy, __AVPlayerLayerView;
 
 @interface AVPictureInPictureController : NSObject <AVPictureInPictureViewControllerDelegate, PGPictureInPictureProxyDelegate>
 {
+    AVObservationController *_keyValueObservationController;
     AVPlayerLayer *_playerLayer;
     __AVPlayerLayerView *_playerLayerView;
     AVPlayerController *_playerController;
@@ -21,6 +22,7 @@
     NSObject<OS_dispatch_source> *_fullScreenCheckTimer;
     _Bool _isPlaying;
     _Bool _isFullScreen;
+    struct CGRect _viewFrameForInteractiveTransitionAnimationWhenEnteringBackground;
     id <AVPictureInPictureControllerDelegate> _delegate;
     struct {
         _Bool pictureInPictureControllerWillStartPictureInPicture;
@@ -31,6 +33,7 @@
         _Bool pictureInPictureController_restoreUserInterfaceForPictureInPictureStopWithCompletionHandler;
     } _delegateRespondsTo;
     _Bool _allowsPictureInPicturePlayback;
+    _Bool _allowsPictureInPictureFromInlineWhenEnteringBackground;
 }
 
 + (id)keyPathsForValuesAffectingPictureInPictureWasStartedWhenEnteringBackground;
@@ -40,8 +43,11 @@
 + (id)pictureInPictureButtonStopImageCompatibleWithTraitCollection:(id)arg1;
 + (id)pictureInPictureButtonStartImageCompatibleWithTraitCollection:(id)arg1;
 + (_Bool)isPictureInPictureSupported;
+@property(nonatomic) _Bool allowsPictureInPictureFromInlineWhenEnteringBackground; // @synthesize allowsPictureInPictureFromInlineWhenEnteringBackground=_allowsPictureInPictureFromInlineWhenEnteringBackground;
 @property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
+@property(readonly, nonatomic) __AVPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
 - (void).cxx_destruct;
+- (long long)pictureInPictureProxyInterfaceOrientationForTransitionAnimation:(id)arg1;
 - (void)pictureInPictureProxyPictureInPictureInterruptionEnded:(id)arg1;
 - (void)pictureInPictureProxyPictureInPictureInterruptionBegan:(id)arg1;
 - (void)pictureInPictureProxy:(id)arg1 didStopPictureInPictureWithAnimationType:(long long)arg2 reason:(long long)arg3;

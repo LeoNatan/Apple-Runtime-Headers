@@ -10,20 +10,15 @@
 
 @interface AKCropAdornmentLayer : AKAdornmentLayer
 {
-    CAShapeLayer *_guideLayer;
     CAShapeLayer *_handlesLayer;
 }
 
 @property(retain) CAShapeLayer *handlesLayer; // @synthesize handlesLayer=_handlesLayer;
-@property(retain) CAShapeLayer *guideLayer; // @synthesize guideLayer=_guideLayer;
 - (void).cxx_destruct;
 - (void)_removeHandles;
 - (void)_updateHandles;
 - (void)_addHandles;
 - (_Bool)_shouldShowHandles;
-- (void)_removeGuides;
-- (void)_updateGuides;
-- (void)_addGuides;
 - (void)updateSublayersWithScale:(double)arg1;
 - (void)updateAdornmentElements;
 - (_Bool)needsUpdateWhenDraggingStartsOrEnds;

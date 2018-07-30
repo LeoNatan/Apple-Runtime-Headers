@@ -29,7 +29,7 @@
 #import "TSWPStorageParent.h"
 #import "TSWPTextStatisticsTrackerProvider.h"
 
-@class NSArray, NSObject<TSDContainerInfo>, NSString, NSUUID, TSCECalculationEngine, TSCECellCoordinateVector, TSCEOwnerFormulaMap, TSCEOwnerUidMapper, TSDFill, TSDInfoGeometry, TSDStroke, TSPObject<TSDOwningAttachment>, TSTCell, TSTCellDictionary, TSTCellStyle, TSTConditionalStyleFormulaOwner, TSTHiddenStateFormulaOwner, TSTHiddenStateIndexSet, TSTImportWarningSetByCoordinateMap, TSTMasterLayout, TSTMergeOwner, TSTSortRuleReferenceTracker, TSTStrokeSidecar, TSTStructuredTextImportRecord, TSTTableFilterSet, TSTTableModel, TSTTablePartitioner, TSTTableSortOrder, TSTTableStyle, TSTTableStylePreset, TSWPParagraphStyle, TSWPShapeStyle;
+@class NSArray, NSDictionary, NSObject<TSDContainerInfo>, NSString, NSUUID, TSCECalculationEngine, TSCECellCoordinateVector, TSCEOwnerFormulaMap, TSCEOwnerUidMapper, TSDFill, TSDInfoGeometry, TSDStroke, TSPObject<TSDOwningAttachment>, TSTCell, TSTCellDictionary, TSTCellStyle, TSTConditionalStyleFormulaOwner, TSTHiddenStateFormulaOwner, TSTHiddenStateIndexSet, TSTImportWarningSetByCoordinateMap, TSTMasterLayout, TSTMergeOwner, TSTSortRuleReferenceTracker, TSTStrokeSidecar, TSTStructuredTextImportRecord, TSTTableFilterSet, TSTTableModel, TSTTablePartitioner, TSTTableSortOrder, TSTTableStyle, TSTTableStylePreset, TSWPParagraphStyle, TSWPShapeStyle;
 
 __attribute__((visibility("hidden")))
 @interface TSTInfo : TSDDrawableInfo <TSSPropertySource, TSDReplaceableMediaContainer, TSDReducibleImageContainer, TSDCompatibilityAwareMediaContainer, TSCEReferenceResolving, TSCECalculationEngineRegistration, TSCEFormulaOwning, TSCETableModeling, TSDContainerInfo, TSDMixing, TSKModel, TSKSearchable, TSSPresetSource, TSSStyleClient, TSTCustomStrokeProviding, TSTStyleProviding, TSTTableHiddenRowColumnProviding, TSTTableInternalGeometryProviding, TSTTableMergeRangeProviding, TSTTableStrokeProviding, TSWPStorageParent, TSWPTextStatisticsTrackerProvider>
@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     _Bool _migratingStylesOnly;
     TSTTablePartitioner *_partitioner;
     TSTMasterLayout *_masterLayout;
+    NSDictionary *_dragAndDropDetails;
     TSTTableModel *_tableModel;
 }
 
@@ -76,6 +77,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool migratingStylesOnly; // @synthesize migratingStylesOnly=_migratingStylesOnly;
 @property(retain, nonatomic) TSTTableModel *tableModel; // @synthesize tableModel=_tableModel;
 @property(nonatomic) _Bool hasReference; // @synthesize hasReference=_hasReference;
+@property(retain, nonatomic) NSDictionary *dragAndDropDetails; // @synthesize dragAndDropDetails=_dragAndDropDetails;
 @property(retain, nonatomic) TSTMasterLayout *masterLayout; // @synthesize masterLayout=_masterLayout;
 @property(retain, nonatomic) TSTTablePartitioner *partitioner; // @synthesize partitioner=_partitioner;
 - (void).cxx_destruct;
@@ -350,6 +352,8 @@ __attribute__((visibility("hidden")))
 - (void)prepareForPasteWithSourceOffset:(CDStruct_945081a1)arg1;
 - (void)didReplaceTextsInStoragesWithPlaceHolderString;
 - (void)p_initializeDefaultHeight:(double)arg1 andWidth:(double)arg2;
+@property(readonly, nonatomic) _Bool supportsMultipleColumns;
+@property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
 @property(readonly, nonatomic) _Bool textIsVertical;
@@ -358,8 +362,8 @@ __attribute__((visibility("hidden")))
 - (void)didCopy;
 - (void)willCopyWithOtherDrawables:(id)arg1;
 - (void)assertCollaborationConvergence;
+- (_Bool)childrenCanBeAnnotatedWithPencil;
 - (_Bool)contentsAreRightToLeft;
-- (struct CGPoint)autosizePositionOffsetForGeometry:(id)arg1 dynamicallyDraggedLayout:(id)arg2;
 - (id)geometryForRTLTableWithGeometry:(id)arg1;
 - (void)setInsertionCenterPosition:(struct CGPoint)arg1;
 - (_Bool)shouldCancelScrollingToSelectionPath:(id)arg1 forChanges:(id)arg2;
@@ -579,6 +583,7 @@ __attribute__((visibility("hidden")))
 - (UUIDData_5fbc143e)formulaOwnerUID;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (_Bool)isRightToLeft;
 
 // Remaining properties
 @property(readonly, nonatomic, getter=isAnchoredToText) _Bool anchoredToText; // @dynamic anchoredToText;

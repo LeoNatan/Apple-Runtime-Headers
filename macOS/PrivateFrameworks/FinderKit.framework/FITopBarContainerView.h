@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)mouseDown:(id)arg1;
 
 @end

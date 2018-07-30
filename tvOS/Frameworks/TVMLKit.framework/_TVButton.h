@@ -8,16 +8,15 @@
 
 @class IKViewElement, NSString, UIColor, UILabel, UIView, UIVisualEffectView, _TVImageView, _UIFloatingContentView;
 
-__attribute__((visibility("hidden")))
 @interface _TVButton : UIControl
 {
-    _UIFloatingContentView *_floatingView;
-    UIVisualEffectView *_backdropView;
-    UIView *_overlayView;
     UIColor *__backgroundColor;
-    _Bool _isFocused;
+    _Bool _focused;
     _Bool _blurEnabled;
     _Bool _imageTrailsTextContent;
+    _UIFloatingContentView *_floatingView;
+    UIView *_overlayView;
+    UIVisualEffectView *_backdropView;
     long long _backdropStyle;
     double _cornerRadius;
     NSString *_groupName;
@@ -38,8 +37,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) _Bool blurEnabled; // @synthesize blurEnabled=_blurEnabled;
 @property(readonly, nonatomic) long long backdropStyle; // @synthesize backdropStyle=_backdropStyle;
+@property(readonly, nonatomic, getter=isFocused) _Bool focused; // @synthesize focused=_focused;
+@property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
+@property(readonly, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
+@property(readonly, nonatomic) _UIFloatingContentView *floatingView; // @synthesize floatingView=_floatingView;
 - (void).cxx_destruct;
 - (void)_updateFocusStateWithCoordinator:(id)arg1;
+- (void)_updateFloaingViewFocusState:(_Bool)arg1 coordinator:(id)arg2;
 - (void)_setFocused:(_Bool)arg1 animationCoordinator:(id)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
@@ -64,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (id)backgroundColor;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
 @property(nonatomic, getter=isDisabled) _Bool disabled;
+@property(nonatomic) double focusSizeIncrease;
 - (id)initWithFrame:(struct CGRect)arg1 blurEffectStyle:(long long)arg2 blurEnabled:(_Bool)arg3;
 
 @end

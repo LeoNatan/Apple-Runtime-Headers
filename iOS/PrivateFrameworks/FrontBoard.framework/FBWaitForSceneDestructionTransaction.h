@@ -16,7 +16,8 @@
     FBScene *_sceneToWaitForDeath;
 }
 
-@property(readonly, retain, nonatomic) FBScene *scene; // @synthesize scene=_sceneToWaitForDeath;
+@property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_sceneToWaitForDeath;
+- (void).cxx_destruct;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 didCommitUpdateForScene:(id)arg2 transactionID:(unsigned long long)arg3;

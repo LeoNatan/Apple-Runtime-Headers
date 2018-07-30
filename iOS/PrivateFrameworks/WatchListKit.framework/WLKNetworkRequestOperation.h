@@ -34,6 +34,7 @@
 
 + (void)logNetworkHeaders:(id)arg1 identifier:(id)arg2;
 + (void)_networkRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (id)_runSSVNetworkOperationWithProperties:(id)arg1 requiresMescal:(_Bool)arg2 outError:(id *)arg3;
 + (id)_defaultBaseURL;
 + (unsigned long long)preferredCachePolicy;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
@@ -50,7 +51,7 @@
 @property(readonly, copy, nonatomic) NSDictionary *queryParameters; // @synthesize queryParameters=_queryParameters;
 @property(readonly, copy, nonatomic) NSDictionary *serverRouteReplacements; // @synthesize serverRouteReplacements=_serverRouteReplacements;
 @property(readonly, copy, nonatomic) NSString *serverRouteKey; // @synthesize serverRouteKey=_serverRouteKey;
-@property(retain, nonatomic) NSDictionary *additionalHeaderFields; // @synthesize additionalHeaderFields=_additionalHeaderFields;
+@property(copy, nonatomic) NSDictionary *additionalHeaderFields; // @synthesize additionalHeaderFields=_additionalHeaderFields;
 @property(nonatomic) _Bool encodeQueryParams; // @synthesize encodeQueryParams=_encodeQueryParams;
 @property(nonatomic) _Bool requiresMescal; // @synthesize requiresMescal=_requiresMescal;
 @property(nonatomic) _Bool allowAuthentication; // @synthesize allowAuthentication=_allowAuthentication;

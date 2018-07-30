@@ -10,6 +10,7 @@
 
 @class NSIndexPath, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSValueBinderPlugin : _NSBinderPlugin <_NSValueBinderPlugin>
 {
     struct __valueBinderPluginFlags {

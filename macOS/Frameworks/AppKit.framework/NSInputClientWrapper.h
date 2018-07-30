@@ -8,6 +8,7 @@
 
 #import "NSTextInput.h"
 
+__attribute__((visibility("hidden")))
 @interface NSInputClientWrapper : NSObject <NSTextInput>
 {
     id <NSTextInput><NSObject> _realClient;

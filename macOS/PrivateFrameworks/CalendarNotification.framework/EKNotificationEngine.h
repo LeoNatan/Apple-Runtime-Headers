@@ -17,6 +17,8 @@
     NSMutableDictionary *_timers;
 }
 
++ (id)logHandleFor35464009;
++ (BOOL)shouldLogFor35464009;
 + (void)openURLString:(id)arg1 withApp:(id)arg2;
 @property(retain) NSMutableDictionary *timers; // @synthesize timers=_timers;
 @property(retain) NSObject<OS_dispatch_queue> *timerQueue; // @synthesize timerQueue=_timerQueue;

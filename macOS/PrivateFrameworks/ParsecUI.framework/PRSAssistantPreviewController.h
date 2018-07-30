@@ -83,7 +83,6 @@
 - (void)updateSliceTable;
 - (void)updateSlices:(id)arg1;
 - (void)awakeFromNib;
-- (void)appearanceChanged:(id)arg1;
 - (void)dealloc;
 - (void)viewClosed:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

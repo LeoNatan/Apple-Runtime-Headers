@@ -8,7 +8,6 @@
 
 @class CHDChart, OADDrawingTheme;
 
-__attribute__((visibility("hidden")))
 @interface CHAutoStyling : NSObject
 {
     CHDChart *mChart;
@@ -16,7 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)autoStylingWithChart:(id)arg1 drawingTheme:(id)arg2;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)drawingTheme;
 - (id)initWithChart:(id)arg1 drawingTheme:(id)arg2;
 - (void)replaceStrokeAndFillInEmptyMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2;

@@ -12,7 +12,10 @@
 {
     unsigned int _count;
     int _style;
-    CDStruct_f13729b5 _has;
+    struct {
+        unsigned int count:1;
+        unsigned int style:1;
+    } _has;
 }
 
 @property(nonatomic) unsigned int count; // @synthesize count=_count;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <SiriUI/SiriUITranscriptButton.h>
+#import <SiriUI/SiriUIButton.h>
 
 __attribute__((visibility("hidden")))
-@interface SiriUIHelpButton : SiriUITranscriptButton
+@interface SiriUIHelpButton : SiriUIButton
 {
     BOOL _animatingEmphasis;
     BOOL _emphasized;
@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 - (double)_alphaForColor:(id)arg1;
 - (void)pulse;
 - (void)setEmphasized:(BOOL)arg1;
-- (BOOL)wantsUpdateLayer;
 - (void)awakeFromNib;
 
 @end

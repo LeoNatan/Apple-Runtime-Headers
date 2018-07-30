@@ -14,7 +14,6 @@
 
 @interface _CPSectionEngagementFeedback : PBCodable <_CPProcessableFeedback, _CPSectionEngagementFeedback, NSSecureCoding>
 {
-    CDStruct_c6e3878d _has;
     int _triggerEvent;
     unsigned long long _timestamp;
     _CPResultSectionForFeedback *_section;
@@ -32,9 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasTriggerEvent;
-@property(readonly, nonatomic) BOOL hasSection;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

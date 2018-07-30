@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString, TIKeyboardCandidate, TIKeyboardInput, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent;
+@class NSString, TICandidateRequestToken, TIKeyboardCandidate, TIKeyboardInput, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent;
 
 @protocol TIKeyboardInputManager <NSObject>
 - (void)writeTypologyLogWithCompletionHandler:(void (^)(NSURL *))arg1;
@@ -22,6 +22,7 @@
 - (void)generateReplacementsForString:(NSString *)arg1 keyLayout:(TIKeyboardLayout *)arg2 continuation:(void (^)(NSArray *))arg3;
 - (void)handleAcceptedCandidate:(TIKeyboardCandidate *)arg1 keyboardState:(TIKeyboardState *)arg2 completionHandler:(void (^)(TIKeyboardConfiguration *, TIKeyboardOutput *))arg3;
 - (void)generateCandidatesWithKeyboardState:(TIKeyboardState *)arg1 candidateRange:(struct _NSRange)arg2 completionHandler:(void (^)(TIKeyboardCandidateResultSet *))arg3;
+- (void)generateAutocorrectionsWithKeyboardState:(TIKeyboardState *)arg1 candidateRange:(struct _NSRange)arg2 requestToken:(TICandidateRequestToken *)arg3 completionHandler:(void (^)(TIAutocorrectionList *))arg4;
 - (void)generateAutocorrectionsWithKeyboardState:(TIKeyboardState *)arg1 candidateRange:(struct _NSRange)arg2 completionHandler:(void (^)(TIAutocorrectionList *))arg3;
 - (void)generateAutocorrectionsWithKeyboardState:(TIKeyboardState *)arg1 completionHandler:(void (^)(TIAutocorrectionList *))arg2;
 - (void)handleKeyboardInput:(TIKeyboardInput *)arg1 keyboardState:(TIKeyboardState *)arg2 completionHandler:(void (^)(TIKeyboardOutput *, TIKeyboardConfiguration *))arg3;

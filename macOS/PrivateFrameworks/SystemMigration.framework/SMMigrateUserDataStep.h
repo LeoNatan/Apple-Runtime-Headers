@@ -15,7 +15,7 @@
     BOOL _onlyPreflightHomeDirectories;
     SMCopyEngine *_fileCopyEngine;
     SMPreflightEngine *_preflightEngine;
-    NSArray *_usersToDelete;
+    NSArray *_usersToReplace;
     NSMutableSet *_pathsToBePreflighted;
     NSError *_processError;
 }
@@ -26,7 +26,7 @@
 @property(retain) NSError *processError; // @synthesize processError=_processError;
 @property(readonly) BOOL onlyPreflightHomeDirectories; // @synthesize onlyPreflightHomeDirectories=_onlyPreflightHomeDirectories;
 @property(retain) NSMutableSet *pathsToBePreflighted; // @synthesize pathsToBePreflighted=_pathsToBePreflighted;
-@property(retain) NSArray *usersToDelete; // @synthesize usersToDelete=_usersToDelete;
+@property(retain) NSArray *usersToReplace; // @synthesize usersToReplace=_usersToReplace;
 @property(retain) SMPreflightEngine *preflightEngine; // @synthesize preflightEngine=_preflightEngine;
 @property(retain) SMCopyEngine *fileCopyEngine; // @synthesize fileCopyEngine=_fileCopyEngine;
 - (void).cxx_destruct;

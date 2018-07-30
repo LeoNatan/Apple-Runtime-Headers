@@ -26,6 +26,8 @@
 @property(retain, nonatomic) MDLObject *instance; // @synthesize instance=_instance;
 - (void).cxx_destruct;
 - (struct)boundingBoxAtTime:(double)arg1;
+- (id)recursiveDescription;
+- (id)description;
 - (void)addChild:(id)arg1;
 @property(retain, nonatomic) id <MDLTransformComponent> transform;
 - (id)objectAtPath:(id)arg1;

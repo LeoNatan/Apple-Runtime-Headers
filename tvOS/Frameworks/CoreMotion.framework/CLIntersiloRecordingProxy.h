@@ -16,7 +16,7 @@
     NSSet *_triggeringDelegateNames;
 }
 
-+ (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 recipientName:(id)arg3 withInboundInterface:(id)arg4 inboundTriggerNames:(id)arg5 andOutboundInterface:(id)arg6 outboundTriggerNames:(id)arg7 recordingWriter:(shared_ptr_06cc74dc)arg8;
++ (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 recipientName:(id)arg3 inboundTriggerNames:(id)arg4 outboundTriggerNames:(id)arg5 recordingWriter:(shared_ptr_06cc74dc)arg6;
 + (Class)recipientRepresentingClass;
 + (Class)initiatorRepresentingClass;
 @property(readonly, copy, nonatomic) NSString *delegateName; // @synthesize delegateName=_delegateName;
@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)offsiloHandleInvocation:(id)arg1 selectorInfo:(id)arg2 peer:(id)arg3;
-- (void)dispatchEncodedInvocation:(id)arg1;
+- (void)dispatchEncodedInvocation:(id)arg1 expectedClasses:(id)arg2;
 - (void)setDelegateEntityName:(const char *)arg1;
 - (void)setProxyPairRecordingWriter:(shared_ptr_06cc74dc)arg1;
 - (void)setRecordingWriter:(shared_ptr_06cc74dc)arg1;

@@ -64,6 +64,7 @@
 @property(readonly) BOOL isXSAN;
 @property(readonly) BOOL isHFSExtended;
 @property(readonly) BOOL isHFS;
+- (long long)fileSystemType;
 - (BOOL)setIgnoringOwnership:(BOOL)arg1;
 @property(readonly) BOOL ignoringOwnership;
 - (BOOL)enableJournaling;

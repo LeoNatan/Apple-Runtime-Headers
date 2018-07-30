@@ -11,11 +11,15 @@
 @interface AVCaptureConnection : NSObject
 {
     AVCaptureConnectionInternal *_internal;
+    _Bool _supportsVideoFieldMode;
+    long long _videoFieldMode;
 }
 
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 + (void)initialize;
+@property(nonatomic) long long videoFieldMode; // @synthesize videoFieldMode=_videoFieldMode;
+@property(readonly, nonatomic, getter=isVideoFieldModeSupported) _Bool supportsVideoFieldMode; // @synthesize supportsVideoFieldMode=_supportsVideoFieldMode;
 - (void)_updatePropertiesForFormat:(id)arg1;
 - (long long)_resolveActiveVideoStabilizationMode:(long long)arg1 format:(id)arg2;
 - (void)_updateActiveVideoStabilizationMode:(long long)arg1 bumpChangeSeed:(_Bool)arg2;
@@ -25,6 +29,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (_Bool)sourcesFromFrontFacingCamera;
 - (id)sourceDevice;
+- (void)setDebugMetadataSidecarFileEnabled:(_Bool)arg1;
+- (_Bool)isDebugMetadataSidecarFileEnabled;
 - (void)setVideoRetainedBufferCountHint:(int)arg1;
 - (int)videoRetainedBufferCountHint;
 - (_Bool)isVideoRetainedBufferCountHintSupported;

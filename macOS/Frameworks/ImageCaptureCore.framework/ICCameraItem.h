@@ -13,8 +13,9 @@
     id _itemProperties;
 }
 
+@property(readonly) NSString *relativeFileSystemPath;
 @property(readonly) NSString *fileSystemPath;
-- (void)appendPath:(id)arg1;
+- (void)appendPath:(id)arg1 andMountPoint:(BOOL)arg2;
 - (void)setTwinID:(unsigned long long)arg1;
 - (void)setOwnerID:(unsigned long long)arg1;
 - (void)setParentID:(unsigned long long)arg1;
@@ -43,14 +44,15 @@
 @property(readonly) unsigned long long objectID;
 @property ICCameraFolder *parentFolder;
 @property(readonly) ICCameraDevice *device;
+- (void)requestMetadataWithOptions:(id)arg1;
+- (void)requestThumbnailWithOptions:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (void)removeDeviceAssignment;
 - (void)removeParentAssignment;
 - (id)description;
 - (unsigned long long)unsignedIntegerValue;
-- (long long)compare:(id)arg1;
+- (long long)compareObjectID:(id)arg1;
 - (id)initWithDictionary:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 
 @end

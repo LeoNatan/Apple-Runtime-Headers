@@ -6,6 +6,7 @@
 
 #import "PUViewControllerSpecChange.h"
 
+__attribute__((visibility("hidden")))
 @interface PUVideoEditViewControllerSpecChange : PUViewControllerSpecChange
 {
     _Bool _wantsScrubberInToolbarChanged;

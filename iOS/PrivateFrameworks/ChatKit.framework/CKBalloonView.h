@@ -26,13 +26,13 @@
     _Bool _invisibleInkEffectPaused;
     _Bool _animationPaused;
     id <CKBalloonViewDelegate> _delegate;
+    UITapGestureRecognizer *_tapGestureRecognizer;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     NSMutableArray *_filters;
     unsigned long long _balloonCorners;
     CABackdropLayer *_backdropFilterLayer;
     CKInvisibleInkEffectController *_invisibleInkEffectController;
-    UITapGestureRecognizer *_tapGestureRecognizer;
     CKManualUpdater *_displayUpdater;
     UIImageView *_overlay;
     struct UIEdgeInsets _textAlignmentInsets;
@@ -40,7 +40,6 @@
 
 @property(retain, nonatomic) UIImageView *overlay; // @synthesize overlay=_overlay;
 @property(retain, nonatomic) CKManualUpdater *displayUpdater; // @synthesize displayUpdater=_displayUpdater;
-@property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) _Bool animationPaused; // @synthesize animationPaused=_animationPaused;
 @property(nonatomic) _Bool invisibleInkEffectPaused; // @synthesize invisibleInkEffectPaused=_invisibleInkEffectPaused;
 @property(retain, nonatomic) CKInvisibleInkEffectController *invisibleInkEffectController; // @synthesize invisibleInkEffectController=_invisibleInkEffectController;
@@ -56,6 +55,7 @@
 @property(readonly, nonatomic, getter=isShowingMenu) _Bool showingMenu; // @synthesize showingMenu=_showingMenu;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer; // @synthesize doubleTapGestureRecognizer=_doubleTapGestureRecognizer;
+@property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) struct UIEdgeInsets textAlignmentInsets; // @synthesize textAlignmentInsets=_textAlignmentInsets;
 @property(nonatomic, getter=isFilled) _Bool filled; // @synthesize filled=_filled;
 @property(nonatomic) _Bool hasTail; // @synthesize hasTail=_hasTail;

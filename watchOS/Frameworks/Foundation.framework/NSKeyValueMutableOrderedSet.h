@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_proxyShare;
-+ (CDStruct_e8a1eea0 *)_proxyNonGCPoolPointer;
 - (void)dealloc;
 - (void)_proxyNonGCFinalize;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;

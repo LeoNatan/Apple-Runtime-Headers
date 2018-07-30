@@ -20,6 +20,7 @@
 + (struct USet *)createAcceptableCharacterSetForKeyboardLocale:(id)arg1;
 @property(nonatomic) long long currentUserInterfaceIdiom; // @synthesize currentUserInterfaceIdiom=_currentUserInterfaceIdiom;
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
+- (void).cxx_destruct;
 - (id)replacementForDoubleSpace;
 - (id)accentKeyStringForKeyboardState:(id)arg1;
 - (id)wordSeparator;

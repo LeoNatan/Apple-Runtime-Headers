@@ -10,6 +10,8 @@
 
 @interface TSDDrawableInfo (KNAdditions)
 + (void)load;
+@property(readonly, nonatomic) _Bool canBeDefinedAsMediaPlaceholder;
+@property(readonly, nonatomic) _Bool canBeDefinedAsTextPlaceholder;
 @property(readonly, nonatomic) _Bool isRightToLeft;
 @property(readonly, nonatomic) _Bool mayHaveImplicitBuildEvents;
 - (void)swizzled_setMatchesObjectPlaceholderGeometry:(_Bool)arg1;

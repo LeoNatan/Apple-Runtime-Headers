@@ -23,7 +23,8 @@
     id <NTKTimeTravelModuleViewTapClient> _tapDelegate;
 }
 
-+ (double)_actualCornerRadius;
++ (double)_defaultHeightForDevice:(id)arg1;
++ (double)_actualCornerRadiusForDevice:(id)arg1;
 + (double)cornerRadius;
 + (id)timeTravelColor;
 @property(nonatomic) __weak id <NTKTimeTravelModuleViewTapClient> tapDelegate; // @synthesize tapDelegate=_tapDelegate;

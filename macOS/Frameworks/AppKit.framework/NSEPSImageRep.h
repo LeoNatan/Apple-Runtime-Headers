@@ -25,7 +25,6 @@
 @property(readonly, copy) NSData *EPSRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)_wantsToBeCached;
 - (BOOL)draw;
 - (void)prepareGState;
 - (BOOL)drawInRect:(struct CGRect)arg1;

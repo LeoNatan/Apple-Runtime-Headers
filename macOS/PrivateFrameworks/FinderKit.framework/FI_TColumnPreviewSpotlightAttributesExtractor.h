@@ -6,13 +6,20 @@
 
 #import <FinderKit/FI_ISpotlightAttributesExtractor.h>
 
+@class NSArray;
+
 __attribute__((visibility("hidden")))
 @interface FI_TColumnPreviewSpotlightAttributesExtractor : FI_ISpotlightAttributesExtractor
 {
+    struct TNSRef<NSArray<NSString *>, void> _queryAttributes;
+    struct mutex _queryAttributesLock;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *queryAttributes; // @dynamic queryAttributes;
 - (id)attributeNamesForNode:(const struct TFENode *)arg1;
-- (id)whichAttributeValues;
+- (id)init;
 
 @end
 

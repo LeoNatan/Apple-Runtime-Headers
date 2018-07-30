@@ -11,7 +11,6 @@
 + (id)sortedContentsOfDirectoryAtURL:(id)arg1 withExtension:(id)arg2;
 + (id)routineLogsPath;
 + (id)crashReporterPath;
-+ (id)managedPreferencesPath;
 + (id)routinePreferencesPath;
 + (id)userPreferencesPath;
 + (id)userLibraryPath;

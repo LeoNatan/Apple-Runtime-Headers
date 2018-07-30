@@ -10,9 +10,7 @@
 
 @protocol _SFPBLatLng <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasLng;
 @property(nonatomic) double lng;
-@property(readonly, nonatomic) _Bool hasLat;
 @property(nonatomic) double lat;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

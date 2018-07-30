@@ -6,25 +6,37 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, TSUImage;
+@class NSArray, NSMutableArray, PKDrawing, TSPData, TSUBezierPath, TSUImage;
 
 __attribute__((visibility("hidden")))
 @interface TSKPencilOverlayRenderingDetails : NSObject
 {
     _Bool _isSelected;
-    TSUImage *_rasterizedImage;
-    struct CGPath *_path;
-    NSMutableArray *_mutableUnscaledSelectionRects;
+    _Bool _isSplit;
+    TSUImage *_scaledImage;
+    TSPData *_dataToInvalidateFromAfterDownload;
+    PKDrawing *_subDrawing;
+    TSUBezierPath *_transformedPath;
+    NSMutableArray *_mutableUnscaledSelectionRectangles;
+    struct CGRect _unscaledImageClipRect;
     struct CGRect _unscaledImageFrame;
 }
 
-@property(retain, nonatomic) NSMutableArray *mutableUnscaledSelectionRects; // @synthesize mutableUnscaledSelectionRects=_mutableUnscaledSelectionRects;
+@property(retain, nonatomic) NSMutableArray *mutableUnscaledSelectionRectangles; // @synthesize mutableUnscaledSelectionRectangles=_mutableUnscaledSelectionRectangles;
+@property(nonatomic) _Bool isSplit; // @synthesize isSplit=_isSplit;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
-@property(nonatomic) struct CGPath *path; // @synthesize path=_path;
+@property(retain, nonatomic) TSUBezierPath *transformedPath; // @synthesize transformedPath=_transformedPath;
 @property(nonatomic) struct CGRect unscaledImageFrame; // @synthesize unscaledImageFrame=_unscaledImageFrame;
-@property(readonly, nonatomic) TSUImage *rasterizedImage; // @synthesize rasterizedImage=_rasterizedImage;
+@property(nonatomic) struct CGRect unscaledImageClipRect; // @synthesize unscaledImageClipRect=_unscaledImageClipRect;
+@property(retain, nonatomic) PKDrawing *subDrawing; // @synthesize subDrawing=_subDrawing;
+@property(readonly, nonatomic) TSPData *dataToInvalidateFromAfterDownload; // @synthesize dataToInvalidateFromAfterDownload=_dataToInvalidateFromAfterDownload;
+@property(readonly, nonatomic) TSUImage *scaledImage; // @synthesize scaledImage=_scaledImage;
 - (void).cxx_destruct;
-- (id)initWithImage:(id)arg1;
+- (id)description;
+- (void)addUnscaledSelectionRectangle:(id)arg1;
+@property(readonly, nonatomic) NSArray *unscaledSelectionRectangles; // @dynamic unscaledSelectionRectangles;
+- (_Bool)containsPointForHitTesting:(struct CGPoint)arg1;
+- (id)initWithScaledImage:(id)arg1 dataToInvalidateFromAfterDownload:(id)arg2;
 
 @end
 

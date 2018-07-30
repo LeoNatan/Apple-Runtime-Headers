@@ -6,18 +6,14 @@
 
 #import <coreroutine/RTNotifier.h>
 
-@class RTBluetoothManager, RTDeviceLocationPredictor, RTLearnedLocationManager, RTMotionActivityManager, RTPlatform, RTStarkManager, RTVisitManager, RTWiFiFootprintMonitor;
+@class RTDeviceLocationPredictor, RTLearnedLocationManager, RTMotionActivityManager, RTPlatform, RTVisitManager, RTWiFiFootprintMonitor;
 
 @interface RTScenarioTriggerManager : RTNotifier
 {
-    unsigned long long _connectedToCarSignalCount;
-    unsigned long long _interestedInCarKitConnectionState;
     unsigned long long _interestedInConstantFootprint;
     unsigned long long _interestedInSettledState;
     unsigned long long _interestedInStarkConnectionState;
     unsigned long long _interestedInVisits;
-    long long _carKitConnectionState;
-    RTBluetoothManager *_bluetoothManager;
     RTDeviceLocationPredictor *_deviceLocationPredictor;
     RTLearnedLocationManager *_learnedLocationManager;
     RTMotionActivityManager *_motionActivityManager;
@@ -25,8 +21,6 @@
     RTPlatform *_platform;
     unsigned long long _settledState;
     unsigned long long _monitoredScenarioTriggerTypes;
-    long long _starkConnectionState;
-    RTStarkManager *_starkManager;
     RTVisitManager *_visitManager;
     RTWiFiFootprintMonitor *_wifiFootprintMonitor;
     long long _wiFiFootprintState;
@@ -37,8 +31,6 @@
 @property(nonatomic) long long wiFiFootprintState; // @synthesize wiFiFootprintState=_wiFiFootprintState;
 @property(retain, nonatomic) RTWiFiFootprintMonitor *wifiFootprintMonitor; // @synthesize wifiFootprintMonitor=_wifiFootprintMonitor;
 @property(retain, nonatomic) RTVisitManager *visitManager; // @synthesize visitManager=_visitManager;
-@property(retain, nonatomic) RTStarkManager *starkManager; // @synthesize starkManager=_starkManager;
-@property(nonatomic) long long starkConnectionState; // @synthesize starkConnectionState=_starkConnectionState;
 @property(nonatomic) unsigned long long monitoredScenarioTriggerTypes; // @synthesize monitoredScenarioTriggerTypes=_monitoredScenarioTriggerTypes;
 @property(nonatomic) unsigned long long settledState; // @synthesize settledState=_settledState;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
@@ -46,24 +38,14 @@
 @property(retain, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) RTDeviceLocationPredictor *deviceLocationPredictor; // @synthesize deviceLocationPredictor=_deviceLocationPredictor;
-@property(retain, nonatomic) RTBluetoothManager *bluetoothManager; // @synthesize bluetoothManager=_bluetoothManager;
-@property(nonatomic) long long carKitConnectionState; // @synthesize carKitConnectionState=_carKitConnectionState;
 @property(nonatomic) unsigned long long interestedInVisits; // @synthesize interestedInVisits=_interestedInVisits;
 @property(nonatomic) unsigned long long interestedInStarkConnectionState; // @synthesize interestedInStarkConnectionState=_interestedInStarkConnectionState;
 @property(nonatomic) unsigned long long interestedInSettledState; // @synthesize interestedInSettledState=_interestedInSettledState;
 @property(nonatomic) unsigned long long interestedInConstantFootprint; // @synthesize interestedInConstantFootprint=_interestedInConstantFootprint;
-@property(nonatomic) unsigned long long interestedInCarKitConnectionState; // @synthesize interestedInCarKitConnectionState=_interestedInCarKitConnectionState;
-@property(nonatomic) unsigned long long connectedToCarSignalCount; // @synthesize connectedToCarSignalCount=_connectedToCarSignalCount;
 - (void).cxx_destruct;
 - (void)onPostScenarioTriggerNotificationFromDefaults;
 - (void)_postScenarioTriggerNotification:(id)arg1;
 - (void)postScenarioTriggerNotification:(id)arg1;
-- (void)_checkForConnectedToCarAfterStarkConnectionStateChangedFrom:(long long)arg1 to:(long long)arg2;
-- (void)onStarkManagerNotification:(id)arg1;
-- (void)_onStarkManagerNotification:(id)arg1;
-- (void)_checkForConnectedToCarAfterCarKitConnectionStateChangedFrom:(long long)arg1 to:(long long)arg2;
-- (void)onBluetoothManagerNotification:(id)arg1;
-- (void)_onBluetoothManagerNotification:(id)arg1;
 - (void)onWiFiFootprintStateNotification:(id)arg1;
 - (void)_onWiFiFootprintStateNotification:(id)arg1;
 - (void)onMotionActivityManagerNotification:(id)arg1;
@@ -88,7 +70,7 @@
 - (void)_startMonitoringScenarioTriggerOfType:(unsigned long long)arg1;
 - (void)_evaluateSettledState;
 - (void)dealloc;
-- (id)initWithDeviceLocationPredictor:(id)arg1 learnedLocationManager:(id)arg2 visitManager:(id)arg3 motionActivityManager:(id)arg4 wifiFootprintMonitor:(id)arg5 bluetoothManager:(id)arg6 starkManager:(id)arg7 platform:(id)arg8;
+- (id)initWithDeviceLocationPredictor:(id)arg1 learnedLocationManager:(id)arg2 visitManager:(id)arg3 motionActivityManager:(id)arg4 wifiFootprintMonitor:(id)arg5 platform:(id)arg6;
 - (id)init;
 - (void)simulateScenarioTrigger:(id)arg1 handler:(CDUnknownBlockType)arg2;
 

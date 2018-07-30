@@ -18,7 +18,7 @@
 @property(retain) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain) ResourceLoader *loader; // @synthesize loader=_loader;
 - (void).cxx_destruct;
-- (id)cachedImageFormKey:(id)arg1;
+- (id)cachedImageFromKey:(id)arg1;
 - (void)asynchronousDataFromURL:(id)arg1 key:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 
 @end

@@ -33,6 +33,8 @@
 @property(copy, nonatomic) NSString *contextTopic; // @synthesize contextTopic=_contextTopic;
 @property(nonatomic) long long contextType; // @synthesize contextType=_contextType;
 - (void).cxx_destruct;
+- (id)dictionaryRepresentation;
+- (id)description;
 - (void)scalarMultiply:(double)arg1;
 - (void)add:(id)arg1;
 - (long long)compare:(id)arg1;

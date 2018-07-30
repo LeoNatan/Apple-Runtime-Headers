@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface DDVariable : DDBasicRegexp <NSCopying>
 {
     NSString *_name;

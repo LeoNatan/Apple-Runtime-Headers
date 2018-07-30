@@ -41,10 +41,10 @@
 @property(copy, nonatomic) NSString *purchaseID; // @synthesize purchaseID=_purchaseID;
 @property(copy, nonatomic) NSNumber *appAdamID; // @synthesize appAdamID=_appAdamID;
 - (void).cxx_destruct;
+- (void)simulatePurchaseWithTagID:(id)arg1 webAccessOptIn:(_Bool)arg2;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
 - (void)productsRequest:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)simulatePurchaseWithTagID:(id)arg1 webAccessOptIn:(_Bool)arg2;
 - (void)startPurchaseWithTagID:(id)arg1 webAccessOptIn:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)productLookupWithcompletion:(CDUnknownBlockType)arg1;
 - (void)appLookupForBundleIDWithAppAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;

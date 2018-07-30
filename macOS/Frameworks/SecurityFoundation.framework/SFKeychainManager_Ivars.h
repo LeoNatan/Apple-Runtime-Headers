@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class SFCredentialStore;
+@class _SFCredentialStore;
 
 __attribute__((visibility("hidden")))
 @interface SFKeychainManager_Ivars : NSObject
 {
-    SFCredentialStore *credentialStore;
+    _SFCredentialStore *credentialStore;
 }
 
 - (void).cxx_destruct;

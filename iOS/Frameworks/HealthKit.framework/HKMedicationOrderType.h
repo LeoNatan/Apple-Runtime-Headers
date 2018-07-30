@@ -11,7 +11,7 @@
 }
 
 + (id)medicationOrderType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

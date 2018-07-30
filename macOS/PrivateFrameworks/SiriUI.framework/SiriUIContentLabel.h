@@ -11,7 +11,6 @@
 @interface SiriUIContentLabel : NSTextField
 {
     BOOL _willAppearDirectlyOverUltraDarkBackground;
-    BOOL _shouldAllowVibrancy;
     NSFont *_superScriptFont;
 }
 
@@ -26,11 +25,9 @@
 + (id)labelWithThinWeightRegularFont;
 + (id)label;
 @property(retain) NSFont *superScriptFont; // @synthesize superScriptFont=_superScriptFont;
-@property(nonatomic) BOOL shouldAllowVibrancy; // @synthesize shouldAllowVibrancy=_shouldAllowVibrancy;
 @property(nonatomic) BOOL willAppearDirectlyOverUltraDarkBackground; // @synthesize willAppearDirectlyOverUltraDarkBackground=_willAppearDirectlyOverUltraDarkBackground;
 - (void).cxx_destruct;
 - (void)setAttributedStringValue:(id)arg1;
-- (BOOL)allowsVibrancy;
 - (void)setStringValue:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

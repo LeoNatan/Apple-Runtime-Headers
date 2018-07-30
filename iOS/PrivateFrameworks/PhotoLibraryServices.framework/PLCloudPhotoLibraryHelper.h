@@ -10,8 +10,15 @@
 {
 }
 
++ (void)pauseCloudPhotos:(_Bool)arg1 reason:(short)arg2;
++ (void)processCloudPhotosLibraryStateChange:(_Bool)arg1;
++ (void)performOnceLibraryIsReadyForCPLManager:(CDUnknownBlockType)arg1;
++ (void)_stopWaitingForLibraryToBeReadyForCPLManager;
++ (_Bool)_isAssetsdReadyForCPLManager;
++ (void)initializeCPLManager;
 + (void)setShouldSendOptimizeFeedbackOnce:(_Bool)arg1;
 + (_Bool)shouldSendOptimizeFeedbackOnce;
++ (void)disableCPL:(CDUnknownBlockType)arg1;
 + (void)enableCPL:(CDUnknownBlockType)arg1;
 
 @end

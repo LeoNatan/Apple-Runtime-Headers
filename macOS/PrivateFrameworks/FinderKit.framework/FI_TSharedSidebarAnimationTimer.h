@@ -9,8 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface FI_TSharedSidebarAnimationTimer : NSObject
 {
-    struct TNSRef<NSTimer *, void> _timer;
-    struct vector<TNSRef<FI_TSidebarViewController *, void>, std::__1::allocator<TNSRef<FI_TSidebarViewController *, void>>> _controllers;
+    struct TNSRef<NSTimer, void> _timer;
+    struct vector<TNSRef<FI_TSidebarViewController, void>, std::__1::allocator<TNSRef<FI_TSidebarViewController, void>>> _controllers;
 }
 
 - (id).cxx_construct;

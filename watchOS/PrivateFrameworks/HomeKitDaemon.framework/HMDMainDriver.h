@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class HMDAccessoryBrowser, HMDCentralMessageDispatcher, HMDCloudManager, HMDHomeManager, HMDMessageFilterChain, HMDRemoteIdentityRegistry, HMDXpcServer, NSObject<OS_dispatch_queue>;
+@class HMDAccessoryBrowser, HMDCloudManager, HMDHomeManager, HMDXpcServer, NSObject<OS_dispatch_queue>;
 
 @interface HMDMainDriver : NSObject
 {
@@ -14,17 +14,11 @@
     HMDHomeManager *_homeManager;
     HMDAccessoryBrowser *_accessoryBrowser;
     HMDXpcServer *_xpcServer;
-    HMDCentralMessageDispatcher *_messageDispatcher;
     HMDCloudManager *_cloudDataSyncManager;
-    HMDMessageFilterChain *_msgFilterChain;
-    HMDRemoteIdentityRegistry *_identityRegistry;
 }
 
 + (id)driver;
-@property(retain, nonatomic) HMDRemoteIdentityRegistry *identityRegistry; // @synthesize identityRegistry=_identityRegistry;
-@property(retain, nonatomic) HMDMessageFilterChain *msgFilterChain; // @synthesize msgFilterChain=_msgFilterChain;
 @property(retain, nonatomic) HMDCloudManager *cloudDataSyncManager; // @synthesize cloudDataSyncManager=_cloudDataSyncManager;
-@property(retain, nonatomic) HMDCentralMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(retain, nonatomic) HMDXpcServer *xpcServer; // @synthesize xpcServer=_xpcServer;
 @property(retain, nonatomic) HMDAccessoryBrowser *accessoryBrowser; // @synthesize accessoryBrowser=_accessoryBrowser;
 @property(retain, nonatomic) HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;

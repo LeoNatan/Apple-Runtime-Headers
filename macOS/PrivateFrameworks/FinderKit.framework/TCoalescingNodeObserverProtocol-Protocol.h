@@ -21,9 +21,9 @@
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openSyncStarted:(const struct TFENode *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodeMDAttributeChanged:(const struct TFENode *)arg2 attributes:(NSDictionary *)arg3 isDisplayAttributes:(_Bool)arg4;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodeMoved:(const struct TFENode *)arg2;
-- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesDeleted:(const struct map<const TFENode, const TFENodeVector *const, std::__1::less<const TFENode>, std::__1::allocator<std::__1::pair<const TFENode, const TFENodeVector *const>>> *)arg2;
-- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesChanged:(const map_3ec01adc *)arg2;
-- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesAdded:(const struct map<const TFENode, const TFENodeVector *const, std::__1::less<const TFENode>, std::__1::allocator<std::__1::pair<const TFENode, const TFENodeVector *const>>> *)arg2;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesDeleted:(const map_27534541 *)arg2;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesChanged:(const map_253f12d2 *)arg2;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 bulkNodesAdded:(const map_27534541 *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 aliasesTargetChanged:(const struct TFENodeVector *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesGoingAway:(const struct TFENodeVector *)arg2;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesDeleted:(const struct TFENodeVector *)arg2 fromObservedNode:(const struct TFENode *)arg3;

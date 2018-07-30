@@ -20,6 +20,7 @@
 }
 
 + (_Bool)_isSecure;
+- (void).cxx_destruct;
 - (void)transformDidInvalidate:(id)arg1;
 - (void)transformDidUpdate:(id)arg1;
 - (id)_systemGestureView;

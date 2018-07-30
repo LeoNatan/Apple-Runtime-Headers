@@ -14,7 +14,7 @@
 #import "NSMenuDelegate.h"
 #import "NSUserInterfaceValidations.h"
 
-@class AutoplayPreferenceManager, AutoplayQuirkWhitelistManager, BookmarksMenuController, BrowserSessionPersistentState, BrowserTabViewItem, ClosedTabOrWindowStateManager, ContentBlockersPreferenceManager, DomainWhitelistManager, DownloadAlertsManager, DownloadsManager, ExternalJavaScriptEvaluationPolicyController, FaviconProvider, FormTextStatusWatcher, LaunchTimePerformanceMonitor, ManagedPlugInsController, ManagedPlugInsControllerHistoryListener, NSAlert, NSArray, NSMenu, NSMenuItem, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSStatusItem, NSString, NSTimer, NSUserActivity, SFAuthorization, SafariAutomationController, TabSnapshotSensitiveDataPurger, WBSAutomaticReaderActivationManager, WBSCoalescedAsynchronousWriter, WBSCyclerConnectionManager, WBSFormAutoFillCorrectionsHistoryObserver, WBSQuickWebsiteSearchController, WBSSiteMetadataManager, WBSTabDialogManager, WKPreferences, WKProcessPool, WKUserContentController, ZoomPreferenceManager;
+@class AuthenticationSessionController, AutoplayPreferenceManager, AutoplayQuirkWhitelistManager, BookmarksMenuController, BrowserSessionPersistentState, BrowserTabViewItem, BrowserViewControllerNavigationManager, ClosedTabOrWindowStateManager, ContentBlockersPreferenceManager, DownloadAlertsManager, DownloadsManager, ExternalJavaScriptEvaluationPolicyController, FaviconProvider, FormTextStatusWatcher, LaunchTimePerformanceMonitor, ManagedPlugInsController, ManagedPlugInsControllerHistoryListener, NSAlert, NSArray, NSMenu, NSMenuItem, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSStatusItem, NSString, NSTimer, NSUserActivity, PopUpWindowPreferenceManager, ResourcePreferencesController, SFAuthorization, SafariAutomationController, SandboxFileExtensionController, SandboxRuntimeExtensionController, TabSnapshotSensitiveDataPurger, TemplateIconCache, WBSAutomaticReaderActivationManager, WBSCoalescedAsynchronousWriter, WBSCyclerConnectionManager, WBSFormAutoFillCorrectionsHistoryObserver, WBSOneTimeCodeMonitor, WBSPeriodicActivityScheduler, WBSQuickWebsiteSearchController, WBSSiteMetadataManager, WBSTabDialogManager, WKProcessPool, ZoomPreferenceManager;
 
 __attribute__((visibility("hidden")))
 @interface AppController : NSObject <ManagedPlugInsControllerDelegate, DownloadAlertsManagerDelegate, DownloadsManagerDelegate, NSApplicationDelegate, NSMenuDelegate, NSUserInterfaceValidations, FormTextStatusWatcherDelegate>
@@ -88,21 +88,29 @@ __attribute__((visibility("hidden")))
     WBSTabDialogManager *_tabDialogManager;
     WBSSiteMetadataManager *_siteMetadataManager;
     FaviconProvider *_faviconProvider;
+    TemplateIconCache *_templateIconCache;
     DownloadsManager *_downloadsManager;
     DownloadAlertsManager *_downloadAlertsManager;
-    WKUserContentController *_contentPageGroupUserContentController;
     ManagedPlugInsControllerHistoryListener *_managedPlugInsHistoryListener;
     ManagedPlugInsController *_managedPlugInsController;
     WBSFormAutoFillCorrectionsHistoryObserver *_formAutoFillHistoryObserver;
     unsigned long long _mutableMediaState;
     NSTimer *_stalledTerminationDetectionTimer;
     WBSCyclerConnectionManager *_cyclerConnectionManager;
-    DomainWhitelistManager *_autoplayPolicyWhitelistManager;
     NSObject<OS_dispatch_queue> *_siteMetadataManagerAccessSynchronizationQueue;
     NSObject<OS_dispatch_queue> *_tabSnapshotMachineryAccessQueue;
     id <TabSnapshotVending> _tabSnapshotVendor;
     TabSnapshotSensitiveDataPurger *_tabSnapshotSensitiveDataPurger;
+    AuthenticationSessionController *_authenticationSessionController;
+    WBSPeriodicActivityScheduler *_sandboxFileExtensionMaintenanceScheduler;
     BOOL _allPagesPlayingMutableMediaAreMuted;
+    BrowserViewControllerNavigationManager *_navigationManager;
+    AutoplayPreferenceManager *_autoplayPreferenceManager;
+    AutoplayQuirkWhitelistManager *_autoplayQuirksWhitelistManager;
+    SandboxFileExtensionController *_sandboxFileExtensionController;
+    SandboxRuntimeExtensionController *_sandboxRuntimeExtensionController;
+    WBSOneTimeCodeMonitor *_oneTimeCodeMonitor;
+    ResourcePreferencesController *_resourcePreferencesController;
     NSString *_defaultUserAgent;
     LaunchTimePerformanceMonitor *_launchTimePerformanceMonitor;
     NSMenuItem *_bookmarksMenuItem;
@@ -111,9 +119,8 @@ __attribute__((visibility("hidden")))
     BrowserTabViewItem *_mostRecentlyMutedTab;
     ZoomPreferenceManager *_zoomPreferenceManager;
     ContentBlockersPreferenceManager *_contentBlockersPreferenceManager;
-    AutoplayPreferenceManager *_autoplayPreferenceManager;
-    AutoplayQuirkWhitelistManager *_autoplayQuirksWhitelistManager;
     WBSAutomaticReaderActivationManager *_automaticReaderActivationManager;
+    PopUpWindowPreferenceManager *_popUpWindowPreferenceManager;
     ExternalJavaScriptEvaluationPolicyController *_externalJavaScriptEvaluationPolicyController;
     id <EncryptionProvider> _sessionStateEncryptionProvider;
     NSMenu *_fileMenu;
@@ -142,9 +149,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <EncryptionProvider> sessionStateEncryptionProvider; // @synthesize sessionStateEncryptionProvider=_sessionStateEncryptionProvider;
 @property(readonly, nonatomic) ExternalJavaScriptEvaluationPolicyController *externalJavaScriptEvaluationPolicyController; // @synthesize externalJavaScriptEvaluationPolicyController=_externalJavaScriptEvaluationPolicyController;
 @property(readonly, nonatomic) SafariAutomationController *automationController; // @synthesize automationController=_automationController;
+@property(readonly, nonatomic) PopUpWindowPreferenceManager *popUpWindowPreferenceManager; // @synthesize popUpWindowPreferenceManager=_popUpWindowPreferenceManager;
 @property(readonly, nonatomic) WBSAutomaticReaderActivationManager *automaticReaderActivationManager; // @synthesize automaticReaderActivationManager=_automaticReaderActivationManager;
-@property(readonly, nonatomic) AutoplayQuirkWhitelistManager *autoplayQuirksWhitelistManager; // @synthesize autoplayQuirksWhitelistManager=_autoplayQuirksWhitelistManager;
-@property(readonly, nonatomic) AutoplayPreferenceManager *autoplayPreferenceManager; // @synthesize autoplayPreferenceManager=_autoplayPreferenceManager;
 @property(readonly, nonatomic) ContentBlockersPreferenceManager *contentBlockersPreferenceManager; // @synthesize contentBlockersPreferenceManager=_contentBlockersPreferenceManager;
 @property(readonly, nonatomic) ZoomPreferenceManager *zoomPreferenceManager; // @synthesize zoomPreferenceManager=_zoomPreferenceManager;
 @property(nonatomic) __weak BrowserTabViewItem *mostRecentlyMutedTab; // @synthesize mostRecentlyMutedTab=_mostRecentlyMutedTab;
@@ -162,6 +168,9 @@ __attribute__((visibility("hidden")))
 - (id)_tabSnapshotSensitiveDataPurger;
 @property(readonly, nonatomic) id <TabSnapshotVending> tabSnapshotVendor;
 - (void)_ensureTabSnapshotVendor;
+@property(readonly, nonatomic) AutoplayQuirkWhitelistManager *autoplayQuirksWhitelistManager; // @synthesize autoplayQuirksWhitelistManager=_autoplayQuirksWhitelistManager;
+@property(readonly, nonatomic) AutoplayPreferenceManager *autoplayPreferenceManager; // @synthesize autoplayPreferenceManager=_autoplayPreferenceManager;
+@property(readonly, nonatomic) TemplateIconCache *templateIconCache;
 @property(readonly, nonatomic) FaviconProvider *faviconProvider;
 @property(readonly, nonatomic) WBSSiteMetadataManager *siteMetadataManager;
 @property(readonly, nonatomic) WBSQuickWebsiteSearchController *quickWebsiteSearchController;
@@ -171,6 +180,7 @@ __attribute__((visibility("hidden")))
 - (void)managedPlugInsController:(id)arg1 resetPlugInLoadPolicies:(id)arg2;
 - (void)managedPlugInsController:(id)arg1 getInfoForInstalledPlugInsUsingBlock:(CDUnknownBlockType)arg2;
 - (void)managedPlugInsControllerWillDetermineFlashAvailability:(id)arg1;
+- (void)_setSupportedPlugIns;
 @property(readonly, nonatomic) ManagedPlugInsController *managedPlugInsController;
 - (void)downloadsManager:(id)arg1 willStartDownloadAtURL:(id)arg2 onPage:(const struct Page *)arg3;
 - (void)downloadAlertsManagerWillAbortShowingTerminationAlert:(id)arg1;
@@ -203,7 +213,7 @@ __attribute__((visibility("hidden")))
 - (long long)handlePageCloseRequestForBrowserViewController:(id)arg1;
 - (void)pageDidClose:(const struct Page *)arg1 withRelatedPages:(const struct Array *)arg2 webProcessID:(int)arg3;
 - (void)terminateAllPagesInUnresponsiveWebProcesses;
-- (void)processDidCrashForPage:(const struct Page *)arg1 reason:(unsigned int)arg2;
+- (void)processDidCrashForPage:(const struct Page *)arg1 reason:(long long)arg2;
 @property(readonly, nonatomic) BOOL reloadsPagesWhenWebProcessExits;
 - (void)pageDidBecomeResponsive:(const struct Page *)arg1;
 - (void)pageDidBecomeUnresponsive:(const struct Page *)arg1;
@@ -212,6 +222,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_shouldTerminatePageAndRelatedPagesIfUnresponsive:(const struct Page *)arg1;
 - (BOOL)_shouldTerminatePageIfUnresponsive:(const struct Page *)arg1;
 - (BOOL)isPageUnresponsive:(const struct Page *)arg1;
+@property(readonly, nonatomic) BrowserViewControllerNavigationManager *navigationManager; // @synthesize navigationManager=_navigationManager;
 - (void)_safeBrowsingControllerDatabasesDidUpdate:(id)arg1;
 - (void)updateSafeBrowsingEnabled;
 - (void)contentBlockerCrashReporterMessageChanged;
@@ -226,6 +237,7 @@ __attribute__((visibility("hidden")))
 - (void)updatePasswordAutoFillEnabled;
 - (void)updatePerformanceTestingBindingsEnabled;
 - (void)updateAddressBookAutoFillEnabled;
+@property(readonly, nonatomic, getter=isDevelopMenuEnabled) BOOL developMenuEnabled;
 @property(readonly, nonatomic, getter=isOverlayStatusBarEnabled) BOOL overlayStatusBarEnabled;
 - (void)toggleStatusBar:(id)arg1;
 - (BOOL)updateMuteOtherTabsMenuItemStateWithNumberOfOtherTabsPlayingMutableMedia:(unsigned long long)arg1 numberOfOtherUnmutedTabsPlayingMutableMedia:(unsigned long long)arg2 isCurrentTabPlayingMutableMedia:(BOOL)arg3;
@@ -265,6 +277,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_eventIsCloseTabOrWindowKeyEquivalent:(id)arg1 ignoreModifierKeys:(BOOL)arg2;
 - (BOOL)_eventIsOldSelectNextPreviousTabKeyEquivalent:(id)arg1 direction:(char *)arg2 ignoreModifierKeys:(BOOL)arg3;
 - (BOOL)_event:(id)arg1 isKeyEquivalentForMenuItem:(id)arg2 ignoreModifierKeys:(BOOL)arg3;
+@property(readonly, nonatomic) ResourcePreferencesController *resourcePreferencesController; // @synthesize resourcePreferencesController=_resourcePreferencesController;
 - (void)_waitForEmptyCache;
 - (void)_updateImportBrowserDataMenuItems;
 - (void)_updateTextEncodingMenu;
@@ -289,6 +302,7 @@ __attribute__((visibility("hidden")))
 - (void)_appExtensionBlacklistDidChange:(id)arg1;
 - (void)contentBlockerDidChange;
 - (void)_hideBookmarksMenu;
+- (void)_handleAuthenticationSessionsAvailableEvent:(id)arg1 withReplyEvent:(id)arg2;
 - (void)_handleURLEvent:(id)arg1 withReplyEvent:(id)arg2;
 - (void)_handleRemovingWebsiteDataEvent:(id)arg1 withReplyEvent:(id)arg2;
 - (void)_handleShowingReadingListItemEvent:(id)arg1 withReplyEvent:(id)arg2;
@@ -301,6 +315,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL usesPerTabWebProcess;
 @property(readonly, nonatomic) BOOL lastSessionHasRestorableContent;
 - (void)_openUntitledFileWhileLaunching:(BOOL)arg1;
+- (BOOL)_restoreWebInspectorWindowAllowingDeminiaturizing:(BOOL)arg1;
 - (BOOL)_shouldSuppressSessionRestoration;
 - (BOOL)_restoreSessionDuringLaunchIfNeeded;
 - (void)unsubscribeFromFeedsIfNecessary;
@@ -338,8 +353,9 @@ __attribute__((visibility("hidden")))
 - (id)parentalControlsAuthorizationWithFlags:(unsigned int)arg1;
 - (BOOL)authorizeParent;
 - (id)parentalControlAuthorization;
-- (void)_historyItemsWereRemoved;
+- (void)_historyItemsWereRemoved:(id)arg1;
 - (void)_historyWasCleared:(id)arg1;
+- (void)_clearHistorySandboxTokensPassingTest:(CDUnknownBlockType)arg1;
 - (void)_historyWasLoaded:(id)arg1;
 - (void)_collectWindowsAndTabsDataTimerFired:(id)arg1;
 - (void)sessionStateDidChange;
@@ -348,7 +364,6 @@ __attribute__((visibility("hidden")))
 - (void)clearHistoryAndWebsiteData:(id)arg1;
 - (void)toggleJavaScriptCanNotOpenWindows:(id)arg1;
 - (void)showPreferences:(id)arg1;
-- (void)_showPlugins:(id)arg1;
 - (void)showExtensionsGallery:(id)arg1;
 - (void)showDownloads:(id)arg1;
 - (void)showAcknowledgments:(id)arg1;
@@ -391,6 +406,9 @@ __attribute__((visibility("hidden")))
 - (void)application:(id)arg1 didFailToContinueUserActivityWithType:(id)arg2 error:(id)arg3;
 - (BOOL)application:(id)arg1 willContinueUserActivityWithType:(id)arg2;
 - (id)_browserViewControllerForPendingUserActivity;
+@property(readonly, nonatomic) WBSOneTimeCodeMonitor *oneTimeCodeMonitor; // @synthesize oneTimeCodeMonitor=_oneTimeCodeMonitor;
+@property(readonly, nonatomic) SandboxFileExtensionController *sandboxFileExtensionController; // @synthesize sandboxFileExtensionController=_sandboxFileExtensionController;
+@property(readonly, nonatomic) SandboxRuntimeExtensionController *sandboxRuntimeExtensionController; // @synthesize sandboxRuntimeExtensionController=_sandboxRuntimeExtensionController;
 - (void)_prepareBrowserContentViewControllerForNewUserActivity;
 - (void)_prepareBrowserContentViewControllerForNewUserActivityUsingPrivateBrowsingForNewWindow:(BOOL)arg1;
 - (void)_connectToCyclerIfNecessary;
@@ -401,16 +419,12 @@ __attribute__((visibility("hidden")))
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)dealloc;
 - (void)awakeFromNib;
+- (BOOL)_ensureCookieDirectoryIsCreated;
 - (void)setInjectedBundleInitializationMessagesData:(const struct Type *)arg1 forKey:(id)arg2;
 @property(readonly, nonatomic) struct Dictionary initializationMessages;
-- (id)contentWebViewConfigurationForBrowsingMode:(unsigned long long)arg1;
-@property(readonly, nonatomic) WKPreferences *contentPreferences;
 @property(readonly, nonatomic) WKProcessPool *processPool;
-@property(readonly, nonatomic) struct Preferences contentPageGroupPreferences;
 - (struct Dictionary)_userStyleSheetPreferences;
-- (void)_migrateWebKit1PreferencesIfNecessary;
 - (void)_initializeProcessContext;
-- (id)contentPageGroupUserContentController;
 @property(readonly, nonatomic) const struct String *injectedBundlePath;
 @property(readonly, nonatomic) NSString *bundleVersionString;
 - (id)init;
@@ -445,8 +459,6 @@ __attribute__((visibility("hidden")))
 - (void)toggleTiledFullScreenScalingMode:(id)arg1;
 - (BOOL)validate_toggleDiskCacheSpeculativeValidationDisabled:(id)arg1;
 - (void)toggleDiskCacheSpeculativeValidationDisabled:(id)arg1;
-- (BOOL)validate_toggleNetworkProcessDiskCacheDisabled:(id)arg1;
-- (void)toggleNetworkProcessDiskCacheDisabled:(id)arg1;
 - (BOOL)validate_toggleDOMTimersThrottlingDisabled:(id)arg1;
 - (void)toggleDOMTimersThrottlingDisabled:(id)arg1;
 - (BOOL)validate_toggleBackForwardCacheDisabled:(id)arg1;
@@ -485,10 +497,6 @@ __attribute__((visibility("hidden")))
 - (void)toggleMediaSourceEnabled:(id)arg1;
 - (BOOL)validate_toggleLegacyEncryptedMediaAPIEnabled:(id)arg1;
 - (void)toggleLegacyEncryptedMediaAPIEnabled:(id)arg1;
-- (BOOL)validate_toggleQTKitDisabled:(id)arg1;
-- (void)toggleQTKitDisabled:(id)arg1;
-- (BOOL)validate_toggleAVFoundationNSURLSessionEnabled:(id)arg1;
-- (void)toggleAVFoundationNSURLSessionEnabled:(id)arg1;
 - (BOOL)validate_toggleAVFoundationDisabled:(id)arg1;
 - (void)toggleAVFoundationDisabled:(id)arg1;
 - (BOOL)validate_toggleSimpleLineLayoutDebugBorders:(id)arg1;
@@ -515,6 +523,10 @@ __attribute__((visibility("hidden")))
 - (void)togglePasswordGenerationBlacklist:(id)arg1;
 - (void)toggleCSSAnimationTriggers:(id)arg1;
 - (BOOL)validate_toggleCSSAnimationTriggers:(id)arg1;
+- (BOOL)validate_toggleKeepAndReuseSwappedProcesses:(id)arg1;
+- (void)toggleKeepAndReuseSwappedProcesses:(id)arg1;
+- (BOOL)validate_toggleProcessSwapsOnNavigation:(id)arg1;
+- (void)toggleProcessSwapsOnNavigation:(id)arg1;
 - (BOOL)validate_toggleShowWebProcessIDsInPageTitles:(id)arg1;
 - (void)toggleShowWebProcessIDsInPageTitles:(id)arg1;
 - (BOOL)validate_toggleJavaScriptJITDisabled:(id)arg1;

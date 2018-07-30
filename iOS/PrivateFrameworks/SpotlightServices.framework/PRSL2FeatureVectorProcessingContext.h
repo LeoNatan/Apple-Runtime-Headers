@@ -8,12 +8,12 @@
 
 @interface PRSL2FeatureVectorProcessingContext : NSObject
 {
-    unsigned long long *_expandedFeatureExecutionOrder;
+    unsigned short *_expandedFeatureExecutionOrder;
     unsigned long long _expandedFeatureCount;
 }
 
 @property(nonatomic) unsigned long long expandedFeatureCount; // @synthesize expandedFeatureCount=_expandedFeatureCount;
-@property(nonatomic) unsigned long long *expandedFeatureExecutionOrder; // @synthesize expandedFeatureExecutionOrder=_expandedFeatureExecutionOrder;
+@property(nonatomic) unsigned short *expandedFeatureExecutionOrder; // @synthesize expandedFeatureExecutionOrder=_expandedFeatureExecutionOrder;
 - (void)dealloc;
 - (id)initWithFeatureOrder:(id)arg1 withInflation:(unsigned long long)arg2 withInflatedIndexToSize:(id)arg3;
 

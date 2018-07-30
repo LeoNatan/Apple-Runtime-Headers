@@ -8,7 +8,7 @@
 
 #import "RCCaptureSessionObserver.h"
 
-@class NSString, RCAudioSessionRoutingController, RCCaptureSession, _RCCaptureInputDeviceSession;
+@class NSString, RCAudioSessionRoutingController, _RCCaptureInputDeviceSession;
 
 @interface RCCaptureInputDevice : NSObject <RCCaptureSessionObserver>
 {
@@ -20,6 +20,7 @@
     _RCCaptureInputDeviceSession *_activeInputSession;
 }
 
++ (id)activeCaptureSession;
 + (id)sharedCaptureDevice;
 @property(retain, nonatomic) _RCCaptureInputDeviceSession *activeInputSession; // @synthesize activeInputSession=_activeInputSession;
 @property(retain, nonatomic) _RCCaptureInputDeviceSession *preparingInputSession; // @synthesize preparingInputSession=_preparingInputSession;
@@ -36,7 +37,7 @@
 - (void)_handleDidEndCaptureSession:(id)arg1 success:(_Bool)arg2;
 - (void)_updateSelectedRouteAndPostNotification:(_Bool)arg1;
 - (void)_updateInputAvailabilityAndPostNotification:(_Bool)arg1;
-- (void)captureSession:(id)arg1 destinationFragmentDurationDidChangeToDuration:(double)arg2;
+- (void)captureSession:(id)arg1 destinationFragmentDurationDidChangeToDuration:(double)arg2 captureTime:(double)arg3 usingDisplayLinkSmoothing:(_Bool)arg4;
 - (void)captureSession:(id)arg1 rateDidChangeToRate:(float)arg2;
 - (void)captureSession:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (void)_pickedRouteDidChangeNotification:(id)arg1;
@@ -45,10 +46,10 @@
 - (void)_captureDeviceWasConnectedNotification:(id)arg1;
 @property(readonly, nonatomic) _Bool canExitApplication;
 @property(readonly, nonatomic, getter=isPhoneCallRouteActive) _Bool phoneCallRouteActive;
-@property(readonly, nonatomic) RCCaptureSession *activeCaptureSession; // @dynamic activeCaptureSession;
 - (void)fetchActiveInputRouteWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)finishRecordingWithSession:(id)arg1 sessionFinishedBlock:(CDUnknownBlockType)arg2;
 - (void)beginRecordingWithCaptureWaveformDataSource:(id)arg1 useStartSoundEffect:(_Bool)arg2 sessionPreparedBlock:(CDUnknownBlockType)arg3 sessionFinishedBlock:(CDUnknownBlockType)arg4;
+- (void)dealloc;
 - (id)_init;
 - (id)init;
 

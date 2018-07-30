@@ -9,7 +9,7 @@
 
 @class NSImage, NSNumber, NSString;
 
-@protocol WBSParsecSearchSimpleResult <WBSParsecSearchMapsResultFeedbackSenderClient, WBSParsecSearchResultPresentedInCard>
+@protocol WBSParsecSearchSimpleResult <WBSParsecSearchResultPresentedInCard, WBSParsecSearchMapsResultFeedbackSenderClient>
 @property(readonly, nonatomic) unsigned long long descriptionAlignment;
 @property(readonly, nonatomic) BOOL hasSingleLineDescriptionAndTitle;
 @property(readonly, nonatomic) NSString *footnote;

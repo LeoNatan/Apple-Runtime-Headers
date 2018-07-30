@@ -22,6 +22,7 @@
 - (const CDStruct_5af0f983 *)bitCodeHash;
 - (void)reflectionWithOptions:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)reflectionWithOptions:(unsigned long long)arg1;
+- (id)bitcodeData;
 - (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2;
 - (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1;
 - (id)newIndirectArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2;
@@ -31,6 +32,7 @@
 @property(readonly) NSDictionary *functionConstantsDictionary;
 @property(readonly) unsigned long long renderTargetArrayIndexType;
 @property(copy) NSString *label;
+@property(readonly, copy) NSString *unpackedFilePath;
 @property(readonly) long long lineNumber;
 @property(readonly, copy) NSString *filePath;
 @property(readonly) NSString *name;

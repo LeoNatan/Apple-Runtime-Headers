@@ -17,10 +17,8 @@ __attribute__((visibility("hidden")))
 - (id)greenColor;
 - (id)blueColor;
 - (id)primaryImageColor;
-- (id)ultraLightColor;
 - (id)lightTextColor;
 - (id)primaryTextColor;
-- (id)separatorColor;
 - (id)compositingFilter;
 
 @end

@@ -7,43 +7,45 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPaymentMethodValue.h"
 
-@class NSString, PBUnknownFields, _INPBImageValue, _INPBValueMetadata;
+@class NSString, _INPBImageValue, _INPBValueMetadata;
 
-@interface _INPBPaymentMethodValue : PBCodable <NSCopying>
+@interface _INPBPaymentMethodValue : PBCodable <_INPBPaymentMethodValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_f953fb60 _has;
+    int _type;
     _INPBImageValue *_icon;
     NSString *_identificationHint;
     NSString *_name;
-    int _type;
     _INPBValueMetadata *_valueMetadata;
-    CDStruct_f953fb60 _has;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *identificationHint; // @synthesize identificationHint=_identificationHint;
-@property(retain, nonatomic) _INPBImageValue *icon; // @synthesize icon=_icon;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(nonatomic) int type; // @synthesize type=_type;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy, nonatomic) NSString *identificationHint; // @synthesize identificationHint=_identificationHint;
+@property(retain, nonatomic) _INPBImageValue *icon; // @synthesize icon=_icon;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasIdentificationHint;
-@property(readonly, nonatomic) _Bool hasIcon;
-@property(readonly, nonatomic) _Bool hasName;
+@property(readonly, nonatomic) _Bool hasValueMetadata;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
-@property(readonly, nonatomic) _Bool hasValueMetadata;
+@property(readonly, nonatomic) _Bool hasName;
+@property(readonly, nonatomic) _Bool hasIdentificationHint;
+@property(readonly, nonatomic) _Bool hasIcon;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

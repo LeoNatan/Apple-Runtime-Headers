@@ -6,6 +6,7 @@
 
 #import <AppKit/NSCalibratedWhiteColor.h>
 
+__attribute__((visibility("hidden")))
 @interface NSCachedWhiteColor : NSCalibratedWhiteColor
 {
 }

@@ -6,21 +6,21 @@
 
 #import "NSRemoteViewController.h"
 
-#import "PHEditingHostViewProtocol.h"
+#import "PHExtensionRemoteViewControllerProtocol.h"
 
-@class NSExtension, NSString, NSUUID, PHEditingHostViewPreferredSizes, PUExtensionHostContext;
+@class NSExtension, NSString, NSUUID, PHExtensionHostViewPreferredSizes, PUExtensionHostContext;
 
-@interface PHExtensionRemoteViewController : NSRemoteViewController <PHEditingHostViewProtocol>
+@interface PHExtensionRemoteViewController : NSRemoteViewController <PHExtensionRemoteViewControllerProtocol>
 {
     id <PHExtensionRemoteViewControllerDelegate> _delegate;
     NSExtension *_extension;
     NSUUID *_sessionUUID;
-    PHEditingHostViewPreferredSizes *_preferredSizes;
+    PHExtensionHostViewPreferredSizes *_preferredSizes;
 }
 
 + (id)serviceViewControllerClassName;
-+ (void)requestViewControllerFromExtension:(id)arg1 connectionHandler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) PHEditingHostViewPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
++ (void)requestViewControllerFromExtension:(id)arg1 sizeHint:(struct CGSize)arg2 connectionHandler:(CDUnknownBlockType)arg3;
+@property(retain, nonatomic) PHExtensionHostViewPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
 @property(copy, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <PHExtensionRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -34,9 +34,10 @@
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)serviceViewControllerInterface;
 - (void)disconnect;
+- (id)vendorProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <PUExtensionVendor> vendorProxy;
 @property(readonly, nonatomic) PUExtensionHostContext *hostContext;
-- (void)connectToExtension:(id)arg1 withSessionID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)connectToExtension:(id)arg1 withSessionID:(id)arg2 sizeHint:(struct CGSize)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

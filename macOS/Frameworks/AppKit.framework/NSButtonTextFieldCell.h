@@ -11,8 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)_shouldDrawHighlightRect;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
-- (BOOL)_updateStyledTextOptions:(id)arg1 withContentAppearanceInView:(id)arg2;
+- (id)_effectiveStyleEffectConfigurationInView:(id)arg1;
 
 @end
 

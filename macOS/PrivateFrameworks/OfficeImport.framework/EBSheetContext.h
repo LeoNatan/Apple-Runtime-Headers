@@ -10,15 +10,14 @@
 
 @class EBReaderSheetState, NSString;
 
-__attribute__((visibility("hidden")))
 @interface EBSheetContext : NSObject <OCDDelayedNodeContext>
 {
     EBReaderSheetState *mSheetState;
     unsigned int mSheetIndex;
 }
 
+- (void).cxx_destruct;
 - (_Bool)loadDelayedNode:(id)arg1;
-- (void)dealloc;
 - (id)initWithSheetIndex:(unsigned int)arg1 state:(id)arg2;
 
 // Remaining properties

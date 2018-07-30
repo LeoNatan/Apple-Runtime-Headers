@@ -6,23 +6,31 @@
 
 #import "NSObject.h"
 
-@class UNSKeyedObservable;
+@class NSObject<OS_dispatch_queue>, UNSKeyedDataStoreRepository, UNSKeyedObservable;
 
 @interface UNSNotificationCategoryRepository : NSObject
 {
+    UNSKeyedDataStoreRepository *_repository;
     UNSKeyedObservable *_observable;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
-- (void)performMigrationForBundleIdentifier:(id)arg1;
+- (void)_queue_performMigrationForBundleIdentifier:(id)arg1;
+- (void)_queue_performMigration;
+- (void)_queue_notificationSourcesDidUninstall:(id)arg1;
+- (void)_queue_setCategories:(id)arg1 forBundleIdentifier:(id)arg2;
+- (id)_queue_categoriesForBundleIdentifier:(id)arg1;
 - (void)performMigration;
-- (void)applicationsDidUninstall:(id)arg1;
+- (void)notificationSourcesDidUninstall:(id)arg1;
 - (void)setCategories:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)categoriesForBundleIdentifier:(id)arg1;
+- (id)allBundleIdentifiers;
 - (void)removeObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)initWithObservable:(id)arg1;
-- (id)init;
+- (id)initWithDataStoreRepository:(id)arg1 observable:(id)arg2;
+- (id)initWithDirectory:(id)arg1;
+- (long long)_maxObjectsPerKey;
 
 @end
 

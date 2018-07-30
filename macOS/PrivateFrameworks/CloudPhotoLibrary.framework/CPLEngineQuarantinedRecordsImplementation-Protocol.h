@@ -6,13 +6,13 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class NSString;
+@class CPLScopedIdentifier, NSString;
 
 @protocol CPLEngineQuarantinedRecordsImplementation <CPLEngineStorageImplementation>
-- (BOOL)resetWithError:(id *)arg1;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (unsigned long long)countOfQuarantinedRecords;
-- (BOOL)isRecordWithIdentifierQuarantined:(NSString *)arg1;
-- (BOOL)removeQuarantinedRecordsWithIdentifier:(NSString *)arg1 removed:(char *)arg2 error:(id *)arg3;
-- (BOOL)addQuarantinedRecordsWithIdentifier:(NSString *)arg1 reason:(NSString *)arg2 error:(id *)arg3;
+- (BOOL)isRecordWithScopedIdentifierQuarantined:(CPLScopedIdentifier *)arg1;
+- (BOOL)removeQuarantinedRecordsWithScopedIdentifier:(CPLScopedIdentifier *)arg1 removed:(char *)arg2 error:(id *)arg3;
+- (BOOL)addQuarantinedRecordsWithScopedIdentifier:(CPLScopedIdentifier *)arg1 reason:(NSString *)arg2 error:(id *)arg3;
 @end
 

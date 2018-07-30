@@ -31,6 +31,7 @@
 - (int)playerPlayingItemGlobalIndex:(int)arg1 chain:(id)arg2;
 - (id)playerPlayingItemIndexPath:(id)arg1 chain:(id)arg2;
 - (id)playerModelObject:(id)arg1 propertySet:(id)arg2 atIndexPath:(id)arg3 chain:(id)arg4;
+- (_Bool)playerItemIsPlaceholder:(_Bool)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (int)playerItemEditingStyleFlags:(int)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (CDStruct_fce57115)playerItemDuration:(CDStruct_fce57115)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (unsigned int)playerNumberOfItems:(unsigned int)arg1 inSection:(unsigned int)arg2 chain:(id)arg3;

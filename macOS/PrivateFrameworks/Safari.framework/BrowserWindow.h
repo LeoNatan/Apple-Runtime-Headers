@@ -63,7 +63,6 @@ __attribute__((visibility("hidden")))
 - (void)keyDown:(id)arg1;
 - (void)_startedMoving:(id)arg1;
 - (void)setUpBrowserWindow;
-- (BOOL)_hasActiveControls;
 - (void)zoom:(id)arg1;
 
 @end

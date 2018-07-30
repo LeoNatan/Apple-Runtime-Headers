@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface OBPrivacySplashView : NSScrollView
 {
     BOOL _isCombined;
+    BOOL _allowsSafari;
     NSStackView *_stack;
     NSImage *_icon;
     NSString *_mainTitle;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain) NSMutableArray *buttons; // @synthesize buttons=_buttons;
 @property(retain) NSStackView *contentStack; // @synthesize contentStack=_contentStack;
+@property BOOL allowsSafari; // @synthesize allowsSafari=_allowsSafari;
 @property double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(retain) NSString *mainTitle; // @synthesize mainTitle=_mainTitle;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
@@ -31,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)flipImage:(id)arg1;
 - (void)setViewDefaults;
 - (void)updateStackConstraints;
+- (id)attributedContentStringWithString:(id)arg1 centered:(BOOL)arg2;
 - (id)attributedContentStringWithString:(id)arg1;
 - (id)attributedTitleStringWithString:(id)arg1;
 - (id)attributedMainTitleStringWithString:(id)arg1;
@@ -41,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)addButtonWithTitle:(id)arg1 action:(SEL)arg2 target:(id)arg3;
 - (void)showPrivacyGateway:(id)arg1;
 - (void)addPrivacyGatewayLink:(BOOL)arg1;
+- (void)addLabel:(id)arg1 toStackView:(id)arg2 centered:(BOOL)arg3;
 - (void)addLabel:(id)arg1 toStackView:(id)arg2;
 - (void)addLabel:(id)arg1;
 - (void)addIcon:(id)arg1;

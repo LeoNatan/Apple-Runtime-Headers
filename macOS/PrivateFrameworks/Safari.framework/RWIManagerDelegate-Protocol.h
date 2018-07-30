@@ -6,14 +6,12 @@
 
 #import "NSObject.h"
 
-@class RWIDevice, RWIDriver, RWIManager, RWITarget;
+@class RWIDriver, RWIManager, RWITarget;
 
 @protocol RWIManagerDelegate <NSObject>
 
 @optional
 - (BOOL)requestDriver:(RWIDriver *)arg1 shouldBeActive:(BOOL)arg2;
-- (void)manager:(RWIManager *)arg1 didRemoveDevice:(RWIDevice *)arg2;
-- (void)manager:(RWIManager *)arg1 didAddDevice:(RWIDevice *)arg2;
 - (void)manager:(RWIManager *)arg1 didRemoveTarget:(RWITarget *)arg2;
 - (void)manager:(RWIManager *)arg1 didAddTarget:(RWITarget *)arg2;
 @end

@@ -5,10 +5,11 @@
 //
 
 #import "NSObject.h"
+#import "NSSecureCoding.h"
 
 @class NSData, NSString;
 
-@protocol SBKKeyValuePayloadPair <NSObject>
+@protocol SBKKeyValuePayloadPair <NSObject, NSSecureCoding>
 + (id)pairWithKVSKey:(NSString *)arg1 kvsPayload:(NSData *)arg2;
 - (id)kvsValueDescription;
 - (double)timestamp;

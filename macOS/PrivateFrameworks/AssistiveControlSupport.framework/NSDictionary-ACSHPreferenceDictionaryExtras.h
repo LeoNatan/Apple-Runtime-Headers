@@ -7,6 +7,7 @@
 #import "NSDictionary.h"
 
 @interface NSDictionary (ACSHPreferenceDictionaryExtras)
-- (id)colorForKey:(id)arg1;
++ (id)acsh_cachedColorForString:(id)arg1;
+- (id)acsh_colorForKey:(id)arg1;
 @end
 

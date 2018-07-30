@@ -16,9 +16,9 @@
 - (id)init;
 
 // Remaining properties
-@property(readonly, retain, nonatomic) NSString *videoTVOutReservedForIPodOut; // @dynamic videoTVOutReservedForIPodOut;
-@property(readonly, retain, nonatomic) NSString *videoTVOutReservedForRemoteUI; // @dynamic videoTVOutReservedForRemoteUI;
-@property(readonly, retain, nonatomic) NSString *videoTVOutSignal; // @dynamic videoTVOutSignal;
+@property(readonly, nonatomic) NSString *videoTVOutReservedForIPodOut; // @dynamic videoTVOutReservedForIPodOut;
+@property(readonly, nonatomic) NSString *videoTVOutReservedForRemoteUI; // @dynamic videoTVOutReservedForRemoteUI;
+@property(readonly, nonatomic) NSString *videoTVOutSignal; // @dynamic videoTVOutSignal;
 @property(retain, nonatomic) NSString *videoTVOutSystem; // @dynamic videoTVOutSystem;
 
 @end

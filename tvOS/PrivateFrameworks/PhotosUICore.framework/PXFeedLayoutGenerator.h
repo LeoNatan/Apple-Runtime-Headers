@@ -21,6 +21,10 @@
     CDUnknownBlockType _tileMinimumSizeBlock;
     CDUnknownBlockType _tileHasCaptionBlock;
     CDUnknownBlockType _tileCaptionSizeBlock;
+    CDUnknownBlockType _tileHasLikesBlock;
+    CDUnknownBlockType _tileLikesSizeBlock;
+    CDUnknownBlockType _tileCommentCountBlock;
+    CDUnknownBlockType _tileCommentSizeBlock;
     CDUnknownBlockType _tileBatchIDBlock;
     long long _numberOfMagneticGuidelines;
     double _roundingScale;
@@ -42,6 +46,10 @@
 @property(nonatomic) double roundingScale; // @synthesize roundingScale=_roundingScale;
 @property(nonatomic) long long numberOfMagneticGuidelines; // @synthesize numberOfMagneticGuidelines=_numberOfMagneticGuidelines;
 @property(copy, nonatomic) CDUnknownBlockType tileBatchIDBlock; // @synthesize tileBatchIDBlock=_tileBatchIDBlock;
+@property(copy, nonatomic) CDUnknownBlockType tileCommentSizeBlock; // @synthesize tileCommentSizeBlock=_tileCommentSizeBlock;
+@property(copy, nonatomic) CDUnknownBlockType tileCommentCountBlock; // @synthesize tileCommentCountBlock=_tileCommentCountBlock;
+@property(copy, nonatomic) CDUnknownBlockType tileLikesSizeBlock; // @synthesize tileLikesSizeBlock=_tileLikesSizeBlock;
+@property(copy, nonatomic) CDUnknownBlockType tileHasLikesBlock; // @synthesize tileHasLikesBlock=_tileHasLikesBlock;
 @property(copy, nonatomic) CDUnknownBlockType tileCaptionSizeBlock; // @synthesize tileCaptionSizeBlock=_tileCaptionSizeBlock;
 @property(copy, nonatomic) CDUnknownBlockType tileHasCaptionBlock; // @synthesize tileHasCaptionBlock=_tileHasCaptionBlock;
 @property(nonatomic) struct CGSize noCaptionSpacing; // @synthesize noCaptionSpacing=_noCaptionSpacing;
@@ -52,7 +60,11 @@
 @property(nonatomic) long long tileCount; // @synthesize tileCount=_tileCount;
 - (void).cxx_destruct;
 - (double)valueByRounding:(double)arg1 usingMagneticGuidelines:(_Bool)arg2;
+- (void)parsedFrame:(struct CGRect)arg1 type:(long long)arg2 forCommentAtIndex:(long long)arg3;
+- (void)parsedFrame:(struct CGRect)arg1 type:(long long)arg2 forLikesAtIndex:(long long)arg3;
 - (void)parsedFrame:(struct CGRect)arg1 type:(long long)arg2 forTileAtIndex:(long long)arg3;
+- (struct CGSize)commentSizeForTileAtIndex:(long long)arg1 commentIndex:(long long)arg2 proposedSize:(struct CGSize)arg3;
+- (struct CGSize)likesSizeForTileAtIndex:(long long)arg1 proposedSize:(struct CGSize)arg2;
 - (struct CGSize)captionSizeForTileAtIndex:(long long)arg1 proposedSize:(struct CGSize)arg2;
 - (_Bool)scanTile:(struct PXTileInfo *)arg1 ofType:(long long)arg2;
 - (_Bool)scanTile:(struct PXTileInfo *)arg1 type:(long long *)arg2;

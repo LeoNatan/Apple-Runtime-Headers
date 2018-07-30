@@ -10,7 +10,7 @@
 {
 }
 
-- (void)attestIdentityWithData:(id)arg1 type:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)attestIdentityForSigningRequest:(id)arg1 type:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)identityForPasscodeActivationUnlockWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

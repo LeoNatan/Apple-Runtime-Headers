@@ -13,9 +13,11 @@
     NSObject<OS_dispatch_queue> *_coreSpotlightDonationSerialQueue;
 }
 
++ (id)coreSpotlightPageDonationIdentifier;
 + (id)_coreSpotlightItemIdentifierForURLString:(id)arg1;
 + (id)_bookmarkItemIdentifierForURLString:(id)arg1;
 + (id)_historyItemIdentifierForURLString:(id)arg1;
++ (id)historyItemIdentifierForURL:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_sanitizeAttributeSet:(id)arg1;

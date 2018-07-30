@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface PXTransition : NSObject
 {
 }
@@ -16,7 +15,9 @@ __attribute__((visibility("hidden")))
 + (BOOL)isPowerPoint2013TransitionType:(int)arg1;
 + (BOOL)isPowerPoint2010TransitionType:(int)arg1;
 + (void)readTransitionFromNode:(struct _xmlNode *)arg1 tgtTransition:(id)arg2 drawingState:(id)arg3;
-+ (void)initialize;
++ (id)reverseDirectionAttributeMap;
++ (id)directionAttributeMap;
++ (id)transitionNodeMap;
 + (void)writeTransitionAttributes:(id)arg1 attributePrefix:(id)arg2 file:(id)arg3;
 + (BOOL)mapDirection:(id)arg1 outDir:(int *)arg2;
 + (void)writeReverseInOut:(int)arg1 file:(id)arg2;

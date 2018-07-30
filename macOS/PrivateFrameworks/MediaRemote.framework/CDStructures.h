@@ -14,6 +14,10 @@ struct NSMutableDictionary {
     Class _field1;
 };
 
+struct NSString {
+    Class _field1;
+};
+
 struct _MRHIDButtonEvent {
     unsigned int _field1;
     unsigned int _field2;
@@ -66,18 +70,6 @@ typedef struct {
     unsigned long long count;
     unsigned long long size;
 } CDStruct_95bda58d;
-
-typedef struct {
-    void *context;
-    CDUnknownFunctionPointerType showSetupCode_f;
-    CDUnknownFunctionPointerType hideSetupCode_f;
-    CDUnknownFunctionPointerType promptForSetupCode_f;
-    CDUnknownFunctionPointerType copyIdentity_f;
-    CDUnknownFunctionPointerType findPeer_f;
-    CDUnknownFunctionPointerType savePeer_f;
-    CDUnknownFunctionPointerType resumeRequest_f;
-    CDUnknownFunctionPointerType resumeResponse_f;
-} CDStruct_1af33fde;
 
 typedef struct {
     double timestamp;

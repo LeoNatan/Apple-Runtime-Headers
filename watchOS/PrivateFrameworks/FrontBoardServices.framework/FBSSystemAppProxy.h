@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FrontBoardServices/FBSSystemServiceFacilityClient.h>
+#import <FrontBoardServices/FBSServiceFacilityClient.h>
 
 @class FBSProcessHandle;
 
-@interface FBSSystemAppProxy : FBSSystemServiceFacilityClient
+@interface FBSSystemAppProxy : FBSServiceFacilityClient
 {
     FBSProcessHandle *_processHandle;
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)fireCompletion:(CDUnknownBlockType)arg1 openAppErrorCode:(int)arg2;
-- (void)fireCompletion:(CDUnknownBlockType)arg1 pidResult:(int)arg2 error:(id)arg3;
-- (void)fireCompletion:(CDUnknownBlockType)arg1 bundleIDResult:(id)arg2 error:(id)arg3;
 - (void)fireCompletion:(CDUnknownBlockType)arg1 error:(id)arg2;
 - (id)clientCallbackQueue;
 - (void)_sendMessageType:(int)arg1 withMessage:(CDUnknownBlockType)arg2 withReplyHandler:(CDUnknownBlockType)arg3 waitForReply:(_Bool)arg4;
@@ -29,19 +28,15 @@
 - (void)sendActions:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (id)processHandleForApplication:(id)arg1;
 - (void)openApplication:(id)arg1 options:(id)arg2 clientHandle:(id)arg3 withResult:(CDUnknownBlockType)arg4;
-- (void)canActivateApplication:(id)arg1 withResult:(CDUnknownBlockType)arg2;
-- (void)isPasscodeLockedOrBlockedWithCompletion:(CDUnknownBlockType)arg1;
-- (void)systemApplicationBundleIdentifierWithResult:(CDUnknownBlockType)arg1;
-- (void)setNextWakeInterval:(double)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)applicationBundleID:(id)arg1 requestBrightness:(float)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)canActivateApplication:(id)arg1 reason:(out int *)arg2;
+- (_Bool)isPasscodeLockedOrBlocked;
+- (id)systemApplicationBundleIdentifier;
 - (void)suspendCurrentApplication;
 - (void)deleteAllSnapshotsForApplication:(id)arg1;
 - (void)dataResetWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)badgeValueForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)badgeValueForBundleID:(id)arg1;
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;
-- (void)activeInterfaceOrientationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkInUIApplication;
-- (void)dealloc;
 - (id)init;
 
 @end

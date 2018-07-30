@@ -4,25 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <CoreData/NSManagedObject.h>
 
-@class NSCKExportMetadata, NSNumber, NSSet, NSUUID;
+@class NSCKExportMetadata, NSNumber, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface NSCKExportOperation : NSObject
+@interface NSCKExportOperation : NSManagedObject
 {
-    NSUUID *_operationUUID;
-    NSNumber *_sortIndex;
-    NSNumber *_status;
-    NSCKExportMetadata *_exportMetadata;
-    NSSet *_objects;
 }
 
-@property(readonly, nonatomic) NSSet *objects; // @synthesize objects=_objects;
-@property(readonly, nonatomic) NSCKExportMetadata *exportMetadata; // @synthesize exportMetadata=_exportMetadata;
-@property(readonly, nonatomic) NSNumber *status; // @synthesize status=_status;
-@property(readonly, nonatomic) NSNumber *sortIndex; // @synthesize sortIndex=_sortIndex;
-@property(readonly, nonatomic) NSUUID *operationUUID; // @synthesize operationUUID=_operationUUID;
+@property(nonatomic) unsigned long long status;
+
+// Remaining properties
+@property(retain, nonatomic) NSCKExportMetadata *exportMetadata; // @dynamic exportMetadata;
+@property(retain, nonatomic) NSString *identifier; // @dynamic identifier;
+@property(retain, nonatomic) NSSet *objects; // @dynamic objects;
+@property(retain, nonatomic) NSNumber *statusNum; // @dynamic statusNum;
 
 @end
 

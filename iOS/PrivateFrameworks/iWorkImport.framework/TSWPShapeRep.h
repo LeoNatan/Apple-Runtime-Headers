@@ -6,14 +6,14 @@
 
 #import <iWorkImport/TSDShapeRep.h>
 
-#import "TSDContainerRep.h"
 #import "TSDMagicMoveMatching.h"
+#import "TSWPContainerTextEditingRep.h"
 #import "TSWPShapeLayoutDelegate.h"
 
 @class CALayer, NSArray, NSObject<TSDContainerInfo>, NSString, TSWPRep, TSWPStorage;
 
 __attribute__((visibility("hidden")))
-@interface TSWPShapeRep : TSDShapeRep <TSDMagicMoveMatching, TSDContainerRep, TSWPShapeLayoutDelegate>
+@interface TSWPShapeRep : TSDShapeRep <TSDMagicMoveMatching, TSWPContainerTextEditingRep, TSWPShapeLayoutDelegate>
 {
     _Bool _editingContainedRep;
     CALayer *_overflowGlyphLayer;

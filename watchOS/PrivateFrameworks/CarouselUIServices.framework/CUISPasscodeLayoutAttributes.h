@@ -10,7 +10,21 @@
 {
 }
 
++ (float)dotFontSize:(_Bool)arg1 forLength:(unsigned int)arg2;
++ (float)dotSpacing:(_Bool)arg1 forLength:(unsigned int)arg2;
++ (float)dotSize:(_Bool)arg1 forLength:(unsigned int)arg2;
++ (float)cancelButtonBackgroundCornerRadius;
++ (float)keypadButtonBackgroundCornerRadius;
++ (id)cancelButtonFont;
++ (struct UIEdgeInsets)okButtonTitleEdgeInsets;
++ (id)okButtonFontSquished;
++ (id)okButtonFont;
++ (id)numberButtonFontSquished;
++ (id)numberButtonFont;
++ (id)titleFont;
++ (float)cancelButtonBottomOffset;
 + (float)titleLabelHeight;
++ (float)cancelButtonWidth;
 + (float)cancelButtonHeight;
 + (float)keyPadButtonHeightSquished;
 + (float)keyPadButtonHeight;

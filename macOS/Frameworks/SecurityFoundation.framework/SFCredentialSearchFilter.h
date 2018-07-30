@@ -9,18 +9,20 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSArray<SFServiceIdentifier>, NSDate;
+@class NSArray, NSArray<_SFServiceIdentifier>, NSDate, NSPredicate;
 
 __attribute__((visibility("hidden")))
 @interface SFCredentialSearchFilter : NSObject <NSCopying, NSSecureCoding>
 {
     id _credentialSearchFilterInternal;
+    NSPredicate *_attributesPredicate;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSPredicate *attributesPredicate; // @synthesize attributesPredicate=_attributesPredicate;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *usernames;
-@property(retain, nonatomic) NSArray<SFServiceIdentifier> *serviceIdentifiers;
+@property(retain, nonatomic) NSArray<_SFServiceIdentifier> *serviceIdentifiers;
 @property(retain, nonatomic) NSDate *maximumModificationDate;
 @property(retain, nonatomic) NSDate *minimumModificationDate;
 @property(retain, nonatomic) NSDate *maximumCreationDate;

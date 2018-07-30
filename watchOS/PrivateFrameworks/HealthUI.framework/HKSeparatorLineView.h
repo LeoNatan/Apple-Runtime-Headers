@@ -28,6 +28,7 @@
 - (_Bool)isOpaque;
 - (_Bool)_isVertical;
 - (struct CGSize)intrinsicContentSize;
+- (id)init;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

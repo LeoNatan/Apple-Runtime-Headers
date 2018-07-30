@@ -15,7 +15,6 @@
     _INPBAddTasksIntentResponse *_responseMessagePBRepresentation;
 }
 
-+ (long long)_intentHandlingStatusFromCode:(long long)arg1;
 + (_Bool)_appLaunchRequestedFromCode:(long long)arg1;
 + (int)_errorCodeFromCode:(long long)arg1;
 + (int)_typeFromCode:(long long)arg1;
@@ -28,10 +27,12 @@
 @property(copy, nonatomic) NSArray *addedTasks;
 @property(copy, nonatomic) INTaskList *modifiedTaskList;
 - (id)_responseMessagePBRepresentation;
+- (long long)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) long long code;
 - (id)initWithBackingStore:(id)arg1;
+- (id)_initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)init;
 

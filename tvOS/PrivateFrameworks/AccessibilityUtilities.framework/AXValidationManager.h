@@ -20,9 +20,13 @@
     NSString *_overrideProcessName;
     NSMutableArray *_consoleErrorMessages;
     id <AXValidationReportingServices> _validationReportingServices;
+    unsigned long long _numberOfValidationWarnings;
+    NSMutableArray *_consoleWarningMessages;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSMutableArray *consoleWarningMessages; // @synthesize consoleWarningMessages=_consoleWarningMessages;
+@property(nonatomic) unsigned long long numberOfValidationWarnings; // @synthesize numberOfValidationWarnings=_numberOfValidationWarnings;
 @property(retain, nonatomic) id <AXValidationReportingServices> validationReportingServices; // @synthesize validationReportingServices=_validationReportingServices;
 @property(nonatomic, getter=isDebugBuild) _Bool debugBuild; // @synthesize debugBuild=_debugBuild;
 @property(retain, nonatomic) NSMutableArray *consoleErrorMessages; // @synthesize consoleErrorMessages=_consoleErrorMessages;
@@ -54,6 +58,11 @@
 - (void)sendExceptionForInstallingSafeCategory:(id)arg1 onTarget:(id)arg2 overrideProcessName:(id)arg3;
 - (_Bool)installSafeCategory:(id)arg1 canInteractWithTargetClass:(_Bool)arg2;
 - (_Bool)installSafeCategory:(id)arg1;
+- (void)_generateWarningsForMethodType:(int)arg1 onClass:(Class)arg2 superclassMethods:(struct objc_method **)arg3 numberOfSuperclassMethods:(unsigned int)arg4;
+- (void)_generateWarningsOnSafeCategoryClass:(Class)arg1;
+- (void)_generateWarningsForPrefixedMethodNames:(id)arg1 client:(id)arg2 methodType:(int)arg3 methodName:(id)arg4 className:(id)arg5;
+- (id)_nameForMethod:(struct objc_method *)arg1;
+- (void)_iterateMethodsOfType:(int)arg1 onClass:(Class)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)client:(id)arg1 validateProtocol:(id)arg2 hasProperty:(id)arg3;
 - (_Bool)validateProtocol:(id)arg1 hasProperty:(id)arg2;
 - (_Bool)client:(id)arg1 validateProtocol:(id)arg2 hasRequiredClassMethod:(id)arg3;

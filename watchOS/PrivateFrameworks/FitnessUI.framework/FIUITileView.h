@@ -10,18 +10,17 @@
 
 @interface FIUITileView : PUICTileView
 {
-    _Bool _usesLegacyEasing;
+    _Bool _usesEasing;
     UIView *_darkeningView;
     UIView *_backgroundView;
 }
 
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *darkeningView; // @synthesize darkeningView=_darkeningView;
-@property(nonatomic) _Bool usesLegacyEasing; // @synthesize usesLegacyEasing=_usesLegacyEasing;
+@property(nonatomic) _Bool usesEasing; // @synthesize usesEasing=_usesEasing;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setEasing:(float)arg1;
-- (void)setLegacyEasing:(float)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

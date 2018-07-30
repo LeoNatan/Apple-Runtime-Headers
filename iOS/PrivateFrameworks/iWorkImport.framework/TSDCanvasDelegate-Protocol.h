@@ -32,11 +32,10 @@
 - (struct CGRect)visibleScaledBoundsForClippingRepsOnCanvas:(TSDCanvas *)arg1;
 - (void)updateLayerTreeForInteractiveCanvas:(TSDCanvas *)arg1;
 - (void)canvasWillUpdateRepsFromLayouts:(TSDCanvas *)arg1;
-- (void)canvasDidUpdateVisibleBounds:(TSDCanvas *)arg1;
 - (void)canvasDidValidateLayoutsWithDependencies:(TSDCanvas *)arg1;
 - (void)canvasDidLayout:(TSDCanvas *)arg1;
 - (void)canvasDidValidateLayouts:(TSDCanvas *)arg1;
-- (void)canvasWillLayout:(TSDCanvas *)arg1;
+- (void)canvasWillValidateLayouts:(TSDCanvas *)arg1;
 - (void)canvasLayoutInvalidated:(TSDCanvas *)arg1;
 - (Class)canvasRootLayoutClass;
 @end

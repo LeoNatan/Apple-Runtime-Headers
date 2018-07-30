@@ -12,11 +12,10 @@
 {
     float _sharpnessBlocks[16];
     NSArray *_faces;
-    VCPCNNModel *_model;
-    VCPCNNData *_input;
     VCPCNNModel *_faceModel;
     VCPCNNData *_faceInput;
     BOOL _useGPU;
+    BOOL _useCNN;
     BOOL _sdof;
     float _contrast;
     float _sharpness;
@@ -28,6 +27,7 @@
 - (void)computeLocalSharpness:(struct __CVBuffer *)arg1;
 - (void)spatialPooling;
 - (float)computeFaceSharpness:(struct __CVBuffer *)arg1;
+- (void)setFaceResults:(id)arg1;
 - (id)initWithFaceResults:(id)arg1 sdof:(BOOL)arg2;
 
 @end

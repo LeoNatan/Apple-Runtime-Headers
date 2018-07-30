@@ -10,26 +10,26 @@
 
 @interface IXGlobalConfiguration : NSObject
 {
-    unsigned int _uid;
-    unsigned int _gid;
+    struct os_unfair_lock_s _dynamicPropertyLock;
+    NSURL *_systemContainerPath;
     NSURL *_mobileHome;
     NSURL *_rootPath;
-    NSURL *_systemContainerPath;
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSURL *systemContainerPath; // @synthesize systemContainerPath=_systemContainerPath;
 @property(readonly, nonatomic) NSURL *rootPath; // @synthesize rootPath=_rootPath;
 @property(readonly, nonatomic) NSURL *mobileHome; // @synthesize mobileHome=_mobileHome;
-@property(readonly, nonatomic) unsigned int gid; // @synthesize gid=_gid;
-@property(readonly, nonatomic) unsigned int uid; // @synthesize uid=_uid;
+@property(readonly, nonatomic) NSURL *systemContainerPath; // @synthesize systemContainerPath=_systemContainerPath;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *userVolumeURL;
 @property(readonly, nonatomic) NSURL *frameworkURL;
-@property(readonly, nonatomic) NSURL *promiseStagingRootDirectory;
+- (id)promiseStagingRootDirectoryAbortingOnError;
+- (id)promiseStagingRootDirectoryWithError:(id *)arg1;
 @property(readonly, nonatomic) NSURL *oldSupportDirectory;
-@property(readonly, nonatomic) NSURL *dataDirectory;
-- (void)createDirectories;
+- (id)dataDirectoryAbortingOnError;
+- (id)dataDirectoryWithError:(id *)arg1;
+- (id)_systemContainerURLWithError:(id *)arg1;
+- (_Bool)createDirectories;
 - (id)init;
 
 @end

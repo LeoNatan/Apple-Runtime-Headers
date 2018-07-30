@@ -14,6 +14,8 @@
 {
 }
 
+- (id)_spotlightContentType;
+- (BOOL)configureAttributeSet:(id)arg1;
 - (void)setParametersByName:(id)arg1;
 - (id)parametersByName;
 - (void)setVerb:(id)arg1;
@@ -26,8 +28,12 @@
 @property(readonly, copy) NSArray *contacts;
 @property long long audioRoute;
 - (id)initWithContacts:(id)arg1;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)_titleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

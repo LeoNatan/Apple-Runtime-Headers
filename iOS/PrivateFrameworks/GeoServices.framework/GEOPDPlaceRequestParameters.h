@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class GEOPDAddressObjectGeocodingParameters, GEOPDAutocompleteParameters, GEOPDBatchPopularNearbySearchParameters, GEOPDBrandLookupParameters, GEOPDCanonicalLocationSearchParameters, GEOPDCategorySearchParameters, GEOPDClusterGeocodingParameters, GEOPDExternalTransitLookupParameters, GEOPDFeatureIdGeocodingParameters, GEOPDGeocodingParameters, GEOPDIpGeoLookupParameters, GEOPDLocationDirectedSearchParameters, GEOPDMapsIdentifierPlaceLookupParameters, GEOPDMerchantLookupParameters, GEOPDNearbySearchParameters, GEOPDPlaceLookupParameters, GEOPDPlaceRefinementParameters, GEOPDPopularNearbySearchParameters, GEOPDReverseGeocodingParameters, GEOPDSearchBrowseCategorySuggestionParameters, GEOPDSearchFieldPlaceholderParameters, GEOPDSearchParameters, GEOPDSearchZeroKeywordCategorySuggestionParameters, GEOPDSearchZeroKeywordWithSearchResultsSuggestionParameters, GEOPDSiriSearchParameters, GEOPDVendorSpecificPlaceRefinementParameters, GEOPDWifiFingerprintParameters, PBUnknownFields;
+@class GEOPDAddressObjectGeocodingParameters, GEOPDAutocompleteParameters, GEOPDBatchPopularNearbySearchParameters, GEOPDBatchSpatialLookupParameters, GEOPDBrandLookupParameters, GEOPDCanonicalLocationSearchParameters, GEOPDCategorySearchParameters, GEOPDClusterGeocodingParameters, GEOPDExternalTransitLookupParameters, GEOPDFeatureIdGeocodingParameters, GEOPDGeocodingParameters, GEOPDIpGeoLookupParameters, GEOPDLocationDirectedSearchParameters, GEOPDMapsIdentifierPlaceLookupParameters, GEOPDMerchantLookupParameters, GEOPDNearbySearchParameters, GEOPDPlaceLookupParameters, GEOPDPlaceRefinementParameters, GEOPDPopularNearbySearchParameters, GEOPDReverseGeocodingParameters, GEOPDSearchBrowseCategorySuggestionParameters, GEOPDSearchFieldPlaceholderParameters, GEOPDSearchParameters, GEOPDSearchZeroKeywordCategorySuggestionParameters, GEOPDSearchZeroKeywordWithSearchResultsSuggestionParameters, GEOPDSiriSearchParameters, GEOPDVendorSpecificPlaceRefinementParameters, GEOPDWifiFingerprintParameters, PBUnknownFields;
 
 @interface GEOPDPlaceRequestParameters : PBCodable <NSCopying>
 {
@@ -16,6 +16,7 @@
     GEOPDAddressObjectGeocodingParameters *_addressObjectGeocodingParameters;
     GEOPDAutocompleteParameters *_autocompleteParameters;
     GEOPDBatchPopularNearbySearchParameters *_batchPopularNearbySearchParameters;
+    GEOPDBatchSpatialLookupParameters *_batchSpatialLookupParameters;
     GEOPDBrandLookupParameters *_brandLookupParameters;
     GEOPDSearchBrowseCategorySuggestionParameters *_browseCategorySuggestionParameters;
     GEOPDCanonicalLocationSearchParameters *_canonicalLocationSearchParameters;
@@ -42,6 +43,7 @@
     GEOPDWifiFingerprintParameters *_wifiFingerprintParameters;
 }
 
+@property(retain, nonatomic) GEOPDBatchSpatialLookupParameters *batchSpatialLookupParameters; // @synthesize batchSpatialLookupParameters=_batchSpatialLookupParameters;
 @property(retain, nonatomic) GEOPDIpGeoLookupParameters *ipGeoLookupParameters; // @synthesize ipGeoLookupParameters=_ipGeoLookupParameters;
 @property(retain, nonatomic) GEOPDWifiFingerprintParameters *wifiFingerprintParameters; // @synthesize wifiFingerprintParameters=_wifiFingerprintParameters;
 @property(retain, nonatomic) GEOPDBrandLookupParameters *brandLookupParameters; // @synthesize brandLookupParameters=_brandLookupParameters;
@@ -80,6 +82,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasBatchSpatialLookupParameters;
 @property(readonly, nonatomic) _Bool hasIpGeoLookupParameters;
 @property(readonly, nonatomic) _Bool hasWifiFingerprintParameters;
 @property(readonly, nonatomic) _Bool hasBrandLookupParameters;

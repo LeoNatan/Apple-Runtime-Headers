@@ -6,7 +6,7 @@
 
 #import "NSView.h"
 
-@class DDHighlightButton, NSString;
+@class CAMediaTimingFunction, DDHighlightButton, NSDate, NSString, NSTimer;
 
 __attribute__((visibility("hidden")))
 @interface DDBasicHighlightsView : NSView
@@ -21,6 +21,11 @@ __attribute__((visibility("hidden")))
     BOOL _layerOnly;
     struct OpaqueWKBundlePageOverlay *_overlay;
     BOOL _mouseDown;
+    NSTimer *_timer;
+    NSDate *_startDate;
+    double _targetOpacity;
+    double _initialOpacity;
+    CAMediaTimingFunction *_timingFunction;
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
@@ -50,6 +55,9 @@ __attribute__((visibility("hidden")))
 - (void)_setOpacity:(float)arg1 disableAnimation:(BOOL)arg2;
 - (double)overlayAlphaValue;
 - (void)setOverlayAlphaValue:(double)arg1;
+- (void)setAnimatedOverlayAlphaValue:(id)arg1;
+- (void)stopAnimation;
+- (void)setAnimatedAlphaValue:(double)arg1;
 - (void)dealloc;
 - (id)init;
 

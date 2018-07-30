@@ -8,6 +8,7 @@
 
 @class OADTextRun;
 
+__attribute__((visibility("hidden")))
 @interface PMTextRunMapper : CMMapper
 {
     OADTextRun *mTextRun;

@@ -8,7 +8,6 @@
 
 @class CHDChart, CHDFormula, EDString, OADGraphicProperties;
 
-__attribute__((visibility("hidden")))
 @interface CHDTitle : NSObject
 {
     CHDChart *mChart;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
     double mRotation;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setTitleRotationAngle:(double)arg1;
 - (double)titleRotationAngle;
@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (id)name;
 - (void)setLastCachedName:(id)arg1;
 - (id)lastCachedName;
-- (void)dealloc;
 - (id)initWithChart:(id)arg1;
 
 @end

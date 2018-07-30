@@ -8,7 +8,6 @@
 
 @class CNContactStore, CNLabeledValue;
 
-__attribute__((visibility("hidden")))
 @interface CNUIRejectSugggestedValueCommand : CNUIUndoableCommand
 {
     CNLabeledValue *_valueToReject;

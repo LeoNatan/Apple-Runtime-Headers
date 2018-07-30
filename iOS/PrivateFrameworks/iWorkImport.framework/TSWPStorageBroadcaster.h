@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long paragraphObserverCount;
 @property(readonly, nonatomic) unsigned long long observerCount;
 - (void)dealloc;
-- (id)init;
 
 @end
 

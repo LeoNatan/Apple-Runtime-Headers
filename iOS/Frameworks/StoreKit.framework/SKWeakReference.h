@@ -10,14 +10,13 @@ __attribute__((visibility("hidden")))
 @interface SKWeakReference : NSObject
 {
     id _object;
-    unsigned long long _objectAddress;
 }
 
-+ (id)weakReferenceWithObject:(id)arg1;
-@property(readonly, nonatomic) id object;
+@property(nonatomic) __weak id object; // @synthesize object=_object;
+- (void).cxx_destruct;
+- (id)initWithObject:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)dealloc;
 
 @end
 

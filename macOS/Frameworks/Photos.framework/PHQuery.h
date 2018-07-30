@@ -22,6 +22,7 @@
 + (id)queryOptionsFromFetchOptions:(id)arg1 photoLibrary:(id)arg2;
 + (id)additionalChangePropertiesFromFetchOptions:(id)arg1 photoLibrary:(id)arg2;
 + (id)propertyPathsFromFetchOptions:(id)arg1 photoLibrary:(id)arg2;
++ (id)queryForQuarantinedAssetsInPhotoLibrary:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsForPersons:(id)arg1 inPhotoLibrary:(id)arg2 options:(id)arg3;
 + (id)queryForAssetsForFaces:(id)arg1 options:(id)arg2;
 + (id)queryForMovieCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
@@ -58,7 +59,7 @@
 + (id)queryForAssetCollectionsWithType:(long long)arg1 subtype:(long long)arg2 inPhotoLibrary:(id)arg3 options:(id)arg4;
 + (id)queryForAssetCollectionsWithCloudIdentifiers:(id)arg1 inPhotoLibrary:(id)arg2 options:(id)arg3;
 + (id)queryForProjectsWithLocalIdentifiers:(id)arg1 inPhotoLibrary:(id)arg2 options:(id)arg3;
-+ (id)queryForAssetCollectionsWithLocalIdentifiers:(id)arg1 collectionClass:(Class)arg2 inPhotoLibrary:(id)arg3 options:(id)arg4;
++ (id)queryForAssetCollectionsWithIdentifiers:(id)arg1 local:(BOOL)arg2 collectionClass:(Class)arg3 inPhotoLibrary:(id)arg4 options:(id)arg5;
 + (id)queryForAssetCollectionsWithLocalIdentifiers:(id)arg1 inPhotoLibrary:(id)arg2 options:(id)arg3;
 + (id)queryForAssetCollectionsContainingAssets:(id)arg1 withType:(long long)arg2 options:(id)arg3;
 + (id)queryForAssetCollectionsContainingAsset:(id)arg1 withType:(long long)arg2 options:(id)arg3;

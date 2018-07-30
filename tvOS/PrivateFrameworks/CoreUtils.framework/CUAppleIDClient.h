@@ -19,6 +19,7 @@
     _Bool _peerSignatureVerified;
     NSDictionary *_peerValidationDict;
     _Bool _peerValidated;
+    int _securityLevel;
     NSString *_myAppleID;
     CUAppleIDClient *_myInfoClient;
     NSString *_peerAppleID;
@@ -40,6 +41,7 @@
 @property(retain, nonatomic) CUAppleIDClient *myInfoClient; // @synthesize myInfoClient=_myInfoClient;
 @property(copy, nonatomic) NSString *myAppleID; // @synthesize myAppleID=_myAppleID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int securityLevel;
 -     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24@0:8^@16, name: _getPeerPublicKeyAndReturnError:
 - (struct __SecCertificate *)_getPeerCertificateAndReturnError:(id *)arg1;
 - (id)copyMyValidationDataAndReturnError:(id *)arg1;

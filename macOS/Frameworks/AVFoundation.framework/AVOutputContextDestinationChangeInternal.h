@@ -8,6 +8,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVOutputContextDestinationChangeInternal : NSObject
 {
     NSObject<OS_dispatch_queue> *ivarAccessQueue;

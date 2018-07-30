@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class MKQuadTrie, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSTimer;
+@class MKAnnotationView, MKQuadTrie, NSArray, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSTimer;
 
 __attribute__((visibility("hidden")))
 @interface MKAnnotationManager : NSObject
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool _annotationRepresentationsAreAddedImmediately;
     NSTimer *_updateVisibleTimer;
     MKQuadTrie *_annotations;
-    NSMutableSet *_visibleAnnotations;
+    NSHashTable *_visibleAnnotations;
     NSMutableSet *_pendingAnnotations;
     NSMutableSet *_disallowAnimationAnnotations;
     NSMutableSet *_invalidCoordinateAnnotations;
@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     NSMapTable *_reusableAnnotationRepresentations;
     NSMutableSet *_pendingRemovalAnnotationRepresentations;
     NSMutableDictionary *_registeredIdentifierToRepresentationClasses;
-    NSMutableSet *_managedAnnotations;
-    NSMutableSet *_managedAnnotationsObservingCoordinate;
+    NSHashTable *_allClusterAnnotations;
     _Bool _isChangingCoordinate;
     _Bool _isDeferringContainerSelection;
     _Bool _deferredContainerSelectionAnimated;
+    MKAnnotationView *_userLocationView;
 }
 
 @property(nonatomic) __weak id <MKAnnotation> draggedAnnotation; // @synthesize draggedAnnotation=_draggedAnnotation;
@@ -46,13 +46,11 @@ __attribute__((visibility("hidden")))
 - (void)configureDefaultAnnotationRepresentation:(id)arg1 forAnnotation:(id)arg2;
 - (void)configureAnnotationRepresentation:(id)arg1 forAnnotation:(id)arg2;
 - (id)newInternalAnnotationRepresentationForInternalAnnotation:(id)arg1;
-- (_Bool)internalAnnotationAllowsCustomRepresentation:(id)arg1;
 - (_Bool)annotationIsInternal:(id)arg1;
 - (id)representationForAnnotation:(id)arg1;
 @property(readonly, nonatomic) __weak id <MKAnnotationRepresentation> selectedAnnotationRepresentation;
 - (void)deselectAnnotation:(id)arg1 animated:(_Bool)arg2;
-- (void)_annotationDidChangeState:(id)arg1 animated:(_Bool)arg2 avoid:(struct CGRect)arg3;
-- (void)selectAnnotation:(id)arg1 animated:(_Bool)arg2 avoid:(struct CGRect)arg3;
+- (void)_annotationDidChangeState:(id)arg1 animated:(_Bool)arg2;
 - (void)selectAnnotation:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) NSArray *annotationRepresentations;
 @property(readonly, nonatomic) NSArray *annotations;
@@ -62,11 +60,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)containsAnnotation:(id)arg1;
 - (void)registerClass:(Class)arg1 forRepresentationReuseIdentifier:(id)arg2;
 - (id)dequeueReusableAnnotationRepresentationWithIdentifier:(id)arg1;
-- (void)removeRepresentationForManagedAnnotation:(id)arg1;
-- (id)addRepresentationForManagedAnnotation:(id)arg1 notifyDelegate:(_Bool)arg2;
 - (void)addRepresentationsForAnnotations:(id)arg1;
 - (void)replaceAnnotation:(id)arg1 withAnnotation:(id)arg2;
 - (void)removeAnnotations:(id)arg1;
+- (void)removeAnnotation:(id)arg1 updateVisible:(_Bool)arg2;
 - (void)removeAnnotation:(id)arg1;
 - (void)_removeAnnotation:(id)arg1 updateVisible:(_Bool)arg2 removeFromContainer:(_Bool)arg3;
 - (id)addRepresentationForAnnotation:(id)arg1;
@@ -74,8 +71,6 @@ __attribute__((visibility("hidden")))
 - (void)addAnnotation:(id)arg1 allowAnimation:(_Bool)arg2;
 - (void)addAnnotation:(id)arg1;
 - (void)_addAnnotation:(id)arg1 updateVisible:(_Bool)arg2;
-- (void)addManagedAnnotation:(id)arg1;
-- (void)addManagedAnnotation:(id)arg1 observeCoordinateChanges:(_Bool)arg2;
 - (void)_setupUpdateVisibleAnnotationsTimer;
 - (void)dealloc;
 - (id)init;

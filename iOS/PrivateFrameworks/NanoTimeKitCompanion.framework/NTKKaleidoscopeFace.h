@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
-+ (_Bool)_customEditMode:(long long)arg1 hasActionForOption:(id)arg2;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
++ (_Bool)_customEditMode:(long long)arg1 hasActionForOption:(id)arg2 forDevice:(id)arg3;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
 - (Class)_optionClassForCustomEditMode:(long long)arg1 resourceDirectoryExists:(_Bool)arg2;
 - (Class)_optionClassForCustomEditMode:(long long)arg1;

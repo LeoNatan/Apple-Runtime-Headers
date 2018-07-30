@@ -23,6 +23,7 @@
 + (void)disableForTesting:(_Bool)arg1;
 @property(retain, nonatomic) NSDate *lastCacheUpdate; // @synthesize lastCacheUpdate=_lastCacheUpdate;
 @property(retain, nonatomic) NSArray *cache; // @synthesize cache=_cache;
+- (void).cxx_destruct;
 - (void)handleMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 - (void)keyboardActivityDidTransition:(id)arg1;
 - (void)enumerateAppNames:(CDUnknownBlockType)arg1;

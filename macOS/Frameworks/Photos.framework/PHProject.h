@@ -10,16 +10,19 @@
 
 @interface PHProject : PHAssetCollection
 {
+    BOOL _hasProjectPreview;
 }
 
 + (id)fetchProjectsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchProjectsWithOptions:(id)arg1;
+@property(readonly, nonatomic) BOOL hasProjectPreview; // @synthesize hasProjectPreview=_hasProjectPreview;
 - (id)localizedTitle;
 - (long long)assetCollectionSubtype;
 - (long long)assetCollectionType;
 @property(readonly, nonatomic) NSData *projectExtensionData;
 - (id)projectDocumentType;
 - (id)projectExtensionIdentifier;
+- (id)initWithModel:(id)arg1 photoLibrary:(id)arg2;
 
 @end
 

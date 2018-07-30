@@ -7,6 +7,7 @@
 #import "UIView.h"
 
 #import "PKEnterCurrencyAmountViewDelegate.h"
+#import "PKEnterValueNewBalanceViewDelegate.h"
 #import "PKPeerPaymentAddBankAcountInformationViewControllerDelegate.h"
 #import "PKPeerPaymentPerformActionView.h"
 #import "UITableViewDataSource.h"
@@ -14,7 +15,7 @@
 
 @class NSDecimalNumber, NSNumberFormatter, NSString, PKContinuousButton, PKEnterCurrencyAmountView, PKEnterValueNewBalanceView, PKPeerPaymentAccount, PKPeerPaymentBankAccountInformation, PKPeerPaymentService, UIImageView, UILabel, UITableView, UITextField;
 
-@interface PKPerformPeerPaymentTransferToBankActionView : UIView <PKEnterCurrencyAmountViewDelegate, PKPeerPaymentAddBankAcountInformationViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, PKPeerPaymentPerformActionView>
+@interface PKPerformPeerPaymentTransferToBankActionView : UIView <PKEnterCurrencyAmountViewDelegate, PKPeerPaymentAddBankAcountInformationViewControllerDelegate, PKEnterValueNewBalanceViewDelegate, UITableViewDelegate, UITableViewDataSource, PKPeerPaymentPerformActionView>
 {
     PKPeerPaymentBankAccountInformation *_bankInformation;
     PKPeerPaymentService *_peerPaymentService;
@@ -51,6 +52,7 @@
 - (id)_addAccountDetailLabel;
 - (id)_addAccountButton;
 - (void)_createSubviews;
+- (_Bool)_shouldEnableMaxBalanceTransferButton;
 - (id)_tranferMessageLabel;
 - (id)_tranferTitleLabel;
 - (id)_checkmarkImageView;
@@ -58,7 +60,7 @@
 - (_Bool)_shouldShakeWithNewAmount:(id)arg1;
 - (void)_currentAmountDidChangeTo:(id)arg1 shouldGenerateNewSuggestions:(_Bool)arg2;
 - (void)_updateCurrentAmount:(id)arg1 shouldGenerateNewSuggestions:(_Bool)arg2;
-- (void)_presentAddBankAccountViewController;
+- (void)presentAddBankAccountViewController;
 - (void)_handleEditAccountInformationButtonPressed;
 - (void)_addAccountInformation:(id)arg1;
 - (unsigned int)_topPadding;
@@ -78,6 +80,7 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)didTapNewBalanceView;
 - (void)bankAccountInformationViewControllerChangedBankAccountInformation:(id)arg1;
 - (void)layoutSubviews;
 - (void)willMoveToWindow:(id)arg1;

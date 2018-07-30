@@ -8,6 +8,5 @@
 
 @interface NSView (BookmarkExtras)
 - (void)startDragFromEvent:(id)arg1 withBookmark:(id)arg2 andImage:(id)arg3 atImageOffset:(struct CGSize)arg4;
-- (void)startDragFromEvent:(id)arg1 withBookmark:(id)arg2 andImage:(id)arg3;
 @end
 

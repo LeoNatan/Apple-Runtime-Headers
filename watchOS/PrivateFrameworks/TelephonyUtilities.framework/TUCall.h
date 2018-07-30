@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSData, NSDate, NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID, TUCallCenter, TUCallDisplayContext, TUCallModel, TUCallNotificationManager, TUCallProvider, TUCallServicesInterface, TUDialRequest, TUHandle, TUProxyCall, TUVideoCallAttributes;
+@class NSData, NSDate, NSDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID, TUCallCenter, TUCallDisplayContext, TUCallModel, TUCallNotificationManager, TUCallProvider, TUCallServicesInterface, TUDialRequest, TUHandle, TUProxyCall, TUSenderIdentity, TUVideoCallAttributes;
 
 @interface TUCall : NSObject <NSSecureCoding>
 {
@@ -17,12 +17,14 @@
     _Bool _wantsHoldMusic;
     _Bool _wasDialAssisted;
     _Bool _hasUpdatedAudio;
+    _Bool _video;
     _Bool _expectedEndpointOnPairedClientDevice;
     _Bool _ringtoneSuppressedRemotely;
     _Bool _wasPulledToCurrentDevice;
     int _disconnectedReason;
     int _faceTimeIDStatus;
     NSDate *_dateCreated;
+    NSDate *_dateAnsweredOrDialed;
     NSDate *_dateSentInvitation;
     NSDate *_dateStartedConnecting;
     NSDate *_dateConnected;
@@ -63,6 +65,7 @@
 @property(readonly, nonatomic) NSDictionary *providerContext; // @synthesize providerContext=_providerContext;
 @property(nonatomic) _Bool ringtoneSuppressedRemotely; // @synthesize ringtoneSuppressedRemotely=_ringtoneSuppressedRemotely;
 @property(nonatomic, getter=isExpectedEndpointOnPairedClientDevice) _Bool expectedEndpointOnPairedClientDevice; // @synthesize expectedEndpointOnPairedClientDevice=_expectedEndpointOnPairedClientDevice;
+@property(nonatomic, getter=isVideo) _Bool video; // @synthesize video=_video;
 @property(nonatomic) int soundRegion; // @synthesize soundRegion=_soundRegion;
 @property(nonatomic) _Bool hasUpdatedAudio; // @synthesize hasUpdatedAudio=_hasUpdatedAudio;
 @property(nonatomic) int transitionStatus; // @synthesize transitionStatus=_transitionStatus;
@@ -81,6 +84,7 @@
 @property(retain, nonatomic) NSDate *dateConnected; // @synthesize dateConnected=_dateConnected;
 @property(retain, nonatomic) NSDate *dateStartedConnecting; // @synthesize dateStartedConnecting=_dateStartedConnecting;
 @property(retain, nonatomic) NSDate *dateSentInvitation; // @synthesize dateSentInvitation=_dateSentInvitation;
+@property(retain, nonatomic) NSDate *dateAnsweredOrDialed; // @synthesize dateAnsweredOrDialed=_dateAnsweredOrDialed;
 @property(readonly, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(nonatomic) _Bool wantsHoldMusic; // @synthesize wantsHoldMusic=_wantsHoldMusic;
 @property(nonatomic) _Bool shouldSuppressRingtone; // @synthesize shouldSuppressRingtone=_shouldSuppressRingtone;
@@ -114,7 +118,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *endedReasonUserInfo;
 - (_Bool)hasRelaySupport:(int)arg1;
 @property(readonly, nonatomic) int callRelaySupport;
-@property(readonly, nonatomic) int callIdentifier;
 @property(readonly, nonatomic) int abUID;
 @property(readonly, copy, nonatomic) NSString *companyName;
 @property(readonly, copy, nonatomic) NSString *localizedLabel;
@@ -144,6 +147,8 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCall:(id)arg1;
+@property(readonly, copy, nonatomic) NSUUID *localSenderIdentityUUID;
+@property(readonly, copy, nonatomic) TUSenderIdentity *localSenderIdentity;
 @property(readonly, copy, nonatomic) NSUUID *callGroupUUID;
 @property(readonly, copy, nonatomic) NSString *callHistoryIdentifier;
 @property(readonly, copy, nonatomic) NSString *callUUID;
@@ -154,9 +159,8 @@
 @property(readonly, copy, nonatomic) NSString *destinationID;
 - (void)ungroup;
 - (void)groupWithOtherCall:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *activeRemoteParticipantHandles;
-@property(readonly, copy, nonatomic) NSArray *remoteParticipantHandles;
-@property(readonly, copy, nonatomic) NSUUID *conversationGroupUUID;
+@property(readonly, copy, nonatomic) NSSet *remoteParticipantHandles;
+@property(readonly, nonatomic, getter=isConversation) _Bool conversation;
 @property(readonly, copy, nonatomic) TUDialRequest *dialRequestForRedial;
 @property(readonly, nonatomic) int ttyType;
 @property(readonly, nonatomic) int faceTimeTransportType;
@@ -193,7 +197,13 @@
 @property(readonly, nonatomic) _Bool isOnHold;
 - (void)answerWithRequest:(id)arg1;
 - (void)_handleStatusChange;
+@property(readonly, nonatomic) int outputAudioPowerSpectrumToken;
+@property(readonly, nonatomic) int inputAudioPowerSpectrumToken;
 @property(readonly, nonatomic) int videoStreamToken;
+@property(readonly, nonatomic) float localMeterLevel;
+@property(readonly, nonatomic) float remoteMeterLevel;
+@property(readonly, nonatomic) _Bool wantsStagingArea;
+@property(readonly, nonatomic) _Bool shouldSuppressInCallUI;
 @property(readonly, nonatomic, getter=isRemoteUplinkMuted) _Bool remoteUplinkMuted;
 @property(readonly, nonatomic) _Bool supportsTTYWithVoice;
 @property(readonly, nonatomic, getter=isVideoPaused) _Bool videoPaused;
@@ -203,7 +213,6 @@
 @property(readonly, nonatomic, getter=isBlocked) _Bool blocked;
 @property(readonly, nonatomic, getter=isOutgoing) _Bool outgoing;
 @property(readonly, nonatomic, getter=isThirdPartyVideo) _Bool thirdPartyVideo;
-@property(readonly, nonatomic) _Bool isVideo;
 @property(readonly, nonatomic) _Bool prefersExclusiveAccessToCellularNetwork;
 @property(readonly, nonatomic, getter=isUsingBaseband) _Bool usingBaseband;
 @property(readonly, nonatomic, getter=isVoicemail) _Bool voicemail;

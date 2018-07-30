@@ -8,7 +8,6 @@
 
 @class NSPredicate, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerProperty : NSObject
 {
     NSString *title;

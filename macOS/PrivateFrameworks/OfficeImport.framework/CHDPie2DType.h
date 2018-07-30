@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDChartType.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDPie2DType : CHDChartType
 {
     int mFirstSliceAngle;

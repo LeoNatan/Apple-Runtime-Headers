@@ -26,6 +26,7 @@
 - (void)rememberComponent:(id)arg1 forKey:(union _GEOPlaceDataComponentKey)arg2;
 - (id)componentForKey:(union _GEOPlaceDataComponentKey)arg1;
 - (void)flushPendingWritesSynchronously;
+- (void)tearDown;
 - (id)initWithPath:(id)arg1 resultProviderID:(int)arg2;
 - (id)init;
 - (id)allCacheEntries;

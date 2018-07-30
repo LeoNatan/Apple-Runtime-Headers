@@ -51,6 +51,7 @@
 - (id)decodeDataObject;
 - (id)decodeNXObject;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void *)arg2;
+- (struct UIEdgeInsets)decodeUIEdgeInsetsForKey:(id)arg1;
 - (struct CGAffineTransform)decodeCGAffineTransformForKey:(id)arg1;
 - (struct CGRect)decodeCGRectForKey:(id)arg1;
 - (struct CGSize)decodeCGSizeForKey:(id)arg1;

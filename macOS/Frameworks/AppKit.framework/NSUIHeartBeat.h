@@ -6,24 +6,19 @@
 
 #import "NSObject.h"
 
-@class NSLock, NSMutableSet, NSThread, NSTimer;
+@class NSMutableSet, NSTimer;
 
 @interface NSUIHeartBeat : NSObject
 {
     double _currentDate;
     double _birthDate;
     double _lastDate;
-    NSLock *_drawingThreadLock;
-    NSLock *_blockLock;
     NSMutableSet *_clients;
-    NSThread *_heartBeatThread;
     NSTimer *_heartBeatTimer;
     unsigned short _disableCount;
     struct {
-        unsigned int _isDrawingLocked:1;
         unsigned int _sessionIsActive:1;
-        unsigned int _queueState:2;
-        unsigned int _reserved:28;
+        unsigned int _reserved:31;
     } _hbFlags;
 }
 
@@ -43,8 +38,7 @@
 - (id)init;
 - (void)_sessionDidResignActive;
 - (void)_sessionDidBecomeActive;
-- (void)_heartBeatThread:(id)arg1;
-- (void)_heartBeatWindowsAndViews;
+- (void)_heartBeatViews;
 
 @end
 

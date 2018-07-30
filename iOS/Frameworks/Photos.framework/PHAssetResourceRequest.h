@@ -15,6 +15,7 @@
     PHAssetResourceRequestOptions *_options;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_semaphore> *_cloudResourceDownloadWaitSemaphore;
+    struct os_unfair_lock_s _dataHandlerLock;
     CDUnknownBlockType _dataHandler;
     int _requestID;
     NSError *_error;

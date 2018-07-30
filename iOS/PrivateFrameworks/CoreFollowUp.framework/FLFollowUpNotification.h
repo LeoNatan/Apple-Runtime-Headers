@@ -16,26 +16,26 @@
     NSString *_informativeText;
     FLFollowUpAction *_activateAction;
     FLFollowUpAction *_clearAction;
-    FLFollowUpAction *_dismissAction;
     NSString *_unlockActionLabel;
     double _frequency;
     double _firstNotificationDelay;
     NSSet *_options;
     unsigned long long _sqlID;
     NSDate *_previousNotificationActionDate;
+    FLFollowUpAction *_dismissAction;
     NSDate *_creationDate;
 }
 
 + (id)defaultOptions;
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property(retain, nonatomic) FLFollowUpAction *dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(retain, nonatomic) NSDate *previousNotificationActionDate; // @synthesize previousNotificationActionDate=_previousNotificationActionDate;
 @property(nonatomic) unsigned long long sqlID; // @synthesize sqlID=_sqlID;
 @property(copy, nonatomic) NSSet *options; // @synthesize options=_options;
 @property(nonatomic) double firstNotificationDelay; // @synthesize firstNotificationDelay=_firstNotificationDelay;
 @property(nonatomic) double frequency; // @synthesize frequency=_frequency;
 @property(copy, nonatomic) NSString *unlockActionLabel; // @synthesize unlockActionLabel=_unlockActionLabel;
-@property(retain, nonatomic) FLFollowUpAction *dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(retain, nonatomic) FLFollowUpAction *clearAction; // @synthesize clearAction=_clearAction;
 @property(retain, nonatomic) FLFollowUpAction *activateAction; // @synthesize activateAction=_activateAction;
 @property(copy, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;

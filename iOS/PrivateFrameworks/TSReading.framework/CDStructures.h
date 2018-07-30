@@ -446,13 +446,14 @@ struct TSWPLayoutChore {
     struct TSWPTopicNumberHints _field12;
     struct TSWPTopicNumberHints _field13;
     struct TSWPDropCapLayoutState _field14;
-    struct TSWPLineStylingLayoutState _field15;
-    struct vector<TSWPLayoutState, std::__1::allocator<TSWPLayoutState>> _field16;
-    struct TSWPCoreTextTypesetter *_field17;
-    struct _NSRange _field18;
-    long long _field19;
-    id _field20;
-    struct __CFLocale *_field21;
+    struct TSWPLineBalancingLayoutState _field15;
+    struct TSWPLineStylingLayoutState _field16;
+    struct vector<TSWPLayoutState, std::__1::allocator<TSWPLayoutState>> _field17;
+    struct TSWPCoreTextTypesetter *_field18;
+    struct _NSRange _field19;
+    long long _field20;
+    id _field21;
+    struct __CFLocale *_field22;
 };
 
 struct TSWPLayoutState {
@@ -496,49 +497,72 @@ struct TSWPLayoutState {
     _Bool _field38;
     _Bool _field39;
     _Bool _field40;
-    _Bool _field41;
+    double _field41;
     _Bool _field42;
     _Bool _field43;
-    int _field44;
-    id _field45;
-    double _field46;
-    _Bool _field47;
-    double _field48;
-    _Bool _field49;
-    unsigned int _field50;
-    id _field51;
-    double _field52;
-    id _field53;
-    double _field54;
-    struct __CFLocale *_field55;
-    id _field56;
+    _Bool _field44;
+    int _field45;
+    id _field46;
+    double _field47;
+    _Bool _field48;
+    double _field49;
+    _Bool _field50;
+    unsigned int _field51;
+    id _field52;
+    double _field53;
+    id _field54;
+    double _field55;
+    struct __CFLocale *_field56;
     id _field57;
-    unsigned long long _field58;
-    id _field59;
-    _Bool _field60;
+    id _field58;
+    unsigned long long _field59;
+    id _field60;
     _Bool _field61;
-    unsigned long long _field62;
+    _Bool _field62;
     unsigned long long _field63;
-    _Bool _field64;
+    unsigned long long _field64;
     _Bool _field65;
-    struct CGRect _field66;
-    double _field67;
-    _Bool _field68;
+    _Bool _field66;
+    struct CGRect _field67;
+    double _field68;
     _Bool _field69;
-    struct CGRect _field70;
-    id _field71;
+    _Bool _field70;
+    struct CGRect _field71;
     id _field72;
-    unsigned int _field73;
-    _Bool _field74;
+    id _field73;
+    unsigned int _field74;
     _Bool _field75;
-    double _field76;
-    id _field77;
+    _Bool _field76;
+    double _field77;
     id _field78;
     id _field79;
-    unsigned long long _field80;
-    double _field81;
+    id _field80;
+    unsigned long long _field81;
     double _field82;
-    id _field83;
+    double _field83;
+    id _field84;
+};
+
+struct TSWPLineBalancingLayoutState {
+    struct TSWPLineBalancingRestoreLayoutInfo _field1;
+    double _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    int _field5;
+    unsigned int _field6;
+    vector_b67dfe3a _field7;
+    double _field8;
+    double _field9;
+    double _field10;
+    double _field11;
+    _Bool _field12;
+};
+
+struct TSWPLineBalancingRestoreLayoutInfo {
+    struct TSWPLayoutState _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    double _field4;
 };
 
 struct TSWPLineFragment {
@@ -1091,10 +1115,6 @@ struct hash_map<unsigned int, SFUtility::ObjcSharedPtr<NSObject>, TSTIntHasher, 
     } _field1;
 };
 
-struct in_addr {
-    unsigned int _field1;
-};
-
 struct list<unsigned long, std::__1::allocator<unsigned long>> {
     struct __list_node_base<unsigned long, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<unsigned long, void *>>> {
@@ -1553,14 +1573,6 @@ struct shared_ptr<TSWPLineFragmentArray> {
 struct shared_ptr<TSWPParagraphTypesetter> {
     struct TSWPParagraphTypesetter *_field1;
     struct __shared_weak_count *_field2;
-};
-
-struct sockaddr_in {
-    unsigned char _field1;
-    unsigned char _field2;
-    unsigned short _field3;
-    struct in_addr _field4;
-    char _field5[8];
 };
 
 struct stack<EQKitLayoutContext, std::__1::deque<EQKitLayoutContext, std::__1::allocator<EQKitLayoutContext>>> {

@@ -12,26 +12,31 @@
 
 @interface CEMSystemKeyboardDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowPredictiveKeyboard;
+    NSNumber *_payloadAllowAutoCorrection;
+    NSNumber *_payloadAllowSpellCheck;
+    NSNumber *_payloadAllowKeyboardShortcuts;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowPredictiveKeyboard:(id)arg2 withAllowAutoCorrection:(id)arg3 withAllowSpellCheck:(id)arg4 withAllowKeyboardShortcuts:(id)arg5;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowKeyboardShortcuts; // @synthesize payloadAllowKeyboardShortcuts=_payloadAllowKeyboardShortcuts;
+@property(copy, nonatomic) NSNumber *payloadAllowSpellCheck; // @synthesize payloadAllowSpellCheck=_payloadAllowSpellCheck;
+@property(copy, nonatomic) NSNumber *payloadAllowAutoCorrection; // @synthesize payloadAllowAutoCorrection=_payloadAllowAutoCorrection;
+@property(copy, nonatomic) NSNumber *payloadAllowPredictiveKeyboard; // @synthesize payloadAllowPredictiveKeyboard=_payloadAllowPredictiveKeyboard;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowKeyboardShortcuts;
-@property(readonly, nonatomic) NSNumber *payloadAllowSpellCheck;
-@property(readonly, nonatomic) NSNumber *payloadAllowAutoCorrection;
-@property(readonly, nonatomic) NSNumber *payloadAllowPredictiveKeyboard;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

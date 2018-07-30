@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface AEFullScreenWindow : UIWindow <AEFullScreenContentWindow>
 {
     _Bool _desiresCameraStreaming;

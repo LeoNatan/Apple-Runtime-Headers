@@ -130,6 +130,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKDResponseBodyParser *responseBodyParser; // @synthesize responseBodyParser=_responseBodyParser;
 @property(retain, nonatomic) id <CKDAccountInfoProvider> accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
 - (void).cxx_destruct;
+- (id)createAssetAuthorizeGetRequestOptionsHeaderInfoWithKey:(id)arg1 value:(id)arg2;
 - (id)statusReportWithIndent:(unsigned long long)arg1;
 - (id)_CFNetworkTaskIdentifierString;
 @property(readonly, nonatomic) NSString *sectionID;
@@ -181,7 +182,7 @@ __attribute__((visibility("hidden")))
 - (void)_setupPublicDatabaseURL;
 - (void)performRequest;
 - (id)zoneIDsToLock;
-- (_Bool)sendRequestAnonymously;
+@property(readonly, nonatomic) _Bool sendRequestAnonymously;
 - (_Bool)allowsAnonymousAccount;
 - (_Bool)usesiCloudAuthToken;
 - (_Bool)usesCloudKitAuthToken;
@@ -209,11 +210,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *operationGroupID;
 @property(readonly, nonatomic) _Bool allowsBackgroundNetworking;
 @property(readonly, nonatomic) _Bool preferAnonymousRequests;
+@property(readonly, nonatomic) unsigned long long discretionaryNetworkBehavior;
+@property(readonly, nonatomic) _Bool automaticallyRetryNetworkFailures;
+@property(readonly, nonatomic) _Bool usesBackgroundSession;
 @property(readonly, nonatomic) NSString *authPromptReason;
 @property(readonly, nonatomic) NSString *sourceApplicationSecondaryIdentifier;
 @property(readonly, nonatomic) NSString *sourceApplicationBundleIdentifier;
 @property(readonly, nonatomic) _Bool allowsCellularAccess;
 @property(readonly, nonatomic) long long qualityOfService;
+@property(readonly, nonatomic) _Bool requestGETPreAuth;
 - (id)operationRequestWithType:(int)arg1;
 @property(readonly, nonatomic) NSString *requestContentType;
 @property(readonly, nonatomic) NSString *protobufOperationName;
@@ -228,6 +233,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long serverType;
 - (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
 - (_Bool)validate:(id *)arg1;
+- (void)requestDidComplete;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (void)requestDidParse509CertObject:(id)arg1;
 - (void)requestDidParsePlaintextObject:(id)arg1;
@@ -246,6 +252,7 @@ __attribute__((visibility("hidden")))
 - (long long)_handleServerProtobufResult:(id)arg1 rawData:(id)arg2;
 - (void)_handleAuthFailure;
 - (void)_renewAuthTokenWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_authTokenWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool expectsResponseBody;
 @property(readonly, nonatomic) _Bool hasRequestBody;
 - (void)_registerRequestOperationTypesForOperations:(id)arg1;
@@ -257,7 +264,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (id)ckShortDescription;
-@property(readonly, nonatomic) _Bool usesBackgroundSession;
 - (_Bool)_onLifecycleQueue;
 - (void)dealloc;
 - (id)init;

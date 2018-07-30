@@ -14,7 +14,7 @@
 + (id)synchronousFolderIconForItemFolderType:(unsigned long long)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4;
 @property(nonatomic) unsigned long long folderType; // @synthesize folderType=_folderType;
 - (_Bool)generateThumbnail:(id *)arg1 representativeIcon:(_Bool *)arg2;
-- (id)initWithItemFolderType:(unsigned long long)arg1 size:(struct CGSize)arg2 scale:(double)arg3 delegate:(id)arg4 style:(unsigned long long)arg5 qos:(unsigned int)arg6;
+- (id)initWithItemFolderType:(unsigned long long)arg1 size:(struct CGSize)arg2 scale:(double)arg3 delegate:(id)arg4 style:(unsigned long long)arg5;
 
 @end
 

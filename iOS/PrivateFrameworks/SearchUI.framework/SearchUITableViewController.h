@@ -7,22 +7,28 @@
 #import <SearchUI/SearchUIKeyboardableTableViewController.h>
 
 #import "SearchUIFeedbackDelegateInternal.h"
+#import "SearchUITableViewTesting.h"
 
-@class NSString, SearchUIPeekDelegate, SearchUITableModel, SearchUITableView;
+@class NSString, SearchUIPeekDelegate, SearchUITableModel, SearchUITableView, TLKTableViewScrollTester;
 
-@interface SearchUITableViewController : SearchUIKeyboardableTableViewController <SearchUIFeedbackDelegateInternal>
+@interface SearchUITableViewController : SearchUIKeyboardableTableViewController <SearchUITableViewTesting, SearchUIFeedbackDelegateInternal>
 {
     _Bool _shouldUseInsetRoundedSections;
+    CDUnknownBlockType tableViewWillUpdateHandler;
+    CDUnknownBlockType tableViewDidUpdateHandler;
+    CDUnknownBlockType cellWillDisplayHandler;
     id <SFFeedbackListener> _feedbackListener;
     id <SearchUIResultViewDelegate> _resultViewDelegate;
     SearchUITableModel *_tableModel;
     SearchUIPeekDelegate *_peekDelegate;
     id <UIViewControllerPreviewing> _previewingContext;
     long long _preferredPunchoutIndex;
+    TLKTableViewScrollTester *_scrollTester;
 }
 
 + (void)applySeparatorStyleToCell:(id)arg1 forCurrentRowModel:(id)arg2 nextRowModel:(id)arg3;
 + (double)layoutMarginWidthForOrientation:(long long)arg1;
+@property(retain) TLKTableViewScrollTester *scrollTester; // @synthesize scrollTester=_scrollTester;
 @property long long preferredPunchoutIndex; // @synthesize preferredPunchoutIndex=_preferredPunchoutIndex;
 @property(retain) id <UIViewControllerPreviewing> previewingContext; // @synthesize previewingContext=_previewingContext;
 @property(retain) SearchUIPeekDelegate *peekDelegate; // @synthesize peekDelegate=_peekDelegate;
@@ -30,10 +36,18 @@
 @property(nonatomic) _Bool shouldUseInsetRoundedSections; // @synthesize shouldUseInsetRoundedSections=_shouldUseInsetRoundedSections;
 @property __weak id <SearchUIResultViewDelegate> resultViewDelegate; // @synthesize resultViewDelegate=_resultViewDelegate;
 @property(nonatomic) __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
+@property(copy, nonatomic) CDUnknownBlockType cellWillDisplayHandler; // @synthesize cellWillDisplayHandler;
+@property(copy, nonatomic) CDUnknownBlockType tableViewDidUpdateHandler; // @synthesize tableViewDidUpdateHandler;
+@property(copy, nonatomic) CDUnknownBlockType tableViewWillUpdateHandler; // @synthesize tableViewWillUpdateHandler;
 - (void).cxx_destruct;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (_Bool)forwardFeedbackForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)tapAtIndexPath:(id)arg1;
+- (id)currentTableModel;
+- (_Bool)updateMustAccountForLayout;
+- (void)performScrollTestWithHandlerForFirstScrollCompletion:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performScrollTestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateContentScrolledOffScreenStatus;
 - (double)offScreenContentScrollDistance;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;

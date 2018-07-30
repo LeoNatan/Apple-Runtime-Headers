@@ -48,6 +48,7 @@
 - (void)_resumeStream;
 - (void)_pauseStream;
 - (void)stopStream;
+- (void)updateAudioVolume:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)_updateAudioSetting:(unsigned long long)arg1;
 - (void)updateAudioSetting:(unsigned long long)arg1;
 - (void)_startStream:(id)arg1;

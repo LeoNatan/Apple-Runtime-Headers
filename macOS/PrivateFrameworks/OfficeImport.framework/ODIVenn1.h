@@ -6,7 +6,6 @@
 
 #import <OfficeImport/ODIVenn.h>
 
-__attribute__((visibility("hidden")))
 @interface ODIVenn1 : ODIVenn
 {
 }

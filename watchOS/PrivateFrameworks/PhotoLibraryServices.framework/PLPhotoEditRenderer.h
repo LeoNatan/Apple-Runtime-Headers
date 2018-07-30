@@ -30,6 +30,9 @@
 + (id)_editedImagePropertiesFromOriginalImageProperties:(id)arg1 preserveRegions:(_Bool)arg2;
 + (id)newImageDataFromCGImage:(struct CGImage *)arg1 withCompressionQuality:(float)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(_Bool)arg4;
 + (id)compositionWithModel:(id)arg1 source:(id)arg2;
++ (unsigned int)whiteBalanceStringToInt:(id)arg1;
++ (id)whiteBalanceIntToString:(unsigned int)arg1;
++ (id)whiteBalanceEnumMap;
 + (void)initialize;
 @property(nonatomic) int smartFiltersCubeSize; // @synthesize smartFiltersCubeSize=_smartFiltersCubeSize;
 @property(retain, nonatomic) PLPhotoEditModel *photoEditModel; // @synthesize photoEditModel=_photoEditModel;

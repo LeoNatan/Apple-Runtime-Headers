@@ -7,35 +7,36 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBActivateCarSignalIntentResponse.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBActivateCarSignalIntentResponse : PBCodable <NSCopying>
+@interface _INPBActivateCarSignalIntentResponse : PBCodable <_INPBActivateCarSignalIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _signals;
+    struct _has;
 }
 
-+ (id)options;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (int)StringAsSignals:(id)arg1;
 - (id)signalsAsString:(int)arg1;
-- (void)setSignals:(int *)arg1 count:(unsigned int)arg2;
 - (int)signalsAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int signalsCount;
 - (void)addSignals:(int)arg1;
 - (void)clearSignals;
 @property(readonly, nonatomic) int *signals;
-@property(readonly, nonatomic) unsigned int signalsCount;
-- (void)dealloc;
+- (void)setSignals:(int *)arg1 count:(unsigned int)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,13 +8,8 @@
 
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
-#import "TSUDateTimeFormatInspectorPropertyVendor.h"
-#import "TSUDurationFormatInspectorPropertyVendor.h"
 
-@class NSNumber, NSSet, NSString;
-
-__attribute__((visibility("hidden")))
-@interface OITSUFormatObject : NSObject <TSUDurationFormatInspectorPropertyVendor, TSUDateTimeFormatInspectorPropertyVendor, NSCopying, NSMutableCopying>
+@interface OITSUFormatObject : NSObject <NSCopying, NSMutableCopying>
 {
     CDStruct_730f14de mFormatStruct;
     BOOL mUseExpandedContents;
@@ -33,16 +28,6 @@ __attribute__((visibility("hidden")))
 - (id)initWithTSUFormatFormatStruct:(CDStruct_730f14de)arg1;
 - (id)initWithTSUFormatFormatStruct:(CDStruct_730f14de)arg1 useExpandedContents:(BOOL)arg2;
 - (id)init;
-@property(readonly, nonatomic) NSSet *selectedDurationStyles;
-@property(readonly, nonatomic) NSNumber *durationStyle;
-@property(readonly, nonatomic) NSNumber *durationUnitLargest;
-@property(readonly, nonatomic) NSNumber *durationUnitSmallest;
-@property(readonly, nonatomic) NSNumber *durationUnitsAutomatic;
-@property(readonly, nonatomic) NSSet *selectedTimeFormats;
-@property(readonly, nonatomic) NSSet *selectedDateFormats;
-@property(readonly, nonatomic) NSString *timeFormat;
-@property(readonly, nonatomic) NSString *dateFormat;
-- (id)p_dateTimeFormat;
 
 @end
 

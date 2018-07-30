@@ -10,6 +10,7 @@
 
 @class GEOPDClientMetadata, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOABAssignmentRequest : PBRequest <NSCopying>
 {
     PBUnknownFields *_unknownFields;

@@ -10,6 +10,7 @@
 
 @protocol CKNavbarCanvasViewControllerDelegate <NSObject>
 - (void)navbarCanvasViewControllerWantsNavbarResize:(CKNavbarCanvasViewController *)arg1;
+- (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 buttonWasPressedOfType:(long long)arg2;
 - (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 avatarPickerViewControllerDidSelectEntity:(CKEntity *)arg2;
 - (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 didTapView:(UIView *)arg2;
 @end

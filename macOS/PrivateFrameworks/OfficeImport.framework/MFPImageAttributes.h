@@ -8,15 +8,14 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface MFPImageAttributes : NSObject
 {
     NSMutableDictionary *mColorAdjustMap;
 }
 
+- (void).cxx_destruct;
 - (id)ensureColorAdjustWithType:(int)arg1;
 - (id)colorAdjustWithType:(int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

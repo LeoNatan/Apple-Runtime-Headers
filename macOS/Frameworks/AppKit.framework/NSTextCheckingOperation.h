@@ -8,6 +8,7 @@
 
 @class NSArray, NSDictionary, NSOrthography, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSTextCheckingOperation : NSOperation
 {
     NSString *_string;

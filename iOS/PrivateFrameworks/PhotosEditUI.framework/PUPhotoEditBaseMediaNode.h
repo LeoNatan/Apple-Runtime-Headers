@@ -12,6 +12,7 @@
 
 @class AVAsset, NSArray, NSData, NSString, PUEditableMediaProviderAdjustmentDataNode, PUEditableMediaProviderImageDataNode, PUEditableMediaProviderVideoAssetNode;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditBaseMediaNode : PXRunNode <PUImageDataNode, PUVideoAssetNode, PXRunNodeDelegate>
 {
     PUEditableMediaProviderImageDataNode *_imageDataNode;

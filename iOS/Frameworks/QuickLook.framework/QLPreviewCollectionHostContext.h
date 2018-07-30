@@ -8,6 +8,7 @@
 
 #import "QLPreviewCollectionServiceProtocol.h"
 
+__attribute__((visibility("hidden")))
 @interface QLPreviewCollectionHostContext : NSExtensionContext <QLPreviewCollectionServiceProtocol>
 {
 }
@@ -30,7 +31,8 @@
 - (void)hostApplicationDidBecomeActive;
 - (void)hostApplicationDidEnterBackground:(_Bool)arg1;
 - (void)getPreviewCollectionUUIDWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)configureAsAccessoryViewContainerForPreviewCollection:(id)arg1;
 - (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(_Bool)arg2;
 - (void)configureWithNumberOfItems:(long long)arg1 currentPreviewItemIndex:(unsigned long long)arg2 itemProvider:(id)arg3 stateManager:(id)arg4;

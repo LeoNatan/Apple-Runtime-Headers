@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableDictionary, NSString, RWIDevice, RWITarget;
+@class NSArray, NSMutableDictionary, NSString, RWITarget;
 
 @interface RWIApplication : NSObject
 {
@@ -52,8 +52,6 @@
 @property(readonly, nonatomic) NSArray *drivables;
 @property(readonly, nonatomic) NSArray *debuggables;
 - (id)initWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2 name:(id)arg3 isProxy:(BOOL)arg4 state:(unsigned long long)arg5 isReady:(BOOL)arg6 allowsRemoteAutomation:(BOOL)arg7 target:(id)arg8;
-@property(readonly, nonatomic) NSArray *webViews; // @dynamic webViews;
-@property(readonly, nonatomic) RWIDevice *device; // @dynamic device;
 
 @end
 

@@ -16,19 +16,14 @@
     NSArray *_skipValues;
     NSDictionary *_skipToContactIndexes;
     CNContactStore *_store;
-    void *_addressBook;
 }
 
-@property(readonly, nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSDictionary *skipToContactIndexes; // @synthesize skipToContactIndexes=_skipToContactIndexes;
 @property(retain, nonatomic) NSArray *skipValues; // @synthesize skipValues=_skipValues;
 @property(retain, nonatomic) NSDictionary *sectionToContactIndexes; // @synthesize sectionToContactIndexes=_sectionToContactIndexes;
 @property(retain, nonatomic) NSArray *sectionHeaders; // @synthesize sectionHeaders=_sectionHeaders;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (id)localizedSectionIndices;
-- (id)localizedSectionHeaders;
-- (id)sectionHeadersDictionary;
 - (void)loadContactsWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;

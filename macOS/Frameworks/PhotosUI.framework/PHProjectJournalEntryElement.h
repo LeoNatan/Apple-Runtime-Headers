@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+- (id)description:(BOOL)arg1;
 - (id)initWithDate:(id)arg1 assetElement:(id)arg2 textElement:(id)arg3 weight:(id)arg4 placement:(struct CGRect)arg5;
 
 @end

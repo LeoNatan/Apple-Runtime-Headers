@@ -35,6 +35,7 @@
 - (id)_descriptionForStatus:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier;
 - (id)identify;
+@property(readonly, nonatomic) _Bool requiresSoftwareUpdate;
 @property(readonly, nonatomic) _Bool requiresSetupCode;
 @property(readonly, nonatomic) NSUUID *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
 @property(readonly, copy) NSString *description;

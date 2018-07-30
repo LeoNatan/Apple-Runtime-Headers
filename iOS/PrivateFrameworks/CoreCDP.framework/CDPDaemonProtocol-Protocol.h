@@ -26,6 +26,5 @@
 - (void)repairCloudDataProtectionStateWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)startCircleApplicationApprovalServerWithContext:(CDPContext *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)handleCloudDataProtectionStateWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2 completion:(void (^)(_Bool, _Bool, NSError *))arg3;
-- (void)fetchManateeAvailabilityWithCompletion:(void (^)(_Bool, NSError *))arg1;
 @end
 

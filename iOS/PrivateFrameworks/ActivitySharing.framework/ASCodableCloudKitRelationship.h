@@ -20,14 +20,20 @@
     NSString *_outgoingHandshakeToken;
     NSString *_preferredReachableAddress;
     NSString *_preferredReachableService;
+    unsigned int _supportedPhoneFeatures;
+    unsigned int _supportedWatchFeatures;
     NSData *_uuid;
     struct {
         unsigned int eventCount:1;
+        unsigned int supportedPhoneFeatures:1;
+        unsigned int supportedWatchFeatures:1;
     } _has;
 }
 
 + (Class)eventsType;
 + (Class)addressesType;
+@property(nonatomic) unsigned int supportedWatchFeatures; // @synthesize supportedWatchFeatures=_supportedWatchFeatures;
+@property(nonatomic) unsigned int supportedPhoneFeatures; // @synthesize supportedPhoneFeatures=_supportedPhoneFeatures;
 @property(nonatomic) long long eventCount; // @synthesize eventCount=_eventCount;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(retain, nonatomic) NSString *preferredReachableService; // @synthesize preferredReachableService=_preferredReachableService;
@@ -47,6 +53,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasSupportedWatchFeatures;
+@property(nonatomic) _Bool hasSupportedPhoneFeatures;
 @property(nonatomic) _Bool hasEventCount;
 - (id)eventsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)eventsCount;

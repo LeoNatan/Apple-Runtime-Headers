@@ -32,6 +32,7 @@
 }
 
 + (id)actionWithPayload:(id)arg1;
++ (id)formattedExcludedPathsFromRaw:(id)arg1;
 + (BOOL)shouldCloseInboundStreamWhenDone;
 + (BOOL)shouldCloseOutboundStreamWhenDone;
 + (BOOL)needsDirectAccessToSendOrReceiveResult;

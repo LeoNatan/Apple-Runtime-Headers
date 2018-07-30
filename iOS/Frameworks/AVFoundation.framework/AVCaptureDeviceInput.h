@@ -17,13 +17,13 @@
 + (void)initialize;
 - (void)_sourceFormatDidChange:(struct opaqueCMFormatDescription *)arg1;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
-- (int)_requestCameraRecordPermissionForDevice:(id)arg1;
-- (_Bool)_authorizedToUseDevice:(id)arg1;
+- (_Bool)_authorizedToUseDeviceAndRequestIfNecessary:(id)arg1;
 - (struct OpaqueCMClock *)clock;
 - (id)ports;
 - (id)notReadyError;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
+@property(nonatomic) _Bool unifiedAutoExposureDefaultsEnabled;
 @property(readonly, nonatomic) AVCaptureDevice *device;
 - (id)description;
 - (void)dealloc;

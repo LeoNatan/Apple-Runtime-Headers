@@ -8,14 +8,13 @@
 
 @class OITSUImage;
 
-__attribute__((visibility("hidden")))
 @interface MFPhoneBitmap : MFBitmap
 {
     OITSUImage *m_image;
 }
 
+- (void).cxx_destruct;
 - (id)getImage;
-- (void)dealloc;
 
 @end
 

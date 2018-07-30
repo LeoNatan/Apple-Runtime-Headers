@@ -20,6 +20,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly) struct Object *_apiObject;
+- (void)terminate;
 @property(readonly, nonatomic, getter=isSimulatingUserInteraction) _Bool simulatingUserInteraction;
 @property(readonly, nonatomic, getter=isPaired) _Bool paired;
 @property(readonly, copy, nonatomic) _WKAutomationSessionConfiguration *configuration;

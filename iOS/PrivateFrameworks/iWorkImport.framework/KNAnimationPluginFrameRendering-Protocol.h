@@ -14,6 +14,7 @@
 - (void)animationWillBeginWithContext:(id <KNAnimationPluginContext>)arg1;
 
 @optional
++ (_Bool)wantsSeparateGroupedTextures;
 + (_Bool)wantsParameterizedStrokeDrawingReversedWithAnimatedBuild:(KNAnimatedBuild *)arg1;
 + (_Bool)wantsParameterizedStrokeTexture;
 @end

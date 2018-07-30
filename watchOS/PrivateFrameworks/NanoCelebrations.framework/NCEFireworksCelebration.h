@@ -8,22 +8,23 @@
 
 #import "GLKViewDelegate.h"
 
-@class CADisplayLink, GLKView, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_log>, NSString, RPDFireworksRenderProgram, RPDGLContext, RPDTexture;
+@class CADisplayLink, GLKView, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, RPDClearPass, RPDClearProgram, RPDFireworksRenderProgram, RPDGLContext, RPDTexture;
 
 @interface NCEFireworksCelebration : NCECelebration <GLKViewDelegate>
 {
     CADisplayLink *_displayTimer;
-    _Bool _didWarmup;
     GLKView *_fireworksView;
     RPDGLContext *_glContext;
     NSMutableArray *_particleSystems;
+    RPDClearPass *_clearPass;
     NSObject<OS_dispatch_queue> *_displayTimerQueue;
+    RPDTexture *_burstTexture;
     RPDTexture *_cloudletTexture;
     RPDTexture *_riseFallMapTexture;
     RPDTexture *_constantMapTexture;
-    RPDFireworksRenderProgram *_shaderPrograms;
+    RPDFireworksRenderProgram *_renderProgram;
+    RPDClearProgram *_clearProgram;
     int _ticks;
-    NSObject<OS_os_log> *_log;
     NSObject<OS_dispatch_source> *_stopTimer;
     double _animationStartTime;
     double _averageFrameDuration;
@@ -31,26 +32,28 @@
 
 + (id)sharedFireworksGLContext;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *stopTimer; // @synthesize stopTimer=_stopTimer;
-@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property int ticks; // @synthesize ticks=_ticks;
 @property double averageFrameDuration; // @synthesize averageFrameDuration=_averageFrameDuration;
 @property double animationStartTime; // @synthesize animationStartTime=_animationStartTime;
-@property(retain, nonatomic) RPDFireworksRenderProgram *shaderPrograms; // @synthesize shaderPrograms=_shaderPrograms;
+@property(retain, nonatomic) RPDClearProgram *clearProgram; // @synthesize clearProgram=_clearProgram;
+@property(retain, nonatomic) RPDFireworksRenderProgram *renderProgram; // @synthesize renderProgram=_renderProgram;
 @property(retain, nonatomic) RPDTexture *constantMapTexture; // @synthesize constantMapTexture=_constantMapTexture;
 @property(retain, nonatomic) RPDTexture *riseFallMapTexture; // @synthesize riseFallMapTexture=_riseFallMapTexture;
 @property(retain, nonatomic) RPDTexture *cloudletTexture; // @synthesize cloudletTexture=_cloudletTexture;
+@property(retain, nonatomic) RPDTexture *burstTexture; // @synthesize burstTexture=_burstTexture;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *displayTimerQueue; // @synthesize displayTimerQueue=_displayTimerQueue;
+@property(retain, nonatomic) RPDClearPass *clearPass; // @synthesize clearPass=_clearPass;
 @property(retain, nonatomic) NSMutableArray *particleSystems; // @synthesize particleSystems=_particleSystems;
 @property(retain, nonatomic) RPDGLContext *glContext; // @synthesize glContext=_glContext;
 @property(retain, nonatomic) GLKView *fireworksView; // @synthesize fireworksView=_fireworksView;
-@property(nonatomic) _Bool didWarmup; // @synthesize didWarmup=_didWarmup;
 - (void).cxx_destruct;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect)arg2 forTime:(double)arg3;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect)arg2;
 - (void)displayTimerDidFire:(id)arg1;
 - (void)updateFPSAverage:(double)arg1;
-- (void)addParticleSystemsAt:(struct CGPoint)arg1 timeOffset:(float)arg2 primaryColor:secondaryColor:tertiaryColor: /* Error: Ran out of types for this method. */;
-- (void)setupChoreographyWithCompletion:(CDUnknownBlockType)arg1;
+- (void)addParticleSystemsAt:(struct CGPoint)arg1 timeOffset:(float)arg2 speedFactor:(float)arg3 primaryColor:secondaryColor: /* Error: Ran out of types for this method. */;
+- (void)setupChoreography;
+- (struct CGSize)screenSize;
 - (id)statisticsSuffix;
 - (id)name;
 - (void)startInView:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -58,7 +61,7 @@
 - (void)reset;
 - (void)stop;
 - (void)dealloc;
-- (void)warmup;
+- (void)warmupInView:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
 
 // Remaining properties

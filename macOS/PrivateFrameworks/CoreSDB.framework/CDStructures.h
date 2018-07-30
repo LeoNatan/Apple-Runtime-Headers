@@ -68,5 +68,6 @@ typedef struct {
     CDStruct_183601bc *_field17;
     int _field18;
     CDUnknownFunctionPointerType _field19;
-} CDStruct_2cac97d9;
+    int _field20;
+} CDStruct_47876580;
 

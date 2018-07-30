@@ -10,6 +10,7 @@
 
 @class NSString, PUConnection;
 
+__attribute__((visibility("hidden")))
 @interface PUConnectionUnlockClient : NSObject <PUUnlockClient>
 {
     PUConnection *_connection;

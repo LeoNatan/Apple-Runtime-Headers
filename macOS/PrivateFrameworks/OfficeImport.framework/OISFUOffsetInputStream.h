@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OISFUOffsetInputStream : NSObject <SFUInputStream>
 {
     id <SFUInputStream> mInputStream;

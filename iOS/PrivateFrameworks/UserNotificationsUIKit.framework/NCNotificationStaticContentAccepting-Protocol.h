@@ -4,24 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "PLTitled.h"
 
-@class NSArray, NSDate, NSString, NSTimeZone, UIImage, UIView;
+@class NSArray, NSString, UIImage, UIView;
 
-@protocol NCNotificationStaticContentAccepting <NSObject>
+@protocol NCNotificationStaticContentAccepting <PLTitled>
 @property(retain, nonatomic) NSArray *interfaceActions;
 @property(copy, nonatomic) NSString *secondaryText;
 @property(copy, nonatomic) NSString *primarySubtitleText;
 @property(copy, nonatomic) NSString *primaryText;
-@property(copy, nonatomic) NSTimeZone *timeZone;
-@property(readonly, nonatomic, getter=isDateAllDay) _Bool dateAllDay;
-@property(copy, nonatomic) NSDate *date;
-@property(copy, nonatomic) NSString *title;
-@property(retain, nonatomic) UIImage *icon;
 
 @optional
 @property(nonatomic) unsigned long long messageNumberOfLines;
 @property(retain, nonatomic) UIView *accessoryView;
 @property(retain, nonatomic) UIImage *thumbnail;
+@property(copy, nonatomic) NSString *summaryText;
 @end
 

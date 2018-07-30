@@ -9,6 +9,17 @@
 @interface IOBluetoothDevice (IOBluetoothDeviceImages)
 + (id)imageForSystemIconType:(unsigned int)arg1 ofSize:(struct CGSize)arg2;
 - (id)image;
+- (id)findDefaultImage;
+- (id)findLEImage;
+- (id)findNonAppleImage;
+- (id)findApplePIDVIDImage;
+- (id)findiPhoneImage;
+- (id)findiPadImage;
+- (id)findMacImage;
+- (void)logImageFinding:(id)arg1 ofType:(id)arg2;
+- (id)findApplePIDVIDImageInPlist;
+- (id)getPIDVIDAssetDictFromPrereleaseFiles;
+- (id)getPIDVIDAssetDictFromFile:(id)arg1;
 - (id)loadImageFromBundle:(id)arg1 withResourceNamed:(id)arg2;
 - (id)loadImageFromBundleID:(id)arg1 withResourceNamed:(id)arg2;
 @end

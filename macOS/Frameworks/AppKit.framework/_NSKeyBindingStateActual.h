@@ -8,6 +8,7 @@
 
 @class NSKeyBindingManager, NSMutableArray, NSMutableString, NSSortedArray;
 
+__attribute__((visibility("hidden")))
 @interface _NSKeyBindingStateActual : NSObject
 {
     NSKeyBindingManager *_currentInstance;

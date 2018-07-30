@@ -19,7 +19,7 @@
     NTKCompanionAppLibrary *_appLibrary;
 }
 
-+ (_Bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2;
++ (_Bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2 forDevice:(id)arg3;
 - (void).cxx_destruct;
 - (void)_invalidate;
 - (_Bool)_remoteIsCompanion;
@@ -34,7 +34,7 @@
 - (void)_activeDeviceChanged;
 - (void)_loadCollection;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

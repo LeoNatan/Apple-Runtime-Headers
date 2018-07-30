@@ -7,7 +7,6 @@
 #import "SPInterfaceObject.h"
 
 @protocol SPInterfaceItem <SPInterfaceObject>
-- (_Bool)isNativeInterfaceObject;
 - (_Bool)hasIntrinsicHeight;
 - (struct CGSize)interfacePlistSize;
 - (void)setWidthAdjustment:(float)arg1;
@@ -24,6 +23,8 @@
 - (void)setInterfaceAlignment:(int)arg1;
 
 @optional
+- (void)willDisappearForNotificationUI;
+- (void)willAppearForNotificationUI;
 - (void)prepareInterfaceItemForIB;
 - (void)contentSizeCategoryDidChange;
 @end

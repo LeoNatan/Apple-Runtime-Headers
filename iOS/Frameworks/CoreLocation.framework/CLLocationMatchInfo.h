@@ -9,12 +9,15 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
+@class NSData;
+
 @interface CLLocationMatchInfo : NSObject <NSCopying, NSSecureCoding>
 {
     id _internal;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) NSData *matchDataArray;
 @property(readonly, nonatomic, getter=isMatchShifted) _Bool matchShifted;
 @property(readonly, nonatomic) int matchRoadClass;
 @property(readonly, nonatomic) int matchFormOfWay;
@@ -28,6 +31,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct CLLocationCoordinate2D)arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(_Bool)arg6;
+- (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct CLLocationCoordinate2D)arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(_Bool)arg6 matchDataArray:(id)arg7;
 
 @end
 

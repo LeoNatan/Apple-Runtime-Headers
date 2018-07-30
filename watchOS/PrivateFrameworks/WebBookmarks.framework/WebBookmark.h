@@ -72,6 +72,7 @@
 - (unsigned int)hash;
 - (_Bool)isEqualToBookmark:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (id)initFrequentlyVisitedSiteWithWebBookmark:(id)arg1 title:(id)arg2;
 - (id)init;
 - (id)initWhiteListBookmarkWithTitle:(id)arg1 address:(id)arg2;
 - (id)initCarrierBookmarkWithTitle:(id)arg1 address:(id)arg2;

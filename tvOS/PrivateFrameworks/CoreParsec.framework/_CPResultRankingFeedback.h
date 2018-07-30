@@ -14,11 +14,6 @@
 
 @interface _CPResultRankingFeedback : PBCodable <_CPProcessableFeedback, _CPResultRankingFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int localResultPosition:1;
-        unsigned int personalizationScore:1;
-    } _has;
     unsigned int _localResultPosition;
     unsigned long long _timestamp;
     _CPSearchResultForFeedback *_result;
@@ -32,7 +27,7 @@
 @property(copy, nonatomic) NSArray *duplicateResults; // @synthesize duplicateResults=_duplicateResults;
 @property(copy, nonatomic) NSArray *hiddenResults; // @synthesize hiddenResults=_hiddenResults;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result; // @synthesize result=_result;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
@@ -42,8 +37,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasPersonalizationScore;
-@property(readonly, nonatomic) _Bool hasLocalResultPosition;
 - (id)duplicateResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)duplicateResultsCount;
 - (void)addDuplicateResults:(id)arg1;
@@ -52,8 +45,6 @@
 - (unsigned long long)hiddenResultsCount;
 - (void)addHiddenResults:(id)arg1;
 - (void)clearHiddenResults;
-@property(readonly, nonatomic) _Bool hasResult;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

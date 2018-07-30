@@ -8,7 +8,6 @@
 
 @class MNObserverHashTable;
 
-__attribute__((visibility("hidden")))
 @interface MNTimeManager : NSObject
 {
     MNObserverHashTable *_timeManagerObservers;

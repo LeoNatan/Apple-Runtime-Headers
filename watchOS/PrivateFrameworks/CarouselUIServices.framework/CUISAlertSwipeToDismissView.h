@@ -6,11 +6,11 @@
 
 #import "UIView.h"
 
-#import "UIScrollViewDelegate.h"
+#import "CUISAlertSwipeToDismissViewBehaviorDelegate.h"
 
-@class CUISAlertBackgroundView, CUISAlertChevronView, NSString, UIScrollView;
+@class CUISAlertBackgroundView, CUISAlertChevronView, CUISAlertSwipeToDismissViewBehavior, NSString, UIScrollView;
 
-@interface CUISAlertSwipeToDismissView : UIView <UIScrollViewDelegate>
+@interface CUISAlertSwipeToDismissView : UIView <CUISAlertSwipeToDismissViewBehaviorDelegate>
 {
     CUISAlertBackgroundView *_backgroundView;
     UIView *_contentView;
@@ -18,20 +18,16 @@
     id <CUISAlertSwipeToDismissViewDataSource> _dataSource;
     UIScrollView *_scrollView;
     CUISAlertChevronView *_topChevron;
+    CUISAlertSwipeToDismissViewBehavior *_dismissBehavior;
 }
 
+@property(retain, nonatomic) CUISAlertSwipeToDismissViewBehavior *dismissBehavior; // @synthesize dismissBehavior=_dismissBehavior;
 @property(retain, nonatomic) CUISAlertChevronView *topChevron; // @synthesize topChevron=_topChevron;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <CUISAlertSwipeToDismissViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CUISAlertSwipeToDismissViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_handleScrollDidEnd:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
-- (_Bool)_draggedPastTopThreshold;
-- (_Bool)_scrollViewPastTopThreshold:(float)arg1;
+- (void)behaviorDidPerformSwipeAction;
 - (void)reloadData;
 - (id)backgroundView;
 - (void)layoutSubviews;

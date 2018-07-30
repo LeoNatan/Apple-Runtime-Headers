@@ -18,9 +18,11 @@
     BOOL _didAddObservers;
     BOOL _fetchingEnabled;
     BOOL _syncDisabledByServer;
+    BOOL _didCheckForLongLivedOperations;
     id <ICCloudContextDelegate> _cloudContextDelegate;
     NSDate *_lastSyncDate;
     long long _qualityOfService;
+    unsigned long long _discretionaryNetworkBehavior;
     CKContainer *_container;
     NSOperationQueue *_operationQueue;
     NSObject<OS_dispatch_queue> *_processingQueue;
@@ -53,6 +55,7 @@
 + (id)notesZoneID;
 + (id)newNotesContainer;
 + (id)sharedContext;
+@property(nonatomic) BOOL didCheckForLongLivedOperations; // @synthesize didCheckForLongLivedOperations=_didCheckForLongLivedOperations;
 @property(retain) NSMutableSet *subscribedSubscriptionIDs; // @synthesize subscribedSubscriptionIDs=_subscribedSubscriptionIDs;
 @property(retain, nonatomic) NSMutableSet *zoneIDsNeedingToBeSaved; // @synthesize zoneIDsNeedingToBeSaved=_zoneIDsNeedingToBeSaved;
 @property(retain, nonatomic) NSMutableSet *zoneIDsFetchingChanges; // @synthesize zoneIDsFetchingChanges=_zoneIDsFetchingChanges;
@@ -72,6 +75,7 @@
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
+@property(nonatomic) unsigned long long discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property BOOL needsToUpdateSubscriptions; // @synthesize needsToUpdateSubscriptions=_needsToUpdateSubscriptions;
 @property(retain) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;

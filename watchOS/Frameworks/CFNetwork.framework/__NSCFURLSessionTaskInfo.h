@@ -41,6 +41,8 @@
     NSString *_sessionID;
     unsigned int _retryCount;
     unsigned int _lowThroughputTimerRetryCount;
+    int _discretionaryOverride;
+    unsigned int _qos;
     NSString *_uniqueIdentifier;
     NSString *_storagePartitionIdentifier;
     NSString *_pathToDownloadTaskFile;
@@ -105,6 +107,8 @@
 @property long long bytesPerSecondLimit; // @synthesize bytesPerSecondLimit=_bytesPerSecondLimit;
 @property(copy) NSString *storagePartitionIdentifier; // @synthesize storagePartitionIdentifier=_storagePartitionIdentifier;
 @property(copy) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property unsigned int qos; // @synthesize qos=_qos;
+@property int discretionaryOverride; // @synthesize discretionaryOverride=_discretionaryOverride;
 @property(getter=isDiscretionary) _Bool discretionary; // @synthesize discretionary=_discretionary;
 @property long long basePriority; // @synthesize basePriority=_basePriority;
 @property _Bool shouldCancelOnDisconnect; // @synthesize shouldCancelOnDisconnect=_shouldCancelOnDisconnect;

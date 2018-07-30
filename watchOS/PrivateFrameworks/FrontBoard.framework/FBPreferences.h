@@ -14,10 +14,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)_queue_reload;
 - (id)description;
 - (void)reload;
-- (void)dealloc;
 - (id)init;
 
 @end

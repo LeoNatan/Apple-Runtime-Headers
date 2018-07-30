@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 - (id)actionPickerItems;
 - (void)performDefaultAction;
 - (id)localizedDefaultActionDescription;
-- (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 codePayload:(id)arg2;
 
 @end
 

@@ -32,10 +32,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)canAccessURL:(id)arg1;
 - (BOOL)requiresAccessToAdditionalWebsitesThan:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
-@property(readonly, nonatomic) Vector_e82a6a67 allowedDomainPatternsForHeaderInjection;
-@property(readonly, nonatomic) Vector_e82a6a67 allowedDomainPatterns;
+@property(readonly, nonatomic) Vector_851fab59 allowedDomainPatternsForHeaderInjection;
+@property(readonly, nonatomic) Vector_851fab59 allowedDomainPatterns;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithAccessLevel:(int)arg1 allowedDomainPatterns:(Vector_e82a6a67)arg2 hasInjectedContent:(BOOL)arg3;
+- (id)initWithAccessLevel:(int)arg1 allowedDomainPatterns:(Vector_851fab59)arg2 hasInjectedContent:(BOOL)arg3;
 
 @end
 

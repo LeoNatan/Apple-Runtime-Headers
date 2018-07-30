@@ -8,7 +8,6 @@
 
 @class CUIPSDLayerRef;
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDLayerMaskRef : NSObject
 {
     CUIPSDLayerRef *_layerRef;

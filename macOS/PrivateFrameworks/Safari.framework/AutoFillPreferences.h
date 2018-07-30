@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)toggleAutoFillPasswords:(id)arg1;
 - (void)toggleAutoFillAddressFields:(id)arg1;
 - (void)updateViews;
+- (id)imageForPreferenceNamed:(id)arg1;
 
 @end
 

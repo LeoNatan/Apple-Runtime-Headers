@@ -11,10 +11,12 @@
 @interface CSLSSuspendSystemGestureAssertion : NSObject
 {
     NSString *_assertionID;
+    unsigned int _edgeFlags;
 }
 
 + (id)assertionProvider;
 + (void)setAssertionProvider:(id)arg1;
+@property(nonatomic) unsigned int edgeFlags; // @synthesize edgeFlags=_edgeFlags;
 - (void).cxx_destruct;
 - (void)_takeAssertion;
 - (void)invalidate;

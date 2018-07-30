@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSMutableArray, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
+@class NSDate, NSMutableArray, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUserDefaults, NSXPCConnection;
 
 @interface WLKSettingsStore : NSObject
 {
@@ -21,6 +21,7 @@
     _Bool _migratediOS;
     _Bool _migratedtvOS;
     NSMutableArray *_apps;
+    NSUserDefaults *_defaultsAccessor;
     int _didChangeNotificationToken;
     NSXPCConnection *_connection;
     _Bool _hasOutstandingChanges;
@@ -29,13 +30,14 @@
     NSDate *_lastSyncToCloudDate;
 }
 
++ (void)synchronizeSettingsDefaultsForKeys:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)sharedSettings;
 @property _Bool hasOutstandingChanges; // @synthesize hasOutstandingChanges=_hasOutstandingChanges;
 @property int ignoreChangesCount; // @synthesize ignoreChangesCount=_ignoreChangesCount;
 @property(readonly, copy, nonatomic) NSDate *lastSyncToCloudDate; // @synthesize lastSyncToCloudDate=_lastSyncToCloudDate;
 @property(readonly, copy, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
-@property(retain, nonatomic) NSNumber *optedInVal; // @synthesize optedInVal=_optedInVal;
+@property(copy, nonatomic) NSNumber *optedInVal; // @synthesize optedInVal=_optedInVal;
 - (void).cxx_destruct;
 - (id)_connection;
 - (void)endIgnoringChanges;
@@ -48,7 +50,7 @@
 - (void)_attemptCullingOfObsoleteApp:(id)arg1;
 - (_Bool)synchronize:(unsigned long long)arg1;
 - (void)synchronize:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)forceUpdate;
+- (void)forceUpdateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_supportPath;
 - (void)_dictionaryOnDisk:(CDUnknownBlockType)arg1;
 - (void)_writeToDisk:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -59,7 +61,7 @@
 - (id)_dictionaryRepresentation;
 - (void)refresh;
 - (id)description;
-@property(retain, nonatomic) NSString *pushToken;
+@property(copy, nonatomic) NSString *pushToken;
 - (void)setLastSyncToCloudDate:(id)arg1;
 - (void)setLastSyncDate:(id)arg1;
 @property(nonatomic) _Bool migratedtvOS;

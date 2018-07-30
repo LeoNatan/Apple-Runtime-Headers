@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class SUDOMElement;
 
-@interface SUOverlayTransition : NSObject <NSCoding, NSCopying>
+@interface SUOverlayTransition : NSObject <NSSecureCoding, NSCopying>
 {
     double _duration;
     SUDOMElement *_sourceElement;
@@ -19,6 +19,7 @@
 }
 
 + (long long)transitionTypeFromString:(id)arg1;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) SUDOMElement *sourceElement; // @synthesize sourceElement=_sourceElement;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

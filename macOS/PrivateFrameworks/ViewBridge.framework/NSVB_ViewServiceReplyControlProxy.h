@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "_UIViewServiceProxy_ReplyControl.h"
+#import "NSVB_ViewServiceProxy_ReplyControl.h"
 
 @class NSLock, NSVB_ViewServiceReplyAwaitingTrampoline, NSVB_ViewServiceReplyControlTrampoline;
 
 __attribute__((visibility("hidden")))
-@interface NSVB_ViewServiceReplyControlProxy : NSObject <_UIViewServiceProxy_ReplyControl>
+@interface NSVB_ViewServiceReplyControlProxy : NSObject <NSVB_ViewServiceProxy_ReplyControl>
 {
     id _target;
     NSVB_ViewServiceReplyControlTrampoline *_controlTrampoline;

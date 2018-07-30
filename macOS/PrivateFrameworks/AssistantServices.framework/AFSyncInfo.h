@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSString, SASyncAppMetaData;
+@class NSSet, NSString, SASyncAppMetaData;
 
 @interface AFSyncInfo : NSObject <NSSecureCoding>
 {
@@ -19,9 +19,11 @@
     long long _count;
     NSString *_key;
     SASyncAppMetaData *_appMetadata;
+    NSSet *_reasons;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSSet *reasons; // @synthesize reasons=_reasons;
 @property(nonatomic) BOOL forVerification; // @synthesize forVerification=_forVerification;
 @property(nonatomic) BOOL targetIsLocal; // @synthesize targetIsLocal=_targetIsLocal;
 @property(copy, nonatomic) SASyncAppMetaData *appMetadata; // @synthesize appMetadata=_appMetadata;

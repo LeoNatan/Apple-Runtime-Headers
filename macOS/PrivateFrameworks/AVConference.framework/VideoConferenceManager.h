@@ -74,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (void)videoConference:(id)arg1 remoteMediaStalled:(BOOL)arg2 callID:(unsigned int)arg3;
 - (void)videoConference:(id)arg1 receivedNoRemotePacketsForTime:(double)arg2 callID:(unsigned int)arg3;
 - (void)videoConference:(id)arg1 withCallID:(unsigned int)arg2 didPauseVideo:(BOOL)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 withCallID:(unsigned int)arg2 isSendingAudio:(BOOL)arg3 error:(id)arg4;
 - (void)videoConference:(id)arg1 withCallID:(unsigned int)arg2 didPauseAudio:(BOOL)arg3 error:(id)arg4;
 - (void)videoConference:(id)arg1 didStopWithCallID:(unsigned int)arg2 error:(id)arg3 callMetadata:(id)arg4;
 - (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned int)arg3 withUserInfo:(id)arg4 error:(id)arg5;

@@ -15,13 +15,6 @@ struct _NSRange {
     unsigned long long length;
 };
 
-struct __DDExpressionPosition {
-    int _field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

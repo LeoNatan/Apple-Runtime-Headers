@@ -13,10 +13,13 @@
     NSMutableDictionary *_dict;
     NSObject<NSViewBridgeKVOBuddy> *_kvoBuddy;
     NSMutableSet *_nonLocalChangesInProgress;
+    NSMutableSet *_validClasses;
+    struct os_unfair_lock_s _retainReleaseLock;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (BOOL)accessInstanceVariablesDirectly;
++ (id)validClasses;
 + (BOOL)objectIsSuitable:(id)arg1;
 @property NSObject<NSViewBridgeKVOBuddy> *kvoBuddy; // @synthesize kvoBuddy=_kvoBuddy;
 - (BOOL)_hasTrueValueForEntitlement:(id)arg1;
@@ -39,10 +42,16 @@
 - (BOOL)changeOriginatesLocally:(id)arg1;
 - (void)nonLocalChangeInProgress:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)nonLocalChangeInProgress;
+- (id)validClasses;
 - (id)description;
 @property(readonly) CDStruct_6ad76789 auditToken;
 @property(readonly) int processIdentifier;
 - (void)dealloc;
+- (oneway void)release;
+- (void)__vbSuperRelease;
+- (id)retain;
+- (void)__vbWithLockPerform:(CDUnknownBlockType)arg1;
+- (struct os_unfair_lock_s *)retainReleaseLock;
 
 @end
 

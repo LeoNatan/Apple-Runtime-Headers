@@ -7,7 +7,7 @@
 #import "PHAsset.h"
 
 @interface PHAsset (MediaAnalysis)
-+ (id)vcp_defaultFetchOptions;
++ (id)vcp_fetchOptionsForLibrary:(id)arg1;
 - (id)vcp_modificationDate;
 - (struct CGSize)vcp_originalSize;
 - (id)vcp_typeDescription;

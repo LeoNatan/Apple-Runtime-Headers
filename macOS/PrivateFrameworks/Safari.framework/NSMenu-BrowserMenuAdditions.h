@@ -8,9 +8,11 @@
 
 @interface NSMenu (BrowserMenuAdditions)
 @property(retain, nonatomic) id representedObject;
+- (BOOL)safari_appendItemFromMenu:(id)arg1 withIdentifier:(id)arg2;
 - (void)safari_transferAllItemsFromMenu:(id)arg1;
 - (void)safari_removeUselessMenuItemSeparators;
 - (id)safari_addItemWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)safari_itemWithIdentifier:(id)arg1;
 - (id)safari_itemWithTarget:(id)arg1 andAction:(SEL)arg2;
 - (id)safari_addItemWithTitle:(id)arg1 action:(SEL)arg2 tag:(int)arg3;
 - (id)safari_addItemWithTitle:(id)arg1 action:(SEL)arg2 target:(id)arg3;

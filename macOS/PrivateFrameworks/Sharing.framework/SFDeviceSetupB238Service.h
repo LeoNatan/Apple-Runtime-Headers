@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class APCPlayer, CUAudioPlayer, NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, SFClient, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession, SFSiriClient, SFSiriDeviceSetupGreetingDetails;
+@class APCPlayer, CUAudioPlayer, NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, SFClient, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession, SFSiriClient;
 
 @interface SFDeviceSetupB238Service : NSObject
 {
@@ -23,14 +23,15 @@
     BOOL _invalidateCalled;
     BOOL _iTunesCloudCompleted;
     int _iTunesCloudCompleteToken;
+    double _iTunesCloudWaitSeconds;
     BOOL _mediaSystemReady;
+    double _mediaSystemWaitSeconds;
     unsigned long long _peerFeatureFlags;
     SFClient *_sfClient;
     SFService *_sfService;
     SFSession *_sfSession;
     SFSiriClient *_siriClient;
     BOOL _siriDidDeviceSetup;
-    SFSiriDeviceSetupGreetingDetails *_siriGreetingDetails;
     BOOL _siriHeardWhatCanYouDo;
     BOOL _wifiSetupEnabled;
     SFDeviceOperationHandlerWiFiSetup *_wifiSetupHandler;

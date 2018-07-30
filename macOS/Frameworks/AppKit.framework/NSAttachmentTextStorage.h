@@ -6,6 +6,7 @@
 
 #import "NSTextStorage.h"
 
+__attribute__((visibility("hidden")))
 @interface NSAttachmentTextStorage : NSTextStorage
 {
     NSTextStorage *_realTS;

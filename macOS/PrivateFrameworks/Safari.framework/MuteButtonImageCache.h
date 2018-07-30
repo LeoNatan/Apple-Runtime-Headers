@@ -12,14 +12,11 @@ __attribute__((visibility("hidden")))
 @interface MuteButtonImageCache : NSObject
 {
     NSMutableDictionary *_imageCache;
-    NSMutableDictionary *_templateImageCache;
 }
 
 + (id)sharedCache;
 - (void).cxx_destruct;
-- (id)_buttonImageWithSize:(struct CGSize)arg1 type:(long long)arg2 color:(id)arg3 template:(BOOL)arg4;
 - (id)buttonImageWithSize:(struct CGSize)arg1 type:(long long)arg2 color:(id)arg3;
-- (id)buttonTemplateImageWithSize:(struct CGSize)arg1 type:(long long)arg2 color:(id)arg3;
 
 @end
 

@@ -91,8 +91,6 @@ struct AURenderEventAllocator;
 
 struct AURenderEventStruct;
 
-struct AUSyncCaller;
-
 struct AUv3InstanceBase {
     CDUnknownFunctionPointerType *_field1;
     CDUnknownFunctionPointerType _field2;
@@ -135,6 +133,8 @@ struct AudioComponentDescription {
     unsigned int componentFlagsMask;
 };
 
+struct AudioComponentPluginScanner;
+
 struct AudioComponentRegistrarImpl {
     _Bool _field1;
     _Bool _field2;
@@ -148,7 +148,8 @@ struct AudioComponentRegistrarImpl {
     struct AudioComponentVector _field10;
     struct PurgeableDataWrapper _field11;
     struct PurgeableDataWrapper _field12;
-    struct shared_ptr<applesauce::experimental::sync::Synchronized<AUExtensionScanner, std::__1::mutex, applesauce::experimental::sync::EmptyAtomicInterface<AUExtensionScanner>>> _field13;
+    struct unique_ptr<AudioComponentPluginScanner, std::__1::default_delete<AudioComponentPluginScanner>> _field13;
+    struct shared_ptr<applesauce::experimental::sync::Synchronized<AUExtensionScanner, std::__1::mutex, applesauce::experimental::sync::EmptyAtomicInterface<AUExtensionScanner>>> _field14;
 };
 
 struct AudioComponentVector {
@@ -215,7 +216,7 @@ struct IOThread;
 
 struct IPCAURenderingClient {
     CDUnknownFunctionPointerType *_vptr$IPCAURenderingClient;
-    id mRemote;
+    NSXPCConnection *mXPCConnection;
     _Bool mInitialized;
     _Bool mRenderPrioritySet;
     _Bool mIsOffline;
@@ -261,6 +262,10 @@ struct InterAppAudioAppInfo {
     struct __CFString *_field4;
     struct __CFString *_field5;
     struct __CFURL *_field6;
+};
+
+struct NSMutableDictionary {
+    Class _field1;
 };
 
 struct NewServerListener;
@@ -361,6 +366,16 @@ struct function<NSData *()> {
     struct __base<NSData *()> *_field2;
 };
 
+struct function<void ()> {
+    struct type __buf_;
+    struct __base<void ()> *__f_;
+};
+
+struct function<void (AudioComponentVector &, AudioComponentVector &)> {
+    struct type __buf_;
+    struct __base<void (AudioComponentVector &, AudioComponentVector &)> *__f_;
+};
+
 struct function<void (const AudioComponentVector &, AudioComponentVector &)> {
     struct type _field1;
     struct __base<void (const AudioComponentVector &, AudioComponentVector &)> *_field2;
@@ -394,6 +409,12 @@ struct recursive_mutex {
     struct _opaque_pthread_mutex_t __m_;
 };
 
+struct reply_watchdog_factory {
+    _Bool mDebugging;
+    int mDefaultTimeoutMS;
+    struct function<void ()> mTimeoutHandler;
+};
+
 struct set<AUObserverController::AddressOriginator, std::__1::less<AUObserverController::AddressOriginator>, std::__1::allocator<AUObserverController::AddressOriginator>> {
     struct __tree<AUObserverController::AddressOriginator, std::__1::less<AUObserverController::AddressOriginator>, std::__1::allocator<AUObserverController::AddressOriginator>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -417,7 +438,7 @@ struct shared_ptr<applesauce::experimental::sync::Synchronized<AUExtensionScanne
 };
 
 struct type {
-    unsigned char _field1[32];
+    unsigned char __lx[32];
 };
 
 struct unique_ptr<AUAudioUnitV2Bridge_Renderer, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer>> {
@@ -432,12 +453,6 @@ struct unique_ptr<AUProcAndUserData, std::__1::default_delete<AUProcAndUserData>
     } __ptr_;
 };
 
-struct unique_ptr<AUSyncCaller, std::__1::default_delete<AUSyncCaller>> {
-    struct __compressed_pair<AUSyncCaller *, std::__1::default_delete<AUSyncCaller>> {
-        struct AUSyncCaller *__value_;
-    } __ptr_;
-};
-
 struct unique_ptr<AUv3InstanceBase::AllParameterListener, std::__1::default_delete<AUv3InstanceBase::AllParameterListener>> {
     struct __compressed_pair<AUv3InstanceBase::AllParameterListener *, std::__1::default_delete<AUv3InstanceBase::AllParameterListener>> {
         struct AllParameterListener *_field1;
@@ -445,6 +460,12 @@ struct unique_ptr<AUv3InstanceBase::AllParameterListener, std::__1::default_dele
 };
 
 struct unique_ptr<AUv3InstanceBase::ClientPropertyListener, std::__1::default_delete<AUv3InstanceBase::ClientPropertyListener>>;
+
+struct unique_ptr<AudioComponentPluginScanner, std::__1::default_delete<AudioComponentPluginScanner>> {
+    struct __compressed_pair<AudioComponentPluginScanner *, std::__1::default_delete<AudioComponentPluginScanner>> {
+        struct AudioComponentPluginScanner *_field1;
+    } _field1;
+};
 
 struct unique_ptr<CAMutex, std::__1::default_delete<CAMutex>> {
     struct __compressed_pair<CAMutex *, std::__1::default_delete<CAMutex>> {

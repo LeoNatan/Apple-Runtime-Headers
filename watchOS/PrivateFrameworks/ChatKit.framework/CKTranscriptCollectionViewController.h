@@ -24,7 +24,7 @@
 #import "UICollectionViewDelegate.h"
 #import "UICollectionViewDelegateFlowLayout.h"
 
-@class ArouetPrewarmer, CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKNanoPPTSmartReplyTest, CKNanoReplyLoader, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSIndexPath, NSIndexSet, NSMutableSet, NSObject<OS_dispatch_group>, NSString, PUICQuickboardLanguageController, UITapGestureRecognizer, UIView, UIView<CKFullscreenEffectView>, UIView<CKGradientReferenceView>;
+@class ArouetPrewarmer, CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKNanoPPTSmartReplyTest, CKNanoReplyLoader, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSHashTable, NSIndexPath, NSIndexSet, NSMutableSet, NSObject<OS_dispatch_group>, NSString, PUICQuickboardLanguageController, UITapGestureRecognizer, UIView, UIView<CKFullscreenEffectView>, UIView<CKGradientReferenceView>;
 
 @interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CKNanoReplyButtonsCellDelegate, CKNanoReplyListCellDelegate, UIAlertViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKSendAnimationManagerDelegate, PUICQuickboardLanguageControllerDelegate>
 {
@@ -72,6 +72,7 @@
     NSMutableSet *_currentEffectDecorationViews;
     int _contentAnimationPauseReasons;
     UIView *_snapshotOfPluginBeingReplacedByBreadcrumb;
+    NSHashTable *_visibleBalloonCells;
     NSString *_mostRecentlyTouchedPlugin;
     CDUnknownBlockType _transcriptUpdateCompletion;
     double _pluginPlaybackDelay;
@@ -81,6 +82,7 @@
 
 @property(copy, nonatomic) CDUnknownBlockType transcriptUpdateCompletion; // @synthesize transcriptUpdateCompletion=_transcriptUpdateCompletion;
 @property(nonatomic) NSString *mostRecentlyTouchedPlugin; // @synthesize mostRecentlyTouchedPlugin=_mostRecentlyTouchedPlugin;
+@property(retain, nonatomic) NSHashTable *visibleBalloonCells; // @synthesize visibleBalloonCells=_visibleBalloonCells;
 @property(retain, nonatomic) UIView *snapshotOfPluginBeingReplacedByBreadcrumb; // @synthesize snapshotOfPluginBeingReplacedByBreadcrumb=_snapshotOfPluginBeingReplacedByBreadcrumb;
 @property(nonatomic) _Bool playedLastImpactEffectForTransitionFromComposing; // @synthesize playedLastImpactEffectForTransitionFromComposing=_playedLastImpactEffectForTransitionFromComposing;
 @property(nonatomic) int contentAnimationPauseReasons; // @synthesize contentAnimationPauseReasons=_contentAnimationPauseReasons;
@@ -172,6 +174,7 @@
 - (void)touchUpInsideCellSpeakerButton:(id)arg1;
 - (void)touchUpInsideCellStatusButton:(id)arg1;
 - (void)touchUpInsideCellFailureButton:(id)arg1;
+- (void)updateLastAddressedHandleID:(id)arg1 lastAddressedSIMID:(id)arg2;
 - (void)selectChatItem:(id)arg1;
 - (id)cellForAssociatedChatItem:(id)arg1;
 - (id)chatItemForCell:(id)arg1;
@@ -220,11 +223,12 @@
 - (void)locationShareBalloonViewShareButtonTapped:(id)arg1;
 - (void)locationShareBalloonViewIgnoreButtonTapped:(id)arg1;
 - (void)balloonView:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
+- (void)tuConversationBalloonJoinButtonTapped:(id)arg1;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)liveViewController:(id)arg1 stageSticker:(id)arg2 skipShelf:(_Bool)arg3 allowAllCommits:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)liveViewController:(id)arg1 stagePayload:(id)arg2 skipShelf:(_Bool)arg3 allowAllCommits:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)liveViewController:(id)arg1 requestPresentationStyleExpanded:(_Bool)arg2;
+- (void)liveViewController:(id)arg1 requestPresentationStyle:(unsigned int)arg2;
 - (void)associatedMessageTranscriptCellLongTouched:(id)arg1;
 - (void)associatedMessageTranscriptCellDoubleTapped:(id)arg1;
 - (void)_handleAssociatedMessageCellTapEvent:(id)arg1 isDoubleTap:(_Bool)arg2;
@@ -247,6 +251,10 @@
 - (void)collectionViewDidInset:(id)arg1;
 - (void)collectionViewWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets *)arg2;
 - (_Bool)collectionView:(id)arg1 isEditableItemAtIndexPath:(id)arg2;
+- (void)_stopPlaybackOfAllBalloonMovies;
+- (void)_configureVisibleTranscriptBalloonCells;
+- (void)_removeVisibleTranscriptBalloonCell:(id)arg1;
+- (void)_addVisibleTranscriptBalloonCell:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;

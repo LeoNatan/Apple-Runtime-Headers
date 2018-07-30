@@ -15,3 +15,8 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
+struct _opaque_pthread_mutex_t {
+    long long __sig;
+    char __opaque[56];
+};
+

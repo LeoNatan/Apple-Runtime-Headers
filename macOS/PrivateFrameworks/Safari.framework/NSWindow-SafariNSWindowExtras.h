@@ -7,6 +7,7 @@
 #import "NSWindow.h"
 
 @interface NSWindow (SafariNSWindowExtras)
+- (struct CGRect)safari_adjustWindowRectInMainScreen:(struct CGRect)arg1;
 - (void)safari_addViewUnderTitlebar:(id)arg1;
 - (CDUnknownBlockType)safari_setupCustomizedTitlebarView:(id)arg1;
 - (void)safari_endSheetInParentWithReturnCode:(long long)arg1;

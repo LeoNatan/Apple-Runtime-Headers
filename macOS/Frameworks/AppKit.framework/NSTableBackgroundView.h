@@ -29,11 +29,11 @@ __attribute__((visibility("hidden")))
 @property(retain) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) NSColor *secondAlternatingColor; // @synthesize secondAlternatingColor=_secondAlternatingColor;
+- (id)_preferredAppearance;
 - (void)setLayer:(id)arg1;
 - (int)_trackingAreasDirty;
 - (void)_setTrackingAreasDirty:(int)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-- (BOOL)_canDisableBaseVibrancy;
 - (void)_drawAlternatingBackgroundAndGridInRect:(struct CGRect)arg1;
 - (void)_callPublicDrawBackground:(BOOL)arg1 drawGrid:(BOOL)arg2 inRect:(struct CGRect)arg3;
 - (void)_drawRect:(struct CGRect)arg1 inTableCoordsWithHandler:(CDUnknownBlockType)arg2;

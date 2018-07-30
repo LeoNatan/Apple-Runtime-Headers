@@ -42,6 +42,7 @@
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *onTintColor; // @synthesize onTintColor=_onTintColor;
 - (void).cxx_destruct;
+- (void)setEnabled:(_Bool)arg1;
 - (void)_setPressed:(_Bool)arg1 on:(_Bool)arg2 animated:(_Bool)arg3 shouldAnimateLabels:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateWell:(_Bool)arg1;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSDictionary, NSMutableArray, NSMutableAttributedString, SCROBrailleChunk, SCROBrailleLineVirtualStatus;
+@class NSArray, NSAttributedString, NSData, NSDictionary, NSMutableArray, NSMutableAttributedString, SCROBrailleChunk, SCROBrailleLineVirtualStatus;
 
 @interface SCROBrailleLine : NSObject
 {
@@ -95,6 +95,7 @@
 @property(readonly, nonatomic) _Bool shouldTranslateNow;
 @property(readonly, nonatomic) _Bool wantsEdits;
 @property(readonly, nonatomic) _Bool hasEdits;
+@property(readonly, nonatomic) NSAttributedString *editingString;
 - (id)description;
 - (unsigned long long)bufferIndexForRouterIndex:(unsigned long long)arg1;
 - (void)addAttributedPaddingToLineBuffer:(id)arg1 chunkWithIndex:(unsigned long long)arg2;

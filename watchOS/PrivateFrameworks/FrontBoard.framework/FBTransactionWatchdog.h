@@ -13,11 +13,11 @@
     FBTransaction *_transaction;
 }
 
-@property(readonly, retain, nonatomic) FBTransaction *transaction; // @synthesize transaction=_transaction;
+@property(readonly, nonatomic) FBTransaction *transaction; // @synthesize transaction=_transaction;
+- (void).cxx_destruct;
 - (void)_dumpDebugInfo;
 - (void)_watchdogTimerFired;
 - (void)invalidate;
-- (void)dealloc;
 - (id)initWithTransaction:(id)arg1;
 
 @end

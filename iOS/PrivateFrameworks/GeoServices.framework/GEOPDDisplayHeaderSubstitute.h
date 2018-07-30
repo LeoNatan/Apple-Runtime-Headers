@@ -10,6 +10,7 @@
 
 @class GEOPDRelatedSearchSuggestion, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDDisplayHeaderSubstitute : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

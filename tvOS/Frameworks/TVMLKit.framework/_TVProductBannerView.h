@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface _TVProductBannerView : _TVFocusRedirectView <TVAppTemplateImpressionable>
 {
     double _height;
-    UIView *_backgroundView;
+    UIView *_backgroundImageView;
     UIView *_infoListView;
     UIView *_stackView;
     UIView *_heroImageView;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *heroImageView; // @synthesize heroImageView=_heroImageView;
 @property(retain, nonatomic) UIView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIView *infoListView; // @synthesize infoListView=_infoListView;
-@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(retain, nonatomic) UIView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 - (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)layoutSubviews;

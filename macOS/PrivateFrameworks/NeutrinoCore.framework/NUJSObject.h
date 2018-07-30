@@ -10,6 +10,8 @@
 {
 }
 
++ (struct OpaqueJSClass *)jsClass;
+- (id)toObject;
 - (id)toString;
 - (id)valueForProperty:(id)arg1 context:(id)arg2 error:(out id *)arg3;
 - (void)enumerateProperties:(CDUnknownBlockType)arg1;

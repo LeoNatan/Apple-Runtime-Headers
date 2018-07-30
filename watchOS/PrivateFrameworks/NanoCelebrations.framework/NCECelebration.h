@@ -10,11 +10,14 @@
 
 @interface NCECelebration : NSObject
 {
+    struct os_unfair_lock_s _warmupLock;
     _Bool _highPriority;
+    _Bool _didCallWarmup;
     NSDate *_onOrAfter;
 }
 
 + (id)celebrationByName:(id)arg1;
+@property(nonatomic) _Bool didCallWarmup; // @synthesize didCallWarmup=_didCallWarmup;
 @property(nonatomic) _Bool highPriority; // @synthesize highPriority=_highPriority;
 @property(retain, nonatomic) NSDate *onOrAfter; // @synthesize onOrAfter=_onOrAfter;
 - (void).cxx_destruct;
@@ -24,6 +27,9 @@
 - (void)stop;
 - (void)startInView:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)warmup;
+- (void)warmupInView:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)guardWarmupInView:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)init;
 
 @end
 

@@ -46,6 +46,7 @@
     NSString *_uiid;
 }
 
++ (double)_revealedMenuBarHeight;
 + (void)_drawHelpResultsSeparatorInRect:(struct CGRect)arg1 withClipRect:(struct CGRect)arg2 flags:(unsigned long long)arg3;
 + (void)_drawOverlayForMenuHelpResultsInRect:(struct CGRect)arg1 withClipRect:(struct CGRect)arg2 flags:(unsigned long long)arg3;
 + (double)menuBarHeight;
@@ -70,6 +71,9 @@
 + (struct _NSZone *)menuZone;
 + (void)setMenuZone:(struct _NSZone *)arg1;
 + (void)initialize;
++ (id)standardImportFromDeviceMenuWithOptions:(unsigned long long)arg1;
++ (id)_sidecarServicesMenuWithTarget:(id)arg1 action:(SEL)arg2 options:(unsigned long long)arg3;
++ (id)_sidecarServicesMenuWithOptions:(unsigned long long)arg1;
 + (id)_captureKeyEquivalentsWithOptions:(unsigned long long)arg1 inMode:(id)arg2 finalEvent:(id *)arg3 status:(long long *)arg4 additionalEventProcessing:(CDUnknownBlockType)arg5;
 + (id)_captureKeyEquivalentsFromEvent:(id)arg1 withOptions:(unsigned long long)arg2;
 + (BOOL)_validateCaptureKeyEquivalentsFromEvent:(id)arg1 withOptions:(unsigned long long)arg2;
@@ -163,10 +167,8 @@
 - (BOOL)_hasPendingCancellationEvent;
 @property long long userInterfaceLayoutDirection;
 - (long long)_layoutDirectionIfExists;
-- (void)_setIndentationWidth:(unsigned long long)arg1;
-- (unsigned long long)_indentationWidth;
-- (void)_setHasNCStyle:(BOOL)arg1;
-- (BOOL)_hasNCStyle;
+@property(setter=_setIndentationWidth:) unsigned long long _indentationWidth;
+@property(setter=_setHasNCStyle:) BOOL _hasNCStyle;
 - (void)_setHasPadding:(BOOL)arg1 onEdge:(unsigned long long)arg2;
 - (BOOL)_hasPaddingOnEdge:(unsigned long long)arg1;
 - (BOOL)_condensesSeparators;
@@ -247,7 +249,7 @@
 - (long long)indexOfItem:(id)arg1;
 @property(readonly) long long numberOfItems;
 - (id)_itemArray;
-@property(readonly, copy) NSArray *itemArray;
+@property(copy) NSArray *itemArray;
 - (void)setSubmenu:(id)arg1 forItem:(id)arg2;
 - (void)removeAllItems;
 - (void)removeItem:(id)arg1;

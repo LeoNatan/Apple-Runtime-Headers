@@ -7,42 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBFileProperty.h"
 
-@class PBUnknownFields, _INPBFilePropertyValue;
+@class NSString, _INPBFilePropertyValue;
 
-@interface _INPBFileProperty : PBCodable <NSCopying>
+@interface _INPBFileProperty : PBCodable <_INPBFileProperty, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _name;
-    int _qualifier;
-    _INPBFilePropertyValue *_value;
     struct {
         unsigned int name:1;
         unsigned int qualifier:1;
     } _has;
+    int _name;
+    int _qualifier;
+    _INPBFilePropertyValue *_value;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBFilePropertyValue *value; // @synthesize value=_value;
+@property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
+@property(nonatomic) int name; // @synthesize name=_name;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) BOOL hasValue;
 - (int)StringAsQualifier:(id)arg1;
 - (id)qualifierAsString:(int)arg1;
 @property(nonatomic) BOOL hasQualifier;
-@property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
 - (int)StringAsName:(id)arg1;
 - (id)nameAsString:(int)arg1;
 @property(nonatomic) BOOL hasName;
-@property(nonatomic) int name; // @synthesize name=_name;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

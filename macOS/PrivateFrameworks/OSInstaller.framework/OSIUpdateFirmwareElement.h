@@ -20,6 +20,8 @@
 @property(retain) OSIPersonalizedManifests *personalizedManifests; // @synthesize personalizedManifests=_personalizedManifests;
 @property BOOL firmwareUpdatesQueued; // @synthesize firmwareUpdatesQueued=_firmwareUpdatesQueued;
 @property(retain) NSArray *packageSpecifiers; // @synthesize packageSpecifiers=_packageSpecifiers;
+- (void).cxx_destruct;
+- (void)unmountESP:(id)arg1;
 - (void)purgeCachesOnEFIDisk:(id)arg1;
 - (id)internalEFIDisk;
 - (void)repairESP;
@@ -31,7 +33,6 @@
 - (id)createTempDirectoryForMountPoint:(id)arg1;
 - (BOOL)runReturningError:(id *)arg1;
 - (BOOL)extractFirmwareUsingExpandedPackagePath:(id)arg1 withFirmwareUpdatePkgURL:(id)arg2 withError:(id *)arg3;
-- (void)dealloc;
 - (id)initWithOptions:(id)arg1 packageSpecifiers:(id)arg2 personalizedManifests:(id)arg3;
 
 @end

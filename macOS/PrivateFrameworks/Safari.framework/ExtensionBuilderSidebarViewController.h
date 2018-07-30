@@ -10,12 +10,14 @@
 #import "NSOpenSavePanelDelegate.h"
 #import "NSTableViewDelegate.h"
 #import "RolloverActionButtonTableCellViewDelegate.h"
+#import "SandboxExtensionPresentationDelegate.h"
 
-@class NSArrayController, NSString, NSTableView, SegmentedControlWithDynamicWidth;
+@class NSArrayController, NSString, NSTableView, SandboxFileExtensionController, SegmentedControlWithDynamicWidth;
 
 __attribute__((visibility("hidden")))
-@interface ExtensionBuilderSidebarViewController : NSViewController <NSTableViewDelegate, AccessibleRolloverActionButtonTableCellViewDelegate, RolloverActionButtonTableCellViewDelegate, NSOpenSavePanelDelegate>
+@interface ExtensionBuilderSidebarViewController : NSViewController <SandboxExtensionPresentationDelegate, NSTableViewDelegate, AccessibleRolloverActionButtonTableCellViewDelegate, RolloverActionButtonTableCellViewDelegate, NSOpenSavePanelDelegate>
 {
+    SandboxFileExtensionController *_fileExtensionController;
     NSTableView *_extensionsTableView;
     SegmentedControlWithDynamicWidth *_addExtensionSegmentedControl;
     NSArrayController *_extensionsArrayController;
@@ -36,13 +38,16 @@ __attribute__((visibility("hidden")))
 - (void)_addExtension:(id)arg1;
 - (void)_newExtension:(id)arg1;
 - (id)_menuForAddExtension;
+- (void)sandboxExtensionPresentationController:(id)arg1 configureOpenPanel:(id)arg2 forURL:(id)arg3;
+- (id)sandboxExtensionPresentationController:(id)arg1 windowForURL:(id)arg2;
+- (void)_addSandboxFileExtensionForBuilderExtension:(id)arg1;
 - (BOOL)_createExtensionBundleAtURL:(id)arg1;
 - (void)_addExtensionsWithBundleURLs:(id)arg1;
 - (id)_extensionBuilderExtensionAtIndex:(unsigned long long)arg1;
 - (void)_saveUserDefaultsForExtensionsUnderDevelopment;
 - (void)_initializeExtensionsArrayController;
 - (void)addExtensionButtonClicked:(id)arg1;
-- (id)init;
+- (id)initWithSandboxFileExtensionController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

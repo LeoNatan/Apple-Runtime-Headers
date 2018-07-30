@@ -6,16 +6,20 @@
 
 #import "NSWindowController.h"
 
+@class SandboxFileExtensionController;
+
 __attribute__((visibility("hidden")))
 @interface ExtensionBuilderController : NSWindowController
 {
+    SandboxFileExtensionController *_fileExtensionController;
 }
 
+- (void).cxx_destruct;
 - (void)windowDidLoad;
 - (id)windowNibName;
 - (void)_createSplitViewControllerAndSetFirstResponder;
 - (void)saveChanges;
-- (id)init;
+- (id)initWithSandboxFileExtensionController:(id)arg1;
 
 @end
 

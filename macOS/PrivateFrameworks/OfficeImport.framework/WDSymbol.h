@@ -4,28 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <OfficeImport/WDRun.h>
+#import <OfficeImport/WDRunWithCharacterProperties.h>
 
-@class WDCharacterProperties, WDFont;
+@class WDFont;
 
-__attribute__((visibility("hidden")))
-@interface WDSymbol : WDRun
+@interface WDSymbol : WDRunWithCharacterProperties
 {
-    WDCharacterProperties *mProperties;
     WDFont *mFont;
     unsigned short mCharacter;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (int)runType;
 - (void)setCharacter:(unsigned short)arg1;
 - (unsigned short)character;
 - (void)setFont:(id)arg1;
 - (id)font;
-- (void)clearProperties;
-- (id)properties;
 - (id)initWithParagraph:(id)arg1;
-- (void)dealloc;
 
 @end
 

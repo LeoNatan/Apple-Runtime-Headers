@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>;
+@class CTXPCServiceSubscriptionContext, NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface VMStateRequestController : NSObject
 {
@@ -14,8 +14,10 @@
     NSMapTable *_delegateToQueue;
     NSMutableArray *_stateRequests;
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
+    CTXPCServiceSubscriptionContext *_context;
 }
 
+@property(readonly, nonatomic) CTXPCServiceSubscriptionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(readonly, nonatomic) NSMutableArray *stateRequests; // @synthesize stateRequests=_stateRequests;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
@@ -31,8 +33,8 @@
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)dealloc;
-- (id)initWithMessageCenter:(id)arg1;
-- (id)init;
+- (id)initWithMessageCenter:(id)arg1 context:(id)arg2;
+- (id)initWithContext:(id)arg1;
 
 @end
 

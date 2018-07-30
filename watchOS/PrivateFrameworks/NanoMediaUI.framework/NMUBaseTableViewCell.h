@@ -6,15 +6,17 @@
 
 #import "PUICTableViewCell.h"
 
-@class NMUNowPlayingIndicatorView, UIImageView;
+@class NMCKeyValueObserver, NMUNowPlayingIndicatorView, UIImageView;
 
 @interface NMUBaseTableViewCell : PUICTableViewCell
 {
     UIImageView *_artworkImageView;
+    NMCKeyValueObserver *_imageObserver;
 }
 
 - (void).cxx_destruct;
 - (_Bool)_wantsTransparentBackground;
+- (void)_configureImageObserver;
 - (void)_configureBackgroundPillColor;
 @property(readonly, nonatomic) UIImageView *artworkImageView;
 - (void)prepareForReuse;

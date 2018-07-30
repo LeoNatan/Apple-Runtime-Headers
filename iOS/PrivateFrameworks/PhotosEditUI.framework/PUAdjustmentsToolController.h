@@ -12,8 +12,9 @@
 #import "UIGestureRecognizerDelegate.h"
 #import "UIScrollViewDelegate.h"
 
-@class NSArray, NSMapTable, NSMutableSet, NSString, PUAdjustmentsMode, PUAdjustmentsModeBar, PUAdjustmentsToolControllerSpec, PXUISnappingController, UIScrollView;
+@class NSArray, NSMapTable, NSMutableSet, NSString, PUAdjustmentsMode, PUAdjustmentsModeBar, PUAdjustmentsStatisticsCache, PUAdjustmentsToolControllerSpec, PXUISnappingController, UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface PUAdjustmentsToolController : PUPhotoEditToolController <UIScrollViewDelegate, UIGestureRecognizerDelegate, PUAdjustmentsModeBarDataSource, PUAdjustmentsModeBarDelegate, PUPhotoEditVisualLevelSliderDataSource>
 {
     PUAdjustmentsModeBar *_adjustmentsModeBar;
@@ -32,6 +33,8 @@
     NSMutableSet *_cleanSliderThumbnailsModes;
     _Bool _ppt_EverAdjusted;
     double _ppt_scrollDelta;
+    long long _viewLoadingStartTime;
+    PUAdjustmentsStatisticsCache *_statisticsCache;
     PXUISnappingController *__snappingController;
 }
 
@@ -43,6 +46,7 @@
 - (void)ppt_scrollSelectedSliderByDelta;
 - (void)ppt_setSteps:(long long)arg1;
 - (void)_ppt_scrollAfterDelay:(CDUnknownBlockType)arg1;
+- (void)invalidateStatisticsCacheWithEditModel:(id)arg1 andUpdate:(_Bool)arg2;
 - (void)_copyAdjustmentValuesFromModel:(id)arg1;
 - (id)_allAvailableModes;
 - (id)visualLevelSlider:(id)arg1 imageForIntensityIndex:(long long)arg2;
@@ -98,9 +102,12 @@
 - (void)_updateBackgroundColorAnimated:(_Bool)arg1;
 - (void)_updateSubviewsOrdering;
 - (void)_updateAdjustmentsModeBar;
+- (void)mediaViewIsReady;
+- (void)setupWithPhotoEditModel:(id)arg1 editSource:(id)arg2 valuesCalculator:(id)arg3;
 - (void)viewDidLayoutSubviews;
 - (void)updateViewConstraints;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

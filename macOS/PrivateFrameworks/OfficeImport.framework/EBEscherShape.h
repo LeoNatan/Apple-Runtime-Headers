@@ -8,7 +8,6 @@
 
 @class CHDChart, NSData;
 
-__attribute__((visibility("hidden")))
 @interface EBEscherShape : ESDObject
 {
     NSData *mChartData;
@@ -16,13 +15,13 @@ __attribute__((visibility("hidden")))
     CHDChart *mChart;
 }
 
+- (void).cxx_destruct;
 - (void)setChart:(id)arg1;
 - (id)chart;
 - (void)setShowLegend:(BOOL)arg1;
 - (BOOL)showLegend;
 - (void)setChartData:(id)arg1;
 - (id)chartData;
-- (void)dealloc;
 
 @end
 

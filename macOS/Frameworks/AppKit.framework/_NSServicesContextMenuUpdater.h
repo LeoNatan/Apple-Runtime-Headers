@@ -8,6 +8,7 @@
 
 @class NSMenu, NSMenuItem;
 
+__attribute__((visibility("hidden")))
 @interface _NSServicesContextMenuUpdater : _NSServicesMenuUpdater
 {
     id _requestorChain;

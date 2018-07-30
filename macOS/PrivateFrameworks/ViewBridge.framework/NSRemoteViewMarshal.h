@@ -7,63 +7,72 @@
 #import "NSObject.h"
 
 #import "NSRemoteViewMarshal.h"
-#import "NSVBDeallocOnAppKitThread.h"
 #import "NSVBRedactedProtocol.h"
 
-@class CALayerHost, NSAccessibilityRemoteUIElement, NSArray, NSCFRunLoopSemaphore, NSData, NSDictionary, NSFakeServiceResponder, NSMutableArray, NSMutableSet, NSProxy<NSXPCProxyCreating>, NSRemoteView, NSSet, NSString, NSTrackingArea, NSVBAccessoryWindow, NSViewBridge, NSViewRemoteBridge, NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
+@class CALayerHost, NSAccessibilityRemoteUIElement, NSArray, NSCFRunLoopSemaphore, NSColor, NSData, NSDictionary, NSFakeServiceResponder, NSMutableArray, NSMutableSet, NSProxy<NSXPCProxyCreating>, NSRemoteView, NSSet, NSString, NSTrackingArea, NSVBAccessoryWindow, NSViewBridge, NSViewRemoteBridge, NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
 
 __attribute__((visibility("hidden")))
-@interface NSRemoteViewMarshal : NSObject <NSRemoteViewMarshal, NSVBRedactedProtocol, NSVBDeallocOnAppKitThread>
+@interface NSRemoteViewMarshal : NSObject <NSRemoteViewMarshal, NSVBRedactedProtocol>
 {
-    NSMutableArray *_childWindowQueue;
-    NSCFRunLoopSemaphore *_invalidationSemaphore;
-    double _mostRecentlyReportedScaleFactor;
-    NSData *_mostRecentlyReportedAccessibilityParentToken;
     CALayerHost *_layerHost;
-    struct NSObject *_delegate;
-    NSViewRemoteBridge *_bridge;
-    NSRemoteView *_view;
-    NSTrackingArea *_trackingArea;
-    struct CGRect _mostRecentFrameInScreenCoords;
-    int _privateEventLoopKind;
-    NSXPCConnection *_auxiliaryServiceConnection;
-    NSString *_identifier;
+    NSCFRunLoopSemaphore *_invalidationSemaphore;
     NSRemoteView *_spawnedBy;
-    NSFakeServiceResponder *_fakeServiceResponder;
-    NSMutableSet *_friendlyKeyFocusThieves;
-    unsigned char _shouldMaskToBounds;
-    unsigned int _mouseDisassociatedFromMouseCursor;
+    NSRemoteView *_view;
+    struct NSObject *_delegate;
+    NSString *_resizeTransactionInProgress;
+    double _accessoryViewVerticalOffset;
+    double _mostRecentlyReportedScaleFactor;
+    struct CGSRegionObject *_serviceWindowDragRegion;
+    unsigned int _serviceConnectionID;
     unsigned int _lastKnownKeyTestWindowID;
-    unsigned long long _serviceWindowStyleMask;
-    NSSet *_rendezvousWindowBridgeKeys;
-    struct CGSize _serviceWindowFrameSizeAtBootstrap;
-    struct CGSize _intrinsicContentSize;
-    struct CGSize _windowContentMinSize;
-    struct CGSize _windowContentMaxSize;
-    unsigned char _bridgePhase;
-    NSString *_serviceName;
-    NSString *_serviceSubclassName;
-    NSString *_serviceSubclassIdentifier;
-    unsigned long long _wrappedModifySubviewsInProgress;
-    NSAccessibilityRemoteUIElement *_accessoryViewAccessibilityParent;
-    NSDictionary *_remoteAccessibilityChildren;
-    struct _NSModalSession *_appModalSession;
     id _hostWindowLocalEventMonitor;
     id _processNotificationEventMonitor;
+    NSAccessibilityRemoteUIElement *_accessoryViewAccessibilityParent;
+    NSMutableArray *_legacyAdvanceToConfigPhaseSemaphores;
+    NSColor *_serviceWindowBackgroundColor;
+    NSData *_mostRecentlyReportedAccessibilityParentToken;
+    NSDictionary *_remoteAccessibilityChildren;
+    NSFakeServiceResponder *_fakeServiceResponder;
+    struct _NSModalSession *_appModalSession;
     NSMutableArray *_deferredSheets;
-    NSXPCInterface *_clientExportedInterface;
+    NSMutableArray *_childWindowQueue;
+    NSMutableSet *_friendlyKeyFocusThieves;
     NSObject *_clientExportedObject;
-    NSProxy<NSXPCProxyCreating> *_serviceViewControllerProxyWithClientInterface;
+    int _privateEventLoopKind;
     NSProxy<NSXPCProxyCreating> *_serviceViewControllerProxyWithAnimationSyncInterface;
-    NSXPCListenerEndpoint *_serviceListenerEndpoint;
+    NSProxy<NSXPCProxyCreating> *_serviceViewControllerProxyWithClientInterface;
+    struct CGRect _mostRecentFrameInScreenCoords;
+    struct CGRect _safeFrame;
+    struct CGRect _serviceWindowFrameAtBootstrap;
     int _appNapState;
-    NSXPCConnection *_serviceMarshalConnection;
-    NSMutableSet *_resizeTransactionsInProgress;
-    unsigned int _serviceConnectionID;
+    int _containingWindowOrdering;
+    unsigned char _rendezvousWindowKind;
+    NSSet *_rendezvousWindowBridgeKeys;
+    struct CGSize _intrinsicContentSize;
+    struct CGSize _serviceViewSizeAtBootstrap;
+    struct CGSize _windowContentMaxSize;
+    struct CGSize _windowContentMinSize;
+    NSString *_identifier;
+    NSString *_mostRecentlySentAppearanceName;
+    NSString *_serviceName;
+    NSString *_serviceSubclassIdentifier;
+    NSString *_serviceSubclassName;
+    NSTrackingArea *_trackingArea;
+    unsigned long long _wrappedModifySubviewsInProgress;
     NSVBAccessoryWindow *_accessoryWindow;
-    struct CGRect _accessoryViewFrame;
-    unsigned int _settingAccessoryViewFrame;
-    unsigned char _inhibitFirstResponderCache;
+    unsigned char _bridgePhase;
+    NSViewRemoteBridge *_bridge;
+    unsigned char _windowBase;
+    unsigned long long _serviceWindowStyleMask;
+    long long _serviceWindowLevelAtBootstrap;
+    NSXPCConnection *_auxiliaryServiceConnection;
+    NSXPCConnection *_serviceMarshalConnection;
+    NSXPCInterface *_clientExportedInterface;
+    NSXPCListenerEndpoint *_serviceListenerEndpoint;
+    struct os_unfair_lock_s _retainReleaseLockMarshal;
+    struct os_unfair_lock_s _retainReleaseLockView;
+    unsigned char _shouldMaskToBounds;
+    unsigned int _mouseDisassociatedFromMouseCursor;
     NSArray *_touchBarsDescription;
     unsigned long long _touchBarCount;
     unsigned int _singleTouchBar:1;
@@ -71,9 +80,11 @@ __attribute__((visibility("hidden")))
     unsigned int _avoidReleasingClientExportedObject:1;
     unsigned int _beganSheet:1;
     unsigned int _connectionConfiguredWithServiceViewControllerClientInterface:1;
+    unsigned int _constraintsDidChangeInAccessoryWindow:1;
     unsigned long long _containingWindowNotifications;
     unsigned int _disabledSuddenTermination:1;
     unsigned int _fencingCurrentTransaction:1;
+    unsigned int _frameOfServiceWindowChanging:1;
     unsigned int _hasSheetsBeginning:1;
     unsigned int _hostWindowIsKnownToBeKey:1;
     unsigned int _ignoreFontSmoothingBackgroundColor:1;
@@ -94,7 +105,7 @@ __attribute__((visibility("hidden")))
     unsigned int _warnedAboutAbsentBridge:1;
 }
 
-+ (id)nsxpcInterface;
++ (id)nsxpcInterface:(id)arg1;
 @property(retain) NSArray *touchBarsDescription; // @synthesize touchBarsDescription=_touchBarsDescription;
 @property(copy) NSDictionary *remoteAccessibilityChildren; // @synthesize remoteAccessibilityChildren=_remoteAccessibilityChildren;
 @property(readonly) NSViewBridge *bridge; // @synthesize bridge=_bridge;
@@ -111,9 +122,6 @@ __attribute__((visibility("hidden")))
 - (void)waitForHostKeysToRegister:(CDUnknownBlockType)arg1;
 - (void)serviceHasService:(int)arg1;
 - (void)associateMouseAndMouseCursorPosition:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)addChildWindow:(id)arg1 privateEventLoopKind:(int)arg2 windowBase:(unsigned char)arg3 ordered:(long long)arg4 content:(struct CGRect)arg5 reply:(CDUnknownBlockType)arg6;
-- (void)realizeChildQueueElement:(id)arg1;
-- (void)enqueueChildWindow:(id)arg1 privateEventLoopKind:(int)arg2 windowBase:(unsigned char)arg3 ordered:(long long)arg4 content:(struct CGRect)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)setServiceWindowEventMask:(unsigned long long)arg1;
 - (void)dragWindowRelativeToMouseDown:(struct CGPoint)arg1;
 - (void)remoteViewControllerProxy:(CDUnknownBlockType)arg1;
@@ -121,32 +129,34 @@ __attribute__((visibility("hidden")))
 - (void)endModalSession:(id)arg1;
 - (void)beginModalSession:(id)arg1 title:(id)arg2 size:(struct CGSize)arg3 withReply:(CDUnknownBlockType)arg4;
 - (BOOL)_topmostAppModalSessionHasRendezvousWindowIdentifier:(id)arg1;
-- (void)orderWindow:(unsigned int)arg1 mode:(long long)arg2 relativeTo:(unsigned int)arg3 withReply:(CDUnknownBlockType)arg4;
+- (void)serviceWindowOrderedWithMode:(long long)arg1 relativeTo:(unsigned int)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)serviceAccessoryViewBecameFirstResponder:(unsigned long long)arg1;
 - (void)serviceAccessoryViewResignedFirstResponder;
-- (void)setAccessoryViewFrame:(struct CGRect)arg1;
 - (void)forgetAccessoryView;
 - (void)beginSheet:(id)arg1 modalForWindow:(id)arg2 size:(struct CGSize)arg3 isCritical:(BOOL)arg4 withReply:(CDUnknownBlockType)arg5;
 - (void)setServiceContextID:(unsigned int)arg1;
 - (void)setServiceWindowStyleMask:(unsigned long long)arg1;
 - (void)serviceWindowDidBecomeKey;
 - (void)serviceWindowDidResignKey;
-- (void)serviceRequestsResize:(struct CGSize)arg1 animate:(BOOL)arg2 transaction:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)serviceHasFirstResponder:(int)arg1 inDirection:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)registerBridgeKey:(id)arg1 defaultObject:(id)arg2 owner:(unsigned char)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)setRemoteObject:(id)arg1 forKey:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)exceptionSafeSetRemoteObject:(id)arg1 forKey:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)serviceViewReceivedLeftMouseDown;
+- (void)serviceViewReceivedLeftMouseDown:(long long)arg1;
 - (void)serviceWindowReceivedScrollWheel:(id)arg1 eventOwner:(unsigned int)arg2;
 - (void)serviceWindowWouldActivate;
 - (void)updateContentMinSize:(struct CGSize)arg1 maxSize:(struct CGSize)arg2;
 - (void)updateAccessibilityChildren:(id)arg1;
-- (void)discloseAccessoryView:(BOOL)arg1 andAnimationState:(int)arg2 andDuration:(double)arg3;
+- (void)discloseAccessoryView:(BOOL)arg1 withVerticalOffset:(double)arg2 andAnimationState:(int)arg3 andDuration:(double)arg4;
 - (void)hasValidKeyViewInDirection:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)serviceWindowHasDragRegion:(id)arg1;
 - (void)lastCallImpliedByAdvancingToPhase:(unsigned char)arg1;
-- (void)_superDealloc;
 - (void)dealloc;
-- (void)_deallocOnAppKitThread;
+- (oneway void)release;
+- (void)__vbSuperRelease;
+- (id)retain;
+- (void)__vbWithLockPerform:(CDUnknownBlockType)arg1;
+- (struct os_unfair_lock_s *)retainReleaseLock;
 - (id)initWithView:(id)arg1;
 
 // Remaining properties

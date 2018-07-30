@@ -6,14 +6,14 @@
 
 #import "NSObject.h"
 
-@class SCNMetalRenderPipeline;
+@class SCNMTLRenderPipeline;
 
 __attribute__((visibility("hidden")))
 @interface SCNMTLShadableKey : NSObject
 {
     struct __C3DMaterial *_material;
     // Error parsing type: ^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v^v}{?=CfIC(?={?=ff}{?=f}{?=f}{?=Cb1b1})}C}, name: _geometry
-    SCNMetalRenderPipeline *_pipeline;
+    SCNMTLRenderPipeline *_pipeline;
 }
 
 - (unsigned long long)hash;

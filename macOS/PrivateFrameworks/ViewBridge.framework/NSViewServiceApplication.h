@@ -6,12 +6,11 @@
 
 #import "NSApplication.h"
 
-@class NSEvent, NSMutableArray, NSWindow;
+@class NSEvent, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface NSViewServiceApplication : NSApplication
 {
-    NSWindow *_apparentKeyWindow;
     NSMutableArray *_exceptionQueue;
     NSEvent *_appEvent;
 }
@@ -21,7 +20,9 @@ __attribute__((visibility("hidden")))
 + (BOOL)commonNamedFaults;
 + (id)commonBootstrap;
 + (void)learnHostPID;
++ (int)fixedHostPID;
 + (void)addHostPID:(int)arg1;
++ (int)firstHostPID;
 + (BOOL)requiresFixedHost;
 + (id)serviceConfiguration;
 + (BOOL)appModalSessionInProgressForAnyHostOtherThanPID:(int)arg1;
@@ -44,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (struct _NSModalSession *)beginModalSessionForWindow:(id)arg1;
 - (BOOL)appModalSessionsOutlawed;
 - (struct _NSModalSession *)beginLocalAppModalSessionForWindow:(id)arg1;
-- (void)beginRemoteAppModalSessionForWindow:(id)arg1;
+- (void)beginRemoteAppModalSessionForWindow:(id)arg1 withLocalSession:(struct _NSModalSession *)arg2;
 - (id)beginHostModalSession:(id)arg1 forWindow:(id)arg2 withSize:(struct CGSize)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)endSheet:(id)arg1;
 - (void)endSheet:(id)arg1 returnCode:(long long)arg2;
@@ -60,8 +61,6 @@ __attribute__((visibility("hidden")))
 - (void)sendEventWithoutCatch:(id)arg1 withForwarding:(BOOL)arg2;
 - (void)raiseIfDeferredException:(id)arg1;
 - (void)enqueueException:(id)arg1;
-- (void)withApparentKeyWindow:(id)arg1 perform:(CDUnknownBlockType)arg2;
-- (id)_keyWindow;
 - (void)dealloc;
 - (BOOL)_handleKeyEquivalent:(id)arg1;
 - (BOOL)_handleSymbolicHotKey:(id)arg1;
@@ -73,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)eventHasNotHitWindow:(id)arg1 actions:(CDUnknownBlockType)arg2;
 - (int)_releaseKeyFocus;
 - (int)_stealKeyFocusWithOptions:(unsigned int)arg1;
+- (BOOL)setActivationPolicy:(long long)arg1;
 - (BOOL)_shouldLoadMainNibNamed:(id)arg1;
 - (id)_addWindow:(id)arg1;
 - (void)finishLaunching;

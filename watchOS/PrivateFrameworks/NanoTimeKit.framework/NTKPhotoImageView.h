@@ -8,10 +8,11 @@
 
 #import "CLKMediaAssetViewDelegate.h"
 
-@class CLKMediaAssetView, NSString, NSURL, NTKPhoto;
+@class CLKDevice, CLKMediaAssetView, NSString, NSURL, NTKPhoto;
 
 @interface NTKPhotoImageView : UIView <CLKMediaAssetViewDelegate>
 {
+    CLKDevice *_device;
     CLKMediaAssetView *_mediaAssetView;
     NTKPhoto *_photo;
     id <NTKPhotoImageViewDelegate> _delegate;
@@ -32,7 +33,7 @@
 - (void)playWithMode:(int)arg1;
 - (void)prepareToPlayWithMode:(int)arg1;
 - (void)setPhoto:(id)arg1 allowIris:(_Bool)arg2;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

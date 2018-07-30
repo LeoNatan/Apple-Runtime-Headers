@@ -8,6 +8,7 @@
 
 @class NSMutableArray, RCCaptureInputDevice, RCCaptureSession;
 
+__attribute__((visibility("hidden")))
 @interface _RCCaptureInputDeviceSession : NSObject
 {
     NSMutableArray *_sessionFinishedBlocks;

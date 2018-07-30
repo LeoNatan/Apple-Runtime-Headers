@@ -75,8 +75,6 @@
 - (BOOL)allDay;
 - (void)setStartDateUnadjustedFromUTC:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *startDateUnadjustedFromUTC;
-- (void)setLastModifiedDate:(id)arg1;
-@property(readonly, copy, nonatomic) NSDate *lastModifiedDate;
 - (void)setRecurrenceRuleString:(id)arg1;
 - (void)setScheduleAgentString:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *scheduleAgentString;
@@ -190,7 +188,6 @@
 - (void)_updateWithEntity:(id)arg1 alarms:(BOOL)arg2 omitSyncRecord:(BOOL)arg3 inCalendar:(id)arg4 processChanges:(BOOL)arg5;
 - (void)updateWithEntity:(id)arg1 alarms:(BOOL)arg2 inCalendar:(id)arg3;
 - (void)updateWithEntity:(id)arg1 inCalendar:(id)arg2;
-- (id)occurrenceIDFromCommittedValues;
 - (id)occurrenceID;
 - (Class)entityClass;
 - (void)processForType:(int)arg1 forParentCR:(id)arg2 inManagedObjectContext:(id)arg3;
@@ -227,6 +224,7 @@
 @property BOOL isAllDay; // @dynamic isAllDay;
 @property(readonly, nonatomic) BOOL isPartialObject;
 @property(retain) NSString *itemID; // @dynamic itemID;
+@property(retain) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
 @property(retain) NSMutableSet *localDefaultAlarms; // @dynamic localDefaultAlarms;
 @property(copy, nonatomic) NSData *localStructuredData; // @dynamic localStructuredData;
 @property(retain) NSString *localUID; // @dynamic localUID;

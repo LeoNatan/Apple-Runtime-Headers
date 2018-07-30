@@ -10,6 +10,7 @@
 
 @class CAMetalLayer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MTKOffscreenDrawable : NSObject <CAMetalDrawable>
 {
     id <MTLTexture> _texture;

@@ -10,9 +10,13 @@
 {
 }
 
+- (void)dayChangedNotificationReceived:(id)arg1;
+- (void)timeZoneChangedNotificationReceived:(id)arg1;
 - (void)timeChangedToMidnightLocalTime;
 - (id)currentTime;
 - (void)dealloc;
+- (void)registerForTimeZoneChangedNotification;
+- (void)registerForDayChangedNotification;
 - (void)registerForClockSetNotification;
 - (void)registerForTimeChangedNotification;
 

@@ -21,7 +21,8 @@
 + (_Bool)isEnabled;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
-- (_Bool)canProduceEntriesOfType:(unsigned int)arg1;
+- (_Bool)removeEntry:(id)arg1 behavior:(int)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)canProduceEntriesOfType:(int)arg1;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;

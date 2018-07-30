@@ -8,6 +8,7 @@
 
 @class NSObjectController, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSControllerArrayProxyMutatorArray : NSMutableArray
 {
     NSObjectController *_controller;

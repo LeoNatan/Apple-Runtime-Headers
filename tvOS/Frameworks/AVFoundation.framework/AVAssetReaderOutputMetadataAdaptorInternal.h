@@ -8,6 +8,7 @@
 
 @class AVAssetReaderTrackOutput;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetReaderOutputMetadataAdaptorInternal : NSObject
 {
     AVAssetReaderTrackOutput *trackOutput;

@@ -10,6 +10,7 @@
 
 @interface MPCPlayerResponseTracklist : NSObject
 {
+    unsigned int _changeItemSupport;
     NSString *_uniqueIdentifier;
     int _lastChangeDirection;
     int _upNextItemCount;
@@ -22,6 +23,8 @@
     int _globalItemCount;
 }
 
++ (id)insertCommandForPlayerPath:(id)arg1 devices:(id)arg2;
++ (id)resetCommandForPlayerPath:(id)arg1 devices:(id)arg2;
 @property(readonly, nonatomic) int globalItemCount; // @synthesize globalItemCount=_globalItemCount;
 @property(readonly, nonatomic) int playingItemGlobalIndex; // @synthesize playingItemGlobalIndex=_playingItemGlobalIndex;
 @property(readonly, copy, nonatomic) NSIndexPath *playingItemIndexPath; // @synthesize playingItemIndexPath=_playingItemIndexPath;
@@ -33,6 +36,7 @@
 @property(readonly, nonatomic) int lastChangeDirection; // @synthesize lastChangeDirection=_lastChangeDirection;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
+- (unsigned int)_determineChangeItemSupport;
 - (id)disableModificationsCommand;
 - (id)changeItemCommand;
 - (id)shuffleCommand;

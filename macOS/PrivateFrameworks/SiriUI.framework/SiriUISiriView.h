@@ -10,7 +10,7 @@
 #import "SiriUIFlamesAndAuraViewDelegate.h"
 #import "SiriUISiriStatusViewDelegate.h"
 
-@class NSString, SiriUIButton, SiriUIConfiguration, SiriUIFlamesAndAuraView, SiriUIHelpButton, SiriUISiriStatusView, SiriUITranscriptButton;
+@class NSString, SiriUIButton, SiriUIConfiguration, SiriUIFlamesAndAuraView, SiriUIHelpButton, SiriUISiriStatusView;
 
 __attribute__((visibility("hidden")))
 @interface SiriUISiriView : NSView <SiriUISiriStatusViewDelegate, SiriUIFlamesAndAuraViewDelegate, AFUISiriRemoteViewHosting>
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     SiriUISiriStatusView *_statusView;
     SiriUIHelpButton *_helpButton;
     SiriUIButton *_reportBugButton;
-    SiriUITranscriptButton *_closeButton;
+    SiriUIButton *_closeButton;
     SiriUIConfiguration *_configuration;
     id <SiriUISiriViewDelegate> _delegate;
     long long _siriSessionState;
@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) __weak id <SiriUISiriViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) SiriUIConfiguration *configuration; // @synthesize configuration=_configuration;
-@property __weak SiriUITranscriptButton *closeButton; // @synthesize closeButton=_closeButton;
+@property __weak SiriUIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain) SiriUIButton *reportBugButton; // @synthesize reportBugButton=_reportBugButton;
 @property(retain) SiriUIHelpButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(retain) SiriUISiriStatusView *statusView; // @synthesize statusView=_statusView;
@@ -67,10 +67,12 @@ __attribute__((visibility("hidden")))
 - (void)_updateControlsAppearance;
 - (void)_updateFlamesAndAuraViewState;
 - (void)viewDidMoveToWindow;
+- (void)viewWillMoveToWindow:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)_createFlamesView;
 - (void)_createCloseButtonImage;
 - (void)awakeFromNib;
+- (void)cleanupFlames;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

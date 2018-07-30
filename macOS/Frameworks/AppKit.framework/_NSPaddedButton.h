@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface _NSPaddedButton : NSButton
 {
     NSArray *_stringsForLength;

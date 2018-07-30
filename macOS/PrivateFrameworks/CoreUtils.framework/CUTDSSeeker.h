@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSString;
+@class NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CUTDSSeeker : NSObject
 {
-    struct NSMutableSet *_endpoints;
     BOOL _invalidateCalled;
     struct LogCategory *_ucat;
+    BOOL _directedOnly;
     BOOL _passive;
     int _dataLinkType;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -22,10 +22,12 @@
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
     NSString *_serviceType;
+    struct NSMutableSet *_endpoints;
     unsigned long long _tdsHashSeek;
 }
 
 @property(nonatomic) unsigned long long tdsHashSeek; // @synthesize tdsHashSeek=_tdsHashSeek;
+@property(retain, nonatomic) NSMutableSet *endpoints; // @synthesize endpoints=_endpoints;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) BOOL passive; // @synthesize passive=_passive;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -34,6 +36,7 @@
 @property(copy, nonatomic) CDUnknownBlockType endpointLostHandler; // @synthesize endpointLostHandler=_endpointLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType endpointFoundHandler; // @synthesize endpointFoundHandler=_endpointFoundHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(nonatomic) BOOL directedOnly; // @synthesize directedOnly=_directedOnly;
 @property(nonatomic) int dataLinkType; // @synthesize dataLinkType=_dataLinkType;
 - (void).cxx_destruct;
 - (void)updateEndpointsForDevices:(struct NSMutableDictionary *)arg1;

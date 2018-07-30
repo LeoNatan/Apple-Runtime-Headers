@@ -6,14 +6,17 @@
 
 #import <ARKit/ARConfiguration.h>
 
-@class NSArray;
+@class ARWorldMap, NSArray;
 
 @interface ARCustomTechniquesConfiguration : ARConfiguration
 {
     NSArray *_techniques;
+    ARConfiguration *_templateConfiguration;
 }
 
++ (id)supportedVideoFormats;
 + (id)new;
+@property(copy, nonatomic) ARConfiguration *templateConfiguration; // @synthesize templateConfiguration=_templateConfiguration;
 @property(copy, nonatomic) NSArray *techniques; // @synthesize techniques=_techniques;
 - (void).cxx_destruct;
 - (id)description;
@@ -22,8 +25,10 @@
 - (void)configureRecordingTechnique;
 - (void)ensureTechniqueAndCustomSensorCompatibility;
 - (void)_updateCaptureSettings;
+- (void)setProvidesAudioData:(_Bool)arg1;
 - (void)setCameraPosition:(long long)arg1;
 - (void)setCustomSensors:(id)arg1;
+@property(readonly, nonatomic) ARWorldMap *initialWorldMap;
 - (_Bool)isLightEstimationEnabled;
 - (long long)worldAlignment;
 - (void)setVideoFormat:(id)arg1;

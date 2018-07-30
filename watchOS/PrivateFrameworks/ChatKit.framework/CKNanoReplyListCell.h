@@ -8,16 +8,18 @@
 
 #import "CKNanoReplyListViewDelegate.h"
 
-@class CKNanoReplyListView, NSString;
+@class CKNanoReplyListView, NSNumber, NSString;
 
 @interface CKNanoReplyListCell : CKTranscriptCell <CKNanoReplyListViewDelegate>
 {
+    NSNumber *_messageItemListNumber;
     id <CKNanoReplyListCellDelegate> _delegate;
     CKNanoReplyListView *_replyListView;
 }
 
 @property(retain, nonatomic) CKNanoReplyListView *replyListView; // @synthesize replyListView=_replyListView;
 @property(nonatomic) __weak id <CKNanoReplyListCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSNumber *messageItemListNumber; // @synthesize messageItemListNumber=_messageItemListNumber;
 - (void).cxx_destruct;
 - (id)textReplyButtonForTesting:(unsigned int)arg1;
 - (void)replyListView:(id)arg1 tappedTextReply:(id)arg2 view:(id)arg3;

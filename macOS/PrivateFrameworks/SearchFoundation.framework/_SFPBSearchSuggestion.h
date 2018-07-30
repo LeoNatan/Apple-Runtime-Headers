@@ -13,10 +13,6 @@
 
 @interface _SFPBSearchSuggestion : PBCodable <_SFPBSearchSuggestion, NSSecureCoding>
 {
-    struct {
-        unsigned int type:1;
-        unsigned int previouslyEngaged:1;
-    } _has;
     BOOL _previouslyEngaged;
     int _type;
     NSString *_identifier;
@@ -27,8 +23,10 @@
     NSString *_topicIdentifier;
     NSString *_bundleIdentifier;
     NSString *_fbr;
+    NSString *_scopedSearchApplicationBundleIdentifier;
 }
 
+@property(copy, nonatomic) NSString *scopedSearchApplicationBundleIdentifier; // @synthesize scopedSearchApplicationBundleIdentifier=_scopedSearchApplicationBundleIdentifier;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(nonatomic) BOOL previouslyEngaged; // @synthesize previouslyEngaged=_previouslyEngaged;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
@@ -48,19 +46,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasFbr;
-@property(readonly, nonatomic) BOOL hasPreviouslyEngaged;
-@property(readonly, nonatomic) BOOL hasBundleIdentifier;
-@property(readonly, nonatomic) BOOL hasTopicIdentifier;
 - (id)duplicateSuggestionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)duplicateSuggestionsCount;
 - (void)addDuplicateSuggestions:(id)arg1;
 - (void)clearDuplicateSuggestions;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasScore;
-@property(readonly, nonatomic) BOOL hasQuery;
-@property(readonly, nonatomic) BOOL hasSuggestion;
-@property(readonly, nonatomic) BOOL hasIdentifier;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

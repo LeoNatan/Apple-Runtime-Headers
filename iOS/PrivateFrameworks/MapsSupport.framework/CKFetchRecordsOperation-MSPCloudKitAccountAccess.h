@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface CKFetchRecordsOperation (MSPCloudKitAccountAccess) <MSPCloudRequest>
+- (void)setNetworkBehaviorIsDiscretionary:(_Bool)arg1;
 - (void)addCloudAccessCompletionBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties

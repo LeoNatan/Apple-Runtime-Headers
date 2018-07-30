@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 + (void)initDefaultPropertyMap:(id)arg1 presetID:(unsigned long long)arg2 colors:(id)arg3 alternate:(int)arg4;
 + (void)initDefaultStrokePresetListInPropertyMap:(id)arg1 presetID:(unsigned long long)arg2 colors:(id)arg3;
++ (int)defaultIntValueForProperty:(int)arg1;
 + (id)styleIDForPreset:(unsigned long long)arg1;
 + (unsigned long long)presetIDForStyleID:(id)arg1;
 + (id)nonEmphasisTableProperties;

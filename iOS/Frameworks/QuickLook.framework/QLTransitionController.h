@@ -23,8 +23,10 @@ __attribute__((visibility("hidden")))
     id <UIViewControllerContextTransitioning> _transitionContext;
     id _transitionDriver;
     double _duration;
+    unsigned long long _transitionState;
 }
 
+@property unsigned long long transitionState; // @synthesize transitionState=_transitionState;
 @property double duration; // @synthesize duration=_duration;
 @property(readonly) id transitionDriver; // @synthesize transitionDriver=_transitionDriver;
 @property __weak id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;

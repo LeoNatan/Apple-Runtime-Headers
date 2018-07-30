@@ -19,6 +19,10 @@
 + (id)new;
 + (void)initialize;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
+@property(readonly, nonatomic) id delegateOverride;
+- (void)setOfflineVideoStabilizationMotionMetadataObjectTypesAvailable:(_Bool)arg1;
+- (_Bool)isOfflineVideoStabilizationMotionMetadataObjectTypesAvailable;
+- (_Bool)isOfflineVideoStabilizationMotionMetadataSupported;
 - (void)setFaceTrackingMetadataObjectTypesAvailable:(_Bool)arg1;
 - (_Bool)isFaceTrackingMetadataObjectTypesAvailable;
 - (_Bool)isFaceTrackingSupported;

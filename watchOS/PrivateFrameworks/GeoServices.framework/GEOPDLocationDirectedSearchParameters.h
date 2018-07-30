@@ -10,6 +10,7 @@
 
 @class GEOLatLng, GEOPDNearestTransitParameters, GEOPDViewportInfo, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDLocationDirectedSearchParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

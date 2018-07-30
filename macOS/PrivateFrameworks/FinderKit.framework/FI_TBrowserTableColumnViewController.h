@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserTableColumnViewController : _NSBrowserTableColumnViewController
 {
-    struct TNSRef<FI_TColumnViewController *, void> _columnViewController;
+    struct TNSRef<FI_TColumnViewController, void> _columnViewController;
     struct TNotificationCenterObserver _btvWillMoveToSuperviewObserver;
 }
 

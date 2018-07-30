@@ -27,7 +27,10 @@ __attribute__((visibility("hidden")))
     _Bool _canDisplayLoadingIndicators;
     _Bool _shouldDisplayEmptyPlaceholder;
     _Bool _shouldUseCompactCommentsTitle;
+    _Bool _shouldCounterrotateReviewScreenBars;
     _Bool _shouldPinContentToTop;
+    _Bool _shouldLayoutReviewScreenControlBarVertically;
+    _Bool _shouldPlaceScrubberInScrubberBar;
     unsigned long long _options;
     double _maximumToolbarHeight;
     double _maximumAccessoryToolbarHeight;
@@ -37,7 +40,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _bufferingIndicatorSize;
 }
 
+@property(nonatomic, setter=_setShouldPlaceScrubberInScrubberBar:) _Bool shouldPlaceScrubberInScrubberBar; // @synthesize shouldPlaceScrubberInScrubberBar=_shouldPlaceScrubberInScrubberBar;
+@property(nonatomic, setter=_setShouldLayoutReviewScreenControlBarVertically:) _Bool shouldLayoutReviewScreenControlBarVertically; // @synthesize shouldLayoutReviewScreenControlBarVertically=_shouldLayoutReviewScreenControlBarVertically;
 @property(nonatomic, setter=_setShouldPinContentToTop:) _Bool shouldPinContentToTop; // @synthesize shouldPinContentToTop=_shouldPinContentToTop;
+@property(nonatomic, setter=_setShouldCounterrotateReviewScreenBars:) _Bool shouldCounterrotateReviewScreenBars; // @synthesize shouldCounterrotateReviewScreenBars=_shouldCounterrotateReviewScreenBars;
 @property(nonatomic, setter=_setTileInitialContentMode:) long long tileInitialContentMode; // @synthesize tileInitialContentMode=_tileInitialContentMode;
 @property(nonatomic, setter=_setShouldUseCompactCommentsTitle:) _Bool shouldUseCompactCommentsTitle; // @synthesize shouldUseCompactCommentsTitle=_shouldUseCompactCommentsTitle;
 @property(nonatomic, setter=_setBufferingIndicatorSize:) struct CGSize bufferingIndicatorSize; // @synthesize bufferingIndicatorSize=_bufferingIndicatorSize;
@@ -64,12 +70,16 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize playButtonSize;
 - (void)updateIfNeeded;
+@property(readonly, nonatomic) _Bool shouldDisableNavigationBarsVisibility;
+- (_Bool)_shouldForceBlackBackground;
+@property(readonly, nonatomic) _Bool shouldDisplayReviewScreenBars;
 @property(readonly, nonatomic) struct CGSize assetExplorerReviewScreenProgressIndicatorSize;
 @property(readonly, nonatomic) _Bool shouldDisplayAssetExplorerReviewScreenProgressIndicators;
-@property(readonly, nonatomic) _Bool shouldDisplayAssetExplorerReviewScreenSelectionIndicators;
+@property(readonly, nonatomic) _Bool shouldDisplaySelectionIndicators;
 @property(readonly, nonatomic) _Bool shouldShowTitleView;
 @property(readonly, nonatomic) _Bool allowTapOnTitle;
 @property(readonly, nonatomic) _Bool allowDoneButton;
+@property(readonly, nonatomic) _Bool allowSuggestions;
 @property(readonly, nonatomic) _Bool allowAccessoryVisibility;
 - (_Bool)_isAssetExplorerReviewScreen;
 @property(readonly, nonatomic) PUOneUpViewControllerSpecChange *currentChange;

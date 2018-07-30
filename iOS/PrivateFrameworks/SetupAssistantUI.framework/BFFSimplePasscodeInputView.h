@@ -18,6 +18,7 @@
 @property(retain, nonatomic) PSPasscodeField *passcodeField; // @synthesize passcodeField=_passcodeField;
 - (void).cxx_destruct;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
+- (id)passcodeField:(id)arg1 shouldInsertText:(id)arg2;
 - (id)passcode;
 - (void)setPasscode:(id)arg1;
 - (void)layoutSubviews;

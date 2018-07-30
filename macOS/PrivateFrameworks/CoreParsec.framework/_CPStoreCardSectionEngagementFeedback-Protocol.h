@@ -10,21 +10,13 @@
 
 @protocol _CPStoreCardSectionEngagementFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasResultId;
 @property(copy, nonatomic) NSString *resultId;
-@property(readonly, nonatomic) BOOL hasCardSectionId;
 @property(copy, nonatomic) NSString *cardSectionId;
-@property(readonly, nonatomic) BOOL hasProductPageResult;
 @property(nonatomic) int productPageResult;
-@property(readonly, nonatomic) BOOL hasCardSection;
 @property(retain, nonatomic) _CPCardSectionForFeedback *cardSection;
-@property(readonly, nonatomic) BOOL hasActionCardType;
 @property(nonatomic) int actionCardType;
-@property(readonly, nonatomic) BOOL hasTriggerEvent;
 @property(nonatomic) int triggerEvent;
-@property(readonly, nonatomic) BOOL hasDestination;
 @property(retain, nonatomic) _CPPunchoutForFeedback *destination;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

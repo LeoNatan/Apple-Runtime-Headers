@@ -6,13 +6,12 @@
 
 #import <AppKit/NSView.h>
 
-@class NSMutableArray, NSResponder, NSToolbar, NSToolbarClippedItemsIndicator, NSToolbarItem;
+@class NSMutableArray, NSResponder, NSToolbar, NSToolbarClippedItemsIndicatorViewer, NSToolbarItem;
 
 @interface NSToolbarView : NSView
 {
     NSToolbar *_toolbar;
-    NSToolbarClippedItemsIndicator *_clipIndicator;
-    NSView *_ivClipView;
+    NSToolbarClippedItemsIndicatorViewer *_clipIndicatorViewer;
     void *_lastEventProcessedForValidation;
     NSMutableArray *_layoutOrderedItemViewers;
     NSMutableArray *_toolbarOrderedItemViewers;
@@ -21,11 +20,11 @@
     BOOL _dragDataItemShouldBeRemoved;
     NSToolbarItem *_dragDataInsertionGapItem;
     struct CGPoint _dragDataLastPoint;
-    BOOL _insertionAnimationRunning;
     struct CGPoint _halftonePhaseOverrideValue;
     NSToolbar *_actingPaletteTargetToolbar;
     long long _layoutEnabledCount;
     double _earliestDateToStartDragAnimation;
+    NSToolbar *_savedToolbar;
     struct __tbvFlags {
         unsigned int _layoutInProgress:1;
         unsigned int _sizingToFit:1;
@@ -34,12 +33,9 @@
         unsigned int _reserved:1;
         unsigned int _enabledAsDragSrc:1;
         unsigned int _enabledAsDragDest:1;
-        unsigned int _actingAsPalette:1;
         unsigned int _usePaletteLabels:1;
         unsigned int _validatesItems:1;
         unsigned int _forceItemsToBeMinSize:1;
-        unsigned int _forceAllClicksToBeDrags:1;
-        unsigned int _wrapsItems:1;
         unsigned int _useGridAlignment:1;
         unsigned int _autosizesToFitHorizontally:1;
         unsigned int transparentBackground:1;
@@ -55,12 +51,11 @@
         unsigned int canDeferDelayedValidateVisibleItems:1;
         unsigned int skippedLayoutWhileDisabled:1;
         unsigned int shouldHideAfterKeyboardHotKeyEvent:1;
-        unsigned int windowWantsSquareToolbarSelectionHighlight:1;
-        unsigned int RESERVED:3;
+        unsigned int _subviewLayoutInProgress:1;
+        unsigned int RESERVED:6;
     } _tbvFlags;
     NSResponder *_windowPriorFirstResponder;
     char *_delayedValidationCancel;
-    char *_updateDragInsertionCancel;
     id toolbarViewReserved;
 }
 
@@ -93,6 +88,7 @@
 - (void)_sizeToFit:(BOOL)arg1;
 - (void)_endLiveResize;
 - (void)_layoutDirtyItemViewersAndTileToolbar;
+- (double)_minimumWidthEnsuringVisibilityOfAllItems;
 - (struct __NSToolbarLayoutMetrics)_toolbarMetrics;
 - (BOOL)_isToolbarDirectionOppositeOfSystemDirection;
 - (struct _NSRange)_rangeOfCenteredItemsForItemViewers:(id)arg1;
@@ -110,19 +106,10 @@
 - (long long)userInterfaceLayoutDirection;
 - (id)description;
 - (struct CGSize)_minimumSizeEnsuringVisibilityOfItem:(id)arg1;
-- (long long)_layoutRowWithCenterStartingAtIndex:(long long)arg1 endingAtIndex:(long long)arg2 withFirstItemPosition:(struct CGPoint)arg3 gridWidth:(double)arg4;
-- (long long)_layoutRowStartingAtIndex:(long long)arg1 endingAtIndex:(long long)arg2 withFirstItemPosition:(struct CGPoint)arg3 gridWidth:(long long)arg4 allowOverflowMenu:(BOOL)arg5 validWidthWithClipIndicator:(double)arg6 withoutClip:(double)arg7 clippedItemViewers:(id)arg8 canClipFirstItem:(BOOL)arg9 leadingFlexibleSpaceOffset:(double)arg10 flexibleSpace:(double *)arg11 unusedSpace:(double *)arg12;
-- (long long)_layoutRowStartingAtIndex:(long long)arg1 withFirstItemPosition:(struct CGPoint)arg2 gridWidth:(long long)arg3 allowOverflowMenu:(BOOL)arg4 validWidthWithClipIndicator:(double)arg5 withoutClip:(double)arg6 leadingFlexibleSpaceOffset:(double)arg7;
-- (void)_sizeItemViewersWithPreferredWidthRatios:(id)arg1 withRemainingUndistributedWidth:(double *)arg2 ctm:(const struct CGAffineTransform *)arg3;
-- (double)_desiredExtraSpaceForItemViewersWithPreferredWidthRatios:(id)arg1;
-- (unsigned long long)_sizePartitioningSpacersInItemViewers:(id)arg1 startingAtPoint:(struct CGPoint)arg2 withInterItemViewerSpacing:(double)arg3 withCTM:(const struct CGAffineTransform *)arg4 withRemainingUndistributedWidth:(double *)arg5;
 - (struct CGAffineTransform)_getPixelAligningTransformForLayout;
-- (void)_distributeAvailableSpaceIfNecessary:(double)arg1 toFlexibleSizedItems:(id)arg2 lastItemIsRightAligned:(char *)arg3 undistributedWidth:(double *)arg4 ctm:(const struct CGAffineTransform *)arg5;
 - (void)_makeSureItemViewersInArray:(id)arg1 areSubviews:(BOOL)arg2 from:(long long)arg3 to:(long long)arg4;
-- (id)_computeCustomItemViewersWithPreferredWidthRatiosInRange:(struct _NSRange)arg1;
-- (id)_computeFlexibleSpaceItemViewersInRange:(struct _NSRange)arg1;
-- (id)_computeResizeableCustomItemViewersInRange:(struct _NSRange)arg1;
 - (void)_cycleWindows:(id)arg1;
+- (void)_invalidateEffectiveVibrantBlendingStyle;
 - (void)viewDidChangeBackingProperties;
 - (void)viewDidMoveToWindow;
 - (void)viewDidMoveToSuperview;
@@ -145,22 +132,20 @@
 - (void)_adjustClipIndicatorPosition;
 - (void)_setClipIndicatorItemsFromItemViewers:(id)arg1;
 - (void)_createClipIndicatorIfNecessary;
-- (void)_didRemoveLayer;
 - (void)layout;
-- (BOOL)_removeBaselineView;
-- (BOOL)_updateBaselineView;
+- (BOOL)_subviewLayoutInProgress;
+- (void)_setBaselineSeparatorStyle:(long long)arg1;
+- (long long)_baselineSeparatorStyle;
+- (void)_updateBaselineView;
+- (struct CGRect)_frameForBaselineView:(id)arg1;
 - (void)_setBaselineView:(id)arg1;
 - (id)_baselineView;
 - (void)updateLayer;
 - (Class)_classToCheckForWantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)_drawBaselineInClipRect:(struct CGRect)arg1;
-- (struct CGRect)_frameForBaselineView:(id)arg1;
 - (void)_drawBackgroundFillInClipRect:(struct CGRect)arg1;
 - (id)_currentBackgroundColor;
 - (BOOL)_drawsBaseline;
-- (void)_setWindowWantsSquareToolbarSelectionHighlight:(BOOL)arg1;
-- (BOOL)_windowWantsSquareToolbarSelectionHighlight;
 - (void)_windowChangedKeyState;
 - (void)mouseDown:(id)arg1;
 - (BOOL)mouseDownCanMoveWindow;
@@ -190,6 +175,7 @@
 - (struct CGRect)_validItemViewerBoundsAssumingClipIndicatorNotShown;
 - (void)_unsuppressClipIndicatorAfterAnimationIfNecessary;
 - (void)_suppressClipIndicatorDuringAnimation;
+- (void)set_clipIndicator:(id)arg1;
 - (id)_clipIndicator;
 - (BOOL)_clipIndicatorIsShowing;
 - (void)_swapToolbarItemViewerAfterView:(id)arg1;
@@ -203,15 +189,15 @@
 - (id)visibleItems;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (Class)_toolbarItemViewerClass;
+- (void)_endSubviewsBeingBorrowed;
+- (void)_beginSubviewsBeingBorrowed;
 - (id)toolbar;
 - (void)setToolbar:(id)arg1;
 - (BOOL)_isPaletteView;
-- (void)_setActsAsPalette:(BOOL)arg1 forToolbar:(id)arg2;
 - (BOOL)_wantsKeyboardLoop;
 - (void)_setWantsKeyboardLoop:(BOOL)arg1;
 - (id)_validDestinationForDragsWeInitiate;
 - (void)_setDrawsBaseline:(BOOL)arg1;
-- (void)_setAllowsMultipleRows:(BOOL)arg1;
 - (void)_setForceItemsToBeMinSize:(BOOL)arg1;
 - (void)_setAllItemsTransparentBackground:(BOOL)arg1;
 - (void)dealloc;
@@ -219,7 +205,7 @@
 - (BOOL)isOpaque;
 - (BOOL)_inTexturedWindow;
 - (void)_toolbarDidChangeDraggedTypesFrom:(id)arg1 to:(id)arg2;
-- (void)_setLayoutEngine:(id)arg1;
+- (BOOL)wantsLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)privateDragTypes;
 - (void)_toolbarViewCommonInit;
@@ -250,9 +236,6 @@
 - (unsigned long long)_findIndexOfFirstDuplicateItemWithItemIdentifier:(id)arg1;
 - (struct CGPoint)convertOriginForRTLIfNecessary:(struct CGPoint)arg1 view:(id)arg2;
 - (void)beginUpdateInsertionAnimationAtIndex:(long long)arg1 throwAwayCacheWhenDone:(BOOL)arg2;
-- (double)_computeTravelTimeForInsertionOfItemViewer:(id)arg1;
-- (void)stopUpdateInsertionAnimation;
-- (void)_updateDragInsertion:(id)arg1;
 - (void)_dragEndedNotification:(id)arg1;
 - (void)_endInsertionOptimizationWithDragSource:(id)arg1 force:(BOOL)arg2;
 - (void)_startInsertionOptimizationWithDragSource:(id)arg1;

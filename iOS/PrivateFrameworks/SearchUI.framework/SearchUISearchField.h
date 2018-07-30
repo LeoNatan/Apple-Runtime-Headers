@@ -6,14 +6,14 @@
 
 #import "MFAtomTextView.h"
 
-@class NSString, SearchUIKeyboardableTableViewController;
+@class NSString, SearchUIResultViewController;
 
 @interface SearchUISearchField : MFAtomTextView
 {
-    SearchUIKeyboardableTableViewController *_tableViewController;
+    SearchUIResultViewController *_resultViewController;
 }
 
-@property __weak SearchUIKeyboardableTableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
+@property __weak SearchUIResultViewController *resultViewController; // @synthesize resultViewController=_resultViewController;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (id)nextResponder;

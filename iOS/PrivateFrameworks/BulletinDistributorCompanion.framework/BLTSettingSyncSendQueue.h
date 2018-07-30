@@ -33,7 +33,7 @@
 - (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(_Bool)arg2 withQueue:(id)arg3 spoolToFile:(_Bool)arg4 andCompletion:(CDUnknownBlockType)arg5;
 - (void)sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(_Bool)arg3 spoolToFile:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)sendSpooledRequestsNowWithSender:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2 progress:(CDUnknownBlockType)arg3;
-- (void)sendRemoveSectionWithSectionID:(id)arg1;
+- (void)sendRemoveSectionWithSectionID:(id)arg1 sent:(CDUnknownBlockType)arg2;
 - (void)sendEffectiveSectionInfosUsingProvider:(CDUnknownBlockType)arg1 count:(unsigned long long)arg2 sectionInfoSendCompleted:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4 progress:(CDUnknownBlockType)arg5 spoolToFile:(_Bool)arg6;
 - (void)_sendSectionInfoWithSectionID:(unsigned long long)arg1 usingProvider:(CDUnknownBlockType)arg2 updateProgress:(CDUnknownBlockType)arg3 sendCompleted:(CDUnknownBlockType)arg4 sendAttempt:(unsigned long long)arg5 waitForAcknowledgement:(_Bool)arg6 group:(id)arg7 spoolToFile:(_Bool)arg8;
 - (id)initWithMaxConcurrentSendCount:(unsigned long long)arg1;

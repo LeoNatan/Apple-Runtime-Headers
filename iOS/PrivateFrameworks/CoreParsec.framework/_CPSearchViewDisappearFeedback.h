@@ -14,16 +14,12 @@
 
 @interface _CPSearchViewDisappearFeedback : PBCodable <_CPProcessableFeedback, _CPSearchViewDisappearFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int viewDisappearEvent:1;
-    } _has;
     int _viewDisappearEvent;
     unsigned long long _timestamp;
 }
 
 @property(nonatomic) int viewDisappearEvent; // @synthesize viewDisappearEvent=_viewDisappearEvent;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
@@ -32,8 +28,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasViewDisappearEvent;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

@@ -7,15 +7,18 @@
 #import <AppKit/NSControl.h>
 
 #import "NSAccessibilityImage.h"
+#import "NSMenuItemValidation.h"
+#import "_NSAsynchronousPreparationDelegate.h"
 
-@class NSImage, NSString;
+@class NSColor, NSImage, NSString;
 
-@interface NSImageView : NSControl <NSAccessibilityImage>
+@interface NSImageView : NSControl <_NSAsynchronousPreparationDelegate, NSAccessibilityImage, NSMenuItemValidation>
 {
     struct __IVFlags {
-        unsigned int _hasImageView:1;
-        unsigned int _usesCachedImage:1;
-        unsigned int _unused:24;
+        unsigned int _hasImageSubview:1;
+        unsigned int _usesSubview:1;
+        unsigned int _hasCachedUsesSubview:1;
+        unsigned int _unused:23;
         unsigned int _rejectsMultiFileDrops:1;
         unsigned int _compatibleScalingAndAlignment:1;
         unsigned int _reserved:1;
@@ -30,28 +33,19 @@
 + (void)initialize;
 + (id)imageWellWithImage:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (id)imageViewWithImage:(id)arg1;
+- (void)registerForDrags;
 - (id)accessibilityLabel;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (struct CGSize)intrinsicContentSize;
 - (struct NSEdgeInsets)alignmentRectInsets;
-- (long long)_desiredContentsRedrawPolicy;
 - (void)setFrameSize:(struct CGSize)arg1;
-- (void)_redisplayImageWhenLayerBacked;
-- (void)_ensureInitialStateIsSetForAnimationsForSize:(struct CGSize)arg1;
-- (id)makeBackingLayer;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setBackgroundStyle:(long long)arg1;
+- (void)_setBackgroundStyleForSubtree:(long long)arg1;
 - (long long)backgroundStyle;
-- (void)setLayer:(id)arg1;
-- (void)layout;
-- (void)_didRemoveLayer;
-- (void)updateLayer;
 @property(nonatomic, setter=_setUsesCachedImage:) BOOL _usesCachedImage;
-- (void)_updateLayerContentsToBorderImage;
-- (void)_updateLayerContentsToImage;
-- (BOOL)wantsUpdateLayer;
-- (void)setNeedsDisplayInRect:(struct CGRect)arg1;
+@property(copy) NSColor *templateTintColor;
+@property(copy) NSColor *contentTintColor;
 - (void)concludeDragOperation:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (void)draggingExited:(id)arg1;
@@ -76,31 +70,31 @@
 - (void)setAction:(SEL)arg1;
 - (void)setTarget:(id)arg1;
 - (void)_setImageAndNotifyTarget:(id)arg1;
+- (void)asynchronousPreparationDidChangePreparedResult:(id)arg1;
+- (id)asynchronousPreparation:(id)arg1 prepareResultUsingParameters:(id)arg2;
+@property(retain) NSImage *placeholderImage;
 @property(retain) NSImage *image;
 - (void)setObjectValue:(id)arg1;
 - (id)_imageByConvertingToSidebarImageIfNeeded:(id)arg1;
 @property(getter=isEditable) BOOL editable;
 @property unsigned long long imageScaling;
 @property unsigned long long imageAlignment;
-- (BOOL)_shouldDoOldLayerUpdate;
-- (void)_invalidateLayerLayoutAndSetNeedsDisplay;
-- (BOOL)_usingUpdateLayer;
 @property unsigned long long imageFrameStyle;
 - (void)setCell:(id)arg1;
-- (void)_updateImageView;
-- (id)_processedImageForView:(id)arg1;
-- (struct CGRect)_imageViewFrame;
-- (void)_removeImageView;
-- (void)_setImageView:(id)arg1;
-- (id)_imageView;
-- (BOOL)allowsVibrancy;
+- (void)setLayer:(id)arg1;
+- (void)layout;
+- (void)drawRect:(struct CGRect)arg1;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
+- (void)_updateUsesSubview;
+- (BOOL)_usesSubview;
+- (void)setNeedsDisplayInRect:(struct CGRect)arg1;
+- (void)updateCell:(id)arg1;
+- (void)_updateImageSubview;
+- (void)_setImageSubview:(id)arg1;
+- (id)_imageSubview;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (BOOL)_shouldDoLegacyLayerUpdate;
-- (void)_updateLayerContentsRedrawPolicy;
-- (void)_updateCompatibleScalingAndAlignment;
-- (void)_updateOverridesDrawing;
-- (void)registerForDrags;
 - (void)_setRejectsMultiFileDrops:(BOOL)arg1;
 - (BOOL)_rejectsMultiFileDrops;
 - (id)ns_widgetType;

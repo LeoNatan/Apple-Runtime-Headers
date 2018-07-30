@@ -6,14 +6,13 @@
 
 #import "NSXPCConnection.h"
 
-@class NSBundle, NSSet, NSString;
+@class NSSet, NSString;
 
 @interface NSXPCConnection (CX)
 @property(readonly, copy, nonatomic) NSSet *cx_capabilities;
-@property(readonly, nonatomic) _Bool cx_hasVoIPBackgroundMode;
 @property(readonly, copy, nonatomic) NSString *cx_processName;
-@property(readonly, nonatomic) NSBundle *cx_bundle;
 @property(readonly, copy, nonatomic) NSString *cx_developerTeamIdentifier;
+@property(readonly, copy, nonatomic) NSString *cx_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *cx_applicationIdentifier;
 @end
 

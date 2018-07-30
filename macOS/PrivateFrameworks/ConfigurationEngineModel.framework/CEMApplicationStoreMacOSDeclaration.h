@@ -12,27 +12,33 @@
 
 @interface CEMApplicationStoreMacOSDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadRestrictStoreRequireAdminToInstall;
+    NSNumber *_payloadRestrictStoreSoftwareupdateOnly;
+    NSNumber *_payloadRestrictStoreDisableAppAdoption;
+    NSNumber *_payloadDisableSoftwareUpdateNotifications;
+    NSNumber *_payloadRestrictStoreMdmInstallSoftwareupdateOnly;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withRestrictStoreRequireAdminToInstall:(id)arg2 withRestrictStoreSoftwareupdateOnly:(id)arg3 withRestrictStoreDisableAppAdoption:(id)arg4 withDisableSoftwareUpdateNotifications:(id)arg5 withRestrictStoreMdmInstallSoftwareupdateOnly:(id)arg6;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadRestrictStoreMdmInstallSoftwareupdateOnly; // @synthesize payloadRestrictStoreMdmInstallSoftwareupdateOnly=_payloadRestrictStoreMdmInstallSoftwareupdateOnly;
+@property(copy, nonatomic) NSNumber *payloadDisableSoftwareUpdateNotifications; // @synthesize payloadDisableSoftwareUpdateNotifications=_payloadDisableSoftwareUpdateNotifications;
+@property(copy, nonatomic) NSNumber *payloadRestrictStoreDisableAppAdoption; // @synthesize payloadRestrictStoreDisableAppAdoption=_payloadRestrictStoreDisableAppAdoption;
+@property(copy, nonatomic) NSNumber *payloadRestrictStoreSoftwareupdateOnly; // @synthesize payloadRestrictStoreSoftwareupdateOnly=_payloadRestrictStoreSoftwareupdateOnly;
+@property(copy, nonatomic) NSNumber *payloadRestrictStoreRequireAdminToInstall; // @synthesize payloadRestrictStoreRequireAdminToInstall=_payloadRestrictStoreRequireAdminToInstall;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadRestrictStoreMdmInstallSoftwareupdateOnly;
-@property(readonly, nonatomic) NSNumber *payloadDisableSoftwareUpdateNotifications;
-@property(readonly, nonatomic) NSNumber *payloadRestrictStoreDisableAppAdoption;
-@property(readonly, nonatomic) NSNumber *payloadRestrictStoreSoftwareupdateOnly;
-@property(readonly, nonatomic) NSNumber *payloadRestrictStoreRequireAdminToInstall;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

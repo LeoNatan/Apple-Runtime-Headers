@@ -8,10 +8,10 @@
 
 @interface CLDeviceMotionProperties : NSObject
 {
-    int fMode;
+    int _mode;
 }
 
-@property(nonatomic) int mode; // @synthesize mode=fMode;
+@property(nonatomic) int mode; // @synthesize mode=_mode;
 - (id)description;
 - (id)initWithMode:(int)arg1;
 

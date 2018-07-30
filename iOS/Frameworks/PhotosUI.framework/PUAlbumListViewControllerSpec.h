@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <PhotosUI/PULegacyViewControllerSpec.h>
 
-@class PUFeedViewControllerSpec, PUFontManager, PUPhotoDecoration, PUPhotosAlbumViewControllerSpec, PUPhotosGridViewControllerSpec, PUPhotosPanoramaViewControllerSpec, PUPhotosPickerViewControllerSpec, PXLayoutMetricInterpolator, UIImage;
+@class NSString, PUFeedViewControllerSpec, PUFontManager, PUPhotoDecoration, PUPhotosAlbumViewControllerSpec, PUPhotosGridViewControllerSpec, PUPhotosPanoramaViewControllerSpec, PUPhotosPickerViewControllerSpec, PXLayoutMetricInterpolator, UIImage;
 
-@interface PUAlbumListViewControllerSpec : NSObject
+@interface PUAlbumListViewControllerSpec : PULegacyViewControllerSpec
 {
     UIImage *_emptyAlbumPlaceholderImage;
     UIImage *_emptySharedAlbumPlaceholderImage;
@@ -22,6 +22,7 @@
     _Bool _usesStackTransitionToGrid;
     _Bool _shouldUseCollageForCloudFeedPlaceholder;
     _Bool _shouldUseShortTitleForStandInAlbumList;
+    _Bool _canShowVirtualCollections;
     PUFontManager *__fontManager;
     unsigned long long _stackViewStyle;
     unsigned long long _folderStackViewStyle;
@@ -32,7 +33,6 @@
     long long _cellContentViewLayout;
     double _sectionHeaderHeight;
     double _sectionFooterHeight;
-    double _maxSearchBarWidth;
     long long _albumDeletionConfirmationStyle;
     PUPhotosGridViewControllerSpec *_gridViewControllerSpec;
     PUPhotosAlbumViewControllerSpec *_albumViewControllerSpec;
@@ -47,13 +47,15 @@
     struct UIEdgeInsets _stackPerspectiveInsets;
 }
 
++ (id)padSpec;
++ (id)phoneSpec;
 @property(readonly, nonatomic) PUFeedViewControllerSpec *feedViewControllerSpec; // @synthesize feedViewControllerSpec=_feedViewControllerSpec;
 @property(readonly, nonatomic) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec; // @synthesize photosPickerViewControllerSpec=_photosPickerViewControllerSpec;
 @property(readonly, nonatomic) PUPhotosPanoramaViewControllerSpec *panoramaViewControllerSpec; // @synthesize panoramaViewControllerSpec=_panoramaViewControllerSpec;
 @property(readonly, nonatomic) PUPhotosAlbumViewControllerSpec *albumViewControllerSpec; // @synthesize albumViewControllerSpec=_albumViewControllerSpec;
 @property(readonly, nonatomic) PUPhotosGridViewControllerSpec *gridViewControllerSpec; // @synthesize gridViewControllerSpec=_gridViewControllerSpec;
 @property(readonly, nonatomic) long long albumDeletionConfirmationStyle; // @synthesize albumDeletionConfirmationStyle=_albumDeletionConfirmationStyle;
-@property(readonly, nonatomic) double maxSearchBarWidth; // @synthesize maxSearchBarWidth=_maxSearchBarWidth;
+@property(readonly, nonatomic) _Bool canShowVirtualCollections; // @synthesize canShowVirtualCollections=_canShowVirtualCollections;
 @property(readonly, nonatomic) _Bool shouldUseShortTitleForStandInAlbumList; // @synthesize shouldUseShortTitleForStandInAlbumList=_shouldUseShortTitleForStandInAlbumList;
 @property(readonly, nonatomic) _Bool shouldUseCollageForCloudFeedPlaceholder; // @synthesize shouldUseCollageForCloudFeedPlaceholder=_shouldUseCollageForCloudFeedPlaceholder;
 @property(readonly, nonatomic) double sectionFooterHeight; // @synthesize sectionFooterHeight=_sectionFooterHeight;
@@ -78,20 +80,17 @@
 @property(readonly) _Bool shouldUseTableView; // @synthesize shouldUseTableView=_shouldUseTableView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldShowSectionHeaders;
-@property(readonly, nonatomic) _Bool canShowVirtualCollections;
 - (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;
 @property(readonly, nonatomic) PUAlbumListViewControllerSpec *standInAlbumListViewControllerSpec;
-@property(readonly, nonatomic) _Bool displaysSearchInPopover;
-@property(readonly, nonatomic) _Bool canDisplaySearchActionInNavigationBar;
 - (void)_getStackSize:(struct CGSize *)arg1 outEdgeInsets:(struct UIEdgeInsets *)arg2 forLayoutReferenceSize:(struct CGSize)arg3 safeAreaInsets:(struct UIEdgeInsets)arg4;
 - (struct CGPoint)_pixelRoundedOriginForCenteredImage:(id)arg1 inRect:(struct CGRect)arg2;
 - (id)_centeredGlyphImage:(id)arg1 withBackgroundColor:(id)arg2 size:(struct CGSize)arg3 imageAlpha:(double)arg4;
 - (id)_centeredTintedGlyphImage:(id)arg1 withBackgroundColor:(id)arg2 size:(struct CGSize)arg3;
-- (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
-- (id)_nameOfHiddenAlbumPlaceholderImage;
-- (id)_nameOfEmptySharedAlbumPlaceholderImage;
-- (id)_nameOfAddSharedAlbumPlaceholderImage;
-- (id)_nameOfEmptyAlbumPlaceholderImage;
+@property(readonly, nonatomic) NSString *nameOfRecentlyDeletedAlbumPlaceholderImage;
+@property(readonly, nonatomic) NSString *nameOfHiddenAlbumPlaceholderImage;
+@property(readonly, nonatomic) NSString *nameOfEmptySharedAlbumPlaceholderImage;
+@property(readonly, nonatomic) NSString *nameOfAddSharedAlbumPlaceholderImage;
+@property(readonly, nonatomic) NSString *nameOfEmptyAlbumPlaceholderImage;
 @property(readonly, nonatomic) UIImage *recentlyDeletedAlbumPlaceholderImage;
 @property(readonly, nonatomic) UIImage *hiddenAlbumPlaceholderImage;
 @property(readonly, nonatomic) UIImage *addSharedAlbumPlaceholderImage;
@@ -101,6 +100,7 @@
 - (struct CGSize)imageSizeForLayoutReferenceSize:(struct CGSize)arg1 safeAreaInsets:(struct UIEdgeInsets)arg2;
 - (struct CGSize)stackSizeForLayoutReferenceSize:(struct CGSize)arg1 safeAreaInsets:(struct UIEdgeInsets)arg2;
 - (struct UIEdgeInsets)sectionInsetsForLayoutReferenceSize:(struct CGSize)arg1 safeAreaInsets:(struct UIEdgeInsets)arg2;
+- (struct CGSize)cellSizeForStackSize:(struct CGSize)arg1;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (void)configureStackViewWithGridStyle:(id)arg1;
 - (void)configureCollectionViewAlbumListLayout:(id)arg1 forBounds:(struct CGRect)arg2;

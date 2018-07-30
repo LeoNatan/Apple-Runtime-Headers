@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface PDAnimateEffectBehavior : PDAnimateBehavior
 {
     BOOL mHasTransition;
@@ -17,11 +16,11 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSMutableDictionary *propertyMap; // @synthesize propertyMap=mPropertyMap;
+- (void).cxx_destruct;
 - (BOOL)hasProperties;
 - (void)setTransition:(int)arg1;
 - (int)transition;
 - (BOOL)hasTransition;
-- (void)dealloc;
 - (id)init;
 
 @end

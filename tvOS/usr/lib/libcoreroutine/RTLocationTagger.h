@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, RTAuthorizationManager, RTInvocationDispatcher, RTLearnedLocationManager, RTLocationManager, RTLocationOfInterest, RTMicroLocation, RTVisitManager;
+@class NSObject<OS_dispatch_queue>, NSUUID, RTAuthorizationManager, RTInvocationDispatcher, RTLearnedLocationManager, RTLocationManager, RTMicroLocation, RTVisitManager;
 
 @interface RTLocationTagger : NSObject
 {
@@ -21,10 +21,10 @@
     RTVisitManager *_visitManager;
     double _maximumEventLocationTaggingTimeInterval;
     RTMicroLocation *_currentMicroLocation;
-    RTLocationOfInterest *_currentLocationOfInterest;
+    NSUUID *_currentLocationOfInterestIdentifier;
 }
 
-@property(retain, nonatomic) RTLocationOfInterest *currentLocationOfInterest; // @synthesize currentLocationOfInterest=_currentLocationOfInterest;
+@property(retain, nonatomic) NSUUID *currentLocationOfInterestIdentifier; // @synthesize currentLocationOfInterestIdentifier=_currentLocationOfInterestIdentifier;
 @property(retain, nonatomic) RTMicroLocation *currentMicroLocation; // @synthesize currentMicroLocation=_currentMicroLocation;
 @property(nonatomic) double maximumEventLocationTaggingTimeInterval; // @synthesize maximumEventLocationTaggingTimeInterval=_maximumEventLocationTaggingTimeInterval;
 @property(nonatomic) _Bool historicLocationTaggingAllowed; // @synthesize historicLocationTaggingAllowed=_historicLocationTaggingAllowed;

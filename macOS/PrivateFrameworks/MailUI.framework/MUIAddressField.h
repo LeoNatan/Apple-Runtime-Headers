@@ -119,6 +119,7 @@
 - (void)_displayNextPeoplePrediction;
 - (BOOL)tokenField:(id)arg1 characterAtIndex:(unsigned long long)arg2 shouldTerminateString:(id)arg3;
 - (id)tokenField:(id)arg1 readFromPasteboard:(id)arg2;
+- (id)tokenField:(id)arg1 completionsForSubstring:(id)arg2 indexOfToken:(long long)arg3 indexOfSelectedItem:(long long *)arg4;
 - (BOOL)tokenField:(id)arg1 writeRepresentedObjects:(id)arg2 toPasteboard:(id)arg3;
 - (id)tokenField:(id)arg1 menuForRepresentedObject:(id)arg2;
 - (BOOL)tokenField:(id)arg1 hasMenuForRepresentedObject:(id)arg2;
@@ -164,6 +165,7 @@
 - (void)_showSelectedCompletionInField;
 - (void)_updateSelectedResultAndShowInField:(id)arg1;
 - (void)_cancelAndCloseCompletion;
+- (void)_closeCompletion;
 - (void)_cancelCompletion;
 - (void)_startCompleting;
 - (void)_updateTrailingConstraints;

@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface PBMasterLayoutMap : NSObject
 {
     NSMutableDictionary *mMasterIdToMasterInfoMap;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)masterLayoutMap;
+- (void).cxx_destruct;
 - (id)slideLayoutForSlideHolder:(id)arg1;
 - (id)masterInfoForSlideHolder:(id)arg1;
 - (int)masterIdForTitleId:(int)arg1;
@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (id)allMasterIds;
 - (id)masterInfoForMasterId:(int)arg1;
 - (void)setMasterInfo:(id)arg1 forMasterId:(int)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

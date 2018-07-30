@@ -21,7 +21,7 @@
 @property(nonatomic) long long lockoutState; // @synthesize lockoutState=_lockoutState;
 @property(retain, nonatomic) BKIdentity *identity; // @synthesize identity=_identity;
 - (void).cxx_destruct;
-- (id)initWithDeviceIdentity:(id)arg1 details:(id)arg2;
+- (id)initWithServerIdentity:(id)arg1 details:(id)arg2;
 
 @end
 

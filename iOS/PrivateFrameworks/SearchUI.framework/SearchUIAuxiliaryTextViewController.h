@@ -18,6 +18,7 @@
 @property _Bool shouldCenter; // @synthesize shouldCenter=_shouldCenter;
 @property(retain) TLKAuxilliaryTextView *auxilliaryTextView; // @synthesize auxilliaryTextView=_auxilliaryTextView;
 - (void).cxx_destruct;
+- (_Bool)isPrimarilyTextView;
 - (void)updateWithResult:(id)arg1;
 - (id)setupViewWithStyle:(unsigned long long)arg1;
 - (_Bool)shouldVerticallyCenter;

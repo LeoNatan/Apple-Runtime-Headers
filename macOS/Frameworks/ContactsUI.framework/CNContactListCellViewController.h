@@ -50,6 +50,7 @@
 - (BOOL)importMode;
 - (BOOL)editMode;
 - (BOOL)isEditing;
+- (void)buildActionGlyphsForItem:(id)arg1;
 - (void)buildVisibleViewForItem:(id)arg1;
 - (id)collectionItems;
 - (BOOL)isMe;
@@ -61,6 +62,7 @@
 - (void)refreshCollectionView;
 - (void)setEntry:(id)arg1;
 @property(readonly) CNContact *contact;
+- (void)setContactStore:(id)arg1;
 - (void)setAddressBook:(id)arg1;
 - (void)awakeFromNib;
 - (id)init;

@@ -10,15 +10,10 @@
 
 @protocol _CPSearchViewAppearFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasReaderTextAvailable;
 @property(nonatomic) BOOL readerTextAvailable;
-@property(readonly, nonatomic) BOOL hasIsOverApp;
 @property(nonatomic) BOOL isOverApp;
-@property(readonly, nonatomic) BOOL hasIsOnLockScreen;
 @property(nonatomic) BOOL isOnLockScreen;
-@property(readonly, nonatomic) BOOL hasViewAppearEvent;
 @property(nonatomic) int viewAppearEvent;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

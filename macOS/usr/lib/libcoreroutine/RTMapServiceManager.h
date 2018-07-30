@@ -4,43 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <coreroutine/RTService.h>
 
-@class NSObject<OS_dispatch_queue>, RTDefaultsManager;
+#import "RTHelperServiceProtocol.h"
 
-@interface RTMapServiceManager : NSObject
+@class NSXPCConnection;
+
+@interface RTMapServiceManager : RTService <RTHelperServiceProtocol>
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    RTDefaultsManager *_defaultsManager;
+    NSXPCConnection *_xpcConnection;
 }
 
-+ (id)exposedErrorFrom:(id)arg1;
-@property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
-- (void)fetchMapItemsFromMapItemURL:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_fetchMapItemsFromMapItemURL:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)mapsURLFromGeoMapItemHandle:(id)arg1 error:(id *)arg2;
+- (void)fetchMapsURLFromGeoMapItemHandle:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)calculateETAFromOrigin:(id)arg1 toDestination:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)mapItemWithIdentifier:(id)arg1 geoMapItem:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 error:(id *)arg5;
+- (void)fetchMapItemWithIdentifier:(id)arg1 geoMapItem:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 handler:(CDUnknownBlockType)arg5;
+- (id)mapItemWithIdentifier:(id)arg1 geoMapItemStorage:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 error:(id *)arg5;
+- (void)createMapItemWithIdentifier:(id)arg1 geoMapItemStorage:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)fetchMapItemsFromAddressDictionary:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_fetchMapItemsFromAddressDictionary:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchMapItemsFromAddressString:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_fetchMapItemsFromAddressString:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)fetchMapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_fetchMapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchMapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)fetchMapItemsFromLocation:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_fetchMapItemsFromLocation:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchMapItemsFromNaturalLanguageQuery:(id)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (id)_mapItemsFromGEOMapItems:(id)arg1 mapItemSource:(unsigned long long)arg2;
-- (id)_mapItemsFromMKMapItems:(id)arg1 mapItemSource:(unsigned long long)arg2;
-- (void)_fetchMapItemsFromNaturalLanguageQuery:(id)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)hydrateMapItem:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_hydrateMapItem:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchMapItemFromHandle:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_fetchMapItemFromHandle:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)shutdown;
+- (id)_proxyForServicingSelector:(SEL)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
 - (void)_shutdown;
-- (void)setup;
-- (void)_setup;
-- (id)initWithDefaultsManager:(id)arg1;
 - (id)init;
 
 @end

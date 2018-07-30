@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface SCNSceneDatabase : NSObject <NSSecureCoding>
 {
     NSMutableDictionary *_db;

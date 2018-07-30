@@ -8,7 +8,6 @@
 
 @class NSView<ABCardCollectionRowView>;
 
-__attribute__((visibility("hidden")))
 @interface ABShadowTextViewPostalAddressValuePasteHelper : NSObject
 {
     NSView<ABCardCollectionRowView> *_datumView;

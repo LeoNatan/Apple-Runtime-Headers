@@ -24,19 +24,20 @@
 @property(readonly) struct MTLCompilerConnectionManager *compilerConnectionManager; // @synthesize compilerConnectionManager=_compilerConnectionManager;
 @property(readonly) NSObject<OS_dispatch_queue> *compilerQueue; // @synthesize compilerQueue=_compilerQueue;
 @property(readonly, copy) NSString *pluginPath; // @synthesize pluginPath=_pluginPath;
+- (void)reflectionWithFunction:(id)arg1 options:(unsigned int)arg2 sync:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)reflectionWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)compileFunction:(id)arg1 stateData:(id)arg2 options:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)compileFragmentFunction:(id)arg1 serializedPixelFormat:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)compileVertexFunction:(id)arg1 serializedPipelineDescriptorData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)compileFunction:(id)arg1 serializedData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)compileFunction:(id)arg1 frameworkData:(id)arg2 driverKeyData:(id)arg3 options:(unsigned int)arg4 pipelineCache:(id)arg5 sync:(_Bool)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)compileFunction:(id)arg1 frameworkData:(id)arg2 driverKeyData:(id)arg3 options:(unsigned int)arg4 pipelineCache:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (void)compileFunction:(id)arg1 serializedPipelineData:(id)arg2 stateData:(id)arg3 linkDataSize:(unsigned long)arg4 frameworkLinking:(_Bool)arg5 options:(unsigned int)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (void)compileFunction:(id)arg1 frameworkData:(id)arg2 driverKeyData:(id)arg3 frameworkLinking:(_Bool)arg4 linkDataSize:(unsigned long)arg5 pipelineCache:(id)arg6 options:(unsigned int)arg7 completionHandler:(CDUnknownBlockType)arg8;
-- (void)compileRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)compileFunction:(id)arg1 serializedPipelineData:(id)arg2 stateData:(id)arg3 linkDataSize:(unsigned long)arg4 frameworkLinking:(_Bool)arg5 options:(unsigned int)arg6 sync:(_Bool)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)compileFunctionInternal:(id)arg1 frameworkData:(id)arg2 driverKeyData:(id)arg3 frameworkLinking:(_Bool)arg4 linkDataSize:(unsigned long)arg5 pipelineCache:(id)arg6 options:(unsigned int)arg7 sync:(_Bool)arg8 completionHandler:(CDUnknownBlockType)arg9;
 - (void)compileRequest:(id)arg1 pipelineCache:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)compileRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)compileRequest:(id)arg1 pipelineCache:(id)arg2 sync:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 - (CDStruct_c0454aff)pipelineCacheStats;
 - (CDStruct_c0454aff)libraryCacheStats;
+- (void *)getShaderCacheKeys;
 - (void)unloadShaderCaches;
 - (id)initWithTargetData:(id)arg1 cacheUUID:(CDStruct_41a22ec7 *)arg2 pluginPath:(id)arg3 device:(id)arg4 compilerFlags:(unsigned int)arg5;
 

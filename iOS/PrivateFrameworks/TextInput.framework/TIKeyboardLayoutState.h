@@ -34,6 +34,7 @@
 @property(nonatomic) _Bool hasAccentKey; // @synthesize hasAccentKey=_hasAccentKey;
 @property(nonatomic) _Bool hasCandidateKey; // @synthesize hasCandidateKey=_hasCandidateKey;
 @property(copy, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
+- (void).cxx_destruct;
 - (void)setInterfaceIdiomIsPad;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -41,7 +42,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 @end
 

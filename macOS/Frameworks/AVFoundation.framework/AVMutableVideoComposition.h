@@ -19,6 +19,7 @@
 + (id)videoCompositionWithAsset:(id)arg1 applyingCIFiltersWithHandler:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) AVVideoCompositionCoreAnimationTool *animationTool;
 @property(copy, nonatomic) NSArray *instructions;
+@property(nonatomic) float renderScale;
 @property(nonatomic) struct CGSize renderSize;
 @property(nonatomic) int sourceTrackIDForFrameTiming;
 @property(nonatomic) CDStruct_1b6d18a9 frameDuration;

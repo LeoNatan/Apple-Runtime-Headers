@@ -10,7 +10,7 @@
 {
 }
 
-- (BOOL)canSelectPreference:(id)arg1 atIndex:(unsigned long long)arg2;
+- (BOOL)canSelectPreference:(id)arg1 preferenceIndex:(unsigned long long)arg2 subItemIndex:(unsigned long long)arg3;
 - (long long)numberOfMenuItemsInSection:(long long)arg1;
 - (void)setModel:(id)arg1;
 - (void)updatePreferences;

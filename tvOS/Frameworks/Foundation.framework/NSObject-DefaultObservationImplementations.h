@@ -13,10 +13,13 @@
 - (void)receiveObservedValue:(id)arg1;
 - (void)receiveObservedError:(id)arg1;
 - (_Bool)_isToManyChangeInformation;
+- (void)_destroyObserverList;
+- (void *)_observerStorageOfSize:(unsigned long long)arg1;
 - (id *)_observerStorage;
 - (id)addObservationTransformer:(CDUnknownBlockType)arg1;
 - (id)addObserverBlock:(CDUnknownBlockType)arg1;
 - (id)addChainedObservers:(id)arg1;
 - (void)finishObserving;
+- (_Bool)_overrideUseFastBlockObservers;
 @end
 

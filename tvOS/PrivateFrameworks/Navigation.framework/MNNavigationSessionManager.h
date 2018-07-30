@@ -90,6 +90,7 @@ __attribute__((visibility("hidden")))
 - (void)acceptReroute:(_Bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
 - (void)setRideIndex:(unsigned long long)arg1 forLegIndex:(unsigned long long)arg2;
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
+- (void)_setIsConnectedToCarplay:(_Bool)arg1;
 - (void)setIsConnectedToCarplay:(_Bool)arg1;
 - (void)setVoiceGuidanceLevel:(unsigned long long)arg1;
 - (unsigned long long)voiceGuidanceLevel;

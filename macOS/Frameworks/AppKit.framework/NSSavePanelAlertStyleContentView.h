@@ -21,7 +21,9 @@ __attribute__((visibility("hidden")))
 @property NSTextField *messageTextField; // @synthesize messageTextField;
 @property NSImageView *iconView; // @synthesize iconView;
 - (void)setMessage:(id)arg1;
-- (void)layout;
+- (void)stopTimerForSpeaking;
+- (void)startTimerForSpeaking;
+- (void)_windowDidOrderOnScreen;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)cancelAlertSpeaking;

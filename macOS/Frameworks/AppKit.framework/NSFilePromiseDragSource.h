@@ -10,6 +10,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSFilePromiseDragSource : NSObject <NSDraggingSource>
 {
     id _dragSource;

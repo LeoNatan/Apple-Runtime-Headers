@@ -7,6 +7,7 @@
 @class AceObject, NSError, NSString, SiriCoreAceConnectionAnalysisInfo, SiriCoreConnectionType, SiriCoreSiriBackgroundConnection;
 
 @protocol SiriCoreSiriBackgroundConnectionDelegate
+- (void)siriBackgroundConnection:(SiriCoreSiriBackgroundConnection *)arg1 didEncounterIntermediateError:(NSError *)arg2;
 - (void)siriBackgroundConnection:(SiriCoreSiriBackgroundConnection *)arg1 didEncounterError:(NSError *)arg2 analysisInfo:(SiriCoreAceConnectionAnalysisInfo *)arg3;
 - (void)siriBackgroundConnectionDidClose:(SiriCoreSiriBackgroundConnection *)arg1;
 - (void)siriBackgroundConnection:(SiriCoreSiriBackgroundConnection *)arg1 didReceiveAceObject:(AceObject *)arg2;

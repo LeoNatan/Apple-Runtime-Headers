@@ -11,8 +11,12 @@
 }
 
 + (id)debugDescription;
-+ (void)_sendNotificationsAfterRunningBlock:(CDUnknownBlockType)arg1;
++ (void)_sendNotificationsAndCallbacksAfterRunningBlock:(CDUnknownBlockType)arg1;
++ (void)removeDelegate:(id)arg1;
++ (void)addDelegate:(id)arg1 queue:(id)arg2;
 + (id)client;
++ (id)_senderIdentityCapabilitiesByUUID;
++ (id)senderIdentityCapabilities;
 + (BOOL)supportsCarrierServices;
 + (BOOL)isEmergencyCallbackPossible;
 + (void)endEmergencyCallbackMode;
@@ -53,10 +57,10 @@
 + (BOOL)isVoLTECallingEnabled;
 + (BOOL)supportsVoLTECalling;
 + (BOOL)supportsWiFiEmergencyCalling;
-+ (BOOL)isWiFiCallingRoamingEnabled;
 + (BOOL)isWiFiCallingCurrentlyAvailable;
 + (id)wiFiCallingCapabilityInfo;
 + (void)setWiFiCallingRoamingEnabled:(BOOL)arg1;
++ (BOOL)isWiFiCallingRoamingEnabled;
 + (void)setWiFiCallingEnabled:(BOOL)arg1;
 + (BOOL)isWiFiCallingEnabled;
 + (BOOL)supportsWiFiCalling;

@@ -9,6 +9,6 @@
 @class NSDictionary;
 
 @protocol VCSecurityEventHandler <NSObject>
-- (void)handleEncryptionInfoChange:(NSDictionary *)arg1;
+- (BOOL)handleEncryptionInfoChange:(NSDictionary *)arg1;
 @end
 

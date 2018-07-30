@@ -8,6 +8,7 @@
 
 @class NSMutableArray, TUSearchController;
 
+__attribute__((visibility("hidden")))
 @interface TUAutocompleteResultPartitioner : NSObject
 {
     TUSearchController *_searchController;

@@ -6,23 +6,23 @@
 
 #import "NSObject.h"
 
-@class CDAttribute, NSDate, NSObject<OS_os_log>, SGDPowerBudgetThrottlingState;
+@class NSDate, NSObject<OS_os_log>, SGDPowerBudgetThrottlingState, _DASScheduler;
 
 @interface SGDPowerBudget : NSObject
 {
-    CDAttribute *_attribute;
-    unsigned long long _budgetingToken;
     SGDPowerBudgetThrottlingState *_throttlingState;
     NSDate *_lastPlugInTime;
     id <NSObject> _batteryObserver;
+    _DASScheduler *_scheduler;
+    // Error parsing type: AB, name: _discretionaryWorkInProgress
     NSObject<OS_os_log> *_log;
 }
 
 + (id)defaultBudget;
 - (void).cxx_destruct;
 - (void)doDiscretionaryWork:(CDUnknownBlockType)arg1 orElse:(CDUnknownBlockType)arg2;
-- (void)endWork;
-- (void)startWork;
+- (void)_endWork;
+- (void)_startWork;
 - (BOOL)canDoDiscretionaryWork;
 - (void)_endThrottleBudgetedWork;
 - (void)_startThrottleBudgetedWork;
@@ -30,7 +30,6 @@
 - (void)_endDuetBudgetedWork;
 - (void)_startDuetBudgetedWork;
 - (BOOL)_hasDuetBudgetRemaining;
-- (BOOL)_updateAttribute;
 - (void)dealloc;
 - (id)init;
 

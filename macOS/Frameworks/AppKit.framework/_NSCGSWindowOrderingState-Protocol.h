@@ -16,10 +16,11 @@
 - (void)removeWindowFromOrderingGroup:(NSCGSWindow *)arg1;
 - (void)addWindow:(NSCGSWindow *)arg1 toOrderingGroupBelowWindow:(NSCGSWindow *)arg2;
 - (void)addWindow:(NSCGSWindow *)arg1 toOrderingGroupAboveWindow:(NSCGSWindow *)arg2;
+- (void)unlockWindowSublevel:(NSCGSWindow *)arg1;
+- (void)lockWindow:(NSCGSWindow *)arg1 toAbsoluteSublevel:(int)arg2;
 - (void)reassociateWithSpacesByGeometry:(NSCGSWindow *)arg1;
 - (void)disassociateFromSpacesIfOrderedOut:(NSCGSWindow *)arg1;
 - (void)setDesiredSpace:(unsigned long long)arg1 forWindow:(NSCGSWindow *)arg2;
-- (void)setSubLevel:(int)arg1 forWindow:(NSCGSWindow *)arg2;
 - (void)setLevel:(int)arg1 forWindow:(NSCGSWindow *)arg2;
 - (void)orderWindow:(NSCGSWindow *)arg1 op:(int)arg2 againstWindow:(NSCGSWindow *)arg3;
 

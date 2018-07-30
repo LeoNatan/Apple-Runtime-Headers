@@ -8,7 +8,7 @@
 
 #import "UIKeyInput.h"
 
-@class NSString, WKContentView, WKSelectPopover;
+@class NSString, UITextInputPasswordRules, WKContentView, WKSelectPopover;
 
 __attribute__((visibility("hidden")))
 @interface WKSelectTableViewController : UITableViewController <UIKeyInput>
@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned int hash;
 @property(nonatomic) int keyboardAppearance;
 @property(nonatomic) int keyboardType;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) int returnKeyType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
 @property(nonatomic) int smartDashesType;

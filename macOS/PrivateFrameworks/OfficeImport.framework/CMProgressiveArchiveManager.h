@@ -8,6 +8,7 @@
 
 @class NSDate, NSMutableDictionary, NSMutableString;
 
+__attribute__((visibility("hidden")))
 @interface CMProgressiveArchiveManager : CMStylingArchiveManager
 {
     const void *mClient;

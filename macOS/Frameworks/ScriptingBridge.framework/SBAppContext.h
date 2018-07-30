@@ -6,19 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString, SBAppLocator, SBApplication;
+@class NSDictionary, NSMutableDictionary, NSString, SBAppLocator, SBApplication;
 
 __attribute__((visibility("hidden")))
 @interface SBAppContext : NSObject
 {
     SBApplication *_application;
+    NSMutableDictionary *_thunksForSelectors;
+    NSMutableDictionary *_thunksForSelectorsForClassCodes;
     NSDictionary *_classNamesForCodes;
     NSDictionary *_codesForPropertyNames;
-    NSDictionary *_classesForScriptingNames;
+    NSDictionary *_codesForScriptingClassNames;
+    NSDictionary *_inheritanceCodesForClassCodes;
     NSDictionary *_codesForClassNames;
     NSDictionary *_propertyNamesForCodes;
+    NSDictionary *_scriptingClassNamesForCodes;
     NSString *_name;
-    Class _applicationClass;
     id _delegate;
     SBAppLocator *_locator;
     int _sendMode;
@@ -29,7 +32,6 @@ __attribute__((visibility("hidden")))
 + (id)contextWithPID:(int)arg1;
 + (id)contextWithBundleIdentifier:(id)arg1;
 - (void)setApplication:(id)arg1;
-- (Class)applicationClass;
 - (id)sdef;
 - (id)qualifiedSpecifier;
 - (id)bundleIdentifier;
@@ -43,8 +45,9 @@ __attribute__((visibility("hidden")))
 - (id)descriptorForObject:(id)arg1;
 - (id)objectForDescriptor:(const struct AEDesc *)arg1;
 - (id)objectForDescriptor:(const struct AEDesc *)arg1 atIndex:(long long)arg2;
+- (id)scriptingClassNameForCode:(unsigned int)arg1;
+- (unsigned int)codeForScriptingClassName:(id)arg1;
 - (Class)classForScriptingClass:(id)arg1;
-- (id)classesForScriptingNames;
 - (id)propertyNameForCode:(unsigned int)arg1;
 - (unsigned int)codeForPropertyName:(id)arg1;
 - (id)propertyNamesForCodes;
@@ -61,8 +64,14 @@ __attribute__((visibility("hidden")))
 - (id)initWithPID:(int)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;
-- (Class)dynamicMojo;
-- (Class)makeGlueForSdef:(id)arg1 basename:(id)arg2;
+- (BOOL)dynamicMojo;
+- (void)makeGlueForSdef:(id)arg1 basename:(id)arg2;
+- (void)addThunk:(id)arg1 forClassCode:(unsigned int)arg2 element:(id)arg3;
+- (void)object:(id)arg1 forwardInvocation:(id)arg2;
+- (id)object:(id)arg1 methodSignatureForSelector:(SEL)arg2;
+- (BOOL)object:(id)arg1 respondsToSelector:(SEL)arg2;
+- (unsigned int)inheritanceCodeForClassCode:(unsigned int)arg1;
+- (id)_thunkForObject:(id)arg1 andSelector:(SEL)arg2;
 
 @end
 

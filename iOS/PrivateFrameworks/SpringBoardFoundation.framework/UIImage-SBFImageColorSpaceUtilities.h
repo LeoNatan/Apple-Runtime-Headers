@@ -7,8 +7,9 @@
 #import "UIImage.h"
 
 @interface UIImage (SBFImageColorSpaceUtilities)
-- (id)sbf_ASTCSafeImage;
+- (id)sbf_ATXSafeCGImageBackedImage;
 - (id)sbf_imageByConvertingToColorSpace:(struct CGColorSpace *)arg1 type:(long long)arg2;
+- (id)sbf_imageUsingContextType:(long long)arg1;
 - (id)sbf_imageByManipulatingInDeviceColorSpaceWithBlock:(CDUnknownBlockType)arg1;
 - (struct CGColorSpace *)sbf_colorSpace;
 @end

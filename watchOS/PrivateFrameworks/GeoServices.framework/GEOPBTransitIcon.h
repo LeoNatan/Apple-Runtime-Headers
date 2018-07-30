@@ -11,6 +11,7 @@
 
 @class NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPBTransitIcon : PBCodable <GEOTransitIconDataSource, NSCopying>
 {
     PBUnknownFields *_unknownFields;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSArray, NSImage, NSMenu, NSString, NSUndoManager, NSWindow, WebBookmarkLeaf;
+@class NSArray, NSImage, NSMenu, NSString, WebBookmarkLeaf;
 
 @protocol BookmarkSource
 - (NSString *)bookmarkSourceMenuTitle;
@@ -33,7 +33,7 @@
 - (id)child:(unsigned int)arg1 ofContentItem:(id)arg2;
 - (BOOL)contentItemCanHaveChildren:(id)arg1;
 - (BOOL)contentItemCanBeSearchResult:(id)arg1;
-- (BOOL)deleteContentItems:(NSArray *)arg1 withParentWindow:(NSWindow *)arg2 undoManager:(NSUndoManager *)arg3;
+- (BOOL)deleteContentItems:(NSArray *)arg1;
 - (BOOL)canDeleteContents;
 - (BOOL)canCopyContents;
 - (void)refreshContents;

@@ -10,6 +10,7 @@
 
 @class GEOLocation, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEODirectionsFeedbackCollection : PBCodable <NSCopying>
 {
     struct GEONavigationAudioFeedback _navigationAudioFeedback;

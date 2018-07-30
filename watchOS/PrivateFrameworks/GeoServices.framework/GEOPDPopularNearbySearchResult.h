@@ -10,6 +10,7 @@
 
 @class GEOMapRegion, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDPopularNearbySearchResult : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

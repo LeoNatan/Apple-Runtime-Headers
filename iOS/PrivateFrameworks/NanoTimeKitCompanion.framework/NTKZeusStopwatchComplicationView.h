@@ -16,6 +16,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
+- (void)applyPalette:(id)arg1;
 - (struct CGRect)contentFrame;
 - (void)layoutSubviews;
 - (void)setTime:(double)arg1;

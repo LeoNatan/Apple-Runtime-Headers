@@ -11,6 +11,8 @@
 @class AFUIRequestOptions, NSDictionary, NSNumber, NSString, NSValue;
 
 @protocol SVSSiriViewControllerServing <NSObject, AFUISiriSessionDelegate, AFUISpeechSynthesisDelegate>
+- (void)setWaitingForTelephonyToStart:(_Bool)arg1;
+- (void)setRunningPPT:(_Bool)arg1 withTestName:(NSString *)arg2 testOptions:(NSDictionary *)arg3;
 - (void)hostApplicationDidBecomeActive;
 - (void)hostApplicationWillEnterForeground;
 - (void)hostApplicationWillResignActive;
@@ -30,6 +32,7 @@
 - (void)siriWillShowPasscodeUnlock;
 - (void)siriDidDeactivate;
 - (void)showPresentationWithIdentifier:(NSString *)arg1 properties:(NSDictionary *)arg2 lockState:(unsigned long long)arg3;
+- (void)preloadPluginBundles;
 - (void)preloadPresentationBundleWithIdentifier:(NSString *)arg1;
 - (void)setRequestOptions:(AFUIRequestOptions *)arg1;
 - (void)siriDidActivateFromSource:(long long)arg1;

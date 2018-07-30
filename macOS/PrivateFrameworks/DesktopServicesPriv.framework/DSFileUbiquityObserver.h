@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface DSFileUbiquityObserver : NSObject
 {
-    struct TNSRef<NSMetadataQuery *, void> _query;
+    struct TNSRef<NSMetadataQuery, void> _query;
     struct TNodePtr fParentNode;
     _Bool fSelfObserving;
 }

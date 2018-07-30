@@ -47,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (void)updateLayoutMetricsForWidth:(double)arg1 safeAreaInsets:(struct UIEdgeInsets)arg2;
 - (id)newCollectionViewLayout;
 - (struct __CFString *)aggregateLevelKey;
-- (id)displayTitle;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

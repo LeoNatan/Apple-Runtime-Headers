@@ -9,9 +9,8 @@
 @interface HMSymptomsHandler (HFAdditions)
 + (CDUnknownBlockType)hf_symptomArraySortComparator;
 + (id)hf_symptomTypesSortedByPriority;
-+ (void)load;
++ (void)initialize;
 - (id)hf_fakeSymptomsImplementationUsedForDebuggingPleaseDontTouchThisItIsFragileSwizzlingIsBadMKay;
-@property(readonly, nonatomic) _Bool hf_isFixingSymptom;
 - (id)hf_symptomsSortedByPriority;
 @end
 

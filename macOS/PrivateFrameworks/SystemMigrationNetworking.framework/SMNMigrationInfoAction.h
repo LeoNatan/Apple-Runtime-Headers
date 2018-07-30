@@ -6,14 +6,19 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
+@class NSString;
+
 @interface SMNMigrationInfoAction : SMNAction
 {
     unsigned long long _migrationRequestType;
+    NSString *_migrationRequestUUID;
 }
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
+@property(retain) NSString *migrationRequestUUID; // @synthesize migrationRequestUUID=_migrationRequestUUID;
 @property unsigned long long migrationRequestType; // @synthesize migrationRequestType=_migrationRequestType;
+- (void).cxx_destruct;
 - (id)requestPayload;
 - (id)description;
 - (BOOL)expectsAResult;

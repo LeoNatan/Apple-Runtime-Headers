@@ -20,10 +20,8 @@ __attribute__((visibility("hidden")))
     TSWPChangeSession *_session;
     NSDate *_date;
     NSString *_textAttributeUUIDString;
-    _Bool _changeWasAddedToDocumentRoot;
 }
 
-@property(nonatomic) _Bool changeWasAddedToDocumentRoot; // @synthesize changeWasAddedToDocumentRoot=_changeWasAddedToDocumentRoot;
 @property(readonly, nonatomic) int kind; // @synthesize kind=_kind;
 @property(nonatomic) __weak TSWPStorage *parentStorage; // @synthesize parentStorage=_parentStorage;
 - (void).cxx_destruct;

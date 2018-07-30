@@ -41,7 +41,11 @@
 @property(readonly, nonatomic) SEL resolveSelector;
 - (id)initWithName:(id)arg1 tag:(unsigned int)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 valueType:(int)arg5 valueStyle:(int)arg6 isExtended:(_Bool)arg7 isPrivate:(_Bool)arg8 resolveSelector:(SEL)arg9;
 - (id)initWithName:(id)arg1 tag:(unsigned int)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 valueType:(int)arg5 valueStyle:(int)arg6 isExtended:(_Bool)arg7 isPrivate:(_Bool)arg8 resolveSelector:(SEL)arg9 deprecatedResolveSelector:(SEL)arg10;
+- (id)initWithName:(id)arg1 tag:(unsigned int)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 isExtended:(_Bool)arg5 isPrivate:(_Bool)arg6 valueType:(int)arg7 valueStyle:(int)arg8 resolveSelectors:(SEL)arg9;
 - (id)initWithName:(id)arg1 tag:(unsigned int)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 valueType:(int)arg5 valueStyle:(int)arg6 isExtended:(_Bool)arg7 isPrivate:(_Bool)arg8 resolveSelectors:(SEL)arg9;
+- (id)localizeValue:(id)arg1 forLanguage:(id)arg2;
+- (void)setValue:(id)arg1 forSlotComposer:(id)arg2;
+- (id)valueForSlotComposer:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -23,7 +23,7 @@
     NSDate *_timestamp;
 }
 
-@property(readonly, retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
+@property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 @property(readonly, nonatomic) struct CGRect referenceBounds; // @synthesize referenceBounds=_referenceBounds;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
@@ -31,6 +31,7 @@
 @property(nonatomic) long long displayBacklightLevel; // @synthesize displayBacklightLevel=_backlightLevel;
 @property(nonatomic) long long displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
+- (void).cxx_destruct;
 - (id)display;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
@@ -44,7 +45,6 @@
 - (void)addElement:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)init;
 - (id)_initWithElements:(id)arg1;
 

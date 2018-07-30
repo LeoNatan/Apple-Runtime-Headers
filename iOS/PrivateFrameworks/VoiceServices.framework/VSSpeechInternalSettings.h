@@ -20,7 +20,7 @@
 @property(nonatomic) _Bool isInternalBuild; // @synthesize isInternalBuild=_isInternalBuild;
 @property(readonly, nonatomic) _Bool internalBuild; // @synthesize internalBuild=_internalBuild;
 - (void).cxx_destruct;
-@property(nonatomic) _Bool useNewBackend;
+@property(nonatomic) _Bool disableNewBackend;
 @property(nonatomic) _Bool disableServerTimeoutFallback;
 @property(nonatomic) _Bool forceServerTTS;
 @property(nonatomic) float serverTTSTimeout;

@@ -9,7 +9,7 @@
 @class NSObject<OS_xpc_object>;
 
 @protocol BSXPCServerClient <NSObject>
-@property(readonly, retain, nonatomic) NSObject<OS_xpc_object> *connection;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *connection;
 - (void)invalidate;
 - (void)suspend;
 - (void)resume;

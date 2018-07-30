@@ -22,6 +22,7 @@
 @property(readonly) NSString *titleFontName;
 - (id)keyVersionLoadingProperties:(id)arg1;
 - (id)keyVersion;
+- (id)sortedVersions;
 - (id)assetIdList;
 - (id)assetList;
 - (id)assetListFilter;

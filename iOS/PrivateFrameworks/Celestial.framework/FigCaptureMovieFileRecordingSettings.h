@@ -19,11 +19,13 @@
     NSArray *_movieLevelMetadata;
     _Bool _sendPreviewIOSurface;
     _Bool _irisRecording;
+    _Bool _debugMetadataSidecarFileEnabled;
     int _bravoCameraSelectionBehavior;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) int bravoCameraSelectionBehavior; // @synthesize bravoCameraSelectionBehavior=_bravoCameraSelectionBehavior;
+@property(nonatomic) _Bool debugMetadataSidecarFileEnabled; // @synthesize debugMetadataSidecarFileEnabled=_debugMetadataSidecarFileEnabled;
 @property(nonatomic, getter=isIrisRecording) _Bool irisRecording; // @synthesize irisRecording=_irisRecording;
 @property(nonatomic) _Bool sendPreviewIOSurface; // @synthesize sendPreviewIOSurface=_sendPreviewIOSurface;
 @property(copy, nonatomic) NSArray *movieLevelMetadata; // @synthesize movieLevelMetadata=_movieLevelMetadata;

@@ -13,6 +13,9 @@
     BOOL _canAccessRemoteAssets;
     BOOL _canAccessAppleMusic;
     BOOL _canAccessiCloudMusicLibrary;
+    BOOL _canPlayEncryptedProgressiveDownloadAssets;
+    BOOL _canFetchMediaDataFromSender;
+    BOOL _presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
     BOOL _remoteControllable;
     BOOL _groupLeader;
     BOOL _groupContainsGroupLeader;
@@ -27,6 +30,7 @@
     BOOL _localDevice;
     BOOL _supportsExternalScreen;
     BOOL _requiresAuthorization;
+    BOOL _parentGroupContainsDiscoverableLeader;
     BOOL _volumeControlAvailable;
     unsigned int _deviceType;
     unsigned int _deviceSubtype;
@@ -41,15 +45,19 @@
     NSData *_MACAddress;
     NSDictionary *_modelSpecificInfo;
     NSString *_playingPairedDeviceName;
+    NSString *_parentGroupIdentifier;
     MRAVOutputDeviceSourceInfo *_sourceInfo;
     MRAVEndpoint *_endpoint;
 }
 
++ (id)localDeviceLocalizedName;
 + (id)localDeviceUID;
 @property(nonatomic) __weak MRAVEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) MRAVOutputDeviceSourceInfo *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) BOOL volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
+@property(copy, nonatomic) NSString *parentGroupIdentifier; // @synthesize parentGroupIdentifier=_parentGroupIdentifier;
+@property(readonly, nonatomic) BOOL parentGroupContainsDiscoverableLeader; // @synthesize parentGroupContainsDiscoverableLeader=_parentGroupContainsDiscoverableLeader;
 @property(readonly, nonatomic) BOOL requiresAuthorization; // @synthesize requiresAuthorization=_requiresAuthorization;
 @property(readonly, nonatomic) BOOL supportsExternalScreen; // @synthesize supportsExternalScreen=_supportsExternalScreen;
 @property(readonly, nonatomic, getter=isLocalDevice) BOOL localDevice; // @synthesize localDevice=_localDevice;
@@ -67,6 +75,9 @@
 @property(readonly, nonatomic) BOOL groupContainsGroupLeader; // @synthesize groupContainsGroupLeader=_groupContainsGroupLeader;
 @property(readonly, nonatomic, getter=isGroupLeader) BOOL groupLeader; // @synthesize groupLeader=_groupLeader;
 @property(readonly, nonatomic, getter=isRemoteControllable) BOOL remoteControllable; // @synthesize remoteControllable=_remoteControllable;
+@property(readonly, nonatomic) BOOL presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets; // @synthesize presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets=_presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(readonly, nonatomic) BOOL canFetchMediaDataFromSender; // @synthesize canFetchMediaDataFromSender=_canFetchMediaDataFromSender;
+@property(readonly, nonatomic) BOOL canPlayEncryptedProgressiveDownloadAssets; // @synthesize canPlayEncryptedProgressiveDownloadAssets=_canPlayEncryptedProgressiveDownloadAssets;
 @property(readonly, nonatomic) BOOL canAccessiCloudMusicLibrary; // @synthesize canAccessiCloudMusicLibrary=_canAccessiCloudMusicLibrary;
 @property(readonly, nonatomic) BOOL canAccessAppleMusic; // @synthesize canAccessAppleMusic=_canAccessAppleMusic;
 @property(readonly, nonatomic) BOOL canAccessRemoteAssets; // @synthesize canAccessRemoteAssets=_canAccessRemoteAssets;
@@ -80,6 +91,10 @@
 @property(readonly, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *jsonEncodableDictionaryRepresentation;
+@property(readonly, nonatomic) NSString *roleDescription;
+@property(readonly, nonatomic) NSString *composedTypeDescription;
+@property(readonly, nonatomic) NSString *capabilitiesDescription;
 @property(readonly, nonatomic) _MRAVOutputDeviceDescriptorProtobuf *descriptor;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import "TSPArchivableContent.h"
 
-@class NSDictionary, NSHashTable, NSMutableDictionary, NSString, TSPObject;
+@class NSDictionary, NSHashTable, NSMutableDictionary, NSString, TSPObject, TSPReferenceOrderedSet;
 
 __attribute__((visibility("hidden")))
 @interface TSPArchiverBase : NSObject <TSPArchivableContent>
@@ -19,18 +19,18 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_alternates;
     TSPObject *_object;
     unsigned long long _messageVersion;
-    NSHashTable *_strongReferences;
-    NSHashTable *_weakReferences;
-    NSHashTable *_commandToModelReferences;
+    TSPReferenceOrderedSet *_strongReferences;
+    TSPReferenceOrderedSet *_weakReferences;
+    TSPReferenceOrderedSet *_commandToModelReferences;
     NSHashTable *_lazyReferences;
     NSHashTable *_dataReferences;
 }
 
 @property(readonly, nonatomic) NSHashTable *dataReferences; // @synthesize dataReferences=_dataReferences;
 @property(readonly, nonatomic) NSHashTable *lazyReferences; // @synthesize lazyReferences=_lazyReferences;
-@property(readonly, nonatomic) NSHashTable *commandToModelReferences; // @synthesize commandToModelReferences=_commandToModelReferences;
-@property(readonly, nonatomic) NSHashTable *weakReferences; // @synthesize weakReferences=_weakReferences;
-@property(readonly, nonatomic) NSHashTable *strongReferences; // @synthesize strongReferences=_strongReferences;
+@property(readonly, nonatomic) TSPReferenceOrderedSet *commandToModelReferences; // @synthesize commandToModelReferences=_commandToModelReferences;
+@property(readonly, nonatomic) TSPReferenceOrderedSet *weakReferences; // @synthesize weakReferences=_weakReferences;
+@property(readonly, nonatomic) TSPReferenceOrderedSet *strongReferences; // @synthesize strongReferences=_strongReferences;
 @property(nonatomic) unsigned long long messageVersion; // @synthesize messageVersion=_messageVersion;
 @property(readonly, nonatomic) TSPObject *object; // @synthesize object=_object;
 - (id).cxx_construct;

@@ -10,6 +10,46 @@
 
 @interface ArouetInputView : ArouetIDGLView
 {
+    CDStruct_869f9c67 *_particleData;
+    struct {
+        float _field1;
+    } *_pointData;
+    double _startTime;
+    _Bool _animationDone;
+    unsigned int _mUpdateProg;
+    unsigned int _mInputProg;
+    // Error parsing type: , name: _mPDim
+    // Error parsing type: , name: _mGridDim
+    // Error parsing type: , name: _mGridDivisor
+    // Error parsing type: , name: _mActivatedColor
+    float _mAddedPointSize;
+    float _mLineThreshold;
+    float _mLineGlowThreshold;
+    float _mLineMix;
+    float _mRedFadeAmount;
+    _Bool _mIsSteppedGrid;
+    unsigned int _mPDisplayBuffer;
+    unsigned int _mPInputBuffer;
+    unsigned int _mFbo;
+    unsigned int _renderedTexture;
+    unsigned int _depth_rb;
+    unsigned int _mInputAttributes;
+    unsigned int _mDisplayAttributes;
+    int _mNumInputTexels;
+    int _mNumParticles;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _mTouches;
+    // Error parsing type: {?="columns"[4]}, name: _scaleMatrix
+    // Error parsing type: {?="columns"[4]}, name: _translateMatrix
+    // Error parsing type: {?="columns"[4]}, name: _projectionMatrix
+    unsigned int _uPointSize;
+    unsigned int _uTouch;
+    unsigned int _uDenseGrid;
+    unsigned int _uTouchBegan;
+    unsigned int _uTouchIsDown;
+    unsigned int _uGto0;
+    unsigned int _uRtoG;
+    unsigned int _uMove;
+    unsigned int _uMoveCoordX;
     _Bool _isDrawing;
     _Bool _lastRecognitionCanBeSuperseded;
     _Bool _textFieldRespondsToShouldChange;
@@ -42,10 +82,11 @@
 @property(nonatomic) double lastStrokeTime; // @synthesize lastStrokeTime=_lastStrokeTime;
 @property(nonatomic) _Bool isDrawing; // @synthesize isDrawing=_isDrawing;
 @property(retain, nonatomic) CHDrawing *drawing; // @synthesize drawing=_drawing;
-@property(nonatomic) id <PUICQuickboardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PUICQuickboardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ArouetRecognitionManager *recognitionManager; // @synthesize recognitionManager=_recognitionManager;
 @property(retain, nonatomic) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
 @property(nonatomic) __weak id <ArouetInputDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -60,7 +101,7 @@
 - (void)enqueuePostCommitRecognitionOperation:(CDUnknownBlockType)arg1;
 - (void)recognizeDrawing;
 - (unsigned int)compileShader:(id)arg1;
-- (void)drawView;
+- (void)_drawView;
 - (void)updateInput;
 - (void)animateRecognition;
 - (void)tearDownView;
@@ -68,6 +109,7 @@
 - (void)setupViewDrawingSupport;
 - (CDStruct_869f9c67 *)_importParticleDataForDeviceVariant:(int)arg1 gridRenderStyle:(int)arg2;
 - (void)_writeParticleData:(CDStruct_869f9c67 *)arg1 count:(int)arg2 deviceVariant:(int)arg3 gridRenderStyle:(int)arg4;
+- (id)_particleDataFileNameForDeviceVariant:(int)arg1 gridRenderStyle:(int)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

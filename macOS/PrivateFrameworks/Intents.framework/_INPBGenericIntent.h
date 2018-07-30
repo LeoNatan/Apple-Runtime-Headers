@@ -7,41 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBGenericIntent.h"
 
-@class NSMutableArray, NSString, PBUnknownFields, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBIntentMetadata;
 
-@interface _INPBGenericIntent : PBCodable <NSCopying>
+@interface _INPBGenericIntent : PBCodable <_INPBGenericIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSString *_domain;
     _INPBIntentMetadata *_metadata;
-    NSMutableArray *_parameters;
+    NSArray *_parameters;
     NSString *_verb;
 }
 
 + (Class)parametersType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *parameters; // @synthesize parameters=_parameters;
-@property(retain, nonatomic) NSString *verb; // @synthesize verb=_verb;
-@property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
+@property(copy, nonatomic) NSString *verb; // @synthesize verb=_verb;
+@property(copy, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) _INPBIntentMetadata *metadata; // @synthesize metadata=_metadata;
+@property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) BOOL hasVerb;
 - (id)parametersAtIndex:(unsigned long long)arg1;
-- (unsigned long long)parametersCount;
+@property(readonly, nonatomic) unsigned long long parametersCount;
 - (void)addParameters:(id)arg1;
 - (void)clearParameters;
-@property(readonly, nonatomic) BOOL hasVerb;
-@property(readonly, nonatomic) BOOL hasDomain;
 @property(readonly, nonatomic) BOOL hasMetadata;
+@property(readonly, nonatomic) BOOL hasDomain;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

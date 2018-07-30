@@ -40,6 +40,7 @@
 - (id)mainContactStore;
 - (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id *)arg2;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id *)arg2;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
 - (id)identifierWithError:(id *)arg1;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;

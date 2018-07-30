@@ -13,7 +13,6 @@
 
 @interface _SFPBApiResults : PBCodable <_SFPBApiResults, NSSecureCoding>
 {
-    CDStruct_60289f39 _has;
     int _status;
     int _resultType;
     NSArray *_flights;
@@ -35,8 +34,6 @@
 - (unsigned long long)flightsCount;
 - (void)addFlights:(id)arg1;
 - (void)clearFlights;
-@property(readonly, nonatomic) _Bool hasResultType;
-@property(readonly, nonatomic) _Bool hasStatus;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

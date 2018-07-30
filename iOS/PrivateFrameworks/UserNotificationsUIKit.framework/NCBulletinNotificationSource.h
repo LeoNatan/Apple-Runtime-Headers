@@ -10,11 +10,14 @@
 #import "NCNotificationDispatcherSourceDelegate.h"
 #import "NCNotificationSource.h"
 
-@class BBObserver, NCNotificationDispatcher, NSMutableDictionary, NSString;
+@class BBObserver, BBSettingsGateway, NCNotificationDispatcher, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface NCBulletinNotificationSource : NSObject <BBObserverDelegate, NCNotificationDispatcherSourceDelegate, NCNotificationSource>
 {
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_calloutQueue;
     BBObserver *_observer;
+    BBSettingsGateway *_settingsGateway;
     NCNotificationDispatcher *_dispatcher;
     NSMutableDictionary *_sectionInfoById;
     NSMutableDictionary *_bulletinFeeds;
@@ -23,12 +26,16 @@
 @property(retain, nonatomic) NSMutableDictionary *bulletinFeeds; // @synthesize bulletinFeeds=_bulletinFeeds;
 @property(retain, nonatomic) NSMutableDictionary *sectionInfoById; // @synthesize sectionInfoById=_sectionInfoById;
 @property(retain, nonatomic) NCNotificationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
+@property(retain, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
 @property(retain, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
 - (unsigned long long)_updateFeedForCoverSheetDestination:(unsigned long long)arg1 storedFeed:(unsigned long long)arg2;
 - (id)_sectionInfoForBulletin:(id)arg1;
 - (id)_bulletinsPerSectionIdForNotificationRequests:(id)arg1;
 - (void)_applicationIconChanged:(id)arg1;
+- (void)dispatcher:(id)arg1 setAllowsCriticalAlerts:(_Bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setDeliverQuietly:(_Bool)arg2 forSectionIdentifier:(id)arg3 subSectionIdentifier:(id)arg4;
+- (void)dispatcher:(id)arg1 setAllowsNotifications:(_Bool)arg2 forSectionIdentifier:(id)arg3;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;

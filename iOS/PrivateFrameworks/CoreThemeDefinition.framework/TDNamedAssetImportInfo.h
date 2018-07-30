@@ -16,6 +16,8 @@
     _Bool _optOutOfThinning;
     _Bool _isFlippable;
     _Bool _cubeMap;
+    short _autoscalingType;
+    int _objectVersion;
     NSString *_name;
     long long _nameIdentifier;
     NSURL *_fileURL;
@@ -46,21 +48,42 @@
     long long _texturePixelFormat;
     long long _textureInterpretation;
     NSArray *_textureInfos;
-    struct CGColor *_cgColor;
     long long _colorSpaceID;
     NSArray *_colorComponents;
+    NSString *_systemColorName;
+    NSString *_fontName;
+    double _fontSize;
+    NSString *_foregroundColorName;
+    NSString *_backgroundColorName;
+    long long _backgroundColorSpaceID;
+    NSArray *_backgroundColorComponents;
+    double _maxPointSize;
+    double _minPointSize;
     NSValue *_iconSize;
+    NSString *_appearanceName;
+    long long _appearanceIdentifier;
     struct CGSize _resizableSliceSize;
     struct CGSize _physicalSizeInMeters;
     struct CGSize _canvasSize;
     CDStruct_3c058996 _sliceInsets;
     struct CGRect _alignmentRect;
+    // Error parsing type: {?="columns"[4]}, name: _transformation
 }
 
+@property(nonatomic) long long appearanceIdentifier; // @synthesize appearanceIdentifier=_appearanceIdentifier;
+@property(copy, nonatomic) NSString *appearanceName; // @synthesize appearanceName=_appearanceName;
 @property(copy, nonatomic) NSValue *iconSize; // @synthesize iconSize=_iconSize;
+@property(nonatomic) double minPointSize; // @synthesize minPointSize=_minPointSize;
+@property(nonatomic) double maxPointSize; // @synthesize maxPointSize=_maxPointSize;
+@property(copy, nonatomic) NSArray *backgroundColorComponents; // @synthesize backgroundColorComponents=_backgroundColorComponents;
+@property(nonatomic) long long backgroundColorSpaceID; // @synthesize backgroundColorSpaceID=_backgroundColorSpaceID;
+@property(copy, nonatomic) NSString *backgroundColorName; // @synthesize backgroundColorName=_backgroundColorName;
+@property(copy, nonatomic) NSString *foregroundColorName; // @synthesize foregroundColorName=_foregroundColorName;
+@property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
+@property(copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
+@property(retain, nonatomic) NSString *systemColorName; // @synthesize systemColorName=_systemColorName;
 @property(copy, nonatomic) NSArray *colorComponents; // @synthesize colorComponents=_colorComponents;
 @property(nonatomic) long long colorSpaceID; // @synthesize colorSpaceID=_colorSpaceID;
-@property(readonly, nonatomic) struct CGColor *cgColor; // @synthesize cgColor=_cgColor;
 @property(copy, nonatomic) NSArray *textureInfos; // @synthesize textureInfos=_textureInfos;
 @property(nonatomic) long long textureInterpretation; // @synthesize textureInterpretation=_textureInterpretation;
 @property(nonatomic) long long texturePixelFormat; // @synthesize texturePixelFormat=_texturePixelFormat;
@@ -71,6 +94,10 @@
 @property(nonatomic) unsigned long long textureWidth; // @synthesize textureWidth=_textureWidth;
 @property(copy, nonatomic) NSArray *layerReferences; // @synthesize layerReferences=_layerReferences;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
+@property(nonatomic) int objectVersion; // @synthesize objectVersion=_objectVersion;
+// Error parsing type for property transformation:
+// Property attributes: T{?=[4]},N,V_transformation
+
 @property(nonatomic) struct CGSize physicalSizeInMeters; // @synthesize physicalSizeInMeters=_physicalSizeInMeters;
 @property(copy, nonatomic) NSArray *containedImageNames; // @synthesize containedImageNames=_containedImageNames;
 @property(copy, nonatomic) NSString *universalTypeIdentifier; // @synthesize universalTypeIdentifier=_universalTypeIdentifier;
@@ -88,6 +115,7 @@
 @property(nonatomic) struct CGRect alignmentRect; // @synthesize alignmentRect=_alignmentRect;
 @property(nonatomic) _Bool optOutOfThinning; // @synthesize optOutOfThinning=_optOutOfThinning;
 @property(nonatomic) long long templateRenderingMode; // @synthesize templateRenderingMode=_templateRenderingMode;
+@property(nonatomic) short autoscalingType; // @synthesize autoscalingType=_autoscalingType;
 @property(nonatomic) _Bool preservesVectorRepresentation; // @synthesize preservesVectorRepresentation=_preservesVectorRepresentation;
 @property(nonatomic) struct CGSize resizableSliceSize; // @synthesize resizableSliceSize=_resizableSliceSize;
 @property(nonatomic) long long resizingMode; // @synthesize resizingMode=_resizingMode;
@@ -103,7 +131,6 @@
 - (id)description;
 @property(nonatomic) _Bool isTemplate;
 - (long long)renditionSubtype;
-- (void)setCGColor:(struct CGColor *)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;

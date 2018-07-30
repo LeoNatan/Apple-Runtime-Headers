@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     NSTitlebarContainerView *_titlebarContainerView;
     NSTitlebarView *_titlebarView;
     NSTitlebarAccessoryViewController *_auxiliaryViewController;
-    BOOL _toolbarWindowIsInheritingAppearanceFromParentWindow;
     NSToolbarFullScreenWindow *_toolbarWindow;
     NSToolbar *_toolbar;
     BOOL _isHandlingHotKeyEvent;
@@ -38,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) NSTitlebarView *titlebarView; // @synthesize titlebarView=_titlebarView;
 @property(nonatomic) NSTitlebarContainerView *titlebarContainerView; // @synthesize titlebarContainerView=_titlebarContainerView;
 @property(nonatomic) BOOL isHandlingHotKeyEvent; // @synthesize isHandlingHotKeyEvent=_isHandlingHotKeyEvent;
-@property(nonatomic) BOOL toolbarWindowIsInheritingAppearanceFromParentWindow; // @synthesize toolbarWindowIsInheritingAppearanceFromParentWindow=_toolbarWindowIsInheritingAppearanceFromParentWindow;
 - (void)windowDidChangeSheetNotification:(id)arg1;
 - (void)updateWindowCorners;
 - (void)updateForTabbedWindowOrderFront;
@@ -79,7 +77,6 @@ __attribute__((visibility("hidden")))
 - (void)updateWindowPositionAnimation:(double)arg1 startTop:(double)arg2;
 - (double)correctWindowTopTarget;
 - (void)_makeWindowIfNecessary;
-- (long long)_currentToolbarSubLevel;
 - (BOOL)_isTiledUnderMenuBar;
 - (long long)_currentChildWindowOrderingPriority;
 - (BOOL)_shouldToolbarFloatAboveSiblings;
@@ -92,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)windowStyleMask;
 - (void)updateContentViewForMenuBarReveal;
 - (void)setMenuBarReveal:(double)arg1;
+- (void)_synchronizeMenuBarReveal;
 - (BOOL)_shouldDrawBaselineForEffectiveReveal:(double)arg1;
 - (void)toolbar:(id)arg1 didChangeFrameSizeFromOldSize:(struct CGSize)arg2;
 - (void)_doDidEnterFullScreen;

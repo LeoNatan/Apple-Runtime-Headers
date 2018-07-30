@@ -8,5 +8,6 @@
 
 @protocol HKQueryServerInterface <NSObject>
 - (void)remote_deactivateServer;
+- (void)remote_startQueryWithCompletion:(void (^)(_Bool, NSError *))arg1;
 @end
 

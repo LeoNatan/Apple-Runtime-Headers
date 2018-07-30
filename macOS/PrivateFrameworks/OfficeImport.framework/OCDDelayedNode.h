@@ -6,19 +6,18 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface OCDDelayedNode : NSObject
 {
     id <OCDDelayedNodeContext> mDelayedContext;
     _Bool mLoaded;
 }
 
+- (void).cxx_destruct;
 - (_Bool)load;
 - (void)setLoaded:(_Bool)arg1;
 - (_Bool)isLoaded;
 - (id)delayedContext;
 - (void)setDelayedContext:(id)arg1;
-- (void)dealloc;
 
 @end
 

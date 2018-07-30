@@ -26,6 +26,7 @@
 @property(nonatomic) float vignettingPower;
 @property(nonatomic) float bloomBlurRadius;
 @property(nonatomic) float bloomIntensity;
+@property(nonatomic) unsigned int bloomIteration;
 @property(nonatomic) float bloomThreshold;
 @property(nonatomic) float maximumExposure;
 @property(nonatomic) float minimumExposure;

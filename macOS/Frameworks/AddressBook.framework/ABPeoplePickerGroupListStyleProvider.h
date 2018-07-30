@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABGroupListStyleProvider.h>
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerGroupListStyleProvider : ABGroupListStyleProvider
 {
 }

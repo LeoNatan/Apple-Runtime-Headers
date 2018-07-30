@@ -40,7 +40,10 @@ __attribute__((visibility("hidden")))
     long long _qosRelativePriority;
     BOOL _executionEnabled;
     BOOL _skipRender;
+    struct MessageTracerBacktraceInfo _commandQueueBacktraceInfo;
+    BOOL _hasLoggedTelemetry;
     NSObject<OS_dispatch_semaphore> *_presentScheduledSemaphore;
+    BOOL _forceImmediateSubmissionOnCommitThread;
 }
 
 @property(readonly) unsigned long long globalTraceObjectID; // @synthesize globalTraceObjectID=_globalTraceObjectID;
@@ -59,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isStatEnabled) BOOL StatEnabled; // @synthesize StatEnabled=_StatEnabled;
 @property(getter=isProfilingEnabled) BOOL profilingEnabled; // @synthesize profilingEnabled=_profilingEnabled;
 @property BOOL skipRender; // @synthesize skipRender=_skipRender;
-@property(copy) NSString *label; // @synthesize label=_label;
 - (unsigned long long)internalCounterSampleSize;
 - (id)subdivideCounterList:(id)arg1;
 - (int)requestCounters:(id)arg1 withIndex:(unsigned long long)arg2;
@@ -71,11 +73,14 @@ __attribute__((visibility("hidden")))
 - (void)availableCounters;
 - (void)insertDebugCaptureBoundary;
 - (void)finish;
+@property(copy) NSString *label;
+- (void)createTelemetryWithLabel:(id)arg1;
 - (void)commandBufferDidComplete:(id)arg1 startTime:(unsigned long long)arg2 completionTime:(unsigned long long)arg3 error:(id)arg4;
+- (BOOL)submitCommandBuffer:(id)arg1;
 - (void)commitCommandBuffer:(id)arg1 wake:(BOOL)arg2;
 - (void)submitCommandBuffers:(const id *)arg1 count:(unsigned long long)arg2;
 - (void)completeCommandBuffers:(id *)arg1 count:(unsigned long long)arg2;
-- (void)_submitAvailableCommandBuffers;
+- (BOOL)_submitAvailableCommandBuffers;
 - (void)enqueueCommandBuffer:(id)arg1;
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;

@@ -8,6 +8,7 @@
 
 @class NSToolbarItemViewer;
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarItemViewerAccessibilityHelper : NSObject
 {
     NSToolbarItemViewer *_toolbarItemViewer;

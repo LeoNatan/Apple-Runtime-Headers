@@ -11,6 +11,7 @@
 @protocol HLPHelpTopicViewControllerDelegate <NSObject>
 - (void)helpTopicViewControllerCurrentTopicIsPassionPoint:(HLPHelpTopicViewController *)arg1;
 - (void)helpTopicViewController:(HLPHelpTopicViewController *)arg1 failToLoadWithError:(NSError *)arg2;
+- (void)helpTopicViewController:(HLPHelpTopicViewController *)arg1 topicLoaded:(HLPHelpTopicItem *)arg2;
 - (void)helpTopicViewControllerDoneButtonTapped:(HLPHelpTopicViewController *)arg1;
 - (void)helpTopicViewControllerShowHelpBookInfo:(HLPHelpTopicViewController *)arg1;
 

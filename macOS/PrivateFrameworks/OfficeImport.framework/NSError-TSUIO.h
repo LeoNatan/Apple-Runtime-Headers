@@ -7,10 +7,14 @@
 #import "NSError.h"
 
 @interface NSError (TSUIO)
-+ (id)tsu_IOWriteErrorWithErrno:(int)arg1;
-+ (id)tsu_IOReadErrorWithErrno:(int)arg1;
-+ (id)tsu_IOErrorWithCode:(long long)arg1 userInfo:(id)arg2;
-+ (id)tsu_IOErrorWithCode:(long long)arg1;
-- (int)tsu_IOErrorNumber;
++ (id)tsu_fileWritePOSIXErrorWithNumber:(int)arg1 userInfo:(id)arg2;
++ (id)tsu_fileWriteUnknownErrorWithUserInfo:(id)arg1;
++ (id)tsu_fileReadPOSIXErrorWithNumber:(int)arg1 userInfo:(id)arg2;
++ (id)tsu_fileReadCorruptedFileErrorWithUserInfo:(id)arg1;
++ (id)tsu_fileReadUnknownErrorWithUserInfo:(id)arg1;
++ (id)tsu_userInfoWithErrorType:(long long)arg1 userInfo:(id)arg2;
+@property(readonly, nonatomic) BOOL tsu_isWriteError;
+@property(readonly, nonatomic) BOOL tsu_isCorruptedError;
+@property(readonly, nonatomic) BOOL tsu_isReadError;
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>;
+@class GEOTileLoader, NSObject<OS_dispatch_queue>;
 
 @interface GEOMapFeatureAccess : NSObject
 {
@@ -14,6 +14,7 @@
     _Bool _allowNetworkTileLoad;
     _Bool _flipNegativeTravelDirectionRoads;
     _Bool _visitDoubleTravelDirectionRoadsTwice;
+    GEOTileLoader *_tileLoader;
 }
 
 + (unsigned long long)zoomLevelForStyle:(int)arg1 scale:(int)arg2;
@@ -49,6 +50,7 @@
 - (id)findRoadsFromPreviousIntersectionOf:(id)arg1 handler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)findRoadsNear:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 handler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (CDUnknownBlockType)_openTileLoaderWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)initWithQueue:(id)arg1 memoryCacheCountLimit:(unsigned long long)arg2 memoryCacheCostLimit:(unsigned long long)arg3;
 - (id)initWithQueue:(id)arg1;
 - (id)init;
 

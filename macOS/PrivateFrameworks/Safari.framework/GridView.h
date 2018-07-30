@@ -8,18 +8,17 @@
 
 #import "NSDraggingDestination.h"
 #import "NSDraggingSource.h"
-#import "StartPageTabDialogAppearanceHandling.h"
 #import "ViewReuseManagerDelegate.h"
 
-@class GridCellView, NSDictionary, NSEvent, NSIndexSet, NSLayoutConstraint, NSMutableArray, NSString, NSTextField, NSTimer, SeparatorView, ViewReuseManager, _GridViewDropInfo;
+@class GridCellView, NSBox, NSDictionary, NSEvent, NSIndexSet, NSLayoutConstraint, NSMutableArray, NSString, NSTextField, NSTimer, ViewReuseManager, _GridViewDropInfo;
 
 __attribute__((visibility("hidden")))
-@interface GridView : KeyLoopSplicingContainerView <NSDraggingSource, NSDraggingDestination, ViewReuseManagerDelegate, StartPageTabDialogAppearanceHandling>
+@interface GridView : KeyLoopSplicingContainerView <NSDraggingSource, NSDraggingDestination, ViewReuseManagerDelegate>
 {
     ViewReuseManager *_viewReuseManager;
     NSMutableArray *_cellViews;
     NSLayoutConstraint *_titleVerticalConstraint;
-    SeparatorView *_separator;
+    NSBox *_separator;
     NSLayoutConstraint *_separatorWidthConstraint;
     BOOL _needsReload;
     BOOL _needsLayoutOnAppear;
@@ -27,7 +26,6 @@ __attribute__((visibility("hidden")))
     unsigned long long _numberOfColumns;
     struct CGSize _cellSize;
     struct CGSize _cellMargin;
-    struct NSEdgeInsets _contentInsets;
     BOOL _isLTR;
     NSEvent *_initialMouseDownEvent;
     unsigned long long _selectedCellIndex;
@@ -52,6 +50,7 @@ __attribute__((visibility("hidden")))
     long long _deferCellUpdatesCounter;
     NSMutableArray *_deferredCellUpdates;
     BOOL _didPerformDragOperationForCurrentDrag;
+    struct unordered_map<GridViewDisplayMode, Class, std::__1::hash<GridViewDisplayMode>, std::__1::equal_to<GridViewDisplayMode>, std::__1::allocator<std::__1::pair<const GridViewDisplayMode, Class>>> _displayModeToCellClasses;
     BOOL _defersLayoutOnDrag;
     BOOL _forceTitleVisible;
     int _presentationMode;
@@ -71,6 +70,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_heightConstraint;
     struct CGSize _minimumCellMargin;
     struct CGSize _minimumCellSize;
+    struct NSEdgeInsets _contentInsets;
 }
 
 + (id)arrayByExchangingElementsInArray:(id)arg1 usingMap:(id)arg2;
@@ -81,6 +81,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)requiresConstraintBasedLayout;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(readonly, nonatomic) double maximumWidth; // @synthesize maximumWidth=_maximumWidth;
+@property(readonly, nonatomic) struct NSEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) double maximumCellHeightToWidthRatio; // @synthesize maximumCellHeightToWidthRatio=_maximumCellHeightToWidthRatio;
 @property(nonatomic) double minimumCellHeightToWidthRatio; // @synthesize minimumCellHeightToWidthRatio=_minimumCellHeightToWidthRatio;
 @property(nonatomic) struct CGSize minimumCellSize; // @synthesize minimumCellSize=_minimumCellSize;
@@ -98,6 +99,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <GridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <GridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) int presentationMode; // @synthesize presentationMode=_presentationMode;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)updateGridCellAccessoryViewVisibility:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isEditingCellView) BOOL editingCellView;
@@ -224,12 +226,11 @@ __attribute__((visibility("hidden")))
 - (void)reloadDataOnNextLayout;
 - (void)setDraggingSourceOperationMask:(unsigned long long)arg1 ifWithinApplication:(BOOL)arg2;
 - (unsigned long long)draggingSourceOperationMaskIfWithinApplication:(BOOL)arg1;
-- (void)setAppearanceForStartPageDidDismissTabDialog;
-- (void)setAppearanceForStartPageWillPresentTabDialog;
 - (void)setNextKeyView:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)isFlipped;
+- (void)registerCellClass:(Class)arg1 forDisplayMode:(long long)arg2;
 - (void)dealloc;
 - (void)_commonGridViewInit;
 - (id)initWithCoder:(id)arg1;

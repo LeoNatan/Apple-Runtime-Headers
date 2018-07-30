@@ -21,9 +21,9 @@
 @property(readonly, nonatomic) NSString *nextSentencePrefixCharacters; // @synthesize nextSentencePrefixCharacters=_nextSentencePrefixCharacters;
 @property(readonly, nonatomic) NSString *sentenceTrailingCharacters; // @synthesize sentenceTrailingCharacters=_sentenceTrailingCharacters;
 @property(readonly, nonatomic) NSString *sentenceDelimitingCharacters; // @synthesize sentenceDelimitingCharacters=_sentenceDelimitingCharacters;
+- (void).cxx_destruct;
 - (void)startBackgroundLoad;
 - (id)initWithSentenceDelimiters:(id)arg1 trailingChars:(id)arg2 prefixChars:(id)arg3;
-- (void)dealloc;
 
 @end
 

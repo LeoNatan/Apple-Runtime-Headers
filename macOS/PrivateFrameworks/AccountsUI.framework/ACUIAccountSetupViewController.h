@@ -9,7 +9,7 @@
 #import "ACUIAccountDataclassDelegate.h"
 #import "NSControlTextEditingDelegate.h"
 
-@class ACUILegalSheetViewController, ACUIWebLoginViewController, NSArray, NSButton, NSLayoutConstraint, NSProgressIndicator, NSStackView, NSString, NSTextField, NSView, NSWindow;
+@class ACUIWebLoginViewController, NSArray, NSButton, NSLayoutConstraint, NSProgressIndicator, NSStackView, NSString, NSTextField, NSView, NSWindow;
 
 @interface ACUIAccountSetupViewController : ACUIViewController <NSControlTextEditingDelegate, ACUIAccountDataclassDelegate>
 {
@@ -26,7 +26,6 @@
     NSTextField *_dislaimerLabel;
     NSTextField *_emailAddressField;
     ACUIWebLoginViewController *_webLoginVC;
-    ACUILegalSheetViewController *_legalSheetVC;
     NSLayoutConstraint *_dataclassTableViewHeight;
     NSString *_dataclassToAutoEnable;
     NSView *_logoSlice;
@@ -45,7 +44,6 @@
 @property(retain) NSView *logoSlice; // @synthesize logoSlice=_logoSlice;
 @property(retain) NSString *dataclassToAutoEnable; // @synthesize dataclassToAutoEnable=_dataclassToAutoEnable;
 @property(retain) NSLayoutConstraint *dataclassTableViewHeight; // @synthesize dataclassTableViewHeight=_dataclassTableViewHeight;
-@property(retain) ACUILegalSheetViewController *legalSheetVC; // @synthesize legalSheetVC=_legalSheetVC;
 @property(retain) ACUIWebLoginViewController *webLoginVC; // @synthesize webLoginVC=_webLoginVC;
 @property(retain) NSTextField *emailAddressField; // @synthesize emailAddressField=_emailAddressField;
 @property(retain) NSTextField *dislaimerLabel; // @synthesize dislaimerLabel=_dislaimerLabel;
@@ -87,9 +85,12 @@
 - (void)_animateNewConstructViewStack;
 - (BOOL)willPersistVerifiedAccount;
 - (BOOL)willSaveAccount;
-- (void)_showLegalScreen;
 - (void)_showDataclassSelectionScreen;
-- (void)_layoutBottomButtons;
+- (void)layoutDefaultBottomButtons;
+- (void)layoutWebViewBottomButtons;
+- (void)layoutBottomButtonsWithAlternativeButton;
+- (void)_setBottomConstraints:(id)arg1;
+- (void)layoutBottomButtons;
 - (BOOL)disableAutoReload;
 - (void)setSpinningAndDisabledInputControls:(BOOL)arg1;
 - (void)_initFirstScreen;

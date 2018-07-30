@@ -18,11 +18,13 @@
     struct NSObject *_scrollView;
     NSObject<UICoordinateSpace> *_contentCoordinateSpace;
     NSHashTable *__observers;
+    long long _activeScrollAnimations;
     struct CGSize _scrollViewContentSize;
     struct UIEdgeInsets _contentInset;
 }
 
 @property(readonly, nonatomic) struct CGSize scrollViewContentSize; // @synthesize scrollViewContentSize=_scrollViewContentSize;
+@property(readonly, nonatomic) long long activeScrollAnimations; // @synthesize activeScrollAnimations=_activeScrollAnimations;
 @property(readonly, nonatomic) NSHashTable *_observers; // @synthesize _observers=__observers;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(readonly, nonatomic) NSObject<UICoordinateSpace> *contentCoordinateSpace; // @synthesize contentCoordinateSpace=_contentCoordinateSpace;
@@ -31,6 +33,7 @@
 @property(nonatomic) __weak id <PXTilingScrollControllerUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
 - (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentBounds;
+@property(nonatomic) struct CGPoint visibleOrigin;
 - (void)updateIfNeeded;
 - (void)setNeedsUpdate;
 @property(readonly, nonatomic) struct CGRect constrainedVisibleRect;
@@ -49,6 +52,8 @@
 - (void)scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (void)addSubviewToScrollView:(struct NSObject *)arg1;
 - (void)addSubview:(struct NSObject *)arg1;
+- (void)scrollViewDidEndScrollingAnimation;
+- (void)scrollViewWillBeginScrollingAnimationTowardsContentEdges:(unsigned long long)arg1;
 - (void)scrollViewContentBoundsDidChange;
 - (void)scrollViewDidEndScrolling;
 - (void)willEndScrollingWithVelocity:(struct CGPoint)arg1 targetContentOffset:(inout struct CGPoint *)arg2;
@@ -56,6 +61,8 @@
 - (void)scrollViewWillBeginScrolling;
 - (void)scrollViewDidLayout;
 - (void)scrollViewWillLayout;
+@property(readonly, nonatomic) _Bool isAnimatingScroll;
+- (void)setActiveScrollAnimations:(long long)arg1;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

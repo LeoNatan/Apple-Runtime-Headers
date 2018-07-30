@@ -10,6 +10,7 @@
 
 @class GEOLatLng, GEOPDBounds, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDSpatialLookupResult : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

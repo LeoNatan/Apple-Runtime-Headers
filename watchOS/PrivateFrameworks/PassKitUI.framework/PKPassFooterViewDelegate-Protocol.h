@@ -6,6 +6,10 @@
 
 #import "NSObject.h"
 
+@class PKPassFooterView;
+
 @protocol PKPassFooterViewDelegate <NSObject>
+- (unsigned int)suppressedContentForPassFooter:(PKPassFooterView *)arg1;
+- (_Bool)isPassFooterViewInGroup:(PKPassFooterView *)arg1;
 @end
 

@@ -10,6 +10,7 @@
 
 @protocol IKJSNavigationDocument <JSExport>
 @property(readonly, retain, nonatomic) NSArray *documents;
+- (void)setDocuments:(NSArray *)arg1:(NSDictionary *)arg2;
 - (void)clear;
 - (void)removeDocument:(IKDOMDocument *)arg1;
 - (void)popToRootDocument;

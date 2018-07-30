@@ -15,10 +15,12 @@
 
 - (void).cxx_destruct;
 - (void)registerCallbacks;
-- (void)_dispatchAsychWithPriority:(CDUnknownBlockType)arg1;
 - (void)_handleActiveSystemEndpointDidChangeNotification:(id)arg1;
+- (void)_handleVolumeDidChangeNotification:(id)arg1;
+- (void)_handleVolumeControlCapabilitiesDidChangeNotification:(id)arg1;
 - (void)_handleDeviceInfoDidChangeNotification:(id)arg1;
 - (void)_handlePlayerStateDidChangeNotification:(id)arg1;
+- (void)_handlePlayerPlaybackDidTimeout:(id)arg1;
 - (void)_handlePlayerIsPlayingDidChangeNotification:(id)arg1;
 - (void)_handlePlayerPlaybackStateDidChangeNotification:(id)arg1;
 - (void)_handlePlayerNowPlayingInfoDidChangeNotification:(id)arg1;
@@ -29,6 +31,7 @@
 - (void)_handlePlayerDidUnregisterNotification:(id)arg1;
 - (void)_handlePlayerDidRegisterNotification:(id)arg1;
 - (void)_handleActivePlayerDidChangeNotification:(id)arg1;
+- (void)_handleApplicationDidForegroundNotification:(id)arg1;
 - (void)_handleApplicationDisplayNameDidChangeNotification:(id)arg1;
 - (void)_handleApplicationClientStateDidChangeNotification:(id)arg1;
 - (void)_handleAnyApplicationIsPlayingDidChangeNotification:(id)arg1;
@@ -40,6 +43,7 @@
 - (void)_handleActiveOriginDidChangeNotification:(id)arg1;
 - (void)_notificationFired:(id)arg1 originNotification:(id)arg2 nowPlayingNotification:(id)arg3;
 - (void)_notificationFired:(id)arg1 playerPathNotifcation:(id)arg2 originNotification:(id)arg3 nowPlayingNotification:(id)arg4;
+- (_Bool)_processNeedsNonPlayerPathBasedNotificationsForBackwardCompatabilitySupport;
 - (_Bool)_shouldPostNotifications;
 - (void)_processActivePlayerPathChanges:(id)arg1;
 - (void)_processPlayerChanges:(id)arg1;

@@ -19,7 +19,7 @@
 @property(retain, nonatomic) CLKVideoPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 @property(retain, nonatomic) UIImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
 - (void).cxx_destruct;
-- (void)videoPlayerViewDidFinishPlayingVideoToEnd:(id)arg1;
+- (void)videoPlayerViewDidBeginPlayingQueuedVideo:(id)arg1;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
 - (id)_posterImageView;
@@ -35,7 +35,7 @@
 - (id)_selectedContentView;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)dealloc;
 
 // Remaining properties

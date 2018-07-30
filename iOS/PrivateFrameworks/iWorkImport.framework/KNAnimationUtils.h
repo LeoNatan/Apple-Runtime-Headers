@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)isRandomNumberSeedInspectionEnabled;
 + (_Bool)isDisplayLoggingEnabled;
 + (_Bool)isResponsivenessLoggingEnabled;
++ (_Bool)isRenderingLocal;
 + (_Bool)isMetalDisabled;
 + (_Bool)isGLEverywhereEnabled;
 + (_Bool)isMaxConcurrentTexturePrecachingEnabled;

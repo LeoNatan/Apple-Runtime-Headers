@@ -8,7 +8,7 @@
 
 #import "INSetProfileInCarIntentExport.h"
 
-@class NSNumber, NSString;
+@class INSpeakableString, NSNumber, NSString;
 
 @interface INSetProfileInCarIntent : INIntent <INSetProfileInCarIntentExport>
 {
@@ -22,16 +22,22 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+- (void)setCarName:(id)arg1;
+@property(readonly, copy, nonatomic) INSpeakableString *carName;
 - (void)setDefaultProfile:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *defaultProfile;
 - (void)setProfileName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *profileName;
 - (void)setProfileNumber:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *profileNumber;
-- (id)initWithProfileNumber:(id)arg1 profileName:(id)arg2 defaultProfile:(id)arg3;
+- (id)initWithProfileNumber:(id)arg1 profileName:(id)arg2 defaultProfile:(id)arg3 carName:(id)arg4;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 @property(readonly, copy, nonatomic) NSString *profileLabel;
+- (id)initWithProfileNumber:(id)arg1 profileName:(id)arg2 defaultProfile:(id)arg3;
 - (id)initWithProfileNumber:(id)arg1 profileLabel:(id)arg2 defaultProfile:(id)arg3;
 
 // Remaining properties

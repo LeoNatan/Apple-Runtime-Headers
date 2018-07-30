@@ -10,6 +10,7 @@
 
 @class NSString, UICollectionView, UICollectionViewFlowLayout;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditVisualLevelSlider : PUPhotoEditLevelSlider <UICollectionViewDataSource>
 {
     UICollectionView *_thumbnailsStripCollectionView;

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface PUActivityAssetWrapper : NSObject <NSSecureCoding>
 {
     NSString *_assetLocalIdentifier;

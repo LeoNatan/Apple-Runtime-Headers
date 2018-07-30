@@ -7,7 +7,9 @@
 @class NSString, SFPasswordSharingInfo, SFPasswordSharingService;
 
 @protocol SFPasswordSharingServiceDelegate
-- (_Bool)service:(SFPasswordSharingService *)arg1 shouldPromptForNetwork:(NSString *)arg2;
 - (void)service:(SFPasswordSharingService *)arg1 receivedNetworkInfo:(SFPasswordSharingInfo *)arg2;
+
+@optional
+- (_Bool)service:(SFPasswordSharingService *)arg1 shouldPromptForNetwork:(NSString *)arg2;
 @end
 

@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSPContainedObject.h>
 
-@class NSMutableDictionary, NSObject<TSDContainerInfo><TSWPStorageParent>, TSKCustomFormatList, TSPLazyReference, TSTMergeRegionMap, TSTTableDataList, TSTTableHeaderStorage, TSTTileIDKeyDict;
+@class NSMutableDictionary, NSObject<TSDContainerInfo><TSWPStorageParent>, TSKCustomFormatList, TSPLazyReference, TSTMergeRegionMap, TSTTableDataList, TSTTableHeaderStorage, TSTTableHeaderStorageBucket, TSTTileIDKeyDict;
 
 __attribute__((visibility("hidden")))
 @interface TSTTableDataStore : TSPContainedObject
@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
     struct TSTTableRBTreeNode_s *_rowTileIndex;
     TSTTileIDKeyDict *_tileStorage;
     TSTTableHeaderStorage *_rowHeaderStorage;
-    TSPLazyReference *_columnHeaderStorageReference;
+    TSTTableHeaderStorageBucket *_columnHeaderStorage;
     TSPLazyReference *_conditionalStyleSetTableReference;
     TSPLazyReference *_stringTableReference;
-    TSTTableDataList *_styleTableList;
+    TSPLazyReference *_styleTableReference;
     TSPLazyReference *_formulaTableReference;
     TSPLazyReference *_formulaErrorTableReference;
     TSPLazyReference *_richTextPayloadTableReference;
@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSTTableDataList *commentStorageDataList;
 @property(readonly, nonatomic) TSTTableDataList *multipleChoiceListFormatDataList;
 - (void)resetAlmostEverything;
+- (id)p_makeALazyDatalistOfType:(int)arg1;
 - (_Bool)verboseAuditTilesForRowOverlapAndExtensionPastTableBounds:(struct TSUCellCoord)arg1;
 - (_Bool)auditTilesForRowOverlapAndExtensionPastTableBounds:(struct TSUCellCoord)arg1 result:(id *)arg2;
 @property(readonly, nonatomic) TSTTableDataList *formatDataList;
@@ -78,6 +79,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSTTableDataList *styleDataList;
 @property(readonly, nonatomic) TSTTableDataList *stringDataList;
 @property(readonly, nonatomic) TSTTableDataList *conditionalStyleSetDataList;
+- (id)p_datalistForLazyReference:(id)arg1;
 - (struct TSUCellCoord)cellIDForCellWithRichTextStorage:(id)arg1 inRange:(struct TSUCellRect)arg2;
 - (void)gatherReorganizeValuesForColumn:(unsigned char)arg1 rowRange:(struct _NSRange)arg2 outValues:(struct TSTCellReorganizeValue *)arg3;
 - (void)reorganizeValueForStorage:(struct TSTCellStorage *)arg1 outValue:(struct TSTCellReorganizeValue *)arg2;
@@ -92,6 +94,7 @@ __attribute__((visibility("hidden")))
 - (void)setRowHeaderStorage:(id)arg1;
 - (void)enumerateColumnHeaderInfosWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateRowHeaderInfosWithBlock:(CDUnknownBlockType)arg1;
+- (id)columnHeaderStorage;
 
 @end
 

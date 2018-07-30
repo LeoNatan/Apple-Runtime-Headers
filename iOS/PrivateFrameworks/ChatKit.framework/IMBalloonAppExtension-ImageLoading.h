@@ -10,5 +10,6 @@
 - (id)__ck_breadcrumbImage;
 - (id)__ck_statusImage;
 - (id)__ck_browserImage;
+- (void)__ck_prefetchBrowserImage;
 @end
 

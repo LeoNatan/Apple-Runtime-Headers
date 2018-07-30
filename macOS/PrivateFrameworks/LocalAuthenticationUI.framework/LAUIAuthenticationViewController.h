@@ -71,6 +71,7 @@
 - (void)cancelAuthentication;
 - (BOOL)cmdEnterOrReturnPressed;
 - (void)passwordFieldDidResignFirstResponder:(id)arg1;
+- (void)passwordFieldDidBecomeFirstResponder:(id)arg1;
 - (void)requestCancelAuthentication;
 - (void)passwordFieldDidResignFirstResponder;
 - (void)didVerifyPassword;

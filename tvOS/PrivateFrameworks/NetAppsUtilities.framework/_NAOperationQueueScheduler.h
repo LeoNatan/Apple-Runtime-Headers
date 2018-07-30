@@ -10,6 +10,7 @@
 
 @class NSOperationQueue, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NAOperationQueueScheduler : NSObject <NAScheduler>
 {
     NSOperationQueue *_queue;

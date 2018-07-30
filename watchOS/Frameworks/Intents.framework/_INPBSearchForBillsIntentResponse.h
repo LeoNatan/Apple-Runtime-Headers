@@ -7,32 +7,35 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSearchForBillsIntentResponse.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBSearchForBillsIntentResponse : PBCodable <NSCopying>
+@interface _INPBSearchForBillsIntentResponse : PBCodable <_INPBSearchForBillsIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_bills;
+    struct _has;
+    NSArray *_bills;
 }
 
 + (Class)billsType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *bills; // @synthesize bills=_bills;
+@property(copy, nonatomic) NSArray *bills; // @synthesize bills=_bills;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)billsAtIndex:(unsigned int)arg1;
-- (unsigned int)billsCount;
+@property(readonly, nonatomic) unsigned int billsCount;
 - (void)addBills:(id)arg1;
 - (void)clearBills;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

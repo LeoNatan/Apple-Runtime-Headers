@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOVectorTileRequest : PBRequest <NSCopying>
 {
     unsigned long long _lineId;
@@ -26,7 +27,19 @@
     unsigned int _y;
     unsigned int _z;
     _Bool _preflight;
-    CDStruct_49b73a17 _has;
+    struct {
+        unsigned int lineId:1;
+        unsigned int latitudeHint:1;
+        unsigned int longitudeHint:1;
+        unsigned int scale:1;
+        unsigned int size:1;
+        unsigned int style:1;
+        unsigned int version:1;
+        unsigned int x:1;
+        unsigned int y:1;
+        unsigned int z:1;
+        unsigned int preflight:1;
+    } _has;
 }
 
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;

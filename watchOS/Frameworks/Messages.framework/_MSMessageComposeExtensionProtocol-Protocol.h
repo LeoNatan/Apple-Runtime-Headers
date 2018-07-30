@@ -9,6 +9,8 @@
 @class MSMessage, NSDictionary, NSNumber, NSString, NSValue, _MSConversationState, _MSPresentationState;
 
 @protocol _MSMessageComposeExtensionProtocol <NSObject>
+- (void)_didRemoveAssetArchiveWithIdentifier:(NSString *)arg1;
+- (void)_prepareForPresentationWithCompletionHandler:(void (^)(_Bool))arg1;
 - (void)_handleTextInputPayload:(NSDictionary *)arg1 withPayloadID:(NSString *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)endDisablingUserInteraction;
 - (void)beginDisablingUserInteraction;

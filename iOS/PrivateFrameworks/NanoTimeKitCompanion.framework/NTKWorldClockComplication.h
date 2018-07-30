@@ -28,6 +28,7 @@
 - (_Bool)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
 - (id)customDailySnapshotKey;
 - (_Bool)appearsInDailySnapshotForFamily:(long long)arg1;
+- (id)description;
 - (id)localizedDetailText;
 
 @end

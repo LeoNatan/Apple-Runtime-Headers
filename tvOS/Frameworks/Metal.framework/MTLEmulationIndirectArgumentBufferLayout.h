@@ -23,6 +23,10 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) unsigned long long stride; // @synthesize stride=_stride;
 - (unsigned long long)constantOffsetAtIndex:(unsigned long long)arg1;
+- (unsigned int)hashSignature;
+- (unsigned int)hashMask;
+- (unsigned int)hashOffset;
+- (unsigned int)hashValue;
 - (unsigned long long)alignment;
 - (unsigned long long)encodedLength;
 - (_Bool)bufferLayoutMatchesFrontEndLayout;
@@ -30,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)offsetForSampler:(unsigned long long)arg1;
 - (unsigned long long)offsetForTexture:(unsigned long long)arg1;
 - (unsigned long long)offsetForBuffer:(unsigned long long)arg1;
+- (unsigned long long)uniqueIdentifierForComputePipelineAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
+- (unsigned long long)uniqueIdentifierForRenderPipelineAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
 - (unsigned long long)uniqueIdentifierForSamplerAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
 - (unsigned long long)uniqueIdentifierForTextureAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
 - (void *)virtualAddressForBufferAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;

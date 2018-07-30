@@ -6,41 +6,14 @@
 
 #import "UIView.h"
 
-#import "PUICCrownInputSequencerDataSource.h"
 #import "PUICCrownInputSequencerDelegate.h"
 
-@class CAShapeLayer, CLKUIWheelsOfTimeButton, NSNumberFormatter, NSString, PUICClientSideAnimation, PUICCrownInputSequencer, PUICSideBySideButtonsView, UIButton, UIImageView, UILabel;
+@class CAShapeLayer, CLKDevice, CLKUIWheelsOfTimeButton, NSDateFormatter, NSNumberFormatter, NSString, PUICClientSideAnimation, PUICCrownInputSequencer, PUICSideBySideButtonsView, UIButton, UIImageView, UILabel;
 
-@interface CLKUIWheelsOfTimeView : UIView <PUICCrownInputSequencerDelegate, PUICCrownInputSequencerDataSource>
+@interface CLKUIWheelsOfTimeView : UIView <PUICCrownInputSequencerDelegate>
 {
-    struct {
-        float dialArcWidth;
-        float dialRectTopOffset;
-        float timeRectSize;
-        float timeRectRadius;
-        float timeRectBorderWidth;
-        float timeRectCenterOffset;
-        float ampmButtonHeight;
-        float ampmButtonWidth;
-        float ampmButtonOffset;
-        float ampmTouchPaddingHorz;
-        float ampmTouchPaddingVert;
-        float hour24BaselineOffset;
-        float hour24LabelWidth;
-        float colonBaseline;
-        float colonWidth;
-        float circleSmallSize;
-        float hourMinLabelBaseline;
-        float offsetLabelBaseline;
-        float offsetLabelSideOffset;
-        float offsetMinLabelBaseline;
-        float timeFontSize;
-        float ampmFontSize;
-        float hour24FontSize;
-        float hourMinLabelFontSize;
-        float offsetLabelFontSize;
-        float offsetMinLabelFontSize;
-    } _dimensions;
+    CLKDevice *_device;
+    const CDStruct_b122c5d1 *_dimensions;
     _Bool _supportsHoursChange;
     _Bool _supportsMinutesChange;
     CAShapeLayer *_arcLayer;
@@ -51,6 +24,7 @@
     struct CGPoint _dialCenter;
     _Bool _show24HourDial;
     _Bool _hoursSelected;
+    _Bool _use5MinuteIncrements;
     UIButton *_leftButton;
     UIButton *_rightButton;
     id <CLKUIWheelsOfTimeDelegate> _delegate;
@@ -62,6 +36,7 @@
     UIImageView *_minutesDialImage;
     UIButton *_hourButton;
     UIButton *_minuteButton;
+    UILabel *_colonLabel;
     CLKUIWheelsOfTimeButton *_amButton;
     CLKUIWheelsOfTimeButton *_pmButton;
     UILabel *_hour24Label;
@@ -77,10 +52,26 @@
     PUICCrownInputSequencer *_minuteSequencer;
     PUICClientSideAnimation *_animation;
     NSNumberFormatter *_offsetFormatter;
+    NSDateFormatter *_alarmHourFormatter;
+    NSDateFormatter *_alarmMinFormatter;
+    NSNumberFormatter *_hourFormatter;
+    NSNumberFormatter *_minFormatter;
 }
 
-+ (id)getDialImageForType:(unsigned int)arg1 style:(unsigned int)arg2;
++ (id)_offsetMinLabelFontForDevice:(id)arg1;
++ (id)_offsetLabelFontForDevice:(id)arg1;
++ (id)_hourMinLabelFontForDevice:(id)arg1;
++ (id)_hour24FontForDevice:(id)arg1;
++ (id)_ampmSelectedFontForDevice:(id)arg1;
++ (id)_ampmUnselectedFontForDevice:(id)arg1;
++ (id)_timeFontForDevice:(id)arg1;
++ (const CDStruct_b122c5d1 *)_deviceLayoutForDevice:(id)arg1;
++ (id)getDialImageForType:(unsigned int)arg1 style:(unsigned int)arg2 forDevice:(id)arg3;
 + (id)_imageNameForIndex:(unsigned int)arg1;
+@property(retain, nonatomic) NSNumberFormatter *minFormatter; // @synthesize minFormatter=_minFormatter;
+@property(retain, nonatomic) NSNumberFormatter *hourFormatter; // @synthesize hourFormatter=_hourFormatter;
+@property(retain, nonatomic) NSDateFormatter *alarmMinFormatter; // @synthesize alarmMinFormatter=_alarmMinFormatter;
+@property(retain, nonatomic) NSDateFormatter *alarmHourFormatter; // @synthesize alarmHourFormatter=_alarmHourFormatter;
 @property(retain, nonatomic) NSNumberFormatter *offsetFormatter; // @synthesize offsetFormatter=_offsetFormatter;
 @property(retain, nonatomic) PUICClientSideAnimation *animation; // @synthesize animation=_animation;
 @property(retain, nonatomic) PUICCrownInputSequencer *minuteSequencer; // @synthesize minuteSequencer=_minuteSequencer;
@@ -96,12 +87,14 @@
 @property(retain, nonatomic) UILabel *hour24Label; // @synthesize hour24Label=_hour24Label;
 @property(retain, nonatomic) CLKUIWheelsOfTimeButton *pmButton; // @synthesize pmButton=_pmButton;
 @property(retain, nonatomic) CLKUIWheelsOfTimeButton *amButton; // @synthesize amButton=_amButton;
+@property(retain, nonatomic) UILabel *colonLabel; // @synthesize colonLabel=_colonLabel;
 @property(retain, nonatomic) UIButton *minuteButton; // @synthesize minuteButton=_minuteButton;
 @property(retain, nonatomic) UIButton *hourButton; // @synthesize hourButton=_hourButton;
 @property(retain, nonatomic) UIImageView *minutesDialImage; // @synthesize minutesDialImage=_minutesDialImage;
 @property(retain, nonatomic) UIImageView *hours24DialImage; // @synthesize hours24DialImage=_hours24DialImage;
 @property(retain, nonatomic) UIImageView *hours12DialImage; // @synthesize hours12DialImage=_hours12DialImage;
 @property(retain, nonatomic) UIView *dialContentView; // @synthesize dialContentView=_dialContentView;
+@property(nonatomic) _Bool use5MinuteIncrements; // @synthesize use5MinuteIncrements=_use5MinuteIncrements;
 @property(nonatomic) _Bool hoursSelected; // @synthesize hoursSelected=_hoursSelected;
 @property(nonatomic) int minute; // @synthesize minute=_minute;
 @property(nonatomic) int hour; // @synthesize hour=_hour;
@@ -117,6 +110,7 @@
 - (id)_currentCrownSequencer;
 - (void)_initCrownSequencers;
 - (void)_configMinuteSequencer;
+- (void)_configMinutesDialCurve;
 - (void)_configHourSequencer;
 - (void)_updateScreenSpaceMultiplierForSequencer:(id)arg1;
 - (void)_pmButtonTapped:(id)arg1;
@@ -132,17 +126,28 @@
 - (void)_updateAMPMText;
 - (void)_updateTimeOnDial:(_Bool)arg1;
 - (void)_updateTimerArc:(_Bool)arg1;
+- (void)_updateTimerArc:(float)arg1 animate:(_Bool)arg2;
 - (void)_updateTimeDot:(_Bool)arg1;
 - (void)_animateTimeDot;
+- (int)_numDialHands;
+- (int)_numHandsForMinuteDial;
+- (int)_numHandsForHourDial;
+- (id)_imageViewForTimeDot;
 - (void)cancelAnimation;
+- (struct CGPoint)_placeAlarmTimeCircle:(float)arg1;
 - (struct CGPoint)_placeAlarmTimeCircle:(float)arg1 withNumHands:(int)arg2 forRadius:(float)arg3 andCenter:(struct CGPoint)arg4;
 - (void)_updateMinute:(int)arg1;
 - (void)_updateMinuteDialLocation:(_Bool)arg1;
+- (int)_minuteForDialLocation:(int)arg1;
+- (int)_dialLocationForMinute:(float)arg1;
 - (void)_updateHour:(int)arg1;
 - (void)_updateHourDialLocation:(_Bool)arg1;
 - (void)_localeDidChange:(id)arg1;
-- (id)_localizedStringForOffset:(int)arg1;
-- (void)_initFormatters;
+- (id)_localizedStringForMinute:(int)arg1;
+- (id)_localizedStringForHour:(int)arg1;
+- (void)_updateFormatters;
+- (id)_formatStringFor24HourWOT;
+- (id)_formatStringFor12HourWOT;
 - (_Bool)canBecomeFirstResponder;
 - (struct CGPath *)_newArcPath;
 - (void)dealloc;
@@ -150,7 +155,13 @@
 - (id)initWithStyle:(unsigned int)arg1;
 - (id)initWithStyle:(unsigned int)arg1 use24HourTime:(_Bool)arg2;
 - (void)_updateDials;
-- (id)_arbitraryDialImage;
+- (void)_createHourMinuteLabels;
+- (void)_createSelectionCircle;
+- (void)_create24HourLabel;
+- (void)_createAMPMButtons;
+- (void)_createHourMinuteDisplay;
+- (void)_createOffsetWOTStyleItems;
+- (void)_createBottomButtons;
 - (id)_createDialImageForType:(unsigned int)arg1;
 - (id)_createHours24DialImage;
 - (id)_ensureHours24DialImage;
@@ -158,6 +169,16 @@
 - (id)_ensureHours12DialImage;
 - (id)_createMinutesDialImage;
 - (id)_ensureMinutesDialImage;
+- (_Bool)_uses24HourLabel;
+- (_Bool)_usesAMPMButtons;
+- (_Bool)_areAMPMButtonsInCorner;
+- (_Bool)_usesHourAndMinuteLabels;
+- (_Bool)_usesTimeDot;
+- (void)_initArcLayer;
+- (void)_initDefaultTime;
+- (void)_initDialSelections:(_Bool)arg1;
+- (void)_addConstraints;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 style:(unsigned int)arg2 use24HourTime:(_Bool)arg3;
 
 // Remaining properties

@@ -52,6 +52,7 @@
 - (void)dealloc;
 - (void)viewDidChangeBackingProperties;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
+- (void)updateLayer;
 - (void)layout;
 - (void)_monogramView_CommonInit;
 - (id)initWithCoder:(id)arg1;

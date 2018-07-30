@@ -43,7 +43,6 @@
 - (void)updateTimeZone:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateFireDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateFireDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 - (void)setSignificantEventOffset:(id)arg1;
 @property(readonly, copy, nonatomic) NSDateComponents *significantEventOffset; // @synthesize significantEventOffset=_significantEventOffset;
 - (void)setSignificantEvent:(id)arg1;

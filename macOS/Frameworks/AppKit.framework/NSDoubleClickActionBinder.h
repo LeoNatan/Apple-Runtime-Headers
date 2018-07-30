@@ -6,6 +6,7 @@
 
 #import <AppKit/NSActionBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDoubleClickActionBinder : NSActionBinder
 {
 }

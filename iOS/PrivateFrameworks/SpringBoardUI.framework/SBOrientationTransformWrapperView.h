@@ -30,6 +30,7 @@
 - (struct CGAffineTransform)convertTransformFromContainerInterfaceOrientationToContentInterfaceOrientation:(struct CGAffineTransform)arg1;
 - (struct CGRect)convertRectFromContainerInterfaceOrientationToContentInterfaceOrientation:(struct CGRect)arg1;
 - (struct CGPoint)convertPointFromContainerInterfaceOrientationToContentInterfaceOrientation:(struct CGPoint)arg1;
+- (void)bringContentSubviewToFront:(id)arg1;
 - (void)addContentView:(id)arg1;
 @property(readonly, nonatomic) NSArray *contentViews;
 - (id)description;

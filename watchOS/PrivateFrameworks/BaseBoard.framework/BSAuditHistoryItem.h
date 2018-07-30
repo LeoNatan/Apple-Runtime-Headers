@@ -22,14 +22,14 @@
 + (id)itemWithString:(id)arg1;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_description;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)_timeFormatter;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
-- (id)itemWithString:(id)arg1;
+- (id)initWithString:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

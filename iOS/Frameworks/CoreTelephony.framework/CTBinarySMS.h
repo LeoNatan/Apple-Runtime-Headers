@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSData, NSString;
+@class CTXPCServiceSubscriptionContext, NSData, NSString;
 
 @interface CTBinarySMS : NSObject
 {
@@ -16,8 +16,10 @@
     NSData *_payload;
     NSString *_destinationAddress;
     NSString *_smscAddress;
+    CTXPCServiceSubscriptionContext *_context;
 }
 
+@property(copy, nonatomic) CTXPCServiceSubscriptionContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *smscAddress; // @synthesize smscAddress=_smscAddress;
 @property(copy, nonatomic) NSString *destinationAddress; // @synthesize destinationAddress=_destinationAddress;
 @property(copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
@@ -25,6 +27,7 @@
 @property(nonatomic) int srcPort; // @synthesize srcPort=_srcPort;
 @property(nonatomic) int portAddressingScheme; // @synthesize portAddressingScheme=_portAddressingScheme;
 - (_Bool)isValid;
+- (void)dealloc;
 - (id)init;
 
 @end

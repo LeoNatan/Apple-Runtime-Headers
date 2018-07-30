@@ -34,12 +34,12 @@
 - (void)_updateHighlightedAndSelectedAppearance;
 - (void)applyLayoutAttributes:(id)arg1;
 - (float)_preferredContinuousCornerRadius;
-- (void)setDownloadState:(unsigned int)arg1 useLargeDimmedStyle:(_Bool)arg2 progress:(float)arg3 animated:(_Bool)arg4;
-- (void)setDownloadState:(unsigned int)arg1 useLargeDimmedStyle:(_Bool)arg2 progress:(float)arg3;
+- (void)setDownloadState:(unsigned int)arg1 dimmed:(_Bool)arg2 progress:(float)arg3 animated:(_Bool)arg4;
+- (void)setDownloadState:(unsigned int)arg1 dimmed:(_Bool)arg2 progress:(float)arg3;
 @property(readonly, nonatomic) NMUDownloadProgressView *downloadProgressView;
 - (void)didMoveToWindow;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
+- (void)layoutSublayersOfLayer:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

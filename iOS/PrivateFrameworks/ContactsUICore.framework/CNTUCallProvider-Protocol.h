@@ -14,6 +14,7 @@
 @property(readonly, nonatomic) _Bool supportsAudio;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *localizedName;
+- (id <CNTUDialRequest>)dialRequestForHandle:(CNHandle *)arg1 contact:(CNContact *)arg2 video:(_Bool)arg3 senderIdentity:(id <CNTUSenderIdentity>)arg4;
 - (id <CNTUDialRequest>)dialRequestForHandle:(CNHandle *)arg1 contact:(CNContact *)arg2 video:(_Bool)arg3;
 @end
 

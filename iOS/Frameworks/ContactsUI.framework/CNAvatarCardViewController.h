@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)updateActionsViewBackgroundColor;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)updateActionsControllerHeightConstraint;
 - (void)didAddActionsViewToHierarchy;
@@ -81,6 +82,7 @@ __attribute__((visibility("hidden")))
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithContacts:(id)arg1;
 
 // Remaining properties

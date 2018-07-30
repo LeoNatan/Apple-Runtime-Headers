@@ -13,7 +13,7 @@
 #import "CCUIStatusLabelViewControllerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CCUIAnimationRunner, CCUIFlickGestureRecognizer, CCUIHeaderPocketView, CCUIModuleCollectionView, CCUIOverlayTransitionState, CCUIScrollView, CCUIStatusBarStyleSnapshot, CCUIStatusLabelViewController, MTMaterialView, NSHashTable, NSString, NSUUID, UIPanGestureRecognizer, UIScrollView, UIStatusBar, UITapGestureRecognizer, UIView;
+@class CCUIAnimationRunner, CCUIFlickGestureRecognizer, CCUIHeaderPocketView, CCUIModuleCollectionView, CCUIOverlayTransitionState, CCUIScrollView, CCUIStatusBarStyleSnapshot, CCUIStatusLabelViewController, MTMaterialView, NSHashTable, NSString, NSUUID, UIPanGestureRecognizer, UIScrollView, UIStatusBar, UIStatusBar_Modern, UITapGestureRecognizer, UIView;
 
 @interface CCUIModularControlCenterOverlayViewController : CCUIModularControlCenterViewController <UIGestureRecognizerDelegate, CCUIScrollViewDelegate, CCUIStatusLabelViewControllerDelegate, CCUIOverlayViewProvider, CCUIOverlayMetricsProvider, CCUIStatusBarDelegate>
 {
@@ -24,7 +24,7 @@
     CCUIHeaderPocketView *_headerPocketView;
     CCUIScrollView *_scrollView;
     UIView *_containerView;
-    UIStatusBar *_compactLeadingStatusBar;
+    UIStatusBar_Modern *_compactLeadingStatusBar;
     _Bool _presentationPanGestureActive;
     UIPanGestureRecognizer *_headerPocketViewDismissalPanGesture;
     UITapGestureRecognizer *_headerPocketViewDismissalTapGesture;
@@ -76,8 +76,8 @@
 - (void)updatePresentationWithLocation:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 velocity:(struct CGPoint)arg3;
 - (void)beginPresentationWithLocation:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 velocity:(struct CGPoint)arg3;
 - (void)dismissControlCenterForContentModuleContext:(id)arg1;
-- (id)compactStyleRequestForStatusBar:(id)arg1;
-@property(readonly, nonatomic) _Bool overlayReachabilityAffectsHeader;
+- (struct CGRect)compactAvoidanceFrameForStatusBar:(id)arg1;
+- (id)compactTrailingStyleRequestForStatusBar:(id)arg1;
 @property(readonly, nonatomic) double overlayReachabilityHeight;
 @property(readonly, copy, nonatomic) CCUIStatusBarStyleSnapshot *overlayStatusBarStyle;
 @property(readonly, nonatomic) long long overlayInterfaceOrientation;

@@ -8,7 +8,6 @@
 
 @class NSOperationQueue;
 
-__attribute__((visibility("hidden")))
 @interface ABCNContactRemotePhotoStore : ABCNContactPhotoStore
 {
     NSOperationQueue *_operationQueue;

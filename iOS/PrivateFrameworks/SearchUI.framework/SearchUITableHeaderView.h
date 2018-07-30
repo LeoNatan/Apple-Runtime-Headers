@@ -12,6 +12,7 @@
 
 @interface SearchUITableHeaderView : UITableViewHeaderFooterView <NUIContainerStackViewDelegate>
 {
+    _Bool _usesInsetRoundedSections;
     id <SearchUITableHeaderViewDelegate> _delegate;
     id <SFFeedbackListener> _feedbackListener;
     unsigned long long _headerType;
@@ -22,6 +23,7 @@
 }
 
 + (id)reuseIdentifier;
+@property _Bool usesInsetRoundedSections; // @synthesize usesInsetRoundedSections=_usesInsetRoundedSections;
 @property(retain) TLKStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) UIButton *headerOptionButton; // @synthesize headerOptionButton=_headerOptionButton;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -38,7 +40,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateHeaderButtonVisibility;
 - (id)moreResultsPunchout;
-- (void)updateWithSection:(id)arg1 isExpanded:(_Bool)arg2;
+- (void)updateWithSection:(id)arg1 isExpanded:(_Bool)arg2 usesInsetRoundedSection:(_Bool)arg3;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;

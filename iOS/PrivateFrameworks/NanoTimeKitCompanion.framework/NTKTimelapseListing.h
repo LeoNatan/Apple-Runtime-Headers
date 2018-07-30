@@ -9,10 +9,11 @@
 #import "NSCopying.h"
 #import "NTKAVListing.h"
 
-@class CLKVideo, NSString, NTKPhotoAnalysis, UIImage;
+@class CLKDevice, CLKVideo, NSString, NTKPhotoAnalysis, UIImage;
 
 @interface NTKTimelapseListing : NSObject <NSCopying, NTKAVListing>
 {
+    CLKDevice *_device;
     CLKVideo *_video;
     UIImage *_image;
     NSString *_videoName;
@@ -34,7 +35,7 @@
 - (_Bool)isSimilarTo:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithTheme:(unsigned long long)arg1 videoIndex:(long long)arg2 photoAnalysis:(id)arg3;
+- (id)initForDevice:(id)arg1 withTheme:(unsigned long long)arg2 videoIndex:(long long)arg3 photoAnalysis:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

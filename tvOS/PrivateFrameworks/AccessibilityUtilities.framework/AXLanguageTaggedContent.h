@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSLinguisticTagger, NSMutableArray, NSMutableOrderedSet, NSString;
+@class NSArray, NSMutableArray, NSMutableOrderedSet, NSString;
 
 @interface AXLanguageTaggedContent : NSObject
 {
@@ -14,18 +14,18 @@
     struct _NSRange _currentChunk;
     _Bool _predictedByTagger;
     _Bool _tagged;
-    _Bool _splitContentOnNewlines;
     NSMutableArray *_tags;
-    NSLinguisticTagger *_linguisticTagger;
     NSMutableOrderedSet *_unpredictedAmbiguousLangMaps;
     NSString *_userPreferredLangID;
+    NSMutableOrderedSet *_predictedSecondaryLangMaps;
+    NSString *_contentString;
 }
 
 @property(retain, nonatomic) NSArray *currentDialects; // @synthesize currentDialects=_currentDialects;
-@property(nonatomic) _Bool splitContentOnNewlines; // @synthesize splitContentOnNewlines=_splitContentOnNewlines;
+@property(copy, nonatomic) NSString *contentString; // @synthesize contentString=_contentString;
+@property(retain, nonatomic) NSMutableOrderedSet *predictedSecondaryLangMaps; // @synthesize predictedSecondaryLangMaps=_predictedSecondaryLangMaps;
 @property(copy, nonatomic) NSString *userPreferredLangID; // @synthesize userPreferredLangID=_userPreferredLangID;
 @property(retain, nonatomic) NSMutableOrderedSet *unpredictedAmbiguousLangMaps; // @synthesize unpredictedAmbiguousLangMaps=_unpredictedAmbiguousLangMaps;
-@property(retain, nonatomic) NSLinguisticTagger *linguisticTagger; // @synthesize linguisticTagger=_linguisticTagger;
 @property(nonatomic, getter=isTagged) _Bool tagged; // @synthesize tagged=_tagged;
 @property(retain, nonatomic) NSMutableArray *tags; // @synthesize tags=_tags;
 - (void).cxx_destruct;
@@ -43,6 +43,11 @@
 - (_Bool)langMapIsSignificant:(id)arg1;
 - (_Bool)_isStringCombinationOfCommonAndEmoji:(id)arg1;
 - (void)tagContent;
+- (_Bool)_addLanguageTagForCurrentChunk;
+- (CDStruct_3a8d9e70 *)_languageHintsEvenlyDistributedWithProbability:(float)arg1 excludingHints:(id)arg2;
+- (id)_allLangIDs;
+- (int)langIDforLangCode:(id)arg1;
+- (id)langCodeForlangId:(int)arg1;
 - (void)enumeratePredictedTags:(CDUnknownBlockType)arg1;
 - (void)enumerateUnpredictedTags:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSString *content;

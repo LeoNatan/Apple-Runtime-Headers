@@ -28,6 +28,8 @@
 - (_Bool)_queue_supportedForOSVersion:(id)arg1 inRegion:(id)arg2 deviceClass:(id)arg3 platform:(id)arg4;
 - (id)marketGeoRegionNotificationNetworkThresholdsForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationTimeRangeForRegion:(id)arg1;
+- (_Bool)browseProvisioningBankAppsManualEntryDisabledForRegion:(id)arg1;
+- (_Bool)browseProvisioningBankAppsEnabledForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationHourForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationSendLimitForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationDisabledNetworksForRegion:(id)arg1;
@@ -44,7 +46,6 @@
 - (_Bool)regionHasProvisioningEnablementPercentage:(id)arg1;
 - (id)paymentSetupBrowsableProductTypesForRegion:(id)arg1;
 - (_Bool)suppressCardholderNameFieldForRegion:(id)arg1;
-- (_Bool)findWithoutNumberEnabledForRegion:(id)arg1;
 - (id)heroImageManifestURLForRegion:(id)arg1;
 - (id)primaryFeaturedNetworkForRegion:(id)arg1;
 - (id)paymentSetupFeaturedNetworksForRegion:(id)arg1;

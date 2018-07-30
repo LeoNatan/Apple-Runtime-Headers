@@ -10,10 +10,12 @@
 
 @interface NUFileSourceDefinition : NUSingleSourceDefinition
 {
+    BOOL _useEmbeddedPreview;
     NSURL *_url;
     NSString *_uti;
 }
 
+@property(nonatomic) BOOL useEmbeddedPreview; // @synthesize useEmbeddedPreview=_useEmbeddedPreview;
 @property(readonly) NSString *uti; // @synthesize uti=_uti;
 @property(readonly) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;

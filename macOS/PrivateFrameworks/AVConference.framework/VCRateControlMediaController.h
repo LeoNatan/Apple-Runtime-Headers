@@ -25,6 +25,9 @@ __attribute__((visibility("hidden")))
     BOOL _isBasebandFlushing;
     BOOL _isAudioStall;
     BOOL _isInThrottlingMode;
+    int _audioFractionTier;
+    double _lastAudioFractionChangeTime;
+    double _lastAudioEnoughRateTime;
     unsigned char _videoPayloadType;
     unsigned short _videoTransactionID;
     unsigned int _videoRefreshFrameTimestamp;
@@ -39,10 +42,14 @@ __attribute__((visibility("hidden")))
     BOOL _isRateLimitedMaxTimeExceeded;
     BOOL _isSenderProbingEnabled;
     int _basebandFlushCount;
+    int _basebandFlushedVideoCount;
+    int _basebandFlushedAudioCount;
     double _lastBasebandFlushAudioTime;
     double _lastBasebandFlushVideoTime;
     unsigned short _videoFlushTransactionID;
     unsigned int _audioStallBitrate;
+    double _lastAudioStallFlushTime;
+    BOOL _isRTPFlushBasebandFromVCRateControl;
     unsigned int _basebandAverageBitrate;
     unsigned int _basebandTotalQueueDepth;
     unsigned int _basebandFlushableQueueDepth;
@@ -54,6 +61,9 @@ __attribute__((visibility("hidden")))
     unsigned int _afrcRemoteEstimatedBandwidth;
 }
 
+@property(readonly, nonatomic) double lastVideoKeyFrameTime; // @synthesize lastVideoKeyFrameTime=_lastVideoKeyFrameTime;
+@property(nonatomic) int audioFractionTier; // @synthesize audioFractionTier=_audioFractionTier;
+@property(nonatomic) BOOL isRTPFlushBasebandFromVCRateControl; // @synthesize isRTPFlushBasebandFromVCRateControl=_isRTPFlushBasebandFromVCRateControl;
 @property(nonatomic) unsigned int afrcRemoteEstimatedBandwidth; // @synthesize afrcRemoteEstimatedBandwidth=_afrcRemoteEstimatedBandwidth;
 @property(nonatomic) BOOL shouldDisableLargeFrameRequestsWhenInitialRampUp; // @synthesize shouldDisableLargeFrameRequestsWhenInitialRampUp=_shouldDisableLargeFrameRequestsWhenInitialRampUp;
 @property(nonatomic) BOOL isRateLimitedMaxTimeExceeded; // @synthesize isRateLimitedMaxTimeExceeded=_isRateLimitedMaxTimeExceeded;
@@ -61,7 +71,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isAudioOnly; // @synthesize isAudioOnly=_isAudioOnly;
 @property(nonatomic) BOOL isSenderProbingEnabled; // @synthesize isSenderProbingEnabled=_isSenderProbingEnabled;
 @property(readonly, nonatomic) BOOL isVideoStoppedByVCRateControl; // @synthesize isVideoStoppedByVCRateControl=_isVideoStoppedByVCRateControl;
-@property(readonly, nonatomic) int basebandFlushCount; // @synthesize basebandFlushCount=_basebandFlushCount;
+@property(readonly, nonatomic) int basebandFlushedAudioCount; // @synthesize basebandFlushedAudioCount=_basebandFlushedAudioCount;
+@property(readonly, nonatomic) int basebandFlushedVideoCount; // @synthesize basebandFlushedVideoCount=_basebandFlushedVideoCount;
+@property(nonatomic) int basebandFlushCount; // @synthesize basebandFlushCount=_basebandFlushCount;
 @property(nonatomic) unsigned int targetBitrate; // @synthesize targetBitrate=_targetBitrate;
 @property(nonatomic) unsigned int minTargetBitrate; // @synthesize minTargetBitrate=_minTargetBitrate;
 @property(nonatomic) unsigned int audioSendingBitrate; // @synthesize audioSendingBitrate=_audioSendingBitrate;
@@ -73,19 +85,21 @@ __attribute__((visibility("hidden")))
 - (void)printLargeFrameStatsAtTime:(double)arg1 timeSinceLastProbingSequence:(double)arg2 frameSize:(unsigned int)arg3 wastedBytes:(unsigned int)arg4 isFrameRequested:(BOOL)arg5;
 - (void)scheduleProbingSequenceAtTime:(double)arg1;
 - (void)increaseBasebandFlushCountInternallyWithSuggestion:(struct VCRateControlMediaSuggestion *)arg1;
+- (BOOL)increaseFlushCountForVideoRefresh:(int)arg1 transactionID:(unsigned short)arg2;
+- (void)recordVideoRefreshFrameWithTimestamp:(unsigned int)arg1 payloadType:(unsigned char)arg2 packetCount:(unsigned int)arg3 isKeyFrame:(BOOL)arg4;
 - (void)scheduleProbingSequenceWithFrameSize:(unsigned int)arg1 paddingBytes:(unsigned int)arg2 isProbingSequenceScheduled:(char *)arg3;
 @property(readonly, nonatomic) unsigned int probingSequencePacketSize; // @synthesize probingSequencePacketSize=_probingSequencePacketSize;
 @property(readonly, nonatomic) unsigned int probingSequencePacketCount; // @synthesize probingSequencePacketCount=_probingSequencePacketCount;
 @property(readonly, nonatomic) unsigned int probingLargeFrameSize; // @synthesize probingLargeFrameSize=_probingLargeFrameSize;
+- (BOOL)rampUpAudioFraction;
+- (BOOL)rampDownAudioFraction;
 - (BOOL)didMediaGetFlushedWithPayloadType:(unsigned char)arg1 transactionID:(unsigned short)arg2 packetDropped:(unsigned short)arg3 sequenceNumberArray:(unsigned short *)arg4;
 - (void)decreaseFlushCount:(int)arg1;
-- (BOOL)increaseFlushCountForVideoRefresh:(int)arg1 transactionID:(unsigned short)arg2;
-- (void)recordVideoRefreshFrameWithTimestamp:(unsigned int)arg1 payloadType:(unsigned char)arg2 packetCount:(unsigned int)arg3 isKeyFrame:(BOOL)arg4;
 @property(readonly, nonatomic) BOOL isVideoStopped;
 - (void)resumeVideoByVCRateControl;
 - (void)stopVideoByVCRateControl;
 - (void)pauseVideoByUser:(BOOL)arg1;
-- (void)updateBasebandSuggestionWithStatistics:(CDStruct_5cb394a5)arg1;
+- (void)updateBasebandSuggestionWithStatistics:(CDStruct_48a7b5a5)arg1;
 - (void)computePacketLossWithTimestamp:(unsigned short)arg1 totalRemoteReceivedPackets:(unsigned int)arg2 packetBurstLoss:(unsigned int)arg3 packetLossRate:(double *)arg4 mostBurstLoss:(unsigned int *)arg5;
 - (void)getMediaQueueRateChangeCounter:(unsigned int *)arg1 rateChangeTime:(double *)arg2;
 - (void)getMediaQueueInVideoBitrate:(double *)arg1 outVideoBitrate:(double *)arg2 inAudioBitrate:(double *)arg3 outAudioBitrate:(double *)arg4;

@@ -8,12 +8,12 @@
 
 @class OITSUIntegerKeyDictionary;
 
-__attribute__((visibility("hidden")))
 @interface EDKeyedCollection : EDCollection
 {
     OITSUIntegerKeyDictionary *mMap;
 }
 
+- (void).cxx_destruct;
 - (id)objectWithKey:(long long)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectAtIndex:(unsigned long long)arg1;
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
 - (unsigned long long)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (_Bool)isOverwritingKeyOK;
 - (void)removeFromMap:(id)arg1;
 - (void)insertIntoMap:(id)arg1;

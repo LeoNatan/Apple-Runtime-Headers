@@ -6,14 +6,14 @@
 
 #import <MediaRemote/MRAVEndpoint.h>
 
-@class MRAVConcreteOutputDevice, MRTransportExternalDevice, NSArray, NSObject<OS_dispatch_queue>, NSString;
+@class MRAVOutputDevice, MRTransportExternalDevice, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MRAVConcreteEndpoint : MRAVEndpoint
 {
     NSString *_uniqueIdentifier;
     NSArray *_outputDevices;
     MRTransportExternalDevice *_externalDevice;
-    MRAVConcreteOutputDevice *_designatedGroupLeader;
+    MRAVOutputDevice *_designatedGroupLeader;
     long long _connectionType;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }

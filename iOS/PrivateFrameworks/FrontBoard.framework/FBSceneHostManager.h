@@ -34,16 +34,19 @@
         unsigned int delegateOverrideRequester:1;
         unsigned int delegateShouldEnableHostingForRequester:1;
     } _flags;
+    _Bool _defaultClippingDisabled;
+    struct CGAffineTransform _defaultHostViewTransform;
 }
 
 @property(readonly, nonatomic) long long contentState; // @synthesize contentState=_contentState;
-@property(readonly, retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
+@property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *defaultMinificationFilterName; // @synthesize defaultMinificationFilterName=_defaultMinificationFilterName;
 @property(nonatomic) unsigned long long defaultRenderingMode; // @synthesize defaultRenderingMode=_defaultRenderingMode;
 @property(nonatomic) unsigned long long defaultHostedLayerTypes; // @synthesize defaultHostedLayerTypes=_defaultHostedLayerTypes;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) id <FBSceneHostManagerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <FBSceneHostManagerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -81,6 +84,8 @@
 @property(readonly, copy) NSString *description;
 @property(copy, nonatomic) UIColor *defaultBackgroundColorWhileNotHosting;
 @property(copy, nonatomic) UIColor *defaultBackgroundColorWhileHosting;
+@property(nonatomic) struct CGAffineTransform defaultHostViewTransform; // @synthesize defaultHostViewTransform=_defaultHostViewTransform;
+@property(nonatomic) _Bool defaultClippingDisabled; // @synthesize defaultClippingDisabled=_defaultClippingDisabled;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

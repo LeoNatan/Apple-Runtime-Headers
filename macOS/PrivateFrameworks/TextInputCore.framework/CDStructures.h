@@ -83,7 +83,7 @@ struct LanguageModelContainer {
 };
 
 struct LanguageModelContext {
-    vector_60995c96 _field1;
+    vector_5bda1073 _field1;
     unsigned long long _field2;
     unsigned long long _field3;
 };
@@ -240,7 +240,7 @@ struct vector<TITokenID, std::__1::allocator<TITokenID>> {
     struct TITokenID *__begin_;
     struct TITokenID *__end_;
     struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID>> {
-        struct TITokenID *__first_;
+        struct TITokenID *__value_;
     } __end_cap_;
 };
 
@@ -296,7 +296,7 @@ typedef struct vector<TITokenID, std::__1::allocator<TITokenID>> {
     struct TITokenID *__begin_;
     struct TITokenID *__end_;
     struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID>> {
-        struct TITokenID *__first_;
+        struct TITokenID *__value_;
     } __end_cap_;
-} vector_60995c96;
+} vector_5bda1073;
 

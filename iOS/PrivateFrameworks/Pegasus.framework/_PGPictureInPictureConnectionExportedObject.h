@@ -10,6 +10,7 @@
 
 @class NSString, PGPictureInPictureProxy;
 
+__attribute__((visibility("hidden")))
 @interface _PGPictureInPictureConnectionExportedObject : NSObject <PGPictureInPictureExportedInterface>
 {
     PGPictureInPictureProxy *_pictureInPictureProxy;

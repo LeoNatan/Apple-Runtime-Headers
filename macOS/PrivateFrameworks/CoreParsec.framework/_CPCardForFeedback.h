@@ -28,7 +28,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasFbr;
 - (id)cardSectionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)cardSectionsCount;
 - (void)addCardSections:(id)arg1;

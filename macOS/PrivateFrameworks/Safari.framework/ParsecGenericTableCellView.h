@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (id)_descriptionLabelWithRichText:(id)arg1 session:(id)arg2;
 - (void)setShowsActionButton:(BOOL)arg1;
 - (id)_actionButton;
-- (void)prepareForImmediateRedisplay;
 - (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;
 - (void)awakeFromNib;
 

@@ -9,6 +9,8 @@
 @interface NSWindow (ViewBridgeService)
 - (void)scrollWheel:(id)arg1;
 - (int)accessibilityPresenterProcessIdentifier;
+@property int viewBridgeHostProcessIdentifier;
 @property BOOL viewBridgeBecomingChild;
+- (id)_lastDragRegionDataDescription;
 @end
 

@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @protocol CPLCloudKitTrackableTask <NSObject>
+@property(readonly, nonatomic, getter=isBoostable) BOOL boostable;
 @property(retain, nonatomic) id trackingContext;
 @end
 

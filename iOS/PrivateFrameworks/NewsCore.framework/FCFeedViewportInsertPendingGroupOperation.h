@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCloudContext, FCFeedGroup, FCFeedGroupEmittingContext, FCFeedRefreshSession, NSArray, NSSet;
+@class FCCloudContext, FCFeedDescriptor, FCFeedGroup, FCFeedGroupEmittingContext, FCFeedRefreshSession, NSArray, NSSet;
 
 @interface FCFeedViewportInsertPendingGroupOperation : FCOperation
 {
@@ -16,6 +16,7 @@
     NSSet *_resultDeletedElementIDs;
     id <FCCoreConfiguration> _configuration;
     FCCloudContext *_context;
+    FCFeedDescriptor *_feedDescriptor;
     FCFeedRefreshSession *_refreshSession;
     NSArray *_feedGroupEmitters;
     FCFeedGroupEmittingContext *_groupEmittingContext;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) FCFeedGroupEmittingContext *groupEmittingContext; // @synthesize groupEmittingContext=_groupEmittingContext;
 @property(retain, nonatomic) NSArray *feedGroupEmitters; // @synthesize feedGroupEmitters=_feedGroupEmitters;
 @property(retain, nonatomic) FCFeedRefreshSession *refreshSession; // @synthesize refreshSession=_refreshSession;
+@property(retain, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;

@@ -25,6 +25,7 @@
 - (void)complicationPickerCell:(id)arg1 didSelectComplication:(id)arg2;
 - (void)_dequeuePickerCellForRow:(long long)arg1;
 - (void)faceDidChange;
+- (void)toggleRow:(long long)arg1 shouldScroll:(_Bool)arg2;
 - (void)didSelectRow:(long long)arg1;
 - (_Bool)_canSelectRow:(long long)arg1;
 - (id)titleForHeader;

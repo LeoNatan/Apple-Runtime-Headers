@@ -25,6 +25,7 @@
 - (void)removeAccount:(id)arg1;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 requireVerification:(_Bool)arg3;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2;
+- (void)saveAccount:(id)arg1 requireVerification:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)saveAccount:(id)arg1 requireVerification:(_Bool)arg2;
 - (void)saveAccount:(id)arg1;
 - (id)initWithAccountStore:(id)arg1;

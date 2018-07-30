@@ -24,7 +24,7 @@
 @property(nonatomic) _Bool obsolete; // @synthesize obsolete=_obsolete;
 @property(readonly, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(nonatomic) unsigned long long accessStatus; // @synthesize accessStatus=_accessStatus;
-@property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
+@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

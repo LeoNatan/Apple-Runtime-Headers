@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class HDProfile, HDXPCClient, NSMutableArray, NSObject<OS_dispatch_queue>, NSUUID;
+@class HDClientAuthorizationOracle, HDProfile, HDXPCClient, NSMutableArray, NSObject<OS_dispatch_queue>, NSUUID;
 
 @interface HDAuthorizationServer : NSObject
 {
+    HDClientAuthorizationOracle *_authorizationOracle;
     int _invalidated;
     HDXPCClient *_client;
     HDProfile *_profile;
@@ -51,10 +52,11 @@
 - (void)beginAuthorizationRequestDelegateTransactionWithSessionIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginAuthorizationRequestDelegateTransactionWithRequestRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestAuthorizationForBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_setAuthorizationStatusesEntitled:(id)arg1 forBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_setAuthorizationStatusesEntitled:(id)arg1 authorizationModes:(id)arg2 forBundleIdentifier:(id)arg3 options:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)setAuthorizationStatuses:(id)arg1 authorizationModes:(id)arg2 forBundleIdentifier:(id)arg3 options:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)allObjectAuthorizationsForSampleWithUUID:(id)arg1 error:(id *)arg2;
 - (id)allDocumentAuthorizationRecordsForType:(id)arg1 bundleIdentifier:(id)arg2 error:(id *)arg3;
+- (id)allSourcesRequestingTypes:(id)arg1 error:(id *)arg2;
 - (id)allAuthorizationRecordsForType:(id)arg1 error:(id *)arg2;
 - (id)allAuthorizationRecordsForBundleIdentifier:(id)arg1 error:(id *)arg2;
 

@@ -20,9 +20,11 @@
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (float)_handAlphaForEditMode:(int)arg1;

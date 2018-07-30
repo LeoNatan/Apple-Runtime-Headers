@@ -11,13 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)_isPrimarilyDark;
-- (long long)_internalVisualEffectMaterialForMenu;
-- (long long)_internalVisualEffectMaterialForSelection:(BOOL)arg1 isDarker:(BOOL)arg2;
-- (long long)_internalVisualEffectMaterialForBlendingMode:(long long)arg1;
-- (id)_appearanceForStandardTableView;
-- (id)_appearanceForSourceListTableView;
-- (id)name;
+- (id)_appearanceForNonVibrantContent;
+- (id)_appearanceForVibrantContent;
 
 @end
 

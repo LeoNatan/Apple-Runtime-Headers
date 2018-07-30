@@ -10,6 +10,7 @@
 
 @class GEOLocation, NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDExternalTransitLookupParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

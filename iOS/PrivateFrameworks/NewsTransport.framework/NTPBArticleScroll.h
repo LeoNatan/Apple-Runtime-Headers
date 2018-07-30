@@ -8,10 +8,11 @@
 
 #import "NSCopying.h"
 
-@class NSData, NSMutableArray, NSString;
+@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline;
 
 @interface NTPBArticleScroll : PBCodable <NSCopying>
 {
+    NTPBAlternateHeadline *_alternateHeadline;
     NSString *_articleId;
     NSData *_articleSessionId;
     NSData *_articleViewingSessionId;
@@ -38,6 +39,7 @@
 }
 
 + (Class)fractionalCohortMembershipType;
+@property(retain, nonatomic) NTPBAlternateHeadline *alternateHeadline; // @synthesize alternateHeadline=_alternateHeadline;
 @property(retain, nonatomic) NSMutableArray *fractionalCohortMemberships; // @synthesize fractionalCohortMemberships=_fractionalCohortMemberships;
 @property(nonatomic) float scrollingVelocity; // @synthesize scrollingVelocity=_scrollingVelocity;
 @property(nonatomic) float verticalScrollPositionEnding; // @synthesize verticalScrollPositionEnding=_verticalScrollPositionEnding;
@@ -62,6 +64,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAlternateHeadline;
 - (id)fractionalCohortMembershipAtIndex:(unsigned long long)arg1;
 - (unsigned long long)fractionalCohortMembershipsCount;
 - (void)addFractionalCohortMembership:(id)arg1;

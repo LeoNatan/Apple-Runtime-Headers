@@ -10,6 +10,8 @@
 {
 }
 
++ (void)offForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
++ (void)onForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
 + (_Bool)screenBlanked;
 + (_Bool)willBeOn;
 + (_Bool)screenOn;

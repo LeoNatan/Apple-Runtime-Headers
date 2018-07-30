@@ -12,7 +12,6 @@
 {
     HDSQLiteDatabase *_database;
     NSString *_sql;
-    _Bool _cache;
 }
 
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;

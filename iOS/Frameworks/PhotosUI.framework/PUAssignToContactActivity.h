@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)activityViewController;
 - (id)_embeddedActivityViewController;
+- (id)_activityBundleImageConfiguration;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

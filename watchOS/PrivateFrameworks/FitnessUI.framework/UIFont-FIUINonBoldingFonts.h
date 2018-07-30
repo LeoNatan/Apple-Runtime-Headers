@@ -10,7 +10,6 @@
 + (id)fiui_nonBoldingRoundedSystemFontOfSize:(float)arg1 weight:(float)arg2;
 + (id)fiui_nonBoldingSystemFontOfSize:(float)arg1 weight:(float)arg2;
 + (id)fiui_nonBoldingSystemFontOfSize:(float)arg1;
-+ (id)_fiui_weightSuffixForWeight:(float)arg1;
 + (id)_fiui_nonBoldedVersionOfFont:(id)arg1 size:(float)arg2;
 @end
 

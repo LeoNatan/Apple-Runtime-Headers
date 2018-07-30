@@ -10,5 +10,9 @@
 
 @protocol SiriCoreConnectionProviderDelegate <NSObject>
 - (void)connectionProvider:(id <SiriCoreConnectionProvider>)arg1 receivedError:(NSError *)arg2;
+
+@optional
+- (void)connectionProviderReceivedBetterRouteNotification:(id <SiriCoreConnectionProvider>)arg1;
+- (void)connectionProvider:(id <SiriCoreConnectionProvider>)arg1 receivedViabilityChangeNotification:(_Bool)arg2;
 @end
 

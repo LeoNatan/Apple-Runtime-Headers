@@ -18,15 +18,18 @@ __attribute__((visibility("hidden")))
 + (id)sharedDelegate;
 - (void)p_inputMethodsChanged:(id)arg1;
 - (void)p_localeChanged:(id)arg1;
+- (id)strokeWidthsForFreehandDrawingToolType:(unsigned long long)arg1;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale *)arg1;
 - (void)registerSOSClassTypeMappings;
 - (id)bladerunnerContainerIdentifier;
 - (id)cloudKitContainerIdentifier;
 - (_Bool)supportsRTL;
 - (_Bool)imageGalleryCaptionsUsePlaceholderText;
-- (_Bool)supportsCanvasNativeEquationObjects;
 - (_Bool)supportsLinkedTextBoxes;
 - (_Bool)supportsAutosizingTextboxes;
+- (id)stringForEquationChoiceUseEQKitButtonTitle;
+- (id)stringForEquationChoiceBody;
+- (id)stringForEquationChoiceTitle;
 - (id)stringForDocumentViewOnlyMessage;
 - (id)stringForDocumentViewOnlyTitle;
 - (id)stringForOwnerHasCollabEnabledMessage;
@@ -80,7 +83,7 @@ __attribute__((visibility("hidden")))
 - (id)previewImageNameForNativeDocument;
 - (id)previewImageNameForEncryptedNativeDocument;
 - (id)universalPreviewImageNameForDocumentType:(id)arg1;
-- (Class)drawableInfoSubclassForClass:(Class)arg1 unarchiver:(id)arg2;
+- (id)equationEditorAPDID;
 - (_Bool)supportsInlineNativeEquationObjects;
 - (id)appChartPropertyOverrides;
 @property(readonly, nonatomic) NSArray *rtfDocumentTypes;

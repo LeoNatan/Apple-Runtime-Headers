@@ -16,7 +16,7 @@
 
 @property(retain, nonatomic) FBSSerialQueue *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
 @property(retain, nonatomic) FBSScene *scene; // @synthesize scene=_scene;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

@@ -12,6 +12,7 @@
 {
     NSXPCConnection *_xpcConnection;
     NSMutableSet *_eventList;
+    NSObject<OS_dispatch_queue> *_eventQueue;
     NSMutableDictionary *_interfaceMap;
     NSObject<OS_dispatch_queue> *_mutex;
     id _delegate;
@@ -37,10 +38,14 @@
 - (void)internal_startUserMode8021XUsingKeychainWithSSID:(id)arg1 interfaceWithName:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)willShowJoinUIForWiFiNetwork:(id)arg1 interfaceName:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)deviceAvailabilityChangedForWiFiInterfaceWithName:(id)arg1 isAvailable:(BOOL)arg2;
+- (void)wowStateDidChangeForWiFiInterfaceWithName:(id)arg1;
 - (void)foundTetherDevices:(id)arg1;
 - (void)airPlayDidCompleteForWiFiInterfaceWithName:(id)arg1;
 - (void)realTimeModeDidEndForWiFiInterfaceWithName:(id)arg1;
 - (void)realTimeModeDidStartForWiFiInterfaceWithName:(id)arg1;
+- (void)joinDidCompleteForWiFiInterfaceWithName:(id)arg1 error:(id)arg2;
+- (void)joinDidStartForWiFiInterfaceWithName:(id)arg1 ssid:(id)arg2;
+- (void)autoJoinDidUpdate:(id)arg1;
 - (void)autoJoinDidCompleteForWiFiInterfaceWithName:(id)arg1;
 - (void)autoJoinDidStartForWiFiInterfaceWithName:(id)arg1;
 - (void)scanCacheUpdatedForWiFiInterfaceWithName:(id)arg1;
@@ -68,6 +73,12 @@
 - (id)__interfaceWithName:(id)arg1;
 - (id)__interfaceWithName:(id)arg1 legacy:(BOOL)arg2;
 - (id)init;
+- (BOOL)setWiFiPasswordInSystemKeychain:(id)arg1 ssid:(id)arg2 error:(id *)arg3;
+- (BOOL)forgetPasspointWiFiProfileWithDomainName:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)forgetWiFiProfileWithSSID:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)forgetWiFiProfileWithID:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)rememberWiFiProfile:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)setWoWEnabled:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)setAutoJoinEnabled:(BOOL)arg1 error:(id *)arg2;
 - (long long)thermalIndex;
 - (BOOL)setThermalIndex:(long long)arg1 error:(id *)arg2;

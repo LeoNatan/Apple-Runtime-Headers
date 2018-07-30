@@ -12,18 +12,24 @@
 {
     struct __SFBrowser *_browser;
     NSMutableDictionary *_nodes;
+    _Bool _shouldDeliverEmptyUpdates;
     NSString *_sessionID;
     NSArray *_people;
     id <SFAirDropBrowserDelegate> _delegate;
+    id <SFAirDropBrowserBatchDelegate> _batchDelegate;
 }
 
+@property __weak id <SFAirDropBrowserBatchDelegate> batchDelegate; // @synthesize batchDelegate=_batchDelegate;
 @property __weak id <SFAirDropBrowserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *people; // @synthesize people=_people;
 @property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
+- (void)getChangedIndexesForClientPeopleList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateDiscoveredPeople;
 - (void)handleBrowserCallBack;
 - (void)stop;
+- (void)resume;
+- (void)pause;
 - (void)start;
 - (void)dealloc;
 - (id)init;

@@ -6,9 +6,12 @@
 
 #import "PUExtensionHost.h"
 
-@class NSURL;
+@class NSProgress, NSString, NSURL, PHProjectInfo;
 
 @protocol PUProjectExtensionHost <PUExtensionHost>
+- (void)performDragOperationWithPasteboardNamed:(NSString *)arg1 draggingSequenceNumber:(long long)arg2;
+- (NSProgress *)updateProjectInfo:(PHProjectInfo *)arg1 forProject:(NSString *)arg2 completion:(void (^)(PHProjectInfo *))arg3;
+- (void)showEditorForAssetWithLocalIdentifier:(NSString *)arg1;
 - (void)_openURL:(NSURL *)arg1 completion:(void (^)(BOOL))arg2;
 @end
 

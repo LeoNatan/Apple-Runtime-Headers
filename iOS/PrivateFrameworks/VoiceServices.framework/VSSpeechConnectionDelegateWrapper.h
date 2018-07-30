@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString, VSPresynthesizedAudioRequest, VSSpeechConnection, VSSpeechRequest;
 
+__attribute__((visibility("hidden")))
 @interface VSSpeechConnectionDelegateWrapper : NSObject <VSSpeechServiceDelegate>
 {
     id <VSSpeechConnectionDelegate> _delegate;

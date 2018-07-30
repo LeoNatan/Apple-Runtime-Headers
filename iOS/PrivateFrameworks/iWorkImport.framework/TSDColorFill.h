@@ -55,7 +55,6 @@ __attribute__((visibility("hidden")))
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)referenceColor;
-- (SEL)mapThemeAssetSelector;
 - (id)presetKind;
 - (int)fillType;
 - (void)applyToCAShapeLayer:(id)arg1 withScale:(double)arg2;

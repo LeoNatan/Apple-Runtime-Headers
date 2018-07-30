@@ -8,26 +8,28 @@
 
 #import "NSSecureCoding.h"
 
-@class NSDate, NSMutableArray, NSString, RTStateModelLocation;
+@class NSDate, NSMutableArray, NSString, RTMapItem, RTStateModelLocation;
 
 @interface RTStateDepictionOneState : NSObject <NSSecureCoding>
 {
     RTStateModelLocation *_location;
     long long _type;
     long long _typeSource;
-    id <GEOMapItem> _mapItem;
+    RTMapItem *_mapItem;
     long long _mapItemSource;
     NSDate *_geocodeDate;
     NSMutableArray *_histEntryExit_s;
     NSString *_customLabel;
+    id <GEOMapItem> _geoMapItem;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) id <GEOMapItem> geoMapItem; // @synthesize geoMapItem=_geoMapItem;
 @property(retain, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property(retain, nonatomic) NSMutableArray *histEntryExit_s; // @synthesize histEntryExit_s=_histEntryExit_s;
 @property(retain, nonatomic) NSDate *geocodeDate; // @synthesize geocodeDate=_geocodeDate;
 @property(nonatomic) long long mapItemSource; // @synthesize mapItemSource=_mapItemSource;
-@property(retain, nonatomic) id <GEOMapItem> mapItem; // @synthesize mapItem=_mapItem;
+@property(retain, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) long long typeSource; // @synthesize typeSource=_typeSource;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) RTStateModelLocation *location; // @synthesize location=_location;
@@ -35,7 +37,7 @@
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithLocation:(id)arg1 type:(long long)arg2 typeSource:(long long)arg3 mapItem:(id)arg4 mapItemSource:(long long)arg5 customLabel:(id)arg6;
+- (id)initWithLocation:(id)arg1 type:(long long)arg2 typeSource:(long long)arg3 customLabel:(id)arg4 mapItem:(id)arg5;
 - (id)init;
 
 @end

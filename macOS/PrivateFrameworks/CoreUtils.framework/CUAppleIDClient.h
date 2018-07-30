@@ -19,6 +19,7 @@
     BOOL _peerSignatureVerified;
     NSDictionary *_peerValidationDict;
     BOOL _peerValidated;
+    int _securityLevel;
     NSString *_myAppleID;
     CUAppleIDClient *_myInfoClient;
     NSString *_peerAppleID;
@@ -40,6 +41,7 @@
 @property(retain, nonatomic) CUAppleIDClient *myInfoClient; // @synthesize myInfoClient=_myInfoClient;
 @property(copy, nonatomic) NSString *myAppleID; // @synthesize myAppleID=_myAppleID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int securityLevel;
 - (struct OpaqueSecKeyRef *)_getPeerPublicKeyAndReturnError:(id *)arg1;
 - (struct OpaqueSecCertificateRef *)_getPeerCertificateAndReturnError:(id *)arg1;
 - (id)copyMyValidationDataAndReturnError:(id *)arg1;

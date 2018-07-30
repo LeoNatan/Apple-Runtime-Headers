@@ -12,7 +12,6 @@
     _Bool _preventOpeningSafari;
 }
 
-+ (void)_setSharedCapabilities:(id)arg1;
 + (id)sharedCapabilities;
 @property(nonatomic) _Bool preventOpeningSafari; // @synthesize preventOpeningSafari=_preventOpeningSafari;
 @property(nonatomic) _Bool preventURLDataDetection; // @synthesize preventURLDataDetection=_preventURLDataDetection;

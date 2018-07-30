@@ -6,19 +6,19 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class NSString;
+@class CPLScopedIdentifier, NSString;
 
 @protocol CPLEngineIDMappingImplementation <CPLEngineStorageImplementation>
-- (BOOL)resetWithError:(id *)arg1;
-- (BOOL)resetAllFinalCloudIdentifiersWithError:(id *)arg1;
-- (BOOL)addAddEventForRecordWithLocalIdentifier:(NSString *)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
-- (BOOL)addDeleteEventForRecordWithLocalIdentifier:(NSString *)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
-- (BOOL)removeMappingForCloudIdentifier:(NSString *)arg1 error:(id *)arg2;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (BOOL)resetAllFinalCloudIdentifiersForScopeWithIdentifier:(NSString *)arg1 error:(id *)arg2;
+- (BOOL)addAddEventForRecordWithLocalScopedIdentifier:(CPLScopedIdentifier *)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)addDeleteEventForRecordWithLocalScopedIdentifier:(CPLScopedIdentifier *)arg1 direction:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)removeMappingForCloudScopedIdentifier:(CPLScopedIdentifier *)arg1 error:(id *)arg2;
 - (BOOL)hasPendingIdentifiers;
-- (BOOL)markAllPendingIdentifiersAsFinalWithError:(id *)arg1;
-- (BOOL)setFinalCloudIdentifier:(NSString *)arg1 forPendingCloudIdentifier:(NSString *)arg2 error:(id *)arg3;
-- (BOOL)addCloudIdentifier:(NSString *)arg1 forLocalIdentifier:(NSString *)arg2 isFinal:(BOOL)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
-- (NSString *)localIdentifierForCloudIdentifier:(NSString *)arg1 isFinal:(char *)arg2;
-- (NSString *)cloudIdentifierForLocalIdentifier:(NSString *)arg1 isFinal:(char *)arg2;
+- (BOOL)markAllPendingIdentifiersForScopeWithIdentifier:(NSString *)arg1 asFinalWithError:(id *)arg2;
+- (BOOL)setFinalCloudScopedIdentifier:(CPLScopedIdentifier *)arg1 forPendingCloudScopedIdentifier:(CPLScopedIdentifier *)arg2 error:(id *)arg3;
+- (BOOL)addCloudScopedIdentifier:(CPLScopedIdentifier *)arg1 forLocalScopedIdentifier:(CPLScopedIdentifier *)arg2 isFinal:(BOOL)arg3 direction:(unsigned long long)arg4 error:(id *)arg5;
+- (CPLScopedIdentifier *)localScopedIdentifierForCloudScopedIdentifier:(CPLScopedIdentifier *)arg1 isFinal:(char *)arg2;
+- (CPLScopedIdentifier *)cloudScopedIdentifierForLocalScopedIdentifier:(CPLScopedIdentifier *)arg1 isFinal:(char *)arg2;
 @end
 

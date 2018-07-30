@@ -13,7 +13,10 @@
 @interface AWDNFCDeviceExceptionStatistic : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;
+    unsigned int _failForwardRestoreAttemptFailureCount;
+    unsigned int _failForwardState;
     unsigned int _hwCount;
+    unsigned int _loadStackFirmwareRestoreRetryCount;
     unsigned int _mwCount;
     unsigned int _pllUnlock;
     unsigned int _pllUnlockDuringPMICPowerCycle;
@@ -32,7 +35,10 @@
     NSData *_uuidReference;
     struct {
         unsigned int timestamp:1;
+        unsigned int failForwardRestoreAttemptFailureCount:1;
+        unsigned int failForwardState:1;
         unsigned int hwCount:1;
+        unsigned int loadStackFirmwareRestoreRetryCount:1;
         unsigned int mwCount:1;
         unsigned int pllUnlock:1;
         unsigned int pllUnlockDuringPMICPowerCycle:1;
@@ -51,6 +57,9 @@
     } _has;
 }
 
+@property(nonatomic) unsigned int failForwardState; // @synthesize failForwardState=_failForwardState;
+@property(nonatomic) unsigned int failForwardRestoreAttemptFailureCount; // @synthesize failForwardRestoreAttemptFailureCount=_failForwardRestoreAttemptFailureCount;
+@property(nonatomic) unsigned int loadStackFirmwareRestoreRetryCount; // @synthesize loadStackFirmwareRestoreRetryCount=_loadStackFirmwareRestoreRetryCount;
 @property(nonatomic) unsigned int readerModeTransceiveErrorCount; // @synthesize readerModeTransceiveErrorCount=_readerModeTransceiveErrorCount;
 @property(nonatomic) unsigned int readerModeDisconnectErrorCount; // @synthesize readerModeDisconnectErrorCount=_readerModeDisconnectErrorCount;
 @property(nonatomic) unsigned int readerModeConnectErrorCount; // @synthesize readerModeConnectErrorCount=_readerModeConnectErrorCount;
@@ -78,6 +87,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasFailForwardState;
+@property(nonatomic) BOOL hasFailForwardRestoreAttemptFailureCount;
+@property(nonatomic) BOOL hasLoadStackFirmwareRestoreRetryCount;
 @property(nonatomic) BOOL hasReaderModeTransceiveErrorCount;
 @property(nonatomic) BOOL hasReaderModeDisconnectErrorCount;
 @property(nonatomic) BOOL hasReaderModeConnectErrorCount;

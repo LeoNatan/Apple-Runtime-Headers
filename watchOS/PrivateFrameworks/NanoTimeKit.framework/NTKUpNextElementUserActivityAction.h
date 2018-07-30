@@ -17,11 +17,6 @@
 @property(readonly, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(readonly, copy, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 - (void).cxx_destruct;
-- (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)_perform;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUserActivity:(id)arg1 applicationID:(id)arg2;
 
 @end

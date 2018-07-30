@@ -15,6 +15,7 @@
 }
 
 + (id)nextFireDateForDate:(id)arg1;
+- (void).cxx_destruct;
 - (void)updateAssetTimer;
 - (void)assetTimerFired;
 - (void)invalidate;

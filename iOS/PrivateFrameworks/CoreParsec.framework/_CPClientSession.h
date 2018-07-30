@@ -13,13 +13,6 @@
 
 @interface _CPClientSession : PBCodable <_CPClientSession, NSSecureCoding>
 {
-    struct {
-        unsigned int sessionStart:1;
-        unsigned int previousSessionEndReason:1;
-        unsigned int firstUseOfTheDay:1;
-        unsigned int firstUseDate:1;
-        unsigned int removeTimestamps:1;
-    } _has;
     _Bool _firstUseOfTheDay;
     _Bool _removeTimestamps;
     int _previousSessionEndReason;
@@ -28,12 +21,12 @@
     NSDictionary *_resourceVersions;
     double _sessionStart;
     double _firstUseDate;
-    NSString *_version;
+    NSString *_parsecDeveloperID;
     NSArray *_feedbacks;
 }
 
 @property(copy, nonatomic) NSArray *feedbacks; // @synthesize feedbacks=_feedbacks;
-@property(copy, nonatomic) NSString *version; // @synthesize version=_version;
+@property(copy, nonatomic) NSString *parsecDeveloperID; // @synthesize parsecDeveloperID=_parsecDeveloperID;
 @property(nonatomic) _Bool removeTimestamps; // @synthesize removeTimestamps=_removeTimestamps;
 @property(nonatomic) double firstUseDate; // @synthesize firstUseDate=_firstUseDate;
 @property(nonatomic) _Bool firstUseOfTheDay; // @synthesize firstUseOfTheDay=_firstUseOfTheDay;
@@ -56,16 +49,8 @@
 - (void)addFeedback:(id)arg1;
 - (void)clearFeedback;
 - (void)setFeedback:(id)arg1;
-@property(readonly, nonatomic) _Bool hasVersion;
-@property(readonly, nonatomic) _Bool hasRemoveTimestamps;
-@property(readonly, nonatomic) _Bool hasFirstUseDate;
-@property(readonly, nonatomic) _Bool hasFirstUseOfTheDay;
-@property(readonly, nonatomic) _Bool hasPreviousSessionEndReason;
-@property(readonly, nonatomic) _Bool hasSessionStart;
 - (void)setResourceVersions:(id)arg1 forKey:(id)arg2;
 - (_Bool)getResourceVersions:(id *)arg1 forKey:(id)arg2;
-@property(readonly, nonatomic) _Bool hasUserGuidString;
-@property(readonly, nonatomic) _Bool hasAgent;
 - (_Bool)requiresQueryId;
 
 // Remaining properties

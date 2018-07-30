@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldAdjustForStrokeWidthForCollabCursor;
 - (struct CGPoint)getControlKnobPosition:(unsigned long long)arg1;
 @property(readonly, nonatomic, getter=isStraightLine) _Bool straightLine;
+- (struct CGSize)minimumSize;
 - (_Bool)shouldDisplayGuides;
 - (struct CGPoint)unclippedTailPoint;
 - (struct CGPoint)unclippedHeadPoint;

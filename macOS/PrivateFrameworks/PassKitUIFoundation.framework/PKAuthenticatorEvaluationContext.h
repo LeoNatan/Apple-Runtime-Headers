@@ -13,6 +13,7 @@
 @interface PKAuthenticatorEvaluationContext : NSObject <LAUIDelegate>
 {
     PKAuthenticator *_authenticator;
+    double _evaluationMinimumTime;
     CDUnknownBlockType _completionHandler;
     double _touchIDBeginTime;
     NSObject<OS_dispatch_source> *_liftFingerTimeout;
@@ -65,6 +66,7 @@
 - (void)_dismissAuthenticatorViewOfType:(long long)arg1;
 - (unsigned long long)_didPresentFlagForAuthenticatorViewType:(long long)arg1 custom:(BOOL)arg2;
 - (unsigned long long)_presentationFlagForAuthenticatorViewType:(long long)arg1;
+- (void)evaluateWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)accessLAContext:(CDUnknownBlockType)arg1;
 - (void)_createContextWithExternalizedContext:(id)arg1;
 - (void)fallbackToPasscode;

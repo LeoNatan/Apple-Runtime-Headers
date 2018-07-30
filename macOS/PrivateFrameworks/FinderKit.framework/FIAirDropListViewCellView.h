@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     struct TKeyValueBinder _indeterminateProgressBinder;
     struct TKeyValueBinder _contactBinder;
     struct TKeyValueBinder _personNameBinder;
-    struct TNSRef<CNAvatarViewController *, void> _avatarViewController;
+    struct TNSRef<CNAvatarViewController, void> _avatarViewController;
     _Bool _isCancellable;
     NSLayoutConstraint *_cancelButtonWidthConstraint;
     double _defaultCancelButtonWidth;

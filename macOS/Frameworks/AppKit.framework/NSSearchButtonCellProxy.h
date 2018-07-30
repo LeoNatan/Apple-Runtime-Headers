@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAccessibilityReparentingCellProxy.h>
 
+__attribute__((visibility("hidden")))
 @interface NSSearchButtonCellProxy : NSAccessibilityReparentingCellProxy
 {
 }

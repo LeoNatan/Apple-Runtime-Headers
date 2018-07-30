@@ -41,9 +41,11 @@
 @property(readonly, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 - (void).cxx_destruct;
+- (long)verifyKeys;
 - (void)removeFromKeychain;
 - (struct __SecIdentity *)copyIdentity;
 @property(readonly, nonatomic) _Bool needsRenewal;
+@property(readonly, nonatomic) _Bool isInvalid;
 @property(readonly, nonatomic) _Bool certificateExpired;
 -     // Error parsing type: ^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v}8@0:4, name: copyPrivateKey
 - (struct __SecCertificate *)copyIntermediateCertificate;

@@ -9,7 +9,7 @@
 #import "AKAppleIDAuthenticationUIProvider.h"
 #import "AuthWebViewDelegate.h"
 
-@class AKAuthWebTabView, AKAuthenticationPromptController, AKSecondFactorCodeEntryController, NSImage, NSString, NSView, NSWindow;
+@class AKAuthWebTabView, AKAuthenticationPromptController, AKNativeAccountRecoveryController, AKSecondFactorCodeEntryController, NSImage, NSString, NSView, NSWindow;
 
 @interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AuthWebViewDelegate, AKAppleIDAuthenticationUIProvider>
 {
@@ -17,6 +17,7 @@
     AKAuthWebTabView *_webViewUI;
     AKSecondFactorCodeEntryController *_secondFactorPrompt;
     int _numberOfAttempts;
+    AKNativeAccountRecoveryController *_nativeRecoveryController;
     BOOL _makeSheetCritical;
     BOOL _showRememberPasswordCheckbox;
     BOOL _rememberPassswordCheckedByDefault;
@@ -36,10 +37,12 @@
     NSString *_initialError;
     NSString *_windowTitle;
     id <AKAppleIDAuthenticationInAppContextAlertDelegate> _alertDelegate;
+    id <CDPStateUIProvider> _cdpUiProvider;
     id <AKAppleIDAuthenticationInAppContextPasswordDelegate> __passwordDelegate;
 }
 
 @property(nonatomic, setter=_setPasswordDelegate:) __weak id <AKAppleIDAuthenticationInAppContextPasswordDelegate> _passwordDelegate; // @synthesize _passwordDelegate=__passwordDelegate;
+@property(retain, setter=_setCdpUiProvider:) id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextAlertDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
 @property BOOL alwaysShowUsernameField; // @synthesize alwaysShowUsernameField=_alwaysShowUsernameField;
 @property(retain) NSString *windowTitle; // @synthesize windowTitle=_windowTitle;
@@ -64,7 +67,6 @@
 - (void)_updateUI:(CDUnknownBlockType)arg1;
 - (void)showCDPView:(id)arg1 modalForWindow:(id)arg2 withController:(id)arg3;
 - (void)endCDPView;
-- (id)cdpUiProvider;
 - (void)_dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentIDPProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -85,6 +87,8 @@
 - (void)_contextWillDismissLoginAlertController;
 - (void)_contextDidPresentLoginController;
 - (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)dismissNativeRecoveryUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)presentNativeRecoveryUIWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 

@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class ChatItemDOMProvider, DOMDocument, DOMHTMLBodyElement, FileTransferDOMProvider, FileTransferEventHandler, IMMessage, IMTranscriptChatItem, NSMutableDictionary, TranscriptDOMEventHandler, TranscriptStyleController;
+@class ChatItemDOMProvider, DOMDocument, DOMHTMLBodyElement, FileTransferDOMProvider, FileTransferEventHandler, IMMessage, IMTranscriptChatItem, NSAppearance, NSMutableDictionary, TranscriptDOMEventHandler, TranscriptStyleController;
 
 @interface TranscriptDOMController : NSObject
 {
     BOOL _isAnimatingReceipt;
     BOOL _allowsPlugins;
+    id <TranscriptDOMControllerDelegate> _delegate;
     DOMDocument *_DOM;
     DOMHTMLBodyElement *_body;
     ChatItemDOMProvider *_domProvider;
@@ -36,7 +37,11 @@
 @property(retain, nonatomic) ChatItemDOMProvider *domProvider; // @synthesize domProvider=_domProvider;
 @property(retain, nonatomic) DOMHTMLBodyElement *body; // @synthesize body=_body;
 @property(retain, nonatomic) DOMDocument *DOM; // @synthesize DOM=_DOM;
+@property(nonatomic) __weak id <TranscriptDOMControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSAppearance *effectiveAppearance;
+- (void)visitAllDOMElements:(CDUnknownBlockType)arg1;
+- (void)_visitDOMNode:(id)arg1 stop:(char *)arg2 visitor:(CDUnknownBlockType)arg3;
 - (struct CGRect)rectOfChatItemWithGUID:(id)arg1;
 - (void)dateFormatDidChange;
 - (void)emptyBody;

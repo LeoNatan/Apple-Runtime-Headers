@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, OSIARemoteDiscBrowser, PKDownloader, PKMutableProduct, PKPackageSourceManager;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, PKDownloader, PKMutableProduct, PKPackageSourceManager, SKDisk;
 
 @interface OSProductManager : NSObject
 {
@@ -19,14 +19,16 @@
     id _downloaderDelegate;
     PKDownloader *_downloader;
     NSMutableDictionary *_retryCountByPackageRef;
-    id _odsConnectDelegate;
-    OSIARemoteDiscBrowser *_odsConnector;
     NSString *_seedingProgramForTarget;
+    SKDisk *_productDisk;
+    NSString *_productPath;
 }
 
 + (id)defaultProductManager;
+@property(retain) NSString *productPath; // @synthesize productPath=_productPath;
+@property(retain) SKDisk *productDisk; // @synthesize productDisk=_productDisk;
 @property(retain) NSString *seedingProgramForTarget; // @synthesize seedingProgramForTarget=_seedingProgramForTarget;
-- (double)estimatedInstallTimeFromNow;
+- (void).cxx_destruct;
 - (BOOL)flushAttributesDictionary;
 - (id)attributesDictionary;
 - (BOOL)packageReferenceHasValidInstallDistance:(id)arg1;
@@ -41,7 +43,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)downloadPackagesToMutableProduct:(id)arg1 withDelegate:(id)arg2;
 - (BOOL)removeMutableProduct;
-- (void)setShouldNotFailInstallForStaleAutomationFile:(BOOL)arg1;
+- (BOOL)pastPointOfNoReturn;
+- (void)setPastPointOfNoReturn:(BOOL)arg1;
 - (id)automationFilePath;
 - (id)automationFilePathIfSafe;
 - (BOOL)automationFileIsSafeWithError:(id *)arg1;
@@ -55,7 +58,6 @@
 - (id)mutableProduct;
 - (id)sourceManager;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 - (BOOL)packageDownloader:(id)arg1 shouldRetryFailedPackageReference:(id)arg2 previousError:(id)arg3;
 - (void)packageDownloader:(id)arg1 didFinishPackageReference:(id)arg2 localPackageReference:(id)arg3;
@@ -63,11 +65,6 @@
 - (void)packageDownloader:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)packageDownloader:(id)arg1 didDownloadInvalidDataForPackageReference:(id)arg2;
 - (void)packageDownloader:(id)arg1 didFailOnPackageReference:(id)arg2 withError:(id)arg3;
-- (void)remoteDiscMountFailed:(id)arg1;
-- (void)remoteDisc:(id)arg1 didConnectWithMountPoint:(id)arg2;
-- (void)remoteDiscIsMounting:(id)arg1;
-- (void)remoteDiscRequestDenied:(id)arg1;
-- (void)remoteDiscDidAskToUse:(id)arg1;
 
 @end
 

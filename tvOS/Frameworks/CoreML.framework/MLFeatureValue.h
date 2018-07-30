@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class MLMultiArray, NSDictionary, NSString;
+@class MLMultiArray, MLSequence, NSDictionary, NSString;
 
 @interface MLFeatureValue : NSObject <NSCopying>
 {
@@ -19,7 +19,10 @@
 }
 
 + (id)featureValueOfType:(long long)arg1 fromObject:(id)arg2 error:(id *)arg3;
++ (id)featureValueWithInt64KeyDictionary:(id)arg1;
++ (id)featureValueWithStringKeyDictionary:(id)arg1;
 + (id)featureValueWithDictionary:(id)arg1 error:(id *)arg2;
++ (id)featureValueWithSequence:(id)arg1;
 + (id)featureValueWithMultiArray:(id)arg1;
 + (id)featureValueWithPixelBuffer:(struct __CVBuffer *)arg1;
 + (id)featureValueWithString:(id)arg1;
@@ -31,11 +34,13 @@
 @property(readonly, nonatomic, getter=isUndefined) _Bool undefined; // @synthesize undefined=_undefined;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (id)getFeatureSize:(id *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqualToFeatureValue:(id)arg1;
 - (id)description;
+@property(readonly, nonatomic) MLSequence *sequenceValue;
 @property(readonly, nonatomic) MLMultiArray *multiArrayValue;
 @property(readonly, nonatomic) struct __CVBuffer *imageBufferValue;
 @property(readonly, nonatomic) NSDictionary *dictionaryValue;

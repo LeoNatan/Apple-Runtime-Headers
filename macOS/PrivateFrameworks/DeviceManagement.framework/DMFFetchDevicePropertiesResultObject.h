@@ -6,7 +6,7 @@
 
 #import "CATTaskResultObject.h"
 
-@class NSDictionary;
+@class DMFDevice, NSDictionary;
 
 @interface DMFFetchDevicePropertiesResultObject : CATTaskResultObject
 {
@@ -22,6 +22,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (Class)classForCoder;
+@property(readonly, nonatomic) DMFDevice *device;
 - (id)valueForPropertyKey:(id)arg1 error:(id *)arg2;
 - (id)initWithValuesByPropertyKey:(id)arg1 errorsByPropertyKey:(id)arg2;
 

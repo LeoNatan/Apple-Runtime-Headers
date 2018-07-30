@@ -17,10 +17,11 @@ __attribute__((visibility("hidden")))
 
 + (id)_trackingRectAroundPoint:(struct CGPoint)arg1 trackingRectSize:(struct CGSize)arg2;
 + (id)trackedCorners;
++ (Class)trackerObservationClass;
 - (void).cxx_destruct;
 - (id)_convertCornerObservationsToRectangleObservation:(id)arg1 error:(id *)arg2;
 - (id)_parseInputObservations:(id)arg1 imageBuffer:(id)arg2 error:(id *)arg3;
-@property(readonly) _Bool isTracking;
+- (_Bool)isTracking;
 - (_Bool)reset:(id *)arg1;
 - (id)trackInFrame:(id)arg1 error:(id *)arg2;
 - (id)setTrackedObjects:(id)arg1 inFrame:(id)arg2 error:(id *)arg3;

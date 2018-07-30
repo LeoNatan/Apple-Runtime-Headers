@@ -10,14 +10,14 @@ __attribute__((visibility("hidden")))
 @interface FI_IPropertySizeExtractor : FI_IPropertyValueExtractor
 {
     struct TFENodeVector _nodesToSize;
-    struct map<TFENode, TNSRef<NSMutableDictionary *, void>, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<NSMutableDictionary *, void>>>> _nodesAndSizeMap;
+    struct map<TFENode, TNSRef<NSMutableDictionary, void>, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<NSMutableDictionary, void>>>> _nodesAndSizeMap;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)flush;
 - (_Bool)updateNeededWithUpdateList:(const vector_614ab7ad *)arg1;
-- (_Bool)updateNeededWithChangedMap:(const map_3ec01adc *)arg1;
+- (_Bool)updateNeededWithChangedMap:(const map_253f12d2 *)arg1;
 - (id)value;
 - (_Bool)isWaitingForPendingNode:(const struct TFENode *)arg1;
 - (_Bool)isWaitingForPendingNodes;
@@ -27,8 +27,10 @@ __attribute__((visibility("hidden")))
 - (id)computeValue;
 - (int)extractValueFromNode:(const struct TFENode *)arg1;
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
+-     // Error parsing type: v32@0:8r^{TFENodeVector=^{TFENode}^{TFENode}{__compressed_pair<TFENode *, std::__1::allocator<TFENode> >=^{TFENode}}}16r^{atomic<bool>=AB}24, name: prefetchValueOnSecondaryThread:cancelled:
 - (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 - (_Bool)needsUpdateForProperty:(unsigned int)arg1;
+- (id)init;
 
 @end
 

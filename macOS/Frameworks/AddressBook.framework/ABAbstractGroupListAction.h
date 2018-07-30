@@ -10,7 +10,6 @@
 
 @class ABGroupListController, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABAbstractGroupListAction : NSObject <ABUserInterfaceAction>
 {
     ABGroupListController *_groupListController;

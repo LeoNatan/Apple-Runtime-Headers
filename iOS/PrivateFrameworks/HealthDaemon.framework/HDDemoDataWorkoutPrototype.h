@@ -29,6 +29,7 @@
 
 + (id)thirdPartyWorkoutPrototype;
 + (id)yogaPrototype;
++ (id)hikingPrototype;
 + (id)walkingPrototype;
 + (id)swimmingPrototype;
 + (id)runningPrototype;

@@ -6,41 +6,27 @@
 
 #import "NSObject.h"
 
-@class NSCountedSet, NSHashTable;
+@class NSMapTable;
 
 __attribute__((visibility("hidden")))
 @interface NSDisplayCycle : NSObject
 {
-    NSHashTable *_needsUpdateConstraints;
-    NSHashTable *_needsLayout;
-    NSHashTable *_needsDisplay;
-    NSHashTable *_needsUpdateStructuralRegions;
-    NSHashTable *_needsUpdateCursor;
-    NSCountedSet *_didUpdateConstraints;
-    NSCountedSet *_didLayout;
-    NSCountedSet *_didDisplay;
-    NSCountedSet *_didUpdateStructuralRegions;
-    NSCountedSet *_didUpdateCursor;
-    long long _interCycleUpdateCount;
-    void *_transactionSeedKey;
-    unsigned int _did1:1;
-    unsigned int _did2:1;
+    struct _opaque_pthread_mutex_t _mutex;
+    NSMapTable *_observersByPhase;
+    unsigned int _seed;
+    unsigned long long _changeCount;
 }
 
++ (BOOL)currentDisplayCycleHasIdentifier:(unsigned long long)arg1;
++ (BOOL)currentDisplayCycleContainsObserver:(id)arg1;
 + (id)currentDisplayCycle;
-+ (void)initialize;
-- (void)addUpdateCursorObserver:(id)arg1;
-- (BOOL)observerNeedsUpdateCursor:(id)arg1;
-- (void)addUpdateStructuralRegionsObserver:(id)arg1;
-- (BOOL)observerNeedsUpdateStructuralRegions:(id)arg1;
-- (void)addDisplayObserver:(id)arg1;
-- (BOOL)observerNeedsDisplay:(id)arg1;
-- (void)addLayoutObserver:(id)arg1;
-- (BOOL)observerNeedsLayout:(id)arg1;
-- (void)addUpdateConstraintsObserver:(id)arg1;
-- (BOOL)observerNeedsUpdateConstraints:(id)arg1;
+@property(readonly) unsigned long long identifier;
+- (void)addObserver:(id)arg1;
+- (BOOL)containsObserver:(id)arg1;
+- (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)initWithTransactionSeed:(unsigned int)arg1;
 
 @end
 

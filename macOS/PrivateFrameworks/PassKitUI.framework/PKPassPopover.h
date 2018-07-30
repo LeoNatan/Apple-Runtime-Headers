@@ -35,6 +35,7 @@
 - (void).cxx_destruct;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;
+- (void)passViewer:(id)arg1 didChangePass:(struct CGSize)arg2;
 - (void)passViewer:(id)arg1 didAddToPassbook:(id)arg2;
 - (void)passViewer:(id)arg1 closeClicked:(id)arg2;
 - (void)_closePopover;

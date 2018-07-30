@@ -7,13 +7,12 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@class ARCamera, ARFaceData, ARFrameTimingData, ARLightEstimate, ARPlaneData, ARPointCloud, ARWorldTrackingErrorData, AVDepthData, NSArray, NSDate;
+@class ARCamera, ARFaceData, ARFrameTimingData, ARLightEstimate, ARPointCloud, ARRawSceneUnderstandingData, ARWorldTrackingErrorData, ARWorldTrackingState, AVDepthData, NSArray, NSDate, NSDictionary;
 
-@interface ARFrame : NSObject <NSCopying>
+@interface ARFrame : NSObject <NSSecureCoding, NSCopying>
 {
-    ARPlaneData *_cachedHorizontalPlaneData;
-    ARPlaneData *_cachedVerticalPlaneData;
     unsigned long long _transformFlags;
     _Bool _shouldRestrictFrameRate;
     double _timestamp;
@@ -23,14 +22,19 @@
     ARCamera *_camera;
     NSArray *_anchors;
     ARLightEstimate *_lightEstimate;
+    long long _worldMappingStatus;
+    double _currentCaptureTimestamp;
     ARPointCloud *_featurePoints;
     ARPointCloud *_referenceFeaturePoints;
     NSArray *_cachedPointClouds;
     long long _worldAlignment;
     ARFrameTimingData *_timingData;
-    ARWorldTrackingErrorData *_trackingErrorData;
+    ARWorldTrackingErrorData *_worldTrackingErrorData;
+    NSDictionary *_worldTrackingStateDetails;
+    ARWorldTrackingState *_worldTrackingState;
     long long _renderFramesPerSecond;
     NSDate *_captureDate;
+    ARRawSceneUnderstandingData *_rawSceneUnderstandingData;
     ARFaceData *_faceData;
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginTransform
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginDelta
@@ -38,11 +42,15 @@
     // Error parsing type: {?="columns"[4]}, name: _worldAlignmentTransform
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) ARFaceData *faceData; // @synthesize faceData=_faceData;
+@property(retain, nonatomic) ARRawSceneUnderstandingData *rawSceneUnderstandingData; // @synthesize rawSceneUnderstandingData=_rawSceneUnderstandingData;
 @property(retain, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
 @property(nonatomic) _Bool shouldRestrictFrameRate; // @synthesize shouldRestrictFrameRate=_shouldRestrictFrameRate;
 @property(nonatomic) long long renderFramesPerSecond; // @synthesize renderFramesPerSecond=_renderFramesPerSecond;
-@property(retain, nonatomic) ARWorldTrackingErrorData *trackingErrorData; // @synthesize trackingErrorData=_trackingErrorData;
+@property(retain, nonatomic) ARWorldTrackingState *worldTrackingState; // @synthesize worldTrackingState=_worldTrackingState;
+@property(copy, nonatomic) NSDictionary *worldTrackingStateDetails; // @synthesize worldTrackingStateDetails=_worldTrackingStateDetails;
+@property(retain, nonatomic) ARWorldTrackingErrorData *worldTrackingErrorData; // @synthesize worldTrackingErrorData=_worldTrackingErrorData;
 @property(retain, nonatomic) ARFrameTimingData *timingData; // @synthesize timingData=_timingData;
 @property(nonatomic) long long worldAlignment; // @synthesize worldAlignment=_worldAlignment;
 // Error parsing type for property worldAlignmentTransform:
@@ -60,6 +68,8 @@
 @property(retain, nonatomic) NSArray *cachedPointClouds; // @synthesize cachedPointClouds=_cachedPointClouds;
 @property(retain, nonatomic) ARPointCloud *referenceFeaturePoints; // @synthesize referenceFeaturePoints=_referenceFeaturePoints;
 @property(retain, nonatomic) ARPointCloud *featurePoints; // @synthesize featurePoints=_featurePoints;
+@property(readonly, nonatomic) double currentCaptureTimestamp; // @synthesize currentCaptureTimestamp=_currentCaptureTimestamp;
+@property(nonatomic) long long worldMappingStatus; // @synthesize worldMappingStatus=_worldMappingStatus;
 @property(retain, nonatomic) ARLightEstimate *lightEstimate; // @synthesize lightEstimate=_lightEstimate;
 @property(copy, nonatomic) NSArray *anchors; // @synthesize anchors=_anchors;
 @property(readonly, copy, nonatomic) ARCamera *camera; // @synthesize camera=_camera;
@@ -69,13 +79,15 @@
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)_hitTestEstimatedPlanesFromOrigin:(long long)arg1 withDirection:planeAlignment: /* Error: Ran out of types for this method. */;
 - (id)_horizontalPlaneEstimateFromFeaturePoint:fromOrigin:withDirection: /* Error: Ran out of types for this method. */;
 - (id)_hitTestFromOrigin:(unsigned long long)arg1 withDirection:types: /* Error: Ran out of types for this method. */;
--     // Error parsing type: {?=[4]}16@0:8, name: gravityAlignmentTransform
+-     // Error parsing type: {?=[4]}16@0:8, name: gravityAlignedReferenceOriginTransform
 - (_Bool)worldAlignmentTransformAvailable;
 - (_Bool)sessionOriginTransformAvailable;
 - (_Bool)referenceOriginDeltaAvailable;

@@ -6,71 +6,92 @@
 
 #import "HMFObject.h"
 
+#import "HMDBackingStoreModelBackedObjectProtocol.h"
+#import "HMDBackingStoreObjectProtocol.h"
+#import "HMDRemoteAddressable.h"
 #import "HMFLogging.h"
 #import "HMFMerging.h"
 #import "HMFObject.h"
 #import "NSSecureCoding.h"
 
-@class HMDAccount, HMDDeviceCapabilities, HMDHomeKitVersion, HMFProductInfo, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMDAccount, HMDDeviceCapabilities, HMDHomeKitVersion, HMFProductInfo, HMFUnfairLock, NSArray, NSSet, NSString, NSUUID;
 
-@interface HMDDevice : HMFObject <HMFObject, HMFLogging, HMFMerging, NSSecureCoding>
+@interface HMDDevice : HMFObject <HMFObject, HMFLogging, HMDBackingStoreObjectProtocol, HMDBackingStoreModelBackedObjectProtocol, HMDRemoteAddressable, HMFMerging, NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
+    NSSet *_handles;
+    _Bool _dirty;
+    _Bool _locallyTracked;
+    _Bool _cloudTracked;
     NSString *_name;
+    HMDAccount *_account;
     HMFProductInfo *_productInfo;
     HMDHomeKitVersion *_version;
     HMDDeviceCapabilities *_capabilities;
     NSUUID *_idsIdentifierHash;
-    NSUUID *_idsIdentifier;
-    NSString *_destination;
+    NSUUID *_modelIdentifier;
     NSUUID *_identifier;
-    HMDAccount *_account;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
-+ (id)idsIdentifierHashFromDevice:(id)arg1 error:(id *)arg2;
-+ (id)idsIdentifierHashFromDeviceUniqueIdentifier:(id)arg1 error:(id *)arg2;
-+ (id)identifierFromDeviceDestination:(id)arg1 error:(id *)arg2;
-+ (id)destinationForDevice:(id)arg1 service:(id)arg2;
-+ (id)deviceDestinationForDevice:(id)arg1 service:(id)arg2;
-+ (_Bool)isValidDestination:(id)arg1;
-+ (id)identifierFromDevice:(id)arg1 service:(id)arg2 error:(id *)arg3;
-+ (id)namespace;
++ (id)deviceWithHandle:(id)arg1;
 + (id)deviceWithDestination:(id)arg1;
-+ (id)currentDeviceWithIDSService:(id)arg1;
-+ (id)deviceDestinationForDestination:(id)arg1;
-+ (void)initialize;
-@property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(nonatomic) __weak HMDAccount *account; // @synthesize account=_account;
++ (id)destinationForDevice:(id)arg1 service:(id)arg2;
+@property(getter=isCloudTracked) _Bool cloudTracked; // @synthesize cloudTracked=_cloudTracked;
+@property(getter=isLocallyTracked) _Bool locallyTracked; // @synthesize locallyTracked=_locallyTracked;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) NSUUID *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 - (void).cxx_destruct;
+- (_Bool)isBackingStorageEqual:(id)arg1;
+- (id)modelBackedObjects;
+- (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+@property(readonly, nonatomic) NSUUID *modelParentIdentifier;
+- (void)__updateDeviceWithActions:(id)arg1;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)mergeObject:(id)arg1;
 - (id)logIdentifier;
-- (void)setDestination:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *destination; // @synthesize destination=_destination;
-@property(copy, setter=setIDSIdentifier:) NSUUID *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
+- (id)remoteDestinationString;
 @property(copy, setter=setIDSIdentifierHash:) NSUUID *idsIdentifierHash; // @synthesize idsIdentifierHash=_idsIdentifierHash;
-@property(readonly, getter=isCurrentDevice) _Bool currentDevice;
+@property(getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
 @property(copy) HMDDeviceCapabilities *capabilities; // @synthesize capabilities=_capabilities;
-@property(copy, nonatomic) HMDHomeKitVersion *version; // @synthesize version=_version;
+- (void)updateWithDevice:(id)arg1;
+- (void)updateVersion:(id)arg1;
+- (void)setVersion:(id)arg1;
+@property(readonly, copy) HMDHomeKitVersion *version; // @synthesize version=_version;
 @property(copy) HMFProductInfo *productInfo; // @synthesize productInfo=_productInfo;
+@property __weak HMDAccount *account; // @synthesize account=_account;
 - (void)setName:(id)arg1;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (_Bool)bsoIsEqual:(id)arg1;
+@property(readonly, copy) NSUUID *idsIdentifier;
+- (id)destination;
+- (void)__handleAccountHandleUpdated:(id)arg1;
+- (void)setHandles:(id)arg1;
+- (id)globalHandles;
+- (id)localHandles;
+- (id)handles;
+- (_Bool)isRelatedToDevice:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-@property(readonly, copy) NSString *propertyDescription;
-- (id)shortDescription;
-- (id)initWithIdentifier:(id)arg1 idsIdentifier:(id)arg2 idsIdentifierHash:(id)arg3 name:(id)arg4 productInfo:(id)arg5 destination:(id)arg6 version:(id)arg7 capabilities:(id)arg8;
-- (id)initWithService:(id)arg1 device:(id)arg2;
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly, copy) NSString *shortDescription;
+- (id)initWithObjectModel:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 handles:(id)arg2 name:(id)arg3 productInfo:(id)arg4 version:(id)arg5 capabilities:(id)arg6;
 - (id)init;
+- (id)deviceForIDSService:(id)arg1;
+- (id)initWithService:(id)arg1 device:(id)arg2;
+@property(readonly, copy) NSArray *identities;
+@property(readonly, getter=isCurrentDevice) _Bool currentDevice;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *propertyDescription;
 @property(readonly) Class superclass;
 
 @end

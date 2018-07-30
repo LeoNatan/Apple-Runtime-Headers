@@ -15,19 +15,13 @@
     BOOL isSecureTokenAuth;
     BOOL _extraInfoIncludeFileVaultWarning;
     BOOL _secureTokenAuth;
-    BOOL _passwordIsTemporary;
-    BOOL _allowFileVaultUnlock;
     NSString *relativeHomeDir;
     SMSystem_Client *sourceSystem;
-    NSString *_clearPassword;
 }
 
 + (id)keyPathsForValuesAffectingExtraInfoColor;
 + (id)keyPathsForValuesAffectingDisplayExtraInfo;
 + (id)interestedDaemonKeys;
-@property BOOL allowFileVaultUnlock; // @synthesize allowFileVaultUnlock=_allowFileVaultUnlock;
-@property BOOL passwordIsTemporary; // @synthesize passwordIsTemporary=_passwordIsTemporary;
-@property(retain) NSString *clearPassword; // @synthesize clearPassword=_clearPassword;
 @property(readonly, getter=isSecureTokenAuth) BOOL secureTokenAuth; // @synthesize secureTokenAuth=_secureTokenAuth;
 @property BOOL extraInfoIncludeFileVaultWarning; // @synthesize extraInfoIncludeFileVaultWarning=_extraInfoIncludeFileVaultWarning;
 @property BOOL isSecureTokenAuth; // @synthesize isSecureTokenAuth;

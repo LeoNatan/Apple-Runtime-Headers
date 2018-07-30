@@ -19,11 +19,13 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_setVolumeTimer;
     NSObject<OS_dispatch_source> *_setHapticTimer;
     NSObject<OS_dispatch_source> *_setProminentHapticTimer;
+    NSObject<OS_dispatch_source> *_setHapticStateTimer;
     NACXPCClient *_xpcClient;
     _Bool _isObserving;
     float _lastReceivedVolumeValue;
     float _lastRecievedHapticIntensity;
     _Bool _lastReceivedProminentHapticEnabled;
+    int _lastReceivedHapticState;
     NSNumber *_volumeValue;
     NSNumber *_hapticIntensity;
     _Bool _volumeControlAvailable;
@@ -33,8 +35,10 @@ __attribute__((visibility("hidden")))
     _Bool _prominentHapticEnabled;
     id <NACVolumeControllerDelegate> _delegate;
     float _EUVolumeLimit;
+    int _hapticState;
 }
 
+@property(nonatomic) int hapticState; // @synthesize hapticState=_hapticState;
 @property(nonatomic, getter=isProminentHapticEnabled) _Bool prominentHapticEnabled; // @synthesize prominentHapticEnabled=_prominentHapticEnabled;
 @property(nonatomic, getter=isSystemMuted) _Bool systemMuted; // @synthesize systemMuted=_systemMuted;
 @property(readonly, nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
@@ -45,10 +49,12 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)_cancelSetHapticStateTimer;
 - (void)_cancelSetProminentHapticTimer;
 - (void)_cancelSetHapticTimer;
 - (void)_cancelSetVolumeTimer;
 - (id)_scheduleTimeoutWithBlock:(CDUnknownBlockType)arg1;
+- (void)_notifyDelegateHapticStateChanged;
 - (void)_notifyDelegateProminentHapticStateChanged;
 - (void)_notifyDelegateSystemMutedStateChanged;
 - (void)_notifyDelegateHapticChanged;
@@ -56,11 +62,13 @@ __attribute__((visibility("hidden")))
 - (void)_volumeWarningDidChange;
 - (void)_EUVolumeLimitDidChange;
 - (void)_systemMutedStateDidChange;
+- (void)_hapticStateDidChange;
 - (void)_prominentHapticStateDidChange;
 - (void)_hapticIntensityDidChange;
 - (void)_mutedStateDidChange;
 - (void)_volumeControlAvailabilityDidChange;
 - (void)_volumeValueDidChange;
+- (void)_hapticStateTimeout;
 - (void)_hapticTimeout;
 - (void)_setHapticIntensity:(id)arg1;
 - (void)_prominentHapticTimeout;

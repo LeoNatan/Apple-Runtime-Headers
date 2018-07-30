@@ -8,6 +8,7 @@
 
 @class NSArray, _NSTreeNodeObservingTracker;
 
+__attribute__((visibility("hidden")))
 @interface NSBrowserBinder : NSBinder
 {
     struct ___browserBinderFlags {

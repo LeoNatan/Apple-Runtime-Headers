@@ -10,18 +10,22 @@
 
 @interface NTKZeusHourLabelCollectionNode : NTKHourLabelCollectionNode
 {
+    unsigned int _bleed;
+    struct CGPoint _childrenDefaultPositions[12];
     unsigned int _density;
     NSArray *_visibleNodesForCurrentDensity;
 }
 
++ (id)hours12ZeusWithFont:(int)arg1 bleed:(unsigned int)arg2 forDevice:(id)arg3;
 @property(retain, nonatomic) NSArray *visibleNodesForCurrentDensity; // @synthesize visibleNodesForCurrentDensity=_visibleNodesForCurrentDensity;
 @property(nonatomic) unsigned int density; // @synthesize density=_density;
 - (void).cxx_destruct;
 - (_Bool)_hourNumberAtIndex:(unsigned int)arg1 isVisibleWithDensity:(unsigned int)arg2;
 - (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;
+- (struct CGPoint)childDefaultPositionForIndex:(int)arg1;
 - (void)_setupPositions;
 - (void)createSubNodes;
-- (id)initWithFont:(int)arg1;
+- (id)initWithFont:(int)arg1 bleed:(unsigned int)arg2 forDevice:(id)arg3;
 
 @end
 

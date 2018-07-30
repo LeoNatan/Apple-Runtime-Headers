@@ -32,6 +32,7 @@
 + (void)incrementRouteSelectCountForOrigin:(id)arg1;
 + (void)incrementTapBasedVolumeControlCountForOrigin:(id)arg1;
 + (void)incrementCrownBasedVolumeControlCountForOrigin:(id)arg1;
++ (void)incrementAirPlayOrbTapCountForOrigin:(id)arg1;
 + (void)incrementButtonTapCountForControlType:(int)arg1 origin:(id)arg2;
 + (void)incrementPauseButtonTapCountForOrigin:(id)arg1;
 + (void)incrementPlayButtonTapCountForOrigin:(id)arg1;

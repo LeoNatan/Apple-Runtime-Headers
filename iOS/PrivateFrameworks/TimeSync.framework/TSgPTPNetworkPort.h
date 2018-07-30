@@ -11,6 +11,7 @@
 @interface TSgPTPNetworkPort : TSgPTPPort
 {
     unsigned int _connection;
+    _Bool _remoteIsSameDevice;
     _Bool _asCapable;
     BOOL _localSyncLogMeanInterval;
     BOOL _remoteSyncLogMeanInterval;
@@ -24,7 +25,9 @@
     _Bool _hasRemoteFrequencyTolerance;
     _Bool _hasLocalFrequencyStability;
     _Bool _hasRemoteFrequencyStability;
+    _Bool _overridenReceiveMatching;
     unsigned short _remotePortNumber;
+    unsigned short _overridenReceivePortNumber;
     unsigned int _propagationDelay;
     unsigned int _maximumPropagationDelay;
     unsigned int _minimumPropagationDelay;
@@ -39,9 +42,13 @@
     NSString *_sourceAddressString;
     NSString *_destinationAddressString;
     NSString *_interfaceName;
+    unsigned long long _overridenReceiveClockIdentity;
 }
 
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
+@property(nonatomic) unsigned short overridenReceivePortNumber; // @synthesize overridenReceivePortNumber=_overridenReceivePortNumber;
+@property(nonatomic) unsigned long long overridenReceiveClockIdentity; // @synthesize overridenReceiveClockIdentity=_overridenReceiveClockIdentity;
+@property(nonatomic) _Bool overridenReceiveMatching; // @synthesize overridenReceiveMatching=_overridenReceiveMatching;
 @property(readonly, copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy, nonatomic) NSString *destinationAddressString; // @synthesize destinationAddressString=_destinationAddressString;
 @property(copy, nonatomic) NSString *sourceAddressString; // @synthesize sourceAddressString=_sourceAddressString;
@@ -68,10 +75,17 @@
 @property(nonatomic) unsigned int maximumPropagationDelay; // @synthesize maximumPropagationDelay=_maximumPropagationDelay;
 @property(nonatomic) unsigned int propagationDelay; // @synthesize propagationDelay=_propagationDelay;
 @property(nonatomic, getter=isASCapable) _Bool asCapable; // @synthesize asCapable=_asCapable;
+@property(nonatomic) _Bool remoteIsSameDevice; // @synthesize remoteIsSameDevice=_remoteIsSameDevice;
 @property(nonatomic) unsigned short remotePortNumber; // @synthesize remotePortNumber=_remotePortNumber;
 @property(nonatomic) unsigned long long remoteClockIdentity; // @synthesize remoteClockIdentity=_remoteClockIdentity;
 - (void)dealloc;
+- (_Bool)getCurrentPortInfo:(CDStruct_57c52001 *)arg1 error:(id *)arg2;
+- (_Bool)restoreReceiveMatchingError:(id *)arg1;
+- (_Bool)overrideReceiveMatchingWithRemoteClockIdentity:(unsigned long long)arg1 remotePortNumber:(unsigned short)arg2 error:(id *)arg3;
 - (_Bool)requestRemoteMessageIntervalsWithPDelayMessageInterval:(BOOL)arg1 syncMessageInterval:(BOOL)arg2 announceMessageInterval:(BOOL)arg3 error:(id *)arg4;
+- (unsigned short)_overridenReceivePortNumber;
+- (unsigned long long)_overridenReceiveClockIdentity;
+- (_Bool)_overridenReceiveMatching;
 - (unsigned int)_remoteFrequencyStability;
 - (_Bool)_hasRemoteFrequencyStability;
 - (unsigned int)_localFrequencyStability;
@@ -97,6 +111,7 @@
 - (unsigned int)_maximumPropagationDelay;
 - (unsigned int)_propagationDelay;
 - (_Bool)_isASCapable;
+- (_Bool)_remoteIsSameDevice;
 - (unsigned short)_remotePortNumber;
 - (unsigned long long)_remoteClockIdentity;
 @property(readonly, nonatomic) unsigned int connection;

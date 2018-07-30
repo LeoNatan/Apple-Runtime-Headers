@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (id)colorizeWithColorBlendFactor:(float)arg1 duration:(double)arg2;
 + (id)colorizeWithColor:(id)arg1 colorBlendFactor:(float)arg2 duration:(double)arg3;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -10,6 +10,7 @@
 
 @class GEODownloadMetadata, GEOSupportedTileSets;
 
+__attribute__((visibility("hidden")))
 @interface GEOSupportedTileSetsDownload : PBCodable <NSCopying>
 {
     GEODownloadMetadata *_metadata;

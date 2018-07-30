@@ -39,7 +39,6 @@
 - (void)_informDelegateOfAvailabilityChange;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (void)dictationConnnectionDidChangeAvailability:(id)arg1;
-- (void)_sendEngagementFeedback:(long long)arg1 requestIdentifier:(id)arg2;
 - (id)recognitionTaskWithRequest:(id)arg1 delegate:(id)arg2;
 - (id)recognitionTaskWithRequest:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_isInternalTaskHint:(long long)arg1;

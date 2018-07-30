@@ -27,8 +27,8 @@
 - (id)_dateMetricsKeys;
 - (void)_applyMetrics:(id)arg1;
 - (void)_applyComplicationsDescription:(id)arg1;
-- (void)_applyCustomizationDescription:(id)arg1 editModeMapping:(id)arg2;
-- (id)initWithJSONDictionary:(id)arg1 editModeMapping:(id)arg2;
+- (void)_applyCustomizationDescription:(id)arg1 editModeMapping:(id)arg2 forDevice:(id)arg3;
+- (id)initWithJSONDictionary:(id)arg1 editModeMapping:(id)arg2 forDevice:(id)arg3;
 - (void)addConfigurationKeysToJSONDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

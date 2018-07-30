@@ -30,6 +30,7 @@
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (void).cxx_destruct;
 - (void)canvasView:(id)arg1 drawingDidChange:(id)arg2;
+- (void)canvasViewDidCancelStroke:(id)arg1;
 - (void)canvasViewDidEndStroke:(id)arg1;
 - (void)canvasViewDidBeginNewStroke:(id)arg1;
 - (void)_calculateFixedPixelSize:(struct CGSize *)arg1 drawingScale:(double *)arg2;

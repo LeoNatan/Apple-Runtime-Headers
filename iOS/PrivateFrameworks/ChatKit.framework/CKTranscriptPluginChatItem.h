@@ -50,7 +50,6 @@
 - (id)pasteboardItems;
 - (id)pluginDisplayContainer;
 - (id)message;
-- (_Bool)hasTail;
 - (id)menuTitle;
 - (_Bool)canForward;
 - (_Bool)canCopy;

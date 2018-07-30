@@ -4,17 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <NeutrinoCore/NUMutableBufferAdapter.h>
+#import "NSObject.h"
 
-@class NSMutableData;
+#import "NSCopying.h"
+#import "NSMutableCopying.h"
+#import "NUBuffer.h"
 
-@interface NUPixelBuffer : NUMutableBufferAdapter
+@class NSString, NUBufferStorage, NUPixelFormat;
+
+@interface NUPixelBuffer : NSObject <NUBuffer, NSCopying, NSMutableCopying>
 {
-    NSMutableData *_backing;
+    NUBufferStorage *_storage;
+    id <NUBuffer> _buffer;
 }
 
 - (void).cxx_destruct;
-- (id)initWithSize:(CDStruct_912cb5d2)arg1 format:(id)arg2;
+- (id)debugQuickLookObject;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)privateInit;
+- (const void *)bytesAtPoint:(CDStruct_912cb5d2)arg1;
+- (void)dealloc;
+@property(readonly, nonatomic) const void *bytes;
+@property(readonly, nonatomic) long long rowBytes;
+@property(readonly, nonatomic) NUPixelFormat *format;
+@property(readonly, nonatomic) CDStruct_912cb5d2 size;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

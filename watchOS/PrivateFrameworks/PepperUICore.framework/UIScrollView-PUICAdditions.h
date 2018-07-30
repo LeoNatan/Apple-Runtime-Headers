@@ -29,15 +29,11 @@
 - (void)_puic_averageCrownVelocityDidChange;
 - (void)_puic_notifyDidScroll;
 - (_Bool)_puic_isVisible;
-- (void)_puic_releaseSuspendSystemGestureAssertion;
-- (void)_puic_startSuspendSystemGestureAssertionReleaseTimer;
-- (void)_puic_releaseSuspendSystemGestureAssertionIfPossible;
-- (void)_puic_takeSuspendSystemGestureAssertionIfPossible;
-- (void)_puic_takeSuspendSystemGestureAssertion;
 - (void)_puic_scrollViewDidEndDraggingWithDeceleration:(_Bool)arg1;
 - (void)_puic_scrollViewDidEndDecelerating;
 - (void)_puic_scrollViewAnimationEnded:(id)arg1 finished:(_Bool)arg2;
 - (void)_puic_contentOffsetDidChange;
+- (_Bool)_puic_isRubberbanding;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (Class)_puic_crownInputSequencerClass;
 - (_Bool)_puic_isTouchTracking;

@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NRDevicePropertyDiff;
+@class NRDevicePropertyDiff, NRPBDevicePropertyDiffType;
 
 @interface NRDevicePropertyDiffType : NSObject <NSCopying, NSSecureCoding>
 {
@@ -27,6 +27,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) NRPBDevicePropertyDiffType *protobuf;
+- (id)initWithProtobuf:(id)arg1;
 - (id)initWithDiff:(id)arg1 andChangeType:(unsigned long long)arg2;
 
 @end

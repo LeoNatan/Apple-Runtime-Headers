@@ -6,7 +6,7 @@
 
 #import "NSView.h"
 
-@class NSImage, NSLayoutConstraint, NSString, NSTextField, PRSActionButtonImageView, PRSImageView, SFPunchout, SPLineView;
+@class NSImage, NSLayoutConstraint, NSString, NSTextField, PRSActionButtonImageView, PRSImageView, SFPunchout;
 
 @interface PRSTemplateACEHeaderSliceView : NSView
 {
@@ -33,7 +33,7 @@
     PRSImageView *_primaryImageView;
     PRSActionButtonImageView *_playImageView;
     PRSActionButtonImageView *_baseImageView;
-    SPLineView *_separatorView;
+    NSView *_separatorView;
     NSTextField *_titleTextField;
     NSTextField *_subTitleTextField;
     NSTextField *_playTextField;
@@ -42,7 +42,7 @@
 @property NSTextField *playTextField; // @synthesize playTextField=_playTextField;
 @property NSTextField *subTitleTextField; // @synthesize subTitleTextField=_subTitleTextField;
 @property NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-@property SPLineView *separatorView; // @synthesize separatorView=_separatorView;
+@property NSView *separatorView; // @synthesize separatorView=_separatorView;
 @property PRSActionButtonImageView *baseImageView; // @synthesize baseImageView=_baseImageView;
 @property PRSActionButtonImageView *playImageView; // @synthesize playImageView=_playImageView;
 @property PRSImageView *primaryImageView; // @synthesize primaryImageView=_primaryImageView;
@@ -72,7 +72,6 @@
 - (id)image;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (BOOL)allowsVibrancy;
 
 @end
 

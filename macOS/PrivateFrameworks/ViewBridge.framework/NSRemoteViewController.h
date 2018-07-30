@@ -14,10 +14,14 @@
 }
 
 + (BOOL)inhibitFirstResponder;
++ (id)exportedInterface;
++ (id)serviceViewControllerInterface;
 + (void)requestViewController:(id)arg1 fromServiceListenerEndpoint:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3;
 + (void)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3;
 + (void)requestViewController:(id)arg1 withServiceSubclassIdentifier:(id)arg2 forRemoteView:(id)arg3 connectionHandler:(CDUnknownBlockType)arg4;
 + (void)requestViewController:(id)arg1 withServiceSubclassIdentifier:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3 withBlock:(CDUnknownBlockType)arg4;
+- (BOOL)inhibitFirstResponder;
+- (void)setInhibitFirstResponder:(BOOL)arg1;
 - (void)_viewDidMoveToSuperview;
 - (id)_viewWithoutLoad;
 - (void)synchronizeAnimationsInActions:(CDUnknownBlockType)arg1;
@@ -42,9 +46,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_initAux;
-- (void)_superDealloc;
 - (void)dealloc;
-- (void)_deallocOnAppKitThread;
+- (oneway void)release;
+- (void)__vbSuperRelease;
+- (id)retain;
+- (void)__vbWithLockPerform:(CDUnknownBlockType)arg1;
+- (struct os_unfair_lock_s *)retainReleaseLock;
 
 @end
 

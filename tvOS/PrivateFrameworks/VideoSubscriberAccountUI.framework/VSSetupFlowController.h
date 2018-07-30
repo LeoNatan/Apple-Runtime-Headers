@@ -7,24 +7,35 @@
 #import "NSObject.h"
 
 #import "VSIdentityProviderPickerViewControllerDelegate.h"
+#import "VSIdentityProviderRequestManagerDelegate.h"
 #import "VSIdentityProviderViewControllerDelegate.h"
 #import "VSRemoteNotifierDelegate.h"
 #import "VSSupportedAppsViewControllerDelegate.h"
 
-@class NSArray, NSOperationQueue, NSString, NSUndoManager, VSPersistentStorage, VSPreferences, VSRemoteNotifier;
+@class NSArray, NSOperationQueue, NSString, NSUndoManager, VSAppDescription, VSIdentityProviderRequestManager, VSPersistentStorage, VSPreferences, VSRemoteNotifier;
 
-@interface VSSetupFlowController : NSObject <VSIdentityProviderPickerViewControllerDelegate, VSIdentityProviderViewControllerDelegate, VSRemoteNotifierDelegate, VSSupportedAppsViewControllerDelegate>
+@interface VSSetupFlowController : NSObject <VSIdentityProviderPickerViewControllerDelegate, VSIdentityProviderViewControllerDelegate, VSRemoteNotifierDelegate, VSSupportedAppsViewControllerDelegate, VSIdentityProviderRequestManagerDelegate>
 {
     NSUndoManager *_undoManager;
     _Bool _signingIn;
+    _Bool _isInSTBMode;
+    _Bool _shouldAskForTVAppConsent;
     id <VSSetupFlowControllerDelegate> _delegate;
     VSPreferences *_preferences;
     VSPersistentStorage *_storage;
     NSOperationQueue *_privateQueue;
     VSRemoteNotifier *_remoteNotifier;
     NSArray *_freeOnBoardingBundleIDs;
+    VSAppDescription *_appDescription;
+    NSString *_providerAccountUsername;
+    VSIdentityProviderRequestManager *_requestManager;
 }
 
+@property(retain, nonatomic) VSIdentityProviderRequestManager *requestManager; // @synthesize requestManager=_requestManager;
+@property(nonatomic) _Bool shouldAskForTVAppConsent; // @synthesize shouldAskForTVAppConsent=_shouldAskForTVAppConsent;
+@property(nonatomic) _Bool isInSTBMode; // @synthesize isInSTBMode=_isInSTBMode;
+@property(retain, nonatomic) NSString *providerAccountUsername; // @synthesize providerAccountUsername=_providerAccountUsername;
+@property(retain, nonatomic) VSAppDescription *appDescription; // @synthesize appDescription=_appDescription;
 @property(nonatomic, getter=isSigningIn) _Bool signingIn; // @synthesize signingIn=_signingIn;
 @property(copy, nonatomic) NSArray *freeOnBoardingBundleIDs; // @synthesize freeOnBoardingBundleIDs=_freeOnBoardingBundleIDs;
 @property(retain, nonatomic) VSRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
@@ -40,14 +51,19 @@
 - (void)dismissIdentityProviderViewController:(id)arg1;
 - (void)identityProviderPickerViewController:(id)arg1 didPickIdentityProvider:(id)arg2;
 - (void)identityProviderPickerViewControllerDidCancel:(id)arg1;
+- (void)identityProviderRequestManager:(id)arg1 finishedRequest:(id)arg2 withResult:(id)arg3;
+- (void)startSilentSigningInForSTB;
+- (id)_getProviderWithUserTokenFromAllProviders:(id)arg1;
 - (void)showSupportedApps;
 - (void)notNow;
 - (void)_offerFreeOnBoardingIfNeededAfterOfferingOptions:(_Bool)arg1 endingUndoGrouping:(_Bool)arg2 arrivedViaNotNowButton:(_Bool)arg3 arrivedAfterSigningIn:(_Bool)arg4 goingBack:(_Bool)arg5;
 - (void)startSigningInForIdentityProvider:(id)arg1;
+- (void)finishSTBSuccessFlowForProvider:(id)arg1;
 - (void)startSigningIn;
 - (void)_startLoadingAfterOfferingOptions:(_Bool)arg1 endingUndoGrouping:(_Bool)arg2 arrivedViaNotNowButton:(_Bool)arg3 arrivedAfterSigningIn:(_Bool)arg4 goingBack:(_Bool)arg5;
 - (void)startLoadingWhenGoingBack:(_Bool)arg1;
 @property(readonly, nonatomic) NSUndoManager *undoManager;
+- (void)markSTBProviderAppForInstallation:(id)arg1 withAppPlacementPosition:(id)arg2;
 - (void)_obtainConsentForBundleIDs:(id)arg1 vouchers:(id)arg2 withAppleAccount:(id)arg3 identityProvider:(id)arg4 endingUndoGrouping:(_Bool)arg5 arrivedViaNotNowButton:(_Bool)arg6 arrivedAfterSigningIn:(_Bool)arg7 goingBack:(_Bool)arg8;
 - (void)_presentError:(id)arg1;
 - (void)_finishAfterOfferingOptions:(_Bool)arg1 endingUndoGrouping:(_Bool)arg2;
@@ -56,7 +72,8 @@
 - (void)_presentViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestAccessWithViewController:(id)arg1;
 - (void)_pickProviderWithViewController:(id)arg1;
-- (void)_offerAuthenticationForProvider:(id)arg1 withSupportedAppsButton:(_Bool)arg2;
+- (void)_offerAuthenticationForSTBProvider:(id)arg1 msoAppDescription:(id)arg2 providerAccountUsername:(id)arg3 shouldAskForTVAppConsent:(_Bool)arg4;
+- (void)_offerAuthenticationForProvider:(id)arg1 withSupportedAppsButton:(_Bool)arg2 msoAppDescription:(id)arg3;
 - (void)_offerAuthenticationWithSupportedAppsButton:(_Bool)arg1;
 - (void)_didStartLoading;
 - (void)dealloc;

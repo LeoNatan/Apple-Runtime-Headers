@@ -15,6 +15,7 @@
     long long _ringStyle;
 }
 
++ (struct CGSize)imageSize;
 @property(nonatomic) long long ringStyle; // @synthesize ringStyle=_ringStyle;
 @property(copy, nonatomic) CLKProgressProvider *progressProvider; // @synthesize progressProvider=_progressProvider;
 @property(copy, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;

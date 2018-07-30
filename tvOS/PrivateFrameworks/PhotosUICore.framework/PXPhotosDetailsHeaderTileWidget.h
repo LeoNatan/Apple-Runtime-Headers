@@ -70,6 +70,8 @@
     struct CGSize __contentSize;
 }
 
++ (_Bool)canShowMiroMovieHeaderForDataSource:(id)arg1;
++ (double)preferredHeaderContentHeightForWidth:(double)arg1 screen:(id)arg2;
 @property(nonatomic, setter=_setContentSize:) struct CGSize _contentSize; // @synthesize _contentSize=__contentSize;
 @property(retain, nonatomic, setter=_setTapGestureRecognizer:) PXUITapGestureRecognizer *_tapGestureRecognizer; // @synthesize _tapGestureRecognizer=__tapGestureRecognizer;
 @property(nonatomic, setter=_setHasLoadedContentData:) _Bool hasLoadedContentData; // @synthesize hasLoadedContentData=_hasLoadedContentData;

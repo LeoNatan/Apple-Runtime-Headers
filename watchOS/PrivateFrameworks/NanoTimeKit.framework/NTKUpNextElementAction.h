@@ -10,13 +10,8 @@
 
 @interface NTKUpNextElementAction : NSObject <NSCopying>
 {
-    id <NTKUpNextElementActionDelegate> _delegate;
 }
 
-- (void).cxx_destruct;
-- (void)_didFinish:(_Bool)arg1;
-- (void)_performWithContext:(id)arg1;
-@property(nonatomic) __weak id <NTKUpNextElementActionDelegate> delegate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

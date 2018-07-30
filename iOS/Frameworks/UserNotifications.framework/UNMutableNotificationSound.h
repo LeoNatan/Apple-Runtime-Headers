@@ -21,6 +21,7 @@
 @property(nonatomic) _Bool shouldRepeat; // @dynamic shouldRepeat;
 @property(nonatomic) _Bool shouldIgnoreRingerSwitch; // @dynamic shouldIgnoreRingerSwitch;
 @property(nonatomic) double maximumDuration; // @dynamic maximumDuration;
+@property(nonatomic, getter=isCritical) _Bool critical; // @dynamic critical;
 @property(copy, nonatomic) NSNumber *audioVolume; // @dynamic audioVolume;
 @property(copy, nonatomic) NSString *audioCategory; // @dynamic audioCategory;
 @property(copy, nonatomic) NSString *alertTopic; // @dynamic alertTopic;

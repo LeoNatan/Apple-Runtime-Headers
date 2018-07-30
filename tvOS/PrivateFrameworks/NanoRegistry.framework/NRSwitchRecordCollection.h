@@ -8,6 +8,7 @@
 
 #import "NSSecureCoding.h"
 
+__attribute__((visibility("hidden")))
 @interface NRSwitchRecordCollection : NRPBSwitchRecordCollection <NSSecureCoding>
 {
 }

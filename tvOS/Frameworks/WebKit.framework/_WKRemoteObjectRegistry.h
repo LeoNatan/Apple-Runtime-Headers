@@ -22,7 +22,8 @@
 @property(readonly, nonatomic) struct RemoteObjectRegistry *remoteObjectRegistry;
 - (void)_sendInvocation:(id)arg1 interface:(id)arg2;
 - (void)_invalidate;
-- (id)_initWithMessageSender:(struct MessageSender *)arg1;
+- (id)_initWithWebPageProxy:(struct WebPageProxy *)arg1;
+- (id)_initWithWebPage:(struct WebPage *)arg1;
 - (id)remoteObjectProxyWithInterface:(id)arg1;
 - (void)unregisterExportedObject:(id)arg1 interface:(id)arg2;
 - (void)registerExportedObject:(id)arg1 interface:(id)arg2;

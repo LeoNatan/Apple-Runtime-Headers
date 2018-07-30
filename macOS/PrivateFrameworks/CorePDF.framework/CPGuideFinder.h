@@ -10,6 +10,7 @@
 
 @class CPCluster, CPZone, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPGuideFinder : NSObject <CPDisposable>
 {
     CPZone *contentZone;

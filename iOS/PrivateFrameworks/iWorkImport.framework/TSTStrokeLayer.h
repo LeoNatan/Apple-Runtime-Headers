@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)strokeLayerModifiedByRemovingRangeAt:(struct TSTSimpleRange)arg1;
 - (id)strokeLayerModifiedByInsertingSpaceAt:(struct TSTSimpleRange)arg1;
-- (id)strokeLayerModifiedUsingMoveDelegate:(id)arg1;
 - (void)enumerateStrokesInRange:(struct TSTSimpleRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateStrokesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)nextStrokeAndRange:(id)arg1;

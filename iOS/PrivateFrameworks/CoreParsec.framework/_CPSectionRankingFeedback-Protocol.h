@@ -10,14 +10,10 @@
 
 @protocol _CPSectionRankingFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasPersonalizationScore;
 @property(nonatomic) double personalizationScore;
-@property(readonly, nonatomic) _Bool hasLocalSectionPosition;
 @property(nonatomic) unsigned int localSectionPosition;
-@property(readonly, nonatomic) _Bool hasSection;
 @property(retain, nonatomic) _CPResultSectionForFeedback *section;
 @property(copy, nonatomic) NSArray *results;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

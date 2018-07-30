@@ -18,6 +18,9 @@
 + (id)autoFillNodeWithDOMNode:(id)arg1;
 @property(readonly, nonatomic) DOMNode *domNode; // @synthesize domNode=_domNode;
 - (void).cxx_destruct;
+- (long long)htmlInputElementLastAutoFillButtonType;
+- (long long)htmlInputElementAutoFillButtonType;
+- (void)setHTMLInputElementAutoFilledWithAutomaticStrongPassword:(_Bool)arg1;
 - (_Bool)isHTMLTextAreaElementUserEdited;
 - (_Bool)isHTMLInputElementUserEdited;
 - (void)setHTMLInputElementAutofilled:(_Bool)arg1;

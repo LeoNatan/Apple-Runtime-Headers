@@ -6,11 +6,12 @@
 
 #import <PhotosUICore/PXCALayerPromise.h>
 
+#import "CALayerDelegate.h"
 #import "PXMutableTitleSubtitleCALayerPromise.h"
 
 @class NSArray, NSString, PXTitleSubtitleLabelSpec;
 
-@interface PXTitleSubtitleCALayerPromise : PXCALayerPromise <PXMutableTitleSubtitleCALayerPromise>
+@interface PXTitleSubtitleCALayerPromise : PXCALayerPromise <PXMutableTitleSubtitleCALayerPromise, CALayerDelegate>
 {
     _Bool _diagnosticsEnabled;
     NSString *_titleText;

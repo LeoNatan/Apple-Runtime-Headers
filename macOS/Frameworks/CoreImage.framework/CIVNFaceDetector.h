@@ -4,16 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <CoreImage/CIVNDetector.h>
+#import <CoreImage/CIDetector.h>
+
+@class CIContext;
 
 __attribute__((visibility("hidden")))
-@interface CIVNFaceDetector : CIVNDetector
+@interface CIVNFaceDetector : CIDetector
 {
+    CIContext *context;
 }
 
+@property(readonly, retain) CIContext *context; // @synthesize context;
+- (void)dealloc;
 - (id)featuresInImage:(id)arg1 options:(id)arg2;
-- (id)featuresInImage:(id)arg1 withContext:(id)arg2;
-- (id)featuresInImage:(id)arg1;
+- (id)initWithContext:(id)arg1 options:(id)arg2;
 
 @end
 

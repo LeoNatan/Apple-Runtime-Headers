@@ -12,7 +12,7 @@
 
 @interface WBSHistoryServiceURLCompletionMatchData : NSObject <WBSURLCompletionMatchData>
 {
-    unique_ptr_41e89518 _streamData;
+    unique_ptr_3ff2d08e _streamData;
     NSArray *_autocompleteTriggersAsStringArray;
     NSArray *_entries;
 }
@@ -37,7 +37,7 @@
 @property(readonly, nonatomic) BOOL lastVisitWasFailure;
 @property(readonly, nonatomic) BOOL containsBookmark;
 @property(readonly, nonatomic) struct _HistoryStreamedMatchData *streamData;
-- (id)initWithStreamData:(unique_ptr_41e89518 *)arg1 entries:(id)arg2;
+- (id)initWithStreamData:(unique_ptr_3ff2d08e *)arg1 entries:(id)arg2;
 - (id)initWithLastVisitWasFailure:(BOOL)arg1;
 - (id)init;
 

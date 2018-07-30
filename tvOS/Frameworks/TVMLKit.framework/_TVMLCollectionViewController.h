@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool _didUpdateFocus;
     double _impressionThreshold;
     _TVNeedsMoreContentEvaluator *_needsMoreContentEvaluator;
+    _Bool _indexDisplayEnabled;
     UICollectionView *_collectionView;
     UIViewController *_headerViewController;
     IKCollectionElement *_collectionElement;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *sortedIndexTitles; // @synthesize sortedIndexTitles=_sortedIndexTitles;
 @property(copy, nonatomic) NSDictionary *indexPathsByIndexTitle; // @synthesize indexPathsByIndexTitle=_indexPathsByIndexTitle;
 @property(retain, nonatomic) _TVShadowViewElement *shadowViewElement; // @synthesize shadowViewElement=_shadowViewElement;
+@property(nonatomic, getter=isIndexDisplayEnabled) _Bool indexDisplayEnabled; // @synthesize indexDisplayEnabled=_indexDisplayEnabled;
 @property(copy, nonatomic) NSIndexPath *lastFocusedIndexPath; // @synthesize lastFocusedIndexPath=_lastFocusedIndexPath;
 @property(readonly, nonatomic) struct TVCellMetrics cellMetrics; // @synthesize cellMetrics=_cellMetrics;
 @property(readonly, retain, nonatomic) IKViewElement *headerElement; // @synthesize headerElement=_headerElement;
@@ -47,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (id)_closestIndexPathToIndexPath:(id)arg1;
 - (void)_ascertainLastFocusedIndexPathInView;
 - (void)_registerCellClassesInCollectionView:(id)arg1;
+- (void)_updateIndexDisplay;
 - (void)_updateHeaderView;
 - (void)_doUpdateViewLayoutAnimated:(_Bool)arg1 relayout:(_Bool)arg2;
 - (void)preloadSubviewsInRect:(struct CGRect)arg1;
@@ -87,6 +90,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

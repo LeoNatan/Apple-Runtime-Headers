@@ -12,10 +12,13 @@
 
 @interface MFMailSignatureControllerWK1 : MFMailSignatureController <DOMEventListener>
 {
+    _Bool _skipEventHandler;
 }
 
 - (void)handleEvent:(id)arg1;
 - (void)invalidateBodyField:(id)arg1;
+- (void)getDocument:(id)arg1 withHiddenSignatureHandler:(CDUnknownBlockType)arg2;
+- (void)_removeSignatureForSender:(id)arg1 document:(id)arg2;
 - (void)removeSignatureForSender:(id)arg1 bodyField:(id)arg2;
 - (void)finalizeSignatureForBodyField:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateSignatureForSender:(id)arg1 bodyField:(id)arg2;

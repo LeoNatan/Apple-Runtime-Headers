@@ -59,6 +59,7 @@
 - (BOOL)cancelIdentifier:(id)arg1 error:(id *)arg2;
 - (void)sendAckForMessageWithContext:(id)arg1;
 - (BOOL)sendAheadGroup:(id)arg1 priority:(long long)arg2 options:(id)arg3 identifier:(id *)arg4 error:(id *)arg5;
+- (BOOL)getProgressUpdateForIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)sendResourceAtURL:(id)arg1 metadata:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id *)arg6 error:(id *)arg7;
 - (BOOL)sendData:(id)arg1 priority:(long long)arg2 options:(id)arg3 identifier:(id *)arg4 error:(id *)arg5;
 - (BOOL)sendAccessoryData:(id)arg1 toAccessoryID:(id)arg2 accessToken:(id)arg3 options:(id)arg4 identifier:(id *)arg5 error:(id *)arg6;

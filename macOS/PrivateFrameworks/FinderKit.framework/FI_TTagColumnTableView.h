@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTagColumnTableView : FI_TTableView
 {
-    struct TNSRef<FI_TTableViewShrinkToFitController *, void> _stfController;
+    struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
     struct TNotificationCenterObserver _clipViewBoundsDidChangeObserver;
 }
 

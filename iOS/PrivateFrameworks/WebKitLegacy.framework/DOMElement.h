@@ -16,6 +16,8 @@
 - (id)querySelectorAll:(id)arg1;
 - (id)querySelector:(id)arg1;
 - (void)remove;
+- (void)webkitRequestFullscreen;
+- (void)webkitRequestFullScreen:(unsigned short)arg1;
 - (_Bool)webkitMatchesSelector:(id)arg1;
 - (id)closest:(id)arg1;
 - (_Bool)matches:(id)arg1;

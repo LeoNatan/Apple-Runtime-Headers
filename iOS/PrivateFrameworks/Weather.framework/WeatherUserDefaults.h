@@ -10,6 +10,7 @@
 
 @class NSString, NSUserDefaults;
 
+__attribute__((visibility("hidden")))
 @interface WeatherUserDefaults : NSObject <WeatherPreferencesPersistence>
 {
     NSUserDefaults *_userDefaults;

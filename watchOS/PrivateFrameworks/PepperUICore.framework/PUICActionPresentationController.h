@@ -9,8 +9,10 @@
 @interface PUICActionPresentationController : UIPresentationController
 {
     id <PUICActionPresentationControllerDelegate> _presentationDelegate;
+    int _preferredPresentationStyle;
 }
 
+@property(nonatomic) int preferredPresentationStyle; // @synthesize preferredPresentationStyle=_preferredPresentationStyle;
 @property(nonatomic) __weak id <PUICActionPresentationControllerDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;

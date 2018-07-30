@@ -15,6 +15,7 @@
 
 + (id)connection;
 - (void).cxx_destruct;
+- (void)migrationPluginResults:(CDUnknownBlockType)arg1;
 - (void)migrationPhaseDescription:(CDUnknownBlockType)arg1;
 - (void)reportMigrationFailure;
 - (void)forceMigrationOnNextRebootWithCompletion:(CDUnknownBlockType)arg1;

@@ -18,7 +18,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)_mirroredSectionIDForRemoteSectionID:(id)arg1;
+- (_Bool)isMirroredSectionID:(id)arg1;
+- (id)mirroredSectionIDForRemoteSectionID:(id)arg1;
 - (id)_loadLocalDataProviderSectionIDs;
 - (void)_createLocalMappings;
 - (void)_handleReceivedUpdatedSectionInfoForSectionID:(id)arg1;
@@ -35,6 +36,8 @@
 - (void)_checkMappingsVerified:(id)arg1;
 - (id)mapRemoteSectionID:(id)arg1 forUniversalSectionID:(id)arg2;
 - (void)unmapWatchKitLocalSectionID:(id)arg1;
+- (id)_mapDynamicRemoteSectionID:(id)arg1 forLocalSectionID:(id)arg2 universalSectionID:(id)arg3 mirroredSectionID:(id)arg4;
+- (id)mapFactoryChildSectionID:(id)arg1;
 - (id)mapWatchKitRemoteSectionID:(id)arg1 forLocalSectionID:(id)arg2;
 - (void)dealloc;
 - (id)init;

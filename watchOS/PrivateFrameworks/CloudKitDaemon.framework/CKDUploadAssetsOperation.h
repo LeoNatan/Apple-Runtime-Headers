@@ -60,10 +60,13 @@ __attribute__((visibility("hidden")))
 - (void)_didUploadMMCSSectionItems:(id)arg1 task:(id)arg2 error:(id)arg3;
 - (void)_didUploadMMCSSectionItem:(id)arg1 task:(id)arg2 error:(id)arg3;
 - (_Bool)_fetchUploadTokens;
-- (void)_didFetchUploadTokensForAssetTokenRequest:(id)arg1 error:(id)arg2;
+- (_Bool)_didFetchUploadTokensForAssetTokenRequest:(id)arg1 error:(id)arg2 newError:(id *)arg3;
 - (void)_failAllItemsInAssetBatch:(id)arg1 error:(id)arg2;
 - (_Bool)_prepareForUpload;
+- (_Bool)_fetchAssetRereferenceRecords;
 - (void)_didPrepareAssetBatch:(id)arg1 error:(id)arg2;
+- (void)_didPutChunkKeysForAssetBatch:(id)arg1 error:(id)arg2;
+- (void)_didGetChunkKeysForAssetBatch:(id)arg1 error:(id)arg2;
 - (_Bool)_planSectionsForPackage:(id)arg1 error:(id *)arg2;
 - (void)_didUploadAsset:(id)arg1 error:(id)arg2;
 - (void)_didMakeProgressForAsset:(id)arg1 progress:(double)arg2;

@@ -14,6 +14,7 @@
     struct CGVector _axis;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint)arg3 axis:(struct CGVector)arg4;
 - (id).cxx_construct;
 - (void)create;
@@ -23,6 +24,7 @@
 @property(nonatomic) double upperDistanceLimit;
 @property(nonatomic) double lowerDistanceLimit;
 @property(nonatomic) _Bool shouldEnableLimits;
+- (_Bool)isEqualToPrismaticJoint:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint)arg3 axis:(struct CGVector)arg4;

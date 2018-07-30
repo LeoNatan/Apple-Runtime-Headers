@@ -13,7 +13,6 @@
 
 @interface _SFPBText : PBCodable <_SFPBText, NSSecureCoding>
 {
-    CDStruct_6afdaceb _has;
     unsigned int _maxLines;
     NSString *_text;
 }
@@ -29,8 +28,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasMaxLines;
-@property(readonly, nonatomic) _Bool hasText;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

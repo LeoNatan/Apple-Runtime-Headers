@@ -9,7 +9,7 @@
 @class NSDictionary, NSString;
 
 @protocol ReaderStateObserver <NSObject>
-- (void)didExtractReaderText:(NSString *)arg1 pageMetadata:(NSDictionary *)arg2;
+- (void)didExtractReaderText:(NSString *)arg1 pageMetadata:(NSDictionary *)arg2 wasDeterminingAvailability:(BOOL)arg3;
 - (void)didDetermineReaderAvailability:(BOOL)arg1 dueToSameDocumentNavigation:(BOOL)arg2;
 @end
 

@@ -8,22 +8,18 @@
 
 @class MKPlaceSectionItemView, MKViewWithHairline, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceSectionView : _MKStackView
 {
     unsigned long long _trackingSelectForRow;
     MKViewWithHairline *_hairLineView;
-    struct CGRect _oldBounds;
     _Bool _highlightsTouches;
     _Bool _showsBottomHairline;
-    _Bool _earlyReturnLayout;
     id <MKPlaceSectionViewDelegate> _delegate;
     MKPlaceSectionItemView *_headerView;
     NSArray *_rowViews;
     MKPlaceSectionItemView *_footerView;
 }
 
-@property(nonatomic) _Bool earlyReturnLayout; // @synthesize earlyReturnLayout=_earlyReturnLayout;
 @property(nonatomic) _Bool showsBottomHairline; // @synthesize showsBottomHairline=_showsBottomHairline;
 @property(retain, nonatomic) MKPlaceSectionItemView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) _Bool highlightsTouches; // @synthesize highlightsTouches=_highlightsTouches;

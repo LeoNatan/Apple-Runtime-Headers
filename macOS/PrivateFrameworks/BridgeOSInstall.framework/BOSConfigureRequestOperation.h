@@ -10,6 +10,7 @@
 {
 }
 
+- (id)__extractFirmwareBundleComponent:(id)arg1 error:(id *)arg2;
 - (id)_extractFirmwareBundleComponent:(id)arg1 error:(id *)arg2;
 - (BOOL)_validateOptions;
 - (BOOL)_loadUpdateBundleAndBrainBundle;

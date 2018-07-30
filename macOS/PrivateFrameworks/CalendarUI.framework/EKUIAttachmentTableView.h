@@ -19,7 +19,6 @@
 - (void)beginPreviewPanelControl:(id)arg1;
 - (BOOL)acceptsPreviewPanelControl:(id)arg1;
 - (BOOL)canBecomeKeyView;
-- (void)keyDown:(id)arg1;
 - (id)initWithController:(id)arg1;
 
 @end

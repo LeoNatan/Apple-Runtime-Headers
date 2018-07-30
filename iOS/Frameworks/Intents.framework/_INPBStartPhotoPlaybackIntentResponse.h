@@ -7,29 +7,37 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBStartPhotoPlaybackIntentResponse.h"
 
-@class PBUnknownFields;
+@class NSString, _INPBLocation;
 
-@interface _INPBStartPhotoPlaybackIntentResponse : PBCodable <NSCopying>
+@interface _INPBStartPhotoPlaybackIntentResponse : PBCodable <_INPBStartPhotoPlaybackIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _searchResultsCount;
     CDStruct_a60b8694 _has;
+    int _searchResultsCount;
+    NSString *_albumName;
+    _INPBLocation *_locationCreated;
 }
 
-+ (id)options;
 @property(nonatomic) int searchResultsCount; // @synthesize searchResultsCount=_searchResultsCount;
+@property(retain, nonatomic) _INPBLocation *locationCreated; // @synthesize locationCreated=_locationCreated;
+@property(copy, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(nonatomic) _Bool hasSearchResultsCount;
+@property(readonly, nonatomic) _Bool hasLocationCreated;
+@property(readonly, nonatomic) _Bool hasAlbumName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

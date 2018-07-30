@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#import "NSObject.h"
+
 @class NSArray, NSDictionary;
 
-@protocol SKInAppClient
+@protocol SKInAppClient <NSObject>
 - (void)downloadRemoved:(NSDictionary *)arg1;
 - (void)downloadStatusChanged:(NSDictionary *)arg1;
 - (void)downloadAdded:(NSDictionary *)arg1;
 - (void)removedTransactions:(NSArray *)arg1;
 - (void)updatedTransactions:(NSArray *)arg1;
-- (void)restoreTransactionsFinished;
-- (void)restoreTransactionsFailed:(NSDictionary *)arg1;
 @end
 

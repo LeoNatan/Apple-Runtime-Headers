@@ -6,9 +6,11 @@
 
 #import <UIFoundation/NSTextBlock.h>
 
+#import "NSSecureCoding.h"
+
 @class NSTextTable;
 
-@interface NSTextTableBlock : NSTextBlock
+@interface NSTextTableBlock : NSTextBlock <NSSecureCoding>
 {
     NSTextTable *_table;
     long long _rowNum;
@@ -19,6 +21,7 @@
     void *_tableBlockSecondary;
 }
 
++ (_Bool)supportsSecureCoding;
 + (void)initialize;
 - (void)drawBackgroundWithFrame:(struct CGRect)arg1 inView:(id)arg2 characterRange:(struct _NSRange)arg3 layoutManager:(id)arg4;
 - (struct CGRect)boundsRectForContentRect:(struct CGRect)arg1 inRect:(struct CGRect)arg2 textContainer:(id)arg3 characterRange:(struct _NSRange)arg4;

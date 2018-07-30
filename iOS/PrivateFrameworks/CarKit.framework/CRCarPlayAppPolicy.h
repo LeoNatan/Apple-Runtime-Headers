@@ -17,9 +17,11 @@
     _Bool _badgesAppIcon;
     _Bool _showsNotifications;
     _Bool _handlesCarIntents;
+    _Bool _launchUsingMapsTemplateUI;
     NSDictionary *_siriActivationOptions;
 }
 
+@property(nonatomic) _Bool launchUsingMapsTemplateUI; // @synthesize launchUsingMapsTemplateUI=_launchUsingMapsTemplateUI;
 @property(nonatomic) _Bool handlesCarIntents; // @synthesize handlesCarIntents=_handlesCarIntents;
 @property(nonatomic) _Bool showsNotifications; // @synthesize showsNotifications=_showsNotifications;
 @property(nonatomic) _Bool badgesAppIcon; // @synthesize badgesAppIcon=_badgesAppIcon;

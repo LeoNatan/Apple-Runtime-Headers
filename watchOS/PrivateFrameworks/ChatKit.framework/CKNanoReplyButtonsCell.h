@@ -18,7 +18,7 @@
     CKNanoReplyButtonsView *_replyButtons;
 }
 
-+ (float)defaultCellHeightForLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2;
++ (float)defaultCellHeightForLanguage:(id)arg1;
 @property(retain, nonatomic) CKNanoReplyButtonsView *replyButtons; // @synthesize replyButtons=_replyButtons;
 @property(nonatomic) _Bool shouldShowSurf; // @synthesize shouldShowSurf=_shouldShowSurf;
 @property(copy, nonatomic) NSString *primaryLanguage; // @synthesize primaryLanguage=_primaryLanguage;

@@ -8,6 +8,7 @@
 
 @class NSString, NSTextCheckingResult;
 
+__attribute__((visibility("hidden")))
 @interface PRTypologyCandidate : NSObject
 {
     NSString *_candidateString;

@@ -12,9 +12,11 @@
 {
 }
 
+- (void)willDisplayCell:(id)arg1 forIndex:(unsigned int)arg2 tableView:(id)arg3;
 - (void)selectCellForIndex:(unsigned int)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (id)cellForIndex:(unsigned int)arg1 tableView:(id)arg2;
 - (unsigned int)numberOfRowsInSection;
+- (id)sectionFooter;
 - (id)sectionTitle;
 
 @end

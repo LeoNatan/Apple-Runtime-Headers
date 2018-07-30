@@ -8,17 +8,18 @@
 
 @class AUAudioUnitBus, AUAudioUnitBusArray, AUPasscodeCodecConfiguration, NSMutableData, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AUPasscodeDecoder : AUAudioUnit
 {
     struct unique_ptr<RealtimeMessenger, std::__1::default_delete<RealtimeMessenger>> _rtMessenger;
-    unique_ptr_72d731d9 _kernel;
+    unique_ptr_36d0a635 _kernel;
     struct BufferedInputBus _inputBus;
     AUAudioUnitBus *_outputBus;
     AUAudioUnitBusArray *_inputBusArray;
     AUAudioUnitBusArray *_outputBusArray;
     struct vector<unsigned char, std::__1::allocator<unsigned char>> _rxDataBuffer;
     struct vector<DecodedDataMessage, std::__1::allocator<DecodedDataMessage>> _messagePool;
-    map_5b8d8d8c _apcDecoderConfig;
+    map_fc0e2ca7 _apcDecoderConfig;
     unsigned int _desiredChannelCount;
     unsigned int _actualChannelCount;
     NSMutableData *_incomingPayload;

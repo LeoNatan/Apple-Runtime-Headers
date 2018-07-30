@@ -6,6 +6,7 @@
 
 #import <AppKit/NSArrayDetailBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDictionaryDetailBinder : NSArrayDetailBinder
 {
 }

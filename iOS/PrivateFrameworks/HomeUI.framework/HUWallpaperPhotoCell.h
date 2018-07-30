@@ -6,23 +6,43 @@
 
 #import "UICollectionViewCell.h"
 
-@class NSString, UIActivityIndicatorView, UIImage, UIImageView;
+@class NSString, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UIView;
 
 @interface HUWallpaperPhotoCell : UICollectionViewCell
 {
     _Bool _busy;
+    _Bool _empty;
+    _Bool _removable;
+    _Bool _showBorder;
     NSString *_assetIdentifier;
+    double _cornerRadius;
+    id <HUWallpaperPhotoCellDelegate> _delegate;
     UIImageView *_imageView;
     UIActivityIndicatorView *_spinnerView;
+    UIView *_selectionOverlayView;
+    UIButton *_deleteButton;
 }
 
+@property(retain, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
+@property(retain, nonatomic) UIView *selectionOverlayView; // @synthesize selectionOverlayView=_selectionOverlayView;
 @property(retain, nonatomic) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(nonatomic) __weak id <HUWallpaperPhotoCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
+@property(nonatomic) _Bool showBorder; // @synthesize showBorder=_showBorder;
+@property(nonatomic) _Bool removable; // @synthesize removable=_removable;
+@property(nonatomic) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic) _Bool busy; // @synthesize busy=_busy;
 @property(copy, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 - (void).cxx_destruct;
-@property(copy, nonatomic) UIImage *image;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+@property(retain, nonatomic) UIImage *image;
+- (void)showBorder:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)updateView;
+- (void)layoutSubviews;
+- (void)deleteButtonPressed;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

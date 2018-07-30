@@ -14,6 +14,7 @@
 @interface MPCPlayerPath : NSObject <NSCopying, NSSecureCoding>
 {
     int _pid;
+    _Bool _resolved;
     NSString *_bundleID;
     NSString *_playerID;
     void *_mediaRemotePlayerPath;
@@ -21,11 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)pathWithRoute:(id)arg1 mediaRemotePlayerPath:(void *)arg2;
++ (id)pathWithCustomOrigin:(void *)arg1 bundleID:(id)arg2 playerID:(id)arg3;
++ (id)pathWithRoute:(id)arg1 mediaRemotePlayerPath:(void *)arg2 isResolved:(_Bool)arg3;
 + (id)unresolvablePathWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 + (id)pathWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 + (id)systemMusicPathWithRoute:(id)arg1 playerID:(id)arg2;
 + (id)deviceActivePlayerPath;
+@property(readonly, nonatomic, getter=isResolved) _Bool resolved; // @synthesize resolved=_resolved;
 @property(readonly, nonatomic) MPAVRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) void *mediaRemotePlayerPath; // @synthesize mediaRemotePlayerPath=_mediaRemotePlayerPath;
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;

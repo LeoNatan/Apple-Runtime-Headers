@@ -6,17 +6,17 @@
 
 #import "NSObject.h"
 
+#import "CSLSBacklightAssertionProvider.h"
 #import "CSLSBacklightXPCClient.h"
 
 @class NSMutableDictionary, NSPointerArray, NSString, NSXPCConnection;
 
-@interface CSLSBacklight : NSObject <CSLSBacklightXPCClient>
+@interface CSLSBacklight : NSObject <CSLSBacklightXPCClient, CSLSBacklightAssertionProvider>
 {
     NSPointerArray *_observers;
     NSXPCConnection *_connection;
     NSMutableDictionary *_assertionsDictionary;
     NSMutableDictionary *_brightnessAssertionsDictionary;
-    NSString *_currentDisplayID;
     int _currentBacklightState;
     NSPointerArray *_observersNeedingInitialState;
 }
@@ -24,20 +24,20 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) NSPointerArray *observersNeedingInitialState; // @synthesize observersNeedingInitialState=_observersNeedingInitialState;
 @property(nonatomic) int currentBacklightState; // @synthesize currentBacklightState=_currentBacklightState;
-@property(retain, nonatomic) NSString *currentDisplayID; // @synthesize currentDisplayID=_currentDisplayID;
 - (void).cxx_destruct;
+- (void)requestRejectedForError:(id)arg1 shouldRaiseException:(_Bool)arg2;
 - (void)assertionTimedOut:(id)arg1;
-- (void)setCurrentBacklightState:(int)arg1 forDisplayType:(id)arg2;
-- (void)backlightDidChange:(id)arg1 from:(int)arg2 to:(int)arg3 forReason:(id)arg4;
-- (void)_informObserver:(id)arg1 displayID:(id)arg2 oldState:(int)arg3 newState:(int)arg4 reason:(id)arg5;
+- (void)backlightDidChangeFrom:(int)arg1 to:(int)arg2 forReason:(unsigned int)arg3;
+- (void)_informObserver:(id)arg1 oldState:(int)arg2 newState:(int)arg3 reason:(unsigned int)arg4;
 - (void)_dropConnection;
-- (void)_attemptReconnect;
+- (void)_attemptConnect;
 - (id)_createConnectionIfNecessary;
 - (void)_releaseMinimumBrightnessAssertion:(id)arg1;
 - (void)_takeMinimumBrightnessAssertion:(id)arg1;
-- (void)_releaseAssertion:(id)arg1;
-- (void)_tickleAssertionTimeout:(id)arg1;
-- (void)_takeAssertion:(id)arg1;
+- (void)releaseBacklightAssertion:(id)arg1;
+- (void)takeBacklightAssertion:(id)arg1 wasAlreadyAsserted:(_Bool)arg2;
+- (void)offForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
+- (void)onForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

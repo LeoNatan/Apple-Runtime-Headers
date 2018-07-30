@@ -6,21 +6,15 @@
 
 #import "PSListController.h"
 
-@class PSListItemsController, PSSpecifier;
+@class NSMutableArray;
 
 @interface PSUICellularDataOptionsController : PSListController
 {
-    PSListItemsController *_RATModeDrilldownController;
-    PSSpecifier *_mobileDataGroup;
-    PSSpecifier *_enableRATSpecifier;
-    int _RATSwitchKind;
-    _Bool _3GOverrideTo4G;
-    _Bool _LTEOverrideTo4G;
+    NSMutableArray *_ratSpecifiers;
 }
 
 - (void).cxx_destruct;
 - (void)roamingOptionsDidChange;
-- (id)isMobileDataEnabled:(id)arg1;
 - (id)getCDMARoamingStatus:(id)arg1;
 - (void)setCDMARoamingEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setEUInternetEnabled:(id)arg1 specifier:(id)arg2;
@@ -30,27 +24,11 @@
 - (void)setDataRoamingEnabled:(id)arg1 specifier:(id)arg2;
 - (id)getDataRoamingStatus:(id)arg1;
 - (id)roamingSettingsDescription:(id)arg1;
-- (_Bool)shouldShowLTEOptions;
-- (_Bool)shouldShowLegacyRATOptions;
-- (id)getLTEService:(id)arg1;
-- (void)setLTEService:(id)arg1 specifier:(id)arg2;
-- (_Bool)supportsVoLTE;
-- (id)localizableRATModeStringKeyForKey:(id)arg1 targetMode:(int)arg2;
-- (void)reloadRATStatus:(id)arg1;
-- (void)updateRATSpecifiers;
-- (_Bool)_updateMobileDataGroupContentShowingRAT:(_Bool)arg1;
-- (void)updateRATStateWithDictionary:(id)arg1;
-- (id)getRATSwitchIsOn:(id)arg1;
-- (id)getRATModeState:(id)arg1;
-- (void)_setRATModeConfirmed:(int)arg1;
-- (void)_setRATModeStateIsOn:(_Bool)arg1;
-- (void)acceptedRATSwitch:(id)arg1;
-- (void)canceledRATSwitch:(id)arg1;
-- (void)setRATSwitchIsOn:(id)arg1 specifier:(id)arg2;
-- (void)setRATModeState:(id)arg1 specifier:(id)arg2;
+- (id)roamingSpecifiers;
 - (id)specifiers;
 - (id)controllerForSpecifier:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (id)init;
 
 @end
 

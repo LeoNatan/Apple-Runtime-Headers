@@ -14,6 +14,7 @@
 - (void)meCardDonations:(void (^)(NSArray *, NSError *))arg1;
 - (void)synchronousDonatedMeCard:(void (^)(CNEither *))arg1;
 - (void)fetchDonatedMeCard:(void (^)(CNContact *, NSError *))arg1;
+- (void)removeDonatedMeCardValuesWithBundleIdentifier:(NSString *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)removeDonatedMeCardValuesForIdentifiers:(NSArray *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)donateMeCardValues:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 @end

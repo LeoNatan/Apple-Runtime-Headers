@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSString, WBSPerSitePreference, WBSPerSitePreferenceValue;
+@class NSString, WBSPerSitePreference;
 
 @protocol WBSPerSitePreferenceManagerDelegate <NSObject>
 
 @optional
-- (void)perSitePreferenceManager:(id <WBSPerSitePreferenceManager>)arg1 didUpdateValueForPreference:(WBSPerSitePreference *)arg2 onDomain:(NSString *)arg3 toValue:(WBSPerSitePreferenceValue *)arg4;
+- (void)perSitePreferenceManager:(id <WBSPerSitePreferenceManager>)arg1 didUpdateValueForPreference:(WBSPerSitePreference *)arg2 onDomain:(NSString *)arg3 toValue:(id)arg4;
 @end
 

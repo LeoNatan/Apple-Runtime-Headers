@@ -38,6 +38,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithNFTagForUIDOnly:(id)arg1;
 - (id)initWithNFTag:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSData *UID;

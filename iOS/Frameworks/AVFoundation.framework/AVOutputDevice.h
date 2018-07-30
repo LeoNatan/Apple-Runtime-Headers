@@ -21,6 +21,9 @@
 - (void)updateFrecencyScore;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (_Bool)canFetchMediaDataFromSender;
+- (_Bool)canPlayEncryptedProgressiveDownloadAssets;
 - (_Bool)canRelayCommunicationChannel;
 - (_Bool)canCommunicateWithAllLogicalDeviceMembers;
 - (_Bool)isLogicalDeviceLeader;

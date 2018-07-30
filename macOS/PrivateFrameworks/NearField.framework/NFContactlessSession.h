@@ -14,6 +14,7 @@
 {
     NSDictionary *_appletsById;
     NFWeakReference *_delegate;
+    BOOL _fieldNotificationSent;
     NFApplet *_activeApplet;
 }
 
@@ -30,7 +31,7 @@
 - (id)allApplets;
 - (void)didFelicaStateChange:(id)arg1;
 - (void)didSelectApplet:(id)arg1;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didDetectField:(BOOL)arg1;
 - (void)didEndUnexpectedly;
 - (void)endSessionWithCompletion:(CDUnknownBlockType)arg1;

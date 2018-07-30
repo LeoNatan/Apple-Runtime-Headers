@@ -117,7 +117,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) BOOL isPartialObject;
 @property(readonly, nonatomic) BOOL isScheduled;
-@property(readonly, copy, nonatomic) NSDate *lastModifiedDate;
 @property(readonly, copy, nonatomic) NSData *localStructuredData;
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
 @property(readonly, nonatomic) BOOL organizedByMe;

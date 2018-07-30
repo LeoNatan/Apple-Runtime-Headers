@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface NSVB_QueueingProxy : NSVB_TargetedProxy
 {
+    unsigned int _wantsResume:1;
     struct os_unfair_lock_s _lock;
     unsigned long long _suspensionCount;
     NSMutableArray *_queuedInvocations;
@@ -25,6 +26,8 @@ __attribute__((visibility("hidden")))
 - (void)resume;
 - (void)_dispatchSuspendedMessages;
 - (void)suspend;
+- (void)setWantsResume:(BOOL)arg1;
+- (void)ifWantsResume:(CDUnknownBlockType)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
 

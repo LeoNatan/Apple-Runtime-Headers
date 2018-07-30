@@ -17,6 +17,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _loadingSnapshot;
     _Bool _fetchUnified;
+    _Bool _meContactNeedsUpdate;
     CNContactFormatter *contactFormatter;
     id <CNContactDataSourceDelegate> delegate;
     CNContactStoreFilter *_filter;
@@ -24,12 +25,11 @@
     CNManagedConfiguration *_managedConfiguration;
     NSArray *_keysToFetch;
     CNContact *_meContact;
-    struct CGRect _screenFrame;
 }
 
 + (id)keyPathsForValuesAffectingEffectiveFilter;
 + (_Bool)isErrorPossiblyRelatedToExtraStores:(id)arg1;
-@property(readonly, nonatomic) struct CGRect screenFrame; // @synthesize screenFrame=_screenFrame;
+@property(nonatomic) _Bool meContactNeedsUpdate; // @synthesize meContactNeedsUpdate=_meContactNeedsUpdate;
 @property(copy, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(nonatomic) _Bool fetchUnified; // @synthesize fetchUnified=_fetchUnified;
 @property(retain, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
@@ -61,7 +61,6 @@
 - (_Bool)setMeContact:(id)arg1 error:(id *)arg2;
 - (id)preferredForNameMeContactIdentifier;
 - (id)preferredForNameMeContactWithKeysToFetch:(id)arg1;
-- (void)resetPreferredForNameMeContact;
 - (id)indexPathForContact:(id)arg1;
 - (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(_Bool)arg2 keysToFetch:(id)arg3;
 @property(readonly, nonatomic) NSArray *indexSections;

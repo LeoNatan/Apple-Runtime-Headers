@@ -11,15 +11,15 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOVoltaireSimpleTileRequester : GEOSimpleTileRequester <NSURLConnectionDelegate, GEOSimpleTileRequesterSubclass>
 {
 }
 
+- (_Bool)needsLocalizationForKey:(const struct _GEOTileKey *)arg1;
 - (id)localizationURLForTileKey:(const struct _GEOTileKey *)arg1;
 - (id)_localizationURLForTileKey:(const struct _GEOTileKey *)arg1;
-- (id)newXPCDataRequestForTileKey:(const struct _GEOTileKey *)arg1;
 - (unsigned char)_authTypeForTileKey:(const struct _GEOTileKey *)arg1;
+- (_Bool)useProxyAuthForTileKey:(const struct _GEOTileKey *)arg1;
 - (id)urlForTileKey:(const struct _GEOTileKey *)arg1;
 - (unsigned int)tileEditionForKey:(const struct _GEOTileKey *)arg1;
 - (int)checksumMethodForIncomingTileDataWithKey:(const struct _GEOTileKey *)arg1;

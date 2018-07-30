@@ -6,13 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_source>;
 
 @interface NFTimer : NSObject
 {
-    unsigned int _index;
-    CDUnknownBlockType _block;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_source> *_src;
 }
 
 - (void)stopTimer;

@@ -10,6 +10,7 @@
 
 @class GEOPDAttribution, GEOPDSource, NSMutableArray, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDComponent : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

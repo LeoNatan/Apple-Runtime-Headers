@@ -7,50 +7,52 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBShareFileIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBIntentMetadata;
 
-@interface _INPBShareFileIntent : PBCodable <NSCopying>
+@interface _INPBShareFileIntent : PBCodable <_INPBShareFileIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_entityNames;
-    _INPBIntentMetadata *_intentMetadata;
-    NSMutableArray *_recipients;
-    int _shareMode;
     struct {
         unsigned int shareMode:1;
     } _has;
+    int _shareMode;
+    NSArray *_entityNames;
+    _INPBIntentMetadata *_intentMetadata;
+    NSArray *_recipients;
 }
 
 + (Class)recipientsType;
 + (Class)entityNameType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *recipients; // @synthesize recipients=_recipients;
-@property(retain, nonatomic) NSMutableArray *entityNames; // @synthesize entityNames=_entityNames;
+@property(nonatomic) int shareMode; // @synthesize shareMode=_shareMode;
+@property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(copy, nonatomic) NSArray *entityNames; // @synthesize entityNames=_entityNames;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (id)recipientsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)recipientsCount;
-- (void)addRecipients:(id)arg1;
-- (void)clearRecipients;
-- (id)entityNameAtIndex:(unsigned long long)arg1;
-- (unsigned long long)entityNamesCount;
-- (void)addEntityName:(id)arg1;
-- (void)clearEntityNames;
 - (int)StringAsShareMode:(id)arg1;
 - (id)shareModeAsString:(int)arg1;
 @property(nonatomic) BOOL hasShareMode;
-@property(nonatomic) int shareMode; // @synthesize shareMode=_shareMode;
+- (id)recipientsAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long recipientsCount;
+- (void)addRecipients:(id)arg1;
+- (void)clearRecipients;
 @property(readonly, nonatomic) BOOL hasIntentMetadata;
+- (id)entityNameAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long entityNamesCount;
+- (void)addEntityName:(id)arg1;
+- (void)clearEntityNames;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

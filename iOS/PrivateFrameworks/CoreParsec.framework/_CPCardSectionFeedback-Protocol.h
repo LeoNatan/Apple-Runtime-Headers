@@ -10,13 +10,9 @@
 
 @protocol _CPCardSectionFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasResultId;
 @property(copy, nonatomic) NSString *resultId;
-@property(readonly, nonatomic) _Bool hasCardSectionId;
 @property(copy, nonatomic) NSString *cardSectionId;
-@property(readonly, nonatomic) _Bool hasCardSection;
 @property(retain, nonatomic) _CPCardSectionForFeedback *cardSection;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -13,14 +13,16 @@
 @interface SXWebContentComponentSizerFactory : NSObject <SXComponentSizerFactory>
 {
     id <SXDocumentControllerProvider> _documentControllerProvider;
+    id <SXWebContentLoadingPolicyProvider> _loadingPolicyProvider;
 }
 
+@property(readonly, nonatomic) id <SXWebContentLoadingPolicyProvider> loadingPolicyProvider; // @synthesize loadingPolicyProvider=_loadingPolicyProvider;
 @property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
 - (void).cxx_destruct;
 - (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutAttributes:(id)arg3;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) NSString *type;
-- (id)initWithDocumentControllerProvider:(id)arg1;
+- (id)initWithDocumentControllerProvider:(id)arg1 loadingPolicyProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

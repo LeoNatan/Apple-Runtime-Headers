@@ -4,12 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UILabel.h"
+#import "UITextField.h"
 
-@interface ArouetTextPreviewView : UILabel
+@class NSString;
+
+@interface ArouetTextPreviewView : UITextField
 {
+    float _cachedTextWidth;
+    NSString *_cachedTextWidthString;
+    id <ArouetTextPreviewViewDelegate> _textPreviewViewDelegate;
 }
 
+@property(nonatomic) __weak id <ArouetTextPreviewViewDelegate> textPreviewViewDelegate; // @synthesize textPreviewViewDelegate=_textPreviewViewDelegate;
+- (void).cxx_destruct;
+- (_Bool)canBecomeFirstResponder;
+- (void)layoutSubviews;
+- (struct CGRect)placeholderRectForBounds:(struct CGRect)arg1;
+- (id)interactionAssistant;
+- (struct CGRect)textRectForBounds:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

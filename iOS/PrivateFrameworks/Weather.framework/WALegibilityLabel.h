@@ -8,6 +8,7 @@
 
 @class NSArray, NSAttributedString, NSString, UIColor, UIFont, UILabel, UILayoutGuide, _UILegibilitySettings, _UILegibilityView;
 
+__attribute__((visibility("hidden")))
 @interface WALegibilityLabel : UIView
 {
     UILabel *_lookasideLabel;

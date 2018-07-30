@@ -15,40 +15,44 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessorySettings, HMApplicationData, HMHome, HMMediaSession, HMSymptomsHandler, HMThreadSafeMutableArrayCollection, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class HMAccessoryCategory, HMAccessorySettings, HMApplicationData, HMFUnfairLock, HMHome, HMMediaSession, HMMutableArray, HMSymptomsHandler, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
-@interface HMMediaSystem : NSObject <HMFLogging, NSSecureCoding, HMObjectMerge, HMFMessageReceiver, HMControllable, HMMediaObject, HMApplicationData, HMAccessorySettingsContainer>
+@interface HMMediaSystem : NSObject <HMFLogging, HMFMessageReceiver, NSSecureCoding, HMObjectMerge, HMControllable, HMMediaObject, HMApplicationData, HMAccessorySettingsContainer>
 {
+    HMFUnfairLock *_lock;
     _Bool _compatible;
     NSString *_name;
+    NSString *_configuredName;
     NSUUID *_uniqueIdentifier;
     HMAccessorySettings *_settings;
     id <HMMediaSystemDelegate> _delegate;
     HMApplicationData *_applicationData;
     HMHome *_home;
     HMSymptomsHandler *_symptomsHandler;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSUUID *_uuid;
     _HMContext *_context;
-    HMThreadSafeMutableArrayCollection *_componentsArray;
+    NSUUID *_uuid;
+    HMMutableArray *_componentsArray;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 + (id)mediaSystemWithDictionary:(id)arg1 home:(id)arg2;
-@property(retain, nonatomic) HMThreadSafeMutableArrayCollection *componentsArray; // @synthesize componentsArray=_componentsArray;
-@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) HMMutableArray *componentsArray; // @synthesize componentsArray=_componentsArray;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) HMSymptomsHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
-@property(readonly, nonatomic) __weak HMHome *home; // @synthesize home=_home;
+@property(nonatomic) __weak HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (id)logIdentifier;
 - (void)notifyDelegateOfUpdatedMediaSession:(id)arg1;
 - (void)notifyDelegateOfUpdatedSettings:(id)arg1;
 - (void)notifyDelegateOfUpdatedApplicationData:(id)arg1;
 - (void)notifyDelegateOfUpdatedComponents:(id)arg1;
+- (void)notifyDelegateOfUpdatedConfiguredName:(id)arg1;
 - (void)notifyDelegateOfUpdatedName:(id)arg1;
 - (void)updateMediaSession:(id)arg1 forMediaProfile:(id)arg2;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2 includeSettingsAndAppData:(_Bool)arg3;
@@ -64,24 +68,24 @@
 - (void)setSettings:(id)arg1;
 @property(readonly) HMAccessorySettings *settings; // @synthesize settings=_settings;
 @property(readonly, copy) HMMediaSession *mediaSession;
+@property(readonly, nonatomic) HMAccessoryCategory *category;
 @property(readonly, nonatomic) NSArray *components;
 @property(readonly, nonatomic, getter=isCompatible) _Bool compatible; // @synthesize compatible=_compatible;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+- (void)setConfiguredName:(id)arg1;
+@property(readonly, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 - (void)setName:(id)arg1;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property __weak id <HMMediaSystemDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
-@property(readonly, nonatomic) NSUUID *messageTargetUUID;
-- (void)_registerNotificationHandlers;
-- (void)_configureWithContext:(id)arg1;
-@property(readonly) unsigned int hash;
-- (_Bool)isEqual:(id)arg1;
 - (void)_updateAccessoryReference;
 - (void)_invalidate;
+- (void)_registerNotificationHandlers;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned int hash;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)logIdentifier;
-- (id)initWithHome:(id)arg1 uuid:(id)arg2 name:(id)arg3 compatible:(_Bool)arg4 components:(id)arg5 settings:(id)arg6 symptomHandler:(id)arg7;
+- (id)initWithHome:(id)arg1 uuid:(id)arg2 name:(id)arg3 configuredName:(id)arg4 compatible:(_Bool)arg5 components:(id)arg6 settings:(id)arg7 symptomHandler:(id)arg8;
 - (id)init;
 
 // Remaining properties

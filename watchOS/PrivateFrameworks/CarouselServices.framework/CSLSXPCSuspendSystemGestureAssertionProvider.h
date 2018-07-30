@@ -16,7 +16,7 @@
 
 + (id)sharedInstance;
 - (void)releaseSuspendSystemGestureAssertion:(id)arg1 pid:(int)arg2;
-- (void)takeSuspendSystemGestureAssertion:(id)arg1 pid:(int)arg2;
+- (void)takeSuspendSystemGestureAssertion:(id)arg1 withEdges:(unsigned int)arg2 pid:(int)arg3;
 - (id)init;
 
 // Remaining properties

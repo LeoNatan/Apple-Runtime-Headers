@@ -10,6 +10,7 @@
 {
 }
 
++ (id)confidentialFeatureWarningMessage;
 + (id)confidentialityWarningMessage;
 + (id)confidentialityWarningTitle;
 + (_Bool)confidentialityCheckRequired;

@@ -8,7 +8,7 @@
 
 #import "CXVideoAspectRatioDescriptor.h"
 
-@class CXHandle, NSDate, NSString;
+@class CXHandle, NSDate, NSString, NSUUID;
 
 @interface CXStartCallAction : CXCallAction <CXVideoAspectRatioDescriptor>
 {
@@ -18,16 +18,20 @@
     _Bool _retry;
     _Bool _emergency;
     _Bool _voicemail;
+    _Bool _shouldSuppressInCallUI;
     CXHandle *_handle;
     NSString *_contactIdentifier;
     NSDate *_dateStarted;
     long long _ttyType;
+    NSUUID *_localSenderIdentityUUID;
     struct CGSize _localPortraitAspectRatio;
     struct CGSize _localLandscapeAspectRatio;
 }
 
 + (_Bool)supportsSecureCoding;
 + (double)timeout;
+@property(nonatomic) _Bool shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
+@property(retain, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
 @property(nonatomic, setter=setTTYType:) long long ttyType; // @synthesize ttyType=_ttyType;
 @property(nonatomic, getter=isVoicemail) _Bool voicemail; // @synthesize voicemail=_voicemail;
 @property(nonatomic, getter=isEmergency) _Bool emergency; // @synthesize emergency=_emergency;

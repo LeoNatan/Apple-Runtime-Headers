@@ -8,15 +8,14 @@
 
 @class NSMutableDictionary, OISFUZipArchive;
 
-__attribute__((visibility("hidden")))
 @interface TCBundleResourcePackage : NSObject
 {
     OISFUZipArchive *mZipArchive;
     NSMutableDictionary *mEntryMap;
 }
 
+- (void).cxx_destruct;
 - (id)entryWithName:(id)arg1 cacheResult:(BOOL)arg2;
-- (void)dealloc;
 - (id)initWithZipArchive:(id)arg1;
 
 @end

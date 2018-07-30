@@ -19,8 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) int priority; // @synthesize priority=_priority;
-@property(readonly, retain, nonatomic) BKSEventFocusDeferralProperties *deferredProperties; // @synthesize deferredProperties=_deferredProperties;
-@property(readonly, retain, nonatomic) BKSEventFocusDeferralProperties *properties; // @synthesize properties=_properties;
+@property(readonly, nonatomic) BKSEventFocusDeferralProperties *deferredProperties; // @synthesize deferredProperties=_deferredProperties;
+@property(readonly, nonatomic) BKSEventFocusDeferralProperties *properties; // @synthesize properties=_properties;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) _Bool isCycle;
@@ -30,7 +31,6 @@
 - (_Bool)defersProperties:(id)arg1;
 - (id)conciseDescription;
 - (id)description;
-- (void)dealloc;
 - (id)initWithProperties:(id)arg1 deferredProperties:(id)arg2 withPriority:(int)arg3;
 - (id)initWithProperties:(id)arg1 deferredProperties:(id)arg2;
 

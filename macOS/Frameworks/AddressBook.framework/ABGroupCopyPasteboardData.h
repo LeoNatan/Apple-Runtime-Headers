@@ -10,7 +10,6 @@
 
 @class ABGroup, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupCopyPasteboardData : NSObject <ABPasteboardData>
 {
     ABGroup *_group;

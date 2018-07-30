@@ -6,24 +6,12 @@
 
 #import <FinderKit/FIFinderViewGutsController.h>
 
-@class FI_TUpdateLayerView, FI_TView, NSLayoutConstraint, NSSegmentedControl, NSView, NSVisualEffectView;
-
 __attribute__((visibility("hidden")))
 @interface FIFinderViewAppCentricGutsController : FIFinderViewGutsController
 {
-    NSView *_topBarContainerView;
-    NSVisualEffectView *_visualEffectView;
-    FI_TUpdateLayerView *_bottomLine;
-    NSSegmentedControl *_toggleSidebarButton;
-    NSSegmentedControl *_topBarEditTagsButton;
-    NSSegmentedControl *_topBarSharingButton;
-    NSLayoutConstraint *_backForwardWidthConstraint;
-    NSLayoutConstraint *_backForwardLeadingConstraint;
-    double _backForwardWidthConstant;
     double _backForwardLeadingConstant;
     _Bool _showBackForward;
     _Bool _showingAllTopBarItems;
-    FI_TView *_popoverView;
 }
 
 - (_Bool)sidebarInitiallyVisible;
@@ -35,15 +23,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasUbiquityError;
 - (void)unregisterForUbiquityStatus;
 - (void)registerForUbiquityStatus;
-- (void)viewDidAppear;
-- (void)configureVisualEffectView;
 - (void)adjustBackForwardSegments;
 - (void)containerContentChanged:(id)arg1;
-- (_Bool)adjustTopBarViewSwitcherSegmentCount;
-- (void)adjustTopBar;
 - (void)configureCustomAccessibilityDescription:(struct TString)arg1 forSegmentedControl:(id)arg2;
 - (void)configureWindowForContentChange;
-- (void)didChangeSelection;
 - (struct TMDQueryAliasNode *)userSearchTarget;
 - (void)updateICloudButtonImage;
 - (void)setIsSavePanel:(_Bool)arg1;
@@ -53,8 +36,8 @@ __attribute__((visibility("hidden")))
 - (Class)browserContainerClass;
 - (void)iCloudModeChanged;
 - (BOOL)performKeyEquivalent:(id)arg1;
+- (void)dealloc;
 - (void)viewLoaded;
-- (id)nibName;
 
 @end
 

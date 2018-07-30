@@ -8,7 +8,6 @@
 
 @class ABPeoplePickerSubrowGroupElement;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerTableRow : NSTableRow
 {
     ABPeoplePickerSubrowGroupElement *_subrowGroup;

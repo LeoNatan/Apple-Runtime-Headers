@@ -47,7 +47,6 @@
 @property(nonatomic) _Bool hasNumberIntValue;
 @property(nonatomic) _Bool hasTimestamp;
 @property(readonly, nonatomic) _Bool hasKey;
-- (id)copyWithUpdatedTimestamp:(double)arg1;
 - (id)decodedTimestamp;
 - (id)decodedValue;
 - (void)setTimestampWithDate:(id)arg1;

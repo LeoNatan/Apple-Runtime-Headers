@@ -6,23 +6,25 @@
 
 #import "NSObject.h"
 
-@class HKAnchoredObjectQuery, HKHealthStore, _HKLocationSeriesStore, _HKLocationShifter;
+@class HKAnchoredObjectQuery, HKHealthStore, _HKLocationShifter, _HKWorkoutRouteStore;
 
 @interface HKLocationFetcher : NSObject
 {
-    HKAnchoredObjectQuery *_locationSeriesQuery;
     _HKLocationShifter *_shifter;
-    _HKLocationSeriesStore *_seriesSamplesStore;
+    _HKWorkoutRouteStore *_routesStore;
     HKHealthStore *_healthStore;
+    HKAnchoredObjectQuery *_routesQuery;
 }
 
+@property(retain, nonatomic) HKAnchoredObjectQuery *routesQuery; // @synthesize routesQuery=_routesQuery;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-@property(retain, nonatomic) _HKLocationSeriesStore *seriesSamplesStore; // @synthesize seriesSamplesStore=_seriesSamplesStore;
+@property(retain, nonatomic) _HKWorkoutRouteStore *routesStore; // @synthesize routesStore=_routesStore;
+@property(retain, nonatomic) _HKLocationShifter *shifter; // @synthesize shifter=_shifter;
 - (void).cxx_destruct;
-- (id)_locationSeriesQueryForWorkout:(id)arg1 withUpdateHandler:(CDUnknownBlockType)arg2;
-- (void)fetchSeriesSamplesFromWorkout:(id)arg1 withUpdateHandler:(CDUnknownBlockType)arg2;
+- (id)_workoutRoutesQueryForWorkout:(id)arg1 withUpdateHandler:(CDUnknownBlockType)arg2;
+- (void)fetchRoutesFromWorkout:(id)arg1 withUpdateHandler:(CDUnknownBlockType)arg2;
 - (void)_handleAndShiftLocations:(id)arg1 forWorkout:(id)arg2 withSamplesHandler:(CDUnknownBlockType)arg3;
-- (_Bool)_seriesAreSmoothed:(id)arg1;
+- (_Bool)_routesAreSmoothed:(id)arg1;
 - (void)fetchLocationsFromWorkout:(id)arg1 applyThreshold:(_Bool)arg2 withSamplesHandler:(CDUnknownBlockType)arg3;
 - (void)fetchLocationsFromWorkout:(id)arg1 withSamplesHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

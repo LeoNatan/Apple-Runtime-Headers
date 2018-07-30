@@ -9,6 +9,7 @@
 @class GEODataRequest, NSObject<OS_dispatch_queue>;
 
 @protocol GEODataSession <NSObject>
+- (id <GEODataSessionTask>)taskWithRequest:(GEODataRequest *)arg1 rules:(id <GEODataSessionTaskRules>)arg2 priority:(float)arg3 delegate:(id <GEODataSessionTaskDelegate>)arg4 delegateQueue:(NSObject<OS_dispatch_queue> *)arg5;
 - (id <GEODataSessionTask>)taskWithRequest:(GEODataRequest *)arg1 rules:(id <GEODataSessionTaskRules>)arg2 delegate:(id <GEODataSessionTaskDelegate>)arg3 delegateQueue:(NSObject<OS_dispatch_queue> *)arg4;
 @end
 

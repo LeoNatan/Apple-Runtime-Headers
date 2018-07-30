@@ -12,20 +12,23 @@
 
 @interface CEMApplicationInviteToProgramCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadProgramID;
+    NSString *_payloadInvitationURL;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withProgramID:(id)arg2 withInvitationURL:(id)arg3;
++ (id)buildWithIdentifier:(id)arg1 withProgramID:(id)arg2 withInvitationURL:(id)arg3;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadInvitationURL; // @synthesize payloadInvitationURL=_payloadInvitationURL;
+@property(copy, nonatomic) NSString *payloadProgramID; // @synthesize payloadProgramID=_payloadProgramID;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (_Bool)mustBeSupervised;
-@property(readonly, nonatomic) NSString *payloadInvitationURL;
-@property(readonly, nonatomic) NSString *payloadProgramID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class NSNumber;
 
+__attribute__((visibility("hidden")))
 @interface _NSDoubleValueBinderPlugin : _NSValueBinderPlugin
 {
     NSNumber *_originalMinValue;

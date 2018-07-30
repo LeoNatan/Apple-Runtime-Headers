@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class HPDClient, NSDictionary, NSMapTable, NSObject<OS_dispatch_queue>;
+@class HPDClient, NSDictionary, NSMapTable, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface HPDSearchManager : NSObject
 {
@@ -28,6 +28,7 @@
 - (id)cachedBookList;
 - (id)cachedBookWithIdentifier:(id)arg1;
 - (id)bookWithIdentifier:(id)arg1;
+@property(readonly) NSSet *indexedBookIDs;
 @property(readonly, copy) NSDictionary *bookList;
 @property(retain) NSDictionary *cachedBooks; // @synthesize cachedBooks=_cachedBooks;
 - (BOOL)searchForString:(id)arg1 inBooks:(id)arg2 withDelegate:(id)arg3 options:(id)arg4 contextInfo:(const void *)arg5;

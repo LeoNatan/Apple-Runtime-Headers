@@ -9,7 +9,7 @@
 @interface ICDrawingCommandData : NSObject
 {
     struct CGRect _cachedBounds;
-    vector_82e5b66f _points;
+    vector_352d2fdf _points;
     BOOL _isClipped;
     unsigned int _type;
     struct CGColor *_color;
@@ -28,7 +28,7 @@
 @property(nonatomic) CDStruct_4a3d0796 baseValues; // @synthesize baseValues=_baseValues;
 @property(retain, nonatomic) struct CGColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
-@property(readonly, nonatomic) vector_82e5b66f *points; // @synthesize points=_points;
+@property(readonly, nonatomic) vector_352d2fdf *points; // @synthesize points=_points;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;

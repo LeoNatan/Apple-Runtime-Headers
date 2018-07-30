@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)currentProcessHasSyncClientEntitlement;
 + (_Bool)currentProcessHasContactsUIEntitlement;
 + (_Bool)currentProcessHasLocationdEffectiveBundleEntitlement;
 + (_Bool)currentProcessHasWatchOSMutableDatabaseEntitlement;

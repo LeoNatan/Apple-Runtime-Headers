@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface CKFetchRecordZoneChangesOperation (MSPCloudKitAccountAccess) <MSPCloudRequest>
+- (void)setNetworkBehaviorIsDiscretionary:(_Bool)arg1;
 - (unsigned int)maximumRetries;
 - (void)addCloudAccessCompletionBlock:(CDUnknownBlockType)arg1;
 

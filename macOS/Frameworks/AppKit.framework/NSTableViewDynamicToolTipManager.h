@@ -6,6 +6,7 @@
 
 #import <AppKit/NSViewDynamicToolTipManager.h>
 
+__attribute__((visibility("hidden")))
 @interface NSTableViewDynamicToolTipManager : NSViewDynamicToolTipManager
 {
 }

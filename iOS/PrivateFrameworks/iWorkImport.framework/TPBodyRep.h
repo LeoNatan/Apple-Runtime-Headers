@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) TPBodyLayout *bodyLayout; // @synthesize bodyLayout=_bodyLayout;
 - (void).cxx_destruct;
-- (_Bool)p_doesRep:(id)arg1 containCharIndex:(unsigned long long)arg2 isStart:(_Bool)arg3;
 - (id)storage;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 

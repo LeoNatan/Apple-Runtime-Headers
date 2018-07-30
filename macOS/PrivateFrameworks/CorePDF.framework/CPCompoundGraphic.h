@@ -6,6 +6,7 @@
 
 #import <CorePDF/CPGraphicObject.h>
 
+__attribute__((visibility("hidden")))
 @interface CPCompoundGraphic : CPGraphicObject
 {
 }

@@ -6,6 +6,7 @@
 
 #import <AudioPasscode/AUPasscodeCodecConfiguration.h>
 
+__attribute__((visibility("hidden")))
 @interface MLSCodecConfiguration : AUPasscodeCodecConfiguration
 {
 }

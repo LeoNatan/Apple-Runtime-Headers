@@ -11,7 +11,6 @@
 @interface AKPinFieldView : NSView
 {
     NSImage *_digitField;
-    NSImage *_digitFieldHightlight;
     NSArray *_pinFieldBoxArray;
     struct CGRect *_digitRects;
     struct CGRect _progressRect;
@@ -48,6 +47,7 @@
 - (void)_appendNewCharacterWithEvent:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (BOOL)acceptsFirstResponder;
+- (void)drawFocusRingOnRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 pinLength:(int)arg2 supportsRTL:(BOOL)arg3 chunkingStyle:(unsigned long long)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 pinLength:(int)arg2;

@@ -7,28 +7,45 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBStartVideoCallIntentResponse.h"
 
-@class PBUnknownFields, _INPBCallMetrics;
+@class NSArray, NSString, _INPBCallMetrics;
 
-@interface _INPBStartVideoCallIntentResponse : PBCodable <NSCopying>
+@interface _INPBStartVideoCallIntentResponse : PBCodable <_INPBStartVideoCallIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_fbf2c6cd _has;
+    int _audioRoute;
     _INPBCallMetrics *_metrics;
+    NSString *_status;
+    NSArray *_targetContacts;
 }
 
-+ (id)options;
+@property(copy, nonatomic) NSArray *targetContacts; // @synthesize targetContacts=_targetContacts;
+@property(copy, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBCallMetrics *metrics; // @synthesize metrics=_metrics;
+@property(nonatomic) int audioRoute; // @synthesize audioRoute=_audioRoute;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+- (id)targetContactsAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int targetContactsCount;
+- (void)addTargetContacts:(id)arg1;
+- (void)clearTargetContacts;
+@property(readonly, nonatomic) _Bool hasStatus;
 @property(readonly, nonatomic) _Bool hasMetrics;
+- (int)StringAsAudioRoute:(id)arg1;
+- (id)audioRouteAsString:(int)arg1;
+@property(nonatomic) _Bool hasAudioRoute;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

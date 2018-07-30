@@ -10,13 +10,9 @@
 
 @protocol _SFPBAppLink <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasImageAlign;
 @property(nonatomic) int imageAlign;
-@property(readonly, nonatomic) BOOL hasImage;
 @property(retain, nonatomic) _SFPBImage *image;
-@property(readonly, nonatomic) BOOL hasAppPunchout;
 @property(retain, nonatomic) _SFPBPunchout *appPunchout;
-@property(readonly, nonatomic) BOOL hasTitle;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

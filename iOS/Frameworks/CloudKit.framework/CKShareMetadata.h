@@ -17,7 +17,7 @@
     NSString *_containerIdentifier;
     CKShare *_share;
     CKRecordID *_rootRecordID;
-    long long _participantType;
+    long long _participantRole;
     long long _participantStatus;
     long long _participantPermission;
     CKUserIdentity *_ownerIdentity;
@@ -28,6 +28,7 @@
     NSData *_privateToken;
     CKShareParticipant *_callingParticipant;
     NSArray *_outOfNetworkMatches;
+    NSArray *_sharedItemHierarchy;
     NSString *_rootRecordType;
     NSData *_encryptedData;
 }
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) NSData *encryptedData; // @synthesize encryptedData=_encryptedData;
 @property(nonatomic) _Bool acceptedInProcess; // @synthesize acceptedInProcess=_acceptedInProcess;
 @property(retain, nonatomic) NSString *rootRecordType; // @synthesize rootRecordType=_rootRecordType;
+@property(copy, nonatomic) NSArray *sharedItemHierarchy; // @synthesize sharedItemHierarchy=_sharedItemHierarchy;
 @property(retain, nonatomic) NSArray *outOfNetworkMatches; // @synthesize outOfNetworkMatches=_outOfNetworkMatches;
 @property(copy, nonatomic) CKShareParticipant *callingParticipant; // @synthesize callingParticipant=_callingParticipant;
 @property(copy, nonatomic) NSData *privateToken; // @synthesize privateToken=_privateToken;
@@ -46,7 +48,7 @@
 @property(retain, nonatomic) CKUserIdentity *ownerIdentity; // @synthesize ownerIdentity=_ownerIdentity;
 @property(nonatomic) long long participantPermission; // @synthesize participantPermission=_participantPermission;
 @property(nonatomic) long long participantStatus; // @synthesize participantStatus=_participantStatus;
-@property(nonatomic) long long participantType; // @synthesize participantType=_participantType;
+@property(nonatomic) long long participantRole; // @synthesize participantRole=_participantRole;
 @property(copy, nonatomic) CKRecordID *rootRecordID; // @synthesize rootRecordID=_rootRecordID;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
 @property(copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
@@ -56,6 +58,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) long long participantType;
 - (void)CKAssignToContainerWithID:(id)arg1;
 - (id)ckShortDescription;
 - (id)description;

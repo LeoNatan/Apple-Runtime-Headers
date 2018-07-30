@@ -7,43 +7,45 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBCopyFileIntentResponse.h"
 
-@class PBUnknownFields, _INPBString;
+@class NSString, _INPBString;
 
-@interface _INPBCopyFileIntentResponse : PBCodable <NSCopying>
+@interface _INPBCopyFileIntentResponse : PBCodable <_INPBCopyFileIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBString *_destinationName;
-    _INPBString *_entityName;
-    int _entityType;
+    CDStruct_be739ab4 _has;
     _Bool _overwrite;
     _Bool _success;
-    CDStruct_be739ab4 _has;
+    int _entityType;
+    _INPBString *_destinationName;
+    _INPBString *_entityName;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBString *destinationName; // @synthesize destinationName=_destinationName;
-@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(nonatomic) _Bool overwrite; // @synthesize overwrite=_overwrite;
+@property(nonatomic) int entityType; // @synthesize entityType=_entityType;
+@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
+@property(retain, nonatomic) _INPBString *destinationName; // @synthesize destinationName=_destinationName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasDestinationName;
-@property(readonly, nonatomic) _Bool hasEntityName;
+@property(nonatomic) _Bool hasSuccess;
+@property(nonatomic) _Bool hasOverwrite;
 - (int)StringAsEntityType:(id)arg1;
 - (id)entityTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasEntityType;
-@property(nonatomic) int entityType; // @synthesize entityType=_entityType;
-@property(nonatomic) _Bool hasSuccess;
-@property(nonatomic) _Bool hasOverwrite;
+@property(readonly, nonatomic) _Bool hasEntityName;
+@property(readonly, nonatomic) _Bool hasDestinationName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

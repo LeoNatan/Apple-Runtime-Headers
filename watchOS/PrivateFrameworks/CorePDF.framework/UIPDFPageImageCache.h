@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, UIPDFDocument;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFPageImageCache : NSObject
 {
     UIPDFDocument *_document;

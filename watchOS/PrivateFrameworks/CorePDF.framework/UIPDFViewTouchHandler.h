@@ -10,6 +10,7 @@
 
 @class NSString, UILongPressGestureRecognizer, UIMenuController, UIPDFMagnifierController, UIPDFPageView, UIPDFSelectionController, UITapGestureRecognizer;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFViewTouchHandler : UIResponder <UIGestureRecognizerDelegate>
 {
     UIPDFPageView *_pdfPageView;

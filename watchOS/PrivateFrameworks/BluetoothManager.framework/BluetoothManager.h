@@ -84,6 +84,7 @@
 - (void)_updateBlacklistMode;
 - (void)_updateAirplaneModeStatus;
 - (void)_powerChanged;
+- (int)maskLocalDeviceEvents:(unsigned int)arg1;
 - (_Bool)setEnabled:(_Bool)arg1;
 - (_Bool)setPowered:(_Bool)arg1;
 - (_Bool)enabled;

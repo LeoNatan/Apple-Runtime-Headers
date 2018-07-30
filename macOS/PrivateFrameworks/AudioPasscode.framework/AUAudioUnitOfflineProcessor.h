@@ -8,6 +8,7 @@
 
 @class AUAudioUnit;
 
+__attribute__((visibility("hidden")))
 @interface AUAudioUnitOfflineProcessor : NSObject
 {
     struct CAExtAudioFile _srcFile;

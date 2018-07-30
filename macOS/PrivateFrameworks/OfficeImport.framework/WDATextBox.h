@@ -6,30 +6,33 @@
 
 #import "NSObject.h"
 
-@class WDAContent, WDDocument, WDText;
+@class NSNumber, WDAContent, WDDocument, WDText;
 
-__attribute__((visibility("hidden")))
 @interface WDATextBox : NSObject
 {
     WDText *mText;
     unsigned long long mNextTextBoxId;
     _Bool mOle;
+    BOOL _isMultiColumn;
     WDDocument *mDocument;
     WDAContent *mParent;
+    NSNumber *_flowSequence;
+    NSNumber *_flowId;
 }
 
+@property BOOL isMultiColumn; // @synthesize isMultiColumn=_isMultiColumn;
+@property(retain) NSNumber *flowId; // @synthesize flowId=_flowId;
+@property(retain) NSNumber *flowSequence; // @synthesize flowSequence=_flowSequence;
+@property __weak WDAContent *parent; // @synthesize parent=mParent;
+@property __weak WDDocument *document; // @synthesize document=mDocument;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setNextTextBoxId:(unsigned long long)arg1;
 - (unsigned long long)nextTextBoxId;
 - (void)setText:(id)arg1;
 - (id)text;
-- (void)setParent:(id)arg1;
-- (id)parent;
 - (void)setOle:(BOOL)arg1;
 - (BOOL)isOle;
-- (void)setDocument:(id)arg1;
-- (id)document;
-- (void)dealloc;
 - (id)init;
 
 @end

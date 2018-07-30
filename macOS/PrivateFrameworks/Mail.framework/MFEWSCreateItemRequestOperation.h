@@ -6,11 +6,11 @@
 
 #import <Mail/MFEWSRequestOperation.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class MFEWSCreateItemResponseOperation, NSString;
 
-@interface MFEWSCreateItemRequestOperation : MFEWSRequestOperation <NSCoding>
+@interface MFEWSCreateItemRequestOperation : MFEWSRequestOperation <NSSecureCoding>
 {
     BOOL _messageType;
     BOOL _wroteOfflineData;
@@ -19,6 +19,7 @@
     NSString *_offlineCreatedEWSItemIdString;
 }
 
++ (BOOL)supportsSecureCoding;
 @property BOOL wroteOfflineData; // @synthesize wroteOfflineData=_wroteOfflineData;
 @property(retain) NSString *offlineCreatedEWSItemIdString; // @synthesize offlineCreatedEWSItemIdString=_offlineCreatedEWSItemIdString;
 @property(readonly, nonatomic) long long disposition; // @synthesize disposition=_disposition;

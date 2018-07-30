@@ -9,10 +9,11 @@
 #import "CLKTimeFormatterObserver.h"
 #import "NTKTimeView.h"
 
-@class CLKTimeFormatter, NSString, NTKVictoryDigitsView;
+@class CLKDevice, CLKTimeFormatter, NSString, NTKVictoryDigitsView;
 
 @interface NTKVictoryDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView>
 {
+    CLKDevice *_device;
     NTKVictoryDigitsView *_upperDigitsView;
     NTKVictoryDigitsView *_lowerDigitsView;
     NTKVictoryDigitsView *_flipDigitsView;
@@ -41,7 +42,7 @@
 - (void)_resetDigitAppearanceForStyle:(unsigned long long)arg1;
 - (void)clearEditingTransitions;
 - (void)willBeginEditing;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

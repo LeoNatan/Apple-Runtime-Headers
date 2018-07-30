@@ -35,6 +35,7 @@
 - (_Bool)statusBarAppContextNavUIBackButtonDisabled;
 - (_Bool)statusBarAppContextShowNavUI;
 - (id)statusBarAppContextBackgroundColor;
+- (float)statusBarAppContextTitleInset;
 - (float)statusBarAppContextTitleBaseLine;
 - (id)statusBarAppContextTitleFont;
 - (id)statusBarAppContextTitleColor;

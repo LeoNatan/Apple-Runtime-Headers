@@ -10,21 +10,13 @@
 
 @protocol _CPResultEngagementFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasMatchesUnengagedSuggestion;
 @property(nonatomic) _Bool matchesUnengagedSuggestion;
-@property(readonly, nonatomic) _Bool hasTitleText;
 @property(copy, nonatomic) NSString *titleText;
-@property(readonly, nonatomic) _Bool hasResult;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result;
-@property(readonly, nonatomic) _Bool hasActionTarget;
 @property(nonatomic) int actionTarget;
-@property(readonly, nonatomic) _Bool hasDestination;
 @property(nonatomic) int destination;
-@property(readonly, nonatomic) _Bool hasTriggerEvent;
 @property(nonatomic) int triggerEvent;
-@property(readonly, nonatomic) _Bool hasActionEngaged;
 @property(nonatomic) _Bool actionEngaged;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

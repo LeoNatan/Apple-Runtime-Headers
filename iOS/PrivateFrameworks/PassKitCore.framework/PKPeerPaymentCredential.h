@@ -6,21 +6,25 @@
 
 #import <PassKitCore/PKPaymentCredential.h>
 
-@class PKCurrencyAmount, PKPeerPaymentAccount, PKPeerPaymentPassDetailsResponse;
+@class NSString, PKCurrencyAmount, PKPeerPaymentAccount, PKPeerPaymentPassDetailsResponse;
 
 @interface PKPeerPaymentCredential : PKPaymentCredential
 {
+    NSString *_pendingPaymentSenderName;
     PKPeerPaymentAccount *_account;
     PKPeerPaymentPassDetailsResponse *_passDetailsResponse;
     PKCurrencyAmount *_amount;
     unsigned long long _state;
+    NSString *_pendingPaymentSenderAddress;
 }
 
+@property(copy, nonatomic) NSString *pendingPaymentSenderAddress; // @synthesize pendingPaymentSenderAddress=_pendingPaymentSenderAddress;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) PKCurrencyAmount *amount; // @synthesize amount=_amount;
 @property(retain, nonatomic) PKPeerPaymentPassDetailsResponse *passDetailsResponse; // @synthesize passDetailsResponse=_passDetailsResponse;
 @property(readonly, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *pendingPaymentSenderName;
 - (id)longDescription;
 - (unsigned long long)hash;
 - (_Bool)_isEqualToCredential:(id)arg1;

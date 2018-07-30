@@ -19,10 +19,13 @@
 - (void).cxx_destruct;
 - (id)displayProfileOfType:(long long)arg1;
 - (id)archiveData;
+- (id)dataForBundleResources:(id)arg1;
+- (id)dataForBundleResource:(id)arg1;
 - (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2;
 - (void)imageSetForType:(long long)arg1 screenScale:(double)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (id)imageSetForType:(long long)arg1 screenScale:(double)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5;
 - (void)contentWithCompletion:(CDUnknownBlockType)arg1;
+- (id)content;
 - (void)requestUpdateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateSettings:(unsigned long long)arg1;
 - (void)noteShared;

@@ -14,6 +14,7 @@
     NSArray *_suggestions;
     UIImage *_clearButtonImage;
     UIButton *_microphoneButton;
+    long long _activeInterfaceOrientation;
     SPUIHeaderBlurView *_blurView;
     UIView *_tintView;
     struct CGSize _imageSize;
@@ -23,6 +24,7 @@
 @property _Bool ignoreRepresentedObjectUpdate; // @synthesize ignoreRepresentedObjectUpdate=_ignoreRepresentedObjectUpdate;
 @property(retain) UIView *tintView; // @synthesize tintView=_tintView;
 @property(retain) SPUIHeaderBlurView *blurView; // @synthesize blurView=_blurView;
+@property long long activeInterfaceOrientation; // @synthesize activeInterfaceOrientation=_activeInterfaceOrientation;
 @property(retain) UIButton *microphoneButton; // @synthesize microphoneButton=_microphoneButton;
 @property(retain) UIImage *clearButtonImage; // @synthesize clearButtonImage=_clearButtonImage;
 @property struct CGSize imageSize; // @synthesize imageSize=_imageSize;
@@ -36,6 +38,7 @@
 - (id)_textWithRepresentedObjects:(id)arg1;
 - (id)text;
 - (void)updateContentSizeCategory;
+- (_Bool)needsLandscapeHeight;
 - (struct CGSize)intrinsicContentSize;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)init;

@@ -17,6 +17,7 @@
 + (id)nonDirectURLForImgurURL:(id)arg1;
 + (id)youTubeVideoURLForEmbedURL:(id)arg1;
 + (id)nonMobileYouTubeURLForURL:(id)arg1;
++ (_Bool)isAppleTVURL:(id)arg1;
 + (_Bool)isYouTubeURL:(id)arg1;
 + (_Bool)isYouTubeEmbedURL:(id)arg1;
 + (_Bool)isYouTubeVideoURL:(id)arg1;

@@ -7,7 +7,6 @@
 #import "SignpostSupportObjectExtractor.h"
 
 @interface SignpostSupportObjectExtractor (LogArchiveReading)
-- (BOOL)processInMemoryDataWithStartDate:(id)arg1 endDate:(id)arg2 errorOut:(id *)arg3;
 - (BOOL)processLogArchiveWithPath:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 errorOut:(id *)arg4;
 - (void)_processOSLogEventProxy:(id)arg1;
 @end

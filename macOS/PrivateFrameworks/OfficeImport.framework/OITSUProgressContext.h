@@ -8,7 +8,6 @@
 
 @class NSDate, OITSUProgressStage;
 
-__attribute__((visibility("hidden")))
 @interface OITSUProgressContext : NSObject
 {
     OITSUProgressStage *m_currentStage;
@@ -17,6 +16,7 @@ __attribute__((visibility("hidden")))
     double m_lastOverallProgress;
 }
 
+- (id)description;
 - (double)overallProgress;
 - (double)currentPosition;
 - (void)setMessage:(id)arg1;

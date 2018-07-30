@@ -20,13 +20,9 @@
 + (id)compileWithModels:(const RepeatedPtrField_f3160e5f *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 error:(id *)arg4;
 @property(readonly) NSArray *models; // @synthesize models=_models;
 - (void).cxx_destruct;
-- (id)retrieveFinalModel:(id *)arg1;
-- (id)predictUntilFinalModelWithSample:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
-- (id)_predictionFromFeatures:(id)arg1 options:(id)arg2 start_idx:(int)arg3 end_idx:(int)arg4 error:(id *)arg5;
-- (id)batchPredict:(id)arg1 error:(id *)arg2;
-- (id)_batchPredict:(id)arg1 start_idx:(unsigned long)arg2 end_idx:(unsigned long)arg3 error:(id *)arg4;
-- (id)initModelFromMetadataAndArchive:(struct _MLModelInputArchiver *)arg1 versionInfo:(id)arg2 interface:(id)arg3 metadata:(id)arg4 error:(id *)arg5;
+- (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)initModelFromMetadataAndArchive:(struct _MLModelInputArchiver *)arg1 versionInfo:(id)arg2 interface:(id)arg3 metadata:(id)arg4 configuration:(id)arg5 error:(id *)arg6;
 
 @end
 

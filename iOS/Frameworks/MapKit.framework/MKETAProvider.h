@@ -13,7 +13,6 @@
 
 @class CLLocation, GEOAutomobileOptions, GEOTransitOptions, MKMapItem, NSHashTable, NSLock, NSNumber, NSString, NSTimer, _MKQuickRouteManager;
 
-__attribute__((visibility("hidden")))
 @interface MKETAProvider : NSObject <MKLocationManagerObserver, MKQuickRouteManagerDelegate, MKQuickRouteConfigurableView, MKQuickRouteTransportTypeFinding>
 {
     _MKQuickRouteManager *_quickRouteManager;

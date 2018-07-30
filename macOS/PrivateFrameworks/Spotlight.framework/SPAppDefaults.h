@@ -8,30 +8,26 @@
 
 @interface SPAppDefaults : SPDefaults
 {
-    BOOL _darkMode;
 }
 
 + (id)localizedGroupName:(id)arg1;
 + (id)localizedGroupNameDictionary;
-+ (id)defaultGroupNumberSort;
 + (id)topHitGroupPreferences;
 + (id)enabledGroupQueryString:(id)arg1;
 + (id)enabledGroupQueryFragment;
 + (id)enabledGroupIndexSet;
++ (void)resetEnabledGroupQueryFragment;
++ (void)resetEnabledGroupIndexSet;
 + (id)groupIdFromName:(id)arg1;
 + (id)nameFromGroupId:(unsigned long long)arg1;
 + (id)allGroupIndexSet;
 + (id)groupNameToGroupNumberDictionary;
 + (id)groupIdToNameDictionary;
 + (id)disabledGroups;
-+ (id)defaultGroupSort;
++ (void)resetDisabledGroups;
 + (void)initialize;
-+ (id)checkList;
-@property BOOL darkMode; // @synthesize darkMode=_darkMode;
-- (id)loadCategoryOrder:(id)arg1;
++ (id)defaultList;
 - (void)reloadPrefs;
-- (id)init;
-- (void)appearanceChanged:(id)arg1;
 
 @end
 

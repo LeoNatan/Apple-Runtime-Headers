@@ -10,7 +10,6 @@
 
 @class NSError;
 
-__attribute__((visibility("hidden")))
 @interface PUOperationStatus : NSObject <NSCopying>
 {
     long long _state;

@@ -17,7 +17,6 @@
 @property(readonly, nonatomic) unsigned long long sizeOfOriginalResourcesToUpload;
 @property(readonly, nonatomic) unsigned long long sizeOfResourcesToUpload;
 - (_Bool)openWithError:(id *)arg1;
-- (_Bool)resetWithError:(id *)arg1;
 @property(readonly, nonatomic) unsigned int countOfOriginalOthers;
 @property(readonly, nonatomic) unsigned int countOfOriginalVideos;
 @property(readonly, nonatomic) unsigned int countOfOriginalImages;
@@ -25,6 +24,8 @@
 - (id)resourceTypesToUploadForUploadIdentifier:(id)arg1;
 - (_Bool)deleteResourcesToUploadWithUploadIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)storeResourcesToUpload:(id)arg1 withUploadIdentifier:(id)arg2 error:(id *)arg3;
+- (_Bool)deleteRecordsForScopeIndex:(int)arg1 maxCount:(int)arg2 deletedCount:(int *)arg3 error:(id *)arg4;
+- (unsigned int)scopeType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

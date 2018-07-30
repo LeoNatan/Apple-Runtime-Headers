@@ -43,6 +43,7 @@
 - (void)finalizeLayoutBlueprint:(id)arg1 startOffset:(struct CGPoint)arg2;
 - (void)registerComponent:(id)arg1 toLayoutBlueprint:(id)arg2 layoutDataProvider:(id)arg3 documentColumnLayout:(id)arg4;
 - (id)createLayoutBlueprintForLayoutDataProvider:(id)arg1 documentColumnLayout:(id)arg2;
+- (_Bool)layoutInvalidationRequiredForComponentBlueprint:(id)arg1 columnLayout:(id)arg2 previousColumnLayout:(id)arg3;
 - (void)updateLayoutBlueprint:(id)arg1 usingLayoutDataProvider:(id)arg2;
 - (_Bool)isFinishedLayoutBlueprint:(id)arg1 forLayoutDataProvider:(id)arg2;
 - (_Bool)isValidLayoutBlueprint:(id)arg1 viewportSize:(struct CGSize)arg2;

@@ -19,9 +19,15 @@ __attribute__((visibility("hidden")))
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 @property(nonatomic) __weak SKAccountPageViewController *accountPageViewController; // @synthesize accountPageViewController=_accountPageViewController;
+- (void).cxx_destruct;
+- (void)popBridgedViewControllersToIndex:(unsigned long long)arg1;
+- (void)pushBridgedViewControllerAnimated:(_Bool)arg1 options:(id)arg2;
+- (void)setBridgedNavigationItemWithOptions:(id)arg1;
 - (void)overrideRedeemCameraWithCompletion:(CDUnknownBlockType)arg1;
 - (void)overrideCreditCardPresentationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)financeInterruptionResolved:(_Bool)arg1;
 - (void)dismissViewControllerWithResult:(id)arg1 error:(id)arg2;
+- (void)didFinishLoading;
 - (void)didPrepareWithResult:(id)arg1 error:(id)arg2;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

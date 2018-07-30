@@ -20,8 +20,7 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-@property(readonly, retain, nonatomic) CAContext *CAContext; // @dynamic CAContext;
-- (void)dealloc;
+@property(readonly, nonatomic) CAContext *CAContext; // @dynamic CAContext;
 - (id)initWithCAContextID:(unsigned int)arg1 level:(double)arg2;
 - (id)initWithCAContext:(id)arg1;
 - (id)_initWithCAContext:(id)arg1 contextID:(unsigned int)arg2 level:(double)arg3;

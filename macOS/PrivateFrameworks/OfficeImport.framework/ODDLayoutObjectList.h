@@ -8,15 +8,14 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface ODDLayoutObjectList : ODDLayoutObject
 {
     NSMutableArray *mChildren;
 }
 
+- (void).cxx_destruct;
 - (void)addChild:(id)arg1;
 - (id)children;
-- (void)dealloc;
 - (id)init;
 
 @end

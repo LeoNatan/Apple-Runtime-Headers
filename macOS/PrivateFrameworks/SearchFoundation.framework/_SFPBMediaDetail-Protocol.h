@@ -10,9 +10,7 @@
 
 @protocol _SFPBMediaDetail <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasContent;
 @property(retain, nonatomic) _SFPBText *content;
-@property(readonly, nonatomic) BOOL hasTitle;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

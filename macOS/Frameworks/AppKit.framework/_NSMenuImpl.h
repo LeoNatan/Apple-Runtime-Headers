@@ -8,6 +8,7 @@
 
 @class NSFont, NSStoryboard, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSMenuImpl : NSObject
 {
     id _impl;

@@ -7,49 +7,51 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPaymentRecord.h"
 
-@class PBUnknownFields, _INPBContact, _INPBCurrencyAmount, _INPBPaymentMethodValue, _INPBString;
+@class NSString, _INPBContact, _INPBCurrencyAmount, _INPBPaymentMethodValue, _INPBString;
 
-@interface _INPBPaymentRecord : PBCodable <NSCopying>
+@interface _INPBPaymentRecord : PBCodable <_INPBPaymentRecord, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_47fe53f2 _has;
+    int _status;
     _INPBCurrencyAmount *_currencyAmount;
     _INPBCurrencyAmount *_feeAmount;
     _INPBString *_note;
     _INPBContact *_payee;
     _INPBContact *_payer;
     _INPBPaymentMethodValue *_paymentMethod;
-    int _status;
-    CDStruct_47fe53f2 _has;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBCurrencyAmount *feeAmount; // @synthesize feeAmount=_feeAmount;
+@property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBPaymentMethodValue *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
-@property(retain, nonatomic) _INPBString *note; // @synthesize note=_note;
-@property(retain, nonatomic) _INPBCurrencyAmount *currencyAmount; // @synthesize currencyAmount=_currencyAmount;
 @property(retain, nonatomic) _INPBContact *payer; // @synthesize payer=_payer;
 @property(retain, nonatomic) _INPBContact *payee; // @synthesize payee=_payee;
+@property(retain, nonatomic) _INPBString *note; // @synthesize note=_note;
+@property(retain, nonatomic) _INPBCurrencyAmount *feeAmount; // @synthesize feeAmount=_feeAmount;
+@property(retain, nonatomic) _INPBCurrencyAmount *currencyAmount; // @synthesize currencyAmount=_currencyAmount;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasFeeAmount;
-@property(readonly, nonatomic) BOOL hasPaymentMethod;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
-@property(readonly, nonatomic) BOOL hasNote;
-@property(readonly, nonatomic) BOOL hasCurrencyAmount;
+@property(readonly, nonatomic) BOOL hasPaymentMethod;
 @property(readonly, nonatomic) BOOL hasPayer;
 @property(readonly, nonatomic) BOOL hasPayee;
+@property(readonly, nonatomic) BOOL hasNote;
+@property(readonly, nonatomic) BOOL hasFeeAmount;
+@property(readonly, nonatomic) BOOL hasCurrencyAmount;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

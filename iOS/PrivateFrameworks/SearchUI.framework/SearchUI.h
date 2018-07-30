@@ -10,6 +10,8 @@
 {
 }
 
++ (id)reuseIdentifierForCardSection:(id)arg1;
++ (_Bool)updateCardSectionView:(id)arg1 withCardSection:(id)arg2;
 + (double)idealPlatterWidthForOrientation:(long long)arg1;
 + (double)idealPlatterWidth;
 + (id)viewsForCardSections:(id)arg1 style:(unsigned long long)arg2 feedbackListener:(id)arg3;

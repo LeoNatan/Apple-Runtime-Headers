@@ -8,6 +8,7 @@
 
 @class AECameraTilePresentationContentView;
 
+__attribute__((visibility("hidden")))
 @interface AECameraTilePresentationViewController : UIViewController
 {
     UIViewController *_contentViewController;

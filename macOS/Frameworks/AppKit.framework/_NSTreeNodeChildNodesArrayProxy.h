@@ -8,6 +8,7 @@
 
 @class NSTreeNode;
 
+__attribute__((visibility("hidden")))
 @interface _NSTreeNodeChildNodesArrayProxy : NSObject
 {
     NSTreeNode *_treeNode;

@@ -6,14 +6,15 @@
 
 #import "NSObject.h"
 
-@class MRAVDistantOutputDevice, NSArray, NSData, NSError, NSString;
+@class NSArray, NSData, NSError, NSString;
 
 @protocol MRAVDistantExternalDeviceServiceProtocol <NSObject>
 - (void)pingWithTimeout:(double)arg1 callback:(void (^)(NSError *))arg2;
 - (void)sendCustomData:(NSData *)arg1 withName:(NSString *)arg2;
 - (void)modifyOutputContextOfType:(unsigned int)arg1 addingDeviceUIDs:(NSArray *)arg2 removingDeviceUIDs:(NSArray *)arg3 settingDeviceUIDs:(NSArray *)arg4 completion:(void (^)(NSError *))arg5;
-- (void)setOutputDeviceVolume:(float)arg1 forOutputDevice:(MRAVDistantOutputDevice *)arg2 withCompletion:(void (^)(NSError *))arg3;
-- (void)outputDeviceVolume:(MRAVDistantOutputDevice *)arg1 withCompletion:(void (^)(float, NSError *))arg2;
+- (void)outputDeviceVolumeControlCapabilities:(NSString *)arg1 withCompletion:(void (^)(unsigned int, NSError *))arg2;
+- (void)setOutputDeviceVolume:(float)arg1 forOutputDevice:(NSString *)arg2 withCompletion:(void (^)(NSError *))arg3;
+- (void)outputDeviceVolume:(NSString *)arg1 withCompletion:(void (^)(float, NSError *))arg2;
 - (void)unpair;
 - (void)disconnect:(NSError *)arg1;
 - (void)connectWithOptions:(unsigned int)arg1;

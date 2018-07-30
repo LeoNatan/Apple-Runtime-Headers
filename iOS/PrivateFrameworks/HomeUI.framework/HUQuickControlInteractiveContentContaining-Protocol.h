@@ -13,5 +13,8 @@
 @property(nonatomic, getter=isUserInteractionEnabled) _Bool userInteractionEnabled;
 @property(nonatomic) __weak id <HUQuickControlContentHosting> quickControlHost;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(UIGestureRecognizer *)arg1;
+
+@optional
+- (_Bool)shouldShowContentForReachabilityState:(_Bool)arg1;
 @end
 

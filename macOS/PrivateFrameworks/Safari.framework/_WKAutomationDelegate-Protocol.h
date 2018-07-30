@@ -11,6 +11,8 @@
 @protocol _WKAutomationDelegate <NSObject>
 
 @optional
+- (NSString *)_processPoolBrowserVersionForAutomation:(WKProcessPool *)arg1;
+- (NSString *)_processPoolBrowserNameForAutomation:(WKProcessPool *)arg1;
 - (void)_processPool:(WKProcessPool *)arg1 didRequestAutomationSessionWithIdentifier:(NSString *)arg2 configuration:(_WKAutomationSessionConfiguration *)arg3;
 - (BOOL)_processPoolAllowsRemoteAutomation:(WKProcessPool *)arg1;
 @end

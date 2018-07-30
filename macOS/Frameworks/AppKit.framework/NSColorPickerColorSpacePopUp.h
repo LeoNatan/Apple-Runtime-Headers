@@ -8,6 +8,7 @@
 
 @class NSColorSpace;
 
+__attribute__((visibility("hidden")))
 @interface NSColorPickerColorSpacePopUp : NSPopUpButton
 {
     NSColorSpace *_selectedColorSpace;

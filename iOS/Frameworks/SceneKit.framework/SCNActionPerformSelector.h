@@ -6,13 +6,14 @@
 
 #import <SceneKit/SCNAction.h>
 
+__attribute__((visibility("hidden")))
 @interface SCNActionPerformSelector : SCNAction
 {
     SEL _selector;
     id _target;
 }
 
-+ (id)perfromSelector:(SEL)arg1 onTarget:(id)arg2;
++ (id)performSelector:(SEL)arg1 onTarget:(id)arg2;
 + (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;

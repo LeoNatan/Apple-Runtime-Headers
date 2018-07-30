@@ -10,9 +10,10 @@
 {
 }
 
-+ (void)performLibraryStatisticsLogging;
++ (void)performLibraryStatisticsLogging:(CDUnknownBlockType)arg1;
++ (void)performPersistentHistorySummaryLogging:(id)arg1;
 + (void)performLibrarySummaryLogging:(id)arg1;
-+ (void)performHyperionLocalResourcesLogging:(id)arg1;
++ (id)performHyperionLocalResourcesLogging:(id)arg1;
 + (void)performAnalysisStateLogging:(id)arg1;
 + (void)performYearsStaticsLogging:(id)arg1;
 + (void)performCollectionsStaticsLogging:(id)arg1;

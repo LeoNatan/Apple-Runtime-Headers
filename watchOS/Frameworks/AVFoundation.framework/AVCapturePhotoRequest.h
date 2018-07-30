@@ -19,9 +19,13 @@
     unsigned int _firedPhotoCallbacksCount;
     void *_previewSurface;
     struct opaqueCMSampleBuffer *_previewSampleBuffer;
+    void *_thumbnailSurface;
+    _Bool _delegateSupportsDebugMetadataSidecarFile;
 }
 
 + (id)requestWithDelegate:(id)arg1 settings:(id)arg2;
+@property(readonly) _Bool delegateSupportsDebugMetadataSidecarFile; // @synthesize delegateSupportsDebugMetadataSidecarFile=_delegateSupportsDebugMetadataSidecarFile;
+@property(retain, nonatomic) void *thumbnailSurface; // @synthesize thumbnailSurface=_thumbnailSurface;
 @property(retain, nonatomic) struct opaqueCMSampleBuffer *previewSampleBuffer; // @synthesize previewSampleBuffer=_previewSampleBuffer;
 @property(retain, nonatomic) void *previewSurface; // @synthesize previewSurface=_previewSurface;
 @property(nonatomic) unsigned int firedPhotoCallbacksCount; // @synthesize firedPhotoCallbacksCount=_firedPhotoCallbacksCount;

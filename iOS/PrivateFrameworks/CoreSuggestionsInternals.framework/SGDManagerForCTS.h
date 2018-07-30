@@ -6,22 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, SGQueryPredictions, SGServiceContext, SGSqlEntityStore;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, SGServiceContext, SGSqlEntityStore;
 
 @interface SGDManagerForCTS : NSObject
 {
     SGSqlEntityStore *_harvestStore;
-    SGQueryPredictions *_queryPredictions;
-    id <SGXPCActivityManagerProtocol> _xpcActivityManager;
-    NSObject<OS_dispatch_queue> *_harvestQueue;
-    struct SGDSuggestManagerCTSCriteriaState _ctsCriteriaState;
     SGServiceContext *_context;
-    struct _opaque_pthread_mutex_t _geocodeLock;
+    NSObject<OS_dispatch_queue> *_harvestQueue;
     NSObject<OS_dispatch_queue> *_frontfillQueue;
     NSObject<OS_dispatch_source> *_frontfillSource;
     NSObject<OS_dispatch_semaphore> *_frontfillSemaphoreForTesting;
-    NSObject<OS_dispatch_source> *_adjustActivitySource;
+    struct SGDSuggestManagerCTSCriteriaState _ctsCriteriaState;
+    struct _opaque_pthread_mutex_t _geocodeLock;
     double _lastFrontfillFinishTime;
+    id <SGXPCActivityManagerProtocol> _xpcActivityManager;
+    NSObject<OS_dispatch_source> *_adjustActivitySource;
 }
 
 + (id)defaultInstance;
@@ -31,7 +30,6 @@
 - (void)resumeFrontfillForTesting;
 - (void)suspendFrontfillForTesting;
 - (void)resetLastFrontfillFinishTimeForTesting;
-- (void)setQueryPredictionsForTesting:(id)arg1;
 - (void)waitForXpcActivityQueue;
 - (void)dealloc;
 - (void)_doFrontfillHarvestOnFrontfillQueue;
@@ -39,10 +37,9 @@
 - (_Bool)_attemptToProcessSearchableItemWithoutDissection:(id)arg1;
 - (_Bool)hasAlreadyHarvestedSearchableItem:(id)arg1;
 - (_Bool)processSearchableItemForTesting:(id)arg1;
-- (_Bool)processSearchableItem:(id)arg1 pipeline:(id)arg2 dissectionQueue:(id)arg3 storeQueue:(id)arg4;
+- (_Bool)processSearchableItem:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
 - (void)drainDefaultQueueCompletely;
-- (void)drainDefaultQueueCompletelyRunningOptionalDissectors:(_Bool)arg1;
-- (_Bool)drainHarvestQueue:(id)arg1 runningOptionalDissectors:(_Bool)arg2 highPriorityOnly:(_Bool)arg3 continuingWhile:(CDUnknownBlockType)arg4;
+- (_Bool)drainHarvestQueue:(id)arg1 highPriorityOnly:(_Bool)arg2 continuingWhile:(CDUnknownBlockType)arg3;
 - (void)_doAdjustCriteriaForCTS;
 - (void)adjustCriteriaForCTS;
 - (void)_performProcessPendingGeocodesActivity:(id)arg1;
@@ -59,7 +56,7 @@
 - (void)_registerForCTSVacuumActivity;
 - (void)_performTrimActivity:(id)arg1;
 - (void)_registerForCTSTrimActivity;
-- (void)_performHarvestActivity:(id)arg1;
+- (void)_performHarvestActivity:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)_registerForCTSHarvestActivity;
 - (void)_performCollectWeeklyStats:(id)arg1;
 - (struct SGMEventICSSourceType_)icsTypeForBundle:(id)arg1;
@@ -67,7 +64,7 @@
 - (struct SGMEventICSSourceType_)accountTypeFor:(id)arg1;
 - (void)_registerForCollectWeeklyStats;
 - (void)registerForCTS;
-- (id)initWithHarvestStore:(id)arg1 queryPredictions:(id)arg2 xpcActivityManager:(id)arg3;
+- (id)initWithHarvestStore:(id)arg1 xpcActivityManager:(id)arg2;
 
 @end
 

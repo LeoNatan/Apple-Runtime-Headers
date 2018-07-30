@@ -52,13 +52,13 @@
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *inputTextTraits; // @synthesize inputTextTraits=_inputTextTraits;
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *headerTextTraits; // @synthesize headerTextTraits=_headerTextTraits;
 @property(retain, nonatomic) TIKeyboardSecureCandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) double singleCellWidth;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -13,6 +13,7 @@
 @interface XCTApplicationStateSnapshot : NSObject <NSSecureCoding>
 {
     int _processID;
+    int _bridgedProcessID;
     NSString *_bundleID;
     NSString *_path;
     unsigned long long _runState;
@@ -23,6 +24,7 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly) unsigned long long eventID; // @synthesize eventID=_eventID;
 @property(readonly) unsigned long long activationPolicy; // @synthesize activationPolicy=_activationPolicy;
+@property(readonly) int bridgedProcessID; // @synthesize bridgedProcessID=_bridgedProcessID;
 @property(readonly) int processID; // @synthesize processID=_processID;
 @property(readonly) unsigned long long runState; // @synthesize runState=_runState;
 @property(readonly, copy) NSString *path; // @synthesize path=_path;
@@ -31,6 +33,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithBundleID:(id)arg1 path:(id)arg2 runState:(unsigned long long)arg3 processID:(int)arg4 activationPolicy:(unsigned long long)arg5 eventID:(unsigned long long)arg6;
+- (id)initWithBundleID:(id)arg1 path:(id)arg2 runState:(unsigned long long)arg3 processID:(int)arg4 bridgedProcessID:(int)arg5 activationPolicy:(unsigned long long)arg6 eventID:(unsigned long long)arg7;
 
 @end
 

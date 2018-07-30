@@ -11,6 +11,7 @@
 
 @class MCUIFieldCollection, NSString, UIAlertView, UITextField;
 
+__attribute__((visibility("hidden")))
 @interface MCInstallProfileQuestionViewController : UITableViewController <PSStateRestoration, UITextFieldDelegate>
 {
     MCUIFieldCollection *_fieldCollection;

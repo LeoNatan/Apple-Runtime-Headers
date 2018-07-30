@@ -13,6 +13,7 @@
     NSMutableDictionary *_keyMap;
 }
 
+- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -28,7 +29,6 @@
 - (_Bool)boolForKey:(id)arg1;
 - (long long)flagForKey:(id)arg1;
 - (_Bool)isKeyedSettings;
-- (void)dealloc;
 - (id)initWithKeyedSettings:(id)arg1;
 - (id)_init;
 

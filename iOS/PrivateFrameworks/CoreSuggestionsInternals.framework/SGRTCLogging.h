@@ -34,6 +34,7 @@
 + (double)round:(double)arg1 toSignificantFigures:(long long)arg2;
 + (unsigned long long)bucketizeInteger:(unsigned long long)arg1 withBucketSize:(unsigned long long)arg2 limit:(unsigned long long)arg3;
 - (void).cxx_destruct;
+- (id)_descriptionForBundleId:(id)arg1;
 - (id)_descriptionForEntityType:(long long)arg1;
 - (id)_descriptionForSGRTCCategory:(unsigned short)arg1;
 - (id)_descriptionForActionType:(unsigned short)arg1;

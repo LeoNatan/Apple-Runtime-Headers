@@ -10,12 +10,11 @@
 #import "VCAudioIOSink.h"
 #import "VCAudioIOSource.h"
 #import "VCMediaStreamSyncSource.h"
-#import "WRMClientDelegate.h"
 
-@class AVCStatisticsCollector, DTMFEventHandler, NSMutableArray, NSObject<OS_dispatch_source>, NSObject<VCMediaStreamSyncSourceDelegate>, NSString, VCAudioIO, VCAudioPayload, VCAudioTransmitter, WRMClient;
+@class AVTelephonyInterface, DTMFEventHandler, NSMutableArray, NSNumber, NSObject<OS_dispatch_source>, NSObject<VCMediaStreamSyncSourceDelegate>, NSString, VCAudioIO, VCAudioPayload, VCAudioTransmitter, WRMClient;
 
 __attribute__((visibility("hidden")))
-@interface VCAudioStream : VCMediaStream <WRMClientDelegate, VCMediaStreamSyncSource, VCAudioIOSource, VCAudioIOSink, VCAudioIODelegate>
+@interface VCAudioStream : VCMediaStream <VCMediaStreamSyncSource, VCAudioIOSource, VCAudioIOSink, VCAudioIODelegate>
 {
     int _clientPid;
     int numBufferBytesAvailable;
@@ -25,7 +24,6 @@ __attribute__((visibility("hidden")))
     unsigned int conferenceID;
     unsigned int lastInputAudioTimeStamp;
     unsigned int lastSentAudioSampleTime;
-    unsigned int packetTimeoutCheckCounter;
     unsigned int awdTime;
     long long sampleRate;
     long long samplesPerFrame;
@@ -37,64 +35,83 @@ __attribute__((visibility("hidden")))
     WRMClient *wrmClient;
     VCAudioPayload *currentAudioPayload;
     VCAudioPayload *currentDTXPayload;
-    // Error parsing type: ^{tagVCAudioReceiver={tagVCAudioReceiverConfig=^{tagHANDLE}^v^vIiiB^{opaqueRTCReporting}}^v^v^{opaqueVCJitterBuffer}B^{AudioStreamBasicDescription}id{tagVCRealTimeThread=II{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}^?^v^{OpaqueFigThread}i[60c]II}{tagVCAudioReceiverReportingTask=^{opaqueRTCReporting}^{tagHANDLE}}B{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_mutex_t=q[56c]}{tagVCAudioDecoderList=^{tagDecoderSettings}I}I{tagVCAudioReceiverStatistics=AI}^{tagWRMMetricsInfo}^?{tagVCAudioReceiverCallbackContext=^v^?^?}I[2{_RTCPPacketList=(tagNTP=Q{?=II})C[10^{tagRTCPPACKET}][1472C]I[1472C]}]d[300{tagPacketHistoryInfo=ISIBB}]SS}, name: _audioReceiver
+    // Error parsing type: ^{tagVCAudioReceiver={tagVCAudioReceiverConfig=I[3{tagVCAudioReceiverStream=^{tagHANDLE}S}]^v^vIiiB^{opaqueRTCReporting}iB^{__CFString}^{__CFString}SB}^v^v^{opaqueVCJitterBuffer}B^{AudioStreamBasicDescription}id{?=qiIq}^{tagVCRealTimeThread}{tagVCAudioReceiverReportingTask=^{opaqueRTCReporting}i^{tagHANDLE}}B{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_mutex_t=q[56c]}{tagVCAudioDecoderList=^{tagDecoderSettings}I}I{tagVCAudioReceiverStatistics=AI}^{tagWRMMetricsInfo}^?{tagVCAudioReceiverCallbackContext=^v^?^?}^?{tagVCAudioReceiverCallbackContext=^v^?^?}I[2{_RTCPPacketList=(tagNTP=Q{?=II})C[10^{tagRTCPPACKET}][1472C]I[1472C]}]dI[300{tagPacketHistoryInfo=ISIBB}]SS^{tagVCAudioReceiverStream}SSBSSSS}, name: _audioReceiver
     VCAudioTransmitter *_audioTransmitter;
-    AVCStatisticsCollector *_statisticsCollector;
-    struct opaqueRTCReporting *reportingAgent;
+    int _reportingModuleID;
+    AVTelephonyInterface *_telephonyInterface;
     struct _METER_INFO soundMeter[2];
     BOOL isValid;
     int deviceRole;
-    int operatingMode;
     void *_audioMediaControlInfoGenerator;
     id syncSourceDelegate;
-    struct tagWRMMetricsInfo wrmInfo;
     VCAudioIO *_audioIO;
     BOOL _isMuted;
     BOOL _isRemoteMuted;
+    unsigned int _lastRTPTimestamp;
+    unsigned int *_reportingSSRCList;
+    unsigned int _reportingSSRCCount;
+    BOOL _sendActiveVoiceOnly;
+    BOOL _isRemoteMediaStalled;
+    int _packetsSinceStallCount;
+    double _lastReceivedAudioTimestamp;
+    BOOL _currentDTXEnable;
+    NSNumber *_targetStreamID;
+    float _volume;
 }
 
 + (id)capabilities;
 + (id)supportedAudioPayloads;
 + (unsigned char)audioIODirectionWithMediaStreamDirection:(long long)arg1;
-@property(retain, nonatomic) AVCStatisticsCollector *statisticsCollector; // @synthesize statisticsCollector=_statisticsCollector;
+@property(nonatomic) float volume; // @synthesize volume=_volume;
+@property(retain, nonatomic) NSNumber *targetStreamID; // @synthesize targetStreamID=_targetStreamID;
+@property(nonatomic, getter=isCurrentDTXEnabled) BOOL currentDTXEnable; // @synthesize currentDTXEnable=_currentDTXEnable;
 @property(nonatomic, getter=isRemoteMuted) BOOL remoteMuted; // @synthesize remoteMuted=_isRemoteMuted;
 @property(retain) VCAudioIO *audioIO; // @synthesize audioIO=_audioIO;
 @property(retain) VCAudioTransmitter *audioTransmitter; // @synthesize audioTransmitter=_audioTransmitter;
-@property(nonatomic) int operatingMode; // @synthesize operatingMode;
 @property(nonatomic) int deviceRole; // @synthesize deviceRole;
 @property(nonatomic) BOOL isValid; // @synthesize isValid;
 @property(readonly) unsigned int conferenceID; // @synthesize conferenceID;
+- (void)handleActiveConnectionChange:(id)arg1;
+- (void)collectTxChannelMetrics:(CDStruct_1c8e0384 *)arg1;
+- (void)collectRxChannelMetrics:(CDStruct_1c8e0384 *)arg1;
+- (void)collectRxChannelMetrics:(CDStruct_1c8e0384 *)arg1 interval:(float)arg2;
 - (void)didResumeAudioIO:(id)arg1;
 - (void)didSuspendAudioIO:(id)arg1;
 - (void)handleCodecRateModeChange:(int)arg1 payload:(int)arg2;
 - (void)unregisterCodecRateModeChangeNotifications;
+- (void)registerActiveAudioStreamChangeNotifications;
 - (void)registerCodecRateModeChangeNotifications;
+- (void)vcMediaStreamTransport:(id)arg1 updateSourceNTPTime:(double)arg2 rtpTimeStamp:(unsigned int)arg3;
 - (long long)getSyncSourceSampleRate;
 @property(nonatomic) NSObject<VCMediaStreamSyncSourceDelegate> *syncSourceDelegate; // @synthesize syncSourceDelegate;
-- (void)setWRMNotification:(CDStruct_d2860d30 *)arg1;
-- (void)setWRMMetricConfig:(CDStruct_69d7cc99 *)arg1;
-- (void)reportWRMMetrics:(const CDStruct_0db8e210 *)arg1;
-- (void)stopWRM;
-- (void)startWRM;
-- (void)uninitializeWRM;
-- (void)initializeWRM;
 - (void)setCanProcessAudio:(BOOL)arg1;
 - (BOOL)canProcessAudio;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
 - (void)pullAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
 - (void)reportingAudioStreamEvent:(unsigned short)arg1;
-- (void)onRtcpEnabledChanged;
-- (void)onRtcpSendIntervalChanged;
+- (id)getReportingServiceID;
+- (struct __CFString *)getReportingClientName;
+- (int)getReportingClientType;
+- (struct __CFDictionary *)getClientSpecificUserInfo:(id)arg1;
+- (void)setStreamIDs:(id)arg1 repairStreamIDs:(id)arg2;
+- (double)rtcpHeartbeatLeeway;
+- (void)onSendRTCPPacket;
+- (void)onRTCPTimeout;
+- (void)onRTPTimeout;
 - (void)onResumeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onPauseWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)redundancyController:(id)arg1 redundancyPercentageDidChange:(unsigned int)arg2;
 - (void)onStopWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStartWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)getReportingServiceID;
-- (id)getReportingClientName;
-- (int)getReportingClientType;
 - (BOOL)onConfigureStreamWithConfiguration:(id)arg1 error:(id *)arg2;
+- (id)streamIDsFromTransport;
+- (void)cleanupBeforeReconfigure:(id)arg1;
+- (void)createReportSSRCListWithStreamConfigs:(id)arg1;
+- (id)createTransport;
+- (BOOL)validateAudioStreamConfigurations:(id)arg1;
 - (void)onCallIDChanged;
 - (id)supportedPayloads;
+@property(nonatomic) BOOL sendActiveVoiceOnly;
 - (void)setStreamDirection:(long long)arg1;
 - (BOOL)generateReceptionReportList:(struct _RTCP_RECEPTION_REPORT *)arg1 reportCount:(char *)arg2;
 @property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_isMuted;
@@ -103,39 +120,37 @@ __attribute__((visibility("hidden")))
 - (void)updateSoundMeter:(int)arg1 sampleBuffer:(struct opaqueVCAudioBufferList *)arg2;
 - (void)setFrequencyMeteringEnabled:(BOOL)arg1 meterType:(int)arg2;
 - (BOOL)isFrequencyMeteringEnabled:(int)arg1;
-- (void)setupRTPPayloads;
 - (void)stopSendDTMFEvent;
 - (void)sendDTMFEvent:(id)arg1;
-- (BOOL)setAudioStreamConfig:(id)arg1 error:(id *)arg2;
-- (BOOL)createAudioTransmitter:(long long)arg1;
+- (BOOL)createAudioTransmitter:(long long)arg1 streamIDs:(id)arg2;
 - (BOOL)createAudioReceiver;
 - (int)bundlingSchemeForOperatingMode:(int)arg1 payloadType:(int)arg2;
-- (int)getPacketsPerBundle;
+- (int)getPacketsPerBundleForStreamConfig:(id)arg1;
 - (void)dealloc;
+- (BOOL)setupAudioStreamWithClientPid:(int)arg1;
+- (id)initWithClientPid:(int)arg1 ssrc:(unsigned int)arg2 transportSessionID:(unsigned int)arg3;
 - (id)initWithClientPid:(int)arg1 ssrc:(unsigned int)arg2;
 - (id)initWithClientPid:(int)arg1;
 - (int)operatingModeForAudioStreamMode:(long long)arg1;
-- (void)restartPausedHeartbeat;
-- (void)stopPausedHeartbeat;
-- (void)startPausedHeartbeat;
 - (void)stateEnter;
 - (void)stateExit;
 - (void)setState:(int)arg1;
-- (void)checkPacketTimeouts;
-- (void)reportRTCPPackets:(struct _RTCPPacketList *)arg1;
-- (BOOL)setMediaQueueStreamSettings;
-- (BOOL)setReceiverPayloads:(id)arg1;
+- (double)lastReceivedRTCPPacketTime;
+- (double)lastReceivedRTPPacketTime;
+- (BOOL)setReceiverPayloads;
 - (void)setDTXPayload:(id)arg1;
 - (id)addAudioPayload:(int)arg1;
 - (id)configForPayloadType:(int)arg1;
-- (BOOL)setupAudioCodecWithPayload:(int)arg1;
 - (unsigned int)preferredAudioBitrateForPayload:(int)arg1;
-- (BOOL)choosePayload:(int *)arg1 count:(int)arg2;
+- (void)getCodecConfigForPayload:(int)arg1 block:(CDUnknownBlockType)arg2;
+- (BOOL)setupPayloads;
+- (id)getSupportedPayloads;
 - (void)stopAudioWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startAudioWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (unsigned int)codecTypeFromAudioPayload:(int)arg1;
 - (void)pullDecodedMeshMode:(struct opaqueVCAudioBufferList *)arg1;
-- (void)generateWRMReport;
+- (void)updateRemoteMediaStallState:(double)arg1;
+- (void)processPulledSamples:(struct opaqueVCAudioBufferList *)arg1 rtpTimestamp:(unsigned int)arg2;
 - (int)captureMeshMode:(struct opaqueVCAudioBufferList *)arg1;
 - (void)setInputTimestamp:(unsigned int)arg1 packetTimestamp:(int)arg2 hostTime:(double)arg3;
 - (void)_computeInternalFormatForAudioConfig:(id)arg1;

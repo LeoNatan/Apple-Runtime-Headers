@@ -6,13 +6,19 @@
 
 #import <VideoProcessing/VCPImageSaliencyAnalyzer.h>
 
+@class NSURL, VCPCNNData, VCPCNNModel;
+
 @interface VCPImageSaliencyAnalyzerFull : VCPImageSaliencyAnalyzer
 {
+    VCPCNNModel *_model;
+    VCPCNNData *_input;
+    NSURL *_modelURL;
 }
 
-- (id)modelFileName;
-- (short)modelQuantFactor;
-- (int)initializeModel:(id)arg1;
+- (void).cxx_destruct;
+- (int)getSalientRegions:(CDUnknownBlockType)arg1;
+- (float *)getInputBuffer:(int)arg1 srcWidth:(int)arg2 cnnInputHeight:(int *)arg3 cnnInputWidth:(int *)arg4;
+- (int)initializeModel:(int)arg1 srcWidth:(int)arg2;
 
 @end
 

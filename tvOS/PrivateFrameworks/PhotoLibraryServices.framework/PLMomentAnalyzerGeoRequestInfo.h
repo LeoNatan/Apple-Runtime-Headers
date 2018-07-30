@@ -19,8 +19,10 @@
     NSArray *_extraAssetIds;
     NSArray *_extraLocations;
     PLRevGeoLocationInfo *_revGeoLocationInfo;
+    unsigned long long _signpostId;
 }
 
+@property(nonatomic) unsigned long long signpostId; // @synthesize signpostId=_signpostId;
 @property(retain, nonatomic) PLRevGeoLocationInfo *revGeoLocationInfo; // @synthesize revGeoLocationInfo=_revGeoLocationInfo;
 @property(copy, nonatomic) NSArray *extraLocations; // @synthesize extraLocations=_extraLocations;
 @property(copy, nonatomic) NSArray *extraAssetIds; // @synthesize extraAssetIds=_extraAssetIds;

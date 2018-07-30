@@ -53,8 +53,8 @@
 - (void)setKeyAsset:(id)arg1;
 - (void)setSubcategory:(long long)arg1;
 - (void)setCategory:(long long)arg1;
-@property(retain, nonatomic) NSString *subTitle;
-@property(retain, nonatomic) NSString *title;
+@property(copy, nonatomic) NSString *subTitle;
+@property(copy, nonatomic) NSString *title;
 - (void)addCuratedAssets:(id)arg1;
 - (void)addAssets:(id)arg1;
 - (void)setRepresentativeAssets:(id)arg1 curatedAssets:(id)arg2 extendedCuratedAssets:(id)arg3 keyAsset:(id)arg4;

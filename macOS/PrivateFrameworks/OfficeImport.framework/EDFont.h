@@ -38,6 +38,7 @@
 }
 
 + (id)fontWithResources:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setDoNotModify:(_Bool)arg1;
 - (void)setWeight:(unsigned int)arg1;
@@ -77,7 +78,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToFont:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setColorReference:(id)arg1;
 - (id)colorReference;

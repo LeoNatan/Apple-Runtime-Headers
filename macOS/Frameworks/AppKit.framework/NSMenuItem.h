@@ -69,6 +69,9 @@
 + (id)_defaultWindowMenuStateImageDirtyWindow;
 + (id)_defaultWindowMenuStateImageKeyWindow;
 + (id)_defaultWindowMenuStateImageMinimizedWindow;
++ (id)standardImportFromDeviceMenuItem;
++ (id)_sidecarServicesMenuItemWithTarget:(id)arg1 action:(SEL)arg2 options:(unsigned long long)arg3;
++ (id)_sidecarServicesMenuItemWithOptions:(unsigned long long)arg1;
 + (id)_menuItemForItem:(id)arg1 view:(id)arg2 itemFrame:(struct CGRect)arg3 aimFrame:(struct CGRect)arg4 options:(id)arg5;
 + (void)_dispatchActionBlockFor:(id)arg1;
 + (id)_menuItemWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;

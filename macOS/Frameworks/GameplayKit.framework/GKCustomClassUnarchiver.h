@@ -20,6 +20,7 @@
 - (id)_findValidClassName:(id)arg1;
 - (id)_mangledSwiftClassName:(id)arg1 moduleName:(id)arg2;
 - (id)_currentAppModuleName;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

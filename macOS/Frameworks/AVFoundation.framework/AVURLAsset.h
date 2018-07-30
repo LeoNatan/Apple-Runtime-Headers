@@ -75,7 +75,6 @@
 @property(readonly, nonatomic) NSString *cacheKey;
 @property(readonly, nonatomic) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly, nonatomic) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-- (id)_resourceLoaderURLSession;
 - (BOOL)_hasResourceLoaderDelegate;
 @property(readonly, nonatomic) AVAssetResourceLoader *resourceLoader;
 - (void)_handleURLRequest:(id)arg1;
@@ -84,7 +83,7 @@
 - (void)expire;
 - (BOOL)_attachedToExternalContentKeySession;
 - (id)contentKeySession;
-- (int)_attachToContentKeySession:(id)arg1;
+- (int)_attachToContentKeySession:(id)arg1 failedSinceAlreadyAttachedToAnotherSession:(char *)arg2;
 @property(readonly, nonatomic) BOOL mayRequireContentKeysForMediaDataProcessing;
 - (id)_installHandlerForNSURLSessionConfiguration:(id)arg1 queue:(id)arg2;
 

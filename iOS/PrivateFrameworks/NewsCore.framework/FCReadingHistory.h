@@ -42,8 +42,7 @@
 - (void)markArticleAsReadWithHeadline:(id)arg1;
 - (void)markArticleAsReadWithHeadline:(id)arg1 fromGroupType:(long long)arg2 swipedToArticle:(_Bool)arg3 onScreenChecker:(CDUnknownBlockType)arg4;
 - (_Bool)markArticleAsReadWithArticleID:(id)arg1 articleVersion:(long long)arg2 readDate:(id)arg3;
-- (void)markArticle:(id)arg1 asArticleConsumed:(_Bool)arg2;
-- (_Bool)toggleArticleHasBeenConsumed:(id)arg1;
+- (void)markArticle:(id)arg1 asArticleConsumed:(_Bool)arg2 sourceChannelTagID:(id)arg3;
 - (_Bool)hasArticleBeenConsumed:(id)arg1;
 - (void)markArticle:(id)arg1 asOffensive:(_Bool)arg2;
 - (_Bool)toggleArticleHasBeenMarkedAsOffensive:(id)arg1;
@@ -57,6 +56,7 @@
 - (_Bool)hasArticleBeenVisited:(id)arg1;
 - (_Bool)hasArticleBeenRead:(id)arg1;
 - (id)lastVisitedDateForArticleID:(id)arg1;
+- (id)consumedArticleIDsForTagID:(id)arg1 fromTime:(id)arg2;
 - (id)allReadingHistoryItems;
 @property(readonly, nonatomic) NSSet *allConsumedArticleIDs;
 @property(readonly, nonatomic) NSSet *allSeenArticleIDs;

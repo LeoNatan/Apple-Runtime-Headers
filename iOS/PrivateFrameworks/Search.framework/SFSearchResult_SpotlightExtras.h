@@ -8,73 +8,45 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSData, NSDate, NSMutableArray, NSNumber, NSString, PRSL2FeatureVector, PRSL3FeatureVector, PRSRankingItem, SFPunchout;
+@class NSData, NSDate, NSMutableArray, NSNumber, NSString, PRSRankingItem, SFPunchout;
 
 @interface SFSearchResult_SpotlightExtras : SFSearchResult <NSSecureCoding>
 {
     SFPunchout *_cachedPunchout;
-    _Bool _coreSpotlightSourced;
-    _Bool _isParsecResult;
-    _Bool _hasAssociatedUserActivity;
-    float _l3score;
     float _l2score;
-    NSString *_queryString;
+    unsigned int _feedbackBlockId;
     NSString *_protectionClass;
     NSNumber *_fileIdentifier;
     NSNumber *_parentFileIdentifier;
     NSString *_filename;
     NSNumber *_documentIdentifier;
     NSString *_launchString;
-    NSArray *_launchDates;
-    PRSL2FeatureVector *_L2FeatureVector;
-    PRSL3FeatureVector *_L3FeatureVector;
+    NSDate *_lastUsedDate;
     NSString *_userActivityType;
-    NSString *_userActivitySecondaryString;
-    NSData *_userActivityData;
-    NSDate *_contentCreationDate;
     NSMutableArray *_duplicatedItems;
     NSString *_contentURL;
     PRSRankingItem *_rankingItem;
-    NSDate *_lastUsedDate;
-    NSString *_mailSubject;
-    NSString *_mailAuthor;
-    NSArray *_contactAlternateNames;
-    NSString *_mailConversationIdentifier;
     NSData *_suggestionsFeedbackData;
     struct ranking_index_score_t _score;
 }
 
 + (void)initialize;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned int feedbackBlockId; // @synthesize feedbackBlockId=_feedbackBlockId;
 @property(retain, nonatomic) NSData *suggestionsFeedbackData; // @synthesize suggestionsFeedbackData=_suggestionsFeedbackData;
-@property(retain) NSString *mailConversationIdentifier; // @synthesize mailConversationIdentifier=_mailConversationIdentifier;
-@property(retain) NSArray *contactAlternateNames; // @synthesize contactAlternateNames=_contactAlternateNames;
-@property(retain) NSString *mailAuthor; // @synthesize mailAuthor=_mailAuthor;
-@property(retain) NSString *mailSubject; // @synthesize mailSubject=_mailSubject;
-@property(retain) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(retain) PRSRankingItem *rankingItem; // @synthesize rankingItem=_rankingItem;
 @property(retain, nonatomic) NSString *contentURL; // @synthesize contentURL=_contentURL;
 @property(retain, nonatomic) NSMutableArray *duplicatedItems; // @synthesize duplicatedItems=_duplicatedItems;
-@property(nonatomic) _Bool hasAssociatedUserActivity; // @synthesize hasAssociatedUserActivity=_hasAssociatedUserActivity;
-@property(retain, nonatomic) NSDate *contentCreationDate; // @synthesize contentCreationDate=_contentCreationDate;
-@property(retain, nonatomic) NSData *userActivityData; // @synthesize userActivityData=_userActivityData;
-@property(retain, nonatomic) NSString *userActivitySecondaryString; // @synthesize userActivitySecondaryString=_userActivitySecondaryString;
 @property(retain, nonatomic) NSString *userActivityType; // @synthesize userActivityType=_userActivityType;
-@property(retain, nonatomic) PRSL3FeatureVector *L3FeatureVector; // @synthesize L3FeatureVector=_L3FeatureVector;
-@property(retain, nonatomic) PRSL2FeatureVector *L2FeatureVector; // @synthesize L2FeatureVector=_L2FeatureVector;
-@property(retain, nonatomic) NSArray *launchDates; // @synthesize launchDates=_launchDates;
+@property(retain, nonatomic) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(retain, nonatomic) NSString *launchString; // @synthesize launchString=_launchString;
-@property(nonatomic) _Bool isParsecResult; // @synthesize isParsecResult=_isParsecResult;
 @property(nonatomic) float l2score; // @synthesize l2score=_l2score;
-@property(nonatomic) float l3score; // @synthesize l3score=_l3score;
 @property(nonatomic) struct ranking_index_score_t score; // @synthesize score=_score;
 @property(retain, nonatomic) NSNumber *documentIdentifier; // @synthesize documentIdentifier=_documentIdentifier;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(retain, nonatomic) NSNumber *parentFileIdentifier; // @synthesize parentFileIdentifier=_parentFileIdentifier;
 @property(retain, nonatomic) NSNumber *fileIdentifier; // @synthesize fileIdentifier=_fileIdentifier;
-@property(nonatomic) _Bool coreSpotlightSourced; // @synthesize coreSpotlightSourced=_coreSpotlightSourced;
 @property(retain, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
-@property(retain, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
 - (id)punchout;
 - (id)debugDescription;

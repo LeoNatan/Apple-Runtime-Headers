@@ -7,47 +7,49 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBDateTimeRangeValue.h"
 
-@class PBUnknownFields, _INPBDateTime, _INPBRecurrenceValue, _INPBValueMetadata;
+@class NSString, _INPBDateTime, _INPBRecurrenceValue, _INPBValueMetadata;
 
-@interface _INPBDateTimeRangeValue : PBCodable <NSCopying>
+@interface _INPBDateTimeRangeValue : PBCodable <_INPBDateTimeRangeValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    long long _endCalendar;
-    long long _startCalendar;
-    _INPBDateTime *_endDateTime;
-    _INPBRecurrenceValue *_recurrence;
-    _INPBDateTime *_startDateTime;
-    _INPBValueMetadata *_valueMetadata;
     struct {
         unsigned int endCalendar:1;
         unsigned int startCalendar:1;
     } _has;
+    long long _endCalendar;
+    _INPBDateTime *_endDateTime;
+    _INPBRecurrenceValue *_recurrence;
+    long long _startCalendar;
+    _INPBDateTime *_startDateTime;
+    _INPBValueMetadata *_valueMetadata;
 }
 
-+ (id)options;
+@property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(retain, nonatomic) _INPBDateTime *startDateTime; // @synthesize startDateTime=_startDateTime;
+@property(nonatomic) long long startCalendar; // @synthesize startCalendar=_startCalendar;
 @property(retain, nonatomic) _INPBRecurrenceValue *recurrence; // @synthesize recurrence=_recurrence;
 @property(retain, nonatomic) _INPBDateTime *endDateTime; // @synthesize endDateTime=_endDateTime;
-@property(retain, nonatomic) _INPBDateTime *startDateTime; // @synthesize startDateTime=_startDateTime;
 @property(nonatomic) long long endCalendar; // @synthesize endCalendar=_endCalendar;
-@property(nonatomic) long long startCalendar; // @synthesize startCalendar=_startCalendar;
-@property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) BOOL hasValueMetadata;
+@property(readonly, nonatomic) BOOL hasStartDateTime;
+@property(nonatomic) BOOL hasStartCalendar;
 @property(readonly, nonatomic) BOOL hasRecurrence;
 @property(readonly, nonatomic) BOOL hasEndDateTime;
-@property(readonly, nonatomic) BOOL hasStartDateTime;
 @property(nonatomic) BOOL hasEndCalendar;
-@property(nonatomic) BOOL hasStartCalendar;
-@property(readonly, nonatomic) BOOL hasValueMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,7 +9,7 @@
 @protocol MKAnnotationModel <NSObject>
 - (void)moveAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg1 fromCoordinate:(struct CLLocationCoordinate2D)arg2 animated:(BOOL)arg3 duration:(double)arg4;
 - (void)deselectAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg1 animated:(BOOL)arg2;
-- (void)selectAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg1 animated:(BOOL)arg2 avoid:(struct CGRect)arg3;
+- (void)selectAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg1 animated:(BOOL)arg2;
 - (void)removeAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg1;
 - (void)addAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg1 allowAnimation:(BOOL)arg2;
 @end

@@ -6,17 +6,18 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface FCSolArticleID : NSObject <NSCoding, NSCopying>
+@interface FCSolArticleID : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_identifier;
     double _score;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

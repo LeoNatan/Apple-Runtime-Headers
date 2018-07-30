@@ -6,7 +6,7 @@
 
 #import "UIViewController.h"
 
-#import "CKBrowserSwitcherFooterViewDelegate.h"
+#import "CKAppGrabberViewDelegate.h"
 #import "CKBrowserSwitcherScrollPreventerDelegate.h"
 #import "CKBrowserTransitionCoordinatorDelegate.h"
 #import "UICollectionViewDataSource.h"
@@ -15,9 +15,9 @@
 #import "UIScrollViewDelegate.h"
 #import "_UIBackdropViewGraphicsQualityChangeDelegate.h"
 
-@class CKAppGrabberView, CKBrowserSwitcherFooterView, CKBrowserSwitcherFooterViewDataSource, CKBrowserSwitcherScrollPreventer, CKBrowserTransitionCoordinator, CKImmediatePanGestureRecognizer, IMBalloonPlugin, IMScheduledUpdater, NSArray, NSDate, NSMutableDictionary, NSString, UICollectionView, UICollectionViewFlowLayout, UILongPressGestureRecognizer, UIView, UIViewController<CKBrowserViewControllerProtocol>, UIViewPropertyAnimator;
+@class CKAppGrabberView, CKBrowserSwitcherFooterView, CKBrowserSwitcherScrollPreventer, CKBrowserTransitionCoordinator, CKImmediatePanGestureRecognizer, IMBalloonPlugin, IMScheduledUpdater, NSArray, NSDate, NSMutableDictionary, NSString, UICollectionView, UICollectionViewFlowLayout, UILongPressGestureRecognizer, UIView, UIViewController<CKBrowserViewControllerProtocol>, UIViewPropertyAnimator;
 
-@interface CKBrowserSwitcherViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CKBrowserSwitcherScrollPreventerDelegate, CKBrowserTransitionCoordinatorDelegate, CKBrowserSwitcherFooterViewDelegate, _UIBackdropViewGraphicsQualityChangeDelegate>
+@interface CKBrowserSwitcherViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CKBrowserSwitcherScrollPreventerDelegate, CKBrowserTransitionCoordinatorDelegate, CKAppGrabberViewDelegate, _UIBackdropViewGraphicsQualityChangeDelegate>
 {
     CKImmediatePanGestureRecognizer *_expandGestureTracker;
     UIViewPropertyAnimator *_expandPropertyAnimator;
@@ -32,6 +32,7 @@
     _Bool _inDragAndDrop;
     _Bool _interactiveExpandStarted;
     _Bool _transitioningFromSnapshotToLiveView;
+    _Bool _transitioningExpandedState;
     _Bool _allowFooterLabelUpdates;
     _Bool _allowPluginLaunchNotifications;
     _Bool _viewHasLaidOutSubviews;
@@ -39,17 +40,16 @@
     id <CKBrowserSwitcherViewControllerDelegate><CKBrowserTransitionCoordinatorDelegate> _delegate;
     UIViewController<CKBrowserViewControllerProtocol> *_currentViewController;
     CKBrowserTransitionCoordinator *_transitionCoordinator;
+    CKBrowserSwitcherFooterView *_footerView;
     UIView *_contentView;
     UICollectionView *_collectionView;
     UICollectionViewFlowLayout *_flowLayout;
     NSMutableDictionary *_livePluginIdentifierToTimestampMap;
-    UILongPressGestureRecognizer *_horizontalSwipePreventer;
+    UILongPressGestureRecognizer *_touchTracker;
     CKBrowserSwitcherScrollPreventer *_scrollPreventer;
     IMScheduledUpdater *_scrollUpdater;
     IMBalloonPlugin *_currentVisiblePlugin;
     CKAppGrabberView *_grabberView;
-    CKBrowserSwitcherFooterView *_footerView;
-    CKBrowserSwitcherFooterViewDataSource *_footerViewDataSource;
     id _cancelTouchesToken;
     IMBalloonPlugin *_balloonPlugin;
     NSArray *_gutterDividerViews;
@@ -63,6 +63,7 @@
 @property(copy, nonatomic) CDUnknownBlockType performAfterFirstLayoutBlock; // @synthesize performAfterFirstLayoutBlock=_performAfterFirstLayoutBlock;
 @property(nonatomic) _Bool allowPluginLaunchNotifications; // @synthesize allowPluginLaunchNotifications=_allowPluginLaunchNotifications;
 @property(nonatomic) _Bool allowFooterLabelUpdates; // @synthesize allowFooterLabelUpdates=_allowFooterLabelUpdates;
+@property(nonatomic, getter=isTransitioningExpandedState) _Bool transitioningExpandedState; // @synthesize transitioningExpandedState=_transitioningExpandedState;
 @property(nonatomic, getter=isTransitioningFromSnapshotToLiveView) _Bool transitioningFromSnapshotToLiveView; // @synthesize transitioningFromSnapshotToLiveView=_transitioningFromSnapshotToLiveView;
 @property(retain, nonatomic) NSArray *gutterDividerViews; // @synthesize gutterDividerViews=_gutterDividerViews;
 @property(retain, nonatomic) IMBalloonPlugin *balloonPlugin; // @synthesize balloonPlugin=_balloonPlugin;
@@ -71,17 +72,16 @@
 @property(nonatomic, getter=isInDragAndDrop) _Bool inDragAndDrop; // @synthesize inDragAndDrop=_inDragAndDrop;
 @property(nonatomic) _Bool inManualContentOffsetChange; // @synthesize inManualContentOffsetChange=_inManualContentOffsetChange;
 @property(nonatomic) _Bool insertedViaCollapse; // @synthesize insertedViaCollapse=_insertedViaCollapse;
-@property(retain, nonatomic) CKBrowserSwitcherFooterViewDataSource *footerViewDataSource; // @synthesize footerViewDataSource=_footerViewDataSource;
-@property(retain, nonatomic) CKBrowserSwitcherFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) CKAppGrabberView *grabberView; // @synthesize grabberView=_grabberView;
 @property(retain, nonatomic) IMBalloonPlugin *currentVisiblePlugin; // @synthesize currentVisiblePlugin=_currentVisiblePlugin;
 @property(retain, nonatomic) IMScheduledUpdater *scrollUpdater; // @synthesize scrollUpdater=_scrollUpdater;
 @property(retain, nonatomic) CKBrowserSwitcherScrollPreventer *scrollPreventer; // @synthesize scrollPreventer=_scrollPreventer;
-@property(retain, nonatomic) UILongPressGestureRecognizer *horizontalSwipePreventer; // @synthesize horizontalSwipePreventer=_horizontalSwipePreventer;
+@property(retain, nonatomic) UILongPressGestureRecognizer *touchTracker; // @synthesize touchTracker=_touchTracker;
 @property(retain, nonatomic) NSMutableDictionary *livePluginIdentifierToTimestampMap; // @synthesize livePluginIdentifierToTimestampMap=_livePluginIdentifierToTimestampMap;
 @property(retain, nonatomic) UICollectionViewFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(readonly, nonatomic) CKBrowserSwitcherFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic, getter=isBrowserReadyForUserInteraction) _Bool browserViewReadyForUserInteraction; // @synthesize browserViewReadyForUserInteraction=_browserViewReadyForUserInteraction;
 @property(nonatomic, getter=isDragging) _Bool dragging; // @synthesize dragging=_dragging;
 @property(retain, nonatomic) CKBrowserTransitionCoordinator *transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
@@ -90,11 +90,13 @@
 - (void).cxx_destruct;
 - (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(long long)arg2;
 - (id)backdropView:(id)arg1 willChangeToGraphicsQuality:(long long)arg2;
+- (void)appGrabberViewCloseButtonTapped:(id)arg1;
 - (double)_horizontalOffsetForVisibleSwitcherPluginIndex:(unsigned long long)arg1;
 - (unsigned long long)_visibleSwitcherPluginIndexForHorizontalOffset:(double)arg1;
 - (struct CGSize)_browserSize;
 - (void)dragManagerDidEndDragging:(id)arg1;
 - (void)dragManagerDidStartDrag:(id)arg1;
+- (void)dragManagerWillStartDrag:(id)arg1;
 - (void)_scrollUpdaterFired;
 - (void)_endHoldingScrollUpdatesForKey:(id)arg1;
 - (void)_beginHoldingScrollUpdatesForKey:(id)arg1;
@@ -102,6 +104,7 @@
 - (void)_loadBrowserForBalloonPlugin:(id)arg1 datasource:(id)arg2;
 - (void)handleExpandButton:(id)arg1;
 - (void)setCurrentViewController:(id)arg1;
+- (_Bool)_usesHorizontalSwipeToSwitchApps;
 - (void)_cleanupOffscreenChildViewControllers;
 - (void)_cleanupOffscreenChildViewControllersWithDelay;
 - (void)_moveLiveBrowserViewsToUpdatedVisibleIndices;
@@ -110,10 +113,8 @@
 - (void)_removeBrowserWithPluginIdentifierFromViewHierarchy:(id)arg1;
 - (void)_updateBrowserViewPositionForPluginAndInsertIfNecessary:(id)arg1;
 - (void)_insertCurrentBrowserAndRemoveOldBrowsersIfNeeded;
+- (_Bool)_currentPluginIsJellyfish;
 - (_Bool)shouldAutorotate;
-- (_Bool)_shouldHideFooterView;
-- (void)_removeFooterView;
-- (void)_addFooterView;
 - (void)_transitionSnapshotViewToBrowserView;
 - (void)_handleRemoteViewControllerConnectionInterrupted:(id)arg1;
 - (void)_transitionSnapshotViewToBrowserViewAfterViewDidPrepareForDisplay:(id)arg1;
@@ -137,6 +138,7 @@
 - (_Bool)_hasLandscapeGutters;
 - (void)animateOutCompactWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animateInCompactWithCompletion:(CDUnknownBlockType)arg1;
+- (void)showBrowserFullscreenModalForPlugin:(id)arg1 datasource:(id)arg2;
 - (void)showBrowserFullscreenForPlugin:(id)arg1 datasource:(id)arg2;
 - (void)showBrowserInSwitcherForPlugin:(id)arg1 datasource:(id)arg2 reloadData:(_Bool)arg3;
 - (void)unloadRemoteViewControllers;
@@ -150,6 +152,12 @@
 - (void)scrollPreventer:(id)arg1 scrolledToOffset:(struct CGPoint)arg2;
 - (void)scrollPreventerWillBeginDragging:(id)arg1;
 - (void)scrollPreventerDidLayoutSubviews:(id)arg1;
+- (id)appIconOverride;
+- (id)appTitleOverride;
+- (id)transitionsPresentationViewController;
+- (_Bool)shouldAlwaysShowAppTitle;
+- (_Bool)browserTransitionCoordinatorShouldDismissOnDragSuccess:(id)arg1;
+- (double)browserTransitionCoordinatorCollapsedContentHeight:(id)arg1;
 - (void)browserTransitionCoordinator:(id)arg1 hasUpdatedLastTouchDate:(id)arg2;
 - (void)browserTransitionCoordinator:(id)arg1 didSwitchToPlugin:(id)arg2;
 - (void)browserTransitionCoordinatorWantsPresentationOfAppManager:(id)arg1;
@@ -171,12 +179,9 @@
 - (void)setupPausedExpandAnimatorIfNeeded;
 - (double)_rubberBandOffsetWithoutDecorationForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(_Bool *)arg5;
 - (double)restingCollectionViewOriginY;
-- (double)restingGrabberOriginY;
 - (struct CGRect)restingGrabberFrame;
 - (void)dismissBrowserFullscreenAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (struct CGRect)cachedCompactFrameInWindowCoordsForBrowserTransitionCoordinator:(id)arg1;
-- (void)reinsertSwitcherFooterViewForBrowserTransitionCoordinator:(id)arg1;
-- (id)switcherFooterViewForBrowserTransitionCoordinator:(id)arg1;
 - (void)reinsertAppGrabberViewForBrowserTransitionCoordinator:(id)arg1;
 - (id)appGrabberForBrowserTransitionCoordinator:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -191,10 +196,6 @@
 - (void)layoutMarginsDidChange;
 - (_Bool)isBrowserSwitcherFirstLaunch;
 - (void)viewDidLayoutSubviews;
-- (void)switcherView:(id)arg1 didMagnify:(_Bool)arg2;
-- (id)indexPathOfCurrentlySelectedPluginInSwitcherView:(id)arg1;
-- (void)switcherView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
-- (void)updateFooterViewFrame;
 - (id)activeBrowserView;
 - (void)loadView;
 - (id)initWithConversation:(id)arg1 sendDelegate:(id)arg2 presentingViewController:(id)arg3;

@@ -8,11 +8,11 @@
 
 #import "NAPromise.h"
 
-@class NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class NSError, NSMutableArray, NSString;
 
 @interface NAFuture : NSObject <NAPromise>
 {
-    NSObject<OS_dispatch_queue> *_accessQueue;
+    struct os_unfair_lock_s _lock;
     _Bool _finished;
     NSMutableArray *_completionBlocks;
     id _resultValue;
@@ -21,6 +21,7 @@
 }
 
 + (id)_descriptorForChainOperation:(id)arg1 onFuture:(id)arg2 withBlock:(id)arg3;
++ (void)_setShouldEnforceThreadSafety:(_Bool)arg1;
 + (id)futureWithErrorOnlyHandlerAdapterBlock:(CDUnknownBlockType)arg1;
 + (id)futureWithCompletionHandlerAdapterBlock:(CDUnknownBlockType)arg1;
 + (id)_chainFuturesWithFutureStack:(id)arg1;
@@ -41,7 +42,7 @@
 - (id)recover:(CDUnknownBlockType)arg1;
 - (id)reschedule:(id)arg1;
 - (id)flatMap:(CDUnknownBlockType)arg1;
-- (void)_flushCompletionBlocks;
+- (void)willAddCompletionBlock;
 - (id)addCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)addFailureBlock:(CDUnknownBlockType)arg1;
 - (id)addSuccessBlock:(CDUnknownBlockType)arg1;
@@ -56,6 +57,7 @@
 - (_Bool)_queue_isCancelled;
 @property(readonly, getter=isCancelled) _Bool cancelled;
 @property(readonly, getter=isFinished) _Bool finished;
+- (id)initWithResult:(id)arg1 error:(id)arg2;
 - (id)init;
 - (id)recoverIgnoringError;
 

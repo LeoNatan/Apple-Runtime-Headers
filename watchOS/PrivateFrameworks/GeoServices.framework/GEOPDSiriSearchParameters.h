@@ -10,6 +10,7 @@
 
 @class GEOAddress, GEOPDIndexQueryNode, GEOPDRecentRouteInfo, GEOPDViewportInfo, NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDSiriSearchParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

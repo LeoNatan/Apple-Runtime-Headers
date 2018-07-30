@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CDAttribute, NSObject<OS_dispatch_source>, NSString;
+@class CDAttribute, NSString;
 
 @interface CPLDuetTicketProvider : NSObject
 {
@@ -14,9 +14,6 @@
     CDAttribute *_mandatoryAttribute;
     CDAttribute *_discretionaryAttribute;
     unsigned long long _significantWorkRetainCount;
-    NSObject<OS_dispatch_source> *_overrideSystemDataBudgetTimer;
-    NSObject<OS_dispatch_source> *_overrideSystemEnergyBudgetTimer;
-    NSObject<OS_dispatch_source> *_overrideSystemSignificantWorkBudgetTimer;
 }
 
 + (id)duetStatuses;
@@ -26,22 +23,12 @@
 + (void)pushSignificantWorkIsPending;
 + (id)delegate;
 + (void)setDelegate:(id)arg1;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *overrideSystemSignificantWorkBudgetTimer; // @synthesize overrideSystemSignificantWorkBudgetTimer=_overrideSystemSignificantWorkBudgetTimer;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *overrideSystemEnergyBudgetTimer; // @synthesize overrideSystemEnergyBudgetTimer=_overrideSystemEnergyBudgetTimer;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *overrideSystemDataBudgetTimer; // @synthesize overrideSystemDataBudgetTimer=_overrideSystemDataBudgetTimer;
 @property(nonatomic) unsigned long long significantWorkRetainCount; // @synthesize significantWorkRetainCount=_significantWorkRetainCount;
 @property(readonly, nonatomic) CDAttribute *discretionaryAttribute; // @synthesize discretionaryAttribute=_discretionaryAttribute;
 @property(readonly, nonatomic) CDAttribute *mandatoryAttribute; // @synthesize mandatoryAttribute=_mandatoryAttribute;
 @property(readonly, nonatomic) NSString *clientBundlerIdentifier; // @synthesize clientBundlerIdentifier=_clientBundlerIdentifier;
 - (void).cxx_destruct;
-- (void)_createOverrideSystemBudgetTimerForSeconds:(unsigned long long)arg1 forKey:(id)arg2 keepTrack:(BOOL)arg3;
-- (id)_stringForSingleBudgetKey:(id)arg1;
-- (id)_stringForBudget:(unsigned long long)arg1;
-- (void)_createOverrideSystemBudgetTimerForData:(unsigned long long)arg1 forEnergy:(unsigned long long)arg2 forSignificantWork:(unsigned long long)arg3 keepTrack:(BOOL)arg4;
-- (BOOL)_unlimitedSync;
-- (BOOL)_isKnownTimer:(id)arg1;
 - (void)setShouldOverride:(BOOL)arg1 forSystemBudgets:(unsigned long long)arg2;
-- (id)_overrideStringDescriptionForStoppingSystemBudgets:(unsigned long long)arg1;
 - (void)overrideHasSignificantWork:(BOOL)arg1;
 - (BOOL)hasSignificantWork;
 - (BOOL)isBlocked;
@@ -49,10 +36,6 @@
 - (id)_significantWorkKeyPath;
 - (id)_isBlockedKeyPath;
 - (id)_budgetOverrideKeyPath;
-- (BOOL)_hasOverride;
-- (unsigned long long)_overrideSecondsForKey:(id)arg1;
-- (BOOL)_hasOverrideForKey:(id)arg1;
-- (unsigned long long)_systemBudgetForBudgetKey:(id)arg1;
 - (id)duetStatuses;
 - (id)_blockedReasonStatus;
 - (unsigned long long)_blockedReason;

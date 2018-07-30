@@ -41,6 +41,7 @@
 @property(nonatomic, setter=_setHidingDisconnect:) _Bool _hidingDisconnect; // @synthesize _hidingDisconnect;
 @property(readonly, nonatomic) NSMutableDictionary *_contexts; // @synthesize _contexts;
 - (void).cxx_destruct;
+- (void)oneTimeCodesDidChange:(id)arg1;
 - (void)receivedUrgentRequestForMessages:(id)arg1;
 - (void)returnMOCEnabledState:(unsigned long long)arg1;
 - (void)updateCloudKitStateWithDictionary:(id)arg1;

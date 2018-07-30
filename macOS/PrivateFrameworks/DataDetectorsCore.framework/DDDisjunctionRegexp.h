@@ -6,6 +6,7 @@
 
 #import <DataDetectorsCore/DDOperatorRegexp.h>
 
+__attribute__((visibility("hidden")))
 @interface DDDisjunctionRegexp : DDOperatorRegexp
 {
 }

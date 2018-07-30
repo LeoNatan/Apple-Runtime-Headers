@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class MRProtocolMessageQueue, NSData;
+@class MRProtocolMessage, MRProtocolMessageQueue, NSData;
 
 @protocol MRProtocolMessageQueueDelegate <NSObject>
+- (void)messageQueue:(MRProtocolMessageQueue *)arg1 didPurgeMessage:(MRProtocolMessage *)arg2;
+- (void)messageQueue:(MRProtocolMessageQueue *)arg1 didSendMessage:(MRProtocolMessage *)arg2;
 - (unsigned int)messageQueue:(MRProtocolMessageQueue *)arg1 processData:(NSData *)arg2 atReadPosition:(int)arg3;
 @end
 

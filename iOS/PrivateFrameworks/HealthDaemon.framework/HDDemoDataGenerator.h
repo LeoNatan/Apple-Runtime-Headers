@@ -73,7 +73,6 @@
 - (void)_insertBiographicalDataFromDemoPerson:(id)arg1;
 - (void)_queue_generateDataForDemoPerson:(id)arg1 numIntervals:(long long)arg2;
 - (void)_queue_generateFirstRunDataForDemoPerson:(id)arg1;
-- (void)_runAchievementDoctorWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_queue_generateDataForDemoPerson:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 firstRun:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_queue_setupDemoDataSampleGenerators;
 - (_Bool)_queue_loadDemoDataSampleGeneratorState;

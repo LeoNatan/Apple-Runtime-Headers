@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OITSUCustomFormat.h>
 
-__attribute__((visibility("hidden")))
 @interface OITSUMutableCustomFormat : OITSUCustomFormat
 {
 }

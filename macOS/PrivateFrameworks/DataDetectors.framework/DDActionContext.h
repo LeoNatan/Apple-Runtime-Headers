@@ -41,14 +41,12 @@
     struct CGSize _targetViewSize;
     struct CGSize _targetScreenSize;
     NSView *_view;
-    BOOL _darkMode;
     NSPopover *_popover;
 }
 
 + (id)contextFromDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
-@property(nonatomic) BOOL darkMode; // @synthesize darkMode=_darkMode;
 @property __weak NSView *view; // @synthesize view=_view;
 @property BOOL altMode; // @synthesize altMode=_altMenuMode;
 @property(copy) NSArray *disallowedActionUTIs; // @synthesize disallowedActionUTIs=_disallowedActionUTIs;

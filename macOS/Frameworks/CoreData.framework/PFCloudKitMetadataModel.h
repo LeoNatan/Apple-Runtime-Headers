@@ -6,19 +6,36 @@
 
 #import "NSObject.h"
 
+#import "_PFAncillaryModelFactory.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface PFCloudKitMetadataModel : NSObject
+@interface PFCloudKitMetadataModel : NSObject <_PFAncillaryModelFactory>
 {
 }
 
 + (void)addRelationships:(id)arg1 toPropertiesOfEntity:(id)arg2;
 + (void)addAttributes:(id)arg1 toPropertiesOfEntity:(id)arg2;
-+ (id)_newMetadataModel;
++ (id)_newMetadataModelV4;
++ (id)_newMetadataModelV3;
++ (id)_newMetadataModelV2;
 + (id)_newMetadataModelV1;
++ (unsigned long long)ancillaryEntityOffset;
++ (id)ancillaryModelNamespace;
++ (unsigned long long)ancillaryEntityCount;
++ (BOOL)doesMetadataModel:(id)arg1 matchConnection:(id)arg2 hasOldMetadataTables:(char *)arg3;
++ (id)identifyModelForStoreWithConnection:(id)arg1 hasOldMetadataTables:(char *)arg2;
 + (void)applyPurgeStatementsForStore:(id)arg1 usingConnection:(id)arg2;
 + (void)applyMigrationStatementsForStore:(id)arg1 usingConnection:(id)arg2;
 + (BOOL)cachedVersionHashesMatchCurrent:(id)arg1;
 + (id)newMetadataModelForFrameworkVersion:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

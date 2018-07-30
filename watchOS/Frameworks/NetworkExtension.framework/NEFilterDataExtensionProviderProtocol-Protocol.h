@@ -6,9 +6,10 @@
 
 #import "NEFilterExtensionProviderProtocol.h"
 
-@class NSDictionary, NSFileHandle;
+@class NEFilterReport, NSDictionary, NSFileHandle;
 
 @protocol NEFilterDataExtensionProviderProtocol <NEFilterExtensionProviderProtocol>
+- (void)report:(NEFilterReport *)arg1;
 - (void)provideURLAppendStringMap:(NSDictionary *)arg1;
 - (void)provideRemediationMap:(NSDictionary *)arg1;
 - (void)handleRulesChanged;

@@ -4,21 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <PrototypeTools/PTSRowAction.h>
+#import <PrototypeTools/PTRestoreDefaultSettingsRowAction.h>
 
-@class NSString;
-
-@interface PTSRestoreDefaultSettingsRowAction : PTSRowAction
+@interface PTSRestoreDefaultSettingsRowAction : PTRestoreDefaultSettingsRowAction
 {
-    NSString *_settingsKeyPath;
 }
-
-+ (id)actionWithSettingsKeyPath:(id)arg1;
-@property(copy, nonatomic) NSString *settingsKeyPath; // @synthesize settingsKeyPath=_settingsKeyPath;
-- (void).cxx_destruct;
-- (void)resolveTemplatesWithIndex:(unsigned long long)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)init;
 
 @end
 

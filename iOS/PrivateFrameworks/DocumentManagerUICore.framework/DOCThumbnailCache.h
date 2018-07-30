@@ -6,47 +6,37 @@
 
 #import "NSObject.h"
 
-@class NSCache, NSMapTable, NSObject<OS_dispatch_queue>, NSOperationQueue;
+@class NSCache, NSMapTable, NSOperationQueue;
 
 @interface DOCThumbnailCache : NSObject
 {
-    NSObject<OS_dispatch_queue> *_queue;
     NSOperationQueue *_operationQueue;
     NSMapTable *_cachedThumbnailItems;
     NSMapTable *_cachedIconItems;
     NSCache *_cachedGenericItems;
     NSCache *_recentlyUsedItems;
-    long long _thumnailFetchingPriority;
 }
 
-+ (void)resetThumnailFetchingPriorityValue;
-+ (void)decreaseThumnailFetchingPriority;
-+ (void)increaseThumnailFetchingPriority;
++ (void)setMaximumThumbnailCount:(unsigned long long)arg1;
 + (void)clearCache;
-+ (id)iconForContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5;
-+ (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6;
-+ (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5;
++ (id)iconForContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5 isInteractive:(_Bool)arg6;
++ (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6 isInteractive:(_Bool)arg7;
++ (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5 isInteractive:(_Bool)arg6;
 + (id)sharedCache;
-@property(nonatomic) long long thumnailFetchingPriority; // @synthesize thumnailFetchingPriority=_thumnailFetchingPriority;
 @property(readonly, nonatomic) NSCache *recentlyUsedItems; // @synthesize recentlyUsedItems=_recentlyUsedItems;
 @property(readonly, nonatomic) NSCache *cachedGenericItems; // @synthesize cachedGenericItems=_cachedGenericItems;
 @property(readonly, nonatomic) NSMapTable *cachedIconItems; // @synthesize cachedIconItems=_cachedIconItems;
 @property(readonly, nonatomic) NSMapTable *cachedThumbnailItems; // @synthesize cachedThumbnailItems=_cachedThumbnailItems;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (unsigned int)currentQOS;
 - (void)markThumbnailAsRecentlyUsed:(id)arg1;
-- (id)_thumbnailFallbackForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6 qos:(unsigned int)arg7 currentThumbnail:(id)arg8;
-- (id)_iconForContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5 qos:(unsigned int)arg6;
-- (id)_thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6 qos:(unsigned int)arg7;
-- (void)resetThumnailFetchingPriorityValue;
-- (void)decreaseThumnailFetchingPriority;
-- (void)increaseThumnailFetchingPriority;
+- (id)_thumbnailFallbackForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6 currentThumbnail:(id)arg7;
+- (id)_iconForContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5 isInteractive:(_Bool)arg6;
+- (id)_thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6 isInteractive:(_Bool)arg7;
 - (void)clearCache;
-- (id)iconForContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5;
-- (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5;
-- (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6;
+- (id)iconForContentType:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5 isInteractive:(_Bool)arg6;
+- (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 style:(unsigned long long)arg4 folded:(_Bool)arg5 isInteractive:(_Bool)arg6;
+- (id)thumbnailForItem:(id)arg1 size:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 style:(unsigned long long)arg5 folded:(_Bool)arg6 isInteractive:(_Bool)arg7;
 - (id)init;
 
 @end

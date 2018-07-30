@@ -58,7 +58,6 @@
 - (struct CGRect)overlayRect;
 - (void)unlock;
 - (void)lock;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithBufferSize:(unsigned long long)arg1 andBytesPerRow:(unsigned long long)arg2;
 

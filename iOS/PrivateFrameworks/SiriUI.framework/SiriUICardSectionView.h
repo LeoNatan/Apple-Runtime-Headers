@@ -33,6 +33,7 @@
 @property(nonatomic) __weak UIView<CRKComposableView> *composedSuperview; // @synthesize composedSuperview=_composedSuperview;
 - (void).cxx_destruct;
 - (void)removeFromComposedSuperview;
+- (id)accessibilityIdentifier;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

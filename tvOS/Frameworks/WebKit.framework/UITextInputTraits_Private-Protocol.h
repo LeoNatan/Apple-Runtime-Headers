@@ -14,11 +14,12 @@
 
 @optional
 @property(nonatomic, getter=isDevicePasscodeEntry) _Bool devicePasscodeEntry;
+@property(nonatomic) _Bool hidePrediction;
+@property(nonatomic) _Bool disablePrediction;
 @property(nonatomic) _Bool loadKeyboardsForSiriLanguage;
 @property(nonatomic) long long textScriptType;
 @property(nonatomic) _Bool isCarPlayIdiom;
 @property(nonatomic) _Bool disableInputBars;
-@property(nonatomic) _Bool disablePrediction;
 @property(retain, nonatomic) UIInputContextHistory *inputContextHistory;
 @property(copy, nonatomic) NSString *responseContext;
 @property(copy, nonatomic) NSString *autocorrectionContext;

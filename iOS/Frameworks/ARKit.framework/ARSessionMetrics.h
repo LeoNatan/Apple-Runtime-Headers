@@ -11,6 +11,7 @@
 @interface ARSessionMetrics : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
+    id <ARSessionMetricsReporting> _reporter;
     Class _configClass;
     NSDate *_startDate;
     NSDate *_frameStartDate;
@@ -21,15 +22,23 @@
     _Bool _positionInitialized;
     // Error parsing type: , name: _minPos
     // Error parsing type: , name: _maxPos
+    _Bool _hasInitialWorldMap;
+    _Bool _relocalizingToInitialWorldMap;
 }
 
 - (void).cxx_destruct;
 - (void)_recordBadFramePercentageWithBucket:(id)arg1;
 - (void)_recordBadFramePercentageFinal:(_Bool)arg1;
 - (id)_baseKey;
+- (id)arkitBasedKey:(id)arg1;
+- (id)configBasedKey:(id)arg1;
+- (void)_recordSessionEnd;
 - (void)sessionStopped;
+- (void)saveMapWithFrame:(id)arg1;
 - (void)sessionDidUpdateFrame:(id)arg1;
 - (void)sessionStartedWithConfiguration:(id)arg1;
+- (id)queue;
+- (id)initWithReporter:(id)arg1;
 - (id)init;
 
 @end

@@ -9,17 +9,26 @@
 #import "XCTAutomationTarget.h"
 #import "XCTConnectionAccepting.h"
 
-@class NSMutableArray, NSString, XCTElementQueryProcessor;
+@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, XCTAnimationsIdleNotifier, XCTElementQueryProcessor, XCTMainRunLoopIdleNotifier;
 
 @interface XCTAutomationSession : NSObject <XCTConnectionAccepting, XCTAutomationTarget>
 {
     NSMutableArray *_connections;
     XCTElementQueryProcessor *_queryProcessor;
+    NSObject<OS_dispatch_queue> *_queue;
+    XCTMainRunLoopIdleNotifier *_runLoopIdleMonitor;
+    XCTAnimationsIdleNotifier *_animationIdleNotifier;
 }
 
-@property(retain) XCTElementQueryProcessor *queryProcessor; // @synthesize queryProcessor=_queryProcessor;
-@property(retain) NSMutableArray *connections; // @synthesize connections=_connections;
+@property(readonly) XCTAnimationsIdleNotifier *animationIdleNotifier; // @synthesize animationIdleNotifier=_animationIdleNotifier;
+@property(readonly) XCTMainRunLoopIdleNotifier *runLoopIdleMonitor; // @synthesize runLoopIdleMonitor=_runLoopIdleMonitor;
+@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly) XCTElementQueryProcessor *queryProcessor; // @synthesize queryProcessor=_queryProcessor;
+@property(readonly) NSMutableArray *connections; // @synthesize connections=_connections;
 - (void).cxx_destruct;
+- (void)notifyWhenAnimationsAreIdle:(CDUnknownBlockType)arg1;
+- (void)notifyWhenMainRunLoopIsIdle:(CDUnknownBlockType)arg1;
+- (void)attributesForElement:(id)arg1 attributes:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)fetchMatchesForQuery:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestHostAppExecutableNameWithReply:(CDUnknownBlockType)arg1;
 - (BOOL)acceptNewConnection:(id)arg1;

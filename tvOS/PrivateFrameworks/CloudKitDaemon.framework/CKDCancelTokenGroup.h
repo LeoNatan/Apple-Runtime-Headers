@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (void)removeAllCancelTokens;
 - (void)removeCancelToken:(id)arg1;
-- (void)addCancelToken:(id)arg1;
+- (void)addCancelToken:(id)arg1 withOperation:(id)arg2;
 - (id)init;
 
 @end

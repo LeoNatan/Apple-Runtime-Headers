@@ -6,6 +6,7 @@
 
 #import "UIView.h"
 
+__attribute__((visibility("hidden")))
 @interface PUAdjustmentsModeBadge : UIView
 {
     _Bool _filled;

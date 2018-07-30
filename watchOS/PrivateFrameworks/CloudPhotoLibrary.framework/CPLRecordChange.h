@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSData, NSDate, NSString;
+@class CPLScopedIdentifier, NSData, NSDate, NSString;
 
 @interface CPLRecordChange : NSObject <NSSecureCoding, NSCopying>
 {
@@ -20,38 +20,52 @@
     _Bool _inTrash;
     _Bool _inExpunged;
     _Bool _serverRecordIsCorrupted;
-    NSString *_identifier;
+    CPLScopedIdentifier *_scopedIdentifier;
     NSDate *_recordModificationDate;
     unsigned int _changeType;
     NSDate *_dateDeleted;
+    CPLScopedIdentifier *_resourceCopyFromScopedIdentifier;
     NSString *_realIdentifier;
     NSData *_recordChangeData;
 }
 
++ (id)newDeleteChangeWithIdentifier:(id)arg1;
++ (id)newRecordWithIdentifier:(id)arg1;
++ (id)newChangeWithIdentifier:(id)arg1 changeType:(unsigned int)arg2;
 + (CDUnknownBlockType)copyPropertyBlockForDirection:(unsigned int)arg1;
 + (CDUnknownBlockType)equalityBlockForDirection:(unsigned int)arg1;
 + (id)_descriptionForChangeType:(unsigned int)arg1 isSparseFullChange:(_Bool)arg2;
 + (id)descriptionForChangeType:(unsigned int)arg1;
 + (int)maxInlineDataSize;
-+ (id)newChangeWithIdentifier:(id)arg1 changeType:(unsigned int)arg2;
 + (id)newChangeWithType:(unsigned int)arg1;
-+ (id)newDeleteChangeWithIdentifier:(id)arg1;
-+ (id)newRecordWithIdentifier:(id)arg1;
++ (id)newDeleteChangeWithScopedIdentifier:(id)arg1;
++ (id)newChangeWithScopedIdentifier:(id)arg1 changeType:(unsigned int)arg2;
++ (id)newRecordWithScopedIdentifier:(id)arg1;
++ (id)newRecordInScopeWithIdentifier:(id)arg1;
 + (id)newRecord;
 + (id)descriptionForDirection:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)cplAdditionalSecureClassesForProperty:(id)arg1;
 + (Class)classForStoredClassName:(id)arg1 forCPLArchiver:(id)arg2;
++ (_Bool)cplShouldIgnorePropertyForEquality:(id)arg1;
++ (_Bool)cplShouldIgnorePropertyForCoding:(id)arg1;
 @property(nonatomic) _Bool serverRecordIsCorrupted; // @synthesize serverRecordIsCorrupted=_serverRecordIsCorrupted;
 @property(copy, nonatomic) NSData *recordChangeData; // @synthesize recordChangeData=_recordChangeData;
 @property(copy, nonatomic) NSString *realIdentifier; // @synthesize realIdentifier=_realIdentifier;
 @property(nonatomic) _Bool inExpunged; // @synthesize inExpunged=_inExpunged;
 @property(nonatomic) _Bool inTrash; // @synthesize inTrash=_inTrash;
+@property(copy, nonatomic) CPLScopedIdentifier *resourceCopyFromScopedIdentifier; // @synthesize resourceCopyFromScopedIdentifier=_resourceCopyFromScopedIdentifier;
 @property(copy, nonatomic) NSDate *dateDeleted; // @synthesize dateDeleted=_dateDeleted;
 @property(nonatomic) unsigned int changeType; // @synthesize changeType=_changeType;
 @property(copy, nonatomic) NSDate *recordModificationDate; // @synthesize recordModificationDate=_recordModificationDate;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) CPLScopedIdentifier *scopedIdentifier; // @synthesize scopedIdentifier=_scopedIdentifier;
 - (void).cxx_destruct;
+- (id)copyChangeType:(unsigned int)arg1;
+- (void)copyDerivativesFromRecordIfPossible:(id)arg1;
+- (void)copyDerivatives:(unsigned int *)arg1 count:(int)arg2 avoidResourceType:(unsigned int)arg3 fromRecord:(id)arg4 inResourcePerType:(id)arg5;
+- (unsigned int)baseVideoComplemenentResourceType;
+- (unsigned int)baseDerivativeResourceType;
+- (id)resourcePerType;
 - (_Bool)allResourcesAreAvailable;
 - (_Bool)isResourceTypeAGeneratedDerivative:(unsigned int)arg1;
 - (unsigned int)fullChangeTypeForFullRecord;
@@ -74,12 +88,15 @@
 - (int)dequeueOrder;
 - (void)awakeFromStorage;
 - (void)prepareForStorage;
-- (id)allRelatedIdentifiers;
-- (id)identifiersForQuarantine;
-- (id)identifierForQuarantine;
-- (id)proposedLocalIdentifier;
+- (void)clearIdentifiers;
+- (id)allRelatedScopedIdentifiers;
+- (id)scopedIdentifiersForQuarantine;
+- (id)scopedIdentifierForQuarantine;
+- (id)proposedLocalScopedIdentifier;
+- (id)secondaryScopedIdentifier;
 - (void)setSecondaryIdentifier:(id)arg1;
 - (id)secondaryIdentifier;
+- (id)relatedScopedIdentifier;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
 - (id)propertiesForChangeType:(unsigned int)arg1;
@@ -104,14 +121,20 @@
 - (_Bool)isDelete;
 - (_Bool)isFullRecord;
 - (_Bool)hasChangeType:(unsigned int)arg1;
+- (_Bool)isInScopeWithIdentifier:(id)arg1;
+- (id)realScopedIdentifier;
+- (void)setScopeIndex:(int)arg1;
+- (id)_unscopedIdentifier;
+@property(copy, nonatomic) NSString *identifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)storedClassNameForCPLArchiver:(id)arg1;
-- (id)proposedCloudIdentifierWithError:(id *)arg1;
+- (id)initWithCPLArchiver:(id)arg1;
+- (id)proposedCloudScopedIdentifierWithError:(id *)arg1;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
-- (id)identifiersForMapping;
+- (id)scopedIdentifiersForMapping;
 - (_Bool)validateRecordForTracker:(id)arg1;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(_Bool)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
 

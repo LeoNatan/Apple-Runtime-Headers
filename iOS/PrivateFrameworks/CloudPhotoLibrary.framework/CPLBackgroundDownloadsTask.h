@@ -27,8 +27,6 @@
 - (id)description;
 - (id)taskIdentifier;
 - (void)cancel;
-- (void)resume;
-- (void)pause;
 - (void)taskDidFinishWithError:(id)arg1;
 - (void)launch;
 - (void)_transportTaskDidFinish:(id)arg1;

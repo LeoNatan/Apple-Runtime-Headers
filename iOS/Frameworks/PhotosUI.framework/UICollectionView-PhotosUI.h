@@ -9,6 +9,7 @@
 @class NSArray;
 
 @interface UICollectionView (PhotosUI)
+- (void)pu_animateUpdateOfCollectionViewSubview:(id)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)pu_preparedCellForItemAtIndexPath:(id)arg1;
 @property(readonly, nonatomic) NSArray *pu_indexPathsForPreparedItems;
 - (id)next:(long long)arg1 indexPathFromIndexPath:(id)arg2;

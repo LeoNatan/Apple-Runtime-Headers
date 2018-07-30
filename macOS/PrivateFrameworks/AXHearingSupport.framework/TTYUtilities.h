@@ -20,9 +20,13 @@
 + (id)flipImageHorizontally:(id)arg1;
 + (BOOL)ttyShouldBeRealtimeForCall:(id)arg1;
 + (id)phoneNumberStringFromString:(id)arg1;
++ (id)ASCIINumericStringFromString:(struct __CFString *)arg1;
 + (id)relayPhoneNumber;
 + (BOOL)relayIsSupported;
 + (BOOL)softwareTTYIsSupported;
++ (BOOL)shouldUseRTT;
++ (BOOL)isOnlyRTTSupported;
++ (BOOL)isRTTSupported;
 + (BOOL)hardwareTTYIsSupported;
 + (void)contactIsTTYContact:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 + (BOOL)contactIsTTYContact:(id)arg1;

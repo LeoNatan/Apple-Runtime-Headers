@@ -6,23 +6,21 @@
 
 #import "NSObject.h"
 
-@class PKPass, PKPassGroupView, PKPassView, PKReusablePassViewQueue;
+@class PKPass, PKPassGroupView, PKPassPresentationContext, PKPassView, PKReusablePassViewQueue;
 
 @protocol PKPassGroupViewDelegate <NSObject>
 
 @optional
 - (int)groupViewContentModeForFrontmostPassWhenPiled:(PKPassGroupView *)arg1 withDefaultContentMode:(int)arg2;
 - (int)groupViewContentModeForFrontmostPassWhenStacked:(PKPassGroupView *)arg1;
-- (struct CGRect)groupView:(PKPassGroupView *)arg1 targetPageControlFrameForProposedFrame:(struct CGRect)arg2;
 - (PKReusablePassViewQueue *)groupViewReusablePassViewQueue:(PKPassGroupView *)arg1;
 - (unsigned int)groupViewPassesSuppressedContent:(PKPassGroupView *)arg1;
-- (void)groupView:(PKPassGroupView *)arg1 frontmostPassViewDidChange:(PKPassView *)arg2;
-- (void)groupView:(PKPassGroupView *)arg1 resizeButtonPressedForPass:(PKPass *)arg2 withBarcode:(_Bool)arg3;
+- (void)groupView:(PKPassGroupView *)arg1 frontmostPassViewDidChange:(PKPassView *)arg2 withContext:(PKPassPresentationContext *)arg3;
 - (_Bool)groupView:(PKPassGroupView *)arg1 deleteButtonEnabledForPass:(PKPass *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 deleteButtonPressedForPass:(PKPass *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 didUpdatePassView:(PKPassView *)arg2;
-- (void)groupViewFrontPassDidResize:(PKPassGroupView *)arg1 animated:(_Bool)arg2;
-- (_Bool)groupViewShouldAllowPassResize:(PKPassGroupView *)arg1;
+- (void)groupViewFrontPassDidUpdateBarcodeVisibility:(PKPassGroupView *)arg1 animated:(_Bool)arg2;
+- (_Bool)groupViewCanShowBarcode:(PKPassGroupView *)arg1;
 - (void)groupViewDidUpdatePageControlVisibility:(PKPassGroupView *)arg1;
 - (void)groupView:(PKPassGroupView *)arg1 panned:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
 - (void)groupViewPanDidEnd:(PKPassGroupView *)arg1;

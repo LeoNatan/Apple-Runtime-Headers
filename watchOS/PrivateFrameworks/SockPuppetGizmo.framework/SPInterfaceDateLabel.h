@@ -34,7 +34,7 @@
 - (void)updateTimer;
 - (void)updateText;
 - (void)dealloc;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 @end
 

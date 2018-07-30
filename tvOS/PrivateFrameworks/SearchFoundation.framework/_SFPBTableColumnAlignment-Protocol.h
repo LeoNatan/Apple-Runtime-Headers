@@ -10,11 +10,8 @@
 
 @protocol _SFPBTableColumnAlignment <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasIsEqualWidth;
 @property(nonatomic) _Bool isEqualWidth;
-@property(readonly, nonatomic) _Bool hasDataAlignment;
 @property(nonatomic) int dataAlignment;
-@property(readonly, nonatomic) _Bool hasColumnAlignment;
 @property(nonatomic) int columnAlignment;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

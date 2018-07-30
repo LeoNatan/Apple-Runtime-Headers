@@ -9,8 +9,9 @@
 @class NSString;
 
 @protocol PDAssertionCoordinatorExportedInterface <PDXPCServiceExportedInterface>
+- (void)assertionOfType:(unsigned int)arg1 withIdentifier:(NSString *)arg2 isValid:(void (^)(_Bool))arg3;
+- (void)assertionOfType:(unsigned int)arg1 withIdentifier:(NSString *)arg2 shouldInvalidateWhenBackgrounded:(_Bool)arg3;
 - (void)invalidateAssertionOfType:(unsigned int)arg1 withIdentifier:(NSString *)arg2 handler:(void (^)(void))arg3;
 - (void)acquireAssertionOfType:(unsigned int)arg1 withIdentifier:(NSString *)arg2 reason:(NSString *)arg3 handler:(void (^)(_Bool))arg4;
-- (void)assertionExistsOfType:(unsigned int)arg1 handler:(void (^)(_Bool))arg2;
 @end
 

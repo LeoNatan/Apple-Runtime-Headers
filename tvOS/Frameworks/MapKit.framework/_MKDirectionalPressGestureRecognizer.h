@@ -8,7 +8,6 @@
 
 @class NSMutableSet;
 
-__attribute__((visibility("hidden")))
 @interface _MKDirectionalPressGestureRecognizer : UIGestureRecognizer
 {
     long long _horizontalDirection;

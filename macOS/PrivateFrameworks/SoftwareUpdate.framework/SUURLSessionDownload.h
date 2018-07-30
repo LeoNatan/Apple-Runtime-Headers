@@ -9,7 +9,7 @@
 #import "NSURLSessionDelegate.h"
 #import "NSURLSessionDownloadDelegate.h"
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSOperationQueue, NSString, NSURLSession;
+@class NSArray, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURLSession;
 
 @interface SUURLSessionDownload : NSObject <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 {
@@ -25,12 +25,13 @@
     NSObject<OS_dispatch_queue> *_progressQueue;
     NSObject<OS_dispatch_queue> *_processPackagesQueue;
     BOOL _canRetry;
-    BOOL _waitingOnTasksToCancel;
+    BOOL _cancelled;
     BOOL _isAsync;
     CDUnknownFunctionPointerType _assetCacheServicesFn;
     long long _successfullyDownloadedBytes;
     CDUnknownBlockType _finishedBlock;
-    NSObject<OS_dispatch_semaphore> *_cancelSemaphore;
+    NSLock *_finishedStateLock;
+    BOOL _finishHasBeenCalled;
     NSString *_sessionIdentifier;
     id <SUURLSessionDownloadDelegate> _delegate;
     BOOL _backgroundSession;
@@ -59,7 +60,7 @@
 - (id)error;
 - (void)startDownloadingPackagesWithIdentifiers:(id)arg1;
 - (BOOL)_contentLocatorURLForOriginalURL:(id)arg1 outModifiedURL:(id *)arg2;
-- (void)_retryDownloadForPackageIdentifier:(id)arg1 withPackageRef:(id)arg2 originalIdentifier:(unsigned long long)arg3 forNetworkRetry:(BOOL)arg4 resumable:(BOOL)arg5;
+- (void)_retryDownloadForPackageIdentifier:(id)arg1 withPackageRef:(id)arg2 originalIdentifier:(unsigned long long)arg3 resumable:(BOOL)arg4;
 - (id)_backgroundConfiguration;
 - (void)setInitialAlreadyDownloadedAmount:(unsigned long long)arg1;
 - (void)dealloc;

@@ -10,7 +10,6 @@
 
 @protocol _SFPBURL <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasAddress;
 @property(copy, nonatomic) NSString *address;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

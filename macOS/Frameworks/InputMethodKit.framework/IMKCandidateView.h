@@ -6,7 +6,7 @@
 
 #import "NSView.h"
 
-@class IMKCandidateController, IMKCandidateUIString, IMKDocumentView, NSArray, NSMutableArray, NSMutableDictionary, NSScrollView;
+@class IMKCandidateController, IMKCandidateUIString, IMKDocumentView, IMKUITextField, NSArray, NSMutableArray, NSMutableDictionary, NSScrollView;
 
 @interface IMKCandidateView : NSView
 {
@@ -20,11 +20,13 @@
     IMKCandidateController *_candidateController;
     struct CGSize _documentSize;
     IMKCandidateUIString *_message;
+    IMKUITextField *_messageTextField;
     BOOL _respondsToMouseInteraction;
     unsigned long long _topVisibleLine;
 }
 
 @property(nonatomic) BOOL respondsToMouseInteraction; // @synthesize respondsToMouseInteraction=_respondsToMouseInteraction;
+@property(retain, nonatomic) IMKUITextField *messageTextField; // @synthesize messageTextField=_messageTextField;
 @property(retain, nonatomic) IMKCandidateUIString *message; // @synthesize message=_message;
 @property(nonatomic) struct CGSize documentSize; // @synthesize documentSize=_documentSize;
 @property(nonatomic) IMKCandidateController *candidateController; // @synthesize candidateController=_candidateController;
@@ -52,7 +54,6 @@
 - (id)viewForUniqueKey:(id)arg1;
 - (void)flashScrollers;
 - (id)unitForSelectionKey:(id)arg1;
-- (void)drawRect:(struct CGRect)arg1;
 - (void)setVerticallyAlignedSelectionKeys;
 - (void)setVerticalSelectionKeys;
 - (void)setHorizontalSelectionKeysWithHighlighted:(BOOL)arg1;

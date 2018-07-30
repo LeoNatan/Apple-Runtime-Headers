@@ -17,6 +17,7 @@
 + (void)synchronize;
 + (id)applicationsWithAvailableStores;
 + (id)storeForApplication:(id)arg1;
+- (void).cxx_destruct;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setArchivedObject:(id)arg1 forKey:(id)arg2;
@@ -29,7 +30,7 @@
 - (id)safeObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (void)objectForKey:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (id)objectForKey:(id)arg1;
-@property(readonly, retain, nonatomic) NSString *bundleID;
+@property(readonly, nonatomic) NSString *bundleID;
 - (void)dealloc;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)_initWithFBSApplicationDataStore:(id)arg1;

@@ -8,7 +8,6 @@
 
 @class OADShapeProperties, OADTextBody, ODDPointPropertySet;
 
-__attribute__((visibility("hidden")))
 @interface ODDPoint : NSObject
 {
     int mType;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)addConnectionToPoint:(id)arg1 order:(unsigned long long)arg2 array:(id *)arg3;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setText:(id)arg1;
 - (id)text;
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)propertySet;
 - (void)setType:(int)arg1;
 - (int)type;
-- (void)dealloc;
 - (id)init;
 
 @end

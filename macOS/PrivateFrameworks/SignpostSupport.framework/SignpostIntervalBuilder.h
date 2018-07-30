@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMapTable, NSMutableDictionary;
+@class NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface SignpostIntervalBuilder : NSObject
 {
@@ -17,8 +17,12 @@
     NSMutableDictionary *_threadwideDictionary;
     NSMapTable *_outstandingAnimationStarts;
     unsigned long long _totalCompositeIntervalCount;
+    NSObject<OS_dispatch_queue> *_syncQueue;
 }
 
++ (id)_framerateCalculationWhitelist;
++ (BOOL)_filterPassesRequiredSCForFramerate:(id)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(nonatomic) BOOL compositeIntervalIsInFlight; // @synthesize compositeIntervalIsInFlight=_compositeIntervalIsInFlight;
 @property(nonatomic) unsigned long long totalCompositeIntervalCount; // @synthesize totalCompositeIntervalCount=_totalCompositeIntervalCount;
 @property(retain, nonatomic) NSMapTable *outstandingAnimationStarts; // @synthesize outstandingAnimationStarts=_outstandingAnimationStarts;
@@ -30,11 +34,12 @@
 - (id)doneProcessing;
 - (id)processEndEvent:(id)arg1 isAnimation:(char *)arg2;
 - (void)_processCompositeInterval:(id)arg1;
-- (void)processBeginEvent:(id)arg1;
+- (BOOL)processBeginEvent:(id)arg1;
 - (BOOL)eventIsCompositeLoopEvent:(id)arg1;
 - (BOOL)isCompositeLoopSubsystem:(id)arg1 category:(id)arg2;
-- (void)_trackBegin:(id)arg1;
+- (BOOL)_trackBegin:(id)arg1;
 - (id)matchingEventForEvent:(id)arg1 removeIfFound:(BOOL)arg2;
+- (id)_matchingEventForEvent:(id)arg1 removeIfFound:(BOOL)arg2;
 - (void)_cleanupState;
 - (id)init;
 

@@ -28,6 +28,7 @@
     NSString *_coverArticleListID;
     NSString *_coverImageURL;
     NTPBFeedConfiguration *_feedConfiguration;
+    NSString *_feedNavImageURL;
     int _groupingAvailability;
     NSMutableArray *_iAdCategories;
     NSMutableArray *_iAdKeywords;
@@ -103,6 +104,7 @@
 + (Class)relatedTopicIDsForOnboardingType;
 + (Class)relatedChannelIDsType;
 + (Class)relatedTopicIDsType;
+@property(retain, nonatomic) NSString *feedNavImageURL; // @synthesize feedNavImageURL=_feedNavImageURL;
 @property(retain, nonatomic) NTPBDate *publisherSpecifiedArticleIdsModifiedDate; // @synthesize publisherSpecifiedArticleIdsModifiedDate=_publisherSpecifiedArticleIdsModifiedDate;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSMutableArray *publisherSpecifiedArticleIds; // @synthesize publisherSpecifiedArticleIds=_publisherSpecifiedArticleIds;
@@ -166,6 +168,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasFeedNavImageURL;
 @property(readonly, nonatomic) _Bool hasPublisherSpecifiedArticleIdsModifiedDate;
 @property(readonly, nonatomic) _Bool hasSubtitle;
 - (id)publisherSpecifiedArticleIdsAtIndex:(unsigned long long)arg1;

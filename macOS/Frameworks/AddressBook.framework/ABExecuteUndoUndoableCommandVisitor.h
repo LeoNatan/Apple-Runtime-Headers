@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABUndoableCommandVisitor.h>
 
-__attribute__((visibility("hidden")))
 @interface ABExecuteUndoUndoableCommandVisitor : ABUndoableCommandVisitor
 {
 }

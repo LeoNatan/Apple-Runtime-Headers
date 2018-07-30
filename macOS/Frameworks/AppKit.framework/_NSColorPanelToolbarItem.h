@@ -6,6 +6,7 @@
 
 #import <AppKit/NSToolbarItem.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSColorPanelToolbarItem : NSToolbarItem
 {
     id representedObject;

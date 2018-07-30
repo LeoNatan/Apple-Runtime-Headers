@@ -6,21 +6,18 @@
 
 #import "NSView.h"
 
+@class SOAudioMessageWaveForm;
+
 @interface SORecordingWaveformView : NSView
 {
-    unsigned long long _maxPowerLevelsCount;
-    unsigned long long _powerLevelsCount;
-    double *_powerLevels;
+    SOAudioMessageWaveForm *_waveForm;
 }
 
-+ (double)widestScreenWidth;
-@property(nonatomic) double *powerLevels; // @synthesize powerLevels=_powerLevels;
-@property(nonatomic) unsigned long long powerLevelsCount; // @synthesize powerLevelsCount=_powerLevelsCount;
-@property(nonatomic) unsigned long long maxPowerLevelsCount; // @synthesize maxPowerLevelsCount=_maxPowerLevelsCount;
+@property(readonly, nonatomic) SOAudioMessageWaveForm *waveForm; // @synthesize waveForm=_waveForm;
+- (void).cxx_destruct;
 - (void)clearPowerLevels;
 - (void)appendPowerLevel:(double)arg1;
 - (void)dealloc;
-- (void)initializePowerLevels;
 - (void)didChangeScreenParameters:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

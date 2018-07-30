@@ -16,8 +16,6 @@
 {
     UILabel *_copyrightFooterLabel;
     UIButton *_footerViewOverlayButton;
-    NSMutableArray *_openSections;
-    NSMutableArray *_displayHelpItems;
     NSLayoutConstraint *_copyrightFooterLabelHeightConstraint;
     NSLayoutConstraint *_copyrightFooterLabelTopConstraint;
     HLPHelpSearchResultTableViewController *_searchResultTableViewController;
@@ -27,6 +25,8 @@
     HLPHelpLocale *_locale;
     HLPHelpBookController *_helpBookController;
     HLPHelpUsageController *_usageController;
+    NSMutableArray *_openSections;
+    NSMutableArray *_displayHelpItems;
     UISearchController *_searchController;
     UIView *_tableFooterView;
     HLPHelpSearchIndexController *_helpSearchIndexController;
@@ -35,6 +35,8 @@
 @property(retain, nonatomic) HLPHelpSearchIndexController *helpSearchIndexController; // @synthesize helpSearchIndexController=_helpSearchIndexController;
 @property(retain, nonatomic) UIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
+@property(retain, nonatomic) NSMutableArray *displayHelpItems; // @synthesize displayHelpItems=_displayHelpItems;
+@property(retain, nonatomic) NSMutableArray *openSections; // @synthesize openSections=_openSections;
 @property(retain, nonatomic) HLPHelpUsageController *usageController; // @synthesize usageController=_usageController;
 @property(retain, nonatomic) HLPHelpBookController *helpBookController; // @synthesize helpBookController=_helpBookController;
 @property(retain, nonatomic) HLPHelpLocale *locale; // @synthesize locale=_locale;
@@ -63,11 +65,12 @@
 - (void)showHelpBookInfo;
 - (void)scrollToHelpItem:(id)arg1 deselectImmediately:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)deselectCurrentRow;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithStyle:(long long)arg1;
 
 // Remaining properties

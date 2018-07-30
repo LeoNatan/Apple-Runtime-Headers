@@ -31,7 +31,7 @@
 - (void)_queue_populateHistogramsAndOffWristDateForToday;
 @property(readonly, nonatomic) int totalActiveDays;
 - (id)_queue_calculateProjectedOffWristDateFromActivitySummaries:(id)arg1;
-- (id)_queue_createHistogramForGoalType:(unsigned int)arg1 activitySummaries:(id)arg2;
+- (id)_queue_createHistogramForGoalType:(int)arg1 activitySummaries:(id)arg2;
 - (void)_waitUntilActivitySummaryLoaded;
 - (void)handleUpdatedCurrentActivitySummary:(id)arg1;
 - (double)projectedDayDuration;
@@ -50,12 +50,12 @@
 - (_Bool)willCompleteStandGoalOrItIsTooLateWithBufferPercentage:(double)arg1;
 - (_Bool)willCompleteExerciseGoalWithBufferPercentage:(double)arg1;
 - (_Bool)willCompleteEnergyBurnedGoalWithBufferPercentage:(double)arg1;
-- (_Bool)_willCompleteGoalWithType:(unsigned int)arg1 bufferPercentage:(double)arg2;
+- (_Bool)_willCompleteGoalWithType:(int)arg1 bufferPercentage:(double)arg2;
 - (double)valueOfTypicalDayMoveEarnedByNow;
 - (double)valueOfTypicalDayBriskMinutesEarnedByNow;
 - (double)percentageOfTypicalDayBriskMinutesEarnedComparedToNow;
 - (double)percentageOfTypicalDayMoveComparedToNow;
-- (double)_percentageOfTypicalDayComparedToNowForGoal:(unsigned int)arg1;
+- (double)_percentageOfTypicalDayComparedToNowForGoal:(int)arg1;
 - (double)_queue_currentValueForHistogram:(id)arg1;
 - (id)endOfToday;
 - (id)startOfToday;

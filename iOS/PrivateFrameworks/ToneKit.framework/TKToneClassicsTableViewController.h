@@ -6,12 +6,13 @@
 
 #import "UITableViewController.h"
 
+#import "PSStateRestoration.h"
 #import "TKTonePickerTableViewLayoutMarginsObserver.h"
 #import "TKTonePickerTableViewSeparatorObserver.h"
 
 @class NSString, TKTonePickerItem;
 
-@interface TKToneClassicsTableViewController : UITableViewController <TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver>
+@interface TKToneClassicsTableViewController : UITableViewController <PSStateRestoration, TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver>
 {
     TKTonePickerItem *_classicTonesHeaderItem;
     id <TKTonePickerTableViewControllerHelper> _tonePickerTableViewControllerHelper;
@@ -34,6 +35,7 @@
 - (void)didReloadTones;
 - (void)dealloc;
 - (id)initWithClassicTonesHeaderItem:(id)arg1;
+- (_Bool)canBeShownFromSuspendedState;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

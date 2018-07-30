@@ -45,8 +45,8 @@
 - (void)addToWebAccessEntryListWithEntry:(id)arg1;
 - (id)webAccessEntryForTagID:(id)arg1;
 - (id)_webAccessEntryIDForTagID:(id)arg1;
-- (void)performHTTPRequestForVerifyAccessTokenWithURL:(id)arg1 accessToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)verifyAccessTokenWithTagID:(id)arg1 accessToken:(id)arg2 serialCompletion:(CDUnknownBlockType)arg3 callbackQueue:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)performHTTPRequestForVerifyAccessTokenWithURL:(id)arg1 accessToken:(id)arg2 consumedArticleCount:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)verifyAccessTokenWithTagID:(id)arg1 accessToken:(id)arg2 consumedArticleCount:(unsigned long long)arg3 serialCompletion:(CDUnknownBlockType)arg4 callbackQueue:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)handleAccessTokenVerificationFailureWithTagID:(id)arg1;
 - (void)handleAccessTokenVerificationSuccessWithTagID:(id)arg1 subscribed:(_Bool)arg2 accessToken:(id)arg3;
 - (void)handleAccessTokenChangeWithTagID:(id)arg1 userInitiated:(_Bool)arg2;

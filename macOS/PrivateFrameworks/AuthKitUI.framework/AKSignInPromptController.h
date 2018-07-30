@@ -61,6 +61,7 @@
     NSImage *_displayImage;
     NSString *_initialUsername;
     NSString *_initialPassword;
+    long long _serviceType;
     NSString *_initialError;
     NSString *_alternativeButtonString;
     NSString *_otherButtonString;
@@ -98,6 +99,7 @@
 @property(retain) NSString *alternativeButtonString; // @synthesize alternativeButtonString=_alternativeButtonString;
 @property BOOL preventSignIn; // @synthesize preventSignIn=_preventSignIn;
 @property(retain) NSString *initialError; // @synthesize initialError=_initialError;
+@property long long serviceType; // @synthesize serviceType=_serviceType;
 @property(retain) NSString *initialPassword; // @synthesize initialPassword=_initialPassword;
 @property(retain) NSString *initialUsername; // @synthesize initialUsername=_initialUsername;
 @property BOOL alwaysShowUsernameField; // @synthesize alwaysShowUsernameField=_alwaysShowUsernameField;

@@ -10,7 +10,6 @@
 
 @class NSArray, NSError, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSString;
 
-__attribute__((visibility("hidden")))
 @interface TSUBufferedReadChannel : NSObject <TSUReadChannel>
 {
     NSObject<OS_dispatch_queue> *_readQueue;

@@ -39,6 +39,7 @@
 @property(nonatomic) int dictationMode; // @synthesize dictationMode=_dictationMode;
 @property(nonatomic) __weak id <PUICDictationViewControllerDelegate> dictationDelegate; // @synthesize dictationDelegate=_dictationDelegate;
 - (void).cxx_destruct;
+- (unsigned int)inputType;
 - (void)_showDisambiguationResultsControllerForQuery:(id)arg1 transcribedObjects:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_dictationResultsView;
 - (void)_disableDictation;
@@ -94,6 +95,7 @@
 - (void)_insertPlatterView;
 - (id)acceptButtonKey;
 - (id)textView;
+- (void)setLanguageController:(id)arg1;
 - (void)_initWithDictationMode:(int)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithCoder:(id)arg1;

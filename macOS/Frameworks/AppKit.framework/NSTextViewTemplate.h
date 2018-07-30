@@ -8,6 +8,7 @@
 
 @class NSColor, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface NSTextViewTemplate : NSViewTemplate
 {
     id _contents;

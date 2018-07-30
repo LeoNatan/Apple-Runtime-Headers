@@ -20,6 +20,7 @@
 }
 
 + (id)buttonWithFontNamed:(id)arg1;
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) SKAction *upAction; // @synthesize upAction=_upAction;
 @property(retain, nonatomic) SKAction *downAction; // @synthesize downAction=_downAction;
 @property(nonatomic) __weak NSObject<SKButtonNodeDelegate> *delegate; // @synthesize delegate=_delegate;

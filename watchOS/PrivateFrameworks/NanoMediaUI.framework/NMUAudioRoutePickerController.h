@@ -20,6 +20,9 @@
 + (void)_registerRoutePickerController:(id)arg1;
 + (id)_registeredRoutePickerControllers;
 + (void)presentRoutePickerFromViewController:(id)arg1 forOrigin:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)shouldPresentRoutePickerForOrigin:(id)arg1 audioSession:(id)arg2 options:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)presentRoutePickerAlertWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)presentRoutePickerAlertIfNecessaryAndActivateAudioSession:(id)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)presentRoutePickerIfNecessaryFromViewController:(id)arg1 forOrigin:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)presentRoutePickerIfNecessaryFromViewController:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;

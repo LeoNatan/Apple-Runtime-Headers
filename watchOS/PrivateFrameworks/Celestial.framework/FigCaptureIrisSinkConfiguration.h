@@ -18,12 +18,14 @@
     _Bool _optimizesImagesForOfflineVideoStabilization;
     _Bool _quadraHighResCaptureEnabled;
     _Bool _depthDataDeliveryEnabled;
+    _Bool _portraitEffectsMatteDeliveryEnabled;
     _Bool _filterRenderingEnabled;
     _Bool _bravoDualPhotoDeliveryEnabled;
 }
 
 @property(nonatomic) _Bool bravoDualPhotoDeliveryEnabled; // @synthesize bravoDualPhotoDeliveryEnabled=_bravoDualPhotoDeliveryEnabled;
 @property(nonatomic) _Bool filterRenderingEnabled; // @synthesize filterRenderingEnabled=_filterRenderingEnabled;
+@property(nonatomic) _Bool portraitEffectsMatteDeliveryEnabled; // @synthesize portraitEffectsMatteDeliveryEnabled=_portraitEffectsMatteDeliveryEnabled;
 @property(nonatomic) _Bool depthDataDeliveryEnabled; // @synthesize depthDataDeliveryEnabled=_depthDataDeliveryEnabled;
 @property(nonatomic) _Bool quadraHighResCaptureEnabled; // @synthesize quadraHighResCaptureEnabled=_quadraHighResCaptureEnabled;
 @property(nonatomic) _Bool optimizesImagesForOfflineVideoStabilization; // @synthesize optimizesImagesForOfflineVideoStabilization=_optimizesImagesForOfflineVideoStabilization;

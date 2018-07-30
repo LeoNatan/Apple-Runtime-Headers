@@ -11,7 +11,9 @@
 }
 
 + (void)pruneOldCacheAtPath:(id)arg1;
++ (id)defaultSuppressedEntriesPath;
 + (id)defaultPathForProcessName:(id)arg1;
++ (id)defaultCacheDir;
 
 @end
 

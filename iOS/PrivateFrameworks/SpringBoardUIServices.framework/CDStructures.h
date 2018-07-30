@@ -10,6 +10,15 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGAffineTransform {
+    double a;
+    double b;
+    double c;
+    double d;
+    double tx;
+    double ty;
+};
+
 struct CGPoint {
     double _field1;
     double _field2;
@@ -40,4 +49,18 @@ struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
 };
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    _Bool showScanningState;
+    _Bool showScanningStateDuringFaceDetect;
+    double minimumDurationBeforeShowScanningState;
+} CDStruct_4613c6c6;
+
+typedef struct {
+    long long fromState;
+    long long toState;
+    double progress;
+} CDStruct_930a33b1;
 

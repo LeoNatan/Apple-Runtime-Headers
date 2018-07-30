@@ -29,6 +29,7 @@
     id <QLItemViewControllerPresentingDelegate> _presentingDelegate;
 }
 
++ (double)maxLoadingTimeForItem:(id)arg1;
 + (_Bool)providesCustomPrinter;
 + (_Bool)shouldBeRemoteForContentType:(id)arg1;
 + (id)supportedContentTypes;
@@ -47,13 +48,18 @@
 @property(nonatomic) __weak id <QLPreviewItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 - (void).cxx_destruct;
+- (id)additionalItemViewControllerDescription;
+@property(readonly, copy) NSString *description;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (void)_addDragInteractionIfNeeded;
 - (id)draggableView;
 - (void)notifyDelegatesDidFailWithError:(id)arg1;
+- (void)endPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1;
+- (void)beginPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (_Bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
+- (void)preloadViewControllerForContext:(id)arg1;
 - (void)performFirstTimeAppearanceActionsIfNeeded:(unsigned long long)arg1;
 - (id)parallaxView;
 - (void)transitionDidFinish:(_Bool)arg1 didComplete:(_Bool)arg2;
@@ -64,12 +70,15 @@
 - (void)_scrollScrollViewWithKeyCommand:(id)arg1;
 @property(readonly, nonatomic) NSArray *registeredKeyCommands;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)presenterShouldHandleLoadingView:(id)arg1 readyToDisplay:(CDUnknownBlockType)arg2;
+- (_Bool)shouldAlwaysRunFullscreen;
 - (id)fullscreenBackgroundColor;
 - (long long)preferredWhitePointAdaptivityStyle;
 - (_Bool)automaticallyUpdateScrollViewIndicatorInset;
 - (_Bool)automaticallyUpdateScrollViewContentInset;
 - (_Bool)automaticallyUpdateScrollViewContentOffset;
 - (_Bool)shouldRecognizeGestureRecognizer:(id)arg1;
+- (_Bool)canShowNavBar;
 - (_Bool)canShowToolBar;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;
@@ -98,7 +107,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

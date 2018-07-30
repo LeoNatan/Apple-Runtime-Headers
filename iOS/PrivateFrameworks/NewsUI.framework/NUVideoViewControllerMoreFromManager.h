@@ -6,25 +6,22 @@
 
 #import "NSObject.h"
 
-#import "SXMoreFromInteractionHandlerFactory.h"
-#import "SXMoreFromPublisherActionTitleProviding.h"
-#import "SXMoreFromPublisherLogoProviding.h"
+#import "SVMoreFromPublisherActionTitleProviding.h"
+#import "SVMoreFromPublisherLogoProviding.h"
 
-@class NSString, NUVideoViewController;
+@class NSString;
 
-@interface NUVideoViewControllerMoreFromManager : NSObject <SXMoreFromPublisherActionTitleProviding, SXMoreFromPublisherLogoProviding, SXMoreFromInteractionHandlerFactory>
+@interface NUVideoViewControllerMoreFromManager : NSObject <SVMoreFromPublisherActionTitleProviding, SVMoreFromPublisherLogoProviding>
 {
-    NUVideoViewController *_videoViewController;
+    id <NUVideoCallToActionURLProviding> _callToActionURLProvider;
 }
 
-@property(readonly, nonatomic) __weak NUVideoViewController *videoViewController; // @synthesize videoViewController=_videoViewController;
+@property(readonly, nonatomic) id <NUVideoCallToActionURLProviding> callToActionURLProvider; // @synthesize callToActionURLProvider=_callToActionURLProvider;
 - (void).cxx_destruct;
-- (id)_callToActionURLForVideoItem:(id)arg1;
 - (id)_callToActionTitleForVideoItem:(id)arg1;
 - (id)actionTitleForVideo:(id)arg1;
-- (id)createInteractionHandlerForVideo:(id)arg1;
 - (CDUnknownBlockType)moreFromLogoForVideo:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
-- (id)initWithVideoViewController:(id)arg1;
+- (id)initWithCallToActionURLProvider:(id)arg1;
 - (id)init;
 
 // Remaining properties

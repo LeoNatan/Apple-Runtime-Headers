@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface _NSCollectionViewPrefetchingContext : NSObject
 {
     NSArray *_remainingIndexPaths;

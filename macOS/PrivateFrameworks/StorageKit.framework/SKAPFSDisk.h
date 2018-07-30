@@ -64,7 +64,6 @@
 - (id)getFDEUserDictionaries;
 - (id)getFDEUsers;
 @property(readonly, copy) NSString *description;
-- (BOOL)matchesDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)minimalDictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;

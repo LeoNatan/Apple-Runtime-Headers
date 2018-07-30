@@ -37,13 +37,14 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)selectedNodesCount;
 - (unsigned long long)itemCount;
 - (id)selectedURLs;
-- (unsigned long long)getSelectedNodes:(struct TFENodeVector *)arg1 upTo:(unsigned long long)arg2;
-- (unsigned int)viewStyle;
+- (unsigned long long)getSelectedNodesFromView:(struct TFENodeVector *)arg1 upTo:(unsigned long long)arg2;
+- (void)reloadIconsInView;
+- (int)viewStyle;
 - (struct TFENodeVector)typeSelectCandidateNodes;
 - (unsigned long long)indexForNode:(const struct TFENode *)arg1;
 - (_Bool)containsNode:(const struct TFENode *)arg1;
 - (void)updateSubviewContentInsets:(struct NSEdgeInsets)arg1;
-- (void)dataSourceChanged:(const vector_f56638af *)arg1;
+- (void)dataSourceChanged:(const vector_274a36ec *)arg1;
 - (void)aboutToTearDown;
 - (id)mediaBrowserView;
 - (void)viewLoaded;

@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class IMAccount, IMPerson, IMServiceImpl, MKMapItem, NSArray, NSAttributedString, NSData, NSDate, NSDictionary, NSMutableArray, NSNumber, NSSet, NSString, NSURL;
+@class CNContact, IMAccount, IMPerson, IMServiceImpl, MKMapItem, NSArray, NSAttributedString, NSData, NSDate, NSDictionary, NSMutableArray, NSNumber, NSSet, NSString, NSURL;
 
 @interface IMHandle : IMDirectlyObservableObject <NSSecureCoding>
 {
@@ -68,10 +68,13 @@
     NSNumber *_isBusiness;
     NSNumber *_isMako;
     NSNumber *_isApple;
+    BOOL _hasCheckedForSuggestions;
+    NSString *_personCentricID;
     NSString *_guid;
     MKMapItem *_mapItem;
     NSData *_mapItemImageData;
     NSData *_mapItemBannerImageData;
+    CNContact *_cnContact;
     NSURL *_statusURL;
     id _cachedStatusMessageAsURL;
     NSString *_suggestedName;
@@ -91,10 +94,12 @@
 + (void)validHandlesForPersons:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)bestHandlesForPersons:(id)arg1 useExtendedAsyncLookup:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)bestHandlesForPersons:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(nonatomic) BOOL hasCheckedForSuggestions; // @synthesize hasCheckedForSuggestions=_hasCheckedForSuggestions;
 @property(copy, nonatomic) NSString *suggestedName; // @synthesize suggestedName=_suggestedName;
 @property(retain, nonatomic) id cachedStatusMessageAsURL; // @synthesize cachedStatusMessageAsURL=_cachedStatusMessageAsURL;
 @property(retain, nonatomic) NSURL *statusURL; // @synthesize statusURL=_statusURL;
 @property(nonatomic) long long IDStatus; // @synthesize IDStatus=_IDStatus;
+@property(retain, nonatomic) CNContact *cnContact; // @synthesize cnContact=_cnContact;
 @property(retain, nonatomic) NSData *mapItemBannerImageData; // @synthesize mapItemBannerImageData=_mapItemBannerImageData;
 @property(retain, nonatomic) NSData *mapItemImageData; // @synthesize mapItemImageData=_mapItemImageData;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
@@ -109,6 +114,7 @@
 @property(readonly, nonatomic) unsigned int authRequestStatus; // @synthesize authRequestStatus=_authRequestStatus;
 @property(readonly, retain, nonatomic) IMAccount *account; // @synthesize account=_account;
 @property(readonly, retain, nonatomic) NSString *uniqueName; // @synthesize uniqueName=_uniqueName;
+@property(retain, nonatomic) NSString *personCentricID; // @synthesize personCentricID=_personCentricID;
 @property(readonly, retain, nonatomic) NSString *ID; // @synthesize ID=_id;
 @property(readonly, retain, nonatomic) NSAttributedString *richStatusMessage; // @synthesize richStatusMessage=_richStatusMsg;
 @property(readonly, retain, nonatomic) NSString *previousStatusMessage; // @synthesize previousStatusMessage=_prevStatusMsg;
@@ -120,6 +126,7 @@
 - (void)_fetchMapItemBannerImageDataForMapItem:(id)arg1;
 - (void)_mapItemImageDataFetchedWithResponse:(id)arg1 statusCode:(long long)arg2 resultData:(id)arg3 remoteURLConnectionError:(id)arg4;
 - (void)_fetchMapItemImageDataForMapItem:(id)arg1;
+- (void)_postOnScreenChangedNotificationForProperty:(id)arg1;
 - (void)_mapItemFetchedWithMapItems:(id)arg1 error:(id)arg2;
 - (void)_fetchBusinessInfo;
 - (void)sendNotificationABPersonChanged;
@@ -221,6 +228,7 @@
 - (void)setIsMobile:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isSystemUser;
 @property(readonly, nonatomic) BOOL canBeAdded;
+- (void)_contactStoreDidChange:(id)arg1;
 - (void)setEmails:(id)arg1;
 - (void)setEmail:(id)arg1;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;
@@ -245,6 +253,7 @@
 @property(readonly, retain, nonatomic) NSString *normalizedID;
 @property(readonly, retain, nonatomic) NSString *displayID;
 - (id)immediateNameWithNeedsSuggestedNameFetch:(char *)arg1 useSuggestedName:(BOOL)arg2;
+- (void)scheduleSuggestedNameFetchIfNecessary;
 @property(readonly, retain, nonatomic) NSString *name;
 - (BOOL)_hasABName;
 - (BOOL)_hasServiceNameProperties;

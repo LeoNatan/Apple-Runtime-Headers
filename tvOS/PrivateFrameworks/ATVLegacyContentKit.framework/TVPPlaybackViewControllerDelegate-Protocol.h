@@ -13,8 +13,7 @@
 @optional
 - (long long)currentEndpointDeviceTypeForPlaybackViewController:(UIViewController *)arg1;
 - (void)playbackViewControllerUserWillInitiatePlayback:(UIViewController *)arg1;
-- (_Bool)playbackViewController:(UIViewController *)arg1 didSelectHistoryMediaItem:(id <TVPMediaItem>)arg2 player:(id <TVPPlayback>)arg3;
-- (void)playbackViewController:(UIViewController *)arg1 controlsForMediaItem:(id <TVPMediaItem>)arg2 completionHandler:(void (^)(NSArray *, long long))arg3;
+- (void)playbackViewController:(UIViewController *)arg1 controlsForMediaItem:(id <TVPMediaItem>)arg2 completionHandler:(void (^)(NSArray *))arg3;
 - (_Bool)playbackViewControllerProvidesCustomControls:(UIViewController *)arg1;
 - (void)playMediaItemAtIndex:(long long)arg1;
 - (void)playbackViewController:(TVPPlaybackViewController *)arg1 loadRelatedContentForMediaItem:(NSObject<TVPMediaItem> *)arg2 withCompletionHandler:(void (^)(TVPRelatedContent *))arg3;

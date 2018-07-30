@@ -28,8 +28,11 @@
 - (void)configureCell:(id)arg1 withBulletin:(id)arg2 appName:(id)arg3 icon:(id)arg4;
 - (void)configureCell:(id)arg1 withBulletin:(id)arg2 appName:(id)arg3 icon:(id)arg4 iconStyle:(unsigned int)arg5;
 - (void)configureCell:(id)arg1 withBulletin:(id)arg2 appName:(id)arg3 icon:(id)arg4 iconStyle:(unsigned int)arg5 attachment:(id)arg6;
+- (void)configureCell:(id)arg1 withBulletin:(id)arg2 appName:(id)arg3 icon:(id)arg4 attachment:(id)arg5;
+- (float)heightForCellDisplayingBulletin:(id)arg1 allBulletins:(id)arg2;
 - (float)heightForCellDisplayingBulletin:(id)arg1;
 - (float)heightForCellDisplayingBulletin:(id)arg1 attachment:(id)arg2;
+- (id)_sizingCellForBulletinCount:(unsigned int)arg1;
 - (id)newCellForBulletin:(id)arg1;
 - (id)reuseIdentifierForBulletin:(id)arg1;
 @property(readonly, nonatomic) NSArray *supportedSectionIDs;

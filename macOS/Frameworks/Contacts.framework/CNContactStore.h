@@ -31,8 +31,10 @@
 - (id)descriptorForRequiredKeysForMatchingDictionary;
 - (id)userActivityUserInfoForContact:(id)arg1;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
+- (id)mainContactStore;
 - (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id *)arg2;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id *)arg2;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
 - (id)identifierWithError:(id *)arg1;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
@@ -66,6 +68,7 @@
 - (id)unifiedContactWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id *)arg3;
 - (id)requestAccessForEntityType:(long long)arg1;
 - (void)requestAccessForEntityType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithEnvironment:(id)arg1 options:(unsigned long long)arg2 managedConfiguration:(id)arg3;
 - (id)initWithEnvironment:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithEnvironment:(id)arg1;
 - (id)init;

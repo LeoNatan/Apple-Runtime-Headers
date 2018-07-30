@@ -8,6 +8,7 @@
 
 @class NSError, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVOperation : NSOperation
 {
     NSObject<OS_dispatch_queue> *_ivarAccessQueue;

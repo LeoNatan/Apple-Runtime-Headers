@@ -8,13 +8,11 @@
 
 #import "TITransientLexiconManaging.h"
 
-@class NSString, _ICTransientLexicon;
+@class NSString;
 
 @interface TITransientLexiconManager : NSObject <TITransientLexiconManaging>
 {
-    _ICTransientLexicon *_namedEntityLexicon;
     struct _LXLexicon *_namedEntityLexiconRef;
-    _ICTransientLexicon *_namedEntityPhraseLexicon;
     struct _LXLexicon *_namedEntityPhraseLexiconRef;
     _Bool _lexiconsLoaded;
 }

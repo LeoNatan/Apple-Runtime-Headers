@@ -25,6 +25,7 @@
 - (id)deserialize:(id)arg1 error:(out id *)arg2;
 - (id)serialize:(id)arg1 error:(out id *)arg2;
 - (id)modelForProperty:(id)arg1;
+- (void)enumerateProperties:(CDUnknownBlockType)arg1;
 - (id)makeJSValue:(id)arg1 context:(id)arg2 error:(out id *)arg3;
 - (id)copyAdjustment:(id)arg1;
 - (id)copy:(id)arg1;

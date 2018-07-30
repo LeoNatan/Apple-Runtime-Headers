@@ -46,7 +46,7 @@
 - (void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)performDiagnosticWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)attemptDatabaseFileRecoveryAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)validateDatabaseAtPath:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (id)init;
 

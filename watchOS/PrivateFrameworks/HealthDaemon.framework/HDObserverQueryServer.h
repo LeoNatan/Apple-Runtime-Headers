@@ -14,12 +14,14 @@
     NSNumber *_anchor;
 }
 
-@property(readonly, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
++ (_Bool)supportsAnchorBasedAuthorization;
++ (id)requiredEntitlements;
++ (Class)queryClass;
+@property(readonly, copy, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
 @property(readonly, nonatomic) _Bool deliverOnUnlock; // @synthesize deliverOnUnlock=_deliverOnUnlock;
 - (void).cxx_destruct;
 - (void)_deliverDataWasUpdatedWithAnchor:(id)arg1;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
-- (id)requiredEntitlements;
 - (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (_Bool)_shouldListenForUpdates;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;

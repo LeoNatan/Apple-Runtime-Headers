@@ -21,31 +21,33 @@
     NSString *_splashShortTitle;
 }
 
-+ (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1;
++ (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 + (id)flowWithBundle:(id)arg1;
 - (void).cxx_destruct;
-- (id)localizedContentListForLanguage:(id)arg1;
+- (id)localizedContentListForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *localizedContentList;
-- (id)localizedShortTitleForLanguage:(id)arg1;
+- (id)localizedShortTitleForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSString *localizedShortTitle;
-- (id)localizedTitleForLanguage:(id)arg1;
+- (id)localizedTitleForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSString *localizedTitle;
-- (id)localizedButtonCaptionForLanguage:(id)arg1;
+- (id)localizedButtonCaptionForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSString *localizedButtonCaption;
-- (id)localizedButtonTitleForLanguage:(id)arg1;
+- (id)localizedButtonTitleForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSString *localizedButtonTitle;
-- (id)_textForConditionalItem:(id)arg1 language:(id)arg2;
+- (id)_textForConditionalItem:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
 - (BOOL)_conformsToRequirements:(id)arg1;
 - (BOOL)_conformsToRequirement:(id)arg1;
 @property(readonly, nonatomic) BOOL showInCombinedList;
-@property(retain, nonatomic) NSImage *buttonIcon;
+- (void)setButtonIcon:(struct NSImage *)arg1;
+@property(readonly, nonatomic) NSImage *buttonIcon;
 @property(readonly, nonatomic, getter=isPersonallyIdentifiable) BOOL personallyIdentifiable;
 - (struct NSImage *)_bundleImageNamed:(id)arg1;
-- (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2;
+- (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
 @property(readonly, nonatomic) BOOL platformSupported;
 - (id)_currentPlatform;
 @property(readonly, nonatomic) unsigned long long contentVersion;
 @property(readonly, nonatomic) NSString *identifier;
+- (id)initWithSplashContent:(id)arg1;
 - (id)initWithBundle:(id)arg1;
 
 @end

@@ -39,6 +39,9 @@
 + (id)_editedImagePropertiesFromOriginalImageProperties:(id)arg1 preserveRegions:(_Bool)arg2;
 + (id)newImageDataFromCGImage:(struct CGImage *)arg1 withCompressionQuality:(double)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(_Bool)arg4;
 + (id)compositionWithModel:(id)arg1 source:(id)arg2;
++ (unsigned long long)whiteBalanceStringToInt:(id)arg1;
++ (id)whiteBalanceIntToString:(unsigned long long)arg1;
++ (id)whiteBalanceEnumMap;
 + (void)initialize;
 @property(nonatomic) long long smartFiltersCubeSize; // @synthesize smartFiltersCubeSize=_smartFiltersCubeSize;
 @property(retain, nonatomic) PLPhotoEditModel *photoEditModel; // @synthesize photoEditModel=_photoEditModel;
@@ -67,7 +70,7 @@
 @property(readonly, nonatomic) double smartToneBaseContrast;
 @property(readonly, nonatomic) double smartToneBaseBrightness;
 - (void)generateJPEGImageDataWithCompressionQuality:(double)arg1 livePhotoPairingIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_generateJPEGImageDataForComposition:(id)arg1 withCompressionQuality:(double)arg2 livePhotoPairingIdentifier:(id)arg3 properties:(id)arg4 depthData:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_generateJPEGImageDataForComposition:(id)arg1 withCompressionQuality:(double)arg2 livePhotoPairingIdentifier:(id)arg3 properties:(id)arg4 depthData:(id)arg5 matte:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)renderVideoWithTargetSize:(struct CGSize)arg1 contentMode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)renderImageWithTargetSize:(struct CGSize)arg1 contentMode:(long long)arg2 renderMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)renderImageWithTargetSize:(struct CGSize)arg1 contentMode:(long long)arg2 completion:(CDUnknownBlockType)arg3;

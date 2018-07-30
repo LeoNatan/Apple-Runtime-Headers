@@ -15,6 +15,7 @@
 @optional
 - (void)audioRecorderLostMediaserverd:(CSAudioRecorder *)arg1;
 - (void)audioRecorderDisconnected:(CSAudioRecorder *)arg1;
+- (void)audioRecorderDidFinishAlertPlayback:(CSAudioRecorder *)arg1 ofType:(long long)arg2 error:(NSError *)arg3;
 - (void)audioRecorderRecordHardwareConfigurationDidChange:(CSAudioRecorder *)arg1 toConfiguration:(long long)arg2;
 - (void)audioRecorderDidStopRecording:(CSAudioRecorder *)arg1 forReason:(long long)arg2;
 - (void)audioRecorderDidStartRecording:(CSAudioRecorder *)arg1 successfully:(BOOL)arg2 error:(NSError *)arg3;

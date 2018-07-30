@@ -4,20 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <OfficeImport/CMMapper.h>
+#import <OfficeImport/CMDocumentMapper.h>
 
 #import "CMMapperRoot.h"
 
-@class CMArchiveManager, NSString, WDDocument;
+@class NSString, WDDocument;
 
-@interface WMDocumentMapper : CMMapper <CMMapperRoot>
+__attribute__((visibility("hidden")))
+@interface WMDocumentMapper : CMDocumentMapper <CMMapperRoot>
 {
-    CMArchiveManager *mArchiver;
-    WDDocument *wDom;
     NSString *mFileName;
 }
 
-@property(retain) NSString *fileName; // @synthesize fileName=mFileName;
+- (void)setFileName:(id)arg1;
+- (id)fileName;
 - (void).cxx_destruct;
 - (struct CGSize)contentSizeForDevice;
 - (struct CGSize)pageSizeForDevice;
@@ -28,14 +28,15 @@
 - (void)mapDefaultCssStylesAt:(id)arg1;
 - (int)defaultTabWidth;
 - (id)blipAtIndex:(unsigned int)arg1;
-- (void)dealloc;
-- (id)initWithWDom:(id)arg1 archiver:(id)arg2;
 - (double)bottomMargin;
 - (double)headerMargin;
 - (double)topMargin;
 - (double)rightMargin;
 - (double)leftMargin;
 - (BOOL)hasSessionBreakAtIndex:(unsigned long long)arg1;
+
+// Remaining properties
+@property(readonly) WDDocument *document; // @dynamic document;
 
 @end
 

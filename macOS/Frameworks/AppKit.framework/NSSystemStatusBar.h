@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableSet;
 
+__attribute__((visibility("hidden")))
 @interface NSSystemStatusBar : NSStatusBar
 {
     NSMutableSet *replicantKeys;

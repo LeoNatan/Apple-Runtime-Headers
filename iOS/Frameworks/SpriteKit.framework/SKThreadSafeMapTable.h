@@ -6,19 +6,20 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSFastEnumeration.h"
+#import "NSSecureCoding.h"
 
 @class NSMutableArray;
 
 __attribute__((visibility("hidden")))
-@interface SKThreadSafeMapTable : NSObject <NSCopying, NSCoding, NSFastEnumeration>
+@interface SKThreadSafeMapTable : NSObject <NSCopying, NSSecureCoding, NSFastEnumeration>
 {
     struct _opaque_pthread_mutex_t _storageLock;
     NSMutableArray *_storage;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)description;
 - (id)methodSignatureForSelector:(SEL)arg1;

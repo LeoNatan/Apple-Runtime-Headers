@@ -8,7 +8,6 @@
 
 @class NSPopUpButtonCell;
 
-__attribute__((visibility("hidden")))
 @interface ABPopupTableHeaderCell : NSTableHeaderCell
 {
     NSPopUpButtonCell *_popup;

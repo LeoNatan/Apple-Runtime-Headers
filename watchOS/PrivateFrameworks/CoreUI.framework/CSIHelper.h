@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _CUIThemePixelRendition *rendition;
     _CSIRenditionBlockData *sharedBlockDataBGRX;
     _CSIRenditionBlockData *sharedBlockDataRGBX;
+    _CSIRenditionBlockData *sharedBlockDataGray;
     _CSIRenditionBlockData *retainedBlockData;
     NSString *blockDataCacheKeyBGRX;
     NSString *blockDataCacheKeyRGBX;

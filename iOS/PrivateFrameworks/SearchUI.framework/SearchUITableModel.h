@@ -36,7 +36,7 @@
 - (struct _NSRange)rowRangeForSelectingForIndexPath:(id)arg1;
 - (_Bool)indexPathExists:(id)arg1;
 - (long long)numberOfRowsForSection:(long long)arg1;
-- (void)replaceResult:(id)arg1 withResult:(id)arg2 inResultSection:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)replaceResult:(id)arg1 withResult:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned long long)numberOfSections;
 
 @end

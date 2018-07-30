@@ -9,26 +9,28 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
+@class NSDate;
+
 @interface _HKAuthorizationRecord : NSObject <NSCopying, NSSecureCoding>
 {
     long long _status;
     long long _request;
-    long long _objectAnchor;
-    long long _modificationEpoch;
-    double _modificationDate;
+    long long _mode;
+    NSDate *_anchorLimitModifiedDate;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)recordWithSharingDisabledFromRecord:(id)arg1;
-+ (id)recordWithReadingDisabledFromRecord:(id)arg1;
-@property(readonly, nonatomic) double modificationDate; // @synthesize modificationDate=_modificationDate;
-@property(readonly, nonatomic) long long modificationEpoch; // @synthesize modificationEpoch=_modificationEpoch;
-@property(readonly, nonatomic) long long objectAnchor; // @synthesize objectAnchor=_objectAnchor;
++ (id)recordWithStatus:(long long)arg1 request:(long long)arg2 mode:(long long)arg3 anchorLimitModifiedDate:(id)arg4;
+@property(readonly, copy, nonatomic) NSDate *anchorLimitModifiedDate; // @synthesize anchorLimitModifiedDate=_anchorLimitModifiedDate;
+@property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) long long request; // @synthesize request=_request;
-@property(readonly, nonatomic) long long status; // @synthesize status=_status;
+@property(nonatomic) long long status; // @synthesize status=_status;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)recordWithSharingDisabled;
+- (id)recordWithReadingDisabled;
 - (_Bool)isCompatibleStatus:(long long)arg1;
 - (_Bool)readingEnabled;
 - (_Bool)sharingEnabled;
@@ -38,8 +40,9 @@
 - (_Bool)requestedSharing;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)_deepCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithAuthorizationStatus:(long long)arg1 authorizationRequest:(long long)arg2 objectAnchor:(long long)arg3 modificationEpoch:(long long)arg4 modificationDate:(double)arg5;
+- (id)initWithAuthorizationStatus:(long long)arg1 authorizationRequest:(long long)arg2 authorizationMode:(long long)arg3 anchorLimitModifiedDate:(id)arg4;
 
 @end
 

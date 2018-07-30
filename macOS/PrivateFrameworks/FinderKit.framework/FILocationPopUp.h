@@ -24,6 +24,8 @@
     FINode *_alternateICloudContainer;
     NSString *_alternateICloudContainerName;
     _Bool _nodeObserversInitialized;
+    _Bool _darkBackground;
+    double _scaleFactor;
 }
 
 + (id)attributedMenuItemTitleForNode:(const struct TFENode *)arg1 forceSuffix:(_Bool)arg2 inCloud:(_Bool)arg3;
@@ -87,6 +89,9 @@
 - (id)data;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)viewDidChangeEffectiveAppearance;
+- (void)checkDarkBackground;
+- (void)viewDidMoveToWindow;
 - (void)_commonLocationPopUpInit;
 
 @end

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     FI_TTableViewController *_tableViewController;
     FI_TTableViewDataSource *_tableViewDataSource;
     id <TSearchCriteriaSheetDelegate> _delegate;
-    struct TNSRef<NSWindow *, void> _parentWindow;
-    struct TNSRef<NSArray *, void> _attributeNamesInMenu;
+    struct TNSRef<NSWindow, void> _parentWindow;
+    struct TNSRef<NSArray, void> _attributeNamesInMenu;
     _Bool _isBackupBrowserWindow;
 }
 

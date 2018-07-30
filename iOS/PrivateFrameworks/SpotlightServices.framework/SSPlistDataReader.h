@@ -14,6 +14,7 @@
     CDStruct_b7fac349 _obj;
 }
 
+- (struct _MDPlistContainer *)container;
 - (id)description;
 - (double)doubleValueForBundle:(id)arg1;
 - (double)doubleValueForKey:(const char *)arg1;

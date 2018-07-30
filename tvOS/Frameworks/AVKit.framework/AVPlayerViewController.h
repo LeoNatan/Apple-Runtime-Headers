@@ -142,7 +142,9 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)_viewDisappearingOrLosingFocus;
 - (void)_viewAppearingOrGainingFocus;
+- (void)_becomeNowPlaying;
 - (void)focusContainerViewDidMoveToWindow:(id)arg1;
 - (void)focusContainerView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)didUpdateFocusToFocusContainerView:(id)arg1;

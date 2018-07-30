@@ -16,6 +16,7 @@
 
 + (id)pauseWithDictionary:(id)arg1 context:(id)arg2;
 + (id)pause;
+- (_Bool)mutatingCommand;
 - (_Bool)requiresResponse;
 - (id)encodedClassName;
 - (id)groupIdentifier;

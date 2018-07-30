@@ -32,9 +32,10 @@ __attribute__((visibility("hidden")))
 - (void)didDisplaySkinToneHelp;
 - (id)loadEmojiCategoryData:(id)arg1;
 - (void)loadCategoryData:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)recentsForDataSource:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)recentsAndFavoritesForDataSource:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)loadRecentsAndFavoritesForDataSource:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)_loadRecentsAndFavoritesForDataSource:(id)arg1 asDictionaryNotAsEntity:(BOOL)arg2 callAsync:(BOOL)arg3 usingBlock:(CDUnknownBlockType)arg4;
+- (void)_loadRecentsAndFavoritesForDataSource:(id)arg1 recentsOnly:(BOOL)arg2 asDictionaryNotAsEntity:(BOOL)arg3 callAsync:(BOOL)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (id)emojiPreference;
 - (id)defaultDataSource;
 - (void)dealloc;

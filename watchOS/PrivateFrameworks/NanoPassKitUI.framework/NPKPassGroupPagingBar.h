@@ -10,10 +10,12 @@
 
 @interface NPKPassGroupPagingBar : UIView
 {
+    unsigned int _pageIndicatorsVerticalPosition;
     PUICPageIndicatorView *_pageControl;
 }
 
 @property(retain, nonatomic) PUICPageIndicatorView *pageControl; // @synthesize pageControl=_pageControl;
+@property(nonatomic) unsigned int pageIndicatorsVerticalPosition; // @synthesize pageIndicatorsVerticalPosition=_pageIndicatorsVerticalPosition;
 - (void).cxx_destruct;
 @property(nonatomic) int currentPage; // @dynamic currentPage;
 @property(nonatomic) int numberOfPages; // @dynamic numberOfPages;

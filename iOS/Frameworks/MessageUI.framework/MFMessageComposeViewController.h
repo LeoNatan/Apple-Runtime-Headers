@@ -29,6 +29,7 @@
 + (double)maxTrimDurationForVideo;
 + (double)maxTrimDurationForAudio;
 + (id)_chatKitBundle;
++ (void)_preloadDependencies;
 + (_Bool)canSendText;
 + (void)_startListeningForAvailabilityNotifications;
 + (void)_serviceAvailabilityChanged:(id)arg1;
@@ -56,6 +57,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)setModalPresentationStyle:(long long)arg1;
 - (void)dealloc;
 - (void)disableUserAttachments;

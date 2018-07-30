@@ -11,7 +11,7 @@
 }
 
 + (id)medicationRecordType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

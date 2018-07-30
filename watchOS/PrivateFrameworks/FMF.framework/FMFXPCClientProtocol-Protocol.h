@@ -10,6 +10,7 @@
 
 @protocol FMFXPCClientProtocol <NSObject>
 - (oneway void)didReceiveServerError:(NSError *)arg1;
+- (oneway void)didUpdateFences:(NSSet *)arg1;
 - (oneway void)didUpdateLocations:(NSSet *)arg1;
 - (oneway void)didUpdateFollowing:(NSSet *)arg1;
 - (oneway void)didUpdateFollowers:(NSSet *)arg1;

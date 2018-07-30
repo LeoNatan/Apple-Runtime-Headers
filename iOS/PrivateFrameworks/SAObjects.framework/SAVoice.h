@@ -15,6 +15,9 @@
 + (id)voiceWithDictionary:(id)arg1 context:(id)arg2;
 + (id)voice;
 @property(copy, nonatomic) NSString *voiceType;
+@property(nonatomic) long long voiceContentVersion;
+@property(copy, nonatomic) NSString *resourceMasteredVersion;
+@property(nonatomic) long long resourceContentVersion;
 @property(copy, nonatomic) NSString *quality;
 @property(copy, nonatomic) NSString *name;
 @property(copy, nonatomic) NSString *masteredVersion;

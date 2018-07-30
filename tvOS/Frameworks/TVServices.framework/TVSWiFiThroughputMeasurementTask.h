@@ -8,16 +8,18 @@
 
 #import "NSURLSessionDownloadDelegate.h"
 
-@class NSDate, NSString, NSURLSessionDownloadTask;
+@class NSDate, NSString, NSURLSession, NSURLSessionDownloadTask;
 
 @interface TVSWiFiThroughputMeasurementTask : NSObject <NSURLSessionDownloadDelegate>
 {
     CDUnknownBlockType _completion;
     NSURLSessionDownloadTask *_task;
+    NSURLSession *_session;
     NSDate *_startTime;
 }
 
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
+@property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSURLSessionDownloadTask *task; // @synthesize task=_task;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;

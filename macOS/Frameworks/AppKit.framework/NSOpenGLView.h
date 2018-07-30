@@ -34,6 +34,7 @@
 - (void)clearGLContext;
 @property(retain) NSOpenGLContext *openGLContext;
 - (void)dealloc;
+- (BOOL)wantsLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 pixelFormat:(id)arg2;
 - (id)makeBackingLayer;

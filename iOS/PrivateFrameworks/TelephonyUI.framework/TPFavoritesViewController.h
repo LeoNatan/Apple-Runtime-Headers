@@ -31,6 +31,7 @@
 - (void)refreshView;
 - (void)handleFavoritesControllerFavoritesEntriesDidChangeNotification:(id)arg1;
 - (void)handleContentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)postCNContactsClientDidDisplayFavoritesNotification;
 - (id)favoritesEntryAtIndex:(long long)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

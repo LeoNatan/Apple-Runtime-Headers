@@ -15,7 +15,6 @@
     _INPBTransferMoneyIntentResponse *_responseMessagePBRepresentation;
 }
 
-+ (int)_intentHandlingStatusFromCode:(int)arg1;
 + (_Bool)_appLaunchRequestedFromCode:(int)arg1;
 + (int)_errorCodeFromCode:(int)arg1;
 + (int)_typeFromCode:(int)arg1;
@@ -32,10 +31,12 @@
 @property(copy, nonatomic) INPaymentAccount *toAccount;
 @property(copy, nonatomic) INPaymentAccount *fromAccount;
 - (id)_responseMessagePBRepresentation;
+- (int)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) int code;
 - (id)initWithBackingStore:(id)arg1;
+- (id)_initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)init;
 

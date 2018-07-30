@@ -35,6 +35,9 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, getter=isOpaque) _Bool opaque;
 - (id)initWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2 data:(id)arg3;
+- (long long)_requiredBaseVersionWithCanHandleAdjustmentData:(_Bool)arg1 assetIsVideo:(_Bool)arg2;
+- (_Bool)_canBeHandledByClientUsingVerificationBlock:(CDUnknownBlockType)arg1;
+- (_Bool)_contentEditingHasAdjustments;
 - (_Bool)_hasAdjustments;
 
 @end

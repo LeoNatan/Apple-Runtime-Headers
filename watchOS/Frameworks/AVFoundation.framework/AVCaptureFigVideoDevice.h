@@ -21,6 +21,7 @@
     NSArray *_formats;
     AVCaptureDeviceFormat *_activeFormat;
     AVCaptureDeviceFormat *_activeDepthDataFormat;
+    CDStruct_1b6d18a9 _activeDepthDataMinFrameDuration;
     CDStruct_1b6d18a9 _activeMinFrameDuration;
     _Bool _activeMinFrameDurationSetByClient;
     CDStruct_1b6d18a9 _activeMaxFrameDuration;
@@ -97,7 +98,6 @@
     float _minAvailableVideoZoomFactor;
     float _maxAvailableVideoZoomFactor;
     _Bool _depthDataDeliveryEnabled;
-    int _shallowDepthOfFieldEffectStatus;
     NSString *_bravoCameraSelectionBehavior;
     AVWeakReference *_weakReference;
     NSMutableArray *_captureSourceSupportedMetadata;
@@ -108,6 +108,7 @@
     NSArray *_availableBoxedMetadataFormatDescriptions;
     NSDictionary *_sessionPresetCompressionSettings;
     NSDictionary *_h264EncoderLimitations;
+    NSDictionary *_hevcEncoderSettings;
     NSObject<OS_dispatch_queue> *_observedHighFrequencyPropertiesQueue;
     NSMutableDictionary *_observedHighFrequencyPropertyCounts;
     NSMutableDictionary *_propertyToFigCaptureSourcePropertyMap;
@@ -137,6 +138,8 @@
 - (_Bool)isHEIFSupported;
 - (_Bool)isHEVCPreferred;
 - (_Bool)isHEVCSupported;
+- (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
+- (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
 - (int)minMacroblocksForHighProfileAbove30fps;
 - (int)minMacroblocksForHighProfileUpTo30fps;
@@ -161,13 +164,6 @@
 - (id)supportedMetadataObjectIdentifiers;
 - (void)_setDepthDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)_isDepthDataDeliveryEnabled;
-- (void)_setShallowDepthOfFieldEffectStatus:(int)arg1;
-- (int)shallowDepthOfFieldEffectStatus;
-- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(_Bool)arg1;
-- (_Bool)automaticallyEnablesLowLightBoostWhenAvailable;
-- (void)_setLowLightBoostEnabled:(_Bool)arg1;
-- (_Bool)isLowLightBoostEnabled;
-- (_Bool)isLowLightBoostSupported;
 - (_Bool)isCameraIntrinsicMatrixDeliverySupported;
 - (_Bool)isVideoStabilizationSupported;
 - (_Bool)isRawStillImageCaptureSupported;
@@ -333,6 +329,8 @@
 - (void)setActiveVideoMinFrameDuration:(CDStruct_1b6d18a9)arg1;
 - (long)_setActiveVideoMinFrameDurationInternal:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)activeVideoMinFrameDuration;
+- (void)setActiveDepthDataMinFrameDuration:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)activeDepthDataMinFrameDuration;
 - (void)setActiveDepthDataFormat:(id)arg1;
 - (id)activeDepthDataFormat;
 - (void)_setActiveFormat:(id)arg1 resetVideoZoomFactorAndMinMaxFrameDurations:(_Bool)arg2;

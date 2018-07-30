@@ -26,6 +26,9 @@
     NSString *_summaryPairedWatchNameKey;
     NSString *_cautionaryTextKey;
     NSString *_unitChangeCautionaryTextKey;
+    NSString *_healthKitLocalizationTableNameOverride;
+    NSString *_listIconImageNameOverride;
+    UIImage *_listIconOverride;
     _Bool _summaryAttributionHasLink;
     _Bool _showAllDataHierarchically;
     _Bool _shouldDisplayUnitStringOnYAxis;
@@ -68,6 +71,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly, nonatomic) unsigned long long roundingMode;
+@property(readonly, nonatomic) NSString *localizationTableNameOverride;
 @property(readonly, nonatomic) NSString *unitChangeCautionaryText;
 @property(readonly, nonatomic) NSString *cautionaryText;
 @property(readonly, nonatomic) NSString *summaryForPairedWatch;
@@ -117,6 +121,50 @@
 - (id)hk_numberFormatterForUnit:(id)arg1 formattingContext:(long long)arg2;
 - (id)hk_numberFormatterForUnit:(id)arg1;
 - (id)hk_enumeratedValueLabels;
+- (id)hk_interactiveChartsDataSourceForTimeScope:(long long)arg1 healthStore:(id)arg2 unitController:(id)arg3;
+- (id)_dataSourceForQuantityType:(id)arg1 timeScope:(long long)arg2 unitController:(id)arg3 healthStore:(id)arg4;
+- (id)_heartRateHistogramDataSourceWithHealthStore:(id)arg1;
+- (id)_insulinDataSourceWithHealthStore:(id)arg1;
+- (id)_bloodPressureDataSourceWithHealthStore:(id)arg1;
+- (id)_countDataSourceWithHealthStore:(id)arg1;
+- (id)_dataSourceForWorkoutsWithTimeScope:(long long)arg1 healthStore:(id)arg2;
+- (id)_singleCenteredLineDataSourceForCategoryType:(id)arg1 timeScope:(long long)arg2 healthStore:(id)arg3 displayTypeIdentifier:(long long)arg4;
+- (id)_levelCategoryValuesDataSourceForCategoryType:(id)arg1 timeScope:(long long)arg2 healthStore:(id)arg3 displayIdentifier:(long long)arg4;
+- (id)_stackedDataSourceForCategoryType:(id)arg1 timeScope:(long long)arg2 healthStore:(id)arg3;
+- (id)_timePeriodDisplayPrefix;
+- (id)_dailySleepSeriesDataSourceForSampleType:(id)arg1 timeScope:(long long)arg2 healthStore:(id)arg3;
+- (id)_timePeriodDataSourceForSampleType:(id)arg1 timeScope:(long long)arg2 healthStore:(id)arg3;
+- (CDUnknownBlockType)_singleValueUserInfoBlockWithUnitController:(id)arg1 displayType:(id)arg2 statisticsOption:(unsigned long long)arg3;
+- (CDUnknownBlockType)_minMaxUserInfoBlockWithUnitController:(id)arg1 displayType:(id)arg2;
+- (CDUnknownBlockType)_bloodPressureUserInfoBlock;
+- (id)hk_standardSeriesForTimeScope:(long long)arg1 displayCategory:(id)arg2 unitController:(id)arg3 dataCacheController:(id)arg4 displayCategoryController:(id)arg5;
+- (id)_generateGraphSeriesForTimeScope:(long long)arg1 displayCategory:(id)arg2;
+- (id)_generateDistributionSeriesWithColor:(id)arg1;
+- (id)_generateLevelCategorySeriesWithColor:(id)arg1;
+- (id)_generateSingleLineSeriesWithColor:(id)arg1 timeScope:(long long)arg2;
+- (id)_generateStackedSeriesWithColor:(id)arg1;
+- (id)_generateScatterPlotSeriesWithColor:(id)arg1;
+- (id)_generateLineSeriesWithColor:(id)arg1 timeScope:(long long)arg2;
+- (id)_generateInsulinBarSeriesWithDisplayCategory:(id)arg1;
+- (id)_generateDailySleepSeriesWithColor:(id)arg1;
+- (id)_generateBarSeriesWithFillStyle:(id)arg1;
+- (id)_generateMinMaxSeriesWithColor:(id)arg1;
+- (id)_generateBloodPressureSeriesWithColor:(id)arg1;
+- (id)_dataSourceForTimeScope:(long long)arg1 dataCacheController:(id)arg2;
+- (id)_hk_numberFormatterForCharting;
+- (id)_hk_defaultChartAxisBoundStringFromValue:(id)arg1 defaultNumberFormatter:(id)arg2 unitController:(id)arg3;
+- (id)hk_interactiveChartAxisStringFromValue:(id)arg1 defaultNumberFormatter:(id)arg2 unitController:(id)arg3;
+- (id)hk_dashboardChartBoundStringFromValue:(id)arg1 defaultNumberFormatter:(id)arg2 unitController:(id)arg3;
+- (CDUnknownBlockType)hk_startOfDayTransform;
+- (unsigned long long)hk_chartCalendarUnitForTimeScope:(long long)arg1;
+- (id)hk_customSeriesPointIntervalComponentsForTimeScope:(long long)arg1;
+- (_Bool)hk_interactiveChartsDataSourceDependsOnTimeScope;
+- (id)hk_valueOrderForStackedCharts;
+- (id)_dimensionForChartAxisWithUnitController:(id)arg1;
+- (id)_statFormatterItemOptionsForQuantityType:(id)arg1 timeScope:(long long)arg2;
+- (id)hk_interactiveChartsFormatterForTimeScope:(long long)arg1;
+- (id)hk_valueFormatterForUnit:(id)arg1 formattingContext:(long long)arg2;
+- (id)hk_valueFormatterForUnit:(id)arg1;
 
 @end
 

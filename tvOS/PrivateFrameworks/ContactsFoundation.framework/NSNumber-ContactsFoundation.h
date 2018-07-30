@@ -7,6 +7,7 @@
 #import "NSNumber.h"
 
 @interface NSNumber (ContactsFoundation)
+@property(readonly, nonatomic) double _cn_timeIntervalValue;
 - (void)_cn_times:(CDUnknownBlockType)arg1;
 @end
 

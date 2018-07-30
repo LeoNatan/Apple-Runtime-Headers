@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TListSizeCellView : FI_TListBaseCellView
 {
-    struct TNSRef<NSNumber *, void> _nodeSize;
+    struct TNSRef<NSNumber, void> _nodeSize;
     struct TString _progressStatus;
 }
 

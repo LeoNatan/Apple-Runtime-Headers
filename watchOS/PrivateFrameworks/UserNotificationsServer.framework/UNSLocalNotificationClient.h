@@ -8,21 +8,21 @@
 
 #import "UNSLocationMonitorObserver.h"
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, PCPersistentTimer, UNSLocationMonitor, UNSNotificationRepository, UNSPendingNotificationRepository;
+@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, PCPersistentTimer, UNSLocationMonitor, UNSNotificationRepository, UNSNotificationScheduleRepository, UNSPendingNotificationRepository;
 
 @interface UNSLocalNotificationClient : NSObject <UNSLocationMonitorObserver>
 {
     NSString *_bundleIdentifier;
     UNSNotificationRepository *_notificationRepository;
+    UNSNotificationScheduleRepository *_notificationScheduleRepository;
     UNSPendingNotificationRepository *_pendingNotificationRepository;
-    NSMutableArray *_pendingNotificationsAwaitingDelivery;
+    NSMutableArray *_lazy_pendingNotificationsAwaitingDelivery;
     UNSLocationMonitor *_locationMonitor;
     PCPersistentTimer *_localNotificationTimer;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _monitoringLocaleAndTimeChanges;
     _Bool _userNotificationsEnabled;
-    _Bool _requiresLocalNotifications;
-    _Bool _isSystemApplication;
+    _Bool _allowsUnlimitedLocalNotifications;
 }
 
 - (void).cxx_destruct;
@@ -34,6 +34,7 @@
 - (void)_updateTimersForPendingNotificationRecords:(id)arg1;
 - (void)_invalidatePendingNotificationRecordTimers;
 - (void)_setLastLocalNotificationFireDate:(id)arg1;
+- (id)_lastLocalNotificationFireDate;
 - (void)_queue_triggerDidFireForDate:(id)arg1;
 - (void)_queue_triggerDidFireForTimer:(id)arg1;
 - (void)_invalidateNotificationRecordTimersAndRegionMonitors;
@@ -43,7 +44,6 @@
 - (id)_sanitizeNotificationRecords:(id)arg1;
 - (id)_pendingNotificationRecords;
 - (void)_setPendingNotificationRecords:(id)arg1;
-- (void)_postDarwinSnoozeNotifications:(id)arg1;
 - (void)_setRequestDateForPendingNotificationRecords:(id)arg1;
 - (void)setUserNotificationsEnabled:(_Bool)arg1;
 - (void)handleSignificantTimeChange;
@@ -58,7 +58,7 @@
 - (void)setPendingNotificationRecords:(id)arg1;
 - (void)addPendingNotificationRecords:(id)arg1;
 - (void)dealloc;
-- (id)initWithNotificationRepository:(id)arg1 pendingNotificationRepository:(id)arg2 locationMonitor:(id)arg3 bundleIdentifier:(id)arg4 isSystemApplication:(_Bool)arg5 requiresLocalNotifications:(_Bool)arg6 userNotificationsEnabled:(_Bool)arg7 queue:(id)arg8;
+- (id)initWithNotificationRepository:(id)arg1 pendingNotificationRepository:(id)arg2 notificationScheduleRepository:(id)arg3 locationMonitor:(id)arg4 bundleIdentifier:(id)arg5 allowsUnlimitedLocalNotifications:(_Bool)arg6 userNotificationsEnabled:(_Bool)arg7 queue:(id)arg8;
 - (id)_dateFormatter;
 
 // Remaining properties

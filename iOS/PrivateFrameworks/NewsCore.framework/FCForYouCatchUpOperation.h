@@ -10,6 +10,7 @@
 
 @interface FCForYouCatchUpOperation : FCOperation
 {
+    long long _contentTypes;
     FCMyArticlesOperation *_myArticlesOperation;
     FCSpecialEventsOperation *_specialEventsOperation;
     FCTopStoriesOperation *_topStoriesOperation;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) FCTopStoriesOperation *topStoriesOperation; // @synthesize topStoriesOperation=_topStoriesOperation;
 @property(retain, nonatomic) FCSpecialEventsOperation *specialEventsOperation; // @synthesize specialEventsOperation=_specialEventsOperation;
 @property(retain, nonatomic) FCMyArticlesOperation *myArticlesOperation; // @synthesize myArticlesOperation=_myArticlesOperation;
+@property(nonatomic) long long contentTypes; // @synthesize contentTypes=_contentTypes;
 - (void).cxx_destruct;
 - (void)_serviceConditionWaiters;
 - (void)_addConditionWaiter:(id)arg1;

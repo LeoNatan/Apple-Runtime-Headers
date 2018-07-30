@@ -15,15 +15,13 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) id <FBUIApplicationServiceDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, retain, nonatomic) FBSSerialQueue *queue; // @synthesize queue=_queue;
+@property(nonatomic) __weak id <FBUIApplicationServiceDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) FBSSerialQueue *queue; // @synthesize queue=_queue;
+- (void).cxx_destruct;
 - (void)handleSuspendApplicationProcess:(id)arg1;
-- (_Bool)handleApplicationProcess:(id)arg1 setNextWakeInterval:(double)arg2;
-- (void)handleApplicationProcess:(id)arg1 requestBrightness:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleDeleteAllSnapshotsForApplication:(id)arg1;
 - (void)handleApplication:(id)arg1 getBadgeValueWithCompletion:(CDUnknownBlockType)arg2;
 - (void)handleApplication:(id)arg1 setBadgeValue:(id)arg2;
-- (void)handleGetActiveInterfaceOrientationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
 

@@ -8,6 +8,7 @@
 
 @class AVCaptureDeviceFormat, AVCaptureDeviceInputSource, NSArray, NSLock, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureHALDevice : AVCaptureDevice
 {
     NSString *_uniqueID;

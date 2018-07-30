@@ -12,6 +12,7 @@
 
 @interface TUCallProviderManager : NSObject <TUCallProviderManagerDataSourceDelegate>
 {
+    unsigned long long _type;
     NSObject<OS_dispatch_queue> *_queue;
     id <TUCallProviderManagerDataSource> _dataSource;
     NSMapTable *_delegateToQueue;
@@ -22,10 +23,10 @@
 @property(retain, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) id <TUCallProviderManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)providersChangedForDataSource:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *providersByIdentifier;
-- (void)blockUntilInitialStateReceivedIfNecessary;
 - (void)launchAppForDialRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)providerForFavoritesEntryActionBundleIdentifier:(id)arg1;
 - (id)providerForFavoritesEntry:(id)arg1;
@@ -43,7 +44,10 @@
 @property(readonly, nonatomic) TUCallProvider *defaultProvider;
 - (void)dealloc;
 @property(readonly, copy) NSString *debugDescription;
-- (id)initWithDataSource:(id)arg1 queue:(id)arg2;
+- (id)initWithDataSource:(id)arg1 type:(unsigned long long)arg2 queue:(id)arg3;
+- (id)initWithType:(unsigned long long)arg1;
+- (id)initWithPairedHostDeviceProviders;
+- (id)initWithLocalProviders;
 - (id)init;
 
 // Remaining properties

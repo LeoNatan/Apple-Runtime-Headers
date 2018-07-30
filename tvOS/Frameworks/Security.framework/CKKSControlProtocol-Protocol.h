@@ -16,6 +16,7 @@
 - (void)rpcStatus:(NSString *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (void)rpcResyncLocal:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)rpcResync:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)rpcResetCloudKit:(NSString *)arg1 reason:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)rpcResetCloudKit:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)rpcResetLocal:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)performanceCounters:(void (^)(NSDictionary *))arg1;

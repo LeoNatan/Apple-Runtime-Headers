@@ -13,27 +13,27 @@
 
 @interface HKAccountOwner : HKMedicalRecord <NSSecureCoding, NSCopying>
 {
-    HKMedicalDate *_birthDate;
     NSString *_name;
+    HKMedicalDate *_birthDate;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)accountOwnerWithNote:(id)arg1 enteredInError:(_Bool)arg2 modifiedDate:(id)arg3 FHIRIdentifier:(id)arg4 extractionVersion:(long long)arg5 device:(id)arg6 metadata:(id)arg7 name:(id)arg8 birthDate:(id)arg9;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, copy, nonatomic) HKMedicalDate *birthDate; // @synthesize birthDate=_birthDate;
++ (id)accountOwnerWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 name:(id)arg10 birthDate:(id)arg11;
++ (id)accountOwnerWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 name:(id)arg9 birthDate:(id)arg10;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) HKAccountOwnerType *accountOwnerType;
+@property(readonly, copy) HKAccountOwnerType *accountOwnerType;
 - (id)_validateConfiguration;
 - (void)_setBirthDate:(id)arg1;
+@property(readonly, copy) HKMedicalDate *birthDate;
 - (void)_setName:(id)arg1;
+@property(readonly, copy) NSString *name;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
-- (id)_init;
 - (id)init;
 
 @end

@@ -6,10 +6,13 @@
 
 #import "NSObject.h"
 
+@class NSPersistentStoreCoordinator;
+
 @interface CNContactsEnvironment : NSObject
 {
     id <CNSchedulerProvider> _schedulerProvider;
     id <CNAccountCollection> _accountCollection;
+    NSPersistentStoreCoordinator *_existingPersistentStoreCoordinator;
     id <SGSuggestionsServiceContactsProtocol> _suggestionsService;
     id <CNContactsLoggerProvider> _loggerProvider;
 }
@@ -21,6 +24,7 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) id <CNContactsLoggerProvider> loggerProvider; // @synthesize loggerProvider=_loggerProvider;
 @property(retain) id <SGSuggestionsServiceContactsProtocol> suggestionsService; // @synthesize suggestionsService=_suggestionsService;
+@property(retain) NSPersistentStoreCoordinator *existingPersistentStoreCoordinator; // @synthesize existingPersistentStoreCoordinator=_existingPersistentStoreCoordinator;
 @property(retain) id <CNAccountCollection> accountCollection; // @synthesize accountCollection=_accountCollection;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 - (void).cxx_destruct;

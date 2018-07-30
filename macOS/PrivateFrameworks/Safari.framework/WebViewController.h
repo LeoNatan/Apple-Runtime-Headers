@@ -4,31 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "NSViewController.h"
 
 #import "BannerContainerViewDelegate.h"
 #import "BannerDelegate.h"
 #import "FindBannerDelegate.h"
 #import "SearchableWKViewFullScreenDelegate.h"
 
-@class BannerContainerView, FileWrapper, FindBanner, HeaderFooterPrintRenderer, NSArray, NSData, NSMutableArray, NSString, NSURL, SearchableWKView, WKWebsiteDataStore;
+@class BannerContainerView, FileWrapper, FindBanner, HeaderFooterPrintRenderer, NSArray, NSData, NSMutableArray, NSString, NSURL, SearchableWKView, TabContentViewController, WKWebsiteDataStore;
 
 __attribute__((visibility("hidden")))
-@interface WebViewController : NSObject <FindBannerDelegate, BannerContainerViewDelegate, BannerDelegate, SearchableWKViewFullScreenDelegate>
+@interface WebViewController : NSViewController <FindBannerDelegate, BannerContainerViewDelegate, BannerDelegate, SearchableWKViewFullScreenDelegate>
 {
-    struct RefPtr<Safari::WebViewControllerWKAdapter, WTF::DumbPtrTraits<Safari::WebViewControllerWKAdapter>> _searchableWebContentViewController;
+    struct RefPtr<Safari::WebViewControllerWKAdapter, WTF::DumbPtrTraits<Safari::WebViewControllerWKAdapter>> _webViewControllerWKAdapter;
     NSMutableArray *_bannerActionQueue;
     BannerContainerView *_bannerContainerView;
-    NSArray *_bannerContainerViewConstraints;
     NSMutableArray *_installedBanners;
     NSString *_suggestedFilenameForFrameToSave;
+    struct WKRetainPtr<const OpaqueWKPageConfiguration *> _configuration;
+    BOOL _isDeferringViewInWindowChanges;
     BOOL _isClosed;
     BOOL _isSavingAsPDF;
     BOOL __isSavingAsWebArchive;
+    SearchableWKView *_webView;
     HeaderFooterPrintRenderer *_headerFooterPrintRenderer;
     unsigned long long _browsingMode;
     WKWebsiteDataStore *_websiteDataStore;
-    SearchableWKView *_webView;
     struct Frame _frameToSave;
     NSURL *_urlToSave;
     FileWrapper *_fileWrapperToSave;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct Frame frameToSave; // @synthesize frameToSave=_frameToSave;
 @property(readonly, nonatomic) BOOL isSavingAsPDF; // @synthesize isSavingAsPDF=_isSavingAsPDF;
 @property(readonly, nonatomic) BOOL isClosed; // @synthesize isClosed=_isClosed;
-@property(readonly, nonatomic) SearchableWKView *webView; // @synthesize webView=_webView;
 @property(readonly, nonatomic) WKWebsiteDataStore *websiteDataStore; // @synthesize websiteDataStore=_websiteDataStore;
 @property(readonly, nonatomic) unsigned long long browsingMode; // @synthesize browsingMode=_browsingMode;
 - (id).cxx_construct;
@@ -86,9 +86,6 @@ __attribute__((visibility("hidden")))
 - (void)_defaultPageZoomDidChange:(id)arg1;
 - (void)_zoomPreferencesDidLoad:(id)arg1;
 - (void)updateSiteZoomPreference;
-- (void)searchableWKViewDidReturnFromFullscreenWindow:(id)arg1;
-- (void)searchableWKViewWillExitFullScreen:(id)arg1;
-- (void)searchableWKViewDidEnterFullScreen:(id)arg1;
 - (void)moveBannerContainerToFollowWebContent;
 - (void)findBanner:(id)arg1 highlightAllMatchesForString:(id)arg2 findOptions:(unsigned int)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
 - (void)findBanner:(id)arg1 startFindingString:(id)arg2 findOptions:(unsigned int)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
@@ -117,18 +114,15 @@ __attribute__((visibility("hidden")))
 - (void)bannerContainerView:(id)arg1 installAnimationDidEndForBanner:(id)arg2;
 - (void)bannerContainerView:(id)arg1 didInstallBanner:(id)arg2;
 - (void)bannerContainerView:(id)arg1 willInstallBanner:(id)arg2;
-- (void)_rebuildBannerContainerWidthConstraint;
 - (void)_createBannerContainerViewIfNeeded;
 - (void)_startNextQueuedBannerAction;
 - (void)_queueBanner:(id)arg1 withActionType:(long long)arg2 animated:(BOOL)arg3;
-- (struct CGRect)_viewBelowBannerContentFrame;
 - (id)_viewBelowBanner;
 - (void)_hideAllBannerOverlays;
 - (void)hideAllBannersAnimated:(BOOL)arg1;
 - (void)queueUninstallationOfBanner:(id)arg1 animated:(BOOL)arg2;
 - (void)queueInstallationOfBanner:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)isBannerInstalled:(id)arg1;
-- (void)updateVerticalLayoutConstraintsForBannerContainer;
 @property(readonly, nonatomic, getter=isTopContentInsetCurrentlyUsed) BOOL topContentInsetCurrentlyUsed;
 @property(readonly, nonatomic) HeaderFooterPrintRenderer *headerFooterPrintRenderer; // @synthesize headerFooterPrintRenderer=_headerFooterPrintRenderer;
 @property(readonly, nonatomic) BOOL canPrint;
@@ -145,13 +139,19 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *mimeTypeForSaving;
 @property(readonly, nonatomic) BOOL isSaveDialogPending;
 @property(readonly, nonatomic) BOOL canSave;
+- (void)endDeferringViewInWindowChangesSync;
+- (void)endDeferringViewInWindowChanges;
+- (void)beginDeferringViewInWindowChanges;
 - (void)dismissContentRelativeChildWindows;
 - (Ref_a0637525)createContentViewController;
+@property(readonly, nonatomic) TabContentViewController *tabContentViewController;
+@property(readonly, nonatomic) int webProcessIdentifier;
 @property(readonly, nonatomic) struct Page page;
 @property(readonly, nonatomic, getter=isShowingStandaloneImage) BOOL showingStandaloneImage;
+@property(readonly, copy, nonatomic) NSString *pageTitle;
 @property(readonly, nonatomic) NSURL *committedURL;
 @property(readonly, nonatomic) BOOL usesPrivateBrowsing;
-@property(readonly, nonatomic) struct WebViewControllerWKAdapter *searchableWebContentViewController;
+@property(readonly, nonatomic) struct WebViewControllerWKAdapter *webViewControllerWKAdapter;
 - (void)invalidate;
 - (void)_willClosePage;
 - (void)_close;
@@ -159,8 +159,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)tryClose;
 - (void)close;
 - (void)dealloc;
+- (void)viewDidLoad;
+- (void)loadView;
+@property(readonly, nonatomic) SearchableWKView *webView; // @synthesize webView=_webView;
 - (id)initWithContext:(const struct Context *)arg1 pageGroup:(const struct PageGroup *)arg2 relatedToPage:(const struct Page *)arg3 browsingMode:(unsigned long long)arg4 websiteDataStore:(id)arg5;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

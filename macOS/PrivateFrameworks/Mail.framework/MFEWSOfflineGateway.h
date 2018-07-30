@@ -19,6 +19,7 @@
     MFEWSResponseOperation *_lastResponseDecoded;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)keyPathsForValuesAffectingRequestResponseQueue;
 @property(retain) MFEWSResponseOperation *lastResponseDecoded; // @synthesize lastResponseDecoded=_lastResponseDecoded;
 @property(retain) MFEWSConnection *offlineConnection; // @synthesize offlineConnection=_offlineConnection;

@@ -14,6 +14,7 @@
 @interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPaymentDataProviderDelegate>
 {
     _Bool _issuerAppDeepLinkingEnabled;
+    _Bool _inBridge;
     PKPaymentTransaction *_transaction;
     PKPaymentPass *_paymentPass;
     id <PKPaymentDataProvider> _paymentServiceDataProvider;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) PKPeerPaymentStatusResponse *peerPaymentStatusResponse; // @synthesize peerPaymentStatusResponse=_peerPaymentStatusResponse;
 @property(retain, nonatomic) NSArray *lineItems; // @synthesize lineItems=_lineItems;
 @property(retain, nonatomic) UIImage *mapTilePlaceholderImage; // @synthesize mapTilePlaceholderImage=_mapTilePlaceholderImage;
+@property(nonatomic) _Bool inBridge; // @synthesize inBridge=_inBridge;
 @property(nonatomic) _Bool issuerAppDeepLinkingEnabled; // @synthesize issuerAppDeepLinkingEnabled=_issuerAppDeepLinkingEnabled;
 @property(retain, nonatomic) PKPaymentTransactionLocationSnapshotter *merchantLocationSnapshotter; // @synthesize merchantLocationSnapshotter=_merchantLocationSnapshotter;
 @property(retain, nonatomic) PKPeerPaymentController *peerPaymentController; // @synthesize peerPaymentController=_peerPaymentController;

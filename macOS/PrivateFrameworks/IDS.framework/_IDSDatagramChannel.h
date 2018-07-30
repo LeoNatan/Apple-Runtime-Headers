@@ -42,6 +42,8 @@
     unsigned long long _incomingBytes;
     double _lastOutgoingStatReport;
     double _lastIncomingStatReport;
+    NSMutableDictionary *_MKIArrivalTime;
+    NSMutableDictionary *_firstPacketArrivalTimeForMKI;
 }
 
 - (void).cxx_destruct;

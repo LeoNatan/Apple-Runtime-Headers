@@ -10,8 +10,10 @@
 {
 }
 
++ (_Bool)canShapeArrayBePromotedFrom:(id)arg1 to:(id)arg2;
 + (id)descriptionForType:(int)arg1;
-+ (id)featureDescriptionWithName:(id)arg1 consistentWithFeatureArray:(id)arg2 error:(id *)arg3;
++ (id)featureValuesWithConsistentTypeFromArray:(id)arg1 error:(id *)arg2;
++ (id)featureDescriptionWithName:(id)arg1 consistentWithFeatureValues:(id)arg2 error:(id *)arg3;
 + (int)featureTypeForValuesInArray:(id)arg1 error:(id *)arg2;
 + (int)featureTypeForObject:(id)arg1;
 

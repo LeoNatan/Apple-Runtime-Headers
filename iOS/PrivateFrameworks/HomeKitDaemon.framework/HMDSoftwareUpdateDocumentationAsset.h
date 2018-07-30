@@ -12,7 +12,7 @@
 #import "NSURLSessionDownloadDelegate.h"
 #import "SZExtractorDelegate.h"
 
-@class HMSoftwareUpdateDocumentation, HMSoftwareUpdateDocumentationMetadata, NSInputStream, NSObject<OS_dispatch_queue>, NSString, NSURL, NSURLSession, NSUUID, SZExtractor;
+@class HMSoftwareUpdateDocumentation, HMSoftwareUpdateDocumentationMetadata, NSArray, NSInputStream, NSObject<OS_dispatch_queue>, NSString, NSURL, NSURLSession, NSUUID, SZExtractor;
 
 @interface HMDSoftwareUpdateDocumentationAsset : HMFObject <HMFLogging, HMFObject, NSURLSessionDownloadDelegate, SZExtractorDelegate, NSSecureCoding>
 {
@@ -66,13 +66,15 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *propertyDescription;
-- (id)shortDescription;
+@property(readonly, copy) NSString *shortDescription;
 - (id)initWithDocumentationMetadata:(id)arg1;
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *privateDescription;
 @property(readonly) Class superclass;
 
 @end

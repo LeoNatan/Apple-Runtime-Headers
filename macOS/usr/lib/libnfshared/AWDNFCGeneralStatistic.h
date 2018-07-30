@@ -16,6 +16,8 @@
     unsigned int _totalAccessTransaction;
     unsigned int _totalAuthECommerce;
     unsigned int _totalCEEnable;
+    unsigned int _totalCEEnabledWithMissingTransactionEndEvent;
+    unsigned int _totalCEEnabledWithNoFieldDetected;
     unsigned int _totalCardProvisioned;
     unsigned int _totalDynamicPackages;
     unsigned int _totalDynamicRFParametersUpdate;
@@ -48,6 +50,8 @@
         unsigned int totalAccessTransaction:1;
         unsigned int totalAuthECommerce:1;
         unsigned int totalCEEnable:1;
+        unsigned int totalCEEnabledWithMissingTransactionEndEvent:1;
+        unsigned int totalCEEnabledWithNoFieldDetected:1;
         unsigned int totalCardProvisioned:1;
         unsigned int totalDynamicPackages:1;
         unsigned int totalDynamicRFParametersUpdate:1;
@@ -76,6 +80,8 @@
     } _has;
 }
 
+@property(nonatomic) unsigned int totalCEEnabledWithMissingTransactionEndEvent; // @synthesize totalCEEnabledWithMissingTransactionEndEvent=_totalCEEnabledWithMissingTransactionEndEvent;
+@property(nonatomic) unsigned int totalCEEnabledWithNoFieldDetected; // @synthesize totalCEEnabledWithNoFieldDetected=_totalCEEnabledWithNoFieldDetected;
 @property(nonatomic) unsigned int totalDynamicRFParametersUpdate; // @synthesize totalDynamicRFParametersUpdate=_totalDynamicRFParametersUpdate;
 @property(nonatomic) unsigned int totalGenericAExpressTransaction; // @synthesize totalGenericAExpressTransaction=_totalGenericAExpressTransaction;
 @property(nonatomic) BOOL hasGenericAExpressEnable; // @synthesize hasGenericAExpressEnable=_hasGenericAExpressEnable;
@@ -116,6 +122,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasTotalCEEnabledWithMissingTransactionEndEvent;
+@property(nonatomic) BOOL hasTotalCEEnabledWithNoFieldDetected;
 @property(nonatomic) BOOL hasTotalDynamicRFParametersUpdate;
 @property(nonatomic) BOOL hasTotalGenericAExpressTransaction;
 @property(nonatomic) BOOL hasHasGenericAExpressEnable;

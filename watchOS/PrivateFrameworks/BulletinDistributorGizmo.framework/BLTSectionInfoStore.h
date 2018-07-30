@@ -30,6 +30,7 @@
 - (void)_storeSectionInfo:(id)arg1;
 - (id)sectionInfoWithMirroredSectionID:(id)arg1;
 - (id)sectionInfoWithSectionID:(id)arg1;
+- (id)initWithMapper:(id)arg1 cahce:(id)arg2;
 - (id)initWithMapper:(id)arg1;
 
 @end

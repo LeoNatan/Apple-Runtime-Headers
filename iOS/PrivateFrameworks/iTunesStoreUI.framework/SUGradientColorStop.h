@@ -6,9 +6,9 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface SUGradientColorStop : NSObject <NSCoding>
+@interface SUGradientColorStop : NSObject <NSSecureCoding>
 {
     double _r;
     double _g;
@@ -18,6 +18,7 @@
     struct CGColor *_rawColor;
 }
 
++ (_Bool)supportsSecureCoding;
 - (id)description;
 @property(readonly, nonatomic) double offset;
 - (struct CGColor *)copyCGColor;

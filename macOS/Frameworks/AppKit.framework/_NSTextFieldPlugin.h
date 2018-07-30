@@ -8,6 +8,7 @@
 
 @class NSDecimalNumber;
 
+__attribute__((visibility("hidden")))
 @interface _NSTextFieldPlugin : _NSValueBinderPlugin
 {
     NSDecimalNumber *_originalMinValue;

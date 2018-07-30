@@ -6,13 +6,13 @@
 
 #import <AppKit/NSVisualTabPickerShadowTileView.h>
 
-@class NSView, _NSImageViewWithConfigurableVibrancy;
+@class NSBox, NSImageView;
 
 __attribute__((visibility("hidden")))
 @interface NSVisualTabPickerNewTabView : NSVisualTabPickerShadowTileView
 {
-    NSView *_contentView;
-    _NSImageViewWithConfigurableVibrancy *_imageView;
+    NSBox *_contentView;
+    NSImageView *_imageView;
     id <NSVisualTabPickerNewTabViewDelegate> _delegate;
 }
 
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionNames;
 - (id)accessibilityAttributeValue:(id)arg1;
-- (BOOL)_isDark;
 - (void)_setUpSubviews;
 - (void)animateToolbarImage:(id)arg1 height:(double)arg2 gridAnimation:(long long)arg3;
 - (void)animateSidebarImage:(id)arg1 width:(double)arg2 gridAnimation:(long long)arg3;

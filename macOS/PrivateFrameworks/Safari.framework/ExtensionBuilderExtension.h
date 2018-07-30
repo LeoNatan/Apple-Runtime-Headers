@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_infoPlistDictionary;
     NSTimer *_saveChangesTimer;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _pendingSaveChangesSuddenTerminationDisabler;
+    id <SandboxExtensionToken> _sandboxExtensionToken;
     BOOL _infoPlistDirty;
     BOOL _settingsPlistDirty;
     NSURL *_bundleURL;
@@ -83,8 +84,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)initWithBundleURLString:(id)arg1;
-- (id)initWithBundleURL:(id)arg1;
+- (id)initWithBundleURL:(id)arg1 sandboxExtensionToken:(id)arg2;
 
 @end
 

@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface VideoAccessIndex : NSObject
 {
-    vector_4f732a7b mFrameTimes;
+    vector_0821a7d5 mFrameTimes;
     unsigned int numFrames;
     AVAssetTrack *videoTrack;
     AVAsset *asset;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (int)getFrameAtIndex:(unsigned int)arg1 pixBuf:(struct __CVBuffer **)arg2;
-- (id)initFromFile:(id)arg1 pixelFormat:(unsigned int)arg2 frameTimes:(const vector_4f732a7b *)arg3;
+- (id)initFromFile:(id)arg1 pixelFormat:(unsigned int)arg2 frameTimes:(const vector_0821a7d5 *)arg3;
 
 @end
 

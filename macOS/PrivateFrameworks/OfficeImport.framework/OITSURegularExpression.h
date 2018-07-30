@@ -11,7 +11,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OITSURegularExpression : NSObject <NSCopying, NSCoding>
 {
     NSString *_expressionString;

@@ -8,12 +8,12 @@
 
 @class CHDChart;
 
-__attribute__((visibility("hidden")))
 @interface CHDChartTypesCollection : EDCollection
 {
     CHDChart *mChart;
 }
 
+- (void).cxx_destruct;
 - (void)resetSeriesOrder;
 - (unsigned long long)addObject:(id)arg1;
 - (id)initWithChart:(id)arg1;

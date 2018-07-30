@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class HFItem, HFItemManager, HFItemManagerDelegateUpdateRequest, NAFuture, NSDictionary, NSIndexPath, NSIndexSet, NSSet;
+@class HFItem, HFItemManager, HFItemManagerDelegateUpdateRequest, NAFuture, NSArray, NSDictionary, NSIndexPath, NSIndexSet, NSSet;
 
 @protocol HFItemManagerDelegate <NSObject>
 
 @optional
+- (void)itemManager:(HFItemManager *)arg1 didUpdateItemModules:(NSArray *)arg2;
 - (void)itemManager:(HFItemManager *)arg1 didChangeSourceItem:(HFItem *)arg2;
 - (void)itemManager:(HFItemManager *)arg1 didUpdateResultsForSourceItem:(HFItem *)arg2;
 - (void)itemManager:(HFItemManager *)arg1 didChangeOverallLoadingState:(unsigned long long)arg2;

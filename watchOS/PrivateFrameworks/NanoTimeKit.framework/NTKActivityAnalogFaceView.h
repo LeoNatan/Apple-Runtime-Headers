@@ -8,7 +8,7 @@
 
 #import "NTKActivityFaceViewFactoryDelegate.h"
 
-@class HKRingsView, NSMutableDictionary, NSString, NTKActivityDateComplicationLabel, NTKActivityDialView, NTKActivityFaceControl, NTKActivityFaceViewFactory, NTKDateComplicationController, UILabel, UIView;
+@class HKRingsView, NSMutableDictionary, NSString, NTKActivityDateComplicationLabel, NTKActivityDialView, NTKActivityFaceViewFactory, NTKDateComplicationController, NTKFaceViewTapControl, UILabel, UIView;
 
 @interface NTKActivityAnalogFaceView : NTKAnalogFaceView <NTKActivityFaceViewFactoryDelegate>
 {
@@ -21,7 +21,7 @@
     UILabel *_briskMinutesLabel;
     UILabel *_standHoursLabel;
     NTKActivityDialView *_dialView;
-    NTKActivityFaceControl *_tapToLaunchButton;
+    NTKFaceViewTapControl *_tapToLaunchButton;
     NSMutableDictionary *_faceColorsToSchemes;
     _Bool _isDetailedDensity;
     float _contentScale;
@@ -33,7 +33,7 @@
     float _lastSedentaryPercentage;
 }
 
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (id)_highlightImage;
 - (void)_enumerateChronoViews:(CDUnknownBlockType)arg1;
@@ -60,7 +60,10 @@
 - (void)_prepareWristRaiseAnimation;
 - (struct CGPoint)_timeTravelStatusModuleCenter;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
+- (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
@@ -81,7 +84,6 @@
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_loadLayoutRules;
 - (void)layoutSubviews;
-- (void)timeTravelDateEnteredOrExitedTimelineBounds:(_Bool)arg1;
 - (void)_applyEntryModel:(id)arg1 byFraction:(float)arg2 updateLabels:(_Bool)arg3 animated:(_Bool)arg4;
 - (void)_applyCurrentEntryModelByFraction:(float)arg1 updateLabels:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_applyCurrentEntryModelAnimated:(_Bool)arg1;
@@ -89,12 +91,9 @@
 - (void)applyEntryModel:(id)arg1 animated:(_Bool)arg2;
 - (void)_launchButtonPressed:(id)arg1;
 - (void)_applyShowsCanonicalContent;
-- (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
 - (void)setDataMode:(int)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

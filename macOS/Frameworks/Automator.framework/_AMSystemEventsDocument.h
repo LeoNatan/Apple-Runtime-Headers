@@ -4,17 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <Automator/_AMSystemEventsItem.h>
+#import "SBObject.h"
 
-@class NSString;
+#import "_AMSystemEventsGenericMethods.h"
 
-@interface _AMSystemEventsDocument : _AMSystemEventsItem
+@class NSString, _AMSystemEventsFile;
+
+@interface _AMSystemEventsDocument : SBObject <_AMSystemEventsGenericMethods>
 {
 }
 
-@property(copy) NSString *path;
-@property(copy) NSString *name;
+- (void)moveTo:(id)arg1;
+- (void)duplicateTo:(id)arg1 withProperties:(id)arg2;
+- (void)delete;
+- (void)printWithProperties:(id)arg1 printDialog:(BOOL)arg2;
+- (void)saveIn:(id)arg1 as:(int)arg2;
+- (void)closeSaving:(int)arg1 savingIn:(id)arg2;
+@property(readonly, copy) _AMSystemEventsFile *file;
 @property(readonly) BOOL modified;
+@property(readonly, copy) NSString *name;
 
 @end
 

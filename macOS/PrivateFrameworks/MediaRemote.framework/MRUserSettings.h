@@ -21,6 +21,10 @@
 - (long long)_integerValueForKey:(id)arg1 usingDefaultValue:(long long)arg2;
 - (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(double)arg2;
 - (BOOL)_boolValueForKey:(id)arg1 usingDefaultValue:(BOOL)arg2;
+@property(readonly, nonatomic) BOOL computeNowPlayingApplication;
+@property(readonly, nonatomic) double pauseWhileOnLockScreenTimeout;
+@property(readonly, nonatomic) double pausedLockScreenTimeout;
+@property(readonly, nonatomic) double nowPlayingApplicationTimeout;
 @property(retain, nonatomic) NSArray *connectedClientPIDs;
 @property(readonly, nonatomic) BOOL useGenericTransportForHostedEndpoints;
 @property(readonly, nonatomic) BOOL useSystemAudioContextForAirPlayTransport;

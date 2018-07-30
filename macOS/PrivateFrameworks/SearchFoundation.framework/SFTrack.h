@@ -14,7 +14,9 @@
 
 @interface SFTrack : NSObject <SFTrack, NSSecureCoding, NSCopying>
 {
-    CDStruct_62e447a2 _has;
+    struct {
+        unsigned int highlighted:1;
+    } _has;
     BOOL _highlighted;
     NSString *_title;
     NSString *_number;

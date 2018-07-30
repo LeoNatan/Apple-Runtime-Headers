@@ -12,9 +12,13 @@
 
 @interface SXFirstViewportComponentInsertionCondition : NSObject <SXComponentInsertionCondition>
 {
+    _Bool _allowFirstViewportException;
 }
 
+@property(nonatomic) _Bool allowFirstViewportException; // @synthesize allowFirstViewportException=_allowFirstViewportException;
 - (_Bool)validateMarker:(id)arg1 componentTraits:(unsigned long long)arg2 layoutProvider:(id)arg3;
+- (id)initWithAllowFirstViewportException:(_Bool)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

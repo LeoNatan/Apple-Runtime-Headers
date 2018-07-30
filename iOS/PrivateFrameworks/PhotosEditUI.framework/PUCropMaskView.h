@@ -6,6 +6,7 @@
 
 #import "UIView.h"
 
+__attribute__((visibility("hidden")))
 @interface PUCropMaskView : UIView
 {
     UIView *_opaqueView;

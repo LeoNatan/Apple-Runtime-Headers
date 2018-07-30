@@ -10,6 +10,7 @@
 
 @interface TUContactsDataProviderResult : NSObject
 {
+    int _legacyAddressBookIdentifier;
     NSString *_localizedName;
     NSString *_companyName;
     NSString *_contactLabel;
@@ -17,6 +18,7 @@
 }
 
 @property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
+@property(nonatomic) int legacyAddressBookIdentifier; // @synthesize legacyAddressBookIdentifier=_legacyAddressBookIdentifier;
 @property(copy, nonatomic) NSString *contactLabel; // @synthesize contactLabel=_contactLabel;
 @property(copy, nonatomic) NSString *companyName; // @synthesize companyName=_companyName;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;

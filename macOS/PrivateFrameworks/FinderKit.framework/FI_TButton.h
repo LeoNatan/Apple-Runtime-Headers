@@ -11,13 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface FI_TButton : NSButton
 {
-    struct TNSRef<NSColor *, void> _titleColor;
+    struct TNSRef<NSColor, void> _titleColor;
     struct CGSize _maxSize;
     struct CGSize _minSize;
     BOOL _acceptsFirstMouse;
     struct TriStateBool _isEnabledCacheWhenNotKey;
     _Bool _isInsideWindowChangedKeyState;
-    struct TNSRef<FI_TTargetActionFunctor *, void> _action;
+    struct TNSRef<FI_TTargetActionFunctor, void> _glue;
 }
 
 + (Class)cellClass;
@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (void)setObjectValue:(id)arg1;
 @property(retain, nonatomic) NSColor *titleColor;
 - (void)updateTitleColor;
-- (void)setActionWithValidator:(long long)arg1 action:(const function_b1fce659 *)arg2;
 - (void)setButtonAction:(const function_b1fce659 *)arg1;
 - (void)awakeCommon;
 - (void)initCommon;

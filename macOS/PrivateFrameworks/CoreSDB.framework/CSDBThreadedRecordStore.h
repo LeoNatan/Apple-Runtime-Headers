@@ -22,7 +22,7 @@
 - (void)performBlock:(CDUnknownBlockType)arg1 afterDelay:(double)arg2;
 - (void)performBlock:(CDUnknownBlockType)arg1 waitUntilDone:(BOOL)arg2;
 - (BOOL)ownsCurrentThreadOtherwiseAssert:(BOOL)arg1;
-- (void)registerClass:(const CDStruct_2cac97d9 *)arg1;
+- (void)registerClass:(const CDStruct_47876580 *)arg1;
 - (void)_unregisterWithBackupd:(struct __CFString *)arg1;
 - (void)_registerWithBackupd:(struct __CFString *)arg1;
 - (void)teardownDatabase;

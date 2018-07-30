@@ -19,10 +19,11 @@
     NSString *_subtitle;
     PXViewSpec *_textViewSpec;
     CDUnknownBlockType _placeholderViewFactory;
-    struct CGRect _rect;
     struct CGRect _imageContentsRect;
+    struct CGRect _rect;
 }
 
+@property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(copy, nonatomic) CDUnknownBlockType placeholderViewFactory; // @synthesize placeholderViewFactory=_placeholderViewFactory;
 @property(retain, nonatomic) PXViewSpec *textViewSpec; // @synthesize textViewSpec=_textViewSpec;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -31,7 +32,6 @@
 @property(nonatomic) struct CGRect imageContentsRect; // @synthesize imageContentsRect=_imageContentsRect;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
 @property(readonly, nonatomic) NSObject<UICoordinateSpace> *coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
-@property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct CGRect)rectInCoordinateSpace:(id)arg1;

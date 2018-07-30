@@ -33,6 +33,7 @@ struct CLKUIAtlasBackingStructure {
     unsigned int planes;
     unsigned int planeLength;
     unsigned int bytesPerPixel;
+    unsigned int mipCount;
     unsigned char format;
     unsigned char filter;
     unsigned char wrap;
@@ -41,12 +42,19 @@ struct CLKUIAtlasBackingStructure {
 
 struct CLKUIGLUniforms {
     int rotation;
+    int dialRadius;
     int sampleRadius;
     int sampleCenter;
     int primaryTexture;
     int primaryTextureRect;
     int secondaryTexture;
     int secondaryTextureRect;
+    int aspect;
+};
+
+struct CLKUIQuadSize {
+    int _field1;
+    int _field2;
 };
 
 struct NSNumber {

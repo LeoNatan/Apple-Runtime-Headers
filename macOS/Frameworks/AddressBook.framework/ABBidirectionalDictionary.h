@@ -11,7 +11,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ABBidirectionalDictionary : NSObject <NSCopying, NSMutableCopying>
 {
     NSMutableDictionary *_keyToObjectDictionary;

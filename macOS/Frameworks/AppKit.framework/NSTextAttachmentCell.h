@@ -25,6 +25,7 @@
 - (BOOL)wantsToTrackMouseForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 atCharacterIndex:(unsigned long long)arg4;
 - (BOOL)wantsToTrackMouseForEvent:(id)arg1;
 - (BOOL)wantsToTrackMouse;
+- (void)setCellBaselineOffset:(struct CGPoint)arg1;
 - (struct CGPoint)cellBaselineOffset;
 - (struct CGSize)cellSize;
 - (struct CGRect)cellFrameForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;

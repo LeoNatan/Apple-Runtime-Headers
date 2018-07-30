@@ -8,6 +8,7 @@
 
 @class NSError;
 
+__attribute__((visibility("hidden")))
 @interface TKSmartCardWithError : TKSmartCard
 {
     TKSmartCard *_parentCard;

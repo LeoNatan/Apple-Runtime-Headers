@@ -11,21 +11,17 @@
 }
 
 - (_Bool)canShowVirtualCollections;
-- (double)maxSearchBarWidth;
-- (_Bool)displaysSearchInPopover;
-- (_Bool)canDisplaySearchActionInNavigationBar;
 - (id)feedViewControllerSpec;
 - (id)photosPickerViewControllerSpec;
 - (id)panoramaViewControllerSpec;
 - (id)albumViewControllerSpec;
 - (id)gridViewControllerSpec;
 - (long long)albumDeletionConfirmationStyle;
-- (id)emptyAlbumPlaceholderImage;
-- (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
-- (id)_nameOfHiddenAlbumPlaceholderImage;
-- (id)_nameOfEmptySharedAlbumPlaceholderImage;
-- (id)_nameOfAddSharedAlbumPlaceholderImage;
-- (id)_nameOfEmptyAlbumPlaceholderImage;
+- (id)nameOfRecentlyDeletedAlbumPlaceholderImage;
+- (id)nameOfHiddenAlbumPlaceholderImage;
+- (id)nameOfEmptySharedAlbumPlaceholderImage;
+- (id)nameOfAddSharedAlbumPlaceholderImage;
+- (id)nameOfEmptyAlbumPlaceholderImage;
 - (_Bool)shouldShowSectionHeaders;
 - (double)sectionFooterHeight;
 - (double)sectionHeaderHeight;

@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) unsigned int vmPageSize;
 @property(readonly, nonatomic) int pid;
 - (void *)contentForNode:(unsigned int)arg1;
+- (NSString *)shortLabelForNode:(unsigned int)arg1;
 - (NSString *)labelForNode:(unsigned int)arg1;
 - (_Bool)hasLabelsForNodes;
 - (void)refineTypesWithOverlay:(VMUScanOverlay *)arg1;

@@ -6,14 +6,19 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface WXCharacterProperties : NSObject
 {
 }
 
 + (void)applyDeletionInsertionProperties:(id)arg1 state:(id)arg2;
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)initialize;
++ (id)fontHintEnumMap;
++ (id)twoLineBracketsEnumMap;
++ (id)emphasisMarkEnumMap;
++ (id)verticalAlignEnumMap;
++ (id)ligaturesEnumMap;
++ (id)highlightEnumMap;
++ (id)underlineEnumMap;
 + (BOOL)isBooleanCharacterPropertyTrue:(int)arg1;
 + (BOOL)readBooleanCharacterProperty:(struct _xmlNode *)arg1 propertyName:(const char *)arg2 attributeName:(const char *)arg3 outValue:(int *)arg4 state:(id)arg5;
 + (id)readFillColor:(struct _xmlNode *)arg1 forTarget:(id)arg2 state:(id)arg3;

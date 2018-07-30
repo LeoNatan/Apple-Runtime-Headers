@@ -20,14 +20,15 @@ __attribute__((visibility("hidden")))
     id _delegate;
 }
 
++ (id)defaultTopBarColorList;
 @property NSPopover *popover; // @synthesize popover=_popover;
 @property id delegate; // @synthesize delegate=_delegate;
-@property NSColorPickerMatrixView *topBarMatrixView; // @synthesize topBarMatrixView=_topBarMatrixView;
 - (id)matrixColorPicker:(id)arg1 highlightColorForColor:(id)arg2;
 - (void)matrixColorPicker:(id)arg1 selectedColor:(id)arg2;
 - (void)_showColorPanel:(id)arg1;
 @property NSButton *colorPanelButton;
 @property NSColorPickerMatrixView *colorMatrixView;
+@property NSColorPickerMatrixView *topBarMatrixView; // @synthesize topBarMatrixView=_topBarMatrixView;
 - (void)_loadViewIfNecessary;
 - (void)loadView;
 - (id)init;

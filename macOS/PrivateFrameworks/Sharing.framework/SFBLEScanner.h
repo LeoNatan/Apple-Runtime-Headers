@@ -10,7 +10,7 @@
 #import "WPAWDLDelegate.h"
 #import "WPNearbyDelegate.h"
 
-@class CBCentralManager, CURetrier, NSArray, NSData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, WPAWDL, WPNearby, WPPairing;
+@class CBCentralManager, CURetrier, NSArray, NSData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSSet, NSString, WPAWDL, WPNearby, WPPairing;
 
 @interface SFBLEScanner : NSObject <CBCentralManagerDelegate, WPAWDLDelegate, WPNearbyDelegate>
 {
@@ -22,6 +22,7 @@
     BOOL _invalidateCalled;
     BOOL _needDups;
     long long _payloadType;
+    _Bool _poweredOffSleep;
     NSObject<OS_dispatch_source> *_rescanTimer;
     struct __sFILE {
         char *_field1;
@@ -49,6 +50,7 @@
     CURetrier *_startRetrier;
     BOOL _timeoutFired;
     NSObject<OS_dispatch_source> *_timeoutTimer;
+    NSSet *_trackedPeersApplied;
     BOOL _updating;
     WPAWDL *_wpAirDrop;
     WPNearby *_wpNearby;
@@ -77,8 +79,10 @@
     long long _scanWindow;
     double _timeout;
     CDUnknownBlockType _timeoutHandler;
+    NSSet *_trackedPeers;
 }
 
+@property(copy, nonatomic) NSSet *trackedPeers; // @synthesize trackedPeers=_trackedPeers;
 @property(copy, nonatomic) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) long long scanWindow; // @synthesize scanWindow=_scanWindow;
@@ -125,6 +129,7 @@
 - (void)_watchSetupParseName:(id)arg1 fields:(id)arg2;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;
+- (void)_updateTrackedPeers;
 - (void)_updateRescanTimer;
 - (BOOL)_updateCounterpart:(id)arg1;
 - (void)_timeoutTimerFired;
@@ -133,6 +138,8 @@
 - (void)_rssiLogOpen;
 - (void)_restartIfNeeded;
 - (void)_rescanTimerFired;
+- (void)_removeAllDevicesWithReason:(id)arg1;
+- (void)_poweredOn;
 - (void)_poweredOff;
 - (BOOL)_needDups;
 - (BOOL)_needActiveScan;

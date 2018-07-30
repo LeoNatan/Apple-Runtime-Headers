@@ -12,6 +12,7 @@
 
 + (id)sanatizeArray:(id)arg1;
 + (id)sanatizeDictionary:(id)arg1;
++ (void)showBluetoothError;
 + (void)dismissUSBAlerts;
 + (void)removeNotificationForDevice:(id)arg1;
 + (void)usbPairingComplete:(id)arg1 forDeviceAddressString:(id)arg2;
@@ -19,6 +20,7 @@
 + (void)proximityTriggerCancel:(id)arg1;
 + (void)proximityTrigger:(id)arg1 advertisementData:(id)arg2;
 + (void)avrcp:(unsigned char)arg1;
++ (void)showFCTime:(int)arg1;
 + (void)switchAudio:(id)arg1;
 + (void)showiCloudUnPairing:(id)arg1;
 + (void)showiCloudPairing:(id)arg1;

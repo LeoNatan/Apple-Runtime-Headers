@@ -8,6 +8,7 @@
 
 @class AVAssetWriterHelper, AVKeyPathDependencyManager, AVWeakReference, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInternal : NSObject
 {
     AVWeakReference *weakReference;

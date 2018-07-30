@@ -47,6 +47,7 @@
 + (id)isSent;
 + (id)fromSync;
 + (id)fromTextMessage;
++ (id)eventMetadata:(id)arg1;
 + (id)schemaOrg:(id)arg1;
 + (id)messagesAppUsageLevel:(unsigned char)arg1;
 + (id)mailAppUsageLevel:(unsigned char)arg1;
@@ -61,6 +62,8 @@
 + (id)interactionGroupId:(id)arg1;
 + (id)interactionId:(id)arg1;
 + (id)fromInteraction;
++ (id)timezoneIdentifier:(id)arg1;
++ (id)textCalendarAttachment:(id)arg1;
 + (id)fromCalendarAttachment;
 + (id)naturalLanguageEvent;
 + (id)hardName;
@@ -95,6 +98,8 @@
 - (BOOL)isDomain;
 - (BOOL)isTemplateName;
 - (BOOL)isTemplateShortName;
+- (id)eventMetadata;
+- (BOOL)isEventMetadata;
 - (BOOL)isSchemaOrg;
 - (BOOL)isMessagesAppUsageLevel;
 - (BOOL)isMailAppUsageLevel;

@@ -7,17 +7,18 @@
 #import <HealthUI/HKTableViewController.h>
 
 #import "HKDocumentPickerViewControllerDelegate.h"
+#import "HKHealthPrivacyServicePromptController.h"
 #import "HKSourceAuthorizationControllerDelegate.h"
 #import "HKSwitchTableViewCellDelegate.h"
 
 @class HKDisplayCategoryController, HKHealthStore, HKSource, HKSourceAuthorizationController, NSArray, NSSet, NSString, UIBarButtonItem;
 
-@interface HKAuthorizationSettingsViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HKDocumentPickerViewControllerDelegate, HKSourceAuthorizationControllerDelegate>
+@interface HKAuthorizationSettingsViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HKDocumentPickerViewControllerDelegate, HKSourceAuthorizationControllerDelegate, HKHealthPrivacyServicePromptController>
 {
     NSArray *_documents;
     NSArray *_actualSections;
     NSArray *_readingTypeOrdering;
-    id <HKAuthorizationSettingsViewControllerDelegate> _delegate;
+    id <HKHealthPrivacyServicePromptControllerDelegate> _delegate;
     HKHealthStore *_healthStore;
     HKSource *_source;
     int _style;
@@ -45,10 +46,11 @@
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) HKSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-@property(nonatomic) __weak id <HKAuthorizationSettingsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <HKHealthPrivacyServicePromptControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_configurationFailedWithError:(id)arg1;
 - (void)_addHeaderView;
+- (_Bool)shouldPresent;
 - (_Bool)_isTypeEnabledAtIndexPath:(id)arg1;
 - (id)_typeForIndexPath:(id)arg1 section:(int *)arg2;
 - (int)authorizationSectionForSection:(int)arg1;

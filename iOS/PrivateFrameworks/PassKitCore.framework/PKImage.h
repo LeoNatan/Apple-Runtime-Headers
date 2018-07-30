@@ -43,6 +43,7 @@
 - (id)resizableImageByStretchingWithCapInsets:(struct PKEdgeInsets)arg1;
 - (id)resizableImageByTilingWithCapInsets:(struct PKEdgeInsets)arg1;
 - (id)resizedImageWithConstraints:(id)arg1;
+- (id)imageWithoutCapInsets;
 - (id)croppedImageWithInsets:(struct PKEdgeInsets)arg1;
 - (id)blurredImageWithRadius:(unsigned long long)arg1 constraints:(id)arg2;
 @property(readonly, nonatomic) struct PKEdgeInsets capInsets;

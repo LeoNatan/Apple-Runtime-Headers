@@ -17,12 +17,7 @@
     struct CLLocationCoordinate2D __coordinate;
     NSString *__title;
     NSString *__subtitle;
-    struct {
-        unsigned int hasCoordinate:1;
-        unsigned int hasMutableCoordinate:1;
-        unsigned int hasTitle:1;
-        unsigned int hasSubtitle:1;
-    } _flags;
+    CDStruct_81fb2dc1 _flags;
 }
 
 @property(copy, nonatomic) NSString *clusteringIdentifier; // @synthesize clusteringIdentifier=_clusteringIdentifier;
@@ -32,8 +27,7 @@
 - (struct CLLocationCoordinate2D)_averageCoordinate;
 - (_Bool)_isMKClusterAnnotation;
 @property(readonly) unsigned long long hash;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)dealloc;
+- (void)_memberAnnotationCoordinateDidChange;
 - (id)initWithMemberAnnotations:(id)arg1;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=__coordinate;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=__subtitle;

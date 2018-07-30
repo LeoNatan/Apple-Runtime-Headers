@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 - (void).cxx_destruct;
 - (id)_routeIconPlaceholderImage;
+- (void)_setRouteImage:(id)arg1;
 - (void)setRouteIconViewForRouteType:(int)arg1 origin:(id)arg2;
 - (void)_updateStyle;
 - (void)setHighlighted:(_Bool)arg1;

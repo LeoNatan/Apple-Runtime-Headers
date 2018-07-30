@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PDSideDirectionOptions.h>
 
-__attribute__((visibility("hidden")))
 @interface PDPrismOptions : PDSideDirectionOptions
 {
     BOOL mIsContent;

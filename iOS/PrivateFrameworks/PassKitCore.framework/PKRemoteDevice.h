@@ -16,6 +16,7 @@
     _Bool _isLocked;
     _Bool _userDisabled;
     _Bool _deviceDisabled;
+    _Bool _supportsFaceID;
     NSString *_deviceName;
     long long _type;
     NSString *_modelIdentifier;
@@ -30,6 +31,7 @@
 + (_Bool)supportsSecureCoding;
 + (CDUnknownBlockType)acceptedComparatorForSupportedNetworks:(id)arg1 merchantCapabilities:(unsigned long long)arg2 webService:(id)arg3;
 + (CDUnknownBlockType)preferenceComparator;
+@property(nonatomic) _Bool supportsFaceID; // @synthesize supportsFaceID=_supportsFaceID;
 @property(retain, nonatomic) NSUUID *bluetoothUUID; // @synthesize bluetoothUUID=_bluetoothUUID;
 @property(copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic) PKRemotePaymentInstrument *defaultRemotePaymentInstrument; // @synthesize defaultRemotePaymentInstrument=_defaultRemotePaymentInstrument;

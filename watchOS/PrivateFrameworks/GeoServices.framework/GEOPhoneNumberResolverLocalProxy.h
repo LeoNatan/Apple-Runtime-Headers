@@ -10,6 +10,7 @@
 
 @class GEOPNRReadersCache, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOPhoneNumberResolverLocalProxy : NSObject <GEOPhoneNumberResolving>
 {
     GEOPNRReadersCache *_readersCache;

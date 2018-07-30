@@ -42,6 +42,7 @@
 - (void).cxx_destruct;
 - (_Bool)_postNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (_Bool)postNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3;
+- (void)dispatchNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue;
 @property(readonly, nonatomic, getter=isRegisteredForNowPlayingNotifications) _Bool registeredForNowPlayingNotifications;
 - (void)unregisterForNowPlayingNotifications;

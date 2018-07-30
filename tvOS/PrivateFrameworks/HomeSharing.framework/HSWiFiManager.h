@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>;
+#import "ICEnvironmentMonitorObserver.h"
 
-@interface HSWiFiManager : NSObject
+@class NSObject<OS_dispatch_queue>, NSString;
+
+@interface HSWiFiManager : NSObject <ICEnvironmentMonitorObserver>
 {
     struct __SCPreferences *_wifiPreferences;
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -24,8 +26,15 @@
 - (_Bool)_getWiFiAssociated;
 - (_Bool)_getWiFiEnabledFromPrefs;
 - (id)_processIdentifier;
+- (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

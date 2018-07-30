@@ -6,6 +6,7 @@
 
 #import <AppKit/NSViewStateBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSProgressIndicatorBinder : NSViewStateBinder
 {
 }

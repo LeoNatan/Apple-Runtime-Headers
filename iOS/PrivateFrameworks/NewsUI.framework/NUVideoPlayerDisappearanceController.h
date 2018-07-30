@@ -8,25 +8,25 @@
 
 #import "NUVideoPlayerEventTracker.h"
 
-@class NSString, NUVideoAdHistoryEventTracker, UIViewController;
+@class NSString, NUVideoAdHistoryEventTracker;
 
 @interface NUVideoPlayerDisappearanceController : NSObject <NUVideoPlayerEventTracker>
 {
     NUVideoAdHistoryEventTracker *_adHistoryEventTracker;
-    UIViewController *_viewControllerForPresentationFromBannerView;
-    id <SXVideoPlaybackController> _playbackController;
-    id <SXVideoPlaybackAdvancing> _playbackAdvancer;
-    id <SXVideoQueueProviding> _queueProvider;
+    id <SVVideoViewControllerProviding> _videoViewControllerProvider;
+    id <SVVideoPlaybackController> _playbackController;
+    id <SVVideoPlaybackAdvancing> _playbackAdvancer;
+    id <SVVideoQueueProviding> _queueProvider;
 }
 
-@property(readonly, nonatomic) id <SXVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
-@property(readonly, nonatomic) id <SXVideoPlaybackAdvancing> playbackAdvancer; // @synthesize playbackAdvancer=_playbackAdvancer;
-@property(readonly, nonatomic) id <SXVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
-@property(readonly, nonatomic) __weak UIViewController *viewControllerForPresentationFromBannerView; // @synthesize viewControllerForPresentationFromBannerView=_viewControllerForPresentationFromBannerView;
+@property(readonly, nonatomic) __weak id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
+@property(readonly, nonatomic) __weak id <SVVideoPlaybackAdvancing> playbackAdvancer; // @synthesize playbackAdvancer=_playbackAdvancer;
+@property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
+@property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, nonatomic) NUVideoAdHistoryEventTracker *adHistoryEventTracker; // @synthesize adHistoryEventTracker=_adHistoryEventTracker;
 - (void).cxx_destruct;
 - (void)videoPlayerDidBecomeInvisible;
-- (id)initWithAdHistoryEventTracker:(id)arg1 viewControllerForPresentationFromBannerView:(id)arg2 playbackController:(id)arg3 playbackAdvancer:(id)arg4 queueProvider:(id)arg5;
+- (id)initWithAdHistoryEventTracker:(id)arg1 videoViewControllerProvider:(id)arg2 playbackController:(id)arg3 playbackAdvancer:(id)arg4 queueProvider:(id)arg5;
 - (id)init;
 
 // Remaining properties

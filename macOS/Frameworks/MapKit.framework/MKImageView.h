@@ -6,26 +6,26 @@
 
 #import "NSView.h"
 
-@class NSColor, NSImage, NSLayoutConstraint;
+@class NSColor, NSImage, NSImageView;
 
 @interface MKImageView : NSView
 {
-    NSLayoutConstraint *_aspectRatioConstraint;
     NSImage *_currentImage;
     BOOL _shouldHighlight;
     NSImage *_highlightImage;
     NSImage *_image;
     NSColor *_highlightColor;
     long long _imageContentMode;
+    NSImageView *_imageView;
+    NSColor *_templateTintColor;
 }
 
-@property long long imageContentMode; // @synthesize imageContentMode=_imageContentMode;
+@property(retain, nonatomic) NSColor *templateTintColor; // @synthesize templateTintColor=_templateTintColor;
+@property(readonly, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property BOOL shouldHighlight; // @synthesize shouldHighlight=_shouldHighlight;
 @property(retain, nonatomic) NSImage *highlightImage; // @synthesize highlightImage=_highlightImage;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)removeConstraintToMaintainAspectRatio;
-- (void)setConstraintToMaintainAspectRatio;
+@property long long imageContentMode; // @synthesize imageContentMode=_imageContentMode;
 - (void)setBackgroundStyle:(long long)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)sizeToFit;
@@ -34,6 +34,7 @@
 - (void)invalidateHighlightImage;
 @property(retain, nonatomic) NSColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
+- (void)_maps_common_init;
 - (id)initWithImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

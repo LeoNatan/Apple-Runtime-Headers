@@ -13,10 +13,10 @@
 @interface _PXCPLServiceUIStatus : NSObject <PXCPLServiceUIStatus>
 {
     _Bool _paused;
+    float _progress;
     NSString *_referencedItemsDescription;
     NSString *_stateDescription;
     NSString *_failureDescription;
-    double _progress;
     CDUnknownBlockType _action;
     NSString *_actionTitle;
     NSString *_actionConfirmationAlertTitle;
@@ -31,7 +31,7 @@
 @property(retain, nonatomic) NSString *actionConfirmationAlertTitle; // @synthesize actionConfirmationAlertTitle=_actionConfirmationAlertTitle;
 @property(retain, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
-@property(nonatomic) double progress; // @synthesize progress=_progress;
+@property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) NSString *failureDescription; // @synthesize failureDescription=_failureDescription;
 @property(retain, nonatomic) NSString *stateDescription; // @synthesize stateDescription=_stateDescription;

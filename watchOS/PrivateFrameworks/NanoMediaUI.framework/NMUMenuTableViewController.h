@@ -12,11 +12,13 @@
 {
     NSArray *_sectionedVisibleItems;
     _Bool _automaticallyAdjustsCellHeight;
+    _Bool _wantsLargeIconLayout;
     NSArray *_sectionedItems;
     id <NMUMenuTableViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <NMUMenuTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool wantsLargeIconLayout; // @synthesize wantsLargeIconLayout=_wantsLargeIconLayout;
 @property(nonatomic) _Bool automaticallyAdjustsCellHeight; // @synthesize automaticallyAdjustsCellHeight=_automaticallyAdjustsCellHeight;
 @property(retain, nonatomic) NSArray *sectionedItems; // @synthesize sectionedItems=_sectionedItems;
 - (void).cxx_destruct;

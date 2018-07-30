@@ -10,16 +10,12 @@
 
 @protocol _SFPBPunchout <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasActionTarget;
+@property(nonatomic) _Bool isRunnableInBackground;
 @property(copy, nonatomic) NSString *actionTarget;
-@property(readonly, nonatomic) _Bool hasUserActivityData;
 @property(retain, nonatomic) _SFPBUserActivityData *userActivityData;
 @property(copy, nonatomic) NSArray *urls;
-@property(readonly, nonatomic) _Bool hasLabel;
 @property(copy, nonatomic) NSString *label;
-@property(readonly, nonatomic) _Bool hasBundleIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier;
-@property(readonly, nonatomic) _Bool hasName;
 @property(copy, nonatomic) NSString *name;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -6,14 +6,15 @@
 
 #import "NSObject.h"
 
-@class FLFollowUpItem, NSArray, NSString;
+@class FLFollowUpItem, NSArray;
 
 @protocol FLViewModel <NSObject>
 - (void)setItemChangeHandler:(void (^)(void))arg1;
+- (NSArray *)allPendingItems;
+
+@optional
 - (void)refreshItemsForItem:(FLFollowUpItem *)arg1 withCompletionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)refreshItems:(NSArray *)arg1 withCompletionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (NSArray *)groups;
-- (NSArray *)allPendingItems;
-- (id)initWithIdentifier:(NSString *)arg1;
 @end
 

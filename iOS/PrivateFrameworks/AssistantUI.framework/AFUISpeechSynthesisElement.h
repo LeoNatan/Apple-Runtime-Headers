@@ -13,8 +13,10 @@
     NSString *_text;
     _Bool _isPhonetic;
     _Bool _eligibleForSynthesis;
+    _Bool _eligibleForProcessing;
     _Bool _provisional;
-    _Bool _preprationBlockCompleted;
+    _Bool _delayed;
+    _Bool _preparationBlockCompleted;
     _Bool _durationHasElapsed;
     SAUIAudioData *_audioData;
     NSString *_identifier;
@@ -31,7 +33,7 @@
 }
 
 @property(setter=_setDurationHasElapsed:) _Bool durationHasElapsed; // @synthesize durationHasElapsed=_durationHasElapsed;
-@property(setter=_setPreparationBlockCompleted:) _Bool preprationBlockCompleted; // @synthesize preprationBlockCompleted=_preprationBlockCompleted;
+@property(setter=_setPreparationBlockCompleted:) _Bool preparationBlockCompleted; // @synthesize preparationBlockCompleted=_preparationBlockCompleted;
 @property(readonly, nonatomic, getter=_completion) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSDictionary *speakableContextInfo; // @synthesize speakableContextInfo=_speakableContextInfo;
 @property(readonly, nonatomic) NSDictionary *analyticsContext; // @synthesize analyticsContext=_analyticsContext;
@@ -40,7 +42,9 @@
 @property(nonatomic) long long synthesisResult; // @synthesize synthesisResult=_synthesisResult;
 @property(retain, nonatomic) VSPresynthesizedAudioRequest *presynthesizedAudioRequest; // @synthesize presynthesizedAudioRequest=_presynthesizedAudioRequest;
 @property(retain, nonatomic) VSSpeechRequest *speechRequest; // @synthesize speechRequest=_speechRequest;
+@property(nonatomic, getter=isDelayed) _Bool delayed; // @synthesize delayed=_delayed;
 @property(readonly, nonatomic, getter=isProvisional) _Bool provisional; // @synthesize provisional=_provisional;
+@property(nonatomic, getter=isEligibleForProcessing, setter=_setEligibleForProcessing:) _Bool eligibleForProcessing; // @synthesize eligibleForProcessing=_eligibleForProcessing;
 @property(nonatomic, getter=isEligibleForSynthesis, setter=_setEligibleForSynthesis:) _Bool eligibleForSynthesis; // @synthesize eligibleForSynthesis=_eligibleForSynthesis;
 @property(nonatomic) _Bool isPhonetic; // @synthesize isPhonetic=_isPhonetic;
 @property(readonly, nonatomic) NSString *gender; // @synthesize gender=_gender;
@@ -53,7 +57,7 @@
 - (void)executeCompletion;
 - (id)description;
 - (id)init;
-- (id)initWithText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 provisional:(_Bool)arg6 eligibleAfterDuration:(double)arg7 preparation:(CDUnknownBlockType)arg8 completion:(CDUnknownBlockType)arg9 animationIdentifier:(id)arg10 analyticsContext:(id)arg11 speakableContextInfo:(id)arg12;
+- (id)initWithText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 provisional:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 preparation:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10 animationIdentifier:(id)arg11 analyticsContext:(id)arg12 speakableContextInfo:(id)arg13;
 
 @end
 

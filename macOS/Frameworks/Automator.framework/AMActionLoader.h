@@ -13,6 +13,7 @@
 + (id)coreTypesBundle;
 + (id)displayNameAtPathWithCaching:(id)arg1;
 + (id)sharedActionLoader;
+- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (id)validationErrorsForActionResourcesWithAction:(id)arg1;
 - (id)validateWarningActionsForAction:(id)arg1;
 - (id)validateActionResourcesForAction:(id)arg1 withResourceDictionary:(id)arg2;
@@ -22,6 +23,7 @@
 - (id)actionWithPropertyList:(id)arg1 error:(id *)arg2;
 - (id)actionWithBundle:(id)arg1 error:(id *)arg2;
 - (Class)classForActionWithBundle:(id)arg1 error:(id *)arg2;
+- (BOOL)_validateBundle:(id)arg1 error:(id *)arg2;
 - (id)actionWithBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (id)actionWithURL:(id)arg1 error:(id *)arg2;
 - (id)cachingDictionaryForActionBundle:(id)arg1;

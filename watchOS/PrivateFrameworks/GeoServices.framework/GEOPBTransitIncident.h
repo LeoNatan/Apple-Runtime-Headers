@@ -10,6 +10,7 @@
 
 @class GEOPBTransitArtwork, NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPBTransitIncident : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

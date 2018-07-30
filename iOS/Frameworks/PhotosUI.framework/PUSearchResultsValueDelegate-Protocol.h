@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class PLSearchIndexDateFormatter, PUSearchResultsValue;
+@class NSString, PLSearchIndexDateFormatter, PSIDate, PUSearchResultsValue;
 
 @protocol PUSearchResultsValueDelegate <NSObject>
+- (NSString *)stringWithStartDate:(PSIDate *)arg1 endDate:(PSIDate *)arg2;
 - (PLSearchIndexDateFormatter *)dateFormatter;
 - (_Bool)searchIsFinished:(PUSearchResultsValue *)arg1;
 @end

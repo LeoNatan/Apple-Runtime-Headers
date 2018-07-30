@@ -12,6 +12,8 @@
 {
 }
 
++ (void)showExtensionManagementInterface;
++ (BOOL)isExtensionEnabled;
 + (id)defaultController;
 - (void)setTagData:(id)arg1 forItemWithURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)tagDataForItemWithURL:(id)arg1;

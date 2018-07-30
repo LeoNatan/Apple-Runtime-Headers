@@ -10,37 +10,21 @@
 
 @protocol _SFPBImage <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasAppIconImage;
 @property(retain, nonatomic) _SFPBAppIconImage *appIconImage;
-@property(readonly, nonatomic) _Bool hasLocalImage;
 @property(retain, nonatomic) _SFPBLocalImage *localImage;
-@property(readonly, nonatomic) _Bool hasMonogramImage;
 @property(retain, nonatomic) _SFPBMonogramImage *monogramImage;
-@property(readonly, nonatomic) _Bool hasContactImage;
 @property(retain, nonatomic) _SFPBContactImage *contactImage;
-@property(readonly, nonatomic) _Bool hasUrlImage;
 @property(retain, nonatomic) _SFPBURLImage *urlImage;
-@property(readonly, nonatomic) _Bool hasType;
 @property(nonatomic) int type;
-@property(readonly, nonatomic) _Bool hasSource;
 @property(nonatomic) int source;
-@property(readonly, nonatomic) _Bool hasIdentifier;
 @property(copy, nonatomic) NSString *identifier;
-@property(readonly, nonatomic) _Bool hasKeyColor;
 @property(copy, nonatomic) NSString *keyColor;
-@property(readonly, nonatomic) _Bool hasContentType;
 @property(copy, nonatomic) NSString *contentType;
-@property(readonly, nonatomic) _Bool hasSize;
 @property(retain, nonatomic) _SFPBPointSize *size;
-@property(readonly, nonatomic) _Bool hasScale;
 @property(retain, nonatomic) _SFPBGraphicalFloat *scale;
-@property(readonly, nonatomic) _Bool hasCornerRadius;
 @property(retain, nonatomic) _SFPBGraphicalFloat *cornerRadius;
-@property(readonly, nonatomic) _Bool hasShouldCropToCircle;
 @property(nonatomic) _Bool shouldCropToCircle;
-@property(readonly, nonatomic) _Bool hasIsTemplate;
 @property(nonatomic) _Bool isTemplate;
-@property(readonly, nonatomic) _Bool hasImageData;
 @property(copy) NSData *imageData;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

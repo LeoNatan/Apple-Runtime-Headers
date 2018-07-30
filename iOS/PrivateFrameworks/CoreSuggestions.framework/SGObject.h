@@ -24,6 +24,7 @@
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualToSuggestion:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecordId:(id)arg1 origin:(id)arg2;

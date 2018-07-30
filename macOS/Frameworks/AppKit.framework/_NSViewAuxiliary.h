@@ -8,6 +8,7 @@
 
 @class CIFilter, NSAppearance, NSArray, NSBezierPath, NSColor, NSColorSpace, NSDictionary, NSMenu, NSMutableArray, NSMutableSet, NSShadow, NSString, NSSurface, NSViewController, _NSBindingAdaptor, _NSIdleTimer, _NSViewAnimator, _NSViewLayerSurface, _NSViewLayoutAux;
 
+__attribute__((visibility("hidden")))
 @interface _NSViewAuxiliary : NSObject
 {
     struct {
@@ -23,7 +24,6 @@
         unsigned int _drawnByAncestor:1;
         unsigned int _setFrameWillAutoInvalidate:1;
         unsigned int _drawingByHIView:1;
-        unsigned int _supressViewWillDrawRecursion:1;
         unsigned int _revealoverComputationEnabled:1;
         unsigned int _revealoverComputationNeeded:1;
         unsigned int _revealoversWanted:1;
@@ -31,7 +31,6 @@
         unsigned int _fontSmoothingBackgroundColorSet:1;
         unsigned int _ignoreForKeyViewLoop:1;
         unsigned int _searchingForKeyViewReplacement:1;
-        unsigned int _hasMultiClipDrawingHelper:1;
         unsigned int _displayingAllDirty:1;
         unsigned int _focusRingNeedsDisplayOutsideSelf:1;
         unsigned int _invalidTrackingRects:1;
@@ -40,6 +39,7 @@
         unsigned int _dontSuppressLayerAnimation:1;
         unsigned int _canDrawConcurrently:1;
         unsigned int _displayingForWindowDisplay:1;
+        unsigned int _implementsViewWillDraw:1;
         unsigned int _UNUSED:2;
     } _vFlags2;
     struct {
@@ -64,7 +64,9 @@
         unsigned int _layerContentsRedrawPolicy:3;
         unsigned int _layerContentsPlacement:4;
         unsigned int _explicitSurfaceColorSpace:1;
-        unsigned int _UNUSED:6;
+        unsigned int _vibrantBlendingStyleForSubtree:2;
+        unsigned int _cachedEffectiveVibrantBlendingStyle:2;
+        unsigned int _UNUSED:2;
     } _vFlags3;
     struct {
         unsigned int _acceptsIndirectTouches:1;
@@ -105,7 +107,7 @@
         unsigned int _usesPointIntegralizationForLayout:1;
         unsigned int _hasCanDrawSubviewsIntoLayerAncestor:1;
         unsigned int _hasAutoCanDrawSubviewsIntoLayer:1;
-        unsigned int _needsDisplayInRectNotificationsCount:6;
+        unsigned int _needsDisplayInRectNotificationsCount:11;
         unsigned int _overridesViewLayout:1;
         unsigned int _overridesResizeSubviewsWithOldSize:1;
         unsigned int _layingOut:1;
@@ -118,7 +120,6 @@
         unsigned int _clipsToBounds:1;
         unsigned int _willInvalidateFocus:1;
         unsigned int _hasAccessibilityUIElementSpecifier:1;
-        unsigned int _UNUSED:5;
     } _vFlags5;
     unsigned int _isScrolling:1;
     unsigned int _cachedWantsToPrefetchContent:1;
@@ -130,12 +131,10 @@
     unsigned int _excludeSubviewsInCacheDisplayInRect:1;
     unsigned int _dontAskSuperForReferenceColorCheck:1;
     unsigned int _hasVibrancyFilter:1;
-    unsigned int _registeredWithBackdropView:1;
-    unsigned int _hasCachedContainingBackdropView:1;
     unsigned int _isInclusiveLayerBacked:1;
     unsigned int _setBackgroundColor:1;
     unsigned int _shouldDoLayerPerformanceUpdates:1;
-    unsigned int _newlyAddedSubview:1;
+    unsigned int _deferredNeedsDisplay:1;
     unsigned int _enumeratingGeometryInWindowSensitiveSubviewsCount:4;
     unsigned long long _needsGeometryInWindowDidChangeNotificationCount;
     NSMutableSet *_geometryInWindowSensitiveSubviews;
@@ -170,6 +169,7 @@
     NSMutableArray *_gestureRecognizers;
     _NSViewLayerSurface *_layerSurface;
     unsigned int _layoutTransactionSeed;
+    unsigned long long _antialiasThresholdChangedNotificationToken;
 }
 
 - (void).cxx_destruct;

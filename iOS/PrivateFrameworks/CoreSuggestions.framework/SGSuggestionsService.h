@@ -11,29 +11,27 @@
 #import "SGSuggestionsServiceFidesProtocol.h"
 #import "SGSuggestionsServiceInternalProtocol.h"
 #import "SGSuggestionsServiceMailProtocol.h"
-#import "SGSuggestionsServiceSearchToShareProtocol.h"
 
-@class NSString, SGDaemonConnection, SGKeyValueCacheFile;
+@class NSString, SGDaemonConnection, _PASLock;
 
-@interface SGSuggestionsService : NSObject <SGSuggestionsServiceContactsProtocol, SGSuggestionsServiceEventsProtocol, SGSuggestionsServiceInternalProtocol, SGSuggestionsServiceMailProtocol, SGSuggestionsServiceSearchToShareProtocol, SGSuggestionsServiceFidesProtocol>
+@interface SGSuggestionsService : NSObject <SGSuggestionsServiceContactsProtocol, SGSuggestionsServiceEventsProtocol, SGSuggestionsServiceInternalProtocol, SGSuggestionsServiceMailProtocol, SGSuggestionsServiceFidesProtocol>
 {
     SGDaemonConnection *_daemonConnection;
     id <SGDSuggestManagerAllProtocol> _managerForTesting;
     _Bool _keepDirty;
     NSString *_machServiceName;
     _Bool _queuesRequestsIfBusy;
-    SGKeyValueCacheFile *_phoneCache;
-    SGKeyValueCacheFile *_emailCache;
-    NSString *_maybeFormat;
+    _PASLock *_cacheLock;
 }
 
 + (id)wantedSearchableItemsFromItems:(id)arg1;
 + (id)filteredSearchableItemsFromItems:(id)arg1;
 + (_Bool)isHarvestingSupported;
 + (void)prepareForQuery;
++ (_Bool)hasEntitlement:(id)arg1;
++ (id)_daemonConnectionForMachServiceName:(id)arg1 protocol:(id)arg2 useCache:(_Bool)arg3;
 + (id)serviceForMessages;
 + (id)serviceForFides;
-+ (id)serviceForSearchToShare;
 + (id)serviceForInternal;
 + (id)serviceForEvents;
 + (id)serviceForContacts;
@@ -41,7 +39,6 @@
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)suggestionsFromMockData:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 - (void)sleepWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)sleep:(id *)arg1;
 - (void)daemonExitWithCompletion:(CDUnknownBlockType)arg1;
@@ -58,12 +55,12 @@
 - (void)logMetricContactSearchResult:(int)arg1 recordId:(id)arg2 contactIdentifier:(id)arg3 bundleId:(id)arg4;
 - (void)logMetricAutocompleteResult:(int)arg1 recordId:(id)arg2 contactIdentifier:(id)arg3 bundleId:(id)arg4;
 - (void)deleteCloudKitZoneWithCompletion:(CDUnknownBlockType)arg1;
-- (void)realtimeSuggestionsFromURL:(id)arg1 title:(id)arg2 HTMLPayload:(id)arg3 extractionDate:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (_Bool)sendRTCLogs:(id *)arg1;
 - (void)removeAllStoredPseudoContactsWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)removeAllStoredPseudoContacts:(id *)arg1;
 - (void)drainQueueCompletelyWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)drainQueueCompletely:(id *)arg1;
+- (void)realtimeSuggestionsFromURL:(id)arg1 title:(id)arg2 HTMLPayload:(id)arg3 extractionDate:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)suggestionsFromURL:(id)arg1 title:(id)arg2 HTMLPayload:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)isEventCandidateForURL:(id)arg1 andTitle:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)eventsForSchemas:(id)arg1 usingStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -77,16 +74,6 @@
 - (void)purgeSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)spotlightObserver;
 - (void)planReceivedFromServerWithPayload:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)modelMetadataUpdateWithPayload:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)sendCustomFeedback:(id)arg1;
-- (void)didEngageResult:(id)arg1;
-- (void)didEngageSuggestion:(id)arg1;
-- (void)didEndSearch:(id)arg1;
-- (void)didStartSearch:(id)arg1;
-- (void)searchViewDidDisappear:(id)arg1;
-- (void)searchViewDidAppear:(id)arg1;
-- (void)queryPredictionsFeedbackReportForConversation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)queryPredictionsForConversation:(id)arg1 count:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)resolveFullDownloadRequests:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)resolveFullDownloadRequests:(id)arg1 error:(id *)arg2;
 - (void)fullDownloadRequestBatch:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -104,8 +91,6 @@
 - (void)_addSearchableItemMetadata:(id)arg1 htmlData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addSearchableItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)addSearchableItems:(id)arg1 error:(id *)arg2;
-- (void)relevantABRecordIDsWithLimit:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (id)relevantABRecordIDsWithLimit:(long long)arg1 error:(id *)arg2;
 - (void)predictedCCEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (id)predictedCCEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 error:(id *)arg6;
 - (void)predictedToEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
@@ -151,9 +136,9 @@
 - (id)contactMatchesOrLookupIdByEmailAddress:(id)arg1 error:(id *)arg2;
 - (void)contactMatchesOrLookupIdByPhoneNumber:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)contactMatchesOrLookupIdByPhoneNumber:(id)arg1 error:(id *)arg2;
-- (void)namesForUnknownDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (id)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(_Bool)arg3 error:(id *)arg4;
+- (void)refreshCacheSnapshot;
 - (void)contactMatchesByEmailAddress:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)contactMatchesByEmailAddress:(id)arg1 error:(id *)arg2;
 - (id)contactMatchesByEmailAddress:(id)arg1;
@@ -210,16 +195,9 @@
 - (_Bool)queuesRequestsIfBusy;
 - (_Bool)isEnabledWithError:(id *)arg1;
 - (void)setManagerForTesting:(id)arg1;
-- (id)_remoteSuggestionManagerForSTS;
 - (id)_remoteSuggestionManager;
-- (_Bool)hasEntitlement:(id)arg1;
+- (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2 useCache:(_Bool)arg3;
 - (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

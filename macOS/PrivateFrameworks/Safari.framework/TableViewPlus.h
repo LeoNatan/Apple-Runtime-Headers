@@ -20,6 +20,11 @@ __attribute__((visibility("hidden")))
 @property BOOL preservesSelectionWhenDisplayingContextMenu; // @synthesize preservesSelectionWhenDisplayingContextMenu=_preservesSelectionWhenDisplayingContextMenu;
 - (void).cxx_destruct;
 - (id)accessibilityActionNames;
+- (void)_notifyDelegateAboutSelectionChangeIfNeeded:(id)arg1;
+- (void)selectAll:(id)arg1;
+- (void)selectRowIndexes:(id)arg1 byExtendingSelection:(BOOL)arg2;
+- (void)deselectRow:(long long)arg1;
+- (void)deselectAll:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (struct CGRect)adjustScroll:(struct CGRect)arg1;
 - (void)draggedImage:(id)arg1 endedAt:(struct CGPoint)arg2 operation:(unsigned long long)arg3;

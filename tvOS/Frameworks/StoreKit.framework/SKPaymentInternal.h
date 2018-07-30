@@ -10,6 +10,7 @@
 
 @class NSData, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKPaymentInternal : NSObject <NSCopying>
 {
     NSString *_applicationUsername;
@@ -23,8 +24,8 @@
     _Bool _isStoreOriginated;
 }
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

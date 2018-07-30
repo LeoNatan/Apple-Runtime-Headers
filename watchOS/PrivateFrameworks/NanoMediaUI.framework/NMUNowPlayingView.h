@@ -8,21 +8,16 @@
 
 #import "UIGestureRecognizerDelegate.h"
 
-@class NMUNowPlayingIndicatorView, NMUNowPlayingTitlesView, NMUSecondaryTransportControlsView, NMUTransportControlsView, NMUVolumeControlsView, NSString, UIControl, UIImageView, UILabel, _NMUQueuedExtendedTransportControlsRequest;
+@class NMUNowPlayingIndicatorView, NMUNowPlayingTitlesView, NMUSecondaryTransportControlsView, NMUTransportControlsView, NMUVolumeControlsView, NSString, UIControl, UIImageView, _NMUQueuedExtendedTransportControlsRequest;
 
 @interface NMUNowPlayingView : UIView <UIGestureRecognizerDelegate>
 {
     int _style;
     UIView *_containerView;
     NMUNowPlayingIndicatorView *_playbackIndicatorView;
-    UILabel *_elapsedTimeLabel;
     UIControl *_titlesControl;
-    UIControl *_iconControl;
-    UILabel *_applicationNameLabel;
     struct CGRect _cachedTrackTitlesViewRect;
     _Bool _playbackIndicatorViewNeedsLayout;
-    _Bool _elapsedTimeLabelNeedsLayout;
-    _Bool _applicationNameLabelNeedsLayout;
     _Bool _isAnimatingExtendedTransportControls;
     _NMUQueuedExtendedTransportControlsRequest *_queuedExtendedTransportControlsRequest;
     _Bool _shouldUseExtendedTransportControls;
@@ -36,20 +31,18 @@
     NMUSecondaryTransportControlsView *_secondaryTransportControlsView;
     NMUNowPlayingTitlesView *_trackTitlesView;
     NMUVolumeControlsView *_volumeControlsView;
-    UIImageView *_applicationIconImageView;
-    NSString *_localizedApplicationName;
     NSString *_originName;
+    UIImageView *_applicationIconImageView;
     double _elapsedTime;
 }
 
+@property(retain, nonatomic) UIImageView *applicationIconImageView; // @synthesize applicationIconImageView=_applicationIconImageView;
 @property(nonatomic, getter=isHidingAllControls) _Bool hidingAllControls; // @synthesize hidingAllControls=_hidingAllControls;
 @property(nonatomic, getter=shouldShowOriginName) _Bool showsOriginName; // @synthesize showsOriginName=_showsOriginName;
 @property(copy, nonatomic) NSString *originName; // @synthesize originName=_originName;
-@property(copy, nonatomic) NSString *localizedApplicationName; // @synthesize localizedApplicationName=_localizedApplicationName;
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(nonatomic, getter=isAlwaysLive) _Bool alwaysLive; // @synthesize alwaysLive=_alwaysLive;
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
-@property(retain, nonatomic) UIImageView *applicationIconImageView; // @synthesize applicationIconImageView=_applicationIconImageView;
 @property(readonly, nonatomic) NMUVolumeControlsView *volumeControlsView; // @synthesize volumeControlsView=_volumeControlsView;
 @property(nonatomic, getter=isTrackTitlesInteractionEnabled) _Bool trackTitlesInteractionEnabled; // @synthesize trackTitlesInteractionEnabled=_trackTitlesInteractionEnabled;
 @property(retain, nonatomic) NMUNowPlayingTitlesView *trackTitlesView; // @synthesize trackTitlesView=_trackTitlesView;
@@ -58,27 +51,23 @@
 @property(retain, nonatomic) NMUTransportControlsView *transportControlsView; // @synthesize transportControlsView=_transportControlsView;
 @property(nonatomic) __weak id <NMUNowPlayingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)_usesSmallerBottomPadding;
+- (_Bool)_layoutForWorkoutApp;
 - (struct CGPoint)_positionForVolumeControlWithBounds:(struct CGRect)arg1;
 - (struct CGRect)_boundsForVolumeControl;
 - (struct CGPoint)_positionForCompactVolumeControlWithBounds:(struct CGRect)arg1;
 - (struct CGRect)_boundsForCompactVolumeControl;
 - (struct CGRect)_frameForSecondaryTransportControlsView;
+- (void)_updateLabelTextAttributes;
+- (float)_lastLineBaseLineOffset;
+- (float)_firstLineBaseLineOffset;
+- (_Bool)_showsTopLabel;
+- (void)_updateTitlesFirstLineLeading;
 - (void)_controlDidReceiveTouchCancel:(id)arg1;
 - (void)_controlDidReceiveTouchUpInside:(id)arg1;
 - (void)_controlDidReceiveTouchDown:(id)arg1;
 - (void)setHidingAllControls:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_updateLabelTextAttributes;
 - (void)setShouldUseExtendedTransportControls:(_Bool)arg1 animated:(_Bool)arg2;
-- (float)_transportControlsMarginTop;
-- (float)_lastLineBaseLineOffset;
-- (float)_firstLineBaseLineOffset;
 - (void)layoutSubviews;
-- (void)_setNeedsLocalizedApplicationNameLabelLayout;
-- (void)_setNeedsElapsedTimeLabelLayout;
-- (_Bool)_showsTopLabel;
-- (void)_updateTitlesFirstLineLeading;
-- (void)tintColorDidChange;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;
 - (id)initWithCoder:(id)arg1;

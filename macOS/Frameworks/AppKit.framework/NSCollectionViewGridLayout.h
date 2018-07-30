@@ -21,6 +21,7 @@
     id _glReserved[22];
 }
 
++ (BOOL)itemLayoutIsSequential;
 - (void)dealloc;
 - (BOOL)_shouldRelayoutImmediatelyForNewCollectionViewSize;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;

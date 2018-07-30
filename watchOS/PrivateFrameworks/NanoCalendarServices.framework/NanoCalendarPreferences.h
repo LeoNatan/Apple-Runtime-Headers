@@ -14,6 +14,7 @@
     NPSDomainAccessor *_domainAccessor;
 }
 
++ (_Bool)timeToLeaveAlertGenerationEnabledOnWatch;
 + (id)appDefaults;
 + (id)_calendarIDsForHashes:(id)arg1 inCalendars:(id)arg2;
 + (id)_selectedCalendarsFromAllCalendars:(id)arg1 deselectedCalendarHashes:(id)arg2;

@@ -10,25 +10,20 @@
 {
 }
 
-+ (id)_localizedMonthName:(id)arg1;
-+ (id)_localizedDayName:(id)arg1;
-+ (id)_localizePercentComplete:(double)arg1;
-+ (id)_localizeCount:(double)arg1;
 + (id)_localizeCount:(double)arg1 forKey:(id)arg2;
 + (id)_keyForTimeOfDayAtDate:(id)arg1;
 + (id)_keyForGoalTypes:(id)arg1;
 + (id)_keyForEventType:(id)arg1 aboveAverage:(_Bool)arg2;
 + (id)_keyForFirstGlanceType:(unsigned int)arg1;
-+ (id)_keyForGoalType:(unsigned int)arg1;
++ (id)_keyForGoalType:(int)arg1;
 + (int)_dailyAlternateIndexForDate:(id)arg1 numberOfAlternates:(int)arg2;
-+ (id)localizedDescriptionForGoalsCompleted:(id)arg1 singleGoalExceeded:(_Bool)arg2 date:(id)arg3 firstName:(id)arg4 isWheelchairUser:(_Bool)arg5;
-+ (id)localizedDescriptionForFirstGlanceType:(unsigned int)arg1 firstName:(id)arg2 date:(id)arg3 activitySummary:(id)arg4 isWheelchairUser:(_Bool)arg5;
++ (id)localizedDescriptionForRingsFirstGlanceType:(unsigned int)arg1 firstName:(id)arg2 date:(id)arg3 activitySummary:(id)arg4 isWheelchairUser:(_Bool)arg5;
 + (id)localizedTitleForFirstGlanceType:(unsigned int)arg1;
++ (id)localizedDescriptionForGoalsCompleted:(id)arg1 singleGoalExceeded:(_Bool)arg2 date:(id)arg3 firstName:(id)arg4 isWheelchairUser:(_Bool)arg5;
 + (id)localizedDescriptionForIncompleteGoalTypes:(id)arg1 percentComplete:(double)arg2 value:(double)arg3 valueRemaining:(double)arg4 date:(id)arg5 firstName:(id)arg6 energyUnit:(id)arg7 isWheelchairUser:(_Bool)arg8 progressEventIdentifier:(id)arg9 minutesToWalkToCompleteRing:(int)arg10 hasCurrentMoveStreak:(_Bool)arg11;
-+ (id)resultForKey:(id)arg1 possibleSuffixes:(id)arg2 finalSuffix:(id)arg3 firstName:(id)arg4;
-+ (id)resultForKey:(id)arg1 possibleSuffixes:(id)arg2 firstName:(id)arg3;
 + (id)localizedTitleForGoalsCompleted:(id)arg1 isWheelchairUser:(_Bool)arg2;
 + (id)localizedTitleForIncompleteGoalTypes:(id)arg1 percentComplete:(double)arg2 valueRemaining:(double)arg3 progressEventIdentifier:(id)arg4;
++ (id)resultForKey:(id)arg1 possibleSuffixes:(id)arg2 firstName:(id)arg3 hasRandomization:(_Bool)arg4;
 
 @end
 

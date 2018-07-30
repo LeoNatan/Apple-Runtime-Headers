@@ -6,10 +6,11 @@
 
 #import <GameCenterPrivateUIMac/GKSplittingDataSource.h>
 
-@class GKGame;
+@class GKGame, NSObject<GKTurnBasedMatchesDataSourceDelegate>;
 
 @interface GKTurnBasedMatchesDataSource : GKSplittingDataSource
 {
+    NSObject<GKTurnBasedMatchesDataSourceDelegate> *_delegateWeak;
     GKGame *_game;
     SEL _detailPressedAction;
     struct NSEdgeInsets _cellMarginInsets;
@@ -24,6 +25,7 @@
 - (void)configureCollectionView:(id)arg1;
 - (void)collectionViewWillBecomeActive:(id)arg1;
 - (void)configureDataSource;
+@property(nonatomic) NSObject<GKTurnBasedMatchesDataSourceDelegate> *delegate; // @synthesize delegate=_delegateWeak;
 - (void)dealloc;
 
 @end

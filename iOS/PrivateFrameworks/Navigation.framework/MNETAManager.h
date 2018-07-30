@@ -25,7 +25,7 @@
 @property(retain, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(nonatomic) double debugInitialRequestDelay; // @synthesize debugInitialRequestDelay=_debugInitialRequestDelay;
 @property(nonatomic) double requestInterval; // @synthesize requestInterval=_requestInterval;
-@property(retain, nonatomic) NSArray *routes; // @synthesize routes=_routes;
+@property(copy, nonatomic) NSArray *routes; // @synthesize routes=_routes;
 @property(nonatomic) __weak id <MNETAManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)etaUpdater:(id)arg1 updateRouteWithETATrafficUpdateResponse:(id)arg2 step:(id)arg3 percentOfCurrentStepRemaining:(double)arg4;
@@ -42,7 +42,7 @@
 - (void)startUpdateRequests;
 @property(nonatomic) unsigned long long maxAlternateRoutesCount;
 @property(nonatomic) double debugBackgroundTimeWindow;
-@property(retain, nonatomic) NSString *requestingAppIdentifier;
+@property(copy, nonatomic) NSString *requestingAppIdentifier;
 - (void)reset;
 - (void)dealloc;
 - (id)initWithDestination:(id)arg1 routeAttributes:(id)arg2 tracePlayer:(id)arg3;

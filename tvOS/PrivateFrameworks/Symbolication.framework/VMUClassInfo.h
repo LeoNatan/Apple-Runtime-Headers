@@ -70,6 +70,8 @@
 - (id)firstFieldWithName:(id)arg1;
 - (id)fieldAtOrBeforeOffset:(unsigned int)arg1;
 - (void)enumerateScanningLocationsForSize:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)enumeratePointerTypeFieldsWithBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateAllPointerFieldsWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateTypeFieldsWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateAllFieldsWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateClassHierarchyWithBlock:(CDUnknownBlockType)arg1;
@@ -83,7 +85,6 @@
 - (id)_copyWithInstanceSize:(unsigned int)arg1 superclassOffset:(unsigned int)arg2 asVariant:(_Bool)arg3 mutable:(_Bool)arg4;
 - (void)enumerateSublayoutsForSize:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)_logDescriptionWithSuperclasses:(_Bool)arg1 indentation:(int)arg2 toLogger:(CDUnknownBlockType)arg3;
-- (id)_ivarDescription:(unsigned int)arg1 withSpacing:(unsigned int)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

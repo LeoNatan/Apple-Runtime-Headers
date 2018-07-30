@@ -8,7 +8,7 @@
 
 #import "NSFastEnumeration.h"
 
-@class NSDictionary;
+@class NRPBDeviceDiff, NSDictionary;
 
 @interface NRDeviceDiff : NRDiffBase <NSFastEnumeration>
 {
@@ -22,8 +22,11 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+@property(readonly, nonatomic) NRPBDeviceDiff *protobuf;
+- (id)initWithProtobuf:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)_createIndex;
 - (id)allPropertyNames;
 - (unsigned long long)count;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;

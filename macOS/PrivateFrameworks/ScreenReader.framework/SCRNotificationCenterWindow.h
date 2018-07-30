@@ -12,9 +12,12 @@ __attribute__((visibility("hidden")))
 @interface SCRNotificationCenterWindow : SCRWindow <SCRApplicationDirectChildProtocol>
 {
     BOOL _isSiriWindow;
+    BOOL _isFaceTimeWindow;
 }
 
+@property(readonly, nonatomic) BOOL isFaceTimeWindow; // @synthesize isFaceTimeWindow=_isFaceTimeWindow;
 @property(readonly, nonatomic) BOOL isSiriWindow; // @synthesize isSiriWindow=_isSiriWindow;
+- (id)faceTimeElementToInitiallyFocusOn;
 - (id)siriElementToInitiallyFocusOn;
 - (id)onlyChildForFocusingIntoInArray:(id)arg1;
 - (BOOL)shouldFocusOntoChild:(id)arg1;

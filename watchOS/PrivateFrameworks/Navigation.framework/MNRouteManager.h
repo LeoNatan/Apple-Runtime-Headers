@@ -10,7 +10,6 @@
 
 @class GEOComposedRoute, GEOComposedWaypoint, GEOETARoute, GEORouteAttributes, GEORoutePreloader, GEORouteSet, MNActiveRouteDetails, MNActiveRouteInfo, MNRoutePlanningDetails, NSArray, NSMutableArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface MNRouteManager : NSObject <MNLocationManagerObserver>
 {
     GEORouteAttributes *_routeAttributes;

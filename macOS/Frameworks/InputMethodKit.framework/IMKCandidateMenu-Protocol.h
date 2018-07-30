@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class IMKCandidateList;
+@class IMKCandidate, IMKCandidateList;
 
 @protocol IMKCandidateMenu <NSObject>
+@property(readonly, nonatomic) IMKCandidateList *visibleCandidates;
+@property(retain, nonatomic) IMKCandidate *focusedCandidate;
 @property(readonly, nonatomic) BOOL isShown;
 @property(nonatomic) __weak id <IMKCandidateMenuDelegate> delegate;
 - (BOOL)selectCandidateNumbered:(unsigned long long)arg1;

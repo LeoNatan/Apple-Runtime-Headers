@@ -15,12 +15,16 @@
     id <FCFeedPersonalizing> _feedPersonalizer;
     NSMapTable *_feedItemScores;
     long long _sortOptions;
+    long long _configurationSet;
 }
 
 + (id)transformationWithPersonalizer:(id)arg1;
++ (id)transformationWithPersonalizer:(id)arg1 configurationSet:(long long)arg2;
 + (id)transformationWithPersonalizer:(id)arg1 sortOptions:(long long)arg2;
 + (id)transformationWithPersonalizer:(id)arg1 feedItemScores:(id)arg2;
 + (id)transformationWithPersonalizer:(id)arg1 feedItemScores:(id)arg2 sortOptions:(long long)arg3;
++ (id)transformationWithPersonalizer:(id)arg1 feedItemScores:(id)arg2 sortOptions:(long long)arg3 configurationSet:(long long)arg4;
+@property(nonatomic) long long configurationSet; // @synthesize configurationSet=_configurationSet;
 @property(nonatomic) long long sortOptions; // @synthesize sortOptions=_sortOptions;
 @property(retain, nonatomic) NSMapTable *feedItemScores; // @synthesize feedItemScores=_feedItemScores;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;

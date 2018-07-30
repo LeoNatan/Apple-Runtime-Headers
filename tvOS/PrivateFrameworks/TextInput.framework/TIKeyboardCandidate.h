@@ -14,6 +14,7 @@
 
 @interface TIKeyboardCandidate : NSObject <NSCopying, NSSecureCoding, TIKeyboardCandidateCoding>
 {
+    _Bool _responseCandidate;
     _Bool _isSendCurrentLocation;
     unsigned int _slotID;
     NSString *_alternativeText;
@@ -25,11 +26,13 @@
 + (int)type;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool isSendCurrentLocation; // @synthesize isSendCurrentLocation=_isSendCurrentLocation;
+@property(readonly, nonatomic, getter=isResponseCandidate) _Bool responseCandidate; // @synthesize responseCandidate=_responseCandidate;
 @property(nonatomic) unsigned long long indexForMetrics; // @synthesize indexForMetrics=_indexForMetrics;
 @property(nonatomic) unsigned long long customInfoType; // @synthesize customInfoType=_customInfoType;
 @property(nonatomic) unsigned int slotID; // @synthesize slotID=_slotID;
 @property(copy, nonatomic) NSString *annotationText; // @synthesize annotationText=_annotationText;
 @property(copy, nonatomic) NSString *alternativeText; // @synthesize alternativeText=_alternativeText;
+- (void).cxx_destruct;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 @property(readonly, nonatomic, getter=isSecureContentCandidate) _Bool secureContentCandidate;
@@ -52,16 +55,16 @@
 @property(readonly, nonatomic) long long cursorMovement;
 @property(readonly, nonatomic) unsigned long long deleteCount;
 @property(readonly, nonatomic) unsigned long long wordOriginFeedbackID;
-@property(readonly, nonatomic) NSString *label;
+@property(copy, nonatomic) NSString *label;
 @property(readonly, nonatomic) NSString *input;
 @property(readonly, nonatomic) _Bool isAddress;
-@property(readonly, retain, nonatomic) TIProactiveTrigger *proactiveTrigger;
+@property(readonly, nonatomic) NSString *responseKitCategory;
+@property(readonly, nonatomic) TIProactiveTrigger *proactiveTrigger;
 @property(readonly, nonatomic) NSString *candidate;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

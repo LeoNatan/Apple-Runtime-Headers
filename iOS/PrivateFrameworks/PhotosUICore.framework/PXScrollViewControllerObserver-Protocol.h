@@ -11,6 +11,9 @@
 @protocol PXScrollViewControllerObserver <NSObject>
 
 @optional
+- (void)scrollViewControllerDidEndScrollingAnimation:(PXScrollViewController *)arg1;
+- (void)scrollViewControllerWillBeginScrollingAnimation:(PXScrollViewController *)arg1 towardsContentEdges:(unsigned long long)arg2;
+- (void)scrollViewControllerContentInsetDidChange:(PXScrollViewController *)arg1;
 - (void)scrollViewControllerContentBoundsDidChange:(PXScrollViewController *)arg1;
 - (void)scrollViewControllerDidEndScrolling:(PXScrollViewController *)arg1;
 - (void)scrollViewControllerWillEndScrolling:(PXScrollViewController *)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

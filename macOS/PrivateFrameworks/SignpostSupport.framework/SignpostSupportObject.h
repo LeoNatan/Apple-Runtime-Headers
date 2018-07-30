@@ -17,6 +17,7 @@
     double _timebaseRatio;
 }
 
++ (id)headerWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
 + (id)serializationTypeNumber;
 @property(nonatomic) double timebaseRatio; // @synthesize timebaseRatio=_timebaseRatio;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
@@ -26,11 +27,28 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) float durationSeconds;
 @property(readonly, nonatomic) unsigned long long durationMachContinuousTime;
+@property(readonly, nonatomic) unsigned long long endNanoseconds;
 @property(readonly, nonatomic) unsigned long long endMachContinuousTime;
+@property(readonly, nonatomic) unsigned long long startNanoseconds;
 @property(readonly, nonatomic) unsigned long long startMachContinuousTime;
+@property(readonly, nonatomic) int tz_dsttime;
+@property(readonly, nonatomic) int tz_minuteswest;
+@property(readonly, nonatomic) int tv_usec;
+@property(readonly, nonatomic) long long tv_sec;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3;
+- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
+- (id)descriptionWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
+- (id)endWallTimeStringWithTimeZone:(id)arg1;
+- (id)startWallTimeStringWithTimeZone:(id)arg1;
+- (id)_wallTimeStringWithTimeZone:(id)arg1 isBegin:(BOOL)arg2;
+- (void)_adjustEndTimeVal:(struct timeval *)arg1;
+- (void)_adjustBeginTimeVal:(struct timeval *)arg1;
+- (BOOL)_populateTimeStruct:(struct time *)arg1 withTimeval:(struct timeval *)arg2 withTZString:(id)arg3;
+- (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;
+- (id)humanReadableDictionaryRepresentation;
 - (id)serializeableDictionary;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

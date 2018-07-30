@@ -7,6 +7,9 @@
 #import "NSObject.h"
 
 @interface NSObject (TVMLKitAdditions)
++ (id)tv_allowedLiteralJSONObjects;
+- (id)tv_toPropertiesJSDictionary;
+- (id)tv_JSCompatibleValue;
 - (void)tv_setAssociatedIKViewElement:(id)arg1;
 - (id)tv_associatedIKViewElement;
 - (_Bool)tv_superOfClass:(Class)arg1 respondsToSelector:(SEL)arg2;

@@ -10,6 +10,7 @@
 
 @class GEOAddress, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDLocalizedAddress : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

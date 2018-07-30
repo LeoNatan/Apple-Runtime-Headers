@@ -27,6 +27,7 @@
 - (id)personForUUID:(id)arg1;
 - (void)deleteFaces:(id)arg1;
 - (id)makeFace;
+@property(readonly, nonatomic) _Bool serverSupportsSuggestion;
 @property(readonly, nonatomic) _Bool serverSupportsGraphHome;
 @property(readonly, nonatomic) _Bool serverSupportsVision;
 - (void)dealloc;

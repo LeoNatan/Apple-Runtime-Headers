@@ -9,6 +9,7 @@
 @class NSImage, NSString;
 
 @interface PKPass (MacSupport)
+@property(readonly, getter=isLargeFormat) BOOL largeFormat;
 - (id)sharingItemURL;
 @property(readonly) NSString *windowTitle;
 @property(readonly) struct CGSize windowSize;

@@ -13,7 +13,7 @@
 #import "CNContactViewControllerAddContactPresenter.h"
 #import "CNContactViewControllerDelegate.h"
 
-@class CNAccountsAndGroupsDataSource, CNContactListViewController, CNContactStore, CNContactStoreDataSource, CNContactStyle, CNContactViewController, NSString, UIAlertController, UIKeyCommand;
+@class CNAccountsAndGroupsDataSource, CNContactListViewController, CNContactStore, CNContactStoreDataSource, CNContactStyle, CNContactViewController, CNUIUserActivityManager, NSString, UIAlertController, UIKeyCommand;
 
 @interface CNContactNavigationController : UINavigationController <CNContactListViewControllerDelegate, CNContactListViewControllerDelegateInternal, CNContactViewControllerDelegate, CNContactContentViewControllerDelegate, CNAccountsAndGroupsViewControllerDelegate, CNContactViewControllerAddContactPresenter>
 {
@@ -36,10 +36,12 @@
     UIKeyCommand *_addKeyCommand;
     UIAlertController *_facebookContactsAlertController;
     id <CNScheduler> _backgroundScheduler;
+    CNUIUserActivityManager *_activityManager;
 }
 
 + (id)newContactFormatter;
 @property(nonatomic) _Bool ignoresMapsData; // @synthesize ignoresMapsData=_ignoresMapsData;
+@property(retain, nonatomic) CNUIUserActivityManager *activityManager; // @synthesize activityManager=_activityManager;
 @property(nonatomic) _Bool hasPendingShowCard; // @synthesize hasPendingShowCard=_hasPendingShowCard;
 @property(retain, nonatomic) id <CNScheduler> backgroundScheduler; // @synthesize backgroundScheduler=_backgroundScheduler;
 @property(nonatomic) __weak UIAlertController *facebookContactsAlertController; // @synthesize facebookContactsAlertController=_facebookContactsAlertController;

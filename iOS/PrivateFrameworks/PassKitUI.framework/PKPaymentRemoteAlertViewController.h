@@ -14,6 +14,7 @@
 @interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate, SBSHardwareButtonEventConsuming>
 {
     PKPassGroupsViewController *_passGroupsViewController;
+    id _staticGlyphResources;
     PKPaymentService *_paymentService;
     PKFieldProperties *_fieldProperties;
     NSArray *_fieldPassUniqueIdentifiers;

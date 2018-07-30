@@ -9,6 +9,8 @@
 @class NSArray, NSString;
 
 @protocol _DASActivitySchedulerIntrospectingServer <NSObject>
+- (void)setBalance:(double)arg1 forBudgetWithName:(NSString *)arg2;
+- (void)remainingBalanceForBudgetWithName:(NSString *)arg1 withHandler:(void (^)(double))arg2;
 - (void)currentPredictionsWithHandler:(void (^)(NSDictionary *))arg1;
 - (void)startedActivities:(NSArray *)arg1;
 - (void)forceRunActivities:(NSArray *)arg1;

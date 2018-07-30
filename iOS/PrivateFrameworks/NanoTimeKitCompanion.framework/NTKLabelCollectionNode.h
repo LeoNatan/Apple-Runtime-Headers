@@ -17,14 +17,14 @@
     long long _font;
     double _fontSize;
     double _color;
-    struct LabelPosition *_positions;
+    const struct NTKLabelPosition *_positions;
 }
 
-+ (void)applyLabelPositions:(struct LabelPosition *)arg1 withCenter:(struct CGPoint)arg2 toNodes:(id)arg3;
-+ (void)applyLabelPositions:(struct LabelPosition *)arg1 toNodes:(id)arg2;
-+ (void)applyLabelPosition:(struct LabelPosition *)arg1 withCenter:(struct CGPoint)arg2 toNode:(id)arg3;
-+ (void)applyLabelPosition:(struct LabelPosition *)arg1 toNode:(id)arg2;
-@property(nonatomic) struct LabelPosition *positions; // @synthesize positions=_positions;
++ (void)applyLabelPositions:(const struct NTKLabelPosition *)arg1 withCenter:(struct CGPoint)arg2 toNodes:(id)arg3 forDevice:(id)arg4;
++ (void)applyLabelPositions:(const struct NTKLabelPosition *)arg1 toNodes:(id)arg2 forDevice:(id)arg3;
++ (void)applyLabelPosition:(const struct NTKLabelPosition *)arg1 withCenter:(struct CGPoint)arg2 toNode:(id)arg3 forDevice:(id)arg4;
++ (void)applyLabelPosition:(const struct NTKLabelPosition *)arg1 toNode:(id)arg2 forDevice:(id)arg3;
+@property(nonatomic) const struct NTKLabelPosition *positions; // @synthesize positions=_positions;
 @property(nonatomic) double color; // @synthesize color=_color;
 @property(nonatomic) _Bool paddedWithZeros; // @synthesize paddedWithZeros=_paddedWithZeros;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
@@ -38,7 +38,7 @@
 - (void)createSubNodes;
 - (void)updateLabelNodePositions;
 - (void)applyAppearanceFraction:(double)arg1 inverted:(_Bool)arg2;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 
 @end
 

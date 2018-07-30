@@ -8,19 +8,21 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ABPostalAddressCollectionViewItem : ABCollectionViewItem
 {
     NSArray *_countryMenuItems;
     unsigned long long _updateViewCallDepth;
 }
 
++ (unsigned long long)numberOfLinesInString:(id)arg1;
 - (void).cxx_destruct;
 - (double)yOffsetOfEditView;
 - (double)yOffsetOfValueView;
 - (id)editViewFocusView;
 - (id)nonEditViewFocusView;
 - (id)_labelMenuItems;
+- (id)storedPostalAddressComponentCorrespondingToAddressSubfield:(id)arg1;
+- (BOOL)didLineCountChangeBetweenStoredPostalAddressAndAddressSubfied:(id)arg1;
 - (void)addressSubfieldTextDidChange:(id)arg1;
 - (void)datumView:(id)arg1 textDidChange:(id)arg2;
 - (void)addressFormatChanged:(id)arg1;

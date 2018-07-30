@@ -68,8 +68,6 @@
 - (id)messageForMessageID:(id)arg1;
 - (void)_cancelQueryAndClearConsumer:(BOOL)arg1;
 - (void)cancelQuery;
-- (void)cancelOpen;
-- (void)cleanupSynchronously;
 - (void)dealloc;
 - (void)_invalidate;
 - (void)_messagesUpdated:(id)arg1;
@@ -88,8 +86,6 @@
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)async_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)saveSnippetsForMessages:(id)arg1;
-- (id)snippetsForMessages:(id)arg1;
-- (BOOL)supportsSnippets;
 - (id)filterMessagesByMembership:(id)arg1;
 - (id)mutableCopyOfAllMessages;
 - (void)_asynchronousCopyOfAllMessagesWithOptions:(id)arg1;
@@ -98,7 +94,6 @@
 - (id)copyOfAllMessages;
 - (unsigned long long)totalCount;
 - (unsigned int)_openOptions;
-- (void)cleanupAsynchronously;
 - (id)openSynchronouslyUpdatingMetadata:(BOOL)arg1 returnRetainedMessages:(BOOL)arg2;
 - (void)openSynchronouslyUpdatingMetadata:(BOOL)arg1;
 - (BOOL)_shouldUpdateColorsAndAttachmentsAfterOpening;

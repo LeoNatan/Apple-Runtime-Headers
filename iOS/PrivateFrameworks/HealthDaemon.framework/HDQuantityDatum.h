@@ -15,13 +15,17 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)quantityDataForDifferencesInData:(id)arg1 baseDatum:(id)arg2 unit:(id)arg3 differenceHandler:(CDUnknownBlockType)arg4 intervalHandler:(CDUnknownBlockType)arg5;
++ (id)hdt_quantityDatumForType:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 value:(double)arg4;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) HKQuantity *quantity; // @synthesize quantity=_quantity;
 - (void).cxx_destruct;
 - (id)datumForChangeSince:(id)arg1 newIdentifier:(id)arg2 newResumeContext:(id)arg3;
 - (id)description;
+- (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 quantity:(id)arg3 options:(unsigned long long)arg4 resumeContextProvider:(CDUnknownBlockType)arg5;
 - (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 resumeContext:(id)arg3 quantity:(id)arg4 options:(unsigned long long)arg5;
 - (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 resumeContext:(id)arg3 quantity:(id)arg4;
 

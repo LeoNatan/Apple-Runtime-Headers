@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSHashTable;
+#import "BSDescriptionProviding.h"
 
-@interface CSLPIWakeGestureMonitor : NSObject
+@class NSHashTable, NSString;
+
+@interface CSLPIWakeGestureMonitor : NSObject <BSDescriptionProviding>
 {
     NSHashTable *_screenOffFilteredObservers;
     NSHashTable *_filteredObservers;
@@ -19,6 +21,12 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 - (void)wakeGestureRecognized:(id)arg1;
 - (_Bool)_withObserversMutex_hasUnfilteredObserversWhenScreenOff;
 - (_Bool)hasUnfilteredObserversWhenScreenOff;
@@ -31,6 +39,10 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)init;
+
+// Remaining properties
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -18,6 +18,7 @@
     WBSCacheRetainReleasePolicy *_cachePolicy;
     NSMutableDictionary *_cacheSettings;
     WBSCoalescedAsynchronousWriter *_cacheSettingsWriter;
+    unsigned long long _fileProtectionOptions;
     _Bool _terminating;
     NSURL *_imageDirectoryURL;
     long long _imageType;
@@ -75,6 +76,7 @@
 - (void)setUpImageCache;
 - (id)_diskAccessQueueName;
 - (id)_internalQueueName;
+- (id)initWithImageDirectoryURL:(id)arg1 imageType:(long long)arg2 fileProtectionOptions:(unsigned long long)arg3;
 - (id)initWithImageDirectoryURL:(id)arg1 imageType:(long long)arg2;
 - (id)init;
 

@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSDoubleValueBinderPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSProgressIndicatorPlugin : _NSDoubleValueBinderPlugin
 {
 }

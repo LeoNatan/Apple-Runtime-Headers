@@ -6,14 +6,15 @@
 
 #import "NSObject.h"
 
-#import "NSCopying.h"
+#import "ARAnchorCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSUUID;
+@class NSString, NSUUID;
 
-@interface ARAnchor : NSObject <NSCopying, NSSecureCoding>
+@interface ARAnchor : NSObject <ARAnchorCopying, NSSecureCoding>
 {
     NSUUID *_identifier;
+    NSString *_name;
     double _lastUpdateTimestamp;
     // Error parsing type: {?="columns"[4]}, name: _transform
     // Error parsing type: {?="columns"[4]}, name: _referenceTransform
@@ -27,11 +28,13 @@
 // Error parsing type for property transform:
 // Property attributes: T{?=[4]},N,V_transform
 
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithAnchor:(id)arg1;
 - (id)debugQuickLookObject;
 - (id)description;
 - (id)_description:(_Bool)arg1;
@@ -39,6 +42,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 -     // Error parsing type: @88@0:8@16{?=[4]}24, name: initWithIdentifier:transform:
+-     // Error parsing type: @88@0:8@16{?=[4]}24, name: initWithName:transform:
 -     // Error parsing type: @80@0:8{?=[4]}16, name: initWithTransform:
 
 @end

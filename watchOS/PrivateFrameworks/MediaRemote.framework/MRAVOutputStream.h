@@ -14,9 +14,11 @@
     _Bool _channelOpen;
     _Bool _channelIsOpen;
     AVOutputContext *_outputContext;
+    long _connectionType;
 }
 
 @property(nonatomic) _Bool channelIsOpen; // @synthesize channelIsOpen=_channelIsOpen;
+@property(readonly, nonatomic) long connectionType; // @synthesize connectionType=_connectionType;
 @property(readonly, nonatomic, getter=isChannelOpen) _Bool channelOpen; // @synthesize channelOpen=_channelOpen;
 @property(readonly, nonatomic) AVOutputContextCommunicationChannel *communicationChannel; // @synthesize communicationChannel=_communicationChannel;
 @property(readonly, nonatomic) AVOutputContext *outputContext; // @synthesize outputContext=_outputContext;
@@ -30,7 +32,7 @@
 - (id)initToBuffer:(char *)arg1 capacity:(unsigned int)arg2;
 - (id)initToMemory;
 - (id)initWithCommunicationChannel:(id)arg1;
-- (id)initWithOutputContext:(id)arg1;
+- (id)initWithOutputContext:(id)arg1 connectionType:(long)arg2;
 
 @end
 

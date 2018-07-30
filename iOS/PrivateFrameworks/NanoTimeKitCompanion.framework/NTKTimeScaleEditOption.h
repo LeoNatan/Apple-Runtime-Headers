@@ -10,10 +10,10 @@
 {
 }
 
-+ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
-+ (id)_snapshotKeyForValue:(unsigned long long)arg1;
-+ (id)_orderedValues;
-+ (id)optionWithTimeScale:(unsigned long long)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (id)optionWithTimeScale:(unsigned long long)arg1 forDevice:(id)arg2;
 + (id)optionsDescription;
 - (id)_valueToFaceBundleStringDict;
 @property(readonly, nonatomic) unsigned long long timeScale;

@@ -28,6 +28,7 @@
 - (BOOL)watchPlatform;
 - (BOOL)iPhonePlatform;
 - (BOOL)simulatorPlatform;
+- (unsigned long long)deviceMemorySize;
 - (id)deviceClass;
 - (BOOL)supportsMultiUser;
 - (BOOL)supportsCoreRoutineCapability;

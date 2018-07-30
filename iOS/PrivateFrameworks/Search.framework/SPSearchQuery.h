@@ -43,8 +43,10 @@
     unsigned long long _whyQuery;
     unsigned long long _queryIdent;
     long long _contentFilters;
+    double _currentTime;
 }
 
+@property(readonly, nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(readonly, nonatomic) unsigned long long creationStamp; // @synthesize creationStamp=_creationStamp;
 @property(nonatomic) long long contentFilters; // @synthesize contentFilters=_contentFilters;
 @property(nonatomic) _Bool promoteParsecResults; // @synthesize promoteParsecResults=_promoteParsecResults;

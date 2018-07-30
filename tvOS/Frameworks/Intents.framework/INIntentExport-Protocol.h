@@ -14,7 +14,7 @@
 + (NSString *)typeName;
 @property(readonly, nonatomic) NSString *typeName;
 @property(readonly, nonatomic) NSString *intentId;
-@property(retain, nonatomic) NSString *identifier;
+@property(copy, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *launchId;
 @property(readonly, nonatomic) NSString *utteranceString;
 @property(copy, nonatomic) PBCodable *backingStore;

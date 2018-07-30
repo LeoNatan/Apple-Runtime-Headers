@@ -10,6 +10,7 @@
 
 @class GEOPDBrowseCategory, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDSearchResultsForCategoryEntry : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

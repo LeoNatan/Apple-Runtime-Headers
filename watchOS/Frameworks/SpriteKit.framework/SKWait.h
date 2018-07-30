@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 + (id)waitForDuration:(double)arg1;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

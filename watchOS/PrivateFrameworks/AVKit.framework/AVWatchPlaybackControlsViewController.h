@@ -32,6 +32,8 @@
     NSLayoutConstraint *_playPauseButtonAudioOnlyContentLayoutConstraint;
 }
 
++ (id)transportControlsAddTimeIntervalForSkipImage:(id)arg1;
++ (void)_setupLayoutSpec;
 - (void).cxx_destruct;
 - (void)slider:(id)arg1 didTapTouchTarget:(int)arg2;
 - (void)_volumeSliderValueChanged:(id)arg1;

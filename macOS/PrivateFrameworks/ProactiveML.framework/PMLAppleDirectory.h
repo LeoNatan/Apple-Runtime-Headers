@@ -6,23 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSData;
-
 @interface PMLAppleDirectory : NSObject
 {
-    NSData *_data;
-    const struct entry_s *_entries;
-    unsigned long long _nentries;
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (BOOL)isPhoneNumberInAppleDirectory:(id)arg1 withAnotherPhone:(id)arg2;
 - (BOOL)isPhoneNumberInAppleDirectory:(id)arg1;
 - (BOOL)isEmailInAppleDirectory:(id)arg1;
 - (BOOL)isEmailInAppleDirectory:(id)arg1 withAnotherEmail:(id)arg2;
 - (BOOL)isEmailInAppleDirectory:(id)arg1 withPhonenumber:(id)arg2;
-- (id)init;
 - (id)initWithPath:(id)arg1;
 - (id)initWithData:(id)arg1;
 

@@ -17,6 +17,9 @@
 
 - (void).cxx_destruct;
 - (void)getCurrentGeoServicesState:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)getGeoServicesCacheDirectoryPath;
+- (id)getHomeDirectoryPath;
+- (id)_getPathSynchronous:(const char *)arg1;
 - (id)init;
 
 // Remaining properties

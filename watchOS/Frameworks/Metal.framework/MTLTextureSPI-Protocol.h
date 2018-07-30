@@ -16,6 +16,7 @@
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4 swizzle:(unsigned int)arg5;
 
 @optional
+@property(readonly) unsigned long long resourceIndex;
 @property(readonly) unsigned int uniqueIdentifier;
 - (void)generateMipmapLevel:(unsigned int)arg1 slice:(unsigned int)arg2;
 - (_Bool)canGenerateMipmapLevels;

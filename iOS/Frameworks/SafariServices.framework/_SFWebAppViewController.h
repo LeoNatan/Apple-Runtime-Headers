@@ -20,6 +20,7 @@
 + (id)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) __weak id <_SFWebAppViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)didChangeFullScreen:(_Bool)arg1;
 - (void)initialLoadDidRedirectToURL:(id)arg1;
 - (void)didDecideCookieSharingForURL:(id)arg1 shouldCancel:(_Bool)arg2;
 - (void)willOpenURLInHostApplication:(id)arg1;

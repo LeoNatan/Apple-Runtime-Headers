@@ -77,7 +77,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)_serviceStateForStateType:(unsigned long long)arg1;
 - (void)stateManager:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)stateManager:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
-- (void)acquireDesiredResourcePolicy;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;
@@ -88,6 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
 - (void)setIsConnectedToCarplay:(BOOL)arg1;
 - (void)setGuidancePromptsEnabled:(BOOL)arg1;
+- (void)setHeadingOrientation:(int)arg1;
 - (void)setCurrentAudioOutputSetting:(id)arg1;
 - (void)setHFPPreference:(BOOL)arg1 forSetting:(id)arg2;
 - (void)stopCurrentGuidancePrompt;

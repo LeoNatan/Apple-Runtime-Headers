@@ -9,7 +9,7 @@
 #import "CPLAbstractObject.h"
 #import "CPLEngineComponent.h"
 
-@class CPLEngineChangePipe, CPLEngineClientCache, CPLEngineCloudCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineOutgoingResources, CPLEnginePushRepository, CPLEngineQuarantinedRecords, CPLEngineRemappedDeletes, CPLEngineResourceDownloadQueue, CPLEngineResourceStorage, CPLEngineStatusCenter, CPLEngineTransientRepository, CPLPlatformObject, CPLResetTracker, NSArray, NSDate, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSSet, NSString, NSURL;
+@class CPLChangeBatch, CPLEngineChangePipe, CPLEngineClientCache, CPLEngineCloudCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineOutgoingResources, CPLEnginePushRepository, CPLEngineQuarantinedRecords, CPLEngineRemappedDeletes, CPLEngineResourceDownloadQueue, CPLEngineResourceStorage, CPLEngineScopeCleanupTasks, CPLEngineScopeStorage, CPLEngineStatusCenter, CPLEngineTransientRepository, CPLPlatformObject, CPLResetTracker, NSArray, NSDate, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSSet, NSString, NSURL;
 
 @interface CPLEngineStore : NSObject <CPLAbstractObject, CPLEngineComponent>
 {
@@ -21,17 +21,31 @@
     NSURL *_resetEventsURL;
     NSMutableArray *_resetEvents;
     CPLResetTracker *_pendingTracker;
-    NSSet *_lastInvalidRecordIdentifiers;
+    CPLChangeBatch *_unacknowledgedBatch;
+    BOOL _discardUnacknowledgedBatchOnTransactionFail;
+    NSSet *_lastInvalidRecordScopedIdentifiers;
     NSDate *_lastInvalidRecordsDate;
     NSObject<OS_dispatch_source> *_pendingUpdateTimer;
     NSObject<OS_dispatch_queue> *_pendingUpdateQueue;
     double _pendingUpdateInterval;
     BOOL _unschedulePendingUpdateApplyOnWriteSuccess;
     BOOL _schedulePendingUpdateApplyOnWriteSuccess;
-    BOOL _supportedFeatureVersionIsMostRecent;
+    BOOL _scheduleSetupOnWriteSuccess;
+    BOOL _scheduleDisabledFeatureUpdateOnWriteSuccess;
+    BOOL _schedulePullFromClient;
+    NSObject<OS_dispatch_queue> *_shouldSyncScopeListQueue;
+    BOOL _shouldEnableScopeListSyncOnWriteSuccess;
+    NSArray *_disabledFeatures;
+    BOOL _hasUpdatedDisabledFeatures;
+    BOOL _isUpdatingDisabledFeatures;
+    BOOL _shouldTriggerCompleteResetSyncAfterDisabledFeaturesUpdate;
+    BOOL _shouldTriggerResetSyncAfterDisabledFeaturesUpdate;
+    BOOL _shouldSyncScopeList;
     CPLPlatformObject *_platformObject;
     CPLEngineLibrary *_engineLibrary;
     CPLEnginePushRepository *_pushRepository;
+    CPLEngineScopeStorage *_scopes;
+    CPLEngineScopeCleanupTasks *_cleanupTasks;
     CPLEngineChangePipe *_pullQueue;
     CPLEngineIDMapping *_idMapping;
     CPLEngineClientCache *_clientCache;
@@ -48,8 +62,8 @@
 
 + (id)platformImplementationProtocol;
 + (id)stateDescriptionForState:(unsigned long long)arg1;
++ (id)storageNames;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-@property(readonly, nonatomic) BOOL supportedFeatureVersionIsMostRecent; // @synthesize supportedFeatureVersionIsMostRecent=_supportedFeatureVersionIsMostRecent;
 @property(readonly, nonatomic) CPLEngineStatusCenter *statusCenter; // @synthesize statusCenter=_statusCenter;
 @property(readonly, nonatomic) CPLEngineQuarantinedRecords *quarantinedRecords; // @synthesize quarantinedRecords=_quarantinedRecords;
 @property(readonly, nonatomic) CPLEngineRemappedDeletes *remappedDeletes; // @synthesize remappedDeletes=_remappedDeletes;
@@ -61,6 +75,8 @@
 @property(readonly, nonatomic) CPLEngineClientCache *clientCache; // @synthesize clientCache=_clientCache;
 @property(readonly, nonatomic) CPLEngineIDMapping *idMapping; // @synthesize idMapping=_idMapping;
 @property(readonly, nonatomic) CPLEngineChangePipe *pullQueue; // @synthesize pullQueue=_pullQueue;
+@property(readonly, nonatomic) CPLEngineScopeCleanupTasks *cleanupTasks; // @synthesize cleanupTasks=_cleanupTasks;
+@property(readonly, nonatomic) CPLEngineScopeStorage *scopes; // @synthesize scopes=_scopes;
 @property(readonly, nonatomic) CPLEnginePushRepository *pushRepository; // @synthesize pushRepository=_pushRepository;
 @property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
@@ -76,7 +92,17 @@
 - (void)_setTransactionOnCurrentThread:(id)arg1;
 - (id)_currentTransaction;
 @property(readonly, copy) NSString *description;
+- (BOOL)setShouldUpdateDisabledFeaturesWithError:(id *)arg1;
+@property(readonly, nonatomic) BOOL shouldUpdateDisabledFeatures;
+@property(readonly, nonatomic) NSArray *disabledFeatures;
+- (BOOL)isFeatureDisabled:(id)arg1;
+- (BOOL)updateDisabledFeatures:(id)arg1 didReset:(char *)arg2 error:(id *)arg3;
+- (id)_storedDisabledFeatures;
+- (id)unacknowledgedChangeWithLocalScopedIdentifier:(id)arg1;
+- (void)dropUnacknowledgedBatch;
+- (void)keepUnacknowledgedBatch:(id)arg1;
 - (BOOL)checkExpectedLibraryVersion:(id)arg1 error:(id *)arg2;
+- (BOOL)forceApplyPendingChangeSessionUpdateWithError:(id *)arg1;
 - (BOOL)applyPreviousChangeSessionUpdateWithExpectedLibraryVersion:(id)arg1 error:(id *)arg2;
 - (BOOL)beginChangeSession:(id)arg1 withLibraryVersion:(id)arg2 resetTracker:(id)arg3 error:(id *)arg4;
 - (BOOL)storeChangeSessionUpdate:(id)arg1 error:(id *)arg2;
@@ -92,17 +118,19 @@
 - (id)clientCacheIdentifier;
 - (BOOL)storeLastQuarantineCountReportDate:(id)arg1 error:(id *)arg2;
 - (id)lastQuarantineCountReportDate;
-- (BOOL)storeSupportedFeatureVersionInLastSync:(unsigned long long)arg1 error:(id *)arg2;
-- (unsigned long long)supportedFeatureVersionInLastSync;
-- (BOOL)storeLibraryZoneName:(id)arg1 error:(id *)arg2;
-- (id)libraryZoneName;
 - (BOOL)storeUserIdentifier:(id)arg1 error:(id *)arg2;
 - (id)userIdentifier;
 @property(readonly, nonatomic) BOOL pushRepositoryIsFull;
 - (id)createNewLibraryVersion;
 - (id)libraryVersion;
+@property(readonly) BOOL shouldSyncScopeList; // @synthesize shouldSyncScopeList=_shouldSyncScopeList;
+- (void)_updateShouldSyncScopeList:(BOOL)arg1;
+- (BOOL)_shouldSyncScopeListWithOptions:(unsigned long long)arg1;
+- (BOOL)updateLibraryOptions:(unsigned long long)arg1 error:(id *)arg2;
+- (unsigned long long)libraryOptions;
 - (BOOL)storeLibraryVersion:(id)arg1 withError:(id *)arg2;
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)performBarrier;
 - (void)performBatchedWriteTransactionBarrier;
 - (void)performBatchedWriteTransactionWithBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_reallyPerformBatchedTransactionsLocked;
@@ -114,18 +142,24 @@
 - (id)performReadTransactionWithBlock:(CDUnknownBlockType)arg1;
 - (void)openWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_performTransaction:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (void)noteInvalidRecordIdentifiersInPushSession:(id)arg1;
+- (void)noteInvalidRecordScopedIdentifiersInPushSession:(id)arg1;
 - (void)noteOtherResetEvent:(id)arg1 cause:(id)arg2;
 - (BOOL)resetSyncAnchorWithCause:(id)arg1 error:(id *)arg2;
+- (BOOL)resetCompleteSyncStateIncludingIDMappingWithCause:(id)arg1 error:(id *)arg2;
 - (BOOL)resetCompleteSyncStateWithCause:(id)arg1 error:(id *)arg2;
 - (BOOL)resetLocalSyncStateWithCause:(id)arg1 date:(id)arg2 error:(id *)arg3;
 - (BOOL)resetLocalSyncStateWithCause:(id)arg1 error:(id *)arg2;
+- (BOOL)_resetSyncAnchorWithCause:(id)arg1 scope:(id)arg2 error:(id *)arg3;
+- (BOOL)_resetCompleteSyncStateIncludingIDMappingWithCause:(id)arg1 scope:(id)arg2 error:(id *)arg3;
+- (BOOL)_resetCompleteSyncStateWithCause:(id)arg1 scope:(id)arg2 error:(id *)arg3;
+- (BOOL)_resetLocalSyncStateWithCause:(id)arg1 scope:(id)arg2 date:(id)arg3 error:(id *)arg4;
+- (BOOL)_resetGlobalStateWithError:(id *)arg1;
 - (id)_resetEventsDescriptions;
+@property(readonly, nonatomic) BOOL hasPendingResetSync;
 - (void)noteResetSyncFinished;
-- (void)_storeResetEvent:(id)arg1 date:(id)arg2 cause:(id)arg3;
-- (void)_storeResetEvent:(id)arg1 date:(id)arg2 pending:(BOOL)arg3 cause:(id)arg4;
+- (void)_storeResetEvent:(id)arg1 scopeIdentifier:(id)arg2 date:(id)arg3 cause:(id)arg4;
+- (void)_storeResetEvent:(id)arg1 scopeIdentifier:(id)arg2 date:(id)arg3 pending:(BOOL)arg4 cause:(id)arg5;
 - (void)_loadResetEvents;
-- (BOOL)_resetLocalSyncStateWithError:(id *)arg1;
 - (void)registerStorage:(id)arg1;
 @property(readonly, nonatomic) NSArray *storages;
 - (void)dealloc;

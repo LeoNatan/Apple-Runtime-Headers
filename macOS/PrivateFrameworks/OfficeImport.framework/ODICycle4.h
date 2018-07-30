@@ -6,7 +6,6 @@
 
 #import <OfficeImport/ODICycle3.h>
 
-__attribute__((visibility("hidden")))
 @interface ODICycle4 : ODICycle3
 {
 }

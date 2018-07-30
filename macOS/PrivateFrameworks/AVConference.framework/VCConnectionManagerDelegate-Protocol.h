@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @protocol VCConnectionManagerDelegate <NSObject>
+- (void)updateParticipantGenerationCounter:(unsigned char)arg1;
 - (void)didEnableDuplication:(BOOL)arg1 activeConnection:(id <VCConnectionProtocol>)arg2;
 - (void)connectionCallback:(id <VCConnectionProtocol>)arg1 isInitialConnection:(BOOL)arg2;
 - (void)primaryConnectionChanged:(id <VCConnectionProtocol>)arg1 oldPrimaryConnection:(id <VCConnectionProtocol>)arg2;

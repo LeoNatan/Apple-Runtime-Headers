@@ -27,6 +27,7 @@
 - (void)setProfileNumber:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *profileNumber;
 - (id)initWithProfileNumber:(id)arg1 profileName:(id)arg2;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 @property(readonly, copy, nonatomic) NSString *profileLabel;

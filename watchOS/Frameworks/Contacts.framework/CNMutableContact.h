@@ -25,6 +25,7 @@
 - (void)setNilValueForKey:(id)arg1;
 @property(copy, nonatomic) NSDictionary *storeInfo; // @dynamic storeInfo;
 @property(copy, nonatomic) NSString *storeIdentifier; // @dynamic storeIdentifier;
+@property(copy, nonatomic) NSString *preferredChannel;
 @property(copy, nonatomic) NSString *preferredApplePersonaIdentifier;
 @property(copy, nonatomic) NSString *preferredLikenessSource;
 @property(copy, nonatomic) NSArray *calendarURIs; // @dynamic calendarURIs;

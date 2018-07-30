@@ -8,6 +8,7 @@
 
 @class PGChevronView;
 
+__attribute__((visibility("hidden")))
 @interface PGStashedView : UIView
 {
     PGChevronView *_chevronViewLeftColorBurn;

@@ -7,12 +7,14 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBTransferMoneyIntentResponse.h"
 
-@class NSString, PBUnknownFields, _INPBCurrencyAmountValue, _INPBDateTimeRange, _INPBFinancialAccountValue, _INPBPaymentAmountValue;
+@class NSString, _INPBCurrencyAmountValue, _INPBDateTimeRange, _INPBFinancialAccountValue, _INPBPaymentAmountValue;
 
-@interface _INPBTransferMoneyIntentResponse : PBCodable <NSCopying>
+@interface _INPBTransferMoneyIntentResponse : PBCodable <_INPBTransferMoneyIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBFinancialAccountValue *_fromAccount;
     _INPBFinancialAccountValue *_toAccount;
     _INPBPaymentAmountValue *_transactionAmount;
@@ -21,29 +23,30 @@
     _INPBCurrencyAmountValue *_transferFee;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBCurrencyAmountValue *transferFee; // @synthesize transferFee=_transferFee;
-@property(retain, nonatomic) NSString *transactionNote; // @synthesize transactionNote=_transactionNote;
 @property(retain, nonatomic) _INPBDateTimeRange *transactionScheduledDate; // @synthesize transactionScheduledDate=_transactionScheduledDate;
+@property(copy, nonatomic) NSString *transactionNote; // @synthesize transactionNote=_transactionNote;
 @property(retain, nonatomic) _INPBPaymentAmountValue *transactionAmount; // @synthesize transactionAmount=_transactionAmount;
 @property(retain, nonatomic) _INPBFinancialAccountValue *toAccount; // @synthesize toAccount=_toAccount;
 @property(retain, nonatomic) _INPBFinancialAccountValue *fromAccount; // @synthesize fromAccount=_fromAccount;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasTransferFee;
-@property(readonly, nonatomic) _Bool hasTransactionNote;
 @property(readonly, nonatomic) _Bool hasTransactionScheduledDate;
+@property(readonly, nonatomic) _Bool hasTransactionNote;
 @property(readonly, nonatomic) _Bool hasTransactionAmount;
 @property(readonly, nonatomic) _Bool hasToAccount;
 @property(readonly, nonatomic) _Bool hasFromAccount;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

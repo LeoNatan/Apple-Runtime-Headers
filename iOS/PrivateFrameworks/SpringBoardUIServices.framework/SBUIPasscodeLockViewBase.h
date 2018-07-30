@@ -8,12 +8,15 @@
 
 #import "SBFLegibilitySettingsProviderDelegate.h"
 #import "SBUIBiometricResourceObserver.h"
+#import "SBUIPasscodeBiometricAuthenticationViewDelegate.h"
+#import "SBUIPasscodeBiometricAuthenticationViewLayoutDelegate.h"
 #import "SBUIPasscodeLockView.h"
 #import "SBUIPasscodeLockView_Internal.h"
+#import "SBUIProudLockContainerViewControllerLockStatusProvider.h"
 
-@class NSLayoutConstraint, NSMutableSet, NSString, NSTimer, PKGlyphView, SBUIButton, SBUIInteractionForwardingView, SBUIPasscodeEntryField, SBUIPasscodePillButton, SBUIProudLockIconView, UIColor, UILabel, UINotificationFeedbackGenerator, _UIKeyboardFeedbackGenerator, _UILegibilitySettings;
+@class NSMutableSet, NSString, NSTimer, SBUIPasscodeBiometricAuthenticationView, SBUIPasscodeEntryField, SBUIProudLockContainerViewController, UIColor, UINotificationFeedbackGenerator, _UIKeyboardFeedbackGenerator, _UILegibilitySettings;
 
-@interface SBUIPasscodeLockViewBase : UIView <SBUIBiometricResourceObserver, SBFLegibilitySettingsProviderDelegate, SBUIPasscodeLockView_Internal, SBUIPasscodeLockView>
+@interface SBUIPasscodeLockViewBase : UIView <SBUIBiometricResourceObserver, SBFLegibilitySettingsProviderDelegate, SBUIPasscodeBiometricAuthenticationViewLayoutDelegate, SBUIPasscodeBiometricAuthenticationViewDelegate, SBUIProudLockContainerViewControllerLockStatusProvider, SBUIPasscodeLockView_Internal, SBUIPasscodeLockView>
 {
     _Bool _needStatusTextUpdate;
     _Bool _playsKeypadSounds;
@@ -21,13 +24,11 @@
     _Bool _becameVisible;
     _Bool _usesBiometricPresentation;
     _Bool _allowsAutomaticBiometricPresentationTransition;
-    _Bool _biometricAncillaryButtonsVisible;
     _Bool _showsProudLock;
     _Bool _proudLockShowsBiometricStates;
     _Bool _suppressTitleText;
     double _backgroundAlpha;
     UIColor *_customBackgroundColor;
-    NSString *_unlockDestination;
     id <SBFLegibilitySettingsProvider> _backgroundLegibilitySettingsProvider;
     double _currentBacklightLevel;
     _UILegibilitySettings *_legibilitySettings;
@@ -41,20 +42,12 @@
     _Bool _pendingBioUnlock;
     int _currentPendingBioUnlockToken;
     UIView *_passcodeAuthenticationView;
-    SBUIInteractionForwardingView *_biometricAuthenticationView;
-    SBUIButton *_touchIDUsePasscodeButton;
-    SBUIPasscodePillButton *_faceIDUsePasscodeButton;
-    PKGlyphView *_touchIDGlyphView;
-    SBUIButton *_emergencyCallButton;
-    SBUIButton *_cancelButton;
-    UILabel *_touchIDReason;
-    UILabel *_faceIDLabel;
-    UILabel *_faceIDReason;
-    SBUIProudLockIconView *_proudLockView;
-    SBUIProudLockIconView *_overrideProudLockView;
-    NSLayoutConstraint *_faceIDLabelFaceIDReasonBaselineConstraint;
+    SBUIPasscodeBiometricAuthenticationView *_biometricAuthenticationView;
+    SBUIProudLockContainerViewController *_proudLockContainerViewController;
+    SBUIProudLockContainerViewController *_overrideProudLockContainerViewController;
     _Bool _screenOn;
     _Bool _shouldResetForFailedPasscodeAttempt;
+    _Bool _isTransitioning;
     int _style;
     id <SBUIPasscodeLockViewDelegate> _delegate;
     SBUIPasscodeEntryField *_entryField;
@@ -66,10 +59,14 @@
     UINotificationFeedbackGenerator *_authenticationFeedbackBehavior;
     NSString *_statusText;
     NSString *_statusSubtitleText;
+    CDStruct_4613c6c6 _proudLockConfiguration;
+    CDStruct_930a33b1 _transitionContext;
 }
 
 @property(copy, nonatomic, getter=_statusSubtitleText, setter=_setStatusSubtitleText:) NSString *statusSubtitleText; // @synthesize statusSubtitleText=_statusSubtitleText;
 @property(copy, nonatomic, getter=_statusText, setter=_setStatusText:) NSString *statusText; // @synthesize statusText=_statusText;
+@property(nonatomic) CDStruct_930a33b1 transitionContext; // @synthesize transitionContext=_transitionContext;
+@property(nonatomic) _Bool isTransitioning; // @synthesize isTransitioning=_isTransitioning;
 @property(retain, nonatomic) UINotificationFeedbackGenerator *authenticationFeedbackBehavior; // @synthesize authenticationFeedbackBehavior=_authenticationFeedbackBehavior;
 @property(retain, nonatomic) NSTimer *screenBrightnessChangedTimer; // @synthesize screenBrightnessChangedTimer=_screenBrightnessChangedTimer;
 @property(nonatomic, getter=_statusState, setter=_setStatusState:) unsigned long long statusState; // @synthesize statusState=_statusState;
@@ -77,10 +74,10 @@
 @property(retain, nonatomic) _UIKeyboardFeedbackGenerator *keyboardFeedbackBehavior; // @synthesize keyboardFeedbackBehavior=_keyboardFeedbackBehavior;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) id <SBUIBiometricResource> biometricResource; // @synthesize biometricResource=_biometricResource;
+@property(nonatomic) CDStruct_4613c6c6 proudLockConfiguration; // @synthesize proudLockConfiguration=_proudLockConfiguration;
 @property(retain, nonatomic) UIView *biometricAuthenticationView; // @synthesize biometricAuthenticationView=_biometricAuthenticationView;
 @property(retain, nonatomic) UIView *passcodeAuthenticationView; // @synthesize passcodeAuthenticationView=_passcodeAuthenticationView;
-@property(readonly, nonatomic) long long passcodeLockViewState; // @synthesize passcodeLockViewState=_passcodeLockViewState;
-@property(copy, nonatomic) NSString *unlockDestination; // @synthesize unlockDestination=_unlockDestination;
+@property(nonatomic) long long passcodeLockViewState; // @synthesize passcodeLockViewState=_passcodeLockViewState;
 @property(nonatomic, getter=isBiometricAuthenticationAllowed) _Bool biometricAuthenticationAllowed; // @synthesize biometricAuthenticationAllowed=_isBiometricAuthenticationAllowed;
 @property(nonatomic, getter=isScreenOn) _Bool screenOn; // @synthesize screenOn=_screenOn;
 @property(nonatomic, getter=_luminosityBoost, setter=_setLuminosityBoost:) double luminosityBoost; // @synthesize luminosityBoost=_luminanceBoost;
@@ -88,26 +85,29 @@
 @property(retain, nonatomic, getter=_entryField, setter=_setEntryField:) SBUIPasscodeEntryField *_entryField; // @synthesize _entryField;
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) double backgroundAlpha; // @synthesize backgroundAlpha=_backgroundAlpha;
-@property(retain, nonatomic) SBUIProudLockIconView *overrideProudLockView; // @synthesize overrideProudLockView=_overrideProudLockView;
+@property(retain, nonatomic) SBUIProudLockContainerViewController *overrideProudLockContainerViewController; // @synthesize overrideProudLockContainerViewController=_overrideProudLockContainerViewController;
 @property(nonatomic) _Bool proudLockShowsBiometricStates; // @synthesize proudLockShowsBiometricStates=_proudLockShowsBiometricStates;
 @property(nonatomic) _Bool showsProudLock; // @synthesize showsProudLock=_showsProudLock;
-@property(nonatomic) _Bool biometricPresentationAncillaryButtonsVisible; // @synthesize biometricPresentationAncillaryButtonsVisible=_biometricAncillaryButtonsVisible;
 @property(nonatomic) _Bool allowsAutomaticBiometricPresentationTransition; // @synthesize allowsAutomaticBiometricPresentationTransition=_allowsAutomaticBiometricPresentationTransition;
 @property(nonatomic) _Bool usesBiometricPresentation; // @synthesize usesBiometricPresentation=_usesBiometricPresentation;
 @property(nonatomic) _Bool showsStatusField; // @synthesize showsStatusField=_showsStatusField;
 @property(nonatomic) __weak id <SBUIPasscodeLockViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)passcodeBiometricAuthenticationViewEmergencyCallButtonHit:(id)arg1;
+- (void)passcodeBiometricAuthenticationViewCancelButtonHit:(id)arg1;
+- (void)passcodeBiometricAuthenticationViewUsePasscodeButtonHit:(id)arg1;
+- (double)passcodeBiometricAuthenticationViewNumberPadAncillaryButtonOffsetFromTopOfScreen:(id)arg1;
+- (double)passcodeBiometricAuthenticationViewSideButtonsOffsetFromCenter:(id)arg1;
 - (void)biometricResource:(id)arg1 observeEvent:(unsigned long long)arg2;
 - (void)biometricResource:(id)arg1 matchingEnabledDidChange:(_Bool)arg2;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
-- (double)_leadingForFaceIDReason;
 - (void)_updateBiometricLayout;
 - (void)_updateBiometricGlyphForBioEvent:(unsigned long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateStatusTextForBioEvent:(unsigned long long)arg1 animated:(_Bool)arg2;
-- (void)_updateProudLockForBioEvent:(unsigned long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_updateProudLockForBioEvent:(unsigned long long)arg1;
+- (void)_updateProudLockForBioUnlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_notifyDelegatePasscodeEnteredViaMesa;
 - (void)_handleBiometricAuthentication;
-- (_Bool)_shouldAnimationDriveBiometricAuthenticationTiming;
 - (void)_resetForFailedBiometricAttempt;
 - (void)_resetProudLockAndTitleTextForFailedBiometricAttempt;
 - (void)_resetStatusText;
@@ -117,10 +117,9 @@
 - (void)_screenBrightnessReallyDidChange;
 - (void)_clearBrightnessChangeTimer;
 - (_Bool)_proudLockShowingBiometricStates;
-- (void)_noteContentSizeCategoryDidChange;
+- (_Bool)_swipeToRetryEnabled;
 - (void)_noteScreenBrightnessDidChange;
 - (void)_playAuthenticationFeedbackForSuccess:(_Bool)arg1 jiggleLock:(_Bool)arg2;
-- (void)_setProudLockViewState:(long long)arg1 animated:(_Bool)arg2;
 - (void)_noteDeviceHasBeenUnlockedOnceSinceBoot:(_Bool)arg1;
 - (void)_resetForFailedPasscode:(_Bool)arg1;
 - (id)_defaultStatusText;
@@ -162,23 +161,29 @@
 - (void)resetForFailedPasscode;
 - (void)dealloc;
 - (void)willMoveToSuperview:(id)arg1;
-- (void)_emergencyCallButtonHit;
-- (void)_cancelButtonHit;
-- (void)_usePasscodeButtonHit;
-- (void)updateForTransitionToPasscodeView:(_Bool)arg1;
+- (void)updateForTransitionToPasscodeView:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)willTransitionToPasscodeView;
-- (void)_setFaceIDUsePasscodeButtonVisible:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_advanceToPasscode;
+- (void)_advanceToPasscodeForMatchFailure:(_Bool)arg1;
 - (void)_advanceToPasscodeTimerFired;
 - (void)_disarmAdvanceToPasscodeTimer;
 - (void)_armAdvanceToPasscodeTimer;
+- (double)_biometricViewAlphaFromPasscodeLockViewState:(long long)arg1;
+- (void)_updateBiometricAlpha;
+- (void)didEndTransitionToState:(long long)arg1;
+- (void)willEndTransitionToState:(long long)arg1;
+- (void)updateTransitionWithProgress:(double)arg1;
+- (void)beginTransitionToState:(long long)arg1;
+@property(readonly, nonatomic) _Bool hasPasscodeSet;
+@property(readonly, nonatomic) _Bool isBiometricLockedOut;
 - (void)_setPasscodeLockViewState:(long long)arg1 animated:(_Bool)arg2;
-- (id)_proudLockViewForStateUpdates;
+- (void)setPasscodeLockViewState:(long long)arg1 animated:(_Bool)arg2;
+- (id)_proudLockContainerViewControllerToUpdate;
 - (_Bool)_supportsProudLock;
-- (void)setBiometricPresentationAncillaryButtonsVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_applyProudLockContainerViewControllerConfiguration;
+@property(nonatomic) _Bool biometricPresentationAncillaryButtonsVisible;
 @property(nonatomic) _Bool showsCancelButton;
 @property(nonatomic) _Bool showsEmergencyCallButton;
-- (void)_sizeAuthReasonLable:(id)arg1;
+@property(copy, nonatomic) NSString *unlockDestination;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

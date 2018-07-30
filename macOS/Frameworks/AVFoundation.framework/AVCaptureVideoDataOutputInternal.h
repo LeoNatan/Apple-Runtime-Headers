@@ -8,6 +8,7 @@
 
 @class AVCaptureVideoSettings, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureVideoDataOutputInternal : NSObject
 {
     id <AVCaptureVideoDataOutputSampleBufferDelegate> delegate;

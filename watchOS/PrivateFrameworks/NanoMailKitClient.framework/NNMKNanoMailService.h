@@ -15,6 +15,7 @@
 
 @interface NNMKNanoMailService : NSObject <NNMKNanoMailServiceXPCBasicClientInterface, NNMKNanoMailServiceXPCConversationsBrowsingBasedClientInterface, NNMKNanoMailServiceXPCMessageUpdatesBasedClientInterface, NNMKNanoMailServiceXPCAdHocClientInterface>
 {
+    _Bool _shouldReconnectWhenConnectionIsInterrupted;
     id <NNMKNanoMailServiceDelegate> _delegate;
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_receiverQueue;
@@ -26,10 +27,12 @@
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *receiverQueue; // @synthesize receiverQueue=_receiverQueue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property _Bool shouldReconnectWhenConnectionIsInterrupted; // @synthesize shouldReconnectWhenConnectionIsInterrupted=_shouldReconnectWhenConnectionIsInterrupted;
 @property __weak id <NNMKNanoMailServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_pingServerAndNotifyDelegateDidResetXPCConnection;
 - (void)_pingServer;
+- (void)pingServer;
 - (void)_runOnServer:(CDUnknownBlockType)arg1;
 - (void)_xpcServerBecameAvailable;
 - (oneway void)receiverXPCServerDidReplyWithAllMessages:(id)arg1;
@@ -37,7 +40,7 @@
 - (oneway void)receiverXPCServerConnectivityDidChange:(_Bool)arg1;
 - (oneway void)receiverXPCServerDidRequestReloadCache;
 - (oneway void)receiverXPCServerDidDeleteAllMessages;
-- (oneway void)receiverXPCServerDidNotifyFetchRequestCompleted:(_Bool)arg1;
+- (oneway void)receiverXPCServerDidNotifyFetchRequestCompleted:(_Bool)arg1 mailboxIds:(id)arg2;
 - (oneway void)receiverXPCServerDidNotifyOldMessagesAvailable;
 - (oneway void)receiverXPCServerDidFailSyncingMessagesWithError:(id)arg1;
 - (oneway void)receiverXPCServerDidFinishSyncingMessagesSuccessfullyReceivingMessages:(_Bool)arg1 initialMessages:(_Bool)arg2;
@@ -45,6 +48,8 @@
 - (oneway void)receiverXPCServerDidDeleteAccountWithId:(id)arg1;
 - (oneway void)receiverXPCServerDidUpdateAccount:(id)arg1;
 - (oneway void)receiverXPCServerDidAddNewAccount:(id)arg1;
+- (oneway void)receiverXPCServerDidUpdateMailboxWithId:(id)arg1 lastUpdate:(id)arg2;
+- (oneway void)receiverXPCServerDidFailWithError:(id)arg1;
 - (oneway void)receiverXPCServerDidReportProgress:(int)arg1 forComposedMessageWithId:(id)arg2 referenceMessageId:(id)arg3;
 - (oneway void)receiverXPCServerDidReceiveImageAttachmentForMessageWithId:(id)arg1 contentId:(id)arg2;
 - (oneway void)receiverXPCServerDidReceiveContentForMessageWithId:(id)arg1;
@@ -53,6 +58,7 @@
 - (oneway void)receiverXPCServerDidReportFailureSendingComposedMessageWithId:(id)arg1 subject:(id)arg2;
 - (oneway void)receiverXPCServerDidDeleteMessageWithId:(id)arg1;
 - (oneway void)receiverXPCServerDidUpdateMessage:(id)arg1;
+- (oneway void)receiverXPCServerDidReceiveMessage:(id)arg1 replacingPreviousMessageWithId:(id)arg2;
 - (oneway void)receiverXPCServerDidAddNewMessage:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithFirstUnreadMessages:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithIsConnected:(_Bool)arg1;
@@ -60,10 +66,11 @@
 - (oneway void)receiverXPCServerDidReplyWithComposedMessageIds:(id)arg1 progress:(id)arg2;
 - (oneway void)receiverXPCServerDidReplyWithAccounts:(id)arg1 error:(id)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMailboxSelection:(id)arg1;
+- (oneway void)receiverXPCServerDidFailSyncingAttachment:(id)arg1 messageId:(id)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMessageContentLoadFailedForMessageWithId:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithMessageContent:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithMessage:(id)arg1;
-- (oneway void)receiverXPCServerDidReplyWithConversationOperations:(id)arg1 totalConversationsCount:(unsigned int)arg2 willFetch:(_Bool)arg3 error:(id)arg4 reloadCache:(_Bool)arg5;
+- (oneway void)receiverXPCServerDidReplyWithConversationOperations:(id)arg1 totalConversationsCount:(unsigned int)arg2 willFetch:(_Bool)arg3 error:(id)arg4 reloadCache:(_Bool)arg5 lastUpdateByMailboxId:(id)arg6;
 - (void)requestFetchOldMessages;
 - (void)requestAllMessages;
 - (void)deleteAllMessages;

@@ -13,21 +13,22 @@
     NSString *_localizedName;
     NSString *_path;
     NSString *_bundleID;
-    NSImage *_icon;
+    NSImage *__icon;
 }
 
 + (id)createWithItemAtPath:(id)arg1;
-@property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-@property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
+@property(retain, nonatomic) NSImage *_icon; // @synthesize _icon=__icon;
+@property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
+@property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (void).cxx_destruct;
 - (void)_resetDisplayValues;
-- (id)resolvedPath;
-- (id)icon;
+@property(readonly, copy, nonatomic) NSString *resolvedPath;
+@property(readonly, nonatomic) NSImage *icon;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)dictionaryForSaving;
-- (void)_initWithPlistDictionary:(id)arg1;
+- (void)_configureWithPlistDictionary:(id)arg1;
 
 @end
 

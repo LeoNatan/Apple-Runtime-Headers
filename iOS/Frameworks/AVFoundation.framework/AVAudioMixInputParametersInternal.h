@@ -8,6 +8,7 @@
 
 @class AVAudioMixEffectParameters, AVMutableScheduledAudioParameters, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAudioMixInputParametersInternal : NSObject
 {
     int trackID;

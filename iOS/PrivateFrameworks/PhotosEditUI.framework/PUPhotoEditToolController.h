@@ -12,6 +12,7 @@
 
 @class NSString, NURenderPipelineFilter, PLEditSource, PLPhotoEditAggregateSession, PLPhotoEditMutableModel, PUPhotoEditToolControllerSpec, PUPhotoEditValuesCalculator, UIButton, UIColor, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditToolController : UIViewController <PUViewControllerSpecChangeObserver, PUPhotoEditLayoutDynamicAdaptable, UIScrollViewDelegate>
 {
     _Bool _performingLiveInteraction;
@@ -45,10 +46,8 @@
 - (void).cxx_destruct;
 - (struct CGRect)contentRectInCoordinateSpace:(id)arg1;
 - (void)didResignActiveTool;
-- (void)animateResigningActiveTool;
 - (void)willResignActiveTool;
 - (void)didBecomeActiveTool;
-- (void)animateBecomingActiveTool;
 - (void)willBecomeActiveTool;
 - (_Bool)canBecomeActiveTool;
 - (void)specDidChange;
@@ -75,9 +74,11 @@
 @property(readonly, nonatomic) _Bool wantsZoomAndPanEnabled;
 @property(readonly, copy, nonatomic) UIColor *preferredPreviewBackgroundColor;
 @property(readonly, nonatomic) _Bool wantsDefaultPreviewView;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 @property(readonly, nonatomic) struct UIEdgeInsets preferredPreviewViewInsets;
 @property(readonly, nonatomic) NSString *localizedResetToolActionTitle;
 @property(readonly, nonatomic) _Bool canResetToDefaultValue;
+- (void)mediaViewIsReady;
 - (void)setupWithPhotoEditModel:(id)arg1 editSource:(id)arg2 valuesCalculator:(id)arg3;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

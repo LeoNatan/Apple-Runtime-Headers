@@ -20,10 +20,11 @@
 - (id)connection;
 - (void)setMachPort:(unsigned int)arg1;
 - (unsigned int)machPort;
+- (unsigned long long)portRights;
 - (void)invalidateRunLoopSources;
-- (void)addRunLoopSources;
 - (void)dealloc;
-- (id)initWithDeferredShutdown:(BOOL)arg1;
+- (void)setupMachSubsystem;
+- (void)addMachDispatchLinks;
 
 @end
 

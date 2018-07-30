@@ -11,6 +11,7 @@
 
 @class AVAssetCollectionInspector, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetCollectionInspectorLoader : NSObject <NSCopying, AVAsynchronousKeyValueLoading>
 {
     AVWeakReference *_weakReference;

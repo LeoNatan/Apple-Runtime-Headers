@@ -11,6 +11,6 @@
 - (void)getAvailableEndpointsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)setDiscoveryMode:(unsigned int)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)getDiscoveryModeWithCompletion:(void (^)(unsigned int, NSError *))arg1;
-- (void)getHasAvailableEndpointsWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)getDevicePresenceDetectedWithCompletion:(void (^)(_Bool, NSError *))arg1;
 @end
 

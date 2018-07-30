@@ -6,6 +6,7 @@
 
 #import <CorePDF/CPChunk.h>
 
+__attribute__((visibility("hidden")))
 @interface CPTextObject : CPChunk
 {
     struct CGPoint anchor;

@@ -6,6 +6,7 @@
 
 #import <CoreFoundation/__NSAutoBlock.h>
 
+__attribute__((visibility("hidden")))
 @interface __NSFinalizingBlock : __NSAutoBlock
 {
 }

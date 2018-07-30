@@ -20,6 +20,7 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 - (void).cxx_destruct;
 - (void)invalidate;
+- (_Bool)releaseCarouselAssertion;
 - (void)dealloc;
 - (void)releaseUsage;
 - (void)retainUsage;

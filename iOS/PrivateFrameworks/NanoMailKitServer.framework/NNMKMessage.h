@@ -15,11 +15,13 @@
 @interface NNMKMessage : NSObject <NNMKMailboxItem, NSSecureCoding, NSCopying>
 {
     _Bool _isThreadSpecific;
+    _Bool _replaceStandaloneNotification;
     NSString *_subject;
     NSDate *_dateReceived;
     NSString *_preview;
     unsigned long long _status;
     NSString *_messageId;
+    NSString *_serverId;
     NSString *_accountId;
     NSString *_mailboxId;
     NSString *_conversationId;
@@ -30,6 +32,7 @@
     NSDate *_dateSent;
     NSString *_messageIdHeader;
     NSString *_notificationMessageId;
+    NSString *_publisherBulletinId;
     unsigned long long _source;
     unsigned long long _statusVersion;
     unsigned long long _isSpecialMailboxSpecific;
@@ -38,6 +41,9 @@
 
 + (id)messageIdsFromMessages:(id)arg1;
 + (_Bool)supportsSecureCoding;
++ (id)generateConversationIdWithAccountId:(id)arg1 conversationId:(id)arg2;
++ (id)generateNotificationIdWithFolderId:(id)arg1 remoteId:(id)arg2;
++ (id)generateMessageHashForMessage:(id)arg1;
 + (id)attachmentIdForURL:(id)arg1;
 + (id)messageIdForURL:(id)arg1;
 + (id)URLForMessageId:(id)arg1 attachmentID:(id)arg2;
@@ -47,11 +53,13 @@
 + (unsigned long long)addState:(unsigned long long)arg1 toStatus:(unsigned long long)arg2;
 + (unsigned long long)removeState:(unsigned long long)arg1 fromStatus:(unsigned long long)arg2;
 + (_Bool)checkStatus:(unsigned long long)arg1 stateToCheck:(unsigned long long)arg2;
+@property(nonatomic) _Bool replaceStandaloneNotification; // @synthesize replaceStandaloneNotification=_replaceStandaloneNotification;
 @property(nonatomic) unsigned long long visibleStatus; // @synthesize visibleStatus=_visibleStatus;
 @property(nonatomic) unsigned long long isSpecialMailboxSpecific; // @synthesize isSpecialMailboxSpecific=_isSpecialMailboxSpecific;
 @property(nonatomic) _Bool isThreadSpecific; // @synthesize isThreadSpecific=_isThreadSpecific;
 @property(nonatomic) unsigned long long statusVersion; // @synthesize statusVersion=_statusVersion;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
+@property(copy, nonatomic) NSString *publisherBulletinId; // @synthesize publisherBulletinId=_publisherBulletinId;
 @property(copy, nonatomic) NSString *notificationMessageId; // @synthesize notificationMessageId=_notificationMessageId;
 @property(copy, nonatomic) NSString *messageIdHeader; // @synthesize messageIdHeader=_messageIdHeader;
 @property(copy, nonatomic) NSDate *dateSent; // @synthesize dateSent=_dateSent;
@@ -62,6 +70,7 @@
 @property(copy, nonatomic) NSString *conversationId; // @synthesize conversationId=_conversationId;
 @property(copy, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(copy, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
+@property(copy, nonatomic) NSString *serverId; // @synthesize serverId=_serverId;
 @property(copy, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *preview; // @synthesize preview=_preview;

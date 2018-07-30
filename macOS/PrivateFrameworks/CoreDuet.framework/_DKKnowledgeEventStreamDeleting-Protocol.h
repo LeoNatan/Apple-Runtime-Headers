@@ -4,10 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSPredicate, _DKEventStream;
+@class NSObject<OS_dispatch_queue>, NSPredicate, _DKEventStream;
 
 @protocol _DKKnowledgeEventStreamDeleting
+- (void)deleteAllEventsMatchingPredicate:(NSPredicate *)arg1 responseQueue:(NSObject<OS_dispatch_queue> *)arg2 withCompletion:(void (^)(unsigned long long, NSError *))arg3;
 - (unsigned long long)deleteAllEventsMatchingPredicate:(NSPredicate *)arg1 error:(id *)arg2;
+- (void)deleteAllEventsInEventStream:(_DKEventStream *)arg1 responseQueue:(NSObject<OS_dispatch_queue> *)arg2 withCompletion:(void (^)(unsigned long long, NSError *))arg3;
 - (unsigned long long)deleteAllEventsInEventStream:(_DKEventStream *)arg1 error:(id *)arg2;
 @end
 

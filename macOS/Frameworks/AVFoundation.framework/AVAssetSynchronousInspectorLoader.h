@@ -8,6 +8,7 @@
 
 @class AVAssetInspector;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetSynchronousInspectorLoader : AVAssetInspectorLoader
 {
     AVAssetInspector *_assetInspector;

@@ -7,43 +7,50 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBHomeAttributeValue.h"
 
-@class PBUnknownFields, _INPBDouble, _INPBString;
+@class NSString;
 
-@interface _INPBHomeAttributeValue : PBCodable <NSCopying>
+@interface _INPBHomeAttributeValue : PBCodable <_INPBHomeAttributeValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBDouble *_doubleValue;
-    _INPBString *_stringValue;
-    int _valueType;
-    BOOL _booleanValue;
     struct {
-        unsigned int valueType:1;
         unsigned int booleanValue:1;
+        unsigned int doubleValue:1;
+        unsigned int integerValue:1;
+        unsigned int valueType:1;
     } _has;
+    BOOL _booleanValue;
+    int _valueType;
+    double _doubleValue;
+    long long _integerValue;
+    NSString *_stringValue;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBString *stringValue; // @synthesize stringValue=_stringValue;
-@property(retain, nonatomic) _INPBDouble *doubleValue; // @synthesize doubleValue=_doubleValue;
+@property(nonatomic) int valueType; // @synthesize valueType=_valueType;
+@property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
+@property(nonatomic) long long integerValue; // @synthesize integerValue=_integerValue;
+@property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) BOOL booleanValue; // @synthesize booleanValue=_booleanValue;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasStringValue;
-@property(readonly, nonatomic) BOOL hasDoubleValue;
-@property(nonatomic) BOOL hasBooleanValue;
 - (int)StringAsValueType:(id)arg1;
 - (id)valueTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasValueType;
-@property(nonatomic) int valueType; // @synthesize valueType=_valueType;
+@property(readonly, nonatomic) BOOL hasStringValue;
+@property(nonatomic) BOOL hasIntegerValue;
+@property(nonatomic) BOOL hasDoubleValue;
+@property(nonatomic) BOOL hasBooleanValue;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

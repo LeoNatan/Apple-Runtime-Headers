@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)flowControlKey;
 - (BOOL)CKOperationShouldRun:(id *)arg1;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;

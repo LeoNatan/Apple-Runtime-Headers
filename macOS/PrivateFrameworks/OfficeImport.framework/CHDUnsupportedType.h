@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDChartType.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDUnsupportedType : CHDChartType
 {
 }

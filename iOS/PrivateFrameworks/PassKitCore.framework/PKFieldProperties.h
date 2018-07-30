@@ -15,6 +15,7 @@
     unsigned long long _technology;
     long long _terminalType;
     long long _valueAddedServiceMode;
+    NSArray *_TCIs;
     NSArray *_merchantIdentifiers;
     NSError *_error;
 }
@@ -22,6 +23,7 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
+@property(copy, nonatomic) NSArray *TCIs; // @synthesize TCIs=_TCIs;
 @property(readonly, nonatomic) long long valueAddedServiceMode; // @synthesize valueAddedServiceMode=_valueAddedServiceMode;
 @property(readonly, nonatomic) long long terminalType; // @synthesize terminalType=_terminalType;
 @property(readonly, nonatomic) unsigned long long technology; // @synthesize technology=_technology;

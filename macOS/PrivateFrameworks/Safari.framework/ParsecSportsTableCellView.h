@@ -8,12 +8,11 @@
 
 #import "ParsecTableCellView.h"
 
-@class NSString, NSTextField, ParsecSportsTeamView;
+@class NSTextField, ParsecSportsTeamView;
 
 __attribute__((visibility("hidden")))
 @interface ParsecSportsTableCellView : UnifiedFieldCompletionStyledTableCellView <ParsecTableCellView>
 {
-    NSString *_identifierOfDisplayedParsecResult;
     id <ParsecTableCellViewDelegate> _delegate;
     ParsecSportsTeamView *_firstTeamView;
     ParsecSportsTeamView *_secondTeamView;
@@ -28,7 +27,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak ParsecSportsTeamView *secondTeamView; // @synthesize secondTeamView=_secondTeamView;
 @property(nonatomic) __weak ParsecSportsTeamView *firstTeamView; // @synthesize firstTeamView=_firstTeamView;
 @property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy, nonatomic) NSString *identifierOfDisplayedParsecResult; // @synthesize identifierOfDisplayedParsecResult=_identifierOfDisplayedParsecResult;
 - (void).cxx_destruct;
 - (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;
 - (void)awakeFromNib;

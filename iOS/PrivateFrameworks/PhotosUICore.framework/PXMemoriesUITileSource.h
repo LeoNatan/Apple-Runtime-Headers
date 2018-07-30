@@ -25,8 +25,10 @@
     id <PXMemoriesUITileSourceDelegate> _delegate;
     PXPhotoKitUIMediaProvider *__mediaProvider;
     PXFeedDateFormatter *__dateFormatter;
+    unsigned long long __memoriesStyle;
 }
 
+@property(readonly, nonatomic) unsigned long long _memoriesStyle; // @synthesize _memoriesStyle=__memoriesStyle;
 @property(readonly, nonatomic) PXFeedDateFormatter *_dateFormatter; // @synthesize _dateFormatter=__dateFormatter;
 @property(readonly, nonatomic) PXPhotoKitUIMediaProvider *_mediaProvider; // @synthesize _mediaProvider=__mediaProvider;
 @property(nonatomic) __weak id <PXMemoriesUITileSourceDelegate> delegate; // @synthesize delegate=_delegate;
@@ -48,7 +50,7 @@
 - (void *)checkOutTileForIdentifier:(struct PXTileIdentifier)arg1 layout:(id)arg2;
 - (_Bool)providesTileForIdentifier:(struct PXTileIdentifier)arg1;
 - (void)dealloc;
-- (id)initWithScrollViewController:(id)arg1;
+- (id)initWithScrollViewController:(id)arg1 memoriesStyle:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

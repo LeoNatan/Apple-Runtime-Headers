@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_pluginFieldsForRecordDeletesByID;
     NSDictionary *_handlersByRecordID;
     NSDictionary *_parentsByRecordID;
+    NSMapTable *_handlersByAssetNeedingRecordFetch;
     NSMapTable *_handlersByAsset;
     NSMutableDictionary *_modifyHandlersByZoneID;
     long long _savePolicy;
@@ -57,6 +58,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int saveAttempts; // @synthesize saveAttempts=_saveAttempts;
 @property(retain, nonatomic) NSMutableDictionary *modifyHandlersByZoneID; // @synthesize modifyHandlersByZoneID=_modifyHandlersByZoneID;
 @property(retain, nonatomic) NSMapTable *handlersByAsset; // @synthesize handlersByAsset=_handlersByAsset;
+@property(retain, nonatomic) NSMapTable *handlersByAssetNeedingRecordFetch; // @synthesize handlersByAssetNeedingRecordFetch=_handlersByAssetNeedingRecordFetch;
 @property(retain, nonatomic) NSDictionary *parentsByRecordID; // @synthesize parentsByRecordID=_parentsByRecordID;
 @property(retain, nonatomic) NSDictionary *handlersByRecordID; // @synthesize handlersByRecordID=_handlersByRecordID;
 @property(retain, nonatomic) NSDictionary *pluginFieldsForRecordDeletesByID; // @synthesize pluginFieldsForRecordDeletesByID=_pluginFieldsForRecordDeletesByID;
@@ -94,6 +96,9 @@ __attribute__((visibility("hidden")))
 - (void)_fetchUserBoundaryKey;
 - (id)_prepareAssetsForUpload;
 - (void)_prepareForUpload;
+- (void)_fetchAssetRecordsForRereferencing;
+- (void)_didCompleteRecordFetchOperation:(id)arg1 assetArrayByRecordID:(id)arg2;
+- (void)assetArrayByRecordID:(id)arg1 didFetchRecord:(id)arg2 recordID:(id)arg3 error:(id)arg4;
 - (void)_fetchRecordPCSData;
 - (void)_fetchSharePCSData;
 - (void)_prepareParentPCS;

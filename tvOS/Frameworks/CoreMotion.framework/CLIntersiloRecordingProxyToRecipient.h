@@ -13,7 +13,7 @@
 
 @property(readonly, nonatomic) CLIntersiloRecordingProxy *peer; // @synthesize peer=_peer;
 - (void).cxx_destruct;
-- (id)initWithProxiedInterface:(id)arg1 andUninitializedPeer:(id)arg2;
+- (id)initWithUninitializedPeer:(id)arg1;
 
 @end
 

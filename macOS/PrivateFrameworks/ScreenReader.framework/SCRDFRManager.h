@@ -81,13 +81,13 @@ __attribute__((visibility("hidden")))
 - (void)_handleDirectTouchMoveToPoint:(struct CGPoint)arg1;
 - (void)_enterDirectTouchModeAtPoint:(struct CGPoint)arg1;
 - (void)_performDefaultActionOnFocusedElement;
-- (BOOL)_echoFocusedElement:(id)arg1;
+- (void)_echoFocusedElement:(id)arg1;
 - (void)_moveFocusToPoint:(struct CGPoint)arg1;
 - (void)_trySwitchingToTrackingMode;
 - (void)_transitionToState:(unsigned long long)arg1;
 - (void)_resetLastEmptyHitPointAndTimestamp;
 - (void)handleRefreshBrailleLineEvent:(id)arg1;
-- (BOOL)handleDFRBrailleRoutingEvent:(id)arg1 request:(id)arg2 uiElement:(id)arg3;
+- (void)handleDFRBrailleRoutingEvent:(id)arg1 request:(id)arg2 uiElement:(id)arg3;
 - (void)tapGestureRecognizer:(id)arg1 tapAborted:(id)arg2;
 - (void)tapGestureRecognizer:(id)arg1 tapped:(id)arg2;
 - (void)splitTapGestureRecognizer:(id)arg1 splitTapped:(id)arg2;

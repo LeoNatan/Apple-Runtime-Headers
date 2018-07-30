@@ -12,6 +12,7 @@
 {
     EKAvailabilityCache *_availabilityCache;
     _Bool _isFacebook;
+    _Bool _snoozeAlarmRequiresDetach;
     NSDate *_timeOfLastExternalIdentificationCache;
     NSString *_cachedHost;
     long long _cachedPort;
@@ -23,7 +24,8 @@
 + (id)sourceWithEventStore:(id)arg1;
 + (_Bool)isWeakRelationship;
 + (Class)frozenClass;
-@property(readonly, nonatomic) _Bool isFacebook; // @synthesize isFacebook=_isFacebook;
+@property(nonatomic) _Bool snoozeAlarmRequiresDetach; // @synthesize snoozeAlarmRequiresDetach=_snoozeAlarmRequiresDetach;
+@property(nonatomic) _Bool isFacebook; // @synthesize isFacebook=_isFacebook;
 @property(retain, nonatomic) NSSet *cachedOwnerAddresses; // @synthesize cachedOwnerAddresses=_cachedOwnerAddresses;
 @property(nonatomic) long long cachedPort; // @synthesize cachedPort=_cachedPort;
 @property(retain, nonatomic) NSString *cachedHost; // @synthesize cachedHost=_cachedHost;
@@ -58,6 +60,23 @@
 @property(readonly, nonatomic) NSSet *allCalendars;
 @property(readonly, nonatomic) NSSet *calendars;
 @property(readonly, nonatomic) _Bool isFacebookSource;
+@property(nonatomic) _Bool prohibitsYearlyRecurrenceInterval;
+@property(nonatomic) _Bool prohibitsMultipleMonthsInYearlyRecurrence;
+@property(nonatomic) _Bool prohibitsMultipleDaysInMonthlyRecurrence;
+@property(nonatomic) _Bool prohibitsDetachmentOnCommentChange;
+@property(nonatomic) _Bool prohibitsICSImport;
+@property(nonatomic) _Bool allowsProposeNewTime;
+@property(nonatomic) _Bool supportsLocationDirectorySearches;
+@property(nonatomic) _Bool supportsIgnoringEventsInAvailabilityRequests;
+@property(nonatomic) _Bool supportsAvailabilityRequests;
+@property(nonatomic) _Bool requiresSamePrivacyLevelAcrossRecurrenceSeries;
+@property(nonatomic) _Bool prohibitsPrivateEventsWithAttendees;
+@property(nonatomic) _Bool supportsPrivateEvents;
+@property(nonatomic) _Bool supportsAlarmAcknowledgedDate;
+@property(nonatomic) _Bool supportsSharedCalendars;
+@property(nonatomic) _Bool allowsCalendarAddDeleteModify;
+@property(nonatomic) _Bool allowsEvents;
+@property(nonatomic) _Bool allowsTasks;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
 - (_Bool)disabled;
 @property(nonatomic) _Bool usesSelfAttendee;
@@ -66,7 +85,10 @@
 - (_Bool)flag:(int)arg1;
 @property(nonatomic) int flags;
 @property(nonatomic) _Bool onlyCreatorCanModify;
+@property(copy, nonatomic) NSString *creatorCodeSigningIdentity;
+@property(copy, nonatomic) NSString *creatorBundleID;
 @property(copy, nonatomic) NSString *externalModificationTag;
+@property(retain, nonatomic) NSString *constraintsDescriptionPath;
 @property(copy, nonatomic) NSString *externalID;
 @property(retain, nonatomic) NSString *sourceIdentifier;
 @property(copy, nonatomic) NSNumber *defaultAlarmOffset;

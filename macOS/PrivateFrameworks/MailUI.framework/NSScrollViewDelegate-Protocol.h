@@ -11,6 +11,8 @@
 @protocol NSScrollViewDelegate <NSObject>
 
 @optional
+@property(setter=_setWantsPageAlignedVerticalAxis:) BOOL _wantsPageAlignedVerticalAxis;
+@property(setter=_setWantsPageAlignedHorizontalAxis:) BOOL _wantsPageAlignedHorizontalAxis;
 - (BOOL)allowPanningInScrollView:(NSScrollView *)arg1;
 - (NSArray *)magnificationInflectionPointsForScrollView:(NSScrollView *)arg1;
 - (void)scrollView:(NSScrollView *)arg1 didChangePresentationOrigin:(struct CGPoint)arg2 active:(BOOL)arg3;

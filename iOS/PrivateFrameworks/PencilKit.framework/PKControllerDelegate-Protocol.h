@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-@class CAEAGLLayer, PKDrawing;
+@class PKDrawing;
 
 @protocol PKControllerDelegate <NSObject>
 - (void)drawingChanged:(PKDrawing *)arg1;
-- (CAEAGLLayer *)glLayer;
-- (_Bool)setNeedsDrawingDisplay;
+- (void)setNeedsDrawingDisplay;
 - (void)setAllowLiveInteraction:(_Bool)arg1;
 @end
 

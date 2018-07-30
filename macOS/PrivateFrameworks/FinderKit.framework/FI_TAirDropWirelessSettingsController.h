@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TAirDropWirelessSettingsController : NSObject <SFWirelessSettingsControllerDelegate>
 {
-    struct TNSRef<SFWirelessSettingsController *, void> _settingsController;
+    struct TNSRef<SFWirelessSettingsController, void> _settingsController;
     _Bool _isBluetoothEnabled;
     _Bool _isWifiEnabled;
     _Bool _deviceSupportsWAPI;

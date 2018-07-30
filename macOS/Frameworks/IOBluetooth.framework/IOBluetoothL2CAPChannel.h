@@ -72,6 +72,7 @@
 - (int)registerIncomingDataListener:(CDUnknownFunctionPointerType)arg1 refCon:(void *)arg2;
 - (int)writeSync:(void *)arg1 length:(unsigned short)arg2;
 - (int)writeAsync:(void *)arg1 length:(unsigned short)arg2 refcon:(void *)arg3;
+- (int)writeAsyncTrap:(void *)arg1 length:(unsigned short)arg2 refcon:(void *)arg3;
 - (int)write:(void *)arg1 length:(unsigned short)arg2;
 - (int)requestRemoteMTU:(unsigned short)arg1;
 - (int)closeChannel;

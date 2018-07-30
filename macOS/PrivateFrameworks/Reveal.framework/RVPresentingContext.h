@@ -28,9 +28,11 @@
 - (void)completeHighlightingItem:(id)arg1;
 - (void)highlightItem:(id)arg1 withProgress:(double)arg2;
 - (void)startHighlightingItem:(id)arg1;
+- (void)restoreIndicator:(id)arg1;
 - (id)transferIndicator;
 - (void)removeIndicator;
 - (void)makeIndicatorWithDelegate:(id)arg1 item:(id)arg2;
+- (unsigned long long)preferredEdge;
 @property(readonly) struct CGRect itemRectInView;
 - (void)updateRectsWithItem:(id)arg1;
 - (id)initWithPointerLocationInView:(struct CGPoint)arg1 inView:(id)arg2 highlightDelegate:(id)arg3;

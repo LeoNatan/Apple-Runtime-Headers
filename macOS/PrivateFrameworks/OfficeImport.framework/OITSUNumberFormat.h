@@ -12,7 +12,6 @@
 
 @class NSArray, NSIndexSet, NSString, NSUUID;
 
-__attribute__((visibility("hidden")))
 @interface OITSUNumberFormat : NSObject <TSUNumberFormatting, NSCopying, NSMutableCopying>
 {
     int mValueType;

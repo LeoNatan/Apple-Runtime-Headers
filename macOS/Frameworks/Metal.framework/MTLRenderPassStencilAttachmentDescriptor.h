@@ -15,6 +15,7 @@
 
 // Remaining properties
 @property(nonatomic) unsigned int clearStencil; // @dynamic clearStencil;
+@property(nonatomic) unsigned long long stencilResolveFilter; // @dynamic stencilResolveFilter;
 
 @end
 

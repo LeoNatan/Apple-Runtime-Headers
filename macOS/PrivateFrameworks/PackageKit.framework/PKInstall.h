@@ -26,6 +26,8 @@
 
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(getter=isDone) BOOL done; // @synthesize done=_done;
+- (void)_clearResponsibilityForClientAuditToken:(CDStruct_4c969caf)arg1;
+- (void)_setResponsibilityForClientAuditToken:(CDStruct_4c969caf)arg1;
 - (id)_previousPackageIdentifiersSharingGroupsWithCurrentRequest;
 - (void)_handleCanCancelDidChange:(id)arg1;
 - (void)_releaseResources;

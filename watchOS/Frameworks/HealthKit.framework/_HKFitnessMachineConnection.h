@@ -8,12 +8,14 @@
 
 #import "HKFitnessMachineConnectionClientInterface.h"
 
-@class HKHealthStore, NSString, NSUUID, _HKFitnessMachine;
+@class HKDevice, HKHealthStore, NSLock, NSString, NSUUID, _HKFitnessMachine;
 
 @interface _HKFitnessMachineConnection : NSObject <HKFitnessMachineConnectionClientInterface>
 {
     HKHealthStore *_healthStore;
     NSUUID *_currentSessionUUID;
+    HKDevice *_deviceForFinalWorkout;
+    NSLock *_lock;
     NSUUID *_uuid;
     _HKFitnessMachine *_fitnessMachine;
     unsigned int _machineState;
@@ -34,15 +36,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_connectionInterruptedWithError:(id)arg1;
-- (void)_setConnectionState:(unsigned int)arg1;
-- (void)_setMachineState:(unsigned int)arg1;
-- (void)_setFitnessMachine:(id)arg1;
 - (void)_clientQueue_deliverFailedWithError:(id)arg1;
 - (void)clientRemote_deliverFailedWithError:(id)arg1;
 - (void)clientRemote_deliverConnectionChangedToState:(unsigned int)arg1 fromState:(unsigned int)arg2 fitnessMachineSessionUUID:(id)arg3 error:(id)arg4;
 - (void)clientRemote_deliverMachineChangedToState:(unsigned int)arg1 fromState:(unsigned int)arg2 fitnessMachineSessionUUID:(id)arg3 date:(id)arg4;
 - (void)clientRemote_deliverMachineInformationUpdated:(id)arg1;
 - (void)clientRemote_deliverDetectedNFC:(id)arg1;
+@property(readonly, nonatomic) HKDevice *deviceForFinalWorkout;
 - (id)currentSessionConfiguration;
 - (void)endWithFitnessMachineSessionUUID:(id)arg1;
 - (void)end;

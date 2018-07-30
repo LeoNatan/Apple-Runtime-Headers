@@ -14,12 +14,6 @@
 
 @interface _CPStoreCardSectionEngagementFeedback : PBCodable <_CPProcessableFeedback, _CPStoreCardSectionEngagementFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int triggerEvent:1;
-        unsigned int actionCardType:1;
-        unsigned int productPageResult:1;
-    } _has;
     int _triggerEvent;
     int _actionCardType;
     int _productPageResult;
@@ -37,7 +31,7 @@
 @property(nonatomic) int actionCardType; // @synthesize actionCardType=_actionCardType;
 @property(nonatomic) int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 @property(retain, nonatomic) _CPPunchoutForFeedback *destination; // @synthesize destination=_destination;
-@property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
@@ -47,14 +41,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasResultId;
-@property(readonly, nonatomic) _Bool hasCardSectionId;
-@property(readonly, nonatomic) _Bool hasProductPageResult;
-@property(readonly, nonatomic) _Bool hasCardSection;
-@property(readonly, nonatomic) _Bool hasActionCardType;
-@property(readonly, nonatomic) _Bool hasTriggerEvent;
-@property(readonly, nonatomic) _Bool hasDestination;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

@@ -14,5 +14,8 @@
 - (SXComponentInsert *)componentInsertForMarker:(id <SXBlueprintMarker>)arg1 layoutProvider:(id <SXComponentInsertionLayoutProvider>)arg2;
 - (_Bool)validateMarker:(id <SXBlueprintMarker>)arg1 remainingMarkerCount:(unsigned long long)arg2 layoutProvider:(id <SXComponentInsertionLayoutProvider>)arg3;
 - (unsigned long long)componentTraits;
+
+@optional
+- (void)componentInsertionCompleted;
 @end
 

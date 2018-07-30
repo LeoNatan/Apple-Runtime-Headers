@@ -8,7 +8,6 @@
 
 @class ESDContainer, NSMutableArray, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface OABReaderState : NSObject
 {
     Class mClient;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) ESDContainer *bstoreContainerHolder; // @synthesize bstoreContainerHolder=mBstoreContainerHolder;
+- (void).cxx_destruct;
 - (BOOL)useXmlBlobs;
 - (id)xmlDrawingState;
 - (void)resetForNewDrawing;
@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)setDrawable:(id)arg1 forShapeId:(unsigned int)arg2;
 - (id)drawableForShapeId:(int)arg1;
 - (Class)client;
-- (void)dealloc;
 - (id)initWithClient:(Class)arg1;
 - (id)init;
 

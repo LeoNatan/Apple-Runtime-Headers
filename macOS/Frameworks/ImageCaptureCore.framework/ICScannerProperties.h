@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableDictionary, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface ICScannerProperties : NSObject
 {
     NSArray *_devicePreferredResolutions;
@@ -46,7 +47,6 @@
 @property(retain) id selectedFunctionalUnit; // @synthesize selectedFunctionalUnit=_selectedFunctionalUnit;
 @property(retain) NSArray *availableFunctionalUnitTypes; // @synthesize availableFunctionalUnitTypes=_availableFunctionalUnitTypes;
 @property(retain) NSArray *devicePreferredResolutions; // @synthesize devicePreferredResolutions=_devicePreferredResolutions;
-- (void)finalize;
 - (void)dealloc;
 
 @end

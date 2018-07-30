@@ -15,6 +15,8 @@
 
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void).cxx_destruct;
+- (void)_updateTextColor;
+- (void)tintColorDidChange;
 - (void)setupConstraints;
 - (void)setupSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

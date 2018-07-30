@@ -9,7 +9,7 @@
 #import "NTKFaceCollectionObserver.h"
 #import "NTKFaceObserver.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, NTKFace, NTKFaceCollection;
+@class NSObject<OS_dispatch_queue>, NSString, NTKFace, NTKFaceCollection, UIImage;
 
 @interface NTKLibrarySelectedFaceSnapshotProvider : NSObject <NTKFaceCollectionObserver, NTKFaceObserver>
 {
@@ -21,6 +21,9 @@
     id <NTKLibrarySelectedFaceSnapshotProviderDelegate> _delegate;
 }
 
++ (void)snapshotCurrentFaceForDeviceUUID:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)snapshotCurrentFaceForDevice:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)snapshotCurrentFaceForActiveDeviceWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic) __weak id <NTKLibrarySelectedFaceSnapshotProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)snapshotSelectedFaceWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -32,8 +35,9 @@
 - (void)faceConfigurationDidChange:(id)arg1;
 - (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollectionDidLoad:(id)arg1;
-- (id)snapshotImage;
+@property(readonly, nonatomic) UIImage *snapshotImage;
 - (void)dealloc;
+- (id)initWithDeviceUUID:(id)arg1 delegate:(id)arg2;
 - (id)initWithDeviceUUID:(id)arg1;
 
 // Remaining properties

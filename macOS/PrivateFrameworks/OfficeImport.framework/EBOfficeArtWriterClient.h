@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OABWriterClient.h>
 
-__attribute__((visibility("hidden")))
 @interface EBOfficeArtWriterClient : OABWriterClient
 {
 }

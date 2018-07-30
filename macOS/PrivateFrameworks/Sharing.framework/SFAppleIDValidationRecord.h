@@ -35,10 +35,12 @@
 @property(retain, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL needsUpdate;
+@property(readonly, nonatomic) BOOL isInvalid;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isEqualToValidationRecord:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)expirationDate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

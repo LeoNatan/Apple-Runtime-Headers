@@ -8,7 +8,6 @@
 
 @class OADColor;
 
-__attribute__((visibility("hidden")))
 @interface OADSolidFill : OADFill
 {
     OADColor *mColor;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)blackFill;
 + (id)whiteFill;
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (void)removeUnnecessaryOverrides;
 - (BOOL)isAnythingOverridden;
 - (BOOL)isEqual:(id)arg1;
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (id)color;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (id)initWithDefaults;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

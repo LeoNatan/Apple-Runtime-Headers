@@ -7,6 +7,7 @@
 #import "NMROrigin.h"
 
 @interface NMROrigin (NanoMediaUI)
+- (id)_displayNameWithDeviceInfo:(void *)arg1;
 - (id)pickerImage;
 - (id)statusBarImage;
 - (id)localizedShortDisplayName;

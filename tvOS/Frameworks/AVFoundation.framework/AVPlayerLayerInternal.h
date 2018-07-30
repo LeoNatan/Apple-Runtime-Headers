@@ -8,6 +8,7 @@
 
 @class AVKeyPathDependencyManager, AVNetworkPlaybackPerfHUDLayer, AVPlayer, FigBaseCALayer, FigSubtitleCALayer, FigVideoContainerLayer, NSDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerLayerInternal : NSObject
 {
     AVNetworkPlaybackPerfHUDLayer *hudLayer;

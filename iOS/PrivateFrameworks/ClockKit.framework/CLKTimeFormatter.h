@@ -35,6 +35,7 @@
     _Bool _useNarrowDesignatorTextForGerman;
     _Bool _suppressesDesignatorWhitespace;
     _Bool _showSeconds;
+    _Bool _forcesLatinNumbers;
     NSTimeZone *_timeZone;
     double _timeOffset;
     NSDate *_overrideDate;
@@ -42,6 +43,7 @@
 }
 
 @property(nonatomic) __weak id <CLKTimeFormatterDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) _Bool forcesLatinNumbers; // @synthesize forcesLatinNumbers=_forcesLatinNumbers;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 @property(nonatomic) _Bool suppressesDesignatorWhitespace; // @synthesize suppressesDesignatorWhitespace=_suppressesDesignatorWhitespace;
@@ -92,6 +94,7 @@
 @property(readonly, nonatomic) _Bool reportingLiveTime;
 - (void)setPaused:(_Bool)arg1 forReason:(id)arg2;
 - (void)dealloc;
+- (id)initWithForcesLatinNumbers:(_Bool)arg1;
 - (id)init;
 
 @end

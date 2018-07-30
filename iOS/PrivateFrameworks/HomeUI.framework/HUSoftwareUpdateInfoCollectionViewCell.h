@@ -32,6 +32,7 @@
 @property(retain, nonatomic) HFItem *item;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

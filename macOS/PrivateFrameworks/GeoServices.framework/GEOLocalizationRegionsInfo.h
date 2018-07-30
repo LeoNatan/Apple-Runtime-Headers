@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSLock;
 
-__attribute__((visibility("hidden")))
 @interface GEOLocalizationRegionsInfo : NSObject
 {
     NSDictionary *_regions;

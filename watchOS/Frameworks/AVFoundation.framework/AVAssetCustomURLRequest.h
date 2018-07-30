@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface AVAssetCustomURLRequest : NSObject
 {
     unsigned long long _requestID;

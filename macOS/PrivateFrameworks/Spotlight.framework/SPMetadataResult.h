@@ -61,6 +61,7 @@
 - (id)URL;
 - (id)otherNames;
 - (id)otherTypes;
+- (void)updateRenderOrEngagementCountsForKey:(id)arg1 date:(id)arg2;
 - (id)valueForAttribute:(id)arg1;
 - (id)cachedValueForAttribute:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

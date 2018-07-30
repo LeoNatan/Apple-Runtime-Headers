@@ -6,19 +6,21 @@
 
 #import "NSObject.h"
 
-@class CNAutocompleteUserSession;
+@class CNAutocompleteStoreQueryContext, CNAutocompleteUserSession;
 
 @interface CNAutocompleteStoreQueryHelper : NSObject
 {
     id <CNAutocompleteSearchProvider> _searchProvider;
     id <CNAutocompleteFetchDelegate> _delegate;
     id <CNScheduler> _scheduler;
+    CNAutocompleteStoreQueryContext *_queryContext;
     id <CNAutocompleteProbeProvider> _probeProvider;
     CNAutocompleteUserSession *_userSession;
 }
 
 @property(readonly, nonatomic) CNAutocompleteUserSession *userSession; // @synthesize userSession=_userSession;
 @property(readonly, nonatomic) id <CNAutocompleteProbeProvider> probeProvider; // @synthesize probeProvider=_probeProvider;
+@property(readonly, nonatomic) CNAutocompleteStoreQueryContext *queryContext; // @synthesize queryContext=_queryContext;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) __weak id <CNAutocompleteFetchDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <CNAutocompleteSearchProvider> searchProvider; // @synthesize searchProvider=_searchProvider;

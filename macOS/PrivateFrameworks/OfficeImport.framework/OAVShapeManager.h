@@ -8,7 +8,6 @@
 
 @class NSDictionary, OAVReadState, OCPPackagePart;
 
-__attribute__((visibility("hidden")))
 @interface OAVShapeManager : NSObject
 {
     struct _xmlNode *mShape;
@@ -19,6 +18,7 @@ __attribute__((visibility("hidden")))
     OAVReadState *mOAVState;
 }
 
+- (void).cxx_destruct;
 - (struct OAVTextBoxInsets)textInsets;
 - (BOOL)fitShapeToText;
 - (id)textRotation;
@@ -76,7 +76,6 @@ __attribute__((visibility("hidden")))
 - (id)packagePart;
 - (struct _xmlNode *)shape;
 - (unsigned short)type;
-- (void)dealloc;
 - (id)initWithShape:(struct _xmlNode *)arg1 type:(unsigned short)arg2 packagePart:(id)arg3 state:(id)arg4;
 
 @end

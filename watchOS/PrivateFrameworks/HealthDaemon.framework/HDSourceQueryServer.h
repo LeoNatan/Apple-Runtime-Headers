@@ -16,15 +16,16 @@
     NSMutableSet *_sources;
 }
 
++ (id)requiredEntitlements;
++ (Class)queryClass;
 - (void).cxx_destruct;
 - (void)_queue_sourceAdded:(id)arg1;
 - (void)_sourcesForObjectsOfType:(id)arg1 filter:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)_queue_start;
-- (id)requiredEntitlements;
 - (_Bool)_shouldListenForUpdates;
 - (id)sourceClientProxy;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

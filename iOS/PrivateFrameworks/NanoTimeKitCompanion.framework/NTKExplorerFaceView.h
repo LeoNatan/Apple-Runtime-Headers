@@ -6,11 +6,13 @@
 
 #import <NanoTimeKitCompanion/NTKAnalogFaceView.h>
 
-@class NTKExplorerDialView, NTKExplorerHandsView, NTKExplorerStatusView, NTKFaceLayoutContentProvider;
+#import "NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate.h"
 
-@interface NTKExplorerFaceView : NTKAnalogFaceView
+@class NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKExplorerDialView, NTKExplorerHandsView, NTKExplorerStatusView;
+
+@interface NTKExplorerFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate>
 {
-    NTKFaceLayoutContentProvider *_layoutContentProvider;
+    NTKColorCircularUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKExplorerDialView *_dialView;
     NTKExplorerStatusView *_statusView;
     _Bool _observingConnectivity;
@@ -20,8 +22,8 @@
     unsigned long long _color;
 }
 
-+ (id)_swatchImageForColorOption:(id)arg1;
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
++ (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (Class)_timeViewClass;
 @property(nonatomic) unsigned long long color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long density; // @synthesize density=_density;
@@ -48,8 +50,10 @@
 - (struct CGRect)_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
+- (long long)_keylineStyleForComplicationSlot:(id)arg1;
 - (double)_verticalPaddingForStatusBar;
 - (struct CGPoint)_contentCenterOffset;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
@@ -62,9 +66,13 @@
 - (void)_applyFrozen;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(readonly, nonatomic) NTKExplorerHandsView *timeView; // @dynamic timeView;
 
 @end

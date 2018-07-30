@@ -6,73 +6,82 @@
 
 #import "UIView.h"
 
-#import "PKCanvasViewDelegate.h"
+#import "PKDrawableView.h"
 #import "PKSelectionDelegate.h"
+#import "PKTiledCanvasViewDelegate.h"
 #import "UIDropInteractionDelegate_Private.h"
 #import "UIGestureRecognizerDelegate.h"
 #import "UIScrollViewDelegate.h"
 #import "_UIScrollViewLayoutObserver.h"
 #import "_UIScrollViewScrollObserver.h"
 
-@class NSArray, NSString, PKCanvasView, PKDrawing, PKInk, PKInlineInkPicker, PKLinedPaper, PKSelectionController, UIButton, UIDropInteraction, UIScrollView, UITapGestureRecognizer, UITouch, _UITextAttachmentDrawingView;
+@class NSArray, NSMutableArray, NSString, PKAttachmentView, PKController, PKDrawing, PKInk, PKInlineInkPicker, PKLinedPaper, PKSelectionController, PKTiledCanvasView, UIDropInteraction, UIScrollView, UITapGestureRecognizer, UITouch;
 
-@interface PKTiledView : UIView <UIScrollViewDelegate, PKCanvasViewDelegate, _UIScrollViewScrollObserver, _UIScrollViewLayoutObserver, PKSelectionDelegate, UIDropInteractionDelegate_Private, UIGestureRecognizerDelegate>
+@interface PKTiledView : UIView <UIScrollViewDelegate, _UIScrollViewScrollObserver, _UIScrollViewLayoutObserver, PKSelectionDelegate, UIDropInteractionDelegate_Private, UIGestureRecognizerDelegate, PKDrawableView, PKTiledCanvasViewDelegate>
 {
     UIDropInteraction *_dropInteraction;
     PKDrawing *_dirtyDrawing;
     _Bool _fingerDrawingEnabled;
+    _Bool _showDebugOutlines;
     _Bool _isLayingOut;
     _Bool _shouldHideCanvasAfterScroll;
     PKLinedPaper *_linedPaper;
     UIScrollView *_scrollView;
-    PKCanvasView *_canvasView;
+    UIView *_attachmentContainerView;
+    PKTiledCanvasView *_canvasView;
     UITapGestureRecognizer *_clearSelectionGestureRecognizer;
-    double _tileWidth;
-    double _tileHeight;
+    double _tileSize;
+    double _tileScale;
     long long _tileLevel;
     UIView *_gestureView;
     PKInlineInkPicker *_inkPicker;
-    _UITextAttachmentDrawingView *_liveAttachment;
+    PKAttachmentView *_liveAttachment;
     PKDrawing *_isRenderingDrawing;
+    PKController *_tileController;
     UITouch *_drawingTouchThatHitNothing;
     PKDrawing *_createdDrawingForTouchThatHitNothing;
-    _UITextAttachmentDrawingView *_standInEndAttachmentView;
-    UIButton *_tapToRadarButton;
     PKSelectionController *_selectionController;
     NSArray *_additionalStrokes;
     NSArray *_hideAdditionalStrokes;
+    NSArray *_cachedHiddenAdditionalStrokes;
+    NSMutableArray *_cachedVisibleStrokesForDirtyDrawing;
+    NSMutableArray *_cachedVisibleStrokesMinusHiddenStrokesForDirtyDrawing;
+    PKDrawing *_cachedDrawingForHiddenAdditionalStrokes;
     struct CGPoint _lastContentOffset;
+    struct CGPoint _liveStrokeContentOffset;
 }
 
 + (id)newInlineDrawing;
 + (_Bool)showDebugOutlines;
+@property(copy, nonatomic) PKDrawing *cachedDrawingForHiddenAdditionalStrokes; // @synthesize cachedDrawingForHiddenAdditionalStrokes=_cachedDrawingForHiddenAdditionalStrokes;
+@property(retain, nonatomic) NSMutableArray *cachedVisibleStrokesMinusHiddenStrokesForDirtyDrawing; // @synthesize cachedVisibleStrokesMinusHiddenStrokesForDirtyDrawing=_cachedVisibleStrokesMinusHiddenStrokesForDirtyDrawing;
+@property(retain, nonatomic) NSMutableArray *cachedVisibleStrokesForDirtyDrawing; // @synthesize cachedVisibleStrokesForDirtyDrawing=_cachedVisibleStrokesForDirtyDrawing;
+@property(copy, nonatomic) NSArray *cachedHiddenAdditionalStrokes; // @synthesize cachedHiddenAdditionalStrokes=_cachedHiddenAdditionalStrokes;
 @property(readonly, nonatomic) NSArray *hideAdditionalStrokes; // @synthesize hideAdditionalStrokes=_hideAdditionalStrokes;
 @property(readonly, nonatomic) NSArray *additionalStrokes; // @synthesize additionalStrokes=_additionalStrokes;
 @property(retain, nonatomic) PKSelectionController *selectionController; // @synthesize selectionController=_selectionController;
+@property(nonatomic) struct CGPoint liveStrokeContentOffset; // @synthesize liveStrokeContentOffset=_liveStrokeContentOffset;
 @property(nonatomic) _Bool shouldHideCanvasAfterScroll; // @synthesize shouldHideCanvasAfterScroll=_shouldHideCanvasAfterScroll;
 @property(nonatomic) _Bool isLayingOut; // @synthesize isLayingOut=_isLayingOut;
-@property(retain, nonatomic) UIButton *tapToRadarButton; // @synthesize tapToRadarButton=_tapToRadarButton;
-@property(retain, nonatomic) _UITextAttachmentDrawingView *standInEndAttachmentView; // @synthesize standInEndAttachmentView=_standInEndAttachmentView;
 @property(retain, nonatomic) PKDrawing *createdDrawingForTouchThatHitNothing; // @synthesize createdDrawingForTouchThatHitNothing=_createdDrawingForTouchThatHitNothing;
 @property(retain, nonatomic) UITouch *drawingTouchThatHitNothing; // @synthesize drawingTouchThatHitNothing=_drawingTouchThatHitNothing;
 @property(nonatomic) struct CGPoint lastContentOffset; // @synthesize lastContentOffset=_lastContentOffset;
+@property(retain, nonatomic) PKController *tileController; // @synthesize tileController=_tileController;
 @property(nonatomic) __weak PKDrawing *isRenderingDrawing; // @synthesize isRenderingDrawing=_isRenderingDrawing;
-@property(retain, nonatomic) _UITextAttachmentDrawingView *liveAttachment; // @synthesize liveAttachment=_liveAttachment;
+@property(retain, nonatomic) PKAttachmentView *liveAttachment; // @synthesize liveAttachment=_liveAttachment;
 @property(retain, nonatomic) PKInlineInkPicker *inkPicker; // @synthesize inkPicker=_inkPicker;
 @property(retain, nonatomic) UIView *gestureView; // @synthesize gestureView=_gestureView;
 @property(nonatomic) long long tileLevel; // @synthesize tileLevel=_tileLevel;
-@property(nonatomic) double tileHeight; // @synthesize tileHeight=_tileHeight;
-@property(nonatomic) double tileWidth; // @synthesize tileWidth=_tileWidth;
+@property(nonatomic) double tileScale; // @synthesize tileScale=_tileScale;
+@property(nonatomic) double tileSize; // @synthesize tileSize=_tileSize;
 @property(readonly, nonatomic) UITapGestureRecognizer *clearSelectionGestureRecognizer; // @synthesize clearSelectionGestureRecognizer=_clearSelectionGestureRecognizer;
+@property(nonatomic) _Bool showDebugOutlines; // @synthesize showDebugOutlines=_showDebugOutlines;
 @property(nonatomic, getter=isFingerDrawingEnabled) _Bool fingerDrawingEnabled; // @synthesize fingerDrawingEnabled=_fingerDrawingEnabled;
-@property(retain, nonatomic) PKCanvasView *canvasView; // @synthesize canvasView=_canvasView;
+@property(retain, nonatomic) PKTiledCanvasView *canvasView; // @synthesize canvasView=_canvasView;
+@property(nonatomic) __weak UIView *attachmentContainerView; // @synthesize attachmentContainerView=_attachmentContainerView;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(copy, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
 - (void).cxx_destruct;
-- (id)saveTempData:(id)arg1 name:(id)arg2;
-- (void)appendPath:(id)arg1 attachmentString:(id)arg2;
-- (void)_tapToRadarButtonTapped:(id)arg1;
-- (void)_setupTapToRadarButton;
 - (long long)_dropInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
 - (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
@@ -81,11 +90,11 @@
 - (void)_addGestureToClearSelection;
 - (void)_clearSelectionIfNecessary;
 - (void)resetSelectedStrokeStateForRenderer;
-- (void)toggleSelectedStrokes:(id)arg1 hide:(_Bool)arg2 inDrawing:(id)arg3;
+- (void)toggleSelectedStrokes:(id)arg1 hide:(_Bool)arg2 inDrawing:(id)arg3 isErasing:(_Bool)arg4;
 - (void)applyCommand:(id)arg1 toDrawing:(id)arg2;
 - (void)didBeginDraggingSelection;
+- (_Bool)canModifyWhitespace;
 - (void)scrollContent:(struct CGPoint)arg1;
-- (id)drawingView;
 - (id)drawingForLiveAttachment;
 - (_Bool)liveDrawingIsAtEndOfDocument;
 - (struct CGAffineTransform)imageTransform;
@@ -93,8 +102,10 @@
 - (struct CGPoint)closestPointForPastedSelectionRect:(struct CGRect)arg1 withDrawing:(id *)arg2;
 - (id)_attachmentForSelectionRect:(struct CGRect)arg1;
 - (id)drawingForUUID:(id)arg1;
-- (_Bool)containsDrawingUUID:(id)arg1;
 - (_Bool)isValidDropPointForStrokes:(struct CGPoint)arg1;
+- (id)visibleStrokesOnscreen:(id)arg1 forDrawing:(id)arg2;
+- (struct CGRect)visibleOnscreenBoundsForDrawing:(id)arg1;
+- (struct CGRect)boundsForDrawing:(id)arg1;
 - (struct CGPoint)pointInStrokeSpace:(struct CGPoint)arg1 inDrawing:(id)arg2;
 - (void)_updateAttachmentHeightIfNecessaryForDrawing:(id)arg1;
 - (void)selectionRefreshWithChangeToDrawings:(id)arg1;
@@ -103,28 +114,28 @@
 - (struct CGPoint)selectionOffsetForDrawing:(id)arg1;
 @property(readonly, nonatomic) _Bool hasSelection;
 - (void)_updateHeightOfAttachmentIfNecessary:(id)arg1;
-- (void)generateTile:(long long)arg1 inAttachment:(id)arg2 rendering:(_Bool)arg3;
-- (id)tileForOffset:(long long)arg1 inAttachment:(id)arg2;
+- (id)generateTile:(struct CGPoint)arg1 inAttachment:(id)arg2 rendering:(_Bool)arg3;
+- (id)tileForOffset:(struct CGPoint)arg1 inAttachment:(id)arg2;
 - (void)blitOldTilesIntoNewTiles;
 - (void)updateTilesForVisibleRectRendering:(_Bool)arg1;
+- (_Bool)tileIsVisibleForOffset:(struct CGPoint)arg1 inAttachment:(id)arg2 distanceToMiddle:(double *)arg3;
 - (void)updateTilesForVisibleRect;
+- (void)updateTilesForVisibleRectForceIfZooming:(_Bool)arg1;
 - (void)resizeTiles;
 - (void)cancelTileGeneration;
-- (void)_copyFromCanvas:(id)arg1 intoAttachment:(id)arg2 hideCanvas:(_Bool)arg3;
+- (void)_copyFromCanvas:(id)arg1 intoAttachment:(id)arg2 hideCanvas:(_Bool)arg3 stroke:(id)arg4;
 - (void)renderAttachment:(id)arg1 intoCanvas:(id)arg2 showing:(_Bool)arg3;
 - (id)_visibleTilesForAttachment:(id)arg1 includePartiallyVisible:(_Bool)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (id)insertAttachmentIfAtEndOfDocument:(struct CGPoint)arg1;
-- (struct CGRect)frameOfEndAttachment;
-- (_Bool)hasEndAttachment;
-- (id)hitAttachment:(struct CGPoint)arg1 includeEndAttachment:(_Bool)arg2;
+- (_Bool)canAddStroke;
+- (_Bool)insertAttachmentIfInBlankSpace:(struct CGPoint)arg1;
+- (id)hitAttachment:(struct CGPoint)arg1 includeStandinAttachment:(_Bool)arg2;
 - (id)hitAttachment:(struct CGPoint)arg1;
-- (void)getDrawingTransform:(struct CGAffineTransform *)arg1 strokeTransform:(struct CGAffineTransform *)arg2 paperTransform:(struct CGAffineTransform *)arg3;
-- (void)updateEndAttachment;
+- (void)getAttachment:(id)arg1 tileTransform:(struct CGAffineTransform *)arg2 strokeTransform:(struct CGAffineTransform *)arg3 paperTransform:(struct CGAffineTransform *)arg4 scrollViewContentOffset:(struct CGPoint)arg5;
+- (void)getAttachment:(id)arg1 tileTransform:(struct CGAffineTransform *)arg2 strokeTransform:(struct CGAffineTransform *)arg3 paperTransform:(struct CGAffineTransform *)arg4;
 - (void)_layoutSubviews;
 - (void)_didAddDrawingAttachmentView;
 - (void)_scrollViewDidLayoutSubviews:(id)arg1;
-- (double)drawingScale;
 - (void)_hideCanvas;
 - (id)_drawingForUUID:(id)arg1;
 - (void)performUndoSelectionCommand:(id)arg1;
@@ -135,12 +146,13 @@
 - (void)canvasViewDidCancelStroke:(id)arg1;
 - (void)canvasViewDidEndStroke:(id)arg1;
 - (void)canvasViewWillBeginNewStroke:(id)arg1 withTouch:(id)arg2;
+- (void)startedDrawingInBlankSpaceWithTouch:(id)arg1;
+- (id)standInAttachmentView;
 - (id)attachmentForUUID:(id)arg1;
+- (id)visibleAttachments;
 - (id)attachments;
-- (void)textDidEndEditing:(id)arg1;
-- (void)textDidBeginEditing:(id)arg1;
-- (void)textDidChange:(id)arg1;
 - (void)_observeScrollViewDidScroll:(id)arg1;
+- (_Bool)needToUpdateViewFrame;
 - (void)duplicate:(id)arg1;
 - (void)delete:(id)arg1;
 - (void)copy:(id)arg1;
@@ -153,6 +165,7 @@
 - (void)newCanvasView;
 - (void)pickInk;
 - (void)createInkPicker;
+- (void)gpuActiveNotification;
 - (void)dealloc;
 - (id)initInScrollView:(id)arg1;
 

@@ -13,14 +13,18 @@
 @interface _CNSpotlightIndexingLogger : NSObject <CNSpotlightIndexingLogger>
 {
     NSObject<OS_os_log> *_log;
+    NSObject<OS_os_log> *_summaryLog;
 }
 
+@property(readonly, nonatomic) NSObject<OS_os_log> *summaryLog; // @synthesize summaryLog=_summaryLog;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
-- (void)didNotFinishIndexingForDeltaSync:(id)arg1;
-- (void)didNotFinishIndexingForFullSync:(id)arg1;
+- (void)verifiedIndexWithSummmary:(id)arg1;
+- (void)didNotFinishIndexingForDeltaSyncWithError:(id)arg1;
+- (void)didNotFinishIndexingForFullSyncWithError:(id)arg1;
+- (void)finishedBatchIndexWithUpdateIdentifiers:(id)arg1 deleteIdentifiers:(id)arg2;
 - (void)finishedIndexingForDeltaSyncWithUpdateCount:(unsigned long long)arg1 deleteCount:(unsigned long long)arg2;
-- (void)finishedIndexingForFullSync;
+- (void)finishedIndexingForFullSyncWithCount:(unsigned long long)arg1;
 - (void)failedToCreateUnarchiverForClientStateWithError:(id)arg1;
 - (void)failedToUnarchiveClientStateData:(id)arg1;
 - (void)failedToDeleteAllSearchableItemsWithSpotlight:(id)arg1 willRetry:(BOOL)arg2;
@@ -49,6 +53,7 @@
 - (void)deferringReindexAsFailedToPrepareForReindexing;
 - (void)willReindexItemsWithIdentifiers:(id)arg1;
 - (void)noContactChangesToIndex;
+- (void)verifyingIndex:(CDUnknownBlockType)arg1;
 - (void)reindexingSearchableItemsWithIdentifiers:(CDUnknownBlockType)arg1;
 - (void)reindexingAllSearchableItems:(CDUnknownBlockType)arg1;
 - (void)indexingContacts:(CDUnknownBlockType)arg1;

@@ -30,6 +30,7 @@
 - (void)didFinishAnimatingToLongLook;
 - (void)alertBackgroundDidChange;
 - (void)didFinishScrollingAnimationsWithContentOffset:(struct CGPoint)arg1;
+- (void)didEndDragging;
 - (void)willBeginDragging;
 - (struct CGPoint)contentOffsetForProposedContentOffset:(struct CGPoint)arg1;
 - (void)contentOffsetDidChange:(struct CGPoint)arg1;

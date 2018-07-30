@@ -36,6 +36,7 @@
 @property(nonatomic) long long jetsamPolicy; // @synthesize jetsamPolicy=_jetsamPolicy;
 @property(nonatomic) long long graphicsPolicy; // @synthesize graphicsPolicy=_graphicsPolicy;
 @property(nonatomic) long long schedulingPolicy; // @synthesize schedulingPolicy=_schedulingPolicy;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -43,7 +44,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly) unsigned long long hash;

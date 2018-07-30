@@ -17,8 +17,10 @@
     TDLogger *_logger;
     NSString *_assetStoreVersionString;
     long long _assetStoreVersionNumber;
+    NSString *_minDeploymentTarget;
 }
 
+@property(nonatomic) NSString *minDeploymentTarget; // @synthesize minDeploymentTarget=_minDeploymentTarget;
 @property long long assetStoreVersionNumber; // @synthesize assetStoreVersionNumber=_assetStoreVersionNumber;
 @property(copy) NSString *assetStoreVersionString; // @synthesize assetStoreVersionString=_assetStoreVersionString;
 @property(retain, nonatomic) TDLogger *logger; // @synthesize logger=_logger;

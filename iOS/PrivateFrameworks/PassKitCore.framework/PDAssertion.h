@@ -10,11 +10,13 @@
 
 @interface PDAssertion : NSObject
 {
+    _Bool _invalidateWhenBackgrounded;
     unsigned long long _type;
     NSString *_identifier;
     NSString *_reason;
 }
 
+@property(nonatomic) _Bool invalidateWhenBackgrounded; // @synthesize invalidateWhenBackgrounded=_invalidateWhenBackgrounded;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;

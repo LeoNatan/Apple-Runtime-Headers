@@ -14,44 +14,44 @@
 @interface HKDiagnosticTestReport : HKMedicalRecord <NSSecureCoding, NSCopying>
 {
     NSArray *_diagnosticTestCodings;
-    HKMedicalDate *_effectiveEndDate;
-    HKMedicalDate *_effectiveStartDate;
-    HKMedicalDate *_issueDate;
     NSString *_panelName;
     NSArray *_results;
+    HKMedicalDate *_effectiveStartDate;
     HKMedicalCoding *_status;
+    HKMedicalDate *_effectiveEndDate;
+    HKMedicalDate *_issueDate;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)diagnosticTestReportWithNote:(id)arg1 enteredInError:(_Bool)arg2 modifiedDate:(id)arg3 FHIRIdentifier:(id)arg4 extractionVersion:(long long)arg5 device:(id)arg6 metadata:(id)arg7 diagnosticTestCodings:(id)arg8 panelName:(id)arg9 results:(id)arg10 effectiveStartDate:(id)arg11 status:(id)arg12 effectiveEndDate:(id)arg13 issueDate:(id)arg14;
++ (id)diagnosticTestReportWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 diagnosticTestCodings:(id)arg10 panelName:(id)arg11 results:(id)arg12 effectiveStartDate:(id)arg13 status:(id)arg14 effectiveEndDate:(id)arg15 issueDate:(id)arg16;
++ (id)diagnosticTestReportWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 diagnosticTestCodings:(id)arg9 panelName:(id)arg10 results:(id)arg11 effectiveStartDate:(id)arg12 status:(id)arg13 effectiveEndDate:(id)arg14 issueDate:(id)arg15;
 + (id)defaultDisplayString;
 + (id)statusPreferredSystems;
 + (id)diagnosticTestCodingsPreferredSystems;
-@property(readonly, copy, nonatomic) HKMedicalCoding *status; // @synthesize status=_status;
-@property(readonly, copy, nonatomic) NSArray *results; // @synthesize results=_results;
-@property(readonly, copy, nonatomic) NSString *panelName; // @synthesize panelName=_panelName;
-@property(readonly, copy, nonatomic) HKMedicalDate *issueDate; // @synthesize issueDate=_issueDate;
-@property(readonly, copy, nonatomic) HKMedicalDate *effectiveStartDate; // @synthesize effectiveStartDate=_effectiveStartDate;
-@property(readonly, copy, nonatomic) HKMedicalDate *effectiveEndDate; // @synthesize effectiveEndDate=_effectiveEndDate;
-@property(readonly, copy, nonatomic) NSArray *diagnosticTestCodings; // @synthesize diagnosticTestCodings=_diagnosticTestCodings;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) HKDiagnosticTestReportType *diagnosticTestReportType;
+@property(readonly, copy) HKDiagnosticTestReportType *diagnosticTestReportType;
 - (id)_validateConfiguration;
 - (void)_setIssueDate:(id)arg1;
+@property(readonly, copy) HKMedicalDate *issueDate;
 - (void)_setEffectiveEndDate:(id)arg1;
+@property(readonly, copy) HKMedicalDate *effectiveEndDate;
 - (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKMedicalCoding *status;
 - (void)_setEffectiveStartDate:(id)arg1;
+@property(readonly, copy) HKMedicalDate *effectiveStartDate;
 - (void)_setResults:(id)arg1;
+@property(readonly, copy) NSArray *results;
 - (void)_setPanelName:(id)arg1;
+@property(readonly, copy) NSString *panelName;
 - (void)_setDiagnosticTestCodings:(id)arg1;
+@property(readonly, copy) NSArray *diagnosticTestCodings;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
-- (id)_init;
 - (id)init;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;

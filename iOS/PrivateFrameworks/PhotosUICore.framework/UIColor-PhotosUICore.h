@@ -7,6 +7,10 @@
 #import "UIColor.h"
 
 @interface UIColor (PhotosUICore)
++ (id)px_barHairlineShadowColor;
++ (id)px_assetExplorerBackgroundColor;
++ (id)px_assetPlaceholderGray;
++ (id)px_messagesBubbleGray;
 + (id)px_systemMidGray;
 + (id)alternateSelectedControlColor;
 @property(readonly, nonatomic, getter=px_isTransparent) _Bool px_transparent;

@@ -12,6 +12,8 @@ __attribute__((visibility("hidden")))
     int _supportHEVC;
 }
 
+- (unsigned int)maxNetworkBitrateMultiwayVideoOnWifi:(BOOL)arg1;
+- (unsigned int)maxNetworkBitrateMultiwayAudioOnWifi:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL vcpSupportsHEVCEncoder;
 @property(readonly, nonatomic) BOOL supportHEVC;
 - (id)init;

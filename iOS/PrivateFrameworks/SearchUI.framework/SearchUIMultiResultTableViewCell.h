@@ -6,28 +6,24 @@
 
 #import <SearchUI/SearchUITableViewCell.h>
 
-@class NSArray, NSLayoutConstraint, SearchUIIconViewContainer, TLKAuxilliaryTextView;
+@class NSArray, SearchUIAppIconsRowView, TLKAuxilliaryTextView;
 
 @interface SearchUIMultiResultTableViewCell : SearchUITableViewCell
 {
-    SearchUIIconViewContainer *_topContainer;
-    SearchUIIconViewContainer *_bottomContainer;
-    TLKAuxilliaryTextView *_folderLabelView;
-    NSLayoutConstraint *_singleRowConstraint;
-    NSLayoutConstraint *_doubleRowConstraint;
+    SearchUIAppIconsRowView *_topRow;
+    SearchUIAppIconsRowView *_bottomRow;
     NSArray *_results;
     long long _indexOfSelectedKeyboardIcon;
+    TLKAuxilliaryTextView *_folderLabelView;
 }
 
-+ (void)removeDropShadowIconStateForView:(id)arg1;
 + (unsigned long long)numberOfColumnsForCurrentOrientation;
++ (void)removeDropShadowIconStateForView:(id)arg1;
+@property(retain, nonatomic) TLKAuxilliaryTextView *folderLabelView; // @synthesize folderLabelView=_folderLabelView;
 @property(nonatomic) long long indexOfSelectedKeyboardIcon; // @synthesize indexOfSelectedKeyboardIcon=_indexOfSelectedKeyboardIcon;
-@property(retain) NSArray *results; // @synthesize results=_results;
-@property(retain) NSLayoutConstraint *doubleRowConstraint; // @synthesize doubleRowConstraint=_doubleRowConstraint;
-@property(retain) NSLayoutConstraint *singleRowConstraint; // @synthesize singleRowConstraint=_singleRowConstraint;
-@property(retain) TLKAuxilliaryTextView *folderLabelView; // @synthesize folderLabelView=_folderLabelView;
-@property(retain) SearchUIIconViewContainer *bottomContainer; // @synthesize bottomContainer=_bottomContainer;
-@property(retain) SearchUIIconViewContainer *topContainer; // @synthesize topContainer=_topContainer;
+@property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
+@property(retain, nonatomic) SearchUIAppIconsRowView *bottomRow; // @synthesize bottomRow=_bottomRow;
+@property(retain, nonatomic) SearchUIAppIconsRowView *topRow; // @synthesize topRow=_topRow;
 - (void).cxx_destruct;
 - (void)removeKeyboardHandler;
 - (_Bool)navigateKeyboardLeft;
@@ -35,17 +31,17 @@
 - (_Bool)navigateKeyboardRight;
 - (void)setupKeyboardHandler;
 - (_Bool)canSetupKeyboardHandler;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+- (unsigned long long)numberOfVisibleResults;
+- (id)visibleResults;
 - (void)updateExpanded:(_Bool)arg1;
 - (_Bool)isExpandable;
 - (void)layoutSubviews;
-- (void)updateSpacerWidthsForPlatterInsets;
-- (id)iconContainers;
-- (void)updateNumberOfColumns;
-- (id)visibleResults;
-- (unsigned long long)numberOfVisibleResults;
-- (unsigned long long)numberOfVisibleColumns;
+- (double)appRowSpacing;
+- (double)topAndBottomPadding;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateWithRowModel:(id)arg1;
+- (void)setFeedbackDelegateForRowView:(id)arg1;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 
 @end

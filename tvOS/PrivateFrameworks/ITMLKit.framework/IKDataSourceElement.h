@@ -10,14 +10,6 @@
 
 @interface IKDataSourceElement : IKViewElement
 {
-    struct {
-        _Bool hasDidLoadBinding;
-        _Bool hasDoKeysAffectingChildren;
-        _Bool hasDoKeysAffectingSubtree;
-        _Bool hasAdditionalKeysToResolve;
-        _Bool hasApplyValueForKey;
-        _Bool hasDidResolveKeys;
-    } _implFlags;
     _Bool _areItemsBound;
     NSArray *_autoHighlightedChildElements;
     long long _autoHighlightIndex;
@@ -33,12 +25,6 @@
 - (void)appDocumentDidMarkStylesDirty;
 - (id)actualElementForProxyElement:(id)arg1 jsContext:(id)arg2;
 - (void)resetUpdates;
-- (void)domBindingController:(id)arg1 didResolveKeys:(id)arg2;
-- (_Bool)domBindingController:(id)arg1 applyValue:(id)arg2 forKey:(id)arg3;
-- (id)additionalKeysToResolveForDOMBindingController:(id)arg1;
-- (_Bool)domBindingController:(id)arg1 doKeysAffectSubtree:(id)arg2;
-- (_Bool)domBindingController:(id)arg1 doKeysAffectChildren:(id)arg2;
-- (void)domBindingController:(id)arg1 didLoadBinding:(id)arg2;
 - (void)unloadIndex:(long long)arg1;
 - (void)loadIndex:(long long)arg1;
 - (id)elementForItemAtIndex:(long long)arg1;

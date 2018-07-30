@@ -31,6 +31,7 @@
 - (_Bool)allowsBinaryMimeParts;
 - (void)setAllows8BitMimeParts:(_Bool)arg1;
 - (_Bool)allows8BitMimeParts;
+- (id)newDataForMimePart:(id)arg1 withPartData:(id)arg2;
 - (id)createMessageWithHtmlString:(id)arg1 attachments:(id)arg2 headers:(id)arg3;
 - (id)createMessageWithHtmlString:(id)arg1 plainTextAlternative:(id)arg2 otherHtmlStringsAndAttachments:(id)arg3 charsets:(id)arg4 headers:(id)arg5;
 - (id)createMessageWithHtmlString:(id)arg1 plainTextAlternative:(id)arg2 otherHtmlStringsAndAttachments:(id)arg3 headers:(id)arg4;

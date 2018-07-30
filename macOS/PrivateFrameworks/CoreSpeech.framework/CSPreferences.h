@@ -14,7 +14,15 @@
 + (id)deviceCategoryStringRepresentationForCategoryType:(unsigned long long)arg1;
 + (BOOL)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
 + (id)sharedPreferences;
+- (BOOL)useSiriActivationSPIForHomePod;
+- (unsigned long long)maxNumLoggingFiles;
 - (double)audioSessionActivationDelay;
+- (BOOL)smartSiriVolumeSoftVolumeEnabled;
+- (BOOL)speakerIdEnabled;
+- (id)audioInjectionFilePath;
+- (void)setAudioInjectionFilePath:(id)arg1;
+- (BOOL)audioInjectionEnabled;
+- (BOOL)enableAudioInjection:(BOOL)arg1;
 - (BOOL)myriadFileLoggingEnabled;
 - (id)interstitialAbsoluteDirForLevel:(long long)arg1;
 - (id)interstitialRelativeDirForLevel:(long long)arg1;
@@ -27,6 +35,8 @@
 - (id)getUserVoiceProfileUpdateDirectory;
 - (BOOL)_isDirectory:(id)arg1;
 - (void)notifyUserVoiceProfileUploadComplete;
+- (BOOL)_encryptPHSMigratedFileAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
+- (BOOL)_decryptFileForPHSMigrationAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
 - (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id *)arg1;
 - (id)getUserVoiceProfileUploadPath;
 - (id)getUserVoiceProfileFileList;
@@ -34,6 +44,7 @@
 - (id)_CSSATUploadPath;
 - (id)_CSSATUpdatePath;
 - (id)CSSATBasePath;
+- (void)_secureSatBasePathAt:(id)arg1;
 - (id)assistantAudioFileLogDirectory;
 - (id)assistantLogDirectory;
 - (id)voiceTriggerAudioLogDirectory;

@@ -8,7 +8,7 @@
 
 @interface CUITextEffectStack : CUIShapeEffectStack
 {
-    _Bool renderHighQuality;
+    _Bool _renderHighQuality;
 }
 
 - (void)drawUsingQuartz:(CDUnknownBlockType)arg1 inContext:(struct CGContext *)arg2 inBounds:(struct CGRect)arg3 atScale:(double)arg4;

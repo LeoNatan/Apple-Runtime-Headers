@@ -22,7 +22,7 @@
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)_filterArrayFromProperties:(id)arg1;
 + (id)_filterArrayFromImageMetadata:(struct CGImageMetadata *)arg1 inputImageExtent:(struct CGRect)arg2;
-+ (struct CGImageMetadata *)_imageMetadataFromFilters:(id)arg1 inputImageExtent:(struct CGRect)arg2;
++ (const struct CGImageMetadata *)_imageMetadataFromFilters:(id)arg1 inputImageExtent:(struct CGRect)arg2;
 + (id)_filterArrayFromProperties:(id)arg1 inputImageExtent:(struct CGRect)arg2;
 + (id)_propertyArrayFromFilters:(id)arg1 inputImageExtent:(struct CGRect)arg2;
 + (id)filterWithString:(id)arg1;
@@ -30,6 +30,8 @@
 + (id)filterWithCVPixelBuffer:(struct __CVBuffer *)arg1 properties:(id)arg2 options:(id)arg3;
 + (id)filterWithImageData:(id)arg1 options:(id)arg2;
 + (id)filterWithImageURL:(id)arg1 options:(id)arg2;
++ (id)metalFilterWithName:(id)arg1;
++ (id)metalFilterWithName:(id)arg1 withInputParameters:(id)arg2;
 + (id)localizedReferenceDocumentationForFilterName:(id)arg1;
 + (id)localizedDescriptionForFilterName:(id)arg1;
 + (id)localizedNameForCategory:(id)arg1;
@@ -62,7 +64,7 @@
 @property(readonly, nonatomic) NSArray *inputKeys;
 - (void)finalize;
 - (void)dealloc;
-- (void)_crashed_when_dealloc_called_setValue_nil_forKey_probably_because_the_subclass_already_released_it:(id)arg1;
+- (void)_crashed_when_dealloc_called_setValue_nil_forKey_probably_because_the_subclass_already_released_it:(id)arg1 overridesDealloc:(BOOL)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

@@ -8,6 +8,7 @@
 
 @class MCUIFieldCollection, NSString, UIAlertView;
 
+__attribute__((visibility("hidden")))
 @interface MCQuestionsController : PSDetailController
 {
     MCUIFieldCollection *_fieldCollection;

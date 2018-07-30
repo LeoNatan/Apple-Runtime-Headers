@@ -6,9 +6,12 @@
 
 #import <AppKit/NSEditorBinder.h>
 
+#import "NSEditor.h"
+
 @class NSString;
 
-@interface NSValueBinder : NSEditorBinder
+__attribute__((visibility("hidden")))
+@interface NSValueBinder : NSEditorBinder <NSEditor>
 {
     struct __valueBinderFlags {
         unsigned int _allowsEditingMultipleValuesSelection:1;
@@ -113,6 +116,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

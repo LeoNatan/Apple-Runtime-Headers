@@ -4,15 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
-@interface DMFFetchRestrictionsRequest : CATTaskRequest
+@interface DMFFetchRestrictionsRequest : DMFTaskRequest
 {
     BOOL _includeProfileRestrictions;
     unsigned long long _profileFilterFlags;
 }
 
 + (BOOL)supportsSecureCoding;
++ (BOOL)isPermittedOnUserConnection;
++ (BOOL)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
 @property(nonatomic) unsigned long long profileFilterFlags; // @synthesize profileFilterFlags=_profileFilterFlags;
 @property(nonatomic) BOOL includeProfileRestrictions; // @synthesize includeProfileRestrictions=_includeProfileRestrictions;

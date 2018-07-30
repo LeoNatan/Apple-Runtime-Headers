@@ -11,6 +11,7 @@
 
 @class NSString, UIView;
 
+__attribute__((visibility("hidden")))
 @interface AECameraTile : NSObject <PXUIViewBasicTile, PXReusableObject>
 {
     UIView *_view;

@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface WFDefaultFavoritesProvider : NSObject <WFFavoriteLocationProvider>
 {
     id <WFFavoriteLocationProviderDelegate> _delegate;

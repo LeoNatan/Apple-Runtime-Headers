@@ -29,6 +29,10 @@ struct NSDictionary {
     Class _field1;
 };
 
+struct NUResponse {
+    Class _field1;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -38,7 +42,18 @@ typedef struct {
 typedef struct {
     double _field1;
     double _field2;
+    double _field3;
+} CDStruct_39925896;
+
+typedef struct {
+    double _field1;
+    double _field2;
 } CDStruct_c3b9c2ee;
+
+typedef struct {
+    int major;
+    int minor;
+} CDStruct_6ed351db;
 
 typedef struct {
     long long value;

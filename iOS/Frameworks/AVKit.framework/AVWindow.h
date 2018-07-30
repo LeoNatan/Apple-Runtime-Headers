@@ -6,22 +6,20 @@
 
 #import "UIWindow.h"
 
-@class AVFullScreenViewController, AVPlayerViewController;
+@class UIViewController;
 
 @interface AVWindow : UIWindow
 {
-    AVFullScreenViewController *_fullScreenViewController;
-    UIWindow *_sourceWindow;
-    AVPlayerViewController *_playerViewController;
+    UIViewController *_viewControllerToBePresented;
 }
 
-@property(retain, nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-@property(readonly, nonatomic) __weak UIWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
-@property(readonly, nonatomic) AVFullScreenViewController *fullScreenViewController; // @synthesize fullScreenViewController=_fullScreenViewController;
+@property(retain, nonatomic) UIViewController *viewControllerToBePresented; // @synthesize viewControllerToBePresented=_viewControllerToBePresented;
 - (void).cxx_destruct;
 - (unsigned long long)_supportedInterfaceOrientationsForRootViewController;
+- (_Bool)_canAffectStatusBarAppearance;
+- (_Bool)_shouldControlAutorotation;
 - (void)dealloc;
-- (id)initWithPlayerViewController:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 viewControllerToBePresented:(id)arg2;
 
 @end
 

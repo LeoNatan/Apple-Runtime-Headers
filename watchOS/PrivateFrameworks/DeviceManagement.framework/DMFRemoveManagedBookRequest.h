@@ -4,17 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSNumber, NSString;
 
-@interface DMFRemoveManagedBookRequest : CATTaskRequest
+@interface DMFRemoveManagedBookRequest : DMFTaskRequest
 {
     NSNumber *_iTunesStoreID;
     NSString *_persistentID;
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSNumber *iTunesStoreID; // @synthesize iTunesStoreID=_iTunesStoreID;
 - (void).cxx_destruct;

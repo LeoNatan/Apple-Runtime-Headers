@@ -6,12 +6,14 @@
 
 #import <AppKit/NSTableView.h>
 
+__attribute__((visibility("hidden")))
 @interface NSComboTableView : NSTableView
 {
     long long _lastReturnedNumberOfRows;
 }
 
 + (BOOL)_logErrorForNonStringIdentifier;
+- (BOOL)_shouldBlurSelectionWhenCellBased;
 - (id)initWithCoder:(id)arg1;
 - (long long)numberOfRows;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;

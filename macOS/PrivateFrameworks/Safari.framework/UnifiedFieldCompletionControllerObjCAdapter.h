@@ -28,11 +28,11 @@ __attribute__((visibility("hidden")))
     WBSFaviconRequestsController *_requestsController;
 }
 
-+ (BOOL)_atLeastOneCompletionListSectionHasChangedBetweenList:(const Vector_24b72aae *)arg1 list:(const Vector_24b72aae *)arg2;
++ (BOOL)_atLeastOneCompletionListSectionHasChangedBetweenList:(const Vector_9c080eda *)arg1 list:(const Vector_9c080eda *)arg2;
 + (id)simplifiedURLStringForURLString:(id)arg1;
 + (BOOL)wantsFavoritesViewInCompletionList;
 - (void).cxx_destruct;
-- (BOOL)_shouldPostAXRefreshNotificationWithOldList:(const Vector_24b72aae *)arg1 newListItems:(const Vector_24b72aae *)arg2;
+- (BOOL)_shouldPostAXRefreshNotificationWithOldList:(const Vector_9c080eda *)arg1 newListItems:(const Vector_9c080eda *)arg2;
 - (id)_flightViewForSearchResult:(id)arg1;
 - (void)_registerForCompletionAbortingNotificationNamed:(id)arg1 object:(id)arg2;
 - (void)_unregisterForCompletionAbortingNotifications;
@@ -83,8 +83,8 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)_setAttributedStringValuesOnUnifiedFieldTableCellView:(id)arg1 forOriginalStringValue:(id)arg2;
-- (void)_configureParsecCell:(id)arg1 usingCompletionListItem:(struct CompletionListItem *)arg2 skipConfigurationIfCellViewIsAlreadyDisplayingResult:(BOOL)arg3;
-- (void)willUpdateCompletionListFromList:(const Vector_24b72aae *)arg1 toList:(const Vector_24b72aae *)arg2;
+- (void)_configureParsecCell:(id)arg1 usingCompletionListItem:(struct CompletionListItem *)arg2;
+- (void)willUpdateCompletionListFromList:(const Vector_9c080eda *)arg1 toList:(const Vector_9c080eda *)arg2;
 - (void)didUpdateCompletionList;
 - (void)didReloadCompletionList;
 - (void)willReloadCompletionList;

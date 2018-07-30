@@ -15,14 +15,6 @@
 
 + (id)sharedInstance;
 @property(readonly) NSMutableDictionary *actionsByProperty; // @synthesize actionsByProperty=_actionsByProperty;
-- (void)loadScriptsInDirectory:(id)arg1;
-- (BOOL)callbacksAreValid:(CDStruct_014ac2ec *)arg1;
-- (id)callbackActionForBundleAtPath:(id)arg1;
-- (id)actionForBundleAtPath:(id)arg1;
-- (void)loadBundlesInDirectory:(id)arg1;
-- (void)makeSureUserPlugInFolderExists;
-- (BOOL)shouldLoadExternalActions;
-- (void)loadExternalActions;
 - (void)loadInternalActions;
 - (void)loadActions;
 - (void)addDelegatedActionResponderOfClass:(Class)arg1 actionProperty:(id)arg2;

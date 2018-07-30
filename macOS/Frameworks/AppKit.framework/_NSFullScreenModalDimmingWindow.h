@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 @property id <_NSFullScreenModalDimmingWindowDelegate> delegate;
 - (void)_setWindowTag;
 - (BOOL)_ignoreForFullScreenTransition;
-- (BOOL)_shouldAutoIncSubLevel;
 - (BOOL)canBecomeMainWindow;
 - (BOOL)canBecomeKeyWindow;
 - (BOOL)_canMiniaturize;
@@ -34,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canBeSnappingTarget;
 - (BOOL)_allowsSnapping;
 - (BOOL)_shouldSnapWindowsClientSide;
-- (BOOL)_shouldAutoDecSubLevel;
 - (id)initWithStackController:(id)arg1;
 - (void)dealloc;
 

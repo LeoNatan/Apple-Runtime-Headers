@@ -6,11 +6,14 @@
 
 #import <VideoProcessing/VCPAsset.h>
 
-@class NSDictionary, NSURL;
+@class AVURLAsset, NSDictionary, NSURL;
 
 @interface VCPURLAsset : VCPAsset
 {
     NSURL *_imageURL;
+    AVURLAsset *_movie;
+    long long _mediaType;
+    unsigned long long _mediaSubtypes;
     unsigned long long _pixelWidth;
     unsigned long long _pixelHeight;
     BOOL _onceExif;
@@ -18,12 +21,25 @@
 }
 
 + (id)imageAssetWithURL:(id)arg1;
++ (id)livePhotoAssetWithImageURL:(id)arg1 andMovieURL:(id)arg2;
++ (id)movieAssetWithURL:(id)arg1;
 - (void).cxx_destruct;
-- (struct __CVBuffer *)imageWithPreferredDimension:(unsigned long long)arg1;
-- (id)exif;
+- (id)mainFileURL;
+- (id)modificationDate;
 - (unsigned long long)pixelHeight;
 - (unsigned long long)pixelWidth;
+- (unsigned long long)mediaSubtypes;
+- (long long)mediaType;
+- (struct __CVBuffer *)imageWithPreferredDimension:(unsigned long long)arg1;
+- (id)exif;
 - (id)initWithImageURL:(id)arg1;
+- (float)photoOffsetSeconds;
+- (id)initWithImageURL:(id)arg1 andMovieURL:(id)arg2;
+- (id)originalMovie;
+- (id)movie;
+- (float)slowmoRate;
+- (double)duration;
+- (id)initWithMovieURL:(id)arg1;
 
 @end
 

@@ -23,7 +23,7 @@
 @property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
 @property(nonatomic) unsigned char tieBreaker; // @synthesize tieBreaker=_tieBreaker;
 @property(nonatomic) unsigned char deviceClass; // @synthesize deviceClass=_deviceClass;
-@property(retain, nonatomic) NSUUID *deviceID; // @synthesize deviceID=_deviceID;
+@property(copy, nonatomic) NSUUID *deviceID; // @synthesize deviceID=_deviceID;
 @property(nonatomic) unsigned char deviceGroup; // @synthesize deviceGroup=_deviceGroup;
 @property(nonatomic) unsigned short pHash; // @synthesize pHash=_pHash;
 @property(nonatomic) unsigned char userConfidence; // @synthesize userConfidence=_userConfidence;
@@ -31,6 +31,8 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)asAdvertisementData;
+- (int)slowdownDelay;
+- (_Bool)isSlowdown;
 - (_Bool)isSane;
 - (_Bool)isAnEmergencyHandled;
 - (_Bool)isAnEmergency;

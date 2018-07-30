@@ -7,32 +7,35 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPayloadNeedsValue.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBPayloadNeedsValue : PBCodable <NSCopying>
+@interface _INPBPayloadNeedsValue : PBCodable <_INPBPayloadNeedsValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_promptItems;
+    struct _has;
+    NSArray *_promptItems;
 }
 
 + (Class)promptItemsType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *promptItems; // @synthesize promptItems=_promptItems;
+@property(copy, nonatomic) NSArray *promptItems; // @synthesize promptItems=_promptItems;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)promptItemsAtIndex:(unsigned int)arg1;
-- (unsigned int)promptItemsCount;
+@property(readonly, nonatomic) unsigned int promptItemsCount;
 - (void)addPromptItems:(id)arg1;
 - (void)clearPromptItems;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

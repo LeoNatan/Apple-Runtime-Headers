@@ -11,9 +11,7 @@
 @protocol _CPRankingFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(copy, nonatomic) NSArray *sections;
-@property(readonly, nonatomic) _Bool hasBlendingDuration;
 @property(nonatomic) double blendingDuration;
-@property(readonly, nonatomic) _Bool hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

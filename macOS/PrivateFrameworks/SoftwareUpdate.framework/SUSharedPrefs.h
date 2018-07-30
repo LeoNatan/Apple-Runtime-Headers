@@ -31,7 +31,9 @@
 - (void)clearCriticalUpdateNotificationDate;
 - (BOOL)shouldAutoInstallCriticalUpdatesNowForDelay:(long long)arg1;
 - (BOOL)shouldInvertStagedAndActiveStatesForTestingOnProduction;
+- (BOOL)disableSeedOptOut;
 - (BOOL)enableSpecialTestMode;
+- (BOOL)bypassEVCertChecking;
 - (BOOL)okayToUseThirdPartyTestMode;
 - (BOOL)shouldIgnoreMacOSStagingStatusForBridgeOSUpdates;
 - (BOOL)shouldConsiderOnlyStagedUpdates;
@@ -45,8 +47,9 @@
 - (void)collectStatisticsAppStorePrefs;
 - (void)messageTraceAppStorePrefs;
 - (BOOL)shouldScanAfterSystemVersionChanged;
-- (void)setOSXAutoUpdates:(BOOL)arg1;
-- (BOOL)doesOSXAutoUpdates;
+- (void)setMacOSAutoUpdate:(BOOL)arg1;
+- (BOOL)doesMacOSAutoUpdate;
+- (BOOL)migratePreferenceFromCommerceWithKey:(id)arg1 toSUKey:(id)arg2;
 - (void)setAppStoreAutoUpdates:(BOOL)arg1;
 - (BOOL)doesAppStoreAutoUpdates;
 - (void)setAutomaticCriticalUpdateInstall:(BOOL)arg1;
@@ -69,9 +72,12 @@
 - (BOOL)isAutomaticallyCheckForUpdatesEnabled;
 - (BOOL)adminDeferredInstallEnabled;
 - (unsigned long long)defaultAdminDeferralPeriod;
+- (BOOL)allowSameOrOlderMajorOSVersion;
 - (double)scanFrequencyInterval;
 - (void)setCheckScheduled:(BOOL)arg1;
 - (BOOL)isCheckScheduled;
+- (void)setCatalogToProductionAndNotify;
+- (BOOL)isCatalogURLManaged;
 - (id)catalogURL;
 - (id)recommendedUpdateProductKeys;
 - (void)setLastCheckAttemptSystemVersion;
@@ -79,6 +85,8 @@
 - (id)lastCheckAttemptBuildVersion;
 - (id)lastCheckAttemptSystemVersion;
 - (void)addPrimaryLanguageIfNecessary:(id)arg1;
+- (void)setLastRecommendedMajorOSBundleIdentifier:(id)arg1;
+- (id)lastRecommendedMajorOSBundleIdentifier;
 - (void)removeAllRecommendedUpdates;
 - (void)removeRecommendedUpdates:(id)arg1;
 - (void)addRecommendedUpdates:(id)arg1;
@@ -90,6 +98,8 @@
 - (int)lastCheckResultCode;
 - (void)setLastBackgroundCheckSuccessfulDate:(id)arg1;
 - (id)lastBackgroundCheckSuccessfulDate;
+- (void)setLastCatalogChangeDate:(id)arg1;
+- (id)lastCatalogChangeDate:(id)arg1;
 - (void)setLastFullCheckSuccessfulDate:(id)arg1;
 - (id)lastFullCheckSuccessfulDate;
 - (void)setLastCheckSuccessfulDate:(id)arg1;
@@ -101,6 +111,7 @@
 - (void)setLastSessionCompletedSuccessfully:(BOOL)arg1;
 - (BOOL)lastSessionCompletedSuccessfully;
 - (void)updatePrefsIfNeeded;
+- (void)deletePref:(id)arg1 inDomain:(id)arg2;
 - (BOOL)isUserPreferenceManaged:(id)arg1 usingManaged:(BOOL)arg2;
 - (id)objectForAnyUserPreference:(id)arg1 usingManaged:(BOOL)arg2 usingDefaultOverride:(BOOL)arg3;
 - (id)_valueFromDefaultOverridePlist:(id)arg1;

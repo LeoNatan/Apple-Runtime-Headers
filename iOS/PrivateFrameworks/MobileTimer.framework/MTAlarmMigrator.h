@@ -6,29 +6,20 @@
 
 #import "NSObject.h"
 
-@class Alarm, MTAlarm, NSArray, NSMutableArray;
+@class MTAlarm, NSMutableArray;
 
 @interface MTAlarmMigrator : NSObject
 {
     NSMutableArray *_alarms;
     MTAlarm *_sleepAlarm;
-    NSArray *_oldAlarms;
-    Alarm *_oldSleepAlarm;
 }
 
-+ (id)_numberFromString:(id)arg1;
-+ (id)soundFromOldAlarm:(id)arg1;
-+ (unsigned long long)repeatScheduleFromOldAlarm:(id)arg1;
-+ (id)alarmFromOldAlarm:(id)arg1;
-@property(retain, nonatomic) Alarm *oldSleepAlarm; // @synthesize oldSleepAlarm=_oldSleepAlarm;
-@property(retain, nonatomic) NSArray *oldAlarms; // @synthesize oldAlarms=_oldAlarms;
 @property(retain, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) NSMutableArray *alarms; // @synthesize alarms=_alarms;
 - (void).cxx_destruct;
 - (void)cleanUpOldNotifications;
 - (void)removeFromOldStorage;
 - (void)migrateFromOldStorage;
-- (_Bool)_hasSleepAlarmBeenConfigured;
 
 @end
 

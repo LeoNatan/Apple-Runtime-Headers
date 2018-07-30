@@ -8,6 +8,7 @@
 
 @class AVAssetInspectorLoader, AVWeakReference, NSArray, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVDataDelegateAssetInternal : NSObject
 {
     AVWeakReference *_weakReferenceToDataDelegate;

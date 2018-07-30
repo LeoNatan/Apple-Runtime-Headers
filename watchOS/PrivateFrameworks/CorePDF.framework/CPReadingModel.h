@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSAttributedString, NSMutableArray, NSString, RMList;
+@class CPRMList, NSAttributedString, NSMutableArray, NSString;
 
 @interface CPReadingModel : NSObject
 {
@@ -30,7 +30,7 @@
     int _pageNumberMemo;
     CDStruct_dff5684f _textRangeMemo;
     struct _NSRange _rangeMemo;
-    RMList *_currentList;
+    CPRMList *_currentList;
 }
 
 - (int)lineIndexForPoint:(struct CGPoint)arg1 onPage:(unsigned int)arg2;

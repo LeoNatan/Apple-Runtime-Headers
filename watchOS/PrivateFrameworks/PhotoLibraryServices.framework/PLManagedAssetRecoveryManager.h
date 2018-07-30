@@ -17,6 +17,11 @@
     int _state;
 }
 
++ (id)_predicateForAdjustedAssetsWithMissingResources;
++ (id)_irisesWithZeroVideoCpDuration;
++ (id)_jpegImagesPredicate;
++ (id)_imagesWithZeroWidthHeightPredicate;
++ (id)_predicateForSupportedAssetTypesForUpload;
 + (id)sharedManager;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -24,6 +29,7 @@
 @property(nonatomic) int assetsDownloadsCount; // @synthesize assetsDownloadsCount=_assetsDownloadsCount;
 @property(retain, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
+- (_Bool)_canUnderstandAdjustmentForAsset:(id)arg1;
 - (_Bool)_fixIrisWithZeroVideoComplementDuration:(id)arg1 usingExistingVideoComplementAtPath:(id)arg2 error:(id *)arg3;
 - (void)_fixIrisWithZeroVideoComplementDuration:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_fixAdjustedAssetWithMissingDerivatives:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

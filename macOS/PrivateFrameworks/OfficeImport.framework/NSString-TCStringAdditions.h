@@ -7,6 +7,9 @@
 #import "NSString.h"
 
 @interface NSString (TCStringAdditions)
++ (id)tc_stringByFixingUnpairedSurrogateCharactersInString:(id)arg1;
++ (BOOL)tc_fixUnpairedSurrogateCharactersInBuffer:(vector_195fe69b *)arg1;
+- (const char *)nulTerminatedUTF8;
 - (BOOL)tc_doesURLHostContainWhitespace;
 - (BOOL)tc_startsWithString:(id)arg1;
 @end

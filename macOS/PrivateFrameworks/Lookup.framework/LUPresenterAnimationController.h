@@ -22,7 +22,6 @@
 @property(retain, nonatomic) NSAttributedString *displayedTerm; // @synthesize displayedTerm=_displayedTerm;
 - (void).cxx_destruct;
 - (void)commonLUPresenterAnimationControllerTeardown;
-- (void)finalize;
 - (void)dealloc;
 - (void)showPopover;
 - (void)recognizerDidCompleteAnimation:(id)arg1;

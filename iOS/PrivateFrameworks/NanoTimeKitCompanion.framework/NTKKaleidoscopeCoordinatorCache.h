@@ -22,11 +22,6 @@
 
 + (id)sharedCache;
 - (void).cxx_destruct;
-- (void)_performCleanup;
-- (void)_removePath:(id)arg1;
-- (void)_touchPath:(id)arg1;
-- (void)_writeBacking:(id)arg1 atPath:(id)arg2;
-- (void)_scheduleCleanup;
 - (void)_computeKaleidoscopeFaceCount;
 - (void)faceCollectionDidReset:(id)arg1;
 - (void)faceCollectionDidLoad:(id)arg1;

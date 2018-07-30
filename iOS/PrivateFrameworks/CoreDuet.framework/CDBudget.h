@@ -6,18 +6,16 @@
 
 #import "NSObject.h"
 
-@class CDSession, NSString;
+@class NSString;
 
 @interface CDBudget : NSObject
 {
-    CDSession *_session;
     NSString *_name;
     long long _type;
     unsigned long long _integerId;
 }
 
 @property(readonly) unsigned long long integerId; // @synthesize integerId=_integerId;
-@property(readonly) __weak CDSession *session; // @synthesize session=_session;
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;

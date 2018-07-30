@@ -6,9 +6,12 @@
 
 #import "NSObject.h"
 
-@class XCTElementQuery;
+@class NSArray, XCAccessibilityElement, XCTElementQuery;
 
 @protocol XCTAutomationTarget <NSObject>
+- (void)notifyWhenAnimationsAreIdle:(void (^)(NSError *))arg1;
+- (void)notifyWhenMainRunLoopIsIdle:(void (^)(NSError *))arg1;
+- (void)attributesForElement:(XCAccessibilityElement *)arg1 attributes:(NSArray *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)fetchMatchesForQuery:(XCTElementQuery *)arg1 reply:(void (^)(XCTElementQueryResults *, NSError *))arg2;
 - (void)requestHostAppExecutableNameWithReply:(void (^)(NSString *))arg1;
 @end

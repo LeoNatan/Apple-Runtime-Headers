@@ -6,13 +6,15 @@
 
 #import "_UIRemoteViewController.h"
 
+#import "MPVolumeDisplaying.h"
 #import "SFRemoteViewControllerProtocol.h"
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface SFBrowserRemoteViewController : _UIRemoteViewController <SFRemoteViewControllerProtocol>
+@interface SFBrowserRemoteViewController : _UIRemoteViewController <MPVolumeDisplaying, SFRemoteViewControllerProtocol>
 {
+    _Bool _isInFullScreen;
     id <SFBrowserRemoteViewControllerDelegate> _delegate;
 }
 
@@ -21,6 +23,9 @@ __attribute__((visibility("hidden")))
 + (id)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) __weak id <SFBrowserRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *volumeAudioCategory;
+@property(readonly, nonatomic, getter=isOnScreenForVolumeDisplay) _Bool onScreenForVolumeDisplay;
+- (void)didChangeFullScreen:(_Bool)arg1;
 - (void)initialLoadDidRedirectToURL:(id)arg1;
 - (void)didDecideCookieSharingForURL:(id)arg1 shouldCancel:(_Bool)arg2;
 - (void)willOpenURLInHostApplication:(id)arg1;
@@ -31,11 +36,14 @@ __attribute__((visibility("hidden")))
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)willDismissServiceViewController;
 - (void)didLoadWebView;
+- (void)didMoveToParentViewController:(id)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic, getter=isOnScreen) _Bool onScreen;
 @property(readonly) Class superclass;
 
 @end

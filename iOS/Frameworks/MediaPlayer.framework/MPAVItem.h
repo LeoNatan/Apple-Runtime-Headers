@@ -41,6 +41,7 @@
     unsigned int _lyricsAvailable:1;
     unsigned int _timeMarkersNeedLoading:1;
     NSObject<OS_dispatch_queue> *_accessQueue;
+    _Bool _hasLoadedHasProtectedContent;
     _Bool _hasLoadedPlaybackMode;
     _Bool _hasPostedNaturalSizeChange;
     _Bool _hasRegisteredForCaptionsAppearanceChanged;
@@ -56,6 +57,7 @@
     _Bool _likedStateEnabled;
     _Bool _supportsLikedState;
     _Bool _prefersSeekOverSkip;
+    _Bool _hasProtectedContent;
     _Bool _startItem;
     _Bool _shouldPreventPlayback;
     _Bool _allowsAirPlayFromCloud;
@@ -106,6 +108,7 @@
 @property(readonly, nonatomic) MPModelGenericObject *modelGenericObject; // @synthesize modelGenericObject=_modelGenericObject;
 @property(readonly, nonatomic) _Bool shouldPreventPlayback; // @synthesize shouldPreventPlayback=_shouldPreventPlayback;
 @property(nonatomic, getter=isStartItem) _Bool startItem; // @synthesize startItem=_startItem;
+@property(readonly, nonatomic) _Bool hasProtectedContent; // @synthesize hasProtectedContent=_hasProtectedContent;
 @property(readonly, nonatomic) _Bool prefersSeekOverSkip; // @synthesize prefersSeekOverSkip=_prefersSeekOverSkip;
 @property(nonatomic) float loudnessInfoVolumeNormalization; // @synthesize loudnessInfoVolumeNormalization=_loudnessInfoVolumeNormalization;
 @property(readonly, retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
@@ -140,6 +143,7 @@
 - (void)resolvePlaybackError:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)replacePlayerItemWithPlayerItem:(id)arg1;
 - (void)reevaluateType;
+- (void)reevaluateHasProtectedContent;
 - (void)reevaluatePlaybackMode;
 @property(readonly, nonatomic) MPModelPlayEvent *modelPlayEvent;
 - (id)localeForAssetTrack:(id)arg1;

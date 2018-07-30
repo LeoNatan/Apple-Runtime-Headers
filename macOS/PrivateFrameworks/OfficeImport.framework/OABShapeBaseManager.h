@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OABShapeBaseManager : OABFillPropertiesManager <OABBasePropertiesManager>
 {
     struct EshShapeBase *mShapeBase;
@@ -44,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (struct EshColor)strokeBgColor;
 - (struct EshColor)strokeFgColor;
 - (BOOL)isStroked;
-- (void)dealloc;
 - (id)initWithShapeBase:(struct EshShapeBase *)arg1 shapeType:(int)arg2 masterShape:(struct EshShape *)arg3;
 
 // Remaining properties

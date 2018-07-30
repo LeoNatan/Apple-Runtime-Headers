@@ -9,7 +9,7 @@
 #import "FCCoreConfiguration.h"
 #import "FCNewsAppConfiguration.h"
 
-@class FCCoverArticlesConfiguration, FCForYouGroupsConfiguration, FCIAdConfiguration, FCNotificationsConfiguration, FCPrefetchConfiguration, FCRecommendedCategory, FCTopStoriesConfiguration, NSArray, NSDictionary, NSNumber, NSString, NTPBConfig, NTPBDiscoverMoreVideosInfo, NTPBLanguageConfig, NTPBVideoGroupsConfig, NTPBWidgetConfig;
+@class FCForYouGroupsConfiguration, FCIAdConfiguration, FCNotificationsConfiguration, FCPrefetchConfiguration, FCRecommendedCategory, FCTopStoriesConfiguration, FCVideoGroupsConfig, FCWidgetConfig, NSArray, NSDictionary, NSNumber, NSString, NTPBConfig, NTPBDiscoverMoreVideosInfo, NTPBLanguageConfig;
 
 @interface FCAppConfiguration : NSObject <FCCoreConfiguration, FCNewsAppConfiguration>
 {
@@ -18,7 +18,6 @@
     _Bool _privateDataEncryptionMigrationRequiresAllDevicesRunningTigris;
     _Bool _privateDataMigrationCleanupEnabled;
     NSDictionary *_endpointConfigsByEnvironment;
-    FCCoverArticlesConfiguration *_coverArticlesConfig;
     FCForYouGroupsConfiguration *_forYouGroupsConfiguration;
     NSArray *_hiddenFeedIDs;
     FCIAdConfiguration *_iAdConfig;
@@ -31,7 +30,7 @@
     NTPBDiscoverMoreVideosInfo *_shareDiscoverMoreVideosInfo;
     NTPBConfig *_config;
     NTPBLanguageConfig *_languageConfig;
-    NTPBWidgetConfig *_widgetConfig;
+    FCWidgetConfig *_widgetConfig;
     FCRecommendedCategory *_topLevelCategory;
     NSDictionary *_personalizationTreatments;
     NSDictionary *_analyticsContentTypeConfigsByContentTypeByEnvironment;
@@ -41,7 +40,7 @@
 @property(readonly, nonatomic) NSDictionary *analyticsContentTypeConfigsByContentTypeByEnvironment; // @synthesize analyticsContentTypeConfigsByContentTypeByEnvironment=_analyticsContentTypeConfigsByContentTypeByEnvironment;
 @property(readonly, nonatomic) NSDictionary *personalizationTreatments; // @synthesize personalizationTreatments=_personalizationTreatments;
 @property(readonly, nonatomic) FCRecommendedCategory *topLevelCategory; // @synthesize topLevelCategory=_topLevelCategory;
-@property(readonly, copy, nonatomic) NTPBWidgetConfig *widgetConfig; // @synthesize widgetConfig=_widgetConfig;
+@property(readonly, copy, nonatomic) FCWidgetConfig *widgetConfig; // @synthesize widgetConfig=_widgetConfig;
 @property(readonly, copy, nonatomic) NTPBLanguageConfig *languageConfig; // @synthesize languageConfig=_languageConfig;
 @property(readonly, copy, nonatomic) NTPBConfig *config; // @synthesize config=_config;
 @property(readonly, copy, nonatomic) NSArray *topStoriesPublishDates; // @synthesize topStoriesPublishDates=_topStoriesPublishDates;
@@ -57,12 +56,19 @@
 @property(readonly, nonatomic) FCIAdConfiguration *iAdConfig; // @synthesize iAdConfig=_iAdConfig;
 @property(readonly, nonatomic) NSArray *hiddenFeedIDs; // @synthesize hiddenFeedIDs=_hiddenFeedIDs;
 @property(readonly, nonatomic) FCForYouGroupsConfiguration *forYouGroupsConfiguration; // @synthesize forYouGroupsConfiguration=_forYouGroupsConfiguration;
-@property(readonly, nonatomic) FCCoverArticlesConfiguration *coverArticlesConfig; // @synthesize coverArticlesConfig=_coverArticlesConfig;
 @property(readonly, nonatomic) NSDictionary *endpointConfigsByEnvironment; // @synthesize endpointConfigsByEnvironment=_endpointConfigsByEnvironment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool enableBadgeInSpotlightTabBar;
+@property(readonly, nonatomic) NSString *description;
+@property(readonly, nonatomic) double delayBeforeRetryingDroppedFeeds;
+@property(readonly, nonatomic) long long maxRetriesForDroppedFeeds;
+@property(readonly, nonatomic) _Bool isSpecialEventsMicaAnimationDisabled;
+@property(readonly, nonatomic) NSString *feedNavigationConfigJSON;
+@property(readonly, nonatomic) long long singleChannelFeedMinFeedItemsPerRequest;
+@property(readonly, nonatomic) long long singleTopicFeedMinFeedItemsPerRequest;
 @property(readonly, nonatomic) long long expirePinnedArticlesAfter;
 @property(readonly, nonatomic) long long optionalTopStoriesRefreshRate;
-@property(readonly, copy, nonatomic) NTPBVideoGroupsConfig *forYouVideoGroupsConfig;
+@property(readonly, copy, nonatomic) FCVideoGroupsConfig *forYouVideoGroupsConfig;
 @property(readonly, nonatomic) _Bool diversifyOptionalTopStories;
 @property(readonly, nonatomic) NTPBDiscoverMoreVideosInfo *shareDiscoverMoreVideosInfo; // @synthesize shareDiscoverMoreVideosInfo=_shareDiscoverMoreVideosInfo;
 @property(readonly, nonatomic) unsigned long long trendingStyle;
@@ -74,7 +80,6 @@
 @property(readonly, nonatomic) _Bool terminateAppOnBackgroundAfterJoiningOrLeavingExperiment;
 @property(readonly, nonatomic) long long autoRefreshMinimumInterval;
 @property(readonly, nonatomic) long long stateRestorationAllowedTimeWindow;
-@property(readonly, nonatomic) _Bool usAndUKUseAUWhatsNewFeatures;
 @property(readonly, nonatomic) _Bool useSecureConnectionForAssets;
 @property(readonly, nonatomic) NSArray *mediaSharingBlacklistedChannelIDs;
 @property(readonly, nonatomic) NSArray *externalAnalyticsConfigurations;
@@ -103,6 +108,10 @@
 @property(readonly, nonatomic) double parsecPopulationFloor;
 @property(readonly, nonatomic) _Bool universalLinksEnabled;
 - (id)todayConfigWithQueueConfigs:(id)arg1 maxSlotCount:(unsigned long long)arg2;
+@property(readonly, nonatomic) _Bool shouldShowAlternateHeadlines;
+@property(readonly, nonatomic) _Bool disableThumbnailsForArticleRecirculation;
+@property(readonly, nonatomic) long long articleRecirculationPopularFeedQueryTimeRange;
+@property(readonly, nonatomic) NSString *articleRecirculationComponentPlacementConfigJSON;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
 @property(readonly, nonatomic) unsigned int widgetMinimumNumberOfTimesPreseenToBeSeen;
 @property(readonly, nonatomic) long long widgetMinimumArticleExposureDurationToBePreseenInMilliseconds;
@@ -141,7 +150,6 @@
 @property(readonly, nonatomic) double prerollLoadingTimeout;
 @property(readonly, nonatomic) double interstitialAdLoadDelay;
 @property(readonly, nonatomic) long long autoScrollToTopFeedTimeout;
-@property(readonly, nonatomic) NSArray *recommendedCategories;
 @property(readonly, nonatomic) NSArray *topLevelRecommendedChannelTagIDs;
 @property(readonly, nonatomic) NSArray *topLevelRecommendedTopicTagIDs;
 @property(readonly, nonatomic) NSArray *topLevelCuratedTagIDs;
@@ -150,6 +158,11 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithConfig:(id)arg1 languageConfig:(id)arg2 widgetConfig:(id)arg3 hiddenFeedIDs:(id)arg4 presubscribedFeedIDs:(id)arg5 onboardingFeedIDs:(id)arg6;
 - (id)init;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool isExpired;
+@property(readonly, nonatomic) long long showCardNavHintMaxCount;
+@property(readonly, nonatomic) NSString *webEmbedContentBlockers;
 
 @end
 

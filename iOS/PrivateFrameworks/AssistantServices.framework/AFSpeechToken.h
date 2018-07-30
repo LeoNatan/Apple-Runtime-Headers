@@ -16,6 +16,7 @@
     _Bool _removeSpaceAfter;
     NSString *_text;
     NSString *_phoneSequence;
+    NSString *_ipaPhoneSequence;
     long long _confidenceScore;
     double _startTime;
     double _silenceStartTime;
@@ -29,6 +30,7 @@
 @property(nonatomic) double silenceStartTime; // @synthesize silenceStartTime=_silenceStartTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) long long confidenceScore; // @synthesize confidenceScore=_confidenceScore;
+@property(copy, nonatomic) NSString *ipaPhoneSequence; // @synthesize ipaPhoneSequence=_ipaPhoneSequence;
 @property(copy, nonatomic) NSString *phoneSequence; // @synthesize phoneSequence=_phoneSequence;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;

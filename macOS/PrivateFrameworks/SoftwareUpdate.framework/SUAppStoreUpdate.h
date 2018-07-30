@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSAttributedString, NSDate, NSError, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCConnection, SUUpdateProduct;
+@class NSArray, NSAttributedString, NSDate, NSError, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCConnection, SUMajorProduct, SUUpdateProduct;
 
 @interface SUAppStoreUpdate : NSObject <NSSecureCoding>
 {
@@ -33,10 +33,13 @@
 @property(readonly, retain) NSString *customTitleForPostInstallNotification;
 @property(readonly) BOOL showPostInstallNotification;
 @property(readonly) long long autoInstallWithDelayInHours;
+@property(readonly, retain) SUMajorProduct *majorProduct;
+@property(readonly) BOOL isMajorOSUpdate;
 @property(readonly) BOOL isCritical;
 @property(readonly) BOOL allowedToUseInstallLater;
 @property(readonly) NSDate *adminDeferredToDate;
 @property(readonly) BOOL isAdminDeferred;
+@property(readonly) BOOL isAutoUpdateEligible;
 @property(readonly) BOOL isRamped;
 @property(readonly) BOOL isRecommended;
 @property(readonly, retain) id auxInfo;
@@ -48,6 +51,7 @@
 @property(readonly, retain) NSString *currentLocalization;
 @property(readonly) long long action;
 @property(readonly, retain) NSString *longDescription;
+@property(readonly) long long downloadSize;
 @property(readonly, retain) NSString *versionString;
 @property(readonly, retain) NSString *title;
 - (id)description;

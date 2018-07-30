@@ -10,7 +10,7 @@
 
 @protocol PKControllerDelegate <NSObject>
 - (void)drawingChanged:(PKDrawing *)arg1;
-- (BOOL)setNeedsDrawingDisplay;
+- (void)setNeedsDrawingDisplay;
 - (void)setAllowLiveInteraction:(BOOL)arg1;
 @end
 

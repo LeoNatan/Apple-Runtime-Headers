@@ -27,7 +27,6 @@
 + (BOOL)setSystemFilesExcluded:(BOOL)arg1 error:(id *)arg2;
 + (BOOL)systemFilesExcluded;
 + (BOOL)setLocalSnapshotsEnabled:(BOOL)arg1 error:(id *)arg2;
-+ (unsigned int)localSnapshotThinningPolicy;
 + (BOOL)localSnapshotsEnabled;
 + (BOOL)setAutomaticBackupsEnabled:(BOOL)arg1 error:(id *)arg2;
 + (BOOL)automaticBackupsEnabled;

@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint, NSTextField;
 
+__attribute__((visibility("hidden")))
 @interface NCSearchTextItemViewController : NSViewController
 {
     NSTextField *_textField;

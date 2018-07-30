@@ -9,9 +9,15 @@
 @interface __TVTextEntryTextField : UITextField
 {
     _Bool _allowsFocus;
+    unsigned long long _maxLength;
 }
 
+@property(nonatomic) unsigned long long maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
+- (struct _NSRange)_filteredRangeForText:(id)arg1;
+- (struct _NSRange)insertFilteredText:(id)arg1;
+- (void)insertText:(id)arg1;
+- (void)setText:(id)arg1;
 - (id)text;
 - (_Bool)canBecomeFocused;
 - (id)initWithFrame:(struct CGRect)arg1;

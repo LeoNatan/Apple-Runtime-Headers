@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
         unsigned long long;
         _Bool;
         float;
-        struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer>>>;
+        struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, geo::StdAllocator<std::__1::shared_ptr<ggl::DebugRenderer>, ggl::Allocator>>;
         struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue>>;
         struct shared_ptr<ggl::CommonLibrary>;
         struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences>>;
@@ -66,7 +66,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct Texture2D *imageTexture;
 @property(readonly, nonatomic) _Bool shouldRasterize;
 - (void)dealloc;
-- (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2 useMultisampling:(_Bool)arg3 device:(struct Device *)arg4;
+- (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2 useMultisampling:(_Bool)arg3 taskContext:(const shared_ptr_e963992e *)arg4 device:(struct Device *)arg5;
 @property(readonly, nonatomic) struct RenderTarget *finalRenderTarget;
 @property(readonly, nonatomic) struct CGSize sizeInPixels;
 - (struct Texture *)finalSurface;

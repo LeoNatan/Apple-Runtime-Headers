@@ -8,23 +8,21 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface TCOfficeFontInfo : NSObject
 {
     BOOL _isBold;
     BOOL _isItalic;
-    NSString *_fontName;
-    NSString *_alphaFontName;
+    NSString *_fullName;
 }
 
-+ (id)officeFontInfoWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(BOOL)arg3 isItalic:(BOOL)arg4;
++ (id)officeFontInfoWithFullName:(id)arg1 isBold:(BOOL)arg2 isItalic:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL isItalic; // @synthesize isItalic=_isItalic;
 @property(readonly, nonatomic) BOOL isBold; // @synthesize isBold=_isBold;
-@property(readonly, nonatomic) NSString *alphaFontName; // @synthesize alphaFontName=_alphaFontName;
-@property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
+@property(readonly, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
-- (id)initWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(BOOL)arg3 isItalic:(BOOL)arg4;
+- (id)officeName;
+- (id)initWithFullName:(id)arg1 isBold:(BOOL)arg2 isItalic:(BOOL)arg3;
 
 @end
 

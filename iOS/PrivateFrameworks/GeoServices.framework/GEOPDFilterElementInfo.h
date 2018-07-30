@@ -10,6 +10,7 @@
 
 @class GEOPDVenueLabel, NSMutableArray, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDFilterElementInfo : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

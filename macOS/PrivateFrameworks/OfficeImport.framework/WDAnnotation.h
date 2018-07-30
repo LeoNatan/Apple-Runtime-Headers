@@ -8,7 +8,6 @@
 
 @class WDAnnotationData, WDCharacterRun;
 
-__attribute__((visibility("hidden")))
 @interface WDAnnotation : WDRun
 {
     int mType;
@@ -16,10 +15,16 @@ __attribute__((visibility("hidden")))
     BOOL mReferencePopertiesFixed;
     WDAnnotationData *mData;
     WDAnnotation *mOtherEndOfRangedAnnotation;
+    BOOL isResolved;
+    WDAnnotation *parent;
 }
 
+@property WDAnnotation *parent; // @synthesize parent;
+@property BOOL isResolved; // @synthesize isResolved;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
+- (unsigned long long)lastParagraphId;
+- (id)paragraphIds;
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;
 - (id)otherEndOfRangedAnnotation;
 - (void)useDataFromOtherEnd;

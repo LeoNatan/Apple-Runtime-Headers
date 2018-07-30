@@ -6,7 +6,7 @@
 
 #import "HMFObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSString;
+@class HMFNetAddress, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HAPHTTPClient : HMFObject
 {
@@ -45,6 +45,7 @@
 - (int)_initializeCoreUtilsHTTPClient;
 - (void)setDebugDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
+@property(readonly, nonatomic) HMFNetAddress *localAddress;
 - (id)initWithDNSName:(id)arg1 queue:(id)arg2;
 
 @end

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface FICollaborationServiceEndpointFactory : NSObject <NSFileProviderServiceEndpointCreating>
 {
     FIFinderSync *_syncExtension;
-    struct TNSRef<NSURL *, void> _url;
+    struct TNSRef<NSURL, void> _url;
 }
 
 - (id).cxx_construct;

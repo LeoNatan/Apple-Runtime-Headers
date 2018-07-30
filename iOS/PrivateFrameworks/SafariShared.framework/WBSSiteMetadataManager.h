@@ -41,11 +41,13 @@
 - (id)_providerForRequest:(id)arg1;
 - (void)_registerToken:(id)arg1 withProvider:(id)arg2;
 - (void)savePendingProviderChangesBeforeTermination;
+- (void)emptyProviderCachesIncludingFavicons:(_Bool)arg1;
 - (void)emptyProviderCaches;
 - (void)setPriority:(long long)arg1 ofRequestsWithTokens:(id)arg2;
 - (void)setPriority:(long long)arg1 ofRequestWithToken:(id)arg2;
 - (_Bool)_requestIsCancelledForToken:(id)arg1;
 - (void)_internalSetPriority:(long long)arg1 ofRequestWithToken:(id)arg2;
+- (void)cancelRequestsWithTokens:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelRequestsWithTokens:(id)arg1;
 - (void)cancelRequestWithToken:(id)arg1;
 - (void)_internalCancelRequestWithToken:(id)arg1;

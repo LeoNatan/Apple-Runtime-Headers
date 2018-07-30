@@ -8,16 +8,15 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OADBulletFontSpecification : OADBulletFont
 {
     NSString *mFont;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)font;
-- (void)dealloc;
 - (id)initWithFont:(id)arg1;
 
 @end

@@ -8,7 +8,6 @@
 
 @class NSMutableArray, OADTextBodyProperties, OADTextListStyle;
 
-__attribute__((visibility("hidden")))
 @interface OADTextBody : NSObject
 {
     OADTextBodyProperties *mProperties;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
     OADTextListStyle *mTextListStyle;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)plainText;
 - (BOOL)isSimilarToTextBody:(id)arg1;
@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)paragraphCount;
 - (void)setProperties:(id)arg1;
 - (id)properties;
-- (void)dealloc;
 - (id)init;
 - (void)addParagraphsFromTextBody:(id)arg1;
 - (id)findFirstTextRunOfClass:(Class)arg1;

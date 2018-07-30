@@ -24,7 +24,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)textWithString:(id)arg1;
 @property(copy, nonatomic) NSArray *formattedTextPieces; // @synthesize formattedTextPieces=_formattedTextPieces;
 @property(copy, nonatomic) NSArray *icons; // @synthesize icons=_icons;
 @property(copy, nonatomic) NSString *contentAdvisory; // @synthesize contentAdvisory=_contentAdvisory;

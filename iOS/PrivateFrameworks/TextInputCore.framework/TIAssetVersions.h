@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSMutableSet *assets; // @synthesize assets=_assets;
 @property(nonatomic) TIAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(readonly, nonatomic) TIAssetAttributes *attributes; // @synthesize attributes=_attributes;
+- (void).cxx_destruct;
 - (_Bool)isEmpty;
 - (_Bool)purgeAsset:(id)arg1;
 - (id)purgeableAssets;
@@ -25,7 +26,6 @@
 - (void)addAsset:(id)arg1;
 - (id)recursiveDescription;
 @property(readonly, nonatomic) unsigned long long count;
-- (void)dealloc;
 - (id)initWithAttributes:(id)arg1;
 
 @end

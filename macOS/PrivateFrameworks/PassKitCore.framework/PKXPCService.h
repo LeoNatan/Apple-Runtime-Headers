@@ -28,9 +28,11 @@
     int _serviceResumedToken;
     id <PKXPCServiceDelegate> _delegate;
     NSString *_machServiceName;
+    unsigned long long _options;
 }
 
 + (void)setForegroundActiveArbiter:(id)arg1;
+@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 - (void).cxx_destruct;
 - (CDUnknownBlockType)_newErrorHandlerWithSemaphore:(id)arg1;
@@ -59,6 +61,7 @@
 - (id)remoteObjectProxyWithFailureHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxy;
 - (void)dealloc;
+- (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4 serviceResumedNotificationName:(id)arg5 options:(unsigned long long)arg6;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4 serviceResumedNotificationName:(id)arg5;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4;
 - (id)init;

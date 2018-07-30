@@ -9,6 +9,7 @@
 @class UNNotificationRequest;
 
 @protocol _UNNotificationServiceExtensionRemoteXPCInterface <_UNNotificationServiceExtensionXPCInterface>
+- (void)serviceExtensionPerformCleanup;
 - (void)serviceExtensionTimeWillExpire;
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)arg1 withCompletionHandler:(void (^)(UNNotificationContent *))arg2;
 @end

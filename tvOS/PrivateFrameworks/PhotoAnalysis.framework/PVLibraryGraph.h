@@ -56,7 +56,7 @@
 - (id)pv_fetchFacesForPerson:(id)arg1 inMoment:(id)arg2;
 - (id)pv_fetchFacesForPerson:(id)arg1;
 - (id)pv_fetchFacesWithLocalIdentifiers:(id)arg1;
-- (id)pv_fetchFaces;
+- (unsigned long long)pv_numberOfFacesWithFaceprints;
 - (id)pv_fetchPersonsGroupedByAssetLocalIdentifierForAssets:(id)arg1;
 - (id)pv_fetchInvalidCandidatePersonsForPerson:(id)arg1;
 - (id)pv_fetchCandidatePersonsForPerson:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class AVAssetTrackInspector, AVWeakReference;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetTrackInternal : NSObject
 {
     AVWeakReference *weakReferenceToSelf;

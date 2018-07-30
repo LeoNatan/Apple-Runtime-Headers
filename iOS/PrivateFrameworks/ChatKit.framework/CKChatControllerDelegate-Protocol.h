@@ -10,6 +10,7 @@
 @class CKChatController, CKComposition;
 
 @protocol CKChatControllerDelegate <NSObject, CKCoreChatControllerDelegate>
+- (void)prewarmCameraIfNecessaryForChatController:(CKChatController *)arg1;
 - (void)chatController:(CKChatController *)arg1 forwardComposition:(CKComposition *)arg2;
 @end
 

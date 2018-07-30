@@ -7,6 +7,7 @@
 #import "UIDevice.h"
 
 @interface UIDevice (PUICAdditions)
+- (int)puic_actualDeviceVariant;
 - (int)puic_deviceVariant;
 @end
 

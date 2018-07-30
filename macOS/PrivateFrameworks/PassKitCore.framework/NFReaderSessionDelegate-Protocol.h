@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class NFReaderSession, NFTechnologyEvent, NSArray;
+@class NFFieldNotification, NFReaderSession, NFTechnologyEvent, NSArray;
 
 @protocol NFReaderSessionDelegate <NSObject>
 
 @optional
+- (void)readerSession:(NFReaderSession *)arg1 externalReaderFieldNotification:(NFFieldNotification *)arg2;
 - (void)readerSession:(NFReaderSession *)arg1 externalReaderFieldEvent:(NFTechnologyEvent *)arg2;
 - (void)readerSessionDidEndUnexpectedly:(NFReaderSession *)arg1;
 - (void)readerSession:(NFReaderSession *)arg1 didDetectTags:(NSArray *)arg2;

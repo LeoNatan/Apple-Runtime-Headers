@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) TVApplicationControllerContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) UIWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+- (id)_externalPlayer;
 - (_Bool)_useDefaultScreenSaverProvider;
 - (_Bool)_hasReloadOnResumeMinIntervalPassed;
 - (_Bool)_shouldReloadOnResume;
@@ -58,6 +59,7 @@
 - (void)_openURLOnAppLaunchControllerDidDisplay:(id)arg1;
 @property(readonly, nonatomic) UINavigationController *_currentNavigationController;
 - (id)_appContext;
+- (id)activeDocument;
 - (void)applicationWillSuspend:(id)arg1;
 - (void)applicationDidResume:(id)arg1;
 @property(nonatomic) __weak UIView *viewServiceKeyView;

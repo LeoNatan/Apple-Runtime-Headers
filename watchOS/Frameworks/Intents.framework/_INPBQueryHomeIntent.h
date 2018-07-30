@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBQueryHomeIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBIntentMetadata;
 
-@interface _INPBQueryHomeIntent : PBCodable <NSCopying>
+@interface _INPBQueryHomeIntent : PBCodable <_INPBQueryHomeIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_entities;
+    struct _has;
+    NSArray *_entities;
     _INPBIntentMetadata *_intentMetadata;
 }
 
 + (Class)entitiesType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *entities; // @synthesize entities=_entities;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
 - (id)entitiesAtIndex:(unsigned int)arg1;
-- (unsigned int)entitiesCount;
+@property(readonly, nonatomic) unsigned int entitiesCount;
 - (void)addEntities:(id)arg1;
 - (void)clearEntities;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

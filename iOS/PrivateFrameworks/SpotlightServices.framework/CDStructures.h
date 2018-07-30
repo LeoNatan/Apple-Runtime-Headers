@@ -10,6 +10,25 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct FeatureInfo {
+    id _field1;
+    unsigned short _field2;
+    unsigned char _field3;
+};
+
+struct PRSL2FeatureScoreInfo {
+    unsigned short *_field1;
+    float *_field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+};
+
+struct PRSL2FeatureScoreSmallCache {
+    unsigned short features[32];
+    float scores[32];
+    unsigned short count;
+};
+
 struct __CFArray;
 
 struct __CFDictionary;

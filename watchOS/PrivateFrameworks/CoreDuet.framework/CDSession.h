@@ -6,37 +6,18 @@
 
 #import "NSObject.h"
 
-@class CDDClientConnection, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet;
+@class CDDClientConnection;
 
 @interface CDSession : NSObject
 {
     CDDClientConnection *_cddClientConnection;
-    NSSet *_deviceList;
-    NSMutableDictionary *_cachedAttributes;
-    NSMutableDictionary *_cachedBudgets;
-    NSObject<OS_dispatch_queue> *_cacheSerializerQ;
     unsigned long long _clientId;
-    _Bool _verbose;
-    _Bool _enabledCaching;
-    int _deviceChangeToken;
-    int duetRestartToken;
-    NSArray *nonBundles;
-    CDUnknownBlockType _deviceHandler;
 }
 
 + (id)sharedSessionWithClientId:(unsigned long long)arg1;
-@property(copy) CDUnknownBlockType deviceHandler; // @synthesize deviceHandler=_deviceHandler;
-@property int deviceChangeToken; // @synthesize deviceChangeToken=_deviceChangeToken;
-@property _Bool enabledCaching; // @synthesize enabledCaching=_enabledCaching;
-@property _Bool verbose; // @synthesize verbose=_verbose;
-@property(retain) NSObject<OS_dispatch_queue> *cacheSerializerQ; // @synthesize cacheSerializerQ=_cacheSerializerQ;
-@property(retain) NSMutableDictionary *cachedBudgets; // @synthesize cachedBudgets=_cachedBudgets;
-@property(retain) NSMutableDictionary *cachedAttributes; // @synthesize cachedAttributes=_cachedAttributes;
-@property(retain) NSSet *deviceList; // @synthesize deviceList=_deviceList;
-@property unsigned long long clientId; // @synthesize clientId=_clientId;
+@property(readonly) unsigned long long clientId; // @synthesize clientId=_clientId;
 @property(readonly) CDDClientConnection *cddClientConnection; // @synthesize cddClientConnection=_cddClientConnection;
 - (void).cxx_destruct;
-- (void)dealloc;
 - (_Bool)setGlancesLingeredOn:(id)arg1 error:(id *)arg2;
 - (_Bool)setActiveComplications:(id)arg1 error:(id *)arg2;
 - (_Bool)setNonAppBundlIdWithError:(id)arg1 error:(id *)arg2;

@@ -23,6 +23,7 @@
     UIColor *_color;
 }
 
++ (void)initialize;
 @property(nonatomic) _Bool ignoreViewHierarchyChange; // @synthesize ignoreViewHierarchyChange=_ignoreViewHierarchyChange;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) __weak id <PUICActivityIndicatorViewDelegate> delegate; // @synthesize delegate=_delegate;

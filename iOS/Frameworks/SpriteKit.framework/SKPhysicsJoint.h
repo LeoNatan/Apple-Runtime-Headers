@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class SKPhysicsBody;
 
-@interface SKPhysicsJoint : NSObject <NSCoding>
+@interface SKPhysicsJoint : NSObject <NSSecureCoding>
 {
     _Bool __implicit;
     SKPhysicsBody *bodyA;
@@ -20,6 +20,7 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool _implicit; // @synthesize _implicit=__implicit;
 @property(readonly, nonatomic) double reactionTorque; // @synthesize reactionTorque;
 @property(readonly, nonatomic) struct CGVector reactionForce; // @synthesize reactionForce;

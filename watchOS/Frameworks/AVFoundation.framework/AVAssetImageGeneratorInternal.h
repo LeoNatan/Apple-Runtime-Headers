@@ -8,6 +8,7 @@
 
 @class AVAsset, AVCustomVideoCompositorSession, AVVideoComposition, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetImageGeneratorInternal : NSObject
 {
     AVWeakReference *weakReference;

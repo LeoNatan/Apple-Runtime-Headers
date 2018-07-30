@@ -9,7 +9,7 @@
 #import "NSDraggingSource.h"
 #import "NSTextFieldDelegate.h"
 
-@class AMAction, AMActionTextField, AMResultsViewController, AMResultsViewOverlayView, AMShowWhenRunController, AMWorkflowView, NSArray, NSBezierPath, NSButton, NSImageView, NSLayoutConstraint, NSMenu, NSMutableArray, NSProgressIndicator, NSString;
+@class AMAction, AMActionTextField, AMResultsViewController, AMResultsViewOverlayView, AMShowWhenRunController, AMWorkflowView, NSAppearance, NSArray, NSBezierPath, NSButton, NSImageView, NSLayoutConstraint, NSMenu, NSMutableArray, NSProgressIndicator, NSString;
 
 @interface AMActionView : NSView <NSDraggingSource, NSTextFieldDelegate>
 {
@@ -43,6 +43,7 @@
     BOOL _clickIsInHeader;
     BOOL _clickIsInResize;
     struct CGLayer *_drawCachingLayer;
+    NSAppearance *_drawCachingLayerEffectiveAppearance;
 }
 
 + (id)generateFooterPathWithBounds:(struct CGRect)arg1 showingOutputConnection:(BOOL)arg2 footerHeight:(double)arg3;
@@ -51,6 +52,7 @@
 + (struct CGRect)actionFrameForBounds:(struct CGRect)arg1;
 + (void)drawInContext:(id)arg1 bounds:(struct CGRect)arg2 outlinePath:(id)arg3 headerPath:(id)arg4 footerPath:(id)arg5 headerHeight:(double)arg6 footerHeight:(double)arg7 collapsed:(BOOL)arg8 selected:(BOOL)arg9 disabled:(BOOL)arg10 placeholder:(BOOL)arg11;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+@property(retain, nonatomic) NSAppearance *_drawCachingLayerEffectiveAppearance; // @synthesize _drawCachingLayerEffectiveAppearance;
 @property(nonatomic) __weak NSButton *_showWhenRunButton; // @synthesize _showWhenRunButton;
 @property(nonatomic) __weak NSButton *_resultsButton; // @synthesize _resultsButton;
 @property(nonatomic) __weak NSImageView *_statusImageView; // @synthesize _statusImageView;
@@ -76,6 +78,8 @@
 @property __weak AMWorkflowView *workflowView; // @synthesize workflowView=_workflowView;
 @property(retain, nonatomic) AMAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+- (void)_updateAppearance;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)updateProgressIndicator;
 - (void)updateProgressIndicatorOnMainThreadIfNeeded;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -126,8 +130,9 @@
 @property(readonly, nonatomic) NSBezierPath *headerPath;
 @property(readonly, nonatomic) NSBezierPath *outlinePath;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)_generateDrawCachingLayerIfNotPresent;
-- (void)_regenerateDrawCachingLayerIfPresent;
+- (BOOL)_generateDrawCachingLayerIfNotPresentReturningGenerated;
+- (void)_regenerateDrawCachingLayerIfPresentAndRedisplay:(BOOL)arg1;
+- (void)_generateDrawCachingLayer;
 - (struct CGLayer *)_autoreleasedDrawCachingLayer;
 - (double)footerHeight;
 - (double)headerHeight;

@@ -8,7 +8,6 @@
 
 @class CHDChart, CHDDataLabel, CHDSeriesCollection, EDCollection;
 
-__attribute__((visibility("hidden")))
 @interface CHDChartType : NSObject
 {
     CHDChart *mChart;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)is3DType;
 + (id)chartTypeWithChart:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (id)defaultTitleWithResources:(id)arg1;
 - (int)defaultLabelPosition;
@@ -39,7 +39,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isPlotedOnSecondaryAxis;
 - (id)axisIds;
 - (id)chart;
-- (void)dealloc;
 - (id)initWithChart:(id)arg1;
 
 @end

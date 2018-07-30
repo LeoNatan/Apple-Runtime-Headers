@@ -10,6 +10,7 @@
 
 @protocol CalNCProtocol <NSObject>
 @property(nonatomic) BOOL hideAllNotifications;
+- (void)updateNCMessages;
 - (void)remindersBadgeCountForContactIdentifier:(NSString *)arg1 reply:(void (^)(NSNumber *))arg2;
 - (void)remindersBadgeCount:(void (^)(NSNumber *))arg1;
 - (void)calendarBadgeCount:(void (^)(NSNumber *))arg1;

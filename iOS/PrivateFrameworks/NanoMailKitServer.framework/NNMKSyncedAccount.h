@@ -16,8 +16,14 @@
     NSString *_displayName;
     NSArray *_emailAddresses;
     unsigned long long _resendInterval;
+    unsigned long long _sourceType;
+    NSString *_username;
+    NSString *_localId;
 }
 
+@property(retain, nonatomic) NSString *localId; // @synthesize localId=_localId;
+@property(retain, nonatomic) NSString *username; // @synthesize username=_username;
+@property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property(nonatomic) unsigned long long resendInterval; // @synthesize resendInterval=_resendInterval;
 @property(nonatomic) _Bool resendRequested; // @synthesize resendRequested=_resendRequested;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
@@ -25,6 +31,7 @@
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
 - (void).cxx_destruct;
+- (id)account;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 

@@ -25,6 +25,8 @@
 @property(readonly, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
 @property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> containingContext; // @synthesize containingContext=_containingContext;
 - (void).cxx_destruct;
+- (void)_prepareForPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_didRemoveAssetArchiveWithIdentifier:(id)arg1;
 - (void)_handleTextInputPayload:(id)arg1 withPayloadID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)endDisablingUserInteraction;
 - (void)beginDisablingUserInteraction;
@@ -40,12 +42,16 @@
 - (void)_canSendMessage:(id)arg1 conversationState:(id)arg2 associatedText:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_resignActive;
 - (void)_becomeActiveWithConversationState:(id)arg1 presentationState:(id)arg2;
+- (void)contentDidLoad;
 - (void)requestResize;
 - (void)_remoteViewDidBecomeReadyForDisplay;
+- (void)dismissAndPresentPhotosApp;
 - (void)dismiss;
 - (void)requestPresentationStyleExpanded:(_Bool)arg1;
 - (void)requestPresentationStyle:(unsigned int)arg1;
 - (void)startDragMediaItem:(id)arg1 frameInRemoteView:(struct CGRect)arg2 fence:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)removeAssetArchiveWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)stageAssetArchive:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageRichLink:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageMediaItem:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageAppItem:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -53,6 +59,7 @@
 @property(readonly, nonatomic) __weak UIViewController *viewController;
 - (id)updatedConversationForConversationState:(id)arg1;
 @property(nonatomic) unsigned int presentationStyle;
+@property(nonatomic) unsigned int presentationContext;
 - (void)_releaseKeepAliveContext;
 - (void)_keepContextAlive;
 - (id)initWithAppContext:(id)arg1;

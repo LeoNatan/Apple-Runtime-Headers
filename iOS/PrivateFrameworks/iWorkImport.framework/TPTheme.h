@@ -6,6 +6,8 @@
 
 #import <iWorkImport/TSATheme.h>
 
+@class TSWPParagraphStyle;
+
 __attribute__((visibility("hidden")))
 @interface TPTheme : TSATheme
 {
@@ -16,9 +18,10 @@ __attribute__((visibility("hidden")))
 - (void)saveToArchiver:(id)arg1;
 - (void)p_saveToArchive:(struct ThemeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
-- (id)footnoteStyle;
-- (id)headerAndFooterStyle;
-- (id)bodyStyle;
+- (id)localizedBodyStyleName;
+@property(readonly, nonatomic) TSWPParagraphStyle *footnoteStyle;
+@property(readonly, nonatomic) TSWPParagraphStyle *headerAndFooterStyle;
+@property(readonly, nonatomic) TSWPParagraphStyle *bodyStyle;
 - (id)_paragraphStylePresetWithName:(id)arg1 orContentTag:(id)arg2;
 
 @end

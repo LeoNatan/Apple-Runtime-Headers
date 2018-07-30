@@ -7,30 +7,57 @@
 #import "NSObject.h"
 
 #import "PXDisplayAsset.h"
+#import "PXLayoutItemInput.h"
+#import "PXMetadataAsset.h"
 
-@class NSString, NSURL;
+@class CLLocation, NSDate, NSString, NSURL, _PXFileBackedAssetMetadata;
 
-@interface PXFileBackedAsset : NSObject <PXDisplayAsset>
+@interface PXFileBackedAsset : NSObject <PXDisplayAsset, PXLayoutItemInput, PXMetadataAsset>
 {
+    _PXFileBackedAssetMetadata *_metadata;
     NSURL *_url;
+    NSString *_uniformTypeIdentifier;
 }
 
-@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
++ (id)_globalCache;
++ (id)_locationFromImageProperties:(id)arg1;
++ (id)_creationDateFromImageProperties:(id)arg1;
++ (id)_exifDateFormatter;
+@property(readonly, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
+@property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isAnimatedImage;
+@property(readonly, nonatomic) _Bool canPlayPhotoIris;
+@property(readonly, nonatomic) _Bool canPlayLoopingVideo;
+- (void)_loadFileMetadataIfNeeded;
+@property(readonly, nonatomic) CLLocation *location;
+@property(readonly, nonatomic) NSDate *creationDate;
+- (struct CGRect)bestCropRectForAspectRatio:(double)arg1;
+@property(readonly, nonatomic) double aspectRatio;
+@property(readonly, nonatomic) struct CGRect acceptableCropRect;
+@property(readonly, nonatomic) struct CGRect preferredCropRect;
+@property(readonly, nonatomic) struct CGSize size;
+@property(readonly, nonatomic) double weight;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)isContentEqualTo:(id)arg1;
+@property(readonly, nonatomic) _Bool isInCloud;
+@property(readonly, nonatomic) _Bool representsBurst;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
+@property(readonly, nonatomic) long long playbackVariation;
+@property(readonly, nonatomic) long long playbackStyle;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) long long mediaType;
 - (id)initWithURL:(id)arg1;
+- (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic) _Bool cloudIsDeletable;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) double duration;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) long long playbackStyle;
-@property(readonly, nonatomic) long long playbackVariation;
+@property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly) Class superclass;
 
 @end

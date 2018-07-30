@@ -15,16 +15,16 @@
     XBDisplaySnapshot *_snapshot;
 }
 
-@property(readonly, retain, nonatomic) FBSceneSnapshotContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) FBSceneSnapshotContext *context; // @synthesize context=_context;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) void *fallbackIOSurface;
 - (_Bool)capture;
-@property(readonly, retain, nonatomic) UIImage *UIImage;
+@property(readonly, nonatomic) UIImage *UIImage;
 @property(readonly, nonatomic) struct CGImage *CGImage;
 @property(readonly, nonatomic) void *IOSurface;
 @property(readonly, nonatomic, getter=isDataLoaded) _Bool dataLoaded;
 - (struct CGAffineTransform)_baseTransformForSnapshotContext:(id)arg1 rootContext:(id)arg2;
 - (id)_collectLayersToSnapshotFromScene:(id)arg1 withSnapshotContext:(id)arg2 rootContext:(id)arg3;
-- (void)dealloc;
 - (id)initWithScene:(id)arg1 snapshotContext:(id)arg2;
 
 @end

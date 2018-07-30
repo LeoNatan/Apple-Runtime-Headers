@@ -6,6 +6,7 @@
 
 #import <CorePDF/UIPDFAnnotationView.h>
 
+__attribute__((visibility("hidden")))
 @interface UIPDFHighlightAnnotationView : UIPDFAnnotationView
 {
 }

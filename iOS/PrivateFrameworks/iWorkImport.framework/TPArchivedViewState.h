@@ -42,8 +42,10 @@ __attribute__((visibility("hidden")))
     NSString *_authorFilterName;
     TSKAnnotationAuthor *_authorFilter;
     TSDFreehandDrawingToolkitUIState *_freehandDrawingToolkitUIState;
+    double _presentationAutoScrollSpeed;
 }
 
+@property(readonly, nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(retain, nonatomic) TSKSelectionPath *selectionPath; // @synthesize selectionPath=_selectionPath;
 @property(retain, nonatomic) TSKSelectionPath *compatibilitySelectionPath; // @synthesize compatibilitySelectionPath=_compatibilitySelectionPath;
 - (void).cxx_destruct;

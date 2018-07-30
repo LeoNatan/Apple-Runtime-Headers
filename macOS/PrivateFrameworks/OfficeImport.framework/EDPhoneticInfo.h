@@ -11,7 +11,6 @@
 
 @class EDCollection, EDResources, NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDPhoneticInfo : NSObject <NSCopying, EDImmutableObject>
 {
     EDResources *mResources;
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)phoneticInfoWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (void)setDoNotModify:(_Bool)arg1;
 - (id)runs;
 - (void)setFont:(id)arg1;
@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDPhoneticInfo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)setFontIndex:(unsigned long long)arg1;

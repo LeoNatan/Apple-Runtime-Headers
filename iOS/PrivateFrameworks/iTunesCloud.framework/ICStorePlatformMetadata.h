@@ -21,8 +21,10 @@
 - (id)_storePlatformReleaseDateFormatter;
 @property(readonly, copy, nonatomic) NSArray *artworkInfos;
 @property(readonly, copy, nonatomic) NSString *workName;
+@property(readonly, nonatomic) long long trackCount;
 @property(readonly, nonatomic) long long trackNumber;
 @property(readonly, copy, nonatomic) NSString *title;
+@property(readonly, copy, nonatomic) NSArray *formerStoreAdamIDs;
 @property(readonly, nonatomic) long long storeAdamID;
 @property(readonly, nonatomic) _Bool shouldShowComposer;
 @property(readonly, copy, nonatomic) NSDate *releaseDate;

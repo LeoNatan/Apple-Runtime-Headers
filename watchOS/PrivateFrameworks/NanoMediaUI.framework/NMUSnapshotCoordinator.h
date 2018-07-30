@@ -13,11 +13,14 @@
 @interface NMUSnapshotCoordinator : NSObject <PUICSnapshotDelegate>
 {
     id <NMUSnapshotDelegate> _delegate;
+    double _snapshotTimeout;
 }
 
+@property(nonatomic) double snapshotTimeout; // @synthesize snapshotTimeout=_snapshotTimeout;
 @property(nonatomic) __weak id <NMUSnapshotDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)prepareForSnapshotWithReason:(unsigned int)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

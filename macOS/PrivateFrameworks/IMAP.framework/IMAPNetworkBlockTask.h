@@ -28,6 +28,7 @@
 - (void)recalculatePriorities;
 - (id)nextPersistenceOperation;
 - (id)nextNetworkOperation;
+- (id)mailboxNameWithoutPII;
 - (id)initWithMailboxName:(id)arg1;
 - (id)initWithMailboxName:(id)arg1 priority:(long long)arg2 taskManager:(id)arg3 description:(id)arg4 block:(CDUnknownBlockType)arg5;
 

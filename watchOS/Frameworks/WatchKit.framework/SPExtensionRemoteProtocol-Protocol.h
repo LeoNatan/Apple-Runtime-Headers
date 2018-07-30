@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSDictionary, NSNumber, NSString, NSUUID;
+@class INIntent, NSArray, NSData, NSDictionary, NSNumber, NSString, NSUUID, NSUserActivity;
 
 @protocol SPExtensionRemoteProtocol <NSObject>
 - (void)runTest:(NSString *)arg1 options:(NSDictionary *)arg2 clientIdentifier:(NSString *)arg3;
@@ -15,6 +15,8 @@
 - (void)interfaceOffsetDidScrollToTop:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)interfaceDidScrollToTop:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)receiveAdditionalNotificationViewController:(NSString *)arg1 notificationData:(NSData *)arg2;
+- (void)tearDownNotificationViewServiceForClientID:(NSString *)arg1 bulletinUniqueID:(NSString *)arg2 hostID:(NSString *)arg3;
+- (void)requestNotificationViewServiceForHost:(id <SPRemoteNotificationViewHost>)arg1 hostID:(NSString *)arg2 clientIdentifier:(NSString *)arg3 bulletinUniqueID:(NSString *)arg4 completion:(void (^)(id <SPRemoteNotificationViewService>, unsigned int))arg5;
 - (void)receiveNativeComplicationRequest:(NSDictionary *)arg1 completion:(void (^)(NSDictionary *))arg2;
 - (void)rootInterfaceController:(NSString *)arg1 performActionWithItemID:(NSString *)arg2 forNotificationID:(NSString *)arg3 userInfo:(NSDictionary *)arg4 clientIdentifier:(NSString *)arg5 completionHandler:(void (^)(void))arg6;
 - (void)receiveNavigationReply:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
@@ -30,8 +32,11 @@
 - (void)didActivateDataConnection:(NSString *)arg1;
 - (void)appDidReceiveNotification:(NSData *)arg1 clientIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(unsigned int))arg3;
 - (void)appHandleWatchTasks:(NSDictionary *)arg1 reasonForSnapshot:(unsigned int)arg2 visibleVCID:(NSString *)arg3 barTaskUUID:(NSUUID *)arg4 clientIdentifier:(NSString *)arg5;
+- (void)appHandleIntent:(INIntent *)arg1 clientIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(INIntentResponse *))arg3;
 - (void)appReceiveContextData:(NSData *)arg1 clientIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(void))arg3;
-- (void)appHandleSerializedNSUserActivity:(NSData *)arg1 clientIdentifier:(NSString *)arg2;
+- (void)appHandleNSUserActivity:(NSUserActivity *)arg1 clientIdentifier:(NSString *)arg2;
+- (void)applicationAudioLaunch:(NSString *)arg1;
+- (void)applicationRecoverWorkout:(NSString *)arg1;
 - (void)appBeginWorkout:(NSDictionary *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)appUpdateState:(int)arg1 suspendedUnderLock:(_Bool)arg2 clientIdentifier:(NSString *)arg3;
 - (void)appDidEnterBackground:(NSString *)arg1 withVisibleViewControllerID:(NSString *)arg2;

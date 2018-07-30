@@ -12,7 +12,6 @@
 
 - (void)viewDidLoad;
 - (void)updateWithCloudKitProgress:(id)arg1;
-- (void)registerForEvents;
 
 @end
 

@@ -11,6 +11,8 @@
 }
 
 + (id)sharedInstance;
+- (id)createEventIntentForEvent:(id)arg1 withSuggestionsInfoUniqueKey:(id)arg2;
+- (id)createEventIntentForEvent:(id)arg1;
 - (void)removeInteractionsForCalendar:(id)arg1;
 - (void)handleEventDeletion:(id)arg1;
 - (void)handleEventUpdate:(id)arg1;

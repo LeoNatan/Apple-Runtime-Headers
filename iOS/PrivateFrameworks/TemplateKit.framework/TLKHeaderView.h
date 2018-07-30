@@ -39,24 +39,21 @@
 @property(retain) UILabel *trailingTextLabel; // @synthesize trailingTextLabel=_trailingTextLabel;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain) TLKImageView *imageView; // @synthesize imageView=_imageView;
-@property long long axis; // @synthesize axis=_axis;
-@property(retain) NSString *roundedBorderText; // @synthesize roundedBorderText=_roundedBorderText;
-@property(retain) TLKImage *subtitleImage; // @synthesize subtitleImage=_subtitleImage;
-@property(retain) TLKMultilineText *trailingText; // @synthesize trailingText=_trailingText;
-@property(retain) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
-@property(retain) TLKMultilineText *title; // @synthesize title=_title;
-@property(retain) TLKImage *image; // @synthesize image=_image;
+@property(nonatomic) long long axis; // @synthesize axis=_axis;
+@property(retain, nonatomic) NSString *roundedBorderText; // @synthesize roundedBorderText=_roundedBorderText;
+@property(retain, nonatomic) TLKImage *subtitleImage; // @synthesize subtitleImage=_subtitleImage;
+@property(retain, nonatomic) TLKMultilineText *trailingText; // @synthesize trailingText=_trailingText;
+@property(retain, nonatomic) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
+@property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
+@property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (id)roundedCornerLabelText;
 - (id)hasImage;
 - (id)subtitleLabelText;
 - (id)titleLabelText;
 - (id)titleLabelFont;
-- (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
-- (struct CGRect)containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect)arg3;
 - (void)observedPropertiesChanged;
 - (void)styleDidChange:(unsigned long long)arg1;
-- (id)observableProperties;
 - (id)init;
 
 // Remaining properties

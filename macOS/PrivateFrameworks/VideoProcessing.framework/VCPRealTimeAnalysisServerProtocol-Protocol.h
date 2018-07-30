@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class IOSurface;
+@class IOSurface, NSDictionary;
 
 @protocol VCPRealTimeAnalysisServerProtocol
-- (void)requestAnalysis:(unsigned long long)arg1 ofIOSurface:(IOSurface *)arg2 withReply:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)requestAnalysis:(unsigned long long)arg1 ofIOSurface:(IOSurface *)arg2 withProperties:(NSDictionary *)arg3 withReply:(void (^)(NSDictionary *, NSError *))arg4;
 @end
 

@@ -22,7 +22,7 @@
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (int)protectionClass;
 + (id)uniquedColumns;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
 + (id)HDDataEntityPredicateForFriendUUID:(id)arg1;
 

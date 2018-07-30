@@ -6,6 +6,7 @@
 
 #import "NSMutableData.h"
 
+__attribute__((visibility("hidden")))
 @interface NSCustomReleaseData : NSMutableData
 {
     void *_bytes;

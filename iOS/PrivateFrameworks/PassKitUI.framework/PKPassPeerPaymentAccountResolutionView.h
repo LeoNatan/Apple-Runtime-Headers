@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class PKContinuousButton, PKPeerPaymentAccountResolutionController, UIActivityIndicatorView, UILabel;
+@class PKContinuousButton, PKPeerPaymentAccountResolutionController, PKPeerPaymentContactResolver, UIActivityIndicatorView, UILabel;
 
 @interface PKPassPeerPaymentAccountResolutionView : UIView
 {
@@ -17,10 +17,12 @@
     UIView *_bottomRule;
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionController;
     unsigned long long _peerPaymentAccountResolution;
+    PKPeerPaymentContactResolver *_contactResolver;
     _Bool _showSpinner;
 }
 
 - (void).cxx_destruct;
+- (id)_contactResolver;
 - (void)_showSpinner:(_Bool)arg1;
 - (id)_bottomRule;
 - (id)_activityIndicator;

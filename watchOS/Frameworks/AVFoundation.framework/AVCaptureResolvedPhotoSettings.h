@@ -11,9 +11,13 @@
 @interface AVCaptureResolvedPhotoSettings : NSObject
 {
     AVCaptureResolvedPhotoSettingsInternal *_internal;
+    CDStruct_79c71658 _rawEmbeddedThumbnailDimensions;
+    CDStruct_79c71658 _portraitEffectsMatteDimensions;
 }
 
 + (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(CDStruct_1ef3fb1f)arg2 rawPhotoDimensions:(CDStruct_1ef3fb1f)arg3 previewDimensions:(CDStruct_1ef3fb1f)arg4 embeddedThumbnailDimensions:(CDStruct_1ef3fb1f)arg5 livePhotoMovieEnabled:(_Bool)arg6 livePhotoMovieDimensions:(CDStruct_1ef3fb1f)arg7 turboModeEnabled:(_Bool)arg8 flashEnabled:(_Bool)arg9 HDREnabled:(_Bool)arg10 adjustedPhotoFiltersEnabled:(_Bool)arg11 EV0PhotoDeliveryEnabled:(_Bool)arg12 stillImageStabilizationEnabled:(_Bool)arg13 dualCameraFusionEnabled:(_Bool)arg14 squareCropEnabled:(_Bool)arg15 photoManifest:(id)arg16;
+@property(readonly) CDStruct_1ef3fb1f portraitEffectsMatteDimensions; // @synthesize portraitEffectsMatteDimensions=_portraitEffectsMatteDimensions;
+@property(readonly) CDStruct_1ef3fb1f rawEmbeddedThumbnailDimensions; // @synthesize rawEmbeddedThumbnailDimensions=_rawEmbeddedThumbnailDimensions;
 - (id)photoManifest;
 @property(readonly) unsigned int expectedPhotoCount;
 @property(readonly, getter=isDualCameraFusionEnabled) _Bool dualCameraFusionEnabled;

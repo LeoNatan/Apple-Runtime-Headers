@@ -6,17 +6,15 @@
 
 #import "NSObject.h"
 
-@class AKController, AKPageModelController, NSColor, NSDictionary, NSFont, NSString, PKInk;
+@class AKController, AKPageModelController, NSColor, NSDictionary, NSFont, PKInk;
 
 @interface AKAttributeController : NSObject
 {
-    BOOL _useThickInks;
     BOOL _strokeIsDashed;
     BOOL _hasShadow;
     AKPageModelController *modelControllerToObserveForSelections;
     NSColor *_strokeColor;
     NSColor *_fillColor;
-    NSString *_inkIdentifier;
     PKInk *_ink;
     double _strokeWidth;
     long long _brushStyle;
@@ -40,8 +38,6 @@
 @property BOOL strokeIsDashed; // @synthesize strokeIsDashed=_strokeIsDashed;
 @property double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
-@property(nonatomic) BOOL useThickInks; // @synthesize useThickInks=_useThickInks;
-@property(retain, nonatomic) NSString *inkIdentifier; // @synthesize inkIdentifier=_inkIdentifier;
 @property(retain) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) AKPageModelController *modelControllerToObserveForSelections; // @synthesize modelControllerToObserveForSelections;
@@ -58,9 +54,11 @@
 - (void)_syncAttributesFromSenderToSelfAndSelectedAnnotations:(id)arg1 segment:(long long)arg2;
 - (void)_restorePersistedAttributes;
 - (void)_persistCurrentAttributes;
-- (void)_updateInk;
+- (void)_disableInkPicker:(BOOL)arg1;
+- (void)didEndOrCancelStroke;
+- (void)beganDrawingStroke;
 - (void)resetToLastDrawingInk;
-- (void)setDefaultInkIdentifier;
+- (void)setDefaultInk;
 - (void)restoreStrokeColorToSystemDefault;
 - (BOOL)strokeColorIsEqualTo:(id)arg1;
 - (void)updateAttributeSenderState:(id)arg1 segment:(long long)arg2 enabled:(BOOL)arg3;

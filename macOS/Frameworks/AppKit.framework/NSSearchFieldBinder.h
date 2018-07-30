@@ -10,6 +10,7 @@
 
 @class NSMenu, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSSearchFieldBinder : NSViewStateBinder <NSMenuDelegate>
 {
     struct __searchFieldBinderFlags {

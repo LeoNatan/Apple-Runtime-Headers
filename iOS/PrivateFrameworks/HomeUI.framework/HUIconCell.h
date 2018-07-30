@@ -9,7 +9,7 @@
 #import "HUCellProtocol.h"
 #import "HUDisableableCellProtocol.h"
 
-@class HFItem, HUIconView, NSArray, NSString, UIColor, UILabel, UILayoutGuide, UIView;
+@class HFItem, HUIconCellContentMetrics, HUIconView, NSArray, NSString, UIColor, UILabel, UILayoutGuide, UIView;
 
 @interface HUIconCell : UITableViewCell <HUCellProtocol, HUDisableableCellProtocol>
 {
@@ -20,6 +20,7 @@
     HFItem *_item;
     UIColor *_iconForegroundColor;
     double _iconAlpha;
+    HUIconCellContentMetrics *_contentMetrics;
     unsigned long long _iconDisplayStyle;
     NSArray *_staticConstraints;
     NSArray *_dynamicConstraints;
@@ -27,7 +28,6 @@
     UIView *_containerView;
     HUIconView *_iconView;
     UILayoutGuide *_iconSpacingLayoutGuide;
-    struct CGSize _iconSize;
 }
 
 + (_Bool)requiresConstraintBasedLayout;
@@ -39,7 +39,7 @@
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
 @property(nonatomic) _Bool iconTintColorFollowsDisabledState; // @synthesize iconTintColorFollowsDisabledState=_iconTintColorFollowsDisabledState;
 @property(nonatomic) unsigned long long iconDisplayStyle; // @synthesize iconDisplayStyle=_iconDisplayStyle;
-@property(nonatomic) struct CGSize iconSize; // @synthesize iconSize=_iconSize;
+@property(retain, nonatomic) HUIconCellContentMetrics *contentMetrics; // @synthesize contentMetrics=_contentMetrics;
 @property(nonatomic) double iconAlpha; // @synthesize iconAlpha=_iconAlpha;
 @property(nonatomic) _Bool iconForegroundColorFollowsTintColor; // @synthesize iconForegroundColorFollowsTintColor=_iconForegroundColorFollowsTintColor;
 @property(retain, nonatomic) UIColor *iconForegroundColor; // @synthesize iconForegroundColor=_iconForegroundColor;

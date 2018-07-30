@@ -21,17 +21,16 @@
     _Bool _runPPTTestOnExtension;
     _Bool _runExtensionTestInResumeTest;
     _Bool _ignoreNextCallToFinishedTest;
-    _Bool _localConnection;
     NSString *_extensionResumeTestName;
     NSDictionary *_extensionResumeTestOptions;
     double _applicationDidFinishLaunchingTime;
 }
 
 + (_Bool)_wantsApplicationBehaviorAsExtension;
++ (void)setRunningWKUnitTestApp;
 + (id)sharedSPApplication;
 @property(retain, nonatomic) NSDictionary *extensionResumeTestOptions; // @synthesize extensionResumeTestOptions=_extensionResumeTestOptions;
 @property(retain, nonatomic) NSString *extensionResumeTestName; // @synthesize extensionResumeTestName=_extensionResumeTestName;
-@property(nonatomic) _Bool localConnection; // @synthesize localConnection=_localConnection;
 @property(nonatomic) double applicationDidFinishLaunchingTime; // @synthesize applicationDidFinishLaunchingTime=_applicationDidFinishLaunchingTime;
 - (void).cxx_destruct;
 - (void)didReceiveNonClockKitEvent;
@@ -57,7 +56,6 @@
 - (void)finishedExtendedLaunchTestWithExtraResults:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(CDUnknownBlockType)arg4;
 - (void)startedTest:(id)arg1;
-- (void)hasLocalConnection:(_Bool)arg1;
 - (void)applicationDidFinishLaunching;
 - (id)_extendLaunchTest;
 - (id)init;

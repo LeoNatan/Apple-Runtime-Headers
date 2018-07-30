@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 + (id)extendedValidationOrganizationNameForServerTrust:(struct __SecTrust *)arg1;
 + (BOOL)isRevocationServerMetaError:(int)arg1;
 + (RetainPtr_3b882a02)ocspPolicyWithOptions:(unsigned int)arg1;
-+ (BOOL)hasClientCertificateIdentityForProtectionSpace:(const struct ProtectionSpace *)arg1;
++ (BOOL)hasClientCertificateIdentityForProtectionSpace:(id)arg1;
 + (_Bool)trustIncludesRevokedCertificate:(struct __SecTrust *)arg1;
 + (BOOL)isCertificateChain:(id)arg1 trustedForHost:(id)arg2;
 + (RetainPtr_b11cdf8e)trustReferenceWithCertificates:(id)arg1 forPolicy:(struct OpaqueSecPolicyRef *)arg2;
@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)subjectFullLocationForCertificate:(struct OpaqueSecCertificateRef *)arg1;
 + (id)subjectNameForCertificate:(struct OpaqueSecCertificateRef *)arg1;
 + (id)issuerOrganizationNameForCertificate:(struct OpaqueSecCertificateRef *)arg1;
-+ (id)identitiesWithProtectionSpace:(const struct ProtectionSpace *)arg1;
++ (id)identitiesWithProtectionSpace:(id)arg1;
 
 @end
 

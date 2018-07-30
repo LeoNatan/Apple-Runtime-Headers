@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)sizeToFit;
+- (void)_updateTextColor;
 - (void)_prepareLabel;
 - (id)_attributesWithStroke:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

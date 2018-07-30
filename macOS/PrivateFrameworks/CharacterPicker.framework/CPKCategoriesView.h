@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
     long long _categoryCount;
     CPKBaseMatrix *_fixedCategories;
-    CPKBaseMatrix *_scrollbaleCategories;
+    CPKBaseMatrix *_scrollableCategories;
     NSView *_scrollEnclosure;
     BOOL _enabled;
     BOOL _isRTLLayout;
@@ -35,9 +35,10 @@ __attribute__((visibility("hidden")))
 - (void)scrollItemClicked:(id)arg1;
 - (void)myDefaultAction:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)navigationSelectionDidMoved:(id)arg1;
+- (long long)initialSelectionForState:(id)arg1;
 - (void)setState:(id)arg1;
-- (id)stateForPersistent:(BOOL)arg1;
+- (id)state;
+- (void)fillCategoryInfo:(CDUnknownBlockType)arg1;
 - (void)setEnabled:(BOOL)arg1 atIndex:(long long)arg2;
 - (long long)selectedCategoryIndex;
 - (id)selectedCategoryAXElement;

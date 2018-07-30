@@ -36,10 +36,14 @@
     OSPSecureBootBundle *_bundle;
     NSURL *_personalizedOutputURL;
     NSURL *_testPersonalizedOutputURL;
+    long long _fakePersonalizationErrorCode;
+    NSURL *_signedPRDocumentPublicKeyURL;
 }
 
 @property BOOL showUsageForPersonalization; // @synthesize showUsageForPersonalization=_showUsageForPersonalization;
+@property(retain) NSURL *signedPRDocumentPublicKeyURL; // @synthesize signedPRDocumentPublicKeyURL=_signedPRDocumentPublicKeyURL;
 @property BOOL useDummyDeviceIdentity; // @synthesize useDummyDeviceIdentity=_useDummyDeviceIdentity;
+@property long long fakePersonalizationErrorCode; // @synthesize fakePersonalizationErrorCode=_fakePersonalizationErrorCode;
 @property BOOL skipPersonalizationForTesting; // @synthesize skipPersonalizationForTesting=_skipPersonalizationForTesting;
 @property BOOL forcePersonalization; // @synthesize forcePersonalization=_forcePersonalization;
 @property BOOL shouldPersonalize; // @synthesize shouldPersonalize=_shouldPersonalize;
@@ -66,8 +70,8 @@
 @property(retain) NSURL *volumeURL; // @synthesize volumeURL=_volumeURL;
 - (void).cxx_destruct;
 - (void)_printUsageForExecutableNamed:(id)arg1;
-- (void)_setPropertiesFromOptions:(id)arg1;
-- (BOOL)_parsePRDocument:(id)arg1;
+- (BOOL)_setPropertiesFromOptions:(id)arg1;
+- (BOOL)_parsePRDocument:(id)arg1 enforceSignature:(BOOL)arg2;
 - (BOOL)_parseArugments:(const char **)arg1 length:(int)arg2;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 - (id)initForGlobalSigningWithArgs:(const char **)arg1 length:(int)arg2;

@@ -28,12 +28,12 @@
     NSString *_keyBindingsName;
 }
 
++ (void)installInputManagerMenu:(id)arg1;
 + (BOOL)worksWhenModal;
 + (void)cycleToNextInputServerInLanguage:(id)arg1;
 + (void)cycleToNextInputLanguage:(id)arg1;
 + (id)currentInputManager;
 + (void)setCurrentInputManager:(id)arg1;
-+ (void)installInputManagerMenu:(id)arg1;
 + (void)initialize;
 + (id)_nextInputManagerInScript:(id)arg1;
 + (id)_inputManagerInNextScript:(id)arg1;

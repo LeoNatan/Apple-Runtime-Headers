@@ -6,7 +6,6 @@
 
 #import "NSButton.h"
 
-__attribute__((visibility("hidden")))
 @interface ABNameViewCompanyCheckBox : NSButton
 {
     id <ABNameViewCompanyCheckBoxDelegate> _delegate;

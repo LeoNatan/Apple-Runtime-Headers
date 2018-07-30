@@ -14,6 +14,7 @@
 - (id <ABCardViewDelegate>)delegate;
 
 @optional
+- (void)cardViewNoteDidChange;
 - (void)contactDetailsViewControllerKeyViewLoopNeedsUpdate:(CNContactDetailsViewController *)arg1;
 - (void)valueAlignmentViewDidChange:(NSView *)arg1;
 @end

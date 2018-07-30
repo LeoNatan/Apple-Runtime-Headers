@@ -4,26 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <coreroutine/RTService.h>
 
-@class NSArray, RTDefaultsManager, RTPlatform;
+@class NSMutableArray, RTDefaultsManager, RTPlatform;
 
-@interface RTDiagnostics : NSObject
+@interface RTDiagnostics : RTService
 {
-    RTPlatform *_platform;
     RTDefaultsManager *_defaultsManager;
-    NSArray *_diagnosticProviders;
+    RTPlatform *_platform;
+    NSMutableArray *_diagnosticProviders;
 }
 
-@property(copy) NSArray *diagnosticProviders; // @synthesize diagnosticProviders=_diagnosticProviders;
++ (id)stringFromDateWithFormat;
++ (void)rolloverSnapshots;
++ (BOOL)createArchiveSourceURL:(id)arg1 destinationURL:(id)arg2 error:(id *)arg3;
++ (id)createDiagnosticsURLWithError:(id *)arg1;
++ (BOOL)collectArchiveSinceDate:(id)arg1 path:(id)arg2 error:(id *)arg3;
++ (id)crashReports;
 - (void).cxx_destruct;
 - (void)takeSnapshotSinceDate:(id)arg1 description:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)rolloverSnapshots;
+- (void)fetchPathToBackupWithHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchPathToBackupWithHandler:(CDUnknownBlockType)arg1;
+- (id)_collectBackupWithError:(id *)arg1;
 - (void)fetchPathToDiagnosticFilesWithHandler:(CDUnknownBlockType)arg1;
-- (BOOL)collectArchiveSinceDate:(id)arg1 path:(id)arg2 error:(id *)arg3;
-- (id)crashReports;
+- (void)_fetchPathToDiagnosticFilesWithHandler:(CDUnknownBlockType)arg1;
+- (id)_collectDiagnosticFilesWithError:(id *)arg1;
+- (void)_shutdown;
+- (void)addDiagnosticProvider:(id)arg1;
 - (void)logProcessDiagnosticInformation;
-- (id)initWithPlatform:(id)arg1 defaultsManager:(id)arg2;
+- (id)initWithDefaultsManager:(id)arg1 platform:(id)arg2;
 - (id)init;
 
 @end

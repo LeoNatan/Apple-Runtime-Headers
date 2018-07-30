@@ -11,14 +11,14 @@
 __attribute__((visibility("hidden")))
 @interface VNGreedyClusteringReadWrite : VNGreedyClusteringReadOnly <VNClusteringWritable>
 {
-    struct shared_ptr<vision::mod::GreedyClustererFaces> m_ClusteringImpl;
+    struct shared_ptr<vision::mod::FaceClustering> m_ClusteringImpl;
 }
 
++ (id)nonGroupedGroupID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)getClustersWithOptions:(id)arg1 error:(id *)arg2;
-- (_Bool)cancelClustering:(id *)arg1;
-- (long long)_cancellableUpdate:(struct ImageDescriptorBufferFloat32 *)arg1 facesToMove:(vector_22dfb71c *)arg2;
+- (long long)_cancellableUpdate:(struct ImageDescriptorBufferAbstract *)arg1 facesToMove:(vector_22dfb71c *)arg2;
 - (id)initWithOptions:(id)arg1 error:(id *)arg2;
 
 @end

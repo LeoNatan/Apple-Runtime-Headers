@@ -27,8 +27,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)pu_wantsNavigationBarVisible;
 - (void)setPhotoPickerMediaTypes:(id)arg1;
-- (long long)filteringAssetTypes;
+- (unsigned long long)filteringAssetTypes;
 - (id)assetsFilterPredicate;
+- (_Bool)canShowAvatarViews;
 - (_Bool)shouldHideEmptyCollections;
 - (_Bool)shouldShowAllPhotosItem;
 - (_Bool)shouldAllowEmailInAlbumSubtitle;

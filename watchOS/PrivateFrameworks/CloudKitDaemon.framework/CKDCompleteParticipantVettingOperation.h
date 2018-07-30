@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *_routingKey;
     NSData *_encryptedKey;
     NSString *_baseToken;
+    NSString *_displayedHostname;
     struct _OpaquePCSShareProtection *_protectionInfo;
     NSString *_shortToken;
     CKShareMetadata *_shareMetadata;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKShareMetadata *shareMetadata; // @synthesize shareMetadata=_shareMetadata;
 @property(retain, nonatomic) NSString *shortToken; // @synthesize shortToken=_shortToken;
 @property(nonatomic) struct _OpaquePCSShareProtection *protectionInfo; // @synthesize protectionInfo=_protectionInfo;
+@property(readonly, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(readonly, nonatomic) NSString *baseToken; // @synthesize baseToken=_baseToken;
 @property(readonly, nonatomic) NSData *encryptedKey; // @synthesize encryptedKey=_encryptedKey;
 @property(readonly, nonatomic) NSString *routingKey; // @synthesize routingKey=_routingKey;

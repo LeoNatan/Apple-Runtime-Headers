@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class MKMapCamera, NSArray;
+@class MKMapCamera, NSAppearance, NSArray;
 
 @interface MKMapSnapshotOptions : NSObject <NSSecureCoding, NSCopying>
 {
@@ -19,9 +19,11 @@
     unsigned long long _mapType;
     int _mode;
     BOOL _showsPointsOfInterest;
+    BOOL _showsPointLabels;
     BOOL _showsBuildings;
     BOOL _showsNightMode;
     struct CGSize _size;
+    NSAppearance *_appearance;
     BOOL _usingRect;
     BOOL _showsVenues;
     unsigned char _searchResultsType;
@@ -34,8 +36,10 @@
 @property(nonatomic, getter=_searchResultsType, setter=_setSearchResultsType:) unsigned char searchResultsType; // @synthesize searchResultsType=_searchResultsType;
 @property(nonatomic, getter=_showsVenues, setter=_setShowsVenues:) BOOL showsVenues; // @synthesize showsVenues=_showsVenues;
 @property(copy, nonatomic) NSArray *annotationViews; // @synthesize annotationViews=_annotationViews;
+@property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 @property(nonatomic, getter=_showsNightMode, setter=_setShowsNightMode:) BOOL showsNightMode; // @synthesize showsNightMode=_showsNightMode;
 @property(nonatomic) BOOL showsBuildings; // @synthesize showsBuildings=_showsBuildings;
+@property(nonatomic, getter=_showsPointLabels, setter=_setShowsPointLabels:) BOOL showsPointLabels; // @synthesize showsPointLabels=_showsPointLabels;
 @property(nonatomic) BOOL showsPointsOfInterest; // @synthesize showsPointsOfInterest=_showsPointsOfInterest;
 @property(readonly, nonatomic) BOOL usingRect; // @synthesize usingRect=_usingRect;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
@@ -44,6 +48,7 @@
 @property(nonatomic) CDStruct_02837cd9 mapRect; // @synthesize mapRect=_mapRect;
 @property(copy, nonatomic) MKMapCamera *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

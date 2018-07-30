@@ -8,6 +8,7 @@
 
 @class ENGroupID, ENStableGroupID, NSData;
 
+__attribute__((visibility("hidden")))
 @interface ENCDGroup : NSManagedObject
 {
 }

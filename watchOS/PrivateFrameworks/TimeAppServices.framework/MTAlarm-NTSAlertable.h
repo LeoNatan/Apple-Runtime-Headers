@@ -13,7 +13,6 @@
 @interface MTAlarm (NTSAlertable) <NTSAlertable>
 + (id)firingAlertForBulletin:(id)arg1 withAlertProvider:(id)arg2;
 + (id)_alertDateForBulletin:(id)arg1 userNotificationRequest:(id)arg2;
-+ (_Bool)_isOldBulletinForUsForTemporaryLivability:(id)arg1;
 + (_Bool)supportsBulletin:(id)arg1;
 + (id)removalNotificationName;
 @property(readonly, copy, nonatomic) NSString *repeatActionIdentifier;

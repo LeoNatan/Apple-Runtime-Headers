@@ -14,9 +14,9 @@
 }
 
 @property(retain, nonatomic) FBSSceneMessage *message; // @synthesize message=_message;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (void)dealloc;
 
 @end
 

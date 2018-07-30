@@ -6,6 +6,7 @@
 
 #import "NSViewController.h"
 
+#import "FMFAppearanceDelegate.h"
 #import "FMFMapOptionsViewControllerDelegate.h"
 #import "FMFMapViewDelegateInternalDelegate.h"
 #import "FMFNoLocationViewDelegate.h"
@@ -13,7 +14,7 @@
 
 @class FMFMapViewDelegateInternal, FMFNoLocationView, FMFSession, FMFTitleViewMac, MKMapView, NSColor, NSSet, NSString;
 
-@interface FMFMapViewController : NSViewController <FMFSessionDelegateInternal, FMFMapViewDelegateInternalDelegate, FMFNoLocationViewDelegate, FMFMapOptionsViewControllerDelegate>
+@interface FMFMapViewController : NSViewController <FMFSessionDelegateInternal, FMFMapViewDelegateInternalDelegate, FMFNoLocationViewDelegate, FMFMapOptionsViewControllerDelegate, FMFAppearanceDelegate>
 {
     BOOL _shouldZoomToFitNewLocations;
     BOOL _shouldZoomToFitMeAndLocations;
@@ -61,13 +62,13 @@
 @property BOOL shouldZoomToFitNewLocations; // @synthesize shouldZoomToFitNewLocations=_shouldZoomToFitNewLocations;
 @property __weak id <FMFMapViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)fmfAppearanceChanged:(id)arg1;
 - (void)updateAllAnnotationsDueToAddressBookUpdate;
 - (id)_internalAnnotationTintColor;
 - (id)_selectedHandleAnnotation;
 - (void)_updateTitleViewLocation:(id)arg1;
 - (id)titleViewForSelectedHandle;
 - (id)annotationImageForAnnotation:(id)arg1 andHandle:(id)arg2 large:(BOOL)arg3;
-- (id)annotationImageForHandle:(id)arg1;
 - (void)mapViewDidFinishRenderingMap;
 - (void)didReceiveLocationForDelegateCallback:(id)arg1;
 - (void)didUpdateUserLocation:(id)arg1;
@@ -104,6 +105,7 @@
 - (void)updateNoLocationView:(BOOL)arg1;
 - (BOOL)canShowNoLocation;
 - (void)loadCachedLocationsForHandles;
+- (void)_enablePreloadedHandles:(id)arg1;
 - (void)enablePreloadedHandles;
 - (void)loadDelegate;
 - (void)destroySession;

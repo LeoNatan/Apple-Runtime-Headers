@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSMutableArray *_events;
     unsigned long long _capacity;
+    struct os_unfair_lock_s _retainReleaseLock;
 }
 
 - (id)dequeueTimestamp:(double)arg1;
@@ -22,6 +23,11 @@ __attribute__((visibility("hidden")))
 - (id)initWithCapacity:(unsigned long long)arg1;
 - (id)init;
 - (void)dealloc;
+- (oneway void)release;
+- (void)__vbSuperRelease;
+- (id)retain;
+- (void)__vbWithLockPerform:(CDUnknownBlockType)arg1;
+- (struct os_unfair_lock_s *)retainReleaseLock;
 
 @end
 

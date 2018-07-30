@@ -39,6 +39,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldIgnoreJSValidation;
 - (id)localStorage;
 - (id)appLaunchParams;
+- (id)bagBootURLKey;
+- (id)offlineJSURL;
 - (id)appJSCachePath;
 - (id)appLocalJSURL;
 - (id)appJSURL;

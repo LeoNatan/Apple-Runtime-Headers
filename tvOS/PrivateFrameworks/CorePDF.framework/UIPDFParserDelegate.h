@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFParserDelegate : NSObject <NSXMLParserDelegate>
 {
     struct CGPoint _p[4];

@@ -20,7 +20,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) float confidence; // @synthesize confidence=_confidence;
-@property(readonly, nonatomic) id <NSObject><NSCopying><NSSecureCoding> predictedPersonUniqueIdentifier; // @synthesize predictedPersonUniqueIdentifier=_predictedPersonUniqueIdentifier;
+@property(readonly, copy, nonatomic) id <NSObject><NSCopying><NSSecureCoding> predictedPersonUniqueIdentifier; // @synthesize predictedPersonUniqueIdentifier=_predictedPersonUniqueIdentifier;
 @property(readonly, nonatomic) VNFaceObservation *faceObservation; // @synthesize faceObservation=_faceObservation;
 - (void).cxx_destruct;
 - (id)description;

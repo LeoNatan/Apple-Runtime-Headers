@@ -12,7 +12,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 struct IDSGLAttrBinaryData_ {
     int len;
-    unsigned char data[512];
+    unsigned char data[1024];
 };
 
 struct IDSGlobalLinkAttribute {
@@ -39,8 +39,10 @@ struct IDSStunAttribute {
     unsigned short type;
     unsigned short len;
     unsigned short valueType;
+    char encrypted;
     union {
         struct sockaddr_storage ss;
+        unsigned char u8;
         unsigned short u16;
         unsigned int u32;
         unsigned long long u64;
@@ -155,6 +157,12 @@ struct sockaddr_storage {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    char *_field1;
+    char *_field2;
+    char *_field3;
+} CDStruct_32bf18e6;
+
+typedef struct {
     int length;
     unsigned char data[12];
 } CDStruct_330c469e;
@@ -166,7 +174,7 @@ typedef struct {
     unsigned long long _field2;
     long long _field3;
     long long _field4;
-    char _field5;
+    unsigned int _field5;
     char _field6;
     char _field7;
     char _field8;
@@ -177,13 +185,33 @@ typedef struct {
     struct sockaddr_storage _field13;
     struct sockaddr_storage _field14;
     unsigned short _field15;
-    unsigned short _field16;
-    unsigned char _field17;
+    int _field16;
+    struct {
+        char *_field1;
+        unsigned short _field2;
+        int _field3;
+        unsigned short _field4[12];
+        long long _field5;
+        unsigned char _field6;
+        unsigned short _field7;
+        unsigned char _field8;
+        char _field9;
+        char _field10;
+        unsigned short _field11;
+        struct {
+            unsigned short _field1;
+            unsigned short _field2;
+            unsigned short _field3;
+            unsigned short _field4;
+            unsigned short _field5;
+        } _field12;
+        char _field13;
+        unsigned int _field14;
+    } _field17[8];
     char _field18;
-    unsigned long long _field19;
-    char _field20;
-    char _field21;
-    int _field22;
-    unsigned char _field23[0];
-} CDStruct_bc1e3e42;
+    char _field19;
+    int _field20;
+    double _field21;
+    unsigned char _field22[0];
+} CDStruct_18fdc6f4;
 

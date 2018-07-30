@@ -10,8 +10,11 @@
 {
 }
 
+- (void)_forceInclusionOfSubsystem:(id)arg1 category:(id)arg2;
 - (BOOL)passesSubsystem:(id)arg1 category:(id)arg2;
 - (id)initWithEntries:(id)arg1;
+- (unsigned long long)_compoundPredicateType;
+- (BOOL)_wantsNotSubsystem;
 
 @end
 

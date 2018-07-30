@@ -10,17 +10,11 @@
 
 @protocol _CPSearchSuggestionForFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasFbr;
 @property(copy, nonatomic) NSString *fbr;
-@property(readonly, nonatomic) BOOL hasType;
 @property(nonatomic) int type;
-@property(readonly, nonatomic) BOOL hasScore;
 @property(nonatomic) double score;
-@property(readonly, nonatomic) BOOL hasQuery;
 @property(copy, nonatomic) NSString *query;
-@property(readonly, nonatomic) BOOL hasSuggestion;
 @property(copy, nonatomic) NSString *suggestion;
-@property(readonly, nonatomic) BOOL hasIdentifier;
 @property(copy, nonatomic) NSString *identifier;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

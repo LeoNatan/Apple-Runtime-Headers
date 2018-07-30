@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OCXRelationship : NSObject
 {
     NSString *mIdString;
@@ -20,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *target; // @synthesize target=mTarget;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=mType;
 @property(readonly, nonatomic) NSString *idString; // @synthesize idString=mIdString;
+- (void).cxx_destruct;
 - (void)writeToStreamWriter:(id)arg1;
-- (void)dealloc;
 - (id)initWithId:(unsigned long long)arg1 type:(id)arg2 target:(id)arg3 external:(BOOL)arg4;
 
 @end

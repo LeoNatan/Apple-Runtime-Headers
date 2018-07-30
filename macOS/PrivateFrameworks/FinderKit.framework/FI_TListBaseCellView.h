@@ -12,20 +12,20 @@ __attribute__((visibility("hidden")))
 @interface FI_TListBaseCellView : NSTableCellView
 {
     _Bool _dimmed;
-    unsigned int _mainProperty;
+    int _mainProperty;
     _Bool _inBatchUpdate;
-    struct TNSRef<FI_TListTextField *, void> _titleTextField;
+    struct TNSRef<FI_TListTextField, void> _titleTextField;
 }
 
 @property(nonatomic, getter=isInBatchUpdate) _Bool inBatchUpdate; // @synthesize inBatchUpdate=_inBatchUpdate;
-@property(nonatomic) unsigned int mainProperty; // @synthesize mainProperty=_mainProperty;
+@property(nonatomic) int mainProperty; // @synthesize mainProperty=_mainProperty;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct CGSize)idealSize;
-@property(readonly, nonatomic) _Bool isSelected; // @dynamic isSelected;
 - (void)setTitleNeedsDisplay;
 @property(copy, nonatomic) NSFont *titleFont; // @dynamic titleFont;
+- (id)init;
 
 @end
 

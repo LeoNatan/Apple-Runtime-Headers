@@ -6,24 +6,15 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSString;
+@class NSObject<OS_dispatch_queue>;
 
 @interface FBSUIApplicationSystemService : NSObject
 {
     NSObject<OS_dispatch_queue> *_delegateQueue;
-    id <FBSUIApplicationSystemServiceDelegate> _delegate;
 }
 
-@property(nonatomic) id <FBSUIApplicationSystemServiceDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)suspendCurrentApplication;
-@property(nonatomic) double currentBacklightLevel;
-@property(readonly, nonatomic) double backgroundTimeRemaining;
-- (_Bool)setNextWakeInterval:(double)arg1;
-@property(copy, nonatomic) NSString *badgeString;
-@property(nonatomic) long long badgeNumber;
-- (id)_getBadgeValue;
-- (long long)activeInterfaceOrientation;
-- (void)dealloc;
 - (id)initWithQueue:(id)arg1;
 - (id)init;
 

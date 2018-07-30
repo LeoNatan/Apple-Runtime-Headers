@@ -77,8 +77,8 @@
 - (void)_notifyDelegateOfCompletedStillImageRemotePersistenceForRequest:(id)arg1 withReply:(id)arg2 fromBatchOfSize:(unsigned long long)arg3 error:(id)arg4;
 - (id)_jobDictionaryForStillImageLocalResult:(id)arg1 fullsizeRenderLocalResult:(id)arg2 fromRequest:(id)arg3;
 - (id)_xmpEncodedDiagnosticDataFromDictionary:(id)arg1;
-- (void)_writeDataToURL:(id)arg1 withData:(id)arg2 duringBurst:(_Bool)arg3 error:(out id *)arg4;
-- (void)_writeJPEGToURL:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(_Bool)arg5 error:(out id *)arg6;
+- (_Bool)_writeDataToURL:(id)arg1 withData:(id)arg2 duringBurst:(_Bool)arg3 error:(out id *)arg4;
+- (_Bool)_writeJPEGToURL:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(_Bool)arg5 error:(out id *)arg6;
 - (struct __CFWriteStream *)_createOpenWriteStreamWithURL:(id)arg1 forBurst:(_Bool)arg2;
 - (id)_persistStillImageCaptureSurfaceResult:(id)arg1 withRequest:(id)arg2;
 - (id)_uniformTypeIdentifierForStillImageRequest:(id)arg1;
@@ -98,10 +98,12 @@
 - (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didCompleteVideoCaptureWithResult:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didCompleteStillImageCaptureWithResult:(id)arg2;
+- (void)_mainThread_handleApplicationDidEnterBackground:(id)arg1;
 @property(readonly, nonatomic) _Bool resultDelegateRespondsToDidCompleteAllLocalPersistenceForRequest;
 @property(nonatomic) __weak id <CAMPersistenceResultDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
 @property(readonly, nonatomic) NSMutableArray *_pendingRemotePersistenceWrappers; // @synthesize _pendingRemotePersistenceWrappers;
 @property(readonly, nonatomic) NSMutableArray *_pendingLocalPersistenceWrappers; // @synthesize _pendingLocalPersistenceWrappers;
+- (void)dealloc;
 - (id)init;
 - (id)initWithLocationController:(id)arg1 burstController:(id)arg2 protectionController:(id)arg3 powerController:(id)arg4 irisVideoController:(id)arg5;
 

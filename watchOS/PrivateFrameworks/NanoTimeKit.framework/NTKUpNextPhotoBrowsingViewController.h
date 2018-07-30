@@ -12,10 +12,11 @@
 #import "NTKSafeLocketReaderDelegate.h"
 #import "PUICCrownInputSequencerDelegate.h"
 
-@class NPTOPhoto1UpView, NSString, NSTimer, NTKRoundedCornerOverlayView, NTKUpNextPhotoGradientView, NTKUpNextTouchInsetsButton, PUICCrownInputSequencer, PUICPageIndicatorView, UIGestureRecognizer, UILabel, UIResponder, UIView;
+@class CLKDevice, CSLSSuspendSystemGestureAssertion, NPTOPhoto1UpView, NSString, NSTimer, NTKRoundedCornerOverlayView, NTKUpNextPhotoGradientView, NTKUpNextTouchInsetsButton, PUICCrownInputSequencer, PUICPageIndicatorView, UIGestureRecognizer, UILabel, UIResponder, UIView;
 
 @interface NTKUpNextPhotoBrowsingViewController : UIViewController <NTKSafeLocketReaderDelegate, NPTOPhoto1UpViewDelegate, NPTOPhoto1UpViewDataSource, PUICCrownInputSequencerDelegate, CSLPIButtonHandlerProtocol>
 {
+    CLKDevice *_device;
     NPTOPhoto1UpView *_photosView;
     PUICCrownInputSequencer *_crownSequencer;
     NTKRoundedCornerOverlayView *_cornerOverlay;
@@ -30,11 +31,11 @@
     _Bool _chromeVisible;
     NSTimer *_chromeVisibilityTimer;
     UIGestureRecognizer *_tapRecognizer;
+    CSLSSuspendSystemGestureAssertion *_gestureAssertion;
     UIResponder *_cachedResponder;
     id <NTKUpNextPhotoBrowsingViewControllerDelegate> _delegate;
 }
 
-+ (void)initialize;
 @property(nonatomic) __weak id <NTKUpNextPhotoBrowsingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)photo1UpModelAtIndex:(unsigned int)arg1;

@@ -14,7 +14,7 @@
 {
 }
 
-- (_Bool)formatTitlesForEntry:(id)arg1 eta:(double)arg2 trafficString:(id)arg3;
+- (_Bool)formatTitlesForEntry:(id)arg1 eta:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,8 +11,10 @@
 @interface IDSAccount : NSObject
 {
     _IDSAccount *_internal;
+    NSString *_loginID;
 }
 
+@property(retain, nonatomic) NSString *loginID; // @synthesize loginID=_loginID;
 - (void).cxx_destruct;
 - (void)deactivateAlias:(id)arg1;
 - (void)activateAlias:(id)arg1;
@@ -65,7 +67,6 @@
 @property(readonly, nonatomic) int accountType;
 @property(readonly, nonatomic) NSString *primaryServiceName;
 @property(readonly, nonatomic) NSString *serviceName;
-@property(retain, nonatomic) NSString *loginID;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) NSString *uniqueID;
 @property(readonly, retain, nonatomic) _IDSAccount *_internal;

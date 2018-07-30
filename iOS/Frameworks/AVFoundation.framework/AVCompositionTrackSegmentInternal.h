@@ -8,6 +8,7 @@
 
 @class NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVCompositionTrackSegmentInternal : NSObject
 {
     NSURL *editAssetURL;

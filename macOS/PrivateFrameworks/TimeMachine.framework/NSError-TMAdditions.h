@@ -9,5 +9,8 @@
 @interface NSError (TMAdditions)
 + (id)tm_posixErrorWithCode:(int)arg1 forPath:(id)arg2;
 + (id)tm_posixErrorWithCode:(int)arg1;
+- (id)tm_underlyingErrorDomain;
+- (long long)tm_underlyingErrorCode;
+- (id)tm_underlyingError;
 @end
 

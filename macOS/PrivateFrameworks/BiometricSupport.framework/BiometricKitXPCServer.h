@@ -23,6 +23,7 @@
 - (BOOL)isDisplayOn;
 - (BOOL)isClassCFileAccessible;
 - (id)identitiesOfUser:(unsigned int)arg1;
+- (BOOL)isWakingUpFromS5;
 - (id)remoteOSVersion;
 - (id)remoteTimeMatchingInfo;
 - (BOOL)bridgeServiceCheck;
@@ -54,6 +55,8 @@
 - (int)getBiometrickitdInfo:(CDStruct_238d90ce *)arg1;
 - (unsigned long long)getLoggingType;
 - (unsigned long long)getSKSLockStateForUser:(unsigned int)arg1;
+- (int)pauseFaceDetectTimer:(BOOL)arg1 withClient:(id)arg2;
+- (int)enableMatchAutoRetry:(BOOL)arg1 withClient:(id)arg2;
 - (int)queryIdentityMigrationFailureForUser:(unsigned int)arg1 failed:(char *)arg2 clear:(BOOL)arg3 withClient:(id)arg4;
 - (int)fieldDiagnosticsControl:(unsigned int)arg1 inData:(id)arg2 outData:(id *)arg3 withClient:(id)arg4;
 - (int)getAugmentationEligibility:(char *)arg1 forIdentity:(id)arg2 withClient:(id)arg3;

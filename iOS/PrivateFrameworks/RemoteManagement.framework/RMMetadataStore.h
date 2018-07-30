@@ -6,11 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary;
 
 @interface RMMetadataStore : NSObject
 {
-    NSString *_metadataFilePath;
     NSMutableDictionary *__kvStore;
 }
 
@@ -24,10 +23,10 @@
 + (void)refresh;
 + (id)sharedStore;
 @property(retain, nonatomic) NSMutableDictionary *_kvStore; // @synthesize _kvStore=__kvStore;
-@property(copy, nonatomic) NSString *metadataFilePath; // @synthesize metadataFilePath=_metadataFilePath;
 - (void).cxx_destruct;
 - (_Bool)writeMetadataWithError:(id *)arg1;
 - (_Bool)readMetadataWithError:(id *)arg1;
+- (id)metadataFilePath;
 
 @end
 

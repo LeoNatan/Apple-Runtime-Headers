@@ -53,6 +53,7 @@
 - (void)disableUpdates;
 - (void)enableUpdates;
 @property(readonly) NSString *searchString;
+- (void)clear;
 - (void)cancel;
 - (void)start;
 - (id)init;

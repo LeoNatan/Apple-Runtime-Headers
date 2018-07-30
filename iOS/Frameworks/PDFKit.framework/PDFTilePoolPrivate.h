@@ -6,15 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, PDFTimer;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, PDFTimer;
 
 __attribute__((visibility("hidden")))
 @interface PDFTilePoolPrivate : NSObject
 {
-    NSObject<OS_dispatch_queue> *barrierQueue;
     NSObject<OS_dispatch_queue> *workQueue;
-    NSObject<OS_dispatch_semaphore> *workSemaphore;
-    NSObject<OS_dispatch_queue> *requestsBarrier;
+    struct os_unfair_lock_s surfacesLock;
     NSMutableDictionary *usedSurfaces;
     NSMutableDictionary *freeSurfaces;
     PDFTimer *recycleTimer;

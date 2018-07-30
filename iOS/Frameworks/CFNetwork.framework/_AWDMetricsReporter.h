@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)_reportCacheMetricsToAWD:(id)arg1;
 + (void)_reportStreamTaskTimingDataToAWD:(struct PerformanceTiming *)arg1;
 + (void)_reportTimingDataToAWD:(struct PerformanceTiming *)arg1 request:(id)arg2;
 + (id)getAWDServerConnectionForCFNetwork;

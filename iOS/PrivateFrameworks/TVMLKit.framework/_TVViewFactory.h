@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)imageViewWithElement:(id)arg1 existingView:(id)arg2;
++ (id)imageViewWithElement:(id)arg1 existingView:(id)arg2 size:(struct CGSize)arg3 scaleMode:(long long)arg4;
 + (id)imageStackViewWithElement:(id)arg1 existingView:(id)arg2;
 + (id)_organizerViewWithElement:(id)arg1 elements:(id)arg2 existingView:(id)arg3;
 + (id)organizerViewWithElements:(id)arg1 existingView:(id)arg2;

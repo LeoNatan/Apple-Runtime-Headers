@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) NSArray *visibleAssociatedMessageChatItems; // @synthesize visibleAssociatedMessageChatItems=_visibleAssociatedMessageChatItems;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UIItemProvider *dragItemProvider;
+@property(readonly, nonatomic) _Bool isCorrupt;
 @property(readonly, nonatomic) _Bool hasStickers;
 @property(readonly, nonatomic) _Bool hasMessageAcknowledgment;
 @property(readonly, nonatomic) struct _NSRange messagePartRange;

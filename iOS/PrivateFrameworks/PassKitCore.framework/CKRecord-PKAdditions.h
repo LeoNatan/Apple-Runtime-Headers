@@ -19,6 +19,7 @@
 - (id)pk_urlForKey:(id)arg1;
 - (id)pk_decimalNumberForKey:(id)arg1;
 - (id)pk_locationForKey:(id)arg1;
+- (id)pk_dataForKey:(id)arg1;
 - (id)pk_dateForKey:(id)arg1;
 - (id)pk_numberForKey:(id)arg1;
 - (id)pk_stringForKey:(id)arg1;
@@ -32,6 +33,7 @@
 - (id)pk_encryptedUrlForKey:(id)arg1;
 - (id)pk_encryptedDecimalNumberForKey:(id)arg1;
 - (id)pk_encryptedLocationForKey:(id)arg1;
+- (id)pk_encryptedDataForKey:(id)arg1;
 - (id)pk_encryptedDateForKey:(id)arg1;
 - (id)pk_encryptedNumberForKey:(id)arg1;
 - (id)pk_encryptedUUIDForKey:(id)arg1;

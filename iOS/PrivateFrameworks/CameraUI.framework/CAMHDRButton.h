@@ -35,8 +35,9 @@
 - (long long)numberOfMenuItems;
 - (unsigned long long)indexForMode:(long long)arg1;
 - (long long)modeForIndex:(long long)arg1;
-- (void)_updateFromAllowedModesChangeWithCurrentMode:(long long)arg1;
+- (void)_updateFromAllowedModesChangeWithCurrentMode:(long long)arg1 needsReloadData:(_Bool)arg2;
 - (void)_updateAllowedModes;
+- (void)setAllowsAutomaticHDR:(_Bool)arg1 needsReloadData:(_Bool)arg2;
 @property(nonatomic) long long HDRMode;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithLayoutStyle:(long long)arg1;

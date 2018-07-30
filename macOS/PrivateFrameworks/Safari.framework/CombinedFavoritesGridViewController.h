@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_documentViewMinHeightConstraint;
     BOOL _isObservingScrollViewContentInsetsChanges;
     BOOL _didCancelCurrentDrag;
+    BOOL _usesPrivateBrowsing;
     int _presentationMode;
     StartPageViewController *_startPageViewController;
     NSView *_externalCenteringView;
@@ -61,6 +62,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak FlippedStackView *gridContainer; // @synthesize gridContainer=_gridContainer;
 @property(nonatomic) __weak NSView *documentView; // @synthesize documentView=_documentView;
 @property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(nonatomic) BOOL usesPrivateBrowsing; // @synthesize usesPrivateBrowsing=_usesPrivateBrowsing;
 @property(nonatomic) int presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(retain, nonatomic) NSView *externalCenteringView; // @synthesize externalCenteringView=_externalCenteringView;
 @property(nonatomic) __weak StartPageViewController *startPageViewController; // @synthesize startPageViewController=_startPageViewController;
@@ -97,7 +99,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_shouldHideFrequentlyVisitedSites;
 - (struct TopSite *)_draggedFrequentSite;
 - (struct TopSite *)_frequentSiteAtIndex:(unsigned long long)arg1;
-- (void)_instrumentUserDidActivateFavoritesGridBookmark:(id)arg1 viaContextMenu:(BOOL)arg2;
+- (void)_instrumentUserDidActivateFavoritesGridItem:(id)arg1 viaContextMenu:(BOOL)arg2;
 - (void)_updateBackButtonVisibility;
 - (void)_updateFavoritesTitle;
 - (BOOL)_shouldShowFavoritesTitle;
@@ -105,8 +107,8 @@ __attribute__((visibility("hidden")))
 - (void)_reloadFavorites;
 - (void)_reloadFavoritesSoon;
 - (id)_bookmarkFolderForUUID:(id)arg1;
-- (id)_bookmarkAtIndex:(unsigned long long)arg1;
-- (unsigned long long)_indexOfBookmark:(id)arg1;
+- (id)_bookmarkItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)_indexOfBookmarkItem:(id)arg1;
 - (void)_invalidateCachedDisplayedFavorites;
 - (id)_displayedFavorites;
 - (BOOL)_isShowingRootFolder;
@@ -119,7 +121,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateLayoutStyleAttributes;
 - (void)_invalidateCachedPreferredHeight;
 - (void)_removeBookmark:(id)arg1;
-- (void)_openBookmark:(id)arg1;
+- (void)_openBookmarkItem:(id)arg1;
 - (struct TabPlacementHint)_tabPlacementHint;
 - (void)_endEditingInFavoritesGridView;
 - (void)gridView:(id)arg1 willDragCellAtIndex:(unsigned long long)arg2;
@@ -165,7 +167,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidAppear;
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
-- (void)loadView;
+- (void)viewDidLoad;
 - (void)awakeFromNib;
 - (id)nibName;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

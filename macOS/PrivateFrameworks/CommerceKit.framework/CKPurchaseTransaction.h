@@ -12,6 +12,7 @@
 
 @interface CKPurchaseTransaction : NSObject <NSSecureCoding>
 {
+    NSString *_purchaseQueueIdentifier;
     BOOL _usePasswordFallback;
     NSString *_challenge;
     NSString *_signature;
@@ -43,6 +44,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)description;
 - (id)_initWithGroupIdentifier:(id)arg1;
 - (id)_initWithPurchase:(id)arg1 groupIdentifier:(id)arg2;
@@ -50,6 +52,7 @@
 @property(retain) NSString *signature;
 @property(retain) NSString *challenge;
 @property BOOL usePasswordFallback;
+@property(copy) NSString *purchaseQueueIdentifier;
 
 @end
 

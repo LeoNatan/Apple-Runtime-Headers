@@ -8,7 +8,6 @@
 
 @class ABAddressBook, ABGroup;
 
-__attribute__((visibility("hidden")))
 @interface ABSmartGroupsHeaderGroupEntry : ABHeaderGroupEntry
 {
     ABAddressBook *_addressBook;

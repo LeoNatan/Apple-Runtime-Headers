@@ -22,8 +22,10 @@
     IMCloudKitSyncStatistics *_syncStatistics;
     double _progressBarValue;
     double _progressBarMax;
+    double _broadcastDeferralOverride;
 }
 
+@property(nonatomic) double broadcastDeferralOverride; // @synthesize broadcastDeferralOverride=_broadcastDeferralOverride;
 @property(readonly, nonatomic) IMCloudKitSyncStatistics *syncStatistics; // @synthesize syncStatistics=_syncStatistics;
 @property(readonly, nonatomic) IMCloudKitSyncState *syncState; // @synthesize syncState=_syncState;
 @property(nonatomic) int actionType; // @synthesize actionType=_actionType;

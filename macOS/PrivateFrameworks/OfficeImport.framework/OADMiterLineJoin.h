@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADLineJoin.h>
 
-__attribute__((visibility("hidden")))
 @interface OADMiterLineJoin : OADLineJoin
 {
     float mLimit;

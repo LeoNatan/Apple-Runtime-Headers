@@ -15,6 +15,7 @@
     BOOL _restrictedMode;
     BOOL _osUpdateMode;
     BOOL _personalisable;
+    BOOL _jcopTooOld;
     NSString *_identifier;
     unsigned long long _OSVersion;
     unsigned long long _firmwareVersion;
@@ -50,6 +51,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) BOOL jcopTooOld; // @synthesize jcopTooOld=_jcopTooOld;
 @property(readonly, nonatomic) NSString *atrString; // @synthesize atrString=_atrString;
 @property(readonly, nonatomic) unsigned long long seType; // @synthesize seType=_seType;
 @property(readonly, nonatomic) unsigned long long supportedTechnologies; // @synthesize supportedTechnologies=_supportedTechnologies;

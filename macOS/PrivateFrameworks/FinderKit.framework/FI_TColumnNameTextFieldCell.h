@@ -19,8 +19,6 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityAttributeNames;
 - (BOOL)_accessibilityUseConvenienceAPI;
 - (_Bool)isSelected;
-- (long long)interiorBackgroundStyle;
-- (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end
 

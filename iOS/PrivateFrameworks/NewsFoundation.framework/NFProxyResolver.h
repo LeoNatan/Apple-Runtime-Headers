@@ -11,6 +11,7 @@
 
 @class NFCallbackStore, NFContainerPool, NFContext, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NFProxyResolver : NSObject <NFResolver, NFValidationResolver>
 {
     id <NFDefinitionContainer> _publicContainer;

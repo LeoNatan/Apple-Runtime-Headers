@@ -17,6 +17,7 @@
     NSString *_campaignId;
     NSString *_campaignType;
     NSString *_creativeId;
+    int _groupType;
     NSString *_iadQtoken;
     int _paidSubscriptionConversionPointType;
     int _parentFeedType;
@@ -28,6 +29,7 @@
     _Bool _sawSubscriptionSheet;
     _Bool _subscriptionOnlyArticlePreview;
     struct {
+        unsigned int groupType:1;
         unsigned int paidSubscriptionConversionPointType:1;
         unsigned int parentFeedType:1;
         unsigned int resultType:1;
@@ -58,6 +60,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsGroupType:(id)arg1;
+- (id)groupTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasGroupType;
+@property(nonatomic) int groupType; // @synthesize groupType=_groupType;
 @property(nonatomic) _Bool hasSawSubscriptionSheet;
 @property(readonly, nonatomic) _Bool hasSubscriptionPurchaseSessionId;
 @property(readonly, nonatomic) _Bool hasCreativeId;

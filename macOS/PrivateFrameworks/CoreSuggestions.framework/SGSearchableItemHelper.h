@@ -15,7 +15,7 @@
 + (id)deserializeAttributes:(id)arg1;
 + (id)serializeAttributesAndBody:(id)arg1;
 + (id)serializeAttributes:(id)arg1;
-+ (BOOL)searchableItemIsEligibleForHarvesting:(id)arg1 isReimported:(BOOL)arg2;
++ (BOOL)searchableItemIsEligibleForHarvesting:(id)arg1 eligibleExceptForAge:(char *)arg2;
 + (BOOL)searchableItemIsWhitelistedNonMessage:(id)arg1;
 + (BOOL)searchableItemIsTooBig:(id)arg1;
 + (BOOL)searchableItemIsInTrash:(id)arg1;

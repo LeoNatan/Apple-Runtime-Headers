@@ -12,6 +12,8 @@
 
 @interface NTPBTodayResultOperationFetchInfo : PBCodable <NSCopying>
 {
+    CDStruct_95bda58d _userSegmentationSegmentSetIds;
+    CDStruct_5df41632 _userSegmentationTreatmentIds;
     long long _appConfigTreatmentIDInteger;
     long long _cellularRadioAccessTechnology;
     long long _onboardingVersion;
@@ -52,6 +54,18 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (void)setUserSegmentationTreatmentIds:(long long *)arg1 count:(unsigned long long)arg2;
+- (long long)userSegmentationTreatmentIdsAtIndex:(unsigned long long)arg1;
+- (void)addUserSegmentationTreatmentIds:(long long)arg1;
+- (void)clearUserSegmentationTreatmentIds;
+@property(readonly, nonatomic) long long *userSegmentationTreatmentIds;
+@property(readonly, nonatomic) unsigned long long userSegmentationTreatmentIdsCount;
+- (void)setUserSegmentationSegmentSetIds:(int *)arg1 count:(unsigned long long)arg2;
+- (int)userSegmentationSegmentSetIdsAtIndex:(unsigned long long)arg1;
+- (void)addUserSegmentationSegmentSetIds:(int)arg1;
+- (void)clearUserSegmentationSegmentSetIds;
+@property(readonly, nonatomic) int *userSegmentationSegmentSetIds;
+@property(readonly, nonatomic) unsigned long long userSegmentationSegmentSetIdsCount;
 @property(readonly, nonatomic) _Bool hasLocaleIdentifier;
 @property(readonly, nonatomic) _Bool hasClickThroughRateByPersonalizationFeatureIDData;
 @property(nonatomic) _Bool hasOnboardingVersion;
@@ -63,6 +77,7 @@
 @property(readonly, nonatomic) _Bool hasUserID;
 @property(nonatomic) _Bool hasAppConfigTreatmentIDInteger;
 @property(readonly, nonatomic) _Bool hasTodaySourceIdentifier;
+- (void)dealloc;
 
 @end
 

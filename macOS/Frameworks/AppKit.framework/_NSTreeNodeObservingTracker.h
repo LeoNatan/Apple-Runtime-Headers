@@ -8,6 +8,7 @@
 
 @class NSArray, NSCountedSet, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface _NSTreeNodeObservingTracker : NSObject
 {
     id _treeNodeObserver;

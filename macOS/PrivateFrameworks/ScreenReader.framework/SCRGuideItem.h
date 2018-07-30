@@ -38,8 +38,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) SCRGuide *guide; // @synthesize guide=_guide;
 - (id)description;
-- (long long)_sortDescendingByTitle:(id)arg1;
-- (long long)_sortAscendingByTitle:(id)arg1;
+- (long long)sortDescendingByTitle:(id)arg1;
+- (long long)sortAscendingByTitle:(id)arg1;
 - (void)sendBrailleLine;
 - (id)_prependModifiers:(long long)arg1 toString:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *keyboardShortcutAsString;

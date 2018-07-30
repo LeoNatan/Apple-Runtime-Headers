@@ -28,6 +28,7 @@
     BOOL _continousMode;
     BOOL _captureMode;
     BOOL _showDiagnosticHUD;
+    float _borderPaddingIDCard;
     NSArray *_outputObjectTypes;
     id <CRCameraReaderDelegate> _callbackDelegate;
     struct __CVBuffer *_correctedCardBuffer;
@@ -79,6 +80,7 @@
 + (id)findCodeInImage:(struct vImage_Buffer)arg1 maxStage:(unsigned long long)arg2 roi:(struct CGRect)arg3;
 + (id)findCodeInImage:(struct vImage_Buffer)arg1 maxStage:(unsigned long long)arg2;
 + (id)findCodeInImage:(struct vImage_Buffer)arg1 maxStage:(unsigned long long)arg2 outputObjectTypes:(id)arg3;
++ (id)extractCardImage:(id)arg1 fromPixelBuffer:(struct __CVBuffer *)arg2 withCardBuffer:(struct __CVBuffer *)arg3 withPoints:(id)arg4 pixelFocalLength:(id)arg5 padding:(float)arg6;
 + (id)extractCardImage:(id)arg1 fromPixelBuffer:(struct __CVBuffer *)arg2 withCardBuffer:(struct __CVBuffer *)arg3 withPoints:(id)arg4 pixelFocalLength:(id)arg5;
 + (id)extractCardImage:(id)arg1 fromPixelBuffer:(struct __CVBuffer *)arg2 withCardBuffer:(struct __CVBuffer *)arg3 pixelFocalLength:(id)arg4;
 + (void)loadFonts;
@@ -139,6 +141,7 @@
 @property double configDemoSpeed; // @synthesize configDemoSpeed=_configDemoSpeed;
 @property BOOL configPresentCentered; // @synthesize configPresentCentered=_configPresentCentered;
 @property struct __CVBuffer *correctedCardBuffer; // @synthesize correctedCardBuffer=_correctedCardBuffer;
+@property float borderPaddingIDCard; // @synthesize borderPaddingIDCard=_borderPaddingIDCard;
 @property BOOL enableAltIDCardScan; // @synthesize enableAltIDCardScan=_enableAltIDCardScan;
 @property BOOL hidePlacementText; // @synthesize hidePlacementText=_hidePlacementText;
 @property __weak id <CRCameraReaderDelegate> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;

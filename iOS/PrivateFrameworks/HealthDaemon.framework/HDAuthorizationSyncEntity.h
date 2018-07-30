@@ -22,7 +22,7 @@
 + (void)didGenerateCodableSourceAuthorizationsForSyncSession:(id)arg1;
 + (_Bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange)arg3 maxEncodedBytesPerMessage:(long long)arg4 profile:(id)arg5 error:(id *)arg6 handler:(CDUnknownBlockType)arg7;
 + (id)syncEntityIdentifier;
-+ (id)createCodableSourceAuthorizationWithSourceUUID:(id)arg1 syncSession:(id)arg2;
++ (id)createCodableSourceAuthorizationWithSource:(id)arg1 syncSession:(id)arg2;
 + (_Bool)companionDidChangeForProfile:(id)arg1 error:(id *)arg2;
 + (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (int)nanoSyncObjectType;

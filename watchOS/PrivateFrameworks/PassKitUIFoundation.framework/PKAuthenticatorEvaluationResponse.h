@@ -6,18 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSData;
+@class NSData, NSString;
 
 @interface PKAuthenticatorEvaluationResponse : NSObject
 {
     _Bool _biometricMatch;
     int _result;
+    NSString *_kextBlacklistVersion;
     NSData *_credential;
 }
 
 + (id)responseWithResult:(int)arg1 biometricMatch:(_Bool)arg2 credential:(id)arg3;
 + (id)responseWithResult:(int)arg1;
 @property(readonly, nonatomic) NSData *credential; // @synthesize credential=_credential;
+@property(copy, nonatomic) NSString *kextBlacklistVersion; // @synthesize kextBlacklistVersion=_kextBlacklistVersion;
 @property(readonly, nonatomic) _Bool biometricMatch; // @synthesize biometricMatch=_biometricMatch;
 @property(readonly, nonatomic) int result; // @synthesize result=_result;
 - (void).cxx_destruct;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)error;
 - (void)setShouldUseSystemAuthenticationPrompt:(_Bool)arg1;
 - (_Bool)shouldUseSystemAuthenticationPrompt;
+- (long)connectionType;
 - (int)port;
 - (id)hostname;
 - (id)name;

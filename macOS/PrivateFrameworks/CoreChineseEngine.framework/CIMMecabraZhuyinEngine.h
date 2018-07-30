@@ -83,10 +83,10 @@
 - (BOOL)shouldDirectlyCommitInput:(id)arg1;
 - (id)convertToFullWidth:(id)arg1;
 - (id)readingsLengths:(id)arg1;
-- (id)candidatesForReading:(id)arg1 readingRange:(struct _NSRange)arg2 currentReading:(id)arg3 shouldIncludeCompletionCandidates:(BOOL)arg4;
-- (id)aggregateCandidatesForReadingAtRange:(struct _NSRange)arg1;
+- (id)candidatesForReading:(id)arg1 readingRange:(struct _NSRange)arg2 currentReading:(id)arg3 shouldIncludeCompletionCandidates:(BOOL)arg4 withCandidatesCapacity:(unsigned long long)arg5;
+- (id)aggregateCandidatesForReadingAtRange:(struct _NSRange)arg1 withCandidatesCapacity:(unsigned long long)arg2;
 - (id)aggregateCandidatesForPunctuationAtRange:(struct _NSRange)arg1;
-- (void)analyzeInputWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)analyzeInputWithCandidatesCapacity:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateExpertDictionary:(id)arg1;
 - (void)updateTextReplacementEntries;
 - (void)updateContacts:(id)arg1;
@@ -96,7 +96,7 @@
 - (void)unregisterCandidate:(id)arg1;
 - (void)confirmCandidate:(id)arg1;
 - (void)previewCandidate:(id)arg1;
-- (BOOL)loadCandidatesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (BOOL)loadCandidatesWithCapacity:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadCompositionCandidatesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)moveCursorToTail;
 - (BOOL)moveCursorToHead;

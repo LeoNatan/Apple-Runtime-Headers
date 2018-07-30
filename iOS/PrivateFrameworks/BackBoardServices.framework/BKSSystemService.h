@@ -13,6 +13,7 @@
     FBSSystemService *_fbsSystemService;
 }
 
+- (void).cxx_destruct;
 - (void)cleanupClientPort:(unsigned int)arg1;
 - (unsigned int)createClientPort;
 - (void)openURL:(id)arg1 application:(id)arg2 options:(id)arg3 clientPort:(unsigned int)arg4 withResult:(CDUnknownBlockType)arg5;
@@ -23,7 +24,6 @@
 - (_Bool)canOpenApplication:(id)arg1 reason:(int *)arg2;
 - (int)pidForApplication:(id)arg1;
 - (id)systemApplicationBundleIdentifier;
-- (void)dealloc;
 - (id)init;
 
 @end

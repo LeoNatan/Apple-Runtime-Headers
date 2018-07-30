@@ -19,6 +19,7 @@
 }
 
 + (id)tokenize:(id)arg1;
++ (id)lexiconViews;
 @property(retain, nonatomic) NSArray *lexicons; // @synthesize lexicons=_lexicons;
 @property(copy, nonatomic) CDUnknownBlockType filteringBlock; // @synthesize filteringBlock=_filteringBlock;
 - (void).cxx_destruct;

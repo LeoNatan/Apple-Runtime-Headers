@@ -9,18 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface FI_TColumnGroupHeaderRowView : NSTableRowView
 {
-    struct TNSRef<NSVisualEffectView *, void> _blurBackgroundView;
-    struct TNSRef<FI_TUpdateLayerView *, void> _topHorizontalLineView;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateCellView;
-- (void)updateBackgroundColor;
-- (void)layout;
 - (void)updateLayer;
-- (void)_windowChangedKeyState;
-- (void)setFloating:(BOOL)arg1;
 - (void)setTargetForDropOperation:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

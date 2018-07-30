@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "TSPReferenceItem.h"
 
-@class NSUUID, TSPComponent, TSPObject;
+@class NSString, NSUUID, TSPComponent, TSPObject;
 
 __attribute__((visibility("hidden")))
-@interface TSPLazyReference : NSObject <NSCopying>
+@interface TSPLazyReference : NSObject <TSPReferenceItem, NSCopying>
 {
     TSPObject *_strongObject;
     TSPObject *_weakObject;
@@ -19,9 +20,10 @@ __attribute__((visibility("hidden")))
         unsigned int ownershipMode:2;
         unsigned int isExternal:1;
         unsigned int allowUnknownObject:1;
+        unsigned int keepObjectInMemory:1;
     } _flags;
-    id <TSPLazyReferenceDelegate> _delegate;
     long long _identifier;
+    id <TSPLazyReferenceDelegate> _delegate;
     TSPComponent *_component;
     Class _objectClass;
 }
@@ -31,17 +33,19 @@ __attribute__((visibility("hidden")))
 + (id)referenceForObject:(id)arg1;
 @property(nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
 @property(nonatomic) __weak TSPComponent *component; // @synthesize component=_component;
-@property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <TSPLazyReferenceDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) long long tsp_identifier; // @synthesize tsp_identifier=_identifier;
 - (void).cxx_destruct;
 - (id)additionalDescription;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)resetToIdentifier:(long long)arg1;
 - (void)resetIdentifierFromCopy:(_Bool)arg1;
-- (_Bool)discardStrongObjectIfPossible;
 @property(nonatomic) _Bool isExternal;
+@property(readonly, nonatomic) _Bool allowUnknownObject;
 @property(readonly, nonatomic) long long ownershipMode;
-@property(retain, nonatomic) TSPObject *strongObject;
+- (long long)releaseObjectIfPossible;
+- (void)retainObject:(id)arg1;
+@property(readonly, nonatomic) TSPObject *strongObject;
 @property(readonly, nonatomic) TSPObject *weakObject;
 @property(readonly, nonatomic) NSUUID *objectUUID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -49,15 +53,21 @@ __attribute__((visibility("hidden")))
 - (_Bool)referencesObject:(id)arg1;
 - (_Bool)isEqualToLazyReference:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
+@property(nonatomic) _Bool keepObjectInMemory;
 @property(readonly, nonatomic) id objectIfLoaded;
-@property(readonly, nonatomic) id object;
+- (id)objectAndReturnError:(id *)arg1;
+@property(readonly, nonatomic) _Bool tsp_isLazyReference;
 - (id)initWithObject:(id)arg1 ownershipMode:(long long)arg2;
 - (id)initWeakReferenceWithObject:(id)arg1 retainedUntilArchived:(_Bool)arg2;
 - (id)initWeakReferenceWithObject:(id)arg1;
 - (id)initWithObject:(id)arg1;
 - (id)initWithDelegate:(id)arg1 identifier:(long long)arg2 ownershipMode:(long long)arg3 allowUnknownObject:(_Bool)arg4;
-- (id)init;
+@property(readonly, nonatomic) id object;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

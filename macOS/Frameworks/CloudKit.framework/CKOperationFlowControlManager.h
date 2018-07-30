@@ -10,10 +10,10 @@
 
 @interface CKOperationFlowControlManager : NSObject
 {
-    NSMutableDictionary *_flowControlledOperationClasses;
+    NSMutableDictionary *_flowControlledOperationKeys;
 }
 
-@property(readonly) NSMutableDictionary *flowControlledOperationClasses; // @synthesize flowControlledOperationClasses=_flowControlledOperationClasses;
+@property(readonly) NSMutableDictionary *flowControlledOperationKeys; // @synthesize flowControlledOperationKeys=_flowControlledOperationKeys;
 - (void).cxx_destruct;
 - (void)unlimitAllOperations;
 - (void)limitOperation:(id)arg1 retryAfter:(id)arg2 error:(id)arg3;

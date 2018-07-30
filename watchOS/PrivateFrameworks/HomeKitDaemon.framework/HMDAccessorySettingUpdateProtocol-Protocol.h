@@ -9,6 +9,8 @@
 @class NSArray;
 
 @protocol HMDAccessorySettingUpdateProtocol <HMDAccessorySettingProtocol>
+- (void)mergeConstraintsFromOther:(NSArray *)arg1;
+- (_Bool)isConstraintMergeStrategyReflection;
 - (void)setConstraints:(NSArray *)arg1;
 - (void)setValue:(id)arg1;
 @end

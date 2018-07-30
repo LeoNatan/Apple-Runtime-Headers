@@ -8,6 +8,7 @@
 
 @interface NSArray (RTExtensions)
 + (id)combinationsOfChoosingElementFromArrays:(id)arg1;
+- (id)flatten;
 - (_Bool)containsClass:(Class)arg1;
 @end
 

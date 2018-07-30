@@ -6,40 +6,26 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSDictionary, NSString, _SFPBColor, _SFPBFormattedText, _SFPBPunchout, _SFPBTableAlignmentSchema;
+@class NSArray, NSData, NSDictionary, NSString, _SFPBColor, _SFPBFormattedText, _SFPBPunchout, _SFPBRichText, _SFPBTableAlignmentSchema;
 
 @protocol _SFPBTableRowCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasAlignRowsToHeader;
 @property(nonatomic) BOOL alignRowsToHeader;
-@property(readonly, nonatomic) BOOL hasVerticalAlign;
 @property(nonatomic) int verticalAlign;
-@property(readonly, nonatomic) BOOL hasReducedRowHeight;
 @property(nonatomic) BOOL reducedRowHeight;
-@property(readonly, nonatomic) BOOL hasTabGroupIdentifier;
 @property(copy, nonatomic) NSString *tabGroupIdentifier;
-@property(readonly, nonatomic) BOOL hasIsSubHeader;
 @property(nonatomic) BOOL isSubHeader;
 @property(copy, nonatomic) NSArray *datas;
-@property(readonly, nonatomic) BOOL hasAlignmentSchema;
 @property(retain, nonatomic) _SFPBTableAlignmentSchema *alignmentSchema;
-@property(readonly, nonatomic) BOOL hasTableIdentifier;
 @property(copy, nonatomic) NSString *tableIdentifier;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
+@property(copy, nonatomic) NSArray *richDatas;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
 @property(nonatomic) int separatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
 @property(copy, nonatomic) NSString *type;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
 @property(nonatomic) BOOL hasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
 @property(nonatomic) BOOL hasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
 @property(nonatomic) BOOL canBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
 - (id)initWithDictionary:(NSDictionary *)arg1;
@@ -48,6 +34,10 @@
 - (unsigned long long)dataCount;
 - (void)addData:(_SFPBFormattedText *)arg1;
 - (void)clearData;
+- (_SFPBRichText *)richDataAtIndex:(unsigned long long)arg1;
+- (unsigned long long)richDataCount;
+- (void)addRichData:(_SFPBRichText *)arg1;
+- (void)clearRichData;
 - (_SFPBPunchout *)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(_SFPBPunchout *)arg1;

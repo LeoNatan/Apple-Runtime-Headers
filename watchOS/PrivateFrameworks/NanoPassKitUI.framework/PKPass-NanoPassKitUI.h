@@ -9,8 +9,11 @@
 @class NPKPassColorProfile, NSArray, PKImage;
 
 @interface PKPass (NanoPassKitUI)
+- (id)npkAccessoryDescription;
+@property(readonly) PKImage *npkUIPassholderImage;
 @property(readonly) PKImage *npkUICroppedFooterImage;
 @property(readonly) PKImage *npkUIPaymentCardBackgroundImage;
+- (void)npkClearNonEmptyFrontFieldBuckets;
 @property(readonly) NSArray *nonEmptyFrontFieldBuckets;
 @property(readonly) _Bool secondaryFieldsUsedForSplittingPrimaryFields;
 - (void)_npkLocateFirstFrontPassFieldsInArray:(id)arg1 outArray:(id)arg2 count:(int)arg3;

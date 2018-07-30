@@ -40,6 +40,7 @@
 - (id)_itemIdentifierForIndexPath:(id)arg1;
 - (void)_disableItemAtIndexPath:(id)arg1 inTableView:(id)arg2;
 - (void)_enableItemAtIndexPath:(id)arg1 inTableView:(id)arg2;
+- (id)_indexPathForItemWithIdentifier:(id)arg1;
 - (id)_itemIdentifiersInSection:(unsigned long long)arg1;
 - (unsigned long long)_sectionIndexForGroupKey:(id)arg1;
 - (id)_groupKeyForSectionAtIndex:(unsigned long long)arg1;

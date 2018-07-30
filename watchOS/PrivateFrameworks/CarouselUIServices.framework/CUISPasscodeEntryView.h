@@ -63,6 +63,7 @@
 - (_Bool)_shouldShowPasscodeCharacters;
 - (void)_setTitleVisible:(_Bool)arg1;
 - (void)_layoutTitleLabel;
+- (float)_estimatedKeyPadHeight;
 - (void)_layoutKeypadWithCancelButtonEnabled:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)reloadData;

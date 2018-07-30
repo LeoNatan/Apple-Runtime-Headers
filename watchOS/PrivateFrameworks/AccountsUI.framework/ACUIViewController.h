@@ -9,12 +9,10 @@
 #import "ACUIAccountOperationsDelegate.h"
 #import "UIActionSheetDelegate.h"
 
-@class ACAccountStore, ACUIAccountOperationsHelper, NSString, NSTimer, UIBarButtonItem, UIProgressHUD;
+@class ACAccountStore, ACUIAccountOperationsHelper, NSString, UIBarButtonItem, UIProgressHUD;
 
 @interface ACUIViewController : PSListController <UIActionSheetDelegate, ACUIAccountOperationsDelegate>
 {
-    NSTimer *_idleJiggleTimer;
-    void *_powerAssertion;
     _Bool _addedToTaskList;
     _Bool _activityInProgress;
     CDUnknownBlockType _confirmationViewCompletion;
@@ -45,8 +43,6 @@
 - (void)hideActivityInProgressUI;
 - (void)showActivityInProgressUIWithMessage:(id)arg1;
 - (id)operationsHelper:(id)arg1 desiredDataclassActionFromPicker:(id)arg2;
-- (void)_preventSleepAndDimming:(_Bool)arg1;
-- (void)_jiggleIdleTimerFired;
 - (void)setTaskCompletionAssertionEnabled:(_Bool)arg1;
 - (id)_effectiveParentController;
 - (void)removeParentSpecifier;

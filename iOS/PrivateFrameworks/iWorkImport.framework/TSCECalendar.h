@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSCalendar, NSObject<OS_dispatch_semaphore>;
+@class NSCalendar;
 
 __attribute__((visibility("hidden")))
 @interface TSCECalendar : NSObject
 {
-    NSCalendar *mCalendar;
-    NSObject<OS_dispatch_semaphore> *mSem;
+    NSCalendar *_calendar;
 }
 
 - (void)dealloc;
@@ -22,8 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned long long)arg3;
 - (id)components:(unsigned long long)arg1 fromDate:(id)arg2;
 - (id)dateFromComponents:(id)arg1;
-- (void)setTimeZone:(id)arg1;
-- (id)initWithCalendarIdentifier:(id)arg1;
+- (id)initWithCalendarIdentifier:(id)arg1 timeZone:(id)arg2;
 - (id)init;
 
 @end

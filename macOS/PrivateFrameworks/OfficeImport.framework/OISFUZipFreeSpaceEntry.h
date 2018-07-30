@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface OISFUZipFreeSpaceEntry : NSObject
 {
     unsigned long long offset;

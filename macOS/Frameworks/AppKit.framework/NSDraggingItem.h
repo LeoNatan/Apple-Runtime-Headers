@@ -18,10 +18,10 @@
 
 @property(readonly) id item; // @synthesize item=_item;
 @property(copy) CDUnknownBlockType imageComponentsProvider; // @synthesize imageComponentsProvider=_componentsProvider;
-@property struct CGRect draggingFrame; // @synthesize draggingFrame=_frame;
 - (id)description;
 @property(copy) NSArray *imageComponents;
 - (void)setDraggingFrame:(struct CGRect)arg1 contents:(id)arg2;
+@property struct CGRect draggingFrame;
 - (void)dealloc;
 - (id)initWithPasteboardWriter:(id)arg1 frame:(struct CGRect)arg2 contents:(id)arg3;
 - (void)setItem:(id)arg1;

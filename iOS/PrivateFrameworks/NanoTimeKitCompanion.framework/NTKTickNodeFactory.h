@@ -6,19 +6,31 @@
 
 #import "NSObject.h"
 
+@class CLKDevice, NSDictionary, SKTexture, SKTextureAtlas;
+
 @interface NTKTickNodeFactory : NSObject
 {
+    NSDictionary *_imagesDictionary;
+    SKTextureAtlas *_tickTextureAtlas;
+    SKTexture *_tickTexture;
+    CLKDevice *_device;
 }
 
-+ (id)_shaderWithTickWidth:(double)arg1 filterWidth:(double)arg2;
-+ (id)_shaderCache;
-+ (id)_tickTexture;
-+ (id)textureAtlas;
-+ (id)imagesDictionary;
-+ (void)layoutNodes:(id)arg1 offset:(unsigned long long)arg2 center:(struct CGPoint)arg3 radius:(double)arg4 angleMultiplier:(double)arg5 scale:(double)arg6 rotate:(_Bool)arg7 round:(_Bool)arg8;
-+ (void)setBackgroundColor:(id)arg1 onTicks:(id)arg2;
-+ (void)colorizeTicks:(id)arg1 baseColor:(id)arg2 accentColor:(id)arg3 baseAlpha:(double)arg4 accentAlpha:(double)arg5 accentModulo:(long long)arg6;
-+ (id)ticks:(unsigned int)arg1 center:(struct CGPoint)arg2 radius:(double)arg3 color1:(id)arg4 color2:(id)arg5 smallSize:(struct CGSize)arg6 largeSize:(struct CGSize)arg7 smallFilterWidth:(double)arg8 largeFilterWidth:(double)arg9 l1mod:(unsigned int)arg10 l2mod:(unsigned int)arg11;
++ (void)_deallocInstance;
++ (id)sharedInstance;
+- (void).cxx_destruct;
+- (id)_shaderWithTickWidth:(double)arg1 filterWidth:(double)arg2 forDevice:(id)arg3;
+- (id)_shaderCacheForDevice:(id)arg1;
+- (id)_tickTextureForDevice:(id)arg1;
+- (void)layoutNodes:(id)arg1 forDevice:(id)arg2 offset:(unsigned long long)arg3 center:(struct CGPoint)arg4 radius:(double)arg5 angleMultiplier:(double)arg6 scale:(double)arg7 rotate:(_Bool)arg8 round:(_Bool)arg9;
+- (void)setBackgroundColor:(id)arg1 onTicks:(id)arg2;
+- (void)colorizeTicks:(id)arg1 baseColor:(id)arg2 accentColor:(id)arg3 baseAlpha:(double)arg4 accentAlpha:(double)arg5 accentModulo:(long long)arg6;
+- (id)ticks:(unsigned int)arg1 forDevice:(id)arg2 center:(struct CGPoint)arg3 radius:(double)arg4 color1:(id)arg5 color2:(id)arg6 smallSize:(struct CGSize)arg7 largeSize:(struct CGSize)arg8 smallFilterWidth:(double)arg9 largeFilterWidth:(double)arg10 l1mod:(unsigned int)arg11 l2mod:(unsigned int)arg12;
+- (id)textureAtlasForDevice:(id)arg1;
+- (id)imagesDictionaryForDevice:(id)arg1;
+- (void)_asyncDeallocInstance;
+- (void)dealloc;
+- (id)init;
 
 @end
 

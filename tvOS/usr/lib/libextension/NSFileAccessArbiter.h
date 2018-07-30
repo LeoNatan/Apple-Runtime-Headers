@@ -29,8 +29,8 @@
 
 + (void)_lostBirdProvider:(id)arg1;
 + (void)_gainedBirdProvider:(id)arg1;
-+ (void)ensureProvidersIfNecessaryForClaim:(id)arg1 readingAtLocation:(id)arg2 queue:(id)arg3 thenContinue:(CDUnknownBlockType)arg4;
-+ (void)_wakeUpBirdWithUID:(unsigned int)arg1 queue:(id)arg2 thenContinue:(CDUnknownBlockType)arg3;
++ (void)ensureProvidersIfNecessaryForClaim:(id)arg1 atLocation:(id)arg2 queue:(id)arg3 thenContinue:(CDUnknownBlockType)arg4;
++ (void)_wakeUpBirdWithUID:(unsigned int)arg1 urls:(id)arg2 queue:(id)arg3 thenContinue:(CDUnknownBlockType)arg4;
 - (oneway void)tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
 - (oneway void)writerWithPurposeID:(id)arg1 didVersionChangeOfKind:(id)arg2 toItemAtURL:(id)arg3 withClientID:(id)arg4 name:(id)arg5;
 - (oneway void)writerWithPurposeID:(id)arg1 didChangeItemAtURL:(id)arg2;

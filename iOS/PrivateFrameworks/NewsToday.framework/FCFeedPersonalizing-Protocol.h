@@ -19,5 +19,9 @@
 - (NSArray *)diversifyArticles:(NSArray *)arg1 limit:(unsigned long long)arg2;
 - (FCFeedPersonalizedArticles *)sortArticles:(NSArray *)arg1 options:(long long)arg2;
 - (FCFeedPersonalizedArticles *)sortArticles:(NSArray *)arg1;
+
+@optional
+- (FCFeedPersonalizedArticles *)sortArticles:(NSArray *)arg1 options:(long long)arg2 configurationSet:(long long)arg3;
+- (FCFeedPersonalizedArticles *)sortArticles:(NSArray *)arg1 configurationSet:(long long)arg2;
 @end
 

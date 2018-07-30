@@ -9,10 +9,11 @@
 #import "NTKComplicationImageView.h"
 #import "NTKLegibilityView.h"
 
-@class CLKImageProvider, NSString, NTKColoringImageView, UIColor, UIImage, UIImageView;
+@class CLKDevice, CLKImageProvider, NSString, NTKColoringImageView, UIColor, UIImage, UIImageView;
 
 @interface NTKStackedImagesComplicationImageView : UIView <NTKComplicationImageView, NTKLegibilityView>
 {
+    CLKDevice *_device;
     NTKColoringImageView *_foregroundImageView;
     NTKColoringImageView *_backgroundImageView;
     UIImageView *_foregroundAccentImageView;
@@ -29,8 +30,10 @@
     UIColor *_color;
     UIColor *_overrideColor;
     double _multicolorAlpha;
+    UIColor *_foregroundColor;
 }
 
+@property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) double multicolorAlpha; // @synthesize multicolorAlpha=_multicolorAlpha;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;

@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSString, NSTextStorage;
 
+__attribute__((visibility("hidden")))
 @interface NSTextStorageElementArray : NSArray
 {
     NSTextStorage *_container;

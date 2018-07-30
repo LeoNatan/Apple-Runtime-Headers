@@ -7,13 +7,19 @@
 #import "HKExtendedServerInterface.h"
 #import "NLActivityAlertResponder.h"
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSDate, NSString;
 
 @protocol NLNanoHealthServerInterface <HKExtendedServerInterface, NLActivityAlertResponder>
-- (void)remote_runAchievementManagerWithCompletion:(void (^)(_Bool, NSError *))arg1;
-- (void)remote_deleteMonthlyChallengeWithCompletion:(void (^)(_Bool, NSError *))arg1;
-- (void)remote_createMonthlyChallengeType:(NSString *)arg1 goalOverride:(NSNumber *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)remote_runMonthlyChallengeEngineWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)remote_setMuteForTodayPredictedActivityAlerts:(_Bool)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_didPredictActivityEndedWithIdentifier:(NSString *)arg1 endDate:(NSDate *)arg2 activityType:(unsigned int)arg3 locationType:(int)arg4 completion:(void (^)(_Bool, NSError *))arg5;
+- (void)remote_getPredictedActivitiesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
+- (void)remote_systemDidHideAlertForPredictedActivityWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_systemDidDenyAlertForPredictedActivityWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_systemDidAbandonPredictedActivityWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_userDidDeclinePredictedActivityWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_didTransitionFromPredictedActivityToActiveWorkoutWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_didBeginPredictedActivityAtDate:(NSDate *)arg1 withIdentifier:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
+- (void)remote_didClassifyPredictedActivityWithIdentifier:(NSString *)arg1 asActivityType:(unsigned int)arg2 locationType:(int)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)showTypicalDayWithCompletion:(void (^)(NSString *, NSError *))arg1;
 - (void)stopFakingWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)fakeFreeCalendarDateIntervals:(NSArray *)arg1 motionState:(_Bool)arg2 inCarState:(_Bool)arg3 completion:(void (^)(_Bool, NSError *))arg4;

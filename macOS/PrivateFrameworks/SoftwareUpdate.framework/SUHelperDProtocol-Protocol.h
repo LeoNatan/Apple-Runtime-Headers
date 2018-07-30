@@ -10,10 +10,13 @@
 - (NSURLCredential *)lookupURLCredentialInSystemKeychainForHost:(NSString *)arg1 port:(long long)arg2;
 - (BOOL)configureProgressPhasesAll:(NSDictionary *)arg1;
 - (BOOL)setAppleStagedUpgradeShouldFLORun:(BOOL)arg1;
+- (BOOL)stashAndCommitAPFSFDEKey;
 - (BOOL)commitLoginCredentialsDisablingFLO:(BOOL)arg1 hasBaseSystemUpdates:(BOOL)arg2;
 - (BOOL)stashLoginCredentialsEnablingFLO:(BOOL)arg1;
 - (BOOL)unenrollFromSeedProgram;
-- (BOOL)setOSXAutoUpdate:(BOOL)arg1;
+- (BOOL)clearCatalogToProductionAndNotify;
+- (BOOL)deletePref:(NSString *)arg1 inDomain:(NSString *)arg2;
+- (BOOL)setMacOSAutoUpdate:(BOOL)arg1;
 - (BOOL)setAppStoreAutoUpdate:(BOOL)arg1;
 - (BOOL)clearCriticalUpdateNotificationDate;
 - (BOOL)removeUpdatesAvailableCookie;
@@ -23,6 +26,7 @@
 - (BOOL)setObject:(id)arg1 forAnyUserPreference:(NSString *)arg2;
 - (BOOL)getDigest:(id *)arg1 forPackageAtURL:(NSURL *)arg2;
 - (BOOL)removePackagesForLocalReferences:(NSArray *)arg1 forProductKey:(NSString *)arg2;
+- (BOOL)removeRecoveryInstallResult;
 - (BOOL)removeProductDirectoryForKey:(NSString *)arg1;
 - (BOOL)createDirectoryForProductKey:(NSString *)arg1 Firmware:(BOOL)arg2;
 - (BOOL)removeDistForProductKey:(NSString *)arg1 withFilename:(NSString *)arg2;

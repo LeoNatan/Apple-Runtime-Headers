@@ -10,6 +10,7 @@
 
 @class NSArray, NSMapTable, NSString, PUAdjustmentsMode, PUSlidersCollectionView, UIButton, UIView;
 
+__attribute__((visibility("hidden")))
 @interface PURegularAdjustmentsModeBar : PUAdjustmentsModeBar <UICollectionViewDataSource>
 {
     NSMapTable *_supermodeButtonsByMode;

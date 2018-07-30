@@ -9,7 +9,7 @@
 #import "SCROBrailleDisplayCommandDispatcherDelegate.h"
 #import "SCROBrailleDriverDelegate.h"
 
-@class NSLock, NSMutableArray, NSString, SCROBrailleDisplayInput, SCROBrailleDisplayStatus, SCROBrailleEventDispatcher, SCROBrailleLine;
+@class NSAttributedString, NSLock, NSMutableArray, NSString, SCROBrailleDisplayInput, SCROBrailleDisplayStatus, SCROBrailleEventDispatcher, SCROBrailleLine;
 
 @interface SCROBrailleDisplay : NSObject <SCROBrailleDisplayCommandDispatcherDelegate, SCROBrailleDriverDelegate>
 {
@@ -48,10 +48,12 @@
     _Bool _isValid;
     _Bool _delegateWantsDisplayCallback;
     unsigned int _persistentKeyModifiers;
+    CDUnknownBlockType _eventHandled;
 }
 
 + (id)displayWithIOElement:(id)arg1 driverIdentifier:(id)arg2 delegate:(id)arg3;
 + (_Bool)brailleDriverClassIsValid:(Class)arg1;
+@property(copy, nonatomic) CDUnknownBlockType eventHandled; // @synthesize eventHandled=_eventHandled;
 @property(nonatomic) unsigned int persistentKeyModifiers; // @synthesize persistentKeyModifiers=_persistentKeyModifiers;
 @property(nonatomic) _Bool outputShowEightDot; // @synthesize outputShowEightDot=_outputShowEightDot;
 @property(nonatomic) _Bool inputShowEightDot; // @synthesize inputShowEightDot=_inputShowEightDot;
@@ -104,6 +106,8 @@
 - (void)_translateBrailleStringAndPostEventAppendingKeys:(id)arg1;
 - (void)_translateBrailleStringAndPostEvent;
 - (void)_startEditingText;
+@property(readonly, nonatomic) SCROBrailleLine *testingBrailleLine;
+- (void)insertTypingString:(id)arg1;
 - (_Bool)_currentChordShouldExecuteEvenDuringTyping;
 - (void)_keyboardHelpHandler:(id)arg1;
 - (void)_configurationChangeHandler;
@@ -114,6 +118,8 @@
 - (void)_setDelegateWantsDisplayCallbackHandler:(id)arg1;
 - (void)_aggregatedStatusHandler:(id)arg1;
 - (void)_statusDisplayHandler:(id)arg1;
+@property(readonly, nonatomic) _Bool hasEdits;
+@property(readonly, nonatomic) NSAttributedString *editingString;
 - (void)_setBrailleFormatter:(id)arg1;
 - (void)unpauseInputOnBrailleFormatterChange;
 - (void)_unpauseInputAndProcessKeyEvents;
@@ -140,6 +146,7 @@
 - (void)setBrailleFormatter:(id)arg1;
 - (void)endUpdates;
 - (void)beginUpdates;
+- (void)requestFlushLine;
 - (id)configuration;
 @property(nonatomic) _Bool wordWrapEnabled;
 - (long long)statusSize;
@@ -156,6 +163,7 @@
 - (void)sleep;
 - (void)dealloc;
 - (void)_runThread;
+- (_Bool)_attemptLoad;
 - (void)_delayedDisplayLoad;
 - (id)_initWithDriver:(id)arg1 driverIdentifier:(id)arg2 ioElement:(id)arg3 delegate:(id)arg4;
 

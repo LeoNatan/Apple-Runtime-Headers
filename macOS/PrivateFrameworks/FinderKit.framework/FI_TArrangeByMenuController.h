@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class FI_TNodeViewSettings, FI_TViewOptionsSettingsController, NSMenu, NSMenuItem, NSString;
+@class FI_TNodeViewSettings, FI_TViewOptionsSettingsController, NSMenu, NSMenuItem;
 
 __attribute__((visibility("hidden")))
 @interface FI_TArrangeByMenuController : NSObject
@@ -15,25 +15,27 @@ __attribute__((visibility("hidden")))
     NSMenu *_sortByMenu;
     NSMenuItem *_selectedGroupMenuItem;
     NSMenuItem *_selectedSortMenuItem;
-    long long _selectedGroupByTag;
-    long long _selectedSortByTag;
-    struct TNSRef<NSString *, void> _groupBy;
-    struct TNSRef<NSString *, void> _sortBy;
+    int _selectedGroupByTag;
+    int _selectedSortByTag;
+    int _groupBy;
+    int _sortBy;
+    _Bool _inOpenSave;
     FI_TViewOptionsSettingsController *_viewOptionsSettingsController;
-    FI_TNodeViewSettings *_viewSettings;
-    struct TNSRef<NSArray *, void> _topLevelObjects;
+    struct TNSRef<FI_TNodeViewSettings, void> _viewSettings;
+    struct TNSRef<NSArray, void> _topLevelObjects;
+    struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _keyValueBinders;
 }
 
-@property(nonatomic) long long selectedSortByTag; // @synthesize selectedSortByTag=_selectedSortByTag;
-@property(nonatomic) long long selectedGroupByTag; // @synthesize selectedGroupByTag=_selectedGroupByTag;
-@property(retain, nonatomic) FI_TNodeViewSettings *viewSettings; // @synthesize viewSettings=_viewSettings;
+@property(nonatomic) _Bool inOpenSave; // @synthesize inOpenSave=_inOpenSave;
+@property(nonatomic) int selectedSortByTag; // @synthesize selectedSortByTag=_selectedSortByTag;
+@property(nonatomic) int selectedGroupByTag; // @synthesize selectedGroupByTag=_selectedGroupByTag;
 @property(nonatomic) FI_TViewOptionsSettingsController *viewOptionsSettingsController; // @synthesize viewOptionsSettingsController=_viewOptionsSettingsController;
 @property(readonly, retain, nonatomic) NSMenu *sortByMenu; // @synthesize sortByMenu=_sortByMenu;
 @property(readonly, retain, nonatomic) NSMenu *arrangeByMenu; // @synthesize arrangeByMenu=_arrangeByMenu;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned long long)menuTagForSortBy:(id)arg1;
-- (unsigned long long)menuTagForGroupBy:(id)arg1;
+- (int)menuTagForSortBy:(int)arg1;
+- (int)menuTagForGroupBy:(int)arg1;
 - (void)removeCommandKeyEquivalents;
 - (void)cmdSortByLabel:(id)arg1;
 - (void)cmdSortBySize:(id)arg1;
@@ -45,7 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)cmdSortByName:(id)arg1;
 - (void)cmdSortBySnapToGrid:(id)arg1;
 - (void)cmdSortByNone:(id)arg1;
-- (void)setSortBy:(id)arg1 menuItem:(id)arg2;
+- (void)setSortBy:(int)arg1 menuItem:(id)arg2;
 - (void)cmdArrangeByNone:(id)arg1;
 - (void)cmdArrangeByLabel:(id)arg1;
 - (void)cmdArrangeBySize:(id)arg1;
@@ -59,11 +61,12 @@ __attribute__((visibility("hidden")))
 - (void)cmdArrangeByApplication:(id)arg1;
 - (void)cmdArrangeByKind:(id)arg1;
 - (void)cmdArrangeByName:(id)arg1;
-- (void)setGroupBy:(id)arg1 menuItem:(id)arg2;
-@property(retain, nonatomic) NSString *sortBy;
-@property(retain, nonatomic) NSString *groupBy;
+- (void)setGroupBy:(int)arg1 menuItem:(id)arg2;
+- (BOOL)validateMenuItem:(id)arg1;
+@property(retain, nonatomic) FI_TNodeViewSettings *viewSettings; // @dynamic viewSettings;
+@property(nonatomic) int sortBy;
+@property(nonatomic) int groupBy;
 - (void)aboutToTearDown;
-- (void)dealloc;
 - (id)initWithViewSettings:(id)arg1;
 
 @end

@@ -8,10 +8,11 @@
 
 @interface NSArray (TSUAdditions)
 + (id)tsu_arrayWithNonNilObject:(id)arg1;
-+ (id)tsu_arrayWithUIntegers:(unsigned long long *)arg1 count:(unsigned long long)arg2;
++ (id)tsu_arrayWithUIntegers:(const unsigned long long *)arg1 count:(unsigned long long)arg2;
 + (id)tsu_arrayByUnioningArray:(id)arg1 withArray:(id)arg2;
-+ (id)tsu_arrayWithInts:(int *)arg1 count:(unsigned long long)arg2;
-+ (id)tsu_arrayWithCGFloats:(double *)arg1 count:(unsigned long long)arg2;
++ (id)tsu_arrayWithInts:(const int *)arg1 count:(unsigned long long)arg2;
++ (id)tsu_arrayWithCGFloats:(const double *)arg1 count:(unsigned long long)arg2;
+- (id)tsu_localizedList;
 - (id)tsu_anyObject;
 - (id)tsu_onlyObject;
 - (id)tsu_uniqueObjects;
@@ -23,6 +24,7 @@
 - (BOOL)tsu_containsObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)tsu_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (void)tsu_enumerateSnapshotObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)tsu_arrayByRemovingFirstObject;
 - (id)tsu_arrayByReversingOrder;
 - (id)tsu_arrayByAddingNonContainedObjectsFromArray:(id)arg1;
 - (id)tsu_arrayByRemovingObjectsIdenticalToObjectsInArray:(id)arg1;
@@ -32,8 +34,8 @@
 - (unsigned long long)tsu_indexOfSmallestObject;
 - (id)tsu_objectPriorToObject:(id)arg1;
 - (id)tsu_rangeCheckedObjectAtIndex:(unsigned long long)arg1;
-- (id)tsu_initWithUIntegers:(unsigned long long *)arg1 count:(unsigned long long)arg2;
-- (id)tsu_initWithInts:(int *)arg1 count:(unsigned long long)arg2;
-- (id)tsu_initWithCGFloats:(double *)arg1 count:(unsigned long long)arg2;
+- (id)tsu_initWithUIntegers:(const unsigned long long *)arg1 count:(unsigned long long)arg2;
+- (id)tsu_initWithInts:(const int *)arg1 count:(unsigned long long)arg2;
+- (id)tsu_initWithCGFloats:(const double *)arg1 count:(unsigned long long)arg2;
 @end
 

@@ -33,8 +33,10 @@
 - (id)contextHelpForObject:(id)arg1;
 - (void)removeContextHelpForObject:(id)arg1;
 - (void)setContextHelp:(id)arg1 forObject:(id)arg2;
+- (id)_registeredHelpBookBundles;
 - (void)dealloc;
 - (BOOL)registerHelpBook;
+- (BOOL)_showHelpForBundle:(id)arg1;
 - (void)showHelpFile:(id)arg1 context:(long long)arg2;
 - (void)_cleanupHelpForQuit;
 - (void)_prepareHelpWindow:(id)arg1 locationHint:(struct CGPoint)arg2;

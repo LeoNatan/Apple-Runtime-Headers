@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class FMNSXPCConnection;
+@class FMDFMMAccountInfo, FMNSXPCConnection;
 
 @interface FMDFMMManager : NSObject
 {
     struct AuthorizationOpaqueRef *_authRef;
     FMNSXPCConnection *_disableFMMConnection;
+    FMDFMMAccountInfo *_cachedAccountInfo;
 }
 
 + (id)sharedInstance;
+@property(retain) FMDFMMAccountInfo *cachedAccountInfo; // @synthesize cachedAccountInfo=_cachedAccountInfo;
 @property(retain, nonatomic) FMNSXPCConnection *disableFMMConnection; // @synthesize disableFMMConnection=_disableFMMConnection;
 @property(nonatomic) struct AuthorizationOpaqueRef *authRef; // @synthesize authRef=_authRef;
 - (void).cxx_destruct;
@@ -39,6 +41,8 @@
 - (void)removeFMMAccountWithUsername:(id)arg1 authRight:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeFMMAccountWithUsername:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addFMMAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)unregisterObservers;
+- (void)registerObservers;
 - (void)dealloc;
 - (id)init;
 

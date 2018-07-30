@@ -43,7 +43,7 @@
 @property(readonly, nonatomic) unsigned int keyType; // @synthesize keyType=_keyType;
 - (id).cxx_construct;
 - (void)dealloc;
-@property(readonly, nonatomic) CDStruct_87ab733e shieldColor;
+@property(readonly, nonatomic) CDStruct_b3fd5d76 shieldColor;
 - (id)initWithLabelImageKey:(const shared_ptr_85e81048 *)arg1;
 - (id)initWithIconName:(const char *)arg1;
 - (id)initWithIconAttributeKey:(unsigned int)arg1 attributeValue:(unsigned int)arg2;

@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 @interface GEOTransitSection : PBCodable <NSCopying>
 {
@@ -17,6 +17,7 @@
     CDStruct_9f2792e4 _stepIndexs;
     NSString *_actionSheetName;
     int _nextOptionsIndex;
+    NSMutableArray *_ticketingSegments;
     _Bool _disableAlightNotifications;
     struct {
         unsigned int nextOptionsIndex:1;
@@ -24,6 +25,8 @@
     } _has;
 }
 
++ (Class)ticketingSegmentType;
+@property(retain, nonatomic) NSMutableArray *ticketingSegments; // @synthesize ticketingSegments=_ticketingSegments;
 @property(nonatomic) _Bool disableAlightNotifications; // @synthesize disableAlightNotifications=_disableAlightNotifications;
 @property(retain, nonatomic) NSString *actionSheetName; // @synthesize actionSheetName=_actionSheetName;
 - (void).cxx_destruct;
@@ -36,6 +39,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)ticketingSegmentAtIndex:(unsigned long long)arg1;
+- (unsigned long long)ticketingSegmentsCount;
+- (void)addTicketingSegment:(id)arg1;
+- (void)clearTicketingSegments;
 @property(nonatomic) _Bool hasDisableAlightNotifications;
 - (void)setRouteDetailsArtworkIndexs:(unsigned int *)arg1 count:(unsigned long long)arg2;
 - (unsigned int)routeDetailsArtworkIndexAtIndex:(unsigned long long)arg1;

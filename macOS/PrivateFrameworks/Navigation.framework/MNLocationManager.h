@@ -39,14 +39,18 @@
     BOOL _lastLocationPushed;
     BOOL _useCourseForHeading;
     BOOL _trackingHeading;
+    int _headingOrientation;
     CDUnknownBlockType _locationCorrector;
     NSError *_locationError;
+    long long _activityType;
 }
 
 + (id)sharedLocationManager;
 @property(retain, nonatomic) id <MNLocationProvider> locationProvider; // @synthesize locationProvider=_locationProvider;
 @property(readonly, nonatomic) unsigned long long locationProviderType; // @synthesize locationProviderType=_locationProviderType;
 @property(retain, nonatomic) id <MNLocationRecorder> locationRecorder; // @synthesize locationRecorder=_locationRecorder;
+@property(nonatomic) int headingOrientation; // @synthesize headingOrientation=_headingOrientation;
+@property(nonatomic) long long activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) NSError *locationError; // @synthesize locationError=_locationError;
 @property(readonly, nonatomic) BOOL isLastLocationStale; // @synthesize isLastLocationStale=_isLastLocationStale;
 @property(readonly, nonatomic) CLHeading *heading; // @synthesize heading=_heading;

@@ -7,48 +7,52 @@
 #import "NSObject.h"
 
 #import "_DKKnowledgeDeleting.h"
-#import "_DKKnowledgeEventStreamDeleting.h"
 #import "_DKKnowledgeQuerying.h"
 #import "_DKKnowledgeSaving.h"
-#import "_DKKnowledgeSynchronizing.h"
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection, _DKPrivacyPolicyEnforcer, _DKRateLimitPolicyEnforcer;
+@class NSObject<OS_dispatch_queue>, NSObject<_DKKnowledgeQuerying><_DKKnowledgeSaving><_DKKnowledgeDeleting><_DKKnowledgeEventStreamDeleting>, _DKPrivacyPolicyEnforcer, _DKRateLimitPolicyEnforcer;
 
-@interface _DKKnowledgeStore : NSObject <_DKKnowledgeEventStreamDeleting, _DKKnowledgeSynchronizing, _DKKnowledgeSaving, _DKKnowledgeDeleting, _DKKnowledgeQuerying>
+@interface _DKKnowledgeStore : NSObject <_DKKnowledgeSaving, _DKKnowledgeDeleting, _DKKnowledgeQuerying>
 {
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_defaultQueue;
+    NSObject<_DKKnowledgeQuerying><_DKKnowledgeSaving><_DKKnowledgeDeleting><_DKKnowledgeEventStreamDeleting> *_knowledgeStoreHandle;
     _DKRateLimitPolicyEnforcer *_rateLimitEnforcer;
     _DKPrivacyPolicyEnforcer *_privacyEnforcer;
+    NSObject<OS_dispatch_queue> *_defaultQueue;
 }
 
-+ (id)knowledgeStoreWithDirectReadOnlyAccessWithStore:(id)arg1 storeDirectory:(id)arg2;
-+ (id)knowledgeStoreWithDirectReadOnlyAccessWithConnection:(id)arg1 storeDirectory:(id)arg2;
++ (id)knowledgeStoreWithDirectReadWriteAccess;
++ (id)_knowledgeStoreWithStoreDirectory:(id)arg1 readOnly:(_Bool)arg2;
++ (id)knowledgeStoreWithDirectReadOnlyAccessWithXPCStore:(id)arg1 storeDirectory:(id)arg2;
 + (id)userKnowledgeStoreWithDirectReadOnlyAccess;
 + (id)knowledgeStoreWithDirectReadOnlyAccess;
 + (id)userKnowledgeStore;
 + (id)knowledgeStore;
+@property(retain) NSObject<OS_dispatch_queue> *defaultQueue; // @synthesize defaultQueue=_defaultQueue;
 @property(readonly) _DKPrivacyPolicyEnforcer *privacyEnforcer; // @synthesize privacyEnforcer=_privacyEnforcer;
 @property(readonly) _DKRateLimitPolicyEnforcer *rateLimitEnforcer; // @synthesize rateLimitEnforcer=_rateLimitEnforcer;
-@property(retain) NSObject<OS_dispatch_queue> *defaultQueue; // @synthesize defaultQueue=_defaultQueue;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) NSObject<_DKKnowledgeQuerying><_DKKnowledgeSaving><_DKKnowledgeDeleting><_DKKnowledgeEventStreamDeleting> *knowledgeStoreHandle; // @synthesize knowledgeStoreHandle=_knowledgeStoreHandle;
 - (void).cxx_destruct;
+- (id)sourceDeviceIdentityWithError:(id *)arg1;
+- (id)sourceDeviceIdentityFromObject:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteRemoteState:(id *)arg1;
+- (void)synchronizeWithUrgency:(unsigned long long)arg1 client:(id)arg2 responseQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)synchronizeWithUrgency:(unsigned long long)arg1 client:(id)arg2 error:(id *)arg3;
 - (_Bool)synchronizeWithError:(id *)arg1;
-- (_Bool)confirmConnectionWithError:(id *)arg1;
-- (id)executeQuery:(id)arg1 error:(id *)arg2;
-- (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)executeQuery:(id)arg1 responseQueue:(id)arg2;
+- (id)knowledgeSynchronizingHandleWithError:(id *)arg1;
+- (void)deleteAllEventsMatchingPredicate:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (unsigned long long)deleteAllEventsMatchingPredicate:(id)arg1 error:(id *)arg2;
+- (void)deleteAllEventsInEventStream:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id *)arg2;
-- (_Bool)deleteObjects:(id)arg1 error:(id *)arg2;
+- (void)executeQuery:(id)arg1 responseQueue:(id)arg2;
+- (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (id)executeQuery:(id)arg1 error:(id *)arg2;
 - (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (_Bool)saveObjects:(id)arg1 error:(id *)arg2;
+- (_Bool)deleteObjects:(id)arg1 error:(id *)arg2;
 - (void)saveObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)dealloc;
-- (id)initWithConnection:(id)arg1;
-- (id)initWithMachServiceName:(id)arg1;
+- (_Bool)saveObjects:(id)arg1 error:(id *)arg2;
+- (id)_sanitizeObjectsBeforeSaving:(id)arg1;
 - (id)init;
+- (id)initWithKnowledgeStoreHandle:(id)arg1 readOnly:(_Bool)arg2;
 
 @end
 

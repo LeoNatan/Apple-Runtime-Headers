@@ -8,7 +8,6 @@
 
 #import "NSCopying.h"
 
-__attribute__((visibility("hidden")))
 @interface TSUSparseArray : NSObject <NSCopying>
 {
     struct tsuSaPage *_topPage;
@@ -16,6 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned int _depth;
 }
 
++ (id)array;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long count;
 - (void)clear;

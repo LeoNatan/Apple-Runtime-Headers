@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDChartTypeWithGrouping.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDArea2DType : CHDChartTypeWithGrouping
 {
 }

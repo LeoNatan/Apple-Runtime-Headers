@@ -8,7 +8,7 @@
 
 #import "NMSNotificationDispatcherDelegate.h"
 
-@class MPMediaPlaylist, NMSNotificationDispatcher, NPSDomainAccessor, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString;
+@class MPMediaPlaylist, NMSNotificationDispatcher, NPSDomainAccessor, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface NMSyncDefaults : NSObject <NMSNotificationDispatcherDelegate>
 {
@@ -19,11 +19,14 @@
     NSDictionary *_notifiersDict;
     NMSNotificationDispatcher *_settingsNotifier;
     NMSNotificationDispatcher *_pinningSettingsNotifier;
-    NMSNotificationDispatcher *_pinningSelectionsNotifier;
+    NMSNotificationDispatcher *_musicPinningSelectionsNotifier;
+    NMSNotificationDispatcher *_podcastsPinningSelectionsNotifier;
+    NMSNotificationDispatcher *_podcastsSubscriptionMetadataNotifier;
     NMSNotificationDispatcher *_recoSelectionsNotifier;
     NMSNotificationDispatcher *_libraryRecoNotifier;
     NMSNotificationDispatcher *_storeRecoNotifier;
     NMSNotificationDispatcher *_syncStateNotifier;
+    NMSNotificationDispatcher *_podcastsSizeInfoNotifier;
     NSNumber *_assetSyncLimit;
     NSDate *_modificationDate;
     NSNumber *_lastFullySentAssetSyncPlaylistPersistentID;
@@ -31,9 +34,12 @@
     unsigned int _assetSyncLimitType;
     unsigned int _assetSyncType;
     NSNumber *_assetSyncPlaylistPersistentID;
+    NSArray *_listenNowPodcastIdentifiers;
 }
 
++ (unsigned long long)_defaultMediaStorageSizeForCurrentDevice;
 + (id)sharedDefaults;
+@property(copy, nonatomic) NSArray *listenNowPodcastIdentifiers; // @synthesize listenNowPodcastIdentifiers=_listenNowPodcastIdentifiers;
 @property(retain, nonatomic, setter=setAssetSyncPlaylistPersistentID:) NSNumber *assetSyncPlaylistPersistentID; // @synthesize assetSyncPlaylistPersistentID=_assetSyncPlaylistPersistentID;
 @property(nonatomic) unsigned int assetSyncType; // @synthesize assetSyncType=_assetSyncType;
 @property(nonatomic) unsigned int assetSyncLimitType; // @synthesize assetSyncLimitType=_assetSyncLimitType;
@@ -61,10 +67,23 @@
 @property(nonatomic) _Bool shouldUseLibraryRecommendations;
 @property(copy, nonatomic) NSArray *libraryRecommendationPlaylists;
 @property(copy, nonatomic) NSArray *libraryRecommendationAlbums;
-@property(nonatomic) _Bool allowOffChargerAssetSync;
+- (void)setPodcastSizeEstimationData:(id)arg1;
+- (id)podcastSizeEstimationData;
+@property(copy, nonatomic) NSArray *availableGizmoPodcasts;
+@property(copy, nonatomic) NSNumber *podcastsAssetSyncLimit;
+@property(copy, nonatomic) NSSet *pinnedPodcasts;
+@property(copy, nonatomic) NSArray *pinnedPodcastIdentifiers;
+@property(copy, nonatomic) NSArray *listenNowPodcastEpisodes;
+@property(copy, nonatomic) NSArray *pinnedPodcastFeedURLs;
+@property(copy, nonatomic) NSArray *listenNowPodcastFeedURLs;
+@property(nonatomic) _Bool pinnedPodcastsAreUserSet;
+@property(copy, nonatomic) NSDictionary *gizmoPodcastEpisodeLimits;
+@property(copy, nonatomic) NSDictionary *gizmoPodcastDownloadOrders;
+@property(copy, nonatomic) NSArray *gizmoPodcastFeedURLs;
 @property(copy, nonatomic) NSArray *pinnedAlbums;
 @property(retain, nonatomic) NSNumber *workoutPlaylistID;
 @property(copy, nonatomic) NSArray *pinnedPlaylists;
+@property(nonatomic) _Bool allowOffChargerAssetSync;
 @property(copy, nonatomic) NSNumber *assetSyncLimit; // @synthesize assetSyncLimit=_assetSyncLimit;
 - (void)_clearAssetSyncPlaylistDependentDefaults;
 - (void)_setNeedsSynchronize;
@@ -88,6 +107,7 @@
 - (void)dispatcherDidReceiveNotificationFromRemoteDevice:(id)arg1;
 - (void)endBatchUpdates;
 - (void)beginBatchUpdates;
+- (void)clearPodcastsDefaults;
 @property(readonly, copy) NSString *description;
 - (id)init;
 - (id)_associatedObject;

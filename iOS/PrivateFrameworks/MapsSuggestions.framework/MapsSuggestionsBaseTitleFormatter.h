@@ -16,7 +16,8 @@
 
 - (_Bool)updateChangedTitlesForEntry:(id)arg1 title:(id)arg2 subtitle:(id)arg3 includeLockedVersions:(_Bool)arg4;
 - (_Bool)formatTitlesForEntry:(id)arg1 distance:(double)arg2 trafficString:(id)arg3;
-- (_Bool)formatTitlesForEntry:(id)arg1 eta:(double)arg2 trafficString:(id)arg3;
+- (_Bool)formatTitlesForEntry:(id)arg1 eta:(id)arg2;
+- (_Bool)resetTitlesForEntry:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 
 // Remaining properties

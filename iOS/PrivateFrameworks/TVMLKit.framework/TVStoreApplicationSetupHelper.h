@@ -6,42 +6,31 @@
 
 #import "NSObject.h"
 
-#import "ISURLOperationDelegate.h"
+@class IKURLBagCache, NSURL;
 
-@class IKURLBagCache, NSNumber, NSString, NSURL;
-
-@interface TVStoreApplicationSetupHelper : NSObject <ISURLOperationDelegate>
+@interface TVStoreApplicationSetupHelper : NSObject
 {
     NSURL *_defaultBootURL;
     IKURLBagCache *_bagCache;
-    CDUnknownBlockType _loadBagOperationCompletion;
 }
 
 + (id)_parsedQueryParametersForURL:(id)arg1;
++ (id)bootURLWithBagBootURL:(id)arg1 defaultBootURL:(id)arg2;
++ (id)fallbackBootURL;
++ (id)preferredBootURL;
 + (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2 appLocalBootURL:(id)arg3;
 + (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2;
-@property(copy, nonatomic) CDUnknownBlockType loadBagOperationCompletion; // @synthesize loadBagOperationCompletion=_loadBagOperationCompletion;
++ (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2 bagBootURLKey:(id)arg3 useCache:(_Bool)arg4;
++ (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2 useCache:(_Bool)arg3;
++ (id)launchContextWithLaunchOptions:(id)arg1 bagBootURLKey:(id)arg2 useCache:(_Bool)arg3;
++ (id)defaultBagBootLaunchContextWithOptions:(id)arg1 useCache:(_Bool)arg2;
 @property(readonly, nonatomic) IKURLBagCache *bagCache; // @synthesize bagCache=_bagCache;
 @property(copy, nonatomic) NSURL *defaultBootURL; // @synthesize defaultBootURL=_defaultBootURL;
 - (void).cxx_destruct;
-- (id)_bootURLWithBagBootURL:(id)arg1;
-- (void)_cancelLoadURLBagOperation:(id)arg1;
 - (void)obtainBootURLWithCompletion:(CDUnknownBlockType)arg1;
-- (void)operationFinished:(id)arg1;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (void)dealloc;
 - (id)initWithDefaultBootURL:(id)arg1 bagCache:(id)arg2;
 - (id)initWithDefaultBootURL:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) NSNumber *metricsLoadURLSamplingPercentage;
-@property(readonly, nonatomic) NSNumber *metricsLoadURLSamplingPercentageCachedResponses;
-@property(readonly, nonatomic) NSNumber *metricsLoadURLSessionDuration;
-@property(readonly) Class superclass;
 
 @end
 

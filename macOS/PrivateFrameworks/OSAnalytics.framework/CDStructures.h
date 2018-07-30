@@ -75,8 +75,8 @@ struct jetsam_snapshot_entry {
     unsigned long long _field23;
     unsigned long long _field24;
     unsigned long long _field25;
-    unsigned long long _field26;
-    struct timeval _field27;
+    struct timeval64 _field26;
+    unsigned long long _field27;
 };
 
 struct memorystatus_kernel_stats {
@@ -99,9 +99,9 @@ struct memorystatus_kernel_stats {
     char _field17[80];
 };
 
-struct timeval {
+struct timeval64 {
     long long _field1;
-    int _field2;
+    long long _field2;
 };
 
 struct z_stream_s {

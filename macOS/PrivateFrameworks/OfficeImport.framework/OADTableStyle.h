@@ -8,7 +8,6 @@
 
 @class NSString, OADTableBackground, OADTablePartStyle;
 
-__attribute__((visibility("hidden")))
 @interface OADTableStyle : NSObject
 {
     NSString *mName;
@@ -29,6 +28,7 @@ __attribute__((visibility("hidden")))
     OADTablePartStyle *mSouthWestStyle;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setSouthWestStyle:(id)arg1;
 - (id)southWestStyle;
@@ -64,7 +64,6 @@ __attribute__((visibility("hidden")))
 - (id)id;
 - (void)setName:(id)arg1;
 - (id)name;
-- (void)dealloc;
 
 @end
 

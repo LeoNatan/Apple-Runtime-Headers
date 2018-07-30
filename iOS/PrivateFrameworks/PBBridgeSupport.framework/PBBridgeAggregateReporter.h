@@ -10,6 +10,10 @@
 {
 }
 
++ (void)recordSigninEventPostPair:(unsigned long long)arg1;
++ (void)recordSigninEventDaily:(unsigned long long)arg1;
++ (void)recordSigninEventFollowup:(unsigned long long)arg1;
++ (void)recordSigninEventPair:(unsigned long long)arg1;
 + (void)pushCommunicationTimingType:(unsigned long long)arg1 withValue:(double)arg2;
 + (id)descriptionForCommTimingType:(unsigned long long)arg1;
 + (void)pushTimingForTypeNamed:(id)arg1 withValue:(double)arg2;

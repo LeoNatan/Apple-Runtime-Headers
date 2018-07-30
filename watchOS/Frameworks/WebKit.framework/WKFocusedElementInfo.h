@@ -17,10 +17,14 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<NSString> _value;
     _Bool _isUserInitiated;
     struct RetainPtr<NSObject<NSSecureCoding>> _userObject;
+    struct RetainPtr<NSString> _placeholder;
+    struct RetainPtr<NSString> _label;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *placeholder;
+@property(readonly, copy, nonatomic) NSString *label;
 @property(readonly, nonatomic) NSObject<NSSecureCoding> *userObject;
 @property(readonly, nonatomic, getter=isUserInitiated) _Bool userInitiated;
 @property(readonly, copy, nonatomic) NSString *value;

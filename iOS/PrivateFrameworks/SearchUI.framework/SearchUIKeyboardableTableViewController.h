@@ -6,21 +6,28 @@
 
 #import "UITableViewController.h"
 
-@class UIControl<UITextInput>;
+#import "UIGestureRecognizerDelegate.h"
 
-@interface SearchUIKeyboardableTableViewController : UITableViewController
+@class NSString, UIControl<UITextInput>;
+
+@interface SearchUIKeyboardableTableViewController : UITableViewController <UIGestureRecognizerDelegate>
 {
     _Bool _shouldHideTableCellsUnderKeyboard;
     UIControl<UITextInput> *_textField;
     double _keyboardHeight;
+    id <SearchUIKeyboardableTableViewScrollDelegate> _scrollDelegate;
 }
 
+@property __weak id <SearchUIKeyboardableTableViewScrollDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 @property double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(nonatomic) _Bool shouldHideTableCellsUnderKeyboard; // @synthesize shouldHideTableCellsUnderKeyboard=_shouldHideTableCellsUnderKeyboard;
 @property __weak UIControl<UITextInput> *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
 - (void)showKeyboard;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (_Bool)cellsVisibleUnderKeyboard;
+- (double)contentHeight;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)hideCellsBelowKeyboardIfNecessary;
 - (void)viewDidLayoutSubviews;
@@ -47,7 +54,15 @@
 - (_Bool)canBecomeFirstResponder;
 - (void)addKeyCommandForKey:(id)arg1 action:(SEL)arg2;
 - (void)keyboardFrameChanged:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)setTableView:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

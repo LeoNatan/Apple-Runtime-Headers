@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "BKMatchOperationDelegate.h"
+#import "BKMatchPearlOperationDelegate.h"
 #import "BKOperationDelegate.h"
 
 @class BKDevicePearl, BKDeviceTouchID, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
-@interface _SBUIBiometricKitInterface : NSObject <BKOperationDelegate, BKMatchOperationDelegate>
+@interface _SBUIBiometricKitInterface : NSObject <BKOperationDelegate, BKMatchOperationDelegate, BKMatchPearlOperationDelegate>
 {
     NSSet *_biometricDevices;
     unsigned long long _enrolledIdentitiesCount;
@@ -38,6 +39,7 @@
 - (_Bool)isFingerOn;
 - (_Bool)hasEnrolledIdentities;
 - (unsigned long long)lockoutState;
+- (id)createFaceDetectOperationsWithError:(id *)arg1;
 - (id)createFingerDetectOperationsWithError:(id *)arg1;
 - (id)createPresenceDetectOperationsWithError:(id *)arg1;
 - (id)createMatchOperationsWithMode:(unsigned long long)arg1 andCredentialSet:(id)arg2 error:(id *)arg3;

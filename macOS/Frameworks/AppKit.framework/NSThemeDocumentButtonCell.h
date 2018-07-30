@@ -6,10 +6,12 @@
 
 #import <AppKit/NSButtonCell.h>
 
+__attribute__((visibility("hidden")))
 @interface NSThemeDocumentButtonCell : NSButtonCell
 {
 }
 
+- (BOOL)_needRedrawOnWindowChangedKeyState;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_preferInactiveBezelArtInView:(id)arg1;
 - (void)accessibilityPerformAction:(id)arg1;

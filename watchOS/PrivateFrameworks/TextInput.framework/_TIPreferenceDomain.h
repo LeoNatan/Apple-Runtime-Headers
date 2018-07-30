@@ -23,7 +23,7 @@
 @property(nonatomic) _Bool needsGetSync; // @synthesize needsGetSync=_needsGetSync;
 @property(retain, nonatomic) NSString *notification; // @synthesize notification=_notification;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

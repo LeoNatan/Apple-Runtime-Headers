@@ -6,7 +6,7 @@
 
 #import <coreroutine/RTCloudManagedObject.h>
 
-@class NSDate, RTLearnedVisitMO;
+@class NSDate, NSNumber, RTLearnedVisitMO;
 
 @interface RTLearnedTransitionMO : RTCloudManagedObject
 {
@@ -18,6 +18,7 @@
 // Remaining properties
 @property(retain, nonatomic) RTLearnedVisitMO *destination; // @dynamic destination;
 @property(retain, nonatomic) RTLearnedVisitMO *origin; // @dynamic origin;
+@property(copy, nonatomic) NSNumber *predominantMotionActivityType; // @dynamic predominantMotionActivityType;
 @property(copy, nonatomic) NSDate *startDate; // @dynamic startDate;
 @property(copy, nonatomic) NSDate *stopDate; // @dynamic stopDate;
 

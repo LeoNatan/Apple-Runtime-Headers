@@ -8,13 +8,15 @@
 
 #import "NSProgressReporting.h"
 
-@class CKServerChangeToken, HDCloudSyncOperationConfiguration, HDCloudSyncStore, HDCloudSyncStoreRecord, NSDate, NSFileHandle, NSMutableArray, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSUUID, _HDCloudSyncStorePersistableState;
+@class CKContainer, CKServerChangeToken, HDCloudSyncOperationConfiguration, HDCloudSyncStore, HDCloudSyncStoreRecord, HDCloudSyncZone, NSDate, NSFileHandle, NSMutableArray, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSUUID, _HDCloudSyncStorePersistableState;
 
 @interface HDCloudSyncPullOperation : NSObject <NSProgressReporting>
 {
     HDCloudSyncOperationConfiguration *_configuration;
     NSObject<OS_dispatch_queue> *_queue;
     HDCloudSyncStoreRecord *_storeRecord;
+    HDCloudSyncZone *_pullZone;
+    CKContainer *_container;
     HDCloudSyncStore *_syncStore;
     NSMutableArray *_fetchedChangeRecords;
     CKServerChangeToken *_initialServerChangeToken;
@@ -24,6 +26,7 @@
     NSProgress *_perAssetRecordProgress;
     NSUUID *_operationIdentifier;
     NSDate *_startTime;
+    NSString *_cloudKitIdentifier;
     _Bool _hasAppliedChange;
     _Bool _queue_hasStarted;
     CDUnknownBlockType _completion;
@@ -57,7 +60,7 @@
 - (void)_finishWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)startWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) _HDCloudSyncStorePersistableState *persistedStoreState;
-- (id)initWithConfiguration:(id)arg1 storeRecord:(id)arg2;
+- (id)initWithConfiguration:(id)arg1 pullZone:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

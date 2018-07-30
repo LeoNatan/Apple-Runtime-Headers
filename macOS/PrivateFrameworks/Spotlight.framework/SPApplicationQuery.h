@@ -11,22 +11,27 @@
 @interface SPApplicationQuery : SPKQuery
 {
     struct __MDAppRankEvaluator *_appRankEvaluator;
+    NSString *_filterQuery;
     NSArray *_rankingPatterns;
     NSString *_queryString;
     SPMetadataPattern *_queryPattern;
 }
 
 + (id)getAppleApps;
-+ (id)appResultForBundleID:(id)arg1;
 + (id)appResultForPath:(id)arg1;
 + (id)_applicationsQueryResults;
++ (id)getUnsupportedAppBundleIds;
 + (id)_applicationQueryUpdateDisplayNamesForResult:(struct __MDItem *)arg1 withAttributes:(id)arg2;
 + (void)_applicationsQueryDidUpdateNotification:(id)arg1;
 + (void)_applicationsQueryDidFinishNotification:(id)arg1;
++ (void)readFlatFileForFastRetrievalAfterColdStart;
++ (void)writeAppsToFlatFileForColdStart;
 + (void)_displayNamePreferenceUpdated:(id)arg1;
 + (void)_createApplicationsQuery;
 + (id)appToPathMapping;
-+ (id)appBundleIDtoAppResultMapping;
++ (id)appToFastPathMapping;
++ (id)getOrUpdateAppBundleIDList:(BOOL)arg1;
++ (void)loadFastAppsCache;
 + (void)initialize;
 + (BOOL)isQuerySupported:(unsigned long long)arg1;
 + (void)unboost;
@@ -36,6 +41,8 @@
 - (void).cxx_destruct;
 - (void)_sendResponse:(id)arg1;
 - (void)_sendFilteredResponseOfKind:(int)arg1;
+- (void)_sendFastFilteretedResults;
+- (id)filterResultsBasedOnDisplayName:(id)arg1;
 - (BOOL)isCopyrightApple:(id)arg1;
 - (void)setRankingQueries:(id)arg1;
 - (unsigned long long)calculateScoreForResult:(id)arg1;

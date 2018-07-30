@@ -12,7 +12,6 @@
 - (id)aa_grandSlamAccountForiCloudAccount:(id)arg1;
 - (void)aa_registerAppleAccountWithHSA:(id)arg1 usingCookieHeaders:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)aa_registerAppleAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_performUpdateRequestWithAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)aa_updatePropertiesForAppleAccount:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;

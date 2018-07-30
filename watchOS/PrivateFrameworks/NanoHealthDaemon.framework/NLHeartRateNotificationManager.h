@@ -6,35 +6,25 @@
 
 #import "NSObject.h"
 
-#import "BBRemoteDataProvider.h"
 #import "HDDataObserver.h"
 #import "HDHealthDaemonReadyObserver.h"
 
-@class BBDataProviderConnection, BBDataProviderProxy, HDProfile, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class HDProfile, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface NLHeartRateNotificationManager : NSObject <HDHealthDaemonReadyObserver, HDDataObserver, BBRemoteDataProvider>
+@interface NLHeartRateNotificationManager : NSObject <HDHealthDaemonReadyObserver, HDDataObserver>
 {
     HDProfile *_profile;
-    BBDataProviderConnection *_dataProviderConnection;
-    BBDataProviderProxy *_dataProviderProxy;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_currentBulletins;
-    int _notifyStationaryDiscordanceBulletinToken;
-    int _notifyStationaryDiscordanceEventWithDataToken;
+    NSMutableArray *_fakingNotifyTokens;
 }
 
 - (void).cxx_destruct;
 - (void)_unsubscribeToFakingNotifications;
+- (void)_subscribeToFakingNotification:(id)arg1 type:(id)arg2 withData:(_Bool)arg3;
 - (void)_subscribeToFakingNotifications;
-- (void)_queue_fakeStationaryDiscordanceEventWithData;
-- (void)_queue_fakeStationaryDiscordanceNotification;
-- (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
-- (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
-- (id)sortDescriptors;
-- (id)defaultSectionInfo;
-- (id)universalSectionIdentifier;
-- (id)sectionIdentifier;
-- (void)_queue_showStationaryDiscordanceNotificationForEvent:(id)arg1 isFaked:(_Bool)arg2;
+- (void)_queue_fakeNotificationWithEventType:(id)arg1 withData:(_Bool)arg2;
+- (void)_queue_showNotificationForHeartEvent:(id)arg1;
+- (id)_userNotificationCenter;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)daemonReady:(id)arg1;
 - (void)dealloc;

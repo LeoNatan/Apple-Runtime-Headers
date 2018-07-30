@@ -13,6 +13,7 @@
 
 @interface CKComposeChatController : CKChatController <CKComposeRecipientSelectionControllerDelegate, CKBusinessInfoViewDelegate>
 {
+    _Bool _ignoreKeyboardNotifications;
     _Bool _newComposeCancelled;
     CKComposeRecipientSelectionController *_composeRecipientSelectionController;
     NSArray *_prepopulatedRecipients;
@@ -32,6 +33,7 @@
 @property(nonatomic) _Bool newComposeCancelled; // @synthesize newComposeCancelled=_newComposeCancelled;
 @property(retain, nonatomic) CKComposition *prepopulatedComposition; // @synthesize prepopulatedComposition=_prepopulatedComposition;
 @property(retain, nonatomic) NSArray *prepopulatedRecipients; // @synthesize prepopulatedRecipients=_prepopulatedRecipients;
+@property(nonatomic) _Bool ignoreKeyboardNotifications; // @synthesize ignoreKeyboardNotifications=_ignoreKeyboardNotifications;
 @property(retain, nonatomic) CKComposeRecipientSelectionController *composeRecipientSelectionController; // @synthesize composeRecipientSelectionController=_composeRecipientSelectionController;
 - (void).cxx_destruct;
 - (void)handleAddressBookChange:(id)arg1;
@@ -70,6 +72,7 @@
 - (_Bool)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (void)_updateTitleAnimated:(_Bool)arg1;
+- (void)keyboardWillShowOrHide:(id)arg1;
 - (double)topInsetPadding;
 - (_Bool)isSafeToMarkAsRead;
 - (id)outgoingComposeViewForSendAnimation;

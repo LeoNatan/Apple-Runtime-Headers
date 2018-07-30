@@ -8,34 +8,43 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSNumber, NSString;
+@class CEMAnyPayload, NSNumber, NSString;
 
 @interface CEMApplicationInstallDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadApplication;
+    NSNumber *_payloadMandatory;
+    NSNumber *_payloadInstallWhenActivated;
+    NSNumber *_payloadRemoveWhenDeactivated;
+    NSNumber *_payloadManageData;
+    NSString *_payloadVPNUUID;
+    NSNumber *_payloadPreventDataBackup;
+    CEMAnyPayload *_payloadConfiguration;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withApplication:(id)arg2 withMandatory:(id)arg3;
++ (id)buildWithIdentifier:(id)arg1 withApplication:(id)arg2 withMandatory:(id)arg3 withInstallWhenActivated:(id)arg4 withRemoveWhenDeactivated:(id)arg5 withManageData:(id)arg6 withVPNUUID:(id)arg7 withPreventDataBackup:(id)arg8 withConfiguration:(id)arg9;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMAnyPayload *payloadConfiguration; // @synthesize payloadConfiguration=_payloadConfiguration;
+@property(copy, nonatomic) NSNumber *payloadPreventDataBackup; // @synthesize payloadPreventDataBackup=_payloadPreventDataBackup;
+@property(copy, nonatomic) NSString *payloadVPNUUID; // @synthesize payloadVPNUUID=_payloadVPNUUID;
+@property(copy, nonatomic) NSNumber *payloadManageData; // @synthesize payloadManageData=_payloadManageData;
+@property(copy, nonatomic) NSNumber *payloadRemoveWhenDeactivated; // @synthesize payloadRemoveWhenDeactivated=_payloadRemoveWhenDeactivated;
+@property(copy, nonatomic) NSNumber *payloadInstallWhenActivated; // @synthesize payloadInstallWhenActivated=_payloadInstallWhenActivated;
+@property(copy, nonatomic) NSNumber *payloadMandatory; // @synthesize payloadMandatory=_payloadMandatory;
+@property(copy, nonatomic) NSString *payloadApplication; // @synthesize payloadApplication=_payloadApplication;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSDictionary *payloadConfiguration;
-@property(readonly, nonatomic) NSNumber *payloadPreventDataBackup;
-@property(readonly, nonatomic) NSString *payloadVPNUUID;
-@property(readonly, nonatomic) NSNumber *payloadManageData;
-@property(readonly, nonatomic) NSNumber *payloadRemoveWhenDeactivated;
-@property(readonly, nonatomic) NSNumber *payloadInstallWhenActivated;
-@property(readonly, nonatomic) NSNumber *payloadMandatory;
-@property(readonly, nonatomic) NSString *payloadApplication;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

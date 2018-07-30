@@ -8,33 +8,28 @@
 
 #import "HMFMessageReceiver.h"
 
-@class HMDelegateCaller, HMFMessageDispatcher, HMHome, HMService, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMCameraProfile;
+@class HMFUnfairLock, HMHome, HMService, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMCameraProfile, _HMContext;
 
 @interface _HMCameraControl : NSObject <HMFMessageReceiver>
 {
+    HMFUnfairLock *_lock;
+    _HMContext *_context;
     _HMCameraProfile *_cameraProfile;
     HMService *_service;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMFMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDelegateCaller *_delegateCaller;
     NSUUID *_profileUniqueIdentifier;
     HMHome *_home;
 }
 
-@property(readonly, nonatomic) __weak HMHome *home; // @synthesize home=_home;
+@property(nonatomic) __weak HMHome *home; // @synthesize home=_home;
 @property(readonly, copy, nonatomic) NSUUID *profileUniqueIdentifier; // @synthesize profileUniqueIdentifier=_profileUniqueIdentifier;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) HMService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) __weak _HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)_registerNotificationHandlers;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
-- (void)_configureWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (id)initWithCameraProfile:(id)arg1 service:(id)arg2 profileUniqueIdentifier:(id)arg3;
 
 // Remaining properties

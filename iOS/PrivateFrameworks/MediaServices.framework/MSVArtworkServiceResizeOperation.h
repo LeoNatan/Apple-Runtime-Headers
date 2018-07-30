@@ -6,6 +6,7 @@
 
 #import <MediaServices/MSVArtworkServiceOperation.h>
 
+__attribute__((visibility("hidden")))
 @interface MSVArtworkServiceResizeOperation : MSVArtworkServiceOperation
 {
 }

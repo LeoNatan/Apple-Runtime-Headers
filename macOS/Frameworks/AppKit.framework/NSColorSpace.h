@@ -66,11 +66,6 @@
 - (void)_createProfileFor:(struct __CFString *)arg1;
 @property(readonly) NSData *ICCProfileData;
 - (void)dealloc;
-- (oneway void)release;
-- (id)retain;
-- (unsigned long long)retainCount;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (id)initWithColorSyncProfile:(void *)arg1;
 - (id)initWithICCProfileData:(id)arg1;
 - (id)initWithCGColorSpace:(struct CGColorSpace *)arg1;

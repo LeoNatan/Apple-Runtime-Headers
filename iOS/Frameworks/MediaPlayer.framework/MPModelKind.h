@@ -9,6 +9,8 @@
 #import "NSCoding.h"
 #import "NSSecureCoding.h"
 
+@class NSString;
+
 @interface MPModelKind : NSObject <NSCoding, NSSecureCoding>
 {
     Class _modelClass;
@@ -20,6 +22,8 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) NSString *humanDescription;
+- (id)debugDescription;
 - (id)_init;
 - (shared_ptr_cf7b8a22)predicateWithBaseProperty:(struct ModelPropertyBase *)arg1;
 - (shared_ptr_cf7b8a22)representedSearchScopePredicate;

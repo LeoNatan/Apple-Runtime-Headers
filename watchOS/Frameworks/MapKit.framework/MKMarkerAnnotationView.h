@@ -6,7 +6,7 @@
 
 #import <MapKit/MKAnnotationView.h>
 
-@class NSString, UIColor, UIImage, UIImageView, UILabel, _MKBezierPathView;
+@class GEOFeatureStyleAttributes, NSString, UIColor, UIImage, UIImageView, UILabel, UIView, _MKBezierPathView;
 
 @interface MKMarkerAnnotationView : MKAnnotationView
 {
@@ -18,6 +18,8 @@
     UIImageView *_selectedGlyphImageView;
     UILabel *_selectedGlyphLabel;
     _MKBezierPathView *_selectedDotView;
+    UIView *_contentMaskView;
+    GEOFeatureStyleAttributes *_customStyleAttributes;
     _Bool _animatesWhenAdded;
     int _titleVisibility;
     int _subtitleVisibility;
@@ -41,6 +43,7 @@
 @property(copy, nonatomic) UIColor *markerTintColor; // @synthesize markerTintColor=_markerTintColor;
 @property(nonatomic) int subtitleVisibility; // @synthesize subtitleVisibility=_subtitleVisibility;
 @property(nonatomic) int titleVisibility; // @synthesize titleVisibility=_titleVisibility;
+@property(retain, nonatomic, getter=_styleAttributes, setter=_setStyleAttributes:) GEOFeatureStyleAttributes *styleAttributes; // @synthesize styleAttributes=_customStyleAttributes;
 - (void).cxx_destruct;
 - (void)configureCustomFeature:(id)arg1;
 - (struct UIEdgeInsets)alignmentRectInsets;
@@ -48,7 +51,7 @@
 - (id)_effectiveTitleIsCollidable:(_Bool *)arg1;
 - (_Bool)isProvidingCustomFeature;
 - (_Bool)_shouldDeselectWhenDragged;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setDragState:(unsigned int)arg1 animated:(_Bool)arg2;
 - (void)_configureAnimated:(_Bool)arg1 fromState:(int)arg2 toState:(int)arg3;
 - (void)_setupSelectedViewsIfNeededUsesCallout:(_Bool)arg1;
@@ -59,6 +62,7 @@
 - (void)prepareForSnapshotting;
 - (void)_unhideForDisplay;
 - (void)prepareForDisplay;
+- (void)prepareForReuse;
 - (int)_currentMarkerState;
 - (void)_updateContentForState:(int)arg1 forceUpdate:(_Bool)arg2;
 - (void)_updateContentForState:(int)arg1;
@@ -74,6 +78,7 @@
 - (id)_effectiveGlyphTintColorForState:(int)arg1;
 - (id)_effectiveMarkerStrokeTintColorForState:(int)arg1;
 - (float)_effectiveMarkerStrokeWidthForState:(int)arg1;
+@property(retain, nonatomic) UIView *selectedContentView;
 - (float)_effectiveShadowAlphaForState:(int)arg1;
 - (id)_effectiveMarkerTintColorForState:(int)arg1;
 - (_Bool)canShowCallout;

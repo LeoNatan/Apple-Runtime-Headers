@@ -8,7 +8,6 @@
 
 @class NSDate, NSString;
 
-__attribute__((visibility("hidden")))
 @interface TSUZipEntry : NSObject
 {
     BOOL _compressed;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *_name;
     NSDate *_lastModificationDate;
     unsigned long long _size;
+    NSString *_collapsedName;
     unsigned long long _compressedSize;
     unsigned long long _offset;
     unsigned long long _fileHeaderLength;
@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(nonatomic) unsigned long long compressedSize; // @synthesize compressedSize=_compressedSize;
 @property(nonatomic, getter=isCompressed) BOOL compressed; // @synthesize compressed=_compressed;
+@property(copy, nonatomic) NSString *collapsedName; // @synthesize collapsedName=_collapsedName;
 @property(nonatomic) unsigned int CRC; // @synthesize CRC=_CRC;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(copy, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;

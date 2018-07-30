@@ -6,11 +6,12 @@
 
 #import "HMFObject.h"
 
+#import "HMFLogging.h"
 #import "HMFTimerDelegate.h"
 
 @class HMFTimer, NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSURLSession;
 
-@interface HMDVendorDataManager : HMFObject <HMFTimerDelegate>
+@interface HMDVendorDataManager : HMFObject <HMFLogging, HMFTimerDelegate>
 {
     NSDictionary *_vendorModelEntries;
     long long _dataVersion;
@@ -20,6 +21,7 @@
 }
 
 + (id)dbURL;
++ (id)logCategory;
 + (id)sharedVendorDataManager;
 @property(readonly, nonatomic) HMFTimer *fetchTimer; // @synthesize fetchTimer=_fetchTimer;
 @property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;

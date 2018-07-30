@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TOutlineViewItem : FI_TTableViewItem
 {
-    struct TNSRef<NSMutableArray *, void> _children;
+    struct TNSRef<NSMutableArray, void> _children;
     _Bool _isLeaf;
 }
 

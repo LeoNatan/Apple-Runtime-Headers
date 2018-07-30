@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSBinderPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSEditableBinderPlugin : _NSBinderPlugin
 {
 }

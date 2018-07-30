@@ -13,13 +13,14 @@
     _Bool __contentViewsOpaque;
     _Bool __timeViewBehindContentView;
     UIView *_contentView;
+    UIView *_dialComplicationContainerView;
     UIView *_zoomingClippingView;
     UIView *_borrowedCircleView;
     UIView *_borrowedHandsView;
     double _maxZoomingIconDiameter;
 }
 
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 + (Class)_timeViewClass;
 @property(nonatomic, setter=_setTimeViewBehindContentView:) _Bool _timeViewBehindContentView; // @synthesize _timeViewBehindContentView=__timeViewBehindContentView;
 @property(nonatomic, getter=_contentViewsAreOpaque, setter=_setContentViewsOpaque:) _Bool _contentViewsOpaque; // @synthesize _contentViewsOpaque=__contentViewsOpaque;
@@ -27,8 +28,10 @@
 @property(nonatomic) __weak UIView *borrowedHandsView; // @synthesize borrowedHandsView=_borrowedHandsView;
 @property(nonatomic) __weak UIView *borrowedCircleView; // @synthesize borrowedCircleView=_borrowedCircleView;
 @property(retain, nonatomic) UIView *zoomingClippingView; // @synthesize zoomingClippingView=_zoomingClippingView;
+@property(readonly, nonatomic) UIView *dialComplicationContainerView; // @synthesize dialComplicationContainerView=_dialComplicationContainerView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (_Bool)_isComplicationSlotInsideDial:(id)arg1;
 - (void)_updateDateComplicationPositionIfNecessary;
 - (struct CGPoint)_dateComplicationCenterOffset;
 - (struct CGPoint)_dateComplicationRightAlignment;
@@ -48,6 +51,7 @@
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
+- (id)_complicationContainerViewForSlot:(id)arg1;
 - (void)_loadContentToReplaceUnadornedSnapshot;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (id)_timeTravelCaptionFontSizeOverrides;
@@ -65,7 +69,7 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(retain, nonatomic) NTKAnalogHandsView *timeView; // @dynamic timeView;

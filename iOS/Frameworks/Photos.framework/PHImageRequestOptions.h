@@ -8,6 +8,8 @@
 
 #import "NSCopying.h"
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface PHImageRequestOptions : NSObject <NSCopying>
 {
     _Bool _networkAccessAllowed;
@@ -16,6 +18,7 @@
     _Bool _deliveryFirstResultAsynchronously;
     _Bool _allowPlaceholder;
     _Bool _allowSecondaryOpportunisticImage;
+    _Bool _routeToNewImageManager;
     int _requestID;
     long long _version;
     long long _deliveryMode;
@@ -27,10 +30,13 @@
     double _aspectRatioHint;
     double _downloadUpdateInterval;
     CDUnknownBlockType _cachingCompletedHandler;
+    NSObject<OS_dispatch_queue> *_resultHandlerQueue;
     struct CGRect _normalizedCropRect;
 }
 
 + (id)defaultOptionsAllowingPlaceholder;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *resultHandlerQueue; // @synthesize resultHandlerQueue=_resultHandlerQueue;
+@property(nonatomic) _Bool routeToNewImageManager; // @synthesize routeToNewImageManager=_routeToNewImageManager;
 @property(copy, nonatomic) CDUnknownBlockType cachingCompletedHandler; // @synthesize cachingCompletedHandler=_cachingCompletedHandler;
 @property(nonatomic) double downloadUpdateInterval; // @synthesize downloadUpdateInterval=_downloadUpdateInterval;
 @property(nonatomic) double aspectRatioHint; // @synthesize aspectRatioHint=_aspectRatioHint;

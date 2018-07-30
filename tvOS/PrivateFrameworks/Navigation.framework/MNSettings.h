@@ -18,6 +18,7 @@
     _Bool _muteSpeechOverride;
     _Bool _speechEnabled;
     unsigned long long _maxAlternateRoutesCount;
+    _Bool _isConnectedToCarplay;
     _Bool _drivingVoiceGuidance;
     _Bool _walkingVoiceGuidance;
     _Bool _beepBeforeInstruction;
@@ -51,6 +52,7 @@
 @property(readonly, nonatomic) _Bool beepBeforeInstruction; // @synthesize beepBeforeInstruction=_beepBeforeInstruction;
 @property(readonly, nonatomic) _Bool walkingVoiceGuidance; // @synthesize walkingVoiceGuidance=_walkingVoiceGuidance;
 @property(readonly, nonatomic) _Bool drivingVoiceGuidance; // @synthesize drivingVoiceGuidance=_drivingVoiceGuidance;
+@property(readonly, nonatomic) _Bool isConnectedToCarplay; // @synthesize isConnectedToCarplay=_isConnectedToCarplay;
 @property(readonly, nonatomic) unsigned long long maxAlternateRoutesCount; // @synthesize maxAlternateRoutesCount=_maxAlternateRoutesCount;
 @property(readonly, nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
 @property(readonly, nonatomic) _Bool muteSpeechOverride; // @synthesize muteSpeechOverride=_muteSpeechOverride;

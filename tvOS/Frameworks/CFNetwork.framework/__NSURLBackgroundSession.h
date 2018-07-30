@@ -109,6 +109,7 @@ __attribute__((visibility("hidden")))
 - (void)setCookiesFromResponse:(id)arg1 forOriginalRequest:(id)arg2 partitionIdentifier:(id)arg3;
 - (void)_onqueue_disavowTask:(id)arg1;
 - (id)taskForIdentifier:(unsigned long long)arg1;
+- (void)_useTLSSessionCacheFromSession:(id)arg1;
 - (id)copyTasks;
 - (void)dealloc;
 - (void)appWasLaunchedForBackgroundSession:(id)arg1;

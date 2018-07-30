@@ -109,7 +109,7 @@ __attribute__((visibility("hidden")))
 - (void)cleanupAfterItemTransitions:(id)arg1;
 - (void)performItemTransitions:(id)arg1 withState:(CDStruct_99688279)arg2;
 - (void)prepareForItemTransitions:(id)arg1;
-- (void)performPendingTransitions;
+- (void)performPendingTransitionsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)selectionTransitionsFromAttributes:(id)arg1 toAttributes:(id)arg2 presentationItemAttributes:(id)arg3 newItemAttributes:(id)arg4;
 - (id)itemTransitionsFromAttributes:(id)arg1 toAttributes:(id)arg2 withState:(CDStruct_99688279)arg3;
 - (void)layoutScrubberContentsAnimated:(BOOL)arg1;
@@ -120,7 +120,7 @@ __attribute__((visibility("hidden")))
 - (void)_setHighlightedIndex:(long long)arg1;
 @property long long selectedIndex;
 - (void)_setSelectedIndex:(long long)arg1;
-- (void)executePendingChanges:(id)arg1;
+- (void)executePendingChanges:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)snapshotForPendingChanges;
 - (void)updateSelectionLayoutObject;
 - (void)updateItemLayoutObject;

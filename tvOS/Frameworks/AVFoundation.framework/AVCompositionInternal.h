@@ -8,6 +8,7 @@
 
 @class AVAssetInspector, AVAssetInspectorLoader, NSDictionary, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCompositionInternal : NSObject
 {
     struct OpaqueFigMutableComposition *mutableComposition;

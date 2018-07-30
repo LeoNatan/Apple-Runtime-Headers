@@ -7,31 +7,34 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBRefinementItem.h"
 
-@class NSString, PBUnknownFields, _INPBSelectionItem;
+@class NSString, _INPBSelectionItem;
 
-@interface _INPBRefinementItem : PBCodable <NSCopying>
+@interface _INPBRefinementItem : PBCodable <_INPBRefinementItem, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBSelectionItem *_item;
     NSString *_subKeyPath;
 }
 
-+ (id)options;
+@property(copy, nonatomic) NSString *subKeyPath; // @synthesize subKeyPath=_subKeyPath;
 @property(retain, nonatomic) _INPBSelectionItem *item; // @synthesize item=_item;
-@property(retain, nonatomic) NSString *subKeyPath; // @synthesize subKeyPath=_subKeyPath;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasItem;
 @property(readonly, nonatomic) _Bool hasSubKeyPath;
+@property(readonly, nonatomic) _Bool hasItem;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

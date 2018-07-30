@@ -8,7 +8,7 @@
 
 @interface IMService (CKAdditions)
 - (BOOL)__ck_displayColor;
-- (int)__ck_maxRecipientCount;
+- (int)__ck_maxRecipientCountForHandle:(id)arg1 simID:(id)arg2;
 - (id)__ck_displayName;
 - (_Bool)__ck_isSMS;
 - (_Bool)__ck_isiMessage;

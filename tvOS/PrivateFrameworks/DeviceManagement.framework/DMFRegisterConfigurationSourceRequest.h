@@ -4,21 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
-@class DMFStatusReportingRequirements, NSString, NSXPCListenerEndpoint;
+@class DMFReportingRequirements, NSString, NSXPCListenerEndpoint;
 
-@interface DMFRegisterConfigurationSourceRequest : CATTaskRequest
+@interface DMFRegisterConfigurationSourceRequest : DMFTaskRequest
 {
     NSString *_configurationSourceName;
     NSString *_organizationIdentifier;
     NSString *_machServiceName;
     NSXPCListenerEndpoint *_listenerEndpoint;
-    DMFStatusReportingRequirements *_statusReportingRequirements;
+    DMFReportingRequirements *_reportingRequirements;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) DMFStatusReportingRequirements *statusReportingRequirements; // @synthesize statusReportingRequirements=_statusReportingRequirements;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
+@property(copy, nonatomic) DMFReportingRequirements *reportingRequirements; // @synthesize reportingRequirements=_reportingRequirements;
 @property(retain, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 @property(copy, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;

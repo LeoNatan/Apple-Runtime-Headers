@@ -8,7 +8,6 @@
 
 @class VMUDebugTimer;
 
-__attribute__((visibility("hidden")))
 @interface VMUStackLogConsolidator : NSObject
 {
     id <VMUCommonGraphInterface> _graph;

@@ -9,11 +9,12 @@
 #import "AVAsynchronousKeyValueLoading.h"
 #import "NSCopying.h"
 
-@class AVAssetInternal, NSArray;
+@class AVAssetInternal, AVDisplayCriteria, NSArray;
 
 @interface AVAsset : NSObject <NSCopying, AVAsynchronousKeyValueLoading>
 {
     AVAssetInternal *_asset;
+    AVDisplayCriteria *_preferredDisplayCriteria;
 }
 
 + (BOOL)supportsPlayerItems;
@@ -21,14 +22,13 @@
 + (id)assetWithData:(id)arg1 contentType:(id)arg2 options:(id)arg3;
 + (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem *)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 + (id)assetWithURL:(id)arg1;
++ (id)makeAssetLoggingIdentifier;
 + (id)assetProxyWithPropertyList:(id)arg1;
 + (id)inspectionOnlyAssetWithStreamDataParser:(id)arg1 tracks:(id)arg2;
 + (id)inspectionOnlyAssetWithFigAsset:(struct OpaqueFigAsset *)arg1;
+@property(readonly, nonatomic) AVDisplayCriteria *preferredDisplayCriteria; // @synthesize preferredDisplayCriteria=_preferredDisplayCriteria;
 - (id)_assetAnalysisMessages;
 - (BOOL)supportsAnalysisReporting;
-- (id)_URLSessionDataDelegate;
-- (id)_URLSessionOperationQueue;
-- (id)_resourceLoaderURLSession;
 - (void)_handleURLRequest:(id)arg1;
 - (BOOL)_hasResourceLoaderDelegate;
 - (CDStruct_1b6d18a9)overallDurationHint;
@@ -103,6 +103,8 @@
 - (id)_assetInspectorLoader;
 - (id)_assetInspector;
 - (id)_weakReference;
+- (id)_nameForLogging;
+- (void)_setLoggingIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
@@ -124,6 +126,7 @@
 - (BOOL)_containsAtLeastOnePlayableAudioTrack;
 - (id)_chapterTracks;
 @property(readonly, nonatomic) long long moovAtomSize;
+@property(readonly, retain, nonatomic) id <AVLoggingIdentifier> loggingIdentifier;
 - (int)unusedTrackID;
 @property(readonly, nonatomic) BOOL isProxy;
 - (id)makePropertyListForProxyWithOptions:(id)arg1;

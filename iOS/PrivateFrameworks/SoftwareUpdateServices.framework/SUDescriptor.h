@@ -35,24 +35,28 @@
     _Bool _disableIntallTonight;
     _Bool _rampEnabled;
     _Bool _criticalOutOfBoxOnly;
+    _Bool _autoUpdateEnabled;
     NSString *_setupCritical;
     NSDictionary *_systemPartitionPadding;
     NSData *_sepDigest;
     NSData *_rsepDigest;
     NSDate *_releaseDate;
     unsigned long long _mdmDelayInterval;
+    NSString *_assetID;
     _Bool _downloadableOverCellular;
     _Bool _streamingZipCapable;
     NSString *_criticalDownloadPolicy;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
 @property(nonatomic) unsigned long long mdmDelayInterval; // @synthesize mdmDelayInterval=_mdmDelayInterval;
 @property(retain, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
 @property(retain, nonatomic, setter=setRSEPDigest:) NSData *rsepDigest; // @synthesize rsepDigest=_rsepDigest;
 @property(retain, nonatomic, setter=setSEPDigest:) NSData *sepDigest; // @synthesize sepDigest=_sepDigest;
 @property(retain, nonatomic) NSDictionary *systemPartitionPadding; // @synthesize systemPartitionPadding=_systemPartitionPadding;
 @property(retain, nonatomic) NSString *criticalDownloadPolicy; // @synthesize criticalDownloadPolicy=_criticalDownloadPolicy;
+@property(nonatomic) _Bool autoUpdateEnabled; // @synthesize autoUpdateEnabled=_autoUpdateEnabled;
 @property(nonatomic) _Bool criticalOutOfBoxOnly; // @synthesize criticalOutOfBoxOnly=_criticalOutOfBoxOnly;
 @property(retain, nonatomic) NSString *setupCritical; // @synthesize setupCritical=_setupCritical;
 @property(nonatomic) _Bool rampEnabled; // @synthesize rampEnabled=_rampEnabled;
@@ -86,6 +90,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)updateTypeName;
 - (unsigned long long)totalRequiredFreeSpace;
 - (unsigned long long)preparationSize;
 - (id)humanReadableUpdateName;

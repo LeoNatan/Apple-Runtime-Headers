@@ -33,7 +33,7 @@
 @property(readonly, copy) NSString *description;
 - (id)siriCore_serializedAceDataError:(id *)arg1;
 - (void)siriCore_logDiagnostics;
-- (_Bool)siriCore_canBeRemapped;
+- (_Bool)siriCore_isProvisional;
 - (_Bool)siriCore_isRestartable;
 - (_Bool)siriCore_isRetryable;
 - (_Bool)siriCore_bufferingAllowedDuringActiveSession;

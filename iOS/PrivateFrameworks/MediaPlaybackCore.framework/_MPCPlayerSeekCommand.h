@@ -12,34 +12,23 @@
 
 @interface _MPCPlayerSeekCommand : _MPCPlayerItemCommand <MPCPlayerSeekCommand>
 {
-    _Bool _supportsBeginFastForward;
-    _Bool _supportsEndFastForward;
-    _Bool _supportsBeginRewind;
-    _Bool _supportsEndRewind;
-    _Bool _supportsSkipForward;
-    _Bool _supportsSkipBackward;
     _Bool _prefersNegativeBackwardSkipIntervals;
-    _Bool _supportsSeekToPlaybackPosition;
+    unsigned long long _seekSupport;
     NSArray *_preferredBackwardJumpIntervals;
     NSArray *_preferredForwardJumpIntervals;
 }
 
 @property(copy, nonatomic) NSArray *preferredForwardJumpIntervals; // @synthesize preferredForwardJumpIntervals=_preferredForwardJumpIntervals;
 @property(copy, nonatomic) NSArray *preferredBackwardJumpIntervals; // @synthesize preferredBackwardJumpIntervals=_preferredBackwardJumpIntervals;
-@property(nonatomic) _Bool supportsSeekToPlaybackPosition; // @synthesize supportsSeekToPlaybackPosition=_supportsSeekToPlaybackPosition;
 @property(nonatomic) _Bool prefersNegativeBackwardSkipIntervals; // @synthesize prefersNegativeBackwardSkipIntervals=_prefersNegativeBackwardSkipIntervals;
-@property(nonatomic) _Bool supportsSkipBackward; // @synthesize supportsSkipBackward=_supportsSkipBackward;
-@property(nonatomic) _Bool supportsSkipForward; // @synthesize supportsSkipForward=_supportsSkipForward;
-@property(nonatomic) _Bool supportsEndRewind; // @synthesize supportsEndRewind=_supportsEndRewind;
-@property(nonatomic) _Bool supportsBeginRewind; // @synthesize supportsBeginRewind=_supportsBeginRewind;
-@property(nonatomic) _Bool supportsEndFastForward; // @synthesize supportsEndFastForward=_supportsEndFastForward;
-@property(nonatomic) _Bool supportsBeginFastForward; // @synthesize supportsBeginFastForward=_supportsBeginFastForward;
+@property(readonly, nonatomic) unsigned long long seekSupport; // @synthesize seekSupport=_seekSupport;
 - (void).cxx_destruct;
 - (id)_seekCommandWithMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2;
 - (id)changePositionToElapsedInterval:(double)arg1;
 - (id)jumpByInterval:(double)arg1;
 - (id)endSeek;
 - (id)beginSeekWithDirection:(long long)arg1;
+- (id)initWithResponse:(id)arg1 seekSupport:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

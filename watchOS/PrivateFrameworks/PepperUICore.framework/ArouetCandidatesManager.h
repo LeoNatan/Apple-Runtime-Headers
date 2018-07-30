@@ -34,15 +34,15 @@
 - (void)_loadLanguageSupportIfNeeded;
 - (void)_loadTextCheckSupportIfNeeded;
 - (void)_loadEmojiSupportIfNeeded;
-- (id)_candidatesFromRecognitionResult:(id)arg1 fullString:(id)arg2 wordRange:(struct _NSRange)arg3;
+- (id)_candidatesFromRecognitionResult:(id)arg1 fullString:(id)arg2 substringRange:(struct _NSRange)arg3;
 - (id)_emojiVariantsForCandidate:(id)arg1;
 - (id)_spellCheckVariantsForWord:(id)arg1;
-- (id)_capitalizedVariantsForWord:(id)arg1;
+- (id)_capitalizedVariantsForBaseString:(id)arg1;
 - (id)_mecabraBasedPredictionsForWordInRange:(struct _NSRange)arg1 inString:(id)arg2;
 - (id)_languageModelBasedPredictionsForWordInRange:(struct _NSRange)arg1 inString:(id)arg2;
 - (void)_addUniqueCandidates:(id)arg1 ofType:(int)arg2 toList:(id)arg3 typesList:(id)arg4 dedupingSet:(id)arg5 reversed:(_Bool)arg6;
-- (void)_composeFinalCandidatesList:(id *)arg1 candidateTypes:(id *)arg2 withBaseWord:(id)arg3 recognitionCandidates:(id)arg4 spellCheckVariants:(id)arg5 capitalizationVariants:(id)arg6 transliterationVariants:(id)arg7 emojiVariants:(id)arg8 predictions:(id)arg9;
-- (void)_getCandidatesList:(id *)arg1 candidateTypes:(id *)arg2 forWordInRange:(struct _NSRange)arg3 inString:(id)arg4 recognitionResult:(id)arg5 shouldCancel:(CDUnknownBlockType)arg6;
+- (void)_composeFinalCandidatesList:(id *)arg1 candidateTypes:(id *)arg2 withBaseString:(id)arg3 recognitionCandidates:(id)arg4 spellCheckVariants:(id)arg5 capitalizationVariants:(id)arg6 transliterationVariants:(id)arg7 emojiVariants:(id)arg8 predictions:(id)arg9;
+- (void)_getCandidatesList:(id *)arg1 candidateTypes:(id *)arg2 forSubstringInRange:(struct _NSRange)arg3 inString:(id)arg4 recognitionResult:(id)arg5 shouldCancel:(CDUnknownBlockType)arg6;
 
 @end
 

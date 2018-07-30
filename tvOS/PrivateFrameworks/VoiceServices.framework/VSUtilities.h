@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isWatch;
 + (_Bool)isServerTTSPlatform;
 + (_Bool)isAudioAccessory;
 + (id)hardwarePlatform;

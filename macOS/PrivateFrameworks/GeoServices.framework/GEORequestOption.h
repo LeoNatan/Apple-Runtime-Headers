@@ -11,6 +11,7 @@
 
 @class GEOFormattedString, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEORequestOption : PBCodable <GEOSurchargeType, NSCopying>
 {
     int _enumValue;

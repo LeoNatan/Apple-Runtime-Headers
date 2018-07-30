@@ -16,6 +16,14 @@ __attribute__((visibility("hidden")))
 + (int)outputFormat;
 + (int)formatForInputAtIndex:(int)arg1;
 + (BOOL)processWithInputs:(id)arg1 arguments:(id)arg2 output:(id)arg3 error:(id *)arg4;
++ (void)allocateBuffersIfNeeded:(id)arg1;
++ (void)releaseBuffers;
++ (void)allocateBuffers:(id)arg1;
++ (_Bool)hasValidBuffers;
++ (void)compilePipelinesIfNeeded:(id)arg1;
++ (void)releasePipelines;
++ (void)compilePipelines:(id)arg1;
++ (_Bool)hasValidPipelines;
 
 @end
 

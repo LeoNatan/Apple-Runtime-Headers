@@ -26,7 +26,6 @@
 - (void)stop;
 - (void)start;
 - (BOOL)isHostReachable;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithHostName:(id)arg1 notifyQueue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 

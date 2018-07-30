@@ -12,6 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)outputImage;
+- (id)outputImageNonMPS;
+- (id)outputImageMPS;
 
 @end
 

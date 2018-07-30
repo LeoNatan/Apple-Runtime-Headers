@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBDistanceList.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBCondition;
+@class NSArray, NSString, _INPBCondition;
 
-@interface _INPBDistanceList : PBCodable <NSCopying>
+@interface _INPBDistanceList : PBCodable <_INPBDistanceList, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBCondition *_condition;
-    NSMutableArray *_distances;
+    NSArray *_distances;
 }
 
 + (Class)distanceType;
-+ (id)options;
+@property(copy, nonatomic) NSArray *distances; // @synthesize distances=_distances;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
-@property(retain, nonatomic) NSMutableArray *distances; // @synthesize distances=_distances;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasCondition;
 - (id)distanceAtIndex:(unsigned long long)arg1;
-- (unsigned long long)distancesCount;
+@property(readonly, nonatomic) unsigned long long distancesCount;
 - (void)addDistance:(id)arg1;
 - (void)clearDistances;
+@property(readonly, nonatomic) _Bool hasCondition;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

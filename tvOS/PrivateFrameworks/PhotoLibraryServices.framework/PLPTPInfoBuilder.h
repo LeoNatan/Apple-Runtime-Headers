@@ -20,7 +20,6 @@
 + (id)pictureTransferProtocolInformationForAsset:(id)arg1 asFirstAsset:(_Bool)arg2;
 + (id)_ptpCalendar;
 - (void).cxx_destruct;
-- (void)_buildEvent;
 - (_Bool)_buildAdjustmentRelatedFile:(id)arg1;
 - (_Bool)_buildDiagnosticRelatedFile:(id)arg1;
 - (_Bool)_buildSidecarRelatedFiles:(id)arg1;

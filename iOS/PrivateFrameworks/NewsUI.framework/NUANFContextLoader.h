@@ -16,21 +16,25 @@
     FCFlintManifest *_flintManifest;
     FCFlintResourceManager *_flintResourceManager;
     id <SXHost> _host;
+    id <NUArticleResourceURLTranslator> _resourceURLTranslator;
     NUANFAssetLoader *_assetLoader;
     FCAsyncOnceOperation *_asyncOnceOperation;
 }
 
 @property(retain, nonatomic) FCAsyncOnceOperation *asyncOnceOperation; // @synthesize asyncOnceOperation=_asyncOnceOperation;
 @property(retain, nonatomic) NUANFAssetLoader *assetLoader; // @synthesize assetLoader=_assetLoader;
+@property(readonly, nonatomic) id <NUArticleResourceURLTranslator> resourceURLTranslator; // @synthesize resourceURLTranslator=_resourceURLTranslator;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) FCFlintResourceManager *flintResourceManager; // @synthesize flintResourceManager=_flintResourceManager;
 @property(readonly, nonatomic) FCFlintManifest *flintManifest; // @synthesize flintManifest=_flintManifest;
 @property(retain, nonatomic) SXContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)asyncLoadContextOnceWithCompletion:(CDUnknownBlockType)arg1;
+- (id)translateURL:(id)arg1;
+- (void)fileURLForURL:(id)arg1 onCompletion:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
 - (CDUnknownBlockType)loadImagesForImageRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)loadContextWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithFlintManifest:(id)arg1 flintResourceManager:(id)arg2 andHost:(id)arg3;
+- (id)initWithFlintManifest:(id)arg1 flintResourceManager:(id)arg2 host:(id)arg3 resourceURLTranslator:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

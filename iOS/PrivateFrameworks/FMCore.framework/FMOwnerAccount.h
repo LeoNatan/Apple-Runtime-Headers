@@ -6,27 +6,48 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString;
+#import "FMOwnerAccountIdentity.h"
 
-@interface FMOwnerAccount : NSObject
+@class ACAccount, NSString;
+
+@interface FMOwnerAccount : NSObject <FMOwnerAccountIdentity>
 {
-    NSString *_personId;
+    _Bool _legacyBehavior;
+    NSString *_authToken;
+    NSString *_hostName;
+    ACAccount *_account;
     NSString *_username;
     NSString *_firstName;
     NSString *_lastName;
-    NSDictionary *_dataclassProperties;
+    NSString *_personId;
 }
 
++ (void)renewCredentialsWithBundleId:(id)arg1 force:(_Bool)arg2 reason:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (id)ownerAccountWithType:(long long)arg1;
++ (id)ownerAccount;
++ (id)personIdForAccount:(id)arg1 error:(id *)arg2;
++ (id)primaryAccountWithStore:(id)arg1 error:(id *)arg2;
++ (id)subAccountForAccount:(id)arg1 type:(long long)arg2;
++ (id)hostNameForAccount:(id)arg1 type:(long long)arg2;
++ (id)authTokenForSubAccount:(id)arg1 type:(long long)arg2 error:(id *)arg3;
 + (id)sharedInstance;
-@property(readonly, copy, nonatomic) NSDictionary *dataclassProperties; // @synthesize dataclassProperties=_dataclassProperties;
-@property(readonly, copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
-@property(readonly, copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-@property(readonly, copy, nonatomic) NSString *username; // @synthesize username=_username;
-@property(readonly, copy, nonatomic) NSString *personId; // @synthesize personId=_personId;
+@property(nonatomic) _Bool legacyBehavior; // @synthesize legacyBehavior=_legacyBehavior;
+@property(copy, nonatomic) NSString *personId; // @synthesize personId=_personId;
+@property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
+@property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
+@property(copy, nonatomic) NSString *username; // @synthesize username=_username;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
+@property(copy, nonatomic) NSString *hostName; // @synthesize hostName=_hostName;
+@property(readonly, copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 - (void).cxx_destruct;
 - (id)hostNameOfType:(long long)arg1;
 - (id)tokenOfType:(long long)arg1;
 - (id)description;
+- (void)initializeAccount;
+- (void)accountChanged;
+- (void)dealloc;
+- (id)initWithAuthToken:(id)arg1 personId:(id)arg2;
+- (id)init;
 
 @end
 

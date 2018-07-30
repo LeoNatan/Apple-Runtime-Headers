@@ -6,13 +6,14 @@
 
 #import <GameplayKit/GKObstacle.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface GKPolygonObstacle : GKObstacle <NSCoding>
+@interface GKPolygonObstacle : GKObstacle <NSSecureCoding>
 {
     struct GKCPolygonObstacle *_cPolygonObstacle;
 }
 
++ (_Bool)supportsSecureCoding;
 +     // Error parsing type: @32@0:8^16Q24, name: obstacleWithPoints:count:
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

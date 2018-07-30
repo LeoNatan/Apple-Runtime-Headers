@@ -10,6 +10,7 @@
 {
 }
 
++ (void)requestImageForStyleAttributes:(id)arg1 size:(unsigned int)arg2 scale:(float)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8 interactive:(_Bool)arg9 isCarplay:(_Bool)arg10;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8 interactive:(_Bool)arg9;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8;

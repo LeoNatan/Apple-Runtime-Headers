@@ -83,7 +83,6 @@
 @property(copy, nonatomic) NSString *selectedSegmentIdentifier;
 @property(copy, nonatomic) NSArray *allowedSegments;
 @property(readonly, nonatomic) SKUIScrollingSegmentedController *scrollingSegmentedController;
-- (_Bool)music_allowsMetricsEvents;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollingSegmentedControllerDidEndDecelerating:(id)arg1;

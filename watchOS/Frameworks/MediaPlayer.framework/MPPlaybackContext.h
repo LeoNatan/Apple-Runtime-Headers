@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class MPAVItem, NSData, NSString;
+@class MPAVItem, NSData, NSDictionary, NSString;
 
 @interface MPPlaybackContext : NSObject <NSSecureCoding>
 {
@@ -23,10 +23,12 @@
     NSData *_playActivityRecommendationData;
     NSString *_siriAssetInfo;
     NSString *_siriReferenceIdentifier;
+    NSDictionary *_siriWHAMetricsInfo;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)queueFeederClass;
+@property(copy, nonatomic) NSDictionary *siriWHAMetricsInfo; // @synthesize siriWHAMetricsInfo=_siriWHAMetricsInfo;
 @property(copy, nonatomic) NSString *siriReferenceIdentifier; // @synthesize siriReferenceIdentifier=_siriReferenceIdentifier;
 @property(copy, nonatomic) NSString *siriAssetInfo; // @synthesize siriAssetInfo=_siriAssetInfo;
 @property(copy, nonatomic) NSData *playActivityRecommendationData; // @synthesize playActivityRecommendationData=_playActivityRecommendationData;

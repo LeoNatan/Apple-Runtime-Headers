@@ -174,6 +174,8 @@
     LiKeyPath *_exifImgDirectionKeyPath;
     LiKeyPath *_exifImgDirectionRefKeyPath;
     LiKeyPath *_exifISOSpeedRatingKeyPath;
+    LiKeyPath *_exifRecommendedExposureIndexKeyPath;
+    LiKeyPath *_exifSensitivityTypeKeyPath;
     LiKeyPath *_exifLensMaxMMKeyPath;
     LiKeyPath *_exifLensMinMMKeyPath;
     LiKeyPath *_exifLensModelKeyPath;
@@ -434,6 +436,8 @@
 @property(readonly, nonatomic) LiKeyPath *exifLensModelKeyPath; // @synthesize exifLensModelKeyPath=_exifLensModelKeyPath;
 @property(readonly, nonatomic) LiKeyPath *exifLensMinMMKeyPath; // @synthesize exifLensMinMMKeyPath=_exifLensMinMMKeyPath;
 @property(readonly, nonatomic) LiKeyPath *exifLensMaxMMKeyPath; // @synthesize exifLensMaxMMKeyPath=_exifLensMaxMMKeyPath;
+@property(readonly, nonatomic) LiKeyPath *exifSensitivityTypeKeyPath; // @synthesize exifSensitivityTypeKeyPath=_exifSensitivityTypeKeyPath;
+@property(readonly, nonatomic) LiKeyPath *exifRecommendedExposureIndexKeyPath; // @synthesize exifRecommendedExposureIndexKeyPath=_exifRecommendedExposureIndexKeyPath;
 @property(readonly, nonatomic) LiKeyPath *exifISOSpeedRatingKeyPath; // @synthesize exifISOSpeedRatingKeyPath=_exifISOSpeedRatingKeyPath;
 @property(readonly, nonatomic) LiKeyPath *exifImgDirectionRefKeyPath; // @synthesize exifImgDirectionRefKeyPath=_exifImgDirectionRefKeyPath;
 @property(readonly, nonatomic) LiKeyPath *exifImgDirectionKeyPath; // @synthesize exifImgDirectionKeyPath=_exifImgDirectionKeyPath;
@@ -604,6 +608,9 @@
 - (unsigned long long)saveOrder;
 - (id)notifyUpdateKeyPathAtoms;
 - (unsigned long long *)faultedKeyPath;
+- (id)basicPropertyPaths;
+- (id)iptcPropertyPaths;
+- (id)exifPropertyPaths;
 - (id)playbackStylePropertyPaths;
 - (id)searchIndexPropertyPaths;
 - (id)facesPropertyPaths;

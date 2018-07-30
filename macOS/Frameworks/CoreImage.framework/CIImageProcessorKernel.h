@@ -16,6 +16,7 @@
 + (_Bool)synchronizeInputs;
 + (BOOL)allowPartialOutputRegion;
 + (_Bool)outputIsOpaque;
++ (_Bool)canReduceOutputChannels;
 + (BOOL)allowSRGBTranferFuntionOnOutput;
 + (int)outputFormat;
 + (BOOL)allowSRGBTranferFuntionOnInputAtIndex:(int)arg1;

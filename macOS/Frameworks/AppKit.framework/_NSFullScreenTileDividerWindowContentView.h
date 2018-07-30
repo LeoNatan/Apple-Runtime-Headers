@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     double _liveResizeLastOriginX;
 }
 
++ (unsigned long long)optionsForLiveResize;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

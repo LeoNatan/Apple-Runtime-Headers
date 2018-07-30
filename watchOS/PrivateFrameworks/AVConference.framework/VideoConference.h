@@ -15,7 +15,7 @@
 #import "VCMomentTransportDelegate.h"
 #import "VCVideoCaptureClient.h"
 
-@class FFTMeter, GKNATObserver, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<VideoConferenceChannelQualityDelegate>, NSObject<VideoConferenceDelegate>, NSObject<VideoConferenceSpeakingDelegate>, NSString, VCAudioIO, VCAudioPowerLevelMonitor, VCCallSession, VCMoments, VCVideoRule, VideoConferenceManager;
+@class FFTMeter, GKNATObserver, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<VideoConferenceChannelQualityDelegate>, NSObject<VideoConferenceDelegate>, NSObject<VideoConferenceSpeakingDelegate>, NSString, VCAudioIO, VCAudioPowerLevelMonitor, VCAudioPowerSpectrumSource, VCCallSession, VCMoments, VCVideoRule, VideoConferenceManager;
 
 @interface VideoConference : NSObject <VCCallSessionDelegate, VCVideoCaptureClient, GKNATObserverDelegate, VCAudioIOSource, VCAudioIOSink, VCAudioIODelegate, VCAudioPowerLevelMonitorDelegate, VCMomentTransportDelegate>
 {
@@ -39,6 +39,10 @@
     FFTMeter *_outputFFTMeter;
     float outputMeterLevel;
     float inputMeterLevel;
+    int _inputAudioPowerSpectrumToken;
+    int _outputAudioPowerSpectrumToken;
+    VCAudioPowerSpectrumSource *_inputAudioPowerSpectrumSource;
+    VCAudioPowerSpectrumSource *_outputAudioPowerSpectrumSource;
     _Bool microphoneMuted;
     double dAudioHostTime;
     struct _opaque_pthread_mutex_t xRemoteLayer;
@@ -63,13 +67,13 @@
     _Bool isTalking;
     unsigned int talkTime;
     int packetsPerBundle;
-    unsigned int recvRTPTimeStamp;
+    CDStruct_1b6d18a9 recvRTPTimeStamp;
     _Bool disableVAD;
     _Bool requiresWifi;
     unsigned int preferredCodec;
     int upstreamBandwidth;
     int downstreamBandwidth;
-    _Bool useAFRC;
+    _Bool useRateControl;
     _Bool isGKVoiceChat;
     _Bool isUsingSuppression;
     _Bool shouldTimeoutPackets;
@@ -78,9 +82,7 @@
     NSDictionary *natTypeDictionary;
     struct _opaque_pthread_mutex_t natMutex;
     unsigned int lastSentAudioSampleTime;
-    double lastReceivedAudioTimestamp;
     VCAudioPowerLevelMonitor *_remoteAudioPowerLevelMonitor;
-    int audioTimeStampDelta;
     GKNATObserver *natObserver;
     unsigned long mostRecentStartedCall;
     unsigned long lastActiveCall;
@@ -104,6 +106,8 @@
     VCVideoRule *conferenceCaptureRule;
 }
 
+@property(readonly, nonatomic) int outputAudioPowerSpectrumToken; // @synthesize outputAudioPowerSpectrumToken=_outputAudioPowerSpectrumToken;
+@property(readonly, nonatomic) int inputAudioPowerSpectrumToken; // @synthesize inputAudioPowerSpectrumToken=_inputAudioPowerSpectrumToken;
 @property(nonatomic) unsigned int transportType; // @synthesize transportType=_transportType;
 @property(readonly) int deviceRole; // @synthesize deviceRole=_deviceRole;
 @property _Bool isValid; // @synthesize isValid;
@@ -173,6 +177,7 @@
 - (_Bool)shouldReinitializeCallWithDuration:(double)arg1 forCallID:(unsigned long)arg2;
 - (void)updateCapabilities:(id)arg1 forCallID:(unsigned long)arg2;
 - (void)updateCapabilities:(id)arg1 forSession:(id)arg2;
+- (void)setPeerReportingID:(id)arg1 sessionID:(id)arg2 callID:(unsigned long)arg3;
 - (void)setSessionID:(id)arg1 callID:(unsigned long)arg2;
 - (void)setPeerCN:(id)arg1 callID:(unsigned long)arg2;
 - (_Bool)setPauseVideo:(_Bool)arg1 callID:(unsigned long)arg2 error:(id *)arg3;
@@ -274,6 +279,7 @@
 - (void)remoteAudioDidPause:(_Bool)arg1 callID:(unsigned long)arg2;
 - (void)session:(id)arg1 didPauseVideo:(_Bool)arg2 error:(id)arg3;
 - (void)session:(id)arg1 didPauseAudio:(_Bool)arg2 error:(id)arg3;
+- (void)session:(id)arg1 isSendingAudio:(_Bool)arg2 error:(id)arg3;
 - (_Bool)session:(id)arg1 didStopVideoIO:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)session:(id)arg1 stopVideoReceive:(id *)arg2 isPausing:(_Bool)arg3;
 - (_Bool)deregisterForVideoFramesWithDeviceRole:(int)arg1;
@@ -295,6 +301,7 @@
 - (void)session:(id)arg1 localIPChange:(id)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(id)arg1 withCallID:(unsigned long)arg2 videoIsDegraded:(_Bool)arg3 isRemote:(_Bool)arg4;
 - (void)session:(id)arg1 withCallID:(unsigned long)arg2 networkHint:(_Bool)arg3;
+- (void)sourceFrameRateDidChange:(unsigned int)arg1;
 - (void)thermalLevelDidChange:(int)arg1;
 - (void)setConferenceVisualRectangle:(struct CGRect)arg1 forCallID:(unsigned long)arg2;
 - (void)setConferenceState:(unsigned int)arg1 forCallID:(unsigned long)arg2;

@@ -6,16 +6,21 @@
 
 #import <CoreThemeDefinition/TDRenditionSpec.h>
 
-@class NSOrderedSet, NSString, TDPNGAsset, TDThemeCompressionType;
+@class NSOrderedSet, NSString, TDImageColorHistogram, TDPNGAsset, TDThemeCompressionType;
 
 @interface TDSimpleArtworkRenditionSpec : TDRenditionSpec
 {
     struct CGRect _alignmentRect;
+    BOOL _isBackstop;
+    TDImageColorHistogram *_histogram;
 }
 
 + (void)initialize;
+@property(nonatomic) BOOL isBackstop; // @synthesize isBackstop=_isBackstop;
+@property(retain, nonatomic) TDImageColorHistogram *histogram; // @synthesize histogram=_histogram;
 - (void)drawPackableRenditionInContext:(struct CGContext *)arg1 withDocument:(id)arg2;
 - (BOOL)updatePackingPropertiesWithDocument:(id)arg1;
+- (struct CGSize)_scaleRecognitionImageFromSize:(struct CGSize)arg1;
 - (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (struct CGImage *)_createImageRefWithURL:(id)arg1 andDocument:(id)arg2 format:(unsigned int *)arg3 vectorBased:(char *)arg4;
 - (int)_rawPixelFormatOfCGImage:(struct CGImage *)arg1;
@@ -29,20 +34,26 @@
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
 - (void)copyAttributesInto:(id)arg1;
 - (void)awakeFromFetch;
+@property(nonatomic) struct CGSize physicalSizeInMeters;
 @property(nonatomic) struct CGRect alignmentRect; // @dynamic alignmentRect;
 @property(nonatomic) struct CGRect primitiveAlignmentRect;
-- (oneway void)release;
+- (void)dealloc;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *alignmentRectString; // @dynamic alignmentRectString;
 @property(nonatomic) BOOL allowsCompactCompression; // @dynamic allowsCompactCompression;
+@property(nonatomic) BOOL allowsDeepmapCompression; // @dynamic allowsDeepmapCompression;
+@property(nonatomic) BOOL allowsHevcCompression; // @dynamic allowsHevcCompression;
 @property(nonatomic) BOOL allowsMultiPassEncoding; // @dynamic allowsMultiPassEncoding;
 @property(nonatomic) BOOL allowsOptimalRowbytesPacking; // @dynamic allowsOptimalRowbytesPacking;
+@property(nonatomic) BOOL allowsPaletteImageCompression; // @dynamic allowsPaletteImageCompression;
 @property(retain, nonatomic) TDPNGAsset *asset; // @dynamic asset;
 @property(retain, nonatomic) TDThemeCompressionType *compressionType; // @dynamic compressionType;
 @property(nonatomic) BOOL isTintable; // @dynamic isTintable;
 @property(retain, nonatomic) NSString *nonAlphaImageAreaString; // @dynamic nonAlphaImageAreaString;
 @property(retain, nonatomic) NSString *originalImageSizeString; // @dynamic originalImageSizeString;
+@property(retain, nonatomic) NSString *physicalSizeInMetersString; // @dynamic physicalSizeInMetersString;
+@property(nonatomic) double postScaleFactor; // @dynamic postScaleFactor;
 @property(retain, nonatomic) NSOrderedSet *slices; // @dynamic slices;
 
 @end

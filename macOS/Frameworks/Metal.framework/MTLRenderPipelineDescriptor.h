@@ -33,6 +33,7 @@
 @property(nonatomic, getter=isRasterizationEnabled) BOOL rasterizationEnabled; // @dynamic rasterizationEnabled;
 @property(nonatomic) unsigned long long sampleCount; // @dynamic sampleCount;
 @property(nonatomic) unsigned long long stencilAttachmentPixelFormat; // @dynamic stencilAttachmentPixelFormat;
+@property(nonatomic) BOOL supportIndirectCommandBuffers; // @dynamic supportIndirectCommandBuffers;
 @property(nonatomic) unsigned long long tessellationControlPointIndexType; // @dynamic tessellationControlPointIndexType;
 @property(nonatomic) unsigned long long tessellationFactorFormat; // @dynamic tessellationFactorFormat;
 @property(nonatomic, getter=isTessellationFactorScaleEnabled) BOOL tessellationFactorScaleEnabled; // @dynamic tessellationFactorScaleEnabled;

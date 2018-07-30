@@ -12,6 +12,7 @@
 
 + (id)supportedVideoFormats;
 + (id)new;
+- (id)description;
 - (id)init;
 
 // Remaining properties

@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <AppKit/NSBindingSelectionMarker.h>
 
 #import "NSCopying.h"
 
 @class NSColor, NSMapTable;
 
-@interface _NSStateMarker : NSObject <NSCopying>
+__attribute__((visibility("hidden")))
+@interface _NSStateMarker : NSBindingSelectionMarker <NSCopying>
 {
     short _type;
     NSMapTable *_placeholderRegistry;
@@ -25,7 +26,6 @@
 - (void)setDefaultTextColor:(id)arg1;
 - (id)description;
 - (id)valueForKey:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)_hash;
 - (id)copy;
 - (oneway void)release;

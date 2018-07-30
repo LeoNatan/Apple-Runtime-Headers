@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
 @protocol BrowserPersistentState <NSObject>
 @property(readonly, nonatomic) unsigned long long numberOfTabs;
 @property(readonly, copy, nonatomic) NSArray *tabUUIDs;
+- (NSDictionary *)dictionaryRepresentationIncludingSessionState:(BOOL)arg1;
 @end
 

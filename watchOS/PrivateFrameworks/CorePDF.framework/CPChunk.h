@@ -6,6 +6,7 @@
 
 #import <CorePDF/CPObject.h>
 
+__attribute__((visibility("hidden")))
 @interface CPChunk : CPObject
 {
     struct CGRect bounds;

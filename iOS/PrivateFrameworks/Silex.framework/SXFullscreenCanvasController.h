@@ -15,7 +15,7 @@
 #import "UIGestureRecognizerDelegate.h"
 #import "UIScrollViewDelegate.h"
 
-@class NSString, SXDragManager, SXFullscreenCaptionView, SXFullscreenNavigationBarView, SXItemizedScrollView, UIColor, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UIView;
+@class NSString, SXDragManager, SXFullscreenCanvasViewController, SXFullscreenCaptionView, SXFullscreenNavigationBarView, SXItemizedScrollView, UIColor, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UIView;
 
 @interface SXFullscreenCanvasController : NSObject <UIGestureRecognizerDelegate, UIScrollViewDelegate, SXFullscreenImageViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, SXFullscreenCaptionViewDelegate, SXFullscreenNavigationBarViewDelegate, SXDragManagerDataSource>
 {
@@ -45,7 +45,7 @@
     double _currentScale;
     unsigned long long _currentViewIndex;
     UIView *_currentView;
-    UIView *_canvasView;
+    SXFullscreenCanvasViewController *_canvasViewController;
     SXItemizedScrollView *_itemizedScrollView;
     SXFullscreenNavigationBarView *_navigationBarView;
     SXFullscreenCaptionView *_captionView;
@@ -62,7 +62,7 @@
 @property(retain, nonatomic) SXFullscreenCaptionView *captionView; // @synthesize captionView=_captionView;
 @property(retain, nonatomic) SXFullscreenNavigationBarView *navigationBarView; // @synthesize navigationBarView=_navigationBarView;
 @property(retain, nonatomic) SXItemizedScrollView *itemizedScrollView; // @synthesize itemizedScrollView=_itemizedScrollView;
-@property(retain, nonatomic) UIView *canvasView; // @synthesize canvasView=_canvasView;
+@property(retain, nonatomic) SXFullscreenCanvasViewController *canvasViewController; // @synthesize canvasViewController=_canvasViewController;
 @property(nonatomic) struct CGRect currentDestinationFrame; // @synthesize currentDestinationFrame=_currentDestinationFrame;
 @property(nonatomic) struct CGRect currentOriginFrame; // @synthesize currentOriginFrame=_currentOriginFrame;
 @property(retain, nonatomic) UIView *currentView; // @synthesize currentView=_currentView;
@@ -130,7 +130,7 @@
 - (void)startTransitionToFullScreen:(_Bool)arg1 controllable:(_Bool)arg2;
 - (void)stopTransformingCancelled:(_Bool)arg1;
 - (void)updateTransform;
-- (_Bool)willStartTransformingWithGestureRecognizer:(id)arg1;
+- (void)willStartTransformingWithGestureRecognizer:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)handlePinchGestureRecognizer:(id)arg1;
 - (void)presentFullscreenWithIndex:(unsigned long long)arg1;
 - (void)handleOpenTapGesture:(id)arg1;

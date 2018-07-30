@@ -18,11 +18,15 @@
     NSMutableDictionary *_settingsMuteNotifications;
     NSObject<OS_dispatch_queue> *_settingsMuteNotificationsQueue;
     NSMutableSet *_muteNotificationsObservers;
+    NSObject<OS_dispatch_queue> *_settingsApplicationInfoQueue;
+    NSMutableSet *_applicationInfoObservers;
     NSXPCConnection *_connection;
 }
 
 + (id)sharedSettingsService;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) NSMutableSet *applicationInfoObservers; // @synthesize applicationInfoObservers=_applicationInfoObservers;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *settingsApplicationInfoQueue; // @synthesize settingsApplicationInfoQueue=_settingsApplicationInfoQueue;
 @property(retain, nonatomic) NSMutableSet *muteNotificationsObservers; // @synthesize muteNotificationsObservers=_muteNotificationsObservers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *settingsMuteNotificationsQueue; // @synthesize settingsMuteNotificationsQueue=_settingsMuteNotificationsQueue;
 @property(retain, nonatomic) NSMutableDictionary *settingsMuteNotifications; // @synthesize settingsMuteNotifications=_settingsMuteNotifications;
@@ -30,6 +34,10 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *settingsAllowsNotificationsInfosQueue; // @synthesize settingsAllowsNotificationsInfosQueue=_settingsAllowsNotificationsInfosQueue;
 @property(retain, nonatomic) NSMutableDictionary *settingsAllowsNotificationsInfos; // @synthesize settingsAllowsNotificationsInfos=_settingsAllowsNotificationsInfos;
 - (void).cxx_destruct;
+- (void)removeApplicationInfoObserver:(id)arg1;
+- (void)addApplicationInfoObserver:(id)arg1;
+- (void)applicationInfoForBundleID:(id)arg1 iconSize:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)bltSettingsServiceApplicationInfoUpdatedForBundleIDs:(id)arg1;
 - (void)removeMuteNotificationsObserver:(id)arg1;
 - (void)addMuteNotificationsObserver:(id)arg1;
 - (void)bltSettingsServiceMuteNotificationsUpdated:(id)arg1;
@@ -38,8 +46,6 @@
 - (void)bltSettingsServiceAllowsNotificationsUpdated:(id)arg1;
 - (void)_queue_updateAllowsNotificationsObserver:(id)arg1 sectionIDs:(id)arg2;
 - (void)_reconnect;
-- (void)_initSettingsMuteNotifications;
-- (void)_initSettingsAllowsNotifications;
 - (id)init;
 
 // Remaining properties

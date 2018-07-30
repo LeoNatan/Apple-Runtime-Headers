@@ -10,10 +10,10 @@
 
 @interface HMDCentralMessageDispatcher : HMFMessageDispatcher
 {
+    HMDMessageFilterChain *_messageFilterChain;
     HMDAdminEnforcementMessageFilter *_adminMsgFilter;
     HMFMessageDispatcher *_recvDispatcher;
     NSMutableDictionary *_remoteGateways;
-    HMDMessageFilterChain *_msgFilterChain;
     HMDSecureRemoteMessageFilter *_secureRemoteMessageFilter;
     HMFMessageDispatcher *_notificationDispatcher;
     HMDHomeManager *_homeManager;
@@ -21,15 +21,16 @@
 }
 
 + (_Bool)isWhitelistedLocalMessage:(id)arg1;
++ (id)defaultDispatcher;
 + (id)destinationWithTarget:(id)arg1 userID:(id)arg2 destination:(id)arg3 multicast:(_Bool)arg4;
 @property(readonly, nonatomic) NSMutableArray *relayedMessages; // @synthesize relayedMessages=_relayedMessages;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) HMFMessageDispatcher *notificationDispatcher; // @synthesize notificationDispatcher=_notificationDispatcher;
 @property(retain, nonatomic) HMDSecureRemoteMessageFilter *secureRemoteMessageFilter; // @synthesize secureRemoteMessageFilter=_secureRemoteMessageFilter;
-@property(retain, nonatomic) HMDMessageFilterChain *msgFilterChain; // @synthesize msgFilterChain=_msgFilterChain;
 @property(retain, nonatomic) NSMutableDictionary *remoteGateways; // @synthesize remoteGateways=_remoteGateways;
 @property(retain, nonatomic) HMFMessageDispatcher *recvDispatcher; // @synthesize recvDispatcher=_recvDispatcher;
 @property(retain, nonatomic) HMDAdminEnforcementMessageFilter *adminMsgFilter; // @synthesize adminMsgFilter=_adminMsgFilter;
+@property(readonly, nonatomic) HMDMessageFilterChain *messageFilterChain; // @synthesize messageFilterChain=_messageFilterChain;
 - (void).cxx_destruct;
 - (void)_handleRelayedIDSMessage:(id)arg1 handledLocally:(_Bool)arg2;
 - (void)relayInternalMessage:(id)arg1;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     BOOL matchesFinderFilesOnly;
     BOOL matchesSupportFiles;
     BOOL runWarmingQuery;
+    BOOL canGenerateTopHits;
 }
 
 - (void).cxx_destruct;

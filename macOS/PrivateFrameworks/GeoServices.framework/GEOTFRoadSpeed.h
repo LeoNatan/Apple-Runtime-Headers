@@ -10,6 +10,7 @@
 
 @class NSData, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOTFRoadSpeed : PBCodable <NSCopying>
 {
     CDStruct_5df41632 _geoIds;

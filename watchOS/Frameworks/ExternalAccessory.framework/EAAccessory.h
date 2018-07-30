@@ -56,6 +56,8 @@
 - (_Bool)supportsLocation;
 - (void)setLocationSentenceTypesMask:(int)arg1;
 - (int)locationSentenceTypesMask;
+- (unsigned long long)destinationSharingOptions;
+- (void)setDestinationSharingOptions:(unsigned long long)arg1;
 - (_Bool)pointOfInterestHandoffEnabled;
 - (void)setPointOfInterestHandoffEnabled:(_Bool)arg1;
 - (unsigned int)eqIndex;

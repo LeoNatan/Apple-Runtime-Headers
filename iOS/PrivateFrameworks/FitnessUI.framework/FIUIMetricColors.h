@@ -18,6 +18,7 @@
     UIColor *_buttonTextColor;
     UIColor *_buttonDisabledTextColor;
     UIColor *_valueDisplayColor;
+    UIColor *_platterBackgroundColor;
     NSString *_workoutRingColorIdentifier;
 }
 
@@ -44,6 +45,7 @@
 + (id)metricColorsForMetricType:(unsigned long long)arg1;
 + (id)systemGrayTextColor;
 @property(retain, nonatomic) NSString *workoutRingColorIdentifier; // @synthesize workoutRingColorIdentifier=_workoutRingColorIdentifier;
+@property(retain, nonatomic) UIColor *platterBackgroundColor; // @synthesize platterBackgroundColor=_platterBackgroundColor;
 @property(retain, nonatomic) UIColor *valueDisplayColor; // @synthesize valueDisplayColor=_valueDisplayColor;
 @property(retain, nonatomic) UIColor *buttonDisabledTextColor; // @synthesize buttonDisabledTextColor=_buttonDisabledTextColor;
 @property(retain, nonatomic) UIColor *buttonTextColor; // @synthesize buttonTextColor=_buttonTextColor;

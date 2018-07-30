@@ -24,6 +24,7 @@
 - (void)_sendEmail:(id)arg1;
 - (void)_fetchHighlightEstimatesDictionary;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 

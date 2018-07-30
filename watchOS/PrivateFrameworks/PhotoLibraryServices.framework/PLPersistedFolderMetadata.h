@@ -47,7 +47,6 @@
 - (void)removePersistedData;
 - (void)writePersistedData;
 @property(readonly, nonatomic) _Bool isRootFolder;
-- (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 childUUIDs:(id)arg5;
 - (id)initWithPersistedDataAtURL:(id)arg1;
 - (id)initWithPLManagedFolder:(id)arg1;
 - (id)init;

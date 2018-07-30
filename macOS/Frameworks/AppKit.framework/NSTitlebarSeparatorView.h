@@ -6,18 +6,21 @@
 
 #import <AppKit/NSView.h>
 
-__attribute__((visibility("hidden")))
 @interface NSTitlebarSeparatorView : NSView
 {
+    long long _type;
 }
 
+- (BOOL)ignoreHitTest;
+- (struct CGSize)intrinsicContentSize;
 - (void)_windowChangedKeyState;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;
-- (id)_toolbarBottomEdgeLowerColor;
-- (BOOL)_isDark;
+- (int)_vibrancyBlendMode;
 - (BOOL)allowsVibrancy;
+- (id)_cuiOptions;
+@property long long type;
 
 @end
 

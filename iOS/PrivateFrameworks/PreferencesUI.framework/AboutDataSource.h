@@ -20,12 +20,11 @@
     _Bool _cancel;
     _Bool _loaded;
     _Bool _accessory;
-    int _carrierCellState;
     id <NSObject> _photoVideoNotificationToken;
     NSLock *_lock;
     _Bool _hasLoadedSpecifiers;
-    NSString *_serviceProviderNameForSPN;
-    long long _simCellState;
+    NSMutableDictionary *_carrierCellState;
+    NSMutableDictionary *_simCellState;
     NSString *_deviceNameToIgnoreOnce;
 }
 
@@ -65,11 +64,8 @@
 - (id)_NAIString:(id)arg1;
 - (id)_ERIString:(id)arg1;
 - (id)_PRLString:(id)arg1;
-- (id)_cellularRegistrationInfo;
-- (_Bool)shouldShowSIMSpecifier;
-- (_Bool)_isUsingBootstrap;
-- (id)_getCTMobileEquipmentInfo:(struct __CFString *)arg1;
-- (id)_mobileEquipmentInfo;
+- (_Bool)shouldShowSIMSpecifier:(id)arg1;
+- (_Bool)_isUsingBootstrap:(id)arg1;
 - (id)_carrierVersion:(id)arg1;
 - (id)_macAddress;
 - (id)_macAddressSpecifierKey;

@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FinderKit/FI_TDrawRectView.h>
+#import <FinderKit/FI_TUpdateLayerView.h>
 
 __attribute__((visibility("hidden")))
-@interface FI_TRoundedContentView : FI_TDrawRectView
+@interface FI_TRoundedContentView : FI_TUpdateLayerView
 {
 }
 
-- (void)drawRect:(struct CGRect)arg1;
 - (void)initCommon;
 
 @end

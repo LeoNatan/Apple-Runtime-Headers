@@ -6,36 +6,28 @@
 
 #import "PSListController.h"
 
-#import "PSUIWirelessDataOptionsDelegate.h"
+#import "CoreTelephonyClientSubscriberDelegate.h"
 
-@class AppWirelessDataUsageManager, NSString, WirelessDataUsageWorkspace;
+@class CoreTelephonyClient, NSString, PSSpecifier, PSUIAppCellularUsageGroup;
 
-@interface PSUIWirelessDataOptionsController : PSListController <PSUIWirelessDataOptionsDelegate>
+@interface PSUIWirelessDataOptionsController : PSListController <CoreTelephonyClientSubscriberDelegate>
 {
-    _Bool _cancelled;
-    _Bool _loading;
-    WirelessDataUsageWorkspace *_workspace;
-    AppWirelessDataUsageManager *_wirelessManager;
+    PSSpecifier *_groupSpecifier;
+    PSUIAppCellularUsageGroup *_perAppUsageController;
+    CoreTelephonyClient *_coreTelephonyClient;
 }
 
-@property(retain, nonatomic) AppWirelessDataUsageManager *wirelessManager; // @synthesize wirelessManager=_wirelessManager;
-@property(retain, nonatomic) WirelessDataUsageWorkspace *workspace; // @synthesize workspace=_workspace;
-@property(nonatomic) _Bool loading; // @synthesize loading=_loading;
-@property(getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
+@property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
+@property(retain, nonatomic) PSUIAppCellularUsageGroup *perAppUsageController; // @synthesize perAppUsageController=_perAppUsageController;
+@property(retain, nonatomic) PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 - (void).cxx_destruct;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (void)_handleWirelessDataUsageChangedNotification:(id)arg1;
 - (void)_handleCellularPlanChangedNotification:(id)arg1;
-- (void)_handleSIMStatusReadyNotification:(id)arg1;
+- (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (void)_handleNewCarrierNotification:(id)arg1;
-- (id)specifierForSystemApp:(id)arg1 bytesUsed:(id)arg2;
-- (id)specifierForSpecialCategory:(id)arg1 bytesUsed:(id)arg2;
-- (id)_specifierForApp:(id)arg1 enabled:(_Bool)arg2;
-- (id)_dataUsageForApplicationSpecifier:(id)arg1;
-- (id)_groupSpecifier;
-- (void)_createAppSpecifiersForVisibleApps:(id)arg1 hiddenApps:(id)arg2 unknownApps:(id)arg3 internalProcesses:(id)arg4;
+- (void)perAppSpecifiersFinishedLoading;
 - (id)specifiers;
-- (void)cancel;
 - (void)dealloc;
 - (id)init;
 

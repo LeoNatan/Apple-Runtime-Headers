@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)findTiles:(CDUnknownBlockType)arg1;
 - (void)findTilesAdjacentToTile:(const struct _GEOTileKey *)arg1 containingPoint:(const Matrix_8746f91e *)arg2 tileHandler:(CDUnknownBlockType)arg3;
 - (void)findTiles:(CDUnknownBlockType)arg1 excludingKey:(const struct _GEOTileKey *)arg2;
-- (void)_fetchDataForKeys:(const unordered_set_deaadd3a *)arg1;
+- (void)_fetchDataForKeys:(const unordered_set_684af1c2 *)arg1;
 @property(readonly, nonatomic) GEOMapAccess *map;
 - (void)cancel;
 - (void)dealloc;

@@ -15,18 +15,25 @@
 {
     NSSet *_keyPaths;
     NSPredicate *_predicate;
+    NSPredicate *_predicateForPreviousState;
+    double _minimumDurationInPreviousState;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)orPredicateWithSubpredicates:(id)arg1;
 + (id)andPredicateWithSubpredicates:(id)arg1;
 + (id)notPredicateWithSubpredicate:(id)arg1;
++ (id)predicateForKeyPath:(id)arg1 withPredicate:(id)arg2 withPredicateForPreviousState:(id)arg3 withMinimumDurationInPreviousState:(double)arg4;
++ (id)predicateForKeyPath:(id)arg1 equalToValue:(id)arg2 withMinimumDurationInPreviousState:(double)arg3;
++ (id)predicateForChangeAtKeyPath:(id)arg1 withMinimumDurationInPreviousState:(double)arg2;
 + (id)predicateForKeyPath:(id)arg1 withFormat:(id)arg2;
 + (id)contextualPredicateForKeyPaths:(id)arg1 withPredicate:(id)arg2;
 + (id)predicateForKeyPath:(id)arg1 withPredicate:(id)arg2;
 + (id)predicateForKeyPath:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateForChangeAtKeyPaths:(id)arg1;
 + (id)predicateForChangeAtKeyPath:(id)arg1;
+@property(nonatomic) double minimumDurationInPreviousState; // @synthesize minimumDurationInPreviousState=_minimumDurationInPreviousState;
+@property(retain, nonatomic) NSPredicate *predicateForPreviousState; // @synthesize predicateForPreviousState=_predicateForPreviousState;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSSet *keyPaths; // @synthesize keyPaths=_keyPaths;
 - (void).cxx_destruct;

@@ -34,7 +34,7 @@
 - (id)summary;
 - (id)description;
 - (void)forceChangeValue:(id)arg1 forKey:(id)arg2;
-- (id)_uniqueIDToObjectMapForObjects:(id)arg1;
+- (id)_semanticIdentifierToObjectMapForObjects:(id)arg1;
 - (void)_cleanupEmptySetsForMultiValueKey:(id)arg1;
 - (void)removeFromChanges:(id)arg1 forMultiValueKey:(id)arg2 basedOn:(id)arg3;
 - (void)addToChanges:(id)arg1 forMultiValueKey:(id)arg2 basedOn:(id)arg3;

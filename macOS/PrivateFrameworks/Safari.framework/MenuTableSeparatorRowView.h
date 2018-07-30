@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) double horizontalMargin; // @synthesize horizontalMargin=_horizontalMargin;
 - (void)_setDefaultKeyViewLoop;
+- (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

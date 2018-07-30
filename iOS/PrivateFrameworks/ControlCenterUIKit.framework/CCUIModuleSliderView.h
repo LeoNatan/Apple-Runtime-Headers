@@ -12,7 +12,7 @@
 #import "CCUIGroupRendering.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CALayer, CCUICAPackageDescription, CCUICAPackageView, NSArray, NSString, NSTimer, UIImage, UIImageView, UIPanGestureRecognizer, UISelectionFeedbackGenerator, UIView, _UIEdgeFeedbackGenerator;
+@class CALayer, CCUICAPackageDescription, CCUICAPackageView, NSArray, NSString, NSTimer, UIImage, UIImageView, UIPanGestureRecognizer, UISelectionFeedbackGenerator, UITapGestureRecognizer, UIView, _UIEdgeFeedbackGenerator;
 
 @interface CCUIModuleSliderView : UIControl <UIGestureRecognizerDelegate, CCUIContentModuleTopLevelGestureProvider, CCUIContentModuleExpandedStateListener, CCUIContentClipping, CCUIGroupRendering>
 {
@@ -25,9 +25,11 @@
     NSArray *_separatorViews;
     double _startingHeight;
     float _startingValue;
+    _Bool _gestureStartedInside;
     NSTimer *_updatesCommitTimer;
     float _previousValue;
     UIPanGestureRecognizer *_valueChangeGestureRecognizer;
+    UITapGestureRecognizer *_tapGestureRecognizer;
     UISelectionFeedbackGenerator *_selectionFeedbackGenerator;
     _UIEdgeFeedbackGenerator *_edgeFeedbackGenerator;
     _Bool _glyphVisible;
@@ -60,11 +62,16 @@
 - (void)_endTrackingWithGestureRecognizer:(id)arg1;
 - (void)_continueTrackingWithGestureRecognizer:(id)arg1;
 - (void)_beginTrackingWithGestureRecognizer:(id)arg1;
+- (void)_handleValueTapGestureRecognizer:(id)arg1;
 - (void)_handleValueChangeGestureRecognizer:(id)arg1;
+- (void)_updateStepFromValue:(float)arg1 playHaptic:(_Bool)arg2 toggleCurrentStep:(_Bool)arg3;
 - (void)_updateStepFromValue:(float)arg1 playHaptic:(_Bool)arg2;
-- (void)_updateValueForPanGestureRecognizer:(id)arg1 withAbsoluteReference:(_Bool)arg2 forContinuedGesture:(_Bool)arg3;
+- (void)_updateValueForPanGestureRecognizer:(id)arg1 withAbsolutePosition:(_Bool)arg2 forContinuedGesture:(_Bool)arg3;
 - (float)_valueForPanGestureRecognizer:(id)arg1 withAbsoluteReference:(_Bool)arg2;
+- (float)_valueForTouchTranslation:(struct CGPoint)arg1;
+- (float)_valueForTouchLocation:(struct CGPoint)arg1;
 - (float)_valueFromStep:(unsigned long long)arg1;
+- (unsigned long long)_stepFromValue:(float)arg1 avoidCurrentStep:(_Bool)arg2;
 - (unsigned long long)_stepFromValue:(float)arg1;
 - (double)_sliderHeightForValue:(float)arg1;
 - (double)_sliderHeight;

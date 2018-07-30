@@ -31,7 +31,7 @@
 - (void)playbackResumedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackPausedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackStartedWithVideoItem:(id)arg1 metadata:(id)arg2;
-- (void)playbackInitiatedWithVideoItem:(id)arg1 metadata:(id)arg2;
+- (void)videoDidAppearWithVideoItem:(id)arg1;
 - (id)initWithSessionManager:(id)arg1 observer:(id)arg2 referrer:(id)arg3;
 - (id)init;
 

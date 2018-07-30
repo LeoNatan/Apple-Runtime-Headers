@@ -7,6 +7,6 @@
 #import "NSObject.h"
 
 @protocol CPLDuetTicketProviderBudgetDelegate <NSObject>
-- (void)isBlockedStatusDidChange;
+- (void)duetTicketProviderBlockedStatusDidChange;
 @end
 

@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double defaultPageZoomFactor; // @synthesize defaultPageZoomFactor=_defaultPageZoomFactor;
 @property(nonatomic) __weak id <WBSPerSitePreferenceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)_preferenceValueForZoomFactor:(id)arg1;
 - (void)_performDelayedLaunchOperationsIfNecessary;
 - (void)removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getAllDomainsConfiguredForPreference:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -39,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)getDefaultPreferenceValueForPreference:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getValueOfPreference:(id)arg1 forDomain:(id)arg2 withTimeout:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)setValue:(id)arg1 ofPreference:(id)arg2 forDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
 - (void)setDefaultPageZoomFactor:(double)arg1;

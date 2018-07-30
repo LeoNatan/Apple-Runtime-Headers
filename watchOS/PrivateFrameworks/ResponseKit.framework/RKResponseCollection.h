@@ -28,6 +28,7 @@
 - (id)personalizerForLanguageID:(id)arg1;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 withLanguage:(id)arg3 context:(id)arg4 effectiveDate:(id)arg5;
 - (id)responsesForCategory:(unsigned int)arg1 gender:(unsigned int)arg2 maximumResponses:(unsigned int)arg3 withLanguage:(id)arg4 context:(id)arg5 options:(unsigned int)arg6;
+- (id)cannedResponsesForCategory:(id)arg1 withLanguage:(id)arg2 options:(unsigned int)arg3;
 - (id)standardResponsesByCategoryForLanguageIdentifier:(id)arg1 andUsage:(id)arg2;
 - (void)resetRegisteredResponses;
 - (void)flushDynamicData;

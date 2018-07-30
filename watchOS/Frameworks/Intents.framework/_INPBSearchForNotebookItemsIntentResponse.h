@@ -7,54 +7,56 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSearchForNotebookItemsIntentResponse.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBSearchForNotebookItemsIntentResponse : PBCodable <NSCopying>
+@interface _INPBSearchForNotebookItemsIntentResponse : PBCodable <_INPBSearchForNotebookItemsIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_notes;
-    int _sortType;
-    NSMutableArray *_taskLists;
-    NSMutableArray *_tasks;
     struct {
         unsigned int sortType:1;
     } _has;
+    NSArray *_notes;
+    int _sortType;
+    NSArray *_taskLists;
+    NSArray *_tasks;
 }
 
 + (Class)tasksType;
 + (Class)taskListsType;
 + (Class)notesType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *tasks; // @synthesize tasks=_tasks;
-@property(retain, nonatomic) NSMutableArray *taskLists; // @synthesize taskLists=_taskLists;
-@property(retain, nonatomic) NSMutableArray *notes; // @synthesize notes=_notes;
+@property(copy, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
+@property(copy, nonatomic) NSArray *taskLists; // @synthesize taskLists=_taskLists;
+@property(nonatomic) int sortType; // @synthesize sortType=_sortType;
+@property(copy, nonatomic) NSArray *notes; // @synthesize notes=_notes;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (int)StringAsSortType:(id)arg1;
-- (id)sortTypeAsString:(int)arg1;
-@property(nonatomic) _Bool hasSortType;
-@property(nonatomic) int sortType; // @synthesize sortType=_sortType;
 - (id)tasksAtIndex:(unsigned int)arg1;
-- (unsigned int)tasksCount;
+@property(readonly, nonatomic) unsigned int tasksCount;
 - (void)addTasks:(id)arg1;
 - (void)clearTasks;
 - (id)taskListsAtIndex:(unsigned int)arg1;
-- (unsigned int)taskListsCount;
+@property(readonly, nonatomic) unsigned int taskListsCount;
 - (void)addTaskLists:(id)arg1;
 - (void)clearTaskLists;
+- (int)StringAsSortType:(id)arg1;
+- (id)sortTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasSortType;
 - (id)notesAtIndex:(unsigned int)arg1;
-- (unsigned int)notesCount;
+@property(readonly, nonatomic) unsigned int notesCount;
 - (void)addNotes:(id)arg1;
 - (void)clearNotes;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

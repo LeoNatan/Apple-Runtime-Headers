@@ -58,7 +58,7 @@
 - (id)lastElementChild;
 - (id)firstElementChild;
 - (id)children;
-- (id)writeToStringWithError:(id *)arg1;
+- (id)toStringWithError:(id *)arg1;
 - (id)nodesForXPath:(id)arg1 error:(id *)arg2;
 - (void)removeDOMObserver:(id)arg1;
 - (void)addDOMObserver:(id)arg1;

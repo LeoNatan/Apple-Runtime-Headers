@@ -6,7 +6,6 @@
 
 #import <OfficeImport/ESDBlipContext.h>
 
-__attribute__((visibility("hidden")))
 @interface ESDDibFileBlipContext : ESDBlipContext
 {
 }

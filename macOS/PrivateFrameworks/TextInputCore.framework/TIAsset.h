@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) long long contentVersion; // @synthesize contentVersion=_contentVersion;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) TIAssetAttributes *attributes; // @synthesize attributes=_attributes;
+- (void).cxx_destruct;
 - (BOOL)hasAssertions;
 - (void)removeAssertion;
 - (void)addAssertion;
@@ -38,7 +39,6 @@
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithAttributes:(id)arg1 url:(id)arg2 contentVersion:(long long)arg3 compatibilityVersion:(long long)arg4 sizeInBytes:(unsigned long long)arg5 contents:(id)arg6;
 - (id)initWithASAsset:(id)arg1;
 

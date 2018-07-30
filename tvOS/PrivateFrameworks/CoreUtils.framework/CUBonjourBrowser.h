@@ -19,9 +19,11 @@
     struct LogCategory *_ucat;
     _Bool _browseFlagsChanged;
     unsigned int _changeFlags;
+    unsigned int _controlFlags;
     unsigned long long _browseFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_domain;
+    NSString *_interfaceName;
     NSString *_label;
     NSString *_serviceType;
     CDUnknownBlockType _deviceFoundHandler;
@@ -38,8 +40,10 @@
 @property(copy, nonatomic) CDUnknownBlockType deviceFoundHandler; // @synthesize deviceFoundHandler=_deviceFoundHandler;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(nonatomic) unsigned int controlFlags; // @synthesize controlFlags=_controlFlags;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
 @property(nonatomic) unsigned long long browseFlags; // @synthesize browseFlags=_browseFlags;
 - (void).cxx_destruct;

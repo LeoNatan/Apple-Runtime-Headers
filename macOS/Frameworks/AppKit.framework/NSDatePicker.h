@@ -42,6 +42,7 @@
 @property(getter=isBordered) BOOL bordered;
 @property(getter=isBezeled) BOOL bezeled;
 @property unsigned long long datePickerStyle;
+- (void)_commonAwake;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_setWrapsDateComponentArithmetic:(BOOL)arg1;
 - (BOOL)_wrapsDateComponentArithmetic;

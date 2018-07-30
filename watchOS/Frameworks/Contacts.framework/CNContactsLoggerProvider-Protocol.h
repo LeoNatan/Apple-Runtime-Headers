@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @protocol CNContactsLoggerProvider <NSObject>
+@property(readonly, nonatomic) id <CNFavoritesLogger> favoritesLogger;
 @property(readonly, nonatomic) id <CNRegulatoryLogger> regulatoryLogger;
 @property(readonly, nonatomic) id <CNSpotlightIndexingLogger> spotlightIndexingLogger;
 @property(readonly, nonatomic) id <CNContactsLogger> contactsLogger;

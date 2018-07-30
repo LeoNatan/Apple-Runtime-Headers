@@ -8,6 +8,7 @@
 
 @class CPPage;
 
+__attribute__((visibility("hidden")))
 @interface CPZoneFilter : NSObject
 {
     CPPage *page;

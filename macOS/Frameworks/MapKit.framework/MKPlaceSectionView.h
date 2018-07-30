@@ -12,17 +12,14 @@
 {
     unsigned long long _trackingSelectForRow;
     MKViewWithHairline *_hairLineView;
-    struct CGRect _oldBounds;
     BOOL _highlightsTouches;
     BOOL _showsBottomHairline;
-    BOOL _earlyReturnLayout;
     id <MKPlaceSectionViewDelegate> _delegate;
     MKPlaceSectionItemView *_headerView;
     NSArray *_rowViews;
     MKPlaceSectionItemView *_footerView;
 }
 
-@property(nonatomic) BOOL earlyReturnLayout; // @synthesize earlyReturnLayout=_earlyReturnLayout;
 @property(nonatomic) BOOL showsBottomHairline; // @synthesize showsBottomHairline=_showsBottomHairline;
 @property(retain, nonatomic) MKPlaceSectionItemView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) BOOL highlightsTouches; // @synthesize highlightsTouches=_highlightsTouches;

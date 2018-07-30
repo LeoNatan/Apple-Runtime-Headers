@@ -16,6 +16,7 @@
 @interface FPItem : NSObject <NSFileProviderItem_Private, NSFileProviderItem, NSCopying, NSSecureCoding>
 {
     NSProgress *_progress;
+    NSArray *_tags;
     BOOL _downloading;
     BOOL _mostRecentVersionDownloaded;
     BOOL _uploaded;
@@ -50,6 +51,8 @@
     NSString *_containerDisplayName;
     NSString *_filename;
     NSString *_appContainerBundleIdentifier;
+    NSString *_preformattedOwnerName;
+    NSString *_preformattedMostRecentEditorName;
     NSString *_formerIdentifier;
     NSNumber *_hasUnresolvedConflicts;
     NSURL *_fileURL;
@@ -60,7 +63,6 @@
     NSString *_displayName;
     NSNumber *_favoriteRank;
     NSDate *_lastUsedDate;
-    NSData *_tagData;
     NSString *_providerIdentifier;
 }
 
@@ -74,7 +76,6 @@
 @property(nonatomic, getter=isPending) BOOL pending; // @synthesize pending=_pending;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isDownloaded) BOOL downloaded; // @synthesize downloaded=_downloaded;
-@property(copy, nonatomic) NSData *tagData; // @synthesize tagData=_tagData;
 @property(copy, nonatomic) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(copy, nonatomic) NSNumber *favoriteRank; // @synthesize favoriteRank=_favoriteRank;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -86,7 +87,10 @@
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) NSNumber *hasUnresolvedConflicts; // @synthesize hasUnresolvedConflicts=_hasUnresolvedConflicts;
 @property(retain, nonatomic) NSString *formerIdentifier; // @synthesize formerIdentifier=_formerIdentifier;
+@property(retain, nonatomic) NSString *preformattedMostRecentEditorName; // @synthesize preformattedMostRecentEditorName=_preformattedMostRecentEditorName;
+@property(retain, nonatomic) NSString *preformattedOwnerName; // @synthesize preformattedOwnerName=_preformattedOwnerName;
 @property(copy, nonatomic) NSString *appContainerBundleIdentifier; // @synthesize appContainerBundleIdentifier=_appContainerBundleIdentifier;
+@property(copy, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(readonly, nonatomic) BOOL isContainer; // @synthesize isContainer=_isContainer;
 @property(nonatomic, getter=isUbiquitous) BOOL ubiquitous; // @synthesize ubiquitous=_isUbiquitous;
@@ -128,8 +132,8 @@
 @property(readonly, nonatomic) NSProgress *downloadingProgress;
 - (void)setFp_SpotlightDomainIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSString *fp_spotlightDomainIdentifier;
-@property(copy, nonatomic) NSArray *tags;
 - (long long)localizedStandardTagsCompare:(id)arg1;
+@property(readonly, copy, nonatomic) NSData *tagData;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToItem:(id)arg1;

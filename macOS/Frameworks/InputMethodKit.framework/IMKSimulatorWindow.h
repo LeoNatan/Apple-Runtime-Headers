@@ -6,20 +6,27 @@
 
 #import "NSWindow.h"
 
-@class IMKInputController, NSTextView;
+@class IMKInputController, NSTextView, NSViewController;
 
 @interface IMKSimulatorWindow : NSWindow
 {
     id <IMKTextInput><NSObject> _client;
     IMKInputController *_inputController;
     id <IMKSimulatorDelegate><NSObject> _simulatorDelegate;
+    NSWindow *_touchBarViewChildWindow;
+    NSViewController *_touchBarViewController;
+    struct __CFMessagePort *_simulatorMessagePort;
+    struct __CFRunLoopSource *_simulatorMessageRunLoopSource;
     BOOL _isPressAndHold;
 }
 
 @property(nonatomic) BOOL isPressAndHold; // @synthesize isPressAndHold=_isPressAndHold;
+@property(retain, nonatomic) NSViewController *touchBarViewController; // @synthesize touchBarViewController=_touchBarViewController;
 @property(retain, nonatomic) id <IMKSimulatorDelegate><NSObject> simulatorDelegate; // @synthesize simulatorDelegate=_simulatorDelegate;
 @property(retain, nonatomic) IMKInputController *inputController; // @synthesize inputController=_inputController;
 @property(retain, nonatomic) id <IMKTextInput><NSObject> client; // @synthesize client=_client;
+- (void)touchBarCloseButtonPressed:(id)arg1;
+- (void)removeChildWindowForTouchBarController;
 @property(readonly, nonatomic) NSTextView *textView;
 - (void)sendEvent:(id)arg1;
 - (BOOL)handlePressAndHoldEvent:(id)arg1 simulatorController:(id)arg2;

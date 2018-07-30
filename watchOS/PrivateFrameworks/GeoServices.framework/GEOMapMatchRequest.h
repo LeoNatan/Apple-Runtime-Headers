@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapMatchRequest : PBRequest <NSCopying>
 {
     double _searchThreshold;

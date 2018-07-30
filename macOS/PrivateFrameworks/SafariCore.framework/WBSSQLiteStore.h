@@ -11,6 +11,7 @@
 @interface WBSSQLiteStore : NSObject
 {
     long long _databaseLockingPolicy;
+    long long _protectionType;
     int _databaseCoordinationLockFileDescriptor;
     BOOL _fallBackToMemoryStoreIfError;
     NSURL *_databaseURL;
@@ -32,6 +33,7 @@
 - (int)_createFreshDatabaseSchema;
 - (int)_setDatabaseSchemaVersion:(int)arg1;
 - (int)_migrateToCurrentSchemaVersionIfNecessary;
+- (void)_databaseWillClose;
 - (int)_currentSchemaVersion;
 - (BOOL)_confirmDatabaseIntegrityIsOK;
 - (void)_closeDatabase;
@@ -42,6 +44,7 @@
 - (void)openAndCheckIntegrity:(BOOL)arg1 createIfNeeded:(BOOL)arg2 fallBackToMemoryStoreIfError:(BOOL)arg3 lockingPolicy:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic) BOOL isOpen;
 - (void)dealloc;
+- (id)initWithURL:(id)arg1 protectionType:(long long)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)init;
 

@@ -6,19 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString, WBSFormMetadata, _WKFrameHandle;
+@class NSString, WBSFormControlMetadata, WBSFormMetadata, _WKFrameHandle;
 
 @protocol FormMetadataObserver <NSObject>
-- (void)addressBookAutoFillableFieldBlurredInFrame:(_WKFrameHandle *)arg1 textFieldMetadata:(NSDictionary *)arg2;
-- (void)addressBookAutoFillableFieldFocused:(NSString *)arg1 textFieldMetadata:(NSDictionary *)arg2 formMetadata:(WBSFormMetadata *)arg3 inFrame:(_WKFrameHandle *)arg4;
+- (void)oneTimeCodeFieldBlurredInFrame:(_WKFrameHandle *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2;
+- (void)oneTimeCodeFieldFocused:(NSString *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2 formMetadata:(WBSFormMetadata *)arg3 inFrame:(_WKFrameHandle *)arg4;
+- (void)addressBookAutoFillableFieldBlurredInFrame:(_WKFrameHandle *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2;
+- (void)addressBookAutoFillableFieldFocused:(NSString *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2 formMetadata:(WBSFormMetadata *)arg3 inFrame:(_WKFrameHandle *)arg4;
 - (void)autoFilledFormWithMetadata:(WBSFormMetadata *)arg1 inFrame:(_WKFrameHandle *)arg2;
-- (void)usernameFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(NSDictionary *)arg3;
-- (void)usernameFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(NSDictionary *)arg3;
-- (void)creditCardFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 creditCardFieldMetadata:(NSDictionary *)arg3;
-- (void)creditCardFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 creditCardFieldMetadata:(NSDictionary *)arg3;
-- (void)passwordFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 passwordFieldMetadata:(NSDictionary *)arg3;
-- (void)passwordFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 passwordFieldMetadata:(NSDictionary *)arg3;
-- (void)textDidChangeInTextFieldWithMetadata:(NSDictionary *)arg1 formMetadata:(WBSFormMetadata *)arg2 inFrame:(_WKFrameHandle *)arg3;
+- (void)usernameFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(WBSFormControlMetadata *)arg3;
+- (void)usernameFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(WBSFormControlMetadata *)arg3;
+- (void)creditCardFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 creditCardFieldMetadata:(WBSFormControlMetadata *)arg3;
+- (void)creditCardFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 creditCardFieldMetadata:(WBSFormControlMetadata *)arg3;
+- (void)passwordFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 passwordFieldMetadata:(WBSFormControlMetadata *)arg3;
+- (void)passwordFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 passwordFieldMetadata:(WBSFormControlMetadata *)arg3;
+- (void)textDidChangeInTextFieldWithMetadata:(WBSFormControlMetadata *)arg1 formMetadata:(WBSFormMetadata *)arg2 inFrame:(_WKFrameHandle *)arg3;
 - (void)textDidChangeInTextFieldDelayCompletedForTextFieldWithUniqueID:(NSString *)arg1 inFrame:(_WKFrameHandle *)arg2;
 @end
 

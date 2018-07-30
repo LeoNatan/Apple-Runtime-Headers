@@ -4,16 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "HDTaskServerDelegate.h"
 
-@class HDQueryServer, HDReadAuthorizationStatus, HKObjectType, NSArray, NSSet;
+@class HDQueryServer, HDReadAuthorizationStatus, HKObjectType, NSArray;
 
-@protocol HDQueryServerDelegate <NSObject>
+@protocol HDQueryServerDelegate <HDTaskServerDelegate>
 - (unsigned int)clientSDKVersionForQueryServer:(HDQueryServer *)arg1;
 - (void)queryServerDidFinish:(HDQueryServer *)arg1;
+- (void)queryServer:(HDQueryServer *)arg1 shouldStartWithCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)queryServer:(HDQueryServer *)arg1 requestsAuthorizationForSamples:(NSArray *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
 - (HDReadAuthorizationStatus *)readAuthorizationStatusForQueryServer:(HDQueryServer *)arg1 type:(HKObjectType *)arg2 error:(id *)arg3;
-- (_Bool)queryServer:(HDQueryServer *)arg1 isAuthorizationStatusDeterminedForTypes:(NSSet *)arg2 error:(id *)arg3;
-- (NSArray *)queryServer:(HDQueryServer *)arg1 filterSamplesForReadAuthorization:(NSArray *)arg2;
 @end
 

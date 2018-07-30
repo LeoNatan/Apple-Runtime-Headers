@@ -55,6 +55,7 @@
 - (void)_openURLOnAppLaunchControllerDidDisplay:(id)arg1;
 @property(readonly, nonatomic) UINavigationController *_currentNavigationController;
 - (id)_appContext;
+- (id)activeDocument;
 - (void)applicationWillSuspend:(id)arg1;
 - (void)applicationDidResume:(id)arg1;
 @property(nonatomic) __weak UIView *viewServiceKeyView;

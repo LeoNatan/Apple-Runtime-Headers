@@ -6,11 +6,17 @@
 
 #import "NSObject.h"
 
-@class AVCaptureDeviceFormat, AVCaptureDeviceInternal, NSArray, NSString;
+@class AVCaptureDeviceFormat, AVCaptureDeviceInputSource, AVCaptureDeviceInternal, NSArray, NSString;
 
 @interface AVCaptureDevice : NSObject
 {
     AVCaptureDeviceInternal *_internal;
+    _Bool _suspended;
+    NSString *_manufacturer;
+    int _transportType;
+    NSArray *_linkedDevices;
+    NSArray *_inputSources;
+    AVCaptureDeviceInputSource *_activeInputSource;
 }
 
 + (void)initialize;
@@ -27,6 +33,12 @@
 + (id)devicesWithMediaType:(id)arg1;
 + (void)_filterConnectedDevices:(id)arg1 withDeviceTypes:(id)arg2 mediaType:(id)arg3 position:(int)arg4;
 + (void)_filterConnectedLegacyDevices:(id)arg1;
+@property(retain, nonatomic) AVCaptureDeviceInputSource *activeInputSource; // @synthesize activeInputSource=_activeInputSource;
+@property(readonly, nonatomic) NSArray *inputSources; // @synthesize inputSources=_inputSources;
+@property(readonly, nonatomic) NSArray *linkedDevices; // @synthesize linkedDevices=_linkedDevices;
+@property(readonly, nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
+@property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
+@property(readonly, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 - (void)_setDepthDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)_isDepthDataDeliveryEnabled;
 - (void)setBravoCameraSelectionBehavior:(id)arg1;
@@ -35,6 +47,8 @@
 - (_Bool)isHEIFSupported;
 - (_Bool)isHEVCPreferred;
 - (_Bool)isHEVCSupported;
+- (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
+- (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
 - (int)minMacroblocksForHighProfileAbove30fps;
 - (int)minMacroblocksForHighProfileUpTo30fps;
@@ -52,7 +66,6 @@
 - (_Bool)isEyeClosedDetectionSupported;
 - (_Bool)isEyeDetectionSupported;
 - (id)supportedMetadataObjectIdentifiers;
-- (int)shallowDepthOfFieldEffectStatus;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(_Bool)arg1;
 - (_Bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (_Bool)isLowLightBoostEnabled;
@@ -162,12 +175,14 @@
 @property(nonatomic) CDStruct_1b6d18a9 activeVideoMaxFrameDuration;
 - (void)_setActiveVideoMinFrameDuration:(CDStruct_1b6d18a9)arg1;
 @property(nonatomic) CDStruct_1b6d18a9 activeVideoMinFrameDuration;
+- (void)setActiveDepthDataMinFrameDuration:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)activeDepthDataMinFrameDuration;
 - (void)setActiveDepthDataFormat:(id)arg1;
 - (id)activeDepthDataFormat;
 @property(retain, nonatomic) AVCaptureDeviceFormat *activeFormat;
 @property(readonly, nonatomic) NSArray *formats;
 @property(readonly, nonatomic, getter=isConnected) _Bool connected;
-- (_Bool)isInUseByAnotherApplication;
+@property(readonly, nonatomic, getter=isInUseByAnotherApplication) _Bool inUseByAnotherApplication;
 - (_Bool)isMachineReadableCodeDetectionSupported;
 - (_Bool)isLensStabilizationSupported;
 - (void)_setStillImageStabilizationAutomaticallyEnabled:(_Bool)arg1;

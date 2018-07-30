@@ -9,9 +9,9 @@
 @class CPLResourceIdentity;
 
 @protocol CPLEngineResourceStorageImplementation <CPLEngineStorageImplementation>
+- (BOOL)resetWithError:(id *)arg1;
 - (unsigned long long)totalOriginalResourceSize;
 - (unsigned long long)totalResourceSize;
-- (BOOL)resetWithError:(id *)arg1;
 - (void)enumerateIdentitiesWithBlock:(void (^)(CPLResourceIdentity *, char *))arg1;
 - (unsigned long long)retainCountForIdentity:(CPLResourceIdentity *)arg1;
 - (BOOL)releaseIdentity:(CPLResourceIdentity *)arg1 lastReference:(char *)arg2 isTrackedOriginal:(BOOL)arg3 error:(id *)arg4;

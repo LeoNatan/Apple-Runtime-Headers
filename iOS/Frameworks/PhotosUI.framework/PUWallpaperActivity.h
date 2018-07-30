@@ -21,13 +21,14 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)wallpaperImageViewControllerDidCancel:(id)arg1;
 - (void)wallpaperImageViewControllerDidFinishSaving:(id)arg1;
-- (void)wallpaperImageViewControllerDidCropWallpaper:(id)arg1;
+- (void)wallpaperImageViewController:(id)arg1 didSetWallpaperWithOptions:(id)arg2;
 - (void)_updateWallpaperModificationAllowedIfNeeded;
 - (void)_restrictionsChanged:(id)arg1;
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)activityImage;
+- (id)_activityImageName;
+- (id)_activityBundleImageConfiguration;
 - (id)activityTitle;
 - (id)activityType;
 - (void)dealloc;

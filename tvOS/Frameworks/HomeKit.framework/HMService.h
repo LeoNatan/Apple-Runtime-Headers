@@ -6,14 +6,16 @@
 
 #import "NSObject.h"
 
+#import "HMFLogging.h"
 #import "HMMutableApplicationData.h"
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessory, HMApplicationData, HMBulletinBoardNotification, HMDelegateCaller, HMFMessageDispatcher, HMThreadSafeMutableArrayCollection, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSURL, NSUUID;
+@class HMAccessory, HMApplicationData, HMBulletinBoardNotification, HMFUnfairLock, HMMutableArray, NSArray, NSNumber, NSString, NSURL, NSUUID, _HMContext;
 
-@interface HMService : NSObject <NSSecureCoding, HMObjectMerge, HMMutableApplicationData>
+@interface HMService : NSObject <HMFLogging, NSSecureCoding, HMObjectMerge, HMMutableApplicationData>
 {
+    HMFUnfairLock *_lock;
     _Bool _userInteractive;
     _Bool _primaryService;
     NSUUID *_uniqueIdentifier;
@@ -28,14 +30,10 @@
     HMApplicationData *_applicationData;
     HMBulletinBoardNotification *_bulletinBoardNotificationInternal;
     NSURL *_homeObjectURLInternal;
+    _HMContext *_context;
     NSNumber *_instanceID;
     NSArray *_linkedServiceInstanceIDs;
-    HMThreadSafeMutableArrayCollection *_currentCharacteristics;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    HMFMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMDelegateCaller *_delegateCaller;
+    HMMutableArray *_currentCharacteristics;
     NSUUID *_uuid;
 }
 
@@ -45,15 +43,12 @@
 + (id)_mapToIsConfiguredValueFromServiceConfigurationState:(long long)arg1;
 + (long long)_mapToServiceConfigurationStateFromIsConfiguredValue:(id)arg1;
 + (_Bool)supportsSecureCoding;
++ (id)logCategory;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(copy, nonatomic) HMThreadSafeMutableArrayCollection *currentCharacteristics; // @synthesize currentCharacteristics=_currentCharacteristics;
+@property(copy, nonatomic) HMMutableArray *currentCharacteristics; // @synthesize currentCharacteristics=_currentCharacteristics;
 @property(readonly, copy, nonatomic) NSArray *linkedServiceInstanceIDs; // @synthesize linkedServiceInstanceIDs=_linkedServiceInstanceIDs;
 @property(readonly, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic, getter=isPrimaryService) _Bool primaryService; // @synthesize primaryService=_primaryService;
 @property(readonly, nonatomic, getter=isUserInteractive) _Bool userInteractive; // @synthesize userInteractive=_userInteractive;
 - (void).cxx_destruct;
@@ -70,21 +65,18 @@
 - (void)_handleUpdateConfiguredName:(id)arg1;
 - (void)_handleUpdateName:(id)arg1;
 - (void)_handleMarkServiceInteractive:(id)arg1;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3 msgDispatcher:(id)arg4;
 - (void)updateApplicationData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_findCharacteristic:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)logIdentifier;
 - (void)_updateConfigurationState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateConfigurationState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateAssociatedServiceType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateAssociatedServiceType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)init;
-@property(readonly) unsigned long long hash;
-- (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *linkedServices;
 - (id)homeObjectURL;
 @property(readonly, nonatomic) NSURL *homeObjectURLInternal; // @synthesize homeObjectURLInternal=_homeObjectURLInternal;
@@ -102,7 +94,11 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
+- (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -24,12 +24,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)_saveDefaultTimerSound:(id)arg1;
-+ (void)_saveDefaultWakeUpSound:(id)arg1;
 + (void)_saveDefaultAlarmSound:(id)arg1;
-+ (id)_loadDefaultEarlyWakeUpSound;
-+ (id)_loadDefaultGoToSleepSound;
 + (id)_loadDefaultTimerSound;
-+ (id)_loadDefaultAlarmSoundIsWakeUp:(_Bool)arg1;
++ (id)_loadDefaultAlarmSound;
 + (id)songSoundWithIdentifier:(id)arg1 vibrationIdentifier:(id)arg2 volume:(id)arg3;
 + (id)toneSoundWithIdentifier:(id)arg1 vibrationIdentifer:(id)arg2 volume:(id)arg3;
 + (void)setDefaultSound:(id)arg1 forCategory:(unsigned long long)arg2;
@@ -40,18 +37,24 @@
 @property(readonly, nonatomic) NSString *toneIdentifier; // @synthesize toneIdentifier=_toneIdentifier;
 @property(readonly, nonatomic) unsigned long long soundType; // @synthesize soundType=_soundType;
 - (void).cxx_destruct;
+- (void)updatePreview:(id)arg1;
+- (id)previewWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy) NSString *description;
+- (_Bool)interruptAudio;
 - (_Bool)isEqualToSound:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (id)initWithSound:(id)arg1 usingVolume:(id)arg2;
 - (id)initWithMediaItemIdentifier:(id)arg1 vibrationIdentifier:(id)arg2 volume:(id)arg3;
 - (id)initWithToneIdentifier:(id)arg1 vibrationIdentifer:(id)arg2 volume:(id)arg3;
+- (id)unSoundIsGoToBed:(_Bool)arg1 isEarlyWakeUp:(_Bool)arg2 isWakeUp:(_Bool)arg3;
+- (id)unSound;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

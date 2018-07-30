@@ -7,26 +7,35 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "NSMutableCopying.h"
 #import "NSSecureCoding.h"
 
 @class NSArray, NSString;
 
-@interface UNNotificationCategory : NSObject <NSCopying, NSSecureCoding>
+@interface UNNotificationCategory : NSObject <NSMutableCopying, NSCopying, NSSecureCoding>
 {
     NSArray *_actions;
     NSArray *_minimalActions;
     NSArray *_intentIdentifiers;
     NSString *_identifier;
     NSString *_hiddenPreviewsBodyPlaceholder;
+    NSString *_categorySummaryFormat;
     unsigned int _options;
+    unsigned int _backgroundStyle;
+    unsigned int _listPriority;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 hiddenPreviewsBodyPlaceholder:(id)arg5 categorySummaryFormat:(id)arg6 options:(unsigned int)arg7;
++ (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 intentIdentifiers:(id)arg3 hiddenPreviewsBodyPlaceholder:(id)arg4 categorySummaryFormat:(id)arg5 options:(unsigned int)arg6;
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 hiddenPreviewsBodyPlaceholder:(id)arg5 options:(unsigned int)arg6;
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 intentIdentifiers:(id)arg3 hiddenPreviewsBodyPlaceholder:(id)arg4 options:(unsigned int)arg5;
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 options:(unsigned int)arg5;
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 intentIdentifiers:(id)arg3 options:(unsigned int)arg4;
+@property(readonly, nonatomic) unsigned int listPriority; // @synthesize listPriority=_listPriority;
+@property(readonly, nonatomic) unsigned int backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
+@property(readonly, copy, nonatomic) NSString *categorySummaryFormat; // @synthesize categorySummaryFormat=_categorySummaryFormat;
 @property(readonly, copy, nonatomic) NSString *hiddenPreviewsBodyPlaceholder; // @synthesize hiddenPreviewsBodyPlaceholder=_hiddenPreviewsBodyPlaceholder;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSArray *intentIdentifiers; // @synthesize intentIdentifiers=_intentIdentifiers;
@@ -35,11 +44,12 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)_initWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 hiddenPreviewsBodyPlaceholder:(id)arg5 options:(unsigned int)arg6;
+- (id)_initWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 hiddenPreviewsBodyPlaceholder:(id)arg5 categorySummaryFormat:(id)arg6 options:(unsigned int)arg7 backgroundStyle:(unsigned int)arg8 listPriority:(unsigned int)arg9;
 
 @end
 

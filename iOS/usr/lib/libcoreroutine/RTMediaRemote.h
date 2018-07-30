@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 @class NSDate, NSMutableSet, NSSet, NSString, RTInvocationDispatcher;
 
-@interface RTMediaRemote : RTNotifier
+@interface RTMediaRemote : RTService
 {
     _Bool _ready;
     NSDate *_dateOfLastNowPlayingTransition;
@@ -41,7 +41,7 @@
 - (void)__handleNowPlayingApplication:(id)arg1 didChangeState:(unsigned int)arg2;
 - (void)_handleNowPlayingApplicationIsPlayingDidChange;
 - (void)handleNowPlayingApplicationIsPlayingDidChange;
-- (void)shutdown;
+- (void)_shutdown;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (void)_unregisterForMediaRemoteNotifications;

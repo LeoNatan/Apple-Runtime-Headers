@@ -20,7 +20,7 @@
 + (id)analysisService;
 - (void).cxx_destruct;
 - (void)invalidate;
-- (void)requestAnalysis:(unsigned long long)arg1 ofPixelBuffer:(struct __CVBuffer *)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)requestAnalysis:(unsigned long long)arg1 ofPixelBuffer:(struct __CVBuffer *)arg2 withProperties:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (id)connection;
 - (void)dealloc;
 - (id)init;

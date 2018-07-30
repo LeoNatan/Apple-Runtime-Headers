@@ -6,13 +6,11 @@
 
 #import "UIView.h"
 
-#import "CAMAccessibilityHUDItemProvider.h"
-#import "CAMBarsAccessibilityHUDManagerGestureProvider.h"
 #import "CAMExpandableMenuButtonDelegate.h"
 
-@class CAMElapsedTimeView, CAMExpandableMenuButton, CAMFilterButton, CAMFlashButton, CAMFlipButton, CAMFramerateIndicatorView, CAMHDRButton, CAMIrisButton, CAMTimerButton, NSMutableArray, NSString;
+@class CAMElapsedTimeView, CAMExpandableMenuButton, CAMFilterButton, CAMFlashButton, CAMFlipButton, CAMFramerateIndicatorView, CAMHDRButton, CAMLivePhotoButton, CAMTimerButton, NSArray, NSSet, PUReviewScreenDoneButton;
 
-@interface CAMTopBar : UIView <CAMExpandableMenuButtonDelegate, CAMAccessibilityHUDItemProvider, CAMBarsAccessibilityHUDManagerGestureProvider>
+@interface CAMTopBar : UIView <CAMExpandableMenuButtonDelegate>
 {
     id <CAMControlVisibilityUpdateDelegate> _visibilityUpdateDelegate;
     long long _style;
@@ -23,22 +21,26 @@
     CAMFlipButton *_flipButton;
     CAMFilterButton *_filterButton;
     CAMTimerButton *_timerButton;
-    CAMIrisButton *_irisButton;
+    CAMLivePhotoButton *_livePhotoButton;
+    PUReviewScreenDoneButton *_doneButton;
     CAMFramerateIndicatorView *_framerateIndicatorView;
     long long _orientation;
     UIView *__backgroundView;
-    NSMutableArray *__allowedControls;
+    NSArray *__allowedControls;
+    NSSet *__controlsNeedingNonAnimatedLayout;
     CAMExpandableMenuButton *__expandedMenuButton;
     struct UIEdgeInsets __expandedMenuButtonTappableInsets;
 }
 
 @property(nonatomic, setter=_setExpandedMenuButtonTappableInsets:) struct UIEdgeInsets _expandedMenuButtonTappableInsets; // @synthesize _expandedMenuButtonTappableInsets=__expandedMenuButtonTappableInsets;
 @property(retain, nonatomic, setter=_setExpandedMenuButton:) CAMExpandableMenuButton *_expandedMenuButton; // @synthesize _expandedMenuButton=__expandedMenuButton;
-@property(readonly, nonatomic) NSMutableArray *_allowedControls; // @synthesize _allowedControls=__allowedControls;
+@property(retain, nonatomic, setter=_setControlsNeedingNonAnimatedLayout:) NSSet *_controlsNeedingNonAnimatedLayout; // @synthesize _controlsNeedingNonAnimatedLayout=__controlsNeedingNonAnimatedLayout;
+@property(readonly, nonatomic) NSArray *_allowedControls; // @synthesize _allowedControls=__allowedControls;
 @property(readonly, nonatomic) UIView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) CAMFramerateIndicatorView *framerateIndicatorView; // @synthesize framerateIndicatorView=_framerateIndicatorView;
-@property(retain, nonatomic) CAMIrisButton *irisButton; // @synthesize irisButton=_irisButton;
+@property(retain, nonatomic) PUReviewScreenDoneButton *doneButton; // @synthesize doneButton=_doneButton;
+@property(retain, nonatomic) CAMLivePhotoButton *livePhotoButton; // @synthesize livePhotoButton=_livePhotoButton;
 @property(retain, nonatomic) CAMTimerButton *timerButton; // @synthesize timerButton=_timerButton;
 @property(retain, nonatomic) CAMFilterButton *filterButton; // @synthesize filterButton=_filterButton;
 @property(retain, nonatomic) CAMFlipButton *flipButton; // @synthesize flipButton=_flipButton;
@@ -57,14 +59,16 @@
 - (struct CGRect)expandedFrameForMenuButton:(id)arg1;
 - (void)collapseMenuButton:(id)arg1 animated:(_Bool)arg2;
 - (struct CGRect)collapsedFrameForMenuButton:(id)arg1;
+- (_Bool)shouldHideDoneButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideFramerateIndicatorForGraphConfiguration:(id)arg1;
-- (_Bool)shouldHideIrisButtonForGraphConfiguration:(id)arg1;
+- (_Bool)shouldHideLivePhotoButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideElapsedTimeViewForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideFlipButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideFilterButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideTimerButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideHDRButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideFlashButtonForGraphConfiguration:(id)arg1;
+- (_Bool)_shouldHideSubview:(id)arg1;
 - (_Bool)_shouldExpandButtonsHorizontally;
 - (void)_updateControlVisibilityAnimated:(_Bool)arg1;
 - (void)configureForMode:(long long)arg1 animated:(_Bool)arg2;
@@ -93,12 +97,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_commonCAMTopBarInitialization;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

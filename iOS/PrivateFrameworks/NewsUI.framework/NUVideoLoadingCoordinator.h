@@ -14,13 +14,13 @@
 @interface NUVideoLoadingCoordinator : NSObject <NUVideoPlayerEventTracker, NUAsyncContentViewControllerLoader>
 {
     _Bool _loadStarted;
-    id <SXVideoPlaybackController> _playbackController;
+    id <SVVideoPlaybackController> _playbackController;
     CDUnknownBlockType _completionBlock;
 }
 
 @property(nonatomic, getter=hasLoadStarted) _Bool loadStarted; // @synthesize loadStarted=_loadStarted;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-@property(readonly, nonatomic) id <SXVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
+@property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
 - (void).cxx_destruct;
 - (void)_invokeAndClearCompletionBlockWithError:(id)arg1;
 - (id)loadContentWithTimeoutTime:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;

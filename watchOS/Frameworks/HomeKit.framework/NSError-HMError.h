@@ -8,6 +8,7 @@
 
 @interface NSError (HMError)
 + (id)hmPrivateErrorWithCode:(int)arg1 underlyingError:(id)arg2;
++ (id)hmInternalErrorWithCode:(int)arg1 userInfo:(id)arg2;
 + (id)hmPrivateErrorWithCode:(int)arg1;
 + (id)hmInternalErrorWithCode:(int)arg1 underlyingError:(id)arg2;
 + (id)hmInternalErrorWithCode:(int)arg1;

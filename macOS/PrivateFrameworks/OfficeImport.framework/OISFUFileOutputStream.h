@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OISFUFileOutputStream : NSObject <SFUOutputStream>
 {
     struct __sFILE *mFile;

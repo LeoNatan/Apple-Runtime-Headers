@@ -18,8 +18,8 @@ struct CGSize {
 };
 
 struct CLLocationCoordinate2D {
-    double _field1;
-    double _field2;
+    double latitude;
+    double longitude;
 };
 
 struct NSArray {

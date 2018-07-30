@@ -78,11 +78,11 @@ __attribute__((visibility("hidden")))
 - (id)modelEnumeratorWithFlags:(unsigned long long)arg1;
 - (id)modelEnumerator;
 - (id)commandForUpdatingAfterInsertingDrawables:(id)arg1 context:(id)arg2;
-- (void)removePencilAnnotationsFromDrawables:(id)arg1;
-- (void)removeCommentsFromDrawables:(id)arg1;
+- (void)removeAllAnnotationsFromDrawables:(id)arg1;
 - (id)commandForRemovingCommentsFromDrawables:(id)arg1 context:(id)arg2;
 - (id)makeIsolatedStyleMapper;
 - (id)makeStyleMapper;
+- (_Bool)documentAllowsPencilAnnotationsOnModel:(id)arg1;
 - (_Bool)documentDisallowsHighlightsOnStorage:(id)arg1;
 - (_Bool)shouldShowComments;
 @property(readonly, nonatomic) _Bool freehandDrawingsRequireSpacerShape;

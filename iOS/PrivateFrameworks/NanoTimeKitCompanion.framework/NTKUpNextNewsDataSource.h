@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <NanoTimeKitCompanion/NTKUpNextElementDataSource.h>
+#import "REElementDataSource.h"
 
-@interface NTKUpNextNewsDataSource : NTKUpNextElementDataSource
+@class NTKUpNextElementDataSource;
+
+@interface NTKUpNextNewsDataSource : REElementDataSource
 {
     NTKUpNextElementDataSource *_newsDataSourceProxy;
 }
 
 + (_Bool)wantsReloadForSignificantTimeChange;
-+ (id)sampleContentElements;
 + (id)bundleIdentifier;
 + (Class)nanoNewsDataSourceClass;
 @property(retain, nonatomic) NTKUpNextElementDataSource *newsDataSourceProxy; // @synthesize newsDataSourceProxy=_newsDataSourceProxy;
@@ -21,6 +22,8 @@
 - (void)resume;
 - (void)pause;
 - (void)getElementsDuringDateInterval:(id)arg1 inSection:(unsigned long long)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)getElementsInSection:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (id)supportedSections;
 - (void)setState:(unsigned long long)arg1;
 - (void)setRunning:(_Bool)arg1;
 - (void)setDelegate:(id)arg1;

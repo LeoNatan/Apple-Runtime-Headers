@@ -8,12 +8,12 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface OADColorMap : NSObject
 {
     NSMutableDictionary *mMappings;
 }
 
+- (void).cxx_destruct;
 - (void)addDefaultMappings:(BOOL)arg1;
 - (id)description;
 - (_Bool)isEmpty;
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (void)addMapping:(int)arg1 index:(int)arg2;
 - (int)mappingForIndex:(int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

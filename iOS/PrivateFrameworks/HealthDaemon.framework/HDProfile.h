@@ -8,7 +8,7 @@
 
 #import "HDHealthDaemonReadyObserver.h"
 
-@class HDAWDSubmissionManager, HDAppSubscriptionManager, HDAuthorizationManager, HDCloudSyncManager, HDCurrentActivitySummaryHelper, HDDaemon, HDDaemonSyncEngine, HDDataCollectionManager, HDDataManager, HDDataProvenanceManager, HDDatabase, HDDatabasePruningManager, HDDeviceManager, HDFitnessMachineManager, HDHealthServiceManager, HDMedicalIDDataManager, HDMetadataManager, HDMigrationManager, HDNanoSyncManager, HDNotificationManager, HDServiceConnectionManager, HDSessionAssertionManager, HDSourceManager, HDSourceOrderManager, HDUnitPreferencesManager, HDUserCharacteristicsManager, HDWorkoutManager, NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class HDAWDSubmissionManager, HDActivityCacheManager, HDAppSubscriptionManager, HDAssertionManager, HDAuthorizationManager, HDCloudSyncManager, HDCurrentActivitySummaryHelper, HDDaemon, HDDaemonSyncEngine, HDDataCollectionManager, HDDataManager, HDDataProvenanceManager, HDDatabase, HDDatabasePruningManager, HDDeviceManager, HDFitnessMachineManager, HDHealthServiceManager, HDMedicalIDDataManager, HDMetadataManager, HDMigrationManager, HDNanoSyncManager, HDNotificationManager, HDServiceConnectionManager, HDSourceManager, HDSourceOrderManager, HDUnitPreferencesManager, HDUserCharacteristicsManager, HDWorkoutCondenser, HDWorkoutManager, NSDictionary, NSString, NSURL;
 
 @interface HDProfile : NSObject <HDHealthDaemonReadyObserver>
 {
@@ -19,14 +19,15 @@
     NSString *_directoryPath;
     HDDaemonSyncEngine *_syncEngine;
     NSDictionary *_profileExtensionsByIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _profileLock;
     HDDaemon *_daemon;
     HDDataManager *_dataManager;
     HDDataProvenanceManager *_dataProvenanceManager;
     HDMetadataManager *_metadataManager;
-    HDSessionAssertionManager *_sessionAssertionManager;
+    HDAssertionManager *_sessionAssertionManager;
     HDSourceOrderManager *_sourceOrderManager;
     HDUserCharacteristicsManager *_userCharacteristicsManager;
+    HDWorkoutCondenser *_workoutCondenser;
     long long _profileType;
     NSString *_medicalIDDirectoryPath;
     HDAWDSubmissionManager *_awdSubmissionManager;
@@ -43,10 +44,11 @@
 @property(readonly, nonatomic) HDAWDSubmissionManager *awdSubmissionManager; // @synthesize awdSubmissionManager=_awdSubmissionManager;
 @property(readonly, copy, nonatomic) NSString *medicalIDDirectoryPath; // @synthesize medicalIDDirectoryPath=_medicalIDDirectoryPath;
 @property(readonly, nonatomic) long long profileType; // @synthesize profileType=_profileType;
+@property(readonly, nonatomic) HDWorkoutCondenser *workoutCondenser; // @synthesize workoutCondenser=_workoutCondenser;
 @property(readonly, nonatomic) HDUserCharacteristicsManager *userCharacteristicsManager; // @synthesize userCharacteristicsManager=_userCharacteristicsManager;
 @property(readonly, nonatomic) HDSourceOrderManager *sourceOrderManager; // @synthesize sourceOrderManager=_sourceOrderManager;
 @property(readonly, nonatomic) HDSourceManager *sourceManager; // @synthesize sourceManager=_sourceManager;
-@property(readonly, nonatomic) HDSessionAssertionManager *sessionAssertionManager; // @synthesize sessionAssertionManager=_sessionAssertionManager;
+@property(readonly, nonatomic) HDAssertionManager *sessionAssertionManager; // @synthesize sessionAssertionManager=_sessionAssertionManager;
 @property(readonly, nonatomic) HDMetadataManager *metadataManager; // @synthesize metadataManager=_metadataManager;
 @property(readonly, nonatomic) HDDeviceManager *deviceManager; // @synthesize deviceManager=_deviceManager;
 @property(readonly, nonatomic) HDDataProvenanceManager *dataProvenanceManager; // @synthesize dataProvenanceManager=_dataProvenanceManager;
@@ -64,7 +66,7 @@
 - (void)obliterateWithOptions:(unsigned long long)arg1 reason:(id)arg2;
 - (void)obliterateAndTerminateWithOptions:(unsigned long long)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidateAndWait;
-- (void)_queue_createExtensionsIfNeeded;
+- (void)_createExtensionsIfNeeded;
 - (void)daemonReady:(id)arg1;
 @property(readonly, copy, nonatomic) NSURL *directoryURL;
 @property(readonly, copy, nonatomic) NSString *directoryPath;
@@ -78,11 +80,11 @@
 @property(readonly, nonatomic) HDCurrentActivitySummaryHelper *currentActivitySummaryHelper;
 @property(readonly, nonatomic) HDCloudSyncManager *cloudSyncManager;
 @property(readonly, nonatomic) HDAppSubscriptionManager *appSubscriptionManager;
+@property(readonly, nonatomic) HDActivityCacheManager *activityCacheManager;
 @property(readonly, nonatomic) id <HDSyncEngine> syncEngine;
 @property(readonly, nonatomic) HDAuthorizationManager *authorizationManager;
 - (id)healthDeviceManager;
 - (id)healthSourceManager;
-@property(readonly, nonatomic) id <HDHealthDatabase> healthDatabase;
 @property(readonly, nonatomic) HDDatabase *database;
 @property(readonly, nonatomic) __weak id <HDHealthDaemon> healthDaemon;
 - (id)initWithDirectoryPath:(id)arg1 medicalIDDirectoryPath:(id)arg2 daemon:(id)arg3 profileType:(long long)arg4;

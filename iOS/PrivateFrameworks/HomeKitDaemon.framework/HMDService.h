@@ -17,6 +17,7 @@
 @interface HMDService : HMFObject <HMDBulletinIdentifiers, NSSecureCoding, HMFDumpState, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver>
 {
     _Bool _hidden;
+    _Bool _isEmptyConfiguredNameAllowed;
     _Bool _primary;
     HMDApplicationData *_appData;
     NSUUID *_uuid;
@@ -35,6 +36,9 @@
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFMessageDispatcher *_messageDispatcher;
     NSUUID *_cachedAccessoryUUID;
+    id <HMDServiceOwner> _owner;
+    NSString *_expectedConfiguredName;
+    NSString *_lastSeenConfiguredName;
     NSMutableDictionary *_deviceLastRequestPresenceDateMap;
     NSString *_providedName;
 }
@@ -45,10 +49,14 @@
 + (id)generateUUIDWithAccessoryUUID:(id)arg1 serviceID:(id)arg2;
 @property(retain, nonatomic) NSString *providedName; // @synthesize providedName=_providedName;
 @property(retain, nonatomic) NSMutableDictionary *deviceLastRequestPresenceDateMap; // @synthesize deviceLastRequestPresenceDateMap=_deviceLastRequestPresenceDateMap;
+@property(copy, nonatomic) NSString *lastSeenConfiguredName; // @synthesize lastSeenConfiguredName=_lastSeenConfiguredName;
+@property(copy, nonatomic) NSString *expectedConfiguredName; // @synthesize expectedConfiguredName=_expectedConfiguredName;
+@property(nonatomic) __weak id <HMDServiceOwner> owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSUUID *cachedAccessoryUUID; // @synthesize cachedAccessoryUUID=_cachedAccessoryUUID;
 @property(getter=isPrimary) _Bool primary; // @synthesize primary=_primary;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
+@property(nonatomic) _Bool isEmptyConfiguredNameAllowed; // @synthesize isEmptyConfiguredNameAllowed=_isEmptyConfiguredNameAllowed;
 @property(retain, nonatomic) HMDBulletinBoardNotification *bulletinBoardNotification; // @synthesize bulletinBoardNotification=_bulletinBoardNotification;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSArray *characteristics; // @synthesize characteristics=_characteristics;
@@ -63,11 +71,16 @@
 @property(retain, nonatomic) NSNumber *labelIndex; // @synthesize labelIndex=_labelIndex;
 @property(copy, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
 - (void).cxx_destruct;
+- (_Bool)shouldUpdateLastSeenConfiguredName:(id)arg1;
+- (_Bool)_updateLastSeenConfiguredName:(id)arg1;
+- (_Bool)_updateExpectedConfiguredName:(id)arg1;
+- (void)_saveCurrentNameAsExpectedAndLastSeen:(id)arg1;
 - (id)backingStoreObjects:(long long)arg1;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (void)_registerForMessages;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (void)_updateAllowsEmptyName;
 - (_Bool)updateCharacteristics:(id)arg1;
 - (void)appDataRemoved:(id)arg1 message:(id)arg2;
 - (void)appDataUpdated:(id)arg1 message:(id)arg2;
@@ -107,8 +120,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void)_recalculateUUID;
-- (id)initWithAccessory:(id)arg1 instance:(id)arg2 uuid:(id)arg3;
-- (id)initWithTransaction:(id)arg1 accessory:(id)arg2;
+- (id)initWithAccessory:(id)arg1 owner:(id)arg2 instance:(id)arg3 uuid:(id)arg4;
+- (id)initWithTransaction:(id)arg1 accessory:(id)arg2 owner:(id)arg3;
 - (id)init;
 @property(readonly, copy, nonatomic) NSUUID *contextSPIUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *contextID;

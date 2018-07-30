@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TWindowHistory : NSObject <TNodeObserverProtocol>
 {
-    struct TNSRef<NSMutableArray *, void> _historyList;
+    struct TNSRef<NSMutableArray, void> _historyList;
     long long _historyPosition;
     struct shared_ptr<TNodeObserverCocoaBridge> _nodeObserver;
     FI_TBrowserContainerController *_controller;

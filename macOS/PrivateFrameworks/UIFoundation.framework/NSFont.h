@@ -42,6 +42,9 @@
 + (id)findFontLike:(id)arg1 forCharacter:(unsigned int)arg2 inLanguage:(id)arg3;
 + (void)setLocaleListForDefaultFontFallback:(id)arg1;
 + (void)useFont:(id)arg1;
++ (id)availableMembersOfFontFamily:(id)arg1;
++ (id)availableFontFamilies;
++ (id)availableFonts;
 + (double)toolbarLabelFontSizeForToolbarSize:(unsigned long long)arg1;
 + (id)toolbarLabelFontOfSize:(double)arg1;
 + (id)monospacedDigitSystemFontOfSize:(double)arg1 weight:(double)arg2;
@@ -84,7 +87,6 @@
 + (void)_postFontSetChangedNotifications;
 + (void)_updateAntialiasingThreshold;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-- (id)initWithFontRef:(unsigned int)arg1 size:(double)arg2;
 - (BOOL)coversCharacter:(unsigned short)arg1;
 - (BOOL)coversAllCharactersInString:(id)arg1;
 - (unsigned long long)_numberOfGlyphs;
@@ -110,6 +112,7 @@
 - (id)afmDictionary;
 - (BOOL)isBaseFont;
 - (double)widthOfString:(id)arg1;
+- (void)_applyToCGContext:(struct CGContext *)arg1 graphicsContext:(id)arg2;
 - (id)fontWithSize:(double)arg1;
 - (id)fontForAppearance:(id)arg1;
 - (id)preferredFallbackFontForLanguage:(id)arg1;
@@ -151,6 +154,7 @@
 @property(readonly) double italicAngle;
 @property(readonly) double underlineThickness;
 @property(readonly) double underlinePosition;
+- (double)lineHeight;
 @property(readonly) double leading;
 @property(readonly) double descender;
 @property(readonly) double ascender;

@@ -13,25 +13,20 @@
     _Bool _hasCompleteBodyData;
     NSString *_identifier;
     MFMailMessage *_message;
+    CSSearchableItem *_searchableItem;
     long long _indexingType;
     NSData *_bodyData;
 }
 
-+ (id)transactionAttributeKey;
 + (id)itemWithMessage:(id)arg1 bodyData:(id)arg2;
 @property(nonatomic) _Bool hasCompleteBodyData; // @synthesize hasCompleteBodyData=_hasCompleteBodyData;
 @property(retain, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(nonatomic) long long indexingType; // @synthesize indexingType=_indexingType;
+@property(readonly, retain, nonatomic) CSSearchableItem *searchableItem; // @synthesize searchableItem=_searchableItem;
 @property(readonly, retain, nonatomic) MFMailMessage *message; // @synthesize message=_message;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)fetchIndexableAttachments;
-- (_Bool)_shouldAutoDownloadAttachment:(id)arg1;
 - (id)searchableItemWithClientState:(id)arg1;
-- (void)_updateAllAttributesInAttributeSet:(id)arg1 clientState:(id)arg2;
-- (void)_updateFlagsAttributesInAttributeSet:(id)arg1;
-@property(readonly, retain, nonatomic) CSSearchableItem *searchableItem;
-- (_Bool)shouldExcludeFromIndex;
-- (_Bool)_isMessagePartOfExistingThreadWithHeaders:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *domainIdentifier;
 - (long long)compare:(id)arg1;
 - (void)dealloc;

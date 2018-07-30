@@ -20,6 +20,7 @@
 }
 
 + (id)hyperlink;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setType:(int)arg1;
 - (int)type;
@@ -35,7 +36,6 @@
 - (id)dosPath;
 - (void)setPath:(id)arg1;
 - (id)path;
-- (void)dealloc;
 
 @end
 

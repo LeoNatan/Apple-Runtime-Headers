@@ -20,6 +20,7 @@
     CKRecordZone *_messageRecordZone;
     CKRecordZoneID *_deDupeSaltZoneID;
     CKRecordZone *_deDupeSaltRecordZone;
+    CKRecordZoneID *_metricZoneID;
     IMDCKDatabaseManager *_dataBaseManager;
     APSConnection *_pushConnection;
 }
@@ -27,6 +28,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) APSConnection *pushConnection; // @synthesize pushConnection=_pushConnection;
 @property(retain, nonatomic) IMDCKDatabaseManager *dataBaseManager; // @synthesize dataBaseManager=_dataBaseManager;
+@property(readonly, nonatomic) CKRecordZoneID *metricZoneID; // @synthesize metricZoneID=_metricZoneID;
 @property(readonly, nonatomic) CKRecordZone *deDupeSaltRecordZone; // @synthesize deDupeSaltRecordZone=_deDupeSaltRecordZone;
 @property(readonly, nonatomic) CKRecordZoneID *deDupeSaltZoneID; // @synthesize deDupeSaltZoneID=_deDupeSaltZoneID;
 @property(readonly, nonatomic) CKRecordZone *messageRecordZone; // @synthesize messageRecordZone=_messageRecordZone;

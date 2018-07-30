@@ -8,7 +8,7 @@
 
 #import "UIGestureRecognizerDelegate.h"
 
-@class NSArray, NSSet, NSString, PUICDelayedBlock, UIEvent;
+@class CSLSSuspendSystemGestureAssertion, NSArray, NSSet, NSString, PUICDelayedBlock, UIEvent;
 
 @interface ORBTapGestureRecognizer : UIGestureRecognizer <UIGestureRecognizerDelegate>
 {
@@ -21,6 +21,7 @@
     UIEvent *_longPressTouchesBeganEvent;
     NSArray *_longPressGesturesToCancel;
     NSSet *_longPressTouches;
+    CSLSSuspendSystemGestureAssertion *_suspendSystemGestureAssertion;
     _Bool _hasLatched;
     _Bool _acceptLongPress;
     _Bool _shouldCancelOtherGestureRecognizers;
@@ -45,6 +46,8 @@
 - (_Bool)_touchMovedTooFarFromStartPoint:(id)arg1;
 - (id)_gestureRecognizersForTouches:(id)arg1;
 - (void)_cancelOtherGestureRecognizersForTouches:(id)arg1 event:(id)arg2;
+- (void)_releaseSystemGestureAssertionIfNecessary;
+- (void)_takeSystemGestureAssertionIfNecessary;
 - (void)_cleanup;
 - (void)_updateWithProgress:(float)arg1;
 - (void)_updateWithTouches:(id)arg1 event:(id)arg2;

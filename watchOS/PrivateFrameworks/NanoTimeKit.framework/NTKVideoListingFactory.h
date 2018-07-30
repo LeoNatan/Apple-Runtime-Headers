@@ -6,17 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableSet;
+@class CLKDevice, NSArray, NSMutableSet;
 
 @interface NTKVideoListingFactory : NSObject
 {
+    CLKDevice *_device;
     NSArray *_butterflyListings;
     NSArray *_jellyfishListings;
     NSArray *_flowerListings;
     NSMutableSet *_assetListings;
 }
 
-+ (id)sharedInstance;
++ (id)sharedInstanceForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (void)discardAssets;
 - (void)setVideoListingHasAssets:(id)arg1;
@@ -26,7 +27,7 @@
 - (id)_listingsWithTheme:(unsigned int)arg1 notMatchingVariant:(int)arg2;
 - (id)_listingsWithTheme:(unsigned int)arg1 variant:(int)arg2;
 - (id)_listingsWithTheme:(unsigned int)arg1;
-- (id)_initLibrary;
+- (id)_initLibraryForDevice:(id)arg1;
 - (int)behaviorForTheme:(unsigned int)arg1;
 - (id)posterImageWithTheme:(unsigned int)arg1;
 - (id)anyListingWithTheme:(unsigned int)arg1 notMatchingVariant:(int)arg2 matchingTag:(unsigned int)arg3;

@@ -36,6 +36,7 @@
 - (id)reportAProblemFooterAction;
 - (id)shortPlacecardFooterActions;
 - (id)createFooterActions;
+- (void)addLayoutInfoIfNeeded:(id)arg1;
 - (void)_enableStoreAction;
 - (id)createRowActions;
 - (id)favoriteItemForFooter:(BOOL)arg1;

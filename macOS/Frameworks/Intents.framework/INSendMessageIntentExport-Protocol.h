@@ -10,6 +10,7 @@
 @class INPerson, INSpeakableString, NSArray, NSString;
 
 @protocol INSendMessageIntentExport <NSObject, JSExport>
+@property(copy) NSArray *attachments;
 @property(copy) INPerson *sender;
 @property(copy) NSString *serviceName;
 @property(copy) NSString *conversationIdentifier;

@@ -20,6 +20,7 @@
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 extraStorage:(id)arg6;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
++ (id)URLForDirectionsFromHereTo:(id)arg1 label:(id)arg2 muid:(unsigned long long)arg3 provider:(int)arg4 transport:(unsigned long long)arg5;
 + (id)URLForDirectionsFromHereTo:(id)arg1 transport:(unsigned long long)arg2;
 + (id)URLForDirectionsFromHereTo:(id)arg1;
 + (id)URLForDirectionsFrom:(id)arg1 to:(id)arg2 transport:(unsigned long long)arg3;
@@ -45,6 +46,8 @@
 - (void)setBusinessCoordinate:(struct CLLocationCoordinate2D)arg1;
 - (id)initForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 - (id)initForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
+- (void)setDestinationLabel:(id)arg1;
+- (void)setDestinationMUID:(unsigned long long)arg1 provider:(int)arg2;
 - (void)setTransportType:(unsigned long long)arg1;
 - (void)setStartAddress:(id)arg1;
 - (id)initForDirectionsTo:(id)arg1;

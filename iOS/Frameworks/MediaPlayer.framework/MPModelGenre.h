@@ -17,6 +17,7 @@
 + (id)__name_KEY;
 + (id)kindWithAlbumKind:(id)arg1;
 - (id)artworkCatalog;
+- (id)humanDescription;
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;

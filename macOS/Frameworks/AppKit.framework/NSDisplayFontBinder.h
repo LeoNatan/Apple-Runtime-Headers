@@ -8,6 +8,7 @@
 
 @class NSFont;
 
+__attribute__((visibility("hidden")))
 @interface NSDisplayFontBinder : NSBinder
 {
     NSFont *_originalFont;

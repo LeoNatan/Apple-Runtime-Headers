@@ -6,6 +6,7 @@
 
 #import "NSFormatter.h"
 
+__attribute__((visibility("hidden")))
 @interface NSLineHeightFormatter : NSFormatter
 {
 }

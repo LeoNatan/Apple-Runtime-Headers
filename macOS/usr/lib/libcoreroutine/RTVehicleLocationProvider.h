@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 #import "RTPurgable.h"
 
 @class NSManagedObjectContext, NSMutableArray, NSObject<OS_dispatch_source>, NSString, RTDefaultsManager, RTFMCScoreBoard, RTKeychainManager, RTLearnedLocationManager, RTLocationManager, RTManagedConfiguration, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPersistenceManager, RTVehicleEvent, RTVehicleLocationHistoryController;
 
-@interface RTVehicleLocationProvider : RTNotifier <RTPurgable>
+@interface RTVehicleLocationProvider : RTService <RTPurgable>
 {
     BOOL _monitorVehicleLocation;
     BOOL _monitorVehicleConnection;
@@ -67,6 +67,7 @@
 @property(retain, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *finalizeLocationEstimateTimer; // @synthesize finalizeLocationEstimateTimer=_finalizeLocationEstimateTimer;
 - (void).cxx_destruct;
+- (void)fetchFMCEnabledWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchAutomaticVehicleEventDetectionSupportedWithHandler:(CDUnknownBlockType)arg1;
 - (void)onLearnedLocationManagerNotification:(id)arg1;
 - (BOOL)_sameVehicleWithDeviceId:(id)arg1 otherDeviceId:(id)arg2;
@@ -88,7 +89,7 @@
 - (void)_fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (void)engageInVehicleEventWithIdentifier:(id)arg1;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 location:(id)arg2;
-- (void)updateVehicleEventWithIdentifier:(id)arg1 geoMapItem:(id)arg2;
+- (void)updateVehicleEventWithIdentifier:(id)arg1 mapItem:(id)arg2;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 photo:(id)arg2;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 notes:(id)arg2;
 - (void)clearAllVehicleEvents;
@@ -114,8 +115,9 @@
 - (void)_onLocation:(id)arg1;
 - (void)onLeechedLocation:(id)arg1;
 - (void)onLocationNotification:(id)arg1;
-- (void)shutdown;
+- (void)_shutdown;
 - (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_setup;
 - (id)initWithLocationManager:(id)arg1 motionActivityManager:(id)arg2 mapsSupportManager:(id)arg3 metricManager:(id)arg4 managedObjectContext:(id)arg5 persistenceManager:(id)arg6 vehicleLocationHistoryController:(id)arg7 learnedLocationManager:(id)arg8 managedConfiguration:(id)arg9 defaultsManager:(id)arg10 keychainManager:(id)arg11;
 - (id)init;
 - (void)_submitFMCVehicleConnectionEventInstanceWithConnectionStatus:(int)arg1 value:(double)arg2;

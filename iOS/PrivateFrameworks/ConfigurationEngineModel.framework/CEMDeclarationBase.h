@@ -6,7 +6,7 @@
 
 #import <ConfigurationEngineModel/CEMPayloadBase.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class CEMAnyPayload, NSNumber, NSString;
 
 @interface CEMDeclarationBase : CEMPayloadBase
 {
@@ -16,22 +16,24 @@
     NSString *_declarationServerHash;
     NSNumber *_declarationRequiresNetworkTether;
     NSString *_declarationActivationScope;
-    NSDictionary *_declarationPayload;
+    CEMAnyPayload *_declarationPayload;
 }
 
++ (id)declarationForData:(id)arg1 error:(id *)arg2;
 + (id)declarationForPayload:(id)arg1 error:(id *)arg2;
 + (id)declarationClass;
-@property(readonly, nonatomic) NSDictionary *declarationPayload; // @synthesize declarationPayload=_declarationPayload;
-@property(readonly, nonatomic) NSString *declarationActivationScope; // @synthesize declarationActivationScope=_declarationActivationScope;
-@property(readonly, nonatomic) NSNumber *declarationRequiresNetworkTether; // @synthesize declarationRequiresNetworkTether=_declarationRequiresNetworkTether;
-@property(readonly, nonatomic) NSString *declarationServerHash; // @synthesize declarationServerHash=_declarationServerHash;
-@property(readonly, nonatomic) NSString *declarationDescription; // @synthesize declarationDescription=_declarationDescription;
-@property(readonly, nonatomic) NSString *declarationIdentifier; // @synthesize declarationIdentifier=_declarationIdentifier;
-@property(readonly, nonatomic) NSString *declarationType; // @synthesize declarationType=_declarationType;
+@property(copy, nonatomic) CEMAnyPayload *declarationPayload; // @synthesize declarationPayload=_declarationPayload;
+@property(copy, nonatomic) NSString *declarationActivationScope; // @synthesize declarationActivationScope=_declarationActivationScope;
+@property(copy, nonatomic) NSNumber *declarationRequiresNetworkTether; // @synthesize declarationRequiresNetworkTether=_declarationRequiresNetworkTether;
+@property(copy, nonatomic) NSString *declarationServerHash; // @synthesize declarationServerHash=_declarationServerHash;
+@property(copy, nonatomic) NSString *declarationDescription; // @synthesize declarationDescription=_declarationDescription;
+@property(copy, nonatomic) NSString *declarationIdentifier; // @synthesize declarationIdentifier=_declarationIdentifier;
+@property(copy, nonatomic) NSString *declarationType; // @synthesize declarationType=_declarationType;
 - (void).cxx_destruct;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)updateServerHash;
+- (id)serializeAsDataWithError:(id *)arg1;
 - (id)serialize;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
 - (_Bool)loadDeclarationFromDictionary:(id)arg1 error:(id *)arg2;
 
 @end

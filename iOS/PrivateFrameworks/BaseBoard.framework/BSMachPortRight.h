@@ -27,6 +27,7 @@
 + (id)_rightDescription;
 + (void)_serialize:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSString *trace; // @synthesize trace=_trace;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;

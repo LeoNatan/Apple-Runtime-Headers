@@ -15,12 +15,30 @@
 {
     _Bool _didEnterTwoshot;
     _Bool _recordingDidStop;
+    _Bool _vad2SaveSamplesSeenInReset;
     id <CSEndpointAnalyzerDelegate> _endpointerDelegate;
     id <CSEndpointAnalyzerImpl> _hybridEndpointer;
     id <CSEndpointAnalyzerImpl> _vad2Endpointer;
     id <CSEndpointAnalyzerImpl> _activeEndpointer;
+    long long _vad2EndpointStyle;
+    long long _vad2EndpointtMode;
+    double _vad2StartWaitTime;
+    double _vad2EndWaitTime;
+    double _vad2InterspeechWaitTime;
+    double _vad2Delay;
+    double _vad2AutomaticEndpointingSuspensionEndTime;
+    double _vad2MinimumDurationForEndpointer;
 }
 
+@property(nonatomic) _Bool vad2SaveSamplesSeenInReset; // @synthesize vad2SaveSamplesSeenInReset=_vad2SaveSamplesSeenInReset;
+@property(nonatomic) double vad2MinimumDurationForEndpointer; // @synthesize vad2MinimumDurationForEndpointer=_vad2MinimumDurationForEndpointer;
+@property(nonatomic) double vad2AutomaticEndpointingSuspensionEndTime; // @synthesize vad2AutomaticEndpointingSuspensionEndTime=_vad2AutomaticEndpointingSuspensionEndTime;
+@property(nonatomic) double vad2Delay; // @synthesize vad2Delay=_vad2Delay;
+@property(nonatomic) double vad2InterspeechWaitTime; // @synthesize vad2InterspeechWaitTime=_vad2InterspeechWaitTime;
+@property(nonatomic) double vad2EndWaitTime; // @synthesize vad2EndWaitTime=_vad2EndWaitTime;
+@property(nonatomic) double vad2StartWaitTime; // @synthesize vad2StartWaitTime=_vad2StartWaitTime;
+@property(nonatomic) long long vad2EndpointtMode; // @synthesize vad2EndpointtMode=_vad2EndpointtMode;
+@property(nonatomic) long long vad2EndpointStyle; // @synthesize vad2EndpointStyle=_vad2EndpointStyle;
 @property(nonatomic) _Bool recordingDidStop; // @synthesize recordingDidStop=_recordingDidStop;
 @property(nonatomic) _Bool didEnterTwoshot; // @synthesize didEnterTwoshot=_didEnterTwoshot;
 @property(nonatomic) __weak id <CSEndpointAnalyzerImpl> activeEndpointer; // @synthesize activeEndpointer=_activeEndpointer;
@@ -56,6 +74,7 @@
 - (void)setActiveChannel:(unsigned long long)arg1;
 - (void)resetForVoiceTriggerTwoShotWithSampleRate:(unsigned long long)arg1;
 - (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)_setupVAD2Endpointer;
 - (id)init;
 
 // Remaining properties

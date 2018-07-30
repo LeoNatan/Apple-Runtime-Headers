@@ -12,11 +12,13 @@
 #import "UIScrollViewDelegate.h"
 #import "_MKInfoCardChildViewControllerAnalyticsDelegate.h"
 
-@class MKMapItem, MKPhotoSmallAttributionView, MKPlaceAttributionCell, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView, _MKPlaceViewController;
+@class MKMapItem, MKPhotoSmallAttributionView, MKPlaceAttributionCell, MKPlacePhotosView, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView, _MKPlaceViewController;
 
 __attribute__((visibility("hidden")))
 @interface MKPlacePhotosViewController : UIViewController <MKPlaceAttributionCellDelegate, MKPlacePhotosViewDelegate, UIScrollViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
 {
+    MKPlacePhotosView *_currentPhotoViewer;
+    UIView *_bottomHairline;
     NSArray *_photoViews;
     UIScrollView *_photosContainerScrollView;
     UIView *_photosContainer;
@@ -32,22 +34,24 @@ __attribute__((visibility("hidden")))
     unsigned long long _photosCount;
     MKMapItem *_mapItem;
     NSLayoutConstraint *_heightConstraint;
+    NSLayoutConstraint *_bottomConstraint;
     NSArray *_photos;
     unsigned long long _mode;
     unsigned long long _originalMode;
     MKPlaceAttributionCell *_attributionCell;
     UIScrollView *_parentScrollView;
+    _Bool _showsBottomHairline;
     _MKPlaceViewController *_owner;
     id <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> _photosControllerDelegate;
 }
 
+@property(nonatomic) _Bool showsBottomHairline; // @synthesize showsBottomHairline=_showsBottomHairline;
 @property(nonatomic) __weak id <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> photosControllerDelegate; // @synthesize photosControllerDelegate=_photosControllerDelegate;
 @property(nonatomic) __weak _MKPlaceViewController *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
 - (void)viewLayoutMarginsDidChange;
 - (id)infoCardChildPossibleActions;
-- (id)placePhotoViewerGetDelegatesMapItem;
 - (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned long long)arg3;
 - (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned long long)arg1 photo:(id)arg2;
 - (id)placePhotoViewerViewForPhotoAtIndex:(unsigned long long)arg1;
@@ -69,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)openURL;
 - (id)attributionString;
 - (void)addAttributionCell;
+- (void)updateBottomHairlineVisibility;
 - (void)dealloc;
 - (void)_willResignActive:(id)arg1;
 - (void)_didBecomeActive:(id)arg1;

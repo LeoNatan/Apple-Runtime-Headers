@@ -15,6 +15,7 @@
 @interface SXImageComponentView : SXMediaComponentView <UIGestureRecognizerDelegate, SXImageViewDelegate, SXDragManagerDataSource>
 {
     id <SXImageViewFactory> _imageViewFactory;
+    id <SXMediaSharingPolicyProvider> _mediaSharingPolicyProvider;
     SXImageView *_imageView;
     SXAnimatedImageController *_animatedImageController;
     SXDragManager *_dragManager;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) SXDragManager *dragManager; // @synthesize dragManager=_dragManager;
 @property(retain, nonatomic) SXAnimatedImageController *animatedImageController; // @synthesize animatedImageController=_animatedImageController;
 @property(readonly, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
+@property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 @property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -45,7 +47,7 @@
 - (struct CGRect)imageFrame;
 - (void)layoutImageView;
 - (void)loadComponent:(id)arg1;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 mediaSharingPolicyProvider:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

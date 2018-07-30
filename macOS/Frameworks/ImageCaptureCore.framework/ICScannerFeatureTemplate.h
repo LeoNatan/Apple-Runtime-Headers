@@ -15,7 +15,6 @@
 
 - (id)description;
 @property(readonly) NSArray *targets;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1 andFunctionalUnit:(id)arg2;
 

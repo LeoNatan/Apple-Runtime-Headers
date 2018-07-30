@@ -15,12 +15,15 @@ __attribute__((visibility("hidden")))
     id _windowStateNotificationToken;
     NSTimer *_lockingTimer;
     id _keybagLockStatusChangedObservationToken;
+    BOOL _lockPolicyEnforced;
 }
 
 - (void).cxx_destruct;
 - (void)_secureWindowDidBecomeMainNotification:(id)arg1;
 - (void)_secureWindowDidResignMainNotification:(id)arg1;
 @property(readonly, nonatomic) double windowFocusLostLockingGracePeriod;
+- (void)cancelSecureWindowLockingEvent;
+- (void)scheduleSecureWindowLockingEvent;
 - (void)stopEnforcingLockPolicy;
 - (void)startEnforcingLockPolicy;
 - (id)initWithSecureWindow:(id)arg1;

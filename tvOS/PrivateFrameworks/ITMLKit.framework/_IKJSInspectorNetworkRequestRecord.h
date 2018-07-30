@@ -4,45 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <ITMLKit/_IKJSInspectorSynchronousNetworkRequestRecord.h>
 
-#import "IKNetworkRequestRecord.h"
-
-@class NSData, NSString, NSURLRequest, NSURLResponse, _IKJSInspectorNetworkLoader;
-
-@interface _IKJSInspectorNetworkRequestRecord : NSObject <IKNetworkRequestRecord>
+@interface _IKJSInspectorNetworkRequestRecord : _IKJSInspectorSynchronousNetworkRequestRecord
 {
-    NSString *_identifier;
-    _IKJSInspectorNetworkLoader *_loader;
-    long long _resourceType;
-    long long _initiatorType;
-    NSURLRequest *_URLRequest;
-    NSURLResponse *_URLResponse;
-    NSData *_responseBodyData;
 }
 
-+ (long long)_protocolResourceTypeForType:(long long)arg1;
-@property(copy, nonatomic) NSData *responseBodyData; // @synthesize responseBodyData=_responseBodyData;
-@property(copy, nonatomic, getter=urlResponse) NSURLResponse *URLResponse; // @synthesize URLResponse=_URLResponse;
-@property(copy, nonatomic, getter=urlRequest) NSURLRequest *URLRequest; // @synthesize URLRequest=_URLRequest;
-@property(readonly, nonatomic) long long initiatorType; // @synthesize initiatorType=_initiatorType;
-@property(readonly, nonatomic) long long resourceType; // @synthesize resourceType=_resourceType;
-@property(nonatomic) __weak _IKJSInspectorNetworkLoader *loader; // @synthesize loader=_loader;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
-- (void)didFailWithError:(id)arg1;
-- (void)didCompleteLoadingFromCache:(long long)arg1 withResponseBody:(id)arg2 mimeType:(id)arg3;
-- (void)didCompleteLoadingWithResponseBody:(id)arg1;
-- (void)didReceiveData:(id)arg1;
-- (void)didReceiveResponse:(id)arg1 timingData:(id)arg2;
-- (void)willSendRequest:(id)arg1;
-@property(readonly, copy) NSString *description;
-- (id)initWithIdentifier:(id)arg1 loader:(id)arg2 resourceType:(long long)arg3 initiatorType:(long long)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)_dispatchEvent:(long long)arg1 block:(CDUnknownBlockType)arg2;
 
 @end
 

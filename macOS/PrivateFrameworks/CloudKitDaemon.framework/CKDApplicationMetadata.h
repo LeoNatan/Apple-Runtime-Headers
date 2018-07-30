@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     BOOL _isOOPUI;
     BOOL _allowsParticipantPII;
     BOOL _displaysSystemAcceptPrompt;
+    BOOL _canUseNonLegacyShareURL;
     NSString *_apsEnvironmentString;
     long long _isApplication;
     NSString *_entitlementSpecifiedPCSServiceName;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
     NSString *_clientPrefix;
 }
 
+@property(nonatomic) BOOL canUseNonLegacyShareURL; // @synthesize canUseNonLegacyShareURL=_canUseNonLegacyShareURL;
 @property(retain, nonatomic) NSString *clientPrefix; // @synthesize clientPrefix=_clientPrefix;
 @property(retain, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(retain, nonatomic) NSString *entitlementSpecifiedPCSServiceName; // @synthesize entitlementSpecifiedPCSServiceName=_entitlementSpecifiedPCSServiceName;

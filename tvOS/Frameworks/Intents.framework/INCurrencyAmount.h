@@ -31,6 +31,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)initWithAmount:(id)arg1 currencyCode:(id)arg2;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

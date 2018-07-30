@@ -17,6 +17,8 @@
 
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+- (void)logCommitedEditingResults:(id)arg1;
+- (void)logReceivedRequestToSaveContact:(id)arg1;
 - (void)logDidSaveContact:(id)arg1;
 - (void)logWillSaveContact:(id)arg1;
 - (void)logDidSetPropertyKeysToDisplay:(id)arg1;

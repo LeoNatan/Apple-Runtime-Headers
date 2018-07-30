@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTableViewItem : NSObject <NSCopying>
 {
-    struct TNSRef<NSMutableDictionary *, void> _data;
+    struct TNSRef<NSMutableDictionary, void> _data;
 }
 
 + (id)keyPathForKey:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class NSArray, NSObject<OS_os_log>;
 
+__attribute__((visibility("hidden")))
 @interface CBDisplayUpdateHandler : NSObject
 {
     NSObject<OS_os_log> *_logHandle;

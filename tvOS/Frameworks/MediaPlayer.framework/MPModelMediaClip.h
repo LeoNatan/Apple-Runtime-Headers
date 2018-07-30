@@ -15,7 +15,9 @@
 + (id)__title_KEY;
 + (id)__staticAssets_KEY;
 + (id)__previewArtworkCatalogBlock_KEY;
++ (id)kind;
 - (id)previewArtworkCatalog;
+- (id)humanDescription;
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType previewArtworkCatalogBlock; // @dynamic previewArtworkCatalogBlock;

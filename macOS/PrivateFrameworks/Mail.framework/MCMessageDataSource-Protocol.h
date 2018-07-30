@@ -13,7 +13,6 @@
 @property(readonly, nonatomic) id <MCMailbox> mailbox;
 @property(readonly, nonatomic) id <MCMailAccount> account;
 @property(readonly, nonatomic) BOOL canCompact;
-@property(readonly, nonatomic) BOOL supportsSnippets;
 @property(readonly) BOOL isReadOnly;
 - (NSData *)bodyDataForMessage:(MCMessage *)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2 fetchIfNotAvailable:(BOOL)arg3 allowPartial:(BOOL)arg4;
 - (NSData *)bodyDataForMessage:(MCMessage *)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
@@ -27,7 +26,6 @@
 - (void)doCompact;
 - (void)deleteMessages:(NSArray *)arg1 moveToTrash:(BOOL)arg2;
 - (void)saveSnippetsForMessages:(NSDictionary *)arg1;
-- (NSDictionary *)snippetsForMessages:(NSArray *)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(MCMessage *)arg4;
 - (NSURL *)attachmentsDirectoryForMessage:(MCMessage *)arg1 partNumber:(NSString *)arg2;
 - (NSString *)attachmentsDirectoryForMessage:(MCMessage *)arg1;

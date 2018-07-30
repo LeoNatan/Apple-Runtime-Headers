@@ -29,6 +29,7 @@
 - (_Bool)shouldGroupAccessibilityChildren;
 - (id)accessibilityUserDefinedActivationPoint;
 - (struct CGPoint)accessibilityActivationPoint;
+- (_Bool)accessibilityActivate;
 - (id)accessibilityUserDefinedIdentifier;
 - (id)accessibilityIdentifier;
 - (id)accessibilityUserDefinedLanguage;

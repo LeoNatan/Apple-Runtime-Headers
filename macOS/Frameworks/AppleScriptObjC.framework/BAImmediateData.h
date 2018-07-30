@@ -8,6 +8,7 @@
 
 #import "BADescriptorTranslation.h"
 
+__attribute__((visibility("hidden")))
 @interface BAImmediateData : NSObject <BADescriptorTranslation>
 {
     id _obj;

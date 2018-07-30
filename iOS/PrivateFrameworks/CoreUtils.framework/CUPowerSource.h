@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface CUPowerSource : NSObject <NSSecureCoding>
 {
@@ -26,6 +26,7 @@
     double _chargeLevel;
     long long _familyCode;
     NSString *_groupID;
+    NSArray *_LEDs;
     double _maxCapacity;
     NSString *_name;
     NSString *_partID;
@@ -76,6 +77,7 @@
 @property(copy, nonatomic) NSString *partID; // @synthesize partID=_partID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) double maxCapacity; // @synthesize maxCapacity=_maxCapacity;
+@property(copy, nonatomic) NSArray *LEDs; // @synthesize LEDs=_LEDs;
 @property(copy, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(nonatomic) long long familyCode; // @synthesize familyCode=_familyCode;
 @property(nonatomic) unsigned int expectedComponents; // @synthesize expectedComponents=_expectedComponents;
@@ -86,6 +88,7 @@
 @property(copy, nonatomic) NSString *accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
 - (void).cxx_destruct;
 - (unsigned int)updateWithPowerSourceDescription:(id)arg1;
+- (void)updateWithPowerSource:(id)arg1;
 - (unsigned int)updateWithPowerAdapterDetails:(id)arg1;
 - (_Bool)isAggregateComponent;
 - (void)handleSubComponentsUpdatedWithBaseSource:(id)arg1;
@@ -99,6 +102,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (void)_updateWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

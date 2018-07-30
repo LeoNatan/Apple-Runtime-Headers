@@ -7,9 +7,10 @@
 #import "JSExport.h"
 #import "NSObject.h"
 
-@class NSNumber;
+@class INSpeakableString, NSNumber;
 
 @protocol INSetSeatSettingsInCarIntentExport <NSObject, JSExport>
+@property(copy, nonatomic) INSpeakableString *carName;
 @property(nonatomic) long long relativeLevelSetting;
 @property(copy, nonatomic) NSNumber *level;
 @property(nonatomic) long long seat;

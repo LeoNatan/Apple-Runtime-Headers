@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#import "NSCopying.h"
 #import "NSObject.h"
 
 @class MPSCNNConvolutionDescriptor, MPSCNNConvolutionGradientState, MPSCNNConvolutionWeightsAndBiasesState, NSString;
 
-@protocol MPSCNNConvolutionDataSource <NSObject>
+@protocol MPSCNNConvolutionDataSource <NSCopying, NSObject>
 - (NSString *)label;
 - (void)purge;
 - (BOOL)load;
@@ -18,8 +19,10 @@
 - (unsigned int)dataType;
 
 @optional
+- (id)copyWithZone:(struct _NSZone *)arg1 device:(id <MTLDevice>)arg2;
 - (BOOL)updateWithGradientState:(MPSCNNConvolutionGradientState *)arg1 sourceState:(MPSCNNConvolutionWeightsAndBiasesState *)arg2;
 - (MPSCNNConvolutionWeightsAndBiasesState *)updateWithCommandBuffer:(id <MTLCommandBuffer>)arg1 gradientState:(MPSCNNConvolutionGradientState *)arg2 sourceState:(MPSCNNConvolutionWeightsAndBiasesState *)arg3;
+- (unsigned int)weightsQuantizationType;
 - (float *)lookupTableForUInt8Kernel;
 -     // Error parsing type: ^16@0:8, name: rangesForUInt8Kernel
 @end

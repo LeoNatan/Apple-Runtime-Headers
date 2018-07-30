@@ -21,7 +21,7 @@
     NSView *_positioningView;
     NSViewController *_contentViewController;
     NSWindow *_positioningWindow;
-    long long _appearance;
+    NSAppearance *_appearance;
     long long _behavior;
     id _popoverPrivateData;
     unsigned long long _preferredEdge;
@@ -37,14 +37,16 @@
         unsigned int toolbarHidesAnchor:1;
         unsigned int closing:1;
         unsigned int registeredForGeometryInWindowDidChange:1;
+        unsigned int registeredForEffectiveAppearanceDidChange:1;
         unsigned int keepTopStable:1;
         unsigned int implicitlyDetached:1;
         unsigned int hidesDetachedWindowOnDeactivate:1;
         unsigned int requiresCorrectContentAppearance:1;
-        unsigned int reserved:20;
+        unsigned int reserved:19;
     } _flags;
 }
 
+@property(retain) NSWindow *positioningWindow; // @synthesize positioningWindow=_positioningWindow;
 @property(retain) NSView *positioningView; // @synthesize positioningView=_positioningView;
 @property __weak id accessibilityParent; // @dynamic accessibilityParent;
 @property struct CGRect accessibilityFrame; // @dynamic accessibilityFrame;
@@ -60,7 +62,6 @@
 - (void)_finalizeImplicitWindowDetach;
 @property(readonly, getter=isDetached) BOOL detached;
 - (void)detach;
-- (void)drawBackgroundInRect:(struct CGRect)arg1 ofView:(id)arg2 anchorEdge:(unsigned long long)arg3 anchorPoint:(struct CGPoint)arg4;
 - (struct NSEdgeInsets)contentInset;
 - (struct CGSize)anchorSize;
 - (void)popoverDidClose:(id)arg1;
@@ -82,7 +83,6 @@
 - (long long)_closeReason;
 - (void)_setCloseReason:(long long)arg1;
 - (long long)_popoverWindowLevel;
-- (long long)_popoverWindowSubLevel;
 - (void)_updatePopoverWindowLevels;
 - (void)_popoverDidEnterFullscreen:(id)arg1;
 - (void)_popoverDidExitFullscreen:(id)arg1;
@@ -90,9 +90,12 @@
 - (void)_completeShow;
 - (void)_prepareToShowRelativeToRect:(struct CGRect)arg1 inView:(id)arg2 preferredEdge:(unsigned long long)arg3;
 - (void)showRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3;
+@property(readonly, copy) NSString *description;
 - (BOOL)_validatePopoverWindowFirstResponder;
 - (BOOL)_validatePopoverFirstResponder:(id)arg1;
 - (void)_repositionRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_setListenToEffectiveAppearanceDidChange:(BOOL)arg1;
 - (void)positioningViewGeometryInWindowDidChange:(id)arg1;
 - (void)_setListenToViewGeometryInWindowDidChange:(BOOL)arg1;
 - (unsigned long long)_externalRectEdgeToInternalAnchorEdge:(unsigned long long)arg1 ofView:(id)arg2;
@@ -124,7 +127,7 @@
 - (id)_popoverFrame;
 - (void)_setPopoverWindow:(id)arg1;
 - (id)_popoverWindow;
-- (BOOL)_shouldUseAquaAppearanceForContentView:(id)arg1;
+- (BOOL)_shouldUseNonVibrantAppearanceForContentView:(id)arg1;
 - (BOOL)_requiresCorrectContentAppearance;
 - (void)_setRequiresCorrectContentAppearance:(BOOL)arg1;
 - (void)_setLegacyAppearance:(long long)arg1;
@@ -154,6 +157,7 @@
 - (void)_beginPredeepAnimationRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3;
 - (void)_beginPredeepAnimationAgainstPoint:(struct CGPoint)arg1 inView:(id)arg2;
 - (SEL)_reactiveAction;
+- (struct CGRect)_currentFrameOnScreenWithContentSize:(struct CGSize)arg1 outAnchorEdge:(unsigned long long *)arg2;
 - (void)_closeForToolbarPresentingOnWindow:(id)arg1;
 - (void)_closeForSheetPresentingOnWindow:(id)arg1;
 - (void)_closeForKeyDownEvent:(id)arg1;
@@ -294,7 +298,6 @@
 @property(copy) NSArray *accessibilityWindows; // @dynamic accessibilityWindows;
 @property(retain) id accessibilityZoomButton; // @dynamic accessibilityZoomButton;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

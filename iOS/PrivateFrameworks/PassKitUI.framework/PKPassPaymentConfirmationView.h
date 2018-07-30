@@ -53,7 +53,7 @@
 - (void)layoutSubviews;
 - (void)layoutIfNeededAnimated:(_Bool)arg1;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 pass:(id)arg2 context:(id)arg3;
+- (id)initWithPass:(id)arg1 context:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

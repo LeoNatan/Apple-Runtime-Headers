@@ -13,7 +13,6 @@
 @interface PARSearchRequest : PARRequest <NSSecureCoding>
 {
     NSString *_queryString;
-    unsigned long long _bingWebResultsType;
     NSDictionary *_topics;
     NSString *_l2version;
     NSString *_l3version;
@@ -28,8 +27,7 @@
 @property(copy, nonatomic) NSArray *localContextualSuggestions; // @synthesize localContextualSuggestions=_localContextualSuggestions;
 @property(copy, nonatomic) NSString *l3version; // @synthesize l3version=_l3version;
 @property(copy, nonatomic) NSString *l2version; // @synthesize l2version=_l2version;
-@property(retain, nonatomic) NSDictionary *topics; // @synthesize topics=_topics;
-@property(nonatomic) unsigned long long bingWebResultsType; // @synthesize bingWebResultsType=_bingWebResultsType;
+@property(copy, nonatomic) NSDictionary *topics; // @synthesize topics=_topics;
 @property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

@@ -14,6 +14,9 @@
     _Bool _forDisplay;
 }
 
++ (id)displayableDictionaryForDictionary:(id)arg1;
++ (id)_displayableObjectForObject:(id)arg1;
++ (id)_displayableArrayForArray:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1 ofClass:(Class)arg2;
 + (id)fullDescriptionForObject:(id)arg1;
 + (id)displayablePropertyListWithRootObject:(id)arg1;
@@ -55,8 +58,6 @@
 - (void)encodeBool:(_Bool)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (struct _NSZone *)objectZone;
-- (void)setObjectZone:(struct _NSZone *)arg1;
 - (id)decodePropertyList;
 - (void)encodePropertyList:(id)arg1;
 - (void *)decodeBytesWithReturnedLength:(unsigned long long *)arg1;

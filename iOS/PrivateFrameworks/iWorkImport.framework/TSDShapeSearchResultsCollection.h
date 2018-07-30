@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)resetSearchResults;
 - (void)setSearchTerm:(id)arg1 forceUpdate:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setSearchTerm:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithBasicShapeLibrary:(id)arg1 userDefinedShapeLibrary:(id)arg2 searchTerm:(id)arg3;
 - (id)initWithShapeLibrary:(id)arg1 basicShapeLibrary:(id)arg2 userDefinedShapeLibrary:(id)arg3 searchTerm:(id)arg4;
 
 // Remaining properties

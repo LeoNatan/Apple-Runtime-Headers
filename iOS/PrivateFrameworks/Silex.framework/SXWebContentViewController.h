@@ -21,12 +21,14 @@
     id <SXWebContentDocumentStateReporting> _documentStateReporter;
     id <SXWebContentTimeoutManager> _timeoutManager;
     id <SXWebContentProcessTerminationManager> _terminationManager;
+    id <SXWebContentContentRuleManager> _contentRuleManager;
     id <SXReachabilityProvider> _reachabilityProvider;
     id <SXWebContentLogger> _logger;
 }
 
 @property(readonly, nonatomic) id <SXWebContentLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
+@property(readonly, nonatomic) id <SXWebContentContentRuleManager> contentRuleManager; // @synthesize contentRuleManager=_contentRuleManager;
 @property(readonly, nonatomic) id <SXWebContentProcessTerminationManager> terminationManager; // @synthesize terminationManager=_terminationManager;
 @property(readonly, nonatomic) id <SXWebContentTimeoutManager> timeoutManager; // @synthesize timeoutManager=_timeoutManager;
 @property(readonly, nonatomic) id <SXWebContentDocumentStateReporting> documentStateReporter; // @synthesize documentStateReporter=_documentStateReporter;
@@ -43,10 +45,11 @@
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didStartProvisionalNavigation:(id)arg2;
 - (void)webViewWebContentProcessDidTerminate:(id)arg1;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadURL:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (id)initWithWebView:(id)arg1 scriptsManager:(id)arg2 messageHandlerManager:(id)arg3 navigationManager:(id)arg4 errorReporter:(id)arg5 documentStateReporter:(id)arg6 timeoutManager:(id)arg7 terminationManager:(id)arg8 reachabilityProvider:(id)arg9 logger:(id)arg10;
+- (id)initWithWebView:(id)arg1 scriptsManager:(id)arg2 messageHandlerManager:(id)arg3 navigationManager:(id)arg4 errorReporter:(id)arg5 documentStateReporter:(id)arg6 timeoutManager:(id)arg7 terminationManager:(id)arg8 contentRuleManager:(id)arg9 reachabilityProvider:(id)arg10 logger:(id)arg11;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

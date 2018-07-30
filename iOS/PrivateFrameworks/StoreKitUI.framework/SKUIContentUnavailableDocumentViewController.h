@@ -28,7 +28,6 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)documentDidUpdate:(id)arg1;
 - (void)dealloc;

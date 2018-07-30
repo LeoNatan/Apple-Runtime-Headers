@@ -28,6 +28,7 @@
     NSString *_providerIdentifier;
     _Bool _isRecursiveFolderEnumeration;
     _Bool _started;
+    _Bool _restartAfterForeground;
     _Bool _shouldResort;
     _Bool _regathering;
     _Bool _enumeratingExtensionResults;
@@ -91,6 +92,8 @@
 - (void)_didEncounterError:(id)arg1 forObservationID:(unsigned long long)arg2;
 - (void)_didEncounterError:(id)arg1;
 - (_Bool)isRegatheringAfterSignal;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (_Bool)__isObservingID:(unsigned long long)arg1;
 - (_Bool)_isObservingID:(unsigned long long)arg1;
 - (id)_itemsMutableCopy;
@@ -110,6 +113,7 @@
 - (void)_updateItems;
 - (void)_updateItemsWithUpdatesCount:(unsigned long long)arg1 section:(unsigned long long)arg2;
 - (void)_gatherInitialItems;
+- (id)_initialPageFromSortDescriptors:(id)arg1;
 - (void)_gatherMoreItemsAfterPage:(id)arg1 section:(unsigned long long)arg2;
 @property(readonly, copy, nonatomic) NSString *providerIdentifier;
 - (void)startObserving;

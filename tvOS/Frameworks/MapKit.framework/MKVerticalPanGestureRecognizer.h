@@ -6,7 +6,6 @@
 
 #import "UIPanGestureRecognizer.h"
 
-__attribute__((visibility("hidden")))
 @interface MKVerticalPanGestureRecognizer : UIPanGestureRecognizer
 {
 }

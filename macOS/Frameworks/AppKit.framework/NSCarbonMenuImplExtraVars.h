@@ -6,11 +6,14 @@
 
 #import "NSObject.h"
 
+@class NSAppearance;
+
 __attribute__((visibility("hidden")))
 @interface NSCarbonMenuImplExtraVars : NSObject
 {
     id customHandlerList;
     struct SLMPopUpMenuContext_t *popUpContext;
+    NSAppearance *menuAppearance;
 }
 
 - (void)dealloc;

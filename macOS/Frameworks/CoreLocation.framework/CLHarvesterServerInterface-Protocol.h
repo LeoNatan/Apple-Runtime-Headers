@@ -7,6 +7,7 @@
 @class PBCodable;
 
 @protocol CLHarvesterServerInterface
+- (void)fetchStateWithReply:(void (^)(NSDictionary *))arg1;
 - (void)submitSample:(PBCodable *)arg1;
 @end
 

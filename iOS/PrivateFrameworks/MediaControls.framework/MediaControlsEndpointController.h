@@ -59,7 +59,7 @@
 @property(readonly, nonatomic, getter=isAirPlaying) _Bool airplaying;
 @property(readonly, nonatomic) _Bool hasAvailableRoutes;
 @property(readonly, nonatomic) MPCPlayerPath *playerPath;
-- (id)representedBundleID;
+@property(readonly, copy, nonatomic) NSString *representedBundleID;
 @property(readonly, copy, nonatomic) NSString *bundleID;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

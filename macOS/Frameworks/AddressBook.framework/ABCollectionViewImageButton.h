@@ -6,7 +6,6 @@
 
 #import "NSButton.h"
 
-__attribute__((visibility("hidden")))
 @interface ABCollectionViewImageButton : NSButton
 {
 }

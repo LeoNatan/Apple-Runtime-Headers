@@ -11,7 +11,6 @@
 @interface IMDCKAttachmentSyncController : IMDCKAbstractSyncController
 {
     _Bool _assetDownloadInProgress;
-    _Bool _shouldCheckDeviceConditions;
     NSObject<OS_dispatch_queue> *_ckQueue;
     IMDRecordZoneManager *_recordZoneManager;
     IMDCKAttachmentSyncCKOperationFactory *_CKOperationFactory;
@@ -20,12 +19,13 @@
     NSMutableDictionary *_recordIDToTransferMap;
     CDUnknownBlockType _perTransferProgress;
     NSMutableArray *_downloadAssetsForTransferGUIDs;
+    unsigned int _deviceConditionsToCheck;
     NSObject<OS_xpc_object> *_activity;
 }
 
 + (id)sharedInstance;
 @property NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
-@property(nonatomic) _Bool shouldCheckDeviceConditions; // @synthesize shouldCheckDeviceConditions=_shouldCheckDeviceConditions;
+@property(nonatomic) unsigned int deviceConditionsToCheck; // @synthesize deviceConditionsToCheck=_deviceConditionsToCheck;
 @property(retain, nonatomic) NSMutableArray *downloadAssetsForTransferGUIDs; // @synthesize downloadAssetsForTransferGUIDs=_downloadAssetsForTransferGUIDs;
 @property(nonatomic) _Bool assetDownloadInProgress; // @synthesize assetDownloadInProgress=_assetDownloadInProgress;
 @property(copy, nonatomic) CDUnknownBlockType perTransferProgress; // @synthesize perTransferProgress=_perTransferProgress;
@@ -73,6 +73,7 @@
 - (_Bool)_attachmentZoneCreated;
 - (void)_writeCKRecordsToAttachmentZone:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_fetchAttachmentZoneChangesShouldWriteBackChanges:(_Bool)arg1 desiredKeys:(int)arg2 syncType:(int)arg3 currentBatchCount:(int)arg4 maxBatchCount:(int)arg5 syncToken:(id)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (_Bool)_fetchedAllChangesFromCloudKit;
 - (void)_fetchAttachmentZoneRecords:(id)arg1 desiredKeys:(int)arg2 useNonHSA2ManateeDatabase:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_writeAttachmentsToCloudKit:(CDUnknownBlockType)arg1;
 - (id)_updateAttachmentGUIDIfNeededAndReturnTransfersToForceMarkAsSync:(id)arg1 transfersToSyncRowIDs:(id)arg2;
@@ -85,17 +86,23 @@
 - (id)_attachmentZoneID;
 - (_Bool)_deviceConditionsAllowsMessageSyncIgnoreFeatureEnabled:(_Bool)arg1;
 - (_Bool)_deviceConditionsAllowsMessageSync;
+- (_Bool)_deviceConditionsAllowsMessageSyncForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
+- (void)_updateDeviceCondictionsToCheckIfNeededForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
 - (id)_ckUtilitiesInstance;
 - (id)__databaseRequestForAttachmentsWithAssets;
 - (void)__databaseRequestResetAllAttachmentsInFaiedCloudDownloadState;
+- (void)downloadAttachmentAssetsForChatIDs:(id)arg1 services:(id)arg2 style:(unsigned char)arg3 completion:(CDUnknownBlockType)arg4;
+- (unsigned int)purgedAttachmentsCountForChat:(id)arg1 services:(id)arg2;
+- (id)purgedAttachmentsForChat:(id)arg1 services:(id)arg2 limit:(int)arg3;
 - (void)downloadAttachmentAssetsWithActivity:(id)arg1 restoringAttachments:(_Bool)arg2;
 - (void)downloadAttachmentAssetsWithActivity:(id)arg1 restoringAttachments:(_Bool)arg2 useNonHSA2ManateeDatabase:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_downloadAttachmentAssetsWithActivity:(id)arg1 restoringAttachments:(_Bool)arg2 useNonHSA2ManateeDatabase:(_Bool)arg3 retryCount:(unsigned int)arg4 numAttachmentsDownloaded:(unsigned int)arg5 transfers:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_downloadAttachmentAssetsWithActivity:(id)arg1 restoringAttachments:(_Bool)arg2 useNonHSA2ManateeDatabase:(_Bool)arg3 retryCount:(unsigned int)arg4 numAttachmentsDownloaded:(unsigned int)arg5 completion:(CDUnknownBlockType)arg6;
 - (_Bool)_attachmentDownloadCanStart:(_Bool)arg1 withActivity:(id)arg2;
 - (void)acceptFileTransfer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAttachmentDataForTransfers:(id)arg1 highQuality:(_Bool)arg2 perTransferProgress:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchAttachmentDataForTransfers:(id)arg1 highQuality:(_Bool)arg2 useNonHSA2ManateeDatabase:(_Bool)arg3 perTransferProgress:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)syncAttachmentsWithSyncType:(int)arg1 shouldCheckDeviceConditions:(_Bool)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)syncAttachmentsWithSyncType:(int)arg1 deviceConditionsToCheck:(unsigned int)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_markAllUnsuccessFullSyncAttachmentsAsNeedingSync;
 - (_Bool)_shouldMarkAttachmentsAsNeedingReupload;
 - (int)_numberOfBatchesOfAttachmentsToFetchInInitialSync;

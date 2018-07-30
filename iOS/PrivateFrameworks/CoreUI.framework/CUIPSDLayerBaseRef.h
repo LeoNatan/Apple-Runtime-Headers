@@ -8,13 +8,14 @@
 
 @class CUIPSDImageRef;
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDLayerBaseRef : NSObject
 {
     CUIPSDImageRef *_imageRef;
     unsigned int _layerIndex;
 }
 
+@property(nonatomic) unsigned int layerIndex; // @synthesize layerIndex=_layerIndex;
+@property(retain, nonatomic) CUIPSDImageRef *imageRef; // @synthesize imageRef=_imageRef;
 - (struct CGImage *)_createMaskFromAlphaChannel:(long long)arg1;
 - (id)vectorMaskRef;
 - (id)layerMaskRef;
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)name;
 - (id)_psdImageRef;
 - (struct CPSDLayerRecord *)_psdLayerRecord;
+- (void)dealloc;
 
 @end
 

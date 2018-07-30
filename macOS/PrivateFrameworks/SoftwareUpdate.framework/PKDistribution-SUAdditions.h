@@ -11,6 +11,7 @@
 + (id)_softwareUpdateDistributionWithContentsOfURL:(id)arg1 error:(id *)arg2;
 - (id)auxinfo;
 - (id)_softwareUpdateChoice;
+- (id)_majorOSInfoChoice;
 - (id)_softwareUpdateInterfaceType;
 - (void)_mungeInvisibleChoicesOutline;
 @end

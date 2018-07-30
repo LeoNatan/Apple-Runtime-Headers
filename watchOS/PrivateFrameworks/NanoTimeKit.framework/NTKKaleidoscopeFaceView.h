@@ -8,21 +8,22 @@
 
 #import "CLKUIQuadViewDelegate.h"
 #import "CLKUIResourceProviderDelegate.h"
+#import "NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate.h"
 #import "PUICCrownInputSequencerDelegate.h"
 
-@class CLKUIQuadView, CLKUIResourceProviderKey, CLKUITexture, NSString, NTKFaceLayoutContentProvider, NTKKaleidoscopePathfinder, NTKPhoto, PUICClientSideAnimation, PUICCrownInputSequencer, UIColor, UIImage;
+@class CLKUIQuadView, CLKUIResourceProviderKey, CLKUITexture, NSMapTable, NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKKaleidoscopePathfinder, NTKPhoto, NTKRoundedCornerOverlayView, PUICClientSideAnimation, PUICCrownInputSequencer, UIColor, UIImage;
 
-@interface NTKKaleidoscopeFaceView : NTKAnalogFaceView <CLKUIQuadViewDelegate, CLKUIResourceProviderDelegate, PUICCrownInputSequencerDelegate>
+@interface NTKKaleidoscopeFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate, CLKUIQuadViewDelegate, CLKUIResourceProviderDelegate, PUICCrownInputSequencerDelegate>
 {
     CLKUIQuadView *_quadView;
-    NTKFaceLayoutContentProvider *_layoutContentProvider;
+    NTKRoundedCornerOverlayView *_cornerView;
+    NTKColorCircularUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
     PUICCrownInputSequencer *_crownInputSequencer;
     PUICClientSideAnimation *_wristRaiseRotationAnimation;
     _Bool _wristRaiseInFlight;
     float _crownOffset;
     unsigned int _frameCounter;
     float _contentScale;
-    NTKKaleidoscopePathfinder *_pathfinder;
     UIColor *_complicationColor;
     UIColor *_complicationPlatterColor;
     double _lastComplicationUpdateTime;
@@ -35,6 +36,7 @@
     CLKUIResourceProviderKey *_resourceProviderKey;
     float _crownTurnsPerRotation;
     double _dayDuration;
+    NSMapTable *_quadPathfinderMapTable;
     unsigned int _currentAsset;
     unsigned int _currentStyle;
 }
@@ -72,16 +74,19 @@
 - (id)provideAtlasBacking:(id)arg1;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
 - (_Bool)_supportsUnadornedSnapshot;
+- (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
-- (void)_cleanupAfterTransitionComplicationSlot:(id)arg1;
+- (void)_cleanupAfterTransitionComplicationSlot:(id)arg1 selectedComplication:(id)arg2;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
 - (float)_verticalPaddingForStatusBar;
@@ -94,6 +99,7 @@
 - (double)_kaleidoscopeTimeForAsset:(unsigned int)arg1;
 - (void)quadViewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (void)_disableCrown;
+- (void)_enableCrown;
 - (void)_applyDataMode;
 - (void)_applyFrozen;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
@@ -102,7 +108,7 @@
 - (void)_updateWithAsset:(unsigned int)arg1;
 - (void)_loadCurrentQuad;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

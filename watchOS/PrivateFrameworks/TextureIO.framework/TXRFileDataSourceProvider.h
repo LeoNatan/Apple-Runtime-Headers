@@ -10,6 +10,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, TXRTextureInfo;
 
+__attribute__((visibility("hidden")))
 @interface TXRFileDataSourceProvider : NSObject <TXRDataSourceProvider>
 {
     id <TXRBufferAllocator> _bufferAllocator;

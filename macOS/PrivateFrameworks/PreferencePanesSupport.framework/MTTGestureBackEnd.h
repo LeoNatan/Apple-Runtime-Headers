@@ -24,6 +24,9 @@
 + (BOOL)isServiceAvailable:(id)arg1;
 + (const struct __CFDictionary *)createdMatchingDictionaryForTrackpaType:(unsigned long long)arg1;
 + (id)sharedInstance;
+@property unsigned long long cachedTrackpadType; // @synthesize cachedTrackpadType=_cachedTrackpadType;
+@property long long updateDelay; // @synthesize updateDelay=_updateDelay;
+@property unsigned long long mtLogCounter; // @synthesize mtLogCounter=_mtLogCounter;
 @property BOOL enableMTLogging; // @synthesize enableMTLogging=_enableMTLogging;
 @property BOOL allowToCoalesce; // @synthesize allowToCoalesce=_allowToCoalesce;
 - (void).cxx_destruct;

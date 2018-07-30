@@ -6,12 +6,13 @@
 
 #import <HMFoundation/HMFObject.h>
 
+#import "HMFLocalizable.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface HMFVersion : HMFObject <NSCopying, NSSecureCoding>
+@interface HMFVersion : HMFObject <HMFLocalizable, NSCopying, NSSecureCoding>
 {
     unsigned long long _majorVersion;
     unsigned long long _minorVersion;
@@ -31,6 +32,7 @@
 - (long long)compare:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+@property(readonly, copy) NSString *localizedDescription;
 - (id)description;
 @property(readonly, copy) NSString *versionString;
 - (id)initWithVersionString:(id)arg1;

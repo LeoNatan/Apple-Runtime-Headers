@@ -20,11 +20,11 @@
 }
 
 + (_Bool)_isSecure;
+- (void).cxx_destruct;
 - (void)transformDidInvalidate:(id)arg1;
 - (void)transformDidUpdate:(id)arg1;
 - (id)_systemGestureView;
 - (void)_updateTransforms;
-- (void)_configureRootLayer:(id)arg1 transformLayer:(id)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_focusResponder;

@@ -8,18 +8,18 @@
 
 #import "AAUIGenericTermsRemoteUIDelegate.h"
 #import "PSCloudStorageOffersManagerDelegate.h"
-#import "PUCloudPhotoWelcomeNavigationControllerDismissDelegate.h"
-#import "PUCloudPhotoWelcomeViewDelegate.h"
+#import "PXCloudPhotoWelcomeNavigationControllerDismissDelegate.h"
+#import "PXCloudPhotoWelcomeViewDelegate.h"
 
-@class AAUIGenericTermsRemoteUI, NSString, PSCloudStorageOffersManager, PUCloudPhotoWelcomeView;
+@class AAUIGenericTermsRemoteUI, NSString, PSCloudStorageOffersManager, PXCloudPhotoWelcomeView;
 
-@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <PUCloudPhotoWelcomeViewDelegate, PSCloudStorageOffersManagerDelegate, AAUIGenericTermsRemoteUIDelegate, PUCloudPhotoWelcomeNavigationControllerDismissDelegate>
+@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <PXCloudPhotoWelcomeViewDelegate, PSCloudStorageOffersManagerDelegate, AAUIGenericTermsRemoteUIDelegate, PXCloudPhotoWelcomeNavigationControllerDismissDelegate>
 {
     PSCloudStorageOffersManager *_offersManager;
     AAUIGenericTermsRemoteUI *_termsManager;
     _Bool _requireStorageUpgrade;
     _Bool _enableOnAppear;
-    PUCloudPhotoWelcomeView *_welcomeView;
+    PXCloudPhotoWelcomeView *_welcomeView;
     CDUnknownBlockType __completionHandler;
 }
 
@@ -28,7 +28,7 @@
 + (void)resetLastPresentationInfo;
 + (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
-@property(retain, nonatomic) PUCloudPhotoWelcomeView *welcomeView; // @synthesize welcomeView=_welcomeView;
+@property(retain, nonatomic) PXCloudPhotoWelcomeView *welcomeView; // @synthesize welcomeView=_welcomeView;
 - (void).cxx_destruct;
 - (void)_handleEnableError:(id)arg1;
 - (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(_Bool)arg2;

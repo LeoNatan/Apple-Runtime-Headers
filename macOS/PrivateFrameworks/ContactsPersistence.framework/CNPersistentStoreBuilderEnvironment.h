@@ -10,15 +10,13 @@ __attribute__((visibility("hidden")))
 @interface CNPersistentStoreBuilderEnvironment : NSObject
 {
     id <CNNSFileManager> _fileManager;
-    id <CNNSWorkspace> _workspace;
 }
 
-+ (id)makeProductionEnvironment;
-@property(retain) id <CNNSWorkspace> workspace; // @synthesize workspace=_workspace;
 @property(readonly) id <CNNSFileManager> fileManager; // @synthesize fileManager=_fileManager;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
-- (id)initWithFileManager:(id)arg1 workspace:(id)arg2;
+- (id)initWithFileManager:(id)arg1;
+- (id)init;
 
 @end
 

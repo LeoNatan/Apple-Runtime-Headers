@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVURLAsset.h>
 
+__attribute__((visibility("hidden")))
 @interface AVStreamDataInspectionOnlyAsset : AVURLAsset
 {
 }

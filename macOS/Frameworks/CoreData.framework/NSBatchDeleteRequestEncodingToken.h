@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) BOOL secure; // @synthesize secure=_secure;
-@property(readonly) long long resultType; // @synthesize resultType=_resultType;
-@property(readonly, retain) NSData *fetchData; // @synthesize fetchData=_fetchData;
+@property(readonly, nonatomic) BOOL secure; // @synthesize secure=_secure;
+@property(readonly, nonatomic) long long resultType; // @synthesize resultType=_resultType;
+@property(readonly, retain, nonatomic) NSData *fetchData; // @synthesize fetchData=_fetchData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

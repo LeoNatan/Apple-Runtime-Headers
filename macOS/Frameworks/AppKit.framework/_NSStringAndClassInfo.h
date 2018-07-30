@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSStringAndClassInfo : NSObject <NSCopying>
 {
     NSString *_registryString;

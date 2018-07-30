@@ -8,7 +8,6 @@
 
 @class GEOPDRelatedSearchSuggestion, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEORelatedSearchSuggestion : NSObject
 {
     GEOPDRelatedSearchSuggestion *_relatedSearchSuggestion;

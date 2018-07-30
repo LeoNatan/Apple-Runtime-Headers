@@ -8,18 +8,20 @@
 
 #import "NSCopying.h"
 
-@class NSData, NSDictionary;
+@class HMFActivity, NSData, NSDictionary;
 
 @interface HMFHTTPResponseInternal : HMFObject <NSCopying>
 {
+    HMFActivity *_activity;
     long long _statusCode;
     NSDictionary *_headerFields;
     NSData *_body;
 }
 
 @property(copy, nonatomic) NSData *body; // @synthesize body=_body;
-@property(readonly, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
+@property(copy, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
+@property(retain, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 - (void).cxx_destruct;
 - (void)setHeaderValue:(id)arg1 forHeaderKey:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

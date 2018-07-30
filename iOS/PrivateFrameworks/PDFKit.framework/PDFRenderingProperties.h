@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class PDFLayerController, PDFRenderingPropertiesPrivate, PDFView, UIColor;
+@class NSObject<OS_dispatch_queue>, PDFLayerController, PDFRenderingPropertiesPrivate, PDFView, UIColor;
 
 __attribute__((visibility("hidden")))
 @interface PDFRenderingProperties : NSObject
@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)_notifyPropertyChanged:(long long)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *loupeWorkQueue;
+@property(nonatomic) struct CGColorSpace *deviceColorSpace;
+@property(nonatomic) _Bool isUsingPDFExtensionView;
 @property(nonatomic) _Bool enableTileUpdates;
 @property(nonatomic) double screenScaleFactor;
 @property(nonatomic) _Bool enablePageShadows;
@@ -28,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long displayBox;
 @property(nonatomic, setter=setPDFLayerController:) __weak PDFLayerController *pdfLayerController;
 @property(nonatomic, setter=setPDFView:) __weak PDFView *pdfView;
+- (void)dealloc;
 - (id)init;
 
 @end

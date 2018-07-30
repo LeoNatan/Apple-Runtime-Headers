@@ -10,6 +10,7 @@
 
 @class MCProfile, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCInstallationConsentViewController : UITableViewController <PSStateRestoration>
 {
     _Bool _showInstall;

@@ -37,7 +37,6 @@
 + (id)dataFromURL:(id)arg1 useExternalReferenceIfAllowed:(_Bool)arg2 useFileCoordination:(_Bool)arg3 context:(id)arg4;
 + (id)dataFromURL:(id)arg1 useExternalReferenceIfAllowed:(_Bool)arg2 context:(id)arg3;
 + (id)dataFromURL:(id)arg1 context:(id)arg2;
-+ (void)dataForAssetsLibraryURL:(id)arg1 context:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (_Bool)isStorageInPackage:(id)arg1;
@@ -76,7 +75,6 @@
 - (id)bookmarkData;
 - (void)willCull;
 - (void)dealloc;
-- (id)UIImage;
 
 @end
 

@@ -12,8 +12,6 @@
 
 + (id)startupCleaner;
 - (void)dealloc;
-- (BOOL)_updateJournalAndCleanup;
-- (BOOL)cleanUpAfterBaseSystemUpdates;
 
 @end
 

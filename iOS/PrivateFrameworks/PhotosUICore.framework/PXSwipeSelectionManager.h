@@ -14,7 +14,12 @@
 @interface PXSwipeSelectionManager : NSObject <PXAutoScrollerDelegate, PXSectionedDataSourceManagerObserver>
 {
     CDStruct_0794f076 _needsUpdateFlags;
-    CDStruct_d45a99d3 _delegateFlags;
+    struct {
+        _Bool respondsToItemIndexPathAtLocation;
+        _Bool respondsToItemIndexPathClosestLeadingLocation;
+        _Bool respondsToItemIndexPathClosestAboveLocation;
+        _Bool respondsToShouldSelectItemAtIndexPath;
+    } _delegateFlags;
     id <PXSwipeSelectionManagerDelegate> _delegate;
     unsigned long long _state;
     UIScrollView *_scrollView;

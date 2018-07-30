@@ -27,6 +27,10 @@
 
 + (id)AVConferencePreviewSingleton;
 @property(retain, nonatomic) NSObject<AVConferencePreviewClientDelegate> *delegate; // @synthesize delegate;
+- (void)clearAllStickers:(_Bool)arg1;
+- (void)addStickerWithURL:(id)arg1 isFaceSticker:(_Bool)arg2 atPosition:(struct CGPoint)arg3 identifier:(id)arg4;
+- (void)setMemoji:(id)arg1;
+- (void)setAnimoji:(id)arg1;
 - (void)endPIPToPreviewAnimation;
 - (void)beginPIPToPreviewAnimation;
 - (void)endPreviewToPIPAnimation;
@@ -37,7 +41,6 @@
 - (void)setLocalVideoAttributes:(id)arg1;
 - (id)localCameraUID;
 - (unsigned int)localCamera;
-- (void)setLocalCameraWithPosition:(int)arg1;
 - (void)setLocalCameraWithUID:(id)arg1;
 - (void)setLocalCamera:(unsigned int)arg1;
 - (id)localVideoLayer:(_Bool)arg1;
@@ -58,6 +61,7 @@
 - (id)init;
 - (void)registerBlocksForDelegateNotifications;
 - (void)connectLayer:(id)arg1 withSlot:(unsigned int)arg2;
+- (void)cameraDidBecomeInterruptedForForUniqueID:(id)arg1 reason:(int)arg2;
 - (void)cameraDidBecomeAvailableForUniqueID:(id)arg1;
 - (void)didGetSnapshot:(id)arg1;
 - (void)didReceiveCommError;

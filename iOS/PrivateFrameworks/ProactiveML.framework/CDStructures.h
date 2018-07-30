@@ -14,11 +14,6 @@ struct NSString {
     Class _field1;
 };
 
-struct entry_s {
-    unsigned int _field1;
-    unsigned int _field2;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

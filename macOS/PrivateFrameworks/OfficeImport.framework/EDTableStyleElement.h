@@ -11,7 +11,6 @@
 
 @class EDCollection, EDDifferentialStyle, NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDTableStyleElement : NSObject <EDKeyedObject, NSCopying>
 {
     EDCollection *mDifferentialStyles;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tableStyleElementWithResources:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setDifferentialStyleWithIndex:(unsigned long long)arg1;
 - (void)setDifferentialStyle:(id)arg1;
@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (int)type;
 - (long long)key;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 
 // Remaining properties

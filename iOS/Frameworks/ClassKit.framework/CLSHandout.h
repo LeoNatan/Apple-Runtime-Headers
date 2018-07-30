@@ -12,23 +12,19 @@
 
 @interface CLSHandout : CLSObject <CLSRelationable>
 {
-    _Bool __reviewed;
+    NSString *_title;
+    NSString *_instructions;
+    NSDate *_dueDate;
+    _Bool _reviewed;
     NSDate *_dateOfPublication;
     NSDate *_dateLastReviewed;
     long long _state;
     long long _publishingState;
     NSError *_publishError;
-    NSString *__title;
-    NSString *__instructions;
-    NSDate *__dueDate;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)relations;
-@property(nonatomic) _Bool _reviewed; // @synthesize _reviewed=__reviewed;
-@property(retain, nonatomic) NSDate *_dueDate; // @synthesize _dueDate=__dueDate;
-@property(copy, nonatomic) NSString *_instructions; // @synthesize _instructions=__instructions;
-@property(copy, nonatomic) NSString *_title; // @synthesize _title=__title;
 @property(retain, nonatomic) NSError *publishError; // @synthesize publishError=_publishError;
 @property(nonatomic) long long publishingState; // @synthesize publishingState=_publishingState;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -36,6 +32,7 @@
 @property(retain, nonatomic) NSDate *dateOfPublication; // @synthesize dateOfPublication=_dateOfPublication;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSArray *attachments;
 @property(readonly, nonatomic) NSArray *recipients;
 - (void)removeHandoutRecipient:(id)arg1;
@@ -56,7 +53,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

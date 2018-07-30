@@ -14,7 +14,7 @@
 
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
-@property(readonly, retain, nonatomic) FBSSceneSnapshotContext *context;
+@property(readonly, nonatomic) FBSSceneSnapshotContext *context;
 @property(readonly, nonatomic) unsigned int type;
 - (id)initWithType:(unsigned int)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 

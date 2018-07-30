@@ -7,47 +7,50 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBTaskList.h"
 
-@class NSMutableArray, NSString, PBUnknownFields, _INPBDataString, _INPBDateTime;
+@class NSArray, NSString, _INPBDataString, _INPBDateTime;
 
-@interface _INPBTaskList : PBCodable <NSCopying>
+@interface _INPBTaskList : PBCodable <_INPBTaskList, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBDateTime *_createdDateTime;
     _INPBDataString *_groupName;
     NSString *_identifier;
     _INPBDateTime *_modifiedDateTime;
-    NSMutableArray *_tasks;
+    NSArray *_tasks;
     _INPBDataString *_title;
 }
 
 + (Class)tasksType;
-+ (id)options;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) _INPBDateTime *modifiedDateTime; // @synthesize modifiedDateTime=_modifiedDateTime;
-@property(retain, nonatomic) _INPBDateTime *createdDateTime; // @synthesize createdDateTime=_createdDateTime;
-@property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
-@property(retain, nonatomic) NSMutableArray *tasks; // @synthesize tasks=_tasks;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
+@property(retain, nonatomic) _INPBDateTime *modifiedDateTime; // @synthesize modifiedDateTime=_modifiedDateTime;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
+@property(retain, nonatomic) _INPBDateTime *createdDateTime; // @synthesize createdDateTime=_createdDateTime;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasIdentifier;
-@property(readonly, nonatomic) _Bool hasModifiedDateTime;
-@property(readonly, nonatomic) _Bool hasCreatedDateTime;
-@property(readonly, nonatomic) _Bool hasGroupName;
+@property(readonly, nonatomic) _Bool hasTitle;
 - (id)tasksAtIndex:(unsigned int)arg1;
-- (unsigned int)tasksCount;
+@property(readonly, nonatomic) unsigned int tasksCount;
 - (void)addTasks:(id)arg1;
 - (void)clearTasks;
-@property(readonly, nonatomic) _Bool hasTitle;
+@property(readonly, nonatomic) _Bool hasModifiedDateTime;
+@property(readonly, nonatomic) _Bool hasIdentifier;
+@property(readonly, nonatomic) _Bool hasGroupName;
+@property(readonly, nonatomic) _Bool hasCreatedDateTime;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

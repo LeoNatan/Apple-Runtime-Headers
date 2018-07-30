@@ -8,11 +8,11 @@
 
 #import "UIScrollViewDelegate.h"
 
-@class BFFPaneHeaderView, NSArray, NSMutableArray, NSString, OBPrivacyLinkController, UIColor, UIImage, UIScrollView, UIView, _UIBackdropView;
+@class NSArray, NSMutableArray, NSString, OBBuddyPaneHeaderView, OBPrivacyLinkController, UIColor, UIImage, UIScrollView, UIView, _UIBackdropView;
 
 @interface OBSplashController : UIViewController <UIScrollViewDelegate>
 {
-    BFFPaneHeaderView *_headerView;
+    OBBuddyPaneHeaderView *_headerView;
     UIView *_trayBackdropContainer;
     _UIBackdropView *_lightTrayBackdrop;
     _UIBackdropView *_ultraLightTrayBackdrop;
@@ -24,6 +24,7 @@
     _Bool _scrollingDisabled;
     _Bool _darkMode;
     _Bool _fullWidthContent;
+    _Bool _displayPrivacyLinkCaptionText;
     _Bool _usesTwoButtonLayout;
     NSString *_detailText;
     UIView *_contentView;
@@ -39,6 +40,7 @@
 @property(nonatomic) _Bool usesTwoButtonLayout; // @synthesize usesTwoButtonLayout=_usesTwoButtonLayout;
 @property(retain, nonatomic) UIColor *bleedColor; // @synthesize bleedColor=_bleedColor;
 @property(nonatomic) long long privacyLinkPosition; // @synthesize privacyLinkPosition=_privacyLinkPosition;
+@property(nonatomic) _Bool displayPrivacyLinkCaptionText; // @synthesize displayPrivacyLinkCaptionText=_displayPrivacyLinkCaptionText;
 @property(copy, nonatomic) NSArray *onBoardingBundleIdentifiers; // @synthesize onBoardingBundleIdentifiers=_onBoardingBundleIdentifiers;
 @property(nonatomic) _Bool fullWidthContent; // @synthesize fullWidthContent=_fullWidthContent;
 @property(nonatomic, getter=isDarkMode) _Bool darkMode; // @synthesize darkMode=_darkMode;
@@ -65,7 +67,7 @@
 - (id)_createButtonWithTitle:(id)arg1 style:(long long)arg2;
 - (void)_updateButtonFonts;
 - (void)traitCollectionDidChange:(id)arg1;
-@property(readonly, nonatomic) BFFPaneHeaderView *headerView;
+@property(readonly, nonatomic) OBBuddyPaneHeaderView *headerView;
 @property(copy, nonatomic) NSString *onBoardingBundleIdentifier;
 - (void)setLinkText:(id)arg1 action:(CDUnknownBlockType)arg2;
 - (id)buttonAtIndex:(unsigned long long)arg1;

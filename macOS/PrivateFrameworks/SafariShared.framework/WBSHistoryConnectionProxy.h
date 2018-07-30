@@ -6,33 +6,26 @@
 
 #import "NSObject.h"
 
-#import "WBSHistoryClientProtocol.h"
 #import "WBSHistoryConnectionProxy.h"
 
 @class NSObject<OS_dispatch_queue>, NSXPCConnection;
 
-@interface WBSHistoryConnectionProxy : NSObject <WBSHistoryClientProtocol, WBSHistoryConnectionProxy>
+@interface WBSHistoryConnectionProxy : NSObject <WBSHistoryConnectionProxy>
 {
     NSXPCConnection *_connection;
-    BOOL _registeredForHistoryNotifications;
     id <WBSHistoryConnectionProxyDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_connectionProxyQueue;
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *connectionProxyQueue; // @synthesize connectionProxyQueue=_connectionProxyQueue;
-@property(readonly, nonatomic, getter=isRegisteredForHistoryNotifications) BOOL registeredForHistoryNotifications; // @synthesize registeredForHistoryNotifications=_registeredForHistoryNotifications;
 @property(nonatomic) __weak id <WBSHistoryConnectionProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)finishClearingHistoryIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)disconnectWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)connectWithOptions:(id)arg1 delegate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)processRemoteHistoryNotification:(id)arg1;
 - (id)queryMemoryFootprintWithError:(id *)arg1;
 - (void)queryMemoryFootprint:(CDUnknownBlockType)arg1;
 - (void)killService;
-- (void)unregisterForHistoryNotifications;
-- (void)_registerForHistoryNotifications;
-- (void)registerForHistoryNotifications;
 - (void)beginHistoryAccessSession:(CDUnknownBlockType)arg1;
 - (void)beginURLCompletionSession:(CDUnknownBlockType)arg1;
 - (void)debugGetDatabaseURLWithCompletionHandler:(CDUnknownBlockType)arg1;

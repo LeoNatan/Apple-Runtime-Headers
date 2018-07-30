@@ -43,6 +43,7 @@
 @property(nonatomic) float playbackRate;
 @property(nonatomic) double elapsedTime;
 @property(nonatomic) long long editingStyleFlags;
+@property(nonatomic) long long episodeType;
 @property(nonatomic) long long radioStationType;
 @property(nonatomic) long long playlistType;
 @property(nonatomic) long long legacyUniqueID;

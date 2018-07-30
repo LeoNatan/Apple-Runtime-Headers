@@ -6,14 +6,16 @@
 
 #import <EventKit/EKBackingStore.h>
 
-@class CalAccumulatingQueue, CalAgentLinkQueueStatusOperation, EKBackingStoreAccounting, NSDate, NSObject<OS_dispatch_queue>;
+@class CalAgentLinkQueueStatusOperation, CalLimitingQueue, EKBackingStoreAccounting, NSDate, NSObject<OS_dispatch_queue>;
 
 @interface EKCalendarStoreBackingStore : EKBackingStore
 {
     BOOL _isPrefetching;
     BOOL _persistenceAvailable;
+    BOOL _isExternalChangePending;
     EKBackingStoreAccounting *_accounting;
-    CalAccumulatingQueue *_externalChangeQueue;
+    NSObject<OS_dispatch_queue> *_externalChangeQueue;
+    CalLimitingQueue *_externalChangeLimitingQueue;
     NSDate *__creationTimestamp;
     NSObject<OS_dispatch_queue> *_queueStatusQueue;
     CalAgentLinkQueueStatusOperation *_queueStatusOperation;
@@ -24,10 +26,6 @@
 + (id)_readOnlyContextToleratingInaccessibleFault;
 + (id)_createNonPartialFrozenObjectForPartialObject:(id)arg1 inManagedObjectContext:(id)arg2 withFrozenClass:(Class)arg3 backingStore:(id)arg4;
 + (id)createNonPartialFrozenObjectForPartialObject:(id)arg1 withFrozenClass:(Class)arg2;
-+ (void)_updateOccurrenceCacheForChangedBackingCalendarItems:(id)arg1 backingStore:(id)arg2;
-+ (void)_processExternalChangeHelperPopulateChangedBackingSources:(id *)arg1 newBackingSources:(id *)arg2 backingStore:(id)arg3;
-+ (void)_processExternalChangeHelperPopulateChangedBackingCalendars:(id *)arg1 newBackingCalendars:(id *)arg2 withNewBackingSources:(id)arg3 backingStore:(id)arg4;
-+ (void)_processExternalChangeHelperPopulateChangedBackingCalendarItems:(id *)arg1 newBackingCalendarItems:(id *)arg2 withNewBackingCalendars:(id)arg3 backingStore:(id)arg4;
 + (void)_resetExistingStoresForUnitTests;
 + (id)_predicateForEventsInFuture;
 + (void)_addPrefetchRelationshipsForCalendarItemFetch:(id)arg1 prefetchItemsThatSupportFaulting:(BOOL)arg2;
@@ -38,16 +36,19 @@
 @property(retain) CalAgentLinkQueueStatusOperation *queueStatusOperation; // @synthesize queueStatusOperation=_queueStatusOperation;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queueStatusQueue; // @synthesize queueStatusQueue=_queueStatusQueue;
 @property(retain) NSDate *_creationTimestamp; // @synthesize _creationTimestamp=__creationTimestamp;
-@property(retain) CalAccumulatingQueue *externalChangeQueue; // @synthesize externalChangeQueue=_externalChangeQueue;
+@property BOOL isExternalChangePending; // @synthesize isExternalChangePending=_isExternalChangePending;
 @property BOOL persistenceAvailable; // @synthesize persistenceAvailable=_persistenceAvailable;
 @property BOOL isPrefetching; // @synthesize isPrefetching=_isPrefetching;
+@property(retain) CalLimitingQueue *externalChangeLimitingQueue; // @synthesize externalChangeLimitingQueue=_externalChangeLimitingQueue;
+@property(retain) NSObject<OS_dispatch_queue> *externalChangeQueue; // @synthesize externalChangeQueue=_externalChangeQueue;
 @property(retain) EKBackingStoreAccounting *accounting; // @synthesize accounting=_accounting;
 - (void).cxx_destruct;
 - (id)_managedObjectsForClass:(Class)arg1 withManagedObjectIDs:(id)arg2 managedObjectContext:(id)arg3;
 - (void)_forceUpdateBackingStoreSourcesWithObjectIDs:(id)arg1;
 - (void)_forceUpdateBackingStoreCalendarsWithObjectIDs:(id)arg1 inContext:(id)arg2;
 - (void)_forceUpdateBackingStoreCalendarsWithObjectIDs:(id)arg1;
-- (void)_removeManagedObjectIDsFromCache:(id)arg1;
+- (id)_forceUpdateBackingStoreItemsWithObjectIDs:(id)arg1 inContext:(id)arg2 withChangedCalendarItems:(id)arg3 alwaysAddObjectsToCache:(BOOL)arg4 createPartialObject:(BOOL)arg5 error:(id *)arg6;
+- (id)_forceUpdateBackingStoreItemsWithObjectIDs:(id)arg1 inContext:(id)arg2 withChangedCalendarItems:(id)arg3 error:(id *)arg4;
 - (id)_forceUpdateBackingStoreItemsWithObjectIDs:(id)arg1 inContext:(id)arg2;
 - (id)_forceUpdateBackingStoreItemsWithObjectIDs:(id)arg1;
 - (void)refreshSources;
@@ -55,21 +56,17 @@
 - (BOOL)futureScheduledEventsExistOnCalendar:(id)arg1;
 - (BOOL)eventsMarkedScheduleAgentClientExistOnCalendar:(id)arg1;
 - (id)createNonPartialFrozenObjectForPartialObject:(id)arg1 withFrozenClass:(Class)arg2;
-- (void)_fetchUpdatedEventsForUpdatedCalendars:(id)arg1 updatedCalendarItems:(id)arg2 oldCalendarItems:(id)arg3 accountingInfo:(id)arg4;
-- (void)_fetchUpdatedRemindersForUpdatedCalendars:(id)arg1 updatedCalendarItems:(id)arg2 oldCalendarItems:(id)arg3 accountingInfo:(id)arg4;
-- (id)_fetchUpdatedCalendarItemsForItems:(id)arg1 updatedCalendars:(id)arg2 accountingInfo:(id)arg3;
-- (id)_changesFromOldBackingObjects:(id)arg1 toNewBackingObjects:(id)arg2;
-- (void)_bumpBackoff;
-- (void)_queueRetryForOldReceipt:(long long)arg1 currentReceipt:(long long)arg2 tags:(id)arg3 backoff:(unsigned long long)arg4;
-- (BOOL)_queueRetryIfReceiptIsStale:(long long)arg1 tags:(id)arg2;
 - (BOOL)_objectIsDeletedInCoreData:(id)arg1;
-- (BOOL)_processExternalChangeHelperUpdateBackingStoreWithTags:(id)arg1 changedBackingSources:(id)arg2 changedBackingCalendars:(id)arg3 changedBackingCalendarItems:(id)arg4 newBackingSources:(id)arg5 newBackingCalendars:(id)arg6 newBackingCalendarItems:(id)arg7 accountingReceiptGeneration:(long long)arg8 copiedBackingStore:(id)arg9;
-- (void)_processExternalChangeWithTags:(id)arg1 context:(id)arg2;
-- (void)_retryUpdateForDatabaseChanged;
-- (void)_doQueueStatusCheck;
+- (BOOL)addEventAndAnyExceptionsForEvent:(id)arg1 withManagedObject:(id)arg2 toAddedEvents:(id)arg3 alwaysAddObjectsToCache:(BOOL)arg4;
+- (BOOL)addReminder:(id)arg1 toAddedReminders:(id)arg2 alwaysAddObjectsToCache:(BOOL)arg3;
+- (id)_createFrozenItemForManagedItem:(id)arg1 createPartialObject:(BOOL)arg2;
+- (void)_deleteManagedObjectIDsFromCache:(id)arg1 withItemsToDelete:(id)arg2;
+- (void)_processExternalChange;
+- (void)resetCacheAndNotifyWithOtherChangesOfInterest:(id)arg1;
 - (BOOL)_shouldExecuteBlockImmediately;
 - (id)_updateTagsForNotification:(id)arg1 contextForTags:(id *)arg2;
 - (BOOL)_shouldHandleNotification:(id)arg1;
+- (BOOL)_notificationTagsIndicateCacheReset:(id)arg1;
 - (void)_databaseChangedExternally:(id)arg1;
 - (id)_changedCalendarItemIdentifiersForChangedCalendarItems:(id)arg1;
 - (BOOL)_changedCalendarItemsContainsSuggestedEvent:(id)arg1;
@@ -192,6 +189,7 @@
 - (BOOL)shouldWhitelistOrganizerPhoneNumberFromJunkChecks:(id)arg1;
 - (BOOL)shouldWhitelistOrganizerEmailFromJunkChecks:(id)arg1;
 - (id)lookupItemsWithIdentifiers:(id)arg1 type:(unsigned long long)arg2;
+- (void)_repopulateCacheWithIdentifier:(id)arg1;
 - (id)remindersWithIsCompleted:(BOOL)arg1 maxResults:(unsigned long long)arg2 withCalendarIdentifiers:(id)arg3;
 - (id)remindersWithContactIdentifier:(id)arg1;
 - (id)remindersWithDueDatesInRange:(id)arg1 withCalendarIdentifiers:(id)arg2 withCompletion:(id)arg3;
@@ -209,6 +207,7 @@
 - (void)_updatePersistenceAvailability;
 - (void)dealloc;
 - (void)_doBackgroundInitializationWork;
+- (void)_drainExternalChangeProcessingQueue;
 - (id)initWithSourceFilters:(id)arg1 options:(unsigned long long)arg2 accessRequestedForEvents:(BOOL)arg3 accessRequestedForReminders:(BOOL)arg4 asyncWithCompletion:(CDUnknownBlockType)arg5 orWithExistingStore:(id)arg6;
 - (id)initWithSourceFilters:(id)arg1 options:(unsigned long long)arg2 asyncWithCompletion:(CDUnknownBlockType)arg3 orWithExistingStore:(id)arg4;
 - (id)backingStoreAvailableGroup;

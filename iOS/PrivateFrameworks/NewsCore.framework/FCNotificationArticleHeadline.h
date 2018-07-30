@@ -19,6 +19,8 @@
     _Bool _showMinimalChrome;
     _Bool _boundToContext;
     _Bool _hiddenFromFeeds;
+    _Bool _pressRelease;
+    _Bool _hiddenFromAutoFavorites;
     _Bool _paid;
     NSString *_versionIdentifier;
     NSString *_identifier;
@@ -78,6 +80,8 @@
 - (void)setPaid:(_Bool)arg1;
 - (_Bool)isPaid;
 - (long long)minimumNewsVersion;
+- (_Bool)isHiddenFromAutoFavorites;
+- (_Bool)isPressRelease;
 - (_Bool)isHiddenFromFeeds;
 - (_Bool)isBoundToContext;
 - (_Bool)showMinimalChrome;
@@ -138,6 +142,7 @@
 - (id)title;
 - (void)setContentType:(unsigned long long)arg1;
 - (unsigned long long)contentType;
+- (void)setClusterID:(id)arg1;
 - (id)clusterID;
 - (id)referencedArticleID;
 - (void)setArticleID:(id)arg1;

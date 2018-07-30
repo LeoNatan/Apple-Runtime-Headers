@@ -15,6 +15,7 @@
     Class _nodeClass;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)graphWithObstacles:(id)arg1 bufferRadius:(float)arg2 nodeClass:(Class)arg3;
 + (id)graphWithObstacles:(id)arg1 bufferRadius:(float)arg2;
 - (void).cxx_destruct;

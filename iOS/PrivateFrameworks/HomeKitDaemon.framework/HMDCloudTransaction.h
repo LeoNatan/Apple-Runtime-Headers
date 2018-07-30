@@ -13,6 +13,7 @@
     _Bool _needConflictResolution;
     _Bool _iCloudSwitchStateEnabled;
     _Bool _temporaryCache;
+    _Bool _zoneHasNoLocalData;
     _Bool _createZone;
     _Bool _zoneWasCreated;
     _Bool _deleteZone;
@@ -38,6 +39,7 @@
 @property(nonatomic, getter=shouldDeleteZone) _Bool deleteZone; // @synthesize deleteZone=_deleteZone;
 @property(nonatomic, getter=wasZoneCreated) _Bool zoneWasCreated; // @synthesize zoneWasCreated=_zoneWasCreated;
 @property(nonatomic, getter=shouldCreateZone) _Bool createZone; // @synthesize createZone=_createZone;
+@property(readonly, nonatomic) _Bool zoneHasNoLocalData; // @synthesize zoneHasNoLocalData=_zoneHasNoLocalData;
 @property(readonly, nonatomic, getter=isTemporaryCache) _Bool temporaryCache; // @synthesize temporaryCache=_temporaryCache;
 @property(retain, nonatomic) CKServerChangeToken *updatedServerChangeToken; // @synthesize updatedServerChangeToken=_updatedServerChangeToken;
 @property(nonatomic) _Bool iCloudSwitchStateEnabled; // @synthesize iCloudSwitchStateEnabled=_iCloudSwitchStateEnabled;
@@ -81,6 +83,7 @@
 - (id)description;
 - (id)shortDescription;
 - (void)updateCloudZone:(id)arg1;
+- (id)initWithType:(unsigned long long)arg1 temporaryCache:(_Bool)arg2 noLocalData:(_Bool)arg3;
 - (id)initWithType:(unsigned long long)arg1 temporaryCache:(_Bool)arg2;
 - (id)init;
 

@@ -48,6 +48,7 @@
 - (id)init;
 - (void)_updateWithSearchableItem:(id)arg1;
 - (id)filteredSpotlightAttributes;
+- (void)_standardizeSiriShortcuts:(id)arg1;
 - (void)_standardizeMarkAs:(id)arg1;
 - (void)_standardizeHTML:(id)arg1;
 - (void)_standardizeDeprecatedProperties:(id)arg1;

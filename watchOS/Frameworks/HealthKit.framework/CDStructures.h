@@ -16,7 +16,7 @@ struct CC_SHA256state_st {
     unsigned int wbuf[16];
 };
 
-struct HDStatisticsCalculator<double> {
+struct HDStatisticsCalculator_DEPRECATED<double> {
     double _min;
     double _max;
     double _mean;

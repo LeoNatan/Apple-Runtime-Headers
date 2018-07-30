@@ -8,41 +8,35 @@
 
 #import "OS_nw_read_request.h"
 
-@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_source>, NSObject<OS_nw_array>, NSString;
+@class NSObject<OS_dispatch_data>, NSObject<OS_nw_array>, NSObject<OS_nw_content_context>, NSObject<OS_nw_error>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_read_request : NSObject <OS_nw_read_request>
 {
     NWConcrete_nw_read_request *next;
     CDUnknownBlockType data_completion;
     CDUnknownBlockType data_multiple_completion;
-    CDUnknownBlockType data_timeout_completion;
     CDUnknownBlockType buffer_completion;
-    CDUnknownBlockType message_completion;
     int variant;
-    _Bool complete;
     unsigned long long min;
     unsigned long long max;
     unsigned long long progress;
-    long long timeout_nanos;
-    CDUnknownBlockType timeout_block;
-    NSObject<OS_dispatch_source> *timeout_source;
-    _Bool timeout_timer_fired;
     char *buffer;
-    _Bool buffer_used_for_reading;
     NSObject<OS_dispatch_data> *data;
-    NSObject<OS_dispatch_data> *pattern;
-    const void *pattern_bytes;
-    unsigned long long pattern_length;
+    NSObject<OS_nw_content_context> *context;
+    NSObject<OS_nw_error> *error;
     NSObject<OS_nw_array> *read_array;
+    unsigned int reported:1;
+    unsigned int is_complete:1;
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

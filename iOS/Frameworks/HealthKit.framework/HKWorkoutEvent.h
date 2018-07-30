@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
+#import "HKPersistableWorkoutEvent.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSDate, NSDateInterval, NSDictionary;
+@class NSDate, NSDateInterval, NSDictionary, NSError, NSUUID;
 
-@interface HKWorkoutEvent : NSObject <NSSecureCoding, NSCopying>
+@interface HKWorkoutEvent : NSObject <HKPersistableWorkoutEvent, NSSecureCoding, NSCopying>
 {
     long long _type;
     NSDateInterval *_dateInterval;
@@ -34,10 +35,15 @@
 - (id)initWithCoder:(id)arg1;
 - (id)_validateConfiguration;
 - (void)_assertPropertiesValid;
+@property(readonly, copy, nonatomic) NSError *error;
+@property(readonly, copy, nonatomic) NSUUID *sessionUUID;
+@property(readonly, nonatomic) long long workoutEventType;
 @property(readonly, copy) NSDate *date;
 @property(readonly) long long type;
+- (id)initWithWorkoutEventType:(long long)arg1 sessionUUID:(id)arg2 dateInterval:(id)arg3 metadata:(id)arg4 error:(id)arg5;
 - (id)init;
 - (id)_init;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

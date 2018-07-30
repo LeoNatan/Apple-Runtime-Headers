@@ -32,6 +32,7 @@
 + (void)synchronizeChanges:(CDUnknownBlockType)arg1;
 + (_Bool)_isSynchronizingSceneUpdates;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)displayMonitor:(id)arg1 willDisconnectIdentity:(id)arg2;
 - (void)displayMonitor:(id)arg1 didConnectIdentity:(id)arg2 withConfiguration:(id)arg3;
 - (void)workspace:(id)arg1 destroySceneWithIdentifier:(id)arg2;
@@ -86,7 +87,7 @@
 - (id)sceneWithIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(nonatomic) id <FBSceneManagerDelegate> delegate;
+@property(nonatomic) __weak id <FBSceneManagerDelegate> delegate;
 - (void)dealloc;
 - (id)init;
 

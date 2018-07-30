@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADColorTransform.h>
 
-__attribute__((visibility("hidden")))
 @interface OADValueColorTransform : OADColorTransform
 {
     float mValue;

@@ -8,6 +8,8 @@
 
 #import "WKFormPeripheral.h"
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface WKFormSelectControl : NSObject <WKFormPeripheral>
 {
@@ -20,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)beginEditing;
 - (id)assistantView;
 - (id)initWithView:(id)arg1;
+@property(readonly, nonatomic) NSString *selectFormPopoverTitle;
 - (void)selectRow:(int)arg1 inComponent:(int)arg2 extendingSelection:(_Bool)arg3;
 
 @end

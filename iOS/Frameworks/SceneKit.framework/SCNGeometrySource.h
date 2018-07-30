@@ -37,7 +37,7 @@
 + (id)geometrySourceWithMDLVertexAttribute:(id)arg1 mesh:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
--     // Error parsing type: ^{__C3DMeshSource={__C3DGenericSource={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DSourceAccessor}(?=^{__CFData}^v^v)qb1b1b1}SCC}16@0:8, name: meshSource
+-     // Error parsing type: r^{__C3DMeshSource={__C3DGenericSource={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DSourceAccessor}(?=^{__CFData}^v^v)qb1b1b1}SCC}16@0:8, name: meshSource
 - (const void *)__CFObject;
 - (id)scene;
 - (struct __C3DScene *)sceneRef;

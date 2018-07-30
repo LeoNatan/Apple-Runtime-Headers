@@ -23,6 +23,8 @@
 - (void).cxx_destruct;
 - (id)secondaryTitleLabelString;
 - (id)titleLabelString;
+- (id)viewForLastBaselineLayout;
+- (id)viewForFirstBaselineLayout;
 - (void)updateResultWithTitle:(id)arg1 secondaryTitle:(id)arg2 image:(id)arg3 detached:(_Bool)arg4;
 - (void)setStyle:(unsigned long long)arg1;
 - (id)init;

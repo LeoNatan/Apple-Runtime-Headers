@@ -10,18 +10,18 @@
 #import "TSKPencilAnnotation.h"
 #import "TSPCopying.h"
 
-@class NSString, PKDrawing, TSDDrawableInfo, TSKPencilAnnotationStorage;
+@class NSString, PKDrawing, TSDDrawableInfo, TSDPencilAnnotationStorage;
 
 __attribute__((visibility("hidden")))
 @interface TSDPencilAnnotation : TSPObject <TSPCopying, TSKDocumentObject, TSKPencilAnnotation>
 {
-    TSKPencilAnnotationStorage *_pencilAnnotationStorage;
+    TSDPencilAnnotationStorage *_pencilAnnotationStorage;
     TSDDrawableInfo *_parent;
 }
 
 + (_Bool)needsObjectUUID;
 @property(nonatomic) __weak TSDDrawableInfo *parent; // @synthesize parent=_parent;
-@property(readonly, nonatomic) TSKPencilAnnotationStorage *pencilAnnotationStorage; // @synthesize pencilAnnotationStorage=_pencilAnnotationStorage;
+@property(retain, nonatomic) TSDPencilAnnotationStorage *pencilAnnotationStorage; // @synthesize pencilAnnotationStorage=_pencilAnnotationStorage;
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;

@@ -8,6 +8,7 @@
 
 #import "CPDisposable.h"
 
+__attribute__((visibility("hidden")))
 @interface CPTableCell : CPChunk <CPDisposable>
 {
     struct CGRect cellBounds;

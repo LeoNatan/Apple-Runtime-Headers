@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSMutableDictionary, NSSet;
+@class NSMutableDictionary, NSSet;
 
 @interface AXAlternativeVoices : NSObject
 {
-    NSDictionary *_voiceClassesMap;
+    NSMutableDictionary *_voiceClassesMap;
     NSMutableDictionary *_voiceNameMap;
 }
 
@@ -20,7 +20,7 @@
 + (_Bool)inUnitTestMode;
 + (void)setInUnitTestMode:(_Bool)arg1;
 @property(retain, nonatomic) NSMutableDictionary *voiceNameMap; // @synthesize voiceNameMap=_voiceNameMap;
-@property(retain, nonatomic) NSDictionary *voiceClassesMap; // @synthesize voiceClassesMap=_voiceClassesMap;
+@property(retain, nonatomic) NSMutableDictionary *voiceClassesMap; // @synthesize voiceClassesMap=_voiceClassesMap;
 - (void).cxx_destruct;
 - (id)_siriBaseIdentifierFromIdentifier:(id)arg1;
 - (id)_siriIdentifierFromBaseIdentifier:(id)arg1 language:(id)arg2 quality:(long long)arg3;
@@ -29,6 +29,7 @@
 - (id)nameForVoiceIdentifier:(id)arg1;
 - (id)alternativeVoiceIdentifiersForLangauge:(id)arg1;
 - (_Bool)isAlexAvailableForLanguage:(id)arg1;
+- (_Bool)isNashvilleSystemVoice:(id)arg1;
 - (_Bool)isSiriVoiceIdentifier:(id)arg1;
 - (_Bool)isOldSiriVoiceIdentifier:(id)arg1;
 - (_Bool)isAlternativeVoice:(id)arg1;

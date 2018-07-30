@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OISFUPackageInputBundle : NSObject <SFUInputBundle>
 {
     NSString *_rootPath;

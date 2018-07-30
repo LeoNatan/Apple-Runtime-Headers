@@ -8,11 +8,10 @@
 
 @interface CLSQuantityItem : CLSActivityItem
 {
-    double __quantity;
+    double _quantity;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) double _quantity; // @synthesize _quantity=__quantity;
 @property(nonatomic) double quantity;
 - (id)dictionaryRepresentation;
 - (id)description;

@@ -16,9 +16,9 @@
 }
 
 @property(readonly, nonatomic) NSMutableSet *objects; // @synthesize objects=_objects;
+- (void).cxx_destruct;
 - (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 - (id)init;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

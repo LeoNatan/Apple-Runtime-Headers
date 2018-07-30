@@ -4,15 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <CoreImage/CIDetector.h>
+
+@class CIContext;
 
 __attribute__((visibility("hidden")))
-@interface CIVNDetector : NSObject
+@interface CIVNDetector : CIDetector
 {
+    CIContext *context;
 }
 
 - (id)featuresInImage:(id)arg1 withContext:(id)arg2;
-- (id)featuresInImage:(id)arg1;
+- (void)dealloc;
+- (id)initWithContext:(id)arg1 options:(id)arg2;
 
 @end
 

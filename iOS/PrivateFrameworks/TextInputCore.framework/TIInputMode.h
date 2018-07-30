@@ -23,6 +23,7 @@
 
 + (id)inputModeWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSString *normalizedIdentifier; // @synthesize normalizedIdentifier=_normalizedIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sentenceTrailingCharacters;
 @property(readonly, nonatomic) NSString *sentenceDelimitingCharacters;
 @property(readonly, nonatomic) NSString *sentencePrefixingCharacters;
@@ -42,7 +43,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithNormalizedIdentifier:(id)arg1;
-- (void)dealloc;
 
 @end
 

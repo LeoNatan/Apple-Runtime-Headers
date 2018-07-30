@@ -22,7 +22,8 @@
         unsigned int _baselineMode:1;
         unsigned int _forceWordWrapping:1;
         unsigned int _usesSimpleTextEffects:1;
-        unsigned int _reserved:24;
+        unsigned int _applicationFrameworkContext:3;
+        unsigned int _reserved:21;
     } _sdflags;
     CUICatalog *_catalog;
     CUIStyleEffectConfiguration *_styleEffects;
@@ -62,6 +63,8 @@
 - (void)_setForceWordWrapping:(BOOL)arg1;
 - (BOOL)_forceWordWrapping;
 @property(getter=_usesSimpleTextEffects, setter=_setUsesSimpleTextEffects:) BOOL usesSimpleTextEffects;
+- (long long)_applicationFrameworkContext;
+- (void)_setApplicationFrameworkContext:(long long)arg1;
 - (BOOL)_baselineMode;
 - (void)_setBaselineMode:(BOOL)arg1;
 - (double)_baselineDelta;

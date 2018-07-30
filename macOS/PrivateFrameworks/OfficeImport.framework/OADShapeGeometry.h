@@ -8,14 +8,15 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface OADShapeGeometry : NSObject
 {
     BOOL mIsEscher;
     NSMutableDictionary *mAdjustValues;
 }
 
+- (void).cxx_destruct;
 - (id)description;
+- (id)adjustValues;
 - (unsigned long long)adjustValueCount;
 - (BOOL)hasAdjustValueAtIndex:(unsigned int)arg1;
 - (int)adjustValueAtIndex:(unsigned int)arg1;
@@ -24,8 +25,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEscher;
 - (id)equivalentCustomGeometry;
 - (int)type;
-- (id)adjustValues;
-- (void)dealloc;
 - (id)init;
 
 @end

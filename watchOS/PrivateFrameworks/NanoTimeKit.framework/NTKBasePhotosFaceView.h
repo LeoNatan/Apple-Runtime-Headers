@@ -102,6 +102,7 @@
 - (void)_configureComplicationFactory;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (float)_timeLabelAlphaForEditMode:(int)arg1;
 - (float)_backgroundImageAlphaForEditMode:(int)arg1;
@@ -120,7 +121,7 @@
 @property(readonly, nonatomic) unsigned int dateAlignment; // @dynamic dateAlignment;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

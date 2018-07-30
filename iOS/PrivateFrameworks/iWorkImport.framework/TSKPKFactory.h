@@ -15,15 +15,19 @@ __attribute__((visibility("hidden")))
 + (id)inkWithIdentifier:(id)arg1 color:(id)arg2 widthMultiplier:(double)arg3;
 + (id)inkWithIdentifier:(id)arg1 color:(id)arg2;
 + (id)strokePoint;
-+ (id)drawingWithDrawing:(id)arg1;
++ (id)recognizer;
++ (id)recongizerWithType:(int)arg1 mode:(int)arg2;
 + (id)drawing;
 + (id)drawingWithData:(id)arg1;
 + (id)drawingWithStrokes:(id)arg1 fromDrawing:(id)arg2;
++ (id)drawingWithDrawing:(id)arg1;
++ (id)strokeWithStroke:(id)arg1 points:(void *)arg2 count:(unsigned long long)arg3 copy:(_Bool)arg4;
 + (id)stroke;
 + (id)inkPicker;
 + (id)inlineInkPickerWithFrame:(struct CGRect)arg1;
 + (id)canvasViewController;
 + (id)canvasViewWithFrame:(struct CGRect)arg1;
++ (_Bool)pencilKitAvailable;
 + (void)initialize;
 
 @end

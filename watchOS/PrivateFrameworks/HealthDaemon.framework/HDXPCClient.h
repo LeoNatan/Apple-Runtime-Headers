@@ -38,6 +38,7 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)sourceVersionWithDaemon:(id)arg1;
 - (_Bool)shouldBypassAuthorization;
 - (void)restoreEntitlement:(id)arg1;
 - (void)dropEntitlement:(id)arg1;
@@ -50,7 +51,8 @@
 - (id)initWithEntitlements:(id)arg1;
 - (id)initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)baseDataEntityEncodingOptions;
-- (id)filterWithQueryFilter:(id)arg1 profile:(id)arg2;
+- (id)_watchKitAvailabilityFilter;
+- (id)filterWithQueryFilter:(id)arg1 objectType:(id)arg2 profile:(id)arg3;
 
 @end
 

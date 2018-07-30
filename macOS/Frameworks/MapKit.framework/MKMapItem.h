@@ -9,7 +9,7 @@
 #import "GEOURLSerializable.h"
 #import "NSSecureCoding.h"
 
-@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSColor, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
+@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSColor, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
 
 @interface MKMapItem : NSObject <NSSecureCoding, GEOURLSerializable>
 {
@@ -46,6 +46,10 @@
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)_mapItemBackedByURL:(id)arg1;
 + (id)mapItemsFromURL:(id)arg1 options:(id *)arg2;
++ (id)sanitizeDictionary:(id)arg1;
++ (id)sanitizeArray:(id)arg1 forKey:(id)arg2;
++ (id)sanitizeObject:(id)arg1 forKey:(id)arg2;
++ (BOOL)valueIsValid:(id)arg1 forKey:(id)arg2;
 + (id)launchOptionsFromURL:(id)arg1;
 + (id)_launchOptionsFromResourceOptionsDictionary:(id)arg1;
 + (id)_deserializeResourceOptionsFromURL:(id)arg1 error:(out id *)arg2;
@@ -101,6 +105,7 @@
 @property(readonly, nonatomic, getter=_quickLinks) NSArray *quickLinks;
 @property(readonly, nonatomic, getter=_navTintBrandColor) NSColor *navTintBrandColor;
 @property(readonly, nonatomic, getter=_navBackgroundbrandColor) NSColor *navBackgroundbrandColor;
+@property(readonly, nonatomic, getter=_placecardLayout) GEOModuleLayoutEntry *placecardLayout;
 @property(readonly, nonatomic, getter=_isMessageIDVerified) BOOL isMessageIDVerified;
 @property(readonly, nonatomic, getter=_messageURLString) NSString *messageURLString;
 @property(readonly, nonatomic, getter=_messageID) NSString *messageID;
@@ -151,7 +156,6 @@
 @property(readonly, nonatomic, getter=_poiSurveyURLString) NSString *poiSurveyURLString;
 @property(readonly, nonatomic, getter=_placeDataAsData) NSData *placeDataAsData;
 @property(readonly, nonatomic, getter=_openingHoursOptions) unsigned long long openingHoursOptions;
-@property(readonly, nonatomic, getter=_disambiguationName) NSString *disambiguationName;
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) BOOL hasEncyclopedicInfo;
 @property(readonly, nonatomic, getter=_localizedResponseTime) NSString *localizedResponseTime;
@@ -190,6 +194,7 @@
 @property(readonly, nonatomic, getter=_muid) unsigned long long muid;
 @property(readonly, nonatomic, getter=_hasMUID) BOOL hasMUID;
 @property(readonly, nonatomic, getter=_identifier) MKMapItemIdentifier *identifier;
+@property(readonly, nonatomic, getter=_annotatedItemList) id <GEOAnnotatedItemList> annotatedItemList;
 @property(readonly, nonatomic, getter=_placeDisplayStyle) int placeDisplayStyle;
 @property(readonly, nonatomic, getter=_browseCategories) NSArray *browseCategories;
 @property(readonly, nonatomic, getter=_venueInfo) id <GEOMapItemVenueInfo> venueInfo;

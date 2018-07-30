@@ -14,6 +14,7 @@
 {
     _Bool _isStaticNotificationAlertItem;
     _Bool _isStaticNotificationTitleItem;
+    _Bool _isStaticNotificationSubtitleItem;
     _Bool _isNativeInterfaceObject;
     NSDictionary *_itemDescriptionForIB;
     int _glanceLabelSize;
@@ -47,6 +48,7 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(nonatomic) int glanceLabelSize; // @synthesize glanceLabelSize=_glanceLabelSize;
+@property(nonatomic) _Bool isStaticNotificationSubtitleItem; // @synthesize isStaticNotificationSubtitleItem=_isStaticNotificationSubtitleItem;
 @property(nonatomic) _Bool isStaticNotificationTitleItem; // @synthesize isStaticNotificationTitleItem=_isStaticNotificationTitleItem;
 @property(nonatomic) _Bool isStaticNotificationAlertItem; // @synthesize isStaticNotificationAlertItem=_isStaticNotificationAlertItem;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
@@ -57,7 +59,7 @@
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (_Bool)hasIntrinsicHeight;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

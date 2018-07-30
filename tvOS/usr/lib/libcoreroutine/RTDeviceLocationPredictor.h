@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 #import "RTNextPredictedLocationsOfInterestCacheDelegate.h"
 #import "RTPurgable.h"
 
-@class NSArray, NSDate, NSMutableArray, NSObject<OS_dispatch_source>, NSString, RTDataProtectionManager, RTDefaultsManager, RTEventManager, RTLearnedLocationManager, RTLocationManager, RTMapsSupportManager, RTMetricManager, RTNextPredictedLocationsOfInterestCache, RTPlatform, RTVehicleLocationProvider;
+@class NSArray, NSDate, NSMutableArray, NSObject<OS_dispatch_source>, NSString, RTDataProtectionManager, RTDefaultsManager, RTEventManager, RTLearnedLocationManager, RTLocationManager, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTNextPredictedLocationsOfInterestCache, RTPlatform, RTVehicleLocationProvider;
 
-@interface RTDeviceLocationPredictor : RTNotifier <RTNextPredictedLocationsOfInterestCacheDelegate, RTPurgable>
+@interface RTDeviceLocationPredictor : RTService <RTNextPredictedLocationsOfInterestCacheDelegate, RTPurgable>
 {
     _Bool _encryptedDataAvailabilityNotificationNeeded;
     _Bool _monitorNextPredictedLocationsOfInterest;
@@ -19,6 +19,7 @@
     RTPlatform *_platform;
     RTDefaultsManager *_defaultsManager;
     RTLocationManager *_locationManager;
+    RTMapServiceManager *_mapServiceManager;
     RTMapsSupportManager *_mapsSupportManager;
     RTMetricManager *_metricManager;
     RTDataProtectionManager *_dataProtectionManager;
@@ -54,6 +55,7 @@
 @property(retain, nonatomic) RTDataProtectionManager *dataProtectionManager; // @synthesize dataProtectionManager=_dataProtectionManager;
 @property(retain, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(retain, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
+@property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
@@ -85,13 +87,11 @@
 - (void)onDataProtectionNotification:(id)arg1;
 - (void)_setupNextPredictedLocationOfInterestPollTimer;
 - (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)shutdown;
 - (void)_shutdown;
-- (void)setup;
 - (void)_setup;
 - (void)_unregisterForNotifications;
 - (void)_registerForNotifications;
-- (id)initWithDataProtectionManager:(id)arg1 defaultsManager:(id)arg2 eventManager:(id)arg3 learnedLocationManager:(id)arg4 locationManager:(id)arg5 mapsSupportManager:(id)arg6 metricManager:(id)arg7 nextPredictedLocationsOfInterestCache:(id)arg8 platfrom:(id)arg9 vehicleLocationProvider:(id)arg10 queue:(id)arg11;
+- (id)initWithDataProtectionManager:(id)arg1 defaultsManager:(id)arg2 eventManager:(id)arg3 learnedLocationManager:(id)arg4 locationManager:(id)arg5 mapServiceManager:(id)arg6 mapsSupportManager:(id)arg7 metricManager:(id)arg8 nextPredictedLocationsOfInterestCache:(id)arg9 platfrom:(id)arg10 vehicleLocationProvider:(id)arg11 queue:(id)arg12;
 - (id)init;
 - (void)logStateModelAvailabilityMetricWithAvailability:(long long)arg1;
 

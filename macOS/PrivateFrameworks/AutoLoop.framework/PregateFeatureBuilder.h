@@ -20,18 +20,18 @@ __attribute__((visibility("hidden")))
     NSArray *_facesArray;
     NSArray *_movieMetadata;
     NSDictionary *_videoTrackMetadataDict;
-    vector_4f732a7b _frameTimes;
-    vector_5dae144b _frameOffsets;
-    vector_5dae144b _frameBlurVectors;
+    vector_0821a7d5 _frameTimes;
+    vector_f72cac12 _frameOffsets;
+    vector_f72cac12 _frameBlurVectors;
 }
 
 @property(retain) NSDictionary *videoTrackMetadataDict; // @synthesize videoTrackMetadataDict=_videoTrackMetadataDict;
 @property(retain) NSArray *movieMetadata; // @synthesize movieMetadata=_movieMetadata;
 @property(retain) NSArray *facesArray; // @synthesize facesArray=_facesArray;
 @property(retain) NSDictionary *stillImageMetadata; // @synthesize stillImageMetadata=_stillImageMetadata;
-@property vector_5dae144b frameBlurVectors; // @synthesize frameBlurVectors=_frameBlurVectors;
-@property vector_5dae144b frameOffsets; // @synthesize frameOffsets=_frameOffsets;
-@property vector_4f732a7b frameTimes; // @synthesize frameTimes=_frameTimes;
+@property vector_f72cac12 frameBlurVectors; // @synthesize frameBlurVectors=_frameBlurVectors;
+@property vector_f72cac12 frameOffsets; // @synthesize frameOffsets=_frameOffsets;
+@property vector_0821a7d5 frameTimes; // @synthesize frameTimes=_frameTimes;
 @property(readonly) NSMutableDictionary *fullFeaturesDict; // @synthesize fullFeaturesDict;
 @property(retain) ExifMetadataExtractor *irisStillExtractor; // @synthesize irisStillExtractor;
 @property(retain) IrisVideoMetadataExtractor *irisVideoExtractor; // @synthesize irisVideoExtractor;
@@ -41,9 +41,10 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (int)processFullDictionary;
 - (void)buildFullDictionary;
-- (int)process;
 - (int)processVideo;
 - (int)processStill;
+- (int)processVideoInternal;
+- (int)processStillInternal;
 - (id)init;
 - (_Bool)processStillImageMetadata;
 - (int)processStillImageFaceData;
@@ -53,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)processBlurVectors;
 - (void)processOffsetVectors;
 - (void)processPresentationTimes;
+- (void)processVideoFaceInfo;
 - (int)processStandardPerFrameKeys;
 - (int)standardProcessKey:(id)arg1 addToDictionary:(id)arg2;
 - (void)fillVector:(vector_f9ed6fc8 *)arg1 withPerFrameStats:(id)arg2;

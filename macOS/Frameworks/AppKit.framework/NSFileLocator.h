@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSFileLocator : NSObject <NSCopying>
 {
     struct AliasRecord **_alias;

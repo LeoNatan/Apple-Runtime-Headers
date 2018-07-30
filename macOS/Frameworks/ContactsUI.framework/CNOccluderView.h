@@ -11,7 +11,6 @@
 }
 
 - (id)initWithFrame:(struct CGRect)arg1;
-- (BOOL)allowsVibrancy;
 
 @end
 

@@ -24,6 +24,7 @@
 - (id)view;
 - (BOOL)_needsRedisplayWhenBeginningToolbarEditing;
 - (BOOL)_emptyContents;
+- (BOOL)isSpace;
 - (BOOL)wantsToDrawIconIntoLabelAreaInDisplayMode:(unsigned long long)arg1;
 - (BOOL)wantsToDrawLabelInDisplayMode:(unsigned long long)arg1;
 - (BOOL)wantsToDrawIconInDisplayMode:(unsigned long long)arg1;

@@ -76,7 +76,6 @@
 - (id)descriptionWithPointer:(_Bool)arg1;
 - (id)shortDescription;
 - (id)initWithAccountRegistry:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly) unsigned long long hash;

@@ -13,6 +13,7 @@
 }
 
 + (id)meshTransform;
+@property _Bool replicatesEdges;
 @property int subdivisionSteps;
 @property(copy) NSString *depthNormalization;
 - (id)copyWithZone:(struct _NSZone *)arg1;

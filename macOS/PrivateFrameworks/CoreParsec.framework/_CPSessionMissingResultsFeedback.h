@@ -14,7 +14,6 @@
 
 @interface _CPSessionMissingResultsFeedback : PBCodable <_CPProcessableFeedback, _CPSessionMissingResultsFeedback, NSSecureCoding>
 {
-    CDStruct_b5306035 _has;
     unsigned long long _timestamp;
     NSArray *_results;
 }
@@ -34,7 +33,6 @@
 - (unsigned long long)resultsCount;
 - (void)addResults:(id)arg1;
 - (void)clearResults;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 @property(readonly, nonatomic) BOOL requiresQueryId;
 

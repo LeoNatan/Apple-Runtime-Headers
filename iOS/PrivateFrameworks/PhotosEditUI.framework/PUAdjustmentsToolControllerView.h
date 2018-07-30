@@ -8,6 +8,7 @@
 
 @class PUAdjustmentsModeBar;
 
+__attribute__((visibility("hidden")))
 @interface PUAdjustmentsToolControllerView : PUPhotoEditToolControllerView
 {
     PUAdjustmentsModeBar *_modeBar;

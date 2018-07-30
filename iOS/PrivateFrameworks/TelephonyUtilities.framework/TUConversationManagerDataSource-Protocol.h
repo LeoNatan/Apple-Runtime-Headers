@@ -6,12 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSDictionary;
+@class NSArray, NSDictionary, NSSet, NSUUID, TUConversation, TUConversationMember;
 
 @protocol TUConversationManagerDataSource <NSObject>
+@property(nonatomic) __weak id <TUConversationMediaControllerDataSourceDelegate> mediaDelegate;
 @property(nonatomic) __weak id <TUConversationManagerDataSourceDelegate> delegate;
 @property(readonly, copy, nonatomic) NSDictionary *conversationsByGroupUUID;
 - (void)invalidate;
 - (void)registerWithCompletionHandler:(void (^)(void))arg1;
+- (void)updateConversationWithUUID:(NSUUID *)arg1 participantPresentationContexts:(NSArray *)arg2;
+- (void)buzzMember:(TUConversationMember *)arg1 conversation:(TUConversation *)arg2;
+- (void)addRemoteMembers:(NSSet *)arg1 toConversation:(TUConversation *)arg2;
 @end
 

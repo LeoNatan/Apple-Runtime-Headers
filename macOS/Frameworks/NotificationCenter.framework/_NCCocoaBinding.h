@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NCCocoaBinding : NSObject
 {
     _Bool _observesSelf;

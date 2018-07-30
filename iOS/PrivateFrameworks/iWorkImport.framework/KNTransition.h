@@ -46,12 +46,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool customBounce;
 @property(readonly, nonatomic) long long customMosaicType;
 @property(readonly, nonatomic) long long customMosaicSize;
+@property(readonly, nonatomic) float customTravelDistance;
 @property(readonly, nonatomic) float customTwist;
 @property(readonly, nonatomic) TSUColor *color;
 @property(readonly, nonatomic) double delay;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) _Bool hasAutomaticTrigger;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool supportsTravelDistance;
 @property(readonly, nonatomic) _Bool supportsTwist;
 @property(readonly, nonatomic) _Bool supportsColor;
 @property(readonly, nonatomic) _Bool supportsBounce;

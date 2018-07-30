@@ -120,9 +120,9 @@
 - (BOOL)isMainOccurrence;
 - (BOOL)_isSignificantlyDetachedForMaster:(id)arg1;
 - (BOOL)isBackingObjectSignificantlyDetachedIgnoringParticipation;
-- (BOOL)isSignificantlyDetachedIgnoringParticipation;
+@property(readonly, nonatomic) BOOL isSignificantlyDetachedIgnoringParticipation;
 - (BOOL)isBackingObjectSignificantlyDetached;
-- (BOOL)isSignificantlyDetached;
+@property(readonly, nonatomic) BOOL isSignificantlyDetached;
 - (BOOL)isDifferentAndModifiedAttendeesWithDiff:(id)arg1;
 - (BOOL)isDifferentAndHasForwardedAttendeesWithDiff:(id)arg1;
 - (BOOL)isDifferentAndHasOnlyUnscheduledAttendeesWithDiff:(id)arg1;
@@ -274,7 +274,6 @@
 - (BOOL)hasUnsavedChangesToEndDate;
 - (BOOL)hasUnsavedChangesToStartDate;
 - (BOOL)hasChangesAffectingRecurrenceDate;
-- (void)_decodeValueForKey:(id)arg1 withCoder:(id)arg2;
 - (BOOL)_hasRecurrenceRuleChangeHelperIncludeAddition:(BOOL)arg1 includeRemoval:(BOOL)arg2;
 - (BOOL)_hasRecurrenceRuleChangeRequiringSpanAll;
 - (BOOL)_hasBasicChangesRequiringSpanAll:(BOOL)arg1;
@@ -388,7 +387,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) BOOL isPartialObject;
 @property(readonly, nonatomic) BOOL isScheduled; // @dynamic isScheduled;
-@property(readonly, copy, nonatomic) NSDate *lastModifiedDate;
 @property(readonly, copy, nonatomic) NSData *localStructuredData;
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
 @property(readonly, nonatomic) BOOL organizedByMe; // @dynamic organizedByMe;

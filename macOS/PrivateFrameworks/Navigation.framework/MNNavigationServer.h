@@ -79,6 +79,7 @@
 - (void)_peerDidDisconnect:(id)arg1;
 - (void)_remoteObjectForProxy:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (id)_newPeerForConnection:(id)arg1;
+- (void)_resetDetails;
 - (void)_defaultsDidChange;
 - (void)dealloc;
 - (id)init;

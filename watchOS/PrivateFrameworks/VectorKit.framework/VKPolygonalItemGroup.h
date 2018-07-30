@@ -46,8 +46,9 @@ __attribute__((visibility("hidden")))
 - (void)clearRouteAttributes;
 - (void)setRouteAttributes:(const struct PolygonRouteAttributes *)arg1;
 - (void)updateCachedStyles;
+@property(readonly, nonatomic) const unordered_set_a2a16c4c *featureIds;
 - (_Bool)hasFeatureId:(unsigned long long)arg1;
-- (_Bool)canAcceptPolygon:(CDStruct_99fd9b26 *)arg1;
+- (_Bool)canAcceptPolygon:(CDStruct_3da87dc5 *)arg1;
 - (void)didFinishAddingData;
 - (void)willAddDataWithAccessor:(struct ResourceAccessor *)arg1;
 - (unsigned char)indexForGeoFeatureAttributes:(id)arg1;

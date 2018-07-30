@@ -18,7 +18,6 @@
 @property(readonly, copy, nonatomic) NSDate *startDateUnadjustedFromUTC;
 @property(readonly, copy, nonatomic) NSTimeZone *timeZoneObject;
 @property(readonly, copy, nonatomic) NSString *scheduleAgentString;
-@property(readonly, copy, nonatomic) NSDate *lastModifiedDate;
 @property(readonly, nonatomic) BOOL organizedByMe;
 @property(readonly, copy, nonatomic) NSString *organizerEncodedLikenessData;
 @property(readonly, copy, nonatomic) NSString *organizerPhoneNumber;
@@ -40,6 +39,7 @@
 - (NSCalendar *)_nsCalendar;
 - (BOOL)isEvent;
 - (BOOL)isReminder;
+- (NSDate *)lastModifiedDate;
 - (NSDate *)creationDate;
 - (BOOL)allDay;
 - (NSSet *)attachmentSet;

@@ -16,7 +16,10 @@
 }
 
 - (void).cxx_destruct;
+- (void)hibernate;
+- (void)warmUp;
 - (void)unloadLexicons;
+- (id)loadLexiconsUsingFilter:(CDUnknownBlockType)arg1;
 - (id)loadLexicons:(CDUnknownBlockType)arg1;
 - (void)removeContactObserver:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)addContactObserver:(CDUnknownBlockType)arg1;

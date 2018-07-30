@@ -13,8 +13,8 @@
     NSArray *_statements;
 }
 
+- (void).cxx_destruct;
 - (_Bool)executeWithBindings:(id)arg1 resultRowHandler:(CDUnknownBlockType)arg2 error:(out id *)arg3;
-- (void)dealloc;
 - (id)initWithDatabaseConnection:(id)arg1 statements:(id)arg2;
 
 @end

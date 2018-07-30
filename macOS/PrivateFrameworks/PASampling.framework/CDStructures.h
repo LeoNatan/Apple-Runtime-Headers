@@ -113,6 +113,21 @@ struct os_activity_create_s {
     unsigned long long _field12;
 };
 
+struct os_activity_loss_s {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    char *_field4;
+    char *_field5;
+    struct timeval _field6;
+    struct timezone _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned long long _field10;
+    unsigned long long _field11;
+    unsigned int _field12;
+};
+
 struct os_activity_statedump_s {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -183,9 +198,10 @@ struct os_activity_stream_entry_s {
         struct os_activity_useraction_s _field7;
         struct os_activity_statedump_s _field8;
         struct os_activity_timesync_s _field9;
-        struct os_activity_breadcrumb_s _field10;
-        struct os_activity_stream_activity_s _field11;
-        struct os_trace_message_s _field12;
+        struct os_activity_loss_s _field10;
+        struct os_activity_breadcrumb_s _field11;
+        struct os_activity_stream_activity_s _field12;
+        struct os_trace_message_s _field13;
     } _field8;
 };
 
@@ -254,6 +270,10 @@ struct os_log_message_s {
     unsigned char _field18;
     _Bool _field19;
     unsigned long long _field20;
+    char *_field21;
+    unsigned char _field22;
+    unsigned char _field23;
+    char *_field24;
 };
 
 struct os_trace_message_s {

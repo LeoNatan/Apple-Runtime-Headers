@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABDirectoriesHeaderGroupEntry : ABHeaderGroupEntry <ABContactSearching>
 {
     id <ABSearchOperationsFactory> _operationsFactory;

@@ -52,7 +52,8 @@
 - (BOOL)isEqualToSimpleTimeRange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)applyToEKEvent:(id)arg1 isAllDay:(BOOL)arg2;
+- (void)applyToEKEvent:(id)arg1 isAllDay:(BOOL)arg2 isFloating:(BOOL)arg3;
+- (BOOL)startedMoreThan24HoursAgo;
 - (BOOL)isValidAllDayRange;
 - (id)endDateComponents;
 - (id)startDateComponents;

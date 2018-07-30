@@ -21,6 +21,8 @@
 + (void)initialize;
 @property(nonatomic) __weak id <BiometricKitDelegateXpcProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)pauseFaceDetectTimer:(BOOL)arg1;
+- (int)enableMatchAutoRetry:(BOOL)arg1;
 - (void)logEventOrCode:(unsigned long long)arg1;
 - (int)queryIdentityMigrationFailureForUser:(unsigned int)arg1 failed:(char *)arg2 clear:(BOOL)arg3;
 - (int)fieldDiagnosticsControl:(unsigned int)arg1 inData:(id)arg2 outData:(id *)arg3;

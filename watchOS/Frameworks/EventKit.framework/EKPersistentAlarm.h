@@ -13,6 +13,7 @@
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 - (id)description;
+- (id)semanticIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)snoozedAlarms;
 - (void)setSnoozedAlarms:(id)arg1;

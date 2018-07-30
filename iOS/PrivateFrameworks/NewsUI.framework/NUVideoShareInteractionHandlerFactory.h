@@ -6,23 +6,27 @@
 
 #import "NSObject.h"
 
-#import "SXShareInteractionHandlerFactory.h"
+#import "SVShareInteractionHandlerFactory.h"
 
-@class NSString, NUVideoViewController;
+@class NSString;
 
-@interface NUVideoShareInteractionHandlerFactory : NSObject <SXShareInteractionHandlerFactory>
+@interface NUVideoShareInteractionHandlerFactory : NSObject <SVShareInteractionHandlerFactory>
 {
-    NUVideoViewController *_videoViewController;
     id <NUVideoActivityViewControllerFactory> _activityViewControllerFactory;
+    id <NSSNewsAnalyticsArticleViewingSessionTracker> _articleViewingSessionTracker;
+    id <SVVideoViewControllerProviding> _videoViewControllerProvider;
+    id <SVVideoPlaybackController> _playbackController;
     id <NUURLHandling> _URLHandler;
 }
 
 @property(readonly, nonatomic) id <NUURLHandling> URLHandler; // @synthesize URLHandler=_URLHandler;
+@property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
+@property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
+@property(readonly, nonatomic) id <NSSNewsAnalyticsArticleViewingSessionTracker> articleViewingSessionTracker; // @synthesize articleViewingSessionTracker=_articleViewingSessionTracker;
 @property(readonly, nonatomic) id <NUVideoActivityViewControllerFactory> activityViewControllerFactory; // @synthesize activityViewControllerFactory=_activityViewControllerFactory;
-@property(readonly, nonatomic) __weak NUVideoViewController *videoViewController; // @synthesize videoViewController=_videoViewController;
 - (void).cxx_destruct;
 - (id)createInteractionHandlerForVideo:(id)arg1;
-- (id)initWithVideoViewController:(id)arg1 activityViewControllerFactory:(id)arg2 URLHandler:(id)arg3;
+- (id)initWithVideoViewControllerProvider:(id)arg1 playbackController:(id)arg2 activityViewControllerFactory:(id)arg3 articleViewingSessionTracker:(id)arg4 URLHandler:(id)arg5;
 - (id)init;
 
 // Remaining properties

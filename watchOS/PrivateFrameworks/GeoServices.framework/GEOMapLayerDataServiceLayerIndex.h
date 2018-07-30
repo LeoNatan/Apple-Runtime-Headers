@@ -10,6 +10,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapLayerDataServiceLayerIndex : PBCodable <NSCopying>
 {
     NSData *_index;

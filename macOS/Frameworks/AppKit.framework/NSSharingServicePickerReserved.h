@@ -8,6 +8,7 @@
 
 @class NSArray, SHKSharingServicePicker;
 
+__attribute__((visibility("hidden")))
 @interface NSSharingServicePickerReserved : NSObject
 {
     id <NSSharingServicePickerDelegate> delegate;

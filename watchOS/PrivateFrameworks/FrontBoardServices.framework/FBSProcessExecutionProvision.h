@@ -22,7 +22,7 @@
     id <FBSProcessExecutionProvisionDelegate> _delegate;
 }
 
-@property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) __weak id <FBSProcess> process; // @synthesize process=_process;
 @property(readonly, nonatomic, getter=isViolated) _Bool violated; // @synthesize violated=_violated;
 @property(readonly, nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
@@ -44,7 +44,6 @@
 - (void)stopMonitoring;
 - (void)updateProgress;
 - (void)monitorProcess:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (_Bool)isResourceProvision;
 

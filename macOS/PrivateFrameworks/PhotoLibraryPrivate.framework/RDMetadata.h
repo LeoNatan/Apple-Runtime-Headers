@@ -89,6 +89,7 @@
 - (id)_digestedIptcAttributesFromRawAttributes:(id)arg1;
 - (void)setCGImageProperties:(id)arg1;
 - (id)description;
+@property(readonly, copy) NSString *jsonFormattedDescription;
 - (id)descriptionDictionary;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)extractFocusPointsFrom:(id)arg1 orExifAux:(id)arg2;

@@ -14,6 +14,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)noteInterfaceOrientationChanged:(int)arg1 animationSettings:(id)arg2 direction:(int)arg3;
 - (void)noteInterfaceOrientationChanged:(int)arg1;
 - (id)init;

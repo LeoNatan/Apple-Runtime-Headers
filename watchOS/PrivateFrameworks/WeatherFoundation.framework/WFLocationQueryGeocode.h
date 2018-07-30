@@ -10,6 +10,7 @@
 
 @class CLGeocoder, MKLocalSearch, MKLocalSearchCompletion, NSString, WFResponse, WFTaskIdentifier;
 
+__attribute__((visibility("hidden")))
 @interface WFLocationQueryGeocode : NSObject <WFLocationQuery>
 {
     _Bool _finished;

@@ -34,11 +34,11 @@
 - (void)balanceForPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateMockAccountBalanceByAddingAmount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateMessageReceivedDate:(id)arg1 forTransactionWithIdentifier:(id)arg2;
-- (void)updateMemo:(id)arg1 forTransactionWithIdentifier:(id)arg2;
+- (void)receivedPeerPaymentMessageData:(id)arg1;
 - (void)noteAccountDeleted;
 - (void)presentPeerPaymentTermsAndConditionsWithAccount:(id)arg1 orientation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentRegistrationFlowWithAccount:(id)arg1 orientation:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)presentRegistrationFlowWithAccount:(id)arg1 amount:(id)arg2 state:(unsigned long long)arg3 orientation:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)presentRegistrationFlowWithAccount:(id)arg1 amount:(id)arg2 state:(unsigned long long)arg3 senderAddress:(id)arg4 orientation:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)presentIdentityVerificationFlowWithResponse:(id)arg1 orientation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registrationStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resumeAccountChangedNotifications;

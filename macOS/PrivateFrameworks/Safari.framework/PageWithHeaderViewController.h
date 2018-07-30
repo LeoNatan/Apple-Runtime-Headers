@@ -7,12 +7,11 @@
 #import "NSViewController.h"
 
 #import "PageWithHeaderViewDelegate.h"
-#import "ReaderInstallationTarget.h"
 
 @class BrowserViewController, ContinuousReadingBannerLayer, FlippedView, NSAttributedString, NSImage, NSMutableArray, NSString, NSTimer, ReaderViewController, WebViewController;
 
 __attribute__((visibility("hidden")))
-@interface PageWithHeaderViewController : NSViewController <PageWithHeaderViewDelegate, ReaderInstallationTarget>
+@interface PageWithHeaderViewController : NSViewController <PageWithHeaderViewDelegate>
 {
     NSMutableArray *_historyOperations;
     ContinuousReadingBannerLayer *_headerBannerLayer;
@@ -92,7 +91,7 @@ __attribute__((visibility("hidden")))
 - (void)deactivateReaderIfActive;
 - (void)activateReaderIfAvailable;
 - (id)readerContainerView;
-- (void)uninstallReaderView:(id)arg1 closedByUser:(BOOL)arg2;
+- (void)uninstallReaderView:(id)arg1;
 - (void)installReaderView:(id)arg1;
 - (void)pageWithHeaderViewFrameSizeDidChange:(id)arg1;
 - (void)setFooterBannerItemDescription:(id)arg1;

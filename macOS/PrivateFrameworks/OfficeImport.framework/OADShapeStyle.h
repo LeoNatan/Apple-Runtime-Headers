@@ -10,7 +10,6 @@
 
 @class OADFontReference, OADStyleMatrixReference;
 
-__attribute__((visibility("hidden")))
 @interface OADShapeStyle : NSObject <NSCopying>
 {
     OADStyleMatrixReference *mLineReference;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultOfficeShapeStyle;
 + (id)defaultShapeStyle;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setFontReference:(id)arg1;
 - (id)fontReference;
@@ -39,7 +39,6 @@ __attribute__((visibility("hidden")))
 - (void)applyToGraphicProperties:(id)arg1 styleMatrix:(id)arg2 useNull:(BOOL)arg3 strokeWidthMultiplier:(float)arg4;
 - (void)applyToGraphicProperties:(id)arg1 styleMatrix:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 @end
 

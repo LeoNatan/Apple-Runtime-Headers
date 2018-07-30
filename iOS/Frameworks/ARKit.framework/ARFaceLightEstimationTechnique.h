@@ -15,6 +15,7 @@
     struct __CVBuffer *_pixelBufferRef;
     float _lightIntensity;
     float _temperature;
+    struct ExponentialSmoother<float> _smoother;
     ARFaceTrackingData *_lastFaceData;
     // Error parsing type: {?="columns"[4]}, name: _lastCameraTransform
     _Bool _cameraTransformAvailable;
@@ -25,14 +26,12 @@
     float _shSmoothingAlpha;
 }
 
-+ (ImageViewT_0571eb02)_cvPixelBufferToACVGray:(struct __CVBuffer *)arg1;
-+ (shared_ptr_c68b61c3)_transformFaceTrackingData:(id)arg1;
++ (shared_ptr_9a05b847)_transformFaceTrackingData:(id)arg1;
 + (float)_computeShSmoothingAlpha:(double)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (id)processData:(id)arg1;
-- (void)_computeLightIntensity:(float)arg1 samplingInterval:(double)arg2;
 - (unsigned long long)requiredSensorDataTypes;
 - (void)dealloc;
 - (id)init;

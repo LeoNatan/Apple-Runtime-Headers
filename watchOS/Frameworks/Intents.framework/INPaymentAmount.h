@@ -30,6 +30,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithAmountType:(int)arg1 amount:(id)arg2;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
 @end
 

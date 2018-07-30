@@ -10,6 +10,7 @@
 
 @class NSColor, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSTouchBarColorPickerFavoriteItem : NSCollectionViewItem <NSGestureRecognizerDelegate>
 {
     CDUnknownBlockType _selectionHandler;

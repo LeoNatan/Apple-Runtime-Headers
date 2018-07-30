@@ -6,14 +6,14 @@
 
 #import "NSObject.h"
 
-#import "FCAppConfigurationObserving.h"
+#import "FCCoreConfigurationObserving.h"
 #import "NSURLSessionDelegate.h"
 
-@class FCAppConfigurationManager, FCAsyncSerialQueue, NSString, NSURL, NSURLSession;
+@class FCAsyncSerialQueue, NSString, NSURL, NSURLSession;
 
-@interface FCEndpointConnection : NSObject <NSURLSessionDelegate, FCAppConfigurationObserving>
+@interface FCEndpointConnection : NSObject <NSURLSessionDelegate, FCCoreConfigurationObserving>
 {
-    FCAppConfigurationManager *_appConfigurationManager;
+    id <FCCoreConfigurationManager> _configurationManager;
     NSURL *_baseURL;
     NSURLSession *_session;
     FCAsyncSerialQueue *_requestSerialQueue;
@@ -24,14 +24,14 @@
 @property(retain, nonatomic) FCAsyncSerialQueue *requestSerialQueue; // @synthesize requestSerialQueue=_requestSerialQueue;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-@property(retain, nonatomic) FCAppConfigurationManager *appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
+@property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 - (void).cxx_destruct;
 - (_Bool)_hasOverrideCAPIBaseURL;
 - (id)_overrideCAPIBaseURLString;
 - (void)performHTTPRequestWithURL:(id)arg1 valuesByHTTPHeaderField:(id)arg2 method:(id)arg3 data:(id)arg4 contentType:(id)arg5 priority:(float)arg6 requiresMescalSigning:(_Bool)arg7 callbackQueue:(id)arg8 completion:(CDUnknownBlockType)arg9;
 - (void)performHTTPRequestWithURL:(id)arg1 method:(id)arg2 data:(id)arg3 contentType:(id)arg4 priority:(float)arg5 requiresMescalSigning:(_Bool)arg6 callbackQueue:(id)arg7 completion:(CDUnknownBlockType)arg8;
-- (id)initWithAppConfigurationManager:(id)arg1 sourceApplicationBundleIdentifier:(id)arg2;
-- (id)initWithAppConfigurationManager:(id)arg1;
+- (id)initWithConfigurationManager:(id)arg1 sourceApplicationBundleIdentifier:(id)arg2;
+- (id)initWithConfigurationManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

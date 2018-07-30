@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@interface RCDebugRecordingController
+#import "NSObject.h"
+
+@interface RCDebugRecordingController : NSObject
 {
 }
 
 + (id)sharedInstance;
+- (void)promptUserAndCreateDebugRecordingWithSource:(id)arg1;
 - (void)startCreatingDebugContentIfRequested;
 
 @end

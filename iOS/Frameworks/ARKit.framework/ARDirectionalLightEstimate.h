@@ -20,6 +20,7 @@
     // Error parsing type: , name: _primaryLightDirection
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double confidenceRating; // @synthesize confidenceRating=_confidenceRating;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) double primaryLightIntensity; // @synthesize primaryLightIntensity=_primaryLightIntensity;
@@ -27,6 +28,8 @@
 // Property attributes: T,R,N,V_primaryLightDirection
 
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 -     // Error parsing type: @64@0:8{?=[3]}16, name: lightEstimateByApplyingRotation:

@@ -16,6 +16,7 @@
 
 + (id)sharedInstance;
 @property(readonly, nonatomic) NSMutableDictionary *debugValues; // @synthesize debugValues;
+- (void).cxx_destruct;
 @property(nonatomic) int stepCount;
 - (_Bool)finished;
 - (void)advanceSweep;
@@ -23,7 +24,6 @@
 - (id)sweepStateHeader;
 - (void)addValue:(id)arg1 withValue:(float)arg2;
 - (void)addValue:(id)arg1 withMin:(float)arg2 withMax:(float)arg3;
-- (void)dealloc;
 
 @end
 

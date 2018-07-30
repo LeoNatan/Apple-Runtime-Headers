@@ -20,6 +20,7 @@
 - (id)verb;
 - (void)setDomain:(id)arg1;
 - (id)domain;
+- (_Bool)_isUserConfirmationRequired;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 - (void)setNote:(id)arg1;
@@ -29,6 +30,9 @@
 - (void)setPayer:(id)arg1;
 @property(readonly, copy, nonatomic) INPerson *payer;
 - (id)initWithPayer:(id)arg1 currencyAmount:(id)arg2 note:(id)arg3;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

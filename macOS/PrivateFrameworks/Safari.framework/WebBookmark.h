@@ -6,14 +6,15 @@
 
 #import "NSObject.h"
 
+#import "BookmarkItem.h"
 #import "NSCopying.h"
 #import "NSPasteboardReading.h"
 #import "NSPasteboardWriting.h"
 
-@class BookmarkImportInfo, NSArray, NSData, NSDate, NSDictionary, NSImage, NSString, WebBookmarkGroup, WebBookmarkList;
+@class BookmarkImportInfo, NSArray, NSData, NSDate, NSDictionary, NSImage, NSString, NSURL, WebBookmarkGroup, WebBookmarkList;
 
 __attribute__((visibility("hidden")))
-@interface WebBookmark : NSObject <NSPasteboardWriting, NSPasteboardReading, NSCopying>
+@interface WebBookmark : NSObject <NSPasteboardWriting, NSPasteboardReading, NSCopying, BookmarkItem>
 {
     BOOL _threadUnsafeShouldOmitFromUI;
     BOOL _canOpenInTabs;
@@ -48,14 +49,11 @@ __attribute__((visibility("hidden")))
 + (id)_bookmarkForFileOrFolderAtPath:(id)arg1 directoryDepth:(unsigned int)arg2;
 + (id)bookmarkWithURL:(id)arg1 title:(id)arg2;
 + (id)defaultTitleFromURL:(id)arg1;
-+ (void)replaceTabsWithBookmarks:(id)arg1 tabPlacementHint:(const struct TabPlacementHint *)arg2;
-+ (void)replaceTabsWithBookmarks:(id)arg1 tabPlacementHint:(const struct TabPlacementHint *)arg2 confirmQuantity:(BOOL)arg3;
 + (void)performTabVisitingOperationWithURLs:(id)arg1 titles:(id)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3 confirmQuantity:(BOOL)arg4 confirmationMessageText:(id)arg5 continueButtonMessageText:(id)arg6 operationBlock:(CDUnknownBlockType)arg7;
++ (void)_obtainSandboxExtensionTokensForEveryFileURL:(id)arg1 titles:(id)arg2 browserWindowController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)replaceTabsWithURLs:(id)arg1 titles:(id)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3 confirmQuantity:(BOOL)arg4;
 + (void)openAllUrlsInNewTabs:(id)arg1 withTitles:(id)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3 confirmQuantity:(BOOL)arg4;
 + (id)urlsForBookmarks:(id)arg1 withTitles:(id *)arg2;
-+ (id)_flattenedDescendantsOfBookmarks:(id)arg1;
-+ (void)_addFlattenedDescendantsOfBookmarks:(id)arg1 toArray:(id)arg2;
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
 @property(copy, nonatomic) NSData *syncData; // @synthesize syncData=_syncData;
@@ -123,6 +121,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long numberOfAncestors;
 @property(copy, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(readonly, nonatomic) BOOL hasUUID;
+@property(readonly, nonatomic) long long preferredIconType;
+@property(readonly, nonatomic) BOOL isList;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
@@ -174,7 +174,6 @@ __attribute__((visibility("hidden")))
 - (void)goToWithWindowPolicy:(long long)arg1 tabPlacementHint:(const struct TabPlacementHint *)arg2;
 - (void)goToWithTabPlacementHint:(const struct TabPlacementHint *)arg1;
 - (BOOL)insertBookmarkWithUndo:(id)arg1 atIndex:(unsigned long long)arg2 didCheckIfBookmarkEditingIsPermitted:(BOOL)arg3 allowDuplicateURLs:(BOOL)arg4;
-- (id)convertWithUndoToFolderTitled:(id)arg1 addedBookmarks:(id)arg2;
 - (BOOL)moveWithUndoToFolder:(id)arg1 index:(unsigned long long)arg2;
 - (id)addNewSubfolderWithUndoTitled:(id)arg1 insertionIndex:(unsigned long long)arg2;
 - (BOOL)deleteWithUndoWithoutAuthorization;
@@ -184,7 +183,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)setPreviewTextWithUndo:(id)arg1 isUserCustomized:(BOOL)arg2;
 - (BOOL)setTitleWithUndo:(id)arg1;
 - (BOOL)_bookmarkEditingPermitted;
-- (BOOL)canEditAddress;
 - (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
@@ -192,7 +190,9 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSArray *leafChildren;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) NSURL *url;
 
 @end
 

@@ -6,25 +6,24 @@
 
 #import <PhotoAnalysis/PHAWorker.h>
 
-#import "PHALibraryChangeResponder.h"
+#import "PHAGraphRegistration.h"
 #import "PLPhotoAnalysisGraphServiceProtocol.h"
 
-@class NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_os_transaction>, NSProgress, NSString, PGManager, PHACoalescer, PHALibraryChangeBuffer, PHAPredicateValidator;
+@class NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_os_transaction>, NSProgress, NSString, PGManager, PHAPredicateValidator;
 
-@interface PHAGraphServiceWorker : PHAWorker <PHALibraryChangeResponder, PLPhotoAnalysisGraphServiceProtocol>
+@interface PHAGraphServiceWorker : PHAWorker <PHAGraphRegistration, PLPhotoAnalysisGraphServiceProtocol>
 {
     unsigned long long _inq_state;
     _Bool _serviceEnabled;
     NSDate *_lastTodayWidgetMemoryCreationDate;
     NSDictionary *_snapshotFilenameLookup;
+    unsigned long long _pendingGraphRequests;
+    NSDate *_graphUpdateAllowedDate;
     unsigned long long _flags;
     NSProgress *_currentGraphRebuildProgress;
     PGManager *_graphManager;
-    PGManager *_lastGraphManager;
     NSMutableDictionary *_pendingGraphReadyCallbacks;
-    PHALibraryChangeBuffer *_pendingLibraryChanges;
     PHAPredicateValidator *_relatedRequestPredicateValidator;
-    PHACoalescer *_libraryChangeForegroundUpdateCoalescer;
     NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
     NSDate *_lastLibraryChangeGraphUpdateJobCompletionDate;
     NSHashTable *_pendingRequestReferences;
@@ -34,31 +33,31 @@
 
 + (void)initialize;
 + (id)stringFromGraphServiceState:(unsigned long long)arg1;
-+ (_Bool)wantsToReceiveXPCRequestsOnUserInitiatedRequestQueue;
 + (long long)applicationDataFolderIdentifier;
 + (short)workerType;
 + (void)configureXPCConnection:(id)arg1;
-@property(retain) NSObject<OS_os_transaction> *graphWorkerWarmedUpTransaction; // @synthesize graphWorkerWarmedUpTransaction=_graphWorkerWarmedUpTransaction;
-@property long long pendingRequestReferenceCount; // @synthesize pendingRequestReferenceCount=_pendingRequestReferenceCount;
-@property(retain) NSHashTable *pendingRequestReferences; // @synthesize pendingRequestReferences=_pendingRequestReferences;
-@property(retain) NSDate *lastLibraryChangeGraphUpdateJobCompletionDate; // @synthesize lastLibraryChangeGraphUpdateJobCompletionDate=_lastLibraryChangeGraphUpdateJobCompletionDate;
-@property(retain) NSObject<OS_dispatch_queue> *backgroundTaskQueue; // @synthesize backgroundTaskQueue=_backgroundTaskQueue;
-@property(retain) PHACoalescer *libraryChangeForegroundUpdateCoalescer; // @synthesize libraryChangeForegroundUpdateCoalescer=_libraryChangeForegroundUpdateCoalescer;
-@property(retain) PHAPredicateValidator *relatedRequestPredicateValidator; // @synthesize relatedRequestPredicateValidator=_relatedRequestPredicateValidator;
-@property(retain) PHALibraryChangeBuffer *pendingLibraryChanges; // @synthesize pendingLibraryChanges=_pendingLibraryChanges;
-@property(retain) NSMutableDictionary *pendingGraphReadyCallbacks; // @synthesize pendingGraphReadyCallbacks=_pendingGraphReadyCallbacks;
-@property __weak PGManager *lastGraphManager; // @synthesize lastGraphManager=_lastGraphManager;
-@property(retain) PGManager *graphManager; // @synthesize graphManager=_graphManager;
-@property(retain) NSProgress *currentGraphRebuildProgress; // @synthesize currentGraphRebuildProgress=_currentGraphRebuildProgress;
-@property unsigned long long flags; // @synthesize flags=_flags;
+@property(retain, nonatomic) NSObject<OS_os_transaction> *graphWorkerWarmedUpTransaction; // @synthesize graphWorkerWarmedUpTransaction=_graphWorkerWarmedUpTransaction;
+@property(nonatomic) long long pendingRequestReferenceCount; // @synthesize pendingRequestReferenceCount=_pendingRequestReferenceCount;
+@property(retain, nonatomic) NSHashTable *pendingRequestReferences; // @synthesize pendingRequestReferences=_pendingRequestReferences;
+@property(retain, nonatomic) NSDate *lastLibraryChangeGraphUpdateJobCompletionDate; // @synthesize lastLibraryChangeGraphUpdateJobCompletionDate=_lastLibraryChangeGraphUpdateJobCompletionDate;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundTaskQueue; // @synthesize backgroundTaskQueue=_backgroundTaskQueue;
+@property(retain, nonatomic) PHAPredicateValidator *relatedRequestPredicateValidator; // @synthesize relatedRequestPredicateValidator=_relatedRequestPredicateValidator;
+@property(retain, nonatomic) NSMutableDictionary *pendingGraphReadyCallbacks; // @synthesize pendingGraphReadyCallbacks=_pendingGraphReadyCallbacks;
+@property(retain, nonatomic) PGManager *graphManager; // @synthesize graphManager=_graphManager;
+@property(retain, nonatomic) NSProgress *currentGraphRebuildProgress; // @synthesize currentGraphRebuildProgress=_currentGraphRebuildProgress;
+@property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 - (void).cxx_destruct;
+- (void)graphUpdateMadeProgress:(double)arg1;
+- (void)graphUpdateIsConsistent;
+- (void)graphUpdateDidStop;
+- (_Bool)wantsGraphUpdateNotifications;
+- (_Bool)wantsLiveGraphUpdates;
 - (void)requestSnapshotServiceForPeopleCurationResultsWithGraphOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestGraphRebuildNeededWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestSnapshotServiceForRelatedResultsWithGraphOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)requestSnapshotServiceForCurationResultsWithGraphOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (_Bool)_shouldAggregateDataForReporting:(unsigned long long)arg1;
 - (void)_logAggregatedStatistics:(id)arg1;
-- (id)_dataAggregationKeyForCategory:(long long)arg1 subCategory:(long long)arg2 lookupTable:(id)arg3;
+- (id)_dataAggregationKeyForCategory:(unsigned long long)arg1 subCategory:(unsigned long long)arg2 lookupTable:(id)arg3;
 - (id)_aggregatedStatsForMoodKeywordCountedSet:(id)arg1;
 - (id)_aggregatedStatsForMiroMoodCountVector:(id)arg1;
 - (id)_aggregatedStatsForPossibleMoodCountVector:(id)arg1;
@@ -74,22 +73,25 @@
 - (void)requestSnapshotServiceForRelatedDebugInfoBetweenAssetForLocalIdentifier:(id)arg1 andRelatedResultsForLocalIdentifiers:(id)arg2 precision:(unsigned long long)arg3 relatedType:(unsigned long long)arg4 context:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)requestSnapshotServiceForRelatedWithAssetLocalIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestSnapshotServiceForRelatedWithMomentLocalIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)requestSnapshotServiceForMomentWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)requestGraphServicePerformsQueryWithContext:(id)arg1 query:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestGraphServiceStatusWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestInvalidateServicePersistentCachesWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestInvalidateServiceTransientCachesWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestGraphRebuildFractionCompletedWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestHighlightEstimatesWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestGraphServiceStatisticsWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)requestSharingMessageSuggestionDebugInformationForAssetCollectionLocalIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)requestSharingSuggestionDebugInformationForAssetCollectionLocalIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestCurationDebugInformationForAsset:(id)arg1 precision:(unsigned long long)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)requestExportGraphServiceForPurpose:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestRelatedDebugInformationBetweenAssetForLocalIdentifier:(id)arg1 andRelatedAssetCollectionForLocalIdentifier:(id)arg2 options:(id)arg3 precision:(unsigned long long)arg4 relatedType:(unsigned long long)arg5 context:(id)arg6 reply:(CDUnknownBlockType)arg7;
 - (void)requestRelatedMomentsForPersonIdentifiers:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestRelatedDebugInformationBetweenReferenceAssetCollectionForLocalIdentifier:(id)arg1 andRelatedAssetCollectionForLocalIdentifier:(id)arg2 options:(id)arg3 precision:(unsigned long long)arg4 relatedType:(unsigned long long)arg5 context:(id)arg6 reply:(CDUnknownBlockType)arg7;
-- (void)_postNotificationForMemory:(id)arg1 deliveryDate:(id)arg2;
-- (void)_fireNotificationForMemoryIdentifiers:(id)arg1 withCreationReason:(unsigned long long)arg2;
-- (_Bool)_userIsActivelyUsingPhotos;
-- (_Bool)_shouldFireNotificationForMemories:(id)arg1 withCreationReason:(unsigned long long)arg2;
+- (void)pingGraphWorkerWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)requestSharingSuggestionsFromMessageStrings:(id)arg1 participantPHIdentifiers:(id)arg2 options:(id)arg3 context:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)requestSuggestedContributionsForAssetsMetadata:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)requestSuggestedRecipientsForMomentIdentifiers:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)requestSharingSuggestionsFromMomentLocalIdentifiers:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)simulateMemoriesNotificationWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (unsigned long long)_validatedMemoryNotificationState:(int)arg1;
 - (void)didCompleteRebuildOrDiffSuccessfully;
@@ -114,17 +116,16 @@
 - (void)requestAllSocialGroupsForPersonIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestSortedArrayOfPersonIdentifiers:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestAssetCollectionsRelatedToPersonIdentifiers:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)computeDiffWithProgressHandler:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestSetDefaultsObject:(id)arg1 forKey:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)requestDefaultsObjectForKey:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)generateMemoriesRelatedDiagnosticsLogsWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)_diagnosticsLogsRootFolderPath;
+- (void)requestCurationDebugInformationForAssetCollectionWithLocalIdentifier:(id)arg1 precision:(unsigned long long)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)requestRepresentativeAssetsForAssetCollectionWithLocalIdentifier:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)requestCuratedAssetsForAssetCollectionWithLocalIdentifier:(id)arg1 duration:(unsigned long long)arg2 precision:(unsigned long long)arg3 options:(id)arg4 context:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)requestCuratedAssetForAssetCollectionWithLocalIdentifier:(id)arg1 referenceAssetLocalIdentifier:(id)arg2 precision:(unsigned long long)arg3 options:(id)arg4 context:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)requestAssetCollectionsRelatedToAssetCollectionWithLocalIdentifier:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)requestAssetCollectionsRelatedToMomentWithLocalIdentifier:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)requestAssetCollectionsRelatedToAssetWithLocalIdentifier:(id)arg1 options:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)libraryTemporarilyUnavailableError;
 - (id)currentlyUnavailableError;
 - (long long)unavailableErrorCodeForCurrentState;
@@ -139,7 +140,7 @@
 - (id)_basicPropertiesFromMemory:(id)arg1;
 - (void)requestMemoryTreeDebugInformationWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)requestMemoryAssetCollectionDebugInformationForIdentifier:(id)arg1 precision:(unsigned long long)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)requestMemoryDebugInformationForMemoryWithLocalIdentifier:(id)arg1 precision:(unsigned long long)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)requestMemoryDebugInformationForMemoryWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_processMoodForMemory:(id)arg1 withMoodHistory:(id)arg2;
 - (id)_infoForNotificationQualityOfMemory:(id)arg1;
 - (id)_infoForGraphCollectionBasedMemory:(id)arg1;
@@ -155,28 +156,20 @@
 - (void)rebuildGraphWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)notifyWhenGraphReadyWithCoalescingIdentifier:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)statusAsDictionary;
+- (void)handleOperation:(id)arg1;
 - (void)pendingRequestReferenceDidDeallocateForAddress:(void *)arg1;
 - (id)pendingRequestReferenceForLabel:(id)arg1;
-@property unsigned long long state;
+@property(nonatomic) unsigned long long state;
 - (unsigned long long)synchronousOffQueueState;
-- (id)diffComputationJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)graphProcessHistoricalChangeJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)graphRebuildJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)backgroundMemoryGenerationJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)markAssetsInChangeDetails:(id)arg1 withState:(int)arg2;
-- (void)performGraphUpdates:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)graphUpdateDetailsForLibraryChangeSnapshot:(id)arg1;
-- (id)libraryChangeGraphUpdateJobForPendingChangesWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)libraryChangeListener:(id)arg1 gotRawChange:(id)arg2;
-- (void)setupLibraryChangeListener;
-- (_Bool)allowCooldownForWorkerChange:(id)arg1;
-- (_Bool)workerJobCausesCooldown:(id)arg1;
-- (_Bool)shouldCooldownForConstraintChange:(id)arg1;
-- (_Bool)shouldWarmupForConstraintChange:(id)arg1;
-- (_Bool)warmupBasedOnConstraintChanges;
 - (_Bool)shouldUnloadGraphOnCooldown;
 - (void)shutdownAndWaitForGraphManager;
 - (void)setupGraphManager;
-- (void)didFinishLastPendingRequest;
+- (_Bool)_graphShouldBeConnected;
+- (void)photoAnalysisGraphManager:(id)arg1 willShutdownGraph:(id)arg2;
+- (_Bool)canRunWhenGraphIsLoaded;
 - (void)shutdown;
 - (void)cooldown;
 - (void)callAndClearPendingReadyCallbacksWithResult:(_Bool)arg1 error:(id)arg2;
@@ -189,13 +182,10 @@
 - (void)markLastBackgroundGraphRebuildJobDate;
 - (id)nextAdditionalJobWithScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
 - (_Bool)didExceedtimeInterval:(double)arg1 forBackgroundJobUserDefaultsKey:(id)arg2;
-- (_Bool)hasAdditionalJobForPendingLibraryChangesInScenario:(unsigned long long)arg1;
-- (_Bool)hasAdditionalJobForDiffComputationInScenario:(unsigned long long)arg1;
 - (_Bool)hasAdditionalJobForGraphRebuildInScenario:(unsigned long long)arg1;
 - (_Bool)hasAdditionalJobForBackgroundMemoryGenerationInScenario:(unsigned long long)arg1;
-- (id)_lastSuccessfulSyncDate;
-- (_Bool)_isLibraryBeingSynchronized;
 - (_Bool)hasAdditionalJobsForScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
+- (_Bool)_graphShouldProcessLibraryChangesForScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
 - (void)setupPredicateValidator;
 - (id)initWithPhotoAnalysisManager:(id)arg1 dataLoader:(id)arg2;
 

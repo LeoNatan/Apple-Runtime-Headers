@@ -6,36 +6,34 @@
 
 #import <IconServices/ISIcns.h>
 
-@class NSDictionary;
+@class NSDictionary, NSString;
 
 @interface ISMutableIcns : ISIcns
 {
-    BOOL _dirty;
 }
 
 + (struct CGImage *)_scaledCGImage:(struct CGImage *)arg1 forICSNSizeAtScale:(unsigned int)arg2 template:(BOOL)arg3;
 + (int)_iconIndexSmallerThanSize:(struct CGSize)arg1 scale:(unsigned int)arg2 template:(BOOL)arg3;
-@property BOOL dirty; // @synthesize dirty=_dirty;
-@property(retain) NSDictionary *userInfo; // @dynamic userInfo;
-@property(retain) ISIcns *templateVariant;
-@property(retain) ISIcns *selectedVariant;
-- (void)removeValueAtIndex:(int)arg1;
+- (void)setVariant:(id)arg1 named:(id)arg2;
 - (void)setData:(id)arg1 atIndex:(int)arg2;
-- (id)data;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithData:(id)arg1;
+- (void)removeValueAtIndex:(int)arg1;
 - (id)initWithType:(unsigned int)arg1;
-- (id)init;
+- (id)initWithData:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)addImageWithBinding:(struct _LSBinding *)arg1 iconIndex:(int)arg2;
-- (void)setHandle:(char **)arg1 withType:(unsigned int)arg2;
+- (short)setHandle:(char **)arg1 withType:(unsigned int)arg2;
 - (void)setCGImage:(struct CGImage *)arg1 atIndex:(int)arg2;
 - (void)setData:(id)arg1 withElementType:(unsigned int)arg2;
 - (BOOL)addCGImage:(struct CGImage *)arg1 scale:(unsigned int)arg2 error:(id *)arg3;
-- (BOOL)addARGBData:(id)arg1 iconIndex:(int)arg2;
+- (BOOL)addImageData:(id)arg1 iconIndex:(int)arg2;
 - (id)initWithType:(unsigned int)arg1 imageProviderBlock:(CDUnknownBlockType)arg2;
 
 // Remaining properties
+@property(copy) NSString *name; // @dynamic name;
+@property(retain) ISIcns *selectedVariant; // @dynamic selectedVariant;
+@property(retain) ISIcns *templateVariant; // @dynamic templateVariant;
 @property unsigned int type; // @dynamic type;
+@property(retain) NSDictionary *userInfo; // @dynamic userInfo;
 
 @end
 

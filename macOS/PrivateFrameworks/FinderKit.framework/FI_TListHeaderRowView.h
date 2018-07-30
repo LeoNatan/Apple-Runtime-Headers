@@ -11,17 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface FI_TListHeaderRowView : NSTableRowView
 {
-    struct TNSRef<NSVisualEffectView *, void> _blurBackgroundView;
     FI_TListView *_listView;
     FI_TListViewController *_listViewController;
     struct TFENode _node;
     long long _columnBeingDragged;
-    struct TNSRef<FI_TListHeaderCellView *, void> _cellViewForDrag;
-    struct TNSRef<FI_TUpdateLayerView *, void> _topHorizontalLineView;
-    struct TNSRef<NSMutableArray *, void> _cellViews;
+    struct TNSRef<FI_TListHeaderCellView, void> _cellViewForDrag;
+    struct TNSRef<NSMutableArray, void> _cellViews;
     long long _sortColumnIndex;
     _Bool _isSortAscending;
-    struct TNSRef<NSTrackingArea *, void> _headerTrackingArea;
+    struct TNSRef<NSTrackingArea, void> _headerTrackingArea;
     _Bool _isCursorOverDivider;
     id <TListHeaderRowViewDelegate> _delegate;
 }
@@ -40,11 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateCursor:(id)arg1;
-- (long long)interiorBackgroundStyle;
 - (id)columnForDivider:(long long)arg1;
 - (long long)mouseInDivider:(id)arg1;
-- (void)setBackgroundColor:(id)arg1;
-- (void)updateBackgroundColor;
 - (void)updateLayer;
 - (void)performUpdateLayer;
 - (void)layout;
@@ -56,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (void)updateNextFloatingHeader;
 - (_Bool)isGroupHeader;
 - (void)setNode:(const struct TFENode *)arg1;
-- (BOOL)isOpaque;
 - (void)dealloc;
 - (id)initAsGroupHeader:(struct CGRect)arg1 controller:(id)arg2 node:(const struct TFENode *)arg3 delegate:(id)arg4;
 - (id)initWithCoder:(id)arg1;

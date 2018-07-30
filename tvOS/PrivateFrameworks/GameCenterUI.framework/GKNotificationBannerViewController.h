@@ -24,8 +24,8 @@
 @property(retain, nonatomic) GKNotificationBannerView *bannerView; // @synthesize bannerView=_bannerView;
 - (struct CGPoint)_visibleBannerCenterPosition:(struct CGSize)arg1;
 - (struct CGPoint)_hiddenBannerPosition:(struct CGSize)arg1;
-- (void)layoutBanner;
 - (void)addConstraintsForBannerView;
+- (void)addConstraintsForTVOSBannerView;
 - (double)bannerWidthForViewSize:(struct CGSize)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (unsigned long long)supportedInterfaceOrientations;

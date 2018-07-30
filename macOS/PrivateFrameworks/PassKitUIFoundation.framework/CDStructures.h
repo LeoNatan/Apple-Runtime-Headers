@@ -88,7 +88,8 @@ struct NSImageView {
     struct __IVFlags {
         unsigned int :1;
         unsigned int :1;
-        unsigned int :24;
+        unsigned int :1;
+        unsigned int :23;
         unsigned int :1;
         unsigned int :1;
         unsigned int :1;

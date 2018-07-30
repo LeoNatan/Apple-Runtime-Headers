@@ -64,6 +64,9 @@ __attribute__((visibility("hidden")))
 - (double)_totalHeight;
 - (void)_layoutAccessoryView:(id)arg1;
 - (double)_originalToolbarHeightIncludingSafeAreaBottomInset:(_Bool)arg1;
+- (double)_computeClippingExtensionContainerHeightForCurrentHiddenProgress;
+- (double)_computeClippingExtensionContainerBottomConstraint;
+- (double)_toolbarSafeAreaInsetBottom;
 - (_Bool)_tryToSetUp:(_Bool)arg1;
 - (id)init;
 

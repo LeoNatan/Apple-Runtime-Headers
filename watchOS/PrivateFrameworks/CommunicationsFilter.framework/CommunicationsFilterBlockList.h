@@ -8,6 +8,7 @@
 
 @class CommunicationsFilterBlockListCache, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
+__attribute__((visibility("hidden")))
 @interface CommunicationsFilterBlockList : NSObject
 {
     NSObject<OS_xpc_object> *_connection;

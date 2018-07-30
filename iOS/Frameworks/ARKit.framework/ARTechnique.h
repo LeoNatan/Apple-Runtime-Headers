@@ -6,42 +6,45 @@
 
 #import "NSObject.h"
 
-#import "ARTechniqueDelegate.h"
+@class NSNumber;
 
-@class NSArray, NSString;
-
-@interface ARTechnique : NSObject <ARTechniqueDelegate>
+@interface ARTechnique : NSObject
 {
     id <ARTechniqueDelegate> _delegate;
-    NSArray *_techniques;
     unsigned long long _powerUsage;
+    double _bonusLatency;
+    NSNumber *_traceKey;
 }
 
-@property(nonatomic) unsigned long long powerUsage; // @synthesize powerUsage=_powerUsage;
-@property(retain, nonatomic) NSArray *techniques; // @synthesize techniques=_techniques;
-@property(nonatomic) __weak id <ARTechniqueDelegate> delegate; // @synthesize delegate=_delegate;
++ (id)techniqueOfClass:(Class)arg1 inArray:(id)arg2;
+@property(readonly) NSNumber *traceKey; // @synthesize traceKey=_traceKey;
+@property double bonusLatency; // @synthesize bonusLatency=_bonusLatency;
+@property unsigned long long powerUsage; // @synthesize powerUsage=_powerUsage;
+@property __weak id <ARTechniqueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
-@property(readonly, copy) NSString *description;
-- (void)technique:(id)arg1 didFailWithError:(id)arg2;
-- (void)technique:(id)arg1 didOutputResultData:(id)arg2 timestamp:(double)arg3 context:(id)arg4;
 - (void)replaceTechniques:(id)arg1;
+- (id)initWithParallelTechniques:(id)arg1;
+- (id)initWithTechniques:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)description;
+- (id)techniques;
 - (id)techniqueOfClass:(Class)arg1;
+- (void)mergeResultData:(id)arg1 intoData:(id)arg2 context:(id)arg3;
 - (id)processResultData:(id)arg1 timestamp:(double)arg2 context:(id)arg3;
 - (id)predictedResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (id)processData:(id)arg1;
+- (void)siblingTechniquesDidChange:(id)arg1;
 - (void)reconfigureFrom:(id)arg1;
+- (_Bool)reconfigurableFrom:(id)arg1;
+- (void)prepare;
 - (id)resultDataClasses;
+- (_Bool)deterministicMode;
+- (long long)captureBehavior;
+- (double)requiredTimeInterval;
 - (unsigned long long)requiredSensorDataTypes;
-- (void)dealloc;
-- (id)initWithTechniques:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

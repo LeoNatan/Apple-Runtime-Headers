@@ -10,7 +10,7 @@
 
 @class NSString;
 
-@interface HMXpcClientConnectionProxy : HMFMessageTransport <HMXPCMessageTransport>
+@interface HMXPCClientConnectionProxy : HMFMessageTransport <HMXPCMessageTransport>
 {
     CDUnknownBlockType _refreshHandler;
 }

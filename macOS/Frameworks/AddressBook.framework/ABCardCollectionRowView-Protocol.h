@@ -46,6 +46,7 @@
 - (void)clearValue;
 - (BOOL)hasValue;
 - (void)glyphButtonPressed:(id)arg1;
+- (void)updateGlyphButtonsVisibility;
 - (BOOL)commitEditing;
 - (void)updateMultiValueControls;
 - (void)didChangeLabelForCollection:(ABCardCollectionView *)arg1;

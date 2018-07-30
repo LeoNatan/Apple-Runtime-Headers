@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_updatePopUpStateForDomain:(id)arg1;
 - (void)updateStateForDomain:(id)arg1;
 - (void)_updatePreferenceValue:(id)arg1;
-- (void)_populateMenu:(id)arg1 withWBSPerSitePreferenceValues:(id)arg2 selector:(SEL)arg3;
+- (void)_populateMenu:(id)arg1 withValuesForPerSitePreference:(id)arg2 inManager:(id)arg3 selector:(SEL)arg4;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;

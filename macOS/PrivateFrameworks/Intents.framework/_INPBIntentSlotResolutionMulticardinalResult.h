@@ -7,32 +7,35 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentSlotResolutionMulticardinalResult.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBIntentSlotResolutionMulticardinalResult : PBCodable <NSCopying>
+@interface _INPBIntentSlotResolutionMulticardinalResult : PBCodable <_INPBIntentSlotResolutionMulticardinalResult, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_resolutionResults;
+    struct _has;
+    NSArray *_resolutionResults;
 }
 
 + (Class)resolutionResultsType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *resolutionResults; // @synthesize resolutionResults=_resolutionResults;
+@property(copy, nonatomic) NSArray *resolutionResults; // @synthesize resolutionResults=_resolutionResults;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (id)resolutionResultsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)resolutionResultsCount;
+@property(readonly, nonatomic) unsigned long long resolutionResultsCount;
 - (void)addResolutionResults:(id)arg1;
 - (void)clearResolutionResults;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -22,6 +22,7 @@
 }
 
 + (long long)mergeWithLibrary:(id)arg1;
++ (_Bool)hasEntries;
 + (id)legacyJournal;
 + (id)journalForMailbox:(id)arg1;
 + (void)initialize;

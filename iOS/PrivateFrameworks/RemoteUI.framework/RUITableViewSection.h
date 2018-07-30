@@ -9,14 +9,14 @@
 #import "RUIHeaderDelegate.h"
 #import "RUITableFooterDelegate.h"
 
-@class NSArray, NSMutableArray, NSNumber, RUIDetailHeaderElement, RUIReadableContentContainer, RUISubHeaderElement, RUITableView, RUITableViewRow, UIView, UIView<RUIHeader>, UIView<RemoteUITableFooter>;
+@class NSArray, NSMutableArray, NSNumber, RUIDetailHeaderElement, RUISubHeaderElement, RUITableView, RUITableViewHeaderFooterView, RUITableViewRow, UIView<RUIHeader>, UIView<RemoteUITableFooter>;
 
 @interface RUITableViewSection : RUIElement <RUIHeaderDelegate, RUITableFooterDelegate>
 {
     NSMutableArray *_rows;
     long long _disclosureLimit;
-    RUIReadableContentContainer *_containerizedHeaderView;
-    RUIReadableContentContainer *_containerizedFooterView;
+    RUITableViewHeaderFooterView *_containerizedHeaderView;
+    RUITableViewHeaderFooterView *_containerizedFooterView;
     NSNumber *_drawsTopSeparator;
     _Bool _configured;
     UIView<RUIHeader> *_headerView;
@@ -40,9 +40,9 @@
 @property(retain, nonatomic) RUITableViewRow *showAllRow; // @synthesize showAllRow=_showAllRow;
 @property(nonatomic) double footerHeight; // @synthesize footerHeight=_footerHeight;
 @property(nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;
-@property(retain, nonatomic) UIView *containerizedFooterView; // @synthesize containerizedFooterView=_containerizedFooterView;
+@property(retain, nonatomic) RUITableViewHeaderFooterView *containerizedFooterView; // @synthesize containerizedFooterView=_containerizedFooterView;
 @property(retain, nonatomic) UIView<RemoteUITableFooter> *footerView; // @synthesize footerView=_footerView;
-@property(retain, nonatomic) UIView *containerizedHeaderView; // @synthesize containerizedHeaderView=_containerizedHeaderView;
+@property(retain, nonatomic) RUITableViewHeaderFooterView *containerizedHeaderView; // @synthesize containerizedHeaderView=_containerizedHeaderView;
 @property(retain, nonatomic) UIView<RUIHeader> *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
 - (id)subElementsWithName:(id)arg1;

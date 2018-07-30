@@ -6,7 +6,6 @@
 
 #import <GeoServices/GEOServiceRequester.h>
 
-__attribute__((visibility("hidden")))
 @interface GEOPlaceDataRequester : GEOServiceRequester
 {
 }

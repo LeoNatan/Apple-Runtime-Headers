@@ -9,20 +9,21 @@
 #import "NFFieldDetectSessionDelegate.h"
 #import "NFLoyaltyAndPaymentSessionDelegate.h"
 
-@class NFFieldDetectSession, NFLoyaltyAndPaymentSession, NSHashTable, NSLock, NSObject<NFSession>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, PKFieldProperties;
+@class NFFieldDetectSession, NFLoyaltyAndPaymentSession, NSHashTable, NSObject<NFSession>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, PKFieldProperties;
 
 @interface PKFieldDetector : NSObject <NFFieldDetectSessionDelegate, NFLoyaltyAndPaymentSessionDelegate>
 {
     NFFieldDetectSession *_fieldDetectSession;
     unsigned long long _fieldDetectSessionRetryCount;
+    BOOL _fieldDetectSessionRequested;
     BOOL _fieldPresent;
     PKFieldProperties *_fieldPropertiesToLookup;
     NFLoyaltyAndPaymentSession *_fieldPropertiesLookupSession;
     NSObject<NFSession> *_fieldPropertiesLookupSessionHandle;
     NSObject<OS_dispatch_source> *_fieldPropertiesLookupTimer;
     unsigned long long _fieldPropertieslookupSynchronizer;
+    struct os_unfair_lock_s _lock;
     NSHashTable *_observers;
-    NSLock *_observersLock;
     PKFieldProperties *_fieldProperties;
     NSObject<OS_dispatch_queue> *_fieldDetectorSerialQueue;
     NSObject<OS_dispatch_queue> *_replyQueue;
@@ -35,7 +36,7 @@
 - (void)_startLookupForFieldProperties:(id)arg1;
 - (void)_startFieldDetectSession;
 - (void)_restartFieldDetectSession;
-@property(nonatomic) __weak id <PKFieldDetectorDelegate> delegate;
+@property(nonatomic) __weak id <PKFieldDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PKFieldProperties *fieldProperties;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
@@ -43,8 +44,8 @@
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(id)arg1;
 - (void)loyaltyAndPaymentSession:(id)arg1 didPerformValueAddedServiceTransactions:(id)arg2;
 - (void)fieldDetectSessionDidEndUnexpectedly:(id)arg1;
-- (void)fieldDetectSession:(id)arg1 didDetectTechnology:(id)arg2;
-- (void)fieldDetectSession:(id)arg1 didDetectField:(BOOL)arg2;
+- (void)fieldDetectSessionDidExitField:(id)arg1;
+- (void)fieldDetectSession:(id)arg1 didEnterFieldWithNotification:(id)arg2;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (id)init;

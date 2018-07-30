@@ -12,20 +12,23 @@
 
 @interface CEMManagementTestCommandCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadEcho;
+    NSString *_payloadReturnStatus;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withEcho:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withEcho:(id)arg2 withReturnStatus:(id)arg3;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadReturnStatus; // @synthesize payloadReturnStatus=_payloadReturnStatus;
+@property(copy, nonatomic) NSString *payloadEcho; // @synthesize payloadEcho=_payloadEcho;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (_Bool)mustBeSupervised;
-@property(readonly, nonatomic) NSString *payloadReturnStatus;
-@property(readonly, nonatomic) NSString *payloadEcho;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

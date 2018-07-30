@@ -24,6 +24,7 @@
 
 + (id)queueWithMainRunLoopModes:(id)arg1;
 + (id)queueWithDispatchQueue:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

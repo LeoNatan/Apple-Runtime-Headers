@@ -10,6 +10,7 @@
 
 @class CALayer, UIPDFPageView;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFTextRangeWidget : NSObject <UIPDFSelectionWidget>
 {
     CALayer *_startSelectionGrabber;

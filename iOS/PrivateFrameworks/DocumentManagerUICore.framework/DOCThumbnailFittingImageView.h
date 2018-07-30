@@ -29,6 +29,7 @@
 - (void)updateThumbnailForItem:(id)arg1;
 - (void)updateThumbnail;
 - (id)initWithCoder:(id)arg1;
+- (void)_commonInitWithSize:(struct CGSize)arg1;
 - (id)initWithSize:(struct CGSize)arg1 url:(id)arg2;
 - (id)initWithSize:(struct CGSize)arg1 item:(id)arg2;
 

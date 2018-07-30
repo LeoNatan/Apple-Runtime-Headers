@@ -7,7 +7,7 @@
 #import "_CPFeedbackJSONObject.h"
 
 @protocol _CPProcessableFeedback <_CPFeedbackJSONObject>
-@property(readonly, nonatomic) unsigned long long timestamp;
+@property(nonatomic) unsigned long long timestamp;
 @property(readonly, nonatomic) _Bool requiresQueryId;
 @end
 

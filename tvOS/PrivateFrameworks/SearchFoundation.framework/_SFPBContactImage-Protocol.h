@@ -6,13 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 
 @protocol _SFPBContactImage <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasContactIdentifier;
+@property(nonatomic) _Bool threeDTouchEnabled;
+@property(copy, nonatomic) NSArray *contactIdentifiers;
 @property(copy, nonatomic) NSString *contactIdentifier;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
+- (NSString *)contactIdentifiersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)contactIdentifiersCount;
+- (void)addContactIdentifiers:(NSString *)arg1;
+- (void)clearContactIdentifiers;
 @end
 

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)outputImage;
 - (void)setDefaults;
 - (id)_kernel;
+- (struct CGColor *)_newColorByProcessingColor:(struct CGColor *)arg1;
 - (void)dealloc;
 
 @end

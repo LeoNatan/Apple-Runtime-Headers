@@ -8,6 +8,7 @@
 
 @class NSResponder;
 
+__attribute__((visibility("hidden")))
 @interface NSObjectDetailBinder : NSEditorBinder
 {
     NSResponder *_errorPresenter;

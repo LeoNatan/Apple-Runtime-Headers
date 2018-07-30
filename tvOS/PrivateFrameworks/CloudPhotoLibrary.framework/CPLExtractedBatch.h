@@ -8,14 +8,14 @@
 
 #import "NSSecureCoding.h"
 
-@class CPLChangeBatch, NSMutableDictionary, NSMutableSet, NSSet, NSString;
+@class CPLChangeBatch, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
 @interface CPLExtractedBatch : NSObject <NSSecureCoding>
 {
-    NSMutableDictionary *_uploadIdentifiers;
+    NSDictionary *_uploadIdentifiers;
     NSMutableDictionary *_mutableUploadIdentifiers;
-    NSSet *_untrustableIdentifiers;
-    NSMutableSet *_mutableUntrustableIndentifiers;
+    NSSet *_untrustableScopedIdentifiers;
+    NSMutableSet *_mutableUntrustableScopedIndentifiers;
     _Bool _resourceSizeIsCalculated;
     _Bool _full;
     _Bool _batchCanLowerQuota;
@@ -30,6 +30,7 @@
 @property(nonatomic, getter=isFull) _Bool full; // @synthesize full=_full;
 @property(readonly, nonatomic) CPLChangeBatch *batch; // @synthesize batch=_batch;
 - (void).cxx_destruct;
+- (void)forceScopeIndexOnAllRecordsTo:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long resourceSize; // @synthesize resourceSize=_resourceSize;
 - (id)uploadIdentifiers;
 - (void)addChange:(id)arg1;

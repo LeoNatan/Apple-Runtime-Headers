@@ -14,7 +14,6 @@
     double _timeoutInterval;
 }
 
-+ (id)shortDescription;
 @property(readonly, nonatomic) HMFHTTPRequestInternal *internal; // @synthesize internal=_internal;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 - (void).cxx_destruct;
@@ -24,10 +23,7 @@
 @property(readonly, copy, nonatomic) NSString *method;
 @property(readonly, copy, nonatomic) NSURL *URL;
 - (id)responseWithStatusCode:(long long)arg1;
-- (id)description;
-- (id)debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
+- (id)attributeDescriptions;
 - (id)initWithInternalRequest:(id)arg1;
 - (id)init;
 

@@ -10,7 +10,7 @@
 #import "UIGestureRecognizerDelegate.h"
 #import "UIPreviewInteractionDelegatePrivate.h"
 
-@class CCUIContentModuleBackgroundView, CCUIContentModuleContentContainerView, NSArray, NSString, UIPreviewInteraction, UITapGestureRecognizer, UIView, UIViewController<CCUIContentModuleContentViewController>;
+@class CCUIContentModuleBackgroundView, CCUIContentModuleContentContainerView, NSArray, NSString, UIPreviewInteraction, UITapGestureRecognizer, UIView, UIViewController<CCUIContentModuleBackgroundViewController>, UIViewController<CCUIContentModuleContentViewController>;
 
 @interface CCUIContentModuleContainerViewController : UIViewController <UIPreviewInteractionDelegatePrivate, UIGestureRecognizerDelegate, CCUISafeAppearancePropagationProvider>
 {
@@ -18,10 +18,11 @@
     _Bool _contentModuleProvidesOwnPlatter;
     NSString *_moduleIdentifier;
     id <CCUIContentModuleContainerViewControllerDelegate> _delegate;
+    NSString *_materialGroupName;
     NSArray *_topLevelBlockingGestureRecognizers;
     id <CCUIContentModule> _contentModule;
     UIViewController<CCUIContentModuleContentViewController> *_contentViewController;
-    UIViewController *_backgroundViewController;
+    UIViewController<CCUIContentModuleBackgroundViewController> *_backgroundViewController;
     UIView *_highlightWrapperView;
     CCUIContentModuleBackgroundView *_backgroundView;
     CCUIContentModuleContentContainerView *_contentContainerView;
@@ -40,11 +41,12 @@
 @property(retain, nonatomic) CCUIContentModuleBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *highlightWrapperView; // @synthesize highlightWrapperView=_highlightWrapperView;
 @property(nonatomic) _Bool contentModuleProvidesOwnPlatter; // @synthesize contentModuleProvidesOwnPlatter=_contentModuleProvidesOwnPlatter;
-@property(retain, nonatomic) UIViewController *backgroundViewController; // @synthesize backgroundViewController=_backgroundViewController;
+@property(retain, nonatomic) UIViewController<CCUIContentModuleBackgroundViewController> *backgroundViewController; // @synthesize backgroundViewController=_backgroundViewController;
 @property(retain, nonatomic) UIViewController<CCUIContentModuleContentViewController> *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, nonatomic) id <CCUIContentModule> contentModule; // @synthesize contentModule=_contentModule;
 @property(readonly, nonatomic) NSArray *topLevelBlockingGestureRecognizers; // @synthesize topLevelBlockingGestureRecognizers=_topLevelBlockingGestureRecognizers;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
+@property(copy, nonatomic) NSString *materialGroupName; // @synthesize materialGroupName=_materialGroupName;
 @property(nonatomic) __weak id <CCUIContentModuleContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets expandedContentEdgeInsets; // @synthesize expandedContentEdgeInsets=_expandedContentEdgeInsets;
 @property(copy, nonatomic) NSString *moduleIdentifier; // @synthesize moduleIdentifier=_moduleIdentifier;
@@ -54,6 +56,8 @@
 - (void)_configureMaskViewIfNecessary;
 - (struct CGRect)_contentBoundsForTransitionProgress:(double)arg1;
 - (struct CGRect)_presentationFrameForExpandedState;
+- (struct CGRect)_contentFrameInPresentationFrame:(struct CGRect)arg1;
+- (struct CGRect)_containerFrameForExpandedState;
 - (struct CGRect)_backgroundFrameForExpandedState;
 - (struct CGRect)_backgroundFrameForRestState;
 - (struct CGRect)_contentFrameForExpandedState;

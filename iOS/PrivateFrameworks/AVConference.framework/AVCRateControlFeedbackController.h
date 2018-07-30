@@ -14,20 +14,27 @@ __attribute__((visibility("hidden")))
     unsigned int _mode;
     AVCStatisticsCollector *_statisticsCollector;
     unsigned int _feedbackMessageCount;
+    unsigned int _remoteTotalPacketReceivedCount;
+    _Bool _isFeedbackReceived;
+    _Bool _didRegisterPacketReceivedHandler;
+    unsigned int _maxBurstyLossCache;
 }
 
-@property(retain, nonatomic) AVCStatisticsCollector *statisticsCollector; // @synthesize statisticsCollector=_statisticsCollector;
+@property(nonatomic) unsigned int maxBurstyLossCache; // @synthesize maxBurstyLossCache=_maxBurstyLossCache;
 @property(nonatomic) unsigned int mode; // @synthesize mode=_mode;
-- (_Bool)translateMediaControlInfo:(void *)arg1 feedbackMessage:(CDStruct_a561fd19 *)arg2;
-- (CDStruct_a561fd19)translateAFRCFeedbackMessage:(struct tagAFRCFB)arg1;
-- (CDStruct_a561fd19)translateRateControlFeedbackMessageFromData:(id)arg1;
-- (id)getRateControlDataWithStatistics:(id)arg1;
-- (_Bool)processRateControlProbingMessage:(CDStruct_0004415b)arg1 type:(unsigned int)arg2 error:(id *)arg3;
-- (_Bool)processRateControlFeedbackMessage:(CDStruct_a561fd19)arg1 type:(unsigned int)arg2 error:(id *)arg3;
+- (void)setPacketReceivedStatistics:(CDStruct_4c5da9d9)arg1;
+- (_Bool)detectOutOfOrderFeedbackMessage:(CDStruct_bcb9d60a)arg1;
+- (_Bool)translateMediaControlInfo:(void *)arg1 feedbackMessage:(CDStruct_bcb9d60a *)arg2;
+- (CDStruct_bcb9d60a)translateAFRCFeedbackMessage:(struct tagAFRCFB)arg1;
+- (CDStruct_bcb9d60a)translateRateControlFeedbackMessageFromData:(id)arg1;
+- (id)translateRateControlDataWithFeedbackMessage:(CDStruct_bcb9d60a)arg1;
+- (_Bool)processRateControlProbingMessage:(CDStruct_4c345eff)arg1 type:(unsigned int)arg2 error:(id *)arg3;
+- (_Bool)processRateControlFeedbackMessage:(CDStruct_bcb9d60a)arg1 type:(unsigned int)arg2 error:(id *)arg3;
+- (_Bool)getVCStatisticsFeedbackMessage:(CDStruct_48a7b5a5 *)arg1 time:(double)arg2;
 - (_Bool)getRateControlFeedbackMessage:(id *)arg1 type:(unsigned int)arg2 metaData:(id *)arg3 error:(id *)arg4;
 - (_Bool)processFeedbackMessage:(id)arg1 type:(unsigned int)arg2 metaData:(id)arg3 error:(id *)arg4;
 - (_Bool)getFeedbackMessage:(id *)arg1 type:(unsigned int)arg2 metaData:(id *)arg3 error:(id *)arg4;
-- (void)dealloc;
+- (id)initWithStatisticsCollector:(id)arg1;
 
 @end
 

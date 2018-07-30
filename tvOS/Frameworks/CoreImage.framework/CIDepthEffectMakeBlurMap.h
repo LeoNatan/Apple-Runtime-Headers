@@ -6,13 +6,14 @@
 
 #import <CoreImage/CIFilter.h>
 
-@class AVCameraCalibrationData, CIImage, CIVector, NSNumber;
+@class AVCameraCalibrationData, CIImage, CIVector, NSDictionary, NSNumber;
 
 __attribute__((visibility("hidden")))
 @interface CIDepthEffectMakeBlurMap : CIFilter
 {
     CIImage *inputImage;
     CIImage *inputShiftmapImage;
+    CIImage *inputMatteImage;
     NSNumber *inputAperture;
     CIVector *inputLeftEyePosition;
     CIVector *inputRightEyePosition;
@@ -22,6 +23,8 @@ __attribute__((visibility("hidden")))
     NSNumber *inputScale;
     AVCameraCalibrationData *inputCalibrationData;
     id inputAuxDataMetadata;
+    NSDictionary *tuningParameters;
+    float simulatedAperture;
 }
 
 + (id)customAttributes;
@@ -29,19 +32,28 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id inputAuxDataMetadata; // @synthesize inputAuxDataMetadata;
 @property(copy, nonatomic) NSNumber *inputScale; // @synthesize inputScale;
 @property(retain, nonatomic) CIVector *inputFocusRect; // @synthesize inputFocusRect;
-@property(retain, nonatomic) CIVector *inputFaceMidPoint; // @synthesize inputFaceMidPoint;
-@property(retain, nonatomic) CIVector *inputChinPosition; // @synthesize inputChinPosition;
-@property(retain, nonatomic) CIVector *inputRightEyePosition; // @synthesize inputRightEyePosition;
-@property(retain, nonatomic) CIVector *inputLeftEyePosition; // @synthesize inputLeftEyePosition;
+@property(retain) CIVector *inputFaceMidPoint; // @synthesize inputFaceMidPoint;
+@property(retain) CIVector *inputChinPosition; // @synthesize inputChinPosition;
+@property(retain) CIVector *inputRightEyePosition; // @synthesize inputRightEyePosition;
+@property(retain) CIVector *inputLeftEyePosition; // @synthesize inputLeftEyePosition;
 @property(copy, nonatomic) NSNumber *inputAperture; // @synthesize inputAperture;
+@property(retain) CIImage *inputMatteImage; // @synthesize inputMatteImage;
 @property(retain) CIImage *inputShiftmapImage; // @synthesize inputShiftmapImage;
 @property(retain) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;
-- (id)_nativeImage:(id)arg1 aperture:(float)arg2;
-- (id)_metalImage;
-- (id)_nativeCIFaceMaskImage:(id)arg1 tuningParameters:(id)arg2;
-- (_Bool)_needToRunFaceMask;
-- (id)_nativeCILensModelImage:(id)arg1 aperture:(float)arg2;
+- (id)blurMapV3:(id)arg1 shiftmap:(id)arg2 alphaImage:(id)arg3;
+- (id)refineShiftMapV3WithMainImage:(id)arg1 shiftmap:(id)arg2;
+- (id)blurMapV2:(id)arg1;
+- (id)smoothShiftMapV2:(id)arg1;
+- (id)faceMaskApply:(id)arg1 blurMap:(id)arg2;
+- (id)faceMaskParams:(id)arg1;
+- (_Bool)needToRunFaceMask;
+- (id)lensModelApply:(id)arg1 shiftMap:(id)arg2;
+- (id)lensModelParams:(id)arg1;
+- (id)upsampledShiftMap:(id)arg1;
+- (float)intrinsicMatrixFocalLength;
+- (struct CGSize)originalShiftMapSize;
+- (id)calibrationData;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

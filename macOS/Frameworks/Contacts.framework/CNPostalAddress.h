@@ -29,6 +29,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)postalAddressWithDictionaryRepresentation:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
++ (id)postalAddressWithAddressBookDictionaryRepresentation:(id)arg1;
 @property(copy) NSString *formattedAddress; // @synthesize formattedAddress=_formattedAddress;
 - (void).cxx_destruct;
 @property(copy) NSString *ISOCountryCode; // @synthesize ISOCountryCode=_ISOCountryCode;
@@ -49,6 +50,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPostalAddress:(id)arg1;
 - (id)dictionaryRepresentation;
+- (id)addressBookDictionaryRepresentation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

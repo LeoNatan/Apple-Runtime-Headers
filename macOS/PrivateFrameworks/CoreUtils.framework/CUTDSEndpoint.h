@@ -19,6 +19,7 @@
 @property(copy, nonatomic) NSData *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(nonatomic) int dataLinkType; // @synthesize dataLinkType=_dataLinkType;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

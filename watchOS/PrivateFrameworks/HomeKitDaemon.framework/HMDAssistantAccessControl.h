@@ -41,6 +41,7 @@
 @property(readonly, copy) HMDAssistantAccessControlModel *model;
 @property(readonly, copy) NSUUID *modelID;
 - (void)notifyClientOfUpdateWithMessage:(id)arg1;
+- (void)removeAccessoriesAddedByOldController:(id)arg1;
 - (void)handleRemovedAccessory:(id)arg1;
 - (void)removeAccessory:(id)arg1;
 - (void)addAccessory:(id)arg1;
@@ -60,8 +61,11 @@
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
 @property(readonly) Class superclass;
 
 @end

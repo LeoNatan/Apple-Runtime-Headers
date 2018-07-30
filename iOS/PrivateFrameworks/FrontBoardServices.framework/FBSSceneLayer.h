@@ -22,9 +22,10 @@
 }
 
 @property(readonly, nonatomic) _Bool shouldObserveUpdates; // @synthesize shouldObserveUpdates=_shouldObserveUpdates;
-@property(nonatomic) id <FBSSceneLayerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <FBSSceneLayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
-@property(nonatomic) FBSScene *scene; // @synthesize scene=_scene;
+@property(nonatomic) __weak FBSScene *scene; // @synthesize scene=_scene;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

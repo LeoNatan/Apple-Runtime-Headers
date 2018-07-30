@@ -20,6 +20,7 @@
     UIFont *_font;
     long long _scaleMode;
     UIColor *_backgroundColor;
+    UIColor *_textColor;
     double _upscaleAdjustment;
     double _cornerRadius;
     UIColor *_fillColor;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double upscaleAdjustment; // @synthesize upscaleAdjustment=_upscaleAdjustment;
+@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) long long scaleMode; // @synthesize scaleMode=_scaleMode;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
@@ -48,6 +50,8 @@
 @property(readonly, copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 - (void).cxx_destruct;
 - (unsigned long long)preferedMonogramType;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithType:(unsigned long long)arg1;
 - (id)init;

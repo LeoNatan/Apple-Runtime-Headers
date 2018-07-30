@@ -9,6 +9,9 @@
 @class AVOutputDevice, NSArray, NSData, NSDictionary, NSNumber, NSString;
 
 @protocol AVOutputDeviceImpl <NSObject>
+@property(readonly, nonatomic) BOOL presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(readonly, nonatomic) BOOL canFetchMediaDataFromSender;
+@property(readonly, nonatomic) BOOL canPlayEncryptedProgressiveDownloadAssets;
 @property(readonly, nonatomic) BOOL canRelayCommunicationChannel;
 @property(readonly, nonatomic) BOOL canCommunicateWithAllLogicalDeviceMembers;
 @property(readonly, nonatomic) BOOL isLogicalDeviceLeader;

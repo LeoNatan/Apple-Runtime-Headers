@@ -7,64 +7,72 @@
 #import <NanoTimeKit/NTKDigitalFaceView.h>
 
 #import "NTKAstronomyRotationModelObserver.h"
-#import "NTKAstronomyViewObserver.h"
+#import "NTKAstronomyVistaViewObserver.h"
 #import "NTKTimeView.h"
 #import "PUICCrownInputSequencerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyView, NTKDateComplicationLabel, NTKDelayedBlock, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, PUICClientSideAnimation, PUICCrownInputSequencer, UIButton, UIImageView, UILabel, UIPanGestureRecognizer, UITapGestureRecognizer;
+@class NSArray, NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDelayedBlock, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer;
 
-@interface NTKAstronomyFaceView : NTKDigitalFaceView <NTKTimeView, NTKAstronomyRotationModelObserver, NTKAstronomyViewObserver, PUICCrownInputSequencerDelegate, UIGestureRecognizerDelegate>
+@interface NTKAstronomyFaceView : NTKDigitalFaceView <NTKTimeView, NTKAstronomyRotationModelObserver, NTKAstronomyVistaViewObserver, UIGestureRecognizerDelegate, PUICCrownInputSequencerDelegate>
 {
-    NTKDigitalTimeLabelStyle *_digitalTimeLabelDefaultLayoutStyle;
-    NTKDigitalTimeLabelStyle *_digitalTimeLabelSmallInUpperRightStyle;
+    NTKDigitialUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
+    NTKDigitalTimeLabelStyle *_digitalTimeLabelDefaultStyle;
+    NTKDigitalTimeLabelStyle *_digitalTimeLabelSmallInUpperRightCornerStyle;
     NTKDigitalTimeLabel *_digitalTimeLabel;
     struct CGPoint _digitalTimeLabelZoomEndingCenter;
-    struct CGPoint _dateLabelZoomEndingCenter;
     PUICClientSideAnimation *_poseInterpolationAnimation;
+    PUICCrownInputSequencer *_crownSequencer;
     NTKAstronomyRotationModel *_rotationModel;
     struct CLLocationCoordinate2D _initialCoordinate;
     // Error parsing type: , name: _previousTranslation
     float _recentMovement;
-    PUICCrownInputSequencer *_crownSequencer;
     UIPanGestureRecognizer *_spheroidPanGesture;
     UITapGestureRecognizer *_supplementalModeDoubleTapGesture;
     UITapGestureRecognizer *_interactiveModeTapGesture;
     struct NSString *_locationManagerToken;
-    NTKAstronomyView *_astronomyView;
-    NTKDateComplicationLabel *_dateLabel;
-    UILabel *_scrubLabel;
-    UILabel *_phaseLabel;
-    UILabel *_overrideDateLabel;
+    NTKAstronomyVistaView *_astronomyVistaView;
+    NTKColoringLabel *_scrubLabel;
+    NTKColoringLabel *_phaseLabel;
+    NTKColoringLabel *_overrideDateLabel;
     UIImageView *_spheroidLabels[8];
     NTKAstronomyLocationDot *_locationDot;
     NSDate *_overrideDate;
     NSDate *_crownDate;
     struct NSNumber *_clockTimerToken;
-    unsigned int _dateFormatterStyle;
     NSDateFormatter *_scrubDateFormatter[3];
-    UIButton *_leftButton;
-    UIButton *_rightButton;
     struct CGRect _phaseLabelDefaultFrame;
     float _supplementalFontLineHeightPlusDescender;
     NTKDelayedBlock *_wheelDelayedBlock;
     NTKDelayedBlock *_physicalButtonDelayedBlock;
     int _previousDataMode;
+    int _animatingToViewMode;
+    unsigned int _vista;
+    NSArray *_editingAnimations[3];
     unsigned int _isAnimatingViewMode:1;
     unsigned int _isContentLoaded:1;
-    unsigned int _isFlying:1;
     unsigned int _isLocationCurrent:1;
-    unsigned int _canHandleCrownEvents:1;
-    unsigned int _canHandleButtonEvents:1;
+    unsigned int _isHandlingCrownEvents:1;
 }
 
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
+- (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
+- (void)_configureForEditMode:(int)arg1;
+- (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
+- (void)_cleanupAfterEditing;
+- (void)_prepareForEditing;
+- (void)_applyFromVista:(unsigned int)arg1 toVista:(unsigned int)arg2 fraction:(float)arg3;
+- (void)_applyVista:(unsigned int)arg1;
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
 - (_Bool)_canEnterInteractiveMode;
 - (void)_disableCrown;
-- (void)_enableCrownForAstronomyTarget:(unsigned int)arg1;
+- (void)_enableCrownForAstronomyVista:(unsigned int)arg1;
 - (void)_physicalButtonDelayedBlockFired;
 - (void)_wheelDelayedBlockFired;
 - (_Bool)_handlePhysicalButton:(unsigned int)arg1 event:(unsigned int)arg2;
@@ -87,22 +95,24 @@
 - (void)_hideLocationDot;
 - (void)_showLocationDotIfNeeded;
 - (void)layoutSubviews;
+- (void)_updateDigitalTimeLabelStylesForBounds:(struct CGRect)arg1;
 - (void)_layoutSpheroidLabel:(int)arg1;
 - (void)_layoutPhaseLabel;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)_unloadSnapshotContentViews;
-- (void)_loadLayoutRules;
+- (void)_bringForegroundViewsToFront;
+- (void)_layoutForegroundContainerView;
+- (_Bool)_needsForegroundContainerView;
 - (void)_loadSnapshotContentViews;
 - (void)_applyDataModeAnimated:(_Bool)arg1;
 - (void)_applyDataMode;
 - (id)_digitalTimeLabelStyle:(int)arg1;
-- (void)astronomyViewContentsAnimationFinished:(id)arg1;
+- (void)astronomyVistaViewContentsAnimationFinished:(id)arg1;
+- (void)astronomyVistaViewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (void)rotationModelStoppedByDecelerating:(id)arg1;
 - (void)_handleSpheroidPanGesture:(id)arg1;
 - (void)_handleSupplementalModeGesture:(id)arg1;
 - (void)_handleInteractiveModeGesture:(id)arg1;
-- (void)_handleVirtualButton:(id)arg1;
-- (void)_handleDateLabelButton:(id)arg1;
 - (void)_setAstronomyFaceViewModeInteractive;
 - (void)_setAstronomyFaceViewModeNonInteractive;
 - (void)_setAstronomyFaceViewModeDefault;
@@ -117,8 +127,18 @@
 - (id)_date;
 - (void)_interpolateFromPose:(const struct NTKAstronomyFaceViewAnimationPose *)arg1 toPose:(const struct NTKAstronomyFaceViewAnimationPose *)arg2 progress:(float)arg3;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (float)_minimumBreathingScaleForComplicationSlot:(id)arg1;
+- (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
+- (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (float)keylineStyleForComplicationSlot:(id)arg1;
+- (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (void)_loadLayoutRules;
+- (id)_detachedComplicationDisplays;
+- (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
+- (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
+- (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

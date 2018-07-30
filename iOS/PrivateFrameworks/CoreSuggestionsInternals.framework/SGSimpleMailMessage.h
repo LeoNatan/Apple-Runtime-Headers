@@ -26,10 +26,10 @@
 
 + (_Bool)headersContainInhumanOnes:(id)arg1 keys:(id)arg2;
 + (_Bool)supportsSecureCoding;
++ (id)subjectByCleaningPrefixesInSubject:(id)arg1;
 + (id)fromMFMailMessage:(id)arg1;
 + (id)parseRfc822Headers:(id)arg1 htmlContent:(id)arg2;
 + (id)simpleMailMessageFromHeadersOfMessage:(id)arg1;
-+ (id)subjectByCleaningPrefixesInSubject:(id)arg1;
 @property(copy, nonatomic) SGSimpleNamedEmailAddress *mailingList; // @synthesize mailingList=_mailingList;
 @property(readonly, nonatomic) NSArray *headers; // @synthesize headers=_headers;
 @property(nonatomic) _Bool isPartiallyDownloaded; // @synthesize isPartiallyDownloaded=_isPartiallyDownloaded;

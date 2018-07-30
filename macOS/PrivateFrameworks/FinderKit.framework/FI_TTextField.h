@@ -17,13 +17,12 @@ __attribute__((visibility("hidden")))
     struct CGSize _minSize;
     struct CGSize _idealSize;
     _Bool _idealSizeIsDirty;
-    struct TNSRef<NSColor *, void> _enabledTextColor;
-    struct TNSRef<NSColor *, void> _disabledTextColor;
+    struct TNSRef<NSColor, void> _enabledTextColor;
+    struct TNSRef<NSColor, void> _disabledTextColor;
     _Bool _autoSizeToFit;
     _Bool _autoAdjustHeightToFit;
     _Bool _sizingInProgress;
     _Bool _drawGrayTextWhenDisabled;
-    _Bool _disableWhenWindowIsNotKey;
     _Bool _delayWindowOrderingOnClickThrough;
     struct TriStateBool _isEnabledCacheWhenNotKey;
     _Bool _isInsideWindowChangedKeyState;
@@ -34,7 +33,6 @@ __attribute__((visibility("hidden")))
 
 + (Class)cellClass;
 @property(nonatomic) _Bool delayWindowOrderingOnClickThrough; // @synthesize delayWindowOrderingOnClickThrough=_delayWindowOrderingOnClickThrough;
-@property(nonatomic) _Bool disableWhenWindowIsNotKey; // @synthesize disableWhenWindowIsNotKey=_disableWhenWindowIsNotKey;
 @property(nonatomic) _Bool drawGrayTextWhenDisabled; // @synthesize drawGrayTextWhenDisabled=_drawGrayTextWhenDisabled;
 @property(nonatomic) _Bool autoAdjustHeightToFit; // @synthesize autoAdjustHeightToFit=_autoAdjustHeightToFit;
 @property(nonatomic) _Bool autoSizeToFit; // @synthesize autoSizeToFit=_autoSizeToFit;
@@ -45,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)setAccessibilityElement:(BOOL)arg1;
 - (void)setFormatter:(id)arg1 withAttributes:(id)arg2;
-- (void)setFormattersAndAttributes:(const unordered_map_ad0041bf *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
+- (void)setFormattersAndAttributes:(const unordered_map_6f91522d *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
 - (void)setSharedBestFitFormatterSelector:(const shared_ptr_2ccd00e6 *)arg1;
 - (void)_updateBestFitFormatterInWidth:(double)arg1;
 - (_Bool)hasBestFitFormatterSelector;
@@ -57,7 +55,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateBestFitStringInWidth:(double)arg1;
 - (_Bool)hasBestFitStringSelector;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
-- (void)_windowChangedKeyState;
 - (double)calcHeightToFit:(struct CGSize)arg1;
 - (struct CGSize)calcSizeToFit;
 - (struct CGSize)calcIdealSizeImpl;

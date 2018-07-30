@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     PDFPageLayerEffectPrivate *_private;
 }
 
-+ (id)createFlashEffectForPDFLinkAnnotation:(id)arg1 withLayer:(id)arg2;
++ (id)createFlashEffectForPDFLinkAnnotation:(id)arg1 withLayer:(id)arg2 forType:(long long)arg3;
 + (id)createPDFMarkupLayerEffectsForAnnotation:(id)arg1 withLayer:(id)arg2;
 + (id)createPDFAnnotationLayerEffectForAnnotation:(id)arg1 withLayer:(id)arg2;
 + (id)createPDFCoachmarkLayerEffectsWithFrame:(struct CGRect)arg1 withLayer:(id)arg2;

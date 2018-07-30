@@ -24,7 +24,7 @@
 - (_Bool)canBeDeletedByUser;
 - (id)commenterDisplayName;
 - (_Bool)isInterestingForAlbumsSorting;
-- (_Bool)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(_Bool *)arg2;
+- (_Bool)shouldNotifyAsNotificationWithMediaStreamInfo:(id)arg1 asCaptionOnly:(_Bool *)arg2;
 - (_Bool)_isInterestingToUser;
 @property(readonly, nonatomic) _Bool isLikeBoolValue;
 @property(readonly, nonatomic) PLCloudFeedCommentsEntry *cloudFeedEntry;

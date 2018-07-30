@@ -12,6 +12,8 @@
 
 @interface PHProjectAssetElement : PHProjectElement <NSSecureCoding>
 {
+    BOOL _horizontallyFlipped;
+    BOOL _verticallyFlipped;
     PHCloudIdentifier *_cloudAssetIdentifier;
     NSString *_annotation;
     NSArray *_regionsOfInterest;
@@ -19,6 +21,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) BOOL verticallyFlipped; // @synthesize verticallyFlipped=_verticallyFlipped;
+@property(readonly, nonatomic) BOOL horizontallyFlipped; // @synthesize horizontallyFlipped=_horizontallyFlipped;
 @property(retain, nonatomic) NSArray *regionsOfInterest; // @synthesize regionsOfInterest=_regionsOfInterest;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(retain, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
@@ -26,10 +30,9 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)debugDescription;
-- (id)description;
 - (id)description:(BOOL)arg1;
 - (id)initWithAssetIdentifier:(id)arg1 weight:(id)arg2 placement:(struct CGRect)arg3;
+- (id)initWithAssetIdentifier:(id)arg1 weight:(id)arg2 placement:(struct CGRect)arg3 horizontallyFlipped:(BOOL)arg4 verticallyFlipped:(BOOL)arg5;
 
 @end
 

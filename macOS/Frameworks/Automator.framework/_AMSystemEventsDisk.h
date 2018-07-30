@@ -6,22 +6,20 @@
 
 #import <Automator/_AMSystemEventsDiskItem.h>
 
-@class NSString;
+@class NSNumber;
 
 @interface _AMSystemEventsDisk : _AMSystemEventsDiskItem
 {
 }
 
-@property(readonly, copy) NSString *zone;
 @property(readonly) BOOL startup;
-@property(readonly, copy) NSString *server;
+@property(readonly, copy) id server;
 @property(readonly) BOOL localVolume;
 @property BOOL ignorePrivileges;
-@property(readonly) long long freeSpace;
+@property(readonly, copy) NSNumber *freeSpace;
 @property(readonly) int format;
 @property(readonly) BOOL ejectable;
-@property(readonly) long long capacity;
-- (id)items;
+@property(readonly, copy) NSNumber *capacity;
 - (id)folders;
 - (id)filePackages;
 - (id)files;

@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOMapLayerDataServiceLayer : PBCodable <NSCopying>
 {
     unsigned int _identifier;

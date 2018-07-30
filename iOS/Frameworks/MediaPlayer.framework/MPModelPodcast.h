@@ -20,6 +20,7 @@
 + (id)__title_KEY;
 + (id)kindWithEpisodeKind:(id)arg1;
 - (id)artworkCatalog;
+- (id)humanDescription;
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;

@@ -22,14 +22,18 @@
     NSString *_modelID;
     NSData *_modelSpecificInfoData;
     NSString *_name;
+    NSString *_parentGroupIdentifier;
     _MRAVOutputDeviceSourceInfoProtobuf *_sourceInfo;
     NSString *_uniqueIdentifier;
     float _volume;
     _Bool _canAccessAppleMusic;
     _Bool _canAccessRemoteAssets;
     _Bool _canAccessiCloudMusicLibrary;
+    _Bool _canFetchMediaDataFromSender;
+    _Bool _canPlayEncryptedProgressiveDownloadAssets;
     _Bool _canRelayCommunicationChannel;
     _Bool _groupContainsGroupLeader;
+    _Bool _isAirPlayReceiverSessionActive;
     _Bool _isDeviceGroupable;
     _Bool _isGroupLeader;
     _Bool _isGroupable;
@@ -37,6 +41,8 @@
     _Bool _isProxyGroupPlayer;
     _Bool _isRemoteControllable;
     _Bool _isVolumeControlAvailable;
+    _Bool _parentGroupContainsDiscoverableLeader;
+    _Bool _presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
     _Bool _requiresAuthorization;
     _Bool _shouldForceRemoteControlabillity;
     _Bool _supportsBufferedAirPlay;
@@ -49,8 +55,11 @@
         unsigned int canAccessAppleMusic:1;
         unsigned int canAccessRemoteAssets:1;
         unsigned int canAccessiCloudMusicLibrary:1;
+        unsigned int canFetchMediaDataFromSender:1;
+        unsigned int canPlayEncryptedProgressiveDownloadAssets:1;
         unsigned int canRelayCommunicationChannel:1;
         unsigned int groupContainsGroupLeader:1;
+        unsigned int isAirPlayReceiverSessionActive:1;
         unsigned int isDeviceGroupable:1;
         unsigned int isGroupLeader:1;
         unsigned int isGroupable:1;
@@ -58,6 +67,8 @@
         unsigned int isProxyGroupPlayer:1;
         unsigned int isRemoteControllable:1;
         unsigned int isVolumeControlAvailable:1;
+        unsigned int parentGroupContainsDiscoverableLeader:1;
+        unsigned int presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets:1;
         unsigned int requiresAuthorization:1;
         unsigned int shouldForceRemoteControlabillity:1;
         unsigned int supportsBufferedAirPlay:1;
@@ -65,6 +76,12 @@
     } _has;
 }
 
+@property(nonatomic) _Bool parentGroupContainsDiscoverableLeader; // @synthesize parentGroupContainsDiscoverableLeader=_parentGroupContainsDiscoverableLeader;
+@property(retain, nonatomic) NSString *parentGroupIdentifier; // @synthesize parentGroupIdentifier=_parentGroupIdentifier;
+@property(nonatomic) _Bool isAirPlayReceiverSessionActive; // @synthesize isAirPlayReceiverSessionActive=_isAirPlayReceiverSessionActive;
+@property(nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets; // @synthesize presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets=_presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(nonatomic) _Bool canFetchMediaDataFromSender; // @synthesize canFetchMediaDataFromSender=_canFetchMediaDataFromSender;
+@property(nonatomic) _Bool canPlayEncryptedProgressiveDownloadAssets; // @synthesize canPlayEncryptedProgressiveDownloadAssets=_canPlayEncryptedProgressiveDownloadAssets;
 @property(nonatomic) _Bool supportsBufferedAirPlay; // @synthesize supportsBufferedAirPlay=_supportsBufferedAirPlay;
 @property(nonatomic) _Bool groupContainsGroupLeader; // @synthesize groupContainsGroupLeader=_groupContainsGroupLeader;
 @property(nonatomic) _Bool canAccessiCloudMusicLibrary; // @synthesize canAccessiCloudMusicLibrary=_canAccessiCloudMusicLibrary;
@@ -102,6 +119,12 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasParentGroupContainsDiscoverableLeader;
+@property(readonly, nonatomic) _Bool hasParentGroupIdentifier;
+@property(nonatomic) _Bool hasIsAirPlayReceiverSessionActive;
+@property(nonatomic) _Bool hasPresentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+@property(nonatomic) _Bool hasCanFetchMediaDataFromSender;
+@property(nonatomic) _Bool hasCanPlayEncryptedProgressiveDownloadAssets;
 @property(nonatomic) _Bool hasSupportsBufferedAirPlay;
 @property(nonatomic) _Bool hasGroupContainsGroupLeader;
 @property(nonatomic) _Bool hasCanAccessiCloudMusicLibrary;

@@ -39,6 +39,7 @@
 + (void)deactivateConstraints:(id)arg1;
 + (void)activateConstraints:(id)arg1;
 + (void)_setLegacyDecodingOnly:(_Bool)arg1;
++ (double)_constraintConstantLimit;
 @property(copy, setter=_setSecondAnchor:) NSLayoutAnchor *secondAnchor; // @synthesize secondAnchor=_secondAnchor;
 @property(copy, setter=_setFirstAnchor:) NSLayoutAnchor *firstAnchor; // @synthesize firstAnchor=_firstAnchor;
 @property(getter=isActive) _Bool active;
@@ -46,6 +47,7 @@
 - (_Bool)_nsib_isRedundant;
 - (_Bool)_nsib_isRedundantInEngine:(id)arg1;
 - (id)_layoutEngine;
+- (int)nsis_orientationHintForVariable:(id)arg1;
 - (id)nsis_descriptionOfVariable:(id)arg1;
 - (id)_explainUnsatisfaction;
 - (void)_forceSatisfactionMeasuringUnsatisfactionChanges:(id *)arg1 andMutuallyExclusiveConstraints:(id *)arg2;
@@ -56,8 +58,9 @@
 - (void)_makeExtraVars;
 - (void)_removeFromEngine:(id)arg1;
 - (void)_addToEngine:(id)arg1;
+- (_Bool)_addToEngine:(id)arg1 mutuallyExclusiveConstraints:(id *)arg2;
 - (_Bool)_addToEngine:(id)arg1 integralizationAdjustment:(double)arg2 mutuallyExclusiveConstraints:(id *)arg3;
-- (_Bool)_addLoweredExpression:(id)arg1 toEngine:(id)arg2 integralizationAdjustment:(double)arg3 lastLoweredConstantWasRounded:(_Bool)arg4 mutuallyExclusiveConstraints:(id *)arg5;
+- (_Bool)_addLoweredExpression:(id)arg1 toEngine:(id)arg2 lastLoweredConstantWasRounded:(_Bool)arg3 mutuallyExclusiveConstraints:(id *)arg4;
 - (double)priorityForVariable:(id)arg1;
 - (id)_constraintValueCopy;
 - (void)_setMutablePropertiesFromConstraint:(id)arg1;
@@ -82,7 +85,6 @@
 @property(copy) NSString *symbolicConstant;
 - (void)_setSymbolicConstant:(id)arg1;
 - (id)_symbolicConstant;
-- (void)_ensureValueMaintainsArbitraryLimit:(double *)arg1;
 @property double constant;
 - (id)_constantDescriptionForDTrace;
 - (id)_descriptionforSymbolicConstant;
@@ -104,10 +106,7 @@
 - (void)_setMarkerAndPositiveErrorVar:(id)arg1;
 - (id)_markerAndPositiveExtraVar;
 - (_Bool)nsis_valueOfVariableIsUserObservable:(id)arg1;
-- (_Bool)nsis_shouldIntegralizeVariable:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
-- (double)nsis_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarker:(id)arg1;
-- (double)_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarkerScaling:(double *)arg1;
 - (double)_allowedMagnitudeForIntegralizationAdjustment;
 - (double)_fudgeIncrement;
 - (_Bool)_isFudgeable;

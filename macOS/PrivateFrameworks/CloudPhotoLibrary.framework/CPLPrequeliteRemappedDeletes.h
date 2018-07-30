@@ -14,10 +14,10 @@
 {
 }
 
-- (id)realIdentifierForRemappedIdentifier:(id)arg1;
-- (BOOL)resetWithError:(id *)arg1;
-- (BOOL)discardDeleteForRemappedRecordWithIdentifier:(id)arg1 error:(id *)arg2;
-- (BOOL)scheduleDeleteForRemappedRecordWithIdentifier:(id)arg1 realIdentifier:(id)arg2 asap:(BOOL)arg3 error:(id *)arg4;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (id)realScopedIdentifierForRemappedScopedIdentifier:(id)arg1;
+- (BOOL)discardDeleteForRemappedRecordWithScopedIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)scheduleDeleteForRemappedRecordWithScopedIdentifier:(id)arg1 realScopedIdentifier:(id)arg2 asap:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
 

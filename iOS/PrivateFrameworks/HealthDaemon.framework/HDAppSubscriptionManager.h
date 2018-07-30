@@ -54,6 +54,7 @@
 - (void)_removeSubscriptionForBundleID:(id)arg1 dataCode:(long long)arg2 anchor:(id)arg3;
 - (void)_removeBundleID:(id)arg1;
 - (void)_launchTimerFired:(id)arg1 code:(id)arg2 anchor:(id)arg3;
+- (id)_appSubscriptionsForDataTypeCode:(long long)arg1 lastAppLaunchTimes:(id)arg2 error:(id *)arg3;
 - (void)_queue_scheduleLaunches:(long long)arg1 anchor:(id)arg2;
 - (void)_removeLaunchForSubscription:(id)arg1 anchor:(id)arg2;
 - (void)_queue_scheduleLaunchForSubscription:(id)arg1 anchor:(id)arg2;

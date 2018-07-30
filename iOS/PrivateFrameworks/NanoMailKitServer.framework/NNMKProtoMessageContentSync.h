@@ -15,6 +15,7 @@
     NSMutableArray *_attachments;
     NSData *_dateSynced;
     unsigned int _fullSyncVersion;
+    NSData *_htmlContentData;
     NSString *_messageId;
     NNMKProtoMessage *_notificationMessage;
     NSData *_preview;
@@ -29,6 +30,7 @@
 }
 
 + (Class)attachmentType;
+@property(retain, nonatomic) NSData *htmlContentData; // @synthesize htmlContentData=_htmlContentData;
 @property(retain, nonatomic) NNMKProtoMessage *notificationMessage; // @synthesize notificationMessage=_notificationMessage;
 @property(retain, nonatomic) NSMutableArray *attachments; // @synthesize attachments=_attachments;
 @property(nonatomic) _Bool partiallyLoaded; // @synthesize partiallyLoaded=_partiallyLoaded;
@@ -48,6 +50,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasHtmlContentData;
 @property(readonly, nonatomic) _Bool hasNotificationMessage;
 - (id)attachmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)attachmentsCount;

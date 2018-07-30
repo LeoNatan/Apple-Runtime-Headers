@@ -6,9 +6,9 @@
 
 #import "NSObject.h"
 
-@class SXDocumentStyle, UIView;
+@class SXDocumentStyle, UIScrollView;
 
 @protocol SXDocumentStyleRenderer <NSObject>
-- (void)applyStyle:(SXDocumentStyle *)arg1 onView:(UIView *)arg2;
+- (void)applyStyle:(SXDocumentStyle *)arg1 onView:(UIScrollView *)arg2;
 @end
 

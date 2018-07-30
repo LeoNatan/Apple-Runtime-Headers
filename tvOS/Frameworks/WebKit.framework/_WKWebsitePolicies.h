@@ -19,6 +19,7 @@
 @property(readonly, copy) NSString *description;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(copy, nonatomic) NSDictionary *customHeaderFields;
+@property(nonatomic) unsigned long long popUpPolicy;
 @property(nonatomic) long long autoplayPolicy;
 @property(nonatomic) unsigned long long allowedAutoplayQuirks;
 @property(nonatomic) _Bool contentBlockersEnabled;

@@ -23,6 +23,7 @@
 @property(nonatomic) _Bool internalHasBeenUnlockedSinceBoot; // @synthesize internalHasBeenUnlockedSinceBoot=_internalHasBeenUnlockedSinceBoot;
 @property(retain, nonatomic) id <NAScheduler> workScheduler; // @synthesize workScheduler=_workScheduler;
 - (void).cxx_destruct;
+- (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (_Bool)_hasBeenUnlockedSinceBoot;
 - (void)handleNotification:(id)arg1;

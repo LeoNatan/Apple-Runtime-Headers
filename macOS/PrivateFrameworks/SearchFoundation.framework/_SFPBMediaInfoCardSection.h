@@ -13,7 +13,6 @@
 
 @interface _SFPBMediaInfoCardSection : PBCodable <_SFPBMediaInfoCardSection, NSSecureCoding>
 {
-    CDStruct_23c427ad _has;
     BOOL _canBeHidden;
     BOOL _hasTopPadding;
     BOOL _hasBottomPadding;
@@ -63,30 +62,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasSpecialOfferButtonLabel;
-@property(readonly, nonatomic) BOOL hasIsMediaContainer;
-@property(readonly, nonatomic) BOOL hasWatchListConfirmationText;
-@property(readonly, nonatomic) BOOL hasWatchListContinuationText;
-@property(readonly, nonatomic) BOOL hasWatchListButtonLabel;
-@property(readonly, nonatomic) BOOL hasWatchListIdentifier;
 - (id)offersAtIndex:(unsigned long long)arg1;
 - (unsigned long long)offersCount;
 - (void)addOffers:(id)arg1;
 - (void)clearOffers;
-@property(readonly, nonatomic) BOOL hasPlayAction;
 - (id)detailsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)detailsCount;
 - (void)addDetails:(id)arg1;
 - (void)clearDetails;
-@property(readonly, nonatomic) BOOL hasMediaItem;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

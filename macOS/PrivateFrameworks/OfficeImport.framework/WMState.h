@@ -8,6 +8,7 @@
 
 @class CMOutlineState, NSMutableDictionary, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WMState : CMState
 {
     CMOutlineState *currentListState;

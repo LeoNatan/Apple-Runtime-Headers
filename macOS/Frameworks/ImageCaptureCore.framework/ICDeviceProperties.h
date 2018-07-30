@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSLock, NSMutableDictionary, NSMutableSet, NSNumber, NSSet, NSString, NSXPCConnection, NSXPCListenerEndpoint;
 
+__attribute__((visibility("hidden")))
 @interface ICDeviceProperties : NSObject
 {
     id _delegate;
@@ -129,7 +130,6 @@
 - (void)removeCapabilities;
 - (void)removeCapability:(id)arg1;
 - (void)addCapability:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (void)releasePowerAssertion;
 - (void)takePowerAssertion:(id)arg1;

@@ -11,8 +11,6 @@
 @protocol NLCoachingSubmanagerDelegate <NSObject>
 - (NSDate *)currentDate;
 - (NSCalendar *)currentCalendar;
-- (void)createMonthlyChallenge;
-- (_Bool)canCreateNewMonthlyChallenge;
 - (HKActivitySummary *)currentActivitySummary;
 - (NLCoachingPreferences *)coachingPreferences;
 - (NSDate *)firstOnWristTodayDate;

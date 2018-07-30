@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class MKMapItem, NSArray, NSImage, NSString, NSURL, WBSCompletionQuery, WBSParsecActionButton, WBSParsecImageRepresentation;
+@class MKMapItem, NSImage, NSString, NSURL, WBSCompletionQuery, WBSParsecActionButton, WBSParsecImageRepresentation;
 
 @protocol WBSParsecSearchResult
 @property(readonly, nonatomic) WBSParsecImageRepresentation *completionIcon;
@@ -13,7 +13,6 @@
 @property(readonly, nonatomic) unsigned long long displayOptions;
 @property(readonly, nonatomic) long long placementHint;
 @property(readonly, copy, nonatomic) NSString *alternateSectionHeader;
-@property(readonly, nonatomic) NSArray *additionalMapItems;
 @property(readonly, nonatomic) MKMapItem *mapItem;
 @property(readonly, nonatomic) WBSParsecActionButton *actionButton;
 @property(readonly, copy, nonatomic) NSString *referrerForLoadingResult;

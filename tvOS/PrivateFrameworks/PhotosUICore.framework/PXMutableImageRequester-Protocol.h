@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class PXImageRequester, PXUIMediaProvider, UIImage;
+@class PXImageRequester, UIImage;
 
 @protocol PXMutableImageRequester <NSObject>
 @property(nonatomic) struct CGSize viewportSize;
@@ -14,7 +14,7 @@
 @property(nonatomic) double scale;
 @property(nonatomic) struct CGSize contentSize;
 @property(retain, nonatomic) id <PXDisplayAsset> asset;
-@property(retain, nonatomic) PXUIMediaProvider *mediaProvider;
+@property(retain, nonatomic) id <PXUIImageProvider> mediaProvider;
 - (void)handlePreloadedImageRequester:(PXImageRequester *)arg1;
 - (void)handlePreloadedImage:(UIImage *)arg1;
 @end

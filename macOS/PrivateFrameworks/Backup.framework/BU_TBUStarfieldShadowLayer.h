@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     struct TRef<CGImage *, TRetainReleasePolicy<CGImageRef>> _shadowImage;
     struct CGRect _shadowImageBounds;
     struct CGRect _windowContentBounds;
-    struct vector<TNSRef<CALayer *, void>, std::__1::allocator<TNSRef<CALayer *, void>>> _layers;
+    struct vector<TNSRef<CALayer, void>, std::__1::allocator<TNSRef<CALayer, void>>> _layers;
 }
 
 @property(nonatomic) struct CGRect shadowImageBounds; // @synthesize shadowImageBounds=_shadowImageBounds;

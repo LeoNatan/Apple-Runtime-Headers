@@ -22,6 +22,8 @@
 @property(nonatomic) double energyPercentComplete; // @synthesize energyPercentComplete=_energyPercentComplete;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isCompatibleWithFamily:(long long)arg1;
+- (void)_enumerateBOOLKeysWithBlock:(CDUnknownBlockType)arg1;
+- (void)_enumerateFloatKeysWithBlock:(CDUnknownBlockType)arg1;
 
 @end
 

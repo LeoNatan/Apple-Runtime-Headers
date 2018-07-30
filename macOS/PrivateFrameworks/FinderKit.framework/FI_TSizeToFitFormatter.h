@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TSizeToFitFormatter : NSFormatter
 {
-    struct TNSRef<NSDictionary *, void> _attributes;
+    struct TNSRef<NSDictionary, void> _attributes;
     struct CGSize _size;
 }
 

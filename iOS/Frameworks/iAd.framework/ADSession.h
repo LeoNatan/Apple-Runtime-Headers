@@ -6,29 +6,31 @@
 
 #import "NSObject.h"
 
-#import "ADAdSheetConnectionDelegate.h"
+#import "ADAdServingDaemonConnectionDelegate.h"
 #import "ADSession_RPC.h"
 
-@class ADAdSheetConnection, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class ADAdServingDaemonConnection, ADDeviceInfo, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ADSession : NSObject <ADSession_RPC, ADAdSheetConnectionDelegate>
+@interface ADSession : NSObject <ADSession_RPC, ADAdServingDaemonConnectionDelegate>
 {
     _Bool _applicationCanReceiveBackgroundAds;
     _Bool _appExtensionCanReceiveAds;
     _Bool _applicationCanRecieveAds;
     int _classicUnavailableToken;
     NSMutableArray *_adSpaces;
-    ADAdSheetConnection *_connection;
+    ADAdServingDaemonConnection *_connection;
     NSString *_bundleIdentifier;
     NSObject<OS_dispatch_queue> *_adSpaceQueue;
+    ADDeviceInfo *_deviceInfo;
 }
 
 + (id)sharedInstance;
 + (_Bool)adShouldCreateADSession;
+@property(retain, nonatomic) ADDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(nonatomic) _Bool applicationCanRecieveAds; // @synthesize applicationCanRecieveAds=_applicationCanRecieveAds;
 @property(nonatomic) NSObject<OS_dispatch_queue> *adSpaceQueue; // @synthesize adSpaceQueue=_adSpaceQueue;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-@property(retain, nonatomic) ADAdSheetConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) ADAdServingDaemonConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) int classicUnavailableToken; // @synthesize classicUnavailableToken=_classicUnavailableToken;
 @property(retain, nonatomic) NSMutableArray *adSpaces; // @synthesize adSpaces=_adSpaces;
 @property(nonatomic) _Bool appExtensionCanReceiveAds; // @synthesize appExtensionCanReceiveAds=_appExtensionCanReceiveAds;
@@ -43,6 +45,7 @@
 - (void)_reportAdSubscriptionEvent:(id)arg1;
 - (void)reportPrerollRequest;
 - (void)_remote_policyEngineDidIdleDisable;
+- (void)_remote_deviceInfo:(CDUnknownBlockType)arg1;
 - (void)_remote_updateActionViewControllerOrientation:(unsigned long long)arg1 forAdSpaceWithIdentifier:(id)arg2;
 - (void)_remote_dismissViewControllerForAdSpaceWithIdentifier:(id)arg1;
 - (void)_remote_dismissViewControllerForAdSpaceWithIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -58,20 +61,22 @@
 - (void)_remote_proxyTypeDidChange:(long long)arg1;
 - (void)_remote_contentProxyURLConnectDidChange:(id)arg1;
 - (void)_remote_contentProxyURLDidChange:(id)arg1;
+- (void)updateDeviceInfo;
 - (id)_adSpaceForIdentifier:(id)arg1;
 - (void)unregisterAdSpace:(id)arg1;
 - (void)registerAdSpace:(id)arg1;
 - (void)_currentClientAdSpaces;
-- (void)adSheetConnectionLost;
-- (void)adSheetConnectionEstablished;
+- (void)adServingDaemonConnectionLost;
+- (void)adServingDaemonConnectionEstablished;
 - (void)configureConnection:(id)arg1;
-- (id)adSheetMachServiceName;
+- (id)adServingDaemonMachServiceName;
 - (id)rpcProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <ADSSession_RPC> rpcProxy;
 - (void)performWhenConnected:(CDUnknownBlockType)arg1;
-- (id)additionalAdSheetLaunchOptions;
-- (_Bool)shouldConnectToAdSheet;
+- (id)additionalAdServingDaemonLaunchOptions;
+- (_Bool)shouldConnectToAdServingDaemon;
 - (id)_linkedOnVersion;
+- (void)establishRPCConnection;
 - (id)init;
 - (void)dealloc;
 

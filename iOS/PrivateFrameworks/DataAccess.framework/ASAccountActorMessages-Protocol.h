@@ -45,14 +45,14 @@
 - (NSData *)signingIdentityPersistentReference;
 - (oneway void)setGeneratesBulletins:(_Bool)arg1;
 - (_Bool)generatesBulletins;
+- (oneway void)setMailNumberOfPastDaysToSync:(int)arg1;
+- (int)mailNumberOfPastDaysToSync;
 - (int)supportsUniqueServerId;
 - (int)supportsSmartForwardReply;
 - (int)supportsDraftFolderSync;
 - (int)supportsConversations;
 - (int)supportsEmailFlagging;
 - (int)supportsMailboxSearch;
-- (oneway void)setMailNumberOfPastDaysToSync:(int)arg1;
-- (int)mailNumberOfPastDaysToSync;
 - (NSArray *)mailboxes;
 - (oneway void)shutdown;
 - (oneway void)setAccount:(id)arg1;

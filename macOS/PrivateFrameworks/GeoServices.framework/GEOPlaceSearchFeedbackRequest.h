@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOPlaceSearchFeedbackRequest : PBRequest <NSCopying>
 {
     struct GEOSessionID _sessionGUID;

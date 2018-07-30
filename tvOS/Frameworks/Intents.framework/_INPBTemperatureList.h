@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBTemperatureList.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBCondition;
+@class NSArray, NSString, _INPBCondition;
 
-@interface _INPBTemperatureList : PBCodable <NSCopying>
+@interface _INPBTemperatureList : PBCodable <_INPBTemperatureList, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBCondition *_condition;
-    NSMutableArray *_temperatures;
+    NSArray *_temperatures;
 }
 
 + (Class)temperatureType;
-+ (id)options;
+@property(copy, nonatomic) NSArray *temperatures; // @synthesize temperatures=_temperatures;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
-@property(retain, nonatomic) NSMutableArray *temperatures; // @synthesize temperatures=_temperatures;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasCondition;
 - (id)temperatureAtIndex:(unsigned long long)arg1;
-- (unsigned long long)temperaturesCount;
+@property(readonly, nonatomic) unsigned long long temperaturesCount;
 - (void)addTemperature:(id)arg1;
 - (void)clearTemperatures;
+@property(readonly, nonatomic) _Bool hasCondition;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -42,9 +42,8 @@ __attribute__((visibility("hidden")))
     void *_odiousHashHackStorage;
     struct __sqlentityFlags {
         unsigned int _hasAttributesWithExternalDataReferences:1;
-        unsigned int _hasAttributesMonitoredByTriggers:1;
-        unsigned int _hasAttributesBackedByTriggers:1;
-        unsigned int _reserved:29;
+        unsigned int _hasAttributesWithFileBackedFutures:1;
+        unsigned int _reserved:30;
     } _sqlentityFlags;
 }
 
@@ -52,11 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)indexForIndexDescription:(id)arg1;
 - (id)binaryIndexForIndexDescription:(id)arg1;
 - (id)rtreeIndexForIndexDescription:(id)arg1;
-@property(readonly) NSDictionary *rtreeIndexes;
-- (void)_setHasAttributesBackedByTriggers:(BOOL)arg1;
-- (BOOL)_hasAttributesBackedByTriggers;
-- (void)_setHasAttributesMonitoredByTriggers:(BOOL)arg1;
-- (BOOL)_hasAttributesMonitoredByTriggers;
+@property(readonly, nonatomic) NSDictionary *rtreeIndexes;
 - (id)propertyMapping;
 - (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
@@ -65,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (id)rootEntity;
 - (id)model;
+- (BOOL)hasAttributesWithFileBackedFutures;
 - (BOOL)hasAttributesWithExternalDataReferences;
 - (BOOL)_entityIsBroken:(id *)arg1;
 - (BOOL)_collectFKSlots:(id)arg1 error:(id *)arg2;
@@ -114,6 +110,7 @@ __attribute__((visibility("hidden")))
 - (id)manyToManyRelationships;
 - (id)toManyRelationships;
 - (id)properties;
+- (id)tempTableName;
 - (id)tableName;
 - (id)name;
 - (void)dealloc;

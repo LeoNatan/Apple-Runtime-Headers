@@ -27,7 +27,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)arrangedDescription;
-- (_Bool)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
+- (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
 - (struct CGSize)calculateArrangedSizeFittingSize:(struct CGSize)arg1;
 - (_Bool)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(_Bool)arg1;
 - (void)populateBoxArrangementCells:(vector_eb457d57 *)arg1;

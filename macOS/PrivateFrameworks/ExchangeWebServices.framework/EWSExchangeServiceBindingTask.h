@@ -13,6 +13,7 @@
 @interface EWSExchangeServiceBindingTask : NSObject <SOAPParserDelegate>
 {
     NSMutableData *_loggingData;
+    int _retryCount;
     BOOL _logActivity;
     double _timeout;
     NSString *_schemaVersion;
@@ -42,6 +43,7 @@
 - (void).cxx_destruct;
 - (id)_serverVersionInfoFromHeaders:(id)arg1;
 - (void)failWithError:(id)arg1;
+- (BOOL)shouldRetryForOAuthTokenRefreshWithError:(id)arg1;
 - (double)_backOffTimeForFaultDetail:(id)arg1;
 - (BOOL)_shouldRetryFromParser:(id)arg1 error:(id *)arg2;
 - (void)completeWithResponse:(id)arg1;

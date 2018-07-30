@@ -6,11 +6,9 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSString;
+@class NSData, NSString;
 
 @protocol UNUserNotificationClientProtocol <NSObject>
-- (void)didChangePendingNotificationRequests:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2;
-- (void)didDeliverNotifications:(NSArray *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (void)didReceiveDeviceToken:(NSData *)arg1 forBundleIdentifier:(NSString *)arg2;
 @end
 

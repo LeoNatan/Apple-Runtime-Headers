@@ -10,6 +10,7 @@
 
 @class GEOFormattedString, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOShortTrafficSummary : PBCodable <NSCopying>
 {
     GEOFormattedString *_detail;

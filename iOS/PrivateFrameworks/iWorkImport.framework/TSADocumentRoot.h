@@ -8,11 +8,12 @@
 
 #import "TSDImportExportDelegate.h"
 #import "TSDScrollingAwareChangeSource.h"
+#import "TSKPencilAnnotationSupportedDocument.h"
 
 @class NSArray, NSDictionary, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, SFUCryptoKey, TSADocumentInfo, TSAFunctionBrowserState, TSAShortcutController, TSCECalculationEngine, TSDFreehandDrawingToolkitUIState, TSKCustomFormatList, TSKViewState, TSPDocumentRevision, TSPLazyReference, TSTCustomFormatList;
 
 __attribute__((visibility("hidden")))
-@interface TSADocumentRoot : TSWPDocumentRoot <TSDImportExportDelegate, TSDScrollingAwareChangeSource>
+@interface TSADocumentRoot : TSWPDocumentRoot <TSKPencilAnnotationSupportedDocument, TSDImportExportDelegate, TSDScrollingAwareChangeSource>
 {
     // Error parsing type: Ai, name: _needsToCaptureViewState
     NSMutableDictionary *_upgradeState;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
     NSArray *_buildVersionHistory;
 }
 
++ (_Bool)shouldShowImportedDataNotificationsOnOpen;
 + (id)persistenceWarningsForData:(id)arg1 flags:(unsigned long long)arg2;
 + (unsigned long long)previewTypeForCurrentDevice;
 + (struct CGSize)previewImageMaxSizeForType:(unsigned long long)arg1;
@@ -79,7 +81,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *name;
 - (void)removePencilAnnotationsFromDrawables:(id)arg1;
 - (void)enumeratePencilAnnotationsUsingBlock:(CDUnknownBlockType)arg1;
-- (_Bool)documentHasPencilAnnotations;
+- (_Bool)hasPencilAnnotations;
+- (void)removePencilAnnotations;
+- (_Bool)childrenCanBeAnnotatedWithPencil;
+- (_Bool)canBeAnnotatedWithPencil;
 - (id)allPencilAnnotations;
 - (_Bool)shouldCancelScrollingToSelectionPath:(id)arg1 forChanges:(id)arg2;
 - (id)uniqueDocumentCachePathForProposedPath:(id)arg1;
@@ -176,6 +181,7 @@ __attribute__((visibility("hidden")))
 - (void)loadFromArchive:(const struct DocumentArchive *)arg1 unarchiver:(id)arg2;
 - (void)stashUpgradeState:(const struct DocumentArchive *)arg1 unarchiver:(id)arg2;
 - (id)upgradeState;
+- (void)collectDocumentCloseAnalyticsWithLogger:(id)arg1;
 - (void)collectDocumentOpenAnalyticsWithLogger:(id)arg1;
 - (void)documentDidLoad;
 - (_Bool)objectsNeedToBeMigrated:(id)arg1;
@@ -191,7 +197,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_updateDocumentLanguageToCurrentIfNeeded;
 - (void)p_updateBuildVersionHistoryWithVersionOfTemplateBundle:(id)arg1;
 - (void)prepareNewDocumentWithTemplateBundle:(id)arg1 documentLocale:(id)arg2;
-- (id)init;
 - (void)commonInit;
 - (id)initWithContext:(id)arg1;
 @property(nonatomic) _Bool canUseHEVC;

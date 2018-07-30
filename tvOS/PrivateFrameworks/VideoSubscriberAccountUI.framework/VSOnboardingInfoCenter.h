@@ -12,7 +12,8 @@
 {
 }
 
-- (id)buttonViewController;
+- (id)tvAppPrivacyButtonViewController;
+- (id)tvProviderPrivacyButtonViewController;
 - (void)presentDetailsFromViewController:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedButtonTitle;
 

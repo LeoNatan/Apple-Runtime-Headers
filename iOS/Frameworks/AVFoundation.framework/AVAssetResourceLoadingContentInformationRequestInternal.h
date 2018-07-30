@@ -8,6 +8,7 @@
 
 @class NSArray, NSDate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetResourceLoadingContentInformationRequestInternal : NSObject
 {
     NSString *contentType;

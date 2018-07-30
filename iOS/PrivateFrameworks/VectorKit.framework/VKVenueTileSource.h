@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     struct VenueLogic *_venueLogic;
 }
 
-- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3;
+- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3 userInfo:(id)arg4;
 - (unsigned char)mapLayerForZoomLevelRange;
 - (long long)minimumZoomLevel;
 - (long long)defaultMinimumZoomLevel;

@@ -8,11 +8,12 @@
 
 #import "CalActivatable.h"
 #import "ClientConnectionDelegate.h"
+#import "DatabaseChangeHandling.h"
 #import "NSXPCListenerDelegate.h"
 
 @class BirthdayCalendarManager, CDBDataProtectionObserver, LocalAttachmentCleanUpSupport, NSArray, NSLock, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, NSXPCListener;
 
-@interface CADServer : NSObject <NSXPCListenerDelegate, ClientConnectionDelegate, CalActivatable>
+@interface CADServer : NSObject <NSXPCListenerDelegate, ClientConnectionDelegate, DatabaseChangeHandling, CalActivatable>
 {
     NSObject<OS_dispatch_queue> *_notificationQueue;
     int _backgroundTaskCount;
@@ -56,6 +57,7 @@
 - (void)_finishInitializationWithDataAvailable;
 - (void)_handleXPCConnection:(id)arg1;
 - (void)clientConnectionDied:(id)arg1;
+- (void)_handleDatabaseChanged;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)deactivate;
 - (void)activate;

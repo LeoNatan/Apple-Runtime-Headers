@@ -11,9 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)featuresInImage:(id)arg1 options:(id)arg2;
 - (id)featuresInImage:(id)arg1 withContext:(id)arg2;
-- (id)featuresInImage:(id)arg1;
 
 @end
 

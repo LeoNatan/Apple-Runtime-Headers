@@ -10,6 +10,7 @@
 #import "HFLocationSensingCoordinatorDelegate.h"
 #import "HFMediaObjectObserver.h"
 #import "HFMediaSessionObserver.h"
+#import "HFStateRestorationSettingsObserver.h"
 #import "HMAccessoryDelegatePrivate.h"
 #import "HMAccessorySettingsDelegate.h"
 #import "HMCameraSnapshotControlDelegate.h"
@@ -20,13 +21,14 @@
 #import "HMResidentDeviceDelegate.h"
 #import "HMSoftwareUpdateControllerDelegate.h"
 #import "HMSoftwareUpdateDelegate.h"
+#import "HMSymptomFixSessionDelegate.h"
 #import "HMSymptomsHandlerDelegate.h"
 #import "HMUserDelegatePrivate.h"
 #import "_HFSettingsObserverTupleOwning.h"
 
 @class HFLocationSensingCoordinator, HMHome, HMHomeManager, NAFuture, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, NSTimer;
 
-@interface HFHomeKitDispatcher : NSObject <HMResidentDeviceDelegate, HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate, HMMediaProfileDelegate, HFLocationSensingCoordinatorDelegate, HFHomeAppInstallStateArbiterObserver, HMSoftwareUpdateControllerDelegate, HMAccessorySettingsDelegate, HMSoftwareUpdateDelegate, _HFSettingsObserverTupleOwning, HMSymptomsHandlerDelegate, HMUserDelegatePrivate, HMHomeManagerDelegatePrivate, HMHomeDelegatePrivate, HMAccessoryDelegatePrivate, HFMediaObjectObserver, HFMediaSessionObserver>
+@interface HFHomeKitDispatcher : NSObject <HFLocationSensingCoordinatorDelegate, HFHomeAppInstallStateArbiterObserver, _HFSettingsObserverTupleOwning, HFStateRestorationSettingsObserver, HMResidentDeviceDelegate, HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate, HMMediaProfileDelegate, HMSoftwareUpdateControllerDelegate, HMAccessorySettingsDelegate, HMSoftwareUpdateDelegate, HMSymptomsHandlerDelegate, HMUserDelegatePrivate, HMHomeManagerDelegatePrivate, HMHomeDelegatePrivate, HMAccessoryDelegatePrivate, HFMediaObjectObserver, HFMediaSessionObserver, HMSymptomFixSessionDelegate>
 {
     _Bool _hasLoadedHomes;
     int _homeKitPreferencesChangedNotifyToken;
@@ -44,6 +46,7 @@
     NSHashTable *_cameraObservers;
     NSHashTable *_mediaObjectObservers;
     NSHashTable *_mediaSessionObservers;
+    NSHashTable *_symptomFixSessionObservers;
     NSHashTable *_softwareUpdateControllerObservers;
     NSHashTable *_softwareUpdateObservers;
     NSHashTable *_userObservers;
@@ -68,6 +71,7 @@
 @property(retain, nonatomic) NSHashTable *userObservers; // @synthesize userObservers=_userObservers;
 @property(retain, nonatomic) NSHashTable *softwareUpdateObservers; // @synthesize softwareUpdateObservers=_softwareUpdateObservers;
 @property(retain, nonatomic) NSHashTable *softwareUpdateControllerObservers; // @synthesize softwareUpdateControllerObservers=_softwareUpdateControllerObservers;
+@property(retain, nonatomic) NSHashTable *symptomFixSessionObservers; // @synthesize symptomFixSessionObservers=_symptomFixSessionObservers;
 @property(retain, nonatomic) NSHashTable *mediaSessionObservers; // @synthesize mediaSessionObservers=_mediaSessionObservers;
 @property(retain, nonatomic) NSHashTable *mediaObjectObservers; // @synthesize mediaObjectObservers=_mediaObjectObservers;
 @property(retain, nonatomic) NSHashTable *cameraObservers; // @synthesize cameraObservers=_cameraObservers;
@@ -85,6 +89,7 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 - (void).cxx_destruct;
+- (void)stateRestorationSettings:(id)arg1 selectedHomeIdentifierDidUpdateExternally:(id)arg2;
 - (void)installStateArbiter:(id)arg1 installStateDidChange:(_Bool)arg2;
 - (void)settingsObserverTupleWasInvalidated:(id)arg1;
 - (_Bool)_shouldPersistSelectedHomeToDefaults;
@@ -100,8 +105,6 @@
 - (void)_finishHomePromises:(id)arg1;
 - (void)_updateRemoteAccessStateForHome:(id)arg1 notifyingObservers:(_Bool)arg2;
 - (void)home:(id)arg1 didUpdateReprovisionStateForAccessory:(id)arg2;
-- (void)symptomsHandler:(id)arg1 didUpdateFixState:(long long)arg2;
-- (void)symptomsHandler:(id)arg1 didUpdateCanInitiateFix:(_Bool)arg2;
 - (void)symptomsHandler:(id)arg1 didUpdateSymptoms:(id)arg2;
 - (void)coordinator:(id)arg1 homeSensingStatusDidChange:(_Bool)arg2;
 - (void)coordinator:(id)arg1 locationSensingAvailabilityDidChange:(_Bool)arg2;
@@ -125,6 +128,11 @@
 - (void)residentDevice:(id)arg1 didUpdateStatus:(unsigned long long)arg2;
 - (void)residentDevice:(id)arg1 didUpdateEnabled:(_Bool)arg2;
 - (void)residentDevice:(id)arg1 didUpdateName:(id)arg2;
+- (void)accessory:(id)arg1 didRemoveControlTarget:(id)arg2;
+- (void)accessory:(id)arg1 didAddControlTarget:(id)arg2;
+- (void)accessoryDidUpdateTargetControlSupport:(id)arg1;
+- (void)accessoryDidRemoveSymptomsHandler:(id)arg1;
+- (void)accessory:(id)arg1 didAddSymptomsHandler:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateConfigurationStateForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateServiceSubtypeForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateDefaultNameForService:(id)arg2;
@@ -148,7 +156,9 @@
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
 - (void)accessoryDidUpdateName:(id)arg1;
+- (void)fixSession:(id)arg1 didChangeState:(long long)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateComponents:(id)arg2;
+- (void)mediaSystem:(id)arg1 didUpdateConfiguredName:(id)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
 - (void)home:(id)arg1 didRemoveMediaSystem:(id)arg2;
 - (void)home:(id)arg1 didAddMediaSystem:(id)arg2;
@@ -219,12 +229,14 @@
 @property(readonly, nonatomic) NAFuture *firstHomeAddedFuture;
 @property(readonly, nonatomic) NAFuture *homeFuture;
 - (void)_requestSelectedHome:(id)arg1 notifyAndSaveIfNecessary:(_Bool)arg2;
+- (_Bool)setSelectedHomeWithName:(id)arg1;
 - (void)updateHome;
 - (void)warmup;
 - (void)dispatchUserObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchSymptomsHandlerMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchSoftwareUpdateMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchSoftwareUpdateControllerMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
+- (void)dispatchSymptomFixSessionObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchAccessorySettingMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchMediaObjectObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchMediaSessionObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
@@ -240,6 +252,8 @@
 - (void)addSoftwareUpdateObserver:(id)arg1;
 - (void)removeSoftwareUpdateControllerObserver:(id)arg1;
 - (void)addSoftwareUpdateControllerObserver:(id)arg1;
+- (void)removeSymptomFixSessionObserver:(id)arg1;
+- (void)addSymptomFixSessionObserver:(id)arg1;
 - (void)removeMediaSessionObserver:(id)arg1;
 - (void)addMediaSessionObserver:(id)arg1;
 - (void)removeMediaProfileObserver:(id)arg1;

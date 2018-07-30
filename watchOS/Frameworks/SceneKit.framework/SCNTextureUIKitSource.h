@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)layer;
 - (float)clearValue;
 - (id)layerToFocusForRenderedLayer:(id)arg1;
--     // Error parsing type: v12@0:4^{__C3DRendererContext={__CFRuntimeBase=IAI}lIIIIfI^{__C3DTexture}^{__C3DStack}^vBBBBBB^{__CFDictionary}L^{__CFDictionary}^{__CFDictionary}^{__CFDictionary}{C3DColor4=(?=[4f]{?=ffff})}^vi^{__C3DFXProgramObject}{__C3DEngineStats=IIIIIIIIIIIIIIIIIIIIIIIIddddddddddddddIIIIIIIIIIIIIIIIddd[60d]Idd}{Cache=[8I]Ii^{__C3DBlendStates}I^{__C3DRasterizerStates}^{__C3DMesh}^{__C3DMeshElement}LIiI^vii}{?=[2I][5i][12{?=iII}][12I]^?^?^?^?^?^?^?^?^?}[2{VolatileObject=^{__C3DArray}II^{__CFArray}}]^{__C3DArray}I^{__CFDictionary}}8, name: cleanup:
+-     // Error parsing type: v12@0:4^{__C3DRendererContext={__CFRuntimeBase=IAI}lIIIIfI^{__C3DTexture}^{__C3DStack}^vBBBBB^{__CFDictionary}I^{__CFDictionary}^{__CFDictionary}^{__CFDictionary}{C3DColor4=(?=[4f]{?=ffff})}^vi^{__C3DFXProgramObject}{__C3DEngineStats=IIIIIIIIIIIIIIIIIIIIIIIIdddddddddddddddIIIIIIIIIIIIIIIIIdIdIdddd[60d]Idd}{Cache=[8I]Ii^{__C3DBlendStates}I^{__C3DRasterizerStates}^{__C3DMesh}^{__C3DMeshElement}LIiI^vii}{?=[2I][5i][14{?=iII}][14I]^?^?^?^?^?^?^?^?^?}[2{VolatileObject=^{__C3DArray}II^{__CFArray}}]^{__C3DArray}I^{__CFDictionary}}8, name: cleanup:
 - (void)setup;
 - (void)dealloc;
 

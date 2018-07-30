@@ -7,6 +7,7 @@
 #import "CLPPoiWifiAccessPoint.h"
 
 @interface CLPPoiWifiAccessPoint (RTExtensions)
+- (id)length12StringForMac:(id)arg1;
 - (id)initWithRTWifiAccessPoint:(id)arg1;
 @end
 

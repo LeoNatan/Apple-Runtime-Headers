@@ -8,6 +8,7 @@
 
 @class MCQuestionView, UITransitionView;
 
+__attribute__((visibility("hidden")))
 @interface MCQuestionPane : PSEditingPane
 {
     MCQuestionView *_questionView;

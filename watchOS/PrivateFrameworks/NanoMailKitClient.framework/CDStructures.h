@@ -25,6 +25,10 @@ struct CGSize {
     float height;
 };
 
+struct NSMutableDictionary {
+    Class _field1;
+};
+
 struct UIEdgeInsets {
     float top;
     float left;
@@ -214,6 +218,12 @@ struct _xmlSAXHandler {
 struct _xmlValidState;
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    float _field1;
+    float _field2;
+    float _field3;
+} CDStruct_869f9c67;
 
 // Ambiguous groups
 typedef struct {

@@ -17,6 +17,8 @@
     _UIAsyncInvocation *_cancelRequest;
     _Bool _hasPresented;
     _Bool _shouldObserveRoutingContextUIDChanges;
+    _Bool _isRequestingViewController;
+    _Bool _shouldUseOverrideAudioSessionValues;
     CDUnknownBlockType _didDismissHandler;
     id <MPMediaControlsViewControllerDelegate> _delegate;
     MPMediaControlsRemoteViewController *_remoteViewController;
@@ -25,12 +27,13 @@
 }
 
 @property(readonly, nonatomic) MPMediaControlsConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(nonatomic) _Bool shouldUseOverrideAudioSessionValues; // @synthesize shouldUseOverrideAudioSessionValues=_shouldUseOverrideAudioSessionValues;
 @property(retain, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) MPMediaControlsRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id <MPMediaControlsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType didDismissHandler; // @synthesize didDismissHandler=_didDismissHandler;
 - (void).cxx_destruct;
-- (void)_updateRemoteViewControllerRoutingContextUID;
+- (void)_updateConfigurationWithRouteSharingPolicy:(unsigned long long)arg1 routingContextUID:(id)arg2;
 - (void)_reloadAudioContextConfigurationOptions;
 - (void)_requestRemoteViewController;
 - (void)_audioSessionRoutingContextDidChange:(id)arg1;
@@ -47,8 +50,10 @@
 - (void)didSelectRoute:(id)arg1;
 - (void)didReceiveInteraction;
 - (void)dismiss;
+- (void)setOverrideRouteSharingPolicy:(unsigned long long)arg1 routingContextUID:(id)arg2;
 - (void)stopPrewarming;
 - (void)startPrewarming;
+- (void)prepareRemoteViewController;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

@@ -164,6 +164,7 @@ __attribute__((visibility("hidden")))
 - (void)addBuild:(id)arg1;
 @property(copy, nonatomic) NSSet *builds;
 @property(readonly, nonatomic) unsigned long long buildCount;
+@property(readonly, nonatomic) _Bool supportsBuilds;
 - (void)p_invalidateSlideNodeBuildEventCountCaches;
 - (void)p_invalidateCachesForBuildUpdate:(id)arg1 isForRemoval:(_Bool)arg2;
 - (void)p_invalidateCachesForChunkUpdate:(id)arg1 isForRemoval:(_Bool)arg2;
@@ -225,6 +226,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool matchesObjectPlaceholderGeometry;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsCollaborativeEditing;
 
 @end
 

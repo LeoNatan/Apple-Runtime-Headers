@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) TSTCellStyle *cellStyle;
 - (_Bool)isEqualForInspector:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithContext:(id)arg1;

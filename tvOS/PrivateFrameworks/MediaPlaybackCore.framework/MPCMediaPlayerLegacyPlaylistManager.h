@@ -8,7 +8,7 @@
 
 #import "MPCQueueBehaviorManaging.h"
 
-@class MPAVItem, MPMusicPlayerControllerQueue, MPMutableBidirectionalDictionary, MPQueueFeeder, NSMapTable, NSMutableArray, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSString, _MPCAVItemSourceContext, _MPCAVPlaylistIteration;
+@class MPAVItem, MPMusicPlayerControllerQueue, MPQueueFeeder, MSVMutableBidirectionalDictionary, NSMapTable, NSMutableArray, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSString, _MPCAVItemSourceContext, _MPCAVPlaylistIteration;
 
 @interface MPCMediaPlayerLegacyPlaylistManager : MPAVPlaylistManager <MPCQueueBehaviorManaging>
 {
@@ -20,7 +20,7 @@
     unsigned long long _minimumPlaylistIndex;
     unsigned long long _maximumPlaylistIndex;
     NSMutableIndexSet *_failedSoftQueueIndexes;
-    MPMutableBidirectionalDictionary *_identifiersToIndexes;
+    MSVMutableBidirectionalDictionary *_identifiersToIndexes;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_musicPlayerControllerAccessQueue;
     MPMusicPlayerControllerQueue *_currentMusicPlayerControllerQueue;

@@ -8,15 +8,17 @@
 
 #import "UITextViewDelegate_Private.h"
 
-@class NNMKMessageBodyLayoutManager, NNMKMessageBodyTextStorage, NNMKMessageContent, NSString, NSTextContainer, UIButton, UIView;
+@class NNMKMessage, NNMKMessageBodyLayoutManager, NNMKMessageBodyTextStorage, NNMKMessageContent, NSString, NSTextContainer, UIButton, UIView;
 
 @interface NNMKMessageContentView : UITextView <UITextViewDelegate_Private>
 {
     _Bool _contentDownloadFailed;
     _Bool _contentBeingDisplayed;
+    _Bool _suppressContentWarningMessage;
     _Bool _renderingContent;
     id <NNMKMessageContentViewDelegate> _messageContentViewDelegate;
     NNMKMessageContent *_content;
+    NNMKMessage *_message;
     UIView *_headerView;
     UIView *_footerView;
     UIButton *_contactsTransparentButton;
@@ -32,26 +34,25 @@
 @property(retain, nonatomic) NSTextContainer *bodyContentTextContainer; // @synthesize bodyContentTextContainer=_bodyContentTextContainer;
 @property(retain, nonatomic) UIButton *contactsTransparentButton; // @synthesize contactsTransparentButton=_contactsTransparentButton;
 @property(nonatomic) _Bool renderingContent; // @synthesize renderingContent=_renderingContent;
+@property(nonatomic) _Bool suppressContentWarningMessage; // @synthesize suppressContentWarningMessage=_suppressContentWarningMessage;
 @property(nonatomic) struct UIEdgeInsets extraTextContainerInset; // @synthesize extraTextContainerInset=_extraTextContainerInset;
 @property(nonatomic) _Bool contentBeingDisplayed; // @synthesize contentBeingDisplayed=_contentBeingDisplayed;
 @property(nonatomic) _Bool contentDownloadFailed; // @synthesize contentDownloadFailed=_contentDownloadFailed;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
-@property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) NNMKMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) NNMKMessageContent *content; // @synthesize content=_content;
 @property(nonatomic) __weak id <NNMKMessageContentViewDelegate> messageContentViewDelegate; // @synthesize messageContentViewDelegate=_messageContentViewDelegate;
 - (void).cxx_destruct;
+- (float)calculateHeaderPlusContentHeight;
 - (void)_updateFooterViewPosition;
 - (void)_updateTextContainerInset;
 - (id)_defaultParagraphStyle;
 - (id)_attributedStringForWarningMessage:(id)arg1;
-- (void)_messageContentTapped:(id)arg1;
-- (void)_hideLoadingView;
-- (void)_showLoadingView;
 - (void)_redrawContent;
 - (void)_contentSizeCategoryChanged:(id)arg1;
+- (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(int)arg4;
 - (_Bool)_textView:(id)arg1 shouldHighlightForInteractionInRange:(struct _NSRange)arg2;
-- (_Bool)textView:(id)arg1 shouldInteractWithTextAttachment:(id)arg2 inRange:(struct _NSRange)arg3;
-- (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 - (void)_handleDidEndScrolling;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;

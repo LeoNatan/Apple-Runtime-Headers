@@ -16,6 +16,7 @@
 - (void)faceClusteringInformation:(unsigned long long)arg1 withContext:(NSDictionary *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)processPersonsWithContext:(NSDictionary *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)reclusterFacesWithContext:(NSDictionary *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
+- (void)resetFaceClassificationModelWithContext:(NSDictionary *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)resetPeopleWithContext:(NSDictionary *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)resetFaceClusteringStateWithContext:(NSDictionary *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)updateKeyFacesOfPersonsWithLocalIdentifiers:(NSArray *)arg1 forceUpdate:(_Bool)arg2 context:(NSDictionary *)arg3 reply:(void (^)(_Bool, NSError *))arg4;
@@ -24,5 +25,6 @@
 - (void)suggestVerifiedPersonLocalIdentifierForFaceWithLocalIdentifier:(NSString *)arg1 context:(NSDictionary *)arg2 reply:(void (^)(NSString *, NSError *))arg3;
 - (void)suggestPersonsForPersonWithLocalIdentifier:(NSString *)arg1 toBeConfirmedPersonSuggestions:(NSArray *)arg2 toBeRejectedPersonSuggestions:(NSArray *)arg3 context:(NSDictionary *)arg4 reply:(void (^)(NSArray *, NSError *))arg5;
 - (void)performFaceProcessingOnAssetWithLocalIdentifier:(NSString *)arg1 context:(NSDictionary *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
+- (void)pingFaceWorkerWithOptions:(NSDictionary *)arg1 context:(NSDictionary *)arg2 reply:(void (^)(NSError *))arg3;
 @end
 

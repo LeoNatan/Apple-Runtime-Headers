@@ -6,19 +6,31 @@
 
 #import <SafariShared/WBSSiteMetadataRequest.h>
 
-@interface WBSFaviconRequest : WBSSiteMetadataRequest
+#import "WBSIconRequest.h"
+
+@class NSString;
+
+@interface WBSFaviconRequest : WBSSiteMetadataRequest <WBSIconRequest>
 {
 }
 
+@property(readonly, nonatomic) struct CGSize sizeForDrawing;
 @property(readonly, nonatomic) BOOL isURLTypedByUser;
 @property(readonly, nonatomic) unsigned long long type;
-@property(readonly, nonatomic) BOOL shouldReturnDefaultIconIfNoneAvailable;
+@property(readonly, nonatomic) unsigned long long fallbackType;
 @property(readonly, nonatomic) struct CGSize iconSize;
-- (id)_initWithURL:(id)arg1 type:(unsigned long long)arg2 iconSize:(struct CGSize)arg3 shouldReturnDefaultIconIfNoneAvailable:(BOOL)arg4 isURLTypedByUser:(BOOL)arg5;
-- (id)initWithURL:(id)arg1 iconSize:(struct CGSize)arg2 shouldReturnDefaultIconIfNoneAvailable:(BOOL)arg3 isURLTypedByUser:(BOOL)arg4;
-- (id)initWithURL:(id)arg1 iconSize:(struct CGSize)arg2 shouldReturnDefaultIconIfNoneAvailable:(BOOL)arg3;
-- (id)initWithDomain:(id)arg1 iconSize:(struct CGSize)arg2 shouldReturnDefaultIconIfNoneAvailable:(BOOL)arg3;
+@property(readonly, copy, nonatomic) NSString *uniqueIdentifier;
+- (id)_initWithURL:(id)arg1 type:(unsigned long long)arg2 iconSize:(struct CGSize)arg3 fallbackType:(unsigned long long)arg4 isURLTypedByUser:(BOOL)arg5;
+- (id)initWithURL:(id)arg1 iconSize:(struct CGSize)arg2 fallbackType:(unsigned long long)arg3 isURLTypedByUser:(BOOL)arg4;
+- (id)initWithURL:(id)arg1 iconSize:(struct CGSize)arg2 fallbackType:(unsigned long long)arg3;
+- (id)initWithDomain:(id)arg1 iconSize:(struct CGSize)arg2 fallbackType:(unsigned long long)arg3;
 - (id)initWithURL:(id)arg1 extraInfo:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

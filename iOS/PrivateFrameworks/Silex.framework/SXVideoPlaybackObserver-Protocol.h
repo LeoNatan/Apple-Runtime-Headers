@@ -12,7 +12,6 @@
 
 @optional
 - (void)playbackCoordinatorMuteStateChanged:(SXPlaybackCoordinator *)arg1;
-- (void)mediaSelectionOptionsAvailabilityChangedForPlaybackCoordinator:(SXPlaybackCoordinator *)arg1;
 - (void)playbackCoordinatorStateChanged:(SXPlaybackCoordinator *)arg1;
 - (void)playbackCoordinatorPlaybackLikelyToKeepUpStateChanged:(SXPlaybackCoordinator *)arg1;
 - (void)playbackCoordinatorPlaybackBufferFullStateChanged:(SXPlaybackCoordinator *)arg1;

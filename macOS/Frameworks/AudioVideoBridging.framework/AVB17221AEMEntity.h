@@ -33,6 +33,7 @@
     NSArray *configurations;
 }
 
++ (id)keyPathsForValuesAffectingCurrentConfigurationObject;
 + (id)keyPathsForValuesAffectingDynamicEntityModelID;
 + (id)keyPathsForValuesAffectingDynamicEntityID;
 + (id)keyPathsForValuesAffectingLocalizedModelName;

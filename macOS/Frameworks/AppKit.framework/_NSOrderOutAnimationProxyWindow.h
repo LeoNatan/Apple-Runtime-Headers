@@ -6,10 +6,12 @@
 
 #import <AppKit/NSWindow.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSOrderOutAnimationProxyWindow : NSWindow
 {
 }
 
+- (long long)_orderOutAnimationType;
 - (struct CGRect)constrainFrameRect:(struct CGRect)arg1 toScreen:(id)arg2;
 - (BOOL)_ignoreForFullScreenTransitionSnapshot;
 - (BOOL)_ignoreForFullScreenTransition;

@@ -7,8 +7,6 @@
 #import "NSString.h"
 
 @interface NSString (WideStringCat)
-+ (id)stringWithWideCString:(int *)arg1;
-- (int *)cWideString;
-- (id)initWithWideCString:(int *)arg1;
+- (unsigned short *)cWideString;
 @end
 

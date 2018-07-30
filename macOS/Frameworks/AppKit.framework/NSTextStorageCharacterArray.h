@@ -8,6 +8,7 @@
 
 @class NSTextStorage;
 
+__attribute__((visibility("hidden")))
 @interface NSTextStorageCharacterArray : NSArray
 {
     NSTextStorage *_container;

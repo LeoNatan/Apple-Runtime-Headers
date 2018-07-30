@@ -9,26 +9,57 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSSet, NSUUID, TUHandle;
+@class NSSet, NSString, NSURL, NSUUID, TUHandle;
 
 @interface TUJoinConversationRequest : NSObject <NSCopying, NSSecureCoding>
 {
-    NSUUID *_groupUUID;
-    TUHandle *_localParticipantHandle;
-    NSSet *_remoteParticipantHandles;
+    BOOL _videoEnabled;
+    BOOL _shouldSuppressInCallUI;
+    BOOL _wantsStagingArea;
+    BOOL _showUIPrompt;
+    NSSet *_remoteMembers;
     NSUUID *_UUID;
+    TUHandle *_callerID;
+    NSUUID *_messagesGroupUUID;
+    NSString *_messagesGroupName;
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)sanitizedMembersFromMembers:(id)arg1;
++ (id)messagesGroupNameFromURLComponents:(id)arg1;
++ (id)messagesGroupUUIDFromURLComponents:(id)arg1;
++ (id)callerIDFromURLComponents:(id)arg1;
++ (BOOL)wantsStagingAreaFromURLComponents:(id)arg1;
++ (BOOL)shouldSuppressInCallUIFromURLComponents:(id)arg1;
++ (BOOL)videoEnabledFromURLComponents:(id)arg1;
++ (id)remoteMembersFromURLComponents:(id)arg1;
+@property(nonatomic) BOOL showUIPrompt; // @synthesize showUIPrompt=_showUIPrompt;
+@property(copy, nonatomic) NSString *messagesGroupName; // @synthesize messagesGroupName=_messagesGroupName;
+@property(copy, nonatomic) NSUUID *messagesGroupUUID; // @synthesize messagesGroupUUID=_messagesGroupUUID;
+@property(retain, nonatomic) TUHandle *callerID; // @synthesize callerID=_callerID;
+@property(nonatomic) BOOL wantsStagingArea; // @synthesize wantsStagingArea=_wantsStagingArea;
+@property(nonatomic) BOOL shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
+@property(nonatomic, getter=isVideoEnabled) BOOL videoEnabled; // @synthesize videoEnabled=_videoEnabled;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-@property(readonly, copy, nonatomic) NSSet *remoteParticipantHandles; // @synthesize remoteParticipantHandles=_remoteParticipantHandles;
-@property(readonly, copy, nonatomic) TUHandle *localParticipantHandle; // @synthesize localParticipantHandle=_localParticipantHandle;
-@property(readonly, nonatomic) NSUUID *groupUUID; // @synthesize groupUUID=_groupUUID;
+@property(readonly, copy, nonatomic) NSSet *remoteMembers; // @synthesize remoteMembers=_remoteMembers;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)messagesGroupNameQueryItem;
+- (id)messagesGroupUUIDQueryItem;
+- (id)callerIDQueryItem;
+- (id)wantsStagingAreaQueryItem;
+- (id)shouldSuppressInCallUIQueryItem;
+- (id)videoEnabledQueryItem;
+- (id)remoteMembersQueryItem;
+- (id)queryItems;
+@property(readonly, nonatomic) NSURL *URL;
+- (id)description;
 - (id)initWithGroupUUID:(id)arg1 localParticipantHandle:(id)arg2 remoteParticipantHandles:(id)arg3;
+- (id)initWithURL:(id)arg1;
+- (id)initWithConversation:(id)arg1;
+- (id)initWithRemoteMembers:(id)arg1;
 
 @end
 

@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
         struct __CFString *tempString;
     } _decoder;
     NSXPCConnection *_connection;
-    struct *_collections[128];
+    CDStruct_183601bc *_collections[128];
     CDStruct_1b1be194 _rootObject;
     unsigned int _collectionPointer;
     id _allowedClassesList[128];

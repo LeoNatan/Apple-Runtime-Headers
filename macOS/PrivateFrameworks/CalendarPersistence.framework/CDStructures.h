@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct ComponentInstanceRecord {
-    long long _field1[1];
-};
-
 struct _CALCDate {
     long long second;
     long long minute;

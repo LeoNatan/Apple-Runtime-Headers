@@ -15,6 +15,8 @@
     NSMutableDictionary *_conversionTypes;
 }
 
++ (id)_cachedChildIdentifiersForType:(id)arg1;
++ (id)_cachedParentIdentifiersForType:(id)arg1;
 + (id)sharedConverter;
 @property(retain) NSMutableDictionary *_conversionTypes; // @synthesize _conversionTypes;
 @property(retain) NSMutableDictionary *conversionPathCache; // @synthesize conversionPathCache=_conversionPathCache;

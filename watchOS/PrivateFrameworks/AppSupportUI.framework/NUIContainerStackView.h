@@ -16,14 +16,12 @@
     struct vector<float, std::__1::allocator<float>> _spacingAfter;
     struct _NUIGridArrangement _visibleArrangement;
     struct CGSize _visibleCount;
-    float _smallestWidthKnownToCompress;
     struct {
         unsigned int delegateMinSpacing:1;
         unsigned int delegateMinDirectionalSpacing:1;
         unsigned int delegateAlignment:1;
     } _stackViewFlags;
     int _axis;
-    int _effectiveAxis;
     int _distribution;
     int _alignment;
     float _spacing;
@@ -32,15 +30,13 @@
 @property(nonatomic) float spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) int alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) int distribution; // @synthesize distribution=_distribution;
-@property(readonly, nonatomic) int effectiveAxis; // @synthesize effectiveAxis=_effectiveAxis;
 @property(nonatomic) int axis; // @synthesize axis=_axis;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)arrangedDescription;
-- (_Bool)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
+- (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
 - (struct CGSize)calculateArrangedSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)_calculateArrangedSizeFittingSize:(struct CGSize)arg1 forLayout:(_Bool)arg2;
-- (_Bool)isLayoutSizeDependentOnPerpendicularAxis;
 - (void)populateGridArrangementDimension:(vector_b8a5df6e *)arg1 withCells:(const vector_f8404f95 *)arg2 axis:(int)arg3;
 - (void)populateGridArrangementCells:(vector_f8404f95 *)arg1;
 - (int)_effectiveAlignmentForArrangedSubview:(id)arg1;
@@ -53,7 +49,6 @@
 - (id)viewForFirstBaselineLayout;
 - (id)_baselineViewVendForFirstBaseline:(_Bool)arg1;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithArrangedSubviews:(id)arg1;
 - (float)customSpacingAfterView:(id)arg1;
 - (void)setCustomSpacing:(float)arg1 afterView:(id)arg2;

@@ -6,6 +6,7 @@
 
 #import <SiriUI/SiriUISnippetViewController.h>
 
+#import "CRKCardPresentationDelegate.h"
 #import "CRKCardViewControllerDelegate.h"
 #import "SiriUICardLoadingObserver.h"
 #import "SiriUICardSnippetViewDataSource.h"
@@ -13,9 +14,9 @@
 #import "SiriUIModalContainerViewControllerDelegate.h"
 #import "_SiriUICardLoaderDelegate.h"
 
-@class CRKCardViewController, NSMutableDictionary, NSObject<OS_dispatch_group>, NSString, SACardSnippet, SiriUICardSnippetView, SiriUIModalContainerViewController, _SiriUICardLoader;
+@class CRKCardPresentation, NSMutableDictionary, NSObject<OS_dispatch_group>, NSString, SACardSnippet, SiriUICardSnippetView, SiriUIModalContainerViewController, UIViewController<CRKCardViewControlling>, _SiriUICardLoader;
 
-@interface SiriUICardSnippetViewController : SiriUISnippetViewController <_SiriUICardLoaderDelegate, SiriUICardLoadingObserver, SiriUIModalContainerViewControllerDelegate, SiriUICardSnippetViewDataSource, SiriUICardSnippetViewDelegate, CRKCardViewControllerDelegate>
+@interface SiriUICardSnippetViewController : SiriUISnippetViewController <_SiriUICardLoaderDelegate, SiriUICardLoadingObserver, SiriUIModalContainerViewControllerDelegate, CRKCardPresentationDelegate, SiriUICardSnippetViewDataSource, SiriUICardSnippetViewDelegate, CRKCardViewControllerDelegate>
 {
     SACardSnippet *_snippet;
     struct CGSize _contentSize;
@@ -25,13 +26,16 @@
     SACardSnippet *_newlyLoadedCardSnippet;
     _SiriUICardLoader *_cardLoader;
     SiriUIModalContainerViewController *_presentedModalContainerViewController;
-    CRKCardViewController *_cardViewController;
+    UIViewController<CRKCardViewControlling> *_cardViewController;
+    CRKCardPresentation *_cardPresentation;
 }
 
 + (void)initialize;
-@property(retain, nonatomic, setter=_setCardViewController:) CRKCardViewController *_cardViewController; // @synthesize _cardViewController;
+@property(retain, nonatomic, getter=_cardPresentation, setter=_setCardPresentation:) CRKCardPresentation *cardPresentation; // @synthesize cardPresentation=_cardPresentation;
+@property(retain, nonatomic, getter=_cardViewController, setter=_setCardViewController:) UIViewController<CRKCardViewControlling> *cardViewController; // @synthesize cardViewController=_cardViewController;
 - (id)snippet;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CRKCardViewControllerDelegate> cardViewControllerDelegate;
 - (double)desiredHeightForTransparentHeaderView;
 - (void)configureReusableTransparentHeaderView:(id)arg1;
 - (Class)transparentHeaderViewClass;
@@ -59,8 +63,12 @@
 - (void)cardViewControllerBoundsDidChange:(id)arg1;
 - (void)cardViewControllerDidLoad:(id)arg1;
 - (void)cardSnippetViewSashWasTapped:(id)arg1;
+- (double)contentHeightForWidth:(double)arg1;
 - (id)localeForCardSnippetView:(id)arg1;
 - (id)sashItemForCardSnippetView:(id)arg1;
+- (void)_forwardProgressEvent:(unsigned long long)arg1 toCardViewController:(id)arg2 animated:(_Bool)arg3;
+- (void)_forwardProgressEventToCardViewController:(unsigned long long)arg1;
+- (void)willConfirm;
 - (id)_metricsContextOfEventsForCardSection:(id)arg1 inCard:(id)arg2;
 - (id)_metricsContextOfEventsForCard:(id)arg1;
 - (void)_validateCardSectionForParsecFeedbackDelivery:(id)arg1 validHandler:(CDUnknownBlockType)arg2;
@@ -69,9 +77,11 @@
 - (void)_updateContentSizeAndNotifyDelegateIfNecessary:(_Bool)arg1;
 - (void)_addCardViewControllerAsChildViewController:(id)arg1;
 - (void)_removeCardViewControllerFromParentViewController:(id)arg1;
+- (void)siriDidReceiveViewsWithDialogPhase:(id)arg1;
 - (void)siriDidStopSpeakingWithIdentifier:(id)arg1 speechQueueIsEmpty:(_Bool)arg2;
 - (void)siriDidStartSpeakingWithIdentifier:(id)arg1;
 - (void)willCancel;
+- (void)siriDidDeactivate;
 - (void)wasAddedToTranscript;
 - (id)requestContext;
 - (_Bool)logContentsIfApplicable;

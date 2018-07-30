@@ -11,7 +11,7 @@
 }
 
 + (id)allergyRecordType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

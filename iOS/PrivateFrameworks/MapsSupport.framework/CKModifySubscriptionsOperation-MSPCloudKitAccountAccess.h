@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface CKModifySubscriptionsOperation (MSPCloudKitAccountAccess) <MSPCloudRequest>
+- (void)setNetworkBehaviorIsDiscretionary:(_Bool)arg1;
 - (unsigned long long)maximumRetries;
 - (void)addCloudAccessCompletionBlock:(CDUnknownBlockType)arg1;
 

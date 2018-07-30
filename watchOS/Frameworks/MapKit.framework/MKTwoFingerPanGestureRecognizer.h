@@ -6,7 +6,6 @@
 
 #import <MapKit/MKTiltGestureRecognizer.h>
 
-__attribute__((visibility("hidden")))
 @interface MKTwoFingerPanGestureRecognizer : MKTiltGestureRecognizer
 {
 }

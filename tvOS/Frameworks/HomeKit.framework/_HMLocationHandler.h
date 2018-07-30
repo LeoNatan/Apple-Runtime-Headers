@@ -20,7 +20,6 @@
     NSHashTable *_locationAuthorizationDelegates;
 }
 
-+ (id)createLocationHandler;
 + (id)sharedHandler;
 @property(retain, nonatomic) NSHashTable *locationAuthorizationDelegates; // @synthesize locationAuthorizationDelegates=_locationAuthorizationDelegates;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;

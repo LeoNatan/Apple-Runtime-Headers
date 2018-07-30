@@ -6,7 +6,7 @@
 
 #import "NSObjectController.h"
 
-@class NSButton, NSComboBox, NSOutlineView, NSPopUpButton, NSSlider, NSStepper, NSTextField, SCNRendererOptionsPanel, SCNUIDynamicInspector, SCNView;
+@class NSButton, NSComboBox, NSOutlineView, NSPopUpButton, NSSlider, NSStepper, NSTextField, NSView, SCNRendererOptionsPanel, SCNUIDynamicInspector, SCNView;
 
 __attribute__((visibility("hidden")))
 @interface SCNRendererOptionsPanelController : NSObjectController
@@ -15,20 +15,26 @@ __attribute__((visibility("hidden")))
     SCNRendererOptionsPanel *_panel;
     NSPopUpButton *antialiasingLevels;
     NSPopUpButton *displayOptions;
+    NSPopUpButton *renderDebugOptions;
     NSTextField *benchResult;
     NSSlider *seekSlider;
     NSStepper *seekStepper;
     NSButton *isolate;
     NSButton *freezeButton;
     NSOutlineView *_sceneGraph;
+    NSView *renderGraphUtils;
     SCNUIDynamicInspector *_inspector;
     NSComboBox *pointOfViewComboBox;
     NSComboBox *pointOfCullingComboBox;
+    NSButton *skipExecute;
+    NSButton *recordGraph;
     BOOL _viewLocked;
+    BOOL _pointOfViewIsSelected;
     unsigned int _currentSeekStep;
 }
 
 - (void).cxx_destruct;
+- (void)recordGraph:(id)arg1;
 - (id)selectedNode;
 - (id)selection;
 - (void)selectionDidChange:(id)arg1;
@@ -42,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)showManipulators;
 - (void)inspectCamera:(id)arg1;
 - (void)_expandItem:(id)arg1;
+- (void)selectRenderingDebugOptions:(id)arg1;
 - (void)selectAuthoringDisplayMask:(id)arg1;
 - (void)exportAs:(id)arg1;
 - (void)isolate:(id)arg1;
@@ -65,7 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)recompilePasses;
 @property(retain, nonatomic) SCNView *view;
 - (id)panel;
--     // Error parsing type: ^{__C3DRendererContext={__CFRuntimeBase=QAQ}iIIIIfI^{__C3DTexture}^{__C3DStack}^vBBBBBB^{__CFDictionary}I^{__CFDictionary}^{__CFDictionary}^{__CFDictionary}{C3DColor4=(?=[4f]{?=ffff})}^vq^{__C3DFXProgramObject}{__C3DEngineStats=IIIIIIIIIIIIIIIIIIIIIIIIddddddddddddddIIIIIIIIIIIIIIIIddd[60d]Idd}{Cache=[16I]Ii^{__C3DBlendStates}I^{__C3DRasterizerStates}^{__C3DMesh}^{__C3DMeshElement}IIiI^viii}{?=[5I][5i][12{?=iII}][12I]^?^?^?^?^?^?^?^?^?^?}[2{VolatileObject=^{__C3DArray}II^{__CFArray}}]^{__C3DArray}I^{__CFDictionary}}16@0:8, name: rendererContext
+-     // Error parsing type: ^{__C3DRendererContext={__CFRuntimeBase=QAQ}iIIIIfI^{__C3DTexture}^{__C3DStack}^vBBBBB^{__CFDictionary}I^{__CFDictionary}^{__CFDictionary}^{__CFDictionary}{C3DColor4=(?=[4f]{?=ffff})}^vq^{__C3DFXProgramObject}{__C3DEngineStats=IIIIIIIIIIIIIIIIIIIIIIIIdddddddddddddddIIIIIIIIIIIIIIIIIdIdIdddd[60d]Idd}{Cache=[16I]Ii^{__C3DBlendStates}I^{__C3DRasterizerStates}^{__C3DMesh}^{__C3DMeshElement}IIiI^viii}{?=[5I][5i][14{?=iII}][14I]^?^?^?^?^?^?^?^?^?^?}[2{VolatileObject=^{__C3DArray}II^{__CFArray}}]^{__C3DArray}I^{__CFDictionary}}16@0:8, name: rendererContext
 - (struct __C3DEngineContext *)context;
 - (void)sceneDidChange;
 - (id)init;

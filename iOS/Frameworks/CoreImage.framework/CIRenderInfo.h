@@ -12,10 +12,12 @@
 }
 
 + (id)renderInfoWithCompletedTask:(id)arg1;
+- (double)timeForNodeID:(unsigned long long)arg1;
 - (id)description;
 - (long long)pixelsOverdrawn;
 @property(readonly) long long pixelsProcessed;
 @property(readonly) long long passCount;
+- (long long)kernelExecutionCycles;
 @property(readonly) double kernelExecutionTime;
 - (void)dealloc;
 - (id)initWithCompletedTask:(id)arg1;

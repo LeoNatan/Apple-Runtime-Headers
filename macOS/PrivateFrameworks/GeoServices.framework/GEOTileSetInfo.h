@@ -12,9 +12,15 @@
 {
     unsigned int _count;
     int _style;
-    CDStruct_f13729b5 _has;
+    unsigned int _zoom;
+    struct {
+        unsigned int count:1;
+        unsigned int style:1;
+        unsigned int zoom:1;
+    } _has;
 }
 
+@property(nonatomic) unsigned int zoom; // @synthesize zoom=_zoom;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,6 +31,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasZoom;
 @property(nonatomic) BOOL hasCount;
 - (int)StringAsStyle:(id)arg1;
 - (id)styleAsString:(int)arg1;

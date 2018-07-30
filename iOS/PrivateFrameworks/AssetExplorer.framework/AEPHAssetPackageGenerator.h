@@ -6,11 +6,12 @@
 
 #import <AssetExplorer/AEAssetPackageGenerator.h>
 
+__attribute__((visibility("hidden")))
 @interface AEPHAssetPackageGenerator : AEAssetPackageGenerator
 {
 }
 
-- (id)assetPackageforPHAsset:(id)arg1 withPhotoURL:(id)arg2 videoURL:(id)arg3 adjustmentsDataURL:(id)arg4 error:(out id *)arg5;
+- (id)assetPackageforPHAsset:(id)arg1 withResourceInfo:(id)arg2 error:(out id *)arg3;
 
 @end
 

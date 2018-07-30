@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSThemeWidgetCell.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSThemeCloseWidgetCell : _NSThemeWidgetCell
 {
     BOOL _edited;
@@ -13,6 +14,7 @@
 
 - (BOOL)setEditedFlag:(BOOL)arg1;
 - (BOOL)isEdited;
+- (id)coreUIValue;
 - (int)getState:(id)arg1;
 - (BOOL)accessibilityIsEditedAttributeSettable;
 - (id)accessibilityEditedAttribute;

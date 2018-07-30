@@ -19,7 +19,6 @@
 - (int)start;
 @property(readonly, getter=isBrowsing) _Bool browsing;
 @property id <ICDeviceBrowserDelegate> delegate;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

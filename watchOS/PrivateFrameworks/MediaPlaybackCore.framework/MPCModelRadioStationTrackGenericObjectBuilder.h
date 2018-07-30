@@ -13,6 +13,8 @@
     MPModelStorePlatformMetadataGenericObjectBuilder *_storePlatformBuilder;
     struct {
         unsigned int initialized:1;
+        unsigned int trackNumber:1;
+        unsigned int trackCount:1;
         struct {
             unsigned int identifiers:1;
             unsigned int bookmarkTime:1;

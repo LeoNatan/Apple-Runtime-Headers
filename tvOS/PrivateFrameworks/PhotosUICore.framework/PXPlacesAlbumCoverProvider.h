@@ -6,34 +6,37 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, PHAssetCollection, PXPlacesSnapshotFactory, UIImage;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PHAssetCollection, PXPlacesSnapshotFactory, UIImage;
 
 @interface PXPlacesAlbumCoverProvider : NSObject
 {
-    NSString *_cachedFilePath;
     UIImage *_cachedSnapshotImage;
     NSString *_cachedSnapshotImageIdentifier;
-    UIImage *_placeholderImage;
     long long _cachedCount;
     NSObject<OS_dispatch_queue> *_backgroundQueue;
     NSObject<OS_dispatch_queue> *_requestsQueue;
     PXPlacesSnapshotFactory *_factory;
     id <PXPlacesSnapshotFactoryDelegate> _factoryDelegate;
     PHAssetCollection *_placesCollection;
+    NSMutableDictionary *_cachedPlaceholders;
 }
 
++ (id)cachedSnapshotPath;
+@property(retain, nonatomic) NSMutableDictionary *cachedPlaceholders; // @synthesize cachedPlaceholders=_cachedPlaceholders;
 @property(retain, nonatomic) PHAssetCollection *placesCollection; // @synthesize placesCollection=_placesCollection;
 @property(retain, nonatomic) id <PXPlacesSnapshotFactoryDelegate> factoryDelegate; // @synthesize factoryDelegate=_factoryDelegate;
 @property(retain, nonatomic) PXPlacesSnapshotFactory *factory; // @synthesize factory=_factory;
 - (void).cxx_destruct;
+- (id)placesAlbumCoverProviderLog;
 - (id)backgroundImageNameForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
 - (id)createAlbumPlaceHolderImageUsingTraitCollection:(id)arg1;
 - (_Bool)_imageExistsWithLocalIdentifier:(id)arg1;
-- (_Bool)_fetchCachedImageAndIdentifier;
+- (_Bool)_fetchCachedSnapshotImage:(out id *)arg1 andIdentifier:(out id *)arg2;
 - (id)_placeHolderImageForExtendedTraitCollection:(id)arg1;
-- (id)_placeHolderImageForPXExtendedTraitCollection:(id)arg1;
-- (long long)assetCountWithForcedRefresh:(_Bool)arg1;
-- (void)requestPlacesAlbumCover:(id)arg1 cacheDirPath:(id)arg2 andCompletion:(CDUnknownBlockType)arg3;
+- (void)requestAssetCountWithForcedRefresh:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestPlacesAlbumCover:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)preloadPlaceholderForTraitCollection:(id)arg1;
+- (void)preloadCachedSnapshot;
 - (id)initWithDelegate:(id)arg1 andPlacesCollection:(id)arg2;
 
 @end

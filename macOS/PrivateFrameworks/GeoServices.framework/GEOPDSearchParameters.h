@@ -10,6 +10,7 @@
 
 @class GEOPDAutocompleteEntry, GEOPDRecentRouteInfo, GEOPDRetainedSearchMetadata, GEOPDSearchFilter, GEOPDSearchLocationParameters, GEOPDSearchStructureIntentRequestType, GEOPDViewportInfo, NSData, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDSearchParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

@@ -20,6 +20,8 @@
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromOverlayToModelWithPageIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 
 @optional
+- (void)rotateLeft:(AKController *)arg1;
+- (void)rotateRight:(AKController *)arg1;
 - (NSIndexSet *)characterIndexesForQuadPoints:(NSArray *)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 - (NSArray *)quadPointsForCharacterIndexes:(NSIndexSet *)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 - (void)setAllowsNativeRenderingOfHighlightableSelection:(_Bool)arg1 forAnnotationController:(AKController *)arg2;

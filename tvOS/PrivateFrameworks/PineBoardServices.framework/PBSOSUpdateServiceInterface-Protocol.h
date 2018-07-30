@@ -6,16 +6,28 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, PBSOSUpdateDescriptor, PBSOSUpdateManagerClient;
 
 @protocol PBSOSUpdateServiceInterface <NSObject>
+- (void)purgeAssetsWithCompletion:(void (^)(NSNumber *))arg1;
+- (void)purgeableAssetSpaceWithCompletion:(void (^)(NSNumber *))arg1;
 - (void)obliterateDataPreservingPaths:(NSArray *)arg1 withCompletion:(void (^)(NSError *))arg2;
-- (void)cancelUpdate;
-- (void)isUpdateRunningWithCompletion:(void (^)(_Bool))arg1;
 - (void)restore;
+- (void)cancelUpdate;
+- (void)installUpdate:(PBSOSUpdateDescriptor *)arg1 withOptions:(NSArray *)arg2 withResult:(void (^)(_Bool, NSError *))arg3;
+- (void)purgeDownload:(void (^)(_Bool, NSError *))arg1;
+- (void)cancelDownload:(void (^)(_Bool, NSError *))arg1;
+- (void)startDownload:(void (^)(_Bool, NSError *))arg1;
+- (void)checkForUpdatesWithConditions:(NSDictionary *)arg1 response:(void (^)(PBSOSUpdateDescriptor *, NSError *))arg2;
 - (void)checkForUpdateViaMDM;
 - (void)checkForUpdate;
-- (void)didStartCheckWithData:(NSDictionary *)arg1;
+- (void)setAssetDownloadIsDiscretionary:(_Bool)arg1;
+- (void)currentDownload:(void (^)(PBSOSUpdateDownload *, NSError *))arg1;
+- (void)isUpdate:(PBSOSUpdateDescriptor *)arg1 readyForInstallation:(void (^)(_Bool, NSError *))arg2;
+- (void)isUpdateRunningWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)isDownloading:(void (^)(_Bool, NSError *))arg1;
+- (void)isCheckingForUpdates:(void (^)(_Bool, NSError *))arg1;
+- (void)setManagerClientDelegate:(PBSOSUpdateManagerClient *)arg1;
 - (void)setDelegate:(id <PBSOSUpdateServiceDelegate>)arg1;
 @end
 

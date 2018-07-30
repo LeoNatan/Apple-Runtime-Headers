@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface CPKEmojiIMSharedResources : NSObject
 {
+    BOOL _emojiViewOncePrepared;
     BOOL _isDataReady;
     BOOL _isRTLDirection;
     NSBundle *_frameworkBundle;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableArray *displayingRecents; // @synthesize displayingRecents=_displayingRecents;
 @property NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(retain) NSBundle *frameworkBundle; // @synthesize frameworkBundle=_frameworkBundle;
+@property BOOL emojiViewOncePrepared; // @synthesize emojiViewOncePrepared=_emojiViewOncePrepared;
 - (void)_didChangedRecentsInCharacterPicker:(id)arg1;
 - (id)_emojiPreference;
 - (BOOL)_isEmojiString:(id)arg1;

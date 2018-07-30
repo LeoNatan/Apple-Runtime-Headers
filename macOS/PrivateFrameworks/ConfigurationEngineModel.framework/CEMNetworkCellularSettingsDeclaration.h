@@ -12,27 +12,35 @@
 
 @interface CEMNetworkCellularSettingsDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowDataRoaming;
+    NSNumber *_payloadAllowVoiceRoaming;
+    NSNumber *_payloadAllowPersonalHotspot;
+    NSNumber *_payloadAllowGlobalBackgroundFetchWhenRoaming;
+    NSNumber *_payloadAllowCellularPlanModification;
+    NSNumber *_payloadAllowAppCellularDataModification;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowDataRoaming:(id)arg2 withAllowVoiceRoaming:(id)arg3 withAllowPersonalHotspot:(id)arg4 withAllowGlobalBackgroundFetchWhenRoaming:(id)arg5 withAllowCellularPlanModification:(id)arg6 withAllowAppCellularDataModification:(id)arg7;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowAppCellularDataModification; // @synthesize payloadAllowAppCellularDataModification=_payloadAllowAppCellularDataModification;
+@property(copy, nonatomic) NSNumber *payloadAllowCellularPlanModification; // @synthesize payloadAllowCellularPlanModification=_payloadAllowCellularPlanModification;
+@property(copy, nonatomic) NSNumber *payloadAllowGlobalBackgroundFetchWhenRoaming; // @synthesize payloadAllowGlobalBackgroundFetchWhenRoaming=_payloadAllowGlobalBackgroundFetchWhenRoaming;
+@property(copy, nonatomic) NSNumber *payloadAllowPersonalHotspot; // @synthesize payloadAllowPersonalHotspot=_payloadAllowPersonalHotspot;
+@property(copy, nonatomic) NSNumber *payloadAllowVoiceRoaming; // @synthesize payloadAllowVoiceRoaming=_payloadAllowVoiceRoaming;
+@property(copy, nonatomic) NSNumber *payloadAllowDataRoaming; // @synthesize payloadAllowDataRoaming=_payloadAllowDataRoaming;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowCellularPlanModification;
-@property(readonly, nonatomic) NSNumber *payloadAllowGlobalBackgroundFetchWhenRoaming;
-@property(readonly, nonatomic) NSNumber *payloadAllowPersonalHotspot;
-@property(readonly, nonatomic) NSNumber *payloadAllowVoiceRoaming;
-@property(readonly, nonatomic) NSNumber *payloadAllowDataRoaming;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

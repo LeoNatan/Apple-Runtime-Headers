@@ -9,6 +9,7 @@
 @protocol PreferencePaneHostProtocol
 
 @optional
+- (void)toggleTouchBarControlStripCustomizationPalette;
 - (void)switchToPanel:(NSString *)arg1 anchor:(NSString *)arg2;
 - (void)switchToPanel:(NSString *)arg1;
 - (void)setSuddenTerminationEnabled:(BOOL)arg1;

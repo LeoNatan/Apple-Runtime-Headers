@@ -12,9 +12,10 @@ __attribute__((visibility("hidden")))
 @interface _OSLogChunkFileReference : NSObject
 {
     _OSLogCollectionReference *_oslcr;
-    const char *_path;
+    char *_path;
 }
 
+@property(readonly, nonatomic) char *path; // @synthesize path=_path;
 - (void).cxx_destruct;
 - (id)copyMappedChunkFile:(id *)arg1;
 - (void)dealloc;

@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSServicesMenuUpdater : NSObject <NSMenuDelegate>
 {
     unsigned long long _updateGeneration;

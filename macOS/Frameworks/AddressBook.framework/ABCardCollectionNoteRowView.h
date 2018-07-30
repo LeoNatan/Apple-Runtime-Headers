@@ -11,7 +11,6 @@
 
 @class NSArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionNoteRowView : ABCardCollectionRowView <ABNoteTextViewDelegate, NSTextViewDelegate>
 {
     NSArray *_noteConstraints;

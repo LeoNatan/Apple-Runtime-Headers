@@ -12,14 +12,20 @@
 {
     _Bool _registered;
     _Bool _shouldBringUpDataContext;
-    _Bool _dataContextActive;
+    _Bool _isDataContextAttached;
+    _Bool _isDataContextActive;
+    _Bool _isDataIndicatorNone;
+    _Bool _isDataContextUsable;
     NSRecursiveLock *_lock;
     NSMutableSet *_cellAutoAssociationTokens;
     NSMutableSet *_wiFiAutoAssociationTokens;
 }
 
 @property(retain, nonatomic) NSMutableSet *wiFiAutoAssociationTokens; // @synthesize wiFiAutoAssociationTokens=_wiFiAutoAssociationTokens;
-@property(nonatomic) _Bool dataContextActive; // @synthesize dataContextActive=_dataContextActive;
+@property(nonatomic) _Bool isDataContextUsable; // @synthesize isDataContextUsable=_isDataContextUsable;
+@property(nonatomic) _Bool isDataIndicatorNone; // @synthesize isDataIndicatorNone=_isDataIndicatorNone;
+@property(nonatomic) _Bool isDataContextActive; // @synthesize isDataContextActive=_isDataContextActive;
+@property(nonatomic) _Bool isDataContextAttached; // @synthesize isDataContextAttached=_isDataContextAttached;
 @property(nonatomic) _Bool shouldBringUpDataContext; // @synthesize shouldBringUpDataContext=_shouldBringUpDataContext;
 @property(nonatomic) _Bool registered; // @synthesize registered=_registered;
 @property(retain, nonatomic) NSMutableSet *cellularAutoAssociationTokens; // @synthesize cellularAutoAssociationTokens=_cellAutoAssociationTokens;
@@ -30,16 +36,15 @@
 @property(readonly, nonatomic) _Bool hasLTEDataConnection;
 @property(readonly, nonatomic) _Bool has2GDataConnection;
 @property(readonly, nonatomic) _Bool dataConnectionExists;
+- (_Bool)_legacy_inValidSIMState;
 @property(readonly, nonatomic) _Bool inValidSIMState;
 - (void)showSIMUnlock;
+- (id)_telephonyDataSIMStatus;
 @property(readonly, nonatomic) _Bool isSIMLocked;
 @property(readonly, nonatomic) _Bool isSIMRemoved;
 @property(readonly, nonatomic) _Bool requiresSIMInserted;
 - (void)_makeDataConnectionAvailable:(_Bool)arg1;
 - (_Bool)_isDataConnectionAvailable;
-- (void)_releaseCTServerConnection;
-- (void)_createCTServerConnection;
-- (void)_ctServerCallBack:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)removeCellularAutoAssociationClientToken:(id)arg1;
 - (void)addCellularAutoAssociationClientToken:(id)arg1;
 @property(readonly, nonatomic) _Bool autoAssociateCellular;

@@ -11,7 +11,7 @@
 }
 
 + (id)unknownRecordType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

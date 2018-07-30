@@ -24,7 +24,7 @@
 - (void)forceImageViewFullscreen:(id)arg1;
 - (id)imageViewForLocation:(struct CGPoint)arg1;
 - (id)hostingView;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 mediaSharingPolicyProvider:(id)arg7;
 
 @end
 

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (void)enableTextSelectionHandles;
 - (void)clearTextSelectionHandles;
 - (struct CGImage *)_createTextMagnifierContentsImageAtPagePoint:(struct CGPoint)arg1 forLoupeType:(int)arg2 forSize:(struct CGSize)arg3;
+- (void)_processloupeRenderRequest;
 - (void)_updateMagnificationLoupeLayer:(int)arg1 withPagePoint:(struct CGPoint)arg2;
 - (id)_createMagnificationLoupeLayer:(int)arg1;
 - (void)setLollipopMagnifierPagePoint:(struct CGPoint)arg1;

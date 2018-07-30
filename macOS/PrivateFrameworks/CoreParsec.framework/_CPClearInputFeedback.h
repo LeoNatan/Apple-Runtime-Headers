@@ -14,7 +14,6 @@
 
 @interface _CPClearInputFeedback : PBCodable <_CPProcessableFeedback, _CPClearInputFeedback, NSSecureCoding>
 {
-    CDStruct_c6e3878d _has;
     int _triggerEvent;
     unsigned long long _timestamp;
 }
@@ -29,8 +28,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasTriggerEvent;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

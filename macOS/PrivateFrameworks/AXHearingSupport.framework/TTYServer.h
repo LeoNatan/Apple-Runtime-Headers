@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <AXHearingSupport/AXHeardServer.h>
+#import "AXHeardServer.h"
 
 @class NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
@@ -27,10 +27,12 @@
 - (void)sendCharacter:(unsigned short)arg1 forCallUID:(id)arg2;
 - (void)findConversationForCallUID:(id)arg1 andResult:(CDUnknownBlockType)arg2;
 - (void)registerResponseBlock:(CDUnknownBlockType)arg1 forUUID:(id)arg2;
+- (void)setShouldSuppressIncomingNotification:(BOOL)arg1;
 - (void)cancelCallPromptDisplay;
 - (void)displayCallPromptForContact:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleMessageError:(id)arg1 destructive:(BOOL)arg2;
 - (void)handleMessageWithPayload:(id)arg1 forIdentifier:(unsigned long long)arg2;
+- (void)_managerAXPIDState:(BOOL)arg1;
 - (void)resetConnection;
 - (void)dealloc;
 - (id)init;

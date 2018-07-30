@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)spanInfo;
 - (id)coordinatesInfo;
 - (id)textRepresentation;
+- (id)helpDescription;
 - (id)typeDescription;
 - (id)statusDescriptionWithOptionsMask:(long long)arg1;
 - (id)titleDescription;
@@ -61,6 +62,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)columnIndex;
 - (unsigned long long)rowIndex;
 - (id)parentTable;
+- (void)_layoutChanged:(id)arg1;
+- (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
 
 @end
 

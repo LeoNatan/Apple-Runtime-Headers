@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class IKJSRWIDependencyDomainType, NSString;
+@class IKJSRWIDependencyDomain, IKJSRWIDependencyDomainType, NSString;
 
 @interface IKJSRWIDependencyDomainProperty : NSObject
 {
@@ -16,10 +16,12 @@
     NSString *_purpose;
     NSString *_propertyType;
     IKJSRWIDependencyDomainType *_domainType;
+    IKJSRWIDependencyDomain *_domain;
 }
 
 + (id)propertyNameMapping;
 + (id)typeMapping;
+@property(readonly, nonatomic) __weak IKJSRWIDependencyDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) __weak IKJSRWIDependencyDomainType *domainType; // @synthesize domainType=_domainType;
 @property(readonly, nonatomic) NSString *propertyType; // @synthesize propertyType=_propertyType;
 @property(readonly, nonatomic, getter=isRequired) _Bool required; // @synthesize required=_required;
@@ -28,6 +30,8 @@
 - (void).cxx_destruct;
 - (id)methodParameterString;
 - (id)propertyDefinitionString;
+- (id)initWithPropertyDictionary:(id)arg1;
+- (id)initWithPropertyDictionary:(id)arg1 forDomain:(id)arg2;
 - (id)initWithPropertyDictionary:(id)arg1 forType:(id)arg2;
 
 @end

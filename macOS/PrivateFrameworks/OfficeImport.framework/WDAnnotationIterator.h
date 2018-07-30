@@ -6,7 +6,6 @@
 
 #import <OfficeImport/WDTestIterator.h>
 
-__attribute__((visibility("hidden")))
 @interface WDAnnotationIterator : WDTestIterator
 {
 }

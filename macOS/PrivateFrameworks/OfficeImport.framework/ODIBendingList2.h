@@ -6,7 +6,6 @@
 
 #import <OfficeImport/ODIBending.h>
 
-__attribute__((visibility("hidden")))
 @interface ODIBendingList2 : ODIBending
 {
 }

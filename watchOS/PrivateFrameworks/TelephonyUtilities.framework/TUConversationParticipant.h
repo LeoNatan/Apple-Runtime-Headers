@@ -9,19 +9,29 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSString, TUHandle;
+@class TUHandle;
 
 @interface TUConversationParticipant : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _muted;
-    NSString *_identifier;
+    _Bool _audioEnabled;
+    _Bool _videoEnabled;
+    unsigned int _identifier;
     TUHandle *_handle;
+    int _streamToken;
+    int _audioPriority;
+    int _videoPriority;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) int videoPriority; // @synthesize videoPriority=_videoPriority;
+@property(nonatomic) int audioPriority; // @synthesize audioPriority=_audioPriority;
+@property(nonatomic) int streamToken; // @synthesize streamToken=_streamToken;
+@property(nonatomic, getter=isVideoEnabled) _Bool videoEnabled; // @synthesize videoEnabled=_videoEnabled;
+@property(nonatomic, getter=isAudioEnabled) _Bool audioEnabled; // @synthesize audioEnabled=_audioEnabled;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(readonly, copy, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -30,7 +40,7 @@
 - (_Bool)isEqualToParticipant:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 handle:(id)arg2;
+- (id)initWithIdentifier:(unsigned int)arg1 handle:(id)arg2;
 
 @end
 

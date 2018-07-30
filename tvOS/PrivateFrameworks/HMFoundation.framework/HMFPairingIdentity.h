@@ -28,12 +28,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) HMFPairingIdentity *publicPairingIdentity;
+- (id)attributeDescriptions;
+- (id)shortDescription;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)description;
-- (id)debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
 - (id)initWithIdentifier:(id)arg1 publicKey:(id)arg2 privateKey:(id)arg3;
 - (id)init;
 

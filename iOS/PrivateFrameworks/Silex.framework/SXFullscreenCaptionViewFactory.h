@@ -12,15 +12,15 @@
 
 @interface SXFullscreenCaptionViewFactory : NSObject <SXFullscreenCaptionViewFactory>
 {
-    id <SXActionProvider> _actionProvider;
+    id <SXSmartFieldFactory> _smartFieldFactory;
     id <SXComponentActionHandler> _actionHandler;
 }
 
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
-@property(readonly, nonatomic) id <SXActionProvider> actionProvider; // @synthesize actionProvider=_actionProvider;
+@property(readonly, nonatomic) id <SXSmartFieldFactory> smartFieldFactory; // @synthesize smartFieldFactory=_smartFieldFactory;
 - (void).cxx_destruct;
 - (id)createCaptionView;
-- (id)initWithActionProvider:(id)arg1 actionHandler:(id)arg2;
+- (id)initWithSmartFieldFactory:(id)arg1 actionHandler:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

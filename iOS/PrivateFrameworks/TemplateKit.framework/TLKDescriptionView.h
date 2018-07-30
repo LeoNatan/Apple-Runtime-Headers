@@ -35,10 +35,10 @@
 @property(retain) UIButton *moreButton; // @synthesize moreButton=_moreButton;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak id <TLKDescriptionViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) NSString *moreButtonText; // @synthesize moreButtonText=_moreButtonText;
-@property(retain) TLKMultilineText *title; // @synthesize title=_title;
-@property(retain) TLKMultilineText *text; // @synthesize text=_text;
-@property(retain) TLKImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) NSString *moreButtonText; // @synthesize moreButtonText=_moreButtonText;
+@property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
+@property(retain, nonatomic) TLKMultilineText *text; // @synthesize text=_text;
+@property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (id)exclusionPathsForTextView;
 - (_Bool)moreButtonIsHidden;
@@ -55,7 +55,6 @@
 - (void)containerViewDidLayoutArrangedSubviews:(id)arg1;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (void)observedPropertiesChanged;
-- (id)observableProperties;
 - (void)styleDidChange:(unsigned long long)arg1;
 - (id)init;
 

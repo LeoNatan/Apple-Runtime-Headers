@@ -44,6 +44,7 @@
 - (id)dataTableStyleForIdentifier:(id)arg1;
 - (id)componentStyleForIdentifier:(id)arg1 andClassification:(id)arg2;
 - (id)componentStyleForIdentifier:(id)arg1;
+@property(readonly, nonatomic) id <SXAutoPlacement> autoplacement;
 - (id)initWithDocument:(id)arg1;
 
 @end

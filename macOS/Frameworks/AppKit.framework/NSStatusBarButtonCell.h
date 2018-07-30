@@ -12,7 +12,6 @@
 {
     NSStatusBar *_fStatusBar;
     NSMenu *_fStatusMenu;
-    BOOL _fHighlightMode;
     BOOL _fDoubleClick;
     SEL _fDoubleAction;
     struct NSEdgeInsets _selectionInset;
@@ -33,7 +32,7 @@
 - (void)stopTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 mouseIsUp:(BOOL)arg4;
 - (BOOL)startTrackingAt:(struct CGPoint)arg1 inView:(id)arg2;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
-- (void)_fillBackground:(struct CGRect)arg1 withAlternateColor:(BOOL)arg2;
+- (id)_interiorBackgroundFillColor;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (long long)_stateForDrawing;
 - (BOOL)_isExitFullScreenButton;
@@ -41,14 +40,12 @@
 - (BOOL)acceptsFirstResponder;
 - (void)setDoubleAction:(SEL)arg1;
 - (SEL)doubleAction;
-- (BOOL)_allowsVibrancyForControlView:(id)arg1;
-- (void)setHighlightMode:(BOOL)arg1;
-- (BOOL)highlightMode;
+- (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (void)setStatusMenu:(id)arg1;
 - (id)statusMenu;
 - (id)statusBar;
 - (void)setStatusBar:(id)arg1;
-- (BOOL)_disabledForDrawing;
+- (BOOL)_disabledForDrawingContent;
 @property BOOL looksDisabled;
 - (void)setImagePosition:(unsigned long long)arg1;
 - (void)setAttributedTitle:(id)arg1;

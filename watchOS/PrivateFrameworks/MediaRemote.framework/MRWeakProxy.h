@@ -6,12 +6,16 @@
 
 #import "NSObject.h"
 
+@class Protocol;
+
 @interface MRWeakProxy : NSObject
 {
     id _object;
+    Protocol *_protocol;
 }
 
-+ (id)weakProxyWithObject:(id)arg1;
++ (id)weakProxyWithObject:(id)arg1 protocol:(id)arg2;
+@property(retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
 - (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;

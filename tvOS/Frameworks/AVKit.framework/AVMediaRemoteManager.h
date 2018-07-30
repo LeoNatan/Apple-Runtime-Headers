@@ -25,12 +25,14 @@
     CDUnknownBlockType _playbackQueueRequestContentItemMetadataCallback;
     CDUnknownBlockType _playbackQueueRequestContentItemArtworkCallback;
     CDUnknownBlockType _playbackQueueRequestContentItemLanguageOptionsCallback;
+    CDUnknownBlockType _playbackQueueRequestContentItemDescriptionCallback;
     CDUnknownBlockType _playbackQueueRequestCreateChildContentItemCallback;
     void *_tokenForCreateContentItemCallback;
     void *_tokenForContentItemMetadataCallback;
     void *_tokenForContentItemArtworkCallback;
     void *_tokenForContentItemLanguageOptionsCallback;
     void *_tokenForCreateChildContentItemCallback;
+    void *_tokenForContentItemInfoCallback;
     NSMutableDictionary *_contentItemSectionIdentifiers;
 }
 
@@ -43,12 +45,14 @@
 + (void *)_createMediaRemoteLanguageOptionGroupWithAudioOptions:(id)arg1;
 + (id)shared;
 @property(retain, nonatomic) NSMutableDictionary *contentItemSectionIdentifiers; // @synthesize contentItemSectionIdentifiers=_contentItemSectionIdentifiers;
+@property(nonatomic) void *tokenForContentItemInfoCallback; // @synthesize tokenForContentItemInfoCallback=_tokenForContentItemInfoCallback;
 @property(nonatomic) void *tokenForCreateChildContentItemCallback; // @synthesize tokenForCreateChildContentItemCallback=_tokenForCreateChildContentItemCallback;
 @property(nonatomic) void *tokenForContentItemLanguageOptionsCallback; // @synthesize tokenForContentItemLanguageOptionsCallback=_tokenForContentItemLanguageOptionsCallback;
 @property(nonatomic) void *tokenForContentItemArtworkCallback; // @synthesize tokenForContentItemArtworkCallback=_tokenForContentItemArtworkCallback;
 @property(nonatomic) void *tokenForContentItemMetadataCallback; // @synthesize tokenForContentItemMetadataCallback=_tokenForContentItemMetadataCallback;
 @property(nonatomic) void *tokenForCreateContentItemCallback; // @synthesize tokenForCreateContentItemCallback=_tokenForCreateContentItemCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueRequestCreateChildContentItemCallback; // @synthesize playbackQueueRequestCreateChildContentItemCallback=_playbackQueueRequestCreateChildContentItemCallback;
+@property(copy, nonatomic) CDUnknownBlockType playbackQueueRequestContentItemDescriptionCallback; // @synthesize playbackQueueRequestContentItemDescriptionCallback=_playbackQueueRequestContentItemDescriptionCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueRequestContentItemLanguageOptionsCallback; // @synthesize playbackQueueRequestContentItemLanguageOptionsCallback=_playbackQueueRequestContentItemLanguageOptionsCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueRequestContentItemArtworkCallback; // @synthesize playbackQueueRequestContentItemArtworkCallback=_playbackQueueRequestContentItemArtworkCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueRequestContentItemMetadataCallback; // @synthesize playbackQueueRequestContentItemMetadataCallback=_playbackQueueRequestContentItemMetadataCallback;

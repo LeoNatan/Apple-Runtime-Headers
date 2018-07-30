@@ -17,7 +17,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)new;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)evaluateHistoryStreamedVisit:(const struct _HistoryStreamedVisit *)arg1;
@@ -29,7 +28,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCloudVisitIdentifiers:(id)arg1;
 - (id)initWithItemVisitTimeMap:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

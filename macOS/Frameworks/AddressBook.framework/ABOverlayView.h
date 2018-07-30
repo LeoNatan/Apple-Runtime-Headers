@@ -6,7 +6,6 @@
 
 #import "NSView.h"
 
-__attribute__((visibility("hidden")))
 @interface ABOverlayView : NSView
 {
     NSView *_overlaidView;

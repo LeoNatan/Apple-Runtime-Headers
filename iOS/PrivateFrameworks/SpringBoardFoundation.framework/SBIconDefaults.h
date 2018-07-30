@@ -21,6 +21,8 @@
 @property(readonly, nonatomic) NSDictionary *legacyIconState2; // @dynamic legacyIconState2;
 @property(readonly, nonatomic) long long maxIconListCount; // @dynamic maxIconListCount;
 @property(readonly, nonatomic) _Bool shouldDisableLiveIcons; // @dynamic shouldDisableLiveIcons;
+@property(nonatomic) _Bool suppressAppShortcutTruncation; // @dynamic suppressAppShortcutTruncation;
+@property(readonly, nonatomic) _Bool suppressSetCurrentPage; // @dynamic suppressSetCurrentPage;
 
 @end
 

@@ -7,15 +7,17 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSDate;
 
-@interface EKRecurrenceEnd : NSObject <NSCopying>
+@interface EKRecurrenceEnd : NSObject <NSCopying, NSSecureCoding>
 {
     NSDate *_endDate;
     unsigned int _occurrenceCount;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)recurrenceEndWithOccurrenceCount:(unsigned int)arg1;
 + (id)recurrenceEndWithEndDate:(id)arg1;
 @property(readonly, nonatomic) unsigned int occurrenceCount; // @synthesize occurrenceCount=_occurrenceCount;

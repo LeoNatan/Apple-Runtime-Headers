@@ -12,26 +12,31 @@
 
 @interface CEMMediaSettingsDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowBookstore;
+    NSNumber *_payloadAllowBookstoreErotica;
+    NSNumber *_payloadAllowEnterpriseBookBackup;
+    NSNumber *_payloadAllowEnterpriseBookMetadataSync;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowBookstore:(id)arg2 withAllowBookstoreErotica:(id)arg3 withAllowEnterpriseBookBackup:(id)arg4 withAllowEnterpriseBookMetadataSync:(id)arg5;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowEnterpriseBookMetadataSync; // @synthesize payloadAllowEnterpriseBookMetadataSync=_payloadAllowEnterpriseBookMetadataSync;
+@property(copy, nonatomic) NSNumber *payloadAllowEnterpriseBookBackup; // @synthesize payloadAllowEnterpriseBookBackup=_payloadAllowEnterpriseBookBackup;
+@property(copy, nonatomic) NSNumber *payloadAllowBookstoreErotica; // @synthesize payloadAllowBookstoreErotica=_payloadAllowBookstoreErotica;
+@property(copy, nonatomic) NSNumber *payloadAllowBookstore; // @synthesize payloadAllowBookstore=_payloadAllowBookstore;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowEnterpriseBookMetadataSync;
-@property(readonly, nonatomic) NSNumber *payloadAllowEnterpriseBookBackup;
-@property(readonly, nonatomic) NSNumber *payloadAllowBookstoreErotica;
-@property(readonly, nonatomic) NSNumber *payloadAllowBookstore;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,6 +20,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isAnimated;
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (unsigned long long)getTimes:(double *)arg1 maxCount:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *keyTimes;
@@ -30,6 +31,7 @@
 - (struct VtValue)defaultVtValue;
 @property(readonly, nonatomic) unsigned long long precision;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)resetWithAnimatedValue:(id)arg1;
 - (id)init;
 
 @end

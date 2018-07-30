@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADShapeProperties.h>
 
-__attribute__((visibility("hidden")))
 @interface OADLineProperties : OADShapeProperties
 {
 }

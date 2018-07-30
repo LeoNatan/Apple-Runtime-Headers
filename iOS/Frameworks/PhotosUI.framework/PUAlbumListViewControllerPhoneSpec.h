@@ -10,13 +10,11 @@
 {
 }
 
-- (id)emptyAlbumPlaceholderImage;
-- (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
-- (id)_nameOfHiddenAlbumPlaceholderImage;
-- (id)_nameOfEmptySharedAlbumPlaceholderImage;
-- (id)_nameOfAddSharedAlbumPlaceholderImage;
-- (id)_nameOfEmptyAlbumPlaceholderImage;
-- (_Bool)canShowVirtualCollections;
+- (id)nameOfRecentlyDeletedAlbumPlaceholderImage;
+- (id)nameOfHiddenAlbumPlaceholderImage;
+- (id)nameOfEmptySharedAlbumPlaceholderImage;
+- (id)nameOfAddSharedAlbumPlaceholderImage;
+- (id)nameOfEmptyAlbumPlaceholderImage;
 - (_Bool)shouldShowSectionHeaders;
 - (double)sectionFooterHeight;
 - (double)sectionHeaderHeight;

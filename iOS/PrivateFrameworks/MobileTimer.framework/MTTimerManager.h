@@ -6,9 +6,13 @@
 
 #import "NSObject.h"
 
-@class MTMetrics, MTTimerCache, MTTimerManagerExportedObject, MTXPCConnectionProvider, NSNotificationCenter;
+#import "MTTimerManagerIntentSupport.h"
+#import "MTTimerManagerProviding.h"
+#import "MTUserDefaultNotificationObserver.h"
 
-@interface MTTimerManager : NSObject
+@class MTMetrics, MTTimerCache, MTTimerManagerExportedObject, MTXPCConnectionProvider, NSNotificationCenter, NSString;
+
+@interface MTTimerManager : NSObject <MTTimerManagerIntentSupport, MTTimerManagerProviding, MTUserDefaultNotificationObserver>
 {
     MTTimerManagerExportedObject *_exportedObject;
     struct MTXPCConnectionProvider *_connectionProvider;
@@ -17,6 +21,9 @@
     NSNotificationCenter *_notificationCenter;
 }
 
++ (void)updateTimerShortcutItem;
++ (void)setDefaultDuration:(double)arg1;
++ (double)defaultDuration;
 + (void)warmUp;
 @property(retain, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) MTTimerCache *cache; // @synthesize cache=_cache;
@@ -55,6 +62,14 @@
 - (id)initWithConnectionProvider:(id)arg1 metrics:(id)arg2;
 - (id)initWithMetrics:(id)arg1;
 - (id)init;
+@property(readonly, nonatomic) id notificationObject;
+@property(readonly, nonatomic) id <MTTimerManagerIntentSupport> timerManager;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

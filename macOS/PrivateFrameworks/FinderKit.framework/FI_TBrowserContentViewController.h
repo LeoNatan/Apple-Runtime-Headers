@@ -11,8 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserContentViewController : FI_TViewController
 {
-    struct TNSRef<FI_TBrowserContainerController *, void> _browserContainerController;
-    struct TNSRef<NSMutableArray<NSLayoutConstraint *>*, void> _layoutConstraints;
+    struct TNSRef<FI_TBrowserContainerController, void> _browserContainerController;
+    struct TNSRef<NSMutableArray<NSLayoutConstraint *>, void> _layoutConstraints;
     FI_TContainerLayoutManager *_containerLayoutManager;
 }
 

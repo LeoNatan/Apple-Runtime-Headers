@@ -4,21 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <ARKit/ARTechnique.h>
+#import <ARKit/ARImageBasedTechnique.h>
 
-@class ARFaceTrackingData, NSObject<OS_dispatch_semaphore>;
-
-@interface ARFaceTrackingTechnique : ARTechnique
+@interface ARFaceTrackingTechnique : ARImageBasedTechnique
 {
-    ARFaceTrackingData *_faceTrackingData;
-    NSObject<OS_dispatch_semaphore> *_dataSemaphore;
     _Bool _isFaceTracked;
 }
 
 + (_Bool)isSupported;
-- (void).cxx_destruct;
-- (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
+@property _Bool isFaceTracked; // @synthesize isFaceTracked=_isFaceTracked;
 - (id)processData:(id)arg1;
+- (id)resultDataClasses;
 - (unsigned long long)requiredSensorDataTypes;
 - (id)init;
 

@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OADTableStyleCollection : NSObject
 {
     NSMutableArray *_styles;
@@ -17,10 +16,10 @@ __attribute__((visibility("hidden")))
 }
 
 @property(copy, nonatomic) NSString *defaultTableStyleId; // @synthesize defaultTableStyleId=_defaultTableStyleId;
+- (void).cxx_destruct;
 - (id)tableStyleWithId:(id)arg1;
 - (id)tableStyles;
 - (void)addTableStyle:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

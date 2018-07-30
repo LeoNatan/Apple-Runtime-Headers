@@ -11,6 +11,8 @@
 }
 
 + (id)sharedInstance;
+- (id)advertisingIdentifier;
+- (void)clearAdvertisingIdentifier;
 - (void)advertisingIdentifierChanged:(CDUnknownBlockType)arg1;
 - (void)refreshOptInStatusRefreshingWeakToken:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)refreshOptInStatus;

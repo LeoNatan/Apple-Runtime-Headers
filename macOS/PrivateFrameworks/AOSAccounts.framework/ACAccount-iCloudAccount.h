@@ -19,10 +19,10 @@
 - (id)icaPropertiesForDataclass:(id)arg1;
 @property(readonly, nonatomic) NSArray *icaAvailableFeatures; // @dynamic icaAvailableFeatures;
 - (id)icaAuthTokenWithError:(id *)arg1;
+- (id)icaFmipSiriToken;
 @property(readonly, nonatomic) NSString *icaCloudKitToken; // @dynamic icaCloudKitToken;
 @property(readonly, nonatomic) NSString *icaMDMServerToken; // @dynamic icaMDMServerToken;
 - (id)icaMapsToken;
-@property(readonly, nonatomic) NSString *icaBTMMInfiniteToken; // @dynamic icaBTMMInfiniteToken;
 @property(readonly, nonatomic) NSString *icaFmipToken; // @dynamic icaFmipToken;
 @property(readonly, nonatomic) NSString *icaFmfToken; // @dynamic icaFmfToken;
 @property(readonly, nonatomic) NSString *icaAuthToken; // @dynamic icaAuthToken;
@@ -36,7 +36,6 @@
 @property(readonly, nonatomic) NSString *icaAltDSID;
 @property(readonly, nonatomic) NSString *icaAppleID;
 @property(readonly, nonatomic) NSString *icaAppleIDProtocolVersion;
-- (BOOL)primaryEmailVerified;
 @property(readonly, nonatomic) NSString *icaPrimaryEmail; // @dynamic icaPrimaryEmail;
 @property(readonly, nonatomic) iCloudRegionInfo *icaRegionInfo;
 @property(readonly, nonatomic) BOOL icaHasOptionalTerms;

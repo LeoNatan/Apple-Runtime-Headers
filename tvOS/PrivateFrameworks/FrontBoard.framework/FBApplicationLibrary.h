@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
+#import "FBApplicationInfoProvider.h"
 #import "LSApplicationWorkspaceObserverProtocol.h"
 
 @class FBApplicationLibraryConfiguration, LSApplicationWorkspace, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface FBApplicationLibrary : NSObject <LSApplicationWorkspaceObserverProtocol>
+@interface FBApplicationLibrary : NSObject <LSApplicationWorkspaceObserverProtocol, FBApplicationInfoProvider>
 {
     FBApplicationLibraryConfiguration *_configuration;
     LSApplicationWorkspace *_applicationWorkspace;
@@ -30,6 +31,8 @@
 + (id)_systemApplicationProxy;
 + (id)_systemApplicationBundleIdentifier;
 + (id)sharedInstance;
+- (void).cxx_destruct;
+- (id)applicationInfoForBundleIdentifier:(id)arg1;
 - (void)applicationsDidFailToUninstall:(id)arg1;
 - (void)applicationsWillUninstall:(id)arg1;
 - (void)applicationsDidFailToInstall:(id)arg1;
@@ -39,8 +42,10 @@
 - (void)applicationInstallsDidResume:(id)arg1;
 - (void)applicationInstallsDidPause:(id)arg1;
 - (void)applicationInstallsArePrioritized:(id)arg1 arePaused:(id)arg2;
+- (void)deviceManagementPolicyDidChange:(id)arg1;
 - (void)networkUsageChanged:(_Bool)arg1;
 - (void)applicationStateDidChange:(id)arg1;
+- (void)_handleApplicationStateDidChange:(id)arg1 notifyForUpdateInsteadOfReplacement:(_Bool)arg2;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationInstallsDidUpdateIcon:(id)arg1;
@@ -61,6 +66,7 @@
 - (void)_notifyDidChangeNetworkUsage:(_Bool)arg1;
 - (void)_notifyDidDemoteApplications:(id)arg1;
 - (void)_notifyDidRemoveApplications:(id)arg1;
+- (void)_notifyDidUpdateApplications:(id)arg1;
 - (void)_notifyDidReplaceApplications:(id)arg1;
 - (void)_notifyDidAddApplications:(id)arg1;
 - (void)_notifyDidCancelPlaceholders:(id)arg1;
@@ -72,6 +78,7 @@
 - (id)observeDidChangeNetworkUsageWithBlock:(CDUnknownBlockType)arg1;
 - (id)observeDidDemoteApplicationsWithBlock:(CDUnknownBlockType)arg1;
 - (id)observeDidRemoveApplicationsWithBlock:(CDUnknownBlockType)arg1;
+- (id)observeDidUpdateApplicationsWithBlock:(CDUnknownBlockType)arg1;
 - (id)observeDidReplaceApplicationsWithBlock:(CDUnknownBlockType)arg1;
 - (id)observeDidAddApplicationsWithBlock:(CDUnknownBlockType)arg1;
 - (id)observeDidCancelPlaceholdersWithBlock:(CDUnknownBlockType)arg1;

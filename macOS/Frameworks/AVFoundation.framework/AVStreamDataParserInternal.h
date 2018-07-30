@@ -8,6 +8,7 @@
 
 @class AVAsset, AVContentKeyRequest, AVContentKeySession, AVWeakReference, NSError, NSMutableArray, NSMutableData, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVStreamDataParserInternal : NSObject
 {
     id <AVStreamDataParserOutputHandling> _delegate;

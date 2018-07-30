@@ -12,6 +12,7 @@
 
 + (BOOL)isRestartCountdownShown;
 + (long long)showRestartCountdownNotification;
++ (void)armedStateWithReply:(CDUnknownBlockType)arg1;
 + (BOOL)isArmedForInstallLater;
 + (void)disarmObserver;
 + (void)armObserverWithMode:(long long)arg1;

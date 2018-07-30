@@ -11,7 +11,6 @@
 }
 
 + (id)backgroundColorForStyle:(unsigned long long)arg1;
-+ (id)separatorColorForStyle:(unsigned long long)arg1;
 + (id)compositingFilterForStyle:(unsigned long long)arg1;
 + (void)applyVibrancyToView:(id)arg1 forStyle:(unsigned long long)arg2;
 - (void)willMoveToSuperview:(id)arg1;

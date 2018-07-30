@@ -12,28 +12,37 @@
 
 @interface CEMApplicationStoreDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowAppInstallation;
+    NSNumber *_payloadAllowUIAppInstallation;
+    NSNumber *_payloadAllowAutomaticAppDownloads;
+    NSNumber *_payloadAllowSystemAppRemoval;
+    NSNumber *_payloadAllowAppRemoval;
+    NSNumber *_payloadAllowInAppPurchases;
+    NSNumber *_payloadForceITunesStorePasswordEntry;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowAppInstallation:(id)arg2 withAllowUIAppInstallation:(id)arg3 withAllowAutomaticAppDownloads:(id)arg4 withAllowSystemAppRemoval:(id)arg5 withAllowAppRemoval:(id)arg6 withAllowInAppPurchases:(id)arg7 withForceITunesStorePasswordEntry:(id)arg8;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadForceITunesStorePasswordEntry; // @synthesize payloadForceITunesStorePasswordEntry=_payloadForceITunesStorePasswordEntry;
+@property(copy, nonatomic) NSNumber *payloadAllowInAppPurchases; // @synthesize payloadAllowInAppPurchases=_payloadAllowInAppPurchases;
+@property(copy, nonatomic) NSNumber *payloadAllowAppRemoval; // @synthesize payloadAllowAppRemoval=_payloadAllowAppRemoval;
+@property(copy, nonatomic) NSNumber *payloadAllowSystemAppRemoval; // @synthesize payloadAllowSystemAppRemoval=_payloadAllowSystemAppRemoval;
+@property(copy, nonatomic) NSNumber *payloadAllowAutomaticAppDownloads; // @synthesize payloadAllowAutomaticAppDownloads=_payloadAllowAutomaticAppDownloads;
+@property(copy, nonatomic) NSNumber *payloadAllowUIAppInstallation; // @synthesize payloadAllowUIAppInstallation=_payloadAllowUIAppInstallation;
+@property(copy, nonatomic) NSNumber *payloadAllowAppInstallation; // @synthesize payloadAllowAppInstallation=_payloadAllowAppInstallation;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowInAppPurchases;
-@property(readonly, nonatomic) NSNumber *payloadAllowAppRemoval;
-@property(readonly, nonatomic) NSNumber *payloadAllowSystemAppRemoval;
-@property(readonly, nonatomic) NSNumber *payloadAllowAutomaticAppDownloads;
-@property(readonly, nonatomic) NSNumber *payloadAllowUIAppInstallation;
-@property(readonly, nonatomic) NSNumber *payloadAllowAppInstallation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

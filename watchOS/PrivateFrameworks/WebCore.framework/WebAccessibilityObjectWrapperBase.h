@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)convertPointToScreenSpace:(struct FloatPoint *)arg1;
 - (struct CGPath *)convertPathToScreenSpace:(struct Path *)arg1;
 - (id)baseAccessibilityHelpText;
+- (id)baseAccessibilitySpeechHint;
 - (id)baseAccessibilityDescription;
 - (id)baseAccessibilityTitle;
 - (_Bool)fileUploadButtonReturnsValueInTitle;

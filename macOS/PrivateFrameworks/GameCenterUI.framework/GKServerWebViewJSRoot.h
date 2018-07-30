@@ -15,12 +15,14 @@
     GKServerWebViewJSAccount *_account;
     GKServerWebViewJSGame *_game;
     GKServerWebViewJSExternalAccounts *_externalAccounts;
+    WebScriptObject *_webClientMetadata;
     WebScriptObject *_navBar;
 }
 
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
+@property(retain, nonatomic) WebScriptObject *webClientMetadata; // @synthesize webClientMetadata=_webClientMetadata;
 @property(readonly, nonatomic) GKServerWebViewJSExternalAccounts *externalAccounts; // @synthesize externalAccounts=_externalAccounts;
 @property(readonly, nonatomic) GKServerWebViewJSGame *game; // @synthesize game=_game;
 @property(readonly, nonatomic) GKServerWebViewJSAccount *account; // @synthesize account=_account;

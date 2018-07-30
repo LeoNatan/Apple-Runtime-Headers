@@ -6,21 +6,25 @@
 
 #import <AddressBook/ABCardCollectionRowView.h>
 
-@class CNPostalAddress, NSStackView;
+@class CNPostalAddress, NSNumber, NSStackView;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionPostalAddressRowView : ABCardCollectionRowView
 {
     CNPostalAddress *_postalAddress;
     NSStackView *_addressFieldsContainer;
     BOOL _isEditing;
+    NSNumber *_cachedIntrinsicHeight;
 }
 
+@property(retain, nonatomic) NSNumber *cachedIntrinsicHeight; // @synthesize cachedIntrinsicHeight=_cachedIntrinsicHeight;
 @property(readonly, nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
 @property(retain, nonatomic) NSStackView *addressFieldsContainer; // @synthesize addressFieldsContainer=_addressFieldsContainer;
 @property(retain, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 - (void).cxx_destruct;
 - (void)processControlTextDidChange:(id)arg1;
+- (id)calcuatedHeightGivenIntrinsicHeight:(double)arg1;
+- (struct CGSize)intrinsicContentSize;
+- (void)invalidatePostalAddressRowLayout;
 - (void)controlTextDidChange:(id)arg1;
 - (void)textFieldWillResignFirstResponder:(id)arg1;
 - (void)textFieldWillBecomeFirstResponder:(id)arg1;

@@ -22,7 +22,8 @@
 + (id)dotString;
 + (void)initialize;
 - (void)cancelForegroundAutoResumeAfterDate:(id)arg1;
-- (void)_updateSourceDeviceDepthDataDeliveryEnabled;
+- (void)_updateDepthDataDeliveryEnabledForSourceDevice:(id)arg1;
+- (void)_updateDepthDataDeliveryEnabledForAllConnectedSourceDevices;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (void)_notifyMediaServerdDied;
 - (void)_handleConfigurationDidBecomeLiveNotificationWithPayload:(id)arg1;
@@ -32,7 +33,6 @@
 - (void)_handleDidStartRunningNotificationWithPayload:(id)arg1;
 - (void)_notifySessionStarted;
 - (void)_updateDeviceActiveFormatsAndActiveConnections;
-- (_Bool)_allowsRecordingOfPhotoFormats;
 - (id)_outputWithClass:(Class)arg1 forSourceDevice:(id)arg2;
 - (void)_stopAndTearDownGraph;
 - (_Bool)_buildAndRunGraph;

@@ -8,7 +8,7 @@
 
 #import "EKEventAutocompleteResultsEditItemDelegate.h"
 
-@class EKCalendarItemAlarmEditItem, EKCalendarItemCalendarEditItem, EKCalendarItemLocationInlineEditItem, EKCalendarItemTitleInlineEditItem, EKEvent, EKEventAttendeesEditItem, EKEventAutocompleteResultsEditItem, EKEventDateEditItem, EKUIAutocompletePETTracker, EKUIAutocompleteSearchResult, NSString, NSTimer, UIColor;
+@class EKCalendarItemAlarmEditItem, EKCalendarItemCalendarEditItem, EKCalendarItemLocationInlineEditItem, EKCalendarItemTitleInlineEditItem, EKEvent, EKEventAttendeesEditItem, EKEventAutocompleteResultsEditItem, EKEventDateEditItem, EKEventURLAndNotesInlineEditItem, EKUIAutocompletePETTracker, EKUIAutocompleteSearchResult, NSString, NSTimer, UIColor;
 
 @interface EKEventEditor : EKCalendarItemEditor <EKEventAutocompleteResultsEditItemDelegate>
 {
@@ -19,13 +19,15 @@
     EKCalendarItemLocationInlineEditItem *_locationInlineEditItem;
     EKCalendarItemCalendarEditItem *_calendarEditItem;
     EKCalendarItemAlarmEditItem *_alarmEditItem;
+    EKEventURLAndNotesInlineEditItem *_notesEditItem;
     _Bool _shouldAutocomplete;
     id <EKUIAutocompletePendingSearchProtocol> _pendingSearch;
     NSTimer *_autocompleteTimer;
     NSString *_autocompleteSearchString;
     _Bool _isTransitioning;
     _Bool _autocompleteResultsVisible;
-    _Bool _focusTitleOnAppearance;
+    unsigned int _focusOnAppearanceTarget;
+    _Bool _selectOnFocus;
     EKUIAutocompleteSearchResult *_selectedAutocompleteResult;
     unsigned int _selectedAutocompleteResultIndex;
     EKUIAutocompleteSearchResult *_zeroKeywordResult;
@@ -35,6 +37,7 @@
     EKUIAutocompletePETTracker *_autocompletePETTracker;
     _Bool _showAttachments;
     UIColor *_backgroundColor;
+    NSString *_suggestionKey;
 }
 
 + (id)_copyAttendeesForAutocompleteFromResult:(id)arg1;
@@ -44,6 +47,7 @@
 + (id)_now;
 + (id)defaultTitleForCalendarItem;
 + (Class)_SGSuggestionsServiceClass;
+@property(retain, nonatomic) NSString *suggestionKey; // @synthesize suggestionKey=_suggestionKey;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) _Bool showAttachments; // @synthesize showAttachments=_showAttachments;
 - (void).cxx_destruct;
@@ -63,7 +67,8 @@
 - (id)_viewForSheet;
 - (void)_revertEvent;
 - (void)_copyEventForPossibleRevert;
-- (void)focusAndSelectTitle;
+- (void)focus:(unsigned int)arg1 select:(_Bool)arg2;
+- (void)_focusAppearanceTarget;
 - (void)prepareEditItems;
 - (struct CGSize)preferredContentSize;
 - (unsigned int)entityType;

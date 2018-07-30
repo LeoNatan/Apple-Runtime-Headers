@@ -19,7 +19,6 @@
 #import "MKPlaceCardHeaderViewControllerDelegate.h"
 #import "MKPlaceCardPhotosControllerDelegate.h"
 #import "MKPlaceCardReviewsControllerDelegate.h"
-#import "MKPlaceDealsViewControllerDelegate.h"
 #import "MKPlaceHeaderButtonsViewControllerDelegate.h"
 #import "MKPlaceParentInfoViewControllerDelegate.h"
 #import "MKPlaceVenueBrowseViewControllerDelegate.h"
@@ -30,15 +29,14 @@
 #import "_MKInfoCardAnalyticsDelegate.h"
 #import "_MKInfoCardController.h"
 
-@class CLLocation, CNContact, CNContactNavigationController<CNContactViewControllerPrivateDelegate>, CNContactStore, CNContactViewController, GEOAutomobileOptions, GEOTransitOptions, MKETAProvider, MKInfoCardLoadingView, MKMapItem, MKMapItemMetadataDealRequest, MKOfficialAppViewController, MKPlaceActionManager, MKPlaceCardActionsRowViewController, MKPlaceCardFooterActionsViewController, MKPlaceCardHeaderViewController, MKPlaceDealsViewController, MKPlaceHeaderButtonsViewController, MKPlaceInfoViewController, MKPlaceInlineMapViewController, MKPlacePoisInlineMapViewController, NSMapTable, NSMutableArray, NSString, NSUserActivity, RadiosPreferences, _MKDistanceDetailProvider, _MKPlaceActionButtonController;
+@class CLLocation, CNContact, CNContactNavigationController<CNContactViewControllerPrivateDelegate>, CNContactStore, CNContactViewController, GEOAutomobileOptions, GEOTransitOptions, MKETAProvider, MKInfoCardLoadingView, MKMapItem, MKOfficialAppViewController, MKPlaceActionManager, MKPlaceCardActionsRowViewController, MKPlaceCardFooterActionsViewController, MKPlaceCardHeaderViewController, MKPlaceHeaderButtonsViewController, MKPlaceInfoViewController, MKPlaceInlineMapViewController, MKPlacePoisInlineMapViewController, NSMapTable, NSMutableArray, NSString, NSUserActivity, RadiosPreferences, _MKDistanceDetailProvider, _MKPlaceActionButtonController;
 
-@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, MKActivityViewControllerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, CNContactPickerDelegate, RadiosPreferencesDelegate, MKPlaceVenueBrowseViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKOfficialAppViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKPlaceDealsViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
+@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, MKActivityViewControllerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, CNContactPickerDelegate, RadiosPreferencesDelegate, MKPlaceVenueBrowseViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKOfficialAppViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
 {
     MKPlaceActionManager *_actionManager;
     MKPlaceCardHeaderViewController *_headerViewController;
     MKPlaceHeaderButtonsViewController *_buttonsHeaderController;
     MKPlaceInfoViewController *_infoViewController;
-    MKPlaceDealsViewController *_dealsViewController;
     MKPlaceInlineMapViewController *_inlineMapViewController;
     MKPlacePoisInlineMapViewController *_poisInlineMapViewController;
     MKPlaceCardFooterActionsViewController *_placeActionViewController;
@@ -55,7 +53,6 @@
     NSMapTable *_additionalViewControllers;
     _Bool _overrideDefaultShowRAP;
     _Bool _hasContactOnlyMapItem;
-    MKMapItemMetadataDealRequest *_dealRequest;
     _Bool _isUpdatingViewControllers;
     struct CGPoint _beginAnalyticsScrollingPoint;
     NSUserActivity *_donationUserActivity;
@@ -127,13 +124,13 @@
 - (void)placeCardActionControllerDidSelectOpenInSkyline:(id)arg1;
 - (void)placeCardActionControllerDidSelectSimulateLocation:(id)arg1;
 - (void)placeCardActionControllerDidSelectRemoveMarker:(id)arg1;
-- (void)placeCardActionControllerDidSelectAddToExistingContact:(id)arg1;
+- (void)placeCardActionControllerDidSelectAddToExistingContact:(id)arg1 fromView:(id)arg2;
 - (void)_launchAttributionURLs:(id)arg1 withAttribution:(id)arg2 mapItem:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)placeCardActionControllerDidSelectViewAllPhotos:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddPhoto:(id)arg1;
 - (void)placeCardActionControllerDidSelectRemoveFromFavorites:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddToFavorites:(id)arg1;
-- (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1;
+- (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1 fromView:(id)arg2;
 - (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1;
 - (void)_updateViewControllerStatesForOffline;
 - (void)updateAirplaneModeNetworkUnreachable;
@@ -165,14 +162,11 @@
 - (void)_showEditSheet:(id)arg1;
 - (void)mapkitActivityViewController:(id)arg1 postCompletedActivityOfType:(id)arg2 completed:(_Bool)arg3;
 - (void)mapkitActivityViewController:(id)arg1 preCompletedActivityOfType:(id)arg2 completed:(_Bool)arg3;
-- (void)_setDeal:(id)arg1 forYelpId:(id)arg2;
-- (void)_checkForDealsIfNecessary;
 - (void)placeCardEncyclopedicControllerDidExpandTextBlock:(id)arg1;
 - (void)placeCardEncyclopedicControllerDidSelectShowArticle:(id)arg1;
 - (void)placeCardReviewsController:(id)arg1 didSelectViewReview:(id)arg2;
 - (void)placeCardReviewsControllerDidSelectViewAllReviews:(id)arg1;
 - (void)placeActionManager:(id)arg1 didSelectShareFromView:(id)arg2;
-- (void)dealsViewController:(id)arg1 didSelectDeal:(id)arg2;
 - (void)placeCardPhotosController:(id)arg1 didSelectViewPhotoWithID:(id)arg2;
 - (double)stackingViewController:(id)arg1 heightForSeparatorBetweenUpperViewController:(id)arg2 andLowerViewController:(id)arg3;
 - (_Bool)stackingViewController:(id)arg1 showsTitleForViewController:(id)arg2;
@@ -193,6 +187,8 @@
 - (void)setPlaceItem:(id)arg1;
 - (void)setPlaceItem:(id)arg1 updateOriginalContact:(_Bool)arg2;
 - (void)setMapItem:(id)arg1 contact:(id)arg2 updateOriginalContact:(_Bool)arg3;
+- (id)annotatedItemListViewControllerWithDisplayStyle:(unsigned long long)arg1;
+- (unsigned long long)annotatedItemListDisplayStyle;
 - (id)encyclopedicVC;
 - (id)attributionsVC;
 - (id)reviewsVC;
@@ -203,7 +199,6 @@
 - (id)photoVC;
 - (id)poisInlineMapVC;
 - (id)inlineMapVC;
-- (id)dealsVC;
 - (id)officialAppsVC;
 - (id)parentVC;
 - (id)venueInfoContentsVC;
@@ -248,7 +243,6 @@
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2;
 - (id)initWithMapItem:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 options:(unsigned long long)arg2;
-- (id)initWithAppId:(id)arg1 configurationProvider:(id)arg2;
 - (id)init;
 - (void)setUseCompactPhotosView:(_Bool)arg1;
 - (_Bool)useCompactPhotosView;

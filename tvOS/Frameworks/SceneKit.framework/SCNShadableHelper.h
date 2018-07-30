@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     id _owner;
     SCNProgram *_program;
     NSDictionary *_shaderModifiers;
+    NSArray *_c3dShaderModifierCache;
     NSMutableArray *_argumentsNames;
     NSDictionary *_symbolToBinder;
     NSDictionary *_symbolToUnbinder;
@@ -38,8 +39,10 @@ __attribute__((visibility("hidden")))
 - (void)_programDidChange:(id)arg1;
 - (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)handleBindingOfSymbol:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)copyModifiersFrom:(id)arg1;
 @property(copy, nonatomic) NSDictionary *shaderModifiers;
-- (void)_shaderModifiersDidChange;
+- (id)shaderModifierCache;
+- (void)_parseAndSetShaderModifier:(id)arg1;
 - (void)_unbindValueForSymbol:(id)arg1 atLocation:(unsigned int)arg2 programID:(unsigned int)arg3 node:(id)arg4 renderer:(id)arg5;
 - (_Bool)_bindValueForSymbol:(id)arg1 atLocation:(unsigned int)arg2 programID:(unsigned int)arg3 node:(id)arg4 renderer:(id)arg5;
 - (_Bool)isOpaque;

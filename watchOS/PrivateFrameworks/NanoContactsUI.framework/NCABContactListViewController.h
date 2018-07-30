@@ -14,6 +14,7 @@
 {
     CNContactFormatter *_defaultContactFormatter;
     NSMutableDictionary *_attributedNameCache;
+    _Bool _useCustomNoContactsDisplay;
     _Bool _shouldRefreshMeContact;
     id <NCABContactListViewControllerDelegate> _delegate;
     id <CNContactDataSource> _dataSource;
@@ -31,6 +32,7 @@
 @property(readonly, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(readonly, nonatomic) id <CNContactDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NCABContactListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool useCustomNoContactsDisplay; // @synthesize useCustomNoContactsDisplay=_useCustomNoContactsDisplay;
 - (void).cxx_destruct;
 - (_Bool)_isContactWithIdentifierMeContactOrLinkedToMeContact:(id)arg1;
 - (id)_contactAtIndexPath:(id)arg1;

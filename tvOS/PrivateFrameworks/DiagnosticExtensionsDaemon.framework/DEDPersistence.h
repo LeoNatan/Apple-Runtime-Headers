@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSUserDefaults;
+@class NSMutableSet, NSObject<OS_os_log>, NSUserDefaults;
 
 @interface DEDPersistence : NSObject
 {
     NSMutableSet *_bugSessionIdentifiers;
     NSUserDefaults *_userDefaults;
+    NSObject<OS_os_log> *_log;
 }
 
 + (id)sharedInstance;
+@property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain) NSMutableSet *bugSessionIdentifiers; // @synthesize bugSessionIdentifiers=_bugSessionIdentifiers;
 - (void).cxx_destruct;
@@ -25,6 +27,7 @@
 - (id)loadSavedBugSessions;
 - (id)loadSavedSessionsFromPlist:(id)arg1;
 - (id)init;
+- (_Bool)canProceedWithDevice:(id)arg1;
 
 @end
 

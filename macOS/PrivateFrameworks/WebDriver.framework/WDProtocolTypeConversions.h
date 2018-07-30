@@ -11,6 +11,11 @@
 }
 
 + (void)_parsePrimitive:(id *)arg1 fromPayload:(id)arg2;
++ (void)_parseInputSourceState:(id *)arg1 fromPayload:(id)arg2;
++ (void)_parseMouseMoveOrigin:(id *)arg1 fromPayload:(id)arg2;
++ (void)_parseInteractionStep:(id *)arg1 fromPayload:(id)arg2;
++ (void)_parseInputSource:(id *)arg1 fromPayload:(id)arg2;
++ (void)_parseInputSourceType:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseSessionPermissionData:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseSessionPermission:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseCookie:(id *)arg1 fromPayload:(id)arg2;

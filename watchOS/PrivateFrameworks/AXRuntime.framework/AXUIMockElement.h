@@ -16,10 +16,12 @@
     NSMutableDictionary *_writableAttributes;
     NSMutableDictionary *_performActionLog;
     _Bool _usesCarriageReturnAsLinesSeparator;
+    CDUnknownBlockType _cacheUpdatedCallback;
 }
 
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1;
-+ (void)applyElementAttributeCacheScheme:(int)arg1;
++ (void)applyElementAttributeCacheScheme:(unsigned int)arg1;
+@property(copy, nonatomic) CDUnknownBlockType cacheUpdatedCallback; // @synthesize cacheUpdatedCallback=_cacheUpdatedCallback;
 @property(nonatomic) _Bool usesCarriageReturnAsLinesSeparator; // @synthesize usesCarriageReturnAsLinesSeparator=_usesCarriageReturnAsLinesSeparator;
 - (void).cxx_destruct;
 - (unsigned int)hash;
@@ -74,7 +76,6 @@
 - (_Bool)canSetAXAttribute:(long)arg1;
 - (void)setWritable:(_Bool)arg1 forAXAttribute:(long)arg2;
 - (_Bool)isEqual:(id)arg1;
-- (_Bool)isKindOfClass:(Class)arg1;
 - (void)disableCache;
 - (void)enableCache:(_Bool)arg1;
 - (id)_valueForAttribute:(long)arg1;

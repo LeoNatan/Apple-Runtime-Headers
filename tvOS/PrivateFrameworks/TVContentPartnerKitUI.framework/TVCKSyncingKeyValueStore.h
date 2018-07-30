@@ -54,7 +54,6 @@
 - (void)_syncEngineDidAccessKeyValueStore;
 - (void)_syncEngineSetNeedsSync;
 - (_Bool)_syncEngineInitialize;
-- (void)_stateChangedNotification:(id)arg1;
 - (id)_newSyncEngineStateMachine;
 - (void)_synchronize;
 - (void)_syncWithServer:(id)arg1 version:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

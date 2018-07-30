@@ -153,7 +153,6 @@
 - (void)setTimeZoneObject:(id)arg1;
 - (id)datePreservingDateComponentsForDate:(id)arg1 inCurrentTimeZone:(id)arg2 movingToTimeZone:(id)arg3;
 @property(readonly, copy, nonatomic) NSTimeZone *timeZoneObject;
-- (void)_decodeValueForKey:(id)arg1 withCoder:(id)arg2;
 - (void)setLastModifiedDate:(id)arg1;
 @property(readonly, nonatomic) NSDate *lastModifiedDate;
 - (void)clearCachedTimeValues;
@@ -185,6 +184,7 @@
 - (id)nonNoneAlarms;
 - (id)alarmSet;
 @property(copy, nonatomic) NSArray *alarms;
+- (id)allAlarms;
 - (void)updateWithAppLink:(id)arg1 usedSelectedText:(char *)arg2;
 - (id)commitedItemIgnoringPotentialSlice:(BOOL)arg1;
 - (id)commitedItem;

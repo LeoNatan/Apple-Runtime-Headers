@@ -11,7 +11,7 @@
 #import "NSTextViewDelegate.h"
 #import "TTYUtteranceCellDelegate.h"
 
-@class CAShapeLayer, NSImageView, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSScrollView, NSString, NSTableView, NSTextView, TTYConversation, TUCall;
+@class CAShapeLayer, NSImageView, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSScrollView, NSString, NSTableView, NSTextView, TTYConversation, TTYUtterance, TUCall;
 
 @interface TTYConversationViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, TTYUtteranceCellDelegate, NSTextViewDelegate>
 {
@@ -25,6 +25,7 @@
     TTYConversation *_conversation;
     NSScrollView *_scrollView;
     NSTableView *_tableView;
+    TTYUtterance *_currentUtterance;
     TUCall *_call;
     NSMutableArray *_utteranceBuffer;
 }
@@ -34,6 +35,7 @@
 @property(nonatomic) BOOL processingUtteranceBuffer; // @synthesize processingUtteranceBuffer=_processingUtteranceBuffer;
 @property(retain, nonatomic) NSMutableArray *utteranceBuffer; // @synthesize utteranceBuffer=_utteranceBuffer;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
+@property(retain, nonatomic) TTYUtterance *currentUtterance; // @synthesize currentUtterance=_currentUtterance;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) TTYConversation *conversation; // @synthesize conversation=_conversation;
@@ -53,6 +55,8 @@
 - (void)realtimeTextDidChange;
 - (void)gaButtonPressed:(id)arg1;
 - (void)deviceDidReceiveCharacter:(unsigned short)arg1 forUtterance:(id)arg2;
+- (id)currentContactPath;
+- (id)cannedResponses;
 - (id)cellAtIndexPath:(id)arg1;
 - (void)setTextViewUtterance:(id)arg1;
 - (id)textViewUtterance;
@@ -61,9 +65,12 @@
 - (void)processUtteranceQueue;
 - (id)addUtterance:(id)arg1;
 - (id)callContainingUtterance;
+- (void)toggleMute:(id)arg1;
+- (void)updateMuteButton;
 - (void)callDidConnect:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)inputTextView;
 - (id)init;
 
 // Remaining properties

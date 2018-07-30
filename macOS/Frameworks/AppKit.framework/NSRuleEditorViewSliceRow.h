@@ -6,7 +6,7 @@
 
 #import <AppKit/NSRuleEditorViewSlice.h>
 
-@class NSButton, NSMutableArray;
+@class NSButton, NSMutableArray, NSView;
 
 @interface NSRuleEditorViewSliceRow : NSRuleEditorViewSlice
 {
@@ -14,6 +14,7 @@
     NSMutableArray *_ruleOptionFrames;
     NSMutableArray *_correspondingRuleItems;
     NSMutableArray *_ruleOptionInitialViewFrames;
+    NSView *_bannerView;
     NSButton *_addButton;
     NSButton *_subtractButton;
     long long _rowType;
@@ -59,7 +60,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 ruleEditorView:(id)arg2;
-- (void)_initShared;
+- (void)_commonInit;
 - (BOOL)_isRulePopup:(id)arg1;
 - (BOOL)_isRuleStaticTextField:(id)arg1;
 - (id)_createMenuSeparatorItem;

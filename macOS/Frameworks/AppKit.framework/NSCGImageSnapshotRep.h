@@ -8,6 +8,7 @@
 
 @class NSSnapshotContextSignature;
 
+__attribute__((visibility("hidden")))
 @interface NSCGImageSnapshotRep : NSImageRep
 {
     struct CGImage *_cgImage;

@@ -46,6 +46,8 @@
 - (id)playingWithString;
 @property(retain) GKTurnBasedMatch *match; // @synthesize match=_match;
 @property NSView *contentView; // @synthesize contentView=_contentView;
+- (void)updateContentAppearance;
+- (void)updateLayer;
 - (void)dealloc;
 - (void)awakeFromNib;
 

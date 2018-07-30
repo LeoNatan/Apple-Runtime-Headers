@@ -6,12 +6,11 @@
 
 #import "NSObject.h"
 
-@class HKFillStyle, NSMutableDictionary, NSString, UIColor, UIImage;
+@class HKFillStyle, HKGradient, NSString, UIColor, UIImage;
 
 @interface HKDisplayCategory : NSObject
 {
-    NSMutableDictionary *_cachedGradients;
-    NSMutableDictionary *_cachedRoundedCornerGradients;
+    HKGradient *_gradient;
     UIColor *_topColor;
     UIColor *_bottomColor;
     UIColor *_keyColor;
@@ -25,6 +24,7 @@
 }
 
 + (id)topLevelCategoryIdentifiers;
+@property(readonly, nonatomic) HKGradient *gradient; // @synthesize gradient=_gradient;
 @property(readonly, nonatomic) UIImage *shareIcon; // @synthesize shareIcon=_shareIcon;
 @property(readonly, nonatomic) UIImage *healthDataIcon; // @synthesize healthDataIcon=_healthDataIcon;
 @property(readonly, nonatomic) UIImage *listIcon; // @synthesize listIcon=_listIcon;
@@ -33,8 +33,6 @@
 @property(readonly, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 @property(readonly, nonatomic) long long categoryID; // @synthesize categoryID=_categoryID;
 - (void).cxx_destruct;
-- (id)roundedCornerGradientWithHeight:(double)arg1;
-- (id)gradientWithHeight:(double)arg1;
 @property(readonly, nonatomic) _Bool isTopLevelCategory;
 @property(readonly, nonatomic) _Bool isMeCategory;
 @property(readonly, nonatomic) HKFillStyle *fillStyle;

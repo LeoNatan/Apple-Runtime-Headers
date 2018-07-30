@@ -8,15 +8,18 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString, NSURL, PKDistribution, PKDistributionChoice;
+@class NSArray, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSURL, PKDistribution, PKDistributionChoice, SUMajorProduct;
 
 @interface SUProduct : NSObject <NSSecureCoding>
 {
     NSString *_productKey;
     PKDistribution *_distribution;
     NSDictionary *_extraInfo;
-    NSDictionary *_packageInfoForPackageURL;
+    NSDictionary *_packageInfoForPackagePathString;
+    NSDictionary *_integrityDataForPackagePathString;
     NSDate *_postDate;
+    BOOL _majorOSUpdate;
+    SUMajorProduct *_majorProduct;
     unsigned long long _downloadSize;
     unsigned long long _installSize;
     NSString *_baseDisplayName;
@@ -24,6 +27,7 @@
     NSString *_longDescription;
     int _restartAction;
     NSArray *_orderedPackageSpecifiersToInstallWithoutPatchFiltering;
+    NSArray *_orderedMajorOSInfoPackageSpecifiersToInstall;
     BOOL _startsSelected;
     BOOL _licenseEnabled;
     BOOL _readmeEnabled;
@@ -33,10 +37,11 @@
     NSMutableDictionary *_packageReferenceForPackageIdentifier;
     PKDistributionChoice *_swuChoice;
     NSDictionary *_distributionEnv;
-    long long _downloadSizeOnce;
-    long long _installSizeOnce;
-    long long _swuChoiceOnce;
+    BOOL _autoUpdateEligible;
     NSDictionary *_distributionEvaluationMetainfo;
+    NSNumber *_downloadSizeOnce;
+    NSNumber *_installSizeOnce;
+    NSNumber *_swuChoiceOnce;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -49,6 +54,10 @@
 + (BOOL)_isVisibleForPredictateOnlyWithDistribution:(id)arg1;
 + (BOOL)_isStagedWithExtraInfo:(id)arg1;
 + (id)_productKeysFromProducts:(id)arg1;
+@property(retain) NSNumber *swuChoiceOnce; // @synthesize swuChoiceOnce=_swuChoiceOnce;
+@property(retain) NSNumber *installSizeOnce; // @synthesize installSizeOnce=_installSizeOnce;
+@property(retain) NSNumber *downloadSizeOnce; // @synthesize downloadSizeOnce=_downloadSizeOnce;
+@property(readonly, getter=isAutoUpdateEligible) BOOL autoUpdateEligible; // @synthesize autoUpdateEligible=_autoUpdateEligible;
 @property(retain) NSDictionary *distributionEvaluationMetainfo; // @synthesize distributionEvaluationMetainfo=_distributionEvaluationMetainfo;
 - (id)postDate;
 - (unsigned long long)installSize;
@@ -57,11 +66,15 @@
 - (id)packageURLs;
 - (BOOL)hasInstallablePackages;
 - (id)packageReferenceForPackageIdentifier:(id)arg1;
+- (id)packageInfoForPackageRefURL:(id)arg1;
 - (void)invalidatePackageIdentifierInCache:(id)arg1;
 - (id)packageIdentifiersToInstall;
+- (id)orderedMajorOSInfoPackageSpecifiersToInstall;
 - (id)orderedPackageSpecifiersToInstall;
 - (id)orderedPackageReferencesToInstall;
+- (id)orderedMajorOSInfoPackageReferencesToInstall;
 - (BOOL)_isActiveDistributionPackageReference:(id)arg1;
+- (id)majorOSInfoPackageReference;
 - (id)allSoftwareUpdatePackageReferences;
 - (id)_allPackageReferencesUnderChoice:(id)arg1;
 - (int)restartAction;
@@ -70,6 +83,7 @@
 - (id)_resourceDataForKey:(id)arg1 returningMIMEType:(id *)arg2;
 - (id)descriptionDataReturningMIMEType:(id *)arg1;
 - (id)displayVersion;
+- (BOOL)autoUpdateEligible;
 - (id)productVersion;
 - (id)productBuildVersion;
 - (id)productType;
@@ -79,6 +93,7 @@
 - (id)distribution;
 - (id)productKey;
 - (id)description;
+- (BOOL)setIntegrityDataByPackageURL:(id)arg1 preserveOriginalData:(BOOL)arg2;
 - (BOOL)setPKMDataByPackageURL:(id)arg1 preserveOriginalData:(BOOL)arg2;
 - (void)_cacheDataFromDistributionController:(id)arg1;
 - (void)dealloc;
@@ -112,6 +127,12 @@
 - (BOOL)_shouldAutoInstallCriticalUpdateInBackgroundNow;
 - (long long)_shouldAutoInstallCriticalUpdateWithDelayInHours;
 - (BOOL)_isCritical;
+- (void)fetchRemoteMajorProduct:(CDUnknownBlockType)arg1;
+- (id)_majorOSInstallerBundleIdentifier;
+- (id)_majorProduct;
+- (void)_setMajorOSProduct:(id)arg1;
+- (void)_setMajorOSUpdate:(BOOL)arg1;
+- (BOOL)_isMajorOSUpdate;
 - (void)_setPostDate:(id)arg1;
 - (BOOL)_isWaitingFirmware;
 - (BOOL)_isAdminDeferredReturningDeferralDate:(id *)arg1;

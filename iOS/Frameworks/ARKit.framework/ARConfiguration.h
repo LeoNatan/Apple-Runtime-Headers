@@ -8,18 +8,18 @@
 
 #import "NSCopying.h"
 
-@class ARImageSensorSettings, ARVideoFormat, AVCaptureSession, NSArray;
+@class ARImageSensorSettings, ARReplaySensor, ARVideoFormat, AVCaptureSession, NSArray, NSString;
 
 @interface ARConfiguration : NSObject <NSCopying>
 {
     ARVideoFormat *_videoFormat;
     _Bool _providesAudioData;
     _Bool _autoFocusEnabled;
+    _Bool _allowCameraInMultipleForegroundAppLayout;
     _Bool _mirroredFrameOutput;
     long long _worldAlignment;
     NSArray *_customSensors;
     unsigned long long _lightEstimation;
-    long long _latencyFrameCount;
     unsigned long long _frameDebugOptions;
     long long _cameraPosition;
     AVCaptureSession *_captureSession;
@@ -32,9 +32,9 @@
 + (_Bool)isSupported;
 @property(nonatomic) _Bool mirroredFrameOutput; // @synthesize mirroredFrameOutput=_mirroredFrameOutput;
 @property(retain, nonatomic) AVCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
+@property(nonatomic) _Bool allowCameraInMultipleForegroundAppLayout; // @synthesize allowCameraInMultipleForegroundAppLayout=_allowCameraInMultipleForegroundAppLayout;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(nonatomic) unsigned long long frameDebugOptions; // @synthesize frameDebugOptions=_frameDebugOptions;
-@property(nonatomic) long long latencyFrameCount; // @synthesize latencyFrameCount=_latencyFrameCount;
 @property(nonatomic) unsigned long long lightEstimation; // @synthesize lightEstimation=_lightEstimation;
 @property(retain, nonatomic) NSArray *customSensors; // @synthesize customSensors=_customSensors;
 @property(nonatomic, getter=isAutoFocusEnabled) _Bool autoFocusEnabled; // @synthesize autoFocusEnabled=_autoFocusEnabled;
@@ -44,13 +44,14 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)_descriptionWithoutBrackets;
+- (id)descriptionWithoutBrackets;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)renderingTechnique;
+- (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
 - (id)techniques;
-- (long long)latencyFrameCountAdjustedForReplay;
-- (id)deviceModel;
+@property(readonly, nonatomic) ARReplaySensor *replaySensor;
+@property(readonly, nonatomic) NSString *deviceModel;
 @property(nonatomic, getter=isLightEstimationEnabled) _Bool lightEstimationEnabled;
 @property(readonly, nonatomic) ARImageSensorSettings *imageSensorSettings;
 - (id)initPrivate;

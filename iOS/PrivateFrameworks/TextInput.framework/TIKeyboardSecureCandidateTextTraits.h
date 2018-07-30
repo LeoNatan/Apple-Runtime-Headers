@@ -29,12 +29,12 @@
 @property(nonatomic) double minFontSize; // @synthesize minFontSize=_minFontSize;
 @property(nonatomic) double maxFontSize; // @synthesize maxFontSize=_maxFontSize;
 @property(copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithFontName:(id)arg1 maxFontSize:(double)arg2 minFontSize:(double)arg3 textColor:(id)arg4 yCoordinate:(double)arg5 baselineOffset:(double)arg6;
 - (id)initWithFontName:(id)arg1 maxFontSize:(double)arg2 minFontSize:(double)arg3 textColor:(id)arg4;
 - (id)initWithFontName:(id)arg1 fontSize:(double)arg2 textColor:(id)arg3;

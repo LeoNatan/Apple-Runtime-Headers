@@ -26,6 +26,7 @@
 - (void)presentAtTime:(double)arg1;
 - (void)present;
 @property(readonly) id <MTLTexture> texture;
+- (id)cachedTexture;
 - (struct _CAMetalDrawablePrivate *)priv;
 - (void)dealloc;
 - (void)releasePrivateReferences:(struct _CAMetalLayerPrivate *)arg1;

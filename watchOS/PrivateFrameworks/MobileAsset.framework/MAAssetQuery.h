@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDate, NSMutableArray, NSString;
+@class NSArray, NSDate, NSMutableArray, NSSet, NSString;
 
 @interface MAAssetQuery : NSObject
 {
@@ -15,18 +15,21 @@
     NSMutableArray *_queryParams;
     NSString *_assetType;
     NSArray *_results;
+    NSSet *_assetIds;
     int _returnTypes;
     NSDate *_lastFetchDate;
 }
 
 @property(readonly, nonatomic) NSDate *lastFetchDate; // @synthesize lastFetchDate=_lastFetchDate;
 @property(readonly, nonatomic) int returnTypes; // @synthesize returnTypes=_returnTypes;
+@property(readonly, nonatomic) NSSet *assetIds; // @synthesize assetIds=_assetIds;
 @property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
 @property(readonly, nonatomic) _Bool augmentState; // @synthesize augmentState=_augmentState;
 @property(readonly, nonatomic) NSMutableArray *queryParams; // @synthesize queryParams=_queryParams;
 @property(readonly, nonatomic) NSDate *postedDate; // @synthesize postedDate=_postedDate;
 - (int)queryMetaDataSync;
+- (int)queryInstalledAssetIds;
 - (void)queryMetaData:(CDUnknownBlockType)arg1;
 - (void)getResultsFromMessage:(id)arg1;
 - (int)addKeyValuePair:(id)arg1 with:(id)arg2;

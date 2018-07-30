@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSSet;
 
+__attribute__((visibility("hidden")))
 @interface BAMetadataManager : NSObject
 {
     NSMutableDictionary *_enums;

@@ -12,10 +12,11 @@
 #import "NSURLSessionDelegate.h"
 #import "_HMFNetServiceMonitorDelegate.h"
 
-@class HMFExponentialBackoffTimer, HMFNetMonitor, HMFNetService, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL, NSURLSession, _HMFNetServiceMonitor;
+@class HMFExponentialBackoffTimer, HMFNetMonitor, HMFNetService, HMFUnfairLock, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL, NSURLSession, _HMFNetServiceMonitor;
 
 @interface HMFHTTPClient : HMFObject <HMFLogging, HMFNetMonitorDelegate, _HMFNetServiceMonitorDelegate, HMFTimerDelegate, NSURLSessionDelegate>
 {
+    HMFUnfairLock *_lock;
     _Bool _reachable;
     _Bool _pinging;
     _Bool _allowAnonymousConnection;
@@ -25,7 +26,6 @@
     id <HMFHTTPClientDelegate> _delegate;
     unsigned long long _options;
     NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     NSURLSession *_session;
     HMFNetMonitor *_reachabilityMonitor;
     NSOperationQueue *_reachabilityProbeQueue;
@@ -34,8 +34,6 @@
 }
 
 + (id)logCategory;
-+ (id)shortDescription;
-+ (_Bool)isValidBaseURL:(id)arg1;
 + (id)baseURLWithScheme:(id)arg1 hostAddress:(id)arg2 port:(unsigned long long)arg3;
 @property(retain, nonatomic) HMFExponentialBackoffTimer *delegatedPingTimer; // @synthesize delegatedPingTimer=_delegatedPingTimer;
 @property(readonly, nonatomic) _HMFNetServiceMonitor *netServiceMonitor; // @synthesize netServiceMonitor=_netServiceMonitor;
@@ -43,7 +41,6 @@
 @property(readonly, nonatomic) HMFNetMonitor *reachabilityMonitor; // @synthesize reachabilityMonitor=_reachabilityMonitor;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(nonatomic) _Bool allowAnonymousConnection; // @synthesize allowAnonymousConnection=_allowAnonymousConnection;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -56,6 +53,7 @@
 - (void)monitor:(id)arg1 didUpdateNetService:(id)arg2;
 - (void)networkMonitorIsUnreachable:(id)arg1;
 - (void)networkMonitorIsReachable:(id)arg1;
+- (id)logIdentifier;
 - (void)resolveWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setNetService:(id)arg1;
 @property(readonly, copy, nonatomic) HMFNetService *netService; // @synthesize netService=_netService;
@@ -65,16 +63,11 @@
 - (void)startDelegatedPingTimer;
 - (_Bool)requestClientReachabilityPingWithRetry:(_Bool)arg1;
 - (void)startReachabilityProbe;
-- (void)notifyDelegateOfReachabilityChange:(_Bool)arg1;
 @property(nonatomic, getter=isPinging) _Bool pinging; // @synthesize pinging=_pinging;
 @property(nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 @property(readonly, copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 - (_Bool)isValid;
-- (id)logIdentifier;
-@property(readonly, copy) NSString *description;
-@property(readonly, copy) NSString *debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
+- (id)attributeDescriptions;
 - (void)dealloc;
 - (void)__initializeWithOptions:(unsigned long long)arg1;
 - (id)initWithNetService:(id)arg1 options:(unsigned long long)arg2;
@@ -82,6 +75,8 @@
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

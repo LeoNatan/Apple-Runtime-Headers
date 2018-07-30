@@ -16,21 +16,20 @@ __attribute__((visibility("hidden")))
     CNTransportButton *_transportIcon3;
     UIImageView *_starView;
     _Bool _allowsActions;
-    _Bool _shouldShowRecentCallout;
+    _Bool _shouldShowBadge;
     _Bool _shouldShowTransportButtons;
     UIImageView *_standardStarView;
     UIColor *_actionsColor;
-    UIView *_recentCallout;
+    UIView *_badgeView;
 }
 
-+ (id)standardRecentCallout;
 + (id)standardStarView;
 + (void)_updateStarImageForView:(id)arg1;
-@property(retain, nonatomic) UIView *recentCallout; // @synthesize recentCallout=_recentCallout;
+@property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UIColor *actionsColor; // @synthesize actionsColor=_actionsColor;
 @property(readonly, nonatomic) UIImageView *standardStarView; // @synthesize standardStarView=_standardStarView;
 @property(nonatomic) _Bool shouldShowTransportButtons; // @synthesize shouldShowTransportButtons=_shouldShowTransportButtons;
-@property(nonatomic) _Bool shouldShowRecentCallout; // @synthesize shouldShowRecentCallout=_shouldShowRecentCallout;
+@property(nonatomic) _Bool shouldShowBadge; // @synthesize shouldShowBadge=_shouldShowBadge;
 @property(nonatomic) _Bool allowsActions; // @synthesize allowsActions=_allowsActions;
 - (void).cxx_destruct;
 - (void)transportButtonClicked:(id)arg1;
@@ -44,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)setCardGroupItem:(id)arg1;
 - (void)updateLabelNeedingHuggingContent;
 @property(readonly, nonatomic) _Bool shouldShowStar;
+@property(readonly, nonatomic) UIView *standardBadgeView;
 @property(readonly, nonatomic) CNTransportButton *transportIcon3;
 @property(readonly, nonatomic) CNTransportButton *transportIcon2;
 @property(readonly, nonatomic) CNTransportButton *transportIcon1;

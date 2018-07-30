@@ -6,6 +6,7 @@
 
 #import <SceneKit/SCNAction.h>
 
+__attribute__((visibility("hidden")))
 @interface SCNActionRemove : SCNAction
 {
     _Bool _hasFired;

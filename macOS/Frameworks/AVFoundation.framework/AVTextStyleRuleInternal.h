@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVTextStyleRuleInternal : NSObject
 {
     NSString *textSelector;

@@ -11,6 +11,7 @@
 
 @class GEOPBTransitArtwork, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDTransitLabel : PBCodable <GEOTransitLabelItem, NSCopying>
 {
     PBUnknownFields *_unknownFields;
@@ -42,7 +43,7 @@
 @property(nonatomic) _Bool hasLabelType;
 @property(nonatomic) int labelType; // @synthesize labelType=_labelType;
 @property(readonly, nonatomic) NSString *labelString;
-@property(readonly, nonatomic) long long type;
+@property(readonly, nonatomic) unsigned long long type;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

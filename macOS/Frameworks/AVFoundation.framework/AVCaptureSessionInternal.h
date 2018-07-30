@@ -8,6 +8,7 @@
 
 @class AVCaptureSessionInternalState, NSError, NSMutableArray, NSMutableSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureSessionInternal : NSObject
 {
     NSString *sessionPreset;

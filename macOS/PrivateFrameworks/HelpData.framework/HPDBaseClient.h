@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSDictionary;
+@class NSDictionary, NSSet;
 
 @interface HPDBaseClient : NSObject
 {
 }
 
+@property(readonly) NSSet *indexedBookIDs;
 - (BOOL)registerBookWithIdentifier:(id)arg1 appBundleURL:(id)arg2 bookVersion:(id)arg3 bookURL:(id)arg4;
 - (BOOL)cancelQuery:(id)arg1;
 - (BOOL)performQuery:(id)arg1;

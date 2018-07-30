@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class NSDate, NSDictionary, NSString, NSURL;
 
-@interface BLBookItem : NSObject <NSCopying, NSCoding, NSSecureCoding>
+@interface BLBookItem : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _sample;
     _Bool _iTunesU;

@@ -10,6 +10,9 @@
 
 @protocol PUReviewScrubberDataSource <NSObject>
 - (_Bool)reviewScrubber:(PUReviewScrubber *)arg1 shouldProvideFeedbackForCellAtIndexPath:(NSIndexPath *)arg2;
-- (unsigned long long)numberOfPhotosInReviewScrubber:(PUReviewScrubber *)arg1;
+- (unsigned long long)reviewScrubber:(PUReviewScrubber *)arg1 numberOfItemsInSection:(unsigned long long)arg2;
+
+@optional
+- (unsigned long long)numberOfSectionsInReviewScrubber:(PUReviewScrubber *)arg1;
 @end
 

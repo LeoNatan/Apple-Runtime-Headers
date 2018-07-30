@@ -6,15 +6,17 @@
 
 #import "UIView.h"
 
-@class AVMicaPackage, MPMediaControlsViewController, UIButton, UIColor, UIViewPropertyAnimator;
+@class AVMicaPackage, AVObservationController, MPMediaControlsViewController, NSObject<OS_dispatch_queue>, UIButton, UIColor, UIViewPropertyAnimator;
 
 @interface AVRoutePickerView : UIView
 {
+    NSObject<OS_dispatch_queue> *_getAirPlayStatusQueue;
     UIColor *_activeTintColor;
     UIButton *_routePickerButton;
     UIButton *_customButton;
     struct CGSize _oldSize;
     UIViewPropertyAnimator *_buttonHighlightAnimator;
+    AVObservationController *_observationController;
     _Bool _airPlayActive;
     AVMicaPackage *_routePickerButtonMicaPackage;
     MPMediaControlsViewController *_routePickerViewController;
@@ -26,9 +28,8 @@
 @property(nonatomic) __weak id <AVRoutePickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_defaultActiveTintColor;
+- (_Bool)_isAirPlayActive;
 - (void)_updateAirPlayActive;
-- (void)_outputContextDevicesDidChange:(id)arg1;
-- (void)_unregisterNotifications;
 - (void)_registerNotifications;
 - (void)_setRoutePickerButtonAlpha:(double)arg1 animated:(_Bool)arg2;
 - (void)_routePickerButtonTouchUp:(id)arg1;

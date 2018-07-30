@@ -10,13 +10,15 @@
 #import "NSAccessibilityElement.h"
 #import "NSAnimatablePropertyContainer.h"
 #import "NSAppearanceCustomization.h"
+#import "NSAppearanceCustomizationInternal.h"
+#import "NSMenuItemValidation.h"
 #import "NSTouchBarProviderContainer.h"
 #import "NSUserInterfaceItemIdentification.h"
 #import "NSUserInterfaceValidations.h"
 
-@class CAContext, NSAppearance, NSArray, NSButtonCell, NSCGSWindow, NSColor, NSColorSpace, NSDictionary, NSDockTile, NSGraphicsContext, NSImage, NSMutableSet, NSScreen, NSString, NSTabBarItem, NSTitlebarAccessoryViewController, NSToolbar, NSTouchBar, NSURL, NSView, NSViewController, NSWindowAuxiliary, NSWindowController, NSWindowStackController, NSWindowTab, NSWindowTabGroup;
+@class CAContext, NSAppearance, NSArray, NSButtonCell, NSCGSWindow, NSColor, NSColorSpace, NSDictionary, NSDockTile, NSImage, NSMutableSet, NSObject<NSAppearanceCustomization>, NSScreen, NSString, NSTabBarItem, NSTitlebarAccessoryViewController, NSToolbar, NSTouchBar, NSURL, NSView, NSViewController, NSWindowAuxiliary, NSWindowController, NSWindowStackController, NSWindowTab, NSWindowTabGroup;
 
-@interface NSWindow : NSResponder <NSTouchBarProviderContainer, NSAnimatablePropertyContainer, NSUserInterfaceValidations, NSUserInterfaceItemIdentification, NSAppearanceCustomization, NSAccessibilityElement, NSAccessibility>
+@interface NSWindow : NSResponder <NSTouchBarProviderContainer, NSAppearanceCustomizationInternal, NSAnimatablePropertyContainer, NSMenuItemValidation, NSUserInterfaceValidations, NSUserInterfaceItemIdentification, NSAppearanceCustomization, NSAccessibilityElement, NSAccessibility>
 {
     struct CGRect _frame;
     NSView *_contentView;
@@ -70,14 +72,14 @@
         unsigned int floatingPanel:1;
         unsigned int wantsToBeOnMainScreen:1;
         unsigned int needsBuildLayerTree:1;
-        unsigned int unused1:1;
+        unsigned int deferCanDraw:1;
         unsigned int titleIsRepresentedFilename:1;
         unsigned int excludedFromWindowsMenu:1;
         unsigned int depthLimit:4;
         unsigned int delegateReturnsValidRequestor:1;
         unsigned int lmouseupPending:1;
         unsigned int rmouseupPending:1;
-        unsigned int wantsToDestroyRealWindow:1;
+        unsigned int hasColorSensitiveUI:1;
         unsigned int wantsToRegDragTypes:1;
         unsigned int sentInvalidateCursorRectsMsg:1;
         unsigned int avoidsActivation:1;
@@ -85,14 +87,14 @@
         unsigned int didRegDragTypes:1;
         unsigned int delayedOneShot:1;
         unsigned int postedNeedsDisplayNote:1;
-        unsigned int postedInvalidCursorRectsNote:1;
+        unsigned int unused2:1;
         unsigned int initialFirstResponderTempSet:1;
         unsigned int autodisplay:1;
         unsigned int tossedFirstEvent:1;
         unsigned int isImageCache:1;
         unsigned int autolayoutEngagedSomewhere:1;
         unsigned int hasRegisteredBackdropViews:1;
-        unsigned int hasSubLevel:1;
+        unsigned int unused3:1;
         unsigned int keyViewSelectionDirection:2;
         unsigned int defaultButtonCellKETemporarilyDisabled:1;
         unsigned int defaultButtonCellKEDisabled:1;
@@ -113,6 +115,9 @@
 
 + (BOOL)_hiddenInWindowList;
 + (id)windowWithContentViewController:(id)arg1;
++ (id)keyPathsForValuesAffectingEffectiveAppearance;
++ (id)keyPathsForValuesAffectingAppearance;
++ (BOOL)automaticallyNotifiesObserversOfAppearance;
 + (id)defaultAnimationForKey:(id)arg1;
 + (id)defaultAnimationForKeyPath:(id)arg1;
 + (struct _NSModalSession *)_modalSessionForShownService:(id)arg1;
@@ -124,6 +129,8 @@
 + (long long)windowNumberAtPoint:(struct CGPoint)arg1 belowWindowWithWindowNumber:(long long)arg2;
 + (void)_minimizeAll;
 + (BOOL)_batchMinimizeWindowsWithBlock:(CDUnknownBlockType)arg1;
++ (long long)_baseModalWindowLevel;
++ (void)_setBaseWindowModalLevel:(long long)arg1;
 + (BOOL)_batchOrderWindows:(unsigned long long)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (void)_calcKeyAndMain;
 + (int)defaultDepthLimit;
@@ -134,6 +141,7 @@
 + (void)_enableKeyStateChangeNotifications;
 + (void)_disableKeyStateChangeNotifications;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversOf_borderView;
 + (id)keyPathsForValuesAffectingContentLayoutRect;
 + (id)standardWindowButton:(unsigned long long)arg1 forStyleMask:(unsigned long long)arg2;
 + (double)minFrameWidthWithTitle:(id)arg1 styleMask:(unsigned long long)arg2;
@@ -146,6 +154,7 @@
 + (BOOL)_allowsNontitledResizableWindows;
 + (unsigned long long)_validateStyleMask:(unsigned long long)arg1;
 + (void)initialize;
++ (void)_automateActivateDeactivate;
 + (void)_tabbedWindowsFinishedRestoration;
 + (void)_addWindowTabsMenuItemsIfNeeded;
 + (BOOL)shouldPreferWindowTabbingForEvent:(id)arg1 withIdentifier:(id)arg2;
@@ -171,6 +180,8 @@
 + (BOOL)_useReducedMotionFullScreenTransition;
 + (BOOL)_hidesChromeWhenFullScreen;
 - (void).cxx_destruct;
+- (BOOL)_allowsRootLayerBacking;
+@property BOOL hasColorSensitiveUI;
 - (void)setTitlebarAlphaValue:(double)arg1;
 - (double)titlebarAlphaValue;
 - (void)setStandardWindowTitleButtonsAlphaValue:(double)arg1;
@@ -205,9 +216,11 @@
 - (void)_contentViewControllerChanged;
 - (void)_hierarchyDidChangeInView:(id)arg1;
 - (void)_drawBackgroundForCellWithRect:(struct CGRect)arg1 inView:(id)arg2;
+- (void)setAppearanceParent:(id)arg1;
+- (id)appearanceParent;
+@property __weak NSObject<NSAppearanceCustomization> *appearanceSource;
 @property(readonly) NSAppearance *effectiveAppearance;
-- (void)_setHasCustomAppearanceInASubview:(BOOL)arg1;
-- (BOOL)_hasCustomAppearanceInASubview;
+- (void)_windowDidChangeAppearance;
 - (id)_kitAppearance;
 - (BOOL)_hasIncompatibleAppearanceOverride;
 @property(retain) NSAppearance *appearance;
@@ -241,12 +254,6 @@
 @property(copy) NSString *identifier;
 - (void)setUserInterfaceItemIdentifier:(id)arg1;
 - (id)userInterfaceItemIdentifier;
-- (BOOL)_hasOrderedInViewBackingSurfaces;
-- (void)_setViewBackingSurfaceNeedsDisplay:(id)arg1;
-- (void)_surfaceRemovedFromWindow:(id)arg1;
-- (void)_surfaceOrderedInWindow:(id)arg1;
-- (void)_surfaceMovedInWindow:(id)arg1;
-- (void)_surfaceAddedToWindow:(id)arg1;
 - (BOOL)canRepresentDisplayGamut:(long long)arg1;
 @property(retain) NSColorSpace *colorSpace;
 - (BOOL)_setColorSpace:(id)arg1 sendNotification:(BOOL)arg2 displayIfChanged:(BOOL)arg3;
@@ -254,11 +261,13 @@
 - (void)_adjustColorSpace:(BOOL)arg1;
 - (void)_setWindowResolution:(double)arg1 displayIfChanged:(BOOL)arg2;
 - (double)_windowResolution;
+- (BOOL)_windowValidForDrawing;
 - (void)_setAnyViewCanDrawConcurrently:(BOOL)arg1;
 - (BOOL)_anyViewCanDrawConcurrently;
 @property BOOL allowsConcurrentViewDrawing;
-@property(readonly) unsigned long long backingLocation;
-@property unsigned long long preferredBackingLocation;
+- (unsigned long long)backingLocation;
+- (unsigned long long)preferredBackingLocation;
+- (void)setPreferredBackingLocation:(unsigned long long)arg1;
 @property unsigned long long sharingType;
 - (id)animationForKey:(id)arg1;
 - (id)animationForKeyPath:(id)arg1;
@@ -279,15 +288,13 @@
 - (BOOL)_canBecomeSecondaryKeyWindow;
 - (BOOL)_sharesParentKeyState;
 - (void)addChildWindow:(id)arg1 ordered:(long long)arg2 shareKey:(BOOL)arg3;
-- (void)_reorderChildren;
+- (void)_rebuildOrderingGroup:(BOOL)arg1;
 - (void)addChildWindow:(id)arg1 ordered:(long long)arg2;
-- (BOOL)_attachToParentBeforeOrderingWindow;
 - (long long)_childWindowOrderingPriority;
 - (void)_willRemoveChildWindow:(id)arg1;
 - (void)_updateFirstResponderForIgnoredChildWindow:(id)arg1;
 - (void)_didRemoveChildWindow:(id)arg1;
 - (void)_didAddChildWindow:(id)arg1;
-- (void)_setRelativeOrdering:(long long)arg1;
 - (void)_unhideChildren;
 - (void)_hideChildren;
 - (void)_addToGroups:(id)arg1 ordered:(long long)arg2;
@@ -300,10 +307,13 @@
 - (struct CGRect)_intersectBottomCornersWithRect:(struct CGRect)arg1;
 - (BOOL)bottomCornerRounded;
 - (void)setBottomCornerRounded:(BOOL)arg1;
+- (void)_endFauxModalSession;
+- (void)_beginFauxModalSession;
 - (void)_endWindowBlockingModalSessionForShownService:(id)arg1;
 - (void)_beginWindowBlockingModalSessionForShownService:(id)arg1;
 @property(readonly) NSWindow *sheetParent;
 @property(readonly, getter=isSheet) BOOL sheet;
+- (BOOL)_showingModalSheet;
 @property(readonly) NSWindow *attachedSheet;
 @property(readonly, copy) NSArray *sheets;
 - (void)_endWindowBlockingModalSession:(struct _NSModalSession *)arg1 returnCode:(long long)arg2;
@@ -315,7 +325,8 @@
 - (void)beginSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_beginSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 isCritical:(BOOL)arg3;
 - (void)_beginWindowBlockingModalSessionForSheet:(id)arg1 service:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 isCritical:(BOOL)arg4;
-@property BOOL showsResizeIndicator;
+- (BOOL)showsResizeIndicator;
+- (void)setShowsResizeIndicator:(BOOL)arg1;
 - (double)_effectiveAlphaValue;
 @property double alphaValue;
 @property(getter=isOpaque) BOOL opaque;
@@ -323,18 +334,18 @@
 - (void)setAutofillColor:(id)arg1;
 - (BOOL)autofill;
 - (void)setAutofill:(BOOL)arg1;
-@property(readonly) NSGraphicsContext *graphicsContext;
+- (id)graphicsContext;
 - (void)_windowDeviceRoundWithContext:(id)arg1;
 - (void)_windowDeviceRound;
 - (void *)graphicsPort;
 - (id)_threadContext;
-- (void)_blockHeartBeat:(BOOL)arg1;
 - (BOOL)_makingFirstResponderForMouseDown;
 - (void)helpRequested:(id)arg1;
 - (BOOL)_forwardActionToParent:(SEL)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)_userInterfaceItemIsTemporarilyDisabled:(id)arg1;
+- (BOOL)_runningDocModalOrFauxModal;
 - (void)_takeApplicationMenuIfNeeded:(id)arg1;
 - (id)menu;
 - (void)setMenu:(id)arg1;
@@ -413,7 +424,6 @@
 - (BOOL)_isToolTipCreationAndDisplayEnabled;
 - (void)_enableToolTipCreationAndDisplay;
 - (void)_disableToolTipCreationAndDisplay;
-- (BOOL)_updateStructuralRegionsOnNextDisplayCycle;
 - (void)_endLiveResize;
 - (void)_startLiveResize;
 @property BOOL preservesContentDuringLiveResize;
@@ -432,7 +442,7 @@
 - (BOOL)_avoidsActivation;
 - (void)_setAvoidsActivation:(BOOL)arg1;
 @property unsigned long long collectionBehavior;
-- (void)_validateCollectionBehavior:(unsigned long long)arg1;
+- (unsigned long long)_validateCollectionBehavior:(unsigned long long)arg1;
 - (BOOL)_cgsWindowSaysSupportsTiling;
 - (void)_updateCollectionBehavior;
 - (void)_cacheAndSetPropertiesForCollectionBehavior:(unsigned long long)arg1;
@@ -444,7 +454,8 @@
 - (BOOL)_isOnActiveScreen;
 @property(readonly, getter=isOnActiveSpace) BOOL onActiveSpace;
 @property BOOL canBecomeVisibleWithoutLogin;
-@property(getter=isOneShot) BOOL oneShot;
+- (BOOL)isOneShot;
+- (void)setOneShot:(BOOL)arg1;
 - (long long)gState;
 - (id)_batchZoom;
 - (id)_copyMinimizeDictionary;
@@ -461,6 +472,8 @@
 - (struct CGRect)_convertRectToIntegralizationSpace:(struct CGRect)arg1;
 - (void)_nsib_setUsesPointIntegralizationForLayout:(BOOL)arg1;
 - (BOOL)_nsib_usesPointIntegralizationForLayout;
+- (struct CGPoint)convertPointFromBacking:(struct CGPoint)arg1;
+- (struct CGPoint)convertPointToBacking:(struct CGPoint)arg1;
 - (struct CGRect)convertRectFromBacking:(struct CGRect)arg1;
 - (struct CGRect)convertRectToBacking:(struct CGRect)arg1;
 - (struct CGPoint)convertPointFromScreen:(struct CGPoint)arg1;
@@ -514,19 +527,15 @@
 - (void)_restoreLevelAfterRunningModal;
 - (id)_clearModalWindowLevel;
 - (void)_setModal:(BOOL)arg1;
+- (void)_unlockSublevel;
+- (void)_lockToAbsoluteSubLevel:(long long)arg1;
 @property long long level;
-- (BOOL)_sublevelNeedsUpdating;
 - (void)_applyWindowLevelWithTagUpdateNeeded:(BOOL)arg1;
 - (long long)_effectiveLevel;
 - (BOOL)_attemptToModifyAlwaysOnTopWithEvent:(id)arg1;
 - (BOOL)_alwaysOnTop;
 - (void)_setAlwaysOnTop:(BOOL)arg1;
 - (long long)_childLevel:(long long)arg1;
-- (void)_updateSubLevel;
-- (long long)_effectiveSubLevel;
-- (void)_setSubLevel:(long long)arg1;
-- (BOOL)_resetSublevelOnChildWindowAddition;
-- (long long)_subLevel;
 - (id)_destroyRealWindowIfNotVisible:(id)arg1;
 - (id)_destroyRealWindow:(BOOL)arg1;
 - (void)_setWantsToDestroyRealWindow:(BOOL)arg1;
@@ -606,14 +615,10 @@
 - (id)contentInsetColor;
 - (id)contentSeparatorColor;
 @property(copy) NSColor *backgroundColor;
-- (id)_fontSmoothingBackgroundColor;
 - (BOOL)_hasBackgroundColor;
 - (id)_compositedBackground;
 - (id)_generateCompositedBackground;
-- (id)_generateMetalBackground;
-- (void)_updateMetalBackgroundStyle;
-- (void)_resizeMetalBackground;
-- (unsigned long long)_metalStyle;
+- (unsigned long long)_themeBackgroundStyle;
 - (void)_invalidateCompositedBackground;
 - (id)_scaledBackground;
 - (void)_invalidateScaledBackground;
@@ -635,7 +640,10 @@
 - (struct CGRect)_standardFrame;
 - (void)deminiaturize:(id)arg1;
 - (void)miniaturize:(id)arg1;
+- (void)_miniturizeFromFullScreen;
 - (BOOL)_canMiniaturize;
+- (BOOL)_canMiniaturizeCheckingMask:(BOOL)arg1 forButtonEnabledState:(BOOL)arg2;
+- (BOOL)_hasSiblingSpaceWhenFullScreenPrefersModal;
 - (void)_setMiniaturized:(BOOL)arg1;
 @property(readonly, getter=isMiniaturized) BOOL miniaturized;
 @property(getter=isReleasedWhenClosed) BOOL releasedWhenClosed;
@@ -687,6 +695,7 @@
 - (BOOL)_allowsActiveInputContext;
 - (BOOL)_allowsActiveInputContextDuringMenuTracking;
 - (BOOL)_isKeyWindowIgnoringFocus;
+- (BOOL)_isResigningKeyFocusOnly;
 - (void)_resignKeyFocus;
 - (void)_handleResignMainAppearanceEvent;
 - (void)_handleResignKeyAppearanceEvent;
@@ -699,14 +708,11 @@
 @property(readonly) unsigned long long resizeFlags;
 - (void)_hideMenu:(id)arg1;
 - (void)toggleFullScreen:(id)arg1;
-- (BOOL)_resizesFromEdges;
 - (void)_updateWindowDockFeedbackAtRectEdges:(unsigned long long)arg1;
 - (void)_scheduleShowingDockWindowFeedback;
 - (void)_cancelShowingDockWindowFeedback;
 - (void)_startShowingWindowDockingFeedback;
 - (void)_makeSnappingInfo;
-- (void)_showSnappingTargets;
-- (void)_hideSnappingTargets;
 - (void)_internalHandleWindowMovedWithEvent:(id)arg1;
 - (BOOL)_internalHandleAppKitDefinedEvent:(id)arg1;
 - (void)_doClientSideDraggingWithEvent:(id)arg1;
@@ -774,7 +780,6 @@
 - (void)_handleWindowShouldCloseEvent:(id)arg1;
 - (BOOL)_isRunningADocModalAttachedSheet;
 - (BOOL)_tryWindowDragWithEvent:(id)arg1;
-- (void)_showDynamicDragFeedbackForValue:(double)arg1;
 - (void)_startWindowDragWithEvent:(id)arg1 options:(unsigned long long)arg2 animate:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_startWindowDragWithEvent:(id)arg1 options:(unsigned long long)arg2 animate:(BOOL)arg3;
 - (void)_startWindowDragWithEvent:(id)arg1 animate:(BOOL)arg2;
@@ -883,22 +888,17 @@
 - (void)_lockFirstResponder;
 - (id)_borderView;
 - (void)update;
-@property(getter=isAutodisplay) BOOL autodisplay;
+- (BOOL)isAutodisplay;
+- (void)setAutodisplay:(BOOL)arg1;
 - (void)display;
 - (void)useOptimizedDrawing:(BOOL)arg1;
 - (BOOL)_isImageCache;
 - (void)displayIfNeeded;
 @property BOOL viewsNeedDisplay;
-- (void)_setNeedsDisplay:(id)arg1;
 - (BOOL)_postingDisabled;
 - (void)_enablePosting;
 - (void)_disablePosting;
 - (void)_resetPostingCounts;
-- (void)_postWindowNeedsDisplayUnlessPostingDisabled;
-- (void)_postWindowNeedsLayoutUnlessPostingDisabled;
-- (void)_postWindowNeedsUpdateConstraintsUnlessPostingDisabled;
-- (void)_delayedWindowDisplay:(id)arg1;
-- (void)_postWindowNeedsDisplayOrLayoutOrUpdateConstraintsUnlessPostingDisabled;
 - (BOOL)_delayedWindowDisplayEnabled;
 - (void)_enableDelayedWindowDisplay;
 - (void)_disableDelayedWindowDisplay;
@@ -908,22 +908,20 @@
 - (BOOL)_animationShouldCallFlushWindow;
 - (void)_setShadowParameters;
 - (void)_setShadowActiveState;
-- (void)_setShadowAnimationProgress:(double)arg1;
 - (id)shadowParameters;
-- (id)_shadowParametersForActiveAppearance:(BOOL)arg1;
 - (unsigned long long)shadowOptionsForActiveAppearance:(BOOL)arg1;
 - (unsigned long long)shadowOptions;
 - (void)flushWindow;
 - (float)_backdropBleedAmount;
 - (void)_flushBackdropViews;
 - (void)_updateBackdropViewsIfNeeded;
-- (BOOL)_hasAtLeastOneDirtyBackdropView;
+- (BOOL)_hasAtLeastOneBackdropView;
 - (void)_clearBackingStoreForBackdropViews;
 - (void)_unregisterBackdropView:(id)arg1;
 - (void)_registerBackdropView:(id)arg1;
 - (void)_setRegisteredBackdropViews:(id)arg1;
 - (id)_registeredBackdropViews;
-@property(readonly, getter=isFlushWindowDisabled) BOOL flushWindowDisabled;
+- (BOOL)isFlushWindowDisabled;
 - (void)enableFlushWindow;
 - (void)disableFlushWindow;
 - (void)_resetDisableCounts;
@@ -969,9 +967,8 @@
 - (void)_cgsWindowRelativeMoveChildrenWithGroupWithDelta:(struct CGPoint)arg1;
 - (void)_startClientSideMove;
 - (void)_stopClientSideMove;
-- (void)_updateGrowBoxOwner;
-- (void)_findNewGrowBoxOwner;
 - (void)_oldPlaceWindow:(struct CGRect)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (void)_updateContentLayoutGuideFrame;
 @property(readonly) id contentLayoutGuide;
@@ -980,6 +977,7 @@
 - (void)setTitlebarBlurFiltersDisabled:(BOOL)arg1;
 - (BOOL)titlebarBlurFiltersDisabled;
 - (void)_setHasActiveAppearance:(BOOL)arg1;
+- (id)_titlebarBackdropGroupName;
 - (void)removeTitlebarAccessoryViewControllerAtIndex:(long long)arg1;
 - (void)insertTitlebarAccessoryViewController:(id)arg1 atIndex:(long long)arg2;
 - (void)addTitlebarAccessoryViewController:(id)arg1;
@@ -990,7 +988,6 @@
 - (void)removeUnderTitlebarView:(id)arg1 withAssociatedWithView:(id)arg2;
 - (void)addUnderTitlebarView:(id)arg1 withAssociatedWithView:(id)arg2;
 - (BOOL)_canAddUnderTitlebarViews;
-- (BOOL)_useMetalPattern;
 - (struct CGRect)dragRectForFrameRect:(struct CGRect)arg1;
 - (BOOL)_isDraggable;
 - (id)_bindingAdaptor;
@@ -1021,7 +1018,6 @@
 - (struct CGRect)_titleFrameForEditingWithProposedFrame:(struct CGRect)arg1;
 - (id)_customTitleCell;
 - (BOOL)_isTitleHidden;
-- (id)_shadowRimInfo;
 - (BOOL)_hasCornerMask;
 - (id)_cornerMaskOrNil;
 - (id)_cornerMask;
@@ -1056,9 +1052,9 @@
 - (BOOL)_windowMoveDisabled;
 - (void)_setWindowMoveDisabled:(BOOL)arg1;
 - (void)_setWindowTag;
-- (id)_viewFreeing:(id)arg1;
 - (id)_viewDetaching:(id)arg1;
 - (void)_lighterViewDetaching:(id)arg1;
+- (void)_viewAttaching:(id)arg1;
 - (void)_removeAsSavedFirstResponder:(id)arg1;
 - (void)_resetFirstResponder;
 - (void)_setWindowNumber:(long long)arg1;
@@ -1131,7 +1127,6 @@
 @property(retain) NSResponder *_beforeTabPickerResponder;
 - (void)_toggleTabOverview:(id)arg1;
 - (void)_toggleTabOverview:(id)arg1 animated:(BOOL)arg2;
-- (void)_tabbedAppearanceChanged;
 - (void)_addTabbedWindow:(id)arg1 ordered:(long long)arg2;
 - (void)_doTabbedWindowDidChangeToolbar;
 - (void)performCloseOtherTabs:(id)arg1;
@@ -1253,8 +1248,6 @@
 - (void)_removeTrackingRect:(long long)arg1;
 - (BOOL)_didInstallTrackingRect:(struct CGRect)arg1 assumeInside:(BOOL)arg2 userData:(void *)arg3 trackingNum:(long long)arg4;
 - (void)_verifyTrackingRects;
-- (void)_installCursorObserver;
-- (void)_invalidateCursorObserver;
 - (void)_updateCursorRectsDueToResigningKey;
 - (void)_updateCursorRectsDueToBecomingKey;
 - (void)_updateCursorRectsDueToBecomingVisible;
@@ -1277,7 +1270,6 @@
 - (void)_invalidateCursorRectsForView:(id)arg1 force:(BOOL)arg2;
 - (void)_invalidateCursorRectsForViewsWithNoTrackingAreas;
 - (void)_postInvalidCursorRects;
-- (id)_runLoopModesForInvalidCursorRectsObserver;
 - (void)discardCursorRects;
 - (BOOL)areCursorRectsEnabled;
 - (void)enableCursorRects;
@@ -1288,15 +1280,6 @@
 - (BOOL)_addCursorRect:(struct CGRect)arg1 cursor:(id)arg2 forView:(id)arg3;
 - (id)openDrawers;
 @property(readonly, copy) NSArray *drawers;
-- (void)removeAllDrawersImmediately;
-- (BOOL)_drawerIsOpen;
-- (void)_shutDrawer;
-- (void)shutAllDrawers:(id)arg1;
-- (void)_openDrawerOnEdge:(unsigned long long)arg1;
-- (void)_openDrawer;
-- (void)openFirstDrawer:(id)arg1;
-- (void)_addDrawerWithView:(id)arg1;
-- (void)addDrawerWithView:(id)arg1;
 - (void)_setVisibleWithoutLoginForAllDrawers;
 - (void)_changeAllDrawersFirstResponder;
 - (void)_changeAllDrawersMainState;
@@ -1323,6 +1306,7 @@
 - (void)_hideAllDrawers;
 - (id)NS_touchBarProviders;
 - (id)NS_touchBarProvidersKeyPaths;
+- (id)_eventFirstResponderChainDescription;
 - (void)_setLastDragRegion:(void *)arg1;
 - (id)_lastDragRegionData;
 - (BOOL)_shouldSuppressRolloversForSegmentedCellInView:(id)arg1;
@@ -1338,8 +1322,8 @@
 - (void)_stashOrigin:(struct CGPoint)arg1;
 - (void)_orderOutRelativeToWindow:(id)arg1;
 - (void)_orderFrontRelativeToWindow:(id)arg1;
-- (struct CGRect)_positionSheetConstrained:(BOOL)arg1 andDisplay:(BOOL)arg2;
 - (struct CGRect)_positionSheet:(id)arg1 constrained:(BOOL)arg2 andDisplay:(BOOL)arg3;
+- (struct CGRect)_adjustFrame:(struct CGRect)arg1 constrained:(BOOL)arg2 forSheet:(id)arg3 positioningFrame:(struct CGRect *)arg4;
 - (double)_xOffsetForSheetFrame:(struct CGRect)arg1 inParentFrame:(struct CGRect)arg2;
 - (struct CGRect)_centerSheetFrame:(struct CGRect)arg1 inParentFrame:(struct CGRect)arg2;
 - (struct CGRect)_keepOnScreenSheetFrame:(struct CGRect)arg1;
@@ -1349,7 +1333,6 @@
 - (void)_adjustEffectForSheet:(id)arg1;
 - (double)_sheetEffectInset;
 - (void *)_sheetEffect;
-- (void)_positionSheetRect:(struct CGRect)arg1 onRect:(struct CGRect)arg2 andDisplay:(BOOL)arg3;
 - (void)_setSheetParent:(id)arg1;
 - (void)_setDocumentWindow:(id)arg1;
 - (id)_documentWindow;
@@ -1367,6 +1350,10 @@
 - (BOOL)_runningDocModal;
 - (void)_resetSplitViewUserPreferredThicknessFromSetAlignmentFrames;
 - (id)_responderDebugDescription;
+- (void)_updateStructuralRegionsOnNextDisplayCycle;
+- (void)_postWindowNeedsDisplayUnlessPostingDisabled;
+- (void)_postWindowNeedsLayoutUnlessPostingDisabled;
+- (void)_postWindowNeedsUpdateConstraintsUnlessPostingDisabled;
 - (void)_evilHackToClearlastLeftHitInWindow;
 - (void)_resumeUIHeartBeatingInView:(id)arg1;
 - (void)_pauseUIHeartBeatingInView:(id)arg1;
@@ -1398,22 +1385,24 @@
 - (void)_setIsMinimized:(BOOL)arg1;
 - (BOOL)_defaultButtonPaused;
 - (void)_setDefaultButtonPaused:(BOOL)arg1;
+- (BOOL)_defaultButtonSuppressed;
+- (void)_setDefaultButtonSuppressed:(BOOL)arg1;
 - (const struct __CFDictionary *)_createWindowsMenuEntryWithTitle:(id)arg1 enabled:(BOOL)arg2;
 - (void)_selectWindow:(id)arg1;
 - (void)updateInDock;
 - (void)_updateButtonsForModeChanged;
 - (id)_updateFrameWidgets;
 - (id)showDeminiaturizedWindow;
+- (void)_enterFullScreenIfNeededAfterMiniturized;
 - (void)_finishDeminiaturizeFromDock:(BOOL)arg1;
 - (id)restoreWindowOnDockReincarnation;
 - (id)restoreWindowOnDockDeath;
 - (void)cacheMiniwindowTitle:(id)arg1 guess:(BOOL)arg2;
 - (BOOL)dockTitleIsGuess;
 - (void)guessDockTitle:(id)arg1;
-- (void)_removeHeartBeartClientView:(id)arg1;
-- (void)_addHeartBeatClientView:(id)arg1;
 - (void)heartBeat:(CDStruct_fadd2e06 *)arg1;
 - (BOOL)_wantsHeartBeat;
+- (void)_addHeartBeatClientView:(id)arg1;
 - (BOOL)_minimizeToDock;
 - (int)_regularMinimizeToDock;
 - (int)_carbonMinimizeToDock;
@@ -1438,21 +1427,21 @@
 - (void)_setNeedsToResetDragMargins:(BOOL)arg1;
 - (BOOL)_needsToResetDragMargins;
 - (void)_resetDragMarginsIfNeeded;
+- (struct CGSRegionObject *)_titlebarButtonsPreventingActivationRegion;
+- (struct CGSRegionObject *)_titlebarCommandModifierExclusionRegion;
+- (struct CGSRegionObject *)_titlebarActivationRegion;
+- (struct CGSRegionObject *)_regionForOpaqueViewsBlockingDraggableFrame:(struct CGRect)arg1;
+- (void)_resetDragMargins;
+- (struct CGRect)_draggableFrame;
 - (double)_transparency;
 - (BOOL)_hasActiveControls;
 - (BOOL)_controlAppearanceChangesOnKeyStateChange;
 - (void)_setForceActiveControls:(BOOL)arg1;
-- (BOOL)_showOpaqueGrowBox;
-- (id)_growBoxOwner;
-- (void)_setShowOpaqueGrowBox:(BOOL)arg1;
-- (void)_setShowOpaqueGrowBoxForOwner:(id)arg1;
-- (void)_setGrowBoxView:(id)arg1;
-- (id)_growBoxView;
-- (struct CGRect)_scrollerExclusionRect;
 - (struct CGRect)_growBoxRect;
 - (BOOL)_containedMenusAreEligibleForKeyEquivalents;
 - (id)_customImageForStandardWindowButton:(unsigned long long)arg1 state:(unsigned long long)arg2 dirty:(BOOL)arg3 controlTint:(unsigned long long)arg4;
 - (BOOL)_hasActiveAppearanceForStandardWindowButton:(unsigned long long)arg1;
+- (void)_fixIgnoredKeyMainAppearancesIfNeeded;
 - (void)resignMainAppearance;
 - (void)acquireMainAppearance;
 - (void)_sendAcquireMainAppearanceToResponder:(id)arg1;
@@ -1480,7 +1469,6 @@
 - (BOOL)_contentHasShadow;
 - (void)_setContentHasShadow:(BOOL)arg1;
 - (struct CGSize)_shadowOffsetForActiveAppearance:(BOOL)arg1;
-- (struct CGSize)_shadowOffsetForOptions:(unsigned long long)arg1;
 - (struct CGSize)_shadowOffset;
 - (unsigned long long)shadowStyle;
 - (void)setShadowStyle:(unsigned long long)arg1;
@@ -1592,8 +1580,6 @@
 - (BOOL)accessibilityIsDefaultButtonAttributeSettable;
 - (id)accessibilityDefaultButtonAttribute;
 - (BOOL)accessibilityIsGrowAreaAttributeSettable;
-- (id)accessibilityGrowAreaAttribute;
-- (struct CGRect)_accessibilityGrowBoxRect;
 - (BOOL)accessibilityIsTitleUIElementAttributeSettable;
 - (id)accessibilityTitleUIElementAttribute;
 - (BOOL)accessibilityIsProxyAttributeSettable;
@@ -1682,6 +1668,7 @@
 - (BOOL)_hasRegisteredForDragTypes;
 - (void)_registerDragTypesLater;
 - (void)registerForDraggedTypes:(id)arg1;
+- (id)registeredDraggedTypes;
 - (void)_removeEventHandlers;
 - (void)_syncFrameMetrics;
 - (void)_removeCocoaWindowEventHandlersForCocoaSheetsAttachedToCarbonModalParent;
@@ -1791,20 +1778,19 @@
 - (BOOL)_shouldSnapSizeWhenResizing;
 - (void)_provideActuationFeedbackWithEvent:(id)arg1;
 - (BOOL)_snapWindowSizeInDirection:(long long)arg1 withEvent:(id)arg2;
-- (struct CGRect)_snapWindowSizeWithFrame:(struct CGRect)arg1 resizeDirection:(long long)arg2 state:(CDStruct_a42fe1e7 *)arg3;
-- (struct CGRect)_sizeSnappedFrameForOppositeEdge:(unsigned long long)arg1 frame:(struct CGRect)arg2 state:(CDStruct_a42fe1e7 *)arg3;
-- (struct CGRect)_doScreenSizeSnappingFromResizedEdge:(unsigned long long)arg1 frame:(struct CGRect)arg2 state:(CDStruct_a42fe1e7 *)arg3;
-- (BOOL)_shouldDoScreenSizeSnappingFromResizedEdge:(unsigned long long)arg1 frame:(struct CGRect)arg2 state:(CDStruct_a42fe1e7 *)arg3;
+- (struct CGRect)_snapWindowSizeWithFrame:(struct CGRect)arg1 resizeDirection:(long long)arg2 state:(CDStruct_222f2799 *)arg3;
+- (struct CGRect)_sizeSnappedFrameForOppositeEdge:(unsigned long long)arg1 frame:(struct CGRect)arg2 state:(CDStruct_222f2799 *)arg3;
+- (struct CGRect)_doScreenSizeSnappingFromResizedEdge:(unsigned long long)arg1 frame:(struct CGRect)arg2 state:(CDStruct_222f2799 *)arg3;
+- (BOOL)_shouldDoScreenSizeSnappingFromResizedEdge:(unsigned long long)arg1 frame:(struct CGRect)arg2 state:(CDStruct_222f2799 *)arg3;
 - (void)_setFrameWidthDelta:(double)arg1 resizingFromRight:(BOOL)arg2 frame:(struct CGRect *)arg3;
 - (void)_setFrameHeightDelta:(double)arg1 resizingFromTop:(BOOL)arg2 frame:(struct CGRect *)arg3;
-- (struct CGRect)_unsnapSizeFromFrame:(struct CGRect)arg1 fromEdge:(unsigned long long)arg2 state:(CDStruct_a42fe1e7 *)arg3;
+- (struct CGRect)_unsnapSizeFromFrame:(struct CGRect)arg1 fromEdge:(unsigned long long)arg2 state:(CDStruct_222f2799 *)arg3;
 - (void)_startSnappingToFrameTimerAfterDelay:(double)arg1;
 - (void)_stopSnappingToFrameTimer;
 - (void)_doSnapToFrame;
-- (struct CGRect)_frame:(struct CGRect)arg1 resizedFromEdge:(unsigned long long)arg2 withDelta:(struct CGSize)arg3 withEvent:(id)arg4 withState:(CDStruct_a42fe1e7 *)arg5;
+- (struct CGRect)_frame:(struct CGRect)arg1 resizedFromEdge:(unsigned long long)arg2 withDelta:(struct CGSize)arg3 withEvent:(id)arg4 withState:(CDStruct_222f2799 *)arg5;
 - (BOOL)_isConsideredSheetForResizing;
 - (BOOL)_resizingShouldSnapToWindows;
-- (struct CGSnappingInfo *)_createSnappingInfo;
 - (struct CGRect)_frame:(struct CGRect)arg1 resizedFromEdge:(unsigned long long)arg2 withDelta:(struct CGSize)arg3 withEvent:(id)arg4;
 - (double)_opaqueAspectDimensionForDimension:(double)arg1 isHorizontal:(BOOL)arg2;
 - (void)_resizeWithEvent:(id)arg1;
@@ -1812,7 +1798,6 @@
 - (BOOL)_attemptToSnapWindowSizeWithEvent:(id)arg1;
 - (BOOL)_shouldSnapSizeOnDoubleClick;
 - (id)_hitTestWithHysteresisCheck:(struct CGPoint)arg1 forEvent:(id)arg2 allowWindowDragging:(char *)arg3;
-- (BOOL)_windowResizeMouseLocationIsInVisibleScrollerThumb:(struct CGPoint)arg1;
 - (BOOL)_scrollViewIntersectsSoutheastGrowCorner:(id)arg1;
 - (struct CGRect)_windowResizeEventHandlingRectForRect:(struct CGRect)arg1;
 - (void)_getEdgeResizingRects:(struct CGRect *)arg1 allowedEdges:(unsigned long long)arg2;
@@ -1832,6 +1817,7 @@
 - (struct CGRect)unsnappedFrame;
 - (void)_updateLayoutDependentMetricsIfNeeded;
 - (void)_setViewsNeedUpdateLayoutDependentMetrics:(BOOL)arg1;
+- (void)constraintsDidChangeInEngine:(id)arg1;
 - (void)updateConstraintsIfNeeded;
 - (BOOL)_updateConstraintsForEngineHostingViews:(id)arg1;
 - (BOOL)_viewsNeedUpdateConstraints;
@@ -1875,7 +1861,7 @@
 - (id)_layoutEngineIfAvailable;
 - (id)_layoutEngine;
 - (BOOL)_allowsLinearMaskOverlayForView:(id)arg1;
-- (id)_appearanceBearingParent;
+@property(readonly) id <NSAppearanceCustomization> _effectiveAppearanceParent;
 - (unsigned long long)_tileSpaceID;
 - (unsigned long long)_parentSpaceID;
 - (void)_sendDockFullScreenTitle:(id)arg1;
@@ -1918,7 +1904,6 @@
 - (unsigned long long)_fullScreenPresentationOptions;
 - (void)_setFullScreenPresentationOptions:(unsigned long long)arg1;
 - (void)_markAppropriateForAutomaticFullScreenMode:(BOOL)arg1;
-- (BOOL)_attachesToolbarToMenuBarInFullScreen;
 - (BOOL)_positionsToolbarInExternalWindow;
 - (void)_reacquireToolbarViewFromFullScreenWindow;
 - (void)_surrenderToolbarViewForFullScreenWindow;
@@ -1936,10 +1921,7 @@
 - (BOOL)_needsBehindWindowBlendingForFullScreenTitlebar;
 - (void)_enableFullScreenMenubarAutohiding;
 - (void)_disableFullScreenMenubarAutohiding;
-- (BOOL)_shouldAutoIncSubLevel;
 - (BOOL)_isInFullScreenSpace;
-- (BOOL)_shouldAutoDecSubLevel;
-- (BOOL)_shouldIncChildWindowSubLevel;
 - (BOOL)_willBeInFullScreenSpace;
 - (BOOL)_shouldEnterFullScreenModeOnOrderIn;
 - (BOOL)_someFullScreenInstanceHasSuppressedImplicitFullScreen;

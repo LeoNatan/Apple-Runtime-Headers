@@ -39,7 +39,6 @@
 - (void)dealloc;
 - (id)logIdentifier;
 - (id)initWithUUID:(id)arg1 accessory:(id)arg2 role:(id)arg3;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

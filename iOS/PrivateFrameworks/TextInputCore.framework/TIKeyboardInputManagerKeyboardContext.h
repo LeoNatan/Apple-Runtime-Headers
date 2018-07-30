@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) TIKeyboardState *currentState; // @synthesize currentState=_currentState;
 @property(retain, nonatomic) TIRevisionHistory *revisionHistory; // @synthesize revisionHistory=_revisionHistory;
 @property(readonly, nonatomic) TIKeyboardOutput *output; // @synthesize output=_output;
+- (void).cxx_destruct;
 - (void)deleteHandwritingStrokes:(id)arg1;
 - (void)acceptCandidate:(id)arg1;
 - (void)unmarkText:(id)arg1;
@@ -27,7 +28,6 @@
 - (void)insertText:(id)arg1;
 - (void)clearInputForMarkedText;
 - (id)initWithKeyboardState:(id)arg1;
-- (void)dealloc;
 
 @end
 

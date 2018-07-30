@@ -30,6 +30,10 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
+struct NSDictionary {
+    Class _field1;
+};
+
 struct PHAssetResourceTableDataSpecification {
     int _field1;
     int _field2;
@@ -42,6 +46,10 @@ struct PHAssetResourceTableDataSpecification {
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 #pragma mark Typedef'd Structures
@@ -59,4 +67,9 @@ typedef struct {
     unsigned int flags;
     long long epoch;
 } CDStruct_1b6d18a9;
+
+typedef struct {
+    CDStruct_1b6d18a9 start;
+    CDStruct_1b6d18a9 duration;
+} CDStruct_e83c9415;
 

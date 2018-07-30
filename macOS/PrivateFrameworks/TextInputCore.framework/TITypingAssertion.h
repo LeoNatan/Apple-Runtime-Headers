@@ -17,6 +17,7 @@
 
 + (id)sharedTypingAssertion;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
+- (void).cxx_destruct;
 - (id)__restingPathIndices;
 - (void)touch;
 - (void)touchWithDuration:(double)arg1;

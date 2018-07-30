@@ -22,6 +22,8 @@
 - (void)sceneDidRenderAtTime:(double)arg1;
 - (void)layoutSubviews;
 - (void)setMotionEnabled:(_Bool)arg1;
+- (double)cornerRadiusForStyle:(long long)arg1;
+- (_Bool)shouldUseContinuousCornersForStyle:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 pass:(id)arg2;
 
 @end

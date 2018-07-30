@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface CKModifyRecordsOperation (MSPCloudKitAccountAccess) <MSPCloudRequest>
+- (void)setNetworkBehaviorIsDiscretionary:(BOOL)arg1;
 - (void)addCloudAccessCompletionBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties

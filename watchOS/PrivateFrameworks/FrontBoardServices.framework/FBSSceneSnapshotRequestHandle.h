@@ -17,10 +17,10 @@
 }
 
 + (id)handleForRequestType:(unsigned int)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 - (void)_clearAction;
 - (void)cancelRequest;
 - (void)performRequestForScene:(id)arg1;
-- (void)dealloc;
 - (id)initWithRequestType:(unsigned int)arg1 context:(id)arg2;
 
 @end

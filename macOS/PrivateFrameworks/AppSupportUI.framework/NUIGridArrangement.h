@@ -28,9 +28,8 @@
 - (void).cxx_destruct;
 - (struct CGRect)layoutFrameForArrangedSubview:(id)arg1 withProposedContentFrame:(struct CGRect)arg2;
 - (struct CGSize)contentLayoutSizeFittingSize:(struct CGSize)arg1 forArrangedSubview:(id)arg2;
-- (void)populateGridArrangementDimension:(vector_29d414c0 *)arg1 withCells:(const vector_f7a18e83 *)arg2 axis:(long long)arg3;
-- (void)populateGridArrangementCells:(vector_f7a18e83 *)arg1;
-- (BOOL)supportsAsynchronousMeasurement;
+- (void)populateGridArrangementDimension:(vector_b8a5df6e *)arg1 withCells:(const vector_f8404f95 *)arg2 axis:(long long)arg3;
+- (void)populateGridArrangementCells:(vector_f8404f95 *)arg1;
 - (struct CGRect)frameForColumns:(struct _NSRange)arg1 rows:(struct _NSRange)arg2 inBounds:(struct CGRect)arg3;
 - (struct CGRect)unionFrameForItemsInColumns:(struct _NSRange)arg1 rows:(struct _NSRange)arg2 inBounds:(struct CGRect)arg3;
 - (void)positionItemsInColumns:(struct _NSRange)arg1 rows:(struct _NSRange)arg2 inBounds:(struct CGRect)arg3 block:(CDUnknownBlockType)arg4;

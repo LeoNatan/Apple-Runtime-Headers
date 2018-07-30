@@ -235,7 +235,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)continueReadingDocumentObjectFromPackageURL:(id)arg1 areExternalDataReferencesAllowed:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)readDocumentObjectFromPackageURL:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) unsigned long long documentDataSize;
-- (unsigned long long)documentObjectSize;
+@property(readonly, nonatomic) unsigned long long documentObjectSize;
 @property(readonly, nonatomic) unsigned long long documentSize;
 - (unsigned long long)estimatedProgressTotalUnitCountForURL:(id)arg1 packageType:(long long)arg2;
 - (_Bool)copyIfAppropriateFromOriginalURL:(id)arg1 toURL:(id)arg2 apfsMode:(_Bool)arg3 originalPackage:(id)arg4 packageType:(long long)arg5;

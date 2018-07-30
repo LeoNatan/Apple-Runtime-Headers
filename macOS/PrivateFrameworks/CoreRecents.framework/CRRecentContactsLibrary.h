@@ -27,6 +27,7 @@
 + (struct NSObject *)_recentEventForGroupMembers:(id)arg1 displayName:(id)arg2 date:(id)arg3 weight:(id)arg4 metadata:(id)arg5 options:(unsigned long long)arg6;
 + (id)defaultInstance;
 - (int)_daemonProcessID;
+- (id)_removeRecentContactsMatchingQuery:(id)arg1;
 - (void)_removeAllRecentContactsWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)removeRecentContacts:(id)arg1 error:(out id *)arg2;
 - (BOOL)_removeRecentContactsWithRecentIDs:(id)arg1 syncKeys:(id)arg2 recentsDomain:(id)arg3 error:(out id *)arg4;

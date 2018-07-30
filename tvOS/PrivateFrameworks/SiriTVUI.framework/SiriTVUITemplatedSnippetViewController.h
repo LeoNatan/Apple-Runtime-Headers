@@ -14,17 +14,18 @@
 
 @interface SiriTVUITemplatedSnippetViewController : SiriTVUISnippetViewController <SiriTVUISnippetViewDelegate, SiriTVUITemplateItemViewControllerDelegate, SiriTVUITemplatedViewDelegate>
 {
-    SiriTVUITemplateItem *_annotationItem;
     NSMutableDictionary *_templateItemOffsets;
     NSNumber *_cachedAllowSwipeDismissal;
     _Bool _didCancelPreparePresentation;
     double _fullScreenFraction;
     SiriTVUITemplateModelTranslator *_translationLayer;
+    SiriTVUITemplateItem *_annotationItem;
     NSArray *_templateItems;
 }
 
 @property(nonatomic, getter=_didCancelPreparePresentation, setter=_setDidCancelPreparePresentation:) _Bool didCancelPreparePresentation; // @synthesize didCancelPreparePresentation=_didCancelPreparePresentation;
 @property(copy, nonatomic, setter=_setTemplateItems:) NSArray *templateItems; // @synthesize templateItems=_templateItems;
+@property(retain, nonatomic) SiriTVUITemplateItem *annotationItem; // @synthesize annotationItem=_annotationItem;
 @property(readonly, nonatomic) SiriTVUITemplateModelTranslator *translationLayer; // @synthesize translationLayer=_translationLayer;
 @property(readonly, nonatomic) double fullScreenFraction; // @synthesize fullScreenFraction=_fullScreenFraction;
 - (void).cxx_destruct;

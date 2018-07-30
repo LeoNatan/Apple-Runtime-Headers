@@ -15,18 +15,21 @@
     double _assetModificationDate;
     double _date;
     double _quality;
+    unsigned long long _statsFlags;
     NSString *_assetAdjustedFingerprint;
     NSString *_assetIdentifier;
     NSString *_assetMasterFingerprint;
     unsigned int _flags;
     NSMutableArray *_imageBlurResults;
     NSMutableArray *_imageCompositionResults;
+    NSMutableArray *_imageExposureResults;
     NSMutableArray *_imageFaceResults;
     NSMutableArray *_imageFeatureResults;
     NSMutableArray *_imageJunkResults;
     NSMutableArray *_imagePetsResults;
     NSMutableArray *_imageSaliencyResults;
     NSMutableArray *_imageShotTypeResults;
+    NSMutableArray *_livePhotoEffectsResults;
     NSMutableArray *_livePhotoRecommendationResults;
     NSMutableArray *_livePhotoSharpnessResults;
     NSMutableArray *_movieActivityLevelResults;
@@ -36,6 +39,7 @@
     NSMutableArray *_movieFaceprintResults;
     NSMutableArray *_movieFeatureResults;
     NSMutableArray *_movieFineSubjectMotionResults;
+    NSMutableArray *_movieHighlightResults;
     NSMutableArray *_movieInterestingnessResults;
     NSMutableArray *_movieMovingObjectResults;
     NSMutableArray *_movieMusicResults;
@@ -46,16 +50,20 @@
     NSMutableArray *_movieSaliencyResults;
     NSMutableArray *_movieSceneResults;
     NSMutableArray *_movieSubjectMotionResults;
+    NSMutableArray *_movieSummaryResults;
     NSMutableArray *_movieUtteranceResults;
     NSMutableArray *_movieVoiceResults;
     unsigned int _types;
     unsigned int _version;
     struct {
         unsigned int quality:1;
+        unsigned int statsFlags:1;
     } _has;
 }
 
-+ (Class)imagePetsResultsType;
++ (Class)imageExposureResultsType;
++ (Class)movieHighlightResultsType;
++ (Class)movieSummaryResultsType;
 + (Class)movieVoiceResultsType;
 + (Class)movieUtteranceResultsType;
 + (Class)movieSubjectMotionResultsType;
@@ -77,6 +85,8 @@
 + (Class)movieActivityLevelResultsType;
 + (Class)livePhotoSharpnessResultsType;
 + (Class)livePhotoRecommendationResultsType;
++ (Class)livePhotoEffectsResultsType;
++ (Class)imagePetsResultsType;
 + (Class)imageShotTypeResultsType;
 + (Class)imageSaliencyResultsType;
 + (Class)imageJunkResultsType;
@@ -86,7 +96,9 @@
 + (Class)imageBlurResultsType;
 + (id)movieAnalysisFromLegacyDictionary:(id)arg1;
 + (id)imageAnalysisFromLegacyDictionary:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *imagePetsResults; // @synthesize imagePetsResults=_imagePetsResults;
+@property(retain, nonatomic) NSMutableArray *imageExposureResults; // @synthesize imageExposureResults=_imageExposureResults;
+@property(retain, nonatomic) NSMutableArray *movieHighlightResults; // @synthesize movieHighlightResults=_movieHighlightResults;
+@property(retain, nonatomic) NSMutableArray *movieSummaryResults; // @synthesize movieSummaryResults=_movieSummaryResults;
 @property(retain, nonatomic) NSMutableArray *movieVoiceResults; // @synthesize movieVoiceResults=_movieVoiceResults;
 @property(retain, nonatomic) NSMutableArray *movieUtteranceResults; // @synthesize movieUtteranceResults=_movieUtteranceResults;
 @property(retain, nonatomic) NSMutableArray *movieSubjectMotionResults; // @synthesize movieSubjectMotionResults=_movieSubjectMotionResults;
@@ -108,6 +120,8 @@
 @property(retain, nonatomic) NSMutableArray *movieActivityLevelResults; // @synthesize movieActivityLevelResults=_movieActivityLevelResults;
 @property(retain, nonatomic) NSMutableArray *livePhotoSharpnessResults; // @synthesize livePhotoSharpnessResults=_livePhotoSharpnessResults;
 @property(retain, nonatomic) NSMutableArray *livePhotoRecommendationResults; // @synthesize livePhotoRecommendationResults=_livePhotoRecommendationResults;
+@property(retain, nonatomic) NSMutableArray *livePhotoEffectsResults; // @synthesize livePhotoEffectsResults=_livePhotoEffectsResults;
+@property(retain, nonatomic) NSMutableArray *imagePetsResults; // @synthesize imagePetsResults=_imagePetsResults;
 @property(retain, nonatomic) NSMutableArray *imageShotTypeResults; // @synthesize imageShotTypeResults=_imageShotTypeResults;
 @property(retain, nonatomic) NSMutableArray *imageSaliencyResults; // @synthesize imageSaliencyResults=_imageSaliencyResults;
 @property(retain, nonatomic) NSMutableArray *imageJunkResults; // @synthesize imageJunkResults=_imageJunkResults;
@@ -119,6 +133,7 @@
 @property(retain, nonatomic) NSString *assetMasterFingerprint; // @synthesize assetMasterFingerprint=_assetMasterFingerprint;
 @property(nonatomic) double assetModificationDate; // @synthesize assetModificationDate=_assetModificationDate;
 @property(retain, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
+@property(nonatomic) unsigned long long statsFlags; // @synthesize statsFlags=_statsFlags;
 @property(nonatomic) double quality; // @synthesize quality=_quality;
 @property(nonatomic) double date; // @synthesize date=_date;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
@@ -134,10 +149,18 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (id)imagePetsResultsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)imagePetsResultsCount;
-- (void)addImagePetsResults:(id)arg1;
-- (void)clearImagePetsResults;
+- (id)imageExposureResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)imageExposureResultsCount;
+- (void)addImageExposureResults:(id)arg1;
+- (void)clearImageExposureResults;
+- (id)movieHighlightResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)movieHighlightResultsCount;
+- (void)addMovieHighlightResults:(id)arg1;
+- (void)clearMovieHighlightResults;
+- (id)movieSummaryResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)movieSummaryResultsCount;
+- (void)addMovieSummaryResults:(id)arg1;
+- (void)clearMovieSummaryResults;
 - (id)movieVoiceResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)movieVoiceResultsCount;
 - (void)addMovieVoiceResults:(id)arg1;
@@ -222,6 +245,14 @@
 - (unsigned long long)livePhotoRecommendationResultsCount;
 - (void)addLivePhotoRecommendationResults:(id)arg1;
 - (void)clearLivePhotoRecommendationResults;
+- (id)livePhotoEffectsResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)livePhotoEffectsResultsCount;
+- (void)addLivePhotoEffectsResults:(id)arg1;
+- (void)clearLivePhotoEffectsResults;
+- (id)imagePetsResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)imagePetsResultsCount;
+- (void)addImagePetsResults:(id)arg1;
+- (void)clearImagePetsResults;
 - (id)imageShotTypeResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)imageShotTypeResultsCount;
 - (void)addImageShotTypeResults:(id)arg1;
@@ -251,6 +282,7 @@
 - (void)addImageBlurResults:(id)arg1;
 - (void)clearImageBlurResults;
 @property(readonly, nonatomic) BOOL hasAssetAdjustedFingerprint;
+@property(nonatomic) BOOL hasStatsFlags;
 @property(nonatomic) BOOL hasQuality;
 - (id)exportToLegacyDictionary;
 - (BOOL)exportResultsWithPropertyKey:(id)arg1 toLegacyDictionary:(id)arg2 withKey:(id)arg3;

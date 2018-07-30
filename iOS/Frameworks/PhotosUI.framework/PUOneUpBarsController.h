@@ -20,7 +20,7 @@
 
 @class NSMutableIndexSet, NSString, PUAssetActionPerformer, PUBarButtonItemCollection, PUBrowsingSession, PUPhotoBrowserTitleViewController, PUPlayPauseBarItemsController, PUScrubberView, PXImageModulationManager, PXInfoUpdater, UITapGestureRecognizer, UIView;
 
-@interface PUOneUpBarsController : PUBarsController <PUBrowsingViewModelChangeObserver, PUAssetActionPerformerDelegate, UIPopoverPresentationControllerDelegate, PUPlayPauseBarItemsControllerChangeObserver, PUOverOneUpPresentationSessionBarsDelegate, PUBarButtonItemCollectionDataSource, PUScrubberViewDelegate, PUPhotoBrowserTitleViewControllerDelegate, PXInfoUpdaterObserver, PXInfoProvider, PXChangeObserver>
+@interface PUOneUpBarsController : PUBarsController <PUBrowsingViewModelChangeObserver, PUAssetActionPerformerDelegate, UIPopoverPresentationControllerDelegate, PUPlayPauseBarItemsControllerChangeObserver, PUBarButtonItemCollectionDataSource, PUScrubberViewDelegate, PUPhotoBrowserTitleViewControllerDelegate, PXInfoUpdaterObserver, PXInfoProvider, PXChangeObserver, PUOverOneUpPresentationSessionBarsDelegate>
 {
     struct {
         _Bool respondsToDidChangeShowingPlayPauseButton;
@@ -32,6 +32,11 @@
         _Bool respondsToShouldTapBeginAtLocationFromProvider;
         _Bool respondsToShouldHideToolbarWhenShowingAccessoryViewForAssetReference;
         _Bool respondsToWillExecuteActionPerformer;
+        _Bool respondsToCanShowOriginal;
+        _Bool respondsToDidBeginShowingOriginal;
+        _Bool respondsToDidEndShowingOriginal;
+        _Bool respondsToShouldEnableShowingOriginal;
+        _Bool respondsToCanViewInLibrary;
     } _delegateFlags;
     _Bool _shouldPlaceButtonsInNavigationBar;
     _Bool _shouldUseCompactTitleView;
@@ -42,6 +47,8 @@
     _Bool _shouldShowTitleView;
     _Bool _allowTapOnTitle;
     _Bool _allowShowingPlayPauseButton;
+    _Bool _disableShowingNavigationBars;
+    _Bool _shouldPlaceScrubberInScrubberBar;
     _Bool _isShowingPlayPauseButton;
     _Bool __needsUpdateTitle;
     _Bool __needsUpdateCommentsTitle;
@@ -66,10 +73,12 @@
     NSMutableIndexSet *__rightNavBarButtonIdentifiers;
     PUBarButtonItemCollection *__leftNavBarButtonItemCollection;
     NSMutableIndexSet *__leftNavBarButtonIdentifiers;
+    PUAssetActionPerformer *_sharingPreheatedPerformer;
     PXImageModulationManager *_debuggingObservedImageModulationManager;
 }
 
 @property(retain, nonatomic) PXImageModulationManager *debuggingObservedImageModulationManager; // @synthesize debuggingObservedImageModulationManager=_debuggingObservedImageModulationManager;
+@property(retain, nonatomic) PUAssetActionPerformer *sharingPreheatedPerformer; // @synthesize sharingPreheatedPerformer=_sharingPreheatedPerformer;
 @property(retain, nonatomic, setter=_setLeftNavBarButtonIdentifiers:) NSMutableIndexSet *_leftNavBarButtonIdentifiers; // @synthesize _leftNavBarButtonIdentifiers=__leftNavBarButtonIdentifiers;
 @property(retain, nonatomic, setter=_setLeftNavBarButtonItemCollection:) PUBarButtonItemCollection *_leftNavBarButtonItemCollection; // @synthesize _leftNavBarButtonItemCollection=__leftNavBarButtonItemCollection;
 @property(retain, nonatomic, setter=_setRightNavBarButtonIdentifiers:) NSMutableIndexSet *_rightNavBarButtonIdentifiers; // @synthesize _rightNavBarButtonIdentifiers=__rightNavBarButtonIdentifiers;
@@ -91,6 +100,8 @@
 @property(retain, nonatomic, setter=_setActiveActionPerformer:) PUAssetActionPerformer *_activeActionPerformer; // @synthesize _activeActionPerformer=__activeActionPerformer;
 @property(readonly, nonatomic) NSString *_scrubbingIdentifier; // @synthesize _scrubbingIdentifier=__scrubbingIdentifier;
 @property(nonatomic, setter=_setShowingPlayPauseButton:) _Bool isShowingPlayPauseButton; // @synthesize isShowingPlayPauseButton=_isShowingPlayPauseButton;
+@property(nonatomic) _Bool shouldPlaceScrubberInScrubberBar; // @synthesize shouldPlaceScrubberInScrubberBar=_shouldPlaceScrubberInScrubberBar;
+@property(nonatomic) _Bool disableShowingNavigationBars; // @synthesize disableShowingNavigationBars=_disableShowingNavigationBars;
 @property(nonatomic) _Bool allowShowingPlayPauseButton; // @synthesize allowShowingPlayPauseButton=_allowShowingPlayPauseButton;
 @property(nonatomic) _Bool allowTapOnTitle; // @synthesize allowTapOnTitle=_allowTapOnTitle;
 @property(nonatomic) _Bool shouldShowTitleView; // @synthesize shouldShowTitleView=_shouldShowTitleView;
@@ -111,6 +122,7 @@
 - (_Bool)scrubberView:(id)arg1 shouldIgnoreHitTest:(struct CGPoint)arg2 withEvent:(id)arg3;
 - (void)ppt_performAction:(unsigned long long)arg1;
 @property(readonly, nonatomic) UIView *ppt_scrubberView;
+- (void)overOneUpPresentationSession:(id)arg1 didAppendReviewScreenAction:(unsigned long long)arg2;
 - (id)overOneUpPresentationSession:(id)arg1 barButtonItemForActivityType:(id)arg2;
 - (void)overOneUpPresentationSession:(id)arg1 didCompleteWithActivityType:(id)arg2 assetsByAssetCollection:(id)arg3 success:(_Bool)arg4;
 - (void)playPauseBarItemsController:(id)arg1 didChange:(id)arg2;
@@ -131,12 +143,16 @@
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (void)_executeActionPerformer:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_executeActionPerformer:(id)arg1;
+- (void)_performAddToLibraryAction;
 - (void)_performAssetExplorerReviewScreenActionType:(unsigned long long)arg1;
 - (void)_performAllPhotosAction;
 - (void)_performDuplicateActivityWithAssetsByAssetCollection:(id)arg1;
 - (void)_performHideActivityWithAssetsByAssetCollection:(id)arg1;
 - (void)_performAirPlayAction;
 - (void)_performSlideShowAction;
+- (void)_performSuggestionViewInLibraryAction;
+- (void)_peformSuggestionRevertAction;
+- (void)_peformSuggestionSaveAction;
 - (void)_performCancelAction;
 - (void)_performReviewAction;
 - (void)_performShareAction;
@@ -148,7 +164,9 @@
 - (void)_performToggleFavoriteAction;
 - (void)_performRestoreAction;
 - (void)_performTrashAction;
+- (void)toggleOriginalButtonTouched:(id)arg1;
 - (void)barButtonItemTapped:(id)arg1;
+- (void)_handleSharingPreheat;
 - (void)_updateShowingPlayPauseButton;
 - (void)_updateChromeVisibilityIfNeeded;
 - (void)_invalidateChromeVisibilityWithAnimationType:(long long)arg1;

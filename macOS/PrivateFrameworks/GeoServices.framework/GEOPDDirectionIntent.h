@@ -10,6 +10,7 @@
 
 @class GEOPDResolvedItem, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDDirectionIntent : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

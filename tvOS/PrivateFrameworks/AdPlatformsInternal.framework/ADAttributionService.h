@@ -6,30 +6,24 @@
 
 #import "ADSingleton.h"
 
-#import "ADAttribution_XPC.h"
 #import "NSXPCListenerDelegate.h"
 
-@class NSString, NSXPCListener;
+@class NSMutableDictionary, NSNumber, NSString, NSXPCListener;
 
-@interface ADAttributionService : ADSingleton <ADAttribution_XPC, NSXPCListenerDelegate>
+@interface ADAttributionService : ADSingleton <NSXPCListenerDelegate>
 {
     NSXPCListener *_listener;
-    NSString *_bundleID;
+    NSMutableDictionary *_clients;
+    NSNumber *_transactionID;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(retain, nonatomic) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
+@property(retain, nonatomic) NSMutableDictionary *clients; // @synthesize clients=_clients;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
+- (void)removeClientForToken:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)requestAttributionDetailsWithBlock:(CDUnknownBlockType)arg1;
-- (void)attachSearchMetadataTo:(id)arg1 forAdamID:(id)arg2;
-- (void)attachDownloadDataTo:(id)arg1 forAdamID:(id)arg2;
-- (void)requestAttributionDetails:(CDUnknownBlockType)arg1;
-- (void)makeAttributionRequestWithObject:(id)arg1 andHandler:(CDUnknownBlockType)arg2;
-- (void)overrideAttributionData:(id)arg1;
-- (_Bool)productionClient;
-- (int)appRunState;
 - (id)init;
 
 // Remaining properties

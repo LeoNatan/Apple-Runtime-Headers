@@ -33,11 +33,12 @@
 }
 
 @property(copy, nonatomic) FBSceneMonitorBehaviors *behaviors; // @synthesize behaviors=_givenMonitorBehaviors;
-@property(readonly, retain, nonatomic) FBSSceneSettings *effectiveSceneSettings; // @synthesize effectiveSceneSettings=_effectiveSettings;
-@property(readonly, retain, nonatomic) FBSSceneSettings *sceneSettings; // @synthesize sceneSettings=_sceneSettings;
-@property(nonatomic) id <FBSceneMonitorDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) FBSSceneSettings *effectiveSceneSettings; // @synthesize effectiveSceneSettings=_effectiveSettings;
+@property(readonly, nonatomic) FBSSceneSettings *sceneSettings; // @synthesize sceneSettings=_sceneSettings;
+@property(nonatomic) __weak id <FBSceneMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
-@property(readonly, retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
+@property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
+- (void).cxx_destruct;
 - (void)sceneMonitor:(id)arg1 effectiveSceneSettingsDidChangeWithDiff:(id)arg2 previousSettings:(id)arg3;
 - (void)sceneManager:(id)arg1 scene:(id)arg2 didUpdateClientSettingsWithDiff:(id)arg3 oldClientSettings:(id)arg4 transitionContext:(id)arg5;
 - (void)sceneManagerDidEndSceneUpdateSynchronization:(id)arg1;

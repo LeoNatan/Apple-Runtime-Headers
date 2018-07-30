@@ -11,8 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface SCRVisualsHighlightCurtain : NSObject
 {
-    char *_curtainEnabled;
-    char *_blackCurtainEnabled;
+    BOOL _curtainEnabled;
+    BOOL _blackCurtainEnabled;
     AXVHighlightCurtainView *__curtainView;
     double __gestureCurtainTransparency;
     struct CGRect _nonCoveredRect;
@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setGestureCurtainTransparency:) double _gestureCurtainTransparency; // @synthesize _gestureCurtainTransparency=__gestureCurtainTransparency;
 @property(retain, nonatomic, setter=_setCurtainView:) AXVHighlightCurtainView *_curtainView; // @synthesize _curtainView=__curtainView;
 @property(nonatomic) struct CGRect nonCoveredRect; // @synthesize nonCoveredRect=_nonCoveredRect;
-@property(nonatomic) char *blackCurtainEnabled; // @synthesize blackCurtainEnabled=_blackCurtainEnabled;
-@property(nonatomic) char *curtainEnabled; // @synthesize curtainEnabled=_curtainEnabled;
+@property(nonatomic) BOOL blackCurtainEnabled; // @synthesize blackCurtainEnabled=_blackCurtainEnabled;
+@property(nonatomic) BOOL curtainEnabled; // @synthesize curtainEnabled=_curtainEnabled;
 - (void).cxx_destruct;
 - (void)_preferencesChangedForKeyPath:(id)arg1 value:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

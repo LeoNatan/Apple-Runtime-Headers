@@ -15,6 +15,7 @@
 - (void)SPIUsageLackingEntitlementRejectedForPID:(int)arg1;
 - (void)SPIUsageLackingEntitlementGrantedForPID:(int)arg1;
 - (void)serviceError:(NSError *)arg1;
+- (void)changedMeContact:(CNContact *)arg1;
 - (void)updatingContact:(CNContact *)arg1;
 - (void)deletingContact:(CNContact *)arg1;
 - (void)addingContacts:(NSArray *)arg1 toContainerWithIdentifier:(NSString *)arg2;

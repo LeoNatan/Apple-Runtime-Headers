@@ -18,7 +18,7 @@
     NSCache *_imageCache;
     NSObject<OS_dispatch_semaphore> *_initializationSema;
     NSObject<OS_dispatch_group> *_initializationGroup;
-    NSObject<OS_dispatch_queue> *_backgroundValidatinoQueue;
+    NSObject<OS_dispatch_queue> *_backgroundQueue;
 }
 
 + (id)defaultIconCache;
@@ -26,20 +26,27 @@
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) NSString *cacheName; // @synthesize cacheName=_cacheName;
 - (void).cxx_destruct;
+- (id)_imageWithData:(id)arg1 UUID:(id)arg2 addToCache:(BOOL)arg3;
+- (void)_fetchImageForGenerationRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)_generateImageWithRequest:(id)arg1;
+- (id)_cachedImageForGenerationRequest:(id)arg1;
 - (id)description;
 - (void)clear;
-- (void)imageWithDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)imageForBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(unsigned int)arg3 options:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (struct CGImage *)copyImageForBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(unsigned int)arg3 options:(id)arg4;
+- (id)_cacheImageWithBitmapUUID:(id)arg1;
+- (id)_bitmapUUIDForGenerationRequest:(id)arg1 stale:(char *)arg2;
+- (BOOL)_isStoreIndexItem:(const CDStruct_1a8ce9d4 *)arg1 validForGenerationRequest:(id)arg2;
+- (BOOL)_getStoreIndexItem:(CDStruct_1a8ce9d4 *)arg1 forGenerationRequest:(id)arg2;
+- (void)imageWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)imageWithRequest:(id)arg1;
+- (void)imageForBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(double)arg3 options:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)imageForBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(double)arg3 options:(id)arg4;
 @property(readonly) ISStoreIndex *storeIndex; // @synthesize storeIndex=_storeIndex;
 @property(readonly) ISStore *store; // @synthesize store=_store;
 @property(readonly) NSString *cachePath; // @dynamic cachePath;
 - (id)serviceName;
+@property(readonly, getter=isInitialized) BOOL initialized;
 - (void)waitForInitializationToComplete;
 - (id)initWithCacheName:(id)arg1;
-- (struct CGImage *)_createCGImageWithData:(id)arg1 UUID:(id)arg2 addToCache:(BOOL)arg3;
-- (void)_fetchImageForImageDescriptor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (struct CGImage *)_copyCachedCGImageForImageDescriptor:(id)arg1;
 
 @end
 

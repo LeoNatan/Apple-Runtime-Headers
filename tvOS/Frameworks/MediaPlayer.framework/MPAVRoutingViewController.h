@@ -11,7 +11,7 @@
 #import "UITableViewDataSource.h"
 #import "UITableViewDelegate.h"
 
-@class MPAVEndpointRoute, MPAVRoutingController, MPAVRoutingEmptyStateView, MPAVRoutingTableHeaderView, MPAVRoutingViewControllerUpdate, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSMutableSet, NSNumber, NSString, UIColor, UITableView, UIView;
+@class MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingEmptyStateView, MPAVRoutingTableHeaderView, MPAVRoutingViewControllerUpdate, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, NSString, UIColor, UITableView, UIView;
 
 @interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate>
 {
@@ -21,10 +21,12 @@
     MPAVRoutingEmptyStateView *_emptyStateView;
     MPAVRoutingViewControllerUpdate *_pendingUpdate;
     _Bool _isAnimatingUpdate;
+    MPAVRoute *_displayedEndpointRoute;
     NSArray *_cachedRoutes;
     NSArray *_cachedPickedRoutes;
     NSArray *_cachedPendingPickedRoutes;
     NSArray *_cachedDisplayAsPickedRoutes;
+    NSArray *_cachedVolumeCapableRoutes;
     MPWeakTimer *_updateTimer;
     MPAVRoutingController *_routingController;
     long long _routeDiscoveryMode;
@@ -38,6 +40,7 @@
     _Bool _shouldAutomaticallyUpdateRoutesList;
     _Bool _shouldPickRouteOnSelection;
     _Bool _onScreen;
+    _Bool _hasUserSelections;
     unsigned long long _updatesSincePresentation;
     long long _discoveryModeBeforeEnteringBackground;
     unsigned long long _style;
@@ -48,16 +51,12 @@
     NSNumber *_discoveryModeOverride;
     id <MPAVRoutingViewControllerThemeDelegate> _themeDelegate;
     MPAVEndpointRoute *_endpointRoute;
-    id <MPAVOutputDevicePlaybackDataSource> _playbackDataSource;
     NSMapTable *_outputDeviceVolumeSliders;
-    NSMutableSet *_outputDeviceVolumeControllerRouteDataSources;
     MPVolumeGroupSliderCoordinator *_groupSliderCoordinator;
 }
 
 @property(retain, nonatomic) MPVolumeGroupSliderCoordinator *groupSliderCoordinator; // @synthesize groupSliderCoordinator=_groupSliderCoordinator;
-@property(retain, nonatomic) NSMutableSet *outputDeviceVolumeControllerRouteDataSources; // @synthesize outputDeviceVolumeControllerRouteDataSources=_outputDeviceVolumeControllerRouteDataSources;
 @property(retain, nonatomic) NSMapTable *outputDeviceVolumeSliders; // @synthesize outputDeviceVolumeSliders=_outputDeviceVolumeSliders;
-@property(nonatomic) __weak id <MPAVOutputDevicePlaybackDataSource> playbackDataSource; // @synthesize playbackDataSource=_playbackDataSource;
 @property(retain, nonatomic) MPAVEndpointRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
 @property(nonatomic) __weak id <MPAVRoutingViewControllerThemeDelegate> themeDelegate; // @synthesize themeDelegate=_themeDelegate;
 @property(copy, nonatomic) NSNumber *discoveryModeOverride; // @synthesize discoveryModeOverride=_discoveryModeOverride;
@@ -73,12 +72,12 @@
 - (double)_tableViewHeaderViewHeight;
 - (id)_tableHeaderView;
 - (unsigned long long)_tableViewNumberOfRows;
-- (void)_promptForHijackIfNeeded:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (_Bool)_pickOrGroupRoute:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)_volumeSliderVisibility:(id)arg1;
 - (void)_applyUpdate:(id)arg1;
+- (id)_createReloadUpdate;
+- (void)_enqueueUpdate:(id)arg1;
 - (void)_updateDisplayedRoutes;
 - (void)_reloadEmptyStateVisibility;
+- (id)_volumeCapableRoutesInRoutes:(id)arg1;
 - (id)_displayAsPickedRoutesInRoutes:(id)arg1;
 - (id)_displayableRoutesInRoutes:(id)arg1;
 - (void)_volumeSliderVolumeControlAvailabilityDidChangeNotification:(id)arg1;
@@ -99,14 +98,16 @@
 @property(nonatomic, setter=_setShouldAutomaticallyUpdateRoutesList:) _Bool _shouldAutomaticallyUpdateRoutesList;
 @property(retain, nonatomic, setter=_setTableCellsContentColor:) UIColor *_tableCellsContentColor;
 @property(retain, nonatomic, setter=_setTableCellsBackgroundColor:) UIColor *_tableCellsBackgroundColor;
-@property(readonly, nonatomic) double _expandedCellHeight;
-@property(readonly, nonatomic) double _normalCellHeight;
 @property(readonly, nonatomic) UITableView *_tableView;
+@property(readonly, nonatomic) double _normalCellHeight;
+@property(readonly, nonatomic) double _expandedCellHeight;
 @property(readonly, nonatomic) MPAVRoutingController *_routingController;
 - (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(_Bool)arg2;
+- (void)routingController:(id)arg1 shouldHijackRoute:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingController:(id)arg1 pickedRoutesDidChange:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -120,6 +121,8 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)resetScrollPosition;
+- (void)resetDisplayedRoutes;
 @property(nonatomic) _Bool allowMirroring;
 - (void)dealloc;
 - (id)initWithStyle:(unsigned long long)arg1 routingController:(id)arg2;

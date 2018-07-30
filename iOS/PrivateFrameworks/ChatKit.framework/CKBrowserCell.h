@@ -6,7 +6,7 @@
 
 #import "UICollectionViewCell.h"
 
-@class CKBadgeView, CKBrowserSelectionLabelAccessoryView, UILabel, UIView;
+@class CKBadgeView, CKBrowserSelectionLabelAccessoryView, UIImageView, UILabel, UIView;
 
 @interface CKBrowserCell : UICollectionViewCell
 {
@@ -17,10 +17,14 @@
     unsigned long long _shinyStatus;
     CKBrowserSelectionLabelAccessoryView *_shinyStatusView;
     UILabel *_browserLabel;
+    UIImageView *_borderView;
+    struct CGRect _selectionFrame;
 }
 
 + (Class)classForItemType:(long long)arg1;
 + (id)reuseIdentifier;
+@property(nonatomic) struct CGRect selectionFrame; // @synthesize selectionFrame=_selectionFrame;
+@property(retain, nonatomic) UIImageView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) UILabel *browserLabel; // @synthesize browserLabel=_browserLabel;
 @property(retain, nonatomic) CKBrowserSelectionLabelAccessoryView *shinyStatusView; // @synthesize shinyStatusView=_shinyStatusView;
 @property(nonatomic) unsigned long long shinyStatus; // @synthesize shinyStatus=_shinyStatus;
@@ -30,6 +34,8 @@
 @property(nonatomic) __weak id <CKBrowserCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
+- (void)setBorderStyle:(long long)arg1;
+- (void)applyLayoutAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(readonly) UIView *iconView;

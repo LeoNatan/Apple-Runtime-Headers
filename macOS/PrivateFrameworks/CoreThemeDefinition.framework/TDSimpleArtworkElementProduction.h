@@ -16,9 +16,11 @@
 - (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
 
 // Remaining properties
+@property(nonatomic) short autoscalingType; // @dynamic autoscalingType;
 @property(nonatomic) BOOL isFlippable; // @dynamic isFlippable;
 @property(nonatomic) BOOL optOutOfThinning; // @dynamic optOutOfThinning;
 @property(nonatomic) BOOL preservesVectorRepresentation; // @dynamic preservesVectorRepresentation;
+@property(nonatomic) BOOL recognitionImage; // @dynamic recognitionImage;
 @property(retain, nonatomic) TDTemplateRenderingMode *templateRenderingMode; // @dynamic templateRenderingMode;
 
 @end

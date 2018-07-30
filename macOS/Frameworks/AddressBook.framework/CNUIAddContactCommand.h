@@ -8,7 +8,6 @@
 
 @class CNContact, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNUIAddContactCommand : CNUIUndoableCommand
 {
     BOOL _personInserted;

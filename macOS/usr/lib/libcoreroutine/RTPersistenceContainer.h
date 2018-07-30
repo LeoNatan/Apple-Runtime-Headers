@@ -11,13 +11,14 @@
 @interface RTPersistenceContainer : NSObject
 {
     NSArray *_configurations;
-    NSPersistentStoreCoordinator *_coordinator;
     BOOL _serveContexts;
     BOOL _setupFailed;
     NSString *_name;
     NSObject<OS_dispatch_queue> *_contextRequestsQueue;
+    NSPersistentStoreCoordinator *_coordinator;
 }
 
+@property(retain) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property BOOL setupFailed; // @synthesize setupFailed=_setupFailed;
 @property BOOL serveContexts; // @synthesize serveContexts=_serveContexts;
 @property(retain) NSObject<OS_dispatch_queue> *contextRequestsQueue; // @synthesize contextRequestsQueue=_contextRequestsQueue;
@@ -29,6 +30,7 @@
 - (void)persistenceContextWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)updateContainerConfigurations:(id)arg1;
 - (void)setupPersistenceStores;
+- (id)tearDownPersistenceStack;
 @property(readonly) BOOL storesNeedSetup;
 - (void)resumePersistenceStores;
 - (void)suspendPersistenceStores;

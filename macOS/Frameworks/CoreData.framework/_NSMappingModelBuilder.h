@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)newInferredPropertyMappingWithSourceAttribute:(id)arg1 destinationAttribute:(id)arg2;
 - (BOOL)_canTransformSourceAttributeType:(unsigned long long)arg1 toDestinationAttributeType:(unsigned long long)arg2;
 - (id)newEntityMappingWithSource:(id)arg1 destination:(id)arg2;
+- (BOOL)checkForSchemaMatchBetween:(id)arg1 andDestination:(id)arg2;
 - (BOOL)inferPropertyMappingsForEntityMapping:(id)arg1;
 - (id)newInferredMappingModel:(id *)arg1;
 - (void)_resetCaches;

@@ -30,8 +30,10 @@
 - (void)updateIfNeeded;
 - (void)_scheduleUpdatePassIfNeeded;
 - (void)setNeedsUpdateOf:(SEL)arg1;
+- (void)addUpdateSelector:(SEL)arg1 needsUpdate:(_Bool)arg2;
 - (void)addUpdateSelector:(SEL)arg1;
 - (void)dealloc;
+- (id)initWithTarget:(id)arg1 needsUpdateSelector:(SEL)arg2;
 - (id)initWithTarget:(id)arg1;
 - (id)init;
 

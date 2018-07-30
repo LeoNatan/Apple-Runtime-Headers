@@ -6,26 +6,24 @@
 
 #import <Vision/VNPersonsModel.h>
 
-@class NSDate, NSMutableDictionary, NSMutableIndexSet, VNPersonsModelFaceModel;
+#import "VNPersonsModelDataDelegate.h"
 
-@interface VNMutablePersonsModel : VNPersonsModel
+@class NSString, VNPersonsModelData, VNPersonsModelFaceModel;
+
+@interface VNMutablePersonsModel : VNPersonsModel <VNPersonsModelDataDelegate>
 {
+    VNPersonsModelData *_modelData;
     VNPersonsModelFaceModel *_faceModel_DO_NOT_ACCESS_DIRECTLY;
-    NSMutableDictionary *_personUniqueIdentifierToSerialNumberMapping;
-    NSMutableDictionary *_serialNumberToFaceprintsMapping;
-    NSMutableIndexSet *_availablePersonSerialNumbers;
-    NSDate *_lastModificationDate;
 }
 
 + (id)newModelFromVersion:(unsigned long long)arg1 objects:(id)arg2 error:(id *)arg3;
 + (id)supportedWriteVersions;
-+ (id)_version2ModelWithObjects:(id)arg1 error:(id *)arg2;
 + (id)_version1ModelWithObjects:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
-- (void)removePersonWithUniqueIdentifier:(id)arg1;
-- (void)removeAllFaceObservationsFromPersonWithUniqueIdentifier:(id)arg1;
+- (void)personsModelDataWasModified:(id)arg1;
+- (_Bool)removePersonWithUniqueIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)removeAllFaceObservationsFromPersonWithUniqueIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)removeFaceObservations:(id)arg1 fromPersonWithUniqueIdentifier:(id)arg2 error:(id *)arg3;
-- (_Bool)addFaceprints:(id)arg1 toPersonWithUniqueIdentifier:(id)arg2 error:(id *)arg3;
 - (_Bool)addFaceObservations:(id)arg1 toPersonWithUniqueIdentifier:(id)arg2 error:(id *)arg3;
 - (_Bool)writeToURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)dataWithOptions:(id)arg1 error:(id *)arg2;
@@ -33,32 +31,21 @@
 - (_Bool)writeToStream:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (_Bool)_getModelWritingImplementation:(CDUnknownFunctionPointerType *)arg1 selector:(SEL *)arg2 version:(unsigned long long *)arg3 forOptions:(id)arg4;
 - (_Bool)_getModelWritingImplementation:(CDUnknownFunctionPointerType *)arg1 selector:(SEL *)arg2 forVersion:(unsigned long long)arg3 readOnly:(_Bool)arg4;
-- (id)faceCountsForAllPersons;
-- (id)faceCountsForPersonsWithUniqueIdentifiers:(id)arg1;
-- (unsigned long long)faceCountForPersonWithUniqueIdentifier:(id)arg1;
-- (id)personUniqueIdentifiers;
-- (unsigned long long)personCount;
-- (_Bool)writeReadOnlyVersion2ToOutputStream:(id)arg1 options:(id)arg2 md5Context:(struct CC_MD5state_st *)arg3 error:(id *)arg4;
-- (_Bool)writeVersion2ToOutputStream:(id)arg1 options:(id)arg2 md5Context:(struct CC_MD5state_st *)arg3 error:(id *)arg4;
 - (_Bool)writeReadOnlyVersion1ToOutputStream:(id)arg1 options:(id)arg2 md5Context:(struct CC_MD5state_st *)arg3 error:(id *)arg4;
 - (_Bool)_writeReadOnlyVersion:(unsigned long long)arg1 toOutputStream:(id)arg2 options:(id)arg3 md5Context:(struct CC_MD5state_st *)arg4 error:(id *)arg5;
 - (_Bool)writeVersion1ToOutputStream:(id)arg1 options:(id)arg2 md5Context:(struct CC_MD5state_st *)arg3 error:(id *)arg4;
 - (_Bool)_writeVersion1ConfigurationToOutputStream:(id)arg1 md5Context:(struct CC_MD5state_st *)arg2 error:(id *)arg3;
 - (_Bool)_writeVersion1InformationToOutputStream:(id)arg1 md5Context:(struct CC_MD5state_st *)arg2 error:(id *)arg3;
 - (id)upToDateFaceModelWithCanceller:(id)arg1 error:(id *)arg2;
-- (unsigned long long)faceprintCountForPersonWithUniqueIdentifier:(id)arg1;
-- (id)identitySerialNumberForPersonWithUniqueIdentifier:(id)arg1;
-- (id)description;
-- (void)_removeExistingFaceprints:(id)arg1 fromPersonWithUniqueIdentifier:(id)arg2;
-- (void)_removeExistingFaceprints:(id)arg1 fromIdentityWithSerialNumber:(id)arg2;
-- (void)_removePersonWithUniqueIdentifier:(id)arg1;
-- (void)_removeAllFaceprintsFromIdentityWithSerialNumber:(id)arg1;
-- (_Bool)_addUniqueFaceprints:(id)arg1 toPersonWithUniqueIdentifier:(id)arg2 error:(id *)arg3;
-- (id)_uniqueFaceprintsWithRegistrationState:(_Bool)arg1 forFaceObservations:(id)arg2 ofPersonWithUniqueIdentifier:(id)arg3 error:(id *)arg4;
-- (id)_uniqueFaceprintsWithRegistrationState:(_Bool)arg1 forFaceprints:(id)arg2 ofPersonWithUniqueIdentifier:(id)arg3 error:(id *)arg4;
-- (id)_requestNewIdentitySerialNumberAndReturnError:(id *)arg1;
+@property(readonly, copy) NSString *description;
+- (id)_lastModificationDate;
 - (void)_modelWasModified;
 - (id)initWithConfiguration:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

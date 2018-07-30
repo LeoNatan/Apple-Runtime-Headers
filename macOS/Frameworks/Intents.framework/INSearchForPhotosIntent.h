@@ -6,11 +6,11 @@
 
 #import <Intents/INIntent.h>
 
-#import "INSearchForPhotosIntent.h"
+#import "INSearchForPhotosIntentExport.h"
 
 @class CLPlacemark, INDateComponentsRange, NSArray, NSString;
 
-@interface INSearchForPhotosIntent : INIntent <INSearchForPhotosIntent>
+@interface INSearchForPhotosIntent : INIntent <INSearchForPhotosIntentExport>
 {
 }
 
@@ -22,6 +22,15 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+@property(copy) NSString *memoryName;
+@property(copy) NSArray *geographicalFeatures;
+@property(readonly) long long geographicalFeaturesOperator;
+@property(copy) NSArray *activities;
+@property(readonly) long long activitiesOperator;
+@property(copy) NSArray *places;
+@property(readonly) long long placesOperator;
+@property(copy) NSArray *events;
+@property(readonly) long long eventsOperator;
 - (void)setPeopleInPhoto:(id)arg1;
 @property(readonly) long long peopleInPhotoOperator;
 @property(readonly, copy) NSArray *peopleInPhoto;
@@ -39,6 +48,9 @@
 - (void)setDateCreated:(id)arg1;
 @property(readonly, copy) INDateComponentsRange *dateCreated;
 - (id)initWithDateCreated:(id)arg1 locationCreated:(id)arg2 albumName:(id)arg3 searchTerms:(id)arg4 includedAttributes:(unsigned long long)arg5 excludedAttributes:(unsigned long long)arg6 peopleInPhoto:(id)arg7;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

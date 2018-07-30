@@ -10,7 +10,6 @@
 
 @class ABCardViewPersonMapper, NSArray, NSMutableArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewMultiValue : NSObject <ABCardViewMultiValue>
 {
     NSMutableArray *_entries;

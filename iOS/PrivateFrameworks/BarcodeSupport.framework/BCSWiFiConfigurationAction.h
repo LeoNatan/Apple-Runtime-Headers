@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 - (id)debugDescriptionExtraInfoDictionary;
 - (id)localizedDefaultActionDescription;
 - (id)_wiFiConfigurationData;
-- (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 codePayload:(id)arg2;
 
 @end
 

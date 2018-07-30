@@ -4,24 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <PrototypeTools/PTRowAction.h>
 
-#import "NSCopying.h"
-
-@interface PTSRowAction : NSObject <NSCopying>
+@interface PTSRowAction : PTRowAction
 {
     _Bool _deselectRowOnSuccess;
-    CDUnknownBlockType _handler;
 }
 
-+ (id)actionWithHandler:(CDUnknownBlockType)arg1;
-+ (id)action;
-@property(nonatomic) _Bool deselectRowOnSuccess; // @synthesize deselectRowOnSuccess=_deselectRowOnSuccess;
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
-- (void)resolveTemplatesWithIndex:(unsigned long long)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)init;
+@property _Bool deselectRowOnSuccess; // @synthesize deselectRowOnSuccess=_deselectRowOnSuccess;
 
 @end
 

@@ -15,7 +15,7 @@
 
 @property(retain, nonatomic) NSArray *quads; // @synthesize quads=_quads;
 - (void).cxx_destruct;
-- (void)render;
+- (void)renderForSize:(struct CLKUIQuadSize)arg1;
 - (id)init;
 
 @end

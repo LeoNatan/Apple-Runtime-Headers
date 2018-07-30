@@ -33,6 +33,8 @@
     BOOL _centerContent;
     BOOL _muted;
     BOOL _videoPlayerVisible;
+    BOOL _debugEnabled;
+    BOOL _scrollUpdatesSuppressed;
     id <NUMediaViewDelegate> _delegate;
     double _angle;
     struct CGSize __masterSizeWithoutGeometry;
@@ -40,6 +42,8 @@
 }
 
 + (struct NSEdgeInsets)_proposedInsetsForInsets:(struct NSEdgeInsets)arg1 contentSize:(struct CGSize)arg2 inFrame:(struct CGRect)arg3 centerContent:(BOOL)arg4;
+@property(nonatomic) BOOL scrollUpdatesSuppressed; // @synthesize scrollUpdatesSuppressed=_scrollUpdatesSuppressed;
+@property(nonatomic, getter=isDebugEnabled) BOOL debugEnabled; // @synthesize debugEnabled=_debugEnabled;
 @property(nonatomic, getter=isVideoPlayerVisible) BOOL videoPlayerVisible; // @synthesize videoPlayerVisible=_videoPlayerVisible;
 @property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(nonatomic) BOOL centerContent; // @synthesize centerContent=_centerContent;
@@ -52,6 +56,8 @@
 - (void)playerController:(id)arg1 didUpdateElapsedTime:(double)arg2 duration:(double)arg3;
 - (void)playerControllerDidFinishPlaying:(id)arg1 duration:(double)arg2;
 - (void)playerViewReadyForDisplayDidChange:(id)arg1;
+- (id)_viewRecursiveDescription;
+- (id)_layerRecursiveDescription;
 - (void)_updateVideoPlayerAlpha;
 - (void)_stopLoopPlayback;
 - (void)_startLoopPlayback;
@@ -74,6 +80,8 @@
 - (void)_setupViews;
 - (void)_transitionToInsets:(struct NSEdgeInsets)arg1;
 - (struct NSEdgeInsets)_edgeInsetsForContentSize:(struct CGSize)arg1 inFrame:(struct CGRect)arg2;
+- (void)_endTransition;
+- (void)_beginTransition;
 @property(nonatomic, getter=isVideoEnabled) BOOL videoEnabled;
 - (BOOL)isReady;
 @property(nonatomic) double minimumZoomScale;

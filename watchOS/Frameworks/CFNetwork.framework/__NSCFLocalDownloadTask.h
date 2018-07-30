@@ -16,13 +16,8 @@ __attribute__((visibility("hidden")))
 {
     CDUnknownBlockType _fileCompletion;
     __NSCFLocalDownloadFile *_downloadFile;
-    _Bool _canWrite;
-    _Bool _suppressProgress;
     NSObject<OS_dispatch_data> *_writeBuffer;
     unsigned int _ioSuspend;
-    int _seqNo;
-    _Bool _needFinish;
-    _Bool _didIssueNeedFinish;
     unsigned long _totalWrote;
     CDUnknownBlockType _resumeCallback;
     long long _initialResumeSize;
@@ -30,6 +25,11 @@ __attribute__((visibility("hidden")))
     unsigned long _transientWriteProgress;
     CDUnknownBlockType _afterDidReportProgressOnQueue;
     CDUnknownBlockType _dataAckCompletion;
+    int _seqNo;
+    _Bool _canWrite;
+    _Bool _suppressProgress;
+    _Bool _needFinish;
+    _Bool _didIssueNeedFinish;
 }
 
 + (id)_requestFromResumeDataDictionary:(id)arg1;
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType fileCompletion; // @synthesize fileCompletion=_fileCompletion;
 - (_Bool)isKindOfClass:(Class)arg1;
 - (void)_task_onqueue_didFinish;
+- (void)_supplyExtractorWithData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)checkWrite;
@@ -49,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)_private_errorCompletion;
 - (id)createResumeInformation:(id)arg1;
 - (void)suspendExtractor;
-- (void)terminateExtractorWithError:(id)arg1;
+- (void)terminateExtractorWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)writeAndResume;
 - (void)_onqueue_willCacheResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_private_posixError:(int)arg1;

@@ -20,18 +20,22 @@
     NSString *_senderDestinationID;
     NSString *_callbackDestinationID;
     NSURL *_dataURL;
+    NSString *_receiverDestinationID;
     NSURL *_transcriptionURL;
     NSString *_callbackISOCountryCode;
     NSString *_senderISOCountryCode;
+    NSString *_receiverISOCountryCode;
     unsigned int _flags;
     double _duration;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
+@property(copy, nonatomic) NSString *receiverISOCountryCode; // @synthesize receiverISOCountryCode=_receiverISOCountryCode;
 @property(copy, nonatomic) NSString *senderISOCountryCode; // @synthesize senderISOCountryCode=_senderISOCountryCode;
 @property(copy, nonatomic) NSString *callbackISOCountryCode; // @synthesize callbackISOCountryCode=_callbackISOCountryCode;
 @property(retain, nonatomic) NSURL *transcriptionURL; // @synthesize transcriptionURL=_transcriptionURL;
+@property(readonly, copy, nonatomic) NSString *receiverDestinationID; // @synthesize receiverDestinationID=_receiverDestinationID;
 @property(retain, nonatomic) NSURL *dataURL; // @synthesize dataURL=_dataURL;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *callbackDestinationID; // @synthesize callbackDestinationID=_callbackDestinationID;

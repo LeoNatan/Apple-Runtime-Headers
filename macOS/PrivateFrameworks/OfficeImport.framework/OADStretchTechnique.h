@@ -8,13 +8,13 @@
 
 @class OADRelativeRect;
 
-__attribute__((visibility("hidden")))
 @interface OADStretchTechnique : OADImageFillTechnique
 {
     OADRelativeRect *mFillRect;
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isFillRectOverridden;
@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (void)removeUnnecessaryOverrides;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)isAnythingOverridden;
-- (void)dealloc;
 - (id)initWithDefaults;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

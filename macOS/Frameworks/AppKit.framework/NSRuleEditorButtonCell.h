@@ -12,12 +12,7 @@
 
 - (BOOL)_acceptsFirstMouseForEvent:(id)arg1 inView:(id)arg2;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
-- (id)initTextCell:(id)arg1;
 - (void)setRuleEditorButtonType:(long long)arg1;
-- (unsigned long long)bezelStyle;
-- (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
-- (struct CGRect)drawTitle:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
 
 @end
 

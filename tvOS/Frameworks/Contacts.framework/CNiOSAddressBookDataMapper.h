@@ -84,6 +84,7 @@
 - (_Bool)fetchAndDecodeEncodedContactsForFetchRequest:(id)arg1 error:(id *)arg2 cancelationToken:(id)arg3 batchHandler:(CDUnknownBlockType)arg4;
 - (_Bool)fetchContactsForFetchRequest:(id)arg1 error:(id *)arg2 batchHandler:(CDUnknownBlockType)arg3;
 - (id)contactObservableForFetchRequest:(id)arg1;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
 - (id)identifierWithError:(id *)arg1;
 - (_Bool)requestAccessForEntityType:(long long)arg1 error:(id *)arg2;

@@ -7,6 +7,7 @@
 #import "HKHealthStore.h"
 
 @interface HKHealthStore (HKUIAdditions)
++ (id)queryForMostRecentSampleOfType:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)localizationStringSuffixForWheelchairUser:(_Bool)arg1;
 + (id)localizationStringAdditionForWheelchairUser;
 - (id)_sortedSources:(id)arg1;
@@ -15,6 +16,7 @@
 - (id)hk_sourcesForDevicesWithSources:(id)arg1;
 - (id)hk_appSourcesRequiringAuthorizationFromSources:(id)arg1;
 - (id)hk_additionalSourcesForInstalledAppsWithBundleIdentifiers:(id)arg1;
+- (void)hk_fetchSortedAppSourcesRequestingAuthorizationForTypes:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hk_fetchSortedAppSourcesRequiringAuthorizationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)hk_researchAppBundleIdentifiers;
 @end

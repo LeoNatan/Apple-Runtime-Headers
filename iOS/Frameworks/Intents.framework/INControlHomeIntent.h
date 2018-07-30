@@ -8,7 +8,7 @@
 
 #import "INControlHomeIntentExport.h"
 
-@class INHomeAttribute, NSArray, NSString;
+@class NSArray, NSString;
 
 @interface INControlHomeIntent : INIntent <INControlHomeIntentExport>
 {
@@ -22,13 +22,16 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
-- (void)setAttribute:(id)arg1;
-@property(readonly, copy, nonatomic) INHomeAttribute *attribute;
-- (void)setEntities:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *entities;
-- (id)initWithEntities:(id)arg1 attribute:(id)arg2;
+- (void)setContents:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *contents;
+- (id)initWithContents:(id)arg1;
+- (id)_categoryVerb;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)_subtitleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
+- (id)_titleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
+- (_Bool)_hasTitle;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

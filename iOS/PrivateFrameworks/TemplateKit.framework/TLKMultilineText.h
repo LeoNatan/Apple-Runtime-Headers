@@ -15,11 +15,10 @@
 }
 
 + (id)textWithString:(id)arg1;
-@property unsigned long long maxLines; // @synthesize maxLines=_maxLines;
-@property(retain) NSString *text; // @synthesize text=_text;
+@property(nonatomic) unsigned long long maxLines; // @synthesize maxLines=_maxLines;
+@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (id)description;
-- (id)observableProperties;
 
 @end
 

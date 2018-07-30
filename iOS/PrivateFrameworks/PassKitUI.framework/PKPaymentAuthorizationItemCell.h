@@ -18,6 +18,7 @@
     UIImageView *_alertView;
     UIImageView *_labelImageView;
     NSMutableArray *_constraints;
+    _Bool _constraintsDirty;
     _Bool _showsDisclosure;
     _Bool _showsSeperator;
     NSAttributedString *_label;
@@ -34,8 +35,9 @@
 @property(copy, nonatomic) NSAttributedString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)updateConstraints;
-- (void)setValue:(id)arg1 isPlaceholder:(_Bool)arg2;
-- (id)addValue:(id)arg1 isPlaceholder:(_Bool)arg2;
+- (void)setValue:(id)arg1 type:(unsigned long long)arg2;
+- (id)addValue:(id)arg1 type:(unsigned long long)arg2;
+- (id)colorForValueType:(unsigned long long)arg1;
 - (id)_applyStylingToValueString:(id)arg1 defaultColor:(id)arg2;
 - (id)_createValueView;
 - (void)_createSubviews;

@@ -9,31 +9,23 @@
 #import "CATTaskClientDelegate.h"
 #import "DMFTransportProvider.h"
 
-@class CATOperationQueue, CATTaskClient, NSSet, NSString;
+@class CATOperationQueue, CATTaskClient, NSString;
 
 @interface DMFConnection : NSObject <CATTaskClientDelegate, DMFTransportProvider>
 {
     _Bool _isConnected;
-    _Bool _isDeviceConnection;
+    _Bool _isSystemConnection;
     id <DMFTransportProvider> _transportProvider;
     CATTaskClient *_taskClient;
     CATOperationQueue *_operationQueue;
 }
 
-+ (id)_userRequestClasses;
-+ (id)_deviceRequestClasses;
-+ (id)_deviceOrUserRequestClasses;
-+ (id)watchOSRequestClasses;
-+ (id)tvOSRequestClasses;
-+ (id)macOSRequestClasses;
-+ (id)iOSRequestClasses;
-+ (id)currentPlatformRequestClasses;
 + (id)connectionForAppleID:(id)arg1;
 + (id)connectionForUID:(unsigned int)arg1;
 + (id)currentUserConnection;
 + (id)systemConnection;
 + (id)sharedConnection;
-@property(nonatomic) _Bool isDeviceConnection; // @synthesize isDeviceConnection=_isDeviceConnection;
+@property(nonatomic) _Bool isSystemConnection; // @synthesize isSystemConnection=_isSystemConnection;
 @property(nonatomic) _Bool isConnected; // @synthesize isConnected=_isConnected;
 @property(readonly, nonatomic) CATOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) CATTaskClient *taskClient; // @synthesize taskClient=_taskClient;
@@ -46,10 +38,9 @@
 - (void)clientDidConnect:(id)arg1;
 - (id)makeNewTransport;
 - (void)invalidate;
-- (id)progressForAllInflightRequests;
+- (id)batchOperationToPerformOperations:(id)arg1;
 - (id)prepareOperationForRequest:(id)arg1;
 - (void)performRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(readonly, copy, nonatomic) NSSet *requestClasses;
 - (void)dealloc;
 - (id)initWithTransportProvider:(id)arg1 userInfo:(id)arg2;
 - (id)initWithUserInfo:(id)arg1;

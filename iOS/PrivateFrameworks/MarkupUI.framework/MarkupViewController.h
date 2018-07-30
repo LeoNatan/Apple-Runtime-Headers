@@ -70,6 +70,7 @@
 + (id)markupBarButtonItemWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)cleanImageMetadataFromData:(id)arg1;
 + (_Bool)hasPrivateImageMetadata:(id)arg1;
++ (id)supportedOutputTypes;
 @property unsigned long long inkStyle; // @synthesize inkStyle=_inkStyle;
 @property(retain) UIImageView *placeholderImageView; // @synthesize placeholderImageView=_placeholderImageView;
 @property(nonatomic) _Bool showShareButtonInToolbar; // @synthesize showShareButtonInToolbar=_showShareButtonInToolbar;
@@ -199,6 +200,7 @@
 - (void)setFileURL:(id)arg1 withArchivedModelData:(id)arg2;
 - (void)setFileURL:(id)arg1 withArchivedModelData:(id)arg2 placeholderImage:(id)arg3;
 - (void)setToolbarHidden:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_setLegacyToolbarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (_Bool)_useLegacyToolbar;
 - (long long)preferredStatusBarStyle;
 - (void)traitCollectionDidChange:(id)arg1;

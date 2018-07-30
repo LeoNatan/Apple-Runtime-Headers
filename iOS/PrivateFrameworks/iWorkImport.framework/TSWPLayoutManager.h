@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)layoutMetricsCache;
 - (void)willRemoveAttachmentLayout:(id)arg1;
 - (void)storage:(id)arg1 didChangeRange:(struct _NSRange)arg2 delta:(long long)arg3 broadcastKind:(int)arg4;
+- (void)removeDirtyRange:(struct _NSRange)arg1;
 - (void)resetDirtyRange;
 - (void)clearTypesetterCache;
 - (void)clearOwner;

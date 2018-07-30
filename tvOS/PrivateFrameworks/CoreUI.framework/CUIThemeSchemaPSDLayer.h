@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface CUIThemeSchemaPSDLayer : NSObject
 {
     NSString *name;

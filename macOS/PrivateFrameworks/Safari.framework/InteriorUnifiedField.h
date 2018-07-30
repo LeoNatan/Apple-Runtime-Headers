@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (BOOL)allowsVibrancy;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)isFlipped;

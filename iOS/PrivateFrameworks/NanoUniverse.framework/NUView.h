@@ -6,52 +6,37 @@
 
 #import "UIView.h"
 
-@class CADisplayLink, EAGLContext, NSMutableArray, NUScene;
+#import "CLKUIQuadViewDelegate.h"
 
-@interface NUView : UIView
+@class CLKDevice, CLKUIQuadView, NSString, NUGLQuad, NUScene;
+
+@interface NUView : UIView <CLKUIQuadViewDelegate>
 {
-    EAGLContext *_context;
-    NUScene *_scene;
-    int _frameInterval;
-    CADisplayLink *_displayLink;
-    unsigned int _isAnimated:1;
-    unsigned int _isAnimating:1;
-    int _backingWidth;
-    int _backingHeight;
-    unsigned int _vertexArray;
-    unsigned int _defaultFramebuffer;
-    unsigned int _colorRenderbuffer;
-    unsigned int _depthRenderbuffer;
-    NSMutableArray *_portals;
-    double _baseTime;
+    CLKDevice *_device;
+    CLKUIQuadView *_quadView;
+    NUGLQuad *_quad;
+    id <NUViewDelegate> _delegate;
 }
 
-+ (Class)layerClass;
-@property(readonly, nonatomic) int backingHeight; // @synthesize backingHeight=_backingHeight;
-@property(readonly, nonatomic) int backingWidth; // @synthesize backingWidth=_backingWidth;
-@property(retain, nonatomic) NUScene *scene; // @synthesize scene=_scene;
-@property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_isAnimating;
+@property(nonatomic) __weak id <NUViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)quadViewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (id)snapshot:(id)arg1 size:(struct CGSize)arg2;
 - (id)snapshot;
+@property(retain, nonatomic) NUScene *scene;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
 - (void)stopAnimation;
 - (void)startAnimation;
-- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
-- (void)_stopAnimation;
-- (void)_startAnimation;
-@property(nonatomic) int animationFrameInterval; // @dynamic animationFrameInterval;
+- (void)setAnimationFrameInterval:(int)arg1;
 - (void)layoutSubviews;
-- (void)_resizeFramebuffer;
-- (void)drawView:(id)arg1;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)addPortal:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
+- (void)setOpaque:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (_Bool)_init;
-- (void)willMoveToWindow:(id)arg1;
-- (void)_foregrounded:(id)arg1;
-- (void)_backgrounded:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

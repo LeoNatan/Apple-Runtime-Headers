@@ -39,6 +39,8 @@
 - (void)addCallbackToCancelDuringDeallocation:(id)arg1;
 - (void)setPerformsMultiPassEncodingIfSupported:(BOOL)arg1;
 - (BOOL)performsMultiPassEncodingIfSupported;
+- (void)setMaximizePowerEfficiency:(BOOL)arg1;
+- (BOOL)maximizePowerEfficiency;
 @property(nonatomic) BOOL expectsMediaDataInRealTime;
 @property(readonly, nonatomic, getter=isReadyForMoreMediaData) BOOL readyForMoreMediaData;
 - (void)declareKeyPathDependenciesWithRegistry:(id)arg1;

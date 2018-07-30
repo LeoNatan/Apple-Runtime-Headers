@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasLostChildren;
 - (BOOL)hasLiveChildren;
 - (BOOL)hasDeadChildren;
+- (void)transformIntoFSRoot;
 - (BOOL)containsPendingUploadOrSyncUp;
 - (BOOL)containsPendingDownload;
 - (BOOL)containsFault;

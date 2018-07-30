@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 @interface AWDNWConnectionReport : PBCodable <NSCopying>
 {
@@ -47,11 +47,13 @@
     unsigned long long _timestamp;
     unsigned long long _tlsMilliseconds;
     unsigned long long _trafficClass;
+    NSMutableArray *_activities;
     int _appleApp;
     int _appleHost;
     int _connectedAddressFamily;
     int _connectedInterfaceType;
     int _connectionMode;
+    NSString *_connectionUUID;
     int _failureReason;
     int _firstAddressFamily;
     NSString *_processName;
@@ -143,6 +145,9 @@
     } _has;
 }
 
++ (Class)activitiesType;
+@property(retain, nonatomic) NSString *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
+@property(retain, nonatomic) NSMutableArray *activities; // @synthesize activities=_activities;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(nonatomic) _Bool isDaemon; // @synthesize isDaemon=_isDaemon;
 @property(nonatomic) unsigned long long secondsSinceInterfaceChange; // @synthesize secondsSinceInterfaceChange=_secondsSinceInterfaceChange;
@@ -206,6 +211,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasConnectionUUID;
+- (id)activitiesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)activitiesCount;
+- (void)addActivities:(id)arg1;
+- (void)clearActivities;
 @property(readonly, nonatomic) _Bool hasProcessName;
 @property(nonatomic) _Bool hasIsDaemon;
 @property(nonatomic) _Bool hasSecondsSinceInterfaceChange;

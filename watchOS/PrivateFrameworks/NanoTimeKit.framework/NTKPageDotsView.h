@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class NSMutableArray, UIColor;
+@class CLKDevice, NSMutableArray, UIColor;
 
 @interface NTKPageDotsView : UIView
 {
@@ -16,10 +16,12 @@
     UIColor *_otherPageColor;
     float _dotDiameter;
     float _dotPadding;
+    CLKDevice *_device;
     NSMutableArray *_pageDots;
 }
 
 @property(retain, nonatomic) NSMutableArray *pageDots; // @synthesize pageDots=_pageDots;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) float dotPadding; // @synthesize dotPadding=_dotPadding;
 @property(nonatomic) float dotDiameter; // @synthesize dotDiameter=_dotDiameter;
 @property(retain, nonatomic) UIColor *otherPageColor; // @synthesize otherPageColor=_otherPageColor;
@@ -32,7 +34,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)applyDefaultConfiguration;
 - (id)makePageDot;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initForDevice:(id)arg1;
 
 @end
 

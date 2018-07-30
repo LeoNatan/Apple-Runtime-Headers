@@ -12,13 +12,18 @@
     _Bool _waitToEndAnimation;
     _Bool _orientationSupported;
     _Bool _nightstandEnabled;
+    _Bool _alertAndAnimate;
 }
 
+@property(readonly, nonatomic) _Bool alertAndAnimate; // @synthesize alertAndAnimate=_alertAndAnimate;
 @property(readonly, nonatomic) _Bool nightstandEnabled; // @synthesize nightstandEnabled=_nightstandEnabled;
 @property(readonly, nonatomic) _Bool orientationSupported; // @synthesize orientationSupported=_orientationSupported;
 @property(readonly, nonatomic) _Bool waitToEndAnimation; // @synthesize waitToEndAnimation=_waitToEndAnimation;
 @property(readonly, nonatomic) _Bool screenOffAfterAlert; // @synthesize screenOffAfterAlert=_screenOffAfterAlert;
-- (id)initWithScreenOffAfterAlert:(_Bool)arg1 waitToEndAnimation:(_Bool)arg2 orientationSupported:(_Bool)arg3 nightstandEnabled:(_Bool)arg4;
+- (void)_buildDescriptionWithBuilder:(id)arg1;
+- (id)debugDescription;
+- (id)description;
+- (id)initWithScreenOffAfterAlert:(_Bool)arg1 waitToEndAnimation:(_Bool)arg2 orientationSupported:(_Bool)arg3 nightstandEnabled:(_Bool)arg4 alertAndAnimate:(_Bool)arg5;
 
 @end
 

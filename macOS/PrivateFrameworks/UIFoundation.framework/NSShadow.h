@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSColor;
 
-@interface NSShadow : NSObject <NSCopying, NSCoding>
+@interface NSShadow : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned long long _shadowFlags;
     struct CGSize _shadowOffset;
@@ -21,6 +21,7 @@
     void *_reserved;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)defaultShadowColor;
 + (id)shadow;
 + (void)initialize;
@@ -33,8 +34,8 @@
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithShadow:(id)arg1;
-- (void)_setWithOffsetDelta:(struct CGSize)arg1;
 - (void)set;
+- (void)_applyToCGContext:(struct CGContext *)arg1 graphicsContext:(id)arg2;
 @property double shadowBlurRadius;
 @property struct CGSize shadowOffset;
 - (id)init;

@@ -29,6 +29,9 @@
 - (void)setShareMode:(id)arg1;
 @property(readonly, copy) NSString *shareMode;
 - (id)initWithShareMode:(id)arg1 entityNames:(id)arg2 recipients:(id)arg3;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
 

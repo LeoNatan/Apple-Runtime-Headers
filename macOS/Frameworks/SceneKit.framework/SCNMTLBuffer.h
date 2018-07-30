@@ -11,12 +11,12 @@ __attribute__((visibility("hidden")))
 {
     long long _usedCount;
     id <MTLBuffer> _buffer;
-    long long _offset;
+    unsigned long long _offset;
     id _dataSource;
 }
 
 @property(nonatomic) id dataSource; // @synthesize dataSource=_dataSource;
-@property(nonatomic) long long offset; // @synthesize offset=_offset;
+@property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) id <MTLBuffer> buffer; // @synthesize buffer=_buffer;
 @property long long usedCount; // @synthesize usedCount=_usedCount;
 - (long long)decrementUsedCount;

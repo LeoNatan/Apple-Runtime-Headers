@@ -37,6 +37,7 @@
 - (id)photoLibrary;
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
 - (id)changeHandlingKey;
+- (_Bool)isFullyBackedByObjectIDs;
 - (id)copyWithOptions:(id)arg1;
 - (void)getMediaTypeCounts;
 - (unsigned long long)hash;

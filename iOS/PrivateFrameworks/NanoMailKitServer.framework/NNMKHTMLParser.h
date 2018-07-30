@@ -66,6 +66,7 @@
 - (id)_topStringAttributes;
 - (void)_enumerateAttributes:(const char **)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)_valueForAttributeNamed:(id)arg1 inAttributes:(const char **)arg2;
+- (void)_stringAttributeForHyperlink:(id)arg1 attributes:(const char **)arg2 stringAttributeKey:(id *)arg3 stringAttributeValue:(id *)arg4;
 - (unsigned long long)_writingDirectionFromString:(id)arg1;
 - (unsigned long long)_textAlignmentFromString:(id)arg1;
 - (id)_stringAttributeValueForCSSStyleName:(id)arg1 inStyleAttribute:(id)arg2;
@@ -74,6 +75,7 @@
 - (_Bool)_isElementIgnorable:(id)arg1;
 - (_Bool)_isElementBody:(id)arg1;
 - (_Bool)_isElementHead:(id)arg1;
+- (_Bool)_isElementHyperlink:(id)arg1;
 - (_Bool)_isElementImage:(id)arg1;
 - (_Bool)_isElementListItem:(id)arg1;
 - (_Bool)_isElementList:(id)arg1 ordered:(_Bool *)arg2;

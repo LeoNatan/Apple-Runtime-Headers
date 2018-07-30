@@ -6,13 +6,14 @@
 
 #import <CoreImage/CIFilter.h>
 
-@class AVCameraCalibrationData, CIImage, CIVector, NSNumber;
+@class AVCameraCalibrationData, CIImage, CIVector, NSNumber, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CIDepthBlurEffect : CIFilter
 {
     CIImage *inputImage;
     CIImage *inputDisparityImage;
+    CIImage *inputMatteImage;
     NSNumber *inputAperture;
     CIVector *inputLeftEyePositions;
     CIVector *inputRightEyePositions;
@@ -23,19 +24,26 @@ __attribute__((visibility("hidden")))
     NSNumber *inputScaleFactor;
     AVCameraCalibrationData *inputCalibrationData;
     id inputAuxDataMetadata;
+    NSString *inputShape;
 }
 
 + (id)customAttributes;
++ (struct CGImageMetadata *)augmentMetadataWithRenderingPropertiesForImage:(id)arg1;
++ (struct CGImageMetadata *)metadataFromDictionary:(id)arg1 metadata:(struct CGImageMetadata *)arg2;
++ (id)tuningParametersFromMetadata:(struct CGImageMetadata *)arg1;
++ (struct CGImageMetadata *)replaceRenderingParameters:(struct CGImageMetadata *)arg1 tuningParameters:(id)arg2;
+@property(retain, nonatomic) NSString *inputShape; // @synthesize inputShape;
 @property(retain, nonatomic) id inputAuxDataMetadata; // @synthesize inputAuxDataMetadata;
-@property(copy, nonatomic) AVCameraCalibrationData *inputCalibrationData; // @synthesize inputCalibrationData;
+@property(retain, nonatomic) AVCameraCalibrationData *inputCalibrationData; // @synthesize inputCalibrationData;
 @property(retain, nonatomic) NSNumber *inputScaleFactor; // @synthesize inputScaleFactor;
 @property(retain, nonatomic) CIVector *inputFocusRect; // @synthesize inputFocusRect;
-@property(retain, nonatomic) CIVector *inputNosePositions; // @synthesize inputNosePositions;
-@property(retain, nonatomic) CIVector *inputChinPositions; // @synthesize inputChinPositions;
-@property(retain, nonatomic) CIVector *inputRightEyePositions; // @synthesize inputRightEyePositions;
-@property(retain, nonatomic) CIVector *inputLeftEyePositions; // @synthesize inputLeftEyePositions;
+@property(retain) CIVector *inputNosePositions; // @synthesize inputNosePositions;
+@property(retain) CIVector *inputChinPositions; // @synthesize inputChinPositions;
+@property(retain) CIVector *inputRightEyePositions; // @synthesize inputRightEyePositions;
+@property(retain) CIVector *inputLeftEyePositions; // @synthesize inputLeftEyePositions;
 @property(retain, nonatomic) NSNumber *inputLumaNoiseScale; // @synthesize inputLumaNoiseScale;
 @property(retain, nonatomic) NSNumber *inputAperture; // @synthesize inputAperture;
+@property(retain) CIImage *inputMatteImage; // @synthesize inputMatteImage;
 @property(retain) CIImage *inputDisparityImage; // @synthesize inputDisparityImage;
 @property(retain) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;

@@ -7,6 +7,15 @@
 #import "NSURL.h"
 
 @interface NSURL (TSUAdditions)
++ (id)tsu_fileURLWithPath:(id)arg1;
+@property(readonly, getter=tsu_isInTrash) BOOL tsu_inTrash;
+- (void)tsu_removeCachedResourceValueForKeys:(id)arg1;
+- (id)tsu_fileProviderBookmarkableString;
+- (BOOL)tsu_isOnSameVolumeAs:(id)arg1;
+- (id)tsu_reachableFileURLByDeletingUnreachablePathComponents;
+- (BOOL)tsu_isOnAPFSVolume;
+- (BOOL)tsu_isOnForeignVolume;
+- (id)tsu_fileSystemTypeName;
 - (id)tsu_fileTypeIdentifierHandlingFileCoordinationPromises;
 - (BOOL)tsu_setNeedsDocumentIdentifierAndReturnError:(out id *)arg1;
 - (BOOL)tsu_shareOwnerName:(out id *)arg1 error:(id *)arg2;

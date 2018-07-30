@@ -39,8 +39,8 @@
 - (id)_cacheShouldPlayLightsAndSirensInSectionID:(id)arg1 matchID:(id)arg2;
 - (void)_storeReplyInfo:(id)arg1 shouldPlayLightsAndSirens:(unsigned int)arg2 transmissionDate:(id)arg3;
 - (_Bool)hasReceivedReplyBlockForBulletinMatchID:(id)arg1 sectionID:(id)arg2 companionInfo:(id)arg3;
-- (id)handleCompanionShouldPlayLightsAndSirens:(unsigned int)arg1 withSectionID:(id)arg2 otherSectionID:(id)arg3 matchID:(id)arg4 transmissionDate:(id)arg5 receptionDate:(id)arg6 companionPublicationDate:(id)arg7 localBulletin:(_Bool)arg8 isTrafficRestricted:(_Bool)arg9 turnsOnDisplay:(_Bool)arg10 ignoresQuietMode:(_Bool)arg11;
-- (id)lightsAndSirensForBulletinMatchID:(id)arg1 sectionID:(id)arg2 gizmoPublicationDate:(id)arg3 ignoresQuietMode:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)handleCompanionShouldPlayLightsAndSirens:(unsigned int)arg1 withSectionID:(id)arg2 otherSectionID:(id)arg3 matchID:(id)arg4 transmissionDate:(id)arg5 receptionDate:(id)arg6 companionPublicationDate:(id)arg7 localBulletin:(_Bool)arg8 isTrafficRestricted:(_Bool)arg9 turnsOnDisplay:(_Bool)arg10 overridesDND:(_Bool)arg11 contactIdentifier:(id)arg12;
+- (id)lightsAndSirensForBulletinMatchID:(id)arg1 sectionID:(id)arg2 gizmoPublicationDate:(id)arg3 overridesDND:(_Bool)arg4 contactIdentifier:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)sendReplyNow:(id)arg1;
 - (_Bool)_sendReplyInfo:(id)arg1;
 - (void)loadItemsFromStore:(id)arg1;

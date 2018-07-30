@@ -11,7 +11,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class ACAccountCredential, ACAccountStore, ACAccountType, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSURL;
+@class ACAccountCredential, ACAccountStore, ACAccountType, ACMutableTrackedSet, ACTrackedSet, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSURL;
 
 @interface ACAccount : NSObject <ACProtobufCoding, NSCoding, NSCopying, NSSecureCoding>
 {
@@ -36,17 +36,19 @@
     NSURL *_objectID;
     NSDate *_date;
     NSDate *_lastCredentialRenewalRejectionDate;
+    NSString *_parentAccountIdentifier;
     ACAccount *_parentAccount;
     _Bool _haveCheckedForParentAccount;
-    NSString *_parentAccountIdentifier;
     _Bool _haveCheckedForChildAccounts;
     NSArray *_childAccounts;
-    NSMutableSet *_enabledDataclasses;
-    NSMutableSet *_provisionedDataclasses;
+    ACMutableTrackedSet *_trackedProvisionedDataclasses;
+    _Bool _wasProvisionedDataclassesReset;
+    ACMutableTrackedSet *_trackedEnabledDataclasses;
+    _Bool _wasEnabledDataclassesReset;
     NSMutableSet *_dirtyProperties;
     NSMutableSet *_dirtyAccountProperties;
     NSMutableSet *_dirtyDataclassProperties;
-    id _credentialsDidChangeObserver;
+    id <NSObject> _credentialsDidChangeObserver;
     CDUnknownBlockType _accountPropertiesTransformer;
     _Bool _creatingFromManagedObject;
 }
@@ -57,6 +59,10 @@
 @property(readonly, nonatomic) NSSet *dirtyDataclassProperties; // @synthesize dirtyDataclassProperties=_dirtyDataclassProperties;
 @property(readonly, nonatomic) NSSet *dirtyAccountProperties; // @synthesize dirtyAccountProperties=_dirtyAccountProperties;
 @property(readonly, nonatomic) NSSet *dirtyProperties; // @synthesize dirtyProperties=_dirtyProperties;
+@property(readonly, nonatomic) _Bool wasEnabledDataclassesReset; // @synthesize wasEnabledDataclassesReset=_wasEnabledDataclassesReset;
+@property(copy, nonatomic) ACTrackedSet *trackedEnabledDataclasses; // @synthesize trackedEnabledDataclasses=_trackedEnabledDataclasses;
+@property(readonly, nonatomic) _Bool wasProvisionedDataclassesReset; // @synthesize wasProvisionedDataclassesReset=_wasProvisionedDataclassesReset;
+@property(copy, nonatomic) ACTrackedSet *trackedProvisionedDataclasses; // @synthesize trackedProvisionedDataclasses=_trackedProvisionedDataclasses;
 - (void).cxx_destruct;
 - (id)secCertificates;
 - (void)setSecCertificates:(id)arg1;
@@ -81,12 +87,12 @@
 - (id)propertiesForDataclass:(id)arg1;
 - (void)setDataclassProperties:(id)arg1;
 @property(readonly, nonatomic) __weak NSDictionary *dataclassProperties;
-- (_Bool)isProvisionedForDataclass:(id)arg1;
-- (void)setEnabled:(_Bool)arg1 forDataclass:(id)arg2;
 - (_Bool)isEnabledToSyncDataclass:(id)arg1;
-- (id)enabledAndSyncableDataclasses;
+- (void)setEnabled:(_Bool)arg1 forDataclass:(id)arg2;
 - (_Bool)isEnabledForDataclass:(id)arg1;
 @property(retain, nonatomic) NSMutableSet *enabledDataclasses;
+- (void)setProvisioned:(_Bool)arg1 forDataclass:(id)arg2;
+- (_Bool)isProvisionedForDataclass:(id)arg1;
 @property(retain, nonatomic) NSMutableSet *provisionedDataclasses;
 - (void)_clearCachedChildAccounts;
 - (id)childAccountsWithAccountTypeIdentifier:(id)arg1;
@@ -128,7 +134,9 @@
 @property(readonly, nonatomic) __weak NSString *identifier;
 - (void)_clearDirtyProperties;
 - (void)_markCredentialDirty;
+- (void)_unsafe_markDataclassPropertyDirty:(id)arg1;
 - (void)_markDataclassPropertyDirty:(id)arg1;
+- (void)_unsafe_markAccountPropertyDirty:(id)arg1;
 - (void)_markAccountPropertyDirty:(id)arg1;
 - (void)_unsafe_markPropertyDirty:(id)arg1;
 - (void)_markPropertyDirty:(id)arg1;

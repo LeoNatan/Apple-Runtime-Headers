@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface PDTransitionOptions : NSObject
 {
     BOOL mHasSound;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *mSoundFile;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 
 @end

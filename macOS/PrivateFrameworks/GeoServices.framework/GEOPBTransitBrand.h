@@ -10,6 +10,7 @@
 
 @class GEOStyleAttributes, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPBTransitBrand : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

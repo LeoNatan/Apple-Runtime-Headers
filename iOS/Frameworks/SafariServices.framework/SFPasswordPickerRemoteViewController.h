@@ -6,13 +6,25 @@
 
 #import <SafariServices/SFPasswordRemoteViewController.h>
 
+#import "SFPasswordPickerRemoteViewControllerProtocol.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface SFPasswordPickerRemoteViewController : SFPasswordRemoteViewController
+@interface SFPasswordPickerRemoteViewController : SFPasswordRemoteViewController <SFPasswordPickerRemoteViewControllerProtocol>
 {
 }
 
++ (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 + (id)passwordServiceViewControllerName;
+- (void)selectedCredential:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

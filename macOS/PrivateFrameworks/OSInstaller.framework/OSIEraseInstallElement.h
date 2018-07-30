@@ -10,6 +10,8 @@
 {
 }
 
++ (id)volumesToRemove:(id)arg1 exemptingTarget:(id)arg2;
++ (id)diskForDiskUUID:(id)arg1 fromDisks:(id)arg2;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;

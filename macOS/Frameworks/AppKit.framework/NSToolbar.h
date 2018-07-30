@@ -76,6 +76,8 @@
 - (void)_setLoadedMetrics:(BOOL)arg1;
 - (id)_window;
 - (struct CGSize)_minimumWindowSizeEnsuringVisibilityOfItem:(id)arg1;
+- (struct CGSize)_minimumSizeForTextFieldToolbarItem;
+- (struct CGSize)_maximumSizeForTextFieldToolbarItem;
 - (struct CGSize)_minimumSizeForSearchFieldToolbarItem;
 - (struct CGSize)_maximumSizeForSearchFieldToolbarItem;
 - (id)_toolbarItemsFromDelegateWithPasteboard:(id)arg1;
@@ -138,6 +140,9 @@
 - (BOOL)_usesSharedToolbarWindow;
 - (BOOL)_inGlobalWindow;
 - (void)_setInGlobalWindow:(BOOL)arg1;
+- (id)toolbarDragToken;
+- (BOOL)isPaletteToolbar;
+- (void)setIsPaletteToolbar:(BOOL)arg1;
 - (id)_currentToolbarItemIdentifiers;
 - (void)_restoreToolbarItemsAfterSheet;
 - (void)_prepareToolbarItemsForSheet;
@@ -164,6 +169,11 @@
 - (id)_dictionaryForSavedConfiguration;
 - (id)_itemIndexToPropertyListRepresentationDictionary;
 - (id)_determineItemIdentifiersFromPreviousIdentifiers:(id)arg1 oldDefault:(id)arg2 newDefault:(id)arg3;
+- (void)setPreferredPrincipalItemWidthRatio:(double)arg1;
+- (double)preferredPrincipalItemWidthRatio;
+- (void)setPrincipalItemIdentifier:(id)arg1;
+- (id)principalItemIdentifier;
+@property(copy) NSString *centeredItemIdentifier;
 - (id)toolbarAllowedItemIdentifiers:(id)arg1;
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;
 - (id)selectableItemIdentifiers;
@@ -234,6 +244,8 @@
 - (id)_items;
 @property(readonly, copy) NSString *identifier;
 - (BOOL)_allowsDuplicateItems;
+- (BOOL)isBezeled;
+- (void)setBezeled:(BOOL)arg1;
 @property BOOL allowsUserCustomization;
 - (BOOL)_drawsBackground;
 - (id)_backgroundColor;

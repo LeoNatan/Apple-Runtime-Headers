@@ -20,6 +20,7 @@
 -     // Error parsing type: Q40@0:8^16Q24d32, name: getFloat3Array:maxCount:atTime:
 -     // Error parsing type: v40@0:8r^16Q24d32, name: setDouble3Array:count:atTime:
 -     // Error parsing type: v40@0:8r^16Q24d32, name: setFloat3Array:count:atTime:
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (struct VtValue)defaultVtValue;
 - (unsigned long long)precision;

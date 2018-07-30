@@ -15,7 +15,9 @@
 
 @interface HUQuickControlViewController : UIViewController <HUQuickControlInteractiveContentContaining, HUQuickControlContentCharacteristicWriting, HUQuickControlItemHosting, HUPreloadableViewController>
 {
+    _Bool _controlsVisible;
     _Bool _userInteractionEnabled;
+    _Bool _areControlItemsRequestingToBeHidden;
     id <HUQuickControlContentCharacteristicWritingDelegate> _characteristicWritingDelegate;
     id <HUQuickControlContentHosting> _quickControlHost;
     id <HULayoutAnchorProviding> _preferredFrameLayoutGuide;
@@ -28,6 +30,7 @@
 }
 
 + (id)controlItemPredicate;
+@property(nonatomic) _Bool areControlItemsRequestingToBeHidden; // @synthesize areControlItemsRequestingToBeHidden=_areControlItemsRequestingToBeHidden;
 @property(readonly, nonatomic) HUQuickControlSimpleItemUpdater *internalItemUpdater; // @synthesize internalItemUpdater=_internalItemUpdater;
 @property(nonatomic) unsigned long long controlSize; // @synthesize controlSize=_controlSize;
 @property(nonatomic) __weak id <HUQuickControlViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -37,22 +40,22 @@
 @property(nonatomic, getter=isUserInteractionEnabled) _Bool userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic) __weak id <HUQuickControlContentHosting> quickControlHost; // @synthesize quickControlHost=_quickControlHost;
 @property(nonatomic) __weak id <HUQuickControlContentCharacteristicWritingDelegate> characteristicWritingDelegate; // @synthesize characteristicWritingDelegate=_characteristicWritingDelegate;
+@property(nonatomic, getter=areControlsVisible) _Bool controlsVisible; // @synthesize controlsVisible=_controlsVisible;
 - (void).cxx_destruct;
 - (void)quickControlItemUpdater:(id)arg1 didUpdateResultsForControlItems:(id)arg2;
+- (void)_updateControlItemHiddenStateNotifyingHost:(_Bool)arg1;
 - (id)childQuickControlContentViewControllers;
 @property(readonly, copy, nonatomic) NSSet *affectedCharacteristics;
 - (id)overrideValueForCharacteristic:(id)arg1;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *overrideSecondaryStatusText;
 @property(readonly, copy, nonatomic) NSString *overrideStatusText;
-@property(readonly, nonatomic) _Bool shouldShowControlWhenUnreachable;
+- (_Bool)shouldShowContentForReachabilityState:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool hasSingleControlView;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 @property(retain, nonatomic) id <HULayoutAnchorProviding> preferredFrameLayoutGuide; // @synthesize preferredFrameLayoutGuide=_preferredFrameLayoutGuide;
 - (id)hu_preloadContent;
 @property(readonly, nonatomic) unsigned long long preferredPresentationStyle;
-- (void)viewDidDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithControlItems:(id)arg1 home:(id)arg2 itemUpdater:(id)arg3;

@@ -15,6 +15,7 @@
 @optional
 - (void)airplaySolo:(WPAirPlaySolo *)arg1 peerTrackingSlotsAvailable:(BOOL)arg2;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 didLosePeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3;
+- (void)airPlaySolo:(WPAirPlaySolo *)arg1 didFindPeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 didStopTrackingPeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 didStartTrackingPeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3 error:(NSError *)arg4;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 failedToStartScanningWithError:(NSError *)arg2;

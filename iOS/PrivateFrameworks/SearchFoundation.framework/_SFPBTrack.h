@@ -13,7 +13,6 @@
 
 @interface _SFPBTrack : PBCodable <_SFPBTrack, NSSecureCoding>
 {
-    CDStruct_62e447a2 _has;
     _Bool _highlighted;
     NSString *_title;
     NSString *_number;
@@ -37,12 +36,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasPlayAction;
-@property(readonly, nonatomic) _Bool hasPreview;
-@property(readonly, nonatomic) _Bool hasHighlighted;
-@property(readonly, nonatomic) _Bool hasDuration;
-@property(readonly, nonatomic) _Bool hasNumber;
-@property(readonly, nonatomic) _Bool hasTitle;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

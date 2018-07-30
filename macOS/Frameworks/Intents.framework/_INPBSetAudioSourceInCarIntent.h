@@ -7,42 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSetAudioSourceInCarIntent.h"
 
-@class PBUnknownFields, _INPBIntentMetadata;
+@class NSString, _INPBIntentMetadata;
 
-@interface _INPBSetAudioSourceInCarIntent : PBCodable <NSCopying>
+@interface _INPBSetAudioSourceInCarIntent : PBCodable <_INPBSetAudioSourceInCarIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _audioSource;
-    _INPBIntentMetadata *_intentMetadata;
-    int _relativeAudioSourceReference;
     struct {
         unsigned int audioSource:1;
         unsigned int relativeAudioSourceReference:1;
     } _has;
+    int _audioSource;
+    int _relativeAudioSourceReference;
+    _INPBIntentMetadata *_intentMetadata;
 }
 
-+ (id)options;
+@property(nonatomic) int relativeAudioSourceReference; // @synthesize relativeAudioSourceReference=_relativeAudioSourceReference;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) int audioSource; // @synthesize audioSource=_audioSource;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 - (int)StringAsRelativeAudioSourceReference:(id)arg1;
 - (id)relativeAudioSourceReferenceAsString:(int)arg1;
 @property(nonatomic) BOOL hasRelativeAudioSourceReference;
-@property(nonatomic) int relativeAudioSourceReference; // @synthesize relativeAudioSourceReference=_relativeAudioSourceReference;
+@property(readonly, nonatomic) BOOL hasIntentMetadata;
 - (int)StringAsAudioSource:(id)arg1;
 - (id)audioSourceAsString:(int)arg1;
 @property(nonatomic) BOOL hasAudioSource;
-@property(nonatomic) int audioSource; // @synthesize audioSource=_audioSource;
-@property(readonly, nonatomic) BOOL hasIntentMetadata;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

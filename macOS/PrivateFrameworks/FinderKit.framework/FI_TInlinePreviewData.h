@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TInlinePreviewData : NSObject <NSCopying>
 {
-    struct TNSRef<NSDictionary *, void> _clientProperties;
+    struct TNSRef<NSDictionary, void> _clientProperties;
     unsigned short _contentRect[4];
 }
 

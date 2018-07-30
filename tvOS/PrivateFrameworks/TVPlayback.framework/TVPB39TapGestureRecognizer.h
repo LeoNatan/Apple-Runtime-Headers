@@ -6,7 +6,6 @@
 
 #import "UITapGestureRecognizer.h"
 
-__attribute__((visibility("hidden")))
 @interface TVPB39TapGestureRecognizer : UITapGestureRecognizer
 {
     _Bool _synthetic;

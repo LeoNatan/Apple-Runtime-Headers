@@ -37,6 +37,7 @@
 - (void)requestGuidedAccessSessionStartWithConfigurationDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)guidedAccessAvailability;
 - (id)performGuidedAccessAutomationCommand:(id)arg1 error:(id *)arg2;
+- (void)guidedAccessEffectiveAppBundleIdentifier:(CDUnknownBlockType)arg1;
 - (id)guidedAccessEffectiveAppBundleIdentifier;
 - (_Bool)isGuidedAccessInWorkspace;
 - (_Bool)isGuidedAccessActive;

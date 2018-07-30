@@ -30,7 +30,6 @@
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_validate;
 - (void)queue_deliverError:(id)arg1;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithSampleType:(id)arg1 samplePredicate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties

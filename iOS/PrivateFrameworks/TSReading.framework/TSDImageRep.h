@@ -96,8 +96,6 @@
 - (id)p_imageProvider;
 - (id)p_imageData;
 - (id)textureForContext:(id)arg1;
-- (id)magicMoveAttributesWithShapeAttributes:(_Bool)arg1;
-- (void)setMagicMoveTextureAttributes:(id)arg1;
 - (void)viewScaleDidChange;
 - (id)additionalLayersOverLayer;
 - (void)p_updateStrokeLayerForStroke:(id)arg1 repLayer:(id)arg2;

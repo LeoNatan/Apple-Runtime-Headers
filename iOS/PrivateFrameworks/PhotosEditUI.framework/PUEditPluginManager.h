@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface PUEditPluginManager : NSObject
 {
     unsigned long long _mediaType;

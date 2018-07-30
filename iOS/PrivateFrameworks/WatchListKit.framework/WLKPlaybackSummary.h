@@ -13,6 +13,7 @@
 @interface WLKPlaybackSummary : NSObject <NSSecureCoding>
 {
     _Bool _isAlwaysLive;
+    _Bool _isTimerDerived;
     NSString *_bundleID;
     NSDate *_timestamp;
     NSDate *_currentPlaybackDate;
@@ -32,6 +33,7 @@
 + (id)debugStringForCompletionState:(long long)arg1;
 + (long long)completionStateForDuration:(double)arg1 elapsedTime:(double)arg2;
 + (double)playedThresholdTimeForDuration:(double)arg1;
+@property(readonly, nonatomic) _Bool isTimerDerived; // @synthesize isTimerDerived=_isTimerDerived;
 @property(readonly, nonatomic) long long playbackType; // @synthesize playbackType=_playbackType;
 @property(readonly, nonatomic) _Bool isAlwaysLive; // @synthesize isAlwaysLive=_isAlwaysLive;
 @property(readonly, nonatomic) long long completionState; // @synthesize completionState=_completionState;
@@ -62,8 +64,9 @@
 - (_Bool)isEqualToSummaryExcludingCursor:(id)arg1;
 - (_Bool)isEqualToSummary:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithBundleId:(id)arg1 timestamp:(id)arg2 duration:(id)arg3 elapsedTime:(id)arg4 externalProfileID:(id)arg5 contentID:(id)arg6 accountID:(id)arg7 playbackState:(long long)arg8 playbackRate:(id)arg9 completionState:(long long)arg10 isAlwaysLive:(_Bool)arg11 serviceID:(id)arg12 currentPlaybackDate:(id)arg13 playbackType:(long long)arg14;
+- (id)initWithBundleId:(id)arg1 timestamp:(id)arg2 duration:(id)arg3 elapsedTime:(id)arg4 externalProfileID:(id)arg5 contentID:(id)arg6 accountID:(id)arg7 playbackState:(long long)arg8 playbackRate:(id)arg9 completionState:(long long)arg10 isAlwaysLive:(_Bool)arg11 serviceID:(id)arg12 currentPlaybackDate:(id)arg13 playbackType:(long long)arg14 isTimerDerived:(_Bool)arg15;
 - (id)initWithMediaRemoteDictionary:(id)arg1 bundleID:(id)arg2 accountID:(id)arg3;
+- (id)elapsedTimeSummaryWithPlaybackState:(long long)arg1 timerDerived:(_Bool)arg2;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSIndexSet, SiriTVUIViewStyle;
 
+__attribute__((visibility("hidden")))
 @interface SiriTVUIViewStyleRule : NSObject
 {
     NSIndexSet *_styleSelector;

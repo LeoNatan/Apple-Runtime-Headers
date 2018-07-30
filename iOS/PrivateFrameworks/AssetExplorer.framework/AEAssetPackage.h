@@ -8,20 +8,22 @@
 
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
+#import "NSSecureCoding.h"
 #import "PUCAMReviewAsset.h"
 
 @class AVAsset, AVAudioMix, CLLocation, NSDate, NSDictionary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL, PFAssetAdjustments, PHLivePhoto, UIImage;
 
-@interface AEAssetPackage : NSObject <PUCAMReviewAsset, NSCopying, NSMutableCopying>
+@interface AEAssetPackage : NSObject <PUCAMReviewAsset, NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSString *_identifier;
     NSObject<OS_dispatch_queue> *__packageContentQueue;
     NSMutableDictionary *__contentQueue_finalURLs;
     NSMutableDictionary *__contentQueueSidecar;
-    NSMutableSet *__contentQueue_suppressedURLKeys;
+    NSMutableSet *__contentQueue_suppressedTypes;
 }
 
-@property(readonly, nonatomic) NSMutableSet *_contentQueue_suppressedURLKeys; // @synthesize _contentQueue_suppressedURLKeys=__contentQueue_suppressedURLKeys;
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) NSMutableSet *_contentQueue_suppressedTypes; // @synthesize _contentQueue_suppressedTypes=__contentQueue_suppressedTypes;
 @property(readonly, nonatomic) NSMutableDictionary *_contentQueueSidecar; // @synthesize _contentQueueSidecar=__contentQueueSidecar;
 @property(readonly, nonatomic) NSMutableDictionary *_contentQueue_finalURLs; // @synthesize _contentQueue_finalURLs=__contentQueue_finalURLs;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_packageContentQueue; // @synthesize _packageContentQueue=__packageContentQueue;
@@ -29,12 +31,17 @@
 - (void).cxx_destruct;
 - (id)sidecarObjectForKey:(id)arg1;
 - (id)currentURLForType:(id)arg1;
+- (id)suppressedTypesSnapshot;
 - (id)sidecarSnapshot;
+- (id)durableURLsSnapshotApplyingSuppression:(_Bool)arg1;
 - (id)durableURLsSnapshot;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)init;
-- (id)initWithAssetIdentifier:(id)arg1 durableURLs:(id)arg2 suppressedURLKeys:(id)arg3 sidecar:(id)arg4;
+- (id)initWithAssetIdentifier:(id)arg1 durableURLs:(id)arg2 suppressedTypes:(id)arg3 sidecar:(id)arg4;
 - (id)initWithAssetIdentifier:(id)arg1 durableURLs:(id)arg2 sidecar:(id)arg3;
 - (_Bool)isURLSuppressedForType:(id)arg1;
 - (id)reviewAssetFromPackageMetadata;
@@ -84,10 +91,11 @@
 - (_Bool)containsSuppressedLivePhoto;
 - (_Bool)containsLivePhotoContent;
 - (long long)mediaOrigin;
+- (id)browserItemPayload;
+- (long long)_sendSourceFromMediaOrigin:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <TVMediaQueryEvaluatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) _TVWindowSizeAdaptor *windowSizeAdaptor; // @synthesize windowSizeAdaptor=_windowSizeAdaptor;
 @property(readonly, retain, nonatomic) id <UITraitEnvironment> traitEnvironment; // @synthesize traitEnvironment=_traitEnvironment;
-@property(readonly, retain, nonatomic) IKViewElement *templateElement; // @synthesize templateElement=_templateElement;
+@property(retain, nonatomic) IKViewElement *templateElement; // @synthesize templateElement=_templateElement;
 - (void).cxx_destruct;
 - (_Bool)_evaluateAllMediaFeatureType:(id)arg1 withValue:(id)arg2;
 - (_Bool)_evaluateTemplateFeatureType:(id)arg1 withValue:(id)arg2;

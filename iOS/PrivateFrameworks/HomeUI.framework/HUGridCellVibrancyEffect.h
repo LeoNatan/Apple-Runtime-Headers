@@ -10,6 +10,7 @@
 {
 }
 
++ (id)vibrancyEffect;
 - (id)effectConfig;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

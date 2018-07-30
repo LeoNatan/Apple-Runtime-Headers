@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSTimer;
+@class NSMutableDictionary, NSRecursiveLock, NSTimer;
 
 @interface MMCSController : NSObject
 {
@@ -21,8 +21,13 @@
     NSMutableDictionary *_requestIDToRemainingTransfersMap;
     NSMutableDictionary *_transferToRequestIDsMap;
     NSMutableDictionary *_transfers;
+    NSMutableDictionary *_transferIDToContextMap;
+    NSRecursiveLock *_transferIDContextMapLock;
 }
 
++ (void)preMMCSWarm:(id)arg1;
+@property(retain) NSRecursiveLock *transferIDContextMapLock; // @synthesize transferIDContextMapLock=_transferIDContextMapLock;
+@property(readonly) NSMutableDictionary *transferIDToContextMap; // @synthesize transferIDToContextMap=_transferIDToContextMap;
 @property(readonly) NSMutableDictionary *transfers; // @synthesize transfers=_transfers;
 @property long long connectionBehavior; // @synthesize connectionBehavior=_connectionBehavior;
 - (void)_MMCSRegisterItems:(struct _mmcs_engine *)arg1 requestorContext:(void *)arg2 requestOptions:(id)arg3 completionCallback:(CDUnknownFunctionPointerType)arg4;
@@ -35,7 +40,10 @@
 - (void)_putItemUpdated:(id)arg1 progress:(double)arg2 state:(int)arg3 error:(id)arg4;
 - (id)getContentHeadersAsString;
 - (id)parseContentHeaderAsDictionary:(id)arg1 treatValuesAsArrays:(BOOL)arg2;
-- (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 authToken:(id)arg4 preauthenticate:(BOOL)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (void)cancelPutRequestID:(id)arg1;
+- (void)removeRequestorContext:(id)arg1 transferID:(id)arg2;
+- (void)addRequestorContext:(id)arg1 transferID:(id)arg2;
+- (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 transferID:(id)arg4 authToken:(id)arg5 preauthenticate:(BOOL)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (void)getFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 authToken:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (BOOL)unregisterFiles:(id)arg1;
 - (void)registerFilesForUpload:(id)arg1 withPreauthentication:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
@@ -43,7 +51,7 @@
 @property(readonly) BOOL isActive;
 - (void)_registerFiles:(id)arg1 preauthenticate:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)_getTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 token:(id)arg4 error:(id *)arg5;
-- (BOOL)_putTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 token:(id)arg4 error:(id *)arg5;
+- (BOOL)_putTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 transferID:(id)arg4 token:(id)arg5 error:(id *)arg6;
 - (void)_setScheduledTransfers:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)_unregisterTransfers:(id)arg1;
 - (void)_registerTransfers:(id)arg1 preauthenticate:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
@@ -56,6 +64,8 @@
 - (void)dealloc;
 - (void)_registerPowerAssertionIfNeeded;
 - (void)_unregisterPowerAssertion;
+- (void)_schedulePowerAssertionTimer;
+- (void)_invalidatePowerAssertionTimer;
 - (void)_releasePowerAssertion;
 - (void)_releasePowerAssertionAndSimulateCrash;
 - (id)init;

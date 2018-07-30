@@ -10,6 +10,7 @@
 
 @class AVCallbackContextRegistry, AVWeakReference, NSObject<AVWeakObservable>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVWeaklyObservedObjectClientBlockKVONotifier : NSObject <AVKVONotifier>
 {
     AVCallbackContextRegistry *_callbackContextRegistry;

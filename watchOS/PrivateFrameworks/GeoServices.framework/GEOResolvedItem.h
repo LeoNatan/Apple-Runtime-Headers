@@ -8,7 +8,6 @@
 
 @class GEOPDResolvedItem, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOResolvedItem : NSObject
 {
     GEOPDResolvedItem *_resolvedItem;

@@ -19,6 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)autoFillNodeWithBundleNodeHandle:(const struct BundleNodeHandle *)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (long long)htmlInputElementLastAutoFillButtonType;
+- (long long)htmlInputElementAutoFillButtonType;
+- (void)setHTMLInputElementAutoFilledWithAutomaticStrongPassword:(BOOL)arg1;
 - (const struct BundleNodeHandle *)wkBundleNodeHandle;
 - (BOOL)isHTMLTextAreaElementUserEdited;
 - (BOOL)isHTMLInputElementUserEdited;

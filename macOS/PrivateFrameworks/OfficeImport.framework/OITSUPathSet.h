@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary, NSMutableSet;
 
-__attribute__((visibility("hidden")))
 @interface OITSUPathSet : NSObject <NSCopying>
 {
     NSMutableSet *mPaths;

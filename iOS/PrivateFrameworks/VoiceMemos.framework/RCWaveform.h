@@ -10,31 +10,33 @@
 #import "NSMutableCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSMutableArray;
+@class NSArray;
 
 @interface RCWaveform : NSObject <NSMutableCopying, NSCopying, NSSecureCoding>
 {
-    NSMutableArray *_segments;
     unsigned long long _decodedVersion;
+    NSArray *_segments;
 }
 
++ (void)_mergeBoundarySegmentsInArray:(id)arg1;
++ (id)_mutableSegmentsIntersectingTimeRange:(CDStruct_73a5d3ca)arg1 intersectionRange:(struct _NSRange *)arg2 withSegments:(id)arg3;
++ (id)_mutableSegmentsByClippingToTimeRange:(CDStruct_73a5d3ca)arg1 withSegments:(id)arg2;
 + (_Bool)supportsSecureCoding;
++ (struct _NSRange)rangeOfSegmentsIntersectingTimeRange:(CDStruct_73a5d3ca)arg1 withSegments:(id)arg2;
 + (id)waveformWithContentsOfURL:(id)arg1 minimumRequiredVersion:(unsigned long long)arg2;
 + (id)waveformURLForAVURL:(id)arg1;
 + (void)initialize;
-@property(readonly, nonatomic) NSArray *segments; // @synthesize segments=_segments;
+@property(retain) NSArray *segments; // @synthesize segments=_segments;
 - (void).cxx_destruct;
-- (void)_mergeBoundarySegmentsInArray:(id)arg1;
-- (id)_mutableSegmentsIntersectingTimeRange:(CDStruct_73a5d3ca)arg1 intersectionRange:(struct _NSRange *)arg2;
-- (id)_mutableSegmentsByClippingToTimeRange:(CDStruct_73a5d3ca)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct _NSRange)rangeOfSegmentsIntersectingTimeRange:(CDStruct_73a5d3ca)arg1;
 - (id)segmentsByClippingToTimeRange:(CDStruct_73a5d3ca)arg1;
 - (_Bool)saveContentsToURL:(id)arg1;
 @property(readonly, nonatomic) unsigned long long averagePowerLevelsRate;
+@property(readonly) unsigned long long segmentCount;
+@property(readonly) NSArray *segmentsCopy;
 - (_Bool)isWaveformDataEqualToDataInWaveform:(id)arg1;
 - (_Bool)hasUniformPowerLevel:(float)arg1;
 - (id)initWithSegments:(id)arg1;

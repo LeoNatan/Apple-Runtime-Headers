@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class AVDepthData, CIFilterShape, NSDictionary, NSURL;
+@class AVDepthData, AVPortraitEffectsMatte, CIFilterShape, NSDictionary, NSURL;
 
 @interface CIImage : NSObject <NSSecureCoding, NSCopying>
 {
@@ -50,6 +50,8 @@
 + (id)nullImage;
 + (id)imageWithDepthData:(id)arg1;
 + (id)imageWithDepthData:(id)arg1 options:(id)arg2;
++ (id)imageWithPortaitEffectsMatte:(id)arg1;
++ (id)imageWithPortaitEffectsMatte:(id)arg1 options:(id)arg2;
 + (id)imageWithAttributedString:(id)arg1 format:(int)arg2 options:(id)arg3;
 + (id)imageWithAttributedString:(id)arg1 format:(int)arg2;
 + (id)imageWithImageProvider:(id)arg1 size:(unsigned long long)arg2:(unsigned long long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 options:(id)arg6;
@@ -97,6 +99,8 @@
 - (id)imageBySamplingNearest;
 - (id)imageBySettingProperties:(id)arg1;
 - (id)_imageByRenderingToIntermediate;
+- (id)imageByInsertingIntermediate:(_Bool)arg1;
+- (id)imageByInsertingIntermediate;
 - (id)imageByTaggingWithColorSpace:(struct CGColorSpace *)arg1;
 - (id)imageByColorMatchingColorSpaceToWorkingSpace:(struct CGColorSpace *)arg1;
 - (id)_imageByMatchingColorSpaceToWorkingSpace:(struct CGColorSpace *)arg1;
@@ -137,10 +141,11 @@
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1;
 - (id)_initWithCVImageBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
+@property(readonly, nonatomic) AVPortraitEffectsMatte *portraitEffectsMatte;
 @property(readonly, nonatomic) AVDepthData *depthData;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer;
 - (struct __CVBuffer *)_originalCVPixelBuffer;
-- (void)_setOriginalCVPixelBuffer:(struct __CVBuffer *)arg1;
+- (void)_setOriginalCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
 - (id)initWithMTLTexture:(id)arg1 options:(id)arg2;
 - (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize)arg2 options:(id)arg3;
 - (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize)arg2 flipped:(_Bool)arg3 options:(id)arg4;
@@ -151,16 +156,19 @@
 - (id)initWithCGLayer:(struct CGLayer *)arg1 options:(id)arg2;
 - (id)initWithCGLayer:(struct CGLayer *)arg1;
 - (id)initWithCGImageSource:(struct CGImageSource *)arg1 index:(unsigned long long)arg2 options:(id)arg3;
+- (id)initMatteWithImageSource:(struct CGImageSource *)arg1 options:(id)arg2;
 - (id)initAuxiliaryWithImageSource:(struct CGImageSource *)arg1 options:(id)arg2 depth:(_Bool)arg3;
 - (id)initWithCGImage:(struct CGImage *)arg1 options:(id)arg2;
 - (id)_initNaiveWithCGImage:(struct CGImage *)arg1 options:(id)arg2;
 - (id)initWithCGImage:(struct CGImage *)arg1;
 @property(readonly, nonatomic) struct CGImage *CGImage;
 - (struct CGImage *)_originalCGImage;
-- (void)_setOriginalCGImage:(struct CGImage *)arg1;
+- (void)_setOriginalCGImage:(struct CGImage *)arg1 options:(id)arg2;
 - (id)_initWithIOSurface:(struct __IOSurface *)arg1 options:(id)arg2 owner:(void *)arg3;
 - (id)initWithDepthData:(id)arg1;
 - (id)initWithDepthData:(id)arg1 options:(id)arg2;
+- (id)initWithPortaitEffectsMatte:(id)arg1;
+- (id)initWithPortaitEffectsMatte:(id)arg1 options:(id)arg2;
 - (id)initWithAttributedString:(id)arg1 format:(int)arg2 options:(id)arg3;
 - (id)initWithAttributedString:(id)arg1 format:(int)arg2;
 - (id)_pdfDataRepresentation;
@@ -177,13 +185,18 @@
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 options:(id)arg2;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 options:(id)arg3;
 - (id)_autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 context:(id)arg3 options:(id)arg4;
-- (id)_dictForFeature:(id)arg1 scale:(double)arg2 imageHeight:(float)arg3;
+- (struct CGAffineTransform)inverseImageTransformForOrientation:(int)arg1;
+- (id)_dictForFeature:(id)arg1 invOrientationTransform:(struct CGAffineTransform)arg2 extent:(struct CGRect)arg3;
+- (struct CGPoint)pointWithDictionary:(id)arg1 name:(id)arg2 index:(int)arg3 transformedBy:(struct CGAffineTransform)arg4;
+- (id)imageWithMesh:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (id)autoAdjustmentFiltersWithOptions:(id)arg1;
 - (id)autoAdjustmentFilters;
 - (id)autoAdjustmentFiltersWithImageProperties:(id)arg1 options:(id)arg2;
 - (id)_scaleImageToMaxDimension:(unsigned int)arg1;
 - (id)smartBlackAndWhiteAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
 - (id)smartBlackAndWhiteStatistics;
+- (id)metalImageByApplyingFilter:(id)arg1;
+- (id)metalImageByApplyingFilter:(id)arg1 withInputParameters:(id)arg2;
 - (id)localLightStatisticsNoProxy;
 - (id)localLightStatistics;
 - (id)localLightStatisticsWithProxy:(_Bool)arg1;

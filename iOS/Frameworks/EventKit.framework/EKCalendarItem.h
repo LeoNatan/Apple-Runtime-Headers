@@ -125,6 +125,7 @@
 - (_Bool)allowsCalendarModifications;
 - (_Bool)isOrganizedBySharedCalendarOwner;
 - (_Bool)isExternallyOrganizedInvitation;
+- (_Bool)_isExternallyOrganizedInvitationWithAttendees:(_Bool)arg1;
 - (_Bool)isSelfOrganizedInvitation;
 - (_Bool)isSelfOrganized;
 - (_Bool)isFloating;

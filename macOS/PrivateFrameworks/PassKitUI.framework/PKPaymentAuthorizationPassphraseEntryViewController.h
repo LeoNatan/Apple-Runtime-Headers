@@ -8,19 +8,21 @@
 
 #import "NSTextFieldDelegate.h"
 
-@class NSArray, NSString, NSTextField;
+@class NSArray, NSImageView, NSString, NSTextField;
 
 @interface PKPaymentAuthorizationPassphraseEntryViewController : PKPaymentAuthorizationChildViewController <NSTextFieldDelegate>
 {
     unsigned long long _passphraseLength;
     NSString *_prompt;
     id <PKPaymentAuthorizationPassphraseEntryViewControllerDelegate> _delegate;
+    NSImageView *_paymentLogoImageView;
     NSTextField *_promptField;
     NSArray *_passphraseFields;
 }
 
 @property(retain, nonatomic) NSArray *passphraseFields; // @synthesize passphraseFields=_passphraseFields;
 @property(retain, nonatomic) NSTextField *promptField; // @synthesize promptField=_promptField;
+@property(retain, nonatomic) NSImageView *paymentLogoImageView; // @synthesize paymentLogoImageView=_paymentLogoImageView;
 @property(nonatomic) __weak id <PKPaymentAuthorizationPassphraseEntryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(nonatomic) unsigned long long passphraseLength; // @synthesize passphraseLength=_passphraseLength;

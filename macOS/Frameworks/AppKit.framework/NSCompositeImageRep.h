@@ -8,6 +8,7 @@
 
 @class NSImage;
 
+__attribute__((visibility("hidden")))
 @interface NSCompositeImageRep : NSImageRep
 {
     NSImage *_baseImage;

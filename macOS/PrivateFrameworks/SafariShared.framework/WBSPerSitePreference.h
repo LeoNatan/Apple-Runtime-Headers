@@ -15,13 +15,12 @@
     NSString *_identifier;
 }
 
-+ (id)new;
++ (id)localizedStringForBinaryPreferenceValue:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (id)init;
 
 @end
 

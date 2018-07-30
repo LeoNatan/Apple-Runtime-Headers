@@ -8,6 +8,7 @@
 
 @interface CSNovDetector : NSObject
 {
+    void *_novDetect;
 }
 
 - (id)getSuperVectorWithEndPoint:(unsigned long long)arg1;

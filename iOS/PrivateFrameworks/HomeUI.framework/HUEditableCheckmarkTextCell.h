@@ -15,9 +15,9 @@
 @interface HUEditableCheckmarkTextCell : UITableViewCell <HUCellProtocol, HUDisableableCellProtocol, HUEditableTextCellProtocol>
 {
     _Bool _disabled;
-    _Bool _hideCheckmark;
+    _Bool _disableCheckmark;
     _Bool _isChecked;
-    _Bool _allowEditingWhileDisabled;
+    _Bool _allowCheckmarkSelectionWhileDisabled;
     UITextField *_textField;
     HFItem *_item;
     HUCheckmarkAccessoryView *_checkmarkView;
@@ -32,15 +32,14 @@
 @property(retain, nonatomic) NSArray *dynamicConstraints; // @synthesize dynamicConstraints=_dynamicConstraints;
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
 @property(nonatomic) __weak id <HUEditableCheckmarkDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) _Bool allowEditingWhileDisabled; // @synthesize allowEditingWhileDisabled=_allowEditingWhileDisabled;
+@property(nonatomic) _Bool allowCheckmarkSelectionWhileDisabled; // @synthesize allowCheckmarkSelectionWhileDisabled=_allowCheckmarkSelectionWhileDisabled;
 @property(nonatomic, setter=setChecked:) _Bool isChecked; // @synthesize isChecked=_isChecked;
-@property(nonatomic) _Bool hideCheckmark; // @synthesize hideCheckmark=_hideCheckmark;
+@property(nonatomic) _Bool disableCheckmark; // @synthesize disableCheckmark=_disableCheckmark;
 @property(retain, nonatomic) HUCheckmarkAccessoryView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
-- (void)_invalidateCheckmarkConstraints;
 - (void)updateConstraints;
 - (void)_checkmarkTapped:(id)arg1;
 - (void)updateUIWithAnimation:(_Bool)arg1;

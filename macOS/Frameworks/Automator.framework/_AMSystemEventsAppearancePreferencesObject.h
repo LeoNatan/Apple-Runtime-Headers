@@ -4,24 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <Automator/_AMSystemEventsItem.h>
+#import "SBObject.h"
 
-@class NSColor;
+#import "_AMSystemEventsGenericMethods.h"
 
-@interface _AMSystemEventsAppearancePreferencesObject : _AMSystemEventsItem
+@interface _AMSystemEventsAppearancePreferencesObject : SBObject <_AMSystemEventsGenericMethods>
 {
 }
 
+- (void)moveTo:(id)arg1;
+- (void)duplicateTo:(id)arg1 withProperties:(id)arg2;
+- (void)delete;
+- (void)printWithProperties:(id)arg1 printDialog:(BOOL)arg2;
+- (void)saveIn:(id)arg1 as:(int)arg2;
+- (void)closeSaving:(int)arg1 savingIn:(id)arg2;
+@property BOOL darkMode;
 @property BOOL smoothScrolling;
 @property int scrollBarAction;
-@property int scrollArrowPlacement;
 @property long long recentServersLimit;
 @property long long recentDocumentsLimit;
 @property long long recentApplicationsLimit;
-@property(copy) NSColor *highlightColor;
+@property(copy) id highlightColor;
 @property int fontSmoothingStyle;
-@property long long fontSmoothingLimit;
-@property BOOL doubleClickMinimizes;
+@property BOOL fontSmoothing;
 @property int appearance;
 
 @end

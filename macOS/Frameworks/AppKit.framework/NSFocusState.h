@@ -8,6 +8,7 @@
 
 @class NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSFocusState : NSPSMatrix
 {
     struct CGRect theClip;

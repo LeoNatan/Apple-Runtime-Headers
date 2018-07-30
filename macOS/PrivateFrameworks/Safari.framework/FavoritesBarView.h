@@ -10,7 +10,7 @@
 #import "NSDraggingDestination.h"
 #import "NSTextFieldDelegate.h"
 
-@class ClippedItemsIndicator, InlineButtonRetitler, NSArray, NSMutableArray, NSString, SeparatorView, TopSitesButton, WebBookmark;
+@class ClippedItemsIndicator, InlineButtonRetitler, NSArray, NSBox, NSMutableArray, NSString, TopSitesButton, WebBookmark;
 
 __attribute__((visibility("hidden")))
 @interface FavoritesBarView : KeyLoopSplicingContainerView <ClippedItemsIndicatorDelegate, NSDraggingDestination, NSTextFieldDelegate>
@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
     InlineButtonRetitler *_buttonRetitler;
     WebBookmark *_nextBookmarkToEdit;
     TopSitesButton *_startPageButton;
-    SeparatorView *_topBorderView;
+    NSBox *_topBorderView;
     unsigned long long _dropIndex;
 }
 

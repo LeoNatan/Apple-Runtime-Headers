@@ -11,6 +11,7 @@
 
 @class AEGridOverlayConfiguration, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AEGridOverlayView : UIView <PXUIViewBasicTile, PXReusableObject>
 {
     AEGridOverlayConfiguration *_overlayConfiguration;
@@ -31,6 +32,7 @@
 - (struct CGRect)_videoRect;
 - (struct CGRect)_cloudRect;
 - (void)drawRect:(struct CGRect)arg1;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)init;
 
 // Remaining properties

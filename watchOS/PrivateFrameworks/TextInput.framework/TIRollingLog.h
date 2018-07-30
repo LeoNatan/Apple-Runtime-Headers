@@ -18,12 +18,12 @@
     unsigned int _maxCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *currentEntries;
 - (void)addEntries:(id)arg1;
 - (void)addEntry:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMaxCount:(unsigned int)arg1;
-- (void)dealloc;
 
 @end
 

@@ -11,6 +11,7 @@
 @interface _HDWorkoutEntityEncoder : HDEntityEncoder
 {
     HDSQLiteStatement *_workoutEntryLookupStatement;
+    _Bool _includeCondenserInfo;
 }
 
 + (long long)estimatedEncodedSize;

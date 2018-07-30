@@ -42,7 +42,7 @@ struct ICDrawingAzimuthFilter {
     long long _field5;
     long long _field6;
     long long _field7;
-    vector_c0e7c5b2 _field8;
+    vector_930301b0 _field8;
     _Bool _field9;
     id _field10;
     long long _field11;
@@ -121,7 +121,7 @@ struct ICDrawingInputToOutputFilter {
     long long _field5;
     long long _field6;
     long long _field7;
-    vector_c0e7c5b2 _field8;
+    vector_930301b0 _field8;
     vector_d46ea067 _field9;
     id _field10;
 };
@@ -144,8 +144,8 @@ struct ICDrawingPointReductionFilter {
     long long _field5;
     long long _field6;
     long long _field7;
-    vector_c0e7c5b2 _field8;
-    vector_c0e7c5b2 _field9;
+    vector_930301b0 _field8;
+    vector_930301b0 _field9;
     long long _field10;
     long long _field11;
     long long _field12;
@@ -274,7 +274,8 @@ struct NSImageView {
     struct __IVFlags {
         unsigned int :1;
         unsigned int :1;
-        unsigned int :24;
+        unsigned int :1;
+        unsigned int :23;
         unsigned int :1;
         unsigned int :1;
         unsigned int :1;
@@ -487,7 +488,7 @@ struct vector<ICDrawingInputPoint, std::__1::allocator<ICDrawingInputPoint>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<ICDrawingInputPoint *, std::__1::allocator<ICDrawingInputPoint>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -584,9 +585,9 @@ typedef struct vector<ICDrawingInputPoint, std::__1::allocator<ICDrawingInputPoi
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<ICDrawingInputPoint *, std::__1::allocator<ICDrawingInputPoint>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
-} vector_c0e7c5b2;
+} vector_930301b0;
 
 typedef struct vector<ICDrawingOutputPoint, std::__1::allocator<ICDrawingOutputPoint>> {
     CDStruct_183601bc *_field1;

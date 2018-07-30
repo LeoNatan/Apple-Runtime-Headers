@@ -10,6 +10,7 @@
 {
 }
 
++ (float)proudLockCenterFromTopOfScreen;
 + (float)proudLockOffsetFromTopOfScreen;
 + (struct UIEdgeInsets)deviceInformationInsets;
 + (float)deviceInformationParagraphSpacing;

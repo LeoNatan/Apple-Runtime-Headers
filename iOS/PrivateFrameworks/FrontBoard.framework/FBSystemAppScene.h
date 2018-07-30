@@ -39,7 +39,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)identifier;
-- (void)dealloc;
 - (id)_initWithSceneImpl:(id)arg1;
 
 // Remaining properties

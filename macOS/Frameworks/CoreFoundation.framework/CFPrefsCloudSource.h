@@ -6,6 +6,7 @@
 
 #import <CoreFoundation/CFPrefsPlistSource.h>
 
+__attribute__((visibility("hidden")))
 @interface CFPrefsCloudSource : CFPrefsPlistSource
 {
     const char *_configPath;

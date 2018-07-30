@@ -49,9 +49,18 @@ struct HKRange {
     float _field2;
 };
 
+struct HKStepSizeTableEntryDefn {
+    float _field1;
+    float _field2;
+};
+
 struct IncrementalSearchResultsDefn {
     unsigned int _field1;
     struct _NSRange _field2[64];
+};
+
+struct NSDictionary {
+    Class _field1;
 };
 
 struct NSDirectionalEdgeInsets {
@@ -59,6 +68,10 @@ struct NSDirectionalEdgeInsets {
     float _field2;
     float _field3;
     float _field4;
+};
+
+struct NSMutableDictionary {
+    Class _field1;
 };
 
 struct UIEdgeInsets {
@@ -76,6 +89,16 @@ struct _HKLocationSpan {
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;
+};
+
+struct _WDActivitySummaryAverages {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    double _field5;
+    double _field6;
+    double _field7;
 };
 
 #pragma mark Typedef'd Structures
@@ -110,4 +133,10 @@ typedef struct {
     float labelValue;
     int options;
 } CDStruct_2660488d;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int timestamp:1;
+    unsigned int type:1;
+} CDStruct_1769069f;
 

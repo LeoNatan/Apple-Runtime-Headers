@@ -9,7 +9,7 @@
 #import "NTKControl.h"
 #import "NTKDateComplicationDisplay.h"
 
-@class CLKFont, NSString, UIColor, UILabel, UIView;
+@class CLKDevice, CLKFont, NSString, UIColor, UILabel, UIView;
 
 @interface NTKDateComplicationLabel : UIControl <NTKDateComplicationDisplay, NTKControl>
 {
@@ -18,13 +18,16 @@
     UILabel *_internalLabel;
     UIView *_highlightView;
     struct CGSize _cachedSize;
+    struct _NSRange _dayTextRange;
     _Bool _cachedSizeIsValid;
     _Bool _usesLegibility;
     _Bool _legibilityHidden;
     id <NTKComplicationDisplayObserver> displayObserver;
     long long _sizeStyle;
+    long long _accentType;
+    CLKDevice *_device;
     CLKFont *_font;
-    UIColor *_numberColor;
+    UIColor *_accentColor;
     unsigned long long _overrideDateStyle;
     struct UIEdgeInsets _touchEdgeInsets;
 }
@@ -33,8 +36,10 @@
 @property(nonatomic) unsigned long long overrideDateStyle; // @synthesize overrideDateStyle=_overrideDateStyle;
 @property(nonatomic) _Bool legibilityHidden; // @synthesize legibilityHidden=_legibilityHidden;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
-@property(retain, nonatomic) UIColor *numberColor; // @synthesize numberColor=_numberColor;
+@property(retain, nonatomic) UIColor *accentColor; // @synthesize accentColor=_accentColor;
 @property(retain, nonatomic) CLKFont *font; // @synthesize font=_font;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(readonly, nonatomic) long long accentType; // @synthesize accentType=_accentType;
 @property(readonly, nonatomic) long long sizeStyle; // @synthesize sizeStyle=_sizeStyle;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
 - (void).cxx_destruct;
@@ -53,12 +58,11 @@
 @property(nonatomic, setter=_setFirstLineBaselineFrameOriginY:) double _firstLineBaselineFrameOriginY;
 - (double)_firstLineBaselineOffsetFromBoundsTop;
 @property(retain, nonatomic) UIColor *textColor;
-- (void)setContentsMultiplyColor:(id)arg1 animated:(_Bool)arg2 withDuration:(double)arg3;
 - (id)_attributedStringAccentingNumbersInString:(id)arg1;
-- (void)setDateComplicationText:(id)arg1 forDateStyle:(unsigned long long)arg2;
+- (void)setDateComplicationText:(id)arg1 withDayRange:(struct _NSRange)arg2 forDateStyle:(unsigned long long)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
-- (id)initWithSizeStyle:(long long)arg1;
+- (id)initWithSizeStyle:(long long)arg1 accentType:(long long)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

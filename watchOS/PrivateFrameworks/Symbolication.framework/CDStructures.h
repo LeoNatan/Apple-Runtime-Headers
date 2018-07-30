@@ -10,7 +10,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct SwiftReflectionContext;
+struct SwiftReflectionInteropContext;
 
 struct _CSTypeRef {
     unsigned int _opaque_1;
@@ -157,31 +157,16 @@ struct __sbuf {
 };
 
 struct libSwiftRemoteMirrorWrapper {
-    struct SwiftReflectionContext *_field1;
-    unsigned short _field2;
-    CDUnknownFunctionPointerType _field3;
-    CDUnknownFunctionPointerType _field4;
-    CDUnknownFunctionPointerType _field5;
-    CDUnknownFunctionPointerType _field6;
-    CDUnknownFunctionPointerType _field7;
-    CDUnknownFunctionPointerType _field8;
-    CDUnknownFunctionPointerType _field9;
-    CDUnknownFunctionPointerType _field10;
-    CDUnknownFunctionPointerType _field11;
-    CDUnknownFunctionPointerType _field12;
-    CDUnknownFunctionPointerType _field13;
-    CDUnknownFunctionPointerType _field14;
-    CDUnknownFunctionPointerType _field15;
-    CDUnknownFunctionPointerType _field16;
-    unsigned int _field17;
-    unsigned int _field18;
-    unsigned int _field19;
-    _Bool _field20;
-    unsigned int _field21;
-    unsigned int _field22;
-    unsigned int _field23;
-    unsigned char _field24;
-    unsigned char _field25;
+    struct SwiftReflectionInteropContext *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    _Bool _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned char _field9;
+    unsigned char _field10;
 };
 
 struct malloc_introspection_t;
@@ -194,9 +179,31 @@ struct swift_typeinfo {
     unsigned int _field5;
 };
 
+struct swift_typeref_interop {
+    unsigned int _field1;
+    int _field2;
+};
+
 struct timeval {
     int tv_sec;
     int tv_usec;
+};
+
+struct vmu_backtrace_uniquing_table_t {
+    void *_field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    unsigned int _field6;
+    int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    struct _opaque_pthread_rwlock_t {
+        long _field1;
+        char _field2[124];
+    } _field11;
 };
 
 #pragma mark Typedef'd Structures

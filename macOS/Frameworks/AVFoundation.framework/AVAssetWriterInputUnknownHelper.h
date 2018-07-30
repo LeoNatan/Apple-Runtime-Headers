@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVAssetWriterInputHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputUnknownHelper : AVAssetWriterInputHelper
 {
 }
@@ -32,6 +33,7 @@
 - (void)setLanguageCode:(id)arg1;
 - (BOOL)_validateLanguageCode:(id)arg1;
 - (void)setNaturalSize:(struct CGSize)arg1;
+- (void)setMaximizePowerEfficiency:(BOOL)arg1;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMetadata:(id)arg1;

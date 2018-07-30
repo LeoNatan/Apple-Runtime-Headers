@@ -12,32 +12,38 @@
 {
     _Bool _shouldShowAppsButton;
     _Bool _shouldShowAboutButton;
+    _Bool _shouldShowTvAppGdprButton;
     id <VSSetupViewDelegate> _delegate;
     UIImage *_image;
-    NSString *_caption;
+    NSString *_appName;
+    NSString *_appAgeRatingBadge;
     NSString *_footnote;
     NSString *_title;
     NSString *_message;
     NSString *_beginButtonTitle;
     NSString *_skipButtonTitle;
     NSString *_appsButtonTitle;
-    UIView *_privacyButtonContainer;
+    UIView *_tvProviderPrivacyButtonContainer;
+    UIView *_tvAppPrivacyButtonContainer;
     NSString *_footer;
     VSFontCenter *_fontCenter;
 }
 
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
-@property(readonly, nonatomic) UIView *privacyButtonContainer; // @synthesize privacyButtonContainer=_privacyButtonContainer;
+@property(readonly, nonatomic) UIView *tvAppPrivacyButtonContainer; // @synthesize tvAppPrivacyButtonContainer=_tvAppPrivacyButtonContainer;
+@property(readonly, nonatomic) UIView *tvProviderPrivacyButtonContainer; // @synthesize tvProviderPrivacyButtonContainer=_tvProviderPrivacyButtonContainer;
 @property(copy, nonatomic) NSString *appsButtonTitle; // @synthesize appsButtonTitle=_appsButtonTitle;
 @property(copy, nonatomic) NSString *skipButtonTitle; // @synthesize skipButtonTitle=_skipButtonTitle;
 @property(copy, nonatomic) NSString *beginButtonTitle; // @synthesize beginButtonTitle=_beginButtonTitle;
+@property(nonatomic) _Bool shouldShowTvAppGdprButton; // @synthesize shouldShowTvAppGdprButton=_shouldShowTvAppGdprButton;
 @property(nonatomic) _Bool shouldShowAboutButton; // @synthesize shouldShowAboutButton=_shouldShowAboutButton;
 @property(nonatomic) _Bool shouldShowAppsButton; // @synthesize shouldShowAppsButton=_shouldShowAppsButton;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *footnote; // @synthesize footnote=_footnote;
-@property(retain, nonatomic) NSString *caption; // @synthesize caption=_caption;
+@property(retain, nonatomic) NSString *appAgeRatingBadge; // @synthesize appAgeRatingBadge=_appAgeRatingBadge;
+@property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) __weak id <VSSetupViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

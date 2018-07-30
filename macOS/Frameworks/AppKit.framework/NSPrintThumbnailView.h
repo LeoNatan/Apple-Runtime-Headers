@@ -8,6 +8,7 @@
 
 @class NSImage, NSPrintOperation, NSShadow;
 
+__attribute__((visibility("hidden")))
 @interface NSPrintThumbnailView : NSView
 {
     NSPrintOperation *_operation;

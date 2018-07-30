@@ -11,6 +11,8 @@
 @protocol FIFinderViewDelegate <NSObject>
 
 @optional
+- (void)finderView:(FIFinderView *)arg1 hideExtension:(BOOL)arg2;
+- (void)finderViewCollapseSavePanel:(FIFinderView *)arg1;
 - (NSSet *)finderViewQuerySearchUTIs:(FIFinderView *)arg1;
 - (BOOL)finderView:(FIFinderView *)arg1 acceptsPreviewPanelControl:(QLPreviewPanel *)arg2;
 - (void)finderView:(FIFinderView *)arg1 configureForGotoWithFilename:(NSString *)arg2;

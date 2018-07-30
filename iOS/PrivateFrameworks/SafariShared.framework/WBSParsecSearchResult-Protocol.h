@@ -4,13 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class MKMapItem, NSArray, NSString, NSURL, UIImage, WBSCompletionQuery, WBSParsecActionButton, WBSParsecImageRepresentation;
+@class MKMapItem, NSString, NSURL, UIImage, WBSCompletionQuery, WBSParsecActionButton, WBSParsecImageRepresentation;
 
 @protocol WBSParsecSearchResult
 @property(readonly, nonatomic) WBSParsecImageRepresentation *completionIcon;
 @property(readonly, nonatomic) WBSParsecImageRepresentation *icon;
 @property(readonly, copy, nonatomic) NSString *sectionBundleIdentifier;
-@property(readonly, nonatomic) NSArray *additionalMapItems;
 @property(readonly, nonatomic) MKMapItem *mapItem;
 @property(readonly, nonatomic) WBSParsecActionButton *actionButton;
 @property(readonly, copy, nonatomic) NSString *referrerForLoadingResult;

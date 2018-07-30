@@ -33,6 +33,7 @@
     unsigned long long _trAuthenticationStartTicks;
     double _trAuthenticationSecs;
     int _finishState;
+    unsigned int _repairFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_idsIdentifier;
     SFDevice *_peerDevice;
@@ -42,6 +43,7 @@
 }
 
 @property(nonatomic) unsigned long long triggerMs; // @synthesize triggerMs=_triggerMs;
+@property(nonatomic) unsigned int repairFlags; // @synthesize repairFlags=_repairFlags;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;

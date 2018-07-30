@@ -19,12 +19,12 @@
 + (id)sharedLearningAgent;
 @property(retain, nonatomic) TILanguageModelOfflineLearningTask *currentLearningTask; // @synthesize currentLearningTask=_currentLearningTask;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+- (void).cxx_destruct;
 - (void)handleRemovalOfLearnedModels;
 - (void)performTaskInBackground:(CDUnknownBlockType)arg1;
 - (void)performLearningIfNecessaryWithStrategy:(id)arg1 lastAdaptationTime:(double)arg2;
 - (_Bool)continueLearningTaskWithStrategy:(id)arg1;
 - (id)init;
-- (void)dealloc;
 
 @end
 

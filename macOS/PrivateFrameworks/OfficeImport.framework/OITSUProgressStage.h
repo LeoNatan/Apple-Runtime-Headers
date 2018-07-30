@@ -8,7 +8,6 @@
 
 @class OITSUProgressContext;
 
-__attribute__((visibility("hidden")))
 @interface OITSUProgressStage : NSObject
 {
     double m_currentPosition;

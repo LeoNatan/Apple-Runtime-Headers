@@ -14,9 +14,11 @@
 {
     NSString *_deviceIdentifier;
     PKSecureElementCertificateSet *_certificates;
+    NSString *_kextBlacklistVersion;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *kextBlacklistVersion; // @synthesize kextBlacklistVersion=_kextBlacklistVersion;
 @property(copy, nonatomic) PKSecureElementCertificateSet *certificates; // @synthesize certificates=_certificates;
 @property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 - (void).cxx_destruct;

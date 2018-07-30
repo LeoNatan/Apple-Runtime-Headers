@@ -6,7 +6,6 @@
 
 #import <OfficeImport/EDSheet.h>
 
-__attribute__((visibility("hidden")))
 @interface EDUnsupportedSheet : EDSheet
 {
 }

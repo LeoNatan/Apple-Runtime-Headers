@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface CPDocumentAndData : NSObject
 {
     struct CGPDFDocument *_document;

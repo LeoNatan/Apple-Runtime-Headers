@@ -24,7 +24,7 @@
 - (id)jsonLdOutputFromURL:(id)arg1 title:(id)arg2 payload:(id)arg3 extractionDate:(id)arg4;
 - (id)jsonLdOutputFromEntity:(id)arg1;
 - (id)jsonLdOutputFromPackedJSEntity:(id)arg1;
-- (struct _PASTuple3 *)outputFromPackedJSEntity:(id)arg1 documentType:(unsigned long long)arg2 isDownloaded:(_Bool)arg3 forEntity:(id)arg4;
+- (id)outputFromPackedJSEntity:(id)arg1 documentType:(unsigned long long)arg2 isDownloaded:(_Bool)arg3 forEntity:(id)arg4;
 - (void)addEnrichmentsToEntityForOutputItems:(id)arg1 exceptions:(id)arg2 jsMessageLogs:(id)arg3 entity:(id)arg4 startTime:(unsigned long long)arg5;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (id)eventsFromSchemaOrgItems:(id)arg1;

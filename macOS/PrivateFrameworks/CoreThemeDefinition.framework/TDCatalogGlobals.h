@@ -12,9 +12,13 @@
     BOOL _allowsVibrancy;
     BOOL _supportsWhitePointAdjustments;
     BOOL _supportsBrightnessAdjustments;
+    BOOL _allowsSystemTintColors;
+    BOOL _allowsCustomTintColors;
 }
 
 - (id)dictionaryForArchiving;
+@property(nonatomic) BOOL allowsCustomTintColors;
+@property(nonatomic) BOOL allowsSystemTintColors;
 @property(nonatomic) BOOL supportsBrightnessAdjustments;
 @property(nonatomic) BOOL supportsWhitePointAdjustments;
 @property(nonatomic) BOOL allowsVibrancy;

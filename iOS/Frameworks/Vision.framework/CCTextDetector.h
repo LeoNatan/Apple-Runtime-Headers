@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface CCTextDetector : NSObject
 {
     int _getFilter_callCount;
+    unsigned long long _requestRevision;
     _Bool _computeZCVectorHighProbability;
     unsigned char _ii;
     unsigned char _profileNormal;

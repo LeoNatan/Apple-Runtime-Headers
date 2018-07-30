@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSString, UIColor;
 
 @protocol SBUIPasscodeNumberPadButton <NSObject>
+- (void)setReduceTransparencyButtonColor:(UIColor *)arg1;
 - (NSString *)stringCharacter;
 - (int)characterType;
 @end

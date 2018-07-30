@@ -53,6 +53,7 @@
 - (void)_scheduleDelayedSectionIndexOverlayHiding;
 - (_Bool)_canShowSectionIndexOverlay;
 - (void)_layoutSectionIndexOverlayView;
+@property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 - (void)contentOffsetDidChange;
 - (void)wheelChangedWithEvent:(id)arg1;
 - (void)reloadSectionItems;

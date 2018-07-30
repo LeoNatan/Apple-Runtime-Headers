@@ -29,6 +29,7 @@
     NSString *_iadCampaign;
     NSString *_iadLine;
     int _newsProductType;
+    NSString *_previousArticleId;
     NSString *_sourceChannelId;
     int _videoAdPlacementPosition;
     int _videoAdType;
@@ -46,6 +47,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *previousArticleId; // @synthesize previousArticleId=_previousArticleId;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(retain, nonatomic) NSData *feedViewExposureId; // @synthesize feedViewExposureId=_feedViewExposureId;
 @property(retain, nonatomic) NSString *sourceChannelId; // @synthesize sourceChannelId=_sourceChannelId;
@@ -68,6 +70,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPreviousArticleId;
 @property(readonly, nonatomic) _Bool hasGroupViewExposureId;
 - (int)StringAsGroupType:(id)arg1;
 - (id)groupTypeAsString:(int)arg1;

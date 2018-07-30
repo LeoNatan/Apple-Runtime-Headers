@@ -7,14 +7,16 @@
 #import "NSObject.h"
 
 #import "INCacheableContainer.h"
+#import "INImageProxyInjecting.h"
 #import "INRideStatusExport.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class CLPlacemark, INDateComponentsRange, INRideCompletionStatus, INRideDriver, INRideOption, INRideVehicle, NSArray, NSDate, NSString, NSUserActivity;
 
-@interface INRideStatus : NSObject <INCacheableContainer, INRideStatusExport, NSCopying, NSSecureCoding>
+@interface INRideStatus : NSObject <INCacheableContainer, INImageProxyInjecting, INRideStatusExport, NSCopying, NSSecureCoding>
 {
+    NSArray *_waypoints;
     NSString *_rideIdentifier;
     long long _phase;
     INRideCompletionStatus *_completionStatus;
@@ -25,7 +27,6 @@
     NSDate *_estimatedPickupEndDate;
     INDateComponentsRange *_scheduledPickupTime;
     CLPlacemark *_pickupLocation;
-    NSArray *_waypoints;
     CLPlacemark *_dropOffLocation;
     INRideOption *_rideOption;
     NSUserActivity *_userActivityForCancelingInApplication;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSUserActivity *userActivityForCancelingInApplication; // @synthesize userActivityForCancelingInApplication=_userActivityForCancelingInApplication;
 @property(copy, nonatomic) INRideOption *rideOption; // @synthesize rideOption=_rideOption;
 @property(copy, nonatomic) CLPlacemark *dropOffLocation; // @synthesize dropOffLocation=_dropOffLocation;
-@property(copy, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 @property(copy, nonatomic) CLPlacemark *pickupLocation; // @synthesize pickupLocation=_pickupLocation;
 @property(copy, nonatomic) INDateComponentsRange *scheduledPickupTime; // @synthesize scheduledPickupTime=_scheduledPickupTime;
 @property(copy, nonatomic) NSDate *estimatedPickupEndDate; // @synthesize estimatedPickupEndDate=_estimatedPickupEndDate;
@@ -55,8 +55,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(copy, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

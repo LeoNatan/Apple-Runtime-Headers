@@ -6,14 +6,14 @@
 
 #import "NSObject.h"
 
-@class NSNumber, NSString;
+@class NSNumber, NSString, NSUUID;
 
 @protocol PBSRestrictionServiceInterface <NSObject>
 - (void)validatePIN:(NSString *)arg1 withResult:(void (^)(_Bool))arg2;
 - (void)authorizeRestrictionsWithResult:(void (^)(_Bool))arg1;
 - (void)restrictionsEnabledWithResult:(void (^)(_Bool))arg1;
-- (void)cancelRestrictionAuthorization;
-- (void)validateRestrictionForSetting:(unsigned long long)arg1 allowInteraction:(_Bool)arg2 withCompletion:(void (^)(unsigned long long))arg3;
-- (void)validateRestrictionForContentType:(unsigned long long)arg1 withRating:(NSNumber *)arg2 allowInteraction:(_Bool)arg3 withCompletion:(void (^)(unsigned long long))arg4;
+- (void)cancelRestrictionAuthorization:(NSUUID *)arg1;
+- (void)validateRestrictionForSetting:(unsigned long long)arg1 allowInteraction:(_Bool)arg2 requestToken:(NSUUID *)arg3 withCompletion:(void (^)(unsigned long long))arg4;
+- (void)validateRestrictionForContentType:(unsigned long long)arg1 withRating:(NSNumber *)arg2 allowInteraction:(_Bool)arg3 requestToken:(NSUUID *)arg4 withCompletion:(void (^)(unsigned long long))arg5;
 @end
 

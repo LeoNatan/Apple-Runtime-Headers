@@ -16,7 +16,8 @@
 + (id)concurrent;
 + (id)serial;
 + (id)_attributesWithAttributes:(id)arg1;
-@property(nonatomic) NSObject<OS_dispatch_queue_attr> *attributes; // @synthesize attributes=_attrs;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue_attr> *attributes; // @synthesize attributes=_attrs;
+- (void).cxx_destruct;
 - (id)inactive;
 - (id)autoreleaseFrequency:(unsigned long long)arg1;
 - (id)serviceClass:(unsigned int)arg1;

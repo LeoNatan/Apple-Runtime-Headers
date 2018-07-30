@@ -7,7 +7,10 @@
 #import <AppKit/NSText.h>
 
 #import "NSAccessibilityNavigableStaticText.h"
+#import "NSColorChanging.h"
 #import "NSDraggingSource.h"
+#import "NSMenuItemValidation.h"
+#import "NSStandardKeyBindingResponding.h"
 #import "NSTextInput.h"
 #import "NSTextInputClient.h"
 #import "NSTextLayoutOrientationProvider.h"
@@ -15,7 +18,7 @@
 
 @class NSArray, NSColor, NSDictionary, NSLayoutManager, NSParagraphStyle, NSString, NSTextContainer, NSTextStorage;
 
-@interface NSTextView : NSText <NSUserInterfaceValidations, NSTextInputClient, NSTextLayoutOrientationProvider, NSDraggingSource, NSTextInput, NSAccessibilityNavigableStaticText>
+@interface NSTextView : NSText <NSColorChanging, NSMenuItemValidation, NSUserInterfaceValidations, NSTextInputClient, NSTextLayoutOrientationProvider, NSDraggingSource, NSStandardKeyBindingResponding, NSTextInput, NSAccessibilityNavigableStaticText>
 {
 }
 
@@ -23,6 +26,10 @@
 + (BOOL)stronglyReferencesTextStorage;
 + (BOOL)alwaysReferencesTextStorageStrongly;
 + (void)initialize;
++ (id)scrollablePlainDocumentContentTextView;
++ (id)scrollableDocumentContentTextView;
++ (id)fieldEditor;
++ (id)scrollableTextView;
 + (BOOL)_allowKillRing;
 + (void)registerForServices;
 + (id)_readablePasteboardTypesForRichText:(BOOL)arg1 importsGraphics:(BOOL)arg2 usesFontPanel:(BOOL)arg3 usesRuler:(BOOL)arg4 allowsFiltering:(BOOL)arg5;
@@ -109,6 +116,7 @@
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)mouseMoved:(id)arg1;
+- (BOOL)__performDataDetectorViewEvent:(id)arg1 isRightDown:(BOOL)arg2;
 - (void)_conditionallyRemoveDataDetectionIndicator:(id)arg1;
 - (void)_mouseExitedDataDetectionIndicator;
 - (void)_mouseInside:(id)arg1;
@@ -241,6 +249,7 @@
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withRTF:(id)arg2;
 - (id)RTFDFromRange:(struct _NSRange)arg1;
 - (id)RTFFromRange:(struct _NSRange)arg1;
+- (BOOL)performValidatedReplacementInRange:(struct _NSRange)arg1 withAttributedString:(id)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (void)setString:(id)arg1;
 - (id)string;
@@ -497,6 +506,10 @@
 - (void)deleteBackwardByDecomposingPreviousCharacter:(id)arg1;
 - (void)deleteBackward:(id)arg1;
 - (void)deleteForward:(id)arg1;
+- (void)convertToHalfWidth:(id)arg1;
+- (void)convertToFullWidth:(id)arg1;
+- (void)convertToTraditionalChinese:(id)arg1;
+- (void)convertToSimplifiedChinese:(id)arg1;
 - (void)capitalizeWord:(id)arg1;
 - (void)lowercaseWord:(id)arg1;
 - (void)uppercaseWord:(id)arg1;
@@ -629,6 +642,7 @@
 - (id)_attributedSubstringForCopyingFromRange:(struct _NSRange)arg1;
 @property(readonly, copy) NSArray *writablePasteboardTypes;
 - (id)_attachmentCellForSelection;
+- (id)_appearanceForExporting;
 - (struct CGRect)_caretScreenRectForSelectionChangeFromRange:(struct _NSRange)arg1 toRange:(struct _NSRange)arg2;
 - (void)_sendZoomFocusChangedNotificationForSelectionChange;
 - (void)_setDeletesForGenericDragging:(BOOL)arg1;
@@ -698,7 +712,15 @@
 - (BOOL)_couldHaveBlinkTimer;
 - (BOOL)_shouldHaveBlinkTimer;
 - (void)_invalidateBlinkTimer:(id)arg1;
+- (void)_updateCaretDisplayWithSharedData:(id)arg1 textView:(id)arg2;
+- (void)_animateBlinkUpdate:(id)arg1;
+- (void)_updateCaretViewWithSharedData:(id)arg1 textView:(id)arg2 animated:(BOOL)arg3;
+- (void)didAddSubview:(id)arg1;
+- (BOOL)switchBlinkTimersIfNecessaryWithSharedData:(id)arg1;
+- (void)_blinkCaret:(id)arg1 animated:(BOOL)arg2;
 - (void)_blinkCaret:(id)arg1;
+- (BOOL)_useUpdateBlinkRate;
+- (BOOL)_caretMustDraw;
 - (void)_viewDidDrawInLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)_applyMarkerSettingsFromParagraphStyle:(id)arg1;
 - (BOOL)_canChangeRulerMarkers;
@@ -722,9 +744,12 @@
 - (void)_fastHighlightGlyphRange:(struct _NSRange)arg1 withinSelectedGlyphRange:(struct _NSRange)arg2;
 - (void)_optimizeHighlightForCharRange:(struct _NSRange)arg1 charRange:(struct _NSRange)arg2 fullSelectionCharRange:(struct _NSRange)arg3 oldSelectionFullCharRange:(struct _NSRange)arg4;
 - (BOOL)_charRangeIsHighlightOptimizable:(struct _NSRange)arg1 fromOldCharRange:(struct _NSRange)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_superviewClipViewFrameChangedWithNotification:(id)arg1;
 - (void)_superviewClipViewFrameChanged:(id)arg1;
 - (id)_setSuperview:(id)arg1;
 - (void)_setWatchingSuperviewClipView:(BOOL)arg1;
+- (void)_forceResizingForClipViewInsetBounds:(struct CGRect)arg1;
 - (void)_sizeDownIfPossible;
 - (BOOL)_range:(struct _NSRange)arg1 containsPoint:(struct CGPoint)arg2;
 - (unsigned long long)_clickedCharIndex;
@@ -852,7 +877,10 @@
 - (BOOL)_allowsMultipleTextSelectionByMouse;
 @property BOOL acceptsGlyphInfo;
 @property(copy) NSDictionary *markedTextAttributes;
+- (void)_restartBlinkDrawTimer;
 - (void)_restartBlinkTimer;
+- (void)_restartBlinkTimersWithSharedData:(id)arg1;
+- (void)_updateBlinkTimersWithSharedData:(id)arg1 restartFlag:(BOOL)arg2 forceBlink:(BOOL)arg3;
 - (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
 - (BOOL)_usesSplitCursor;
 @property(copy) NSColor *insertionPointColor;
@@ -925,13 +953,20 @@
 - (BOOL)_shouldIncludePreviewActionInContextMenu;
 - (unsigned long long)_characterIndexForPreviewItem:(id)arg1;
 - (id)_rangesForPreview;
+- (BOOL)_hasJapaneseInPreferredLanguages;
+- (BOOL)shouldRemoveTransformationAction:(SEL)arg1;
+- (BOOL)shouldRemoveCaseTransformations;
 - (id)_sharingServiceItemsInRanges:(id)arg1;
+- (void)readSelectionFromItems:(id)arg1;
+- (BOOL)canReadSelectionFromItems;
+- (id)selectionItems;
 - (void)invokeExtensionService:(id)arg1;
 - (id)_configureSharingServicesMenuItemInRange:(struct _NSRange)arg1;
 - (void)_invokeSharingService:(id)arg1;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 mask:(unsigned long long)arg3 proposedSharingServices:(id)arg4;
 - (void)sharingService:(id)arg1 didShareItems:(id)arg2;
+- (void)_replaceSelectionWithSharingServiceItems:(id)arg1;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (id)sharingService:(id)arg1 transitionImageForShareItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)sharingService:(id)arg1 containerFrameOnScreenForShareItem:(id)arg2;
@@ -940,7 +975,7 @@
 - (id)_sharingItemForAttachment:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)orderFrontSharingServicePicker:(id)arg1;
 - (id)_menuItemsForDataResult:(id)arg1;
-- (void)displayTextLayer:(id)arg1 withContext:(id)arg2;
+- (void)displayTextLayer:(id)arg1;
 - (BOOL)_isDrawingLayer;
 - (void)_setIsDrawingLayer:(BOOL)arg1;
 

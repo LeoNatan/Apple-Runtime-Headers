@@ -13,14 +13,19 @@
     unsigned long long _suggestedRoomLimit;
     HMHome *_home;
     id <HFRoomSuggestionVendor> _suggestionVendor;
+    NSSet *_supplementaryRoomBuilders;
     NSSet *_suggestionItems;
 }
 
 @property(retain, nonatomic) NSSet *suggestionItems; // @synthesize suggestionItems=_suggestionItems;
+@property(copy, nonatomic) NSSet *supplementaryRoomBuilders; // @synthesize supplementaryRoomBuilders=_supplementaryRoomBuilders;
 @property(retain, nonatomic) id <HFRoomSuggestionVendor> suggestionVendor; // @synthesize suggestionVendor=_suggestionVendor;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) unsigned long long suggestedRoomLimit; // @synthesize suggestedRoomLimit=_suggestedRoomLimit;
 - (void).cxx_destruct;
+- (id)_keyForRoomName:(id)arg1;
+- (id)_filteredSuggestions;
+- (id)_filteredSupplementaryRoomBuilders;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

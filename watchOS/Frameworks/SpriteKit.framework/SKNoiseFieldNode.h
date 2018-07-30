@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)supportsSecureCoding;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic) float animationSpeed;

@@ -26,9 +26,7 @@
 - (void)dealloc;
 @property(readonly, nonatomic) _Bool supportsWHA;
 @property(readonly, nonatomic) NSString *modelID;
-@property(readonly, nonatomic) unsigned int deviceType;
-@property(readonly, nonatomic, getter=isRemoteControllable) _Bool remoteControllable;
-@property(readonly, nonatomic, getter=isGroupable) _Bool groupable;
+@property(readonly, nonatomic) unsigned int deviceSubtype;
 - (id)initWithOutputDevice:(void *)arg1;
 @property(readonly) AVOutputDevice *av_OutputDevice;
 

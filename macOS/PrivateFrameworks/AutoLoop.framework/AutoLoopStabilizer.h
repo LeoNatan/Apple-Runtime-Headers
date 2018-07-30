@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     _Bool onlyProcessForHighQualityTripod;
     _Bool doLoopClosureCorrection;
     _Bool _useLimitedTime;
+    _Bool _disableGPUStabilization;
+    _Bool _optimizeProcessingForMemory;
     _Bool _didDrop;
     float progressValue;
     unsigned int canceledAnalysis;
@@ -57,6 +59,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) CDStruct_1b6d18a9 lastFrameTimeAfterDrop; // @synthesize lastFrameTimeAfterDrop=_lastFrameTimeAfterDrop;
 @property(nonatomic) CDStruct_1b6d18a9 firstFrameTimeAfterDrop; // @synthesize firstFrameTimeAfterDrop=_firstFrameTimeAfterDrop;
 @property(nonatomic) _Bool didDrop; // @synthesize didDrop=_didDrop;
+@property(nonatomic) _Bool optimizeProcessingForMemory; // @synthesize optimizeProcessingForMemory=_optimizeProcessingForMemory;
+@property(nonatomic) _Bool disableGPUStabilization; // @synthesize disableGPUStabilization=_disableGPUStabilization;
 @property(retain, nonatomic) NSArray *skipFrameTimes; // @synthesize skipFrameTimes=_skipFrameTimes;
 @property(readonly, nonatomic) int lastStabilizationResult; // @synthesize lastStabilizationResult=_lastStabilizationResult;
 @property(readonly, nonatomic) int analysisResult; // @synthesize analysisResult=_analysisResult;
@@ -98,7 +102,7 @@ __attribute__((visibility("hidden")))
 - (int)processStabilizationAnalysis:(id)arg1 forcePassThru:(_Bool)arg2 forceSequentialTripod:(_Bool)arg3;
 - (int)FindAcceptableTripodSegmentForInput:(struct HomographyRecordVector *)arg1;
 - (int)analyzeForAutoloopWithDirect:(_Bool)arg1 toAnalysisOutput:(id *)arg2;
-- (void)frameTimesToPassThruHomographies:(const vector_4f732a7b *)arg1;
+- (void)frameTimesToPassThruHomographies:(const vector_0821a7d5 *)arg1;
 - (_Bool)updateVideoProgress;
 - (_Bool)updateStabilizerStatus;
 - (_Bool)tripodOKWithTrimming:(const struct HomographyRecordVector *)arg1 minConfidence:(float)arg2;
@@ -111,7 +115,7 @@ __attribute__((visibility("hidden")))
 - (float)CropRatio:(const struct FloatRect *)arg1;
 - (CDStruct_1b6d18a9)GetPreciseReferenceTimeFromHomographies:(const struct HomographyRecordVector *)arg1;
 - (unsigned long long)FindFrameIndexForReferenceTimeInHomographies:(const struct HomographyRecordVector *)arg1;
-- (void)SetSkipFrameTimesFromArray:(vector_4f732a7b *)arg1;
+- (void)SetSkipFrameTimesFromArray:(vector_0821a7d5 *)arg1;
 - (_Bool)setStabilizerLimitedTimes;
 - (id)init;
 

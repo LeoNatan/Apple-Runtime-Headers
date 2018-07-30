@@ -6,19 +6,16 @@
 
 #import "NSTableCellView.h"
 
-@class NSColor, NSImageView;
+@class NSImageView;
 
 @interface ACUITableCellView : NSTableCellView
 {
-    NSColor *_secondaryLabelColor;
     NSImageView *_icon;
 }
 
 @property(retain) NSImageView *icon; // @synthesize icon=_icon;
-@property(retain) NSColor *secondaryLabelColor; // @synthesize secondaryLabelColor=_secondaryLabelColor;
 - (void).cxx_destruct;
 - (void)setObjectValue:(id)arg1;
-- (void)setBackgroundStyle:(long long)arg1;
 
 @end
 

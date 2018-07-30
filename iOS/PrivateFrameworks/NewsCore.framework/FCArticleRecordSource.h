@@ -10,7 +10,8 @@
 
 @interface FCArticleRecordSource : FCRecordSource
 {
-    NSArray *_genericKeys;
+    NSArray *_nonLocalizableKeys;
+    NSArray *_localizableKeys;
 }
 
 + (id)canaryRecordName;
@@ -19,24 +20,22 @@
 + (id)changeTagFromCKRecord:(id)arg1;
 + (id)identifierFromCKRecord:(id)arg1;
 + (_Bool)useTaggedImages;
-+ (unsigned long long)highThresholdDataSizeLimit;
-+ (unsigned long long)lowThresholdDataSizeLimit;
-+ (unsigned long long)storeVersion;
-+ (id)storeFilename;
-+ (id)recordType;
-- (id)genericKeys;
+- (id)localizableKeys;
+- (id)nonLocalizableKeys;
 - (void).cxx_destruct;
 - (id)saveFeedItemAndArticleRecords:(id)arg1;
 - (id)saveArticleRecords:(id)arg1;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
 - (id)urlStringForThumbnailKey:(id)arg1 inRecord:(id)arg2;
-- (id)localizedExperimentalizedKeysByOriginalKey;
-- (id)experimentalizedKeysByOriginalKey;
-- (id)localizedKeysByOriginalKey;
+- (id)recordIDPrefix;
+- (unsigned long long)highThresholdDataSizeLimit;
+- (unsigned long long)lowThresholdDataSizeLimit;
+- (unsigned long long)storeVersion;
+- (id)storeFilename;
 - (id)localizableExperimentalizableKeys;
 - (id)experimentalizableKeys;
-- (id)localizableKeys;
-- (id)desiredKeys;
+- (int)pbRecordType;
+- (id)recordType;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 desiredArticleRecordFieldOptions:(unsigned long long)arg3 experimentalizableFieldsPostfix:(id)arg4 activeTreatmentID:(id)arg5;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 experimentalizableFieldsPostfix:(id)arg3 activeTreatmentID:(id)arg4;
 

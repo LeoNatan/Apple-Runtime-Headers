@@ -7,6 +7,6 @@
 @class FormAutoFillCompletionControllerObjCAdapter;
 
 @protocol FormAutoFillCompletionControllerObserver
-- (void)formAutoFillController:(FormAutoFillCompletionControllerObjCAdapter *)arg1 didRefreshCompletionListItems:(const Vector_24b72aae *)arg2;
+- (void)formAutoFillController:(FormAutoFillCompletionControllerObjCAdapter *)arg1 didRefreshCompletionListItems:(const Vector_9c080eda *)arg2;
 @end
 

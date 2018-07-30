@@ -22,6 +22,9 @@ __attribute__((visibility("hidden")))
 - (void)_prunePersistentCache;
 - (void)_doNetworkRequestForLatLng:(id)arg1 traits:(id)arg2 auditToken:(id)arg3 shouldCache:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)shiftLatLng:(id)arg1 auditToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (BOOL)isLocationShiftRequiredForCoordinate:(CDStruct_c3b9c2ee)arg1;
+- (unsigned int)locationShiftFunctionVersion;
+- (BOOL)isLocationShiftEnabled;
 @property(readonly, nonatomic) GEOLocationShifterPersistence *persistentCache;
 - (void)dealloc;
 - (id)init;

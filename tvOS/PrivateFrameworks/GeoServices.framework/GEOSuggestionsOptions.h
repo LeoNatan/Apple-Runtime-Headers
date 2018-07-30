@@ -10,6 +10,7 @@
 
 @class NSData, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOSuggestionsOptions : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

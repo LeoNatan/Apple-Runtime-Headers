@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface _NSBrowserDropDestContext : NSObject
 {
     long long targetColumn;

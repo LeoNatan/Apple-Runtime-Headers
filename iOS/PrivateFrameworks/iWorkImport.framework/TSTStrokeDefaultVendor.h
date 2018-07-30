@@ -38,7 +38,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)p_updateStrokeLayer:(id)arg1 forRowStrokeType:(int)arg2;
 - (void)p_updateStrokeLayer:(id)arg1 forColumnStrokeType:(int)arg2;
+- (_Bool)p_headerRowSeparatorRowRangeIsValid;
 - (int)p_strokeTypeForRow:(unsigned int)arg1;
+- (_Bool)p_headerColumnSeparatorColumnRangeIsValid;
 - (int)p_strokeTypeForColumn:(unsigned int)arg1;
 - (int)validateChangeDescriptors:(id)arg1;
 - (_Bool)validateGeometry;

@@ -6,19 +6,19 @@
 
 #import "NSObject.h"
 
-@class NSAttributedString, NSString, PUICQuickboardViewController, UIImage, UIView;
+@class NSAttributedString, NSString, UIImage, UIView;
 
 @protocol PUICQuickboardViewControllerDelegate <NSObject>
-- (void)quickboardInputCancelled:(PUICQuickboardViewController *)arg1;
-- (void)quickboard:(PUICQuickboardViewController *)arg1 textEntered:(NSAttributedString *)arg2;
+- (void)quickboardInputCancelled:(id <PUICQuickboardController>)arg1;
+- (void)quickboard:(id <PUICQuickboardController>)arg1 textEntered:(NSAttributedString *)arg2;
 
 @optional
 - (unsigned int)quickboardViewControllerContactFilter;
-- (float)quickboard:(PUICQuickboardViewController *)arg1 selectionFrameOriginYInDestinationView:(id *)arg2;
-- (NSString *)inputContextIdentifierForQuickboard:(PUICQuickboardViewController *)arg1;
-- (void)quickboard:(PUICQuickboardViewController *)arg1 languageDidChange:(NSString *)arg2;
-- (void)quickboard:(PUICQuickboardViewController *)arg1 textUpdated:(NSAttributedString *)arg2;
-- (UIView *)blurSourceViewForQuickboard:(PUICQuickboardViewController *)arg1;
+- (float)quickboard:(id <PUICQuickboardController>)arg1 selectionFrameOriginYInDestinationView:(id *)arg2;
+- (NSString *)inputContextIdentifierForQuickboard:(id <PUICQuickboardController>)arg1;
+- (void)quickboard:(id <PUICQuickboardController>)arg1 languageDidChange:(NSString *)arg2;
+- (void)quickboard:(id <PUICQuickboardController>)arg1 textUpdated:(NSAttributedString *)arg2;
+- (UIView *)blurSourceViewForQuickboard:(id <PUICQuickboardController>)arg1;
 - (void)extraButtonTapped;
 - (UIImage *)extraButtonImage;
 @end

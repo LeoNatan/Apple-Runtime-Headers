@@ -30,7 +30,7 @@
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)subtitle;
 - (id)title;
-- (id)initWithTransfer:(id)arg1;
+- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3;
 
 @end
 

@@ -8,7 +8,6 @@
 
 @class GEOComposedRoute, GEOComposedTrafficCamera, GEOEnrouteNotice, GEOLatLng, NSArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOComposedEnrouteNotice : NSObject
 {
     GEOEnrouteNotice *_enrouteNotice;

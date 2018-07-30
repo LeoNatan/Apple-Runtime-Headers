@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABGroupEntry.h>
 
-__attribute__((visibility("hidden")))
 @interface ABSectionGroupEntry : ABGroupEntry
 {
 }

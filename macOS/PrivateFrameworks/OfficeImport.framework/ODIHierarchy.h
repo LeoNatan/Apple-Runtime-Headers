@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary, ODIState;
 
-__attribute__((visibility("hidden")))
 @interface ODIHierarchy : NSObject
 {
     int mType;
@@ -18,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)map;
 - (void)mapNode:(id)arg1;
 - (struct CGRect)boundsOfNode:(id)arg1;

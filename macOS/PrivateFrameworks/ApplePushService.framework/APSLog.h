@@ -27,7 +27,7 @@
 + (id)pushHistory;
 + (id)daemon;
 + (id)topicManager;
-+ (id)awd;
++ (id)telemetry;
 
 @end
 

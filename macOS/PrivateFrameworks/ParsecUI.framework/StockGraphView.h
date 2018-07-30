@@ -59,13 +59,13 @@
 - (struct CGRect)_trueGraphPointsRegion;
 - (double)_timeAtPosition:(double)arg1;
 - (float)_priceAtTime:(double)arg1 dataPosition:(double *)arg2;
-- (BOOL)allowsVibrancy;
 - (void)setEvenlySpacedDottedLinePositionsWithCount:(unsigned long long)arg1;
 - (void)setDottedLinePositionsWithLabelInfo:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)_layoutSubviews;
 - (struct CGRect)_volumeViewFrameForBoundsSize:(struct CGSize)arg1;
 - (struct CGRect)_lineViewFrameForBoundsSize:(struct CGSize)arg1;
+- (BOOL)allowsVibrancy;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -10,7 +10,7 @@
 #import "CAMBadgeViewDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CAMAnimationGenerator, CAMLightingDialBackground, CAMLightingFrameCache, CAMLightingNameBadge, NSArray, NSDate, NSDictionary, NSString, NSTimer, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISelectionFeedbackGenerator, UITapGestureRecognizer;
+@class CAMAnimationGenerator, CAMLightingDialBackground, CAMLightingFrameCache, CAMLightingNameBadge, CAMSelectionFeedbackGenerator, NSArray, NSDate, NSDictionary, NSString, NSTimer, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer;
 
 @interface CAMLightingControl : UIView <UIGestureRecognizerDelegate, CAMBadgeViewDelegate, CAAnimationDelegate>
 {
@@ -45,10 +45,10 @@
     CAMAnimationGenerator *__animationGenerator;
     NSTimer *__collapseTimer;
     unsigned long long __expandedAnimationCounter;
-    UISelectionFeedbackGenerator *__selectionFeedbackGenerator;
+    CAMSelectionFeedbackGenerator *__selectionFeedbackGenerator;
 }
 
-@property(readonly, nonatomic) UISelectionFeedbackGenerator *_selectionFeedbackGenerator; // @synthesize _selectionFeedbackGenerator=__selectionFeedbackGenerator;
+@property(readonly, nonatomic) CAMSelectionFeedbackGenerator *_selectionFeedbackGenerator; // @synthesize _selectionFeedbackGenerator=__selectionFeedbackGenerator;
 @property(nonatomic, setter=_setExpandedAnimationCounter:) unsigned long long _expandedAnimationCounter; // @synthesize _expandedAnimationCounter=__expandedAnimationCounter;
 @property(retain, nonatomic, setter=_setCollapseTimer:) NSTimer *_collapseTimer; // @synthesize _collapseTimer=__collapseTimer;
 @property(readonly, nonatomic) CAMAnimationGenerator *_animationGenerator; // @synthesize _animationGenerator=__animationGenerator;
@@ -67,7 +67,7 @@
 @property(readonly, nonatomic) unsigned long long _selectionIndex; // @synthesize _selectionIndex=__selectionIndex;
 @property(nonatomic, setter=_setSelectionAngularOffset:) double _selectionAngularOffset; // @synthesize _selectionAngularOffset=__selectionAngularOffset;
 @property(retain, nonatomic, setter=_setEffectItemsForType:) NSDictionary *_effectItemsForType; // @synthesize _effectItemsForType=__effectItemsForType;
-@property(retain, nonatomic, setter=_setEffectTypes:) NSArray *_effectTypes; // @synthesize _effectTypes=__effectTypes;
+@property(readonly, nonatomic) NSArray *_effectTypes; // @synthesize _effectTypes=__effectTypes;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic, getter=isNameBadgeHidden) _Bool nameBadgeHidden; // @synthesize nameBadgeHidden=_nameBadgeHidden;
 @property(nonatomic) _Bool showAllItemsWhenCollapsed; // @synthesize showAllItemsWhenCollapsed=_showAllItemsWhenCollapsed;
@@ -84,6 +84,7 @@
 - (void)_createSelectionViewsIfNeeded;
 - (void)_createBackgroundViewIfNeeded;
 - (void)_createItemViewsIfNeeded;
+- (unsigned long long)_enabledItemCount;
 - (unsigned long long)_itemCount;
 - (void)_loadItemsIfNeeded;
 - (void)badgeViewDidChangeIntrinsicContentSize:(id)arg1;
@@ -101,8 +102,9 @@
 - (void)_rotateForTapFromSelectionIndex:(unsigned long long)arg1 offset:(double)arg2 toSelectionIndex:(unsigned long long)arg3;
 - (void)_handleSnapFromOffset:(double)arg1 withProgress:(double)arg2 timingCurve:(id)arg3;
 - (void)_snapFromSelectionOffsetAngle:(double)arg1 toAngle:(double)arg2 animated:(_Bool)arg3;
-- (void)_setSelectedLightingType:(long long)arg1 atIndex:(unsigned long long)arg2 shouldNotify:(_Bool)arg3 shouldSuppressHaptic:(_Bool)arg4;
+- (void)_setSelectedLightingType:(long long)arg1 atIndex:(unsigned long long)arg2 shouldNotify:(_Bool)arg3 shouldSuppressHaptic:(_Bool)arg4 animated:(_Bool)arg5;
 - (void)ppt_selectLightingType:(long long)arg1;
+- (void)setSelectedLightingType:(long long)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) long long defaultLightingType;
 - (void)_cancelDelayedCollapse;
 - (void)_handleCollapseTimer:(id)arg1;
@@ -139,6 +141,7 @@
 - (void)_layoutItemViewsRadialWithSelectionOffsetAngle:(double)arg1;
 - (double)_safeWidthForWidth:(double)arg1;
 - (double)contentHeightForWidth:(double)arg1;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (id)initWithFrame:(struct CGRect)arg1;

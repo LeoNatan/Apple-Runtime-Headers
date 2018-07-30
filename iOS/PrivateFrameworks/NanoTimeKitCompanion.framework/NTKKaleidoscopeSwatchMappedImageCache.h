@@ -8,20 +8,21 @@
 
 #import "NTKFaceCollectionObserver.h"
 
-@class NSString, NTKFaceCollection;
+@class NSArray, NSMutableArray, NSString;
 
 @interface NTKKaleidoscopeSwatchMappedImageCache : BSUIMappedImageCache <NTKFaceCollectionObserver>
 {
     id _activeDeviceNotificationBlock;
-    NTKFaceCollection *_libraryCollection;
+    NSArray *_libraryCollections;
+    NSMutableArray *_loadedCollections;
 }
 
 + (id)keyForAsset:(id)arg1 style:(id)arg2 resourceDirectory:(id)arg3;
 + (id)sharedCache;
-@property(retain, nonatomic) NTKFaceCollection *libraryCollection; // @synthesize libraryCollection=_libraryCollection;
 - (void).cxx_destruct;
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)_pruneUnusedKeys;
+- (void)_cleanCache;
 - (void)_removeImagesForKeysMatching:(CDUnknownBlockType)arg1;
 - (id)_init;
 

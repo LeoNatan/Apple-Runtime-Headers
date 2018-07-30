@@ -18,6 +18,7 @@
 {
 }
 
+@property(nonatomic) double userInitationTimestamp; // @dynamic userInitationTimestamp;
 @property(nonatomic, getter=isTimelapse) _Bool timelapse; // @dynamic timelapse;
 @property(nonatomic) unsigned int assertionIdentifier;
 @property(nonatomic) long long origin;

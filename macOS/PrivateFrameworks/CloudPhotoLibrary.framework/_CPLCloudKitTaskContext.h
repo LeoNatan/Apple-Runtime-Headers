@@ -27,11 +27,12 @@
 @property(readonly, nonatomic) NSArray *operationStatusDictionaries;
 @property(readonly, nonatomic) NSDictionary *statusPerOperationType;
 - (BOOL)_operationAllowsCellular:(id)arg1;
-- (id)_qosForOperation:(id)arg1;
+- (id)_priorityDescriptionForOperation:(id)arg1;
 @property(readonly, nonatomic) NSCountedSet *countOfOperationWithCellularAccessClasses;
 @property(readonly, nonatomic) NSCountedSet *countOfOperationClasses;
 - (void)cancelAllOperations;
 - (id)contextForOperation:(id)arg1;
+- (BOOL)hasBlockedOperationsIncludingBackground:(BOOL)arg1;
 - (void)operationDidFinish:(id)arg1;
 - (void)operationWillStart:(id)arg1 context:(id)arg2;
 - (id)initWithTask:(id)arg1;

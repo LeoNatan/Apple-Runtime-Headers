@@ -8,16 +8,16 @@
 
 #import "NSSecureCoding.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface FRWKBundleMessage : NSObject <NSSecureCoding>
 {
     NSString *_message;
-    id <NSSecureCoding> _body;
+    NSDictionary *_body;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) id <NSSecureCoding> body; // @synthesize body=_body;
+@property(readonly, nonatomic) NSDictionary *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (id)description;

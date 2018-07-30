@@ -6,15 +6,6 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSString;
-
 @protocol BBSettingsGatewayClientInterface <NSObject>
-- (void)privilegedSenderTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
-- (void)privilegedSenderAddressBookGroupRecordIDChanged:(int)arg1 name:(NSString *)arg2 source:(unsigned int)arg3;
-- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2 activeQuietModeAssertionCount:(unsigned int)arg3;
-- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
-- (void)behaviorOverrideStatusChanged:(int)arg1 source:(unsigned int)arg2;
-- (void)behaviorOverridesEffectiveWhileUnlockedChanged:(_Bool)arg1 source:(unsigned int)arg2;
-- (void)behaviorOverridesChanged:(NSArray *)arg1 source:(unsigned int)arg2;
 @end
 

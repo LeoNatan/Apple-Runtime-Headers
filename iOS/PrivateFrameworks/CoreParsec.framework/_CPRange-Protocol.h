@@ -10,9 +10,7 @@
 
 @protocol _CPRange <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasLength;
 @property(nonatomic) unsigned long long length;
-@property(readonly, nonatomic) _Bool hasLocation;
 @property(nonatomic) unsigned long long location;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

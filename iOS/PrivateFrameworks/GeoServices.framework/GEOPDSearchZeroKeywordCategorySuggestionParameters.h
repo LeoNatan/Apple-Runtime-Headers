@@ -10,6 +10,7 @@
 
 @class GEOLatLng, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDSearchZeroKeywordCategorySuggestionParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

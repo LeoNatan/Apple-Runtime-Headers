@@ -22,6 +22,7 @@
 @property(copy, nonatomic) NSString *personalDomainsAuthenticationMode;
 @property(copy, nonatomic) NSString *language;
 @property(copy, nonatomic) NSString *deviceName;
+@property(copy, nonatomic) NSString *brandName;
 @property(copy, nonatomic) NSString *assistantId;
 - (id)encodedClassName;
 - (id)groupIdentifier;

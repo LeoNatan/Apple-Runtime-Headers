@@ -100,6 +100,7 @@
 - (void).cxx_destruct;
 - (void)dismissAccessibilityHUDForPhotoEditToolbar:(id)arg1;
 - (void)photoEditToolbar:(id)arg1 showAccessibilityHUDForItem:(id)arg2;
+- (id)photoEditToolbar:(id)arg1 accessibilityHUDItemForButton:(id)arg2;
 - (void)avPlayerDidDeallocate;
 - (void)avPlayer:(id)arg1 itemDidPlayToEnd:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

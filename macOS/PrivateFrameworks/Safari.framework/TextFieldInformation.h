@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString;
+@class NSString, WBSFormControlMetadata;
 
 __attribute__((visibility("hidden")))
 @interface TextFieldInformation : NSObject
@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     BOOL _hasNotedTextDidChange;
     NSString *_controlUniqueID;
     struct Frame _frame;
-    NSDictionary *_metadata;
+    WBSFormControlMetadata *_metadata;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(readonly, copy, nonatomic) WBSFormControlMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) struct Frame frame; // @synthesize frame=_frame;
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -14,7 +14,9 @@
     unsigned int _continuousZeroCounter;
     unsigned int _zeroCounterWinSz;
     unsigned int _numChannels;
+    unsigned int _analyzeStep;
     float _sampleRate;
+    _Bool _shouldDeinterleaveAudio;
 }
 
 - (void).cxx_destruct;

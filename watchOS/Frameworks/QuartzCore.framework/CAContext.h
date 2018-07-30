@@ -22,6 +22,7 @@
 + (id)currentContext;
 + (id)allContexts;
 @property float desiredDynamicRange; // @synthesize desiredDynamicRange=_desiredDynamicRange;
+- (unsigned int)hitTestContext:(struct CGPoint)arg1;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
 - (void)deleteSlot:(unsigned int)arg1;
 - (unsigned int)createImageSlot:(struct CGSize)arg1 hasAlpha:(_Bool)arg2 extendedColors:(_Bool)arg3;

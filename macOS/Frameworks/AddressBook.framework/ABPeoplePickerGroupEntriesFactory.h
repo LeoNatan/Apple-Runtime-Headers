@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABAbstractGroupEntriesFactory.h>
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerGroupEntriesFactory : ABAbstractGroupEntriesFactory
 {
     BOOL _includeAllContacts;

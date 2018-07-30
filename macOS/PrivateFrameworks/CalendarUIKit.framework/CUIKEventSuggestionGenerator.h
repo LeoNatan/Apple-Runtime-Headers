@@ -6,10 +6,12 @@
 
 #import "NSObject.h"
 
-@class CUIKEventSuggestion, NSArray, NSString;
+@class CUIKEventSuggestion, EKPredicateSearch, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CUIKEventSuggestionGenerator : NSObject
 {
+    EKPredicateSearch *_runningTitleSearch;
+    NSObject<OS_dispatch_queue> *_queryQueue;
     NSArray *_lastSuggestions;
     NSString *_lastQueryString;
     CUIKEventSuggestion *_lastDefaultSuggestion;
@@ -22,13 +24,16 @@
 @property(retain) CUIKEventSuggestion *lastDefaultSuggestion; // @synthesize lastDefaultSuggestion=_lastDefaultSuggestion;
 @property(retain) NSString *lastQueryString; // @synthesize lastQueryString=_lastQueryString;
 @property(retain) NSArray *lastSuggestions; // @synthesize lastSuggestions=_lastSuggestions;
+@property(retain) NSObject<OS_dispatch_queue> *queryQueue; // @synthesize queryQueue=_queryQueue;
+@property(retain) EKPredicateSearch *runningTitleSearch; // @synthesize runningTitleSearch=_runningTitleSearch;
 - (void).cxx_destruct;
-- (id)fetchEventsWithTitleMatchingQuery:(id)arg1 inEventStore:(id)arg2;
+- (id)createSearchWithTitleMatchingQuery:(id)arg1 inEventStore:(id)arg2;
 - (void)_completeSuggestion:(id)arg1 timeDetectionResults:(id)arg2 referenceDate:(id)arg3 event:(id)arg4;
 - (id)_createPartialSuggestionWithTimeDetectionResults:(id)arg1 event:(id)arg2;
 - (void)generateEventSuggestionsAsynchronouslyFromString:(id)arg1 options:(unsigned long long)arg2 defaultCalendar:(id)arg3 referenceDate:(id)arg4 initialEvent:(id)arg5 handler:(CDUnknownBlockType)arg6;
 - (void)eventSuggestionsFromString:(id)arg1 defaultCalendar:(id)arg2 referenceDate:(id)arg3 options:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)eventSuggestionsFromString:(id)arg1 initialEvent:(id)arg2 options:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
+- (id)init;
 
 @end
 

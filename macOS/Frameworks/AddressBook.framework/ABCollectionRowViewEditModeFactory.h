@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCollectionRowViewFactory.h>
 
-__attribute__((visibility("hidden")))
 @interface ABCollectionRowViewEditModeFactory : ABCollectionRowViewFactory
 {
 }
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)buildValueViewForRowView:(id)arg1;
 - (void)buildAddRemoveControlsForRowView:(id)arg1;
 - (void)buildActionGlyphForRowView:(id)arg1;
+- (void)buildActionGlyphsForRowView:(id)arg1;
 - (void)buildLabelViewForRowView:(id)arg1 labelClass:(Class)arg2;
 - (void)buildLabelViewForRowView:(id)arg1;
 - (id)alertToneRowViewForItem:(id)arg1;

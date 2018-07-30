@@ -16,6 +16,7 @@
     VCPCNNData *_output;
     VCPCNNMetalContext *_context;
     BOOL _generateOutput;
+    BOOL _executedOnGPU;
 }
 
 @property BOOL generateOutput; // @synthesize generateOutput=_generateOutput;

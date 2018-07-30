@@ -9,6 +9,7 @@
 @interface NSUUID (ARAdditions)
 + (id)ar_UUIDWithIntegerValue:(unsigned long long)arg1;
 + (id)ar_zeroUUID;
++ (id)ar_UUIDWithData:(id)arg1;
 - (unsigned long long)ar_integerValue;
 @end
 

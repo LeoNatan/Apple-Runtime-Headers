@@ -15,14 +15,6 @@ struct CLLocationCoordinate2D {
     double _field2;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSString {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;

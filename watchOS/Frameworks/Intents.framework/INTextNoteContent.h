@@ -26,6 +26,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithText:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
 @end
 

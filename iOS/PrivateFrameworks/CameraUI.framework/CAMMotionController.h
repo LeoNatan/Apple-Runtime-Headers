@@ -34,7 +34,7 @@
 @property(retain, nonatomic, setter=_setActiveLevelViewModel:) CAMLevelViewModel *activeLevelViewModel; // @synthesize activeLevelViewModel=_activeLevelViewModel;
 @property(nonatomic, setter=_setDominantPhysicalButton:) long long dominantPhysicalButton; // @synthesize dominantPhysicalButton=_dominantPhysicalButton;
 - (void).cxx_destruct;
-- (void)debugValidateCaptureOrientation;
+- (void)debugValidateCaptureOrientationForMode:(long long)arg1;
 - (id)_debugStringForInterfaceOrientation:(long long)arg1;
 - (id)_debugStringForDeviceOrientation:(long long)arg1;
 - (void)observable:(id)arg1 didPublishChange:(unsigned long long)arg2 withContext:(void *)arg3;

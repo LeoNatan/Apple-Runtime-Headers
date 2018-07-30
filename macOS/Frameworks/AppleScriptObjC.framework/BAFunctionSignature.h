@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface BAFunctionSignature : NSObject
 {
     NSString *_returnType;

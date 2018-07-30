@@ -8,7 +8,7 @@
 
 #import "UITextInputTraits.h"
 
-@class DOMFileList, DOMHTMLFormElement, NSString, NSURL;
+@class DOMFileList, DOMHTMLFormElement, NSString, NSURL, UITextInputPasswordRules;
 
 @interface DOMHTMLInputElement : DOMHTMLElement <UITextInputTraits>
 {
@@ -114,6 +114,7 @@
 @property(readonly) unsigned int hash;
 @property(nonatomic) int keyboardAppearance;
 @property(nonatomic) int keyboardType;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) int returnKeyType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
 @property(nonatomic) int smartDashesType;

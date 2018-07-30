@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)getAllowsRemoteNotificationsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)allowsRemoteNotifications;
 - (void)invalidateTokenForRemoteNotifications;
 - (void)requestTokenForRemoteNotificationsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

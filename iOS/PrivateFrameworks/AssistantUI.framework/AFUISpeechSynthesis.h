@@ -11,7 +11,7 @@
 #import "AFUISpeechSynthesisElementDelegate.h"
 #import "VSSpeechSynthesizerDelegate.h"
 
-@class AFQueue, AFVoiceInfo, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, VSSpeechSynthesizer;
+@class AFQueue, AFVoiceInfo, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, VSSpeechSynthesizer;
 
 @interface AFUISpeechSynthesis : NSObject <AFQueueDelegate, AFUISpeechSynthesisElementDelegate, VSSpeechSynthesizerDelegate, AFUISpeechSynthesis>
 {
@@ -21,17 +21,22 @@
     AFVoiceInfo *_outputVoice;
     NSMutableDictionary *_availableVoicesForLanguage;
     NSObject<OS_dispatch_queue> *_processingElementsQueue;
+    NSObject<OS_dispatch_queue> *_pendingElementsQueue;
+    NSObject<OS_dispatch_group> *_pendingElementsGroup;
     id <AFUISpeechSynthesisDelegate> _delegate;
     id <AFUISpeechSynthesisLocalDelegate> _localDelegate;
     AFQueue *_elementQueue;
     NSMutableArray *_activeElements;
+    NSMutableDictionary *_delayedElements;
 }
 
+@property(readonly, nonatomic, getter=_delayedElements) NSMutableDictionary *delayedElements; // @synthesize delayedElements=_delayedElements;
 @property(readonly, nonatomic, getter=_activeElements) NSMutableArray *activeElements; // @synthesize activeElements=_activeElements;
 @property(readonly, nonatomic, getter=_elementQueue) AFQueue *elementQueue; // @synthesize elementQueue=_elementQueue;
 @property(retain, nonatomic) id <AFUISpeechSynthesisDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISpeechSynthesisLocalDelegate> localDelegate; // @synthesize localDelegate=_localDelegate;
 - (void).cxx_destruct;
+- (void)_setSynthesizer:(id)arg1;
 - (void)_processProvisionalElements;
 - (id)_filterVoices:(id)arg1 gender:(id)arg2;
 - (long long)_genderForString:(id)arg1;
@@ -39,12 +44,13 @@
 - (id)_activeElementWithSpeechRequest:(id)arg1;
 - (id)_activeElementWithPresynthesizedAudioRequest:(id)arg1;
 - (void)_processElementQueue;
-- (void)_handleText:(id)arg1;
-- (void)_handleAudioData:(id)arg1;
+- (void)_handleText:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_handleAudioData:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)processDelayedItem:(id)arg1;
 - (void)enqueueText:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_enqueueText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 isPhonetic:(_Bool)arg6 provisionally:(_Bool)arg7 eligibleAfterDuration:(double)arg8 preparationIdentifier:(id)arg9 completion:(CDUnknownBlockType)arg10 animationIdentifier:(id)arg11 analyticsContext:(id)arg12 speakableContextInfo:(id)arg13;
+- (void)_enqueueText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 isPhonetic:(_Bool)arg6 provisionally:(_Bool)arg7 eligibleAfterDuration:(double)arg8 delayed:(_Bool)arg9 preparationIdentifier:(id)arg10 completion:(CDUnknownBlockType)arg11 animationIdentifier:(id)arg12 analyticsContext:(id)arg13 speakableContextInfo:(id)arg14;
 - (void)enqueueAudioData:(id)arg1 identifier:(id)arg2 provisionally:(_Bool)arg3 eligibleAfterDuration:(double)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)enqueueText:(id)arg1 identifier:(id)arg2 language:(id)arg3 gender:(id)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 preparationIdentifier:(id)arg8 completion:(CDUnknownBlockType)arg9 animationIdentifier:(id)arg10 analyticsContext:(id)arg11 speakableContextInfo:(id)arg12;
+- (void)enqueueText:(id)arg1 identifier:(id)arg2 language:(id)arg3 gender:(id)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 preparationIdentifier:(id)arg9 completion:(CDUnknownBlockType)arg10 animationIdentifier:(id)arg11 analyticsContext:(id)arg12 speakableContextInfo:(id)arg13;
 - (_Bool)_startSpeechPreSynthesisOfText:(id)arg1 speakableContext:(id)arg2 error:(id *)arg3;
 - (void)presynthesizeDialogStrings:(id)arg1 speakableContext:(id)arg2;
 - (void)setAudioSessionID:(unsigned int)arg1;

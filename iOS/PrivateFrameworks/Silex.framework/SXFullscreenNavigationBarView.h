@@ -27,6 +27,7 @@
 - (void)setExpanded:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)updateFrameAnimated:(_Bool)arg1;
+- (void)layoutSubviews;
 - (void)didMoveToSuperview;
 - (id)init;
 

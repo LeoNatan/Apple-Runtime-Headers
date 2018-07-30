@@ -14,11 +14,6 @@
 
 @interface _CPCBAEngagementFeedback : PBCodable <_CPProcessableFeedback, _CPCBAEngagementFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int queryId:1;
-        unsigned int cbaType:1;
-    } _has;
     int _cbaType;
     unsigned long long _timestamp;
     unsigned long long _queryId;
@@ -38,10 +33,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasUrl;
-@property(readonly, nonatomic) BOOL hasCbaType;
-@property(readonly, nonatomic) BOOL hasQueryId;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 @property(readonly, nonatomic) BOOL requiresQueryId;
 

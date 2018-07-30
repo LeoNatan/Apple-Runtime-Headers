@@ -42,6 +42,7 @@
 @property(nonatomic) _Bool localDelivery;
 @property(nonatomic) long long priority;
 @property(nonatomic) _Bool wantsDeliveryStatus;
+@property(nonatomic) _Bool wantsProgress;
 @property(nonatomic) _Bool wantsResponse;
 @property(nonatomic) _Bool compressPayload;
 @property(nonatomic) _Bool encryptPayload;

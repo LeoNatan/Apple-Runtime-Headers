@@ -6,16 +6,19 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface CUISAlertItem : NSObject
 {
     NSString *_identifier;
+    NSSet *_alertSuppressionContexts;
 }
 
+@property(readonly, nonatomic) NSSet *alertSuppressionContexts; // @synthesize alertSuppressionContexts=_alertSuppressionContexts;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)description;
+- (id)initWithIdentifier:(id)arg1 alertSuppressionContexts:(id)arg2;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

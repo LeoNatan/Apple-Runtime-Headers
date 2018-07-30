@@ -8,7 +8,6 @@
 
 @class GEOPDTip, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOMapItemTip : NSObject
 {
     GEOPDTip *_geoTip;

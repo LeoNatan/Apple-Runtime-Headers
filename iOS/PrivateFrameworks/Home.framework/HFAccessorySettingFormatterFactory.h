@@ -13,6 +13,7 @@
     NSMutableDictionary *_formattersForKey;
 }
 
++ (id)_siriPersonalRequestsFormatter;
 + (id)_siriOutputVoiceFormatter;
 + (id)_siriRecognitionLanguageFormatter;
 + (id)defaultFactory;

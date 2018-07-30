@@ -10,14 +10,17 @@ __attribute__((visibility("hidden")))
 @interface VCSessionConfiguration : NSObject
 {
     unsigned long long _maxRemoteParticipants;
-    long long _sessionType;
+    long long _sessionMode;
+    id _reportingHierarchyToken;
 }
 
-@property(nonatomic) long long sessionType; // @synthesize sessionType=_sessionType;
+@property(retain, nonatomic) id reportingHierarchyToken; // @synthesize reportingHierarchyToken=_reportingHierarchyToken;
+@property(nonatomic) long long sessionMode; // @synthesize sessionMode=_sessionMode;
 @property(nonatomic) unsigned long long maxRemoteParticipants; // @synthesize maxRemoteParticipants=_maxRemoteParticipants;
 - (_Bool)applyConfigurationUsingClientDict:(id)arg1;
 @property(readonly, nonatomic) _Bool isContinuity;
 - (_Bool)updateWithClientDictionary:(id)arg1;
+- (void)dealloc;
 - (id)initWithClientDictionary:(id)arg1;
 
 @end

@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_routePickingQueue;
     NSObject<OS_dispatch_source> *_pickRouteTimer;
     NMCVirtualAudioRoute *_pendingPickingRoute;
+    NSObject<OS_dispatch_source> *_bluetoothNotificationTimer;
     _Bool _bluetoothAvailableAndEnabled;
     _Bool _speakerRouteEnabled;
 }
@@ -36,8 +37,6 @@
 - (void).cxx_destruct;
 - (void)_updateSpeakerRouteEnabled;
 - (void)_postPairedBluetoothAudioDevicesChangedNotification;
-- (_Bool)_removeBluetoothDevice:(id)arg1;
-- (_Bool)_addBluetoothDevice:(id)arg1;
 - (void)_refreshBluetoothDevices;
 - (void)_handleBluetoothAvailabilityChange;
 - (void)_bluetoothDevicePairedStatusChangedNotification:(id)arg1;
@@ -51,6 +50,7 @@
 - (void)_bluetoothDeviceDiscoveredNotification:(id)arg1;
 - (void)_bluetoothPowerChangedNotification:(id)arg1;
 - (void)_bluetoothAvailabilityChangedNotification:(id)arg1;
+- (void)_setNeedsRefreshingBluetoothDevices;
 - (void)_registerForBluetoothManagerNotifications;
 - (void)_postSystemAudioRoutesChangedNotification;
 - (void)_updateSystemAudioRoutesWithRoutes:(id)arg1;
@@ -77,6 +77,7 @@
 @property(copy, nonatomic) NSString *audioCategory; // @dynamic audioCategory;
 - (void)pickVirtualAudioRoute:(id)arg1;
 - (id)w1Route;
+- (void)attemptToPickW1RouteWithAudioSession:(id)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)attemptToPickW1RouteWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchAudioRoutesInfoIgnoringCache:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAudioRoutesInfoWithCompletion:(CDUnknownBlockType)arg1;

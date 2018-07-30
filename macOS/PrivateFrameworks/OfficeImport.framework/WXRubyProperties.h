@@ -6,14 +6,13 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface WXRubyProperties : NSObject
 {
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 state:(id)arg3;
 + (int)rubyAlignmentFromString:(id)arg1;
-+ (void)initialize;
++ (id)rubyAlignmentEnumMap;
 
 @end
 

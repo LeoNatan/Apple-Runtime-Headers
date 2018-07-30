@@ -8,7 +8,6 @@
 
 #import "NSCoding.h"
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDGradientColorStop : CUIPSDGradientStop <NSCoding>
 {
     struct _psdGradientColor gradientColor;

@@ -8,7 +8,6 @@
 
 @class NSLock, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface OITSUDateFormatter_FormatterCache : NSObject
 {
     NSLock *_dateFormatterCacheLock;
@@ -16,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)dateFormatterStringFromDate:(id)arg1 withFormat:(id)arg2 locale:(id)arg3;
+- (void).cxx_destruct;
 - (id)dateFormatterStringFromDate:(id)arg1 withFormat:(id)arg2 locale:(id)arg3;
-- (void)dealloc;
 - (id)init;
 
 @end

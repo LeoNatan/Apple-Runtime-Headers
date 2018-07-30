@@ -21,6 +21,7 @@
     UIViewController *_topVC;
     UIViewController *_pendingTopVC;
     unsigned int _pendingTopVCIdentifier;
+    unsigned int _updateChildViewControllerSizeCounter;
     UITapGestureRecognizer *_tapGestureRecognizer;
     _Bool _presentingNavigationController;
     PKCompactNavigationContainedNavigationController *_containedNavigationController;

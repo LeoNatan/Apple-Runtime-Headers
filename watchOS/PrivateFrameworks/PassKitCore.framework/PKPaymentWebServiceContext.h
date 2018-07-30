@@ -55,6 +55,7 @@
 @property int version; // @synthesize version=_version;
 - (void).cxx_destruct;
 - (double)_contextProvisioningEnablementValue;
+- (_Bool)contextMeetsMarketGeoNotificationThresholdForRegion:(id)arg1 paymentNetwork:(int)arg2;
 - (_Bool)contextMeetsProvisioningEnablementPercentageThresholdForRegion:(id)arg1;
 @property(readonly) __weak NSDictionary *TSMURLStringByPushTopic;
 - (id)TSMPushTopics;

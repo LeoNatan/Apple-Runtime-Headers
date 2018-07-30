@@ -7,6 +7,6 @@
 #import "CRCommand.h"
 
 @protocol CRPayloadCommand <CRCommand>
-@property(retain, nonatomic) id <NSSecureCoding> payload;
+@property(retain, nonatomic) id <NSSecureCoding><NSCopying> payload;
 @end
 

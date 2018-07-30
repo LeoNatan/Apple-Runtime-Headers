@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSString;
+@class NSString;
 
 @protocol CSLSConnectionStatusObserver <NSObject>
 - (void)connectionStatusDidChange:(unsigned int)arg1;
@@ -17,6 +17,5 @@
 - (void)cellularSignalStrengthBarsDidChange:(long)arg1;
 - (void)registrationStatusDidChange:(int)arg1;
 - (void)wifiSignalStrengthBarsDidChange:(int)arg1;
-- (void)connectionStatusDidChange:(unsigned int)arg1 lastConnection:(NSDate *)arg2;
 @end
 

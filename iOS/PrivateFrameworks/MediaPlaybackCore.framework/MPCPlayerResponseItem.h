@@ -10,6 +10,7 @@
 
 @interface MPCPlayerResponseItem : NSObject
 {
+    unsigned long long _seekSupport;
     _Bool _placeholder;
     NSString *_contentItemIdentifier;
     long long _revision;
@@ -28,6 +29,7 @@
 @property(readonly, nonatomic) NSString *contentItemIdentifier; // @synthesize contentItemIdentifier=_contentItemIdentifier;
 - (void).cxx_destruct;
 - (id)_feedbackCommandWithMediaRemoteCommand:(unsigned int)arg1;
+- (unsigned long long)_determineSeekSupport;
 - (id)startPictureInPicture;
 - (id)remove;
 - (id)rateCommand;

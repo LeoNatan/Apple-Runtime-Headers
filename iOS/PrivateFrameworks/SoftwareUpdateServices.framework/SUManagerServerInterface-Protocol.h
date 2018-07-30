@@ -7,6 +7,8 @@
 @class NSArray, NSDictionary, NSString, NSUUID, SUDownloadMetadata, SUScanOptions;
 
 @protocol SUManagerServerInterface
+- (void)isAutomaticUpdateV2Enabled:(void (^)(_Bool, NSError *))arg1;
+- (void)enableAutomaticUpdateV2:(_Bool)arg1;
 - (void)createInstallationKeybag:(NSString *)arg1 forUnattendedInstall:(_Bool)arg2 withResult:(void (^)(_Bool, NSError *))arg3;
 - (void)getMandatorySoftwareUpdateDictionary:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)setMandatorySoftwareUpdateDictionary:(NSDictionary *)arg1;
@@ -18,6 +20,9 @@
 - (void)installUpdate:(void (^)(_Bool, NSError *))arg1;
 - (void)isUpdateReadyForInstallation:(void (^)(_Bool, NSError *))arg1;
 - (void)isInstallationKeybagRequired:(void (^)(_Bool, NSError *))arg1;
+- (void)presentAutoUpdateBanner:(void (^)(_Bool, NSError *))arg1;
+- (void)isAutoUpdateEnabled:(void (^)(_Bool, NSError *))arg1;
+- (void)currentPasscodePolicy:(void (^)(unsigned long long, NSError *))arg1;
 - (void)consentToAutoInstallOperation:(NSUUID *)arg1 withResult:(void (^)(_Bool, NSError *))arg2;
 - (void)cancelAutoInstallOperation:(NSUUID *)arg1 withResult:(void (^)(_Bool, NSError *))arg2;
 - (void)currentAutoInstallOperation:(_Bool)arg1 withResult:(void (^)(_SUAutoInstallOperationModel *, NSError *))arg2;
@@ -32,6 +37,7 @@
 - (void)startDownloadWithMetadata:(SUDownloadMetadata *)arg1 withResult:(void (^)(_Bool, NSError *))arg2;
 - (void)startDownload:(void (^)(_Bool, NSError *))arg1;
 - (void)isDownloading:(void (^)(_Bool, NSError *))arg1;
+- (void)autoScanAndDownloadIfAvailable:(void (^)(SUDescriptor *, NSError *))arg1;
 - (void)scanForUpdates:(SUScanOptions *)arg1 withResult:(void (^)(SUDescriptor *, NSError *))arg2;
 - (void)isScanning:(void (^)(_Bool, NSError *))arg1;
 @end

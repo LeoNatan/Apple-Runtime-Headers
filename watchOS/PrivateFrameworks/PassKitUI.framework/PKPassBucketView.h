@@ -10,7 +10,8 @@
 
 @interface PKPassBucketView : UIView
 {
-    NSMutableArray *_fieldViews;
+    NSArray *_fieldViews;
+    NSMutableArray *_currentFieldViews;
     int _background;
     PKPass *_pass;
     PKPassColorProfile *_colorProfile;

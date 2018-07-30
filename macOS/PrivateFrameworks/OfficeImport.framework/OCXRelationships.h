@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OCXRelationships : NSObject
 {
     NSString *mPath;
@@ -17,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned long long mNextId;
 }
 
+- (void).cxx_destruct;
 - (void)writeRelationshipsToFilename:(id)arg1 stream:(id)arg2;
 - (id)targetForKey:(id)arg1;
 - (id)idForKey:(id)arg1;
@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (id)addRelationshipForKey:(id)arg1 type:(id)arg2 target:(id)arg3;
 - (BOOL)isEmpty;
 - (id)path;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 
 @end

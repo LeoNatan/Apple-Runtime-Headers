@@ -8,13 +8,12 @@
 
 #import "BLTSettingSyncingClient.h"
 
-@class BBSettingsGateway, BLTDNDSync, BLTMuteSync, BLTSectionConfiguration, BLTSettingSyncServer, BLTWristStateObserver, NSString;
+@class BBSettingsGateway, BLTMuteSync, BLTSectionConfiguration, BLTSettingSyncServer, BLTWristStateObserver, NSString;
 
 @interface BLTSettingSyncInternal : NSObject <BLTSettingSyncingClient>
 {
     BLTWristStateObserver *_wristStateObserver;
     BBSettingsGateway *_settingsGateway;
-    BLTDNDSync *_dndSync;
     BLTMuteSync *_muteSync;
     BLTSettingSyncServer *_connection;
     BLTSectionConfiguration *_sectionConfiguration;
@@ -23,7 +22,6 @@
 @property(readonly, nonatomic) BLTSectionConfiguration *sectionConfiguration; // @synthesize sectionConfiguration=_sectionConfiguration;
 @property(retain, nonatomic) BLTSettingSyncServer *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BLTMuteSync *muteSync; // @synthesize muteSync=_muteSync;
-@property(retain, nonatomic) BLTDNDSync *dndSync; // @synthesize dndSync=_dndSync;
 @property(retain, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
 - (void).cxx_destruct;
 - (unsigned long long)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(long long)arg3 category:(id)arg4;
@@ -33,7 +31,9 @@
 - (void)disableStandaloneTestMode;
 - (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned long long)arg1 maximumSendDelay:(unsigned long long)arg2 minimumResponseDelay:(unsigned long long)arg3 maximumResponseDelay:(unsigned long long)arg4;
 - (void)enableNotifications:(_Bool)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3;
-- (void)enableNotifications:(_Bool)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 fromRemote:(_Bool)arg4;
+- (void)setNotificationsLevel:(unsigned long long)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3;
+- (void)setNotificationsGrouping:(int)arg1 sectionID:(id)arg2;
+- (void)setNotificationsLevel:(unsigned long long)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 fromRemote:(_Bool)arg4;
 - (void)removeSectionWithSectionID:(id)arg1;
 - (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(long long)arg3;
 - (void)setSectionInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;

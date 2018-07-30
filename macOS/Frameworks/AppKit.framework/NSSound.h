@@ -6,14 +6,14 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSPasteboardReading.h"
 #import "NSPasteboardWriting.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface NSSound : NSObject <NSCopying, NSCoding, NSPasteboardReading, NSPasteboardWriting>
+@interface NSSound : NSObject <NSCopying, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
 {
     id <NSSoundDelegate> _delegate;
     id _info;
@@ -34,6 +34,7 @@
 + (id)soundUnfilteredPasteboardTypes;
 + (id)soundUnfilteredFileTypes;
 + (id)soundUnfilteredTypes;
++ (BOOL)supportsSecureCoding;
 + (void)initialize;
 - (void).cxx_destruct;
 - (unsigned int)_systemSoundIDCreateIfNecessary:(BOOL)arg1;
@@ -68,6 +69,7 @@
 - (id)url;
 - (id)_url;
 @property __weak id <NSSoundDelegate> delegate;
+- (BOOL)_isValidDecodedChannelMap:(id)arg1 error:(id *)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

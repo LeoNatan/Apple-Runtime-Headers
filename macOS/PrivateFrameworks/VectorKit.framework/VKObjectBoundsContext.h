@@ -8,7 +8,7 @@
 
 @interface VKObjectBoundsContext : NSObject
 {
-    vector_e20517dc _points;
+    vector_554e3200 _points;
     struct VKEdgeInsets _edgePadding;
 }
 
@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (CDStruct_90e2a262)boundingRect;
 - (BOOL)isEmpty;
-- (void)addPoints:(const vector_e20517dc *)arg1;
+- (void)addPoints:(const vector_554e3200 *)arg1;
 
 @end
 

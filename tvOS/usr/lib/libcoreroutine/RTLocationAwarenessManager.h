@@ -6,7 +6,7 @@
 
 #import <coreroutine/RTService.h>
 
-@class CLLocation, NSDate, NSMapTable, NSNumber, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, RTAuthorizationManager, RTInvocationDispatcher, RTLocationAwarenessManagerConfig, RTLocationAwarenessMetrics, RTLocationManager, RTMetricManager, RTMotionActivityManager, RTPowerAssertion, RTWiFiManager;
+@class CLLocation, NSDate, NSMapTable, NSNumber, NSObject<OS_dispatch_source>, RTAuthorizationManager, RTInvocationDispatcher, RTLocationAwarenessManagerConfig, RTLocationAwarenessMetrics, RTLocationManager, RTMetricManager, RTMotionActivityManager, RTPowerAssertion, RTWiFiManager, RTXPCActivityManager;
 
 @interface RTLocationAwarenessManager : RTService
 {
@@ -38,18 +38,19 @@
     CLLocation *_lastValidLocation;
     RTMotionActivityManager *_motionActivityManager;
     RTPowerAssertion *_xpcActivityPowerAssertion;
-    NSObject<OS_xpc_object> *_locationAwarenessXPCActivity;
+    RTXPCActivityManager *_xpcActivityManager;
     NSDate *_stationaryStartTimestamp;
     RTInvocationDispatcher *_heartbeatBuffer;
 }
 
++ (id)powerAssertion;
 + (void)pauseDispatchTimer:(id)arg1;
 + (void)invalidateDispatchTimer:(id)arg1;
 + (id)createDefaultDispatchTimerWithQueue:(id)arg1;
 + (long long)localHourFromTimestamp:(id)arg1;
 @property(copy, nonatomic) RTInvocationDispatcher *heartbeatBuffer; // @synthesize heartbeatBuffer=_heartbeatBuffer;
 @property(copy, nonatomic) NSDate *stationaryStartTimestamp; // @synthesize stationaryStartTimestamp=_stationaryStartTimestamp;
-@property(retain, nonatomic) NSObject<OS_xpc_object> *locationAwarenessXPCActivity; // @synthesize locationAwarenessXPCActivity=_locationAwarenessXPCActivity;
+@property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(retain, nonatomic) RTPowerAssertion *xpcActivityPowerAssertion; // @synthesize xpcActivityPowerAssertion=_xpcActivityPowerAssertion;
 @property(retain, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(retain, nonatomic) CLLocation *lastValidLocation; // @synthesize lastValidLocation=_lastValidLocation;
@@ -98,11 +99,12 @@
 - (void)adjustHeartbeatTimer;
 - (void)updateMinHeartbeatBucket;
 - (void)_updateXPCActivityForObserverCount:(unsigned long long)arg1;
+- (void)hourlySingleShotWithHandler:(CDUnknownBlockType)arg1;
 - (void)removeLocationHeartbeatRequester:(id)arg1;
 - (_Bool)addLocationHeartbeatRequester:(id)arg1 interval:(double)arg2 error:(id *)arg3;
 - (void)_shutdown;
 - (void)_setup;
-- (id)initWithLocationManager:(id)arg1 config:(id)arg2 metricManager:(id)arg3 motionActivityManager:(id)arg4 authorizationManager:(id)arg5 wifiManager:(id)arg6;
+- (id)initWithLocationManager:(id)arg1 config:(id)arg2 metricManager:(id)arg3 motionActivityManager:(id)arg4 authorizationManager:(id)arg5 wifiManager:(id)arg6 xpcActivityManager:(id)arg7;
 - (id)init;
 - (void)logActiveRequestStatus;
 - (void)resetActiveRequestSummaryVariables;

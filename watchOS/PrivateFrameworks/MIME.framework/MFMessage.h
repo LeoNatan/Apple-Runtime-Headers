@@ -130,6 +130,7 @@
 - (void)setMessageURL:(id)arg1;
 - (id)messageID;
 - (id)preferredEmailAddressToReplyWith;
+- (unsigned int)fileSize;
 - (unsigned int)messageSize;
 - (void)dealloc;
 - (id)dataConsumerForMimePart:(id)arg1;

@@ -12,7 +12,7 @@
 {
     NSDictionary *_entitlements;
     NSString *_signingIdentifier;
-    long long _appSandboxOnce;
+    BOOL _appSandboxOnce;
     BOOL _requestsAppSandbox;
     BOOL _requestsInheritance;
 }

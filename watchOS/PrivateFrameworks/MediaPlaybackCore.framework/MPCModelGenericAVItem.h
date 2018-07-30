@@ -12,7 +12,7 @@
 #import "MPMusicSubscriptionLeasePlaybackParticipating.h"
 #import "MPRTCReportingItemSessionCreating.h"
 
-@class ICMusicSubscriptionLeaseSession, ICStoreRequestContext, MPCModelGenericAVItemTimedMetadataRequest, MPCModelGenericAVItemTimedMetadataResponse, MPCPlaybackRequestEnvironment, MPCSuzeLeaseSession, MPMediaLibrary, MPModelGenericObject, MPPropertySet, MPSubscriptionStatusPlaybackInformation, NSArray, NSData, NSNumber, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL;
+@class ICMusicSubscriptionLeaseSession, ICMusicSubscriptionLeaseStatus, ICStoreRequestContext, MPCModelGenericAVItemTimedMetadataRequest, MPCModelGenericAVItemTimedMetadataResponse, MPCPlaybackRequestEnvironment, MPCSuzeLeaseSession, MPMediaLibrary, MPModelGenericObject, MPPropertySet, MPSubscriptionStatusPlaybackInformation, NSArray, NSData, NSNumber, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL;
 
 @interface MPCModelGenericAVItem : MPAVItem <AVAssetResourceLoaderDelegate, AVPlayerItemMetadataOutputPushDelegate, ICEnvironmentMonitorObserver, MPMusicSubscriptionLeasePlaybackParticipating, MPRTCReportingItemSessionCreating>
 {
@@ -57,6 +57,7 @@
     _Bool _radioPlayback;
     _Bool _radioStreamPlayback;
     int _leasePlaybackPreventionState;
+    ICMusicSubscriptionLeaseStatus *_leaseStatus;
     id <MPCModelPlaybackAssetCacheProviding> _assetCacheProvider;
     NSString *_assetSourceStoreFrontID;
     MPModelGenericObject *_genericObject;
@@ -82,6 +83,7 @@
 @property(copy, nonatomic) NSString *assetSourceStoreFrontID; // @synthesize assetSourceStoreFrontID=_assetSourceStoreFrontID;
 @property(retain, nonatomic) id <MPCModelPlaybackAssetCacheProviding> assetCacheProvider; // @synthesize assetCacheProvider=_assetCacheProvider;
 @property(nonatomic) _Bool supportsRadioTrackActions; // @synthesize supportsRadioTrackActions;
+@property(readonly, copy, nonatomic) ICMusicSubscriptionLeaseStatus *leaseStatus; // @synthesize leaseStatus=_leaseStatus;
 @property(readonly, nonatomic) int leasePlaybackPreventionState; // @synthesize leasePlaybackPreventionState=_leasePlaybackPreventionState;
 - (void).cxx_destruct;
 - (id)_utilitySerialQueue;
@@ -203,6 +205,8 @@
 - (id)artist;
 - (void)applyVolumeNormalizationWithSoundCheckEnabled:(_Bool)arg1;
 - (_Bool)allowsEQ;
+- (unsigned int)albumTrackCount;
+- (unsigned int)albumTrackNumber;
 - (long long)artistStoreID;
 - (long long)albumStoreID;
 - (id)albumArtist;

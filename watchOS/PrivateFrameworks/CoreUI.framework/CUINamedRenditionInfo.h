@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
 - (unsigned long)numberOfBitsSet;
 - (void)clearAttributePresent:(int)arg1 withValue:(unsigned short)arg2;
 - (void)setAttributePresent:(int)arg1 withValue:(unsigned short)arg2;
+- (_Bool)diverseContentPresentForAttribute:(int)arg1;
+- (_Bool)contentEqualForAttribute:(int)arg1 withRenditionInfo:(id)arg2;
+- (_Bool)contentPresentForAttribute:(int)arg1;
 - (int)attributePresent:(int)arg1 withValue:(unsigned short)arg2;
 - (id)bitwiseAndWith:(id)arg1;
 - (id)description;

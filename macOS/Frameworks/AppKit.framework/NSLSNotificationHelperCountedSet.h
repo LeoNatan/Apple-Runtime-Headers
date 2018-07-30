@@ -6,6 +6,7 @@
 
 #import <AppKit/NSLSNotificationHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface NSLSNotificationHelperCountedSet : NSLSNotificationHelper
 {
     struct __CFDictionary *_dictionary;

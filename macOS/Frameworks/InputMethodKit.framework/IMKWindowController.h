@@ -8,7 +8,7 @@
 
 #import "NSWindowDelegate.h"
 
-@class IMKCandidateController, IMKClipView, NSString;
+@class IMKCandidateController, IMKClipView, NSAppearance, NSString;
 
 @interface IMKWindowController : NSWindowController <NSWindowDelegate>
 {
@@ -19,6 +19,7 @@
 @property(readonly) IMKCandidateController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) IMKClipView *clipView; // @synthesize clipView=_clipView;
 @property(nonatomic) long long windowLevel;
+@property(retain, nonatomic) NSAppearance *appearance;
 - (id)_createWindow;
 - (void)setWindowFrame:(struct CGRect)arg1 animation:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class CRVehicle, NSData, NSDictionary, NSString, NSURL;
+@class CRVehicle, NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @protocol CRCarKitService
-- (void)handleCarPlayDiagnosticsWithDeviceScreenshotURL:(NSURL *)arg1 carScreenshotURL:(NSURL *)arg2 reply:(void (^)(void))arg3;
+- (void)handleCarPlayDiagnosticsWithDeviceScreenshotURL:(NSURL *)arg1 carScreenshotURL:(NSURL *)arg2 attachmentURLs:(NSArray *)arg3 reply:(void (^)(void))arg4;
 - (void)isCarPlayAllowedWithReply:(void (^)(_Bool, NSError *))arg1;
 - (void)handleCarPlayRestrictionChangedWithReply:(void (^)(void))arg1;
 - (void)isPairedWithCertificateSerial:(NSData *)arg1 reply:(void (^)(_Bool, NSError *))arg2;

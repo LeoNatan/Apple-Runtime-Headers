@@ -8,6 +8,7 @@
 
 @class RCWeakRef;
 
+__attribute__((visibility("hidden")))
 @interface RCWeakDisplayLinkTargetProxy : RCDisplayLinkTargetProxy
 {
     RCWeakRef *_weakTarget;

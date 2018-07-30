@@ -8,18 +8,13 @@
 
 @interface OSIInstallRecoverySystemElement : OSIInstallQueueElement
 {
-    BOOL _isPostReap;
 }
 
-@property BOOL isPostReap; // @synthesize isPostReap=_isPostReap;
 - (double)estimatedTimeToComplete;
 - (id)localizedStatusString;
 - (id)operationName;
-- (BOOL)copyAPFSPreBootFiles:(id)arg1 destFolder:(id)arg2 apfsUUID:(id)arg3;
-- (BOOL)reblessInstaller;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
-- (id)initWithOptions:(id)arg1 isPostReap:(BOOL)arg2;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

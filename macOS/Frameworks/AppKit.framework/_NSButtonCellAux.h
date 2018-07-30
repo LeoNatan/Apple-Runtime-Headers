@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_animatingOutImageViews;
     NSMutableArray *_animatingOutTextFields;
     NSColor *_bezelTintColor;
+    NSColor *_contentTintColor;
     double _doubleValue;
     long long _maxAcceleratorLevel;
     double _acceleratorClickTimestamp;
@@ -28,7 +29,7 @@ __attribute__((visibility("hidden")))
         unsigned int springLoaded:1;
         unsigned int springLoadingEmphasized:1;
         unsigned int animationsAllowed:1;
-        unsigned int hasBeenSnoopingAroundPrivateFlags:1;
+        unsigned int inFunctionRowAppearance:1;
         unsigned int showsDisclosureChevron:1;
         unsigned int guarded:1;
         unsigned int _reserved:25;
@@ -38,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableArray *animatingOutTextFields; // @synthesize animatingOutTextFields=_animatingOutTextFields;
 @property(retain) NSMutableArray *animatingOutImageViews; // @synthesize animatingOutImageViews=_animatingOutImageViews;
 @property double minimumPressDuration; // @synthesize minimumPressDuration=_minimumPressDuration;
+@property(copy) NSColor *contentTintColor; // @synthesize contentTintColor=_contentTintColor;
 @property(copy) NSColor *bezelTintColor; // @synthesize bezelTintColor=_bezelTintColor;
 @property(retain) _NSButtonAnimationView *animator; // @synthesize animator=_animator;
 - (void)dealloc;

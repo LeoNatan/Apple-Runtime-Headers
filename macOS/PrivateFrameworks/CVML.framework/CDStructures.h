@@ -221,10 +221,10 @@ struct map<(anonymous namespace)::Faceprint, int, std::__1::less<(anonymous name
     struct __tree<std::__1::__value_type<(anonymous namespace)::Faceprint, int>, std::__1::__map_value_compare<(anonymous namespace)::Faceprint, std::__1::__value_type<(anonymous namespace)::Faceprint, int>, std::__1::less<(anonymous namespace)::Faceprint>, true>, std::__1::allocator<std::__1::__value_type<(anonymous namespace)::Faceprint, int>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<(anonymous namespace)::Faceprint, int>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<(anonymous namespace)::Faceprint, std::__1::__value_type<(anonymous namespace)::Faceprint, int>, std::__1::less<(anonymous namespace)::Faceprint>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -364,7 +364,7 @@ struct shared_ptr<vision::mod::VIPIdentification> {
 
 struct unique_ptr<cvml::util::model_file_cache, std::__1::default_delete<cvml::util::model_file_cache>> {
     struct __compressed_pair<cvml::util::model_file_cache *, std::__1::default_delete<cvml::util::model_file_cache>> {
-        struct model_file_cache *__first_;
+        struct model_file_cache *__value_;
     } __ptr_;
 };
 
@@ -395,7 +395,7 @@ struct vector<int, std::__1::allocator<int>> {
     int *__begin_;
     int *__end_;
     struct __compressed_pair<int *, std::__1::allocator<int>> {
-        int *__first_;
+        int *__value_;
     } __end_cap_;
 };
 

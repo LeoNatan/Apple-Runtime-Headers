@@ -16,6 +16,7 @@
 
 @property(getter=isCompositionCandidate) BOOL compositionCandidate; // @synthesize compositionCandidate=_compositionCandidate;
 @property(readonly) void *mecabraCandidate; // @synthesize mecabraCandidate=_mecabraCandidate;
+- (id)stringIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NSArray *segmentedSurface;
 @property(readonly) NSArray *segmentedReading;

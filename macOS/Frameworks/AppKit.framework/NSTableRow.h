@@ -23,6 +23,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithRow:(long long)arg1 ofTableView:(id)arg2;
+- (id)deepestAccessibilityDescendants;
 - (id)_accessibilityChildUIElementForSpecifierComponent:(long long)arg1;
 - (long long)_accessibilitySpecifierComponentForChildUIElement:(id)arg1 registerIfNeeded:(BOOL)arg2;
 - (BOOL)accessibilitySupportsNotifications;

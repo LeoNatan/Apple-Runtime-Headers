@@ -12,6 +12,6 @@
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB;
 - (void)setInterfaceItemValue:(id)arg1 property:(NSString *)arg2;
 - (NSDictionary *)companionProperty;
-- (id)initWithItemDescription:(NSDictionary *)arg1 bundle:(NSBundle *)arg2 stringsFileName:(NSString *)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(NSDictionary *)arg1 bundle:(NSBundle *)arg2 stringsFileName:(NSString *)arg3;
 @end
 

@@ -11,7 +11,7 @@
 @interface CPLEngineSyncTask : NSObject
 {
     _Bool _foreground;
-    _Bool _paused;
+    _Bool _forceSync;
     _Bool _cancelled;
     id <CPLEngineSyncTaskDelegate> _delegate;
     CPLEngineLibrary *_engineLibrary;
@@ -20,7 +20,7 @@
 
 + (id)taskWithEngineLibrary:(id)arg1;
 @property(getter=isCancelled, setter=_setCancelled:) _Bool cancelled; // @synthesize cancelled=_cancelled;
-@property(getter=isPaused, setter=_setPaused:) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic) _Bool forceSync; // @synthesize forceSync=_forceSync;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;
 @property(retain, nonatomic) id <NSCoding> transportUserIdentifier; // @synthesize transportUserIdentifier=_transportUserIdentifier;
 @property(readonly, nonatomic) CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
@@ -30,8 +30,6 @@
 - (void)taskDidProgress:(float)arg1 userInfo:(id)arg2;
 - (void)taskDidFinishWithError:(id)arg1;
 - (void)cancel;
-- (void)resume;
-- (void)pause;
 - (void)launch;
 @property(readonly, nonatomic) NSString *taskIdentifier;
 - (unsigned int)diskPressureState;

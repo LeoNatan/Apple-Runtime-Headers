@@ -10,6 +10,8 @@
 
 @protocol TUCallProviderManagerDataSource <NSObject>
 @property(nonatomic) __weak id <TUCallProviderManagerDataSourceDelegate> delegate;
+@property(readonly, copy, nonatomic) NSDictionary *pairedHostDeviceProvidersByIdentifier;
+@property(readonly, copy, nonatomic) NSDictionary *localProvidersByIdentifier;
 @property(readonly, copy, nonatomic) NSDictionary *providersByIdentifier;
 @property(readonly, nonatomic) _Bool currentProcessCanAccessInitialState;
 - (void)invalidate;

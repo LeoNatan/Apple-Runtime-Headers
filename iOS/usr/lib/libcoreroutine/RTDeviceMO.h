@@ -20,9 +20,11 @@
 @property(readonly, nonatomic) RTDeviceMO *device;
 
 // Remaining properties
+@property(retain, nonatomic) NSSet *addresses; // @dynamic addresses;
 @property(copy, nonatomic) NSString *deviceClass; // @dynamic deviceClass;
 @property(copy, nonatomic) NSString *deviceModel; // @dynamic deviceModel;
 @property(copy, nonatomic) NSString *deviceName; // @dynamic deviceName;
+@property(retain, nonatomic) NSSet *mapItems; // @dynamic mapItems;
 @property(retain, nonatomic) NSSet *places; // @dynamic places;
 @property(retain, nonatomic) NSSet *transitions; // @dynamic transitions;
 @property(retain, nonatomic) NSSet *visits; // @dynamic visits;

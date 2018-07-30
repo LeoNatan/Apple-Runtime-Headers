@@ -8,6 +8,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, VSPresynthesizedAudioRequest, VSSpeechConnectionDelegateWrapper, VSSpeechRequest;
 
+__attribute__((visibility("hidden")))
 @interface VSSpeechConnection : NSObject
 {
     NSXPCConnection *_xpcConnection;
@@ -37,6 +38,7 @@
 - (void)stopCurrentSpeechRequestAtMark:(long long)arg1;
 - (void)startSynthesisRequest:(id)arg1;
 - (void)stopPresynthesizedAudioRequest;
+- (void)cachePresynthesizedAudioRequest:(id)arg1;
 - (void)startPresynthesizedAudioRequest:(id)arg1;
 - (void)startSpeechRequest:(id)arg1;
 - (void)endAudioPowerUpdate;

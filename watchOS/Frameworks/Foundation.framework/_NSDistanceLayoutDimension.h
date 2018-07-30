@@ -20,7 +20,7 @@
 @property(readonly) NSArray *_childAnchors;
 - (id)equationDescription;
 - (float)_valueInEngine:(id)arg1;
-- (id)_expressionInContext:(CDStruct_c22e37be)arg1;
+- (id)_expressionInContext:(CDStruct_acc9a335)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

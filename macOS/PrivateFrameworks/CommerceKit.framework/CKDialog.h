@@ -48,6 +48,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)setAction:(id)arg1 forButton:(BOOL)arg2;
 - (id)actionForButton:(BOOL)arg1;
+- (id)description;
 - (id)init;
 
 @end

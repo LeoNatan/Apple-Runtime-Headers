@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) _Bool inverted; // @synthesize inverted=_inverted;
 @property(copy, nonatomic) NSString *charactersAddedToBase; // @synthesize charactersAddedToBase=_charactersAddedToBase;
 @property(readonly, nonatomic) long long baseIdentifier; // @synthesize baseIdentifier=_baseIdentifier;
+- (void).cxx_destruct;
 - (void)clearCachedCharacterSet;
 @property(readonly, nonatomic) NSCharacterSet *characterSet;
 - (id)newCharacterSetFromDescription;
@@ -38,7 +39,6 @@
 - (id)initWithBase:(long long)arg1 additionalCharacters:(id)arg2 inverted:(_Bool)arg3;
 - (id)initWithCharactersInString:(id)arg1;
 - (id)initWithBaseCharacterSet:(long long)arg1;
-- (void)dealloc;
 
 @end
 

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)javaScriptActionWithDuration:(double)arg1 script:(id)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)parameters;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

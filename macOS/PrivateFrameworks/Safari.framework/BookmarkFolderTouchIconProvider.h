@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_defaultFolderIcon;
 - (void)_bookmarksWereRemoved:(id)arg1;
+- (id)backgroundColor;
 - (void)didCreateTouchIcon:(id)arg1;
 - (id)defaultFolderIconForRequest:(id)arg1;
 - (BOOL)canHandleRequest:(id)arg1;

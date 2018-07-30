@@ -7,65 +7,84 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSearchCallHistoryIntent.h"
 
-@class PBUnknownFields, _INPBContact, _INPBDateTimeRange, _INPBIntentMetadata;
+@class NSString, _INPBContact, _INPBDateTimeRange, _INPBIntentMetadata;
 
-@interface _INPBSearchCallHistoryIntent : PBCodable <NSCopying>
+@interface _INPBSearchCallHistoryIntent : PBCodable <_INPBSearchCallHistoryIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _callCapabilities;
     CDStruct_56d48c16 _callTypes;
+    CDStruct_56d48c16 _capabilities;
+    struct {
+        unsigned int callType:1;
+        unsigned int preferredCallProvider:1;
+        unsigned int unseen:1;
+    } _has;
+    _Bool _unseen;
+    int _callType;
     _INPBDateTimeRange *_dateCreated;
     _INPBIntentMetadata *_intentMetadata;
     int _preferredCallProvider;
     _INPBContact *_recipient;
-    _Bool _unseen;
-    struct {
-        unsigned int preferredCallProvider:1;
-        unsigned int unseen:1;
-    } _has;
+    _INPBContact *_targetContact;
 }
 
-+ (id)options;
 @property(nonatomic) _Bool unseen; // @synthesize unseen=_unseen;
+@property(retain, nonatomic) _INPBContact *targetContact; // @synthesize targetContact=_targetContact;
 @property(retain, nonatomic) _INPBContact *recipient; // @synthesize recipient=_recipient;
-@property(retain, nonatomic) _INPBDateTimeRange *dateCreated; // @synthesize dateCreated=_dateCreated;
+@property(nonatomic) int preferredCallProvider; // @synthesize preferredCallProvider=_preferredCallProvider;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBDateTimeRange *dateCreated; // @synthesize dateCreated=_dateCreated;
+@property(nonatomic) int callType; // @synthesize callType=_callType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(nonatomic) _Bool hasUnseen;
+@property(readonly, nonatomic) _Bool hasTargetContact;
+@property(readonly, nonatomic) _Bool hasRecipient;
 - (int)StringAsPreferredCallProvider:(id)arg1;
 - (id)preferredCallProviderAsString:(int)arg1;
 @property(nonatomic) _Bool hasPreferredCallProvider;
-@property(nonatomic) int preferredCallProvider; // @synthesize preferredCallProvider=_preferredCallProvider;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasDateCreated;
+- (int)StringAsCapabilities:(id)arg1;
+- (id)capabilitiesAsString:(int)arg1;
+- (int)capabilitiesAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int capabilitiesCount;
+- (void)addCapabilities:(int)arg1;
+- (void)clearCapabilities;
+@property(readonly, nonatomic) int *capabilities;
+- (void)setCapabilities:(int *)arg1 count:(unsigned int)arg2;
 - (int)StringAsCallTypes:(id)arg1;
 - (id)callTypesAsString:(int)arg1;
-- (void)setCallTypes:(int *)arg1 count:(unsigned int)arg2;
 - (int)callTypesAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int callTypesCount;
 - (void)addCallTypes:(int)arg1;
 - (void)clearCallTypes;
 @property(readonly, nonatomic) int *callTypes;
-@property(readonly, nonatomic) unsigned int callTypesCount;
+- (void)setCallTypes:(int *)arg1 count:(unsigned int)arg2;
+- (int)StringAsCallType:(id)arg1;
+- (id)callTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasCallType;
 - (int)StringAsCallCapabilities:(id)arg1;
 - (id)callCapabilitiesAsString:(int)arg1;
-- (void)setCallCapabilities:(int *)arg1 count:(unsigned int)arg2;
 - (int)callCapabilitiesAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int callCapabilitiesCount;
 - (void)addCallCapabilities:(int)arg1;
 - (void)clearCallCapabilities;
 @property(readonly, nonatomic) int *callCapabilities;
-@property(readonly, nonatomic) unsigned int callCapabilitiesCount;
-@property(readonly, nonatomic) _Bool hasRecipient;
-@property(readonly, nonatomic) _Bool hasDateCreated;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
-- (void)dealloc;
+- (void)setCallCapabilities:(int *)arg1 count:(unsigned int)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

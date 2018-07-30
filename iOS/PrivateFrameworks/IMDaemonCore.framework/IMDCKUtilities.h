@@ -53,7 +53,8 @@
 - (_Bool)logDumpIsNecessaryAfterSync;
 - (void)noteAllSyncedItemsPriorToSync;
 - (id)_ckStatisticCaluclations;
-- (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 isInitialSync:(_Bool)arg4;
+- (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 isInitialSync:(_Bool)arg4 requirePreviousPrompt:(_Bool)arg5 willSendBlock:(CDUnknownBlockType)arg6;
+- (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 requirePreviousPrompt:(_Bool)arg4 willSendBlock:(CDUnknownBlockType)arg5;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3;
 - (void)_showCKLogNotificationWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)errorIndicateDeviceDoesNotHaveKeysToSync:(id)arg1;

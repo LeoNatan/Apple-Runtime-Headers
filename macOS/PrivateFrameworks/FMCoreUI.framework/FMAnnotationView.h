@@ -6,7 +6,7 @@
 
 #import "MKAnnotationView.h"
 
-@class CALayer, CAShapeLayer;
+@class CALayer, CAShapeLayer, NSColor;
 
 @interface FMAnnotationView : MKAnnotationView
 {
@@ -22,6 +22,7 @@
     CALayer *_locationInnerLayer;
     CALayer *_smallPersonImageLayer;
     CALayer *_largePersonImageLayer;
+    NSColor *_tintColor;
 }
 
 + (BOOL)_followsTerrain;
@@ -29,6 +30,8 @@
 + (void)setThickAnnotationBorder:(BOOL)arg1;
 + (void)setLargeAnnotationBorderVisible:(BOOL)arg1;
 + (void)setImagePadding:(double)arg1;
++ (void)preloadAssets;
+@property(retain, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) BOOL hasPhotoImage; // @synthesize hasPhotoImage=_hasPhotoImage;
 @property(nonatomic) BOOL isShowingLargeSelectedAnnotation; // @synthesize isShowingLargeSelectedAnnotation=_isShowingLargeSelectedAnnotation;
 @property(retain, nonatomic) CALayer *largePersonImageLayer; // @synthesize largePersonImageLayer=_largePersonImageLayer;
@@ -50,11 +53,11 @@
 - (void)_transitionToNewSize:(BOOL)arg1;
 - (void)_selectionWasUpdated:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setTintColor:(id)arg1;
 - (void)animateDelayedAnimation;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 delay:(double)arg3;
 - (void)updateStyleForAnnotation:(id)arg1;
 - (void)prepareForReuse;
+- (void)updateLayer;
 - (void)dealloc;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2 tintColor:(id)arg3;
 - (id)initWithCoder:(id)arg1;

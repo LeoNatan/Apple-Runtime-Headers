@@ -26,9 +26,9 @@
         unsigned int internalLayoutDirection:2;
         unsigned int gsaved:14;
     } _repFlags;
+    int _pixelsWide;
     NSString *_colorSpaceName;
     struct CGSize _size;
-    int _pixelsWide;
     int _pixelsHigh;
 }
 
@@ -65,6 +65,7 @@
 + (BOOL)canInitWithData:(id)arg1;
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
+@property(copy, setter=_setAppearanceName:) NSString *_appearanceName;
 - (id)_bitmapImageRepsForTIFFRepresentation;
 - (id)_imageRepsForEncodingWithCoder:(id)arg1;
 - (id)_bitmapImageReps;
@@ -79,7 +80,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)_drawOnlyUsesOneDrawingOperation;
-- (BOOL)_wantsToBeCached;
+- (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
 @property long long pixelsHigh;
 @property long long pixelsWide;
 @property long long bitsPerSample;

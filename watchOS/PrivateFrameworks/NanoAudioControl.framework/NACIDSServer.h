@@ -15,7 +15,6 @@
 __attribute__((visibility("hidden")))
 @interface NACIDSServer : NSObject <IDSServiceDelegate, MPVolumeControllerDelegate, MPAVRoutingControllerDelegate>
 {
-    NACEventThrottler *_hapticThrottler;
     NACRunAssertion *_systemVolumeRunAssertion;
     NACRunAssertion *_proxyVolumeRunAssertion;
     NSMutableDictionary *_systemVolumeObservers;
@@ -26,12 +25,14 @@ __attribute__((visibility("hidden")))
     IDSService *_idsService;
     NSObject<OS_dispatch_queue> *_serialQueue;
     _Bool _shouldPickRouteAfterFetching;
-    _Bool _shouldObserveHapticIntensity;
     _Bool _shouldObserveSystemMutedState;
     _Bool _isSystemMuted;
     int _systemMuteToken;
-    _Bool _shouldObserveProminentHapticState;
-    _Bool _isProminentHapticEnabled;
+    _Bool _shouldObserveHapticState;
+    _Bool _prominentHapticEnabled;
+    float _hapticIntensity;
+    int _hapticState;
+    NACEventThrottler *_hapticThrottler;
 }
 
 - (void).cxx_destruct;
@@ -40,9 +41,8 @@ __attribute__((visibility("hidden")))
 - (void)_setRequestedVolumeAtLeastOnce;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5;
 - (void)_sendMessage:(id)arg1 type:(int)arg2 timeout:(double)arg3 queueOne:(id)arg4 retry:(_Bool)arg5;
-- (void)_sendProminentHapticState:(_Bool)arg1;
+- (void)_sendHapticState:(int)arg1;
 - (void)_sendSystemMutedState:(_Bool)arg1;
-- (void)_sendHapticIntensity:(float)arg1;
 - (void)_sendMutedState:(_Bool)arg1 target:(id)arg2;
 - (void)_sendVolumeWarningEnabled:(_Bool)arg1 target:(id)arg2;
 - (void)_sendEUVolumeLimit:(float)arg1 target:(id)arg2;
@@ -59,21 +59,22 @@ __attribute__((visibility("hidden")))
 - (void)_cancelRouteObservationForCategory:(id)arg1;
 - (void)_cancelProxyVolumeObservationForTarget:(id)arg1;
 - (void)_cancelSystemVolumeObservation;
-- (void)_sendCurrentHapticIntensityValue;
+- (void)_updateHapticIntensityValue;
 - (void)_sendCurrentObservingSystemVolumeValues;
 - (void)_beginObservingProxyVolumeForTarget:(id)arg1 withEndpointRoute:(id)arg2;
 - (void)_handleBeginObservingProxyVolumeForTarget:(id)arg1;
+- (void)_updateHapticState;
 - (void)_updateProminentHapticState;
 - (void)updateProminentHapticState;
-- (void)_beginObservingProminentHapticState;
 - (void)_updateSystemMutedState;
 - (void)_beginObservingSystemMutedState;
-- (void)_beginObservingHapticIntensity;
+- (void)_beginObservingHapticState;
 - (void)_beginObservingSystemVolume;
 - (void)_handleBeginObservingSystemVolume;
 - (void)_handlePickAudioRoute:(id)arg1;
 - (void)_handleEndObservingAudioRoutes:(id)arg1;
 - (void)_handleBeginObservingAudioRoutes:(id)arg1;
+- (void)_handleSetHapticState:(id)arg1;
 - (void)_handleSetHapticIntensity:(id)arg1;
 - (void)_handleSetProminentHapticEnabled:(id)arg1;
 - (void)_handleSetSystemMuted:(id)arg1;
@@ -81,9 +82,8 @@ __attribute__((visibility("hidden")))
 - (void)_handleSetVolume:(id)arg1;
 - (void)_handleEndObservingVolume:(id)arg1;
 - (void)_handleBeginObservingVolume:(id)arg1;
-- (void)beginObservingProminentHapticState;
 - (void)beginObservingSystemMutedState;
-- (void)beginObservingHapticIntensity;
+- (void)beginObservingHapticState;
 - (void)dealloc;
 - (id)initWithVolumeAudioCategories:(id)arg1;
 

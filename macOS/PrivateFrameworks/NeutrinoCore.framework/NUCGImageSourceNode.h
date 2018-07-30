@@ -51,14 +51,16 @@
 - (BOOL)_setGeometryFromProperties:(id)arg1 error:(out id *)arg2;
 - (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)preparedNodeWithSourceContainer:(id)arg1 pipelineState:(id)arg2 pipelineSettings:(id)arg3 sourceSettings:(id)arg4 error:(out id *)arg5;
+- (id)resolvedMatteNodeForPipelineState:(id)arg1 error:(out id *)arg2;
 - (id)resolvedDepthNodeForPipelineState:(id)arg1 error:(out id *)arg2;
-- (BOOL)pipelineStateIsForDepthImage:(id)arg1;
-- (id)depthImagePropertiesForDepthType:(long long)arg1;
+- (id)auxiliaryImagePropertiesForDepthType:(long long)arg1;
 - (BOOL)supportsPipelineState:(id)arg1 error:(out id *)arg2;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
+- (long long)normalizeSubsampleFactor:(long long)arg1;
 - (long long)sourceOrientation;
 - (void)dealloc;
 - (id)initWithSettings:(id)arg1;
+- (id)initWithURL:(id)arg1 UTI:(id)arg2 settings:(id)arg3;
 - (id)initWithURL:(id)arg1 UTI:(id)arg2;
 - (id)initWithImageSource:(struct CGImageSource *)arg1 identifier:(id)arg2;
 - (void)_init;

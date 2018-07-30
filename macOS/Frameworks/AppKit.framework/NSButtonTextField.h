@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)cellClass;
 - (struct NSEdgeInsets)alignmentRectInsets;
-- (BOOL)allowsVibrancy;
+- (int)_vibrancyBlendMode;
 
 @end
 

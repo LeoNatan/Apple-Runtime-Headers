@@ -47,6 +47,7 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+@property(nonatomic) unsigned long long maxLength;
 - (void)dealloc;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

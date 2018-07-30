@@ -27,6 +27,7 @@
 @property double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(retain) NSString *boardID; // @synthesize boardID=_boardID;
 - (void).cxx_destruct;
+- (void)mtLogQuickTourPopulation:(id)arg1;
 - (id)_detectPreviousSystem;
 - (id)_detectCurrentSystem;
 - (double)_detectScalingFactor;

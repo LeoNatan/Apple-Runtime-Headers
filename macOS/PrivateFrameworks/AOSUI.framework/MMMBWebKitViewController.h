@@ -61,6 +61,7 @@
 @property(nonatomic) id <MBWebKitViewControllerDelegate> mbWebKitViewControllerDelegate; // @synthesize mbWebKitViewControllerDelegate=_mbWebKitViewControllerDelegate;
 @property(nonatomic) id <MBUIDelegate> mbUIDelegate; // @synthesize mbUIDelegate=_mbUIDelegate;
 - (id)mmWebKitControllerWindow;
+- (void)mmWebKitControllerWillSendRequest:(id)arg1 willSendRequest:(id)arg2;
 - (void)mmWebKitControllerDidReceiveResponse:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)mmWebKitControllerDidFinishLoading:(id)arg1;
 - (void)mmWebKitControllerDidFailLoading:(id)arg1 error:(id)arg2;

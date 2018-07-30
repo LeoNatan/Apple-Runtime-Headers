@@ -57,6 +57,7 @@
     NSString *bundleID;
     NSString *_contentType;
     NSString *_displayName;
+    NSURL *_fastLaunchURL;
     NSString *_distinguishPathString;
     unsigned long long _rank;
     NSURL *_altPath;
@@ -87,6 +88,7 @@
 @property(nonatomic) BOOL isAnyTopHit; // @synthesize isAnyTopHit=_isAnyTopHit;
 @property(nonatomic) BOOL isFirstTopHit; // @synthesize isFirstTopHit=_isFirstTopHit;
 @property(getter=isAutoLaunch) BOOL autoLaunch; // @synthesize autoLaunch=_autoLaunch;
+@property(readonly) NSURL *fastLaunchURL; // @synthesize fastLaunchURL=_fastLaunchURL;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) NSString *contentType; // @synthesize contentType=_contentType;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID;
@@ -134,6 +136,7 @@
 @property(retain, nonatomic) NSString *groupName;
 @property(readonly) NSDate *lastUsedDate;
 @property(readonly) NSURL *URL;
+- (void)updateRenderOrEngagementCountsForKey:(id)arg1 date:(id)arg2;
 @property(readonly) NSArray *otherNames;
 @property(readonly) NSArray *otherTypes;
 @property(readonly) unsigned long long hash;
@@ -142,6 +145,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) BOOL allowsCPRecording;
 - (void)prepare;
+- (id)initWithFastLaunchURL:(id)arg1 displayName:(id)arg2 contentType:(id)arg3;
 - (id)initWithContentType:(id)arg1 displayName:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) id <NSPasteboardWriting> pasteboardObject;

@@ -14,7 +14,13 @@
 
 @interface SFTextColumnsCardSection : SFCardSection <SFTextColumnsCardSection, NSSecureCoding, NSCopying>
 {
-    CDStruct_9787ad25 _has;
+    struct {
+        unsigned int canBeHidden:1;
+        unsigned int hasTopPadding:1;
+        unsigned int hasBottomPadding:1;
+        unsigned int separatorStyle:1;
+        unsigned int titleWeight:1;
+    } _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;

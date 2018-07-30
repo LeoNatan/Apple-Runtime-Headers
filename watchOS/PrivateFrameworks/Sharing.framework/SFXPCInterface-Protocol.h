@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSData, NSError, NSString, NSUUID, SFDevice, SFEventMessage, SFRemoteTextSessionInfo, SFRequestMessage, SFResponseMessage;
+@class NSData, NSDictionary, NSError, NSString, NSUUID, SFDevice, SFEventMessage, SFRemoteTextSessionInfo, SFRequestMessage, SFResponseMessage;
 
 @protocol SFXPCInterface
 
@@ -27,9 +27,13 @@
 - (void)remoteInteractionSessionTextSessionDidChange:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionTextSessionDidEnd:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionTextSessionDidBegin:(SFRemoteTextSessionInfo *)arg1;
+- (void)remoteInteractionSessionRemoteTextEvent:(NSDictionary *)arg1;
 - (void)deviceDiscoveryScanStateChanged:(int)arg1;
 - (void)deviceDiscoveryDeviceChanged:(SFDevice *)arg1 changes:(unsigned int)arg2;
 - (void)deviceDiscoveryLostDevice:(SFDevice *)arg1;
 - (void)deviceDiscoveryFoundDevice:(SFDevice *)arg1;
+- (void)autoFillPromptForPIN:(unsigned int)arg1 throttleSeconds:(int)arg2;
+- (void)autoFillPairingSucceeded:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
+- (void)autoFillDismissUserNotification;
 @end
 

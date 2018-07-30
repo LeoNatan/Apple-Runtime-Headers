@@ -32,7 +32,6 @@
 - (void)p_endDynamicallyResizingOrMovingLineEnd;
 - (void)p_beginDynamicallyResizingOrMovingLineEnd;
 - (void)p_drawLineEndForHead:(_Bool)arg1 withDelta:(struct CGPoint)arg2 andStroke:(id)arg3 inContext:(struct CGContext *)arg4 useFastDrawing:(_Bool)arg5;
-- (id)magicMoveAttributesWithShapeAttributes:(_Bool)arg1;
 - (struct CGPoint)centerForGuideLayerPlacement;
 - (_Bool)isEditingPath;
 - (struct CGAffineTransform)naturalToEditablePathSpaceTransform;

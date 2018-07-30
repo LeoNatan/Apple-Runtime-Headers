@@ -10,6 +10,7 @@
 
 @class GEOFormattedString;
 
+__attribute__((visibility("hidden")))
 @interface GEORouteInformation : PBCodable <NSCopying>
 {
     GEOFormattedString *_detail;

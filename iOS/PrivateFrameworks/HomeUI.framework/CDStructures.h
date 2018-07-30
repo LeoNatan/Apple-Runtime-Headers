@@ -58,6 +58,10 @@ struct CGVector {
     double _field2;
 };
 
+struct HFTransformItemProvider {
+    Class _field1;
+};
+
 struct HUGridPosition {
     long long _field1;
     long long _field2;
@@ -94,11 +98,6 @@ typedef struct {
     long long horizontalAlignment;
     unsigned long long itemSize;
 } CDStruct_217e81bd;
-
-typedef struct {
-    unsigned long long _field1;
-    unsigned long long _field2;
-} CDStruct_4bcfbbae;
 
 typedef struct {
     double minScrollPercentage;

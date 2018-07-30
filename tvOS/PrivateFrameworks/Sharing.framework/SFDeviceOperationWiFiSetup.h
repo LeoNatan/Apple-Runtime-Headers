@@ -14,6 +14,7 @@
     CUReachabilityMonitor *_reachabilityMonitor;
     unsigned long long _startTicks;
     NSObject<OS_dispatch_source> *_timeoutTimer;
+    unsigned int _repairFlags;
     CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     double _metricSeconds;
@@ -21,6 +22,7 @@
 }
 
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
+@property(nonatomic) unsigned int repairFlags; // @synthesize repairFlags=_repairFlags;
 @property(readonly, nonatomic) double metricSeconds; // @synthesize metricSeconds=_metricSeconds;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

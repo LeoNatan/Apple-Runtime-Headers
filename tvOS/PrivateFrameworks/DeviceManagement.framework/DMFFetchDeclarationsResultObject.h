@@ -11,11 +11,9 @@
 @interface DMFFetchDeclarationsResultObject : CATTaskResultObject
 {
     NSArray *_payloadDescriptions;
-    NSArray *_payloadContents;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *payloadContents; // @synthesize payloadContents=_payloadContents;
 @property(copy, nonatomic) NSArray *payloadDescriptions; // @synthesize payloadDescriptions=_payloadDescriptions;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -10,7 +10,6 @@
 
 @class GEOPDPlace, GEOPDReview, NSDate, NSString;
 
-__attribute__((visibility("hidden")))
 @interface _GEOPlaceDataReview : NSObject <GEOMapItemReview>
 {
     GEOPDPlace *_placeData;

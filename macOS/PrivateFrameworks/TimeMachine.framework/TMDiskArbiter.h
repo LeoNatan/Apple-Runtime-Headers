@@ -6,17 +6,22 @@
 
 #import "NSObject.h"
 
+@class DMManager;
+
 @interface TMDiskArbiter : NSObject
 {
     struct __DASession *_daSession;
+    DMManager *_dmManager;
 }
 
 - (BOOL)isDevicePresent:(id)arg1;
-- (BOOL)_performSynchronousOperation:(unsigned int)arg1 withDisk:(struct __DADisk *)arg2 diskInfo:(out id *)arg3 error:(out id *)arg4;
+- (BOOL)_performSynchronousOperation:(unsigned int)arg1 withDisk:(struct __DADisk *)arg2 options:(unsigned int)arg3 diskInfo:(out id *)arg4 error:(out id *)arg5;
 - (BOOL)ejectDisk:(struct __DADisk *)arg1 error:(out id *)arg2;
+- (BOOL)unmountDisk:(struct __DADisk *)arg1 force:(BOOL)arg2 error:(out id *)arg3;
 - (BOOL)unmountDisk:(struct __DADisk *)arg1 error:(out id *)arg2;
 - (id)mountDisk:(struct __DADisk *)arg1 error:(out id *)arg2;
 - (struct __DADisk *)copyDiskForDevice:(id)arg1;
+- (id)manager;
 - (void)dealloc;
 - (id)init;
 

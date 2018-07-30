@@ -51,6 +51,8 @@
 - (id)focusedAppPID;
 - (_Bool)isSystemAppShowingAnAlert;
 - (void)systemAppInfoWithQuery:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)canSetDockIconActivationMode;
+- (void)setDockIconActivationMode:(unsigned long long)arg1;
 - (id)medusaApps;
 - (_Bool)performMedusaGesture:(unsigned long long)arg1;
 - (id)allowedMedusaGestures;
@@ -73,13 +75,14 @@
 - (_Bool)isDockVisible;
 - (void)toggleDock;
 - (void)armApplePay;
-- (void)showControlCenter:(_Bool)arg1;
+- (_Bool)showControlCenter:(_Bool)arg1;
 - (_Bool)showNotificationCenter:(_Bool)arg1;
 - (_Bool)isControlCenterVisible;
 - (void)hideNotificationCenter;
 - (void)showNotificationCenter;
 - (void)toggleNotificationCenter;
 - (_Bool)isNotificationVisible;
+- (_Bool)isScreenshotWindowVisible;
 - (_Bool)isNotificationCenterVisible;
 - (_Bool)isMakingEmergencyCall;
 - (_Bool)hasActiveOrPendingCallOrFaceTime;
@@ -106,6 +109,7 @@
 - (void)screenLockStatus:(CDUnknownBlockType)arg1;
 - (_Bool)isScreenLockedWithPasscode:(_Bool *)arg1;
 - (void)_getPasscodeStatusImmediate:(CDUnknownBlockType)arg1;
+- (void)performVoiceShortcutWithIdentifier:(id)arg1 bundleID:(id)arg2;
 - (void)activateSOSMode;
 - (_Bool)isSoftwareUpdateUIVisible;
 - (_Bool)isNowPlayingUIVisible;

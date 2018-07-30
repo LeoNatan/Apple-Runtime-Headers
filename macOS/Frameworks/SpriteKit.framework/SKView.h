@@ -6,9 +6,11 @@
 
 #import "NSView.h"
 
+#import "NSSecureCoding.h"
+
 @class NSData, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<SKViewDelegate>, SKDisplayLink, SKMetalLayer, SKScene, SKTransition;
 
-@interface SKView : NSView
+@interface SKView : NSView <NSSecureCoding>
 {
     struct SKCStats _currentStats;
     struct SKCStats _nextStats;
@@ -63,15 +65,18 @@
     struct CGSize _pixelSize;
 }
 
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id *)arg3 outError:(id *)arg4;
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id *)arg3;
++ (id)debugHierarchyAdditionalGroupingIDs;
++ (void)_setCurrentTime:(double)arg1;
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) double physicsDebugStrokeWidth; // @synthesize physicsDebugStrokeWidth=_physicsDebugStrokeWidth;
 @property(retain, nonatomic) NSMutableDictionary *_info; // @synthesize _info=__info;
 @property(readonly, nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
 @property(nonatomic) __weak NSObject<SKViewDelegate> *delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id *)arg2;
-- (id)debugHierarchyAdditionalGroupingIDs;
 - (id)_getPerformanceStats;
 - (int)_spriteSubmitCount;
 - (int)_spriteRenderCount;
@@ -107,10 +112,10 @@
 @property(nonatomic) long long preferredFramesPerSecond;
 @property(nonatomic) float preferredFrameRate;
 @property(nonatomic) long long frameInterval;
-- (void)_ibSetSceneName:(id)arg1;
 - (void)writeContentsToPNG:(id)arg1;
 - (void)runOnce;
 - (void)onInit;
+- (BOOL)isEqualToView:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 updateQueue:(id)arg2;
@@ -160,6 +165,7 @@
 - (BOOL)_usesAsyncUpdateQueue;
 - (void)set_usesAsyncUpdateQueue:(BOOL)arg1;
 @property(nonatomic, getter=isAsynchronous) BOOL asynchronous;
+- (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(BOOL)arg3 waitOnFence:(BOOL)arg4 preRender:(CDUnknownBlockType)arg5 postRender:(CDUnknownBlockType)arg6;
 - (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(BOOL)arg3 preRender:(CDUnknownBlockType)arg4 postRender:(CDUnknownBlockType)arg5;
 - (void)_renderSynchronouslyForTime:(double)arg1 preRender:(CDUnknownBlockType)arg2 postRender:(CDUnknownBlockType)arg3;
 - (void)_vsyncRenderForTime:(double)arg1 preRender:(CDUnknownBlockType)arg2 postRender:(CDUnknownBlockType)arg3;

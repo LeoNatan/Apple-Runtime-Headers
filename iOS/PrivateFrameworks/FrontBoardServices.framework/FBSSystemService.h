@@ -15,6 +15,7 @@
 
 + (id)clientCallbackQueue;
 + (id)sharedService;
+- (void).cxx_destruct;
 - (void)_openApplication:(id)arg1 withOptions:(id)arg2 clientHandle:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setKeyboardFocusApplicationWithBundleID:(id)arg1 pid:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shutdownWithOptions:(id)arg1;

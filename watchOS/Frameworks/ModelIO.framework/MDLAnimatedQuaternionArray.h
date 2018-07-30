@@ -20,6 +20,7 @@
 - (unsigned int)getFloatQuaternionArray:(struct *)arg1 maxCount:(unsigned int)arg2 atTime:(double)arg3;
 - (void)setDoubleQuaternionArray:(const struct *)arg1 count:(unsigned int)arg2 atTime:(double)arg3;
 - (void)setFloatQuaternionArray:(const struct *)arg1 count:(unsigned int)arg2 atTime:(double)arg3;
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (struct VtValue)defaultVtValue;
 - (unsigned int)precision;

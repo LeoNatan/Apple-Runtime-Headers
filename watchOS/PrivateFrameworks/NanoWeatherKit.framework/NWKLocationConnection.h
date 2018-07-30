@@ -21,6 +21,8 @@
 - (void).cxx_destruct;
 - (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)removeLocationFromList:(id)arg1;
+- (void)addLocationToList:(id)arg1;
 @property(readonly, nonatomic) NSXPCConnection *connection;
 - (id)initWithObserver:(id)arg1;
 - (id)init;

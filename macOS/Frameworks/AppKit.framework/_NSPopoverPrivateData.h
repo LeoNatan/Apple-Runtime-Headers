@@ -6,17 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSAppearance;
-
 __attribute__((visibility("hidden")))
 @interface _NSPopoverPrivateData : NSObject
 {
     long long closeReason;
-    NSAppearance *customAppearance;
     CDStruct_4a40d4f7 _flags;
 }
-
-- (void)dealloc;
 
 @end
 

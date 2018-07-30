@@ -35,6 +35,7 @@
     CDUnknownBlockType _transportStateBlock;
     NSString *_contextName;
     NSArray *_channelMap;
+    CDUnknownBlockType _profileChangedBlock;
     NSURL *_iconURL;
     struct AudioComponentDescription _componentDescription;
 }
@@ -44,6 +45,7 @@
 + (void)instantiateWithComponentDescription:(struct AudioComponentDescription)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)registerSubclass:(Class)arg1 asComponentDescription:(struct AudioComponentDescription)arg2 name:(id)arg3 version:(unsigned int)arg4;
 @property(readonly, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;
+@property(copy, nonatomic) CDUnknownBlockType profileChangedBlock; // @synthesize profileChangedBlock=_profileChangedBlock;
 @property(copy) NSArray *channelMap; // @synthesize channelMap=_channelMap;
 @property(readonly) BOOL supportsMPE; // @synthesize supportsMPE=_supportsMPE;
 @property(copy) NSString *contextName; // @synthesize contextName=_contextName;
@@ -65,6 +67,9 @@
 @property(readonly) struct AudioComponentDescription componentDescription; // @synthesize componentDescription=_componentDescription;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)disableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id *)arg4;
+- (BOOL)enableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id *)arg4;
+- (id)profileStateForCable:(unsigned char)arg1 channel:(unsigned char)arg2;
 - (void)selectViewConfiguration:(id)arg1;
 - (id)supportedViewConfigurations:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

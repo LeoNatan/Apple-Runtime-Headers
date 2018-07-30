@@ -8,6 +8,7 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerItemErrorLogEventInternal : NSObject
 {
     NSDictionary *dict;

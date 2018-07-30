@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)_keyDescriptors;
 @property(retain, nonatomic) NSAttributedString *message;
-- (id)initWithUserID:(id)arg1;
+- (id)initWithUserHandle:(id)arg1;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSUnbufferedLayerTreeWindowContentView.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSBorderlessLayerTreeProjectionWindowContentView : _NSUnbufferedLayerTreeWindowContentView
 {
 }

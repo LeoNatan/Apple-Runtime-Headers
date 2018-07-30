@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSString *path; // @synthesize path=_path;
 - (void)captureFile:(id *)arg1 outStat:(struct stat *)arg2;
 - (id)fileURL;
+- (void)setFinished;
 - (void)finishOnQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)writeBytes:(id)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)truncate;

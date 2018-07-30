@@ -11,7 +11,6 @@
 
 @class NSArray, NSString, OADFill, OADScene3D, OADShape3D;
 
-__attribute__((visibility("hidden")))
 @interface OADGroupProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent>
 {
     OADFill *mFill;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)hasShape3D;
@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasFill;
 - (void)setFill:(id)arg1;
 - (id)fill;
-- (void)dealloc;
 - (id)initWithDefaults;
 
 // Remaining properties

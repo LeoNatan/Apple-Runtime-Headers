@@ -6,27 +6,37 @@
 
 #import "NSObject.h"
 
+#import "HDAssertionObserver.h"
 #import "HDProcessStateObserver.h"
 
-@class HDDaemon, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class FBSSystemService, HDAssertionManager, HDProcessStateManager, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface HDAppLauncher : NSObject <HDProcessStateObserver>
+@interface HDAppLauncher : NSObject <HDProcessStateObserver, HDAssertionObserver>
 {
+    HDProcessStateManager *_processStateManager;
+    FBSSystemService *_systemService;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_clientByBundleIdentifier;
-    HDDaemon *_daemon;
+    HDAssertionManager *_assertionManager;
+    NSMutableDictionary *_registeredAssertionsByIdentifier;
+    NSMutableSet *_monitoredProcessBundleIdentifiers;
+    NSMutableSet *_launchingProcessBundleIdentifiers;
+    double _launchCountResetThreshold;
+    double _baseLaunchDelay;
+    int _maxLaunchCount;
 }
 
-@property(nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
-@property(retain, nonatomic) NSMutableDictionary *clientByBundleIdentifier; // @synthesize clientByBundleIdentifier=_clientByBundleIdentifier;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
++ (double)_launchCountResetThresholdForDelay:(double)arg1 maxLaunchCount:(int)arg2 base:(double)arg3;
 - (void).cxx_destruct;
-- (void)_queue_attemptRelaunchClient:(id)arg1 forSeconds:(double)arg2 retries:(int)arg3;
-- (void)_queue_cleanUpClients;
+- (_Bool)unitTest_hasAssertionForBundleIdentifier:(id)arg1;
+- (void)unitTest_setBaseLaunchDelay:(double)arg1 launchCountResetThreshold:(double)arg2 maxLaunchCount:(int)arg3;
 - (void)processTerminated:(id)arg1;
-- (void)unregisterIdentifier:(id)arg1 forClientBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)registerIdentifier:(id)arg1 forClientBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)initWithDaemon:(id)arg1;
+- (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
+- (void)_queue_scheduleLaunchForClient:(id)arg1;
+- (void)_queue_launchClientIfNeeded:(id)arg1;
+- (_Bool)_queue_clientRequiresLaunch:(id)arg1 assertions:(id)arg2;
+- (id)_queue_assertionsForClientBundleIdentifier:(id)arg1;
+- (id)takeKeepAliveAssertionForApplicationBundleIdentifier:(id)arg1 processBundleIdentifier:(id)arg2 payloadOptions:(id)arg3;
+- (id)initWithProcessStateManager:(id)arg1 systemService:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

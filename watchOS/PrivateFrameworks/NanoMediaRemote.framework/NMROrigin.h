@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     void *_mediaRemoteOrigin;
     void *_deviceInfo;
+    NSString *_cachedDisplayName;
 }
 
 + (void *)_originFromNotification:(id)arg1;
@@ -24,6 +25,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)updateDeviceInfo:(void *)arg1;
 - (void)updateWithMROrigin:(void *)arg1;
+@property(readonly, nonatomic) int logicalDeviceCount;
 @property(readonly, nonatomic) _Bool isLocal;
 @property(readonly, nonatomic) NSNumber *uniqueIdentifier;
 @property(readonly, nonatomic) int originType;

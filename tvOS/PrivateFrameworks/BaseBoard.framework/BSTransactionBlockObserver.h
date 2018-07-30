@@ -18,6 +18,7 @@
     NSMutableArray *_didCompleteBlocks;
 }
 
+- (void).cxx_destruct;
 - (void)transactionDidComplete:(id)arg1;
 - (void)transactionDidFinishWork:(id)arg1;
 - (void)transactionDidBegin:(id)arg1;
@@ -26,7 +27,6 @@
 - (void)addTransactionDidFinishWorkBlock:(CDUnknownBlockType)arg1;
 - (void)addTransactionDidBeginBlock:(CDUnknownBlockType)arg1;
 - (void)addTransactionWillBeginBlock:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

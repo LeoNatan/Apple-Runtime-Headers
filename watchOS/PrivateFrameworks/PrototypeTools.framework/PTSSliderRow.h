@@ -4,20 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <PrototypeTools/PTSRow.h>
+#import <PrototypeTools/PTSliderRow.h>
 
-@interface PTSSliderRow : PTSRow
+@interface PTSSliderRow : PTSliderRow
 {
-    float _minValue;
-    float _maxValue;
 }
-
-@property(nonatomic) float maxValue; // @synthesize maxValue=_maxValue;
-@property(nonatomic) float minValue; // @synthesize minValue=_minValue;
-- (void)updateWithRow:(id)arg1;
-- (id)init;
-- (id)minValue:(float)arg1 maxValue:(float)arg2;
-- (Class)rowTableViewCellClass;
 
 @end
 

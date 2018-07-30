@@ -11,13 +11,9 @@
 @protocol _SFPBDynamicURLImageResource <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(copy, nonatomic) NSArray *imageOptions;
-@property(readonly, nonatomic) _Bool hasSupportsResizing;
 @property(nonatomic) _Bool supportsResizing;
-@property(readonly, nonatomic) _Bool hasFormatURL;
 @property(copy, nonatomic) NSString *formatURL;
-@property(readonly, nonatomic) _Bool hasPixelHeight;
 @property(retain, nonatomic) _SFPBGraphicalFloat *pixelHeight;
-@property(readonly, nonatomic) _Bool hasPixelWidth;
 @property(retain, nonatomic) _SFPBGraphicalFloat *pixelWidth;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

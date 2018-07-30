@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void)addTableColumn:(id)arg1;
 @property unsigned long long controlSize; // @dynamic controlSize;
 @property _Bool autoforwardsScrollWheelEvents; // @dynamic autoforwardsScrollWheelEvents;
-- (void)setLayer:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)awakeCommon;
 - (void)initCommon;

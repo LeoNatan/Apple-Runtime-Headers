@@ -19,6 +19,7 @@
 
 + (id)message;
 @property(readonly, copy, nonatomic) BSMutableKeyedSettings *payload; // @synthesize payload=_payload;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -28,7 +29,6 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)_initWithPayload:(id)arg1;
 - (id)init;
 

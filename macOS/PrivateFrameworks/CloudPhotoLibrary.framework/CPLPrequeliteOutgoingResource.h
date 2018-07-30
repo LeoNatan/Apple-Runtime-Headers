@@ -13,6 +13,7 @@
 @interface CPLPrequeliteOutgoingResource : NSObject <PQLResultSetInitializer>
 {
     int _fileKind;
+    long long _scopeIndex;
     NSString *_itemIdentifier;
     unsigned long long _resourceType;
     NSString *_fingerPrint;
@@ -28,8 +29,10 @@
 @property(copy, nonatomic) NSString *fingerPrint; // @synthesize fingerPrint=_fingerPrint;
 @property(nonatomic) unsigned long long resourceType; // @synthesize resourceType=_resourceType;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
+@property(nonatomic) long long scopeIndex; // @synthesize scopeIndex=_scopeIndex;
 - (void).cxx_destruct;
-- (id)resource;
+- (id)resourceWithScopeIdentifier:(id)arg1;
+- (id)resourceWithOutgoingResources:(id)arg1;
 - (id)initWithResource:(id)arg1 uploadIdentifier:(id)arg2;
 - (id)initFromPQLResultSet:(id)arg1 error:(id *)arg2;
 

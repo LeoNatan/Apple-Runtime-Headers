@@ -6,20 +6,24 @@
 
 #import <MediaPlayer/MPAVRoute.h>
 
-@class MPAVRouteConnection;
+@class MPAVRouteConnection, MPMRAVEndpointWrapper, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MPAVEndpointRoute : MPAVRoute
 {
     MPAVRouteConnection *_connection;
-    void *_endpoint;
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    NSObject<OS_dispatch_queue> *_calloutQueue;
+    NSString *_sortName;
+    MPMRAVEndpointWrapper *_endpointWrapper;
 }
 
 + (void)getActiveEndpointRouteWithCompletion:(CDUnknownBlockType)arg1;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) void *endpoint; // @synthesize endpoint=_endpoint;
 - (void).cxx_destruct;
 - (unsigned int)_outputDevicesComposition;
+- (_Bool)_groupLeaderIsOfDeviceSubtype:(unsigned int)arg1;
 - (void)_endpointOutputDevicesDidChange:(id)arg1;
+- (void)_endpointDidChange:(id)arg1;
 - (_Bool)supportsRemoteControl;
 - (_Bool)supportsGrouping;
 - (int)routeSubtype;
@@ -28,18 +32,26 @@
 - (id)routeUID;
 - (_Bool)isRoutingToWirelessDevice;
 - (_Bool)isDeviceSpeakerRoute;
+@property(readonly, nonatomic) _Bool canModifyGroupMembership;
 - (_Bool)isProxyGroupPlayer;
 - (_Bool)isDeviceRoute;
 - (_Bool)isStereoPair;
 - (_Bool)isHomePodRoute;
 - (_Bool)isAppleTVRoute;
 - (_Bool)isAirPlayingToDevice;
+- (_Bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (_Bool)canFetchMediaDataFromSender;
+- (_Bool)canPlayEncryptedProgressiveDownloadAssets;
 - (_Bool)canAccessRemoteAssets;
-- (id)connection;
+@property(retain, nonatomic) MPAVRouteConnection *connection;
+@property(retain, nonatomic) MPMRAVEndpointWrapper *endpointWrapper; // @synthesize endpointWrapper=_endpointWrapper;
+@property(readonly, nonatomic) void *endpoint;
 - (id)description;
+- (void)establishGroup;
 - (id)designatedGroupLeaderName;
 - (id)routeNames;
 - (id)routeName;
+@property(readonly, nonatomic) NSString *sortName;
 - (void)dealloc;
 - (id)initWithEndpoint:(void *)arg1;
 - (void)encodeWithCoder:(id)arg1;

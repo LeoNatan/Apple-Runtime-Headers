@@ -12,8 +12,6 @@
 
 + (_Bool)shouldAbortSelectionFromViewController:(id)arg1 withLastSelectionBehavior:(long long)arg2;
 + (_Bool)parentNavigationControllerHasInFlightTransitionFromViewController:(id)arg1;
-+ (void)handlePlaybackContext:(id)arg1 inViewController:(id)arg2;
-+ (void)handlePlaybackContext:(id)arg1 inViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)configureHorizontalLockupContentDescriptorWithCommonMetricsForSongCells:(id)arg1;
 + (void)configureHorizontalLockupContentDescriptorWithCommonMetricsForMusicVideosCells:(id)arg1;
 + (void)configureHorizontalLockupContentDescriptorWithCommonMetricsForCollectionCells:(id)arg1;

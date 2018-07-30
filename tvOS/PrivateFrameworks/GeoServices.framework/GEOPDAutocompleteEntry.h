@@ -10,6 +10,7 @@
 
 @class GEOPDAutocompleteEntryAddress, GEOPDAutocompleteEntryBrandProfile, GEOPDAutocompleteEntryBusiness, GEOPDAutocompleteEntryCategory, GEOPDAutocompleteEntryClientResolved, GEOPDAutocompleteEntryDirectionIntent, GEOPDAutocompleteEntryHighlightLine, GEOPDAutocompleteEntryQuery, GEOPDRetainedSearchMetadata, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteEntry : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
@@ -24,9 +25,7 @@
     GEOPDAutocompleteEntryQuery *_query;
     GEOPDRetainedSearchMetadata *_retainSearch;
     int _type;
-    struct {
-        unsigned int type:1;
-    } _has;
+    CDStruct_f953fb60 _has;
 }
 
 @property(retain, nonatomic) GEOPDRetainedSearchMetadata *retainSearch; // @synthesize retainSearch=_retainSearch;

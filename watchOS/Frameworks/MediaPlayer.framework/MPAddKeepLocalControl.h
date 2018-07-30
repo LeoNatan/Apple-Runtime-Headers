@@ -20,6 +20,7 @@
     struct UIEdgeInsets _controlImageEdgeInsets;
     UIView *_transientContentView;
     int _transientContentViewTransactionCount;
+    _Bool _traitCollectionDidChangeWasCalled;
     _Bool _allowsAddImage;
     _Bool _scaleImageForAccessibility;
     int _displayStyle;

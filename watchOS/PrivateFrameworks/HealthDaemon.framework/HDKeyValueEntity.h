@@ -13,7 +13,7 @@
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (id)propertyForSyncProvenance;
 + (id)uniquedColumns;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
 + (id)_modDateForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 entity:(id *)arg5 error:(id *)arg6;
 + (id)_safeDomainWithDomain:(id)arg1;
@@ -68,16 +68,6 @@
 + (id)retrieveDatabaseIdentifierFromProfile:(id)arg1 error:(id *)arg2;
 + (_Bool)persistDatabaseIdentifier:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)generateNewDatabaseIdentifier;
-+ (id)definitionIdentifierFromCompanionAvailabilityStateKey:(id)arg1;
-+ (id)definitionIdentifierFromCompanionAlertedStateKey:(id)arg1;
-+ (id)definitionIdentifierFromWatchAvailabilityStateKey:(id)arg1;
-+ (id)definitionIdentifierFromWatchAlertedStateKey:(id)arg1;
-+ (id)companionAvailabilityStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)companionAlertedStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)companionAvailabilityStateKeySuffix;
-+ (id)watchAvailabilityStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)watchAlertedStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)watchAvailabilityStateKeySuffix;
 
 @end
 

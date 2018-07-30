@@ -8,7 +8,7 @@
 
 #import "FCHeadlineProviding.h"
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineThumbnail, FCSharedStringIndex, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL, NTPBFeedViewportHeadline;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCSharedStringIndex, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL, NTPBFeedViewportHeadline;
 
 @interface FCDeflatedHeadline : NSObject <FCHeadlineProviding>
 {
@@ -43,6 +43,8 @@
 @property(readonly, nonatomic) double globalUserFeedback;
 @property(readonly, copy, nonatomic) NSString *publisherID;
 @property(readonly, copy, nonatomic) NSString *sourceFeedID;
+@property(readonly, nonatomic, getter=isPressRelease) _Bool pressRelease;
+@property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) _Bool hiddenFromAutoFavorites;
 @property(readonly, nonatomic, getter=isHiddenFromFeeds) _Bool hiddenFromFeeds;
 @property(readonly, nonatomic, getter=isBoundToContext) _Bool boundToContext;
 @property(readonly, nonatomic) _Bool showMinimalChrome;
@@ -95,6 +97,7 @@
 @property(readonly, nonatomic) long long backendArticleVersion;
 @property(readonly, nonatomic) long long publisherArticleVersion;
 @property(readonly, copy, nonatomic) NSDate *publishDate;
+@property(copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
 @property(readonly, copy, nonatomic) NSString *titleCompact;
 @property(readonly, copy, nonatomic) NSString *title;
 @property(readonly, copy, nonatomic) NSString *primaryAudience;
@@ -127,7 +130,9 @@
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool webEmbedsEnabled;
 
 @end
 

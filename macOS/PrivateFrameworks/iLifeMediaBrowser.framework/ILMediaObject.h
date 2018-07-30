@@ -45,7 +45,7 @@
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 - (id)objectSpecifier;
-- (BOOL)_canUseiTunesAccessForThumbnail;
+- (BOOL)_canUseiTunesLibraryForThumbnail;
 - (unsigned long long)imageVersion;
 - (unsigned long long)_internal_imageVersion;
 - (void)_setShouldHideImageBorder:(BOOL)arg1;

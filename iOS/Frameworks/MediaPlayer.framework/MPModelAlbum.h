@@ -51,6 +51,7 @@
 + (id)requiredStoreLibraryPersonalizationProperties;
 - (id)songPopularityForIdentifiers:(id)arg1;
 - (id)artworkCatalog;
+- (id)humanDescription;
 - (id)contentItemCollectionInfo;
 - (struct MPLibraryAddStatusObserverConfiguration)libraryAddStatusObserverConfiguration;
 - (long long)libraryRemovalSupportedOptions;

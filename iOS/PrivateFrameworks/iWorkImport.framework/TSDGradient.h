@@ -50,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (void)p_removeStop:(id)arg1;
 - (void)p_insertGradientStop:(id)arg1;
 - (void)p_setGradientStops:(id)arg1;
-- (SEL)mapThemeAssetSelector;
 - (id)presetKind;
 - (void)p_endBitmapWrapperContext:(struct CGContext *)arg1 inContext:(struct CGContext *)arg2 withIntegralBounds:(struct CGRect)arg3;
 - (struct CGContext *)p_beginBitmapWrapperContextInContext:(struct CGContext *)arg1 returningIntegralBounds:(struct CGRect *)arg2;

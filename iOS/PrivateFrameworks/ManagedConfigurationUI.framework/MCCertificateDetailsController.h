@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface MCCertificateDetailsController : PSListController
 {
     NSArray *_properties;

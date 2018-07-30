@@ -80,7 +80,7 @@
 - (void)setBackgroundColor:(struct CGColor *)arg1;
 - (id)renderer;
 - (void)setRenderer:(id)arg1;
-@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
 - (struct SCNVector3)unprojectPoint:(struct SCNVector3)arg1;
 - (struct SCNVector3)projectPoint:(struct SCNVector3)arg1;
 - (void)projectPoints:(struct SCNVector3 *)arg1 count:(unsigned long long)arg2;
@@ -90,6 +90,7 @@
 - (BOOL)isNodeInsideFrustum:(id)arg1 withPointOfView:(id)arg2;
 - (id)hitTestWithSegmentFromPoint:(struct SCNVector3)arg1 toPoint:(struct SCNVector3)arg2 options:(id)arg3;
 - (id)hitTest:(struct CGPoint)arg1 options:(id)arg2;
+- (struct SCNVector4)_viewport;
 - (void)setRendersIntoMaterial:(BOOL)arg1;
 - (BOOL)rendersIntoMaterial;
 @property(nonatomic) BOOL autoenablesDefaultLighting;

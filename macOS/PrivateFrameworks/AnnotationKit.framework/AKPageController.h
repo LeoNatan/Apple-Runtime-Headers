@@ -8,7 +8,7 @@
 
 #import "AKNoteEditorControllerDelegate.h"
 
-@class AKController, AKCropTrackingAreaManager, AKGeometryHelper, AKInkPageOverlayController, AKLayerPresentationManager, AKPageModelController, NSMutableDictionary, NSString, NSView;
+@class AKController, AKGeometryHelper, AKInkPageOverlayController, AKLayerPresentationManager, AKPageModelController, NSMutableDictionary, NSString, NSView;
 
 @interface AKPageController : NSObject <AKNoteEditorControllerDelegate>
 {
@@ -22,14 +22,12 @@
     NSView *_overlayView;
     AKInkPageOverlayController *_inkPageOverlayController;
     id _inkOverlayDrawingUndoTarget;
-    AKCropTrackingAreaManager *_cropTrackingAreaManager;
     NSMutableDictionary *_noteEditors;
 }
 
 + (id)pageControllerWithController:(id)arg1 andPageModelController:(id)arg2;
 @property(retain) NSMutableDictionary *noteEditors; // @synthesize noteEditors=_noteEditors;
 @property BOOL superviewDependentThingsWereSetUp; // @synthesize superviewDependentThingsWereSetUp=_superviewDependentThingsWereSetUp;
-@property(retain, nonatomic) AKCropTrackingAreaManager *cropTrackingAreaManager; // @synthesize cropTrackingAreaManager=_cropTrackingAreaManager;
 @property(retain, nonatomic) id inkOverlayDrawingUndoTarget; // @synthesize inkOverlayDrawingUndoTarget=_inkOverlayDrawingUndoTarget;
 @property(retain, nonatomic) AKInkPageOverlayController *inkPageOverlayController; // @synthesize inkPageOverlayController=_inkPageOverlayController;
 @property(retain, nonatomic) NSView *overlayView; // @synthesize overlayView=_overlayView;

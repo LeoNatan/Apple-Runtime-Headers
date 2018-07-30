@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-@class ReaderContainerView;
+@class ReaderContainerViewController;
 
 @protocol ReaderInstallationTarget <NSObject>
-- (void)uninstallReaderView:(ReaderContainerView *)arg1 closedByUser:(BOOL)arg2;
-- (void)installReaderView:(ReaderContainerView *)arg1;
+- (void)uninstallReaderContainerViewController:(ReaderContainerViewController *)arg1 closedByUser:(BOOL)arg2;
+- (void)installReaderContainerViewController:(ReaderContainerViewController *)arg1;
 @end
 

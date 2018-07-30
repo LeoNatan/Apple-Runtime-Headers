@@ -14,7 +14,7 @@
 + (id)propertyForSyncProvenance;
 + (id)uniquedColumns;
 + (long long)protectionClass;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 
 @end

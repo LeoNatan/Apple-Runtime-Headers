@@ -8,7 +8,7 @@
 
 #import "UIPopoverPresentationControllerDelegate.h"
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PSListContainerView, PSRootController, PSSpecifier, UIKeyboard, UITableView, UIViewController<PSController>;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PSRootController, PSSpecifier, UIKeyboard, UITableView, UIViewController<PSController>;
 
 @interface NPRFCompatibilityPreferenceListController : NPRFPreferenceListController <UIPopoverPresentationControllerDelegate>
 {
@@ -20,7 +20,6 @@
     _Bool _cachesCells;
     _Bool _reusesCells;
     _Bool _forceSynchronousIconLoadForCreatedCells;
-    PSListContainerView *_containerView;
     UITableView *_table;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;

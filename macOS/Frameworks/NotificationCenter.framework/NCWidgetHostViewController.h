@@ -13,11 +13,11 @@
 @interface NCWidgetHostViewController : NCRemoteViewHostViewController <NCWidgetHostProtocol>
 {
     _Bool _supportsEdit;
-    _Bool _forceDarkAppearance;
     id <NCWidgetServiceProtocol> _remoteWidgetObject;
+    unsigned long long _forcedAppearance;
 }
 
-@property(nonatomic) _Bool forceDarkAppearance; // @synthesize forceDarkAppearance=_forceDarkAppearance;
+@property(nonatomic) unsigned long long forcedAppearance; // @synthesize forcedAppearance=_forcedAppearance;
 @property(readonly, nonatomic) id <NCWidgetServiceProtocol> remoteWidgetObject; // @synthesize remoteWidgetObject=_remoteWidgetObject;
 @property(readonly, nonatomic) _Bool supportsEdit; // @synthesize supportsEdit=_supportsEdit;
 - (void).cxx_destruct;

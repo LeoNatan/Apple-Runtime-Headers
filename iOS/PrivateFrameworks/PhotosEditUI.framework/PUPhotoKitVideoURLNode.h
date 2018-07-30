@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, NSURL, PHAsset, PHVideoRequest;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoKitVideoURLNode : PXRunNode <PUVideoURLNode>
 {
     PHVideoRequest *_request;

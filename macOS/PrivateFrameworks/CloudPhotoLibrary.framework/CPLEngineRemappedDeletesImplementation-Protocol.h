@@ -6,12 +6,12 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class NSString;
+@class CPLScopedIdentifier;
 
 @protocol CPLEngineRemappedDeletesImplementation <CPLEngineStorageImplementation>
-- (BOOL)resetWithError:(id *)arg1;
-- (NSString *)realIdentifierForRemappedIdentifier:(NSString *)arg1;
-- (BOOL)discardDeleteForRemappedRecordWithIdentifier:(NSString *)arg1 error:(id *)arg2;
-- (BOOL)scheduleDeleteForRemappedRecordWithIdentifier:(NSString *)arg1 realIdentifier:(NSString *)arg2 asap:(BOOL)arg3 error:(id *)arg4;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (CPLScopedIdentifier *)realScopedIdentifierForRemappedScopedIdentifier:(CPLScopedIdentifier *)arg1;
+- (BOOL)discardDeleteForRemappedRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 error:(id *)arg2;
+- (BOOL)scheduleDeleteForRemappedRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 realScopedIdentifier:(CPLScopedIdentifier *)arg2 asap:(BOOL)arg3 error:(id *)arg4;
 @end
 

@@ -80,6 +80,11 @@
 - (id)syncEnabledMailboxes;
 - (id)mailboxes;
 - (void)addOrUpdateMailbox:(id)arg1;
+- (void)updateSourceType:(unsigned long long)arg1 forAccountId:(id)arg2;
+- (id)accountIdForUsername:(id)arg1;
+- (unsigned long long)accountSourceTypeForAccountId:(id)arg1;
+- (unsigned long long)accountSourceTypeForMailboxId:(id)arg1;
+- (unsigned long long)accountSourceTypeForMessageId:(id)arg1;
 - (id)syncedAccountIdsResendRequested;
 - (void)removeSyncedAccountForAccountWithId:(id)arg1;
 - (void)addOrUpdateSyncedAccount:(id)arg1;

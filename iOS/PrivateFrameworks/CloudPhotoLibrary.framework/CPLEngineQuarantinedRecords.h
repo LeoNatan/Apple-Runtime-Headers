@@ -23,14 +23,15 @@
 - (void).cxx_destruct;
 - (void)writeTransactionDidSucceed;
 - (void)writeTransactionDidFail;
-- (_Bool)resetWithError:(id *)arg1;
 - (_Bool)resetRejectedRecordsWithError:(id *)arg1;
 - (_Bool)bumpRejectedRecords:(id)arg1 error:(id *)arg2;
 - (void)_sendQuarantineFeedbackWithRecordClass:(Class)arg1 reason:(id)arg2;
 - (unsigned long long)countOfQuarantinedRecords;
-- (_Bool)isRecordWithIdentifierQuarantined:(id)arg1;
-- (_Bool)removeQuarantinedRecordsWithIdentifier:(id)arg1 notify:(_Bool)arg2 error:(id *)arg3;
-- (_Bool)addQuarantinedRecordsWithIdentifier:(id)arg1 reason:(id)arg2 error:(id *)arg3;
+- (_Bool)isRecordWithScopedIdentifierQuarantined:(id)arg1;
+- (_Bool)removeQuarantinedRecordsWithScopedIdentifier:(id)arg1 notify:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)addQuarantinedRecordsWithScopedIdentifier:(id)arg1 reason:(id)arg2 error:(id *)arg3;
+- (_Bool)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (unsigned long long)scopeType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

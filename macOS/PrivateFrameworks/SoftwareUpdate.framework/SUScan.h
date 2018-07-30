@@ -61,7 +61,6 @@
 - (void)_updatePackageSourcesWithCatalog:(id)arg1;
 - (void)_scanMain:(id)arg1;
 - (id)_clientDescription;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

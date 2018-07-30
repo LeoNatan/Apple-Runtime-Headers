@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSTimer, PKDownloaderQueue, PKDownloaderSpeedTracker;
+@class NSString, NSTimer, PKDownloaderQueue, PKDownloaderSpeedTracker;
 
 @interface PKDownloader : NSObject
 {
@@ -17,12 +17,14 @@
     PKDownloaderSpeedTracker *_downloadTracker;
     PKDownloaderSpeedTracker *_checksumTracker;
     NSTimer *_progressTimer;
+    NSString *_lastKnownPeerAddress;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)keyPathsForValuesAffectingEstimatedTimeRemaining;
 + (void)setUserAgent:(id)arg1;
 + (id)userAgent;
+- (id)_peerAddressForURLResponse:(id)arg1;
 - (BOOL)_wantHTTPLogging;
 - (void)_element:(id)arg1 didFailWithError:(id)arg2;
 - (void)_elementDidFinish:(id)arg1;

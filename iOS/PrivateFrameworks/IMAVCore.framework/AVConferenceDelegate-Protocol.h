@@ -38,6 +38,7 @@
 - (void)conference:(AVConference *)arg1 didReceiveARPLData:(NSData *)arg2 withCallID:(long long)arg3;
 - (void)conference:(AVConference *)arg1 withCallID:(long long)arg2 didPauseVideo:(_Bool)arg3 error:(NSError *)arg4;
 - (void)conference:(AVConference *)arg1 withCallID:(long long)arg2 didPauseAudio:(_Bool)arg3 error:(NSError *)arg4;
+- (void)conference:(AVConference *)arg1 withCallID:(long long)arg2 isSendingAudio:(_Bool)arg3 error:(NSError *)arg4;
 - (void)conference:(AVConference *)arg1 didStopWithCallID:(long long)arg2 error:(NSError *)arg3 callMetadata:(NSDictionary *)arg4;
 - (void)conference:(AVConference *)arg1 didStartSession:(_Bool)arg2 withCallID:(long long)arg3 error:(NSError *)arg4;
 - (void)conference:(AVConference *)arg1 localIPChange:(NSData *)arg2 withCallID:(long long)arg3;

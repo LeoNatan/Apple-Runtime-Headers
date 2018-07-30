@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface APSPerAppTokenMap : NSObject
 {
     NSMutableDictionary *_perAppTokenMap;

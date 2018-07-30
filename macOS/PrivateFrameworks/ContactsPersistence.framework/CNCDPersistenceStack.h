@@ -14,9 +14,11 @@
 
 + (void)_createContactsDirectoryIfNeededAtURL:(id)arg1;
 + (id)defaultContactsStoreDirectoryURL;
++ (id)persistenceStackWithPersistentStoreCoordinator:(id)arg1 accountCollection:(id)arg2;
 + (id)persistenceStackWithInMemoryBackend;
 + (id)accountIdentifierFromPersistentStoreURL:(id)arg1;
 + (id)accountIdentifierForManagedObject:(id)arg1;
++ (id)defaultAccountCollection;
 + (id)persistenceStackWithAccountCollection:(id)arg1;
 @property id notificationSource; // @synthesize notificationSource=_notificationSource;
 - (id)makePersistenceContext;

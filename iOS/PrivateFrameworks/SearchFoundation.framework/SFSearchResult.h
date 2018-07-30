@@ -25,6 +25,7 @@
     _Bool _isStaticCorrection;
     _Bool _isFuzzyMatch;
     _Bool _publiclyIndexable;
+    _Bool _doNotFold;
     int _auxiliaryBottomTextColor;
     int _topHit;
     int _placement;
@@ -55,6 +56,7 @@
     NSString *_mapsMoreString;
     SFImage *_mapsMoreIcon;
     NSString *_nearbyBusinessesString;
+    NSString *_appleReferrer;
     SFCard *_card;
     SFCard *_inlineCard;
     SFMoreResults *_moreResults;
@@ -98,9 +100,12 @@
     NSString *_fileProviderDomainIdentifier;
     NSString *_fbr;
     NSString *_srf;
+    unsigned long long _blockId;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long blockId; // @synthesize blockId=_blockId;
+@property(nonatomic) _Bool doNotFold; // @synthesize doNotFold=_doNotFold;
 @property(copy, nonatomic) NSString *srf; // @synthesize srf=_srf;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(copy, nonatomic) NSString *fileProviderDomainIdentifier; // @synthesize fileProviderDomainIdentifier=_fileProviderDomainIdentifier;
@@ -154,6 +159,7 @@
 @property(retain, nonatomic) SFMoreResults *moreResults; // @synthesize moreResults=_moreResults;
 @property(retain, nonatomic) SFCard *inlineCard; // @synthesize inlineCard=_inlineCard;
 @property(retain, nonatomic) SFCard *card; // @synthesize card=_card;
+@property(copy, nonatomic) NSString *appleReferrer; // @synthesize appleReferrer=_appleReferrer;
 @property(copy, nonatomic) NSString *nearbyBusinessesString; // @synthesize nearbyBusinessesString=_nearbyBusinessesString;
 @property(retain, nonatomic) SFImage *mapsMoreIcon; // @synthesize mapsMoreIcon=_mapsMoreIcon;
 @property(copy, nonatomic) NSString *mapsMoreString; // @synthesize mapsMoreString=_mapsMoreString;

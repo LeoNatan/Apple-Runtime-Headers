@@ -22,7 +22,7 @@
 - (_Bool)_loadCertificateWithError:(id *)arg1;
 - (id)analyticsFilePathsWithError:(id *)arg1;
 - (id)URLForAnalyticsFileWithName:(id)arg1;
-- (_Bool)submitJSONAnaltyicsData:(id)arg1 bugType:(id)arg2 error:(id *)arg3;
+- (_Bool)submitJSONAnalyticsData:(id)arg1 bugType:(id)arg2 error:(id *)arg3;
 - (id)init;
 - (id)initWithProfile:(id)arg1;
 

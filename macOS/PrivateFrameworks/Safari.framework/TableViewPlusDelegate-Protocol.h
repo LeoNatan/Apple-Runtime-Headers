@@ -6,11 +6,12 @@
 
 #import "NSTableViewDelegate.h"
 
-@class NSEvent, NSMenu, NSTableColumn, NSTableView;
+@class NSEvent, NSIndexSet, NSMenu, NSTableColumn, NSTableView;
 
 @protocol TableViewPlusDelegate <NSTableViewDelegate>
 
 @optional
+- (void)tableView:(NSTableView *)arg1 rowSelectionWillChangeFromSelection:(NSIndexSet *)arg2 toSelection:(NSIndexSet *)arg3;
 - (void)tableViewDidEndLiveResize:(NSTableView *)arg1;
 - (void)tableViewCopy:(NSTableView *)arg1;
 - (BOOL)tableViewCanCopy:(NSTableView *)arg1;

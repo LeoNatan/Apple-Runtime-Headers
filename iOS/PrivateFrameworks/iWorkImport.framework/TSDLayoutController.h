@@ -6,22 +6,25 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, TSDCanvas, TSDLayout, TSDRootLayout;
+@class NSMapTable, NSMutableSet, TSDCanvas, TSDLayout, TSDRootLayout;
 
 __attribute__((visibility("hidden")))
 @interface TSDLayoutController : NSObject
 {
-    TSDCanvas *mCanvas;
-    TSDRootLayout *mRootLayout;
-    struct __CFDictionary *mLayoutsByInfo;
-    NSMutableSet *mInvalidLayouts;
-    NSMutableSet *mLayoutsNeedingRecreating;
-    NSMutableSet *mInvalidChildrenLayouts;
-    TSDLayout *mValidatingLayout;
+    TSDCanvas *_canvas;
+    TSDRootLayout *_rootLayout;
+    NSMapTable *_layoutsByInfo;
+    NSMutableSet *_invalidLayouts;
+    NSMutableSet *_layoutsNeedingRecreating;
+    NSMutableSet *_invalidChildrenLayouts;
+    TSDLayout *_validatingLayout;
 }
 
 + (void)temporaryLayoutControllerForInfos:(id)arg1 useInBlock:(CDUnknownBlockType)arg2;
 + (id)allInteractiveLayoutControllers;
+@property(readonly, nonatomic) TSDRootLayout *rootLayout; // @synthesize rootLayout=_rootLayout;
+@property(readonly, nonatomic) __weak TSDCanvas *canvas; // @synthesize canvas=_canvas;
+- (void).cxx_destruct;
 - (void)p_recreateLayoutsIfNeededToValidateLayouts:(id)arg1;
 - (void)i_removeAllLayouts;
 - (void)i_unregisterLayout:(id)arg1;
@@ -35,7 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)validateLayouts:(id)arg1;
 - (id)sortLayoutsForDependencies:(id)arg1;
 - (void)validateLayouts;
-- (struct CGRect)rectOfTopLevelLayouts;
+@property(readonly, nonatomic) struct CGRect rectOfTopLevelLayouts;
+- (id)layoutsInRect:(struct CGRect)arg1 deep:(_Bool)arg2;
 - (id)layoutsInRect:(struct CGRect)arg1;
 - (id)layoutForInfo:(id)arg1 childOfLayout:(id)arg2;
 - (id)layoutsForInfos:(id)arg1;
@@ -45,8 +49,6 @@ __attribute__((visibility("hidden")))
 - (void)invalidateChildrenOfLayout:(id)arg1;
 - (void)invalidateLayout:(id)arg1;
 - (void)setInfos:(id)arg1;
-- (id)rootLayout;
-- (id)canvas;
 - (void)dealloc;
 - (id)initWithCanvas:(id)arg1;
 - (_Bool)isLayoutOffscreen;

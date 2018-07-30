@@ -39,7 +39,7 @@
 - (_Bool)hasLastUsedVariantForEmoji:(id)arg1;
 - (void)didDisplaySkinToneHelp;
 - (void)didViewEmojiIndex:(long long)arg1 forCategory:(id)arg2;
-- (_Bool)isMalformationEmoji:(id)arg1;
+- (_Bool)shouldCountEmojiStringForUsageHistory:(id)arg1;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2 typingName:(id)arg3;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2;
 - (void)didUseEmoji:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)migrateInSkinTonePreferences:(id)arg1;
 - (void)migrateInRecentEmoji:(id)arg1 usages:(id)arg2 typingNames:(id)arg3;
 - (void)_cleanUpOldFlagsCaches;
-- (void)_checkForMalformationEmoji;
+- (void)_pruneInvalidEmojiFromHistory;
 - (void)_checkForDingbatDuplicates;
 - (void)migrateFromMajorOSVersion:(long long)arg1;
 - (void)loadDefaultsIfNecessary;

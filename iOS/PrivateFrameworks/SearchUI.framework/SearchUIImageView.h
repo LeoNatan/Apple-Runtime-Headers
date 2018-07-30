@@ -4,28 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIImageView.h"
+#import "TLKImageView.h"
 
-@class SFImage;
+#import "CNAvatarViewDelegate.h"
 
-@interface SearchUIImageView : UIImageView
+@class CNAvatarView, NSString, SFImage, SearchUIButton, UIView;
+
+@interface SearchUIImageView : TLKImageView <CNAvatarViewDelegate>
 {
-    unsigned long long _style;
     SFImage *_currentImage;
+    SearchUIButton *_overlayPlayButton;
+    unsigned long long _searchUIStyle;
+    CNAvatarView *_avatarView;
+    UIView *_tintView;
 }
 
++ (id)thumbnailForResult:(id)arg1;
 + (id)imageViewWithImage:(id)arg1 style:(unsigned long long)arg2;
+@property(retain) UIView *tintView; // @synthesize tintView=_tintView;
+@property(retain) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
+@property unsigned long long searchUIStyle; // @synthesize searchUIStyle=_searchUIStyle;
+@property(retain) SearchUIButton *overlayPlayButton; // @synthesize overlayPlayButton=_overlayPlayButton;
 @property(retain) SFImage *currentImage; // @synthesize currentImage=_currentImage;
-@property unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct CGSize)intrinsicContentSize;
-- (void)updateWithUIImage:(id)arg1 isTemplate:(_Bool)arg2;
-- (void)updateWithLoadedImage:(id)arg1 forImage:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)layoutSubviews;
+- (id)presentingViewControllerForAvatarView:(id)arg1;
+- (void)updateWithImage:(id)arg1 needsOverlayButton:(_Bool)arg2 preventImageScaling:(_Bool)arg3 useMinimumWidthIfPossible:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)updateWithImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateWithImage:(id)arg1;
+- (void)appIconDidChange:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (id)initWithStyle:(unsigned long long)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

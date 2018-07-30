@@ -10,6 +10,7 @@
 {
 }
 
++ (id)dataDetector;
 + (id)daemon;
 + (id)encryption;
 

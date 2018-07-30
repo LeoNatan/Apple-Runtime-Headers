@@ -13,11 +13,11 @@
 - (void)noteSyncSessionFailedWithError:(NSError *)arg1;
 - (void)noteSyncSessionSucceeded;
 - (void)noteServerHasChanges;
-- (void)notePullQueueIsFull;
-- (void)notePushQueueIsFull;
-- (void)notePushQueueIsEmpty;
+- (void)noteClientNeedsToPull;
+- (void)noteScopeNeedsToPushToTransport;
 - (void)unscheduleNextSyncSession;
 - (void)scheduleNextSyncSessionAtDate:(NSDate *)arg1;
+- (BOOL)shouldCoalesceServerChangesNotification;
 - (BOOL)shouldStartSyncSessionFromState:(unsigned long long)arg1;
 @end
 

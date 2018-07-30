@@ -42,6 +42,7 @@
     GEOCompanionRouteStatus *_companionRouteStatus;
     GEOCompanionRouteContext *_companionRouteContext;
     BOOL _shouldSendRouteWithStatus;
+    BOOL _isConnectedToCarplay;
     id <GEOServerFormattedStepStringFormatter> _formatter;
 }
 
@@ -72,6 +73,7 @@
 - (void)_openNavdConnection;
 - (void)_clearState;
 - (void)triggerHaptics:(int)arg1;
+- (void)setIsConnectedToCarplay:(BOOL)arg1;
 - (void)setIsNavigatingInLowGuidance:(BOOL)arg1;
 - (void)setNavigationVoiceVolume:(int)arg1;
 - (void)setTrafficIncidentDetailsData:(id)arg1;

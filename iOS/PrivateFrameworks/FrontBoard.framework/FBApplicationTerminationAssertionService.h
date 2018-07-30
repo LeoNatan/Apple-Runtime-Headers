@@ -16,7 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) id <FBApplicationTerminationAssertionServiceDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <FBApplicationTerminationAssertionServiceDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)_reasonForEfficacy:(unsigned long long)arg1;
 - (unsigned long long)_efficacyForReason:(id)arg1;
 - (void)_notifyDelegateOfRelinquishForBundleID:(id)arg1;

@@ -10,6 +10,7 @@
 
 @class CALayer;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFPageContentTiledLayer : CATiledLayer <UIPDFSelectionLayer>
 {
     CALayer *_selectionLayer;

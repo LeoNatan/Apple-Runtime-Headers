@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CKPreviewDispatchCache, IMBalloonPlugin, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet, NSString;
+@class CKPreviewDispatchCache, IMBalloonPlugin, NSArray, NSCache, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet, NSString;
 
 @interface CKBalloonPluginManager : NSObject
 {
@@ -36,6 +36,7 @@
     int _numberOfSectionsToKeep;
     NSMutableArray *_visibleInstallations;
     NSSet *_oldVisibleSwitcherPluginIdentifiers;
+    NSCache *_iconCache;
     CKPreviewDispatchCache *_snapshotCache;
     NSMutableDictionary *_activeBrowsers;
 }
@@ -46,6 +47,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *activeBrowsers; // @synthesize activeBrowsers=_activeBrowsers;
 @property(retain, nonatomic) CKPreviewDispatchCache *snapshotCache; // @synthesize snapshotCache=_snapshotCache;
+@property(retain, nonatomic) NSCache *iconCache; // @synthesize iconCache=_iconCache;
 @property(retain, nonatomic) NSSet *oldVisibleSwitcherPluginIdentifiers; // @synthesize oldVisibleSwitcherPluginIdentifiers=_oldVisibleSwitcherPluginIdentifiers;
 @property(nonatomic) _Bool isAppInstallationObserver; // @synthesize isAppInstallationObserver=_isAppInstallationObserver;
 @property(retain, nonatomic) NSMutableArray *visibleInstallations; // @synthesize visibleInstallations=_visibleInstallations;
@@ -90,6 +92,7 @@
 @property(readonly, nonatomic) NSArray *allEnabledPlugins;
 @property(readonly, nonatomic) _Bool hasLoadedExtensions;
 - (_Bool)isInternalPlugin:(id)arg1;
+- (void)invalidateIconCache;
 - (id)pluginForIdentifier:(id)arg1;
 - (id)balloonPluginIdentifierForAppExtensionBundleIdentifier:(id)arg1;
 - (void)saveWithNotification:(_Bool)arg1;
@@ -137,6 +140,7 @@
 - (void)invalidateAllActivePlugins;
 - (void)invalidateAllActiveSwitcherPlugins;
 - (void)forceTearDownRemoteViews;
+- (void)forceKillNonCameraRemoteExtensionsImmediately;
 - (void)forceKillRemoteExtensionsWithDelay:(_Bool)arg1;
 - (void)prepareForSuspend;
 - (_Bool)isViewController:(id)arg1 fromPluginWithIdentifier:(id)arg2;

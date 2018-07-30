@@ -8,12 +8,14 @@
 
 @class NSColor;
 
+__attribute__((visibility("hidden")))
 @interface _NSCollectionViewRubberband : NSView
 {
     NSColor *_frameColor;
     NSColor *_fillColor;
 }
 
+- (id)_preferredAppearance;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;

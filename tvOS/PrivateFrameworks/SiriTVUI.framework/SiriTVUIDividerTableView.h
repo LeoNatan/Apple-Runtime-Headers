@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SiriTVUIDividerTableView : UITableView <_UIScrollViewScrollObserver>
 {
     NSMutableArray *_dividers;

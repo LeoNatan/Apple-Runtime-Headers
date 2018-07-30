@@ -11,6 +11,8 @@
 }
 
 + (id)sharedCapabilities;
+- (_Bool)mgHasGreenTea;
+- (_Bool)mgHasCellularTelephony;
 - (_Bool)mgHasMesa;
 - (_Bool)mgHasSecureElement;
 - (_Bool)mgHasSiriCapability;

@@ -26,6 +26,7 @@
 @property(retain) id notification; // @synthesize notification=_notification;
 @property BOOL isBanner; // @synthesize isBanner=_isBanner;
 - (void).cxx_destruct;
+- (id)initObsoleteAlertWithAppName:(id)arg1;
 - (id)initAddConfigurationsForApp:(id)arg1 warningHeader:(id)arg2 warning:(id)arg3;
 - (void)cancel;
 - (BOOL)postNotificationWithCallbackQueue:(id)arg1 callbackHandler:(CDUnknownBlockType)arg2;

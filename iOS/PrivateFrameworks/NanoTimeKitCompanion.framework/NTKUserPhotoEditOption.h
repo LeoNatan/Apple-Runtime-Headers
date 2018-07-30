@@ -12,10 +12,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)optionUsingDefaultPhoto:(_Bool)arg1;
++ (id)optionUsingDefaultPhoto:(_Bool)arg1 forDevice:(id)arg2;
 @property(nonatomic) _Bool usesDefaultPhoto; // @synthesize usesDefaultPhoto=_usesDefaultPhoto;
 - (_Bool)isValidOption;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
+- (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;
 - (id)JSONObjectRepresentation;
 - (id)dailySnapshotKey;
 - (id)initWithCoder:(id)arg1;

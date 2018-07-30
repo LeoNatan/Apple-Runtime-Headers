@@ -34,6 +34,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (id)multiLineDayOfWeekMonthDayFormatForLocale:(id)arg1;
 - (_Bool)supportsMultiLineDayOfWeekMonthDayStyle;
 - (id)formatAlarmSnoozeDuration:(double)arg1;

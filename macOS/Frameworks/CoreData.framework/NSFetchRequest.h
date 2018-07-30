@@ -92,7 +92,7 @@
 - (BOOL)_disablePersistentStoreResultCaching;
 - (id)_asyncResultHandle;
 - (void)_setAsyncResultHandle:(id)arg1;
-- (BOOL)_isCachingFetchRequest__;
+- (BOOL)_isCachingFetchRequest;
 - (void)setPrepopulateObjects:(BOOL)arg1;
 - (BOOL)prepopulateObjects;
 - (void)setResultsAsObjectIDs:(BOOL)arg1;

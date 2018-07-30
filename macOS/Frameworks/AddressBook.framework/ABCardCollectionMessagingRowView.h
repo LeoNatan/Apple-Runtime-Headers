@@ -8,7 +8,6 @@
 
 @class NSPopUpButton, NSTextField;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionMessagingRowView : ABCardCollectionRowView
 {
     NSPopUpButton *_messagingServiceChooserPopup;

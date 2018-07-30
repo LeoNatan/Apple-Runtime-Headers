@@ -8,7 +8,7 @@
 
 #import "ResponsiveDesignContainerViewDelegate.h"
 
-@class NSString, ResponsiveDesignContainerView, ResponsiveDesignShelfViewController, WKView, WindowBackdropVisualEffectView;
+@class NSLayoutConstraint, NSString, ResponsiveDesignContainerView, ResponsiveDesignShelfViewController, WKView, WindowBackdropVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface ResponsiveDesignViewController : NSViewController <ResponsiveDesignContainerViewDelegate>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     ResponsiveDesignShelfViewController *_shelfViewController;
     WindowBackdropVisualEffectView *_visualEffectView;
     ResponsiveDesignContainerView *_responsiveDesignContainerView;
+    NSLayoutConstraint *_visualEffectViewTopConstraint;
     BOOL _ignoreDisplayBrowserSizeChange;
     WKView *_webView;
 }
@@ -31,6 +32,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long pixelRatio;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)webViewDidNavigateOrReload;
+- (void)updateViewConstraints;
+- (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;

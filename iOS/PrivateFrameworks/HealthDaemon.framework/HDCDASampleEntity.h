@@ -14,7 +14,8 @@
 + (id)codableObjectsFromObjectCollection:(id)arg1;
 + (_Bool)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 + (long long)protectionClass;
 

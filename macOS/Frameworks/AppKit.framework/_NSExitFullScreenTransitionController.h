@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface _NSExitFullScreenTransitionController : _NSFullScreenTransitionController
 {
     BOOL _doInProcessAnimation;
-    unsigned long long _toSpid;
     double _duration;
     BOOL _dockInitiated;
     BOOL _exitForTabMove;
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _transitionedWindowBeforeSnapshotFrame;
     NSMutableArray *_backgroundWindowIDs;
     _NSFullScreenTransitionOverlayWindow *_overlayWindow;
+    unsigned long long _destinationSpaceID;
     BOOL _beforeSnapshotIncludesWindowIDs;
     id _beforeContents;
     struct CGRect _beforeSnapshotFrame;
@@ -44,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL exitForClose; // @synthesize exitForClose=_exitForClose;
 @property(nonatomic) BOOL dockInitiated; // @synthesize dockInitiated=_dockInitiated;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-@property(nonatomic) unsigned long long toSpid; // @synthesize toSpid=_toSpid;
 @property(nonatomic) BOOL doInProcessAnimation; // @synthesize doInProcessAnimation=_doInProcessAnimation;
 - (void)interrupt;
 - (void)start;
@@ -56,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_updateShadowDeltaRect:(struct CGRect *)arg1 forFrame:(struct CGRect)arg2 basedOnImage:(struct CGImage *)arg3;
 - (struct CGImage *)captureAfterSnapshot;
 - (struct CGImage *)captureBeforeSnapshot;
+- (unsigned long long)_desktopPictureSpaceID;
+- (unsigned long long)destinationSpaceID;
 - (struct CGSize)transitionedWindowShadowOffset;
 - (id)_windowIDsForBeforeSnapshot;
 - (id)windowIDsForSnapshot;

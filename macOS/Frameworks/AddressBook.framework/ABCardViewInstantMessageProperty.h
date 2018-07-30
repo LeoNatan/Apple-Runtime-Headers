@@ -8,7 +8,6 @@
 
 @class ABCardViewInstantMessageServiceGenerator;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewInstantMessageProperty : ABCardViewProperty
 {
     ABCardViewInstantMessageServiceGenerator *_serviceGenerator;

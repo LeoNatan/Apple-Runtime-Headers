@@ -8,24 +8,25 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSArray, NSString;
+@class CEMPredicateBase, NSArray, NSString;
 
 @interface CEMActivationSimpleDeclaration : CEMDeclarationBase <CEMRegisteredTypeProtocol>
 {
+    NSArray *_payloadStandardConfigurations;
+    CEMPredicateBase *_payloadPredicate;
 }
 
-+ (id)allowedReasons;
-+ (id)InstalledConfigurationsItem_allowedStatusKeys;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withStandardConfigurations:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withStandardConfigurations:(id)arg2 withPredicate:(id)arg3;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusInstalledConfigurationsItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSArray *payloadStandardConfigurations;
-@property(readonly, nonatomic) NSArray *payloadRequiredConfigurations;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMPredicateBase *payloadPredicate; // @synthesize payloadPredicate=_payloadPredicate;
+@property(copy, nonatomic) NSArray *payloadStandardConfigurations; // @synthesize payloadStandardConfigurations=_payloadStandardConfigurations;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,11 +15,13 @@
 - (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (BOOL)_doHackForFS;
 - (BOOL)_isSelected;
+- (id)_containingToolbarItemViewer;
 - (id)_highlightColorForCell:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2;
 - (void)mouseDown:(id)arg1;
 - (BOOL)mouseDownCanMoveWindow;
+- (struct CGSize)_defaultContentCompressionResistancePriorities;
 - (id)initWithFrame:(struct CGRect)arg1 text:(id)arg2;
 - (BOOL)allowsVibrancy;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;

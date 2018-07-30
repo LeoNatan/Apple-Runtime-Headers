@@ -30,8 +30,8 @@
 - (void)_registerExperimentsState;
 - (void)updateDeviceConnectionState;
 - (void)_registerDeviceConnectionState;
-- (void)_registerApplicationIdentifierState;
-- (void)_registerDeviceIdentifierState;
+- (void)_registerApplicationIdentifierState:(id)arg1;
+- (void)_registerDeviceIdentifierState:(id)arg1;
 - (void)_registerLogContextWithTraits:(id)arg1;
 - (void)_initializeGlobalDefaultStates;
 - (void)_initializeDefaultStates;

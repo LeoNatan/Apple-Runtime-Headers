@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCardCollectionRowView.h>
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionURLRowView : ABCardCollectionRowView
 {
 }

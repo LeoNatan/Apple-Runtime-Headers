@@ -68,6 +68,7 @@
 - (void)collectionItemDidChangeHeight:(id)arg1 shouldAnimate:(BOOL)arg2;
 - (void)collectionItemDidRemoveLastCharacter:(id)arg1;
 - (void)collectionItemDidAddFirstCharacter:(id)arg1;
+- (void)collectionItemWantsActionGlyps:(id)arg1;
 - (void)collectionItem:(id)arg1 didChangeService:(id)arg2;
 - (void)collectionItem:(id)arg1 didChangeLabel:(id)arg2;
 - (void)showLastItem;
@@ -84,7 +85,6 @@
 - (void)addSeparatorItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)insertionIndexOfItem:(id)arg1;
 - (void)insertItemWithSeparatorFollowing:(id)arg1;
-- (void)viewWillDraw;
 - (unsigned long long)stackViewIndexOfLastItemWithValueKeypath:(id)arg1;
 - (void)adjustStackViewSpacingAfterItem:(id)arg1;
 - (void)addItem:(id)arg1 sort:(BOOL)arg2 animated:(BOOL)arg3;

@@ -19,8 +19,6 @@ __attribute__((visibility("hidden")))
 
 - (id)layerContents;
 - (void *)_copyNonatomicRenderValue;
-- (struct CGImage *)rightImage;
-- (struct CGImage *)leftImage;
 - (struct CGImage *)image;
 - (void)flushRect:(struct CGRect)arg1;
 - (BOOL)isAttachedToCGLContext:(struct _CGLContextObject *)arg1;

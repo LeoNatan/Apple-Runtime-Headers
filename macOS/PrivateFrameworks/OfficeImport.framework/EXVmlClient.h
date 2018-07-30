@@ -8,7 +8,6 @@
 
 #import "OAVReadClient.h"
 
-__attribute__((visibility("hidden")))
 @interface EXVmlClient : NSObject <OAVReadClient>
 {
 }

@@ -7,41 +7,55 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBImageValue.h"
 
-@class NSString, PBUnknownFields, _INPBValueMetadata;
+@class NSData, NSString, _INPBValueMetadata;
 
-@interface _INPBImageValue : PBCodable <NSCopying>
+@interface _INPBImageValue : PBCodable <_INPBImageValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    double _height;
-    double _width;
-    NSString *_uri;
-    _INPBValueMetadata *_valueMetadata;
     struct {
         unsigned int height:1;
+        unsigned int type:1;
         unsigned int width:1;
     } _has;
+    NSData *_data;
+    NSString *_proxyServiceIdentifier;
+    int _type;
+    NSString *_uri;
+    _INPBValueMetadata *_valueMetadata;
+    double _height;
+    double _width;
 }
 
-+ (id)options;
-@property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double width; // @synthesize width=_width;
-@property(retain, nonatomic) NSString *uri; // @synthesize uri=_uri;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(copy, nonatomic) NSString *uri; // @synthesize uri=_uri;
+@property(nonatomic) int type; // @synthesize type=_type;
+@property(copy, nonatomic) NSString *proxyServiceIdentifier; // @synthesize proxyServiceIdentifier=_proxyServiceIdentifier;
+@property(nonatomic) double height; // @synthesize height=_height;
+@property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasHeight;
 @property(nonatomic) _Bool hasWidth;
-@property(readonly, nonatomic) _Bool hasUri;
 @property(readonly, nonatomic) _Bool hasValueMetadata;
+@property(readonly, nonatomic) _Bool hasUri;
+- (int)StringAsType:(id)arg1;
+- (id)typeAsString:(int)arg1;
+@property(nonatomic) _Bool hasType;
+@property(readonly, nonatomic) _Bool hasProxyServiceIdentifier;
+@property(nonatomic) _Bool hasHeight;
+@property(readonly, nonatomic) _Bool hasData;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

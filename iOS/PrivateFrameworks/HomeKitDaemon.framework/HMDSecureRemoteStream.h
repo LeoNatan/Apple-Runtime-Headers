@@ -9,7 +9,7 @@
 #import "HMFLogging.h"
 #import "HMFObject.h"
 
-@class HMDAWDRemoteSessionMetric, HMDDevice, HMDRemoteIdentityRegistry, HMDSecureRemoteStreamInternal, HMDUser, NSDate, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMDAWDRemoteSessionMetric, HMDDevice, HMDSecureRemoteStreamInternal, HMDUser, HMFPairingIdentity, NSArray, NSDate, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMDSecureRemoteStream : HMFMessageTransport <HMFLogging, HMFObject>
 {
@@ -19,14 +19,14 @@
     long long _qualityOfService;
     NSNumber *_maximumRemoteStreams;
     NSDate *_lastActivity;
-    long long _role;
     HMDDevice *_peerDevice;
+    long long _role;
     NSUUID *_sessionID;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMDUser *_peer;
+    HMFPairingIdentity *_peerIdentity;
     HMDSecureRemoteStreamInternal *_remoteSession;
-    HMDRemoteIdentityRegistry *_identityRegistry;
     HMDDevice *_currentDevice;
     HMDAWDRemoteSessionMetric *_metric;
 }
@@ -35,16 +35,18 @@
 @property(readonly, nonatomic) HMDAWDRemoteSessionMetric *metric; // @synthesize metric=_metric;
 @property(nonatomic) _Bool supportsSharedIdentities; // @synthesize supportsSharedIdentities=_supportsSharedIdentities;
 @property(readonly, nonatomic) HMDDevice *currentDevice; // @synthesize currentDevice=_currentDevice;
-@property(retain, nonatomic) HMDRemoteIdentityRegistry *identityRegistry; // @synthesize identityRegistry=_identityRegistry;
 @property(retain, nonatomic) HMDSecureRemoteStreamInternal *remoteSession; // @synthesize remoteSession=_remoteSession;
+@property(retain, nonatomic) HMFPairingIdentity *peerIdentity; // @synthesize peerIdentity=_peerIdentity;
 @property(retain, nonatomic) HMDUser *peer; // @synthesize peer=_peer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
-@property(readonly, nonatomic) HMDDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(readonly) long long role; // @synthesize role=_role;
 - (void).cxx_destruct;
 - (id)logIdentifier;
+- (void)__handleDeviceRemovedFromAccount:(id)arg1;
+- (void)__handleAccountRemovedFromRegistry:(id)arg1;
+- (void)__handleRemovedIdentity:(id)arg1;
 - (void)handleSecureMessage:(id)arg1 fromTransport:(id)arg2;
 - (void)handleCompletedMessage:(id)arg1 options:(id)arg2 responsePayload:(id)arg3 error:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -60,15 +62,18 @@
 - (void)setMaximumRemoteStreams:(id)arg1;
 @property(readonly, copy) NSNumber *maximumRemoteStreams; // @synthesize maximumRemoteStreams=_maximumRemoteStreams;
 @property long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
+@property(retain, nonatomic) HMDDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(readonly, copy) NSString *propertyDescription;
-- (id)shortDescription;
+@property(readonly, copy) NSString *shortDescription;
 - (void)dealloc;
-- (id)initWithCurrentDevice:(id)arg1 peerDevice:(id)arg2 identityRegistry:(id)arg3 clientMode:(_Bool)arg4 sessionID:(id)arg5;
+- (id)initWithCurrentDevice:(id)arg1 peerDevice:(id)arg2 clientMode:(_Bool)arg3 sessionID:(id)arg4;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *privateDescription;
 @property(readonly) Class superclass;
 
 @end

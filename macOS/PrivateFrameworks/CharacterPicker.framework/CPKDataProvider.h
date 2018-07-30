@@ -30,7 +30,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isSystemCategory:(long long)arg1;
 - (void)_displayCountOfRecents:(long long *)arg1 favorites:(long long *)arg2;
 - (id)_rawCharacterAtIndex:(long long)arg1 inCategory:(long long)arg2;
-- (void)secondaryDataSourcePreparationAsync:(BOOL)arg1;
+- (void)secondaryDataSourcePreparationUsingBlock:(CDUnknownBlockType)arg1;
+- (BOOL)needsSecondaryDataSourcePreparation;
 - (BOOL)isEmojiCategory:(long long)arg1;
 - (BOOL)hasVariationSelectedEntity:(id)arg1;
 - (id)replaceToPreferableVariationEntity:(id)arg1;

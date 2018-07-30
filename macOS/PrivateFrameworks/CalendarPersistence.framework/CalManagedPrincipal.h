@@ -44,6 +44,7 @@
 + (id)fetchRequestWithUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchRequestWithUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityName;
++ (id)cachedParentACAccountForCachedACAccount:(id)arg1;
 @property BOOL statusIsBusy; // @synthesize statusIsBusy=_statusIsBusy;
 - (BOOL)updateCachedAccountValues;
 - (int)displayOrder;

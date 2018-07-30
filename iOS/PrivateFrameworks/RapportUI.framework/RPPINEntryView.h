@@ -9,7 +9,7 @@
 #import "UIKeyInput.h"
 #import "UITextInputTraits.h"
 
-@class NSArray, NSMutableString, NSString, UIColor, UILabel;
+@class NSArray, NSMutableString, NSString, UIColor, UILabel, UITextInputPasswordRules;
 
 @interface RPPINEntryView : UIView <UIKeyInput, UITextInputTraits>
 {
@@ -80,6 +80,7 @@
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(readonly) unsigned long long hash;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) long long returnKeyType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
 @property(nonatomic) long long smartDashesType;

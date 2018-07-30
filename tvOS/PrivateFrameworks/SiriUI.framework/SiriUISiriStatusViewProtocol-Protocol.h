@@ -19,7 +19,7 @@
 @property(nonatomic) double flamesViewWidth;
 @property(nonatomic) long long mode;
 - (void)forceMicVisible:(_Bool)arg1;
-- (void)configureGlyphWithCompletion:(void (^)(void))arg1;
 - (void)fadeOutCurrentAura;
+- (void)setupOrbIfNeeded;
 @end
 

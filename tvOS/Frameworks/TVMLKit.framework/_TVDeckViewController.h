@@ -11,6 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface _TVDeckViewController : UIViewController
 {
+    _Bool _dissolving;
+    CDUnknownBlockType _didDissolveBlock;
     IKViewElement *_deckElement;
     UIView *_pendingView;
     UIView *_currentView;
@@ -19,6 +21,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *currentView; // @synthesize currentView=_currentView;
 @property(retain, nonatomic) UIView *pendingView; // @synthesize pendingView=_pendingView;
 @property(retain, nonatomic) IKViewElement *deckElement; // @synthesize deckElement=_deckElement;
+@property(copy, nonatomic) CDUnknownBlockType didDissolveBlock; // @synthesize didDissolveBlock=_didDissolveBlock;
+@property(nonatomic, getter=isDissolving) _Bool dissolving; // @synthesize dissolving=_dissolving;
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;

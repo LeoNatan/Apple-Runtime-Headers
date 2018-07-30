@@ -18,10 +18,12 @@
 @property(retain, nonatomic) NSString *associatedServiceType; // @dynamic associatedServiceType;
 @property(retain, nonatomic) NSArray *characteristics; // @dynamic characteristics;
 @property(retain, nonatomic) NSNumber *configurationState; // @dynamic configurationState;
+@property(retain, nonatomic) NSString *expectedConfiguredName; // @dynamic expectedConfiguredName;
 @property(retain, nonatomic) NSNumber *hidden; // @dynamic hidden;
 @property(retain, nonatomic) NSNumber *instanceID; // @dynamic instanceID;
 @property(retain, nonatomic) NSNumber *labelIndex; // @dynamic labelIndex;
 @property(retain, nonatomic) NSNumber *labelNamespace; // @dynamic labelNamespace;
+@property(retain, nonatomic) NSString *lastSeenConfiguredName; // @dynamic lastSeenConfiguredName;
 @property(retain, nonatomic) NSArray *linkedServices; // @dynamic linkedServices;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) NSNumber *primary; // @dynamic primary;

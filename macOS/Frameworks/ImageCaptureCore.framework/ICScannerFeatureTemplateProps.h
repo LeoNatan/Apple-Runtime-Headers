@@ -8,6 +8,7 @@
 
 @class ICScannerFunctionalUnit, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface ICScannerFeatureTemplateProps : NSObject
 {
     int _numberOfTargets;
@@ -18,7 +19,6 @@
 @property ICScannerFunctionalUnit *fu; // @synthesize fu=_fu;
 @property(retain) NSArray *targets; // @synthesize targets=_targets;
 @property int numberOfTargets; // @synthesize numberOfTargets=_numberOfTargets;
-- (void)finalize;
 - (void)dealloc;
 
 @end

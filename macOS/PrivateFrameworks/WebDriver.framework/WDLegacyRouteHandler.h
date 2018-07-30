@@ -42,7 +42,7 @@
 - (void)_handleGetSessionElementLocation:(id)arg1 response:(id)arg2;
 - (void)_handleGetSessionElementSize:(id)arg1 response:(id)arg2;
 - (void)_handleGetSessionElementDisplayed:(id)arg1 response:(id)arg2;
-- (void)_checkIsElementDisplayed:(struct NSString *)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_checkIsElementDisplayed:(id)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_handleGetSessionElementCSSProperty:(id)arg1 response:(id)arg2;
 - (void)_handleGetSessionElementAttribute:(id)arg1 response:(id)arg2;
 - (void)_handleGetSessionElementEquals:(id)arg1 response:(id)arg2;
@@ -52,13 +52,13 @@
 - (void)_handleGetSessionElementName:(id)arg1 response:(id)arg2;
 - (void)_handleGetSessionElementActive:(id)arg1 response:(id)arg2;
 - (void)_handlePostSessionElementClick:(id)arg1 response:(id)arg2;
-- (void)_performSingleClickOnElement:(struct NSString *)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_performSingleClickOnElement:(id)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_handlePostSessionElementClear:(id)arg1 response:(id)arg2;
 - (void)_handlePostSessionElementSubmit:(id)arg1 response:(id)arg2;
 - (void)_handlePostSessionElementValue:(id)arg1 response:(id)arg2;
-- (void)_selectLocalFiles:(id)arg1 forFileInputElement:(struct NSString *)arg2 allowsMultipleSelection:(BOOL)arg3 inSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)_fetchAttributesOfElement:(struct NSString *)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_ensureElementIsScrolledIntoViewAndDisplayed:(struct NSString *)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_selectLocalFiles:(id)arg1 forFileInputElement:(id)arg2 allowsMultipleSelection:(BOOL)arg3 inSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_fetchAttributesOfElement:(id)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_ensureElementIsScrolledIntoViewAndDisplayed:(id)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_handlePostSessionElementElements:(id)arg1 response:(id)arg2;
 - (void)_handlePostSessionElementElement:(id)arg1 response:(id)arg2;
 - (void)_handlePostSessionElements:(id)arg1 response:(id)arg2;
@@ -79,6 +79,7 @@
 - (void)_handlePostSessionWindowPosition:(id)arg1 response:(id)arg2;
 - (void)_handleGetSessionWindowSize:(id)arg1 response:(id)arg2;
 - (void)_handlePostSessionWindowSize:(id)arg1 response:(id)arg2;
+- (id)_toplevelBrowsingContextFromRequestedWindowHandle:(id)arg1 inSession:(id)arg2;
 - (void)_handleDeleteSessionWindow:(id)arg1 response:(id)arg2;
 - (void)_handlePostSessionWindow:(id)arg1 response:(id)arg2;
 - (void)_handleGetSessionWindowHandles:(id)arg1 response:(id)arg2;
@@ -91,10 +92,9 @@
 - (void)_handlePostSession:(id)arg1 response:(id)arg2;
 - (id)_capabilitiesForSession:(id)arg1;
 - (BOOL)_translateRequestedCapabilityKey:(id)arg1 withValue:(id)arg2 intoOptions:(id)arg3;
-- (id)_translateInternalElementHandlesForPayload:(id)arg1 withSession:(id)arg2;
-- (id)_translateExternalElementHandlesFromPayload:(id)arg1 withSession:(id)arg2;
-- (id)_translatePayload:(id)arg1 withSession:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
-- (BOOL)_isElementHandleIdentifier:(id)arg1;
+- (id)_translateAutomationPayload:(id)arg1 toLegacyClientPayloadInSession:(id)arg2;
+- (id)_translateLegacyClientPayload:(id)arg1 toAutomationPayloadForSession:(id)arg2;
+- (BOOL)_parseElement:(id *)arg1 fromURLParameter:(id)arg2 inRequest:(id)arg3 orPopulateResponse:(id)arg4 inSession:(id)arg5;
 - (BOOL)_findSession:(id *)arg1 fromRequest:(id)arg2 orPopulateResponse:(id)arg3;
 - (BOOL)_ensureErrorIsEmpty:(id)arg1 forRequest:(id)arg2 orPopulateResponse:(id)arg3 session:(id)arg4;
 - (BOOL)_ensureRequest:(id)arg1 hasURLParameter:(id)arg2 ofClass:(Class)arg3 orPopulateResponse:(id)arg4;

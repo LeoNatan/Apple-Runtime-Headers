@@ -30,6 +30,16 @@
 @property(retain, nonatomic) NCNotificationDestinationsRegistry *destinationsRegistry; // @synthesize destinationsRegistry=_destinationsRegistry;
 @property(nonatomic) __weak id <NCNotificationDispatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_setNotificationLayoutsInProgress:(id)arg1;
+- (id)_notificationLayoutsInProgress;
+- (void)_removeNotificationRequestFromLayoutsInProgress:(id)arg1;
+- (void)_addNotificationRequestToLayoutsInProgress:(id)arg1;
+- (_Bool)_layoutsInProgressContainsNotificationRequest:(id)arg1;
+- (void)_clearUnsafeNotification:(id)arg1;
+- (void)_didRemoveNotificationRequest:(id)arg1;
+- (void)_didPostNotificationRequest:(id)arg1;
+- (void)_willPostNotificationRequest:(id)arg1;
+- (_Bool)_shouldPostNotificationRequest:(id)arg1;
 - (void)_performOperationForRequestDestinations:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)destination:(id)arg1 didDismissNotificationRequest:(id)arg2;
 - (void)destination:(id)arg1 didPresentNotificationRequest:(id)arg2;
@@ -38,6 +48,9 @@
 - (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsCoalescedWith:(id)arg2;
 - (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsPassingTest:(CDUnknownBlockType)arg2;
 - (void)destinationDidBecomeReadyToReceiveNotifications:(id)arg1;
+- (void)destination:(id)arg1 setAllowsCriticalAlerts:(_Bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setDeliverQuietly:(_Bool)arg2 forSectionIdentifier:(id)arg3 subSectionIdentifier:(id)arg4;
+- (void)destination:(id)arg1 setAllowsNotifications:(_Bool)arg2 forSectionIdentifier:(id)arg3;
 - (void)destination:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
 - (void)destination:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
 - (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;

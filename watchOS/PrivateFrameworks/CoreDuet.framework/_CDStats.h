@@ -10,6 +10,7 @@
 {
 }
 
++ (id)familyNames;
 + (id)hardwareModel;
 + (id)sharedInstance;
 - (void)addToDictionary:(id)arg1 perfMetric:(id)arg2;

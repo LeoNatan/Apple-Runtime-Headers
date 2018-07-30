@@ -19,11 +19,14 @@
     unsigned long long _interfaceType;
     NSHashTable *_delegates;
     NSObject<OS_dispatch_queue> *_delegateQueue;
+    NSObject<OS_dispatch_queue> *_asynchronousImageQueue;
+    _Bool _shouldSendRemovingPassesOfTypeDidFinish;
     id <PKPassLibraryDelegate> _delegate;
 }
 
 + (_Bool)contactlessInterfaceCanBePresentedFromSource:(long long)arg1;
 + (id)sharedInstance;
++ (id)sharedInstanceWithRemoteLibrary;
 + (_Bool)isSuppressingAutomaticPassPresentation;
 + (void)endAutomaticPassPresentationSuppressionWithRequestToken:(unsigned long long)arg1;
 + (unsigned long long)requestAutomaticPassPresentationSuppressionWithResponseHandler:(CDUnknownBlockType)arg1;
@@ -55,10 +58,14 @@
 - (void)noteAccountChanged;
 - (void)logDelayExitReasons;
 - (void)shuffleGroups:(int)arg1;
+- (void)removePassesOfType:(unsigned long long)arg1 withDiagnosticReason:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removePassesOfType:(unsigned long long)arg1 withDiagnosticReason:(id)arg2;
 - (void)removePassesOfType:(unsigned long long)arg1;
 - (void)removePassesWithUniqueIDs:(id)arg1 diagnosticReason:(id)arg2;
 - (void)removePassWithUniqueID:(id)arg1 diagnosticReason:(id)arg2;
+- (void)spotlightDeleteIndexEntriesForAllPassesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)spotlightReindexPassesWithUniqueIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)spotlightReindexAllPassesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)forceImmediateRevocationCheck;
 - (void)introduceDatabaseIntegrityProblem;
 - (void)removeAllScheduledActivities;
@@ -76,8 +83,9 @@
 - (id)_sortedPaymentPassesForPaymentRequest:(id)arg1;
 - (void)sortedTransitPassesForAppletDataFormat:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)expressFelicaTransitPasses;
-- (id)defaultPaymentPasses;
+- (id)defaultPaymentPassesWithRemotePasses:(_Bool)arg1;
 - (_Bool)resetSettingsForPass:(id)arg1;
+- (_Bool)setSuppressNotificationsEnabled:(_Bool)arg1 forPass:(id)arg2;
 - (_Bool)setAutomaticPresentationEnabled:(_Bool)arg1 forPass:(id)arg2;
 - (_Bool)setNotificationServiceUpdatesEnabled:(_Bool)arg1 forPass:(id)arg2;
 - (_Bool)setAutomaticUpdatesEnabled:(_Bool)arg1 forPass:(id)arg2;
@@ -87,7 +95,9 @@
 - (void)_fetchImageSetContainerForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 usingSynchronousProxy:(_Bool)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (id)imageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3;
+- (void)_fetchContentForUniqueID:(id)arg1 usingSynchronousProxy:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)fetchContentForUniqueID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)contentForUniqueID:(id)arg1;
 - (void)rescheduleCommutePlanRenewalReminderForPassWithUniqueID:(id)arg1;
 - (void)updateSettings:(unsigned long long)arg1 forObjectWithUniqueID:(id)arg2;
 - (void)noteObjectSharedWithUniqueID:(id)arg1;
@@ -99,7 +109,6 @@
 - (void)_activatePaymentPass:(id)arg1 withActivationCode:(id)arg2 activationData:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)activatePaymentPass:(id)arg1 withActivationData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)activatePaymentPass:(id)arg1 withActivationCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)requestContactlessInterfaceSuppressionFromUserWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentContactlessInterfaceForPassWithUniqueIdentifier:(id)arg1 fromSource:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentContactlessInterfaceForDefaultPassFromSource:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)hasPassesWithSupportedNetworks:(id)arg1 merchantCapabilities:(unsigned long long)arg2 webDomain:(id)arg3;
@@ -109,7 +118,9 @@
 - (void)openPaymentSetupForMerchantIdentifier:(id)arg1 domain:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)openDigitalIssuanceSetupForIdentifier:(id)arg1;
 - (void)openPaymentSetup;
+- (void)addPassesWithData:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)addPasses:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)dataForBundleResources:(id)arg1 objectUniqueIdentifier:(id)arg2;
 - (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2 objectUniqueIdentifier:(id)arg3;
 - (id)archiveForObjectWithUniqueID:(id)arg1;
 - (_Bool)replacePassWithPass:(id)arg1;
@@ -163,6 +174,7 @@
 - (id)_remoteObjectProxy;
 - (void)dealloc;
 - (id)initWithMachServiceName:(id)arg1 resumeNotificationName:(id)arg2 interfaceType:(unsigned long long)arg3;
+- (id)_initWithRemote:(id)arg1;
 - (id)init;
 
 // Remaining properties

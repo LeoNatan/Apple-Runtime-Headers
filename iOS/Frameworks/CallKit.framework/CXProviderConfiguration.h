@@ -10,7 +10,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSData, NSSet, NSString, NSURL;
+@class NSArray, NSData, NSOrderedSet, NSSet, NSString, NSURL;
 
 @interface CXProviderConfiguration : NSObject <NSSecureCoding, CXCopying, NSCopying>
 {
@@ -29,6 +29,7 @@
     NSArray *_emergencyHandles;
     NSArray *_emergencyLabeledHandles;
     NSArray *_handoffIdentifiers;
+    NSOrderedSet *_prioritizedSenderIdentities;
     NSURL *_ringtoneSoundURL;
 }
 
@@ -38,6 +39,7 @@
 @property(nonatomic) _Bool supportsEmergency; // @synthesize supportsEmergency=_supportsEmergency;
 @property(nonatomic) _Bool supportsAudioOnly; // @synthesize supportsAudioOnly=_supportsAudioOnly;
 @property(copy, nonatomic) NSURL *ringtoneSoundURL; // @synthesize ringtoneSoundURL=_ringtoneSoundURL;
+@property(copy, nonatomic) NSOrderedSet *prioritizedSenderIdentities; // @synthesize prioritizedSenderIdentities=_prioritizedSenderIdentities;
 @property(copy, nonatomic) NSArray *handoffIdentifiers; // @synthesize handoffIdentifiers=_handoffIdentifiers;
 @property(copy, nonatomic) NSArray *emergencyLabeledHandles; // @synthesize emergencyLabeledHandles=_emergencyLabeledHandles;
 @property(copy, nonatomic) NSArray *emergencyHandles; // @synthesize emergencyHandles=_emergencyHandles;
@@ -57,14 +59,17 @@
 - (id)sanitizedCopyWithZone:(struct _NSZone *)arg1;
 - (id)sanitizedCopy;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone *)arg2;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqualToConfiguration:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 @property(retain, nonatomic) NSString *ringtoneSound;
+@property(copy, nonatomic) NSSet *senderIdentities;
 @property(readonly, copy) NSString *description;
 - (id)initWithLocalizedName:(id)arg1;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

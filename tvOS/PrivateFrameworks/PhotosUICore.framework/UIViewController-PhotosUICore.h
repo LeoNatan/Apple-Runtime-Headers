@@ -9,6 +9,8 @@
 @class NSString;
 
 @interface UIViewController (PhotosUICore)
+@property(readonly, nonatomic) UIViewController *px_nextViewControllerInNavigationController;
+@property(readonly, nonatomic) UIViewController *px_previousViewControllerInNavigationController;
 @property(copy, nonatomic, setter=px_setSubtitle:) NSString *px_subtitle;
 - (void)px_enumerateDescendantViewControllersWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)px_isDescendantOfViewController:(id)arg1;

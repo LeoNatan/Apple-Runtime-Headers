@@ -40,10 +40,12 @@
 @property(readonly, copy, nonatomic) NSString *articleID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSString *deviceID;
 @property(readonly, nonatomic) unsigned long long flags;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) long long maxVersionRead;
 @property(readonly, nonatomic) long long maxVersionSeen;
+@property(readonly, copy, nonatomic) NSString *sourceChannelTagID;
 @property(readonly) Class superclass;
 @end
 

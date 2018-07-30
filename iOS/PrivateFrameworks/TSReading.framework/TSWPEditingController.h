@@ -134,6 +134,8 @@
 - (id)p_columnForCharIndex:(unsigned long long)arg1;
 - (id)textColorAtCharIndex:(unsigned long long)arg1;
 - (id)selectionRectsForRange:(struct _NSRange)arg1;
+- (id)_addSelectionRectsForLayout:(id)arg1 selection:(id)arg2;
+- (id)_repsForStorage:(id)arg1 selection:(id)arg2;
 - (struct CGRect)p_firstRectForRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (void)replaceRange:(struct _NSRange)arg1 withText:(id)arg2;
 - (void)extendSelectionRight;

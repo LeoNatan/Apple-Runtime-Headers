@@ -11,7 +11,7 @@
 #import "PXPlacesMapControllerSelectionDelegate.h"
 #import "PXPlacesMapFetchResultControllerAccess.h"
 
-@class NSString, PXPlacesMapFetchResultController, UIBarButtonItem;
+@class NSString, PHAsset<PXPlacesGeotaggable>, PXPlacesMapFetchResultController, UIBarButtonItem;
 
 @interface PXPlacesMapFetchResultViewController : UIViewController <PXPlacesMapControllerChangeDelegate, PXPlacesMapControllerSelectionDelegate, PXOneUpPresentationDelegate, PXPlacesMapFetchResultControllerAccess>
 {
@@ -22,14 +22,14 @@
     UIViewController *_pxOneUpPresentationViewController;
     unsigned long long _style;
     PXPlacesMapFetchResultController *_mapFetchResultsController;
-    id <PXPlacesGeotaggable> _selectedGeotaggable;
+    PHAsset<PXPlacesGeotaggable> *_selectedGeotaggable;
     id <PXPlacesMapGeotaggableInfoDelegate> _geotaggableInfoDelegate;
     UIBarButtonItem *_filterAssetsBtn;
 }
 
 @property(retain, nonatomic) UIBarButtonItem *filterAssetsBtn; // @synthesize filterAssetsBtn=_filterAssetsBtn;
 @property(retain, nonatomic) id <PXPlacesMapGeotaggableInfoDelegate> geotaggableInfoDelegate; // @synthesize geotaggableInfoDelegate=_geotaggableInfoDelegate;
-@property(retain) id <PXPlacesGeotaggable> selectedGeotaggable; // @synthesize selectedGeotaggable=_selectedGeotaggable;
+@property(retain) PHAsset<PXPlacesGeotaggable> *selectedGeotaggable; // @synthesize selectedGeotaggable=_selectedGeotaggable;
 @property(retain, nonatomic) PXPlacesMapFetchResultController *mapFetchResultsController; // @synthesize mapFetchResultsController=_mapFetchResultsController;
 @property _Bool autoRefocusOnDataChange; // @synthesize autoRefocusOnDataChange=_autoRefocusOnDataChange;
 @property(nonatomic) _Bool showNavigationBar; // @synthesize showNavigationBar=_showNavigationBar;

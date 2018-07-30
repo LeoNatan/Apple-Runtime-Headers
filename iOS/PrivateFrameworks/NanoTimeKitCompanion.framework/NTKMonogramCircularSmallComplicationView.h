@@ -16,7 +16,6 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)_wantsPlatter;
 - (void)setMonogramText:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

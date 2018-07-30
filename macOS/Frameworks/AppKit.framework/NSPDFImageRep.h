@@ -11,8 +11,6 @@
 @interface NSPDFImageRep : NSImageRep
 {
     NSData *_pdfData;
-    int _reserved1;
-    int _reserved2;
     id _private;
 }
 

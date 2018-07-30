@@ -6,6 +6,7 @@
 
 #import "NSMutableArray.h"
 
+__attribute__((visibility("hidden")))
 @interface NSLazyBrowserList : NSMutableArray
 {
     unsigned long long count;

@@ -10,7 +10,7 @@
 
 @interface HKTitledIconHeaderView : UIView
 {
-    _Bool _boldsTitle;
+    _Bool _centersSubtitle;
     NSString *_title;
     NSString *_subtitle;
     UIImage *_iconImage;
@@ -22,7 +22,7 @@
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
-@property(nonatomic) _Bool boldsTitle; // @synthesize boldsTitle=_boldsTitle;
+@property(nonatomic) _Bool centersSubtitle; // @synthesize centersSubtitle=_centersSubtitle;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -34,6 +34,7 @@
 - (id)_healthIconImage;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)_positionSubtitleLabel;
 - (void)layoutSubviews;
 - (void)setLayoutMarginsWithTableView:(id)arg1;
 - (void)_updateFont;

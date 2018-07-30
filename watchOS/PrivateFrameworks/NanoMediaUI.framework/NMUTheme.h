@@ -10,15 +10,23 @@
 {
 }
 
-+ (id)_imageNamed:(id)arg1 inBundle:(id)arg2 useVariant:(_Bool)arg3 shouldCache:(_Bool)arg4 flipForRTL:(_Bool)arg5;
-+ (id)_cachedImageNamed:(id)arg1 useVariant:(_Bool)arg2 flipForRTL:(_Bool)arg3;
-+ (id)_cachedImageNamed:(id)arg1 useVariant:(_Bool)arg2;
-+ (id)_actionSheetLibraryViewGlyphNamed:(id)arg1;
++ (id)_whiteImageNamed:(id)arg1;
++ (id)_imageNamed:(id)arg1;
 + (id)_cachedObjectForKey:(id)arg1 withCreationBlock:(CDUnknownBlockType)arg2;
 + (id)touchHighlightImageWithSourceImage:(id)arg1;
 + (id)processedArtworkImageWithSourceImage:(id)arg1 destinationSize:(struct CGSize)arg2 unprocessedImageScale:(float)arg3;
++ (id)progressStringForElapsedTime:(double)arg1;
 + (id)artworkViewPlaceholderBackgroundColor;
 + (id)nowPlayingNoteImage;
++ (id)radioLiveWavesImage;
++ (id)screenEdgeVignetteImage;
++ (id)trackListCloudImage;
++ (id)trackListShuffleImage;
++ (id)trackListRepeatOneImage;
++ (id)trackListRepeatImage;
++ (id)downloadProgressIndicatorShadowImage;
++ (id)downloadWaitingSpinnerImage;
++ (id)downloadCloudImage;
 + (id)actionSheetRemoveFromLibraryImage;
 + (id)actionSheetAddToLibraryImage;
 + (id)actionSheetMoreActionsDislikeImage;
@@ -26,7 +34,7 @@
 + (id)actionSheetBookmarkImageWithSelection:(_Bool)arg1;
 + (id)actionSheetDislikeImage;
 + (id)actionSheetLikeImageWithPresentationStyle:(int)arg1;
-+ (id)screenEdgeVignetteImage;
++ (id)orbAirPlayImage;
 + (id)connectBluetoothHeadphonesImage;
 + (id)routingTypeGenericBluetoothImage;
 + (id)routingTypeGenericSpeakerImage;
@@ -51,21 +59,17 @@
 + (id)volumeControlsMutedImage;
 + (id)volumeControlsGenericImage;
 + (id)volumeControlsUpImage;
-+ (id)transportControlsPlaybackRateImageWithRate:(float)arg1;
-+ (id)transportControlsSkipImageWithTimeInterval:(double)arg1;
-+ (id)secondaryTransportControlsMoreActionsImage;
-+ (id)secondaryTransportControlsLikeBanImageWithPresentationStyle:(int)arg1 selection:(_Bool)arg2 selectionTintColor:(id)arg3;
-+ (id)secondaryTransportControlsAirPlayImage;
 + (id)secondaryTransportControlsTrackListImage;
-+ (id)secondaryTransportControlsAddToLibraryImage;
++ (id)secondaryTransportControlsMoreActionsImage;
++ (id)transportControlsPlaybackRateImageWithRate:(float)arg1;
++ (float)_horizontalCorrectionForSkipValue:(double)arg1;
++ (id)transportControlsSkipImageWithTimeInterval:(double)arg1;
 + (id)transportControlsLikeBanImageWithPresentationStyle:(int)arg1 selection:(_Bool)arg2 selectionTintColor:(id)arg3;
-+ (id)transportControlsLikeBanImageWithTintColor:(id)arg1 selection:(_Bool)arg2;
 + (id)transportControlsRewindImage;
 + (id)transportControlsForwardImage;
 + (id)transportControlsStopImage;
 + (id)transportControlsPauseImage;
 + (id)transportControlsPlayImage;
-+ (id)progressStringForElapsedTime:(double)arg1;
 
 @end
 

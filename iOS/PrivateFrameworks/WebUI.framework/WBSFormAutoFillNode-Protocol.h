@@ -7,6 +7,9 @@
 #import "NSObject.h"
 
 @protocol WBSFormAutoFillNode <NSObject>
+- (long long)htmlInputElementLastAutoFillButtonType;
+- (long long)htmlInputElementAutoFillButtonType;
+- (void)setHTMLInputElementAutoFilledWithAutomaticStrongPassword:(_Bool)arg1;
 - (_Bool)isHTMLTextAreaElementUserEdited;
 - (_Bool)isHTMLInputElementUserEdited;
 - (void)setHTMLInputElementAutofilled:(_Bool)arg1;

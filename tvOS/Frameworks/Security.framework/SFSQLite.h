@@ -22,7 +22,6 @@
     unsigned long long _openCount;
     NSDateFormatter *_dateFormatter;
     _Bool _hasMigrated;
-    _Bool _shouldVacuum;
     _Bool _corrupt;
     _Bool _traced;
 }
@@ -33,7 +32,6 @@
 @property(nonatomic) unsigned long long openCount; // @synthesize openCount=_openCount;
 @property(nonatomic) struct sqlite3 *db; // @synthesize db=_db;
 @property(nonatomic) _Bool traced; // @synthesize traced=_traced;
-@property(nonatomic) _Bool shouldVacuum; // @synthesize shouldVacuum=_shouldVacuum;
 @property(readonly, nonatomic) _Bool hasMigrated; // @synthesize hasMigrated=_hasMigrated;
 @property(nonatomic) long long synchronousMode; // @synthesize synchronousMode=_synchronousMode;
 @property(nonatomic) int userVersion; // @synthesize userVersion=_userVersion;
@@ -43,6 +41,7 @@
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) id <SFSQLiteDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)autoVacuumSetting;
 - (int)dbUserVersion;
 - (id)_tableNameForClass:(Class)arg1;
 - (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
@@ -81,7 +80,6 @@
 - (void)open;
 - (_Bool)openWithError:(id *)arg1;
 - (void)attemptProperDatabasePermissions;
-- (void)_periodicVacuum;
 @property(readonly, nonatomic) _Bool isOpen;
 - (id)_createSchemaHash;
 - (id)_synchronousModeString;

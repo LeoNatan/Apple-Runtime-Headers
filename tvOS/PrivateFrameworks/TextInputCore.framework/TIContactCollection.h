@@ -17,9 +17,9 @@
 
 @property(readonly, nonatomic) long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) _Bool sourceHasRelevancyScore; // @synthesize sourceHasRelevancyScore=_sourceHasRelevancyScore;
+- (void).cxx_destruct;
 - (void)enumerateContactsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)addContact:(id)arg1;
-- (void)dealloc;
 - (id)initWithRelevanceScoreType:(_Bool)arg1;
 
 @end

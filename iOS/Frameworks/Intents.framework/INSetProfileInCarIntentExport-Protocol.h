@@ -7,9 +7,10 @@
 #import "JSExport.h"
 #import "NSObject.h"
 
-@class NSNumber, NSString;
+@class INSpeakableString, NSNumber, NSString;
 
 @protocol INSetProfileInCarIntentExport <NSObject, JSExport>
+@property(copy, nonatomic) INSpeakableString *carName;
 @property(copy, nonatomic) NSNumber *defaultProfile;
 @property(copy, nonatomic) NSString *profileName;
 @property(copy, nonatomic) NSNumber *profileNumber;

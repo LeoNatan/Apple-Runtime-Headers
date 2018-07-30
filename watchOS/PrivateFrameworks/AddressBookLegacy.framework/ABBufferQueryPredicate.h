@@ -14,6 +14,7 @@
     NSString *_query;
 }
 
++ (id)predicateForContactsMatchingPreferredChannel:(id)arg1 limitOne:(_Bool)arg2;
 + (id)predicateForContactsInRange:(struct _NSRange)arg1 allowedStoreIdentifiers:(id)arg2 sortOrder:(int)arg3;
 + (id)predicateForContactsInRange:(struct _NSRange)arg1 sortOrder:(int)arg2;
 + (id)predicateForContactsMatchingOrganizationName:(id)arg1;

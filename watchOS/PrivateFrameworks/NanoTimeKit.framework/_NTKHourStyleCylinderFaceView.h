@@ -6,11 +6,11 @@
 
 #import "UIView.h"
 
-#import "NTKPolygonCylinderFaceView.h"
+#import "NTKPolygonCylinderSideView.h"
 
 @class NSString;
 
-@interface _NTKHourStyleCylinderFaceView : UIView <NTKPolygonCylinderFaceView>
+@interface _NTKHourStyleCylinderFaceView : UIView <NTKPolygonCylinderSideView>
 {
 }
 

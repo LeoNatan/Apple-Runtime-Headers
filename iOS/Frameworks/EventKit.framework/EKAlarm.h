@@ -47,6 +47,7 @@
 - (long long)compare:(id)arg1;
 - (_Bool)validateWithOwner:(id)arg1 error:(id *)arg2;
 - (id)description;
+- (id)semanticIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) _Bool isSnoozed;
 - (void)removeSnoozedAlarm:(id)arg1;
@@ -63,6 +64,8 @@
 - (id)acknowledgedDate;
 @property(copy, nonatomic) NSDate *absoluteDate;
 @property(nonatomic) double relativeOffset;
+- (void)setRelativeOffsetRaw:(id)arg1;
+- (id)relativeOffsetRaw;
 - (void)setAlarmType:(long long)arg1;
 - (long long)alarmType;
 - (void)setUUID:(id)arg1;

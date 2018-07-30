@@ -10,15 +10,18 @@
 
 @interface ACSHActionCustomize : ACSHAction
 {
+    BOOL _customizeToolbarOrdering;
     NSURL *_panelCollectionURL;
     NSString *_panelUUID;
 }
 
+@property BOOL customizeToolbarOrdering; // @synthesize customizeToolbarOrdering=_customizeToolbarOrdering;
 @property(retain) NSString *panelUUID; // @synthesize panelUUID=_panelUUID;
 @property(retain) NSURL *panelCollectionURL; // @synthesize panelCollectionURL=_panelCollectionURL;
 - (void).cxx_destruct;
 - (void)performWithEventSourceData:(id)arg1;
-- (unsigned long long)actionType;
+- (id)dictionaryForSaving;
+- (id)init;
 
 @end
 

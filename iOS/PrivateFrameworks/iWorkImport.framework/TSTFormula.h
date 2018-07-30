@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 + (id)doubleQuoteCharacters;
 + (id)leadingSingleQuoteEscapeCharacters;
 + (id)singleQuoteCharacters;
++ (_Bool)storageExceedsMaxFormulaLength:(id)arg1;
 + (id)formulaForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2 inTable:(id)arg3;
 @property(copy, nonatomic) NSString *initialWhitespace; // @synthesize initialWhitespace=_initialWhitespace;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;

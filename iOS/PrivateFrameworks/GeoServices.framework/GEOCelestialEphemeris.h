@@ -23,6 +23,7 @@
     double _illuminatedFraction;
     double _elongation;
     double _parallacticAngle;
+    _Bool _highPrecision;
 }
 
 @property(readonly, nonatomic) double parallacticAngle; // @synthesize parallacticAngle=_parallacticAngle;
@@ -35,6 +36,7 @@
 - (void).cxx_destruct;
 - (struct CAARiseTransitSetDetails)_riseTransitSetForBody:(long long)arg1;
 - (void)_getRightAscension:(double *)arg1 declination:(double *)arg2 forJulianDay:(double)arg3 forBody:(long long)arg4;
+- (id)initWithLocation:(CDStruct_c3b9c2ee)arg1 date:(id)arg2 body:(long long)arg3 useHighPrecision:(_Bool)arg4;
 - (id)initWithLocation:(CDStruct_c3b9c2ee)arg1 date:(id)arg2 body:(long long)arg3;
 @property(readonly, nonatomic) GEOHorizontalCelestialBodyData *horizontalCoord;
 @property(readonly, nonatomic) GEOEquatorialCelestialBodyData *equatorialCoord;

@@ -14,6 +14,7 @@
 + (id)pathForLanguage:(id)arg1;
 + (id)modelForLanguage:(id)arg1;
 @property(readonly, nonatomic) void *model; // @synthesize model=_model;
+- (void)reset;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 

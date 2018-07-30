@@ -7,11 +7,9 @@
 #import "SSLookupResponse.h"
 
 @interface SSLookupResponse (MPStoreOfferCMC)
-+ (id)mpLoadDebugCompletionsResponseWithStoreLookupID:(id)arg1;
 + (_Bool)mpFakeCompletionDataForBuys;
 + (_Bool)mpShowBuysWithNoCompletionOffer;
 + (_Bool)mpVerboseCMCLogging;
-- (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;
 - (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;
 @property(readonly, nonatomic) _Bool mpIsPersonalizedOffer;
 @end

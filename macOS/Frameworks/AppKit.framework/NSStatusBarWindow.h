@@ -6,22 +6,27 @@
 
 #import <AppKit/NSWindow.h>
 
-@class NSMapTable, NSStatusItem, NSVisualEffectView;
+@class NSStatusItem, NSVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface NSStatusBarWindow : NSWindow
 {
     NSStatusItem *_statusItem;
     NSVisualEffectView *_effectView;
-    NSMapTable *_viewToSelectionViewDictionary;
     NSStatusBarWindow *_underlaySelectionHighlight;
+    BOOL _selected;
+    BOOL _allowsVibrancy;
 }
 
 @property(retain) NSVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) NSStatusItem *statusItem; // @synthesize statusItem=_statusItem;
+@property(nonatomic) BOOL allowsVibrancy;
+- (void)_lighterViewDetaching:(id)arg1;
+- (void)_viewAttaching:(id)arg1;
+- (void)viewNeedsDisplayInRectNotification:(id)arg1;
 - (BOOL)_canMiniaturize;
 - (void)_cgsMoveWindow:(struct CGRect)arg1 moveGroup:(BOOL)arg2;
 - (BOOL)_hasActiveControls;
-- (void)flushWindow;
 - (BOOL)_ignoreForFullScreenTransition;
 - (int)_semanticContext;
 - (void)_automateLiveResize;
@@ -47,8 +52,8 @@
 - (BOOL)hasSelectionRect;
 - (void)setSelection:(BOOL)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 drawImmediately:(BOOL)arg4;
 - (void)setSelection:(BOOL)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
-- (void)_updateAppearanceAndMaterialOfVisualEffectView;
-- (void)_activeMenuBarDrawingStyleDidChange;
+- (void)_updateVisualEffectViewMaterial;
+- (BOOL)_isNonactivatingPanel;
 - (id)initWithContentRect:(struct CGRect)arg1;
 - (float)_backdropBleedAmount;
 - (id)accessibilityChildrenInNavigationOrderAttribute;

@@ -6,11 +6,8 @@
 
 #import "NSISVariableDelegate.h"
 
-@class NSISVariable;
-
 @protocol NSISConstraint <NSISVariableDelegate>
 - (id)secondItem;
 - (id)firstItem;
-- (double)nsis_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarker:(NSISVariable *)arg1;
 @end
 

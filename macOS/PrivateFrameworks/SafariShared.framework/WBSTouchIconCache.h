@@ -25,6 +25,9 @@
     NSMutableArray *_pendingSaveTouchIconToDiskBlocks;
     NSMutableSet *_pendingTouchIconRequestHosts;
     WBSTouchIconCacheSettingsSQLiteStore *_cacheSettingsStore;
+    long long _protectionType;
+    BOOL _allowFetchingOverCellularNetwork;
+    long long _fileMappingStyle;
     BOOL _readOnly;
     BOOL _internalQueueBusy;
     id <WBSSiteMetadataProviderDelegate> _providerDelegate;
@@ -50,6 +53,7 @@
 - (id)_didGenerateResponse:(id)arg1 forRequest:(id)arg2;
 - (void)webViewMetadataFetchOperation:(id)arg1 didFinishUsingWebView:(id)arg2;
 - (id)webViewMetadataFetchOperation:(id)arg1 webViewOfSize:(struct CGSize)arg2 withConfiguration:(id)arg3;
+- (id)siteMetadataImageCache:(id)arg1 customFileNameForKeyString:(id)arg2;
 - (void)siteMetadataImageCacheDidEmptyCache:(id)arg1;
 - (void)siteMetadataImageCache:(id)arg1 didRemoveImageFromCacheForKeyString:(id)arg2;
 - (void)siteMetadataImageCache:(id)arg1 didFinishLoadingImage:(id)arg2 forKeyString:(id)arg3;
@@ -60,7 +64,8 @@
 - (id)_responseForRequest:(id)arg1 withTouchIcon:(id)arg2;
 - (BOOL)_shouldGenerateTouchIconFromTouchIcon:(id)arg1 forRequest:(id)arg2;
 - (void)_removeTouchIconsDataForHost:(id)arg1;
-- (void)_updateTouchIconsDataForHost:(id)arg1 image:(id)arg2 requestDidSucceed:(BOOL)arg3 isUserLoadedWebpageRequest:(BOOL)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg5;
+- (void)removeTouchIconMetadataForHosts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_updateTouchIconsDataForHost:(id)arg1 image:(id)arg2 requestDidSucceed:(BOOL)arg3 isUserLoadedWebpageRequest:(BOOL)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg5 UUIDString:(id)arg6;
 - (void)_saveTouchIconToDiskWithResult:(id)arg1 forRequest:(id)arg2;
 - (void)_enumerateRequestsForHost:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_registerRequest:(id)arg1;
@@ -93,8 +98,10 @@
 - (id)_touchIconForURL:(id)arg1;
 - (void)_ensureCacheDirectory;
 - (void)_setUpImageCacheSettingsSQLiteStore;
+- (id)uuidStringToHost;
 - (void)_openCacheSettingsDatabaseIfNeeded;
 - (void)dealloc;
+- (id)initWithCacheDirectoryURL:(id)arg1 isReadOnly:(BOOL)arg2 protectionType:(long long)arg3 allowFetchingOverCellularNetwork:(BOOL)arg4 fileMappingStyle:(long long)arg5;
 - (id)initWithCacheDirectoryURL:(id)arg1 isReadOnly:(BOOL)arg2;
 - (id)initWithCacheDirectoryURL:(id)arg1;
 - (id)init;
@@ -103,6 +110,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL providesFavicons;
 @property(readonly) Class superclass;
 
 @end

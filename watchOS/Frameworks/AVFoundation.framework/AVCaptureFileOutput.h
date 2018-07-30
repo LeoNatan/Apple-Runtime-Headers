@@ -11,9 +11,11 @@
 @interface AVCaptureFileOutput : AVCaptureOutput
 {
     AVCaptureFileOutputInternal *_fileOutputInternal;
+    id <AVCaptureFileOutputDelegate> _delegate;
 }
 
 + (void)initialize;
+@property(nonatomic) id <AVCaptureFileOutputDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long minFreeDiskSpaceLimit;
 @property(nonatomic) long long maxRecordedFileSize;
 @property(nonatomic) CDStruct_1b6d18a9 maxRecordedDuration;
@@ -23,7 +25,7 @@
 - (_Bool)pausesRecordingOnInterruption;
 - (void)resumeRecording;
 - (void)pauseRecording;
-- (_Bool)isRecordingPaused;
+@property(readonly, nonatomic, getter=isRecordingPaused) _Bool recordingPaused;
 - (void)stopRecording;
 - (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
 @property(readonly, nonatomic, getter=isRecording) _Bool recording;

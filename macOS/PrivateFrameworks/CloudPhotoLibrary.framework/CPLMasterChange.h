@@ -6,10 +6,11 @@
 
 #import <CloudPhotoLibrary/CPLItemChange.h>
 
-@class NSArray, NSData, NSDate, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @interface CPLMasterChange : CPLItemChange
 {
+    NSDictionary *_resourcePerResourceType;
     short _importedBy;
     short _videoFrameRate;
     NSArray *_resources;
@@ -47,9 +48,10 @@
 - (BOOL)supportsResources;
 - (id)name;
 - (void)setName:(id)arg1;
+- (void)copyDerivativesFromRecordIfPossible:(id)arg1;
+- (void)_copyDerivatives:(unsigned long long *)arg1 count:(int)arg2 ifMatchingResourceType:(unsigned long long)arg3 fromRecord:(id)arg4 inResourcePerType:(id)arg5;
+- (id)resourceForType:(unsigned long long)arg1;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
-- (void)awakeFromStorage;
-- (void)prepareForStorage;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (id)propertiesDescription;
 - (long long)dequeueOrder;
@@ -57,8 +59,8 @@
 @property(readonly, nonatomic) BOOL isImage;
 - (id)init;
 - (BOOL)validateRecordForTracker:(id)arg1;
-- (id)initWithCKRecord:(id)arg1 ckAssetProperties:(id)arg2;
-- (void)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 tempCKAssetURL:(id)arg3;
+- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
+- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
 
 @end
 

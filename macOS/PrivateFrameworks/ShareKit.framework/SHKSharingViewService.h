@@ -62,7 +62,7 @@
 - (void)proceedWithSharingTransitionOutWithSuccess:(BOOL)arg1 duration:(double)arg2;
 - (void)animateClosingWithSuccess:(BOOL)arg1 finishedBlock:(CDUnknownBlockType)arg2;
 - (id)animatingItemsAndSetHasAtLeastOneFinalImage:(char *)arg1;
-- (struct CGRect)finalImageFrameForSharingItemProvider:(id)arg1 imageContentFrame:(struct CGRect)arg2 bloggingController:(id)arg3 transitionFrame:(struct CGRect)arg4;
+- (struct CGRect)finalImageFrameForSharingItemProvider:(id)arg1 imageContentFrame:(struct CGRect)arg2 transitionFrame:(struct CGRect)arg3;
 - (struct CGRect)initialWindowFrameForSourceFrameForWindow:(struct CGRect)arg1 forWindowFrame:(struct CGRect)arg2;
 - (struct CGRect)sourceFrameForViewControllerView:(id)arg1;
 - (void)proceedWithSharingTransitionIn;

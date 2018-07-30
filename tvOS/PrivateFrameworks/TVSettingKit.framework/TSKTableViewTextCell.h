@@ -8,7 +8,7 @@
 
 #import "TSKCellUpdating.h"
 
-@class NSArray, NSString, TSKSettingItem, UIActivityIndicatorView, UITapGestureRecognizer;
+@class NSArray, NSString, TSKSettingItem, TSKTableViewTextCellActivityIndicatorView, UITapGestureRecognizer;
 
 @interface TSKTableViewTextCell : TSKBaseTableViewCell <TSKCellUpdating>
 {
@@ -17,7 +17,7 @@
     UITapGestureRecognizer *_leftButtonRecognizer;
     UITapGestureRecognizer *_selectButtonRecognizer;
     UITapGestureRecognizer *_playPauseButtonRecognizer;
-    UIActivityIndicatorView *_spinnerView;
+    TSKTableViewTextCellActivityIndicatorView *_spinnerView;
     NSString *_rightText;
     unsigned long long _accessories;
     TSKSettingItem *_item;

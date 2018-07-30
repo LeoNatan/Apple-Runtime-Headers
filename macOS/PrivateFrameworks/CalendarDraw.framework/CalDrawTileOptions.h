@@ -23,12 +23,14 @@
     BOOL _colorBar;
     BOOL _fillDot;
     BOOL _darkBackground;
+    BOOL _vibrantBackground;
     BOOL _flippedForRTL;
     int _outlineColor;
 }
 
 @property BOOL dash; // @synthesize dash=_dash;
 @property BOOL flippedForRTL; // @synthesize flippedForRTL=_flippedForRTL;
+@property BOOL vibrantBackground; // @synthesize vibrantBackground=_vibrantBackground;
 @property BOOL darkBackground; // @synthesize darkBackground=_darkBackground;
 @property BOOL fillDot; // @synthesize fillDot=_fillDot;
 @property int outlineColor; // @synthesize outlineColor=_outlineColor;

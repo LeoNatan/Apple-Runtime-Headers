@@ -14,10 +14,13 @@
     long long _lastProcessedAnchor;
     HDSQLitePredicate *_filterPredicate;
     HDActivitySummaryQueryHelper *_queryHelper;
-    _Bool _shouldIncludePrivateProperties;
+    _Bool _shouldIncludeActivitySummaryPrivateProperties;
+    _Bool _shouldIncludeActivitySummaryStatistics;
     _Bool _hasSentInitialResults;
 }
 
++ (id)requiredEntitlements;
++ (Class)queryClass;
 - (void).cxx_destruct;
 - (void)_setUpInitialQueryHelper;
 - (void)_queue_deliverActivitySummariesToClient:(id)arg1;
@@ -25,8 +28,7 @@
 - (void)_queue_deliverResultsWithActivitySummaries:(id)arg1 error:(id)arg2;
 - (void)_queue_stop;
 - (void)_queue_start;
-- (id)requiredEntitlements;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 @end
 

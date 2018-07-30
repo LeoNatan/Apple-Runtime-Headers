@@ -11,6 +11,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSString, NSXPCListener, NSXPCListenerEndpoint;
 
+__attribute__((visibility("hidden")))
 @interface VSGenericUpdateEndpoint : NSObject <NSXPCListenerDelegate, NSSecureCoding>
 {
     NSXPCListenerEndpoint *_endpoint;

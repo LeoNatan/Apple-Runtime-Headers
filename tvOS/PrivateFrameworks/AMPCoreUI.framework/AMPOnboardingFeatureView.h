@@ -8,6 +8,7 @@
 
 @class UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface AMPOnboardingFeatureView : UIView
 {
     UIImageView *_imageView;

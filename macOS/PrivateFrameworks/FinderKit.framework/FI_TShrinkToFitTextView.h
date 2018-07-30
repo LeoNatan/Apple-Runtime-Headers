@@ -11,14 +11,16 @@
 __attribute__((visibility("hidden")))
 @interface FI_TShrinkToFitTextView : FI_TTextView
 {
-    struct TNSRef<FI_TShrinkToFitWindow *, void> _stfWindow;
-    struct TNSRef<NSWindow *, void> _parentWindow;
+    struct TNSRef<FI_TShrinkToFitWindow, void> _stfWindow;
+    struct TNSRef<NSWindow, void> _parentWindow;
     struct CGRect _maxGlobalFrame;
+    _Bool _textGrowsUpwards;
     unsigned long long _maxUniChars;
     long long _maxNumLines;
     FI_TShrinkToFitController *_controller;
 }
 
+@property(nonatomic) _Bool textGrowsUpwards; // @synthesize textGrowsUpwards=_textGrowsUpwards;
 @property(nonatomic) FI_TShrinkToFitController *controller; // @synthesize controller=_controller;
 @property(nonatomic) long long maxNumLines; // @synthesize maxNumLines=_maxNumLines;
 @property(nonatomic) unsigned long long maxUniChars; // @synthesize maxUniChars=_maxUniChars;

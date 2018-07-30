@@ -10,7 +10,7 @@
 #import "TSKModel.h"
 #import "TSWPSection.h"
 
-@class NSArray, NSString, TPPageMaster, TPPageTemplate, TSWPStorage;
+@class NSArray, NSString, TPPageMaster, TPPageTemplate, TSDFill, TSWPStorage;
 
 __attribute__((visibility("hidden")))
 @interface TPSection : TSPObject <TSKDocumentObject, TSKModel, TSWPSection>
@@ -25,9 +25,11 @@ __attribute__((visibility("hidden")))
     unsigned int _sectionStartKind;
     unsigned int _sectionPageNumberKind;
     unsigned int _sectionPageNumberStart;
+    TSDFill *_backgroundFill;
 }
 
 + (_Bool)needsObjectUUID;
+@property(retain, nonatomic) TSDFill *backgroundFill; // @synthesize backgroundFill=_backgroundFill;
 - (void).cxx_destruct;
 - (id)allDrawables;
 - (void)p_addAllDrawablesFromInfo:(id)arg1 toMutableArray:(id)arg2;

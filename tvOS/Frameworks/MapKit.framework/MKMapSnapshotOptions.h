@@ -19,6 +19,7 @@
     unsigned long long _mapType;
     int _mode;
     _Bool _showsPointsOfInterest;
+    _Bool _showsPointLabels;
     _Bool _showsBuildings;
     _Bool _showsNightMode;
     _Bool _rendersInBackground;
@@ -42,6 +43,7 @@
 @property(nonatomic, getter=_useSnapshotService, setter=_setUseSnapshotService:) _Bool useSnapshotService; // @synthesize useSnapshotService=_useSnapshotService;
 @property(nonatomic, getter=_showsNightMode, setter=_setShowsNightMode:) _Bool showsNightMode; // @synthesize showsNightMode=_showsNightMode;
 @property(nonatomic) _Bool showsBuildings; // @synthesize showsBuildings=_showsBuildings;
+@property(nonatomic, getter=_showsPointLabels, setter=_setShowsPointLabels:) _Bool showsPointLabels; // @synthesize showsPointLabels=_showsPointLabels;
 @property(nonatomic) _Bool showsPointsOfInterest; // @synthesize showsPointsOfInterest=_showsPointsOfInterest;
 @property(readonly, nonatomic) _Bool usingRect; // @synthesize usingRect=_usingRect;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
@@ -50,6 +52,7 @@
 @property(nonatomic) CDStruct_02837cd9 mapRect; // @synthesize mapRect=_mapRect;
 @property(copy, nonatomic) MKMapCamera *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

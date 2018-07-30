@@ -11,6 +11,11 @@
 @protocol PUOneUpBarsControllerDelegate <PUBarsControllerDelegate>
 
 @optional
+- (void)oneUpBarsControllerDidEndShowingOriginal:(PUOneUpBarsController *)arg1;
+- (void)oneUpBarsControllerDidBeginShowingOriginal:(PUOneUpBarsController *)arg1;
+- (_Bool)oneUpBarsController:(PUOneUpBarsController *)arg1 shouldEnableShowOriginalForAsset:(id <PUDisplayAsset>)arg2;
+- (_Bool)oneUpBarsController:(PUOneUpBarsController *)arg1 canViewInLibraryForAsset:(id <PUDisplayAsset>)arg2;
+- (_Bool)oneUpBarsController:(PUOneUpBarsController *)arg1 canShowOriginalForAsset:(id <PUDisplayAsset>)arg2;
 - (void)oneUpBarsController:(PUOneUpBarsController *)arg1 willExecuteActionPerformer:(PUAssetActionPerformer *)arg2;
 - (_Bool)oneUpBarsController:(PUOneUpBarsController *)arg1 shouldHideToolbarWhenShowingAccessoryViewForAssetReference:(PUAssetReference *)arg2;
 - (_Bool)oneUpBarsController:(PUOneUpBarsController *)arg1 shouldTapBeginAtLocationFromProvider:(id <PUDisplayLocationProvider>)arg2;

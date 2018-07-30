@@ -48,6 +48,7 @@
 - (id)persistenceStoreConfigurations;
 - (unsigned long long)storeTypeForURL:(id)arg1;
 - (id)URLForStoreType:(unsigned long long)arg1;
+- (void)tearDownPersistenceStack:(CDUnknownBlockType)arg1;
 - (_Bool)_setupPersistenceContainers;
 - (void)setupPersistenceContainers:(CDUnknownBlockType)arg1;
 - (void)setContainer:(id)arg1;

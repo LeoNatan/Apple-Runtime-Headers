@@ -32,10 +32,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasAlphaComponent;
-@property(readonly, nonatomic) BOOL hasBlueComponent;
-@property(readonly, nonatomic) BOOL hasGreenComponent;
-@property(readonly, nonatomic) BOOL hasRedComponent;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

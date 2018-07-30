@@ -6,7 +6,7 @@
 
 #import <AppKit/NSPanel.h>
 
-@class NSTabBar, NSTimer, NSView, _NSFullScreenModalStackController;
+@class NSBox, NSTabBar, NSTimer, _NSFullScreenModalStackController;
 
 __attribute__((visibility("hidden")))
 @interface _NSFullScreenModalCollapsedTabWindow : NSPanel
@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _NSFullScreenModalStackController *_stackController;
     CDUnknownBlockType _additionalMoveBlock;
     NSTabBar *_borrowedTabBar;
-    NSView *_tabCenteringView;
-    NSView *_windowTopBorderView;
+    NSBox *_tabCenteringBox;
+    NSBox *_windowTopBorderBox;
     BOOL _revealed;
     NSTimer *_beginModalPollTimer;
 }
@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2;
 - (void)_setWindowTag;
 - (BOOL)_ignoreForFullScreenTransition;
-- (BOOL)_shouldAutoIncSubLevel;
 - (BOOL)canBecomeMainWindow;
 - (BOOL)canBecomeKeyWindow;
 - (BOOL)_canMiniaturize;
@@ -44,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canBeSnappingTarget;
 - (BOOL)_allowsSnapping;
 - (BOOL)_shouldSnapWindowsClientSide;
-- (BOOL)_shouldAutoDecSubLevel;
 - (id)initWithStackController:(id)arg1;
 - (void)dealloc;
 

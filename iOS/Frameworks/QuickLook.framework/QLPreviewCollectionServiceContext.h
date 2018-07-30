@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface QLPreviewCollectionServiceContext : NSExtensionContext <QLPreviewCollectionHostProtocol>
 {
     id <QLPreviewItemProvider> _itemProvider;
@@ -39,7 +40,8 @@
 - (void)configureWithNumberOfItems:(long long)arg1 currentPreviewItemIndex:(unsigned long long)arg2 itemProvider:(id)arg3 stateManager:(id)arg4;
 - (void)setNotificationCenter:(id)arg1;
 - (void)getNetworkObserverWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getPreviewCollectionUUIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)configureAsAccessoryViewContainerForPreviewCollection:(id)arg1;
 - (id)_previewCollection;

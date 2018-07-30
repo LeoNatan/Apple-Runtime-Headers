@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class LAContext, NSDictionary, NSString, NSUUID;
+@class NSDictionary, NSString, NSUUID;
 
 @interface TIAppAutofillManager : NSObject
 {
@@ -14,23 +14,26 @@
     NSString *_clientIdentifierForLastAutofillGeneration;
     NSString *_clientIdentifierForLastKeyboardSync;
     NSDictionary *_queuedCustomInfo;
-    LAContext *_laContext;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) LAContext *laContext; // @synthesize laContext=_laContext;
 @property(retain, nonatomic) NSDictionary *queuedCustomInfo; // @synthesize queuedCustomInfo=_queuedCustomInfo;
 @property(retain, nonatomic) NSString *clientIdentifierForLastKeyboardSync; // @synthesize clientIdentifierForLastKeyboardSync=_clientIdentifierForLastKeyboardSync;
 @property(retain, nonatomic) NSString *clientIdentifierForLastAutofillGeneration; // @synthesize clientIdentifierForLastAutofillGeneration=_clientIdentifierForLastAutofillGeneration;
 @property(retain, nonatomic) NSUUID *documentIdentifierForLastAutofillGeneration; // @synthesize documentIdentifierForLastAutofillGeneration=_documentIdentifierForLastAutofillGeneration;
-- (void)shouldAcceptAutofill:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
+- (void)shouldAcceptOneTimeCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)shouldAcceptAutofill:(id)arg1 withPayload:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)shouldAuthenticateToAcceptAutofill;
+- (id)generateAutofillFormSuggestedUsernameWithSecureCandidateRenderer:(id)arg1 withRenderTraits:(id)arg2 withKeyboardState:(id)arg3;
 - (id)generateAutofillFormCandidatesWithSecureCandidateRenderer:(id)arg1 withRenderTraits:(id)arg2 withKeyboardState:(id)arg3;
+- (id)obtainBundleIdentifierFromConnection:(id)arg1;
 - (id)obtainApplicationIdentifierFromConnection:(id)arg1;
 - (id)customInfoFromCredential:(id)arg1;
+- (_Bool)isValidedString:(id)arg1;
 - (void)pushQueuedCredentialIfNecessaryForKeyboardState:(id)arg1;
 - (void)obtainCredential:(id)arg1;
-- (void)dealloc;
+- (id)initPrivate;
 
 @end
 

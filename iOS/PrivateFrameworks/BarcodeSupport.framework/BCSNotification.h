@@ -47,6 +47,7 @@
 - (id)_actionTypeString;
 - (id)_title;
 - (id)attachmentDataForConstraints:(id)arg1;
+@property(readonly, nonatomic) long long codeType;
 @property(readonly, nonatomic) NSString *identifier;
 - (id)_initWithAction:(id)arg1;
 

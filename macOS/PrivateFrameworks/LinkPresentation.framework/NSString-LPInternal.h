@@ -7,13 +7,7 @@
 #import "NSString.h"
 
 @interface NSString (LPInternal)
-+ (void)_lp_reverseEnumerateComponents:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (id)_lp_stringForcingLeftToRightDirection;
-- (id)_lp_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(BOOL)arg2;
-- (id)_lp_highLevelDomainFromHost;
-- (id)_lp_topLevelDomainUsingCFFromComponents:(id)arg1;
 - (BOOL)_lp_isEqualToAnyIgnoringCase:(id)arg1;
 - (BOOL)_lp_isEqualIgnoringCase:(id)arg1;
-- (BOOL)_lp_hasCaseInsensitivePrefix:(id)arg1;
 @end
 

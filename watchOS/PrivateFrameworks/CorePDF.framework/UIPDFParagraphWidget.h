@@ -10,6 +10,7 @@
 
 @class CALayer, CAShapeLayer, UIPDFPageView;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFParagraphWidget : NSObject <UIPDFSelectionWidget>
 {
     CAShapeLayer *_trackingBorder;

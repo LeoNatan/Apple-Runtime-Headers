@@ -28,6 +28,7 @@
 - (long long)compareIDs:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3 personCentricID:(id)arg4;
 - (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3;
 
 @end

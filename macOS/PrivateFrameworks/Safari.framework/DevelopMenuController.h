@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)application:(id)arg1 didRemoveDebuggable:(id)arg2;
 - (void)application:(id)arg1 didAddDebuggable:(id)arg2;
+- (void)target:(id)arg1 decidePolicyForAutomaticInspectionCandidate:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)target:(id)arg1 didRemoveApplication:(id)arg2;
 - (void)target:(id)arg1 didAddApplication:(id)arg2;
 - (void)targetDidBecomeNotReady:(id)arg1;
@@ -69,7 +70,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)menuHasKeyEquivalent:(id)arg1 forEvent:(id)arg2 target:(id *)arg3 action:(SEL *)arg4;
 - (BOOL)updateMenu:(id)arg1 withEvent:(id)arg2 withFlags:(unsigned long long)arg3;
 - (void)_toggleWirelessDebugging:(id)arg1;
-- (void)_installAutoAttachHandlerForTarget:(id)arg1;
 - (void)_toggleAutoPause:(id)arg1;
 - (void)_toggleAutoAttach:(id)arg1;
 - (BOOL)_togglePauseSettingForTarget:(id)arg1;
@@ -84,7 +84,9 @@ __attribute__((visibility("hidden")))
 - (void)showExtensionBuilder:(id)arg1;
 - (void)showSnippetEditor:(id)arg1;
 - (void)removeMenu;
-- (void)installMenu;
+- (void)_actuallyInstallMenu;
+- (void)installMenuWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_setDeveloperExtrasEnabled:(BOOL)arg1;
 - (void)dealloc;
 
 // Remaining properties

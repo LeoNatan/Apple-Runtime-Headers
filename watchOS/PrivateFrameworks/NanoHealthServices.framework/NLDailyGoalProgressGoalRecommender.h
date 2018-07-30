@@ -11,7 +11,7 @@
 }
 
 + (double)_calculateSuccessPercentageFromCurrentPercentage:(double)arg1 firstWristOnDateToday:(id)arg2 currentTime:(id)arg3;
-+ (unsigned int)recommendGoalFromActivitySummary:(id)arg1 firstWristOnDateToday:(id)arg2 currentTime:(id)arg3;
++ (int)recommendGoalFromActivitySummary:(id)arg1 firstWristOnDateToday:(id)arg2 currentTime:(id)arg3;
 
 @end
 

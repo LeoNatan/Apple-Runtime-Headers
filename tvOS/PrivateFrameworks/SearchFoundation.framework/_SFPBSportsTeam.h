@@ -34,11 +34,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasName;
-@property(readonly, nonatomic) _Bool hasAccessibilityDescription;
-@property(readonly, nonatomic) _Bool hasScore;
-@property(readonly, nonatomic) _Bool hasRecord;
-@property(readonly, nonatomic) _Bool hasLogo;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

@@ -6,13 +6,19 @@
 
 #import "NSObject.h"
 
+#import "_PFAncillaryModelFactory.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface _PFPersistentHistoryModel : NSObject
+@interface _PFPersistentHistoryModel : NSObject <_PFAncillaryModelFactory>
 {
 }
 
-+ (void)createModelsWithTombstoneCount:(int)arg1 includeIndexes:(BOOL)arg2;
-+ (void)createModelsWithTombstoneCount:(int)arg1;
++ (unsigned long long)ancillaryEntityOffset;
++ (unsigned long long)ancillaryEntityCount;
++ (id)ancillaryModelNamespace;
++ (void)createModelsWithTombstoneCount:(int)arg1 andOptions:(id)arg2;
 + (id)_tombstonesColumnsForEntity:(id)arg1;
 + (id)_tombstonesForEntity:(id)arg1;
 + (BOOL)_hasTombstonesInUserInfo:(id)arg1;
@@ -20,6 +26,12 @@ __attribute__((visibility("hidden")))
 + (void)resetCaches;
 + (id)newPersistentHistorySQLModelForSQLModel:(id)arg1 options:(id)arg2;
 + (id)newPersistentHistoryManagedObjectModelForSQLModel:(id)arg1 options:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

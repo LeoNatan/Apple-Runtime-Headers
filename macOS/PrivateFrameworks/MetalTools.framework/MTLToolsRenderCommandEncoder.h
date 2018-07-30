@@ -14,9 +14,13 @@
 {
 }
 
+- (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
+- (void)memoryBarrierWithScope:(unsigned long long)arg1 afterStages:(unsigned long long)arg2 beforeStages:(unsigned long long)arg3;
 - (void)useHeaps:(const id *)arg1 count:(unsigned long long)arg2;
 - (void)useHeap:(id)arg1;
 - (void)useResources:(const id *)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3;
+- (void)useRenderPipelineStates:(const id *)arg1 count:(unsigned long long)arg2;
+- (void)useRenderPipelineState:(id)arg1;
 - (void)useResource:(id)arg1 usage:(unsigned long long)arg2;
 - (void)waitForFence:(id)arg1 beforeStages:(unsigned long long)arg2;
 - (void)updateFence:(id)arg1 afterStages:(unsigned long long)arg2;
@@ -74,6 +78,8 @@
 - (void)setVertexTextures:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setVertexTexture:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setVertexBuffers:(const id *)arg1 offsets:(const unsigned long long *)arg2 withRange:(struct _NSRange)arg3;
+- (void)executeCommandsInBuffer:(id)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned long long)arg3;
+- (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
 - (void)setVertexBuffer:(id)arg1 offset:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
 - (void)setVertexBufferOffset:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (void)setVertexBytes:(const void *)arg1 length:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;

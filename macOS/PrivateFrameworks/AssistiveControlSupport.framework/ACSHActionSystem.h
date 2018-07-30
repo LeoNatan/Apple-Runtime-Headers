@@ -31,7 +31,7 @@
 - (void)performWithEventSourceData:(id)arg1;
 - (id)paramDescription;
 - (id)paramDictionaryForSaving;
-- (void)_initWithPlistDictionary:(id)arg1;
+- (void)_configureWithPlistDictionary:(id)arg1;
 - (id)_initWithActionType:(unsigned long long)arg1;
 
 @end

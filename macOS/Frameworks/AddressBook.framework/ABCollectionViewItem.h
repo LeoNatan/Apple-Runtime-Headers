@@ -11,7 +11,6 @@
 
 @class ABActionManager, ABActionMenuItemFactory, ABCardCollectionView, ABCardViewStyleProvider, NSArray, NSFormatter, NSString, NSValueTransformer, NSView<ABCardCollectionRowView>;
 
-__attribute__((visibility("hidden")))
 @interface ABCollectionViewItem : NSObject <ABActionManagerDelegate, NSMenuDelegate>
 {
     NSString *_identifier;
@@ -41,8 +40,10 @@ __attribute__((visibility("hidden")))
     NSFormatter *_formatter;
     ABCardViewStyleProvider *_styleProvider;
     id <ABCardCollectionViewDelegate> _delegate;
+    id <CNSchedulerProvider> _schedulerProvider;
 }
 
+@property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) NSFormatter *formatter; // @synthesize formatter=_formatter;
 @property BOOL hasValueChanges; // @synthesize hasValueChanges=_hasValueChanges;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
@@ -93,6 +94,7 @@ __attribute__((visibility("hidden")))
 - (double)yOffsetOfView:(id)arg1;
 - (double)yOffsetOfEditView;
 - (double)yOffsetOfValueView;
+- (void)datumViewWantsActionGlyphs:(id)arg1;
 - (void)datumViewWantsEditMode:(id)arg1;
 - (void)datumViewDidResignFirstResponder:(id)arg1;
 - (void)datumViewDidBecomeFirstResponder:(id)arg1;

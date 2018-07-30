@@ -18,13 +18,14 @@
     BOOL _higherPriorityIconDownloadFailedDueToNetworkError;
     long long _databaseID;
     NSString *_host;
+    NSString *_UUIDString;
     NSDate *_lastRequestDate;
     long long _requestCount;
     NSColor *_extractedColor;
     long long _transparencyAnalysisResult;
 }
 
-+ (id)entryWithHost:(id)arg1 lastRequestDate:(id)arg2 lastRequestWasInUserLoadedWebpage:(BOOL)arg3 requestCount:(long long)arg4 iconInCache:(BOOL)arg5 requestDidSucceed:(BOOL)arg6 extractedColor:(id)arg7 transparencyAnalysisResult:(long long)arg8 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg9;
++ (id)entryWithHost:(id)arg1 lastRequestDate:(id)arg2 lastRequestWasInUserLoadedWebpage:(BOOL)arg3 requestCount:(long long)arg4 iconInCache:(BOOL)arg5 requestDidSucceed:(BOOL)arg6 extractedColor:(id)arg7 transparencyAnalysisResult:(long long)arg8 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg9 UUIDString:(id)arg10;
 @property(nonatomic) BOOL higherPriorityIconDownloadFailedDueToNetworkError; // @synthesize higherPriorityIconDownloadFailedDueToNetworkError=_higherPriorityIconDownloadFailedDueToNetworkError;
 @property(nonatomic) long long transparencyAnalysisResult; // @synthesize transparencyAnalysisResult=_transparencyAnalysisResult;
 @property(retain, nonatomic) NSColor *extractedColor; // @synthesize extractedColor=_extractedColor;
@@ -33,6 +34,7 @@
 @property(nonatomic) long long requestCount; // @synthesize requestCount=_requestCount;
 @property(nonatomic) BOOL lastRequestWasInUserLoadedWebpage; // @synthesize lastRequestWasInUserLoadedWebpage=_lastRequestWasInUserLoadedWebpage;
 @property(retain, nonatomic) NSDate *lastRequestDate; // @synthesize lastRequestDate=_lastRequestDate;
+@property(copy, nonatomic) NSString *UUIDString; // @synthesize UUIDString=_UUIDString;
 @property(copy, nonatomic) NSString *host; // @synthesize host=_host;
 @property(nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
 - (void).cxx_destruct;
@@ -41,7 +43,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long downloadStatusFlags;
 - (id)initWithHost:(id)arg1;
-- (id)initWithHost:(id)arg1 lastRequestDate:(id)arg2 lastRequestWasInUserLoadedWebpage:(BOOL)arg3 requestCount:(long long)arg4 iconInCache:(BOOL)arg5 requestDidSucceed:(BOOL)arg6 extractedColor:(id)arg7 transparencyAnalysisResult:(long long)arg8 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg9;
+- (id)initWithHost:(id)arg1 lastRequestDate:(id)arg2 lastRequestWasInUserLoadedWebpage:(BOOL)arg3 requestCount:(long long)arg4 iconInCache:(BOOL)arg5 requestDidSucceed:(BOOL)arg6 extractedColor:(id)arg7 transparencyAnalysisResult:(long long)arg8 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg9 UUIDString:(id)arg10;
 - (id)initWithSQLiteRow:(id)arg1;
 
 // Remaining properties

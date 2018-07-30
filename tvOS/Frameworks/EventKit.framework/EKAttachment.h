@@ -15,6 +15,7 @@
 + (Class)frozenClass;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
+- (id)semanticIdentifier;
 - (long long)compareFileNames:(id)arg1;
 - (void)setExternalId:(id)arg1;
 - (id)externalId;

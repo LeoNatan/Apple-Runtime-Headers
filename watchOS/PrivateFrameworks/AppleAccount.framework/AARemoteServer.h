@@ -6,16 +6,28 @@
 
 #import "NSObject.h"
 
-@class AAURLSession;
+@class AARemoteServerConfigurationCache, AAURLSession, NSObject<OS_dispatch_queue>;
 
 @interface AARemoteServer : NSObject
 {
+    struct os_unfair_lock_s _configurationLock;
+    NSObject<OS_dispatch_queue> *_configurationQueue;
+    AARemoteServerConfigurationCache *_configurationCache;
     AAURLSession *_session;
+    AAURLSession *_signingSession;
 }
 
-+ (id)newSigningSessionWithError:(id *)arg1;
-+ (id)sharedSession;
++ (id)sharedServer;
+@property(retain, nonatomic) AAURLSession *signingSession; // @synthesize signingSession=_signingSession;
+@property(retain, nonatomic) AAURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (void)_fetchConfigurationAndResponseWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_configurationLock_configurationCacheInvalidatingIfNecessary;
+- (id)_configurationCacheInvalidatingIfNecessary;
+- (void)_setConfigurationCache:(id)arg1;
+- (void)_configurationAndResponseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)configurationWithCompletion:(CDUnknownBlockType)arg1;
+- (id)init;
 - (id)_newURLRequestWithURLString:(id)arg1;
 - (void)_startRequest:(id)arg1 responseClass:(Class)arg2 mainThread:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_redactedHeadersFromHTTPHeaders:(id)arg1;
@@ -25,10 +37,6 @@
 - (void)registerAccount:(id)arg1 withHSA:(_Bool)arg2 usingCookieHeaders:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)registerAccount:(id)arg1 withHSA:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)authenticateAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_fetchServerConfigWithContext:(int)arg1 cachePolicy:(int)arg2 responseClass:(Class)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)fetchServerConfigForBuddyWithCachePolicy:(int)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchServerConfigForSettingsWithCachePolicy:(int)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)init;
 
 @end
 

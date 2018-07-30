@@ -12,11 +12,11 @@
 
 @interface NSObservationSource : NSObject <NSObservable>
 {
-    id _observers;
+    id _observers[4];
 }
 
 - (void)dealloc;
-- (id *)_observerStorage;
+- (void *)_observerStorageOfSize:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -29,7 +29,10 @@
     unsigned int _trackingTouches:1;
 }
 
++ (void)runHidePopoverAnimationWithTouchBarView:(id)arg1 colorView:(id)arg2 closeButton:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)runShowPopoverAnimationWithContainerView:(id)arg1 touchBarView:(id)arg2 colorView:(id)arg3 closeButton:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (id)_createContainerViewWithFrame:(struct CGRect)arg1;
++ (id)makePopoverCloseButtonWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)activeOverlay;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -22,6 +22,7 @@
 - (void)logUsedClassicEmoji;
 - (void)logUsedAnimatedEmoji;
 - (void)logUsedArouet;
+- (void)logUsedSmartReplyAtIndex:(int)arg1;
 - (void)logUsedCannedReply;
 - (void)logUsedSmartReply;
 - (void)logQuickboardResponseCancelled;

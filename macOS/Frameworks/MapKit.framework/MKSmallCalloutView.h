@@ -16,6 +16,7 @@
     NSView<_MKCalloutAccessoryView> *_rightView;
     NSView<_MKCalloutAccessoryView> *_externalLeftView;
     NSView<_MKCalloutAccessoryView> *_externalRightView;
+    NSView<_MKCalloutAccessoryView> *_externalDetailView;
     NSView<_MKCalloutAccessoryView> *_detailView;
     struct CGSize _preferredContentSize;
     BOOL _shouldPositionTitleForMapsTransitionMovingSideways;
@@ -48,10 +49,19 @@
     NSLayoutConstraint *_detailViewMinTopConstraint;
     NSLayoutConstraint *_detailViewBottomConstraint;
     NSLayoutConstraint *_detailViewTrailingConstraint;
-    long long _arrowDirection;
+    struct NSEdgeInsets _layoutMargins;
+    NSLayoutGuide *_layoutMarginsGuide;
+    NSLayoutConstraint *_layoutMarginsLeftConstraint;
+    NSLayoutConstraint *_layoutMarginsRightConstraint;
+    NSLayoutConstraint *_layoutMarginsTopConstraint;
+    NSLayoutConstraint *_layoutMarginsBottomConstraint;
+    BOOL _parallaxEnabled;
+    NSView *_titlesContainerView;
 }
 
-@property(nonatomic) long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
+@property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
+@property(readonly, nonatomic) NSView *titlesContainerView; // @synthesize titlesContainerView=_titlesContainerView;
+@property(nonatomic) struct NSEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) CDStruct_51745937 mapDisplayStyle; // @synthesize mapDisplayStyle=_mapDisplayStyle;
 - (void).cxx_destruct;
 - (void)_updateAccessoryViewStyles;
@@ -75,6 +85,7 @@
 @property(nonatomic) double maximumWidth;
 @property(nonatomic) double minimumWidth;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)layoutMarginsGuide;
 
 @end
 

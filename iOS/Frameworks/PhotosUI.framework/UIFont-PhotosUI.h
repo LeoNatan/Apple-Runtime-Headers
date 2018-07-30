@@ -8,9 +8,6 @@
 
 @interface UIFont (PhotosUI)
 + (double)pu_scaledValue:(double)arg1 usingFontOfAttributedString:(id)arg2;
-+ (id)pu_preferredFontForTextStyle:(id)arg1 withSymbolicTraits:(unsigned int)arg2 options:(unsigned long long)arg3;
-+ (id)pu_defaultFontForTextStyle:(id)arg1 withSymbolicTraits:(unsigned int)arg2;
 @property(readonly, nonatomic) UIFont *pu_fontWithMonospacedNumbers;
-- (double)pu_scaledValue:(double)arg1;
 @end
 

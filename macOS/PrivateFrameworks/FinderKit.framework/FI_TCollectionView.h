@@ -32,7 +32,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
-- (void)enumerateAvailableItemsUsingBlock:(const function_2aa41271 *)arg1;
+- (void)enumerateAvailableItemsUsingBlock:(const function_ba1d2ad4 *)arg1;
+- (id)popoverAnchorViewForNode:(const struct TFENode *)arg1;
 - (id)iconViewForNode:(const struct TFENode *)arg1;
 - (id)iconViewForIndexPath:(id)arg1;
 - (struct TFENode)nodeAtPoint:(const struct CGPoint *)arg1;
@@ -51,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)rightMouseDown:(id)arg1;
 - (void)layout;
 - (struct CGSize)intrinsicContentSize;
+- (void)viewDidChangeBackingProperties;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidMoveToWindow;

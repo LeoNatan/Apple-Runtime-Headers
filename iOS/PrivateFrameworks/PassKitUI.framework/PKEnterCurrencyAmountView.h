@@ -15,6 +15,7 @@
     UIView *_internalInputAccessoryView;
     _Bool _showsDecimalPointButton;
     _Bool _enabled;
+    _Bool _showDecimalPointButton;
     UITextField *_amountTextField;
     NSString *_currency;
     UIColor *_textColor;
@@ -29,6 +30,7 @@
     NSString *_amountString;
 }
 
+@property(nonatomic) _Bool showDecimalPointButton; // @synthesize showDecimalPointButton=_showDecimalPointButton;
 @property(retain, nonatomic) NSString *amountString; // @synthesize amountString=_amountString;
 @property(retain, nonatomic) NSNumberFormatter *currencySymbolAmountFormatter; // @synthesize currencySymbolAmountFormatter=_currencySymbolAmountFormatter;
 @property(retain, nonatomic) NSDecimalNumberHandler *roundingBehavior; // @synthesize roundingBehavior=_roundingBehavior;
@@ -47,6 +49,7 @@
 - (void)_createSubviews;
 - (void)_updateContent;
 - (id)_decimalNumberFromString:(id)arg1;
+- (id)_formatAmount:(id)arg1 minimumFractionDigits:(unsigned long long)arg2;
 - (id)_formatAmountForDisplay:(id)arg1 alwaysShowDecimalSeparator:(_Bool)arg2 minimumFractionDigits:(unsigned long long)arg3 useGroupingSeparator:(_Bool)arg4;
 - (void)_createAmountFormatter;
 - (unsigned long long)_numberOfDecimalPlacesInString:(id)arg1 decimalSeperator:(id)arg2;

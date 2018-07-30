@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct ExtensionContextMenuItem *)contextMenuItem;
-- (id)initWithItem:(struct ExtensionContextMenuItem *)arg1;
+@property(readonly, nonatomic) struct ExtensionContextMenuItem *contextMenuItem;
+- (id)initWithExtensionContextMenuItem:(struct ExtensionContextMenuItem *)arg1;
 
 @end
 

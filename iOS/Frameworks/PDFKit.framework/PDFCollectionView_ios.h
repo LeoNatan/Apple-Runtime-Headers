@@ -6,7 +6,7 @@
 
 #import <PDFKit/PDFCollectionView.h>
 
-@class PDFPage, PDFThumbnailItem_ios, UITouch;
+@class NSObject<OS_dispatch_queue>, PDFPage, PDFThumbnailItem_ios, UITouch;
 
 __attribute__((visibility("hidden")))
 @interface PDFCollectionView_ios : PDFCollectionView
@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
     UITouch *_currentTouch;
     PDFThumbnailItem_ios *_scrubbingItemView;
     PDFPage *_lastScrubbedToPage;
+    NSObject<OS_dispatch_queue> *_thumbnailQueue;
     struct CGRect _lastFrame;
 }
 
 + (id)layoutForPlatform;
 + (struct CGSize)defaultThumbnailSize;
+@property(retain) NSObject<OS_dispatch_queue> *thumbnailQueue; // @synthesize thumbnailQueue=_thumbnailQueue;
 @property _Bool isUpdatingScrollPosition; // @synthesize isUpdatingScrollPosition=_isUpdatingScrollPosition;
 @property _Bool inDelayedUpdate; // @synthesize inDelayedUpdate=_inDelayedUpdate;
 @property struct CGRect lastFrame; // @synthesize lastFrame=_lastFrame;

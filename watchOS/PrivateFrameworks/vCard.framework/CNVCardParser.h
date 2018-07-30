@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class CNVCardDateComponentsParser, CNVCardLexer, CNVCardMutableNameComponents, CNVCardSelectorMap, NSArray, NSData, NSDateComponents, NSMutableArray, NSMutableDictionary, NSMutableString, NSString;
+@class CNVCardDateComponentsParser, CNVCardLexer, CNVCardMutableNameComponents, CNVCardReadingOptions, CNVCardSelectorMap, NSArray, NSData, NSDateComponents, NSMutableArray, NSMutableDictionary, NSMutableString, NSString;
 
 @interface CNVCardParser : NSObject
 {
+    CNVCardReadingOptions *_options;
     CNVCardLexer *_lexer;
     NSData *_data;
     unsigned int _defaultEncoding;
@@ -50,10 +51,15 @@
 }
 
 + (unsigned int)inferredStringEncodingFromData:(id)arg1;
++ (id)parseData:(id)arg1 options:(id)arg2 resultFactory:(id)arg3;
 + (id)parseData:(id)arg1 resultFactory:(id)arg2;
 + (id)newParameterSelectorMap;
 + (id)newParsingSelectorMap;
 + (_Bool)parseFirstResultInData:(id)arg1 resultBuilder:(id)arg2;
++ (unsigned int)countOfCardsInData:(id)arg1;
+@property(readonly, nonatomic) CNVCardReadingOptions *options; // @synthesize options=_options;
+@property(copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
+@property(readonly, nonatomic) id <CNVCardParsedResultBuilder> resultBuilder; // @synthesize resultBuilder=_resultBuilder;
 - (void).cxx_destruct;
 - (int)currentPosition;
 - (_Bool)atEOF;
@@ -162,6 +168,7 @@
 - (id)pool_nextResultWithFactory:(id)arg1 progressLength:(int *)arg2;
 - (id)nextResultWithFactory:(id)arg1 progressLength:(int *)arg2;
 - (id)resultsWithFactory:(id)arg1;
+- (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)initWithData:(id)arg1;
 
 @end

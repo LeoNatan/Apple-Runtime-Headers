@@ -14,7 +14,7 @@
 + (id)sharedPhotoLibrary;
 + (id)_sharedPhotoLibrary;
 - (void)_assetsdHasNoXPCTransactions:(id)arg1;
-- (void)_updateWithInsertedAssetsCount:(unsigned long long)arg1 deletedCount:(unsigned long long)arg2 updatedAssets:(id)arg3;
+- (void)_updateWithInsertedAssetsCount:(unsigned long long)arg1 deletedCount:(unsigned long long)arg2;
 - (unsigned long long)concurrencyType;
 - (id)autorelease;
 - (oneway void)release;

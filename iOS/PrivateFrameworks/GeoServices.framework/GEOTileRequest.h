@@ -8,7 +8,6 @@
 
 @class GEOApplicationAuditToken, GEOResourceManifestConfiguration, GEOTileKeyList, GEOTileKeyMap, NSLocale, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOTileRequest : NSObject
 {
     GEOTileKeyList *_keyList;
@@ -17,20 +16,28 @@ __attribute__((visibility("hidden")))
     GEOTileKeyMap *_cachedEtags;
     GEOTileKeyMap *_cachedData;
     GEOTileKeyMap *_priorities;
+    GEOTileKeyMap *_signpostIDs;
     GEOTileKeyMap *_additionalInfos;
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
     GEOApplicationAuditToken *_auditToken;
     _Bool _requireWiFi;
-    _Bool _allowNetwork;
+    _Bool _requirePowerPluggedIn;
+    NSString *_backgroundSessionIdentifier;
+    _Bool _shouldParticipateInBalancer;
+    unsigned char _loadReason;
 }
 
-@property(readonly, nonatomic) _Bool allowNetwork; // @synthesize allowNetwork=_allowNetwork;
+@property(readonly, nonatomic) unsigned char loadReason; // @synthesize loadReason=_loadReason;
+@property(readonly, nonatomic) _Bool shouldParticipateInBalancer; // @synthesize shouldParticipateInBalancer=_shouldParticipateInBalancer;
+@property(readonly, nonatomic) NSString *backgroundSessionIdentifier; // @synthesize backgroundSessionIdentifier=_backgroundSessionIdentifier;
+@property(readonly, nonatomic) _Bool requirePowerPluggedIn; // @synthesize requirePowerPluggedIn=_requirePowerPluggedIn;
 @property(readonly, nonatomic) _Bool requireWiFi; // @synthesize requireWiFi=_requireWiFi;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) GEOTileKeyMap *additionalInfos; // @synthesize additionalInfos=_additionalInfos;
+@property(readonly, nonatomic) GEOTileKeyMap *signpostIDs; // @synthesize signpostIDs=_signpostIDs;
 @property(readonly, nonatomic) GEOTileKeyMap *priorities; // @synthesize priorities=_priorities;
 @property(readonly, nonatomic) GEOTileKeyMap *cachedData; // @synthesize cachedData=_cachedData;
 @property(readonly, nonatomic) GEOTileKeyMap *cachedEtags; // @synthesize cachedEtags=_cachedEtags;
@@ -40,7 +47,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3;
-- (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3 cachedEtags:(id)arg4 cachedData:(id)arg5 priorities:(id)arg6 additionalInfos:(id)arg7 bundleIdentifier:(id)arg8 bundleVersion:(id)arg9 auditToken:(id)arg10 requireWiFi:(_Bool)arg11 allowNetwork:(_Bool)arg12;
+- (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3 cachedEtags:(id)arg4 cachedData:(id)arg5 priorities:(id)arg6 signpostIDs:(id)arg7 additionalInfos:(id)arg8 bundleIdentifier:(id)arg9 bundleVersion:(id)arg10 auditToken:(id)arg11 requireWiFi:(_Bool)arg12 requirePowerPluggedIn:(_Bool)arg13 backgroundSessionIdentifier:(id)arg14 shouldParticipateInBalancer:(_Bool)arg15 reason:(unsigned char)arg16;
 - (id)init;
 
 @end

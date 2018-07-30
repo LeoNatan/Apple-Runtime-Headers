@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class DDScannerResult, IMChat, IMMessage, IMPluginPayload, NSArray, NSAttributedString, NSData, NSMutableSet, NSString, NSURL;
+@class DDScannerResult, IMChat, IMMessage, IMPluginPayload, LPLinkMetadata, NSArray, NSAttributedString, NSData, NSMutableSet, NSString, NSURL;
 
 @interface IMBalloonPluginDataSource : NSObject
 {
@@ -15,6 +15,7 @@
     BOOL _isLast;
     BOOL _isShowingLatestMessageAsBreadcrumb;
     BOOL _hasInvalidatedSize;
+    BOOL _parentChatHasAllUnknownRecipients;
     BOOL _showingLatestMessageAsBreadcrumb;
     IMChat *_chat;
     IMPluginPayload *_pluginPayload;
@@ -43,6 +44,7 @@
 @property(readonly, nonatomic) long long messageIDOfLastMessageInSession; // @synthesize messageIDOfLastMessageInSession=_messageIDOfLastMessageInSession;
 @property(readonly, retain, nonatomic) NSString *guidOfLastMessageInSession; // @synthesize guidOfLastMessageInSession=_guidOfLastMessageInSession;
 @property(readonly, nonatomic, getter=isShowingLatestMessageAsBreadcrumb) BOOL showingLatestMessageAsBreadcrumb; // @synthesize showingLatestMessageAsBreadcrumb=_showingLatestMessageAsBreadcrumb;
+@property(nonatomic) BOOL parentChatHasAllUnknownRecipients; // @synthesize parentChatHasAllUnknownRecipients=_parentChatHasAllUnknownRecipients;
 @property(retain, nonatomic) NSArray *consumedPayloads; // @synthesize consumedPayloads=_consumedPayloads;
 @property(nonatomic) BOOL hasInvalidatedSize; // @synthesize hasInvalidatedSize=_hasInvalidatedSize;
 @property(readonly, retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -67,6 +69,7 @@
 - (void)endShowingLastConsumedBreadcrumb;
 - (void)beginShowingLastConsumedBreadcrumbForOutgoingPayload:(id)arg1;
 - (id)_replaceHandleWithContactNameInString:(id)arg1;
+@property(readonly, nonatomic) LPLinkMetadata *richLinkMetadata;
 - (void)datasourceWasMovedToNewGuid:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)individualPreviewAttachmentFileAndUTI:(id *)arg1;

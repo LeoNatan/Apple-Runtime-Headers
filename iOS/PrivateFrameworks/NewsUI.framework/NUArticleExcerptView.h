@@ -8,7 +8,7 @@
 
 #import "UIScrollViewDelegate.h"
 
-@class NSString, NUArticleExcerptReadMoreButton, NUArticleExcerptTraits, NUMultiDelegate, UIImageView, UILabel, UIScrollView, WKWebView;
+@class NFMultiDelegate, NSString, NUArticleExcerptReadMoreButton, NUArticleExcerptTraits, UIImageView, UILabel, UIScrollView, WKWebView;
 
 @interface NUArticleExcerptView : UIView <UIScrollViewDelegate>
 {
@@ -23,11 +23,11 @@
     UIScrollView *_contentScrollView;
     UIView *_hairlineSeparatorView;
     UIView *_contentView;
-    NUMultiDelegate *_multiDelegate;
+    NFMultiDelegate *_multiDelegate;
 }
 
 + (id)webViewConfiguration;
-@property(readonly, nonatomic) NUMultiDelegate *multiDelegate; // @synthesize multiDelegate=_multiDelegate;
+@property(readonly, nonatomic) NFMultiDelegate *multiDelegate; // @synthesize multiDelegate=_multiDelegate;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UIView *hairlineSeparatorView; // @synthesize hairlineSeparatorView=_hairlineSeparatorView;
 @property(readonly, nonatomic) UIScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;

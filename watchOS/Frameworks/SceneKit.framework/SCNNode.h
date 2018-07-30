@@ -76,7 +76,7 @@
 +     // Error parsing type: 8@0:4, name: simdLocalFront
 +     // Error parsing type: 8@0:4, name: simdLocalRight
 +     // Error parsing type: 8@0:4, name: simdLocalUp
-+ (id)nodeWithMDLObject:(id)arg1 masterObjects:(id)arg2 sceneNodes:(id)arg3 skinnedMeshes:(id)arg4 options:(id)arg5;
++ (id)nodeWithMDLObject:(id)arg1 masterObjects:(id)arg2 sceneNodes:(id)arg3 skinnedMeshes:(id)arg4 skelNodesMap:(struct SkelNodesMap *)arg5 options:(id)arg6;
 + (id)nodeWithMDLObject:(id)arg1;
 + (id)nodeWithMDLAsset:(id)arg1;
 - (void)setAuthoringEnvironmentPresentationNode:(id)arg1;
@@ -150,7 +150,7 @@
 - (id)flattenedClone;
 - (id)getBoundingBox;
 - (id)getBoundingSphere;
-- (_Bool)getFrustum:(struct C3DPlane *)arg1 withViewport: /* Error: Ran out of types for this method. */;
+- (_Bool)getFrustum:(CDStruct_7841dd09 *)arg1 withViewport: /* Error: Ran out of types for this method. */;
 - (_Bool)getBoundingSphereCenter:(struct SCNVector3 *)arg1 radius:(float *)arg2;
 - (void)setBoundingBoxMin:(struct SCNVector3 *)arg1 max:(struct SCNVector3 *)arg2;
 - (_Bool)getBoundingBoxMin:(struct SCNVector3 *)arg1 max:(struct SCNVector3 *)arg2;
@@ -167,10 +167,10 @@
 - (void)addChildNode:(id)arg1;
 - (_Bool)canAddChildNode:(id)arg1;
 - (void)_reSyncModelTree;
-- (void)_initChildNodesArray;
 - (id)objectInChildNodesAtIndex:(unsigned int)arg1;
 - (unsigned int)countOfChildNodes;
 - (void)_setParent:(id)arg1;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;
@@ -274,7 +274,6 @@
 - (_Bool)_childNodesPassingTest:(CDUnknownBlockType)arg1 recursively:(_Bool)arg2 output:(id)arg3;
 - (id)objectInChildNodesWithName:(id)arg1;
 - (id)childNodeWithName:(id)arg1 recursively:(_Bool)arg2;
-- (void)_expandChildArrayIfNeeded;
 - (_Bool)_isAReference;
 - (id)clone;
 - (id)_copyRecursively;
@@ -297,6 +296,7 @@
 - (void)setIdentifier:(id)arg1;
 @property(copy, nonatomic) NSString *name;
 - (void)dealloc;
+- (void)_initChildNodesArray;
 -     // Error parsing type: @12@0:4^{__C3DNode={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}^{__C3DNode}^{__C3DNode}^{__C3DNode}i{?=(C3DMatrix4x4=[16f][4]{?=[4]})(?=)}^(C3DMatrix4x4)BfIib1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b3{?={?=SS}I}^{?}^{__C3DGeometry}^{__C3DSkinner}f{?=}}8, name: initWithNodeRef:
 -     // Error parsing type: @12@0:4^{__C3DNode={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}^{__C3DNode}^{__C3DNode}^{__C3DNode}i{?=(C3DMatrix4x4=[16f][4]{?=[4]})(?=)}^(C3DMatrix4x4)BfIib1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b3{?={?=SS}I}^{?}^{__C3DGeometry}^{__C3DSkinner}f{?=}}8, name: initPresentationNodeWithNodeRef:
 - (id)init;

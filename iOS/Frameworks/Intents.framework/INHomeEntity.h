@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-#import "INHomeEntityExport.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface INHomeEntity : NSObject <INHomeEntityExport, NSCopying, NSSecureCoding>
+@interface INHomeEntity : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *_name;
     long long _type;
@@ -24,17 +23,15 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (id)initWithName:(id)arg1 type:(long long)arg2 deviceType:(long long)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

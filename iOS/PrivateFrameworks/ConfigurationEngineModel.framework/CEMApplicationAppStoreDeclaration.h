@@ -8,23 +8,27 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSString;
+@class CEMAssetBaseDescriptor, NSString;
 
 @interface CEMApplicationAppStoreDeclaration : CEMAssetBase <CEMRegisteredTypeProtocol>
 {
+    CEMAssetBaseDescriptor *_payloadDescriptor;
+    NSString *_payloadBundleIdentifier;
+    NSString *_payloadITunesStoreID;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withDescriptor:(id)arg2 withBundleIdentifier:(id)arg3 withITunesStoreID:(id)arg4;
++ (id)buildWithIdentifier:(id)arg1 withDescriptor:(id)arg2 withBundleIdentifier:(id)arg3 withITunesStoreID:(id)arg4;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSString *payloadITunesStoreID;
-@property(readonly, nonatomic) NSString *payloadBundleIdentifier;
-@property(readonly, nonatomic) NSDictionary *payloadDescriptor;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadITunesStoreID; // @synthesize payloadITunesStoreID=_payloadITunesStoreID;
+@property(copy, nonatomic) NSString *payloadBundleIdentifier; // @synthesize payloadBundleIdentifier=_payloadBundleIdentifier;
+@property(copy, nonatomic) CEMAssetBaseDescriptor *payloadDescriptor; // @synthesize payloadDescriptor=_payloadDescriptor;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

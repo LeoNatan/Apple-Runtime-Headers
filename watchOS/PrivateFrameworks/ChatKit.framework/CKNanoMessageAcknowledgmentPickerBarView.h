@@ -13,8 +13,7 @@
 @interface CKNanoMessageAcknowledgmentPickerBarView : UIView <CKPickerBarView>
 {
     UIView *_maskView;
-    UIImageView *_barView;
-    UIImageView *_tailView;
+    UIImageView *_barImageView;
     UIView *_backgroundView;
     NSDictionary *_groupAcknowledgmentCounts;
     int _selectedAcknowledgment;

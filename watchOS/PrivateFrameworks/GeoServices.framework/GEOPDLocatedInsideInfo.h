@@ -10,6 +10,7 @@
 
 @class PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDLocatedInsideInfo : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

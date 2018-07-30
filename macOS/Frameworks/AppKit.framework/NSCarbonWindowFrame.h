@@ -6,6 +6,7 @@
 
 #import <AppKit/NSView.h>
 
+__attribute__((visibility("hidden")))
 @interface NSCarbonWindowFrame : NSView
 {
     unsigned long long _styleMask;
@@ -20,13 +21,10 @@
 - (void)setAspectRatio:(struct CGSize)arg1;
 - (struct CGSize)resizeIncrements;
 - (void)setResizeIncrements:(struct CGSize)arg1;
-- (struct CGRect)_growBoxRect;
 - (double)contentAlpha;
 - (id)contentFill;
 - (double)_sheetHeightAdjustment;
 - (void)_setNonactivatingPanel:(BOOL)arg1;
-- (void)_resetDragMargins;
-- (void)_clearDragMargins;
 - (struct CGRect)titlebarRect;
 - (id)title;
 - (void)setTitle:(id)arg1;

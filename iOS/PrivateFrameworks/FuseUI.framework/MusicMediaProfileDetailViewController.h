@@ -68,7 +68,6 @@
 - (void)_containerEntityValueProviderDidInvalidateNotification:(id)arg1;
 @property(nonatomic) _Bool shouldAutomaticallySelectMyMusicSegment;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (_Bool)music_allowsMetricsEvents;
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)loadJSNativeViewControllerWithAppContext:(id)arg1;
 - (void)mediaProfileSplitMainViewControllerSegmentedControlVisibleDidChange:(id)arg1;

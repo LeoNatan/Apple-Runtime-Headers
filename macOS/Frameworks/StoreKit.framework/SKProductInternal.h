@@ -6,32 +6,25 @@
 
 #import "NSObject.h"
 
-@class NSDecimalNumber, NSLocale, NSNumber, NSString, SKProductDiscount, SKProductSubscriptionPeriod;
+@class NSArray, NSDecimalNumber, NSLocale, NSString, SKProductDiscount, SKProductSubscriptionPeriod;
 
+__attribute__((visibility("hidden")))
 @interface SKProductInternal : NSObject
 {
+    NSString *_contentVersion;
+    BOOL _downloadable;
+    NSArray *_downloadContentLengths;
+    SKProductDiscount *_introductoryPrice;
+    NSString *_localeIdentifier;
     NSString *_localizedDescription;
     NSString *_localizedTitle;
     NSDecimalNumber *_price;
     NSLocale *_priceLocale;
     NSString *_productIdentifier;
-    BOOL _isHosted;
-    NSString *_hostedVersion;
-    NSNumber *_hostedContentLength;
+    NSString *_subscriptionGroupIdentifier;
     SKProductSubscriptionPeriod *_subscriptionPeriod;
-    SKProductDiscount *_introductoryPrice;
 }
 
-@property(retain, nonatomic) SKProductDiscount *introductoryPrice; // @synthesize introductoryPrice=_introductoryPrice;
-@property(retain, nonatomic) SKProductSubscriptionPeriod *subscriptionPeriod; // @synthesize subscriptionPeriod=_subscriptionPeriod;
-@property(retain, nonatomic) NSNumber *hostedContentLength; // @synthesize hostedContentLength=_hostedContentLength;
-@property(retain, nonatomic) NSString *hostedVersion; // @synthesize hostedVersion=_hostedVersion;
-@property(nonatomic) BOOL isHosted; // @synthesize isHosted=_isHosted;
-@property(retain, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
-@property(retain, nonatomic) NSLocale *priceLocale; // @synthesize priceLocale=_priceLocale;
-@property(retain, nonatomic) NSDecimalNumber *price; // @synthesize price=_price;
-@property(retain, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-@property(retain, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 - (void).cxx_destruct;
 
 @end

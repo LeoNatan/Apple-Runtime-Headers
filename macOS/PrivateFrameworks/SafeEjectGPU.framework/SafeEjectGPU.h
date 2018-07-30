@@ -13,9 +13,24 @@
     struct __GPUWrangler *_wrangler;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_array;
+    NSMutableArray *_limboArray;
+    NSObject<OS_dispatch_queue> *_limboQueue;
+    _Bool _inLimbo;
 }
 
++ (void)zkill;
++ (unsigned long long)zcount;
++ (id)zombies;
++ (void)removePref:(id)arg1 forApp:(id)arg2;
++ (id)appsWithPref:(id)arg1;
++ (_Bool)fixedPref:(id)arg1 forApp:(id)arg2;
++ (id)evalPref:(id)arg1 forApp:(id)arg2;
++ (id)getPref:(id)arg1 forApp:(id)arg2;
++ (void)setPref:(id)arg1 forApp:(id)arg2 to:(id)arg3;
 + (void)fallbackGPUEjectPolicy:(_Bool)arg1;
+- (void)zcancel;
+- (void)zrelaunch;
+- (void)zDrainLimbo;
 - (id)newSessionWithGPUID:(unsigned long long)arg1;
 - (id)gpus;
 - (void)dealloc;

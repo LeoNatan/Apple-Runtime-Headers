@@ -82,7 +82,7 @@ __attribute__((visibility("hidden")))
 - (void)_animateSwipeToDeleteWithGestureAmount:(double)arg1 velocity:(double)arg2 stiffness:(double)arg3;
 - (void)_trackSwipeToDeleteFromEvent:(id)arg1;
 - (double)_rubberBandGestureAmount:(double)arg1;
-- (void)_doSwipeToDeleteConsumeAnimationWithRowAction:(id)arg1;
+- (void)_doSwipeToDeleteConsumeAnimationWithRowAction:(id)arg1 fromSwipe:(BOOL)arg2;
 - (void)_releaseSwipeToDeleteScaneLineView;
 - (void)_animateSwipeToDeleteScanLineView;
 - (void)_setupDeleteScanLineViewWithRowAction:(id)arg1;
@@ -94,10 +94,9 @@ __attribute__((visibility("hidden")))
 - (void)_updateActionButtonPositionsForRowView:(id)arg1 edge:(unsigned long long)arg2 exposedPercentage:(double)arg3;
 - (CDStruct_6b6ad735)_getSwipeButtonPercentageForRowView:(id)arg1 exposedPercentage:(double)arg2 consumingPercentage:(double)arg3;
 - (double)_consumeButtonPercentageForExposedCellPercentage:(double)arg1 consumingPercentage:(double)arg2;
-- (id)_makeGrayViewForBehindButtonsWithFrame:(struct CGRect)arg1;
 - (void)_setupEditActionsButtonsForActions:(id)arg1 edge:(unsigned long long)arg2;
 - (void)_updateSwipeToDeleteRowButtonsIfNeeded;
-- (void)_setSwipeToDeleteAmount:(double)arg1;
+- (void)_setSwipeToDeleteAmount:(double)arg1 fromSwipe:(BOOL)arg2;
 - (BOOL)_swipeToDeleteRowIsConsuming;
 - (BOOL)_swipeToDeleteIsConsumingValue:(double)arg1;
 - (void)animation:(id)arg1 didReachProgressMark:(float)arg2;
@@ -369,7 +368,6 @@ __attribute__((visibility("hidden")))
 - (void)_setFloating:(BOOL)arg1 forRowView:(id)arg2 atRow:(long long)arg3;
 @property(nonatomic) BOOL animateSelection; // @dynamic animateSelection;
 - (void)_setupBackgroundFillerAnimationToLastTopY:(double)arg1 bottomYOfSlideRemoveClipView:(double)arg2;
-- (id)_resolvedAlternatingRowBackgroundColors;
 - (struct CGRect)_expandedVisibleRect;
 - (BOOL)_shouldExpandVisibleRect;
 - (void)_updateBackgroundColorForRowView:(id)arg1 row:(long long)arg2 colors:(id)arg3;

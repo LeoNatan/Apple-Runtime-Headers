@@ -505,7 +505,7 @@ __attribute__((visibility("hidden")))
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
-- (void)_sendOutputToSharedFocusManagerWithValue:(id)arg1 notificationKey:(id)arg2 variants:(id)arg3;
+- (void)_sendOutputToSharedFocusManagerWithValue:(id)arg1 notificationKey:(unsigned long long)arg2 variants:(id)arg3;
 - (id)_previousAttributedTextValue;
 - (id)_currentAttributedTextValue;
 - (void)addObserversToSharedFocusElementsForElement;
@@ -513,7 +513,7 @@ __attribute__((visibility("hidden")))
 - (void)echoSharedFocusTextSelectionChanged;
 - (void)echoSharedFocusTextValueChanged;
 - (void)_registerReadAllForPowerManagement;
-- (id)_attributeDictionaryForPosition:(id)arg1;
+- (id)_attributeDictionaryForCurrentVOPosition;
 - (void)_endSearchInteraction;
 - (void)_beginSearchInteractionWithPosition:(id)arg1;
 - (id)_startPositionOfPreviousColorChange:(id)arg1 edgeMarker:(id)arg2;

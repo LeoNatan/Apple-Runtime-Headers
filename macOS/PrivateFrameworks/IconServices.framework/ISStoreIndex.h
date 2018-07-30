@@ -12,6 +12,8 @@
 {
     NSURL *_indexFileURL;
     NSData *_data;
+    struct os_unfair_lock_s _dataLock;
+    NSData *_entryData;
 }
 
 @property(readonly) NSURL *indexFileURL; // @synthesize indexFileURL=_indexFileURL;
@@ -20,8 +22,10 @@
 - (void)enumerateValuesForKey:(unsigned long long)arg1 bock:(CDUnknownBlockType)arg2;
 - (void)enumerateValuesWithBock:(CDUnknownBlockType)arg1;
 @property(readonly) NSData *data; // @dynamic data;
+@property(readonly) struct os_unfair_lock_s *dataLock;
+- (void)invalidate;
 - (id)initWithStoreFileURL:(id)arg1;
-- (BOOL)queryStoreIndexWithUUID:(id)arg1 size:(double)arg2 scale:(unsigned int)arg3 match:(CDStruct_dd73ed19 *)arg4;
+- (BOOL)queryStoreIndexWithUUID:(id)arg1 size:(double)arg2 scale:(unsigned int)arg3 options:(unsigned long long)arg4 match:(CDStruct_1a8ce9d4 *)arg5;
 
 @end
 

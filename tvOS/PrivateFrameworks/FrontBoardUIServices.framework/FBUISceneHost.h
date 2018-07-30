@@ -18,6 +18,7 @@
     id <FBUISceneClientProxy> _sceneClient;
 }
 
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -37,7 +38,6 @@
 - (void)sendActions:(id)arg1;
 - (void)updateSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 specification:(id)arg2;
 
 // Remaining properties

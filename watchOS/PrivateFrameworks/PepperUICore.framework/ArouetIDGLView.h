@@ -35,7 +35,7 @@
 @property(nonatomic) int backingWidth; // @synthesize backingWidth=_backingWidth;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)drawView;
+- (void)_drawView;
 - (void)stopAnimation;
 - (void)startAnimation;
 - (void)rebuildFrameBufferIfNeeded;

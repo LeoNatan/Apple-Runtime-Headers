@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface OADProperties : NSObject
 {
     OADProperties *mParent;
@@ -15,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isMerged;
 - (void)setParent:(id)arg1;
 - (void)p_setParent:(id)arg1;
-- (void)dealloc;
 - (id)parent;
 - (id)initWithDefaults;
 - (id)init;

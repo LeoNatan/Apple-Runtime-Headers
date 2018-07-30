@@ -7,6 +7,10 @@
 #import "MTLComputePipelineState.h"
 
 @protocol MTLComputePipelineStateSPI <MTLComputePipelineState>
+@property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly) unsigned long long staticThreadgroupMemoryLength;
+
+@optional
+- (unsigned long long)resourceIndex;
 @end
 

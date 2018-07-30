@@ -22,9 +22,11 @@
     unsigned long long _whyClear;
     unsigned long long _queryIdent;
     unsigned long long _options;
+    double _currentTime;
 }
 
 + (id)queryContextWithSearchString:(id)arg1;
+@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) unsigned long long queryIdent; // @synthesize queryIdent=_queryIdent;
 @property(nonatomic) unsigned long long whyClear; // @synthesize whyClear=_whyClear;

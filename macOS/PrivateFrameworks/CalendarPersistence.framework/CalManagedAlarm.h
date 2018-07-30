@@ -80,6 +80,7 @@
 @property(retain) NSString *action; // @dynamic action;
 - (id)defaultAlarmPropertiesHelperForKey:(id)arg1;
 - (void)willRefresh:(BOOL)arg1;
+- (id)keysOnlyRelevantToNetworkDetails;
 - (id)_iCalendarElementWithOptions:(unsigned long long)arg1;
 - (id)iCalendarElementWithOptions:(unsigned long long)arg1 inCalendar:(id)arg2;
 - (void)importiCalendarComponent:(id)arg1 fromDocument:(id)arg2 inCalendar:(id)arg3;

@@ -7,45 +7,46 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBLocalDate.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBLocalDate : PBCodable <NSCopying>
+@interface _INPBLocalDate : PBCodable <_INPBLocalDate, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct {
+        unsigned int dayOfMonth:1;
+        unsigned int dayOfWeek:1;
+        unsigned int month:1;
+        unsigned int year:1;
+    } _has;
+    int _dayOfWeek;
     long long _dayOfMonth;
     long long _month;
     long long _year;
-    int _dayOfWeek;
-    struct {
-        unsigned int dayOfMonth:1;
-        unsigned int month:1;
-        unsigned int year:1;
-        unsigned int dayOfWeek:1;
-    } _has;
 }
 
-+ (id)options;
-@property(nonatomic) long long dayOfMonth; // @synthesize dayOfMonth=_dayOfMonth;
-@property(nonatomic) long long month; // @synthesize month=_month;
 @property(nonatomic) long long year; // @synthesize year=_year;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(nonatomic) long long month; // @synthesize month=_month;
+@property(nonatomic) int dayOfWeek; // @synthesize dayOfWeek=_dayOfWeek;
+@property(nonatomic) long long dayOfMonth; // @synthesize dayOfMonth=_dayOfMonth;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(nonatomic) BOOL hasYear;
+@property(nonatomic) BOOL hasMonth;
 - (int)StringAsDayOfWeek:(id)arg1;
 - (id)dayOfWeekAsString:(int)arg1;
 @property(nonatomic) BOOL hasDayOfWeek;
-@property(nonatomic) int dayOfWeek; // @synthesize dayOfWeek=_dayOfWeek;
 @property(nonatomic) BOOL hasDayOfMonth;
-@property(nonatomic) BOOL hasMonth;
-@property(nonatomic) BOOL hasYear;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

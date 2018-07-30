@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)requestOperationClasses;
 - (id)zoneIDsToLock;
 - (int)operationType;
+- (_Bool)allowsAnonymousAccount;
 - (id)initWithRecordZoneIDs:(id)arg1;
 
 @end

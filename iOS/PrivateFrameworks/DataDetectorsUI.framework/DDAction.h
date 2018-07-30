@@ -37,6 +37,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)encodableContextWithContext:(id)arg1;
 + (id)contextByAddingValue:(id)arg1 toKey:(id)arg2 inContext:(id)arg3;
++ (id)clientActionsDelegate;
++ (void)setClientActionsDelegate:(id)arg1;
 @property(nonatomic) __weak NSObject<DDActionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) CNContact *contact; // @synthesize contact=_contact;
 @property int hostApplication; // @synthesize hostApplication=_hostApplication;

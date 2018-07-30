@@ -15,6 +15,7 @@
 {
     PKLiveRenderedShaderSet *_liveRenderedShaderSet;
     BOOL _remotePass;
+    BOOL _isCloudKitArchived;
     BOOL _voided;
     BOOL _hasStoredValue;
     BOOL _liveRenderedBackground;
@@ -47,6 +48,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)cloudStorePassRecordNamePrefix;
 + (unsigned long long)defaultSettings;
 + (BOOL)isValidObjectWithFileURL:(id)arg1 warnings:(id *)arg2 orError:(id *)arg3;
 + (Class)classForPassType:(unsigned long long)arg1;
@@ -69,6 +71,7 @@
 @property(nonatomic, getter=isVoided) BOOL voided; // @synthesize voided=_voided;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
+@property(nonatomic) BOOL isCloudKitArchived; // @synthesize isCloudKitArchived=_isCloudKitArchived;
 @property(copy, nonatomic) NSURL *passURL; // @synthesize passURL=_passURL;
 @property(copy, nonatomic) NSNumber *sequenceCounter; // @synthesize sequenceCounter=_sequenceCounter;
 @property(copy, nonatomic) NSString *passLibraryMachServiceName; // @synthesize passLibraryMachServiceName=_passLibraryMachServiceName;
@@ -83,6 +86,14 @@
 - (void).cxx_destruct;
 - (id)_changeMessageForFieldKey:(id)arg1;
 - (id)_localizationKeyForMultipleDiff;
+- (id)dictionariesForSemanticKey:(id)arg1;
+- (id)stringsForSemanticKey:(id)arg1;
+- (id)personNameComponentsForSemanticKey:(id)arg1;
+- (id)currencyAmountForSemanticKey:(id)arg1;
+- (id)locationForSemanticKey:(id)arg1;
+- (id)numberForSemanticKey:(id)arg1;
+- (id)dateForSemanticKey:(id)arg1;
+- (id)stringForSemanticKey:(id)arg1;
 - (BOOL)availableForAutomaticPresentationUsingBeaconContext;
 - (BOOL)availableForAutomaticPresentationUsingVASContext;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -101,14 +112,18 @@
 @property(readonly, nonatomic) struct CGRect stripRect;
 @property(readonly, nonatomic) struct CGRect thumbnailRect;
 @property(readonly, nonatomic) PKImage *partialFrontFaceImage;
+@property(readonly, nonatomic) PKImage *frontFaceShadowImage;
 @property(readonly, nonatomic) PKImage *frontFaceImage;
 @property(readonly, nonatomic) NSData *iconImageICNSData;
 @property(readonly, nonatomic) PKImage *notificationIconImage;
 @property(readonly, nonatomic) PKImage *iconImage;
+- (id)allSemantics;
+- (id)semantics;
 @property(readonly, nonatomic) BOOL isPersonalizable;
 @property(readonly, nonatomic) PKPassPersonalization *personalization;
 @property(readonly, nonatomic) NSURL *appLaunchURL;
 @property(readonly, nonatomic) NSArray *storeIdentifiers;
+- (id)primaryFields;
 @property(readonly, nonatomic) NSArray *backFieldBuckets;
 @property(readonly, nonatomic) NSArray *frontFieldBuckets;
 @property(readonly, nonatomic) long long transitType;
@@ -133,9 +148,19 @@
 @property(readonly, nonatomic) NSString *lowercaseLocalizedName;
 @property(readonly, copy, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) long long style;
+- (unsigned long long)itemType;
+- (id)recordTypesAndNames;
+- (void)encodeWithCloudStoreCoder:(id)arg1;
+- (id)initWithCloudStoreCoder:(id)arg1;
 - (void)downloadRemoteAssetsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)initWithData:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) long long eventType;
+@property(readonly, nonatomic) BOOL silenceRequested;
+@property(readonly, nonatomic) NSString *flightCode;
+@property(readonly, nonatomic) NSString *airlineCode;
+@property(readonly, nonatomic) unsigned long long flightNumber;
+@property(readonly, nonatomic) BOOL hasFlightDetails;
 
 // Remaining properties
 @property(copy, nonatomic) NSString *authenticationToken; // @dynamic authenticationToken;

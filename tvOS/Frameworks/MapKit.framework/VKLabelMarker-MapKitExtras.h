@@ -9,6 +9,7 @@
 @class MKMapItemIdentifier;
 
 @interface VKLabelMarker (MapKitExtras)
+@property(nonatomic) _Bool suppressCallout;
 - (id)_annotationTitle;
 @property(readonly, nonatomic) MKMapItemIdentifier *flyoverTourIdentifier;
 @property(readonly, nonatomic) MKMapItemIdentifier *identifier;

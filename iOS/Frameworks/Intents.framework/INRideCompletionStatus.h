@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
+#import "INCacheableContainer.h"
 #import "INRideCompletionStatusExport.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class INCurrencyAmount, NSSet, NSString, NSUserActivity;
 
-@interface INRideCompletionStatus : NSObject <INRideCompletionStatusExport, NSCopying, NSSecureCoding>
+@interface INRideCompletionStatus : NSObject <INCacheableContainer, INRideCompletionStatusExport, NSCopying, NSSecureCoding>
 {
     _Bool _completed;
     _Bool _missedPickup;
@@ -51,6 +52,8 @@
 @property(readonly, nonatomic, getter=isCanceled) _Bool canceled;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initCompleted:(_Bool)arg1 canceledByService:(_Bool)arg2 missedPickup:(_Bool)arg3 amount:(id)arg4 feedbackType:(unsigned long long)arg5 outstanding:(_Bool)arg6;
+- (void)_intents_updateContainerWithCache:(id)arg1;
+- (id)_intents_cacheableObjects;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

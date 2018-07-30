@@ -40,16 +40,16 @@
 - (id)interstitialContextConstructor;
 - (id)inArticleContextConstructor;
 - (id)adContextValueForKeyPath:(id)arg1;
-- (id)adForIdentifier:(id)arg1 contextProviders:(id)arg2 constructor:(id)arg3;
+- (void)adForIdentifier:(id)arg1 contextProviders:(id)arg2 constructor:(id)arg3 layoutOptions:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)adWithIdentifier:(id)arg1;
 - (void)bannerViewDidUnload:(id)arg1;
 - (void)bannerViewDidLoad:(id)arg1;
 - (void)videoPlaylistAdForContextProviders:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)prerollForContextProviders:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)videoAdForContextProviders:(id)arg1 constructor:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
-- (void)interstitialViewForContextProviders:(id)arg1 contextProvidersWithKeys:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
-- (void)interstitialViewForContextProviders:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
-- (void)bannerViewForIdentifier:(id)arg1 contextProviders:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
+- (void)interstitialViewForContextProviders:(id)arg1 contextProvidersWithKeys:(id)arg2 layoutOptions:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
+- (void)interstitialViewForContextProviders:(id)arg1 layoutOptions:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
+- (void)bannerViewForIdentifier:(id)arg1 contextProviders:(id)arg2 layoutOptions:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 - (id)initWithConfigurationProvider:(id)arg1 device:(id)arg2;
 
 // Remaining properties

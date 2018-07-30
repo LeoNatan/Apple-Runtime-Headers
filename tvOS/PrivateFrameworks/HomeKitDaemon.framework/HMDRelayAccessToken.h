@@ -6,11 +6,13 @@
 
 #import "HMFObject.h"
 
+#import "HMDBackingStoreObjectProtocol.h"
+#import "HMFDumpState.h"
 #import "NSSecureCoding.h"
 
-@class HMDHAPAccessory, HMDUser, NSData, NSUUID;
+@class HMDHAPAccessory, HMDRelayAccessTokenModel, HMDUser, NSData, NSString, NSUUID;
 
-@interface HMDRelayAccessToken : HMFObject <NSSecureCoding>
+@interface HMDRelayAccessToken : HMFObject <HMFDumpState, HMDBackingStoreObjectProtocol, NSSecureCoding>
 {
     NSUUID *_accessoryIdentifier;
     NSUUID *_userIdentifier;
@@ -29,15 +31,26 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)dictionaryEncoding;
-- (void)updateWithDictionary:(id)arg1 home:(id)arg2;
+- (void)migrateCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (id)deleteTokenInAccessoryModel;
+- (id)transactionWithObjectChangeType:(unsigned long long)arg1;
+@property(readonly, copy) HMDRelayAccessTokenModel *model;
 - (void)fixupUserIdentifier;
 - (void)configureWithHome:(id)arg1;
 @property(readonly, nonatomic) NSUUID *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
+- (id)dumpState;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
+- (id)initWithUser:(id)arg1 model:(id)arg2;
 - (id)initWithAccessToken:(id)arg1 consentToken:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

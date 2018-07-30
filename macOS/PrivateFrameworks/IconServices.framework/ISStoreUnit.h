@@ -8,7 +8,6 @@
 
 @class NSData, NSUUID;
 
-__attribute__((visibility("hidden")))
 @interface ISStoreUnit : NSObject
 {
     NSData *_data;

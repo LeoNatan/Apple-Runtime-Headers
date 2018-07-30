@@ -8,7 +8,6 @@
 
 @class GEOPDPriceDescription, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOPriceDescription : NSObject
 {
     GEOPDPriceDescription *_geoPriceDescription;

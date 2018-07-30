@@ -23,6 +23,7 @@
 + (id)volumeDownImage;
 + (id)volumeUPImage;
 + (id)cachedObjectForKey:(id)arg1 creationBlock:(CDUnknownBlockType)arg2;
++ (id)imageSuffixForVariant:(int)arg1;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 shouldCache:(_Bool)arg3 useDeviceVariant:(_Bool)arg4;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 shouldCache:(_Bool)arg3;
 + (id)imageNamed:(id)arg1 shouldCache:(_Bool)arg2;

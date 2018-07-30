@@ -13,5 +13,6 @@
 @property(readonly, nonatomic) long long visualTabPickerThumbnailContentViewType;
 @property(readonly, nonatomic) struct CGRect visualTabPickerThumbnailContentViewVisibleBounds;
 @property(readonly, nonatomic) NSView *visualTabPickerThumbnailContentView;
+- (void)willShowVisualTabPickerThumbnailContentView;
 @end
 

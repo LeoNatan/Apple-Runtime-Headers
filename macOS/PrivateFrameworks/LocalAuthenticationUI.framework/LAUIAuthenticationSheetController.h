@@ -24,6 +24,7 @@
     NSMutableArray *_activeElements;
     int _noMatchCount;
     BOOL _passwordViewVisible;
+    BOOL _isKeyWindow;
     BOOL _canAuthenticateAsAnyAdmin;
     BOOL _enableUserNameField;
     BOOL _fallbackToAppPassword;
@@ -88,7 +89,7 @@
 - (void).cxx_destruct;
 - (void)enabledObjects:(id)arg1 forView:(id)arg2;
 - (void)setEnabled:(BOOL)arg1;
-- (void)didSubmitUnverifiedData:(unsigned int)arg1;
+- (void)didSubmitUnverifiedData:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didVerifyPassword;
 - (void)didSubmitWrongPassword:(BOOL)arg1;
 - (void)externalizedContextInReply:(CDUnknownBlockType)arg1;
@@ -96,7 +97,11 @@
 - (void)event:(long long)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_stopTouchID;
 - (void)_startTouchID;
+- (long long)_touchIDPolicy;
+- (void)_startStopTouchID:(BOOL)arg1;
 - (BOOL)_isTouchIDAvailable:(id *)arg1;
+- (void)sessionDidResignActive:(id)arg1;
+- (void)sessionDidBecomeActive:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (void)windowDidBecomeKey:(id)arg1;
 @property(retain, nonatomic) NSString *usePasswordButtonTitle; // @synthesize usePasswordButtonTitle=_usePasswordButtonTitle;

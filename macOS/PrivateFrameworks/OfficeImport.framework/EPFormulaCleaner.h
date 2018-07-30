@@ -6,9 +6,8 @@
 
 #import <OfficeImport/EDProcessor.h>
 
-@class EDFormula, EDName, EDRowBlocks, EDSheet, OITSUIntDictionary, OITSUPointerKeyDictionary;
+@class EDFormula, EDName, EDRowBlocks, EDSheet, NSMutableDictionary, OITSUPointerKeyDictionary;
 
-__attribute__((visibility("hidden")))
 @interface EPFormulaCleaner : EDProcessor
 {
     EDSheet *mCurrentSheet;
@@ -18,16 +17,16 @@ __attribute__((visibility("hidden")))
     int mRowOffset;
     int mColumnOffset;
     EDRowBlocks *mBaseFormulaRowBlocks;
-    OITSUIntDictionary *mNameArrayedTestCache;
-    OITSUIntDictionary *mNameCircularReferenceTestCache;
+    NSMutableDictionary *mNameArrayedTestCache;
+    NSMutableDictionary *mNameCircularReferenceTestCache;
     OITSUPointerKeyDictionary *mContentOutOfLassoBoundsCache;
 }
 
+- (void).cxx_destruct;
 - (void)cleanFormula:(id)arg1 name:(id)arg2;
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
 - (_Bool)isObjectSupported:(id)arg1;
-- (void)dealloc;
 - (void)prepareToProcessFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
 - (void)reset;
 - (void)reportWarning:(int)arg1 parameter:(id)arg2;

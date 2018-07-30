@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "SBFSecureWindow.h"
+#import "UIWindow.h"
 
 #import "SSActiveInterfaceOrientationObserverDelegate.h"
 #import "SSDittoHostViewControllerDelegate.h"
 
 @class NSObject<OS_dispatch_queue>, SSActiveInterfaceOrientationObserver, SSScreenshotsWindowRootViewController;
 
-@interface SSScreenshotsWindow : SBFSecureWindow <SSDittoHostViewControllerDelegate, SSActiveInterfaceOrientationObserverDelegate>
+@interface SSScreenshotsWindow : UIWindow <SSDittoHostViewControllerDelegate, SSActiveInterfaceOrientationObserverDelegate>
 {
     SSActiveInterfaceOrientationObserver *_activeInterfaceOrientationObserver;
     SSScreenshotsWindowRootViewController *_root;
@@ -19,10 +19,9 @@
     NSObject<OS_dispatch_queue> *_notifyQueue;
     int _lockNotificationToken;
     int _backlightNotificationToken;
-    _Bool _contentsHidden;
 }
 
-@property(nonatomic) _Bool contentsHidden; // @synthesize contentsHidden=_contentsHidden;
++ (_Bool)_isSecure;
 - (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_deviceBacklightChanged:(unsigned long long)arg1;
@@ -33,10 +32,11 @@
 - (_Bool)_shouldControlAutorotation;
 - (void)remoteViewControllerDisconnectedFromHostViewController:(id)arg1 withError:(id)arg2;
 - (void)remoteViewControllerOfHostViewControllerHasDismissedScreenshots:(id)arg1;
-- (void)_dismissAndHide;
+- (void)_dismiss;
 - (id)_hostViewControllerIfExists;
 - (void)_prepareRemoteViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)activateRemoteViewControllerIfAppropriate;
+- (_Bool)_canBecomeKeyWindow;
 - (void)dealloc;
 - (id)init;
 

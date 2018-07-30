@@ -9,7 +9,7 @@
 #import "UIResponderStandardEditActions.h"
 #import "UITextInput.h"
 
-@class NSDictionary, NSObject<TSDTextInput>, NSString, TSDTextInputTokenizer, TSDTextPosition, UITextPosition, UITextRange, UIView;
+@class NSDictionary, NSObject<TSDTextInput>, NSString, TSDTextInputTokenizer, TSDTextPosition, UITextInputPasswordRules, UITextPosition, UITextRange, UIView;
 
 @interface TSDTextInputResponder : UIResponder <UITextInput, UIResponderStandardEditActions>
 {
@@ -152,6 +152,7 @@
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;
 @property(nonatomic) long long keyboardAppearance;
 @property(nonatomic) long long keyboardType;
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) long long selectionAffinity;
 @property(nonatomic) long long smartDashesType;
 @property(nonatomic) long long smartInsertDeleteType;

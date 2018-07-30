@@ -16,7 +16,7 @@
     NSString *_configVersion;
 }
 
-+ (id)defaultFallBackAssetForSmartSiriVolume:(id)arg1;
++ (id)defaultFallBackAssetForSmartSiriVolume;
 + (id)fallBackAssetResourcePath;
 + (id)assetForAssetType:(unsigned long long)arg1 resourcePath:(id)arg2 configVersion:(id)arg3;
 + (id)hybridEndpointerAssetFilename;
@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionary;
 - (id)initWithResourcePath:(id)arg1 configFile:(id)arg2 configVersion:(id)arg3;
 @property(readonly, nonatomic) NSDictionary *SSVParameterDirectionary;
+@property(readonly, nonatomic) float SSVNoiseWeight;
 @property(readonly, nonatomic) float SSVTTSVolumeUpperLimitDB;
 @property(readonly, nonatomic) float SSVTTSVolumeLowerLimitDB;
 @property(readonly, nonatomic) float SSVUserOffsetOutputRangeHigh;
@@ -59,6 +60,9 @@
 @property(readonly, nonatomic) unsigned int SSVEnergyBufferSize;
 @property(readonly, nonatomic) unsigned long long SSVLKFSChannelBitset;
 @property(readonly, nonatomic) unsigned long long SSVNoiseLevelChannelBitset;
+- (id)_sha256:(id)arg1;
+- (id)_sha1:(id)arg1;
+- (id)RTModel;
 
 @end
 

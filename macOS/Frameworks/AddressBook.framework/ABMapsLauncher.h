@@ -8,7 +8,6 @@
 
 @class ABMapsLaunchRequest;
 
-__attribute__((visibility("hidden")))
 @interface ABMapsLauncher : NSObject
 {
     ABMapsLaunchRequest *_launchRequest;

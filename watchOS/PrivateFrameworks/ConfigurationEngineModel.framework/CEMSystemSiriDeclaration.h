@@ -12,24 +12,31 @@
 
 @interface CEMSystemSiriDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowAssistant;
+    NSNumber *_payloadAllowDictation;
+    NSNumber *_payloadAllowAssistantUserGeneratedContent;
+    NSNumber *_payloadForceAssistantProfanityFilter;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowAssistant:(id)arg2 withAllowDictation:(id)arg3 withAllowAssistantUserGeneratedContent:(id)arg4 withForceAssistantProfanityFilter:(id)arg5;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadForceAssistantProfanityFilter; // @synthesize payloadForceAssistantProfanityFilter=_payloadForceAssistantProfanityFilter;
+@property(copy, nonatomic) NSNumber *payloadAllowAssistantUserGeneratedContent; // @synthesize payloadAllowAssistantUserGeneratedContent=_payloadAllowAssistantUserGeneratedContent;
+@property(copy, nonatomic) NSNumber *payloadAllowDictation; // @synthesize payloadAllowDictation=_payloadAllowDictation;
+@property(copy, nonatomic) NSNumber *payloadAllowAssistant; // @synthesize payloadAllowAssistant=_payloadAllowAssistant;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowAssistantUserGeneratedContent;
-@property(readonly, nonatomic) NSNumber *payloadAllowAssistant;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

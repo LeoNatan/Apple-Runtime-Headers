@@ -18,12 +18,14 @@
     _Bool _displayCaptionText;
     _Bool _allowsOpeningSafari;
     NSString *_displayLanguage;
+    unsigned long long _displayDeviceType;
 }
 
 + (id)linkWithBundleIdentifier:(id)arg1;
 + (id)linkWithBundleIdentifiers:(id)arg1;
 + (Class)_platformSpecificClass;
 @property _Bool allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
+@property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property _Bool displayCaptionText; // @synthesize displayCaptionText=_displayCaptionText;
 @property _Bool displayLargeIcon; // @synthesize displayLargeIcon=_displayLargeIcon;

@@ -23,6 +23,7 @@
     BOOL needsToSaveLastViewedTimestamp;
     BOOL preventReleasingTextStorage;
     BOOL shouldAddMediaAsynchronously;
+    BOOL isRecoveringCryptoWrappedKey;
     TTVectorMultiTimestamp *archivedTimestamp;
     NSData *decryptedData;
     TTMergeableStringVersionedDocument *_document;
@@ -80,6 +81,7 @@
 + (BOOL)supportsUserSpecificRecords;
 + (id)newCloudObjectForRecord:(id)arg1 context:(id)arg2;
 + (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
+@property BOOL isRecoveringCryptoWrappedKey; // @synthesize isRecoveringCryptoWrappedKey;
 @property(nonatomic) BOOL shouldAddMediaAsynchronously; // @synthesize shouldAddMediaAsynchronously;
 @property(retain, nonatomic) id reservedForTextStorage; // @synthesize reservedForTextStorage=_reservedForTextStorage;
 @property(retain, nonatomic) id reservedForCollaborationColorManager; // @synthesize reservedForCollaborationColorManager=_reservedForCollaborationColorManager;
@@ -110,6 +112,7 @@
 - (struct _NSRange)rangeForTitle:(char *)arg1;
 - (struct _NSRange)rangeForSnippet;
 - (void)regenerateTitleAndSnippetIfNecessaryForEdit:(unsigned long long)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3;
+- (void)recoverMissingCryptoWrappedKeyIfNecessaryWithMasterKey:(id)arg1;
 - (void)mergeUnappliedEncryptedRecordsIncludingAttachmentsInBackground;
 - (void)mergeUnappliedEncryptedRecordsIncludingAttachments;
 - (void)saveAndClearDecryptedData;

@@ -18,7 +18,6 @@
     NSMutableSet *_normalInserts;
     NSMutableSet *_cloudInserts;
     PLPhotoLibrary *_photoLibrary;
-    long long _once;
     NSCountedSet *_pauseReasons;
     NSSet *_softPauseReasons;
     double _rebuildStartTime;
@@ -32,6 +31,7 @@
 + (_Bool)resetDupesAnalysisForOfflineStore:(id)arg1;
 + (_Bool)_resetDupesAnalysisInManagedObjectContext:(id)arg1;
 + (id)sharedInstance;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void)resumeAnalysisWithReason:(id)arg1;
 - (void)pauseAnalysisWithReason:(id)arg1;
 - (void)_resetSoftPauseReasons;
@@ -58,7 +58,6 @@
 - (void)_updateVisibilityState:(short)arg1 forAsset:(id)arg2;
 - (void)_noteAssetVisibilityDidChange:(id)arg1;
 - (short)_computeCloudAssetHashesForManagedObjectContext:(id)arg1;
-@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (void)dealloc;
 - (id)init;
 

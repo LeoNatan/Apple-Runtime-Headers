@@ -12,7 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)authorizationStatusForEntityType:(long long)arg1;
-+ (BOOL)requestAccessWithTimeout:(double)arg1 entityType:(long long)arg2;
++ (void)requestAccessForEntityType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (BOOL)requestAccessForEntityType:(long long)arg1 timeout:(double)arg2 error:(id *)arg3;
++ (BOOL)requestAccessForEntityType:(long long)arg1 error:(id *)arg2;
 + (BOOL)requestAccessForEntityType:(long long)arg1;
 + (BOOL)isAccessRestrictedForEntityType:(long long)arg1;
 

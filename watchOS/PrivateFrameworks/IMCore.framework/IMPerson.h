@@ -16,6 +16,7 @@
 }
 
 + (void)_setCachedQueriesEnabled:(_Bool)arg1;
++ (_Bool)shouldPurgeCacheForIMPerson:(id)arg1;
 + (id)existingABPeopleWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(_Bool)arg3;
 + (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(_Bool)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5;

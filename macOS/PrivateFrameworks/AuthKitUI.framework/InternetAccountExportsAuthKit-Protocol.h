@@ -13,7 +13,6 @@
 @property(retain, nonatomic, getter=icaButtonBar, setter=icaSetButtonBar:) JSValue *buttonBar;
 @property(readonly, nonatomic) NSDictionary *environment;
 @property(readonly, nonatomic) unsigned long long protocolVersion;
-- (void)validateLocalPasswordWithTitle:(NSString *)arg1 forcingReprompt:(BOOL)arg2 callback:(JSValue *)arg3;
 - (void)validateLocalPassword:(JSValue *)arg1;
 - (void)triggerAKAction:(JSValue *)arg1;
 - (void)runAppleIDOptOut:(JSValue *)arg1;
@@ -45,7 +44,6 @@
 - (void)log:(NSString *)arg1 message:(NSString *)arg2;
 
 @optional
-- (void)validateLocalPasswordWithTitle:(NSString *)arg1 forcingReprompt:(BOOL)arg2 callback:(JSValue *)arg3 __JS_EXPORT_AS__validateLocalPassword:(id)arg4;
 - (void)validateLocalPassword:(JSValue *)arg1 __JS_EXPORT_AS__validateLocalPassword:(id)arg2;
 - (void)triggerAKAction:(JSValue *)arg1 __JS_EXPORT_AS__triggerAKAction:(id)arg2;
 - (void)runAppleIDOptOut:(JSValue *)arg1 __JS_EXPORT_AS__runAppleIDOptOut:(id)arg2;

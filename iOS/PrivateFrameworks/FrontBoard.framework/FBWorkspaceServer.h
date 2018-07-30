@@ -21,7 +21,8 @@
     _Bool _triedToSendMessageInTransaction;
 }
 
-@property(readonly, nonatomic) id <FBWorkspaceServerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <FBWorkspaceServerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)_handlerForSceneID:(id)arg1;
 - (void)_queue_deserializeEventFromMessage:(id)arg1 ofType:(Class)arg2 withHandlerBlock:(CDUnknownBlockType)arg3;
 - (void)_queue_deserializeEventFromMessage:(id)arg1 ofType:(Class)arg2 withSceneHandlerBlock:(CDUnknownBlockType)arg3;

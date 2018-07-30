@@ -8,14 +8,10 @@
 
 @interface PRSAppearanceTextField : NSTextField
 {
-    BOOL _vibrant;
 }
 
-@property BOOL vibrant; // @synthesize vibrant=_vibrant;
 - (BOOL)accessibilityPerformPress;
 - (BOOL)isAccessibilityElement;
-- (void)awakeFromNib;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

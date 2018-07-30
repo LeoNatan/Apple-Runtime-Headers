@@ -6,12 +6,10 @@
 
 #import <ViewBridge/NSCFRunLoopSemaphore.h>
 
-#import "NSVBDeallocOnAppKitThread.h"
-
-@class NSObject<OS_os_activity>, NSString;
+@class NSObject<OS_os_activity>;
 
 __attribute__((visibility("hidden")))
-@interface NSRemoteViewSemaphore : NSCFRunLoopSemaphore <NSVBDeallocOnAppKitThread>
+@interface NSRemoteViewSemaphore : NSCFRunLoopSemaphore
 {
     NSObject<OS_os_activity> *_activity;
 }
@@ -21,15 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)applyActivity:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initWithActivity:(id)arg1;
-- (void)_deallocOnAppKitThread;
-- (void)_superDealloc;
 - (void)dealloc;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

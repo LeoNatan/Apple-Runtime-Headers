@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 + (id)dataForBundle:(id)arg1 createIfRequired:(_Bool)arg2;
 - (void)setPreservationPriority:(double)arg1 forTags:(id)arg2;
 - (double)preservationPriorityForTag:(id)arg1;
-- (void)_waitForDaemon;
+- (_Bool)_waitForDaemon;
 - (void)addExtensionEndpoint:(id)arg1;
-- (void)assetPacksBecameUnavailable:(id)arg1;
-- (void)assetPacksBecameAvailable:(id)arg1;
+- (_Bool)assetPacksBecameUnavailable:(id)arg1 error:(id *)arg2;
+- (_Bool)assetPacksBecameAvailable:(id)arg1 error:(id *)arg2;
 - (id)description;
 - (void)dealloc;
 - (id)initWithBundle:(id)arg1;

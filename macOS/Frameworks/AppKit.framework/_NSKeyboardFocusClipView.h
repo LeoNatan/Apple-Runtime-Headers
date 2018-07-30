@@ -17,7 +17,6 @@
     BOOL _bezelStyle;
 }
 
-- (unsigned long long)_backgroundFillOperation;
 - (BOOL)canBecomeKeyView;
 - (struct CGRect)_getFocusRingFrame;
 - (void)_clearFocusForView;

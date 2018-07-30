@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (BOOL)isOpaque;

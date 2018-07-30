@@ -6,21 +6,13 @@
 
 #import "VKLabelMarker.h"
 
-#import "MKCalloutSource.h"
-
 @class NSString, UIView;
 
-@interface VKLabelMarker (MapKitAdditions) <MKCalloutSource>
+@interface VKLabelMarker (MapKitAdditions)
 @property(retain, nonatomic) UIView *detailCalloutAccessoryView;
 @property(retain, nonatomic) UIView *rightCalloutAccessoryView;
 @property(retain, nonatomic) UIView *leftCalloutAccessoryView;
 @property(copy, nonatomic) NSString *subtitle;
 @property(readonly, nonatomic) NSString *title;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 @end
 

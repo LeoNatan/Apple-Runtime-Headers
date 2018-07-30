@@ -8,8 +8,10 @@
 
 @class NSString, NSURL, PLPhotoEditMutableModel, PUPhotoEditIrisModel, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditResourceLoadResult : NSObject
 {
+    _Bool _assetLoadingAsRaw;
     PLPhotoEditMutableModel *_editModel;
     UIImage *_image;
     NSURL *_imageURL;
@@ -25,6 +27,7 @@
 
 + (id)resultWithAdjustmentsLoadResult:(id)arg1;
 @property(retain, nonatomic, setter=_setLivePhotoModel:) PUPhotoEditIrisModel *livePhotoModel; // @synthesize livePhotoModel=_livePhotoModel;
+@property(nonatomic, setter=_setAssetLoadingAsRaw:) _Bool assetLoadingAsRaw; // @synthesize assetLoadingAsRaw=_assetLoadingAsRaw;
 @property(retain, nonatomic, setter=_setAsset:) id <PUEditableAsset> asset; // @synthesize asset=_asset;
 @property(nonatomic, setter=_setPenultimateAvailability:) long long penultimateAvailability; // @synthesize penultimateAvailability=_penultimateAvailability;
 @property(nonatomic, setter=_setRetrievedVersion:) long long retrievedVersion; // @synthesize retrievedVersion=_retrievedVersion;

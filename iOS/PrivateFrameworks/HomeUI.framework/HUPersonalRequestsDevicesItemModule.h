@@ -13,6 +13,7 @@
 @interface HUPersonalRequestsDevicesItemModule : HFItemModule <HULocationDeviceManagerObserver>
 {
     NSSet *_itemProviders;
+    id <HFMediaProfileContainer> _sourceMediaProfileContainer;
     HMHome *_home;
     HFUserItem *_sourceItem;
     HFItemProvider *_devicesItemProvider;
@@ -27,6 +28,7 @@
 @property(readonly, nonatomic) HFItemProvider *devicesItemProvider; // @synthesize devicesItemProvider=_devicesItemProvider;
 @property(readonly, nonatomic) HFUserItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
+@property(retain, nonatomic) id <HFMediaProfileContainer> sourceMediaProfileContainer; // @synthesize sourceMediaProfileContainer=_sourceMediaProfileContainer;
 @property(readonly, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
 - (void).cxx_destruct;
 - (void)locationDeviceManager:(id)arg1 didUpdateActiveLocationDevice:(id)arg2;
@@ -35,7 +37,6 @@
 @property(readonly, nonatomic) NAFuture *activeLocationDeviceFuture;
 @property(copy, nonatomic) NSArray *personalRequestsHomePods;
 - (void)toggleAllPersonalRequestsDevices;
-- (unsigned long long)personalRequestsAuthenticationRequirement;
 @property(nonatomic, getter=isPersonalRequestsEnabled) _Bool personalRequestsEnabled;
 - (_Bool)isItemPersonalRequestsFooter:(id)arg1;
 - (_Bool)isItemPersonalRequestsDevice:(id)arg1;

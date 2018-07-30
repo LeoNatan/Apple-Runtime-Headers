@@ -22,7 +22,9 @@
 + (id)edStringWithString:(id)arg1 runs:(id)arg2;
 + (id)edStringWithString:(id)arg1;
 + (id)string;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (id)firstFont;
 - (void)setDoNotModify:(_Bool)arg1;
 - (void)setRuns:(id)arg1;
 - (id)runs;
@@ -39,7 +41,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDString:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
-- (void)dealloc;
 - (id)initWithString:(id)arg1 runs:(id)arg2;
 - (id)initWithString:(id)arg1;
 - (id)init;

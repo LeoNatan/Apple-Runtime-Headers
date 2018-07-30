@@ -48,6 +48,7 @@
 - (_Bool)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(_Bool *)arg3 error:(id *)arg4;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)_decorateThumbnail:(id)arg1;
+- (void)_processXPCDaemonJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processDaemonJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processCrashRecoveryJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_photoIrisPairingDidSucceed:(_Bool)arg1 fileIndicatorPath:(id)arg2 photoAsset:(id)arg3 photoLibrary:(id)arg4;
@@ -74,6 +75,8 @@
 - (void)setAvalancheInProgress:(_Bool)arg1 uuid:(id)arg2;
 - (void)_removeTransientKeys:(id)arg1;
 - (id)pathForNewAssetPathAtAlbumDirectoryPath:(id)arg1 assetType:(unsigned int)arg2 extension:(id)arg3;
+- (id)_pathForNewAssetWithPath:(id)arg1 withExtension:(id)arg2;
+- (id)pathForNewAssetWithDirectoryPath:(id)arg1 fileName:(id)arg2 extension:(id)arg3;
 - (id)cameraAssetPathForNewAssetWithExtension:(id)arg1;
 - (_Bool)enqueueJob:(id)arg1;
 - (void)_decrementJobCount:(id)arg1;

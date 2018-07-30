@@ -15,5 +15,8 @@
 - (void)balloonViewLongTouched:(CKBalloonView *)arg1;
 - (void)balloonViewDoubleTapped:(CKBalloonView *)arg1;
 - (void)balloonViewTapped:(CKBalloonView *)arg1;
+
+@optional
+- (void)tuConversationBalloonJoinButtonTapped:(CKBalloonView *)arg1;
 @end
 

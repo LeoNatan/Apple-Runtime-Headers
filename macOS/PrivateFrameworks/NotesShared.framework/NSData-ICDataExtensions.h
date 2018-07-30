@@ -10,6 +10,6 @@
 
 @interface NSData (ICDataExtensions)
 - (id)ic_stringValue;
-@property(readonly, nonatomic) NSString *md5;
+@property(readonly, nonatomic) NSString *ic_md5;
 @end
 

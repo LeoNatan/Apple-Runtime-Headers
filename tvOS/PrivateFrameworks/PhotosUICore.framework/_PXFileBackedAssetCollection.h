@@ -4,22 +4,52 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <PhotosUICore/PXBaseDisplayCollection.h>
 
 #import "PXDisplayAssetCollection.h"
 
-@class NSString;
+@class NSDate, NSString;
 
-@interface _PXFileBackedAssetCollection : NSObject <PXDisplayAssetCollection>
+@interface _PXFileBackedAssetCollection : PXBaseDisplayCollection <PXDisplayAssetCollection>
 {
 }
 
+- (_Bool)isRecent;
+- (_Bool)isAggregation;
+@property(readonly, nonatomic) NSDate *endDate;
+@property(readonly, nonatomic) NSDate *startDate;
+@property(readonly, nonatomic) NSString *localizedSubtitle;
+@property(readonly, nonatomic) NSString *localizedTitle;
+- (double)promotionScore;
+- (_Bool)isEnriched;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool px_isAllPhotosSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isFavoriteMemoriesSmartFolder;
+@property(readonly, nonatomic) _Bool px_isFavoritesSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isFolder;
+@property(readonly, nonatomic) _Bool px_isHiddenSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isImportedAlbum;
+@property(readonly, nonatomic) _Bool px_isMacSyncedAlbum;
+@property(readonly, nonatomic) _Bool px_isMacSyncedEventsFolder;
+@property(readonly, nonatomic) _Bool px_isMacSyncedFacesFolder;
+@property(readonly, nonatomic) _Bool px_isMediaTypeSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isMemoriesVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isMyPhotoStreamAlbum;
+@property(readonly, nonatomic) _Bool px_isOwnedSharedAlbum;
+@property(readonly, nonatomic) _Bool px_isPeopleVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isPlacesVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isRecentlyAddedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentlyDeletedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isSharedAlbum;
+@property(readonly, nonatomic) _Bool px_isSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isSmartFolder;
+@property(readonly, nonatomic) _Bool px_isStandInAlbum;
+@property(readonly, nonatomic) _Bool px_isVirtualCollection;
 @property(readonly) Class superclass;
 
 @end

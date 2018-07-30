@@ -6,7 +6,6 @@
 
 #import "NSNumberFormatter.h"
 
-__attribute__((visibility("hidden")))
 @interface OITSUPositiveZeroNumberFormatter : NSNumberFormatter
 {
 }

@@ -11,7 +11,7 @@
 }
 
 + (id)createChildConfigFromProtocol:(id)arg1;
-+ (id)createIKEConfigFromProtocol:(id)arg1 ifIndex:(unsigned int)arg2 options:(id)arg3 serverAddress:(id)arg4;
++ (id)createIKEConfigFromProtocol:(id)arg1 ifIndex:(unsigned int)arg2 options:(id)arg3 serverAddress:(id)arg4 enableBlackHoleDetection:(BOOL)arg5;
 + (id)createIPv6SettingsFromTunnelConfig:(id)arg1 childConfig:(id)arg2;
 + (id)createIPv4SettingsFromTunnelConfig:(id)arg1 childConfig:(id)arg2;
 + (id)createRouteArrayFromTunnelConfig:(id)arg1 childConfig:(id)arg2 gatewayAddress:(id)arg3 isIPv4:(BOOL)arg4;

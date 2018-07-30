@@ -8,13 +8,13 @@
 
 @interface HKNumericAxis : HKAxis
 {
-    int _labelEndingOptions;
     id <HKAxisLabelDimension> _labelDimension;
     float _topVerticalLabelPadding;
     float _bottomVerticalLabelPadding;
     id <HKZoomScale> _scalarZoomScaleEngine;
 }
 
++ (id)standardNumericYAxisWithLabelDimension:(id)arg1;
 + (float)_roundUpByMultiple:(float)arg1 factor:(float)arg2;
 + (float)_roundDownByMultiple:(float)arg1 factor:(float)arg2;
 + (id)ticksAndLabelsForRangeInModelCoordinates:(id)arg1 maximumLabelCount:(int)arg2 endingOptions:(int)arg3 dimension:(id)arg4;
@@ -22,7 +22,6 @@
 @property(nonatomic) float bottomVerticalLabelPadding; // @synthesize bottomVerticalLabelPadding=_bottomVerticalLabelPadding;
 @property(nonatomic) float topVerticalLabelPadding; // @synthesize topVerticalLabelPadding=_topVerticalLabelPadding;
 @property(retain, nonatomic) id <HKAxisLabelDimension> labelDimension; // @synthesize labelDimension=_labelDimension;
-@property(nonatomic) int labelEndingOptions; // @synthesize labelEndingOptions=_labelEndingOptions;
 - (void).cxx_destruct;
 - (id)adjustValueRangeForLabels:(id)arg1;
 - (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(float)arg2;

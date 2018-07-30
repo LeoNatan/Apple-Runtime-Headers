@@ -12,8 +12,11 @@ __attribute__((visibility("hidden")))
     float _lastUpdatedProgress;
 }
 
++ (Class)cellClass;
 - (void)updateWithProgress:(float)arg1;
-- (void)awakeFromNib;
+- (void)_commonInit;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

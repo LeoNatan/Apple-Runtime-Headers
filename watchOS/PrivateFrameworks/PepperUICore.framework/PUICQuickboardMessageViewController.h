@@ -36,7 +36,6 @@
 - (id)additionalTrayButtons;
 - (void)didSelectListItem:(int)arg1;
 - (id)cellForListItem:(int)arg1;
-- (float)heightForListItem:(int)arg1 width:(float)arg2;
 - (int)numberOfListItems;
 - (id)initWithDelegate:(id)arg1 dictationMode:(int)arg2;
 - (_Bool)_shouldAllowOrbGesture;

@@ -14,9 +14,7 @@
 {
     NSMutableArray *_assets;
     unsigned int _version;
-    struct {
-        unsigned int version:1;
-    } _has;
+    CDStruct_f20694ce _has;
 }
 
 + (Class)assetType;

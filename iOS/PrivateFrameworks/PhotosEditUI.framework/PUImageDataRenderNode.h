@@ -10,6 +10,7 @@
 
 @class NSArray, NSData, NSString, PLPhotoEditModel;
 
+__attribute__((visibility("hidden")))
 @interface PUImageDataRenderNode : PXRunNode <PUImageDataRenderNode>
 {
     NSData *_imageData;

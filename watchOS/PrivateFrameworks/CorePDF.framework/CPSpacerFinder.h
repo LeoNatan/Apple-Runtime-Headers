@@ -10,6 +10,7 @@
 
 @class CPZone, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPSpacerFinder : NSObject <CPDisposable>
 {
     CPZone *contentZone;

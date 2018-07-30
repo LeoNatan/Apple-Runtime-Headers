@@ -11,6 +11,7 @@
 
 @class CPZoneBorder;
 
+__attribute__((visibility("hidden")))
 @interface CPZoneBorderIntersection : NSObject <NSCopying, CPCopying>
 {
     struct CGRect intersectionRect;

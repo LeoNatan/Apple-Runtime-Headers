@@ -25,10 +25,11 @@ __attribute__((visibility("hidden")))
 - (id)subselectionKnobPositionsForSelection:(id)arg1;
 - (void)protected_iterateHitChartElements:(struct CGPoint)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (_Bool)pointHitsTitleRect:(struct CGPoint)arg1;
+- (struct CGAffineTransform)searchSelectionTransformForRenderingRange:(struct _NSRange)arg1 outElementSize:(struct CGSize *)arg2 outClipRect:(struct CGRect *)arg3;
 - (struct CGAffineTransform)transformForRenderingRange:(struct _NSRange)arg1 outElementSize:(struct CGSize *)arg2 outClipRect:(struct CGRect *)arg3;
 - (struct CGAffineTransform)transformForRenderingOutElementSize:(struct CGSize *)arg1 outClipRect:(struct CGRect *)arg2;
 - (struct CGAffineTransform)transformForRenderingOutElementSize:(struct CGSize *)arg1 outClipRect:(struct CGRect *)arg2 forSubselection:(_Bool)arg3;
-- (struct CGAffineTransform)p_transformForRenderingRangePtr:(struct _NSRange *)arg1 outElementSize:(struct CGSize *)arg2 outClipRect:(struct CGRect *)arg3 forSubselection:(_Bool)arg4;
+- (struct CGAffineTransform)p_transformForRenderingRangePtr:(struct _NSRange *)arg1 outElementSize:(struct CGSize *)arg2 outClipRect:(struct CGRect *)arg3 forSubselection:(_Bool)arg4 forSearchSelection:(_Bool)arg5;
 - (id)renderersWithRep:(id)arg1;
 - (struct CGRect)calcOverhangRect;
 - (struct CGRect)calcDrawingRect;

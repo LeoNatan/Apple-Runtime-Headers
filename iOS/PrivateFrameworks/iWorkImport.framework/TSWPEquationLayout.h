@@ -4,41 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <iWorkImport/TSDLayout.h>
+#import <iWorkImport/TSDMediaLayout.h>
 
 #import "TSKChangeSourceObserver.h"
 
-@class NSString, TSDShadow, TSWPEquationInfo;
+@class NSString, TSDLayoutGeometry, TSDShadow, TSWPEquationInfo;
 
 __attribute__((visibility("hidden")))
-@interface TSWPEquationLayout : TSDLayout <TSKChangeSourceObserver>
+@interface TSWPEquationLayout : TSDMediaLayout <TSKChangeSourceObserver>
 {
     _Bool _equationIsValid;
-    _Bool _disableXHeightMatching;
-    id <EQKitLayoutContext> _equationLayoutContext;
+    TSDLayoutGeometry *_equationGeometry;
     id <EQKitLayout> _equationLayout;
-    double _fontSizeAdjustedForXHeight;
+    id <EQKitLayoutContext> _equationLayoutContext;
+    TSDLayoutGeometry *_baseEquationLayoutGeometry;
+    TSDLayoutGeometry *_baseInfoGeometry;
+    struct CGAffineTransform _layoutToEquationTransform;
 }
 
-@property(readonly, nonatomic) double fontSizeAdjustedForXHeight; // @synthesize fontSizeAdjustedForXHeight=_fontSizeAdjustedForXHeight;
-@property(nonatomic) _Bool disableXHeightMatching; // @synthesize disableXHeightMatching=_disableXHeightMatching;
-@property(readonly, nonatomic) _Bool equationIsValid; // @synthesize equationIsValid=_equationIsValid;
-@property(readonly, nonatomic) id <EQKitLayout> equationLayout; // @synthesize equationLayout=_equationLayout;
+@property(retain, nonatomic) TSDLayoutGeometry *baseInfoGeometry; // @synthesize baseInfoGeometry=_baseInfoGeometry;
+@property(retain, nonatomic) TSDLayoutGeometry *baseEquationLayoutGeometry; // @synthesize baseEquationLayoutGeometry=_baseEquationLayoutGeometry;
 @property(retain, nonatomic) id <EQKitLayoutContext> equationLayoutContext; // @synthesize equationLayoutContext=_equationLayoutContext;
+@property(retain, nonatomic) id <EQKitLayout> equationLayout; // @synthesize equationLayout=_equationLayout;
+@property(nonatomic) _Bool equationIsValid; // @synthesize equationIsValid=_equationIsValid;
+@property(nonatomic) struct CGAffineTransform layoutToEquationTransform; // @synthesize layoutToEquationTransform=_layoutToEquationTransform;
+@property(retain, nonatomic) TSDLayoutGeometry *equationGeometry; // @synthesize equationGeometry=_equationGeometry;
 - (void).cxx_destruct;
-- (_Bool)wantsRoundedInlinePosition;
-- (void)willLayoutInlineWithMaximumSize:(struct CGSize)arg1;
-- (double)p_fontSizeThatMatchesXHeightForFontName:(id)arg1 fontSize:(double)arg2;
-- (double)inlineCenteredAlignmentHorizontalOffset;
-@property(readonly, nonatomic) double descentForInlineLayout;
+- (id)p_adjustComputedLayoutGeometry;
+- (struct CGRect)computeAlignmentFrameInRoot:(_Bool)arg1;
 - (void)preprocessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)invalidateSize;
-- (id)computeLayoutGeometry;
 @property(readonly, nonatomic) TSDShadow *textShadow;
 @property(readonly, nonatomic) struct CGColor *textColor;
 - (_Bool)isDraggable;
+- (_Bool)canFlip;
+- (_Bool)supportsRotation;
 @property(readonly, nonatomic) TSWPEquationInfo *equationInfo;
 - (void)setParent:(id)arg1;
+@property(readonly, nonatomic) TSDLayoutGeometry *equationGeometryInRoot;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

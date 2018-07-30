@@ -6,17 +6,19 @@
 
 #import "NSObject.h"
 
-@class BrowserWKView, DimmingView, NSView, NSView<TabDialogView>;
+@class BrowserViewController, DimmingView, NSView, NSView<TabDialogView>;
 
 __attribute__((visibility("hidden")))
 @interface TabDialogInstaller : NSObject
 {
-    BrowserWKView *_webView;
-    NSView *_hostingView;
     DimmingView *_dimmingView;
     NSView<TabDialogView> *_tabDialogView;
+    BrowserViewController *_browserViewController;
+    NSView *_hostingView;
 }
 
+@property(readonly, nonatomic) __weak NSView *hostingView; // @synthesize hostingView=_hostingView;
+@property(readonly, nonatomic) __weak BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
 - (void).cxx_destruct;
 - (id)_layoutConstraintsForTabDialogView:(id)arg1 andDimmingView:(id)arg2 placement:(long long)arg3 verticalOffset:(double)arg4;
 - (void)_deactivateWebViewAndInstallDimmingView:(id)arg1;
@@ -27,8 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)prepareForModalDialogPresentationWithDimmingView:(id)arg1;
 - (void)uninstallTabDialogViewAnimated:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)installTabDialogView:(id)arg1 andDimmingView:(id)arg2 placement:(long long)arg3 verticalOffset:(double)arg4 preInstallationCallback:(CDUnknownBlockType)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (id)init;
-- (id)initWithWebView:(id)arg1 hostingView:(id)arg2;
+- (id)initWithBrowserViewController:(id)arg1 hostingView:(id)arg2;
 
 @end
 

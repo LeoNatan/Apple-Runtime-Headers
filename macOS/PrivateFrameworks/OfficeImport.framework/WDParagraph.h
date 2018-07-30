@@ -8,13 +8,15 @@
 
 @class NSMutableArray, WDParagraphProperties;
 
-__attribute__((visibility("hidden")))
 @interface WDParagraph : WDBlock
 {
     WDParagraphProperties *mProperties;
     NSMutableArray *mRuns;
+    unsigned long long identifier;
 }
 
+@property unsigned long long identifier; // @synthesize identifier;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEmpty;
 - (int)blockType;
@@ -22,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)runIterator;
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (float)maxReflectionDistance;
+- (id)addMath:(id)arg1;
 - (id)addDateTime:(id)arg1;
 - (id)addBookmark:(id)arg1 type:(int)arg2;
 - (id)addBookmark;
@@ -45,7 +48,6 @@ __attribute__((visibility("hidden")))
 - (id)runs;
 - (void)clearProperties;
 - (id)properties;
-- (void)dealloc;
 - (id)initWithText:(id)arg1 string:(id)arg2;
 - (id)initWithText:(id)arg1;
 - (BOOL)isContinuationOf:(id)arg1;

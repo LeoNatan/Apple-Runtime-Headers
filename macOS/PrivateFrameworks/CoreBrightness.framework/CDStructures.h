@@ -70,7 +70,6 @@ struct DisplayStruct {
     NSObject<OS_dispatch_source> *fadeTimer;
     NSObject<OS_dispatch_source> *alsIdleTimer;
     NSObject<OS_dispatch_source> *forceUpdateTimer;
-    NSObject<OS_dispatch_source> *forceUpdateALSParametersTimer;
     float magsafeFactor;
     struct MagSafeReduction magSafeReduction;
     struct DynamicSlider dynamicSlider;
@@ -130,22 +129,29 @@ typedef struct {
 } CDStruct_6ede4ed5;
 
 typedef struct {
-    float lux;
-    float factor;
-} CDStruct_46614362;
-
-typedef struct {
     int hour;
     int minute;
 } CDStruct_bdf7039f;
+
+typedef struct {
+    float XYZ[3];
+    struct {
+        float x;
+        float y;
+    } xy;
+    float CCT1;
+} CDStruct_ebf15ab2;
 
 typedef struct {
     float _field1;
     float _field2[9];
     unsigned int _field3;
     float _field4;
-    CDStruct_46614362 _field5;
-} CDStruct_a0d89d44;
+    struct {
+        float _field1;
+        float _field2;
+    } _field5;
+} CDStruct_7bd4ac66;
 
 typedef struct {
     CDStruct_c688133d _field1;
@@ -192,4 +198,15 @@ typedef struct {
     CDStruct_6cee55f3 schedule;
     unsigned long long disableFlags;
 } CDStruct_768fa5c4;
+
+// Ambiguous groups
+typedef struct {
+    float _field1;
+    float _field2;
+} CDStruct_b2fbf00d;
+
+typedef struct {
+    float lux;
+    float factor;
+} CDStruct_46614362;
 

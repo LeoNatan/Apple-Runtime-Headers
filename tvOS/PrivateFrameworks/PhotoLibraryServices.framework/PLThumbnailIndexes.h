@@ -18,15 +18,16 @@
 
 + (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 + (void)recycleThumbnailIndexes:(id)arg1;
-+ (unsigned long long)nextAvailableThumbnailIndex;
-+ (void)getAvailableThumbnailIndexWithHandler:(CDUnknownBlockType)arg1;
-+ (void)getAvailableThumbnailIndexesWithCount:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
++ (unsigned long long)nextAvailableThumbnailIndexInLibrary:(id)arg1;
++ (void)getAvailableThumbnailIndexInLibrary:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
++ (void)getAvailableThumbnailIndexesInLibrary:(id)arg1 withCount:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)sharedInstance;
 - (id)init;
 - (id)fetchOccupiedThumbnailIndexesWithLibrary:(id)arg1;
 - (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
-- (void)getAvailableThumbnailIndexesFromDatabase;
-- (void)getAvailableThumbnailIndexesWithCount:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)getAvailableThumbnailIndexesFromLibrary:(id)arg1;
+- (void)getAvailableThumbnailIndexesWithCount:(unsigned long long)arg1 inLibrary:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)getAvailableThumbnailIndexesWithCount:(unsigned long long)arg1 inLibrary:(id)arg2;
 
 @end
 

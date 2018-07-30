@@ -17,7 +17,7 @@
     vector_5071ab7f _localStrokeWritingOrientations;
 }
 
-@property(readonly, nonatomic) vector_5071ab7f localStrokeWritingOrientations; // @synthesize localStrokeWritingOrientations=_localStrokeWritingOrientations;
+@property(readonly, nonatomic) vector_5071ab7f *localStrokeWritingOrientations; // @synthesize localStrokeWritingOrientations=_localStrokeWritingOrientations;
 @property(readonly, nonatomic) struct CGVector averageStrokeDeviation; // @synthesize averageStrokeDeviation=_averageStrokeDeviation;
 @property(readonly, retain, nonatomic) NSArray *writingDirectionSortedSubstrokes; // @synthesize writingDirectionSortedSubstrokes=_writingDirectionSortedSubstrokes;
 @property(readonly, retain, nonatomic) NSArray *writingDirectionSortedStrokeIdentifiers; // @synthesize writingDirectionSortedStrokeIdentifiers=_writingDirectionSortedStrokeIdentifiers;

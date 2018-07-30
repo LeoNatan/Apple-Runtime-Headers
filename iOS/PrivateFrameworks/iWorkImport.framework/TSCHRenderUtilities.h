@@ -11,6 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)updateStackRectsDictionary:(id)arg1 withElementRect:(struct CGRect)arg2 groupIndex:(unsigned long long)arg3 barModelCache:(id)arg4;
++ (CDStruct_d230bf23)barElementsRendererValueRangeForModelCache:(id)arg1 groupIndex:(unsigned long long)arg2;
++ (struct CGLayer *)newCGLayerForUserSpaceRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2 outUserSpaceLayerBounds:(struct CGRect *)arg3;
 + (struct CGImage *)newImageFromFills:(id)arg1 size:(struct CGSize)arg2 spaceBetween:(struct CGSize)arg3 scale:(double)arg4 borderColor:(id)arg5 outFillRects:(struct CGRect **)arg6;
 + (struct CGPath *)newStrokedPathFromPath:(struct CGPath *)arg1 stroke:(id)arg2 cap:(int)arg3;
 + (struct CGRect)labelRectFromClipRect:(struct CGRect)arg1 elementSize:(struct CGSize)arg2;

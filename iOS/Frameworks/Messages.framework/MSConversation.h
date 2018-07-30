@@ -17,6 +17,7 @@
     NSUUID *_localParticipantIdentifier;
     NSArray *_remoteParticipantIdentifiers;
     _MSMessageAppContext *_context;
+    NSArray *_draftAssetArchives;
     NSString *_senderAddress;
     NSArray *_recipientAddresses;
     id <MSConversationDelegate> _delegate;
@@ -26,6 +27,7 @@
 @property(nonatomic) __weak id <MSConversationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *recipientAddresses; // @synthesize recipientAddresses=_recipientAddresses;
 @property(readonly, nonatomic) NSString *senderAddress; // @synthesize senderAddress=_senderAddress;
+@property(readonly, copy, nonatomic) NSArray *draftAssetArchives; // @synthesize draftAssetArchives=_draftAssetArchives;
 @property(retain, nonatomic) _MSMessageAppContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSArray *remoteParticipantIdentifiers; // @synthesize remoteParticipantIdentifiers=_remoteParticipantIdentifiers;
 @property(readonly, nonatomic) NSUUID *localParticipantIdentifier; // @synthesize localParticipantIdentifier=_localParticipantIdentifier;
@@ -37,6 +39,10 @@
 - (void)stageMessage:(id)arg1 localizedChangeDescription:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)recipientIdentifiers;
 - (id)senderIdentifier;
+- (void)_removeAssetArchiveWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_insertAssetArchive:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_sendAssetArchive:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_insertAssetArchive:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_insertAttachment:(id)arg1 adamID:(id)arg2 appName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_insertSticker:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_insertRichLink:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;

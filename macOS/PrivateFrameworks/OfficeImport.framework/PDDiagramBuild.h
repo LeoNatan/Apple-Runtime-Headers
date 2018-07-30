@@ -6,7 +6,6 @@
 
 #import <OfficeImport/PDBuild.h>
 
-__attribute__((visibility("hidden")))
 @interface PDDiagramBuild : PDBuild
 {
 }

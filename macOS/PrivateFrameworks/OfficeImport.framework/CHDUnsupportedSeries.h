@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDSeries.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDUnsupportedSeries : CHDSeries
 {
 }

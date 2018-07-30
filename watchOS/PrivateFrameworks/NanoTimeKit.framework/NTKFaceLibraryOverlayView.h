@@ -6,10 +6,11 @@
 
 #import "UIView.h"
 
-@class UIButton, UILabel;
+@class CLKDevice, UIButton, UILabel;
 
 @interface NTKFaceLibraryOverlayView : UIView
 {
+    CLKDevice *_device;
     UILabel *_leftTitleLabel;
     UILabel *_rightTitleLabel;
     float _leftTitleAlpha;
@@ -42,7 +43,7 @@
 - (void)setScrollFraction:(float)arg1 fromTopTitle:(id)arg2 toBottomTitle:(id)arg3;
 - (void)showHorizontalTitlesWithDuration:(double)arg1;
 - (void)showVerticalTitlesWithDuration:(double)arg1 startTitle:(id)arg2;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initForDevice:(id)arg1;
 
 @end
 

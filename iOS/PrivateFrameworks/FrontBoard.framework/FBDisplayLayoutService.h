@@ -18,6 +18,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)publishDisplayLayout:(id)arg1;
 - (id)server:(id)arg1 displayLayoutForDisplayType:(long long)arg2;
 - (id)_displayLayoutForDisplayType:(long long)arg1;

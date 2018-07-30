@@ -24,7 +24,9 @@ __attribute__((visibility("hidden")))
 
 + (id)p_drawablesToInsertForGroup:(id)arg1 outDidUngroup:(_Bool *)arg2 filteredWithBlock:(CDUnknownBlockType)arg3;
 + (id)drawablesToInsertForGroup:(id)arg1 filteredWithBlock:(CDUnknownBlockType)arg2;
++ (id)groupGeometryFromChildrenInfos:(id)arg1 currentlyLaidOutWithLayoutController:(id)arg2;
 + (id)groupGeometryFromChildrenInfos:(id)arg1;
++ (_Bool)canEditGroupsInCollaborativeDocuments;
 + (Class)classForUnarchiver:(id)arg1;
 - (void).cxx_destruct;
 - (void)processSelectedStoragesWithStatisticsController:(id)arg1;
@@ -54,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)insertChildInfo:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)addChildInfo:(id)arg1;
 - (void)setChildInfos:(id)arg1;
+@property(readonly, nonatomic) _Bool supportsCollaborativeEditing;
 - (void)moveModel:(id)arg1 toIndex:(unsigned long long)arg2;
 - (void)removeContainedModel:(id)arg1;
 - (void)insertContainedModel:(id)arg1 atIndex:(unsigned long long)arg2;

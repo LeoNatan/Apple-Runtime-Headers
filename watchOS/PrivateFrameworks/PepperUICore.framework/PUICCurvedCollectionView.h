@@ -10,7 +10,9 @@
 {
 }
 
-- (void)crownInputSequencerWillBecomeIdle:(id)arg1 withCrownVelocity:(double)arg2 targetOffset:(inout double *)arg3;
++ (float)innerPaddingBottom;
++ (float)innerPadding;
++ (float)cornerRadius;
 - (id)initWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;
 
 @end

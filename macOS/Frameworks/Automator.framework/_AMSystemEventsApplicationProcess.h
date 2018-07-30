@@ -6,13 +6,11 @@
 
 #import <Automator/_AMSystemEventsProcess.h>
 
-@class _AMSystemEventsAlias;
-
 @interface _AMSystemEventsApplicationProcess : _AMSystemEventsProcess
 {
 }
 
-@property(readonly, copy) _AMSystemEventsAlias *applicationFile;
+@property(readonly, copy) id applicationFile;
 
 @end
 

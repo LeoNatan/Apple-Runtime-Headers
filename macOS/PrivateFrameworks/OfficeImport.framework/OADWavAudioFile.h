@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADEmbeddedMediaFile.h>
 
-__attribute__((visibility("hidden")))
 @interface OADWavAudioFile : OADEmbeddedMediaFile
 {
     float mDuration;

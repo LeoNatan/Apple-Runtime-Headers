@@ -6,7 +6,7 @@
 
 #import <AppKit/NSPanel.h>
 
-@class NSAttributedString, NSCorrectionShadowView, NSCorrectionTextView, NSCorrectionTypedTextHighlightView, NSDictionary, NSMutableArray, NSString, NSView;
+@class NSAttributedString, NSCorrectionShadowView, NSCorrectionTextView, NSCorrectionTypedTextHighlightView, NSDictionary, NSMutableArray, NSString, NSView, NSVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface NSCorrectionPanel : NSPanel
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *alternativeCandidates;
     BOOL dismissedExternally;
     BOOL dismissedExplicitly;
+    NSVisualEffectView *contentBackgroundMaterialView;
 }
 
 + (id)sharedCorrectionPanel;
@@ -51,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)_adjustLayoutForView:(id)arg1;
 - (BOOL)_shouldCorrectionViewBeAtBottom:(double)arg1 highlightRect:(struct CGRect)arg2 inScreenVisibleRect:(struct CGRect)arg3;
 - (struct CGRect)_highlightRectForTypedText:(struct CGRect)arg1;
+- (id)_maskImageWithSize:(struct CGSize)arg1;
 - (void)dealloc;
 - (id)initWithContentRect:(struct CGRect)arg1 backing:(unsigned long long)arg2 defer:(BOOL)arg3;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;

@@ -26,13 +26,14 @@
 @property(readonly, nonatomic) __weak XBApplicationSnapshotManifestImpl *manifestImpl; // @synthesize manifestImpl=_manifestImpl;
 @property(nonatomic) __weak id <XBApplicationSnapshotManifestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)manifestDidUpdateUnderMemoryPressure:(id)arg1;
+- (void)manifestDidPurgeSnapshotsWithProtectedContent:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (_Bool)_invalidate;
 - (void)beginSnapshotAccessTransaction:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)purgeSnapshotsWithProtectedContent;
 - (void)deleteSnapshotsForGroupID:(id)arg1 predicateBuilder:(CDUnknownBlockType)arg2;
 - (void)deleteSnapshotsForGroupID:(id)arg1 matchingPredicate:(id)arg2;
 - (void)deleteSnapshotsForGroupID:(id)arg1;

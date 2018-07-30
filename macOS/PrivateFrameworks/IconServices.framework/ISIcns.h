@@ -7,45 +7,54 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
-#import "NSFastEnumeration.h"
 #import "NSMutableCopying.h"
 
-@class NSData, NSDictionary, NSMutableDictionary;
+@class NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
 
-@interface ISIcns : NSObject <NSFastEnumeration, NSCopying, NSMutableCopying>
+@interface ISIcns : NSObject <NSCopying, NSMutableCopying>
 {
     unsigned int _type;
     NSData *_data;
     id _elements;
-    ISIcns *_selectedVariant;
-    ISIcns *_templateVariant;
+    BOOL _dirty;
 }
 
 + (BOOL)createEmptyIconsetFolderWithURL:(id)arg1 error:(id *)arg2;
 + (id)icnsWithIconFamilyHandle:(struct IconFamilyResource **)arg1;
 + (id)icnsWithContentsOfURL:(id)arg1;
 + (id)icnsWithResourceFile:(id)arg1;
++ (id)systemIconNamed:(id)arg1;
+@property BOOL dirty; // @synthesize dirty=_dirty;
 @property(readonly) NSMutableDictionary *elements; // @synthesize elements=_elements;
 @property unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (void)setVariant:(id)arg1 named:(id)arg2;
+@property(retain) NSDictionary *userInfo; // @dynamic userInfo;
+@property(retain) ISIcns *templateVariant; // @dynamic templateVariant;
+@property(retain) ISIcns *selectedVariant; // @dynamic selectedVariant;
+- (void)removeValueAtIndex:(int)arg1;
+- (void)setData:(id)arg1 atIndex:(int)arg2;
 @property(readonly) NSData *data; // @synthesize data=_data;
 - (id)debugDescription;
 - (id)description;
+@property(readonly) NSArray *variants; // @dynamic variants;
+- (BOOL)isVariantElementType:(unsigned int)arg1;
 - (void)enumerateElementsUsingBlock:(CDUnknownBlockType)arg1;
-@property(retain) NSDictionary *userInfo; // @dynamic userInfo;
 - (unsigned int)elementTypeAtIndex:(int)arg1;
 - (BOOL)isMaskAtIndex:(int)arg1;
 - (unsigned int)colorDepthAtIndex:(int)arg1;
 - (unsigned int)scaleAtIndex:(int)arg1;
 - (struct CGSize)sizeAtIndex:(int)arg1;
 - (id)dataAtIndex:(int)arg1;
-@property(readonly) ISIcns *selectedVariant; // @dynamic selectedVariant;
-@property(readonly) ISIcns *templateVariant; // @dynamic templateVariant;
+- (id)variantNamed:(id)arg1;
+- (unsigned int)typeForVariantName:(id)arg1;
+@property(retain) NSString *name; // @dynamic name;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)load;
 - (id)initWithIcns:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (id)initWithType:(unsigned int)arg1;
 - (id)init;
 - (BOOL)writeAsIconsetToURL:(id)arg1;
 - (BOOL)writeIconsetImagesToURL:(id)arg1 variantName:(id)arg2 selected:(BOOL)arg3;

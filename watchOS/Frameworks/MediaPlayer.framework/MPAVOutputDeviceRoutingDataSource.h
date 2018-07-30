@@ -6,31 +6,32 @@
 
 #import <MediaPlayer/MPAVRoutingDataSource.h>
 
-@class MPAVEndpointRoute, NSArray, NSError, NSObject<OS_dispatch_queue>, NSString;
+@class MPAVEndpointRoute, MPMRAVOutputContextWrapper, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MPAVOutputDeviceRoutingDataSource : MPAVRoutingDataSource
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
-    void *_applicationOutputContext;
-    NSError *_applicationOutputContextCreationError;
     _Bool _attemptedToInitializeAppOutputContext;
     void *_discoverySession;
     void *_callbackToken;
     _Bool _supportsMultipleSelection;
     _Bool _devicePresenceDetected;
     NSArray *_outputDeviceRoutes;
+    _Bool _shouldSourceOutputDevicesFromAVODDS;
+    MPMRAVOutputContextWrapper *_applicationOutputContext;
     MPAVEndpointRoute *_endpointRoute;
 }
 
 + (id)_globalAudioSessionLock;
 @property(retain, nonatomic) MPAVEndpointRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
+@property(nonatomic) _Bool supportsMultipleSelection; // @synthesize supportsMultipleSelection=_supportsMultipleSelection;
+@property(retain, nonatomic) MPMRAVOutputContextWrapper *applicationOutputContext; // @synthesize applicationOutputContext=_applicationOutputContext;
 - (void).cxx_destruct;
+- (void)_setShouldSourceOutputDevicesFromAVODDS:(_Bool)arg1;
 - (id)_outputDeviceRouteWithUID:(id)arg1;
 - (void)_outputDevicesDidChange:(id)arg1;
 - (void)_unregisterNotifications;
 - (void)_registerNotifications;
-- (void *)_copyApplicationOutputContext:(id *)arg1;
-- (void *)_createDefaultApplicationOutputContext:(id *)arg1 outAudioSessionID:(unsigned int *)arg2;
 - (void)_routeStatusDidChangeNotification:(id)arg1;
 - (void)_outputDevicesDidChangeNotification:(id)arg1;
 - (void)_endpointsDidChangeNotification:(id)arg1;
@@ -42,7 +43,6 @@
 - (_Bool)devicePresenceDetected;
 - (void)setDiscoveryMode:(int)arg1;
 - (int)discoveryMode;
-- (_Bool)supportsMultipleSelection;
 @property(copy, nonatomic) NSString *routingContextUID;
 - (void)dealloc;
 - (id)init;

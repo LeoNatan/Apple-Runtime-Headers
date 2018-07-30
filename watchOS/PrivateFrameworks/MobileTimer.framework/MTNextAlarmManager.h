@@ -6,31 +6,24 @@
 
 #import "NSObject.h"
 
-#import "UNSNotificationSchedulerDelegate.h"
+@class MTAlarmManager, NSSet;
 
-@class NSSet, NSString, UNSNotificationScheduler;
-
-@interface MTNextAlarmManager : NSObject <UNSNotificationSchedulerDelegate>
+@interface MTNextAlarmManager : NSObject
 {
     NSSet *_nextAlarms;
     CDUnknownBlockType _updateHandler;
-    UNSNotificationScheduler *_scheduler;
+    id <NAScheduler> _serializer;
+    MTAlarmManager *_alarmManager;
 }
 
-@property(retain, nonatomic) UNSNotificationScheduler *scheduler; // @synthesize scheduler=_scheduler;
+@property(retain, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
+@property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(retain, nonatomic) NSSet *nextAlarms; // @synthesize nextAlarms=_nextAlarms;
 - (void).cxx_destruct;
-- (void)notificationScheduler:(id)arg1 didChangeScheduledLocalNotifications:(id)arg2;
-- (void)calculateNextAlarmsFromNotifications:(id)arg1;
-- (id)initWithNotificationScheduler:(id)arg1;
+- (void)_handleAlarmsDidChange;
+- (void)calculateNextAlarms;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

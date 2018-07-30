@@ -16,7 +16,7 @@
     long long _unreadMessageCount;
 }
 
-+ (id)_imageProviderWithForegroundName:(id)arg1 compact:(_Bool)arg2 unreadCount:(long long)arg3 family:(long long)arg4 locked:(_Bool)arg5;
++ (id)_imageProviderWithForegroundName:(id)arg1 unreadCount:(long long)arg2 family:(long long)arg3 locked:(_Bool)arg4;
 + (id)_templateForFamily:(long long)arg1 unreadMessageCount:(long long)arg2 compact:(_Bool)arg3 locked:(_Bool)arg4;
 + (id)staticTemplateForFamily:(long long)arg1 compact:(_Bool)arg2;
 @property(nonatomic) _Bool messageRecdNotification; // @synthesize messageRecdNotification=_messageRecdNotification;

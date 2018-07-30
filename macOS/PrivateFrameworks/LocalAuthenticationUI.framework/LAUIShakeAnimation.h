@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint, NSView;
 
+__attribute__((visibility("hidden")))
 @interface LAUIShakeAnimation : NSAnimation
 {
     NSView *_targetView;

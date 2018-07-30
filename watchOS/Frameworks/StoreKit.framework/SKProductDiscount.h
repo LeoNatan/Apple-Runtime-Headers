@@ -10,27 +10,24 @@
 
 @interface SKProductDiscount : NSObject
 {
-    unsigned int _numberOfPeriods;
-    unsigned int _paymentMode;
-    NSDecimalNumber *_price;
-    NSLocale *_locale;
-    SKProductSubscriptionPeriod *_subscriptionPeriod;
-    NSLocale *_priceLocale;
+    id _internal;
 }
 
-@property(readonly, nonatomic) unsigned int paymentMode; // @synthesize paymentMode=_paymentMode;
-@property(readonly, nonatomic) unsigned int numberOfPeriods; // @synthesize numberOfPeriods=_numberOfPeriods;
-@property(readonly, nonatomic) SKProductSubscriptionPeriod *subscriptionPeriod; // @synthesize subscriptionPeriod=_subscriptionPeriod;
-@property(readonly, nonatomic) NSLocale *priceLocale; // @synthesize priceLocale=_priceLocale;
-@property(readonly, nonatomic) NSDecimalNumber *price; // @synthesize price=_price;
 - (void).cxx_destruct;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 - (void)_setSubscriptionPeriod:(id)arg1;
 - (void)_setPriceLocale:(id)arg1;
 - (void)_setPrice:(id)arg1;
 - (void)_setPaymentMode:(unsigned int)arg1;
 - (void)_setNumberOfPeriods:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int paymentMode;
+@property(readonly, nonatomic) unsigned int numberOfPeriods;
+@property(readonly, nonatomic) SKProductSubscriptionPeriod *subscriptionPeriod;
+@property(readonly, nonatomic) NSLocale *priceLocale;
+@property(readonly, nonatomic) NSDecimalNumber *price;
+- (id)init;
 
 @end
 

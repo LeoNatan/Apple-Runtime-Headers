@@ -6,17 +6,12 @@
 
 #import "NSObject.h"
 
-@class BerkeleyDatabase, NSData, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface FirefoxCredentialDecrypter : NSObject
 {
-    BerkeleyDatabase *_database;
-    BOOL _databasePassedSanityCheck;
-    NSData *_passwordCheckData;
-    NSData *_passwordCheckHeader;
-    NSData *_passwordCheckEntrySalt;
-    NSData *_passwordCheckPayload;
+    id <FirefoxCryptoKeyStorage> _keyStore;
     NSString *_masterPassword;
 }
 
@@ -47,25 +42,14 @@ __attribute__((visibility("hidden")))
 - (id)_dataByDecryptingData:(id)arg1 rawKey:(id)arg2 initializationVector:(id)arg3;
 - (void)_getKeyId:(id *)arg1 initializationVector:(id *)arg2 cipherText:(id *)arg3 fromEncryptedCredentialData:(id)arg4;
 - (id)_stringByDecryptingCredentialData:(id)arg1;
-- (id)_encryptedPrivateKeyDataWithId:(id)arg1;
 - (void)_getEncryptedPrivateKeyData:(id *)arg1 cipherText:(id *)arg2 initializationVector:(id *)arg3 forEncryptedCredentialData:(id)arg4;
 - (void)_getEncryptedPrivateKey:(id *)arg1 andEntrySalt:(id *)arg2 fromEncryptedPrivateKeyData:(id)arg3;
 - (id)_decryptedPrivateKeyFromEncryptedPrivateKey:(id)arg1 password:(id)arg2 globalSalt:(id)arg3 entrySalt:(id)arg4;
 - (id)_rawKeyFromDecryptedPrivateKey:(id)arg1;
-- (id)_passwordCheckPayload;
-- (id)_passwordCheckEntrySalt;
-- (id)_passwordCheckHeader;
-- (id)_passwordCheckData;
-- (BOOL)_runDatabaseSanityCheck;
-- (id)_globalSaltData;
-- (id)_versionData;
-- (id)_dataForKey:(id)arg1;
-- (BOOL)_openDatabaseIfNeeded;
-- (void)_resetDerivedData;
 @property(readonly, nonatomic, getter=isMasterPasswordCorrect) BOOL masterPasswordCorrect;
 - (id)_masterPasswordData;
 - (id)credentialByDecryptingFirefoxCredential:(id)arg1;
-- (id)init;
+- (id)initWithKeyStore:(id)arg1;
 
 @end
 

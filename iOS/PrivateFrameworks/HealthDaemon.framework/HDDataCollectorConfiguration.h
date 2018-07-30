@@ -16,8 +16,11 @@
 
 @property(nonatomic) double collectionInterval; // @synthesize collectionInterval=_collectionInterval;
 @property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)mergedConfiguration:(id)arg1;
+- (id)init;
 
 @end
 

@@ -15,24 +15,26 @@
 {
     int _processIdentifier;
     const struct __AXUIElement *_AXUIElement;
+    unsigned long long _originPlatform;
     NSData *_token;
     unsigned long long _elementOrHash;
     unsigned long long _elementID;
     unsigned long long _elementType;
-    unsigned long long _originPlatform;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)deviceElement;
 + (id)elementWithProcessIdentifier:(int)arg1;
 + (id)elementWithAXUIElement:(struct __AXUIElement *)arg1;
++ (id)mockElementWithProcessIdentifier:(int)arg1 originPlatform:(unsigned long long)arg2 payload:(id)arg3;
++ (id)mockElementWithProcessIdentifier:(int)arg1 originPlatform:(unsigned long long)arg2;
 + (id)mockElementWithProcessIdentifier:(int)arg1 payload:(id)arg2;
 + (id)mockElementWithProcessIdentifier:(int)arg1;
-@property(readonly) unsigned long long originPlatform; // @synthesize originPlatform=_originPlatform;
 @property(readonly) unsigned long long elementType; // @synthesize elementType=_elementType;
 @property(readonly) unsigned long long elementID; // @synthesize elementID=_elementID;
 @property(readonly) unsigned long long elementOrHash; // @synthesize elementOrHash=_elementOrHash;
 @property(readonly, copy) NSData *token; // @synthesize token=_token;
+@property(readonly) unsigned long long originPlatform; // @synthesize originPlatform=_originPlatform;
 @property(readonly) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly) const struct __AXUIElement *AXUIElement; // @synthesize AXUIElement=_AXUIElement;
 - (void).cxx_destruct;

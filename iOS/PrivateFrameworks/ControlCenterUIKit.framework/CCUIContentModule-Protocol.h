@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-@class CCUIContentModuleContext, UIViewController, UIViewController<CCUIContentModuleContentViewController>;
+@class CCUIContentModuleContext, UIViewController<CCUIContentModuleBackgroundViewController>, UIViewController<CCUIContentModuleContentViewController>;
 
 @protocol CCUIContentModule <NSObject>
 @property(readonly, nonatomic) UIViewController<CCUIContentModuleContentViewController> *contentViewController;
 
 @optional
-@property(readonly, nonatomic) UIViewController *backgroundViewController;
+@property(readonly, nonatomic) UIViewController<CCUIContentModuleBackgroundViewController> *backgroundViewController;
 - (void)setContentModuleContext:(CCUIContentModuleContext *)arg1;
 @end
 

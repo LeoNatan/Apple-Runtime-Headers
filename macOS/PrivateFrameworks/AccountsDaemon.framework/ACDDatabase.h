@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSManagedObjectContext, NSManagedObjectModel, NSPersistentStore, NSString;
+@class NSManagedObjectContext, NSPersistentStore, NSString;
 
 @interface ACDDatabase : NSObject
 {
     NSString *_path;
     NSManagedObjectContext *_context;
-    NSManagedObjectModel *_model;
     NSPersistentStore *_store;
     id _contextDidSaveNotificationObserver;
 }
@@ -31,6 +30,10 @@
 + (id)defaultPath;
 @property(readonly) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+- (BOOL)_createLocalBackupCopy:(id *)arg1;
+- (id)_localBackupStorePath;
+- (id)_localBackupDirectoryURL;
+- (id)_localBackupDirectoryPath;
 - (void)_handleManagedObjectContextDidSaveNotification:(id)arg1;
 - (BOOL)_databaseFileExists;
 - (id)_store;

@@ -6,14 +6,14 @@
 
 #import "NSObject.h"
 
-#import "IDSServiceDelegate.h"
+#import "CSLSConnectionStatusObserver.h"
 
-@class IDSService, NSHashTable, NSObject<OS_dispatch_queue>, NSString;
+@class NSHashTable, NSObject<OS_dispatch_queue>, NSString;
 
-@interface NMCConnectivityManager : NSObject <IDSServiceDelegate>
+@interface NMCConnectivityManager : NSObject <CSLSConnectionStatusObserver>
 {
-    IDSService *_idsService;
-    NSObject<OS_dispatch_queue> *_idsDispatchQueue;
+    unsigned int _connectionStatus;
+    NSObject<OS_dispatch_queue> *_connectionStatusQueue;
     NSHashTable *_observers;
     _Bool _connected;
     _Bool _waitingForReconnect;
@@ -23,9 +23,8 @@
 - (void).cxx_destruct;
 - (void)_notifyObserversForConnectedState;
 - (void)_updateConnectivityState;
-- (id)_defaultPairedDevice;
-- (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
-- (void)service:(id)arg1 devicesChanged:(id)arg2;
+- (void)connectionStatusDidChange:(unsigned int)arg1;
+- (void)dealloc;
 @property(readonly, nonatomic, getter=isConnected) _Bool connected;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

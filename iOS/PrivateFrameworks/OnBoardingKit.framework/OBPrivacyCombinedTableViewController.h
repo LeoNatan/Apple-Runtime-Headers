@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     UITableView *_tableView;
     NSArray *_privacyFlows;
     NSString *_displayLanguage;
+    unsigned long long _displayDeviceType;
 }
 
+@property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property(nonatomic, getter=isDarkMode) _Bool darkMode; // @synthesize darkMode=_darkMode;
 @property _Bool suppressPerPageAnalyticsLogging; // @synthesize suppressPerPageAnalyticsLogging=_suppressPerPageAnalyticsLogging;
@@ -33,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -9,10 +9,11 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMDelegateCaller, HMDevice, HMFMessageDispatcher, HMHome, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMDevice, HMFUnfairLock, HMHome, NSString, NSUUID, _HMContext;
 
 @interface HMResidentDevice : NSObject <HMObjectMerge, NSSecureCoding>
 {
+    HMFUnfairLock *_lock;
     _Bool _enabled;
     NSUUID *_uniqueIdentifier;
     unsigned long long _status;
@@ -21,19 +22,13 @@
     unsigned long long _capabilities;
     id <HMResidentDeviceDelegate> _delegate;
     HMDevice *_device;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMFMessageDispatcher *_messageDispatcher;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMDelegateCaller *_delegateCaller;
+    _HMContext *_context;
     NSUUID *_uuid;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly) HMDevice *device; // @synthesize device=_device;
 @property __weak id <HMResidentDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -49,7 +44,7 @@
 @property(readonly, getter=isCurrentDevice) _Bool currentDevice;
 @property(readonly, copy) NSString *name;
 @property(readonly, copy) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void)_configure:(id)arg1 messageDispatcher:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (id)init;
 
 // Remaining properties

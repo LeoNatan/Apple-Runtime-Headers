@@ -8,12 +8,7 @@
 
 @interface ABPersonListRowView : NSTableRowView
 {
-    BOOL _drawSeparator;
 }
-
-@property BOOL drawSeparator; // @synthesize drawSeparator=_drawSeparator;
-- (void)drawSeparatorInRect:(struct CGRect)arg1;
-- (BOOL)allowsVibrancy;
 
 @end
 

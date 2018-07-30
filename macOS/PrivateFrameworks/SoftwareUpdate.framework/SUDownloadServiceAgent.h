@@ -22,20 +22,18 @@
     NSMutableDictionary *_recentStatusByKey;
     struct AuthorizationOpaqueRef *_installAuth;
     NSMutableArray *_acquiredRights;
+    NSObject<OS_dispatch_queue> *_serviceQueue;
+    NSObject<OS_dispatch_queue> *_stateQueue;
     NSMutableDictionary *_downloadDoneBlocksByKey;
     NSLock *_serviceConnectionLock;
     struct AuthorizationOpaqueRef *_authRef;
     BOOL _didAuthForUpdating;
     SUPowerAssertionManager *_assertionManager;
-    NSObject<OS_dispatch_queue> *_serviceQueue;
-    NSObject<OS_dispatch_queue> *_stateQueue;
     NSXPCConnection *_suDaemonConnection;
 }
 
 + (id)sharedDownloadServiceAgent;
 @property(readonly) NSXPCConnection *suDaemonConnection; // @synthesize suDaemonConnection=_suDaemonConnection;
-@property(readonly) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
-@property(readonly) NSObject<OS_dispatch_queue> *serviceQueue; // @synthesize serviceQueue=_serviceQueue;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)startListeningForConnectionsToService:(id)arg1;
 - (void)resetState;
@@ -47,6 +45,7 @@
 - (void)_finishDownloadAndCleanupForProduct:(id)arg1;
 - (void)downloadStatusForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)backgroundDownloadDidResumeForSessionWithIdentifier:(id)arg1;
+- (void)exitCatalogTestMode;
 - (void)setCatalogTestMode:(id)arg1 withDevKeyHeader:(id)arg2 andData:(id)arg3;
 - (void)addProductToDownload:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
 - (void)cancelDownloadForProductKeys:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;

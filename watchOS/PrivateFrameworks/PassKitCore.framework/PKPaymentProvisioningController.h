@@ -65,6 +65,7 @@
 - (_Bool)hasDebitPaymentPass;
 - (_Bool)hasCreditPaymentPass;
 - (_Bool)hasPaymentPass;
+@property(readonly, copy, nonatomic) NSArray *allCredentials;
 - (id)associatedCredentialsForDefaultBehaviour;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
@@ -79,9 +80,11 @@
 - (void)removeProvisionedPass;
 - (void)_requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)resolveProvisioningForCredential:(id)arg1;
 - (void)acceptTerms;
 - (void)_requestEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)resolveRequirementsUsingAlreadyProvisionedRemoteCredential:(id)arg1;
 - (void)resolveRequirementsUsingProvisioningMethodMetadata:(id)arg1;
 - (void)resolveRequirementsUsingProduct:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
@@ -91,8 +94,11 @@
 - (void)_queryEligibilityForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queryRequirementsForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_filterPaymentSetupProducts:(id)arg1;
+- (void)setupProductForProvisioning:(id)arg1 includePurchases:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestPurchasesForProduct:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestProvisioningMethodMetadataForProduct:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_mockBrowseBanksResponse;
+- (void)browsableBankAppsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updatePaymentSetupProductModelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_informDelegatesOfPaymentPassUpdateOnCredential:(id)arg1;
 - (void)_downloadRemoteAssetsForPaymentPass:(id)arg1 paymentCredential:(id)arg2;

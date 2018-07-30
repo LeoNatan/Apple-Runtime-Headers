@@ -17,15 +17,17 @@
     _Bool _finished;
     NSString *_strategyName;
     id <CPLBatchExtractionStrategyStorage> _storage;
+    NSString *_scopeIdentifier;
     unsigned long long _maximumRecordCountPerBatch;
     NSString *_name;
 }
 
-+ (id)overQuotaStrategyWithStorage:(id)arg1;
-+ (id)usualStrategyWithStorage:(id)arg1;
++ (id)overQuotaStrategyWithStorage:(id)arg1 coveringScopeIdentifier:(id)arg2;
++ (id)usualStrategyWithStorage:(id)arg1 coveringScopeIdentifier:(id)arg2;
 + (void)setMaximumRecordCountPerBatch:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long maximumRecordCountPerBatch; // @synthesize maximumRecordCountPerBatch=_maximumRecordCountPerBatch;
+@property(readonly, nonatomic) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
 @property(readonly, nonatomic) __weak id <CPLBatchExtractionStrategyStorage> storage; // @synthesize storage=_storage;
 @property(readonly, copy, nonatomic) NSString *strategyName; // @synthesize strategyName=_strategyName;
 - (void).cxx_destruct;
@@ -34,7 +36,8 @@
 - (void)reset;
 - (_Bool)extractBatch:(out id *)arg1 maximumResourceSize:(unsigned long long)arg2 error:(id *)arg3;
 - (void)_computeNextStep;
-- (id)initWithName:(id)arg1 storage:(id)arg2 steps:(id)arg3;
+- (_Bool)_hasChanges;
+- (id)initWithName:(id)arg1 storage:(id)arg2 scopeIdentifier:(id)arg3 steps:(id)arg4;
 
 @end
 

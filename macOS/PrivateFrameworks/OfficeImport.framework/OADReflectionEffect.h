@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADEffect.h>
 
-__attribute__((visibility("hidden")))
 @interface OADReflectionEffect : OADEffect
 {
     float mBlurRadius;

@@ -10,7 +10,6 @@
 
 @class NSMapTable, NSNumber;
 
-__attribute__((visibility("hidden")))
 @interface QLItemFetcher : NSObject <NSSecureCoding>
 {
     NSMapTable *_observersToBlocks;
@@ -27,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBeCanceled;
 - (_Bool)isLongFetchOperation;
 - (id)fetchedContent;
+- (void)prepareShareableItem:(CDUnknownBlockType)arg1;
 - (id)shareableItem;
 - (void)cancelFetch;
 - (void)fetchContentWithAllowedOutputClasses:(id)arg1 inQueue:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;

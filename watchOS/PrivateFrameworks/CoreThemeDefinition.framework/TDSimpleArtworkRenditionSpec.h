@@ -6,14 +6,18 @@
 
 #import <CoreThemeDefinition/TDRenditionSpec.h>
 
-@class NSOrderedSet, NSString, TDPNGAsset, TDThemeCompressionType;
+@class NSOrderedSet, NSString, TDImageColorHistogram, TDPNGAsset, TDThemeCompressionType;
 
 @interface TDSimpleArtworkRenditionSpec : TDRenditionSpec
 {
     struct CGRect _alignmentRect;
+    _Bool _isBackstop;
+    TDImageColorHistogram *_histogram;
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool isBackstop; // @synthesize isBackstop=_isBackstop;
+@property(retain, nonatomic) TDImageColorHistogram *histogram; // @synthesize histogram=_histogram;
 - (void)drawPackableRenditionInContext:(struct CGContext *)arg1 withDocument:(id)arg2;
 - (_Bool)updatePackingPropertiesWithDocument:(id)arg1;
 - (struct CGSize)_scaleRecognitionImageFromSize:(struct CGSize)arg1;
@@ -33,18 +37,23 @@
 @property(nonatomic) struct CGSize physicalSizeInMeters;
 @property(nonatomic) struct CGRect alignmentRect; // @dynamic alignmentRect;
 @property(nonatomic) struct CGRect primitiveAlignmentRect;
+- (void)dealloc;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *alignmentRectString; // @dynamic alignmentRectString;
 @property(nonatomic) _Bool allowsCompactCompression; // @dynamic allowsCompactCompression;
+@property(nonatomic) _Bool allowsDeepmapCompression; // @dynamic allowsDeepmapCompression;
+@property(nonatomic) _Bool allowsHevcCompression; // @dynamic allowsHevcCompression;
 @property(nonatomic) _Bool allowsMultiPassEncoding; // @dynamic allowsMultiPassEncoding;
 @property(nonatomic) _Bool allowsOptimalRowbytesPacking; // @dynamic allowsOptimalRowbytesPacking;
+@property(nonatomic) _Bool allowsPaletteImageCompression; // @dynamic allowsPaletteImageCompression;
 @property(retain, nonatomic) TDPNGAsset *asset; // @dynamic asset;
 @property(retain, nonatomic) TDThemeCompressionType *compressionType; // @dynamic compressionType;
 @property(nonatomic) _Bool isTintable; // @dynamic isTintable;
 @property(retain, nonatomic) NSString *nonAlphaImageAreaString; // @dynamic nonAlphaImageAreaString;
 @property(retain, nonatomic) NSString *originalImageSizeString; // @dynamic originalImageSizeString;
 @property(retain, nonatomic) NSString *physicalSizeInMetersString; // @dynamic physicalSizeInMetersString;
+@property(nonatomic) double postScaleFactor; // @dynamic postScaleFactor;
 @property(retain, nonatomic) NSOrderedSet *slices; // @dynamic slices;
 
 @end

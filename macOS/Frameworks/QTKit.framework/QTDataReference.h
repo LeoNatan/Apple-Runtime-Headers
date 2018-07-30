@@ -7,8 +7,9 @@
 #import "NSObject.h"
 
 #import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface QTDataReference : NSObject <NSCoding>
+@interface QTDataReference : NSObject <NSCoding, NSSecureCoding>
 {
     int _proxy;
     long long _reserved1;
@@ -16,6 +17,7 @@
     long long _reserved3;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)dataReferenceWithProxy:(int)arg1;
 + (id)dataReferenceWithReferenceToData:(id)arg1 name:(id)arg2 MIMEType:(id)arg3;
 + (id)dataReferenceWithReferenceToData:(id)arg1;

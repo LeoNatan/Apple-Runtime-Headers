@@ -8,7 +8,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface OADSubBlip : OCDDelayedMedia
 {
     int mType;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
     struct CGRect mFrame;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isLoaded;
@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (int)type;
 - (void)setData:(id)arg1;
 - (id)data;
-- (void)dealloc;
 - (id)initWithData:(id)arg1 type:(int)arg2;
 
 @end

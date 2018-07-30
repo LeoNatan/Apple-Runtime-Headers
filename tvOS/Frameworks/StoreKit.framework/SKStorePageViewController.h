@@ -19,6 +19,7 @@
     SKInvocationQueueProxy<SKUIServiceStorePageViewController> *_serviceProxy;
 }
 
+- (void).cxx_destruct;
 - (void)_requestRemoteViewController;
 - (void)_prepareToLoadWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_dismissProductPageViewController;

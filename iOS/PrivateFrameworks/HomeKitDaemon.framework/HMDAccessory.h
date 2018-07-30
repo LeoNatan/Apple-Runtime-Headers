@@ -69,10 +69,14 @@
 @property(retain, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+- (void)_handlePairingIdentityRequest:(id)arg1;
 - (_Bool)supportsMinimumUserPrivilege;
 - (id)hashRouteID;
 - (_Bool)providesHashRouteID;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly, nonatomic) _Bool supportsTargetControl;
+@property(readonly, nonatomic) _Bool supportsTargetController;
+- (void)autoConfigureTargetControllers;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSSet *messageReceiverChildren;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -84,7 +88,6 @@
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 @property(readonly) _Bool supportsUserManagement;
-- (void)pairingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_handleListPairings:(id)arg1;
 - (_Bool)shouldEnableDaemonRelaunch;
 - (void)_sendBlockedNotification:(_Bool)arg1 withError:(id)arg2 withIdentifier:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;

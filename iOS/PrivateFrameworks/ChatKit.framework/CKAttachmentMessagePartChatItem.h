@@ -19,6 +19,7 @@
 @property(readonly, copy, nonatomic) NSString *transferGUID;
 - (id)dragItemProvider;
 - (id)pasteboardItems;
+- (_Bool)shouldCacheSize;
 - (unsigned long long)balloonCorners;
 - (Class)balloonViewClass;
 - (_Bool)stickersSnapToPoint;

@@ -15,6 +15,7 @@
 + (_Bool)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (_Bool)_hasRenderLayerSubclass;
 + (id)defaultValueForKey:(id)arg1;
+@property(copy) NSArray *interpolations;
 @property(copy) NSString *type;
 @property struct CGPoint endPoint;
 @property struct CGPoint startPoint;

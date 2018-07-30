@@ -6,17 +6,18 @@
 
 #import <Mail/MFEWSRequestOperation.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class MFEWSGetFolderResponseOperation, NSArray, NSString;
 
-@interface MFEWSMoveFolderRequestOperation : MFEWSRequestOperation <NSCoding>
+@interface MFEWSMoveFolderRequestOperation : MFEWSRequestOperation <NSSecureCoding>
 {
     NSString *_destinationEWSFolderIdString;
     NSArray *_originEWSFolderIdStrings;
     MFEWSGetFolderResponseOperation *_changeKeysResponse;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) MFEWSGetFolderResponseOperation *changeKeysResponse; // @synthesize changeKeysResponse=_changeKeysResponse;
 @property(readonly, copy, nonatomic) NSArray *originEWSFolderIdStrings; // @synthesize originEWSFolderIdStrings=_originEWSFolderIdStrings;
 @property(readonly, copy, nonatomic) NSString *destinationEWSFolderIdString; // @synthesize destinationEWSFolderIdString=_destinationEWSFolderIdString;

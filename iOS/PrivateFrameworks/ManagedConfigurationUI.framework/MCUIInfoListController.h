@@ -8,6 +8,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCUIInfoListController : PSListController
 {
     id <MCUIInfoListDelegate> _delegate;

@@ -14,6 +14,7 @@
     struct CGPoint _anchorB;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint)arg3 anchorB:(struct CGPoint)arg4;
 - (id).cxx_construct;
 - (void)create;
@@ -21,6 +22,7 @@
 - (void)set_joint:(struct b2Joint *)arg1;
 - (struct b2Joint *)_joint;
 @property(nonatomic) double maxLength;
+- (BOOL)isEqualToRopeJoint:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint)arg3 anchorB:(struct CGPoint)arg4;

@@ -28,7 +28,8 @@
     NSMutableArray *_relationshipMappings;
     struct __entityMappingFlags {
         unsigned int _isInUse:1;
-        unsigned int _reservedEntityMapping:31;
+        unsigned int _changeIsConstraintOnly:1;
+        unsigned int _reservedEntityMapping:30;
     } _entityMappingFlags;
 }
 
@@ -50,6 +51,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)_setChangeIsConstraintOnly:(BOOL)arg1;
+- (BOOL)_changeIsConstraintOnly;
 - (BOOL)_hasInferredMappingNeedingValidation;
 - (id)_mappingsByName;
 - (void)_addRelationshipMapping:(id)arg1;

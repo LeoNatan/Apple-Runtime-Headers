@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_log>, NightModeControl;
 
+__attribute__((visibility("hidden")))
 @interface BLControl : NSObject
 {
     NSObject<OS_os_log> *_logHandle;
@@ -18,6 +19,7 @@
     CDUnknownBlockType _callback;
     NSMutableDictionary *_displayContainers;
     NSObject<OS_dispatch_source> *_CDInitTimer;
+    BOOL _CDReady;
     NSMutableDictionary *_colorModules;
     unsigned int _pmRootDomainService;
     unsigned int _clamshellNotification;
@@ -29,6 +31,8 @@
 - (void)startClamshellMonitoring;
 - (void)updateClamshellState:(_Bool)arg1;
 - (void)handleClamshellStateChange:(_Bool)arg1;
+- (id)copyIdentifiers;
+- (id)copyStatusInfo;
 - (id)copyDisplayInfo;
 - (id)copyDisplayList;
 - (void)callBlockWithProperty:(id)arg1 value:(id)arg2;
@@ -53,7 +57,7 @@
 - (BOOL)setInternalPropertyWithKey:(id)arg1 property:(id)arg2;
 - (id)copyPropertyWithSimpleKey:(id)arg1 client:(id)arg2;
 - (id)copyPropertyWithKey:(id)arg1 client:(id)arg2;
-- (id)copyInternalPropertyWithkey:(id)arg1;
+- (id)copyPropertyInternalForKey:(id)arg1;
 - (void)closeHidEventSystemClient;
 - (_Bool)initialiseHidEventSystemClient;
 - (struct __CFDictionary *)copyPrimaryKeyDictionary:(unsigned int)arg1 usage:(unsigned int)arg2;

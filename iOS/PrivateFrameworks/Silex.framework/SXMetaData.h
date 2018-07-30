@@ -6,7 +6,7 @@
 
 #import <Silex/SXJSONObject.h>
 
-@class NSString, SXJSONDictionary, SXTabBarAppearance;
+@class NSString, SXFeedNavigationAppearance, SXJSONDictionary, SXTabBarAppearance;
 
 @interface SXMetaData : SXJSONObject
 {
@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) SXJSONDictionary *campaignData; // @dynamic campaignData;
 @property(readonly, nonatomic) NSString *canonicalURL; // @dynamic canonicalURL;
 @property(readonly, nonatomic) NSString *documentVersion; // @dynamic documentVersion;
+@property(readonly, nonatomic) SXFeedNavigationAppearance *feedNavigationAppearance; // @dynamic feedNavigationAppearance;
 @property(readonly, nonatomic) _Bool showNewsSubscribe; // @dynamic showNewsSubscribe;
 @property(readonly, nonatomic) _Bool suppressMoreFromPublisher; // @dynamic suppressMoreFromPublisher;
 @property(readonly, nonatomic) _Bool suppressRelatedArticles; // @dynamic suppressRelatedArticles;

@@ -8,10 +8,8 @@
 
 @interface ACSHPanelGroup : ACSHPanelElement
 {
-    BOOL _isRadioType;
 }
 
-@property(nonatomic) BOOL isRadioType; // @synthesize isRadioType=_isRadioType;
 - (BOOL)containsNonNavigablePanelElementsOnly;
 - (id)spokenDescription;
 - (BOOL)canBeBrokenApart;
@@ -20,7 +18,6 @@
 - (void)resizeToRect:(struct CGRect)arg1 resizeType:(long long)arg2;
 - (void)setRectBeingManipulated:(BOOL)arg1;
 - (id)dictionaryForSaving;
-- (void)_initWithPlistDictionary:(id)arg1;
 
 @end
 

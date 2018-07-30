@@ -8,11 +8,10 @@
 
 #import "CNContactPickerDelegate.h"
 #import "NSMenuDelegate.h"
-#import "SOBuddyOutlineViewControllerDelegate.h"
 
-@class CNContactPicker, IMHeaderView, NSButton, NSImageView, NSLayoutConstraint, NSString, NSTextField, SOBuddyOutlineViewController, SOChatDetailsPopoverController, SOProgressBarViewController, SORecipientBarView, SOTokenFieldController;
+@class CNContactPicker, IMHeaderView, NSButton, NSImageView, NSLayoutConstraint, NSString, NSTextField, SOChatDetailsPopoverController, SOProgressBarViewController, SORecipientBarView, SOTokenFieldController;
 
-@interface SORecipientBarViewController : SOChatViewController <NSMenuDelegate, CNContactPickerDelegate, SOBuddyOutlineViewControllerDelegate>
+@interface SORecipientBarViewController : SOChatViewController <NSMenuDelegate, CNContactPickerDelegate>
 {
     NSButton *_layoutTestDetailsButton;
     BOOL _reloadContactPicker;
@@ -34,11 +33,9 @@
     NSLayoutConstraint *_recipientActionsViewBottomMarginConstraint;
     NSLayoutConstraint *_recipientActionsViewTrailingMarginConstraint;
     CNContactPicker *_contactPicker;
-    SOBuddyOutlineViewController *_buddyViewController;
 }
 
 @property BOOL reloadContactPicker; // @synthesize reloadContactPicker=_reloadContactPicker;
-@property(retain) SOBuddyOutlineViewController *buddyViewController; // @synthesize buddyViewController=_buddyViewController;
 @property(retain) CNContactPicker *contactPicker; // @synthesize contactPicker=_contactPicker;
 @property(retain) NSLayoutConstraint *recipientActionsViewTrailingMarginConstraint; // @synthesize recipientActionsViewTrailingMarginConstraint=_recipientActionsViewTrailingMarginConstraint;
 @property(retain) NSLayoutConstraint *recipientActionsViewBottomMarginConstraint; // @synthesize recipientActionsViewBottomMarginConstraint=_recipientActionsViewBottomMarginConstraint;
@@ -65,9 +62,7 @@
 - (void)_setupRecipientActionsView;
 - (void)viewDidLayout;
 - (void)viewDidLoad;
-- (void)contactPicker:(id)arg1 didSearchForString:(id)arg2;
 - (void)contactPicker:(id)arg1 didChooseCompatibilityContact:(id)arg2 key:(id)arg3 value:(id)arg4;
-- (void)outlineViewController:(id)arg1 selectedHandle:(id)arg2;
 - (void)showContacts:(id)arg1;
 - (void)accountLoginStatusChanged:(id)arg1;
 - (void)_tokenFieldDidChange:(id)arg1;

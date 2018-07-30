@@ -10,25 +10,24 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class ACAccount, HMAccessory, HMRemoteLoginAnisetteDataProvider, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
+@class ACAccount, HMAccessory, HMFUnfairLock, HMRemoteLoginAnisetteDataProvider, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface HMRemoteLoginHandler : NSObject <HMFMessageReceiver, NSSecureCoding, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     ACAccount *_loggedInAccount;
     NSString *_currentSessionID;
     NSUUID *_uniqueIdentifier;
     HMRemoteLoginAnisetteDataProvider *_anisetteDataProvider;
+    _HMContext *_context;
     NSUUID *_uuid;
     HMAccessory *_accessory;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    _HMContext *_context;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) HMRemoteLoginAnisetteDataProvider *anisetteDataProvider; // @synthesize anisetteDataProvider=_anisetteDataProvider;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -58,9 +57,6 @@
 @property(readonly, nonatomic) ACAccount *loggedInAccount; // @synthesize loggedInAccount=_loggedInAccount;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void)registerForMessages;
-- (id)msgDispatcher;
-- (id)delegateCaller;
-- (id)clientQueue;
 - (void)_configureWithContext:(id)arg1;
 - (id)init;
 

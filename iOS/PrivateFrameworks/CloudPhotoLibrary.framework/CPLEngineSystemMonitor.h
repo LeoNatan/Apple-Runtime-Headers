@@ -8,25 +8,48 @@
 
 #import "CPLEngineComponent.h"
 #import "CPLNetworkWatcherDelegate.h"
+#import "_CPLScheduledOverrideDelegate.h"
 
-@class CPLEngineLibrary, CPLNetworkWatcher, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class CPLEngineLibrary, CPLNetworkWatcher, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
-@interface CPLEngineSystemMonitor : NSObject <CPLNetworkWatcherDelegate, CPLEngineComponent>
+@interface CPLEngineSystemMonitor : NSObject <CPLNetworkWatcherDelegate, _CPLScheduledOverrideDelegate, CPLEngineComponent>
 {
+    _Bool _closed;
     NSURL *_volumeURL;
     NSObject<OS_dispatch_queue> *_queue;
     CPLNetworkWatcher *_watcher;
+    _Bool _modifyingBudgetOverride;
+    unsigned long long _newBudgetsToOverride;
+    unsigned long long _newBudgetsToStopOverriding;
+    NSMutableDictionary *_reasonsToOverrideSystemBudget;
+    NSMutableDictionary *_scheduledOverrides;
+    _Bool _allowOperationsBoost;
+    _Bool _allowBackgroundOperationsBoost;
     CPLEngineLibrary *_engineLibrary;
 }
 
++ (void)enumerateSystemBudgets:(unsigned long long)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (id)descriptionForBudgets:(unsigned long long)arg1;
++ (id)descriptionForBudget:(unsigned long long)arg1;
 @property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void).cxx_destruct;
-- (void)networkStateDidChangeForNetworkWatched:(id)arg1;
-@property(readonly, nonatomic) _Bool isOnCellularOrUnknown;
-@property(readonly, nonatomic) _Bool isNetworkConnected;
+- (void)networkStateDidChangeForNetworkWatcher:(id)arg1;
+- (void)scheduledOverrideDidEnd:(id)arg1;
+@property(readonly) _Bool isDataBudgetOverriden;
+- (void)stopOverridingSystemBudgetsForClient:(unsigned long long)arg1;
+- (void)startOverridingSystemBudgetsForClient:(unsigned long long)arg1;
+- (void)stopOverridingSystemBudgets:(unsigned long long)arg1 reason:(id)arg2;
+- (void)startOverridingSystemBudgets:(unsigned long long)arg1 reason:(id)arg2;
+- (void)_withSystemBudgetOverride:(CDUnknownBlockType)arg1;
+- (void)_stopOverridingBudget:(unsigned long long)arg1 reason:(id)arg2;
+- (void)_startOverridingBudget:(unsigned long long)arg1 reason:(id)arg2;
+@property(readonly) _Bool canBoostBackgroundOperations;
+@property(readonly) _Bool canBoostOperations;
+@property(readonly) _Bool isOnCellularOrUnknown;
+@property(readonly) _Bool isNetworkConnected;
 - (void)getStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) unsigned long long freeDiskSpaceSize;
-@property(readonly, nonatomic) unsigned long long diskPressureState;
+@property(readonly) unsigned long long freeDiskSpaceSize;
+@property(readonly) unsigned long long diskPressureState;
 - (id)componentName;
 - (void)closeAndDeactivate:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)openWithCompletionHandler:(CDUnknownBlockType)arg1;

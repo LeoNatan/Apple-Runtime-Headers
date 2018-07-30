@@ -8,6 +8,7 @@
 
 @class UIImage;
 
+__attribute__((visibility("hidden")))
 @interface MCMoreDetailsController : PSListController
 {
     UIImage *_iconImage;

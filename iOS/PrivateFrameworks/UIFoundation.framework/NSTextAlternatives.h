@@ -6,15 +6,18 @@
 
 #import "NSObject.h"
 
+#import "NSSecureCoding.h"
+
 @class NSArray, NSString;
 
-@interface NSTextAlternatives : NSObject
+@interface NSTextAlternatives : NSObject <NSSecureCoding>
 {
     NSString *_primaryString;
     NSArray *_alternativeStrings;
     id _internal;
 }
 
++ (_Bool)supportsSecureCoding;
 - (id)identifier;
 - (id)alternativeAtIndex:(unsigned long long)arg1;
 - (id)alternatives;

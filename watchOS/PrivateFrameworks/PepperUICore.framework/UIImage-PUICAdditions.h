@@ -8,5 +8,6 @@
 
 @interface UIImage (PUICAdditions)
 + (id)puicTintedImageNamed:(id)arg1 inBundle:(id)arg2 withTint:(id)arg3;
+- (id)puicImageWithTintColor:(id)arg1;
 @end
 

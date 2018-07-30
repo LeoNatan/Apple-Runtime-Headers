@@ -12,14 +12,14 @@
 
 @interface _MRVolumeDidChangeMessageProtobuf : PBCodable <NSCopying>
 {
-    NSString *_endpointIdentifier;
-    NSString *_outputDeviceIdentifier;
+    NSString *_endpointUID;
+    NSString *_outputDeviceUID;
     float _volume;
     CDStruct_731552e5 _has;
 }
 
-@property(retain, nonatomic) NSString *outputDeviceIdentifier; // @synthesize outputDeviceIdentifier=_outputDeviceIdentifier;
-@property(retain, nonatomic) NSString *endpointIdentifier; // @synthesize endpointIdentifier=_endpointIdentifier;
+@property(retain, nonatomic) NSString *outputDeviceUID; // @synthesize outputDeviceUID=_outputDeviceUID;
+@property(retain, nonatomic) NSString *endpointUID; // @synthesize endpointUID=_endpointUID;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -31,8 +31,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasOutputDeviceIdentifier;
-@property(readonly, nonatomic) _Bool hasEndpointIdentifier;
+@property(readonly, nonatomic) _Bool hasOutputDeviceUID;
+@property(readonly, nonatomic) _Bool hasEndpointUID;
 @property(nonatomic) _Bool hasVolume;
 
 @end

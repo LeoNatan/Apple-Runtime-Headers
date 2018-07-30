@@ -8,12 +8,14 @@
 
 @interface SKProductSubscriptionPeriod : NSObject
 {
-    unsigned int _numberOfUnits;
-    unsigned int _unit;
+    id _internal;
 }
 
+- (void).cxx_destruct;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)initWithISO8601String:(id)arg1;
+- (id)init;
 - (void)_setUnit:(unsigned int)arg1;
 - (void)_setNumberOfUnits:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int unit;

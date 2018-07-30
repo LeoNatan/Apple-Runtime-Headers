@@ -6,6 +6,7 @@
 
 #import "UITableView.h"
 
+__attribute__((visibility("hidden")))
 @interface HUCenteredCellUITableView : UITableView
 {
     struct CGRect _keyboardFrame;

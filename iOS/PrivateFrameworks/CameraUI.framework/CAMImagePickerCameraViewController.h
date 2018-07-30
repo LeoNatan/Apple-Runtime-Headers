@@ -8,12 +8,13 @@
 
 #import "CAMCameraCaptureDelegate.h"
 #import "CAMCameraConfigurationDelegate.h"
+#import "PLCropOverlayDelegate.h"
 #import "PLVideoViewDelegate.h"
 #import "UIImagePickerCameraViewController.h"
 
 @class NSDictionary, NSString, PLCropOverlay, PLPhotoTileViewController, PLVideoView, UIView;
 
-@interface CAMImagePickerCameraViewController : CAMCameraViewController <CAMCameraConfigurationDelegate, CAMCameraCaptureDelegate, PLVideoViewDelegate, UIImagePickerCameraViewController>
+@interface CAMImagePickerCameraViewController : CAMCameraViewController <CAMCameraConfigurationDelegate, CAMCameraCaptureDelegate, PLVideoViewDelegate, PLCropOverlayDelegate, UIImagePickerCameraViewController>
 {
     _Bool _editingAllowed;
     _Bool _videoEditingAllowed;

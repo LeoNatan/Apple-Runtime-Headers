@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABAbstractGroupListAction.h>
 
-__attribute__((visibility("hidden")))
 @interface ABGroupListCreateSmartGroupUIAction : ABAbstractGroupListAction
 {
 }

@@ -18,14 +18,13 @@
     _Bool _createdInProcess;
     _Bool _acceptedInProcess;
     CKUserIdentity *_userIdentity;
-    int _type;
+    int _role;
     int _acceptanceStatus;
     int _permission;
     NSString *_participantID;
     CKRecordID *_shareRecordID;
     NSString *_inviterID;
-    CKUserIdentity *_originalUserIdentity;
-    int _originalParticipantType;
+    int _originalParticipantRole;
     int _originalAcceptanceStatus;
     int _originalPermission;
     NSData *_protectionInfo;
@@ -39,8 +38,7 @@
 @property(nonatomic) _Bool createdInProcess; // @synthesize createdInProcess=_createdInProcess;
 @property(nonatomic) int originalPermission; // @synthesize originalPermission=_originalPermission;
 @property(nonatomic) int originalAcceptanceStatus; // @synthesize originalAcceptanceStatus=_originalAcceptanceStatus;
-@property(nonatomic) int originalParticipantType; // @synthesize originalParticipantType=_originalParticipantType;
-@property(retain, nonatomic) CKUserIdentity *originalUserIdentity; // @synthesize originalUserIdentity=_originalUserIdentity;
+@property(nonatomic) int originalParticipantRole; // @synthesize originalParticipantRole=_originalParticipantRole;
 @property(retain, nonatomic) NSString *inviterID; // @synthesize inviterID=_inviterID;
 @property(nonatomic) _Bool isOrgAdminUser; // @synthesize isOrgAdminUser=_isOrgAdminUser;
 @property(nonatomic) _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
@@ -48,11 +46,12 @@
 @property(retain, nonatomic) NSString *participantID; // @synthesize participantID=_participantID;
 @property(nonatomic) int permission; // @synthesize permission=_permission;
 @property(nonatomic) int acceptanceStatus; // @synthesize acceptanceStatus=_acceptanceStatus;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int role; // @synthesize role=_role;
 @property(retain, nonatomic) CKUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(nonatomic) int type;
 - (void)_stripPersonalInfo;
 - (id)debugDescription;
 - (id)description;
@@ -61,6 +60,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithUserIdentity:(id)arg1;
+- (id)_init;
 
 @end
 

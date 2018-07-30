@@ -8,6 +8,7 @@
 
 #import "CPDisposable.h"
 
+__attribute__((visibility("hidden")))
 @interface CPCluster : NSObject <CPDisposable>
 {
     const CDStruct_1ec70fb1 *profile;

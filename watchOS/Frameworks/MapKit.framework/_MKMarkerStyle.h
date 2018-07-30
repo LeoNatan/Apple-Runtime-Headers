@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     UIImage *_glyphImage;
 }
 
-+ (id)markerStyleForTraitCollection:(id)arg1 state:(int)arg2;
++ (id)markerStyleForTraitCollection:(id)arg1 state:(int)arg2 styleAttributes:(id)arg3;
 @property(readonly, nonatomic) UIImage *glyphImage; // @synthesize glyphImage=_glyphImage;
 @property(readonly, nonatomic) UIColor *glyphColor; // @synthesize glyphColor=_glyphColor;
 @property(readonly, nonatomic) float strokeWidth; // @synthesize strokeWidth=_strokeWidth;

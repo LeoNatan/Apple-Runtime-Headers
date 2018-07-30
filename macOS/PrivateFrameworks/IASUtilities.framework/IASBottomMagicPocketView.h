@@ -11,7 +11,6 @@
 }
 
 - (struct CGRect)rectForBorderLine;
-- (struct CGRect)rectForPocketShadow;
 
 @end
 

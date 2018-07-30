@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface WXStyle : NSObject
 {
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 defaults:(struct _xmlNode *)arg3 state:(id)arg4;
-+ (void)initialize;
++ (id)tableStyleOverrideTypeEnumMap;
++ (id)styleTypeEnumMap;
 
 @end
 

@@ -15,12 +15,14 @@ __attribute__((visibility("hidden")))
     BOOL _isVideoPaused;
     BOOL _isMediaStalled;
     BOOL _isVideoDegraded;
+    BOOL _isVideoSuspended;
     VideoAttributes *_remoteScreenAttributes;
     VideoAttributes *_remoteVideoAttributes;
     NSString *_localInterfaceType;
     NSString *_remoteInterfaceType;
 }
 
+@property BOOL isVideoSuspended; // @synthesize isVideoSuspended=_isVideoSuspended;
 @property(copy, nonatomic) NSString *remoteInterfaceType; // @synthesize remoteInterfaceType=_remoteInterfaceType;
 @property(copy, nonatomic) NSString *localInterfaceType; // @synthesize localInterfaceType=_localInterfaceType;
 @property(retain) VideoAttributes *remoteVideoAttributes; // @synthesize remoteVideoAttributes=_remoteVideoAttributes;

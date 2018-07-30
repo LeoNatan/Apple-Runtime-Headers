@@ -8,13 +8,13 @@
 
 @class PDSlideMaster;
 
-__attribute__((visibility("hidden")))
 @interface PDSlideLayout : PDSlideChild
 {
     int mSlideLayoutType;
     PDSlideMaster *mSlideMaster;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)doneWithContent;
 - (id)parentSlideBase;
@@ -26,11 +26,9 @@ __attribute__((visibility("hidden")))
 - (id)transition;
 - (id)background;
 - (id)defaultTheme;
-- (void)setSlideMaster:(id)arg1;
-- (id)slideMaster;
+@property __weak PDSlideMaster *slideMaster; // @synthesize slideMaster=mSlideMaster;
 - (void)setSlideLayoutType:(int)arg1;
 - (int)slideLayoutType;
-- (void)dealloc;
 - (id)initWithSlideMaster:(id)arg1;
 
 @end

@@ -12,28 +12,24 @@
 
 @interface VNDetectFaceLandmarksRequest : VNImageBasedRequest <VNFaceObservationAccepting>
 {
-    NSNumber *_cascadeStepCount;
-    BOOL _refineMouthRegion;
-    BOOL _refineLeftEyeRegion;
-    BOOL _refineRightEyeRegion;
-    BOOL _performBlinkDetection;
 }
 
-@property(nonatomic) BOOL performBlinkDetection; // @synthesize performBlinkDetection=_performBlinkDetection;
-@property(nonatomic) BOOL refineRightEyeRegion; // @synthesize refineRightEyeRegion=_refineRightEyeRegion;
-@property(nonatomic) BOOL refineLeftEyeRegion; // @synthesize refineLeftEyeRegion=_refineLeftEyeRegion;
-@property(nonatomic) BOOL refineMouthRegion; // @synthesize refineMouthRegion=_refineMouthRegion;
-@property(retain, nonatomic) NSNumber *cascadeStepCount; // @synthesize cascadeStepCount=_cascadeStepCount;
-- (void).cxx_destruct;
-- (BOOL)internalPerformInContext:(id)arg1 error:(id *)arg2;
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
++ (const CDStruct_d47b9615 *)dependentRequestCompatability;
++ (Class)configurationClass;
++ (const CDStruct_7d93034e *)revisionAvailability;
+- (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)newDefaultDetectorOptionsForRequestRevision:(unsigned long long)arg1;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (void)_determineFacesToProcessFrom:(id)arg1 outputFacesThatNeedNoProcessing:(id)arg2 outputFacesThatNeedAlignment:(id)arg3 outputFacesThatNeedLandmarks:(id)arg4;
 - (long long)dependencyProcessingOrdinality;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
-- (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
+@property(nonatomic) BOOL performBlinkDetection;
+@property(nonatomic) BOOL refineRightEyeRegion;
+@property(nonatomic) BOOL refineLeftEyeRegion;
+@property(nonatomic) BOOL refineMouthRegion;
+@property(retain, nonatomic) NSNumber *cascadeStepCount;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

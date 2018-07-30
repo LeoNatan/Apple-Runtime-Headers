@@ -25,7 +25,6 @@
 @property(copy, nonatomic) NSString *fmipToken; // @synthesize fmipToken=_fmipToken;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool needsToVerifyTerms;
-- (void)lookupEmailAddresses:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)renewCredentialsForAppleIDWithHandler:(CDUnknownBlockType)arg1;
 - (void)signInWithHandler:(CDUnknownBlockType)arg1;
 - (void)setupChildMailAccountAndEnable:(_Bool)arg1 withEmail:(id)arg2;

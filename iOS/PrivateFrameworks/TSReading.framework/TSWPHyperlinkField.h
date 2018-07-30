@@ -39,6 +39,7 @@
 - (id)copyWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 url:(id)arg2;
 - (void)dealloc;
+- (id)canonicalRepresentationURL;
 @property(readonly, nonatomic) NSString *displayText;
 
 @end

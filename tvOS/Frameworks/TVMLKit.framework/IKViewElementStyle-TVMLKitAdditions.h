@@ -6,7 +6,10 @@
 
 #import "IKViewElementStyle.h"
 
+@class TVAppStyle;
+
 @interface IKViewElementStyle (TVMLKitAdditions)
+- (long long)tv_indexDisplay;
 - (_Bool)tv_acceptsFocus;
 - (id)tv_overflow;
 - (id)tv_progressStyle;
@@ -47,6 +50,8 @@
 - (id)tv_highlightColor;
 - (id)tv_color;
 - (id)tv_borderColor;
+- (id)tv_backgroundHighlightColor;
+- (id)tv_backgroundHighlightStyle;
 - (id)tv_backgroundColor;
 - (double)tv_width;
 - (double)tv_minimumScaleFactor;
@@ -63,6 +68,8 @@
 - (id)tv_fontFamily;
 - (struct CGAffineTransform)tv_focusTransform;
 - (struct CGAffineTransform)tv_transform;
+- (id)tv_valueForStyle:(id)arg1;
+@property(retain, nonatomic, setter=tv_setStyleMetrics:) TVAppStyle *tv_styleMetrics;
 - (id)tv_associatedViewElementStyle;
 @end
 

@@ -7,6 +7,8 @@
 #import "NTPBTodayResultOperationFetchInfo.h"
 
 @interface NTPBTodayResultOperationFetchInfo (NTAdditions)
+- (void)setUserSegmentationTreatmentIDs:(id)arg1;
+- (void)setUserSegmentationSegmentSetIDs:(id)arg1;
 - (id)locale;
 - (void)setLocale:(id)arg1;
 - (void)setCTRByPersonalizationFeatureID:(id)arg1;

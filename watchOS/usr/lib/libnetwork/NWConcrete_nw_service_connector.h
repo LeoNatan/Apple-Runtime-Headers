@@ -10,27 +10,28 @@
 
 @class NSObject<OS_dispatch_queue>, NSObject<OS_nw_dictionary>, NSObject<OS_nw_listener>, NSObject<OS_nw_parameters>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_service_connector : NSObject <OS_nw_service_connector>
 {
     NSObject<OS_nw_listener> *listener;
     unsigned int state;
     NSObject<OS_nw_parameters> *clientParameters;
     NSObject<OS_dispatch_queue> *serviceConnectorQueue;
-    unsigned long long serviceConnectorSequenceNumber;
+    unsigned long long uniqueID;
     unsigned short localPortHBO;
     CDUnknownBlockType serviceAvailableBlock;
-    NSObject<OS_nw_dictionary> *pendingConnectionRequests;
+    NSObject<OS_nw_dictionary> *pendingIncomingRequests;
     NSObject<OS_nw_dictionary> *activeConnections;
-    NSObject<OS_nw_dictionary> *activeConnectionRequests;
+    NSObject<OS_nw_dictionary> *activeOutgoingRequests;
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

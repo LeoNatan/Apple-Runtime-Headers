@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSToolbarItemViewerAccessibilityHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarProxyItemViewerAccessibilityHelper : _NSToolbarItemViewerAccessibilityHelper
 {
     id _realElement;

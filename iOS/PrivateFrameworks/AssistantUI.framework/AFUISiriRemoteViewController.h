@@ -24,6 +24,8 @@
 @property(nonatomic) __weak id <AFUISiriRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriRemoteViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)setWaitingForTelephonyToStart:(_Bool)arg1;
+- (void)setRunningPPT:(_Bool)arg1 withTestName:(id)arg2 testOptions:(id)arg3;
 - (void)applicationDidBecomeActive;
 - (void)applicationWillEnterForeground;
 - (void)applicationWillResignActive;
@@ -33,7 +35,6 @@
 - (void)didReceiveHelpAction;
 - (void)setSpeechSynthesis:(id)arg1;
 - (void)setSession:(id)arg1;
-- (void)userInteractionDidOccur;
 - (void)setStatusViewHeight:(double)arg1;
 - (void)setStatusBarFrame:(struct CGRect)arg1;
 - (void)siriKeyboardViewDidChange:(CDStruct_a82615c4 *)arg1;
@@ -44,6 +45,7 @@
 - (void)siriWillShowPasscodeUnlock;
 - (void)siriDidDeactivate;
 - (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2 lockState:(unsigned long long)arg3;
+- (void)preloadPluginBundles;
 - (void)preloadPresentationBundleWithIdentifier:(id)arg1;
 - (void)setRequestOptions:(id)arg1;
 - (void)siriDidActivateFromSource:(long long)arg1;
@@ -61,6 +63,7 @@
 - (void)serviceDidPresentUserInterface;
 - (void)serviceDidExitUITrackingMode;
 - (void)serviceDidEnterUITrackingMode;
+- (void)serviceFailTest:(id)arg1 withReason:(id)arg2;
 - (void)serviceDidFinishTest:(id)arg1;
 - (void)serviceWillStartTest:(id)arg1;
 - (void)serviceDidEndTaptoEdit;
@@ -68,8 +71,6 @@
 - (void)serviceDidResetTextInput;
 - (void)serviceDidRequestKeyboard:(_Bool)arg1 minimized:(_Bool)arg2;
 - (void)serviceDidRequestKeyboard:(_Bool)arg1;
-- (void)serviceDidDismissBugReporter;
-- (void)serviceDidPresentBugReporter;
 - (void)pulseHelpButton;
 - (void)handlePasscodeUnlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getScreenshotWithReplyHandler:(CDUnknownBlockType)arg1;

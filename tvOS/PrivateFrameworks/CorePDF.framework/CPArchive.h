@@ -10,6 +10,7 @@
 
 @class NSData, NSMutableString;
 
+__attribute__((visibility("hidden")))
 @interface CPArchive : NSObject <CPDisposable>
 {
     struct __CFArray *selections;

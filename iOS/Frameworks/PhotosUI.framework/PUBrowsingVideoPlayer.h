@@ -11,7 +11,6 @@
 
 @class AVPlayerItem, ISWrappedAVAudioSession, ISWrappedAVPlayer, NSDate, NSError, NSHashTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSTimer, PUBrowsingVideoPlayerChange, PUMediaProvider, PXUpdater;
 
-__attribute__((visibility("hidden")))
 @interface PUBrowsingVideoPlayer : PUViewModel <ISChangeObserver, ISWrappedAVPlayerDelegate>
 {
     PXUpdater *_updater;

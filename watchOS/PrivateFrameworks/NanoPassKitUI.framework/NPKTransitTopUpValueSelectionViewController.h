@@ -8,19 +8,21 @@
 
 #import "NPKValueSelectionViewDelegate.h"
 
-@class NPKPassDescription, NPKTransitTopUpValueSelectionView, NSString, PKPaymentPassAction;
+@class NPKTransitTopUpValueSelectionView, NSString, PKPass, PKPaymentPassAction, PKTransitPassProperties;
 
 @interface NPKTransitTopUpValueSelectionViewController : UIViewController <NPKValueSelectionViewDelegate>
 {
     _Bool _shouldDisableInteraction;
     PKPaymentPassAction *_action;
     id <NPKTransitTopUpValueSelectionViewControllerDelegate> _delegate;
-    NPKPassDescription *_passDescription;
+    PKPass *_pass;
+    PKTransitPassProperties *_transitProperties;
     NPKTransitTopUpValueSelectionView *_valueSelectionView;
 }
 
 @property(retain, nonatomic) NPKTransitTopUpValueSelectionView *valueSelectionView; // @synthesize valueSelectionView=_valueSelectionView;
-@property(retain, nonatomic) NPKPassDescription *passDescription; // @synthesize passDescription=_passDescription;
+@property(retain, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
+@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) _Bool shouldDisableInteraction; // @synthesize shouldDisableInteraction=_shouldDisableInteraction;
 @property(nonatomic) __weak id <NPKTransitTopUpValueSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentPassAction *action; // @synthesize action=_action;
@@ -29,7 +31,7 @@
 - (void)valueSelectionView:(id)arg1 didAcceptValue:(id)arg2;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
-- (id)initWithPassDescription:(id)arg1 action:(id)arg2;
+- (id)initWithPass:(id)arg1 transitProperties:(id)arg2 action:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

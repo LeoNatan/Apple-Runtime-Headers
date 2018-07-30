@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) PUICSwitch *uiSwitch; // @synthesize uiSwitch=_uiSwitch;
 - (void).cxx_destruct;
+- (void)setCellEnabled:(_Bool)arg1;
 - (void)specifierValueChanged;
 - (id)cellAccesoryForSpecifier:(id)arg1 controller:(id)arg2;
 

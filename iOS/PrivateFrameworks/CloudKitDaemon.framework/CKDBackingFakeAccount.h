@@ -17,12 +17,16 @@ __attribute__((visibility("hidden")))
     NSString *_primaryEmail;
     NSString *_password;
     NSDictionary *_accountBag;
+    NSDictionary *_propertyOverrides;
     NSObject<OS_dispatch_queue> *_fakeAccountInfoQueue;
+    NSDictionary *_overridesByDataclass;
 }
 
-+ (id)fakeAccountWithEmail:(id)arg1 password:(id)arg2;
++ (id)fakeAccountWithEmail:(id)arg1 password:(id)arg2 propertyOverrides:(id)arg3 overridesByDataclass:(id)arg4;
 + (Class)_platformBackingAccountClass;
+@property(retain, nonatomic) NSDictionary *overridesByDataclass; // @synthesize overridesByDataclass=_overridesByDataclass;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *fakeAccountInfoQueue; // @synthesize fakeAccountInfoQueue=_fakeAccountInfoQueue;
+@property(retain, nonatomic) NSDictionary *propertyOverrides; // @synthesize propertyOverrides=_propertyOverrides;
 @property(retain, nonatomic) NSDictionary *accountBag; // @synthesize accountBag=_accountBag;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *primaryEmail; // @synthesize primaryEmail=_primaryEmail;
@@ -40,8 +44,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)canAuthWithCloudKit;
 - (id)iCloudAuthTokenWithError:(id *)arg1;
 - (id)cloudKitAuthTokenWithError:(id *)arg1;
+- (id)displayedHostname;
 - (id)username;
 - (id)ckAccount;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (void)dealloc;
 - (id)_initFakeAccountWithEmail:(id)arg1 password:(id)arg2;
 - (void)_checkAndLogIfAccountError;

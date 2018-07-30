@@ -6,12 +6,18 @@
 
 #import <Vision/VNTracker.h>
 
+@class NSNumber;
+
 __attribute__((visibility("hidden")))
 @interface VNFaceTracker : VNTracker
 {
+    NSNumber *_faceRollFromInputObservation;
+    NSNumber *_faceYawFromInputObservation;
 }
 
 + (id)faceClassifierBoostedPixelDifference;
++ (Class)trackerObservationClass;
+- (void).cxx_destruct;
 - (id)_runFaceClassifierOnBBoxAlignmentResults:(id)arg1 trackingResults:(id)arg2 bBoxAlignmentResults:(id)arg3 error:(id *)arg4;
 - (id)_runBBoxAlignmentOnTrackingResults:(id)arg1 trackerResults:(id)arg2 error:(id *)arg3;
 - (id)_postProcessTrackingResults:(id)arg1 trackerResults:(id)arg2 error:(id *)arg3;

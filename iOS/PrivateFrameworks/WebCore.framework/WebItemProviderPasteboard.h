@@ -15,7 +15,7 @@
     struct RetainPtr<NSArray> _itemProviders;
     struct RetainPtr<NSArray> _supportedTypeIdentifiers;
     struct RetainPtr<WebItemProviderRegistrationInfoList> _stagedRegistrationInfoList;
-    struct Vector<WTF::RetainPtr<WebItemProviderLoadResult>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _loadResults;
+    struct Vector<WTF::RetainPtr<WebItemProviderLoadResult>, 0, WTF::CrashOnOverflow, 16> _loadResults;
     long long _numberOfItems;
     long long _changeCount;
     long long _pendingOperationCount;

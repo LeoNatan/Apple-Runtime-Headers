@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVFormatReaderInspector.h>
 
+__attribute__((visibility("hidden")))
 @interface AVCompositionFormatReaderInspector : AVFormatReaderInspector
 {
 }

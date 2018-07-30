@@ -7,6 +7,7 @@
 #import "UIViewController.h"
 
 @interface UIViewController (RCAdditions)
+- (void)rc_configurePopoverControllerWithSource:(id)arg1;
 - (void)rc_applicationWillEnterForeground;
 - (void)rc_applicationDidEnterBackground;
 - (_Bool)rc_shouldAutoDisableUpdatesWhenInBackground;

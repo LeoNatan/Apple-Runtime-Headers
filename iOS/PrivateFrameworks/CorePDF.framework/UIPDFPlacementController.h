@@ -8,6 +8,7 @@
 
 @class NSMutableArray, UIPDFPageView;
 
+__attribute__((visibility("hidden")))
 @interface UIPDFPlacementController : NSObject
 {
     NSMutableArray *_popups;

@@ -16,7 +16,7 @@
 - (void)removePersistable:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)recordEditsToPersistable:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)imageWithPreviouslyRegisteredIdentifier:(id)arg1 withAccessBlock:(CDUnknownBlockType)arg2;
-- (void)registerImageForPersistable:(id)arg1 withRegistrationBlock:(CDUnknownBlockType)arg2;
+- (void)registerImageForPersistable:(id)arg1 options:(id)arg2 withRegistrationBlock:(CDUnknownBlockType)arg3;
 - (void)resetBackend;
 - (id)backend;
 - (void)setBackend:(id)arg1;

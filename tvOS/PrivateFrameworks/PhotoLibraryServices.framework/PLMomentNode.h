@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
+#import "PLRegionsClusteringItem.h"
+
 @class CLLocation, NSDate, NSNumber, NSObject<NSCopying>, NSString, PLMomentCluster;
 
-@interface PLMomentNode : NSObject
+@interface PLMomentNode : NSObject <PLRegionsClusteringItem>
 {
     _Bool _marked;
     _Bool _visited;
@@ -30,12 +32,19 @@
 @property(readonly, retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=__creationDate;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=__location;
 @property(readonly, retain, nonatomic) NSObject<NSCopying> *objectID; // @synthesize objectID=__objectID;
+@property(readonly, nonatomic) NSDate *pl_date; // @dynamic pl_date;
+@property(readonly, nonatomic) CLLocation *pl_location; // @dynamic pl_location;
 - (_Bool)isTagged;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithPartialFetchDictionary:(id)arg1;
 - (id)initWithManagedAsset:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

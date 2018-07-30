@@ -16,6 +16,9 @@
 + (id)tsu_stringByIndentingString:(id)arg1 times:(unsigned long long)arg2;
 + (id)tsu_stringWithFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
 + (id)tsu_stringWithUUID;
+- (id)tsu_stringWithNormalizedQuotationMarks;
+- (id)tsu_stringWithNormalizedHyphens;
+- (id)tsu_stringWithNormalizedHyphensAndQuotationMarks;
 - (BOOL)tsu_isEqualToString:(id)arg1;
 - (id)tsu_middleTruncateToLength:(unsigned long long)arg1;
 - (id)tsu_stringWithoutAttachmentCharacters;

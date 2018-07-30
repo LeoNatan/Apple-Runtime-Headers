@@ -6,13 +6,18 @@
 
 #import "NSCollectionViewItem.h"
 
+@class NSView<TCollectionViewItemViewProtocol>;
+
 __attribute__((visibility("hidden")))
 @interface FI_TCollectionViewItem : NSCollectionViewItem
 {
 }
 
+- (struct TFENode)node;
+- (void)setUseActiveAppearance:(_Bool)arg1;
 - (BOOL)_viewControllerSupports10_10Features;
 - (id)viewNoLoad;
+@property(retain) NSView<TCollectionViewItemViewProtocol> *view;
 - (void)aboutToTearDown;
 - (void)dealloc;
 

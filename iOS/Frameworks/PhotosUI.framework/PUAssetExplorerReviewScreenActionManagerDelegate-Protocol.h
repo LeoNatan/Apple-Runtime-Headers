@@ -5,18 +5,21 @@
 //
 
 #import "NSObject.h"
+#import "PUFunEffectsViewControllerObserver.h"
 #import "PUPhotoEditViewControllerSessionDelegate.h"
 #import "PUPhotoMarkupViewControllerObserver.h"
 #import "PUVideoEditViewControllerSessionDelegate.h"
 
-@class PUAssetExplorerReviewScreenActionManager;
+@class PUAssetExplorerReviewScreenActionManager, PUReviewScreenBarsModel;
 
-@protocol PUAssetExplorerReviewScreenActionManagerDelegate <NSObject, PUPhotoEditViewControllerSessionDelegate, PUVideoEditViewControllerSessionDelegate, PUPhotoMarkupViewControllerObserver>
+@protocol PUAssetExplorerReviewScreenActionManagerDelegate <NSObject, PUPhotoEditViewControllerSessionDelegate, PUVideoEditViewControllerSessionDelegate, PUPhotoMarkupViewControllerObserver, PUFunEffectsViewControllerObserver>
+- (void)assetExplorerReviewScreenActionManagerDidPressSend:(PUAssetExplorerReviewScreenActionManager *)arg1;
 - (void)assetExplorerReviewScreenActionManager:(PUAssetExplorerReviewScreenActionManager *)arg1 didToggleLivePhoto:(id <PUDisplayAsset>)arg2;
 - (void)assetExplorerReviewScreenActionManagerDidPressRetake:(PUAssetExplorerReviewScreenActionManager *)arg1;
 - (void)assetExplorerReviewScreenActionManagerDidPressDone:(PUAssetExplorerReviewScreenActionManager *)arg1;
 - (void)assetExplorerReviewScreenActionManagerDidPressCancel:(PUAssetExplorerReviewScreenActionManager *)arg1;
 - (void)assetExplorerReviewScreenActionManager:(PUAssetExplorerReviewScreenActionManager *)arg1 didPressSelectForAsset:(id <PUDisplayAsset>)arg2;
+- (PUReviewScreenBarsModel *)reviewScreenBarsModelForAssetExplorerReviewScreenActionManager:(PUAssetExplorerReviewScreenActionManager *)arg1;
 - (_Bool)assetExplorerReviewScreenActionManager:(PUAssetExplorerReviewScreenActionManager *)arg1 shouldEnableActionType:(unsigned long long)arg2 onAsset:(id <PUDisplayAsset>)arg3 inAssetCollection:(id <PUDisplayAssetCollection>)arg4;
 - (_Bool)assetExplorerReviewScreenActionManager:(PUAssetExplorerReviewScreenActionManager *)arg1 canPerformActionType:(unsigned long long)arg2 onAsset:(id <PUDisplayAsset>)arg3 inAssetCollection:(id <PUDisplayAssetCollection>)arg4;
 @end

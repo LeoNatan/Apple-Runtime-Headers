@@ -6,35 +6,24 @@
 
 #import <FinderKit/FI_TUpdateLayerView.h>
 
-@class NSColor;
-
 __attribute__((visibility("hidden")))
 @interface FI_TInlineProgressView : FI_TUpdateLayerView
 {
-    _Bool _selected;
     _Bool _dimmed;
-    _Bool _active;
-    long long _backgroundStyle;
-    struct TNSRef<FI_TPieChartProgressLayer *, void> _pieChartLayer;
-    double _progress;
-    struct TNSRef<NSColor *, void> _activeColor;
-    struct TNSRef<NSColor *, void> _selectedColor;
+    struct TNSRef<FI_TPieChartProgressLayer, void> _pieChartLayer;
+    struct TNSRef<NSView, void> _templateImageView;
 }
 
-@property(nonatomic) double progress; // @synthesize progress=_progress;
-@property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isProgressAnimationCompleted;
 - (void)setProgressDidCompleteHandler:(const function_b1fce659 *)arg1;
-- (void)setSelected:(_Bool)arg1;
-@property(retain, nonatomic) NSColor *activeColor; // @dynamic activeColor;
-@property(retain, nonatomic) NSColor *selectedColor; // @dynamic selectedColor;
-- (void)setBackgroundStyle:(long long)arg1;
+@property(nonatomic) double progress; // @dynamic progress;
 - (void)updateLayer;
 - (void)viewDidChangeBackingProperties;
 - (struct CGSize)intrinsicContentSize;
+- (void)layout;
 - (void)initCommon;
 
 @end

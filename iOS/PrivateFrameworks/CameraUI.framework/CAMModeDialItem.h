@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class CAShapeLayer, NSAttributedString, NSString, UIFont;
+@class CAShapeLayer, NSString, UIFont;
 
 @interface CAMModeDialItem : UIView
 {
@@ -25,11 +25,11 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 - (void).cxx_destruct;
-- (struct CGPath *)_pathForAttributedString:(id)arg1;
+- (struct CGPath *)_pathForAttributedString:(struct __CFAttributedString *)arg1;
 - (void)_updateScalableTextPathFromAttributedTitle;
 - (struct CGColor *)_textColor;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
-@property(readonly, nonatomic) NSAttributedString *_attributedTitle;
+@property(readonly, nonatomic) struct __CFAttributedString *_attributedTitle;
 - (void)tintColorDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

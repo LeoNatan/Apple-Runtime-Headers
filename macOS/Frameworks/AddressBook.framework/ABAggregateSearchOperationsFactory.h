@@ -10,7 +10,6 @@
 
 @class NSArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABAggregateSearchOperationsFactory : NSObject <ABSearchOperationsFactory>
 {
     NSArray *_searchOperationsFactories;

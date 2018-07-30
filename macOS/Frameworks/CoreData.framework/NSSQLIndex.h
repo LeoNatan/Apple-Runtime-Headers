@@ -18,8 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_updateStrings;
 }
 
-@property(readonly, retain) NSSQLEntity *sqlEntity; // @synthesize sqlEntity=_sqlEntity;
-@property(readonly, retain) NSFetchIndexDescription *indexDescription; // @synthesize indexDescription=_indexDescription;
+@property(retain, nonatomic) NSMutableArray *updateTableStatements; // @synthesize updateTableStatements=_updateStrings;
+@property(retain, nonatomic) NSMutableArray *dropTableStatements; // @synthesize dropTableStatements=_dropStrings;
+@property(retain, nonatomic) NSMutableArray *createTableStatements; // @synthesize createTableStatements=_createStrings;
+@property(readonly, retain, nonatomic) NSSQLEntity *sqlEntity; // @synthesize sqlEntity=_sqlEntity;
+@property(readonly, retain, nonatomic) NSFetchIndexDescription *indexDescription; // @synthesize indexDescription=_indexDescription;
+- (BOOL)isUnique;
 - (id)bulkUpdateStatementsForStore:(id)arg1;
 - (id)dropStatementsForStore:(id)arg1;
 - (id)createStatementsForStore:(id)arg1;

@@ -10,13 +10,13 @@
 
 @class NSString, NSValue;
 
-__attribute__((visibility("hidden")))
 @interface PDBuildMapKey : NSObject <NSCopying>
 {
     NSValue *mDrawableValue;
     NSString *mGroupId;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)groupId;
 - (void)setDrawable:(id)arg1;
 - (id)drawable;
-- (void)dealloc;
 - (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
 - (id)init;
 

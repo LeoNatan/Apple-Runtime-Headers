@@ -6,6 +6,7 @@
 
 #import <AppKit/NSDeviceWhiteColor.h>
 
+__attribute__((visibility("hidden")))
 @interface NSCachedDeviceWhiteColor : NSDeviceWhiteColor
 {
 }

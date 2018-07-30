@@ -15,8 +15,13 @@
     NSString *_appIdentifier;
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
+    BOOL _appDarkMode;
+    struct {
+        unsigned int appDarkMode:1;
+    } _has;
 }
 
+@property(nonatomic) BOOL appDarkMode; // @synthesize appDarkMode=_appDarkMode;
 @property(retain, nonatomic) NSString *appMinorVersion; // @synthesize appMinorVersion=_appMinorVersion;
 @property(retain, nonatomic) NSString *appMajorVersion; // @synthesize appMajorVersion=_appMajorVersion;
 @property(retain, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
@@ -30,6 +35,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasAppDarkMode;
 @property(readonly, nonatomic) BOOL hasAppMinorVersion;
 @property(readonly, nonatomic) BOOL hasAppMajorVersion;
 @property(readonly, nonatomic) BOOL hasAppIdentifier;

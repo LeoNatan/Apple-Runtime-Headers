@@ -9,14 +9,18 @@
 __attribute__((visibility("hidden")))
 @interface BUCocoaWindowController : NSObject
 {
-    double _MaxX;
-    double _MinY;
+    double _maxX;
+    double _minY;
+    struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationCenterObservers;
 }
 
-- (void)windowDidEndLiveResize:(id)arg1;
-- (void)windowWillStartLiveResize:(id)arg1;
+@property(nonatomic) double minY; // @synthesize minY=_minY;
+@property(nonatomic) double maxX; // @synthesize maxX=_maxX;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (struct CGRect)windowWillChangeFrame:(id)arg1 toFrame:(struct CGRect)arg2;
 - (BOOL)interceptsWindowClose:(id)arg1;
+- (id)initWithWindow:(id)arg1;
 
 @end
 

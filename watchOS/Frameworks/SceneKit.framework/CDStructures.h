@@ -22,18 +22,9 @@ struct AVAudio3DPoint {
 
 struct C3DColor4 {
     union {
-        float rgba[4];
-        struct {
-            float r;
-            float g;
-            float b;
-            float a;
-        } ;
-    } ;
-};
-
-struct C3DPlane {
-    CDUnion_915c2b1f _field1;
+        float _field1[4];
+        CDStruct_cdc14ebe _field2;
+    } _field1;
 };
 
 struct CGPoint {
@@ -360,73 +351,13 @@ struct SCNVector4 {
     float w;
 };
 
+struct SkelNodesMap {
+    struct map<MDLSkeleton *, (anonymous namespace)::SkelNodes, std::__1::less<MDLSkeleton *>, std::__1::allocator<std::__1::pair<MDLSkeleton *const, (anonymous namespace)::SkelNodes>>> _field1;
+};
+
 struct _NSRange {
     unsigned int location;
     unsigned int length;
-};
-
-struct __C3DEngineStats {
-    unsigned int verticesProcessed;
-    unsigned int primitivesProcessed;
-    unsigned int drawCount;
-    unsigned int drawStep;
-    unsigned int frameCount;
-    unsigned int fboSwitches;
-    unsigned int vboSwitches;
-    unsigned int attSwitches;
-    unsigned int attEnabling;
-    unsigned int iboSwitches;
-    unsigned int vaoSwitches;
-    unsigned int prgSwitches;
-    unsigned int texSwitches;
-    unsigned int rssSwitches;
-    unsigned int getCount;
-    unsigned int uniformFloatSent;
-    unsigned int uniformIntSent;
-    unsigned int uniformVector2Sent;
-    unsigned int uniformVector3Sent;
-    unsigned int uniformVector4Sent;
-    unsigned int uniformMatrix4Sent;
-    unsigned int vboUploaded;
-    unsigned int iboUploaded;
-    unsigned int texUploaded;
-    double cpuTime;
-    double cstrTime;
-    double phyTime;
-    double prtTime;
-    double animTime;
-    double skinTime;
-    double mrphTime;
-    double rendTime;
-    double twoDTime;
-    double delegateTime;
-    double glFlushTime;
-    double waitDisplayLinkTime;
-    double drawableWaitTime;
-    double lastDisplayLinkTime;
-    unsigned int prgCount;
-    unsigned int texCount;
-    unsigned int fboCount;
-    unsigned int vboCount;
-    unsigned int rboCount;
-    unsigned int iboCount;
-    unsigned int cboCount;
-    unsigned int vaoCount;
-    unsigned int fboMemory;
-    unsigned int rboMemory;
-    unsigned int vboMemory;
-    unsigned int iboMemory;
-    unsigned int cboMemory;
-    unsigned int texMemory;
-    unsigned int backBufferMemory;
-    unsigned int depthBuffersMemory;
-    double frmAvgTime;
-    double frmMinTime;
-    double frmMaxTime;
-    double frameTimeHistory[60];
-    unsigned int frameTimeCurrentIndex;
-    double startTime;
-    double lastFrameTime;
 };
 
 struct __C3DFramebuffer;
@@ -1069,6 +1000,18 @@ struct c3dContactCallback;
 
 struct c3dPhysicsField;
 
+struct map<MDLSkeleton *, (anonymous namespace)::SkelNodes, std::__1::less<MDLSkeleton *>, std::__1::allocator<std::__1::pair<MDLSkeleton *const, (anonymous namespace)::SkelNodes>>> {
+    struct __tree<std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, std::__1::__map_value_compare<MDLSkeleton *, std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, std::__1::less<MDLSkeleton *>, true>, std::__1::allocator<std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<MDLSkeleton *, std::__1::__value_type<MDLSkeleton *, (anonymous namespace)::SkelNodes>, std::__1::less<MDLSkeleton *>, true>> {
+            unsigned long _field1;
+        } _field3;
+    } _field1;
+};
+
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
@@ -1127,12 +1070,20 @@ typedef struct {
     unsigned int viewportDependant:1;
     unsigned int renderToIOSurface:1;
     unsigned int mipmapped:1;
-} CDStruct_dcfba391;
+    unsigned int textureCube:1;
+} CDStruct_4b6c0b72;
 
 typedef struct {
-    unsigned short _field1;
-    unsigned short _field2;
-} CDStruct_d65e47c4;
+    unsigned int supportsUpdate:1;
+    unsigned int supportsDidApplyAnimations:1;
+    unsigned int supportsDidSimulatePhysics:1;
+    unsigned int supportsDidApplyConstraints:1;
+    unsigned int supportsWillRender:1;
+    unsigned int supportsDidRender:1;
+    unsigned int supportsInputTime:1;
+    unsigned int supportsReadSubdivCache:1;
+    unsigned int supportsWriteSubdivCache:1;
+} CDStruct_f76d274b;
 
 typedef struct {
     char _field1;
@@ -1151,9 +1102,11 @@ typedef struct {
 } CDStruct_962da47d;
 
 typedef struct {
-    int _field1;
-    int _field2;
-} CDStruct_1ef3fb1f;
+    float x;
+    float y;
+    float z;
+    float radius;
+} CDStruct_cdc14ebe;
 
 typedef struct {
     long long _field1;
@@ -1164,22 +1117,13 @@ typedef struct {
 
 typedef struct {
     id _field1;
-    struct CGPoint _field2;
+    id _field2;
     struct CGPoint _field3;
-    struct SCNVector3 _field4;
+    struct CGPoint _field4;
     struct SCNVector3 _field5;
-    float _field6;
-} CDStruct_883c2785;
-
-typedef struct {
-    struct __C3DEnginePipeline *_field1;
-    struct __C3DEngineContext *_field2;
-    struct __C3DFXPassInstance *_field3;
-    long *_field4;
-    struct __C3DNode *_field5;
-    _Bool _field6;
-    _Bool _field7;
-} CDStruct_4ac9c3fe;
+    struct SCNVector3 _field6;
+    float _field7;
+} CDStruct_795afb14;
 
 typedef struct {
     struct __C3DFXProgram *weakProgram;
@@ -1211,6 +1155,10 @@ typedef struct {
     NSMutableSet *_usedMeshElements;
     NSMutableSet *_freeMeshElements;
 } CDStruct_f9370f7d;
+
+typedef struct {
+    CDUnion_915c2b1f _field1[6];
+} CDStruct_7841dd09;
 
 typedef struct {
     struct {
@@ -1249,11 +1197,6 @@ typedef union {
 } CDUnion_15924c16;
 
 typedef union {
-    struct {
-        float x;
-        float y;
-        float z;
-        float radius;
-    } vector__center__;
+    CDStruct_cdc14ebe vector__center__;
 } CDUnion_915c2b1f;
 

@@ -6,24 +6,34 @@
 
 #import "UIView.h"
 
-@class NSLayoutConstraint, UIImageView, UILabel;
+@class NSLayoutConstraint, NSMutableArray, NSString, UIImageView, UILabel;
 
 @interface PKContinuityPaymentCardSummaryView : UIView
 {
     UIImageView *_alertView;
+    UILabel *_descriptionView;
+    UILabel *_subtitleView;
     NSLayoutConstraint *_textToTrailingConstraint;
     NSLayoutConstraint *_textToAlertConstraint;
+    NSMutableArray *_singleLineConstraints;
+    NSMutableArray *_subtitleConstraints;
+    _Bool _subtitleDescribesError;
     _Bool _showsAlert;
-    UILabel *_valueView;
+    NSString *_cardDescription;
+    NSString *_subtitle;
     UIImageView *_thumbnailView;
 }
 
 @property(nonatomic) _Bool showsAlert; // @synthesize showsAlert=_showsAlert;
 @property(readonly, nonatomic) UIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
-@property(readonly, nonatomic) UILabel *valueView; // @synthesize valueView=_valueView;
+@property(nonatomic) _Bool subtitleDescribesError; // @synthesize subtitleDescribesError=_subtitleDescribesError;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(copy, nonatomic) NSString *cardDescription; // @synthesize cardDescription=_cardDescription;
 - (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_prepareImageAndValueConstraints;
+- (id)_formatTextForString:(id)arg1 alerting:(_Bool)arg2;
+- (void)_createLabels;
 - (void)_createSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

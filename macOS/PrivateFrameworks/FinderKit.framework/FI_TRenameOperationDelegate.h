@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
     struct TString _newName;
     struct TriStateBool _extensionHiddenState;
+    struct TriStateBool _changeExtensionResponse;
+    _Bool _isBulkRename;
 }
 
 + (_Bool)isReservedName:(const struct TString *)arg1 syntaxHint:(const struct NodeNameSyntaxHint *)arg2;
@@ -20,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (int)configureNewName:(struct TString *)arg1 forNode:(const struct TFENode *)arg2 isDisplayName:(_Bool)arg3 allowInteraction:(_Bool)arg4;
 - (int)asyncNodeOperation:(id)arg1 subOperationCompleted:(unsigned int)arg2 targetNode:(const struct TFENode *)arg3;
 - (int)asyncNodeOperation:(id)arg1 errorNotification:(const struct TOperationMonitor *)arg2 error:(const struct OperationErrorRecord *)arg3 reply:(struct NodeEventReply *)arg4;
+- (void)setIsBulkRename:(_Bool)arg1;
 - (const struct TriStateBool *)extensionHiddenState;
 - (const struct TString *)newName;
 

@@ -25,6 +25,7 @@
 + (id)_shadowImage;
 + (id)_reuseIdentifier;
 + (id)_pinsWithMapType:(unsigned int)arg1 mapDisplayStyle:(CDStruct_80aa614a)arg2 pinColor:(id)arg3 traits:(id)arg4;
++ (id)_imageCache;
 + (id)_imageForState:(int)arg1 mapType:(unsigned int)arg2 displayStyle:(unsigned int)arg3 pinColor:(id)arg4 traits:(id)arg5;
 + (id)_imageForLayer:(int)arg1 state:(int)arg2 mapType:(unsigned int)arg3 traits:(id)arg4;
 + (id)_dropBounceAnimation;
@@ -48,7 +49,6 @@
 - (void)_liftForDraggingAfterBounceAnimated:(_Bool)arg1;
 - (void)_liftForDraggingAnimated:(_Bool)arg1;
 - (void)setDragState:(unsigned int)arg1 animated:(_Bool)arg2;
-- (void)setDragState:(unsigned int)arg1;
 - (void)_dropAfterDraggingAndRevertPosition:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_dropFromDistance:(float)arg1 maxDistance:(float)arg2 withDelay:(double)arg3;
 - (id)_bounceAnimation:(_Bool)arg1 withDelay:(double)arg2 addToLayer:(_Bool)arg3;

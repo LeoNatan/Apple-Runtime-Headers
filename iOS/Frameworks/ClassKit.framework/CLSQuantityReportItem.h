@@ -16,6 +16,8 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) double quantity; // @synthesize quantity=_quantity;
+- (id)dictionaryRepresentation;
+- (id)description;
 - (void)scalarMultiply:(double)arg1;
 - (void)add:(id)arg1;
 - (long long)compare:(id)arg1;

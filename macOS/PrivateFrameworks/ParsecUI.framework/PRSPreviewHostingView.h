@@ -19,6 +19,7 @@
 - (void)close;
 
 // Remaining properties
+@property(readonly) BOOL isLoaded;
 @property(retain) id <QLPreviewItem> previewItem;
 
 @end

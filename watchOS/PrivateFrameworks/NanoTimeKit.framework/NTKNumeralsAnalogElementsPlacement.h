@@ -10,11 +10,11 @@
 {
 }
 
-+ (int)complicationPlacementForHour:(int)arg1;
-+ (struct CGPoint)centerPointFor10NumeralInImageForStyle:(unsigned int)arg1;
-+ (struct CGPoint)hourViewPositionForHour:(int)arg1 complicationHidden:(_Bool)arg2 utilitySlot:(int)arg3;
-+ (float)edgeVerticalAdjustmentDistance;
-+ (id)_elementsPositionsForHour:(int)arg1;
++ (int)complicationPlacementForHour:(int)arg1 forDevice:(id)arg2;
++ (struct CGPoint)centerPointFor10NumeralInImageForStyle:(unsigned int)arg1 forDevice:(id)arg2;
++ (struct CGPoint)hourViewPositionForHour:(int)arg1 complicationHidden:(_Bool)arg2 utilitySlot:(int)arg3 forDevice:(id)arg4;
++ (float)edgeVerticalAdjustmentDistanceForDevice:(id)arg1;
++ (id)_elementsPositionsForHour:(int)arg1 forDevice:(id)arg2;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import "CAKeyframeAnimation.h"
 
+__attribute__((visibility("hidden")))
 @interface SCN_CAKeyframeAnimation : CAKeyframeAnimation
 {
     struct __C3DKeyframedAnimation *_c3dAnimation;

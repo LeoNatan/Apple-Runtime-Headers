@@ -7,10 +7,11 @@
 #import <Intents/INIntentResponse.h>
 
 #import "INBookRestaurantReservationIntentResponseExport.h"
+#import "INImageProxyInjecting.h"
 
 @class INRestaurantReservationUserBooking, NSString;
 
-@interface INBookRestaurantReservationIntentResponse : INIntentResponse <INBookRestaurantReservationIntentResponseExport>
+@interface INBookRestaurantReservationIntentResponse : INIntentResponse <INImageProxyInjecting, INBookRestaurantReservationIntentResponseExport>
 {
     INRestaurantReservationUserBooking *_userBooking;
 }
@@ -18,17 +19,18 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) INRestaurantReservationUserBooking *userBooking; // @synthesize userBooking=_userBooking;
 - (void).cxx_destruct;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_dictionaryRepresentation;
-- (id)descriptionAtIndent:(unsigned long long)arg1;
-@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) long long code;
 - (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

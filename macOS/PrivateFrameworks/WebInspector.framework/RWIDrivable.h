@@ -15,12 +15,16 @@ __attribute__((visibility("hidden")))
     NSString *_sessionIdentifier;
     RWIApplication *_owningApplication;
     long long _state;
+    NSString *_name;
+    NSString *_version;
     id <RWIDrivableDelegate> _delegate;
     id <RWIDriverSession> _pairedSession;
 }
 
 @property(readonly, nonatomic) id <RWIDriverSession> pairedSession; // @synthesize pairedSession=_pairedSession;
 @property(nonatomic) __weak id <RWIDrivableDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, copy, nonatomic) NSString *version; // @synthesize version=_version;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) RWIApplication *owningApplication; // @synthesize owningApplication=_owningApplication;
 @property(readonly, copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
@@ -32,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)unpairWithSession:(id)arg1;
 - (void)pairWithSession:(id)arg1;
 - (void)updateState:(long long)arg1 pairedSession:(id)arg2;
-- (id)initWithApplication:(id)arg1 sessionIdentifier:(id)arg2 targetIdentifier:(id)arg3 state:(long long)arg4;
+- (id)initWithApplication:(id)arg1 sessionIdentifier:(id)arg2 targetIdentifier:(id)arg3 state:(long long)arg4 name:(id)arg5 version:(id)arg6;
 
 @end
 

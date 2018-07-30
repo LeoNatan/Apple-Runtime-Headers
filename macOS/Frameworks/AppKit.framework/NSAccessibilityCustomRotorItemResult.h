@@ -20,6 +20,7 @@
 @property(copy) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property struct _NSRange targetRange; // @synthesize targetRange=_targetRange;
 - (void).cxx_destruct;
+- (id)description;
 @property(readonly) __weak id <NSAccessibilityElement> targetElement;
 - (void)dealloc;
 - (id)initWithItemLoadingToken:(id)arg1 customLabel:(id)arg2;

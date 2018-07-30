@@ -15,6 +15,7 @@
 
 + (_Bool)isAvailable;
 @property(readonly, nonatomic) CMWorkoutManagerInternal *_internal; // @synthesize _internal;
+- (void)userDismissedWorkoutAlert;
 - (void)setSuggestedStopTimeout:(double)arg1;
 - (unsigned int)supportedMetricsForWorkoutType:(int)arg1;
 - (void)stopWorkout:(id)arg1;

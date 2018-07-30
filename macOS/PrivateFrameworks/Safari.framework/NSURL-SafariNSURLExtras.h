@@ -13,6 +13,7 @@
 + (id)safari_fileURLForNewTemporaryFile;
 + (id)safari_errorPageResourcesURL;
 + (id)safari_aboutBlankURL;
+- (id)safari_fileURLByRemovingQueryStringParametersAndFragment;
 - (BOOL)safari_isCandidateForTopHitDemotion;
 - (BOOL)safari_isSubdomainOfDomain:(id)arg1;
 - (id)safari_attributedStringWithSimplificationOptions:(unsigned long long)arg1 attributes:(id)arg2 attributesForDeemphasizedText:(id)arg3 attributesForHTTPSProtocol:(id)arg4;
@@ -34,7 +35,6 @@
 - (id)safari_resourceSpecifier;
 - (BOOL)safari_isSearchProviderQuery;
 - (BOOL)safari_shouldBeReflectedInUnifiedField;
-- (BOOL)safari_isDashboardURL;
 - (BOOL)safari_isUserPreferredStartPageURL;
 - (BOOL)safari_isStartPageURL;
 - (BOOL)safari_isFavoritesURL;

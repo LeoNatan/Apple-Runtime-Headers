@@ -6,22 +6,26 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSString;
 
 @interface CSAttributeEvaluator : NSObject
 {
     _Bool _matchOncePerTerm;
     _Bool _fuzzyMatching;
+    NSString *_queryString;
     unsigned int _attributeTokenCount;
     unsigned int _matcherCount;
     const void **_matchers;
     unsigned int _queryTermCount;
     void *_tokenizer;
     NSMutableArray *_tokenizedQueryTerms;
+    NSString *_language;
     CDUnknownBlockType _handler;
 }
 
++ (void)enumerateTokensForString:(id)arg1 locale:(id)arg2 options:(unsigned int)arg3 withHandler:(CDUnknownBlockType)arg4;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
+@property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSMutableArray *tokenizedQueryTerms; // @synthesize tokenizedQueryTerms=_tokenizedQueryTerms;
 @property(nonatomic) void *tokenizer; // @synthesize tokenizer=_tokenizer;
 @property(nonatomic) unsigned int queryTermCount; // @synthesize queryTermCount=_queryTermCount;
@@ -30,8 +34,10 @@
 @property(nonatomic) _Bool fuzzyMatching; // @synthesize fuzzyMatching=_fuzzyMatching;
 @property(nonatomic) unsigned int attributeTokenCount; // @synthesize attributeTokenCount=_attributeTokenCount;
 @property(nonatomic) _Bool matchOncePerTerm; // @synthesize matchOncePerTerm=_matchOncePerTerm;
+@property(readonly, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
-- (unsigned int)evaluateAttribute:(id)arg1 ignoreSubtokens:(_Bool)arg2 withFuzzyHandler:(CDUnknownBlockType)arg3;
+- (unsigned int)evaluateAttribute:(id)arg1 ignoreSubtokens:(_Bool)arg2 skipTranscriptions:(_Bool)arg3 withFuzzyHandler:(CDUnknownBlockType)arg4;
+- (unsigned int)evaluateAttribute:(id)arg1 ignoreSubtokens:(_Bool)arg2 skipTranscriptions:(_Bool)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (unsigned int)evaluateAttribute:(id)arg1 ignoreSubtokens:(_Bool)arg2 withHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSArray *queryTerms;
 - (void)dealloc;

@@ -6,16 +6,23 @@
 
 #import "NSObject.h"
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface SUPersonalizationManager : NSObject
 {
+    NSObject<OS_dispatch_queue> *_personalizationQueue;
 }
 
 + (id)sharedManager;
+@property(retain) NSObject<OS_dispatch_queue> *personalizationQueue; // @synthesize personalizationQueue=_personalizationQueue;
 - (id)_localPackageSpecifiersForLocalProduct:(id)arg1;
 - (id)_chooseProductToPersonalize:(id)arg1;
+- (BOOL)_personalizeProducts:(id)arg1 inForeground:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)personalizeProducts:(id)arg1 inForeground:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)personalizationRequiredForProducts:(id)arg1;
 - (BOOL)personalizationRequiredForRunningSystem;
+- (void)dealloc;
+- (id)init;
 
 @end
 

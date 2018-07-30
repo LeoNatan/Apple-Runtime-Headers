@@ -6,6 +6,7 @@
 
 #import <ManagedConfigurationUI/MCMoreDetailsDefaultsDetailsController.h>
 
+__attribute__((visibility("hidden")))
 @interface MCMoreDetailsDefaultsCollectionController : MCMoreDetailsDefaultsDetailsController
 {
 }

@@ -14,7 +14,15 @@
 + (id)deviceCategoryStringRepresentationForCategoryType:(unsigned long long)arg1;
 + (_Bool)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
 + (id)sharedPreferences;
+- (_Bool)useSiriActivationSPIForHomePod;
+- (unsigned long long)maxNumLoggingFiles;
 - (double)audioSessionActivationDelay;
+- (_Bool)smartSiriVolumeSoftVolumeEnabled;
+- (_Bool)speakerIdEnabled;
+- (id)audioInjectionFilePath;
+- (void)setAudioInjectionFilePath:(id)arg1;
+- (_Bool)audioInjectionEnabled;
+- (_Bool)enableAudioInjection:(_Bool)arg1;
 - (_Bool)myriadFileLoggingEnabled;
 - (id)interstitialAbsoluteDirForLevel:(long long)arg1;
 - (id)interstitialRelativeDirForLevel:(long long)arg1;

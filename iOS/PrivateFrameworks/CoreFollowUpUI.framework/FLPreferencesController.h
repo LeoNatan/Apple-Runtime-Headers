@@ -13,7 +13,7 @@
 @interface FLPreferencesController : NSObject <FLSpecifierTapHandlerDelegate>
 {
     id <FLViewModel> _topViewModel;
-    FLPreferencesFollowUpItemListViewController *_controller;
+    FLPreferencesFollowUpItemListViewController *_spyglassController;
     NSSet *_spyglassWhitelist;
     _Bool _activityIndicatorActive;
     PSListController *_listViewController;
@@ -35,7 +35,7 @@
 - (id)spyglassSpecifiers;
 - (void)_updateSpecifier:(id)arg1 withCommonPropertiesForGroup:(id)arg2;
 - (id)_urlBasedSpecifierWithName:(id)arg1;
-- (id)_extensionSupportingSpecifierWithName:(id)arg1;
+- (id)_deferredLoadSpecifierWithName:(id)arg1;
 - (id)_specifierForGroup:(id)arg1;
 - (id)_specifierForItem:(id)arg1 group:(id)arg2;
 - (id)topLevelSpecifiers;

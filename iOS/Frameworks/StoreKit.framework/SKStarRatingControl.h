@@ -21,6 +21,7 @@
 }
 
 @property(nonatomic) double starWidth; // @synthesize starWidth=_starWidth;
+- (void).cxx_destruct;
 - (void)_updateValueForPoint:(struct CGPoint)arg1;
 - (id)_newExplanationLabel;
 - (struct CGRect)_foregroundImageClipBounds;
@@ -36,7 +37,6 @@
 - (void)setHitPadding:(struct CGSize)arg1;
 - (void)sizeToFit;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithBackgroundImage:(id)arg1 foregroundImage:(id)arg2;
 
 @end

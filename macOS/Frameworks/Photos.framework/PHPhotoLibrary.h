@@ -113,6 +113,7 @@
 - (BOOL)isSystemPhotoLibrary;
 - (void)unregisterAvailabilityObserver:(id)arg1;
 - (void)registerAvailabilityObserver:(id)arg1;
+- (id)fetchQuarantinedAssetsWithOptions:(id)arg1;
 - (id)fetchAssetsForPersons:(id)arg1 options:(id)arg2;
 - (id)fetchAssetsForFaces:(id)arg1 options:(id)arg2;
 - (id)fetchRepresentativeAssetsInAssetCollection:(id)arg1 options:(id)arg2;
@@ -131,6 +132,7 @@
 - (id)fetchAssetCollectionsContainingAssets:(id)arg1 withType:(long long)arg2 options:(id)arg3;
 - (id)fetchAssetCollectionsContainingAsset:(id)arg1 withType:(long long)arg2 options:(id)arg3;
 - (id)fetchAssetCollectionsWithType:(long long)arg1 subtype:(long long)arg2 options:(id)arg3;
+- (id)fetchAssetCollectionsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 - (id)fetchAssetCollectionsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 - (id)fetchProjectsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 - (id)fetchMomentsForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;

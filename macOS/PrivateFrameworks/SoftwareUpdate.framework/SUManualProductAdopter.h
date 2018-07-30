@@ -24,6 +24,9 @@
 @property BOOL allowDevSigned; // @synthesize allowDevSigned=_allowDevSigned;
 @property(copy) NSString *displayVersion; // @synthesize displayVersion=_displayVersion;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
+- (BOOL)_bridgeOSUpdatePrepared;
+- (void)_setProgressPhases:(id)arg1;
+- (BOOL)installRestartingNow;
 - (BOOL)installAfterLogoutRestartingNow:(BOOL)arg1;
 - (BOOL)adoptReturningError:(id *)arg1;
 - (BOOL)authorize:(struct AuthorizationOpaqueRef *)arg1;

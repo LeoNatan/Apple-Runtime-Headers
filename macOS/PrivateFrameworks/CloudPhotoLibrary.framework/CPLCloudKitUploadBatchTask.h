@@ -8,7 +8,7 @@
 
 #import "CPLEngineTransportUploadBatchTask.h"
 
-@class CPLChangeBatch, NSDate, NSError, NSMutableSet, NSString, NSURL;
+@class CPLChangeBatch, CPLCloudKitScope, CPLEngineScope, NSDate, NSError, NSMutableSet, NSString, NSURL;
 
 @interface CPLCloudKitUploadBatchTask : CPLCloudKitTransportTask <CPLEngineTransportUploadBatchTask>
 {
@@ -18,6 +18,8 @@
     NSMutableSet *_autoRejectRecordIdentifiers;
     NSError *_autoError;
     double _approximativeResourcesUploadRate;
+    CPLCloudKitScope *_cloudKitScope;
+    CPLEngineScope *_scope;
     CPLChangeBatch *_batch;
     NSURL *_tempCKAssetURL;
     NSDate *_cplEnabledDate;
@@ -26,16 +28,21 @@
 @property(copy, nonatomic) NSDate *cplEnabledDate; // @synthesize cplEnabledDate=_cplEnabledDate;
 @property(copy, nonatomic) NSURL *tempCKAssetURL; // @synthesize tempCKAssetURL=_tempCKAssetURL;
 @property(retain, nonatomic) CPLChangeBatch *batch; // @synthesize batch=_batch;
+@property(readonly, nonatomic) CPLEngineScope *scope; // @synthesize scope=_scope;
+@property(readonly, nonatomic) CPLCloudKitScope *cloudKitScope; // @synthesize cloudKitScope=_cloudKitScope;
 @property(readonly, nonatomic) double approximativeResourcesUploadRate; // @synthesize approximativeResourcesUploadRate=_approximativeResourcesUploadRate;
 - (void).cxx_destruct;
 - (void)runOperations;
-- (id)initWithController:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithController:(id)arg1 cloudKitScope:(id)arg2 scope:(id)arg3 additionalTransportScopes:(id)arg4 progressHandler:(CDUnknownBlockType)arg5 completionHandler:(CDUnknownBlockType)arg6;
 
 // Remaining properties
+@property(nonatomic, getter=isBackgroundTask) BOOL backgroundTask;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isForcedTask) BOOL forcedTask;
 @property(nonatomic) BOOL foreground;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isHighPriorityBackground) BOOL highPriorityBackground;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) id <CPLEngineTransportGroup> transportGroup;
 

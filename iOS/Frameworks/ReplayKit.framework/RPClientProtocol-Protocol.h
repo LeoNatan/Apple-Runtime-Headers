@@ -15,7 +15,7 @@
 - (oneway void)captureHandlerWithSample:(RPIOSurfaceObject *)arg1 timingData:(NSData *)arg2;
 - (oneway void)updateBroadcastURL:(NSURL *)arg1;
 - (oneway void)updateBroadcastServiceInfo:(NSDictionary *)arg1;
-- (oneway void)stopRecordingWithError:(NSError *)arg1 movieURL:(NSURL *)arg2;
-- (oneway void)updateScreenRecordingState:(_Bool)arg1;
+- (oneway void)recordingDidStopWithError:(NSError *)arg1 movieURL:(NSURL *)arg2;
+- (oneway void)updateScreenRecordingState;
 @end
 

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 #import "RTVisitMonitorDelegate.h"
 
 @class NSManagedObjectContext, NSMutableArray, NSString, RTDefaultsManager, RTHintManager, RTInvocationDispatcher, RTLearnedLocationManager, RTLocationAwarenessManager, RTLocationManager, RTMetricManager, RTPersistenceManager, RTPlatform, RTVisitMonitor;
 
-@interface RTVisitManager : RTNotifier <RTVisitMonitorDelegate>
+@interface RTVisitManager : RTService <RTVisitMonitorDelegate>
 {
     _Bool _spoofMode;
     RTVisitMonitor *_visitMonitor;
@@ -63,12 +63,10 @@
 - (void)_updateStateForLowConfidenceVisitIncidents;
 - (void)_updateStateForLeechedVisitIncidents;
 - (void)_updateStateForVisitIncidents;
-- (void)shutdown;
 - (void)_shutdown;
 - (void)_setupVisitMonitor;
 - (void)_saveVisitMonitorState:(id)arg1;
 - (void)_saveManagedObjectContext;
-- (void)setup;
 - (void)_setup;
 - (id)initWithQueue:(id)arg1 persistenceManager:(id)arg2 defaultsManager:(id)arg3 platform:(id)arg4 locationManager:(id)arg5 learnedLocationManager:(id)arg6 hintManager:(id)arg7 metricManager:(id)arg8 locationAwarenessManager:(id)arg9;
 - (id)init;

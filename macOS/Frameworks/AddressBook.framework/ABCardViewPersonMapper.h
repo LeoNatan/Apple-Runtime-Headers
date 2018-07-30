@@ -8,7 +8,6 @@
 
 @class CNContact, CNContactStore, CNMultiDictionary, NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewPersonMapper : NSObject
 {
     CNContact *_contact;

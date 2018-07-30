@@ -37,6 +37,9 @@
     _Bool _inlineMediaPlaybackRequiresPlaysInlineAttribute;
     _Bool _allowsInlineMediaPlaybackAfterFullscreen;
     unsigned int _dragLiftDelay;
+    _Bool _textInteractionGesturesEnabled;
+    _Bool _longPressActionsEnabled;
+    _Bool _systemPreviewEnabled;
     _Bool _invisibleAutoplayNotPermitted;
     _Bool _mediaDataLoadsAutomatically;
     _Bool _attachmentElementEnabled;
@@ -48,6 +51,10 @@
     _Bool _needsStorageAccessFromFileURLsQuirk;
     _Bool _legacyEncryptedMediaAPIEnabled;
     _Bool _allowMediaContentTypesRequiringHardwareSupportAsFallback;
+    _Bool _colorFilterEnabled;
+    _Bool _incompleteImageBorderEnabled;
+    _Bool _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
+    _Bool _drawsBackground;
     struct RetainPtr<NSString> _overrideContentSecurityPolicy;
     struct RetainPtr<NSString> _mediaContentTypesRequiringHardwareSupport;
     _Bool _suppressesIncrementalRendering;
@@ -99,9 +106,16 @@
 @property(nonatomic, setter=_setMainContentUserGestureOverrideEnabled:) _Bool _mainContentUserGestureOverrideEnabled;
 @property(nonatomic, setter=_setRequiresUserActionForAudioPlayback:) _Bool _requiresUserActionForAudioPlayback;
 @property(nonatomic, setter=_setRequiresUserActionForVideoPlayback:) _Bool _requiresUserActionForVideoPlayback;
+@property(nonatomic, setter=_setDrawsBackground:) _Bool _drawsBackground;
+@property(nonatomic, setter=_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:) _Bool _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
+@property(nonatomic, setter=_setIncompleteImageBorderEnabled:) _Bool _incompleteImageBorderEnabled;
+@property(nonatomic, setter=_setColorFilterEnabled:) _Bool _colorFilterEnabled;
 @property(nonatomic, setter=_setAttachmentElementEnabled:) _Bool _attachmentElementEnabled;
 @property(nonatomic, setter=_setMediaDataLoadsAutomatically:) _Bool _mediaDataLoadsAutomatically;
 @property(nonatomic, setter=_setInvisibleAutoplayNotPermitted:) _Bool _invisibleAutoplayNotPermitted;
+@property(nonatomic, setter=_setSystemPreviewEnabled:) _Bool _systemPreviewEnabled;
+@property(nonatomic, setter=_setLongPressActionsEnabled:) _Bool _longPressActionsEnabled;
+@property(nonatomic, setter=_setTextInteractionGesturesEnabled:) _Bool _textInteractionGesturesEnabled;
 @property(nonatomic, setter=_setDragLiftDelay:) unsigned int _dragLiftDelay;
 @property(nonatomic, setter=_setAllowsInlineMediaPlaybackAfterFullscreen:) _Bool _allowsInlineMediaPlaybackAfterFullscreen;
 @property(nonatomic, setter=_setInlineMediaPlaybackRequiresPlaysInlineAttribute:) _Bool _inlineMediaPlaybackRequiresPlaysInlineAttribute;

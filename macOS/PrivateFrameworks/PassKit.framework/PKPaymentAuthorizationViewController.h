@@ -32,7 +32,7 @@
 @property(retain, nonatomic) PKExtension *hostExtension; // @synthesize hostExtension=_hostExtension;
 @property(retain, nonatomic) PKExtensionHostContext *paymentAuthorizationHostContext; // @synthesize paymentAuthorizationHostContext=_paymentAuthorizationHostContext;
 @property(retain, nonatomic) PKExtensionRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-@property(nonatomic) id <PKPaymentAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PKPaymentAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)extensionRemoteViewController:(id)arg1 didTerminateWithError:(id)arg2;
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;

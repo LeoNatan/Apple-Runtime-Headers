@@ -25,6 +25,8 @@
 @property(retain) NSColor *tokenTextColor; // @synthesize tokenTextColor=_tokenTextColor;
 @property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
+- (void)setCalUITextFieldDelegate:(id)arg1;
+- (void)effectiveAppearanceDidChange;
 - (void)setObjectValue:(id)arg1;
 - (id)objectValueAsArray;
 - (void)setFrameSize:(struct CGSize)arg1;

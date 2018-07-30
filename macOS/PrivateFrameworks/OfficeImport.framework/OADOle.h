@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OADOle : NSObject
 {
     BOOL mIconic;
@@ -27,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)isCLSIDSupported:(id)arg1;
 + (BOOL)isProgIDMathType:(id)arg1;
 + (BOOL)isProgIDChart:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setObject:(id)arg1;
 - (id)object;
@@ -50,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (id)CLSID;
 - (void)setIconic:(BOOL)arg1;
 - (BOOL)iconic;
-- (void)dealloc;
 - (id)init;
 
 @end

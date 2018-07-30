@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool fBackgroundAnimation;
     NSMutableArray *fSnapshotLayers;
     NSMutableArray *fRestoreLayers;
+    struct vector<CGRect, std::__1::allocator<CGRect>> fRestoreImageBounds;
     CALayer *fWindowLayer;
     CALayer *fRevealLayer;
     CALayer *fControlsLayer;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
     struct CGPoint fStartPosition;
     double fHorizon;
     _Bool fCollapsed;
-    _Bool fFullBackupUI;
     _Bool fExiting;
     double fLastCompletion;
     _Bool fFadeWindowLayer;
@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
     BU_TMTimeline *fLastHitControl;
     BU_TMTimeline *fTimelineControl;
     BU_TTimelineOverlay *fTimelineOverlay;
-    struct TNSRef<BU_ButtonController *, void> fButtonController;
+    struct TNSRef<BU_ButtonController, void> fButtonController;
     NSButton *fCancelButton;
     NSButton *fRestoreButton;
     NSButton *fPreviousButton;
@@ -56,9 +56,9 @@ __attribute__((visibility("hidden")))
     struct OpaqueEventHandlerRef *fEventMonitorHandler;
     BU_TMFloatParameterController *fStarsZOffset;
     struct CGRect _pixelBounds;
-    struct TNSRef<BU_TBUStarfieldShadowLayer *, void> _shadowLayer;
-    struct TNSRef<BU_DPRemoteDesktopPicture *, void> fRemoteDesktopPicture;
-    struct TNSRef<NSArray *, void> fDesktopFilters;
+    struct TNSRef<BU_TBUStarfieldShadowLayer, void> _shadowLayer;
+    struct TNSRef<BU_DPRemoteDesktopPicture, void> fRemoteDesktopPicture;
+    struct TNSRef<NSArray, void> fDesktopFilters;
 }
 
 + (struct CGImage *)invalidSnapshotImageWithSize:(struct CGSize)arg1 imageScalingContext:(struct CGContext *)arg2 drawContext:(struct CGContext *)arg3 needsLoad:(_Bool)arg4;
@@ -112,10 +112,10 @@ __attribute__((visibility("hidden")))
 - (void)showTopSnapshotNow;
 - (void)flushFrameToDisplay;
 - (void)showTopSnapshot;
-- (id)layerForSnapshot:(struct TSnapshot *)arg1;
-- (struct TBackupLayerList)layersForTarget:(struct TTimeMachineTarget *)arg1;
+- (id)layerForSnapshot:(const shared_ptr_a94acee0 *)arg1;
+- (struct TBackupLayerList)layersForTarget:(const shared_ptr_253687d6 *)arg1;
 - (id)layerForUrl:(const struct TString *)arg1;
-- (void)gotoTarget:(struct TTimeMachineTarget *)arg1;
+- (void)gotoTarget:(const shared_ptr_253687d6 *)arg1;
 - (void)gotoSnapshot:(unsigned long long)arg1;
 - (void)promoteDemoteSnapshot:(id)arg1;
 - (void)updateAnimationEnd:(unsigned long long)arg1;
@@ -127,17 +127,17 @@ __attribute__((visibility("hidden")))
 - (struct CGColor *)calculateShadingFilterColorForSnapshotIndex:(unsigned long long)arg1;
 - (void)setTopSnapshotOpacity:(double)arg1;
 - (void)removeAllSnapshotLayers;
-- (void)addLayer:(struct CGImage *)arg1 forTarget:(struct TTimeMachineTarget *)arg2;
+- (void)addLayer:(struct CGImage *)arg1 forTarget:(const shared_ptr_253687d6 *)arg2;
 - (void)setMaxLayerCount:(unsigned long long)arg1 bounds:(struct CGRect)arg2;
 - (void)invalidateSnapshotImageFor:(id)arg1;
 - (void)requestSnapshotImageFor:(id)arg1;
 - (void)validateTargetForURL:(const struct TString *)arg1 withRevisionID:(void *)arg2;
-- (void)validateSnapshot:(struct TSnapshot *)arg1 forTargetURL:(const struct TString *)arg2 forTarget:(struct TFENode)arg3;
+- (void)validateSnapshot:(const shared_ptr_a94acee0 *)arg1 forTargetURL:(const struct TString *)arg2 forTarget:(struct TFENode)arg3;
 - (void)configureLayer:(id)arg1 forInvalidState:(_Bool)arg2;
 - (double)backgroundOpacityForSnapshotIndex:(unsigned long long)arg1;
-- (void)updateLayers:(struct CGImage *)arg1 forTarget:(struct TTimeMachineTarget *)arg2;
+- (void)updateLayers:(struct CGImage *)arg1 forTarget:(const shared_ptr_253687d6 *)arg2;
 - (void)updateLayers:(const struct TBackupLayerList *)arg1 forImage:(struct CGImage *)arg2;
-- (void)retargetLayer:(unsigned long long)arg1 forTarget:(struct TTimeMachineTarget *)arg2;
+- (void)retargetLayer:(unsigned long long)arg1 forTarget:(const shared_ptr_253687d6 *)arg2;
 - (_Bool)isFinderClient;
 - (void)setIsFinderClient:(_Bool)arg1;
 - (void)mouseDragged:(id)arg1;
@@ -155,7 +155,7 @@ __attribute__((visibility("hidden")))
 - (void)restoreAllPressed:(id)arg1;
 - (void)restorePressed:(id)arg1;
 - (void)cancelPressed:(id)arg1;
-- (void)updateButtonsEnableStateForTarget:(struct TTimeMachineTarget *)arg1;
+- (void)updateButtonsEnableStateForTarget:(const shared_ptr_253687d6 *)arg1;
 - (void)updateButtonsEnableStateForSelection:(unsigned long long)arg1;
 - (void)updateButtonsEnableStateForTargetIndex:(long long)arg1;
 - (struct CGPoint)bigArrowsLocationForWindowBounds:(const struct CGPoint *)arg1;
@@ -163,8 +163,8 @@ __attribute__((visibility("hidden")))
 - (void)finishResizingWindow:(const struct CGPoint *)arg1;
 - (void)startResizingWindow;
 - (int)currentSnapshotIndex;
-- (void)setTargets:(const struct TTimeMachineTargetList *)arg1;
-- (void)selectTarget:(struct TTimeMachineTarget *)arg1;
+- (void)setTargets:(const vector_c7a9c3f3 *)arg1;
+- (void)selectTarget:(const shared_ptr_253687d6 *)arg1;
 - (void)shutDownEventMonitor;
 - (void)setupEventMonitor;
 - (void)viewDidMoveToWindow;

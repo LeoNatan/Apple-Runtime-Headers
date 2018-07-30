@@ -57,7 +57,7 @@ __attribute__((visibility("hidden")))
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (long long)userInterfaceTag;
 - (id)userInterfaceNameForPlaceTitleAtCenter:(_Bool)arg1;
-- (_Bool)shouldChangeExplosionWithPreviousChartType:(id)arg1 seriesList:(id)arg2;
+- (_Bool)shouldChangeExplosionWithPreviousChartType:(id)arg1 chartInfo:(id)arg2 seriesList:(id)arg3;
 - (double)maxInnerRadiusPercentage;
 - (double)minInnerRadiusPercentage;
 - (_Bool)supportsInnerRadius;

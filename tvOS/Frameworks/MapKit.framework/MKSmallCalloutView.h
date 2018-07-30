@@ -6,12 +6,10 @@
 
 #import "UIView.h"
 
-#import "CalloutViewControllerProtocol.h"
-
-@class MKCalloutBackgroundView, NSArray, NSLayoutConstraint, NSString, UILayoutGuide, UIMotionEffectGroup, UIView<_MKCalloutAccessoryView>, _MKSmallCalloutPassthroughButton, _MKUILabel;
+@class NSArray, NSLayoutConstraint, NSString, UILayoutGuide, UIMotionEffectGroup, UIView<_MKCalloutAccessoryView>, _MKSmallCalloutPassthroughButton, _MKUILabel;
 
 __attribute__((visibility("hidden")))
-@interface MKSmallCalloutView : UIView <CalloutViewControllerProtocol>
+@interface MKSmallCalloutView : UIView
 {
     _MKUILabel *_titleLabel;
     _MKUILabel *_subtitleLabel;
@@ -19,18 +17,16 @@ __attribute__((visibility("hidden")))
     UIView<_MKCalloutAccessoryView> *_rightView;
     UIView<_MKCalloutAccessoryView> *_externalLeftView;
     UIView<_MKCalloutAccessoryView> *_externalRightView;
+    UIView<_MKCalloutAccessoryView> *_externalDetailView;
     UIView<_MKCalloutAccessoryView> *_detailView;
     struct CGSize _preferredContentSize;
     _Bool _shouldPositionTitleForMapsTransitionMovingSideways;
     _MKSmallCalloutPassthroughButton *_maskedContainerView;
     UIView *_unmaskedContainerView;
-    MKCalloutBackgroundView *_calloutBackgroundView;
     CDStruct_80aa614a _mapDisplayStyle;
     _Bool _needsPreferredContentSizeUpdate;
-    _Bool _mapFocused;
     _Bool _parallaxEnabled;
-    UIMotionEffectGroup *_titleMotionEffects;
-    UIMotionEffectGroup *_detailViewMotionEffects;
+    UIMotionEffectGroup *_motionEffect;
     NSLayoutConstraint *_minWidthConstraint;
     NSLayoutConstraint *_maxWidthConstraint;
     NSLayoutConstraint *_unmaskedContainerLeadingConstraint;
@@ -56,11 +52,11 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_detailViewMinTopConstraint;
     NSLayoutConstraint *_detailViewBottomConstraint;
     NSLayoutConstraint *_detailViewTrailingConstraint;
+    UIView *_titlesContainerView;
 }
 
-@property(nonatomic, getter=isParallaxEnabled) _Bool parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
-@property(nonatomic, getter=isMapFocused) _Bool mapFocused; // @synthesize mapFocused=_mapFocused;
-@property(retain, nonatomic) MKCalloutBackgroundView *calloutBackgroundView; // @synthesize calloutBackgroundView=_calloutBackgroundView;
+@property(nonatomic) _Bool parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
+@property(readonly, nonatomic) UIView *titlesContainerView; // @synthesize titlesContainerView=_titlesContainerView;
 @property(nonatomic) CDStruct_80aa614a mapDisplayStyle; // @synthesize mapDisplayStyle=_mapDisplayStyle;
 - (void).cxx_destruct;
 - (void)_updateAccessoryViewStyles;
@@ -82,17 +78,13 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)beginMapsTransitionMovingSideways;
 - (void)reset;
+- (void)_updateTransformForMotionEffectDirection:(struct CGPoint)arg1 forSubview:(id)arg2;
+- (_Bool)_applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2;
 - (void)dealloc;
 @property(nonatomic) double maximumWidth;
 @property(nonatomic) double minimumWidth;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class AVSampleCursor;
 
+__attribute__((visibility("hidden")))
 @interface AVSampleBufferRequestInternal : NSObject
 {
     AVSampleCursor *startCursor;

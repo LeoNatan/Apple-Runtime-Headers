@@ -6,30 +6,33 @@
 
 #import "NSObject.h"
 
+#import "FCCoreConfigurationManager.h"
 #import "FCJSONEncodableObjectProviding.h"
+#import "FCNewsAppConfigurationManager.h"
 
-@class FCAppConfigurationResource, FCAsyncSerialQueue, FCCKContentDatabase, FCKeyValueStore, NSArray, NSHashTable, NSMutableArray, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL;
+@class FCAppConfigurationResource, FCAsyncSerialQueue, FCCKContentDatabase, FCKeyValueStore, NSArray, NSHashTable, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL;
 
-@interface FCAppConfigurationManager : NSObject <FCJSONEncodableObjectProviding>
+@interface FCAppConfigurationManager : NSObject <FCCoreConfigurationManager, FCNewsAppConfigurationManager, FCJSONEncodableObjectProviding>
 {
     _Bool _attemptedAppConfigFetch;
-    NSURL *_contentDirectoryFileURL;
-    FCCKContentDatabase *_contentDatabase;
+    _Bool _disableSimulatedCrash;
     NSNumber *_currentUserBucket;
     NSNumber *_currentTreatmentOverride;
     FCAsyncSerialQueue *_configRequestSerialQueue;
     FCAsyncSerialQueue *_configRefreshSerialQueue;
     FCAsyncSerialQueue *_trendingSerialQueue;
     NSObject<OS_dispatch_queue> *_accessQueue;
-    NSHashTable *_observers;
-    NSMutableArray *_observationBlocks;
+    FCCKContentDatabase *_contentDatabase;
+    NSURL *_contentDirectoryFileURL;
+    NSHashTable *_coreConfigObservers;
+    NSHashTable *_appConfigObservers;
     NSString *_configurationResourceID;
     NSString *_trendingSearchesResourceID;
     FCKeyValueStore *_resourceCache;
     FCAppConfigurationResource *_configurationResource;
     FCAppConfigurationResource *_trendingSearchesResource;
     NSSet *_preferredLanguages;
-    id <FCNewsAppConfiguration> _appConfiguration;
+    id <FCNewsAppConfiguration> _internalConfiguration;
     NSArray *_trendingTopics;
     NSNumber *_currentModdedBucketID;
 }
@@ -38,17 +41,20 @@
 + (id)overrideForYouConfigID;
 + (id)overrideAppConfigID;
 + (void)initialize;
+@property(nonatomic) _Bool disableSimulatedCrash; // @synthesize disableSimulatedCrash=_disableSimulatedCrash;
 @property(copy, nonatomic) NSNumber *currentModdedBucketID; // @synthesize currentModdedBucketID=_currentModdedBucketID;
 @property(copy, nonatomic) NSArray *trendingTopics; // @synthesize trendingTopics=_trendingTopics;
-@property(copy, nonatomic) id <FCNewsAppConfiguration> appConfiguration; // @synthesize appConfiguration=_appConfiguration;
+@property(copy, nonatomic) id <FCNewsAppConfiguration> internalConfiguration; // @synthesize internalConfiguration=_internalConfiguration;
 @property(retain, nonatomic) NSSet *preferredLanguages; // @synthesize preferredLanguages=_preferredLanguages;
 @property(retain, nonatomic) FCAppConfigurationResource *trendingSearchesResource; // @synthesize trendingSearchesResource=_trendingSearchesResource;
 @property(retain, nonatomic) FCAppConfigurationResource *configurationResource; // @synthesize configurationResource=_configurationResource;
 @property(retain, nonatomic) FCKeyValueStore *resourceCache; // @synthesize resourceCache=_resourceCache;
 @property(retain, nonatomic) NSString *trendingSearchesResourceID; // @synthesize trendingSearchesResourceID=_trendingSearchesResourceID;
 @property(retain, nonatomic) NSString *configurationResourceID; // @synthesize configurationResourceID=_configurationResourceID;
-@property(retain, nonatomic) NSMutableArray *observationBlocks; // @synthesize observationBlocks=_observationBlocks;
-@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) NSHashTable *appConfigObservers; // @synthesize appConfigObservers=_appConfigObservers;
+@property(retain, nonatomic) NSHashTable *coreConfigObservers; // @synthesize coreConfigObservers=_coreConfigObservers;
+@property(copy, nonatomic) NSURL *contentDirectoryFileURL; // @synthesize contentDirectoryFileURL=_contentDirectoryFileURL;
+@property(retain, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(retain, nonatomic) FCAsyncSerialQueue *trendingSerialQueue; // @synthesize trendingSerialQueue=_trendingSerialQueue;
 @property(retain, nonatomic) FCAsyncSerialQueue *configRefreshSerialQueue; // @synthesize configRefreshSerialQueue=_configRefreshSerialQueue;
@@ -56,17 +62,16 @@
 @property(copy, nonatomic) NSNumber *currentTreatmentOverride; // @synthesize currentTreatmentOverride=_currentTreatmentOverride;
 @property(copy, nonatomic) NSNumber *currentUserBucket; // @synthesize currentUserBucket=_currentUserBucket;
 @property(nonatomic) _Bool attemptedAppConfigFetch; // @synthesize attemptedAppConfigFetch=_attemptedAppConfigFetch;
-@property(retain, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
-@property(copy, nonatomic) NSURL *contentDirectoryFileURL; // @synthesize contentDirectoryFileURL=_contentDirectoryFileURL;
 - (void).cxx_destruct;
-- (id)jsonEncodableObject;
-- (void)_didChangeTrendingTopics;
+@property(readonly, nonatomic) NSArray *availableExperiments;
+- (void)overrideConfigWithTreatment:(id)arg1;
 - (void)_extractTrendingTopicsFromLanguageConfiguration:(id)arg1;
 - (id)_languageConfigurationsInProtobufTrendingConfiguration:(id)arg1;
 - (_Bool)_processTrendingSearchesData:(id)arg1;
 - (id)_adoptTrendingSearchesResource:(id)arg1;
 - (id)_loadTrendingSearchesResourceFromCache;
 - (void)fetchTrendingSearchesIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+- (id)jsonEncodableObject;
 - (id)_resolvedWidgetSectionConfigRecordIDForLanguageConfiguration:(id)arg1;
 - (id)_resolvedForYouRecordConfigIDForLanguageConfiguration:(id)arg1;
 - (id)_resolvedBriefingsTagIDForLanguageConfiguration:(id)arg1;
@@ -92,25 +97,31 @@
 - (id)_loadConfigurationResourceFromCache;
 - (id)_loadResourceCache;
 - (void)_fetchConfigurationIfNeededWithCompletionQueue:(id)arg1 force:(_Bool)arg2 refreshCompletion:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)refreshAppConfigIfNeededWithCompletionQueue:(id)arg1 refreshCompletion:(CDUnknownBlockType)arg2;
-- (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 force:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchAppConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;
-- (void)fetchCoreConfigurationIfNeededWithCompletionQueue:(id)arg1 force:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)fetchCoreConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchCoreConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;
-- (void)overrideConfigWithTreatment:(id)arg1;
-@property(readonly, nonatomic) NSArray *availableExperiments;
-- (void)addChangeObservationBlock:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)fetchConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) id <FCCoreConfiguration> configuration;
+- (void)removeAppConfigObserver:(id)arg1;
+- (void)addAppConfigObserver:(id)arg1;
+- (void)refreshAppConfigurationIfNeededWithCompletionQueue:(id)arg1 refreshCompletion:(CDUnknownBlockType)arg2;
+- (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchAppConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, copy, nonatomic) NSString *feldsparID;
+@property(readonly, nonatomic) NSArray *segmentSetIDs;
+@property(readonly, nonatomic) NSArray *treatmentIDs;
+@property(readonly, nonatomic) id <FCNewsAppConfiguration> possiblyUnfetchedAppConfiguration;
+@property(readonly, nonatomic) id <FCNewsAppConfiguration> appConfiguration;
 @property(readonly, copy, nonatomic) NSURL *remoteURL;
-@property(readonly, nonatomic) id <FCNewsAppConfiguration> unsafeFetchedAppConfig;
-@property(readonly, nonatomic) id <FCNewsAppConfiguration> fetchedAppConfig;
-@property(readonly, nonatomic) id <FCNewsAppConfiguration> possiblyUnfetchedAppConfig;
-- (id)initWithContentDatabase:(id)arg1 contentDirectoryFileURL:(id)arg2;
-- (id)initWithContentHostDirectoryFileURL:(id)arg1 networkBehaviorMonitor:(id)arg2;
+- (id)initWithContentDatabase:(id)arg1 contentDirectoryFileURL:(id)arg2 disableSimulatedCrash:(_Bool)arg3;
+- (id)initWithContextConfiguration:(id)arg1 contentDatabase:(id)arg2 contentHostDirectoryFileURL:(id)arg3 networkBehaviorMonitor:(id)arg4 disableSimulatedCrash:(_Bool)arg5;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -13,13 +13,15 @@
 @interface MPVolumeControllerSystemDataSource : NSObject <MPVolumeControllerDataSource>
 {
     _Bool _debugVolumeWarning;
-    id <MPVolumeControllerDataSourceDelegate> _delegate;
-    float _volume;
-    _Bool _muted;
+    _Bool _volumeInitialized;
+    _Bool _volumeControlCapabilitiesInitialized;
     _Bool _volumeControlAvailable;
+    _Bool _muted;
     _Bool _volumeWarningEnabled;
     NSString *_volumeAudioCategory;
+    id <MPVolumeControllerDataSourceDelegate> _delegate;
     NSString *_volumeControlLabel;
+    float _volume;
     float _EUVolumeLimit;
     int _volumeWarningState;
 }
@@ -38,25 +40,29 @@
 - (void)_tearDown;
 - (void)_setup;
 - (void)_reloadEUVolumeLimits;
-- (void)_volumeControlAvailablityNotification:(id)arg1;
 - (void)_systemMuteDidChange:(id)arg1;
 - (void)_systemVolumeDidChange:(id)arg1;
-- (void)_routeVolumeDidChangeNotification:(id)arg1;
+- (void)_volumeControlCapabilitiesDidChangeNotification:(id)arg1;
+- (void)_volumeDidChangeNotification:(id)arg1;
 - (void)_updateRouteLabelForRoute:(id)arg1;
 - (void)_routeDidChangeNotification:(id)arg1;
 - (void)_mediaServerDiedNotification:(id)arg1;
 - (void)_EUVolumeLimitEnforcedDidChange:(id)arg1;
 - (void)_EUVolumeLimitDidChange:(id)arg1;
+- (void)getVolumeValueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)adjustVolumeValue:(float)arg1;
 - (void)reloadWarning;
 - (void)reload;
+- (void)updateVolumeControlCapabilities:(unsigned int)arg1;
+- (void)updateVolume:(float)arg1;
 @property(readonly, nonatomic) _Bool applicationShouldOverrideHardwareVolumeBehavior;
+@property(readonly, copy) NSString *description;
+- (void)initializeVolume;
 - (void)dealloc;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

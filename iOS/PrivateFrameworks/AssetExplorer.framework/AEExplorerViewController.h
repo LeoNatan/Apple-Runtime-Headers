@@ -15,6 +15,7 @@
 #import "PUAssetExplorerReviewScreenViewControllerDelegate.h"
 #import "PXAssetsSceneDelegate.h"
 #import "PXChangeObserver.h"
+#import "PXPhotoLibraryPresenting.h"
 #import "PXPhotoLibraryUIChangeObserver.h"
 #import "PXReusableObjectPoolDelegate.h"
 #import "PXTileSource.h"
@@ -28,19 +29,22 @@
 
 @class AECameraAssetPackageGenerator, AECameraTileController, AEPackageTransport, AEProgressViewModel, CAMCameraReviewAdapter, NSArray, NSIndexSet, NSMutableIndexSet, NSMutableSet, NSString, PUAssetExplorerReviewScreenViewController, PXAssetsScene, PXBasicUIViewTileAnimator, PXMediaProvider, PXPhotoKitAssetsDataSourceManager, PXTilingController, PXUIScrollViewController, UIPopoverPresentationController, UIView;
 
-@interface AEExplorerViewController : UIViewController <PXChangeObserver, PXTileSource, AECameraTileSource, PXReusableObjectPoolDelegate, PXAssetsSceneDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerPreviewingDelegate, CAMCameraConfigurationDelegate, CAMCameraCaptureDelegate, CAMCameraReviewDelegate, CAMCameraViewControllerPresentationDelegate, PUAssetExplorerReviewScreenViewControllerDelegate, UIPopoverPresentationControllerDelegate, AEBrowserLayoutDelegate>
+@interface AEExplorerViewController : UIViewController <PXChangeObserver, PXTileSource, AECameraTileSource, PXReusableObjectPoolDelegate, PXAssetsSceneDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerPreviewingDelegate, CAMCameraConfigurationDelegate, CAMCameraCaptureDelegate, CAMCameraReviewDelegate, CAMCameraViewControllerPresentationDelegate, PUAssetExplorerReviewScreenViewControllerDelegate, UIPopoverPresentationControllerDelegate, AEBrowserLayoutDelegate, PXPhotoLibraryPresenting>
 {
     _Bool __fakeAllCloudAndVideo;
     _Bool __didPresentPhotoLibrary;
+    id <AEExplorerViewControllerDelegate> _delegate;
     AEPackageTransport *__packageTransport;
     PXPhotoKitAssetsDataSourceManager *__dataSourceManager;
     PXMediaProvider *__mediaProvider;
     id <AEHostStatisticsManager> __statisticsManager;
     NSArray *__clientGestureRecognizers;
     unsigned long long __options;
-    NSIndexSet *__cloudAssetIndexes;
+    NSIndexSet *__requiringDownloadAssetIndexes;
     NSIndexSet *__pendingCloudAssetIndexes;
     NSMutableIndexSet *__recentlyDownloadedAssetIndexes;
+    NSIndexSet *__missingThumbnailAssetIndexes;
+    NSIndexSet *__pendingMissingThumbnailAssetIndexes;
     PXBasicUIViewTileAnimator *__tileAnimator;
     PXUIScrollViewController *__scrollViewController;
     PXTilingController *__tilingController;
@@ -73,15 +77,18 @@
 @property(retain, nonatomic, setter=_setTilingController:) PXTilingController *_tilingController; // @synthesize _tilingController=__tilingController;
 @property(readonly, nonatomic) PXUIScrollViewController *_scrollViewController; // @synthesize _scrollViewController=__scrollViewController;
 @property(readonly, nonatomic) PXBasicUIViewTileAnimator *_tileAnimator; // @synthesize _tileAnimator=__tileAnimator;
+@property(retain, nonatomic, setter=_setPendingMissingThumbnailAssetIndexes:) NSIndexSet *_pendingMissingThumbnailAssetIndexes; // @synthesize _pendingMissingThumbnailAssetIndexes=__pendingMissingThumbnailAssetIndexes;
+@property(retain, nonatomic, setter=_setMissingThumbnailAssetIndexes:) NSIndexSet *_missingThumbnailAssetIndexes; // @synthesize _missingThumbnailAssetIndexes=__missingThumbnailAssetIndexes;
 @property(readonly, nonatomic) NSMutableIndexSet *_recentlyDownloadedAssetIndexes; // @synthesize _recentlyDownloadedAssetIndexes=__recentlyDownloadedAssetIndexes;
 @property(retain, nonatomic, setter=_setPendingCloudAssetIndexes:) NSIndexSet *_pendingCloudAssetIndexes; // @synthesize _pendingCloudAssetIndexes=__pendingCloudAssetIndexes;
-@property(retain, nonatomic, setter=_setCloudAssetIndexes:) NSIndexSet *_cloudAssetIndexes; // @synthesize _cloudAssetIndexes=__cloudAssetIndexes;
+@property(retain, nonatomic, setter=_setRequiringDownloadAssetIndexes:) NSIndexSet *_requiringDownloadAssetIndexes; // @synthesize _requiringDownloadAssetIndexes=__requiringDownloadAssetIndexes;
 @property(readonly, nonatomic) unsigned long long _options; // @synthesize _options=__options;
 @property(readonly) NSArray *_clientGestureRecognizers; // @synthesize _clientGestureRecognizers=__clientGestureRecognizers;
 @property(readonly, nonatomic) __weak id <AEHostStatisticsManager> _statisticsManager; // @synthesize _statisticsManager=__statisticsManager;
 @property(readonly, nonatomic) PXMediaProvider *_mediaProvider; // @synthesize _mediaProvider=__mediaProvider;
 @property(readonly, nonatomic) PXPhotoKitAssetsDataSourceManager *_dataSourceManager; // @synthesize _dataSourceManager=__dataSourceManager;
 @property(readonly, nonatomic) AEPackageTransport *_packageTransport; // @synthesize _packageTransport=__packageTransport;
+@property(nonatomic) __weak id <AEExplorerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *cameraParentViewController;
 - (void)ensureSubviewForTile:(id)arg1;
@@ -97,7 +104,9 @@
 - (_Bool)layout:(id)arg1 shouldShowLoopDecorationAtIndexPath:(struct PXSimpleIndexPath)arg2;
 - (_Bool)layout:(id)arg1 shouldShowVideoDecorationAtIndexPath:(struct PXSimpleIndexPath)arg2;
 - (void)_computeInitialResourcesIndexSetAsync;
+- (void)_addThumbnailIndexes:(id)arg1;
 - (void)_addCloudIndexes:(id)arg1;
+- (id)_thumbnailResourcesIndexSetForAssets:(id)arg1;
 - (id)_cloudResourcesIndexSetForAssets:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)assetsScene:(id)arg1 didTransitionToDataSource:(id)arg2;
@@ -137,13 +146,18 @@
 - (void)_updatePhotoLibraryPresentationIfNeeded;
 - (void)_dismissPhotoLibraryIfNeeded;
 - (void)imagePickerControllerDidCancel:(id)arg1;
+- (void)_handleImagePickerMediaWithInfo:(id)arg1;
+- (void)imagePickerController:(id)arg1 didFinishPickingMultipleMediaWithInfo:(id)arg2;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-- (void)_presentFullScreenPhotoLibrary:(id)arg1;
+- (void)showPhotoLibraryPicker:(id)arg1;
+- (void)_dismissViewControllerAboveKeyboardAnimated:(_Bool)arg1;
+- (id)_presentViewControllerAboveKeyboard:(id)arg1 animated:(_Bool)arg2;
+- (void)dismissPresentedViewController:(id)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (void)_dismissReviewScreenViewController;
-- (void)assetExplorerReviewScreenViewController:(id)arg1 didPressDoneWithSelectedAssetUUIDs:(id)arg2 livePhotoDisabledAssetUUIDs:(id)arg3 substituteAssetsByUUID:(id)arg4;
+- (void)assetExplorerReviewScreenViewController:(id)arg1 didPerformCompletionAction:(unsigned long long)arg2 withSelectedAssetUUIDs:(id)arg3 livePhotoDisabledAssetUUIDs:(id)arg4 substituteAssetsByUUID:(id)arg5;
 - (void)assetExplorerReviewScreenViewControllerDidPressRetake:(id)arg1;
 - (void)assetExplorerReviewScreenViewControllerDidPressCancel:(id)arg1;
 - (_Bool)assetExplorerReviewScreenViewController:(id)arg1 canPerformActionType:(unsigned long long)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;

@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface PDCommentAuthor : NSObject
 {
     unsigned int mId;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
     unsigned int mColorIndex;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setColorIndex:(unsigned int)arg1;
 - (unsigned int)colorIndex;
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (id)name;
 - (void)setId:(unsigned int)arg1;
 - (unsigned int)id;
-- (void)dealloc;
 - (id)init;
 
 @end

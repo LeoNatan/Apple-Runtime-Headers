@@ -6,7 +6,6 @@
 
 #import "NSTextView.h"
 
-__attribute__((visibility("hidden")))
 @interface ABShadowTextView : NSTextView
 {
     BOOL _overrideAllowsSelection;
@@ -25,12 +24,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)allowsMultipleLines;
 - (void)forcedSelectAll;
 - (void)resumeAllowingSelection;
+- (BOOL)drawsBackground;
 - (void)setSelectedRange:(struct _NSRange)arg1 affinity:(unsigned long long)arg2 stillSelecting:(BOOL)arg3;
 - (struct _NSRange)selectionRangeForProposedRange:(struct _NSRange)arg1 granularity:(unsigned long long)arg2;
 - (BOOL)needsCardViewBorderDrawing;
 - (BOOL)resignFirstResponder;
 - (BOOL)shouldDrawInsertionPoint;
-- (void)setTypingAttributes:(id)arg1;
 - (id)textField;
 
 @end

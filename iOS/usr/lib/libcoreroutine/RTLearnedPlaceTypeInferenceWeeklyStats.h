@@ -6,11 +6,8 @@
 
 #import "NSObject.h"
 
-@class NSArray;
-
 @interface RTLearnedPlaceTypeInferenceWeeklyStats : NSObject
 {
-    NSArray *_dailyStats;
     double _dailyAggregateDwellTimeBetweenDateRangeAverage;
     double _dailyAggregateDwellTimeBetweenDateRangeStandardDeviation;
     long long _totalDailyVisitCount;
@@ -21,8 +18,6 @@
 @property(readonly, nonatomic) long long totalDailyVisitCount; // @synthesize totalDailyVisitCount=_totalDailyVisitCount;
 @property(readonly, nonatomic) double dailyAggregateDwellTimeBetweenDateRangeStandardDeviation; // @synthesize dailyAggregateDwellTimeBetweenDateRangeStandardDeviation=_dailyAggregateDwellTimeBetweenDateRangeStandardDeviation;
 @property(readonly, nonatomic) double dailyAggregateDwellTimeBetweenDateRangeAverage; // @synthesize dailyAggregateDwellTimeBetweenDateRangeAverage=_dailyAggregateDwellTimeBetweenDateRangeAverage;
-@property(readonly, nonatomic) NSArray *dailyStats; // @synthesize dailyStats=_dailyStats;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDailyStats:(id)arg1;
 

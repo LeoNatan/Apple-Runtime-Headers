@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface LOGMSGEVENTBookedTable : PBCodable <NSCopying>
 {
     unsigned long long _muid;

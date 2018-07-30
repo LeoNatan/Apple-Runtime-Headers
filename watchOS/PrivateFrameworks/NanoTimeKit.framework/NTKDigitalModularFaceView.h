@@ -22,6 +22,7 @@
     NSDateComponentsFormatter *_subdayOffsetDateFormatter;
 }
 
++ (void)_performIfNonRichModuleView:(id)arg1 actions:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
 - (void)_updateLocale;
 - (void)_layoutTimeTravelCaptionView:(id)arg1;
@@ -39,9 +40,11 @@
 - (float)_minimumBreathingScaleForComplicationSlot:(id)arg1;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (int)complicationFamilyForSlot:(id)arg1;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (struct UIEdgeInsets)_keylineLabelActiveAreaInsetsForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
@@ -52,6 +55,7 @@
 - (void)_cleanupAfterZoom;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
 - (void)_layoutForegroundContainerView;
+- (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (void)_loadLayoutRulesForState:(int)arg1 withTopGap:(float)arg2 largeModuleHeight:(float)arg3;
 - (void)_loadLayoutRules;

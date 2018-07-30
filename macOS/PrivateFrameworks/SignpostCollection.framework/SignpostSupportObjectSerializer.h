@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, SignpostSupportObjectExtractor;
+@class NSMutableArray, SignpostSerializationFilterConfiguration, SignpostSupportObjectExtractor;
 
 @interface SignpostSupportObjectSerializer : NSObject
 {
@@ -14,15 +14,16 @@
     unsigned long long _maxBytesSize;
     CDUnknownBlockType _serializedSignpostEventBlock;
     CDUnknownBlockType _serializedLogMessageBlock;
+    SignpostSerializationFilterConfiguration *_filterConfiguration;
     NSMutableArray *_outstandingSignpostObjects;
     NSMutableArray *_outstandingLogMessage;
     SignpostSupportObjectExtractor *_extractor;
 }
 
-+ (BOOL)serializeSignpostDataToPath:(id)arg1 LogArchivePath:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 errorOut:(id *)arg5;
 @property(retain, nonatomic) SignpostSupportObjectExtractor *extractor; // @synthesize extractor=_extractor;
 @property(retain, nonatomic) NSMutableArray *outstandingLogMessage; // @synthesize outstandingLogMessage=_outstandingLogMessage;
 @property(retain, nonatomic) NSMutableArray *outstandingSignpostObjects; // @synthesize outstandingSignpostObjects=_outstandingSignpostObjects;
+@property(retain, nonatomic) SignpostSerializationFilterConfiguration *filterConfiguration; // @synthesize filterConfiguration=_filterConfiguration;
 @property(copy, nonatomic) CDUnknownBlockType serializedLogMessageBlock; // @synthesize serializedLogMessageBlock=_serializedLogMessageBlock;
 @property(copy, nonatomic) CDUnknownBlockType serializedSignpostEventBlock; // @synthesize serializedSignpostEventBlock=_serializedSignpostEventBlock;
 @property(nonatomic) unsigned long long maxBytesSize; // @synthesize maxBytesSize=_maxBytesSize;

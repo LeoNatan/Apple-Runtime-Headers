@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (Box_3d7e3c2c)localBoundsForLayer:(unsigned char)arg1;
 - (void)setTile:(id)arg1 state:(unsigned int)arg2 metadata:(id)arg3 forLayer:(unsigned char)arg4;
-- (void)tileCountForOnline:(unsigned int *)arg1 offline:(unsigned int *)arg2;
 - (void)_setTile:(id)arg1 state:(unsigned int)arg2 metadata:(id)arg3 forLayer:(unsigned char)arg4 timestamp:(double)arg5;
+- (id)metaDataForLayer:(unsigned char)arg1;
 - (double)timeTileEnteredStateForLayer:(unsigned char)arg1;
 - (unsigned int)tileStateForLayer:(unsigned char)arg1;
 - (id)tileForLayer:(unsigned char)arg1;

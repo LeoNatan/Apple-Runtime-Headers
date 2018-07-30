@@ -38,6 +38,7 @@
 - (long long)validate;
 - (void)setDisabled:(BOOL)arg1;
 - (void)_updateParameters;
+- (BOOL)_allowsDarkAppearance;
 - (id)iconPath;
 - (id)name;
 - (void)assignBindingsToVariables;

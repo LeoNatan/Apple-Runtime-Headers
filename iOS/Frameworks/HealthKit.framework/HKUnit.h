@@ -46,6 +46,9 @@
 + (id)perMilleUnit;
 + (id)percentUnit;
 + (id)countUnit;
++ (id)decibelHearingLevelUnit;
++ (id)hertzUnit;
++ (id)hertzUnitWithMetricPrefix:(long long)arg1;
 + (id)siemenUnit;
 + (id)siemenUnitWithMetricPrefix:(long long)arg1;
 + (id)degreeFahrenheitUnit;
@@ -64,6 +67,7 @@
 + (id)milliseconds;
 + (id)secondUnit;
 + (id)secondUnitWithMetricPrefix:(long long)arg1;
++ (id)decibelSPLUnit;
 + (id)atmosphereUnit;
 + (id)centimeterOfWaterUnit;
 + (id)millimeterOfMercuryUnit;
@@ -101,6 +105,8 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (double)_convertFromBaseUnit:(double)arg1;
+- (double)_convertToBaseUnit:(double)arg1;
 - (double)_reducedProportionalSize;
 - (id)_baseUnitReduction;
 - (id)_baseUnitReductionAndProportionalSize:(out double *)arg1 withCycleSet:(id)arg2;

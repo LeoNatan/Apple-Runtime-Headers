@@ -18,7 +18,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)new;
 @property(readonly, copy) NSString *description;
 - (BOOL)evaluateServiceTombstone:(id)arg1;
 - (BOOL)evaluateTombstone:(id)arg1;
@@ -28,7 +27,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSyncWindow:(double)arg1 lastSyncedGeneration:(long long)arg2;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

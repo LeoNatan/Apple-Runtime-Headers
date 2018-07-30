@@ -6,7 +6,7 @@
 
 #import "PLMomentGenerationDataManagement.h"
 
-@class NSDictionary;
+@class NSArray, NSDictionary;
 
 @protocol PLMomentGenerationDataManagement_Private <PLMomentGenerationDataManagement>
 
@@ -15,6 +15,7 @@
 - (void)setupPhotoLibrary;
 - (void)refreshAllObjects;
 - (void)refreshObject:(id)arg1 mergeChanges:(_Bool)arg2;
+- (void)invalidateLocationDataForAssetsWithOIDs:(NSArray *)arg1;
 - (void)invalidateLocationDataForAssetsInMoment:(id <PLMomentData>)arg1;
 @end
 

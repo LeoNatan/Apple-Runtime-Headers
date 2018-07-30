@@ -22,10 +22,12 @@
 - (void)enableModeSwitchingForFrameRate:(_Bool)arg1;
 - (void)enableModeSwitchingForDynamicRange:(_Bool)arg1;
 - (void)fetchCurrentDisplayStateWithReply:(CDUnknownBlockType)arg1;
-- (void)displayAssistantDidCompleteForInvocation:(id)arg1;
-- (void)displayAssistantDidStartForInvocation:(id)arg1;
+- (void)displayAssistantDidCompleteForKind:(id)arg1;
+- (void)displayAssistantDidStartForKind:(id)arg1;
+- (void)removeCableCheckHistory;
+- (void)resetPoorCableWarnings;
 - (void)forgetDisplaysForDisplayAssistant;
-- (void)presentDisplayAssistantForInvocation:(id)arg1 destinationDisplayMode:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)presentDisplayAssistantWithRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)handleRegionChangeWithNewCountryCode:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)wakeDisplayWithReply:(CDUnknownBlockType)arg1;
 - (void)sleepDisplayWithReply:(CDUnknownBlockType)arg1;

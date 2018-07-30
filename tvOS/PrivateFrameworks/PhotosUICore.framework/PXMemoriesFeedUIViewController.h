@@ -22,7 +22,7 @@
 #import "UIPopoverPresentationControllerDelegate.h"
 #import "UIViewControllerPreviewingDelegate.h"
 
-@class NSString, PXBasicUIViewTileAnimator, PXMemoriesFeedViewControllerHelper, PXMemoriesOnboardingUIViewController, PXMemoriesUITileSource, PXPhotoAnalysisStatusController, PXSectionedDataSource, PXTouchingUIGestureRecognizer, PXUIScrollViewController, PXUITapGestureRecognizer, UIBarButtonItem, UILongPressGestureRecognizer, UIScrollView, _UIContentUnavailableView;
+@class NSString, PXBasicUIViewTileAnimator, PXMemoriesFeedDataSourceManager, PXMemoriesFeedViewControllerHelper, PXMemoriesOnboardingUIViewController, PXMemoriesUITileSource, PXPhotoAnalysisStatusController, PXSectionedDataSource, PXTouchingUIGestureRecognizer, PXUIScrollViewController, PXUITapGestureRecognizer, UIBarButtonItem, UILongPressGestureRecognizer, UIScrollView, _UIContentUnavailableView;
 
 @interface PXMemoriesFeedUIViewController : UIViewController <PXReusableObjectPoolDelegate, PXChangeObserver, UIGestureRecognizerDelegate, PXActionPerformerDelegate, PXScrollViewControllerObserver, PXUIViewControllerZoomTransitionEndPoint, PXTilingControllerZoomAnimationCoordinatorDelegate, PXSectionedDataSourceManagerObserver, UIViewControllerPreviewingDelegate, UIPopoverPresentationControllerDelegate, PXMemoriesFeedViewControllerHelperDelegate, PXMemoriesOnboardingViewControllerDelegate, PXMemoriesUITileSourceDelegate, PXUserInterfaceFeatureViewController, PXSettingsKeyObserver>
 {
@@ -36,11 +36,11 @@
     PXBasicUIViewTileAnimator *__tileAnimator;
     UIBarButtonItem *__refreshBarButtonItem;
     PXMemoriesFeedViewControllerHelper *__helper;
+    unsigned long long __memoriesStyle;
     PXPhotoAnalysisStatusController *__graphStatusController;
     PXMemoriesOnboardingUIViewController *__onboardingViewController;
     _UIContentUnavailableView *__contentUnavailableView;
     PXMemoriesUITileSource *__tileSource;
-    UIBarButtonItem *__searchBarButtonItem;
     PXUITapGestureRecognizer *__tapRecognizer;
     UILongPressGestureRecognizer *__longPressRecognizer;
     PXTouchingUIGestureRecognizer *__touchRecognizer;
@@ -54,11 +54,11 @@
 @property(readonly, nonatomic) PXTouchingUIGestureRecognizer *_touchRecognizer; // @synthesize _touchRecognizer=__touchRecognizer;
 @property(retain, nonatomic, setter=_setLongPressRecognizer:) UILongPressGestureRecognizer *_longPressRecognizer; // @synthesize _longPressRecognizer=__longPressRecognizer;
 @property(readonly, nonatomic) PXUITapGestureRecognizer *_tapRecognizer; // @synthesize _tapRecognizer=__tapRecognizer;
-@property(readonly, nonatomic) UIBarButtonItem *_searchBarButtonItem; // @synthesize _searchBarButtonItem=__searchBarButtonItem;
 @property(readonly, nonatomic) PXMemoriesUITileSource *_tileSource; // @synthesize _tileSource=__tileSource;
 @property(retain, nonatomic, setter=_setContentUnavailableView:) _UIContentUnavailableView *_contentUnavailableView; // @synthesize _contentUnavailableView=__contentUnavailableView;
 @property(retain, nonatomic, setter=_setOnboardingViewController:) PXMemoriesOnboardingUIViewController *_onboardingViewController; // @synthesize _onboardingViewController=__onboardingViewController;
 @property(readonly, nonatomic) PXPhotoAnalysisStatusController *_graphStatusController; // @synthesize _graphStatusController=__graphStatusController;
+@property(readonly, nonatomic) unsigned long long _memoriesStyle; // @synthesize _memoriesStyle=__memoriesStyle;
 @property(readonly, nonatomic) PXMemoriesFeedViewControllerHelper *_helper; // @synthesize _helper=__helper;
 @property(readonly, nonatomic) PXBasicUIViewTileAnimator *_tileAnimator; // @synthesize _tileAnimator=__tileAnimator;
 @property(readonly, nonatomic) PXUIScrollViewController *_scrollViewController; // @synthesize _scrollViewController=__scrollViewController;
@@ -102,7 +102,6 @@
 - (struct PXSimpleIndexPath)_memoryIndexPathForViewController:(id)arg1;
 - (void)_startRefreshWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_refreshBarButtonItemAction:(id)arg1;
-- (void)_searchBarButtonItemAction:(id)arg1;
 - (id)_sourceViewForMemoryActionsController;
 - (void)_presentActionsForMemoryReference:(id)arg1;
 @property(readonly, nonatomic) UIBarButtonItem *_refreshBarButtonItem; // @synthesize _refreshBarButtonItem=__refreshBarButtonItem;
@@ -125,6 +124,7 @@
 - (void)_updateScrollViewControllerContentInset;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+@property(readonly, nonatomic) PXMemoriesFeedDataSourceManager *dataSourceManager;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -134,6 +134,8 @@
 - (id)_suppressionContexts;
 - (_Bool)_appAllowsSupressionOfAlerts;
 - (void)dealloc;
+- (id)init;
+- (id)initWithMemoriesStyle:(unsigned long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

@@ -15,6 +15,7 @@
 
 + (id)JSValueWithModel:(id)arg1 object:(id)arg2 context:(id)arg3;
 - (void).cxx_destruct;
+- (id)toObject;
 - (id)valueForProperty:(id)arg1 context:(id)arg2 error:(out id *)arg3;
 - (void)enumerateProperties:(CDUnknownBlockType)arg1;
 - (_Bool)hasProperty:(id)arg1;

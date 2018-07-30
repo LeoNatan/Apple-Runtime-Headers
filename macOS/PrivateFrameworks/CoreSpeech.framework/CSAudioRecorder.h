@@ -8,12 +8,14 @@
 
 #import "AVVoiceControllerPlaybackDelegate.h"
 #import "AVVoiceControllerRecordDelegate.h"
+#import "CSAudioDecoderDelegate.h"
+#import "CSAudioFileReaderDelegate.h"
 #import "CSBeepCancellerDelegate.h"
 #import "CSRemoteRecordClientDelegate.h"
 
-@class AVVoiceController, CSAudioPowerMeter, CSAudioSampleRateConverter, CSAudioZeroCounter, CSAudioZeroFilter, CSBeepCanceller, CSRemoteRecordClient, NSDictionary, NSString;
+@class AVVoiceController, CSAudioDecoder, CSAudioFileReader, CSAudioPowerMeter, CSAudioSampleRateConverter, CSAudioZeroCounter, CSAudioZeroFilter, CSBeepCanceller, CSRemoteRecordClient, NSDictionary, NSString;
 
-@interface CSAudioRecorder : NSObject <CSRemoteRecordClientDelegate, AVVoiceControllerRecordDelegate, AVVoiceControllerPlaybackDelegate, CSBeepCancellerDelegate>
+@interface CSAudioRecorder : NSObject <CSRemoteRecordClientDelegate, AVVoiceControllerRecordDelegate, AVVoiceControllerPlaybackDelegate, CSBeepCancellerDelegate, CSAudioDecoderDelegate, CSAudioFileReaderDelegate>
 {
     AVVoiceController *_voiceController;
     CSAudioZeroFilter *_zeroFilter;
@@ -27,14 +29,24 @@
     BOOL _needSampleRateConversion;
     CSRemoteRecordClient *_remoteRecordClient;
     CSAudioPowerMeter *_powerMeter;
+    BOOL _shouldUsePowerMeter;
     NSDictionary *_latestContext;
     BOOL _shouldUseRemoteRecord;
+    CSAudioDecoder *_opusDecoder;
     CSAudioZeroCounter *_continuousZeroCounter;
+    CSAudioFileReader *_audioFileReader;
+    unsigned long long _audioFilePathIndex;
+    BOOL _waitingForDidStart;
     id <CSAudioRecorderDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <CSAudioRecorderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)audioFileReaderDidStopRecording:(id)arg1 forReason:(long long)arg2;
+- (void)audioFileReaderDidStartRecording:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;
+- (void)audioFileReaderBufferAvailable:(id)arg1 buffer:(id)arg2 atTime:(unsigned long long)arg3;
+- (BOOL)_needResetAudioInjectionIndex:(id)arg1;
+- (void)_createAudioPowerMeterIfNeeded;
 - (void)_createSampleRateConverterIfNeeded;
 - (void)_createDeInterleaverIfNeeded;
 - (id)_deinterleaveBufferIfNeeded:(id)arg1;
@@ -46,9 +58,7 @@
 - (void)remoteRecordDidStartRecordingWithError:(id)arg1;
 - (void)voiceControllerMediaServicesWereReset:(id)arg1;
 - (void)voiceControllerMediaServicesWereLost:(id)arg1;
-- (void)voiceTriggerOccuredNotification:(id)arg1;
-- (void)updateVoiceTriggerAOPModel:(id)arg1;
-- (void)enableVoiceTriggerOnAOP:(BOOL)arg1;
+- (void)voiceControllerDidFinishAlertPlayback:(id)arg1 ofType:(int)arg2 error:(id)arg3;
 - (void)voiceControllerRecordHardwareConfigurationDidChange:(id)arg1 toConfiguration:(int)arg2;
 - (void)voiceControllerDidStopRecording:(id)arg1 forReason:(long long)arg2;
 - (void)voiceControllerDidStartRecording:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;
@@ -62,22 +72,28 @@
 - (BOOL)playAlertSoundForType:(long long)arg1;
 - (BOOL)playRecordStartingAlertAndResetEndpointer;
 - (BOOL)setAlertSoundFromURL:(id)arg1 forType:(long long)arg2;
+- (void)audioDecoderDidDecodePackets:(id)arg1 buffer:(id)arg2 timestamp:(unsigned long long)arg3;
 - (void)voiceControllerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)beepCancellerDidCancelSamples:(id)arg1 buffer:(id)arg2 timestamp:(unsigned long long)arg3;
-- (void)voiceControllerLPCMRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)_processAudioChainWithZeroFiltering:(id)arg1 atTime:(unsigned long long)arg2;
 - (void)_processAudioChain:(id)arg1 atTime:(unsigned long long)arg2;
 - (BOOL)_shouldRunZeroFilter;
 - (id)voiceTriggerInfo;
 - (id)playbackRoute;
+- (id)recordDeviceInfo;
 - (id)recordRoute;
 - (BOOL)isNarrowBand;
 - (float)_recordingSampleRate;
 - (BOOL)isRecording;
+- (BOOL)setRecordMode:(long long)arg1 error:(id *)arg2;
+- (BOOL)startListening:(id *)arg1;
+- (BOOL)prepareListenWithSettings:(id)arg1 error:(id *)arg2;
 - (void)stopRecording;
 - (BOOL)startRecording;
 - (BOOL)startRecording:(id *)arg1;
 - (BOOL)_shouldUseRemoteRecordForContext:(id)arg1;
+- (BOOL)_startRecordingForAudioInjection;
+- (BOOL)_shouldInjectAudio;
 - (void)_resetZeroFilter;
 - (double)getRecordBufferDuration;
 - (BOOL)setRecordBufferDuration:(double)arg1;

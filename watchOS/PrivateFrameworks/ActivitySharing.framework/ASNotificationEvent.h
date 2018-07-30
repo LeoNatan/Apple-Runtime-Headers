@@ -20,8 +20,8 @@
 }
 
 + (id)deletedWorkoutEventWithUUID:(id)arg1;
-+ (id)achievementCompletionEventWithAchievement:(id)arg1;
-+ (id)workoutCompletionEventWithWorkout:(id)arg1;
++ (id)achievementCompletionEventWithAchievement:(struct _HKFitnessFriendAchievement *)arg1;
++ (id)workoutCompletionEventWithWorkout:(struct _HKFitnessFriendWorkout *)arg1;
 + (id)goalCompletionEventWithActivitySummary:(id)arg1;
 + (id)notificationEventWithRecord:(id)arg1 friendUUID:(id)arg2;
 @property(nonatomic) long long triggerSnapshotIndex; // @synthesize triggerSnapshotIndex=_triggerSnapshotIndex;

@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 + (id)descriptionWithObject:(id)arg1 class:(Class)arg2;
 + (id)descriptionWithObject:(id)arg1 class:(Class)arg2 format:(id)arg3;
 - (void).cxx_destruct;
-- (id)descriptionString;
+@property(readonly, copy, nonatomic) NSString *descriptionString;
 - (void)setFieldOptionCommaSeparated;
 - (void)addSuperDescription;
 - (void)addFieldValue:(id)arg1;

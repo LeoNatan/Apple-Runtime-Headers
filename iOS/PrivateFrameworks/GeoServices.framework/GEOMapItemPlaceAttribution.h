@@ -12,7 +12,6 @@
 {
 }
 
-- (id)urlsForDealWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSURL *webURL;
 @property(readonly, nonatomic) NSArray *checkInURLs;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;

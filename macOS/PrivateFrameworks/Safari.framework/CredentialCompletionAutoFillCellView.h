@@ -6,7 +6,7 @@
 
 #import <Safari/ColorInvertingTableCellView.h>
 
-@class NSString, NSTextField;
+@class NSImageView, NSLayoutConstraint, NSString, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface CredentialCompletionAutoFillCellView : ColorInvertingTableCellView
@@ -15,9 +15,15 @@ __attribute__((visibility("hidden")))
     NSString *_credentialOriginDescription;
     NSTextField *_userNameDescriptionLabel;
     NSTextField *_credentialOriginDescriptionLabel;
+    NSImageView *_trailingImageView;
+    NSLayoutConstraint *_stackViewLeadingConstraint;
+    NSLayoutConstraint *_stackViewTrailingConstraint;
 }
 
 + (struct CGSize)sizeWithUserNameDescription:(id)arg1 origin:(id)arg2;
+@property(nonatomic) __weak NSLayoutConstraint *stackViewTrailingConstraint; // @synthesize stackViewTrailingConstraint=_stackViewTrailingConstraint;
+@property(nonatomic) __weak NSLayoutConstraint *stackViewLeadingConstraint; // @synthesize stackViewLeadingConstraint=_stackViewLeadingConstraint;
+@property(nonatomic) __weak NSImageView *trailingImageView; // @synthesize trailingImageView=_trailingImageView;
 @property(nonatomic) __weak NSTextField *credentialOriginDescriptionLabel; // @synthesize credentialOriginDescriptionLabel=_credentialOriginDescriptionLabel;
 @property(nonatomic) __weak NSTextField *userNameDescriptionLabel; // @synthesize userNameDescriptionLabel=_userNameDescriptionLabel;
 @property(copy, nonatomic) NSString *credentialOriginDescription; // @synthesize credentialOriginDescription=_credentialOriginDescription;

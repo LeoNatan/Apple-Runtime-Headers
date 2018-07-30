@@ -17,15 +17,14 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_readWriteQueue;
     CDUnknownBlockType _locationUpdateBlock;
-    CLLocationManager *_locationManager;
+    CLLocationManager *_clLocationManager;
     NSXPCConnection *_connection;
 }
 
-+ (id)_dictionaryForLocation:(id)arg1;
 + (id)defaultLocationManager;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) int didChangeNotificationToken; // @synthesize didChangeNotificationToken=_didChangeNotificationToken;
-@property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
+@property(retain, nonatomic) CLLocationManager *clLocationManager; // @synthesize clLocationManager=_clLocationManager;
 @property(copy, nonatomic) CDUnknownBlockType locationUpdateBlock; // @synthesize locationUpdateBlock=_locationUpdateBlock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *readWriteQueue; // @synthesize readWriteQueue=_readWriteQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
@@ -40,13 +39,20 @@
 - (id)_dictionaryOnDisk;
 - (void)_writeToDisk;
 - (void)_readFromDisk;
-- (void)_refresh;
 - (long long)_statusForCLAuthorizationStatus:(int)arg1;
-- (void)_requestLocation:(CDUnknownBlockType)arg1;
-- (void)_requestLastLocation:(CDUnknownBlockType)arg1;
+- (id)_dictionaryForCLLocation:(id)arg1;
+- (void)_requestCLLocationUpdates:(CDUnknownBlockType)arg1;
+- (void)_requestRecentCLLocation:(CDUnknownBlockType)arg1;
 - (void)setLastKnownLocation:(id)arg1;
-- (_Bool)_locationNeedsUpdate:(id)arg1;
+- (double)_getDistanceOfLastKnownLocationDictionary:(id)arg1 fromLocation:(id)arg2;
+- (id)_createLocationObjFromLocationDictionary:(id)arg1;
+- (_Bool)isLastKnownLocation:(id)arg1 significantlyOlderThanNewLocation:(id)arg2;
+- (_Bool)_shouldLastKnownLocation:(id)arg1 beUpdatedTo:(id)arg2;
+- (_Bool)_isLastKnownLocationFresh:(id)arg1;
+- (_Bool)_isLastKnownLocation:(id)arg1 freshForMaxAge:(double)arg2 fromNewTimestamp:(double)arg3;
+- (id)_copyLastKnownLocation;
 - (id)_dictionaryRepresentation;
+- (void)_requestActiveLocationChangeUpdates;
 - (void)updateLocationIfNeeded;
 @property(readonly, nonatomic) NSDictionary *lastKnownLocation; // @synthesize lastKnownLocation=_lastKnownLocation;
 - (void)requestAuthorization;

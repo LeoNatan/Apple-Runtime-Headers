@@ -8,7 +8,6 @@
 
 @class ESDContainer, OABReaderState, OABTableSortedIntArray, OADTable;
 
-__attribute__((visibility("hidden")))
 @interface OABRTable : NSObject
 {
     ESDContainer *mSrcTable;
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct OABTable2DArray<OABTableCell> *mCells;
 }
 
+- (void).cxx_destruct;
 - (void)map;
 - (void)createTargetTableContents;
 - (id)readStrokeFromShape:(struct EshShape *)arg1;

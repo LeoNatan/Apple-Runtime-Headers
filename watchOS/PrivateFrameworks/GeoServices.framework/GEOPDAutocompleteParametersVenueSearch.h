@@ -10,6 +10,7 @@
 
 @class GEOPDViewportInfo, NSMutableArray, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParametersVenueSearch : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

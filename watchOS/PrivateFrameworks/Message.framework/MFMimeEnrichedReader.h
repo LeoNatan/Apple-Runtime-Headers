@@ -15,7 +15,10 @@
         struct __CFString *theString;
         unsigned short *directUniCharBuffer;
         char *directCStringBuffer;
-        CDStruct_dff5684f rangeToBuffer;
+        struct {
+            int location;
+            int length;
+        } rangeToBuffer;
         int bufferedRangeStart;
         int bufferedRangeEnd;
     } _inputBuffer;

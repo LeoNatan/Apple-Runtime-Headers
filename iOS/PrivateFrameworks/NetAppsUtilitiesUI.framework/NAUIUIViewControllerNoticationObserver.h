@@ -8,6 +8,7 @@
 
 @class NSMutableArray, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface NAUIUIViewControllerNoticationObserver : NSObject
 {
     NSMutableArray *_observations;

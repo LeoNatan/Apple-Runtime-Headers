@@ -12,18 +12,18 @@ __attribute__((visibility("hidden")))
 @interface FI_TListView : NSOutlineView
 {
     FI_TListViewController *_controller;
+    unordered_map_f8b1458f _parentToChildrenInTableMap;
     _Bool _itemHitOnMouseDown;
-    struct TNSRef<FI_TTableViewShrinkToFitController *, void> _stfController;
-    struct TNSRef<NSTrackingArea *, void> _headerTrackingArea;
+    struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
+    struct TNSRef<NSTrackingArea, void> _headerTrackingArea;
     struct TFENode _currentDropNode;
-    struct TFENode _nodeClickedOnFirstMouseDown;
     long long _disabledTrackingRow;
     _Bool _shouldAutoResizeColumns;
     _Bool _visibleRectGreaterThanLastColumn;
     long long _lastVisibleColumnIndex;
-    struct TNSRef<FI_TBrowserImmediateActionGestureRecognizerDelegate *, void> _immediateActionGestureRecognizerDelegate;
-    struct TNSRef<NSImmediateActionGestureRecognizer *, void> _quickLookImmediateActionGestureRecognizer;
-    struct TNSRef<NSImmediateActionGestureRecognizer *, void> _renameImmediateActionGestureRecognizer;
+    struct TNSRef<FI_TBrowserImmediateActionGestureRecognizerDelegate, void> _immediateActionGestureRecognizerDelegate;
+    struct TNSRef<NSImmediateActionGestureRecognizer, void> _quickLookImmediateActionGestureRecognizer;
+    struct TNSRef<NSImmediateActionGestureRecognizer, void> _renameImmediateActionGestureRecognizer;
     struct TNotificationCenterObserver _clipViewBoundsChangedObserver;
     long long _retainCount;
 }
@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
 - (void)prepareDraggingDestinationView:(id)arg1 forRowIndexes:(id)arg2 draggingStyle:(long long)arg3;
 - (void)addDropFeedbackViews;
 - (_Bool)_onlyAcceptRowDropOnContent;
-- (void)reloadItem:(id)arg1 reloadChildren:(BOOL)arg2;
 - (_Bool)isDroppingOnTagNode;
 - (_Bool)_shouldContinueExpandAtLevel:(long long)arg1 beganAtLevel:(long long)arg2;
 - (BOOL)wantsPeriodicDraggingUpdates;
@@ -78,10 +77,18 @@ __attribute__((visibility("hidden")))
 - (_Bool)_wantsLiveResizeToUseCachedImage;
 - (void)enumerateAvailableBaseCellViewsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)nameCellViewAtRow:(long long)arg1;
-- (id)cellViewForColumnIdentifier:(id)arg1 row:(long long)arg2;
-- (id)baseCellViewForColumnIdentifier:(id)arg1 row:(long long)arg2;
+- (id)cellViewForColumnProperty:(int)arg1 row:(long long)arg2;
+- (id)baseCellViewForColumnProperty:(int)arg1 row:(long long)arg2;
 - (id)listRowViewAtRow:(long long)arg1 makeIfNecessary:(_Bool)arg2;
-- (id)listTableColumnWithIdentifier:(id)arg1;
+- (long long)columnIndexWithColumnProperty:(int)arg1;
+- (id)listTableColumnWithColumnProperty:(int)arg1;
+- (long long)childIndexForNode:(const struct TFENode *)arg1;
+- (const struct TFENode *)nodeAtChildIndex:(unsigned long long)arg1 inParent:(const struct TFENode *)arg2;
+- (void)moveNode:(const struct TFENode *)arg1 fromIndex:(long long)arg2 inParent:(const struct TFENode *)arg3 toIndex:(long long)arg4 inParent:(const struct TFENode *)arg5;
+- (void)removeNodes:(const struct TFENodeVector *)arg1 atIndexes:(id)arg2 inParent:(const struct TFENode *)arg3 withAnimation:(unsigned long long)arg4;
+- (void)insertNodes:(const struct TFENodeVector *)arg1 atIndexes:(id)arg2 inParent:(const struct TFENode *)arg3 withAnimation:(unsigned long long)arg4;
+- (void)reloadItem:(id)arg1 reloadChildren:(BOOL)arg2;
+- (void)reloadData;
 - (void)viewDidEndLiveResize;
 - (void)viewWillStartLiveResize;
 - (void)_autoresizeToFit;
@@ -98,12 +105,12 @@ __attribute__((visibility("hidden")))
 - (void)_trackDisabledClickWithEvent:(id)arg1 controller:(id)arg2;
 @property long long disabledTrackingRow; // @synthesize disabledTrackingRow=_disabledTrackingRow;
 - (_Bool)handleUnicodeTextInput:(id)arg1 atTime:(double)arg2;
-- (id)columnWithStringIdentifier:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (BOOL)_supportsTrackingAreasForCells;
+- (void)viewDidChangeBackingProperties;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidMoveToWindow;

@@ -26,10 +26,11 @@ __attribute__((visibility("hidden")))
     int _payloadBufferHistoryIndex;
 }
 
++ (unsigned int)redOverheadForNumPayloads:(unsigned int)arg1;
 @property(readonly, nonatomic) int redPayloadType; // @synthesize redPayloadType=_redPayloadType;
 @property(nonatomic) unsigned int numPayloads; // @synthesize numPayloads=_numPayloads;
 @property(nonatomic) unsigned int maxDelay; // @synthesize maxDelay=_maxDelay;
-- (struct tagVCAudioRedPayload *)getPrimaryPayloadWithBuffer:(char *)arg1 length:(int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4;
+- (struct tagVCAudioRedPayload *)getPrimaryPayloadWithBuffer:(char *)arg1 length:(int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4 priority:(unsigned char)arg5;
 - (id)initWithRedPayloadType:(int)arg1 sampleRate:(unsigned int)arg2 numPayloads:(unsigned int)arg3 maxDelay:(unsigned int)arg4 includeSequenceOffset:(_Bool)arg5;
 - (void)dealloc;
 - (void)updatePayloadHistory:(struct tagVCAudioRedPayload *)arg1;

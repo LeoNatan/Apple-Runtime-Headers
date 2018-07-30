@@ -14,6 +14,7 @@
     long long _trackingState;
     long long _trackingStateReason;
     unsigned long long _lensType;
+    long long _devicePosition;
     struct CGSize _imageResolution;
     // Error parsing type: , name: _tangentialDistortion
     // Error parsing type: , name: _radialDistortion
@@ -22,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) long long devicePosition; // @synthesize devicePosition=_devicePosition;
 // Error parsing type for property tangentialDistortion:
 // Property attributes: T,N,V_tangentialDistortion
 
@@ -41,6 +43,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 -     // Error parsing type: {?=[4]}24@0:8q16, name: viewMatrixForOrientation:
 -     // Error parsing type: {?=[4]}56@0:8q16{CGSize=dd}24d40d48, name: projectionMatrixForOrientation:viewportSize:zNear:zFar:
+-     // Error parsing type: 120@0:8{CGPoint=dd}16{?=[4]}32q96{CGSize=dd}104, name: unprojectPoint:ontoPlaneWithTransform:orientation:viewportSize:
 - (struct CGPoint)projectPoint:(long long)arg1 orientation:(struct CGSize)arg2 viewportSize: /* Error: Ran out of types for this method. */;
 - (_Bool)isEqual:(id)arg1;
 - (id)debugQuickLookObject;
@@ -49,6 +52,7 @@
 // Error parsing type for property projectionMatrix:
 // Property attributes: T{?=[4]},R,N
 
+-     // Error parsing type: {?=[4]}16@0:8, name: displayCenterTransform
 - (struct CGPoint)principalPoint;
 - (struct CGPoint)focalLength;
 // Error parsing type for property eulerAngles:

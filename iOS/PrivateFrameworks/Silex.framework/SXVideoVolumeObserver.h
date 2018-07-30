@@ -9,7 +9,7 @@
 #import "SXVideoPlaybackObserver.h"
 #import "SXVideoVolumeObserving.h"
 
-@class AVAudioSession, NSString, SXKeyValueObserver, SXPlaybackCoordinator;
+@class AVAudioSession, NSString, SVKeyValueObserver, SXPlaybackCoordinator;
 
 @interface SXVideoVolumeObserver : NSObject <SXVideoPlaybackObserver, SXVideoVolumeObserving>
 {
@@ -19,10 +19,10 @@
     CDUnknownBlockType _muteStateChangeBlock;
     SXPlaybackCoordinator *_playbackCoordinator;
     AVAudioSession *_audioSession;
-    SXKeyValueObserver *_outputVolumeObserver;
+    SVKeyValueObserver *_outputVolumeObserver;
 }
 
-@property(readonly, nonatomic) SXKeyValueObserver *outputVolumeObserver; // @synthesize outputVolumeObserver=_outputVolumeObserver;
+@property(readonly, nonatomic) SVKeyValueObserver *outputVolumeObserver; // @synthesize outputVolumeObserver=_outputVolumeObserver;
 @property(readonly, nonatomic) __weak AVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
 @property(readonly, nonatomic) __weak SXPlaybackCoordinator *playbackCoordinator; // @synthesize playbackCoordinator=_playbackCoordinator;
 @property(copy, nonatomic, setter=onMuteStateChange:) CDUnknownBlockType muteStateChangeBlock; // @synthesize muteStateChangeBlock=_muteStateChangeBlock;

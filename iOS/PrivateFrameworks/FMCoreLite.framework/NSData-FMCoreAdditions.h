@@ -8,6 +8,7 @@
 
 @interface NSData (FMCoreAdditions)
 - (id)hexString;
+- (id)fm_MACAddressString;
 - (id)fm_hexString;
 @end
 

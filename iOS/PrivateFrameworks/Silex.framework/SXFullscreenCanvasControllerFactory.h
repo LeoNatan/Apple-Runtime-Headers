@@ -14,13 +14,15 @@
 {
     id <SXFullscreenCaptionViewFactory> _captionViewFactory;
     id <SXPresentationAttributesProvider> _presentationAttributesProvider;
+    id <SXMediaSharingPolicyProvider> _mediaSharingPolicyProvider;
 }
 
+@property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 @property(readonly, nonatomic) id <SXPresentationAttributesProvider> presentationAttributesProvider; // @synthesize presentationAttributesProvider=_presentationAttributesProvider;
 @property(readonly, nonatomic) id <SXFullscreenCaptionViewFactory> captionViewFactory; // @synthesize captionViewFactory=_captionViewFactory;
 - (void).cxx_destruct;
 - (id)fullscreenCanvasControllerForShowable:(id)arg1;
-- (id)initWithCaptionViewFactory:(id)arg1 presentationAttributesProvider:(id)arg2;
+- (id)initWithCaptionViewFactory:(id)arg1 presentationAttributesProvider:(id)arg2 mediaSharingPolicyProvider:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

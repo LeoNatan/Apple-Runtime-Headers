@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSData, NSDate, NSString, PARRequest, PARSessionConfiguration;
+@class NSData, NSDate, NSFileHandle, NSString, PARRequest, PARSessionConfiguration;
 
 @protocol PARDaemonXPC
 - (void)getImageMap:(void (^)(NSDictionary *))arg1;
@@ -14,11 +14,11 @@
 - (void)fileHandleForWritingFeedbackType:(unsigned long long)arg1 reply:(void (^)(NSFileHandle *, NSError *))arg2;
 - (void)fileHandleAndAttributesForResource:(NSString *)arg1 completion:(void (^)(NSFileHandle *, NSDictionary *, NSError *))arg2;
 - (void)listSessions:(void (^)(NSArray *))arg1;
-- (void)listenToFlusher:(void (^)(NSXPCListenerEndpoint *))arg1;
-- (void)feedback:(NSString *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
-- (void)reportFeedbackPayloadData:(NSData *)arg1 queryId:(unsigned long long)arg2;
-- (void)request:(PARRequest *)arg1 reply:(void (^)(unsigned long long, PARReply *, NSError *))arg2;
-- (void)bag:(void (^)(PARBag *, NSError *))arg1;
+- (void)stopSessions:(void (^)(NSError *))arg1;
+- (void)teeFeedbackTo:(NSFileHandle *)arg1 prettyPrint:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
+- (void)reportFeedbackPayloadData:(PARSessionConfiguration *)arg1 payloadData:(NSData *)arg2 queryId:(unsigned long long)arg3;
+- (void)request:(PARSessionConfiguration *)arg1 request:(PARRequest *)arg2 reply:(void (^)(unsigned long long, PARReply *, NSError *))arg3;
+- (void)bag:(PARSessionConfiguration *)arg1 reply:(void (^)(PARBag *, NSError *))arg2;
 - (void)configure:(PARSessionConfiguration *)arg1 reply:(void (^)(NSXPCListenerEndpoint *))arg2;
 @end
 

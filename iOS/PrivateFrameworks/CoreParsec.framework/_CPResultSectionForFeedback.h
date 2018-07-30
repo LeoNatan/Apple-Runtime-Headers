@@ -13,19 +13,18 @@
 
 @interface _CPResultSectionForFeedback : PBCodable <_CPResultSectionForFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int rankingScore:1;
-    } _has;
+    int _knownBundleIdentifier;
     NSArray *_results;
     NSString *_identifier;
-    NSString *_bundleIdentifier;
     double _rankingScore;
     NSData *_fallbackResultSection;
+    NSString *_bundleIdentifier;
+    unsigned long long _whichBundleid;
 }
 
+@property(readonly, nonatomic) unsigned long long whichBundleid; // @synthesize whichBundleid=_whichBundleid;
 @property(copy, nonatomic) NSData *fallbackResultSection; // @synthesize fallbackResultSection=_fallbackResultSection;
 @property(nonatomic) double rankingScore; // @synthesize rankingScore=_rankingScore;
-@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
@@ -37,15 +36,14 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasFallbackResultSection;
-@property(readonly, nonatomic) _Bool hasRankingScore;
-@property(readonly, nonatomic) _Bool hasBundleIdentifier;
-@property(readonly, nonatomic) _Bool hasIdentifier;
+@property(nonatomic) int knownBundleIdentifier; // @synthesize knownBundleIdentifier=_knownBundleIdentifier;
+@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (id)resultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resultsCount;
 - (void)addResults:(id)arg1;
 - (void)clearResults;
 - (id)initWithFacade:(id)arg1;
+- (id)feedbackJSON;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

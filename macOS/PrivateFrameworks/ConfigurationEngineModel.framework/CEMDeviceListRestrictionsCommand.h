@@ -12,21 +12,21 @@
 
 @interface CEMDeviceListRestrictionsCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadProfileRestrictions;
 }
 
-+ (id)allowedReasons;
-+ (id)RestrictionsDictionary_allowedStatusKeys;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withProfileRestrictions:(id)arg2;
 + (id)allowedPayloadKeys;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusRestrictionsDictionary_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadProfileRestrictions; // @synthesize payloadProfileRestrictions=_payloadProfileRestrictions;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (int)executionLevel;
 - (BOOL)mustBeSupervised;
-@property(readonly, nonatomic) NSNumber *payloadProfileRestrictions;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

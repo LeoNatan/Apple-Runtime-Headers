@@ -6,7 +6,6 @@
 
 #import <OfficeImport/ODDLayoutObject.h>
 
-__attribute__((visibility("hidden")))
 @interface ODDAlgorithm : ODDLayoutObject
 {
     int mType;

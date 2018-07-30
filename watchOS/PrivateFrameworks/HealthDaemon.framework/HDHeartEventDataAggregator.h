@@ -10,9 +10,10 @@
 {
 }
 
-- (_Bool)queue_didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
+- (_Bool)didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
 - (id)dataObjectsFromSensorDatum:(id)arg1 error:(id *)arg2;
 - (Class)sensorDatumClass;
+- (id)_categoryType;
 - (id)objectType;
 
 @end

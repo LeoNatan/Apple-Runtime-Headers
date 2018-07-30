@@ -10,7 +10,6 @@
 
 @class NSString, OISFUFileDataRepresentation;
 
-__attribute__((visibility("hidden")))
 @interface OISFUZipArchiveFileDataRepresentation : OISFUDataRepresentation <SFUZipArchiveDataRepresentation>
 {
     OISFUFileDataRepresentation *mFileRepresentation;

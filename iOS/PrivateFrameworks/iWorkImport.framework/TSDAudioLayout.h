@@ -6,12 +6,15 @@
 
 #import <iWorkImport/TSDMediaLayout.h>
 
+@class TSDMovieInfo;
+
 __attribute__((visibility("hidden")))
 @interface TSDAudioLayout : TSDMediaLayout
 {
 }
 
-- (id)movieInfo;
++ (struct CGSize)scaledAudioSize;
+@property(readonly, nonatomic) TSDMovieInfo *movieInfo;
 - (struct CGRect)frameForCulling;
 - (int)wrapType;
 - (_Bool)canFlip;
@@ -19,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)alignmentFrame;
 - (struct CGRect)computeAlignmentFrameInRoot:(_Bool)arg1;
 - (_Bool)shouldDisplayGuides;
+- (id)visibleGeometries;
 - (id)layoutGeometryFromInfo;
 - (_Bool)canAspectRatioLockBeChangedByUser;
 - (_Bool)resizeMayChangeAspectRatio;

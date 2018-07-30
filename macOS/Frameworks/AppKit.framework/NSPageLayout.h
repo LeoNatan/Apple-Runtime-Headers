@@ -17,7 +17,6 @@
     void *_contextInfo;
     NSPrintInfo *_presentedPrintInfo;
     NSWindowController *_windowController;
-    id _reserved[4];
 }
 
 + (id)pageLayout;

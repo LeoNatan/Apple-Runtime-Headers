@@ -16,6 +16,7 @@
 
 @property(nonatomic) BOOL useDarkerPlaceholder; // @synthesize useDarkerPlaceholder=_useDarkerPlaceholder;
 @property(retain, nonatomic) GKPlayer *player; // @synthesize player=_player;
+- (void)invalidatePhoto;
 - (void)dealloc;
 
 @end

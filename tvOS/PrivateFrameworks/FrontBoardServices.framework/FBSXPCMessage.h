@@ -16,9 +16,9 @@
 + (id)messageWithPacker:(CDUnknownBlockType)arg1;
 + (id)messageWithPayload:(id)arg1;
 + (id)message;
-@property(readonly, retain, nonatomic) NSObject<OS_xpc_object> *payload; // @synthesize payload=_payload;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *payload; // @synthesize payload=_payload;
+- (void).cxx_destruct;
 - (void)sendReplyMessageWithPacker:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithMessagePacker:(CDUnknownBlockType)arg1;
 - (id)initWithMessagePayload:(id)arg1;

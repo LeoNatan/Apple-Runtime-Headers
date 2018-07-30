@@ -8,6 +8,7 @@
 
 @class NSViewController;
 
+__attribute__((visibility("hidden")))
 @interface _NSBrowserPreviewColumnViewController : NSBrowserColumnViewController
 {
     NSViewController *_previewViewController;

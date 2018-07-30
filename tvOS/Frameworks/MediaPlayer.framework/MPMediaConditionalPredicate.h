@@ -25,6 +25,8 @@
 - (void).cxx_destruct;
 - (id)protobufferEncodableObject;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;

@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface DDRepeatCount : DDUnaryOperator <NSCopying>
 {
     int _count;

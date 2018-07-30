@@ -8,6 +8,7 @@
 
 #import "_NSBindingTree.h"
 
+__attribute__((visibility("hidden")))
 @interface _NSControllerTreeProxy : NSTreeNode <_NSBindingTree>
 {
     id _controller;

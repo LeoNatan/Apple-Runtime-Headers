@@ -16,6 +16,7 @@
 
 + (id)cancelWithDictionary:(id)arg1 context:(id)arg2;
 + (id)cancel;
+- (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
 - (id)groupIdentifier;

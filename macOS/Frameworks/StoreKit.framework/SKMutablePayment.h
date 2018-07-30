@@ -6,16 +6,21 @@
 
 #import <StoreKit/SKPayment.h>
 
-@class NSData, NSString;
+@class NSData, NSDictionary, NSString;
 
 @interface SKMutablePayment : SKPayment
 {
 }
 
-@property(copy, nonatomic) NSString *applicationUsername; // @dynamic applicationUsername;
+@property(copy, nonatomic) NSDictionary *requestParameters; // @dynamic requestParameters;
+@property(copy, nonatomic) NSString *partnerTransactionIdentifier; // @dynamic partnerTransactionIdentifier;
+@property(copy, nonatomic) NSString *partnerIdentifier; // @dynamic partnerIdentifier;
+@property(nonatomic) BOOL simulatesAskToBuyInSandbox; // @dynamic simulatesAskToBuyInSandbox;
 @property(copy, nonatomic) NSData *requestData; // @dynamic requestData;
 @property(nonatomic) long long quantity; // @dynamic quantity;
 @property(copy, nonatomic) NSString *productIdentifier; // @dynamic productIdentifier;
+@property(nonatomic) BOOL isStoreOriginated; // @dynamic isStoreOriginated;
+@property(copy, nonatomic) NSString *applicationUsername; // @dynamic applicationUsername;
 
 @end
 

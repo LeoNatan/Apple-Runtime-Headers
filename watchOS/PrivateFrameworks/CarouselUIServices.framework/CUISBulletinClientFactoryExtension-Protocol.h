@@ -6,12 +6,15 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
 @protocol CUISBulletinClientFactoryExtension <NSObject>
 
 @optional
-- (void)setClientFactoryExtensionDelegate:(id <CUISBulletinClientFactoryExtensionDelegate>)arg1;
+- (_Bool)wantsPrimaryPagePresentationBuilt;
+- (void)setCUISMetadata:(NSDictionary *)arg1;
+- (_Bool)alwaysReturnPrimaryPagePresentationAsynchronously;
+- (_Bool)supportsThreadedPrimaryPagePresentation;
 - (NSArray *)sectionIDsSupported;
 - (void)invalidate;
 - (double)extendedPrimaryPagePresentationTimeout;

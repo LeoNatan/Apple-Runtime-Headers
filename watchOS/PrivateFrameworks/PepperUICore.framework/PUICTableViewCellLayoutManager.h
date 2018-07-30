@@ -9,13 +9,27 @@
 @interface PUICTableViewCellLayoutManager : UITableViewCellLayoutManager
 {
     _Bool _usingCompactLayout;
+    float _cellSeparatorHeight;
 }
 
++ (float)_labelBaselineFromTopMin;
++ (float)_defaultBottomBaselineOffset;
++ (float)_labelBaselineFromTopDefault;
++ (float)_contentSubviewXInset;
 + (float)_likelyFirstLineBaselineOffsetForLabel:(id)arg1;
 + (id)layoutManagerForTableViewCellStyle:(int)arg1;
 + (void)_setUsesConstraintBasedLayout:(_Bool)arg1;
 + (_Bool)_usesConstraintBasedLayout;
+@property(nonatomic) float cellSeparatorHeight; // @synthesize cellSeparatorHeight=_cellSeparatorHeight;
 @property(readonly, nonatomic, getter=isCompactLayout) _Bool compactLayout; // @synthesize compactLayout=_usingCompactLayout;
+- (float)_cellContentXPadding;
+- (float)_labelBaselineFromBottomMin;
+- (float)_labelBaselineFromTopMin;
+- (float)_defaultCellHeight;
+- (float)_minTextRightMarginWithAccessory;
+- (float)_imageViewToTextMargin;
+- (float)_defaultImageViewTopInset;
+- (float)_defaultImageViewMaxWidth;
 - (struct CGSize)intrinsicContentSizeForCell:(id)arg1 fittingSize:(struct CGSize)arg2;
 - (struct CGSize)intrinsicContentSizeForCell:(id)arg1;
 - (void)getTextLabelRect:(struct CGRect *)arg1 detailTextLabelRect:(struct CGRect *)arg2 forCell:(id)arg3 rowWidth:(float)arg4 forSizing:(_Bool)arg5;

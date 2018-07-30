@@ -12,6 +12,7 @@
 
 @interface NSBitmapImageRep : NSImageRep <NSSecureCoding>
 {
+    unsigned int _bytesPerRow;
     struct __bitmapRepFlags {
         unsigned int bitsPerPixel:8;
         unsigned int isPlanar:1;
@@ -27,7 +28,6 @@
         unsigned int cgImageIsPrimary:1;
         unsigned int compression:20;
     } _moreRepFlags;
-    unsigned int _bytesPerRow;
     id _dataObj;
     NSData *_tiffData;
     id _properties;
@@ -75,7 +75,7 @@
 - (void)setColor:(id)arg1 atX:(long long)arg2 y:(long long)arg3;
 @property(readonly) char *bitmapData;
 - (void)getBitmapDataPlanes:(char **)arg1;
-- (BOOL)_wantsToBeCached;
+- (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
 - (struct CGImage *)CGImageForProposedRect:(struct CGRect *)arg1 context:(id)arg2 hints:(id)arg3;
 @property(readonly) struct CGImage *CGImage;
 - (BOOL)draw;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSAttributedString, NSData, NSDictionary, NSFileWrapper, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableString, NSString, NSURL;
+@class NSAttributedString, NSData, NSDictionary, NSFileWrapper, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableString, NSString, NSURL;
 
 @interface NSHTMLWriter : NSObject
 {
@@ -21,7 +21,7 @@
     NSMutableArray *_paraStyleArrays;
     NSMutableIndexSet *_paraStyleIndexes;
     NSMutableIndexSet *_listItemStyleIndexes;
-    NSMutableArray *_charStyleStrings;
+    NSMutableOrderedSet *_charStyleStrings;
     NSMutableArray *_charStyleArrays;
     NSMutableArray *_fontStrings;
     NSMutableArray *_tableStyleStrings;
@@ -30,6 +30,7 @@
     NSMutableArray *_olistStyleStrings;
     NSMutableArray *_ulistStyleStrings;
     NSMutableDictionary *_fontNames;
+    NSMutableDictionary *_fontDescriptions;
     long long _level;
     long long _prefixSpaces;
     NSString *_textEncodingName;

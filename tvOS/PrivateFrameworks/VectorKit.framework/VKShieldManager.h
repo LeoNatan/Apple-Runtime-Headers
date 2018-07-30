@@ -30,11 +30,11 @@
 @property(readonly, nonatomic) _Bool shouldCacheAtlases; // @synthesize shouldCacheAtlases=_shouldCacheAtlases;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)imageForShieldType:(long long)arg1 shieldText:(id)arg2 contentScale:(double)arg3 size:(long long)arg4 idiom:(long long)arg5 colors:(CDStruct_87ab733e *)arg6 featureType:(unsigned long long)arg7 variant:(unsigned long long)arg8;
-- (id)artworkForShieldType:(long long)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 size:(long long)arg4 idiom:(long long)arg5 colors:(CDStruct_87ab733e *)arg6 featureType:(unsigned long long)arg7 variant:(unsigned long long)arg8;
-- (id)artworkForShieldType:(long long)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 size:(long long)arg4 idiom:(long long)arg5 mapRect:(CDStruct_90e2a262)arg6 colors:(CDStruct_87ab733e *)arg7 featureType:(unsigned long long)arg8 variant:(unsigned long long)arg9;
-- (id)artworkForShieldName:(id)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 resourceNames:(id)arg4 size:(long long)arg5 idiom:(long long)arg6 numberOfLines:(unsigned long long)arg7 colors:(CDStruct_87ab733e *)arg8;
-- (id)artworkForShieldType:(long long)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 resourceNames:(id)arg4 style:(const shared_ptr_f1f56723 *)arg5 size:(long long)arg6 idiom:(long long)arg7 numberOfLines:(unsigned long long)arg8 colors:(CDStruct_87ab733e *)arg9 featureType:(unsigned long long)arg10 variant:(unsigned long long)arg11;
+- (id)imageForShieldType:(long long)arg1 shieldText:(id)arg2 contentScale:(double)arg3 size:(long long)arg4 idiom:(long long)arg5 colors:(CDStruct_b3fd5d76 *)arg6 featureType:(unsigned long long)arg7 variant:(unsigned long long)arg8 overlayColor:(CDStruct_83984b6f)arg9;
+- (id)artworkForShieldType:(long long)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 size:(long long)arg4 idiom:(long long)arg5 colors:(CDStruct_b3fd5d76 *)arg6 featureType:(unsigned long long)arg7 variant:(unsigned long long)arg8 overlayColor:(CDStruct_83984b6f)arg9;
+- (id)artworkForShieldType:(long long)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 size:(long long)arg4 idiom:(long long)arg5 mapRect:(CDStruct_90e2a262)arg6 colors:(CDStruct_b3fd5d76 *)arg7 featureType:(unsigned long long)arg8 variant:(unsigned long long)arg9 overlayColor:(CDStruct_83984b6f)arg10;
+- (id)artworkForShieldName:(id)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 resourceNames:(id)arg4 size:(long long)arg5 idiom:(long long)arg6 numberOfLines:(unsigned long long)arg7 colors:(CDStruct_b3fd5d76 *)arg8 overlayColor:(CDStruct_83984b6f)arg9;
+- (id)artworkForShieldType:(long long)arg1 textLength:(unsigned long long)arg2 contentScale:(double)arg3 resourceNames:(id)arg4 style:(const shared_ptr_f1f56723 *)arg5 size:(long long)arg6 idiom:(long long)arg7 numberOfLines:(unsigned long long)arg8 colors:(CDStruct_b3fd5d76 *)arg9 featureType:(unsigned long long)arg10 variant:(unsigned long long)arg11 overlayColor:(CDStruct_83984b6f)arg12;
 - (id)_indexForName:(id)arg1;
 - (id)_atlasForName:(id)arg1;
 - (id)_nonRegionalIndexesAndPacks;

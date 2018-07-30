@@ -13,6 +13,8 @@
 
 @property(nonatomic) __weak id <FLSpecifierTapHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)dealloc;
+- (id)description;
 - (void)stopSpinnerForSpecifier:(id)arg1;
 - (void)startSpinnerForSpecifier:(id)arg1;
 - (void)_handleActionForItem:(id)arg1 fromSpecifier:(id)arg2 eventSource:(unsigned long long)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;

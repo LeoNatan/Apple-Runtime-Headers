@@ -20,6 +20,7 @@
 @property(readonly, copy, nonatomic) NSString *displayName;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+- (id)_originsStrings;
 @property(readonly, nonatomic) _WKWebsiteDataSize *_dataSize;
 
 // Remaining properties

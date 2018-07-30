@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
+#import "BCSyncICloudSettingsProtocol.h"
 #import "NSObject.h"
 
 @class NSArray, NSData, NSDictionary, NSString, NSURL;
 
-@protocol BKAgentService <NSObject>
+@protocol BKAgentService <NSObject, BCSyncICloudSettingsProtocol>
 - (void)simulateUploadFailure:(NSDictionary *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)simulateUploadEnd:(NSDictionary *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)simulateUploadProgress:(NSDictionary *)arg1 withReply:(void (^)(NSError *))arg2;
@@ -18,7 +19,7 @@
 - (void)setUserDefaultsEnabled:(BOOL)arg1 reply:(void (^)(void))arg2;
 - (void)setUbiquityDirectoriesSubpath:(NSString *)arg1 withReply:(void (^)(BOOL))arg2;
 - (void)performUbiquityMigration:(void (^)(NSArray *, NSError *))arg1;
-- (void)getUseriCloudSetting:(void (^)(BOOL, NSData *, NSDictionary *, NSDictionary *, NSDictionary *, NSError *))arg1;
+- (void)getUseriCloudSetting:(void (^)(BOOL, BOOL, NSData *, NSDictionary *, NSDictionary *, NSDictionary *, NSError *))arg1;
 - (void)setUseriCloudSetting:(BOOL)arg1 results:(void (^)(BOOL, NSData *, NSDictionary *, NSDictionary *, NSDictionary *, NSError *))arg2;
 - (void)shutdownService:(void (^)(id, NSError *))arg1;
 - (void)chooseLibrary:(NSURL *)arg1 withToken:(NSData *)arg2 results:(void (^)(id, NSError *))arg3;

@@ -14,8 +14,8 @@
 {
     NSString *_directoryPath;
     NSString *_fileName;
-    long long _maxNumberOfLogFiles;
     unsigned long long _maxSizeInBytes;
+    long long _maxNumberOfLogFiles;
 }
 
 @property(nonatomic) long long maxNumberOfLogFiles; // @synthesize maxNumberOfLogFiles=_maxNumberOfLogFiles;

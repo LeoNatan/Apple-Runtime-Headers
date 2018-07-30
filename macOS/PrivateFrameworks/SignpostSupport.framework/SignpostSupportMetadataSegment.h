@@ -26,7 +26,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithArgumentObject:(id)arg1 typeNamespace:(id)arg2 type:(id)arg3 tokens:(id)arg4 stringPrefix:(id)arg5;
 - (id)initWithDictionary:(id)arg1;
-- (id)serializeableDictionary;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
 
 @end
 

@@ -12,6 +12,7 @@
 
 + (_Bool)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (_Bool)_hasRenderLayerSubclass;
+@property _Bool allowsBackdropGroups;
 @property _Bool matchesTransform;
 @property _Bool matchesPosition;
 @property _Bool matchesOpacity;

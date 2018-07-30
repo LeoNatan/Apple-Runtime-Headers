@@ -22,7 +22,8 @@
 - (void)_resetCachedPaths;
 - (void)chartCacheDidUpdate:(id)arg1;
 - (void)invalidateCache;
-- (_Bool)blocksAvailableFromPath:(CDStruct_48c31d0d)arg1 toPath:(CDStruct_48c31d0d)arg2;
+- (_Bool)hasAvailableBlocksBetweenStartPath:(CDStruct_48c31d0d)arg1 endPath:(CDStruct_48c31d0d)arg2;
+- (_Bool)hasPendingQueriesBetweenStartPath:(CDStruct_48c31d0d)arg1 endPath:(CDStruct_48c31d0d)arg2;
 - (void)blocksRequestedFromPath:(CDStruct_48c31d0d)arg1 toPath:(CDStruct_48c31d0d)arg2;
 - (id)cachedBlockForPath:(CDStruct_48c31d0d)arg1 context:(id)arg2;
 - (id)init;

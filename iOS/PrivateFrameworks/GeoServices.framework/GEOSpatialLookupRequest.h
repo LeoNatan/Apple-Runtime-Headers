@@ -10,6 +10,7 @@
 
 @class GEOLatLng;
 
+__attribute__((visibility("hidden")))
 @interface GEOSpatialLookupRequest : PBRequest <NSCopying>
 {
     CDStruct_95bda58d _categorys;

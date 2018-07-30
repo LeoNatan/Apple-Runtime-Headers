@@ -12,13 +12,14 @@
 
 @interface NFContactlessUICCSession : NFSession <NFContactlessSessionCallbacks>
 {
+    BOOL _fieldNotificationSent;
     id <NFContactlessUICCSessionDelegate> _delegate;
 }
 
 @property id <NFContactlessUICCSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didSelectApplet:(id)arg1;
 - (void)didEndUnexpectedly;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didDetectField:(BOOL)arg1;
 
 // Remaining properties

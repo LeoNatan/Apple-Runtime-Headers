@@ -13,6 +13,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (BOOL)isPermittedOnUserConnection;
++ (BOOL)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(nonatomic) BOOL allowFreePurchases; // @synthesize allowFreePurchases=_allowFreePurchases;
 @property(nonatomic) unsigned long long licenseType; // @synthesize licenseType=_licenseType;
 - (void)encodeWithCoder:(id)arg1;

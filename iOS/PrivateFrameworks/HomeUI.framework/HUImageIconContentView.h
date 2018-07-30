@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (long long)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(long long)arg2;
 - (void)_updateIconImage;
+- (id)imageForImageIconDescriptor:(id)arg1;
 - (void)setIconSize:(unsigned long long)arg1;
 - (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)layoutSubviews;

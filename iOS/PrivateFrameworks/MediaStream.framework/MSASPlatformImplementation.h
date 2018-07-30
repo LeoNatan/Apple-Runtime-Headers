@@ -8,12 +8,15 @@
 
 #import "MSASPlatform.h"
 
-@class NSString;
+@class ACAccountStore, NSString;
 
 @interface MSASPlatformImplementation : NSObject <MSASPlatform>
 {
+    ACAccountStore *_accountStore;
 }
 
+@property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
+- (void).cxx_destruct;
 - (_Bool)shouldEnableNewFeatures;
 - (int)MMCSConcurrentConnectionsCount;
 - (id)personIDsEnabledForAlbumSharing;
@@ -33,6 +36,7 @@
 - (Class)pluginClass;
 - (id)pathAlbumSharingDir;
 - (id)albumSharingDaemon;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

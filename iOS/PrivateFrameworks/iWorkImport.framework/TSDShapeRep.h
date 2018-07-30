@@ -8,13 +8,14 @@
 
 #import "TSDMagicMoveMatching.h"
 
-@class TSDShapeInfo, TSDShapeLayout;
+@class NSMutableDictionary, TSDShapeInfo, TSDShapeLayout;
 
 __attribute__((visibility("hidden")))
 @interface TSDShapeRep : TSDStyledRep <TSDMagicMoveMatching>
 {
     struct CGRect mFrameInUnscaledCanvasRelativeToSuper;
     _Bool mFrameInUnscaledCanvasIsValid;
+    _Bool mDirectlyManagesLayerContentCacheValid;
     _Bool mDirectlyManagesLayerContent;
     struct CGRect mOriginalAliasedAlignmentFrameInLayerFrame;
     _Bool mShadowOnChildrenDisabled;
@@ -24,17 +25,27 @@ __attribute__((visibility("hidden")))
     struct _NSRange mAvailableToCommitPointRange;
     struct CGRect mLastDynamicInvalidRect;
     _Bool mFillChanged;
+    _Bool mShouldForceLayerGeometryUpdate;
+    _Bool mIsInvisibleCacheValid;
+    _Bool mIsInvisibleCache;
+    _Bool mNeedsDisplay;
+    NSMutableDictionary *mHitTestCache;
 }
 
 + (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
+- (void).cxx_destruct;
 - (_Bool)canDrawShadowInOneStepWithChildren:(_Bool)arg1;
 - (_Bool)p_drawsSelfInOneStep;
+- (_Bool)p_isNormalShapeInsideFreehandDrawing;
 - (void)p_drawLineEndForHead:(_Bool)arg1 withDelta:(struct CGPoint)arg2 andStroke:(id)arg3 inContext:(struct CGContext *)arg4 useFastDrawing:(_Bool)arg5;
 - (void)setTextureAttributes:(id)arg1 textureBounds:(struct CGRect)arg2;
+- (_Bool)canDrawWithOtherShapeRep:(id)arg1;
 - (_Bool)isInvisible;
 - (id)imageOfStroke:(struct CGRect *)arg1;
 - (struct CGRect)strokeBoundsWithOptions:(unsigned long long)arg1 fallbackBounds:(struct CGRect)arg2;
+- (void)p_drawInContext:(struct CGContext *)arg1 withContent:(_Bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(_Bool)arg4 usingPathOverride:(id)arg5 patternOffsetsBySubpathOverride:(id)arg6;
 - (void)p_drawInContext:(struct CGContext *)arg1 withContent:(_Bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(_Bool)arg4;
+- (void)drawInContext:(struct CGContext *)arg1 usingPathOverride:(id)arg2 patternOffsetsBySubpathOverride:(id)arg3;
 - (void)drawInContextWithoutEffects:(struct CGContext *)arg1 withContent:(_Bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(_Bool)arg4 forAlphaOnly:(_Bool)arg5 drawChildren:(_Bool)arg6;
 - (void)drawInLayerContext:(struct CGContext *)arg1;
 - (void)p_drawChildrenWithoutOpacityInContext:(struct CGContext *)arg1;

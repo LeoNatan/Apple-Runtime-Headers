@@ -8,7 +8,6 @@
 
 @class PDSlide;
 
-__attribute__((visibility("hidden")))
 @interface PBSlideObjAndMasterPair : NSObject
 {
     PDSlide *mSlide;
@@ -16,7 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createPair:(id)arg1 masterId:(int)arg2;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (int)masterId;
 - (id)slide;
 - (void)setSlide:(id)arg1 masterId:(int)arg2;

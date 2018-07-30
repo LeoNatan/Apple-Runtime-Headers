@@ -6,12 +6,12 @@
 
 #import "NSResponder.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 #import "NSTextStorageDelegate.h"
 
 @class IMAccount, IMChat, NSArray, NSAttributedString, NSDictionary, NSMutableDictionary, NSOrderedSet, NSString, NSTextStorage, NSUndoManager;
 
-@interface SOChatDisplayController : NSResponder <NSCoding, NSTextStorageDelegate>
+@interface SOChatDisplayController : NSResponder <NSSecureCoding, NSTextStorageDelegate>
 {
     BOOL _isShowingSendingText;
     BOOL _hasHitBoundsLimit;
@@ -33,6 +33,8 @@
     NSMutableDictionary *_viewConfigurationStorage;
 }
 
++ (BOOL)supportsSecureCoding;
++ (id)allowedSecureArchivingClasses_so;
 @property(retain) NSMutableDictionary *viewConfigurationStorage; // @synthesize viewConfigurationStorage=_viewConfigurationStorage;
 @property(readonly, nonatomic, getter=isJoiningInvitation) _Bool joiningInvitation; // @synthesize joiningInvitation=_joiningInvitation;
 @property(nonatomic) BOOL sendingMessage; // @synthesize sendingMessage=_sendingMessage;

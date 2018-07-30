@@ -22,7 +22,9 @@
 + (long long)imageSetType;
 + (_Bool)supportsSecureCoding;
 + (id)_archiveURL:(id)arg1;
++ (id)_archiveImageSetIfAppropriate:(id)arg1 screenScale:(double)arg2 screenSize:(struct CGSize)arg3 archiveURL:(id)arg4 cacheURL:(id)arg5;
 + (id)_createXPCContainerForImageSetWithType:(long long)arg1 displayProfile:(id)arg2 screenScale:(double)arg3 screenSize:(struct CGSize)arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7 imageSetOut:(id *)arg8;
++ (id)createXPCContainerForImageSet:(id)arg1 screenScale:(double)arg2 screenSize:(struct CGSize)arg3 cacheURL:(id)arg4;
 + (id)createXPCContainerForImageSetWithType:(long long)arg1 displayProfile:(id)arg2 screenScale:(double)arg3 screenSize:(struct CGSize)arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7;
 + (_Bool)shouldCache;
 + (id)imageSetForType:(long long)arg1 screenScale:(double)arg2 suffix:(id)arg3 displayProfile:(id)arg4 fileURL:(id)arg5 cacheURL:(id)arg6;

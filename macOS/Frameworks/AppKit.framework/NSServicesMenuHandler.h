@@ -12,7 +12,7 @@
 
 + (void)registerServicesMenuSendTypes:(id)arg1 returnTypes:(id)arg2;
 + (void)_configureServicesMenu:(id)arg1;
-+ (id)_computeErrorForErrorCode:(long long)arg1 serviceName:(id)arg2 applicationName:(id)arg3 launchError:(int)arg4 appURL:(id)arg5 isWorkflow:(BOOL)arg6 additionalWorkflowErrorString:(id)arg7;
++ (id)_computeErrorForErrorCode:(long long)arg1 serviceName:(id)arg2 appIdentifier:(id)arg3 launchError:(int)arg4 appURL:(id)arg5 isWorkflow:(BOOL)arg6 additionalWorkflowErrorString:(id)arg7;
 + (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 + (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
 + (BOOL)_performServiceFromDictionary:(id)arg1 withPasteboard:(id)arg2;

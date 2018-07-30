@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface WXFieldMarker : NSObject
 {
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2;
-+ (void)initialize;
++ (id)fieldMarkerTypeEnumMap;
 
 @end
 

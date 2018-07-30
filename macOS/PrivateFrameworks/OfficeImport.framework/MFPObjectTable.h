@@ -8,15 +8,14 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface MFPObjectTable : NSObject
 {
     NSMutableDictionary *mObjects;
 }
 
+- (void).cxx_destruct;
 - (void)setObject:(id)arg1 atIndex:(int)arg2;
 - (id)objectAtIndex:(int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

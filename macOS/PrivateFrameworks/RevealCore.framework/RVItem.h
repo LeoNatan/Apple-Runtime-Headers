@@ -21,9 +21,15 @@
     long long _contactPropertyType;
     NSString *_contactPropertyValue;
     BOOL _normalized;
+    NSString *_clientIdentifier;
+    id _clientHints;
+    long long _selectionType;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) long long selectionType; // @synthesize selectionType=_selectionType;
+@property(retain, nonatomic) id clientHints; // @synthesize clientHints=_clientHints;
+@property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, nonatomic) long long contactPropertyType; // @synthesize contactPropertyType=_contactPropertyType;
 @property(readonly, nonatomic) NSString *contactPropertyValue; // @synthesize contactPropertyValue=_contactPropertyValue;
 @property(readonly, nonatomic) struct _NSRange highlightRange; // @synthesize highlightRange=_highlightRange;
@@ -33,10 +39,14 @@
 @property(readonly, nonatomic) long long normalizedType; // @synthesize normalizedType=_normalizedType;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *normalizedURL;
 - (void)normalize;
+@property(readonly, nonatomic) NSString *textSearchContext;
+- (struct _NSRange)textSearchRange;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContactProperty:(long long)arg1 value:(id)arg2;
+- (id)initWithContactProperty:(long long)arg1 value:(id)arg2 rangeInContext:(struct _NSRange)arg3;
+- (id)initWithClientIdentifier:(id)arg1 rangeInContext:(struct _NSRange)arg2;
 - (id)initWithText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (id)initWithDDResult:(id)arg1;
 - (id)initWithURL:(id)arg1 rangeInContext:(struct _NSRange)arg2;

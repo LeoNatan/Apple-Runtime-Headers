@@ -15,7 +15,6 @@
 - (void)dropIndexForDomain:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)indexOneBatchInDomain:(NSString *)arg1 completionHandler:(void (^)(NSError *, _Bool))arg2;
 - (void)removeTrashedItemsOlderThanDate:(NSDate *)arg1 completionHandler:(void (^)(void))arg2;
-- (void)refreshInstalledAppsWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)didUpdateAlternateContentsDocumentForDocumentAtURL:(NSURL *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)setAlternateContentsURL:(FPSandboxingURLWrapper *)arg1 onDocumentURL:(NSURL *)arg2 completionHandler:(void (^)(FPItemID *, NSError *))arg3;

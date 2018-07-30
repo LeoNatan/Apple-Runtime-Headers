@@ -26,12 +26,19 @@
     struct CGContext *_templateContext;
     CDUnknownBlockType _newContext;
     struct CGImage *_backgroundImage;
-    CDStruct_ef9fb61f _resizableInfo;
+    struct {
+        float leftCapWidth;
+        float rightCapWidth;
+        float leftPadding;
+        float rightPadding;
+    } _resizableInfo;
     _Bool _resizable;
     float _lineHeight;
     float _lineSpacing;
+    struct CGColor *_overlayColor;
 }
 
+@property(readonly, nonatomic) struct CGColor *overlayColor; // @synthesize overlayColor=_overlayColor;
 @property(readonly, nonatomic) float scale; // @synthesize scale=_scale;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -42,10 +49,11 @@
 - (id)imageWithShieldText:(id)arg1;
 - (void)setTextSpecificArtwork:(id)arg1 forStrings:(id)arg2;
 - (void)dealloc;
-- (id)_initWithBackgroundImage:(struct CGImage *)arg1 contentScale:(float)arg2 resizableInfo:(CDStruct_ef9fb61f *)arg3 font:(struct __CTFont *)arg4 nonDigitFont:(struct __CTFont *)arg5 textColor:(struct CGColor *)arg6 nonDigitTextColor:(struct CGColor *)arg7 textCenterOffsetX:(float)arg8 textBaseline:(float)arg9 textStrokeWidth:(float)arg10 textStrokeColor:(struct CGColor *)arg11 textShadowOffset:(struct CGSize)arg12 textShadowRadius:(float)arg13 textShadowColor:(struct CGColor *)arg14 lineSpacing:(float)arg15;
-- (id)initWithResizableBackgroundImage:(struct CGImage *)arg1 resizableInfo:(CDStruct_ef9fb61f *)arg2 contentScale:(float)arg3 font:(struct __CTFont *)arg4 nonDigitFont:(struct __CTFont *)arg5 textColor:(struct CGColor *)arg6 nonDigitTextColor:(struct CGColor *)arg7 textCenterOffsetX:(float)arg8 textBaseline:(float)arg9 textStrokeWidth:(float)arg10 textStrokeColor:(struct CGColor *)arg11 textShadowOffset:(struct CGSize)arg12 textShadowRadius:(float)arg13 textShadowColor:(struct CGColor *)arg14 lineSpacing:(float)arg15;
-- (id)initWithBackgroundImage:(struct CGImage *)arg1 contentScale:(float)arg2 font:(struct __CTFont *)arg3 nonDigitFont:(struct __CTFont *)arg4 textColor:(struct CGColor *)arg5 nonDigitTextColor:(struct CGColor *)arg6 textCenterOffsetX:(float)arg7 textBaseline:(float)arg8 textStrokeWidth:(float)arg9 textStrokeColor:(struct CGColor *)arg10 textShadowOffset:(struct CGSize)arg11 textShadowRadius:(float)arg12 textShadowColor:(struct CGColor *)arg13;
-- (id)initWithPackedVariant:(id)arg1 backgroundImage:(struct CGImage *)arg2 scale:(float)arg3 colors:(CDStruct_87ab733e *)arg4;
+- (id)_initWithBackgroundImage:(struct CGImage *)arg1 contentScale:(float)arg2 resizableInfo:(CDStruct_818bb265 *)arg3 font:(struct __CTFont *)arg4 nonDigitFont:(struct __CTFont *)arg5 textColor:(struct CGColor *)arg6 nonDigitTextColor:(struct CGColor *)arg7 textCenterOffsetX:(float)arg8 textBaseline:(float)arg9 textStrokeWidth:(float)arg10 textStrokeColor:(struct CGColor *)arg11 textShadowOffset:(struct CGSize)arg12 textShadowRadius:(float)arg13 textShadowColor:(struct CGColor *)arg14 lineSpacing:(float)arg15 overlayColor:(struct CGColor *)arg16;
+- (id)initWithResizableBackgroundImage:(struct CGImage *)arg1 resizableInfo:(CDStruct_818bb265 *)arg2 contentScale:(float)arg3 font:(struct __CTFont *)arg4 nonDigitFont:(struct __CTFont *)arg5 textColor:(struct CGColor *)arg6 nonDigitTextColor:(struct CGColor *)arg7 textCenterOffsetX:(float)arg8 textBaseline:(float)arg9 textStrokeWidth:(float)arg10 textStrokeColor:(struct CGColor *)arg11 textShadowOffset:(struct CGSize)arg12 textShadowRadius:(float)arg13 textShadowColor:(struct CGColor *)arg14 lineSpacing:(float)arg15 overlayColor:(struct CGColor *)arg16;
+- (id)initWithBackgroundImage:(struct CGImage *)arg1 contentScale:(float)arg2 font:(struct __CTFont *)arg3 nonDigitFont:(struct __CTFont *)arg4 textColor:(struct CGColor *)arg5 nonDigitTextColor:(struct CGColor *)arg6 textCenterOffsetX:(float)arg7 textBaseline:(float)arg8 textStrokeWidth:(float)arg9 textStrokeColor:(struct CGColor *)arg10 textShadowOffset:(struct CGSize)arg11 textShadowRadius:(float)arg12 textShadowColor:(struct CGColor *)arg13 overlayColor:(struct CGColor *)arg14;
+- (id)initWithPackedVariant:(id)arg1 backgroundImage:(struct CGImage *)arg2 scale:(float)arg3 colors:(CDStruct_b3fd5d76 *)arg4 overlayColor:(CDStruct_818bb265)arg5;
+- (id)initWithScale:(float)arg1;
 
 @end
 

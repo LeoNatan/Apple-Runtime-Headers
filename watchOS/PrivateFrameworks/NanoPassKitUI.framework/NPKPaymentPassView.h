@@ -6,49 +6,35 @@
 
 #import <NanoPassKitUI/NPKPassView.h>
 
-@class PUICActionController, PUICActionGroup, PUICActionItem, UIImageView, UILabel, UIView;
+@class UIImageView, UILabel, UIView;
 
 @interface NPKPaymentPassView : NPKPassView
 {
     _Bool _shrink;
-    _Bool _orbEnabled;
     _Bool _useDemoArt;
+    _Bool _useRasterizedPass;
     UILabel *_cardNameLabel;
     UIView *_cardView;
     UIImageView *_backgroundCardArtView;
     UILabel *_fpanLabel;
-    PUICActionController *_actionController;
-    PUICActionGroup *_actionGroup;
-    PUICActionItem *_deleteActionItem;
-    PUICActionItem *_changePaymentApplicationActionItem;
-    PUICActionItem *_serviceModeActionItem;
 }
 
 + (struct CGSize)_sizePreservingAspectRatioForCardArt:(id)arg1 givenMaxConstraints:(struct CGSize)arg2;
 + (float)shrunkenCardHeight;
 + (float)cardHeight;
-@property(retain, nonatomic) PUICActionItem *serviceModeActionItem; // @synthesize serviceModeActionItem=_serviceModeActionItem;
-@property(retain, nonatomic) PUICActionItem *changePaymentApplicationActionItem; // @synthesize changePaymentApplicationActionItem=_changePaymentApplicationActionItem;
-@property(retain, nonatomic) PUICActionItem *deleteActionItem; // @synthesize deleteActionItem=_deleteActionItem;
-@property(retain, nonatomic) PUICActionGroup *actionGroup; // @synthesize actionGroup=_actionGroup;
-@property(retain, nonatomic) PUICActionController *actionController; // @synthesize actionController=_actionController;
 @property(retain, nonatomic) UILabel *fpanLabel; // @synthesize fpanLabel=_fpanLabel;
 @property(retain, nonatomic) UIImageView *backgroundCardArtView; // @synthesize backgroundCardArtView=_backgroundCardArtView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) UILabel *cardNameLabel; // @synthesize cardNameLabel=_cardNameLabel;
+@property(nonatomic) _Bool useRasterizedPass; // @synthesize useRasterizedPass=_useRasterizedPass;
 @property(nonatomic) _Bool useDemoArt; // @synthesize useDemoArt=_useDemoArt;
-@property(nonatomic, getter=isOrbEnabled) _Bool orbEnabled; // @synthesize orbEnabled=_orbEnabled;
 @property(nonatomic) _Bool shrink; // @synthesize shrink=_shrink;
 - (void).cxx_destruct;
 - (void)_setPass:(id)arg1;
 - (_Bool)showFullPass;
-- (_Bool)canProvideActionController;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
-- (void)_enterServiceMode;
 - (void)updateUI;
-- (void)_updateOrbOptionsClearOut:(_Bool)arg1;
-- (void)_serviceModeStatusChanged:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -6,17 +6,12 @@
 
 #import "NSButton.h"
 
-@class WebClipBanner;
-
 __attribute__((visibility("hidden")))
 @interface PurpleButton : NSButton
 {
-    WebClipBanner *_webClipBanner;
 }
 
 + (Class)cellClass;
-@property(nonatomic) __weak WebClipBanner *webClipBanner; // @synthesize webClipBanner=_webClipBanner;
-- (void).cxx_destruct;
 - (double)baselineOffsetFromBottom;
 - (struct CGSize)intrinsicContentSize;
 

@@ -16,6 +16,7 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+@property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic) _Bool defaultValue;
 @property(readonly, copy, nonatomic) NSString *details;
 @property(readonly, copy, nonatomic) NSString *key;

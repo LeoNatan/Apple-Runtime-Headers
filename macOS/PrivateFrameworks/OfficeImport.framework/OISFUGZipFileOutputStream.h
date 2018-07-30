@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OISFUGZipFileOutputStream : NSObject <SFUOutputStream>
 {
     struct gzFile_s *_file;

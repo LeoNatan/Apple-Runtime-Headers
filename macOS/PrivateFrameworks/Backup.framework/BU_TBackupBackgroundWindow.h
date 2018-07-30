@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (_Bool)_allowsOrdering;
+- (BOOL)_allowsOrdering;
 
 @end
 

@@ -29,6 +29,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *abSourcesByIdentifier; // @synthesize abSourcesByIdentifier=_abSourcesByIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *abGroupsByIdentifier; // @synthesize abGroupsByIdentifier=_abGroupsByIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *abPersonsByIdentifier; // @synthesize abPersonsByIdentifier=_abPersonsByIdentifier;
+@property(readonly, nonatomic) NSMapTable *containerIndicesByInstance; // @synthesize containerIndicesByInstance=_containerIndicesByInstance;
+@property(readonly, nonatomic) NSMapTable *groupIndicesByInstance; // @synthesize groupIndicesByInstance=_groupIndicesByInstance;
+@property(readonly, nonatomic) NSMapTable *contactIndicesByInstance; // @synthesize contactIndicesByInstance=_contactIndicesByInstance;
 - (void).cxx_destruct;
 - (id)indexPathForContainerInstance:(id)arg1;
 - (id)indexPathForGroupInstance:(id)arg1;

@@ -9,11 +9,13 @@
 @interface AFOneArgumentSafetyBlock : NSObject
 {
     CDUnknownBlockType _block;
+    id _defaultValue;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)invokeWithValue:(id)arg1;
+- (id)initWithBlock:(CDUnknownBlockType)arg1 defaultValue:(id)arg2;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end

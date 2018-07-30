@@ -8,7 +8,6 @@
 
 @class CNSocialProfile;
 
-__attribute__((visibility("hidden")))
 @interface AKSocialProfileValueTransformer : NSValueTransformer
 {
     CNSocialProfile *_lastSocialProfile;

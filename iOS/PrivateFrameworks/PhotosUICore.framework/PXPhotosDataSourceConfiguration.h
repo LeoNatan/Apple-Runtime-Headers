@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSPredicate, NSSet, PHAsset, PHFetchResult;
+@class NSArray, NSDictionary, NSPredicate, NSSet, PHAsset, PHFetchResult, PHPhotoLibrary;
 
 @interface PXPhotosDataSourceConfiguration : NSObject
 {
@@ -19,8 +19,14 @@
     NSPredicate *_filterPredicate;
     NSSet *_allowedUUIDs;
     NSArray *_filterPersons;
+    PHPhotoLibrary *_photoLibrary;
+    NSArray *_fetchPropertySets;
+    long long _curationType;
 }
 
+@property(nonatomic) long long curationType; // @synthesize curationType=_curationType;
+@property(retain, nonatomic) NSArray *fetchPropertySets; // @synthesize fetchPropertySets=_fetchPropertySets;
+@property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic) _Bool hideHiddenAssets; // @synthesize hideHiddenAssets=_hideHiddenAssets;
 @property(retain, nonatomic) NSArray *filterPersons; // @synthesize filterPersons=_filterPersons;
 @property(retain, nonatomic) NSSet *allowedUUIDs; // @synthesize allowedUUIDs=_allowedUUIDs;

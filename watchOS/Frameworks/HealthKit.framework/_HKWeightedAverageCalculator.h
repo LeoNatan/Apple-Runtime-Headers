@@ -10,10 +10,10 @@
 
 @interface _HKWeightedAverageCalculator : NSObject
 {
-    struct HDStatisticsCalculator<double> _standardStatistics;
+    struct HDStatisticsCalculator_DEPRECATED<double> _standardStatistics;
     double _currentIntervalStart;
-    struct HDStatisticsCalculator<double> _previousIntervals;
-    struct HDStatisticsCalculator<double> _currentInterval;
+    struct HDStatisticsCalculator_DEPRECATED<double> _previousIntervals;
+    struct HDStatisticsCalculator_DEPRECATED<double> _currentInterval;
     double _latestTime;
     HKUnit *_unit;
 }

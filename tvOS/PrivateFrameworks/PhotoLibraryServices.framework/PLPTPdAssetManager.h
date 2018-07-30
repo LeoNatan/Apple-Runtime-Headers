@@ -8,7 +8,7 @@
 
 #import "PLManagedObjectContextPTPNotificationDelegate.h"
 
-@class NSFileManager, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<PhotoLibraryPTPDelegate>, NSSet, NSString, PFMediaCapabilities, PLManagedObjectContext, PLPTPdFormatConversionManager, PLPhotoLibrary;
+@class NSFileManager, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<PhotoLibraryPTPDelegate>, NSSet, NSString, PFMediaCapabilities, PLPTPdFormatConversionManager, PLPhotoLibrary;
 
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate>
 {
@@ -25,7 +25,7 @@
 
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager;
 - (id)fetchObjectIDsForAssetsExposedToPTPFromObjectIDs:(id)arg1;
-@property(readonly, retain) PLManagedObjectContext *managedObjectContext;
+- (id)managedObjectContext;
 - (id)_performResultTransactionAndWait:(CDUnknownBlockType)arg1;
 - (void)_performTransactionAndWait:(CDUnknownBlockType)arg1;
 - (id)_performResultBlockAndWait:(CDUnknownBlockType)arg1;

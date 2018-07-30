@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *separationConstraint;
     NSFloatRange *rangeOfInterest1;
     NSFloatRange *rangeOfInterest2;
-    long long popoverAppearance;
     NSImage *dragImage;
     unsigned long long anchorEdge;
     struct CGSize anchorSize;

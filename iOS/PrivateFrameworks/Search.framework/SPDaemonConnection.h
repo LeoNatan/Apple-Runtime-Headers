@@ -24,10 +24,11 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (id)initWithDaemonName:(id)arg1;
-- (void)sendSFFeedbackMessage:(SEL)arg1 withFeedback:(id)arg2;
+- (id)initWithDaemonName:(id)arg1 qos:(unsigned int)arg2;
+- (void)sendSFFeedback:(id)arg1 type:(long long)arg2 queryId:(unsigned long long)arg3;
 - (void)requestParsecParametersWithReply:(CDUnknownBlockType)arg1;
 - (void)retrieveFirstTimeExperienceTextWithReply:(CDUnknownBlockType)arg1;
+- (void)clearInput:(id)arg1;
 - (void)preheat;
 - (void)deactivate;
 - (void)sendApps:(id)arg1;

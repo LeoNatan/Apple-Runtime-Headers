@@ -6,7 +6,6 @@
 
 #import <OfficeImport/ODDDataPoint.h>
 
-__attribute__((visibility("hidden")))
 @interface ODDTransitionPoint : ODDDataPoint
 {
 }

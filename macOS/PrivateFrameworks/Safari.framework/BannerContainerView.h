@@ -8,11 +8,12 @@
 
 #import "NSAnimationDelegate.h"
 
-@class Animation, Banner, NSMapTable, NSStackView, NSString;
+@class Animation, Banner, NSLayoutConstraint, NSMapTable, NSStackView, NSString;
 
 __attribute__((visibility("hidden")))
 @interface BannerContainerView : NSView <NSAnimationDelegate>
 {
+    NSLayoutConstraint *_topAnchorContentLayoutGuideConstraint;
     NSStackView *_bannerStackView;
     NSMapTable *_clipViewsToConstraints;
     Animation *_animation;
@@ -29,6 +30,8 @@ __attribute__((visibility("hidden")))
 - (void)installBanner:(id)arg1 withAnimation:(BOOL)arg2;
 - (void)animationDidStop:(id)arg1;
 - (void)animationDidEnd:(id)arg1;
+- (void)updateConstraints;
+- (void)viewWillMoveToWindow:(id)arg1;
 - (void)invalidate;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)removeFromSuperview;

@@ -18,7 +18,7 @@
 
 + (id)operationWithQualityOfService:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
-- (double)timestamp;
+@property(readonly) double timestamp;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2 qualityOfService:(unsigned int)arg3;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)blockWithCurrentQualityOfServiceForBlock:(CDUnknownBlockType)arg1 ifAllowedForRequestedQualityOfService:(unsigned int)arg2;

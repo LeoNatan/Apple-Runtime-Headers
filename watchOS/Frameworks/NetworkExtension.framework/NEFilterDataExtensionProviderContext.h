@@ -61,6 +61,7 @@
 - (void)closePendingConnections;
 - (void)setupSocketSourceWithControlSocket:(int)arg1;
 - (void)handleSocketSourceEventWithSocket:(int)arg1;
+- (void)purgeData:(int)arg1 size:(int)arg2 buf:(char *)arg3 bufSize:(int)arg4;
 - (void)handleChannelSourceEventAttachComplete:(id)arg1 flowUUID:(id)arg2 sendNewFlowReply:(CDUnknownBlockType)arg3;
 - (void)closeChannelFlow:(id)arg1 flowUUID:(id)arg2;
 - (void)channelContentFilterWriteMessageForFlowUUID:(id)arg1 client_connection:(id)arg2 xpc_object_t:(id)arg3 drop:(_Bool)arg4 inboundPassOffset:(unsigned long long)arg5 inboundPeekOffset:(unsigned long long)arg6 outboundPassOffset:(unsigned long long)arg7 outboundPeekOffset:(unsigned long long)arg8;

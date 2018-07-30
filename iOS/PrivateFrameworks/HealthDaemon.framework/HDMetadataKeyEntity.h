@@ -16,7 +16,7 @@
 + (id)insertEntityWithKey:(id)arg1 healthDatabase:(id)arg2 error:(id *)arg3;
 + (id)entityForKey:(id)arg1 healthDatabase:(id)arg2 error:(id *)arg3;
 + (long long)protectionClass;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 
 @end

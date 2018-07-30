@@ -17,6 +17,10 @@
 - (BOOL)providerStatsIndicatePoorLinkQuality;
 - (void)writeData:(NSObject<OS_dispatch_data> *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)readData:(void (^)(NSObject<OS_dispatch_data> *, NSError *))arg1;
+- (void)setStaleInterval:(double)arg1;
+- (void)setRetransmitConnectionDropTime:(double)arg1;
+- (void)setKeepAlive:(double)arg1 withInterval:(double)arg2 withCount:(unsigned long long)arg3;
+- (void)setScopeIsWiFiOnly;
 - (void)setEnforceExtendedValidation:(BOOL)arg1;
 - (void)setConnectByPOPMethod:(BOOL)arg1;
 - (void)setPrefersWWAN:(BOOL)arg1;
@@ -24,7 +28,6 @@
 - (void)setProviderConnectionPolicy:(SAConnectionPolicy *)arg1;
 - (NSString *)resolvedHost;
 - (BOOL)shouldFallbackFromError:(NSError *)arg1;
-- (BOOL)isNetworkDownError:(NSError *)arg1;
 - (BOOL)isPeerNotNearbyError:(NSError *)arg1;
 - (BOOL)isPeerConnectionError:(NSError *)arg1;
 - (void)close;

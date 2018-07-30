@@ -7,56 +7,57 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBValueMetadata.h"
 
-@class NSString, PBUnknownFields;
+@class NSString;
 
-@interface _INPBValueMetadata : PBCodable <NSCopying>
+@interface _INPBValueMetadata : PBCodable <_INPBValueMetadata, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _requiredEntitlements;
+    struct {
+        unsigned int confirmed:1;
+    } _has;
+    _Bool _confirmed;
     NSString *_canonicalValue;
     NSString *_input;
     NSString *_source;
     NSString *_sourceAppBundleIdentifier;
     NSString *_uuid;
-    _Bool _confirmed;
-    struct {
-        unsigned int confirmed:1;
-    } _has;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *sourceAppBundleIdentifier; // @synthesize sourceAppBundleIdentifier=_sourceAppBundleIdentifier;
-@property(retain, nonatomic) NSString *source; // @synthesize source=_source;
-@property(retain, nonatomic) NSString *input; // @synthesize input=_input;
+@property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+@property(copy, nonatomic) NSString *sourceAppBundleIdentifier; // @synthesize sourceAppBundleIdentifier=_sourceAppBundleIdentifier;
+@property(copy, nonatomic) NSString *source; // @synthesize source=_source;
+@property(copy, nonatomic) NSString *input; // @synthesize input=_input;
 @property(nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;
-@property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-@property(retain, nonatomic) NSString *canonicalValue; // @synthesize canonicalValue=_canonicalValue;
+@property(copy, nonatomic) NSString *canonicalValue; // @synthesize canonicalValue=_canonicalValue;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasUuid;
+@property(readonly, nonatomic) _Bool hasSourceAppBundleIdentifier;
+@property(readonly, nonatomic) _Bool hasSource;
 - (int)StringAsRequiredEntitlements:(id)arg1;
 - (id)requiredEntitlementsAsString:(int)arg1;
-- (void)setRequiredEntitlements:(int *)arg1 count:(unsigned long long)arg2;
 - (int)requiredEntitlementAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long requiredEntitlementsCount;
 - (void)addRequiredEntitlement:(int)arg1;
 - (void)clearRequiredEntitlements;
 @property(readonly, nonatomic) int *requiredEntitlements;
-@property(readonly, nonatomic) unsigned long long requiredEntitlementsCount;
-@property(readonly, nonatomic) _Bool hasSourceAppBundleIdentifier;
-@property(readonly, nonatomic) _Bool hasSource;
+- (void)setRequiredEntitlements:(int *)arg1 count:(unsigned long long)arg2;
 @property(readonly, nonatomic) _Bool hasInput;
 @property(nonatomic) _Bool hasConfirmed;
-@property(readonly, nonatomic) _Bool hasUuid;
 @property(readonly, nonatomic) _Bool hasCanonicalValue;
-- (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

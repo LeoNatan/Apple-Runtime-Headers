@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class BBBulletin, CUISNotificationCenterAttachment, NSArray, NSString, UIImage, UITableViewCell;
+@class BBBulletin, CUISNotificationCenterAttachment, CUISNotificationCenterIcon, NSArray, NSString, UIImage, UITableViewCell;
 
 @protocol CUISNotificationCenterCellFactory <NSObject>
 @property(readonly, nonatomic) NSArray *supportedSectionIDs;
@@ -18,11 +18,13 @@
 @optional
 - (void)cellDidEndDisplaying:(UITableViewCell *)arg1;
 - (_Bool)performActionForBulletin:(BBBulletin *)arg1;
+- (void)configureCell:(UITableViewCell *)arg1 withBulletin:(BBBulletin *)arg2 appName:(NSString *)arg3 icon:(CUISNotificationCenterIcon *)arg4 attachment:(CUISNotificationCenterAttachment *)arg5;
 - (void)configureCell:(UITableViewCell *)arg1 withBulletin:(BBBulletin *)arg2 appName:(NSString *)arg3 icon:(UIImage *)arg4 iconStyle:(unsigned int)arg5 attachment:(CUISNotificationCenterAttachment *)arg6;
 - (void)configureCell:(UITableViewCell *)arg1 withBulletin:(BBBulletin *)arg2 appName:(NSString *)arg3 icon:(UIImage *)arg4 iconStyle:(unsigned int)arg5;
 - (void)configureCell:(UITableViewCell *)arg1 withBulletin:(BBBulletin *)arg2 appName:(NSString *)arg3 icon:(UIImage *)arg4;
 - (_Bool)willReconfigureCellWhenModifyingBulletin:(BBBulletin *)arg1 withBulletin:(BBBulletin *)arg2;
 - (unsigned int)iconStyleForBulletin:(BBBulletin *)arg1;
+- (float)heightForCellDisplayingBulletin:(BBBulletin *)arg1 allBulletins:(NSArray *)arg2;
 - (float)heightForCellDisplayingBulletin:(BBBulletin *)arg1 attachment:(CUISNotificationCenterAttachment *)arg2;
 - (float)heightForCellDisplayingBulletin:(BBBulletin *)arg1;
 @end

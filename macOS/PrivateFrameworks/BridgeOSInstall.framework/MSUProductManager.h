@@ -14,6 +14,7 @@
     NSMutableArray *_catalogs;
 }
 
++ (BOOL)_downloadPKMForPackage:(id)arg1 product:(id)arg2 catalog:(id)arg3 error:(id *)arg4;
 + (id)_sendSynchronousRequest:(id)arg1 catalogURL:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 + (void)_sendAsynchronousRequest:(id)arg1 catalogURL:(id)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)defaultManager;

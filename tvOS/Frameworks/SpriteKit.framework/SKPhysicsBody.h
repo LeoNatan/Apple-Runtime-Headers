@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, SKNode;
 
-@interface SKPhysicsBody : NSObject <NSCopying, NSCoding>
+@interface SKPhysicsBody : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _dynamic;
     _Bool _usesPreciseCollisionDetection;
@@ -52,6 +52,7 @@
 + (id)bodyWithCircleOfRadius:(double)arg1;
 + (id)copyWithZone:(struct _NSZone *)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double angularVelocity; // @synthesize angularVelocity=_angularVelocity;
 @property(nonatomic) struct CGVector velocity; // @synthesize velocity=_velocity;
 @property(readonly, nonatomic) __weak SKNode *node; // @synthesize node=_node;

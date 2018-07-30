@@ -12,9 +12,9 @@
 }
 
 @property(nonatomic) unsigned long long searchUIStyle; // @synthesize searchUIStyle=_searchUIStyle;
+- (void)_setSeparatorBackdropOverlayBlendMode:(long long)arg1;
 - (_Bool)allowsHeaderViewsToFloat;
-- (void)updateSeparatorsForStyle;
-- (void)setContentOffset:(struct CGPoint)arg1;
+- (void)safeAreaInsetsDidChange;
 - (id)init;
 
 @end

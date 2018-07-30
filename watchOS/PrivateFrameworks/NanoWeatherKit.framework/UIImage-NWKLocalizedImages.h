@@ -7,6 +7,6 @@
 #import "UIImage.h"
 
 @interface UIImage (NWKLocalizedImages)
-+ (id)nwkLocalizedImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
++ (id)nwk_localizedImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 @end
 

@@ -8,6 +8,7 @@
 
 @class SKScene;
 
+__attribute__((visibility("hidden")))
 @interface SCNSpriteKitSource : SCNImageSource
 {
     SKScene *_scene;

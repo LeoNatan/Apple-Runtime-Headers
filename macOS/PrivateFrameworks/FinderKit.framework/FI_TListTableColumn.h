@@ -10,15 +10,14 @@ __attribute__((visibility("hidden")))
 @interface FI_TListTableColumn : NSTableColumn
 {
     _Bool _isSortColumn;
-    unsigned int _mainProperty;
+    int _mainProperty;
 }
 
-@property(nonatomic) unsigned int mainProperty; // @synthesize mainProperty=_mainProperty;
+@property(nonatomic) int mainProperty; // @synthesize mainProperty=_mainProperty;
 @property(nonatomic) _Bool isSortColumn; // @synthesize isSortColumn=_isSortColumn;
 - (void)setIdentifier:(id)arg1;
 - (void)awakeFromNib;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isOpaque;
 - (id)copyColumn;
 
 @end

@@ -10,7 +10,6 @@
 
 @class NSIndexPath, NSString;
 
-__attribute__((visibility("hidden")))
 @interface PUTileIdentifier : NSObject <NSCopying>
 {
     unsigned long long _hash;

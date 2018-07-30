@@ -6,6 +6,7 @@
 
 #import <PhotosEditUI/PUPhotoEditToolControllerSpec.h>
 
+__attribute__((visibility("hidden")))
 @interface PUAdjustmentsToolControllerSpec : PUPhotoEditToolControllerSpec
 {
 }

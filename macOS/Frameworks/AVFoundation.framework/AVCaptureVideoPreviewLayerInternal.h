@@ -8,6 +8,7 @@
 
 @class AVCaptureConnection, AVCaptureSession, CALayer, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureVideoPreviewLayerInternal : NSObject
 {
     AVCaptureSession *session;

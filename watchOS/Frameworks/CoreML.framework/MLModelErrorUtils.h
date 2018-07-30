@@ -15,7 +15,9 @@
 + (id)featureTypeErrorWithString:(id)arg1;
 + (id)genericErrorWithString:(id)arg1;
 + (id)errorWithCode:(int)arg1 string:(id)arg2;
++ (id)errorWithCode:(int)arg1 underlyingError:(id)arg2 string:(id)arg3;
 + (id)errorWithCode:(int)arg1 format:(id)arg2 args:(char *)arg3;
++ (id)errorWithCode:(int)arg1 underlyingError:(id)arg2 format:(id)arg3 args:(char *)arg4;
 
 @end
 

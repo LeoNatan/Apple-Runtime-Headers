@@ -8,7 +8,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface WDAAnchor : NSObject
 {
     struct CGRect mBounds;
@@ -42,8 +41,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int textWrappingModeType; // @synthesize textWrappingModeType=mTextWrappingModeType;
 @property(nonatomic) int textWrappingMode; // @synthesize textWrappingMode=mTextWrappingMode;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=mBounds;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 
 @end

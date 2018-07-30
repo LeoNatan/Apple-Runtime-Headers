@@ -11,7 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface TSPUnknownFieldMessage : TSPUnknownField
 {
-    TSPLazyReferenceArray *_objects;
+    TSPLazyReferenceArray *_strongObjects;
+    TSPLazyReferenceArray *_weakObjects;
     NSArray *_datas;
 }
 

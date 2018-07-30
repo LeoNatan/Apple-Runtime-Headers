@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSMutableSet, NSString, PLCFNotificationOperatorComposition, PLKQueue, PLNSNotificationOperatorComposition, PLSQLiteConnection, PLStorageOperator, PLTimer, PLXPCResponderOperatorComposition;
+@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, PLCFNotificationOperatorComposition, PLKQueue, PLNSNotificationOperatorComposition, PLSQLiteConnection, PLStorageOperator, PLTimer, PLXPCResponderOperatorComposition;
 
 @interface PLCoreStorage : NSObject
 {
@@ -28,6 +28,8 @@
     PLXPCResponderOperatorComposition *_quarantineResponder;
     PLStorageOperator *_storageOperator;
     NSMutableSet *_safeCopyInProgress;
+    NSObject<OS_dispatch_queue> *_backgroundQueue;
+    NSObject<OS_dispatch_queue> *_utilityQueue;
     NSMutableDictionary *_processIDCache;
 }
 
@@ -35,8 +37,10 @@
 + (void)logMessage:(id)arg1 fromFile:(id)arg2 fromFunction:(id)arg3 fromLineNumber:(long long)arg4;
 + (id)allOperatorTablesToTrimConditionsForTrimDate:(id)arg1;
 + (id)storageQueueNameForEntryKey:(id)arg1;
-+ (id)storageQueueNameForClass:(id)arg1;
++ (id)storageQueueNameForClass:(Class)arg1;
 @property(retain, nonatomic) NSMutableDictionary *processIDCache; // @synthesize processIDCache=_processIDCache;
+@property(retain) NSObject<OS_dispatch_queue> *utilityQueue; // @synthesize utilityQueue=_utilityQueue;
+@property(retain) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
 @property(retain) NSMutableSet *safeCopyInProgress; // @synthesize safeCopyInProgress=_safeCopyInProgress;
 @property(retain) PLStorageOperator *storageOperator; // @synthesize storageOperator=_storageOperator;
 @property(retain) PLXPCResponderOperatorComposition *quarantineResponder; // @synthesize quarantineResponder=_quarantineResponder;
@@ -70,6 +74,7 @@
 - (id)lastEntryForKey:(id)arg1 withComparisons:(id)arg2 isSingleton:(BOOL)arg3;
 - (id)lastEntryForKey:(id)arg1 withSubEntryKey:(id)arg2;
 - (id)lastEntryForKey:(id)arg1;
+- (id)firstEntryForKey:(id)arg1;
 - (id)entriesForKey:(id)arg1 startingFromRowID:(long long)arg2 count:(long long)arg3 withFilters:(id)arg4;
 - (id)entryForKey:(id)arg1 withID:(long long)arg2;
 - (id)entriesForKey:(id)arg1 before:(BOOL)arg2 timeInterval:(double)arg3 count:(long long)arg4 withFilters:(id)arg5;
@@ -90,6 +95,7 @@
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
 - (void)setAllNullValuesForEntryKey:(id)arg1 forKey:(id)arg2 toValue:(id)arg3 withFilters:(id)arg4;
 - (void)writeAggregateEntry:(id)arg1;
+- (void)writeProportionateAggregateEntry:(id)arg1 withStartDate:(id)arg2 withEndDate:(id)arg3;
 - (void)blockingUpdateEntry:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)updateEntry:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)_updateEntry:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

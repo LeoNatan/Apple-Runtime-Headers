@@ -31,6 +31,7 @@
 + (id)keyPathsForValuesAffectingCanBeginTrimming;
 + (id)keyPathsForValuesAffectingIsTrimming;
 - (void).cxx_destruct;
+- (id)metricsDelegate;
 - (void)_restorePreviousFirstResponderOrMakeCurrentControlsViewControllersInitialFirstResponderFirstResponderIfSelfIsCurrentFirstResponder:(id)arg1;
 - (id)_makeSelfFirstResponderIfCurrentFirstResponderIsDescendantOfSelfAndReturnCurrentFirstResponderInThatCase;
 - (void)_replaceCurrentControlsViewControllerWithViewController:(id)arg1;

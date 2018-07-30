@@ -18,6 +18,7 @@
     NSMutableSet *_sampleTypesToReFetch;
 }
 
++ (Class)queryClass;
 - (void).cxx_destruct;
 - (void)_queue_protectedDataBecameAvailable;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
@@ -34,7 +35,7 @@
 - (_Bool)_shouldListenForUpdates;
 - (id)_sampleTypeFromNumber:(id)arg1;
 - (id)dateRangeClientProxy;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

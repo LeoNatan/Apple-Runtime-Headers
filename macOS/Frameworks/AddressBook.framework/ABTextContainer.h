@@ -6,7 +6,6 @@
 
 #import "NSTextContainer.h"
 
-__attribute__((visibility("hidden")))
 @interface ABTextContainer : NSTextContainer
 {
     struct CGSize _imageSize;

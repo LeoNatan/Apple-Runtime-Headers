@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, NSURL;
+@class APSOutgoingMessageCheckpointTrace, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, NSURL;
 
 @interface IDSBaseMessage : NSObject <NSCopying>
 {
@@ -47,6 +47,7 @@
     NSURL *_URLOverride;
     unsigned int _sentByteCount;
     unsigned int _receivedByteCount;
+    APSOutgoingMessageCheckpointTrace *_apsdCheckpointTrace;
     NSDate *_requestStart;
     NSDate *_requestEnd;
     NSDate *_responseReceived;
@@ -58,6 +59,7 @@
 @property(retain, nonatomic) NSDate *requestEnd; // @synthesize requestEnd=_requestEnd;
 @property(retain, nonatomic) NSDate *requestStart; // @synthesize requestStart=_requestStart;
 @property _Bool alwaysForceCellular; // @synthesize alwaysForceCellular=_alwaysForceCellular;
+@property(retain) APSOutgoingMessageCheckpointTrace *apsdCheckpointTrace; // @synthesize apsdCheckpointTrace=_apsdCheckpointTrace;
 @property _Bool httpDoNotDecodeData; // @synthesize httpDoNotDecodeData=_httpDoNotDecodeData;
 @property(nonatomic) unsigned int receivedByteCount; // @synthesize receivedByteCount=_receivedByteCount;
 @property(nonatomic) unsigned int sentByteCount; // @synthesize sentByteCount=_sentByteCount;
@@ -141,8 +143,8 @@
 @property(readonly) _Bool isWebTunnelMessage;
 @property(readonly) _Bool wantsSignature;
 @property(readonly) _Bool ignoresNetworkConnectivity;
+@property(readonly) _Bool allowsServerProvidedLenientAnisetteTimeout;
 @property(readonly) double anisetteHeadersTimeout;
-@property(readonly) _Bool wantsAnisetteHeaders;
 @property(readonly) _Bool wantsAPSRetries;
 @property(readonly) _Bool wantsManagedRetries;
 @property(readonly) _Bool wantsExtraTimeoutRetry;

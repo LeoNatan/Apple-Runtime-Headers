@@ -8,7 +8,6 @@
 
 @class OADColor;
 
-__attribute__((visibility("hidden")))
 @interface PDAnimateColorBehavior : PDAnimateBehavior
 {
     BOOL mHasBy;
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
     int mDirection;
 }
 
+- (void).cxx_destruct;
 - (void)setDirection:(int)arg1;
 - (int)direction;
 - (BOOL)hasColorDirection;

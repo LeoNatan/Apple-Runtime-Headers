@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface AirPlayReceiverContext : NSObject
 {
-    // Error parsing type: ^{AirPlayReceiverSessionPrivate={__CFRuntimeBase=QAQ}@^{AirPlayReceiverServerPrivate}^{OpaqueAPReceiverRequestProcessor}^{APReceiverSessionManagerOpaque}^v{?=^v^v^?^?^?^?^?^?}[32c][17c]^{OpaqueAPReceiverStatsCollector}@I(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})[16C]iQ[6C]CC^{__CFString}^{__CFString}QIQQI{?=^{_CCCryptor}[16C]}^{?}[16C][16C]CCC^{OpaqueAPSNetworkClock}CCC^{HTTPClientPrivate}iii^{APPairingServicesPrivate}IIQQQQi^{APReceiverAudioSessionPrivate}I^{OpaqueFigValeria}I^{OpaqueAPReceiverScreenSession}dCCIC^{__CFString}CCCCQ^{__CFDictionary}ii^{__CFArray}}, name: _session
+    // Error parsing type: ^{AirPlayReceiverSessionPrivate={__CFRuntimeBase=QAQ}@^{AirPlayReceiverServerPrivate}^{OpaqueAPReceiverRequestProcessor}^{APReceiverSessionManagerOpaque}^v{?=^v^v^?^?^?^?^?^?}[32c][17c]^{OpaqueAPReceiverStatsCollector}@I(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})[16C]iQ[6C]CC^{__CFString}^{__CFString}QIQQI{?=^{_CCCryptor}[16C]}^{?}[16C][16C]CCCC^{OpaqueAPSNetworkClock}CCC^{HTTPClientPrivate}iii^{APPairingServicesPrivate}IIQQQQi^{APReceiverAudioSessionPrivate}I^{OpaqueFigValeria}^{OpaqueAPReceiverUIController}I^{OpaqueAPReceiverScreenSession}dCCIC^{__CFString}CCCCQ^{__CFDictionary}ii^{__CFArray}}, name: _session
     unsigned char _receiverUIStarted;
     unsigned int _receiverUISessionID;
     unsigned char _sessionStarted;
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
         unsigned char loopback;
         unsigned char varispeed;
         unsigned char voice;
+        unsigned char movieAudioMode;
         unsigned char volumeControl;
         struct __CFString *timingProtocol;
         unsigned int activeType;

@@ -8,12 +8,15 @@
 
 #import "NSAccessibility.h"
 #import "NSAccessibilityElement.h"
+#import "NSAppearanceCustomization.h"
+#import "NSAppearanceCustomizationInternal.h"
+#import "NSMenuItemValidation.h"
 #import "NSTouchBarProviderContainer.h"
 #import "NSUserInterfaceValidations.h"
 
-@class NSArray, NSDockTile, NSEvent, NSImage, NSMenu, NSString, NSTouchBar, NSURL, NSWindow;
+@class NSAppearance, NSArray, NSDockTile, NSEvent, NSImage, NSMenu, NSString, NSTouchBar, NSURL, NSWindow;
 
-@interface NSApplication : NSResponder <NSTouchBarProviderContainer, NSUserInterfaceValidations, NSAccessibilityElement, NSAccessibility>
+@interface NSApplication : NSResponder <NSAppearanceCustomization, NSTouchBarProviderContainer, NSAppearanceCustomizationInternal, NSUserInterfaceValidations, NSMenuItemValidation, NSAccessibilityElement, NSAccessibility>
 {
     NSEvent *_currentEvent;
     id _windowList;
@@ -62,7 +65,7 @@
     } _appFlags;
     id _mainMenu;
     id _openWindows;
-    id _unused[1];
+    NSAppearance *_appearance;
     id _eventDelegate;
     struct NSThreadPrivate *_threadingSupport;
 }
@@ -73,15 +76,17 @@
 + (void)detachDrawingThread:(SEL)arg1 toTarget:(id)arg2 withObject:(id)arg3;
 + (void)_initializeSharedApplicationForCarbonAppIfNecessary;
 + (id)sharedApplication;
++ (void)_preventDockConnections;
++ (void)_accessibilityInitialize;
 + (void)_userLoggedOut;
 + (void)initialize;
 + (void)load;
 + (void)_initializeRegisteredDefaults;
-+ (void)_initializeArchiverMappings;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)_urlsWithWithPathOrPaths:(id)arg1 itWasPaths:(char *)arg2;
 + (id)_URLsWithEvent:(id)arg1;
 + (id)_fileURLsWithEvent:(id)arg1;
++ (id)_logicalURLsForRawURLs:(id)arg1 event:(id)arg2;
 + (BOOL)willRestoreState;
 - (void).cxx_destruct;
 @property __weak id accessibilityParent; // @dynamic accessibilityParent;
@@ -172,8 +177,6 @@
 - (BOOL)_quitMenuItemShouldKeepWindows:(id)arg1;
 - (BOOL)_isAlternateQuitMenuItem:(id)arg1;
 - (void)_reactToChangeInQuitAlwaysKeepsWindows:(id)arg1;
-- (void)_setAllowAutomaticTerminationInsteadOfTermination:(BOOL)arg1;
-- (BOOL)_allowAutomaticTerminationInsteadOfTermination;
 - (void)updateWindows;
 - (void)setWindowsNeedUpdate:(BOOL)arg1;
 - (id)_copyWindows;
@@ -184,6 +187,7 @@
 - (void)_dockRestarted;
 @property(readonly) NSDockTile *dockTile;
 @property(retain) NSImage *applicationIconImage;
+- (id)_iconImageIfSet;
 - (id)_iconImage;
 - (void)_setApplicationIconImage:(id)arg1 setDockImage:(BOOL)arg2;
 - (void)_dockDied;
@@ -328,7 +332,6 @@
 - (BOOL)_mouseActivationInProgress;
 - (void)_setMouseActivationInProgress:(BOOL)arg1;
 - (id)_setKeyWindow:(id)arg1;
-- (id)_keyWindowForHeartBeat;
 - (void)_setPreviousKeyWindow:(id)arg1;
 - (id)_previousKeyWindow;
 - (id)_keyWindow;
@@ -338,7 +341,6 @@
 @property(readonly) __weak NSWindow *mainWindow;
 - (id)_windowWithContextID:(long long)arg1;
 - (id)windowWithWindowNumber:(long long)arg1;
-- (id)_windowWithRealWindowNumber:(long long)arg1;
 - (void)_windowNumber:(long long)arg1 changedTo:(long long)arg2;
 - (void)unhideAllApplications:(id)arg1;
 - (void)hideOtherApplications:(id)arg1;
@@ -376,12 +378,8 @@
 - (void)_eventBlockingTransitionDidEnd;
 - (void)_eventBlockingTransitionWillBegin;
 - (void)_accessibilityStatusChanged:(id)arg1;
-- (void)_axContrastChanged:(id)arg1;
-- (void)_aquaColorVariantChanged;
 - (id)init;
 - (void)_initializeAutomaticTermination;
-- (BOOL)_sleepInAutomaticTermination;
-- (void)_awakenIfSleepingInAutoQuitAndContinueTermination:(BOOL)arg1;
 - (void)_makeSureAutomaticTerminationIsNotInterferingWithLanguagePrefs:(id)arg1;
 - (void)_enableAutomaticTerminationIfWhitelisted;
 - (void)_forceAutoQuit:(id)arg1;
@@ -400,6 +398,10 @@
 - (void)_registerWithDock;
 - (void)_installAutoreleasePoolsOnCurrentThreadIfNecessary;
 - (void)_cleanUpForCarbonAppTermination;
+- (id)_applicationBundle;
+- (void)_emitApplicationLaunchExtendedSignpostsAppIsOptedIn:(BOOL)arg1;
+- (void)markAppLaunchComplete;
+- (void)_emitApplicationLaunchSignpost;
 - (BOOL)_inInstallEnvironment;
 - (id)_accessibilityUIElementSpecifierRegisterIfNeeded:(BOOL)arg1;
 - (id)_accessibilityUIElementSpecifier;
@@ -420,11 +422,13 @@
 - (void)_userNotificationCenter:(id)arg1 didActivateWithToken:(id)arg2;
 - (id)_userNotificationCenter:(id)arg1 willActivateForNotification:(id)arg2 additionalUserInfo:(id)arg3;
 @property(readonly) unsigned long long enabledRemoteNotificationTypes;
+@property(readonly, getter=isRegisteredForRemoteNotifications) BOOL registeredForRemoteNotifications;
 - (void)unregisterForRemoteNotifications;
+- (void)registerForRemoteNotifications;
 - (void)registerForRemoteNotificationTypes:(unsigned long long)arg1;
-- (void)userNotificationCenter:(id)arg1 didFailToRegisterForRemoteNotificationsWithError:(id)arg2;
-- (void)userNotificationCenter:(id)arg1 didRegisterForRemoteNotificationsWithDeviceToken:(id)arg2;
-- (void)userNotificationCenter:(id)arg1 didDeliverNotification:(id)arg2;
+- (void)pushRegistrationDidReceiveRemotePush:(id)arg1;
+- (void)pushRegistrationDidFailToRegister:(id)arg1;
+- (void)pushRegistrationDidRegisterWithDeviceToken:(id)arg1;
 - (void)_startPrefetchingUbiquityContainerURL;
 - (void)_ubiquityIdentityDidChange:(id)arg1;
 - (void)_asynchronouslyPrefetchUbiqityContainerURL;
@@ -434,6 +438,10 @@
 - (id)_findMenuItemWithSelector:(SEL)arg1;
 - (id)_findMenuItemMatchingPredicate:(CDUnknownBlockType)arg1;
 - (void)_customizeMainMenu;
+- (void)_addTextInputMenuItems:(id)arg1;
+- (id)_bestAppearanceCustomizationTargetForAction:(SEL)arg1 to:(id)arg2;
+- (void)importFromDevice:(id)arg1;
+- (void)_customizeImportFromDeviceMenuItem;
 - (id)accessibilityFunctionRowTopLevelElementsAttribute;
 - (BOOL)accessibilityShouldUseUniqueId;
 - (id)accessibilityFocusedUIElement;
@@ -542,6 +550,7 @@
 - (void)orderFrontColorPanel:(id)arg1;
 - (void)toggleTouchBarControlStripCustomizationPalette:(id)arg1;
 - (BOOL)_validateTouchBarCustomizationPaletteItem:(id)arg1;
+- (void)orderFrontPreferencesPanel:(id)arg1;
 - (BOOL)_handleCursorRectEvent:(id)arg1;
 - (BOOL)areCursorRectsEnabled;
 - (void)enableCursorRects;
@@ -553,9 +562,18 @@
 - (void)orderFrontFontPanel:(id)arg1;
 - (void)showHelp:(id)arg1;
 - (void)activateContextHelpMode:(id)arg1;
+- (void)_invalidateWindowAppearances;
+- (void)_refreshSetAppearance;
+- (void)_invalidateEffectiveAppearance;
+@property(readonly) NSAppearance *effectiveAppearance;
+@property(retain) NSAppearance *appearance;
+- (void)_observeValueForSystemAppearanceKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
+- (void)_unregisterForAppearanceNotifications;
+- (void)_registerForAppearanceNotifications;
 - (id)NS_touchBarProviders;
 - (id)NS_touchBarProvidersKeyPaths;
 - (void)runPageLayout:(id)arg1;
+- (id)_eventFirstResponderChainDescription;
 - (void)unregisterServiceProviderNamed:(id)arg1;
 - (void)registerServiceProvider:(id)arg1 withName:(id)arg2;
 @property(retain) id servicesProvider;
@@ -613,7 +631,6 @@
 - (void)_setCacheWindowNum:(long long)arg1 forWindow:(id)arg2;
 - (void)_updateWindowsUsingCache;
 - (id)_findWindowUsingContextID:(long long)arg1;
-- (id)_findWindowUsingRealWindowNumber:(long long)arg1;
 - (id)_findWindowUsingCache:(long long)arg1;
 - (id)_getWindowData:(id)arg1 add:(BOOL)arg2;
 - (void)_invalidateWindowListForCycleIfNeededForWindow:(id)arg1;
@@ -669,6 +686,8 @@
 - (unsigned int)_persistentUIWindowID;
 - (id)_persistentUIWindow;
 - (void)_cancelGestureRecognizers:(id)arg1;
+- (id)_kitAppearance;
+@property(readonly) id <NSAppearanceCustomization> _effectiveAppearanceParent;
 - (void)_restoreWindowWithRestoration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_restoreGlobalStateWithRestoration:(id)arg1;
 - (BOOL)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

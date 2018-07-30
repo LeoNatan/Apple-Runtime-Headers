@@ -6,45 +6,34 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSData, NSDictionary, NSString, _SFPBColor, _SFPBLatLng, _SFPBMapRegion, _SFPBPunchout;
+@class NSArray, NSData, NSDictionary, NSString, _SFPBColor, _SFPBLatLng, _SFPBMapRegion, _SFPBPin, _SFPBPunchout;
 
 @protocol _SFPBMapCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasPinBehavior;
+@property(copy, nonatomic) NSArray *pins;
 @property(nonatomic) int pinBehavior;
-@property(readonly, nonatomic) BOOL hasBoundingMapRegion;
 @property(retain, nonatomic) _SFPBMapRegion *boundingMapRegion;
-@property(readonly, nonatomic) BOOL hasSizeFormat;
 @property(nonatomic) int sizeFormat;
-@property(readonly, nonatomic) BOOL hasInteractive;
 @property(nonatomic) BOOL interactive;
-@property(readonly, nonatomic) BOOL hasFootnote;
 @property(copy, nonatomic) NSString *footnote;
-@property(readonly, nonatomic) BOOL hasFootnoteLabel;
 @property(copy, nonatomic) NSString *footnoteLabel;
-@property(readonly, nonatomic) BOOL hasPinColor;
 @property(retain, nonatomic) _SFPBColor *pinColor;
-@property(readonly, nonatomic) BOOL hasLocation;
 @property(retain, nonatomic) _SFPBLatLng *location;
-@property(readonly, nonatomic) BOOL hasBackgroundColor;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;
-@property(readonly, nonatomic) BOOL hasSeparatorStyle;
 @property(nonatomic) int separatorStyle;
-@property(readonly, nonatomic) BOOL hasType;
 @property(copy, nonatomic) NSString *type;
-@property(readonly, nonatomic) BOOL hasHasBottomPadding;
 @property(nonatomic) BOOL hasBottomPadding;
-@property(readonly, nonatomic) BOOL hasHasTopPadding;
 @property(nonatomic) BOOL hasTopPadding;
-@property(readonly, nonatomic) BOOL hasCanBeHidden;
 @property(nonatomic) BOOL canBeHidden;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
-@property(readonly, nonatomic) BOOL hasPunchoutPickerTitle;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
+- (_SFPBPin *)pinsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pinsCount;
+- (void)addPins:(_SFPBPin *)arg1;
+- (void)clearPins;
 - (_SFPBPunchout *)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(_SFPBPunchout *)arg1;

@@ -8,7 +8,6 @@
 
 @class OADTableCellStyle, OADTableTextStyle;
 
-__attribute__((visibility("hidden")))
 @interface OADTablePartStyle : NSObject
 {
     OADTableTextStyle *mTextStyle;
@@ -16,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultStyle;
+- (void).cxx_destruct;
 - (id)description;
 - (void)applyOverridesFrom:(id)arg1;
 - (id)shallowCopy;
@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (id)cellStyle;
 - (void)setTextStyle:(id)arg1;
 - (id)textStyle;
-- (void)dealloc;
 
 @end
 

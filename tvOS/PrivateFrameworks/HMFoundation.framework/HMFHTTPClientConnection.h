@@ -6,11 +6,12 @@
 
 #import <HMFoundation/HMFObject.h>
 
+#import "HMFLogging.h"
 #import "_HMFCFHTTPServerConnectionDelegate.h"
 
 @class HMFNetAddress, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, _HMFCFHTTPServerConnection;
 
-@interface HMFHTTPClientConnection : HMFObject <_HMFCFHTTPServerConnectionDelegate>
+@interface HMFHTTPClientConnection : HMFObject <_HMFCFHTTPServerConnectionDelegate, HMFLogging>
 {
     id <HMFHTTPClientConnectionDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_clientQueue;
@@ -18,25 +19,26 @@
     _HMFCFHTTPServerConnection *_internal;
 }
 
-+ (id)shortDescription;
++ (id)logCategory;
 @property(readonly, nonatomic) _HMFCFHTTPServerConnection *internal; // @synthesize internal=_internal;
 @property(readonly, nonatomic) NSMutableArray *pendingRespones; // @synthesize pendingRespones=_pendingRespones;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property __weak id <HMFHTTPClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)sendResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)close;
 - (void)openWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) HMFNetAddress *peerAddress;
-@property(readonly, copy) NSString *description;
-@property(readonly, copy) NSString *debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
+- (id)attributeDescriptions;
 - (id)shortDescription;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

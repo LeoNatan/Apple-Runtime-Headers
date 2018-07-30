@@ -8,6 +8,7 @@
 
 @class CPCharSequence;
 
+__attribute__((visibility("hidden")))
 @interface CPZoneMaker : NSObject
 {
     CPCharSequence *charactersOnPage;

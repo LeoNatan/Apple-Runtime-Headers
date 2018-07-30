@@ -16,6 +16,10 @@
     VCPCNNMetalContext *_context;
 }
 
++ (id)cnnDataWithPlane:(int)arg1 height:(int)arg2 width:(int)arg3 context:(id)arg4;
++ (id)cnnDataWithGPUContext:(id)arg1;
++ (id)cnnData;
++ (Class)cnnDataClass;
 @property __weak VCPCNNMetalContext *context; // @synthesize context=_context;
 @property BOOL isInputOutput; // @synthesize isInputOutput=_isInputOutput;
 @property float *data; // @synthesize data=_data;
@@ -25,6 +29,9 @@
 - (int)normalization;
 - (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;
 - (int)initWithImage:(struct __CVBuffer *)arg1 forChunk:(int)arg2;
+- (int)reallocGPUTemporalBuffers;
+- (int)convertGPUData2CPU;
+- (int)convertCPUData2GPU;
 - (int)bufferAllocCPU;
 - (int)randInit;
 - (int)allocBuffers:(BOOL)arg1;

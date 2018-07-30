@@ -13,9 +13,9 @@
     NSString *_string;
 }
 
-@property(retain) NSString *string; // @synthesize string=_string;
+@property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
-- (id)observableProperties;
+- (unsigned long long)_itemType;
 
 @end
 

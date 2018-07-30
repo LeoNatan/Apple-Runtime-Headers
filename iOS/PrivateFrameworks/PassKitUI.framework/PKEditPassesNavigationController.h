@@ -8,16 +8,14 @@
 
 @interface PKEditPassesNavigationController : UINavigationController
 {
-    id <PKEditPassesNavigationControllerDelegate> _editPassesControllerDelegate;
 }
 
-- (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
 - (long long)modalTransitionStyle;
 - (long long)modalPresentationStyle;
 - (void)viewDidLoad;
 - (void)_done;
-- (id)initInEditingMode:(_Bool)arg1 delegate:(id)arg2;
+- (id)initWithExistingGroupsController:(id)arg1;
 - (id)init;
 
 @end

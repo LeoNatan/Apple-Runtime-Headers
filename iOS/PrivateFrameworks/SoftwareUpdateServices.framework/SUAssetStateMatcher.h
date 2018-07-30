@@ -8,14 +8,16 @@
 
 #import "SUAssetMatcher.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface SUAssetStateMatcher : NSObject <SUAssetMatcher>
 {
     NSString *_assetType;
     int _interestedStates;
+    NSDictionary *_matcherInfo;
 }
 
+@property(readonly, nonatomic) NSDictionary *matcherInfo; // @synthesize matcherInfo=_matcherInfo;
 @property(readonly, nonatomic) int interestedStates; // @synthesize interestedStates=_interestedStates;
 @property(readonly, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
 - (_Bool)_matchesFilterType:(id)arg1;

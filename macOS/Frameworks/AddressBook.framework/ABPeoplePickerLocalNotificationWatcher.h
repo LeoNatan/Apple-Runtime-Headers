@@ -8,7 +8,6 @@
 
 @class ABAddressBook, ABGroupEntriesList, ABPersonListController;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerLocalNotificationWatcher : NSObject
 {
     ABAddressBook *_addressBook;

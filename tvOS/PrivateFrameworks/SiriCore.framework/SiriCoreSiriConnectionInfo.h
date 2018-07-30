@@ -12,7 +12,7 @@
 {
     _Bool _prefersWWAN;
     _Bool _skipPeer;
-    _Bool _skipEdge;
+    _Bool _useWiFiHint;
     _Bool _forceReconnect;
     _Bool _imposePolicyBan;
     _Bool _requiresURLSession;
@@ -37,7 +37,7 @@
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) _Bool forceReconnect; // @synthesize forceReconnect=_forceReconnect;
 @property(copy, nonatomic) NSError *skipPeerErrorReason; // @synthesize skipPeerErrorReason=_skipPeerErrorReason;
-@property(nonatomic) _Bool skipEdge; // @synthesize skipEdge=_skipEdge;
+@property(nonatomic) _Bool useWiFiHint; // @synthesize useWiFiHint=_useWiFiHint;
 @property(nonatomic) _Bool skipPeer; // @synthesize skipPeer=_skipPeer;
 @property(nonatomic) _Bool prefersWWAN; // @synthesize prefersWWAN=_prefersWWAN;
 @property(copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;

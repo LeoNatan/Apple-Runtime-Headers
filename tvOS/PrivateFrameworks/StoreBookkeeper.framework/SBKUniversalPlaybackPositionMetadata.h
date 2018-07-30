@@ -27,6 +27,7 @@
 + (id)keyValueStoreItemIdentifierForUniqueStoreID:(long long)arg1 itemTitle:(id)arg2 albumName:(id)arg3 itemArtistName:(id)arg4 feedURL:(id)arg5 feedGUID:(id)arg6;
 + (id)keyValueStoreItemIdentifierForItem:(id)arg1;
 + (id)_testableMetadataItem_1;
++ (_Bool)supportsSecureCoding;
 + (id)pairWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
 @property unsigned long long playCount; // @synthesize playCount=_playCount;
 @property _Bool hasBeenPlayed; // @synthesize hasBeenPlayed=_hasBeenPlayed;
@@ -42,6 +43,8 @@
 @property double timestamp; // @synthesize timestamp=_timestamp;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initAsTestableItem;
 - (id)init;
 

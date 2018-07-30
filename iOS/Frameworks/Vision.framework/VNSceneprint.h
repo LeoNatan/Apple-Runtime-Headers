@@ -10,6 +10,9 @@
 {
 }
 
++ (unsigned long long)confidenceTypeForRevision:(unsigned long long)arg1;
++ (unsigned long long)currentSerializationVersion;
++ (unsigned long long)serializationMagicNumber;
 + (id)codingTypesToCodingKeys;
 + (unsigned int)currentCodingVersion;
 + (id)currentVersion;

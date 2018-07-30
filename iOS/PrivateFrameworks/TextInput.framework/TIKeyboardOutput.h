@@ -37,6 +37,7 @@
 @property(nonatomic) _Bool unmarkIfNecessary; // @synthesize unmarkIfNecessary=_unmarkIfNecessary;
 @property(copy, nonatomic) NSString *textToCommit; // @synthesize textToCommit=_textToCommit;
 @property(retain, nonatomic) TIKeyboardCandidate *acceptedCandidate; // @synthesize acceptedCandidate=_acceptedCandidate;
+- (void).cxx_destruct;
 - (void)deleteForward;
 - (void)deleteForward:(unsigned long long)arg1;
 - (void)insertTextAfterSelection:(id)arg1;
@@ -48,7 +49,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end
 

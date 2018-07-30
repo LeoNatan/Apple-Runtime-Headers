@@ -11,7 +11,6 @@
 
 @class MKPlaceSectionView, NSString;
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceSectionViewController : UIViewController <_MKAnimationStackViewDelegate, MKPlaceSectionViewDelegate>
 {
     MKPlaceSectionView *_sectionView;

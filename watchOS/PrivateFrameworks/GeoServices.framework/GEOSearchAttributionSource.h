@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GEOSearchAttributionSource : PBCodable <NSCopying>
 {
     CDStruct_56d48c16 _attributionRequirements;

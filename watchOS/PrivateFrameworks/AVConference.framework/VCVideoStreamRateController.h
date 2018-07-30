@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double owrd;
 - (void)updateVideoStall:(_Bool)arg1 withStallDuration:(unsigned int)arg2;
 - (void)updateRTPReceiveWithTimestamp:(unsigned int)arg1 sampleRate:(unsigned int)arg2 time:(double)arg3;
-- (void)doRateControlWithTime:(double)arg1 roundTripTime:(double)arg2 packetLossRate:(double)arg3 operatingBitrate:(unsigned int)arg4 averageBitrate:(unsigned int)arg5;
+- (void)doRateControlWithTime:(double)arg1 roundTripTime:(double)arg2 packetLossRate:(double)arg3 operatingBitrate:(unsigned int)arg4 averageReceivedBitrate:(unsigned int)arg5;
 - (void)setRateControlInterval:(double)arg1;
 - (void)setMaxTargetBitrate:(unsigned int)arg1 minTargetBitrate:(unsigned int)arg2;
 - (void)dealloc;

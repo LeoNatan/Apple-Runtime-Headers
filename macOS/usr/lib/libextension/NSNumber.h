@@ -57,6 +57,7 @@
 - (BOOL)_allowsDirectEncoding;
 - (Class)classForCoder;
 @property(readonly, copy) NSString *stringValue;
+- (id)redactedDescription;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
 - (unsigned long long)hash;

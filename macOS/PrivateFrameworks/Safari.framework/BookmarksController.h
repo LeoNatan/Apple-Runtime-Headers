@@ -63,7 +63,7 @@
 + (id)sharedController;
 + (id)_sharedControllerWithInstance:(id *)arg1 spotlightCacheController:(id)arg2;
 + (id)_defaultMigratedBookmarksFolderURL;
-+ (id)defaultBookmarksFileLockURL;
++ (id)fileLockURLForBookmarkFileURL:(id)arg1;
 + (id)defaultBookmarksFileURL;
 + (void)makePermanentAllTestDriveBookmarksRootedAtFolder:(id)arg1;
 + (void)removeAllTestDriveBookmarksRootedAtFolder:(id)arg1;
@@ -82,6 +82,9 @@
 @property(nonatomic) BOOL isReadOnly; // @synthesize isReadOnly=_isReadOnly;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_updateSandboxExtensionFromStoreIfNeeded:(id)arg1;
+- (void)_removeSandboxExtensionFromStoreIfNeeded:(id)arg1;
+- (void)_addSandboxExtensionToStoreIfNeeded:(id)arg1;
 - (void)_stopObservingNetworkChangeNotifications;
 - (void)_didReceiveNetworkChangeNotification:(id)arg1;
 - (void)_beginObservingNetworkChangeNotifications;

@@ -6,14 +6,17 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class CPLChangeBatch, NSArray, NSString;
+@class CPLChangeBatch, CPLScopeFilter, CPLScopedIdentifier, NSArray;
 
 @protocol CPLEngineChangePipeImplementation <CPLEngineStorageImplementation>
-@property(nonatomic, getter=isLocked) BOOL locked;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (NSArray *)allChangeBatches;
 - (BOOL)compactChangeBatchesWithError:(id *)arg1;
+- (BOOL)deleteAllChangesWithScopeFilter:(CPLScopeFilter *)arg1 error:(id *)arg2;
 - (BOOL)deleteAllChangeBatchesWithError:(id *)arg1;
-- (BOOL)hasSomeChangeWithIdentifier:(NSString *)arg1;
+- (BOOL)hasSomeChangeWithScopeFilter:(CPLScopeFilter *)arg1;
+- (BOOL)hasSomeChangeInScopesWithIdentifiers:(id <NSFastEnumeration>)arg1;
+- (BOOL)hasSomeChangeWithScopedIdentifier:(CPLScopedIdentifier *)arg1;
 - (BOOL)popNextBatchWithError:(id *)arg1;
 - (CPLChangeBatch *)nextBatch;
 - (BOOL)popChangeBatch:(id *)arg1 error:(id *)arg2;

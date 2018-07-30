@@ -14,9 +14,7 @@
 {
     double _timestamp;
     CLPMotionActivity *_motionActivity;
-    struct {
-        unsigned int timestamp:1;
-    } _has;
+    CDStruct_b5306035 _has;
 }
 
 @property(retain, nonatomic) CLPMotionActivity *motionActivity; // @synthesize motionActivity=_motionActivity;

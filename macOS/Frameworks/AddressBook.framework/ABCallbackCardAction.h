@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCallbackCardAction : NSObject <ABActionDelegate>
 {
     CDStruct_014ac2ec _callbacks;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)backendWithAccountCollection:(id)arg1;
++ (id)os_log;
 - (id)defaultContainer;
 - (id)allContainers;
 - (id)makePersistenceContextWithNotificationSource:(id)arg1;

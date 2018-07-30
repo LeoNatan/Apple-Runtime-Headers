@@ -8,11 +8,11 @@
 
 #import "NSSNewsAnalyticsSessionManagerObserving.h"
 #import "NUAggregateVideoPlayerEventTracker.h"
-#import "NUViewAppearanceEventTracker.h"
+#import "SVVideoViewControllerAppearanceObserver.h"
 
 @class NSMutableArray, NSString;
 
-@interface NUVideoPlayerEventTracker : NSObject <NSSNewsAnalyticsSessionManagerObserving, NUAggregateVideoPlayerEventTracker, NUViewAppearanceEventTracker>
+@interface NUVideoPlayerEventTracker : NSObject <NSSNewsAnalyticsSessionManagerObserving, NUAggregateVideoPlayerEventTracker, SVVideoViewControllerAppearanceObserver>
 {
     _Bool _hostProcessIsForeground;
     _Bool _videoPlayerViewHasAppeared;
@@ -29,8 +29,8 @@
 - (void)_performBlockForEventTrackersRespondingToSelector:(SEL)arg1 block:(CDUnknownBlockType)arg2;
 - (void)sessionWillEnd;
 - (void)sessionDidStart;
-- (void)viewDidDisappear;
-- (void)viewDidAppear;
+- (void)videoViewControllerDidDisappear:(id)arg1;
+- (void)videoViewControllerDidAppear:(id)arg1;
 - (void)videoPlayerDidBecomeInvisible;
 - (void)videoPlayerDidBecomeVisible;
 - (void)userEngagedWithCallToActionOfVideoAdWithMetadata:(id)arg1;
@@ -52,6 +52,8 @@
 - (void)playbackPausedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackStartedWithVideoItem:(id)arg1 metadata:(id)arg2;
 - (void)playbackInitiatedWithVideoItem:(id)arg1 metadata:(id)arg2;
+- (void)videoDidDisappearWithVideoItem:(id)arg1;
+- (void)videoDidAppearWithVideoItem:(id)arg1;
 - (void)removeEventTracker:(id)arg1;
 - (void)addEventTracker:(id)arg1;
 - (id)initWithSessionManager:(id)arg1;

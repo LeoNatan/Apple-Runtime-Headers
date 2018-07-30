@@ -13,11 +13,11 @@
     id _privatePopoverFrameData;
     struct {
         unsigned int useDragWindowAppearance:1;
-        unsigned int hasActiveShadow:1;
-        unsigned int hasShadow:1;
-        unsigned int invalidateShadow:1;
         unsigned int unused1:1;
         unsigned int unused2:1;
+        unsigned int unused3:1;
+        unsigned int unused4:1;
+        unsigned int unused5:1;
         unsigned int shouldInsetForAnchor:1;
         unsigned int doingSolidFillHack:1;
         unsigned int wantsDragWindowAppearance:1;
@@ -28,7 +28,6 @@
 + (id)defaultAnimationForKey:(id)arg1;
 + (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
 + (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
-+ (id)_cui_keyPathsAffectingValuesForCurrentState;
 + (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 appearance:(id)arg2 anchorSize:(struct CGSize)arg3 contentInset:(struct NSEdgeInsets)arg4 hasTitlebar:(BOOL)arg5;
 + (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 appearance:(id)arg2 anchorSize:(struct CGSize)arg3 contentInset:(struct NSEdgeInsets)arg4 hasTitlebar:(BOOL)arg5;
 + (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 appearance:(id)arg2 anchorSize:(struct CGSize)arg3 contentInset:(struct NSEdgeInsets)arg4;
@@ -59,9 +58,6 @@
 - (id)opaqueAncestor;
 - (BOOL)isOpaque;
 - (struct CGRect)dragRectForFrameRect:(struct CGRect)arg1;
-- (void)_resetDragMargins;
-- (struct CGRect)_draggableFrame;
-- (void)_clearDragMargins;
 - (double)_distanceFromToolbarBaseToTitlebar;
 - (void)_hideToolbarWithAnimation:(BOOL)arg1;
 - (void)_showToolbarWithAnimation:(BOOL)arg1;
@@ -78,6 +74,7 @@
 - (id)title;
 - (void)_windowChangedKeyState;
 - (void)_windowWillOrderOnScreen;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)viewDidChangeBackingProperties;
 - (void)_drawFrameMaskInRect:(struct CGRect)arg1;
 - (void)_clearFrameMask;
@@ -92,9 +89,8 @@
 - (struct CGPoint)_adjustedForBoundsAnchorPoint:(struct CGPoint)arg1 anchorEdge:(unsigned long long)arg2;
 - (id)_popoverIfAvailable;
 - (void)drawBackgroundInRect:(struct CGRect)arg1 ofView:(id)arg2 anchorEdge:(unsigned long long)arg3 anchorPoint:(struct CGPoint)arg4;
-- (void)_drawHUDPopoverAppearanceInRect:(struct CGRect)arg1 anchorEdge:(unsigned long long)arg2 anchorPoint:(struct CGPoint)arg3;
-- (void)_drawMinimalPopoverAppearanceInRect:(struct CGRect)arg1 anchorEdge:(unsigned long long)arg2 anchorPoint:(struct CGPoint)arg3;
 - (id)_coreUIOptionsWithAnchorEdge:(unsigned long long)arg1 anchorPoint:(struct CGPoint)arg2 anchorSize:(struct CGSize)arg3 shouldInsetForAnchor:(BOOL)arg4 areasOfInterest:(id)arg5;
+- (struct NSEdgeInsets)_cui_alignmentRectInsets;
 - (id)_cui_optionsForCurrentState;
 - (BOOL)_isBackdropCompatible;
 - (struct CGPath *)_newMinimalAppearancePathInBounds:(struct CGRect)arg1 anchorEdge:(unsigned long long)arg2 anchorPoint:(struct CGPoint)arg3 topCapOnly:(BOOL)arg4 arrowOffset:(double)arg5;
@@ -112,10 +108,7 @@
 - (void)_setDragImage:(id)arg1;
 - (id)_dragImage;
 - (void)dealloc;
-- (void)_loadTheme;
 @property BOOL shouldBlurBackground;
-- (void)_invalidateShadow;
-@property long long popoverAppearance;
 @property BOOL shouldInsetForAnchor;
 - (void)_setAnchorPoint:(struct CGPoint)arg1 reshape:(BOOL)arg2;
 @property struct CGPoint anchorPoint;

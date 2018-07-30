@@ -7,16 +7,16 @@
 #import "FCCacheFlushing.h"
 #import "NSObject.h"
 
-@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagRecordSource, FCWebArchiveSource, FCWidgetSectionConfigRecordSource;
+@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray;
 
 @protocol FCContentContextInternal <NSObject, FCCacheFlushing>
 @property(readonly, nonatomic) FCCKContentDatabase *contentDatabase;
 @property(readonly) FCFeedDatabase *feedDatabase;
+@property(readonly, nonatomic) NSArray *recordSources;
 @property(readonly, nonatomic) FCWidgetSectionConfigRecordSource *widgetSectionConfigRecordSource;
 @property(readonly, nonatomic) FCForYouConfigRecordSource *forYouConfigRecordSource;
 @property(readonly, nonatomic) FCPurchaseLookupRecordSource *purchaseLookupRecordSource;
 @property(readonly, nonatomic) FCArticleListRecordSource *articleListRecordSource;
-@property(readonly, nonatomic) FCWebArchiveSource *webArchiveSource;
 @property(readonly, nonatomic) FCResourceRecordSource *resourceRecordSource;
 @property(readonly, nonatomic) FCChannelMembershipController *channelMembershipController;
 @property(readonly, nonatomic) FCTagRecordSource *tagRecordSource;

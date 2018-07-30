@@ -34,6 +34,9 @@
     int _constraintState;
     int _queuedConstraintState;
     _Bool _constraintsDirty;
+    _Bool _isPad;
+    _Bool _hasPearl;
+    float _minimumHeight;
     int _state;
     PKPaymentAuthorizationLayout *_layout;
     unsigned int _requestType;
@@ -58,7 +61,7 @@
 - (id)_titleLabelAttributedString:(id)arg1;
 - (void)_prepareConstraints;
 - (void)updateConstraints;
-- (id)defaultHeightConstraint;
+- (id)defaultHeightConstraints;
 - (void)setHidden:(_Bool)arg1;
 - (void)_createSubviews;
 - (void)setState:(int)arg1 string:(id)arg2 animated:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;

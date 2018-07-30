@@ -6,7 +6,6 @@
 
 #import "NSTableColumn.h"
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerTableColumn : NSTableColumn
 {
 }

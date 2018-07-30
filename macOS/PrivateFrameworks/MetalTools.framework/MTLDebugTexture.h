@@ -15,19 +15,23 @@
     MTLDebugDevice *_debugDevice;
     unsigned long long _usageRequired;
     BOOL _purgeableStateHasBeenSet;
+    BOOL _isLinearTexture;
     unsigned int _textureUsage;
     MTLDebugResource *_common;
     MTLTextureDescriptor *_descriptor;
     unsigned long long _offset;
     unsigned long long _bytesPerRow;
+    unsigned long long _bytesPerImage;
     unsigned long long _plane;
     unsigned long long _purgeableState;
 }
 
 @property(nonatomic) unsigned int textureUsage; // @synthesize textureUsage=_textureUsage;
+@property(readonly, nonatomic) BOOL isLinearTexture; // @synthesize isLinearTexture=_isLinearTexture;
 @property(readonly, nonatomic) BOOL purgeableStateHasBeenSet; // @synthesize purgeableStateHasBeenSet=_purgeableStateHasBeenSet;
 @property(readonly, nonatomic) unsigned long long purgeableState; // @synthesize purgeableState=_purgeableState;
 @property(readonly, nonatomic) unsigned long long plane; // @synthesize plane=_plane;
+@property(readonly, nonatomic) unsigned long long bytesPerImage; // @synthesize bytesPerImage=_bytesPerImage;
 @property(readonly, nonatomic) unsigned long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
 @property(readonly, nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(readonly, copy, nonatomic) MTLTextureDescriptor *descriptor; // @synthesize descriptor=_descriptor;
@@ -61,6 +65,7 @@
 - (id)initWithBaseTexture:(id)arg1 heap:(id)arg2 device:(id)arg3 descriptor:(id)arg4;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3 plane:(unsigned long long)arg4;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3;
+- (id)initWithBaseTexture:(id)arg1 device:(id)arg2 buffer:(id)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6 bytesPerImage:(unsigned long long)arg7;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 buffer:(id)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6;
 
 @end

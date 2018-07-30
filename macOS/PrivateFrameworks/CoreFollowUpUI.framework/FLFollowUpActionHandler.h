@@ -20,6 +20,8 @@
 
 @property(copy, nonatomic) CDUnknownBlockType extensionRequestedViewControllerPresentation; // @synthesize extensionRequestedViewControllerPresentation=_extensionRequestedViewControllerPresentation;
 - (void).cxx_destruct;
+- (void)dealloc;
+@property(readonly, copy) NSString *description;
 - (void)extensionDidFinishWithError:(id)arg1;
 - (void)extensionDidFinish;
 - (void)setDisplayImage:(id)arg1;
@@ -28,7 +30,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -8,7 +8,6 @@
 
 @class CNDonationStore, CNLabeledValue;
 
-__attribute__((visibility("hidden")))
 @interface CNUIRejectDonatedValueCommand : CNUIUndoableCommand
 {
     CNDonationStore *_donationStore;

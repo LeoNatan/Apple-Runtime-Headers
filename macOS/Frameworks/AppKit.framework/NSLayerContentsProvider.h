@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 + (void)resetCache;
 + (id)sharedContentsProvider;
 - (double)totalCacheSize;
-- (id)facetForIdentifier:(id)arg1 scale:(double)arg2 colorSpace:(id)arg3 drawingRect:(struct CGRect)arg4 flipped:(BOOL)arg5 patternDrawHandler:(CDUnknownBlockType)arg6;
 - (id)facetForIdentifier:(id)arg1 scale:(double)arg2 colorSpace:(id)arg3 drawingRect:(struct CGRect)arg4 flipped:(BOOL)arg5 appearanceIdentifier:(id)arg6 drawHandler:(CDUnknownBlockType)arg7;
 - (void)dealloc;
 

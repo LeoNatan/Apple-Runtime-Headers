@@ -32,7 +32,7 @@
 - (id)migrateAccountWithSettings:(id)arg1 pluginID:(id)arg2;
 - (void)_handleExchangeAccount:(id)arg1 withStoredAccount:(id)arg2 fromPlugin:(id)arg3 uid:(id)arg4;
 - (void)_fetchMigratedAccountIdentifiers;
-- (BOOL)run;
+- (BOOL)runWithOSVersionDidIncrease:(BOOL)arg1;
 - (id)init;
 
 @end

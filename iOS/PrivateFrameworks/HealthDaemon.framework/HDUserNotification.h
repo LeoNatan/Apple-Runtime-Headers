@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface HDUserNotification : NSObject
 {
@@ -15,12 +15,18 @@
     NSString *_defaultButton;
     NSString *_cancelButton;
     NSString *_otherButton;
+    NSDictionary *_additionalDescriptors;
+    long long _alertLevel;
+    unsigned long long _userNotificationOptions;
     CDUnknownBlockType _responseHandler;
     struct __CFUserNotification *_notification;
 }
 
 @property(nonatomic) struct __CFUserNotification *notification; // @synthesize notification=_notification;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
+@property(nonatomic) unsigned long long userNotificationOptions; // @synthesize userNotificationOptions=_userNotificationOptions;
+@property(nonatomic) long long alertLevel; // @synthesize alertLevel=_alertLevel;
+@property(copy, nonatomic) NSDictionary *additionalDescriptors; // @synthesize additionalDescriptors=_additionalDescriptors;
 @property(copy, nonatomic) NSString *otherButton; // @synthesize otherButton=_otherButton;
 @property(copy, nonatomic) NSString *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(copy, nonatomic) NSString *defaultButton; // @synthesize defaultButton=_defaultButton;

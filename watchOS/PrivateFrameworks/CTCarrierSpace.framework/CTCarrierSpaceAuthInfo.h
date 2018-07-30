@@ -8,21 +8,21 @@
 
 #import "NSSecureCoding.h"
 
-@class NSDate, NSString;
+@class NSData, NSDate;
 
 @interface CTCarrierSpaceAuthInfo : NSObject <NSSecureCoding>
 {
     _Bool _shouldCache;
-    NSString *_accessToken;
-    NSString *_refreshToken;
+    NSData *_accessToken;
+    NSData *_refreshToken;
     NSDate *_expiresAt;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool shouldCache; // @synthesize shouldCache=_shouldCache;
 @property(retain, nonatomic) NSDate *expiresAt; // @synthesize expiresAt=_expiresAt;
-@property(retain, nonatomic) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
-@property(retain, nonatomic) NSString *accessToken; // @synthesize accessToken=_accessToken;
+@property(retain, nonatomic) NSData *refreshToken; // @synthesize refreshToken=_refreshToken;
+@property(retain, nonatomic) NSData *accessToken; // @synthesize accessToken=_accessToken;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

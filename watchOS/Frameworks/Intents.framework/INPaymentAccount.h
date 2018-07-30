@@ -39,6 +39,7 @@
 - (unsigned int)hash;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 accountType:(int)arg3 organizationName:(id)arg4;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 accountType:(int)arg3 organizationName:(id)arg4 balance:(id)arg5 secondaryBalance:(id)arg6;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
 @end
 

@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)etaStringFor:(unsigned long long)arg1 travelTime:(double)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;
-- (void)commonInit;
+- (void)_commonInit;
 - (id)initWithLineItem:(id)arg1;
 - (id)initWithPlaceItem:(id)arg1;
 

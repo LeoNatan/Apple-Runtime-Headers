@@ -13,9 +13,9 @@
     FBSceneLayer *_sceneLayer;
 }
 
-@property(readonly, retain, nonatomic) FBSceneLayer *sceneLayer; // @synthesize sceneLayer=_sceneLayer;
+@property(readonly, nonatomic) FBSceneLayer *sceneLayer; // @synthesize sceneLayer=_sceneLayer;
+- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 - (id)initWithSceneLayer:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

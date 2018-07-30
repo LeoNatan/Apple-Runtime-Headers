@@ -40,7 +40,8 @@
 - (void)loadXMLUIWithURL:(id)arg1;
 - (id)urlSessionDelegate;
 - (id)sessionConfiguration;
-- (id)handleWillLoadRequest:(id)arg1;
+- (void)shouldLoadRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_handleShouldLoadRequestResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadRequest:(id)arg1;
 - (void)cancel;
 - (void)dealloc;

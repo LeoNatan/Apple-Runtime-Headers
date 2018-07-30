@@ -18,7 +18,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)new;
 @property(readonly, nonatomic) long long direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) WBSSetInt64 *ignoredItemIdentifiers; // @synthesize ignoredItemIdentifiers=_ignoredItemIdentifiers;
 @property(readonly, nonatomic) WBSSetInt64 *visitIdentifiers; // @synthesize visitIdentifiers=_visitIdentifiers;
@@ -30,7 +29,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistoryVisits:(id)arg1 ignoredItems:(id)arg2 direction:(long long)arg3;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

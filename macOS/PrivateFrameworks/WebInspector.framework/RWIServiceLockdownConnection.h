@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableData *_incomingData;
     struct _AMDServiceConnection *_webinspectordService;
     struct _AMDServiceConnection *_notificationProxyService;
+    BOOL _disconnectRequested;
     RWIMobileDeviceConnection *_mobileDeviceConnection;
 }
 

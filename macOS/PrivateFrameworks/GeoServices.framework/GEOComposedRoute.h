@@ -57,6 +57,7 @@
     id <GEOServerFormattedString> _transitDescriptionFormatString;
     NSArray *_transitAdvisories;
     id <GEOServerFormattedString> _transitRouteBadge;
+    NSArray *_ticketedSegments;
     BOOL _isWalkingOnlyTransitRoute;
     GEOComposedWaypoint *_origin;
     GEOComposedWaypoint *_destination;
@@ -104,6 +105,7 @@
 @property(readonly, nonatomic) GEORoute *geoRoute; // @synthesize geoRoute=_geoRoute;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL allowsNetworkTileLoad;
+- (id)ticketingSegmentsForSelectedRides;
 - (void)updateRouteWithRideSelections:(id)arg1;
 - (void)_rebuildRouteForRideChange;
 - (void)selectRide:(unsigned long long)arg1 forBoardStep:(id)arg2;

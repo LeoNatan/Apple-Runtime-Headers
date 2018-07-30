@@ -141,7 +141,7 @@ __attribute__((visibility("hidden")))
 - (void)_completeWithAction:(int)arg1 animated:(_Bool)arg2 notify:(_Bool)arg3;
 - (void)completeWithAction:(int)arg1 animated:(_Bool)arg2;
 - (_Bool)saveWithSpan:(int)arg1 animated:(_Bool)arg2;
-- (void)focusAndSelectTitle;
+- (void)focus:(unsigned int)arg1 select:(_Bool)arg2;
 - (_Bool)hasUnsavedChanges;
 - (_Bool)willPresentDialogOnSave;
 - (void)completeAndSave;

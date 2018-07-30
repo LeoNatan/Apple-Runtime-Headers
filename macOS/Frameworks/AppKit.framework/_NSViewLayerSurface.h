@@ -15,11 +15,10 @@ __attribute__((visibility("hidden")))
     NSWindow *_window;
     NSCGSWindowLayerSurface *_surface;
     CAContext *_context;
-    id _viewGeometryObserver;
+    unsigned long long _viewGeometryObserver;
     NSArray *_windowObservers;
 }
 
-+ (id)_windowTitlebarLayerSurfaceForView:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)dealloc;

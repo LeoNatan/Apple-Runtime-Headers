@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSError, NSString, NSURL, NSUUID, PKPaymentApplication, PKPaymentPass, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext;
+@class NSData, NSError, NSString, NSURL, NSUUID, PKPaymentApplication, PKPaymentPass, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext;
 
 @protocol NPKCompanionServerProtocol <NSObject>
-- (void)handlePotentialExpressPass:(PKPaymentPass *)arg1 withCompletionHandler:(void (^)(_Bool, NSSet *))arg2;
+- (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(NSString *)arg1 sessionData:(NSData *)arg2 handler:(void (^)(NSString *, unsigned long long, NSData *, NSError *))arg3;
+- (void)balancesForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
 - (void)transitStateWithPassUniqueIdentifier:(NSString *)arg1 paymentApplication:(PKPaymentApplication *)arg2 completion:(void (^)(PKTransitAppletState *))arg3;
 - (void)deletePaymentTransactionWithIdentifier:(NSString *)arg1 passUniqueIdentifier:(NSString *)arg2 fromDeviceWithPairingID:(NSUUID *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(long long)arg4 completion:(void (^)(NSSet *))arg5;
@@ -19,6 +20,7 @@
 - (void)setPeerPaymentAccount:(PKPeerPaymentAccount *)arg1 forPairingID:(NSUUID *)arg2 completion:(void (^)(void))arg3;
 - (void)sharedPeerPaymentWebServiceContextForPairingID:(NSUUID *)arg1 withCompletion:(void (^)(PKPeerPaymentWebServiceContext *))arg2;
 - (void)setSharedPeerPaymentWebServiceContext:(PKPeerPaymentWebServiceContext *)arg1 forPairingID:(NSUUID *)arg2 completion:(void (^)(void))arg3;
+- (void)updateSettings:(unsigned long long)arg1 forPassWithUniqueID:(NSString *)arg2;
 - (void)sharedPaymentWebServiceContextForPairingID:(NSUUID *)arg1 withCompletion:(void (^)(PKPaymentWebServiceContext *))arg2;
 - (void)setSharedPaymentWebServiceContext:(PKPaymentWebServiceContext *)arg1 forPairingID:(NSUUID *)arg2 completion:(void (^)(void))arg3;
 - (void)handlePendingiCloudSignoutWithCompletion:(void (^)(void))arg1;

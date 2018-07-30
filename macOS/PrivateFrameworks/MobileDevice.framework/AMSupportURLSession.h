@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_queue> *_queue;
     double _timeout;
+    float _priority;
     NSURLSession *_session;
     NSDictionary *_options;
     BOOL _sslEvalFailed;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL sslEvalFailed; // @synthesize sslEvalFailed=_sslEvalFailed;
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
+@property(nonatomic) float priority; // @synthesize priority=_priority;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

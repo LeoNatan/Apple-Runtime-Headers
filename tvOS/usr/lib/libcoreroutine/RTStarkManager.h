@@ -4,20 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
-@interface RTStarkManager : RTNotifier
+@class RTDefaultsManager;
+
+@interface RTStarkManager : RTService
 {
+    RTDefaultsManager *_defaultsManager;
 }
 
 + (_Bool)supportsNotificationName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
+- (void).cxx_destruct;
 - (void)_fetchConnectionStateWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchConnectionStateWithHandler:(CDUnknownBlockType)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
-- (void)_shutdown;
-- (void)shutdown;
+- (id)initWithDefaultsManager:(id)arg1;
+- (id)init;
 
 @end
 

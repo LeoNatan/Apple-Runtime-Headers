@@ -8,6 +8,7 @@
 
 @class AVAssetTrack;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetReaderSampleReferenceOutputInternal : NSObject
 {
     AVAssetTrack *track;

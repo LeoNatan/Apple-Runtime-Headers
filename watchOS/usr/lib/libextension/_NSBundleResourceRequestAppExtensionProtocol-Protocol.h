@@ -10,7 +10,7 @@
 
 @protocol _NSBundleResourceRequestAppExtensionProtocol <NSObject>
 - (void)accessSandboxExtension:(NSString *)arg1;
-- (void)assetPacksBecameUnavailable:(NSDictionary *)arg1;
-- (void)assetPacksBecameAvailable:(NSDictionary *)arg1;
+- (void)hostApplicationAssetPacksBecameUnavailable:(NSDictionary *)arg1;
+- (void)hostApplicationAssetPacksBecameAvailable:(NSDictionary *)arg1;
 @end
 

@@ -23,6 +23,7 @@
 + (void)setProactiveEnabledForTests:(BOOL)arg1;
 + (void)setShowCancelledEventsForTests:(BOOL)arg1;
 + (void)setHidePastEventsForTests:(BOOL)arg1;
++ (BOOL)hidePastEventsForTests;
 + (void)setCloudKitPersistedState:(id)arg1;
 + (id)cloudKitPersistedState;
 + (BOOL)shouldHarvestEvents;
@@ -45,14 +46,12 @@
 + (long long)messagesToProcessImmediately;
 + (id)defaults;
 + (void)removeDeprecatedDefaults;
-+ (void)registerBlockOnSuggestionsSettingsChange:(CDUnknownBlockType)arg1;
++ (int)registerBlockOnSuggestionsSettingsChange:(CDUnknownBlockType)arg1;
 + (BOOL)showSuggestionsCalendar;
 + (void)setHashedSessionsLogging:(int)arg1;
 + (long long)hashedSessionsLogging;
 + (BOOL)showEventsFoundInMail;
 + (BOOL)showContactsFoundInMail;
-+ (void)setHarvestNLEvents:(BOOL)arg1;
-+ (BOOL)harvestNLEvents;
 + (void)setOnlyShowSignificantNLEvents:(BOOL)arg1;
 + (BOOL)onlyShowSignificantNLEvents;
 + (void)setOnlyShowSignificantPseudoContacts:(BOOL)arg1;

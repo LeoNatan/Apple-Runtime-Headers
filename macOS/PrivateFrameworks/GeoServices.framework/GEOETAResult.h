@@ -10,6 +10,7 @@
 
 @class GEOPlaceSearchResponse, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOETAResult : PBCodable <NSCopying>
 {
     unsigned int _distance;

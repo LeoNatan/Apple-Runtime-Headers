@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABMainListOutlineView.h>
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerGroupListView : ABMainListOutlineView
 {
 }

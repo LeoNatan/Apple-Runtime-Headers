@@ -35,6 +35,7 @@
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
 - (void)signInOperationManager:(id)arg1 didSaveAccount:(id)arg2 error:(id)arg3;
+- (void)prewarmOperationsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_appleAccountType;
 - (id)_titleForError:(id)arg1 account:(id)arg2;
 - (void)_presentExistingAccountAlert:(id)arg1;
@@ -45,7 +46,6 @@
 - (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (void)_showGenericTermsUIforAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentUnableToSaveAccountAlert;
-- (_Bool)_carrierBundleSaysHideFindMyiPhone;
 - (void)_hasActivationLockSupportedWatchWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_promptToEnableFindMyIfPossibleWithAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_stashLoginResponseWithAuthenticationResults:(id)arg1 completion:(CDUnknownBlockType)arg2;

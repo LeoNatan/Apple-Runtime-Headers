@@ -7,13 +7,13 @@
 #import "NSObject.h"
 
 #import "HMHomeDelegatePrivate.h"
-#import "HUAddUserViewControllerDelegate.h"
+#import "HUAddPeopleViewControllerDelegate.h"
 #import "UITableViewDataSource.h"
 #import "UITableViewDelegate.h"
 
-@class HMHome, NSArray, NSIndexPath, NSString, UITableView, UIViewController;
+@class CNContactStore, HMHome, NSArray, NSIndexPath, NSString, UITableView, UIViewController;
 
-@interface HUUserListTableManager : NSObject <HUAddUserViewControllerDelegate, HMHomeDelegatePrivate, UITableViewDataSource, UITableViewDelegate>
+@interface HUUserListTableManager : NSObject <HUAddPeopleViewControllerDelegate, HMHomeDelegatePrivate, UITableViewDataSource, UITableViewDelegate>
 {
     _Bool _editing;
     _Bool _allowsEditing;
@@ -24,10 +24,10 @@
     UIViewController *_viewController;
     UITableView *_tableView;
     NSIndexPath *_selectedIndexPath;
-    void *_addressBook;
+    CNContactStore *_contactStore;
 }
 
-@property(nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) _Bool editing; // @synthesize editing=_editing;
@@ -53,14 +53,14 @@
 - (void)home:(id)arg1 didUpdateStateForOutgoingInvitations:(id)arg2;
 - (void)home:(id)arg1 didRemoveUser:(id)arg2;
 - (void)home:(id)arg1 didAddUser:(id)arg2;
-- (void)controllerDidSendInvitations:(id)arg1;
-- (void)controllerDidDismissWithError:(id)arg1;
+- (void)addPeopleViewController:(id)arg1 didSendInvitations:(id)arg2;
+- (void)addPeopleViewControllerDidCancel:(id)arg1;
 - (void)_configurePersonViewController:(id)arg1 invitation:(id)arg2;
 - (id)_personViewControllerForUser:(id)arg1 invitation:(id)arg2;
 - (id)_monogramForUser:(id)arg1;
 - (id)_stringForInvitationState:(long long)arg1;
 - (id)_displayNameForUser:(id)arg1;
-- (void *)_copyPersonForUser:(id)arg1;
+- (id)_contactForUser:(id)arg1;
 - (void)_didReloadAtIndex:(unsigned long long)arg1;
 - (void)_didRemoveAtIndex:(unsigned long long)arg1;
 - (void)_didInsertAtIndex:(unsigned long long)arg1;

@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @interface NSObject (NSAccessibilitySectionHelper)
+- (BOOL)accessibilityReplaceRange:(struct _NSRange)arg1 withText:(id)arg2;
 - (double)accessibilityVisibleArea;
 - (BOOL)_shouldSearchChildrenForSection;
 - (BOOL)_isAccessibilityCandidateForSection:(id)arg1;

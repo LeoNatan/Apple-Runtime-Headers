@@ -8,7 +8,6 @@
 
 @class NSArray, NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSPredicate;
 
-__attribute__((visibility("hidden")))
 @interface ABContactFetcher : NSObject
 {
     NSManagedObjectContext *_managedObjectContext;

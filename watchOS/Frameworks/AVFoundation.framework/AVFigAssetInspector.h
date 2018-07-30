@@ -8,6 +8,7 @@
 
 @class NSArray, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVFigAssetInspector : AVAssetInspector
 {
     struct OpaqueFigAsset *_figAsset;

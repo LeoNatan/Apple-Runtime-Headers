@@ -11,15 +11,18 @@
 #import "PUICSectionable.h"
 #import "PUICTableViewCellActionBarDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
+#import "_UIScrollViewScrollObserver.h"
 
-@class NSIndexPath, NSString, PUICSelectionIndexController, PUICTableViewCellActionBar, UIPanGestureRecognizer, _UICache;
+@class NSIndexPath, NSString, PUICSelectionIndexController, PUICTableViewCellActionBar, UIPanGestureRecognizer, UIScrollView;
 
-@interface PUICTableView : UITableView <PUICCrownInputSequencerDelegate, PUICCrownInputSequencerDataSource, UIGestureRecognizerDelegate, PUICSectionable, PUICTableViewCellActionBarDelegate>
+@interface PUICTableView : UITableView <PUICCrownInputSequencerDelegate, PUICCrownInputSequencerDataSource, UIGestureRecognizerDelegate, PUICSectionable, _UIScrollViewScrollObserver, PUICTableViewCellActionBarDelegate>
 {
     UIPanGestureRecognizer *_swipeActionPanRecognizer;
     float _initialTranslation;
     PUICTableViewCellActionBar *_actionBar;
     _Bool _swipingLeft;
+    UIScrollView *_observedScrollView;
+    float _flattenExtremesProgress;
     struct {
         unsigned int dataSourceSectionIndexTitlesForTableView:1;
         unsigned int dataSourceTableViewSectionForSectionIndexTitleAtIndex:1;
@@ -37,14 +40,31 @@
         unsigned int madeSwipedCellViewsTransparent:1;
     } _puicFlags;
     PUICSelectionIndexController *_indexController;
+    _Bool _reducedMotion;
     _Bool _showsSectionIndexOverlayOnCrownScroll;
+    _Bool _forceEllipticCurveTableViewEverywhere;
+    _Bool _forceCurvesTop;
+    _Bool _forceCurvesBottom;
+    _Bool _flattenExtremesTop;
+    _Bool _flattenExtremesBottom;
     NSIndexPath *_swipedIndexPath;
-    _UICache *__textLabelRectByLineCountCache;
-    _UICache *__detailLabelRectByLineCountCache;
+    float _threshold;
+    float _scaleExponent;
+    float _scaleAccentuate;
+    float _alphaExponent;
+    float _alphaAccentuate;
 }
 
-@property(retain, nonatomic) _UICache *_detailLabelRectByLineCountCache; // @synthesize _detailLabelRectByLineCountCache=__detailLabelRectByLineCountCache;
-@property(retain, nonatomic) _UICache *_textLabelRectByLineCountCache; // @synthesize _textLabelRectByLineCountCache=__textLabelRectByLineCountCache;
+@property(nonatomic) float alphaAccentuate; // @synthesize alphaAccentuate=_alphaAccentuate;
+@property(nonatomic) float alphaExponent; // @synthesize alphaExponent=_alphaExponent;
+@property(nonatomic) float scaleAccentuate; // @synthesize scaleAccentuate=_scaleAccentuate;
+@property(nonatomic) float scaleExponent; // @synthesize scaleExponent=_scaleExponent;
+@property(nonatomic) float threshold; // @synthesize threshold=_threshold;
+@property(nonatomic) _Bool flattenExtremesBottom; // @synthesize flattenExtremesBottom=_flattenExtremesBottom;
+@property(nonatomic) _Bool flattenExtremesTop; // @synthesize flattenExtremesTop=_flattenExtremesTop;
+@property(nonatomic) _Bool forceCurvesBottom; // @synthesize forceCurvesBottom=_forceCurvesBottom;
+@property(nonatomic) _Bool forceCurvesTop; // @synthesize forceCurvesTop=_forceCurvesTop;
+@property(nonatomic) _Bool forceEllipticCurveTableViewEverywhere; // @synthesize forceEllipticCurveTableViewEverywhere=_forceEllipticCurveTableViewEverywhere;
 @property(nonatomic) _Bool showsSectionIndexOverlayOnCrownScroll; // @synthesize showsSectionIndexOverlayOnCrownScroll=_showsSectionIndexOverlayOnCrownScroll;
 @property(retain, nonatomic) NSIndexPath *swipedIndexPath; // @synthesize swipedIndexPath=_swipedIndexPath;
 - (void).cxx_destruct;
@@ -92,15 +112,35 @@
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)_createPreparedCellForGlobalRow:(int)arg1 withIndexPath:(id)arg2 willDisplay:(_Bool)arg3;
 - (_Bool)_shouldDisplayExtraSeparatorsAtOffset:(float *)arg1;
-@property(nonatomic) id <PUICTableViewDelegate> delegate; // @dynamic delegate;
-@property(nonatomic) id <PUICTableViewDataSource> dataSource; // @dynamic dataSource;
+@property(nonatomic) __weak id <PUICTableViewDelegate> delegate; // @dynamic delegate;
+@property(nonatomic) __weak id <PUICTableViewDataSource> dataSource; // @dynamic dataSource;
+- (void)_applyEllipticCurveToCells;
+- (_Bool)_shouldCurve;
+- (void)_observeScrollViewDidScroll:(id)arg1;
+- (void)didMoveToWindow;
+- (float)bottomThreshold;
+- (float)topThreshold;
+- (float)visibleHeight;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
-- (int)sectionIndexMinimumDisplayRowCount;
-- (void)setSectionIndexMinimumDisplayRowCount:(int)arg1;
+- (void)_performTableAlteringOperation:(CDUnknownBlockType)arg1;
+- (void)moveRowAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (void)reloadRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
+- (void)deleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
+- (void)insertRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
+- (void)moveSection:(int)arg1 toSection:(int)arg2;
+- (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (void)reloadSections:(id)arg1 withRowAnimation:(int)arg2;
+- (void)insertSections:(id)arg1 withRowAnimation:(int)arg2;
+- (void)endUpdates;
+- (void)beginUpdates;
+- (void)performBatchUpdates:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadSectionIndexTitles;
 - (void)reloadData;
+- (int)sectionIndexMinimumDisplayRowCount;
+- (void)setSectionIndexMinimumDisplayRowCount:(int)arg1;
+- (void)_handleReducedMotionStatusDidChangedNotification:(id)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(int)arg2;
 

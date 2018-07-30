@@ -19,6 +19,7 @@
     NSString *_audioCategory;
     NSNumber *_audioVolume;
     double _maximumDuration;
+    _Bool _critical;
     _Bool _shouldIgnoreRingerSwitch;
     _Bool _shouldRepeat;
     NSString *_toneFileName;
@@ -29,10 +30,15 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)_soundWithAlertType:(long long)arg1 toneFileName:(id)arg2;
++ (id)_soundWithAlertType:(long long)arg1 audioVolume:(id)arg2 critical:(_Bool)arg3 toneFileName:(id)arg4;
 + (id)soundWithAlertType:(long long)arg1;
 + (id)soundNamed:(id)arg1;
++ (id)criticalSoundNamed:(id)arg1 withAudioVolume:(float)arg2;
++ (id)criticalSoundNamed:(id)arg1;
++ (id)defaultCriticalSoundWithAudioVolume:(float)arg1;
++ (id)defaultCriticalSound;
 + (id)defaultSound;
+@property(readonly, nonatomic, getter=isCritical) _Bool critical; // @synthesize critical=_critical;
 @property(readonly, copy, nonatomic) NSDictionary *vibrationPattern; // @synthesize vibrationPattern=_vibrationPattern;
 @property(readonly, copy, nonatomic) NSString *vibrationIdentifier; // @synthesize vibrationIdentifier=_vibrationIdentifier;
 @property(readonly, nonatomic) long long alertType; // @synthesize alertType=_alertType;
@@ -54,7 +60,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)init;
-- (id)_initWithAlertType:(long long)arg1 alertTopic:(id)arg2 audioCategory:(id)arg3 audioVolume:(id)arg4 maximumDuration:(double)arg5 shouldIgnoreRingerSwitch:(_Bool)arg6 shouldRepeat:(_Bool)arg7 toneFileName:(id)arg8 toneIdentifier:(id)arg9 toneMediaLibraryItemIdentifier:(unsigned long long)arg10 vibrationIdentifier:(id)arg11 vibrationPattern:(id)arg12;
+- (id)_initWithAlertType:(long long)arg1 alertTopic:(id)arg2 audioCategory:(id)arg3 audioVolume:(id)arg4 critical:(_Bool)arg5 maximumDuration:(double)arg6 shouldIgnoreRingerSwitch:(_Bool)arg7 shouldRepeat:(_Bool)arg8 toneFileName:(id)arg9 toneIdentifier:(id)arg10 toneMediaLibraryItemIdentifier:(unsigned long long)arg11 vibrationIdentifier:(id)arg12 vibrationPattern:(id)arg13;
 
 @end
 

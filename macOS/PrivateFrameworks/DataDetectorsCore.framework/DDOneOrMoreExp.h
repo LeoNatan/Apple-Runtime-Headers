@@ -6,6 +6,7 @@
 
 #import <DataDetectorsCore/DDUnaryOperator.h>
 
+__attribute__((visibility("hidden")))
 @interface DDOneOrMoreExp : DDUnaryOperator
 {
 }

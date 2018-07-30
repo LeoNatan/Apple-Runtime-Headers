@@ -6,22 +6,23 @@
 
 #import "NSObject.h"
 
-@class HDExtendedDatabaseTransaction, HDJournalEntry, NSArray, NSUUID;
+@class HDAssertion, HDDatabaseTransactionContext, HDJournalEntry, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
 @protocol HDHealthDatabase <NSObject>
 @property(readonly, nonatomic, getter=isProtectedDataAvailable) _Bool protectedDataAvailable;
 @property(readonly, nonatomic, getter=isDataProtectedByFirstUnlockAvailable) _Bool dataProtectedByFirstUnlockAvailable;
-- (_Bool)performWithSecondaryJournal:(int)arg1 error:(id *)arg2 block:(_Bool (^)(id *))arg3;
-- (void)finalizeExtendedTransactionForIdentifier:(NSUUID *)arg1;
-- (HDExtendedDatabaseTransaction *)extendedDatabaseTransactionForIdentifier:(NSUUID *)arg1;
-- (HDExtendedDatabaseTransaction *)beginExtendedTransactionWithOptions:(unsigned int)arg1 transactionTimeout:(double)arg2 continuationTimeout:(double)arg3 error:(id *)arg4;
 - (void)removeProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1;
+- (void)addProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1 queue:(NSObject<OS_dispatch_queue> *)arg2;
 - (void)addProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1;
 - (_Bool)addJournalEntries:(NSArray *)arg1 error:(id *)arg2;
 - (_Bool)addJournalEntry:(HDJournalEntry *)arg1 error:(id *)arg2;
-- (_Bool)performJournalMergeWithOptions:(unsigned int)arg1 error:(id *)arg2 block:(_Bool (^)(HDSQLiteDatabase *, id *))arg3;
 - (void)performAsynchronously:(void (^)(void))arg1;
 - (void)performWhenDataProtectedByFirstUnlockIsAvailable:(void (^)(void))arg1;
+- (HDAssertion *)cloneAccessibilityAssertion:(HDAssertion *)arg1 ownerIdentifier:(NSString *)arg2 error:(id *)arg3;
+- (HDAssertion *)takeAccessibilityAssertionWithOwnerIdentifier:(NSString *)arg1 timeout:(double)arg2 error:(id *)arg3;
+- (_Bool)performWithTransactionContext:(HDDatabaseTransactionContext *)arg1 error:(id *)arg2 block:(_Bool (^)(id *))arg3;
 - (_Bool)performTransactionWithOptions:(unsigned int)arg1 error:(id *)arg2 usingBlock:(_Bool (^)(HDSQLiteDatabase *, id *))arg3 inaccessibilityHandler:(_Bool (^)(NSError *, id *))arg4;
+- (_Bool)performTransactionWithContext:(HDDatabaseTransactionContext *)arg1 options:(unsigned int)arg2 error:(id *)arg3 block:(_Bool (^)(HDDatabaseTransaction *, id *))arg4 inaccessibilityHandler:(_Bool (^)(NSError *, id *))arg5;
+- (_Bool)performTransactionWithOptions:(unsigned int)arg1 error:(id *)arg2 block:(_Bool (^)(HDDatabaseTransaction *, id *))arg3 inaccessibilityHandler:(_Bool (^)(NSError *, id *))arg4;
 @end
 

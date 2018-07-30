@@ -10,53 +10,65 @@
 #import "NSXPCConnectionDelegate.h"
 #import "NSXPCListenerDelegate.h"
 
-@class CATOperationQueue, DMFConnection, DMFRegisterConfigurationSourceRequest, DMFStatusReportingRequirements, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListener;
+@class CATOperationQueue, DMFConnection, DMFReportingRequirements, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSXPCConnection, NSXPCListener;
 
 @interface DMFConfigurationSourceClient : NSObject <NSXPCListenerDelegate, NSXPCConnectionDelegate, DMFConfigurationSourceClientInterface>
 {
-    _Bool _invalid;
+    DMFReportingRequirements *_reportingRequirements;
     id <DMFConfigurationSourceClientDelegate> _delegate;
-    DMFStatusReportingRequirements *_statusReportingRequirements;
+    unsigned long long _state;
     DMFConnection *_connection;
     NSXPCListener *_listener;
     NSXPCConnection *_incomingConnection;
-    DMFRegisterConfigurationSourceRequest *_registrationRequest;
+    NSObject *_reportingRequirementsLock;
+    NSString *_configurationSourceName;
+    NSString *_organizationIdentifier;
+    NSString *_machServiceName;
     NSObject<OS_dispatch_queue> *_serialQueue;
     CATOperationQueue *_operationQueue;
+    NSObject<OS_dispatch_source> *_registerConfigurationSource;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *registerConfigurationSource; // @synthesize registerConfigurationSource=_registerConfigurationSource;
 @property(retain, nonatomic) CATOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-@property(retain, nonatomic) DMFRegisterConfigurationSourceRequest *registrationRequest; // @synthesize registrationRequest=_registrationRequest;
-@property(nonatomic, getter=isInvalid) _Bool invalid; // @synthesize invalid=_invalid;
+@property(copy, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
+@property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
+@property(copy, nonatomic) NSString *configurationSourceName; // @synthesize configurationSourceName=_configurationSourceName;
+@property(retain, nonatomic) NSObject *reportingRequirementsLock; // @synthesize reportingRequirementsLock=_reportingRequirementsLock;
 @property(retain, nonatomic) NSXPCConnection *incomingConnection; // @synthesize incomingConnection=_incomingConnection;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) DMFConnection *connection; // @synthesize connection=_connection;
-@property(retain, nonatomic) DMFStatusReportingRequirements *statusReportingRequirements; // @synthesize statusReportingRequirements=_statusReportingRequirements;
+@property unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <DMFConfigurationSourceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)configurationEngineRequestedAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)configurationEventsDidChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)configurationStatusDidChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)probe:(CDUnknownBlockType)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)assetResolutionOperationDidFinish:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)enqueueOperationToResolveAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)eventsReportingOperationDidFinish:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)enqueueOperationToReportEvents:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)statusReportingOperationDidFinish:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)enqueueOperationToReportStatusChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registrationOperationDidFinish:(id)arg1;
-- (void)operationDidStart:(id)arg1;
-- (void)registerConfigurationSource;
+- (void)registerConfigurationSourceIfNeeded;
 - (id)machService;
 - (id)name;
+@property(readonly, nonatomic, getter=isInvalid) _Bool invalid;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
+- (id)stateDescription;
 - (void)invalidate;
 - (void)resume;
+@property(copy, nonatomic) DMFReportingRequirements *reportingRequirements;
+- (void)dealloc;
 - (id)initWithConnection:(id)arg1 organizationIdentifier:(id)arg2 displayName:(id)arg3 localMachServiceName:(id)arg4;
 - (id)init;
-- (void)dealloc;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

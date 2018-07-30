@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSData;
+@class NSData, NSString;
 
 @protocol MSDAutosaveProtocol <NSObject>
-- (void)autosaveMessageData:(NSData *)arg1 withIdentifier:(id <NSCoding>)arg2 completion:(void (^)(id <NSCoding>, NSError *))arg3;
-- (void)autosavedMessageDataWithIdentifier:(id <NSCoding>)arg1 completion:(void (^)(NSData *, NSError *))arg2;
-- (void)removeAutosavedMessageWithIdentifier:(id <NSCoding>)arg1;
-- (void)hasAutosavedMessageWithIdentifier:(id <NSCoding>)arg1 completion:(void (^)(_Bool))arg2;
+- (void)autosaveMessageData:(NSData *)arg1 withIdentifier:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
+- (void)autosavedMessageDataWithIdentifier:(NSString *)arg1 completion:(void (^)(NSData *, NSError *))arg2;
+- (void)removeAutosavedMessageWithIdentifier:(NSString *)arg1;
+- (void)hasAutosavedMessageWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 @end
 

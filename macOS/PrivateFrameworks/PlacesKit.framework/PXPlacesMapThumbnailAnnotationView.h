@@ -33,6 +33,7 @@
 - (void)_hideCountLabel;
 - (void)_showCountLabel;
 - (void)_reloadCount:(long long)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setImage:(id)arg1;
 - (void)_processPostImage;
 - (void)_processGeotaggable:(id)arg1 withImage:(struct CGImage *)arg2 popoverImageType:(unsigned long long)arg3 shouldCache:(BOOL)arg4;

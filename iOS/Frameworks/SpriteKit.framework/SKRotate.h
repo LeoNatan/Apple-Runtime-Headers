@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)rotateToAngle:(double)arg1 duration:(double)arg2 shortestUnitArc:(_Bool)arg3;
 + (id)rotateToAngle:(double)arg1 duration:(double)arg2;
 + (id)rotateByAngle:(double)arg1 duration:(double)arg2;
++ (_Bool)supportsSecureCoding;
 - (id)reversedAction;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

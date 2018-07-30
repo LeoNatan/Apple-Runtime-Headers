@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
-@class AVAssetCache, AVAssetClientURLRequestHelper, AVAssetCustomURLBridgeForNSURLProtocol, AVAssetInspectorLoader, AVAssetResourceLoader, AVWeakReference, NSArray, NSDictionary, NSObject<OS_dispatch_queue>, NSURL;
+@class AVAssetCache, AVAssetClientURLRequestHelper, AVAssetCustomURLAuthentication, AVAssetCustomURLBridgeForNSURLProtocol, AVAssetInspectorLoader, AVAssetResourceLoader, AVWeakReference, NSArray, NSDictionary, NSObject<OS_dispatch_queue>, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVURLAssetInternal : NSObject
 {
     AVAssetInspectorLoader *loader;
     AVAssetClientURLRequestHelper *URLRequestHelper;
     AVAssetCustomURLBridgeForNSURLProtocol *customURLBridgeForNSURLProtocol;
+    AVAssetCustomURLAuthentication *customURLAuthenticationUsingKeychain;
     NSURL *URL;
     NSArray *tracks;
     AVAssetResourceLoader *resourceLoader;

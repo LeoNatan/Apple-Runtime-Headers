@@ -6,9 +6,10 @@
 
 #import "NSVBXPCConnectionClient.h"
 
-@class NSXPCConnection, NSXPCInterface;
+@class NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
 
 @protocol HasAuxiliaryConnection <NSVBXPCConnectionClient>
+@property(nonatomic) NSXPCListenerEndpoint *auxiliaryListenerEndpoint;
 @property(nonatomic) NSXPCConnection *auxiliaryServiceConnection;
 @property(readonly, nonatomic) NSXPCInterface *auxiliaryInterfaceIncoming;
 @property(readonly, nonatomic) NSXPCInterface *auxiliaryInterfaceOutgoing;

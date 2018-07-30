@@ -51,8 +51,7 @@
 @property(retain, nonatomic) NSDictionary *customInfo; // @synthesize customInfo=_customInfo;
 - (void).cxx_destruct;
 - (id)actionControllerViewForScaling;
-- (id)actionController;
-- (_Bool)canProvideActionController;
+- (id)actionGroup;
 - (id)createSiriContext;
 - (void)willAnimateToLongLook;
 - (id)headerActionLaunchOptions;
@@ -64,6 +63,7 @@
 - (void)animateDismissLongLookWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animateToLongLookIfReadyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animateInLongLookWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_didFinishAnimatingToLongLook;
 - (void)animateInQuickLookWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setQuickLongLookDelegate:(id)arg1;
 - (unsigned int)presentationMode;
@@ -92,8 +92,12 @@
 - (void)clientViewControllerRequestsAutoScrollToBottom:(id)arg1;
 - (void)clientViewControllerRequestsScrollToBottom:(id)arg1;
 - (void)clientViewControllerNeedsResizeViews:(id)arg1;
+- (void)clientViewController:(id)arg1 requestActionCompletionForActionResponse:(id)arg2;
+- (void)clientViewController:(id)arg1 requestPerformActionResponse:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_clientViewControllerPerformedAction;
 - (void)clientViewControllerPerformedAction:(id)arg1;
 - (void)clientViewControllerRequestsDismissal:(id)arg1;
+- (void)_performDismissalCompletionBlocks;
 - (void)prepareDismissalWithCompletion:(CDUnknownBlockType)arg1;
 - (void)prepareDismissal;
 - (_Bool)hasPresentedViewController;

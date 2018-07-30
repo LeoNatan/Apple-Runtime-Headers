@@ -16,6 +16,8 @@
     NSNumber *_boxedTextAlignment;
     NSNumber *_boxedVerticalPadding;
     NSNumber *_boxedSuppressesLabel;
+    NSNumber *_boxedLabelCaseStyle;
+    NSNumber *_boxedValueSignificant;
     NSNumber *_boxedValueCanWrap;
     NSNumber *_boxedSuppressesEmptyLabel;
 }
@@ -26,6 +28,8 @@
 + (id)fieldTemplateWithTextAlignment:(long long)arg1;
 @property(retain, nonatomic) NSNumber *boxedSuppressesEmptyLabel; // @synthesize boxedSuppressesEmptyLabel=_boxedSuppressesEmptyLabel;
 @property(retain, nonatomic) NSNumber *boxedValueCanWrap; // @synthesize boxedValueCanWrap=_boxedValueCanWrap;
+@property(retain, nonatomic) NSNumber *boxedValueSignificant; // @synthesize boxedValueSignificant=_boxedValueSignificant;
+@property(retain, nonatomic) NSNumber *boxedLabelCaseStyle; // @synthesize boxedLabelCaseStyle=_boxedLabelCaseStyle;
 @property(retain, nonatomic) NSNumber *boxedSuppressesLabel; // @synthesize boxedSuppressesLabel=_boxedSuppressesLabel;
 @property(retain, nonatomic) NSNumber *boxedVerticalPadding; // @synthesize boxedVerticalPadding=_boxedVerticalPadding;
 @property(retain, nonatomic) NSNumber *boxedTextAlignment; // @synthesize boxedTextAlignment=_boxedTextAlignment;
@@ -34,6 +38,8 @@
 @property(retain, nonatomic) UIFont *labelFont; // @synthesize labelFont=_labelFont;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool valueCanWrap;
+@property(nonatomic) _Bool valueSignificant;
+@property(nonatomic) long long labelCaseStyle;
 @property(nonatomic) _Bool suppressesEmptyLabel;
 @property(nonatomic) _Bool suppressesLabel;
 @property(nonatomic) double verticalPadding;

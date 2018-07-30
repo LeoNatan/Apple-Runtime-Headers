@@ -29,7 +29,6 @@
 @property unsigned long long browsedDeviceTypeMask;
 @property(readonly, getter=isBrowsing) BOOL browsing;
 @property id <ICDeviceBrowserDelegate> delegate;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

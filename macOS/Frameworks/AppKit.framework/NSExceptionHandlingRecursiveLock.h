@@ -6,6 +6,7 @@
 
 #import "NSRecursiveLock.h"
 
+__attribute__((visibility("hidden")))
 @interface NSExceptionHandlingRecursiveLock : NSRecursiveLock
 {
 }

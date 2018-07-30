@@ -6,16 +6,19 @@
 
 #import "NSObject.h"
 
-@class HLPURLSession, NSURL;
+@class NSDictionary, NSURL, TPSURLSessionItem;
 
 @interface HLPRemoteDataController : NSObject
 {
-    HLPURLSession *_URLSession;
     _Bool _loading;
     _Bool _hasLoaded;
     NSURL *_URL;
+    NSDictionary *_headerFields;
+    TPSURLSessionItem *_URLSessionItem;
 }
 
+@property(retain, nonatomic) TPSURLSessionItem *URLSessionItem; // @synthesize URLSessionItem=_URLSessionItem;
+@property(retain, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
@@ -24,7 +27,7 @@
 - (void)clearData;
 - (void)cancel;
 - (void)processFileURLWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)fetchDataWithDataType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchDataWithDataType:(long long)arg1 identifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
 

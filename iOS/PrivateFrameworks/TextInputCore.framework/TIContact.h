@@ -38,8 +38,8 @@
 @property(retain, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
 @property(retain, nonatomic) NSString *phoneticFamilyName; // @synthesize phoneticFamilyName=_phoneticFamilyName;
 @property(retain, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
+- (void).cxx_destruct;
 - (id)flatten;
-- (void)dealloc;
 
 @end
 

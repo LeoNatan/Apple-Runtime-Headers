@@ -6,22 +6,26 @@
 
 #import "UIView.h"
 
-@class UILabel;
+@class PUICButton, UIImageView, UILabel, UIStackView;
 
 @interface NMUActionSheetHeaderView : UIView
 {
+    UIStackView *_verticalStackViewContainer;
+    UIStackView *_horizontalStackViewContainer;
     UILabel *_textLabel;
-    float _originYOffsetFromTopOfScreen;
+    UIImageView *_imageView;
+    PUICButton *_actionButton;
+    UIStackView *_verticalStackView;
 }
 
-@property(nonatomic) float originYOffsetFromTopOfScreen; // @synthesize originYOffsetFromTopOfScreen=_originYOffsetFromTopOfScreen;
+@property(retain, nonatomic) UIStackView *verticalStackView; // @synthesize verticalStackView=_verticalStackView;
+@property(retain, nonatomic) PUICButton *actionButton; // @synthesize actionButton=_actionButton;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
+@property(retain, nonatomic) UIStackView *horizontalStackViewContainer; // @synthesize horizontalStackViewContainer=_horizontalStackViewContainer;
+@property(retain, nonatomic) UIStackView *verticalStackViewContainer; // @synthesize verticalStackViewContainer=_verticalStackViewContainer;
 - (void).cxx_destruct;
-- (struct CGSize)_labelSizeForContainer:(struct CGSize)arg1;
-- (float)_labelOriginY;
-- (void)layoutSubviews;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)init;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

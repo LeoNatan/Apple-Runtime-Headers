@@ -26,10 +26,11 @@ __attribute__((visibility("hidden")))
 - (void)addWindow:(id)arg1 toOrderingGroupBelowWindow:(id)arg2;
 - (void)addWindow:(id)arg1 toOrderingGroupAboveWindow:(id)arg2;
 - (void)orderWindow:(id)arg1 op:(int)arg2 againstWindow:(id)arg3;
+- (void)unlockWindowSublevel:(id)arg1;
+- (void)lockWindow:(id)arg1 toAbsoluteSublevel:(int)arg2;
 - (void)reassociateWithSpacesByGeometry:(id)arg1;
 - (void)disassociateFromSpacesIfOrderedOut:(id)arg1;
 - (void)setDesiredSpace:(unsigned long long)arg1 forWindow:(id)arg2;
-- (void)setSubLevel:(int)arg1 forWindow:(id)arg2;
 - (void)setLevel:(int)arg1 forWindow:(id)arg2;
 - (void)dealloc;
 - (id)initWithWindows:(id)arg1;

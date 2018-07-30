@@ -17,6 +17,8 @@
     NSMapTable *m_externalRememberedSet;
 }
 
++ (unsigned int)setNumberOfFTLCompilerThreads:(unsigned int)arg1;
++ (unsigned int)setNumberOfDFGCompilerThreads:(unsigned int)arg1;
 + (id)virtualMachineWithContextGroupRef:(struct OpaqueJSContextGroup *)arg1;
 - (id).cxx_construct;
 - (void)removeManagedReference:(id)arg1 withOwner:(id)arg2;
@@ -26,6 +28,7 @@
 - (void)dealloc;
 - (id)initWithContextGroupRef:(struct OpaqueJSContextGroup *)arg1;
 - (id)init;
+- (void)shrinkFootprintWhenIdle;
 - (id)externalRememberedSet;
 - (id)externalObjectGraph;
 -     // Error parsing type: ^{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}8@0:4, name: externalDataMutex

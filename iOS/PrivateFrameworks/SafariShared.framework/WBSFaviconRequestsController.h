@@ -16,13 +16,14 @@
     struct CGSize _size;
 }
 
-+ (id)new;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) WBSSiteMetadataManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
 - (void)_issueRequest:(id)arg1 isOneTime:(_Bool)arg2 withToken:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)cancelAllRegistrations;
+- (void)cancelAllRegistrationsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)registerOneTimeRequestForDomain:(id)arg1 withToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerOneTimeRequestForURLString:(id)arg1 withToken:(id)arg2 returnDefaultIconIfNoneAvailable:(_Bool)arg3 iconSize:(struct CGSize)arg4 isURLTypedByUser:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)registerOneTimeRequestForURLString:(id)arg1 withToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerRequestForURLString:(id)arg1 withToken:(id)arg2 returnDefaultIconIfNoneAvailable:(_Bool)arg3 iconSize:(struct CGSize)arg4 isURLTypedByUser:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
@@ -30,7 +31,6 @@
 - (void)registerRequestForDomain:(id)arg1 withToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)initWithSiteMetadataManager:(id)arg1;
-- (id)init;
 
 @end
 

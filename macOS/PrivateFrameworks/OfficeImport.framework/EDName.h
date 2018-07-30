@@ -8,7 +8,6 @@
 
 @class EDFormula, EDString, NSString, OITSUPointerKeyDictionary;
 
-__attribute__((visibility("hidden")))
 @interface EDName : NSObject
 {
     NSString *_formulaString;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long sheetIndex; // @synthesize sheetIndex=_sheetIndex;
 @property(readonly, nonatomic) EDFormula *formula; // @synthesize formula=_formula;
 @property(retain, nonatomic) EDString *nameString; // @synthesize nameString=_nameString;
+- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) OITSUPointerKeyDictionary *maxWorksheetReferences;
 - (void)setFormula:(id)arg1 workbook:(id)arg2;
@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
 - (BOOL)isEqualToEDName:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)setFormulaString:(id)arg1 workbook:(id)arg2;
 - (id)formulaString;

@@ -6,12 +6,14 @@
 
 #import <Safari/VisualTabPickerShadowTileView.h>
 
-@class NSButton, NSLayoutConstraint, NSTextField, NSView, VisualTabPickerMuteButton;
+@class FaviconView, NSButton, NSLayoutConstraint, NSStackView, NSTextField, NSView, VisualTabPickerMuteButton;
 
 __attribute__((visibility("hidden")))
 @interface VisualTabPickerThumbnailView : VisualTabPickerShadowTileView
 {
     NSTextField *_titleTextField;
+    FaviconView *_siteIconImageView;
+    NSStackView *_headerContentStackView;
     NSView *_thumbnailView;
     NSButton *_closeButton;
     VisualTabPickerMuteButton *_muteButton;
@@ -41,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_closeButtonPressed:(id)arg1;
 - (void)_updateCloseButtonImages;
 - (void)_createCloseButtonIfNecessary;
+- (void)updateIcon;
 - (void)reloadData;
 - (id)_createTitleTextField;
 - (void)_updateLayout;
@@ -55,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)magnifyWithEvent:(id)arg1;
 - (void)resetScaleFactor;
 - (void)mouseUp:(id)arg1;
+- (void)updateLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

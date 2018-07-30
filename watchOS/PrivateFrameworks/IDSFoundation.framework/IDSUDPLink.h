@@ -30,7 +30,7 @@
     _Bool _isInvalidated;
     double _lastDestinationSent;
     double _lastDestinationReceived;
-    CDStruct_75a3c6d2 *_incomingPacketBuffer;
+    CDStruct_0cd1559e *_incomingPacketBuffer;
     unsigned int _state;
     unsigned long long _totalBytesSent;
     unsigned long long _totalPacketsSent;
@@ -63,9 +63,10 @@
 - (void).cxx_destruct;
 - (_Bool)setTrafficClass:(int)arg1;
 - (id)generateLinkReport:(double)arg1 isCurrentLink:(_Bool)arg2;
-- (unsigned int)sendPacketBuffer:(CDStruct_75a3c6d2 *)arg1 sourceInterface:(id)arg2 destination:(id)arg3 toDeviceID:(id)arg4;
-- (unsigned int)sendPacketBuffer:(CDStruct_75a3c6d2 *)arg1 destination:(id)arg2 toDeviceID:(id)arg3;
-- (unsigned int)sendPacketBuffer:(CDStruct_75a3c6d2 *)arg1 toDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
+- (unsigned int)sendPacketBufferArray:(CDStruct_183601bc **)arg1 arraySize:(int)arg2 toDeviceUniqueID:(id)arg3 cbuuid:(id)arg4;
+- (unsigned int)sendPacketBuffer:(CDStruct_0cd1559e *)arg1 sourceInterface:(id)arg2 destination:(id)arg3 toDeviceID:(id)arg4;
+- (unsigned int)sendPacketBuffer:(CDStruct_0cd1559e *)arg1 destination:(id)arg2 toDeviceID:(id)arg3;
+- (unsigned int)sendPacketBuffer:(CDStruct_0cd1559e *)arg1 toDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
 - (id)copyCurrentNetworkInterfaces;
 - (id)newSocketWithIPVersion:(unsigned int)arg1 wantsAWDL:(_Bool)arg2 wantsWiFi:(_Bool)arg3 wantsCellular:(_Bool)arg4;
 - (id)newSocketWithIPVersion:(unsigned int)arg1 wantsAWDL:(_Bool)arg2 wantsWiFi:(_Bool)arg3 wantsCellular:(_Bool)arg4 clientUUID:(unsigned char [16])arg5;
@@ -77,7 +78,7 @@
 - (id)copyLinkStatsDict;
 @property(readonly, getter=linkTypeString) NSString *linkTypeString;
 @property(readonly) unsigned int headerOverhead;
-- (unsigned int)_sendBytes:(const void *)arg1 length:(unsigned long)arg2 localInterfaceIndex:(int)arg3 localAddress:(const struct sockaddr *)arg4 destinationAddress:(const struct sockaddr *)arg5 trafficClass:(unsigned short)arg6;
+- (unsigned int)_sendBytesArray:(const void **)arg1 lengthArray:(unsigned int *)arg2 arraySize:(int)arg3 localInterfaceIndex:(int)arg4 localAddress:(const struct sockaddr *)arg5 destinationAddress:(const struct sockaddr *)arg6 trafficClass:(unsigned short)arg7;
 - (unsigned int)_sendBytes:(const void *)arg1 length:(unsigned long)arg2 destinationAddress:(const struct sockaddr *)arg3;
 - (unsigned int)_sendBytes:(const void *)arg1 length:(unsigned long)arg2;
 - (void)_processIncomingPacket;

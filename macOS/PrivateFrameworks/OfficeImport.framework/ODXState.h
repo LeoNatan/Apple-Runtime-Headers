@@ -8,7 +8,6 @@
 
 @class CXNamespace, OAXDrawingState;
 
-__attribute__((visibility("hidden")))
 @interface ODXState : OCXReadState
 {
     CXNamespace *mODXDiagramNamespace;
@@ -16,9 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) CXNamespace *ODXDiagramNamespace; // @synthesize ODXDiagramNamespace=mODXDiagramNamespace;
+- (void).cxx_destruct;
 - (void)setupNSForXMLFormat:(int)arg1;
 - (id)officeArtState;
-- (void)dealloc;
 - (id)initWithOfficeArtState:(id)arg1;
 
 @end

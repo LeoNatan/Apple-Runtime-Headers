@@ -14,7 +14,6 @@
 
 @class ABActionAutovalidator, ABGroupEntriesList, ABGroupListView, ABKeystrokeForwarder, NSArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupListController : NSViewController <NSOutlineViewDataSource, NSOutlineViewDelegate, NSTextFieldDelegate, NSMenuDelegate, ABBookStateSaving>
 {
     ABGroupListView *_outlineView;

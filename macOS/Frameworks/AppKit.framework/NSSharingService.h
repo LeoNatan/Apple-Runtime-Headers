@@ -17,9 +17,11 @@
 + (id)sharingServicesForAttributedString:(id)arg1 range:(struct _NSRange)arg2 mask:(unsigned long long)arg3;
 + (id)sharingServicesForItems:(id)arg1;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2;
++ (void)getSharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)_filteredSharingServices:(id)arg1 forCloudSharingWithItems:(id)arg2;
 + (id)_urlFromItem:(id)arg1;
 + (id)sharingServiceNamed:(id)arg1;
++ (id)_sharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2;
 + (BOOL)_usesItemProvider;
 + (Class)_SHKSharingServicePickerClass;
 + (Class)_SHKSharingServiceClass;
@@ -50,6 +52,7 @@
 - (void)setShkSharingService:(id)arg1;
 @property __weak id <NSSharingServiceDelegate> delegate;
 - (long long)type;
+- (void)dismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performWithItems:(id)arg1;
 - (BOOL)canPerformWithItems:(id)arg1;
 - (void)dealloc;
@@ -61,6 +64,7 @@
 - (void)_setPrimaryCheckboxState:(long long)arg1;
 - (void)_setPrimaryCheckboxTitle:(id)arg1;
 - (void)_setParticipantDetails:(id)arg1;
+- (void)_setApplicationIcon:(id)arg1;
 - (void)_setLocalizedPasswordActionTitle:(id)arg1;
 - (void)_setIsAddPeopleService:(BOOL)arg1;
 

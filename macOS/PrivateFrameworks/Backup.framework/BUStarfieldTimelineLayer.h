@@ -6,6 +6,8 @@
 
 #import "CALayer.h"
 
+@class NSObject<BUStarfieldTimelineDataSource>, NSObject<BUStarfieldTimelineDelegate>, NSObject<BUStarfieldTimelineItem>;
+
 __attribute__((visibility("hidden")))
 @interface BUStarfieldTimelineLayer : CALayer
 {
@@ -22,8 +24,8 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;
-@property(nonatomic) id <BUStarfieldTimelineDelegate> timelineDelegate;
-@property(nonatomic) id <BUStarfieldTimelineDataSource> timelineDataSource;
+@property(nonatomic) NSObject<BUStarfieldTimelineDelegate> *timelineDelegate;
+@property(nonatomic) NSObject<BUStarfieldTimelineDataSource> *timelineDataSource;
 - (void)reloadData;
 - (void)handleReloadData;
 - (void)scrollWheel:(id)arg1 atLocation:(struct CGPoint)arg2 byDelta:(struct CGSize)arg3;
@@ -32,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)mouseUp:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (BOOL)mouseDown:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (void)notifyItemWasSelected:(id)arg1;
-@property(retain, nonatomic) id <BUStarfieldTimelineItem> selectedItem;
+@property(retain, nonatomic) NSObject<BUStarfieldTimelineItem> *selectedItem;
 - (struct TTimelineControl *)timelineControl;
 - (void)dealloc;
 - (void)aboutToTearDown;

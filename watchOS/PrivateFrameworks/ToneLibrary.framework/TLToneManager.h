@@ -66,7 +66,7 @@
 - (id)_defaultRingtonePath;
 - (id)_defaultRingtoneName;
 - (id)defaultRingtoneIdentifier;
-- (id)_defaultToneIdentifierForAlertType:(int)arg1 topic:(id)arg2;
+- (id)defaultToneIdentifierForAlertType:(int)arg1 topic:(id)arg2;
 - (id)defaultToneIdentifierForAlertType:(int)arg1;
 - (unsigned long)currentToneSoundIDForAlertType:(int)arg1 topic:(id)arg2;
 - (unsigned long)currentToneSoundIDForAlertType:(int)arg1;

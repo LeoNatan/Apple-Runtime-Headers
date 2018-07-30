@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class CADDatabaseInitializationOptions, CADObjectID, NSArray, NSData;
+@class CADDatabaseInitializationOptions, CADObjectID, NSArray;
 
 @protocol CADDatabaseInterface
 - (void)CADDatabaseLastConfirmedSplashScreenVersion:(void (^)(int, unsigned long long))arg1;
@@ -16,7 +16,7 @@
 - (void)CADDatabaseRebuildOccurrenceCacheWithReply:(void (^)(int))arg1;
 - (void)CADDatabaseSetShowsDeclinedEvents:(_Bool)arg1 reply:(void (^)(int))arg2;
 - (void)CADDatabaseExportICSDataForCalendarItems:(NSArray *)arg1 preventLineFolding:(_Bool)arg2 reply:(void (^)(int, NSData *))arg3;
-- (void)CADDatabaseImportICSData:(NSData *)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned long long)arg3 reply:(void (^)(int, NSArray *))arg4;
+- (void)CADDatabaseImportICSData:(NSArray *)arg1 intoCalendarsWithIDs:(NSArray *)arg2 optionsMask:(unsigned long long)arg3 reply:(void (^)(int, NSArray *))arg4;
 - (void)CADDatabaseGetNextAssignableColorWithReply:(void (^)(int, NSString *))arg1;
 - (void)CADDatabaseGetChangedEntityIDsSinceTimestamp:(double)arg1 reply:(void (^)(int, _Bool, NSArray *, double))arg2;
 - (void)CADDatabaseGetChangesSinceSequenceNumber:(int)arg1 reply:(void (^)(int, NSDictionary *))arg2;

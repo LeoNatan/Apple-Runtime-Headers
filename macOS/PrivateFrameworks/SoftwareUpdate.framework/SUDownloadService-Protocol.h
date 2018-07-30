@@ -11,6 +11,7 @@
 @protocol SUDownloadService <NSObject>
 - (void)dumpDebugInfo;
 - (void)resetState;
+- (void)exitCatalogTestMode;
 - (void)setCatalogTestMode:(id)arg1 withDevKeyHeader:(NSData *)arg2 andData:(NSData *)arg3;
 - (void)downloadStatusForProductKey:(NSString *)arg1 reply:(void (^)(SUUpdateStatus *, NSDictionary *))arg2;
 - (void)cancelDownloadForProductKeys:(NSArray *)arg1 replyWhenDone:(void (^)(BOOL))arg2;

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSAccessibilityProxy.h>
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilityReparentingProxy : NSAccessibilityProxy
 {
     id _realElement;

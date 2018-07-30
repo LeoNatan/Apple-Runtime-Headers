@@ -45,9 +45,9 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
 @property(readonly, retain) GKPlayer *player; // @synthesize player=_player;
 @property(copy, nonatomic) NSString *playerID; // @dynamic playerID;
+- (id)init;
 - (id)initWithIdentifier:(id)arg1 player:(id)arg2;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1 playerID:(id)arg2;

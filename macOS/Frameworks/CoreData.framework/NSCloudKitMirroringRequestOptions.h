@@ -6,16 +6,20 @@
 
 #import "NSObject.h"
 
+@class CKOperationConfiguration;
+
 @interface NSCloudKitMirroringRequestOptions : NSObject
 {
-    long long _qualityOfService;
-    BOOL _allowsCellularAccess;
+    CKOperationConfiguration *_operationConfiguration;
 }
 
-@property(nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
-@property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
+@property(retain, nonatomic) CKOperationConfiguration *operationConfiguration; // @synthesize operationConfiguration=_operationConfiguration;
+@property(nonatomic) long long qualityOfService;
+@property(nonatomic) BOOL allowsCellularAccess;
 - (void)applyToOperation:(id)arg1;
+- (void)resetOperationConfiguration;
 - (id)copy;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -12,7 +12,7 @@
 {
 }
 
-+ (void)_addCategoryMethod:(struct objc_method *)arg1 toClass:(Class)arg2 isClass:(_Bool)arg3;
++ (void)_addCategoryMethods:(struct objc_method **)arg1 count:(unsigned int)arg2 excluding:(SEL *)arg3 count:(unsigned int)arg4 toClass:(Class)arg5 isClass:(_Bool)arg6;
 + (id)_installSafeCategoryOnClass:(Class)arg1 isManaged:(_Bool)arg2;
 + (id)_installSafeCategoryOnClassNamed:(id)arg1 isManaged:(_Bool)arg2;
 + (void)_installSafeCategoryOnClassNamed:(id)arg1;

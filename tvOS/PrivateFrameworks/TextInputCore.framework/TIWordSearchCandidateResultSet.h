@@ -25,7 +25,7 @@
 }
 
 + (id)emptySet;
-@property(readonly, retain, nonatomic) NSMutableArray *mutableProactiveTriggers; // @synthesize mutableProactiveTriggers=_mutableProactiveTriggers;
+@property(readonly, nonatomic) NSMutableArray *mutableProactiveTriggers; // @synthesize mutableProactiveTriggers=_mutableProactiveTriggers;
 @property(retain, nonatomic) NSString *autoconvertedInputString; // @synthesize autoconvertedInputString=_autoconvertedInputString;
 @property(retain, nonatomic) NSString *autoconvertedCandidateString; // @synthesize autoconvertedCandidateString=_autoconvertedCandidateString;
 @property(copy, nonatomic) NSArray *autoconvertedCandidates; // @synthesize autoconvertedCandidates=_autoconvertedCandidates;
@@ -35,6 +35,7 @@
 @property(copy, nonatomic) NSArray *initiallyHiddenCandidates; // @synthesize initiallyHiddenCandidates=_initiallyHiddenCandidates;
 @property(retain, nonatomic) NSMutableDictionary *mutableCandidateRefsDictionary; // @synthesize mutableCandidateRefsDictionary=_mutableCandidateRefsDictionary;
 @property(retain, nonatomic) NSMutableArray *mutableCandidates; // @synthesize mutableCandidates=_mutableCandidates;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)clearProactiveTriggers;
 - (void)moveCandidate:(id)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
@@ -51,10 +52,9 @@
 - (void)addSyntheticMecabraCandidateWithSurface:(id)arg1 input:(id)arg2 isExtension:(_Bool)arg3;
 - (void)addSyntheticMecabraCandidateWithSurface:(id)arg1 input:(id)arg2;
 - (void)addCandidates:(id)arg1 candidateRefsDictionary:(id)arg2;
-@property(readonly, retain, nonatomic) NSDictionary *candidateRefsDictionary;
-@property(readonly, retain, nonatomic) NSArray *candidates;
-@property(readonly, retain, nonatomic) NSArray *proactiveTriggers;
-- (void)dealloc;
+@property(readonly, nonatomic) NSDictionary *candidateRefsDictionary;
+@property(readonly, nonatomic) NSArray *candidates;
+@property(readonly, nonatomic) NSArray *proactiveTriggers;
 - (id)initWithCandidates:(id)arg1 candidateRefsDictionary:(id)arg2;
 - (id)initWithCandidates:(id)arg1 candidateRefsDictionary:(id)arg2 initiallyHiddenCandidates:(id)arg3 selectedHiddenCandidateIndex:(unsigned long long)arg4;
 - (id)init;

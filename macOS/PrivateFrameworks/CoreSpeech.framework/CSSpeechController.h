@@ -7,11 +7,13 @@
 #import "NSObject.h"
 
 #import "CSAudioConverterDelegate.h"
+#import "CSSpIdSpeakerRecognizerDelegate.h"
 #import "CSSpeechManagerDelegate.h"
+#import "CSVoiceTriggerDelegate.h"
 
-@class CSAudioConverter, CSAudioFileWriter, CSAudioSampleRateConverter, CSAudioZeroCounter, CSEndpointerProxy, CSSpeechManager, NSDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
+@class CSAudioConverter, CSAudioSampleRateConverter, CSAudioZeroCounter, CSEndpointerProxy, CSPlainAudioFileWriter, CSSpeakerIdRecognizerFactory, CSSpeechManager, NSDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
-@interface CSSpeechController : NSObject <CSSpeechManagerDelegate, CSAudioConverterDelegate>
+@interface CSSpeechController : NSObject <CSAudioConverterDelegate, CSSpIdSpeakerRecognizerDelegate, CSVoiceTriggerDelegate, CSSpeechManagerDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     CSAudioConverter *_opusAudioConverter;
@@ -36,7 +38,10 @@
     CSEndpointerProxy *_endpointerProxy;
     CSSpeechManager *_speechManager;
     NSDictionary *_avvcContext;
-    CSAudioFileWriter *_audioFileWriter;
+    CSPlainAudioFileWriter *_audioFileWriter;
+    CSSpeakerIdRecognizerFactory *_spIdFactory;
+    id <CSSpIdSpeakerRecognizer> _spIdRecognizer;
+    NSDictionary *_spIdUserScores;
     unsigned long long _activeChannel;
 }
 
@@ -48,7 +53,10 @@
 @property(nonatomic) BOOL isMediaPlaying; // @synthesize isMediaPlaying=_isMediaPlaying;
 @property(nonatomic) BOOL twoShotNotificationEnabled; // @synthesize twoShotNotificationEnabled=_twoShotNotificationEnabled;
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
-@property(retain, nonatomic) CSAudioFileWriter *audioFileWriter; // @synthesize audioFileWriter=_audioFileWriter;
+@property(retain, nonatomic) NSDictionary *spIdUserScores; // @synthesize spIdUserScores=_spIdUserScores;
+@property(retain, nonatomic) id <CSSpIdSpeakerRecognizer> spIdRecognizer; // @synthesize spIdRecognizer=_spIdRecognizer;
+@property(retain, nonatomic) CSSpeakerIdRecognizerFactory *spIdFactory; // @synthesize spIdFactory=_spIdFactory;
+@property(retain, nonatomic) CSPlainAudioFileWriter *audioFileWriter; // @synthesize audioFileWriter=_audioFileWriter;
 @property(nonatomic) BOOL isNarrowBand; // @synthesize isNarrowBand=_isNarrowBand;
 @property(nonatomic) BOOL isActivated; // @synthesize isActivated=_isActivated;
 @property(nonatomic) BOOL isOpus; // @synthesize isOpus=_isOpus;
@@ -57,6 +65,8 @@
 @property(retain, nonatomic) CSEndpointerProxy *endpointerProxy; // @synthesize endpointerProxy=_endpointerProxy;
 @property(nonatomic) __weak id <CSSpeechControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)speakerRecognizerFinishedProcessing:(id)arg1 withFinalSpeakerIdInfo:(id)arg2;
+- (void)speakerRecognizer:(id)arg1 hasSpeakerIdInfo:(id)arg2;
 - (void)_setSoundPlayingState;
 - (void)CSTimerMonitor:(id)arg1 didReceiveTimerChanged:(long long)arg2;
 - (void)CSAlarmMonitor:(id)arg1 didReceiveAlarmChanged:(long long)arg2;
@@ -96,6 +106,7 @@
 - (void)audioConverterDidConvertPackets:(id)arg1 packets:(id)arg2 timestamp:(unsigned long long)arg3;
 - (BOOL)_setupAudioConverter:(BOOL)arg1;
 - (void)_setupDownsamplerIfNeeded;
+- (void)speechManagerDidFinishAlertPlayback:(id)arg1 ofType:(long long)arg2 error:(id)arg3;
 - (void)speechManagerDetectedSystemVolumeChange:(id)arg1 withVolume:(float)arg2 forReason:(unsigned long long)arg3;
 - (void)speechManagerRecordHardwareConfigurationDidChange:(id)arg1 toConfiguration:(long long)arg2;
 - (id)speechManagerRecordingContext;
@@ -103,14 +114,22 @@
 - (void)speechManagerDidStartForwarding:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;
 - (void)speechManagerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
+- (BOOL)_private_PacketEncodingUsed;
+- (BOOL)_private_PacketDecodingUsed;
+- (BOOL)_isSpeakerIdTrainingTriggered;
 - (BOOL)_isAutoPrompted;
 - (BOOL)_isVoiceTriggered;
+- (BOOL)isRTSTriggered;
+- (BOOL)PacketDecodingUsed;
 - (BOOL)isVoiceTriggered;
+- (id)recordDeviceInfo;
 - (id)recordRoute;
 - (BOOL)isRecording;
 - (void)stopRecording;
 - (BOOL)startRecording:(id *)arg1;
+- (BOOL)_shouldSetStartSampleCount;
 - (BOOL)startRecordingWithSettings:(id)arg1 error:(id *)arg2;
+- (void)_setupSpeakerId;
 @property(nonatomic) BOOL duckOthersOption;
 - (double)getRecordBufferDuration;
 - (BOOL)setRecordBufferDuration:(double)arg1;

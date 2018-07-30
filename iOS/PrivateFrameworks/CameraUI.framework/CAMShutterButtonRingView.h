@@ -20,6 +20,7 @@
 @property(nonatomic) struct CAMShutterButtonSpec spec; // @synthesize spec=_spec;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
+- (struct UIEdgeInsets)alignmentRectInsets;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithSpec:(struct CAMShutterButtonSpec)arg1;

@@ -27,6 +27,7 @@
 - (id)accessibilityCustomRotorMembershipForTextView:(id)arg1;
 - (id)textRulesForTextView:(id)arg1;
 - (id)componentIdentifierForTextView:(id)arg1;
+- (_Bool)userInteractable;
 - (void)didApplyBehavior:(id)arg1;
 - (void)animationDidFinish:(id)arg1;
 - (void)animationDidStart:(id)arg1;

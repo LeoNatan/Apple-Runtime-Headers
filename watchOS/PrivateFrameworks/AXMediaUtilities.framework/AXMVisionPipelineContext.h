@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class AXMVisionAnalysisOptions, AXMVisionResult, CIImage, NSArray, NSDictionary, NSError, NSMutableArray, NSNumber;
+@class AXMDiagnosticMetricToken, AXMDiagnostics, AXMVisionAnalysisOptions, AXMVisionResult, CIImage, NSArray, NSDictionary, NSError, NSMutableArray, NSNumber;
 
 @interface AXMVisionPipelineContext : NSObject <NSSecureCoding>
 {
@@ -19,6 +19,7 @@
     NSMutableArray *_resultHandlers;
     struct CGColorSpace *_extendedSRGBColorSpace;
     struct CGSize _cachedSize;
+    AXMDiagnosticMetricToken *_processingDiagnosticToken;
     _Bool _shouldProcessRemotely;
     _Bool _shouldCallCompletionHandlersForEngineBusyError;
     _Bool _shouldCallCompletionHandlersForEmptyResultSet;
@@ -28,21 +29,17 @@
     NSNumber *_appliedImageOrientation;
     id <NSCopying> _cacheKey;
     unsigned int _sequenceID;
+    AXMDiagnostics *_diagnostics;
     NSMutableArray *_features;
     AXMVisionResult *_result;
-    double _creationTime;
-    double _processingStartTime;
-    double _processingEndTime;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)contextWithSourceParameters:(id)arg1 options:(id)arg2;
 @property(retain, nonatomic) AXMVisionResult *result; // @synthesize result=_result;
 @property(retain, nonatomic) NSMutableArray *features; // @synthesize features=_features;
+@property(retain, nonatomic) AXMDiagnostics *diagnostics; // @synthesize diagnostics=_diagnostics;
 @property(nonatomic) unsigned int sequenceID; // @synthesize sequenceID=_sequenceID;
-@property(nonatomic) double processingEndTime; // @synthesize processingEndTime=_processingEndTime;
-@property(nonatomic) double processingStartTime; // @synthesize processingStartTime=_processingStartTime;
-@property(nonatomic) double creationTime; // @synthesize creationTime=_creationTime;
 @property(nonatomic) _Bool evaluationExclusivelyUsesVisionFramework; // @synthesize evaluationExclusivelyUsesVisionFramework=_evaluationExclusivelyUsesVisionFramework;
 @property(nonatomic) _Bool shouldCallCompletionHandlersForEmptyResultSet; // @synthesize shouldCallCompletionHandlersForEmptyResultSet=_shouldCallCompletionHandlersForEmptyResultSet;
 @property(nonatomic) _Bool shouldCallCompletionHandlersForEngineBusyError; // @synthesize shouldCallCompletionHandlersForEngineBusyError=_shouldCallCompletionHandlersForEngineBusyError;
@@ -52,6 +49,8 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool shouldProcessRemotely; // @synthesize shouldProcessRemotely=_shouldProcessRemotely;
 - (void).cxx_destruct;
+- (void)didFinishProcessingContext;
+- (void)willBeginProcessingContext;
 - (id)generateImageRepresentation;
 - (id)generateFileNameForImageWithPrefix:(id)arg1 extension:(id)arg2;
 - (void)errorOccurred:(id)arg1;

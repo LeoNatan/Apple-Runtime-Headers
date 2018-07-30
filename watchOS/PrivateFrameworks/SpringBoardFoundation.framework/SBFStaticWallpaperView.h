@@ -20,6 +20,8 @@
 
 + (_Bool)_allowsRasterization;
 + (_Bool)_allowsParallax;
++ (id)imageByApplyingLuminanceTreatmentToImage:(id)arg1;
++ (id)luminanceTreatmentFilters;
 + (_Bool)_canDownscaleSampleImage;
 + (_Bool)_canCacheImages;
 @property(retain, nonatomic, getter=_sampleImage, setter=_setSampleImage:) UIImage *sampleImage; // @synthesize sampleImage=_sampleImage;
@@ -33,14 +35,15 @@
 - (float)_zoomScale;
 - (void)_displayImage:(id)arg1;
 - (void)_setUpStaticImageContentView:(id)arg1;
-- (void)_setupContentView;
+- (void)_setupContentViewWithOptions:(unsigned int)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setCropRect:(struct CGRect)arg1 zoomScale:(float)arg2;
 - (float)cropZoomScale;
 - (id)_averageColorInContentViewRect:(struct CGRect)arg1 smudgeRadius:(float)arg2;
 - (float)_contrastInContentViewRect:(struct CGRect)arg1 contrastWithinBoxes:(float *)arg2 contrastBetweenBoxes:(float *)arg3;
+- (float)contrastInRect:(struct CGRect)arg1 contrastWithinBoxes:(float *)arg2 contrastBetweenBoxes:(float *)arg3;
 - (float)contrast;
-- (_Bool)contrastRequiresTreatments;
+- (_Bool)imageRequiresLuminanceTreatment;
 - (void)setContentsRect:(struct CGRect)arg1;
 - (_Bool)hasContentOutsideVisibleBounds;
 - (id)cacheGroup;
@@ -49,9 +52,9 @@
 - (id)wallpaperImage;
 - (_Bool)isDisplayingWallpaperWithConfiguration:(id)arg1 forVariant:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 wallpaperImage:(id)arg2 cacheGroup:(id)arg3 variant:(int)arg4 options:(unsigned int)arg5 wallpaperSettingsProvider:(id)arg6;
+- (void)preheatImageData;
+- (void)_generateImageForImage:(id)arg1 options:(unsigned int)arg2 downsampleFactor:(float)arg3 generationHandler:(CDUnknownBlockType)arg4;
 - (void)_setupWallpaperImage:(id)arg1 options:(unsigned int)arg2;
-- (id)_imageByDarkeningHighlightsInImage:(id)arg1;
-- (id)_repeatingGradientImageWithSize:(struct CGSize)arg1 scale:(float)arg2;
 - (int)wallpaperType;
 - (id)initWithFrame:(struct CGRect)arg1 variant:(int)arg2 wallpaperSettingsProvider:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 wallpaperImage:(id)arg2 variant:(int)arg3 wallpaperSettingsProvider:(id)arg4;

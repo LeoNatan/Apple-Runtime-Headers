@@ -6,10 +6,11 @@
 
 #import <CloudPhotoLibrary/CPLItemChange.h>
 
-@class CLLocation, CPLAdjustments, CPLFaceAnalysisReference, CPLPlaceAnnotation, NSArray, NSData, NSDate, NSNumber, NSString;
+@class CLLocation, CPLAdjustments, CPLFaceAnalysisReference, CPLPlaceAnnotation, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface CPLAssetChange : CPLItemChange
 {
+    NSDictionary *_resourcePerResourceType;
     BOOL _favorite;
     BOOL _hidden;
     NSString *_masterIdentifier;
@@ -103,7 +104,7 @@
 @property(copy, nonatomic) NSDate *lastSharedDate; // @synthesize lastSharedDate=_lastSharedDate;
 @property(copy, nonatomic) NSString *masterIdentifier; // @synthesize masterIdentifier=_masterIdentifier;
 - (void).cxx_destruct;
-- (id)identifiersForQuarantine;
+- (id)scopeIdentifiersForQuarantine;
 - (unsigned long long)fullChangeTypeForFullRecord;
 - (BOOL)_canLowerQuota;
 @property(copy, nonatomic) CPLFaceAnalysisReference *faces;
@@ -112,24 +113,25 @@
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (BOOL)supportsDeletion;
 - (BOOL)supportsResources;
-- (id)allRelatedIdentifiers;
+- (id)allRelatedScopedIdentifiers;
 - (long long)dequeueOrder;
-- (void)awakeFromStorage;
-- (void)prepareForStorage;
+- (void)copyDerivativesFromRecordIfPossible:(id)arg1;
+- (id)resourceForType:(unsigned long long)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
+- (void)setMasterScopedIdentifier:(id)arg1;
+- (id)masterScopedIdentifier;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (id)propertiesDescription;
 - (id)init;
-- (BOOL)validateRecordForTracker:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
-- (id)identifiersForMapping;
-- (id)proposedCloudIdentifierWithError:(id *)arg1;
+- (id)scopedIdentifiersForMapping;
+- (BOOL)validateRecordForTracker:(id)arg1;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
-- (id)initWithCKRecord:(id)arg1 ckAssetProperties:(id)arg2;
-- (void)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 tempCKAssetURL:(id)arg3;
+- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
+- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
 - (void)setMostRecentAddedDateOnCKRecord:(id)arg1 withCPLEnabledDate:(id)arg2;
 
 @end

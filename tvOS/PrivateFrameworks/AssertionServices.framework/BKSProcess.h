@@ -13,13 +13,6 @@
 
 @interface BKSProcess : NSObject <BKSProcessClientDelegate, BSDescriptionProviding>
 {
-    NSString *_bundleID;
-    NSString *_jobLabel;
-    BKSProcessClient *_client;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_callOutQueue;
-    BKSLaunchdJobSpecification *_jobSpec;
-    BKSProcessExitContext *_lastExitContext;
     _Bool _bootstrapped;
     _Bool _workspaceLocked;
     _Bool _connectedToExternalAccessories;
@@ -29,6 +22,13 @@
     long long _visibility;
     long long _taskState;
     BSProcessHandle *_handle;
+    BKSProcessExitContext *_lastExitContext;
+    NSString *_bundleID;
+    NSString *_jobLabel;
+    BKSProcessClient *_client;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_callOutQueue;
+    BKSLaunchdJobSpecification *_jobSpec;
     long long _terminationReason;
 }
 
@@ -40,6 +40,14 @@
 @property(nonatomic) _Bool nowPlayingWithAudio; // @synthesize nowPlayingWithAudio=_nowPlayingWithAudio;
 @property(nonatomic) _Bool connectedToExternalAccessories; // @synthesize connectedToExternalAccessories=_connectedToExternalAccessories;
 @property(nonatomic) _Bool workspaceLocked; // @synthesize workspaceLocked=_workspaceLocked;
+@property(nonatomic) _Bool bootstrapped; // @synthesize bootstrapped=_bootstrapped;
+@property(retain, nonatomic) BKSLaunchdJobSpecification *jobSpec; // @synthesize jobSpec=_jobSpec;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) BKSProcessClient *client; // @synthesize client=_client;
+@property(retain, nonatomic) NSString *jobLabel; // @synthesize jobLabel=_jobLabel;
+@property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(retain, nonatomic) BKSProcessExitContext *lastExitContext; // @synthesize lastExitContext=_lastExitContext;
 @property(readonly, retain, nonatomic) BSProcessHandle *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) long long taskState; // @synthesize taskState=_taskState;
 @property(nonatomic) long long visibility; // @synthesize visibility=_visibility;
@@ -56,7 +64,6 @@
 - (void)_sendMessageType:(int)arg1 withMessage:(CDUnknownBlockType)arg2;
 - (void)_sendMessageType:(int)arg1 withMessage:(CDUnknownBlockType)arg2 withReplyHandler:(CDUnknownBlockType)arg3 waitForReply:(_Bool)arg4;
 - (_Bool)_bootstrapWithError:(out id *)arg1;
-@property(readonly, retain, nonatomic) BKSProcessExitContext *lastExitContext;
 @property(readonly, nonatomic) double backgroundTimeRemaining;
 @property(nonatomic) __weak id <BKSProcessDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)invalidate;

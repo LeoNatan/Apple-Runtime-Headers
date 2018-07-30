@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)_updateAppearance;
 - (id)_cellView;
 - (long long)_backgroundStyleIfActionButtonIsSelected:(BOOL)arg1;
 - (void)mouseMoved:(id)arg1;

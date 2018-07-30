@@ -16,10 +16,12 @@
     NSString *_digits;
     NSString *_countryCode;
     _Bool _isShortCode;
+    long long _slot;
 }
 
 + (_Bool)isValidPhoneNumber:(id)arg1;
 + (_Bool)isValidPhoneNumberChar:(unsigned short)arg1;
++ (id)phoneNumberWithDigits:(long long)arg1 digits:(id)arg2 countryCode:(id)arg3;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 @property _Bool isShortCode; // @synthesize isShortCode=_isShortCode;
 @property(readonly) NSString *countryCode; // @synthesize countryCode=_countryCode;
@@ -30,6 +32,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
+- (id)initWithDigits:(long long)arg1 digits:(id)arg2 countryCode:(id)arg3;
+- (long long)numberOfDigitsForShortCodeNumber:(long long)arg1;
 - (long long)numberOfDigitsForShortCodeNumber;
 
 @end

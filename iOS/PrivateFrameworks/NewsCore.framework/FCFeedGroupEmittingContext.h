@@ -78,7 +78,7 @@
 - (_Bool)pageHasPrecedingGroupWithSourceIdentifier:(id)arg1;
 - (_Bool)pageHasExhaustedGroupsWithTypes:(id)arg1;
 - (_Bool)pageWillContainHeadlineCount:(unsigned long long)arg1 fromGroupTypes:(id)arg2;
-- (_Bool)pageWillContainExpandedGroupWithType:(long long)arg1;
+- (_Bool)pageWillContainExpandedNewGroupWithType:(long long)arg1;
 - (_Bool)pageWillContainGroupWithType:(long long)arg1;
 - (unsigned long long)countOfPrecedingAdjacentGroupsWithTypes:(id)arg1;
 - (id)followingAdjacentHeadlinesFromGroupType:(long long)arg1;
@@ -87,7 +87,7 @@
 @property(readonly, nonatomic) long long precedingGroupType;
 - (id)groupFromPageWithType:(long long)arg1;
 - (id)copyWithRefreshSession:(id)arg1;
-- (id)initWithCoreConfiguration:(id)arg1 cloudContext:(id)arg2 refreshSession:(id)arg3 refreshDateRange:(id)arg4 currentEdition:(id)arg5 followingEdition:(id)arg6 precedingGroups:(id)arg7 followingGroups:(id)arg8 pendingGroupsFromOtherSessions:(id)arg9 feedDescriptor:(id)arg10 emitters:(id)arg11 desiredHeadlineCount:(unsigned long long)arg12 preferSpeedOverQuality:(_Bool)arg13 forYouCatchUpOperation:(id)arg14;
+- (id)initWithConfiguration:(id)arg1 cloudContext:(id)arg2 refreshSession:(id)arg3 refreshDateRange:(id)arg4 currentEdition:(id)arg5 followingEdition:(id)arg6 precedingGroups:(id)arg7 followingGroups:(id)arg8 pendingGroupsFromOtherSessions:(id)arg9 feedDescriptor:(id)arg10 emitters:(id)arg11 desiredHeadlineCount:(unsigned long long)arg12 preferSpeedOverQuality:(_Bool)arg13 forYouCatchUpOperation:(id)arg14;
 
 @end
 

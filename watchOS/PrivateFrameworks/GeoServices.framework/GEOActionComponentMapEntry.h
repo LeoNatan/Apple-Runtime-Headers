@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOActionComponentMapEntry : PBCodable <NSCopying>
 {
     CDStruct_56d48c16 _placeDataComponents;

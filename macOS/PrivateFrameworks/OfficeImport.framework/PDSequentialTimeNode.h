@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSString, PDAnimationTarget;
 
-__attribute__((visibility("hidden")))
 @interface PDSequentialTimeNode : PDTimeNode
 {
     BOOL mConcurrent;
@@ -28,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int nextAction; // @synthesize nextAction=mNextAction;
 @property(nonatomic) int previousAction; // @synthesize previousAction=mPreviousAction;
 @property(nonatomic) BOOL concurrent; // @synthesize concurrent=mConcurrent;
-- (void)dealloc;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupId;
 @property(nonatomic) double direction;
 @property(nonatomic) double delay;

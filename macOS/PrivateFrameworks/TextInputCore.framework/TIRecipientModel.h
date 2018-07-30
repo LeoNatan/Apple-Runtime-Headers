@@ -18,9 +18,9 @@
 @property(retain, nonatomic) id <TILinguisticDataSourceMessage> lastMessage; // @synthesize lastMessage=_lastMessage;
 @property(retain, nonatomic) RKMessageResponseManager *trainer; // @synthesize trainer=_trainer;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (void)handleMessages:(id)arg1;
 - (id)languageGuessForString:(id)arg1;
-- (void)dealloc;
 - (id)initWithCompositeName:(id)arg1 andTrainer:(id)arg2;
 
 @end

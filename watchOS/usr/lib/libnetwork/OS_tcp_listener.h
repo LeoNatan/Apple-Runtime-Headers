@@ -6,6 +6,7 @@
 
 #import "OS_object.h"
 
+__attribute__((visibility("hidden")))
 @interface OS_tcp_listener : OS_object
 {
 }

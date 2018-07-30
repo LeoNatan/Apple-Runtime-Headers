@@ -11,9 +11,11 @@
     id _newsDataSourceProxy;
 }
 
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (Class)nanoNewsDataSourceClass;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1;
 + (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (Class)nanoNewsDataSourceClass;
 @property(retain, nonatomic) id newsDataSourceProxy; // @synthesize newsDataSourceProxy=_newsDataSourceProxy;
 - (void).cxx_destruct;
 - (void)resume;
@@ -26,6 +28,7 @@
 - (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (void)setDelegate:(id)arg1;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 - (id)initWithComplication:(id)arg1 family:(int)arg2;
 
 @end

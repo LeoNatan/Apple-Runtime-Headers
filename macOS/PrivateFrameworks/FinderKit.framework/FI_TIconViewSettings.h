@@ -6,16 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSColor, NSData, NSDictionary, NSString;
+@class NSColor, NSData, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface FI_TIconViewSettings : NSObject
 {
-    struct TNSRef<NSMutableDictionary *, void> _settings;
+    struct TNSRef<NSMutableDictionary, void> _settings;
     int _backgroundImageGenerationCount;
 }
 
-+ (id)settingsForNode:(struct TFENode *)arg1;
++ (id)settingsForNode:(const struct TFENode *)arg1;
 + (id)settingsFromViewOptions:(id)arg1;
 + (id)settingsFromPList:(id)arg1;
 + (id)settingsFromBrowserSettings:(struct TIconBrowserSettings *)arg1;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSColor *backgroundColor; // @dynamic backgroundColor;
 - (void)setBackgroundColorRed:(double)arg1 green:(double)arg2 blue:(double)arg3;
 @property(nonatomic) int backgroundType; // @dynamic backgroundType;
-@property(retain, nonatomic) NSString *arrangeBy; // @dynamic arrangeBy;
+@property(nonatomic) int sortBy; // @dynamic sortBy;
 @property(nonatomic) _Bool showIconPreview; // @dynamic showIconPreview;
 @property(nonatomic) _Bool showItemInfo; // @dynamic showItemInfo;
 @property(nonatomic) _Bool labelOnBottom; // @dynamic labelOnBottom;

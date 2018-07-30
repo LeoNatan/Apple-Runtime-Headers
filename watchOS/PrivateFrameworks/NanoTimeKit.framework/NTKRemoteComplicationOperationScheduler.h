@@ -41,11 +41,11 @@
 - (_Bool)shouldExtendSessionForRemoteComplicationOperationSession:(id)arg1;
 - (id)fetchOperationsForRemoteComplicationOperationSession:(id)arg1;
 - (void)_backoffTimerFired:(id)arg1;
+- (_Bool)_queue_hasOperationBeenBlacklisted:(id)arg1;
 - (void)_queue_didReceiveCarouselDidLaunchNotification;
 - (void)_didReceiveLockStateChangeNotification;
 - (void)_tearDownNotifications;
 - (void)_setupNotifications;
-- (_Bool)_queue_hasOperationBeenBlacklisted:(id)arg1;
 - (_Bool)_queue_hasClientBeenBlacklisted:(id)arg1;
 - (id)_queue_validOperationsForClientID:(id)arg1;
 - (_Bool)_queue_anyEnqueuedOperationIsNonDiscretionaryForClientID:(id)arg1;

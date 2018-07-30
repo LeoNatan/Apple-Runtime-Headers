@@ -8,7 +8,6 @@
 
 @class NSFileHandle, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OITSUHTMLLog : NSObject
 {
     NSString *_path;

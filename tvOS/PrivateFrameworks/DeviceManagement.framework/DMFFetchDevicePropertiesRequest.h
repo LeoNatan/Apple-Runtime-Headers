@@ -4,23 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSArray;
 
-@interface DMFFetchDevicePropertiesRequest : CATTaskRequest
+@interface DMFFetchDevicePropertiesRequest : DMFTaskRequest
 {
     NSArray *_propertyKeys;
 }
 
-+ (id)watchOSDevicePropertyKeys;
-+ (id)tvOSDevicePropertyKeys;
-+ (id)macOSDevicePropertyKeys;
-+ (id)iOSDevicePropertyKeys;
-+ (id)iOSPlatformDevicePropertyKeys;
-+ (id)allPlatformDevicePropertyKeys;
-+ (id)currentPlatformDevicePropertyKeys;
++ (id)devicePropertyKeysForPlatform:(unsigned long long)arg1;
++ (id)currentDevicePropertyKeys;
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
 @property(copy, nonatomic) NSArray *propertyKeys; // @synthesize propertyKeys=_propertyKeys;
 - (void).cxx_destruct;

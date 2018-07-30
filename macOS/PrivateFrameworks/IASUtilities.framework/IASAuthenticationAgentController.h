@@ -12,7 +12,7 @@
 
 + (id)sharedController;
 - (id)_getAgentConnectionForCurrentUser;
-- (id)getSSOServiceTicketWithUI:(BOOL)arg1 error:(id *)arg2;
+- (id)getSSOServiceTicketWithUI:(BOOL)arg1 serviceID:(id)arg2 outUsername:(id *)arg3 error:(id *)arg4;
 
 @end
 

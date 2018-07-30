@@ -21,7 +21,7 @@
 - (void)launchApplication:(id)arg1 usingArguments:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)serverStopped;
 - (void)serverStarted;
-- (void)runServerOnPort:(long long)arg1;
+- (void)runServerOnPort:(long long)arg1 protocolDialect:(long long)arg2;
 - (CDUnknownBlockType)_defaultErrorHandler;
 
 @end

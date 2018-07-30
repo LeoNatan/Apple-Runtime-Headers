@@ -6,19 +6,22 @@
 
 #import <NanoTimeKit/NTKAnalogScene.h>
 
-@class NSArray, SKNode, SKSpriteNode;
+@class NSArray, NSCalendar, NSDate, NTKZeusColorPalette, SKNode, SKSpriteNode;
 
 @interface NTKZeusAnalogScene : NTKAnalogScene
 {
+    NSCalendar *_calendar;
+    NSDate *_overrideDate;
+    SKNode *_fontContainerNode;
     NSArray *_fontHourNodes;
     SKNode *_logoContainerNode;
     SKSpriteNode *_logo1Node;
     SKSpriteNode *_logo2Node;
+    NTKZeusColorPalette *_palette;
     unsigned int _currentDensity;
-    _Bool _isEditing;
     unsigned int _style;
-    _Bool _statusIconVisible;
-    // Error parsing type: , name: _lightDirection
+    _Bool _isEditing;
+    _Bool _isStatusIconVisible;
     _Bool _scrubbing;
 }
 
@@ -33,20 +36,24 @@
 - (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;
 - (float)_secondHandAlphaForDensity:(unsigned int)arg1 isEditing:(_Bool)arg2;
 - (void)applyDensity:(unsigned int)arg1;
-- (id)_colorForFaceColor:(unsigned int)arg1;
-- (void)applyTransitionFraction:(float)arg1 fromColor:(unsigned int)arg2 toColor:(unsigned int)arg3;
-- (void)applyColor:(unsigned int)arg1;
+- (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
+- (void)applyPalette:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
+- (void)_applyTransitionFraction:(float)arg1 fromHourLabelCollectionNode:(id)arg2 toHourLabelCollectionNode:(id)arg3;
 - (void)applyStyle:(unsigned int)arg1;
-- (id)_hoursNodeForStyle:(unsigned int)arg1;
+- (void)_applyHourLabelCollectionNode:(id)arg1;
+- (id)_hoursNodeForStyle:(unsigned int)arg1 bleed:(unsigned int)arg2;
 - (void)_displayZoomScale:(float)arg1 fraction:(float)arg2;
+- (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)_update12ForStatusIconVisibilityAnimated:(_Bool)arg1;
 - (void)_update12ForStatusIconVisibility;
 - (void)setAdjustsForStatusBarIcon:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)auxiliaryScrubbingObscuredNodes;
 - (void)endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (id)initWithSize:(struct CGSize)arg1;
+- (void)_significantTimeChanged;
+- (void)dealloc;
+- (id)initWithSize:(struct CGSize)arg1 forDevice:(id)arg2;
 
 @end
 

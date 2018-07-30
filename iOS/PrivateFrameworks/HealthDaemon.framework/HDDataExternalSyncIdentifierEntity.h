@@ -15,7 +15,8 @@
 + (_Bool)populateSyncInfoForProfile:(id)arg1 localSourceID:(long long)arg2 externalSyncObjectCode:(long long)arg3 syncIdentifier:(id)arg4 deleted:(_Bool)arg5 objectIDOut:(id *)arg6 errorOut:(id *)arg7;
 + (long long)protectionClass;
 + (id)indices;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 + (_Bool)enumerateValuesWithProfile:(id)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 

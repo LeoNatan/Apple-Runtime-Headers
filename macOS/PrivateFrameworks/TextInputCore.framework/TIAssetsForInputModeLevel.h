@@ -16,6 +16,7 @@
 }
 
 @property(readonly, nonatomic) NSString *inputModeLevel; // @synthesize inputModeLevel=_inputModeLevel;
+- (void).cxx_destruct;
 - (BOOL)isEmpty;
 - (void)removeEmptyAssets;
 - (BOOL)purgeAsset:(id)arg1;
@@ -28,7 +29,6 @@
 - (id)assetVersionsForAttributes:(id)arg1;
 - (void)gatherStatistics:(id)arg1;
 - (id)recursiveDescription;
-- (void)dealloc;
 - (id)initWithInputModeLevel:(id)arg1;
 
 @end

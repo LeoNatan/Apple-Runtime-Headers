@@ -25,15 +25,15 @@
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) struct CGSize contentSizeAdjustment;
-@property(nonatomic) struct CGPoint contentOffsetAdjustment;
+@property struct CGSize contentSizeAdjustment;
+@property struct CGPoint contentOffsetAdjustment;
 @property(nonatomic, getter=_updateItems, setter=_setUpdateItems:) NSArray *updateItems;
 @property(nonatomic, setter=_setInvalidateEverything:) BOOL invalidateEverything;
 @property(nonatomic, setter=_setInvalidateDataSourceCounts:) BOOL invalidateDataSourceCounts;
-@property(readonly, nonatomic) NSDictionary *invalidatedDecorationIndexPaths;
+@property(readonly) NSDictionary *invalidatedDecorationIndexPaths;
 - (void)invalidateDecorationElementsOfKind:(id)arg1 atIndexPaths:(id)arg2;
-@property(readonly, nonatomic) NSDictionary *invalidatedSupplementaryIndexPaths;
-@property(readonly, nonatomic) NSSet *invalidatedItemIndexPaths;
+@property(readonly) NSDictionary *invalidatedSupplementaryIndexPaths;
+@property(readonly) NSSet *invalidatedItemIndexPaths;
 - (void)invalidateItemsAtIndexPaths:(id)arg1;
 - (void)invalidateSupplementaryElementsOfKind:(id)arg1 atIndexPaths:(id)arg2;
 - (void)_setInvalidatedSupplementaryViews:(id)arg1;

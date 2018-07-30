@@ -16,6 +16,7 @@
 + (void)stopListeningForPowerSources;
 + (void)startListeningForPowerSources;
 + (_Bool)isB239ButtonEvent:(struct __IOHIDEvent *)arg1;
++ (void)setAdvertiseNonConnectable:(_Bool)arg1;
 + (void)resetToFactoryDefault;
 + (void)setPresenceDetectionEnabled:(_Bool)arg1;
 + (void)disconnectAllRemotesAndKeepPaired;

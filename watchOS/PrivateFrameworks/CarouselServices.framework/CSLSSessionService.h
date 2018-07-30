@@ -6,25 +6,32 @@
 
 #import "NSObject.h"
 
+#import "CSLSSessionServiceClientInterface.h"
 #import "CSLSSessionServiceInterface.h"
 
-@class NSMutableArray, NSString, NSXPCConnection;
+@class NSMutableArray, NSString, NSXPCConnection, NSXPCInterface;
 
-@interface CSLSSessionService : NSObject <CSLSSessionServiceInterface>
+@interface CSLSSessionService : NSObject <CSLSSessionServiceClientInterface, CSLSSessionServiceInterface>
 {
     NSMutableArray *_sessions;
     NSXPCConnection *_connection;
+    NSXPCInterface *_remoteInterface;
+    NSXPCInterface *_exportedInterface;
     _Bool _invalidated;
+    struct _opaque_pthread_mutex_t _lock;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)sessionWithUUIDEnded:(id)arg1;
 - (void)endSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_sessionEnded:(id)arg1;
 - (void)startSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performServerQuery:(CDUnknownBlockType)arg1;
 - (void)_handleInvalidation;
-- (void)_handleInterruption;
+- (void)_endAllSessions:(id)arg1;
 - (void)_connectIfNecessary;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
 

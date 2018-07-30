@@ -33,6 +33,7 @@
 - (void)onCancelButton:(id)arg1;
 - (void)onHelpButton:(id)arg1;
 - (void)windowDidLoad;
+- (void)close;
 - (void)awakeFromNib;
 - (void)clearPIN;
 - (void)updatePin;

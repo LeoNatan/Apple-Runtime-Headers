@@ -6,19 +6,19 @@
 
 #import "FCOperation.h"
 
-@class FCAppConfigurationManager, FCFlintResourceManager, NUEmbedConfigurationOperationResult;
+@class FCFlintResourceManager, NUEmbedConfigurationOperationResult;
 
 @interface NUEmbedConfigurationOperation : FCOperation
 {
     CDUnknownBlockType _completion;
-    FCAppConfigurationManager *_appConfigurationManager;
+    id <FCNewsAppConfigurationManager> _appConfigurationManager;
     FCFlintResourceManager *_flintResourceManager;
     NUEmbedConfigurationOperationResult *_result;
 }
 
 @property(retain, nonatomic) NUEmbedConfigurationOperationResult *result; // @synthesize result=_result;
 @property(retain, nonatomic) FCFlintResourceManager *flintResourceManager; // @synthesize flintResourceManager=_flintResourceManager;
-@property(retain, nonatomic) FCAppConfigurationManager *appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
+@property(retain, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;

@@ -87,8 +87,6 @@
 - (id)_updatedBackingSource;
 - (BOOL)_refreshable;
 - (BOOL)_reset;
-- (id)_existingObjectForDecodedIdentifier:(id)arg1;
-- (BOOL)_useExistingObjectWhenDecoding;
 - (BOOL)supportsInvitationModificationsWithoutNotification;
 - (BOOL)_validateDeletable:(id *)arg1;
 - (BOOL)validate:(id *)arg1;

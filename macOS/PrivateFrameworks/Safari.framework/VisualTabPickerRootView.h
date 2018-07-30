@@ -6,14 +6,14 @@
 
 #import <Safari/MouseEventBlockingView.h>
 
-@class NSScrollView, NSView, VisualTabPickerCloudTabsView, VisualTabPickerGridView, VisualTabPickerSearchField, VisualTabPickerViewController;
+@class BackgroundColorView, NSScrollView, NSView, VisualTabPickerCloudTabsView, VisualTabPickerGridView, VisualTabPickerSearchField, VisualTabPickerViewController;
 
 __attribute__((visibility("hidden")))
 @interface VisualTabPickerRootView : MouseEventBlockingView
 {
     NSScrollView *_scrollView;
     NSView *_topBarView;
-    NSView *_topBarViewSeparator;
+    BackgroundColorView *_topBarViewSeparator;
     VisualTabPickerGridView *_gridView;
     VisualTabPickerSearchField *_searchField;
     VisualTabPickerCloudTabsView *_cloudTabsView;
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VisualTabPickerSearchField *searchField; // @synthesize searchField=_searchField;
 @property(readonly, nonatomic) VisualTabPickerGridView *gridView; // @synthesize gridView=_gridView;
 - (void).cxx_destruct;
+- (BOOL)_isShowingSearchField;
 - (void)_didScroll:(id)arg1;
 - (void)setUpSubviews;
 - (void)_startTopBarAndCloudViewAnimation:(long long)arg1;

@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     NSView *_leftBorderView;
     NSView *_rightBorderView;
     CABackdropLayer *_backdropLayer;
-    NSVisualEffectView *_fullscreenContentVisualEffectView;
+    NSVisualEffectView *_fullScreenContentVisualEffectView;
     NSMutableSet *_backgroundHighlightLayers;
     BOOL _active;
     BOOL _hasMouseOverHighlight;
@@ -50,11 +50,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)isOpaque;
 - (void)layout;
 @property(copy, nonatomic) NSString *backdropGroupName;
-- (BOOL)allowsVibrancy;
 - (void)viewDidMoveToWindow;
-- (void)_reconfigureFullscreenViewsUsingVisualEffectViews:(BOOL)arg1;
-- (void)_reconfigureFullscreenViewsIfNeeded;
+- (void)_reconfigureFullScreenViewsUsingVisualEffectViews:(BOOL)arg1;
+- (void)_reconfigureFullScreenViewsIfNeeded;
 - (id)_makeViewInVibrantContentView;
+- (id)_makeTopBorderView;
 - (void)_setUpBackgroundViews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

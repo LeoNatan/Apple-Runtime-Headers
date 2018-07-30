@@ -86,6 +86,7 @@
 - (id)_completionResultsForName:(id)arg1 imHandleID:(id)arg2 person:(id)arg3 addressBookProperty:(id)arg4 originalResult:(id)arg5;
 - (void)showCompletions;
 - (void)updateWindowLocation;
+- (struct CGPoint)calculateWindowOrigin;
 - (void)completionWindowDidResize:(id)arg1;
 - (id)accountForAutocompleteResult:(id)arg1;
 - (id)iconTypeForResult:(id)arg1 selected:(BOOL)arg2;

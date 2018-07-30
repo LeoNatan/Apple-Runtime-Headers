@@ -25,6 +25,12 @@ struct CGSize {
     double height;
 };
 
+struct CNPair {
+    Class _field1;
+    id _field2;
+    id _field3;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

@@ -6,44 +6,31 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSString;
+@class CLLocationManagerStateTracker, NSMutableSet, NSString;
 
 @interface CLLocationManagerInternal : NSObject
 {
     struct __CLClient *fClient;
     id <CLLocationManagerDelegate> fDelegate;
-    double fDistanceFilter;
+    CLLocationManagerStateTracker *fState;
     double fDesiredAccuracy;
-    BOOL fUpdatingLocation;
     CDStruct_0a5906de fLocation;
     NSString *fLocationEventType;
-    BOOL fRequestingRanging;
-    BOOL fUpdatingRanging;
+    struct __CFRunLoopTimer *fLocationRequestTimer;
+    double fLocationRequestTimeout;
     struct __CFRunLoopTimer *fRangingRequestTimer;
     double fLastRangingRequestTimeout;
     unsigned long long fLastRangingRequestMachTime;
-    BOOL fUpdatingHeading;
-    double fHeadingFilter;
     int fHeadingOrientation;
-    BOOL fPersistentMonitoringEnabled;
-    BOOL fAllowsLocationPrompts;
-    BOOL fDynamicAccuracyReductionEnabled;
-    BOOL fPreviousAuthorizationStatusValid;
-    int fPreviousAuthorizationStatus;
-    long long fActivityType;
-    int fPausesLocationUpdatesAutomatically;
-    BOOL fPaused;
-    BOOL fAllowsMapCorrection;
-    BOOL fBatchingLocation;
-    BOOL fUpdatingVehicleSpeed;
-    BOOL fUpdatingVehicleHeading;
     NSMutableSet *fRangedRegions;
 }
 
 @property(readonly, nonatomic) NSMutableSet *rangedRegions; // @synthesize rangedRegions=fRangedRegions;
 - (void)dealloc;
+- (void)cancelLingeringRangingRequest;
 - (BOOL)hasLingeringRangingRequest;
 - (void)cancelRangingRequest;
+- (void)cancelLocationRequest;
 - (void)stopUpdatingLocationAutoPaused;
 - (int)PausesLocationUpdatesAutomatically;
 - (void)setPausesLocationUpdatesAutomatically:(int)arg1;

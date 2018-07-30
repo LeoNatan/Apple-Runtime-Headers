@@ -8,6 +8,7 @@
 
 @class NSCell, NSColor;
 
+__attribute__((visibility("hidden")))
 @interface _NSMatrixPrivateIvars : NSObject
 {
     long long _keyCol;

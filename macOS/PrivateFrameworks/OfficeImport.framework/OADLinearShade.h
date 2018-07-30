@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADShade.h>
 
-__attribute__((visibility("hidden")))
 @interface OADLinearShade : OADShade
 {
     float mAngle;

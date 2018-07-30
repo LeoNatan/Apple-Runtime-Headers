@@ -22,7 +22,13 @@
 
 @property(nonatomic) _Bool showsSectionIndexOverlayOnCrownScroll; // @synthesize showsSectionIndexOverlayOnCrownScroll=_showsSectionIndexOverlayOnCrownScroll;
 - (void).cxx_destruct;
+- (float)proposedRestingOffsetForContentOffset:(float)arg1;
+- (void)crownInputSequencerWillBecomeIdle:(id)arg1 withCrownVelocity:(double)arg2 targetOffset:(inout double *)arg3;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (void)reloadItemsAtIndexPaths:(id)arg1;
+- (void)deleteItemsAtIndexPaths:(id)arg1;
+- (void)insertItemsAtIndexPaths:(id)arg1;
 - (void)reloadSections:(id)arg1;
 - (void)reloadData;
 @property(nonatomic) __weak id <PUICCollectionViewDataSource> dataSource; // @dynamic dataSource;
@@ -38,6 +44,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <PUICCollectionViewDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;

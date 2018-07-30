@@ -8,6 +8,7 @@
 
 @class NSPDFImageRep;
 
+__attribute__((visibility("hidden")))
 @interface NSMultiplePagePDFImageView : NSView
 {
     NSPDFImageRep *_imageRep;

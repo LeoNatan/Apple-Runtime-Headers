@@ -27,7 +27,8 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-@property(nonatomic) id <BKSAlternateSystemAppDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <BKSAlternateSystemAppDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)alternateSystemAppWithBundleIDDidTerminate:(id)arg1;
 - (void)alternateSystemAppWithBundleIDDidOpen:(id)arg1;
 - (void)alternateSystemAppWithBundleID:(id)arg1 didExitWithContext:(id)arg2;

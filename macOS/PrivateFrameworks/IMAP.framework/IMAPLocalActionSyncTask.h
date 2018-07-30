@@ -18,10 +18,12 @@
     IMAPTaskManager *_taskManager;
 }
 
++ (id)signpostLog;
 @property(nonatomic) BOOL operationRunning; // @synthesize operationRunning=_operationRunning;
 @property(retain, nonatomic) IMAPTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long signpostID;
 - (void)end;
 - (void)_createProgressForAction:(id)arg1;
 - (void)operationFinished:(id)arg1;
@@ -29,6 +31,7 @@
 - (void)recalculatePriorities;
 - (void)addMessageAction:(id)arg1;
 @property(nonatomic) BOOL hasNextLocalAction;
+- (id)mailboxNameWithoutPII;
 - (id)initWithMailboxName:(id)arg1;
 - (id)initWithDataSource:(id)arg1 taskManager:(id)arg2;
 

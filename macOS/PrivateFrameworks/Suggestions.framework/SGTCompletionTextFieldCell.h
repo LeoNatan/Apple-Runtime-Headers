@@ -6,7 +6,7 @@
 
 #import "NSTextFieldCell.h"
 
-@class NSFont, NSImage;
+@class NSFont, NSImage, NSImageCell;
 
 __attribute__((visibility("hidden")))
 @interface SGTCompletionTextFieldCell : NSTextFieldCell
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     double _afterMargin;
     NSFont *_baselineFont;
     NSImage *_sgtImage;
+    NSImageCell *_imageCell;
 }
 
 @property(retain, nonatomic) NSFont *baselineFont; // @synthesize baselineFont=_baselineFont;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (id)highlightColorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initTextCell:(id)arg1;
 
 @end
 

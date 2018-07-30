@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary, NSString, OCPPackagePart;
 
-__attribute__((visibility("hidden")))
 @interface OAXTableStyleCache : NSObject
 {
     OCPPackagePart *mStylesPart;
@@ -16,13 +15,13 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mCache;
 }
 
+- (void).cxx_destruct;
 - (struct _xmlNode *)defaultStyleNode;
 - (struct _xmlNode *)styleNodeForId:(id)arg1;
 - (void)setStyleNode:(struct _xmlNode *)arg1 forId:(id)arg2;
 - (void)setDefaultStyleId:(id)arg1;
 - (id)defaultStyleId;
 - (void)setStylesPart:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

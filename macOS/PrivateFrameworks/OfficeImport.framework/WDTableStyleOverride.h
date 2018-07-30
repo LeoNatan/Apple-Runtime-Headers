@@ -10,11 +10,9 @@
 
 @class WDCharacterProperties, WDDocument, WDParagraphProperties, WDStyle, WDTableCellProperties, WDTableRowProperties;
 
-__attribute__((visibility("hidden")))
 @interface WDTableStyleOverride : NSObject <NSCopying>
 {
     WDDocument *mDocument;
-    WDStyle *mStyle;
     int mPart;
     WDParagraphProperties *mParagraphProperties;
     WDCharacterProperties *mCharacterProperties;
@@ -24,8 +22,11 @@ __attribute__((visibility("hidden")))
     unsigned int mCharacterPropertiesOverridden:1;
     unsigned int mTableRowPropertiesOverridden:1;
     unsigned int mTableCellStylePropertiesOverridden:1;
+    WDStyle *mStyle;
 }
 
+@property __weak WDStyle *style; // @synthesize style=mStyle;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setTableCellStylePropertiesOverridden:(BOOL)arg1;
@@ -48,9 +49,6 @@ __attribute__((visibility("hidden")))
 - (id)paragraphProperties;
 - (void)setPart:(int)arg1;
 - (int)part;
-- (void)setStyle:(id)arg1;
-- (id)style;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 
 @end

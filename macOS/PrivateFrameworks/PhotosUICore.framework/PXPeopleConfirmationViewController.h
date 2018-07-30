@@ -46,7 +46,7 @@
 - (void)willLoadMoreSuggestionsForSuggestionManager:(id)arg1;
 - (void)noMoreSuggestionsAvailableForSuggestionManager:(id)arg1;
 - (void)suggestionManager:(id)arg1 hasNewSuggestionsAvailable:(id)arg2;
-- (void)confirmationCountUpdatedForSuggestionManager:(id)arg1;
+- (void)confirmationCountUpdatedForSuggestionManager:(id)arg1 undoing:(BOOL)arg2;
 - (void)doneTapped:(id)arg1;
 - (void)performUndo:(id)arg1;
 - (void)undoDeny:(id)arg1;

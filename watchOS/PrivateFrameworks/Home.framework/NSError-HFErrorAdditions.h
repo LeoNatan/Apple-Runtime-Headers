@@ -7,6 +7,8 @@
 #import "NSError.h"
 
 @interface NSError (HFErrorAdditions)
++ (id)hf_internalErrorWithDescription:(id)arg1;
++ (id)hf_errorWithCode:(int)arg1 descriptionFormat:(id)arg2 arguments:(char *)arg3;
 + (id)hf_errorWithCode:(int)arg1 descriptionFormat:(id)arg2;
 + (id)hf_errorWithCode:(int)arg1;
 @end

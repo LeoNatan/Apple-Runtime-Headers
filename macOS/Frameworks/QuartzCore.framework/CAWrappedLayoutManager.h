@@ -7,29 +7,18 @@
 #import "NSObject.h"
 
 #import "CALayoutManager.h"
-#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface CAWrappedLayoutManager : NSObject <NSSecureCoding, CALayoutManager>
+@interface CAWrappedLayoutManager : NSObject <CALayoutManager>
 {
 }
 
-+ (void)CAMLParserStartElement:(id)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (id)layoutManager;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)invalidateLayoutOfLayer:(id)arg1;
-- (void)layoutSublayersOfLayer:(id)arg1;
-- (struct CGSize)preferredSizeOfLayer:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-
 @end
 

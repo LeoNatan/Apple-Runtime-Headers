@@ -9,7 +9,7 @@
 #import "NSAnimatablePropertyContainer.h"
 #import "NSCoding.h"
 
-@class CAMediaTimingFunction, NSArray, NSCache, NSDictionary, NSSet, NSString, NSTouchBarCustomizableConfiguration, NSTouchBarItem;
+@class CAMediaTimingFunction, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTouchBarCustomizableConfiguration, NSTouchBarItem;
 
 @interface NSTouchBar : NSObject <NSAnimatablePropertyContainer, NSCoding>
 {
@@ -17,7 +17,7 @@
     NSString *_principalItemIdentifier;
     NSSet *_templateItems;
     id <NSTouchBarDelegate> _delegate;
-    NSCache *_itemCache;
+    NSMutableDictionary *_itemCache;
     long long _visibilityCount;
     unsigned int _isBuildingItems:1;
     unsigned int _suppressesLessFocusedTouchBars:1;
@@ -45,10 +45,6 @@
 + (void)dismissSystemModalTouchBar:(id)arg1;
 + (void)presentSystemModalTouchBar:(id)arg1 placement:(long long)arg2 systemTrayItemIdentifier:(id)arg3;
 + (void)presentSystemModalTouchBar:(id)arg1 systemTrayItemIdentifier:(id)arg2;
-+ (void)minimizeSystemModalFunctionBar:(id)arg1;
-+ (void)dismissSystemModalFunctionBar:(id)arg1;
-+ (void)presentSystemModalFunctionBar:(id)arg1 systemTrayItemIdentifier:(id)arg2;
-+ (void)presentSystemModalFunctionBar:(id)arg1 placement:(long long)arg2 systemTrayItemIdentifier:(id)arg3;
 + (id)keyPathsForValuesAffectingDefaultItems;
 + (id)keyPathsForValuesAffectingCustomizationDefaultItemIdentifiers;
 + (id)keyPathsForValuesAffectingEscapeKeyReplacementItem;
@@ -62,6 +58,7 @@
 - (void)setTouchBarLayoutDirection:(long long)arg1;
 - (long long)touchBarLayoutDirection;
 - (id)itemForIdentifier:(id)arg1;
+- (void)_purgeCacheIfNecessary;
 - (BOOL)_didItemsReallyChange:(id)arg1;
 @property(copy) NSString *escapeKeyReplacementItemIdentifier;
 @property(copy) NSString *principalItemIdentifier;
@@ -78,7 +75,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property __weak id <NSTouchBarDelegate> delegate;
-- (double)minWidthGivenVisualCenterX:(double)arg1;
 - (id)_playgroundPreviewView;
 - (id)_playgroundQuickLookView;
 @property(getter=isSuppressedByMoreFocusedTouchBars) BOOL suppressedByMoreFocusedTouchBars;
@@ -93,13 +89,13 @@
 @property(copy) NSDictionary *animations;
 - (id)animator;
 - (Class)_animatorClass;
+- (double)minWidthGivenVisualCenterX:(double)arg1;
 - (void)setDefaultItems:(id)arg1;
 - (id)defaultItems;
 - (void)setItemIdentifiers:(id)arg1;
 - (void)setCustomizationDefaultItemIdentifiers:(id)arg1;
 - (id)customizationDefaultItemIdentifiers;
 @property(retain) NSTouchBarItem *escapeKeyReplacementItem;
-@property(copy) NSArray *customizationPresets;
 
 @end
 

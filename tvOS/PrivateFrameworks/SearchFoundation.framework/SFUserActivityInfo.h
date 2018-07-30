@@ -14,7 +14,9 @@
 
 @interface SFUserActivityInfo : NSObject <SFUserActivityInfo, NSSecureCoding, NSCopying>
 {
-    CDStruct_00e03ae1 _has;
+    struct {
+        unsigned int valueType:1;
+    } _has;
     int _valueType;
     NSString *_key;
     NSString *_stringValue;

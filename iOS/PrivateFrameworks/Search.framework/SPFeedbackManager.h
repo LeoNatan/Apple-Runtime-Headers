@@ -15,7 +15,6 @@
 }
 
 + (id)sharedManager;
-- (void)sendFeedbackMessage:(SEL)arg1 withFeedback:(id)arg2;
 - (void)reportFeedback:(id)arg1 queryId:(long long)arg2;
 - (void)cardViewDidAppear:(id)arg1;
 - (void)didGradeResultRelevancy:(id)arg1;
@@ -37,6 +36,8 @@
 - (void)cardViewDidDisappear:(id)arg1;
 - (void)searchViewDidDisappear:(id)arg1;
 - (void)searchViewDidAppear:(id)arg1;
+- (void)_sendFeedback:(id)arg1 type:(long long)arg2;
+- (void)_sendFeedback:(id)arg1 type:(long long)arg2 queryId:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

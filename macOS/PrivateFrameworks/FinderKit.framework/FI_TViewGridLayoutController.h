@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TViewGridLayoutController : FI_TGridLayoutController
 {
-    struct TNSRef<FI_TViewGridLayoutControllerDelegate *, void> _delegate;
+    struct TNSRef<FI_TViewGridLayoutControllerDelegate, void> _delegate;
 }
 
 - (id).cxx_construct;

@@ -15,8 +15,8 @@
     NSMutableArray *_viewRows;
     struct _NUIGridArrangement _visibleArrangement;
     struct CGSize _visibleCount;
-    struct unordered_map<NSView *, const std::__1::pair<_NSRange, _NSRange>, std::__1::hash<NSView *>, std::__1::equal_to<NSView *>, std::__1::allocator<std::__1::pair<NSView *const, const std::__1::pair<_NSRange, _NSRange>>>> _viewRanges;
-    struct unordered_map<unsigned long, const std::__1::pair<NSView *, NSView *>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, const std::__1::pair<NSView *, NSView *>>>> _rowBaselineViews;
+    struct map<NSView *, const std::__1::pair<_NSRange, _NSRange>, std::__1::less<NSView *>, std::__1::allocator<std::__1::pair<NSView *const, const std::__1::pair<_NSRange, _NSRange>>>> _viewRanges;
+    struct map<unsigned long, const std::__1::pair<NSView *, NSView *>, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, const std::__1::pair<NSView *, NSView *>>>> _rowBaselineViews;
     struct CGSize _spacing;
     struct vector<_NUIGridViewDimensionConfiguration, std::__1::allocator<_NUIGridViewDimensionConfiguration>> _rows;
     struct vector<_NUIGridViewDimensionConfiguration, std::__1::allocator<_NUIGridViewDimensionConfiguration>> _columns;
@@ -40,8 +40,8 @@
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)populateGridArrangementDimension:(vector_29d414c0 *)arg1 withCells:(const vector_f7a18e83 *)arg2 axis:(long long)arg3;
-- (void)populateGridArrangementCells:(vector_f7a18e83 *)arg1;
+- (void)populateGridArrangementDimension:(vector_b8a5df6e *)arg1 withCells:(const vector_f8404f95 *)arg2 axis:(long long)arg3;
+- (void)populateGridArrangementCells:(vector_f8404f95 *)arg1;
 - (void)_setupViewRangesIfNeeded;
 - (long long)_verticalAlignmentOfView:(id)arg1 inColumn:(long long)arg2;
 - (long long)_horizontalAlignmentOfView:(id)arg1 inColumn:(long long)arg2;
@@ -51,8 +51,9 @@
 - (void)didInsertArrangedSubview:(id)arg1 atIndex:(long long)arg2;
 - (BOOL)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(BOOL)arg1;
 - (id)arrangedDescription;
-- (BOOL)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
+- (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
 - (struct CGSize)calculateArrangedSizeFittingSize:(struct CGSize)arg1;
+- (struct CGSize)_calculateArrangedSizeFittingSize:(struct CGSize)arg1 forLayout:(BOOL)arg2;
 - (id)viewForLastBaselineLayoutInRow:(long long)arg1;
 - (id)viewForFirstBaselineLayoutInRow:(long long)arg1;
 - (id)_baselineViewForFirstBaseline:(BOOL)arg1 forRow:(unsigned long long)arg2;
@@ -83,7 +84,6 @@
 - (BOOL)_verifyInternalGridConsistencyWarningOnly:(BOOL)arg1;
 - (void)dealloc;
 - (id)initWithArrangedSubviewRows:(id)arg1;
-- (id)initWithArrangeSubviewRows:(id)arg1;
 - (id)initWithArrangedSubviews:(id)arg1;
 - (void)setBaselineRelativeArrangement:(BOOL)arg1;
 @property(nonatomic) __weak id <NUIContainerGridViewDelegate> delegate; // @dynamic delegate;

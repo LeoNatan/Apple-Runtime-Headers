@@ -15,11 +15,13 @@
     struct GEOSessionID _sessionID;
     unsigned int _sequenceNumber;
     double _sessionCreationTime;
+    double _sessionRelativeTimestamp;
 }
 
-@property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(readonly) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(readonly) double sessionRelativeTimestamp; // @synthesize sessionRelativeTimestamp=_sessionRelativeTimestamp;
 @property double sessionCreationTime; // @synthesize sessionCreationTime=_sessionCreationTime;
-@property struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly) struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateSessionIDFromUUIDString:(id)arg1;
 - (void)updateWithSessionEntityString:(id)arg1;
@@ -35,8 +37,6 @@
 - (id)initWithSessionEntityString:(id)arg1;
 - (id)initWithSessionID:(struct GEOSessionID)arg1 sessionCreationTime:(double)arg2 sequenceNumber:(unsigned int)arg3;
 - (double)sessionRelativeTimestampForEventTime:(double)arg1;
-@property(readonly) double sessionRelativeTimestamp;
-- (unsigned int)rawSequenceNumber;
 
 @end
 

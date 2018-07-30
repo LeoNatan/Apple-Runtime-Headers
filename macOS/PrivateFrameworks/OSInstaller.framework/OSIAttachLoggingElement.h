@@ -15,7 +15,6 @@
 - (BOOL)_attachLog;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 
 @end
 

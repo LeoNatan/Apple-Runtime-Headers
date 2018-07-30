@@ -4,38 +4,42 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIView.h"
+#import "UITableViewHeaderFooterView.h"
 
 #import "PSHeaderFooterView.h"
 #import "UITextViewDelegate.h"
 
-@class NSString, NSURL, UIImageView, UITextView;
+@class NSLayoutConstraint, NSString, NSURL, UITextView;
 
-@interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate>
+@interface PSFooterHyperlinkView : UITableViewHeaderFooterView <PSHeaderFooterView, UITextViewDelegate>
 {
-    UITextView *_textView;
     NSString *_text;
     NSURL *_URL;
-    struct _NSRange _linkRange;
     id _target;
     SEL _action;
-    UIImageView *_iconView;
+    UITextView *_textView;
+    NSLayoutConstraint *_textViewLeadingConstraint;
+    NSLayoutConstraint *_textViewTrailingConstraint;
+    struct _NSRange _linkRange;
 }
 
-@property(retain) UIImageView *iconView; // @synthesize iconView=_iconView;
-@property SEL action; // @synthesize action=_action;
-@property __weak id target; // @synthesize target=_target;
+@property(retain, nonatomic) NSLayoutConstraint *textViewTrailingConstraint; // @synthesize textViewTrailingConstraint=_textViewTrailingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *textViewLeadingConstraint; // @synthesize textViewLeadingConstraint=_textViewLeadingConstraint;
+@property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
+@property(nonatomic) SEL action; // @synthesize action=_action;
+@property(nonatomic) __weak id target; // @synthesize target=_target;
+@property(nonatomic) struct _NSRange linkRange; // @synthesize linkRange=_linkRange;
+@property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
+@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+- (void)_accessibilitySetInterfaceStyleIntent:(unsigned long long)arg1;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
-- (double)preferredHeightForWidth:(double)arg1;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-@property(retain) NSURL *URL;
-@property struct _NSRange linkRange;
-@property(retain) NSString *text;
-- (void)layoutSubviews;
-- (struct UIEdgeInsets)textInsets;
+- (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (_Bool)isValidLinkRange;
 - (void)_linkify;
+- (void)updateConstraints;
+- (void)setTableView:(id)arg1;
+- (void)setupSubviewsAndContstraints;
 - (id)initWithSpecifier:(id)arg1;
 
 // Remaining properties

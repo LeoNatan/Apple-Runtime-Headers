@@ -16,7 +16,6 @@
 
 + (long long)pickableRouteTypeForOutputDevice:(void *)arg1;
 + (id)localDeviceUID;
-+ (id)localOutputDeviceLocalizedName;
 + (void *)logicalLeaderFromOutputDevices:(id)arg1;
 @property(readonly, nonatomic) void *logicalLeaderOutputDevice; // @synthesize logicalLeaderOutputDevice=_logicalLeaderOutputDevice;
 @property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
@@ -43,6 +42,9 @@
 - (BOOL)isHomePodRoute;
 - (BOOL)isCarplayRoute;
 - (BOOL)isAppleTVRoute;
+- (BOOL)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (BOOL)canFetchMediaDataFromSender;
+- (BOOL)canPlayEncryptedProgressiveDownloadAssets;
 - (BOOL)canAccessRemoteAssets;
 - (id)description;
 - (id)routeName;

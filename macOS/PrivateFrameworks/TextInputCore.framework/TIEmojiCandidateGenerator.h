@@ -24,6 +24,7 @@
 }
 
 @property(retain, nonatomic) NSArray *activeInputModes; // @synthesize activeInputModes=_activeInputModes;
+- (void).cxx_destruct;
 - (void)logEmojiUsageFromCandidateBar:(id)arg1;
 - (id)emojiAdornmentCandidatesForKeyboardState:(id)arg1;
 - (id)emojiReplacementCandidatesForKeyboardState:(id)arg1;

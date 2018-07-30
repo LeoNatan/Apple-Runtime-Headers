@@ -58,6 +58,7 @@
 @property(nonatomic) long long personId;
 @property(nonatomic) long long imageModelId;
 @property(readonly, nonatomic) RDFaceTable *table;
+@property(readonly, copy, nonatomic) NSString *groupingIdentifier;
 @property(readonly, nonatomic) BOOL isBlurred;
 @property(readonly, nonatomic) double masterMouthY;
 @property(readonly, nonatomic) double masterMouthX;

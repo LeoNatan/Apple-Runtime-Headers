@@ -13,9 +13,6 @@
 
 @interface _SFPBDynamicURLImageResource : PBCodable <_SFPBDynamicURLImageResource, NSSecureCoding>
 {
-    struct {
-        unsigned int supportsResizing:1;
-    } _has;
     _Bool _supportsResizing;
     _SFPBGraphicalFloat *_pixelWidth;
     _SFPBGraphicalFloat *_pixelHeight;
@@ -41,10 +38,6 @@
 - (unsigned long long)imageOptionsCount;
 - (void)addImageOptions:(id)arg1;
 - (void)clearImageOptions;
-@property(readonly, nonatomic) _Bool hasSupportsResizing;
-@property(readonly, nonatomic) _Bool hasFormatURL;
-@property(readonly, nonatomic) _Bool hasPixelHeight;
-@property(readonly, nonatomic) _Bool hasPixelWidth;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

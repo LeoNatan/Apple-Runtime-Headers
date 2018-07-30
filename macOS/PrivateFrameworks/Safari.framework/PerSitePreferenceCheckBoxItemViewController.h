@@ -8,15 +8,15 @@
 
 #import "PerSitePreferencesPopoverItem.h"
 
-@class NSButton, NSString, WBSPerSitePreference, WBSPerSitePreferenceValue;
+@class NSButton, NSString, WBSPerSitePreference;
 
 __attribute__((visibility("hidden")))
 @interface PerSitePreferenceCheckBoxItemViewController : NSViewController <PerSitePreferencesPopoverItem>
 {
     WBSPerSitePreference *_perSitePreference;
     id <WBSPerSitePreferenceManager> _perSitePreferenceManager;
-    WBSPerSitePreferenceValue *_onValue;
-    WBSPerSitePreferenceValue *_offValue;
+    id _onValue;
+    id _offValue;
     NSString *_domain;
     NSButton *_switchButton;
     NSString *_title;

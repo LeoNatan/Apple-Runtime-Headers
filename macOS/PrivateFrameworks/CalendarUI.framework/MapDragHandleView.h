@@ -15,6 +15,7 @@
 
 @property __weak MapDragRadiusView *radView; // @synthesize radView=_radView;
 - (void).cxx_destruct;
+- (void)updateLayer;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

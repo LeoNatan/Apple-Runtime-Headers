@@ -6,16 +6,25 @@
 
 #import "NSObject.h"
 
-@class NSString;
+#import "HMFObject.h"
 
-@interface HMFObject : NSObject
+@class NSArray, NSString;
+
+@interface HMFObject : NSObject <HMFObject>
 {
 }
 
 + (id)shortDescription;
-- (id)description;
-- (id)debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *shortDescription;
+
+// Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *propertyDescription;
+@property(readonly) Class superclass;
 
 @end
 

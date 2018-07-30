@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class _EARSpeechRecognition;
+@class _EARAudioAnalytics, _EARSpeechRecognition;
 
 @interface _EARSpeechRecognitionResultPackage : NSObject <NSCopying>
 {
@@ -16,8 +16,10 @@
     _Bool _isFinal;
     _EARSpeechRecognition *_recognition;
     _EARSpeechRecognition *_preITNRecognition;
+    _EARAudioAnalytics *_audioAnalytics;
 }
 
+@property(readonly, copy, nonatomic) _EARAudioAnalytics *audioAnalytics; // @synthesize audioAnalytics=_audioAnalytics;
 @property(readonly, nonatomic) _Bool isFinal; // @synthesize isFinal=_isFinal;
 @property(readonly, nonatomic) _Bool recognitionIsFormatted; // @synthesize recognitionIsFormatted=_recognitionIsFormatted;
 @property(readonly, copy, nonatomic) _EARSpeechRecognition *preITNRecognition; // @synthesize preITNRecognition=_preITNRecognition;
@@ -25,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)nBestResults;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_initWithRecognition:(id)arg1 preITNRecognition:(id)arg2 recognitionIsFormatted:(_Bool)arg3 isFinal:(_Bool)arg4 audioAnalytics:(id)arg5;
 - (id)_initWithRecognition:(id)arg1 preITNRecognition:(id)arg2 recognitionIsFormatted:(_Bool)arg3 isFinal:(_Bool)arg4;
 
 @end

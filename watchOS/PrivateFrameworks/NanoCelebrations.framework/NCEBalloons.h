@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (void)stopAnimation;
 - (void)startAnimation:(CDUnknownBlockType)arg1;
+- (_Bool)_useFeatherMask;
 - (id)assetWithName:(id)arg1;
 - (double)animateBalloonLayer:(id)arg1 withIndex:(unsigned int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

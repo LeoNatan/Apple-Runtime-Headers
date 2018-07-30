@@ -33,6 +33,8 @@
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (CDUnknownBlockType)authorizationRequestBlock;
+- (void)setAuthorizationRequestBlock:(CDUnknownBlockType)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
@@ -44,8 +46,12 @@
 - (void)authorizationStatusOnQueue:(id)arg1 result:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) int authorizationStatus;
 - (int)_authorizationStatusOnQueue;
+- (void)setHeadingOrientation:(int)arg1;
+- (int)headingOrientation;
 @property(nonatomic) BOOL matchInfoEnabled;
 @property(nonatomic) double distanceFilter;
+- (void)setActivityType:(long long)arg1;
+- (long long)activityType;
 @property(nonatomic, getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
 @property(nonatomic) double desiredAccuracy;
 @property(copy, nonatomic) NSString *effectiveBundleIdentifier;

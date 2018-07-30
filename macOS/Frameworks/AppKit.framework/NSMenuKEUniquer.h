@@ -8,6 +8,7 @@
 
 @class NSLock;
 
+__attribute__((visibility("hidden")))
 @interface NSMenuKEUniquer : NSObject
 {
     struct __CFDictionary *keyTable;

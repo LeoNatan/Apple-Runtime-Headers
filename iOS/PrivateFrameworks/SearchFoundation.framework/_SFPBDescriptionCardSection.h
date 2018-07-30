@@ -13,19 +13,6 @@
 
 @interface _SFPBDescriptionCardSection : PBCodable <_SFPBDescriptionCardSection, NSSecureCoding>
 {
-    struct {
-        unsigned int canBeHidden:1;
-        unsigned int hasTopPadding:1;
-        unsigned int hasBottomPadding:1;
-        unsigned int separatorStyle:1;
-        unsigned int titleNoWrap:1;
-        unsigned int titleWeight:1;
-        unsigned int descriptionSize:1;
-        unsigned int descriptionWeight:1;
-        unsigned int descriptionExpand:1;
-        unsigned int imageAlign:1;
-        unsigned int textAlign:1;
-    } _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;
@@ -50,8 +37,10 @@
     NSString *_attributionText;
     _SFPBURL *_attributionURL;
     _SFPBImage *_attributionGlyph;
+    NSArray *_richDescriptions;
 }
 
+@property(copy, nonatomic) NSArray *richDescriptions; // @synthesize richDescriptions=_richDescriptions;
 @property(retain, nonatomic) _SFPBImage *attributionGlyph; // @synthesize attributionGlyph=_attributionGlyph;
 @property(retain, nonatomic) _SFPBURL *attributionURL; // @synthesize attributionURL=_attributionURL;
 @property(copy, nonatomic) NSString *attributionText; // @synthesize attributionText=_attributionText;
@@ -85,29 +74,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasAttributionGlyph;
-@property(readonly, nonatomic) _Bool hasAttributionURL;
-@property(readonly, nonatomic) _Bool hasAttributionText;
-@property(readonly, nonatomic) _Bool hasTextAlign;
-@property(readonly, nonatomic) _Bool hasImageAlign;
-@property(readonly, nonatomic) _Bool hasDescriptionExpand;
-@property(readonly, nonatomic) _Bool hasDescriptionWeight;
-@property(readonly, nonatomic) _Bool hasDescriptionSize;
-@property(readonly, nonatomic) _Bool hasTitleWeight;
-@property(readonly, nonatomic) _Bool hasTitleNoWrap;
-@property(readonly, nonatomic) _Bool hasImage;
-@property(readonly, nonatomic) _Bool hasExpandText;
-@property(readonly, nonatomic) _Bool hasDescriptionText;
-@property(readonly, nonatomic) _Bool hasSubtitle;
-@property(readonly, nonatomic) _Bool hasTitle;
-@property(readonly, nonatomic) _Bool hasBackgroundColor;
-@property(readonly, nonatomic) _Bool hasSeparatorStyle;
-@property(readonly, nonatomic) _Bool hasType;
-@property(readonly, nonatomic) _Bool hasHasBottomPadding;
-@property(readonly, nonatomic) _Bool hasHasTopPadding;
-@property(readonly, nonatomic) _Bool hasCanBeHidden;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerTitle;
+- (id)richDescriptionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)richDescriptionsCount;
+- (void)addRichDescriptions:(id)arg1;
+- (void)clearRichDescriptions;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

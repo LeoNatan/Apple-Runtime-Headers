@@ -10,12 +10,17 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditPrecisionLevelContentView : UIView <PUPhotoEditLayoutStaticAdaptable>
 {
+    _Bool _hideIdentityIndicator;
     long long _layoutOrientation;
     id <PUPhotoEditPrecisionLevelContentViewDataSource> _dataSource;
+    unsigned long long _mainTickMarkInterval;
 }
 
+@property(nonatomic) unsigned long long mainTickMarkInterval; // @synthesize mainTickMarkInterval=_mainTickMarkInterval;
+@property(nonatomic) _Bool hideIdentityIndicator; // @synthesize hideIdentityIndicator=_hideIdentityIndicator;
 @property(nonatomic) __weak id <PUPhotoEditPrecisionLevelContentViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) long long layoutOrientation; // @synthesize layoutOrientation=_layoutOrientation;
 - (void).cxx_destruct;

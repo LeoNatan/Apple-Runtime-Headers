@@ -14,10 +14,12 @@
 
 @interface SPInterfaceListView : UIView <PUICTableViewDataSource, PUICTableViewDelegate, SPInterfaceActionItem>
 {
+    _Bool _inNotificationUI;
     _Bool _pagingScroll;
     _Bool _isNativeInterfaceObject;
     _Bool _isUpdatingTable;
     _Bool _tableViewDidReload;
+    _Bool _checkedIsInNotificationUI;
     _Bool _isInInterfaceBuilder;
     _Bool _enabled;
     int _index;
@@ -49,6 +51,7 @@
 
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool isInInterfaceBuilder; // @synthesize isInInterfaceBuilder=_isInInterfaceBuilder;
+@property(nonatomic) _Bool checkedIsInNotificationUI; // @synthesize checkedIsInNotificationUI=_checkedIsInNotificationUI;
 @property(nonatomic) struct CGSize cachedTableViewContentSize; // @synthesize cachedTableViewContentSize=_cachedTableViewContentSize;
 @property(nonatomic) _Bool tableViewDidReload; // @synthesize tableViewDidReload=_tableViewDidReload;
 @property(nonatomic) _Bool isUpdatingTable; // @synthesize isUpdatingTable=_isUpdatingTable;
@@ -106,13 +109,14 @@
 - (void)layoutInterfaceItem:(id)arg1;
 - (struct CGSize)sizeForInterfaceItem:(id)arg1;
 - (id)itemAtIndex:(int)arg1;
+@property(readonly, nonatomic, getter=isInNotificationUI) _Bool inNotificationUI; // @synthesize inNotificationUI=_inNotificationUI;
 - (void)contentSizeCategoryDidChange;
 - (id)companionProperty;
 - (void)setTarget:(id)arg1 forInterfaceItemAction:(SEL)arg2;
 - (id)interfaceAction;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

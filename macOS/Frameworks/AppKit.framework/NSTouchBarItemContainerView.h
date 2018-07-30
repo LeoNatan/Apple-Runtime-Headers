@@ -48,14 +48,14 @@
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)touchesBeganWithEvent:(id)arg1;
 - (struct NSEdgeInsets)alignmentRectInsets;
+@property(readonly, copy) NSString *description;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)_shouldDoLayerPerformanceUpdates;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) double itemPadding;
+@property(readonly) double preferredTrailingPosition;
 @property(readonly) Class superclass;
 
 @end

@@ -13,8 +13,8 @@
 @interface CLSAsset : CLSObject <CLSRelationable>
 {
     NSURL *_url;
+    _Bool _uploaded;
     _Bool _original;
-    _Bool __uploaded;
     NSString *_ownerPersonID;
     NSString *_brItemID;
     NSString *_brOwnerName;
@@ -26,7 +26,6 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)relations;
-@property(nonatomic) _Bool _uploaded; // @synthesize _uploaded=__uploaded;
 @property(retain, nonatomic) NSString *relativePathWithinContainer; // @synthesize relativePathWithinContainer=_relativePathWithinContainer;
 @property(retain, nonatomic) NSString *ubiquitousContainerName; // @synthesize ubiquitousContainerName=_ubiquitousContainerName;
 @property(retain, nonatomic) NSString *brShareName; // @synthesize brShareName=_brShareName;
@@ -45,9 +44,11 @@
 - (_Bool)validateObject:(id *)arg1;
 @property(nonatomic, getter=isUploaded) _Bool uploaded;
 @property(retain, nonatomic) NSURL *url;
+@property(readonly, nonatomic) NSURL *fileURL;
 - (void)mergeWithObject:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFileURL:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)_init;
 

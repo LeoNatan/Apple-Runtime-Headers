@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)identifierIsForNonGenerationalStore:(id)arg1;
+- (void)_setPersistentStoreReference:(id)arg1;
+- (id)_retainedPersistentStore;
 - (id)persistentStoreCoordinator;
 - (id)_storesForRequestRoutingFrom:(id)arg1 error:(id *)arg2;
 - (BOOL)_moor:(id)arg1 error:(id *)arg2;
@@ -29,13 +31,13 @@ __attribute__((visibility("hidden")))
 - (id)_expectedStores;
 - (id)_generationalComponentForStore:(id)arg1;
 - (id)_storeIdentifier;
-- (id)_store;
 - (id)_token;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
+- (void)_setFreeValue:(BOOL)arg1;
+- (void)_setIsUnmoored:(BOOL)arg1;
 - (BOOL)isUnmoored;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)autorelease;
 - (oneway void)release;
 - (id)retain;
 - (void)dealloc;

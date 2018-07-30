@@ -12,17 +12,15 @@
 #import "HDHealthDaemonReadyObserver.h"
 #import "HDNanoAlertSuppressionObserver.h"
 #import "NLCoachingSubmanagerDelegate.h"
-#import "NLMonthlyChallengeEngineDataSourceDelegate.h"
 #import "NLWristStateObserver.h"
 
-@class CMPedometer, FITypicalDayActivityModel, HDAchievementDataStoreV2, HDBackgroundTaskScheduler, HDCurrentActivitySummaryHelper, HDProfile, HKActivitySummary, NLBridgeSettings, NLCoachingAlertNotifier, NLCoachingPreferences, NLDataLogger, NLGizmoWristEventsManager, NLMonthlyChallengeEngine, NSCalendar, NSDate, NSDictionary, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSString;
+@class CMPedometer, FITypicalDayActivityModel, HDBackgroundTaskScheduler, HDCurrentActivitySummaryHelper, HDProfile, HKActivitySummary, NLBridgeSettings, NLCoachingAlertNotifier, NLCoachingPreferences, NLDataLogger, NLGizmoWristEventsManager, NSCalendar, NSDate, NSDictionary, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSString;
 
-@interface NLCoachingManager : NSObject <NLWristStateObserver, HDHealthDaemonReadyObserver, HDDatabaseProtectedDataObserver, HDCurrentActivitySummaryHelperObserver, HDNanoAlertSuppressionObserver, FITypicalDayActivityModelDelegate, NLMonthlyChallengeEngineDataSourceDelegate, NLCoachingSubmanagerDelegate>
+@interface NLCoachingManager : NSObject <NLWristStateObserver, HDHealthDaemonReadyObserver, HDDatabaseProtectedDataObserver, HDCurrentActivitySummaryHelperObserver, HDNanoAlertSuppressionObserver, FITypicalDayActivityModelDelegate, NLCoachingSubmanagerDelegate>
 {
     HDProfile *_profile;
     NLCoachingAlertNotifier *_alertNotifier;
     HDBackgroundTaskScheduler *_backgroundTaskScheduler;
-    HDAchievementDataStoreV2 *_achievementDataStore;
     HDCurrentActivitySummaryHelper *_currentActivitySummaryHelper;
     NLGizmoWristEventsManager *_wristEventsManager;
     NLBridgeSettings *_bridgeSettings;
@@ -39,14 +37,13 @@
     NSNumber *_recentActiveDaysOverride;
     long long _lastAggdSubmittedActivitySummaryIndex;
     _Bool _aggdActivitySetupSent;
+    NSObject<OS_dispatch_queue> *_overrideQueue;
     int _significantTimeChangeToken;
     NSDate *_mostRecentStartOfDayTasksRunDate;
     FITypicalDayActivityModel *_typicalDayModel;
-    NLMonthlyChallengeEngine *_monthlyChallengeEngine;
 }
 
 + (long long)activitySummaryIndexForAggdRingCountReportingForDate:(id)arg1;
-@property(readonly, nonatomic) NLMonthlyChallengeEngine *monthlyChallengeEngine; // @synthesize monthlyChallengeEngine=_monthlyChallengeEngine;
 @property(readonly, nonatomic) FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel=_typicalDayModel;
 - (void).cxx_destruct;
 - (id)activitySummariesFromDateComponents:(id)arg1 toDateComponents:(id)arg2;
@@ -90,8 +87,6 @@
 - (void)wristStateChangedToOffWrist;
 - (void)wristStateChangedToOnWrist;
 - (void)alertSuppressionInvalidatedForSuppressionId:(id)arg1 reason:(int)arg2;
-- (void)createMonthlyChallenge;
-- (_Bool)canCreateNewMonthlyChallenge;
 - (id)currentActivitySummary;
 - (id)coachingPreferences;
 - (id)firstOnWristTodayDate;
@@ -100,10 +95,7 @@
 - (_Bool)isTaskScheduledForSubmanager:(id)arg1 withIdentifier:(id)arg2;
 - (void)scheduleTaskForSubmanager:(id)arg1 withIdentifier:(id)arg2 atDate:(id)arg3;
 - (void)requestPollForSubmanager:(id)arg1;
-- (long long)achievementStoreValuesValidBeforeSummaryIndex;
-- (void)runAchievementManagerWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_achievementManager;
-- (unsigned int)numberOfRecentActiveDays;
+- (unsigned int)_numberOfRecentActiveDays;
 - (void)forceCoachingNowWithArguments:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pollNowWithCompletion:(CDUnknownBlockType)arg1;
 - (void)coachingAlertRequestDidCompleteWithResponse:(id)arg1;
@@ -115,7 +107,7 @@
 - (id)currentCalendar;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;
-- (id)initWithSubmanagers:(id)arg1 profile:(id)arg2 alertNotifier:(id)arg3 currentActivitySummaryHelper:(id)arg4 backgroundTaskScheduler:(id)arg5 wristEventsManager:(id)arg6 achievementDataStore:(id)arg7 bridgeSettings:(id)arg8 dataLogger:(id)arg9;
+- (id)initWithSubmanagers:(id)arg1 profile:(id)arg2 alertNotifier:(id)arg3 currentActivitySummaryHelper:(id)arg4 backgroundTaskScheduler:(id)arg5 wristEventsManager:(id)arg6 bridgeSettings:(id)arg7 dataLogger:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *description;

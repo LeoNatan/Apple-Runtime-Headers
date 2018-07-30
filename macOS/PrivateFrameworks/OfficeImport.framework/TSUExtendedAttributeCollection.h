@@ -8,12 +8,12 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface TSUExtendedAttributeCollection : NSObject
 {
     NSMutableDictionary *_attributes;
 }
 
++ (BOOL)removeExtraExtendedAttributesAtPath:(id)arg1 forIntent:(unsigned int)arg2 options:(int)arg3 error:(id *)arg4;
 - (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
@@ -21,7 +21,9 @@ __attribute__((visibility("hidden")))
 - (void)setExtendedAttributeValue:(id)arg1 forName:(id)arg2;
 - (id)extendedAttributeForName:(id)arg1;
 - (id)allAttributes;
+- (BOOL)setAttributeCollectionToPath:(id)arg1 intent:(unsigned int)arg2 options:(int)arg3 forRemoval:(BOOL)arg4 error:(id *)arg5;
 - (BOOL)setAttributeCollectionToPath:(id)arg1 intent:(unsigned int)arg2 options:(int)arg3 error:(id *)arg4;
+- (id)initWithPath:(id)arg1 forRemoval:(BOOL)arg2 options:(int)arg3 error:(id *)arg4;
 - (id)initWithPath:(id)arg1 options:(int)arg2 error:(id *)arg3;
 - (id)initWithAttributes:(id)arg1;
 - (id)init;

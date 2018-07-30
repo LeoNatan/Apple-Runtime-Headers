@@ -13,10 +13,13 @@
     NSXPCConnection *_connection;
 }
 
++ (void)terminateModalAppWithBundleIdentifier:(id)arg1;
++ (void)startModalAppWithOptions:(id)arg1;
 + (void)startModalAppWithBundleIdentifer:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)startModalAppWithBundleIdentifier:(id)arg1;
+- (void)terminateModalAppWithBundleIdentifier:(id)arg1;
+- (void)startModalAppWithOptions:(id)arg1;
 - (id)_serviceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 

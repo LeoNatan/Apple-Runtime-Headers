@@ -8,7 +8,7 @@
 
 #import "CKNanoReplyViewControllerProtocol.h"
 
-@class CKConversation, CKNanoSendController, NSString, UIViewController;
+@class CKConversation, CKNanoSendController, NSNumber, NSString, UIViewController;
 
 @interface CKNanoReplyViewController : PUICQuickboardMessageViewController <CKNanoReplyViewControllerProtocol>
 {
@@ -49,6 +49,9 @@
 - (id)initWithDelegate:(id)arg1 dictationMode:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+
+// Remaining properties
+@property(copy, nonatomic) NSNumber *messageItemListNumber;
 
 @end
 

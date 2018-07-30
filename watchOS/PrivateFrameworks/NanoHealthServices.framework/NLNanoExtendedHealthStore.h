@@ -14,29 +14,38 @@
 @interface NLNanoExtendedHealthStore : HKExtendedHealthStore <NLNanoHealthClientInterface, NLActivityAlertResponder>
 {
     id <NLActivitySedentaryAlertObserver> _sedentaryAlertObserver;
+    id <NLPredictedActivityAlertObserver> _predictedActivityAlertObserver;
     id <NLActivityCoachingAlertObserver> _coachingAlertObserver;
-    id <NLActivityAchievementDefinitionAlertObserver> _achievementDefinitionAlertObserver;
     id <NLActivityCarouselServiceProvider> _carouselServiceProvider;
 }
 
 @property(nonatomic) __weak id <NLActivityCarouselServiceProvider> carouselServiceProvider; // @synthesize carouselServiceProvider=_carouselServiceProvider;
-@property(nonatomic) __weak id <NLActivityAchievementDefinitionAlertObserver> achievementDefinitionAlertObserver; // @synthesize achievementDefinitionAlertObserver=_achievementDefinitionAlertObserver;
 @property(nonatomic) __weak id <NLActivityCoachingAlertObserver> coachingAlertObserver; // @synthesize coachingAlertObserver=_coachingAlertObserver;
+@property(nonatomic) __weak id <NLPredictedActivityAlertObserver> predictedActivityAlertObserver; // @synthesize predictedActivityAlertObserver=_predictedActivityAlertObserver;
 @property(nonatomic) __weak id <NLActivitySedentaryAlertObserver> sedentaryAlertObserver; // @synthesize sedentaryAlertObserver=_sedentaryAlertObserver;
 - (void).cxx_destruct;
 - (void)daemonDidStart;
 - (void)connectionInterrupted;
 - (id)exportedInterface;
 - (id)remoteInterface;
+- (void)hideAlertForPredictedActivityEnd:(id)arg1;
+- (void)showAlertForPredictedEndWorkoutActivity:(id)arg1;
+- (void)hideAlertForPredictedActivityStart:(id)arg1;
+- (void)showStartAlertForPredictedActivity:(id)arg1;
 - (void)fetchWellnessComplicationOnCurrentClockFaceWithCompletion:(CDUnknownBlockType)arg1;
-- (void)showAchievementDefinitionAlertForIdentifier:(id)arg1;
 - (void)showCoachingAlertRequests:(id)arg1;
 - (void)hideSedentaryActivityAlert;
 - (void)showSedentaryAlertOfType:(int)arg1 withTimeoutDate:(id)arg2 withActiveHourCount:(int)arg3 withTotalCount:(int)arg4 wheelchairUser:(_Bool)arg5 experimentInstance:(id)arg6;
-- (void)runAchievementManagerWithCompletion:(CDUnknownBlockType)arg1;
-- (void)deleteMonthlyChallengeWithCompletion:(CDUnknownBlockType)arg1;
-- (void)runMonthlyChallengeEngineWithCompletion:(CDUnknownBlockType)arg1;
-- (void)createMonthlyChallengeType:(id)arg1 goalOverride:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)didPredictActivityEndedWithIdentifier:(id)arg1 endDate:(id)arg2 activityType:(unsigned int)arg3 locationType:(int)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)setMuteForTodayPredictedActivityAlerts:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getPredictedActivitiesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)systemDidHideAlertForPredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)systemDidDenyAlertForPredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)systemDidAbandonPredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)userDidDeclinePredictedActivityWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didTransitionFromPredictedActivityToActiveWorkoutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didBeginPredictedActivityAtDate:(id)arg1 withIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)didClassifyPredictedActivityWithIdentifier:(id)arg1 asActivityType:(unsigned int)arg2 locationType:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)showTypicalDayWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopFakingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fakeFreeCalendarDateIntervals:(id)arg1 motionState:(_Bool)arg2 inCarState:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

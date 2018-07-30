@@ -9,6 +9,7 @@
 @class NPKCollectionView;
 
 @protocol NPKCollectionViewDelegate <UICollectionViewDelegate>
+- (_Bool)npkCollectionViewShouldAdjustVerticalInsets;
 - (void)npkCollectionViewShouldOverrideSetContentOffset:(struct CGPoint *)arg1;
 - (void)npkCollectionViewDidAddSubview:(NPKCollectionView *)arg1;
 @end

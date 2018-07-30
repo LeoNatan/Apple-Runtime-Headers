@@ -16,6 +16,7 @@
 - (_Bool)couldAssetReferenceAppear:(id)arg1;
 - (id)containedAssetsDataSourceAtIndexPath:(id)arg1;
 - (long long)numberOfAssetsWithMaximum:(long long)arg1;
+@property(readonly, nonatomic) NSIndexPath *lastItemIndexPath;
 @property(readonly, nonatomic) NSIndexPath *firstItemIndexPath;
 @property(readonly, nonatomic) _Bool containsMultipleAssets;
 - (_Bool)isEmpty;

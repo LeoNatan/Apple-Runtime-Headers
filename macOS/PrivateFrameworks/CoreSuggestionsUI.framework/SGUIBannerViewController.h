@@ -52,7 +52,7 @@
 - (void)suggestedEventPopoverController:(id)arg1 wantsToCommitSuggestedEvent:(id)arg2 asEvent:(id)arg3;
 - (void)cancelSuggestedEventPopoverController:(id)arg1;
 @property(readonly, copy, nonatomic) NSAttributedString *bannerAddButtonText;
-@property(readonly, copy, nonatomic) NSString *bannerDataText;
+@property(readonly, copy, nonatomic) NSAttributedString *bannerDataText;
 @property(readonly, copy, nonatomic) NSString *bannerText;
 @property(readonly, copy, nonatomic) NSImage *bannerImage;
 @property(readonly, copy, nonatomic) NSArray *currentSuggestionGroup;

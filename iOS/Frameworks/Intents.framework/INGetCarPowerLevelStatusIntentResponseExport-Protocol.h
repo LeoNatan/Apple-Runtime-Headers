@@ -10,6 +10,8 @@
 @class NSMeasurement, NSNumber;
 
 @protocol INGetCarPowerLevelStatusIntentResponseExport <NSObject, JSExport>
+@property(copy, nonatomic) NSNumber *minutesToFull;
+@property(copy, nonatomic) NSNumber *charging;
 @property(copy, nonatomic) NSMeasurement *distanceRemaining;
 @property(copy, nonatomic) NSNumber *chargePercentRemaining;
 @property(copy, nonatomic) NSNumber *fuelPercentRemaining;

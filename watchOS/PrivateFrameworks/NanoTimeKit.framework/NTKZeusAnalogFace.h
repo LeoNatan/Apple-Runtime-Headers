@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)_localizedNameOverrideForCustomEditMode:(int)arg1;
-+ (id)_defaultSelectedComplicationSlot;
-+ (id)fixedComplicationSlots;
++ (id)_localizedNameOverrideForCustomEditMode:(int)arg1 forDevice:(id)arg2;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)fixedComplicationSlotsForDevice:(id)arg1;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
 - (unsigned int)_indexOfOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (id)_optionAtIndex:(unsigned int)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;

@@ -6,11 +6,11 @@
 
 #import <Mail/MFEWSRequestOperation.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class MFEWSCopyItemsResponseOperation, NSArray, NSString;
 
-@interface MFEWSCopyItemsRequestOperation : MFEWSRequestOperation <NSCoding>
+@interface MFEWSCopyItemsRequestOperation : MFEWSRequestOperation <NSSecureCoding>
 {
     NSString *_sourceEWSFolderIdString;
     NSString *_destinationEWSFolderIdString;
@@ -18,6 +18,7 @@
     NSArray *_offlineCreatedEWSItemIdStrings;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy) NSArray *offlineCreatedEWSItemIdStrings; // @synthesize offlineCreatedEWSItemIdStrings=_offlineCreatedEWSItemIdStrings;
 @property(readonly, copy, nonatomic) NSArray *EWSItemIds; // @synthesize EWSItemIds=_EWSItemIds;
 @property(readonly, copy, nonatomic) NSString *destinationEWSFolderIdString; // @synthesize destinationEWSFolderIdString=_destinationEWSFolderIdString;

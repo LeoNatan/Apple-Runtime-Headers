@@ -43,12 +43,14 @@ __attribute__((visibility("hidden")))
 - (id)meContactIdentifiers:(id *)arg1;
 - (id)_unifiedMeContactWithKeysToFetch:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 error:(id *)arg3;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
 - (id)_unifiedContactsFromContacts:(id)arg1 unifyContactsFromMainStore:(BOOL)arg2 keysToFetch:(id)arg3 error:(id *)arg4;
 - (void)didFetchContacts:(id)arg1 forPredicate:(id)arg2 fromStore:(id)arg3 unifiedFetch:(BOOL)arg4;
 - (void)_enumerateStoresUsingBlock:(CDUnknownBlockType)arg1;
 - (id)_allStoreResultsWithError:(id *)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)requestAccessForEntityType:(long long)arg1;
+- (id)mainContactStore;
 @property(readonly, nonatomic) __weak CNContactStore *mainStore;
 - (BOOL)store:(id)arg1 supportsSelector:(SEL)arg2;
 - (id)initWithContactStores:(id)arg1;

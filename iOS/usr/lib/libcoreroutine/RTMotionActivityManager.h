@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 @class RTPlatform;
 
-@interface RTMotionActivityManager : RTNotifier
+@interface RTMotionActivityManager : RTService
 {
     RTPlatform *_platform;
 }
@@ -18,19 +18,15 @@
 + (_Bool)supportsNotificationName:(id)arg1;
 + (id)motionSettledStateToString:(unsigned long long)arg1;
 + (id)motionActivityVehicleConnectedStateToString:(unsigned long long)arg1;
-+ (id)motionActivityConfidenceToString:(unsigned long long)arg1;
-+ (id)motionActivityTypeToString:(unsigned long long)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
-- (void)_fetchRTMotionActivitiesFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)fetchRTMotionActivitiesFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)_fetchMotionActivitiesFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)fetchMotionActivitiesFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)_fetchPredominantMotionActivityTypeFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)fetchPredominantMotionActivityTypeFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)_fetchMotionActivitiesFromStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchMotionActivitiesFromStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
-- (void)_shutdown;
-- (void)shutdown;
 - (id)initWithPlatform:(id)arg1;
 - (id)init;
 

@@ -10,6 +10,7 @@
 
 @class NSArray, NSLayoutConstraint, NSString, PUAdjustmentsMode;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditLevelSlider : UIView <PUPhotoEditLayoutStaticAdaptable>
 {
     UIView *__sliderContentView;

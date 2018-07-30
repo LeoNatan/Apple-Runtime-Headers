@@ -17,7 +17,7 @@
 @property(retain) MLSVMEngine *engine; // @synthesize engine=_engine;
 - (void).cxx_destruct;
 - (id)classify:(id)arg1 options:(id)arg2 error:(id *)arg3;
-- (id)initWithEngine:(id)arg1 interface:(id)arg2 metadata:(id)arg3 error:(id *)arg4;
+- (id)initWithEngine:(id)arg1 interface:(id)arg2 metadata:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 
 @end
 

@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)_setSharedManager:(id)arg1;
 + (id)sharedManager;
 - (id)bundleWithIdentifier:(id)arg1;
 - (id)bundlesWithIdentifiers:(id)arg1;

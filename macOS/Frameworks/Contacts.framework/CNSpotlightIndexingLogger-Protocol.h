@@ -9,10 +9,12 @@
 @class CNChangeHistoryAnchor, CNChangeHistoryContactChange, CNIndexClientState, NSArray, NSError, NSException, NSString;
 
 @protocol CNSpotlightIndexingLogger <NSObject>
-- (void)didNotFinishIndexingForDeltaSync:(NSError *)arg1;
-- (void)didNotFinishIndexingForFullSync:(NSError *)arg1;
+- (void)verifiedIndexWithSummmary:(NSString *)arg1;
+- (void)didNotFinishIndexingForDeltaSyncWithError:(NSError *)arg1;
+- (void)didNotFinishIndexingForFullSyncWithError:(NSError *)arg1;
+- (void)finishedBatchIndexWithUpdateIdentifiers:(NSArray *)arg1 deleteIdentifiers:(NSArray *)arg2;
 - (void)finishedIndexingForDeltaSyncWithUpdateCount:(unsigned long long)arg1 deleteCount:(unsigned long long)arg2;
-- (void)finishedIndexingForFullSync;
+- (void)finishedIndexingForFullSyncWithCount:(unsigned long long)arg1;
 - (void)failedToCreateUnarchiverForClientStateWithError:(NSError *)arg1;
 - (void)failedToUnarchiveClientStateData:(NSException *)arg1;
 - (void)failedToDeleteAllSearchableItemsWithSpotlight:(NSError *)arg1 willRetry:(BOOL)arg2;
@@ -40,6 +42,7 @@
 - (void)deferringReindexAsFailedToPrepareForReindexing;
 - (void)willReindexItemsWithIdentifiers:(NSArray *)arg1;
 - (void)noContactChangesToIndex;
+- (void)verifyingIndex:(void (^)(void (^)(void)))arg1;
 - (void)reindexingSearchableItemsWithIdentifiers:(void (^)(void (^)(void)))arg1;
 - (void)reindexingAllSearchableItems:(void (^)(void (^)(void)))arg1;
 - (void)indexingContacts:(void (^)(void (^)(void)))arg1;

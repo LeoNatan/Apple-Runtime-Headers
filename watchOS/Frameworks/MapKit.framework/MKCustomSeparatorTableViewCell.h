@@ -6,7 +6,6 @@
 
 #import <MapKit/MKTableViewCell.h>
 
-__attribute__((visibility("hidden")))
 @interface MKCustomSeparatorTableViewCell : MKTableViewCell
 {
     float _leftSeparatorInset;

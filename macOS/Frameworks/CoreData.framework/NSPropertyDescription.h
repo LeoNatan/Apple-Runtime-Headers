@@ -36,8 +36,9 @@
         unsigned int _hasMinValueInExtraIvars:1;
         unsigned int _storeBinaryDataExternally:1;
         unsigned int _preserveValueOnDelete:1;
-        unsigned int _reservedAttributeFlagOne:1;
-        unsigned int _reservedPropertyDescription:2;
+        unsigned int _isTriggerBacked:1;
+        unsigned int _isFileBackedFuture:1;
+        unsigned int _reservedPropertyDescription:1;
     } _propertyDescriptionFlags;
     short _entitysReferenceIDForProperty;
 }
@@ -95,7 +96,9 @@
 - (void)_replaceValidationPredicates:(id)arg1 andWarnings:(id)arg2;
 - (struct _NSExtraPropertyIVars *)_extraIVars;
 - (void)_initializeExtraIVars;
+- (BOOL)_isSchemaEqual:(id)arg1;
 - (BOOL)_epsilonEquals:(id)arg1 rhs:(id)arg2 withFlags:(int)arg3;
+- (BOOL)_isFileBackedFuture;
 - (BOOL)_isTriggerBacked;
 - (BOOL)_preserveValueOnDelete;
 - (BOOL)_storeBinaryDataExternally;

@@ -15,7 +15,6 @@
 {
     NSPopover *_popover;
     NSString *_searchTerm;
-    NSString *_searchLanguage;
     NSString *_searchTermContext;
     NSString *_searchDomain;
     NSNumber *_selectionType;
@@ -36,7 +35,6 @@
 @property(copy, nonatomic) NSNumber *triggerType; // @synthesize triggerType=_triggerType;
 @property(copy, nonatomic) NSNumber *selectionType; // @synthesize selectionType=_selectionType;
 @property(copy, nonatomic) NSString *searchDomain; // @synthesize searchDomain=_searchDomain;
-@property(copy, nonatomic) NSString *searchLanguage; // @synthesize searchLanguage=_searchLanguage;
 @property(copy, nonatomic) NSString *searchTermContext; // @synthesize searchTermContext=_searchTermContext;
 @property(copy, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(retain, nonatomic) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
@@ -55,7 +53,6 @@
 - (void)loadView;
 - (void)burnViewBridge;
 - (void)commonLULookupRemoteViewControllerTeardown;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

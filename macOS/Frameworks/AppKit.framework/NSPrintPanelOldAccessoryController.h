@@ -8,6 +8,7 @@
 
 #import "NSPrintPanelAccessorizing.h"
 
+__attribute__((visibility("hidden")))
 @interface NSPrintPanelOldAccessoryController : NSViewController <NSPrintPanelAccessorizing>
 {
 }

@@ -54,7 +54,7 @@
 - (_Bool)validateOtherAttribute:(long long)arg1;
 - (id)_referencedLayoutItems;
 - (void)_accumulateReferenceLayoutItemsIntoTable:(id)arg1;
-- (id)_expressionInContext:(CDStruct_6db0658e)arg1;
+- (id)_expressionInContext:(CDStruct_1b4a36b4)arg1;
 - (int)_anchorVariableRestriction;
 - (id)_anchorVariable;
 - (id)_variableName;
@@ -68,7 +68,7 @@
 - (id)anchorWithName:(id)arg1;
 - (id)anchorWithName:(id)arg1 referenceItem:(id)arg2 symbolicAttribute:(long long)arg3;
 - (id)name;
-- (id)_expressionInDefaultContext;
+- (id)_expressionInDefaultContextWithEngine:(id)arg1;
 - (id)_constituentAnchors;
 - (id)_nearestAncestorLayoutItem;
 - (long long)_anchorType;

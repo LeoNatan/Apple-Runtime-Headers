@@ -42,6 +42,7 @@
     CDUnknownBlockType _lockedOnAnimationCompletion;
     CDUnknownBlockType _initialSyncPrepCompletion;
     CDUnknownBlockType _languageLocaleCompletion;
+    CDUnknownBlockType _prepareWatchForForcedSUCompletion;
     NSMutableDictionary *_reportMapping;
 }
 
@@ -54,6 +55,7 @@
 @property(retain, nonatomic) NSMutableDictionary *reportMapping; // @synthesize reportMapping=_reportMapping;
 @property(nonatomic) _Bool sentActivationRequest; // @synthesize sentActivationRequest=_sentActivationRequest;
 @property(nonatomic) _Bool sentSessionRequest; // @synthesize sentSessionRequest=_sentSessionRequest;
+@property(copy, nonatomic) CDUnknownBlockType prepareWatchForForcedSUCompletion; // @synthesize prepareWatchForForcedSUCompletion=_prepareWatchForForcedSUCompletion;
 @property(copy, nonatomic) CDUnknownBlockType languageLocaleCompletion; // @synthesize languageLocaleCompletion=_languageLocaleCompletion;
 @property(copy, nonatomic) CDUnknownBlockType initialSyncPrepCompletion; // @synthesize initialSyncPrepCompletion=_initialSyncPrepCompletion;
 @property(copy, nonatomic) CDUnknownBlockType lockedOnAnimationCompletion; // @synthesize lockedOnAnimationCompletion=_lockedOnAnimationCompletion;
@@ -79,6 +81,10 @@
 - (void).cxx_destruct;
 - (id)reporterForConnection:(id)arg1;
 - (void)setReporter:(id)arg1 forConnection:(id)arg2;
+- (void)watchDidPrepareForForcedSU:(id)arg1;
+- (void)tellWatchToPrepareForForcedSUWithCompletion:(CDUnknownBlockType)arg1;
+- (void)watchDidIngestWirelessCredentials:(id)arg1;
+- (void)sendDemoWatchWirelessCredentials;
 - (void)transportBecameUnreachable;
 - (void)transportBecameReachable;
 - (void)handleOfflineTermsResponse:(id)arg1;

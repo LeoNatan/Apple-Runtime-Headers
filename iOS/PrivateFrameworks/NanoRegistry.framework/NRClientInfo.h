@@ -9,19 +9,15 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSString;
+@class NSString;
 
 @interface NRClientInfo : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *_processName;
-    NSArray *_entitlements;
-    unsigned long long _lastIndexCheckin;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) unsigned long long lastIndexCheckin; // @synthesize lastIndexCheckin=_lastIndexCheckin;
-@property(retain, nonatomic) NSArray *entitlements; // @synthesize entitlements=_entitlements;
-@property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
+@property(copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;

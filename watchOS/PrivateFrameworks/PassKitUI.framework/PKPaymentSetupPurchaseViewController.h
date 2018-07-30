@@ -14,7 +14,7 @@
 #import "PKPaymentSetupViewControllerDelegate.h"
 #import "RemoteUIControllerDelegate.h"
 
-@class NSDecimalNumber, NSString, PKPaymentAuthorizationCoordinator, PKPaymentProvisioningController, PKPaymentProvisioningMethodMetadata, PKPaymentSetupProduct, PKPaymentSetupPurchaseAmountView, PKPaymentSetupPurchaseController, PKServiceProviderPurchase, RemoteUIController, UIImage, UIImageView, UILabel;
+@class NSDecimalNumber, NSString, PKPaymentAuthorizationCoordinator, PKPaymentProvisioningController, PKPaymentProvisioningMethodMetadata, PKPaymentSetupProduct, PKPaymentSetupPurchaseAmountView, PKPaymentSetupPurchaseController, PKServiceProviderPurchase, RemoteUIController, UIActivityIndicatorView, UIImage, UIImageView, UILabel;
 
 @interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupViewControllerDelegate, RemoteUIControllerDelegate, PKPaymentSetupDelegate, PKPaymentSetupRequiresPreflightProtocol>
 {
@@ -34,8 +34,10 @@
     PKServiceProviderPurchase *_purchase;
     RemoteUIController *_termsController;
     UIImage *_cardImage;
+    UIActivityIndicatorView *_activityIndicator;
 }
 
+@property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UIImage *cardImage; // @synthesize cardImage=_cardImage;
 @property(nonatomic) _Bool acceptedTerms; // @synthesize acceptedTerms=_acceptedTerms;
 @property(retain, nonatomic) RemoteUIController *termsController; // @synthesize termsController=_termsController;

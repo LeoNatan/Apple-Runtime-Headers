@@ -8,22 +8,21 @@
 
 #import "CSIndexExtensionDelegate.h"
 
-@class NSCondition, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, _MDIndexExtensionLoader;
+@class NSCondition, NSDictionary, NSObject<OS_dispatch_queue>, NSString, _MDIndexExtensionLoader;
 
 @interface _MDIndexExtensionManager : NSObject <CSIndexExtensionDelegate>
 {
-    _Bool _isUnderMemoryPressure;
     NSObject<OS_dispatch_queue> *_notifyQueue;
     _MDIndexExtensionLoader *_extensionLoader;
     NSDictionary *_indexExtensionsByBundleID;
     NSObject<OS_dispatch_queue> *_queue;
     NSCondition *_extensionsCondition;
-    NSObject<OS_dispatch_source> *_memoryStatusSource;
+    NSObject<OS_dispatch_queue> *_extensionManagerQueue;
 }
 
++ (void)setMemoryPressureStatus:(unsigned long)arg1;
 + (id)sharedManager;
-@property _Bool isUnderMemoryPressure; // @synthesize isUnderMemoryPressure=_isUnderMemoryPressure;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryStatusSource; // @synthesize memoryStatusSource=_memoryStatusSource;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *extensionManagerQueue; // @synthesize extensionManagerQueue=_extensionManagerQueue;
 @property(retain, nonatomic) NSCondition *extensionsCondition; // @synthesize extensionsCondition=_extensionsCondition;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSDictionary *indexExtensionsByBundleID; // @synthesize indexExtensionsByBundleID=_indexExtensionsByBundleID;
@@ -46,9 +45,8 @@
 - (void)_filterExtensionsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_notifyForLoadedExtensions;
 - (void)loadExtensionsSynchronously;
+- (void)buildExtensionsCache;
 - (void)loadExtensions;
-- (void)_didUpdateMemoryStatus:(unsigned long)arg1;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

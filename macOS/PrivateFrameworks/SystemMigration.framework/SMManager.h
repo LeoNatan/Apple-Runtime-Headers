@@ -97,7 +97,6 @@
 - (void)stopNetworkMigrationServer;
 - (BOOL)startNetworkMigrationServerUsingSourcePath:(id)arg1 andSecretPassword:(id)arg2;
 - (id)safeDestinationForIntendedDestination:(id)arg1 usingPather:(id)arg2;
-- (id)upgradeSIPWhitelistPaths;
 - (void)loadRootlessConfigFromRoot:(id)arg1;
 @property(readonly) NSURL *systemDefenseQuarantinePath;
 - (void)setupSystemDefenseForRequest;
@@ -147,6 +146,7 @@
 - (void)disableSpotlightIndexing;
 - (void)gatherSpotlightDebuggingInformation;
 - (void)waitForSpotlightToIndex:(CDUnknownBlockType)arg1;
+- (BOOL)spotlightStillIndexing;
 - (void)indexFileAtPath:(id)arg1;
 - (void)leaveUserHome:(id)arg1 newHome:(id)arg2;
 - (void)enterUserHome:(id)arg1 newHome:(id)arg2;

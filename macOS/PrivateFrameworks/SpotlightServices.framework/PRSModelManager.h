@@ -35,11 +35,8 @@
 @property(nonatomic) BOOL disablePolicy; // @synthesize disablePolicy=_disablePolicy;
 - (void).cxx_destruct;
 - (double)testL2WithData:(id)arg1 experimental:(BOOL)arg2;
-- (float *)computeL3ScoresForFeatures:(id)arg1 didGetServerFeatures:(BOOL)arg2;
-- (void)computeQualityScores:(float *)arg1 forScores:(float *)arg2 forFeatureCount:(unsigned long long)arg3 withContext:(id)arg4;
-- (float *)computeScoresForFeatures:(id)arg1 withBundleFeatures:(id)arg2 serverBundleFeatures:(id)arg3 usingModelContext:(id)arg4 qos:(unsigned int)arg5;
-- (float *)computeL2ScoresForVectors:(id)arg1 secondVector:(id)arg2 withQualityScores:(float *)arg3 withServerFeatures:(id)arg4 withBundleFeatures:(id)arg5 experimentalWeight1:(double)arg6 experimentalWeight2:(double)arg7 forShadow:(BOOL)arg8;
-- (id)computeFeedbackScoresForVectors:(id)arg1 withBundleFeatures:(id)arg2;
+- (float *)computeScoresForFeatures:(id)arg1 withBundleFeatures:(id)arg2 serverBundleFeatures:(id)arg3 usingModelContext:(id)arg4 qos:(unsigned int)arg5 shouldCancel:(char *)arg6;
+- (float *)computeL2ScoresForVectors:(id)arg1 secondVector:(id)arg2 withServerFeatures:(id)arg3 withBundleFeatures:(id)arg4 experimentalWeight1:(double)arg5 experimentalWeight2:(double)arg6 forShadow:(BOOL)arg7 shouldCancel:(char *)arg8;
 - (void)updateModelsAccordingToHierarchy;
 - (void)updateModelsAccordingToHierarchy:(id)arg1 updateEnabled:(BOOL)arg2 disablePendingUpdates:(BOOL)arg3;
 - (id)loadIfNecessaryModelOfResourceType:(unsigned long long)arg1 nowTime:(double)arg2 intoModelDict:(id)arg3 currentVersion:(id)arg4;
@@ -48,7 +45,6 @@
 - (void)triggerUpdate;
 - (void)deactivate;
 - (void)activate;
-- (id)getL3ModelVersion;
 - (id)getL2ModelVersion;
 - (void)dealloc;
 - (id)init;

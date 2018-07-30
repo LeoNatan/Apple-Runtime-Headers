@@ -44,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (void)_createShadowLayerIfNeededUsingDebugColors:(BOOL)arg1;
 - (void)_createAdjustedImageShadowIfNeededUsingDebugColors:(BOOL)arg1;
 - (void)_setUpImageLayer;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (void)_applyImageToLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -6,30 +6,36 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class MTAlarmManager;
+@class MTAlarm, MTAlarmManager;
 
 @interface NTKAlarmComplicationDataSource : NTKComplicationDataSource
 {
+    MTAlarm *_nextAlarm;
+    struct NSNumber *_timerToken;
     MTAlarmManager *_alarmManager;
 }
 
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 - (void).cxx_destruct;
-- (void)_nextAlarmDidChange:(id)arg1;
+- (void)_alarmStoreChangedNotification:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;
-- (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (id)complicationApplicationIdentifier;
+- (id)_alarmComplicationFuture;
+- (id)_offAlarmEntry;
+- (id)_activeAlarmEntryForAlarm:(id)arg1;
+- (id)_noAlarmEntry;
+- (id)_currentTimelineEntry;
 - (void)resume;
 - (void)pause;
-- (id)_currentTimelineEntry;
+- (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (id)complicationApplicationIdentifier;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (id)currentSwitcherTemplate;
-- (id)_getTimelineEntriesFromAlarms:(id)arg1 date:(id)arg2 addEndPoint:(_Bool)arg3;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 @end
 

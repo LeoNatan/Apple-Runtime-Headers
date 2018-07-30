@@ -25,6 +25,7 @@
     NSString *_termsIdentifier;
     NSURL *_termsURL;
     NSURL *_associatedPassURL;
+    long long _pendingPaymentCount;
     NSArray *_supportedFeatureDescriptors;
     NSString *_associatedPassSerialNumber;
     NSString *_associatedPassTypeIdentifier;
@@ -36,6 +37,7 @@
 @property(nonatomic) _Bool termsAcceptanceRequired; // @synthesize termsAcceptanceRequired=_termsAcceptanceRequired;
 @property(nonatomic) _Bool identityVerificationRequired; // @synthesize identityVerificationRequired=_identityVerificationRequired;
 @property(copy, nonatomic) NSArray *supportedFeatureDescriptors; // @synthesize supportedFeatureDescriptors=_supportedFeatureDescriptors;
+@property(nonatomic) long long pendingPaymentCount; // @synthesize pendingPaymentCount=_pendingPaymentCount;
 @property(copy, nonatomic) NSURL *associatedPassURL; // @synthesize associatedPassURL=_associatedPassURL;
 @property(copy, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
 @property(copy, nonatomic) NSString *termsIdentifier; // @synthesize termsIdentifier=_termsIdentifier;
@@ -58,6 +60,8 @@
 @property(readonly, copy, nonatomic) NSArray *defaultSuggestions;
 - (id)initWithDictionary:(id)arg1 lastUpdated:(id)arg2;
 - (id)_featureWithIdentifier:(id)arg1;
+- (id)cardBalancePromotionFeatureDescriptor;
+- (_Bool)supportsCardBalancePromotion;
 - (id)requestFromUserFeatureDescriptor;
 - (_Bool)supportsRequestFromUser;
 - (id)sendToUserFeatureDescriptor;

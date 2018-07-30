@@ -16,6 +16,7 @@
     struct CGSize _trackSize;
 }
 
++ (void)_setupCrownIndicatorSpec;
 @property(nonatomic) struct CGSize trackSize; // @synthesize trackSize=_trackSize;
 @property(nonatomic) _Bool usingCrown; // @synthesize usingCrown=_usingCrown;
 @property(nonatomic) float visibleLength; // @synthesize visibleLength=_visibleLength;

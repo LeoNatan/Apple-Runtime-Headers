@@ -49,6 +49,8 @@
 - (void)_setNeedsUpdate;
 - (BOOL)_needsUpdate;
 - (void)_updateIfNeeded;
+- (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
+- (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)isFlipped;
 - (void)layout;
 - (struct NSEdgeInsets)alignmentRectInsets;

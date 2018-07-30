@@ -15,15 +15,14 @@
 }
 
 + (_Bool)isOnCallOfSubType:(struct __CFString *)arg1;
-+ (void)setVoiceEnabled:(_Bool)arg1;
-+ (_Bool)shouldShowVoiceOptions;
-+ (_Bool)isProvisioning;
-+ (unsigned long long)voiceAvailability;
-+ (_Bool)isVoiceEnabled;
-+ (void)_executeCTConnectionDependentBlock:(CDUnknownBlockType)arg1;
++ (void)setVoice:(id)arg1 enabled:(_Bool)arg2;
++ (_Bool)shouldShowVoiceOptions:(id)arg1;
++ (_Bool)isProvisioning:(id)arg1;
++ (unsigned long long)voiceAvailability:(id)arg1;
++ (_Bool)isVoiceEnabled:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (_Bool)presentOnCallAlertIfNeededForService:(unsigned long long)arg1 okayCompletion:(CDUnknownBlockType)arg2;
-- (void)presentCallCarrierAlert;
+- (void)presentCallCarrierAlert:(id)arg1;
 - (void)updateProvisioning;
 - (void)listItemSelected:(id)arg1;
 - (id)specifiers;

@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)openNode;
 - (void)didAddSubview:(id)arg1;
-- (BOOL)isOpaque;
 - (void)prepareForReuse;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

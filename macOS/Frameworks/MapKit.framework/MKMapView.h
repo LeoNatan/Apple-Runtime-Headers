@@ -21,12 +21,12 @@
 #import "NSGestureRecognizerDelegate.h"
 #import "VKMapViewDelegate.h"
 
-@class CALayer, CLLocation, GEOMapRegion, GEOResourceManifestConfiguration, MKAccessibilityItem, MKAnnotationContainerView, MKAnnotationView, MKAttributionLabel, MKCompassView, MKLabelMarker, MKMapAnnotationManager, MKMapCamera, MKMapGestureController, MKMapViewInternal, MKOverlayContainerView, MKRotationFilter, MKScaleView, MKUserLocation, NSArray, NSClickGestureRecognizer, NSDictionary, NSImageView, NSLayoutConstraint, NSLayoutGuide, NSOrderedSet, NSSegmentedControl, NSString, VKMapView, VKNavContext, VKRouteContext, VKVenueBuildingFeatureMarker, VKVenueFeatureMarker, _MKAnnotationDragGestureRecognizer, _MKCustomFeatureStore, _MKEnvironmentLabel;
+@class CALayer, CLLocation, GEOMapRegion, GEOResourceManifestConfiguration, MKAccessibilityItem, MKAnnotationContainerView, MKAnnotationManager, MKAnnotationView, MKAttributionLabel, MKCompassView, MKLabelMarker, MKMapCamera, MKMapGestureController, MKMapViewInternal, MKOverlayContainerView, MKRotationFilter, MKScaleView, MKUserLocation, NSAppearance, NSArray, NSClickGestureRecognizer, NSDictionary, NSImageView, NSLayoutConstraint, NSLayoutGuide, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSOrderedSet, NSString, VKMapView, VKNavContext, VKRouteContext, VKVenueBuildingFeatureMarker, VKVenueFeatureMarker, _MKAnnotationDragGestureRecognizer, _MKCustomFeatureStore, _MKEnvironmentLabel;
 
-@interface MKMapView : NSView <MKOverlayContainerViewDelegate, MKMouseOverLabelRecognizerDelegate, MKMouseOverLabelTarget, MKAnnotationContainerViewDelegate, VKMapViewDelegate, MKMapGestureControllerDelegate, MKAnnotationMarkerContainer, MKAnnotationManagerDelegate, GEOLogContextDelegate, NSGestureRecognizerDelegate, MKRotationFilterDelegate, CALayerDelegate, GEOResourceManifestTileGroupObserver, NSCoding>
+@interface MKMapView : NSView <MKOverlayContainerViewDelegate, MKMouseOverLabelRecognizerDelegate, MKMouseOverLabelTarget, VKMapViewDelegate, MKMapGestureControllerDelegate, MKAnnotationMarkerContainer, MKAnnotationManagerDelegate, GEOLogContextDelegate, MKRotationFilterDelegate, NSGestureRecognizerDelegate, CALayerDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, NSCoding>
 {
     MKMapViewInternal *_internal;
-    MKMapAnnotationManager *_annotationManager;
+    MKAnnotationManager *_annotationManager;
     MKAnnotationContainerView *_annotationContainer;
     MKAttributionLabel *_attributionLabel;
     CDUnknownBlockType _annotationRectTest;
@@ -62,7 +62,6 @@
     double _verticalYawOverride;
     int _attributionCorner;
     struct CGPoint _pointInMapOnMouseDown;
-    MKRotationFilter *_rotationFilter;
     BOOL _showsZoomControls;
     long long _overlaysWritingDirection;
     BOOL _isInitializing;
@@ -74,13 +73,14 @@
     BOOL _wantsAccessibilityUpdates;
     MKAccessibilityItem *_focusedAccessibilityItem;
     MKLabelMarker *_selectedLabelMarker;
-    NSSegmentedControl *_zoomButtons;
+    NSView *_zoomButtons;
     NSView *_settingsView;
     BOOL _showsAboutMapInContextualMenu;
     double _mapModeStartTime;
     BOOL _continueToRenderWhenOccluded;
     VKMapView *_mapLayer;
     BOOL _hidesAllUIOnMap;
+    MKRotationFilter *_rotationFilter;
     struct {
         unsigned int changingRegion:1;
         unsigned int draggingInterrupted:1;
@@ -98,7 +98,7 @@
         unsigned int isChangingViewSize:1;
         unsigned int isChangingEdgeInsets:1;
         unsigned int showsAttribution:1;
-        unsigned int showsAttributionBadge:1;
+        unsigned int canShowAttributionBadge:1;
         unsigned int showsVenues:1;
         unsigned int rotating:1;
         unsigned int pitching:1;
@@ -134,14 +134,19 @@
     NSLayoutConstraint *_edgeInsetsLeftConstraint;
     NSLayoutConstraint *_edgeInsetsRightConstraint;
     NSLayoutConstraint *_edgeInsetsBottomConstraint;
+    unsigned long long _suspendPropagatingEdgeInsetsCount;
     BOOL _automaticallySnapsToNorth;
     BOOL _forceLayoutOnBoundsChange;
     BOOL _hasPendingEdgeInsetsChange;
     long long _originalLoopRate;
     long long _preGesturingLoopRate;
+    NSObject<OS_dispatch_group> *_calloutShowAnimationGroup;
     NSArray *_mouseOverLabelRecognizers;
     long long _mouseOverFeedbackState;
-    BOOL _useBalloonCalloutsForLabels;
+    NSObject<OS_dispatch_queue> *_lastEffectiveAppearanceIsolationQueue;
+    NSAppearance *_lastEffectiveAppearance;
+    int _appearanceNotificationToken;
+    NSAppearance *_cachedMapsAppearance;
     _MKCustomFeatureStore *_annotationsCustomFeatureStore;
     double _lastYaw;
     BOOL _lastPossiblyVisible;
@@ -165,7 +170,6 @@
 + (CDStruct_02837cd9)_mapRectThatFitsViewBounds:(struct CGRect)arg1 mapRect:(CDStruct_02837cd9)arg2 viewInsets:(struct NSEdgeInsets)arg3 edgePadding:(struct NSEdgeInsets)arg4 minZoomLevel:(double)arg5 maxZoomLevel:(double)arg6 snapToZoomLevel:(BOOL)arg7;
 + (CDStruct_b7cb895d)_regionThatFitsMapType:(unsigned long long)arg1 viewSize:(struct CGSize)arg2 viewInsets:(struct NSEdgeInsets)arg3 edgePadding:(struct NSEdgeInsets)arg4 region:(CDStruct_b7cb895d)arg5 minZoomLevel:(double)arg6 maxZoomLevel:(double)arg7 snapToZoomLevel:(BOOL)arg8;
 @property(nonatomic, getter=_currentFlyoverAnimationID, setter=_setCurrentFlyoverAnimationID:) unsigned long long currentFlyoverAnimationID; // @synthesize currentFlyoverAnimationID=_currentFlyoverAnimationID;
-@property(nonatomic, getter=_useBalloonCalloutsForLabels, setter=_setUseBalloonCalloutsForLabels:) BOOL useBalloonCalloutsForLabels; // @synthesize useBalloonCalloutsForLabels=_useBalloonCalloutsForLabels;
 @property(nonatomic, getter=_interactionMode, setter=_setInteractionMode:) long long interactionMode; // @synthesize interactionMode=_interactionMode;
 @property(retain, nonatomic) MKAccessibilityItem *focusedAccessibilityItem; // @synthesize focusedAccessibilityItem;
 @property BOOL wantsAccessibilityUpdates; // @synthesize wantsAccessibilityUpdates;
@@ -173,8 +177,9 @@
 @property(nonatomic) long long overlaysWritingDirection; // @synthesize overlaysWritingDirection=_overlaysWritingDirection;
 @property(nonatomic, getter=_isAttributionBadgeClickable, setter=_setAttributionBadgeClickable:) BOOL attributionBadgeClickable; // @synthesize attributionBadgeClickable=_attributionBadgeClickable;
 @property(nonatomic) BOOL showsAboutMapInContextualMenu; // @synthesize showsAboutMapInContextualMenu=_showsAboutMapInContextualMenu;
-@property(retain, nonatomic) NSSegmentedControl *zoomButtons; // @synthesize zoomButtons=_zoomButtons;
+@property(retain, nonatomic) NSView *zoomButtons; // @synthesize zoomButtons=_zoomButtons;
 @property(retain) NSOrderedSet *storedAccessibilityItems; // @synthesize storedAccessibilityItems=_storedAccessibilityItems;
+@property(readonly, nonatomic, getter=_calloutShowAnimationGroup) NSObject<OS_dispatch_group> *calloutShowAnimationGroup; // @synthesize calloutShowAnimationGroup=_calloutShowAnimationGroup;
 - (void).cxx_destruct;
 - (id)logContextForLogMsgEvent:(id)arg1;
 - (int)currentMapViewTargetForAnalytics;
@@ -215,7 +220,7 @@
 - (CDStruct_02837cd9)_mapRectWithFraction:(double)arg1 ofVisible:(CDStruct_02837cd9)arg2;
 - (void)moveAnnotationRepresentation:(id)arg1 fromCoordinate:(struct CLLocationCoordinate2D)arg2 animated:(BOOL)arg3 duration:(double)arg4;
 - (void)deselectAnnotationRepresentation:(id)arg1 animated:(BOOL)arg2;
-- (void)selectAnnotationRepresentation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect)arg3;
+- (void)selectAnnotationRepresentation:(id)arg1 animated:(BOOL)arg2;
 - (void)removeAnnotationRepresentation:(id)arg1;
 - (void)addAnnotationRepresentation:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)_addAnnotationsCustomFeatureStoreIfNeeded;
@@ -248,6 +253,8 @@
 @property(readonly, nonatomic) VKVenueFeatureMarker *venueWithFocus;
 @property(nonatomic, getter=_edgeInsets, setter=_setEdgeInsets:) struct NSEdgeInsets edgeInsets;
 - (void)_setEdgeInsets:(struct NSEdgeInsets)arg1 explicit:(BOOL)arg2;
+- (void)_resumePropagatingEdgeInsets;
+- (void)_suspendPropagatingEdgeInsets;
 @property(readonly, nonatomic, getter=_edgeInsetsLayoutGuide) NSLayoutGuide *edgeInsetsLayoutGuide;
 @property(nonatomic, getter=_labelEdgeInsets, setter=_setLabelEdgeInsets:) struct NSEdgeInsets labelEdgeInsets;
 - (void)updateLayoutGuides;
@@ -330,13 +337,13 @@
 - (void)_addAnnotation:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2;
+- (void)_selectAnnotation:(id)arg1 animated:(BOOL)arg2;
 - (void)_selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect)arg3;
 - (id)_labelMarkerForCustomFeatureAnnotation:(id)arg1;
 - (id)_labelMarkerAtPoint:(struct CGPoint)arg1;
 - (void)_deselectLabelMarkerAnimated:(BOOL)arg1;
 @property(readonly, retain, nonatomic) MKLabelMarker *selectedLabelMarker;
 - (void)selectLabelMarker:(id)arg1 animated:(BOOL)arg2;
-- (void)selectLabelMarker:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect)arg3;
 - (void)deselectAllMarkersAndAnnotationViews;
 - (void)setHighlightedTransitLabelMarker:(id)arg1;
 @property(nonatomic, getter=_canSelectAllLabels, setter=_setCanSelectAllLabels:) BOOL canSelectAllLabels;
@@ -359,7 +366,7 @@
 - (void)annotationContainerDidFinishMapsTransitionExpanding:(id)arg1;
 - (void)annotationContainerDidAnimateBubble:(id)arg1;
 - (void)annotationContainerWillAnimateBubble:(id)arg1;
-- (void)annotationContainer:(id)arg1 requestRemovingClusterAnnotationView:(id)arg2;
+- (void)annotationContainer:(id)arg1 requestRemovingClusterAnnotationView:(id)arg2 updateVisible:(BOOL)arg3;
 - (id)annotationContainer:(id)arg1 requestAddingClusterForAnnotationViews:(id)arg2;
 - (void)annotationContainer:(id)arg1 scrollToRevealCalloutWithOffset:(struct CGPoint)arg2 annotationCoordinate:(struct CLLocationCoordinate2D)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)annotationContainerShouldAlignToPixels:(id)arg1;
@@ -435,9 +442,10 @@
 @property(retain, nonatomic) NSView *settingsView;
 - (void)_updateZoomControlsVisiblility;
 - (void)zoomControlSegmentPressed:(id)arg1;
-- (id)makeZoomButtonsIfNeeded;
+- (void)makeZoomButtonsIfNeeded;
 @property(nonatomic) BOOL showsZoomControls;
 - (void)_handleClickOnCompass:(id)arg1;
+- (void)_updateCompassViewPitch;
 - (void)_updateCompassVisibility;
 - (id)compass;
 - (id)compassView;
@@ -447,7 +455,6 @@
 - (void)_showOrHideScaleIfNecessary:(BOOL)arg1;
 - (void)_updateScale;
 - (id)scaleView;
-- (BOOL)drawsBlackOnWhiteScale;
 @property(nonatomic, getter=_showsScaleDuringZoom, setter=_setShowsScaleDuringZoom:) BOOL showsScaleDuringZoom;
 @property(nonatomic) BOOL showsScale;
 - (void)_sizeDidChangeWithCenterCoordinate:(struct CLLocationCoordinate2D)arg1;
@@ -539,6 +546,9 @@
 - (void)_setMapDisplayStyle:(CDStruct_51745937)arg1;
 - (CDStruct_51745937)_mapDisplayStyle;
 @property(nonatomic, getter=_showsNightMode, setter=_setShowsNightMode:) BOOL showsNightMode;
+- (void)_updateSkyglowAppearance;
+- (id)_preferredAppearance;
+- (void)_updateCachedMapsAppearance;
 - (void)_setMapType:(unsigned long long)arg1 onInit:(BOOL)arg2 animated:(BOOL)arg3 forceSetting:(BOOL)arg4;
 - (void)_setMapType:(unsigned long long)arg1 onInit:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)_setMapType:(unsigned long long)arg1 animated:(BOOL)arg2;
@@ -573,13 +583,17 @@
 - (void)_updateAttribution;
 @property(nonatomic) int attributionCorner;
 - (id)_mapAttribution;
-@property(nonatomic) BOOL showsAttributionBadge;
+@property(readonly, nonatomic, getter=_isShowingAttributionBadge) BOOL showingAttributionBadge;
+@property(nonatomic) BOOL canShowAttributionBadge;
 @property(nonatomic) BOOL showsAttribution;
 - (id)seamlessOpeningURLForMapItems:(id)arg1 launchOptions:(id)arg2;
 - (BOOL)restoreViewportFromDictionary:(id)arg1;
 - (id)viewportDictionary;
+- (void)_forceManifestUpdateIfNecessary;
 @property(retain, nonatomic, getter=_additionalManifestConfiguration, setter=_setAdditionalManifestConfiguration:) GEOResourceManifestConfiguration *additionalManifestConfiguration;
 @property(readonly, nonatomic, getter=_mapLayer) VKMapView *mapLayer;
+- (void)_withEffectiveAppearance:(CDUnknownBlockType)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 @property(nonatomic, getter=_safeDelegate, setter=_setSafeDelegate:) __weak id <MKMapViewDelegate> _safeDelegate;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -587,6 +601,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)_initWithFrame:(struct CGRect)arg1 gestureRecognizerHostView:(id)arg2 showsAttribution:(BOOL)arg3;
 - (id)_commonInitFromIB:(BOOL)arg1 gestureRecognizerHostView:(id)arg2 showsAttribution:(BOOL)arg3;
+@property(nonatomic, getter=_useBalloonCalloutsForLabels, setter=_setUseBalloonCalloutsForLabels:) BOOL useBalloonCalloutsForLabels;
 - (void)_snapToNorthIfNecessary;
 - (void)_updateCameraState;
 - (void)_updateFromCamera:(id)arg1;
@@ -648,6 +663,7 @@
 @property(readonly, nonatomic, getter=_detailedDescriptionDictionaryRepresentation) NSDictionary *detailedDescriptionDictionaryRepresentation;
 @property(readonly, nonatomic, getter=_detailedDescription) NSString *detailedDescription;
 @property(readonly, nonatomic, getter=_visibleTileSets) NSArray *visibleTileSets;
+- (void)_invalidateAllOverlayRenderers;
 - (id)vk_mapLayer;
 - (void)overlayContainerAddedDrawables:(id)arg1;
 - (id)createDrawableForOverlay:(id)arg1;
@@ -683,6 +699,7 @@
 - (BOOL)accessibilityIsIgnored;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
+- (void)_addOverlayButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 - (double)_distanceFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 fromView:(id)arg3 withPrecision:(long long)arg4;
 - (struct CGRect)_convertMapRect:(CDStruct_02837cd9)arg1 toRectToView:(id)arg2;
 - (CDStruct_02837cd9)_convertRect:(struct CGRect)arg1 toMapRectFromView:(id)arg2;
@@ -700,6 +717,7 @@
 - (void)_setRouteContextForRoutes:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
 - (void)_setRouteContextForRoute:(id)arg1;
 - (id)_selectedTransitLineIDs;
+- (BOOL)_hasSelectedTransitLines;
 - (void)_deselectTransitLineMarker;
 - (void)_selectTransitLineMarkerWithIdentifier:(id)arg1;
 - (void)_selectTransitLineMarker:(id)arg1;

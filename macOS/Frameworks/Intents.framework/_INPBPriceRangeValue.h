@@ -7,37 +7,40 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPriceRangeValue.h"
 
-@class NSString, PBUnknownFields, _INPBDecimalNumberValue, _INPBValueMetadata;
+@class NSString, _INPBDecimalNumberValue, _INPBValueMetadata;
 
-@interface _INPBPriceRangeValue : PBCodable <NSCopying>
+@interface _INPBPriceRangeValue : PBCodable <_INPBPriceRangeValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     NSString *_currencyCode;
     _INPBDecimalNumberValue *_maximumPrice;
     _INPBDecimalNumberValue *_minimumPrice;
     _INPBValueMetadata *_valueMetadata;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
-@property(retain, nonatomic) _INPBDecimalNumberValue *maximumPrice; // @synthesize maximumPrice=_maximumPrice;
-@property(retain, nonatomic) _INPBDecimalNumberValue *minimumPrice; // @synthesize minimumPrice=_minimumPrice;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
+@property(retain, nonatomic) _INPBDecimalNumberValue *minimumPrice; // @synthesize minimumPrice=_minimumPrice;
+@property(retain, nonatomic) _INPBDecimalNumberValue *maximumPrice; // @synthesize maximumPrice=_maximumPrice;
+@property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasCurrencyCode;
-@property(readonly, nonatomic) BOOL hasMaximumPrice;
-@property(readonly, nonatomic) BOOL hasMinimumPrice;
 @property(readonly, nonatomic) BOOL hasValueMetadata;
+@property(readonly, nonatomic) BOOL hasMinimumPrice;
+@property(readonly, nonatomic) BOOL hasMaximumPrice;
+@property(readonly, nonatomic) BOOL hasCurrencyCode;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

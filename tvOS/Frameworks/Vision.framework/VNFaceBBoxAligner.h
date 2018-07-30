@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface VNFaceBBoxAligner : VNDetector
 {
     struct shared_ptr<vision::mod::FaceBoxPoseAligner<signed char>> mFaceBoxPoseAlignerImpl;
-    _Bool mModelFilesWereMemmapped;
+    _Bool modelFilesWereMemmapped;
     id <VNModelFile> mFaceBoxAlignerModelFileHandle;
 }
 
@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)processWithOptions:(id)arg1 warningRecorder:(id)arg2 error:(id *)arg3;
-- (void)dumpDebugIntermediatesWithImageBuffer:(id)arg1 lumaIntermediate:(struct __CVBuffer *)arg2 rawBBoxInLumaIntermediateCoordinates:(struct _Geometry2D_rect2D_)arg3 alignedBBoxInLumaIntermediateCoordinates:(struct _Geometry2D_rect2D_)arg4 rotationAngle:(float)arg5;
+- (void)dumpDebugIntermediatesWithImageBuffer:(id)arg1 lumaIntermediate:(struct __CVBuffer *)arg2 rawBBoxInLumaIntermediateCoordinates:(struct _Geometry2D_rect2D_)arg3 alignedBBoxInLumaIntermediateCoordinates:(struct _Geometry2D_rect2D_)arg4 meanShapeInLumaIntermediateCoordinates:(const vector_09a306ff *)arg5 rotationAngle:(float)arg6;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1 error:(id *)arg2;
+- (_Bool)completeInitializationAndReturnError:(id *)arg1;
 
 @end
 

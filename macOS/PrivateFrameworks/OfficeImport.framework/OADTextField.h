@@ -8,20 +8,19 @@
 
 @class NSString, OADParagraphProperties;
 
-__attribute__((visibility("hidden")))
 @interface OADTextField : OADTextRun
 {
     NSString *mText;
     OADParagraphProperties *mParagraphProperties;
 }
 
+- (void).cxx_destruct;
 - (void)removeUnnecessaryOverrides;
 - (void)setText:(id)arg1;
 - (id)text;
 - (id)paragraphProperties;
 - (unsigned long long)characterCount;
 - (BOOL)isEmpty;
-- (void)dealloc;
 - (id)init;
 
 @end

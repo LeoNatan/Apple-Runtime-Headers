@@ -27,5 +27,6 @@
 - (UIImage *)statusBarAppContextNavigationImage;
 - (_Bool)statusBarAppContextIsTitleInteractive;
 - (PUICApplicationStatusBarItem *)dataAsApplicationStatusBarItem;
+- (float)statusBarAppContextTitleInset;
 @end
 

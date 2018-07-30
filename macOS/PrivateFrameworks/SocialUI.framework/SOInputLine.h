@@ -36,8 +36,6 @@
     NSFont *_lastUsedSubstitutedFont;
     NSString *_placeholderText;
     NSNumber *_forcedMinimumHeight;
-    NSColor *_transferTextColor;
-    NSColor *_transferBackgroundColor;
     NSView *_keyForwardingView;
     NSMenuItem *_substituteEmojiMenuItem;
     double _lastChangedTime;
@@ -59,8 +57,6 @@
 @property(nonatomic, getter=isAutomaticEmojiSubstitutionAllowed) BOOL automaticEmojiSubstitutionAllowed; // @synthesize automaticEmojiSubstitutionAllowed=_automaticEmojiSubstitutionAllowed;
 @property(retain, nonatomic) NSMenuItem *substituteEmojiMenuItem; // @synthesize substituteEmojiMenuItem=_substituteEmojiMenuItem;
 @property(retain) NSView *keyForwardingView; // @synthesize keyForwardingView=_keyForwardingView;
-@property(retain, nonatomic) NSColor *transferBackgroundColor; // @synthesize transferBackgroundColor=_transferBackgroundColor;
-@property(retain, nonatomic) NSColor *transferTextColor; // @synthesize transferTextColor=_transferTextColor;
 @property(retain, nonatomic) NSNumber *forcedMinimumHeight; // @synthesize forcedMinimumHeight=_forcedMinimumHeight;
 @property(retain, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
 @property(retain, nonatomic) NSFont *lastUsedSubstitutedFont; // @synthesize lastUsedSubstitutedFont=_lastUsedSubstitutedFont;
@@ -176,8 +172,11 @@
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (BOOL)_applyDragAndDropFormatting:(id)arg1;
 - (void)_commonSOInputLineInit;
+- (void)setToDefaultAppearance;
 - (void)awakeFromNib;
 - (unsigned long long)validModesForFontPanel:(id)arg1;
+@property(readonly, nonatomic) NSColor *transferBackgroundColor;
+@property(readonly, nonatomic) NSColor *transferTextColor;
 - (id)currentFont;
 @property(retain, nonatomic) NSFont *defaultFont; // @synthesize defaultFont=_defaultFont;
 - (void)endPreviewPanelControl:(id)arg1;

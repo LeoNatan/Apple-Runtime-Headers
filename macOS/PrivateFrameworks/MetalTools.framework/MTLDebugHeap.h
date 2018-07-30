@@ -28,6 +28,7 @@
 - (void)addResourceToHistory:(id)arg1 madeAliasable:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithHeap:(id)arg1 device:(id)arg2;
+- (void)validateHeapTextureUsage:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)validateHeapResourceOptions:(unsigned long long)arg1 isTexture:(BOOL)arg2 isIOSurface:(BOOL)arg3;
 
 @end

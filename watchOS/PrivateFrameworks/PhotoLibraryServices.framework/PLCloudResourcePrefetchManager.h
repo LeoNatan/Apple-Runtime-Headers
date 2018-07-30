@@ -22,10 +22,12 @@
 
 + (id)_orderedPrefetchConditionStringsOnAssets;
 + (id)_originalResourceTypes;
+- (void).cxx_destruct;
 - (void)_resourcesToPrefetchWithPredicates:(id)arg1 budget:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_resourcesWithPredicate:(id)arg1 limit:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_predicatesForNonThumbnails;
 - (id)_predicateForKeyFacePrefetching;
+- (id)_predicateToPrefetchSuggestions:(id)arg1;
 - (id)_predicateToPrefetchMemories:(id)arg1;
 - (id)_resourcesToPrefetchForAsset:(id)arg1;
 - (id)_prefetchResourceForAsset:(id)arg1 inResourceTypes:(id)arg2;
@@ -37,6 +39,7 @@
 - (id)_predicateForImageResourcePixelsLessOrEqual:(int)arg1;
 - (id)_irisConditionString;
 - (id)_missingLocalOriginalConditionString;
+- (id)_excludeMomentShareAssetsString;
 - (id)_missingThumbnailConditionString;
 - (id)_resourcePredicateForCPLResourceType:(unsigned int)arg1 additionalResourcePredicates:(id)arg2;
 - (id)_assetPredicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
@@ -45,7 +48,7 @@
 - (long long)diskSpaceBudgetForThumbnails;
 - (void)_handlePrefetchError:(id)arg1 forPLCloudResourceWithObjectID:(id)arg2;
 - (void)_incrementPrefetchCountForPLCloudResources:(id)arg1;
-- (void)_prefetchResources:(id)arg1 shouldAutoPefetchNextBatch:(_Bool)arg2;
+- (void)_prefetchResources:(id)arg1 shouldAutoPefetchNextBatch:(_Bool)arg2 prefetchSignpostId:(unsigned long long)arg3;
 - (void)_startPrefetchNextBatch;
 - (void)_writeDownloadFinishedMarkerIfNeeded;
 - (_Bool)_canPrefetch;
@@ -63,6 +66,8 @@
 - (void)dealloc;
 - (id)initWithCPLManager:(id)arg1 pruneManager:(id)arg2;
 - (id)init;
+- (id)_nrm_assetPredicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
+- (id)_nrm_masterPredicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 
 @end
 

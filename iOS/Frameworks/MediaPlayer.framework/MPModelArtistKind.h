@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)humanDescription;
 - (shared_ptr_cf7b8a22)representedSearchScopePredicate;
 - (void)applyToView:(shared_ptr_5c01893c)arg1 withContext:(id)arg2;
 

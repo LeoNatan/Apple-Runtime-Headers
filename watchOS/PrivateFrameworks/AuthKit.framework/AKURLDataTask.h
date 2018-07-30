@@ -27,6 +27,7 @@
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+- (id)description;
 - (void)_completeWithError:(id)arg1;
 
 @end

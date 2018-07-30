@@ -6,27 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSData, NSDictionary, NSString, _CPStruct;
+@class NSData, NSDictionary, NSString, _CPNetworkTimingData;
 
 @protocol _CPEndNetworkSearchFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasPartialClientIp;
+@property(retain, nonatomic) _CPNetworkTimingData *timingData;
 @property(copy, nonatomic) NSString *partialClientIp;
-@property(readonly, nonatomic) BOOL hasDuration;
 @property(nonatomic) double duration;
-@property(readonly, nonatomic) BOOL hasFbq;
 @property(copy, nonatomic) NSString *fbq;
-@property(readonly, nonatomic) BOOL hasParsecStatus;
 @property(copy, nonatomic) NSString *parsecStatus;
-@property(readonly, nonatomic) BOOL hasUuid;
 @property(copy, nonatomic) NSString *uuid;
-@property(readonly, nonatomic) BOOL hasNetworkTimingData;
-@property(retain, nonatomic) _CPStruct *networkTimingData;
-@property(readonly, nonatomic) BOOL hasStatusCode;
 @property(nonatomic) int statusCode;
-@property(readonly, nonatomic) BOOL hasResponseSize;
 @property(nonatomic) long long responseSize;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

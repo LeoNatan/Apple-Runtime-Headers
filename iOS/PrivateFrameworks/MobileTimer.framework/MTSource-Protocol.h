@@ -10,5 +10,10 @@
 
 @protocol MTSource <NSObject>
 - (NSString *)sourceIdentifier;
+
+@optional
+- (_Bool)dontNotify;
+- (_Bool)donatesIntent;
+- (_Bool)isFromOtherDevice;
 @end
 

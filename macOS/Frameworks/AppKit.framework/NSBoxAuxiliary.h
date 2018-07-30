@@ -8,13 +8,19 @@
 
 @class NSColor;
 
+__attribute__((visibility("hidden")))
 @interface NSBoxAuxiliary : NSObject
 {
     double borderWidth;
     double cornerRadius;
-    NSColor *borderColor;
-    NSColor *fillColor;
+    NSColor *_borderColor;
+    NSColor *_fillColor;
 }
+
+@property(copy) NSColor *fillColor; // @synthesize fillColor=_fillColor;
+@property(copy) NSColor *borderColor; // @synthesize borderColor=_borderColor;
+- (void)dealloc;
+- (id)init;
 
 @end
 

@@ -10,11 +10,11 @@
 {
 }
 
-- (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
-- (id)_nameOfHiddenAlbumPlaceholderImage;
-- (id)_nameOfEmptySharedAlbumPlaceholderImage;
-- (id)_nameOfAddSharedAlbumPlaceholderImage;
-- (id)_nameOfEmptyAlbumPlaceholderImage;
+- (id)nameOfRecentlyDeletedAlbumPlaceholderImage;
+- (id)nameOfHiddenAlbumPlaceholderImage;
+- (id)nameOfEmptySharedAlbumPlaceholderImage;
+- (id)nameOfAddSharedAlbumPlaceholderImage;
+- (id)nameOfEmptyAlbumPlaceholderImage;
 - (_Bool)shouldUseCollageForCloudFeedPlaceholder;
 - (_Bool)showsDeleteButtonOnCellContentView;
 - (double)sectionFooterHeight;

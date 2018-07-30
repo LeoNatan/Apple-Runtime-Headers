@@ -25,11 +25,13 @@
 - (void).cxx_destruct;
 - (void)setDone:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)init;
+- (void)darkerSystemColorsStatusDidChange;
 - (void)setFrame:(struct CGRect)arg1 leftToRight:(_Bool)arg2;
 - (void)updateImagesAnimated:(_Bool)arg1;
-- (struct UIImage *)imageNamed:(id)arg1 withTint:(struct UIColor *)arg2;
+- (struct UIImage *)imageNamed:(id)arg1 withTint:(struct UIColor *)arg2 version:(unsigned long long)arg3;
 - (struct UIImage *)imageForChecked:(_Bool)arg1 withHighlight:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

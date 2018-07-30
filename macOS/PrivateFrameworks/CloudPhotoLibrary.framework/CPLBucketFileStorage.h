@@ -7,10 +7,11 @@
 #import <CloudPhotoLibrary/CPLPlatformObject.h>
 
 #import "CPLEngineFileStorageImplementation.h"
+#import "NSFileManagerDelegate.h"
 
 @class NSCountedSet, NSFileManager, NSString, NSURL;
 
-@interface CPLBucketFileStorage : CPLPlatformObject <CPLEngineFileStorageImplementation>
+@interface CPLBucketFileStorage : CPLPlatformObject <CPLEngineFileStorageImplementation, NSFileManagerDelegate>
 {
     NSURL *_urlForFiles;
     NSFileManager *_fileManager;
@@ -19,6 +20,9 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)fileManager:(id)arg1 shouldProceedAfterError:(id)arg2 removingItemAtURL:(id)arg3;
+- (BOOL)fileManager:(id)arg1 shouldRemoveItemAtURL:(id)arg2;
+- (BOOL)resetWithError:(id *)arg1;
 - (id)fileEnumeratorIncludingPropertiesForKeys:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (BOOL)markForDeleteFileWithIdentity:(id)arg1 error:(id *)arg2;
 - (BOOL)deleteFileWithIdentity:(id)arg1 includingOriginal:(BOOL)arg2 error:(id *)arg3;

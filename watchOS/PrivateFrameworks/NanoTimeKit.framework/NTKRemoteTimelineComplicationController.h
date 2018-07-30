@@ -48,7 +48,7 @@
     CLKComplicationTemplate *_currentTemplate;
 }
 
-+ (_Bool)_acceptsComplicationType:(unsigned int)arg1 family:(int)arg2;
++ (_Bool)_acceptsComplicationType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 @property(readonly, nonatomic) CLKComplicationTemplate *currentTemplate; // @synthesize currentTemplate=_currentTemplate;
 @property(readonly, nonatomic) _Bool hasSetup; // @synthesize hasSetup=_hasSetup;
 - (void).cxx_destruct;
@@ -108,7 +108,7 @@
 - (void)_activate;
 - (void)_deactivate;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, nonatomic) NTKRemoteComplication *complication; // @dynamic complication;

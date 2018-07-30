@@ -10,7 +10,6 @@
 
 @protocol _SFPBGraphicalFloat <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasDoubleValue;
 @property(nonatomic) double doubleValue;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

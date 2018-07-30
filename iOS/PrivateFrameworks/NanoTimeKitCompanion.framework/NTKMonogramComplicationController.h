@@ -15,7 +15,7 @@
     NSString *_monogramText;
 }
 
-+ (_Bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (_Bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
 - (void)_handleLocaleChange;
 - (void)_handleFaceDefaultsChanged;

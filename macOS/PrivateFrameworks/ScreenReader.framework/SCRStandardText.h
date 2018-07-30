@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)rotorIdentifiers;
 - (id)rangeForStartMarker:(id)arg1 withOffset:(unsigned long long)arg2 length:(unsigned long long)arg3;
 - (id)outputAttributedStringForData:(id)arg1;
+@property(readonly, nonatomic) BOOL isComboBox;
 - (BOOL)isPasswordSuggestionComboBox;
 - (BOOL)wantsExpandedAttachmentsForItemName;
 - (void)addBrailleItemDescriptionForFallbackToRequest:(id)arg1;

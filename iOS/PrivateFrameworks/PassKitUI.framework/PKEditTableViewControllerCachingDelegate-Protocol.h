@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSIndexPath, PKPass;
+@class NSArray, NSIndexPath, NSString, PKPass;
 
 @protocol PKEditTableViewControllerCachingDelegate <NSObject>
 - (void)prefetchItemsAtIndexPaths:(NSArray *)arg1;
+- (_Bool)passExistsWithUniqueIdentifier:(NSString *)arg1;
 - (PKPass *)passAtIndexPath:(NSIndexPath *)arg1;
 @end
 

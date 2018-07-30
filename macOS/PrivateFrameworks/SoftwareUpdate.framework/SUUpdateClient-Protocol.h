@@ -13,6 +13,7 @@
 - (void)availableUpdatesDidChange;
 
 @optional
+- (void)updatesQueuedForLaterDidChange;
 - (void)hiddenUpdatesDidChange;
 - (void)catalogURLDidChange;
 - (void)authChallengeWasReceived:(NSURLAuthenticationChallenge *)arg1 handled:(char *)arg2;

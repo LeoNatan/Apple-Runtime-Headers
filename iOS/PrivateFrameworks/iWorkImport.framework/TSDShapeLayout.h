@@ -13,24 +13,24 @@ __attribute__((visibility("hidden")))
 {
     struct {
         unsigned int path:1;
-        unsigned int pathBounds:1;
-        unsigned int pathBoundsWithoutStroke:1;
         unsigned int pathIsOpen:1;
         unsigned int pathIsLineSegment:1;
-        unsigned int alignmentFrame:1;
-        unsigned int alignmentFrameInRoot:1;
         unsigned int headAndTail:1;
         unsigned int headLineEnd:1;
         unsigned int tailLineEnd:1;
         unsigned int clippedPath:1;
     } mShapeInvalidFlags;
     TSUBezierPath *mCachedPath;
-    struct CGRect mCachedPathBounds;
-    struct CGRect mCachedPathBoundsWithoutStroke;
     _Bool mCachedPathIsOpen;
     _Bool mCachedPathIsLineSegment;
-    struct CGRect mCachedAlignmentFrame;
-    struct CGRect mCachedAlignmentFrameInRoot;
+    CDStruct_5bfcb38a mCachedPathBoundsStruct;
+    CDStruct_5bfcb38a mCachedPathBoundsWithoutStrokeStruct;
+    TSUBezierPath *mCachedClippedPath;
+    CDStruct_5bfcb38a mCachedClippedPathStroked;
+    CDStruct_5bfcb38a mCachedClippedPathRotatedStroked;
+    struct CGAffineTransform mClippedPathRotatedTransform;
+    CDStruct_5bfcb38a mCachedAlignmentFrame;
+    CDStruct_5bfcb38a mCachedAlignmentFrameInRoot;
     struct CGAffineTransform mCachedAlignmentFrameInRootTransformInRoot;
     struct CGPoint mHeadPoint;
     struct CGPoint mTailPoint;
@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
     long long mTailCutSegment;
     double mHeadCutT;
     double mTailCutT;
-    TSUBezierPath *mCachedClippedPath;
     TSDPathSource *mShrunkenPathSource;
     TSDPathSource *mOriginalShrunkenPathSource;
     TSDEditableBezierPathSource *mCachedEditableBezierPathSource;
@@ -53,6 +52,7 @@ __attribute__((visibility("hidden")))
     TSDMutableStroke *mDynamicStroke;
     TSDFill *mDynamicFill;
     NSArray *mDynamicStrokeOffsetArray;
+    _Bool mIsDynamicallyInvisible;
 }
 
 - (void).cxx_destruct;
@@ -68,6 +68,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_cachedPathIsLineSegment;
 - (_Bool)p_cachedPathIsOpen;
 - (struct CGRect)p_cachedPathBoundsWithoutStroke;
+- (struct CGRect)p_updatedCachedClipRectIfNeededForRotation:(struct CGAffineTransform)arg1;
+- (struct CGRect)p_cachedClippedPathStroked;
 - (struct CGRect)p_cachedPathBounds;
 - (id)p_cachedPath;
 - (void)validate;
@@ -128,6 +130,7 @@ __attribute__((visibility("hidden")))
 - (id)computeLayoutGeometry;
 - (void)invalidate;
 - (id)reliedOnLayouts;
+@property(readonly, nonatomic) _Bool isTreatedAsFillForFreehandDrawing;
 @property(readonly, nonatomic) _Bool isFreehandDrawingSpacerShape;
 - (id)layoutGeometryFromInfo;
 - (void)dealloc;

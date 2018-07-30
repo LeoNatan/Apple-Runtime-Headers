@@ -9,6 +9,7 @@
 @class UIColor, UIImage;
 
 @protocol CNActionViewTemplateImage <NSObject>
+- (UIImage *)templateImage;
 - (UIImage *)imageWithColor:(UIColor *)arg1;
 @end
 

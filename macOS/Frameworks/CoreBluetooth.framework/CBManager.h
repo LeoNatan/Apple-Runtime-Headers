@@ -23,6 +23,7 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (id)peerWithInfo:(id)arg1;
+- (void)triggerBTErrorReport:(long long)arg1;
 - (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)xpcConnectionIsInvalid;
 - (void)xpcConnectionDidReset;
@@ -34,7 +35,9 @@
 - (id)sendSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)closeL2CAPChannelForPeerUUID:(id)arg1 withPsm:(unsigned short)arg2;
 - (BOOL)sendMsg:(unsigned short)arg1 args:(id)arg2;
+- (id)sendDebugSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (BOOL)sendDebugMsg:(unsigned short)arg1 args:(id)arg2;
+- (BOOL)sendRawCommand:(unsigned short)arg1 data:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)startWithQueue:(id)arg1 options:(id)arg2 sessionType:(int)arg3;
 - (void)setConnectionTargetQueue:(id)arg1;
 @property(readonly, retain, nonatomic) CBPairingAgent *sharedPairingAgent; // @dynamic sharedPairingAgent;

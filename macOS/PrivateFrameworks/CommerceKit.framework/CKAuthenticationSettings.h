@@ -14,6 +14,7 @@
 @interface CKAuthenticationSettings : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *__password;
+    BOOL __loginToiCloud;
     BOOL _forceAccount;
     BOOL _createSession;
     BOOL _showHelp;
@@ -34,6 +35,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+@property BOOL _loginToiCloud;
 @property(copy) NSString *_password;
 
 @end

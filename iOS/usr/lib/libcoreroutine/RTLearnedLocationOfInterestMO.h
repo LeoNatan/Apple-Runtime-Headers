@@ -6,14 +6,19 @@
 
 #import "NSManagedObject.h"
 
-@class NSData, NSDate, NSNumber, NSOrderedSet, NSSet, NSString, NSUUID;
+@class NSDate, NSNumber, NSOrderedSet, NSSet, NSString, NSUUID, RTMapItemMO;
 
 @interface RTLearnedLocationOfInterestMO : NSManagedObject
 {
+    RTMapItemMO *cachedMapItem;
 }
 
 + (id)managedObjectWithLocationOfInterest:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchRequest;
+@property(retain, nonatomic) RTMapItemMO *cachedMapItem; // @synthesize cachedMapItem;
+- (void).cxx_destruct;
+- (void)setMapItem:(id)arg1;
+- (id)mapItem;
 
 // Remaining properties
 @property(copy, nonatomic) NSNumber *confidence; // @dynamic confidence;
@@ -27,11 +32,7 @@
 @property(copy, nonatomic) NSString *placeCustomLabel; // @dynamic placeCustomLabel;
 @property(copy, nonatomic) NSDate *placeExpirationDate; // @dynamic placeExpirationDate;
 @property(retain, nonatomic) NSUUID *placeIdentifier; // @dynamic placeIdentifier;
-@property(copy, nonatomic) NSDate *placeMapItemCreationDate; // @dynamic placeMapItemCreationDate;
-@property(retain, nonatomic) id <GEOMapItem> placeMapItemGeoMapItem; // @dynamic placeMapItemGeoMapItem;
-@property(retain, nonatomic) NSData *placeMapItemGeoMapItemHandle; // @dynamic placeMapItemGeoMapItemHandle;
 @property(retain, nonatomic) NSUUID *placeMapItemIdentifier; // @dynamic placeMapItemIdentifier;
-@property(copy, nonatomic) NSNumber *placeMapItemSource; // @dynamic placeMapItemSource;
 @property(copy, nonatomic) NSNumber *placeType; // @dynamic placeType;
 @property(copy, nonatomic) NSNumber *placeTypeSource; // @dynamic placeTypeSource;
 @property(retain, nonatomic) NSSet *transitions; // @dynamic transitions;

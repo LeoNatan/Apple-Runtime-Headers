@@ -70,6 +70,7 @@
 - (void)_setAttributes:(unsigned long long)arg1 forVisit:(id)arg2;
 - (void)updateTitle:(id)arg1 forVisit:(id)arg2;
 - (_Bool)canRecordRedirectFromVisit:(id)arg1 to:(id)arg2;
+- (void)checkIfLocalVisitExistsInAnyOfItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)getVisitsCreatedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)itemRedirectedFrom:(id)arg1 to:(id)arg2 origin:(long long)arg3 date:(id)arg4;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(_Bool)arg4 wasFailure:(_Bool)arg5 increaseVisitCount:(_Bool)arg6 origin:(long long)arg7 attributes:(unsigned long long)arg8;

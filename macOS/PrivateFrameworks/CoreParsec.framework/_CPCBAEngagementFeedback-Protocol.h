@@ -10,13 +10,9 @@
 
 @protocol _CPCBAEngagementFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasUrl;
 @property(copy, nonatomic) NSString *url;
-@property(readonly, nonatomic) BOOL hasCbaType;
 @property(nonatomic) int cbaType;
-@property(readonly, nonatomic) BOOL hasQueryId;
 @property(nonatomic) unsigned long long queryId;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

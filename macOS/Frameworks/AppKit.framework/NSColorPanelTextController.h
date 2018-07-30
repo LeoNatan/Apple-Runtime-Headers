@@ -10,6 +10,7 @@
 
 @class NSColorPanel, NSString, NSTextField, NSTimer;
 
+__attribute__((visibility("hidden")))
 @interface NSColorPanelTextController : NSObject <NSTextFieldDelegate>
 {
     NSColorPanel *_colorPanel;

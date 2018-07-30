@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class IMSticker, NSData, NSString, PUICRecentsView, UIView;
+#import "PUICQuickboardController.h"
 
-@protocol PUICRecentsViewDelegate
-@property(readonly, nonatomic) NSString *primaryLanguage;
+@class IMSticker, NSData, PUICRecentsView, UIView;
+
+@protocol PUICRecentsViewDelegate <PUICQuickboardController>
 - (void)pickerViewDidSelectItem:(NSData *)arg1 preview:(UIView *)arg2;
 - (void)recentStickersView:(PUICRecentsView *)arg1 didSelectSticker:(IMSticker *)arg2 preview:(UIView *)arg3;
 @end

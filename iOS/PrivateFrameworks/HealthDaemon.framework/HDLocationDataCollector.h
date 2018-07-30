@@ -6,51 +6,61 @@
 
 #import "NSObject.h"
 
-#import "CLLocationManagerDelegate.h"
+#import "HDLocationManagerObserver.h"
 
-@class CLInUseAssertion, CLLocationManager, CMElevation, HDHealthStoreServer, HDProfile, HKLocationSeriesSample, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class CMElevation, HDAssertion, HDProfile, HKWorkoutRoute, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
-@interface HDLocationDataCollector : NSObject <CLLocationManagerDelegate>
+@interface HDLocationDataCollector : NSObject <HDLocationManagerObserver>
 {
     NSObject<OS_dispatch_queue> *_queue;
     HDProfile *_profile;
-    CLLocationManager *_locationManager;
-    CLInUseAssertion *_inUseAssertion;
-    CMElevation *_elevation;
+    long long _state;
+    id <HDSampleSaving> _sampleSavingDelegate;
     int _lastStatus;
-    HKLocationSeriesSample *_seriesSample;
+    HKWorkoutRoute *_route;
     _Bool _didSaveLocationData;
     double _lastPausedTime;
     unsigned long long _elevationGain;
     unsigned long long _activityType;
     NSUUID *_workoutUUID;
+    HDAssertion *_locationUpdatingAssertion;
+    unsigned long long _validLocationsCount;
+    unsigned long long _skippedLocationsCount;
     id <HDLocationEventDelegate> _delegate;
-    HDHealthStoreServer *_server;
+    CMElevation *_elevation;
 }
 
-@property(retain, nonatomic) HDHealthStoreServer *server; // @synthesize server=_server;
+@property(retain, nonatomic) CMElevation *elevation; // @synthesize elevation=_elevation;
 @property(nonatomic) __weak id <HDLocationEventDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)healthLocationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)healthLocationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)healthLocationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)_queue_savedLocationData;
 - (void)_queue_createSeriesSample;
 - (void)_handleElevationData:(id)arg1 error:(id)arg2;
 - (void)_queue_resumeWorkout;
-- (void)resumeWorkout;
+- (void)resumeUpdates;
 - (void)_queue_stopGPSUpdates;
-- (void)_pauseLocationUpdates;
-- (void)pauseWorkout;
-- (void)_queue_start;
-- (void)startWorkout;
-- (void)endWorkout;
+- (void)_queue_pauseLocationUpdates;
+- (void)pauseUpdates;
+- (void)_queue_setupLocationUpdates;
+- (void)startUpdates;
+- (void)stopUpdates;
 - (void)_queue_deleteCurrentRoute;
-- (void)_queue_freezeCurrentLocationSeriesSample;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (id)initWithProfile:(id)arg1 server:(id)arg2 activityType:(unsigned long long)arg3 workoutUUID:(id)arg4;
+- (void)_queue_freezeCurrentWorkoutRoute;
+- (_Bool)isElevationAvailable;
+- (id)createCMElevation;
+- (_Bool)locationServicesEnabled;
+- (int)authorizationStatus;
+- (id)workoutLocationManager;
+@property(readonly, copy) NSString *description;
+- (long long)state;
+- (void)dealloc;
+- (id)initWithProfile:(id)arg1 sampleSavingDelegate:(id)arg2 activityType:(unsigned long long)arg3 workoutUUID:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class NSData, NSMutableArray, NSString, NTPBWidgetEngagement;
+@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBWidgetEngagement;
 
 @interface NTPBMediaEngageComplete : PBCodable <NSCopying>
 {
@@ -18,6 +18,7 @@
     long long _personalizationTreatmentId;
     long long _previousArticlePublisherArticleVersion;
     long long _publisherArticleVersionInt64;
+    NTPBAlternateHeadline *_alternateHeadline;
     NSString *_articleId;
     NSData *_articleSessionId;
     int _articleType;
@@ -44,6 +45,7 @@
     NSString *_previousArticleId;
     NSString *_previousArticleVersion;
     int _publisherArticleVersion;
+    int _rankInVideoPlaylist;
     NSString *_referencedArticleId;
     NSString *_sectionHeadlineId;
     NSString *_sourceChannelId;
@@ -73,6 +75,7 @@
         unsigned int mediaPlayLocation:1;
         unsigned int mediaType:1;
         unsigned int publisherArticleVersion:1;
+        unsigned int rankInVideoPlaylist:1;
         unsigned int videoType:1;
         unsigned int adSupportedChannel:1;
         unsigned int isBreakingNewsArticle:1;
@@ -85,6 +88,8 @@
 
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(nonatomic) int rankInVideoPlaylist; // @synthesize rankInVideoPlaylist=_rankInVideoPlaylist;
+@property(retain, nonatomic) NTPBAlternateHeadline *alternateHeadline; // @synthesize alternateHeadline=_alternateHeadline;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(retain, nonatomic) NSString *iadNativeCampaignAd; // @synthesize iadNativeCampaignAd=_iadNativeCampaignAd;
 @property(nonatomic) long long previousArticlePublisherArticleVersion; // @synthesize previousArticlePublisherArticleVersion=_previousArticlePublisherArticleVersion;
@@ -133,6 +138,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasRankInVideoPlaylist;
+@property(readonly, nonatomic) _Bool hasAlternateHeadline;
 @property(readonly, nonatomic) _Bool hasGroupViewExposureId;
 @property(readonly, nonatomic) _Bool hasIadNativeCampaignAd;
 @property(nonatomic) _Bool hasPreviousArticlePublisherArticleVersion;

@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface PRSRankingItemCollection : NSObject
 {
     NSArray *_arrayOfRankingItems;
     unsigned long long _countOfVisibleResults;
     NSString *_bundleIdentifier;
+    NSDictionary *_mapResultIdToProtectionClass;
 }
 
+@property(retain) NSDictionary *mapResultIdToProtectionClass; // @synthesize mapResultIdToProtectionClass=_mapResultIdToProtectionClass;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property unsigned long long countOfVisibleResults; // @synthesize countOfVisibleResults=_countOfVisibleResults;
 @property(retain) NSArray *arrayOfRankingItems; // @synthesize arrayOfRankingItems=_arrayOfRankingItems;

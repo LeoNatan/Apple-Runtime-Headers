@@ -6,6 +6,7 @@
 
 #import <AppKit/NSSelectionBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSMultipleSelectionBinder : NSSelectionBinder
 {
 }

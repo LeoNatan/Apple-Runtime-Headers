@@ -95,7 +95,6 @@
 - (void)updateCompanyCheckbox;
 - (void)updateCompanyCheckBoxState;
 - (void)updateCompanyCheckboxVisibility;
-- (void)updateCompanyCheckboxColor;
 - (void)removeFirstResponderSelection;
 - (void)updateTextColor:(id)arg1;
 - (void)updateAccessibilityForView:(id)arg1;

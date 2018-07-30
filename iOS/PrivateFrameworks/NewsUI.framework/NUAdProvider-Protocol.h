@@ -13,8 +13,8 @@
 - (void)bannerViewDidLoad:(NUAdBannerView *)arg1;
 - (void)videoPlaylistAdForContextProviders:(NSArray *)arg1 withCompletionBlock:(void (^)(NUAdBannerView *, NSURL *, unsigned long long, NSError *))arg2;
 - (void)prerollForContextProviders:(NSArray *)arg1 withCompletionBlock:(void (^)(NUAdBannerView *, NSURL *, unsigned long long, NSError *))arg2;
-- (void)interstitialViewForContextProviders:(NSArray *)arg1 contextProvidersWithKeys:(NSDictionary *)arg2 withCompletionBlock:(void (^)(ADInterstitialAd *, NSError *))arg3;
-- (void)interstitialViewForContextProviders:(NSArray *)arg1 withCompletionBlock:(void (^)(ADInterstitialAd *, NSError *))arg2;
-- (void)bannerViewForIdentifier:(NSString *)arg1 contextProviders:(NSArray *)arg2 withCompletionBlock:(void (^)(NUAdBannerView *, NSError *))arg3;
+- (void)interstitialViewForContextProviders:(NSArray *)arg1 contextProvidersWithKeys:(NSDictionary *)arg2 layoutOptions:(id <NUAdLayoutOptions>)arg3 withCompletionBlock:(void (^)(ADInterstitialAd *, NSError *))arg4;
+- (void)interstitialViewForContextProviders:(NSArray *)arg1 layoutOptions:(id <NUAdLayoutOptions>)arg2 withCompletionBlock:(void (^)(ADInterstitialAd *, NSError *))arg3;
+- (void)bannerViewForIdentifier:(NSString *)arg1 contextProviders:(NSArray *)arg2 layoutOptions:(id <NUAdLayoutOptions>)arg3 withCompletionBlock:(void (^)(NUAdBannerView *, NSError *))arg4;
 @end
 

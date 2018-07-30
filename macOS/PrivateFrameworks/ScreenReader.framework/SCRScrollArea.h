@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)prepareBrailleItemDescriptionForRequest:(id)arg1 hasBrailleFocus:(BOOL)arg2;
 - (void)addItemDescriptionForBrailleToRequest:(id)arg1;
 - (id)description;
+- (id)_defaultLocalizedStringForCommandKey:(id)arg1;
 - (BOOL)childrenShouldAddIndexToDescription;
 - (BOOL)addKeyboardSelectionSummaryToRequest:(id)arg1;
 - (BOOL)addSelectionDescriptionToRequest:(id)arg1;

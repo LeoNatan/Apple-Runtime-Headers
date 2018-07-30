@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSNotificationCenter, NSRunningApplication;
+@class NSArray, NSImage, NSNotificationCenter, NSRunningApplication;
 
 @interface NSWorkspace : NSObject
 {
@@ -48,7 +48,7 @@
 - (id)mountedRemovableMedia;
 - (id)mountedLocalVolumePaths;
 - (BOOL)getFileSystemInfoForPath:(id)arg1 isRemovable:(char *)arg2 isWritable:(char *)arg3 isUnmountable:(char *)arg4 description:(id *)arg5 type:(id *)arg6;
-- (BOOL)_volumeSupportsLongFilenamesAtPath:(id)arg1;
+- (BOOL)_volumeSupportsLongFilenamesAtURL:(id)arg1;
 - (BOOL)_volumeSupportsLongFilenamesForRefNum:(short)arg1;
 - (id)activeApplication;
 - (id)launchedApplications;
@@ -82,11 +82,12 @@
 - (BOOL)setIcon:(id)arg1 forFile:(id)arg2 options:(unsigned long long)arg3;
 - (BOOL)_sendFinderAppleEvent:(unsigned int)arg1 class:(unsigned int)arg2 file:(id)arg3;
 - (BOOL)_sendFinderAppleEvent:(unsigned int)arg1 class:(unsigned int)arg2 URLs:(id)arg3 followSymlinks:(BOOL)arg4;
+- (id)_iconForURL:(id)arg1;
 - (id)iconForFile:(id)arg1;
 - (id)_iconForOSType:(unsigned int)arg1;
 - (id)_iconForOSType:(unsigned int)arg1 creator:(unsigned int)arg2;
 - (id)iconForFileType:(id)arg1;
-- (id)_defaultDocIcon;
+@property(readonly) NSImage *_defaultDocumentIcon;
 - (id)launchApplicationAtURL:(id)arg1 options:(unsigned long long)arg2 configuration:(id)arg3 error:(id *)arg4;
 - (BOOL)launchApplication:(id)arg1 showIcon:(BOOL)arg2 autolaunch:(BOOL)arg3;
 - (BOOL)launchApplication:(id)arg1;
@@ -115,6 +116,7 @@
 - (id)URLForApplicationWithBundleIdentifier:(id)arg1;
 @property(readonly) BOOL accessibilityDisplayShouldReduceTransparency; // @dynamic accessibilityDisplayShouldReduceTransparency;
 @property(readonly) BOOL accessibilityDisplayShouldDifferentiateWithoutColor; // @dynamic accessibilityDisplayShouldDifferentiateWithoutColor;
+@property(readonly) BOOL accessibilityDisplayShouldUseGrayscale; // @dynamic accessibilityDisplayShouldUseGrayscale;
 @property(readonly) BOOL accessibilityDisplayShouldIncreaseContrast; // @dynamic accessibilityDisplayShouldIncreaseContrast;
 @property(readonly) BOOL accessibilityDisplayShouldReduceMotion; // @dynamic accessibilityDisplayShouldReduceMotion;
 @property(readonly) BOOL accessibilityDisplayShouldInvertColors; // @dynamic accessibilityDisplayShouldInvertColors;

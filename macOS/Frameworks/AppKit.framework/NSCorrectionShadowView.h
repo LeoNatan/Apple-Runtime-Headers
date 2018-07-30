@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property unsigned long long dismissButtonLocation; // @synthesize dismissButtonLocation;
-- (void)drawRect:(struct CGRect)arg1;
 
 @end
 

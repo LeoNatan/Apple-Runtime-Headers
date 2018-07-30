@@ -30,6 +30,7 @@
 + (unsigned long long)defaultSize;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 - (void).cxx_destruct;
+- (id)description;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
 - (id)allKeys;

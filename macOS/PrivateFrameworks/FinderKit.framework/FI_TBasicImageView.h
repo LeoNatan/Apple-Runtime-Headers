@@ -13,10 +13,10 @@
 __attribute__((visibility("hidden")))
 @interface FI_TBasicImageView : FI_TUpdateLayerView <NSAccessibilityImage>
 {
-    struct TNSRef<NSImage *, void> _imageForDrawing;
-    struct TNSRef<NSImage *, void> _imageForComparison;
+    struct TNSRef<NSImage, void> _imageForDrawing;
+    struct TNSRef<NSImage, void> _imageForComparison;
     _Bool _isDimmed;
-    struct TNSRef<NSArray<CAFilter *>*, void> _dimmedFilters;
+    struct TNSRef<NSArray<CAFilter *>, void> _dimmedFilters;
     _Bool _acceptsFirstMouse;
     struct TriStateBool _animatingFrameSizeLarger;
     unsigned long long _animatingFrameSizeCount;
@@ -32,16 +32,17 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityRoleDescription;
 - (id)accessibilityRole;
 - (void)updateLayer;
+- (void)viewDidChangeEffectiveAppearance;
 - (id)dimmedFilters;
 - (void)setBoundsSize:(struct CGSize)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)setFrameOrBoundsSizeHelper:(const struct CGSize *)arg1 oldSize:(const struct CGSize *)arg2 sizeChangerBlock:(const function_96ce23bb *)arg3;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
-- (_Bool)intersectsOpaquePixels:(struct CGRect)arg1;
+- (_Bool)intersectsOpaquePixels:(const struct CGRect *)arg1;
+- (_Bool)pointInOpaquePixels:(const struct CGPoint *)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)viewDidChangeBackingProperties;
-- (void)updateLayerContents:(const struct CGSize *)arg1 force:(_Bool)arg2;
-- (id)imageForDrawing;
+- (void)updateImageSize:(const struct CGSize *)arg1 forceRedraw:(_Bool)arg2;
 @property(retain, nonatomic) NSImage *image; // @dynamic image;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)initCommon;

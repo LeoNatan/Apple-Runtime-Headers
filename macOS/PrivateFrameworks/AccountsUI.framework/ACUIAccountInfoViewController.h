@@ -7,10 +7,11 @@
 #import <AccountsUI/ACUIViewController.h>
 
 #import "ACUIAccountDataclassDelegate.h"
+#import "ACUIAccountInfoViewControllerAccountSyncDelegate.h"
 
-@class ACUIAccountDetailsViewController, ACUICredentialPromptViewController, ACUIUpdateContactsViewController, NSButton, NSProgressIndicator, NSStackView, NSString, NSTextField, NSView;
+@class ACUIAccountDetailsViewController, ACUICredentialPromptViewController, NSButton, NSProgressIndicator, NSStackView, NSString, NSTextField, NSView;
 
-@interface ACUIAccountInfoViewController : ACUIViewController <ACUIAccountDataclassDelegate>
+@interface ACUIAccountInfoViewController : ACUIViewController <ACUIAccountDataclassDelegate, ACUIAccountInfoViewControllerAccountSyncDelegate>
 {
     NSString *_password;
     NSView *_dataclassesTableView;
@@ -23,18 +24,14 @@
     NSTextField *_descriptionField;
     NSTextField *_fullNameField;
     NSView *_dataclassesTableViewWithPadding;
-    NSButton *_updateContactsButton;
     NSProgressIndicator *_spinner;
     ACUIAccountDetailsViewController *_accountDetailsVC;
     ACUICredentialPromptViewController *_credentialPromptVC;
-    ACUIUpdateContactsViewController *_updateContactsVC;
 }
 
-@property(retain) ACUIUpdateContactsViewController *updateContactsVC; // @synthesize updateContactsVC=_updateContactsVC;
 @property(retain) ACUICredentialPromptViewController *credentialPromptVC; // @synthesize credentialPromptVC=_credentialPromptVC;
 @property(retain) ACUIAccountDetailsViewController *accountDetailsVC; // @synthesize accountDetailsVC=_accountDetailsVC;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
-@property(retain) NSButton *updateContactsButton; // @synthesize updateContactsButton=_updateContactsButton;
 @property(retain) NSView *dataclassesTableViewWithPadding; // @synthesize dataclassesTableViewWithPadding=_dataclassesTableViewWithPadding;
 @property(retain) NSTextField *fullNameField; // @synthesize fullNameField=_fullNameField;
 @property(retain) NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
@@ -52,7 +49,6 @@
 - (void)didUpdatePassword:(id)arg1;
 - (void)detailsButtonClicked:(id)arg1;
 - (void)constructViewStack;
-- (void)updateContacts:(id)arg1;
 - (void)addUseWithDataclassSlice;
 - (void)addEmailAddressSlice;
 - (void)addFullNameSlice;
@@ -68,9 +64,9 @@
 - (BOOL)willToggleDataclass:(id)arg1;
 - (void)didToggleDataclass:(id)arg1;
 - (void)viewDidAppear;
-- (void)_verifyCredentialAndPromptIfNeeded;
+- (void)_verifyCredentialAndPromptIfNeeded:(CDUnknownBlockType)arg1;
+- (void)turnOnAfterVerification;
 - (id)nibName;
-- (void)_sanityCheck;
 - (id)initWithAccount:(id)arg1;
 
 // Remaining properties

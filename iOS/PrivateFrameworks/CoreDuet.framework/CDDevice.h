@@ -6,24 +6,19 @@
 
 #import "NSObject.h"
 
-@class CDSession, NSString;
+@class NSString;
 
 @interface CDDevice : NSObject
 {
-    CDSession *_session;
-    int remoteDataNotificationToken;
+    _Bool _isDefaultPaired;
     unsigned int _identifier;
     NSString *_modelIdentifier;
-    _Bool _defaultPaired;
-    _Bool _isDefaultPaired;
 }
 
-@property(readonly) CDSession *session; // @synthesize session=_session;
 @property _Bool isDefaultPaired; // @synthesize isDefaultPaired=_isDefaultPaired;
 @property(readonly) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 @property(readonly) unsigned int identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)dealloc;
 - (_Bool)requestLogDataWithError:(id *)arg1;
 - (id)readLogDataWithError:(id *)arg1;
 - (_Bool)setLogDataHandlerWithError:(id *)arg1 handler:(CDUnknownBlockType)arg2;

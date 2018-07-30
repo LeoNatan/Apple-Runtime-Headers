@@ -10,6 +10,7 @@
 
 @class NSMenu, NSMenuItem, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSTrackingInfoImpl : NSObject <NSMenuTrackingInfo>
 {
     NSMenu *_menu;

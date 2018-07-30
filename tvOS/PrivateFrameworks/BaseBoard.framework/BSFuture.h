@@ -18,6 +18,7 @@
     NSMutableArray *_completionBlocks;
 }
 
+- (void).cxx_destruct;
 - (void)_flushCompletionBlocks;
 - (void)_addCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)addFailureBlock:(CDUnknownBlockType)arg1;
@@ -32,7 +33,6 @@
 @property(readonly, getter=isFinished) _Bool finished;
 - (id)resultBeforeDate:(id)arg1 error:(id *)arg2;
 - (id)result:(id *)arg1;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

@@ -14,6 +14,7 @@
     CDUnknownBlockType _deathHandler;
 }
 
+- (void).cxx_destruct;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithPID:(int)arg1 queue:(id)arg2 deathHandler:(CDUnknownBlockType)arg3;

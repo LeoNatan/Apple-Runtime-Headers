@@ -14,7 +14,7 @@
     NSATSGlyphStorage *_glyphStorage;
     unsigned int _lastGlyphIndex;
     unsigned int _lastContainerIndex;
-    CDStruct_6c9b9d05 *_typesetterAuxiliary;
+    CDStruct_41b73d0b *_typesetterAuxiliary;
     CDUnion_a04c68c6 *_lineFragmentRectArgs;
     char *_bidiLevels;
     float _defaultTighteningFactor;
@@ -23,7 +23,7 @@
     struct {
         unsigned int _isiChatTypesetter:1;
         unsigned int _resToWillSetLineFragmentRect:1;
-        unsigned int _reserved2:1;
+        unsigned int _limitsLayoutForSuspiciousContents:1;
         unsigned int _baselineRendering:1;
         unsigned int _forceWordWrapping:1;
         unsigned int _reserved:27;

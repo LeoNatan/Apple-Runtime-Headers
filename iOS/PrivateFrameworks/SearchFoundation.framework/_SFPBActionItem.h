@@ -13,11 +13,6 @@
 
 @interface _SFPBActionItem : PBCodable <_SFPBActionItem, NSSecureCoding>
 {
-    struct {
-        unsigned int isOverlay:1;
-        unsigned int requiresLocalMedia:1;
-        unsigned int isITunes:1;
-    } _has;
     _Bool _isOverlay;
     _Bool _requiresLocalMedia;
     _Bool _isITunes;
@@ -77,33 +72,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasMessageURL;
-@property(readonly, nonatomic) _Bool hasMessageIdentifier;
-@property(readonly, nonatomic) _Bool hasLocation;
-@property(readonly, nonatomic) _Bool hasBaseIcon;
-@property(readonly, nonatomic) _Bool hasIcon;
-@property(readonly, nonatomic) _Bool hasIsITunes;
-@property(readonly, nonatomic) _Bool hasLabelITunes;
-@property(readonly, nonatomic) _Bool hasType;
-@property(readonly, nonatomic) _Bool hasOfferType;
-@property(readonly, nonatomic) _Bool hasProvider;
-@property(readonly, nonatomic) _Bool hasLongitude;
-@property(readonly, nonatomic) _Bool hasLatitude;
-@property(readonly, nonatomic) _Bool hasMapsData;
-@property(readonly, nonatomic) _Bool hasEmail;
-@property(readonly, nonatomic) _Bool hasPhoneNumber;
-@property(readonly, nonatomic) _Bool hasContactIdentifier;
-@property(readonly, nonatomic) _Bool hasApplicationBundleIdentifier;
-@property(readonly, nonatomic) _Bool hasPunchout;
-@property(readonly, nonatomic) _Bool hasLocalMediaIdentifier;
-@property(readonly, nonatomic) _Bool hasRequiresLocalMedia;
 - (id)storeIdentifiersAtIndex:(unsigned long long)arg1;
 - (unsigned long long)storeIdentifiersCount;
 - (void)addStoreIdentifiers:(id)arg1;
 - (void)clearStoreIdentifiers;
-@property(readonly, nonatomic) _Bool hasIsOverlay;
-@property(readonly, nonatomic) _Bool hasLabelForLocalMedia;
-@property(readonly, nonatomic) _Bool hasLabel;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

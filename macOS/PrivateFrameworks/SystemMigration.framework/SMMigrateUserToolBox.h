@@ -25,7 +25,7 @@
 + (unsigned int)gidForEveryoneACL;
 + (BOOL)deleteConflictingUsers:(id)arg1 onSystem:(id)arg2;
 + (BOOL)convertLegacyFilevaultAccountForUserEntry:(id)arg1 onDestinationSystem:(id)arg2;
-+ (BOOL)migrateUserEntry:(id)arg1 andGroup:(BOOL)arg2 andDeletePrevious:(BOOL)arg3 inDB:(id)arg4 toDestinationSystem:(id)arg5 error:(id *)arg6;
++ (BOOL)migrateUserEntry:(id)arg1 andGroup:(BOOL)arg2 inDB:(id)arg3 toDestinationSystem:(id)arg4 error:(id *)arg5;
 + (BOOL)tenaciousCreateUserRecord:(id)arg1 inDB:(id)arg2;
 + (BOOL)createUser:(id)arg1 andCorrespondingGroup:(id)arg2 inDB:(id)arg3 onDestinationSystem:(id)arg4 error:(id *)arg5;
 + (BOOL)recreateAdminUsersForSourceSystem:(id)arg1 andDestinationSystem:(id)arg2;

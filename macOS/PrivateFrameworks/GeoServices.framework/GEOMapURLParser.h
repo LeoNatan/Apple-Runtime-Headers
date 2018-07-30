@@ -14,6 +14,7 @@
     int _mapType;
     int _transportType;
     int _trackingMode;
+    BOOL _trackingModeSpecified;
     BOOL _exactPositionSpecified;
     CDStruct_2c43369c _centerCoordinate;
     CDStruct_951efa70 _span;
@@ -45,6 +46,7 @@
     long long _favoritesType;
     BOOL _tester;
     GEOURLExtraStorage *_extraStorage;
+    NSString *_label;
 }
 
 + (BOOL)isValidMapsURLForAppendingSharedSessionID:(id)arg1;
@@ -70,6 +72,7 @@
 @property(readonly) int searchProviderID; // @synthesize searchProviderID=_searchProviderID;
 @property(readonly) CDStruct_90e2a262 searchRegion; // @synthesize searchRegion=_searchRegion;
 @property(readonly) CDStruct_c3b9c2ee searchCoordinate; // @synthesize searchCoordinate=_searchCoordinate;
+@property(readonly) NSString *label; // @synthesize label=_label;
 @property(readonly) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(readonly) NSString *directionsDestinationAddressString; // @synthesize directionsDestinationAddressString=_directionsDestinationAddressString;
 @property(readonly) NSString *directionsSourceAddressString; // @synthesize directionsSourceAddressString=_directionsSourceAddressString;
@@ -78,6 +81,7 @@
 @property(readonly) CDStruct_c3b9c2ee span; // @synthesize span=_span;
 @property(readonly) CDStruct_c3b9c2ee centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
 @property(readonly) BOOL exactPositionSpecified; // @synthesize exactPositionSpecified=_exactPositionSpecified;
+@property(readonly) BOOL trackingModeSpecified; // @synthesize trackingModeSpecified=_trackingModeSpecified;
 @property(readonly) int trackingMode; // @synthesize trackingMode=_trackingMode;
 @property(readonly) int transportType; // @synthesize transportType=_transportType;
 @property(readonly) int mapType; // @synthesize mapType=_mapType;

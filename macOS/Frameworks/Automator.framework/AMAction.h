@@ -64,6 +64,7 @@
 - (void)removeInputConnectionPoint:(id)arg1;
 - (void)addOutputConnectionPoint:(id)arg1;
 - (void)addInputConnectionPoint:(id)arg1;
+@property(readonly, nonatomic) BOOL _allowsDarkAppearance;
 - (void)clearConversionPath;
 - (id)conversionPath;
 - (void)addToConversionPath:(id)arg1;
@@ -109,6 +110,7 @@
 @property(readonly, nonatomic) NSMutableArray *bindings;
 - (id)nameForParameterKey:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *outputTypeNames;
+@property(readonly, copy, nonatomic) NSArray *_acceptsTypesOrSelectedInputType;
 @property(readonly, copy, nonatomic) NSSet *inputTypeNames;
 @property(retain, nonatomic) NSDictionary *providesDictionary;
 @property(retain, nonatomic) NSDictionary *acceptsDictionary;

@@ -48,18 +48,11 @@
 @property(readonly, nonatomic) CDStruct_3c058996 edgeInsets;
 - (double)positionOfSliceBoundary:(unsigned int)arg1;
 @property(readonly, nonatomic) long long imageType;
-@property(readonly, nonatomic) long long layoutDirection;
-@property(readonly, nonatomic) long long displayGamut;
-- (long long)graphicsClass;
-- (long long)memoryClass;
-- (long long)sizeClassVertical;
-- (long long)sizeClassHorizontal;
-- (unsigned long long)subtype;
-- (long long)idiom;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) struct CGImage *croppedImage;
 @property(readonly, nonatomic) struct CGImage *image;
 - (_Bool)_cacheRenditionProperties;
+- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned long long)arg3;
 
 @end
 

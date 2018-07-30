@@ -21,6 +21,7 @@
     unsigned long long _limit;
     unsigned long long _offset;
     long long _resultType;
+    NSArray *_groupByProperties;
     CDUnknownBlockType _resultsHandler;
 }
 
@@ -31,6 +32,7 @@
 + (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 sortDescriptors:(id)arg5;
 + (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 sortDescriptors:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
 @property(copy) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
+@property(retain) NSArray *groupByProperties; // @synthesize groupByProperties=_groupByProperties;
 @property long long resultType; // @synthesize resultType=_resultType;
 @property _Bool deduplicateValues; // @synthesize deduplicateValues=_deduplicateValues;
 @property _Bool readMetadata; // @synthesize readMetadata=_readMetadata;

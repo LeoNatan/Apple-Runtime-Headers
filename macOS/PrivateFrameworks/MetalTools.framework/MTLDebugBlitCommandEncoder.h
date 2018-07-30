@@ -16,6 +16,13 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)optimizeIndirectCommandBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
+- (void)copyIndirectCommandBuffer:(id)arg1 sourceRange:(struct _NSRange)arg2 destination:(id)arg3 destinationIndex:(unsigned long long)arg4;
+- (void)resetCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
+- (void)optimizeContentsForCPUAccess:(id)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
+- (void)optimizeContentsForCPUAccess:(id)arg1;
+- (void)optimizeContentsForGPUAccess:(id)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
+- (void)optimizeContentsForGPUAccess:(id)arg1;
 - (void)_resourceTrackingRecordBlitFromBuf:(id)arg1 toBuf:(id)arg2;
 - (void)_resourceTrackingRecordBlitFromTex:(id)arg1 toBuf:(id)arg2;
 - (void)_resourceTrackingRecordBlitFromBuf:(id)arg1 toTex:(id)arg2;

@@ -33,6 +33,7 @@
 @property(nonatomic) unsigned long long purchaseValidationState; // @synthesize purchaseValidationState=_purchaseValidationState;
 @property(nonatomic) unsigned long long purchaseType; // @synthesize purchaseType=_purchaseType;
 - (void).cxx_destruct;
+- (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithEntryID:(id)arg1 dictionaryRepresentation:(id)arg2;
 - (id)initWithEntryID:(id)arg1 tagID:(id)arg2 purchaseID:(id)arg3 lastVerificationTime:(id)arg4 lastVerificationFailureTime:(id)arg5 purchaseType:(unsigned long long)arg6 purchaseValidationState:(unsigned long long)arg7 isNewsAppPurchase:(_Bool)arg8 dateOfExpiration:(id)arg9 hasShownRenewalNotice:(_Bool)arg10;

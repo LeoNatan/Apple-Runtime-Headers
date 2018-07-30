@@ -11,11 +11,12 @@
 @interface _MSPresentationState : NSObject <NSSecureCoding>
 {
     unsigned long long _presentationStyle;
-    struct UIEdgeInsets _contentInsets;
+    unsigned long long _presentationContext;
 }
 
++ (_Bool)isRunningInCameraContext;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
+@property(readonly, nonatomic) unsigned long long presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) unsigned long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     VKResourceManager *_resourceManager;
 }
 
-- (id)newArtworkWithScale:(float)arg1 style:(id)arg2 size:(int)arg3 numberOfLines:(unsigned int)arg4;
+- (id)newArtworkWithScale:(float)arg1 style:(id)arg2 size:(int)arg3 numberOfLines:(unsigned int)arg4 overlayColor:(CDStruct_818bb265)arg5;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)dealloc;

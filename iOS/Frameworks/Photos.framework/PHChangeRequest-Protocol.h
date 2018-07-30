@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSManagedObjectID, NSObject<OS_xpc_object>, NSSet, NSString;
+@class NSError, NSManagedObjectID, NSObject<OS_xpc_object>, NSSet, NSString, PHPhotoLibrary;
 
 @protocol PHChangeRequest <NSObject>
 @property(readonly, nonatomic) int clientProcessID;
@@ -15,9 +15,14 @@
 @property(readonly, nonatomic) NSManagedObjectID *objectID;
 @property(readonly, nonatomic) NSString *uuid;
 @property(readonly, nonatomic) NSString *managedEntityName;
+- (_Bool)prepareForPhotoLibraryCheck:(PHPhotoLibrary *)arg1 error:(id *)arg2;
 - (_Bool)prepareForServicePreflightCheck:(id *)arg1;
 - (void)encodeToXPCDict:(NSObject<OS_xpc_object> *)arg1;
 - (id)initWithXPCDict:(NSObject<OS_xpc_object> *)arg1 clientEntitlements:(NSSet *)arg2 clientName:(NSString *)arg3 clientBundleID:(NSString *)arg4 clientProcessID:(int)arg5;
 - (id)initWithUUID:(NSString *)arg1 objectID:(NSManagedObjectID *)arg2;
+
+@optional
+- (void)changeFailedOnDaemonWithError:(NSError *)arg1;
+- (void)changeFailedOnClientWithError:(NSError *)arg1;
 @end
 

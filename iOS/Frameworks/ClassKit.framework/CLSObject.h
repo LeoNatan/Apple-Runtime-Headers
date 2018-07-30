@@ -8,33 +8,32 @@
 
 #import "CLSGraphVertex.h"
 #import "CLSRelationable.h"
+#import "NSLocking.h"
 #import "NSSecureCoding.h"
 
-@class CLSDataStore, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class CLSDataStore, NSDate, NSString;
 
-@interface CLSObject : NSObject <CLSRelationable, CLSGraphVertex, NSSecureCoding>
+@interface CLSObject : NSObject <CLSRelationable, CLSGraphVertex, NSLocking, NSSecureCoding>
 {
     _Bool _deleted;
     _Bool _modified;
     CLSDataStore *_dataStore;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_childrenByID;
+    NSString *_parentObjectID;
+    NSString *_appIdentifier;
+    struct NSMutableDictionary *_childrenByID;
     CLSObject *_parent;
+    struct os_unfair_recursive_lock_s _lock;
     _Bool _temporary;
     unsigned int _generation;
     NSDate *_dateCreated;
     NSDate *_dateLastModified;
-    NSString *__appIdentifier;
     NSString *_objectID;
-    NSString *__parentObjectID;
 }
 
 + (id)dateFormatter;
 + (_Bool)supportsSecureCoding;
 + (id)relations;
-@property(copy, nonatomic) NSString *_parentObjectID; // @synthesize _parentObjectID=__parentObjectID;
 @property(copy, nonatomic) NSString *objectID; // @synthesize objectID=_objectID;
-@property(copy, nonatomic) NSString *_appIdentifier; // @synthesize _appIdentifier=__appIdentifier;
 @property unsigned int generation; // @synthesize generation=_generation;
 @property(nonatomic, getter=isTemporary) _Bool temporary; // @synthesize temporary=_temporary;
 @property(retain, nonatomic) NSDate *dateLastModified; // @synthesize dateLastModified=_dateLastModified;
@@ -42,7 +41,6 @@
 - (void).cxx_destruct;
 - (id)ancestorOfClass:(Class)arg1;
 - (long long)effectiveAuthorizationStatus;
-- (void)sync;
 - (id)dictionaryRepresentation;
 - (_Bool)validateObject:(id *)arg1;
 - (void)didSaveObject;
@@ -57,6 +55,7 @@
 - (void)mergeWithObject:(id)arg1;
 - (void)removeChild:(id)arg1 changedPropertyName:(id)arg2;
 - (void)removeChild:(id)arg1;
+- (void)_addChild:(id)arg1 lock:(_Bool)arg2;
 - (void)_addChild:(id)arg1;
 - (void)addChild:(id)arg1 changedPropertyName:(id)arg2;
 - (void)addChild:(id)arg1;
@@ -65,6 +64,8 @@
 - (id)childrenOfClass:(Class)arg1;
 @property(nonatomic) __weak CLSDataStore *dataStore;
 @property(readonly, nonatomic) id vertexID;
+- (void)unlock;
+- (void)lock;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_init;

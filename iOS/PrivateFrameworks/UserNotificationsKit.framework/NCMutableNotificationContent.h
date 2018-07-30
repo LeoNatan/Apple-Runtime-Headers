@@ -6,7 +6,7 @@
 
 #import <UserNotificationsKit/NCNotificationContent.h>
 
-@class NSDate, NSString, NSTimeZone, UIImage;
+@class NSArray, NSDate, NSString, NSTimeZone, UIImage;
 
 @interface NCMutableNotificationContent : NCNotificationContent
 {
@@ -17,7 +17,13 @@
 @property(nonatomic, getter=isDateAllDay) _Bool dateAllDay; // @dynamic dateAllDay;
 @property(retain, nonatomic) NSDate *date; // @dynamic date;
 @property(retain, nonatomic) UIImage *attachmentImage; // @dynamic attachmentImage;
+@property(retain, nonatomic) NSArray *carPlayIcons; // @dynamic carPlayIcons;
+@property(retain, nonatomic) UIImage *carPlayIcon; // @dynamic carPlayIcon;
+@property(retain, nonatomic) NSArray *icons; // @dynamic icons;
 @property(retain, nonatomic) UIImage *icon; // @dynamic icon;
+@property(nonatomic) unsigned long long summaryArgumentCount; // @dynamic summaryArgumentCount;
+@property(copy, nonatomic) NSString *summaryArgument; // @dynamic summaryArgument;
+@property(copy, nonatomic) NSString *categorySummaryFormat; // @dynamic categorySummaryFormat;
 @property(copy, nonatomic) NSString *hiddenPreviewsBodyPlaceholder; // @dynamic hiddenPreviewsBodyPlaceholder;
 @property(copy, nonatomic) NSString *message; // @dynamic message;
 @property(copy, nonatomic) NSString *subtitle; // @dynamic subtitle;

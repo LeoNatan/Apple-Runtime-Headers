@@ -8,13 +8,14 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface SKProductsResponseInternal : NSObject
 {
     NSArray *_invalidIdentifiers;
     NSArray *_products;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

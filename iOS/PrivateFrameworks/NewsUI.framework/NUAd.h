@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSDate *loadDate; // @synthesize loadDate=_loadDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSString *opportunityIdentifier; // @synthesize opportunityIdentifier=_opportunityIdentifier;
-@property(retain, nonatomic) NUAdBannerView *bannerView; // @synthesize bannerView=_bannerView;
+@property(nonatomic) __weak NUAdBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)adContextValueForKeyPath:(id)arg1;

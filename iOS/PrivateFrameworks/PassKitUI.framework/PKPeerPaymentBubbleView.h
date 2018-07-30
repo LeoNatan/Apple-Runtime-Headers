@@ -25,6 +25,7 @@
     _Bool _testTransition;
     _Bool _showsActionSpinner;
     _Bool _hasRoundedCorners;
+    _Bool _usesWatchColors;
     _Bool _displaysApplePayLogo;
     _Bool _liveRenderingEnabled;
     unsigned long long _state;
@@ -37,14 +38,17 @@
 }
 
 + (id)generatedSnapshotForDataURL:(id)arg1 contentInset:(struct UIEdgeInsets)arg2 isFromMe:(_Bool)arg3;
++ (id)referenceWatchBackgroundColorForState:(unsigned long long)arg1;
 + (id)referenceBackgroundColorForState:(unsigned long long)arg1;
 + (id)referenceBackgroundColor;
 + (struct CGSize)referenceSizeForPeerPaymentStatusResponse:(id)arg1;
 + (struct CGSize)referenceSizeForState:(unsigned long long)arg1 andAction:(unsigned long long)arg2;
 + (struct CGSize)referenceSizeForState:(unsigned long long)arg1;
 + (struct CGSize)referenceSize;
++ (id)applePayLogo;
 @property(nonatomic, getter=isLiveRenderingEnabled) _Bool liveRenderingEnabled; // @synthesize liveRenderingEnabled=_liveRenderingEnabled;
 @property(nonatomic) _Bool displaysApplePayLogo; // @synthesize displaysApplePayLogo=_displaysApplePayLogo;
+@property(nonatomic) _Bool usesWatchColors; // @synthesize usesWatchColors=_usesWatchColors;
 @property(nonatomic) _Bool hasRoundedCorners; // @synthesize hasRoundedCorners=_hasRoundedCorners;
 @property(readonly, nonatomic) PKContinuousButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) _Bool showsActionSpinner; // @synthesize showsActionSpinner=_showsActionSpinner;
@@ -82,6 +86,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithAmount:(id)arg1 currency:(id)arg2 state:(unsigned long long)arg3;
+- (id)initWithCurrencyAmount:(id)arg1 state:(unsigned long long)arg2;
 - (id)init;
 - (id)interactiveViews;
 

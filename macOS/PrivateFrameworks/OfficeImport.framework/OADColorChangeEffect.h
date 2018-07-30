@@ -8,13 +8,13 @@
 
 @class OADColor;
 
-__attribute__((visibility("hidden")))
 @interface OADColorChangeEffect : OADBlipEffect
 {
     OADColor *mFromColor;
     OADColor *mToColor;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setStyleColor:(id)arg1;
@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)toColor;
 - (void)setFromColor:(id)arg1;
 - (id)fromColor;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

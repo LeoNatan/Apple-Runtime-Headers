@@ -10,6 +10,7 @@
 
 @class NSSound, NSString, TURepeatingActor;
 
+__attribute__((visibility("hidden")))
 @interface TUNSSoundPlayer : NSObject <NSSoundDelegate>
 {
     TURepeatingActor *_repeatingActor;

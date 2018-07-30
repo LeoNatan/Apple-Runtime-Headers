@@ -43,8 +43,7 @@
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) NSURL *previewItemURL;
 - (id)_getIrisBundleURL;
-- (id)_getTempIrisBundleLocation;
-- (id)_getTempIrisFolder;
+- (id)_getIrisBundleLocation;
 - (id)calculateIrisVideoPath;
 - (id)getIrisVideoPath;
 - (id)dragItem;
@@ -60,8 +59,6 @@
 - (id)fileIcon;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
-- (void)_removeAppendedBundle;
 - (id)imageData;
 - (id)initWithFileURL:(id)arg1 size:(struct CGSize)arg2 transferGUID:(id)arg3 guid:(id)arg4 createdDate:(id)arg5;
 

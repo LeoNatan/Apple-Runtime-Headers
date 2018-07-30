@@ -53,7 +53,7 @@
 - (void)_stopIfCancelled;
 - (void)_stopConnection;
 - (_Bool)_shouldFollowRedirectWithRequest:(id)arg1 error:(id *)arg2;
-- (void)_setActiveURLRequest:(id)arg1;
+@property(retain, setter=_setActiveURLRequest:) NSURLRequest *_activeURLRequest;
 - (void)_sendResponseToDelegate:(id)arg1;
 - (void)_sendRequestToDelegate:(id)arg1;
 - (void)_sendOutputToDelegate:(id)arg1;
@@ -84,7 +84,6 @@
 - (id)_requestProperties;
 - (_Bool)_processResponseData:(id)arg1 error:(id *)arg2;
 - (id)_copyAuthenticationContext;
-- (id)_activeURLRequest;
 - (id)_accountIdentifier;
 @property _Bool tracksPerformanceMetrics;
 @property(readonly) ISURLRequestPerformance *performanceMetrics;

@@ -156,6 +156,10 @@
 - (BOOL)_shouldShowFocusRingInView:(id)arg1;
 - (BOOL)_hasFocusRingInView:(id)arg1;
 - (void)_drawTextFieldWithStepperWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (void)_drawThemeBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (struct NSEdgeInsets)_contentInsetsForThemeBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (struct NSEdgeInsets)_alignmentRectInsetsForThemeBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (id)_coreUIDrawOptionsForThemeBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (unsigned long long)_hitTestTextFieldWithStepper:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)_clockAndCalendarTakeDisplayedMonthFromTodaysDate;
 - (void)_clockAndCalendarTakeDisplayedMonthFromDateValue;

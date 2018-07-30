@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOTileSetStateFeedbackCollection : PBCodable <NSCopying>
 {
     struct GEOSessionID _sessionID;

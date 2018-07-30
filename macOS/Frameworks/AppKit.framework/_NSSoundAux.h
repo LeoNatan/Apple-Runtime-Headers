@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSSoundAux : NSObject
 {
     struct OpaqueAudioConverter *_audioConverter;

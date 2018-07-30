@@ -6,6 +6,7 @@
 
 #import "NSNextStepFrame.h"
 
+__attribute__((visibility("hidden")))
 @interface DBCFrameView : NSNextStepFrame
 {
 }

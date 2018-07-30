@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)AVAssetAuthoringMetadataWithCreationDate:(id)arg1;
++ (id)AVAssetAuthoringMetadataWithCreationDate:(id)arg1 uniqueID:(id)arg2;
 + (void)_AVAssetExportDetermineSettingsForExportingAsset:(id)arg1 outputExtensionWithFallbacks:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)AVAssetExportDetermineSettingsForExportingAsset:(id)arg1 preferredOutputExtension:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)AVAssetExportPresetForExportingToExtension:(id)arg1;

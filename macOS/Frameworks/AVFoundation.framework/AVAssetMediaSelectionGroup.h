@@ -8,6 +8,7 @@
 
 @class AVAsset, AVMediaSelectionOption, NSArray, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetMediaSelectionGroup : AVMediaSelectionGroup
 {
     AVAsset *_asset;

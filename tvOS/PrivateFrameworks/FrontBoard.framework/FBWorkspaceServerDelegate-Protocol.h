@@ -12,5 +12,6 @@
 - (void)server:(FBWorkspaceServer *)arg1 handleDestroySceneRequest:(FBSWorkspaceDestroySceneRequestEvent *)arg2 withCompletion:(void (^)(void))arg3;
 - (void)server:(FBWorkspaceServer *)arg1 handleCreateSceneRequest:(FBSWorkspaceCreateSceneRequestEvent *)arg2 withCompletion:(void (^)(FBScene *))arg3;
 - (void)server:(FBWorkspaceServer *)arg1 handleConnectEvent:(FBSWorkspaceConnectEvent *)arg2;
+- (void)serverDidInvalidateConnection:(FBWorkspaceServer *)arg1;
 @end
 

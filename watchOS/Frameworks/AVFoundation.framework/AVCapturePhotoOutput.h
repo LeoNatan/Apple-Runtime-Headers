@@ -78,6 +78,7 @@
 - (void)userInitiatedCaptureRequestAtTime:(unsigned long long)arg1;
 - (void)setFilterRenderingEnabled:(_Bool)arg1;
 - (_Bool)isFilterRenderingEnabled;
+- (CDStruct_1ef3fb1f)optimizedImageDimensionsForOfflineStabilization;
 - (void)setOptimizesImagesForOfflineVideoStabilization:(_Bool)arg1;
 - (_Bool)optimizesImagesForOfflineVideoStabilization;
 - (_Bool)isImageOptimizationForOfflineVideoStabilizationSupported;

@@ -6,6 +6,7 @@
 
 #import "NSPanel.h"
 
+__attribute__((visibility("hidden")))
 @interface PIPPanel : NSPanel
 {
 }

@@ -13,6 +13,7 @@
     int _state;
     int _presentationState;
     int _value;
+    unsigned int _dimension1;
     _Bool _useSimplifiedEffect;
     _Bool _foregroundColorShouldTintEffects;
     float _brightnessMultiplier;
@@ -25,6 +26,7 @@
 @property(nonatomic) float brightnessMultiplier; // @synthesize brightnessMultiplier=_brightnessMultiplier;
 @property(nonatomic) _Bool foregroundColorShouldTintEffects; // @synthesize foregroundColorShouldTintEffects=_foregroundColorShouldTintEffects;
 @property(nonatomic) _Bool useSimplifiedEffect; // @synthesize useSimplifiedEffect=_useSimplifiedEffect;
+@property(nonatomic) unsigned int dimension1; // @synthesize dimension1=_dimension1;
 @property(nonatomic) int value; // @synthesize value=_value;
 @property(nonatomic) int presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) int state; // @synthesize state=_state;

@@ -24,7 +24,6 @@
 - (void)deleteFolderWithID:(unsigned long long)arg1;
 - (BOOL)hasThumbnail;
 - (id)folders;
-- (id)filesSet;
 - (id)files;
 - (id)modificationDate;
 - (id)creationDate;
@@ -34,11 +33,11 @@
 - (void)deleteFile:(id)arg1;
 - (void)deleteItem:(id)arg1;
 - (void)addFolder:(id)arg1;
+- (void)addFiles:(id)arg1;
 - (void)addFile:(id)arg1;
 - (void)removeContent;
 - (void)addContent:(id)arg1;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 

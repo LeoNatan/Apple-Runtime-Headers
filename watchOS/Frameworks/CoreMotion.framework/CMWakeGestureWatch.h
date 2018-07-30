@@ -21,7 +21,6 @@
     int fScreenDimmingNotificationToken;
 }
 
-+ (_Bool)isWakeGestureAvailable;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)onWakeUpdated:(const struct Sample *)arg1;

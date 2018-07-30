@@ -6,24 +6,34 @@
 
 #import <AppKit/NSPanel.h>
 
-@class NSButton, NSPopUpButton, NSScrollView, NSSegmentedControl, NSTextField, NSToolbar, NSToolbarView, _NSToolbarImageRepView;
+#import "NSCollectionViewDataSource.h"
+#import "NSCollectionViewDelegate.h"
+#import "NSCollectionViewDelegateFlowLayout.h"
+#import "NSTouchBarCustomizationPaletteLayoutDelegate.h"
 
-@interface NSToolbarConfigPanel : NSPanel
+@class NSBox, NSButton, NSCollectionView, NSPopUpButton, NSScrollView, NSSegmentedControl, NSString, NSTextField, NSToolbar, NSToolbarSnapshotWindow, _NSToolbarImageRepView;
+
+__attribute__((visibility("hidden")))
+@interface NSToolbarConfigPanel : NSPanel <NSCollectionViewDataSource, NSTouchBarCustomizationPaletteLayoutDelegate, NSCollectionViewDelegateFlowLayout, NSCollectionViewDelegate>
 {
     NSToolbar *_editedToolbar;
     double _widthOfWidgets;
+    double _individualItemsMaxHeight;
     NSToolbar *_individualItemsToolbar;
     NSTextField *_individualItemsText;
-    NSToolbarView *_individualItemsToolbarView;
+    NSCollectionView *_individualItemsCollectionView;
     NSScrollView *_individualItemsScrollView;
     NSTextField *_defaultItemsText;
     _NSToolbarImageRepView *_defaultToolbarImageRep;
     NSTextField *_displayModeLabel;
     NSPopUpButton *_displayModePopUp;
-    double _maxIndividualItemViewHeight;
     long long _desiredSheetWidth;
     NSButton *_useSmallIconsCheckBox;
     NSSegmentedControl *_displayModeSegmentedControl;
+    NSToolbarSnapshotWindow *_snapshotWindow;
+    NSBox *_defaultItemsContainer;
+    NSBox *_topItemsSeparator;
+    NSBox *_bottomItemsSeparator;
 }
 
 + (id)toolbarConfigPanelForToolbar:(id)arg1 withWidth:(long long)arg2;
@@ -34,16 +44,20 @@
 - (id)makeTouchBar;
 - (void)_setDefaultToolbarItemSetFromMenuItem:(id)arg1;
 - (BOOL)preventsApplicationTerminationWhenModal;
-- (void)_layoutForData;
-- (double)_resizeViewToFit:(id)arg1;
-- (double)_resizeToolbarViewToFit:(id)arg1;
-- (void)_computeMaxItemViewHeight;
-- (double)_deltaForResizingImageRepView:(id)arg1;
-- (double)_resizeToolbarImageRepViewToFit:(id)arg1;
-- (double)_deltaForResizingTextField:(id)arg1;
-- (double)_resizeTextFieldToFit:(id)arg1;
+- (void)collectionView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 dragOperation:(unsigned long long)arg4;
+- (double)_spaceNeededForPaletteLabelsOfItem:(id)arg1 preferredWidth:(double)arg2;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 draggingImageForItemsAtIndexPaths:(id)arg2 withEvent:(id)arg3 offset:(struct CGPoint *)arg4;
+- (BOOL)collectionView:(id)arg1 writeItemsAtIndexPaths:(id)arg2 toPasteboard:(id)arg3;
+- (BOOL)collectionView:(id)arg1 canDragItemsAtIndexPaths:(id)arg2 withEvent:(id)arg3;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 maxSizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 minSizeForItemAtIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)_loadData;
+- (void)_layoutPanelAndAdjustIfNecessary;
 - (int)_setBackingStoreResolution:(double)arg1;
+- (void)_loadIndividualItemsCollectionView;
 - (void)_loadDefaultSetImageRep;
 - (id)_createOffscreenDefaultImageRepSetWindow;
 - (void)_setUpTextField:(id)arg1;
@@ -56,6 +70,12 @@
 - (void)_orderFrontRelativeToWindow:(id)arg1;
 - (BOOL)_shouldSuppressRolloversForSegmentedCellInView:(id)arg1;
 - (void)_finishInitialization;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -12,6 +12,7 @@
 
 + (_Bool)shouldBehaveAsRestart;
 + (id)pathForSentinelFile;
++ (id)logHandle;
 - (id)fetchRefreshTimesAndRecordIDs;
 - (id)fetchAlertInfosAndRecordIDs;
 - (id)fetchNotificationBulletinsForSectionID:(id)arg1;

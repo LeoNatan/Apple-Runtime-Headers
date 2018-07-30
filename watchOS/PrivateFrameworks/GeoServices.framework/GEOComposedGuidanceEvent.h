@@ -48,6 +48,7 @@
 @property(readonly, nonatomic) _Bool isLaneGuidanceForManeuver;
 @property(readonly, nonatomic) int composedGuidanceEventType;
 @property(readonly, nonatomic) NSArray *laneInstructions;
+@property(readonly, nonatomic) NSArray *laneTitles;
 @property(readonly, nonatomic) NSArray *lanes;
 @property(readonly, nonatomic) _Bool isSticky;
 @property(readonly, nonatomic) _Bool hasHaptics;

@@ -121,6 +121,7 @@
 - (id)_generatedIdentifierForBundlePath:(id)arg1;
 - (id)_looseComponentIdentifier;
 - (id)_bundlePathFromBundleElement:(id)arg1;
+- (id)componentForIdentifier:(id)arg1;
 
 @end
 

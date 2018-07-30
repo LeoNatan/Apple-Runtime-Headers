@@ -47,7 +47,7 @@
 @property(copy) NSArray *_alternateActionButtonTitles; // @dynamic _alternateActionButtonTitles;
 @property(readonly) unsigned long long _alternateActionIndex; // @dynamic _alternateActionIndex;
 @property BOOL _alwaysShowAlternateActionMenu; // @dynamic _alwaysShowAlternateActionMenu;
-@property unsigned long long _badgeCount; // @dynamic _badgeCount;
+@property long long _badgeCount; // @dynamic _badgeCount;
 @property BOOL _clearable; // @dynamic _clearable;
 @property(copy) NSString *_dateString; // @dynamic _dateString;
 @property(copy) NSDateComponents *_deliveryExpiration; // @dynamic _deliveryExpiration;

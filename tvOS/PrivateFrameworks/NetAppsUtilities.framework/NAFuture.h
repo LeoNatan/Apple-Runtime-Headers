@@ -8,11 +8,11 @@
 
 #import "NAPromise.h"
 
-@class NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class NSError, NSMutableArray, NSString;
 
 @interface NAFuture : NSObject <NAPromise>
 {
-    NSObject<OS_dispatch_queue> *_accessQueue;
+    struct os_unfair_lock_s _lock;
     _Bool _finished;
     NSMutableArray *_completionBlocks;
     id _resultValue;

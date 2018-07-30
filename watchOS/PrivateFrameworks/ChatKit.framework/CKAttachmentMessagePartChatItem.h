@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *transferGUID;
 - (id)pasteboardItems;
+- (_Bool)shouldCacheSize;
 - (unsigned int)balloonCorners;
 - (Class)balloonViewClass;
 - (_Bool)stickersSnapToPoint;

@@ -7,14 +7,13 @@
 #import "NSObject.h"
 
 #import "AKAppleIDAuthenticationDelegate.h"
-#import "BTMMPasswordSheetDelegate.h"
 #import "FLFollowUpControllerDelegate.h"
 #import "MMWebKitViewControllerDelegate.h"
 #import "iCloudWebViewDelegate.h"
 
-@class ADMChangePasswordController, MMBTMMPasswordSheet, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSArray, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSOperationQueue, NSProgressIndicator, NSString, NSTextField, NSTimer, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController, iCloudSetupTopLevel;
+@class ADMChangePasswordController, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSArray, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSProgressIndicator, NSString, NSTextField, NSTimer, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController, iCloudSetupTopLevel;
 
-@interface CastlePlugin : NSObject <AKAppleIDAuthenticationDelegate, FLFollowUpControllerDelegate, MMWebKitViewControllerDelegate, BTMMPasswordSheetDelegate, iCloudWebViewDelegate>
+@interface CastlePlugin : NSObject <AKAppleIDAuthenticationDelegate, FLFollowUpControllerDelegate, MMWebKitViewControllerDelegate, iCloudWebViewDelegate>
 {
     id <iCloudPrefDelegate> _delegate;
     MMWebKitViewController *_webKitViewController;
@@ -25,7 +24,6 @@
     iCloudSetupTopLevel *setupController;
     NSMutableDictionary *_accountList;
     NSString *_visibleAccountID;
-    MMBTMMPasswordSheet *_btmmPasswordSheet;
     NSTimer *_signoutSpinnerStartTimer;
     double _signoutSpinnerStopTime;
     NSWindow *_mainWindow;
@@ -40,7 +38,6 @@
     BOOL _signInSucess;
     NSObject<OS_dispatch_semaphore> *_signInTokenSemaphore;
     NSError *_signinErrorToReturn;
-    NSOperationQueue *_requesterQueue;
     NSArray *_topLevelObjects;
     int _notifyToken;
     NSView *_setupViewHolderTopLevel;
@@ -93,7 +90,6 @@
 @property(retain) iCloudAccountDetailsControllerNew *accountDetailsControllerNew; // @synthesize accountDetailsControllerNew=_accountDetailsControllerNew;
 @property(retain) iCloudAccountDetailsController *accountDetailsController; // @synthesize accountDetailsController=_accountDetailsController;
 @property(retain) NSString *visibleAccountID; // @synthesize visibleAccountID=_visibleAccountID;
-@property(retain) MMBTMMPasswordSheet *btmmPasswordSheet; // @synthesize btmmPasswordSheet=_btmmPasswordSheet;
 @property NSString *pw; // @synthesize pw=_pw;
 @property NSString *appleID; // @synthesize appleID=_appleID;
 - (void)sizeChangedFrom:(struct CGSize)arg1 toSize:(struct CGSize)arg2 webViewName:(id)arg3 callback:(id)arg4;
@@ -169,13 +165,11 @@
 - (void)showSigningOut:(id)arg1;
 - (BOOL)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (void)reauthenticate:(id)arg1;
-- (void)btmmPasswordSheetDidEnd:(id)arg1 returnCode:(long long)arg2;
 - (void)forgotPressedTopLevel:(id)arg1;
 - (void)showContinueCreateAppleID:(id)arg1;
 - (void)showCreateAppleID;
 - (void)createPressedTopLevel:(id)arg1;
 - (void)cancelPressedTopLevel:(id)arg1;
-- (void)castleSetupDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)enableDataClass:(id)arg1;
 - (void)releasePassword;
 - (void)_closeCreateAppleIDWindow:(BOOL)arg1;

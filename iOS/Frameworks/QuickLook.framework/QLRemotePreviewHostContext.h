@@ -10,6 +10,7 @@
 
 @class NSString, QLRemoteItemViewController;
 
+__attribute__((visibility("hidden")))
 @interface QLRemotePreviewHostContext : NSExtensionContext <QLRemotePreviewService>
 {
     QLRemoteItemViewController *_remoteItemViewController;
@@ -19,14 +20,18 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 @property(nonatomic) __weak QLRemoteItemViewController *remoteItemViewController; // @synthesize remoteItemViewController=_remoteItemViewController;
 - (void).cxx_destruct;
+- (void)invalidateService;
 - (void)getPrinterProxyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setHostViewControllerProxy:(id)arg1;
+- (void)setAppearance:(id)arg1 animated:(_Bool)arg2;
 - (void)previewDidDisappear:(_Bool)arg1;
 - (void)previewWillDisappear:(_Bool)arg1;
 - (void)previewDidAppear:(_Bool)arg1;
 - (void)previewWillAppear:(_Bool)arg1;
 - (void)previewControllerDidUpdatePreferredContentSize:(id)arg1;
 - (void)previewControllerDidUpdateTitle:(id)arg1;
+- (void)previewControllerWantsFullScreen:(_Bool)arg1;
 - (id)protocolService;
 - (id)protocolServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 

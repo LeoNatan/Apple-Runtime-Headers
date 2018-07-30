@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint, NSMutableArray, UIButton, _UIBackdropView;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditLivePhotoToolbar : UIView
 {
     _UIBackdropView *_backdropBackgroundView;

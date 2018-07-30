@@ -6,16 +6,16 @@
 
 #import "NSObject.h"
 
-#import "NSXPCListenerDelegate.h"
 #import "SPExtensionRemoteProtocol.h"
 #import "SPRemoteInterfaceProtocol.h"
 
-@class CLKComplicationServer, NSBundle, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSXPCListener;
+@class CLKComplicationServer, NSBundle, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
-@interface SPRemoteInterface : NSObject <SPRemoteInterfaceProtocol, NSXPCListenerDelegate, SPExtensionRemoteProtocol>
+@interface SPRemoteInterface : NSObject <SPRemoteInterfaceProtocol, SPExtensionRemoteProtocol>
 {
     _Bool _handlesBGTasks;
     _Bool _appIsSuspendedUnderLock;
+    _Bool _extensionLaunchedForRemoteExtensionConnection;
     id <SPRemoteInterfaceDataDelegateProtocol> _dataDelegate;
     NSMutableArray *_activeComplicationsConnections;
     id _runLoopObserver;
@@ -32,9 +32,10 @@
     CDUnknownBlockType _audioRecorderControllerCompletion;
     NSMutableArray *_openParentRequests;
     id <SPApplicationRemoteProtocol> _applicationConnection;
-    NSXPCListener *_uiClientListener;
+    id <SPApplicationRemoteProtocol> _notificationUIConnection;
     NSMutableDictionary *_clientConnections;
-    NSMutableArray *_pendingApplicationCompanionConnectionTasks;
+    NSMutableDictionary *_notificationInterfaceControllers;
+    NSMutableArray *_pendingApplicationExtensionConnectionTasks;
     CLKComplicationServer *_complicationServer;
     id <WKExtensionDelegate> _interfaceDelegate;
     id <WKExtensionDelegate> _extensionDelegate;
@@ -59,7 +60,7 @@
 + (void)scheduleBackgroundRefreshTask:(id)arg1 preferredDate:(id)arg2 userInfo:(id)arg3 trackingUUID:(id)arg4 scheduledCompletion:(CDUnknownBlockType)arg5;
 + (void)interfaceViewController:(id)arg1 sendCrownReplyData:(id)arg2;
 + (void)interfaceViewController:(id)arg1 sendGestureReplyData:(id)arg2;
-+ (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2;
++ (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2 bulletinUniqueID:(id)arg3;
 + (_Bool)sendAudioPlayerMessageDataToApp:(id)arg1 reply:(CDUnknownBlockType)arg2;
 + (_Bool)sendAudioPlayerMessageDataToApp:(id)arg1;
 + (id)visibleInterfaceController;
@@ -67,10 +68,13 @@
 + (id)extensionDelegate;
 + (void)setExtensionDelegate:(id)arg1;
 + (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3 interfaceController:(id)arg4;
++ (void)updateUserActivity:(id)arg1 interfaceController:(id)arg2;
 + (void)didFinishHandlingBackgroundSnapshotTask:(_Bool)arg1 glanceableUI:(_Bool)arg2 staleDate:(id)arg3 userInfoUUID:(id)arg4 barTaskUUID:(id)arg5;
 + (void)failedToHandleBackgroundTasks:(id)arg1 error:(id)arg2 barTaskUUID:(id)arg3;
 + (void)didFinishHandlingBackgroundTask:(id)arg1 refreshSnapshot:(_Bool)arg2 barTaskUUID:(id)arg3;
 + (void)didFinishHandlingActivity:(id)arg1;
++ (void)notificationController:(id)arg1 setNotificationActions:(id)arg2;
++ (void)notificationControllerPerformDefaultAction:(id)arg1;
 + (void)controllerDismissAddPassesController:(id)arg1;
 + (void)controller:(id)arg1 presentAddPassesControllerWithPasses:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)openSystemURL:(id)arg1;
@@ -104,16 +108,15 @@
 + (void)_setupStorageForController:(id)arg1;
 + (void)handleEvent:(CDUnknownBlockType)arg1;
 + (id)SerializablePropertyValue:(id)arg1;
-+ (void)_updateAccessibility;
 + (void)setupDirectXPCConnectionWithEndpoint:(id)arg1 clientIdentifier:(id)arg2;
 + (_Bool)appIsSuspendedUnderLock;
 + (id)watchAppBundleID;
-+ (id)cacheIdentifier;
 + (id)_remoteIdentifier;
 + (id)startRemoteInterfaceWithBundle:(id)arg1;
 + (id)startRemoteInterface;
 + (id)sharedRemoteInterface;
 @property(copy, nonatomic) CDUnknownBlockType addPassesCompletion; // @synthesize addPassesCompletion=_addPassesCompletion;
+@property(nonatomic) _Bool extensionLaunchedForRemoteExtensionConnection; // @synthesize extensionLaunchedForRemoteExtensionConnection=_extensionLaunchedForRemoteExtensionConnection;
 @property(retain, nonatomic) NSBundle *extensionBundle; // @synthesize extensionBundle=_extensionBundle;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *timingTest_queue; // @synthesize timingTest_queue=_timingTest_queue;
 @property(nonatomic) unsigned int timingTest_ExtensionSendSize; // @synthesize timingTest_ExtensionSendSize=_timingTest_ExtensionSendSize;
@@ -130,9 +133,10 @@
 @property(nonatomic) __weak id <WKExtensionDelegate> extensionDelegate; // @synthesize extensionDelegate=_extensionDelegate;
 @property(retain, nonatomic) id <WKExtensionDelegate> interfaceDelegate; // @synthesize interfaceDelegate=_interfaceDelegate;
 @property(retain, nonatomic) CLKComplicationServer *complicationServer; // @synthesize complicationServer=_complicationServer;
-@property(retain, nonatomic) NSMutableArray *pendingApplicationCompanionConnectionTasks; // @synthesize pendingApplicationCompanionConnectionTasks=_pendingApplicationCompanionConnectionTasks;
+@property(retain, nonatomic) NSMutableArray *pendingApplicationExtensionConnectionTasks; // @synthesize pendingApplicationExtensionConnectionTasks=_pendingApplicationExtensionConnectionTasks;
+@property(retain, nonatomic) NSMutableDictionary *notificationInterfaceControllers; // @synthesize notificationInterfaceControllers=_notificationInterfaceControllers;
 @property(retain, nonatomic) NSMutableDictionary *clientConnections; // @synthesize clientConnections=_clientConnections;
-@property(retain, nonatomic) NSXPCListener *uiClientListener; // @synthesize uiClientListener=_uiClientListener;
+@property(retain, nonatomic) id <SPApplicationRemoteProtocol> notificationUIConnection; // @synthesize notificationUIConnection=_notificationUIConnection;
 @property(nonatomic) __weak id <SPApplicationRemoteProtocol> applicationConnection; // @synthesize applicationConnection=_applicationConnection;
 @property(retain, nonatomic) NSMutableArray *openParentRequests; // @synthesize openParentRequests=_openParentRequests;
 @property(copy, nonatomic) CDUnknownBlockType audioRecorderControllerCompletion; // @synthesize audioRecorderControllerCompletion=_audioRecorderControllerCompletion;
@@ -162,10 +166,14 @@
 - (void)interfaceViewController:(id)arg1 gestureData:(id)arg2;
 - (void)willDeactivateDataConnection:(id)arg1;
 - (void)didActivateDataConnection:(id)arg1;
+- (void)tearDownNotificationViewServiceForStorageKey:(id)arg1;
+- (void)tearDownNotificationViewServiceForClientID:(id)arg1 bulletinUniqueID:(id)arg2 hostID:(id)arg3;
+- (void)requestNotificationViewServiceForHost:(id)arg1 hostID:(id)arg2 clientIdentifier:(id)arg3 bulletinUniqueID:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)appDidReceiveNotification:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)appHandleWatchTasks:(id)arg1 reasonForSnapshot:(unsigned int)arg2 visibleVCID:(id)arg3 barTaskUUID:(id)arg4 clientIdentifier:(id)arg5;
+- (void)appHandleIntent:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)appReceiveContextData:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)appHandleSerializedNSUserActivity:(id)arg1 clientIdentifier:(id)arg2;
+- (void)appHandleNSUserActivity:(id)arg1 clientIdentifier:(id)arg2;
 - (void)appBeginWorkout:(id)arg1 clientIdentifier:(id)arg2;
 - (void)appUpdateState:(int)arg1 suspendedUnderLock:(_Bool)arg2 clientIdentifier:(id)arg3;
 - (void)appDidEnterBackground:(id)arg1 withVisibleViewControllerID:(id)arg2;
@@ -179,18 +187,16 @@
 - (void)scheduleBackgroundRefreshTask:(id)arg1 preferredDate:(id)arg2 userInfo:(id)arg3 trackingUUID:(id)arg4 scheduledCompletion:(CDUnknownBlockType)arg5;
 - (void)interfaceViewController:(id)arg1 sendCrownReplyData:(id)arg2;
 - (void)interfaceViewController:(id)arg1 sendGestureReplyData:(id)arg2;
-- (id)applicationCompanionConnection;
-- (void)runTaskOnApplicationCompanionConnection:(CDUnknownBlockType)arg1;
+- (id)applicationExtensionConnection;
+- (void)runTaskOnApplicationExtensionConnection:(CDUnknownBlockType)arg1;
 - (void)removeLocalConnectionWithIdentifier:(id)arg1 ifMatching:(id)arg2;
 - (void)setupDirectXPCConnectionWithEndpoint:(id)arg1 clientIdentifier:(id)arg2;
-- (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)receiveAdditionalNotificationViewController:(id)arg1 notificationData:(id)arg2;
 - (void)receiveNativeComplicationRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)complicationDefaultImagesAssetName;
 - (id)controllerMethods:(id)arg1;
 - (void)_fillDataWithRandom:(id)arg1 length:(int)arg2;
-- (void)getComplicationData:(id)arg1;
-- (id)extensionDidBeginUsingWithLaunchEnv:(id)arg1 launchArgs:(id)arg2;
+- (id)extensionDidBeginUsingWithLaunchEnv:(id)arg1 launchArgs:(id)arg2 launchedSuspendedNotInDock:(_Bool)arg3;
 - (void)_deviceOrientationDidChange:(id)arg1;
 - (void)_extensionDelegateDidChange;
 - (void)createExtensionDelegateWithClassName:(id)arg1;
@@ -206,7 +212,6 @@
 - (void)dataInterfaceDidBecomeActive:(id)arg1;
 - (void)forwardDidEnterForegroundToScenesInViewController:(id)arg1;
 - (void)forwardDidEnterBackgroundToScenesInInterfaceController:(id)arg1;
-- (void)applicationIsStillActive;
 - (void)applicationHandleWatchTaskKeys:(id)arg1 reasonForSnapshot:(unsigned int)arg2 visibleVCID:(id)arg3 barTaskUUID:(id)arg4 clientIdentifier:(id)arg5;
 - (void)performAfterApplicationDidFinishLaunching:(CDUnknownBlockType)arg1;
 - (void)forceRenderAllVisibleSpriteKitAndSceneKitViews;
@@ -216,11 +221,15 @@
 - (void)applicationDidReceiveNotification:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
+- (void)applicationHandleIntent:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)applicationReceiveContextData:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)applicationHandleSerializedNSUserActivity:(id)arg1 clientIdentifier:(id)arg2;
+- (void)applicationHandleNSUserActivity:(id)arg1 clientIdentifier:(id)arg2;
+- (void)applicationAudioLaunch:(id)arg1;
+- (void)applicationRecoverWorkout:(id)arg1;
 - (void)applicationBeginWorkout:(id)arg1 clientIdentifier:(id)arg2;
 - (void)applicationUpdateState:(int)arg1 suspendedUnderLock:(_Bool)arg2 clientIdentifier:(id)arg3;
 - (void)applicationDidFinishConnecting:(id)arg1;
+- (void)applicationContentsDidReset:(id)arg1;
 - (void)applicationDidTerminate:(id)arg1;
 - (void)didAppearAfterModalDismissalViewController:(id)arg1 clientIdentifier:(id)arg2;
 - (void)didDisappearAfterModalPresentationViewController:(id)arg1 clientIdentifier:(id)arg2;
@@ -237,7 +246,6 @@
 - (void)handleProtoPlist:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveData:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveDataFromApplication:(id)arg1 fromIdentifier:(id)arg2;
-- (void)receiveProtoData:(id)arg1 fromIdentifier:(id)arg2;
 - (void)removeInterfaceControllersForClient:(id)arg1;
 - (void)_dumpInterfaceDictionary;
 - (id)_allInterfaceControllers;
@@ -252,7 +260,9 @@
 - (void)_inQueue_recoverFromMissingIntefaceControllerWithID:(id)arg1;
 - (void)recoverFromMissingIntefaceControllerWithID:(id)arg1;
 - (void)sendWillActivateReplyForController:(id)arg1;
-- (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2;
+- (void)notificationController:(id)arg1 setNotificationActions:(id)arg2;
+- (void)notificationControllerPerformDefaultAction:(id)arg1;
+- (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2 bulletinUniqueID:(id)arg3;
 - (void)didFinishHandlingActivity:(id)arg1;
 - (void)controllerDismissAddPassesController:(id)arg1;
 - (void)controllerPresentAddPassesController:(id)arg1 passes:(id)arg2;
@@ -290,6 +300,7 @@
 - (void)startTest:(id)arg1;
 - (void)controller:(id)arg1 presentAlertControllerWithTitle:(id)arg2 message:(id)arg3 preferredStyle:(int)arg4 actions:(id)arg5;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3 controller:(id)arg4;
+- (void)updateUserActivity:(id)arg1 controller:(id)arg2;
 - (void)replyTimingData:(id)arg1;
 - (void)replyWithExtensionTimingData:(id)arg1;
 - (void)_requestTimingData:(id)arg1;
@@ -298,10 +309,10 @@
 - (void)extensionDidEndNotificationUICreation;
 - (void)extensionDidBeginNotificationUICreation;
 - (void)sendPushPagingScrollTableRow:(id)arg1 row:(int)arg2 seguesByRowName:(id)arg3 rowNamesAndContextIDs:(id)arg4 clientIdentifiers:(id)arg5;
-- (void)_performAfterSendSetViewControllers:(CDUnknownBlockType)arg1;
 - (void)sendSetViewController:(id)arg1 values:(id)arg2 clientIdentifiers:(id)arg3;
 - (void)sendSetViewController:(id)arg1 key:(id)arg2 property:(id)arg3 value:(id)arg4 clientIdentifiers:(id)arg5;
 - (void)sendPlistFromNativeExtension:(id)arg1 clientIdentifiers:(id)arg2;
+- (id)appRemoteProxyForClientIdentifier:(id)arg1;
 - (void)performForClientConnections:(id)arg1 directToUIBlock:(CDUnknownBlockType)arg2;
 - (void)sendPlist:(id)arg1 clientIdentifiers:(id)arg2;
 - (void)sendData:(id)arg1 clientIdentifiers:(id)arg2 reply:(CDUnknownBlockType)arg3;

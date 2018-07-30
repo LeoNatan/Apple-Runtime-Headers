@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)_lockedGetSQLCacheWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithClientContext:(id)arg1;
+- (void)clearInvalidatedPCSSQLCacheEntriesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearPCSMemoryCaches;
 - (void)clearPCSCaches;
 

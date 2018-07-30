@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
-@class BrowserViewController;
+@class BrowserViewController, CKContextResponse;
 
 @protocol BrowserContentLoaderDelegate <NSObject>
 - (void)installedBannersDidChangeInBrowserViewController:(BrowserViewController *)arg1;
 - (void)statusDidChangeInBrowserViewController:(BrowserViewController *)arg1;
 - (void)secureContentStatusDidChangeInBrowserViewController:(BrowserViewController *)arg1;
 - (void)loadingStatusDidChangeInBrowserViewController:(BrowserViewController *)arg1;
+- (void)browserViewController:(BrowserViewController *)arg1 didUpdateContextResponse:(CKContextResponse *)arg2;
 - (void)notSecureWarningStatusDidChangeInBrowserViewController:(BrowserViewController *)arg1;
 - (void)tabDialogDidChangeInBrowserViewController:(BrowserViewController *)arg1 isHTTPAuthenticationDialog:(BOOL)arg2;
 - (void)pageTitleDidChangeInBrowserViewController:(BrowserViewController *)arg1;
@@ -23,9 +24,9 @@
 - (void)mainDocumentDidFirstVisuallyNonEmptyLayoutInBrowserViewController:(BrowserViewController *)arg1;
 - (void)mainDocumentDidFirstLayoutInBrowserViewController:(BrowserViewController *)arg1;
 - (void)mainContentViewDidChangeInBrowserViewController:(BrowserViewController *)arg1;
-- (void)browserViewController:(BrowserViewController *)arg1 loadDidFinishForMainFrame:(const struct Frame *)arg2;
-- (void)browserViewController:(BrowserViewController *)arg1 loadDidCommitForMainFrame:(const struct Frame *)arg2;
-- (void)browserViewController:(BrowserViewController *)arg1 loadDidStartForMainFrame:(const struct Frame *)arg2;
+- (void)loadDidFinishInBrowserViewController:(BrowserViewController *)arg1;
+- (void)loadDidCommitInBrowserViewController:(BrowserViewController *)arg1;
+- (void)loadDidStartInBrowserViewController:(BrowserViewController *)arg1;
 - (void)progressDidCancelInBrowserViewController:(BrowserViewController *)arg1;
 - (void)progressDidFinishInBrowserViewController:(BrowserViewController *)arg1;
 - (void)progressValueDidChangeInBrowserViewController:(BrowserViewController *)arg1;

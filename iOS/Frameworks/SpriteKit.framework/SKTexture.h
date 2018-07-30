@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class CIFilter, NSArray, NSObject<OS_dispatch_queue>, NSString, SKTextureAtlas, SKTextureCache;
 
-@interface SKTexture : NSObject <NSCopying, NSCoding>
+@interface SKTexture : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _shouldGenerateMipmaps;
     _Bool _didGenerateMipmaps;
@@ -59,6 +59,7 @@
 + (id)preloadQueue;
 + (id)lookupTextureCacheForName:(id)arg1;
 + (void)registerTextureCache:(id)arg1 forName:(id)arg2;
++ (_Bool)supportsSecureCoding;
 + (id)textureWithIOSurfaceID:(unsigned int)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 format:(unsigned int)arg4;
 + (id)_textureWithGLTextureId:(unsigned int)arg1 size:(struct CGSize)arg2;
 + (id)_textureByTransferingData:(char *)arg1 size:(struct CGSize)arg2 rowLength:(unsigned int)arg3 alignment:(unsigned int)arg4;
@@ -91,6 +92,7 @@
 @property(readonly, nonatomic) _Bool hasAlpha;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (_Bool)isEqualToTexture:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImagePath:(id)arg1;
 - (id)init;

@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 - (id)colorAttachments;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (void)setMaxTotalThreadsPerThreadgroup:(unsigned long long)arg1;
 - (const struct MTLTileRenderPipelineDescriptorPrivate *)_descriptorPrivate;
 - (_Bool)threadgroupSizeMatchesTileSize;
 - (void)setThreadgroupSizeMatchesTileSize:(_Bool)arg1;

@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
+- (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (void)commitEditing;

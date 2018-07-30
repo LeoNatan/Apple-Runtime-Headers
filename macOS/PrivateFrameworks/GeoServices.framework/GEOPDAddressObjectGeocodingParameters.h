@@ -10,6 +10,7 @@
 
 @class GEOPDViewportInfo, NSData, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDAddressObjectGeocodingParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

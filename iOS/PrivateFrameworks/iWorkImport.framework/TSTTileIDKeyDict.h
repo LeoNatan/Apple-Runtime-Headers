@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)removeTileForID:(CDStruct_d65e47c4)arg1;
 - (void)setTile:(id)arg1 forID:(CDStruct_d65e47c4)arg2;
 - (id)tileForID:(CDStruct_d65e47c4)arg1;
+- (id)p_tileForLazyReference:(id)arg1;
 - (void)saveToArchive:(struct TileStorage *)arg1 archiver:(id)arg2;
 - (id)initWithArchive:(const struct TileStorage *)arg1 unarchiver:(id)arg2 owner:(id)arg3;
 - (void)dealloc;

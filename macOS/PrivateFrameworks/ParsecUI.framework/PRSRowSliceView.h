@@ -40,7 +40,6 @@
 @property(retain, nonatomic) NSString *leadingString;
 - (BOOL)accessibilityPerformPress;
 - (BOOL)isAccessibilityElement;
-- (BOOL)allowsVibrancy;
 - (void)updateTrackingAreas;
 - (void)cursorUpdate:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

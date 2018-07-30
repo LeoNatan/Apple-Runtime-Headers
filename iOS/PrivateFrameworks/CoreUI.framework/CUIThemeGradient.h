@@ -8,7 +8,6 @@
 
 #import "CUIThemeGradientDrawing.h"
 
-__attribute__((visibility("hidden")))
 @interface CUIThemeGradient : NSObject <CUIThemeGradientDrawing>
 {
     id gradientEvaluator;
@@ -36,7 +35,9 @@ __attribute__((visibility("hidden")))
 - (id)opacityStops;
 - (id)colorLocations;
 - (id)colorStops;
+- (void)_tintColorStopsWithEffects:(id)arg1;
 - (id)_colorFromPSDGradientColor:(struct _psdGradientColor)arg1;
+- (id)gradientByApplyingEffects:(id)arg1;
 - (id)initWithColors:(id)arg1 colorlocations:(id)arg2 colorMidpoints:(id)arg3 opacities:(id)arg4 opacityLocations:(id)arg5 opacityMidpoints:(id)arg6 smoothingCoefficient:(double)arg7 fillColor:(id)arg8 colorSpace:(struct CGColorSpace *)arg9 dither:(_Bool)arg10;
 - (id)initWithColors:(id)arg1 colorlocations:(id)arg2 colorMidpoints:(id)arg3 opacities:(id)arg4 opacityLocations:(id)arg5 opacityMidpoints:(id)arg6 smoothingCoefficient:(double)arg7 fillColor:(id)arg8 colorSpace:(struct CGColorSpace *)arg9;
 - (id)_initWithGradientEvaluator:(id)arg1 colorSpace:(struct CGColorSpace *)arg2;

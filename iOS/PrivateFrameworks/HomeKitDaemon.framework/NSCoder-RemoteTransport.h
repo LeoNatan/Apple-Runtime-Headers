@@ -8,6 +8,7 @@
 
 @interface NSCoder (RemoteTransport)
 - (id)supportedFeatures;
+@property(readonly, getter=isSharedUser) _Bool sharedUser;
 - (id)user;
 - (_Bool)isForNonAdminSharedUser;
 - (_Bool)isRemoteUserAdministrator;

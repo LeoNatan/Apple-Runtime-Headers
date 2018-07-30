@@ -11,15 +11,17 @@
 #import "BSXPCCoding.h"
 #import "NSSecureCoding.h"
 
-@class BSMutableSettings, NSSet, NSString;
+@class BSMutableSettings, NSSet, NSString, SBSRemoteAlertPresentationTarget;
 
 @interface SBSRemoteAlertActivationContext : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding, NSSecureCoding>
 {
     BSMutableSettings *_settings;
     NSSet *_actions;
+    SBSRemoteAlertPresentationTarget *_presentationTarget;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) SBSRemoteAlertPresentationTarget *presentationTarget; // @synthesize presentationTarget=_presentationTarget;
 @property(retain, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
 - (id)settings:(id)arg1 valueDescriptionForFlag:(long long)arg2 object:(id)arg3 ofSetting:(unsigned long long)arg4;
@@ -33,8 +35,10 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isActivatingForSiri) _Bool activatingForSiri;
 @property(retain, nonatomic) NSString *reason;
 - (void)dealloc;
+- (id)_initWithSettings:(id)arg1 actions:(id)arg2 presentationTarget:(id)arg3;
 - (id)_initWithSettings:(id)arg1 actions:(id)arg2;
 - (id)initWithActions:(id)arg1;
 - (id)init;

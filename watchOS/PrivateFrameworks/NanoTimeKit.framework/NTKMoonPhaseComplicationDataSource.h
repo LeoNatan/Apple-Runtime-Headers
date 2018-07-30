@@ -17,8 +17,8 @@
     CLLocation *_location;
 }
 
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
@@ -45,7 +45,7 @@
 - (void)_stopObserving;
 - (void)_startObserving;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

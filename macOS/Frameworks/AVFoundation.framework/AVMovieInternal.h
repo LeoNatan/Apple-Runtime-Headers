@@ -8,6 +8,7 @@
 
 @class AVAssetInspectorLoader, NSArray, NSData, NSDictionary, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVMovieInternal : NSObject
 {
     AVAssetInspectorLoader *loader;

@@ -8,73 +8,53 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSNumber, NSString;
+@class CEMNetworkVPNDeclaration_AlwaysOn, CEMNetworkVPNDeclaration_IKEv2, CEMNetworkVPNDeclaration_IPSec, CEMNetworkVPNDeclaration_IPv4, CEMNetworkVPNDeclaration_PPP, CEMNetworkVPNDeclaration_Proxies, CEMNetworkVPNDeclaration_VPN, CEMNetworkVPNDeclaration_VendorConfig, NSNumber, NSString;
 
 @interface CEMNetworkVPNDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadVPNType;
+    NSString *_payloadVPNSubType;
+    NSString *_payloadUserDefinedName;
+    CEMNetworkVPNDeclaration_VendorConfig *_payloadVendorConfig;
+    CEMNetworkVPNDeclaration_VPN *_payloadVPN;
+    CEMNetworkVPNDeclaration_IPv4 *_payloadIPv4;
+    CEMNetworkVPNDeclaration_PPP *_payloadPPP;
+    CEMNetworkVPNDeclaration_IPSec *_payloadIPSec;
+    CEMNetworkVPNDeclaration_IKEv2 *_payloadIKEv2;
+    CEMNetworkVPNDeclaration_Proxies *_payloadProxies;
+    CEMNetworkVPNDeclaration_AlwaysOn *_payloadAlwaysOn;
+    NSNumber *_payloadDisconnectOnIdle;
+    NSNumber *_payloadDisconnectOnIdleTimer;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withVPNType:(id)arg2 withUserDefinedName:(id)arg3;
++ (id)buildWithIdentifier:(id)arg1 withVPNType:(id)arg2 withVPNSubType:(id)arg3 withUserDefinedName:(id)arg4 withVendorConfig:(id)arg5 withVPN:(id)arg6 withIPv4:(id)arg7 withPPP:(id)arg8 withIPSec:(id)arg9 withIKEv2:(id)arg10 withProxies:(id)arg11 withAlwaysOn:(id)arg12 withDisconnectOnIdle:(id)arg13 withDisconnectOnIdleTimer:(id)arg14;
 + (id)restrictionPayloadKeys;
-+ (id)AlwaysOn_TunnelConfiguration_allowedPayloadKeys;
-+ (id)AlwaysOn_allowedPayloadKeys;
-+ (id)SecurityAssociation_allowedPayloadKeys;
-+ (id)IKEv2_allowedPayloadKeys;
-+ (id)IPv4_allowedPayloadKeys;
-+ (id)IPSec_allowedPayloadKeys;
-+ (id)PPP_allowedPayloadKeys;
-+ (id)MatchDomainRules_allowedPayloadKeys;
-+ (id)VPN_allowedPayloadKeys;
-+ (id)Proxies_allowedPayloadKeys;
-+ (id)VendorConfig_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadAlwaysOn_TunnelConfiguration:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadAlwaysOn:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadSecurityAssociation:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadIKEv2:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadIPv4:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadIPSec:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadPPP:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadMatchDomainRules:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadVPN:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadProxies:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayloadVendorConfig:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadAlwaysOn_TunnelConfiguration_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadAlwaysOn_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadSecurityAssociation_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadIKEv2_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadIPv4_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadIPSec_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadPPP_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadMatchDomainRules_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadVPN_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadProxies_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadVendorConfig_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadDisconnectOnIdleTimer; // @synthesize payloadDisconnectOnIdleTimer=_payloadDisconnectOnIdleTimer;
+@property(copy, nonatomic) NSNumber *payloadDisconnectOnIdle; // @synthesize payloadDisconnectOnIdle=_payloadDisconnectOnIdle;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_AlwaysOn *payloadAlwaysOn; // @synthesize payloadAlwaysOn=_payloadAlwaysOn;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_Proxies *payloadProxies; // @synthesize payloadProxies=_payloadProxies;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_IKEv2 *payloadIKEv2; // @synthesize payloadIKEv2=_payloadIKEv2;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_IPSec *payloadIPSec; // @synthesize payloadIPSec=_payloadIPSec;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_PPP *payloadPPP; // @synthesize payloadPPP=_payloadPPP;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_IPv4 *payloadIPv4; // @synthesize payloadIPv4=_payloadIPv4;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_VPN *payloadVPN; // @synthesize payloadVPN=_payloadVPN;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_VendorConfig *payloadVendorConfig; // @synthesize payloadVendorConfig=_payloadVendorConfig;
+@property(copy, nonatomic) NSString *payloadUserDefinedName; // @synthesize payloadUserDefinedName=_payloadUserDefinedName;
+@property(copy, nonatomic) NSString *payloadVPNSubType; // @synthesize payloadVPNSubType=_payloadVPNSubType;
+@property(copy, nonatomic) NSString *payloadVPNType; // @synthesize payloadVPNType=_payloadVPNType;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadDisconnectOnIdleTimer;
-@property(readonly, nonatomic) NSNumber *payloadDisconnectOnIdle;
-@property(readonly, nonatomic) NSDictionary *payloadAlwaysOn;
-@property(readonly, nonatomic) NSDictionary *payloadIKEv2;
-@property(readonly, nonatomic) NSDictionary *payloadIPv4;
-@property(readonly, nonatomic) NSDictionary *payloadEAP;
-@property(readonly, nonatomic) NSDictionary *payloadIPSec;
-@property(readonly, nonatomic) NSDictionary *payloadPPP;
-@property(readonly, nonatomic) NSDictionary *payloadVPN;
-@property(readonly, nonatomic) NSDictionary *payloadProxies;
-@property(readonly, nonatomic) NSDictionary *payloadVendorConfig;
-@property(readonly, nonatomic) NSString *payloadUserDefinedName;
-@property(readonly, nonatomic) NSString *payloadVPNSubType;
-@property(readonly, nonatomic) NSString *payloadVPNType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

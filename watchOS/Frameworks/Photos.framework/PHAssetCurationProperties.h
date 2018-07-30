@@ -11,12 +11,14 @@
 @interface PHAssetCurationProperties : PHAssetPropertySet
 {
     NSDate *_addedDate;
+    float _interestingSubjectScore;
 }
 
 + (id)propertiesToFetch;
 + (id)keyPathToPrimaryObject;
 + (id)keyPathFromPrimaryObject;
 + (id)propertySetName;
+@property(readonly, nonatomic) float interestingSubjectScore; // @synthesize interestingSubjectScore=_interestingSubjectScore;
 @property(readonly, nonatomic) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 - (void).cxx_destruct;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;

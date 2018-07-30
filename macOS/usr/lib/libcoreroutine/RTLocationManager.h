@@ -4,20 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 #import "CLLocationManagerRoutineDelegate.h"
 #import "RTPurgable.h"
 
 @class CLLocation, CLLocationManager, CLLocationManagerRoutine, NSMutableArray, NSObject<OS_dispatch_source>, NSString, RTAuthorizationManager, RTInvocationDispatcher, RTLocationStore, RTPlatform, RTPowerAssertion;
 
-@interface RTLocationManager : RTNotifier <CLLocationManagerRoutineDelegate, RTPurgable>
+@interface RTLocationManager : RTService <CLLocationManagerRoutineDelegate, RTPurgable>
 {
-    int _userOptedIntoGEOAddressCorrectionToken;
     BOOL _updating;
     BOOL _leechingLocations;
     BOOL _monitoringLocations;
-    BOOL _userOptedIntoGEOAddressCorrection;
     BOOL _enabled;
     BOOL _supported;
     BOOL _locationStoreAvailable;
@@ -47,7 +45,6 @@
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) RTPowerAssertion *powerAssertion; // @synthesize powerAssertion=_powerAssertion;
-@property(nonatomic) BOOL userOptedIntoGEOAddressCorrection; // @synthesize userOptedIntoGEOAddressCorrection=_userOptedIntoGEOAddressCorrection;
 @property(nonatomic) BOOL monitoringLocations; // @synthesize monitoringLocations=_monitoringLocations;
 @property(nonatomic) BOOL leechingLocations; // @synthesize leechingLocations=_leechingLocations;
 @property(nonatomic) BOOL updating; // @synthesize updating=_updating;
@@ -84,12 +81,12 @@
 - (void)startUpdatingLocation;
 - (void)dealloc;
 - (void)_shutdown;
-- (void)shutdown;
-- (void)setup;
 - (void)_setup;
+- (void)_createLocationManager;
 - (void)_unregisterNotifications;
 - (void)_registerNotifications;
-- (id)initWithAuthorizationManager:(id)arg1 locationStore:(id)arg2 platform:(id)arg3;
+- (void)performBlockOnMainThreadAndWait:(CDUnknownBlockType)arg1;
+- (id)initWithAuthorizationManager:(id)arg1 locationStore:(id)arg2 platform:(id)arg3 routineLocationManager:(id)arg4;
 - (id)init;
 - (void)injectLocations:(id)arg1 handler:(CDUnknownBlockType)arg2;
 

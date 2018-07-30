@@ -13,7 +13,6 @@
 
 - (id)description;
 - (id)oldAndNewSettings:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 @property BOOL value;

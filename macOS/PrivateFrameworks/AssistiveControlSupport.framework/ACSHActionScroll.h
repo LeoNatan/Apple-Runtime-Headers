@@ -20,7 +20,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)paramDictionaryForSaving;
-- (void)_initWithPlistDictionary:(id)arg1;
+- (void)_configureWithPlistDictionary:(id)arg1;
 - (id)init;
 
 @end

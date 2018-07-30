@@ -13,7 +13,6 @@
 
 @interface _SFPBCardSection : PBCodable <_SFPBCardSection, NSSecureCoding>
 {
-    CDStruct_f953fb60 _has;
     int _type;
     _SFPBCardSectionValue *_value;
     _SFPBCard *_nextCard;
@@ -39,8 +38,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasResultIdentifier;
-@property(readonly, nonatomic) _Bool hasCardSectionId;
 - (id)parameterKeyPathsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)parameterKeyPathsCount;
 - (void)addParameterKeyPaths:(id)arg1;
@@ -49,9 +46,6 @@
 - (unsigned long long)commandsCount;
 - (void)addCommands:(id)arg1;
 - (void)clearCommands;
-@property(readonly, nonatomic) _Bool hasNextCard;
-@property(readonly, nonatomic) _Bool hasValue;
-@property(readonly, nonatomic) _Bool hasType;
 - (id)initWithSFCardSection:(id)arg1;
 
 // Remaining properties

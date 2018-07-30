@@ -18,9 +18,11 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 - (void)client:(id)arg1 handleOrientationUpdate:(id)arg2;
 @property(copy, nonatomic) CDUnknownBlockType handler;
 - (void)activeInterfaceOrientationWithCompletion:(CDUnknownBlockType)arg1;
+- (long long)activeInterfaceOrientation;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;

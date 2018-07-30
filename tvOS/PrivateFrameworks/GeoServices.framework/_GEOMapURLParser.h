@@ -4,86 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <GeoServices/GEOMapURLParser.h>
 
-@class GEOURLExtraStorage, GEOUserSessionEntity, NSString, NSURL;
-
-@interface _GEOMapURLParser : NSObject
+@interface _GEOMapURLParser : GEOMapURLParser
 {
-    NSURL *_url;
-    int _mapType;
-    int _transportType;
-    int _trackingMode;
-    _Bool _exactPositionSpecified;
-    CDStruct_2c43369c _centerCoordinate;
-    CDStruct_951efa70 _span;
-    float _zoomLevel;
-    NSString *_addressString;
-    NSString *_directionsSourceAddressString;
-    NSString *_directionsDestinationAddressString;
-    NSString *_searchQuery;
-    CDStruct_2c43369c _searchCoordinate;
-    struct {
-        CDStruct_2c43369c center;
-        CDStruct_951efa70 span;
-    } _searchRegion;
-    int _searchProviderID;
-    unsigned long long _searchUID;
-    NSString *_contentProvider;
-    NSString *_contentProviderID;
-    NSString *_abRecordID;
-    NSString *_abAddressID;
-    NSString *_cnContactIdentifier;
-    NSString *_cnAddressIdentifier;
-    GEOUserSessionEntity *_userSessionEntity;
-    double _altitude;
-    double _rotation;
-    double _tilt;
-    double _roll;
-    unsigned long long _lineMUID;
-    NSString *_lineName;
-    long long _favoritesType;
-    _Bool _tester;
-    GEOURLExtraStorage *_extraStorage;
 }
-
-+ (_Bool)isValidMapsURLForAppendingSharedSessionID:(id)arg1;
-+ (_Bool)isValidMapsCategoryURL:(id)arg1;
-+ (_Bool)isValidMapURL:(id)arg1;
-@property(readonly) GEOURLExtraStorage *extraStorage; // @synthesize extraStorage=_extraStorage;
-@property(readonly) _Bool tester; // @synthesize tester=_tester;
-@property(readonly) long long favoritesType; // @synthesize favoritesType=_favoritesType;
-@property(readonly, copy) NSString *lineName; // @synthesize lineName=_lineName;
-@property(readonly) unsigned long long lineMUID; // @synthesize lineMUID=_lineMUID;
-@property(readonly) double roll; // @synthesize roll=_roll;
-@property(readonly) double tilt; // @synthesize tilt=_tilt;
-@property(readonly) double rotation; // @synthesize rotation=_rotation;
-@property(readonly) double altitude; // @synthesize altitude=_altitude;
-@property(readonly) GEOUserSessionEntity *userSessionEntity; // @synthesize userSessionEntity=_userSessionEntity;
-@property(readonly) NSString *cnAddressIdentifier; // @synthesize cnAddressIdentifier=_cnAddressIdentifier;
-@property(readonly) NSString *cnContactIdentifier; // @synthesize cnContactIdentifier=_cnContactIdentifier;
-@property(readonly) NSString *abAddressID; // @synthesize abAddressID=_abAddressID;
-@property(readonly) NSString *abRecordID; // @synthesize abRecordID=_abRecordID;
-@property(readonly) NSString *contentProviderID; // @synthesize contentProviderID=_contentProviderID;
-@property(readonly) NSString *contentProvider; // @synthesize contentProvider=_contentProvider;
-@property(readonly) unsigned long long searchUID; // @synthesize searchUID=_searchUID;
-@property(readonly) int searchProviderID; // @synthesize searchProviderID=_searchProviderID;
-@property(readonly) CDStruct_90e2a262 searchRegion; // @synthesize searchRegion=_searchRegion;
-@property(readonly) CDStruct_c3b9c2ee searchCoordinate; // @synthesize searchCoordinate=_searchCoordinate;
-@property(readonly) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
-@property(readonly) NSString *directionsDestinationAddressString; // @synthesize directionsDestinationAddressString=_directionsDestinationAddressString;
-@property(readonly) NSString *directionsSourceAddressString; // @synthesize directionsSourceAddressString=_directionsSourceAddressString;
-@property(readonly) NSString *addressString; // @synthesize addressString=_addressString;
-@property(readonly) float zoomLevel; // @synthesize zoomLevel=_zoomLevel;
-@property(readonly) CDStruct_c3b9c2ee span; // @synthesize span=_span;
-@property(readonly) CDStruct_c3b9c2ee centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
-@property(readonly) _Bool exactPositionSpecified; // @synthesize exactPositionSpecified=_exactPositionSpecified;
-@property(readonly) int trackingMode; // @synthesize trackingMode=_trackingMode;
-@property(readonly) int transportType; // @synthesize transportType=_transportType;
-@property(readonly) int mapType; // @synthesize mapType=_mapType;
-- (void).cxx_destruct;
-- (_Bool)parseIncludingCustomParameters:(_Bool)arg1;
-- (id)initWithURL:(id)arg1;
 
 @end
 

@@ -7,55 +7,57 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBCallRecordValue.h"
 
-@class NSString, PBUnknownFields, _INPBCallMetrics, _INPBContactValue, _INPBDateTime;
+@class NSString, _INPBCallMetrics, _INPBContactValue, _INPBDateTime;
 
-@interface _INPBCallRecordValue : PBCodable <NSCopying>
+@interface _INPBCallRecordValue : PBCodable <_INPBCallRecordValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _callCapability;
-    _INPBCallMetrics *_callMetrics;
-    int _callType;
-    _INPBContactValue *_caller;
-    _INPBDateTime *_dateCreated;
-    NSString *_identifier;
-    BOOL _unseen;
     struct {
         unsigned int callCapability:1;
         unsigned int callType:1;
         unsigned int unseen:1;
     } _has;
+    BOOL _unseen;
+    int _callCapability;
+    int _callType;
+    _INPBCallMetrics *_callMetrics;
+    _INPBContactValue *_caller;
+    _INPBDateTime *_dateCreated;
+    NSString *_identifier;
 }
 
-+ (id)options;
 @property(nonatomic) BOOL unseen; // @synthesize unseen=_unseen;
-@property(retain, nonatomic) _INPBCallMetrics *callMetrics; // @synthesize callMetrics=_callMetrics;
-@property(retain, nonatomic) _INPBContactValue *caller; // @synthesize caller=_caller;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) _INPBDateTime *dateCreated; // @synthesize dateCreated=_dateCreated;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) _INPBContactValue *caller; // @synthesize caller=_caller;
+@property(nonatomic) int callType; // @synthesize callType=_callType;
+@property(retain, nonatomic) _INPBCallMetrics *callMetrics; // @synthesize callMetrics=_callMetrics;
+@property(nonatomic) int callCapability; // @synthesize callCapability=_callCapability;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (int)StringAsCallCapability:(id)arg1;
-- (id)callCapabilityAsString:(int)arg1;
-@property(nonatomic) BOOL hasCallCapability;
-@property(nonatomic) int callCapability; // @synthesize callCapability=_callCapability;
 @property(nonatomic) BOOL hasUnseen;
-@property(readonly, nonatomic) BOOL hasCallMetrics;
+@property(readonly, nonatomic) BOOL hasIdentifier;
+@property(readonly, nonatomic) BOOL hasDateCreated;
+@property(readonly, nonatomic) BOOL hasCaller;
 - (int)StringAsCallType:(id)arg1;
 - (id)callTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasCallType;
-@property(nonatomic) int callType; // @synthesize callType=_callType;
-@property(readonly, nonatomic) BOOL hasCaller;
-@property(readonly, nonatomic) BOOL hasDateCreated;
-@property(readonly, nonatomic) BOOL hasIdentifier;
+@property(readonly, nonatomic) BOOL hasCallMetrics;
+- (int)StringAsCallCapability:(id)arg1;
+- (id)callCapabilityAsString:(int)arg1;
+@property(nonatomic) BOOL hasCallCapability;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

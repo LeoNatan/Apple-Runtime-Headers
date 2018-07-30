@@ -8,7 +8,6 @@
 
 @class MKMapView, NSDateFormatter, NSString, NSTimer, UIColor;
 
-__attribute__((visibility("hidden")))
 @interface MKDebugLocationConsole : UILabel
 {
     MKMapView *_parentMapView;

@@ -8,7 +8,6 @@
 
 @class BKSApplicationStateMonitor, NSLock, NSMutableSet;
 
-__attribute__((visibility("hidden")))
 @interface MNMapsAppStateMonitor : NSObject
 {
     NSLock *_observerLock;

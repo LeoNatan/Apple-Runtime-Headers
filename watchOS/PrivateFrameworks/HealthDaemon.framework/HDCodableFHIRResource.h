@@ -13,10 +13,14 @@
 @interface HDCodableFHIRResource : PBCodable <NSCopying>
 {
     long long _extractionHints;
+    long long _originVersionMajor;
+    long long _originVersionMinor;
+    long long _originVersionPatch;
     double _receivedDate;
     NSString *_accountIdentifier;
     NSString *_fhirVersion;
     NSString *_gatewayExternalID;
+    NSString *_originVersionBuild;
     NSData *_rawContent;
     NSString *_receivedDateTimeZoneName;
     NSString *_resourceID;
@@ -24,10 +28,17 @@
     NSString *_sourceURL;
     struct {
         unsigned int extractionHints:1;
+        unsigned int originVersionMajor:1;
+        unsigned int originVersionMinor:1;
+        unsigned int originVersionPatch:1;
         unsigned int receivedDate:1;
     } _has;
 }
 
+@property(retain, nonatomic) NSString *originVersionBuild; // @synthesize originVersionBuild=_originVersionBuild;
+@property(nonatomic) long long originVersionPatch; // @synthesize originVersionPatch=_originVersionPatch;
+@property(nonatomic) long long originVersionMinor; // @synthesize originVersionMinor=_originVersionMinor;
+@property(nonatomic) long long originVersionMajor; // @synthesize originVersionMajor=_originVersionMajor;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) long long extractionHints; // @synthesize extractionHints=_extractionHints;
 @property(retain, nonatomic) NSString *sourceURL; // @synthesize sourceURL=_sourceURL;
@@ -48,6 +59,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasOriginVersionBuild;
+@property(nonatomic) _Bool hasOriginVersionPatch;
+@property(nonatomic) _Bool hasOriginVersionMinor;
+@property(nonatomic) _Bool hasOriginVersionMajor;
 @property(readonly, nonatomic) _Bool hasAccountIdentifier;
 @property(nonatomic) _Bool hasExtractionHints;
 @property(readonly, nonatomic) _Bool hasSourceURL;

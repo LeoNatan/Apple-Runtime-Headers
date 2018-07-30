@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1 paragraphStyle:(id)arg2 context:(id)arg3;
 - (void)i_addMasterDrawable:(id)arg1;
 - (void)i_setHeaderFooter:(long long)arg1 storage:(id)arg2 fragmentIndex:(long long)arg3;
+- (id)objectUUIDPath;
 - (id)childEnumerator;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;

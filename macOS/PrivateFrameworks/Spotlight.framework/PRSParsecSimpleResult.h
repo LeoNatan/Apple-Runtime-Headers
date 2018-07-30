@@ -42,6 +42,7 @@
 @property(nonatomic) unsigned long long contentMatchScore;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) NSString *displayName;
 @property(nonatomic) unsigned long long displayNameMatchScore;
 @property(nonatomic) BOOL doesContentMatch;
 @property(nonatomic) unsigned long long engagementScore;

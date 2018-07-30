@@ -10,6 +10,7 @@
 
 @class LoadingViewController, NSString, NSTimer, UIWebClip, UIWindow, _SFWebAppViewController, _UIAsyncInvocation;
 
+__attribute__((visibility("hidden")))
 @interface WebAppViewController : UIViewController <_SFWebAppViewControllerDelegate>
 {
     _SFWebAppViewController *_contentViewController;

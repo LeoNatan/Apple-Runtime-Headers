@@ -11,6 +11,7 @@
 
 @class GEOPBTransitIncidentEntityFilter, NSSet, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPBTransitIncidentEntity : PBCodable <GEOTransitIncidentEntity, NSCopying>
 {
     PBUnknownFields *_unknownFields;

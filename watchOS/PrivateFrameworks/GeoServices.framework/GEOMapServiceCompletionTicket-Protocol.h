@@ -11,6 +11,7 @@
 @protocol GEOMapServiceCompletionTicket <NSObject>
 @property(readonly, nonatomic) NSDictionary *responseUserInfo;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
+@property(readonly, nonatomic, getter=_searchQuery) NSString *searchQuery;
 - (_Bool)shouldDisplayNoResults;
 - (_Bool)hasShouldDisplayNoResults;
 - (double)retainSearchTime;

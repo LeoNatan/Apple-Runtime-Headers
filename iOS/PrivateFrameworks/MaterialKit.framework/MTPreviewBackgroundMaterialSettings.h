@@ -9,11 +9,10 @@
 #import "MTMaterialOverlaySettings.h"
 #import "MTMaterialSettings.h"
 #import "MTZooming.h"
-#import "_MTMaterialVersioning.h"
 
 @class MTVibrantStylingProvider, NSString, UIColor;
 
-@interface MTPreviewBackgroundMaterialSettings : NSObject <MTMaterialSettings, MTMaterialOverlaySettings, _MTMaterialVersioning, MTZooming>
+@interface MTPreviewBackgroundMaterialSettings : NSObject <MTMaterialSettings, MTMaterialOverlaySettings, MTZooming>
 {
 }
 
@@ -24,6 +23,8 @@
 @property(readonly, copy, nonatomic) UIColor *secondaryOverlayTintColor;
 @property(nonatomic) double primaryOverlayTintAlpha;
 @property(readonly, copy, nonatomic) UIColor *primaryOverlayTintColor;
+@property(nonatomic) double baseOverlayTintAlpha;
+@property(readonly, copy, nonatomic) UIColor *baseOverlayColor;
 @property(readonly, nonatomic) double zoom;
 @property(nonatomic) double blurRadius;
 @property(nonatomic) _Bool usesLuminanceMap;
@@ -31,7 +32,6 @@
 @property(nonatomic) double brightness;
 @property(nonatomic) double saturation;
 @property(nonatomic) double luminanceAlpha;
-@property(readonly, nonatomic) long long materialVersion;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -12,8 +12,12 @@ __attribute__((visibility("hidden")))
     unsigned int _codeToCreate;
 }
 
++ (id)allocWithCode:(unsigned int)arg1;
 - (id)description;
 - (unsigned int)codeInContext:(id)arg1;
+- (id)initWithContext:(id)arg1 specifier:(const struct AEDesc *)arg2;
+- (id)initWithData:(id)arg1 andProperties:(id)arg2;
+- (id)initWithElementCode:(unsigned int)arg1 properties:(id)arg2 data:(id)arg3;
 - (id)initWithCode:(unsigned int)arg1 properties:(id)arg2 data:(id)arg3;
 
 @end

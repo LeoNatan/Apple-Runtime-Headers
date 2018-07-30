@@ -10,7 +10,6 @@
 
 @class NSString, NSTextField, NSView;
 
-__attribute__((visibility("hidden")))
 @interface ABCleanGroupEntryListCellView : NSTableCellView <ABMainWindowGroupListCellView>
 {
 }

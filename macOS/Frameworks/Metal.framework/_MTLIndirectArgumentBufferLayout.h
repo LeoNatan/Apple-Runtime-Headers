@@ -15,9 +15,16 @@
 - (void)setStructType:(id)arg1 withDevice:(id)arg2;
 - (id)bufferLayoutForResourceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)constantOffsetAtIndex:(unsigned long long)arg1;
+@property(readonly) unsigned int hashSignature;
+@property(readonly) unsigned int hashMask;
+@property(readonly) unsigned int hashOffset;
+@property(readonly) unsigned int hashValue;
 @property(readonly) unsigned long long alignment; // @dynamic alignment;
 @property(readonly) unsigned long long encodedLength; // @dynamic encodedLength;
 @property(readonly) BOOL bufferLayoutMatchesFrontEndLayout; // @dynamic bufferLayoutMatchesFrontEndLayout;
+- (unsigned long long)uniqueIdentifierForIndirectCommandBufferAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
+- (unsigned long long)uniqueIdentifierForComputePipelineAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
+- (unsigned long long)uniqueIdentifierForRenderPipelineAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
 - (unsigned long long)uniqueIdentifierForSamplerAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
 - (unsigned long long)uniqueIdentifierForTextureAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;
 - (void *)virtualAddressForBufferAtIndex:(unsigned long long)arg1 inIndirectArgumentBuffer:(id)arg2 atOffset:(unsigned long long)arg3;

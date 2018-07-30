@@ -54,6 +54,11 @@
 + (id)mutableDictionaryWithPropertyListData:(id)arg1;
 + (id)mutableDictionaryWithData:(id)arg1;
 + (id)dataWithDictionary:(id)arg1;
++ (id)_multiItemQueryWithQueryType:(int)arg1 conjunction:(id)arg2 propertyKey:(id)arg3 qualifier:(long long)arg4 values:(id)arg5;
++ (id)queryForLivePhotoAlbumFromDatabase:(id)arg1 inverted:(BOOL)arg2;
++ (id)queryForHDRAlbumFromDatabase:(id)arg1 inverted:(BOOL)arg2;
++ (id)queryForBurstsAlbumFromDatabase:(id)arg1 inverted:(BOOL)arg2;
++ (id)queryForAnimatedAlbumFromDatabase:(id)arg1 inverted:(BOOL)arg2;
 + (id)failedUploadsAlbumFromDatabase:(id)arg1;
 + (id)longExposureAlbumFromDatabase:(id)arg1;
 + (id)favoriteMemoriesAlbumFromDatabase:(id)arg1;
@@ -81,9 +86,9 @@
 + (id)versionQueryFromDatabase:(id)arg1 uuid:(id)arg2 key:(id)arg3 qualifier:(int)arg4 firstValue:(id)arg5 secondValue:(id)arg6 additionalSingleItemQueries:(id)arg7;
 + (id)specialQueryFromDatabase:(id)arg1 uuid:(id)arg2 specialType:(unsigned char)arg3 mediaType:(unsigned char)arg4;
 + (void)repairCleanUpDeprecatedAlbumsWithRepair:(id)arg1;
-+ (void)repairMisplacedBuiltInAlbums:(id)arg1;
 + (void)repairOrphanedAlbumsWithRepair:(id)arg1;
 + (void)repairDuplicateBuiltinAlbumsWithRepair:(id)arg1;
++ (void)repairBuiltinAlbumsWithRepair:(id)arg1;
 + (void)registerRepairBlocks:(id)arg1;
 @property(retain, nonatomic) NSString *themeName; // @synthesize themeName=_themeName;
 - (void).cxx_destruct;
@@ -130,6 +135,7 @@
 - (BOOL)isFavoritesAlbum;
 - (BOOL)isAllPhotosAlbum;
 - (BOOL)isTrashAlbum;
+- (BOOL)isProjectAlbum;
 - (BOOL)isKeepsake;
 - (BOOL)isSlideshow;
 - (BOOL)isImportHistoryAlbum;

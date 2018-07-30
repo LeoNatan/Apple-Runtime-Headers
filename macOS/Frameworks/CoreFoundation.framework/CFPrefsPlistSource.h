@@ -6,12 +6,9 @@
 
 #import <CoreFoundation/CFPrefsSource.h>
 
-@class NSObject<OS_dispatch_group>;
-
 __attribute__((visibility("hidden")))
 @interface CFPrefsPlistSource : CFPrefsSource
 {
-    NSObject<OS_dispatch_group> *_synchGroup;
     struct __CFString *userIdentifier;
     struct __CFString *domainIdentifier;
     struct __CFString *container;
@@ -49,9 +46,9 @@ __attribute__((visibility("hidden")))
 - (void)goReadOnlyAfterTryingToWriteKey:(struct __CFString *)arg1 value:(void *)arg2;
 - (BOOL)isVolatile;
 - (void)goVolatileAfterTryingToWriteKey:(struct __CFString *)arg1 value:(void *)arg2;
-- (void)_goReadOnlyOrVolatileAfterTryingToWriteKey:(struct __CFString *)arg1 value:(void *)arg2;
+- (void)writeFailedForKey:(struct __CFString *)arg1 value:(void *)arg2;
 - (id)createSynchronizeMessage;
-- (void)alreadylocked_setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 from:(id)arg4;
+- (void)alreadylocked_setPrecopiedValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long long)arg3 from:(id)arg4;
 - (struct __CFDictionary *)alreadylocked_copyDictionary;
 - (struct __CFArray *)alreadylocked_copyKeyList;
 - (void *)copyValueForKey:(struct __CFString *)arg1;

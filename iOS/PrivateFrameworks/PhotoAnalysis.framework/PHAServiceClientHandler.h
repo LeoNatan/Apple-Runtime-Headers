@@ -7,14 +7,19 @@
 #import "NSObject.h"
 
 #import "NSXPCConnectionDelegate.h"
+#import "PHAGraphRegistration.h"
+#import "PHAServiceOperationHandling.h"
 #import "PLPhotoAnalysisServiceProtocol.h"
 
-@class NSLock, NSMapTable, NSObject<OS_dispatch_semaphore>, NSString, NSXPCConnection, PHAExecutive, PHAManager;
+@class NSLock, NSMapTable, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_semaphore>, NSString, NSXPCConnection, PHAExecutive, PHAManager;
 
-@interface PHAServiceClientHandler : NSObject <NSXPCConnectionDelegate, PLPhotoAnalysisServiceProtocol>
+@interface PHAServiceClientHandler : NSObject <NSXPCConnectionDelegate, PHAServiceOperationHandling, PHAGraphRegistration, PLPhotoAnalysisServiceProtocol>
 {
     NSString *_clientBundleID;
     NSMapTable *_cancelableOperationsById;
+    NSMutableArray *_clientHandlers;
+    unsigned long long _graphLoadCount;
+    NSObject<OS_dispatch_group> *_graphReady;
     PHAManager *_photoAnalysisManager;
     NSXPCConnection *_xpcConnection;
     PHAExecutive *_executive;
@@ -39,6 +44,17 @@
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(_Bool)arg3;
 - (void)submitBlockToExecutiveStateQueue:(CDUnknownBlockType)arg1;
 - (void)shutdown;
+- (void)unloadGraphWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)loadGraphWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)graphUpdateMadeProgress:(double)arg1;
+- (void)graphUpdateDidStop;
+- (void)graphUpdateIsConsistent;
+- (_Bool)wantsGraphUpdateNotifications;
+- (_Bool)wantsLiveGraphUpdates;
+- (void)graphBecameReady:(id)arg1 forPHAGraphManager:(id)arg2;
+- (void)handleOperation:(id)arg1;
+- (_Bool)isPhotos;
+- (_Bool)isplphotosctl;
 @property(readonly) NSString *clientBundleID;
 @property(readonly, copy) NSString *description;
 - (id)initWithXPCConnection:(id)arg1 executive:(id)arg2;

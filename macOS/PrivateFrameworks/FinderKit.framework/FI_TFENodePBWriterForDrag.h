@@ -10,14 +10,14 @@ __attribute__((visibility("hidden")))
 @interface FI_TFENodePBWriterForDrag : FI_TFENodePasteboardItem
 {
     struct CGRect _globalBounds;
-    vector_3d8babec _clippingData;
+    vector_a82b476a _clippingData;
     _Bool _isSidebarItem;
     long long _windowNumber;
 }
 
 @property(nonatomic) long long windowNumber; // @synthesize windowNumber=_windowNumber;
 @property(nonatomic) _Bool isSidebarItem; // @synthesize isSidebarItem=_isSidebarItem;
-@property(nonatomic) vector_3d8babec clippingData; // @synthesize clippingData=_clippingData;
+@property(nonatomic) vector_a82b476a clippingData; // @synthesize clippingData=_clippingData;
 @property(nonatomic) struct CGRect globalBounds; // @synthesize globalBounds=_globalBounds;
 - (id).cxx_construct;
 - (void).cxx_destruct;

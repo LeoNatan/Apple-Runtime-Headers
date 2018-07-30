@@ -9,7 +9,7 @@
 #import "NSTabBarDelegate.h"
 #import "NSTabPickerDelegate.h"
 
-@class NSMenu, NSMutableArray, NSMutableDictionary, NSString, NSTabBar, NSTabPickerViewController, NSWindow, _NSFullScreenModalStackController;
+@class NSMenu, NSMutableArray, NSMutableDictionary, NSString, NSTabBar, NSTabPickerViewController, NSWindow, NSWindowTab, _NSFullScreenModalStackController;
 
 __attribute__((visibility("hidden")))
 @interface NSWindowStackController : NSWindowTabGroup <NSTabBarDelegate, NSTabPickerDelegate>
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSMenu *_tabItemMenu;
     NSMenu *_pinnedTabItemMenu;
     NSTabPickerViewController *_tabPickerViewController;
+    NSWindowTab *_plusTab;
     _NSFullScreenModalStackController *_fullScreenModalStackController;
     unsigned int _doingClose:1;
     unsigned int _inFullScreen:1;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (void)tabPickerWillClose:(id)arg1;
 - (void)_sendTabOverviewIsVisibleDidChange;
 - (id)tabPicker:(id)arg1 thumbnailViewForTabItem:(id)arg2;
-- (id)_makeTabPickerSnapshotForWindow:(id)arg1;
 - (id)tabBarSnapshotForTabPicker:(id)arg1;
 - (id)tabPickerItemsForTabPicker:(id)arg1;
 - (id)tabPickerCurrentlySelectedTabItem:(id)arg1;
@@ -75,6 +75,10 @@ __attribute__((visibility("hidden")))
 - (void)tabPicker:(id)arg1 didSelectTabItemWhenClosing:(id)arg2;
 - (void)_checkIfWindowWasClosedByTabPicker:(id)arg1;
 - (void)tabPicker:(id)arg1 closeTabBarItem:(id)arg2;
+- (id)plusTab;
+- (id)_tabBar;
+- (void)setTabBarEnabled:(BOOL)arg1;
+- (BOOL)isTabBarEnabled;
 - (void)createNewTabInTabBar:(id)arg1;
 - (void)didExitFullScreenForWindow:(id)arg1;
 - (void)willEnterFullScreenForWindow:(id)arg1;
@@ -144,6 +148,7 @@ __attribute__((visibility("hidden")))
 - (void)_noteTabbingChangedForWindow:(id)arg1;
 - (void)_addSyncedTabBarItemForWindow:(id)arg1 atIndex:(long long)arg2;
 - (BOOL)_shouldAnimateTabInsertion;
+- (BOOL)_tabPickerIsVisible;
 - (BOOL)_tabBarShouldBeVisible;
 @property(getter=isTabBarVisible) BOOL tabBarVisible;
 - (void)_setTabBarIsVisible:(BOOL)arg1 force:(BOOL)arg2;
@@ -164,7 +169,6 @@ __attribute__((visibility("hidden")))
 - (void)_syncToolbarOfWindow:(id)arg1 withPropertiesOfWindow:(id)arg2;
 - (void)_removeTabBarAccessoryViewControllerForWindow:(id)arg1;
 - (void)_ensureAccessoryViewControllerExistsForWindow:(id)arg1;
-- (void)updateTabBarAppearanceBasedOnWindow:(id)arg1;
 - (void)_ensureTabBarBasedOnWindow:(id)arg1;
 - (void)windowDidGainToolbar:(id)arg1;
 - (void)_makeTabBarForWindow:(id)arg1 visible:(BOOL)arg2;

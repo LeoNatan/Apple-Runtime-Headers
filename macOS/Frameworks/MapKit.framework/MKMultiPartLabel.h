@@ -29,6 +29,7 @@
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) MKMultiPartAttributedString *multiPartString; // @synthesize multiPartString=_multiPartString;
 - (void).cxx_destruct;
+- (BOOL)allowsVibrancy;
 - (struct CGRect)frameForAlignmentRect:(struct CGRect)arg1;
 - (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;
 @property double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;

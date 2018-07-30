@@ -18,11 +18,9 @@
     id <FCContentContext> _contentContext;
     CDUnknownBlockType _sessionProvider;
     FCAsyncOnceOperation *_firstOperationCompletionOperation;
-    NSObject *_latestConstituentRecordsHoldToken;
 }
 
 @property(nonatomic, getter=hasFlushingBeenEnabled) _Bool flushingHasBeenEnabled; // @synthesize flushingHasBeenEnabled=_flushingHasBeenEnabled;
-@property(retain, nonatomic) NSObject *latestConstituentRecordsHoldToken; // @synthesize latestConstituentRecordsHoldToken=_latestConstituentRecordsHoldToken;
 @property(retain, nonatomic) FCAsyncOnceOperation *firstOperationCompletionOperation; // @synthesize firstOperationCompletionOperation=_firstOperationCompletionOperation;
 @property(copy, nonatomic) CDUnknownBlockType sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;

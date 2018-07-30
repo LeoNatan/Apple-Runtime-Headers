@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_tableName;
 }
 
-@property(retain) NSString *tableName; // @synthesize tableName=_tableName;
-@property(retain) id value; // @synthesize value=_value;
-@property unsigned int index; // @synthesize index=_index;
+@property(retain, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
+@property(retain, nonatomic) id value; // @synthesize value=_value;
+@property(nonatomic) unsigned int index; // @synthesize index=_index;
 - (void)dealloc;
 - (id)initWithValue:(id)arg1;
 

@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
+#import "FCNetworkReachabilityType.h"
+
 @class CTTelephonyNetworkInfo, NFReachability, NSHashTable, NSString;
 
-@interface FCNetworkReachability : NSObject
+@interface FCNetworkReachability : NSObject <FCNetworkReachabilityType>
 {
     _Bool _isNetworkReachable;
     _Bool _isNetworkReachableViaWiFi;
@@ -55,6 +57,12 @@
 @property(readonly, nonatomic) long long cellularRadioAccessTechnology;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

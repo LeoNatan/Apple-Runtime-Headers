@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_group>, NSPersistentStore;
+@class NSObject<OS_dispatch_group>, NSPersistentStore, NSPersistentStoreCoordinator, NSString;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitStoreMonitor : NSObject
@@ -17,22 +17,27 @@ __attribute__((visibility("hidden")))
     BOOL _declaredDead;
     int _retryCount;
     int _timeoutSeconds;
+    NSPersistentStoreCoordinator *_monitoredCoordinator;
     NSPersistentStore *_monitoredStore;
+    NSString *_storeIdentifier;
 }
 
+@property(readonly, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(readonly, nonatomic) BOOL declaredDead; // @synthesize declaredDead=_declaredDead;
 @property(readonly, nonatomic) int timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
 @property(readonly, nonatomic) int retryCount; // @synthesize retryCount=_retryCount;
 @property(readonly, nonatomic) __weak NSPersistentStore *monitoredStore; // @synthesize monitoredStore=_monitoredStore;
+@property(readonly, nonatomic) __weak NSPersistentStoreCoordinator *monitoredCoordinator; // @synthesize monitoredCoordinator=_monitoredCoordinator;
 @property(readonly, nonatomic) BOOL storeIsAlive; // @synthesize storeIsAlive=_storeIsAlive;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *monitorGroup; // @synthesize monitorGroup=_monitorGroup;
 - (void).cxx_destruct;
+- (id)retainedMonitoredCoordinator;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (void)pfcloudstoremonitor_is_holding_your_store_open_waiting_for_cloudkit_activity_to_finish;
 - (void)declareStoreDead;
 - (void)coordinatorWillRemoveStore:(id)arg1;
 - (void)dealloc;
-- (id)initForStore:(id)arg1;
+- (id)initForStore:(id)arg1 inCoordinator:(id)arg2;
 
 @end
 

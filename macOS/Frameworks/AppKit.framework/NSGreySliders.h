@@ -6,11 +6,14 @@
 
 #import <AppKit/NSColorSpaceSliders.h>
 
+@class NSView;
+
+__attribute__((visibility("hidden")))
 @interface NSGreySliders : NSColorSpaceSliders
 {
     id greySlider;
     id greyText;
-    id greyView;
+    NSView *_greyView;
     id greyButtons[5];
     id opacityButtons;
     double opacityDistanceFromBottom;
@@ -18,7 +21,7 @@
 }
 
 + (id)genericColorSpace;
-- (void)alphaControlAddedOrRemoved:(id)arg1;
+@property(retain) NSView *greyView; // @synthesize greyView=_greyView;
 - (void)_adjustControls:(id)arg1 andSetColor:(BOOL)arg2;
 - (void)adjustControls:(id)arg1;
 - (BOOL)worksWhenModal;

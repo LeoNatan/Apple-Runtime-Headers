@@ -7,38 +7,48 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBControlHomeIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBHomeAttribute, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBHomeAttribute, _INPBIntentMetadata;
 
-@interface _INPBControlHomeIntent : PBCodable <NSCopying>
+@interface _INPBControlHomeIntent : PBCodable <_INPBControlHomeIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBHomeAttribute *_attribute;
-    NSMutableArray *_entities;
+    NSArray *_contents;
+    NSArray *_entities;
     _INPBIntentMetadata *_intentMetadata;
 }
 
 + (Class)entitiesType;
-+ (id)options;
-@property(retain, nonatomic) _INPBHomeAttribute *attribute; // @synthesize attribute=_attribute;
-@property(retain, nonatomic) NSMutableArray *entities; // @synthesize entities=_entities;
++ (Class)contentsType;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
+@property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
+@property(retain, nonatomic) _INPBHomeAttribute *attribute; // @synthesize attribute=_attribute;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasAttribute;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
 - (id)entitiesAtIndex:(unsigned int)arg1;
-- (unsigned int)entitiesCount;
+@property(readonly, nonatomic) unsigned int entitiesCount;
 - (void)addEntities:(id)arg1;
 - (void)clearEntities;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
+- (id)contentsAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int contentsCount;
+- (void)addContents:(id)arg1;
+- (void)clearContents;
+@property(readonly, nonatomic) _Bool hasAttribute;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

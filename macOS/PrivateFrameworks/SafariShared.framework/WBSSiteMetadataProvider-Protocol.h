@@ -15,6 +15,7 @@
 - (BOOL)canHandleRequest:(WBSSiteMetadataRequest *)arg1;
 
 @optional
+@property(readonly, nonatomic) BOOL providesFavicons;
 - (void)purgeUnneededCacheEntries;
 - (void)savePendingChangesBeforeTermination;
 - (void)emptyCaches;

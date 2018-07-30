@@ -10,6 +10,7 @@
 
 @class NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDWifiAccessPoint : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

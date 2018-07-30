@@ -18,6 +18,7 @@
 @property(retain, nonatomic) id <UIViewControllerTransitioningDelegate> paymentTransitioningDelegate; // @synthesize paymentTransitioningDelegate=_paymentTransitioningDelegate;
 @property(readonly, nonatomic) PKPaymentAuthorizationServiceViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 - (void).cxx_destruct;
+- (id)_backgroundColorForModalFormSheet;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

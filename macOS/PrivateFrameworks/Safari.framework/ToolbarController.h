@@ -9,7 +9,7 @@
 #import "NSToolbarDelegate.h"
 #import "RolloverTrackingButtonDelegate.h"
 
-@class BrowserToolbarItem, ButtonPlus, NSSegmentedControl, NSString, NSToolbarItem, NSView, NSWindow, ToolbarDownloadsButton, TopSitesButton, UnifiedField, VisualTabPickerToolbarButton;
+@class BrowserToolbarItem, ButtonPlus, CloudTabStore, NSSegmentedControl, NSString, NSToolbarItem, NSWindow, SafariAppExtensionsController, ToolbarDownloadsButton, UnifiedField, UnifiedFieldBezelView, UnifiedFieldContainerView, VisualTabPickerToolbarButton;
 
 __attribute__((visibility("hidden")))
 @interface ToolbarController : NSObject <NSToolbarDelegate, RolloverTrackingButtonDelegate>
@@ -30,76 +30,48 @@ __attribute__((visibility("hidden")))
     BrowserToolbarItem *_showWebInspectorItem;
     BrowserToolbarItem *_bookmarksBarItem;
     BrowserToolbarItem *_perSitePreferencesItem;
+    BrowserToolbarItem *_contextFeedbackItem;
     BrowserToolbarItem *_backForwardCustomizeItem;
     BrowserToolbarItem *_unifiedFieldContainerCustomizeItem;
     BrowserToolbarItem *_textSizeCustomizeItem;
+    ToolbarDownloadsButton *_showDownloadsButton;
+    UnifiedFieldBezelView *_unifiedFieldBezelView;
+    UnifiedFieldContainerView *_unifiedFieldContainerView;
+    UnifiedFieldBezelView *_unifiedCustomizeFieldBezelView;
+    UnifiedFieldContainerView *_unifiedCustomizeFieldContainerView;
     BOOL _validatingExtensionToolbarItemsSoon;
     BOOL _windowDidClose;
     BOOL _addCloudTabsButtonIfAppropriateHasBeenCalled;
     BOOL _autoHidesToolbarInFullScreen;
-    id <ToolbarControllerDelegate> _delegate;
-    NSToolbarItem *_tabPickerItem;
-    VisualTabPickerToolbarButton *_tabPickerButton;
-    NSSegmentedControl *_backForwardSegmentedControl;
-    ToolbarDownloadsButton *_showDownloadsButton;
-    ButtonPlus *_sidebarButton;
-    ButtonPlus *_cloudTabsButton;
-    ButtonPlus *_shareButton;
-    BrowserToolbarItem *_cloudTabsItem;
-    BrowserToolbarItem *_shareItem;
     UnifiedField *_unifiedField;
-    NSWindow *_nibWindow;
+    UnifiedField *_unifiedCustomizeField;
+    ButtonPlus *_sidebarButton;
+    NSSegmentedControl *_backForwardSegmentedControl;
     NSSegmentedControl *_backForwardCustomizeSegmentedControl;
     NSSegmentedControl *_textSizeSegmentedControl;
     NSSegmentedControl *_textSizeCustomizeSegmentedControl;
-    ButtonPlus *_openInDashboardButton;
-    ButtonPlus *_autoFillButton;
-    ButtonPlus *_homeButton;
-    TopSitesButton *_topSitesButton;
-    NSView *_unifiedFieldContainer;
-    ButtonPlus *_printButton;
-    UnifiedField *_unifiedCustomizeField;
-    NSView *_unifiedFieldCustomizeContainer;
-    ButtonPlus *_historyButton;
-    ButtonPlus *_mailPageButton;
-    ButtonPlus *_showWebInspectorButton;
-    ButtonPlus *_bookmarksBarButton;
-    ButtonPlus *_perSitePreferencesButton;
+    id <ToolbarControllerDelegate> _delegate;
+    CloudTabStore *_cloudTabStore;
+    SafariAppExtensionsController *_extensionsController;
+    NSToolbarItem *_tabPickerItem;
+    VisualTabPickerToolbarButton *_tabPickerButton;
+    BrowserToolbarItem *_cloudTabsItem;
+    BrowserToolbarItem *_shareItem;
+    ButtonPlus *_contextFeedbackButton;
 }
 
-+ (BOOL)isToolbarBlurringEnabled;
 + (void)insertTabPickerButtonIfNeeded;
 + (void)removeDuplicateShareButtonsIfNeeded;
 + (void)insertShareButtonIfNeeded;
-@property(retain, nonatomic) ButtonPlus *perSitePreferencesButton; // @synthesize perSitePreferencesButton=_perSitePreferencesButton;
-@property(nonatomic) __weak ButtonPlus *bookmarksBarButton; // @synthesize bookmarksBarButton=_bookmarksBarButton;
-@property(nonatomic) __weak ButtonPlus *showWebInspectorButton; // @synthesize showWebInspectorButton=_showWebInspectorButton;
-@property(nonatomic) __weak ButtonPlus *mailPageButton; // @synthesize mailPageButton=_mailPageButton;
-@property(nonatomic) __weak ButtonPlus *historyButton; // @synthesize historyButton=_historyButton;
-@property(nonatomic) __weak NSView *unifiedFieldCustomizeContainer; // @synthesize unifiedFieldCustomizeContainer=_unifiedFieldCustomizeContainer;
-@property(nonatomic) __weak UnifiedField *unifiedCustomizeField; // @synthesize unifiedCustomizeField=_unifiedCustomizeField;
-@property(nonatomic) __weak ButtonPlus *printButton; // @synthesize printButton=_printButton;
-@property(nonatomic) __weak NSView *unifiedFieldContainer; // @synthesize unifiedFieldContainer=_unifiedFieldContainer;
-@property(nonatomic) __weak TopSitesButton *topSitesButton; // @synthesize topSitesButton=_topSitesButton;
-@property(nonatomic) __weak ButtonPlus *homeButton; // @synthesize homeButton=_homeButton;
-@property(nonatomic) __weak ButtonPlus *autoFillButton; // @synthesize autoFillButton=_autoFillButton;
-@property(nonatomic) __weak ButtonPlus *openInDashboardButton; // @synthesize openInDashboardButton=_openInDashboardButton;
-@property(nonatomic) __weak NSSegmentedControl *textSizeCustomizeSegmentedControl; // @synthesize textSizeCustomizeSegmentedControl=_textSizeCustomizeSegmentedControl;
-@property(nonatomic) __weak NSSegmentedControl *textSizeSegmentedControl; // @synthesize textSizeSegmentedControl=_textSizeSegmentedControl;
-@property(nonatomic) __weak NSSegmentedControl *backForwardCustomizeSegmentedControl; // @synthesize backForwardCustomizeSegmentedControl=_backForwardCustomizeSegmentedControl;
-@property(retain, nonatomic) NSWindow *nibWindow; // @synthesize nibWindow=_nibWindow;
-@property(nonatomic) __weak UnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
+@property(retain, nonatomic) ButtonPlus *contextFeedbackButton; // @synthesize contextFeedbackButton=_contextFeedbackButton;
 @property(readonly, nonatomic) BrowserToolbarItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(readonly, nonatomic) BrowserToolbarItem *cloudTabsItem; // @synthesize cloudTabsItem=_cloudTabsItem;
-@property(nonatomic) __weak ButtonPlus *shareButton; // @synthesize shareButton=_shareButton;
-@property(nonatomic) __weak ButtonPlus *cloudTabsButton; // @synthesize cloudTabsButton=_cloudTabsButton;
-@property(nonatomic) __weak ButtonPlus *sidebarButton; // @synthesize sidebarButton=_sidebarButton;
-@property(nonatomic) __weak ToolbarDownloadsButton *showDownloadsButton; // @synthesize showDownloadsButton=_showDownloadsButton;
-@property(nonatomic) __weak NSSegmentedControl *backForwardSegmentedControl; // @synthesize backForwardSegmentedControl=_backForwardSegmentedControl;
 @property(nonatomic) BOOL autoHidesToolbarInFullScreen; // @synthesize autoHidesToolbarInFullScreen=_autoHidesToolbarInFullScreen;
-@property(nonatomic) __weak VisualTabPickerToolbarButton *tabPickerButton; // @synthesize tabPickerButton=_tabPickerButton;
+@property(readonly, nonatomic) VisualTabPickerToolbarButton *tabPickerButton; // @synthesize tabPickerButton=_tabPickerButton;
 @property(readonly, nonatomic) NSToolbarItem *tabPickerItem; // @synthesize tabPickerItem=_tabPickerItem;
-@property(readonly, nonatomic) __weak id <ToolbarControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak SafariAppExtensionsController *extensionsController; // @synthesize extensionsController=_extensionsController;
+@property(readonly, nonatomic) __weak CloudTabStore *cloudTabStore; // @synthesize cloudTabStore=_cloudTabStore;
+@property(nonatomic) __weak id <ToolbarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_zoomTextLabel;
 - (void)_parentalControlsDidChange;
@@ -112,6 +84,20 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *unifiedFieldPlaceholderString;
 - (void)rolloverTrackingButton:(id)arg1 didMouseDown:(id)arg2;
 - (void)rolloverTrackingButton:(id)arg1 mouseDidEnterOrExit:(BOOL)arg2;
+- (id)_toolbarItemForContextFeedback:(BOOL)arg1;
+- (void)_setUpToolbarButton:(id)arg1;
+- (void)_setUpToolbarSegmentedControl:(id)arg1;
+@property(readonly, nonatomic) NSSegmentedControl *textSizeCustomizeSegmentedControl; // @synthesize textSizeCustomizeSegmentedControl=_textSizeCustomizeSegmentedControl;
+@property(readonly, nonatomic) NSSegmentedControl *textSizeSegmentedControl; // @synthesize textSizeSegmentedControl=_textSizeSegmentedControl;
+@property(readonly, nonatomic) NSSegmentedControl *backForwardCustomizeSegmentedControl; // @synthesize backForwardCustomizeSegmentedControl=_backForwardCustomizeSegmentedControl;
+@property(readonly, nonatomic) NSSegmentedControl *backForwardSegmentedControl; // @synthesize backForwardSegmentedControl=_backForwardSegmentedControl;
+@property(readonly, nonatomic) ButtonPlus *sidebarButton; // @synthesize sidebarButton=_sidebarButton;
+@property(readonly, nonatomic) ToolbarDownloadsButton *showDownloadsButton;
+- (id)_createUnifiedField;
+- (id)_unifiedCustomizeFieldContainerView;
+- (id)_unifiedFieldContainerView;
+@property(readonly, nonatomic) UnifiedField *unifiedCustomizeField; // @synthesize unifiedCustomizeField=_unifiedCustomizeField;
+@property(readonly, nonatomic) UnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (id)_toolbarItemForTabPicker:(BOOL)arg1;
 - (id)_toolbarItemForWebClip:(BOOL)arg1;
 - (id)_toolbarItemForPrint:(BOOL)arg1;
@@ -164,7 +150,7 @@ __attribute__((visibility("hidden")))
 - (id)_createToolbar;
 - (void)detachFromWindow;
 - (void)attachToWindow:(id)arg1;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithCloudTabStore:(id)arg1 extensionsController:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

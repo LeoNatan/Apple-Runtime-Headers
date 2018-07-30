@@ -8,6 +8,8 @@
 
 @interface NSURL (UTIAdditions)
 - (BOOL)__is__getFSRef:(struct FSRef *)arg1;
+- (BOOL)__is_isAppExtension;
+- (BOOL)__is_isApplication;
 - (unsigned int)__is_readOSType;
 - (BOOL)__is_isOnBootVolume;
 - (BOOL)__is_isBootVolume;

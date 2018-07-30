@@ -8,6 +8,7 @@
 
 #import "AETileLayoutInfo.h"
 
+__attribute__((visibility("hidden")))
 @interface AEGridOverlayLayoutInfo : NSObject <AETileLayoutInfo>
 {
     struct CGSize __gradientImageSize;

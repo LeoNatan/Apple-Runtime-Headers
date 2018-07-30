@@ -8,7 +8,7 @@
 
 #import "NTKActivityFaceViewFactoryDelegate.h"
 
-@class HKRingsView, NSDate, NSString, NTKActivityFaceControl, NTKActivityFaceViewFactory, NTKDigitalTimeLabel, NTKPolygonCylinderView, UILabel, UIView;
+@class HKRingsView, NSDate, NSString, NTKActivityFaceViewFactory, NTKDigitalTimeLabel, NTKFaceViewTapControl, NTKPolygonCylinderView, UILabel, UIView;
 
 @interface NTKActivityDigitalFaceView : NTKFaceView <NTKActivityFaceViewFactoryDelegate>
 {
@@ -17,7 +17,7 @@
     UILabel *_energyLabel;
     UILabel *_briskMinutesLabel;
     UILabel *_standHoursLabel;
-    NTKActivityFaceControl *_tapToLaunchButton;
+    NTKFaceViewTapControl *_tapToLaunchButton;
     UIView *_timeLabelBackgroundView;
     NTKPolygonCylinderView *_densityEditingPolygonView;
     NSDate *_timeDensityEditingOverrideDate;
@@ -29,16 +29,14 @@
     int _energyStringMetricWidth;
     int _briskStringMetricWidth;
     int _standStringMetricWidth;
-    _Bool _useTimeTravelStyleForTimeLabel;
     _Bool _showSeconds;
     float _rightTimeViewInset;
 }
 
 + (id)_newRingsView;
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(nonatomic) float rightTimeViewInset; // @synthesize rightTimeViewInset=_rightTimeViewInset;
-@property(nonatomic) _Bool useTimeTravelStyleForTimeLabel; // @synthesize useTimeTravelStyleForTimeLabel=_useTimeTravelStyleForTimeLabel;
 - (void).cxx_destruct;
 - (id)_additionalPrelaunchApplicationIdentifiers;
 - (id)_ringGroupController;
@@ -60,13 +58,7 @@
 - (void)_applyShowsLockedUI;
 - (void)_prepareForEditing;
 - (void)_cleanupAfterEditing;
-- (void)_layoutTimeTravelCaptionView:(id)arg1;
-- (void)_layoutTimeTravelStatusModule:(id)arg1;
-- (_Bool)_wantsTimeTravelStatusModule;
-- (_Bool)_supportsTimeScrubbing;
-- (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
+- (int)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (int)_polygonIndexForAccuracy:(unsigned int)arg1;
@@ -84,6 +76,8 @@
 - (struct CGRect)_timeViewBackgroundRect;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (struct UIEdgeInsets)_keylineLabelActiveAreaInsetsForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
@@ -102,7 +96,7 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

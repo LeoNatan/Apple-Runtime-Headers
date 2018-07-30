@@ -28,8 +28,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSymbology:(id)arg1 descriptor:(id)arg2 boundingBox:(struct CGRect)arg3;
-- (id)initWithSymbology:(id)arg1 descriptor:(id)arg2 topLeft:(struct CGPoint)arg3 bottomLeft:(struct CGPoint)arg4 bottomRight:(struct CGPoint)arg5 topRight:(struct CGPoint)arg6;
+- (id)initWithRequestRevision:(unsigned long long)arg1 symbology:(id)arg2 descriptor:(id)arg3 boundingBox:(struct CGRect)arg4;
+- (id)initWithRequestRevision:(unsigned long long)arg1 symbology:(id)arg2 descriptor:(id)arg3 topLeft:(struct CGPoint)arg4 bottomLeft:(struct CGPoint)arg5 bottomRight:(struct CGPoint)arg6 topRight:(struct CGPoint)arg7;
 
 @end
 

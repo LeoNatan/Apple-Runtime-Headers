@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADTextBodyAutoFit.h>
 
-__attribute__((visibility("hidden")))
 @interface OADNormalTextBodyAutoFit : OADTextBodyAutoFit
 {
     float mFontScalePercent;

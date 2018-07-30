@@ -8,7 +8,7 @@
 
 #import "TabDialogView.h"
 
-@class AlertDialogViewOriginMessageAccessibilityHelper, ButtonPlus, NSLayoutConstraint, NSScrollView, NSString, NSTextField, NSTextView, SeparatorView;
+@class AlertDialogViewOriginMessageAccessibilityHelper, BackgroundColorView, ButtonPlus, NSLayoutConstraint, NSScrollView, NSString, NSTextField, NSTextView;
 
 __attribute__((visibility("hidden")))
 @interface AlertDialogView : KeyLoopSplicingContainerView <TabDialogView>
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *_originStringForAccessibility;
     NSScrollView *_dialogMessageScrollView;
     NSTextView *_dialogMessageTextView;
-    SeparatorView *_separatorView;
+    BackgroundColorView *_separatorView;
     ButtonPlus *_secondaryButton;
     ButtonPlus *_okButton;
     ButtonPlus *_optionalButton;
@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 @property __weak ButtonPlus *optionalButton; // @synthesize optionalButton=_optionalButton;
 @property __weak ButtonPlus *okButton; // @synthesize okButton=_okButton;
 @property __weak ButtonPlus *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
-@property __weak SeparatorView *separatorView; // @synthesize separatorView=_separatorView;
+@property __weak BackgroundColorView *separatorView; // @synthesize separatorView=_separatorView;
 @property NSTextView *dialogMessageTextView; // @synthesize dialogMessageTextView=_dialogMessageTextView;
 @property __weak NSScrollView *dialogMessageScrollView; // @synthesize dialogMessageScrollView=_dialogMessageScrollView;
 @property(copy, nonatomic) NSString *originStringForAccessibility; // @synthesize originStringForAccessibility=_originStringForAccessibility;
@@ -55,6 +55,9 @@ __attribute__((visibility("hidden")))
 - (void)optionalButtonPressed:(id)arg1;
 - (void)okButtonPressed:(id)arg1;
 - (void)secondaryButtonPressed:(id)arg1;
+- (void)reject;
+- (void)accept;
+- (void)cancel;
 - (void)updateConstraints;
 - (void)layout;
 - (void)_removeViewFromSuperviewAndSetUpKeyView:(id)arg1;

@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSActionBinderPlugin : _NSBinderPlugin <_NSActionBinderPlugin>
 {
     long long _actionIndex;

@@ -8,6 +8,7 @@
 
 @class NSLock, NSMutableArray, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface ICDeviceBrowserPrivateData : NSObject
 {
     id _delegate;
@@ -32,7 +33,6 @@
 - (void)lockTWAINDevices;
 - (void)unlockInternalDevices;
 - (void)lockInternalDevices;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

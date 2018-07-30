@@ -12,21 +12,23 @@
 
 @interface HDCurrentActivityCacheQueryServer : HDQueryServer <HDActivityCacheManagerObserver>
 {
-    double _createdTime;
-    double _firstResultsTime;
     NSDateComponents *_statisticsIntervalComponents;
     NSCalendar *_calendar;
     HKActivityCache *_lastActivityCache;
     HDActivityCacheManager *_activityCacheManager;
 }
 
++ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5 error:(id *)arg6;
++ (Class)queryClass;
+@property(nonatomic) __weak HDActivityCacheManager *activityCacheManager; // @synthesize activityCacheManager=_activityCacheManager;
 - (void).cxx_destruct;
 - (void)activityCacheManager:(id)arg1 changedTodayActivityCache:(id)arg2;
 - (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (_Bool)_shouldListenForUpdates;
 - (void)_queue_stop;
 - (void)_queue_start;
-- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6 activityCacheManager:(id)arg7;
+- (_Bool)shouldObserveActivityCache;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

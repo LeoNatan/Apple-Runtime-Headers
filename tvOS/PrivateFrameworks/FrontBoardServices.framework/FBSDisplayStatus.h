@@ -16,8 +16,8 @@
     unsigned int _observation;
 }
 
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

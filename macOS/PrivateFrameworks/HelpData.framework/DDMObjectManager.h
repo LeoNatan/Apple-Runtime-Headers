@@ -33,7 +33,7 @@
 - (void)_resetSession;
 - (void)processEventNotification:(id)arg1;
 - (void)_authenticateWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)_errorFromResponseData:(id)arg1;
+- (id)_errorFromHTTPURLResponse:(id)arg1 data:(id)arg2;
 - (void)_executeURLRequest:(id)arg1 retryCount:(long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestTopicWithID:(id)arg1 fromBook:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)cachedTopicWithID:(id)arg1 fromBook:(id)arg2;

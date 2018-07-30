@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     struct WeakObjCPtr<id<WKActionSheetAssistantDelegate>> _delegate;
     struct RetainPtr<WKActionSheet> _interactionSheet;
     RetainPtr_5a40b48a _elementInfo;
-    optional_37d01839 _positionInformation;
+    optional_d8dc43b0 _positionInformation;
     struct WeakObjCPtr<UIView> _view;
     _Bool _needsLinkIndicator;
     _Bool _isPresentingDDUserInterface;

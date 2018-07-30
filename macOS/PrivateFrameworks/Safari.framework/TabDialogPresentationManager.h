@@ -8,12 +8,12 @@
 
 #import "TabDialogPresenter.h"
 
-@class BrowserWKView, NSString, TabDialogDimmingView, TabDialogInstaller, TabDialogViewController;
+@class BrowserViewController, NSString, TabDialogDimmingView, TabDialogInstaller, TabDialogViewController;
 
 __attribute__((visibility("hidden")))
 @interface TabDialogPresentationManager : NSObject <TabDialogPresenter>
 {
-    BrowserWKView *_webView;
+    BrowserViewController *_browserViewController;
     TabDialogDimmingView *_dimmingView;
     TabDialogInstaller *_tabDialogInstallerForRedirection;
     TabDialogViewController *_tabDialogViewController;
@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)dismissTabDialog;
 - (void)presentTabDialogWithConfiguration:(id)arg1 dismissalBlock:(CDUnknownBlockType)arg2 blocksWebProcessUntilDismissed:(BOOL)arg3;
 - (void)stopRedirectingTabDialogs;
-- (void)startRedirectingTabDialogPresentationForWebView:(id)arg1;
+- (void)startRedirectingTabDialogPresentationForBrowserViewController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

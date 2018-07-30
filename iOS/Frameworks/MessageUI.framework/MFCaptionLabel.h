@@ -18,12 +18,14 @@
     NSArray *_fromSenders;
 }
 
++ (id)attributedStringsCache;
 @property(retain, nonatomic) NSArray *fromSenders; // @synthesize fromSenders=_fromSenders;
 @property(retain, nonatomic) NSArray *bccRecipients; // @synthesize bccRecipients=_bccRecipients;
 @property(retain, nonatomic) NSArray *ccRecipients; // @synthesize ccRecipients=_ccRecipients;
 @property(retain, nonatomic) NSArray *toRecipients; // @synthesize toRecipients=_toRecipients;
 @property(nonatomic) __weak id <MFCaptionLabelDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (id)_formattedAttributedString;
 - (void)updateLabelNow;
 - (id)_stringAtIndexForCombinedRecipientLists:(unsigned long long)arg1;
 - (void)_setNeedsLabelUpdate;

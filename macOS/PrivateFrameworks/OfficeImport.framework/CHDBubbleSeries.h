@@ -8,7 +8,6 @@
 
 @class CHDData;
 
-__attribute__((visibility("hidden")))
 @interface CHDBubbleSeries : CHDSeries
 {
     CHDData *mSizeData;
@@ -17,6 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool mShowBubbleSize;
 }
 
+- (void).cxx_destruct;
 - (void)setCategoryData:(id)arg1;
 - (void)setShowBubbleSize:(_Bool)arg1;
 - (_Bool)isShowBubbleSize;
@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isBubble3D;
 - (void)setSizeData:(id)arg1;
 - (id)sizeData;
-- (void)dealloc;
 
 @end
 

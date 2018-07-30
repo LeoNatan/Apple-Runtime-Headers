@@ -21,6 +21,7 @@
 - (void)_addActionForShortcutItem:(id)arg1;
 - (void)_updateApplicationShortcutsActions;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
+- (void)didBeginInteraction;
 - (void)viewDidLoad;
 - (void)buttonTapped:(id)arg1 forEvent:(id)arg2;
 

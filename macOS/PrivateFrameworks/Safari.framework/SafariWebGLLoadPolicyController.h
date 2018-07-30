@@ -41,12 +41,12 @@ __attribute__((visibility("hidden")))
 - (void)removeWebGLLoadPoliciesForHosts:(id)arg1;
 - (void)removeWebGLLoadPolicyForHost:(id)arg1;
 - (void)setWebGLLoadPolicy:(int)arg1 forHost:(id)arg2 saveToUserDefaults:(BOOL)arg3;
-- (unsigned int)webGLLoadPolicyForHost:(id)arg1;
+- (long long)webGLLoadPolicyForHost:(id)arg1;
 - (BOOL)showWebGLLoadPolicyDialogForURL:(id)arg1 inBrowserViewController:(id)arg2;
 - (BOOL)_isSuppressingDialog:(id)arg1;
 - (id)policyEntryForHost:(id)arg1;
 - (id)sortedPolicies;
-- (unsigned int)_managedPolicyToWKPolicy:(int)arg1;
+- (long long)_managedPolicyToWebGLLoadPolicy:(int)arg1;
 - (id)init;
 
 @end

@@ -10,7 +10,6 @@
 
 @class EDAlignmentInfo, EDBorders, EDContentFormat, EDFill, EDFont, EDProtection;
 
-__attribute__((visibility("hidden")))
 @interface EDDifferentialStyle : NSObject <NSCopying>
 {
     EDAlignmentInfo *mAlignmentInfo;
@@ -28,9 +27,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) EDFill *fill; // @synthesize fill=mFill;
 @property(retain, nonatomic) EDBorders *borders; // @synthesize borders=mBorders;
 @property(retain, nonatomic) EDAlignmentInfo *alignmentInfo; // @synthesize alignmentInfo=mAlignmentInfo;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 @end
 

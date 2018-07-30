@@ -8,6 +8,7 @@
 
 @class AVAssetResourceLoader, AVCMNotificationDispatcher, AVWeakReference;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetClientURLRequestHelper : NSObject
 {
     AVWeakReference *_weakReferenceToSelf;
@@ -21,6 +22,7 @@
 @property(copy, nonatomic) CDUnknownBlockType figAssetProvider; // @synthesize figAssetProvider=_figAssetProvider;
 - (void)_onUnhandledContentKeyRequest:(id)arg1;
 - (void)handleURLRequest:(id)arg1;
+- (void)_handleRequestForAsset:(id)arg1 contentKeySession:(id)arg2 request:(id)arg3 identifier:(id)arg4;
 - (void)_finishLoadingCustomURLProviderRequestWithResponseProperties:(id)arg1 context:(id)arg2;
 @property(nonatomic) __weak AVAssetResourceLoader *resourceLoader;
 @property(retain, nonatomic) const void *URLRequestOriginator;

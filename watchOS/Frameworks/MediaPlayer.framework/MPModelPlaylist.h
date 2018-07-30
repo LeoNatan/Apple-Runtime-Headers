@@ -55,6 +55,7 @@
 - (id)trackArtworkCatalogsWithCount:(int)arg1;
 - (id)editorialArtworkCatalog;
 - (id)artworkCatalog;
+- (id)humanDescription;
 - (id)contentItemCollectionInfo;
 - (struct MPLibraryAddStatusObserverConfiguration)libraryAddStatusObserverConfiguration;
 - (int)libraryRemovalSupportedOptions;

@@ -6,17 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSString;
+@class BKSApplicationStateMonitor, NSMutableDictionary, NSString;
 
 @interface IMMessageNotificationTimeManager : NSObject
 {
     NSMutableDictionary *_chatsStartTimeDictionary;
     NSString *_latestIDSTokenURI;
+    BKSApplicationStateMonitor *_appStateMonitor;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) BKSApplicationStateMonitor *appStateMonitor; // @synthesize appStateMonitor=_appStateMonitor;
 @property(retain, nonatomic) NSString *latestIDSTokenURI; // @synthesize latestIDSTokenURI=_latestIDSTokenURI;
 @property(retain, nonatomic) NSMutableDictionary *chatsStartTimeDictionary; // @synthesize chatsStartTimeDictionary=_chatsStartTimeDictionary;
+- (void)acquireAssertionToUnsuspendProcess;
 - (void)sendNotificationMessageIfNeededForIncomingMessageFromChatIdentifier:(id)arg1;
 - (void)setLatestNotificationIDSTokenURI:(id)arg1;
 - (_Bool)_shouldSendNotificationForChatIdentifier:(id)arg1;

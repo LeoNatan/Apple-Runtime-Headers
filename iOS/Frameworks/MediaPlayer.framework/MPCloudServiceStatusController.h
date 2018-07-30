@@ -33,7 +33,6 @@
     _Bool _observingNetworkReachability;
     SSVPlaybackLease *_playbackLease;
     _Bool _hasSubscriptionLease;
-    unsigned long long _purchaseHistoryObservationCount;
     _Bool _shouldPlaybackRequireSubscriptionLease;
     unsigned long long _shouldPlaybackRequireSubscriptionLeaseObservationCount;
     _Bool _subscriptionAvailable;
@@ -51,12 +50,10 @@
 - (void)_updateForNetworkReachabilityObserversCountChange;
 - (id)_fairPlaySubscriptionController;
 - (void)_endObservingURLBag;
-- (void)_endObservingAccountStoreDidChange;
 - (_Bool)_currentPurchaseHistoryEnabled;
 - (_Bool)_currentCloudLibraryEnabled;
 - (_Bool)_calculateShouldPlaybackRequireSubscriptionLeaseReturningLikelyToReachRemoteServer:(_Bool *)arg1;
 - (void)_beginObservingURLBag;
-- (void)_beginObservingAccountStoreDidChange;
 - (id)_activeAccount;
 - (void)_setHasSubscriptionLease:(_Bool)arg1 endReasonType:(unsigned long long)arg2;
 - (void)_getCurrentFairPlaySubscriptionStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -68,7 +65,6 @@
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_fairPlaySubscriptionControllerSubscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_cloudClientAuthenticationDidChange;
-- (void)_accountStoreChangedNotification:(id)arg1;
 - (void)updateWithExternalLeaseResponseError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)refreshSubscriptionLeaseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)preheatSubscriptionLeaseRequestsWithCompletionHandler:(CDUnknownBlockType)arg1;

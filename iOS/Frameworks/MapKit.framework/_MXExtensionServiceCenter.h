@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSObject<OS_dispatch_queue>, _MXExtensionProvider;
 
-__attribute__((visibility("hidden")))
 @interface _MXExtensionServiceCenter : NSObject
 {
     NSObject<OS_dispatch_queue> *_extlock;

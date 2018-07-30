@@ -10,7 +10,6 @@
 
 @class CNScrollableContainerView, NSMutableArray, NSStackView, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCardCollectionStackViewController : NSObject <ABCardCollectionViewPresentation>
 {
     NSStackView *_stackView;

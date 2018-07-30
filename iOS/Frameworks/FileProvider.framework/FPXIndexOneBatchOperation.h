@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletedBlock; // @synthesize fetchCompletedBlock=_fetchCompletedBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (void)_startIndexing;
 - (void)main;
 - (void)handleInsertedItems:(id)arg1 deletedItems:(id)arg2 needsMoreWork:(_Bool)arg3 state:(id)arg4 error:(id)arg5;
 - (void)_handleInsertedItems:(id)arg1 deletedItems:(id)arg2 needsMoreWork:(_Bool)arg3 state:(id)arg4 error:(id)arg5;

@@ -16,8 +16,10 @@
     NSString *_interfaceName;
     CWScanManager *_scanManager;
     BOOL _isWiFiNetworkSyncEnabled;
+    unsigned long long _modifierFlags;
 }
 
+@property(readonly) unsigned long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(readonly) BOOL isWiFiNetworkSyncEnabled; // @synthesize isWiFiNetworkSyncEnabled=_isWiFiNetworkSyncEnabled;
 @property(readonly) CWScanManager *scanManager; // @synthesize scanManager=_scanManager;
 @property(copy) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;

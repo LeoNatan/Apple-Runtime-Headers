@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface WeatherInMemoryDefaults : NSObject <WeatherPreferencesPersistence>
 {
     _Bool _synchronizeWasCalled;

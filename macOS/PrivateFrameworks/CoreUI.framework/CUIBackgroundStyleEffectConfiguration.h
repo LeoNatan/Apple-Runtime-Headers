@@ -16,6 +16,7 @@
 
 @property(nonatomic) BOOL effectShowsValue; // @synthesize effectShowsValue=_effectShowsValue;
 @property(copy, nonatomic) NSString *backgroundType; // @synthesize backgroundType=_backgroundType;
+- (void)setSelectionType:(long long)arg1;
 - (id)description;
 - (BOOL)shouldRespectOutputBlending;
 - (BOOL)shouldIgnoreForegroundColor;

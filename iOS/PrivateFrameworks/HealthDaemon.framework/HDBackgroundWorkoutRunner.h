@@ -6,36 +6,35 @@
 
 #import "NSObject.h"
 
+#import "HDAssertionObserver.h"
 #import "HDProcessStateObserver.h"
 
-@class BKSProcessAssertion, CLInUseAssertion, HDProfile, HDXPCClient, NSObject<OS_dispatch_queue>, NSString;
+@class HDAssertionManager, HDDaemon, NSObject<OS_dispatch_queue>, NSString;
 
-@interface HDBackgroundWorkoutRunner : NSObject <HDProcessStateObserver>
+@interface HDBackgroundWorkoutRunner : NSObject <HDProcessStateObserver, HDAssertionObserver>
 {
-    HDXPCClient *_client;
-    HDProfile *_profile;
-    BKSProcessAssertion *_assertion;
-    CLInUseAssertion *_coreLocationAssertion;
-    _Bool _shouldAcquireCLAssertion;
+    HDDaemon *_daemon;
+    HDAssertionManager *_assertionManager;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-- (void)_queue_releaseCLInUseAssertion;
-- (void)_queue_releaseBackgroundRunningAssertion;
-- (void)_queue_releaseAssertion;
-- (void)_queue_acquireCLInUseAssertion;
-- (void)_queue_acquireBackgroundRunningAssertion;
-- (void)_queue_takeAssertion;
-- (_Bool)_queue_hasBackgroundPermission;
+- (void)_queue_releaseCLInUseAssertion:(id)arg1 forClient:(id)arg2;
+- (void)_queue_releaseBKSAssertion:(id)arg1 forClient:(id)arg2;
+- (id)_queue_acquireCLInUseAssertionForClient:(id)arg1;
+- (id)_queue_acquireBKSAssertionForClient:(id)arg1;
+- (_Bool)_queue_hasBackgroundPermissionForBundleIdentifier:(id)arg1 errorOut:(id *)arg2;
 - (void)processDidEnterForeground:(id)arg1;
-- (void)stop;
-- (void)start;
-- (id)initWithServer:(id)arg1 profile:(id)arg2;
+- (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
+- (void)assertionManager:(id)arg1 assertionTaken:(id)arg2;
+- (_Bool)hasBackgroundPermissionForBundleIdentifier:(id)arg1 errorOut:(id *)arg2;
+- (id)takeBackgroundRunningAssertionForOwnerIdentifier:(id)arg1 client:(id)arg2 includeCoreLocationAssertion:(_Bool)arg3;
+- (void)dealloc;
+- (id)initWithDaemon:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

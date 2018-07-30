@@ -6,11 +6,9 @@
 
 #import <MediaRemote/MRAVRoutingDiscoverySession.h>
 
-#import "MRExternalDeviceControllerDelegate.h"
+@class AVOutputDeviceDiscoverySession, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
-@class AVOutputDeviceDiscoverySession, MRExternalDeviceController, NSArray, NSObject<OS_dispatch_queue>, NSString;
-
-@interface MRAVConcreteRoutingDiscoverySession : MRAVRoutingDiscoverySession <MRExternalDeviceControllerDelegate>
+@interface MRAVConcreteRoutingDiscoverySession : MRAVRoutingDiscoverySession
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
@@ -19,24 +17,16 @@
     unsigned int _discoveryMode;
     unsigned int _targetAudioSessionID;
     NSString *_routingContextUID;
-    MRExternalDeviceController *_genericExternalDeviceController;
-    struct NSMutableDictionary *_availableGenericExternalDevices;
-    _Bool _createEndpointsOnlyIfGenericEquivalentAvailable;
-    NSArray *_availableEndpoints;
     NSArray *_availableOutputDevices;
-    struct NSMapTable *_groupIDsToWeakEndpointsTable;
-    struct NSMapTable *_deviceIDsToWeakOutputDevicesTable;
     _Bool _scheduledAvailableEndpointsAndOutputDevicesReload;
+    int _airplayActiveNotificationToken;
+    _Bool _isLocalDeviceBeingAirplayedTo;
 }
 
 - (void).cxx_destruct;
 - (void)_scheduleAvailableEndpointsAndOutputDevicesReload;
-- (void)_onQueue_reloadAvailableEndpointsAndOutputDevices;
-- (void)_unregisterNotifications;
-- (void)_registerNotifications;
+- (void)_onQueue_reloadAvailableOutputDevices;
 - (void)_availableOutputDevicesDidChangeNotification:(id)arg1;
-- (void)externalDeviceController:(id)arg1 didRemoveDevice:(id)arg2;
-- (void)externalDeviceController:(id)arg1 didDiscoverDevice:(id)arg2;
 - (void)setRoutingContextUID:(id)arg1;
 - (id)routingContextUID;
 - (void)setTargetAudioSessionID:(unsigned int)arg1;
@@ -45,16 +35,10 @@
 - (unsigned int)discoveryMode;
 @property(readonly, nonatomic) NSArray *availableOutputDevices; // @dynamic availableOutputDevices;
 @property(readonly, nonatomic) NSArray *availableEndpoints; // @dynamic availableEndpoints;
-- (_Bool)hasAvailableEndpoints;
+- (_Bool)devicePresenceDetected;
 - (unsigned int)endpointFeatures;
 - (void)dealloc;
 - (id)initWithEndpointFeatures:(unsigned int)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface _NSSharedKeySetS : NSObject <NSCopying>
 {
     char *_g;

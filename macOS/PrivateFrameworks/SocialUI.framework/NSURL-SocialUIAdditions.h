@@ -7,10 +7,6 @@
 #import "NSURL.h"
 
 @interface NSURL (SocialUIAdditions)
-- (BOOL)_audioPowerLevels:(double *)arg1 powerLevelsCount:(unsigned long long)arg2;
-- (id)_waveformWithPowerLevels:(double *)arg1 powerLevelsCount:(unsigned long long)arg2 is2x:(BOOL)arg3;
-- (unsigned long long)_waveformPowerLevelsCountForDuration:(double)arg1;
-- (id)renderedWaveFormForAudioFile:(BOOL)arg1;
 - (id)inputLinePreviewForAudioMessage;
 - (id)formattedNameFromVCFURL;
 - (id)iconPreview;

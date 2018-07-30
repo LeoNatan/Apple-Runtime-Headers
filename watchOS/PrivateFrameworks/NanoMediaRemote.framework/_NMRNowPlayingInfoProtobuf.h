@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSString *_artist;
     NSData *_artworkDataDigest;
     float _playbackRate;
+    float _preferredPlaybackRate;
     NSString *_radioStationHash;
     NSString *_radioStationName;
     int _repeatMode;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
         unsigned int timestamp:1;
         unsigned int uniqueIdentifier:1;
         unsigned int playbackRate:1;
+        unsigned int preferredPlaybackRate:1;
         unsigned int repeatMode:1;
         unsigned int shuffleMode:1;
         unsigned int isAdvertisement:1;
@@ -49,6 +51,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+@property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(nonatomic) _Bool isAdvertisement; // @synthesize isAdvertisement=_isAdvertisement;
 @property(nonatomic) _Bool isAlwaysLive; // @synthesize isAlwaysLive=_isAlwaysLive;
@@ -76,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPreferredPlaybackRate;
 @property(nonatomic) _Bool hasStoreAdamID;
 @property(nonatomic) _Bool hasIsAdvertisement;
 @property(nonatomic) _Bool hasIsAlwaysLive;

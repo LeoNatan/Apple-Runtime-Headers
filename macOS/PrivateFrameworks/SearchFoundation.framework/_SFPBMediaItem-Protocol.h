@@ -10,25 +10,16 @@
 
 @protocol _SFPBMediaItem <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasContentAdvisoryImage;
 @property(retain, nonatomic) _SFPBImage *contentAdvisoryImage;
-@property(readonly, nonatomic) BOOL hasContentAdvisory;
 @property(copy, nonatomic) NSString *contentAdvisory;
 @property(copy, nonatomic) NSArray *buyOptions;
 @property(copy, nonatomic) NSArray *subtitleCustomLineBreakings;
-@property(readonly, nonatomic) BOOL hasPunchout;
 @property(retain, nonatomic) _SFPBPunchout *punchout;
-@property(readonly, nonatomic) BOOL hasReviewText;
 @property(copy, nonatomic) NSString *reviewText;
-@property(readonly, nonatomic) BOOL hasOverlayImage;
 @property(retain, nonatomic) _SFPBImage *overlayImage;
-@property(readonly, nonatomic) BOOL hasReviewGlyph;
 @property(retain, nonatomic) _SFPBImage *reviewGlyph;
-@property(readonly, nonatomic) BOOL hasThumbnail;
 @property(retain, nonatomic) _SFPBImage *thumbnail;
-@property(readonly, nonatomic) BOOL hasSubtitleText;
 @property(retain, nonatomic) _SFPBText *subtitleText;
-@property(readonly, nonatomic) BOOL hasTitle;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

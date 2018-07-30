@@ -10,6 +10,6 @@
 + (id)numberWithCGFloat:(double)arg1;
 - (_Bool)tsu_isAlmostEqual:(id)arg1;
 - (_Bool)isFloatingPointType;
-- (double)CGFloatValue;
+@property(readonly, nonatomic) double CGFloatValue;
 @end
 

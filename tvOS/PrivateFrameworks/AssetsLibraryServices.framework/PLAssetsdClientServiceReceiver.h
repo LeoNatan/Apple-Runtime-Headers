@@ -12,6 +12,9 @@
 }
 
 - (void).cxx_destruct;
+- (void)resourceURLReceived:(id)arg1 connection:(id)arg2;
+- (void)assetAvailable:(id)arg1 connection:(id)arg2;
+- (void)downloadFinished:(id)arg1 connection:(id)arg2;
 - (void)downloadStatus:(id)arg1 connection:(id)arg2;
 - (void)dispatchEvent:(id)arg1 connection:(id)arg2;
 - (id)clientService;

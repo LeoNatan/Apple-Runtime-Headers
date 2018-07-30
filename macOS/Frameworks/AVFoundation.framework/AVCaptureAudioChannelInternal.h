@@ -8,6 +8,7 @@
 
 @class AVCaptureConnection;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureAudioChannelInternal : NSObject
 {
     AVCaptureConnection *connection;

@@ -8,7 +8,7 @@
 
 #import "BRCForegroundClient.h"
 
-@class BRCALRowID, BRCAccountSession, BRCFSEventsMonitor, BRCPQLConnection, BRCPrivateClientZone, BRCRelativePath, BRCSyncContext, BRCZoneRowID, BRContainer, BRMangledID, NSMutableDictionary, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSURL, brc_task_tracker;
+@class BRCALRowID, BRCAccountSession, BRCFSEventsMonitor, BRCPQLConnection, BRCPrivateClientZone, BRCRelativePath, BRCSyncContext, BRCZoneRowID, BRContainer, BRMangledID, NSMutableDictionary, NSMutableSet, NSNumber, NSString, NSURL, brc_task_tracker;
 
 __attribute__((visibility("hidden")))
 @interface BRCAppLibrary : NSObject <BRCForegroundClient>
@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     BOOL _activated;
     NSMutableSet *_targetAppLibraries;
     NSMutableSet *_targetSharedServerZones;
-    NSObject<OS_dispatch_queue> *_targetAppLibraryQueue;
     NSMutableSet *_foregroundClients;
     BOOL _needsSave;
     BOOL _containerMetadataNeedsSyncUp;
@@ -111,8 +110,8 @@ __attribute__((visibility("hidden")))
 - (void)removeForegroundClient:(id)arg1;
 - (void)addForegroundClient:(id)arg1;
 - (unsigned long long)documentCountWithDB:(id)arg1;
-- (unsigned long long)documentEvictableSizeUsageWithAccessTimeDelta:(double)arg1 db:(id)arg2;
-- (unsigned long long)documentEvictableSizeUsageWithDB:(id)arg1;
+- (void)computeDocumentEvictableSizeUsageWithLowTimeDelta:(double)arg1 medTimeDelta:(double)arg2 highTimeDelta:(double)arg3 db:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)computeDocumentEvictableSizeUsageWithDB:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (unsigned long long)documentSizeUsageWithDB:(id)arg1;
 - (BOOL)hasLocalChanges;
 - (BOOL)hasUbiquitousDocuments;
@@ -148,6 +147,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqualToAppLibrary:(id)arg1;
 @property(readonly, nonatomic) BOOL isGreedy;
 - (BOOL)hasUbiquityClientsConnected;
+- (void)didUpdateDocumentScopePublic;
 - (void)clearStateBits:(unsigned int)arg1;
 - (BOOL)setStateBits:(unsigned int)arg1;
 - (unsigned int)_activateState:(unsigned int)arg1 origState:(unsigned int)arg2;

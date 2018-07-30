@@ -8,6 +8,7 @@
 
 @class AVPlayer, AVPlayerLayer, NSMutableDictionary, NSObject<OS_dispatch_source>;
 
+__attribute__((visibility("hidden")))
 @interface AVNetworkPlaybackPerfHUDLayer : CATextLayer
 {
     NSObject<OS_dispatch_source> *_hudTimer;

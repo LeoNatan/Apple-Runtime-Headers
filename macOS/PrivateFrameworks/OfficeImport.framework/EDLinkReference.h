@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface EDLinkReference : NSObject
 {
     unsigned long long mLinkIndex;

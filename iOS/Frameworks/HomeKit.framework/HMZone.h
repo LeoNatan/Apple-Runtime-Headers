@@ -10,27 +10,22 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMDelegateCaller, HMFMessageDispatcher, HMHome, HMThreadSafeMutableArrayCollection, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMFUnfairLock, HMHome, HMMutableArray, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HMContext;
 
 @interface HMZone : NSObject <HMFMessageReceiver, NSSecureCoding, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     NSUUID *_uniqueIdentifier;
     NSString *_name;
     HMHome *_home;
     NSUUID *_uuid;
-    HMFMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMDelegateCaller *_delegateCaller;
-    HMThreadSafeMutableArrayCollection *_currentRooms;
+    _HMContext *_context;
+    HMMutableArray *_currentRooms;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) HMThreadSafeMutableArrayCollection *currentRooms; // @synthesize currentRooms=_currentRooms;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
+@property(retain, nonatomic) HMMutableArray *currentRooms; // @synthesize currentRooms=_currentRooms;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
@@ -49,12 +44,6 @@
 - (void)addRoom:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_invalidate;
-- (void)_unconfigure;
-- (void)_configure:(id)arg1 messageDispatcher:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
-- (void)dealloc;
-- (id)initWithName:(id)arg1 uuid:(id)arg2;
-- (id)init;
 @property(nonatomic) __weak HMHome *home; // @synthesize home=_home;
 - (void)setUuid:(id)arg1;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
@@ -62,6 +51,12 @@
 @property(readonly, copy, nonatomic) NSArray *rooms;
 - (void)setName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void)_invalidate;
+- (void)_unconfigure;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
+- (void)dealloc;
+- (id)initWithName:(id)arg1 uuid:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

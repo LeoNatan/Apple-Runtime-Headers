@@ -7,42 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBDateTime.h"
 
-@class NSString, PBUnknownFields, _INPBLocalDate, _INPBLocalTime;
+@class NSString, _INPBLocalDate, _INPBLocalTime;
 
-@interface _INPBDateTime : PBCodable <NSCopying>
+@interface _INPBDateTime : PBCodable <_INPBDateTime, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct {
+        unsigned int calendarSystem:1;
+    } _has;
     int _calendarSystem;
     _INPBLocalDate *_date;
     _INPBLocalTime *_time;
     NSString *_timeZoneID;
-    struct {
-        unsigned int calendarSystem:1;
-    } _has;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *timeZoneID; // @synthesize timeZoneID=_timeZoneID;
+@property(copy, nonatomic) NSString *timeZoneID; // @synthesize timeZoneID=_timeZoneID;
 @property(retain, nonatomic) _INPBLocalTime *time; // @synthesize time=_time;
 @property(retain, nonatomic) _INPBLocalDate *date; // @synthesize date=_date;
+@property(nonatomic) int calendarSystem; // @synthesize calendarSystem=_calendarSystem;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (int)StringAsCalendarSystem:(id)arg1;
-- (id)calendarSystemAsString:(int)arg1;
-@property(nonatomic) BOOL hasCalendarSystem;
-@property(nonatomic) int calendarSystem; // @synthesize calendarSystem=_calendarSystem;
 @property(readonly, nonatomic) BOOL hasTimeZoneID;
 @property(readonly, nonatomic) BOOL hasTime;
 @property(readonly, nonatomic) BOOL hasDate;
+- (int)StringAsCalendarSystem:(id)arg1;
+- (id)calendarSystemAsString:(int)arg1;
+@property(nonatomic) BOOL hasCalendarSystem;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

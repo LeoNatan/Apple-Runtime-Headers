@@ -7,41 +7,44 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBCreateTaskListIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBDataString, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBDataString, _INPBIntentMetadata;
 
-@interface _INPBCreateTaskListIntent : PBCodable <NSCopying>
+@interface _INPBCreateTaskListIntent : PBCodable <_INPBCreateTaskListIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBDataString *_groupName;
     _INPBIntentMetadata *_intentMetadata;
-    NSMutableArray *_taskTitles;
+    NSArray *_taskTitles;
     _INPBDataString *_title;
 }
 
 + (Class)taskTitlesType;
-+ (id)options;
-@property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
-@property(retain, nonatomic) NSMutableArray *taskTitles; // @synthesize taskTitles=_taskTitles;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSArray *taskTitles; // @synthesize taskTitles=_taskTitles;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasGroupName;
+@property(readonly, nonatomic) _Bool hasTitle;
 - (id)taskTitlesAtIndex:(unsigned int)arg1;
-- (unsigned int)taskTitlesCount;
+@property(readonly, nonatomic) unsigned int taskTitlesCount;
 - (void)addTaskTitles:(id)arg1;
 - (void)clearTaskTitles;
-@property(readonly, nonatomic) _Bool hasTitle;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasGroupName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

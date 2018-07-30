@@ -8,7 +8,6 @@
 
 @class NSURL;
 
-__attribute__((visibility("hidden")))
 @interface NSURLSessionAVAssetDownloadTask : NSURLSessionTask
 {
     unsigned long long _AVAssetDownloadToken;

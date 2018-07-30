@@ -91,7 +91,7 @@
 - (_Bool)wouldCoverAllItemsInStackView:(id)arg1;
 @property(readonly, nonatomic) NSArray *stackItemViews;
 @property(readonly, nonatomic) struct CGPoint topLeftCornerOfFrontStackItem;
-- (struct CGRect)frameOfFrontStackItemRelativeToView:(id)arg1;
+- (struct CGRect)rectOfStackItemAtIndex:(long long)arg1 inCoordinateSpace:(id)arg2;
 - (void)setHasRoundedCorners:(_Bool)arg1 withCornersBackgroundColor:(id)arg2;
 - (void)setBadgeInfo:(struct PXAssetBadgeInfo)arg1 style:(long long)arg2 forItemAtIndex:(long long)arg3;
 - (void)setBadgeInfo:(struct PXAssetBadgeInfo)arg1 forItemAtIndex:(long long)arg2;

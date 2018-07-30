@@ -10,9 +10,6 @@
 {
 }
 
-+ (id)messageForCloudFeedUpdatingLibraryNoNetwork;
-+ (id)messageForEmptyPhotoLibrary;
-+ (id)titleForEmptyPhotoLibrary;
 + (id)messageForEmptyPhotosCollection:(id)arg1;
 + (id)titleForEmptyPhotosCollection:(id)arg1;
 + (id)messageForEmptyCollectionListFetchResult:(id)arg1 fromFolder:(_Bool)arg2;

@@ -9,5 +9,6 @@
 @interface NSVisualEffectView (SafariNSVisualEffectViewExtras)
 + (id)safari_completionMenuBackdropVisualEffectViewWithFrame:(struct CGRect)arg1;
 + (id)safari_windowBackdropVisualEffectViewWithFrame:(struct CGRect)arg1;
++ (long long)safari_windowBackgroundMaterial;
 @end
 

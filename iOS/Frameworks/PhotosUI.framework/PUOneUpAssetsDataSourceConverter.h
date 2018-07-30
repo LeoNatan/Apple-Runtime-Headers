@@ -6,6 +6,7 @@
 
 #import <PhotosUI/PUAssetsDataSourceConverter.h>
 
+__attribute__((visibility("hidden")))
 @interface PUOneUpAssetsDataSourceConverter : PUAssetsDataSourceConverter
 {
 }

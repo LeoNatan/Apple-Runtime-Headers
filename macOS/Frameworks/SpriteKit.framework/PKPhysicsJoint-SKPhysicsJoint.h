@@ -7,6 +7,7 @@
 #import "PKPhysicsJoint.h"
 
 @interface PKPhysicsJoint (SKPhysicsJoint)
++ (BOOL)supportsSecureCoding;
 - (BOOL)isKindOfClass:(Class)arg1;
 @end
 

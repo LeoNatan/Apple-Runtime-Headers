@@ -8,20 +8,28 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSImage, NSString;
+@class NSArray, NSAttributedString, NSDate, NSImage, NSString;
 
 @interface PHProjectTypeDescription : NSObject <NSSecureCoding>
 {
+    BOOL _canProvideSubtypes;
     NSString *_projectType;
     NSString *_localizedTitle;
     NSString *_localizedDescription;
+    NSAttributedString *_localizedAttributedDescription;
     NSImage *_image;
     NSArray *_subtypeDescriptions;
+    NSDate *_decodeDate;
 }
 
++ (id)attributeFixupBlocks;
++ (id)whitelistedAttributedStringKeys;
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *subtypeDescriptions; // @synthesize subtypeDescriptions=_subtypeDescriptions;
+@property(readonly, nonatomic) NSDate *decodeDate; // @synthesize decodeDate=_decodeDate;
+@property(readonly, nonatomic) BOOL canProvideSubtypes; // @synthesize canProvideSubtypes=_canProvideSubtypes;
+@property(copy, nonatomic, setter=_setSubtypeDescriptions:) NSArray *subtypeDescriptions; // @synthesize subtypeDescriptions=_subtypeDescriptions;
 @property(readonly, copy, nonatomic) NSImage *image; // @synthesize image=_image;
+@property(readonly, copy, nonatomic) NSAttributedString *localizedAttributedDescription; // @synthesize localizedAttributedDescription=_localizedAttributedDescription;
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, copy, nonatomic) NSString *projectType; // @synthesize projectType=_projectType;
@@ -29,8 +37,12 @@
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithProjectType:(id)arg1 title:(id)arg2 attributedDescription:(id)arg3 image:(id)arg4 canProvideSubtypes:(BOOL)arg5;
+- (id)initWithProjectType:(id)arg1 title:(id)arg2 description:(id)arg3 image:(id)arg4 canProvideSubtypes:(BOOL)arg5;
 - (id)initWithProjectType:(id)arg1 title:(id)arg2 description:(id)arg3 image:(id)arg4;
+- (id)initWithProjectType:(id)arg1 title:(id)arg2 attributedDescription:(id)arg3 image:(id)arg4 subtypeDescriptions:(id)arg5;
 - (id)initWithProjectType:(id)arg1 title:(id)arg2 description:(id)arg3 image:(id)arg4 subtypeDescriptions:(id)arg5;
+- (void)_configureWithProjectType:(id)arg1 title:(id)arg2 description:(id)arg3 attributedDescription:(id)arg4 image:(id)arg5 subtypeDescriptions:(id)arg6 willProvideSubtypeDescription:(BOOL)arg7;
 
 @end
 

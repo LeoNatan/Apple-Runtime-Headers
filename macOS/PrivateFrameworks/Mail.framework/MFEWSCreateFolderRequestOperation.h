@@ -6,11 +6,11 @@
 
 #import <Mail/MFEWSRequestOperation.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class MFEWSCreateFolderResponseOperation, NSString;
 
-@interface MFEWSCreateFolderRequestOperation : MFEWSRequestOperation <NSCoding>
+@interface MFEWSCreateFolderRequestOperation : MFEWSRequestOperation <NSSecureCoding>
 {
     int _mailboxType;
     NSString *_offlineCreatedEWSFolderIdString;
@@ -18,6 +18,7 @@
     NSString *_folderName;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) int mailboxType; // @synthesize mailboxType=_mailboxType;
 @property(readonly, copy, nonatomic) NSString *folderName; // @synthesize folderName=_folderName;
 @property(readonly, copy, nonatomic) NSString *parentEWSFolderIdString; // @synthesize parentEWSFolderIdString=_parentEWSFolderIdString;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>, NSSet, PHFetchResult;
+@class NSObject<OS_dispatch_queue>, NSSet, NSString, PHFetchResult;
 
 __attribute__((visibility("hidden")))
 @interface PUSearchGridDataSource : NSObject
@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _Bool _hasPendingChanges;
     id <PUSearchGridDataSourceDelegate> _delegate;
     NSSet *_assetUUIDs;
-    NSSet *_additionalAssetUUIDs;
     unsigned long long _searchCategories;
+    NSString *_title;
     NSObject<OS_dispatch_queue> *_queue;
     unsigned long long _taskId;
     PHFetchResult *_fetchResult;
@@ -26,17 +26,17 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasPendingChanges; // @synthesize hasPendingChanges=_hasPendingChanges;
 @property(nonatomic) unsigned long long taskId; // @synthesize taskId=_taskId;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long searchCategories; // @synthesize searchCategories=_searchCategories;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
-@property(retain, nonatomic) NSSet *additionalAssetUUIDs; // @synthesize additionalAssetUUIDs=_additionalAssetUUIDs;
 @property(retain, nonatomic) NSSet *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(nonatomic) __weak id <PUSearchGridDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)mergePendingChanges;
 - (void)_inqClearPendingChanges;
-- (void)_updateAssetUUIDs:(id)arg1 additionalAssetUUIDs:(id)arg2 taskId:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)updateAssetUUIDs:(id)arg1 additionalAssetUUIDs:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateAssetUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateFetchResult:(id)arg1 taskId:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateFetchResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_isCancelledWithTaskId:(unsigned long long)arg1;
 - (_Bool)_inqIsCancelledWithTaskId:(unsigned long long)arg1;
 - (id)init;

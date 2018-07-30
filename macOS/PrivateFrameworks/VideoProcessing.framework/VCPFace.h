@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CVMLFaceObservation;
+@class VNFaceObservation;
 
 @interface VCPFace : NSObject
 {
@@ -16,11 +16,11 @@
     int _trackID;
     float _confidence;
     long long _yaw;
-    CVMLFaceObservation *_observation;
+    VNFaceObservation *_observation;
     struct CGRect _bounds;
 }
 
-@property(retain) CVMLFaceObservation *observation; // @synthesize observation=_observation;
+@property(retain) VNFaceObservation *observation; // @synthesize observation=_observation;
 @property float confidence; // @synthesize confidence=_confidence;
 @property int trackID; // @synthesize trackID=_trackID;
 @property long long yaw; // @synthesize yaw=_yaw;

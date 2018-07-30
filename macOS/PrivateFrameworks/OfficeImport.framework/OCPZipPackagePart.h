@@ -8,18 +8,17 @@
 
 @class OISFUZipEntry;
 
-__attribute__((visibility("hidden")))
 @interface OCPZipPackagePart : OCPPackagePart
 {
     OISFUZipEntry *mEntry;
 }
 
 @property(readonly, nonatomic) OISFUZipEntry *zipEntry; // @synthesize zipEntry=mEntry;
+- (void).cxx_destruct;
 - (struct _xmlTextReader *)xmlReader;
 - (struct _xmlDoc *)xmlDocument;
 - (void)copyToFile:(id)arg1;
 - (id)data;
-- (void)dealloc;
 - (id)initWithArchive:(id)arg1 location:(id)arg2 package:(id)arg3;
 
 @end

@@ -13,12 +13,6 @@
 
 @interface _SFPBImage : PBCodable <_SFPBImage, NSSecureCoding>
 {
-    struct {
-        unsigned int isTemplate:1;
-        unsigned int shouldCropToCircle:1;
-        unsigned int source:1;
-        unsigned int type:1;
-    } _has;
     _Bool _isTemplate;
     _Bool _shouldCropToCircle;
     int _source;
@@ -62,22 +56,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasAppIconImage;
-@property(readonly, nonatomic) _Bool hasLocalImage;
-@property(readonly, nonatomic) _Bool hasMonogramImage;
-@property(readonly, nonatomic) _Bool hasContactImage;
-@property(readonly, nonatomic) _Bool hasUrlImage;
-@property(readonly, nonatomic) _Bool hasType;
-@property(readonly, nonatomic) _Bool hasSource;
-@property(readonly, nonatomic) _Bool hasIdentifier;
-@property(readonly, nonatomic) _Bool hasKeyColor;
-@property(readonly, nonatomic) _Bool hasContentType;
-@property(readonly, nonatomic) _Bool hasSize;
-@property(readonly, nonatomic) _Bool hasScale;
-@property(readonly, nonatomic) _Bool hasCornerRadius;
-@property(readonly, nonatomic) _Bool hasShouldCropToCircle;
-@property(readonly, nonatomic) _Bool hasIsTemplate;
-@property(readonly, nonatomic) _Bool hasImageData;
 - (id)initWithFacade:(id)arg1;
 - (id)initWithSFImage:(id)arg1;
 

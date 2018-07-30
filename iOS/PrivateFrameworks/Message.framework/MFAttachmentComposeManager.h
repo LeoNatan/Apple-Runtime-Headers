@@ -23,7 +23,7 @@
 - (id)_composeAttachmentDataProviderForContext:(id)arg1;
 - (id)attachmentsForContext:(id)arg1;
 - (void)_fetchInvocationCallUsingBlock:(CDUnknownBlockType)arg1;
-- (void)_callProgressBlockForAttachmentURL:(id)arg1 withBytes:(unsigned long long)arg2 expectedSize:(unsigned long long)arg3;
+- (void)_callProgressBlockForAttachmentURL:(id)arg1 withBytes:(long long)arg2 expectedSize:(long long)arg3;
 - (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 syncLock:(id *)arg3;
 - (id)_queueForAttachment:(id)arg1;
 - (void)dealloc;

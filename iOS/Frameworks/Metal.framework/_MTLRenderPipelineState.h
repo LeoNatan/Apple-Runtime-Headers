@@ -17,6 +17,8 @@
     _Bool _threadgroupSizeMatchesTileSize;
     MTLIndirectArgumentBufferEmulationData *_vertexIABEmulationData;
     MTLIndirectArgumentBufferEmulationData *_fragmentIABEmulationData;
+    _Bool _supportIndirectCommandBuffers;
+    unsigned long long _uniqueIdentifier;
 }
 
 @property(readonly) _Bool threadgroupSizeMatchesTileSize; // @synthesize threadgroupSizeMatchesTileSize=_threadgroupSizeMatchesTileSize;
@@ -24,6 +26,8 @@
 @property(retain, nonatomic) MTLIndirectArgumentBufferEmulationData *vertexIABEmulationData; // @synthesize vertexIABEmulationData=_vertexIABEmulationData;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly) NSString *label; // @synthesize label=_label;
+@property(readonly) unsigned long long uniqueIdentifier;
+@property(readonly) _Bool supportIndirectCommandBuffers;
 - (unsigned long long)imageblockMemoryLengthForDimensions:(CDStruct_14f26992)arg1;
 - (void)dealloc;
 - (id)initWithDeviceAndTileDesc:(id)arg1 tilePipelineStateDescriptor:(id)arg2;

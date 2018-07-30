@@ -24,6 +24,7 @@
 - (void)resendObjectsForIDSIdentifier:(id)arg1;
 - (void)dequeueIDSIdentifierForResend:(id)arg1;
 - (unsigned int)newResendIntervalForPreviousResendInterval:(unsigned int)arg1 errorCode:(int)arg2;
+- (void)resendAllIDSIdentifiers;
 - (void)resendReadyIDSIdentifiers;
 - (void)enqueueIDSIdentifierForResend:(id)arg1 atDate:(id)arg2 silent:(_Bool)arg3;
 - (void)enqueueIDSIdentifiersForResend:(id)arg1;

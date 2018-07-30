@@ -13,6 +13,7 @@
 + (double)actionExtraRowHeight;
 + (double)rowHeight;
 + (id)reuseIdentifier;
+- (double)rowHeight;
 
 @end
 

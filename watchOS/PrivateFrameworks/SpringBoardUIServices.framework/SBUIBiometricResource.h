@@ -23,7 +23,7 @@
     _Bool _hasMesaHardware;
     _Bool _isMatchingAllowed;
     _Bool _isMatchingEnabled;
-    _Bool _isFingerDetectionAllowed;
+    _Bool _isPresenceDetectionAllowed;
     _Bool _isFingerDetectionEnabled;
     _Bool _isFingerDetectionEnabledThroughHIDChannel;
     _Bool _screenIsOn;
@@ -34,6 +34,7 @@
     NSHashTable *_observers;
     NSMutableOrderedSet *_matchAssertions;
     NSMutableOrderedSet *_fingerDetectAssertions;
+    NSMutableOrderedSet *_simulatedLockoutAssertions;
     Class _bkMatchPearlOperationClass;
     id <SBUIBiometricAuthenticationPolicy> _authenticationPolicy;
 }
@@ -52,11 +53,14 @@
 - (void)_reevaluateFingerDetection;
 - (void)_reevaluateMatching;
 - (void)_matchingAllowedStateMayHaveChangedForReason:(id)arg1;
-- (void)_fingerDetectAllowedStateMayHaveChangedForReason:(id)arg1;
+- (void)_presenceDetectAllowedStateMayHaveChangedForReason:(id)arg1;
+- (void)_removeSimulatedLockoutAssertion:(id)arg1;
+- (void)_addSimulatedLockoutAssertion:(id)arg1;
 - (void)_removeFingerDetectionWantedAssertion:(id)arg1;
 - (void)_addFingerDetectionWantedAssertion:(id)arg1;
 - (void)_removeMatchingAssertion:(id)arg1;
 - (void)_addMatchingAssertion:(id)arg1;
+- (void)_deactivateAllPearlAssertions;
 - (void)_deactivateAssertion:(id)arg1;
 - (void)_activateFingerDetectAssertion:(id)arg1;
 - (void)_activateMatchAssertion:(id)arg1;
@@ -74,6 +78,7 @@
 - (void)noteScreenDidTurnOff;
 - (void)noteScreenWillTurnOff;
 - (void)_setAuthenticated:(_Bool)arg1;
+- (id)acquireSimulatedLockoutAssertionWithLockoutState:(unsigned int)arg1 forReason:(id)arg2;
 - (void)refreshMatchMode;
 - (id)acquireFingerDetectionWantedAssertionForReason:(id)arg1;
 - (void)resumeMatchingAdvisory:(_Bool)arg1;

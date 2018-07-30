@@ -8,7 +8,6 @@
 
 @class CNPostalAddress;
 
-__attribute__((visibility("hidden")))
 @interface ABAddressFieldValuePopulator : NSObject
 {
     CNPostalAddress *_postalAddress;

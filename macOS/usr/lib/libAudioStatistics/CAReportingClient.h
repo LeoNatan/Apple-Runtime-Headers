@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface CAReportingClient : NSObject <NSXPCListenerDelegate>
 {
     NSXPCConnection *_connection;

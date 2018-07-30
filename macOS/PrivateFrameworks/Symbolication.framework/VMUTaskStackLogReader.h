@@ -12,13 +12,11 @@
 
 @interface VMUTaskStackLogReader : VMUStackLogReaderBase <VMUStackLogReader>
 {
-    BOOL _usesLiteMode;
     VMUTaskMemoryScanner *_scanner;
     struct _CSTypeRef _symbolicator;
 }
 
 @property(nonatomic) __weak VMUTaskMemoryScanner *scanner; // @synthesize scanner=_scanner;
-@property(readonly) BOOL usesLiteMode; // @synthesize usesLiteMode=_usesLiteMode;
 - (void).cxx_destruct;
 - (id)sourceFileNameAndLineNumberForPCaddress:(unsigned long long)arg1 fullPath:(BOOL)arg2;
 - (unsigned int)sourceLineNumberForPCaddress:(unsigned long long)arg1;
@@ -49,6 +47,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) unsigned int task;
+@property(readonly) BOOL usesLiteMode;
 
 @end
 

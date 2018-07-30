@@ -21,12 +21,13 @@
 + (id)sharedLoader;
 @property(retain, nonatomic) TIKeyboardInputManagerBase *mostRecentlyRequested; // @synthesize mostRecentlyRequested=_mostRecentlyRequested;
 @property(nonatomic) NSXPCConnection *interactingConnection; // @synthesize interactingConnection=_interactingConnection;
+- (void).cxx_destruct;
 - (id)activeInputModeIdentifiers;
 - (_Bool)hasActiveInputManagers;
 - (id)resourceInputModes;
 - (void)reduceCacheToSize:(unsigned long long)arg1;
 - (void)cacheInputManager:(id)arg1;
-- (id)inputManagerForInputMode:(id)arg1 withClass:(Class)arg2;
+- (id)inputManagerForInputMode:(id)arg1 withKeyboardState:(id)arg2 class:(Class)arg3;
 - (void)startSyncHelper;
 - (void)dealloc;
 - (id)init;

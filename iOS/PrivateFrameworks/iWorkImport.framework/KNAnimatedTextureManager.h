@@ -40,6 +40,9 @@ __attribute__((visibility("hidden")))
 - (id)p_slideNodesToCacheAroundCurrentSlideNode:(id)arg1 shouldIncludeExtraSlideAtEnd:(_Bool)arg2;
 - (void)p_setCurrentSlideNodeToProcess:(id)arg1;
 - (void)p_processSlideNode:(id)arg1 isHighPriority:(_Bool)arg2;
+- (id)p_setupPrepareAnimationOperationOnSlideNode:(id)arg1;
+- (id)p_setupSlideRasterizationOperationOnSlideNode:(id)arg1;
+- (id)p_setupTextureGenerationOperationOnSlideNode:(id)arg1;
 - (_Bool)p_shouldProcessSlideNode:(id)arg1;
 - (id)ASVForSlideNode:(id)arg1;
 - (void)p_addSlideNodeToMemorySet:(id)arg1;

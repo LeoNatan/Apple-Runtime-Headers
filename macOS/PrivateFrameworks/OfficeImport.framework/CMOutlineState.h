@@ -8,6 +8,7 @@
 
 @class NSMutableArray, WDList, WDListDefinition;
 
+__attribute__((visibility("hidden")))
 @interface CMOutlineState : NSObject
 {
     NSMutableArray *_counters;

@@ -18,7 +18,6 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)preheatWallpaperData;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithFlatColor:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3;

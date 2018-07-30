@@ -22,6 +22,7 @@
 - (BOOL)_shouldDrawFlexibleSpaceOutline;
 - (void)_drawToolbarFlexibleSpaceInRect:(struct CGRect)arg1;
 - (struct __CFString *)_currentCoreUIWidget;
+- (BOOL)allowsVibrancy;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)preservesContentDuringLiveResize;
 - (BOOL)_drawsNothing;

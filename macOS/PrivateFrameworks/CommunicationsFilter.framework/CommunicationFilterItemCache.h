@@ -8,6 +8,7 @@
 
 @class CommunicationFilterItem;
 
+__attribute__((visibility("hidden")))
 @interface CommunicationFilterItemCache : NSObject
 {
     CommunicationFilterItem *_filterItem;

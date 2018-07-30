@@ -16,7 +16,6 @@
 }
 
 + (id)fragmentedAssetWithURL:(id)arg1 options:(id)arg2;
-- (void).cxx_destruct;
 - (void)_setIsAssociatedWithFragmentMinder:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isAssociatedWithFragmentMinder) BOOL associatedWithFragmentMinder;
 - (id)tracksWithMediaCharacteristic:(id)arg1;

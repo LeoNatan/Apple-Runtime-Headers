@@ -6,23 +6,27 @@
 
 #import "NSObject.h"
 
-@class HMDelegateCaller, HMFMessageDispatcher, HMPendingRequests, NSObject<OS_dispatch_queue>;
+@class HMDelegateCaller, HMFMessageDispatcher, HMPendingRequests, HMXPCClient, NSObject<OS_dispatch_queue>, NSString;
 
 @interface _HMContext : NSObject
 {
-    NSObject<OS_dispatch_queue> *_clientQueue;
+    NSString *_name;
+    NSObject<OS_dispatch_queue> *_queue;
     HMPendingRequests *_pendingRequests;
     HMDelegateCaller *_delegateCaller;
     HMFMessageDispatcher *_messageDispatcher;
 }
 
-+ (id)context;
++ (id)contextWithName:(id)arg1;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
 @property(readonly, nonatomic) HMPendingRequests *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)initWithClientQueue:(id)arg1 pendingRequests:(id)arg2 delegateCaller:(id)arg3 messageDispatcher:(id)arg4;
+@property(readonly, nonatomic) HMXPCClient *messageTransport;
+- (id)subcontextWithName:(id)arg1;
+- (id)initWithName:(id)arg1 pendingRequests:(id)arg2 delegateCaller:(id)arg3 messageDispatcher:(id)arg4;
 - (id)init;
 
 @end

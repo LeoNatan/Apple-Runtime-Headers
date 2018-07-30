@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) _Bool overrideMaxZoomLevel; // @synthesize overrideMaxZoomLevel=_overrideMaxZoomLevel;
+- (_Bool)allowPreliminaryTiles;
 @property(readonly, nonatomic) NSArray *overlays;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
 - (void)insertOverlay:(id)arg1 aboveOverlay:(id)arg2;

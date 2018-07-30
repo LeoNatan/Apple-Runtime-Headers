@@ -20,7 +20,8 @@
     struct __indexElementDescriptionFlags {
         unsigned int _ascending:1;
         unsigned int _propertyIsRetained:1;
-        unsigned int _reservedEntityDescription:30;
+        unsigned int _unique:1;
+        unsigned int _reservedEntityDescription:29;
     } _indexElementDescriptionFlags;
 }
 
@@ -28,6 +29,9 @@
 @property(readonly, retain) NSString *propertyName; // @synthesize propertyName=_propertyName;
 - (void)_setIndexDescription:(id)arg1;
 @property(readonly, nonatomic) NSFetchIndexDescription *indexDescription;
+- (void)_setUniqueBit:(BOOL)arg1;
+- (void)_setIsUnique:(BOOL)arg1;
+- (BOOL)_isUnique;
 - (void)_setAscending:(BOOL)arg1;
 @property(getter=isAscending) BOOL ascending;
 @property unsigned long long collationType;

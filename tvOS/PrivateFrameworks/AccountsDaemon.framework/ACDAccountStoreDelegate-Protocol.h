@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSSet;
+@class ACAccount, ACDAccountStore;
 
 @protocol ACDAccountStoreDelegate
-- (void)accountStoreDidSaveAccounts:(NSSet *)arg1;
+- (void)accountStore:(ACDAccountStore *)arg1 didSaveAccount:(ACAccount *)arg2;
 @end
 

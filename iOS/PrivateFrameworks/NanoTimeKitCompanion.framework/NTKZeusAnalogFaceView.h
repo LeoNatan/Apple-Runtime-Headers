@@ -6,24 +6,26 @@
 
 #import <NanoTimeKitCompanion/NTKSpriteKitAnalogFaceView.h>
 
-@class NTKZeusAnalogScene;
+@class NTKZeusAnalogScene, NTKZeusColorPalette, UIView;
 
 @interface NTKZeusAnalogFaceView : NTKSpriteKitAnalogFaceView
 {
     _Bool _isEditing;
-    _Bool _showHandsInColorEditing;
+    _Bool _isHandsVisibleInColorEditing;
+    NTKZeusColorPalette *_palette;
+    UIView *_cornerView;
 }
 
-+ (id)_swatchColorForColorOption:(id)arg1;
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
++ (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
++ (id)_supportedComplicationSlots;
+- (void).cxx_destruct;
 - (_Bool)_timeViewBehindContentForEditMode:(long long)arg1;
 - (struct CGPoint)_timeTravelStatusModuleCenter;
 - (void)_prepareForStatusChange:(_Bool)arg1;
 - (double)_verticalPaddingForStatusBar;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
-- (id)_handInlayColorForFaceColor:(unsigned long long)arg1;
-- (id)_handStrokeColorForFaceColor:(unsigned long long)arg1;
-- (id)_secondHandColorForFaceColor:(unsigned long long)arg1;
 - (double)_numbersAlphaForEditMode:(long long)arg1;
 - (double)_handAlphaForEditing:(_Bool)arg1;
 - (double)_secondHandAlphaForDensity:(unsigned long long)arg1 isEditing:(_Bool)arg2;
@@ -36,14 +38,19 @@
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_updateDateComplicationPositionIfNecessary;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
+- (void)_unloadSnapshotContentViews;
+- (void)_loadSnapshotContentViews;
+- (void)setOverrideDate:(id)arg1 duration:(double)arg2;
+- (struct CGSize)_sceneSize;
 - (void)_prepareTimeViewForReuse:(id)arg1;
 - (void)_configureReusableTimeView:(id)arg1;
 - (void)_loadScene;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, nonatomic) NTKZeusAnalogScene *analogScene; // @dynamic analogScene;

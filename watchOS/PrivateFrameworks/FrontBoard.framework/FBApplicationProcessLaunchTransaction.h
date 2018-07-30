@@ -23,7 +23,8 @@
 
 @property(readonly, nonatomic) _Bool exited; // @synthesize exited=_exited;
 @property(readonly, nonatomic) _Bool failedLaunch; // @synthesize failedLaunch=_failedLaunch;
-@property(readonly, retain, nonatomic) FBApplicationProcess *process; // @synthesize process=_process;
+@property(readonly, nonatomic) FBApplicationProcess *process; // @synthesize process=_process;
+- (void).cxx_destruct;
 - (void)_queue_finishProcessLaunch:(_Bool)arg1;
 - (void)_queue_processWillLaunch:(id)arg1;
 - (void)_queue_launchProcess:(id)arg1;
@@ -38,7 +39,6 @@
 - (void)_begin;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(CDUnknownBlockType)arg2;
 - (id)initWithApplicationProcess:(id)arg1;
 

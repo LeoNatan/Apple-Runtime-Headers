@@ -14,9 +14,11 @@
 {
     id _output;
     NSError *_error;
+    BOOL _workflowCouldNotStart;
 }
 
 + (BOOL)supportsSecureCoding;
+@property BOOL workflowCouldNotStart; // @synthesize workflowCouldNotStart=_workflowCouldNotStart;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) id output; // @synthesize output=_output;
 - (void).cxx_destruct;

@@ -27,6 +27,10 @@ struct CGSize {
     double height;
 };
 
+struct NSData {
+    Class _field1;
+};
+
 struct __va_list_tag {
     unsigned int _field1;
     unsigned int _field2;
@@ -42,4 +46,9 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int version:1;
+} CDStruct_f20694ce;
 

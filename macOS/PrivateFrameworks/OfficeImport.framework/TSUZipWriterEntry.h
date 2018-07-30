@@ -8,7 +8,6 @@
 
 @class NSDate, NSString;
 
-__attribute__((visibility("hidden")))
 @interface TSUZipWriterEntry : NSObject
 {
     unsigned int _CRC;

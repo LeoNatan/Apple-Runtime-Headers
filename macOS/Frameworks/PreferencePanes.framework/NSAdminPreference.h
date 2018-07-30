@@ -20,7 +20,7 @@
 
 + (void)updateAuthenticationStatus;
 + (BOOL)shouldDeauthenticate;
-@property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
 - (void)authorize;
 - (void)deauthenticate:(id)arg1;

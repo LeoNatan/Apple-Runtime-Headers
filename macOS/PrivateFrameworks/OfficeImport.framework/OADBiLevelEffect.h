@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADBlipEffect.h>
 
-__attribute__((visibility("hidden")))
 @interface OADBiLevelEffect : OADBlipEffect
 {
     float mThreshold;

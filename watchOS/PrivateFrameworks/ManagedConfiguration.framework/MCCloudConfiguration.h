@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NSDictionary *memberQueueDetails; // @synthesize memberQueueDetails=_memberQueueDetails;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
 - (void).cxx_destruct;
+- (id)tvProviderUserToken;
 - (id)provisionalEnrollmentExpirationDate;
 - (_Bool)isProvisionallyEnrolled;
 - (id)languageScript;

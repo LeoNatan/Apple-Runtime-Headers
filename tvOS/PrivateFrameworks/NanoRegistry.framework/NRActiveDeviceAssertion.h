@@ -19,7 +19,7 @@
 @property(retain, nonatomic) NRDevice *device; // @synthesize device=_device;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)_invalidate;
 - (void)invalidate;

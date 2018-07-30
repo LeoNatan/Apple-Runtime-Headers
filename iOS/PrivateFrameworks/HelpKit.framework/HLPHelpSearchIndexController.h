@@ -24,6 +24,7 @@
 - (id)searchTermsForSearchText:(id)arg1 localeCode:(id)arg2;
 - (void)processData:(id)arg1 formattedData:(id)arg2;
 - (void)processFileURLWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchDataWithDataType:(long long)arg1 identifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
 

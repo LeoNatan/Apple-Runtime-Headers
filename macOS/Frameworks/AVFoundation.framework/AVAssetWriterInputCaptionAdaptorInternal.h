@@ -8,6 +8,7 @@
 
 @class AVAssetWriterInput;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterInputCaptionAdaptorInternal : NSObject
 {
     AVAssetWriterInput *assetWriterInput;

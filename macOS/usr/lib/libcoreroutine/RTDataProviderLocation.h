@@ -37,7 +37,7 @@
 - (void)_registerForMicroLocationNotifications;
 - (void)_unregisterForVisitNotifications;
 - (void)_registerForVisitNotifications;
-- (void)shutdown;
+- (void)_shutdown;
 - (id)initWithPurgeManager:(id)arg1 locationTagger:(id)arg2 defaultsManager:(id)arg3 locationManager:(id)arg4 visitManager:(id)arg5 learnedLocationManager:(id)arg6;
 - (id)init;
 

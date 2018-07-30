@@ -8,15 +8,15 @@
 
 #import "CALayerDelegate.h"
 
-@class NSString, NSView;
+@class NSString, NSThemeFrame;
 
 __attribute__((visibility("hidden")))
 @interface NSThemeFrameBackgroundDelegate : NSObject <CALayerDelegate>
 {
-    NSView *_view;
+    NSThemeFrame *_themeFrame;
 }
 
-@property NSView *view; // @synthesize view=_view;
+@property NSThemeFrame *themeFrame; // @synthesize themeFrame=_themeFrame;
 - (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)layoutSublayersOfLayer:(id)arg1;

@@ -7,20 +7,27 @@
 #import <AVConference/VCTransportSession.h>
 
 #import "VCConnectionManagerDelegate.h"
+#import "VCIDSSessionInfoSynchronizerDelegate.h"
 
-@class NSString, VCDatagramChannelIDS;
+@class NSString, VCDatagramChannelIDS, VCIDSSessionInfoSynchronizer;
 
 __attribute__((visibility("hidden")))
-@interface VCTransportSessionIDS : VCTransportSession <VCConnectionManagerDelegate>
+@interface VCTransportSessionIDS : VCTransportSession <VCConnectionManagerDelegate, VCIDSSessionInfoSynchronizerDelegate>
 {
     int _socket;
     NSString *_destination;
     VCDatagramChannelIDS *_datagramChannel;
+    BOOL _requireEncryptionInfo;
+    VCIDSSessionInfoSynchronizer *_sessionInfoSynchronizer;
+    BOOL _isIDSDCEventUsageErrorReported;
+    BOOL _isSessionStarted;
 }
 
+@property(readonly, nonatomic) VCIDSSessionInfoSynchronizer *sessionInfoSynchronizer; // @synthesize sessionInfoSynchronizer=_sessionInfoSynchronizer;
 @property(nonatomic) int socket; // @synthesize socket=_socket;
 @property(copy, nonatomic) NSString *destination; // @synthesize destination=_destination;
-- (void)setReportingAgent:(struct opaqueRTCReporting *)arg1;
+- (void)VCIDSSessionInfoSynchronizer:(void *)arg1 sendVCIDSSessionInfoRequest:(id)arg2;
+- (void)updateParticipantGenerationCounter:(unsigned char)arg1;
 - (void)didEnableDuplication:(BOOL)arg1 activeConnection:(id)arg2;
 - (void)discardConnection:(id)arg1;
 - (void)connectionCallback:(id)arg1 isInitialConnection:(BOOL)arg2;
@@ -28,6 +35,9 @@ __attribute__((visibility("hidden")))
 - (void)handleChannelInfoReport:(id)arg1;
 - (void)setQuickRelayServerProvider:(int)arg1;
 - (void)setConnectionSetupTime;
+- (void)handleUpdateRemoteSessionInfo:(id)arg1;
+- (void)handleIDSMembershipChangeInfoEvent:(id)arg1;
+- (void)handleIDSEncryptionInfoEvent:(id)arg1;
 - (void)handleCellularMTUChanged:(id)arg1;
 - (void)handleRATChanged:(id)arg1;
 - (void)handlePreConnectionDataReceived:(id)arg1;
@@ -40,9 +50,11 @@ __attribute__((visibility("hidden")))
 - (void)setConnectionSetupPiggybackBlob:(id)arg1;
 - (void)stop;
 - (void)start;
+- (void)processDatagramChannelEventInfo:(id)arg1;
 - (BOOL)getConnectionSetupData:(id *)arg1 withOptions:(id)arg2 error:(id *)arg3;
 - (void)dealloc;
-- (id)initWithCallID:(unsigned int)arg1;
+- (id)initWithCallID:(unsigned int)arg1 requireEncryptionInfo:(BOOL)arg2 reportingAgent:(id)arg3 notificationQueue:(id)arg4 isMultiwaySession:(BOOL)arg5;
+- (id)initWithCallID:(unsigned int)arg1 reportingAgent:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

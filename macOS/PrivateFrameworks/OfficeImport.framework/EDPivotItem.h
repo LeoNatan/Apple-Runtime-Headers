@@ -8,7 +8,6 @@
 
 @class EDCollection;
 
-__attribute__((visibility("hidden")))
 @interface EDPivotItem : NSObject
 {
     unsigned int mRepeatedItemCounts;
@@ -17,13 +16,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pivotItem;
+- (void).cxx_destruct;
 - (id)description;
 - (id)itemIndexes;
 - (void)setType:(int)arg1;
 - (int)type;
 - (void)setRepeatedItemCounts:(unsigned int)arg1;
 - (unsigned int)repeatedItemCounts;
-- (void)dealloc;
 - (id)init;
 
 @end

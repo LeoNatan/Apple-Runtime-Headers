@@ -235,14 +235,14 @@
 @property(copy) NSString *displayName;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
-@property(copy) NSString *hostname;
+@property(copy, nonatomic) NSString *hostname;
 @property(readonly, copy) NSString *identifier;
 @property(readonly, nonatomic) BOOL isGmailAccount;
 @property(readonly) BOOL isYahooAccount;
 @property(readonly, copy) NSString *machineID;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *oneTimePassword;
-@property(copy) NSString *password;
+@property(copy, nonatomic) NSString *password;
 @property long long portNumber;
 @property(retain) MCAuthScheme *preferredAuthScheme;
 @property long long securityLayerType;

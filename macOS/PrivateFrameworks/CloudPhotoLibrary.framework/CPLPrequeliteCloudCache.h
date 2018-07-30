@@ -8,68 +8,40 @@
 
 #import "CPLEngineCloudCacheImplementation.h"
 
-@class CPLPrequeliteVariable, NSDate, NSString;
+@class NSString;
 
 @interface CPLPrequeliteCloudCache : CPLPrequeliteStorage <CPLEngineCloudCacheImplementation>
 {
-    CPLPrequeliteVariable *_syncAnchorVar;
-    CPLPrequeliteVariable *_stagedSyncAnchorVar;
-    CPLPrequeliteVariable *_initialSyncAnchor;
-    CPLPrequeliteVariable *_classForInitialQuery;
-    CPLPrequeliteVariable *_uploadTransportGroupVar;
-    CPLPrequeliteVariable *_downloadTransportGroupVar;
-    Class _transportGroupClass;
-    NSDate *_lastSyncAnchorLogDate;
-    BOOL _shouldMarkFullSync;
-    BOOL _hasFinishedAFullSync;
-    BOOL _hasFinishedInitialSync;
 }
 
-@property(readonly) BOOL hasFinishedInitialSync; // @synthesize hasFinishedInitialSync=_hasFinishedInitialSync;
-@property(readonly) BOOL hasFinishedAFullSync; // @synthesize hasFinishedAFullSync=_hasFinishedAFullSync;
-- (void).cxx_destruct;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (id)_relatedIdentifierForRecordWithIdentifier:(id)arg1;
+- (id)statusPerScopeIndex;
 - (id)statusDictionary;
 - (id)status;
 - (unsigned long long)_countOfUnconfirmedRecords;
-- (id)_statusWithSyncAnchor;
 - (void)writeTransactionDidFail;
 - (void)writeTransactionDidSucceed;
-- (BOOL)openWithError:(id *)arg1;
 - (id)allRecordsIsFinal:(BOOL)arg1;
 - (id)recordsOfClass:(Class)arg1 isFinal:(BOOL)arg2;
-- (id)initialSyncAnchor;
-- (BOOL)setInitialSyncAnchor:(id)arg1 error:(id *)arg2;
-- (BOOL)setClassNameOfRecordsForInitialQuery:(id)arg1 error:(id *)arg2;
-- (id)classNameOfRecordsForInitialQuery;
-- (BOOL)resetSyncAnchorWithError:(id *)arg1;
-- (BOOL)setSyncAnchor:(id)arg1 error:(id *)arg2;
-- (id)syncAnchor;
-- (BOOL)storeDownloadTransportGroup:(id)arg1 error:(id *)arg2;
-- (id)downloadTransportGroup;
-- (BOOL)storeUploadTransportGroup:(id)arg1 error:(id *)arg2;
-- (id)uploadTransportGroup;
-- (BOOL)_storeTransportGroup:(id)arg1 inVariable:(id)arg2 error:(id *)arg3;
-- (id)_transportGroupForVariable:(id)arg1;
-- (Class)_transportGroupClass;
-- (BOOL)remapAllRecordsWithPreviousIdentifier:(id)arg1 newIdentifier:(id)arg2 error:(id *)arg3;
-- (void)markFirstSyncAsSuccessful;
-- (BOOL)discardStagedChangesWithError:(id *)arg1;
-- (BOOL)commitStagedChangesWithError:(id *)arg1;
+- (BOOL)remapAllRecordsWithPreviousScopedIdentifier:(id)arg1 newScopedIdentifier:(id)arg2 error:(id *)arg3;
+- (BOOL)discardStagedChangesWithScopeFilter:(id)arg1 error:(id *)arg2;
+- (BOOL)discardStagedChangesForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)commitStagedChangesForScopeWithIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)confirmAllRecordsWithError:(id *)arg1;
-- (BOOL)resetWithError:(id *)arg1;
-- (BOOL)hasRecordWithIdentifier:(id)arg1;
-- (id)recordsWithRelatedIdentifier:(id)arg1 isFinal:(BOOL)arg2;
-- (id)recordWithIdentifier:(id)arg1 isConfirmed:(char *)arg2;
-- (id)recordWithIdentifier:(id)arg1 isFinal:(BOOL)arg2;
-- (BOOL)deleteRecordWithIdentifier:(id)arg1 isFinal:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)hasRecordWithScopedIdentifier:(id)arg1;
+- (id)recordsWithRelatedScopedIdentifier:(id)arg1 isFinal:(BOOL)arg2;
+- (id)recordWithScopedIdentifier:(id)arg1 isConfirmed:(char *)arg2;
+- (id)recordWithScopedIdentifier:(id)arg1 isFinal:(BOOL)arg2;
+- (BOOL)deleteRecordWithScopedIdentifier:(id)arg1 isFinal:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)updateRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)addRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id *)arg3;
-- (BOOL)_insertStagedRecordWithIdentifier:(id)arg1 className:(id)arg2 relatedIdentifier:(id)arg3 secondaryIdentifier:(id)arg4 serializedRecord:(id)arg5 error:(id *)arg6;
-- (BOOL)_insertFinalRecordWithIdentifier:(id)arg1 className:(id)arg2 relatedIdentifier:(id)arg3 secondaryIdentifier:(id)arg4 serializedRecord:(id)arg5 error:(id *)arg6;
-- (BOOL)_updateStagedRecordWithIdentifer:(id)arg1 relatedIdentifier:(id)arg2 secondaryIdentifier:(id)arg3 serializedRecord:(id)arg4 error:(id *)arg5;
-- (BOOL)_updateFinalRecordWithIdentifer:(id)arg1 relatedIdentifier:(id)arg2 secondaryIdentifier:(id)arg3 serializedRecord:(id)arg4 error:(id *)arg5;
-- (BOOL)_hasRecordWithIdentifier:(id)arg1 isStaged:(char *)arg2;
+- (BOOL)_deleteRecordWithScopedIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)_insertStagedRecordWithScopedIdentifier:(id)arg1 className:(id)arg2 relatedIdentifier:(id)arg3 secondaryIdentifier:(id)arg4 serializedRecord:(id)arg5 error:(id *)arg6;
+- (BOOL)_insertFinalRecordWithScopedIdentifier:(id)arg1 className:(id)arg2 relatedIdentifier:(id)arg3 secondaryIdentifier:(id)arg4 serializedRecord:(id)arg5 error:(id *)arg6;
+- (BOOL)_updateStagedRecordWithScopedIdentifer:(id)arg1 relatedIdentifier:(id)arg2 secondaryIdentifier:(id)arg3 serializedRecord:(id)arg4 error:(id *)arg5;
+- (BOOL)_updateFinalRecordWithScopedIdentifer:(id)arg1 relatedIdentifier:(id)arg2 secondaryIdentifier:(id)arg3 serializedRecord:(id)arg4 error:(id *)arg5;
+- (BOOL)_hasRecordWithScopedIdentifier:(id)arg1 isStaged:(char *)arg2;
 - (BOOL)upgradeStorageToVersion:(long long)arg1;
 - (BOOL)initializeStorage;
 - (id)initWithAbstractObject:(id)arg1;

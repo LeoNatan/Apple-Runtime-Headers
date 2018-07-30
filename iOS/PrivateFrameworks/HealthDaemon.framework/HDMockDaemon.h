@@ -8,11 +8,10 @@
 
 #import "HDHealthDaemon.h"
 
-@class HDAchievementDefinitionAlertManager, HDBackgroundTaskScheduler, HDMockPrimaryProfile, HDPluginManager, HDPrimaryProfile, NSString, _HKBehavior;
+@class HDBackgroundTaskScheduler, HDMockPrimaryProfile, HDPluginManager, HDPrimaryProfile, NSString, _HKBehavior;
 
 @interface HDMockDaemon : NSObject <HDHealthDaemon>
 {
-    HDAchievementDefinitionAlertManager *achievementDefinitionAlertManager;
     HDBackgroundTaskScheduler *backgroundTaskScheduler;
     HDMockPrimaryProfile *mockPrimaryProfile;
     HDPrimaryProfile *primaryProfile;
@@ -24,7 +23,6 @@
 @property(readonly) HDPluginManager *pluginManager; // @synthesize pluginManager;
 @property(readonly, nonatomic) HDMockPrimaryProfile *mockPrimaryProfile; // @synthesize mockPrimaryProfile;
 @property(readonly) HDBackgroundTaskScheduler *backgroundTaskScheduler; // @synthesize backgroundTaskScheduler;
-@property(retain, nonatomic) HDAchievementDefinitionAlertManager *achievementDefinitionAlertManager; // @synthesize achievementDefinitionAlertManager;
 - (void).cxx_destruct;
 - (id)daemonExtensionsConformingToProtocol:(id)arg1;
 - (id)daemonExtensionWithIdentifier:(id)arg1;

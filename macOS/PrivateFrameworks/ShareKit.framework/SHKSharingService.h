@@ -20,6 +20,7 @@
     NSImage *_alternateImage;
     CDUnknownBlockType _block;
     BOOL _enabled;
+    BOOL _allowInactive;
     unsigned long long _mask;
     BOOL _shouldDimSourceWindow;
     BOOL _viewBased;
@@ -51,11 +52,17 @@
 + (id)_sortedServicesForServices:(id)arg1 displayOrderDictionary:(id)arg2;
 + (id)sortedServicesForServices:(id)arg1 mask:(unsigned long long)arg2;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3;
++ (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3 allowInactive:(BOOL)arg4;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2;
++ (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 allowInactive:(BOOL)arg3;
++ (void)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)filterOutServicesForCompatibleServices:(id)arg1 identifier:(id)arg2 attributes:(id)arg3;
 + (id)sharingServicesWithIdentifier:(id)arg1 attributes:(id)arg2 matchingDictionary:(id)arg3 attributeStore:(id)arg4 invokedByPicker:(BOOL)arg5;
++ (id)sharingServicesWithIdentifier:(id)arg1 attributes:(id)arg2 matchingDictionary:(id)arg3 attributeStore:(id)arg4 invokedByPicker:(BOOL)arg5 allowInactive:(BOOL)arg6;
 + (id)sharingServicesWithIdentifier:(id)arg1 attributes:(id)arg2 matchingDictionary:(id)arg3 attributeStore:(id)arg4;
++ (id)sharingServicesWithIdentifier:(id)arg1 attributes:(id)arg2 matchingDictionary:(id)arg3 attributeStore:(id)arg4 allowInactive:(BOOL)arg5;
 + (void)addServicesFromPlugIns:(id)arg1 compatibleWithUserDict:(id)arg2 toServices:(id)arg3;
++ (void)addServicesFromPlugIns:(id)arg1 compatibleWithUserDict:(id)arg2 toServices:(id)arg3 allowInactive:(BOOL)arg4;
 + (id)reorderdListOfExtensions:(id)arg1 getLegacyPlugInDict:(id *)arg2;
 + (BOOL)shouldAutoEnableServiceWithIdentifier:(id)arg1;
 + (id)serviceDictionaryFromBundle:(id)arg1 matchingUserDict:(id)arg2;
@@ -64,7 +71,7 @@
 + (id)descriptionForSharingServiceDict:(id)arg1 bundle:(id)arg2 attributeStore:(id)arg3;
 + (id)imageForBundlePath:(id)arg1;
 + (BOOL)serviceIsEnabledForSharingServiceDict:(id)arg1;
-+ (void)addServiceFromDescription:(id)arg1 toServices:(id)arg2 withExtension:(id)arg3;
++ (void)addServiceFromDescription:(id)arg1 toServices:(id)arg2 withExtension:(id)arg3 allowInactive:(BOOL)arg4;
 + (BOOL)matchingDictionary:(id)arg1 isSupportedByServiceIdentifier:(id)arg2;
 + (BOOL)overridesForServiceIdentifier:(id)arg1 supportsSharingAttachments:(BOOL)arg2 body:(BOOL)arg3;
 + (id)activePlugInForIdentifier:(id)arg1;
@@ -72,6 +79,7 @@
 + (id)sharingServiceWithIdentifier:(id)arg1 provider:(id)arg2 title:(id)arg3 image:(id)arg4 alternateImage:(id)arg5;
 + (id)sharingServiceWithTitle:(id)arg1 image:(id)arg2 alternateImage:(id)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)sharingServiceNamed:(id)arg1;
++ (id)sharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2;
 @property __weak NSWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property(copy, nonatomic) CDUnknownBlockType _cancelExtensionKillTimer; // @synthesize _cancelExtensionKillTimer=__cancelExtensionKillTimer;
 @property(copy, nonatomic) CDUnknownBlockType restoreWindowStateBlock; // @synthesize restoreWindowStateBlock=_restoreWindowStateBlock;
@@ -110,6 +118,7 @@
 - (void)hideView;
 - (void)invalidateRemoteWindowController;
 - (void)invalidateRemoteWindowControllerWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)dismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cancelRemoteServiceUI;
 - (BOOL)isCustomService;
 - (void)performWithItems:(id)arg1;

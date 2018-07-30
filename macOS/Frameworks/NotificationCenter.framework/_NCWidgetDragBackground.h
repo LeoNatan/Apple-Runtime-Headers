@@ -8,6 +8,7 @@
 
 @class CALayer;
 
+__attribute__((visibility("hidden")))
 @interface _NCWidgetDragBackground : NCTexturedView
 {
     BOOL _dark;

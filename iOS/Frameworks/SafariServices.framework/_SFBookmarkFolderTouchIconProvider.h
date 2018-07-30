@@ -6,15 +6,11 @@
 
 #import "WBSBookmarkFolderTouchIconProvider.h"
 
-@class WebBookmarkCollection;
-
 __attribute__((visibility("hidden")))
 @interface _SFBookmarkFolderTouchIconProvider : WBSBookmarkFolderTouchIconProvider
 {
-    WebBookmarkCollection *_collection;
 }
 
-- (void).cxx_destruct;
 - (void)_folderContentsDidChange:(id)arg1;
 - (id)touchIconRequestForBookmark:(id)arg1 inFolderWithRequest:(id)arg2;
 - (id)displayableFolderContentsForRequest:(id)arg1;

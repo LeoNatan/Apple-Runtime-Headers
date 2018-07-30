@@ -15,8 +15,10 @@
     UIImageView *_previewImageView;
     NSArray *_previewImageViewConstraints;
     long long _placeholderVisibilityRequestID;
+    CDUnknownBlockType _visibilityChangeCompletionHandler;
     _Bool _displayingPlaceholder;
     _Bool _allowsEdgeAntialiasing;
+    id <PXVideoPlayerViewDelegate> _delegate;
     ISWrappedAVPlayer *_player;
     UIImage *_placeholderImage;
     NSArray *_placeholderImageFilters;
@@ -28,22 +30,25 @@
 
 @property(nonatomic) _Bool allowsEdgeAntialiasing; // @synthesize allowsEdgeAntialiasing=_allowsEdgeAntialiasing;
 @property(nonatomic) long long videoViewContentMode; // @synthesize videoViewContentMode=_videoViewContentMode;
-@property(nonatomic, getter=isDisplayingPlaceHolder, setter=_setDisplayingPlaceholder:) _Bool displayingPlaceholder; // @synthesize displayingPlaceholder=_displayingPlaceholder;
+@property(readonly, nonatomic, getter=isDisplayingPlaceHolder) _Bool displayingPlaceholder; // @synthesize displayingPlaceholder=_displayingPlaceholder;
 @property(nonatomic) long long placeholderDisplayMode; // @synthesize placeholderDisplayMode=_placeholderDisplayMode;
 @property(nonatomic) struct CGRect placeholderImageContentsRect; // @synthesize placeholderImageContentsRect=_placeholderImageContentsRect;
 @property(nonatomic) double videoAppearanceCrossfadeDuration; // @synthesize videoAppearanceCrossfadeDuration=_videoAppearanceCrossfadeDuration;
 @property(copy, nonatomic) NSArray *placeholderImageFilters; // @synthesize placeholderImageFilters=_placeholderImageFilters;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) ISWrappedAVPlayer *player; // @synthesize player=_player;
+@property(nonatomic) __weak id <PXVideoPlayerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)generateSnapshotImage;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (void)_setPlaceholderVisible:(_Bool)arg1 requestID:(long long)arg2;
+- (void)_runVisibilityChangeCompletionHandler;
+- (void)_setDisplayingPlaceholder:(_Bool)arg1 requestID:(long long)arg2;
 - (void)_updateSubviewsVisibility;
 - (void)_updateEdgeAntialiasing;
 - (void)_updateContentMode;
 - (void)_updateVideoView;
+- (void)setPlaceholderDisplayMode:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -6,32 +6,23 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class HKAnchoredObjectQuery, HKHealthStore, HKQuantitySample, NSObject<OS_dispatch_queue>, NSTimer;
+#import "NTKHeartRateModelDelegate.h"
 
-@interface NTKHeartRateComplicationDataSource : NTKComplicationDataSource
+@class NSString, NSTimer, NTKHeartRateModel;
+
+@interface NTKHeartRateComplicationDataSource : NTKComplicationDataSource <NTKHeartRateModelDelegate>
 {
-    NSObject<OS_dispatch_queue> *_healthQueue;
-    int _lockStateNotifyToken;
-    _Bool _deviceIsLocked;
     _Bool _showingNowForRelativeTime;
-    HKHealthStore *_healthStore;
-    HKAnchoredObjectQuery *_heartRateQuery;
-    HKQuantitySample *_mostRecentHeartRate;
+    NTKHeartRateModel *_dataModel;
     NSTimer *_invalidationTimer;
 }
 
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) NSTimer *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
-@property(retain, nonatomic) HKQuantitySample *mostRecentHeartRate; // @synthesize mostRecentHeartRate=_mostRecentHeartRate;
-@property(retain, nonatomic) HKAnchoredObjectQuery *heartRateQuery; // @synthesize heartRateQuery=_heartRateQuery;
-@property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
+@property(retain, nonatomic) NTKHeartRateModel *dataModel; // @synthesize dataModel=_dataModel;
 - (void).cxx_destruct;
-- (void)_handleNewHeartRateSamples:(id)arg1;
-- (void)_queue_updateMostRecentHeartRateOnce;
-- (void)_queue_stopObservingHeartRate;
-- (void)_queue_startObservingHeartRate;
-- (void)_startObserving;
+- (void)model:(id)arg1 updatedSample:(id)arg2;
 - (void)_startInvalidationTimerWithTimeInterval:(double)arg1;
 - (void)_startLessThanMinuteInvalidationTimerIfNecessary:(_Bool *)arg1;
 - (void)resume;
@@ -45,7 +36,13 @@
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

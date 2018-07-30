@@ -56,7 +56,7 @@ struct vector<Page, std::__1::allocator<Page>> {
     struct Page *__begin_;
     struct Page *__end_;
     struct __compressed_pair<Page *, std::__1::allocator<Page>> {
-        struct Page *__first_;
+        struct Page *__value_;
     } __end_cap_;
 };
 
@@ -64,7 +64,7 @@ struct vector<Vertex, std::__1::allocator<Vertex>> {
     struct Vertex *__begin_;
     struct Vertex *__end_;
     struct __compressed_pair<Vertex *, std::__1::allocator<Vertex>> {
-        struct Vertex *__first_;
+        struct Vertex *__value_;
     } __end_cap_;
 };
 
@@ -72,7 +72,7 @@ struct vector<VertexGroup, std::__1::allocator<VertexGroup>> {
     struct VertexGroup *__begin_;
     struct VertexGroup *__end_;
     struct __compressed_pair<VertexGroup *, std::__1::allocator<VertexGroup>> {
-        struct VertexGroup *__first_;
+        struct VertexGroup *__value_;
     } __end_cap_;
 };
 
@@ -80,7 +80,7 @@ struct vector<std::__1::pair<float __attribute__((ext_vector_type(2))), float __
     struct pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))> *__begin_;
     struct pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))> *__end_;
     struct __compressed_pair<std::__1::pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))>*, std::__1::allocator<std::__1::pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))>>> {
-        struct pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))> *__first_;
+        struct pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))> *__value_;
     } __end_cap_;
 };
 
@@ -98,7 +98,7 @@ typedef struct vector<Vertex, std::__1::allocator<Vertex>> {
     struct Vertex *__begin_;
     struct Vertex *__end_;
     struct __compressed_pair<Vertex *, std::__1::allocator<Vertex>> {
-        struct Vertex *__first_;
+        struct Vertex *__value_;
     } __end_cap_;
-} vector_8a3ef5f6;
+} vector_b8c3c0c5;
 

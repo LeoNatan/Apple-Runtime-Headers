@@ -19,7 +19,6 @@
 @property(retain, nonatomic) WBSParsecSearchMapsResultFeedbackSender *mapsFeedbackSender; // @synthesize mapsFeedbackSender=_mapsFeedbackSender;
 @property(retain, nonatomic) id <WBSParsecSearchSession> parsecSearchSession; // @synthesize parsecSearchSession=_parsecSearchSession;
 - (void).cxx_destruct;
-- (void)didDisplayMapsResultForQuery:(id)arg1;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 - (id)initWithDictionary:(id)arg1;
 

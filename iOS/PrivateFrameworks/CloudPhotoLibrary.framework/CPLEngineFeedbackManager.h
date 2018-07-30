@@ -16,16 +16,19 @@
     NSArray *_messagesSending;
     NSDate *_lastAttemptDate;
     NSURL *_feedbackMessagesURL;
+    _Bool _opened;
     _Bool _closed;
+    _Bool _deactivated;
     CPLEngineLibrary *_engineLibrary;
 }
 
 @property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void).cxx_destruct;
+- (void)reportMiscInformation:(id)arg1;
 - (void)reportSetting:(id)arg1 hasBeenSetToValue:(id)arg2;
 - (void)reportFetchChangesRewindToFeatureVersion:(unsigned long long)arg1;
-- (void)reportEndOfReset;
-- (void)reportResetType:(id)arg1 reason:(id)arg2;
+- (void)reportEndOfResetWithUUID:(id)arg1 reason:(id)arg2;
+- (void)reportResetType:(id)arg1 reason:(id)arg2 uuid:(id)arg3;
 - (void)reportMessages:(id)arg1;
 - (void)reportMessage:(id)arg1;
 - (void)sendFeedbackToServerIfNecessary;

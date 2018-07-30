@@ -6,6 +6,7 @@
 
 #import "CALayer.h"
 
+__attribute__((visibility("hidden")))
 @interface AVSampleBufferDisplayLayerContentLayer : CALayer
 {
 }

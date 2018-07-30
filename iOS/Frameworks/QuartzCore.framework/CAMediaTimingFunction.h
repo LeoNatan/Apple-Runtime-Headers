@@ -27,6 +27,8 @@
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (id)CAMLType;
 - (float)_solveForInput:(float)arg1;
+- (unsigned long long)CA_copyNumericValue:(double [20])arg1;
+- (struct Object *)CA_copyRenderValue;
 
 @end
 

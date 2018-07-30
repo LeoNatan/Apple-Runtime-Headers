@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
 {
     int _mouseState;
     function_14166bfe _imageForStateGetter;
-    struct TNSRef<NSTrackingArea *, void> _trackingArea;
+    struct TNSRef<NSTrackingArea, void> _trackingArea;
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _observers;
-    struct TNSRef<FI_TInlineProgressView *, void> _progressView;
+    struct TNSRef<FI_TInlineProgressView, void> _progressView;
 }
 
 @property(nonatomic) int mouseState; // @synthesize mouseState=_mouseState;

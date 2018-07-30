@@ -23,10 +23,13 @@
 - (IKViewElementRegistry *)viewElementRegistry;
 - (IKAppDocument *)activeDocument;
 - (NSDictionary *)appLaunchParams;
+- (NSString *)appLaunchParamsResolvedBootURLKey;
 - (_Bool)appIsPrivileged;
 - (_Bool)appIsTrusted;
 - (_Bool)shouldAllowRemoteInspection;
 - (NSURL *)appLocalJSURL;
 - (NSURL *)appJSCachePath;
+- (NSURL *)offlineJSURL;
+- (NSString *)bagBootURLKey;
 @end
 

@@ -12,24 +12,27 @@
 
 @interface CEMSystemDiskRecordingDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadBurnSupport;
+    NSNumber *_payloadProhibitBurn;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withBurnSupport:(id)arg2 withProhibitBurn:(id)arg3;
++ (id)buildWithIdentifier:(id)arg1 withBurnSupport:(id)arg2 withProhibitBurn:(id)arg3;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadProhibitBurn; // @synthesize payloadProhibitBurn=_payloadProhibitBurn;
+@property(copy, nonatomic) NSString *payloadBurnSupport; // @synthesize payloadBurnSupport=_payloadBurnSupport;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadProhibitBurn;
-@property(readonly, nonatomic) NSString *payloadBurnSupport;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

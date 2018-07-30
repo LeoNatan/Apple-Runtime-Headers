@@ -76,6 +76,7 @@
 - (id)_specializedMessageForError:(id)arg1 URL:(id)arg2;
 - (void)_clearCertificateWarningPageHandlerInterface;
 - (void)_setUpCertificateWarningPageHandlerInterface;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithWebView:(id)arg1;
 

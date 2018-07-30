@@ -6,13 +6,11 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface STSStgObject : NSObject
 {
 }
 
 + (void)throwIfError:(int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

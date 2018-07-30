@@ -8,7 +8,7 @@
 
 #import "MTLResourceSPI.h"
 
-@class MTLResourceAllocationInfo, NSString;
+@class MTLIOAccelDevice<MTLDevice>, MTLResourceAllocationInfo, NSString;
 
 @interface MTLIOAccelResource : NSObject <MTLResourceSPI>
 {
@@ -16,8 +16,12 @@
     MTLIOAccelResource *next;
     MTLIOAccelResource *prev;
     unsigned long long uniqueId;
+    MTLIOAccelDevice<MTLDevice> *weakDevice;
 }
 
+@property(readonly) __weak MTLIOAccelDevice<MTLDevice> *weakDevice; // @synthesize weakDevice;
+- (void).cxx_destruct;
+- (void)releaseStrongDevice;
 @property(readonly) unsigned long long allocatedSize;
 - (BOOL)doesAliasAnyResources:(const id *)arg1 count:(unsigned long long)arg2;
 - (BOOL)doesAliasAllResources:(const id *)arg1 count:(unsigned long long)arg2;
@@ -31,7 +35,7 @@
 @property(readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
 @property(readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned int resourceSize;
+@property(readonly, nonatomic) unsigned long long resourceSize;
 @property(readonly, nonatomic) unsigned int resourceID;
 @property(readonly, nonatomic) unsigned long long gpuAddress;
 @property(readonly, nonatomic) void *virtualAddress;

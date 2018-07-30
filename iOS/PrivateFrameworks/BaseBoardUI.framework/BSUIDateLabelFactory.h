@@ -14,6 +14,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)_purgeRecycledLabels;
 - (long long)styleForLabel:(id)arg1;
 - (void)recycleLabel:(id)arg1;

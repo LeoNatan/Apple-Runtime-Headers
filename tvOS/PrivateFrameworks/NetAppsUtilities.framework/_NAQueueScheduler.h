@@ -10,6 +10,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NAQueueScheduler : NSObject <NAScheduler>
 {
     NSObject<OS_dispatch_queue> *_queue;

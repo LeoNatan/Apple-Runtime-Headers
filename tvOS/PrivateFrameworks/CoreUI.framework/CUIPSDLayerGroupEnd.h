@@ -6,7 +6,6 @@
 
 #import <CoreUI/CUIPSDLayer.h>
 
-__attribute__((visibility("hidden")))
 @interface CUIPSDLayerGroupEnd : CUIPSDLayer
 {
 }

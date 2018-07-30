@@ -19,9 +19,11 @@
 @property(readonly, nonatomic) _Bool applicationShouldOverrideHardwareVolumeBehavior;
 @property(nonatomic) __weak id <MPVolumeControllerDataSourceDelegate> delegate;
 - (void)getVolumeValueWithCompletion:(void (^)(float))arg1;
-- (void)reloadWarning;
 - (void)reload;
 - (void)initializeVolume;
 - (void)adjustVolumeValue:(float)arg1;
+
+@optional
+- (void)reloadWarning;
 @end
 

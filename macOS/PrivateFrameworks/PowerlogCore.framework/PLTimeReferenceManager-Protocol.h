@@ -9,6 +9,7 @@
 @class NSDate;
 
 @protocol PLTimeReferenceManager <NSObject>
+- (double)hourBucketBaseSnapOffsetWithMonotonicTimeNow:(long long)arg1;
 - (NSDate *)currentTimeFromTimeReference:(long long)arg1 toTimeReference:(long long)arg2;
 - (NSDate *)initialMonotonicTime;
 @end

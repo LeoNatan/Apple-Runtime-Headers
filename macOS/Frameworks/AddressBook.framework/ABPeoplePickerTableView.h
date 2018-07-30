@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerTableView : NSTableView
 {
     int _subrowSelectionBehavior;

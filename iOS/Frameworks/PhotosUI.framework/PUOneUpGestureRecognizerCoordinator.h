@@ -8,7 +8,7 @@
 
 #import "UIGestureRecognizerDelegate.h"
 
-@class NSHashTable, NSString, PUBrowsingSession, PUDoubleTapZoomController, PULongPressDragController, PUOneUpBarsController, PUTouchingGestureRecognizer;
+@class NSHashTable, NSString, PUBrowsingSession, PUDoubleTapZoomController, PULongPressDragController, PUOneUpBarsController, PUTouchingGestureRecognizer, UILongPressGestureRecognizer;
 
 __attribute__((visibility("hidden")))
 @interface PUOneUpGestureRecognizerCoordinator : NSObject <UIGestureRecognizerDelegate>
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
         _Bool respondsToShouldAllowIrisGestureRecognizer;
     } _delegateFlags;
     PUTouchingGestureRecognizer *_touchingGestureRecognizer;
+    UILongPressGestureRecognizer *_longPressGestureRecognizer;
     _Bool __needsUpdateGestureRecognizers;
     id <PUOneUpGestureRecognizerCoordinatorDelegate> _delegate;
     PUBrowsingSession *_browsingSession;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateGestureRecognizersIfNeeded;
 - (void)invalidateViewHostingGestureRecognizers;
 - (void)_invalidateGestureRecognizers;
+- (id)longPressGestureRecognizer;
 @property(readonly, nonatomic) PUTouchingGestureRecognizer *touchingGestureRecognizer;
 - (void)addIrisGestureRecognizer:(id)arg1;
 

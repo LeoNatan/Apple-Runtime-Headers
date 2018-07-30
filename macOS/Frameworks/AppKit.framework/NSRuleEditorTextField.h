@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTextField.h>
 
+__attribute__((visibility("hidden")))
 @interface NSRuleEditorTextField : NSTextField
 {
 }

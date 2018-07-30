@@ -12,17 +12,13 @@
 
 @interface CLSActivity : CLSObject <CLSRelationable>
 {
-    double _duration;
     _Bool _paused;
     NSDate *_activityStartDate;
-    NSString *__primaryActivityItemIdentifier;
-    NSArray *__activityItems;
+    NSString *_primaryActivityItemIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)relations;
-@property(readonly, nonatomic) NSArray *_activityItems; // @synthesize _activityItems=__activityItems;
-@property(copy, nonatomic) NSString *_primaryActivityItemIdentifier; // @synthesize _primaryActivityItemIdentifier=__primaryActivityItemIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)dictionaryRepresentation;

@@ -8,7 +8,6 @@
 
 @class WDDocument, WDListLevel;
 
-__attribute__((visibility("hidden")))
 @interface WDListLevelOverride : NSObject
 {
     WDDocument *mDocument;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
     BOOL mStartNumberOverridden;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isListLevelOverridden;
 - (id)mutableListLevel;
@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (long long)startNumber;
 - (unsigned char)level;
 - (id)initWithDocument:(id)arg1 level:(unsigned char)arg2;
-- (void)dealloc;
 
 @end
 

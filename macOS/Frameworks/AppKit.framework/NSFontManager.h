@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSFont, NSFontPanel;
+#import "NSMenuItemValidation.h"
 
-@interface NSFontManager : NSObject
+@class NSArray, NSFont, NSFontPanel, NSString;
+
+@interface NSFontManager : NSObject <NSMenuItemValidation>
 {
     NSFontPanel *_panel;
     SEL _action;
@@ -135,6 +137,12 @@
 - (id)init;
 - (oneway void)release;
 - (id)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,12 +6,9 @@
 
 #import "NSObject.h"
 
-#import "NSSecureCoding.h"
-#import "SFXPCInterface.h"
+@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCConnection;
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, NSXPCConnection, SDXPCServer;
-
-@interface SFUserAlert : NSObject <NSSecureCoding, SFXPCInterface>
+@interface SFUserAlert : NSObject
 {
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
@@ -33,11 +30,9 @@
     NSString *_defaultButtonTitle;
     NSString *_alternateButtonTitle;
     NSString *_otherButtonTitle;
-    SDXPCServer *_server;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) SDXPCServer *server; // @synthesize server=_server;
 @property(retain, nonatomic) NSString *otherButtonTitle; // @synthesize otherButtonTitle=_otherButtonTitle;
 @property(retain, nonatomic) NSString *alternateButtonTitle; // @synthesize alternateButtonTitle=_alternateButtonTitle;
 @property(retain, nonatomic) NSString *defaultButtonTitle; // @synthesize defaultButtonTitle=_defaultButtonTitle;

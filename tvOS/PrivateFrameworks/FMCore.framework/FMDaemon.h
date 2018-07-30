@@ -16,6 +16,7 @@
 - (id)xpcDarwinEventHandlers;
 - (void)startup;
 - (void)startupWithCompletion:(CDUnknownBlockType)arg1;
+- (void)initialize;
 - (void)run;
 
 @end

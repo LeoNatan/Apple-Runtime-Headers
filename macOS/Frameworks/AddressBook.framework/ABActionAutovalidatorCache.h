@@ -8,7 +8,6 @@
 
 @class NSMapTable;
 
-__attribute__((visibility("hidden")))
 @interface ABActionAutovalidatorCache : NSObject
 {
     NSMapTable *_entries;

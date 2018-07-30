@@ -30,6 +30,7 @@
 + (id)_knownFormatIdentifiers;
 + (id)_knownFormatVersions;
 + (id)_formatVersion;
++ (void)disableRawDecode:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

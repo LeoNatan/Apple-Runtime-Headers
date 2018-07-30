@@ -27,7 +27,6 @@
 - (void)removePersistentDomainForName:(id)arg1;
 - (void)setPersistentDomain:(id)arg1 forName:(id)arg2;
 - (id)persistentDomainForName:(id)arg1;
-- (id)persistentDomainNames;
 - (void)removeVolatileDomainForName:(id)arg1;
 - (void)setVolatileDomain:(id)arg1 forName:(id)arg2;
 - (id)volatileDomainForName:(id)arg1;

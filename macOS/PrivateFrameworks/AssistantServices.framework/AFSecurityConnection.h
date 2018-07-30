@@ -26,6 +26,7 @@
 - (void)_connectionInterrupted;
 - (void)_invalidateConnection;
 - (id)_connection;
+- (oneway void)setKeychainValue:(id)arg1 forKey:(id)arg2 accountIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (oneway void)processDataMap:(id)arg1 usingProcedure:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (oneway void)processData:(id)arg1 usingProcedure:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidate;

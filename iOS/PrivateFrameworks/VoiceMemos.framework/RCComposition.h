@@ -16,13 +16,15 @@
 {
     _Bool _cachedComposedAVURLDurationIsValid;
     _Bool _readonly;
-    NSURL *_savedRecordingURI;
+    NSArray *_composedFragments;
+    NSString *_savedRecordingUUID;
     NSDate *_creationDate;
     NSURL *_composedAVURL;
     NSURL *_composedWaveformURL;
     NSArray *_decomposedFragments;
-    NSArray *_composedFragments;
+    NSString *_title;
     double _cachedComposedAVURLDuration;
+    NSObject *_composedFragmentsMutex;
 }
 
 + (_Bool)_markCompositionAVURLsBeingModified:(id)arg1;
@@ -31,23 +33,27 @@
 + (id)_compositionMetadataURLForComposedAVURL:(id)arg1;
 + (id)_compositionMetadataURLForCompositionBundleURL:(id)arg1;
 + (id)compositionBundleURLForComposedAVURL:(id)arg1;
++ (void)deleteFromFilesystem:(id)arg1;
 + (id)compositionWithComposedAVURL:(id)arg1;
-+ (id)compositionLoadedForSavedRecordingURI:(id)arg1 createIfNeeded:(_Bool)arg2;
++ (id)compositionLoadedForSavedRecordingUUID:(id)arg1;
++ (id)compositionLoadedForSavedRecording:(id)arg1;
 + (id)compositionLoadedForComposedAVURL:(id)arg1 createIfNeeded:(_Bool)arg2;
 + (id)compositionLoadedFromCompositionBundleURL:(id)arg1;
-+ (id)_compositionLoadedFromMetadataURL:(id)arg1 composedAVURL:(id)arg2 savedRecordingURI:(id)arg3 createIfNeeded:(_Bool)arg4;
++ (id)_compositionLoadedFromMetadataURL:(id)arg1 savedRecording:(id)arg2;
++ (id)_compositionLoadedFromMetadataURL:(id)arg1 composedAVURL:(id)arg2 savedRecordingUUID:(id)arg3 creationDate:(id)arg4 createIfNeeded:(_Bool)arg5;
 + (id)_unitTestingCompositionWithDecomposedFragments:(id)arg1;
+@property(retain, nonatomic) NSObject *composedFragmentsMutex; // @synthesize composedFragmentsMutex=_composedFragmentsMutex;
 @property(nonatomic) _Bool readonly; // @synthesize readonly=_readonly;
 @property(nonatomic) double cachedComposedAVURLDuration; // @synthesize cachedComposedAVURLDuration=_cachedComposedAVURLDuration;
 @property(nonatomic) _Bool cachedComposedAVURLDurationIsValid; // @synthesize cachedComposedAVURLDurationIsValid=_cachedComposedAVURLDurationIsValid;
-@property(readonly, nonatomic) NSArray *composedFragments; // @synthesize composedFragments=_composedFragments;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSArray *decomposedFragments; // @synthesize decomposedFragments=_decomposedFragments;
 @property(readonly, nonatomic) NSURL *composedWaveformURL; // @synthesize composedWaveformURL=_composedWaveformURL;
 @property(readonly, nonatomic) NSURL *composedAVURL; // @synthesize composedAVURL=_composedAVURL;
-@property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-@property(retain, nonatomic) NSURL *savedRecordingURI; // @synthesize savedRecordingURI=_savedRecordingURI;
+@property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property(retain, nonatomic) NSString *savedRecordingUUID; // @synthesize savedRecordingUUID=_savedRecordingUUID;
 - (void).cxx_destruct;
-- (id)_calcualteComposedFragments;
+- (id)_calculateComposedFragments;
 - (double)_composedDuration;
 - (void)recacheComposedDuration;
 - (id)compositionByDuplicatingResourcesToDestinationComposedAVURL:(id)arg1;
@@ -62,16 +68,17 @@
 - (unsigned long long)estimatedFileSizeOfComposedAssetIncludingRelatedResources:(_Bool)arg1;
 - (unsigned long long)_fileSizeOfComposedAssetsIncludingRelatedResources:(_Bool)arg1;
 - (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(_Bool)arg1;
-@property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) double composedDuration;
-- (void)setSavedRecordingURIFromRecoveredRecordingURI:(id)arg1;
+@property(retain, nonatomic) NSArray *composedFragments; // @synthesize composedFragments=_composedFragments;
+- (void)setSavedRecordingUUIDFromRecoveredRecordingUUID:(id)arg1;
 @property(readonly, nonatomic) _Bool isContentBeingModified;
 - (id)dictionaryPListRepresentation;
 - (id)initWithDictionaryPListRepresentation:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithComposedAVURL:(id)arg1 savedRecordingURI:(id)arg2 decomposedFragments:(id)arg3 composedFragments:(id)arg4;
+- (id)_initWithSavedRecording:(id)arg1 decomposedFragments:(id)arg2 composedFragments:(id)arg3;
+- (id)_initWithComposedAVURL:(id)arg1 savedRecordingUUID:(id)arg2 creationDate:(id)arg3 title:(id)arg4 decomposedFragments:(id)arg5 composedFragments:(id)arg6;
 - (id)compositionAsset;
 - (id)playableAsset;
 

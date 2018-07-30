@@ -9,18 +9,22 @@
 #import "AVTrimViewDelegate.h"
 #import "NSTouchBarDelegate.h"
 
-@class AVPlayerControllerTimeResolver, AVTouchBarTrimControlsViewController, AVTrimView, NSCustomTouchBarItem, NSString, NSView;
+@class AVPlayerControllerTimeResolver, AVTouchBarTrimControlsViewController, AVTrimView, NSButton, NSCustomTouchBarItem, NSString, NSView;
 
 @interface AVTrimControlsViewController : AVPlayerControlsViewController <NSTouchBarDelegate, AVTrimViewDelegate>
 {
     NSView *_buttonsContainerView;
     AVTrimView *_trimView;
     NSCustomTouchBarItem *_trimControlsTouchBarItem;
+    NSButton *_trimButton;
+    NSButton *_touchBarTrimButton;
+    NSButton *_touchBarRevertButton;
     AVTouchBarTrimControlsViewController *_touchBarTrimControlsViewController;
     AVPlayerControllerTimeResolver *_timeResolver;
     NSView *_initialFirstResponder;
     unsigned long long _trackedPart;
     CDUnknownBlockType _nextKeyViewSetupBlock;
+    BOOL _includesTrimAndCancelButtons;
     id <AVTrimControlsViewControllerDelegate> _delegate;
     double _maximumSelectionDuration;
     unsigned long long _preferredTrimViewStyle;
@@ -30,15 +34,19 @@
     double _selectionEnd;
 }
 
-+ (id)keyPathsForValuesAffectingEnableTrimButton;
++ (id)keyPathsForValuesAffectingRevertButtonEnabled;
++ (id)keyPathsForValuesAffectingTrimButtonEnabled;
 @property double selectionEnd; // @synthesize selectionEnd=_selectionEnd;
 @property double selectionStart; // @synthesize selectionStart=_selectionStart;
 @property double originalMaxTime; // @synthesize originalMaxTime=_originalMaxTime;
 @property double originalMinTime; // @synthesize originalMinTime=_originalMinTime;
+@property BOOL includesTrimAndCancelButtons; // @synthesize includesTrimAndCancelButtons=_includesTrimAndCancelButtons;
 @property(readonly) unsigned long long preferredTrimViewStyle; // @synthesize preferredTrimViewStyle=_preferredTrimViewStyle;
 @property double maximumSelectionDuration; // @synthesize maximumSelectionDuration=_maximumSelectionDuration;
 @property __weak id <AVTrimControlsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)revert:(id)arg1;
+- (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)trim:(id)arg1;
 - (BOOL)trimViewCanStartTracking:(id)arg1;
@@ -52,9 +60,12 @@
 - (void)setupNextKeyView;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)makeTouchBar;
+- (void)updateTrimButtonState;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)viewDidLayout;
 - (void)loadView;
-@property(readonly) BOOL enableTrimButton;
+- (BOOL)isRevertButtonEnabled;
+@property(readonly, getter=isTrimButtonEnabled) BOOL trimButtonEnabled;
 @property(readonly) AVPlayerControllerTimeResolver *timeResolver;
 @property(readonly) NSView *trimView;
 @property(readonly) NSView *buttonsContainerView;

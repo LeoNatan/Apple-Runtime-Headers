@@ -13,10 +13,12 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned long long _lastExpiredMetadataPurgeMachTime;
     NSMutableDictionary *_itemCaches;
+    int _cacheSize;
 }
 
 + (unsigned int)optimalBatchSize;
 + (id)sharedStoreItemMetadataRequestController;
+@property(nonatomic) int cacheSize; // @synthesize cacheSize=_cacheSize;
 - (void).cxx_destruct;
 - (void)_removeExpiredItemsPeriodically;
 - (id)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;

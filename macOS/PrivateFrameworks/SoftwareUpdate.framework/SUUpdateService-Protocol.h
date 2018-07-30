@@ -11,8 +11,12 @@
 @protocol SUUpdateService <NSObject>
 - (void)resetServiceWithReply:(void (^)(void))arg1;
 - (void)dumpServiceDebugInfo;
+- (void)migratePreferencesWithReply:(void (^)(BOOL, NSError *))arg1;
+- (void)clearCatalogAndNotifyWithReply:(void (^)(BOOL, NSError *))arg1;
+- (void)setPreferenceObject:(id)arg1 forKey:(NSString *)arg2 reply:(void (^)(BOOL, NSError *))arg3;
+- (void)preferenceObjectForKey:(NSString *)arg1 reply:(void (^)(id, NSError *))arg2;
+- (void)productsInActiveForegroundTransactions:(void (^)(NSArray *))arg1;
 - (void)bridgeOSUpdateIsPreparedWithReply:(void (^)(BOOL))arg1;
-- (void)bridgeOSUpdatePreparedForProductKeys:(NSArray *)arg1 reply:(void (^)(BOOL))arg2;
 - (void)getInstallHistoryWithReply:(void (^)(NSArray *))arg1;
 - (void)evaluateProducts:(NSArray *)arg1 reply:(void (^)(NSDictionary *))arg2;
 - (void)suspendBackgroundTasksTemporarily:(BOOL)arg1 desiredDuration:(long long)arg2 reply:(void (^)(BOOL, long long))arg3;
@@ -30,8 +34,10 @@
 - (void)stashLoginCredentialsEnablingFLO:(BOOL)arg1 reply:(void (^)(BOOL))arg2;
 - (void)productKeysToAutomaticallyInstallLaterWithReply:(void (^)(NSArray *))arg1;
 - (void)setAutomaticallyInstallLater:(BOOL)arg1 forProductKeys:(NSArray *)arg2 replyWhenDone:(void (^)(NSArray *, NSError *))arg3;
+- (void)stashAndCommitFDEKeyReplyingWithResult:(void (^)(BOOL))arg1;
 - (void)consumeUUIDForToken:(NSString *)arg1 replyWithResult:(void (^)(BOOL))arg2;
 - (void)adoptManualProductArchiveByReadingFromFileHandle:(NSFileHandle *)arg1 archiveName:(NSString *)arg2 displayName:(NSString *)arg3 displayVersion:(NSString *)arg4 allowDevSigning:(BOOL)arg5 replyWithResult:(void (^)(NSString *, NSError *))arg6;
+- (void)performBaseSystemInstallCleanupTasks:(void (^)(BOOL))arg1;
 - (void)productKeysToInstallAfterLogoutWithReply:(void (^)(NSArray *))arg1;
 - (void)registerToInstallAfterLogoutForProductKeys:(NSArray *)arg1 nowIsLater:(BOOL)arg2 restartNow:(BOOL)arg3 shouldStashCredentials:(BOOL)arg4 reply:(void (^)(NSArray *))arg5;
 - (void)cancelUpdatesForProductKeys:(NSArray *)arg1 reply:(void (^)(NSArray *))arg2;
@@ -51,13 +57,15 @@
 - (void)refreshAvailableUpdatesForCurrentConfigurationLimitedToProductKeys:(NSArray *)arg1 distributionEnvironment:(NSDictionary *)arg2 distributionEvalutionMetainfo:(NSDictionary *)arg3 installedPrinters:(NSDictionary *)arg4 mdmInitiated:(BOOL)arg5 preferredLocalizations:(NSArray *)arg6 replyWhenDone:(void (^)(NSError *))arg7;
 - (void)progressForRefreshOfAvailableUpdatesWithReply:(void (^)(double))arg1;
 - (void)refreshAvailableUpdates:(BOOL)arg1 preferredLocalizations:(NSArray *)arg2 limitedToProductTypes:(NSArray *)arg3 replyWhenDone:(void (^)(NSError *))arg4;
-- (void)catalogAndScanInformationWithReply:(void (^)(NSString *, BOOL, NSDate *, long long, BOOL, BOOL, BOOL, BOOL, BOOL, BOOL))arg1;
-- (void)catalogInformationWithReply:(void (^)(NSString *, int, BOOL, BOOL))arg1;
+- (void)catalogAndScanInformationWithReply:(void (^)(NSString *, BOOL, NSDate *, long long, BOOL, BOOL, BOOL, BOOL, BOOL))arg1;
+- (void)catalogInformationWithReply:(void (^)(NSString *, NSURL *, int, BOOL, BOOL, BOOL))arg1;
+- (void)adminDeferredAvailableUpdatesWithReply:(void (^)(NSArray *))arg1;
 - (void)installedUpdateJournalPrunedAndSortedWithReply:(void (^)(NSArray *))arg1;
 - (void)installedUpdateJournalWithReply:(void (^)(NSArray *))arg1;
 - (void)installStatus:(SUUpdateStatus *)arg1 didChangeExternallyForProductKey:(NSString *)arg2;
 - (void)currentDevKeyModeWithReply:(void (^)(NSString *, SUDevKey *))arg1;
 - (void)clearInvalidationForIdentifier:(NSString *)arg1 version:(NSString *)arg2 forReason:(int)arg3;
+- (void)fetchMajorOSInfoForProductKey:(NSString *)arg1 reply:(void (^)(SUMajorProduct *))arg2;
 - (void)remainingPackageIdentifiersToInstallForProductKey:(NSString *)arg1 reply:(void (^)(NSArray *))arg2;
 - (void)packageReferenceForMatchingIdentifier:(NSString *)arg1 productKey:(NSString *)arg2 invalidatingPrevious:(BOOL)arg3 reply:(void (^)(NSDictionary *))arg4;
 - (void)availableUpdatesOfType:(long long)arg1 withState:(long long)arg2 filteredByState:(unsigned long long)arg3 filterDeferred:(BOOL)arg4 filterDuplicates:(BOOL)arg5 reply:(void (^)(NSArray *, NSArray *, BOOL))arg6;

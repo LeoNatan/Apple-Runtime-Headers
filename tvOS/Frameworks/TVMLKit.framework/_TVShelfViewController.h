@@ -22,8 +22,10 @@
     _Bool _centered;
     id <__TVShelfViewControllerDelegate> _delegate;
     unsigned long long _speedBumpEdges;
+    long long _prominentSectionIndex;
 }
 
+@property(nonatomic) long long prominentSectionIndex; // @synthesize prominentSectionIndex=_prominentSectionIndex;
 @property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(nonatomic) unsigned long long speedBumpEdges; // @synthesize speedBumpEdges=_speedBumpEdges;
 @property(nonatomic) __weak id <__TVShelfViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -37,11 +39,12 @@
 @property(nonatomic) _Bool hideHeader;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (void)updateViewLayoutAnimated:(_Bool)arg1 relayout:(_Bool)arg2;
-- (id)preferredFocusEnvironments;
+- (struct CGSize)expectedCellSizeForElement:(id)arg1 atIndexPath:(id)arg2;
 - (_Bool)contentFlowsVertically;
 - (id)makeCollectionViewWithFrame:(struct CGRect)arg1;
 - (void)updateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_scrollToIndexPath:(id)arg1;
+- (id)preferredFocusEnvironments;
 - (void)viewDidLoad;
 - (void)updateWithViewElement:(id)arg1 cellMetrics:(struct TVCellMetrics)arg2;
 - (void)didMoveToParentViewController:(id)arg1;

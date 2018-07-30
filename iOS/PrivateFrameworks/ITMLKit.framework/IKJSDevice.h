@@ -8,25 +8,20 @@
 
 #import "IKJSDevice.h"
 #import "NSObject.h"
-#import "RadiosPreferencesDelegate.h"
 #import "_IKJSDevice.h"
 #import "_IKJSDeviceProxy.h"
 
-@class NSNumber, NSString, RadiosPreferences;
+@class NSNumber, NSString;
 
-@interface IKJSDevice : IKJSObject <RadiosPreferencesDelegate, NSObject, IKJSDevice, _IKJSDeviceProxy, _IKJSDevice>
+@interface IKJSDevice : IKJSObject <NSObject, IKJSDevice, _IKJSDeviceProxy, _IKJSDevice>
 {
-    id _isNetworkTypeChangedToken;
-    id _networkReachabilityChangedToken;
-    RadiosPreferences *_radioPrefs;
+    id _networkPropertiesChangedToken;
     id <IKAppDeviceConfig> _deviceConfig;
 }
 
 + (id)getMobileGestaltString:(struct __CFString *)arg1;
 @property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 - (void).cxx_destruct;
-- (void)_notifyObservers;
-- (void)airplaneModeChanged;
 - (id)capacity:(id)arg1;
 @property(readonly, nonatomic) _Bool isInRetailDemoMode;
 @property(readonly, nonatomic) double lastNetworkChangedTime;

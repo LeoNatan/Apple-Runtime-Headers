@@ -10,7 +10,6 @@
 
 @class NSArray, NSString, QLToolbarButtonItemRepresentation, QLToolbarUnderlyingButton, UIAlertController, UIImage;
 
-__attribute__((visibility("hidden")))
 @interface QLToolbarButton : NSObject <NSSecureCoding>
 {
     QLToolbarButtonItemRepresentation *_currentItemRepresentation;

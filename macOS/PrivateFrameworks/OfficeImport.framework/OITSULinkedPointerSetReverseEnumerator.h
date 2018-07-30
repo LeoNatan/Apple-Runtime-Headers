@@ -8,7 +8,6 @@
 
 @class OITSULinkedPointerSetEntry;
 
-__attribute__((visibility("hidden")))
 @interface OITSULinkedPointerSetReverseEnumerator : NSEnumerator
 {
     OITSULinkedPointerSetEntry *mTail;

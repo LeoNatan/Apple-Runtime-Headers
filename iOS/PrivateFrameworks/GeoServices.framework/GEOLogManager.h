@@ -20,11 +20,8 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) id <GEOLogAdaptor> serverLogAdaptorManager; // @synthesize serverLogAdaptorManager=_serverLogAdaptorManager;
 - (void).cxx_destruct;
-- (id)_logMessageUsageURL;
 - (void)_setupDefaultAdaptors;
 - (_Bool)_disableUsageLoggingForCountry;
-- (void)_disableLogMsgInstrumentationWithBlock:(CDUnknownBlockType)arg1;
-- (void)_enableLogMsgInstrumentation;
 - (void)_removeAllLogAdaptors;
 - (void)_removeLogAdaptor:(id)arg1;
 - (void)_addLogAdaptor:(id)arg1;
@@ -34,9 +31,6 @@
 - (void)_forceFlushLogs;
 - (void)_flushLogs;
 - (void)_queueLogMessage:(id)arg1;
-- (void)disableLogMsgInstrumentationWithBlock:(CDUnknownBlockType)arg1;
-- (void)disableLogMsgInstrumentation;
-- (void)enableLogMsgInstrumentation;
 - (void)removeAllLogAdators;
 - (void)removeLogAdaptor:(id)arg1;
 - (void)addLogAdaptor:(id)arg1;

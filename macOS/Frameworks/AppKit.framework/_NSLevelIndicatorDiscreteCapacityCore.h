@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSLevelIndicatorDiscreteCapacityCore : NSObject <_NSLevelIndicatorCore>
 {
     NSMutableArray *_segmentLayers;
@@ -19,10 +20,9 @@
 - (id)_fillLayerInLayer:(id)arg1;
 - (void)_updateSingleSegmentLayer:(id)arg1 withState:(CDStruct_40e84b6d)arg2 withTintColor:(id)arg3;
 - (void)_drawSingleSegmentInRect:(struct CGRect)arg1 inContext:(id)arg2 withState:(CDStruct_40e84b6d)arg3 withTintColor:(id)arg4;
-- (struct CGRect)_rectOfDiscreteSegmentAtIndex:(long long)arg1 withDrawingRect:(struct CGRect)arg2 forState:(CDStruct_40e84b6d)arg3;
 - (struct NSEdgeInsets)alignmentRectInsetsForState:(CDStruct_40e84b6d)arg1;
 - (struct CGSize)indicatorSizeForState:(CDStruct_40e84b6d)arg1;
-- (BOOL)allowsVibrancyForState:(CDStruct_40e84b6d)arg1;
+- (int)vibrancyBlendModeForState:(CDStruct_40e84b6d)arg1;
 - (void)drawFocusRingMaskInRect:(struct CGRect)arg1 inContext:(id)arg2 forState:(CDStruct_40e84b6d)arg3;
 - (void)layoutSublayersOfLayer:(id)arg1 forState:(CDStruct_40e84b6d)arg2;
 - (void)updateLayer:(id)arg1 forState:(CDStruct_40e84b6d)arg2;

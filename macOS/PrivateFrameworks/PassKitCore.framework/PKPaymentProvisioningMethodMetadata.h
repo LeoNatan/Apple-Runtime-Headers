@@ -19,8 +19,10 @@
     NSDictionary *_readerModeMetadata;
     PKPaymentDigitalIssuanceMetadata *_digitalIssuanceMetadata;
     NSDictionary *_readerModeResources;
+    NSDecimalNumber *_minimumReaderModeBalance;
 }
 
+@property(readonly, copy, nonatomic) NSDecimalNumber *minimumReaderModeBalance; // @synthesize minimumReaderModeBalance=_minimumReaderModeBalance;
 @property(readonly, copy, nonatomic) NSDictionary *readerModeResources; // @synthesize readerModeResources=_readerModeResources;
 @property(readonly, nonatomic) PKPaymentDigitalIssuanceMetadata *digitalIssuanceMetadata; // @synthesize digitalIssuanceMetadata=_digitalIssuanceMetadata;
 @property(readonly, copy, nonatomic) NSDictionary *readerModeMetadata; // @synthesize readerModeMetadata=_readerModeMetadata;

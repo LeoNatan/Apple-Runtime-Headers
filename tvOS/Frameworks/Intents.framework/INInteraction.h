@@ -6,13 +6,17 @@
 
 #import "NSObject.h"
 
+#import "INImageProxyInjecting.h"
+#import "INInteractionExport.h"
+#import "INKeyImageProducing.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class INIntent, INIntentResponse, NSDate, NSDateInterval, NSString, SAUISnippet;
+@class CSSearchableItem, INImage, INIntent, INIntentResponse, NSDate, NSDateInterval, NSString, SAUISnippet;
 
-@interface INInteraction : NSObject <NSSecureCoding, NSCopying>
+@interface INInteraction : NSObject <INInteractionExport, INImageProxyInjecting, INKeyImageProducing, NSSecureCoding, NSCopying>
 {
+    unsigned long long _indexingHash;
     _Bool _donatedBySiri;
     SAUISnippet *_snippet;
     INIntent *_intent;
@@ -34,18 +38,23 @@
 @property(copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(nonatomic) long long intentHandlingStatus; // @synthesize intentHandlingStatus=_intentHandlingStatus;
-@property(readonly, copy, nonatomic) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
-@property(readonly, copy, nonatomic) INIntent *intent; // @synthesize intent=_intent;
+@property(copy, nonatomic, setter=_setIntentResponse:) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
+@property(copy, nonatomic, setter=_setIntent:) INIntent *intent; // @synthesize intent=_intent;
 @property(readonly, nonatomic) _Bool _donatedBySiri; // @synthesize _donatedBySiri;
 @property(retain, nonatomic, setter=_setSnippet:) SAUISnippet *_snippet; // @synthesize _snippet;
 - (void).cxx_destruct;
 - (id)parameterValueForParameter:(id)arg1;
+@property(readonly) unsigned long long _indexingHash;
+@property(readonly, copy) CSSearchableItem *_searchableItem;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
-- (id)description;
-- (unsigned long long)hash;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
+@property(readonly) INImage *_keyImage;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_donateInteractionWithBundleId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)donateInteractionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_setDonatedBySiri:(_Bool)arg1;
@@ -55,6 +64,10 @@
 @property(copy, nonatomic) NSString *domainIdentifier;
 @property(nonatomic) double duration;
 @property(retain, nonatomic) NSDate *date;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

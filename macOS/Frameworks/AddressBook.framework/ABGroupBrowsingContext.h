@@ -8,7 +8,6 @@
 
 @class ABAccount, ABGroup, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABGroupBrowsingContext : NSObject
 {
     ABAccount *_account;

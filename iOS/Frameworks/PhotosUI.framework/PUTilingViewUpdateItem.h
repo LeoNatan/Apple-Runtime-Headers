@@ -8,7 +8,6 @@
 
 @class NSIndexPath, PUTilingDataSource;
 
-__attribute__((visibility("hidden")))
 @interface PUTilingViewUpdateItem : NSObject
 {
     long long _action;

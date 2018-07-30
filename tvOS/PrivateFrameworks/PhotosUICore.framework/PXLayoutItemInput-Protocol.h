@@ -7,6 +7,8 @@
 #import "NSObject.h"
 
 @protocol PXLayoutItemInput <NSObject>
+@property(readonly, nonatomic) struct CGRect acceptableCropRect;
+@property(readonly, nonatomic) struct CGRect preferredCropRect;
 @property(readonly, nonatomic) double weight;
 @property(readonly, nonatomic) struct CGSize size;
 @end

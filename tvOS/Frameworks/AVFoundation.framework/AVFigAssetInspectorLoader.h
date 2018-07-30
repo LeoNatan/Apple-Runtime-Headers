@@ -20,12 +20,6 @@
     NSMutableArray *_loadingBatches;
     _Bool _loadingCanceled;
     _Bool _registeredForFigAssetNotifications;
-    _Bool _shouldRespondToFigAssetURLSessionPropertyLoading;
-    _Bool _isRespondingToFigAssetPropertyLoading;
-    _Bool _URLSessionOperationQueueAvailable;
-    _Bool _URLSessionDataDelegateAvailable;
-    _Bool _didPostDidCompleteURLSessionSetUpNotification;
-    _Bool _didPostDidFailToCompleteURLSessionSetUpNotification;
     long long _fragmentMinderAssociationCount;
     NSURL *_URL;
 }
@@ -33,12 +27,6 @@
 + (void)_mapAssetKeys:(id)arg1 toFigAssetPropertySet:(id)arg2 figAssetTrackPropertySet:(id)arg3 callerName:(id)arg4;
 + (id)_figAssetTrackPropertiesForKeys;
 + (id)_figAssetPropertiesForKeys;
-- (id)_URLSessionDataDelegate;
-- (id)_URLSessionOperationQueue;
-- (void)_setURLSessionDataDelegateAvailable:(_Bool)arg1;
-- (void)_setURLSessionOperationQueueAvailable:(_Bool)arg1;
-- (void)postURLSessionSetUpDidCompleteNotificationIfAppropriate;
-- (void)_postDidFailToCompleteURLSessionSetUpNotificationIfAppropriate;
 - (void)_setIsAssociatedWithFragmentMinder:(_Bool)arg1;
 - (_Bool)isAssociatedWithFragmentMinder;
 - (void)_setFragmentMindingInterval:(double)arg1;

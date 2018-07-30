@@ -11,6 +11,7 @@
 @interface NSURL (ChatKitAdditions)
 + (id)ckURLForChatIdentifier:(id)arg1 entryBody:(id)arg2;
 + (id)ckURLForResource:(id)arg1 withExtension:(id)arg2;
+@property(readonly, nonatomic) NSString *ckLaunchURLPresentContentForMessageGUID;
 @property(readonly, nonatomic) NSArray *ckSuggestedReplies;
 @property(readonly, nonatomic) NSString *ckLaunchURLPostComposeDismissal;
 @property(readonly, nonatomic) _Bool ckIsUnitTestingURL;

@@ -17,7 +17,6 @@
 + (void *)_threadedABAddressBookRef;
 + (void *)abAddressBookRef;
 + (void *)_abAddressBookRef;
-+ (id *)abAddressBook;
 + (void)_watchLocaleChanges;
 
 @end

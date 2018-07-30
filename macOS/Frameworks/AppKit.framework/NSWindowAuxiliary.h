@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSColor, NSColorSpace, NSData, NSDictionary, NSDisplayCycleObserver, NSDockTile, NSError, NSEvent, NSInspectorBar, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSRegion, NSResponder, NSScreen, NSString, NSUndoManager, NSView, NSViewController, NSViewHierarchyLock, NSWindow, NSWindowController, _NSWindowAnimator, _NSWindowFullScreenContentController, _NSWindowTransformAnimation;
+@class NSColor, NSColorSpace, NSData, NSDictionary, NSDisplayCycleObserver, NSDockTile, NSError, NSEvent, NSInspectorBar, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<NSAppearanceCustomization>, NSRecursiveLock, NSRegion, NSResponder, NSScreen, NSSnappingInfo, NSString, NSUndoManager, NSView, NSViewController, NSViewHierarchyLock, NSWindow, NSWindowController, _NSWindowAnimator, _NSWindowFullScreenContentController, _NSWindowTransformAnimation;
 
 @interface NSWindowAuxiliary : NSObject
 {
@@ -18,8 +18,6 @@
     NSUndoManager *undoManager;
     NSRecursiveLock *responderLock;
     id _rememberedFirstResponder;
-    struct __CFRunLoopObserver *_windowDisplayObserver;
-    struct __CFRunLoopObserver *_invalidCursorObserver;
     NSMapTable *_threadContexts;
     NSView *_lastFocusRingView;
     NSRegion *_lastFocusRingBleedRegion;
@@ -28,8 +26,6 @@
     NSMutableArray *_attachedSheets;
     NSMutableArray *_queuedSheets;
     NSString *dockWindowTitle;
-    NSMutableArray *_heartBeatClients;
-    double _lastDisplayTime;
     struct CGPoint stashedOrigin;
     id _moveHelper;
     void *windowHandlerRef;
@@ -42,7 +38,6 @@
     struct CGPoint collapsedOrigin;
     NSColor *pattern;
     id _bindingAdaptor;
-    id _growBoxOwner;
     NSView *_lastOtherHit;
     NSColor *compositedPattern;
     struct __auxWFlags {
@@ -57,11 +52,9 @@
         unsigned int dontSyncSurfaceToView:1;
         unsigned int windowPositionIsStale:1;
         unsigned int handlingDisplayChanged:1;
-        unsigned int blockHeartBeat:1;
         unsigned int resizeCornerShown:1;
         unsigned int locationIsTemporary:1;
         unsigned int canHide:1;
-        unsigned int autofill:1;
         unsigned int isOpaque:1;
         unsigned int receivedDockDeathNotification:1;
         unsigned int minimizeCompleted:1;
@@ -73,13 +66,13 @@
         unsigned int needsConstraint:1;
         unsigned int ownsRealWindow:1;
         unsigned int mightBeMovingClientSide:1;
-        unsigned int defaultButtonPaused:1;
+        unsigned int defaultButtonSuppressed:1;
         unsigned int movableByBackground:1;
         unsigned int preventsActivation:1;
         unsigned int ignoresMouseEvents:1;
         unsigned int keyWindowIgnoringFocus:1;
         unsigned int currentDepth:4;
-        unsigned int __unusedAlso____________:2;
+        unsigned int __unusedAlso____________:3;
         unsigned int allowsToolTipsWhenApplicationIsInactive:1;
         unsigned int needsToSetIgnoreTag:1;
         unsigned int needsToResetDragMargins:1;
@@ -116,7 +109,6 @@
         unsigned int wasReshapingEnabled:1;
         unsigned int autorecalculatesTopBorderThickness:1;
         unsigned int autorecalculatesBottomBorderThickness:1;
-        unsigned int relativeOrdering:2;
         unsigned int resizeWeighting:2;
         unsigned int showsTopBorderSeparator:1;
         unsigned int showsBottomBorderSeparator:1;
@@ -169,12 +161,13 @@
         unsigned int wasActiveBeforeCurrentEvent:1;
         unsigned int hasKeyAppearance:1;
         unsigned int hasMainAppearance:1;
+        unsigned int shouldHaveKeyAppearance:1;
+        unsigned int shouldHaveMainAppearance:1;
         unsigned int hasKeyFocus:1;
         unsigned int hasMainFocus:1;
         unsigned int canHostLayersInWindowServer:1;
         unsigned int hostsLayersInWindowServer:1;
         unsigned int hasIncompatibleAppearanceOverride:1;
-        unsigned int hasCustomAppearanceInASubview:1;
         unsigned int stoleKeyFocus:1;
         unsigned int documentShowsPanelOnClose:1;
         unsigned int usesPointIntegralizationForLayout:1;
@@ -211,10 +204,11 @@
         unsigned int layoutUpdateObserverScheduled:1;
         unsigned int RTLLayoutDirectionWasSet:1;
         unsigned int windowWillJoinActiveFullScreenSpace:1;
-        unsigned int hasOverriddenCGSubLevel:1;
         unsigned int hasExplicitTabbingIdentifier:1;
         unsigned int firstResponderIsWeak:1;
         unsigned int ignoreResignMainEvent:1;
+        unsigned int borderViewNeedsSetResetDragMargins:1;
+        unsigned int minimizedInFullScreen:1;
     } _auxWFlags;
     void *_windowRef;
     double _scaleFactor;
@@ -229,8 +223,6 @@
     NSDictionary *_animationsDictionary;
     struct __CFMachPort *clientSideDragPort;
     struct __CFRunLoopSource *clientSideDragSource;
-    NSMutableSet *viewBackingSurfaces;
-    NSView *growBoxView;
     NSView *_latchedViewForScrollEvents;
     _NSWindowFullScreenContentController *_fullScreenContentController;
     _NSWindowTransformAnimation *_runningWindowTransformAnimation;
@@ -264,11 +256,23 @@
     unsigned long long _previousGestureEventMaskBeforeRecognizers;
     long long _lastGestureRecognizerPressureMTID;
     long long _willDisplayBeforeEndOfCurrentRunloopPassCount;
-    double _shadowTransitionProgress;
+    NSDisplayCycleObserver *_updateConstraintsObserver;
+    unsigned long long _lastUpdateConstraintsCycleIdentifier;
+    unsigned long long _lastUpdateConstraintsCycleCount;
+    NSDisplayCycleObserver *_layoutObserver;
+    unsigned long long _lastLayoutCycleIdentifier;
+    unsigned long long _lastLayoutCycleCount;
+    NSDisplayCycleObserver *_displayObserver;
+    unsigned long long _lastDisplayCycleIdentifier;
+    unsigned long long _lastDisplayCycleCount;
+    NSDisplayCycleObserver *_updateStructuralRegionsObserver;
+    unsigned long long _lastUpdateStructuralRegionsCycleIdentifier;
+    unsigned long long _lastUpdateStructuralRegionsCycleCount;
+    unsigned long long _viewCount;
+    id _cgsWindow;
     NSWindowController *_windowController;
     _NSWindowAnimator *_animator;
     NSWindow *_parentWindow;
-    NSDisplayCycleObserver *_displayCycleObserver;
     NSData *_lastDragRegionData;
     NSViewController *_contentViewController;
     NSScreen *_savedScreen;
@@ -278,15 +282,16 @@
     long long _tabbingMode;
     unsigned long long _collectionBehavior;
     unsigned long long _lastAppliedCollectionBehavior;
-    struct CGSnappingInfo *_snappingInfo;
+    NSSnappingInfo *_snappingInfo;
     BOOL _enteringFullScreen;
+    NSObject<NSAppearanceCustomization> *_appearanceParent;
 }
 
+@property __weak NSObject<NSAppearanceCustomization> *appearanceParent; // @synthesize appearanceParent=_appearanceParent;
 @property BOOL enteringFullScreen; // @synthesize enteringFullScreen=_enteringFullScreen;
 @property __weak _NSWindowAnimator *animator; // @synthesize animator=_animator;
 @property __weak NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-@property(retain) NSDisplayCycleObserver *displayCycleObserver; // @synthesize displayCycleObserver=_displayCycleObserver;
-@property(nonatomic) struct CGSnappingInfo *snappingInfo; // @synthesize snappingInfo=_snappingInfo;
+@property(retain, nonatomic) NSSnappingInfo *snappingInfo; // @synthesize snappingInfo=_snappingInfo;
 @property(nonatomic) unsigned long long lastAppliedCollectionBehavior; // @synthesize lastAppliedCollectionBehavior=_lastAppliedCollectionBehavior;
 @property(nonatomic) unsigned long long collectionBehavior; // @synthesize collectionBehavior=_collectionBehavior;
 @property(nonatomic) long long tabbingMode; // @synthesize tabbingMode=_tabbingMode;

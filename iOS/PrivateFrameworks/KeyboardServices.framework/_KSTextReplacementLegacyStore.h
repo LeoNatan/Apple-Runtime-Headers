@@ -7,17 +7,21 @@
 #import "NSObject.h"
 
 #import "NSManagedObjectContextFaultingDelegate.h"
-#import "_KSTextReplacementStoreProtocol.h"
+#import "_KSTextReplacementSyncProtocol.h"
 
 @class NSDate, NSManagedObjectContext, NSObject<OS_dispatch_queue>, NSObject<OS_os_transaction>, NSPersistentStore, NSPersistentStoreCoordinator, NSString, NSURL;
 
-@interface _KSTextReplacementLegacyStore : NSObject <NSManagedObjectContextFaultingDelegate, _KSTextReplacementStoreProtocol>
+@interface _KSTextReplacementLegacyStore : NSObject <NSManagedObjectContextFaultingDelegate, _KSTextReplacementSyncProtocol>
 {
     NSObject<OS_os_transaction> *_uptimeTransaction;
     _Bool _suspendedForAccountChange;
     _Bool _forceMaintenance;
     _Bool _pendingSampleShortcutImport;
     _Bool _minimumUptimeDidExpire;
+    _Bool _didScheduleCacheUpdate;
+    _Bool _shouldUpdateTheCache;
+    _Bool _ubiquityStoreLoaded;
+    _Bool _shouldDisableCaching;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
     NSManagedObjectContext *_managedObjectContext;
     NSPersistentStore *_persistentStore;
@@ -26,13 +30,22 @@
     long long _importedSinceMaintenance;
     NSURL *_baseURL;
     NSDate *_persistentStoreDidLoadTime;
+    NSDate *_ubiquityStoreLoadStartTime;
+    NSString *_cacheFilePath;
 }
 
++ (id)cachedStorePath;
 + (id)basePersistentStoreURL;
 + (id)legacyStorePath;
 + (id)legacyImportWordKeyPairsFromFiles:(id)arg1;
 + (id)legacyImportFilePaths;
 + (id)textReplacementEntriesFromManagedObjects:(id)arg1;
+@property(retain, nonatomic) NSString *cacheFilePath; // @synthesize cacheFilePath=_cacheFilePath;
+@property(nonatomic) _Bool shouldDisableCaching; // @synthesize shouldDisableCaching=_shouldDisableCaching;
+@property(retain, nonatomic) NSDate *ubiquityStoreLoadStartTime; // @synthesize ubiquityStoreLoadStartTime=_ubiquityStoreLoadStartTime;
+@property(nonatomic) _Bool ubiquityStoreLoaded; // @synthesize ubiquityStoreLoaded=_ubiquityStoreLoaded;
+@property(nonatomic) _Bool shouldUpdateTheCache; // @synthesize shouldUpdateTheCache=_shouldUpdateTheCache;
+@property(nonatomic) _Bool didScheduleCacheUpdate; // @synthesize didScheduleCacheUpdate=_didScheduleCacheUpdate;
 @property(retain, nonatomic) NSDate *persistentStoreDidLoadTime; // @synthesize persistentStoreDidLoadTime=_persistentStoreDidLoadTime;
 @property(nonatomic) _Bool minimumUptimeDidExpire; // @synthesize minimumUptimeDidExpire=_minimumUptimeDidExpire;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
@@ -49,6 +62,7 @@
 - (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (void)persistentStoreCoordinatorStoresDidChange:(id)arg1;
 - (void)persistentStoreCoordinatorStoresWillChange:(id)arg1;
+- (void)runLegacyMigration;
 - (void)migrateSundanceData;
 - (void)migrateTellurideData;
 - (void)importLegacyEntries;
@@ -77,12 +91,17 @@
 - (_Bool)save;
 - (void)insertEntryWithValue:(id)arg1;
 - (id)entityDescription;
+- (void)iCloudAccountDidChange:(id)arg1;
+- (_Bool)writeEntriesToCache:(id)arg1;
+- (void)scheduleCacheUpdate:(id)arg1;
+- (id)entriesFromCache:(id *)arg1;
 - (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)queryTextReplacementsWithCallback:(CDUnknownBlockType)arg1;
 - (id)textReplacementEntries;
 - (id)_deleteTransaction:(id)arg1;
 - (id)removeEntriesWithPredicate:(id)arg1;
 - (void)removeAllEntries;
+- (void)requestSync:(unsigned long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)requestSyncWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)runMaintenanceIncludeLocalVariations:(_Bool)arg1;
@@ -90,6 +109,7 @@
 - (void)importSampleShortcutsIfNecessary;
 - (void)endMinimumUptime;
 - (void)requestMinimumUptime;
+- (void)unloadPersistentStore;
 - (void)loadPersistentStoreIfNecessary;
 - (void)cleanup;
 - (double)minimumUptimeRemaining;

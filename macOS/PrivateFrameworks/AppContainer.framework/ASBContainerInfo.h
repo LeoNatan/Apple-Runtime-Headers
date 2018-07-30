@@ -8,6 +8,7 @@
 
 @class ASBMutableContainer, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface ASBContainerInfo : NSObject
 {
     unsigned long long _refCount;

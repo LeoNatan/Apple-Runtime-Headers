@@ -10,17 +10,11 @@
 
 @protocol _SFPBTrack <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasPlayAction;
 @property(retain, nonatomic) _SFPBActionItem *playAction;
-@property(readonly, nonatomic) _Bool hasPreview;
 @property(retain, nonatomic) _SFPBURL *preview;
-@property(readonly, nonatomic) _Bool hasHighlighted;
 @property(nonatomic) _Bool highlighted;
-@property(readonly, nonatomic) _Bool hasDuration;
 @property(copy, nonatomic) NSString *duration;
-@property(readonly, nonatomic) _Bool hasNumber;
 @property(copy, nonatomic) NSString *number;
-@property(readonly, nonatomic) _Bool hasTitle;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

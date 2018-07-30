@@ -46,8 +46,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasContentAdvisoryImage;
-@property(readonly, nonatomic) _Bool hasContentAdvisory;
 - (id)buyOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)buyOptionsCount;
 - (void)addBuyOptions:(id)arg1;
@@ -57,13 +55,6 @@
 - (void)addSubtitleCustomLineBreaking:(id)arg1;
 - (void)clearSubtitleCustomLineBreaking;
 - (void)setSubtitleCustomLineBreaking:(id)arg1;
-@property(readonly, nonatomic) _Bool hasPunchout;
-@property(readonly, nonatomic) _Bool hasReviewText;
-@property(readonly, nonatomic) _Bool hasOverlayImage;
-@property(readonly, nonatomic) _Bool hasReviewGlyph;
-@property(readonly, nonatomic) _Bool hasThumbnail;
-@property(readonly, nonatomic) _Bool hasSubtitleText;
-@property(readonly, nonatomic) _Bool hasTitle;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

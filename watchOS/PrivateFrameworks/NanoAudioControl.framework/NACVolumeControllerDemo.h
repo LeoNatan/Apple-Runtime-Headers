@@ -20,8 +20,10 @@ __attribute__((visibility("hidden")))
     _Bool _prominentHapticEnabled;
     id <NACVolumeControllerDelegate> _delegate;
     float _hapticIntensity;
+    int _hapticState;
 }
 
+@property(nonatomic) int hapticState; // @synthesize hapticState=_hapticState;
 @property(nonatomic, getter=isProminentHapticEnabled) _Bool prominentHapticEnabled; // @synthesize prominentHapticEnabled=_prominentHapticEnabled;
 @property(nonatomic, getter=isSystemMuted) _Bool systemMuted; // @synthesize systemMuted=_systemMuted;
 @property(nonatomic) float hapticIntensity; // @synthesize hapticIntensity=_hapticIntensity;

@@ -18,7 +18,6 @@
 - (id)copyArrayRepresentation;
 - (void **)frames;
 - (unsigned int)frameCount;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFrames:(void **)arg1 count:(unsigned int)arg2;
 

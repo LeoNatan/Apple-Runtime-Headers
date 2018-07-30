@@ -10,7 +10,6 @@
 
 @class NSImmediateActionGestureRecognizer, NSString, NSView;
 
-__attribute__((visibility("hidden")))
 @interface ABImmediateActionGestureAdapter : NSObject <NSImmediateActionAnimationController>
 {
     id _target;

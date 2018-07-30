@@ -39,6 +39,10 @@
 @property(readonly, nonatomic) NSString *phoneticFirstName; // @synthesize phoneticFirstName=_phoneticFirstName;
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToContact:(id)arg1;
+- (unsigned long long)hash;
+- (id)description;
 - (id)flatten;
 - (id)initWithFirstName:(id)arg1 phoneticFirstName:(id)arg2 middleName:(id)arg3 phoneticMiddleName:(id)arg4 lastName:(id)arg5 phoneticLastName:(id)arg6 organizationName:(id)arg7 jobTitle:(id)arg8 nickname:(id)arg9 relations:(id)arg10 streets:(id)arg11 cities:(id)arg12 score:(double)arg13;
 

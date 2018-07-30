@@ -31,7 +31,10 @@
 @property(nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
 - (void)fetchChangeHistory;
-- (void)handleNotification:(id)arg1;
+- (void)handleDistributedNotification:(id)arg1;
+- (void)postDistributedSaveNotification;
+- (void)handleLocalSaveNotification:(id)arg1;
+- (void)handleXPCStoreNotification:(id)arg1;
 - (void)stopListening;
 - (void)startListening;
 - (void)dealloc;

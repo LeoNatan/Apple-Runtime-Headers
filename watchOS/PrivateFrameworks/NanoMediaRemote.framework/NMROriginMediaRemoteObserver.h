@@ -9,7 +9,7 @@
 #import "NMROriginObserver.h"
 #import "NMRPlaybackQueueDelegate.h"
 
-@class NMRMediaRemoteUpdater, NMRNowPlayingClient, NMRNowPlayingState, NMROrigin, NMRPlaybackQueue, NSObject<OS_dispatch_queue>, NSString;
+@class NMRMediaRemoteNowPlayingState, NMRMediaRemoteUpdater, NMRNowPlayingClient, NMRNowPlayingState, NMROrigin, NMRPlaybackQueue, NSObject<OS_dispatch_queue>, NSString;
 
 @interface NMROriginMediaRemoteObserver : NSObject <NMRPlaybackQueueDelegate, NMROriginObserver>
 {
@@ -24,10 +24,10 @@
     NMRMediaRemoteUpdater *_bundleIDUpdater;
     NMRMediaRemoteUpdater *_supportedCommandsUpdater;
     NMRMediaRemoteUpdater *_playbackStateUpdater;
+    NMRMediaRemoteNowPlayingState *_mutableNowPlayingState;
     _Bool _shouldObservePlaybackQueue;
     _Bool _shouldObserveArtwork;
     NMROrigin *_origin;
-    NMRNowPlayingState *_nowPlayingState;
     NMRPlaybackQueue *_playbackQueue;
     id <NMROriginObserverDelegate> _delegate;
 }
@@ -48,6 +48,7 @@
 - (void)playbackQueueDidChange:(id)arg1;
 - (_Bool)_hasEqualIdentifierWithContentItem:(void *)arg1;
 - (void)_updatePlaybackStateWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_filteredSupportedCommands:(id)arg1;
 - (void)_updateSupportedCommandsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateNowPlayingApplicationInfoWithOptions:(unsigned int)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_updateNowPlayingContentItem:(void *)arg1;
@@ -66,7 +67,7 @@
 - (void)_updateEverything;
 - (void)updateNowPlayingStateWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NMRPlaybackQueue *playbackQueue; // @synthesize playbackQueue=_playbackQueue;
-@property(readonly, nonatomic) NMRNowPlayingState *nowPlayingState; // @synthesize nowPlayingState=_nowPlayingState;
+@property(readonly, nonatomic) NMRNowPlayingState *nowPlayingState;
 - (void)endObserving;
 - (void)beginObserving;
 - (void)_updateNowPlayingClientWithCompletion:(CDUnknownBlockType)arg1;

@@ -20,8 +20,6 @@
 - (void)_resendFailedXPCMessages;
 - (void)_handleFailedXPCMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)_createAndSendXPCMessageWithName:(id)arg1 userInfo:(id)arg2;
-- (void)disableLogMsgInstrumentation;
-- (void)enableLogMsgInstrumentation;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
 - (void)registerLogMsgState:(id)arg1;
 - (void)forceFlushLogs;

@@ -6,7 +6,6 @@
 
 #import <AddressBook/CNUIUndoableCommand.h>
 
-__attribute__((visibility("hidden")))
 @interface CNUISetMultipleImagesCommand : CNUIUndoableCommand
 {
     BOOL _shouldSave;

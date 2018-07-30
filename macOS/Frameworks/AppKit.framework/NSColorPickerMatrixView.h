@@ -23,13 +23,11 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int _emptyEnabled:1;
         unsigned int _hasEmptyColorCell:1;
-        unsigned int _hasGradientBackground:1;
-        unsigned int _reserved:29;
+        unsigned int _reserved:30;
     } _flags;
 }
 
 + (BOOL)hasEmptyColorForDefaultList;
-+ (id)defaultImage;
 + (id)defaultColorList;
 @property id <NSColorPickerMatrixViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
@@ -54,7 +52,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isFlipped;
 - (void)drawColorPickerHighlightForView:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-@property BOOL hasGradientBackground;
 @property(getter=isEmptyColorEnabled) BOOL emptyColorEnabled; // @dynamic emptyColorEnabled;
 @property(retain) NSColorList *colorList; // @synthesize colorList=_colorList;
 @property struct CGSize swatchSize;

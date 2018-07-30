@@ -8,7 +8,6 @@
 
 @class ABAccount, ABAddressBook;
 
-__attribute__((visibility("hidden")))
 @interface ABBrowsingGroupEntry : ABGroupEntry
 {
 }

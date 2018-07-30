@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSDictionary, SUGradient, UIColor;
 
-@interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying>
+@interface SUViewControllerScriptProperties : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _alwaysDispatchesScrollEvents;
     UIColor *_backgroundColor;
@@ -35,6 +35,7 @@
     _Bool _usesBlurredBackground;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool usesBlurredBackground; // @synthesize usesBlurredBackground=_usesBlurredBackground;
 @property(retain, nonatomic) UIColor *topExtensionColor; // @synthesize topExtensionColor=_topExtensionColor;
 @property(nonatomic) _Bool showsBackgroundShadow; // @synthesize showsBackgroundShadow=_showsBackgroundShadow;

@@ -14,7 +14,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)optionWithDisabledDataSourceIdentifiers:(id)arg1;
++ (id)optionWithDisabledDataSourceIdentifiers:(id)arg1 forDevice:(id)arg2;
 @property(readonly, nonatomic) NSSet *disabledBundleIdentifiers; // @synthesize disabledBundleIdentifiers=_disabledBundleIdentifiers;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
@@ -26,8 +26,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)localizedName;
 - (id)dailySnapshotKey;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
-- (id)initWithDisabledDataSourceIdentifiers:(id)arg1;
+- (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;
+- (id)initWithDisabledDataSourceIdentifiers:(id)arg1 forDevice:(id)arg2;
 
 @end
 

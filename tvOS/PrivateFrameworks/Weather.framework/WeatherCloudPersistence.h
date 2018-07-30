@@ -10,6 +10,7 @@
 
 @class NSString, NSUbiquitousKeyValueStore;
 
+__attribute__((visibility("hidden")))
 @interface WeatherCloudPersistence : NSObject <WeatherPreferencesPersistence>
 {
     id <WeatherCloudPersistenceDelegate> _delegate;

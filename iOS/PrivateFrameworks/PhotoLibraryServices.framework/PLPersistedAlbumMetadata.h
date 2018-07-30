@@ -22,6 +22,7 @@
     NSNumber *_kind;
     NSString *_customKeyAssetUUID;
     NSMutableOrderedSet *_assetUUIDs;
+    NSString *_importSessionID;
     PLGenericAlbum *_genericAlbum;
     NSURL *_metadataURL;
 }
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) PLGenericAlbum *genericAlbum; // @synthesize genericAlbum=_genericAlbum;
 @property(nonatomic) _Bool allowsOverwrite; // @synthesize allowsOverwrite=_allowsOverwrite;
+@property(retain, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
 @property(retain, nonatomic) NSMutableOrderedSet *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(retain, nonatomic) NSString *customKeyAssetUUID; // @synthesize customKeyAssetUUID=_customKeyAssetUUID;
 @property(nonatomic) int customSortKey; // @synthesize customSortKey=_customSortKey;
@@ -48,7 +50,7 @@
 - (id)insertAlbumFromDataInManagedObjectContext:(id)arg1;
 - (void)removePersistedAlbumData;
 - (void)persistAlbumData;
-- (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 assetUUIDs:(id)arg5;
+- (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 assetUUIDs:(id)arg5 persistedAlbumDataDirectory:(id)arg6;
 - (id)initWithPersistedDataAtURL:(id)arg1;
 - (id)initWithPLGenericAlbum:(id)arg1;
 - (void)dealloc;

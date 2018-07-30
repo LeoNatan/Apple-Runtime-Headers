@@ -10,7 +10,6 @@
 
 @protocol _SFPBDate <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasSecondsSince1970;
 @property(nonatomic) double secondsSince1970;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -13,10 +13,10 @@
     double _zPosition;
 }
 
+@property double zPosition; // @synthesize zPosition=_zPosition;
+@property double alphaValue; // @synthesize alphaValue=_alphaValue;
+@property struct CGRect frame; // @synthesize frame=_frame;
 - (id)description;
-@property double zPosition;
-@property double alphaValue;
-@property struct CGRect frame;
 
 @end
 

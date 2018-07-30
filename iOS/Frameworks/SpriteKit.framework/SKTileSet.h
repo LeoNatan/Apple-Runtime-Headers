@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray, NSMutableArray, NSString, SKTileGroup;
 
-@interface SKTileSet : NSObject <NSCopying, NSCoding>
+@interface SKTileSet : NSObject <NSCopying, NSSecureCoding>
 {
     NSMutableArray *_definitions;
     NSMutableArray *_groups;
@@ -29,6 +29,7 @@
 + (id)recursivePathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
 + (id)tileSetWithTileGroups:(id)arg1 tileSetType:(unsigned long long)arg2;
 + (id)tileSetWithTileGroups:(id)arg1;
++ (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -49,6 +50,7 @@
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
+- (_Bool)isEqualToNode:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(retain, nonatomic) NSArray *stamps;

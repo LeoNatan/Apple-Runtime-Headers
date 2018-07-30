@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, RTAuthorizationManager, RTDefaultsManager, RTDeviceLocationPredictor, RTLocationManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPLOIETA, RTPersistentTimer, RTPlatform, RTStarkManager, RTVisitManager;
+@class NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, RTAuthorizationManager, RTDefaultsManager, RTDeviceLocationPredictor, RTLocationManager, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPLOIETA, RTPersistentTimer, RTPlatform, RTStarkManager, RTVisitManager;
 
 @interface RTTrafficConditionsManager : NSObject
 {
@@ -18,6 +18,7 @@
     RTAuthorizationManager *_authorizationManager;
     RTDeviceLocationPredictor *_deviceLocationPredictor;
     RTStarkManager *_starkManager;
+    RTMapServiceManager *_mapServiceManager;
     RTMapsSupportManager *_mapsSupportManager;
     RTMetricManager *_metricManager;
     RTPlatform *_platform;
@@ -29,7 +30,6 @@
 }
 
 + (_Bool)mapsAuthorized;
-+ (void)fetchPLOIETAFrom:(id)arg1 to:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 @property(retain, nonatomic) NSMutableArray *trafficConditionsMetrics; // @synthesize trafficConditionsMetrics=_trafficConditionsMetrics;
 @property(retain, nonatomic) RTPersistentTimer *showTrafficConditionsTimer; // @synthesize showTrafficConditionsTimer=_showTrafficConditionsTimer;
 @property(retain, nonatomic) NSDate *showTrafficConditionsDate; // @synthesize showTrafficConditionsDate=_showTrafficConditionsDate;
@@ -38,6 +38,7 @@
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(retain, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
+@property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTStarkManager *starkManager; // @synthesize starkManager=_starkManager;
 @property(retain, nonatomic) RTDeviceLocationPredictor *deviceLocationPredictor; // @synthesize deviceLocationPredictor=_deviceLocationPredictor;
 @property(retain, nonatomic) RTAuthorizationManager *authorizationManager; // @synthesize authorizationManager=_authorizationManager;
@@ -55,13 +56,14 @@
 - (void)_clearTrafficConditions;
 - (void)_showTrafficConditions;
 - (void)_updateTrafficConditions;
+- (void)fetchPLOIETAFrom:(id)arg1 to:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)fetchPLOIETAWithHandler:(CDUnknownBlockType)arg1;
 - (void)onMotionActivityNotification:(id)arg1;
 - (void)_onMotionActivityNotification:(id)arg1;
 - (void)_setup;
 - (void)setShowTrafficConditionsTimer;
 - (void)dealloc;
-- (id)initWithDefaultsManager:(id)arg1 motionActivityManager:(id)arg2 visitManager:(id)arg3 locationManager:(id)arg4 authorizationManager:(id)arg5 deviceLocationPredictor:(id)arg6 starkManager:(id)arg7 mapsSupportManager:(id)arg8 metricManager:(id)arg9 platform:(id)arg10;
+- (id)initWithDefaultsManager:(id)arg1 motionActivityManager:(id)arg2 visitManager:(id)arg3 locationManager:(id)arg4 authorizationManager:(id)arg5 deviceLocationPredictor:(id)arg6 starkManager:(id)arg7 mapServiceManager:(id)arg8 mapsSupportManager:(id)arg9 metricManager:(id)arg10 platform:(id)arg11;
 - (id)init;
 
 @end

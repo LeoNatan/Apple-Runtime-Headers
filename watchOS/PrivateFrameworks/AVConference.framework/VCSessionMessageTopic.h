@@ -6,35 +6,35 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSString;
+@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 __attribute__((visibility("hidden")))
 @interface VCSessionMessageTopic : NSObject
 {
     NSArray *associatedStrings;
     NSString *topicKey;
-    int latestReceivedTopicMessageNumber;
     _Bool allowConcurrent;
     NSObject<OS_dispatch_queue> *outMessageQueue;
-    struct tagHANDLE *handle;
-    unsigned long p2pID;
+    id controlChannelWeak;
     NSObject<OS_dispatch_queue> *inMessageQueue;
     CDUnknownBlockType receiveBlock;
     int latestOutgoingMessageIndex;
     _Bool isSendingEnabled;
     _Bool shouldEncodeTopicKeyInMessage;
     NSString *topicPrefix;
+    NSMutableDictionary *transactionCache;
 }
 
 @property(nonatomic, setter=setIsSendingEnabled:) _Bool isSendingEnabled; // @synthesize isSendingEnabled;
 @property(readonly) NSString *topicKey; // @synthesize topicKey;
-- (void)passMessage:(id)arg1 sequence:(int)arg2;
-- (void)setP2PID:(unsigned long)arg1;
-- (void)sendMessage:(id)arg1 withSequence:(int)arg2 numRetries:(int)arg3;
+- (void)clearTransactionCacheForParticipant:(id)arg1;
+- (void)passMessage:(id)arg1 sequence:(int)arg2 fromParticipant:(id)arg3;
+- (void)sendMessage:(id)arg1 participantID:(unsigned long long)arg2 withSequence:(int)arg3 numRetries:(int)arg4;
+- (void)sendMessage:(id)arg1 participantID:(unsigned long long)arg2;
 - (void)sendMessage:(id)arg1;
 - (_Bool)isStringAssociated:(id)arg1;
 - (void)dealloc;
-- (id)initWithTopicKey:(id)arg1 strings:(id)arg2 allowConcurrent:(_Bool)arg3 receiveHandler:(CDUnknownBlockType)arg4;
+- (id)initWithTopicKey:(id)arg1 strings:(id)arg2 allowConcurrent:(_Bool)arg3 controlChannel:(id)arg4 receiveHandler:(CDUnknownBlockType)arg5;
 
 @end
 

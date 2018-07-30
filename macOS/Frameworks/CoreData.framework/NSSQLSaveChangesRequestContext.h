@@ -6,7 +6,7 @@
 
 #import <CoreData/NSSQLStoreRequestContext.h>
 
-@class NSDictionary, NSFaultHandler, NSMutableDictionary, NSSQLModel, NSSQLSavePlan, NSSaveChangesRequest, NSSet;
+@class NSDictionary, NSFaultHandler, NSMutableDictionary, NSSQLModel, NSSQLSavePlan, NSSaveChangesRequest, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSSQLSaveChangesRequestContext : NSSQLStoreRequestContext
@@ -17,12 +17,18 @@ __attribute__((visibility("hidden")))
     NSSet *_objectIDsToPruneTrigger;
     NSMutableDictionary *_originalCachedRows;
     NSMutableDictionary *_updateMasksForHistoryTracking;
+    NSString *_externalDataReferencesDirectory;
+    NSString *_externalDataLinksDirectory;
+    NSString *_fileBackedFuturesDirectory;
 }
 
 @property(readonly, nonatomic) NSMutableDictionary *originalCachedRows; // @synthesize originalCachedRows=_originalCachedRows;
 @property(readonly, nonatomic) NSFaultHandler *faultHandler; // @synthesize faultHandler=_faultHandler;
 @property(readonly, nonatomic) NSSQLSavePlan *savePlan; // @synthesize savePlan=_savePlan;
 @property(readonly, nonatomic) NSDictionary *metadataToWrite; // @synthesize metadataToWrite=_metadataToWrite;
+@property(readonly, nonatomic) NSString *fileBackedFuturesDirectory; // @synthesize fileBackedFuturesDirectory=_fileBackedFuturesDirectory;
+@property(readonly, nonatomic) NSString *externalDataLinksDirectory; // @synthesize externalDataLinksDirectory=_externalDataLinksDirectory;
+@property(readonly, nonatomic) NSString *externalDataReferencesDirectory; // @synthesize externalDataReferencesDirectory=_externalDataReferencesDirectory;
 - (id)dataMaskForKey:(id)arg1;
 - (void)addDataMask:(id)arg1 forEntityKey:(id)arg2;
 - (void)setOriginalRow:(id)arg1 forObjectID:(id)arg2;

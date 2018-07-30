@@ -6,13 +6,48 @@
 
 #import "NSObject.h"
 
+#import "OCDReaderDelegate.h"
+
+@class CMArchiveManager, CMMapper, CMState, NSString, OCDDocument;
+
 __attribute__((visibility("hidden")))
-@interface QLTop : NSObject
+@interface QLTop : NSObject <OCDReaderDelegate>
 {
+    CMMapper *_mapper;
+    CMState *_state;
+    CMArchiveManager *_archiver;
+    OCDDocument *_document;
+    NSString *_fileName;
+    unsigned long long _format;
+    BOOL _forIndexing;
 }
 
-+ (void)fillHTMLArchiveForOfficeData:(id)arg1 fileName:(id)arg2 dataFormat:(int)arg3 archiver:(id)arg4;
-+ (void)fillHTMLArchiveForOfficeFile:(id)arg1 dataFormat:(int)arg2 archiver:(id)arg3;
++ (BOOL)supportsProgressiveMapping;
++ (void)fillHTMLArchiveForOfficeData:(id)arg1 fileName:(id)arg2 dataFormat:(unsigned long long)arg3 archiver:(id)arg4;
++ (id)metadataForBinaryOfficeFileAtURL:(id)arg1 error:(id *)arg2;
++ (void)fillHTMLArchiveForOfficeFile:(id)arg1 dataFormat:(unsigned long long)arg2 archiver:(id)arg3;
++ (void)fillHTMLArchiveForOfficeFile:(id)arg1 orData:(id)arg2 dataFileName:(id)arg3 dataFormat:(unsigned long long)arg4 archiver:(id)arg5;
+@property BOOL forIndexing; // @synthesize forIndexing=_forIndexing;
+@property(readonly) CMState *state; // @synthesize state=_state;
+@property(readonly) CMMapper *mapper; // @synthesize mapper=_mapper;
+- (void).cxx_destruct;
+- (void)readerDidEndDocument:(id)arg1;
+- (void)readerDidReadElement:(id)arg1 atIndex:(unsigned long long)arg2 inDocument:(id)arg3 isLastElement:(BOOL)arg4;
+- (void)readerDidStartDocument:(id)arg1 withElementCount:(long long)arg2;
+- (id)documentWithFile:(id)arg1 orData:(id)arg2 isXML:(BOOL)arg3 archiver:(id)arg4;
+- (void)readFile:(id)arg1 orData:(id)arg2 dataFileName:(id)arg3 format:(unsigned long long)arg4 archiver:(id)arg5 forIndexing:(BOOL)arg6;
+- (void)setupMappingStateWithDocument:(id)arg1;
+- (Class)readerClassForBinaryDocuments;
+- (Class)readerClassForXMLDocuments;
+- (Class)mapperClassForIndexing:(BOOL)arg1;
+- (Class)stateClass;
+- (void)initializeClasses;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

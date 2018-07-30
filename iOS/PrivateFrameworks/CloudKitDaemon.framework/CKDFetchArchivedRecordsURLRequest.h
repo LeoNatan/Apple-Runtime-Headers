@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _shouldFetchAssetContent;
     NSArray *_recordZoneIDs;
-    NSDictionary *_optionsByRecordZoneID;
+    NSDictionary *_configurationsByRecordZoneID;
     NSSet *_desiredAssetKeys;
     CDUnknownBlockType _recordFetchedBlock;
     NSMutableDictionary *_zoneIDsByRequestOperationUUID;
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType recordFetchedBlock; // @synthesize recordFetchedBlock=_recordFetchedBlock;
 @property(retain, nonatomic) NSSet *desiredAssetKeys; // @synthesize desiredAssetKeys=_desiredAssetKeys;
 @property(nonatomic) _Bool shouldFetchAssetContent; // @synthesize shouldFetchAssetContent=_shouldFetchAssetContent;
-@property(retain, nonatomic) NSDictionary *optionsByRecordZoneID; // @synthesize optionsByRecordZoneID=_optionsByRecordZoneID;
+@property(retain, nonatomic) NSDictionary *configurationsByRecordZoneID; // @synthesize configurationsByRecordZoneID=_configurationsByRecordZoneID;
 @property(copy, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
 - (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;
@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (int)operationType;
 @property(readonly, nonatomic) NSDictionary *resultsByRecordZoneID;
 @property(readonly, nonatomic) NSDictionary *zoneErrorsByZoneID;
-- (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
+- (id)initWithRecordZoneIDs:(id)arg1 configurationsByRecordZoneID:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

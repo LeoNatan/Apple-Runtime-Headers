@@ -37,6 +37,7 @@
 - (id)urlSessionDelegate;
 - (id)sessionConfiguration;
 - (id)handleWillLoadRequest:(id)arg1;
+- (void)shouldLoadRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadRequest:(id)arg1;
 - (void)_loadRequestMain:(id)arg1;
 - (void)_finishedLoading;

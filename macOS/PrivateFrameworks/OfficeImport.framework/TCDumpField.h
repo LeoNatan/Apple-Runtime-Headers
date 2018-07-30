@@ -8,13 +8,13 @@
 
 @class NSString, TCDumpType;
 
-__attribute__((visibility("hidden")))
 @interface TCDumpField : NSObject
 {
     TCDumpType *mType;
     NSString *mName;
 }
 
+- (void).cxx_destruct;
 - (id)name;
 - (id)type;
 - (id)initWithType:(id)arg1 name:(id)arg2;

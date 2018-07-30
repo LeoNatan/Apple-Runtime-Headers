@@ -6,7 +6,6 @@
 
 #import "NSTextView.h"
 
-__attribute__((visibility("hidden")))
 @interface ABNoteTextView : NSTextView
 {
     BOOL _needsCardViewBorderDrawing;

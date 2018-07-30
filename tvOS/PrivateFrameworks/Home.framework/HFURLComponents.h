@@ -10,19 +10,22 @@
 
 @interface HFURLComponents : NSObject
 {
-    NSURL *_url;
+    NSURL *_URL;
     HFHomeKitDispatcher *_homeKitDispatcher;
 }
 
 + (id)homeKitObjectURLForDestination:(unsigned long long)arg1 secondaryDestination:(unsigned long long)arg2 UUID:(id)arg3;
 + (id)_URLComponentsForDestination:(unsigned long long)arg1;
++ (_Bool)isHomeAppURL:(id)arg1;
++ (id)symptomFromURL:(id)arg1 accessory:(id)arg2;
++ (id)fixSymptomURLForAccessory:(id)arg1 symptom:(id)arg2;
 + (id)musicLoginURL;
 + (id)locationPrivacyURL;
 + (id)musicPrivacyURL;
 + (id)siriPrivacyURL;
 + (id)aboutResidentDeviceURL;
 @property(readonly, nonatomic) HFHomeKitDispatcher *homeKitDispatcher; // @synthesize homeKitDispatcher=_homeKitDispatcher;
-@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (id)_homeKitIdentifier;
 - (id)description;

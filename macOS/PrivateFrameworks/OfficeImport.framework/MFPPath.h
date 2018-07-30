@@ -8,12 +8,12 @@
 
 @class OITSUBezierPath;
 
-__attribute__((visibility("hidden")))
 @interface MFPPath : NSObject
 {
     OITSUBezierPath *mPath;
 }
 
+- (void).cxx_destruct;
 - (id)path;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;

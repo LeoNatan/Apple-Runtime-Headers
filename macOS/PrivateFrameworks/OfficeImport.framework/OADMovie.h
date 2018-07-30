@@ -8,7 +8,6 @@
 
 @class NSData, NSString;
 
-__attribute__((visibility("hidden")))
 @interface OADMovie : OCDDelayedMedia
 {
     NSData *mData;
@@ -25,8 +24,8 @@ __attribute__((visibility("hidden")))
 @property BOOL isAudioOnly; // @synthesize isAudioOnly=mIsAudioOnly;
 @property(retain) NSString *name; // @synthesize name=mName;
 @property(retain) NSData *data; // @synthesize data=mData;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

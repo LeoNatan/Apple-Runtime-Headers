@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 + (long long)activityCategory;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)activityImage;
+- (id)_activityBundleImageConfiguration;
 - (id)activityTitle;
 - (id)activityType;
 

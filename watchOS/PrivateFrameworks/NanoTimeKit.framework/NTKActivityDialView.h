@@ -6,17 +6,19 @@
 
 #import "UIView.h"
 
-@class NSArray, NTKFaceColorScheme;
+@class CLKDevice, NSArray, NTKFaceColorScheme;
 
 @interface NTKActivityDialView : UIView
 {
     _Bool _shouldRasterize;
     NTKFaceColorScheme *_colorScheme;
     float _zoomFraction;
+    CLKDevice *_device;
     NSArray *_segments;
 }
 
 @property(readonly, nonatomic) NSArray *segments; // @synthesize segments=_segments;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) float zoomFraction; // @synthesize zoomFraction=_zoomFraction;
 @property(nonatomic) _Bool shouldRasterize; // @synthesize shouldRasterize=_shouldRasterize;
 @property(retain, nonatomic) NTKFaceColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
@@ -24,7 +26,7 @@
 - (float)_segmentAlphaForEditMode:(int)arg1;
 - (float)_handAlphaForEditMode:(int)arg1;
 - (void)applyTransitionFromScheme:(id)arg1 toScheme:(id)arg2 fraction:(float)arg3;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 
 @end
 

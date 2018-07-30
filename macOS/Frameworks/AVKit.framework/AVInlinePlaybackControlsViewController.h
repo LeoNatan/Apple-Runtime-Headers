@@ -6,15 +6,18 @@
 
 #import <AVKit/AVPlayerControlsViewController.h>
 
-@class NSView;
+@class NSStackView, NSView;
 
 @interface AVInlinePlaybackControlsViewController : AVPlayerControlsViewController
 {
     NSView *_initialFirstResponder;
     double _unmutedVolume;
     CDUnknownBlockType _nextKeyViewSetupBlock;
+    double _layoutWidth;
+    NSStackView *_timelineControl;
 }
 
+@property(retain) NSStackView *timelineControl; // @synthesize timelineControl=_timelineControl;
 - (void).cxx_destruct;
 - (void)volumeButtonPressed:(id)arg1;
 - (id)initialFirstResponder;
@@ -23,7 +26,10 @@
 - (long long)layoutStyle;
 - (id)backgroundBackdropViewMaskImage;
 - (id)controlsStyleIdentifier;
+@property double layoutWidth;
+- (double)minimumWidth;
 - (void)setupNextKeyView;
+- (void)viewDidLayout;
 - (void)loadView;
 
 @end

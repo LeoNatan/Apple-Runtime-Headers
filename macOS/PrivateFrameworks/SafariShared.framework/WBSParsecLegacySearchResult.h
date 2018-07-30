@@ -9,7 +9,7 @@
 #import "WBSCompletionListItem.h"
 #import "WBSParsecSearchResult.h"
 
-@class MKMapItem, NSArray, NSString, NSURL, SFSearchResult, WBSParsecActionButton, WBSParsecImageRepresentation, WBSQuerySuggestion;
+@class MKMapItem, NSString, NSURL, SFSearchResult, WBSParsecActionButton, WBSParsecImageRepresentation, WBSQuerySuggestion;
 
 @interface WBSParsecLegacySearchResult : WBSParsecModel <WBSParsecSearchResult, WBSCompletionListItem>
 {
@@ -32,7 +32,6 @@
     NSString *_referrerForLoadingResult;
     WBSParsecActionButton *_actionButton;
     MKMapItem *_mapItem;
-    NSArray *_additionalMapItems;
     NSString *_alternateSectionHeader;
     long long _placementHint;
     unsigned long long _displayOptions;
@@ -52,7 +51,6 @@
 @property(readonly, nonatomic) unsigned long long displayOptions; // @synthesize displayOptions=_displayOptions;
 @property(readonly, nonatomic) long long placementHint; // @synthesize placementHint=_placementHint;
 @property(readonly, copy, nonatomic) NSString *alternateSectionHeader; // @synthesize alternateSectionHeader=_alternateSectionHeader;
-@property(readonly, nonatomic) NSArray *additionalMapItems; // @synthesize additionalMapItems=_additionalMapItems;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) WBSParsecActionButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(readonly, copy, nonatomic) NSString *referrerForLoadingResult; // @synthesize referrerForLoadingResult=_referrerForLoadingResult;

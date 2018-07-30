@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
+@class CLKDevice;
+
 @interface NTKUtilityComplicationFactory : NSObject
 {
     _Bool _accommodatesTwoTopComplications;
+    CLKDevice *_device;
     id <NTKUtilityComplicationFactoryDelegate> _delegate;
     float _normalSidePadding;
     float _normalVerticalPadding;
-    float _normalCircularPadding;
     float _deselectedKeylineSideInnerPadding;
     float _deselectedKeylineVerticalInnerPadding;
     float _deselectedKeylineCircularInnerPadding;
@@ -20,10 +22,14 @@
     float _selectedKeylineHeight;
     float _foregroundAlpha;
     float _foregroundImageAlpha;
+    float _maxNormalLongWidth;
+    float _crownIndicatorGap;
     float _dateKeylineMaxWidth;
     float _dateHorizontalCenterOffset;
     float _dateVerticalCenterOffset;
     int _bottomCenterLayout;
+    struct CGSize _normalCircularPadding;
+    struct UIEdgeInsets _screenEdgeInsets;
 }
 
 + (unsigned int)placementForSlot:(int)arg1;
@@ -31,6 +37,9 @@
 @property(nonatomic) float dateVerticalCenterOffset; // @synthesize dateVerticalCenterOffset=_dateVerticalCenterOffset;
 @property(nonatomic) float dateHorizontalCenterOffset; // @synthesize dateHorizontalCenterOffset=_dateHorizontalCenterOffset;
 @property(nonatomic) float dateKeylineMaxWidth; // @synthesize dateKeylineMaxWidth=_dateKeylineMaxWidth;
+@property(nonatomic) float crownIndicatorGap; // @synthesize crownIndicatorGap=_crownIndicatorGap;
+@property(nonatomic) struct UIEdgeInsets screenEdgeInsets; // @synthesize screenEdgeInsets=_screenEdgeInsets;
+@property(nonatomic) float maxNormalLongWidth; // @synthesize maxNormalLongWidth=_maxNormalLongWidth;
 @property(nonatomic) float foregroundImageAlpha; // @synthesize foregroundImageAlpha=_foregroundImageAlpha;
 @property(nonatomic) float foregroundAlpha; // @synthesize foregroundAlpha=_foregroundAlpha;
 @property(nonatomic) float selectedKeylineHeight; // @synthesize selectedKeylineHeight=_selectedKeylineHeight;
@@ -38,18 +47,19 @@
 @property(nonatomic) float deselectedKeylineCircularInnerPadding; // @synthesize deselectedKeylineCircularInnerPadding=_deselectedKeylineCircularInnerPadding;
 @property(nonatomic) float deselectedKeylineVerticalInnerPadding; // @synthesize deselectedKeylineVerticalInnerPadding=_deselectedKeylineVerticalInnerPadding;
 @property(nonatomic) float deselectedKeylineSideInnerPadding; // @synthesize deselectedKeylineSideInnerPadding=_deselectedKeylineSideInnerPadding;
-@property(nonatomic) float normalCircularPadding; // @synthesize normalCircularPadding=_normalCircularPadding;
+@property(nonatomic) struct CGSize normalCircularPadding; // @synthesize normalCircularPadding=_normalCircularPadding;
 @property(nonatomic) float normalVerticalPadding; // @synthesize normalVerticalPadding=_normalVerticalPadding;
 @property(nonatomic) float normalSidePadding; // @synthesize normalSidePadding=_normalSidePadding;
 @property(nonatomic) _Bool accommodatesTwoTopComplications; // @synthesize accommodatesTwoTopComplications=_accommodatesTwoTopComplications;
 @property(nonatomic) __weak id <NTKUtilityComplicationFactoryDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (float)_maxWidthForKeylineAndPadding;
 - (float)_maxDateWidthLeavingRoomForKeylines;
 - (float)_maxBottomCenterWidthLeavingRoomForKeylines:(struct CGRect)arg1;
 - (float)_maxBottomCornerWidthLeavingRoomForKeylines:(struct CGRect)arg1;
 - (float)_maxTopCornerWidthLeavingRoomForKeylines:(struct CGRect)arg1;
-- (void)_configureLayout:(id)arg1 withNormalSize:(struct CGSize)arg2 editingSize:(struct CGSize)arg3 addCircleOverrides:(_Bool)arg4 makeRuleBlock:(CDUnknownBlockType)arg5;
+- (void)_configureLayout:(id)arg1 withNormalSize:(struct CGSize)arg2 editingSize:(struct CGSize)arg3 variant:(_Bool)arg4 addCircleOverrides:(_Bool)arg5 makeRuleBlock:(CDUnknownBlockType)arg6;
 - (void)_configureUpNextTopRightLayout:(id)arg1 withBounds:(struct CGRect)arg2;
 - (void)_configureBottomRightLongLayout:(id)arg1 withBounds:(struct CGRect)arg2;
 - (void)_configureBottomRightBelowLayout:(id)arg1 withBounds:(struct CGRect)arg2;
@@ -57,11 +67,11 @@
 - (void)_configureTopRightBelowLayout:(id)arg1 withBounds:(struct CGRect)arg2;
 - (void)_configureTopRightAboveLayout:(id)arg1 withBounds:(struct CGRect)arg2;
 - (void)_configureDateLayout:(id)arg1 withBounds:(struct CGRect)arg2;
-- (void)_configureBottomCenterLayout:(id)arg1 withBounds:(struct CGRect)arg2;
-- (void)_configureBottomRightLayout:(id)arg1 withBounds:(struct CGRect)arg2;
-- (void)_configureBottomLeftLayout:(id)arg1 withBounds:(struct CGRect)arg2;
-- (void)_configureTopRightLayout:(id)arg1 withBounds:(struct CGRect)arg2;
-- (void)_configureTopLeftLayout:(id)arg1 withBounds:(struct CGRect)arg2;
+- (void)_configureBottomCenterLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
+- (void)_configureBottomRightLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
+- (void)_configureBottomLeftLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
+- (void)_configureTopRightLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
+- (void)_configureTopLeftLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
 - (id)_viewForDateComplication:(id)arg1;
 - (float)foregroundImageAlphaForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (float)foregroundImageAlphaForEditing:(_Bool)arg1;
@@ -69,10 +79,11 @@
 - (float)foregroundAlphaForEditing:(_Bool)arg1;
 - (unsigned int)keylineLabelAlignmentForSlot:(int)arg1;
 - (float)keylineCornerRadiusForSlot:(int)arg1;
+- (id)keylineViewForSlot:(int)arg1;
 - (void)configureComplicationLayout:(id)arg1 forSlot:(int)arg2 withBounds:(struct CGRect)arg3;
 - (id)newViewForComplication:(id)arg1 family:(int)arg2 forSlot:(int)arg3;
 - (int)layoutOverrideForComplicationType:(unsigned int)arg1 inSlot:(int)arg2;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 
 @end
 

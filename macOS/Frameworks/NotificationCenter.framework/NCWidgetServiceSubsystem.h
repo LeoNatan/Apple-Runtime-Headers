@@ -10,6 +10,7 @@
 
 @class NSObject<OS_dispatch_source>, NSString, NSViewController<NCWidgetProviding>;
 
+__attribute__((visibility("hidden")))
 @interface NCWidgetServiceSubsystem : NCRemoteViewServiceSubsystem <NCWidgetServiceProtocol>
 {
     _Bool _wasEditing;

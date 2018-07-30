@@ -8,26 +8,34 @@
 
 #import "CPLEngineTransportCheckRecordsExistenceTask.h"
 
-@class NSArray, NSString;
+@class CPLCloudKitScope, CPLEngineScope, NSArray, NSSet, NSString;
 
 @interface CPLCloudKitCheckRecordsExistenceTask : CPLCloudKitTransportTask <CPLEngineTransportCheckRecordsExistenceTask>
 {
     CDUnknownBlockType _completionHandler;
+    CPLCloudKitScope *_cloudKitScope;
+    CPLEngineScope *_scope;
     NSArray *_recordsToCheck;
-    NSArray *_fetchPropertiesRecords;
+    NSSet *_fetchPropertiesRecords;
 }
 
-@property(copy, nonatomic) NSArray *fetchPropertiesRecords; // @synthesize fetchPropertiesRecords=_fetchPropertiesRecords;
+@property(copy, nonatomic) NSSet *fetchPropertiesRecords; // @synthesize fetchPropertiesRecords=_fetchPropertiesRecords;
 @property(copy, nonatomic) NSArray *recordsToCheck; // @synthesize recordsToCheck=_recordsToCheck;
+@property(readonly, nonatomic) CPLEngineScope *scope; // @synthesize scope=_scope;
+@property(readonly, nonatomic) CPLCloudKitScope *cloudKitScope; // @synthesize cloudKitScope=_cloudKitScope;
 - (void).cxx_destruct;
 - (void)runOperations;
-- (id)initWithController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_checkRecordsExistenceWithOperationType:(long long)arg1 recordIDsToCPLRecord:(id)arg2 recordsToCheckOnly:(id)arg3 recordsToFetch:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)initWithController:(id)arg1 cloudKitScope:(id)arg2 scope:(id)arg3 additionalTransportScopes:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 
 // Remaining properties
+@property(nonatomic, getter=isBackgroundTask) BOOL backgroundTask;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isForcedTask) BOOL forcedTask;
 @property(nonatomic) BOOL foreground;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isHighPriorityBackground) BOOL highPriorityBackground;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) id <CPLEngineTransportGroup> transportGroup;
 

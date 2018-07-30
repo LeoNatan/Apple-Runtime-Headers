@@ -10,9 +10,7 @@
 
 @protocol _SFPBTextColumnSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasTextWeight;
 @property(nonatomic) unsigned int textWeight;
-@property(readonly, nonatomic) BOOL hasTextNoWrap;
 @property(nonatomic) BOOL textNoWrap;
 @property(copy, nonatomic) NSArray *textLines;
 - (id)initWithDictionary:(NSDictionary *)arg1;

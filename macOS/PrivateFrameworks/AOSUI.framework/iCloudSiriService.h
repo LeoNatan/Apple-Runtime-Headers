@@ -14,8 +14,7 @@
 {
 }
 
-- (BOOL)hasPreflightAction;
-- (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
+- (BOOL)hasDataToMerge;
 - (id)icon;
 - (void)dealloc;
 

@@ -17,12 +17,14 @@
 + (void)removeAnalysisRecordsWithNoAssetUUID;
 + (void)removeAnalysisRecordsForDeletedAssetUUIDs:(id)arg1 forWorkerType:(short)arg2;
 + (void)_removeAnalysisRecordsWithPredicate:(id)arg1;
++ (_Bool)clearIgnoreUntilDatesWithError:(id *)arg1;
 + (_Bool)cleanupInvalidIgnoreUntilDatesWithError:(id *)arg1;
 + (_Bool)markStatesProcessedForWorkerType:(short)arg1 error:(id *)arg2;
 + (_Bool)resetPendingStatesWithError:(id *)arg1;
 + (id)deletedAssetUUIDsForAnalysisByWorkerType:(short)arg1 fetchLimit:(unsigned long long)arg2 inLibrary:(id)arg3 error:(id *)arg4;
 + (void)requestCountOfAnalysisRecordsForDeletedAssetsWithCompletion:(CDUnknownBlockType)arg1;
 + (id)analysisCountsForWorkerType:(short)arg1;
++ (id)assetUUIDsFromAssetObjectIDs:(id)arg1 whereAllWorkerTypes:(id)arg2 matchState:(id)arg3;
 + (void)requestAnalysisCountsWithCompletion:(CDUnknownBlockType)arg1;
 + (void)requestTotalProgressCountsForWorkerType:(short)arg1 states:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (_Bool)isUnitTestWorker:(short)arg1;

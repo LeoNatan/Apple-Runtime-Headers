@@ -11,11 +11,11 @@
 }
 
 + (id)_movieNameForAchievementIdentifier:(id)arg1 variantNumber:(unsigned int)arg2;
-+ (id)_movieNameForGoalType:(unsigned int)arg1 variantNumber:(unsigned int)arg2;
++ (id)_movieNameForGoalType:(int)arg1 variantNumber:(unsigned int)arg2;
 + (id)_deviceSizeClassName;
-+ (unsigned int)_variantCountForGoalType:(unsigned int)arg1;
++ (unsigned int)_variantCountForGoalType:(int)arg1;
 + (id)celebrationMovieURLForAchievementIdentifer:(id)arg1;
-+ (id)celebrationMovieURLForGoalType:(unsigned int)arg1;
++ (id)celebrationMovieURLForGoalType:(int)arg1;
 
 @end
 

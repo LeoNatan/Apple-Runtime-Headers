@@ -27,6 +27,7 @@
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)fetchIndexableAttachments;
 - (id)searchableItemWithClientState:(id)arg1;
+@property(readonly, nonatomic) unsigned int bodySizeInBytes;
 @property(readonly, copy, nonatomic) NSString *domainIdentifier;
 - (int)compare:(id)arg1;
 - (void)dealloc;

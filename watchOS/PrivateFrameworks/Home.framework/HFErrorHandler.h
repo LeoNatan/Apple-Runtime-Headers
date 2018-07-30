@@ -10,6 +10,8 @@
 {
 }
 
++ (id)_descriptionForHFErrorCode:(int)arg1;
++ (id)_descriptionForHMErrorCode:(int)arg1;
 + (id)descriptionLocalizationKeyForError:(id)arg1;
 + (id)sharedHandler;
 - (id)_localizedStringOrNilIfNotFoundForKey:(id)arg1;

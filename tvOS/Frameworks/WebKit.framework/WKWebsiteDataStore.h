@@ -9,7 +9,7 @@
 #import "NSSecureCoding.h"
 #import "WKObject.h"
 
-@class NSString, WKHTTPCookieStore;
+@class NSDictionary, NSString, WKHTTPCookieStore;
 
 @interface WKWebsiteDataStore : NSObject <WKObject, NSSecureCoding>
 {
@@ -32,42 +32,17 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+- (_Bool)_hasRegisteredServiceWorker;
+- (void)_getAllStorageAccessEntriesFor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setResourceLoadStatisticsTestingCallback:(CDUnknownBlockType)arg1;
-- (void)_resourceLoadStatisticsResetToConsistentState;
-- (void)_resourceLoadStatisticsClearInMemoryAndPersistentStoreModifiedSinceHours:(unsigned int)arg1;
-- (void)_resourceLoadStatisticsClearInMemoryAndPersistentStore;
 - (void)_resourceLoadStatisticsSetShouldSubmitTelemetry:(_Bool)arg1;
-- (void)_resourceLoadStatisticsSetNotifyPagesWhenTelemetryWasCaptured:(_Bool)arg1;
-- (void)_resourceLoadStatisticsSetShouldClassifyResourcesBeforeDataRecordsRemoval:(_Bool)arg1;
-- (void)_resourceLoadStatisticsSetNotifyPagesWhenDataRecordsWereScanned:(_Bool)arg1;
-- (void)_resourceLoadStatisticsSubmitTelemetry;
-- (void)_resourceLoadStatisticsSetShouldPartitionCookies:(_Bool)arg1 forHost:(id)arg2;
-- (void)_resourceLoadStatisticsUpdateCookiePartitioning;
-- (void)_resourceLoadStatisticsProcessStatisticsAndDataRecords;
-- (void)_resourceLoadStatisticsSetPruneEntriesDownTo:(unsigned long long)arg1;
-- (void)_resourceLoadStatisticsSetMaxStatisticsEntries:(unsigned long long)arg1;
-- (void)_resourceLoadStatisticsSetGrandfatheringTime:(double)arg1;
-- (void)_resourceLoadStatisticsSetMinimumTimeBetweenDataRecordsRemoval:(double)arg1;
-- (void)_resourceLoadStatisticsSetTimeToLiveCookiePartitionFree:(double)arg1;
-- (void)_resourceLoadStatisticsSetTimeToLiveUserInteraction:(double)arg1;
-- (void)_resourceLoadStatisticsSetSubresourceUniqueRedirectTo:(id)arg1 forHost:(id)arg2;
-- (void)_resourceLoadStatisticsSetSubresourceUnderTopFrameOrigin:(id)arg1 forHost:(id)arg2;
-- (void)_resourceLoadStatisticsSetSubframeUnderTopFrameOrigin:(id)arg1 forHost:(id)arg2;
-- (void)_resourceLoadStatisticsIsGrandfathered:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_resourceLoadStatisticsSetIsGrandfathered:(_Bool)arg1 forHost:(id)arg2;
-- (void)_resourceLoadStatisticsHadUserInteraction:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_resourceLoadStatisticsSetHasHadNonRecentUserInteractionForHost:(id)arg1;
-- (void)_resourceLoadStatisticsSetHadUserInteraction:(_Bool)arg1 forHost:(id)arg2;
-- (void)_resourceLoadStatisticsIsRegisteredAsRedirectingTo:(id)arg1 hostRedirectedTo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_resourceLoadStatisticsIsRegisteredAsSubFrameUnder:(id)arg1 topFrameHost:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_resourceLoadStatisticsIsPrevalentResource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_resourceLoadStatisticsSetIsPrevalentResource:(_Bool)arg1 forHost:(id)arg2;
-- (void)_resourceLoadStatisticsSetLastSeen:(double)arg1 forHost:(id)arg2;
+@property(nonatomic, setter=_setProxyConfiguration:) NSDictionary *_proxyConfiguration;
 @property(nonatomic, setter=_setAllowsCellularAccess:) _Bool _allowsCellularAccess;
 @property(nonatomic, setter=_setBoundInterfaceIdentifier:) NSString *_boundInterfaceIdentifier;
 @property(nonatomic, setter=_setServiceWorkerRegistrationDirectory:) NSString *_serviceWorkerRegistrationDirectory;
 @property(nonatomic, setter=_setCacheStorageDirectory:) NSString *_cacheStorageDirectory;
 @property(nonatomic, setter=_setCacheStoragePerOriginQuota:) unsigned long long _cacheStoragePerOriginQuota;
+@property(nonatomic, setter=_setResourceLoadStatisticsDebugMode:) _Bool _resourceLoadStatisticsDebugMode;
 @property(nonatomic, setter=_setResourceLoadStatisticsEnabled:) _Bool _resourceLoadStatisticsEnabled;
 - (void)_fetchDataRecordsOfTypes:(id)arg1 withOptions:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_initWithConfiguration:(id)arg1;

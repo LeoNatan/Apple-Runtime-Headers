@@ -16,7 +16,6 @@
     BOOL _hasValidCredentials;
     BOOL _hasEncryptionIdentity;
     long long _accountStatus;
-    NSError *_deviceToDeviceEncryptionAvailabilityError;
     long long _accountPartition;
     NSError *_manateeError;
 }
@@ -26,10 +25,10 @@
 @property(nonatomic) BOOL hasEncryptionIdentity; // @synthesize hasEncryptionIdentity=_hasEncryptionIdentity;
 @property(nonatomic) BOOL hasValidCredentials; // @synthesize hasValidCredentials=_hasValidCredentials;
 @property(nonatomic) long long accountPartition; // @synthesize accountPartition=_accountPartition;
-@property(retain, nonatomic) NSError *deviceToDeviceEncryptionAvailabilityError; // @synthesize deviceToDeviceEncryptionAvailabilityError=_deviceToDeviceEncryptionAvailabilityError;
 @property(nonatomic) BOOL supportsDeviceToDeviceEncryption; // @synthesize supportsDeviceToDeviceEncryption=_supportsDeviceToDeviceEncryption;
 @property(nonatomic) long long accountStatus; // @synthesize accountStatus=_accountStatus;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *deviceToDeviceEncryptionAvailabilityError;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)CKPropertiesDescription;

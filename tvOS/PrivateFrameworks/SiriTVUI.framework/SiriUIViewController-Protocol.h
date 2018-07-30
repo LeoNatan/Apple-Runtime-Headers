@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AceObject, NSString;
+@class AFDialogPhase, AceObject, NSString;
 
 @protocol SiriUIViewController <NSObject>
 @property(nonatomic, getter=isUtteranceUserInteractionEnabled) _Bool utteranceUserInteractionEnabled;
@@ -16,6 +16,7 @@
 - (void)siriWillActivateFromSource:(long long)arg1;
 
 @optional
+- (void)siriDidReceiveViewsWithDialogPhase:(AFDialogPhase *)arg1;
 - (_Bool)shouldHidePriorViews;
 - (void)siriDidStopSpeakingWithIdentifier:(NSString *)arg1 speechQueueIsEmpty:(_Bool)arg2;
 - (void)siriDidStartSpeakingWithIdentifier:(NSString *)arg1;

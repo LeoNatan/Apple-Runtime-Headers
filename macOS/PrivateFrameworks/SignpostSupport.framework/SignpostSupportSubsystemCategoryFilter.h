@@ -6,19 +6,30 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary;
+#import "SignpostPredicateProducer.h"
 
-@interface SignpostSupportSubsystemCategoryFilter : NSObject
+@class NSMutableDictionary, NSPredicate;
+
+@interface SignpostSupportSubsystemCategoryFilter : NSObject <SignpostPredicateProducer>
 {
     NSMutableDictionary *_subsystemsDict;
 }
 
 @property(readonly, nonatomic) NSMutableDictionary *subsystemsDict; // @synthesize subsystemsDict=_subsystemsDict;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (void)addEntry:(id)arg1;
 - (void)addSubsystem:(id)arg1 category:(id)arg2;
 - (id)_initWithEntries:(id)arg1;
 - (BOOL)matchesSubsystem:(id)arg1 category:(id)arg2;
+- (id)liveStreamingPredicate;
+@property(readonly, nonatomic) NSPredicate *predicateEquivalent;
+- (id)_predicateEquivalentWithIsSimplified:(BOOL)arg1;
+- (id)_subpredicatesForSubsystemsWithIsSimplified:(BOOL)arg1;
+@property(readonly, nonatomic) unsigned long long _compoundPredicateType;
+- (void)_fixupToSupportFramerateCalculation;
+- (void)_forceInclusionOfSubsystem:(id)arg1 category:(id)arg2;
+@property(readonly, nonatomic) BOOL _wantsNotSubsystem;
 - (BOOL)passesSubsystem:(id)arg1 category:(id)arg2;
 
 @end

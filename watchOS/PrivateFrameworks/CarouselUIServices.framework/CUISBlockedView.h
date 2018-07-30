@@ -20,6 +20,7 @@
     id <CUISBlockedViewDataSource> _dataSource;
 }
 
++ (void)initialize;
 @property(nonatomic) __weak id <CUISBlockedViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)reset;

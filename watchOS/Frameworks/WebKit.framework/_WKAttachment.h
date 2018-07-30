@@ -17,10 +17,11 @@
 
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
-- (id)uniqueIdentifier;
+@property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (void)setData:(id)arg1 newContentType:(id)arg2 newFilename:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setDisplayOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestData:(CDUnknownBlockType)arg1;
+- (void)requestInfo:(CDUnknownBlockType)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) struct Object *_apiObject;
 

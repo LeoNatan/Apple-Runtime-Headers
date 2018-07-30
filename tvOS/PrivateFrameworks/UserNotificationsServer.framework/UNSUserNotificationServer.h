@@ -11,12 +11,13 @@
 #import "UNSNotificationRepositoryDelegate.h"
 #import "UNSRemoteNotificationServerObserver.h"
 
-@class BKSApplicationStateMonitor, FBSSystemService, NSString, UNSApplicationLauncher, UNSApplicationService, UNSAttachmentsService, UNSDefaultDataProviderFactory, UNSLocationMonitor, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationSchedulingService, UNSNotificationSettingsService, UNSPendingNotificationRepository, UNSRemoteNotificationServer, UNSUserNotificationServerConnectionListener;
+@class BKSApplicationStateMonitor, FBSSystemService, NSSet, NSString, UNSApplicationLauncher, UNSApplicationService, UNSAttachmentsRepository, UNSAttachmentsService, UNSDaemonLauncher, UNSDefaultDataProviderFactory, UNSLocationMonitor, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationScheduleRepository, UNSNotificationSchedulingService, UNSNotificationSettingsService, UNSNotificationTopicRepository, UNSPendingNotificationRepository, UNSPushRegistrationRepository, UNSRemoteNotificationServer, UNSUserNotificationServerConnectionListener;
 
 @interface UNSUserNotificationServer : NSObject <LSApplicationWorkspaceObserverProtocol, UNSDefaultDataProviderFactoryObserver, UNSNotificationRepositoryDelegate, UNSRemoteNotificationServerObserver>
 {
     UNSApplicationLauncher *_applicationLauncher;
     UNSApplicationService *_applicationService;
+    UNSAttachmentsRepository *_attachmentsRepository;
     UNSDefaultDataProviderFactory *_dataProviderFactory;
     UNSUserNotificationServerConnectionListener *_userNotificationServerConnectionListener;
     UNSNotificationCategoryRepository *_categoryRepository;
@@ -24,15 +25,25 @@
     UNSNotificationSettingsService *_notificationSettingsService;
     UNSNotificationRepository *_notificationRepository;
     UNSPendingNotificationRepository *_pendingNotificationRepository;
+    UNSPushRegistrationRepository *_pushRegistrationRepository;
     UNSRemoteNotificationServer *_remoteNotificationService;
+    UNSNotificationScheduleRepository *_notificationScheduleRepository;
+    UNSNotificationTopicRepository *_topicRepository;
     UNSAttachmentsService *_attachmentsService;
     UNSLocationMonitor *_locationMonitor;
+    UNSDaemonLauncher *_daemonLauncher;
     FBSSystemService *_systemService;
     BKSApplicationStateMonitor *_applicationStateMonitor;
+    NSSet *_sourceBundleIdentifiers;
+    NSString *_libraryDirectory;
+    NSString *_directory;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)_removeNotificationSourceDirectories:(id)arg1;
+- (void)_notificationSourcesDidUninstall:(id)arg1;
+- (void)_notificationSourcesDidInstall:(id)arg1;
 - (void)_didChangeApplicationState:(unsigned int)arg1 forBundleIdentifier:(id)arg2;
 - (void)_triggerLocationArrowForBundleIdentifier:(id)arg1;
 - (void)_registerLoggers;
@@ -49,17 +60,24 @@
 - (void)_addObserverForBackgroundRefreshApplicationChanges;
 - (void)_localeDidChange;
 - (void)_addObserverForLocaleChanges;
+- (void)_removePushStore;
+- (void)_migrateAttachments;
+- (void)_migrateNotificationSchedule;
+- (void)_migratePushRegistrations;
 - (void)_migrateNotificationCategories;
 - (void)_migratePendingNotificationRequests;
+- (void)_validateNotificationRepository;
 - (void)_migrateNotificationRepository;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)isApplicationForeground:(id)arg1;
 - (void)applicationsDidAuthorizeNotificationSettings:(id)arg1;
 - (void)applicationsDidDenyNotificationSettings:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)_applicationsDidInstall:(id)arg1;
 - (void)applicationStateDidChange:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
+- (id)_loadAllSystemNotificationSourceDescriptions;
 - (id)init;
 
 // Remaining properties

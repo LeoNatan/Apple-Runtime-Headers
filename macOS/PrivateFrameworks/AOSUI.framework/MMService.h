@@ -38,6 +38,7 @@
 @property BOOL alwaysShowOptions; // @synthesize alwaysShowOptions=_alwaysShowOptions;
 @property(retain) NSString *infoButtonLabel; // @synthesize infoButtonLabel=_infoButtonLabel;
 @property(retain) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
+- (id)mmAccount;
 - (id)appleAccount;
 - (void)mtLogFeature:(id)arg1 toggledOn:(BOOL)arg2;
 - (void)DSEEnableWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -67,6 +68,12 @@
 - (BOOL)canEnable:(id *)arg1;
 - (BOOL)canEnable;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 isPrimary:(BOOL)arg3 withWindow:(id)arg4;
+- (int)optionForAction:(id)arg1;
+- (id)buttonTitleForAction:(id)arg1;
+- (id)enableAlertMessage;
+- (id)enableAlertTitle;
+- (id)disableAlertMessage;
+- (id)disableAlertTitle;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (void)reconcileEnableStatus;
 - (BOOL)supportsSavingLocally;

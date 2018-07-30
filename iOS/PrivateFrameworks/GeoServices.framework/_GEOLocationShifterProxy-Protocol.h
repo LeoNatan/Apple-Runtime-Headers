@@ -10,5 +10,8 @@
 
 @protocol _GEOLocationShifterProxy <NSObject>
 - (void)shiftLatLng:(GEOLatLng *)arg1 auditToken:(GEOApplicationAuditToken *)arg2 completionHandler:(void (^)(GEOLocationShiftFunctionResponse *, _Bool, NSError *))arg3;
+- (unsigned int)locationShiftFunctionVersion;
+- (_Bool)isLocationShiftRequiredForCoordinate:(CDStruct_c3b9c2ee)arg1;
+- (_Bool)isLocationShiftEnabled;
 @end
 

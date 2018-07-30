@@ -11,16 +11,18 @@
 @interface HAPCharacteristicWriteRequestTuple : HMFObject
 {
     _Bool _timedWrite;
-    _Bool _writeResponse;
+    _Bool _includeResponseValue;
     HAPCharacteristic *_characteristic;
     id _value;
     NSData *_authorizationData;
+    unsigned long long _writeType;
     NSNumber *_enableEvents;
 }
 
-+ (id)writeRequestTupleForCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 timedWrite:(_Bool)arg4;
++ (id)writeRequestTupleForCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 timedWrite:(_Bool)arg4 responseValue:(_Bool)arg5 type:(unsigned long long)arg6;
 @property(retain, nonatomic) NSNumber *enableEvents; // @synthesize enableEvents=_enableEvents;
-@property(nonatomic) _Bool writeResponse; // @synthesize writeResponse=_writeResponse;
+@property(nonatomic) _Bool includeResponseValue; // @synthesize includeResponseValue=_includeResponseValue;
+@property(nonatomic) unsigned long long writeType; // @synthesize writeType=_writeType;
 @property(nonatomic) _Bool timedWrite; // @synthesize timedWrite=_timedWrite;
 @property(retain, nonatomic) NSData *authorizationData; // @synthesize authorizationData=_authorizationData;
 @property(retain, nonatomic) id value; // @synthesize value=_value;

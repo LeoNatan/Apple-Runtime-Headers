@@ -8,36 +8,26 @@
 
 #import "NTKWellnessTimelineModelSubscriber.h"
 
-@class NSString, _HKDelayedOperation;
+@class NSString;
 
 @interface NTKWellnessComplicationDataSource : NTKComplicationDataSource <NTKWellnessTimelineModelSubscriber>
 {
-    _HKDelayedOperation *_delayedInvalidateOperation;
     _Bool _historicalDataLoaded;
 }
 
-+ (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property _Bool historicalDataLoaded; // @synthesize historicalDataLoaded=_historicalDataLoaded;
-- (void).cxx_destruct;
 - (id)complicationApplicationIdentifier;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)_timelineEntryFromModel:(id)arg1 family:(int)arg2;
-- (id)_generateTimelineEntriesFromEntryModels:(id)arg1;
-- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
-- (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
-- (void)_invalidate;
-- (void)wellnessTimeLineModelHistoricalDataWasUpdated;
-- (void)wellnessTimelineModelHistorcalDataLoaded:(_Bool)arg1;
 - (void)wellnessTimeLineModelCurrentEntryModelUpdated:(id)arg1;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

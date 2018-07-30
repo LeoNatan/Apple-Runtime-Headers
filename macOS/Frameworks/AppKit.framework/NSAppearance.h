@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSBundle, NSString;
 
-@interface NSAppearance : NSObject <NSCoding>
+@interface NSAppearance : NSObject <NSSecureCoding>
 {
     NSString *_name;
     NSBundle *_bundle;
@@ -20,10 +20,14 @@
 }
 
 + (BOOL)_isLightTintColor:(id)arg1;
++ (BOOL)supportsSecureCoding;
 + (void)_performWithCurrentAppearance:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)_coreUIOptionsSharedKeySet;
-+ (id)_defaultAppearance;
++ (id)_systemAppearanceProxy;
++ (id)_menuBarAppearanceProxy;
 + (void)setFunctionRowALSAttributes:(id)arg1;
++ (id)_darkAquaAppearance;
++ (id)_darkAquaAppearanceWithAccessibility:(BOOL)arg1;
 + (id)_controlStripCustomizationPaletteAppearance;
 + (id)_touchBarCustomizationPaletteAppearance;
 + (id)_controlStripAppearance;
@@ -31,16 +35,27 @@
 + (id)_mediumLightAppearance;
 + (id)_vibrantLightAppearance;
 + (id)_vibrantDarkAppearance;
++ (id)_aquaAppearance;
++ (id)_aquaAppearanceWithAccessibility:(BOOL)arg1;
 + (id)_syrahAppearance;
 + (id)_contentBackgroundAppearance;
 + (id)appearanceNamed:(id)arg1;
++ (id)_applicationAppearance;
 + (void)setCurrentAppearance:(id)arg1;
 + (id)currentAppearance;
 + (void)_initializeCoreUI;
++ (void)_setSystemAppearanceTestingOverride:(long long)arg1;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
+- (BOOL)isEqual:(id)arg1;
+- (id)bestMatchFromAppearancesWithNames:(id)arg1;
+- (id)_temporaryCatalogForStatefulTextColorStyles;
 - (BOOL)_resolvesToFunctionRowAppearanceForWidget:(id)arg1;
 - (BOOL)_isFunctionRowAppearance;
+- (BOOL)_allowsCustomControlTintColors;
+- (BOOL)_allowsSystemControlTintColors;
 - (BOOL)_isTintedWithLightColor;
+- (struct CGSize)_minimumSizeForSmallToolbarButton;
+- (struct CGSize)_minimumSizeForToolbarButton;
 - (struct CGSize)_minimumSizeForStandardButton;
 - (BOOL)_prefersSliderAccessoryStepBehavior;
 - (BOOL)_prefersButtonTitleNaturalBaseline;
@@ -50,17 +65,14 @@
 - (id)imageNamed:(id)arg1;
 - (BOOL)_allowsVibrancyForColor:(id)arg1;
 @property(readonly) BOOL allowsVibrancy;
-- (long long)_internalVisualEffectMaterialForMenu;
-- (long long)_internalVisualEffectMaterialForSelection:(BOOL)arg1 isDarker:(BOOL)arg2;
-- (long long)_internalVisualEffectMaterialForTitlebar;
-- (long long)_internalVisualEffectMaterialForBlendingMode:(long long)arg1;
 - (BOOL)shouldBeArchived;
 - (void)setShouldBeArchived:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
-- (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
+- (Class)classForCoder;
 - (id)_bundleResourceName;
 - (id)_bundle;
+- (id)_refreshedAppearance;
 - (BOOL)_isBuiltinAppearance;
 - (id)uniqueIdentifier;
 - (id)debugDescription;
@@ -71,14 +83,16 @@
 - (id)resolvedAppearanceForWidget:(id)arg1 styleConfiguration:(id)arg2;
 - (id)resolvedAppearanceForWidget:(id)arg1;
 - (struct CGSize)_intrinsicContentSizeForDrawingInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 options:(id)arg3;
+- (id)_customColor:(id)arg1 withSystemEffectOptions:(id)arg2;
 - (BOOL)_setCustomStrokeColor:(id)arg1;
 - (BOOL)_setCustomFillColor:(id)arg1;
 - (BOOL)_setCustomColor:(id)arg1;
 - (id)_customColor:(id)arg1;
 - (struct CGColor *)_copyCustomCGColor:(id)arg1;
+- (id)_customColor:(id)arg1 withTint:(id)arg2;
+- (struct CGColor *)_copyCustomCGColor:(id)arg1 withTint:(id)arg2;
 - (struct CGImage *)_createLayerContents:(id)arg1 contentsCenter:(struct CGRect *)arg2;
 - (id)_defaultCompositingFilter;
-- (BOOL)_isPrimarilyDark;
 - (int)_defaultBlendMode;
 - (id)_compositingFilterForWidget:(id)arg1;
 - (int)_blendModeForWidget:(id)arg1;
@@ -86,12 +100,12 @@
 - (void)_createOrUpdateLayer:(id *)arg1 options:(id)arg2;
 - (void)_drawInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 options:(id)arg3;
 - (int)_callCoreUIWithBlock:(CDUnknownBlockType)arg1 options:(id)arg2;
+- (id)_flattenedAppearanceNamesList;
 - (double)_defaultBezelBrightness;
 - (BOOL)_optionsMustContainTintColor;
-- (BOOL)_backstoppedByDefaultAppearance;
-- (id)_appearanceForStandardTableView;
-- (id)_appearanceForSourceListTableView;
-- (BOOL)_isDefaultAppearance;
+- (BOOL)_backstoppedByFullAppearance;
+- (id)_appearanceForNonVibrantContent;
+- (id)_appearanceForVibrantContent;
 - (id)_coreUICatalog;
 - (struct OpaqueCUIRendererRef *)_coreUIRenderer;
 - (void)_changeALSAttributes:(id)arg1;

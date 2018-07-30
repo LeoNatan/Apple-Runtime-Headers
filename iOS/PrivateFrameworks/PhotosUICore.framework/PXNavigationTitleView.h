@@ -25,23 +25,27 @@
     NSString *_title;
     NSString *_subtitle;
     UIColor *_titleTextColor;
+    UIColor *_subtitleTextColor;
     UIFont *_titleFont;
     UIFont *_subtitleFont;
+    long long _textAlignment;
     double _subviewsAlpha;
     UILabel *__titleLabel;
     UILabel *__subtitleLabel;
     NSArray *__constraints;
-    struct UIEdgeInsets __margins;
+    struct UIEdgeInsets _margins;
 }
 
 @property(retain, nonatomic, setter=_setConstraints:) NSArray *_constraints; // @synthesize _constraints=__constraints;
-@property(nonatomic, setter=_setMargins:) struct UIEdgeInsets _margins; // @synthesize _margins=__margins;
 @property(nonatomic, getter=_isSubtitleVisible, setter=_setSubtitleVisible:) _Bool _subtitleVisible; // @synthesize _subtitleVisible=__subtitleVisible;
 @property(readonly, nonatomic) UILabel *_subtitleLabel; // @synthesize _subtitleLabel=__subtitleLabel;
 @property(readonly, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel=__titleLabel;
 @property(nonatomic) double subviewsAlpha; // @synthesize subviewsAlpha=_subviewsAlpha;
+@property(nonatomic, setter=setMargins:) struct UIEdgeInsets margins; // @synthesize margins=_margins;
+@property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(retain, nonatomic) UIFont *subtitleFont; // @synthesize subtitleFont=_subtitleFont;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
+@property(retain, nonatomic) UIColor *subtitleTextColor; // @synthesize subtitleTextColor=_subtitleTextColor;
 @property(retain, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

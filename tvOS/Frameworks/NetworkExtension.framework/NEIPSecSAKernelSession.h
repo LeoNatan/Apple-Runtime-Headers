@@ -13,6 +13,7 @@
 
 @property(nonatomic) struct NEIPSecDB_s *internalSession; // @synthesize internalSession=_internalSession;
 - (void)dealloc;
+- (void)startBlackholeDetection:(unsigned int)arg1 incomingSA:(id)arg2 outgoingSA:(id)arg3;
 - (void)startIdleTimeout:(unsigned int)arg1 incomingSA:(id)arg2 outgoingSA:(id)arg3;
 - (_Bool)migrateSA:(id)arg1;
 - (_Bool)removeSA:(id)arg1;

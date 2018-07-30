@@ -10,6 +10,8 @@
 
 @interface NSButton (SafariNSButtonExtras)
 + (id)safari_buttonStyledForFunctionBarWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)safari_buttonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)safari_buttonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 - (void)safari_styleForFunctionBar;
 @property(retain, nonatomic, setter=safari_setTextColor:) NSColor *safari_textColor;
 @property(nonatomic, setter=safari_setLeftToRightImagePosition:) unsigned long long safari_leftToRightImagePosition;

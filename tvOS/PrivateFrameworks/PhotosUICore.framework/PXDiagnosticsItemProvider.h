@@ -13,8 +13,10 @@
     NSMutableDictionary *__loadHandlers;
 }
 
++ (id)providerWithItem:(id)arg1 identifier:(id)arg2;
 @property(readonly, nonatomic) NSMutableDictionary *_loadHandlers; // @synthesize _loadHandlers=__loadHandlers;
 - (void).cxx_destruct;
+- (void)registerItem:(id)arg1 forIdentifier:(id)arg2;
 @property(readonly, nonatomic) NSSet *registeredIdentifiers;
 - (id)itemForIdentifier:(id)arg1;
 - (_Bool)hasItemForIdentifier:(id)arg1;

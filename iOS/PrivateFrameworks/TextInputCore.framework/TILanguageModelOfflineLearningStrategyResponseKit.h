@@ -8,19 +8,22 @@
 
 #import "TILanguageModelOfflineLearningStrategy.h"
 
-@class NSString, TILanguageModelOfflineLearningTask;
+@class NSMutableDictionary, NSString, NSURL, RKMessageResponseManager, TILanguageModelOfflineLearningTask;
 
 @interface TILanguageModelOfflineLearningStrategyResponseKit : NSObject <TILanguageModelOfflineLearningStrategy>
 {
+    NSMutableDictionary *_recipientModels;
+    NSURL *_directory;
+    RKMessageResponseManager *_trainer;
     TILanguageModelOfflineLearningTask *_learningTask;
 }
 
 @property(readonly) TILanguageModelOfflineLearningTask *learningTask; // @synthesize learningTask=_learningTask;
+- (void).cxx_destruct;
 - (void)didFinishLearning;
 - (id)filterMessages:(id)arg1;
 - (_Bool)learnMessages:(id)arg1 withRecipientRecords:(id)arg2;
 - (id)messagesClusteredByRecipient:(id)arg1;
-- (void)dealloc;
 - (id)initWithClientIdentifier:(id)arg1 andDirectory:(id)arg2;
 
 // Remaining properties

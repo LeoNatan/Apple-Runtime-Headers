@@ -33,9 +33,9 @@
     struct LogCategory *_ucatCrypto;
     NSXPCConnection *_xpcCnx;
     unsigned char _deviceActionType;
+    BOOL _duetSync;
     BOOL _needsAWDL;
     BOOL _needsKeyboard;
-    BOOL _needsNAN;
     BOOL _needsSetup;
     BOOL _overrideScreenOff;
     BOOL _pairSetupDisabled;
@@ -51,6 +51,7 @@
     unsigned char _serviceType;
     BOOL _touchRemoteEnabled;
     BOOL _watchLocked;
+    BOOL _wifiP2P;
     unsigned int _pinType;
     unsigned int _sessionFlags;
     long long _advertiseRate;
@@ -88,6 +89,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL wifiP2P; // @synthesize wifiP2P=_wifiP2P;
 @property(nonatomic) BOOL watchLocked; // @synthesize watchLocked=_watchLocked;
 @property(nonatomic) BOOL touchRemoteEnabled; // @synthesize touchRemoteEnabled=_touchRemoteEnabled;
 @property(retain, nonatomic) NSXPCListenerEndpoint *testListenerEndpoint; // @synthesize testListenerEndpoint=_testListenerEndpoint;
@@ -132,12 +134,12 @@
 @property(copy, nonatomic) NSDictionary *pairSetupACL; // @synthesize pairSetupACL=_pairSetupACL;
 @property(nonatomic) BOOL overrideScreenOff; // @synthesize overrideScreenOff=_overrideScreenOff;
 @property(nonatomic) BOOL needsSetup; // @synthesize needsSetup=_needsSetup;
-@property(nonatomic) BOOL needsNAN; // @synthesize needsNAN=_needsNAN;
 @property(nonatomic) BOOL needsKeyboard; // @synthesize needsKeyboard=_needsKeyboard;
 @property(nonatomic) BOOL needsAWDL; // @synthesize needsAWDL=_needsAWDL;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *fixedPIN; // @synthesize fixedPIN=_fixedPIN;
+@property(nonatomic) BOOL duetSync; // @synthesize duetSync=_duetSync;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned char deviceActionType; // @synthesize deviceActionType=_deviceActionType;
 @property(nonatomic) long long advertiseRate; // @synthesize advertiseRate=_advertiseRate;

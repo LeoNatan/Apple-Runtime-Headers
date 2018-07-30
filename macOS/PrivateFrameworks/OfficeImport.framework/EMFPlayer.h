@@ -8,7 +8,6 @@
 
 @class EMFPlusPlayer, MFGraphicsDevice;
 
-__attribute__((visibility("hidden")))
 @interface EMFPlayer : NSObject
 {
     MFGraphicsDevice *m_gdi;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGRect)boundsInPoints:(id)arg1;
 + (struct CGRect)boundsInLogicalUnits:(id)arg1;
+- (void).cxx_destruct;
 - (int)playSetMetaRgn:(unsigned int)arg1 in_pRecord:(const char *)arg2;
 - (int)playIntersectClipRect:(unsigned int)arg1 in_pRecord:(const char *)arg2;
 - (int)playExcludeClipRect:(unsigned int)arg1 in_pRecord:(const char *)arg2;
@@ -106,7 +106,6 @@ __attribute__((visibility("hidden")))
 - (id)getGdi;
 - (void)setIgnoreEMFPlusRecords:(BOOL)arg1;
 - (void)setIgnoreEMFRecords:(BOOL)arg1;
-- (void)dealloc;
 - (id)initWithGraphicsDevice:(id)arg1;
 
 @end

@@ -48,6 +48,10 @@ struct LogCategoryPrivate;
 
 struct LogOutput;
 
+struct NSDictionary {
+    Class _field1;
+};
+
 struct NSMutableArray {
     Class _field1;
 };
@@ -62,6 +66,14 @@ struct NSMutableSet {
 
 struct NSSet {
     Class _field1;
+};
+
+struct PairingSubstate {
+    int contacts;
+    int homeKit;
+    int visual;
+    int pairVerify;
+    int pin;
 };
 
 struct UIEdgeInsets {

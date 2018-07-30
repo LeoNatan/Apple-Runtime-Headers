@@ -35,13 +35,13 @@
 - (id)_firstUnpopulatedRole;
 @property(retain, nonatomic) HFRoomBuilder *room;
 @property(readonly, nonatomic) _Bool supportsFavoriting;
+- (id)_defaultName;
 @property(readonly, nonatomic) NSString *originalName;
 - (id)_rooms;
 - (id)_updateAssistantAccessControl;
-- (id)_updateRoomAndName;
+- (id)_updateRoom;
 - (id)_updateFavorite;
 - (id)_commitChangesToMediaSystemBuilder;
-- (id)_performValidation;
 - (id)commitItem;
 - (_Bool)swapRoles;
 - (_Bool)shouldAllowAddingAccessory:(id)arg1;

@@ -11,7 +11,7 @@
     int _exitCode;
 }
 
-- (void)exitOnErrorIndicatingDeviceLock;
+- (void)exitOnErrorIndicatingIOError:(int)arg1;
 - (_Bool)handleSqliteError:(int)arg1 error:(id)arg2 onError:(CDUnknownBlockType)arg3 db:(id)arg4;
 - (id)initWithExitCode:(int)arg1;
 

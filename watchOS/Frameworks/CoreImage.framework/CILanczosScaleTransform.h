@@ -21,10 +21,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *inputScale; // @synthesize inputScale;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;
+- (id)outputImageOldScaleX:(double)arg1 scaleY:(double)arg2;
+- (id)outputImageNewScaleX:(double)arg1 scaleY:(double)arg2;
 - (_Bool)_isIdentity;
-- (id)_CILanczosVerticalUpsample;
-- (id)_CILanczosHorizontalUpsample;
-- (id)_CILanczosDownBy2;
 
 @end
 

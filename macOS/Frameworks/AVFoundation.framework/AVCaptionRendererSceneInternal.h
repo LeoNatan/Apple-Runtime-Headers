@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface AVCaptionRendererSceneInternal : NSObject
 {
     CDStruct_e83c9415 _timeRange;

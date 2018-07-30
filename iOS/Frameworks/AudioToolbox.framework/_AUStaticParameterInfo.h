@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int unit; // @synthesize unit=_unit;
 @property(nonatomic) float maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) float minValue; // @synthesize minValue=_minValue;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

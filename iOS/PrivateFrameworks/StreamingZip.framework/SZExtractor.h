@@ -41,6 +41,7 @@
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *extractionPath; // @synthesize extractionPath=_extractionPath;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)setActiveExtractorDelegateMethods:(int)arg1;
 @property(nonatomic) __weak id <SZExtractorDelegate> extractorDelegate;
 @property(nonatomic) __weak id <SZExtractorDelegate> delegate;
@@ -50,6 +51,7 @@
 - (void)finishStreamWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)suspendStreamWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)supplyBytes:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (_Bool)_isValidObject;
 - (void)_invalidateObject;
 - (void)prepareForExtractionToPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)prepareForExtraction:(CDUnknownBlockType)arg1;
@@ -72,7 +74,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

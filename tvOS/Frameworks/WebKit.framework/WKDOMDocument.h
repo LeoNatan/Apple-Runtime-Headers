@@ -12,6 +12,7 @@
 {
 }
 
+- (id)parserYieldToken;
 - (id)createDocumentFragmentWithText:(id)arg1;
 - (id)createDocumentFragmentWithMarkupString:(id)arg1 baseURL:(id)arg2;
 @property(readonly) WKDOMElement *body;

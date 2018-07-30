@@ -24,8 +24,14 @@
 - (void)setFlags:(int)arg1;
 - (int)flags;
 @property(nonatomic) _Bool onlyCreatorCanModify; // @dynamic onlyCreatorCanModify;
+- (void)setCreatorCodeSigningIdentity:(id)arg1;
+- (id)creatorCodeSigningIdentity;
+- (void)setCreatorBundleID:(id)arg1;
+- (id)creatorBundleID;
 @property(nonatomic) _Bool disabled; // @dynamic disabled;
 @property(copy, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;
+- (void)setConstraintsDescriptionPath:(id)arg1;
+- (id)constraintsDescriptionPath;
 @property(copy, nonatomic) NSString *externalID; // @dynamic externalID;
 @property(retain, nonatomic) NSString *UUID;
 @property(copy, nonatomic) NSNumber *defaultAlarmOffset; // @dynamic defaultAlarmOffset;

@@ -16,9 +16,13 @@
 }
 
 - (void).cxx_destruct;
+- (id)_sanitizeUnsignedInteger:(id)arg1;
+- (id)_sanitizeVolume:(id)arg1;
 - (id)_sanitizeFlag:(id)arg1;
 - (id)_sanitizeLocalizationArgumentsArray:(id)arg1;
 - (id)_sanitizeStringArray:(id)arg1;
+- (id)_sanitizeTopicIdentifier:(id)arg1;
+- (id)_sanitizeSound:(id)arg1;
 - (id)_sanitizeAlert:(id)arg1;
 - (id)_sanitizeAPSDictionary:(id)arg1;
 - (id)buildSafePayload;

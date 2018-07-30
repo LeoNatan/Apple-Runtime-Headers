@@ -13,28 +13,23 @@
 @interface FCTopStoriesConfiguration : NSObject <NSCopying>
 {
     NTPBTopStoriesConfig *_pbConfig;
-    _Bool _pinningEnabled;
+    NSDictionary *_configDict;
     _Bool _promotingEnabled;
     NSString *_channelID;
-    long long _maximumArticleCount;
-    long long _cutoffTime;
     NSDictionary *_styleConfigurations;
     long long _storyTypeTimeout;
 }
 
 @property(readonly, nonatomic) long long storyTypeTimeout; // @synthesize storyTypeTimeout=_storyTypeTimeout;
 @property(readonly, nonatomic) NSDictionary *styleConfigurations; // @synthesize styleConfigurations=_styleConfigurations;
-@property(readonly, nonatomic) long long cutoffTime; // @synthesize cutoffTime=_cutoffTime;
-@property(readonly, nonatomic) long long maximumArticleCount; // @synthesize maximumArticleCount=_maximumArticleCount;
 @property(readonly, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(readonly, nonatomic, getter=isPromotingEnabled) _Bool promotingEnabled; // @synthesize promotingEnabled=_promotingEnabled;
-@property(readonly, nonatomic, getter=isPinningEnabled) _Bool pinningEnabled; // @synthesize pinningEnabled=_pinningEnabled;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithConfigDictionary:(id)arg1;
 - (id)initWithPBTopStoriesConfig:(id)arg1;
-- (id)initWithDefaults;
 
 @end
 

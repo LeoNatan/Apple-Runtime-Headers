@@ -6,22 +6,24 @@
 
 #import "UIApplication.h"
 
+#import "CSLSSessionDelegate.h"
 #import "UIApplicationSnapshotPreparing.h"
 
 @class NSMutableDictionary, NSString, PUICActionWindowListener, PUICSnapshotController, UIColor, UIViewController, UIWindow;
 
-@interface PUICApplication : UIApplication <UIApplicationSnapshotPreparing>
+@interface PUICApplication : UIApplication <CSLSSessionDelegate, UIApplicationSnapshotPreparing>
 {
     _Bool _networkActivityIndicatorVisible;
     int _statusBarOcclusionAssertions;
     unsigned int _puic_effectiveVisibility;
+    int _interfaceOrientation;
     _Bool _uiIsInverted;
     UIWindow *_iconWindow;
     int _orientation;
     PUICActionWindowListener *_windowListener;
-    NSMutableDictionary *_viewOnWakeDict;
+    NSMutableDictionary *_viewOnWakeExpirationDict;
+    NSMutableDictionary *_activeSessions;
     PUICSnapshotController *_snapshotController;
-    int _interfaceOrientation;
 }
 
 + (_Bool)supportsOrb;
@@ -29,16 +31,18 @@
 + (id)_defaultContentSizeCategory;
 + (Class)_statusBarClass;
 + (id)sharedPUICApplication;
-+ (void)simulateORBPress;
 + (id)_puicFrameworkBundle;
 + (id)_puicUserDefaults;
 + (void)endAppOnWake:(id)arg1;
++ (void)endAppOnWake:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)beginAppOnWake;
++ (id)beginAppOnWake:(CDUnknownBlockType)arg1;
++ (id)_defaultSessionForBundle;
++ (id)_sessionForIdentifier:(id)arg1;
 + (float)topWindowLevel;
-@property(nonatomic) _Bool uiIsInverted; // @synthesize uiIsInverted=_uiIsInverted;
-@property(nonatomic) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(retain, nonatomic) PUICSnapshotController *snapshotController; // @synthesize snapshotController=_snapshotController;
-@property(retain, nonatomic) NSMutableDictionary *viewOnWakeDict; // @synthesize viewOnWakeDict=_viewOnWakeDict;
+@property(retain, nonatomic) NSMutableDictionary *activeSessions; // @synthesize activeSessions=_activeSessions;
+@property(retain, nonatomic) NSMutableDictionary *viewOnWakeExpirationDict; // @synthesize viewOnWakeExpirationDict=_viewOnWakeExpirationDict;
 @property(retain, nonatomic) PUICActionWindowListener *windowListener; // @synthesize windowListener=_windowListener;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) UIWindow *iconWindow; // @synthesize iconWindow=_iconWindow;
@@ -52,6 +56,7 @@
 @property(readonly, nonatomic) UIColor *primaryApplicationColor;
 - (void)dealloc;
 - (_Bool)_shouldDelayTouchesForControlCenter;
+@property(readonly, nonatomic) _Bool uiIsInverted;
 - (_Bool)isStatusBarDisconnectedIndicatorSuppressed;
 - (void)statusBarSuppressDisconnectedIndicator:(_Bool)arg1;
 - (_Bool)isStatusBarAirplaneModeIndicatorSuppressed;
@@ -94,10 +99,16 @@
 - (void)_PUICApplicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (id)init;
+@property(nonatomic) int interfaceOrientation;
 - (_Bool)_supportsCompactStatusBarHiding;
-- (void)viewOnWakeDidEnd:(id)arg1;
 - (void)endAppOnWakeWhileActive:(id)arg1;
+- (void)endAppOnWakeWhileActive:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)beginAppOnWakeWhileActiveWithExpirationHandler:(CDUnknownBlockType)arg1;
+- (id)beginAppOnWakeWhileActiveCompletion:(CDUnknownBlockType)arg1 expiration:(CDUnknownBlockType)arg2;
+- (void)endAppOnWake:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)beginAppOnWake:(CDUnknownBlockType)arg1;
+- (void)sessionDidStop:(id)arg1 error:(id)arg2;
+- (void)sessionDidStart:(id)arg1;
 - (void)setCrownWindowContextID:(unsigned int)arg1;
 - (void)_releaseStatusBarOccludedAssertion:(id)arg1;
 - (id)takeStatusBarOccludedAssertion;

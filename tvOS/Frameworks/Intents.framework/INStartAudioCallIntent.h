@@ -14,12 +14,16 @@
 {
 }
 
++ (id)_ignoredParameters;
+- (id)_spotlightContentType;
 - (void)setParametersByName:(id)arg1;
 - (id)parametersByName;
 - (void)setVerb:(id)arg1;
 - (id)verb;
 - (void)setDomain:(id)arg1;
 - (id)domain;
+- (_Bool)_supportsBackgroundExecution;
+- (id)_validParameterCombinationsWithSchema:(id)arg1;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 @property(nonatomic, setter=setTTYType:) long long ttyType;
@@ -30,8 +34,12 @@
 @property(readonly, nonatomic) long long destinationType;
 @property(nonatomic) long long audioRoute;
 - (id)initWithDestinationType:(long long)arg1 contacts:(id)arg2;
+- (id)_categoryVerb;
+- (long long)_intentCategory;
+- (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)_subtitleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
 - (id)initWithContacts:(id)arg1;
 - (void)setUseSpeaker:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool useSpeaker;

@@ -6,7 +6,7 @@
 
 #import <AppKit/NSPanel.h>
 
-@class _NSFullScreenSpace;
+@class CALayer, _NSFullScreenSpace;
 
 __attribute__((visibility("hidden")))
 @interface _NSFullScreenTileDividerWindow : NSPanel
@@ -22,8 +22,10 @@ __attribute__((visibility("hidden")))
     BOOL _liveResizeMoved;
     BOOL _shouldAbortLiveResize;
     struct CGSize _spacing;
+    CALayer *_grabBarLayer;
 }
 
++ (id)tileGrabBarWithSize:(struct CGSize)arg1;
 @property BOOL overrideDrivingLiveResize; // @synthesize overrideDrivingLiveResize=_overrideDrivingLiveResize;
 - (void)_endLiveResizeAtDividerLocation:(double)arg1;
 - (void)_liveResizeToDividerLocation:(double)arg1;
@@ -49,15 +51,18 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)parentSpaceID;
 - (void)_setWindowTag;
 - (void)close;
-- (BOOL)_shouldAutoDecSubLevel;
-- (BOOL)_shouldAutoIncSubLevel;
 - (void)setAsActiveTileDividerWindow;
+- (void)reshape;
 - (id)initWithTileSpace:(unsigned long long)arg1 direction:(unsigned long long)arg2 space:(id)arg3;
 - (void)cancelOverlayAnimations;
 - (void)_removeOverlayWindow;
 - (void)_updateOverlayWindow;
 - (void)_beginOverlayPresentationIfNeeded;
 - (void)_setupOverlayWindowImmediately:(BOOL)arg1;
+- (void)hideGrabBar;
+- (void)showGrabBar;
+- (void)showRolloverState:(BOOL)arg1;
+- (id)_grabber;
 
 @end
 

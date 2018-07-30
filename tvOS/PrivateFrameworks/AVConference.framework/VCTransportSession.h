@@ -42,11 +42,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int detailedErrorCode;
 @property(nonatomic, setter=setCallActive:) _Bool isCallActive;
 - (void)callEventHandlerWithEvent:(unsigned int)arg1 info:(id)arg2;
-- (void)setReportingAgent:(struct opaqueRTCReporting *)arg1;
 - (void)stop;
 - (void)start;
 - (void)dealloc;
-- (id)init;
+- (id)initWithNotificationQueue:(id)arg1 reportingAgent:(struct opaqueRTCReporting *)arg2;
 
 @end
 

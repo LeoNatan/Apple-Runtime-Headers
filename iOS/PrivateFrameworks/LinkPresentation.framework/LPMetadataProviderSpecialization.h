@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSURL *_URL;
 }
 
++ (id)specializedMetadataForCompleteMetadata:(id)arg1 URL:(id)arg2;
 + (id)specializedMetadataProviderForMetadata:(id)arg1 URL:(id)arg2;
 + (id)specializedMetadataProviderForResourceWithMIMEType:(id)arg1 URL:(id)arg2;
 + (id)specializedMetadataProviderForURL:(id)arg1;

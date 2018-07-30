@@ -11,16 +11,15 @@
 @interface FCNotificationsConfiguration : NSObject
 {
     NSArray *_preSubscribedNotificationsChannelIDs;
-    NSArray *_recommendedNotificationChannels;
+    NSArray *_recommendedNotificationChannelIDs;
 }
 
-@property(readonly, nonatomic) NSArray *recommendedNotificationChannels; // @synthesize recommendedNotificationChannels=_recommendedNotificationChannels;
-@property(readonly, nonatomic) NSArray *preSubscribedNotificationsChannelIDs; // @synthesize preSubscribedNotificationsChannelIDs=_preSubscribedNotificationsChannelIDs;
+@property(readonly, copy, nonatomic) NSArray *recommendedNotificationChannelIDs; // @synthesize recommendedNotificationChannelIDs=_recommendedNotificationChannelIDs;
+@property(readonly, copy, nonatomic) NSArray *preSubscribedNotificationsChannelIDs; // @synthesize preSubscribedNotificationsChannelIDs=_preSubscribedNotificationsChannelIDs;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *recommendedNotificationChannelIDs;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithPresubscribedChannels:(id)arg1 recommendedPBNotificationChannels:(id)arg2;
+- (id)initWithPresubscribedChannelIDs:(id)arg1 recommendedNotificationChannelIDs:(id)arg2;
 
 @end
 

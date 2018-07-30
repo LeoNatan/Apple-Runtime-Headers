@@ -11,5 +11,6 @@
 @protocol QLRemotePreviewHost <NSObject>
 - (void)previewControllerDidUpdatePreferredContentSize:(NSValue *)arg1;
 - (void)previewControllerDidUpdateTitle:(NSString *)arg1;
+- (void)previewControllerWantsFullScreen:(_Bool)arg1;
 @end
 

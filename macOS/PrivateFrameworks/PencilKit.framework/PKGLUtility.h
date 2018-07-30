@@ -10,9 +10,12 @@
 {
 }
 
++ (id)defaultDevice;
 + (void)postGLInactiveNotification;
 + (void)postGLActiveNotification;
++ (double)layerContentsScale;
 + (BOOL)canUseOpenGL;
++ (BOOL)isInBackground;
 + (void)initialize;
 
 @end

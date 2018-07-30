@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OABFillPropertiesManager : NSObject <OABFillPropertiesManager>
 {
     const struct EshFill *mFill;
@@ -18,6 +17,7 @@ __attribute__((visibility("hidden")))
     id <OABPropertiesManager> mMasterManager;
 }
 
+- (void).cxx_destruct;
 - (id)fillBlipName;
 - (struct EshBlip *)fillBlipDataReference;
 - (unsigned int)fillBlipID;
@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (struct EshColor)fillBgColor;
 - (struct EshColor)fillFgColor;
 - (BOOL)isFilled;
-- (void)dealloc;
 - (id)initWithFill:(const struct EshFill *)arg1 shapeType:(int)arg2 masterShape:(struct EshShape *)arg3;
 
 // Remaining properties

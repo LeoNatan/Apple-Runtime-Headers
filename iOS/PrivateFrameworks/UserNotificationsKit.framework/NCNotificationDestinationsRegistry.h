@@ -15,9 +15,9 @@
     struct NSMutableDictionary *_readyDestinations;
 }
 
-@property(copy, nonatomic) NSMutableDictionary *readyDestinations; // @synthesize readyDestinations=_readyDestinations;
-@property(copy, nonatomic) NSMutableDictionary *activeDestinations; // @synthesize activeDestinations=_activeDestinations;
-@property(copy, nonatomic) NSMutableDictionary *destinations; // @synthesize destinations=_destinations;
+@property(retain, nonatomic) NSMutableDictionary *readyDestinations; // @synthesize readyDestinations=_readyDestinations;
+@property(retain, nonatomic) NSMutableDictionary *activeDestinations; // @synthesize activeDestinations=_activeDestinations;
+@property(retain, nonatomic) NSMutableDictionary *destinations; // @synthesize destinations=_destinations;
 - (void).cxx_destruct;
 - (id)_destinationsForRequestDestinations:(id)arg1 inDestinationDict:(struct NSMutableDictionary *)arg2;
 - (id)readyDestinationsForRequestDestinations:(id)arg1;

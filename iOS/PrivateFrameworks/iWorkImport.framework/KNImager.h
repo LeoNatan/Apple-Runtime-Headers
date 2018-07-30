@@ -36,6 +36,8 @@ __attribute__((visibility("hidden")))
 - (double)p_strokeWidthForScaleFactor:(double)arg1 drawable:(id)arg2;
 - (id)p_strokeForShapeInfo:(id)arg1;
 - (_Bool)p_requiresModifiedStrokeForDrawable:(id)arg1 atScaleFactor:(double)arg2;
+- (void)p_prepareShapeInfoStroke:(id)arg1 atScaleFactor:(double)arg2 finalRect:(struct CGRect *)arg3;
+- (void)p_prepareStyledInfoStyle:(id)arg1;
 @property(readonly, nonatomic) TSUImage *elementListThumbnailImage;
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (_Bool)isInfoAKeynoteMasterObject:(id)arg1;

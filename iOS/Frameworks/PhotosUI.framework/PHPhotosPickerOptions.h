@@ -10,12 +10,14 @@
 
 @interface PHPhotosPickerOptions : NSObject
 {
+    _Bool _hideTabBar;
     NSDictionary *_initialAssetsToSelect;
     PHAsset *_keyAsset;
     PHAssetCollection *_keyAssetCollection;
     NSArray *_excludedContentModes;
 }
 
+@property(nonatomic) _Bool hideTabBar; // @synthesize hideTabBar=_hideTabBar;
 @property(copy, nonatomic) NSArray *excludedContentModes; // @synthesize excludedContentModes=_excludedContentModes;
 @property(retain, nonatomic) PHAssetCollection *keyAssetCollection; // @synthesize keyAssetCollection=_keyAssetCollection;
 @property(retain, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;

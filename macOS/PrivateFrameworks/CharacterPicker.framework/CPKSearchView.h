@@ -6,24 +6,24 @@
 
 #import "NSView.h"
 
-@class NSSearchField;
+@class CPKPickerSearchField, NSButton, NSLayoutConstraint;
 
 __attribute__((visibility("hidden")))
 @interface CPKSearchView : NSView
 {
-    NSSearchField *_searchField;
-    id <CPKSearchViewDelegate> _searchDelegate;
-    long long _maxFoundCount;
-    BOOL _shown;
+    CPKPickerSearchField *_searchField;
+    NSButton *_showCVButton;
+    NSLayoutConstraint *_fieldTrailingConstraintForButton;
+    NSLayoutConstraint *_fieldTrailingConstraintForSuperview;
 }
 
-@property(nonatomic, getter=isShown) BOOL shown; // @synthesize shown=_shown;
-@property long long maxFoundCount; // @synthesize maxFoundCount=_maxFoundCount;
-@property(readonly) NSSearchField *searchField; // @synthesize searchField=_searchField;
-@property id <CPKSearchViewDelegate> searchDelegate; // @synthesize searchDelegate=_searchDelegate;
-- (void)searchFieldTextDidChange:(id)arg1;
-- (void)searchDone:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+@property NSLayoutConstraint *fieldTrailingConstraintForSuperview; // @synthesize fieldTrailingConstraintForSuperview=_fieldTrailingConstraintForSuperview;
+@property NSLayoutConstraint *fieldTrailingConstraintForButton; // @synthesize fieldTrailingConstraintForButton=_fieldTrailingConstraintForButton;
+@property(readonly) NSButton *showCVButton; // @synthesize showCVButton=_showCVButton;
+@property(readonly) CPKPickerSearchField *searchField; // @synthesize searchField=_searchField;
+- (void)viewDidMoveToWindow;
+- (void)setCVButtonVisible:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 hasCVButton:(BOOL)arg2;
 
 @end
 

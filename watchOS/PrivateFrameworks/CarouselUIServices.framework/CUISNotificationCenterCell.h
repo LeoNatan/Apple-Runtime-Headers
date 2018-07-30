@@ -6,25 +6,37 @@
 
 #import "PUICTableViewCell.h"
 
-@class CUISNotificationCenterCellHeaderView, CUISNotificationCenterCellPlatterView, NSString, UIColor, UIImage, UIView;
+@class CUISNotificationCenterCellHeaderView, CUISNotificationCenterCellPlatterView, NSString, UIColor, UIImage, UIImageView, UILabel, UIView;
 
 @interface CUISNotificationCenterCell : PUICTableViewCell
 {
     NSString *_reuseIdentifier;
     CUISNotificationCenterCellHeaderView *_headerView;
     CUISNotificationCenterCellPlatterView *_platterView;
+    UILabel *_summaryLabel;
+    UIImageView *_stackedPlatter;
     UIView *_bodyView;
+    unsigned int _bulletinCount;
+    UIColor *_summaryTextColor;
 }
 
+@property(retain, nonatomic) UIColor *summaryTextColor; // @synthesize summaryTextColor=_summaryTextColor;
+@property(nonatomic) unsigned int bulletinCount; // @synthesize bulletinCount=_bulletinCount;
 @property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;
 - (void).cxx_destruct;
 - (void)_handleFontSizeChange:(id)arg1;
 - (void)_layoutInFrame:(struct CGRect)arg1;
 - (struct CGRect)actionBarFrame;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (float)stackedPlatterHeight;
 - (void)layoutSubviews;
 - (void)createSubviews;
+- (void)createCoalesceLabel;
+- (void)createStackedPlatter;
+- (id)stackedPlatterImage;
+- (_Bool)isCoalesced;
 @property(nonatomic) unsigned int iconStyle;
+@property(retain, nonatomic) UIImage *modifierIcon;
 @property(retain, nonatomic) UIImage *icon;
 @property(retain, nonatomic) UIColor *appNameTextColor;
 @property(copy, nonatomic) NSString *appName;

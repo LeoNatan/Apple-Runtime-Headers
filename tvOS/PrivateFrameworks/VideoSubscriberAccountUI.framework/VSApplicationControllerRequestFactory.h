@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)logoutApplicationControllerRequestWithAuthenticationToken:(id)arg1;
 - (id)accountMetadataApplicationControllerRequestWithAccountMetadataRequest:(id)arg1 authenticationToken:(id)arg2;
 - (id)authenticationApplicationControllerRequestWithAuthenticationToken:(id)arg1 forcedAuthentication:(_Bool)arg2;
+- (id)silentAuthenticationApplicationControllerRequest;
 - (id)silentAuthenticationApplicationControllerRequestWithAuthenticationToken:(id)arg1 forcedAuthentication:(_Bool)arg2;
 
 @end

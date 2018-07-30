@@ -23,7 +23,6 @@
 @property(readonly, nonatomic) id <CNUIPRLikenessResolver> likenessResolver; // @synthesize likenessResolver=_likenessResolver;
 - (void).cxx_destruct;
 - (id)renderedLoadingPlaceholderForContactCount:(unsigned int)arg1 scope:(id)arg2;
-- (id)preRenderedLoadingPlaceholderForContactCount:(unsigned int)arg1 scope:(id)arg2;
 - (id)renderedBasicMonogramFromString:(id)arg1 scope:(id)arg2;
 - (id)loadingPlaceholderForContactCount:(unsigned int)arg1 scope:(id)arg2;
 - (id)renderedLikenessesForLikenessProviders:(id)arg1 scope:(id)arg2;

@@ -10,7 +10,6 @@
 
 @protocol _SFPBMonogramImage <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasMonogramLetters;
 @property(copy, nonatomic) NSString *monogramLetters;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

@@ -17,8 +17,7 @@
 @property(readonly, nonatomic) NSString *hf_defaultName;
 @property(readonly, nonatomic) NSString *hf_editingName;
 @property(readonly, copy, nonatomic) NSString *hf_displayName;
-- (id)hf_serializedStateDumpRepresentation;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_updateIsFavorite:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool hf_shouldShowInFavorites;
 @property(readonly, nonatomic) _Bool hf_hasSetFavorite;
@@ -46,7 +45,7 @@
 @property(readonly, copy) NSSet *symptoms;
 @property(readonly, nonatomic) __weak HMRoom *hf_parentRoom;
 @property(readonly, nonatomic) HMHome *hf_home;
-- (id)accessories;
+@property(readonly, nonatomic) NSSet *accessories;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 
 // Remaining properties

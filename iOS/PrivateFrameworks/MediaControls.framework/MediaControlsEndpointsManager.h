@@ -10,10 +10,12 @@
 #import "MPAVRoutingControllerDelegate.h"
 #import "MediaControlsHomeObserverDelegate.h"
 
-@class MPAVEndpointRoute, MPAVRoutingController, MPMediaControlsConfiguration, MediaControlsHomeObserver, NSArray, NSMutableDictionary, NSString;
+@class MPAVEndpointRoute, MPAVRoutingController, MPMediaControlsConfiguration, MediaControlsHomeObserver, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MediaControlsEndpointsManager : NSObject <MPAVRoutingControllerDelegate, MediaControlsHomeObserverDelegate, MPAVOutputDevicePlaybackDataSource>
 {
+    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSArray *_lastDiffedRoutes;
     NSMutableDictionary *_endpointControllersMap;
     _Bool _didLoadHomeUIDsOnce;
     _Bool _isRequestingActiveRoute;
@@ -24,8 +26,10 @@
     MediaControlsHomeObserver *_homeObserver;
     MPAVRoutingController *_routingController;
     NSString *_activeSystemRouteUID;
+    NSString *_pendingActiveSystemRouteUID;
 }
 
+@property(readonly, copy, nonatomic) NSString *pendingActiveSystemRouteUID; // @synthesize pendingActiveSystemRouteUID=_pendingActiveSystemRouteUID;
 @property(readonly, copy, nonatomic) NSString *activeSystemRouteUID; // @synthesize activeSystemRouteUID=_activeSystemRouteUID;
 @property(readonly, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
 @property(readonly, nonatomic) MediaControlsHomeObserver *homeObserver; // @synthesize homeObserver=_homeObserver;

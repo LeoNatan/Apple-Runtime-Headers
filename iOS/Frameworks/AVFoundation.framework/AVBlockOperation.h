@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVOperation.h>
 
+__attribute__((visibility("hidden")))
 @interface AVBlockOperation : AVOperation
 {
     CDUnknownBlockType _block;

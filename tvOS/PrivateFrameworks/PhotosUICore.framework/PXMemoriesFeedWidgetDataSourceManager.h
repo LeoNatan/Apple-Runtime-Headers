@@ -15,7 +15,7 @@
 - (void)handleChangedKeyAssetsForMemories:(id)arg1;
 - (void)handleNonIncrementalFetchResultChange:(id)arg1;
 - (void)handleIncrementalFetchResultChange:(id)arg1 updatedFetchResultsForMemoriesWithChangedKeyAssets:(id)arg2;
-- (void)_regenerateMemories;
+- (void)_regenerateMemoriesWithChange:(id)arg1;
 - (id)_generateEntryFromMemories:(id)arg1;
 - (void)generateAdditionalEntriesIfPossible;
 - (void)startGeneratingMemories;

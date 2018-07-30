@@ -8,7 +8,7 @@
 
 #import "MapsSuggestionsObject.h"
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface MapsSuggestionsEngineBuilder : NSObject <MapsSuggestionsObject>
 {
@@ -17,12 +17,14 @@
     long long _managerStyle;
     id <MapsSuggestionsLocationUpdater> _locationUpdater;
     NSMutableArray *_sourceClasses;
-    NSMutableArray *_includeFilters;
-    NSMutableArray *_includeImprovers;
-    NSMutableArray *_includeDedupers;
-    NSMutableArray *_excludeFilters;
-    NSMutableArray *_excludeImprovers;
-    NSMutableArray *_excludeDedupers;
+    struct NSMutableSet *_includePreFilters;
+    struct NSMutableSet *_includePostFilters;
+    struct NSMutableArray *_includeImprovers;
+    struct NSMutableArray *_includeDedupers;
+    struct NSMutableSet *_excludePreFilters;
+    struct NSMutableSet *_excludePostFilters;
+    struct NSMutableArray *_excludeImprovers;
+    struct NSMutableArray *_excludeDedupers;
     struct NSMutableDictionary *_titleFormatters;
 }
 
@@ -36,10 +38,12 @@
 @property(retain, nonatomic) NSMutableDictionary *titleFormatters; // @synthesize titleFormatters=_titleFormatters;
 @property(retain, nonatomic) NSMutableArray *excludeDedupers; // @synthesize excludeDedupers=_excludeDedupers;
 @property(retain, nonatomic) NSMutableArray *excludeImprovers; // @synthesize excludeImprovers=_excludeImprovers;
-@property(retain, nonatomic) NSMutableArray *excludeFilters; // @synthesize excludeFilters=_excludeFilters;
+@property(retain, nonatomic) NSMutableSet *excludePostFilters; // @synthesize excludePostFilters=_excludePostFilters;
+@property(retain, nonatomic) NSMutableSet *excludePreFilters; // @synthesize excludePreFilters=_excludePreFilters;
 @property(retain, nonatomic) NSMutableArray *includeDedupers; // @synthesize includeDedupers=_includeDedupers;
 @property(retain, nonatomic) NSMutableArray *includeImprovers; // @synthesize includeImprovers=_includeImprovers;
-@property(retain, nonatomic) NSMutableArray *includeFilters; // @synthesize includeFilters=_includeFilters;
+@property(retain, nonatomic) NSMutableSet *includePostFilters; // @synthesize includePostFilters=_includePostFilters;
+@property(retain, nonatomic) NSMutableSet *includePreFilters; // @synthesize includePreFilters=_includePreFilters;
 @property(retain, nonatomic) NSMutableArray *sourceClasses; // @synthesize sourceClasses=_sourceClasses;
 @property(nonatomic) _Bool hasTracker; // @synthesize hasTracker=_hasTracker;
 @property(retain, nonatomic) id <MapsSuggestionsLocationUpdater> locationUpdater; // @synthesize locationUpdater=_locationUpdater;
@@ -48,14 +52,14 @@
 - (void).cxx_destruct;
 - (id)withManagerStyle:(long long)arg1;
 - (id)build;
-- (id)withTitleFormatter:(id)arg1 forType:(unsigned long long)arg2;
+- (id)withTitleFormatter:(id)arg1 forType:(long long)arg2;
 - (id)withSourceClasses:(id)arg1;
 - (id)withoutDedupers:(id)arg1;
 - (id)withDedupers:(id)arg1;
 - (id)withoutImprovers:(id)arg1;
 - (id)withImprovers:(id)arg1;
-- (id)withoutFilters:(id)arg1;
-- (id)withFilters:(id)arg1;
+- (id)withPostFilters:(struct NSSet *)arg1;
+- (id)withPreFilters:(struct NSSet *)arg1;
 - (id)withoutTracker;
 - (id)withLocationUpdater:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;

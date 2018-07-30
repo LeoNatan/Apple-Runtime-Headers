@@ -4,36 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIViewController.h"
+#import <NanoPassKitUI/NPKPassAccessoryViewController.h>
 
-@class CSLSButtonHandler, NPKUIAssertion, PKBarcode, UITapGestureRecognizer;
+@class PKBarcode;
 
-@interface NPKBarcodeViewController : UIViewController
+@interface NPKBarcodeViewController : NPKPassAccessoryViewController
 {
-    id <NPKBarcodeViewControllerDelegate> _delegate;
     PKBarcode *_barcode;
-    NPKUIAssertion *_barcodeAssertion;
-    UITapGestureRecognizer *_tapRecognizer;
-    CSLSButtonHandler *_buttonHandler;
 }
 
-@property(retain, nonatomic) CSLSButtonHandler *buttonHandler; // @synthesize buttonHandler=_buttonHandler;
-@property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
-@property(retain, nonatomic) NPKUIAssertion *barcodeAssertion; // @synthesize barcodeAssertion=_barcodeAssertion;
 @property(retain, nonatomic) PKBarcode *barcode; // @synthesize barcode=_barcode;
-@property(nonatomic) __weak id <NPKBarcodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_unregisterForButtonSinglePress;
-- (void)_registerForButtonSinglePress;
-- (void)_dismissAnimated:(_Bool)arg1;
-- (void)_dismiss;
-- (void)_invalidateBarcodeAssertion;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)loadView;
-- (_Bool)prefersStatusBarHidden;
-- (void)dealloc;
+- (id)accessoryImageViewForSize:(struct CGSize)arg1;
 - (id)initWithBarcode:(id)arg1;
 
 @end

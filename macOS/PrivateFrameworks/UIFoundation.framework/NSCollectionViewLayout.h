@@ -97,6 +97,7 @@
 - (void)finalizeCollectionViewUpdates;
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (struct CGSize)collectionViewContentSize;
+- (struct CGPoint)collectionViewContentOrigin;
 - (CDUnknownBlockType)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
 - (CDUnknownBlockType)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;

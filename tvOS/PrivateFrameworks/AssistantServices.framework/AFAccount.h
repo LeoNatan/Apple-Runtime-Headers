@@ -18,9 +18,11 @@
     NSString *_identifier;
     NSString *_label;
     NSString *_assistantIdentifier;
+    NSString *_loggingAssistantIdentifier;
     NSString *_speechIdentifier;
     NSString *_hostname;
     NSString *_peerAssistantIdentifier;
+    NSString *_peerLoggingAssistantIdentifier;
     NSString *_peerSpeechIdentifier;
     NSString *_peerUserAgentString;
     NSString *_peerLanguageCode;
@@ -52,9 +54,11 @@
 @property(copy, nonatomic) NSString *peerLanguageCode; // @synthesize peerLanguageCode=_peerLanguageCode;
 @property(copy, nonatomic) NSString *peerUserAgentString; // @synthesize peerUserAgentString=_peerUserAgentString;
 @property(copy, nonatomic) NSString *peerSpeechIdentifier; // @synthesize peerSpeechIdentifier=_peerSpeechIdentifier;
+@property(copy, nonatomic) NSString *peerLoggingAssistantIdentifier; // @synthesize peerLoggingAssistantIdentifier=_peerLoggingAssistantIdentifier;
 @property(copy, nonatomic) NSString *peerAssistantIdentifier; // @synthesize peerAssistantIdentifier=_peerAssistantIdentifier;
 @property(copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(copy, nonatomic) NSString *speechIdentifier; // @synthesize speechIdentifier=_speechIdentifier;
+@property(copy, nonatomic) NSString *loggingAssistantIdentifier; // @synthesize loggingAssistantIdentifier=_loggingAssistantIdentifier;
 @property(copy, nonatomic) NSString *assistantIdentifier; // @synthesize assistantIdentifier=_assistantIdentifier;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

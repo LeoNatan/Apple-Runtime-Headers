@@ -46,7 +46,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *comment; // @synthesize comment=_comment;
 - (void).cxx_destruct;
-- (void)_decodeValueForKey:(id)arg1 withCoder:(id)arg2;
 - (BOOL)isLocationRoom;
 @property(readonly, nonatomic) long long participantScheduleStatus;
 @property(copy, nonatomic) NSString *phoneNumber;

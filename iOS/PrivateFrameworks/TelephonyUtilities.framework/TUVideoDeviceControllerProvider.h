@@ -8,19 +8,25 @@
 
 #import "AVConferencePreviewClientDelegate.h"
 #import "TUVideoDeviceControllerProvider.h"
+#import "TUVideoEffectsProvider.h"
 
-@class AVConferencePreview, NSArray, NSString, VideoAttributes;
+@class AVConferencePreview, NSArray, NSString, TUVideoEffect, VideoAttributes;
 
-@interface TUVideoDeviceControllerProvider : NSObject <AVConferencePreviewClientDelegate, TUVideoDeviceControllerProvider>
+__attribute__((visibility("hidden")))
+@interface TUVideoDeviceControllerProvider : NSObject <AVConferencePreviewClientDelegate, TUVideoDeviceControllerProvider, TUVideoEffectsProvider>
 {
     id <TUVideoDeviceControllerProviderDelegate> _delegate;
+    TUVideoEffect *_currentVideoEffect;
     AVConferencePreview *_preview;
 }
 
 @property(readonly, nonatomic) AVConferencePreview *preview; // @synthesize preview=_preview;
+@property(retain, nonatomic) TUVideoEffect *currentVideoEffect; // @synthesize currentVideoEffect=_currentVideoEffect;
 @property(nonatomic) __weak id <TUVideoDeviceControllerProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)captureDevicesChanged:(id)arg1;
+- (id)thumbnailImageForVideoEffectName:(id)arg1;
+@property(readonly, nonatomic) NSArray *availableVideoEffects;
 - (void)didStopPreview;
 - (void)didChangeLocalVideoAttributes:(id)arg1;
 - (void)didReceiveFirstPreviewFrameFromCameraUniqueID:(id)arg1;

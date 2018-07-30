@@ -11,8 +11,10 @@
 @interface PKPGSVFooterView : UIView
 {
     PKContinuousButton *_editButton;
+    id <PKPGSVFooterViewDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <PKPGSVFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_editTapped:(id)arg1;
 - (void)layoutSubviews;

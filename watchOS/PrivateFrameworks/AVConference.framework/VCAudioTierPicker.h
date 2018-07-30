@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class BitrateLimits, NSMutableArray, VCAudioTier;
+@class BitrateLimits, NSMutableDictionary, VCAudioTier;
 
 __attribute__((visibility("hidden")))
 @interface VCAudioTierPicker : NSObject
 {
-    NSMutableArray *tierTablesForRedNumPayloads;
+    NSMutableDictionary *tierTablesForRedNumPayloads;
     VCAudioTier *defaultTier;
     VCAudioTier *fallbackTier;
     _Bool usingCellular;
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (id)valueForNetworkBitrate:(id)arg1 networkBitrate:(unsigned long)arg2;
 + (_Bool)shouldFilterTierForPayloadConfig:(id)arg1 bitRate:(unsigned long)arg2 packetsPerBundle:(unsigned long)arg3 operatingMode:(int)arg4 redNumPayloads:(unsigned long)arg5 cellular:(_Bool)arg6;
-+ (id)selectHighestQualityAudioTiers:(id)arg1 forBitrateLimits:(id)arg2;
++ (id)selectHighestQualityAudioTiers:(id)arg1 forBitrateLimits:(id)arg2 isHardLimit:(_Bool)arg3;
 + (id)allPossibleCombinations:(id)arg1 supportedPacketsPerBundle:(id)arg2 redNumPayloads:(unsigned long)arg3 headerSize:(unsigned long)arg4 operatingMode:(int)arg5 usingCellular:(_Bool)arg6 useCaseWatchContinuity:(_Bool)arg7;
 + (_Bool)arrayHasObject:(id)arg1 withPayloadType:(int)arg2;
 @property(readonly) VCAudioTier *defaultTier; // @synthesize defaultTier;

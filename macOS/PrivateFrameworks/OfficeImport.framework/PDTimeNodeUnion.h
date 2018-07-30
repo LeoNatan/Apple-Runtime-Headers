@@ -8,7 +8,6 @@
 
 @class PDAnimateColorBehavior, PDAnimateEffectBehavior, PDAnimateMotionBehavior, PDAnimateRotateBehavior, PDAnimateScaleBehavior, PDAnimateTimeBehavior, PDAudioNode, PDCmdBehavior, PDParallelTimeNode, PDSequentialTimeNode, PDSetBehavior, PDVideoNode;
 
-__attribute__((visibility("hidden")))
 @interface PDTimeNodeUnion : NSObject
 {
     PDAnimateTimeBehavior *mTimeBehavior;
@@ -25,6 +24,7 @@ __attribute__((visibility("hidden")))
     PDCmdBehavior *mCmdBehavior;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setCmdBehavior:(id)arg1;
 - (id)cmdBehavior;
@@ -51,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (void)setTimeBehavior:(id)arg1;
 - (id)timeBehavior;
 - (id)commonBehavior;
-- (void)dealloc;
 - (id)init;
 
 @end

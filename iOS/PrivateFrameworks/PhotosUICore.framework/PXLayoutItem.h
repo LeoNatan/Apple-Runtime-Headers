@@ -14,8 +14,12 @@
 {
     double _weight;
     struct CGSize _size;
+    struct CGRect _preferredCropRect;
+    struct CGRect _acceptableCropRect;
 }
 
+@property(readonly, nonatomic) struct CGRect acceptableCropRect; // @synthesize acceptableCropRect=_acceptableCropRect;
+@property(readonly, nonatomic) struct CGRect preferredCropRect; // @synthesize preferredCropRect=_preferredCropRect;
 @property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 - (id)initWithSize:(struct CGSize)arg1 weight:(double)arg2;

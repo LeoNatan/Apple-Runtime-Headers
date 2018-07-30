@@ -11,8 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTextCell : NSTextFieldCell
 {
-    struct TNSRef<NSColor *, void> _enabledTextColor;
-    struct TNSRef<NSColor *, void> _disabledTextColor;
+    struct TNSRef<NSColor, void> _enabledTextColor;
+    struct TNSRef<NSColor, void> _disabledTextColor;
     _Bool _drawGrayTextWhenDisabled;
     _Bool _centerVertically;
 }

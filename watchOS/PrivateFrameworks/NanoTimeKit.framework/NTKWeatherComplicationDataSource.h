@@ -6,29 +6,29 @@
 
 #import "NSObject.h"
 
-#import "NTKSelectedLocationWeatherMonitorObserver.h"
+#import "NWKSelectedLocationWeatherMonitorObserver.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, NTKSelectedLocationWeatherMonitor;
+@class NSDate, NSObject<OS_dispatch_queue>, NSString, NWKSelectedLocationWeatherMonitor;
 
-@interface NTKWeatherComplicationDataSource : NSObject <NTKSelectedLocationWeatherMonitorObserver>
+@interface NTKWeatherComplicationDataSource : NSObject <NWKSelectedLocationWeatherMonitorObserver>
 {
     _Bool _debugLastUpdateTimeEnabled;
-    NTKSelectedLocationWeatherMonitor *_weatherMonitor;
+    NWKSelectedLocationWeatherMonitor *_weatherMonitor;
     NSObject<OS_dispatch_queue> *_workQueue;
+    NSDate *_metricTrackingStartDate;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSDate *metricTrackingStartDate; // @synthesize metricTrackingStartDate=_metricTrackingStartDate;
 @property(nonatomic, getter=isDebugLastUpdateTimeEnabled) _Bool debugLastUpdateTimeEnabled; // @synthesize debugLastUpdateTimeEnabled=_debugLastUpdateTimeEnabled;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(retain, nonatomic) NTKSelectedLocationWeatherMonitor *weatherMonitor; // @synthesize weatherMonitor=_weatherMonitor;
+@property(readonly, nonatomic) NWKSelectedLocationWeatherMonitor *weatherMonitor; // @synthesize weatherMonitor=_weatherMonitor;
 - (void).cxx_destruct;
 - (void)_readDebugLastUpdateTimeEnabledPref;
 - (void)_unregisterForDebugLastUpdateTimeEnabledPrefNotitification;
 - (void)_registerForDebugLastUpdateTimeEnabledPrefNotitification;
-- (id)_entryForFamily:(int)arg1 weatherComplicationType:(int)arg2 conditions:(id)arg3;
-- (id)_temperatureConditionsStringForData:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
-- (id)_temperatureStringForConditions:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
-- (void)getLaunchURLForTimelineEntryDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (id)_entryForFamily:(int)arg1 weatherComplicationType:(int)arg2 airQualityConditions:(id)arg3 forecastConditions:(id)arg4;
+- (void)getLaunchURLForTimelineEntryDate:(id)arg1 weatherComplicationType:(int)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getTimelineEntriesForFamily:(int)arg1 afterDate:(id)arg2 limit:(unsigned int)arg3 weatherComplicationType:(int)arg4 withHandler:(CDUnknownBlockType)arg5;
 - (void)getTimelineEntriesForFamily:(int)arg1 beforeDate:(id)arg2 limit:(unsigned int)arg3 weatherComplicationType:(int)arg4 withHandler:(CDUnknownBlockType)arg5;
 - (void)getCurrentTimelineEntryForFamily:(int)arg1 weatherComplicationType:(int)arg2 handler:(CDUnknownBlockType)arg3;
@@ -36,18 +36,34 @@
 - (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
+- (void)weatherMonitorNoLongerWaitingForData:(id)arg1;
 - (void)selectedLocationUpdatedOnWeatherMonitor:(id)arg1;
 - (void)localeChanged:(id)arg1;
 - (void)forecastUpdatedOnWeatherMonitor:(id)arg1;
 - (void)displayNameUpdatedOnWeatherMonitor:(id)arg1;
 @property(readonly, nonatomic) NSString *observerName;
 @property(readonly, nonatomic) unsigned int loggingCategory;
+- (void)_setMetricTrackingStartDateWithNow;
+- (void)_setMetricTrackingStartDateWithForecastData;
 - (void)_performBlockAsyncOnWorkQueue:(CDUnknownBlockType)arg1;
 - (void)_postUpdateNotification;
+- (void)_logComplicationStaleDuration;
 - (id)complicationApplicationIdentifier;
+- (void)pause;
 - (void)resume;
 - (void)dealloc;
 - (id)init;
+- (void)_updateMaxDynamicFontSizeOfTemplate:(id)arg1 withFontSizeMapping:(id)arg2 defaultFontSize:(int)arg3 forText:(id)arg4;
+- (id)_temperatureStringForConditions:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
+- (id)_temperatureConditionsStringForData:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
+- (id)_formattedTextProviderWithFontSize:(float)arg1 inTemplate:(id)arg2 forConditions:(id)arg3;
+- (id)_utilitarianSmallTemplateForComplicationType:(int)arg1 family:(int)arg2 populatedWithConditions:(id)arg3;
+- (id)_utilitarianLargeTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
+- (id)_modularSmallTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
+- (id)_modularLargeTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2 shouldShowDebugLastUpdateTime:(_Bool)arg3;
+- (id)_extraLargeTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
+- (id)_circularMediumTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
+- (id)_circularSmallTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

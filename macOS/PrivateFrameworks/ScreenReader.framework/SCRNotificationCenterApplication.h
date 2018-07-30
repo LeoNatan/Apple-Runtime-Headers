@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 - (id)_updatedNotificationGuideTitleWithAppName:(id)arg1 title:(id)arg2 subtitle:(id)arg3 body:(id)arg4;
 - (void)_updateNotificationsGuide:(id)arg1 isInLockScreenValue:(id)arg2;
 - (void)_startHandlingKeyboardFocusChangeEvents;
+- (void)_focusOnFaceTimeWindowContent;
+- (void)focusOnFaceTimeWindowContent;
 - (void)dispatchFocusOnTalkToSiriButton;
 - (void)dispatchUpdateNotificationsGuide:(id)arg1 isInLockScreen:(BOOL)arg2;
 - (id)widgetRadioButtonUIElement;

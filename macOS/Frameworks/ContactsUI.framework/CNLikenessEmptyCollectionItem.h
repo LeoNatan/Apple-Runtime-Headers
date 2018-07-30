@@ -6,20 +6,19 @@
 
 #import <ContactsUI/CNLikenessCollectionItem.h>
 
-@class NSView;
+@class CNLikenessCircleView;
 
 @interface CNLikenessEmptyCollectionItem : CNLikenessCollectionItem
 {
-    NSView *_circleButton;
+    CNLikenessCircleView *_circleButton;
 }
 
-@property(retain) NSView *circleButton; // @synthesize circleButton=_circleButton;
+@property(retain) CNLikenessCircleView *circleButton; // @synthesize circleButton=_circleButton;
 - (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstResponder;
-- (id)buttonImage;
 - (id)contentView;
 - (void)loadView;
 

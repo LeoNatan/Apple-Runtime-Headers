@@ -11,14 +11,13 @@
 @class CNContact, NSArray, NSString, SGContact, SGOrigin, SGRecordId;
 
 @protocol SGSuggestionsServiceContactsProtocol <_SGSuggestionsServiceBaseProtocol, _SGSuggestionsServiceContactsConfirmRejectProtocol, _SGSuggestionsServiceContactsObserverProtocol>
-- (void)relevantABRecordIDsWithLimit:(long long)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
 - (void)allContactsLimitedTo:(unsigned long long)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
 - (SGOrigin *)originFromRecordId:(SGRecordId *)arg1 error:(id *)arg2;
 - (void)originFromRecordId:(SGRecordId *)arg1 withCompletion:(void (^)(SGOrigin *, NSError *))arg2;
 - (NSArray *)cnContactMatchesForRecordIds:(NSArray *)arg1 error:(id *)arg2;
 - (void)cnContactMatchesForRecordIds:(NSArray *)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
 - (void)cnContactMatchesForRecordId:(SGRecordId *)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
-- (NSArray *)contactMatchesWithContactIdentifiers:(NSString *)arg1 limitTo:(unsigned long long)arg2 error:(id *)arg3;
+- (NSArray *)contactMatchesWithContactIdentifiers:(NSArray *)arg1 limitTo:(unsigned long long)arg2 error:(id *)arg3;
 - (void)contactMatchesWithContactIdentifiers:(NSArray *)arg1 limitTo:(unsigned long long)arg2 withCompletion:(void (^)(NSArray *, NSError *))arg3;
 - (NSArray *)contactMatchesWithContactIdentifier:(NSString *)arg1 limitTo:(unsigned long long)arg2 error:(id *)arg3;
 - (void)contactMatchesWithContactIdentifier:(NSString *)arg1 limitTo:(unsigned long long)arg2 withCompletion:(void (^)(NSArray *, NSError *))arg3;

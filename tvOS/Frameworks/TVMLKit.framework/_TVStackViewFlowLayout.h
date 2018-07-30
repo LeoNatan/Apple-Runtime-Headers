@@ -8,19 +8,30 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface _TVStackViewFlowLayout : _TVCollectionViewFlowLayout
 {
+    id <_TVStackViewDelegateFlowLayout> _stackViewDelegateFlowLayout;
+    struct {
+        _Bool hasShowcaseFactorDidChange;
+    } _stackViewDelegateFlowLayoutFlags;
     NSArray *_supplementaryCellLayoutAttributes;
     CDUnknownBlockType _onPrepareLayout;
+    double _showcaseHeight;
+    double _showcaseFactor;
 }
 
++ (Class)layoutAttributesClass;
+@property(readonly, nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
+@property(nonatomic) double showcaseHeight; // @synthesize showcaseHeight=_showcaseHeight;
 @property(copy, nonatomic) CDUnknownBlockType onPrepareLayout; // @synthesize onPrepareLayout=_onPrepareLayout;
 @property(copy, nonatomic) NSArray *supplementaryCellLayoutAttributes; // @synthesize supplementaryCellLayoutAttributes=_supplementaryCellLayoutAttributes;
 - (void).cxx_destruct;
+- (double)_computeShowcaseFactor;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
+- (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
+- (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (void)prepareLayout;
 
 @end

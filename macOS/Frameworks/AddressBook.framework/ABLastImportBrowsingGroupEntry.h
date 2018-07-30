@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABGroupBrowsingGroupEntry.h>
 
-__attribute__((visibility("hidden")))
 @interface ABLastImportBrowsingGroupEntry : ABGroupBrowsingGroupEntry
 {
 }

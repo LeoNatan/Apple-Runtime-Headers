@@ -55,7 +55,7 @@
 - (void)reindexAllSearchableItems;
 - (void)performIndexing;
 - (id)initWithContactStore:(id)arg1 searchableIndex:(id)arg2 logger:(id)arg3 batchSize:(unsigned long long)arg4;
-- (id)init;
+- (id)initWithContactStore:(id)arg1;
 
 @end
 

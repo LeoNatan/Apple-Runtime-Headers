@@ -26,7 +26,7 @@
 + (id)_artworkLoadQueue;
 + (id)_artworkCacheForIdentifier:(id)arg1 requestingContext:(id)arg2;
 + (void)setCachePurgesWhenEnteringBackground:(_Bool)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
-+ (void)setCacheLimit:(unsigned int)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
++ (void)setCacheLimit:(int)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
 + (id)staticArtworkCatalogWithImage:(id)arg1;
 @property(nonatomic) unsigned int renderHint; // @synthesize renderHint=_renderHint;
 @property(nonatomic) __weak id <MPArtworkDataSource> dataSource; // @synthesize dataSource=_dataSource;

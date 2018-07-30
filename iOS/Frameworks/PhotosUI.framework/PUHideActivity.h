@@ -18,7 +18,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)activityImage;
+- (id)_activityImageName;
+- (id)_activityBundleImageConfiguration;
 - (id)activityTitle;
 - (id)activityType;
 - (void)setItemSourceController:(id)arg1;

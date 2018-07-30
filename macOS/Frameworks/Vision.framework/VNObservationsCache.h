@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)observationsForRequest:(id)arg1 testedKeyHandler:(CDUnknownBlockType)arg2;
 - (void)setObservations:(id)arg1 forKey:(id)arg2;
 - (id)observationsForKey:(id)arg1;
 - (id)init;

@@ -6,20 +6,27 @@
 
 #import "NSVisualEffectView.h"
 
+#import "NCMaterialDelegate.h"
+
 @class NCMaterialLayer;
 
-@interface NCTexturedView : NSVisualEffectView
+@interface NCTexturedView : NSVisualEffectView <NCMaterialDelegate>
 {
     NCMaterialLayer *_materialLayer;
+    _Bool _darkLook;
+    unsigned char _style;
     _Bool _textureVisible;
 }
 
 @property(nonatomic) _Bool textureVisible; // @synthesize textureVisible=_textureVisible;
 - (void).cxx_destruct;
 - (BOOL)_shouldAutoFlattenLayerTree;
-- (void)layout;
+- (void)updateLayer;
 - (void)_createBackdropLayers;
-- (void)_setupAppearance;
+- (void)_setupAppearance:(_Bool)arg1 style:(unsigned char)arg2;
+- (void)materialChanged:(unsigned char)arg1;
+- (void)appearanceChanged:(_Bool)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

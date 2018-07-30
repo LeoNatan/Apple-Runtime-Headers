@@ -6,13 +6,12 @@
 
 #import "UIButton.h"
 
-@class CAFilter, CAShapeLayer, PKShapeView, UIActivityIndicatorView, UIColor;
+@class CAFilter, CAShapeLayer, UIActivityIndicatorView, UIColor;
 
 @interface PKContinuousButton : UIButton
 {
     CDStruct_e6a35582 _configuration;
     UIColor *_tintColor;
-    PKShapeView *_maskView;
     _Bool _titleColorShouldBeTintColor;
     CAFilter *_highlightFilter;
     UIColor *_normalInputColor;
@@ -21,7 +20,6 @@
     UIColor *_disabledInputColor;
     UIColor *_appliedInputColor;
     CAShapeLayer *_layer;
-    CAShapeLayer *_maskLayer;
     _Bool _highlighted;
     _Bool _selected;
     _Bool _enabled;

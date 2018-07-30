@@ -42,13 +42,12 @@
 - (unsigned long long)_regionsForCurrentModes;
 - (long long)_frontFaceBackgroundModeForContentMode;
 - (void)_applyContentMode:(_Bool)arg1;
-- (void)passFaceBarcodeButtonPressed:(id)arg1;
 - (void)passFaceInfoButtonPressed:(id)arg1;
-- (_Bool)passFaceBarcodeButtonEnabled;
 - (_Bool)passFaceDeleteButtonEnabled;
 - (void)passFaceDeleteButtonPressed:(id)arg1;
-- (void)_updateResizeIfNecessary;
 - (void)passcodeLockManager:(id)arg1 didReceivePasscodeSet:(_Bool)arg2;
+- (void)_updateHighEndLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
+- (void)_updateLowEndLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
 - (void)_updateLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
 - (void)resizePassAnimated:(_Bool)arg1 notify:(_Bool)arg2;
 - (void)updateValidityDisplay;
@@ -60,12 +59,13 @@
 - (void)setModalShadowVisibility:(double)arg1 animated:(_Bool)arg2;
 - (void)setDimmer:(double)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool frontFaceBodyContentCreated;
+@property(readonly, nonatomic) _Bool suppressesPile;
 @property(readonly, nonatomic) _Bool isForcedFrontFaceResized;
 @property(readonly, nonatomic) _Bool isFrontFaceResized;
 @property(readonly, nonatomic) NSString *uniqueID;
 - (void)setLiveMotionEnabled:(_Bool)arg1;
 - (id)item;
-- (_Bool)canResize;
+- (_Bool)canShowBarcode;
 - (id)snapshotViewOfVisibleFaceAfterScreenUpdates:(_Bool)arg1;
 - (id)snapshotOfFrontFaceWithRequestedSize:(struct CGSize)arg1;
 - (id)snapshotOfFrontFace;
@@ -77,6 +77,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)dealloc;
+- (id)initWithPass:(id)arg1 content:(long long)arg2 suppressedContent:(unsigned long long)arg3;
 - (id)initWithPass:(id)arg1 content:(long long)arg2;
 - (id)initWithPass:(id)arg1;
 

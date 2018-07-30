@@ -15,7 +15,7 @@
 #import "UITableViewDataSourcePrefetching.h"
 #import "UITableViewDelegate.h"
 
-@class NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, PSListContainerView, UIColor, UIKeyboard, UITableView;
+@class NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIColor, UIKeyboard, UITableView, UIView;
 
 @interface PSListController : PSViewController <UIAppearance, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching, UIAlertViewDelegate, UIPopoverPresentationControllerDelegate, PSSpecifierObserver, PSViewControllerOffsetProtocol>
 {
@@ -24,7 +24,6 @@
     _Bool _cachesCells;
     _Bool _reusesCells;
     _Bool _forceSynchronousIconLoadForCreatedCells;
-    PSListContainerView *_containerView;
     UITableView *_table;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;
@@ -46,6 +45,7 @@
     id <PSSpecifierDataSource> _dataSource;
     _Bool _requestingSpecifiersFromDataSource;
     _Bool _sectionContentInsetInitialized;
+    UIView *_containerView;
     NSIndexPath *_savedSelectedIndexPath;
     _Bool _edgeToEdgeCells;
     _Bool _prefetchingEnabled;
@@ -96,7 +96,7 @@
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) _Bool usesDarkTheme; // @synthesize usesDarkTheme=_usesDarkTheme;
-@property(nonatomic) _Bool prefetchingEnabled; // @synthesize prefetchingEnabled=_prefetchingEnabled;
+@property(nonatomic, getter=isPrefetchingEnabled) _Bool prefetchingEnabled; // @synthesize prefetchingEnabled=_prefetchingEnabled;
 @property(copy, nonatomic) NSString *specifierIDPendingPush; // @synthesize specifierIDPendingPush=_specifierIDPendingPush;
 @property(retain, nonatomic) NSDictionary *pendingURLResourceDictionary; // @synthesize pendingURLResourceDictionary=_pendingURLResourceDictionary;
 @property(nonatomic) _Bool edgeToEdgeCells; // @synthesize edgeToEdgeCells=_edgeToEdgeCells;
@@ -279,6 +279,7 @@
 - (id)indexPathForSpecifier:(id)arg1;
 - (id)indexPathForIndex:(long long)arg1;
 - (void)setSpecifiers:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)_removeIdentifierForSpecifier:(id)arg1;
 - (void)_addIdentifierForSpecifier:(id)arg1;

@@ -44,9 +44,6 @@
 @property(readonly, nonatomic) double suggestionsLostMessageSearchTimestamp;
 @property(readonly, nonatomic) unsigned long long suggestionsLostMessageSearchResultCount;
 - (void)addToPostOrderTraversal:(id)arg1;
-- (void)setLastViewedMessageID:(id)arg1;
-- (id)lastViewedMessageDate;
-- (id)lastViewedMessageID;
 - (_Bool)alwaysWriteFullMessageFile;
 - (_Bool)shouldRestoreMessagesAfterFailedDelete;
 - (_Bool)isShared;

@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetCollectionInspector : AVFigObjectInspector <NSCopying>
 {
     struct OpaqueFigAssetCollection *_figCollection;

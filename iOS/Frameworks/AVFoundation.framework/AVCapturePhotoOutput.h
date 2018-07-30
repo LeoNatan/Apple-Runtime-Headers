@@ -78,12 +78,16 @@
 - (void)userInitiatedCaptureRequestAtTime:(unsigned long long)arg1;
 - (void)setFilterRenderingEnabled:(_Bool)arg1;
 - (_Bool)isFilterRenderingEnabled;
+- (CDStruct_79c71658)optimizedImageDimensionsForOfflineStabilization;
 - (void)setOptimizesImagesForOfflineVideoStabilization:(_Bool)arg1;
 - (_Bool)optimizesImagesForOfflineVideoStabilization;
 - (_Bool)isImageOptimizationForOfflineVideoStabilizationSupported;
 - (CDStruct_1b6d18a9)livePhotoMovieVideoFrameDuration;
 - (CDStruct_1b6d18a9)livePhotoMovieDuration;
 - (CDStruct_79c71658)livePhotoMovieDimensions;
+- (void)setPortraitEffectsMatteDeliveryEnabled:(_Bool)arg1;
+- (_Bool)isPortraitEffectsMatteDeliveryEnabled;
+- (_Bool)isPortraitEffectsMatteDeliverySupported;
 - (void)setDepthDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)isDepthDataDeliveryEnabled;
 - (_Bool)isDepthDataDeliverySupported;

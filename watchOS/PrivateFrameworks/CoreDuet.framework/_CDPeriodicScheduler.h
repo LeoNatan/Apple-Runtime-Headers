@@ -15,6 +15,7 @@
 }
 
 + (id)sharedInstance;
+- (void)updateExecutionCriteriaOnJob:(id)arg1;
 - (void)unregisterJob:(id)arg1;
 - (void)registerJob:(id)arg1;
 

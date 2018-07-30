@@ -63,6 +63,7 @@
 - (unsigned long long)hash;
 - (id)description;
 - (void)setFriendLevel:(id)arg1;
+@property(copy, nonatomic) NSString *alias; // @dynamic alias;
 @property(readonly, nonatomic) NSString *friendLevel; // @dynamic friendLevel;
 @property(retain, nonatomic) NSString *playerID; // @dynamic playerID;
 @property(readonly, nonatomic) CDStruct_c6d350ec stats;
@@ -76,7 +77,6 @@
 @property(readonly) NSString *referenceKey;
 
 // Remaining properties
-@property(copy, nonatomic) NSString *alias; // @dynamic alias;
 @property(readonly, nonatomic) NSString *firstName; // @dynamic firstName;
 @property(readonly, nonatomic) NSString *guestIdentifier; // @dynamic guestIdentifier;
 @property(readonly, nonatomic) _Bool isAnonymousPlayer; // @dynamic isAnonymousPlayer;

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSColorWell.h>
 
+__attribute__((visibility("hidden")))
 @interface NSFontOptionsColorWell : NSColorWell
 {
 }

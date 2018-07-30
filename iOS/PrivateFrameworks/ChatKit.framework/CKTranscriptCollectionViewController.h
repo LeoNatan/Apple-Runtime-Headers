@@ -124,6 +124,7 @@
 - (void)chatRegistryDidLoad:(id)arg1;
 - (void)chatItemsDidChange:(id)arg1;
 - (void)chatItemIsFilteredChanged:(id)arg1;
+- (void)multiwayCallStateChanged:(id)arg1;
 - (void)installedAppsChanged:(id)arg1;
 - (void)addressBookChanged:(id)arg1;
 - (void)transferUpdated:(id)arg1;
@@ -146,6 +147,7 @@
 - (void)touchUpInsideCellSpeakerButton:(id)arg1;
 - (void)touchUpInsideCellStatusButton:(id)arg1;
 - (void)touchUpInsideCellFailureButton:(id)arg1;
+- (void)updateLastAddressedHandleID:(id)arg1 lastAddressedSIMID:(id)arg2;
 - (void)selectChatItem:(id)arg1;
 - (id)cellForAssociatedChatItem:(id)arg1;
 - (id)chatItemForCell:(id)arg1;
@@ -196,11 +198,12 @@
 - (void)locationShareBalloonViewShareButtonTapped:(id)arg1;
 - (void)locationShareBalloonViewIgnoreButtonTapped:(id)arg1;
 - (void)balloonView:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
+- (void)tuConversationBalloonJoinButtonTapped:(id)arg1;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)liveViewController:(id)arg1 stageSticker:(id)arg2 skipShelf:(_Bool)arg3 allowAllCommits:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)liveViewController:(id)arg1 stagePayload:(id)arg2 skipShelf:(_Bool)arg3 allowAllCommits:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)liveViewController:(id)arg1 requestPresentationStyleExpanded:(_Bool)arg2;
+- (void)liveViewController:(id)arg1 requestPresentationStyle:(unsigned long long)arg2;
 - (void)associatedMessageTranscriptCellLongTouched:(id)arg1;
 - (void)associatedMessageTranscriptCellDoubleTapped:(id)arg1;
 - (void)_handleAssociatedMessageCellTapEvent:(id)arg1 isDoubleTap:(_Bool)arg2;

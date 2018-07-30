@@ -12,7 +12,7 @@
 {
 }
 
-- (id)initWithAdCreativeType:(int)arg1;
+- (id)initWithAdCreativeType:(int)arg1 layoutOptions:(id)arg2;
 @property(readonly, nonatomic) unsigned long long skipThreshold;
 @property(readonly, nonatomic) NSURL *videoURL;
 

@@ -8,6 +8,20 @@
 
 @protocol IMKXPCSupport
 - (oneway void)imkxpc_updateMenusDictionary:(NSDictionary *)arg1;
+- (void)imkxpc_windowEffectiveAppearanceNameWithReply:(void (^)(NSString *))arg1;
+- (void)imkxpc_viewEffectiveAppearanceNameWithReply:(void (^)(NSString *))arg1;
+- (void)imkxpc_windowEffectiveAppearanceWithReply:(void (^)(NSAppearance *))arg1;
+- (void)imkxpc_viewEffectiveAppearanceWithReply:(void (^)(NSAppearance *))arg1;
+- (void)imkxpc_isAutomaticPeriodSubstitutionEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isAutomaticCapitalizationEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isSmartInsertDeleteEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isAutomaticQuoteSubstitutionEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isAutomaticDashSubstitutionEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isAutomaticSpellingCorrectionEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isAutomaticTextReplacementEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isAutomaticTextCompletionEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isGrammarCheckingEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
+- (void)imkxpc_isContinuousSpellCheckingEnabledWithReply:(void (^)(BOOL, BOOL))arg1;
 - (void)imkxpc_dismissFunctionRowItemTextInputViewWithReply:(void (^)(BOOL))arg1;
 - (void)imkxpc_presentFunctionRowItemTextInputViewWithEndpoint:(NSXPCListenerEndpoint *)arg1 reply:(void (^)(BOOL))arg2;
 - (void)imkxpc_supportsTextAttachmentInsertionWithReply:(void (^)(BOOL))arg1;

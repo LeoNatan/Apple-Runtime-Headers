@@ -6,7 +6,6 @@
 
 #import <OfficeImport/MFFont.h>
 
-__attribute__((visibility("hidden")))
 @interface MFPhoneFont : MFFont
 {
 }

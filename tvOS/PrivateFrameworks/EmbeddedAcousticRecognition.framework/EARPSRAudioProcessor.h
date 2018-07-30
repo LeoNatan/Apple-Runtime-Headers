@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 @interface EARPSRAudioProcessor : NSObject
 {
@@ -15,9 +15,11 @@
     unsigned long long _sampleRate;
     NSString *_configRoot;
     id <EARPSRAudioProcessorDelegate> _delegate;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <EARPSRAudioProcessorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *configRoot; // @synthesize configRoot=_configRoot;
 - (id).cxx_construct;
@@ -27,6 +29,7 @@
 - (void)resetForNewRequest;
 - (void)endAudio;
 - (void)addAudio:(id)arg1;
+- (id)initWithConfigFile:(id)arg1 configRoot:(id)arg2 sampleRate:(unsigned long long)arg3 delegate:(id)arg4 queue:(id)arg5;
 - (id)initWithConfigFile:(id)arg1 configRoot:(id)arg2 sampleRate:(unsigned long long)arg3 delegate:(id)arg4;
 
 @end

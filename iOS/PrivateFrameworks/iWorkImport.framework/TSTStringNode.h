@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     NSString *mValue;
 }
 
-- (id)p_languageGuessForString:(id)arg1 isRTL:(_Bool *)arg2;
 - (void)saveToArchive:(struct StringNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct StringNodeArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

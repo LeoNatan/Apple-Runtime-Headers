@@ -19,14 +19,22 @@
     void *_masterChangeRefcon;
     CDUnknownFunctionPointerType _gptpGrandmasterCallback;
     void *_gptpGrandmasterRefcon;
+    CDUnknownFunctionPointerType _gptpGrandmasterPortCallback;
+    void *_gptpGrandmasterPortRefcon;
+    CDUnknownFunctionPointerType _gptpLocalPortCallback;
+    void *_gptpLocalPortRefcon;
     TSClock *_clock;
 }
 
 @property(retain, nonatomic) TSClock *clock; // @synthesize clock=_clock;
 - (void)dealloc;
+- (void)didChangeLocalPortWithGrandmasterID:(unsigned long long)arg1 localPort:(unsigned short)arg2 forClock:(id)arg3;
+- (void)didEndClockGrandmasterChangeWithGrandmasterID:(unsigned long long)arg1 localPort:(unsigned short)arg2 forClock:(id)arg3;
 - (void)didEndClockGrandmasterChangeForClock:(id)arg1;
 - (void)didChangeLockStateTo:(int)arg1 forClock:(id)arg2;
 - (void)didChangeClockMasterForClock:(id)arg1;
+- (void)setgPTPLocalPortNotificationCallback:(CDUnknownFunctionPointerType)arg1 refcon:(void *)arg2;
+- (void)setgPTPGrandmasterIDAndPortNotificationCallback:(CDUnknownFunctionPointerType)arg1 refcon:(void *)arg2;
 - (void)setgPTPGrandmasterNotificationCallback:(CDUnknownFunctionPointerType)arg1 refcon:(void *)arg2;
 - (void)setMasterChangeNotificationCallback:(CDUnknownFunctionPointerType)arg1 refcon:(void *)arg2;
 - (void)setLockStateNotificationCallback:(CDUnknownFunctionPointerType)arg1 refcon:(void *)arg2;

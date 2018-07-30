@@ -7,6 +7,7 @@
 #import "UIImage.h"
 
 @interface UIImage (SBFIOSurfaceConveniences)
+- (id)sbf_CGImageBackedImageWithMaximumBitsPerComponent:(unsigned long long)arg1;
 - (id)sbf_CGImageBackedImage;
 @end
 

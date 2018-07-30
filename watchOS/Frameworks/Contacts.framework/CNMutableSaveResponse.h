@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+@property _Bool didAffectMeCard; // @dynamic didAffectMeCard;
 - (void)setContainerSnapshot:(id)arg1 forIndexPath:(id)arg2;
 - (void)setGroupSnapshot:(id)arg1 forIndexPath:(id)arg2;
 - (void)setContactSnapshot:(id)arg1 forIndexPath:(id)arg2;

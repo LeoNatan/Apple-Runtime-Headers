@@ -8,7 +8,7 @@
 
 #import "PUICStatusBarAppContextViewDataSourceObserver.h"
 
-@class NSArray, NSPointerArray, NSString, NSTimer, UIFont, UILabel, UITapGestureRecognizer;
+@class NSArray, NSPointerArray, NSString, NSTimer, PUICStatusBarLayoutMetrics, UIFont, UIImage, UILabel, UITapGestureRecognizer;
 
 @interface PUICStatusBarAppContextView : UIView <PUICStatusBarAppContextViewDataSourceObserver>
 {
@@ -16,6 +16,7 @@
     float _titleLabelOriginX;
     float _baseLine;
     float _lastBaseLine;
+    float _inset;
     UIFont *_currentTitleLabelFont;
     NSString *_previousTitleString;
     NSString *_currentTitleString;
@@ -38,6 +39,8 @@
     _Bool _suppressTruncationAnimation;
     unsigned int _truncationTimerDisabledAssertionCount;
     NSArray *_rightSideImageViews;
+    UIImage *_defaultNavUIImage;
+    PUICStatusBarLayoutMetrics *_layoutMetrics;
     _Bool _automaticUpdates;
     _Bool _ignoreGlobalContextFrame;
     _Bool _titleViewChargeEnabled;
@@ -49,8 +52,6 @@
     struct CGRect _overrideGlobalContextFrame;
 }
 
-+ (id)_defaultNavUIImage;
-+ (float)_navBackUIRightMargin;
 @property(nonatomic) __weak id <PUICStatusBarAppContextViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGRect overrideGlobalContextFrame; // @synthesize overrideGlobalContextFrame=_overrideGlobalContextFrame;
 @property(nonatomic, getter=isTitleViewChargeEnabled) _Bool titleViewChargeEnabled; // @synthesize titleViewChargeEnabled=_titleViewChargeEnabled;
@@ -80,7 +81,6 @@
 - (_Bool)isObservingAppContextView:(id)arg1;
 - (void)removeAppContextViewObserver:(id)arg1;
 - (void)addAppContextViewObserver:(id)arg1;
-- (void)didBeginTransition;
 - (void)_completeTitleLabelTruncationAnimation;
 - (void)_resetTitleLabelTruncationAnimation;
 - (void)_startTitleLabelTruncationAnimation;
@@ -105,6 +105,7 @@
 - (_Bool)usingCustomTitleView;
 - (void)_destroyNavBackButtonView;
 - (void)_createNavBackButtonView;
+- (id)_defaultNavUIImage;
 - (void)_removeTitleTextGestureRecognizer;
 - (void)_addTitleTextGestureRecognizer;
 - (void)_removeAnimatedLabelGestureRecognizer;
@@ -112,12 +113,14 @@
 - (void)_removeTapRecognizerFromView:(id)arg1 storage:(id *)arg2;
 - (void)_addTapRecognizerToView:(id)arg1 storage:(id *)arg2 action:(SEL)arg3;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (float)_navBackUIRightMargin;
 - (id)_hitTestPointInNavBackView:(struct CGPoint)arg1;
 @property(readonly, nonatomic) _Bool isTitleTruncationAnimationRunning;
 @property(readonly, nonatomic) _Bool isTitleClipped;
 - (void)setNeedsLayout;
 - (void)_willEnterForeground:(id)arg1;
 - (void)dealloc;
+- (id)initWithDataSource:(id)arg1 andDelegate:(id)arg2 layoutMetrics:(id)arg3;
 - (id)initWithDataSource:(id)arg1 andDelegate:(id)arg2;
 - (id)initWithDataSource:(id)arg1;
 - (id)initFromStatusBarItem:(id)arg1;

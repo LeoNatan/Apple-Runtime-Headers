@@ -9,14 +9,19 @@
 @class NSArray, NSString;
 
 @protocol PDCloudStoreServiceExportedInterface <PDXPCServiceExportedInterface>
+- (void)noteCloudSyncPassesSwitchChangedWithHandler:(void (^)(void))arg1;
+- (void)generateRandomTransactionForPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
-- (void)simulateCloudStorePushWithCompletion:(void (^)(PKCloudRecordArray *, NSArray *, NSError *))arg1;
-- (void)resetContainerWithHandler:(void (^)(_Bool, NSError *))arg1;
-- (void)allTransactionsAndStoreLocally:(_Bool)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
-- (void)removeTransactionsWithRecordNames:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)simulateCloudStorePushForContainerIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSArray *, NSError *))arg2;
+- (void)resetContainerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)itemOfItemType:(unsigned long long)arg1 recordName:(NSString *)arg2 completion:(void (^)(PKCloudRecordObject *, NSError *))arg3;
+- (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(_Bool)arg2 completion:(void (^)(PKCloudRecordArray *, NSError *))arg3;
+- (void)removeItemsWithRecordNames:(NSArray *)arg1 itemType:(unsigned long long)arg2 completion:(void (^)(NSError *))arg3;
 - (void)updateCloudStoreWithLocalItems:(NSArray *)arg1 recordSpecificKeys:(NSArray *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
 
 @optional
 - (void)resetContainerWithCompletion:(void (^)(_Bool))arg1;
+- (void)resetContainerWithHandler:(void (^)(_Bool, NSError *))arg1;
+- (void)simulateCloudStorePushWithCompletion:(void (^)(PKCloudRecordArray *, NSArray *, NSError *))arg1;
 @end
 

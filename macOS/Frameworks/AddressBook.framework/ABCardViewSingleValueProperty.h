@@ -6,7 +6,6 @@
 
 #import <AddressBook/ABCardViewProperty.h>
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewSingleValueProperty : ABCardViewProperty
 {
 }

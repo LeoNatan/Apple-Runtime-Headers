@@ -11,7 +11,7 @@
 }
 
 - (_Bool)_associateSubsampleFromSensorDatum:(id)arg1 sampleUUID:(id)arg2 error:(id *)arg3;
-- (_Bool)queue_didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
+- (_Bool)didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
 - (id)dataObjectsFromSensorDatum:(id)arg1 error:(id *)arg2;
 - (id)_metadataForSensorDatum:(id)arg1;
 - (Class)sensorDatumClass;

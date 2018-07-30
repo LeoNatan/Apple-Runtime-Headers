@@ -31,6 +31,7 @@
 - (void)_prewarmSnippetExtensionsCacheSynchronously;
 - (id)extensionForSnippet:(id)arg1;
 - (void)prewarmSnippetExtensionsCache;
+- (void)preloadPluginBundles;
 - (id)init;
 
 @end

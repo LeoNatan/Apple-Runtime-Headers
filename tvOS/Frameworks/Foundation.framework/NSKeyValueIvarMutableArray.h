@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
     struct objc_ivar *_ivar;
 }
 
-+ (CDStruct_7c9a8e9f *)_proxyNonGCPoolPointer;
 - (void)replaceObjectsAtIndexes:(id)arg1 withObjects:(id)arg2;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeObjectsAtIndexes:(id)arg1;

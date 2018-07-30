@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
-@class CKDatabaseOperation, NSArray, NSDate;
+@class CKOperation, NSArray, NSDate;
 
 @interface CPLCloudKitOperationContext : NSObject
 {
     NSDate *_firstProgressDate;
+    NSDate *_lastProgressDate;
     BOOL _cancelled;
-    CKDatabaseOperation *_operation;
+    CKOperation *_operation;
     NSArray *_bundleIdentifiers;
     NSDate *_startDate;
     NSDate *_lastBatchDate;
@@ -24,8 +25,10 @@
 @property(copy, nonatomic) NSDate *lastBatchDate; // @synthesize lastBatchDate=_lastBatchDate;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(copy, nonatomic) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
-@property(nonatomic) __weak CKDatabaseOperation *operation; // @synthesize operation=_operation;
+@property(nonatomic) __weak CKOperation *operation; // @synthesize operation=_operation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL mightBeBlocked;
+@property(readonly, nonatomic) double approximativeBlockedInterval;
 - (id)startDateDescriptionWithNow:(id)arg1;
 - (id)operationDescription;
 - (id)extendedStatusDescriptionStrings;

@@ -30,6 +30,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, copy, nonatomic) NSString *persistentIdentifier;
 @property(readonly) Class superclass;
 
 @end

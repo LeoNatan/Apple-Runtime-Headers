@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSString;
 
-@interface DMFFetchAvailableOSUpdatesRequest : CATTaskRequest
+@interface DMFFetchAvailableOSUpdatesRequest : DMFTaskRequest
 {
     _Bool _useDelay;
     NSString *_productVersion;
@@ -16,6 +16,9 @@
 
 + (Class)whitelistedClassForResultObject;
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(nonatomic) _Bool useDelay; // @synthesize useDelay=_useDelay;
 @property(copy, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 - (void).cxx_destruct;

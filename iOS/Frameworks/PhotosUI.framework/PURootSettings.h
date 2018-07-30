@@ -6,13 +6,13 @@
 
 #import "PXSettings.h"
 
-@class PUAirPlaySettings, PUAlbumListSettings, PUFeedSettings, PUIrisSettings, PUMedusaSettings, PUMemoriesSettings, PUMomentsSettings, PUOneUpSettings, PUPerformanceDiagnosticsSettings, PUPhotoEditProtoSettings, PUPhotosGridSettings, PUSceneSettings, PUSlideshowSettings, PUTilingViewSettings, PUWelcomeSettings, PUWorkaroundSettings;
+@class PUAirPlaySettings, PUAlbumListSettings, PUFeedSettings, PUImportSettings, PUIrisSettings, PUMedusaSettings, PUMemoriesSettings, PUMomentsSettings, PUOneUpSettings, PUPerformanceDiagnosticsSettings, PUPhotoEditProtoSettings, PUPhotosGridSettings, PUSceneSettings, PUSearchSettings, PUSlideshowSettings, PUTabbedLibrarySettings, PUTilingViewSettings, PUWelcomeSettings, PUWorkaroundSettings;
 
 @interface PURootSettings : PXSettings
 {
     _Bool _enforceDisableIrisUI;
-    _Bool _forcePlacesMapDisplay;
     _Bool _allowIrisUI;
+    PUTabbedLibrarySettings *_tabbedLibrarySettings;
     PUPhotosGridSettings *_photosGridSettings;
     PUPhotoEditProtoSettings *_photoEditingSettings;
     PUFeedSettings *_feedSettings;
@@ -28,9 +28,11 @@
     PUWelcomeSettings *_welcomeSettings;
     PUWorkaroundSettings *_workaroundSettings;
     PUSceneSettings *_sceneSettings;
+    PUSearchSettings *_searchSettings;
     PUIrisSettings *_irisSettings;
     Class _orbInterfaceThemeClass;
     PUPerformanceDiagnosticsSettings *_performanceDiagnosticsSettings;
+    PUImportSettings *_importSettings;
 }
 
 + (void)_deleteAllDiagnosticFiles;
@@ -47,9 +49,11 @@
 + (void)setupStatusBarDoubleTapOnInternalDevices;
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+@property(retain, nonatomic) PUImportSettings *importSettings; // @synthesize importSettings=_importSettings;
 @property(retain, nonatomic) PUPerformanceDiagnosticsSettings *performanceDiagnosticsSettings; // @synthesize performanceDiagnosticsSettings=_performanceDiagnosticsSettings;
 @property(retain, nonatomic) Class orbInterfaceThemeClass; // @synthesize orbInterfaceThemeClass=_orbInterfaceThemeClass;
 @property(retain, nonatomic) PUIrisSettings *irisSettings; // @synthesize irisSettings=_irisSettings;
+@property(retain, nonatomic) PUSearchSettings *searchSettings; // @synthesize searchSettings=_searchSettings;
 @property(retain, nonatomic) PUSceneSettings *sceneSettings; // @synthesize sceneSettings=_sceneSettings;
 @property(retain, nonatomic) PUWorkaroundSettings *workaroundSettings; // @synthesize workaroundSettings=_workaroundSettings;
 @property(retain, nonatomic) PUWelcomeSettings *welcomeSettings; // @synthesize welcomeSettings=_welcomeSettings;
@@ -65,8 +69,8 @@
 @property(retain, nonatomic) PUFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(retain, nonatomic) PUPhotoEditProtoSettings *photoEditingSettings; // @synthesize photoEditingSettings=_photoEditingSettings;
 @property(retain, nonatomic) PUPhotosGridSettings *photosGridSettings; // @synthesize photosGridSettings=_photosGridSettings;
+@property(retain, nonatomic) PUTabbedLibrarySettings *tabbedLibrarySettings; // @synthesize tabbedLibrarySettings=_tabbedLibrarySettings;
 @property(nonatomic) _Bool allowIrisUI; // @synthesize allowIrisUI=_allowIrisUI;
-@property(nonatomic) _Bool forcePlacesMapDisplay; // @synthesize forcePlacesMapDisplay=_forcePlacesMapDisplay;
 - (void).cxx_destruct;
 - (void)setEnforceDisableIrisUI:(_Bool)arg1;
 - (_Bool)irisUIEnabled;

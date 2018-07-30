@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewDictionaryTransformer : NSValueTransformer
 {
     NSDictionary *_currentDictionary;

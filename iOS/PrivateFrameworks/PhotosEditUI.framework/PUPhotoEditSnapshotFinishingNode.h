@@ -8,6 +8,7 @@
 
 @class PUEditableMediaProviderAdjustmentDataNode, PUEditableMediaProviderImageDataNode, PUEditableMediaProviderVideoAssetNode, PUPhotoEditBaseMediaNode;
 
+__attribute__((visibility("hidden")))
 @interface PUPhotoEditSnapshotFinishingNode : PXRunNode
 {
     PUEditableMediaProviderAdjustmentDataNode *_adjustmentNode;

@@ -14,11 +14,13 @@
     NSUUID *_previousDrawingUUIDForSelection;
     int _selectionViewCount;
     BOOL _hasCurrentSelection;
+    BOOL _isCurrentlyAddingSpace;
     id <PKSelectionDelegate> _selectionDelegate;
     PKStrokeSelection *_currentStrokeSelection;
     struct CGAffineTransform _selectionTransform;
 }
 
+@property(nonatomic) BOOL isCurrentlyAddingSpace; // @synthesize isCurrentlyAddingSpace=_isCurrentlyAddingSpace;
 @property(nonatomic) struct CGAffineTransform selectionTransform; // @synthesize selectionTransform=_selectionTransform;
 @property(retain, nonatomic) PKStrokeSelection *currentStrokeSelection; // @synthesize currentStrokeSelection=_currentStrokeSelection;
 @property(nonatomic) BOOL hasCurrentSelection; // @synthesize hasCurrentSelection=_hasCurrentSelection;
@@ -37,10 +39,12 @@
 - (void)registerCommandWithUndoManager:(id)arg1;
 - (void)eraseSelection;
 - (void)moveSelectionViewBasedOnStrokeTransform:(struct CGAffineTransform)arg1 drawing:(id)arg2;
-- (void)didSelect:(id)arg1 withLassoStroke:(id)arg2 withTransform:(struct CGAffineTransform)arg3 drawing:(id)arg4;
-- (void)didSelect:(id)arg1 withLassoStroke:(id)arg2 withTransform:(struct CGAffineTransform)arg3;
-- (void)didSelect:(id)arg1 withLassoStroke:(id)arg2;
+- (void)didSelect:(id)arg1 lassoStroke:(id)arg2 transform:(struct CGAffineTransform)arg3 drawing:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)didSelect:(id)arg1 lassoStroke:(id)arg2 transform:(struct CGAffineTransform)arg3 drawing:(id)arg4;
 - (void)didSelectStrokesNotification:(id)arg1;
+- (struct CGPoint)intersectionPointAlongStroke:(id)arg1 fromPoint:(struct CGPoint)arg2 toPoint:(struct CGPoint)arg3;
+- (id)intersectedStrokesFromStroke:(id)arg1 drawing:(id)arg2 visibleOnscreenStrokes:(id)arg3;
+- (id)intersectedStrokesFromStroke:(id)arg1 drawing:(id)arg2;
 - (void)dealloc;
 - (id)initWithSelectionDelegate:(id)arg1;
 

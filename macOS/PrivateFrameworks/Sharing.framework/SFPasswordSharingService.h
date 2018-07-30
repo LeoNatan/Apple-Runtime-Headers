@@ -33,6 +33,7 @@
 - (BOOL)__invalidateCalled;
 - (BOOL)__activateCalled;
 - (id)messageForDisplayName:(id)arg1 deviceName:(id)arg2 info:(id)arg3;
+- (BOOL)disabledViaConfig;
 - (void)_promptUserWithInfo:(id)arg1 message:(id)arg2;
 - (void)_passInfoToDelegate:(id)arg1;
 - (void)_sendPasswordDeclinedWithError:(int)arg1;

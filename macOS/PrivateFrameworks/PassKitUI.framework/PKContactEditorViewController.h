@@ -9,7 +9,7 @@
 #import "NSTextFieldDelegate.h"
 #import "PKContactLabelMenuControllerDelegate.h"
 
-@class CNContact, NSArray, NSButton, NSComboBox, NSPopUpButton, NSResponder, NSSet, NSStackView, NSString, NSTextField, PKContactLabelMenuController, PKContactTextField;
+@class CNContact, NSArray, NSButton, NSComboBox, NSImageView, NSPopUpButton, NSResponder, NSSet, NSStackView, NSString, NSTextField, PKContactLabelMenuController, PKContactTextField;
 
 @interface PKContactEditorViewController : PKPaymentAuthorizationChildViewController <PKContactLabelMenuControllerDelegate, NSTextFieldDelegate>
 {
@@ -18,6 +18,7 @@
     CNContact *_contact;
     NSArray *_errors;
     NSSet *_requiredFields;
+    NSImageView *_paymentLogoImageView;
     NSStackView *_fieldsStackView;
     NSTextField *_titleLabel;
     NSStackView *_namesStackView;
@@ -52,6 +53,7 @@
 @property(retain, nonatomic) NSStackView *namesStackView; // @synthesize namesStackView=_namesStackView;
 @property(retain) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain) NSStackView *fieldsStackView; // @synthesize fieldsStackView=_fieldsStackView;
+@property(retain) NSImageView *paymentLogoImageView; // @synthesize paymentLogoImageView=_paymentLogoImageView;
 @property(retain, nonatomic) NSSet *requiredFields; // @synthesize requiredFields=_requiredFields;
 @property(copy, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;

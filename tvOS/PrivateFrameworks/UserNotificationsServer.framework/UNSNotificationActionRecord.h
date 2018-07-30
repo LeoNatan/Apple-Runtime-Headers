@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSString;
+@class NSArray, NSString, NSURL;
 
 @interface UNSNotificationActionRecord : NSObject
 {
     _Bool _authenticationRequired;
     _Bool _destructive;
     _Bool _foreground;
+    _Bool _shouldPreventNotificationDismiss;
     NSString *_actionType;
     NSString *_identifier;
     NSString *_textInputButtonTitle;
@@ -24,8 +25,10 @@
     NSString *_title;
     NSArray *_titleLocalizationArguments;
     NSString *_titleLocalizationKey;
+    NSURL *_url;
 }
 
+@property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *titleLocalizationKey; // @synthesize titleLocalizationKey=_titleLocalizationKey;
 @property(copy, nonatomic) NSArray *titleLocalizationArguments; // @synthesize titleLocalizationArguments=_titleLocalizationArguments;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -35,6 +38,7 @@
 @property(copy, nonatomic) NSString *textInputButtonTitleLocalizationKey; // @synthesize textInputButtonTitleLocalizationKey=_textInputButtonTitleLocalizationKey;
 @property(copy, nonatomic) NSArray *textInputButtonTitleLocalizationArguments; // @synthesize textInputButtonTitleLocalizationArguments=_textInputButtonTitleLocalizationArguments;
 @property(copy, nonatomic) NSString *textInputButtonTitle; // @synthesize textInputButtonTitle=_textInputButtonTitle;
+@property(nonatomic) _Bool shouldPreventNotificationDismiss; // @synthesize shouldPreventNotificationDismiss=_shouldPreventNotificationDismiss;
 @property(nonatomic, getter=isForeground) _Bool foreground; // @synthesize foreground=_foreground;
 @property(nonatomic, getter=isDestructive) _Bool destructive; // @synthesize destructive=_destructive;
 @property(nonatomic, getter=isAuthenticationRequired) _Bool authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;

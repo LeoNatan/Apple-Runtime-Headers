@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSObject<TSDContainerInfo> *containerInfo;
 - (void)updateChildrenFromInfo;
+- (void)processChangedProperty:(int)arg1;
 - (id)additionalInfosForChildLayouts;
 - (id)initWithInfo:(id)arg1;
 

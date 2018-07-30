@@ -16,11 +16,11 @@
 + (id)referenceWithObject:(id)arg1;
 @property(nonatomic) unsigned long long objectAddress; // @synthesize objectAddress=_objectAddress;
 @property(nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
-@property(readonly, nonatomic) id object;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id object;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 - (id)initWithObject:(id)arg1;
 

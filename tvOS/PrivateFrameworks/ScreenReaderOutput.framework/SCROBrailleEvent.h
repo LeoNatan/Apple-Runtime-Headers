@@ -23,7 +23,7 @@
 - (id)data3;
 - (id)data2;
 - (id)data;
-- (int)type;
+@property(readonly, nonatomic) int type;
 - (id)initWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
 
 @end

@@ -17,6 +17,7 @@
 + (id)regionWithRegion:(id)arg1;
 + (id)regionWithRect:(CDStruct_996ac03c)arg1;
 + (id)region;
+- (double)density;
 - (double)area;
 - (_Bool)includesRegion:(id)arg1;
 - (_Bool)includesRect:(CDStruct_996ac03c)arg1;
@@ -36,6 +37,7 @@
 - (id)initWithRegion:(id)arg1;
 - (id)initWithRect:(CDStruct_996ac03c)arg1;
 - (id)init;
+- (id)regionWithSubregionsOfMinimumDensity:(double)arg1;
 - (id)convertImageRegion:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toRect:(CDStruct_996ac03c)arg3;
 - (id)regionByFlippingInRect:(CDStruct_996ac03c)arg1;
 - (id)regionByApplyingAffineTransform:(struct CGAffineTransform)arg1 roundPolicy:(long long)arg2;

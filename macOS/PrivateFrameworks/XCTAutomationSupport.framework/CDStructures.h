@@ -25,3 +25,10 @@ struct CGSize {
     double height;
 };
 
+struct __va_list_tag {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+    void *_field4;
+};
+

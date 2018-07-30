@@ -17,6 +17,7 @@
     NSMutableSet *_dirtyKeys;
 }
 
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)_adjustEntry:(id)arg1 forLevel:(double)arg2 occlusions:(id)arg3;
@@ -28,7 +29,6 @@
 - (void)setKey:(id)arg1 toLevel:(double)arg2 withOcclusions:(id)arg3;
 - (_Bool)isEmpty;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -8,12 +8,11 @@
 
 #import "ParsecTableCellView.h"
 
-@class NSImageView, NSLayoutConstraint, NSString, NSTextField;
+@class NSImageView, NSLayoutConstraint, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface ParsecSimpleTableCellView : UnifiedFieldCompletionStyledTableCellView <ParsecTableCellView>
 {
-    NSString *_identifierOfDisplayedParsecResult;
     id <ParsecTableCellViewDelegate> _delegate;
     NSTextField *_titleLabel;
     NSTextField *_descriptionLabel;
@@ -40,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy, nonatomic) NSString *identifierOfDisplayedParsecResult; // @synthesize identifierOfDisplayedParsecResult=_identifierOfDisplayedParsecResult;
 - (void).cxx_destruct;
 - (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;
 

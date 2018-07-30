@@ -7,38 +7,40 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBIntentResponsePayloadFailure.h"
 
-@class NSString, PBUnknownFields;
+@class NSString;
 
-@interface _INPBIntentResponsePayloadFailure : PBCodable <NSCopying>
+@interface _INPBIntentResponsePayloadFailure : PBCodable <_INPBIntentResponsePayloadFailure, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSString *_enumTypeName;
-    int _errorCode;
-    BOOL _appLaunchRequested;
     struct {
-        unsigned int errorCode:1;
         unsigned int appLaunchRequested:1;
+        unsigned int errorCode:1;
     } _has;
+    BOOL _appLaunchRequested;
+    int _errorCode;
+    NSString *_enumTypeName;
 }
 
-+ (id)options;
-@property(nonatomic) BOOL appLaunchRequested; // @synthesize appLaunchRequested=_appLaunchRequested;
-@property(retain, nonatomic) NSString *enumTypeName; // @synthesize enumTypeName=_enumTypeName;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
+@property(copy, nonatomic) NSString *enumTypeName; // @synthesize enumTypeName=_enumTypeName;
+@property(nonatomic) BOOL appLaunchRequested; // @synthesize appLaunchRequested=_appLaunchRequested;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) BOOL hasAppLaunchRequested;
-@property(readonly, nonatomic) BOOL hasEnumTypeName;
 @property(nonatomic) BOOL hasErrorCode;
+@property(readonly, nonatomic) BOOL hasEnumTypeName;
+@property(nonatomic) BOOL hasAppLaunchRequested;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

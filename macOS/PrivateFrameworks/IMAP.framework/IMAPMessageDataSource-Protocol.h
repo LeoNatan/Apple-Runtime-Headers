@@ -31,7 +31,7 @@
 - (void)imapActionReceivedError:(IMAPLocalMessageAction *)arg1 imapError:(NSError *)arg2 missedMessages:(NSArray *)arg3;
 - (void)moveMessagesToRecoveredMail:(NSArray *)arg1;
 - (void)addMessageDetails:(IMAPMessageDetails *)arg1;
-- (void)setResultsForLabelChangeAction:(long long)arg1;
+- (void)setResultsForLabelChangeAction:(long long)arg1 uids:(NSIndexSet *)arg2 labelsToAdd:(NSSet *)arg3 labelsToRemove:(NSSet *)arg4;
 - (void)setResultsForFlagChangeAction:(long long)arg1 uids:(NSIndexSet *)arg2 flags:(long long)arg3 mask:(long long)arg4;
 - (void)setResultsForAppendAction:(long long)arg1 newMessageDetails:(IMAPMessageDetails *)arg2;
 - (void)createAppendActionForMessageFromFailedCopy:(id <IMAPPersistedMessage>)arg1 activityType:(NSNumber *)arg2 userInitiated:(BOOL)arg3;
@@ -42,7 +42,7 @@
 - (void)setUidNextStatusIfNeeded:(unsigned int)arg1;
 - (void)setComputedHighestModificationSequence:(unsigned long long)arg1;
 - (NSDictionary *)newDictionaryForLocalFlags:(long long)arg1 serverFlags:(long long)arg2 existingDictionary:(NSDictionary *)arg3;
-- (void)reflectGmailLabelsFromDictionary:(NSDictionary *)arg1 forMessages:(NSArray *)arg2;
+- (void)reflectGmailLabelsFromDictionary:(NSDictionary *)arg1 forMessages:(NSArray *)arg2 messageDetails:(NSArray *)arg3;
 - (void)reflectFlagChanges:(NSDictionary *)arg1 forMessages:(NSArray *)arg2 withUIDs:(NSIndexSet *)arg3;
 - (void)undeleteMessagesWithDetails:(NSArray *)arg1;
 - (BOOL)messageHasBeenDeleted:(id <IMAPPersistedMessage>)arg1;

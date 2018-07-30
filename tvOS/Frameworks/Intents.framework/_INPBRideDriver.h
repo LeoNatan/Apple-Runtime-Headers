@@ -7,34 +7,40 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBRideDriver.h"
 
-@class NSString, PBUnknownFields, _INPBContactValue;
+@class NSString, _INPBContactValue, _INPBImageValue;
 
-@interface _INPBRideDriver : PBCodable <NSCopying>
+@interface _INPBRideDriver : PBCodable <_INPBRideDriver, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
+    _INPBImageValue *_image;
     _INPBContactValue *_person;
     NSString *_phoneNumber;
     NSString *_rating;
 }
 
-+ (id)options;
-@property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-@property(retain, nonatomic) NSString *rating; // @synthesize rating=_rating;
+@property(copy, nonatomic) NSString *rating; // @synthesize rating=_rating;
+@property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) _INPBContactValue *person; // @synthesize person=_person;
+@property(retain, nonatomic) _INPBImageValue *image; // @synthesize image=_image;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasPhoneNumber;
 @property(readonly, nonatomic) _Bool hasRating;
+@property(readonly, nonatomic) _Bool hasPhoneNumber;
 @property(readonly, nonatomic) _Bool hasPerson;
+@property(readonly, nonatomic) _Bool hasImage;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,8 +9,8 @@
 @interface CNObservedResult : NSObject
 {
     unsigned int _time;
-    unsigned int _tolerance;
     id _value;
+    unsigned int _tolerance;
     unsigned long long _logTime;
 }
 

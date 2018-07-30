@@ -20,7 +20,7 @@
 - (void)remote_fetchCloudSyncStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (id)remote_fetchCloudDescriptionWithCompletion:(CDUnknownBlockType)arg1;
 - (id)remote_forceCloudResetWithCompletion:(CDUnknownBlockType)arg1;
-- (id)remote_forceCloudSyncWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)remote_forceCloudSyncWithOptions:(unsigned long long)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_createCloudShareWithRecipient:(id)arg1 sampleTypes:(id)arg2 maxSampleAge:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 // Remaining properties

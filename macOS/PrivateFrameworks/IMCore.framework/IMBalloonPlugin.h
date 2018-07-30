@@ -43,6 +43,7 @@
 @property(retain, nonatomic) NSString *browserImagePath; // @synthesize browserImagePath=_browserImagePath;
 @property(retain, nonatomic) NSString *browserImageName; // @synthesize browserImageName=_browserImageName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long presentationContexts;
 - (void)setIdentifier:(id)arg1;
 @property(readonly, retain, nonatomic) NSBundle *pluginBundle;
 @property(readonly, retain, nonatomic) NSBundle *appBundle;

@@ -44,6 +44,7 @@
 @property(copy, nonatomic) NSSet *alertSuppressionAppIDs_deprecated; // @dynamic alertSuppressionAppIDs_deprecated;
 @property(copy, nonatomic) NSSet *alertSuppressionContexts; // @dynamic alertSuppressionContexts;
 @property(copy, nonatomic) BBAction *alternateAction; // @dynamic alternateAction;
+@property(nonatomic) int backgroundStyle; // @dynamic backgroundStyle;
 @property(copy, nonatomic) NSString *bulletinID; // @dynamic bulletinID;
 @property(copy, nonatomic) NSArray *buttons; // @dynamic buttons;
 @property(copy, nonatomic) NSString *categoryID; // @dynamic categoryID;
@@ -61,16 +62,21 @@
 @property(retain, nonatomic) NSDate *expirationDate; // @dynamic expirationDate;
 @property(copy, nonatomic) BBAction *expireAction; // @dynamic expireAction;
 @property(nonatomic) _Bool expiresOnPublisherDeath; // @dynamic expiresOnPublisherDeath;
+@property(nonatomic) _Bool hasCriticalIcon; // @dynamic hasCriticalIcon;
 @property(nonatomic) _Bool hasEventDate; // @dynamic hasEventDate;
+@property(copy, nonatomic) NSString *header; // @dynamic header;
 @property(retain, nonatomic) BBSectionIcon *icon; // @dynamic icon;
+@property(nonatomic) _Bool ignoresDowntime; // @dynamic ignoresDowntime;
 @property(nonatomic) _Bool ignoresQuietMode; // @dynamic ignoresQuietMode;
 @property(copy, nonatomic) NSArray *intentIDs; // @dynamic intentIDs;
 @property(retain, nonatomic) NSDate *lastInterruptDate; // @dynamic lastInterruptDate;
 @property(nonatomic, getter=isLoading) _Bool loading; // @dynamic loading;
+@property(nonatomic) int lockScreenPriority; // @dynamic lockScreenPriority;
 @property(copy, nonatomic) NSString *message; // @dynamic message;
 @property(retain, nonatomic) BBContent *modalAlertContent; // @dynamic modalAlertContent;
 @property(copy, nonatomic) NSString *parentSectionID; // @dynamic parentSectionID;
 @property(copy, nonatomic) NSArray *peopleIDs; // @dynamic peopleIDs;
+@property(nonatomic) _Bool preventAutomaticRemovalFromLockScreen; // @dynamic preventAutomaticRemovalFromLockScreen;
 @property(copy, nonatomic) BBAttachmentMetadata *primaryAttachment; // @dynamic primaryAttachment;
 @property(retain, nonatomic) NSDate *publicationDate; // @dynamic publicationDate;
 @property(copy, nonatomic) NSString *publisherBulletinID; // @dynamic publisherBulletinID;
@@ -87,6 +93,8 @@
 @property(retain, nonatomic) BBContent *starkBannerContent; // @dynamic starkBannerContent;
 @property(copy, nonatomic) NSSet *subsectionIDs; // @dynamic subsectionIDs;
 @property(copy, nonatomic) NSString *subtitle; // @dynamic subtitle;
+@property(copy, nonatomic) NSString *summaryArgument; // @dynamic summaryArgument;
+@property(nonatomic) unsigned int summaryArgumentCount; // @dynamic summaryArgumentCount;
 @property(copy, nonatomic) NSString *threadID; // @dynamic threadID;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @dynamic timeZone;
 @property(copy, nonatomic) NSString *title; // @dynamic title;

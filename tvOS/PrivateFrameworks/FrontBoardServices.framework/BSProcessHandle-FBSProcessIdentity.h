@@ -13,6 +13,7 @@
 @interface BSProcessHandle (FBSProcessIdentity) <FBSProcessIdentity>
 @property(readonly, retain, nonatomic) FBSProcessHandle *handle;
 @property(readonly, nonatomic) long long type;
+- (_Bool)_fbs_isApplication;
 
 // Remaining properties
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier;

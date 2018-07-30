@@ -9,21 +9,22 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class HKMedicalCoding, NSString;
+@class HKMedicalCoding, NSNumber, NSString;
 
 @interface HKCodedQuantity : NSObject <NSSecureCoding, NSCopying>
 {
-    NSString *_value;
+    NSString *_rawValue;
     HKMedicalCoding *_comparatorCoding;
     HKMedicalCoding *_unitCoding;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)_numberFormatter;
 + (id)codedQuantityWithValue:(id)arg1 unitCoding:(id)arg2;
 + (id)codedQuantityWithValue:(id)arg1 comparatorCoding:(id)arg2 unitCoding:(id)arg3;
 @property(readonly, copy, nonatomic) HKMedicalCoding *unitCoding; // @synthesize unitCoding=_unitCoding;
 @property(readonly, copy, nonatomic) HKMedicalCoding *comparatorCoding; // @synthesize comparatorCoding=_comparatorCoding;
-@property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
+@property(readonly, copy, nonatomic) NSString *rawValue; // @synthesize rawValue=_rawValue;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -31,7 +32,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithValue:(id)arg1 comparatorCoding:(id)arg2 unitCoding:(id)arg3;
+@property(readonly, copy, nonatomic) NSNumber *numberValue;
+@property(readonly, copy, nonatomic) NSString *localizedValue;
+@property(readonly, nonatomic) double doubleValue;
+@property(readonly, copy, nonatomic) NSString *value;
+- (id)initWithRawValue:(id)arg1 comparatorCoding:(id)arg2 unitCoding:(id)arg3;
 - (id)init;
 
 @end

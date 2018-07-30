@@ -8,6 +8,7 @@
 
 @class _NSTreeNodeObservingTracker;
 
+__attribute__((visibility("hidden")))
 @interface NSOutlineViewBinder : NSBinder
 {
     struct ___outlineViewBinderFlags {

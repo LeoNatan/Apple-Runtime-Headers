@@ -19,8 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-@property(nonatomic) SKStoreReviewViewController *reviewViewController; // @synthesize reviewViewController=_reviewViewController;
-@property(nonatomic) id <SKRemoteReviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak SKStoreReviewViewController *reviewViewController; // @synthesize reviewViewController=_reviewViewController;
+@property(nonatomic) __weak id <SKRemoteReviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;
 

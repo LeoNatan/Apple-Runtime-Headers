@@ -11,8 +11,6 @@
 @protocol FCPrivateDataContext <NSObject>
 @property(readonly, nonatomic) id <FCPrivateDataContextInternal> internalPrivateDataContext;
 @property(readonly, copy, nonatomic) NSString *privateDataDirectory;
-@property(readonly, nonatomic, getter=isABTestingEnabled) _Bool abTestingEnabled;
-@property(readonly, nonatomic, getter=isPersonalizationEnabled) _Bool personalizationEnabled;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled;
 @property(readonly, nonatomic) id <FCPushNotificationHandling> privatePushNotificationHandler;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor;

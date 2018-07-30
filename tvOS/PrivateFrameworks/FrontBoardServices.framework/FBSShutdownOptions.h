@@ -15,10 +15,13 @@
 {
     NSString *_reason;
     long long _rebootType;
+    long long _source;
 }
 
+@property(nonatomic) long long source; // @synthesize source=_source;
 @property(nonatomic) long long rebootType; // @synthesize rebootType=_rebootType;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -27,7 +30,6 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithReason:(id)arg1;
 - (id)init;
 

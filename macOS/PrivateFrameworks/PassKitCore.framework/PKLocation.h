@@ -41,6 +41,7 @@
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;
 - (void)setLongitude:(id)arg1;
 - (void)setLatitude:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 
 @end
 

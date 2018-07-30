@@ -6,18 +6,23 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCHeldRecords, NSArray, NSDictionary, NSMutableArray, NSMutableSet;
+@class FCEdgeCacheHint, FCHeldRecords, NSArray, NSDictionary, NSMutableArray, NSMutableSet;
 
 @interface FCRecordChainFetchOperation : FCOperation
 {
     _Bool _shouldReturnErrorWhenSomeRecordsMissing;
+    _Bool _shouldBypassRecordSourcePersistence;
     id <FCContentContext> _context;
     NSArray *_topLevelRecordIDs;
     NSDictionary *_linkKeysByRecordType;
     NSDictionary *_cachePoliciesByRecordType;
     CDUnknownBlockType _dynamicCachePolicyBlock;
-    long long _requestTypeOverride;
+    FCEdgeCacheHint *_edgeCacheHint;
+    NSArray *_additionalRecordSources;
     CDUnknownBlockType _recordChainCompletionHandler;
+    NSArray *_recordSources;
+    NSDictionary *_recordSourcesByRecordType;
+    NSDictionary *_pbRecordTypesByRecordType;
     FCHeldRecords *_cachedRecords;
     NSMutableSet *_actualTopLevelRecordIDs;
     NSMutableSet *_skippedTopLevelRecordIDs;
@@ -30,8 +35,13 @@
 @property(retain, nonatomic) NSMutableSet *skippedTopLevelRecordIDs; // @synthesize skippedTopLevelRecordIDs=_skippedTopLevelRecordIDs;
 @property(retain, nonatomic) NSMutableSet *actualTopLevelRecordIDs; // @synthesize actualTopLevelRecordIDs=_actualTopLevelRecordIDs;
 @property(retain, nonatomic) FCHeldRecords *cachedRecords; // @synthesize cachedRecords=_cachedRecords;
+@property(retain, nonatomic) NSDictionary *pbRecordTypesByRecordType; // @synthesize pbRecordTypesByRecordType=_pbRecordTypesByRecordType;
+@property(retain, nonatomic) NSDictionary *recordSourcesByRecordType; // @synthesize recordSourcesByRecordType=_recordSourcesByRecordType;
+@property(retain, nonatomic) NSArray *recordSources; // @synthesize recordSources=_recordSources;
 @property(copy, nonatomic) CDUnknownBlockType recordChainCompletionHandler; // @synthesize recordChainCompletionHandler=_recordChainCompletionHandler;
-@property(nonatomic) long long requestTypeOverride; // @synthesize requestTypeOverride=_requestTypeOverride;
+@property(nonatomic) _Bool shouldBypassRecordSourcePersistence; // @synthesize shouldBypassRecordSourcePersistence=_shouldBypassRecordSourcePersistence;
+@property(retain, nonatomic) NSArray *additionalRecordSources; // @synthesize additionalRecordSources=_additionalRecordSources;
+@property(copy, nonatomic) FCEdgeCacheHint *edgeCacheHint; // @synthesize edgeCacheHint=_edgeCacheHint;
 @property(nonatomic) _Bool shouldReturnErrorWhenSomeRecordsMissing; // @synthesize shouldReturnErrorWhenSomeRecordsMissing=_shouldReturnErrorWhenSomeRecordsMissing;
 @property(copy, nonatomic) CDUnknownBlockType dynamicCachePolicyBlock; // @synthesize dynamicCachePolicyBlock=_dynamicCachePolicyBlock;
 @property(copy, nonatomic) NSDictionary *cachePoliciesByRecordType; // @synthesize cachePoliciesByRecordType=_cachePoliciesByRecordType;
@@ -42,9 +52,8 @@
 - (id)_errorForMissingRecordNames:(id)arg1;
 - (id)_partialErrorForMissingRecordName:(id)arg1;
 - (id)_recordSourceForRecordType:(id)arg1;
-- (id)_recordTypeForRecordID:(id)arg1;
 - (int)_pbRecordTypeForRecordType:(id)arg1;
-- (id)_recordTypeForPBRecordType:(int)arg1;
+- (id)_recordTypeForRecordID:(id)arg1;
 - (int)_pbRecordTypeForRecordID:(id)arg1;
 - (void)_finalizeResultFromCachedRecords;
 - (id)_recordIDsMissingFromCachedRecords;
@@ -56,6 +65,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *networkEvents;
 - (void)performOperation;
+- (void)prepareOperation;
 - (_Bool)validateOperation;
 - (id)init;
 

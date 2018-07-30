@@ -26,6 +26,7 @@
 @property(retain, nonatomic) NSString *currentVersion; // @synthesize currentVersion=_currentVersion;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (void)preferredContentSizeChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;
 
 @end

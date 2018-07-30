@@ -10,24 +10,18 @@
 
 @interface ARPlaneAnchor : ARAnchor
 {
+    float _uncertaintyAlongNormal;
     long long _alignment;
     ARPlaneGeometry *_geometry;
     ARPatchGrid *_gridExtent;
     long long _worldAlignmentRotation;
-    long long _activePlaneID;
-    long long _originalPlaneID;
     // Error parsing type: , name: _center
     // Error parsing type: , name: _extent
-    // Error parsing type: {?="columns"[4]}, name: _visionTransform
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) long long originalPlaneID; // @synthesize originalPlaneID=_originalPlaneID;
-@property(nonatomic) long long activePlaneID; // @synthesize activePlaneID=_activePlaneID;
 @property(nonatomic) long long worldAlignmentRotation; // @synthesize worldAlignmentRotation=_worldAlignmentRotation;
-// Error parsing type for property visionTransform:
-// Property attributes: T{?=[4]},N,V_visionTransform
-
+@property(nonatomic) float uncertaintyAlongNormal; // @synthesize uncertaintyAlongNormal=_uncertaintyAlongNormal;
 @property(retain, nonatomic) ARPatchGrid *gridExtent; // @synthesize gridExtent=_gridExtent;
 @property(retain, nonatomic) ARPlaneGeometry *geometry; // @synthesize geometry=_geometry;
 // Error parsing type for property extent:
@@ -40,7 +34,8 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithAnchor:(id)arg1;
+- (float)area;
 - (id)debugQuickLookObject;
 - (id)description;
 - (id)_description:(_Bool)arg1;

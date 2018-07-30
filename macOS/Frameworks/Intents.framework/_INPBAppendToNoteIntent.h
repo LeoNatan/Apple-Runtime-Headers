@@ -7,34 +7,37 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBAppendToNoteIntent.h"
 
-@class PBUnknownFields, _INPBIntentMetadata, _INPBNote, _INPBNoteContent;
+@class NSString, _INPBIntentMetadata, _INPBNote, _INPBNoteContent;
 
-@interface _INPBAppendToNoteIntent : PBCodable <NSCopying>
+@interface _INPBAppendToNoteIntent : PBCodable <_INPBAppendToNoteIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBNoteContent *_content;
     _INPBIntentMetadata *_intentMetadata;
     _INPBNote *_targetNote;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBNoteContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) _INPBNote *targetNote; // @synthesize targetNote=_targetNote;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBNoteContent *content; // @synthesize content=_content;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasContent;
 @property(readonly, nonatomic) BOOL hasTargetNote;
 @property(readonly, nonatomic) BOOL hasIntentMetadata;
+@property(readonly, nonatomic) BOOL hasContent;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

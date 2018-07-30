@@ -8,7 +8,7 @@
 
 #import "MapsSuggestionsSource.h"
 
-@class GEOLocationShifter, NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, RTRoutineManager;
+@class GEOLocationShifter, MapsSuggestionsLimitedDictionary, MapsSuggestionsNetworkRequester, NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, RTRoutineManager;
 
 @interface MapsSuggestionsRoutineSource : MapsSuggestionsBaseSource <MapsSuggestionsSource>
 {
@@ -21,6 +21,9 @@
     NSObject<OS_dispatch_source> *_updateTimer;
     _Bool _areFrequentLocationsAvailable;
     GEOLocationShifter *_locationShifter;
+    MapsSuggestionsNetworkRequester *_requester;
+    MapsSuggestionsLimitedDictionary *_mapItemCache;
+    MapsSuggestionsLimitedDictionary *_mapItemCacheOrigin;
 }
 
 + (unsigned long long)disposition;
@@ -28,22 +31,24 @@
 - (void).cxx_destruct;
 - (void)_requestTouristInfoFromRoutineIfNeededForLocation:(id)arg1;
 - (void)_setFrequentLocationsAreAvailable:(_Bool)arg1;
-- (_Bool)canProduceEntriesOfType:(unsigned long long)arg1;
+- (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)canProduceEntriesOfType:(long long)arg1;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;
 - (void)_startMonitoringVehicleEvents;
 - (void)_updateSuggestionEntries;
+- (void)_resolveMapItemsAndAddEntries:(struct NSArray *)arg1;
+- (void)_treatPLOIs:(id)arg1 stepName:(id)arg2;
 - (id)_suggestionEntryForPredictedLOI:(id)arg1;
 - (_Bool)_addResumeRouteFieldsToSuggestionEntry:(id)arg1 fromSource:(id)arg2;
 - (_Bool)_addRecentsFieldsToSuggestionEntry:(id)arg1 fromSource:(id)arg2;
 - (_Bool)_addCalendarFieldsToSuggestionEntry:(id)arg1 fromSource:(id)arg2;
 - (_Bool)_addParkedCarFieldsToSuggestionsEntry:(id)arg1 vehicleEvent:(id)arg2;
-- (_Bool)_addFieldsToSuggestionsEntry:(id)arg1 fromMapItem:(id)arg2;
+- (_Bool)_addFieldsToSuggestionsEntry:(id)arg1 fromRTMapItem:(id)arg2;
 - (void)_addLabelForEntry:(id)arg1;
-- (id)_extractTitleAndSubtitleFromMapItem:(id)arg1 forType:(unsigned long long)arg2;
 - (int)_convertTransportType:(long long)arg1;
-- (unsigned long long)_convertType:(long long)arg1 source:(id)arg2 typeSource:(long long)arg3;
+- (long long)_convertType:(long long)arg1 source:(id)arg2 typeSource:(long long)arg3;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 

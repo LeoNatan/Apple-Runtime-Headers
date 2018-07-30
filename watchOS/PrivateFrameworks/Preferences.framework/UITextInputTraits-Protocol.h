@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSString, UITextInputPasswordRules;
 
 @protocol UITextInputTraits <NSObject>
 
 @optional
+@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(copy, nonatomic) NSString *textContentType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;

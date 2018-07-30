@@ -8,7 +8,6 @@
 
 @class NSNumber, PDTransitionOptions;
 
-__attribute__((visibility("hidden")))
 @interface PDTransition : OADProperties
 {
     BOOL mHasType;
@@ -24,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSNumber *duration; // @synthesize duration;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setOptions:(id)arg1;
 - (id)options;
@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (void)setType:(int)arg1;
 - (int)type;
 - (BOOL)hasType;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
-@class NCNotificationListCell, UITouch;
+@class NCNotificationListCell, NCNotificationSectionSettings, NSString, UITouch, UIView;
 
 @protocol NCNotificationListCellDelegate <NSObject>
 - (_Bool)notificationListCell:(NCNotificationListCell *)arg1 shouldPanHorizontallyWithTouch:(UITouch *)arg2;
 - (void)notificationListCellDidHideCellActions:(NCNotificationListCell *)arg1 resetCellScrollPosition:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)notificationListCellDidRevealCellActions:(NCNotificationListCell *)arg1;
 - (void)notificationListCellDidSignificantUserInteraction:(NCNotificationListCell *)arg1;
+- (NCNotificationSectionSettings *)notificationListCellRequestsSectionSettings:(NCNotificationListCell *)arg1 sectionIdentifier:(NSString *)arg2;
+- (void)notificationListCellRequestsPresentingManagementView:(NCNotificationListCell *)arg1 withPresentingView:(UIView *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)notificationListCellRequestsPresentingLongLook:(NCNotificationListCell *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)notificationListCellRequestsDismissAction:(NCNotificationListCell *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)notificationListCellRequestsDefaultAction:(NCNotificationListCell *)arg1 completion:(void (^)(_Bool))arg2;

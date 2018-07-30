@@ -16,7 +16,7 @@
 - (id)deniedBrands;
 - (id)consentedBrands;
 - (id)settings;
-- (void)forceUpdate;
+- (void)forceUpdateWithCallback:(id)arg1;
 - (_Bool)sportsScoreSpoilersAllowed;
 - (_Bool)privateModeEnabled;
 - (unsigned long long)privacyFlowContentVersion;

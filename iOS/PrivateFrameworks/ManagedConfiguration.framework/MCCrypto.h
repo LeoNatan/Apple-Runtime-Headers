@@ -17,6 +17,7 @@
 + (id)storeActivationLockBypassCode:(id)arg1 hash:(id)arg2;
 + (void)createNewActivationLockBypassCodeOutCode:(char *)arg1 outRawBytes:(char *)arg2 outHash:(char *)arg3;
 + (id)createAndStoreNewActivationLockBypassCodeAndHash;
++ (id)createAndStoreNewActivationLockBypassCodeAndHashIfNeeded;
 + (id)objectFromEncryptedData:(id)arg1 outCertificate:(struct __SecCertificate **)arg2 outError:(id *)arg3;
 + (id)_decryptionFailedErrorWithUnderlyingError:(id)arg1;
 + (_Bool)isValidPKCS12Data:(id)arg1;

@@ -6,27 +6,36 @@
 
 #import "UIView.h"
 
-@class NSString, UIImage, UIImageView, UILabel, UIScrollView;
+@class NSString, PUICButton, UIImage, UIImageView, UILabel, UIScrollView;
 
 @interface PUICContentUnavailableView : UIView
 {
     UIScrollView *_scrollView;
     _Bool _centerContentVertically;
+    NSString *_buttonTitle;
+    CDUnknownBlockType _buttonAction;
+    UIImageView *_imageView;
     UILabel *_titleLabel;
     UILabel *_messageLabel;
-    UIImageView *_imageView;
+    PUICButton *_actionButton;
 }
 
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
++ (void)_setupLayoutSpec;
+@property(retain, nonatomic) PUICButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) _Bool centerContentVertically; // @synthesize centerContentVertically=_centerContentVertically;
+@property(copy, nonatomic) CDUnknownBlockType buttonAction; // @synthesize buttonAction=_buttonAction;
+@property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_handleContentSizeCategoryDidChange:(id)arg1;
+- (id)_preferredTitleFont;
 - (id)_preferredFont;
 - (void)_initializeFonts;
 - (void)_initialize;
+- (void)_actionButtonPressed:(id)arg1;
 @property(retain, nonatomic) UIImage *image;
 @property(copy, nonatomic) NSString *message;
 @property(copy, nonatomic) NSString *title;

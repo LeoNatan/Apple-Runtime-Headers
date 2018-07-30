@@ -34,6 +34,7 @@
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain) EKEvent *event; // @synthesize event=_event;
 - (void).cxx_destruct;
+- (void)updateLayer;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateWithEvent:(id)arg1;
 - (id)initWithEvent:(id)arg1 showCalendarColor:(BOOL)arg2 showTimes:(BOOL)arg3 showLocation:(BOOL)arg4;

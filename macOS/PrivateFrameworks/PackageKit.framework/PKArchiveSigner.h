@@ -12,7 +12,6 @@
 {
     NSString *_algorithmType;
     struct OpaqueSecKeyRef *_privateKeyRef;
-    unsigned long long _signing_context;
     struct _CMSEncoder *_encoder;
     struct __CFDictionary *_tsaContext;
     int _signatureSize;

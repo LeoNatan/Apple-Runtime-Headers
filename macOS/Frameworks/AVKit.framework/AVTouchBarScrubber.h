@@ -11,7 +11,7 @@
 #import "CAAnimationDelegate.h"
 #import "NSStackViewDelegate.h"
 
-@class AVKeyValueObservationController, AVPlayerControllerTimeResolver, AVTouchBarMediaSelectionButtonViewController, AVTouchBarMediaSelectionViewController, AVTouchBarScrubberController, NSButton, NSColor, NSLayoutConstraint, NSMutableArray, NSStackView, NSString;
+@class AVObservationController, AVPlayerControllerTimeResolver, AVTouchBarMediaSelectionButtonViewController, AVTouchBarMediaSelectionViewController, AVTouchBarScrubberController, NSButton, NSColor, NSLayoutConstraint, NSMutableArray, NSStackView, NSString;
 
 @interface AVTouchBarScrubber : NSView <CAAnimationDelegate, AVTouchBarMediaSelectionButtonViewControllerDelegate, AVTouchBarMediaSelectionViewControllerDelegate, NSStackViewDelegate>
 {
@@ -33,6 +33,8 @@
     NSButton *_pictureInPictureButton;
     NSButton *_inlinePlayButton;
     NSView *_inlinePlayButtonSeparatorView;
+    NSView *_mediaSelectionButtonSeparatorView;
+    NSView *_pictureInPictureButtonSeparatorView;
     NSLayoutConstraint *_inlinePlayButtonWidthConstraint;
     AVTouchBarScrubberController *_touchBarScrubberController;
     NSView *_scrubberContainerView;
@@ -44,7 +46,7 @@
     NSLayoutConstraint *_containerViewFixedWidthLayoutConstraint;
     NSLayoutConstraint *_containerViewRightAnchorLayoutConstraint;
     NSLayoutConstraint *_scrubberLeftAnchorLayoutConstraint;
-    AVKeyValueObservationController *_keyValueObservationController;
+    AVObservationController *_keyValueObservationController;
     id <AVTouchBarScrubberDelegate> _delegate;
     struct {
         char touchBarScrubberExpandButtonTapped;

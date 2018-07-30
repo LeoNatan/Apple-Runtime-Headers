@@ -6,13 +6,15 @@
 
 #import "HFItemManager.h"
 
-@class HFHomeBuilder, HFItem, HFResidentDeviceItemProvider;
+@class HFHomeBuilder, HFItem, HFResidentDeviceItemProvider, HUUserNotificationTopicListModule;
 
 @interface HUEditLocationItemManager : HFItemManager
 {
+    HUUserNotificationTopicListModule *_notificationSettingsModule;
     HFItem *_nameItem;
     HFItem *_usersItem;
     HFItem *_inviteUsersItem;
+    HFItem *_wallpaperPickerItem;
     HFItem *_cameraItem;
     HFItem *_chooseWallpaperItem;
     HFItem *_wallpaperThumbnailItem;
@@ -36,14 +38,17 @@
 @property(retain, nonatomic) HFItem *wallpaperThumbnailItem; // @synthesize wallpaperThumbnailItem=_wallpaperThumbnailItem;
 @property(retain, nonatomic) HFItem *chooseWallpaperItem; // @synthesize chooseWallpaperItem=_chooseWallpaperItem;
 @property(retain, nonatomic) HFItem *cameraItem; // @synthesize cameraItem=_cameraItem;
+@property(retain, nonatomic) HFItem *wallpaperPickerItem; // @synthesize wallpaperPickerItem=_wallpaperPickerItem;
 @property(retain, nonatomic) HFItem *inviteUsersItem; // @synthesize inviteUsersItem=_inviteUsersItem;
 @property(retain, nonatomic) HFItem *usersItem; // @synthesize usersItem=_usersItem;
 @property(retain, nonatomic) HFItem *nameItem; // @synthesize nameItem=_nameItem;
+@property(retain, nonatomic) HUUserNotificationTopicListModule *notificationSettingsModule; // @synthesize notificationSettingsModule=_notificationSettingsModule;
 - (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_itemsToHideInSet:(id)arg1;
 - (id)_homeFuture;
 - (id)_buildItemProvidersForHome:(id)arg1;
+- (id)_buildItemModulesForHome:(id)arg1;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (id)initWithHomeBuilder:(id)arg1 delegate:(id)arg2;
 - (id)initWithHomeBuilder:(id)arg1 delegate:(id)arg2 context:(unsigned long long)arg3;

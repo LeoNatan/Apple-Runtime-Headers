@@ -54,6 +54,7 @@
 - (id)holdTokenForKey:(id)arg1;
 - (void)setupWithInitialKeys:(id)arg1 persistedHints:(id)arg2;
 - (void)setupWithInitialKeys:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

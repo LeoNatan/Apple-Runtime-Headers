@@ -18,6 +18,7 @@
 + (id)descriptionForObject:(id)arg1 withNamesAndObjects:(id)arg2;
 + (id)descriptionBuilderWithObject:(id)arg1;
 @property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
+- (void).cxx_destruct;
 - (id)build;
 - (void)tryAppendKey:(id)arg1;
 - (id)appendKeys:(id)arg1;
@@ -26,6 +27,7 @@
 - (id)appendNamesAndObjects:(id)arg1;
 - (id)appendName:(id)arg1 selector:(SEL)arg2;
 - (id)appendName:(id)arg1 pointerValue:(void *)arg2;
+- (id)appendName:(id)arg1 timeInterval:(double)arg2;
 - (id)appendName:(id)arg1 doubleValue:(double)arg2;
 - (id)appendName:(id)arg1 intValue:(int)arg2;
 - (id)appendName:(id)arg1 unsignedInteger:(unsigned long long)arg2;
@@ -33,7 +35,6 @@
 - (id)appendName:(id)arg1 boolValue:(_Bool)arg2;
 - (id)appendName:(id)arg1 object:(id)arg2;
 - (id)appendObject:(id)arg1 withName:(id)arg2;
-- (void)dealloc;
 - (id)initWithObject:(id)arg1;
 
 @end

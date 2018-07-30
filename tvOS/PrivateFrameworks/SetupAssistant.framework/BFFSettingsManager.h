@@ -19,6 +19,8 @@
     NSNumber *_stashedLocationServicesEnabled;
     NSData *_stashedWatchData;
     NSArray *_stashedFlowSkipIdentifiers;
+    NSNumber *_stashedScreenTimeEnabled;
+    NSNumber *_stashedAutoUpdateEnabled;
 }
 
 + (id)sharedManager;
@@ -28,6 +30,8 @@
 - (id)_preferencesForDomain:(id)arg1;
 - (void)_restoreWatchData;
 - (void)_restoreStashedFiles;
+- (void)_applyAutoUpdatePreferences;
+- (void)_applyScreenTimePreferences;
 - (void)_applyStashedFlowSkipIdentifiers;
 - (void)_applyLocationServices;
 - (void)_applyAssistantPreferences;
@@ -44,6 +48,8 @@
 - (_Bool)_stashConfiguration:(_Bool)arg1;
 - (_Bool)hideStashInSafeHavenAsProvisional:(_Bool)arg1;
 - (_Bool)hideStashInSafeHaven;
+- (void)setAutoUpdateEnabled:(_Bool)arg1;
+- (void)setScreenTimeEnabled:(_Bool)arg1;
 - (void)stashFlowSkipIdentifiers:(id)arg1;
 - (void)removeObjectForBuddyKey:(id)arg1;
 - (void)setObject:(id)arg1 forBuddyKey:(id)arg2;

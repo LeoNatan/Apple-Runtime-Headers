@@ -9,7 +9,7 @@
 #import "FCFeedElement.h"
 #import "FCHeadlineProviding.h"
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineThumbnail, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
 
 @interface FCHeadline : NSObject <FCHeadlineProviding, FCFeedElement>
 {
@@ -23,6 +23,8 @@
     _Bool _showMinimalChrome;
     _Bool _boundToContext;
     _Bool _hiddenFromFeeds;
+    _Bool _pressRelease;
+    _Bool _hiddenFromAutoFavorites;
     _Bool _paid;
     _Bool _showSubscriptionRequiredText;
     _Bool _canBePurchased;
@@ -36,6 +38,7 @@
     FCHeadlineThumbnail *_thumbnailWidget;
     FCHeadlineThumbnail *_thumbnailWidgetHQ;
     NSString *_title;
+    FCHeadlineExperimentalTitleMetadata *_experimentalTitleMetadata;
     NSString *_articleID;
     NSString *_referencedArticleID;
     NSString *_clusterID;
@@ -116,6 +119,8 @@
 @property(readonly, nonatomic) FCCoverArt *coverArt; // @synthesize coverArt=_coverArt;
 @property(nonatomic, getter=isPaid) _Bool paid; // @synthesize paid=_paid;
 @property(readonly, nonatomic) long long minimumNewsVersion;
+@property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) _Bool hiddenFromAutoFavorites;
+@property(readonly, nonatomic, getter=isPressRelease) _Bool pressRelease; // @synthesize pressRelease=_pressRelease;
 @property(readonly, nonatomic, getter=isHiddenFromFeeds) _Bool hiddenFromFeeds; // @synthesize hiddenFromFeeds=_hiddenFromFeeds;
 @property(readonly, nonatomic, getter=isBoundToContext) _Bool boundToContext; // @synthesize boundToContext=_boundToContext;
 @property(readonly, nonatomic) _Bool showMinimalChrome; // @synthesize showMinimalChrome=_showMinimalChrome;
@@ -160,9 +165,10 @@
 @property(readonly, copy, nonatomic) NSArray *topics; // @synthesize topics=_topics;
 @property(copy, nonatomic) NSString *shortExcerpt; // @synthesize shortExcerpt=_shortExcerpt;
 @property(readonly, copy, nonatomic) NSString *primaryAudience; // @synthesize primaryAudience=_primaryAudience;
-@property(readonly, copy, nonatomic) NSString *clusterID;
+@property(copy, nonatomic) NSString *clusterID; // @synthesize clusterID=_clusterID;
 @property(readonly, copy, nonatomic) NSString *referencedArticleID; // @synthesize referencedArticleID=_referencedArticleID;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
+@property(copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata; // @synthesize experimentalTitleMetadata=_experimentalTitleMetadata;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) FCHeadlineThumbnail *thumbnailWidgetHQ; // @synthesize thumbnailWidgetHQ=_thumbnailWidgetHQ;
 @property(readonly, nonatomic) FCHeadlineThumbnail *thumbnailWidget; // @synthesize thumbnailWidget=_thumbnailWidget;
@@ -188,8 +194,8 @@
 @property(readonly, nonatomic) unsigned long long halfLife;
 @property(readonly, copy, nonatomic) NSString *sourceFeedID;
 @property(readonly, nonatomic) _Bool isTopStory;
-- (void)applyHeadlineMetadata:(id)arg1 coreConfiguration:(id)arg2;
-- (void)assignStoryType:(unsigned long long)arg1 withCoreConfiguration:(id)arg2;
+- (void)applyHeadlineMetadata:(id)arg1 configuration:(id)arg2;
+- (void)assignStoryType:(unsigned long long)arg1 withConfiguration:(id)arg2;
 - (void)overrideDisplayDate:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool hasVideo;
@@ -205,7 +211,9 @@
 // Remaining properties
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool webEmbedsEnabled;
 
 @end
 

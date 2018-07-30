@@ -6,14 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSSet;
+@class NSObject<OS_dispatch_queue>, NSSet;
 
+__attribute__((visibility("hidden")))
 @interface SKProductsRequestInternal : NSObject
 {
     NSSet *_productIdentifiers;
+    NSObject<OS_dispatch_queue> *_replyQueue;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)init;
 
 @end
 

@@ -8,15 +8,14 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface MFPMetafileImage : MFPImage
 {
     NSData *mMetafileData;
 }
 
+- (void).cxx_destruct;
 - (id)phoneImage;
 - (void)drawInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 unit:(int)arg3 effect:(id)arg4;
-- (void)dealloc;
 - (id)initWithMetafileData:(id)arg1;
 
 @end

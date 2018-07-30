@@ -10,17 +10,14 @@
 
 @interface VNCreateImageprintRequest : VNImageBasedRequest
 {
-    NSNumber *_timeStamp;
 }
 
-@property(retain, nonatomic) NSNumber *timeStamp; // @synthesize timeStamp=_timeStamp;
-- (void).cxx_destruct;
-- (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
++ (Class)configurationClass;
+- (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (void)applyConfigurationOfRequest:(id)arg1;
-- (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
+- (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
+@property(retain, nonatomic) NSNumber *timeStamp;
 - (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
-- (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end
 

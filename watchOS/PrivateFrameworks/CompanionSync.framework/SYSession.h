@@ -15,6 +15,7 @@
 {
     NSObject<OS_dispatch_queue> *_delegateQueue;
     // Error parsing type: AB, name: _inTransaction
+    // Error parsing type: AB, name: _paused
     NSMutableSet *_pendingMessageIDs;
     _Bool _rejectedNewSessionFromSamePeer;
     _Bool _sessionStarted;

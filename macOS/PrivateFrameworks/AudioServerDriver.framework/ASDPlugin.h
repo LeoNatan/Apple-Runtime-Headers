@@ -27,7 +27,7 @@
     struct AudioServerPlugInDriverInterface **_driverRef;
     struct AudioServerPlugInHostInterface *_pluginHost;
     unsigned int _pluginRefCount;
-    NSObject<OS_dispatch_queue> *_powerNotificcationQueue;
+    NSObject<OS_dispatch_queue> *_powerNotificationQueue;
     struct IONotificationPort *_powerNotificationPort;
     unsigned int _powerConnection;
     unsigned int _powerNotifier;

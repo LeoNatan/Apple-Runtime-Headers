@@ -8,10 +8,11 @@
 
 #import "NSCopying.h"
 
-@class GEONameInfo, NSMutableArray;
+@class GEOJunctionInfo, GEONameInfo, NSMutableArray;
 
 @interface GEOSignGuidance : PBCodable <NSCopying>
 {
+    GEOJunctionInfo *_junctionInfo;
     int _maneuverArrowOverride;
     NSMutableArray *_secondarySigns;
     GEONameInfo *_shieldName;
@@ -27,6 +28,7 @@
 + (Class)secondarySignType;
 + (Class)signDetailType;
 + (Class)signTitleType;
+@property(retain, nonatomic) GEOJunctionInfo *junctionInfo; // @synthesize junctionInfo=_junctionInfo;
 @property(nonatomic) unsigned int stackRanking; // @synthesize stackRanking=_stackRanking;
 @property(retain, nonatomic) GEONameInfo *shieldName; // @synthesize shieldName=_shieldName;
 @property(retain, nonatomic) NSMutableArray *secondarySigns; // @synthesize secondarySigns=_secondarySigns;
@@ -42,6 +44,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasJunctionInfo;
 @property(nonatomic) _Bool hasStackRanking;
 @property(readonly, nonatomic) _Bool hasShieldName;
 - (int)StringAsManeuverArrowOverride:(id)arg1;

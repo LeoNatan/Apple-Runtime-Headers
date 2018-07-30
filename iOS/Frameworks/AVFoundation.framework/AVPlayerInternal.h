@@ -8,6 +8,7 @@
 
 @class AVAudioSession, AVAudioSessionMediaPlayerOnly, AVOutputContext, AVPixelBufferAttributeMediator, AVPlayerItem, AVPropertyStorage, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerInternal : NSObject
 {
     AVWeakReference *weakReference;
@@ -33,9 +34,53 @@
     NSArray *queueModifications;
     NSMutableDictionary *pendingFigPlayerProperties;
     AVAudioSession *audioSession;
+    NSDictionary *vibrationPattern;
     AVOutputContext *outputContext;
     _Bool IOwnTheFigPlayer;
     NSMutableArray *handlersToCallWhenReadyToPlay;
+    _Bool shouldReduceResourceUsage;
+    NSString *playerRole;
+    NSString *externalPlaybackVideoGravity;
+    long long actionAtItemEnd;
+    float volume;
+    float userVolume;
+    float minRateForAudioPlayback;
+    float maxRateForAudioPlayback;
+    _Bool autoSwitchStreamVariants;
+    _Bool preparesItemsForPlaybackAsynchronously;
+    _Bool allowsOutOfBandTextTrackRendering;
+    _Bool muted;
+    _Bool closedCaptionDisplayEnabled;
+    _Bool appliesMediaSelectionCriteriaAutomatically;
+    _Bool dynamicallyChoosesInitialVariant;
+    _Bool limitsBandwidthForCellularAccess;
+    _Bool usesAudioOnlyModeForExternalPlayback;
+    _Bool allowsPixelBufferPoolSharing;
+    _Bool disallowsAMRAudio;
+    _Bool disallowsHardwareAcceleratedVideoDecoder;
+    _Bool layerDestinationIsTVOut;
+    _Bool preventsDisplaySleepDuringVideoPlayback;
+    _Bool disallowsVideoLayerDisplayCompositing;
+    _Bool allowsExternalPlayback;
+    _Bool usesExternalPlaybackWhileExternalScreenIsActive;
+    NSString *captionPipelineStrategy;
+    NSString *audioOutputDeviceUniqueID;
+    NSString *clientName;
+    NSString *multichannelAudioStrategy;
+    long long clientPriority;
+    _Bool PIPModePossible;
+    _Bool isDisplayingClosedCaptions;
+    _Bool externalPlaybackActive;
+    _Bool airPlayVideoActive;
+    _Bool outputObscuredDueToInsufficientExternalProtection;
+    NSString *ancillaryPerformanceInformationForDisplay;
+    float rate;
+    _Bool automaticallyWaitsToMinimizeStalling;
+    _Bool usesLegacyAutomaticWaitingBehavior;
+    long long timeControlStatus;
+    NSString *reasonForWaitingToPlay;
+    struct CGSize currentItemPresentationSize;
+    _Bool currentItemNonForcedSubtitlesEnabled;
     struct __CFDictionary *videoLayers;
     NSMutableArray *subtitleLayers;
     NSMutableArray *closedCaptionLayers;
@@ -48,29 +93,17 @@
     struct OpaqueFigPlayer *figPlayer;
     struct OpaqueFigPlaybackItem *figPlaybackItemToIdentifyNextCurrentItem;
     _Bool needsToCreateFigPlayer;
-    NSString *externalPlaybackVideoGravity;
     NSDictionary *cachedFigMediaSelectionCriteriaProperty;
     NSArray *itemsInFigPlayQueue;
     NSArray *expectedAssetTypes;
     _Bool reevaluateBackgroundPlayback;
     _Bool hostApplicationInForeground;
     _Bool hadAssociatedOnscreenPlayerLayerWhenSuspended;
-    NSDictionary *vibrationPattern;
     struct OpaqueCMClock *figMasterClock;
-    _Bool autoSwitchStreamVariants;
-    _Bool preparesItemsForPlaybackAsynchronously;
-    _Bool allowsOutOfBandTextTrackRendering;
-    _Bool shouldReduceResourceUsage;
-    NSString *playerRole;
-    NSString *multichannelAudioStrategy;
-    NSString *captionPipelineStrategy;
     NSString *captionRenderingStrategy;
-    _Bool automaticallyWaitsToMinimizeStalling;
-    _Bool usesLegacyAutomaticWaitingBehavior;
-    _Bool layerDestinationIsTVOut;
     NSArray *displaysUsedForPlayback;
-    NSString *ancillaryPerformanceInformationForDisplay;
     unsigned long long preferredVideoDecoderGPURegistryID;
+    id <AVLoggingIdentifier> loggingIdentifier;
 }
 
 @end

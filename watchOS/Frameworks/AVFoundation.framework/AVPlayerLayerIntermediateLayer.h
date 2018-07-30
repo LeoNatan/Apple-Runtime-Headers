@@ -6,6 +6,7 @@
 
 #import "FigBaseCALayer.h"
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerLayerIntermediateLayer : FigBaseCALayer
 {
 }

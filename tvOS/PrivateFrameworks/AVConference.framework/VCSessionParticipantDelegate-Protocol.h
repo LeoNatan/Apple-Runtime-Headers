@@ -6,9 +6,24 @@
 
 #import "NSObject.h"
 
-@class NSData, VCSessionParticipant;
+@class NSError, NSString, VCSessionParticipant;
 
 @protocol VCSessionParticipantDelegate <NSObject>
-- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 didFrequencyLevelsChange:(NSData *)arg2;
+- (void)vcSessionParticipantDidChangeReceivingStreams:(VCSessionParticipant *)arg1;
+- (void)vcSessionParticipantDidChangeSendingStreams:(VCSessionParticipant *)arg1;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 didRequestVideoRedundancy:(_Bool)arg2;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 didSwitchFromStreamID:(unsigned short)arg2 toStreamID:(unsigned short)arg3;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 requestKeyFrameGenerationWithStreamID:(unsigned short)arg2;
+- (void)vcSessionParticipantDidChangeActualNetworkBitrateAudio:(VCSessionParticipant *)arg1;
+- (void)vcSessionParticipantDidChangeActualNetworkBitrateVideo:(VCSessionParticipant *)arg1;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 didChangeProminence:(unsigned char)arg2 description:(NSString *)arg3;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 remoteVideoPausedDidChange:(_Bool)arg2;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 remoteAudioPausedDidChange:(_Bool)arg2;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 videoPaused:(_Bool)arg2 didSucceed:(_Bool)arg3 error:(NSError *)arg4;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 audioPaused:(_Bool)arg2 didSucceed:(_Bool)arg3 error:(NSError *)arg4;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 remoteVideoEnabledDidChange:(_Bool)arg2;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 remoteAudioEnabledDidChange:(_Bool)arg2;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 videoEnabled:(_Bool)arg2 didSucceed:(_Bool)arg3 error:(NSError *)arg4;
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 audioEnabled:(_Bool)arg2 didSucceed:(_Bool)arg3 error:(NSError *)arg4;
 @end
 

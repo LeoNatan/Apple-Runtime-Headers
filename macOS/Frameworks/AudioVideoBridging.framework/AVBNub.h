@@ -46,6 +46,7 @@
 - (BOOL)addMSRPClientToInterfaceNamed:(id)arg1 error:(id *)arg2;
 - (BOOL)removeAVBClientFromInterfaceNamed:(id)arg1 error:(id *)arg2;
 - (BOOL)addAVBClientToInterfaceNamed:(id)arg1 error:(id *)arg2;
+- (BOOL)callClientCommand:(int)arg1 withName:(id)arg2 withInterfaceNamed:(id)arg3 error:(id *)arg4;
 - (BOOL)removeTimeSyncFromInterfaceNamed:(id)arg1 error:(id *)arg2;
 - (BOOL)addTimeSyncToInterfaceNamed:(id)arg1 error:(id *)arg2;
 - (id)init;

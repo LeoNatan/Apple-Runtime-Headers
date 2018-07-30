@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @protocol ISBiometricSessionDelegate <NSObject>
 
 @optional
-- (void)sender:(id)arg1 willSendChallenge:(NSString *)arg2 andSignature:(NSString *)arg3 isPayment:(_Bool)arg4;
+- (void)sender:(id)arg1 willSendChallenge:(NSString *)arg2 andSignature:(NSString *)arg3 isPayment:(_Bool)arg4 additionalHeaders:(NSDictionary *)arg5;
 - (void)sender:(id)arg1 shouldContinueTouchIDSession:(_Bool)arg2;
 - (void)sender:(id)arg1 didFallbackToPassword:(_Bool)arg2;
 @end

@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 - (struct CGImage *)cgImage;
 - (void)dealloc;
 - (id)initWithCGImage:(struct CGImage *)arg1;
-- (id)observationsCacheKey;
 
 @end
 

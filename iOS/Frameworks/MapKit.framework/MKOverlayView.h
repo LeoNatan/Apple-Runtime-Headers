@@ -6,11 +6,15 @@
 
 #import "UIView.h"
 
+@class MKMapView, NSObject<OS_dispatch_queue>;
+
 @interface MKOverlayView : UIView
 {
     id <MKOverlay> _overlay;
     CDStruct_02837cd9 _boundingMapRect;
     id _renderer;
+    NSObject<OS_dispatch_queue> *_isolationQueue;
+    MKMapView *_mapView;
 }
 
 @property(readonly, nonatomic) id <MKOverlay> overlay; // @synthesize overlay=_overlay;
@@ -19,6 +23,7 @@
 - (_Bool)canDrawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(double)arg2;
 - (void)overlay:(id)arg1 drawKey:(const CDStruct_7523a67d *)arg2 inContext:(struct CGContext *)arg3;
 - (_Bool)overlay:(id)arg1 canDrawKey:(const CDStruct_7523a67d *)arg2;
+- (_Bool)_mayExtendOutsideBounds;
 - (void)set_renderer:(id)arg1;
 - (id)_renderer;
 - (CDStruct_02837cd9)_boundingMapRect;
@@ -30,6 +35,8 @@
 - (struct CGRect)rectForMapRect:(CDStruct_02837cd9)arg1;
 - (CDStruct_c3b9c2ee)mapPointForPoint:(struct CGPoint)arg1;
 - (struct CGPoint)pointForMapPoint:(CDStruct_c3b9c2ee)arg1;
+- (void)_setMapView:(id)arg1;
+- (id)_mapView;
 - (id)_mk_overlayLayer;
 - (id)_mk_overlayView;
 - (void)setContentScaleFactor:(double)arg1;

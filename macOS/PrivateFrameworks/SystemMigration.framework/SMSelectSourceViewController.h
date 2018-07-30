@@ -137,6 +137,7 @@
 - (BOOL)shouldUpdateToMatchSourceSystem:(id)arg1;
 - (id)oneDecimalVersion:(id)arg1;
 - (void)presentNeedsUpdateAlertForSystem:(id)arg1;
+- (BOOL)presentServerDeprecationAlertForSystem:(id)arg1;
 - (void)recalculateDetailTableViewWidthForTab:(unsigned long long)arg1;
 @property(readonly) unsigned long long detailViewTabIndex;
 @property(readonly) BOOL selectActionAvailable;

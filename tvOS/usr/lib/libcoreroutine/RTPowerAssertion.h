@@ -8,6 +8,7 @@
 
 @interface RTPowerAssertion : NSObject
 {
+    void *_powerAssertion;
 }
 
 - (void)dealloc;

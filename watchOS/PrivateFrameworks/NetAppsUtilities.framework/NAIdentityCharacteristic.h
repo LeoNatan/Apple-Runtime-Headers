@@ -12,6 +12,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface NAIdentityCharacteristic : NSObject <NAHashable, NAEquatable, NSCopying>
 {
     CDUnknownBlockType _retrievalBlock;

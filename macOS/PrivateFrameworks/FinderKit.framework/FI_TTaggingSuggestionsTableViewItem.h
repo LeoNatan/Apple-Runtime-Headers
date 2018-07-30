@@ -6,7 +6,7 @@
 
 #import <FinderKit/FI_TTableViewItem.h>
 
-@class NSColor, NSImage, NSString;
+@class FI_TLabelView, NSColor, NSImage, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FI_TTaggingSuggestionsTableViewItem : FI_TTableViewItem
@@ -20,10 +20,12 @@ __attribute__((visibility("hidden")))
     _Bool _needsCustomSelect;
     _Bool _isMoveTag;
     NSString *_tagName;
+    FI_TLabelView *_labelColorView;
+    struct TKeyValueBinder _labelColorBinder;
 }
 
 + (id)itemForMoveTag:(const struct TString *)arg1;
-+ (id)itemForCreateNewTag:(const struct TString *)arg1;
++ (id)itemForCreateNewTag:(const struct TString *)arg1 labelColorView:(id)arg2;
 + (id)showAllItem;
 + (id)itemForTag:(id)arg1 needsCustomSelect:(_Bool)arg2;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
@@ -35,6 +37,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool pinned; // @synthesize pinned=_pinned;
 @property(readonly, nonatomic) _Bool userVisible; // @synthesize userVisible=_userVisible;
 @property(readonly, nonatomic) long long labelColor; // @synthesize labelColor=_labelColor;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isTag; // @dynamic isTag;
 @property(retain, nonatomic) NSColor *textColor; // @dynamic textColor;
 - (void)setColorNumber:(id)arg1;
@@ -44,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTag:(id)arg1 needsCustomSelect:(_Bool)arg2;
 - (id)init;
+- (void)setLabelColor:(long long)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSImage *image; // @dynamic image;

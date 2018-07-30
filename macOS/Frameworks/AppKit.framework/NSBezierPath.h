@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@interface NSBezierPath : NSObject <NSCopying, NSCoding>
+@interface NSBezierPath : NSObject <NSCopying, NSSecureCoding>
 {
     long long _elementCount;
     long long _elementMax;
@@ -33,6 +33,7 @@
     } _bpFlags;
 }
 
++ (BOOL)supportsSecureCoding;
 + (double)defaultLineWidth;
 + (void)setDefaultLineWidth:(double)arg1;
 + (unsigned long long)defaultLineJoinStyle;
@@ -67,7 +68,6 @@
 + (void)setFlatness:(double)arg1;
 + (double)miterLimit;
 + (void)setMiterLimit:(double)arg1;
-+ (id)bezierPathWithRoundedRect:(struct CGRect)arg1 xRadius:(double)arg2 yRadius:(double)arg3 roundedTopLeftCorner:(BOOL)arg4 roundedTopRightCorner:(BOOL)arg5 roundedBottomLeftCorner:(BOOL)arg6 roundedBottomRightCorner:(BOOL)arg7;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)containsPoint:(struct CGPoint)arg1;
@@ -123,6 +123,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)_initializeDashPatternFromDecodedBytes:(const void *)arg1 length:(unsigned long long)arg2 requiresSecureCoding:(BOOL)arg3 error:(id *)arg4;
+- (BOOL)_initializeSegmentsFromDecodedBytes:(const void *)arg1 length:(unsigned long long)arg2 requiresSecureCoding:(BOOL)arg3 error:(id *)arg4;
 - (void)_deviceClosePath;
 - (void)_deviceCurveToPoint:(struct CGPoint)arg1 controlPoint1:(struct CGPoint)arg2 controlPoint2:(struct CGPoint)arg3;
 - (void)_deviceLineToPoint:(struct CGPoint)arg1;
@@ -134,7 +136,6 @@
 - (void)appendBezierPathWithGlyph:(unsigned int)arg1 inFont:(id)arg2;
 - (void)setCachesBezierPath:(BOOL)arg1;
 - (BOOL)cachesBezierPath;
-- (void)appendBezierPathWithRoundedRect:(struct CGRect)arg1 xRadius:(double)arg2 yRadius:(double)arg3 roundedTopLeftCorner:(BOOL)arg4 roundedTopRightCorner:(BOOL)arg5 roundedBottomLeftCorner:(BOOL)arg6 roundedBottomRightCorner:(BOOL)arg7;
 - (void)_appendBezierPathWithRoundRect:(struct CGRect)arg1 cornerRadius:(double)arg2;
 - (void)_appendBezierPathWithBottomRoundRect:(struct CGRect)arg1 cornerRadius:(double)arg2;
 - (void)_appendBezierPathWithTopRoundRect:(struct CGRect)arg1 cornerRadius:(double)arg2;

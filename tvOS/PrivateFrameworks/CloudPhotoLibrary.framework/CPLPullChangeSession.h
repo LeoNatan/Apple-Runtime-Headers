@@ -17,7 +17,6 @@
 + (id)shortDescription;
 - (void)acknowledgeChangeBatch:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)getChangeBatchWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

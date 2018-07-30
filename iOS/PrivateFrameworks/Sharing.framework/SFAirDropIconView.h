@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;
+- (void)loadImageIfNeeded;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

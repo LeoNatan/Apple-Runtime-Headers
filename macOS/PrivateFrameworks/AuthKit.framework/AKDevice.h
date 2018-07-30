@@ -50,6 +50,8 @@
 + (id)_lookUpCurrentEnclosureColor;
 + (id)_lookUpCurrentColor;
 + (id)deviceWithSerializedData:(id)arg1;
++ (id)systemContainerCacheURL;
++ (id)systemContainerURL;
 + (BOOL)supportsSecureCoding;
 + (id)activeIDSPeerDevice;
 + (id)currentDevice;

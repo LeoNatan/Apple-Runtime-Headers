@@ -19,7 +19,6 @@
     SearchUIDropTarget *_dropTarget;
 }
 
-+ (_Bool)draggingSupported;
 + (id)dragSourceForView:(id)arg1 dragObject:(id)arg2;
 @property(retain) SearchUIDropTarget *dropTarget; // @synthesize dropTarget=_dropTarget;
 @property __weak UIView *dragSourceView; // @synthesize dragSourceView=_dragSourceView;

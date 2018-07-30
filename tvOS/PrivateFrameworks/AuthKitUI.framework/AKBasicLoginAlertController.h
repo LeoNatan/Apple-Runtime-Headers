@@ -13,7 +13,7 @@
 @interface AKBasicLoginAlertController : UIAlertController <UITextFieldDelegate>
 {
     long long _alertStyle;
-    id _codeEntryObserver;
+    id <NSObject> _didEnterCodeObserver;
     CDUnknownBlockType _ak_cancelAction;
     CDUnknownBlockType _ak_authenticateAction;
     CDUnknownBlockType _ak_createIDAction;
@@ -43,22 +43,28 @@
 @property(copy, nonatomic) CDUnknownBlockType ak_cancelAction; // @synthesize ak_cancelAction=_ak_cancelAction;
 - (void).cxx_destruct;
 - (_Bool)textFieldShouldReturn:(id)arg1;
+- (void)_endObservingDidEnterCodeNotifications;
+- (void)_didEnterCode:(id)arg1;
+- (void)_beginObservingDidEnterCodeNotifications;
+- (void)_passwordFieldDidChange:(id)arg1;
+- (void)_clearPasswordField;
+- (void)_jiggleTheAlert;
 - (void)stopAnimating;
 - (void)startAnimating;
 - (_Bool)disablesAutomaticKeyboardDismissal;
-- (void)viewDidAppear:(_Bool)arg1;
+- (id)_passwordField;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)setPasscodeFieldDisabled:(_Bool)arg1;
 - (void)clearSecondFactorEntry;
-- (void)_jiggleTheAlert;
 @property(copy, nonatomic) NSString *authenticateButtonTitle; // @synthesize authenticateButtonTitle=_ak_authenticateButtonTitle;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_ak_reason;
 @property(copy, nonatomic) NSString *authenticateTitle; // @synthesize authenticateTitle=_ak_title;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_ak_password;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_ak_username;
 @property(nonatomic) long long alertStyle;
-- (void)dismissAndShowiForgot;
+- (void)_dismissAndShowiForgot:(id)arg1;
 - (void)_setupViewControllerForSecondFactorEntryStyle;
 - (void)_setupViewControllerForIForgotStyle;
 - (void)_setupViewControllerForUserOrCreateAppleIDStyle;

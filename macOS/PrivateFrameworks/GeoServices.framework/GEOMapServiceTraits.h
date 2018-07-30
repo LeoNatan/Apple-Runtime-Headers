@@ -56,6 +56,8 @@
     GEOTraitsTransitScheduleFilter *_transitScheduleFilter;
     GEOPDVenueIdentifier *_venueIdentifier;
     GEOWalkingOptions *_walkingOptions;
+    BOOL _appDarkMode;
+    BOOL _deviceDarkMode;
     BOOL _deviceInVehicle;
     BOOL _isAPICall;
     BOOL _isRedoSearch;
@@ -86,6 +88,8 @@
         unsigned int source:1;
         unsigned int timeSinceMapEnteredForeground:1;
         unsigned int timeSinceMapViewportChanged:1;
+        unsigned int appDarkMode:1;
+        unsigned int deviceDarkMode:1;
         unsigned int deviceInVehicle:1;
         unsigned int isAPICall:1;
         unsigned int isRedoSearch:1;
@@ -103,6 +107,8 @@
 + (Class)reviewUserPhotoSizesType;
 + (Class)photoSizesType;
 + (Class)deviceDisplayLanguageType;
+@property(nonatomic) BOOL appDarkMode; // @synthesize appDarkMode=_appDarkMode;
+@property(nonatomic) BOOL deviceDarkMode; // @synthesize deviceDarkMode=_deviceDarkMode;
 @property(nonatomic) BOOL supportUnresolvedDirectionIntent; // @synthesize supportUnresolvedDirectionIntent=_supportUnresolvedDirectionIntent;
 @property(nonatomic) BOOL supportDirectionIntentAutocomplete; // @synthesize supportDirectionIntentAutocomplete=_supportDirectionIntentAutocomplete;
 @property(nonatomic) double sessionRelativeTimestamp; // @synthesize sessionRelativeTimestamp=_sessionRelativeTimestamp;
@@ -156,6 +162,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasAppDarkMode;
+@property(nonatomic) BOOL hasDeviceDarkMode;
 @property(nonatomic) BOOL hasSupportUnresolvedDirectionIntent;
 @property(nonatomic) BOOL hasSupportDirectionIntentAutocomplete;
 @property(nonatomic) BOOL hasSessionRelativeTimestamp;
@@ -267,6 +275,7 @@
 @property(nonatomic) BOOL hasSequenceNumber;
 @property(nonatomic) BOOL hasSessionId;
 - (void)dealloc;
+- (void)updateAnalyticsShortSession;
 - (int)uiActionType;
 - (void)clearLocations;
 - (void)clearSessionId;

@@ -7,6 +7,8 @@
 #import "UIFont.h"
 
 @interface UIFont (HKAdditions)
++ (id)hk_chartLollipopValueFont;
++ (id)hk_chartLollipopKeyFont;
 + (id)hk_scalableFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 + (id)hk_chartAxisLabelFont;
 + (id)hk_roundedSystemFontWithSize:(float)arg1 weight:(float)arg2;

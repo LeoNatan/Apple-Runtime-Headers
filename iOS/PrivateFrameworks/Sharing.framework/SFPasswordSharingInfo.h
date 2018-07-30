@@ -10,7 +10,6 @@
 
 @class NSNumber, NSString;
 
-__attribute__((visibility("hidden")))
 @interface SFPasswordSharingInfo : NSObject <NSSecureCoding>
 {
     NSNumber *_channel;

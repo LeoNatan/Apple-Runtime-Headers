@@ -49,7 +49,7 @@
 - (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseEntered:(id)arg1;
-@property(readonly) BOOL inScrollGesture; // @dynamic inScrollGesture;
+@property(readonly) BOOL inScrollGesture;
 - (void)cancelScrollGesture;
 - (void)endScrollGesture;
 - (void)_endScrollGestureWithCancel:(BOOL)arg1;

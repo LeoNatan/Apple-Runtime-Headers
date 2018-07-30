@@ -26,6 +26,8 @@
     _Bool embedsDepthDataInPhoto;
     _Bool depthDataFiltered;
     _Bool cameraCalibrationDataDeliveryEnabled;
+    _Bool portraitEffectsMatteDeliveryEnabled;
+    _Bool embedsPortraitEffectsMatteInPhoto;
     NSDictionary *metadata;
     NSURL *livePhotoMovieFileURL;
     NSURL *livePhotoMovieFileURLForOriginalPhoto;
@@ -34,6 +36,7 @@
     NSArray *livePhotoMovieMetadataForOriginalPhoto;
     NSDictionary *previewPhotoFormat;
     NSDictionary *embeddedThumbnailPhotoFormat;
+    NSDictionary *rawEmbeddedThumbnailPhotoFormat;
     _Bool squareCropEnabled;
     _Bool turboModeEnabled;
     _Bool burstQualityCaptureEnabled;

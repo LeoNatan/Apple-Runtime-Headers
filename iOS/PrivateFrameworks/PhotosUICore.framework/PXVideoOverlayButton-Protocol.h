@@ -5,6 +5,7 @@
 //
 
 @protocol PXVideoOverlayButton
+@property(nonatomic) _Bool showAsPause;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (long long)style;
 @end

@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class NSMutableArray;
 
-@interface PKPhysicsWorld : NSObject <NSCoding>
+@interface PKPhysicsWorld : NSObject <NSSecureCoding>
 {
     struct b2World *_world;
     struct b2Vec2 _gravity;
@@ -24,6 +24,7 @@
     struct PKDebugDrawPacket drawPacket;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)world;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -53,9 +54,9 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (void)__init__;
-- (void)encodeWithCoder:(id)arg1;
 @property(nonatomic) double velocityThreshold;
 @property(nonatomic) double speed;
 - (id)bodyAlongRayStart:(struct CGPoint)arg1 end:(struct CGPoint)arg2;
@@ -66,8 +67,9 @@
 - (void)enumerateBodiesAtPoint:(struct CGPoint)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) struct PKCAether *aether;
 - (const struct PKDebugDrawPacket *)debugDrawPacket;
-- (void)debugDraw:(float)arg1 matrix:(union _GLKMatrix4)arg2 showsPhysics:(_Bool)arg3 showsOutlineInterior:(_Bool)arg4 showsFields:(_Bool)arg5;
+- (void)debugDraw:(float)arg1 matrix:(union _GLSKMatrix4)arg2 showsPhysics:(_Bool)arg3 showsOutlineInterior:(_Bool)arg4 showsFields:(_Bool)arg5;
 - (void)_runBlockOutsideOfTimeStep:(CDUnknownBlockType)arg1;
+- (_Bool)isEqualToWorld:(id)arg1;
 @property(nonatomic) _Bool _doSleep;
 @property(retain, nonatomic) NSMutableArray *_bodies;
 @property(nonatomic) struct b2Vec2 _gravity;

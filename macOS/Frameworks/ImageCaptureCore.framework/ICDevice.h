@@ -95,7 +95,6 @@
 @property(readonly) NSString *productKind;
 @property NSString *name;
 @property(readonly) NSNumber *deviceRef;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)description;

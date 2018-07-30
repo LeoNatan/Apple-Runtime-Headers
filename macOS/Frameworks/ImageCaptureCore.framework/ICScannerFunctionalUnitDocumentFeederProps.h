@@ -8,6 +8,7 @@
 
 @class NSMutableIndexSet, NSNumber;
 
+__attribute__((visibility("hidden")))
 @interface ICScannerFunctionalUnitDocumentFeederProps : NSObject
 {
     NSMutableIndexSet *_supportedDocumentTypes;
@@ -33,7 +34,6 @@
 @property unsigned long long documentType; // @synthesize documentType=_documentType;
 @property(retain) NSMutableIndexSet *supportedDocumentTypes; // @synthesize supportedDocumentTypes=_supportedDocumentTypes;
 - (id)initWithDictionary:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 
 @end

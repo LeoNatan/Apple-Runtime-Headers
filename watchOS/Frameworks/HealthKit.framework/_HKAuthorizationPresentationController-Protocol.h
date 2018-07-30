@@ -6,11 +6,10 @@
 
 #import "NSObject.h"
 
-@class HKAuthorizationRequestRecord, HKObjectAuthorizationPromptSession;
+@class HKAuthorizationRequestRecord;
 
 @protocol _HKAuthorizationPresentationController <NSObject>
 - (void)cancelPresentation;
-- (void)presentWithSession:(HKObjectAuthorizationPromptSession *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)presentWithRequestRecord:(HKAuthorizationRequestRecord *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 @end
 

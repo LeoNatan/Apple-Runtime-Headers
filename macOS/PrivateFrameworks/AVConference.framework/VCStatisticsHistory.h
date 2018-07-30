@@ -9,14 +9,23 @@
 __attribute__((visibility("hidden")))
 @interface VCStatisticsHistory : NSObject
 {
-    struct VCStatisticsPacketHistory _packetHistory[500];
-    int _packetHistorySize;
-    int _currentPacketHistoryIndex;
+    struct VCStatisticsStatsHistoryElement _statsHistory[500];
+    int _statsHistorySize;
+    int _currentStatsHistoryIndex;
+    struct VCStatisticsStatsHistoryElement _lastStats;
+    unsigned char _currentLinkID;
+    double _lastHistoryNotEnoughLogTime;
 }
 
-- (BOOL)getTimestampWithPacketId:(unsigned int)arg1 timestamp:(double *)arg2;
-- (BOOL)getTotalPacketCountWithPacketId:(unsigned int)arg1 totalPacketCount:(unsigned int *)arg2;
-- (void)addPacketId:(unsigned int)arg1 totalPacketCount:(unsigned int)arg2 time:(double)arg3;
+- (void)resetHistory;
+- (BOOL)handleWrappedAroundByteCountForStats:(struct VCStatisticsStatsHistoryElement *)arg1;
+- (BOOL)getStatsHistoryElementIndex:(int *)arg1 time:(double)arg2 inMostRecentDuration:(double)arg3;
+- (BOOL)isStatsElementOutOfOrder:(struct VCStatisticsStatsHistoryElement)arg1;
+- (double)getServerStatsBitrateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
+- (double)getReceivingBitrateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
+- (double)getSendingBitrateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
+- (double)getPacketLossRateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
+- (void)addStatsHistory:(struct VCStatisticsStatsHistoryElement)arg1;
 
 @end
 

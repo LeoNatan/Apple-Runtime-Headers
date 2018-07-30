@@ -6,21 +6,24 @@
 
 #import "UIViewController.h"
 
-@class UIView;
+@class NSString, UIView;
 
 @interface PUICQuickboardEmojiToSelectViewController : UIViewController
 {
     UIView *_containerView;
     UIView *_contentView;
+    NSString *_modalNavigationTitle;
 }
 
-@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-@property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
+@property(copy, nonatomic) NSString *modalNavigationTitle; // @synthesize modalNavigationTitle=_modalNavigationTitle;
+@property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
 - (void)activate;
 - (void)deactivate;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

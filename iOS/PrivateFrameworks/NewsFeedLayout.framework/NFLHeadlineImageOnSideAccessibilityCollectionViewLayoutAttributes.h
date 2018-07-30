@@ -28,8 +28,8 @@
 @property(nonatomic) struct CGRect titleNextToImageFrame;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)populateWithProtobuf:(id)arg1;
-- (id)protobufRepresentation;
+- (void)populateWithProtobuf:(id)arg1 normalizedWithFeedGutter:(double)arg2;
+- (id)protobufRepresentationnormalizedWithFeedGutter:(double)arg1;
 
 @end
 

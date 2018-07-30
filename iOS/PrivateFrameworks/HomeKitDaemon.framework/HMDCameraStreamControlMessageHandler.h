@@ -11,7 +11,7 @@
 #import "HMFLogging.h"
 #import "HMFTimerDelegate.h"
 
-@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSettingsControlManager, HMDCameraStreamManagerSession, HMDCameraStreamSnapshotHandler, HMDCameraSupportedConfigurationCache, HMDNotificationRegistration, HMDService, HMFMessageDispatcher, HMFNetMonitor, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSettingsControlManager, HMDCameraStreamManagerSession, HMDCameraStreamSnapshotHandler, HMDCameraSupportedConfigurationCache, HMDNotificationRegistration, HMDService, HMFNetMonitor, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMDCameraStreamControlMessageHandler : HMFObject <HMFTimerDelegate, HMDCameraSettingsControlManagerDelegate, HMDCameraStreamControlManagerDelegate, HMFLogging>
 {
@@ -21,7 +21,6 @@
     HMDNotificationRegistration *_notificationRegistration;
     HMDCameraResidentMessageHandler *_residentMessageHandler;
     NSObject<OS_dispatch_queue> *_workQueue;
-    HMFMessageDispatcher *_msgDispatcher;
     HMDAccessory *_accessory;
     CDUnknownBlockType _messageSender;
     NSUUID *_uniqueIdentifier;
@@ -41,7 +40,6 @@
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) CDUnknownBlockType messageSender; // @synthesize messageSender=_messageSender;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
 @property(readonly, nonatomic) HMDNotificationRegistration *notificationRegistration; // @synthesize notificationRegistration=_notificationRegistration;
@@ -62,6 +60,8 @@
 @property(readonly, nonatomic) unsigned long long streamingStatus;
 @property(readonly, copy, nonatomic) NSString *streamSessionID;
 - (void)_handleSetAudioState:(id)arg1;
+- (void)setAudioVolume:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (void)_handleSetAudioVolume:(id)arg1;
 - (void)_handleStopMessage:(id)arg1;
 - (void)_handleReconfigureMessage:(id)arg1;
 - (void)_handleStartMessage:(id)arg1;
@@ -70,6 +70,7 @@
 - (void)handleMessage:(id)arg1;
 - (void)_stopStream:(id)arg1;
 - (_Bool)_isRemoteSetupMessage:(id)arg1;
+- (_Bool)_isSetAudioVolumeMessage:(id)arg1;
 - (_Bool)_isSetAudioStreamSettingMessage:(id)arg1;
 - (_Bool)_isStopMessage:(id)arg1;
 - (_Bool)_isReconfigureMessage:(id)arg1;

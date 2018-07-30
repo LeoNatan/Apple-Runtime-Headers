@@ -11,7 +11,6 @@
 
 @class NSMutableAttributedString;
 
-__attribute__((visibility("hidden")))
 @interface ABTextStorage : NSTextStorage <NSCopying, NSMutableCopying>
 {
     NSMutableAttributedString *_cm_string;

@@ -6,55 +6,66 @@
 
 #import <CoreData/NSPersistentStoreRequest.h>
 
-@class NSArray, NSDate, NSNumber, NSPersistentHistoryToken;
+@class NSArray, NSNumber, NSPersistentHistoryToken;
 
 @interface NSPersistentHistoryChangeRequest : NSPersistentStoreRequest
 {
     NSPersistentHistoryToken *_token;
-    NSDate *_date;
     long long _resultType;
     NSArray *_transactionIDs;
     NSNumber *_transactionNumber;
     struct __persistentHistoryChangeRequestDescriptionFlags {
         unsigned int _useQueryGenerationToken:1;
         unsigned int _deleteHistoryRequest:1;
-        unsigned int _reservedPersistentHistoryChangeRequestDescription:30;
+        unsigned int _fetchTransactionForToken:1;
+        unsigned int _reservedPersistentHistoryChangeRequestDescription:29;
     } _persistentHistoryChangeRequestDescriptionFlags;
+    id *_additionalPrivateIvars;
 }
 
 + (id)deleteHistoryBeforeTransaction:(id)arg1;
 + (id)deleteHistoryBeforeToken:(id)arg1;
 + (id)deleteHistoryBeforeDate:(id)arg1;
++ (id)fetchHistoryTransactionForToken:(id)arg1;
 + (id)fetchHistoryAfterTransaction:(id)arg1;
 + (id)fetchHistoryAfterToken:(id)arg1;
 + (id)fetchHistoryAfterDate:(id)arg1;
 + (id)decodeFromXPCArchive:(id)arg1 withContext:(id)arg2;
 @property(readonly) NSPersistentHistoryToken *token; // @synthesize token=_token;
-@property long long resultType; // @synthesize resultType=_resultType;
+- (id)debugDescription;
 - (id)description;
 - (id)propertiesToGroupBy;
 - (id)predicate;
 - (BOOL)includesSubentities;
 - (unsigned long long)fetchOffset;
-- (unsigned long long)fetchLimit;
 - (id)sortDescriptors;
 - (BOOL)returnsDistinctResults;
+- (void)setFetchBatchSize:(unsigned long long)arg1;
+- (unsigned long long)fetchBatchSize;
+- (void)setFetchLimit:(unsigned long long)arg1;
+- (unsigned long long)fetchLimit;
 - (void)setUseQueryGenerationToken:(BOOL)arg1;
 - (BOOL)useQueryGenerationToken;
 - (BOOL)isDelete;
+@property long long resultType; // @synthesize resultType=_resultType;
+- (BOOL)isFetchTransactionForToken;
 - (id)date;
 - (id)entityNameToFetch;
+- (id)propertiesToFetchForEntity:(id)arg1 includeTransactionStrings:(BOOL)arg2;
+- (id)propertiesToFetchForEntity:(id)arg1;
 - (id)propertiesToFetch;
 - (BOOL)includesPropertyValues;
 - (id)transactionNumber;
 - (unsigned long long)requestType;
 - (void)dealloc;
+- (id)initWithTransactionToken:(id)arg1;
 - (id)initWithToken:(id)arg1 delete:(BOOL)arg2;
 - (id)initWithToken:(id)arg1;
-- (id)initWithTransactionID:(id)arg1 delete:(BOOL)arg2;
+- (id)initWithTransactionID:(id)arg1 delete:(BOOL)arg2 transactionOnly:(BOOL)arg3;
 - (id)initWithTransactionIDs:(id)arg1;
 - (id)initWithDate:(id)arg1 delete:(BOOL)arg2;
 - (id)initWithDate:(id)arg1;
+- (id)init;
 - (id)encodeForXPC;
 
 @end

@@ -17,14 +17,16 @@
 
 @property(retain, nonatomic) id <IMAssistantMessageAttributeSanitizer> attributeSanitizer; // @synthesize attributeSanitizer=_attributeSanitizer;
 - (void).cxx_destruct;
+- (id)resolveSpeakableGroupNames:(id)arg1 forIntent:(id)arg2;
 - (void)resolveRecipientsAndSender:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleSearchForMessages:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolveDateTimeRangeForSearchForMessages:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)resolveSpeakableGroupNamesForSearchForMessages:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveAttributesForSearchForMessages:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveSendersForSearchForMessages:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveRecipientsForSearchForMessages:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (id)initWithAttributeSanitizer:(id)arg1;
-- (id)init;
+- (id)initWithAttributeSanitizer:(id)arg1 intentIdentifier:(id)arg2;
+- (id)initWithIntentIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

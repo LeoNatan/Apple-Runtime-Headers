@@ -25,13 +25,18 @@
 - (id)preferenceViewForPreference:(id)arg1 atIndex:(long long)arg2;
 - (id)preferenceViewForTitleOfSection:(long long)arg1;
 - (BOOL)shouldAddSeparatorForSection:(long long)arg1;
-- (BOOL)canSelectPreference:(id)arg1 atIndex:(unsigned long long)arg2;
+- (BOOL)canSelectPreference:(id)arg1 preferenceIndex:(unsigned long long)arg2 subItemIndex:(unsigned long long)arg3;
+- (id)titleForSubItemInPreference:(id)arg1 preferenceIndex:(long long)arg2 subItemIndex:(long long)arg3;
 - (id)titleForSection:(long long)arg1;
+- (BOOL)shouldEnableSubItemInPreference:(id)arg1 preferenceIndex:(long long)arg2 subItemIndex:(long long)arg3;
+- (long long)numberOfSubItemInPreference:(id)arg1 preferenceIndex:(long long)arg2;
 - (long long)numberOfMenuItemsInSection:(long long)arg1;
 - (long long)numberOfSectionsInMenu;
 - (void)invalidateMenu;
 @property(readonly, nonatomic) NSMenuItem *selectedMenuItem;
-- (void)handlePreferenceSelection:(id)arg1;
+- (void)_handlePreferenceSelectionMenuItemIndex:(long long)arg1 subMenuItemIndex:(long long)arg2;
+- (void)handleSubmenuSelection:(id)arg1;
+- (void)handleMenuSelection:(id)arg1;
 - (void)updatePreferences;
 
 @end

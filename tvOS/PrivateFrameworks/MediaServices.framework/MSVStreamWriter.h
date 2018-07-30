@@ -39,6 +39,7 @@
 @property(nonatomic, getter=isCompressed) _Bool compressed; // @synthesize compressed=_compressed;
 @property(nonatomic) unsigned long long maximumBufferSize; // @synthesize maximumBufferSize=_maximumBufferSize;
 - (void).cxx_destruct;
+- (void)_onQueue_stop;
 - (void)_writeAvailablePendingData;
 - (id)_decompressData:(id)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
@@ -46,6 +47,7 @@
 - (_Bool)writeAllData:(id)arg1 error:(id *)arg2;
 - (void)writeData:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)writeAllData:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)stopWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stop;
 - (void)start;
 - (id)initWithOutputStream:(id)arg1 queue:(id)arg2;

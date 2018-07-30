@@ -10,20 +10,15 @@
 
 @interface OSIPersonalizedManifests : NSObject
 {
-    NSURL *_recoveryBootManifestsURL;
-    NSURL *_bootManifestsURL;
-    NSURL *_firmwareUpdateManifestsURL;
 }
 
-@property(retain) NSURL *firmwareUpdateManifestsURL; // @synthesize firmwareUpdateManifestsURL=_firmwareUpdateManifestsURL;
-@property(retain) NSURL *bootManifestsURL; // @synthesize bootManifestsURL=_bootManifestsURL;
-@property(retain) NSURL *recoveryBootManifestsURL; // @synthesize recoveryBootManifestsURL=_recoveryBootManifestsURL;
 - (BOOL)_sanityCheckPersonalizedManifests:(id)arg1;
 - (BOOL)_dittoFrom:(id)arg1 to:(id)arg2;
+- (id)_personalizedManifestsURL;
+@property(readonly) NSURL *recoveryBootManifestsURL;
 - (BOOL)installFirmwareUpdateManifestsToURL:(id)arg1;
 - (BOOL)installBootManifestsToURL:(id)arg1;
-- (void)dealloc;
-- (id)initWithMutableProductURL:(id)arg1;
+- (id)init;
 
 @end
 

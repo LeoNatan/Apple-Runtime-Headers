@@ -11,5 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (int)_maxVersion;
+- (int)_defaultVersion;
+
 @end
 

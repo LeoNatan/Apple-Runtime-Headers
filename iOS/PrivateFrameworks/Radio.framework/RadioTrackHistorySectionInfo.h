@@ -12,6 +12,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface RadioTrackHistorySectionInfo : NSObject <NSCopying, NSFetchedResultsSectionInfo, NSMutableCopying>
 {
     NSString *_indexTitle;

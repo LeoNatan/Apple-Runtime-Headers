@@ -14,14 +14,13 @@
 {
 }
 
++ (id)sharedFollowUpController;
 - (_Bool)clearNotificationsForItem:(id)arg1 error:(id *)arg2;
 - (_Bool)removeFollowUpItemsWithIdentifiers:(id)arg1 error:(id *)arg2;
 - (_Bool)removeFollowUpItems:(id)arg1 error:(id *)arg2;
 - (_Bool)addFollowUpItems:(id)arg1 error:(id *)arg2;
 - (_Bool)removeAllAuthKitFollowUpItems:(id *)arg1;
-- (id)pendingAuthKitFollowUpUniqueIdentifiers:(id *)arg1;
 - (id)pendingAuthKitFollowUpItems:(id *)arg1;
-- (id)sharedFollowUpController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

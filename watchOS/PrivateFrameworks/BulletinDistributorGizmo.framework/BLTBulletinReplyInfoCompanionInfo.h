@@ -14,7 +14,7 @@
     _Bool _gizmoWillPlayLightsAndSirens;
     _Bool _trafficRestricted;
     _Bool _turnsOnDisplay;
-    _Bool _ignoresQuietMode;
+    _Bool _overridesDND;
     _Bool _hasGizmoWillPlayLightsAndSirens;
     NSDate *_receptionDate;
     NSDate *_expiration;
@@ -22,10 +22,12 @@
     NSString *_matchID;
     unsigned int _shouldPlayLightsAndSirensState;
     NSDate *_transmissionDate;
+    NSString *_contactIdentifier;
 }
 
 @property(readonly, nonatomic) _Bool hasGizmoWillPlayLightsAndSirens; // @synthesize hasGizmoWillPlayLightsAndSirens=_hasGizmoWillPlayLightsAndSirens;
-@property(nonatomic) _Bool ignoresQuietMode; // @synthesize ignoresQuietMode=_ignoresQuietMode;
+@property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
+@property(nonatomic) _Bool overridesDND; // @synthesize overridesDND=_overridesDND;
 @property(nonatomic) _Bool turnsOnDisplay; // @synthesize turnsOnDisplay=_turnsOnDisplay;
 @property(nonatomic) _Bool trafficRestricted; // @synthesize trafficRestricted=_trafficRestricted;
 @property(retain, nonatomic) NSDate *transmissionDate; // @synthesize transmissionDate=_transmissionDate;

@@ -49,6 +49,7 @@
 - (void)_cancel;
 - (void)resume;
 - (void)suspend;
+- (void)resetWithReason:(id)arg1 dropFSEventID:(_Bool)arg2;
 - (void)resetWithReason:(id)arg1;
 - (void)close;
 - (void)_close;

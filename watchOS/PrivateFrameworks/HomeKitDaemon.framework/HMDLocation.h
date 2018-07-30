@@ -19,14 +19,15 @@
     NSObject<OS_dispatch_queue> *_handlerQueue;
     CLLocationManager *_locationManager;
     int _authStatus;
-    NSHashTable *_locationCallbacks;
-    NSMapTable *_regionStateCallbacks;
+    NSHashTable *_singleLocationDelegates;
+    NSHashTable *_batchLocationDelegates;
+    NSMapTable *_regionStateDelegatesByRegionIdentifier;
     NSMapTable *_pendingRegionMonitoringRequests;
     NSMapTable *_pendingRegionCallbacks;
-    unsigned int _extractStatus;
-    NSMutableArray *_batchLocations;
+    NSMutableArray *_batchLocationTuples;
     HMFTimer *_extractBatchLocationsTimer;
     NSDate *_lastFetchBatchLocationsTime;
+    double _batchLocationsFetchInterval;
 }
 
 + (void)timeZoneForCLLocationAsync:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -38,19 +39,21 @@
 + (id)findEvent:(id)arg1 withGeo:(id)arg2;
 + (id)_getAlmanacWithLocation:(id)arg1 date:(id)arg2;
 + (id)_getAlmanacWithLocation:(id)arg1;
++ (id)bundleForLocationManager;
 + (id)sharedManager;
+@property(nonatomic) double batchLocationsFetchInterval; // @synthesize batchLocationsFetchInterval=_batchLocationsFetchInterval;
 @property(retain, nonatomic) NSDate *lastFetchBatchLocationsTime; // @synthesize lastFetchBatchLocationsTime=_lastFetchBatchLocationsTime;
 @property(retain, nonatomic) HMFTimer *extractBatchLocationsTimer; // @synthesize extractBatchLocationsTimer=_extractBatchLocationsTimer;
-@property(retain, nonatomic) NSMutableArray *batchLocations; // @synthesize batchLocations=_batchLocations;
-@property(nonatomic) unsigned int extractStatus; // @synthesize extractStatus=_extractStatus;
+@property(readonly, nonatomic) NSMutableArray *batchLocationTuples; // @synthesize batchLocationTuples=_batchLocationTuples;
 @property(nonatomic) _Bool beingConfigured; // @synthesize beingConfigured=_beingConfigured;
-@property(retain, nonatomic) NSMapTable *pendingRegionCallbacks; // @synthesize pendingRegionCallbacks=_pendingRegionCallbacks;
-@property(retain, nonatomic) NSMapTable *pendingRegionMonitoringRequests; // @synthesize pendingRegionMonitoringRequests=_pendingRegionMonitoringRequests;
-@property(retain, nonatomic) NSMapTable *regionStateCallbacks; // @synthesize regionStateCallbacks=_regionStateCallbacks;
-@property(retain, nonatomic) NSHashTable *locationCallbacks; // @synthesize locationCallbacks=_locationCallbacks;
+@property(readonly, nonatomic) NSMapTable *pendingRegionCallbacks; // @synthesize pendingRegionCallbacks=_pendingRegionCallbacks;
+@property(readonly, nonatomic) NSMapTable *pendingRegionMonitoringRequests; // @synthesize pendingRegionMonitoringRequests=_pendingRegionMonitoringRequests;
+@property(readonly, nonatomic) NSMapTable *regionStateDelegatesByRegionIdentifier; // @synthesize regionStateDelegatesByRegionIdentifier=_regionStateDelegatesByRegionIdentifier;
+@property(readonly, nonatomic) NSHashTable *batchLocationDelegates; // @synthesize batchLocationDelegates=_batchLocationDelegates;
+@property(readonly, nonatomic) NSHashTable *singleLocationDelegates; // @synthesize singleLocationDelegates=_singleLocationDelegates;
 @property(nonatomic) int authStatus; // @synthesize authStatus=_authStatus;
-@property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
+@property(readonly, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(nonatomic) int locationAuthorized; // @synthesize locationAuthorized=_locationAuthorized;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 - (void).cxx_destruct;
@@ -64,17 +67,23 @@
 - (void)_updateEntryForRegion:(id)arg1;
 - (void)_updateRegionState:(int)arg1 forRegion:(id)arg2;
 - (id)_delegateforRegion:(id)arg1;
-- (void)_updateWithLocationAutorizationStatus:(int)arg1;
-- (void)_updateWithLocation:(id)arg1;
-- (void)_callDelegate:(id)arg1 withLocation:(id)arg2;
+- (void)_updateWithLocationAuthorizationStatus:(int)arg1;
+- (void)_notifyBatchLocationDelegate:(id)arg1 withLocation:(id)arg2;
+- (void)_notifyBatchLocationDelegatesWithLocation:(id)arg1;
+- (void)_notifySingleLocationDelegate:(id)arg1 withLocation:(id)arg2;
+- (void)_notifySingleLocationDelegatesWithLocation:(id)arg1;
+- (void)_notifyAllLocationDelegatesWithLocation:(id)arg1;
 - (void)timerDidFire:(id)arg1;
 - (void)deregisterForRegionUpdate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)registerForRegionUpdate:(id)arg1 withDelegate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_extractLocationWithDelegate:(id)arg1 extractStatus:(unsigned int)arg2;
+- (void)_extractBatchLocationsWithDelegate:(id)arg1;
+- (void)_extractSingleLocationWithDelegate:(id)arg1;
+- (_Bool)_canLocationBeExtracted;
 - (void)startExtractingSingleLocationWithDelegate:(id)arg1;
 - (void)stopExtractingBatchLocations;
 - (void)startExtractingBatchLocationsWithDelegate:(id)arg1;
 - (void)dealloc;
+- (id)initWithLocationManager:(id)arg1;
 - (id)init;
 
 // Remaining properties

@@ -26,10 +26,12 @@
     _Bool _disableEphemeralDiffieHellmanCiphers;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_accountIdentifier;
+    NSString *_networkAccountIdentifier;
     MFStream *_stream;
 }
 
 @property(retain) MFStream *stream; // @synthesize stream=_stream;
+@property(copy, nonatomic) NSString *networkAccountIdentifier; // @synthesize networkAccountIdentifier=_networkAccountIdentifier;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;

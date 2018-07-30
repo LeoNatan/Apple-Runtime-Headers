@@ -15,6 +15,7 @@
 
 - (id)_privacySafeDescription;
 - (id)dictionaryRepresentation;
+- (id)displayName;
 - (id)URLStringWithAccount:(id)arg1;
 - (id)_folderID;
 @property(copy) NSString *folderID;

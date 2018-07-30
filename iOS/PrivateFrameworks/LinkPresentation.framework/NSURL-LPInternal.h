@@ -7,12 +7,10 @@
 #import "NSURL.h"
 
 @interface NSURL (LPInternal)
-+ (id)_lp_URLWithData:(id)arg1 baseURL:(id)arg2;
 - (id)_lp_valueForQueryKey:(id)arg1;
 - (id)_lp_pathComponentAtIndex:(unsigned long long)arg1;
 - (id)_lp_componentsNoCopy;
 - (id)_lp_components;
 - (_Bool)_lp_isHTTPFamilyOrLinkPresentationTestingURL;
-- (id)_lp_originalData;
 @end
 

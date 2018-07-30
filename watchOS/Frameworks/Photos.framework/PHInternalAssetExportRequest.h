@@ -14,6 +14,7 @@
     PHResourceDownloadRequest *_downloadRequest;
 }
 
++ (id)exportRequestForAsset:(id)arg1 variants:(id)arg2 error:(id *)arg3;
 + (id)exportRequestForAsset:(id)arg1 error:(id *)arg2;
 + (id)_variantsForAsset:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;

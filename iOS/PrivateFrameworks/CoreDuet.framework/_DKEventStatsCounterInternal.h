@@ -12,8 +12,7 @@
 {
     _Bool _hasType;
     _Bool _hasResult;
-    struct XSPerfCollection *_stats;
-    // Error parsing type: ^{XSPerfCounter=AQ}, name: _counters
+    // Error parsing type: ^{XSPerfCollection={_opaque_pthread_mutex_t=q[56c]}IIIAS^{XSPerfCounter}^{XSPerfMetric}^{XSPerfString}*}, name: _stats
     NSString *_eventName;
     NSString *_eventType;
     NSArray *_typeValues;

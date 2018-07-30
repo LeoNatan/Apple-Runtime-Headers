@@ -14,7 +14,7 @@
 }
 
 @property(copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

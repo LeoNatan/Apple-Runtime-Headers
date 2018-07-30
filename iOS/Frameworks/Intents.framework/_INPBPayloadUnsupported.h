@@ -7,70 +7,90 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBPayloadUnsupported.h"
 
-@class NSMutableArray, PBUnknownFields;
+@class NSArray, NSString;
 
-@interface _INPBPayloadUnsupported : PBCodable <NSCopying>
+@interface _INPBPayloadUnsupported : PBCodable <_INPBPayloadUnsupported, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_conflictingParameters;
-    int _reason;
-    int _requestPaymentIntentCurrencyAmountUnsupportedReason;
-    int _requestPaymentIntentPayerUnsupportedReason;
-    int _sendMessageIntentRecipientUnsupportedReason;
-    int _sendPaymentIntentCurrencyAmountUnsupportedReason;
-    int _sendPaymentIntentPayeeUnsupportedReason;
     struct {
-        unsigned int reason:1;
         unsigned int requestPaymentIntentCurrencyAmountUnsupportedReason:1;
-        unsigned int requestPaymentIntentPayerUnsupportedReason:1;
-        unsigned int sendMessageIntentRecipientUnsupportedReason:1;
         unsigned int sendPaymentIntentCurrencyAmountUnsupportedReason:1;
+        unsigned int createTimerIntentLabelUnsupportedReason:1;
         unsigned int sendPaymentIntentPayeeUnsupportedReason:1;
+        unsigned int requestPaymentIntentPayerUnsupportedReason:1;
+        unsigned int reason:1;
+        unsigned int sendMessageIntentRecipientUnsupportedReason:1;
+        unsigned int setTimerAttributeIntentTargetTimerUnsupportedReason:1;
+        unsigned int runWorkflowIntentWorkflowUnsupportedReason:1;
     } _has;
+    int _requestPaymentIntentCurrencyAmountUnsupportedReason;
+    int _sendPaymentIntentCurrencyAmountUnsupportedReason;
+    int _createTimerIntentLabelUnsupportedReason;
+    int _sendPaymentIntentPayeeUnsupportedReason;
+    int _requestPaymentIntentPayerUnsupportedReason;
+    int _reason;
+    int _sendMessageIntentRecipientUnsupportedReason;
+    int _setTimerAttributeIntentTargetTimerUnsupportedReason;
+    int _runWorkflowIntentWorkflowUnsupportedReason;
+    NSArray *_conflictingParameters;
 }
 
 + (Class)conflictingParametersType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *conflictingParameters; // @synthesize conflictingParameters=_conflictingParameters;
+@property(nonatomic) int runWorkflowIntentWorkflowUnsupportedReason; // @synthesize runWorkflowIntentWorkflowUnsupportedReason=_runWorkflowIntentWorkflowUnsupportedReason;
+@property(nonatomic) int setTimerAttributeIntentTargetTimerUnsupportedReason; // @synthesize setTimerAttributeIntentTargetTimerUnsupportedReason=_setTimerAttributeIntentTargetTimerUnsupportedReason;
+@property(nonatomic) int sendMessageIntentRecipientUnsupportedReason; // @synthesize sendMessageIntentRecipientUnsupportedReason=_sendMessageIntentRecipientUnsupportedReason;
+@property(nonatomic) int reason; // @synthesize reason=_reason;
+@property(nonatomic) int requestPaymentIntentPayerUnsupportedReason; // @synthesize requestPaymentIntentPayerUnsupportedReason=_requestPaymentIntentPayerUnsupportedReason;
+@property(nonatomic) int sendPaymentIntentPayeeUnsupportedReason; // @synthesize sendPaymentIntentPayeeUnsupportedReason=_sendPaymentIntentPayeeUnsupportedReason;
+@property(nonatomic) int createTimerIntentLabelUnsupportedReason; // @synthesize createTimerIntentLabelUnsupportedReason=_createTimerIntentLabelUnsupportedReason;
+@property(nonatomic) int sendPaymentIntentCurrencyAmountUnsupportedReason; // @synthesize sendPaymentIntentCurrencyAmountUnsupportedReason=_sendPaymentIntentCurrencyAmountUnsupportedReason;
+@property(nonatomic) int requestPaymentIntentCurrencyAmountUnsupportedReason; // @synthesize requestPaymentIntentCurrencyAmountUnsupportedReason=_requestPaymentIntentCurrencyAmountUnsupportedReason;
+@property(copy, nonatomic) NSArray *conflictingParameters; // @synthesize conflictingParameters=_conflictingParameters;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (id)conflictingParametersAtIndex:(unsigned long long)arg1;
-- (unsigned long long)conflictingParametersCount;
-- (void)addConflictingParameters:(id)arg1;
-- (void)clearConflictingParameters;
-- (int)StringAsReason:(id)arg1;
-- (id)reasonAsString:(int)arg1;
-@property(nonatomic) _Bool hasReason;
-@property(nonatomic) int reason; // @synthesize reason=_reason;
+- (int)StringAsRunWorkflowIntentWorkflowUnsupportedReason:(id)arg1;
+- (id)runWorkflowIntentWorkflowUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasRunWorkflowIntentWorkflowUnsupportedReason;
+- (int)StringAsSetTimerAttributeIntentTargetTimerUnsupportedReason:(id)arg1;
+- (id)setTimerAttributeIntentTargetTimerUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasSetTimerAttributeIntentTargetTimerUnsupportedReason;
 - (int)StringAsSendMessageIntentRecipientUnsupportedReason:(id)arg1;
 - (id)sendMessageIntentRecipientUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasSendMessageIntentRecipientUnsupportedReason;
-@property(nonatomic) int sendMessageIntentRecipientUnsupportedReason;
-- (int)StringAsSendPaymentIntentPayeeUnsupportedReason:(id)arg1;
-- (id)sendPaymentIntentPayeeUnsupportedReasonAsString:(int)arg1;
-@property(nonatomic) _Bool hasSendPaymentIntentPayeeUnsupportedReason;
-@property(nonatomic) int sendPaymentIntentPayeeUnsupportedReason;
-- (int)StringAsSendPaymentIntentCurrencyAmountUnsupportedReason:(id)arg1;
-- (id)sendPaymentIntentCurrencyAmountUnsupportedReasonAsString:(int)arg1;
-@property(nonatomic) _Bool hasSendPaymentIntentCurrencyAmountUnsupportedReason;
-@property(nonatomic) int sendPaymentIntentCurrencyAmountUnsupportedReason;
+- (int)StringAsReason:(id)arg1;
+- (id)reasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasReason;
 - (int)StringAsRequestPaymentIntentPayerUnsupportedReason:(id)arg1;
 - (id)requestPaymentIntentPayerUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasRequestPaymentIntentPayerUnsupportedReason;
-@property(nonatomic) int requestPaymentIntentPayerUnsupportedReason;
+- (int)StringAsSendPaymentIntentPayeeUnsupportedReason:(id)arg1;
+- (id)sendPaymentIntentPayeeUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasSendPaymentIntentPayeeUnsupportedReason;
+- (int)StringAsCreateTimerIntentLabelUnsupportedReason:(id)arg1;
+- (id)createTimerIntentLabelUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasCreateTimerIntentLabelUnsupportedReason;
+- (int)StringAsSendPaymentIntentCurrencyAmountUnsupportedReason:(id)arg1;
+- (id)sendPaymentIntentCurrencyAmountUnsupportedReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasSendPaymentIntentCurrencyAmountUnsupportedReason;
 - (int)StringAsRequestPaymentIntentCurrencyAmountUnsupportedReason:(id)arg1;
 - (id)requestPaymentIntentCurrencyAmountUnsupportedReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasRequestPaymentIntentCurrencyAmountUnsupportedReason;
-@property(nonatomic) int requestPaymentIntentCurrencyAmountUnsupportedReason;
+- (id)conflictingParametersAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long conflictingParametersCount;
+- (void)addConflictingParameters:(id)arg1;
+- (void)clearConflictingParameters;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

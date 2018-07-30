@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (void)fetchAllCacheEntriesWithRequesterHandler:(CDUnknownBlockType)arg1;
 - (void)requestComponentsFromNetwork:(id)arg1 identifier:(id)arg2 resultProviderID:(int)arg3 traits:(id)arg4 auditToken:(id)arg5 requesterHandler:(CDUnknownBlockType)arg6;
 - (void)requestIdentifiers:(id)arg1 resultProviderID:(int)arg2 traits:(id)arg3 options:(unsigned long long)arg4 auditToken:(id)arg5 requesterHandler:(CDUnknownBlockType)arg6;
-- (void)_logThrottledRequestOfType:(int)arg1;
 - (id)init;
 
 // Remaining properties

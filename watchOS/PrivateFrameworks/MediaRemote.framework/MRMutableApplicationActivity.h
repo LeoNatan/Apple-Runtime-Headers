@@ -16,7 +16,6 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) int status; // @dynamic status;
-@property(nonatomic) _Bool shouldPrepareAppPlaybackQueue; // @dynamic shouldPrepareAppPlaybackQueue;
 @property(copy, nonatomic) NSString *secondaryApplicationDisplayID; // @dynamic secondaryApplicationDisplayID;
 @property(copy, nonatomic) NSString *primaryApplicationDisplayID; // @dynamic primaryApplicationDisplayID;
 

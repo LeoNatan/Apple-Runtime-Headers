@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSPObject.h>
 
-@class NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSTimeZone, TSCENamedReferenceManager, TSCERemoteDataStore, TSCERewriteTableIDInfo, TSCETableInfosByName, TSCETransaction, TSCEUUidReferenceMap, TSKAccessController, TSKChangeGroup, TSKChangeNotifier;
+@class NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSTimeZone, TSCECalendar, TSCENamedReferenceManager, TSCERemoteDataStore, TSCERewriteTableIDInfo, TSCETableInfosByName, TSCETransaction, TSCEUUidReferenceMap, TSKAccessController, TSKChangeGroup, TSKChangeNotifier;
 
 __attribute__((visibility("hidden")))
 @interface TSCECalculationEngine : TSPObject
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _documentRandomSeed;
     NSDate *_currentDate;
     NSTimeZone *_currentTimeZone;
+    TSCECalendar *_currentTimeZoneCalendar;
     NSMutableArray *_calculationStateObservers;
     unsigned long long _suppressWillModifyCallsLevel;
     unsigned long long _numberOfFormulas;
@@ -62,8 +63,10 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)randomSeedFromRandomLo:(int)arg1 hi:(int)arg2;
 + (unsigned long long)generateRandomSeed;
 + (Class)resolverClass;
-+ (_Bool)isTerminating;
-+ (void)terminate;
++ (_Bool)isPotentiallyTerminating;
++ (void)resumeEvaluationIfNotTerminated;
++ (void)confirmTermination;
++ (void)pauseEvaluationForPotentialTermination;
 + (_Bool)localVariablesEnabled;
 @property(nonatomic) _Bool duringRollback; // @synthesize duringRollback=_duringRollback;
 @property(retain) id <TSKMultiTableRemapping> currentTableIdRemapper; // @synthesize currentTableIdRemapper=_currentTableIdRemapper;
@@ -105,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (id)parseWithParsingContext:(id)arg1;
 - (struct TSCERangeRef)parseStringAsReferenceComponentIntersection:(id)arg1 inResolver:(id)arg2 inTableNamed:(id)arg3 preferredGeometricResolver:(id)arg4 withParsingContext:(id)arg5;
 - (struct TSUCellCoord)parseStringAsGeometricReferenceComponent:(id)arg1 inResolver:(id)arg2 outStickyBits:(char *)arg3 gettingReferencesMatchingInputAsPrefix:(id *)arg4;
+- (struct TSCEDependencyTracker *)dependencyTracker;
 - (struct TSCEReferenceSet)emptyReferenceSet;
 - (struct TSCEReferenceSet)precedentsOfCell:(struct TSCECellRef)arg1;
 - (id)escapedStringForRangeReference:(const struct TSCERangeRef *)arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 suppressIdenticalEndReference:(_Bool)arg4 forceEscaping:(_Bool)arg5;
@@ -150,6 +154,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool shouldSendSetNowCommand;
 - (void)markTimeVolatileFunctionsAsDirtyForCurrentDateTime;
 - (void)markTimeVolatileFunctionsAsDirty;
+- (_Bool)hasTimeVolatileFunctions;
 - (void)detectAndRepairConsistencyViolations;
 - (void)markOnlyDependentsDirty:(const struct TSCECellRef *)arg1;
 - (void)markIndirectCallsAsDirty;
@@ -224,9 +229,9 @@ __attribute__((visibility("hidden")))
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)p_removeApplicationNotification;
 - (void)p_addApplicationNotification;
-- (id)init;
 - (void)initializeDispatchObjects;
 @property(readonly) _Bool shouldAbortRecalculation;
+- (id)currentTimeZoneCalendar;
 @property(retain) NSTimeZone *currentTimeZone;
 @property(retain) NSDate *currentDate;
 @property unsigned long long documentRandomSeed;

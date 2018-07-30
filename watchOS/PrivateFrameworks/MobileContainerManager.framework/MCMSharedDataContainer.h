@@ -10,5 +10,7 @@
 {
 }
 
++ (int)typeContainerClass;
+
 @end
 

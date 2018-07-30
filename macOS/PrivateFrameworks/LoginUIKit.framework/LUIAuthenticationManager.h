@@ -28,6 +28,7 @@
 - (void)activateServiceForUnlockedSession:(id)arg1;
 - (void)activateService:(id)arg1 withUserName:(id)arg2 sessionUnlocked:(BOOL)arg3 shouldReset:(BOOL)arg4;
 - (void)setServiceDelegate:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

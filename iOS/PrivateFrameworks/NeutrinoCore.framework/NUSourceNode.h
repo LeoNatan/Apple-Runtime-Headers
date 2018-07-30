@@ -27,6 +27,7 @@
 - (id)_addResampleNode:(id)arg1 subsampleNode:(id)arg2;
 - (id)pipelineOptionsForPipelineState:(id)arg1 error:(out id *)arg2;
 - (id)sourceOptionsForSettings:(id)arg1 error:(out id *)arg2;
+- (long long)normalizeSubsampleFactor:(long long)arg1;
 @property(readonly) long long sourceOrientation;
 - (_Bool)load:(out id *)arg1;
 - (_Bool)isValid:(out id *)arg1;

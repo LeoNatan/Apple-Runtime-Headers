@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)requestAccessForEntityType:(long long)arg1 error:(id *)arg2;
 - (void)requestAccessForEntityType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithDonationStore:(id)arg1 environment:(id)arg2;
-- (id)initWithContactsEnvironment:(id)arg1;
+- (id)initWithContactsEnvironment:(id)arg1 managedConfiguration:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

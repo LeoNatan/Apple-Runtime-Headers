@@ -30,6 +30,9 @@
 - (void)sendContactToSpotlight:(id)arg1;
 - (id)searchableItemsForContactsForInternalIdentifiers:(id)arg1;
 - (id)coreSpotlightAttributeSetForContact:(id)arg1;
+- (id)urlForStorageContactVCard:(id)arg1;
+- (id)urlForRecordIdVCard:(id)arg1;
+- (id)pseudoContactVcardDirectory;
 - (void)storeClosing;
 - (id)initWithSGSqlEntityStore:(id)arg1;
 - (id)init;

@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OITSUFormatUtilities_LocaleSpecificStorage : NSObject
 {
     NSString *_formatDecimalString;
@@ -48,7 +47,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *formatDecimalStringRedOnly; // @synthesize formatDecimalStringRedOnly=_formatDecimalStringRedOnly;
 @property(readonly) NSString *formatDecimalStringMinus; // @synthesize formatDecimalStringMinus=_formatDecimalStringMinus;
 @property(readonly) NSString *formatDecimalString; // @synthesize formatDecimalString=_formatDecimalString;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithLocale:(id)arg1;
 
 @end

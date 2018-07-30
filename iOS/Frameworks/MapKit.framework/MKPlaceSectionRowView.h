@@ -6,7 +6,6 @@
 
 #import <MapKit/MKPlaceSectionItemView.h>
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceSectionRowView : MKPlaceSectionItemView
 {
     _Bool _selected;

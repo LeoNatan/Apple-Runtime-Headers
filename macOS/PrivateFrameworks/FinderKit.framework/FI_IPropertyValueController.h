@@ -6,16 +6,13 @@
 
 #import <FinderKit/FI_TViewController.h>
 
-@class FI_IPropertyValueExtractor, FI_TLayoutBinder, NSObject;
+@class FI_IPropertyValueExtractor, NSObject;
 
 __attribute__((visibility("hidden")))
 @interface FI_IPropertyValueController : FI_TViewController
 {
-    struct TNSRef<NSObject *, void> _value;
-    struct TNSRef<FI_TLayoutBinder *, void> _layoutBinder;
-    _Bool _useLayoutBinder;
-    double _viewHeight;
-    struct TNSRef<FI_IPropertyValueExtractor *, void> _valueExtractor;
+    struct TNSRef<NSObject, void> _value;
+    struct TNSRef<FI_IPropertyValueExtractor, void> _valueExtractor;
     _Bool _shouldBeVisible;
     _Bool _shouldBeEnabled;
 }
@@ -24,14 +21,12 @@ __attribute__((visibility("hidden")))
 + (id)propertyValueController;
 @property(nonatomic) _Bool shouldBeEnabled; // @synthesize shouldBeEnabled=_shouldBeEnabled;
 @property(nonatomic) _Bool shouldBeVisible; // @synthesize shouldBeVisible=_shouldBeVisible;
-@property(nonatomic) _Bool useLayoutBinder; // @synthesize useLayoutBinder=_useLayoutBinder;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)handleNodeMDAttributesChanged:(const struct TFENode *)arg1 attributes:(id)arg2 isDisplayAttributes:(_Bool)arg3;
 - (void)handleNodesGoingAway:(const struct TFENodeVector *)arg1;
-- (void)handleBulkNodesDeleted:(const struct map<const TFENode, const TFENodeVector *const, std::__1::less<const TFENode>, std::__1::allocator<std::__1::pair<const TFENode, const TFENodeVector *const>>> *)arg1 observedNodes:(const struct TFENodeVector *)arg2;
-- (void)handleBulkNodesChanged:(const map_3ec01adc *)arg1 observedNodes:(const struct TFENodeVector *)arg2;
-- (_Bool)adjustSize:(_Bool)arg1;
+- (void)handleBulkNodesDeleted:(const map_27534541 *)arg1 observedNodes:(const struct TFENodeVector *)arg2;
+- (void)handleBulkNodesChanged:(const map_253f12d2 *)arg1 observedNodes:(const struct TFENodeVector *)arg2;
 - (_Bool)canModifyNodes:(const struct TFENodeVector *)arg1;
 - (void)flush;
 - (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
@@ -39,8 +34,6 @@ __attribute__((visibility("hidden")))
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
 - (void)updateWithNodes:(const struct TFENodeVector *)arg1;
 @property(retain, nonatomic) FI_IPropertyValueExtractor *valueExtractor; // @dynamic valueExtractor;
-@property(readonly, retain, nonatomic) FI_TLayoutBinder *layoutBinder; // @dynamic layoutBinder;
-- (void)setView:(id)arg1;
 @property(retain, nonatomic) NSObject *value; // @dynamic value;
 - (id)defaultValue;
 - (void)aboutToTearDown;

@@ -16,10 +16,10 @@
     _KSRequestThrottle *_fetchZoneThrottle;
     _Bool _recordZoneOperationInProgress;
     _Bool _subscriptionOperationInProgress;
-    CKDatabase *_cloudKitDatabase;
     CKRecordZone *_recordZone;
     id <_KSCloudKitManagerDelegate> _delegate;
     CKContainer *_cloudKitContainer;
+    CKDatabase *_cloudKitDatabase;
     CKDatabase *_publicDatabase;
     NSString *_recordZoneKey;
     NSString *_subscriptionKey;
@@ -33,16 +33,15 @@
 @property(readonly, nonatomic) NSString *subscriptionKey; // @synthesize subscriptionKey=_subscriptionKey;
 @property(readonly, nonatomic) NSString *recordZoneKey; // @synthesize recordZoneKey=_recordZoneKey;
 @property(retain, nonatomic) CKDatabase *publicDatabase; // @synthesize publicDatabase=_publicDatabase;
+@property(retain, nonatomic) CKDatabase *cloudKitDatabase; // @synthesize cloudKitDatabase=_cloudKitDatabase;
 @property(retain, nonatomic) CKContainer *cloudKitContainer; // @synthesize cloudKitContainer=_cloudKitContainer;
 @property(nonatomic) __weak id <_KSCloudKitManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
-@property(retain, nonatomic) CKDatabase *cloudKitDatabase; // @synthesize cloudKitDatabase=_cloudKitDatabase;
 - (void).cxx_destruct;
 - (void)_ckDeleteRecordZoneWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_ckSaveRecordZone:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_ckFetchRecordZoneWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_inconvenientOperation:(id)arg1;
-- (long long)defaultQualityOfService;
 - (void)fetchPublicRecordsWithNames:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_submitFetchRecordsOperation:(id)arg1 withPriority:(unsigned long long)arg2 changeToken:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 retryCount:(unsigned long long)arg5;
 - (void)fetchRecordsWithPriority:(unsigned long long)arg1 changeToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 retryCount:(unsigned long long)arg4;
@@ -52,6 +51,8 @@
 - (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4 retryCount:(unsigned long long)arg5;
 - (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setupSubscription;
+- (void)addOperation:(id)arg1 priority:(unsigned long long)arg2;
+- (void)addOperation:(id)arg1;
 - (id)recordIDForName:(id)arg1;
 - (id)recordWithName:(id)arg1 type:(id)arg2 attributes:(id)arg3;
 - (id)recordWithName:(id)arg1 type:(id)arg2 attributes:(id)arg3 encryptedFields:(id)arg4;

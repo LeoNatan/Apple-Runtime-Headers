@@ -8,6 +8,7 @@
 
 @class AVOutputSettings;
 
+__attribute__((visibility("hidden")))
 @interface AVFormatSpecification : NSObject
 {
     AVOutputSettings *_outputSettings;

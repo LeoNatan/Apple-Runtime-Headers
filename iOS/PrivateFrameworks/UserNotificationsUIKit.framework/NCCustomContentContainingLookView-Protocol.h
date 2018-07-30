@@ -4,21 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "MTPlatter.h"
-#import "MTTitled.h"
+#import "PLExpandedPlatter.h"
+#import "PLPlatter.h"
+#import "PLTitled.h"
 
-@class UIScrollView, UITapGestureRecognizer;
+@class UITapGestureRecognizer;
 
-@protocol NCCustomContentContainingLookView <MTPlatter, MTTitled>
+@protocol NCCustomContentContainingLookView <PLPlatter, PLTitled, PLExpandedPlatter>
 @property(readonly, nonatomic) UITapGestureRecognizer *lookViewTapGestureRecognizer;
-@property(nonatomic, getter=isActionsHidden) _Bool actionsHidden;
-@property(readonly, nonatomic, getter=_scrollView) UIScrollView *scrollView;
 @property(nonatomic) _Bool hidesNotificationContent;
-@property(readonly, nonatomic) struct CGSize sizeExcludingActions;
-@property(readonly, nonatomic) struct CGSize contentSizeExcludingActions;
 @property(nonatomic) unsigned long long customContentLocation;
-@property(nonatomic) struct CGSize customContentSize;
-- (struct CGRect)scrollViewFrame;
-- (struct CGSize)actionsSizeThatFits:(struct CGSize)arg1;
 @end
 

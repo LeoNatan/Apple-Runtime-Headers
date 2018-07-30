@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SCNProgramSemanticInfo : NSObject <NSSecureCoding>
 {
     NSString *_semantic;

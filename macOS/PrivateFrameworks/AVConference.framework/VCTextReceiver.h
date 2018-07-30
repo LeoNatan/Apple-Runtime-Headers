@@ -16,11 +16,15 @@ __attribute__((visibility("hidden")))
     struct tagHANDLE *_rtpHandle;
     unsigned int _sampleRate;
     id <VCTextReceiverDelegate> _delegate;
-    struct tagVCRealTimeThread _receiverThread;
+    struct tagVCRealTimeThread *_receiverThread;
     NSArray *_supportedPayloads;
     VCTextJitterBuffer *_jitterBuffer;
+    double _lastReceivedRTPPacketTime;
+    double _lastReceivedRTCPPacketTime;
 }
 
+@property(nonatomic) double lastReceivedRTCPPacketTime; // @synthesize lastReceivedRTCPPacketTime=_lastReceivedRTCPPacketTime;
+@property(nonatomic) double lastReceivedRTPPacketTime; // @synthesize lastReceivedRTPPacketTime=_lastReceivedRTPPacketTime;
 @property(retain, nonatomic) NSArray *supportedPayloads; // @synthesize supportedPayloads=_supportedPayloads;
 - (void)didReceiveFrame:(struct tagAudioFrame *)arg1;
 - (void)didDetectMissingFrame;

@@ -13,9 +13,12 @@
     vector_1cb3ea33 _pointsVector;
     vector_7984f87c _identifiersVector;
     vector_7584168e _vergenceAngleCosinesVector;
+    // Error parsing type: , name: _centroid
+    // Error parsing type: , name: _standardDeviation
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)emptyPointCloud;
 + (id)concatPointClouds:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -24,9 +27,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
--     // Error parsing type: @84@0:8{?=[4]}16f80, name: pointCloudByApplyingTransform:minimumVergenceAngleCosine:
 -     // Error parsing type: @80@0:8{?=[4]}16, name: pointCloudByApplyingTransform:
 - (id)_hitTestPointFromOrigin:(float)arg1 withDirection:maximumAngle: /* Error: Ran out of types for this method. */;
+- (id)filterPointCloudFrom:ellipsoid: /* Error: Ran out of types for this method. */;
+-     // Error parsing type: 16@0:8, name: standardDeviation
+-     // Error parsing type: 16@0:8, name: centroid
+- (CDStruct_183601bc)computeBounds;
 - (const float *)vergenceAngleCosines;
 @property(readonly, nonatomic) const unsigned long long *identifiers;
 // Error parsing type for property points:
@@ -35,6 +41,7 @@
 @property(readonly, nonatomic) unsigned long long count;
 - (id)initWithPointsVector:(const struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))>> *)arg1 identifiersVector:(const vector_7984f87c *)arg2 vergenceAngleCosinesVector:(const vector_7584168e *)arg3;
 - (id)initWithPointsVector:(const struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))>> *)arg1 identifiersVector:(const vector_7984f87c *)arg2;
+- (id)initWithPointData:(id)arg1;
 
 @end
 

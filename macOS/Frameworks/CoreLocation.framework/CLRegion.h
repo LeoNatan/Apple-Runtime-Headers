@@ -23,7 +23,7 @@
 @property(nonatomic) int referenceFrame; // @synthesize referenceFrame=_referenceFrame;
 @property(nonatomic) BOOL conservativeEntry; // @synthesize conservativeEntry=_conservativeEntry;
 @property(copy, nonatomic) NSString *onBehalfOfBundleId; // @synthesize onBehalfOfBundleId=_onBehalfOfBundleId;
-@property(readonly, nonatomic) CDStruct_3afce72c clientRegion;
+@property(readonly, nonatomic) CDStruct_5652eb1b clientRegion;
 - (BOOL)containsCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(nonatomic) BOOL notifyOnExit;
 @property(nonatomic) BOOL notifyOnEntry;
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initCircularRegionWithCenter:(struct CLLocationCoordinate2D)arg1 radius:(double)arg2 identifier:(id)arg3;
-- (id)initWithClientRegion:(CDStruct_3afce72c)arg1;
+- (id)initWithClientRegion:(CDStruct_5652eb1b)arg1;
 
 @end
 

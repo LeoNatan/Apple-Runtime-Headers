@@ -6,13 +6,16 @@
 
 #import "UIViewController.h"
 
+#import "AVPlayerViewControllerDelegatePrivate.h"
 #import "AVPlayerViewControllerDelegate_WebKitOnly.h"
 #import "SXAutomaticFullscreenVideoPlaybackBehaviorManagerDelegate.h"
+#import "SXVideoAdViewControllerProviding.h"
 #import "SXVideoPlaybackObserver.h"
+#import "UIGestureRecognizerDelegate.h"
 
-@class AVPlayerViewController, NSString, SXAdPrivacyButton, SXAutomaticFullscreenVideoPlaybackBehaviorManager, SXKeyValueObserver, SXLearnMoreButton, SXPlaybackCoordinator, SXTouchForwardingView, SXVideoAdSkipButton, SXVideoPlaybackQueue, SXVideoVolumeObserver, UIActivityIndicatorView;
+@class AVPlayerViewController, NSString, SVAdPrivacyButton, SVKeyValueObserver, SVLearnMoreButton, SXAutomaticFullscreenVideoPlaybackBehaviorManager, SXPlaybackCoordinator, SXVideoAdSkipButton, SXVideoPlaybackQueue, SXVideoVolumeObserver, UIActivityIndicatorView, UIGestureRecognizer;
 
-@interface SXVideoPlayerViewController : UIViewController <SXVideoPlaybackObserver, AVPlayerViewControllerDelegate_WebKitOnly, SXAutomaticFullscreenVideoPlaybackBehaviorManagerDelegate>
+@interface SXVideoPlayerViewController : UIViewController <SXVideoPlaybackObserver, AVPlayerViewControllerDelegate_WebKitOnly, AVPlayerViewControllerDelegatePrivate, SXAutomaticFullscreenVideoPlaybackBehaviorManagerDelegate, UIGestureRecognizerDelegate, SXVideoAdViewControllerProviding>
 {
     _Bool _fullscreen;
     id <SXVideoPlayerViewControllerDelegate> _delegate;
@@ -21,28 +24,30 @@
     unsigned long long _fullscreenBehavior;
     SXVideoPlaybackQueue *_queue;
     SXPlaybackCoordinator *_coordinator;
+    id <SXVideoAdProviding> _videoAd;
     AVPlayerViewController *_playerViewController;
-    SXLearnMoreButton *_learnMoreButton;
+    SVLearnMoreButton *_learnMoreButton;
     SXVideoAdSkipButton *_skipButton;
-    SXAdPrivacyButton *_adPrivacyButton;
+    SVAdPrivacyButton *_adPrivacyButton;
     UIActivityIndicatorView *_activityIndicatorView;
-    SXKeyValueObserver *_videoBoundsObserver;
+    SVKeyValueObserver *_videoBoundsObserver;
     SXAutomaticFullscreenVideoPlaybackBehaviorManager *_fullscreenBehaviorManager;
-    SXTouchForwardingView *_touchForwardingView;
-    id <SXVolumeReporting> _volumeReporter;
+    id <SVVolumeReporting> _volumeReporter;
     SXVideoVolumeObserver *_volumeObserver;
+    UIGestureRecognizer *_tapGesture;
 }
 
+@property(readonly, nonatomic) UIGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) SXVideoVolumeObserver *volumeObserver; // @synthesize volumeObserver=_volumeObserver;
-@property(readonly, nonatomic) id <SXVolumeReporting> volumeReporter; // @synthesize volumeReporter=_volumeReporter;
-@property(readonly, nonatomic) SXTouchForwardingView *touchForwardingView; // @synthesize touchForwardingView=_touchForwardingView;
+@property(readonly, nonatomic) id <SVVolumeReporting> volumeReporter; // @synthesize volumeReporter=_volumeReporter;
 @property(readonly, nonatomic) SXAutomaticFullscreenVideoPlaybackBehaviorManager *fullscreenBehaviorManager; // @synthesize fullscreenBehaviorManager=_fullscreenBehaviorManager;
-@property(retain, nonatomic) SXKeyValueObserver *videoBoundsObserver; // @synthesize videoBoundsObserver=_videoBoundsObserver;
+@property(retain, nonatomic) SVKeyValueObserver *videoBoundsObserver; // @synthesize videoBoundsObserver=_videoBoundsObserver;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
-@property(retain, nonatomic) SXAdPrivacyButton *adPrivacyButton; // @synthesize adPrivacyButton=_adPrivacyButton;
+@property(retain, nonatomic) SVAdPrivacyButton *adPrivacyButton; // @synthesize adPrivacyButton=_adPrivacyButton;
 @property(retain, nonatomic) SXVideoAdSkipButton *skipButton; // @synthesize skipButton=_skipButton;
-@property(retain, nonatomic) SXLearnMoreButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
+@property(retain, nonatomic) SVLearnMoreButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(retain, nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
+@property(retain, nonatomic) id <SXVideoAdProviding> videoAd; // @synthesize videoAd=_videoAd;
 @property(retain, nonatomic) SXPlaybackCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(retain, nonatomic) SXVideoPlaybackQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) unsigned long long fullscreenBehavior; // @synthesize fullscreenBehavior=_fullscreenBehavior;
@@ -51,6 +56,9 @@
 @property(nonatomic) __weak id <SXVideoPlayerViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <SXVideoPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)tapped;
+@property(readonly, nonatomic) UIViewController *viewControllerForModalPresentation;
 - (void)updateSkipButtonWithThreshold:(unsigned long long)arg1 time:(double)arg2;
 - (_Bool)playbackAllowedForPlaybackCoordinator:(id)arg1;
 - (void)startPlaybackForCoordinatorIfAllowed:(id)arg1;
@@ -70,6 +78,9 @@
 - (void)playbackCoordinatorPausedPlayback:(id)arg1;
 - (void)playbackCoordinatorStartedPlayback:(id)arg1;
 - (void)playerViewController:(id)arg1 metricsCollectionEventOccured:(long long)arg2;
+- (void)playerViewController:(id)arg1 willBeginFullScreenPresentationWithAnimationCoordinator:(id)arg2;
+- (void)playerViewController:(id)arg1 willEndFullScreenPresentationWithAnimationCoordinator:(id)arg2;
+- (void)playerViewController:(id)arg1 willTransitionToVisibilityOfPlaybackControls:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (_Bool)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(long long)arg2;
 - (void)fullscreenBehaviorManagerRequiresFullscreenPlayback:(id)arg1;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing;
@@ -79,6 +90,8 @@
 - (void)play;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)dealloc;
 - (void)loadView;
 - (id)initWithVolumeReporter:(id)arg1;

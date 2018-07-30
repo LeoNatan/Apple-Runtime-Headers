@@ -9,12 +9,13 @@
 #import "NTKContainerViewLayoutDelegate.h"
 #import "NTKControl.h"
 
-@class NSString, NTKContainerView, NTKFaceColorScheme, UIColor, UIView;
+@class CLKDevice, NSString, NTKContainerView, NTKFaceColorScheme, UIColor, UIView;
 
 @interface NTKModuleView : UIControl <NTKContainerViewLayoutDelegate, NTKControl>
 {
     NTKContainerView *_contentView;
     UIView *_highlightView;
+    CLKDevice *_device;
     UIColor *_foregroundColor;
     UIColor *_secondaryForegroundColor;
     UIColor *_highlightBackgroundColor;
@@ -26,7 +27,8 @@
     UIColor *_overrideColor;
 }
 
-+ (double)cornerRadius;
++ (double)cornerRadiusForComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (double)_defaultCornerRadiusForDevice:(id)arg1;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) double highlightCornerRadius; // @synthesize highlightCornerRadius=_highlightCornerRadius;
 @property(retain, nonatomic) NTKFaceColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
@@ -36,6 +38,7 @@
 @property(retain, nonatomic) UIColor *highlightBackgroundColor; // @synthesize highlightBackgroundColor=_highlightBackgroundColor;
 @property(retain, nonatomic) UIColor *secondaryForegroundColor; // @synthesize secondaryForegroundColor=_secondaryForegroundColor;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
+@property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (void)layoutContainerView:(id)arg1;

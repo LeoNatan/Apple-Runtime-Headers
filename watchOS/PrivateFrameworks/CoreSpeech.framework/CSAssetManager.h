@@ -38,18 +38,25 @@
 - (void)_startDownloadingAsset:(id)arg1 progress:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_downloadAsset:(id)arg1 withComplete:(CDUnknownBlockType)arg2;
 - (id)_defaultDownloadOptions;
-- (void)_updateFromRemoteToLocalAssets:(id)arg1 forAssetType:(unsigned int)arg2;
-- (void)_fetchRemoteAssetOfType:(unsigned int)arg1 withPredicate:(id)arg2;
+- (void)_updateFromRemoteToLocalAssets:(id)arg1 forAssetType:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_fetchRemoteAssetOfType:(unsigned int)arg1 withPredicate:(id)arg2 localOnly:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchRemoteMetaData;
+- (void)fetchRemoteAssetOfType:(unsigned int)arg1 forLanguageCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_isReadyToUse;
 - (void)_runAssetQuery:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_assetQueryForAssetType:(unsigned int)arg1 withPredicate:(id)arg2 localOnly:(_Bool)arg3;
 - (id)_findLatestInstalledAsset:(id)arg1;
+- (void)_installedAssetOfType:(unsigned int)arg1 withPredicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_installedAssetOfType:(unsigned int)arg1 withPredicate:(id)arg2;
+- (void)installedAssetOfType:(unsigned int)arg1 withPredicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)installedAssetOfType:(unsigned int)arg1 withPredicate:(id)arg2;
+- (void)installedAssetOfType:(unsigned int)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)installedAssetOfType:(unsigned int)arg1 language:(id)arg2;
+- (void)assetOfType:(unsigned int)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)assetOfType:(unsigned int)arg1 language:(id)arg2;
+- (void)installedAssetForCurrentLanguageOfType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)installedAssetForCurrentLanguageOfType:(unsigned int)arg1;
+- (void)assetForCurrentLanguageOfType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)assetForCurrentLanguageOfType:(unsigned int)arg1;
 - (id)init;
 

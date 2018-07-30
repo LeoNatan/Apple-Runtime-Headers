@@ -24,6 +24,7 @@
     _Bool _hasPreparedToPlay;
     MPMediaItem *_pendingNowPlayingItem;
     NSObject<OS_dispatch_queue> *_pendingPrepareCalloutQueue;
+    _Bool _legacyClient;
     MPMusicPlayerQueueDescriptor *_queueDescriptor;
     MPVolumeController *_volumeController;
     MPRequestResponseController *_requestController;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) MPRequestResponseController *requestController; // @synthesize requestController=_requestController;
 @property(retain, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) MPMusicPlayerQueueDescriptor *queueDescriptor; // @synthesize queueDescriptor=_queueDescriptor;
+@property(readonly, nonatomic, getter=isLegacyClient) _Bool legacyClient; // @synthesize legacyClient=_legacyClient;
 - (void).cxx_destruct;
 - (void)_preflightRequestIfNeeded;
 - (id)_mediaItemFromSong:(id)arg1;

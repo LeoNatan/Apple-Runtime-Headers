@@ -13,7 +13,6 @@
 
 @interface _SFPBUserActivityInfo : PBCodable <_SFPBUserActivityInfo, NSSecureCoding>
 {
-    CDStruct_00e03ae1 _has;
     int _valueType;
     NSString *_key;
     NSString *_stringValue;
@@ -33,10 +32,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasUrlValue;
-@property(readonly, nonatomic) BOOL hasStringValue;
-@property(readonly, nonatomic) BOOL hasKey;
-@property(readonly, nonatomic) BOOL hasValueType;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

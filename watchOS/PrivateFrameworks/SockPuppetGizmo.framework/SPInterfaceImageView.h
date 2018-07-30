@@ -8,7 +8,7 @@
 
 #import "SPInterfaceItem.h"
 
-@class NSArray, NSBundle, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class NSArray, NSBundle, NSDictionary, NSString;
 
 @interface SPInterfaceImageView : UIImageView <SPInterfaceItem>
 {
@@ -25,14 +25,12 @@
     float _widthAdjustment;
     float _height;
     float _heightAdjustment;
-    NSObject<OS_dispatch_queue> *_sendQueue;
     double _defaultDuration;
     struct CGSize _interfacePlistSize;
     struct CGSize _cachedContainerSize;
     struct CGSize _cachedSize;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> *sendQueue; // @synthesize sendQueue=_sendQueue;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
 @property(nonatomic) struct CGSize cachedContainerSize; // @synthesize cachedContainerSize=_cachedContainerSize;
 @property(nonatomic) struct CGSize interfacePlistSize; // @synthesize interfacePlistSize=_interfacePlistSize;
@@ -55,7 +53,7 @@
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (_Bool)hasIntrinsicHeight;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

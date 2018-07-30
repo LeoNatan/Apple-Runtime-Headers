@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowAudioRecording; // @synthesize allowAudioRecording=_allowAudioRecording;
 @property(nonatomic) int deviceRole; // @synthesize deviceRole=_deviceRole;
 @property(readonly, nonatomic) struct AudioStreamBasicDescription format; // @synthesize format=_format;
-@property(readonly, nonatomic) id <VCAudioIOControllerDelegate><VCAudioIOSink><VCAudioIOSource> delegate;
+@property(readonly, nonatomic) id <VCAudioIOControllerDelegate><VCAudioIOControllerSink><VCAudioIOControllerSource> delegate;
 - (void)setClientFormat:(struct AudioStreamBasicDescription)arg1;
 - (void)setRemoteCodecType:(unsigned int)arg1 sampleRate:(double)arg2;
 - (void)setFarEndVersionInfo:(struct VoiceIOFarEndVersionInfo)arg1;

@@ -24,6 +24,7 @@
 @property BOOL allInkEnabled; // @synthesize allInkEnabled=_allInkEnabled;
 @property(nonatomic) unsigned long long toolMode; // @synthesize toolMode=_toolMode;
 - (void).cxx_destruct;
+- (BOOL)isOptionKeyPressed;
 - (unsigned long long)_arrowStyleForToolTag:(long long)arg1;
 - (void)_setRectangleToFitTextOnTextAnnotation:(id)arg1;
 - (id)_defaultFillColorForAnnotationOfClass:(Class)arg1;

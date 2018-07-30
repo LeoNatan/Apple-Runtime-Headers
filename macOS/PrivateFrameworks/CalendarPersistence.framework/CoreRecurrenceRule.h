@@ -17,6 +17,7 @@
     CALDate *_cachedStartDate;
 }
 
++ (id)logHandleFor36215635;
 + (id)recurrenceRuleFromICSString:(id)arg1;
 + (id)orDaysOfWeekString:(id)arg1;
 + (id)andDaysOfWeekString:(id)arg1;

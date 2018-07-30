@@ -21,8 +21,10 @@
     unsigned int _bracketedImageCount;
     int _SISMode;
     int _HDRMode;
+    _Bool _bravoDualImageDeliveryEnabled;
 }
 
+@property(nonatomic) _Bool bravoDualImageDeliveryEnabled; // @synthesize bravoDualImageDeliveryEnabled=_bravoDualImageDeliveryEnabled;
 @property(nonatomic) int HDRMode; // @synthesize HDRMode=_HDRMode;
 @property(nonatomic) int SISMode; // @synthesize SISMode=_SISMode;
 @property(nonatomic) unsigned int bracketedImageCount; // @synthesize bracketedImageCount=_bracketedImageCount;

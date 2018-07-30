@@ -22,6 +22,7 @@
 + (double)_doubleFromDictionary:(id)arg1 key:(id)arg2 error:(_Bool *)arg3;
 + (unsigned long long)_unsignedIntegerFromDictionary:(id)arg1 key:(id)arg2 error:(_Bool *)arg3;
 + (long long)_integerFromDictionary:(id)arg1 key:(id)arg2 error:(_Bool *)arg3;
++ (_Bool)_boolFromDictionary:(id)arg1 key:(id)arg2 error:(_Bool *)arg3;
 + (id)activityForActivity:(id)arg1;
 + (id)activityForDictionary:(id)arg1;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;

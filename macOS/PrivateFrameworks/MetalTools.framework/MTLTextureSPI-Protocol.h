@@ -15,6 +15,7 @@
 - (void)didModifyData;
 
 @optional
+@property(readonly) unsigned long long resourceIndex;
 @property(readonly) unsigned long long uniqueIdentifier;
 @end
 

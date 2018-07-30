@@ -6,13 +6,11 @@
 
 #import "NSPopUpButtonCell.h"
 
-__attribute__((visibility("hidden")))
 @interface ABPopUpButtonCell : NSPopUpButtonCell
 {
 }
 
 - (id)accessibilityRole;
-- (void)_drawIndicatorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end
 

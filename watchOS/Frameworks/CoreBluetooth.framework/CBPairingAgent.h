@@ -29,6 +29,7 @@
 - (void)pairPeer:(id)arg1 useMITM:(_Bool)arg2;
 - (void)pairPeer:(id)arg1;
 - (id)retrievePairedPeers;
+- (_Bool)isPeerMagicPaired:(id)arg1;
 - (_Bool)isPeerCloudPaired:(id)arg1;
 - (_Bool)isPeerPaired:(id)arg1;
 - (void)updateRegistration;

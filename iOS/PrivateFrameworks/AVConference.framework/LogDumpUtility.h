@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 + (void)removeOldFilesInDefaultLogDumpPath;
 + (void)removeFilesInDirectory:(id)arg1 olderThan:(id)arg2;
 + (id)filesSortedByTimestamp:(id)arg1;
-+ (id)logFilename:(int)arg1 dumpID:(unsigned int)arg2 logNameType:(int)arg3 prefix:(id)arg4 suffix:(id)arg5;
++ (id)logFilename:(int)arg1 dumpID:(id)arg2 logNameType:(int)arg3 prefix:(id)arg4 suffix:(id)arg5;
 + (_Bool)createDirectory:(id)arg1;
 + (id)getDefaultLogDumpPath;
 + (id)getCachesDirectoryPath;

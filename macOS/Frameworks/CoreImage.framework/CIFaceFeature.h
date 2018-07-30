@@ -6,6 +6,8 @@
 
 #import <CoreImage/CIFeature.h>
 
+@class NSDictionary;
+
 @interface CIFaceFeature : CIFeature
 {
     struct CGRect bounds;
@@ -24,8 +26,10 @@
     BOOL hasSmile;
     BOOL leftEyeClosed;
     BOOL rightEyeClosed;
+    NSDictionary *landmarks;
 }
 
+@property(readonly) NSDictionary *landmarks; // @synthesize landmarks;
 @property(readonly) BOOL rightEyeClosed; // @synthesize rightEyeClosed;
 @property(readonly) BOOL leftEyeClosed; // @synthesize leftEyeClosed;
 @property(readonly) BOOL hasSmile; // @synthesize hasSmile;
@@ -42,7 +46,8 @@
 @property(readonly) struct CGPoint leftEyePosition; // @synthesize leftEyePosition;
 @property(readonly) BOOL hasLeftEyePosition; // @synthesize hasLeftEyePosition;
 @property(readonly) struct CGRect bounds; // @synthesize bounds;
-- (id)initWithBounds:(struct CGRect)arg1 hasLeftEyePosition:(BOOL)arg2 leftEyePosition:(struct CGPoint)arg3 hasRightEyePosition:(BOOL)arg4 rightEyePosition:(struct CGPoint)arg5 hasMouthPosition:(BOOL)arg6 mouthPosition:(struct CGPoint)arg7 hasFaceAngle:(BOOL)arg8 faceAngle:(float)arg9 hasTrackingID:(BOOL)arg10 trackingID:(int)arg11 hasTrackingFrameCount:(BOOL)arg12 trackingFrameCount:(int)arg13 hasSmile:(BOOL)arg14 leftEyeClosed:(BOOL)arg15 rightEyeClosed:(BOOL)arg16;
+- (void)dealloc;
+- (id)initWithBounds:(struct CGRect)arg1 hasLeftEyePosition:(BOOL)arg2 leftEyePosition:(struct CGPoint)arg3 hasRightEyePosition:(BOOL)arg4 rightEyePosition:(struct CGPoint)arg5 hasMouthPosition:(BOOL)arg6 mouthPosition:(struct CGPoint)arg7 hasFaceAngle:(BOOL)arg8 faceAngle:(float)arg9 hasTrackingID:(BOOL)arg10 trackingID:(int)arg11 hasTrackingFrameCount:(BOOL)arg12 trackingFrameCount:(int)arg13 hasSmile:(BOOL)arg14 leftEyeClosed:(BOOL)arg15 rightEyeClosed:(BOOL)arg16 landmarks:(id)arg17;
 - (id)type;
 
 @end

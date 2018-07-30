@@ -21,7 +21,8 @@
 - (BOOL)internalPerformInContext:(id)arg1 error:(id *)arg2;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (id)sequencedRequestPreviousObservationsKey;
-- (id)observationsCacheKey;
+- (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
+- (BOOL)allowsCachingOfResults;
 - (id)initWithTargetedImageData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithTargetedImageURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithTargetedCIImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

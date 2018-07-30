@@ -49,7 +49,6 @@
 @property(readonly) ICScannerFunctionalUnit *selectedFunctionalUnit;
 @property(readonly) NSArray *availableFunctionalUnitTypes;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)description;

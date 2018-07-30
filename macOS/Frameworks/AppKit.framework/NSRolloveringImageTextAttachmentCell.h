@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (oneway void)releaseView:(id)arg1;
 - (id)viewWithFrame:(struct CGRect)arg1 forView:(id)arg2 characterIndex:(unsigned long long)arg3 layoutManager:(id)arg4;
+@property(readonly) __weak NSTextView *textView; // @dynamic textView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

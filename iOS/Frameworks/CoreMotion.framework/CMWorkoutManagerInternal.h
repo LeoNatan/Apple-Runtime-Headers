@@ -25,6 +25,7 @@
 - (void)_registerForWorkoutEvents;
 - (void)_handleDaemonEvent:(id)arg1;
 - (void)_handleDaemonResponse:(id)arg1;
+- (void)_userDismissedWorkoutAlert;
 - (void)_setSuggestedStopTimeout:(double)arg1;
 - (void)_stopWorkout:(id)arg1;
 - (void)_startWorkout:(id)arg1;

@@ -30,6 +30,7 @@
     NSString *_presentationReasonSearchString;
     NSString *_previousArticleId;
     NSString *_previousArticleVersion;
+    int _rankInToc;
     NSString *_referringSourceApplication;
     NSString *_referringUrl;
     NSString *_sourceChannelId;
@@ -51,6 +52,7 @@
         unsigned int feedType:1;
         unsigned int groupType:1;
         unsigned int presentationReason:1;
+        unsigned int rankInToc:1;
         unsigned int adSupportedChannel:1;
         unsigned int cameFromGroup:1;
         unsigned int isNewUserToFeed:1;
@@ -60,6 +62,7 @@
     } _has;
 }
 
+@property(nonatomic) int rankInToc; // @synthesize rankInToc=_rankInToc;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(nonatomic) long long previousArticlePublisherArticleVersion; // @synthesize previousArticlePublisherArticleVersion=_previousArticlePublisherArticleVersion;
 @property(retain, nonatomic) NSString *previousArticleVersion; // @synthesize previousArticleVersion=_previousArticleVersion;
@@ -92,6 +95,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasRankInToc;
 @property(readonly, nonatomic) _Bool hasGroupViewExposureId;
 @property(nonatomic) _Bool hasPreviousArticlePublisherArticleVersion;
 @property(readonly, nonatomic) _Bool hasPreviousArticleVersion;

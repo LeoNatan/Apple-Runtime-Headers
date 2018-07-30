@@ -8,6 +8,7 @@
 
 @class NCVerticalListController;
 
+__attribute__((visibility("hidden")))
 @interface _NCVerticalListRoot : _NCFlippedView
 {
     NCVerticalListController *_owner;

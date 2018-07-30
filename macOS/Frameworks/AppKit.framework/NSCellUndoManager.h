@@ -6,6 +6,7 @@
 
 #import "NSUndoManager.h"
 
+__attribute__((visibility("hidden")))
 @interface NSCellUndoManager : NSUndoManager
 {
     NSUndoManager *_nextUndoManager;

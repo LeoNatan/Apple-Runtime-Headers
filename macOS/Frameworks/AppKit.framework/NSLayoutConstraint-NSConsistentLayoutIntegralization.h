@@ -7,6 +7,7 @@
 #import "NSLayoutConstraint.h"
 
 @interface NSLayoutConstraint (NSConsistentLayoutIntegralization)
++ (double)_constraintConstantLimit;
 - (BOOL)_usingConsistentIntegralization;
 @end
 

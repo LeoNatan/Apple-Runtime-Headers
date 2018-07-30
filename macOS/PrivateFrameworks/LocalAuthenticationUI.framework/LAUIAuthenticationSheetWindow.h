@@ -6,6 +6,7 @@
 
 #import "NSWindow.h"
 
+__attribute__((visibility("hidden")))
 @interface LAUIAuthenticationSheetWindow : NSWindow
 {
     id <LAUIAuthenticationSheetWindowDelegate> _authenticationSheetWindowDelegate;

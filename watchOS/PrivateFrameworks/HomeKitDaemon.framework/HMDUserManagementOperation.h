@@ -30,14 +30,18 @@
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFTimer *_expirationTimer;
     HMFTimer *_backoffTimer;
+    HMDAccessoryInvitation *_accessoryInvitation;
+    NSDictionary *_accessoryInvitationInformation;
     double _backoffInterval;
 }
 
 + (id)operationWithDictionary:(id)arg1 home:(id)arg2;
 + (_Bool)supportsSecureCoding;
 + (id)shortDescription;
-+ (id)removeUserManagementOperationForUser:(id)arg1 accessory:(id)arg2;
-+ (id)addUserManagementOperationForUser:(id)arg1 accessory:(id)arg2;
++ (id)removeUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
++ (id)addUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
+@property(readonly, nonatomic) NSDictionary *accessoryInvitationInformation; // @synthesize accessoryInvitationInformation=_accessoryInvitationInformation;
+@property(readonly, nonatomic) HMDAccessoryInvitation *accessoryInvitation; // @synthesize accessoryInvitation=_accessoryInvitation;
 @property(retain, nonatomic) HMFTimer *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
 @property(readonly, nonatomic) double backoffInterval; // @synthesize backoffInterval=_backoffInterval;
 @property(readonly, nonatomic) HMFTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
@@ -56,9 +60,6 @@
 - (id)dictionaryEncoding;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *accessoryInvitationInformation;
-@property(readonly, nonatomic) HMDAccessoryInvitation *accessoryInvitation;
-- (int)_accessoryInvitationState;
 - (_Bool)mergeWithOperation:(id)arg1;
 - (void)_removePairingFromHAPAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_addPairingToHAPAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -85,7 +86,7 @@
 - (id)descriptionWithPointer:(_Bool)arg1;
 - (id)shortDescription;
 - (void)_setupExpirationTimer;
-- (id)initWithOperationType:(unsigned int)arg1 user:(id)arg2 accessory:(id)arg3 expiration:(id)arg4;
+- (id)initWithOperationType:(unsigned int)arg1 identifier:(id)arg2 user:(id)arg3 accessory:(id)arg4 expiration:(id)arg5;
 - (id)init;
 
 // Remaining properties

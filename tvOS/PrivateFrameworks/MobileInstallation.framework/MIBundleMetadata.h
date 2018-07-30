@@ -19,10 +19,12 @@
     unsigned long long _placeholderFailureReason;
     NSError *_placeholderFailureUnderlyingError;
     unsigned long long _placeholderFailureUnderlyingErrorSource;
+    NSString *_watchKitAppExecutableHash;
 }
 
 + (id)metadataFromURL:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *watchKitAppExecutableHash; // @synthesize watchKitAppExecutableHash=_watchKitAppExecutableHash;
 @property(nonatomic) unsigned long long placeholderFailureUnderlyingErrorSource; // @synthesize placeholderFailureUnderlyingErrorSource=_placeholderFailureUnderlyingErrorSource;
 @property(retain, nonatomic) NSError *placeholderFailureUnderlyingError; // @synthesize placeholderFailureUnderlyingError=_placeholderFailureUnderlyingError;
 @property(nonatomic) unsigned long long placeholderFailureReason; // @synthesize placeholderFailureReason=_placeholderFailureReason;
@@ -31,6 +33,7 @@
 @property(copy, nonatomic) NSDate *installDate; // @synthesize installDate=_installDate;
 - (void).cxx_destruct;
 - (_Bool)serializeToURL:(id)arg1 error:(id *)arg2;
+- (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -44,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (void)_setOrderFrontAnimationType:(long long)arg1;
 - (long long)_orderFrontAnimationType;
 - (void)mouseDown:(id)arg1;
+- (unsigned long long)shadowOptions;
+- (struct CGRect)_draggableFrame;
 - (BOOL)_allowsImplicitRemovalFromMovementGroup;
 - (id)_parentWindowForAddingToMovementGroupWithProposedParent:(id)arg1;
 - (long long)_childWindowOrderingPriority;
@@ -51,7 +53,6 @@ __attribute__((visibility("hidden")))
 - (void)setContentView:(id)arg1;
 - (void)_fromConstraintsSetWindowFrame:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2;
-@property long long popoverAppearance; // @dynamic popoverAppearance;
 @property struct NSEdgeInsets contentInset; // @dynamic contentInset;
 @property struct CGSize anchorSize; // @dynamic anchorSize;
 @property unsigned long long anchorEdge; // @dynamic anchorEdge;

@@ -16,18 +16,12 @@
 + (id)fetchRequest;
 
 // Remaining properties
-@property(copy, nonatomic) NSNumber *adHoc; // @dynamic adHoc;
 @property(copy, nonatomic) NSNumber *age; // @dynamic age;
-@property(copy, nonatomic) NSNumber *applePersonalHotspot; // @dynamic applePersonalHotspot;
-@property(copy, nonatomic) NSNumber *captiveNetwork; // @dynamic captiveNetwork;
-@property(copy, nonatomic) NSNumber *carPlay; // @dynamic carPlay;
 @property(copy, nonatomic) NSNumber *channel; // @dynamic channel;
 @property(copy, nonatomic) NSDate *date; // @dynamic date;
 @property(retain, nonatomic) RTFingerprintMO *fingerprint; // @dynamic fingerprint;
 @property(copy, nonatomic) NSString *mac; // @dynamic mac;
-@property(copy, nonatomic) NSNumber *mode; // @dynamic mode;
 @property(copy, nonatomic) NSNumber *rssi; // @dynamic rssi;
-@property(copy, nonatomic) NSString *ssid; // @dynamic ssid;
 
 @end
 

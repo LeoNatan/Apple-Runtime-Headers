@@ -21,8 +21,11 @@
 @property(nonatomic) double colorDistanceTheshold; // @synthesize colorDistanceTheshold=_colorDistanceTheshold;
 @property(nonatomic) _Bool shouldEvaluateColorInformation; // @synthesize shouldEvaluateColorInformation=_shouldEvaluateColorInformation;
 @property(nonatomic) long long sampleFrequency; // @synthesize sampleFrequency=_sampleFrequency;
-- (void)evaluate:(id)arg1;
 - (void)_evaluateColorInformation:(id)arg1;
+- (id)_blurValueForVisionObservation:(id)arg1;
+- (id)_brightnessValueForVisionObservation:(id)arg1;
+- (void)evaluate:(id)arg1;
+- (_Bool)validateVisionKitSoftLinkSymbols;
 - (_Bool)requiresVisionFramework;
 - (void)nodeInitialize;
 

@@ -10,6 +10,7 @@
 
 @class GEOMapItemStorage, GEOPlace;
 
+__attribute__((visibility("hidden")))
 @interface GEOURLItem : PBCodable <NSCopying>
 {
     GEOMapItemStorage *_mapItemStorage;

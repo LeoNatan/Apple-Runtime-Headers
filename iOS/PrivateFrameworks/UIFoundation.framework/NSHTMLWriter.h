@@ -50,6 +50,7 @@
     } _flags;
 }
 
++ (id)fontNameForFont:(id)arg1;
 - (id)documentFragmentString;
 - (id)documentFragmentForDocument:(id)arg1;
 - (void)readDocumentFragment:(id)arg1;

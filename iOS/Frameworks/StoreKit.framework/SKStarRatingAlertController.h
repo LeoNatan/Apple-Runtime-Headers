@@ -17,6 +17,7 @@
 
 + (id)starRatingAlertController;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
+- (void).cxx_destruct;
 - (void)_updateButtonState;
 - (void)_ratingControlChanged:(id)arg1;
 @property(nonatomic) float rating;

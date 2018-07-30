@@ -8,6 +8,7 @@
 
 @class AVAssetTrack, AVOutputSettings, AVWeakReference, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetReaderTrackOutputInternal : NSObject
 {
     AVAssetTrack *track;

@@ -17,6 +17,7 @@
 + (_Bool)changeFileOwnerToMobileAtPath:(id)arg1 error:(id *)arg2 usingFileManager:(id)arg3;
 + (_Bool)createDirectoryAtPath:(id)arg1 error:(id *)arg2;
 + (_Bool)createDirectoryAtPath:(id)arg1 error:(id *)arg2 usingFileManager:(id)arg3;
++ (_Bool)_isFileExistsError:(id)arg1;
 + (_Bool)hasDiskSpaceToCopyFileAtURL:(id)arg1;
 + (_Bool)stripExtendedAttributesFromFileAtURL:(id)arg1 inDomain:(id)arg2 error:(id *)arg3;
 + (_Bool)ingestItemAtURL:(id)arg1 toURL:(id)arg2 type:(long long)arg3 options:(unsigned long long)arg4 error:(id *)arg5;

@@ -10,6 +10,7 @@
 
 @class GEOTouristInfo;
 
+__attribute__((visibility("hidden")))
 @interface GEOLogMsgStateMapViewLocation : PBCodable <NSCopying>
 {
     int _locationBucket;

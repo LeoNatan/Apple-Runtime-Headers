@@ -6,7 +6,6 @@
 
 #import <OfficeImport/EDAnchor.h>
 
-__attribute__((visibility("hidden")))
 @interface EDAbsoluteAnchor : EDAnchor
 {
     struct CGPoint mPosition;

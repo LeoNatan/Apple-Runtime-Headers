@@ -7,36 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSpatialEventTrigger.h"
 
-@class PBUnknownFields, _INPBLocationValue;
+@class NSString, _INPBLocationValue;
 
-@interface _INPBSpatialEventTrigger : PBCodable <NSCopying>
+@interface _INPBSpatialEventTrigger : PBCodable <_INPBSpatialEventTrigger, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _event;
-    _INPBLocationValue *_location;
     struct {
         unsigned int event:1;
     } _has;
+    int _event;
+    _INPBLocationValue *_location;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBLocationValue *location; // @synthesize location=_location;
+@property(nonatomic) int event; // @synthesize event=_event;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, nonatomic) _Bool hasLocation;
 - (int)StringAsEvent:(id)arg1;
 - (id)eventAsString:(int)arg1;
 @property(nonatomic) _Bool hasEvent;
-@property(nonatomic) int event; // @synthesize event=_event;
-@property(readonly, nonatomic) _Bool hasLocation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

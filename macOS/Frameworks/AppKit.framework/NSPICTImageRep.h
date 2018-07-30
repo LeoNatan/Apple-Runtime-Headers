@@ -14,8 +14,6 @@
     NSData *_pictData;
     id _imageRep;
     unsigned long long _pictOffset;
-    unsigned int _reserved1;
-    unsigned int _reserved2;
 }
 
 + (id)_imageDataFromPICTData:(id)arg1 toType:(id)arg2;

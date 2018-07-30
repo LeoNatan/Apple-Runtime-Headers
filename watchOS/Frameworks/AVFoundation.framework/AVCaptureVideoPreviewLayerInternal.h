@@ -39,8 +39,8 @@
     _Bool filterRenderingEnabled;
     _Bool unoptimizedFilterRenderingEnabled;
     NSArray *videoPreviewFilters;
-    float d22ScreenWidth;
-    float d22ScreenScale;
+    float oddScreenWidth;
+    float oddScreenScale;
 }
 
 @end

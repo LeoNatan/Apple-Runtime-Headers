@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOTouristInfo : PBCodable <NSCopying>
 {
     double _fetchTimestamp;

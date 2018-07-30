@@ -9,6 +9,8 @@
 @class CKBrowserDragControllerTarget, CKChatInputController, CKComposition, IMSticker, NSData, NSString, UIInputViewController, UIView, UIViewController;
 
 @protocol CKChatInputControllerDelegate <NSObject>
+- (void)chatInputControllerDidSelectFunCamera:(CKChatInputController *)arg1;
+- (void)chatInputControllerWillSelectFunCamera:(CKChatInputController *)arg1;
 - (void)sendCurrentLocation;
 - (void)chatInputControllerWillDismissCompactBrowserViewController:(CKChatInputController *)arg1;
 - (void)chatInputControllerDidDismissCompactBrowserViewController:(CKChatInputController *)arg1;

@@ -32,7 +32,7 @@
 - (unsigned long long)snapshotIndexForContainedObject:(id)arg1;
 @property(readonly) _Bool hasMoves;
 - (void)enumerateMovesWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) struct __CFArray *movedFromIndexes;
+@property(readonly, nonatomic) const struct __CFArray *movedFromIndexes;
 @property(readonly, nonatomic) NSIndexSet *movedIndexes;
 @property(readonly) NSArray *changedObjects;
 @property(readonly) NSIndexSet *changedIndexes;

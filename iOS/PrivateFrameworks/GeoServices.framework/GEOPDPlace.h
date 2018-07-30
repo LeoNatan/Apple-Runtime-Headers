@@ -66,8 +66,6 @@
 @property(nonatomic) _Bool hasStatus;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) _Bool hasMuid;
-- (id)compactDebugDescription;
-- (_Bool)isCacheable;
 - (id)cacheKey;
 - (_Bool)statusCodeIsValid;
 - (void)setFirstSeenTimestamp:(double)arg1;
@@ -93,6 +91,7 @@
 - (void)enumerateComponentOfType:(int)arg1 enumerationOptions:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateValidComponentsWithValuesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateComponentsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)compactDebugDescription;
 - (_Bool)isStringIndicatingPoiInsideWestfield:(id)arg1;
 @property(readonly, nonatomic, getter=isSupportedVenuePOI) _Bool supportedVenuePOI;
 @property(readonly, nonatomic, getter=isSupportedVenue) _Bool supportedVenue;

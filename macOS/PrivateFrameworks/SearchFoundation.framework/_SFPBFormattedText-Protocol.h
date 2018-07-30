@@ -10,15 +10,10 @@
 
 @protocol _SFPBFormattedText <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) BOOL hasTextColor;
 @property(nonatomic) int textColor;
-@property(readonly, nonatomic) BOOL hasIsBold;
 @property(nonatomic) BOOL isBold;
-@property(readonly, nonatomic) BOOL hasIsEmphasized;
 @property(nonatomic) BOOL isEmphasized;
-@property(readonly, nonatomic) BOOL hasGlyph;
 @property(retain, nonatomic) _SFPBImage *glyph;
-@property(readonly, nonatomic) BOOL hasText;
 @property(retain, nonatomic) _SFPBText *text;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

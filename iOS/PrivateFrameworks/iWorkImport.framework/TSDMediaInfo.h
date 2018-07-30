@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint centerForReplacingWithNewMedia;
 - (void)updateGeometryToReplaceMediaInfo:(id)arg1;
 - (void)takePropertiesFromReplacedMediaInfo:(id)arg1;
+@property(readonly, nonatomic) _Bool canBeMediaPlaceholder;
 @property(readonly, nonatomic) _Bool canResetMediaSize;
 @property(readonly, nonatomic) struct CGSize rawOriginalSize;
 @property(readonly, nonatomic) struct CGSize rawDataSize;

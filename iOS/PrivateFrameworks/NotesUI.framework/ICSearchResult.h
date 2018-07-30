@@ -26,12 +26,12 @@
     struct CGRect _snippetAttributedStringInsideFrame;
 }
 
-+ (id)stringMatchHighlightedForAttributedString:(id)arg1 fromSearchResult:(id)arg2;
-+ (id)stringMatchHighlightedForString:(id)arg1 fromSearchResult:(id)arg2;
-+ (id)stringMatchHighlightedForString:(id)arg1 atributedString:(id)arg2 highlightString:(id)arg3;
++ (id)stringMatchHighlightedForAttributedString:(id)arg1 highlightColor:(struct UIColor *)arg2 fromSearchResult:(id)arg3;
++ (id)stringMatchHighlightedForString:(id)arg1 highlightColor:(struct UIColor *)arg2 fromSearchResult:(id)arg3;
++ (id)stringMatchHighlightedForString:(id)arg1 atributedString:(id)arg2 highlightString:(id)arg3 highlightColor:(struct UIColor *)arg4;
 + (id)authorNameToHighlightForNote:(id)arg1 fromSearchResult:(id)arg2 matchWordBoundaries:(_Bool)arg3;
-+ (id)attributedStringWithMatchHighlighted:(id)arg1 textCheckingResult:(id)arg2 usingAttributes:(id)arg3 insideFrame:(struct CGRect)arg4;
-+ (id)attributesByHighlightingAttributes:(id)arg1;
++ (id)attributedStringWithMatchHighlighted:(id)arg1 textCheckingResult:(id)arg2 usingAttributes:(id)arg3 highlightColor:(struct UIColor *)arg4 insideFrame:(struct CGRect)arg5;
++ (id)attributesByHighlightingAttributes:(id)arg1 withHighlightColor:(struct UIColor *)arg2;
 + (_Bool)canFitAttributedString:(id)arg1 ellipses:(id)arg2 shouldPrefixWithEllipses:(_Bool)arg3 insideFrame:(struct CGRect)arg4;
 + (struct CGRect)boundingRectForAttributedString:(id)arg1 fittingSize:(struct CGSize)arg2;
 + (id)bestMatchTokensForString:(id)arg1;
@@ -64,8 +64,8 @@
 - (void)prepareDisplayingTitleWithAccessingObject:(id)arg1;
 - (id)initWithMainContextObject:(id)arg1 currentContextObject:(id)arg2 rankingScore:(double)arg3 relevanceBitField:(unsigned long long)arg4 searchString:(id)arg5 highlightString:(id)arg6;
 - (id)initWithObject:(id)arg1 rankingScore:(double)arg2 relevanceBitField:(unsigned long long)arg3 searchString:(id)arg4 highlightString:(id)arg5;
-- (id)snippetWithMatchHighlightedUsingAttributes:(id)arg1 insideFrame:(struct CGRect)arg2;
-- (id)titleWithMatchHighlightedUsingAttributes:(id)arg1 insideFrame:(struct CGRect)arg2;
+- (id)snippetWithBaseAttributes:(id)arg1 highlightColor:(struct UIColor *)arg2 insideFrame:(struct CGRect)arg3;
+- (id)attributedTitleWithBaseAttributes:(id)arg1 highlightColor:(struct UIColor *)arg2 insideFrame:(struct CGRect)arg3;
 
 @end
 

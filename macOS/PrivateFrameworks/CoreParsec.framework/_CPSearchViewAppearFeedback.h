@@ -14,13 +14,6 @@
 
 @interface _CPSearchViewAppearFeedback : PBCodable <_CPProcessableFeedback, _CPSearchViewAppearFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int viewAppearEvent:1;
-        unsigned int isOnLockScreen:1;
-        unsigned int isOverApp:1;
-        unsigned int readerTextAvailable:1;
-    } _has;
     BOOL _isOnLockScreen;
     BOOL _isOverApp;
     BOOL _readerTextAvailable;
@@ -41,11 +34,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasReaderTextAvailable;
-@property(readonly, nonatomic) BOOL hasIsOverApp;
-@property(readonly, nonatomic) BOOL hasIsOnLockScreen;
-@property(readonly, nonatomic) BOOL hasViewAppearEvent;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

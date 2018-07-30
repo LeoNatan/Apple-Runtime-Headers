@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;
+- (_Bool)allowsAnonymousAccount;
 - (id)requestOperationClasses;
 - (int)operationType;
 - (id)initWithAssetTokenRequest:(id)arg1 headers:(id)arg2;

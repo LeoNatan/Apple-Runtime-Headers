@@ -16,6 +16,9 @@
 - (void)readProtobufData:(id)arg1 type:(unsigned long long)arg2;
 - (void)failedSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(long long)arg2;
 - (void)successfullySentProtobufWithIDSIdentifier:(id)arg1;
+- (id)syncVIPList:(id)arg1;
+- (id)requestWatchAccountsStatus;
+- (id)sendStandaloneAccountIdentity:(id)arg1;
 - (id)sendInitialAccountsSync:(id)arg1;
 - (id)deleteAccount:(id)arg1;
 - (id)addOrUpdateAccount:(id)arg1;

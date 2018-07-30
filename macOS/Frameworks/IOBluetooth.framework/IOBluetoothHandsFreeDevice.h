@@ -41,7 +41,9 @@
 - (void)processIndicatorStatus:(id)arg1;
 - (void)processIndicatorMapping:(id)arg1;
 - (void)processResultCode:(id)arg1;
+- (void)sendOutputVolumePrivate:(id)arg1;
 - (void)sendOutputVolume;
+- (void)sendInputVolumePrivate:(id)arg1;
 - (void)sendInputVolume;
 - (void)processIncomingData:(char *)arg1 length:(unsigned long long)arg2;
 - (id)driverID;

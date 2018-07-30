@@ -6,30 +6,26 @@
 
 #import "NSTableRowView.h"
 
-@class NSLayoutConstraint, PRSLineView;
+@class NSBox, NSLayoutConstraint;
 
 @interface PRSTableRowView : NSTableRowView
 {
-    PRSLineView *_lineView;
+    NSBox *_lineView;
     NSLayoutConstraint *_cellWidth;
     BOOL _gridlinedBelow;
-    BOOL _disallowVibrancy;
     double _inset;
     double _additionalInset;
     id <PRSTableRowDelegate> _tableRowDelegate;
 }
 
-+ (void)updateViewMode:(BOOL)arg1;
 @property(retain, nonatomic) id <PRSTableRowDelegate> tableRowDelegate; // @synthesize tableRowDelegate=_tableRowDelegate;
 @property double additionalInset; // @synthesize additionalInset=_additionalInset;
 @property double inset; // @synthesize inset=_inset;
-@property BOOL disallowVibrancy; // @synthesize disallowVibrancy=_disallowVibrancy;
 @property(nonatomic) BOOL gridlinedBelow; // @synthesize gridlinedBelow=_gridlinedBelow;
 - (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (void)updateConstraints;
 - (void)layout;
-- (BOOL)allowsVibrancy;
 
 @end
 

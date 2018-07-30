@@ -32,7 +32,7 @@
 - (void)saveDeltaSinceTimestamp:(id)arg1 toArchive:(struct String *)arg2;
 - (id)serialize;
 - (void)saveToArchive:(struct String *)arg1;
-- (id)initWithArchive:(const struct String *)arg1 andReplicaID:(id)arg2 withOrderedSubstrings:(vector_6c07be0f *)arg3 timestamp:(id)arg4;
+- (id)initWithArchive:(const struct String *)arg1 andReplicaID:(id)arg2 withOrderedSubstrings:(vector_c5c053b6 *)arg3 timestamp:(id)arg4;
 - (void)encodeWithCRCoder:(id)arg1 string:(struct String *)arg2;
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)initWithCRCoder:(id)arg1 string:(const struct String *)arg2;

@@ -35,14 +35,14 @@
 @property(retain, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 - (void).cxx_destruct;
-- (void)requestLocationUpdateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)requestLocationUpdateWithAccuracy:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didCallLastCompletionHandlerForCompletionHandlerManager:(id)arg1;
 - (void)_updatePlacemarkForCoordinate:(struct CLLocationCoordinate2D)arg1;
 - (void)_updatePlacemarkWithPlacemarks:(id)arg1 error:(id)arg2;
 - (void)resetToDefault;
 @property(readonly, nonatomic) CLLocation *location;
 - (id)_locationForCoordinate:(struct CLLocationCoordinate2D)arg1;
-- (void)_initiateLocationAcquisition;
+- (void)_initiateLocationAcquisitionWithAccuracy:(double)arg1;
 - (void)_handleLocationAcquisitionUpdate:(id)arg1;
 - (void)_setCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(readonly, nonatomic) NSString *subtitle;

@@ -36,6 +36,7 @@
 - (void)responsesForMessage:(id)arg1 maximumResponses:(unsigned long long)arg2 forConversationHistory:(id)arg3 withLanguage:(id)arg4 options:(unsigned long long)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)responsesForMessage:(id)arg1 maximumResponses:(unsigned long long)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned long long)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (id)initWithDynamicDataURL:(id)arg1 displayStringsProvider:(id)arg2;
+- (id)initWithAssetPlistURL:(id)arg1;
 - (id)initWithDynamicDataURL:(id)arg1 withBundleURL:(id)arg2;
 - (id)initWithDynamicDataURL:(id)arg1;
 - (id)init;

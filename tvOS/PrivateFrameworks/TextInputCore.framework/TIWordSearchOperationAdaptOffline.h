@@ -20,9 +20,9 @@
 @property(copy, nonatomic) NSString *paragraph; // @synthesize paragraph=_paragraph;
 @property(copy, nonatomic) TILanguageModelAdaptationContext *adaptationContext; // @synthesize adaptationContext=_adaptationContext;
 @property(retain, nonatomic) TIMecabraWrapper *mecabraWrapper; // @synthesize mecabraWrapper=_mecabraWrapper;
+- (void).cxx_destruct;
 - (void)perform;
 - (void)cancel;
-- (void)dealloc;
 - (id)initWithWordSearch:(id)arg1 paragraph:(id)arg2 adaptationContext:(id)arg3 timeStamp:(double)arg4;
 
 @end

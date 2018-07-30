@@ -8,6 +8,7 @@
 
 @class NSPopUpButton, NSRulerView, NSTextField, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface NSRulerViewAccessibilityPanelController : NSObject
 {
     NSWindow *_accessibilityPanel;

@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)_defaultSelectedComplicationSlot;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
 - (_Bool)_complication:(id)arg1 appearsInDailySnapshotForSlot:(id)arg2;
 - (Class)_optionClassForCustomEditMode:(long long)arg1;
 - (_Bool)_snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;

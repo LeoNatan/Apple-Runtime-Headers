@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSSelectionBinderPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSPopUpButtonPlugin : _NSSelectionBinderPlugin
 {
     unsigned long long _dynamicContentPlacementIndex;

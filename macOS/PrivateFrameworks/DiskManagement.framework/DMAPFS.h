@@ -12,6 +12,7 @@
 }
 
 - (int)isNoBrowseRoleVolume:(struct __DADisk *)arg1 shouldNotBrowse:(char *)arg2;
+- (int)isInstallerVolume:(struct __DADisk *)arg1 installerRole:(char *)arg2;
 - (int)isVMVolume:(struct __DADisk *)arg1 vmRole:(char *)arg2;
 - (int)isRecoveryVolume:(struct __DADisk *)arg1 recoveryRole:(char *)arg2;
 - (int)isSystemVolume:(struct __DADisk *)arg1 systemRole:(char *)arg2;
@@ -44,6 +45,8 @@
 - (int)designatedPhysicalStoreForContainer:(struct __DADisk *)arg1 designatedPhysicalStore:(struct __DADisk **)arg2;
 - (int)physicalStoresForContainer:(struct __DADisk *)arg1 physicalStores:(id *)arg2;
 - (int)containers:(id *)arg1;
+- (int)unlockTargetDiskModeVolume:(id)arg1 user:(id)arg2 passdataType:(unsigned char)arg3 passdata:(id)arg4 options:(id)arg5 details:(id *)arg6;
+- (int)unlockableVolumesForTargetDiskMode:(unsigned int)arg1 options:(id)arg2 list:(id *)arg3;
 - (int)prebootInfoForLockedOrUnlockedVolume:(struct __DADisk *)arg1 user:(id)arg2 info:(id *)arg3 options:(id)arg4;
 - (int)macOSUserForCryptoUserForVolume:(struct __DADisk *)arg1 cryptoUser:(id)arg2 macOSUserGUID:(id *)arg3 options:(id)arg4;
 - (int)cryptoUserForMacOSUserForVolume:(struct __DADisk *)arg1 macOSUser:(id)arg2 apfsCryptoUser:(id *)arg3 options:(id)arg4;
@@ -74,6 +77,11 @@
 - (int)addCryptoUsersToVolume:(struct __DADisk *)arg1 user:(id)arg2 passdata:(id)arg3 newUserRecords:(id)arg4 options:(id)arg5;
 - (int)unlockEncryptedVolume:(struct __DADisk *)arg1 diskUser:(BOOL)arg2 anyUser:(BOOL)arg3 user:(id)arg4 passphrase:(const char *)arg5 passdata:(id)arg6 options:(id)arg7;
 - (int)unlockEncryptedVolume:(struct __DADisk *)arg1 diskUser:(BOOL)arg2 anyUser:(BOOL)arg3 user:(id)arg4 passphrase:(const char *)arg5 passdata:(id)arg6 options:(id)arg7 details:(id *)arg8;
+- (int)isDefragmentationEnabledForVolume:(struct __DADisk *)arg1 enabled:(char *)arg2;
+- (int)isDefragmentationEnabledForContainer:(struct __DADisk *)arg1 enabled:(char *)arg2;
+- (int)setDefragmentationForVolume:(struct __DADisk *)arg1 enable:(BOOL)arg2 options:(id)arg3;
+- (int)immediatelyDefragmentContainer:(struct __DADisk *)arg1 options:(id)arg2;
+- (int)setDefragmentationForContainer:(struct __DADisk *)arg1 enable:(BOOL)arg2 options:(id)arg3;
 - (int)deleteSnapshotForVolume:(struct __DADisk *)arg1 xid:(id)arg2 options:(id)arg3;
 - (int)setRoleForVolume:(struct __DADisk *)arg1 options:(id)arg2;
 - (int)eraseVolume:(struct __DADisk *)arg1 newFilesystem:(id)arg2 newName:(id)arg3 options:(id)arg4;
@@ -88,6 +96,7 @@
 - (int)convertFromHFS:(struct __DADisk *)arg1 dryRun:(BOOL)arg2 options:(id)arg3;
 - (int)isDiskSuitableForConversionFromHFS:(struct __DADisk *)arg1 suitable:(char *)arg2 why:(int *)arg3 options:(id)arg4;
 - (int)institutionalRecoveryKeyBlobForVolume:(struct DMUDSPrivRec *)arg1 keychainFilePath:(id)arg2 keyBlob:(id *)arg3;
+- (void)cancelCurrentOperation;
 - (void)dealloc;
 - (id)initWithManager:(id)arg1;
 - (id)init;

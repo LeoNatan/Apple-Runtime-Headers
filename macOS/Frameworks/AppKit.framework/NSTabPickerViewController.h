@@ -43,6 +43,12 @@ __attribute__((visibility("hidden")))
 - (id)selectedTabViewItemForVisualTabPickerController:(id)arg1;
 - (struct CGRect)frameForVisualTabPickerController:(id)arg1;
 - (id)visualTabPicker:(id)arg1 thumbnailViewForTabItem:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)dealloc;
+- (id)snapshotForWindow:(id)arg1;
+- (BOOL)hasSnapshotForWindow:(id)arg1;
+- (id)_updateSnapshotForWindow:(id)arg1;
+- (id)_makeTabPickerSnapshotForWindow:(id)arg1;
 - (void)hideTabPickerAnimated:(BOOL)arg1;
 - (void)showTabPickerAnimated:(BOOL)arg1 includeNewButton:(BOOL)arg2;
 - (void)_makeTabPickerViewControllerWithTabBarSnapshot:(id)arg1 includeNewButton:(BOOL)arg2;

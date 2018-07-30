@@ -15,7 +15,7 @@
     double _maxDynamicFontSize;
 }
 
-+ (double)_imageScaleForTemplate:(id)arg1;
++ (double)_imageScaleForTemplate:(id)arg1 forDevice:(id)arg2;
 + (_Bool)supportsComplicationFamily:(long long)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;

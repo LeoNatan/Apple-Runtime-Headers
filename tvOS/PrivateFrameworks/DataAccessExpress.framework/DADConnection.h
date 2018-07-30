@@ -26,6 +26,7 @@
     _Bool _registered;
 }
 
++ (unsigned long long)_nextStopMonitoringStatusToken;
 + (void)setShouldIgnoreAccountChanges;
 + (id)sharedConnection;
 @property(nonatomic) _Bool registered; // @synthesize registered=_registered;
@@ -81,13 +82,14 @@
 - (_Bool)updateFolderListForAccountID:(id)arg1 andDataclasses:(long long)arg2 requireChangedFolders:(_Bool)arg3 isUserRequested:(_Bool)arg4;
 - (void)requestDaemonShutdown;
 - (void)removeStoresForAccountWithID:(id)arg1;
-- (void)_requestDaemonStopMonitoringAgents_Sync;
-- (void)requestDaemonStartMonitoringAgents_Sync;
-- (void)requestDaemonStopMonitoringAgents;
-- (void)requestDaemonStartMonitoringAgents;
-- (void)_requestDaemonChangeAgentMonitoringStatus:(_Bool)arg1 waitForReply:(_Bool)arg2;
+- (unsigned long long)requestDaemonStopMonitoringAgentsSync;
+- (void)requestDaemonStartMonitoringAgentsSyncWithToken:(unsigned long long)arg1;
+- (unsigned long long)requestDaemonStopMonitoringAgents;
+- (void)requestDaemonStartMonitoringAgentsWithToken:(unsigned long long)arg1;
+- (void)_requestDaemonChangeAgentMonitoringStatus:(_Bool)arg1 withToken:(unsigned long long)arg2 waitForReply:(_Bool)arg3;
 - (id)currentPolicyKeyForAccountID:(id)arg1;
 - (_Bool)requestPolicyUpdateForAccountID:(id)arg1;
+- (_Bool)_validateXPCReply:(id)arg1;
 - (_Bool)stopWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (_Bool)suspendWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (_Bool)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;

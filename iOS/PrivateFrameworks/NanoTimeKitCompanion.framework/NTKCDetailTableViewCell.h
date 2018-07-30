@@ -15,11 +15,14 @@
 }
 
 + (id)titleFont;
++ (id)defaultTextColor;
 + (id)reuseIdentifier;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) _Bool showsSeparator; // @synthesize showsSeparator=_showsSeparator;
 - (void).cxx_destruct;
 - (void)_fontSizeDidChange;
+- (id)_fontForDetailTextLabel;
+- (id)_fontForTextLabel;
 - (_Bool)_visibleAtPoint:(struct CGPoint)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;

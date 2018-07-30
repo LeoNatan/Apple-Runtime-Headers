@@ -6,6 +6,7 @@
 
 #import "NSButton.h"
 
+__attribute__((visibility("hidden")))
 @interface NCListViewDeleteButton : NSButton
 {
 }

@@ -12,9 +12,11 @@
 
 @interface CKDPShare : PBCodable <NSCopying>
 {
+    NSString *_displayedHostname;
     NSString *_etag;
     NSMutableArray *_invitedKeyToRemoves;
     CKDPProtectionInfo *_invitedPcs;
+    NSString *_origin;
     NSMutableArray *_participants;
     NSMutableArray *_potentialMatchs;
     int _publicAccess;
@@ -22,9 +24,11 @@
     CKDPShareIdentifier *_shareId;
     NSData *_shortTokenHash;
     NSString *_shortTokenRoutingKey;
+    BOOL _anonymousPublicAccess;
     BOOL _publisherModel;
     struct {
         unsigned int publicAccess:1;
+        unsigned int anonymousPublicAccess:1;
         unsigned int publisherModel:1;
     } _has;
 }
@@ -32,7 +36,9 @@
 + (Class)invitedKeyToRemoveType;
 + (Class)potentialMatchType;
 + (Class)participantType;
+@property(retain, nonatomic) NSString *origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) NSData *shortTokenHash; // @synthesize shortTokenHash=_shortTokenHash;
+@property(retain, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(retain, nonatomic) NSMutableArray *invitedKeyToRemoves; // @synthesize invitedKeyToRemoves=_invitedKeyToRemoves;
 @property(retain, nonatomic) NSMutableArray *potentialMatchs; // @synthesize potentialMatchs=_potentialMatchs;
 @property(retain, nonatomic) NSString *shortTokenRoutingKey; // @synthesize shortTokenRoutingKey=_shortTokenRoutingKey;
@@ -51,7 +57,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasOrigin;
 @property(readonly, nonatomic) BOOL hasShortTokenHash;
+@property(readonly, nonatomic) BOOL hasDisplayedHostname;
+@property(nonatomic) BOOL hasAnonymousPublicAccess;
+@property(nonatomic) BOOL anonymousPublicAccess; // @synthesize anonymousPublicAccess=_anonymousPublicAccess;
 @property(nonatomic) BOOL hasPublisherModel;
 @property(nonatomic) BOOL publisherModel; // @synthesize publisherModel=_publisherModel;
 - (id)invitedKeyToRemoveAtIndex:(unsigned long long)arg1;

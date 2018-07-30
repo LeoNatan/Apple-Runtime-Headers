@@ -12,6 +12,7 @@
 {
 }
 
+- (id)renditionPackName;
 - (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 
 // Remaining properties

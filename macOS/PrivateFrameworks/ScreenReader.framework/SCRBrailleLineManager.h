@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)doesLineContainElement:(id)arg1;
 - (void)setLineFocus:(int)arg1 forElement:(id)arg2 andPrepareBrailleItemDescriptionForRequest:(id)arg3 hasBrailleFocus:(BOOL)arg4;
 - (id)brailleLineRequest;
+- (void)sendBrailleLineRequest;
 - (id)_deepestFocusedThroughElement;
 @property(nonatomic) SCRElement *focusedElement; // @dynamic focusedElement;
 - (void)setLine:(id)arg1 withFocusedElement:(id)arg2 retainedElements:(id)arg3;

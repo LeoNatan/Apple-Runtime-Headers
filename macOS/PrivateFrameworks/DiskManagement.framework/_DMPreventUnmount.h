@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     int _openDirFD;
 }
 
-- (int)stopPreventingUnmount;
+- (void)stopPreventingUnmount;
 - (int)startPreventingUnmountOfMountedDisk:(struct DMUDSPrivRec *)arg1;
 - (void)dealloc;
 - (id)init;

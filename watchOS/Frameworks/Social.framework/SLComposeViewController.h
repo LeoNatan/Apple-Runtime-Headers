@@ -42,7 +42,6 @@
 + (_Bool)isAvailableForExtension:(id)arg1 inHostApplicationBundleID:(id)arg2;
 + (_Bool)isAvailableForServiceType:(id)arg1;
 + (_Bool)isAvailableForExtension:(id)arg1;
-+ (_Bool)_isAvailableForMediaShareExtension:(id)arg1;
 + (_Bool)_isMultiUserDevice;
 + (_Bool)_legacyBuiltInAvailabilityForService:(id)arg1 inHostApplicationBundleID:(id)arg2;
 + (id)_shareExtensionWithIdentifier:(id)arg1;
@@ -61,6 +60,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)_instantiateAndBeginExtensionIfNeeded;
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)_useCustomDimmingView;
 - (void)remoteViewController:(id)arg1 didTerminateWithError:(id)arg2;

@@ -8,6 +8,7 @@
 
 @class NSMapTable, NSOperationQueue, NSRegion, NSView, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface _NSDisplayOperation : NSObject
 {
     NSWindow *_window;

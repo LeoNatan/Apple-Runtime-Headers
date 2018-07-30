@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSString, NSView, VisualTabPickerTileContainerView;
+@class NSImage, NSString, NSView, VisualTabPickerTileContainerView;
 
 @protocol VisualTabPickerTileContainerDataSource <NSObject>
+- (NSImage *)siteIconForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1;
 - (int)muteButtonStateForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1;
 - (BOOL)visualTabPickerTileContainerViewShouldShowMuteButton:(VisualTabPickerTileContainerView *)arg1;
 - (struct CGRect)visibleBoundsForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1;

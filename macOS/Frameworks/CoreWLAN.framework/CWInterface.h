@@ -24,6 +24,7 @@
     BOOL _lastPowerState;
     NSObject<OS_dispatch_queue> *_eventQueue;
     NSXPCConnection *_xpcConnection;
+    BOOL _ownsXPCConnection;
 }
 
 + (id)interfaceWithName:(id)arg1;
@@ -55,6 +56,7 @@
 - (id)wlanChannel;
 - (id)countryCode;
 - (id)bssid;
+- (BOOL)__blockBSSIDAccess;
 - (id)ssidData;
 - (id)ssid;
 - (id)supportedWLANChannels;
@@ -75,9 +77,11 @@
 - (BOOL)__startEventMonitoring;
 - (void)dealloc;
 - (void)finalize;
+- (id)countryCodeInternal;
 - (BOOL)twoGHzChainDisabledAndReturnReassocRequired:(char *)arg1 error:(id *)arg2;
 - (BOOL)set2GHzChainDisabled:(BOOL)arg1 andReassocRequired:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)setPeerTrafficRegistrationWithConfiguration:(id)arg1 error:(id *)arg2;
+- (id)joinHistory;
 - (id)autoJoinHistory;
 - (id)roamHistory;
 - (BOOL)__powerOfAllRadiosMatches:(int)arg1;
@@ -111,6 +115,8 @@
 - (id)queryANQPCacheWithElements:(unsigned long long)arg1 network:(id)arg2 maxAge:(double)arg3;
 - (id)queryANQPElements:(unsigned long long)arg1 network:(id)arg2 maxAge:(double)arg3 waitForWiFi:(BOOL)arg4 waitForBluetooth:(BOOL)arg5 priority:(long long)arg6 error:(out id *)arg7;
 - (id)name;
+- (id)powerDebugInfo;
+- (id)IO80211ControllerInfo;
 - (BOOL)causedLastWake;
 - (id)lastPreferredNetworkJoined;
 - (id)lastNetworkJoined;
@@ -146,7 +152,6 @@
 - (void)stopHostAPMode;
 - (BOOL)startHostAPMode:(out id *)arg1;
 - (BOOL)startHostAPModeWithSSID:(id)arg1 securityType:(unsigned long long)arg2 channel:(id)arg3 password:(id)arg4 error:(out id *)arg5;
-- (BOOL)setWakeOnWirelessEnabled:(BOOL)arg1 error:(out id *)arg2;
 - (BOOL)wakeOnWirelessEnabled;
 - (BOOL)networkInterfaceAvailable;
 - (long long)interfaceControlState;

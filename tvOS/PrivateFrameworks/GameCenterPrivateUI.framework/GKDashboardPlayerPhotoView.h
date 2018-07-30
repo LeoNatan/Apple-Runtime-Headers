@@ -21,6 +21,7 @@
 @property(nonatomic) _Bool useDarkerPlaceholder; // @synthesize useDarkerPlaceholder=_useDarkerPlaceholder;
 @property(retain, nonatomic) GKPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
+- (void)invalidatePhoto;
 - (void)setFocused:(_Bool)arg1 withAnimationCoordinator:(id)arg2;
 - (void)updateFocusEffects;
 

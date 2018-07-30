@@ -14,12 +14,13 @@ __attribute__((visibility("hidden")))
 @interface TSWPEquationInfo : TSDImageInfo <TSWPDrawableAttachmentDescriptionProvider>
 {
     EQKitEquation *_equation;
-    TSSPropertyMap *_textProperties;
     NSString *_source;
     double _depth;
+    TSSPropertyMap *_textProperties;
     TSPData *_pdfImage;
 }
 
++ (id)propertiesForChangePropagation;
 + (id)propertiesForStorage:(id)arg1 characterIndex:(unsigned long long)arg2;
 + (id)filteredTextPropertiesFromTextProperties:(id)arg1;
 + (id)fontNameFromTextProperties:(id)arg1;
@@ -30,22 +31,36 @@ __attribute__((visibility("hidden")))
 + (Class)drawableInfoSubclassForClass:(Class)arg1 unarchiver:(id)arg2;
 + (_Bool)archiveHasEquationSource:(id)arg1;
 @property(retain, nonatomic) TSPData *pdfImage; // @synthesize pdfImage=_pdfImage;
+@property(retain, nonatomic) TSSPropertyMap *textProperties; // @synthesize textProperties=_textProperties;
 @property(nonatomic) double depth; // @synthesize depth=_depth;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
-@property(retain, nonatomic) TSSPropertyMap *textProperties; // @synthesize textProperties=_textProperties;
 @property(retain, nonatomic) EQKitEquation *equation; // @synthesize equation=_equation;
 - (void).cxx_destruct;
 - (id)description;
 - (id)descriptionForDrawableAttachment:(id)arg1;
+- (id)promisedDataForType:(id)arg1;
+- (id)typesToPromiseWhenCopyingSingleDrawable;
+- (void)acceptVisitor:(id)arg1;
 - (void)saveToArchive:(struct ImageArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct ImageArchive *)arg1 unarchiver:(id)arg2;
 - (id)propertiesForParentAttachment;
 - (void)saveCharacterStylePropertiesFromPropertyMap:(id)arg1 toArchive:(struct CharacterStylePropertiesArchive *)arg2 archiver:(id)arg3;
 - (void)loadCharacterStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct CharacterStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
-- (int)elementKind;
+- (id)imageDataWithObjectContext:(id)arg1;
+- (void)p_rebuildEquationPDF;
+- (void)replaceSourceWithNewSource:(id)arg1;
+- (void)updateTextProperties:(id)arg1;
 - (void)updateForStyleChangeToStorage:(id)arg1 charIndex:(unsigned long long)arg2;
 - (_Bool)needsUpdateForStyleChangeToStorage:(id)arg1 charIndex:(unsigned long long)arg2;
+- (struct CGSize)rawDataSize;
+- (struct CGSize)defaultOriginalSize;
+- (int)elementKind;
+- (_Bool)canBeMediaPlaceholder;
+- (_Bool)canResetMediaSize;
+- (_Bool)canAdjustImage;
+- (_Bool)canBeMasked;
 - (_Bool)supportsStyleInspecting;
+- (_Bool)canAspectRatioLockBeChangedByUser;
 - (_Bool)isSelectable;
 - (_Bool)canChangeWrapType;
 - (_Bool)canAnchor;

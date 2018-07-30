@@ -10,10 +10,10 @@
 
 @interface CUIPSDImageRef : NSObject
 {
-    NSString *_path;
-    BOOL _parsedForLayers;
-    int _file;
     struct CPSDFile *_psd;
+    NSString *_path;
+    int _file;
+    BOOL _parsedForLayers;
     _CUIPSDSublayerInfo *_rootLayers;
 }
 
@@ -21,6 +21,9 @@
 + (BOOL)isValidPSDResourceAtPath:(id)arg1 withLayerCount:(unsigned int *)arg2 validateLayers:(BOOL)arg3;
 + (BOOL)isValidPSDResourceAtPath:(id)arg1 withLayerCount:(unsigned int *)arg2;
 + (BOOL)isValidPSDResourceAtPath:(id)arg1;
+@property(nonatomic) struct CPSDFile *psd; // @synthesize psd=_psd;
+@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
+@property(nonatomic) int file; // @synthesize file=_file;
 - (id)_layerEffectsAtAbsoluteIndex:(unsigned int)arg1;
 - (id)_bevelEmbossFromLayerEffectsInfo:(struct CPSDObjectEffectsLayerInfo *)arg1;
 - (id)_gradientOverlayFromLayerEffectsAtAbsoluteIndex:(unsigned int)arg1;
@@ -86,7 +89,6 @@
 - (struct CPSDFile *)psdFileForComposite;
 - (struct CPSDFile *)psdFile;
 - (struct CPSDFile *)_psdFileWithLayers:(BOOL)arg1;
-- (id)path;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (BOOL)loadPSDFileWithLayers:(BOOL)arg1;

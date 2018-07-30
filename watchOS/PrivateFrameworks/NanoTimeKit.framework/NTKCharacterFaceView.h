@@ -6,11 +6,12 @@
 
 #import <NanoTimeKit/NTKFaceView.h>
 
+#import "NTKUtilityComplicationFactoryDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
 @class NSString, NTKCharacterTimeView, NTKUtilityComplicationFactory, UIColor, UITapGestureRecognizer, UIView;
 
-@interface NTKCharacterFaceView : NTKFaceView <UIGestureRecognizerDelegate>
+@interface NTKCharacterFaceView : NTKFaceView <UIGestureRecognizerDelegate, NTKUtilityComplicationFactoryDelegate>
 {
     NTKCharacterTimeView *_characterTimeView;
     UIView *_circleView;
@@ -24,7 +25,7 @@
     float _optionClothingDesaturation;
 }
 
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
@@ -32,6 +33,7 @@
 - (_Bool)_supportsTimeScrubbing;
 - (struct CGRect)_tapToSpeakRect;
 - (void)_faceTapped:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
 - (void)_cleanupAfterZoom;
@@ -41,6 +43,7 @@
 - (void)_performWristRaiseAnimation;
 - (void)_prepareWristRaiseAnimation;
 - (float)_verticalPaddingForStatusBar;
+- (id)utilityDateComplicationFontForDateStyle:(unsigned int)arg1;
 - (void)_updateComplicationViewsAlphasWithAnimation:(_Bool)arg1;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
@@ -59,6 +62,7 @@
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -66,10 +70,11 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
+- (id)_slotForUtilitySlot:(int)arg1;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_needsForegroundContainerView;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

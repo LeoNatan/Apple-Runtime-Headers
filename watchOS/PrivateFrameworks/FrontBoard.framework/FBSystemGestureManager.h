@@ -16,6 +16,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)removeGestureRecognizer:(id)arg1 fromDisplay:(id)arg2;
 - (void)addGestureRecognizer:(id)arg1 toDisplay:(id)arg2;
 - (id)_systemGestureManagerForDisplayWithIdentityCreatingIfNeeded:(id)arg1;

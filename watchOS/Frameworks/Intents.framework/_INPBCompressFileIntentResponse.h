@@ -7,32 +7,34 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBCompressFileIntentResponse.h"
 
-@class PBUnknownFields, _INPBString;
+@class NSString, _INPBString;
 
-@interface _INPBCompressFileIntentResponse : PBCodable <NSCopying>
+@interface _INPBCompressFileIntentResponse : PBCodable <_INPBCompressFileIntentResponse, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    _INPBString *_entityName;
-    _Bool _success;
     CDStruct_f2ecb737 _has;
+    _Bool _success;
+    _INPBString *_entityName;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
+@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasEntityName;
 @property(nonatomic) _Bool hasSuccess;
+@property(readonly, nonatomic) _Bool hasEntityName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

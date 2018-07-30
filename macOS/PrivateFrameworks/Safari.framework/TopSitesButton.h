@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 - (void)draggingExited:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (id)_clipViewAncestor;
-- (BOOL)allowsVibrancy;
 - (void)prepareForFavoritesBar;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

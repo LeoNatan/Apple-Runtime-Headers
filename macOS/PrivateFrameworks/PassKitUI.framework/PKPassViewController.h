@@ -24,7 +24,6 @@
     PKPassBackView *_backView;
 }
 
-+ (struct CGSize)maxViewSize;
 + (id)passViewController;
 @property BOOL disableActions; // @synthesize disableActions=_disableActions;
 @property(readonly) BOOL isFlipped; // @synthesize isFlipped=_isFlipped;

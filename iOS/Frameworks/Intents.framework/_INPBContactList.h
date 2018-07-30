@@ -7,35 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBContactList.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBCondition;
+@class NSArray, NSString, _INPBCondition;
 
-@interface _INPBContactList : PBCodable <NSCopying>
+@interface _INPBContactList : PBCodable <_INPBContactList, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBCondition *_condition;
-    NSMutableArray *_contacts;
+    NSArray *_contacts;
 }
 
 + (Class)contactType;
-+ (id)options;
+@property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
-@property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasCondition;
 - (id)contactAtIndex:(unsigned long long)arg1;
-- (unsigned long long)contactsCount;
+@property(readonly, nonatomic) unsigned long long contactsCount;
 - (void)addContact:(id)arg1;
 - (void)clearContacts;
+@property(readonly, nonatomic) _Bool hasCondition;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

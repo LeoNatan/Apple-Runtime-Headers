@@ -29,8 +29,8 @@
 @property __weak SMPaths *pather; // @synthesize pather=_pather;
 @property(retain) NSMutableArray *decisionLog; // @synthesize decisionLog=_decisionLog;
 - (void).cxx_destruct;
-- (BOOL)shouldMigrateBundle:(id)arg1 withVersion:(id)arg2 andSourceLocation:(id)arg3 presentInLocation:(id *)arg4;
-- (BOOL)shouldMigrateApplicationBundle:(id)arg1 withVersion:(id)arg2 andSourceLocation:(id)arg3 presentInLocation:(id *)arg4;
+- (BOOL)shouldMigrateBundle:(id)arg1 withVersion:(id)arg2 andSourceLocation:(id)arg3 presentInLocation:(id *)arg4 relocateToLocation:(id *)arg5;
+- (BOOL)shouldMigrateApplicationBundle:(id)arg1 withVersion:(id)arg2 andSourceLocation:(id)arg3 presentInLocation:(id *)arg4 relocateToLocation:(id *)arg5;
 - (long long)compareRemoteBundleVersion:(id)arg1 toLocalBundleVersion:(id)arg2;
 - (void)addBundlesFromEnumerator:(id)arg1 toDictionary:(id)arg2 skipAppStoreBundles:(BOOL)arg3;
 - (void)scanSourceApplications;

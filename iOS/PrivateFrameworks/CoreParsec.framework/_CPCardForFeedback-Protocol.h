@@ -10,7 +10,6 @@
 
 @protocol _CPCardForFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(readonly, nonatomic) _Bool hasFbr;
 @property(copy, nonatomic) NSString *fbr;
 @property(copy, nonatomic) NSArray *cardSections;
 - (id)initWithDictionary:(NSDictionary *)arg1;

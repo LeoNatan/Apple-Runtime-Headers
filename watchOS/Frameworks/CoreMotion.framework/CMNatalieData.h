@@ -12,19 +12,19 @@
 {
     int fRecordId;
     double fStartDate;
-    int fSession;
+    int fActivityType;
     double fMets;
     double fNatalies;
     double fBasalNatalies;
     NSUUID *fSourceId;
 }
 
-+ (id)sessionName:(int)arg1;
 + (id)maxNatalieEntries;
 + (_Bool)supportsSecureCoding;
 - (id)description;
 @property(readonly, nonatomic) NSUUID *sourceId;
 @property(readonly, nonatomic) int recordId;
+@property(readonly, nonatomic) int activityType;
 @property(readonly, nonatomic) int session;
 @property(readonly, nonatomic) NSNumber *basalNatalies;
 @property(readonly, nonatomic) NSNumber *natalies;
@@ -34,7 +34,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithStartDate:(double)arg1 recordId:(int)arg2 session:(int)arg3 mets:(double)arg4 natalies:(double)arg5 basalNatalies:(double)arg6 sourceId:(id)arg7;
+- (id)initWithStartDate:(double)arg1 recordId:(int)arg2 activityType:(int)arg3 mets:(double)arg4 natalies:(double)arg5 basalNatalies:(double)arg6 sourceId:(id)arg7;
 
 @end
 

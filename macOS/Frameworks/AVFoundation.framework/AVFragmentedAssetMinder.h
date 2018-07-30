@@ -14,7 +14,6 @@
 }
 
 + (id)fragmentedAssetMinderWithAsset:(id)arg1 mindingInterval:(double)arg2;
-- (void).cxx_destruct;
 - (void)removeFragmentedAsset:(id)arg1;
 - (void)addFragmentedAsset:(id)arg1;
 - (void)_setMindingInterval:(double)arg1 removeAllAssets:(BOOL)arg2;

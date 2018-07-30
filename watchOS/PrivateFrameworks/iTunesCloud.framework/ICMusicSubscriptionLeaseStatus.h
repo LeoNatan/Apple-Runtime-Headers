@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class ICStoreDialogResponse;
+@class ICStoreDialogResponse, NSDictionary;
 
 @interface ICMusicSubscriptionLeaseStatus : NSObject <NSCopying>
 {
@@ -18,8 +18,10 @@
     _Bool _hasPendingLeaseAcquisition;
     int _leaseState;
     ICStoreDialogResponse *_stateReasonDialog;
+    NSDictionary *_stateReasonDialogMetricsDictionary;
 }
 
+@property(copy, nonatomic) NSDictionary *stateReasonDialogMetricsDictionary; // @synthesize stateReasonDialogMetricsDictionary=_stateReasonDialogMetricsDictionary;
 @property(copy, nonatomic) ICStoreDialogResponse *stateReasonDialog; // @synthesize stateReasonDialog=_stateReasonDialog;
 @property(nonatomic) int leaseState; // @synthesize leaseState=_leaseState;
 @property(nonatomic) _Bool hasPendingLeaseAcquisition; // @synthesize hasPendingLeaseAcquisition=_hasPendingLeaseAcquisition;

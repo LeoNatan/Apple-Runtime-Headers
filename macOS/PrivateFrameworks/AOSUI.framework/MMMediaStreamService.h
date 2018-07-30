@@ -142,6 +142,7 @@
 - (void)_serviceEnableChanged:(id)arg1;
 - (void)willGainFocus;
 - (void)willSelect;
+- (BOOL)hasDataToMerge;
 - (BOOL)isDataService;
 - (void)_handleWillExceedCloudStorage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)showMoreInfo:(id)arg1;

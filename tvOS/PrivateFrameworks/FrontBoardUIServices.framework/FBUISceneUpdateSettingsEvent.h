@@ -16,7 +16,7 @@
 
 @property(retain, nonatomic) FBSSceneSettingsDiff *settingsDiff; // @synthesize settingsDiff=_diff;
 @property(copy, nonatomic) FBSSceneSettings *settings; // @synthesize settings=_settings;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

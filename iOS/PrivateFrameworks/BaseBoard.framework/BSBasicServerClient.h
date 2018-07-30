@@ -20,6 +20,7 @@
 
 + (id)wrapperWithConnection:(id)arg1;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
+- (void).cxx_destruct;
 - (void)sendMessageWithPacker:(CDUnknownBlockType)arg1 replyHandler:(CDUnknownBlockType)arg2 onQueue:(id)arg3;
 - (void)sendMessageWithPacker:(CDUnknownBlockType)arg1;
 - (void)sendMessage:(id)arg1;

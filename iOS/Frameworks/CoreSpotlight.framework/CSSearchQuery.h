@@ -34,6 +34,7 @@
     CDUnknownBlockType _changedAttributesHandler;
     CDUnknownBlockType _countChangedHandler;
     CDUnknownBlockType _resolvedAttributeNamesHandler;
+    CDUnknownBlockType _completionsHandler;
     NSString *_privateBundleID;
 }
 
@@ -45,6 +46,7 @@
 + (id)_attributesForURLs;
 @property(retain, nonatomic) NSString *privateBundleID; // @synthesize privateBundleID=_privateBundleID;
 @property(nonatomic) _Bool privateIndex; // @synthesize privateIndex=_privateIndex;
+@property(copy) CDUnknownBlockType completionsHandler; // @synthesize completionsHandler=_completionsHandler;
 @property(copy) CDUnknownBlockType resolvedAttributeNamesHandler; // @synthesize resolvedAttributeNamesHandler=_resolvedAttributeNamesHandler;
 @property(copy) CDUnknownBlockType countChangedHandler; // @synthesize countChangedHandler=_countChangedHandler;
 @property(copy) CDUnknownBlockType changedAttributesHandler; // @synthesize changedAttributesHandler=_changedAttributesHandler;
@@ -64,6 +66,7 @@
 - (void)didFinishWithError:(id)arg1;
 - (void)didReturnResults:(long long)arg1 resultsData:(id)arg2 oidData:(id)arg3 protectionClass:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)processLiveResultsData:(id)arg1 oidData:(id)arg2 protectionClass:(id)arg3 isTopHitQuery:(_Bool)arg4;
+- (void)processCompletionsResultsData:(id)arg1 protectionClass:(id)arg2 isTopHitQuery:(_Bool)arg3;
 - (void)processResultsData:(id)arg1 protectionClass:(id)arg2 isTopHitQuery:(_Bool)arg3;
 - (id)processResultFromPlist:(id)arg1 protectionClass:(id)arg2 isTopHitQuery:(_Bool)arg3;
 - (void)processResultFromPlist:(id)arg1 atIndex:(unsigned long long)arg2 protectionClass:(id)arg3 oids:(long long *)arg4 oidCount:(unsigned int)arg5 items:(id)arg6 isTopHitQuery:(_Bool)arg7;
@@ -82,6 +85,7 @@
 - (id)debugDescription;
 - (id)description;
 - (id)connection;
+- (double)currentTime;
 - (_Bool)attribute;
 - (_Bool)counting;
 - (_Bool)live;

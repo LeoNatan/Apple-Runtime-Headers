@@ -6,15 +6,15 @@
 
 #import "NSObject.h"
 
-@class AXMFeatureTracker, AXMTimer;
+@class AXDispatchTimer, AXMFeatureTracker;
 
 @interface _AXMFeatureTrackerContainer : NSObject
 {
     AXMFeatureTracker *_tracker;
-    AXMTimer *_activeTimer;
+    AXDispatchTimer *_activeTimer;
 }
 
-@property(retain, nonatomic) AXMTimer *activeTimer; // @synthesize activeTimer=_activeTimer;
+@property(retain, nonatomic) AXDispatchTimer *activeTimer; // @synthesize activeTimer=_activeTimer;
 @property(retain, nonatomic) AXMFeatureTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
 - (id)initWithFeature:(id)arg1 queue:(id)arg2;

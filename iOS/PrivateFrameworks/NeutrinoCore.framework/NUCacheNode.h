@@ -35,13 +35,13 @@
 - (id)_evaluateVideo:(out id *)arg1;
 - (id)_evaluateImage:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
-- (void)resolveSourceWithResponse:(struct NUResponse *)arg1 temporaryURL:(id)arg2;
+- (void)resolveSourceWithResponse:(struct NUResponse *)arg1;
 - (_Bool)installTemporaryURL:(id)arg1 intoPersistentURL:(id)arg2 error:(out id *)arg3;
 - (id)newRenderRequestWithOriginalRequest:(id)arg1 error:(out id *)arg2;
 - (id)persistentURL;
 - (id)temporaryURLPrefix;
 - (id)persistentURLPrefix;
-- (id)cacheIdentifier;
+@property(readonly, nonatomic) NSString *cacheIdentifier;
 - (id)resolvedSourceNode:(out id *)arg1;
 - (void)_resolveWithSourceNode:(id)arg1 error:(id)arg2;
 - (void)resolveWithSourceNode:(id)arg1 error:(id)arg2;

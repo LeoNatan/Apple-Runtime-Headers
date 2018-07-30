@@ -10,11 +10,8 @@
 {
 }
 
-+ (id)confirmationRequiredWithValueToConfirm:(int)arg1;
 + (id)confirmationRequiredWithNotebookItemTypeToConfirm:(int)arg1;
-+ (id)disambiguationWithValuesToDisambiguate:(id)arg1;
 + (id)disambiguationWithNotebookItemTypesToDisambiguate:(id)arg1;
-+ (id)successWithResolvedValue:(int)arg1;
 + (id)successWithResolvedNotebookItemType:(int)arg1;
 
 @end

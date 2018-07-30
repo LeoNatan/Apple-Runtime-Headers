@@ -34,7 +34,6 @@ __attribute__((visibility("hidden")))
     NSView *liveResizeAutoUncollapsedTrailingOverlayView;
     _NSSplitViewShadowView *leadingOverlayShadowView;
     _NSSplitViewShadowView *trailingOverlayShadowView;
-    NSMutableArray *trackingOverlayViews;
     NSView *_transientDraggingOperationUncollapsedView;
     NSMutableArray *autocollapsedViews;
     NSMutableArray *dividerViews;
@@ -42,6 +41,8 @@ __attribute__((visibility("hidden")))
     long long _registeredTransientBehavior;
     _NSSplitViewSpringLoadingView *leadingSpringLoadingView;
     _NSSplitViewSpringLoadingView *trailingSpringLoadingView;
+    unsigned long long willResizeDelegateNotificationToken;
+    unsigned long long didResizeDelegateNotificationToken;
     struct {
         unsigned int resizeSubviewsWithOldSizeIsBeingInvokedByViewWillDraw:1;
         unsigned int resizeSubviewsWithOldSizeInvokedDelegate:1;

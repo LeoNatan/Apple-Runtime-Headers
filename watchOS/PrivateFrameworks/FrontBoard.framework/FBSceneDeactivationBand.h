@@ -18,6 +18,7 @@
 
 + (id)bandWithSceneLevel:(float)arg1;
 @property(readonly, nonatomic) float level; // @synthesize level=_level;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -27,7 +28,6 @@
 - (void)addAssertion:(id)arg1;
 @property(readonly, nonatomic) unsigned int assertionCount;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)initWithSceneLevel:(float)arg1;
 
 // Remaining properties

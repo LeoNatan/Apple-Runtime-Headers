@@ -8,6 +8,7 @@
 
 @class NSDecimalNumber;
 
+__attribute__((visibility("hidden")))
 @interface _NSComboBoxPlugin : _NSSelectionBinderPlugin
 {
     NSDecimalNumber *_originalMinValue;

@@ -6,16 +6,18 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSObject<OS_dispatch_queue>, RKResponseCollection;
+@class NSArray, NSObject<OS_dispatch_queue>, RKRankLearner, RKResponseCollection;
 
 @interface RKMessageResponseManager : NSObject
 {
     RKResponseCollection *_collection;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSArray *_preferredLanguages;
+    RKRankLearner *_rankLearner;
 }
 
 + (id)sharedManager;
+@property(retain) RKRankLearner *rankLearner; // @synthesize rankLearner=_rankLearner;
 @property(retain, nonatomic) NSArray *preferredLanguages; // @synthesize preferredLanguages=_preferredLanguages;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain) RKResponseCollection *collection; // @synthesize collection=_collection;
@@ -23,19 +25,25 @@
 - (_Bool)isQuestion:(id)arg1 withLanguage:(id)arg2;
 - (void)flushDynamicData;
 - (void)resetRegisteredResponses;
+- (id)getRankLearner;
+- (void)registerResponse:(id)arg1 forMessage:(id)arg2 metadata:(id)arg3 withLanguage:(id)arg4;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 forContext:(id)arg3 withEffectiveDate:(id)arg4 withLanguage:(id)arg5;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 forContext:(id)arg3 withLanguage:(id)arg4;
+- (id)categoryForMessageWithoutQueue:(id)arg1 langID:(id)arg2;
 - (id)categoryForMessage:(id)arg1 langID:(id)arg2;
-- (id)responsesForMessageWithLanguageDetectionImp:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 forContext:(id)arg4 withLanguage:(id *)arg5 inputModes:(id)arg6 options:(unsigned int)arg7;
-- (id)responsesForMessageImp:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 forContext:(id)arg4 withLanguage:(id)arg5 options:(unsigned int)arg6;
+- (id)responsesForMessageWithLanguageDetectionImp:(id)arg1 maximumResponses:(unsigned int)arg2 forRecipientID:(id)arg3 forConversationHistory:(id)arg4 forContext:(id)arg5 withLanguage:(id *)arg6 inputModes:(id)arg7 options:(unsigned int)arg8;
+- (id)responsesForMessageImp:(id)arg1 maximumResponses:(unsigned int)arg2 forRecipientID:(id)arg3 forConversationHistory:(id)arg4 forContext:(id)arg5 withLanguage:(id)arg6 options:(unsigned int)arg7;
 - (id)responsesForMessageWithLanguageDetection:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 forContext:(id)arg4 withLanguage:(id *)arg5 options:(unsigned int)arg6;
 - (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 withLanguage:(id)arg4 inputModes:(id)arg5 options:(unsigned int)arg6;
 - (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
 - (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
 - (void)responsesForMessageWithLanguageDetection:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 forContext:(id)arg4 withLanguage:(id *)arg5 options:(unsigned int)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 recipientID:(id)arg3 forConversationHistory:(id)arg4 withLanguage:(id)arg5 options:(unsigned int)arg6;
+- (void)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 recipientID:(id)arg3 forConversationHistory:(id)arg4 withLanguage:(id)arg5 options:(unsigned int)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (void)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (id)initWithDynamicDataURL:(id)arg1 displayStringsProvider:(id)arg2;
+- (id)initWithAssetPlistURL:(id)arg1;
 - (id)initWithDynamicDataURL:(id)arg1 withBundleURL:(id)arg2;
 - (id)initWithDynamicDataURL:(id)arg1;
 - (id)init;

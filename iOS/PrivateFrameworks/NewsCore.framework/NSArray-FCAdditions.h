@@ -33,6 +33,7 @@
 - (void)fc_subarrayWithCount:(unsigned long long)arg1 result:(CDUnknownBlockType)arg2;
 - (id)fc_safeSubarrayWithCountFromBack:(unsigned long long)arg1;
 - (id)fc_safeSubarrayWithCountFromFront:(unsigned long long)arg1;
+- (id)fc_safeObjectAtIndex:(unsigned long long)arg1;
 - (id)fc_arrayByMergingAdjacentObjectsWithMergePolicy:(CDUnknownBlockType)arg1 mergeBlock:(CDUnknownBlockType)arg2;
 - (id)fc_subarrayToIndex:(unsigned long long)arg1 withMaxCount:(unsigned long long)arg2 range:(struct _NSRange *)arg3;
 - (id)fc_subarrayFromIndex:(unsigned long long)arg1 withMaxCount:(unsigned long long)arg2 range:(struct _NSRange *)arg3;

@@ -62,7 +62,7 @@
 @property(readonly, nonatomic, getter=isResumable) _Bool resumable;
 @property(readonly, nonatomic, getter=isPausable) _Bool pausable;
 @property(readonly, nonatomic, getter=isPrioritizable) _Bool prioritizable;
-@property(readonly, retain, nonatomic) id <FBApplicationPlaceholderProgress> progress;
+@property(readonly, nonatomic) id <FBApplicationPlaceholderProgress> progress;
 - (void)dealloc;
 - (id)_initWithApplicationProxy:(id)arg1;
 - (id)_initWithBundleProxy:(id)arg1 url:(id)arg2;

@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasVisibleRect;
 - (void)setUIState:(id)arg1 forChart:(id)arg2;
 - (id)UIStateForChart:(id)arg1;
+- (void)removeAllUIStatesForSheet:(id)arg1;
 - (void)removeUIStateForSheet:(id)arg1;
 - (id)p_uiStateForActiveSheet;
 - (id)uiStateForSheet:(id)arg1 createIfNeeded:(_Bool)arg2;

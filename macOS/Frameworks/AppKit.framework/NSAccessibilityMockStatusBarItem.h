@@ -8,6 +8,7 @@
 
 @class NSStatusItem;
 
+__attribute__((visibility("hidden")))
 @interface NSAccessibilityMockStatusBarItem : NSAccessibilityMockUIElement
 {
     NSStatusItem *_statusItem;

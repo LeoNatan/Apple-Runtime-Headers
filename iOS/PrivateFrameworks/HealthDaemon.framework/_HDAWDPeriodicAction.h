@@ -8,7 +8,7 @@
 
 #import "_HDAWDAction.h"
 
-@class NSDate, NSObject<OS_dispatch_queue>, NSString;
+@class HDAssertion, HDProfile, NSDate, NSObject<OS_dispatch_queue>, NSString;
 
 @interface _HDAWDPeriodicAction : NSObject <_HDAWDAction>
 {
@@ -19,11 +19,13 @@
     NSString *_lastProcessedDateKey;
     long long _repeatInterval;
     long long _graceInterval;
-    _Bool _requiresClassA;
+    _Bool _requiresClassB;
     long long _intervalMultiple;
     long long _maximumAttemptCount;
     double _minimumDelayBetweenAttempts;
+    HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
+    HDAssertion *_preparedDatabaseAccessibilityAssertion;
     CDUnknownBlockType _block;
     long long _waitingToRun;
     NSDate *_lastSubmissionAttemptDate;
@@ -34,7 +36,9 @@
 @property(readonly, nonatomic) long long waitingToRun; // @synthesize waitingToRun=_waitingToRun;
 - (void).cxx_destruct;
 - (_Bool)doForced;
+- (_Bool)_runBlockWithAccessibilityAssertion:(id)arg1 error:(id *)arg2;
 - (void)doIfWaiting;
+- (void)doIfWaitingOnMaintenanceQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stop;
 - (void)start;
 - (void)_performActivity:(id)arg1;
@@ -45,6 +49,7 @@
 @property(readonly, nonatomic) NSDate *lastProcessedDate;
 - (void)reset;
 - (void)setLastProcessedDate:(id)arg1;
+- (void)_queue_prepareAccessibilityAssertionIfNeeded;
 - (void)_queue_setLastProcessedDate:(id)arg1;
 - (void)_queue_setIntervalCounter:(long long)arg1;
 - (void)_queue_setLastSubmissionAttemptDate:(id)arg1;
@@ -52,7 +57,8 @@
 - (void)_beginWaitingToRun;
 - (void)_loadState;
 - (id)taskName;
-- (id)initWithTaskName:(char *)arg1 keyPrefix:(id)arg2 xpcInterval:(long long)arg3 xpcGraceInterval:(long long)arg4 requiresClassA:(_Bool)arg5 intervalMultiple:(long long)arg6 maximumAttemptCount:(long long)arg7 minimumDelayBetweenAttempts:(double)arg8 block:(CDUnknownBlockType)arg9;
+- (void)dealloc;
+- (id)initWithTaskName:(char *)arg1 keyPrefix:(id)arg2 xpcInterval:(long long)arg3 xpcGraceInterval:(long long)arg4 requiresClassB:(_Bool)arg5 intervalMultiple:(long long)arg6 maximumAttemptCount:(long long)arg7 minimumDelayBetweenAttempts:(double)arg8 profile:(id)arg9 block:(CDUnknownBlockType)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

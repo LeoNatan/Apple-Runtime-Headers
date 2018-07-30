@@ -6,7 +6,9 @@
 
 #import <UIFoundation/NSTextBlock.h>
 
-@interface NSTextTable : NSTextBlock
+#import "NSSecureCoding.h"
+
+@interface NSTextTable : NSTextBlock <NSSecureCoding>
 {
     unsigned int _numCols;
     unsigned int _tableFlags;
@@ -15,6 +17,7 @@
     void *_tableSecondary;
 }
 
++ (_Bool)supportsSecureCoding;
 + (void)initialize;
 - (void)drawBackgroundForBlock:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3 characterRange:(struct _NSRange)arg4 layoutManager:(id)arg5;
 - (_Bool)_missingColumnsForRowRange:(struct _NSRange)arg1 blockIndex:(unsigned int)arg2 text:(id)arg3;

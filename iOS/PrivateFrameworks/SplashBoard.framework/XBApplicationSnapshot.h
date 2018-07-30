@@ -16,7 +16,6 @@
     XBSnapshotContainerIdentity *_containerIdentity;
     id <XBSnapshotManifestStore> _store;
     NSMutableDictionary *_variantsByID;
-    _Bool _invalidated;
     NSString *_identifier;
     NSString *_logIdentifier;
     NSString *_groupID;
@@ -32,13 +31,11 @@
     NSDate *_creationDate;
     NSDate *_lastUsedDate;
     NSDate *_expirationDate;
-    _Bool _fullScreen;
     struct CGSize _referenceSize;
     struct CGRect _contentFrame;
     long long _interfaceOrientation;
     long long _contentType;
     long long _fileFormat;
-    _Bool _imageOpaque;
     double _imageScale;
     long long _imageOrientation;
     XBStatusBarSettings *_statusBarSettings;
@@ -48,15 +45,22 @@
     XBApplicationSnapshotGenerationContext *_generationContext;
     UIImage *_cachedImage;
     unsigned long long _imageAccessCount;
-    _Bool _keepImageAccessUntilExpiration;
-    _Bool _hasProtectedContent;
     NSDictionary *_extendedData;
+    _Bool _invalidated;
+    _Bool _fullScreen;
+    _Bool _imageOpaque;
+    _Bool _keepImageAccessUntilExpiration;
+    _Bool _keepImageAccessForPreHeat;
+    _Bool _hasProtectedContent;
     CDUnknownBlockType _imageGenerator;
     struct CGAffineTransform _imageTransform;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)dataForImage:(id)arg1 withFormat:(long long)arg2;
++ (id)_allSecureCodingClassesIncludingDefaultAndClientSpecified;
++ (void)setSecureCodableCustomExtendedDataClasses:(id)arg1;
++ (id)secureCodableCustomExtendedDataClasses;
 + (id)normalizeSnapshotName:(id)arg1;
 @property(nonatomic) struct CGAffineTransform imageTransform; // @synthesize imageTransform=_imageTransform;
 @property(nonatomic) long long fileLocation; // @synthesize fileLocation=_fileLocation;
@@ -116,6 +120,8 @@
 - (void)_manifestQueueDecode_setStore:(id)arg1;
 - (id)descriptionWithoutVariants;
 - (_Bool)isValid;
+- (void)_endPreHeatImageAccess;
+- (void)_beginPreHeatImageAccess;
 - (void)endImageAccess;
 - (void)beginImageAccess;
 - (void)_snynchronized_evaluateImageAccessUntilExpirationEnablingIfNecessary:(_Bool)arg1;
@@ -124,6 +130,7 @@
 - (void)purgeImage;
 - (_Bool)hasCachedImage;
 - (void)loadImage;
+- (void)loadImageForPreHeat;
 - (id)cachedImageForInterfaceOrientation:(long long)arg1;
 - (id)imageForInterfaceOrientation:(long long)arg1;
 - (id)variantWithIdentifier:(id)arg1;

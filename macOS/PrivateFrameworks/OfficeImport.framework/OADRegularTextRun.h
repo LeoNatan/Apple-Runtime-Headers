@@ -13,11 +13,11 @@
     NSMutableString *mText;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isSimilarToTextRun:(id)arg1;
 - (id)text;
 - (unsigned long long)characterCount;
 - (BOOL)isEmpty;
-- (void)dealloc;
 - (id)init;
 
 @end

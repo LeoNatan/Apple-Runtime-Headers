@@ -8,7 +8,6 @@
 
 @class MNLocation, NSDate, NSTimer;
 
-__attribute__((visibility("hidden")))
 @interface MNTunnelLocationProjector : NSObject
 {
     id <MNTunnelLocationProjectorDelegate> _delegate;

@@ -22,8 +22,6 @@ __attribute__((visibility("hidden")))
     _NSFullScreenCreateTileDropTargetWindow *_leftDropTargetWindow;
     _NSFullScreenCreateTileDropTargetWindow *_rightDropTargetWindow;
     BOOL _requestedJoinSpace;
-    BOOL _animatingReveal;
-    BOOL _animatingDismiss;
 }
 
 @property(nonatomic) _NSFullScreenSpace *space; // @synthesize space=_space;
@@ -37,8 +35,10 @@ __attribute__((visibility("hidden")))
 - (void)_dismissDropTargets;
 - (void)_dismissRightDropTarget;
 - (void)_revealRightDropTarget;
+- (void)_cleanUpRightDropTargetIfNeeded;
 - (void)_dismissLeftDropTarget;
 - (void)_revealLeftDropTarget;
+- (void)_cleanUpLeftDropTargetIfNeeded;
 - (struct CGRect)_rightCollapsedRect;
 - (struct CGRect)_rightDropRect;
 - (struct CGRect)_leftCollapsedRect;

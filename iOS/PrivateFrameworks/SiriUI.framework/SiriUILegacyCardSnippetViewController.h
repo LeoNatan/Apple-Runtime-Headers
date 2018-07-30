@@ -53,6 +53,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setSnippet:(id)arg1;
 - (id)_backingSnippetViewController;
+- (id)_legacyCardSectionViewController;
 - (id)initWithSnippet:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <ChatKit/CKShareSheetChatController.h>
 
-@class NSMutableArray;
+@class CKChatEagerUploadController, NSMutableArray;
 
 @interface CKModalTranscriptController : CKShareSheetChatController
 {
@@ -17,8 +17,10 @@
     int _entryViewInvisible;
     _Bool _cameraSelectionDisabled;
     _Bool _forceMMS;
+    CKChatEagerUploadController *_eagerUploadController;
 }
 
+@property(retain, nonatomic) CKChatEagerUploadController *eagerUploadController; // @synthesize eagerUploadController=_eagerUploadController;
 @property(nonatomic) _Bool forceMMS; // @synthesize forceMMS=_forceMMS;
 @property(nonatomic) _Bool mimeType; // @synthesize mimeType=_mimeType;
 - (void).cxx_destruct;
@@ -44,6 +46,7 @@
 - (void)insertMessage:(id)arg1 appProxy:(id)arg2;
 - (void)insertRichLinkWithURL:(id)arg1 data:(id)arg2;
 - (_Bool)_insertMediaObject:(id)arg1;
+- (void)setComposition:(id)arg1;
 - (id)initWithNavigationController:(id)arg1;
 
 @end

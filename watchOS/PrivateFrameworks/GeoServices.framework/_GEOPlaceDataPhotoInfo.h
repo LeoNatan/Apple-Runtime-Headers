@@ -10,7 +10,6 @@
 
 @class NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface _GEOPlaceDataPhotoInfo : NSObject <GEOMapItemPhotoInfo>
 {
     struct CGSize _size;

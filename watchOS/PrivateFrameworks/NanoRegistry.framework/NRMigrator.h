@@ -6,27 +6,37 @@
 
 #import "NSObject.h"
 
-@class NRDevice, NSPointerArray;
+@class NRDevice, NSArray;
 
 @interface NRMigrator : NSObject
 {
-    NSPointerArray *_observers;
     _Bool _migrating;
     NRDevice *_migratingDevice;
 }
 
++ (void)ingestPostRestoreMigrationDataForConsentedDevices:(id)arg1;
++ (id)migrationDataPreRestoreForConsentedDevices:(id)arg1;
 + (id)sharedMigrator;
-@property(readonly, nonatomic) NRDevice *migratingDevice; // @synthesize migratingDevice=_migratingDevice;
+@property(readonly, retain, nonatomic) NRDevice *migratingDevice; // @synthesize migratingDevice=_migratingDevice;
 - (void).cxx_destruct;
 - (void)enterPreMigrationMode;
+- (id)lastMigrationRequestPhoneName;
 - (void)beginMigrationWithDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)beginMigrationWithDevice:(id)arg1 passcode:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)setMigrationConsented:(_Bool)arg1 forDeviceID:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)setMigrationConsented:(_Bool)arg1 forDevice:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (void)enumerateObservers:(CDUnknownBlockType)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1;
-- (id)init;
+@property(readonly, retain, nonatomic) NSArray *migratableDevices;
+@property(readonly, retain, nonatomic) NSArray *migratableDevicesRequiringConsent;
+@property(readonly, retain, nonatomic) NSArray *devicesExpectedToBeMigratableAfterRestore;
+@property(readonly, nonatomic) _Bool migrationIsAvailable;
+- (id)migrationConsentRequestData;
+- (id)devicesFromMigrationConsentRequestData:(id)arg1;
+- (id)_SHA256WithString:(id)arg1;
+- (id)UDIDUUID;
+- (id)compressMigrationProtobuf:(id)arg1;
+- (void)shrinkMigrationProtobufs:(id)arg1;
+- (id)packMigrationProtobufs:(id)arg1;
+- (id)shortenStringByCompleteUnicodeCharactersToReduceStorageSpace:(id)arg1;
 
 @end
 

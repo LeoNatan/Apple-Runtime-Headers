@@ -11,9 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)_appearanceForStandardTableView;
-- (id)_appearanceForSourceListTableView;
-- (id)name;
+- (id)_appearanceForNonVibrantContent;
+- (id)_appearanceForVibrantContent;
 
 @end
 

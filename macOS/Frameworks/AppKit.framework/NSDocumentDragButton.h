@@ -8,8 +8,9 @@
 
 #import "NSDraggingSource.h"
 
-@class NSEvent, NSString, NSURL;
+@class NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface NSDocumentDragButton : NSButton <NSDraggingSource>
 {
     struct __ddbFlags {
@@ -19,7 +20,6 @@
         unsigned int RESERVED:29;
     } _ddbFlags;
     NSURL *representedURL;
-    NSEvent *mouseDownEvent;
 }
 
 - (void)dealloc;

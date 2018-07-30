@@ -27,6 +27,7 @@
 @property(nonatomic) unsigned char wrap; // @dynamic wrap;
 @property(readonly, nonatomic) _Bool mipmaps;
 @property(readonly, nonatomic) unsigned char format; // @dynamic format;
+@property(readonly, nonatomic) unsigned int mipCount;
 @property(readonly, nonatomic) unsigned int bytesPerPixel; // @dynamic bytesPerPixel;
 @property(readonly, nonatomic) unsigned int planeLength; // @dynamic planeLength;
 @property(readonly, nonatomic) unsigned int planes; // @dynamic planes;

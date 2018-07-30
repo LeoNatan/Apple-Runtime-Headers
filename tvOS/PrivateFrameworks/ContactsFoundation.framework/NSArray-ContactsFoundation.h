@@ -33,6 +33,8 @@
 - (id)_cn_tail;
 - (unsigned long long)_cn_indexOfFirstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)_cn_firstObjectPassingTest:(CDUnknownBlockType)arg1;
+- (id)_cn_balancedSlicesWithMaximumCount:(unsigned long long)arg1;
+- (id)_cn_slicesWithMaximumCount:(unsigned long long)arg1;
 - (id)_cn_partition:(CDUnknownBlockType)arg1;
 - (id)_cn_filter:(CDUnknownBlockType)arg1;
 - (id)_cn_map:(CDUnknownBlockType)arg1;

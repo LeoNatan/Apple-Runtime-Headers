@@ -7,36 +7,38 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBHomeAttribute.h"
 
-@class PBUnknownFields, _INPBHomeAttributeValue;
+@class NSString, _INPBHomeAttributeValue;
 
-@interface _INPBHomeAttribute : PBCodable <NSCopying>
+@interface _INPBHomeAttribute : PBCodable <_INPBHomeAttribute, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    int _attributeType;
-    _INPBHomeAttributeValue *_attributeValue;
     struct {
         unsigned int attributeType:1;
     } _has;
+    int _attributeType;
+    _INPBHomeAttributeValue *_attributeValue;
 }
 
-+ (id)options;
 @property(retain, nonatomic) _INPBHomeAttributeValue *attributeValue; // @synthesize attributeValue=_attributeValue;
+@property(nonatomic) int attributeType; // @synthesize attributeType=_attributeType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) _Bool hasAttributeValue;
 - (int)StringAsAttributeType:(id)arg1;
 - (id)attributeTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasAttributeType;
-@property(nonatomic) int attributeType; // @synthesize attributeType=_attributeType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

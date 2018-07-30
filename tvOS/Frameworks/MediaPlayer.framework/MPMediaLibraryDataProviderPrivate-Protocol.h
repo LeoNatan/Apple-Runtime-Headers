@@ -30,6 +30,7 @@
 - (void)performStoreItemLibraryImport:(MPStoreItemLibraryImport *)arg1 withCompletion:(void (^)(NSArray *, NSError *))arg2;
 - (MIPMultiverseIdentifier *)multiverseIdentifierForCollectionWithPersistentID:(long long)arg1 groupingType:(long long)arg2;
 - (MIPMultiverseIdentifier *)multiverseIdentifierForTrackWithPersistentID:(long long)arg1;
+- (_Bool)deleteDatabaseProperty:(NSString *)arg1;
 - (_Bool)setValue:(id)arg1 forDatabaseProperty:(NSString *)arg2;
 - (id)valueForDatabaseProperty:(NSString *)arg1;
 - (NSString *)localizedSectionHeaderForSectionIndex:(unsigned long long)arg1;

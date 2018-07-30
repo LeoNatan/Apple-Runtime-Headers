@@ -35,9 +35,11 @@
     NSLock *_updateLock;
     NSNumber *_multipleAdvertisingSupported;
     NSHashTable *_l2capChannels;
+    unsigned long long _attributeIDGenerator;
 }
 
 + (long long)authorizationStatus;
+@property unsigned long long attributeIDGenerator; // @synthesize attributeIDGenerator=_attributeIDGenerator;
 @property(readonly, retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
 @property(retain, nonatomic) NSNumber *multipleAdvertisingSupported; // @synthesize multipleAdvertisingSupported=_multipleAdvertisingSupported;
 @property(readonly, nonatomic) _Bool waitingForReady; // @synthesize waitingForReady=_waitingForReady;
@@ -84,8 +86,10 @@
 - (id)init;
 - (void)removeAllL2CAPChannels;
 - (id)l2capChannelForPeer:(id)arg1 withPsm:(unsigned short)arg2;
+- (void)overrideLocalLeAddress:(id)arg1;
 - (void)unpublishL2CAPChannel:(unsigned short)arg1;
 - (void)publishL2CAPChannel:(unsigned short)arg1 requiresEncryption:(_Bool)arg2 options:(id)arg3;
+- (void)publishL2CAPChannel:(unsigned short)arg1 requiresEncryption:(_Bool)arg2;
 - (void)publishL2CAPChannelWithEncryption:(_Bool)arg1;
 - (void)dealloc;
 - (void)forEachCentral:(CDUnknownBlockType)arg1;

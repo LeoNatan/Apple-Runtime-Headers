@@ -11,9 +11,7 @@
 @protocol _SFPBApiResults <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(copy, nonatomic) NSArray *flights;
-@property(readonly, nonatomic) _Bool hasResultType;
 @property(nonatomic) int resultType;
-@property(readonly, nonatomic) _Bool hasStatus;
 @property(nonatomic) int status;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

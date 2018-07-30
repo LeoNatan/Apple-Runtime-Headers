@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property id <_NSFunctionRowCustomizationDragTargetDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL dragInBounds; // @synthesize dragInBounds=_dragInBounds;
 - (BOOL)performDragOperation:(id)arg1;
+- (BOOL)prepareForDragOperation:(id)arg1;
 - (void)concludeDragOperation:(id)arg1;
 - (void)draggingExited:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;

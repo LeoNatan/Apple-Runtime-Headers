@@ -6,14 +6,18 @@
 
 #import "_UIRemoteViewController.h"
 
-@class QLRemoteItemViewController;
+@class NSExtension, QLRemoteItemViewController;
 
 __attribute__((visibility("hidden")))
 @interface QLRemotePreviewHostViewController : _UIRemoteViewController
 {
     QLRemoteItemViewController *_remoteItemViewController;
+    NSExtension *_extension;
+    id _request;
 }
 
+@property(retain, nonatomic) id request; // @synthesize request=_request;
+@property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property __weak QLRemoteItemViewController *remoteItemViewController; // @synthesize remoteItemViewController=_remoteItemViewController;
 - (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

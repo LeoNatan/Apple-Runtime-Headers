@@ -8,24 +8,25 @@
 
 #import "NSCopying.h"
 
-@class NSString, NSURL;
+@class CLKDevice, NSString, NSURL;
 
 @interface CLKVideo : NSObject <NSCopying>
 {
+    CLKDevice *_device;
     NSString *_name;
     NSURL *_url;
 }
 
-+ (id)videoNamed:(id)arg1;
-+ (id)videoWithName:(id)arg1 url:(id)arg2;
-+ (id)videoNamed:(id)arg1 bundle:(id)arg2;
-+ (id)_videoNamed:(id)arg1 bundle:(id)arg2 modifier:(id)arg3;
++ (id)videoNamed:(id)arg1 forDevice:(id)arg2;
++ (id)videoWithName:(id)arg1 forDevice:(id)arg2 url:(id)arg3;
++ (id)videoNamed:(id)arg1 forDevice:(id)arg2 inBundle:(id)arg3;
++ (id)_videoNamed:(id)arg1 device:(id)arg2 bundle:(id)arg3 modifier:(id)arg4;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSURL *url; // @dynamic url;
-- (id)initWithName:(id)arg1 url:(id)arg2;
+- (id)initWithName:(id)arg1 forDevice:(id)arg2 url:(id)arg3;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class NCRemoteViewServiceWindow, NSExtensionContext;
 
+__attribute__((visibility("hidden")))
 @interface NCRemoteViewService : NSServiceViewController
 {
     BOOL _registeredObservers;

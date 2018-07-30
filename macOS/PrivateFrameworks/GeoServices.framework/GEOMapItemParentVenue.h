@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface GEOMapItemParentVenue : NSObject
 {
     unsigned long long _businessID;

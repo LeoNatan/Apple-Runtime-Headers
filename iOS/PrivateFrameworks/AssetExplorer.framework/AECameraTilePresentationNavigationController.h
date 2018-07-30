@@ -6,6 +6,7 @@
 
 #import "UINavigationController.h"
 
+__attribute__((visibility("hidden")))
 @interface AECameraTilePresentationNavigationController : UINavigationController
 {
     id <AECameraTilePresentationDelegate> _presentationDelegate;

@@ -8,7 +8,6 @@
 
 @class MFPGraphicsState, MFPObjectTable, NSMutableArray, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface MFPGraphics : NSObject
 {
     struct CGRect mCanvas;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (float)unitsPerInch:(int)arg1;
+- (void).cxx_destruct;
 - (id)fontNameForUppercaseFontName:(id)arg1;
 - (void)strokePath:(id)arg1 pen:(id)arg2;
 - (void)fillPath:(id)arg1 brush:(id)arg2;
@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)setHorizontalDpi:(int)arg1 verticalDpi:(int)arg2;
 - (id)objectTable;
 - (struct CGRect)canvas;
-- (void)dealloc;
 - (id)initWithCanvas:(struct CGRect)arg1;
 
 @end

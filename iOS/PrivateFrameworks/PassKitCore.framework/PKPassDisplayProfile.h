@@ -18,6 +18,7 @@
     _Bool _hasStripImage;
     long long _passStyle;
     PKColor *_backgroundColor;
+    PKColor *_secondaryBackgroundColor;
     PKColor *_foregroundColor;
     PKColor *_labelColor;
     PKColor *_stripColor;
@@ -32,6 +33,7 @@
 @property(retain, nonatomic) PKColor *stripColor; // @synthesize stripColor=_stripColor;
 @property(retain, nonatomic) PKColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(retain, nonatomic) PKColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
+@property(retain, nonatomic) PKColor *secondaryBackgroundColor; // @synthesize secondaryBackgroundColor=_secondaryBackgroundColor;
 @property(retain, nonatomic) PKColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) long long passStyle; // @synthesize passStyle=_passStyle;
 - (void).cxx_destruct;

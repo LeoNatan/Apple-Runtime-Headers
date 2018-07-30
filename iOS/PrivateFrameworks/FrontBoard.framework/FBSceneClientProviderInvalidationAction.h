@@ -13,8 +13,8 @@
     BSAction *_action;
 }
 
+- (void).cxx_destruct;
 - (void)invalidate;
-- (void)dealloc;
 - (id)init;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 

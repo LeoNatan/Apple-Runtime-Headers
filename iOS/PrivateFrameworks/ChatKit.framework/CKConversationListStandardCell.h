@@ -22,11 +22,13 @@
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)_calculateLayoutFrames;
 - (void)_updateAvatarView;
+- (void)increaseContrastDidChange;
 - (id)avatarView;
 - (void)layoutSubviews;
 - (void)updateForEditing:(_Bool)arg1;
 - (void)updateUnreadIndicatorWithImage:(id)arg1;
 - (void)updateFromLabelWithText:(id)arg1;
+- (void)updateContentsForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

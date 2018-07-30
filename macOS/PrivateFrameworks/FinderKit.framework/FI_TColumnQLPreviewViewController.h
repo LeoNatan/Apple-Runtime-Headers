@@ -4,16 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FinderKit/FI_TQLPreviewViewController.h>
+#import <FinderKit/FI_TPropertyQLPreviewViewController.h>
 
 __attribute__((visibility("hidden")))
-@interface FI_TColumnQLPreviewViewController : FI_TQLPreviewViewController
+@interface FI_TColumnQLPreviewViewController : FI_TPropertyQLPreviewViewController
 {
+    _Bool _isApplicableToUI;
 }
 
-- (void)adjustPreviewFrame;
++ (id)keyPathsForValuesAffectingShouldBeVisible;
+@property(nonatomic, getter=isApplicableToUI) _Bool applicableToUI; // @synthesize applicableToUI=_isApplicableToUI;
+- (_Bool)shouldBeVisible;
+- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 - (void)dealloc;
 - (void)viewLoaded;
+- (void)initCommon;
 
 @end
 

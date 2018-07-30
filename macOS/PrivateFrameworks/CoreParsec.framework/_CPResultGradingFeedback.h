@@ -14,10 +14,6 @@
 
 @interface _CPResultGradingFeedback : PBCodable <_CPProcessableFeedback, _CPResultGradingFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int grade:1;
-    } _has;
     int _grade;
     unsigned long long _timestamp;
     _CPSearchResultForFeedback *_result;
@@ -37,10 +33,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasTextFeedback;
-@property(readonly, nonatomic) BOOL hasGrade;
-@property(readonly, nonatomic) BOOL hasResult;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

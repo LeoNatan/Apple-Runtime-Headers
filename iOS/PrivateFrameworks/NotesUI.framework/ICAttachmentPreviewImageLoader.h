@@ -22,6 +22,7 @@
 }
 
 + (struct UIImage *)orientedImage:(struct UIImage *)arg1 withTransform:(struct CGAffineTransform)arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform)arg4;
++ (struct UIImage *)orientedImage:(struct UIImage *)arg1 withBackground:(int)arg2;
 @property(nonatomic) long long imageOrientation; // @synthesize imageOrientation=_imageOrientation;
 @property(nonatomic) _Bool delayLoadingURLs; // @synthesize delayLoadingURLs=_delayLoadingURLs;
 @property(copy, nonatomic) NSArray *previewImageURLs; // @synthesize previewImageURLs=_previewImageURLs;

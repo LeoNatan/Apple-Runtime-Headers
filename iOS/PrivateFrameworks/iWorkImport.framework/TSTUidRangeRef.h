@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (struct TSCERangeCoordinate)rangeCoordinate;
 - (void)setRangeReference:(struct TSCERangeRef)arg1 stickyBits:(unsigned char)arg2;
 - (struct TSCERangeRef)rangeReference;
+- (_Bool)isSingleASTNode;
 - (id)uidTractList;
 @property(readonly, nonatomic) UUIDData_5fbc143e tableUID; // @synthesize tableUID=_tableUID;
 - (void)convertGeometricRangeToUID;

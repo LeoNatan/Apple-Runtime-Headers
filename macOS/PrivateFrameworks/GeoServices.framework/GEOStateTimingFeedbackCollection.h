@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOStateTimingFeedbackCollection : PBCodable <NSCopying>
 {
     struct GEOSessionID _sessionID;

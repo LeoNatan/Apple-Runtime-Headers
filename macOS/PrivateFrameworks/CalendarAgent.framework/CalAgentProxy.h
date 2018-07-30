@@ -40,6 +40,7 @@
 - (void)isLocalToServerInProgressForReminders:(CDUnknownBlockType)arg1;
 - (void)_isLocalToServerInProgressForComponentType:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)isPersistenceAvailableWithReply:(CDUnknownBlockType)arg1;
+- (void)getLastSelectedCalendarIdentifierWithReply:(CDUnknownBlockType)arg1;
 - (void)setDefaultCalendarForRemindersToCalendarIdentifier:(id)arg1;
 - (void)getDefaultCalendarForRemindersCalendarIdentifierWithReply:(CDUnknownBlockType)arg1;
 - (void)setDefaultCalendarForEventsToCalendarIdentifier:(id)arg1;
@@ -73,6 +74,7 @@
 - (void)addBirthdayCalendars;
 - (void)disableHolidayCalendars;
 - (void)addHolidayCalendars;
+- (void)updateNCMessages;
 - (void)remindersBadgeCount:(CDUnknownBlockType)arg1;
 - (void)calendarBadgeCount:(CDUnknownBlockType)arg1;
 - (void)pokeNotificationService;

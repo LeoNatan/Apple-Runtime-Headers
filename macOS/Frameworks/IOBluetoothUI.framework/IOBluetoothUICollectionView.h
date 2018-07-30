@@ -81,7 +81,6 @@
     BOOL mUpdateBattery;
     BOOL mSafeToEnumerate;
     NSMutableArray *mDeviceArrayTmp;
-    const char *mLEDeviceAddress;
     BOOL windowLoaded;
     EnhancedAppleOptions *enhancedAppleOptionsController;
     AppleOptions *appleOptionsController;
@@ -162,7 +161,6 @@
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;
-- (void)setLEAddr:(id)arg1;
 - (void)continueInquiryUpdate;
 - (void)deviceInquiryComplete:(id)arg1 error:(int)arg2 aborted:(BOOL)arg3;
 - (void)deviceInquiryDeviceNameUpdated:(id)arg1 device:(id)arg2 devicesRemaining:(int)arg3;
@@ -193,6 +191,7 @@
 - (void)connectionComplete:(id)arg1 status:(int)arg2;
 - (void)_menuConnect:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
+- (id)_addMenuItemToMenu:(id)arg1 withTitle:(id)arg2 representedObject:(id)arg3 action:(SEL)arg4;
 - (void)_restartInquiry:(id)arg1;
 - (void)_resumeInquiry;
 - (void)_pauseInquiry;

@@ -6,12 +6,13 @@
 
 #import <PhotoLibraryServices/_PLManagedAlbum.h>
 
+#import "PLCloudDeletable.h"
 #import "PLSearchableAssetCollection.h"
 #import "PLUserEditableAlbumProtocol.h"
 
 @class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSSet, NSString, NSURL, PLManagedAsset, UIImage;
 
-@interface PLManagedAlbum : _PLManagedAlbum <PLSearchableAssetCollection, PLUserEditableAlbumProtocol>
+@interface PLManagedAlbum : _PLManagedAlbum <PLSearchableAssetCollection, PLUserEditableAlbumProtocol, PLCloudDeletable>
 {
     _Bool _albumShouldBeAutomaticallyDeleted;
     _Bool _needsPersistenceUpdate;
@@ -24,6 +25,8 @@
 + (id)keyPathsForValuesAffectingPhotosCount;
 + (id)keyPathsForValuesAffectingApproximateCount;
 + (id)validKindsForPersistence;
++ (id)cloudUUIDKeyForDeletion;
++ (long long)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)childKeyForOrdering;
 + (id)albumSupportsAssetOrderKeysPredicate;
 + (id)searchIndexAllowedPredicate;
@@ -67,6 +70,8 @@
 - (void)didSave;
 - (void)willSave;
 - (_Bool)isValidKindForPersistence;
+@property(readonly, copy) NSString *cloudUUIDForDeletion;
+@property(readonly) long long cloudDeletionType;
 - (void)prepareForDeletion;
 @property(readonly, retain, nonatomic) NSMutableOrderedSet *mutableAssets;
 - (id)childKeyForOrdering;
@@ -77,6 +82,12 @@
 - (id)assetUUIDsForPreviewWithCount:(unsigned long long)arg1;
 - (unsigned long long)searchIndexCategory;
 - (id)searchIndexContents;
+@property(readonly, nonatomic) NSDate *keyAssetCreationDate;
+@property(readonly, nonatomic) NSString *keyAssetUUID;
+@property(readonly, nonatomic) unsigned long long numberOfAssets;
+@property(readonly, nonatomic) NSDate *searchableEndDate;
+@property(readonly, nonatomic) NSDate *searchableStartDate;
+@property(readonly, nonatomic) NSString *subtitle;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *assetOrders; // @dynamic assetOrders;
@@ -85,6 +96,7 @@
 @property(readonly, nonatomic) _Bool canContributeToCloudSharedAlbum;
 @property(readonly, nonatomic) _Bool canShowAvalancheStacks;
 @property(readonly, nonatomic) _Bool canShowComments;
+@property(nonatomic) short cloudDeleteState;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, retain, nonatomic) NSDate *endDate;
@@ -106,7 +118,6 @@
 @property(readonly, nonatomic) _Bool isRecentlyAddedAlbum;
 @property(readonly, nonatomic) _Bool isStandInAlbum;
 @property(readonly, nonatomic) _Bool isUserLibraryAlbum;
-@property(readonly, nonatomic) _Bool isWallpaperAlbum;
 @property(retain, nonatomic) PLManagedAsset *keyAsset;
 @property(readonly, retain, nonatomic) NSNumber *kind;
 @property(readonly, nonatomic) int kindValue;

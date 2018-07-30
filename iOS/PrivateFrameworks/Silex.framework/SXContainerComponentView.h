@@ -14,14 +14,17 @@
 @interface SXContainerComponentView : SXComponentView <SXDragManagerDataSource, SXComponentHosting>
 {
     NSArray *_componentViews;
+    id <SXMediaSharingPolicyProvider> _mediaSharingPolicyProvider;
     SXDragManager *_dragManager;
 }
 
 @property(retain, nonatomic) SXDragManager *dragManager; // @synthesize dragManager=_dragManager;
+@property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 @property(retain, nonatomic) NSArray *componentViews; // @synthesize componentViews=_componentViews;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)allowHierarchyRemoval;
+- (_Bool)userInteractable;
 - (id)dragManager:(id)arg1 dragableAtLocation:(struct CGPoint)arg2;
 - (id)viewForDragManager:(id)arg1;
 - (void)didApplyBehavior:(id)arg1;
@@ -40,6 +43,7 @@
 - (struct CGRect)originalFrameForContentView:(id)arg1 behavior:(id)arg2;
 - (id)contentViewForBehavior:(id)arg1;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 mediaSharingPolicyProvider:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

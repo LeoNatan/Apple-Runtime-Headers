@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDate, NSError, NSString, SKPayment;
+@class NSArray, NSData, NSDate, NSError, NSString, SKPayment;
 
 @interface SKPaymentTransaction : NSObject
 {
@@ -14,18 +14,32 @@
 }
 
 - (void).cxx_destruct;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)mergeWithServerTransaction:(id)arg1;
-- (id)UUID;
-- (id)initWithPayment:(id)arg1;
 - (id)initWithServerTransaction:(id)arg1;
-@property(readonly, nonatomic) NSArray *downloads; // @dynamic downloads;
-@property(readonly, nonatomic) long long transactionState; // @dynamic transactionState;
-- (id)transactionReceipt;
-@property(readonly, nonatomic) NSString *transactionIdentifier; // @dynamic transactionIdentifier;
-@property(readonly, nonatomic) NSDate *transactionDate; // @dynamic transactionDate;
-@property(readonly, nonatomic) SKPayment *payment; // @dynamic payment;
-@property(readonly, nonatomic) SKPaymentTransaction *originalTransaction; // @dynamic originalTransaction;
-@property(readonly, nonatomic) NSError *error; // @dynamic error;
+@property(readonly, nonatomic) NSString *_transactionIdentifier;
+- (void)_setTransactionState:(long long)arg1;
+- (void)_setTransactionReceipt:(id)arg1;
+- (void)_setTransactionIdentifier:(id)arg1;
+- (void)_setTransactionDate:(id)arg1;
+- (void)_setTemporaryIdentifier:(id)arg1;
+- (void)_setOriginalTransaction:(id)arg1;
+- (void)_setError:(id)arg1;
+- (void)_setDownloads:(id)arg1;
+- (BOOL)mergeWithTransaction:(id)arg1;
+@property(readonly, nonatomic) NSString *matchingIdentifier;
+- (BOOL)canMergeWithTransaction:(id)arg1;
+- (id)UUID;
+@property(readonly, nonatomic) long long transactionState;
+@property(readonly, nonatomic) NSData *transactionReceipt;
+@property(readonly, nonatomic) NSString *transactionIdentifier;
+@property(readonly, nonatomic) NSDate *transactionDate;
+@property(readonly, nonatomic) SKPayment *payment;
+@property(readonly, nonatomic) SKPaymentTransaction *originalTransaction;
+@property(readonly, nonatomic) NSError *error;
+@property(readonly, nonatomic) NSArray *downloads;
+- (id)initWithPayment:(id)arg1;
 - (id)init;
 
 @end

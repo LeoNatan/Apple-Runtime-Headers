@@ -14,23 +14,23 @@
 __attribute__((visibility("hidden")))
 @interface FI_TListNameCellView : FI_TListBaseCellView <TICloudBadgeButtonContainer, TInlineProgressViewContainer>
 {
-    struct TNSRef<FI_TBasicImageView *, void> _iconImageView;
-    struct TNSRef<NSLayoutConstraint *, void> _iconImageViewWidthConstraint;
-    struct TNSRef<NSLayoutConstraint *, void> _iconImageViewTrailingConstraint;
-    struct TNSRef<FI_TListNameSubtitleTextField *, void> _subtitleTextField;
-    struct TNSRef<NSLayoutGuide *, void> _subtitleTextFieldLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _subtitleTrailingSpaceLayoutGuide;
-    struct TNSRef<NSLayoutGuide *, void> _tagsViewLayoutGuide;
-    struct TNSRef<FI_TTagsImageView *, void> _tagsImageView;
-    struct TNSRef<NSLayoutConstraint *, void> _tagsViewMasterLayoutGuideConstraint;
-    struct TNSRef<NSLayoutConstraint *, void> _tagsViewMasterWidthConstraint;
-    struct TNSRef<NSLayoutGuide *, void> _badgeViewLayoutGuide;
-    struct TNSRef<FI_TBadgeImageButton *, void> _iCloudBadgeImageButton;
-    struct TNSRef<FI_TImageView *, void> _syncExtensionBadgeImageView;
+    struct TNSRef<FI_TBasicImageView, void> _iconImageView;
+    struct TNSRef<NSLayoutConstraint, void> _iconImageViewWidthConstraint;
+    struct TNSRef<NSLayoutConstraint, void> _iconImageViewTrailingConstraint;
+    struct TNSRef<FI_TListNameSubtitleTextField, void> _subtitleTextField;
+    struct TNSRef<NSLayoutGuide, void> _subtitleTextFieldLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _subtitleTrailingSpaceLayoutGuide;
+    struct TNSRef<NSLayoutGuide, void> _tagsViewLayoutGuide;
+    struct TNSRef<FI_TTagsImageView, void> _tagsImageView;
+    struct TNSRef<NSLayoutConstraint, void> _tagsViewMasterLayoutGuideConstraint;
+    struct TNSRef<NSLayoutConstraint, void> _tagsViewMasterWidthConstraint;
+    struct TNSRef<NSLayoutGuide, void> _badgeViewLayoutGuide;
+    struct TNSRef<FI_TICloudBadgeButton, void> _iCloudBadgeImageButton;
+    struct TNSRef<FI_TImageView, void> _syncExtensionBadgeImageView;
     function_d15ff7cc _syncExtBadgeAndToolTipFunc;
-    struct TNSRef<NSLayoutConstraint *, void> _badgeViewMasterLayoutGuideConstraint;
-    struct TNSRef<NSLayoutConstraint *, void> _badgeViewMasterWidthConstraint;
-    struct TNSRef<FI_TInlineProgressView *, void> _progressView;
+    struct TNSRef<NSLayoutConstraint, void> _badgeViewMasterLayoutGuideConstraint;
+    struct TNSRef<NSLayoutConstraint, void> _badgeViewMasterWidthConstraint;
+    struct TNSRef<FI_TInlineProgressView, void> _progressView;
     struct TICloudStateCoordinator _iCloudStateCoordinator;
 }
 
@@ -45,9 +45,9 @@ __attribute__((visibility("hidden")))
 - (void)setMasterLayoutGuide:(id)arg1;
 - (void)updateBadgeViewMasterLayoutGuideConstraints;
 - (void)updateSyncExtensionBadgeImage;
-- (void)setICloudBadgeBRBadge:(int)arg1 toolTip:(const struct TString *)arg2 clickHandler:(const function_b1fce659 *)arg3;
+- (void)setICloudBadge:(int)arg1 toolTip:(const struct TString *)arg2 clickHandler:(const function_b1fce659 *)arg3;
 - (void)setSyncExtBadgeAndToolTipFunc:(const function_d15ff7cc *)arg1;
-- (void)setTags:(const vector_e0f2bd7e *)arg1;
+- (void)setTags:(const vector_12bd641b *)arg1;
 - (void)setSubtitleStringSet:(const unordered_set_66d0470b *)arg1;
 - (id)titleCell;
 - (unsigned long long)titleAlignment;

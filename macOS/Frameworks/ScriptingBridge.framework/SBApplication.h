@@ -21,7 +21,6 @@
 + (id)applicationWithBundleIdentifier:(id)arg1;
 - (id)objectWithSpecifier:(id)arg1;
 - (Class)classForScriptingClass:(id)arg1;
-- (id)classesForScriptingNames;
 - (id)codesForPropertyNames;
 - (id)classNamesForCodes;
 @property long long timeout;

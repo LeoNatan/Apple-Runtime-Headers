@@ -9,10 +9,11 @@
 #import "NSCopying.h"
 #import "NTKAVListing.h"
 
-@class CLKVideo, NSString, NTKInfinityListingAttributes, UIImage;
+@class CLKDevice, CLKVideo, NSString, NTKInfinityListingAttributes, UIImage;
 
 @interface NTKInfinityListing : NSObject <NSCopying, NTKAVListing>
 {
+    CLKDevice *_device;
     NSString *_filename;
     CLKVideo *_video;
     UIImage *_image;
@@ -21,8 +22,8 @@
     NTKInfinityListingAttributes *_attributes;
 }
 
-+ (id)listingWithFilename:(id)arg1 type:(unsigned int)arg2 attributes:(id)arg3;
-+ (id)listingWithFilename:(id)arg1;
++ (id)listingForDevice:(id)arg1 withFilename:(id)arg2 type:(unsigned int)arg3 attributes:(id)arg4;
++ (id)listingForDevice:(id)arg1 withFilename:(id)arg2;
 @property(retain, nonatomic) NTKInfinityListingAttributes *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) unsigned int playback; // @synthesize playback=_playback;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
@@ -35,7 +36,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) CLKVideo *video;
 @property(readonly, nonatomic) UIImage *image;
-- (id)initWithFilename:(id)arg1;
+- (id)initForDevice:(id)arg1 withFilename:(id)arg2;
 
 // Remaining properties
 @property(readonly) unsigned int hash;

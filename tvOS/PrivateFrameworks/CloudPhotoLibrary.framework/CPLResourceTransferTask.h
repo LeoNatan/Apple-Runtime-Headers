@@ -12,26 +12,25 @@
 
 @interface CPLResourceTransferTask : NSObject <NSSecureCoding>
 {
-    long long _priority;
+    _Bool _highPriority;
     _Bool _cancelled;
     CPLResource *_resource;
     NSString *_taskIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
+@property(nonatomic, getter=isHighPriority) _Bool highPriority; // @synthesize highPriority=_highPriority;
 @property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(retain, nonatomic) CPLResource *resource; // @synthesize resource=_resource;
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
 - (void)cancelTask;
 - (void)launch;
-@property(nonatomic, getter=isHighPriority) _Bool highPriority;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
 - (Class)classForKeyedArchiver;
 - (Class)classForCoder;
 

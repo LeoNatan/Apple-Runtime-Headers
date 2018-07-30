@@ -19,6 +19,9 @@
     _Bool _allowsMultiPassEncoding;
     _Bool _allowsOptimalRowbytesPacking;
     _Bool _allowsCompactCompression;
+    _Bool _allowsPaletteImageCompression;
+    _Bool _allowsHevcCompression;
+    _Bool _allowsDeepmapImageCompression;
     _Bool _flipped;
     struct CGImage *_sourceImage;
     long long _texturePixelFormat;
@@ -30,12 +33,15 @@
     int _exifOrientation;
 }
 
+@property _Bool allowsDeepmapImageCompression; // @synthesize allowsDeepmapImageCompression=_allowsDeepmapImageCompression;
 @property(nonatomic) int exifOrientation; // @synthesize exifOrientation=_exifOrientation;
 @property(nonatomic) long long textureInterpretation; // @synthesize textureInterpretation=_textureInterpretation;
 @property(nonatomic) unsigned long long colorSpaceID; // @synthesize colorSpaceID=_colorSpaceID;
 @property long long compressionType; // @synthesize compressionType=_compressionType;
 @property(nonatomic) double compressionQuality; // @synthesize compressionQuality=_compressionQuality;
 @property(nonatomic) _Bool flipped; // @synthesize flipped=_flipped;
+@property _Bool allowsHevcCompression; // @synthesize allowsHevcCompression=_allowsHevcCompression;
+@property _Bool allowsPaletteImageCompression; // @synthesize allowsPaletteImageCompression=_allowsPaletteImageCompression;
 @property(nonatomic) unsigned int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 - (id)compressedData:(_Bool)arg1 usedEncoding:(int *)arg2 andRowChunkSize:(unsigned int *)arg3;
 @property _Bool allowsCompactCompression;

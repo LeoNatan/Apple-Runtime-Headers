@@ -8,6 +8,7 @@
 
 @class SCNNode, SCNOffscreenRenderer, SCNScene, SKTransition;
 
+__attribute__((visibility("hidden")))
 @interface SCNRendererTransitionContext : NSObject
 {
     double _transitionStartTime;

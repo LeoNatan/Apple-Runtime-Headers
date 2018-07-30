@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 #import "LSApplicationWorkspaceObserverProtocol.h"
 
 @class LSApplicationWorkspace, NSMutableDictionary, NSSet, NSString, RTInvocationDispatcher, RTMediaRemote;
 
-@interface RTApplicationManager : RTNotifier <LSApplicationWorkspaceObserverProtocol>
+@interface RTApplicationManager : RTService <LSApplicationWorkspaceObserverProtocol>
 {
     _Bool _ready;
     RTInvocationDispatcher *_dispatcher;
@@ -43,7 +43,7 @@
 - (void)_registerForNotifications;
 - (void)_purge;
 - (void)purge;
-- (void)shutdown;
+- (void)_shutdown;
 - (id)initWithApplicationWorkspace:(id)arg1 mediaRemote:(id)arg2;
 - (id)initWithMediaRemote:(id)arg1;
 - (id)init;

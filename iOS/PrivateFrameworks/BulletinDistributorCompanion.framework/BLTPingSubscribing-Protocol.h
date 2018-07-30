@@ -13,9 +13,9 @@
 - (void)pingSubscriberDidLoad;
 - (NSArray *)subscriptionInfos;
 - (NSSet *)sectionIDs;
-- (void)pingWithBulletin:(BBBulletin *)arg1 ack:(void (^)(void))arg2;
+- (void)pingWithBulletin:(BBBulletin *)arg1 ack:(void (^)(unsigned long long))arg2;
 - (void)pingWithBulletin:(BBBulletin *)arg1;
-- (void)pingWithRecordID:(NSString *)arg1 forSectionID:(NSString *)arg2 ack:(void (^)(void))arg3;
+- (void)pingWithRecordID:(NSString *)arg1 forSectionID:(NSString *)arg2 ack:(void (^)(unsigned long long))arg3;
 - (void)pingWithRecordID:(NSString *)arg1 forSectionID:(NSString *)arg2;
 @end
 

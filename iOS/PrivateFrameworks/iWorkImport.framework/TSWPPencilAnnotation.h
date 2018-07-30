@@ -12,17 +12,17 @@
 #import "TSWPOverlappingField.h"
 #import "TSWPTextSpanningObject.h"
 
-@class NSString, PKDrawing, TSKPencilAnnotationStorage, TSWPStorage;
+@class NSString, PKDrawing, TSWPStorage;
 
 __attribute__((visibility("hidden")))
 @interface TSWPPencilAnnotation : TSPObject <TSPCopying, TSKDocumentObject, TSWPTextSpanningObject, TSWPOverlappingField, TSKPencilAnnotation>
 {
     TSWPStorage *_parentStorage;
     NSString *_textAttributeUUIDString;
-    TSKPencilAnnotationStorage *_pencilAnnotationStorage;
+    id <TSKPencilAnnotationStorage> _pencilAnnotationStorage;
 }
 
-@property(retain, nonatomic) TSKPencilAnnotationStorage *pencilAnnotationStorage; // @synthesize pencilAnnotationStorage=_pencilAnnotationStorage;
+@property(retain, nonatomic) id <TSKPencilAnnotationStorage> pencilAnnotationStorage; // @synthesize pencilAnnotationStorage=_pencilAnnotationStorage;
 @property(readonly, nonatomic) NSString *textAttributeUUIDString; // @synthesize textAttributeUUIDString=_textAttributeUUIDString;
 @property(nonatomic) __weak TSWPStorage *parentStorage; // @synthesize parentStorage=_parentStorage;
 - (void).cxx_destruct;

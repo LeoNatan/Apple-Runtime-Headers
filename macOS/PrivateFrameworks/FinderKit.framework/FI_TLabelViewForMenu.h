@@ -6,25 +6,35 @@
 
 #import <FinderKit/FI_TLabelView.h>
 
+@class FI_TFakeTagsMenuItemView;
+
 __attribute__((visibility("hidden")))
 @interface FI_TLabelViewForMenu : FI_TLabelView
 {
-    struct TNSRef<FI_TTitleField *, void> _titleField;
     int _validationCount;
+    struct TKeyValueBinder _hoveredPartBinder;
+    FI_TFakeTagsMenuItemView *_fakeTagsMenuItem;
+    struct TNSRef<NSTrackingArea, void> _trackingArea;
+    long long _hoveredPart;
 }
 
 + (id)titleFieldFromMenuItem:(id)arg1;
 + (id)labelViewFromMenuItem:(id)arg1;
 + (id)labelViewForMenu:(id)arg1;
-+ (id)labelViewForMenu:(id)arg1 showTitle:(_Bool)arg2;
+@property(nonatomic) long long hoveredPart; // @synthesize hoveredPart=_hoveredPart;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)gumdropValueChangedInMenu:(id)arg1;
 - (void)gumdropFavoriteTagChosenInMenu:(id)arg1;
 - (_Bool)favoriteTagWillRemove:(short)arg1;
-- (void)setForApplyingTags:(_Bool)arg1;
+- (void)setForApplyingFavoriteTags:(_Bool)arg1;
 - (int)validationCount;
 - (void)bumpValidationCount;
+- (void)mouseExited:(id)arg1;
+- (void)mouseEntered:(id)arg1;
+- (void)updateTrackingAreas;
+- (void)viewDidMoveToWindow;
+- (void)viewWillMoveToWindow:(id)arg1;
 
 @end
 

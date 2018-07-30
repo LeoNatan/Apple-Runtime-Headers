@@ -10,6 +10,9 @@
 {
 }
 
++ (id)recentCustomDurations;
++ (void)_updateCustomRecents:(double)arg1;
++ (id)defaultPresetDurations;
 + (void)setDefaultsForStartedTimerWithType:(int)arg1 duration:(double)arg2;
 + (void)setTimerLastCustomDuration:(double)arg1;
 + (double)timerLastCustomDuration:(char *)arg1;

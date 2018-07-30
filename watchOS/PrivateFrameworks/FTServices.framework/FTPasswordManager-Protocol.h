@@ -9,6 +9,8 @@
 @class ACAccount, ACAccountStore, NSArray, NSNumber, NSString;
 
 @protocol FTPasswordManager <NSObject>
+- (void)updatePreviousUsername:(NSString *)arg1 toNewUsername:(NSString *)arg2;
+- (void)performCleanUpWithCompletion:(void (^)(_Bool))arg1;
 - (void)cleanUpAccountsBasedOnInUseUsernames:(NSArray *)arg1 profileIDs:(NSArray *)arg2 completionBlock:(void (^)(_Bool))arg3;
 - (void)cleanUpAccountsWithUsername:(NSString *)arg1 orProfileID:(NSString *)arg2 basedOnInUseUsernames:(NSArray *)arg3 profileIDs:(NSArray *)arg4 completionBlock:(void (^)(_Bool))arg5;
 - (NSString *)profileIDForACAccount:(ACAccount *)arg1;

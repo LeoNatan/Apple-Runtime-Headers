@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSString *_externalDataReferencesDirectory;
     NSString *_externalDataLinksDirectory;
+    NSString *_fileBackedFuturesDirectory;
     NSSQLModel *_sqlModel;
     NSSQLEntity *_sqlEntity;
     NSFaultHandler *_faultHandler;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSQLEntity *sqlEntityForFetchRequest; // @synthesize sqlEntityForFetchRequest=_sqlEntity;
 @property(readonly, nonatomic) NSFaultHandler *faultHandler; // @synthesize faultHandler=_faultHandler;
 @property(readonly, nonatomic) int fileProtectionLevel; // @synthesize fileProtectionLevel=_fileProtectionLevel;
+@property(readonly, nonatomic) NSString *fileBackedFuturesDirectory; // @synthesize fileBackedFuturesDirectory=_fileBackedFuturesDirectory;
 @property(readonly, nonatomic) NSString *externalDataLinksDirectory; // @synthesize externalDataLinksDirectory=_externalDataLinksDirectory;
 @property(readonly, nonatomic) NSString *externalDataReferencesDirectory; // @synthesize externalDataReferencesDirectory=_externalDataReferencesDirectory;
 @property(readonly, nonatomic) BOOL storeIsUbiquitized; // @synthesize storeIsUbiquitized=_storeIsUbiquitized;

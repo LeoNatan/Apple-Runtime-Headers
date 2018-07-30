@@ -15,6 +15,7 @@
     id <UIViewControllerContextTransitioning> _transitionContext;
 }
 
+- (void).cxx_destruct;
 - (void)endDelayingAnimation;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

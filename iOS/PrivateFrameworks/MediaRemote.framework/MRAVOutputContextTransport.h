@@ -6,7 +6,7 @@
 
 #import <MediaRemote/MRExternalDeviceTransport.h>
 
-@class AVOutputContext, MRAVInputStream, MRAVOutputStream, NSArray, NSError, NSObject<OS_dispatch_queue>, _MRDeviceInfoMessageProtobuf;
+@class AVOutputContext, AVOutputDevice, MRAVInputStream, MRAVOutputDevice, MRAVOutputStream, NSError, NSObject<OS_dispatch_queue>, _MRDeviceInfoMessageProtobuf;
 
 @interface MRAVOutputContextTransport : MRExternalDeviceTransport
 {
@@ -18,10 +18,12 @@
     MRAVInputStream *_inputStream;
     MRAVOutputStream *_outputStream;
     _Bool _useSystemAuthenticationPrompt;
-    NSArray *_outputDevices;
+    MRAVOutputDevice *_outputDevice;
+    AVOutputDevice *_avOutputDevice;
 }
 
-@property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
+@property(readonly, nonatomic) AVOutputDevice *avOutputDevice; // @synthesize avOutputDevice=_avOutputDevice;
+@property(readonly, nonatomic) MRAVOutputDevice *outputDevice; // @synthesize outputDevice=_outputDevice;
 - (void).cxx_destruct;
 - (id)_onQueue_createRemoteControlContextWithID:(id)arg1;
 - (void)_destroyRemoteControlContext;
@@ -43,7 +45,7 @@
 - (id)deviceInfo;
 - (id)description;
 - (void)dealloc;
-- (id)initWithOutputDevices:(id)arg1 connectionType:(long long)arg2;
+- (id)initWithOutputDevice:(id)arg1 avOutputDevice:(id)arg2 connectionType:(long long)arg3;
 
 @end
 

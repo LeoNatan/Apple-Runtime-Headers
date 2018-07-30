@@ -22,7 +22,7 @@
 - (id)cachedFloatingImageRegistrationSignatureReturningError:(id *)arg1;
 - (id)cachedFloatingImageBufferReturningError:(id *)arg1;
 - (BOOL)wantsSequencedRequestObservationsRecording;
-- (id)observationsCacheKey;
+- (BOOL)allowsCachingOfResults;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 
 @end

@@ -23,6 +23,9 @@
 - (void).cxx_destruct;
 - (void)_enumerateAssetDictionariesWithBlock:(CDUnknownBlockType)arg1;
 - (id)assetForFlavor:(id)arg1;
+@property(readonly, nonatomic) NSURL *alternateHLSKeyCertificateURL;
+@property(readonly, nonatomic) NSURL *alternateHLSKeyServerURL;
+@property(readonly, nonatomic) NSURL *alternateHLSPlaylistURL;
 @property(readonly, nonatomic, getter=isiTunesStoreStream) _Bool iTunesStoreStream;
 @property(readonly, nonatomic) NSURL *HLSPlaylistURL;
 @property(readonly, nonatomic) NSURL *HLSKeyServerURL;

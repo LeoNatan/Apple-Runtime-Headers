@@ -15,17 +15,13 @@
 }
 
 + (id)textFont;
++ (id)labelFont;
 @property(nonatomic) int layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *itemLabel;
-- (float)baselineToBottomSpecValue;
-- (float)topToLabelBaselineSpecValue;
 - (_Bool)isSingleLine;
 - (void)visuallySelect;
-- (float)textLastlineBaselineFrameOriginY;
 - (void)configureForText:(id)arg1 width:(float)arg2;
-- (void)layoutSubviews;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

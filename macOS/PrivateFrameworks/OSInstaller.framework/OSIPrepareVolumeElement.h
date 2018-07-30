@@ -21,7 +21,6 @@
 - (void)_fixUpACLs;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 
 @end
 

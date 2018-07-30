@@ -10,6 +10,7 @@
 {
 }
 
+- (long long)countForCollection:(id)arg1;
 - (id)collectionListForSection:(long long)arg1;
 - (id)collectionAtIndexPath:(id)arg1;
 - (id)indexPathForCollection:(id)arg1;

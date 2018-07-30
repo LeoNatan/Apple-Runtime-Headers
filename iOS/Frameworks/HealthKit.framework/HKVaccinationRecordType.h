@@ -11,7 +11,7 @@
 }
 
 + (id)vaccinationRecordType;
-- (Class)dataObjectClass;
++ (id)allTypes;
 
 @end
 

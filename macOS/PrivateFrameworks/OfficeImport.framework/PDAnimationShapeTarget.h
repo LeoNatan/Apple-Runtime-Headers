@@ -8,17 +8,16 @@
 
 @class OADDrawable;
 
-__attribute__((visibility("hidden")))
 @interface PDAnimationShapeTarget : PDAnimationTarget
 {
     OADDrawable *mDrawable;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setDrawable:(id)arg1;
 - (id)drawable;
-- (void)dealloc;
 - (id)init;
 
 @end

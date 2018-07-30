@@ -8,12 +8,13 @@
 
 #import "MRNowPlayingClientState.h"
 
-@class MRPlaybackQueuePlayerClient, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, _MRNowPlayingPlayerPathProtobuf, _MRPlaybackQueueProtobuf;
+@class MRPlaybackQueueSubscriptionController, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, _MRNowPlayingPlayerPathProtobuf, _MRPlaybackQueueProtobuf;
 
 __attribute__((visibility("hidden")))
 @interface MRNowPlayingPlayerClientRequests : NSObject <MRNowPlayingClientState>
 {
     _MRPlaybackQueueProtobuf *_playbackQueue;
+    unsigned int _playbackState;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSObject<OS_dispatch_queue> *_responseQueue;
     NSMutableDictionary *_transactionCallbacks;
@@ -21,20 +22,14 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_transactions;
     NSOperationQueue *_enquedNowPlayingInfoRequests;
     NSOperationQueue *_enquedNowPlayingInfoAssetRequests;
-    unsigned int _playbackState;
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
-    MRPlaybackQueuePlayerClient *_playbackQueueClient;
+    MRPlaybackQueueSubscriptionController *_subscriptionController;
 }
 
-@property(readonly, nonatomic) unsigned int playbackState; // @synthesize playbackState=_playbackState;
-@property(readonly, nonatomic) MRPlaybackQueuePlayerClient *playbackQueueClient; // @synthesize playbackQueueClient=_playbackQueueClient;
+@property(readonly, nonatomic) MRPlaybackQueueSubscriptionController *subscriptionController; // @synthesize subscriptionController=_subscriptionController;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
 - (void)_registerDefaultCallbacks;
-- (void)_handleContentItemArtworkDidChangeNotification:(id)arg1;
-- (void)_handleContentItemsDidChangeNotification:(id)arg1;
-- (void)_handlePlaybackQueueDidChangeNotification:(id)arg1;
-- (void)_handlePlaybackStateDidChangeNotification:(id)arg1;
 - (void)_handleTransactionPackets:(id)arg1 packets:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_transactionDestintationForName:(unsigned long long)arg1;
 - (void)receiveTransaction:(unsigned long long)arg1 fromMessage:(id)arg2;
@@ -45,8 +40,11 @@ __attribute__((visibility("hidden")))
 - (void)addPlaybackQueueCompletion:(CDUnknownBlockType)arg1 forRequest:(id)arg2;
 - (id)transactionCallbacksForName:(unsigned long long)arg1;
 - (void)addTransactionCallback:(CDUnknownBlockType)arg1 forName:(unsigned long long)arg2;
-@property(readonly, nonatomic) _MRPlaybackQueueProtobuf *playbackQueue;
-- (void)setPlaybackQueue:(id)arg1;
+@property(retain, nonatomic) _MRPlaybackQueueProtobuf *playbackQueue;
+- (void)updatePlaybackQueue:(id)arg1;
+- (void)updateContentItemArtwork:(id)arg1;
+- (void)updateContentItems:(id)arg1;
+@property(nonatomic) unsigned int playbackState;
 - (id)debugDescription;
 - (void)dealloc;
 - (id)initWithPlayerPath:(id)arg1;

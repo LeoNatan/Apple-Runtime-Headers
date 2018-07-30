@@ -6,8 +6,9 @@
 
 #import <CorePDF/CPRegion.h>
 
-@class CPListItem;
+@class CPParagraphListItem;
 
+__attribute__((visibility("hidden")))
 @interface CPParagraph : CPRegion
 {
     _Bool noIndentation;
@@ -15,11 +16,11 @@
     unsigned int alignment;
     _Bool hasDropCap;
     id flowProperties;
-    CPListItem *listItem;
+    CPParagraphListItem *listItem;
     float preformatWidth;
 }
 
-@property(retain, nonatomic) CPListItem *listItem; // @synthesize listItem;
+@property(retain, nonatomic) CPParagraphListItem *listItem; // @synthesize listItem;
 - (_Bool)isPreformattedWithUnitWidth:(float *)arg1;
 - (void)setAlignment:(unsigned int)arg1;
 - (unsigned int)alignment;

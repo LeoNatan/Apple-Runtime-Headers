@@ -10,6 +10,7 @@
 
 @class AVOutputContext, AVOutputContextCommunicationChannel, AVOutputDevice, AVWeakReference, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFigEndpointPickerOutputContextImpl : NSObject <AVOutputContextImpl>
 {
     AVOutputContext *_parentContext;

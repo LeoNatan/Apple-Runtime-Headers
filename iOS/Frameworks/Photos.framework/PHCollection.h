@@ -18,11 +18,13 @@
     NSString *_localizedSubtitle;
 }
 
++ (id)fetchMomentsForPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)fetchMomentsForFacesWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchTopLevelUserCollectionsWithOptions:(id)arg1;
 + (id)fetchCollectionsInCollectionList:(id)arg1 options:(id)arg2;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (_Bool)managedObjectSupportsTrashedState;
 + (id)fetchType;
 + (id)managedEntityName;

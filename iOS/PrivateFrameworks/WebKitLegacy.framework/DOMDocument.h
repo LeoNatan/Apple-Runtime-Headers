@@ -15,6 +15,8 @@
 - (id)querySelectorAll:(id)arg1;
 - (id)querySelector:(id)arg1;
 - (id)getElementById:(id)arg1;
+- (void)webkitExitFullscreen;
+- (void)webkitCancelFullScreen;
 - (_Bool)hasFocus;
 - (id)getElementsByClassName:(id)arg1;
 - (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2 authorOnly:(_Bool)arg3;
@@ -63,6 +65,11 @@
 - (id)currentScript;
 - (_Bool)hidden;
 - (id)visibilityState;
+- (id)webkitFullscreenElement;
+- (_Bool)webkitFullscreenEnabled;
+- (id)webkitCurrentFullScreenElement;
+- (_Bool)webkitFullScreenKeyboardInputAllowed;
+- (_Bool)webkitIsFullScreen;
 - (id)compatMode;
 @property(readonly) DOMElement *activeElement;
 @property(copy) NSString *selectedStylesheetSet;

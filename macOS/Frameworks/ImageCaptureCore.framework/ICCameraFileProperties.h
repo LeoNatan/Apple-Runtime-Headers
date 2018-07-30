@@ -6,8 +6,9 @@
 
 #import "NSObject.h"
 
-@class NSData, NSDate, NSLock, NSMutableArray, NSMutableDictionary, NSString;
+@class NSData, NSDate, NSDictionary, NSLock, NSMutableArray, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ICCameraFileProperties : NSObject
 {
     long long _width;
@@ -46,12 +47,18 @@
     NSString *_relatedUUID;
     BOOL _wasDownloaded;
     BOOL _useExtensionIcon;
+    unsigned long long _uTime;
+    unsigned long long _oUUID;
     unsigned long long _mediaMetadata;
     NSString *_mediaBase;
+    NSDictionary *_mediaData;
 }
 
+@property(retain) NSDictionary *mediaData; // @synthesize mediaData=_mediaData;
 @property(copy) NSString *mediaBase; // @synthesize mediaBase=_mediaBase;
 @property unsigned long long mediaMetadata; // @synthesize mediaMetadata=_mediaMetadata;
+@property unsigned long long oUUID; // @synthesize oUUID=_oUUID;
+@property unsigned long long uTime; // @synthesize uTime=_uTime;
 @property BOOL useExtensionIcon; // @synthesize useExtensionIcon=_useExtensionIcon;
 @property BOOL wasDownloaded; // @synthesize wasDownloaded=_wasDownloaded;
 @property(retain) NSString *relatedUUID; // @synthesize relatedUUID=_relatedUUID;
@@ -85,7 +92,6 @@
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
 @property struct CGImage *thumbnail; // @dynamic thumbnail;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

@@ -6,13 +6,11 @@
 
 #import <OfficeImport/OADShape.h>
 
-__attribute__((visibility("hidden")))
 @interface OADWordArt : OADShape
 {
 }
 
 - (id)description;
-- (void)dealloc;
 - (id)init;
 
 @end

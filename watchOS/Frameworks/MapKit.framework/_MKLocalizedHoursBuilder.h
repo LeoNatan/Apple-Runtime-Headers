@@ -14,16 +14,14 @@
     _Bool _isCurrentlyClosed;
     _Bool _isClosingSoon;
     _Bool _isOpeningSoon;
+    NSString *_localizedOperatingHours;
+    UIColor *_hoursStateLabelColor;
     unsigned int _geoMapItemOpeningHourOptions;
     unsigned int _localizedHoursStringOptions;
     NSTimeZone *_timeZone;
     NSArray *_operatingHours;
-    NSString *_localizedOperatingHours;
-    UIColor *_hoursStateLabelColor;
 }
 
-@property(readonly, nonatomic) UIColor *hoursStateLabelColor; // @synthesize hoursStateLabelColor=_hoursStateLabelColor;
-@property(readonly, nonatomic) NSString *localizedOperatingHours; // @synthesize localizedOperatingHours=_localizedOperatingHours;
 @property(retain, nonatomic) NSArray *operatingHours; // @synthesize operatingHours=_operatingHours;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) unsigned int localizedHoursStringOptions; // @synthesize localizedHoursStringOptions=_localizedHoursStringOptions;
@@ -32,6 +30,8 @@
 - (id)_updatedHoursLabelColor;
 - (id)_updatedLocalizedOperatingHoursString;
 - (void)_updateLocalizedString;
+@property(readonly, nonatomic) UIColor *hoursStateLabelColor; // @synthesize hoursStateLabelColor=_hoursStateLabelColor;
+@property(readonly, nonatomic) NSString *localizedOperatingHours; // @synthesize localizedOperatingHours=_localizedOperatingHours;
 - (id)initWithTimeZone:(id)arg1 operatingHours:(id)arg2 geoMapItemOpeningHourOptions:(unsigned int)arg3 localizedHoursStringOptions:(unsigned int)arg4;
 - (id)initWithMapItemForMessageForBusiness:(id)arg1 localizedHoursStringOptions:(unsigned int)arg2;
 - (id)initWithMapItem:(id)arg1 localizedHoursStringOptions:(unsigned int)arg2;

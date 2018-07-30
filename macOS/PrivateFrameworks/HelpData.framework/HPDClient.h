@@ -6,18 +6,23 @@
 
 #import <HelpData/HPDBaseClient.h>
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface HPDClient : HPDBaseClient
 {
     struct __CFMessagePort *_serverPortRef;
     struct __CFMessagePort *_localPortRef;
+    NSObject<OS_dispatch_queue> *_messageQueue;
 }
 
+- (void).cxx_destruct;
 - (void)abort;
 - (BOOL)stop;
 - (BOOL)collect;
 - (BOOL)cancelQuery:(id)arg1;
 - (BOOL)performQuery:(id)arg1;
 - (id)preferredLocalizations;
+- (id)indexedBookIDs;
 - (id)bookList;
 - (BOOL)registerBookWithIdentifier:(id)arg1 appBundleURL:(id)arg2 bookVersion:(id)arg3 bookURL:(id)arg4;
 - (BOOL)_registerBookWithIdentifier:(id)arg1 appBundleURL:(id)arg2 bookVersion:(id)arg3 bookURL:(id)arg4;
@@ -26,6 +31,7 @@
 - (struct __CFMessagePort *)createLocalPortIfNeeded;
 - (BOOL)createServerPortIfNeeded;
 - (void)dealloc;
+- (id)init;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AVCStatisticsCollector, NSMutableArray, VCAudioPayload, VCTransportSession;
+@class AVCStatisticsCollector, NSArray, NSMutableArray, VCAudioPayload, VCTransportSession;
 
 __attribute__((visibility("hidden")))
 @interface VCAudioTransmitterConfig : NSObject
@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     VCAudioPayload *_chosenAudioPayload;
     VCAudioPayload *_chosenDTXPayload;
     unsigned char _packetsPerBundle;
-    BOOL _useAFRC;
+    BOOL _useRateControl;
     int _bundlingScheme;
     BOOL _isUseCaseWatchContinuity;
     BOOL _allowAudioSwitching;
@@ -36,10 +36,24 @@ __attribute__((visibility("hidden")))
     int _operatingMode;
     struct AudioStreamBasicDescription _inputFormat;
     struct opaqueRTCReporting *_reportingAgent;
+    int _reportingParentID;
     VCTransportSession *_transportSession;
     BOOL _ignoreSilence;
+    unsigned int _maxIDSStreamIdCount;
+    NSArray *_streamIDs;
+    unsigned int _tierNetworkBitrate;
+    NSArray *_supportedNumRedundantPayload;
+    BOOL _sendActiveVoiceOnly;
+    BOOL _currentDTXEnable;
 }
 
+@property(nonatomic, getter=isCurrentDTXEnabled) BOOL currentDTXEnable; // @synthesize currentDTXEnable=_currentDTXEnable;
+@property(nonatomic) int reportingParentID; // @synthesize reportingParentID=_reportingParentID;
+@property(nonatomic) BOOL sendActiveVoiceOnly; // @synthesize sendActiveVoiceOnly=_sendActiveVoiceOnly;
+@property(retain, nonatomic) NSArray *supportedNumRedundantPayload; // @synthesize supportedNumRedundantPayload=_supportedNumRedundantPayload;
+@property(nonatomic) unsigned int maxIDSStreamIdCount; // @synthesize maxIDSStreamIdCount=_maxIDSStreamIdCount;
+@property(nonatomic) unsigned int tierNetworkBitrate; // @synthesize tierNetworkBitrate=_tierNetworkBitrate;
+@property(retain, nonatomic) NSArray *streamIDs; // @synthesize streamIDs=_streamIDs;
 @property(nonatomic) BOOL needsPacketThread; // @synthesize needsPacketThread=_needsPacketThread;
 @property(nonatomic) BOOL ignoreSilence; // @synthesize ignoreSilence=_ignoreSilence;
 @property(nonatomic) BOOL transmitROC; // @synthesize transmitROC=_transmitROC;
@@ -56,7 +70,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowAudioSwitching; // @synthesize allowAudioSwitching=_allowAudioSwitching;
 @property(nonatomic) BOOL isUseCaseWatchContinuity; // @synthesize isUseCaseWatchContinuity=_isUseCaseWatchContinuity;
 @property(nonatomic) int bundlingScheme; // @synthesize bundlingScheme=_bundlingScheme;
-@property(nonatomic) BOOL useAFRC; // @synthesize useAFRC=_useAFRC;
+@property(nonatomic) BOOL useRateControl; // @synthesize useRateControl=_useRateControl;
 @property(nonatomic) unsigned char packetsPerBundle; // @synthesize packetsPerBundle=_packetsPerBundle;
 @property(nonatomic) int chosenRedPayloadType; // @synthesize chosenRedPayloadType=_chosenRedPayloadType;
 @property(retain, nonatomic) VCAudioPayload *chosenDTXPayload; // @synthesize chosenDTXPayload=_chosenDTXPayload;

@@ -48,7 +48,7 @@
 - (id)_button;
 - (id)_window;
 - (id)_initInStatusBar:(id)arg1 withLength:(float)arg2 withPriority:(int)arg3;
-- (long long)sendActionOn:(long long)arg1;
+- (long long)sendActionOn:(unsigned long long)arg1;
 - (BOOL)highlightMode;
 - (void)setHighlightMode:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;

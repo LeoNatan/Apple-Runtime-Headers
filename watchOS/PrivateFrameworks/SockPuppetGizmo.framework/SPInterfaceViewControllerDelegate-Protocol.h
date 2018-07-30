@@ -10,7 +10,8 @@
 
 @protocol SPInterfaceViewControllerDelegate <NSObject>
 - (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 setProperties:(NSDictionary *)arg2 forInterfaceObjectNamed:(NSString *)arg3;
-- (_Bool)interfaceViewControllerHasNativeConnection:(SPInterfaceViewController *)arg1;
+- (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 crownData:(NSDictionary *)arg2;
+- (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 gestureData:(NSDictionary *)arg2;
 - (void)interfaceViewController:(SPInterfaceViewController *)arg1 setValue:(id)arg2 forKey:(NSString *)arg3;
 - (void)interfaceViewController:(SPInterfaceViewController *)arg1 sendAction:(NSString *)arg2 withValue:(id)arg3;
 - (void)interfaceOffsetDidScrollToBottom:(SPInterfaceViewController *)arg1;
@@ -28,13 +29,10 @@
 - (void)interfaceDidEndScrollingAnimation:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidAppearAfterModalDismissal:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidDisappearAfterModalPresentation:(SPInterfaceViewController *)arg1;
-- (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 crownData:(NSDictionary *)arg2;
-- (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 gestureData:(NSDictionary *)arg2;
 - (Class)rootGroupClass;
 - (void)appWithRootInterfaceViewController:(SPInterfaceViewController *)arg1 performActionWithItemID:(NSString *)arg2 forNotificationID:(NSString *)arg3 userInfo:(NSDictionary *)arg4 completionHandler:(void (^)(void))arg5;
 - (struct UIEdgeInsets)interfaceViewControllerContentInsets:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidUpdateInterfaceValues:(SPInterfaceViewController *)arg1;
-- (_Bool)interfaceViewControllerShouldShowDisconnectedView:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidHideDisconnectedView:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidShowDisconnectedView:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidActivate:(SPInterfaceViewController *)arg1;

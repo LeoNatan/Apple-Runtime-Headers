@@ -10,15 +10,15 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSMapTable {
-    Class _field1;
-};
-
 struct NSMutableDictionary {
     Class _field1;
 };
 
 struct NSObject {
+    Class _field1;
+};
+
+struct NSString {
     Class _field1;
 };
 
@@ -60,18 +60,6 @@ struct _MRTransactionKeyProtobuf {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    unsigned int type;
-    _Bool isProxyGroupPlayer;
-    unsigned int reserved[2];
-} CDStruct_64424771;
-
-typedef struct {
-    unsigned int *list;
-    unsigned int count;
-    unsigned int size;
-} CDStruct_084d6ede;
-
-typedef struct {
     double *list;
     unsigned int count;
     unsigned int size;
@@ -82,18 +70,6 @@ typedef struct {
     unsigned int count;
     unsigned int size;
 } CDStruct_56d48c16;
-
-typedef struct {
-    void *context;
-    CDUnknownFunctionPointerType showSetupCode_f;
-    CDUnknownFunctionPointerType hideSetupCode_f;
-    CDUnknownFunctionPointerType promptForSetupCode_f;
-    CDUnknownFunctionPointerType copyIdentity_f;
-    CDUnknownFunctionPointerType findPeer_f;
-    CDUnknownFunctionPointerType savePeer_f;
-    CDUnknownFunctionPointerType resumeRequest_f;
-    CDUnknownFunctionPointerType resumeResponse_f;
-} CDStruct_1af33fde;
 
 typedef struct {
     double timestamp;
@@ -109,10 +85,6 @@ typedef struct {
 typedef struct {
     unsigned int controllerID:1;
 } CDStruct_669c4a63;
-
-typedef struct {
-    unsigned int errorCode:1;
-} CDStruct_70a7dc3e;
 
 typedef struct {
     unsigned int state:1;

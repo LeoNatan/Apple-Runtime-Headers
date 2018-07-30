@@ -17,11 +17,13 @@
 }
 
 - (void).cxx_destruct;
+- (id)_annotationViewForLocation:(id)arg1 title:(id)arg2 transitStation:(_Bool)arg3;
 - (_Bool)_locationIsValid:(id)arg1;
 - (id)_snapshotLocationForTransaction:(id)arg1;
 - (void)dealloc;
 - (void)cancel;
 - (void)snapshotWithCompletion:(CDUnknownBlockType)arg1;
+- (id)initWithTransaction:(id)arg1 radius:(double)arg2 snapshotSize:(struct CGSize)arg3 showsMerchantAnnotation:(_Bool)arg4;
 - (id)initWithTransaction:(id)arg1 radius:(double)arg2 snapshotSize:(struct CGSize)arg3;
 
 @end

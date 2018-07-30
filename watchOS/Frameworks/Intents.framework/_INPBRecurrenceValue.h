@@ -7,41 +7,42 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBRecurrenceValue.h"
 
-@class PBUnknownFields;
+@class NSString;
 
-@interface _INPBRecurrenceValue : PBCodable <NSCopying>
+@interface _INPBRecurrenceValue : PBCodable <_INPBRecurrenceValue, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
-    unsigned long long _interval;
-    long long _ordinal;
-    int _frequency;
     struct {
+        unsigned int frequency:1;
         unsigned int interval:1;
         unsigned int ordinal:1;
-        unsigned int frequency:1;
     } _has;
+    int _frequency;
+    unsigned long long _interval;
+    long long _ordinal;
 }
 
-+ (id)options;
-@property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) long long ordinal; // @synthesize ordinal=_ordinal;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+@property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
+@property(nonatomic) int frequency; // @synthesize frequency=_frequency;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
+@property(nonatomic) _Bool hasOrdinal;
+@property(nonatomic) _Bool hasInterval;
 - (int)StringAsFrequency:(id)arg1;
 - (id)frequencyAsString:(int)arg1;
 @property(nonatomic) _Bool hasFrequency;
-@property(nonatomic) int frequency; // @synthesize frequency=_frequency;
-@property(nonatomic) _Bool hasInterval;
-@property(nonatomic) _Bool hasOrdinal;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -36,6 +36,7 @@
 @property(readonly, nonatomic) _Bool hasNextViewController;
 - (void)recomputeViewControllersForChangeInKeyPath:(id)arg1;
 - (void)computeViewControllersForBootstrapFlow;
+@property(readonly, nonatomic) _Bool shouldPresentPostNaming;
 @property(readonly, nonatomic) _Bool shouldPresentNaming;
 - (void)dealloc;
 - (id)initEmptyFlowWithContext:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class NSThemeFrame;
+@class NSThemeFrame, _NSTitlebarDecorationView;
 
 __attribute__((visibility("hidden")))
 @interface NSTitlebarContainerView : NSView
@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     BOOL _transparent;
     BOOL _shouldRoundCorners;
     BOOL _maskSet;
+    _NSTitlebarDecorationView *_decorationView;
 }
 
+@property(retain) _NSTitlebarDecorationView *decorationView; // @synthesize decorationView=_decorationView;
 @property double buttonRevealAmount; // @dynamic buttonRevealAmount;
 @property(readonly) double titleHeightToHideInFullScreen; // @dynamic titleHeightToHideInFullScreen;
 - (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
@@ -31,8 +33,11 @@ __attribute__((visibility("hidden")))
 @property NSThemeFrame *associatedThemeFrame; // @synthesize associatedThemeFrame=_associatedThemeFrame;
 - (id)_themeFrame;
 @property BOOL shouldRoundCorners; // @synthesize shouldRoundCorners=_shouldRoundCorners;
+- (void)layout;
 - (void)dealloc;
 @property BOOL transparent;
+@property BOOL drawsBottomSeparator;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

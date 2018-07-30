@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FIBrowseBySizeContainerController : FI_TBrowserContainerController
 {
-    vector_e0f53d80 _excludedPaths;
+    vector_757c8b87 _excludedPaths;
 }
 
 - (id).cxx_construct;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canSelectNode:(const struct TFENode *)arg1;
 - (_Bool)nodeIsDimmed:(const struct TFENode *)arg1;
 - (_Bool)nodeIsExcluded:(const struct TFENode *)arg1;
-- (void)setExcludedPaths:(const vector_e0f53d80 *)arg1;
+- (void)setExcludedPaths:(const vector_757c8b87 *)arg1;
 - (_Bool)allowsBrowsingPackages;
 - (_Bool)panelDisableNode:(const struct TFENode *)arg1;
 - (_Bool)urlIsDimmed:(id)arg1;

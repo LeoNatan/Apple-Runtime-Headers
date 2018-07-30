@@ -10,12 +10,28 @@
 {
 }
 
+- (id)fsmPickerSendButtonColor;
+- (id)fsmPickerCloseButtonColor;
+- (id)fsmPickerCurrentPageIndicatorColor;
+- (id)fsmPickerPageIndicatorColor;
+- (id)fsmPickerSecondaryColor;
+- (id)fsmPickerPrimaryTintColor;
+- (id)fsmPickerPrimaryColor;
 - (id)businessInfoViewDescriptionTextColor;
 - (id)businessDescriptionViewControllerBackgroundColor;
+- (id)appGrabberCloseImage;
+- (id)fullscreenAppDismissViewColor;
+- (id)appSelectionOutlineColor;
+- (id)appStripCoverFillColor;
+- (id)appGrabberPillColor;
+- (id)appGrabberTitleColor;
+- (id)appGrabberBackgroundColor;
+- (id)browserAppStripSeperatorBackgroundColor;
+- (id)browserSwitcherBorderColor;
+- (id)browserSwitcherGutterDividerColor;
+- (id)browserSwitcherGutterColor;
 - (id)browserLabelColor;
-- (id)browserContentBackgroundColor;
 - (id)browserBackgroundColor;
-- (id)messageAcknowledgmentSelectedBalloonColorForStyle:(long long)arg1;
 - (id)messageAcknowledgmentBalloonColorForStyle:(long long)arg1;
 - (BOOL)messageAcknowledgmentBalloonColorTypeForStyle:(long long)arg1;
 - (id)messageAcknowledgment:(long long)arg1 selectedAcknowledgmentImageColor:(long long)arg2;
@@ -81,6 +97,8 @@
 - (long long)navBarStyle;
 - (id)segmentedControlSelectionTintColor;
 - (id)appTintColor;
+- (_Bool)shouldOverlayAppBorderImage;
+- (_Bool)isDarkMode;
 
 @end
 

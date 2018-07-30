@@ -14,13 +14,13 @@
     NSSet *_immutable;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 @property(readonly) unsigned long long count;
 - (id)immutableSet;
 - (_Bool)containsObject:(id)arg1;
 - (void)removeObject:(id)arg1;
 - (void)addObject:(id)arg1;
-- (void)dealloc;
 
 @end
 

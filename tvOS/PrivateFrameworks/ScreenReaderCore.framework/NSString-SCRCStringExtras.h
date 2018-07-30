@@ -16,6 +16,7 @@
 - (struct _NSRange)sentenceBreakInDirection:(_Bool)arg1 fromIndex:(unsigned long long)arg2 skipCurrent:(_Bool)arg3;
 - (struct _NSRange)enclosingSentenceRangeForRange:(struct _NSRange)arg1;
 - (_Bool)hasMultipleWordsWithLocaleName:(const char *)arg1 ignorePunctuation:(_Bool)arg2;
+- (id)scrStringByTrimmingTrailingNewlines;
 - (id)stringByTrimmingEmptySpaceEdges;
 - (id)stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 - (id)stringByTruncatingToWordAtIndex:(unsigned long long)arg1 addElipses:(_Bool)arg2;

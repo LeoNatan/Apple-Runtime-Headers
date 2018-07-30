@@ -10,5 +10,8 @@
 
 @protocol TVRowHosting_Collection <TVRowHosting>
 - (NSArray *)rowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets)arg2 firstItemRowIndex:(long long *)arg3;
+
+@optional
+- (NSArray *)showcaseRowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets)arg2;
 @end
 

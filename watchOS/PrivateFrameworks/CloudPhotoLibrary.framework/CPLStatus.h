@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class CPLAccountFlags, NSData, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
+@class CPLAccountFlags, NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
 
 @interface CPLStatus : NSObject
 {
+    _Bool _forCPL;
     NSURL *_statusFileURL;
     NSMutableDictionary *_status;
     NSObject<OS_dispatch_queue> *_lock;
@@ -19,6 +20,7 @@
 + (id)statusForSharedLibrary;
 @property(nonatomic) __weak id <CPLStatusDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *disabledFeatures;
 @property(copy, nonatomic) NSData *accountFlagsData;
 @property(readonly, nonatomic) CPLAccountFlags *accountFlags;
 @property(nonatomic, getter=isConnectedToNetwork) _Bool connectedToNetwork;
@@ -42,9 +44,12 @@
 @property(copy, nonatomic) NSDate *lastCompletePrefetchDate;
 @property(copy, nonatomic) NSDate *lastSuccessfulSyncDate;
 - (void)refetchFromDisk;
+- (_Bool)_deleteInitialSyncMarkerWithError:(id *)arg1;
 - (_Bool)writeInitialSyncMarker:(id *)arg1;
+- (_Bool)_writeInitialSyncMarkerForDate:(id)arg1 error:(id *)arg2;
 - (void)_save;
 - (void)_loadIfNecessary;
+- (id)initWithClientLibraryBaseURLForCPLEngine:(id)arg1;
 - (id)initWithClientLibraryBaseURL:(id)arg1;
 
 @end

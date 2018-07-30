@@ -8,7 +8,7 @@
 
 #import "NSSplitViewDelegate.h"
 
-@class BrowserWindowController, NSClipView, NSSplitViewItem, NSString, NSView, NSVisualEffectView, SidebarViewController;
+@class BrowserWindowController, NSClipView, NSColor, NSSplitViewItem, NSString, NSView, NSVisualEffectView, SidebarViewController;
 
 __attribute__((visibility("hidden")))
 @interface BrowserWindowContentSplitViewController : NSSplitViewController <NSSplitViewDelegate>
@@ -48,13 +48,12 @@ __attribute__((visibility("hidden")))
 - (void)_loadTabSwitcherSplitViewItemWithTabViewController:(id)arg1;
 - (void)_loadSidebarSplitViewItemIfNeeded;
 - (void)_updateConstraints;
-@property(nonatomic) BOOL hidesSeparator;
+@property(retain, nonatomic) NSColor *separatorColor;
 - (void)didForceContentRepaintAndCollectPageLayoutInformationForSidebarAnimationAfterResize:(id)arg1;
 - (BOOL)_isPageCenteredGivenLayoutInformation:(id)arg1;
 - (void)_browserViewDidResizeForSidebarAnimation:(id)arg1;
 - (void)didCollectPageLayoutInformationForSidebarAnimationBeforeResize;
 - (id)_browserViewForPageLayoutInformation;
-- (void)setSidebarSplitViewItemHasBaseVibrancyEffect:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isSidebarAnimationInProgress;
 - (double)sidebarWidth;
 - (void)hideOverlaySidebarIfNeeded;

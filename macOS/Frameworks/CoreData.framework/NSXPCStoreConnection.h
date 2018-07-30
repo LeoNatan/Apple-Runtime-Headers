@@ -6,20 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_semaphore>, NSXPCConnection, NSXPCStore;
+@class NSXPCConnection, NSXPCStore;
 
 __attribute__((visibility("hidden")))
 @interface NSXPCStoreConnection : NSObject
 {
     NSXPCStore *_store;
     NSXPCConnection *_connection;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-- (id)sendMessage:(id)arg1 fromContext:(id)arg2 store:(id)arg3 error:(id *)arg4;
+- (void)sendMessageWithContext:(id)arg1;
+- (id)sendMessage:(id)arg1 store:(id)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (void)disconnect;
-- (id)initForStore:(id)arg1 withOptions:(id)arg2;
+- (void)reconnect;
+- (id)initForStore:(id)arg1;
 - (id)createConnectionWithOptions:(id)arg1;
 
 @end

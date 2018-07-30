@@ -10,6 +10,11 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct AccessibilityPreferences {
+    unsigned int isVoiceOverTouchEnabled:1;
+    unsigned int isVibrationDisabled:1;
+};
+
 struct AudioQueueBuffer {
     unsigned int _field1;
     void *_field2;

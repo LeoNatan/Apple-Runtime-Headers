@@ -6,11 +6,12 @@
 
 #import <PhotoLibraryServices/PLManagedObject.h>
 
+#import "PLCloudDeletable.h"
 #import "PLSearchableAssetCollection.h"
 
 @class NSData, NSDate, NSDictionary, NSSet, NSString, PLManagedAsset;
 
-@interface PLMemory : PLManagedObject <PLSearchableAssetCollection>
+@interface PLMemory : PLManagedObject <PLSearchableAssetCollection, PLCloudDeletable>
 {
     _Bool _needsPersistenceUpdate;
 }
@@ -24,9 +25,12 @@
 + (id)memoriesToPrefetchInPhotoLibrary:(id)arg1;
 + (_Bool)_shouldPrefetchMemoryMovieCuratedAssetsInPhotoLibrary:(id)arg1;
 + (id)memoriesToUploadInPhotoLibrary:(id)arg1 limit:(int)arg2;
++ (id)cloudUUIDKeyForDeletion;
++ (int)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withUUID:(id)arg2 title:(id)arg3 subtitle:(id)arg4 creationDate:(id)arg5;
++ (_Bool)indexTitleForMemoryCategory:(unsigned int)arg1;
 + (id)baseSearchIndexPredicate;
 @property(nonatomic) _Bool needsPersistenceUpdate; // @synthesize needsPersistenceUpdate=_needsPersistenceUpdate;
 - (void)removePersistedFileSystemData;
@@ -37,6 +41,8 @@
 @property(retain, nonatomic) PLManagedAsset *keyAsset; // @dynamic keyAsset;
 - (id)calculateKeyAsset;
 - (void)updateWithCPLMemoryChange:(id)arg1 inPhotoLibrary:(id)arg2;
+@property(readonly, copy) NSString *cloudUUIDForDeletion;
+@property(readonly) int cloudDeletionType;
 - (void)prepareForDeletion;
 - (void)didSave;
 - (void)delete;
@@ -46,11 +52,17 @@
 - (id)assetUUIDsForPreviewWithCount:(unsigned int)arg1;
 - (unsigned int)searchIndexCategory;
 - (id)searchIndexContents;
+@property(readonly, nonatomic) NSDate *keyAssetCreationDate;
+@property(readonly, nonatomic) NSString *keyAssetUUID;
+@property(readonly, nonatomic) NSDate *searchableEndDate;
+@property(readonly, nonatomic) NSDate *searchableStartDate;
+@property(readonly, nonatomic) unsigned int numberOfAssets;
 
 // Remaining properties
 @property(retain, nonatomic) NSData *assetListPredicate; // @dynamic assetListPredicate;
 @property(retain, nonatomic) NSData *blacklistedFeature; // @dynamic blacklistedFeature;
 @property(nonatomic) short category; // @dynamic category;
+@property(nonatomic) short cloudDeleteState; // @dynamic cloudDeleteState;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;
 @property(retain, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(retain, nonatomic) NSSet *curatedAssets; // @dynamic curatedAssets;

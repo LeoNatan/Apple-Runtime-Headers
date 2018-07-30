@@ -6,6 +6,7 @@
 
 #import <ManagedConfigurationUI/MCCertificateDetailsController.h>
 
+__attribute__((visibility("hidden")))
 @interface MCMoreDetailsCertificateDetailsController : MCCertificateDetailsController
 {
 }

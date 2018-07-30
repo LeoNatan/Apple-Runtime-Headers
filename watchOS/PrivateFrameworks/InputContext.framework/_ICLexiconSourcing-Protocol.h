@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class PEXNameDelegate;
+@class _ICLexiconManager;
 
 @protocol _ICLexiconSourcing
-- (void)unregisterNameDelegate:(PEXNameDelegate *)arg1;
-- (void)registerNameDelegate:(PEXNameDelegate *)arg1;
+- (void)hibernate;
+- (void)warmUp;
+- (void)startLoadingWithManager:(_ICLexiconManager *)arg1;
 @end
 

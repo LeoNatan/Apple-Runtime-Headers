@@ -10,6 +10,7 @@
 
 @class NSDate, NSUUID;
 
+__attribute__((visibility("hidden")))
 @interface NRSwitchRecord : NRPBSwitchRecord <NSSecureCoding>
 {
 }

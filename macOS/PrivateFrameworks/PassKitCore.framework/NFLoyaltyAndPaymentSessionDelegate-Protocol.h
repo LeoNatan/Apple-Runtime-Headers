@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NFApplet, NFContactlessPaymentEndEvent, NFContactlessPaymentStartEvent, NFLoyaltyAndPaymentSession, NFTechnologyEvent, NSArray, NSDictionary, NSString;
+@class NFApplet, NFContactlessPaymentEndEvent, NFContactlessPaymentStartEvent, NFFieldNotification, NFLoyaltyAndPaymentSession, NFTechnologyEvent, NSArray, NSDictionary, NSString;
 
 @protocol NFLoyaltyAndPaymentSessionDelegate <NSObject>
 
@@ -25,6 +25,8 @@
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didExpireTransactionForApplet:(NFApplet *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didReceiveButtonPressForApplet:(NFApplet *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didSelectApplet:(NFApplet *)arg2;
+- (void)loyaltyAndPaymentSessionDidExitField:(NFLoyaltyAndPaymentSession *)arg1;
+- (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didEnterFieldWithNotification:(NFFieldNotification *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didDetectTechnology:(NFTechnologyEvent *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didDetectField:(BOOL)arg2;
 @end

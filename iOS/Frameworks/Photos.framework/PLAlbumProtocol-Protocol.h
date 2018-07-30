@@ -28,7 +28,6 @@
 @property(readonly, nonatomic) _Bool isPendingPhotoStreamAlbum;
 @property(readonly, nonatomic) _Bool isCloudSharedAlbum;
 @property(readonly, nonatomic) _Bool isPhotoStreamAlbum;
-@property(readonly, nonatomic) _Bool isWallpaperAlbum;
 @property(readonly, nonatomic) _Bool isPanoramasAlbum;
 @property(readonly, nonatomic) _Bool isCameraAlbum;
 @property(readonly, nonatomic) _Bool isLibrary;

@@ -8,6 +8,7 @@
 
 #import "NSCopying.h"
 
+__attribute__((visibility("hidden")))
 @interface GEOComponentAction : PBCodable <NSCopying>
 {
     CDStruct_56d48c16 _actions;

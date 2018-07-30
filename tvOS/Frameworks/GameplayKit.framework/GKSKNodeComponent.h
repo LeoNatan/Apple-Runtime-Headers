@@ -17,6 +17,7 @@
     SKNode *_node;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)componentWithNode:(id)arg1;
 @property(retain, nonatomic) SKNode *node; // @synthesize node=_node;
 @property(retain, nonatomic) NSIndexPath *serializableNodeIndexPath; // @synthesize serializableNodeIndexPath=_serializableNodeIndexPath;

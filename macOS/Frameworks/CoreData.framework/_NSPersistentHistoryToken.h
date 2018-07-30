@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;
+- (long long)compareToken:(id)arg1 error:(id *)arg2;
+- (long long)compare:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)storeTokens;
 - (id)description;

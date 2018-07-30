@@ -6,21 +6,25 @@
 
 #import "NSObject.h"
 
-@class NSArray;
+@class NSArray, NSMutableArray;
 
 @interface CUISBulletinClientFactory : NSObject
 {
     NSArray *_bulletins;
     NSObject *_attachment;
+    NSMutableArray *_mutableNotifications;
+    NSMutableArray *_mutableBulletins;
     id <CUISBulletinClientFactoryDelegate> _delegate;
 }
 
 + (_Bool)sendBulletinsToApp:(id)arg1;
++ (id)missedBulletinObserver;
 + (void)prepareForBulletins;
 @property(nonatomic) __weak id <CUISBulletinClientFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)alertSuppressionContexts;
-- (_Bool)addBulletin:(id)arg1;
+- (void)addNotification:(id)arg1 withSoundPolicy:(unsigned int)arg2;
+- (void)addBulletin:(id)arg1 withSoundPolicy:(unsigned int)arg2;
 - (unsigned int)allowedAudioFeedbackByOtherAlerts;
 - (void)presentationDismissedForReason:(unsigned int)arg1;
 - (void)presentationActivelyDismissed;
@@ -35,6 +39,8 @@
 - (id)actionMenuPresentation;
 - (id)primaryPagePresentation;
 - (_Bool)supportsCreatePrimaryPagePresentationAsychronously;
+@property(readonly, nonatomic) NSArray *notifications;
+- (id)_mutableNotifications;
 - (id)initWithBulletins:(id)arg1;
 - (id)initWithBulletins:(id)arg1 attachment:(id)arg2;
 - (id)init;

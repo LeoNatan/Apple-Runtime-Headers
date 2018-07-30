@@ -6,10 +6,10 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
-@interface SKRange : NSObject <NSCoding, NSCopying>
+@interface SKRange : NSObject <NSSecureCoding, NSCopying>
 {
     float _lowerLimit;
     float _upperLimit;
@@ -21,8 +21,10 @@
 + (id)rangeWithLowerLimit:(float)arg1;
 + (id)rangeWithNoLimits;
 + (id)rangeWithLowerLimit:(float)arg1 upperLimit:(float)arg2;
++ (_Bool)supportsSecureCoding;
 @property float upperLimit; // @synthesize upperLimit=_upperLimit;
 @property float lowerLimit; // @synthesize lowerLimit=_lowerLimit;
+- (_Bool)isEqualToRange:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -8,6 +8,9 @@
 
 @protocol CPLEngineTransportTask <NSObject>
 @property(retain, nonatomic) id <CPLEngineTransportGroup> transportGroup;
+@property(nonatomic, getter=isBackgroundTask) BOOL backgroundTask;
+@property(nonatomic, getter=isForcedTask) BOOL forcedTask;
+@property(nonatomic, getter=isHighPriorityBackground) BOOL highPriorityBackground;
 @property(nonatomic) BOOL foreground;
 - (void)cancel;
 - (void)run;

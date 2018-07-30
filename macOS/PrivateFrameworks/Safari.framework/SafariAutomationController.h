@@ -21,12 +21,17 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _WKAutomationSession *automationSession; // @synthesize automationSession=_automationSession;
 @property(nonatomic) BOOL userInteractionAllowed; // @synthesize userInteractionAllowed=_userInteractionAllowed;
 - (void).cxx_destruct;
+- (long long)_automationSession:(id)arg1 typeOfCurrentJavaScriptDialogOnPage:(struct OpaqueWKPage *)arg2;
 - (void)_automationSession:(id)arg1 setUserInput:(id)arg2 forCurrentJavaScriptDialogOnPage:(struct OpaqueWKPage *)arg3;
 - (id)_automationSession:(id)arg1 messageOfCurrentJavaScriptDialogOnPage:(struct OpaqueWKPage *)arg2;
 - (void)_automationSession:(id)arg1 acceptCurrentJavaScriptDialogOnPage:(struct OpaqueWKPage *)arg2;
 - (void)_automationSession:(id)arg1 dismissCurrentJavaScriptDialogOnPage:(struct OpaqueWKPage *)arg2;
 - (BOOL)_automationSession:(id)arg1 isShowingJavaScriptDialogOnPage:(struct OpaqueWKPage *)arg2;
-- (struct OpaqueWKPage *)_automationSessionDidRequestNewWindow:(id)arg1;
+- (void)_automationSession:(id)arg1 requestMaximizeWindowOfPage:(struct OpaqueWKPage *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_automationSession:(id)arg1 requestRestoreWindowOfPage:(struct OpaqueWKPage *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_automationSession:(id)arg1 requestHideWindowOfPage:(struct OpaqueWKPage *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_automationSession:(id)arg1 requestSwitchToPage:(const struct OpaqueWKPage *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_automationSession:(id)arg1 requestNewPageWithOptions:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_automationSessionDidDisconnectFromRemote:(id)arg1;
 - (void)_processPool:(id)arg1 didRequestAutomationSessionWithIdentifier:(id)arg2 configuration:(id)arg3;
 - (BOOL)_processPoolAllowsRemoteAutomation:(id)arg1;
@@ -37,12 +42,14 @@ __attribute__((visibility("hidden")))
 - (void)_allowsRemoteAutomationChanged;
 @property(readonly, copy, nonatomic) WKPreferences *preferencesForAutomation;
 @property(nonatomic) BOOL allowsRemoteAutomation;
-- (BOOL)clearAutomationSession;
+- (BOOL)_uninstallAutomationSession;
+- (void)terminateSession;
 - (BOOL)createAutomationSessionWithIdentifier:(id)arg1 configuration:(id)arg2;
 - (BOOL)createAutomationSessionWithIdentifier:(id)arg1;
 - (void)_lockAllAutomationWindowsForUserInteraction;
 - (void)_unlockAllAutomationWindowsForUserInteraction;
 - (void)_closeAllAutomationWindowsSkippingInspected:(BOOL)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

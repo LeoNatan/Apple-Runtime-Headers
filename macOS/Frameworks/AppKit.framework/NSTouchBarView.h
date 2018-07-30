@@ -19,7 +19,7 @@
     NSArray *_views;
     NSMutableArray *_detachedViews;
     NSMutableArray *_centerViews;
-    NSMutableSet *_dirtyCompressionItems;
+    NSMutableSet *_dirtyGroupItems;
     NSLayoutXAxisAnchor *_visualCenterAnchor;
     NSTouchBarLayout *_layoutManager;
     NSMapTable *_itemsToAttributes;
@@ -73,8 +73,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)_commonInit;
 - (BOOL)_shouldDoLayerPerformanceUpdates;
-- (void)setFunctionBars:(id)arg1;
-- (id)functionBars;
 
 @end
 

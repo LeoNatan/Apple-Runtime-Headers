@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)prepareMasterReorderStatementPart2ForRelationship:(id)arg1;
 - (void)prepareMasterReorderStatementForRelationship:(id)arg1;
 - (void)prepareInsertStatementForRelationship:(id)arg1;
+- (void)prepareInsertStatementWithRow:(id)arg1 includeConstraints:(BOOL)arg2;
 - (void)prepareInsertStatementWithRow:(id)arg1;
 - (void)appendWhereClauseToSQL;
 - (void)appendSQL:(id)arg1;

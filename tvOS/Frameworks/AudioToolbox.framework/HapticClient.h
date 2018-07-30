@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct HapticSharedMemory _sharedBuffer;
     unsigned long long _uniqueID;
     int _serverTimeout;
+    CDUnknownBlockType _connectionCallback;
     _Bool _prewarmed;
     _Bool _running;
     _Bool _connected;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property int serverProcessID; // @synthesize serverProcessID=_serverProcessID;
+@property(copy) CDUnknownBlockType connectionCallback; // @synthesize connectionCallback=_connectionCallback;
 @property _Bool connected; // @synthesize connected=_connected;
 @property(readonly) _Bool running; // @synthesize running=_running;
 @property(readonly) _Bool prewarmed; // @synthesize prewarmed=_prewarmed;
@@ -38,12 +40,13 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)destroySharedMemory;
 - (int)setupSharedMemory:(id)arg1 size:(unsigned int)arg2;
-- (void)handleConnectionError;
-- (void)handleHapticServerCrash;
+- (void)handleServerConnectionInvalidation;
+- (void)handleServerConnectionInterruption;
 - (_Bool)setNumberOfChannels:(unsigned long long)arg1 error:(id *)arg2;
 - (_Bool)setPlayerBehavior:(unsigned long long)arg1 error:(id *)arg2;
 - (void)setChannelKeys:(id)arg1;
 - (void)disconnect;
+- (id)getAsyncDelegateForMethod:(SEL)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (_Bool)setupConnectionAndReturnError:(id *)arg1;
 - (void)doInit;
 - (void)releaseResources;

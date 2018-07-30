@@ -7,6 +7,7 @@
 @class NSData, NSError;
 
 @protocol LAContextEventFeedbackProt
+- (void)setShowingCoachingHint:(_Bool)arg1 event:(int)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)setCredential:(NSData *)arg1 forProcessedEvent:(int)arg2 credentialType:(int)arg3 reply:(void (^)(_Bool, NSError *))arg4;
 - (void)resetProcessedEvent:(int)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)retryProcessedEvent:(int)arg1 reply:(void (^)(_Bool, NSError *))arg2;

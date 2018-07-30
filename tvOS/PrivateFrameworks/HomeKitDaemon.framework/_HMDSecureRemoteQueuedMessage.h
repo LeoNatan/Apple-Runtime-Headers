@@ -8,7 +8,7 @@
 
 #import "HMFObject.h"
 
-@class HMDRemoteMessage, HMFTimer, NSString;
+@class HMDRemoteMessage, HMFTimer, NSArray, NSString;
 
 @interface _HMDSecureRemoteQueuedMessage : HMFObject <HMFObject>
 {
@@ -20,14 +20,16 @@
 @property(readonly, nonatomic) HMDRemoteMessage *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *propertyDescription;
-- (id)shortDescription;
+@property(readonly, copy) NSString *shortDescription;
 - (id)initWithMessage:(id)arg1;
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *privateDescription;
 @property(readonly) Class superclass;
 
 @end

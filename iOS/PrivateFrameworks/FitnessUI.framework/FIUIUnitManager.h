@@ -21,6 +21,10 @@
 - (id)userBasalEnergyBurnedUnit;
 - (void)setUserActiveEnergyBurnedUnit:(id)arg1;
 - (id)userActiveEnergyBurnedUnit;
+- (double)distanceInDistanceUnit:(unsigned long long)arg1 forDistanceInMeters:(double)arg2;
+- (double)distanceInUserDistanceUnitForDistanceInMeters:(double)arg1 distanceType:(unsigned long long)arg2;
+- (double)distanceInMetersForDistanceInUserUnit:(double)arg1 distanceType:(unsigned long long)arg2;
+- (double)paceWithDistance:(id)arg1 overDuration:(double)arg2 paceFormat:(long long)arg3;
 - (void)setUserDistanceCyclingUnit:(unsigned long long)arg1;
 - (id)userDistanceCyclingHKUnit;
 - (unsigned long long)userDistanceCyclingUnit;
@@ -31,6 +35,7 @@
 - (unsigned long long)userDistanceElevationUnit;
 - (unsigned long long)userDistanceWalkingRunningUnit;
 - (void)setUserDistanceUnit:(unsigned long long)arg1 forDistanceType:(unsigned long long)arg2;
+- (id)userDistanceHKUnitForActivityType:(id)arg1;
 - (id)userDistanceHKUnitForDistanceType:(unsigned long long)arg1;
 - (unsigned long long)userDistanceUnitForDistanceType:(unsigned long long)arg1;
 - (void)_setPreferredHKUnit:(id)arg1 forQuantityType:(id)arg2;

@@ -6,20 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSMutableOrderedSet;
+@class NSArray, NSMutableOrderedSet;
 
 @interface XCAXCycleDetector : NSObject
 {
-    NSMutableOrderedSet *_trackedAXElementStack;
+    NSMutableOrderedSet *_elementStack;
 }
 
-@property(retain) NSMutableOrderedSet *trackedAXElementStack; // @synthesize trackedAXElementStack=_trackedAXElementStack;
++ (id)_cycleDescriptionForElementStack:(id)arg1;
 - (void).cxx_destruct;
-- (void)untrackAXElement:(struct __AXUIElement *)arg1;
-- (BOOL)trackAXElement:(struct __AXUIElement *)arg1 error:(id *)arg2;
-- (id)_cycleErrorForElementWithCurrentStack:(struct __AXUIElement *)arg1;
-- (id)_elementStackDescription;
-- (id)_descriptionForAXElement:(struct __AXUIElement *)arg1;
+@property(readonly) NSArray *currentElementPath;
+- (id)_cycleDescriptionForElementWithCurrentStack:(id)arg1;
+- (id)_cycleErrorForElement:(id)arg1;
+- (void)untrackElement:(id)arg1;
+- (BOOL)trackElement:(id)arg1 error:(id *)arg2;
 - (id)init;
 
 @end

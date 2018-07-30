@@ -8,6 +8,7 @@
 
 @class AVAudioMix, AVAudioOutputSettings, NSArray, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetReaderAudioMixOutputInternal : NSObject
 {
     NSArray *audioTracks;

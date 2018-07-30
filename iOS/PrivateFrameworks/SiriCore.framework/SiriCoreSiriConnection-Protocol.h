@@ -25,7 +25,7 @@
 @property(copy, nonatomic) NSString *aceHost;
 @property(nonatomic) _Bool forceReconnect;
 @property(copy, nonatomic) NSError *skipPeerError;
-@property(nonatomic) _Bool skipEdge;
+@property(nonatomic) _Bool useWiFiHint;
 @property(nonatomic) _Bool skipPeer;
 @property(nonatomic) _Bool prefersWWAN;
 @property(copy, nonatomic) NSURL *url;

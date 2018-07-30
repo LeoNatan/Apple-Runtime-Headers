@@ -6,11 +6,11 @@
 
 #import <Mail/MFEWSRequestOperation.h>
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class MFEWSGetItemsResponseOperation, MFEWSSuppressReadReceiptsRequestOperation, NSArray, NSDictionary;
 
-@interface MFEWSUpdateItemRequestOperation : MFEWSRequestOperation <NSCoding>
+@interface MFEWSUpdateItemRequestOperation : MFEWSRequestOperation <NSSecureCoding>
 {
     BOOL _messageType;
     NSArray *_EWSItemIds;
@@ -19,9 +19,10 @@
     MFEWSSuppressReadReceiptsRequestOperation *_suppressReadReceiptsRequest;
 }
 
-@property(readonly, nonatomic) BOOL messageType; // @synthesize messageType=_messageType;
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) MFEWSSuppressReadReceiptsRequestOperation *suppressReadReceiptsRequest; // @synthesize suppressReadReceiptsRequest=_suppressReadReceiptsRequest;
 @property(readonly, nonatomic) MFEWSGetItemsResponseOperation *getItemsResponse; // @synthesize getItemsResponse=_getItemsResponse;
+@property(readonly, nonatomic) BOOL messageType; // @synthesize messageType=_messageType;
 @property(readonly, copy, nonatomic) NSDictionary *flags; // @synthesize flags=_flags;
 @property(readonly, copy, nonatomic) NSArray *EWSItemIds; // @synthesize EWSItemIds=_EWSItemIds;
 - (void).cxx_destruct;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CKBrowserDragControllerTarget, CKBrowserDragManager, UIView<CKBrowserItem>;
+@class CKBrowserDragControllerTarget, CKBrowserDragManager;
 
 @protocol CKBrowserDragControllerDelegate <NSObject>
 - (_Bool)dragManager:(CKBrowserDragManager *)arg1 canPeelItem:(id)arg2;
@@ -17,7 +17,6 @@
 - (void)dragManager:(CKBrowserDragManager *)arg1 didDragItem:(id)arg2 toDragTarget:(CKBrowserDragControllerTarget *)arg3;
 
 @optional
-- (_Bool (^)(struct CGPoint, double, double))commitBlockForItem:(UIView<CKBrowserItem> *)arg1;
 - (void)dragManager:(CKBrowserDragManager *)arg1 didEndDraggingItem:(id)arg2 toDragTarget:(CKBrowserDragControllerTarget *)arg3 dropArea:(int)arg4 wasCancelled:(_Bool *)arg5;
 - (void)dragManager:(CKBrowserDragManager *)arg1 didBeginDraggingItem:(id)arg2;
 @end

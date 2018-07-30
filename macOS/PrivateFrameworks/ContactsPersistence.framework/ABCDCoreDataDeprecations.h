@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)tryLockContext:(id)arg1;
 + (void)unlockContext:(id)arg1;
 + (void)lockContext:(id)arg1;
++ (BOOL)isConfinedContext:(id)arg1;
 + (id)newConfinedContext;
 
 @end

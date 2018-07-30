@@ -12,11 +12,13 @@
 {
     CBScalablePipeManager *_pipeManager;
     int _socket;
+    _Bool _reliablePipe;
     CBCentral *_central;
     CBPeer *_peer;
     NSString *_name;
     int _type;
     int _priority;
+    int _mtu;
     NSInputStream *_input;
     NSOutputStream *_output;
     void *_channel;
@@ -25,6 +27,8 @@
 @property(readonly, nonatomic) void *channel; // @synthesize channel=_channel;
 @property(readonly, nonatomic) NSOutputStream *output; // @synthesize output=_output;
 @property(readonly, nonatomic) NSInputStream *input; // @synthesize input=_input;
+@property(readonly, nonatomic) _Bool reliablePipe; // @synthesize reliablePipe=_reliablePipe;
+@property(readonly, nonatomic) int mtu; // @synthesize mtu=_mtu;
 @property(readonly, nonatomic) int priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;

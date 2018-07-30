@@ -10,8 +10,12 @@
 #import "LPHTMLAttributeText.h"
 
 @interface NSColor (LPExtras) <LPCSSText, LPHTMLAttributeText>
++ (id)_lp_colorNamed:(id)arg1;
 - (id)_lp_HTMLAttributeText;
+- (id)_lp_CSSTextHexFormatForcingAppearance:(id)arg1;
 - (id)_lp_CSSTextHexFormat;
+- (id)_lp_CSSTextWithAlternatePropertiesForName:(id)arg1;
+- (id)_lp_CSSTextForcingAppearance:(id)arg1;
 - (id)_lp_CSSText;
 @end
 

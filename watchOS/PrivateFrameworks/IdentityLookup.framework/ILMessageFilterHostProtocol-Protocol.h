@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class ILMessageFilterQueryRequest, ILMessageFilterReportRequest;
+@class ILClassificationReportRequest, ILMessageFilterQueryRequest, ILMessageFilterReportRequest;
 
 @protocol ILMessageFilterHostProtocol <NSObject>
+- (oneway void)performClassificationReportRequest:(ILClassificationReportRequest *)arg1;
 - (oneway void)performReportRequest:(ILMessageFilterReportRequest *)arg1 reply:(void (^)(NSError *))arg2;
 - (oneway void)performQueryRequest:(ILMessageFilterQueryRequest *)arg1 reply:(void (^)(ILMessageFilterQueryResponse *, NSError *))arg2;
 @end

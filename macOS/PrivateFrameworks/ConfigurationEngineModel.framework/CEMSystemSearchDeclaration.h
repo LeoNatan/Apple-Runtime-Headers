@@ -12,24 +12,27 @@
 
 @interface CEMSystemSearchDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSNumber *_payloadAllowSpotlightInternetResults;
+    NSNumber *_payloadAllowDefinitionLookup;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowSpotlightInternetResults:(id)arg2 withAllowDefinitionLookup:(id)arg3;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (BOOL)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowDefinitionLookup; // @synthesize payloadAllowDefinitionLookup=_payloadAllowDefinitionLookup;
+@property(copy, nonatomic) NSNumber *payloadAllowSpotlightInternetResults; // @synthesize payloadAllowSpotlightInternetResults=_payloadAllowSpotlightInternetResults;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (BOOL)mustBeSupervised;
 - (BOOL)multipleAllowed;
-@property(readonly, nonatomic) NSNumber *payloadAllowDefinitionLookup;
-@property(readonly, nonatomic) NSNumber *payloadAllowSpotlightInternetResults;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -9,7 +9,6 @@
 @class NSData;
 
 @protocol SPLongFormAudioClientProtocol <NSObject>
-- (void)backgroundAudioPlaybackRequestedWithoutValidAudioRoute;
 - (void)receiveData:(NSData *)arg1;
 @end
 

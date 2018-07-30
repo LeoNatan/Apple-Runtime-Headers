@@ -26,6 +26,7 @@
 - (oneway void)getFootprintsForVoiceName:(NSString *)arg1 languageCode:(NSString *)arg2 reply:(void (^)(NSArray *))arg3;
 - (oneway void)getVoiceNamesForLanguage:(NSString *)arg1 reply:(void (^)(NSArray *))arg2;
 - (oneway void)stopPresynthesizedAudioRequest;
+- (oneway void)cachePresynthesizedAudioRequest:(VSPresynthesizedAudioRequest *)arg1;
 - (oneway void)startPresynthesizedAudioRequest:(VSPresynthesizedAudioRequest *)arg1;
 - (oneway void)stopSpeechRequestAtMark:(long long)arg1;
 - (oneway void)continueSpeechRequest;

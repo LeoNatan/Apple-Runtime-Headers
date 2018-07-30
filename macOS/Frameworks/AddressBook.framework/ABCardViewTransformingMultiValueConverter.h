@@ -10,7 +10,6 @@
 
 @class NSArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABCardViewTransformingMultiValueConverter : NSObject <ABCardViewMultiValueConverter>
 {
     id <ABCardViewMultiValueConverter> _basicConverter;

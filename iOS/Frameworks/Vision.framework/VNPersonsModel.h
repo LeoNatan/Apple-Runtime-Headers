@@ -6,14 +6,16 @@
 
 #import "NSObject.h"
 
-@class VNPersonsModelConfiguration;
+@class VNPersonsModelConfiguration, VNPersonsModelFaceModel;
 
 @interface VNPersonsModel : NSObject
 {
     VNPersonsModelConfiguration *_configuration;
+    id <VNPersonsModelDataSource> _dataSource;
+    unsigned long long _lastDataChangeSequenceNumber;
+    VNPersonsModelFaceModel *_faceModel_DO_NOT_ACCESS_DIRECTLY;
 }
 
-+ (_Bool)readObjectForVersion2Tag:(unsigned int)arg1 fromInputStream:(id)arg2 intoObjectDictionary:(id)arg3 md5Context:(struct CC_MD5state_st *)arg4 error:(id *)arg5;
 + (_Bool)readObjectForVersion1Tag:(unsigned int)arg1 fromInputStream:(id)arg2 intoObjectDictionary:(id)arg3 md5Context:(struct CC_MD5state_st *)arg4 error:(id *)arg5;
 + (id)newModelFromVersion:(unsigned long long)arg1 objects:(id)arg2 error:(id *)arg3;
 + (id)informationForModelWithURL:(id)arg1 error:(id *)arg2;
@@ -38,10 +40,8 @@
 - (unsigned long long)personCount;
 - (id)predictPersonFromFaceObservation:(id)arg1 limit:(unsigned long long)arg2 canceller:(id)arg3 error:(id *)arg4;
 - (id)upToDateFaceModelWithCanceller:(id)arg1 error:(id *)arg2;
-- (unsigned long long)faceprintCountForPersonWithUniqueIdentifier:(id)arg1;
-- (id)identitySerialNumberForPersonWithUniqueIdentifier:(id)arg1;
 - (id)description;
-- (id)initWithConfiguration:(id)arg1;
+- (id)initWithConfiguration:(id)arg1 dataSource:(id)arg2;
 
 @end
 

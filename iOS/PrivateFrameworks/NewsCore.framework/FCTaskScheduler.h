@@ -15,6 +15,7 @@
 + (id)lowPriorityOperationQueue;
 + (id)lowPriorityQueue;
 + (void)scheduleLowPriorityOperation:(id)arg1;
++ (void)scheduleLowPriorityBlockForMainThread:(CDUnknownBlockType)arg1;
 + (void)scheduleLowPriorityBlock:(CDUnknownBlockType)arg1;
 
 @end

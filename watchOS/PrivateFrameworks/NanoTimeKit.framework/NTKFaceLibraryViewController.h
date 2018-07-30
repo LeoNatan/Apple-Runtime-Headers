@@ -13,10 +13,11 @@
 #import "ORBTapGestureRecognizerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class NSMapTable, NSMutableSet, NSString, NTKAddPageViewController, NTKDelayedBlock, NTKFace, NTKFaceCollection, NTKFaceConfiguration, NTKFaceLibraryOverlayView, NTKFaceSnapshotClient, NTKFaceViewController, NTKSwitcherViewController, NTKTaskScheduler, NTKTrackingGestureRecognizer, ORBAnimator, ORBTapGestureRecognizer;
+@class CLKDevice, CSLSSuspendSystemGestureAssertion, NSMapTable, NSMutableSet, NSString, NTKAddPageViewController, NTKDelayedBlock, NTKFace, NTKFaceCollection, NTKFaceConfiguration, NTKFaceLibraryOverlayView, NTKFaceSnapshotClient, NTKFaceViewController, NTKSwitcherViewController, NTKTaskScheduler, NTKTrackingGestureRecognizer, ORBAnimator, ORBTapGestureRecognizer;
 
 @interface NTKFaceLibraryViewController : UIViewController <NTKPageScrollViewControllerDataSource, NTKPageScrollViewControllerDelegate, NTKAddPageViewControllerDelegate, NTKFaceCollectionObserver, UIGestureRecognizerDelegate, ORBTapGestureRecognizerDelegate>
 {
+    CLKDevice *_device;
     NTKFaceCollection *_libraryFaceCollection;
     NTKFaceCollection *_addableFaceCollection;
     NTKSwitcherViewController *_switcherController;
@@ -48,6 +49,7 @@
     NTKFace *_emptyLibraryFace;
     NTKFaceViewController *_emptyLibraryFaceViewController;
     NTKFaceConfiguration *_originalFaceConfiguration;
+    CSLSSuspendSystemGestureAssertion *_suspendSystemGestureAssertion;
     _Bool _isFaceEditing;
     _Bool _isFaceSwitching;
     id <NTKFaceLibraryViewControllerDelegate> _delegate;
@@ -176,6 +178,8 @@
 - (void)presentLibraryAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_refreshCollectionUpdateState;
 - (void)_setPresented:(_Bool)arg1;
+- (void)_releaseSuspendSystemGestureAssertion;
+- (void)_takeSuspendSystemGestureAssertion;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)deactivate;
 - (void)activateWithSelectedFaceViewController:(id)arg1;

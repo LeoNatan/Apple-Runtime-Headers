@@ -28,6 +28,8 @@
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(nonatomic) __weak id <ACXDeviceConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)cancelUpdatePendingForCompanionApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setUpdatePendingForCompanionApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 forPairedDevice:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchProvisioningProfilesForApplicationWithBundleID:(id)arg1 forPairedDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;

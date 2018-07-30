@@ -40,17 +40,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasCarrierPhoneNumber;
-@property(readonly, nonatomic) _Bool hasOperatorFlightNumber;
-@property(readonly, nonatomic) _Bool hasOperatorCarrierCode;
 - (id)legsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)legsCount;
 - (void)addLegs:(id)arg1;
 - (void)clearLegs;
-@property(readonly, nonatomic) _Bool hasFlightNumber;
-@property(readonly, nonatomic) _Bool hasCarrierName;
-@property(readonly, nonatomic) _Bool hasCarrierCode;
-@property(readonly, nonatomic) _Bool hasFlightID;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

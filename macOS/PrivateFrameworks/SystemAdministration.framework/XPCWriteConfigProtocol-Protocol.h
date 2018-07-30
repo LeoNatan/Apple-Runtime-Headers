@@ -20,7 +20,7 @@
 - (oneway void)setGuestPassword:(NSString *)arg1 accountName:(NSString *)arg2 _withAuthorization:(NSData *)arg3;
 - (oneway void)setODSDPassword:(NSString *)arg1 accountName:(NSString *)arg2 _withAuthorization:(NSData *)arg3;
 - (oneway void)setKeyForDomain:(NSDictionary *)arg1 _withAuthorization:(NSData *)arg2;
-- (oneway void)setRestrictAppInstallations:(BOOL)arg1 allowCaspianIdentifiedApps:(BOOL)arg2 _withAuthorization:(NSData *)arg3;
+- (oneway void)setRestrictAppInstallations:(unsigned long long)arg1 _withAuthorization:(NSData *)arg2;
 - (oneway void)suspendPerUserLaunchd:(unsigned long long)arg1 suspend:(BOOL)arg2 _withAuthorization:(NSData *)arg3;
 - (oneway void)runKextcacheWithAuthorization:(NSData *)arg1 result:(void (^)(long long))arg2;
 - (oneway void)touchEFIResourceBuilder_withAuthorization:(NSData *)arg1;

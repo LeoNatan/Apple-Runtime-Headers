@@ -23,7 +23,16 @@ __attribute__((visibility("hidden")))
         CDUnknownFunctionPointerType _field9;
         void *_field10;
     } *clientModule;
-    const CDStruct_1af33fde *browsableContentEndpoint;
+    const struct {
+        void *_field1;
+        CDUnknownFunctionPointerType _field2;
+        CDUnknownFunctionPointerType _field3;
+        CDUnknownFunctionPointerType _field4;
+        CDUnknownFunctionPointerType _field5;
+        CDUnknownFunctionPointerType _field6;
+        CDUnknownFunctionPointerType _field7;
+        CDUnknownFunctionPointerType _field8;
+    } *browsableContentEndpoint;
     const struct {
         void *_field1;
         CDUnknownFunctionPointerType _field2;

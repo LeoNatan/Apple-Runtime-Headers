@@ -8,6 +8,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface ICCameraFolderProperties : NSObject
 {
     NSMutableArray *_files;
@@ -16,7 +17,6 @@
 
 @property(retain) NSMutableArray *folders; // @synthesize folders=_folders;
 @property(retain) NSMutableArray *files; // @synthesize files=_files;
-- (void)finalize;
 - (void)dealloc;
 
 @end

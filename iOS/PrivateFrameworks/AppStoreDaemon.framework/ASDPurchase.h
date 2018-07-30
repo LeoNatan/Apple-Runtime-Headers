@@ -20,6 +20,7 @@
     _Bool _isBackgroundUpdate;
     _Bool _isRedownload;
     _Bool _shouldCancelForInstalledBundleItems;
+    _Bool _isCompatibilityUpdate;
     _Bool _isRefresh;
     _Bool _sendGUID;
     NSString *_bundleID;
@@ -36,6 +37,7 @@
     NSString *_referrerURL;
     long long _purchaseID;
     NSArray *_requiredCapabilities;
+    NSString *_preflightURLString;
     NSString *_clientID;
     NSNumber *_ownerDSID;
     NSNumber *_purchaserDSID;
@@ -46,7 +48,9 @@
 @property(copy, nonatomic) NSNumber *purchaserDSID; // @synthesize purchaserDSID=_purchaserDSID;
 @property(copy, nonatomic) NSNumber *ownerDSID; // @synthesize ownerDSID=_ownerDSID;
 @property(nonatomic) _Bool isRefresh; // @synthesize isRefresh=_isRefresh;
+@property(nonatomic) _Bool isCompatibilityUpdate; // @synthesize isCompatibilityUpdate=_isCompatibilityUpdate;
 @property(copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
+@property(copy) NSString *preflightURLString; // @synthesize preflightURLString=_preflightURLString;
 @property(nonatomic) _Bool shouldCancelForInstalledBundleItems; // @synthesize shouldCancelForInstalledBundleItems=_shouldCancelForInstalledBundleItems;
 @property(copy, nonatomic) NSArray *requiredCapabilities; // @synthesize requiredCapabilities=_requiredCapabilities;
 @property long long purchaseID; // @synthesize purchaseID=_purchaseID;

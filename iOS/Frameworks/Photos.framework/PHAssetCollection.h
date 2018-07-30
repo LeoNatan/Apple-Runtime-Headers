@@ -26,7 +26,6 @@
     _Bool _isLibrary;
     _Bool _isCameraRoll;
     _Bool _isPanoramasCollection;
-    _Bool _isWallpaperCollection;
     _Bool _isPhotoStreamCollection;
     _Bool _isCloudSharedAlbum;
     _Bool _isStandInCollection;
@@ -58,16 +57,22 @@
 + (long long)titleCategoryForTitleFontName:(id)arg1;
 + (id)titleFontNameForTitleCategory:(long long)arg1;
 + (id)defaultTitleFontNames;
-+ (id)graphOptionsForTransientAssetCollection:(id)arg1 needsCompleteMomentsInfo:(_Bool)arg2;
++ (id)graphOptionsForTransientAssetCollection:(id)arg1 needsCompleteMomentsInfo:(_Bool)arg2 options:(id)arg3;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 subtype:(long long)arg2;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 subtitle:(id)arg3 titleFontName:(id)arg4;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2;
++ (id)fetchMomentsBackingSuggestion:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsBackingMemory:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsWithOptions:(id)arg1;
 + (id)fetchMomentsInMomentList:(id)arg1 options:(id)arg2;
++ (id)fetchSuggestedContributionsForAssetsMetadata:(id)arg1 options:(id)arg2;
++ (id)fetchSuggestedContributionsForFileURLs:(id)arg1 options:(id)arg2;
++ (id)fetchSuggestedContributionsForAssetsFetchResult:(id)arg1 options:(id)arg2;
++ (id)fetchSuggestedContributionsForCMMPhotoLibrary:(id)arg1 options:(id)arg2;
++ (id)fetchSharingSuggestionsWithOptions:(id)arg1;
 + (id)fetchUserLibraryAlbumWithOptions:(id)arg1;
 + (id)fetchAssetCollectionsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)fetchAssetCollectionsWithALAssetGroupURLs:(id)arg1 options:(id)arg2;
@@ -78,7 +83,7 @@
 + (id)fetchAssetCollectionsContainingAssets:(id)arg1 withType:(long long)arg2 options:(id)arg3;
 + (id)fetchAssetCollectionsContainingAsset:(id)arg1 withType:(long long)arg2 options:(id)arg3;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)identifierCode;
 + (_Bool)managedObjectSupportsTrashedState;
 + (id)fetchType;
@@ -86,6 +91,7 @@
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 + (id)_composePropertiesToFetchWithHint:(unsigned long long)arg1;
 + (id)corePropertiesToFetch;
++ (id)sharingSuggestionWithRandomPick:(_Bool)arg1 fallbackToRecentMoments:(_Bool)arg2 needsNotification:(_Bool)arg3;
 + (id)posterImageForAssetCollection:(id)arg1;
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 includeTrash:(_Bool)arg2;
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1;
@@ -103,7 +109,6 @@
 @property(readonly, nonatomic) _Bool isStandInCollection; // @synthesize isStandInCollection=_isStandInCollection;
 @property(readonly, nonatomic) _Bool isCloudSharedAlbum; // @synthesize isCloudSharedAlbum=_isCloudSharedAlbum;
 @property(readonly, nonatomic) _Bool isPhotoStreamCollection; // @synthesize isPhotoStreamCollection=_isPhotoStreamCollection;
-@property(readonly, nonatomic) _Bool isWallpaperCollection; // @synthesize isWallpaperCollection=_isWallpaperCollection;
 @property(readonly, nonatomic) _Bool isPanoramasCollection; // @synthesize isPanoramasCollection=_isPanoramasCollection;
 @property(readonly, nonatomic) _Bool isCameraRoll; // @synthesize isCameraRoll=_isCameraRoll;
 @property(readonly, nonatomic) _Bool isLibrary; // @synthesize isLibrary=_isLibrary;
@@ -141,6 +146,7 @@
 @property(readonly, nonatomic) _Bool canShowAvalancheStacks;
 - (_Bool)canContainAssets;
 - (_Bool)canPerformEditOperation:(long long)arg1;
+@property(readonly, nonatomic) _Bool isPlacesAlbum;
 @property(readonly, nonatomic) _Bool isTrashBin;
 @property(readonly, nonatomic) _Bool isLastImportedAlbum;
 - (unsigned long long)collectionFixedOrderPriority;
@@ -154,7 +160,6 @@
 - (id)localizedTitle;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;
-- (_Bool)pl_isWallpaperAlbum;
 - (id)pl_assetContainer;
 
 @end

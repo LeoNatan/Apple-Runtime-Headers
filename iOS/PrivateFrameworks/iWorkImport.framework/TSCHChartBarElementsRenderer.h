@@ -21,9 +21,18 @@ __attribute__((visibility("hidden")))
 
 - (void)p_renderIntoContext:(struct CGContext *)arg1 visible:(struct CGRect)arg2;
 - (void)p_drawLabels:(struct CGContext *)arg1 visible:(struct CGRect)arg2;
+- (struct CGPath *)roundedCornerPathForRect:(struct CGRect)arg1 shouldRoundOuterEndOnly:(_Bool)arg2 relativelyPositive:(_Bool)arg3;
+- (id)stackRectsWithContext:(struct CGContext *)arg1;
+- (struct CGPath *)clippingPathForRect:(struct CGRect)arg1 inGroupIndex:(unsigned long long)arg2 withContext:(struct CGContext *)arg3 relativelyPositive:(_Bool)arg4 stackRects:(id)arg5;
+- (id)p_strokeForSeriesIndex:(unsigned long long)arg1 withContext:(struct CGContext *)arg2;
+- (void)renderRoundedCornerElementStrokeIntoContext:(struct CGContext *)arg1 stroke:(id)arg2 clippingPath:(struct CGPath *)arg3 elementRenderRect:(struct CGRect)arg4;
+- (void)renderElementStroke:(id)arg1 intoContext:(struct CGContext *)arg2 usingElementRenderRect:(struct CGRect)arg3 inGroupIndex:(unsigned long long)arg4 relativelyPositive:(_Bool)arg5 stackRects:(id)arg6;
+- (void)enumerateElementsForSeries:(id)arg1 withValueSet:(id)arg2 context:(struct CGContext *)arg3 forBlock:(CDUnknownBlockType)arg4;
+- (void)enumerateRenderingElementsForSeries:(id)arg1 context:(struct CGContext *)arg2 forBlock:(CDUnknownBlockType)arg3;
+- (void)enumerateAllElementsForSeries:(id)arg1 context:(struct CGContext *)arg2 forBlock:(CDUnknownBlockType)arg3;
+- (void)p_drawLayer:(struct CGLayer *)arg1 intoContext:(struct CGContext *)arg2 contextRect:(struct CGRect)arg3 groupIndex:(unsigned long long)arg4 relativelyPositive:(_Bool)arg5 stackRects:(id)arg6;
 - (void)p_drawBars:(struct CGContext *)arg1 visible:(struct CGRect)arg2;
 - (struct CGRect)renderingElementFrameForBarElementFrame:(struct CGRect)arg1 groupIndex:(unsigned long long)arg2 modelCache:(id)arg3 stroke:(id)arg4 viewScale:(double)arg5 contextInfo:(CDStruct_71493e60)arg6 returningFillRect:(struct CGRect *)arg7 strokeRect:(struct CGRect *)arg8;
-- (CDStruct_d2b197d1)p_valueRangeForModelCache:(id)arg1 groupIndex:(unsigned long long)arg2;
 - (struct CGRect)barElementFrameForSeries:(id)arg1 groupIndex:(unsigned long long)arg2;
 - (_Bool)supportsSeparateLabelsRenderPass;
 - (int)chunkPlane;

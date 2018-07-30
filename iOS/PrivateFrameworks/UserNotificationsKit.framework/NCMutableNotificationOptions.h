@@ -13,6 +13,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) _Bool lauchUsingSiriForCarPlayDefaultAction; // @dynamic lauchUsingSiriForCarPlayDefaultAction;
 @property(nonatomic) _Bool revealsAdditionalContentIfNoDefaultAction; // @dynamic revealsAdditionalContentIfNoDefaultAction;
 @property(nonatomic) _Bool preventsAutomaticLock; // @dynamic preventsAutomaticLock;
 @property(nonatomic) _Bool coalescesWhenLocked; // @dynamic coalescesWhenLocked;
@@ -22,6 +23,7 @@
 @property(nonatomic) _Bool suppressesTitleWhenLocked; // @dynamic suppressesTitleWhenLocked;
 @property(nonatomic) _Bool revealsAdditionalContentOnPresentation; // @dynamic revealsAdditionalContentOnPresentation;
 @property(nonatomic) _Bool preemptsPresentedNotification; // @dynamic preemptsPresentedNotification;
+@property(nonatomic) _Bool prefersDarkAppearance; // @dynamic prefersDarkAppearance;
 @property(nonatomic) unsigned long long messageNumberOfLines; // @dynamic messageNumberOfLines;
 @property(nonatomic) _Bool hideClearActionInList; // @dynamic hideClearActionInList;
 @property(nonatomic) _Bool requestsFullScreenPresentation; // @dynamic requestsFullScreenPresentation;
@@ -35,6 +37,7 @@
 @property(nonatomic) unsigned long long lockScreenPersistence; // @dynamic lockScreenPersistence;
 @property(nonatomic) _Bool addToLockScreenWhenUnlocked; // @dynamic addToLockScreenWhenUnlocked;
 @property(nonatomic) _Bool alertsWhenLocked; // @dynamic alertsWhenLocked;
+@property(nonatomic) _Bool overridesDowntime; // @dynamic overridesDowntime;
 @property(nonatomic) _Bool overridesQuietMode; // @dynamic overridesQuietMode;
 @property(nonatomic) _Bool dismissAutomatically; // @dynamic dismissAutomatically;
 @property(copy, nonatomic) NSString *alternateActionLabel; // @dynamic alternateActionLabel;

@@ -28,6 +28,10 @@
 + (unsigned long long)_hashForProtocol:(id)arg1;
 + (unsigned long long)daemonInterfaceHash;
 + (unsigned long long)clientInterfaceHash;
+@property(readonly, nonatomic) MNAudioOutputSetting *currentSettingForVoicePrompt; // @synthesize currentSettingForVoicePrompt=_currentSettingForVoicePrompt;
+@property(readonly, nonatomic) NSArray *audioSettings; // @synthesize audioSettings=_audioSettings;
+@property(readonly, nonatomic) unsigned long long routeSelection; // @synthesize routeSelection=_routeSelection;
+@property(readonly, nonatomic) MNAudioOutputSetting *currentAudioOutputSetting; // @synthesize currentAudioOutputSetting=_currentAudioOutputSetting;
 - (void).cxx_destruct;
 - (void)remoteProxyDidFinishReconnecting:(id)arg1;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAudioOutputRouteSelection:(unsigned long long)arg2;
@@ -85,7 +89,7 @@
 - (void)navigationServiceProxy:(id)arg1 didUpdateActiveRouteDetails:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
-- (void)_reset;
+- (void)_resetDetails;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;
 @property(nonatomic) double tracePosition;
@@ -140,6 +144,9 @@
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
 - (void)setIsConnectedToCarplay:(BOOL)arg1;
 @property(nonatomic) BOOL guidancePromptsEnabled;
+@property(nonatomic) int headingOrientation;
+- (void)setCurrentAudioOutputSetting:(id)arg1;
+- (void)setHFPPreference:(BOOL)arg1 forSetting:(id)arg2;
 - (void)stopCurrentGuidancePrompt;
 - (BOOL)vibrateForPrompt:(unsigned long long)arg1;
 - (BOOL)repeatCurrentTrafficAlert;
@@ -161,7 +168,7 @@
 - (BOOL)isOpenForClient:(id)arg1;
 - (void)closeForClient:(id)arg1;
 - (void)openForClient:(id)arg1;
-- (id)init;
+- (id)initPrivate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

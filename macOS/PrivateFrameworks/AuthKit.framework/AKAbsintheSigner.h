@@ -19,7 +19,11 @@
 - (BOOL)_didSigningContextExpire;
 - (void)dealloc;
 - (void)_destroySigningContext;
-- (struct NACContextOpaque_ *)_createSigningContext;
+- (void)_establishSessionWithInfo:(id)arg1 sessionURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)_sessionInfoFromCertificateData:(id)arg1;
+- (void)_createSigningContextWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_generateSignatureForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)signatureForURLRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)signatureForURLRequest:(id)arg1;
 
 @end

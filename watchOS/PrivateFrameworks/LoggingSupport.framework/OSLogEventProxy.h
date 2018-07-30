@@ -8,7 +8,7 @@
 
 #import "OSLogEventProvider.h"
 
-@class NSDate, NSString, NSTimeZone, NSUUID, OSLogEventDecomposedMessage;
+@class NSDate, NSString, NSTimeZone, NSUUID, OSLogEventBacktrace, OSLogEventDecomposedMessage;
 
 @interface OSLogEventProxy : NSObject <OSLogEventProvider>
 {
@@ -33,7 +33,7 @@
             struct timezone tz;
             unsigned int offset;
             unsigned int opaque_flags;
-            char *ptr;
+            char *message;
             unsigned int sz;
         } common;
         union {
@@ -47,6 +47,9 @@
             struct {
                 char *buffer;
                 unsigned int buffer_sz;
+                struct os_log_fmt_hdr_s *hdr;
+                void *pubdata;
+                unsigned short pubdata_sz;
                 char *privdata;
                 unsigned int privdata_sz;
                 char *subsystem;
@@ -57,6 +60,10 @@
                 unsigned char signpost_scope;
                 unsigned char signpost_type;
                 unsigned long long signpost_id;
+                unsigned int signpost_name_offset;
+                char *signpost_name;
+                struct os_trace_context_data_s *ctxdata;
+                unsigned int ctxdata_sz;
             } log_message;
             struct {
                 char *action;
@@ -69,6 +76,11 @@
                 unsigned long long wallclock_nsec;
                 unsigned char ttl;
             } timesync;
+            struct {
+                CDStruct_d93f8e00 start;
+                CDStruct_d93f8e00 end;
+                unsigned int count;
+            } loss;
         } ;
         struct {
             unsigned int message_size;
@@ -87,6 +99,7 @@
     unsigned long long _retainCount;
     NSString *_processImagePath;
     NSString *_senderImagePath;
+    OSLogEventBacktrace *_backtrace;
     NSString *_logMessage;
     OSLogEventDecomposedMessage *_decomposedMessage;
     unsigned long _uuidi;
@@ -94,16 +107,24 @@
 
 + (id)_make;
 @property(nonatomic) unsigned long _timesyncRangeUUIDIndex; // @synthesize _timesyncRangeUUIDIndex=_uuidi;
-- (id)valueForUndefinedKey:(id)arg1;
+@property(readonly, nonatomic) CDStruct_0dd72924 lossCount;
+@property(readonly, nonatomic) struct timezone *lossEndUnixTimeZone;
+@property(readonly, nonatomic) struct timeval *lossEndUnixDate;
+@property(readonly, nonatomic) unsigned long long lossEndMachContinuousTimestamp;
+@property(readonly, nonatomic) struct timezone *lossStartUnixTimeZone;
+@property(readonly, nonatomic) struct timeval *lossStartUnixDate;
+@property(readonly, nonatomic) unsigned long long lossStartMachContinuousTimestamp;
 @property(readonly, nonatomic) unsigned long long creatorProcessUniqueIdentifier;
 @property(readonly, nonatomic) unsigned long long creatorActivityIdentifier;
 - (id)formatArguments;
 @property(readonly, nonatomic) NSString *formatString;
+@property(readonly, nonatomic) NSString *signpostName;
 @property(readonly, nonatomic) unsigned int signpostScope;
 @property(readonly, nonatomic) unsigned int signpostType;
 @property(readonly, nonatomic) unsigned long long signpostIdentifier;
 @property(readonly, nonatomic) NSString *category;
 @property(readonly, nonatomic) NSString *subsystem;
+@property(readonly, nonatomic) OSLogEventBacktrace *backtrace;
 @property(readonly, nonatomic) unsigned long long senderImageOffset;
 @property(readonly, nonatomic) NSString *sender;
 @property(readonly, nonatomic) NSString *senderImagePath;
@@ -136,6 +157,7 @@
 @property(readonly, nonatomic) NSString *composedMessage;
 @property(readonly, nonatomic) unsigned int _oversizeIdentifier;
 - (id)description;
+- (void)_fillFromXPCEventObject:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (_Bool)_setLogEvent:(CDStruct_768ec3a5 *)arg1 rangeUUIDIndex:(unsigned long)arg2 machTimebase:(struct mach_timebase_info *)arg3;
@@ -145,6 +167,7 @@
 - (void)_setUUIDDBFileDescriptor:(int)arg1;
 - (void)_setTimesyncDatabase:(struct _os_timesync_db_s *)arg1;
 - (void)_setIncludeSensitive:(_Bool)arg1;
+- (void)_setThreadCrumb;
 - (void)_assertBalanced;
 - (oneway void)release;
 - (id)retain;

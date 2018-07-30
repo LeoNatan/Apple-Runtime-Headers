@@ -8,6 +8,7 @@
 
 @class PUSlidersCollectionViewLayout;
 
+__attribute__((visibility("hidden")))
 @interface PUSlidersCollectionView : UICollectionView
 {
     PUSlidersCollectionViewLayout *_tableLikeLayout;

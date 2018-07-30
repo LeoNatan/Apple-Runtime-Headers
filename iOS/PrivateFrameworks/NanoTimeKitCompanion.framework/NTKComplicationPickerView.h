@@ -20,7 +20,7 @@
     NSString *_complicationSlot;
 }
 
-@property(retain, nonatomic) NSString *complicationSlot; // @synthesize complicationSlot=_complicationSlot;
+@property(readonly, nonatomic) NSString *complicationSlot; // @synthesize complicationSlot=_complicationSlot;
 @property(nonatomic) __weak id <NTKComplicationPickerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
@@ -28,9 +28,10 @@
 - (void)_reloadLayoutForComplication:(id)arg1;
 - (void)_loadComplication:(id)arg1;
 - (id)_displayByLoadingComplication:(id)arg1;
-- (void)_configureFaceView:(id)arg1 forOption:(id)arg2;
-- (void)_willDisplayFaceView:(id)arg1;
-- (Class)_cylinderFaceViewClass;
+- (void)_configureSideView:(id)arg1 forOption:(id)arg2;
+- (void)_willDisplaySideView:(id)arg1;
+- (Class)_sideViewClass;
+- (id)_newContainerView;
 - (void)stealSelectedComplicationDisplay:(id *)arg1 controller:(id *)arg2;
 @property(readonly, nonatomic) NTKComplicationDisplayWrapperView *selectedComplicationDisplay;
 - (id)complicationAtIndex:(unsigned long long)arg1;
@@ -38,7 +39,7 @@
 - (void)reloadIfNeeded;
 - (void)setNeedsReload;
 - (void)dealloc;
-- (id)initWithAllowedComplications:(id)arg1 selectedComplication:(id)arg2;
+- (id)initWithAllowedComplications:(id)arg1 selectedComplication:(id)arg2 complicationSlot:(id)arg3;
 
 @end
 

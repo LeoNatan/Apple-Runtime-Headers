@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class EKBackingStore, EKCalendar, EKChangeListener, EKLiveEditingStore, NSArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class EKBackingStore, EKCalendar, EKChangeListener, EKLiveEditingStore, NSArray, NSDate, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface EKEventStore : NSObject
 {
@@ -19,6 +19,7 @@
     NSSet *editingContextGroups;
     EKChangeListener *changeListener;
     EKLiveEditingStore *liveEditingStore;
+    NSDate *lastCheckpointDate;
     NSArray *_calendars;
 }
 
@@ -37,6 +38,7 @@
 @property(nonatomic) BOOL shouldSanitizeVehicleAlarms; // @synthesize shouldSanitizeVehicleAlarms=_shouldSanitizeVehicleAlarms;
 @property BOOL onlyNotifyForAccountedChanges; // @synthesize onlyNotifyForAccountedChanges=_onlyNotifyForAccountedChanges;
 @property(readonly, nonatomic) NSArray *calendars; // @synthesize calendars=_calendars;
+@property(retain) NSDate *lastCheckpointDate; // @synthesize lastCheckpointDate;
 @property(retain, nonatomic) EKLiveEditingStore *liveEditingStore; // @synthesize liveEditingStore;
 @property(readonly, nonatomic) EKChangeListener *changeListener; // @synthesize changeListener;
 @property(readonly, nonatomic) NSSet *editingContextGroups; // @synthesize editingContextGroups;

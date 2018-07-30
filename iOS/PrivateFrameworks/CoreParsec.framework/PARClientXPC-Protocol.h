@@ -4,9 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSError, NSString, PARBag;
+#import "NSObject.h"
 
-@protocol PARClientXPC
+@class NSError, NSString, NSUUID, PARBag;
+
+@protocol PARClientXPC <NSObject>
+- (void)sessionDidChange:(NSUUID *)arg1;
 - (void)didDeleteResource:(NSString *)arg1;
 - (void)didDownloadResource:(NSString *)arg1;
 - (void)bagDidLoad:(PARBag *)arg1 error:(NSError *)arg2;

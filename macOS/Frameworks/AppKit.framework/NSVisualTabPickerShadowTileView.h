@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (BOOL)accessibilityIsIgnored;
 - (void)_setUpBorderView;
-- (void)_viewDidChangeAppearance:(id)arg1;
+- (void)updateLayer;
 - (void)_setUpContentViews;
 - (void)_getTopBarAnimationDuration:(double *)arg1 timeOffset:(double *)arg2 gridAnimation:(long long)arg3;
 - (void)enableEdgeAntialiasingMask:(BOOL)arg1;

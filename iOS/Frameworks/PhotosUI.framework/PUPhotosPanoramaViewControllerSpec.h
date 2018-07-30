@@ -4,12 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <PhotosUI/PULegacyViewControllerSpec.h>
 
-@interface PUPhotosPanoramaViewControllerSpec : NSObject
+@interface PUPhotosPanoramaViewControllerSpec : PULegacyViewControllerSpec
 {
 }
 
++ (id)padSpec;
++ (id)phoneSpec;
 - (struct CGSize)_itemSizeForWidth:(double)arg1;
 - (id)gridSpec;
 - (void)configureCollectionViewGridLayout:(id)arg1 referenceWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;

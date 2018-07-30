@@ -6,14 +6,15 @@
 
 #import <Mail/MFAccount.h>
 
+#import "EMReceivingAccount.h"
 #import "MCActivityTarget.h"
 #import "MCMailAccount.h"
 #import "MFMessageDelivererDelegate.h"
 #import "NSFileManagerDelegate.h"
 
-@class MCAuthScheme, MCTaskManager, MFDeliveryAccount, MFMailbox, NSArray, NSError, NSNumber, NSOperationQueue, NSString, NSTimer, NSURL;
+@class MCAuthScheme, MCTaskManager, MFDeliveryAccount, MFMailbox, NSArray, NSError, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSOperationQueue, NSString, NSURL;
 
-@interface MFMailAccount : MFAccount <MCActivityTarget, MCMailAccount, MFMessageDelivererDelegate, NSFileManagerDelegate>
+@interface MFMailAccount : MFAccount <EMReceivingAccount, MCActivityTarget, MCMailAccount, MFMessageDelivererDelegate, NSFileManagerDelegate>
 {
     id _mailAccountLock;
     id _mailboxLock;
@@ -29,7 +30,8 @@
     MFMailbox *_archiveMailbox;
     NSError *_connectionError;
     id _cacheChangeLock;
-    NSTimer *_cacheWriteTimer;
+    NSObject<OS_dispatch_queue> *_cacheWriteQueue;
+    NSObject<OS_dispatch_source> *_cacheWriteTimer;
     id _backgroundActivityFlagsLock;
     BOOL _cacheHasBeenRead;
     BOOL _mailboxListInitializationInProgress;
@@ -191,11 +193,10 @@
 @property(retain) NSError *connectionError;
 - (void)accountInfoDidChange;
 @property long long portNumber;
-@property(copy) NSString *hostname;
+@property(copy, nonatomic) NSString *hostname;
 @property(copy) NSString *username;
 - (void)_resetAllMailboxURLs;
 - (void)invalidateChildrenOfMailbox:(id)arg1;
-- (void)_deleteMailboxIfEmpty:(id)arg1;
 - (BOOL)deleteMailbox:(id)arg1 reflectToServer:(BOOL)arg2;
 - (BOOL)renameMailbox:(id)arg1 newDisplayName:(id)arg2 parent:(id)arg3;
 - (id)createMailboxWithParent:(id)arg1 displayName:(id)arg2 localizedDisplayName:(id)arg3;
@@ -262,11 +263,10 @@
 - (void)setIsWillingToGoOnline:(BOOL)arg1;
 - (void)setIsOffline:(BOOL)arg1;
 - (void)invalidateAllStores;
-- (void)setCacheIsDirty:(BOOL)arg1;
 - (void)doRoutineCleanup;
-- (void)saveCache;
-- (void)_saveCacheInBackground:(id)arg1;
-- (void)_setCacheWriteTimer:(id)arg1;
+- (void)_scheduleCacheWriteIfNeeded;
+- (void)_cancelCacheWriteTimer;
+- (void)saveCacheImmediately:(BOOL)arg1;
 - (void)deleteAccount;
 - (void)_synchronouslyInvalidateAndDelete:(BOOL)arg1;
 - (BOOL)fileManager:(id)arg1 shouldProceedAfterError:(id)arg2 removingItemAtURL:(id)arg3;
@@ -336,7 +336,7 @@
 @property(readonly, copy) NSString *machineID;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *oneTimePassword;
-@property(copy) NSString *password;
+@property(copy, nonatomic) NSString *password;
 @property(retain) MCAuthScheme *preferredAuthScheme;
 @property(readonly, nonatomic) BOOL requiresAuthentication;
 @property(readonly, copy, nonatomic) NSString *saslProfileName;

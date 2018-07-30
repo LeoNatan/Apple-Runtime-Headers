@@ -27,6 +27,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)recordTypesAndNames;
+- (unsigned long long)itemType;
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;
 - (id)jsonString;

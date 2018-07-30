@@ -29,12 +29,13 @@
 @property(retain) iCloudHandleFLUI *followupUIController; // @synthesize followupUIController=_followupUIController;
 @property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain, nonatomic) NSDictionary *groupRowProperties; // @synthesize groupRowProperties=_groupRowProperties;
-@property(setter=setRowEnabled:) BOOL isRowEnabled; // @synthesize isRowEnabled=_isRowEnabled;
+@property(nonatomic, setter=setRowEnabled:) BOOL isRowEnabled; // @synthesize isRowEnabled=_isRowEnabled;
 - (BOOL)isFlipped;
+- (void)_handleAction:(id)arg1 forItem:(id)arg2;
 - (void)showiCloudSuggestionSheet:(id)arg1;
 - (void)handleItemActivate;
 - (void)optionsButtonPressed:(id)arg1;
-- (void)handleFollowUpItem:(id)arg1 andAction:(id)arg2;
+- (void)handleFollowUpItem:(id)arg1 andAction:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)openItemWithURL:(id)arg1 andParameterData:(id)arg2;
 - (void)update;
 - (void)doUpdate:(id)arg1;

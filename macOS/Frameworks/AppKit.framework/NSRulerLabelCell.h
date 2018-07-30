@@ -8,6 +8,7 @@
 
 @class NSNumberFormatter;
 
+__attribute__((visibility("hidden")))
 @interface NSRulerLabelCell : NSTextFieldCell
 {
     NSNumberFormatter *_auxiliaryFormatter;

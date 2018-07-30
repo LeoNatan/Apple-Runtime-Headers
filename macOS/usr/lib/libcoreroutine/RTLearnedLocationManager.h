@@ -4,65 +4,73 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <coreroutine/RTNotifier.h>
+#import <coreroutine/RTService.h>
 
 #import "RTDiagnosticProvider.h"
 #import "RTLearnedLocationEngineProtocol.h"
 #import "RTPurgable.h"
 
-@class NSString, RTAccountManager, RTConnectionsLocationManager, RTContactsManager, RTDefaultsManager, RTDiagnostics, RTEventManager, RTFingerprintManager, RTLearnedLocationEngine, RTLearnedLocationStore, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPersonalizationPortraitManager, RTVisitManager;
+@class NSString, RTAccountManager, RTContactsManager, RTDefaultsManager, RTDiagnostics, RTDistanceCalculator, RTEventManager, RTFingerprintManager, RTLearnedLocationAlgorithmMetricCalculator, RTLearnedLocationEngine, RTLearnedLocationStore, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPersonalizationPortraitManager, RTVisitManager, RTXPCActivityManager;
 
-@interface RTLearnedLocationManager : RTNotifier <RTLearnedLocationEngineProtocol, RTPurgable, RTDiagnosticProvider>
+@interface RTLearnedLocationManager : RTService <RTLearnedLocationEngineProtocol, RTPurgable, RTDiagnosticProvider>
 {
     BOOL _available;
-    RTLearnedLocationEngine *_learnedLocationEngine;
     RTAccountManager *_accountManager;
-    RTConnectionsLocationManager *_connectionsLocationManager;
+    RTLearnedLocationAlgorithmMetricCalculator *_algorithmMetricCalculator;
     RTContactsManager *_contactsManager;
     RTDiagnostics *_diagnostics;
     RTDefaultsManager *_defaultsManager;
-    RTLearnedLocationStore *_learnedLocationStore;
     RTLocationManager *_locationManager;
     RTLocationStore *_locationStore;
     RTEventManager *_eventManager;
-    RTFingerprintManager *_fingerprintManager;
-    RTMapServiceManager *_mapServiceManager;
     RTMapsSupportManager *_mapsSupportManager;
     RTMetricManager *_metricManager;
     RTMotionActivityManager *_motionActivityManager;
     RTPersonalizationPortraitManager *_portraitManager;
     RTVisitManager *_visitManager;
+    RTXPCActivityManager *_xpcActivityManager;
+    RTFingerprintManager *_fingerprintManager;
+    RTLearnedLocationEngine *_learnedLocationEngine;
+    RTLearnedLocationStore *_learnedLocationStore;
+    RTDistanceCalculator *_distanceCalculator;
+    RTMapServiceManager *_mapServiceManager;
 }
 
 + (double)maxDistanceFromInterval:(double)arg1 velocity:(double)arg2;
 + (double)distanceThresholdFromUncertainty:(double)arg1 otherUncertainty:(double)arg2;
++ (id)migrateLegacyMapItemWithGeoMapItem:(id)arg1 geoMapItemHandle:(id)arg2 source:(unsigned long long)arg3 mapServiceManager:(id)arg4 error:(id *)arg5;
 + (id)modeToString:(long long)arg1;
 @property(nonatomic) BOOL available; // @synthesize available=_available;
+@property(readonly, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
+@property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
+@property(readonly, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
+@property(retain, nonatomic) RTLearnedLocationEngine *learnedLocationEngine; // @synthesize learnedLocationEngine=_learnedLocationEngine;
+@property(retain, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
+@property(readonly, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(readonly, nonatomic) RTVisitManager *visitManager; // @synthesize visitManager=_visitManager;
 @property(readonly, nonatomic) RTPersonalizationPortraitManager *portraitManager; // @synthesize portraitManager=_portraitManager;
 @property(readonly, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(readonly, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(readonly, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
-@property(readonly, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
-@property(retain, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
 @property(readonly, nonatomic) RTEventManager *eventManager; // @synthesize eventManager=_eventManager;
 @property(readonly, nonatomic) RTLocationStore *locationStore; // @synthesize locationStore=_locationStore;
 @property(readonly, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
-@property(readonly, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
 @property(readonly, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(readonly, nonatomic) RTDiagnostics *diagnostics; // @synthesize diagnostics=_diagnostics;
 @property(readonly, nonatomic) RTContactsManager *contactsManager; // @synthesize contactsManager=_contactsManager;
-@property(readonly, nonatomic) RTConnectionsLocationManager *connectionsLocationManager; // @synthesize connectionsLocationManager=_connectionsLocationManager;
+@property(readonly, nonatomic) RTLearnedLocationAlgorithmMetricCalculator *algorithmMetricCalculator; // @synthesize algorithmMetricCalculator=_algorithmMetricCalculator;
 @property(readonly, nonatomic) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
-@property(retain, nonatomic) RTLearnedLocationEngine *learnedLocationEngine; // @synthesize learnedLocationEngine=_learnedLocationEngine;
 - (void).cxx_destruct;
 - (void)sendDiagnosticsToURL:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)updateTransitionWithIdentifier:(id)arg1 motionActivityType:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)logLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
 - (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)onLearnedLocationStoreNotification:(id)arg1;
 - (void)_onLearnedLocationStoreNotification:(id)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
+- (void)learnedLocationEngineDidFinishTraining:(id)arg1;
+- (void)learnedLocationEngineWillBeginTraining:(id)arg1;
 - (void)learnedLocationEngineDidUpdate:(id)arg1 intervalSinceLastUpdate:(double)arg2;
 - (void)extendLifetimeOfVisitsWithIdentifiers:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_extendLifetimeOfVisitsWithIdentifiers:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -91,6 +99,8 @@
 - (id)_updateContactsWithLearnedPlace:(id)arg1 originalLearnedPlace:(id)arg2 error:(id *)arg3;
 - (void)addLocationOfInterestWithType:(unsigned long long)arg1 mapItem:(id)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_addLocationOfInterestWithType:(unsigned long long)arg1 mapItem:(id)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)fetchTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_fetchLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchModeAtLocation:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -115,13 +125,14 @@
 - (void)_fetchRecentLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
 - (void)clearWithHandler:(CDUnknownBlockType)arg1;
 - (void)_clearWithHandler:(CDUnknownBlockType)arg1;
-- (void)shutdown;
 - (void)_shutdown;
-- (void)setup;
 - (void)_setup;
 - (void)_migrateStateModelLegacy:(CDUnknownBlockType)arg1;
+- (void)_migrateLegacyMapItems:(CDUnknownBlockType)arg1;
+- (void)_performLegacyMigrations:(CDUnknownBlockType)arg1;
 - (void)_logLearnedState;
-- (id)initWithQueue:(id)arg1 accountManager:(id)arg2 connectionsLocationManager:(id)arg3 contactsManager:(id)arg4 defaultsManager:(id)arg5 diagnostics:(id)arg6 eventManager:(id)arg7 fingerprintManager:(id)arg8 learnedLocationStore:(id)arg9 locationManager:(id)arg10 locationStore:(id)arg11 mapServiceManager:(id)arg12 mapsSupportManager:(id)arg13 metricManager:(id)arg14 motionActivityManager:(id)arg15 portraitManager:(id)arg16 visitManager:(id)arg17;
+- (id)initWithQueue:(id)arg1 accountManager:(id)arg2 algorithmMetricCalculator:(id)arg3 contactsManager:(id)arg4 defaultsManager:(id)arg5 diagnostics:(id)arg6 distanceCalculator:(id)arg7 eventManager:(id)arg8 fingerprintManager:(id)arg9 learnedLocationStore:(id)arg10 locationManager:(id)arg11 locationStore:(id)arg12 mapServiceManager:(id)arg13 mapsSupportManager:(id)arg14 metricManager:(id)arg15 motionActivityManager:(id)arg16 portraitManager:(id)arg17 visitManager:(id)arg18 xpcActivityManager:(id)arg19;
+- (id)initWithQueue:(id)arg1 distanceCalculator:(id)arg2 learnedLocationEngine:(id)arg3 learnedLocationStore:(id)arg4 mapServiceManager:(id)arg5;
 - (id)init;
 
 // Remaining properties

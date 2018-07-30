@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <AppKit/NSCatalogColor.h>
+#import <AppKit/NSDynamicNamedColor.h>
 
 @class NSBundle;
 
-@interface NSCoreUICatalogColor : NSCatalogColor
+__attribute__((visibility("hidden")))
+@interface NSCoreUICatalogColor : NSDynamicNamedColor
 {
     double alphaComponent;
     NSBundle *_bundle;
@@ -17,14 +18,11 @@
 + (id)_bundleFromCatalogName:(id)arg1;
 + (id)_catalogNameFromBundle:(id)arg1;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (double)alphaComponent;
-- (void)setStroke;
-- (void)setFill;
-- (void)set;
-- (struct CGColor *)CGColor;
+- (id)resolvedColor;
 - (long long)_bestMatchingDisplayGamutFor:(id)arg1;
 - (void)dealloc;
 - (id)initWithCatalogName:(id)arg1 colorName:(id)arg2 bundle:(id)arg3;
+- (Class)classForCoder;
 
 @end
 

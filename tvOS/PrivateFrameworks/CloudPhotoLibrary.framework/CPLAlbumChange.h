@@ -32,9 +32,11 @@
 - (id)propertiesDescription;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
+- (void)setParentScopedIdentifier:(id)arg1;
+- (id)parentScopedIdentifier;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id *)arg2;
-- (id)identifiersForMapping;
+- (id)scopedIdentifiersForMapping;
 - (_Bool)validateRecordForTracker:(id)arg1;
 
 @end

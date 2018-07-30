@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     UIView *_bottomView;
     UIVisualEffectView *_bottomEffectView;
     UIImageView *_gradientView;
-    UILabel *_descriptionLabel;
+    UILabel *_titleLabel;
+    UILabel *_subtitleLabel;
     UILabel *_licenseLabel;
-    UILabel *_authorLabel;
     NSLayoutConstraint *_statusBarHeightConstraint;
     int _actualPage;
     UINavigationItem *_navItem;
@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)dismiss;
 - (void)willEnterForeground:(id)arg1;
 - (void)memoryWarning:(id)arg1;
 - (void)updateTextForPage:(unsigned long long)arg1;

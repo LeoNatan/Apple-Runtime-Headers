@@ -16,6 +16,7 @@
 }
 
 + (Class)keyValuePairsType;
++ (id)decodeMetadataFromData:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;

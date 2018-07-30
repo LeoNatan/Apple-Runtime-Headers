@@ -9,15 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface FI_TPopover : NSPopover
 {
-    struct CGSize _contentViewSizeCache;
 }
 
 - (void)updatePreferredEdge;
 - (id)positioningWindow;
-- (void)contentViewFrameChanged;
-- (void)setContentViewController:(id)arg1;
 - (void)showRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3;
-- (void)dealloc;
 
 @end
 

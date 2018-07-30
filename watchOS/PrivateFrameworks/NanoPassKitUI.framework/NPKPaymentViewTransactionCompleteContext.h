@@ -35,6 +35,7 @@
 @property(retain, nonatomic) PKPass *valueAddedServicePass; // @synthesize valueAddedServicePass=_valueAddedServicePass;
 @property(retain, nonatomic) PKPass *transactionPass; // @synthesize transactionPass=_transactionPass;
 - (void).cxx_destruct;
+- (id)_fareFreeTransactionDescriptionWithCredentialType:(int)arg1;
 - (id)description;
 - (void)forceToTransitTypeTransactionWithTransactionStatus:(unsigned int)arg1;
 - (void)updateWithConcreteTransactions:(id)arg1 ephemeralTransaction:(id)arg2 appletState:(id)arg3 paymentApplication:(id)arg4;

@@ -11,6 +11,7 @@
 @interface NNMKSettingsStore : NSObject
 {
     _Bool _askBeforeDeleting;
+    _Bool _loadRemoteImages;
     _Bool _organizeByThread;
     unsigned int _linesOfPreview;
     unsigned int _flagStyle;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
 @property(retain, nonatomic) NSString *swipeRightAction; // @synthesize swipeRightAction=_swipeRightAction;
 @property(nonatomic) _Bool organizeByThread; // @synthesize organizeByThread=_organizeByThread;
+@property(nonatomic) _Bool loadRemoteImages; // @synthesize loadRemoteImages=_loadRemoteImages;
 @property(nonatomic) _Bool askBeforeDeleting; // @synthesize askBeforeDeleting=_askBeforeDeleting;
 @property(nonatomic) unsigned int flagStyle; // @synthesize flagStyle=_flagStyle;
 @property(nonatomic) unsigned int linesOfPreview; // @synthesize linesOfPreview=_linesOfPreview;
@@ -29,6 +31,7 @@
 - (id)_getValueForKey:(id)arg1;
 - (id)_swipeRightAction;
 - (_Bool)_organizeByThread;
+- (_Bool)_loadRemoteImages;
 - (_Bool)_askBeforeDeleting;
 - (unsigned int)_flagStyle;
 - (unsigned int)_linesOfPreview;

@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class CUISAlertIconView, CUISAlertPlatterView, UILabel, UITapGestureRecognizer;
+@class CUISAlertIconView, CUISAlertPlatterView, UIImageView, UILabel, UITapGestureRecognizer;
 
 @interface CUISAlertHeaderView : UIView
 {
@@ -19,11 +19,15 @@
     UILabel *_quickLookTitleLabel;
     UILabel *_quickLookTitleSecondLabel;
     UILabel *_quickLookSubtitleLabel;
+    UIImageView *_quickLookSubtitleIcon;
     CUISAlertIconView *_longLookIconView;
     CUISAlertPlatterView *_longLookPlatter;
     UILabel *_longLookTitleLabel;
+    UIImageView *_longLookTitleIcon;
     unsigned int _iconType;
     UITapGestureRecognizer *_quickLookTapGesture;
+    UIView *_quickLookTitleContainer;
+    UIView *_quickLookSubtitleContainer;
     struct CGSize _titleFitSize;
     struct CGSize _secondTitleFitSize;
     struct CGSize _subtitleFitSize;
@@ -31,14 +35,18 @@
 
 + (float)idealHeightForLongLook;
 + (void)initialize;
+@property(retain, nonatomic) UIView *quickLookSubtitleContainer; // @synthesize quickLookSubtitleContainer=_quickLookSubtitleContainer;
+@property(retain, nonatomic) UIView *quickLookTitleContainer; // @synthesize quickLookTitleContainer=_quickLookTitleContainer;
 @property(retain, nonatomic) UITapGestureRecognizer *quickLookTapGesture; // @synthesize quickLookTapGesture=_quickLookTapGesture;
 @property(nonatomic) struct CGSize subtitleFitSize; // @synthesize subtitleFitSize=_subtitleFitSize;
 @property(nonatomic) struct CGSize secondTitleFitSize; // @synthesize secondTitleFitSize=_secondTitleFitSize;
 @property(nonatomic) struct CGSize titleFitSize; // @synthesize titleFitSize=_titleFitSize;
 @property(nonatomic) unsigned int iconType; // @synthesize iconType=_iconType;
+@property(readonly, nonatomic) UIImageView *longLookTitleIcon; // @synthesize longLookTitleIcon=_longLookTitleIcon;
 @property(retain, nonatomic) UILabel *longLookTitleLabel; // @synthesize longLookTitleLabel=_longLookTitleLabel;
 @property(retain, nonatomic) CUISAlertPlatterView *longLookPlatter; // @synthesize longLookPlatter=_longLookPlatter;
 @property(retain, nonatomic) CUISAlertIconView *longLookIconView; // @synthesize longLookIconView=_longLookIconView;
+@property(readonly, nonatomic) UIImageView *quickLookSubtitleIcon; // @synthesize quickLookSubtitleIcon=_quickLookSubtitleIcon;
 @property(retain, nonatomic) UILabel *quickLookSubtitleLabel; // @synthesize quickLookSubtitleLabel=_quickLookSubtitleLabel;
 @property(retain, nonatomic) UILabel *quickLookTitleSecondLabel; // @synthesize quickLookTitleSecondLabel=_quickLookTitleSecondLabel;
 @property(retain, nonatomic) UILabel *quickLookTitleLabel; // @synthesize quickLookTitleLabel=_quickLookTitleLabel;
@@ -62,7 +70,13 @@
 - (_Bool)_hasSingleLineSubtitle;
 - (_Bool)_hasSingleLineTitle;
 - (void)reloadData;
-- (void)_reloadQuickLookLabelsWithTitle:(id)arg1 subtitle:(id)arg2;
+- (void)_setLongLookTitleIcon:(id)arg1;
+@property(readonly, nonatomic) struct CGPoint longLookIconCenter;
+@property(readonly, nonatomic) float longLookTitleFrameOriginX;
+@property(readonly, nonatomic) struct CGSize longLookTitleFrameSize;
+@property(readonly, nonatomic) struct CGSize longLookIconSize;
+- (_Bool)_isCriticalAlertStyle;
+- (void)_reloadQuickLookLabelsWithTitle:(id)arg1 subtitle:(id)arg2 maxTitleWidth:(float)arg3 maxSubtitleWidth:(float)arg4;
 - (void)_initSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

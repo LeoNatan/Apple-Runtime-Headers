@@ -7,9 +7,10 @@
 @class NSError, NSUUID, SUDescriptor, SUDownload, SUInstallPolicy, SUScanOptions;
 
 @protocol SUManagerClientInterface
+- (void)autoInstallOperationPasscodePolicyChanged:(NSUUID *)arg1 passcodePolicyType:(unsigned long long)arg2;
 - (void)autoInstallOperationIsReadyToInstall:(NSUUID *)arg1 withResult:(void (^)(_Bool, NSError *))arg2;
 - (void)autoInstallOperationDidConsent:(NSUUID *)arg1;
-- (void)autoInstallOperationDidExpire:(NSUUID *)arg1;
+- (void)autoInstallOperationDidExpire:(NSUUID *)arg1 withError:(NSError *)arg2;
 - (void)autoInstallOperationWasCancelled:(NSUUID *)arg1;
 - (void)installPolicyDidChange:(SUInstallPolicy *)arg1;
 - (void)installDidFinish:(SUDescriptor *)arg1;

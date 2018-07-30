@@ -6,16 +6,17 @@
 
 #import "NSObject.h"
 
+#import "HDAssertionObserver.h"
 #import "HDProcessStateObserver.h"
 
-@class HDProfile, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, _HDWorkoutData;
+@class HDAssertionManager, HDDaemon, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface HDAlertSuppressor : NSObject <HDProcessStateObserver>
+@interface HDAlertSuppressor : NSObject <HDProcessStateObserver, HDAssertionObserver>
 {
-    HDProfile *_profile;
+    HDDaemon *_daemon;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_suppressActivityKeepaliveTimer;
-    _HDWorkoutData *_lastWorkoutData;
+    HDAssertionManager *_assertionManager;
+    NSMutableSet *_waitingForSuspension;
 }
 
 - (void).cxx_destruct;
@@ -25,13 +26,15 @@
 - (void)processDidEnterBackground:(id)arg1;
 - (void)processTerminated:(id)arg1;
 - (void)processSuspended:(id)arg1;
-- (void)_invalidateSuppressActivityAlertsForWorkout:(id)arg1;
-- (void)_suppressActivityAlertsForWorkout:(id)arg1;
-- (void)_clearSuppressionTimer;
-- (void)_startAlertSuppressionTimerForWorkout:(id)arg1;
-- (void)workoutStopped:(id)arg1;
-- (void)workoutStarted:(id)arg1;
-- (id)initWithProfile:(id)arg1 queue:(id)arg2;
+- (void)_queue_invalidateSuppressActivityAlertsForProcessIdentifier:(id)arg1;
+- (void)_queue_suppressActivityAlertsForProcessIdentifier:(id)arg1;
+- (void)_queue_clearSuppressionTimerForAssertion:(id)arg1;
+- (id)_queue_startAlertSuppressionTimerForProcessIdentifier:(id)arg1;
+- (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
+- (void)assertionManager:(id)arg1 assertionTaken:(id)arg2;
+- (id)createAndTakeAssertionForOwnerIdentifier:(id)arg1 processBundleIdentifier:(id)arg2;
+- (void)dealloc;
+- (id)initWithDaemon:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

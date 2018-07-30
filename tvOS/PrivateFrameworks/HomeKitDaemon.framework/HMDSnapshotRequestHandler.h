@@ -47,6 +47,7 @@
 - (void)_getSupportedVideoResolutions:(id)arg1 streamingTierType:(unsigned long long)arg2;
 - (id)_resolutionToRequest:(unsigned long long)arg1;
 - (void)_sendSnapshotRequest:(id)arg1 streamingTierType:(unsigned long long)arg2;
+- (id)_getOptionsForRequestToAccessory:(id)arg1 forResolution:(id)arg2;
 - (void)requestSnapshot:(id)arg1 streamingTierType:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)timerDidFire:(id)arg1;
 - (id)logIdentifier;

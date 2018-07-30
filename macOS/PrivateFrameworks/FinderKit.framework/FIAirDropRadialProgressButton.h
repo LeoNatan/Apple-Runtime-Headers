@@ -11,15 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface FIAirDropRadialProgressButton : FI_TButton
 {
-    struct TNSRef<FIRadialProgressView *, void> _radialProgressView;
-    struct TNSRef<CNAvatarViewController *, void> _avatarViewController;
-    struct TNSRef<NSImage *, void> _closeImage;
-    struct TNSRef<NSImage *, void> _blankImage;
-    struct TNSRef<NSImage *, void> _icon;
+    struct TNSRef<FIRadialProgressView, void> _radialProgressView;
+    struct TNSRef<CNAvatarViewController, void> _avatarViewController;
+    struct TNSRef<NSImage, void> _closeImage;
+    struct TNSRef<NSImage, void> _blankImage;
+    struct TNSRef<NSImage, void> _icon;
     double _percentComplete;
     _Bool _isCancellable;
     struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _bindings;
-    struct TNSRef<FIAirDropListViewItem *, void> _airDropListViewItem;
+    struct TNSRef<FIAirDropListViewItem, void> _airDropListViewItem;
     struct vector<TKeyValueObserver, std::__1::allocator<TKeyValueObserver>> _keyValueObservers;
 }
 

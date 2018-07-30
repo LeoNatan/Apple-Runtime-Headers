@@ -6,14 +6,14 @@
 
 #import "UIView.h"
 
+#import "PUICCollectionViewDelegateFlowLayout.h"
 #import "PUICDiverseEmojiSelectionViewDelegate.h"
 #import "PUICEmojiCollectionViewDelegate.h"
-#import "UICollectionViewDelegateFlowLayout.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class NSIndexPath, NSMutableDictionary, NSObject<PUICRecentEmojiViewDelegate>, NSString, PUICDiverseEmojiSelectionView, PUICEmojiCategoryHeaderView, PUICEmojiCollectionView, PUICSectionedCollectionViewDataSource, UICollectionView;
+@class NSIndexPath, NSMutableDictionary, NSString, PUICDiverseEmojiSelectionView, PUICEmojiCategoryHeaderView, PUICEmojiCollectionView, PUICSectionedCollectionViewDataSource, UICollectionView;
 
-@interface PUICClassicEmojiView : UIView <PUICEmojiCollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, PUICDiverseEmojiSelectionViewDelegate>
+@interface PUICClassicEmojiView : UIView <PUICEmojiCollectionViewDelegate, PUICCollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, PUICDiverseEmojiSelectionViewDelegate>
 {
     PUICEmojiCollectionView *_collectionView;
     PUICEmojiCategoryHeaderView *_sizingHeader;
@@ -21,10 +21,11 @@
     PUICSectionedCollectionViewDataSource *_dataSource;
     PUICDiverseEmojiSelectionView *_diverseEmojiSelectionView;
     NSIndexPath *_indexPathForDiverseEmojiView;
-    NSObject<PUICRecentEmojiViewDelegate> *_delegate;
+    _Bool _withHeader;
+    id <PUICRecentEmojiViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak NSObject<PUICRecentEmojiViewDelegate> *delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PUICRecentEmojiViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
 - (id)_emojiForIndexPath:(id)arg1;
@@ -33,12 +34,12 @@
 - (struct CGPoint)_contentOffsetForProposedContentOffset:(struct CGPoint)arg1;
 - (_Bool)_itemAtIndexPathIsUnderHeaderOrFooter:(id)arg1;
 - (void)diverseEmojiSelectionView:(id)arg1 didSelectEmoji:(id)arg2;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)longPressDidEndForCollectionView:(id)arg1;
 - (void)longPressDidCancelForCollectionView:(id)arg1;
 - (void)collectionView:(id)arg1 longPressDidMoveToPoint:(struct CGPoint)arg2;
@@ -52,6 +53,9 @@
 - (void)_dismissDiversePlatter;
 - (void)_showDiverseEmojiPlatterForEmoji:(id)arg1 atIndexPath:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)configureCollectionViewWithCategoryIdentifiers:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 categoryIdentifiers:(id)arg2 withHeader:(_Bool)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 categoryIdentifiers:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

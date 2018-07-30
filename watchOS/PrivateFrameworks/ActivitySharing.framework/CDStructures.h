@@ -10,6 +10,21 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGPoint {
+    float _field1;
+    float _field2;
+};
+
+struct CGRect {
+    struct CGPoint _field1;
+    struct CGSize _field2;
+};
+
+struct CGSize {
+    float width;
+    float height;
+};
+
 struct _HKFitnessFriendAchievement {
     Class _field1;
 };
@@ -21,4 +36,30 @@ struct _HKFitnessFriendActivitySnapshot {
 struct _HKFitnessFriendWorkout {
     Class _field1;
 };
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    int *list;
+    unsigned int count;
+    unsigned int size;
+} CDStruct_56d48c16;
+
+typedef struct {
+    long long *list;
+    unsigned int count;
+    unsigned int size;
+} CDStruct_815f15fd;
+
+typedef struct {
+    double _field1;
+    double _field2;
+    int _field3;
+    _Bool _field4;
+} CDStruct_cc04d250;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int type:1;
+} CDStruct_f953fb60;
 

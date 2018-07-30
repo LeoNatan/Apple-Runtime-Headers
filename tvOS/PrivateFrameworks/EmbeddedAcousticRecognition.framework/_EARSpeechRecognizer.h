@@ -21,6 +21,7 @@
     _Bool _recognizeEagerCandidates;
     _Bool _farField;
     NSData *_userProfileData;
+    NSData *_jitProfileData;
     double _endpointStart;
     double _maximumRecognitionDuration;
     NSDictionary *_recognitionReplacements;
@@ -43,6 +44,7 @@
 @property(nonatomic) double endpointStart; // @synthesize endpointStart=_endpointStart;
 @property(nonatomic) _Bool concatenateUtterances; // @synthesize concatenateUtterances=_concatenateUtterances;
 @property(nonatomic) _Bool detectUtterances; // @synthesize detectUtterances=_detectUtterances;
+@property(copy, nonatomic) NSData *jitProfileData; // @synthesize jitProfileData=_jitProfileData;
 @property(copy, nonatomic) NSData *userProfileData; // @synthesize userProfileData=_userProfileData;
 - (id).cxx_construct;
 - (void).cxx_destruct;

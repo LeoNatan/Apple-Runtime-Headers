@@ -7,7 +7,8 @@
 #import "CNPostalAddress.h"
 
 @interface CNPostalAddress (RTContact)
-+ (id)labelStringWithPostalAddressLabelType:(unsigned long long)arg1;
++ (id)labelStringWithAddressLabelType:(unsigned long long)arg1;
 + (id)postalAddressWithPostalAddress:(id)arg1;
+- (id)description;
 @end
 

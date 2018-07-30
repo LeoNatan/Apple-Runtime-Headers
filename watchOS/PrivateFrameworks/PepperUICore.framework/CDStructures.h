@@ -34,6 +34,18 @@ struct CGSize {
     float height;
 };
 
+struct SpecValues {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    float _field7;
+    float _field8;
+    _Bool _field9;
+};
+
 struct UIEdgeInsets {
     float top;
     float left;
@@ -54,22 +66,15 @@ struct _NSRange {
     unsigned int length;
 };
 
-struct _statusBarTextAttributes {
-    float _field1;
-    float _field2;
-    struct __CFDictionary *_field3;
-    unsigned int _field4;
-    struct __CFString *_field5;
-    struct __CTFontDescriptor *_field6;
-    struct __CTFont *_field7;
+struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> {
+    void *__begin_;
+    void *__end_;
+    struct __compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> {
+        void *__value_;
+    } __end_cap_;
 };
 
 #pragma mark Typedef'd Structures
-
-typedef struct {
-    _Bool displayedTextChanged;
-    _Bool selectionRangeChanged;
-} CDStruct_a57c65e1;
 
 typedef struct {
     unsigned int section;
@@ -87,6 +92,12 @@ typedef struct {
     float _field2;
     float _field3;
 } CDStruct_869f9c67;
+
+typedef struct {
+    _Bool displayedTextChanged;
+    _Bool selectionRangeChanged;
+    struct _NSRange insertionRange;
+} CDStruct_55c8205d;
 
 typedef struct {
     CDStruct_55d6b361 first;

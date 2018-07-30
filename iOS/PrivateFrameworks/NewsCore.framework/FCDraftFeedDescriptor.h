@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (long long)feedType;
 - (id)name;
-- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)fetchOperationForHeadlinesWithIDs:(id)arg1 context:(id)arg2;
 - (id)streamOfLatestArticleIDsWithContext:(id)arg1;
 - (void)fetchArticleIDsWithContext:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

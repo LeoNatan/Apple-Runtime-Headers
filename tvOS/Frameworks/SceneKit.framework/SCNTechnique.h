@@ -19,6 +19,7 @@
     NSMutableDictionary *_valueForSymbol;
     SCNOrderedDictionary *_animations;
     NSMutableDictionary *_bindings;
+    NSArray *_passes;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -30,9 +31,12 @@
 - (void)_customDecodingOfSCNTechnique:(id)arg1;
 - (void)_customEncodingOfSCNTechnique:(id)arg1;
 - (void)_didInstallInEngineContext:(struct __C3DEngineContext *)arg1;
+- (id)passAtIndex:(unsigned long long)arg1;
+- (void)_setupPasses;
 - (id)presentationInstance;
 - (_Bool)isPausedOrPausedByInheritance;
 - (id)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;

@@ -44,7 +44,7 @@
 - (BOOL)startPollingWithError:(id *)arg1;
 - (BOOL)startPolling;
 - (void)didEndUnexpectedly;
-- (void)didDetectExternalReader:(id)arg1;
+- (void)didDetectExternalReaderWithNotification:(id)arg1;
 - (void)didDetectTags:(id)arg1;
 - (void)didTerminate:(id)arg1;
 - (void)endSession;

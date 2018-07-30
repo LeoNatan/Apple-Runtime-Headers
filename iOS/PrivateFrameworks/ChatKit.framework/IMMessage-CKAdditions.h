@@ -12,6 +12,7 @@
 - (id)__ck_downgradedMessage;
 - (id)__ck_mediaObjects;
 - (id)__ck_attachmentPreviewTextForAttachmentAtIndex:(long long)arg1;
+- (id)__ck_previewTextWithChat:(id)arg1 ignorePluginContent:(_Bool)arg2;
 - (id)__ck_previewTextWithChat:(id)arg1;
 - (_Bool)__ck_isSMS;
 - (_Bool)__ck_isiMessage;

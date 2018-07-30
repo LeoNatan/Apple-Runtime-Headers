@@ -37,6 +37,7 @@
 - (void)startFetchingSyncProgress;
 - (void)_sendProgressToEventListeners:(id)arg1;
 - (void)_sendProgressToEventListenersDeferred;
+- (double)progressBroadcastDelay;
 - (void)_rescheduleFetchSyncProgress;
 - (_Bool)_hasProgressEventListeners;
 - (void)_timerExpiredForSyncStatsFetching:(id)arg1;
@@ -53,6 +54,8 @@
 - (_Bool)accountHasiMessageEnabled;
 - (void)setCloudKitSyncEnabled:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setCloudKitSyncEnabled:(_Bool)arg1;
+- (void)fetchSyncStateAfterClearingErrorsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchSyncStateAfterClearingErrors;
 - (void)fetchSyncStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSyncState;
 - (void)_syncStateDidChange:(id)arg1;

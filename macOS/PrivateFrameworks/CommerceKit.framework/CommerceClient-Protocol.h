@@ -6,9 +6,9 @@
 
 #import "AccountObserver.h"
 #import "DownloadQueueObserver.h"
+#import "PurchaseQueueDelegate.h"
 #import "PurchaseQueueObserver.h"
-#import "RemoteDialogContext.h"
 
-@protocol CommerceClient <AccountObserver, DownloadQueueObserver, PurchaseQueueObserver, RemoteDialogContext>
+@protocol CommerceClient <AccountObserver, DownloadQueueObserver, PurchaseQueueObserver, PurchaseQueueDelegate>
 @end
 

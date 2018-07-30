@@ -10,7 +10,6 @@
 
 @interface CSIndexingQueue : NSObject
 {
-    _Bool _timerArmed;
     long long _mode;
     double _idleTime;
     double _idleTimeLeeway;
@@ -19,13 +18,8 @@
     NSObject<OS_dispatch_queue> *_coalescingQueue;
     NSObject<OS_dispatch_source> *_coalescingTimer;
     CDUnknownBlockType _notifyBlock;
-    double _lastPush;
-    id <CSIndexQueuableItem> _lastPushedItem;
 }
 
-@property(retain, nonatomic) id <CSIndexQueuableItem> lastPushedItem; // @synthesize lastPushedItem=_lastPushedItem;
-@property double lastPush; // @synthesize lastPush=_lastPush;
-@property _Bool timerArmed; // @synthesize timerArmed=_timerArmed;
 @property(copy) CDUnknownBlockType notifyBlock; // @synthesize notifyBlock=_notifyBlock;
 @property(retain) NSObject<OS_dispatch_source> *coalescingTimer; // @synthesize coalescingTimer=_coalescingTimer;
 @property(retain) NSObject<OS_dispatch_queue> *coalescingQueue; // @synthesize coalescingQueue=_coalescingQueue;
@@ -38,7 +32,6 @@
 - (void)flush;
 - (void)_flushWithAppResigned:(_Bool)arg1 forced:(_Bool)arg2;
 - (void)queueItem:(id)arg1;
-- (void)_pushLastItem:(id)arg1 time:(double)arg2;
 - (void)queueItems:(id)arg1;
 - (void)_queueItems:(id)arg1;
 - (void)_applicationWillResign:(id)arg1;

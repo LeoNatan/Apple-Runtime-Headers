@@ -10,6 +10,7 @@
 
 @class GEOABDebugPanelExperimentBranch, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOABExperimentAssignment : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

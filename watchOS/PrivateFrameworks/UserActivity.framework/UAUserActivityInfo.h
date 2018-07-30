@@ -18,6 +18,7 @@
     _Bool _eligibleForSearch;
     _Bool _eligibleForPublicIndexing;
     _Bool _eligibleForReminders;
+    _Bool _eligibleForPrediction;
     _Bool _eligibleToAdvertise;
     _Bool _eligibleToAlwaysAdvertise;
     _Bool _dirty;
@@ -40,6 +41,7 @@
     NSString *_contentUserAction;
     NSSet *_keywords;
     NSDate *_expirationDate;
+    NSString *_persistentIdentifier;
     NSError *_error;
     SFPeerDevice *_peerDevice;
     NSString *_bundleIdentifier;
@@ -55,12 +57,14 @@
 @property(getter=isPayloadAvailable) _Bool payloadAvailable; // @synthesize payloadAvailable=_payloadAvailable;
 @property(readonly, getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
 @property(copy) NSError *error; // @synthesize error=_error;
+@property(copy) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(copy) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy) NSSet *keywords; // @synthesize keywords=_keywords;
 @property(copy) NSString *contentUserAction; // @synthesize contentUserAction=_contentUserAction;
 @property(copy) NSDictionary *encodingOptions; // @synthesize encodingOptions=_encodingOptions;
 @property(readonly) _Bool eligibleToAlwaysAdvertise; // @synthesize eligibleToAlwaysAdvertise=_eligibleToAlwaysAdvertise;
 @property(readonly) _Bool eligibleToAdvertise; // @synthesize eligibleToAdvertise=_eligibleToAdvertise;
+@property _Bool eligibleForPrediction; // @synthesize eligibleForPrediction=_eligibleForPrediction;
 @property _Bool eligibleForReminders; // @synthesize eligibleForReminders=_eligibleForReminders;
 @property _Bool eligibleForPublicIndexing; // @synthesize eligibleForPublicIndexing=_eligibleForPublicIndexing;
 @property _Bool eligibleForSearch; // @synthesize eligibleForSearch=_eligibleForSearch;

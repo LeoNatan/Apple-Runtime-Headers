@@ -8,7 +8,6 @@
 
 @class CNContactStore, CNLabeledValue;
 
-__attribute__((visibility("hidden")))
 @interface CNUISaveNonCuratedValueOntoReadOnlyContactCommand : CNUIUndoableCommand
 {
     CNUIUndoableCommand *_command;

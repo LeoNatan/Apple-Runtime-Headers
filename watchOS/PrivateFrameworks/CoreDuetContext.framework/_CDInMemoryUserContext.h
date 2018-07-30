@@ -32,8 +32,12 @@
 - (_Bool)evaluatePredicate:(id)arg1;
 - (void)deregisterCallback:(id)arg1;
 - (void)registerCallback:(id)arg1;
+- (_Bool)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
+- (_Bool)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2;
+- (_Bool)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2;
 - (_Bool)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
 - (id)setObject:(id)arg1 returningMetadataForContextualKeyPath:(id)arg2;
+- (id)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3 valueDidChange:(_Bool *)arg4;
 - (void)setContextValue:(id)arg1 forContextualKeyPath:(id)arg2;
 - (id)propertiesForContextualKeyPath:(id)arg1;
 - (id)lastModifiedDateForContextualKeyPath:(id)arg1;

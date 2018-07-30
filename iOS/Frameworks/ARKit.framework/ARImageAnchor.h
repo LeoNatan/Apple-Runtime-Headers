@@ -6,21 +6,34 @@
 
 #import <ARKit/ARAnchor.h>
 
-@class ARReferenceImage;
+#import "ARTrackable.h"
 
-@interface ARImageAnchor : ARAnchor
+@class ARReferenceImage, NSString;
+
+@interface ARImageAnchor : ARAnchor <ARTrackable>
 {
+    _Bool _detectionOnly;
+    _Bool _isTracked;
     ARReferenceImage *_referenceImage;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool isTracked; // @synthesize isTracked=_isTracked;
+@property(nonatomic, getter=isDetectionOnly) _Bool detectionOnly; // @synthesize detectionOnly=_detectionOnly;
 @property(readonly, nonatomic) ARReferenceImage *referenceImage; // @synthesize referenceImage=_referenceImage;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)description;
--     // Error parsing type: @88@0:8@16{?=[4]}24, name: initWithReferenceImage:transform:
+- (id)initWithAnchor:(id)arg1;
+- (id)copyWithTrackedState:(_Bool)arg1;
+@property(readonly, copy) NSString *description;
+- (id)name;
+-     // Error parsing type: @96@0:8@16{?=[4]}24B88B92, name: initWithReferenceImage:transform:detectionOnly:tracked:
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

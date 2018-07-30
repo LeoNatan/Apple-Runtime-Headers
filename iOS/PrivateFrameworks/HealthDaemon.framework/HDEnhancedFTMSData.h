@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSNumber *averageSpeed; // @synthesize averageSpeed=_averageSpeed;
 @property(retain, nonatomic) NSNumber *instantaneousSpeed; // @synthesize instantaneousSpeed=_instantaneousSpeed;
 - (void).cxx_destruct;
+- (id)description;
 - (id)generateDatums:(id)arg1;
 - (id)getBinaryValueWithError:(id *)arg1;
 

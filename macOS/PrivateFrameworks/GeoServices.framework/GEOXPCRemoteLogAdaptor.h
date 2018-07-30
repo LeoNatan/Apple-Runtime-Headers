@@ -8,11 +8,12 @@
 
 #import "GEOProtobufSessionTaskDelegate.h"
 
-@class GEOLogMessageCacheManager, GEOLogMessageCollectionRequest, GEOProtobufSessionTask, NSLock, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class GEOLogMessageCacheManager, GEOLogMessageCollectionRequest, GEOProtobufSessionTask, NSLock, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface GEOXPCRemoteLogAdaptor : GEOBaseLogAdaptor <GEOProtobufSessionTaskDelegate>
 {
     NSURL *_remoteURL;
+    NSNumber *_needsProxy;
     NSString *_debugRequestName;
     unsigned long long _retryInterval;
     unsigned long long _backOffRetryInterval;
@@ -47,6 +48,7 @@
 }
 
 @property(retain, nonatomic) NSString *debugRequestName; // @synthesize debugRequestName=_debugRequestName;
+@property(retain, nonatomic) NSNumber *needsProxy; // @synthesize needsProxy=_needsProxy;
 @property(retain, nonatomic) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
 - (void).cxx_destruct;
 - (void)_purgeLogMessageCache;
@@ -65,7 +67,6 @@
 - (void)_requesterStartSendRequest:(id)arg1;
 - (void)_sendLogMessageRequest:(id)arg1;
 - (void)_sendNextLogMessageChunk;
-- (BOOL)_isLogMessageCollectionRequesterPending;
 - (void)_queueNextLogMessagesChunkForSending;
 - (void)_beginSendingLogMessageChunks;
 - (void)_cleanupLogMessageCollectionRequester;
@@ -77,6 +78,7 @@
 - (void)queueLogMessage:(id)arg1;
 - (void)dealloc;
 - (void)_setupXPCActivity;
+- (void)tearDown;
 - (void)_setupLogMessageCache;
 - (BOOL)_useInMemoryLogMessageCache;
 @property(readonly) int supportedLogMessageType;
@@ -84,7 +86,7 @@
 - (void)_setupQueueAndNotifications;
 - (void)_initializeAdaptor;
 - (id)initWithAdaptorPolicy:(id)arg1;
-- (id)initWithRemoteURL:(id)arg1 debugRequestName:(id)arg2 supportedTypes:(id)arg3;
+- (id)initWithRemoteURL:(id)arg1 needsProxy:(id)arg2 debugRequestName:(id)arg3 supportedTypes:(id)arg4;
 - (void)incrementXpcActivityTriggerCount;
 @property(nonatomic) long long xpcActivityTriggerCount;
 

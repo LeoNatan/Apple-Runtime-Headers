@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     id <SearchableWKViewFullScreenDelegate> _fullScreenDelegate;
     id <SearchableWKViewPlaybackControlsPresenter> _playbackControlsPresenter;
     id <SearchableWKViewCancelDelegate> _cancelDelegate;
-    id <SearchableWKViewIconLoadingDelegate> _iconDelegate;
     unsigned long long _browsingMode;
     WKWebsiteDataStore *_websiteDataStore;
     WebViewController *_webViewController;
@@ -27,12 +26,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak WebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(readonly, nonatomic) WKWebsiteDataStore *websiteDataStore; // @synthesize websiteDataStore=_websiteDataStore;
 @property(readonly, nonatomic) unsigned long long browsingMode; // @synthesize browsingMode=_browsingMode;
-@property(nonatomic) __weak id <SearchableWKViewIconLoadingDelegate> iconDelegate; // @synthesize iconDelegate=_iconDelegate;
 @property(nonatomic) __weak id <SearchableWKViewCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=_cancelDelegate;
 @property(nonatomic) __weak id <SearchableWKViewPlaybackControlsPresenter> playbackControlsPresenter; // @synthesize playbackControlsPresenter=_playbackControlsPresenter;
 @property(nonatomic) __weak id <SearchableWKViewFullScreenDelegate> fullScreenDelegate; // @synthesize fullScreenDelegate=_fullScreenDelegate;
 - (void).cxx_destruct;
-- (void)_shouldLoadIconWithParameters:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_removeMediaPlaybackControlsView;
 - (void)_addMediaPlaybackControlsView:(id)arg1;
 - (void)_completeImmediateActionAnimation;
@@ -46,12 +43,13 @@ __attribute__((visibility("hidden")))
 - (void)cancelOperation:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)viewDidMoveToSuperview;
-- (void)_webViewWillDidExitFullscreen:(id)arg1;
-- (void)_webViewWillExitFullscreen:(id)arg1;
+- (void)_webViewDidExitFullscreen:(id)arg1;
 - (void)_webViewDidEnterFullscreen:(id)arg1;
+- (void)_webViewWillEnterFullscreen:(id)arg1;
 @property(readonly, nonatomic) _WKRemoteObjectRegistry *remoteObjectRegistry;
 @property(readonly, nonatomic) struct CGRect visibleBounds;
 - (void)pageDidClose;
+@property(readonly, nonatomic) BOOL isClosed;
 - (id)initWithWebViewController:(id)arg1 configurationRef:(struct OpaqueWKPageConfiguration *)arg2;
 
 // Remaining properties

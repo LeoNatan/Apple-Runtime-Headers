@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)_sectionsFromViewElement:(id)arg1;
 + (id)oneUpSectionWithLockups:(id)arg1 autoHighlightIndex:(long long)arg2;
 + (id)oneUpSectionWithSectionElement:(id)arg1;
 

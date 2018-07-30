@@ -6,7 +6,7 @@
 
 #import <Metal/MTLCompileOptions.h>
 
-@class NSDictionary;
+@class NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MTLCompileOptionsInternal : MTLCompileOptions
@@ -15,10 +15,17 @@ __attribute__((visibility("hidden")))
     NSDictionary *_preprocessorMacros;
     _Bool _fastMathEnabled;
     _Bool _glBufferBindPoints;
+    _Bool _tracingEnabled;
     _Bool _debuggingEnabled;
     unsigned long long _languageVersion;
+    _Bool _compileTimeStatisticsEnabled;
+    NSString *_additionalCompilerArguments;
 }
 
+- (void)setCompileTimeStatisticsEnabled:(_Bool)arg1;
+- (_Bool)compileTimeStatisticsEnabled;
+- (void)setTracingEnabled:(_Bool)arg1;
+- (_Bool)tracingEnabled;
 - (unsigned long long)languageVersion;
 - (void)setGlBufferBindPoints:(_Bool)arg1;
 - (_Bool)glBufferBindPoints;
@@ -29,6 +36,8 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (void)setLanguageVersion:(unsigned long long)arg1;
+- (void)setAdditionalCompilerArguments:(id)arg1;
+- (id)additionalCompilerArguments;
 - (void)setPreprocessorMacros:(id)arg1;
 - (id)preprocessorMacros;
 - (id)copyWithZone:(struct _NSZone *)arg1;

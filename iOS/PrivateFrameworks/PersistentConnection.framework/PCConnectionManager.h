@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
+#import "PCCarrierBundleHelperDelegate.h"
 #import "PCInterfaceMonitorDelegate.h"
 
-@class CUTWeakReference, NSObject<OS_dispatch_queue>, NSObject<OS_os_log>, NSRunLoop, NSString, PCPersistentTimer;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_os_log>, NSRunLoop, NSString, PCPersistentTimer;
 
-@interface PCConnectionManager : NSObject <PCInterfaceMonitorDelegate>
+@interface PCConnectionManager : NSObject <PCCarrierBundleHelperDelegate, PCInterfaceMonitorDelegate>
 {
     int _connectionClass;
     id <PCConnectionManagerDelegate> _delegate;
@@ -24,8 +25,8 @@
     NSRunLoop *_delegateRunLoop;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_os_log> *_logObject;
-    id <PCGrowthAlgorithm> _wwanGrowthAlgorithm;
-    id <PCGrowthAlgorithm> _wifiGrowthAlgorithm;
+    id <PCGrowthAlgorithm> _wwanGrowthAlgorithm[2];
+    id <PCGrowthAlgorithm> _wifiGrowthAlgorithm[2];
     id <PCGrowthAlgorithm> _lastScheduledGrowthAlgorithm;
     PCPersistentTimer *_intervalTimer;
     PCPersistentTimer *_reconnectWakeTimer;
@@ -65,8 +66,8 @@
     int _currentGrowthStage;
     id _duetContextRegistration;
     _Bool _powerOptimizationsForExpensiveNetworkingDisabled;
-    CUTWeakReference *_weakConnectionManager;
     double _nonCellularEarlyFireConstantInterval;
+    int _currentAddressFamily;
 }
 
 + (_Bool)_isCachedKeepAliveIntervalStillValid:(double)arg1 date:(id)arg2;
@@ -80,10 +81,11 @@
 @property(nonatomic) long long interfaceIdentifier; // @synthesize interfaceIdentifier=_interfaceIdentifier;
 @property(nonatomic) double keepAliveGracePeriod; // @synthesize keepAliveGracePeriod=_keepAliveGracePeriod;
 - (void).cxx_destruct;
+- (id)_stringForAddressFamily:(int)arg1;
 - (id)_stringForEvent:(int)arg1;
 - (id)_stringForAction:(int)arg1;
 - (id)_stringForStyle:(int)arg1;
-- (id)_getCachedWWANKeepAliveInterval;
+- (id)_getCachedWWANKeepAliveIntervalForAddressFamily:(int)arg1;
 - (void)_saveWWANKeepAliveInterval;
 - (void)_releasePowerAssertion;
 - (void)_takePowerAssertionWithTimeout:(double)arg1;
@@ -106,6 +108,7 @@
 - (void)_setupTimerForPollForAdjustment:(_Bool)arg1;
 - (void)_adjustPollTimerIfNecessary;
 - (void)_setupTimerForPushWithKeepAliveInterval:(double)arg1;
+@property(nonatomic) int currentAddressFamily;
 - (void)_adjustMinimumIntervalFallback;
 - (void)setOperatorMinimumIntervalFallbackAllowed:(_Bool)arg1;
 - (_Bool)operatorMinimumIntervalFallbackAllowed;
@@ -147,6 +150,7 @@
 - (id)initWithConnectionClass:(int)arg1 delegate:(id)arg2 serviceIdentifier:(id)arg3;
 - (id)initWithConnectionClass:(int)arg1 interfaceIdentifier:(long long)arg2 guidancePriority:(unsigned long long)arg3 delegate:(id)arg4 serviceIdentifier:(id)arg5;
 - (id)initWithConnectionClass:(int)arg1 delegate:(id)arg2 delegateQueue:(id)arg3 serviceIdentifier:(id)arg4;
+- (void)carrierBundleDidChange;
 - (id)_initWithConnectionClass:(int)arg1 interfaceIdentifier:(long long)arg2 guidancePriority:(unsigned long long)arg3 delegate:(id)arg4 delegateQueue:(id)arg5 serviceIdentifier:(id)arg6;
 
 // Remaining properties

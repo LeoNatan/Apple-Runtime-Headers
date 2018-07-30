@@ -8,7 +8,6 @@
 
 @class NSString, OITSUTemporaryDirectory;
 
-__attribute__((visibility("hidden")))
 @interface OCCDecryptor : NSObject
 {
     OITSUTemporaryDirectory *mTempDirectory;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)agilePasswordKeyEncryptorNamespace;
 + (id)agileDescriptorNamespace;
 @property(readonly, nonatomic) NSString *outputFilename; // @synthesize outputFilename=mOutputFilename;
+- (void).cxx_destruct;
 - (BOOL)decryptIntoOutputFile;
 - (BOOL)verifyPassphrase:(id)arg1;
 - (BOOL)decrypt;

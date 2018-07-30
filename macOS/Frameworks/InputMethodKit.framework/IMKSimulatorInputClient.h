@@ -8,20 +8,29 @@
 
 #import "IMKTextInput.h"
 
-@class NSString, NSTextView;
+@class NSMutableDictionary, NSString, NSTextView;
 
 @interface IMKSimulatorInputClient : NSObject <IMKTextInput>
 {
     NSString *_applicationContext;
+    BOOL _hasTouchBar;
     unsigned long long _incrementalSearchClientGeometry;
     BOOL _isIncrementalSearchInputContext;
     NSTextView *_textView;
+    NSMutableDictionary *_methodCounts;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *methodCounts; // @synthesize methodCounts=_methodCounts;
 @property(retain, nonatomic) NSTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) BOOL isIncrementalSearchInputContext; // @synthesize isIncrementalSearchInputContext=_isIncrementalSearchInputContext;
 @property(nonatomic) unsigned long long incrementalSearchClientGeometry; // @synthesize incrementalSearchClientGeometry=_incrementalSearchClientGeometry;
+@property(nonatomic) BOOL hasTouchBar; // @synthesize hasTouchBar=_hasTouchBar;
 @property(copy, nonatomic) NSString *applicationContext; // @synthesize applicationContext=_applicationContext;
+- (id)handleMessage:(int)arg1;
+- (void)resetMethodCounts;
+- (void)updateMethodCountsForSelector:(SEL)arg1;
+- (id)windowEffectiveAppearance;
+- (id)viewEffectiveAppearance;
 - (void)dismissFunctionRowItemTextInputView;
 - (void)presentFunctionRowItemTextInputView;
 - (BOOL)wouldHandleEvent:(id)arg1;

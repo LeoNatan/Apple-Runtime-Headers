@@ -10,11 +10,19 @@
 {
     _Bool _showConfidentialityWarnings;
     _Bool _showInternalGIFExport;
+    _Bool _sharingSuggestionsWidgetAllStreamEnabled;
+    _Bool _sharingSuggestionsWidgetHeuristicsEnabled;
+    _Bool _sharingSuggestionsWidgetLearningEnabled;
+    _Bool _sharingSuggestionsWidgetCoreDuetEnabled;
     unsigned long long _confidentialityWarningsVersion;
 }
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+@property(nonatomic) _Bool sharingSuggestionsWidgetCoreDuetEnabled; // @synthesize sharingSuggestionsWidgetCoreDuetEnabled=_sharingSuggestionsWidgetCoreDuetEnabled;
+@property(nonatomic) _Bool sharingSuggestionsWidgetLearningEnabled; // @synthesize sharingSuggestionsWidgetLearningEnabled=_sharingSuggestionsWidgetLearningEnabled;
+@property(nonatomic) _Bool sharingSuggestionsWidgetHeuristicsEnabled; // @synthesize sharingSuggestionsWidgetHeuristicsEnabled=_sharingSuggestionsWidgetHeuristicsEnabled;
+@property(nonatomic) _Bool sharingSuggestionsWidgetAllStreamEnabled; // @synthesize sharingSuggestionsWidgetAllStreamEnabled=_sharingSuggestionsWidgetAllStreamEnabled;
 @property(nonatomic) unsigned long long confidentialityWarningsVersion; // @synthesize confidentialityWarningsVersion=_confidentialityWarningsVersion;
 @property(nonatomic) _Bool showInternalGIFExport; // @synthesize showInternalGIFExport=_showInternalGIFExport;
 @property(nonatomic) _Bool showConfidentialityWarnings; // @synthesize showConfidentialityWarnings=_showConfidentialityWarnings;

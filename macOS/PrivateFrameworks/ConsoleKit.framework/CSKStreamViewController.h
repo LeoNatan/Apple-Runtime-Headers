@@ -17,6 +17,7 @@
     BOOL _showsDetailsPane;
     BOOL _showsStatusView;
     BOOL _wantsNowMode;
+    BOOL _pause;
     CSKStreamSource *_source;
     id <CSKStreamViewControllerDelegate> _delegate;
     unsigned long long _capacity;
@@ -48,6 +49,7 @@
 @property(readonly, nonatomic) CSKActivitiesViewController *activitiesViewController; // @synthesize activitiesViewController=_activitiesViewController;
 @property(readonly, nonatomic) CSKStreamSQLActivitiesObserver *activitiesSQLObserver; // @synthesize activitiesSQLObserver=_activitiesSQLObserver;
 @property(readonly, nonatomic) CSKStreamActivitiesObserver *activitiesObserver; // @synthesize activitiesObserver=_activitiesObserver;
+@property(nonatomic) BOOL pause; // @synthesize pause=_pause;
 @property(readonly, nonatomic) CSKMessageDetailsViewController *messageDetailsViewController; // @synthesize messageDetailsViewController=_messageDetailsViewController;
 @property(readonly, nonatomic) CSKMessagesViewController *messagesViewController; // @synthesize messagesViewController=_messagesViewController;
 @property(readonly, nonatomic) CSKStreamMessagesObserver *messagesObserver; // @synthesize messagesObserver=_messagesObserver;
@@ -117,6 +119,8 @@
 - (id)currentLoadItemInfo;
 - (void)updateLogItemInfo:(id)arg1;
 - (void)fillTableLogsMenu:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)resumeStreaming;
+- (void)pauseStreaming;
 - (void)reload;
 - (void)loadMore;
 - (id)loadRangeValue;

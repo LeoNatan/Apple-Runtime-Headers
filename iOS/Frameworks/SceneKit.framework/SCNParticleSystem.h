@@ -81,6 +81,7 @@
     double _speedFactor;
     double _fixedTimeStep;
     double _stretchFactor;
+    double _lightEmissionRadiusFactor;
     double _fresnelExponent;
     unsigned long long _imageSequenceColumnCount;
     unsigned long long _imageSequenceRowCount;
@@ -179,6 +180,8 @@
 @property(nonatomic) long long birthDirection;
 @property(nonatomic) _Bool affectedByPhysicsFields;
 @property(nonatomic) _Bool affectedByGravity;
+- (void)setLightEmissionRadiusFactor:(double)arg1;
+- (double)lightEmissionRadiusFactor;
 @property(nonatomic) struct SCNVector3 orientationDirection;
 - (_Bool)areSoftParticlesEnabled;
 - (void)_setParticleImagePath:(id)arg1 withResolvedPath:(id)arg2;
@@ -199,6 +202,7 @@
 - (id)initPresentationSystemWithSystemRef:(struct __C3DParticleSystem *)arg1;
 - (id)initWithParticleSystemRef:(struct __C3DParticleSystem *)arg1;
 - (id)init;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;

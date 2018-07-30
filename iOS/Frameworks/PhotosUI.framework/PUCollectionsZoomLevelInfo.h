@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (id)renderedStripsElementKind;
 - (id)newCollectionViewLayout;
 - (struct __CFString *)aggregateLevelKey;
-- (id)displayTitle;
 - (id)momentsInCollectionList:(id)arg1;
 - (id)_collectionsFetchResult;
 - (id)initWithZoomLevel:(unsigned long long)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;

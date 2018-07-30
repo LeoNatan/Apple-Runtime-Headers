@@ -15,7 +15,7 @@
 }
 
 + (id)widgetAttributionIDsInOrder;
-+ (id)attributedStringForIdentifier:(id)arg1;
++ (void)requestAttributedStringForIdentifier:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) UIColor *legibilityTextColor; // @synthesize legibilityTextColor=_legibilityTextColor;
 - (void).cxx_destruct;
 - (void)layoutSubviews;

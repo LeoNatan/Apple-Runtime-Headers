@@ -26,15 +26,14 @@ __attribute__((visibility("hidden")))
 - (void)_raiseToExponent:(int)arg1;
 - (void)_multiplyByFactorization:(id)arg1;
 - (void)_multiplyByFactor:(id)arg1 exponent:(int)arg2;
-- (_Bool)_hasSameFactorsAndExponentsAs:(id)arg1;
 - (int)_exponentForFactor:(id)arg1;
-- (id)_allFactors;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)unitString;
 - (int)exponentForFactor:(id)arg1;
 - (id)anyFactor;
 - (unsigned int)factorCount;
+- (void)_enumerateFactorsWithHandler:(CDUnknownBlockType)arg1;
 - (void)enumerateFactorsWithHandler:(CDUnknownBlockType)arg1;
 - (id)factorizationByRaisingToExponent:(int)arg1;
 - (id)reciprocal;

@@ -4,13 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FinderKit/FI_TPropertyLastOpenedDateController.h>
+#import <FinderKit/FI_TPropertyColumnPreviewDateTextFieldController.h>
 
 __attribute__((visibility("hidden")))
-@interface FI_TPropertyColumnPreviewLastOpenedDateController : FI_TPropertyLastOpenedDateController
+@interface FI_TPropertyColumnPreviewLastOpenedDateController : FI_TPropertyColumnPreviewDateTextFieldController
 {
+    _Bool _alwaysShow;
 }
 
+@property(nonatomic) _Bool alwaysShow; // @synthesize alwaysShow=_alwaysShow;
+- (_Bool)hasValue;
+- (_Bool)shouldFetchWhenDisabled;
+- (_Bool)shouldBeVisible;
 - (void)initCommon;
 
 @end

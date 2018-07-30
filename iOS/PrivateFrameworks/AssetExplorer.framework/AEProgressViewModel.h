@@ -10,6 +10,7 @@
 
 @class AEProgressViewModelSnapshot, NSDictionary, NSString, PXAssetsDataSourceManager;
 
+__attribute__((visibility("hidden")))
 @interface AEProgressViewModel : PXObservable <PXAssetsDataSourceManagerObserver>
 {
     AEProgressViewModelSnapshot *_currentSnapshot;

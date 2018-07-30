@@ -8,7 +8,7 @@
 
 #import "SiriCoreConnectionProvider.h"
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_nw_connection>, NSObject<OS_nw_endpoint>, NSString, NSURL, SAConnectionPolicy, SAConnectionPolicyRoute, SiriCoreConnectionType;
+@class NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_nw_connection>, NSObject<OS_nw_endpoint>, NSString, NSURL, SAConnectionPolicy, SAConnectionPolicyRoute, SiriCoreConnectionMetrics, SiriCoreConnectionType;
 
 @interface SiriCoreNWConnection : NSObject <SiriCoreConnectionProvider>
 {
@@ -36,6 +36,14 @@
     NSObject<OS_dispatch_source> *_staleConnectionTimer;
     unsigned long long _readWriteCounter;
     NSArray *_attemptedEndpoints;
+    BOOL _isViable;
+    BOOL _scopeToWiFiOnly;
+    SiriCoreConnectionMetrics *_metrics;
+    double _keepaliveIdleTime;
+    double _keepaliveIntervalTime;
+    double _retransmissionBasedConnectionDropTime;
+    unsigned long long _keepaliveUnackedCount;
+    double _staleConnectionInterval;
 }
 
 + (void)getMetricsContext:(CDUnknownBlockType)arg1;
@@ -44,15 +52,19 @@
 - (BOOL)providerStatsIndicatePoorLinkQuality;
 - (id)_setParametersForHost:(const char *)arg1 useTLS:(BOOL)arg2 initialPayload:(id)arg3;
 - (id)resolvedHost;
+- (void)setRetransmitConnectionDropTime:(double)arg1;
+- (void)setKeepAlive:(double)arg1 withInterval:(double)arg2 withCount:(unsigned long long)arg3;
+- (void)setScopeIsWiFiOnly;
 - (BOOL)shouldFallbackFromError:(id)arg1;
 - (BOOL)isCanceled;
 - (BOOL)isReady;
 - (BOOL)isEstablishing;
 - (BOOL)isMultipath;
-- (BOOL)isNetworkDownError:(id)arg1;
 - (BOOL)isPeerNotNearbyError:(id)arg1;
 - (BOOL)isPeerConnectionError:(id)arg1;
 - (void)close;
+- (void)_receivedBetterRouteNotification:(BOOL)arg1;
+- (void)_receivedViabilityChangeNotification:(BOOL)arg1;
 - (void)_closeWithError:(id)arg1;
 - (void)updateConnectionMetrics:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)analysisInfo;
@@ -75,6 +87,7 @@
 - (id)_connectionId;
 - (id)_url;
 - (id)delegate;
+- (void)setStaleInterval:(double)arg1;
 - (void)setEnforceExtendedValidation:(BOOL)arg1;
 - (void)setConnectByPOPMethod:(BOOL)arg1;
 - (void)setPrefersWWAN:(BOOL)arg1;

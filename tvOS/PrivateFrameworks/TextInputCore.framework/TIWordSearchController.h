@@ -15,9 +15,9 @@
 
 + (id)sharedWordSearchController;
 @property(retain, nonatomic) NSMapTable *inputModeToWordSearchMapping; // @synthesize inputModeToWordSearchMapping=_inputModeToWordSearchMapping;
+- (void).cxx_destruct;
 - (id)wordSearchForInputMode:(id)arg1;
 - (void)setWordSearch:(id)arg1 forInputMode:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

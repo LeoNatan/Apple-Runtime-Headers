@@ -14,15 +14,20 @@
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_backgroundTaskRecordsByTaskIdentifier;
+    NSMutableDictionary *_backgroundTaskRecordsByRecordName;
 }
 
 + (id)contextWithArchive:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(retain) NSMutableDictionary *backgroundTaskRecordsByRecordName; // @synthesize backgroundTaskRecordsByRecordName=_backgroundTaskRecordsByRecordName;
 @property(retain) NSMutableDictionary *backgroundTaskRecordsByTaskIdentifier; // @synthesize backgroundTaskRecordsByTaskIdentifier=_backgroundTaskRecordsByTaskIdentifier;
 - (void).cxx_destruct;
-- (id)taskIdentifiers;
+- (id)remainingTasks;
+- (void)removeBackgroundDownloadRecordForRecordName:(id)arg1;
 - (void)removeBackgroundDownloadRecordForTaskIdentifier:(unsigned long long)arg1;
+- (id)backgroundDownloadRecordForRecordName:(id)arg1;
 - (id)backgroundDownloadRecordForTaskIdentifier:(unsigned long long)arg1;
+- (void)addBackgroundDownloadRecord:(id)arg1 forRecordName:(id)arg2;
 - (void)addBackgroundDownloadRecord:(id)arg1 forTaskIdentifier:(unsigned long long)arg2;
 - (void)archiveAtPath:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

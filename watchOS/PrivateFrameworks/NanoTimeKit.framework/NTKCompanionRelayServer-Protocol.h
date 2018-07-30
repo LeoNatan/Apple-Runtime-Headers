@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol NTKCompanionRelayServer <NSObject>
+- (void)fileUpnextRadarWithDiagnosticLogs:(NSString *)arg1;
 - (void)notifyMemoryRemotelyViewedWithCollectionIdentifier:(NSString *)arg1;
 @end
 

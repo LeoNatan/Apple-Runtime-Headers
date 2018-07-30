@@ -6,20 +6,23 @@
 
 #import <ConfigurationEngineModel/CEMPayloadBase.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @interface CEMUserNameAndPasswordCredentialsDeclaration : CEMPayloadBase
 {
-    NSDictionary *_declarationPayload;
+    NSString *_payloadUserName;
+    NSString *_payloadPassword;
 }
 
++ (id)buildRequiredOnlyWithUserName:(id)arg1 withPassword:(id)arg2;
++ (id)buildWithUserName:(id)arg1 withPassword:(id)arg2;
 + (id)allowedPayloadKeys;
-@property(readonly, retain) NSDictionary *declarationPayload; // @synthesize declarationPayload=_declarationPayload;
+@property(copy, nonatomic) NSString *payloadPassword; // @synthesize payloadPassword=_payloadPassword;
+@property(copy, nonatomic) NSString *payloadUserName; // @synthesize payloadUserName=_payloadUserName;
 - (void).cxx_destruct;
-- (id)serializePayload:(id)arg1;
-- (BOOL)validPayloadDictionary:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSString *payloadPassword;
-@property(readonly, nonatomic) NSString *payloadUserName;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayload;
+- (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 
 @end
 

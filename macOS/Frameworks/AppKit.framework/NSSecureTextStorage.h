@@ -8,6 +8,7 @@
 
 @class NSFont;
 
+__attribute__((visibility("hidden")))
 @interface NSSecureTextStorage : NSTextStorage
 {
     struct __CFAttributedString *_storage;

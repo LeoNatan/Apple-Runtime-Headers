@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class ArouetRecognitionResult, NSString;
+@class ArouetRecognitionResult, NSArray, NSString;
 
 @protocol ArouetInputDelegate <NSObject>
 - (float)relativeTextCursorPosition;
+- (NSArray *)recentDeletionsAtLocation:(int)arg1;
 - (NSString *)characterHistory;
 - (void)handwritingRecognitionDidEnd;
 - (void)handwritingWasCommitted;

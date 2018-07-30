@@ -9,7 +9,7 @@
 #import "MPVolumeControllerDelegate.h"
 #import "MPVolumeDisplaying.h"
 
-@class MPAVController, MPAVRoute, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UILayoutGuide, UIView;
+@class MPAVController, MPAVEndpointRoute, MPAVOutputDeviceRoute, MPAVRoute, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UILayoutGuide, UIView;
 
 @interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate, MPVolumeDisplaying>
 {
@@ -24,16 +24,26 @@
     UIView *_volumeWarningView;
     _Bool _volumeWarningBlinking;
     UIImage *_volumeWarningTrackImage;
-    _Bool _userWasBlocked;
+    _Bool _beganTrackingFromEUVolumeLimit;
     float _originalMinTrackViewAlphaOverride;
     float _originalMinValueViewAlphaOverride;
     float _originalMaxValueViewAlphaOverride;
+    _Bool _optimisticState;
     UILayoutGuide *_trackLayoutGuide;
     MPVolumeController *_volumeController;
+    MPAVController *_player;
+    MPAVEndpointRoute *_groupRoute;
+    MPAVOutputDeviceRoute *_outputDeviceRoute;
+    float _optimisticValue;
     struct UIEdgeInsets _hitRectInsets;
 }
 
-@property(readonly, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
+@property(nonatomic) float optimisticValue; // @synthesize optimisticValue=_optimisticValue;
+@property(nonatomic, getter=isInOptimisticState) _Bool optimisticState; // @synthesize optimisticState=_optimisticState;
+@property(retain, nonatomic) MPAVOutputDeviceRoute *outputDeviceRoute; // @synthesize outputDeviceRoute=_outputDeviceRoute;
+@property(retain, nonatomic) MPAVEndpointRoute *groupRoute; // @synthesize groupRoute=_groupRoute;
+@property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
+@property(retain, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(readonly, nonatomic) UILayoutGuide *trackLayoutGuide; // @synthesize trackLayoutGuide=_trackLayoutGuide;
 @property(nonatomic) struct UIEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(retain, nonatomic) UIImage *volumeWarningTrackImage; // @synthesize volumeWarningTrackImage=_volumeWarningTrackImage;
@@ -54,6 +64,7 @@
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 @property(readonly, nonatomic) __weak UIView *thumbView;
 @property(nonatomic, setter=_setIsOffScreen:) _Bool _isOffScreen;
+- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
 - (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(_Bool)arg2;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
@@ -63,7 +74,6 @@
 @property(readonly, nonatomic, getter=isOnScreenForVolumeDisplay) _Bool onScreenForVolumeDisplay;
 - (void)setVolumeDataSource:(id)arg1;
 @property(retain, nonatomic) MPAVRoute *route;
-@property(retain, nonatomic) MPAVController *player;
 @property(readonly, copy, nonatomic) NSString *volumeControlLabel;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)setHidden:(_Bool)arg1;
@@ -86,12 +96,13 @@
 - (float)maximumValue;
 - (id)createThumbView;
 - (void)dealloc;
+@property(readonly, copy) NSString *description;
+- (id)initWithFrame:(struct CGRect)arg1 style:(int)arg2 endpointRoute:(id)arg3 outputDeviceRoute:(id)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic, getter=isOnScreen) _Bool onScreen;
 @property(readonly) Class superclass;

@@ -7,7 +7,7 @@
 #import "NSAttributedString.h"
 
 @interface NSAttributedString (NSStringDrawingExtension)
-- (struct CGRect)_drawCenteredVerticallyInRect:(struct CGRect)arg1 options:(unsigned long long)arg2 scrollable:(BOOL)arg3 styledTextOptions:(id)arg4 referenceView:(id)arg5;
+- (struct CGRect)_drawCenteredVerticallyInRect:(struct CGRect)arg1 options:(unsigned long long)arg2 scrollable:(BOOL)arg3 styleEffectConfiguration:(id)arg4 referenceCell:(id)arg5 referenceView:(id)arg6;
 - (struct CGRect)_drawCenteredVerticallyInRect:(struct CGRect)arg1 scrollable:(BOOL)arg2 styledTextOptions:(id)arg3;
 - (struct CGRect)_drawCenteredVerticallyInRect:(struct CGRect)arg1;
 - (struct CGSize)_sizeWithSize:(struct CGSize)arg1;

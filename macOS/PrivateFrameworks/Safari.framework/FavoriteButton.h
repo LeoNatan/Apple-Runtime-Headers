@@ -96,7 +96,6 @@ __attribute__((visibility("hidden")))
 - (void)_setAttributes;
 - (void)registerForDraggedTypes;
 @property(readonly, copy) NSString *description;
-- (BOOL)allowsVibrancy;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

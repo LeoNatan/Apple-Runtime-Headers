@@ -24,6 +24,7 @@
 - (void)closeHyperlinkPopover;
 - (void)showHyperlinkInfoForField:(id)arg1 inRep:(id)arg2 openInEditMode:(_Bool)arg3;
 - (_Bool)zoomColumnAtPoint:(struct CGPoint)arg1;
+- (id)closestRepToPoint:(struct CGPoint)arg1;
 - (id)closestRepToPoint:(struct CGPoint)arg1 forStorage:(id)arg2;
 - (id)p_repsForStorage:(id)arg1;
 - (id)_repsForStorage:(id)arg1;

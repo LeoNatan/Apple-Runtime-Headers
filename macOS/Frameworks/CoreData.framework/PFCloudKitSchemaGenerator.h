@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)representativeValueFor:(id)arg1;
++ (id)newRepresentativeRecordForStaticFieldsInEntity:(id)arg1;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
 @property(readonly, nonatomic) NSString *configurationName; // @synthesize configurationName=_configurationName;
 @property(readonly, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;

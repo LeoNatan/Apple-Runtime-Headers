@@ -16,7 +16,6 @@
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
 - (void)handleInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
-- (_Bool)shouldHandleInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (id)attributeForIntent:(id)arg1 direction:(long long)arg2;
 - (id)interestingContactIdentifiersFromIntent:(id)arg1;
 

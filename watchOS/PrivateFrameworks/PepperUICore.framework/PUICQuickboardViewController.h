@@ -7,11 +7,12 @@
 #import "UIViewController.h"
 
 #import "CSLPIButtonHandlerProtocol.h"
+#import "PUICQuickboardController.h"
 #import "PUICQuickboardTransition.h"
 
 @class CSLSButtonTapAssertion, NSString, PUICQuickboardLanguageController, PUICQuickboardTransitionCoordinator, UIButton, UIView;
 
-@interface PUICQuickboardViewController : UIViewController <PUICQuickboardTransition, CSLPIButtonHandlerProtocol>
+@interface PUICQuickboardViewController : UIViewController <PUICQuickboardTransition, CSLPIButtonHandlerProtocol, PUICQuickboardController>
 {
     _Bool _prefersStatusBarHidden;
     PUICQuickboardLanguageController *_languageController;
@@ -35,6 +36,7 @@
     double _dismissalAnimationDuration;
 }
 
++ (float)recommendedBottomContentInset;
 + (float)recommendedTopContentInset;
 @property(nonatomic) double dismissalAnimationDuration; // @synthesize dismissalAnimationDuration=_dismissalAnimationDuration;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
@@ -55,6 +57,7 @@
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <PUICQuickboardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int inputType;
 - (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;
 - (void)handleCrownButtonTap;
 - (void)tryToBecomeFirstResponder;
@@ -64,6 +67,7 @@
 - (_Bool)isRunningInCarouselProcess;
 - (_Bool)prefersStatusBarHidden;
 - (void)primaryLanguageDidChange:(id)arg1;
+- (void)quickboardDictationLanguageDidChange:(id)arg1;
 - (void)quickboardLanguageDidChange:(id)arg1;
 @property(retain, nonatomic) PUICQuickboardLanguageController *languageController;
 @property(readonly, nonatomic) NSString *primaryLanguage;

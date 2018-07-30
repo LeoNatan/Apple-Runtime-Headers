@@ -6,27 +6,20 @@
 
 #import "NSObject.h"
 
+@class NSDisplayCyclePhase;
+
 __attribute__((visibility("hidden")))
 @interface NSDisplayCycleObserver : NSObject
 {
-    CDUnknownBlockType _updateConstraintsHandler;
-    CDUnknownBlockType _layoutHandler;
-    CDUnknownBlockType _displayHandler;
-    CDUnknownBlockType _updateStructuralRegionsHandler;
-    CDUnknownBlockType _updateCursorHandler;
+    NSDisplayCyclePhase *_phase;
+    CDUnknownBlockType _handler;
 }
 
-@property BOOL needsUpdateCursor;
-@property BOOL needsUpdateStructuralRegions;
-@property BOOL needsDisplay;
-@property BOOL needsLayout;
-@property BOOL needsUpdateConstraints;
-@property(copy) CDUnknownBlockType updateCursorHandler;
-@property(copy) CDUnknownBlockType updateStructuralRegionsHandler;
-@property(copy) CDUnknownBlockType displayHandler;
-@property(copy) CDUnknownBlockType layoutHandler;
-@property(copy) CDUnknownBlockType updateConstraintsHandler;
+@property(readonly, copy) CDUnknownBlockType handler;
+@property(readonly) NSDisplayCyclePhase *phase;
+- (id)description;
 - (void)dealloc;
+- (id)initWithPhase:(id)arg1 handler:(CDUnknownBlockType)arg2;
 
 @end
 

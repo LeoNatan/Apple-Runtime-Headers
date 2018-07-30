@@ -9,6 +9,7 @@
 @class NSString;
 
 @interface CNContact (SafariSharedExtras)
++ (id)safari_oneTimeCodeViewDescriptors;
 + (id)safari_imageViewDescriptors;
 + (id)safari_defaultDescriptors;
 - (id)safari_valueForWBSABProperty:(id)arg1;

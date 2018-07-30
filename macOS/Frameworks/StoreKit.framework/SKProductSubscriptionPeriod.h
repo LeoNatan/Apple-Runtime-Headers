@@ -12,10 +12,14 @@
 }
 
 - (void).cxx_destruct;
-@property(readonly, nonatomic) unsigned long long unit;
-@property(readonly, nonatomic) unsigned long long numberOfUnits;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithISO8601String:(id)arg1;
 - (id)init;
+- (void)_setUnit:(unsigned long long)arg1;
+- (void)_setNumberOfUnits:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long unit;
+@property(readonly, nonatomic) unsigned long long numberOfUnits;
 
 @end
 

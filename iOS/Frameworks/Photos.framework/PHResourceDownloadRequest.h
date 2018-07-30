@@ -25,9 +25,10 @@
 }
 
 + (id)resourceInfoForAsset:(id)arg1 requestType:(long long)arg2 error:(id *)arg3;
++ (id)indexesForAssetsWithoutThumbnails:(id)arg1 requestType:(long long)arg2;
 + (id)indexesForAssetsRequiringDownload:(id)arg1 requestType:(long long)arg2;
-+ (id)_resourceInfoForAsset:(id)arg1 resourcesToShare:(id)arg2 fulfillOnDemandResources:(_Bool)arg3;
-+ (id)_resourcesToShareForAsset:(id)arg1 treatLivePhotoAsStill:(_Bool)arg2 error:(id *)arg3;
++ (id)_resourceInfoForAsset:(id)arg1 resourcesToShare:(id)arg2 fulfillOnDemandResources:(_Bool)arg3 error:(id *)arg4;
++ (id)_resourcesToShareForAsset:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)_resourcesToShareForAsset:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSMutableArray *_activeAssetResourcesRequest; // @synthesize _activeAssetResourcesRequest=__activeAssetResourcesRequest;
 @property(retain, nonatomic, setter=_setAssetResources:) NSArray *_assetResources; // @synthesize _assetResources=__assetResources;

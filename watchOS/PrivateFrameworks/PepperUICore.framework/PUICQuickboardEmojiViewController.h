@@ -4,69 +4,58 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <PepperUICore/PUICQuickboardViewController.h>
+#import <PepperUICore/PUICQuickboardModalNavigationContainerController.h>
 
+#import "PUICQuickboardController.h"
 #import "PUICQuickboardPickerViewDelegate.h"
 #import "PUICRecentEmojiViewDelegate.h"
 #import "PUICRecentsViewDelegate.h"
-#import "UIPageViewControllerDataSource.h"
-#import "UIPageViewControllerDelegate.h"
 
-@class NSMutableArray, NSString, PUICFaceAnimatedEmojiViewController, PUICHandAnimatedEmojiViewController, PUICHeartAnimatedEmojiViewController, PUICPageIndicatorView, PUICQuickboardStickersViewController, PUICRecentEmojiViewController, UIPageViewController, UIView;
+@class NSString, PUICQuickboardLanguageController, PUICQuickboardPunchoutView, UIButton;
 
-@interface PUICQuickboardEmojiViewController : PUICQuickboardViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource, PUICRecentEmojiViewDelegate, PUICRecentsViewDelegate, PUICQuickboardPickerViewDelegate>
+@interface PUICQuickboardEmojiViewController : PUICQuickboardModalNavigationContainerController <PUICRecentEmojiViewDelegate, PUICRecentsViewDelegate, PUICQuickboardPickerViewDelegate, PUICQuickboardController>
 {
-    UIPageViewController *_pageViewController;
-    PUICFaceAnimatedEmojiViewController *_facesEmojiViewController;
-    PUICHeartAnimatedEmojiViewController *_heartsEmojiViewController;
-    PUICHandAnimatedEmojiViewController *_handsEmojiViewController;
-    PUICRecentEmojiViewController *_recentEmojiViewController;
-    PUICQuickboardStickersViewController *_stickersViewController;
-    PUICPageIndicatorView *_pageIndicatorView;
-    UIView *_footerView;
-    NSMutableArray *_pages;
     _Bool _supportsRecentItemPayloads;
+    unsigned int _quickboardType;
     id <PUICQuickboardEmojiViewControllerDelegate> _emojiViewControllerDelegate;
-    UIView *_punchoutView;
+    id <PUICQuickboardViewControllerDelegate> _delegate;
+    PUICQuickboardLanguageController *_languageController;
+    unsigned int _dismissMode;
+    unsigned int _confirmationType;
+    UIButton *_acceptButton;
+    PUICQuickboardPunchoutView *_punchoutView;
 }
 
 + (void)resetLastSelectedEmojiTypeForTesting;
-@property(nonatomic) __weak UIView *punchoutView; // @synthesize punchoutView=_punchoutView;
+@property(retain, nonatomic) PUICQuickboardPunchoutView *punchoutView; // @synthesize punchoutView=_punchoutView;
+@property(readonly, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
+@property(nonatomic) unsigned int confirmationType; // @synthesize confirmationType=_confirmationType;
+@property(nonatomic) unsigned int dismissMode; // @synthesize dismissMode=_dismissMode;
+@property(retain, nonatomic) PUICQuickboardLanguageController *languageController; // @synthesize languageController=_languageController;
+@property(nonatomic) __weak id <PUICQuickboardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PUICQuickboardEmojiViewControllerDelegate> emojiViewControllerDelegate; // @synthesize emojiViewControllerDelegate=_emojiViewControllerDelegate;
+@property(nonatomic) unsigned int quickboardType; // @synthesize quickboardType=_quickboardType;
 @property(nonatomic) _Bool supportsRecentItemPayloads; // @synthesize supportsRecentItemPayloads=_supportsRecentItemPayloads;
 - (void).cxx_destruct;
 - (void)selectEmojiForTesting;
-- (int)_initialEmojiViewController;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) _Bool animatesSelectionToDestinationView;
+- (void)createFallbackLanguageController;
+@property(readonly, nonatomic) NSString *primaryLanguage;
+@property(readonly, nonatomic) unsigned int inputType;
 - (void)recentEmojiView:(id)arg1 didSelectEmojiString:(id)arg2;
-- (_Bool)wantsBlur;
-- (void)addDismissalAnimationsWithOptions:(unsigned int)arg1;
-- (void)acceptButtonTappedWithCompletion:(CDUnknownBlockType)arg1;
-- (void)finishPresentationWithOptions:(unsigned int)arg1;
-- (id)_currentViewController;
-- (void)saveEmojiViewToPreferences:(id)arg1;
+- (void)recentEmojiView:(id)arg1 didSelectEmojiCategory:(id)arg2;
 @property(readonly, nonatomic) _Bool supportsAnimatedEmoji; // @dynamic supportsAnimatedEmoji;
 - (void)pickerViewDidSelectItem:(id)arg1 preview:(id)arg2;
 - (void)recentStickersView:(id)arg1 didSelectSticker:(id)arg2 preview:(id)arg3;
-- (void)_updateEmojiViewForType:(int)arg1;
-- (void)deactivate;
 - (void)activate;
-- (void)flashScrollIndicator;
-- (void)viewDidLayoutSubviews;
-- (void)viewDidAppear:(_Bool)arg1;
-- (void)_didBecomeActive;
-- (void)pageViewController:(id)arg1 didFinishAnimating:(_Bool)arg2 previousViewControllers:(id)arg3 transitionCompleted:(_Bool)arg4;
-- (void)pageViewController:(id)arg1 willTransitionToViewControllers:(id)arg2;
-- (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;
-- (id)pageViewController:(id)arg1 viewControllerBeforeViewController:(id)arg2;
-- (int)_typeOfViewController:(id)arg1;
-- (id)_viewControllerAtIndex:(unsigned int)arg1;
 - (void)viewDidLoad;
+- (id)initWithDelegate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
-@property(readonly, nonatomic) NSString *primaryLanguage;
 @property(readonly) Class superclass;
 
 @end

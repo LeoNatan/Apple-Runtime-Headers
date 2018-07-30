@@ -11,17 +11,18 @@
 __attribute__((visibility("hidden")))
 @interface CPKHorizontalPopupMenuView : NSView
 {
-    CPKHorizontalPopupMenu *_parentMenu;
-    NSArray *_menuItems;
     NSArray *_buttons;
-    struct CGSize _cellSize;
-    double _menuOpenedTime;
-    long long _mouseDownCount;
     BOOL _selected;
     BOOL _trackingCanceled;
     BOOL _doubleClicked;
-    NSButton *_highlightedButton;
     BOOL _isRTLLayout;
+    CPKHorizontalPopupMenu *_parentMenu;
+    NSArray *_menuItems;
+    double _cellGap;
+    double _dividerGap;
+    double _menuOpenedTime;
+    NSButton *_highlightedButton;
+    struct CGSize _cellSize;
 }
 
 @property BOOL isRTLLayout; // @synthesize isRTLLayout=_isRTLLayout;
@@ -30,6 +31,8 @@ __attribute__((visibility("hidden")))
 @property BOOL trackingCanceled; // @synthesize trackingCanceled=_trackingCanceled;
 @property BOOL selected; // @synthesize selected=_selected;
 @property double menuOpenedTime; // @synthesize menuOpenedTime=_menuOpenedTime;
+@property(readonly) double dividerGap; // @synthesize dividerGap=_dividerGap;
+@property(readonly) double cellGap; // @synthesize cellGap=_cellGap;
 @property(readonly) struct CGSize cellSize; // @synthesize cellSize=_cellSize;
 @property(readonly) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property CPKHorizontalPopupMenu *parentMenu; // @synthesize parentMenu=_parentMenu;

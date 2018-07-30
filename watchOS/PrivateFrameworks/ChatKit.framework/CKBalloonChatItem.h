@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) BOOL tailShape;
 - (struct CKBalloonDescriptor_t)balloonDescriptor;
 - (void)configureBalloonView:(id)arg1;
+@property(readonly, nonatomic) _Bool shouldCacheSize;
 @property(readonly, nonatomic) IMHandle *sender;
 @property(readonly, nonatomic) NSDate *time;
 @property(readonly, nonatomic) _Bool failed;

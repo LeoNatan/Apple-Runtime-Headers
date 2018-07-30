@@ -66,7 +66,7 @@
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (void)setTarget:(id)arg1 forInterfaceItemAction:(SEL)arg2;
-- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 native:(_Bool)arg4;
+- (id)initWithItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

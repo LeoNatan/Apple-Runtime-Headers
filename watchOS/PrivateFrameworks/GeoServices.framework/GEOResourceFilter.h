@@ -10,7 +10,6 @@
 
 @class PBUnknownFields;
 
-__attribute__((visibility("hidden")))
 @interface GEOResourceFilter : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) id panelAccessibilityParent; // @synthesize panelAccessibilityParent=_panelAccessibilityParent;
+- (unsigned long long)shadowOptions;
 - (id)accessibilityActionNames;
 - (BOOL)accessibilityIsHelpAttributeSettable;
 - (id)accessibilityHelpAttribute;

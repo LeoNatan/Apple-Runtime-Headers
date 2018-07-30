@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class FLFollowUpItem, NSArray;
+@class FLFollowUpItem, NSArray, NSString;
 
 @protocol FLTelemetryController <NSObject>
 - (void)captureItemRemoval:(FLFollowUpItem *)arg1;
@@ -14,5 +14,6 @@
 - (void)captureItemView:(FLFollowUpItem *)arg1;
 - (void)captureCurrentState:(NSArray *)arg1;
 - (void)captureActionForItem:(FLFollowUpItem *)arg1 withEvent:(unsigned long long)arg2 source:(unsigned long long)arg3;
+- (void)captureActionForItemIdentifier:(NSString *)arg1 withEvent:(unsigned long long)arg2 source:(unsigned long long)arg3;
 @end
 

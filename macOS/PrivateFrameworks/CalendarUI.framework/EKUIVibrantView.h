@@ -10,6 +10,7 @@
 {
 }
 
+- (void)updateLayer;
 - (BOOL)allowsVibrancy;
 - (id)init;
 

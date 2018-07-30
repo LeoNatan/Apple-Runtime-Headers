@@ -18,7 +18,7 @@
 - (void)performActivityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)activityImage;
+- (id)_activityBundleImageConfiguration;
 - (id)activityTitle;
 - (id)activityType;
 - (id)init;

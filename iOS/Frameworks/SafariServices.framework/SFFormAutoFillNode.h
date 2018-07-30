@@ -19,6 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)autoFillNodeWithNodeHandle:(id)arg1;
 @property(readonly, nonatomic) WKWebProcessPlugInNodeHandle *nodeHandle; // @synthesize nodeHandle=_nodeHandle;
 - (void).cxx_destruct;
+- (long long)htmlInputElementLastAutoFillButtonType;
+- (long long)htmlInputElementAutoFillButtonType;
+- (void)setHTMLInputElementAutoFilledWithAutomaticStrongPassword:(_Bool)arg1;
 - (_Bool)isHTMLTextAreaElementUserEdited;
 - (_Bool)isHTMLInputElementUserEdited;
 - (void)setHTMLInputElementAutofilled:(_Bool)arg1;

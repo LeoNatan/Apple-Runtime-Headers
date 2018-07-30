@@ -6,14 +6,17 @@
 
 #import "NSFileProviderItem.h"
 
-@class NSNumber, NSString, NSURL;
+@class NSArray, NSNumber, NSString, NSURL;
 
 @protocol NSFileProviderItem_Private <NSFileProviderItem>
 
 @optional
+@property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
+@property(readonly, nonatomic) NSString *preformattedOwnerName;
 @property(readonly, copy, nonatomic) NSString *displayName;
 @property(readonly) BOOL fp_isContainer;
 @property(readonly, copy) NSString *fp_appContainerBundleIdentifier;
+@property(readonly, copy) NSArray *tags;
 @property(readonly, getter=fp_isUbiquitous) BOOL fp_ubiquitous;
 @property(readonly, copy) NSString *fp_domainIdentifier;
 @property(readonly, copy) NSString *fp_spotlightDomainIdentifier;

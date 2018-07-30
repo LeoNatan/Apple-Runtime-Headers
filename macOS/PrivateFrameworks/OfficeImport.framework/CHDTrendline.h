@@ -8,7 +8,6 @@
 
 @class CHDTrendlineLabel, EDString, OADGraphicProperties;
 
-__attribute__((visibility("hidden")))
 @interface CHDTrendline : NSObject
 {
     _Bool mDisplayEquation;
@@ -25,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)trendline;
+- (void).cxx_destruct;
 - (id)description;
 - (id)defaultNameWithSeriesName:(id)arg1;
 - (void)setName:(id)arg1;
@@ -49,7 +49,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isDisplayRSquaredValue;
 - (void)setDisplayEquation:(_Bool)arg1;
 - (_Bool)isDisplayEquation;
-- (void)dealloc;
 - (id)init;
 
 @end

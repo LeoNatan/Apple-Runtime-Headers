@@ -32,6 +32,7 @@
 - (id)mediaObjectWithFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3 attributionInfo:(id)arg4 hideAttachment:(_Bool)arg5;
 - (id)mediaObjectWithFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
 - (id)mediaObjectWithData:(id)arg1 UTIType:(id)arg2 filename:(id)arg3 transcoderUserInfo:(id)arg4;
+- (id)mediaObjectWithTransferGUID:(id)arg1 imMessage:(id)arg2 parentChatIsSpam:(_Bool)arg3;
 - (id)mediaObjectWithTransferGUID:(id)arg1 imMessage:(id)arg2;
 - (Class)classForFilename:(id)arg1;
 - (Class)classForFilename:(id)arg1 fileURL:(id)arg2;

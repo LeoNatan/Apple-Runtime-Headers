@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSArray, NSString, NSURL;
 
-@interface DMFOpenURLRequest : CATTaskRequest
+@interface DMFOpenURLRequest : DMFTaskRequest
 {
     BOOL _lockInApp;
     NSURL *_url;
@@ -17,6 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (BOOL)isPermittedOnUserConnection;
++ (BOOL)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(copy, nonatomic) NSArray *handlingBundleIdentifiers; // @synthesize handlingBundleIdentifiers=_handlingBundleIdentifiers;
 @property(nonatomic) BOOL lockInApp; // @synthesize lockInApp=_lockInApp;
 @property(copy, nonatomic) NSString *URLDisplayName; // @synthesize URLDisplayName=_URLDisplayName;

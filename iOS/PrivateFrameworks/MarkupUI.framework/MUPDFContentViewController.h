@@ -9,10 +9,11 @@
 #import "MUContentViewControllerProtocol.h"
 #import "PDFAKControllerDelegateProtocol.h"
 #import "PDFViewDelegatePrivate.h"
+#import "_UIViewBoundingPathChangeObserver.h"
 
 @class MUPDFPageLabelView, NSArray, NSLayoutConstraint, NSString, PDFDocument, PDFPage, PDFThumbnailView, PDFView, UIScrollView, UIView;
 
-@interface MUPDFContentViewController : MUContentViewController <PDFAKControllerDelegateProtocol, PDFViewDelegatePrivate, MUContentViewControllerProtocol>
+@interface MUPDFContentViewController : MUContentViewController <PDFAKControllerDelegateProtocol, PDFViewDelegatePrivate, _UIViewBoundingPathChangeObserver, MUContentViewControllerProtocol>
 {
     PDFDocument *_pdfDocument;
     _Bool _showsThumbnailView;
@@ -34,8 +35,10 @@
     double _viewTransitionPreviousScale;
     struct CGPoint _viewTransitionPointOnPageToCenter;
     struct UIEdgeInsets _edgeInsets;
+    struct UIEdgeInsets _cachedThumnailViewInsets;
 }
 
+@property(nonatomic) struct UIEdgeInsets cachedThumnailViewInsets; // @synthesize cachedThumnailViewInsets=_cachedThumnailViewInsets;
 @property _Bool didSetup; // @synthesize didSetup=_didSetup;
 @property _Bool viewTransitionPreviousAutoscalingState; // @synthesize viewTransitionPreviousAutoscalingState=_viewTransitionPreviousAutoscalingState;
 @property double viewTransitionPreviousScale; // @synthesize viewTransitionPreviousScale=_viewTransitionPreviousScale;
@@ -78,6 +81,8 @@
 @property(readonly, nonatomic) NSString *documentUnlockedWithPassword;
 - (void)_updateThumbnailViewAppearance;
 - (void)_updateThumbnailViewHolderConstraints;
+- (_Bool)_updateCachedThumbnailViewInsets;
+- (void)_boundingPathMayHaveChangedForView:(id)arg1 relativeToBoundsOriginOnly:(_Bool)arg2;
 - (void)_updatePDFViewDisplayMode;
 @property(readonly) unsigned long long pageCount;
 - (void)controllerWillDismissSignatureManagerView:(id)arg1;

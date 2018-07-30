@@ -12,7 +12,7 @@
 
 @class CNAvatarCardViewController, CNAvatarView, CNContact, CNContactOrbHeaderView, NSArray, NSString, UIAlertController, UIGestureRecognizer, UIPreviewInteraction, UITapGestureRecognizer, UIView, UIViewController;
 
-@interface CNAvatarCardController : NSObject <CNAvatarCardViewControllerDelegate, CNAvatarCardControllerOrbTransitionDelegate, UIPreviewInteractionDelegatePrivate>
+@interface CNAvatarCardController : NSObject <UIPreviewInteractionDelegatePrivate, CNAvatarCardViewControllerDelegate, CNAvatarCardControllerOrbTransitionDelegate>
 {
     _Bool _visible;
     _Bool _actionsNeedRefresh;

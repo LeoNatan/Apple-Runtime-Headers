@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSString, NSURL;
+@class NSDate, NSString, NSURL;
 
 @interface NNMKMailbox : NSObject <NSSecureCoding, NSCopying>
 {
@@ -17,25 +17,33 @@
     _Bool _syncRequested;
     _Bool _syncActive;
     _Bool _hasSelection;
+    _Bool _databaseContentVerified;
     unsigned long long _type;
     unsigned long long _filterType;
     NSString *_mailboxId;
     NSString *_accountId;
+    NSString *_accountLocalId;
     NSURL *_url;
     NSString *_customName;
+    NSDate *_lastUpdate;
 }
 
++ (unsigned long long)defaultFilterTypes;
 + (unsigned long long)syncedTypeFromFilterType:(unsigned long long)arg1;
 + (unsigned long long)syncedTypeFromMailbox:(id)arg1;
++ (id)generateMailboxIdWithAccountId:(id)arg1 mailboxName:(id)arg2;
 + (unsigned long long)messageStateForMailboxFilterType:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)idsFromMailboxes:(id)arg1;
+@property(nonatomic) _Bool databaseContentVerified; // @synthesize databaseContentVerified=_databaseContentVerified;
 @property(nonatomic) _Bool hasSelection; // @synthesize hasSelection=_hasSelection;
+@property(retain, nonatomic) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(nonatomic) _Bool syncActive; // @synthesize syncActive=_syncActive;
 @property(nonatomic) _Bool syncRequested; // @synthesize syncRequested=_syncRequested;
 @property(nonatomic) _Bool syncEnabled; // @synthesize syncEnabled=_syncEnabled;
 @property(retain, nonatomic) NSString *customName; // @synthesize customName=_customName;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(retain, nonatomic) NSString *accountLocalId; // @synthesize accountLocalId=_accountLocalId;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
 @property(retain, nonatomic) NSString *mailboxId; // @synthesize mailboxId=_mailboxId;
 @property(nonatomic) unsigned long long filterType; // @synthesize filterType=_filterType;

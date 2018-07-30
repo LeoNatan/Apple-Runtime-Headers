@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapQueryCollectionRequest : PBRequest <NSCopying>
 {
     NSMutableArray *_requestElements;

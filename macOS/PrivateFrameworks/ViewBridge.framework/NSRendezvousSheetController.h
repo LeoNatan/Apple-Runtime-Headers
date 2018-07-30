@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     unsigned int _sheetControllerInvalid:1;
 }
 
++ (unsigned long long)acceptableStyleMask;
 - (void)invalidate;
 @property(readonly) NSString *parentIdentifier;
-- (unsigned long long)acceptableStyleMask;
 - (void)setView:(id)arg1;
 
 @end

@@ -8,7 +8,6 @@
 
 @class OITSUBasicProgressStorage;
 
-__attribute__((visibility("hidden")))
 @interface OITSUBasicProgress : OITSUProgress
 {
     OITSUBasicProgressStorage *mStorage;

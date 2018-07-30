@@ -8,6 +8,7 @@
 
 @class NSCountedSet;
 
+__attribute__((visibility("hidden")))
 @interface _NSBalancedModelObservingTracker : _NSModelObservingTracker
 {
     NSCountedSet *_modelAndProxyKeysSet;

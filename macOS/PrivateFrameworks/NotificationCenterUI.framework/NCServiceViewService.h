@@ -10,6 +10,7 @@
 
 @class NCRemoteViewServiceContainerView, NCServiceWindow, NSString, NSUUID, NSView;
 
+__attribute__((visibility("hidden")))
 @interface NCServiceViewService : NSServiceViewController <NCRemoteServiceContainerViewDelegate>
 {
     NCRemoteViewServiceContainerView *_rootContainer;

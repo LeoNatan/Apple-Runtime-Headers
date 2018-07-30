@@ -20,6 +20,7 @@
     _Bool _createResponseReceived;
 }
 
+- (void).cxx_destruct;
 - (void)_workspaceQueue_dropAllProcessAssertions;
 - (void)_workspaceQueue_dropDeliverMessageProcessAssertion:(_Bool)arg1;
 - (void)_workspaceQueue_dropDeliverMessageProcessAssertion;

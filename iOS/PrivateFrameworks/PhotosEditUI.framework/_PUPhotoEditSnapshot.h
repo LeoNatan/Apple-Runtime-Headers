@@ -8,6 +8,7 @@
 
 @class NSData, PHAdjustmentData;
 
+__attribute__((visibility("hidden")))
 @interface _PUPhotoEditSnapshot : NSObject
 {
     long long _workImageVersion;

@@ -20,6 +20,7 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) CDStruct_2d7b3170 rotationMatrix; // @synthesize rotationMatrix=_rotationMatrix;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

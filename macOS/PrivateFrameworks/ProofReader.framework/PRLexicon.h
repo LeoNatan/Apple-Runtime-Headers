@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface PRLexicon : NSObject
 {
     NSString *_localization;
@@ -17,7 +18,9 @@
     void *_converter;
 }
 
++ (id)lexiconWithLexicon:(const void *)arg1;
 + (id)lexiconWithLocalization:(id)arg1 unigramsPath:(id)arg2 converterPath:(id)arg3;
+- (void)enumerateCompletionEntriesForPrefix:(id)arg1 maxCompletions:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateCompletionsForPrefix:(id)arg1 maxCompletions:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (BOOL)getProbabilityForTokenID:(unsigned int)arg1 probability:(double *)arg2;
 - (BOOL)getProbabilityForString:(id)arg1 probability:(double *)arg2;
@@ -29,6 +32,7 @@
 - (struct _LXLexicon *)lexicon;
 - (void)dealloc;
 - (id)description;
+- (id)initWithLexicon:(const void *)arg1;
 - (id)initWithLocalization:(id)arg1 unigramsPath:(id)arg2 converterPath:(id)arg3;
 
 @end

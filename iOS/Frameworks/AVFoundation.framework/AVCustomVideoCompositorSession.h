@@ -8,6 +8,7 @@
 
 @class AVVideoComposition, AVVideoCompositionRenderContext, AVWeakReference, NSDictionary, NSError, NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface AVCustomVideoCompositorSession : NSObject
 {
     struct OpaqueFigVideoCompositor *_figCustomCompositor;

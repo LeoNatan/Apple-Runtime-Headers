@@ -14,7 +14,6 @@
 }
 
 - (void).cxx_destruct;
-- (id)urlsForDealWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *checkInURLs;
 - (id)initWithGEOMapItemAttribution:(id)arg1;
 

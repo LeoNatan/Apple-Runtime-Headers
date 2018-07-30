@@ -10,6 +10,7 @@
 
 @class NSMenu, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSWindowMenuUpdater : NSObject <NSMenuDelegate>
 {
     NSMenu *_menuToUpdate;

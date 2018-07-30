@@ -9,6 +9,8 @@
 @class PKPassFooterContentView;
 
 @protocol PKPassFooterContentViewDelegate <NSObject>
+- (unsigned int)suppressedContentForContentView:(PKPassFooterContentView *)arg1;
+- (_Bool)isPassFooterContentViewInGroup:(PKPassFooterContentView *)arg1;
 - (void)passFooterContentViewDidEndAuthenticating:(PKPassFooterContentView *)arg1;
 - (void)passFooterContentViewDidBeginAuthenticating:(PKPassFooterContentView *)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(PKPassFooterContentView *)arg1;

@@ -8,6 +8,7 @@
 
 @class NSLocale, NSNumberFormatter, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVTimeFormatterInternal : NSObject
 {
     long long style;

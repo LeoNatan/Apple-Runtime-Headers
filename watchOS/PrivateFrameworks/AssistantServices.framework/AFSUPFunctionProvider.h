@@ -18,7 +18,7 @@
 
 + (_Bool)_shouldAutomaticallyProvideFunctions;
 - (void).cxx_destruct;
-- (id)stringForExpression:(id)arg1;
+- (id)stringForExpression:(id)arg1 containsPrivacySensitiveContents:(_Bool *)arg2;
 - (id)_callFunction:(id)arg1 withArguments:(id)arg2;
 - (id)_speechRecognitionUsageDescription:(id)arg1;
 - (id)_siriUsageDescription:(id)arg1;

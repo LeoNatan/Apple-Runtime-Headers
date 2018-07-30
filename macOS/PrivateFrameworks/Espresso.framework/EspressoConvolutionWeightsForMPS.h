@@ -13,32 +13,22 @@
 __attribute__((visibility("hidden")))
 @interface EspressoConvolutionWeightsForMPS : NSObject <MPSCNNConvolutionDataSource>
 {
-    unsigned int _data_type;
-    id <MTLDevice> _dev;
-    float *_scale_factor_batch_norm;
-    // Error parsing type: ^, name: _quantization_ranges
-    shared_ptr_227e5c42 _quantized_weights_blob;
-    shared_ptr_acd4b298 _weights_blob;
-    shared_ptr_2bf4edc4 _weights_f16_blob;
-    shared_ptr_0954c506 _biases_blob;
-    struct convolution_uniforms _params;
+    struct convolution_uniforms params;
+    struct shared_ptr<Espresso::blob<unsigned char, 4>> quantized_weights_blob;
+    shared_ptr_acd4b298 weights_blob;
+    struct shared_ptr<Espresso::blob<unsigned short, 4>> weights_f16_blob;
+    struct shared_ptr<Espresso::blob<float, 1>> biases_blob;
+    struct shared_ptr<Espresso::blob<float __attribute__((ext_vector_type(2))), 1>> quantization_ranges;
+    struct shared_ptr<Espresso::blob<float, 1>> quantization_lut;
+    struct shared_ptr<Espresso::blob<float, 1>> scale_factor_batch_norm;
+    unsigned int data_type;
 }
 
-@property(nonatomic) shared_ptr_0954c506 biases_blob; // @synthesize biases_blob=_biases_blob;
-@property(nonatomic) shared_ptr_2bf4edc4 weights_f16_blob; // @synthesize weights_f16_blob=_weights_f16_blob;
-@property(nonatomic) shared_ptr_acd4b298 weights_blob; // @synthesize weights_blob=_weights_blob;
-@property(nonatomic) shared_ptr_227e5c42 quantized_weights_blob; // @synthesize quantized_weights_blob=_quantized_weights_blob;
-// Error parsing type for property quantization_ranges:
-// Property attributes: T^,N,V_quantization_ranges
-
-@property(nonatomic) float *scale_factor_batch_norm; // @synthesize scale_factor_batch_norm=_scale_factor_batch_norm;
-@property unsigned int data_type; // @synthesize data_type=_data_type;
-@property(retain) id <MTLDevice> dev; // @synthesize dev=_dev;
-@property struct convolution_uniforms params; // @synthesize params=_params;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)label;
 - (BOOL)ready;
+- (float *)lookupTableForUInt8Kernel;
 -     // Error parsing type: ^16@0:8, name: rangesForUInt8Kernel
 - (void)purge;
 - (float *)biasTerms;
@@ -46,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)load;
 - (id)descriptor;
 - (unsigned int)dataType;
-- (id)initWithDevice:(id)arg1 params:(struct convolution_uniforms)arg2;
+- (id)initWithParams:(struct convolution_uniforms)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

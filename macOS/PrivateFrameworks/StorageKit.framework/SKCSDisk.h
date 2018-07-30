@@ -14,12 +14,14 @@
 {
     BOOL _isEncrypted;
     BOOL _isConverting;
+    BOOL _isDisallowedForCSOperations;
     NSString *_csDiskUUID;
     NSString *_csLVGUUID;
     NSString *_csFamilyUUID;
 }
 
 @property(retain) NSString *csFamilyUUID; // @synthesize csFamilyUUID=_csFamilyUUID;
+@property BOOL isDisallowedForCSOperations; // @synthesize isDisallowedForCSOperations=_isDisallowedForCSOperations;
 @property BOOL isConverting; // @synthesize isConverting=_isConverting;
 @property BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property(retain) NSString *csLVGUUID; // @synthesize csLVGUUID=_csLVGUUID;

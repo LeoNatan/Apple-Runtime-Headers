@@ -73,8 +73,10 @@ __attribute__((visibility("hidden")))
 - (id)objectForProperty:(int)arg1;
 @property(readonly, nonatomic) double descentForInlineLayout;
 - (void)setAdjustedImageData:(id)arg1 thumbnailData:(id)arg2;
+@property(readonly, nonatomic) _Bool canAdjustImage;
 @property(retain, nonatomic) TSUBezierPath *instantAlphaPath;
 - (id)i_instantAlphaPathIgnoringNaturalSize;
+@property(readonly, nonatomic) _Bool canBeMasked;
 - (_Bool)canResetMediaSize;
 - (struct CGSize)rawDataSize;
 - (struct CGSize)defaultOriginalSize;

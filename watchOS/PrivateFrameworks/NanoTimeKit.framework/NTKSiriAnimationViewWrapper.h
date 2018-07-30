@@ -8,10 +8,11 @@
 
 #import "NTKComplicationImageView.h"
 
-@class CLKImageProvider, NSString, NTKSiriAnimationView, NTKTaskScheduler, UIColor, UIImageView;
+@class CLKDevice, CLKImageProvider, NSString, NTKSiriAnimationView, NTKTaskScheduler, UIColor, UIImageView;
 
 @interface NTKSiriAnimationViewWrapper : UIView <NTKComplicationImageView>
 {
+    CLKDevice *_device;
     NTKTaskScheduler *_taskScheduler;
     NTKSiriAnimationView *_siriView;
     UIImageView *_heroImageView;

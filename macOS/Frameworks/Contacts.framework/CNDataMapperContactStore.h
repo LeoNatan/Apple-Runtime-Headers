@@ -58,6 +58,7 @@
 - (id)contactsForFetchRequest:(id)arg1 matchInfos:(id *)arg2 error:(id *)arg3;
 - (BOOL)enumerateContactsAndMatchInfoWithFetchRequest:(id)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 error:(id *)arg3;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
 - (BOOL)setBestMeIfNeededForGivenName:(id)arg1 familyName:(id)arg2 email:(id)arg3 error:(id *)arg4;
 - (BOOL)setMeContact:(id)arg1 forContainer:(id)arg2 error:(id *)arg3;
@@ -66,9 +67,10 @@
 - (id)identifierWithError:(id *)arg1;
 - (id)requestAccessForEntityType:(long long)arg1;
 - (id)description;
+- (id)initWithDataMapper:(id)arg1 environment:(id)arg2;
+- (id)initWithEnvironment:(id)arg1 managedConfiguration:(id)arg2;
 - (id)initWithEnvironment:(id)arg1;
 - (id)init;
-- (id)initWithDataMapper:(id)arg1 environment:(id)arg2;
 
 @end
 

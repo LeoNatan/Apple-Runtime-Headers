@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class AVAsset, AVVideoComposition, NSString, NSValue, PXContextualNotificationCenter, PXContextualNotificationView, UIImage, UIView, UIWindow;
+@class AVAsset, AVVideoComposition, NSString, NSValue, PXContextualNotificationCenter, PXContextualNotificationView, PXImageRequester, UIImage, UIView, UIWindow;
 
 @interface PXContextualNotification : NSObject
 {
@@ -27,6 +27,7 @@
     UIImage *_image;
     AVAsset *_loopingVideoAsset;
     AVVideoComposition *_loopingVideoComposition;
+    PXImageRequester *_imageRequester;
     id _userInfo;
     long long _appearanceState;
     UIWindow *_window;
@@ -49,6 +50,7 @@
 @property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 @property(nonatomic) long long appearanceState; // @synthesize appearanceState=_appearanceState;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
+@property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
 @property(copy, nonatomic) AVVideoComposition *loopingVideoComposition; // @synthesize loopingVideoComposition=_loopingVideoComposition;
 @property(copy, nonatomic) AVAsset *loopingVideoAsset; // @synthesize loopingVideoAsset=_loopingVideoAsset;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

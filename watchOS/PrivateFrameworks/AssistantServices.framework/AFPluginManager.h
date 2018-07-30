@@ -14,13 +14,15 @@
     NSArray *_domainKeys;
     CDUnknownBlockType _factoryInitializationBlock;
     NSMutableDictionary *_domainKeyDictionary;
+    _Bool _hasLoadedBundles;
 }
 
 + (id)pluginManagerForPath:(id)arg1 domainKeys:(id)arg2 factoryInitializationBlock:(CDUnknownBlockType)arg3;
 - (void).cxx_destruct;
 - (id)description;
 - (void)_registerBundle:(id)arg1;
-- (void)_loadBundles;
+- (void)_loadBundlesIfNeeded;
+- (void)preloadBundles;
 - (void)enumerateFactoryInstancesForDomainKey:(id)arg1 groupIdentifier:(id)arg2 classIdentifier:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (id)initWithPath:(id)arg1 domainKeys:(id)arg2 factoryInitializationBlock:(CDUnknownBlockType)arg3;
 

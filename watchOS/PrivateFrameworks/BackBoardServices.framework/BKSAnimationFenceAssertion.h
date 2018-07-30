@@ -21,6 +21,7 @@
 }
 
 + (id)newSystemFenceAssertionForTriggerPort:(unsigned int)arg1;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 @property(readonly, copy) NSString *description;

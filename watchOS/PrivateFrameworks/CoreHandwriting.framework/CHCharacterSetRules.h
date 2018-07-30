@@ -29,6 +29,9 @@
     NSCharacterSet *_emoticonTopCharSet;
     NSCharacterSet *_emoticonMiddleCharSet;
     NSCharacterSet *_emoticonBottomCharSet;
+    NSCharacterSet *_emailAtCharSet;
+    NSCharacterSet *_emailPunctuationCharSet;
+    NSCharacterSet *_urlPunctuationCharSet;
     NSObject<OS_dispatch_queue> *__charSetRulesQueue;
     map_684fa934 _strokeMaxPenalties;
     map_c01bf9e9 _signatureUniChar;
@@ -41,6 +44,9 @@
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *_charSetRulesQueue; // @synthesize _charSetRulesQueue=__charSetRulesQueue;
 @property(nonatomic) map_c01bf9e9 signatureUniChar; // @synthesize signatureUniChar=_signatureUniChar;
 @property(nonatomic) map_684fa934 strokeMaxPenalties; // @synthesize strokeMaxPenalties=_strokeMaxPenalties;
+@property(retain, nonatomic) NSCharacterSet *urlPunctuationCharSet; // @synthesize urlPunctuationCharSet=_urlPunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *emailPunctuationCharSet; // @synthesize emailPunctuationCharSet=_emailPunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *emailAtCharSet; // @synthesize emailAtCharSet=_emailAtCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonBottomCharSet; // @synthesize emoticonBottomCharSet=_emoticonBottomCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonMiddleCharSet; // @synthesize emoticonMiddleCharSet=_emoticonMiddleCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonTopCharSet; // @synthesize emoticonTopCharSet=_emoticonTopCharSet;

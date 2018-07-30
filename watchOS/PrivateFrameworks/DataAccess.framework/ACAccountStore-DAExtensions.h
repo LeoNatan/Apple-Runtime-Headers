@@ -8,6 +8,7 @@
 
 @interface ACAccountStore (DAExtensions)
 - (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2;
+- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 outError:(id *)arg2;
 - (id)da_accountsWithAccountTypeIdentifiers:(id)arg1;
 - (id)da_accountsEnabledForDADataclasses:(int)arg1;
 - (id)da_accounts;

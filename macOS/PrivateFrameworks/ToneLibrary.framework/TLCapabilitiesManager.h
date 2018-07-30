@@ -15,6 +15,7 @@
 
 + (id)sharedCapabilitiesManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isHomePod) BOOL homePod;
 @property(readonly, nonatomic) NSString *simplifiedDeviceCodeName;
 @property(readonly, nonatomic) NSString *deviceCodeName;
 @property(readonly, nonatomic) BOOL hasUserGeneratedVibrationsCapability;

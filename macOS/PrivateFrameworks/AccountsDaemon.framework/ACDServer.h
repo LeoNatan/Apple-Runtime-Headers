@@ -19,7 +19,6 @@
     NSMutableArray *_accountStoreClients;
     NSMutableArray *_oauthSignerClients;
     NSMutableArray *_authenticationDialogManagerClients;
-    NSMutableDictionary *_entitlementsByConnection;
     NSMutableDictionary *_clientsByConnection;
     ACDAuthenticationPluginManager *_authenticationPluginManager;
     ACDAccessPluginManager *_accessPluginManager;
@@ -38,16 +37,15 @@
 - (void)_beginObservingIDSProxyNotifications;
 - (void)_beginObservingLaunchNotifications;
 - (void)credentialsDidChangeForAccountWithIdentifier:(id)arg1;
-- (void)accountStoreDidSaveAccounts:(id)arg1;
-- (void)_stopObservingLanguageChangeNotification;
+- (void)accountStore:(id)arg1 didSaveAccount:(id)arg2;
+- (void)_handleLanguageChangedDarwinNotification;
+- (void)_endObservingLanguageChangeNotification;
 - (void)_beginObservingLanguageChangeNotfication;
 - (id)_newOAuthSignerForClient:(id)arg1;
 - (id)_newDaemonAccountStoreFilterForClient:(id)arg1;
 - (id)createClientForConnection:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (id)_enumerateAllEntitlementForConnection:(id)arg1;
 - (id)_keyForConnection:(id)arg1;
-- (id)entitlementsForConnection:(id)arg1;
 - (id)clientForConnection:(id)arg1;
 - (void)shutdown;
 - (void)setUpWithAccountStoreConnectionListener:(id)arg1 oauthSignerConnectionListener:(id)arg2 authenticationDialogConnectionListener:(id)arg3;

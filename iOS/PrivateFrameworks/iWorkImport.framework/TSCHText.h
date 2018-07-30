@@ -51,8 +51,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_styleSupportsEqualDigits:(id)arg1 textCache:(id)arg2;
 - (id)p_wpColumnForText:(id)arg1 paragraphStyle:(id)arg2 textBlack:(_Bool)arg3 wrapWidth:(double)arg4 textCache:(id)arg5 layoutProperties:(id)arg6;
 - (id)p_newWPColumnForText:(id)arg1 wpTextObject:(id)arg2 wrapWidth:(double)arg3 layoutProperties:(id)arg4;
-- (id)p_wpTextForParagraphStyle:(id)arg1 textBlack:(_Bool)arg2 textCache:(id)arg3 cacheKey:(id)arg4;
-- (id)p_wpTextForParagraphStyle:(id)arg1 textBlack:(_Bool)arg2 textCache:(id)arg3;
+- (id)p_wpTextForParagraphStyle:(id)arg1 text:(id)arg2 textBlack:(_Bool)arg3 textCache:(id)arg4 cacheKey:(id)arg5;
+- (id)p_wpTextForParagraphStyle:(id)arg1 text:(id)arg2 textBlack:(_Bool)arg3 textCache:(id)arg4;
 - (id)initWithTSWPTextClass:(Class)arg1;
 
 @end

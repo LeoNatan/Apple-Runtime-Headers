@@ -8,6 +8,7 @@
 
 @class NSArray, NSImageRep;
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarImageRepView : NSView
 {
     NSArray *_itemIdentifiers;

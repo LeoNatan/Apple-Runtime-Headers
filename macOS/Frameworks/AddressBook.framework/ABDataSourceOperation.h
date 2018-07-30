@@ -8,7 +8,6 @@
 
 @class PHXSource;
 
-__attribute__((visibility("hidden")))
 @interface ABDataSourceOperation : NSOperation
 {
     PHXSource *_source;

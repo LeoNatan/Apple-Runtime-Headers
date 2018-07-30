@@ -28,6 +28,7 @@
     NSObject<OS_dispatch_queue> *_firstUnlockQueue;
     NSString *_dataclass;
     NSObject<OS_dispatch_source> *_indexIdleTimer;
+    double _idleStartTime;
     NSMutableArray *_outstandingMaintenance;
 }
 
@@ -36,7 +37,8 @@
 @property(readonly, nonatomic) NSMapTable *checkedInClients; // @synthesize checkedInClients=_checkedInClients;
 @property(readonly, nonatomic) NSMutableSet *knownClients; // @synthesize knownClients=_knownClients;
 @property(retain, nonatomic) NSMutableArray *outstandingMaintenance; // @synthesize outstandingMaintenance=_outstandingMaintenance;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *indexIdleTimer; // @synthesize indexIdleTimer=_indexIdleTimer;
+@property(readonly, nonatomic) double idleStartTime; // @synthesize idleStartTime=_idleStartTime;
+@property(readonly, nonatomic) NSObject<OS_dispatch_source> *indexIdleTimer; // @synthesize indexIdleTimer=_indexIdleTimer;
 @property(retain, nonatomic) NSString *dataclass; // @synthesize dataclass=_dataclass;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *firstUnlockQueue; // @synthesize firstUnlockQueue=_firstUnlockQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *indexQueue; // @synthesize indexQueue=_indexQueue;
@@ -49,21 +51,26 @@
 - (void)powerStateChanged;
 - (void)attributesForBundleId:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchAttributes:(id)arg1 bundleID:(id)arg2 identifiers:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)imageDataForBundleId:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fetchAttributes:(id)arg1 bundleID:(id)arg2 identifiers:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)userPerformedAction:(id)arg1 withItem:(id)arg2 forBundleID:(id)arg3;
 - (void)changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(long long)arg2 forBundleID:(id)arg3;
 - (void)fetchLastClientStateForBundleID:(id)arg1 clientStateName:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)deleteAllInteractionsWithBundleID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)deleteActionsWithIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)deleteActionsBeforeTime:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 forBundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_deleteSearchableItemsMatchingQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteAllSearchableItemsForBundleID:(id)arg1 shouldGC:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)zombifyAllContactItems:(id)arg1;
 - (void)_scheduleStringsCleanupForBundleID:(id)arg1;
+- (void)deleteAllUserActivities:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 forBundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteItemsForEnumerator:(id)arg1 traceID:(long long)arg2 bundleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteItemsForQuery:(id)arg1 bundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_backgroundDeleteItems:(id)arg1 bundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 forBundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)startQueryWithQueryTask:(id)arg1 startHandler:(CDUnknownBlockType)arg2 resultsHandler:(CDUnknownBlockType)arg3;
-- (id)_startQueryWithQueryTask:(id)arg1 resultsHandler:(CDUnknownBlockType)arg2;
+- (void)startQueryWithQueryTask:(id)arg1 startHandler:(CDUnknownBlockType)arg2 eventHandler:(CDUnknownBlockType)arg3 resultsHandler:(CDUnknownBlockType)arg4;
+- (id)_startQueryWithQueryTask:(id)arg1 eventHandler:(CDUnknownBlockType)arg2 resultsHandler:(CDUnknownBlockType)arg3;
 - (void)indexSearchableItems:(id)arg1 deleteSearchableItemsWithIdentifiers:(id)arg2 clientState:(id)arg3 clientStateName:(id)arg4 forBundleID:(id)arg5 options:(long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)indexSearchableItems:(id)arg1 deleteSearchableItemsWithIdentifiers:(id)arg2 clientState:(id)arg3 forBundleID:(id)arg4 options:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)indexFromBundle:(id)arg1 options:(long long)arg2 items:(id)arg3 itemsText:(id)arg4 clientState:(id)arg5 clientStateName:(id)arg6 deletes:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
@@ -74,7 +81,7 @@
 - (void)readyIndex:(_Bool)arg1;
 - (void)resumeIndex;
 - (void)closeIndex;
-- (void)writeDiagnostic:(id)arg1 bundleID:(id)arg2 identifier:(id)arg3;
+- (_Bool)writeDiagnostic:(id)arg1 bundleID:(id)arg2 identifier:(id)arg3;
 - (void)issueConsistencyCheck;
 - (void)issueRepair;
 - (void)cleanupStringsWithActivity:(id)arg1 group:(id)arg2 shouldDefer:(_Bool *)arg3 flags:(int)arg4;

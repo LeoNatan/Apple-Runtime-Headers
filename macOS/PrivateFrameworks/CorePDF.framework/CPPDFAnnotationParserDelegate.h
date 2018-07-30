@@ -10,6 +10,7 @@
 
 @class NSMutableString, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CPPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate>
 {
     NSMutableString *_characters;

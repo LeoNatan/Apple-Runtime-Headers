@@ -37,7 +37,7 @@
     unsigned long long _lastCharacterStrokeCount;
     NSMutableIndexSet *_lastCharacterStrokeIndexes;
     struct CGSize _minimumDrawingSize;
-    map_4a1e39a4 _cachedResults;
+    map_cde2a89c _cachedResults;
 }
 
 + (unsigned long long)_decodeTempDelayedSegmentID:(unsigned long long)arg1;
@@ -48,7 +48,7 @@
 @property(nonatomic) unsigned long long lastCharacterStrokeCount; // @synthesize lastCharacterStrokeCount=_lastCharacterStrokeCount;
 @property(nonatomic) void **icuTransliterator; // @synthesize icuTransliterator=_icuTransliterator;
 @property(nonatomic) struct VariantMap *transliterationVariantMap; // @synthesize transliterationVariantMap=_transliterationVariantMap;
-@property(nonatomic) map_4a1e39a4 cachedResults; // @synthesize cachedResults=_cachedResults;
+@property(nonatomic) map_cde2a89c cachedResults; // @synthesize cachedResults=_cachedResults;
 @property(copy, nonatomic) CHDrawing *cachedDrawing; // @synthesize cachedDrawing=_cachedDrawing;
 @property(nonatomic) BOOL saveDrawingUntilNextCandidateAccepted; // @synthesize saveDrawingUntilNextCandidateAccepted=_saveDrawingUntilNextCandidateAccepted;
 @property(copy, nonatomic) NSString *savedTop1CandidateString; // @synthesize savedTop1CandidateString=_savedTop1CandidateString;
@@ -94,7 +94,7 @@
 - (id)postProcessMultiWordsLatticePaths:(const vector_7a3f6ffc *)arg1 withMaximumResults:(unsigned long long)arg2;
 - (BOOL)_shouldCapitalizeGivenHistory:(id)arg1;
 - (BOOL)_updateResults:(id)arg1 string:(id)arg2 score:(double)arg3 lexicalEntry:(BOOL)arg4 patternEntry:(BOOL)arg5;
-- (id)bestNetworkPaths:(struct Network *)arg1 from:(unsigned long long)arg2 to:(unsigned long long)arg3 count:(unsigned long long)arg4 staticLexiconCursor:(void *)arg5 customLexiconCursor:(struct _LXCursor *)arg6 patternCursor:(struct PatternGraph *)arg7 history:(id)arg8 activeHistoryRange:(struct _NSRange)arg9 mecabraIDs:(vector_e0f2bd7e *)arg10 numExpectedDelayedStrokes:(unsigned long long)arg11;
+- (id)bestNetworkPaths:(struct Network *)arg1 from:(unsigned long long)arg2 to:(unsigned long long)arg3 count:(unsigned long long)arg4 staticLexiconCursor:(void *)arg5 customLexiconCursor:(struct _LXCursor *)arg6 patternCursor:(struct PatternGraph *)arg7 history:(id)arg8 activeHistoryRange:(struct _NSRange)arg9 mecabraIDs:(vector_12bd641b *)arg10 numExpectedDelayedStrokes:(unsigned long long)arg11;
 - (double)_calculateJointWordProbabilityForString:(id)arg1 withPatterns:(id)arg2;
 - (id)recognitionResultsForSingleCharacterDrawing:(id)arg1 options:(id)arg2;
 - (void)_removeOVSResults:(id)arg1 withHistory:(id)arg2;

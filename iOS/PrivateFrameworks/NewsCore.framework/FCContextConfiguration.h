@@ -12,23 +12,28 @@
 
 @interface FCContextConfiguration : NSObject <NSCopying>
 {
-    _Bool _isProductionEnvironment;
+    _Bool _isProductionContentEnvironment;
+    _Bool _isProductionPrivateDataEnvironment;
+    long long _environment;
     NSString *_contentContainerIdentifier;
+    NSString *_contentContainerCombinationIdentifier;
     NSString *_privateDataContainerIdentifier;
     NSString *_privateDataSecureContainerIdentifier;
-    NSString *_contentContainerCombinationIdentifier;
     NSString *_privateDataContainerCombinationIdentifier;
 }
 
 + (id)defaultConfiguration;
 @property(readonly, copy, nonatomic) NSString *privateDataContainerCombinationIdentifier; // @synthesize privateDataContainerCombinationIdentifier=_privateDataContainerCombinationIdentifier;
-@property(readonly, copy, nonatomic) NSString *contentContainerCombinationIdentifier; // @synthesize contentContainerCombinationIdentifier=_contentContainerCombinationIdentifier;
 @property(readonly, copy, nonatomic) NSString *privateDataSecureContainerIdentifier; // @synthesize privateDataSecureContainerIdentifier=_privateDataSecureContainerIdentifier;
 @property(readonly, copy, nonatomic) NSString *privateDataContainerIdentifier; // @synthesize privateDataContainerIdentifier=_privateDataContainerIdentifier;
+@property(readonly, nonatomic) _Bool isProductionPrivateDataEnvironment; // @synthesize isProductionPrivateDataEnvironment=_isProductionPrivateDataEnvironment;
+@property(readonly, nonatomic) _Bool isProductionContentEnvironment; // @synthesize isProductionContentEnvironment=_isProductionContentEnvironment;
+@property(readonly, copy, nonatomic) NSString *contentContainerCombinationIdentifier; // @synthesize contentContainerCombinationIdentifier=_contentContainerCombinationIdentifier;
 @property(readonly, copy, nonatomic) NSString *contentContainerIdentifier; // @synthesize contentContainerIdentifier=_contentContainerIdentifier;
-@property(readonly, nonatomic) _Bool isProductionEnvironment; // @synthesize isProductionEnvironment=_isProductionEnvironment;
+@property(readonly, nonatomic) long long environment; // @synthesize environment=_environment;
 - (void).cxx_destruct;
-- (id)initWithProductionEnvironment:(_Bool)arg1 contentContainerIdentifier:(id)arg2 privateDataContainerIdentifier:(id)arg3 privateDataSecureContainerIdentifier:(id)arg4 storeFrontID:(id)arg5;
+- (id)initWithEnvironment:(long long)arg1;
+- (id)initWithProductionContentEnvironment:(_Bool)arg1 productionPrivateDataEnvironment:(_Bool)arg2 contentContainerIdentifier:(id)arg3 privateDataContainerIdentifier:(id)arg4 privateDataSecureContainerIdentifier:(id)arg5 storeFrontID:(id)arg6 environment:(long long)arg7;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_itemReceivedLongPress:(id)arg1;
 - (void)_itemReceivedTap:(id)arg1;
+- (void)_itemReceivedTouchDown:(id)arg1;
 - (long long)_barItemForUIBarButtonItem:(id)arg1;
 - (id)_UIBarButtonItemForBarItem:(long long)arg1;
 - (id)popoverSourceInfoForItem:(long long)arg1;

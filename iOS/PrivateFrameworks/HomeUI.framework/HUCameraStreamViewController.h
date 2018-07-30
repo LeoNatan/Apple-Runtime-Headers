@@ -12,13 +12,13 @@
 #import "HUPresentationDelegateHost.h"
 #import "PGPictureInPictureProxyDelegate.h"
 
-@class HFCameraAudioManager, HFCameraItem, HFItem, HFItemManager, HUCameraMicrophoneButton, HUCameraStreamContentViewController, MPVolumeSlider, NSLayoutConstraint, NSString, PGPictureInPictureProxy, UIBarButtonItem;
+@class AVPlayerLooper, HFCameraAudioManager, HFCameraItem, HFItem, HFItemManager, HUCameraDemoPlayerView, HUCameraFloatingMicrophoneButton, HUCameraMicrophoneButton, HUCameraStreamContentViewController, MPVolumeSlider, NSLayoutConstraint, NSString, PGPictureInPictureProxy, UIBarButtonItem, UIView;
 
 @interface HUCameraStreamViewController : UIViewController <HFItemManagerDelegate, HUPresentationDelegate, PGPictureInPictureProxyDelegate, HUItemPresentationContainer, HUPresentationDelegateHost>
 {
     _Bool _navigationControllerSetup;
     _Bool _barsHidden;
-    _Bool _didSetupMicrophoneButtonConstraints;
+    _Bool _didSetupToolbarMicrophoneButtonConstraints;
     _Bool _didSetupVolumeSliderConstraints;
     id <HUPresentationDelegate> _presentationDelegate;
     id <HUCameraStreamViewControllerDelegate> _delegate;
@@ -32,16 +32,22 @@
     NSLayoutConstraint *_volumeSliderLeadingConstraint;
     MPVolumeSlider *_volumeSlider;
     UIBarButtonItem *_volumeBarButtonItem;
-    HUCameraMicrophoneButton *_microphoneButton;
+    HUCameraFloatingMicrophoneButton *_floatingMicrophoneButton;
+    HUCameraMicrophoneButton *_toolbarMicrophoneButton;
     UIBarButtonItem *_microphoneBarButtonItem;
+    HUCameraDemoPlayerView *_demoPlayerView;
+    AVPlayerLooper *_looper;
     struct UIOffset _defaultCameraBadgeOffset;
 }
 
+@property(retain, nonatomic) AVPlayerLooper *looper; // @synthesize looper=_looper;
+@property(retain, nonatomic) HUCameraDemoPlayerView *demoPlayerView; // @synthesize demoPlayerView=_demoPlayerView;
 @property(nonatomic) _Bool didSetupVolumeSliderConstraints; // @synthesize didSetupVolumeSliderConstraints=_didSetupVolumeSliderConstraints;
-@property(nonatomic) _Bool didSetupMicrophoneButtonConstraints; // @synthesize didSetupMicrophoneButtonConstraints=_didSetupMicrophoneButtonConstraints;
+@property(nonatomic) _Bool didSetupToolbarMicrophoneButtonConstraints; // @synthesize didSetupToolbarMicrophoneButtonConstraints=_didSetupToolbarMicrophoneButtonConstraints;
 @property(nonatomic, getter=areBarsHidden) _Bool barsHidden; // @synthesize barsHidden=_barsHidden;
 @property(retain, nonatomic) UIBarButtonItem *microphoneBarButtonItem; // @synthesize microphoneBarButtonItem=_microphoneBarButtonItem;
-@property(retain, nonatomic) HUCameraMicrophoneButton *microphoneButton; // @synthesize microphoneButton=_microphoneButton;
+@property(retain, nonatomic) HUCameraMicrophoneButton *toolbarMicrophoneButton; // @synthesize toolbarMicrophoneButton=_toolbarMicrophoneButton;
+@property(retain, nonatomic) HUCameraFloatingMicrophoneButton *floatingMicrophoneButton; // @synthesize floatingMicrophoneButton=_floatingMicrophoneButton;
 @property(retain, nonatomic) UIBarButtonItem *volumeBarButtonItem; // @synthesize volumeBarButtonItem=_volumeBarButtonItem;
 @property(retain, nonatomic) MPVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
 @property(retain, nonatomic) NSLayoutConstraint *volumeSliderLeadingConstraint; // @synthesize volumeSliderLeadingConstraint=_volumeSliderLeadingConstraint;
@@ -60,15 +66,18 @@
 - (void)_handleBarHideTapGesture:(id)arg1;
 - (id)_barBackgroundView;
 - (void)_setupVolumeSliderConstraintsIfNeeded;
+- (void)_setupFloatingMicrphoneButtonIfNeeded;
 - (void)_setupNavigationController;
 - (unsigned long long)_streamState;
 - (id)_cameraProfile;
+- (void)_configureConstraintsForContentView:(id)arg1;
 - (void)_attachCameraStreamViewController;
+- (void)_updatePIPViewFrame;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
 - (id)finishPresentation:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentCameraDetailsWithViewController:(id)arg1;
 - (void)_updateMicrophoneButton;
-- (void)_updateNavigationItemTitle;
+- (void)_updateTitleAndLoadingState;
 - (void)_updateCameraAudioManager;
 - (void)_microphoneButtonPressed;
 - (void)_detailsButtonPressed;
@@ -82,16 +91,18 @@
 - (void)pictureInPictureProxy:(id)arg1 willStartPictureInPictureWithAnimationType:(long long)arg2;
 - (struct CGRect)pictureInPictureProxyViewFrameForTransitionAnimation:(id)arg1;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
+@property(readonly, nonatomic) UIView *cameraViewSnapshot;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (long long)preferredStatusBarUpdateAnimation;
 - (_Bool)prefersStatusBarHidden;
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (void)_updateCameraBadgeOffset;
 - (void)_adjustVolumeSliderToAccomodateHomeAffordance;
-- (void)_setupMicrophoneConstraintsIfNeeded;
+- (void)_setupToolbarMicrophoneConstraintsIfNeeded;
 - (void)_updateVolumeSliderConstraintsIfNeeded;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

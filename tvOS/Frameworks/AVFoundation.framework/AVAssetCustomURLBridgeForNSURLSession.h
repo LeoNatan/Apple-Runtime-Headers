@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURLSession;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetCustomURLBridgeForNSURLSession : NSObject <NSURLSessionDataDelegate>
 {
     NSMutableDictionary *_taskToRequest;
@@ -20,7 +21,6 @@
 
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void)dealloc;
-- (id)initWithFigAsset:(struct OpaqueFigAsset *)arg1 session:(id)arg2;
 - (id)initWithFigAsset:(struct OpaqueFigAsset *)arg1;
 - (id)init;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 willCacheResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

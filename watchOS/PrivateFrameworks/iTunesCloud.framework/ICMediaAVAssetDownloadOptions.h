@@ -26,7 +26,9 @@
     NSString *_mediaKind;
 }
 
++ (id)_avDownloadOptionsWithRequestContent:(id)arg1 properties:(id)arg2 mediaResponseItem:(id)arg3;
 + (id)_mediaKindFromResponseItemMetadata:(id)arg1;
++ (void)getMediaAVAssetDownloadOptionsWithRequestContext:(id)arg1 storeMediaResponseItem:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)getMediaAVAssetDownloadOptionsWithRequestContext:(id)arg1 redownloadResponse:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(nonatomic) _Bool canUseCellularData; // @synthesize canUseCellularData=_canUseCellularData;
 @property(copy, nonatomic) NSString *mediaKind; // @synthesize mediaKind=_mediaKind;

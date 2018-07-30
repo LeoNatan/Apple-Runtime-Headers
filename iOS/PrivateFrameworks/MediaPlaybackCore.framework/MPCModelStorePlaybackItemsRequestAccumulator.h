@@ -17,6 +17,7 @@
     NSArray *_orderedStoreIDs;
     NSMutableArray *_pendingOrderedStoreIDs;
     NSMutableArray *_pendingPrioritizedStoreIDs;
+    NSMutableArray *_unprocessedItemIdentifiers;
     MPMutableSectionedCollection *_progressiveContentDescriptors;
     NSMutableDictionary *_receivedStoreIDs;
     MPStoreModelGenericObjectBuilder *_resultsGenericObjectBuilder;

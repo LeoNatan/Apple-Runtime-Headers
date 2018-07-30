@@ -54,6 +54,7 @@
 - (_Bool)_clearUpdatesForElement:(id)arg1;
 - (void)_updateWithXML:(id)arg1;
 - (id)_viewElementForNodeID:(unsigned long long)arg1;
+- (id)viewElementForNodeID:(unsigned long long)arg1;
 @property(readonly, nonatomic) id <IKNetworkRequestLoader> requestLoader;
 - (_Bool)evaluateStyleMediaQueryList:(id)arg1;
 - (_Bool)_isUpdateAllowed;

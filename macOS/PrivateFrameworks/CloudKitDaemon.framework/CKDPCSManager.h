@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 - (id)wrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection *)arg2 inContext:(id)arg3;
 - (id)unwrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection *)arg2 withContextString:(id)arg3;
 - (id)unwrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection *)arg2 inContext:(id)arg3;
+- (void)triggerAutoSysdiagnoseIfNecessaryForError:(id)arg1 encryptedData:(id)arg2 pcs:(struct _OpaquePCSShareProtection *)arg3;
 - (id)referenceSignatureFromAssetKey:(id)arg1;
 - (id)referenceIdentifierStringFromAssetKey:(id)arg1;
 - (id)newAssetKeyWithType:(unsigned long long)arg1 withError:(id *)arg2;
@@ -81,9 +82,12 @@ __attribute__((visibility("hidden")))
 - (id)addIdentityBackToPCS:(struct _OpaquePCSShareProtection *)arg1;
 - (id)addPublicIdentity:(struct _PCSPublicIdentityData *)arg1 toSharePCS:(struct _OpaquePCSShareProtection *)arg2 permission:(unsigned long long)arg3;
 - (id)etagFromSharePCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
+- (id)pcsDataFromFetchedShare:(id)arg1 withPublicSharingKey:(id)arg2 withServiceType:(unsigned long long)arg3 error:(id *)arg4;
 - (id)pcsDataFromFetchedShare:(id)arg1 withServiceType:(unsigned long long)arg2 error:(id *)arg3;
+- (id)decryptPCSDataOnSharePCS:(id)arg1 withPublicSharingKey:(id)arg2;
 - (id)decryptPCSDataOnSharePCS:(id)arg1;
 - (struct _OpaquePCSShareProtection *)createSharePCSFromEncryptedData:(id)arg1 error:(id *)arg2;
+- (struct _OpaquePCSShareProtection *)createSharePCSFromData:(id)arg1 sharePrivateKey:(id)arg2 error:(id *)arg3;
 - (struct _OpaquePCSShareProtection *)createSharePCSFromData:(id)arg1 withService:(unsigned long long)arg2 error:(id *)arg3;
 - (struct _OpaquePCSShareProtection *)createSharePCSFromData:(id)arg1 withService:(unsigned long long)arg2 logFailure:(BOOL)arg3 error:(id *)arg4;
 - (struct _OpaquePCSShareProtection *)createSharePCSFromData:(id)arg1 sharingIdentity:(struct _PCSIdentityData *)arg2 error:(id *)arg3;

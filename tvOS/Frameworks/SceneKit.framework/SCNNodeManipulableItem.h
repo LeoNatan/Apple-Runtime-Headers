@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)setPosition:(struct SCNVector3)arg1;
 - (struct SCNVector3)scale;
 - (struct SCNMatrix4)worldTransform;
+- (void)setWorldTransform:(struct SCNMatrix4)arg1;
 - (void)setTransform:(struct SCNMatrix4)arg1;
 - (struct SCNMatrix4)transform;
 - (_Bool)isNodeManipulator;

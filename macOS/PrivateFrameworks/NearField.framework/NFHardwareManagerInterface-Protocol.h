@@ -9,8 +9,10 @@
 @class NSArray, NSData, NSObject<NFContactlessPaymentSessionCallbacks>, NSObject<NFContactlessSessionCallbacks>, NSObject<NFECommercePaymentSessionCallbacks>, NSObject<NFFieldDetectSessionCallbacks>, NSObject<NFHardwareManagerCallbacks>, NSObject<NFNdefTagSessionCallbacks>, NSObject<NFPeerPaymentSessionCallbacks>, NSObject<NFReaderSessionCallbacks>, NSObject<NFSecureElementManagerSessionCallbacks>, NSObject<NFSecureElementSessionCallbacks>, NSObject<NFSessionInterface>, NSObject<NFValueAddedServiceSessionCallbacks>, NSString, NSUUID;
 
 @protocol NFHardwareManagerInterface <NSObject>
+- (oneway void)actOnUserInitiatedSystemShutDown:(unsigned int)arg1 callback:(void (^)(void))arg2;
 - (oneway void)areNFFeaturesSupported:(unsigned long long)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)pushSignedRF:(NSData *)arg1 callback:(void (^)(NSError *))arg2;
+- (oneway void)getUniqueFDRKeyXPC:(void (^)(NSString *, NSError *))arg1;
 - (oneway void)getDieID:(void (^)(NSData *, NSError *))arg1;
 - (oneway void)areSessionsAllowed:(void (^)(BOOL, NSError *))arg1;
 - (oneway void)preWarm:(void (^)(NSError *))arg1;

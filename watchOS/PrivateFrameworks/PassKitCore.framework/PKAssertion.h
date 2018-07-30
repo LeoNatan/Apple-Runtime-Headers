@@ -14,22 +14,21 @@
     _Bool _invalidateWhenBackgrounded;
     NSString *_reason;
     unsigned int _type;
-    int _state;
     CDUnknownBlockType _invalidationHandler;
     NSString *_identifier;
 }
 
++ (void)isAssertionValid:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)acquireAssertionOfType:(unsigned int)arg1 withReason:(id)arg2 completion:(CDUnknownBlockType)arg3;
-+ (_Bool)assertionExistsOfType:(unsigned int)arg1;
 + (void)preheatConnection;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(nonatomic) _Bool invalidateWhenBackgrounded; // @synthesize invalidateWhenBackgrounded=_invalidateWhenBackgrounded;
-@property(nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
 - (id)description;
+- (void)markAsInvalidatedAndNotify;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithType:(unsigned int)arg1 identifier:(id)arg2 reason:(id)arg3;

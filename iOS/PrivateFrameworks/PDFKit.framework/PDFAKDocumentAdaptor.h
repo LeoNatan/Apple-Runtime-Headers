@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
 - (void)_pdfViewDidLayout:(id)arg1;
 - (void)_pdfDocumentDidUnlock:(id)arg1;
 - (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned long long)arg1 forAnnotationController:(id)arg2;
+- (void)rotateLeft:(id)arg1;
+- (void)rotateRight:(id)arg1;
 - (id)characterIndexesForQuadPoints:(id)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
 - (id)quadPointsForCharacterIndexes:(id)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
 - (void)clearHighlightableSelectionForAnnotationController:(id)arg1;

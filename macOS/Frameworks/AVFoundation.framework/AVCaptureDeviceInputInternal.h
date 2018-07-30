@@ -8,6 +8,7 @@
 
 @class AVCaptureDevice, MediaIOGraphNodeDescription, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceInputInternal : NSObject
 {
     AVCaptureDevice *device;

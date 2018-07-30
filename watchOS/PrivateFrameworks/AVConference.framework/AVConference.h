@@ -20,6 +20,8 @@
     NSMutableDictionary *_stateCacheForCallID;
     NSObject<OS_dispatch_queue> *_stateQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    int _inputAudioPowerSpectrumToken;
+    int _outputAudioPowerSpectrumToken;
     _Bool shouldDisplayNetworkQualityGraph_;
     NSTimer *networkQualityUpdateTimer_;
     CALayer *networkQualityGraphLayer_;
@@ -35,6 +37,8 @@
 + (id)externalAddressForSelfConnectionBlob:(id)arg1;
 + (short)addressPointerFromBlob:(id)arg1;
 + (void)refreshLoggingParameters;
+@property(readonly) int outputAudioPowerSpectrumToken; // @synthesize outputAudioPowerSpectrumToken=_outputAudioPowerSpectrumToken;
+@property(readonly) int inputAudioPowerSpectrumToken; // @synthesize inputAudioPowerSpectrumToken=_inputAudioPowerSpectrumToken;
 @property(nonatomic, getter=isMicrophoneMuted) _Bool microphoneMuted; // @synthesize microphoneMuted=_microphoneMuted;
 @property(retain) CALayer *networkQualityGraphLayer; // @synthesize networkQualityGraphLayer=networkQualityGraphLayer_;
 @property(retain) NSTimer *networkQualityUpdateTimer; // @synthesize networkQualityUpdateTimer=networkQualityUpdateTimer_;
@@ -74,6 +78,7 @@
 - (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3 callMetadata:(id)arg4;
 - (void)videoConference:(id)arg1 withCallID:(int)arg2 didPauseVideo:(_Bool)arg3 error:(id)arg4;
 - (void)videoConference:(id)arg1 withCallID:(int)arg2 didPauseAudio:(_Bool)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 withCallID:(int)arg2 isSendingAudio:(_Bool)arg3 error:(id)arg4;
 - (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3;
 - (void)videoConference:(id)arg1 didStartSession:(_Bool)arg2 withCallID:(unsigned long)arg3 withUserInfo:(id)arg4 error:(id)arg5;
 - (void)videoConference:(id)arg1 didStartSession:(_Bool)arg2 withCallID:(unsigned long)arg3 error:(id)arg4;
@@ -85,6 +90,7 @@
 - (void)updateCapabilities:(id)arg1 forCallID:(int)arg2;
 - (_Bool)setPauseVideo:(_Bool)arg1 callID:(int)arg2 error:(id *)arg3;
 - (_Bool)setPauseAudio:(_Bool)arg1 callID:(int)arg2 error:(id *)arg3;
+- (_Bool)setSendingAudio:(_Bool)arg1 callID:(int)arg2 error:(id *)arg3;
 @property(readonly) unsigned int natType;
 @property(getter=isSpeakerPhoneEnabled) _Bool enableSpeakerPhone;
 - (id)statsForCallID:(int)arg1;
@@ -115,6 +121,7 @@
 @property(readonly) float inputMeterLevel;
 - (_Bool)getIsVideoPaused:(_Bool *)arg1 callID:(int)arg2 error:(id *)arg3;
 - (_Bool)getIsAudioPaused:(_Bool *)arg1 callID:(int)arg2 error:(id *)arg3;
+- (_Bool)getIsSendingAudio:(_Bool *)arg1 callID:(int)arg2 error:(id *)arg3;
 @property(readonly) float outputMeterLevel;
 @property(nonatomic, getter=isOutputFrequencyMeteringEnabled) _Bool outputFrequencyMeteringEnabled;
 @property(nonatomic, getter=isInputFrequencyMeteringEnabled) _Bool inputFrequencyMeteringEnabled;

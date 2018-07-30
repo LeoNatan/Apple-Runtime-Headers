@@ -12,10 +12,11 @@
 #import "WBSParsecSearchMapsResult.h"
 #import "WBSParsecSearchResult.h"
 #import "WBSParsecSearchSimpleResult.h"
+#import "WBSParsecSearchSportsResult.h"
 
-@class MKMapItem, NSArray, NSNumber, NSString, NSURL, SFFlight, SFSearchResult, WBSParsecActionButton, WBSParsecAuxiliaryInfo, WBSParsecImageRepresentation, WBSParsecLegacySearchResult, WBSParsecSearchMapsResultFeedbackSender, WBSQuerySuggestion;
+@class MKMapItem, NSArray, NSNumber, NSString, NSURL, SFFlight, SFSearchResult, WBSParsecActionButton, WBSParsecAuxiliaryInfo, WBSParsecImageRepresentation, WBSParsecLegacySearchResult, WBSParsecSearchMapsResultFeedbackSender, WBSParsecSearchSportsAttributionExtraCompletionItem, WBSQuerySuggestion;
 
-@interface WBSParsecSearchResult : NSObject <WBSParsecSearchFlightsResult, WBSParsecSearchResult, WBSCompletionListItem, WBSParsecSearchGenericResult, WBSParsecSearchMapsResult, WBSParsecSearchSimpleResult>
+@interface WBSParsecSearchResult : NSObject <WBSParsecSearchFlightsResult, WBSParsecSearchResult, WBSCompletionListItem, WBSParsecSearchGenericResult, WBSParsecSearchMapsResult, WBSParsecSearchSimpleResult, WBSParsecSearchSportsResult>
 {
     WBSParsecLegacySearchResult *_legacySearchResult;
 }
@@ -23,11 +24,16 @@
 @property(readonly, nonatomic) WBSParsecLegacySearchResult *legacySearchResult; // @synthesize legacySearchResult=_legacySearchResult;
 - (void).cxx_destruct;
 - (id)_resultPresentedInCard;
+- (id)_sportsResult;
 - (id)_simpleResult;
 - (id)_mapsResult;
 - (id)_genericResult;
 - (id)_flightResult;
 - (id)_result;
+@property(readonly, nonatomic) WBSParsecSearchSportsAttributionExtraCompletionItem *extraCompletionItem;
+@property(readonly, copy, nonatomic) NSString *subtitle;
+@property(readonly, copy, nonatomic) NSArray *individualScores;
+@property(readonly, copy, nonatomic) NSArray *images;
 - (id)titleGlyphWithSession:(id)arg1;
 @property(readonly, nonatomic) unsigned long long descriptionAlignment;
 @property(readonly, nonatomic) BOOL hasSingleLineDescriptionAndTitle;
@@ -60,7 +66,6 @@
 @property(readonly, nonatomic) unsigned long long displayOptions;
 @property(readonly, nonatomic) long long placementHint;
 @property(readonly, copy, nonatomic) NSString *alternateSectionHeader;
-@property(readonly, nonatomic) NSArray *additionalMapItems;
 @property(readonly, nonatomic) MKMapItem *mapItem;
 @property(readonly, nonatomic) WBSParsecActionButton *actionButton;
 @property(readonly, copy, nonatomic) NSString *referrerForLoadingResult;

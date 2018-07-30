@@ -7,7 +7,11 @@
 #import "NUIArrangementContainer.h"
 
 @protocol _NUIGridArrangementContainer <NUIArrangementContainer>
-- (void)populateGridArrangementDimension:(vector_29d414c0 *)arg1 withCells:(const vector_f7a18e83 *)arg2 axis:(long long)arg3;
-- (void)populateGridArrangementCells:(vector_f7a18e83 *)arg1;
+- (void)populateGridArrangementDimension:(vector_b8a5df6e *)arg1 withCells:(const vector_f8404f95 *)arg2 axis:(long long)arg3;
+- (void)populateGridArrangementCells:(vector_f8404f95 *)arg1;
+
+@optional
+- (BOOL)shouldCancelMeasurementForCompressionInAxis:(long long)arg1;
+- (BOOL)canCancelMeasurementForCompression;
 @end
 

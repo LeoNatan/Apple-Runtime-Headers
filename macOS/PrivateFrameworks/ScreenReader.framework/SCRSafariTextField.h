@@ -6,11 +6,20 @@
 
 #import <ScreenReader/SCRTextField.h>
 
+@class SCRTextMarkerRange;
+
 __attribute__((visibility("hidden")))
 @interface SCRSafariTextField : SCRTextField
 {
+    BOOL __selectionNotificationHandlerModifiedCachedNumberOfCharacters;
+    unsigned long long __numberOfCharactersBeforeSelectionNotificationHandler;
+    SCRTextMarkerRange *__previousSelectionRangeBeforeSelectionNotificationHandler;
 }
 
+@property(retain, nonatomic) SCRTextMarkerRange *_previousSelectionRangeBeforeSelectionNotificationHandler; // @synthesize _previousSelectionRangeBeforeSelectionNotificationHandler=__previousSelectionRangeBeforeSelectionNotificationHandler;
+@property(nonatomic) unsigned long long _numberOfCharactersBeforeSelectionNotificationHandler; // @synthesize _numberOfCharactersBeforeSelectionNotificationHandler=__numberOfCharactersBeforeSelectionNotificationHandler;
+@property(nonatomic) BOOL _selectionNotificationHandlerModifiedCachedNumberOfCharacters; // @synthesize _selectionNotificationHandlerModifiedCachedNumberOfCharacters=__selectionNotificationHandlerModifiedCachedNumberOfCharacters;
+- (void)dealloc;
 - (void)_outputFullTextValue;
 - (void)handleContentChangeWithUserInfo:(id)arg1;
 @property(readonly, nonatomic) BOOL _isNoLongerPartiallySelected;

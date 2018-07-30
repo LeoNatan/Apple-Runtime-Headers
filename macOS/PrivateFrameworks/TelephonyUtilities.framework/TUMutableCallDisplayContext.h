@@ -26,7 +26,7 @@
 @property(copy, nonatomic) NSString *contactName; // @dynamic contactName;
 @property(copy, nonatomic) NSString *firstName; // @dynamic firstName;
 @property(copy, nonatomic) NSString *label; // @dynamic label;
-@property(copy, nonatomic) NSString *legacyAddressBookIdentifier; // @dynamic legacyAddressBookIdentifier;
+@property(nonatomic) int legacyAddressBookIdentifier; // @dynamic legacyAddressBookIdentifier;
 @property(copy, nonatomic) NSString *location; // @dynamic location;
 @property(copy, nonatomic) NSString *mapName; // @dynamic mapName;
 @property(copy, nonatomic) NSString *name; // @dynamic name;

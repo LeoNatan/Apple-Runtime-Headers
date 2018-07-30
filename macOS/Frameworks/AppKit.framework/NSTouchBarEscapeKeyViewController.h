@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
+- (void)refreshSubviews;
 - (void)constraintsDidChangeInEngine:(id)arg1;
 - (void)_noteTouchBarItemViewChanged;
 - (struct CGSize)_measuredPreferredSize;

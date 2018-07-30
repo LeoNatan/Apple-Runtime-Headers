@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isDomainWhitelisted:(id)arg1;
 - (id)initWithDomains:(id)arg1;
 - (id)initWithPlistData:(id)arg1 error:(id *)arg2;
-- (id)initWithPlistURL:(id)arg1 error:(id *)arg2;
 - (id)init;
 
 // Remaining properties

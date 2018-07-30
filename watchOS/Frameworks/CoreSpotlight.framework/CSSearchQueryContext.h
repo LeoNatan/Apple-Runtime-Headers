@@ -36,10 +36,12 @@
     NSArray *_completionAttributes;
     unsigned long long _fuzzyMask;
     unsigned long long _fuzzyMatch;
+    double _currentTime;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned char flags; // @synthesize flags=_flags;
+@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(retain, nonatomic) NSArray *completionAttributes; // @synthesize completionAttributes=_completionAttributes;
 @property(retain, nonatomic) NSString *completionString; // @synthesize completionString=_completionString;
 @property(nonatomic) unsigned long long fuzzyMatch; // @synthesize fuzzyMatch=_fuzzyMatch;

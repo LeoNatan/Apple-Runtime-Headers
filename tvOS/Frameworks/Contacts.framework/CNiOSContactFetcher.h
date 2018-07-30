@@ -20,11 +20,13 @@ __attribute__((visibility("hidden")))
 
 + (CDUnknownBlockType)linkedPeopleComparator;
 + (id)contactsForFetchRequest:(id)arg1 matchInfos:(id *)arg2 inAddressBook:(void *)arg3 environment:(id)arg4 managedConfiguration:(id)arg5 error:(id *)arg6;
+@property(readonly, nonatomic) CNContactFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
+@property(readonly, nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 - (void).cxx_destruct;
 - (id)unifyPeople:(id)arg1 keysToFetch:(id)arg2 abMatchInfos:(id)arg3 filteredForAccountIdentifiers:(id)arg4 outCNMatchInfos:(id *)arg5;
 - (id)fetchContactsReturningMatchInfos:(id *)arg1 error:(id *)arg2;
 - (id)executeFetchRequestWithProgressiveResults:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_peopleToContactsArray:(id)arg1 abMatchInfo:(id)arg2 keysToFetch:(id)arg3;
+- (id)_contactsFromPeople:(id)arg1 abMatchInfo:(id)arg2 keysToFetch:(id)arg3;
 - (void)_batchLoadPropertiesForPeople:(id)arg1 keysToFetch:(id)arg2;
 - (id)_abMatchMetadataToCNContactMatchInfoArray:(id)arg1;
 - (void)dealloc;

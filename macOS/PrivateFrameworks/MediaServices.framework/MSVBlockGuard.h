@@ -24,6 +24,7 @@
 - (id)initWithTimeout:(double)arg1 interruptionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithTimeout:(double)arg1;
 - (id)initWithDeallocHandler:(CDUnknownBlockType)arg1;
+- (id)init;
 
 @end
 

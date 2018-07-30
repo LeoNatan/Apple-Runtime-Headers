@@ -19,15 +19,19 @@
     unsigned char _kind;
     BOOL _isManagedStudent;
     NSNumber *_dsID;
+    NSString *_firstName;
     NSString *_identifier;
+    NSString *_lastName;
     NSString *_credit;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)_storeAccountFromLegacyStoreAccount:(id)arg1 client:(id)arg2;
 @property(readonly) NSString *credit; // @synthesize credit=_credit;
+@property(readonly) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly) BOOL isManagedStudent; // @synthesize isManagedStudent=_isManagedStudent;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly) NSNumber *dsID; // @synthesize dsID=_dsID;
 @property(readonly) unsigned char kind; // @synthesize kind=_kind;
 - (void).cxx_destruct;
@@ -35,6 +39,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+- (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) BOOL isPrimary;
 @property(readonly) BOOL isSignedIn;

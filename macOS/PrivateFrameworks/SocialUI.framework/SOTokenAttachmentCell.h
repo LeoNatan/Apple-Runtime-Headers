@@ -19,9 +19,6 @@
     CNAutocompleteResult *_autocompleteResult;
 }
 
-+ (id)_greyTokenTintColor;
-+ (id)_greenTokenTintColor;
-+ (id)_redTokenTintColor;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(copy, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) QLPreviewMenuItem *previewMenuItem; // @synthesize previewMenuItem=_previewMenuItem;

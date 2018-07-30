@@ -20,9 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (void)registerUserDefaultController:(id)arg1;
 + (id)_userDefaultControllers;
+- (BOOL)updateMenu:(id)arg1 withEvent:(id)arg2 withFlags:(unsigned long long)arg3;
 - (BOOL)menuHasKeyEquivalent:(id)arg1 forEvent:(id)arg2 target:(id *)arg3 action:(SEL *)arg4;
-- (BOOL)menu:(id)arg1 updateItem:(id)arg2 atIndex:(long long)arg3 shouldCancel:(BOOL)arg4;
-- (long long)numberOfItemsInMenu:(id)arg1;
 - (void)_defaultControllersDidChange:(id)arg1;
 - (id)defaultsMenuCreateIfNecessary;
 @property(readonly, copy) NSMenuItem *menuItem;

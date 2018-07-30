@@ -6,30 +6,35 @@
 
 #import "NSObject.h"
 
-@class UNSKeyedObservable;
+@class NSObject<OS_dispatch_queue>, UNSKeyedDataStoreRepository, UNSKeyedObservable;
 
 @interface UNSPendingNotificationRepository : NSObject
 {
+    UNSKeyedDataStoreRepository *_repository;
     UNSKeyedObservable *_observable;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
-- (void)performClockMigration;
-- (void)performMigrationForBundleIdentifier:(id)arg1;
+- (void)_queue_performMigrationForBundleIdentifier:(id)arg1;
+- (void)_queue_performMigration;
+- (void)_queue_notificationSourcesDidUninstall:(id)arg1;
+- (void)_queue_notifyObserversOfChangesFrom:(id)arg1 to:(id)arg2 forBundleIdentifier:(id)arg3;
+- (void)_queue_setPendingNotificationRecords:(id)arg1 forBundleIdentifier:(id)arg2;
+- (id)_queue_pendingNotificationRecordsForBundleIdentifier:(id)arg1;
+- (void)_queue_setPendingNotificationDictionaries:(id)arg1 forBundleIdentifier:(id)arg2;
+- (id)_queue_pendingNotificationDictionariesForBundleIdentifier:(id)arg1;
 - (void)performMigration;
 - (void)applicationStateDidRestore;
-- (void)applicationsDidUninstall:(id)arg1;
-- (void)_notifyObserversOfChangesFrom:(id)arg1 to:(id)arg2 forBundleIdentifier:(id)arg3;
+- (void)notificationSourcesDidUninstall:(id)arg1;
 - (void)setPendingNotificationRecords:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)pendingNotificationRecordsForBundleIdentifier:(id)arg1;
-- (void)_setPendingNotificationDictionaries:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)_pendingNotificationDictionariesForBundleIdentifier:(id)arg1;
-- (id)lastLocalNotificationFireDateForBundleIdentifier:(id)arg1;
-- (void)setLastLocalNotificationFireDate:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)_dateFormatter;
+- (id)allBundleIdentifiers;
 - (void)removeObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)init;
+- (id)initWithDataStoreRepository:(id)arg1 observable:(id)arg2;
+- (id)initWithDirectory:(id)arg1;
+- (long long)_maxObjectsPerKey;
 
 @end
 

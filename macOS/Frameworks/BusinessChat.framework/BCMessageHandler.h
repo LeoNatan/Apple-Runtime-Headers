@@ -7,24 +7,35 @@
 #import "NSObject.h"
 
 #import "BCApplePayManagerDelegate.h"
+#import "BCAuthenticationViewControllerDelegate.h"
 
-@class BCApplePayManager, BCMessage;
+@class BCApplePayManager, BCAuthenticationManager, BCInternalAuthenticationManager, BCMessage;
 
-@interface BCMessageHandler : NSObject <BCApplePayManagerDelegate>
+@interface BCMessageHandler : NSObject <BCApplePayManagerDelegate, BCAuthenticationViewControllerDelegate>
 {
     BCMessage *_message;
     id <BCMessageHandlerDelegate> _delegate;
+    BCAuthenticationManager *_authManager;
+    BCInternalAuthenticationManager *_internalAuthManager;
     BCApplePayManager *_applePayManager;
 }
 
++ (id)appIconForWindow:(id)arg1;
 + (id)appIcon;
 @property(retain, nonatomic) BCApplePayManager *applePayManager; // @synthesize applePayManager=_applePayManager;
+@property(retain, nonatomic) BCInternalAuthenticationManager *internalAuthManager; // @synthesize internalAuthManager=_internalAuthManager;
+@property(retain, nonatomic) BCAuthenticationManager *authManager; // @synthesize authManager=_authManager;
 @property(nonatomic) __weak id <BCMessageHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) BCMessage *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+- (void)showHandoffAlert:(id)arg1;
+- (void)sendAuthenticationMessage:(id)arg1;
+- (void)performAuthenticationWithWindow:(id)arg1;
+- (void)performInternalAuthentication;
 - (void)paymentRequestDidUpdate:(id)arg1;
 - (id)presentationProperties;
 - (void)handleActionWithWindow:(id)arg1;
+- (void)initializeManagers;
 - (id)initWithMessage:(id)arg1 andDelegate:(id)arg2;
 
 @end

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
 @class NSArray, NSString;
 
-@interface DMFUpdateEnqueuedCommandsRequest : CATTaskRequest
+@interface DMFUpdateEnqueuedCommandsRequest : DMFTaskRequest
 {
     NSString *_organizationIdentifier;
     NSArray *_addCommands;
@@ -16,6 +16,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 @property(copy, nonatomic) NSArray *removeCommands; // @synthesize removeCommands=_removeCommands;
 @property(copy, nonatomic) NSArray *addCommands; // @synthesize addCommands=_addCommands;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;

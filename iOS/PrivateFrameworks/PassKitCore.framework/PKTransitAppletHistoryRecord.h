@@ -25,13 +25,11 @@
     NSData *_startStation;
     NSData *_endStation;
     NSString *_transitDetail;
-    long long _paymentTransactionType;
     long long _recordType;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) long long recordType; // @synthesize recordType=_recordType;
-@property(readonly, nonatomic) long long paymentTransactionType; // @synthesize paymentTransactionType=_paymentTransactionType;
 @property(copy, nonatomic) NSString *transitDetail; // @synthesize transitDetail=_transitDetail;
 @property(copy, nonatomic) NSData *endStation; // @synthesize endStation=_endStation;
 @property(copy, nonatomic) NSData *startStation; // @synthesize startStation=_startStation;
@@ -53,6 +51,7 @@
 - (id)initWithDictionary:(id)arg1;
 @property(readonly, nonatomic) unsigned long long transitTransactionModifier;
 @property(readonly, nonatomic) long long transitTransactionSubtype;
+@property(readonly, nonatomic) long long paymentTransactionType;
 - (id)concreteTransactionWithCurrency:(id)arg1;
 - (id)felicaHistoryRecord;
 

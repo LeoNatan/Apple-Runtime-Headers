@@ -145,6 +145,7 @@
 - (void)willUnselect;
 - (void)willSelect;
 - (void)didBecomeActive;
+- (BOOL)hasDataToMerge;
 - (BOOL)shouldEnableOnLogin;
 - (void)handleAEEvents:(id)arg1;
 - (void)showMoreInfo:(id)arg1;

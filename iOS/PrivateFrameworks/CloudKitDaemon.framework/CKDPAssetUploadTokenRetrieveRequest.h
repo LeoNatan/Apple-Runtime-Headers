@@ -16,17 +16,20 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_assets;
     NSData *_authCopyRequest;
     NSData *_authPutRequest;
+    int _authPutType;
     NSMutableArray *_contentRequestHeaders;
     CKDPRecordFieldIdentifier *_field;
     CKDPRecordType *_type;
     NSMutableArray *_uploads;
+    struct {
+        unsigned int authPutType:1;
+    } _has;
 }
 
 + (Class)contentRequestHeadersType;
 + (Class)uploadsType;
 + (Class)assetsType;
 + (id)options;
-@property(retain, nonatomic) NSData *authCopyRequest; // @synthesize authCopyRequest=_authCopyRequest;
 @property(retain, nonatomic) NSData *authPutRequest; // @synthesize authPutRequest=_authPutRequest;
 @property(retain, nonatomic) NSMutableArray *contentRequestHeaders; // @synthesize contentRequestHeaders=_contentRequestHeaders;
 @property(retain, nonatomic) NSMutableArray *uploads; // @synthesize uploads=_uploads;
@@ -45,7 +48,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasAuthCopyRequest;
+- (int)StringAsAuthPutType:(id)arg1;
+- (id)authPutTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasAuthPutType;
+@property(nonatomic) int authPutType; // @synthesize authPutType=_authPutType;
 @property(readonly, nonatomic) _Bool hasAuthPutRequest;
 - (id)contentRequestHeadersAtIndex:(unsigned long long)arg1;
 - (unsigned long long)contentRequestHeadersCount;

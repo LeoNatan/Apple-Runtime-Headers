@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int ctBubblesVisibility; // @synthesize ctBubblesVisibility=_ctBubblesVisibility;
 - (void).cxx_destruct;
 - (id)stringWithCurrentDate;
-- (void)resetForNewDocumentFromTemplate:(id)arg1;
+- (void)resetForNewDocumentFromTemplate:(id)arg1 locale:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;

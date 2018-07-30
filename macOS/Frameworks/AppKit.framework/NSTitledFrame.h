@@ -41,7 +41,6 @@
 - (struct CGRect)_maxYBorderRect;
 - (struct CGRect)_maxXBorderRect;
 - (struct CGRect)_minXBorderRect;
-- (struct CGRect)_maxXminYResizeRect;
 - (double)_windowResizeCornerThickness;
 - (struct CGRect)contentRect;
 - (double)_contentToFrameMaxYHeight;
@@ -118,8 +117,6 @@
 - (void)tile;
 - (void)tileAndSetWindowShape:(BOOL)arg1;
 - (void)setFrameOrigin:(struct CGPoint)arg1;
-- (id)frameShadowColor;
-- (id)frameHighlightColor;
 - (void)_showAllDrawingDrawRect:(struct CGRect)arg1;
 - (void)propagateFrameDirtyRects:(struct CGRect)arg1;
 - (BOOL)worksWhenModal;

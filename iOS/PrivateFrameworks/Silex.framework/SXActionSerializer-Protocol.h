@@ -9,6 +9,6 @@
 @class NSURL, SXAction;
 
 @protocol SXActionSerializer <NSObject>
-- (NSURL *)URLForAction:(SXAction *)arg1;
+- (NSURL *)URLForAction:(SXAction *)arg1 type:(long long)arg2;
 @end
 

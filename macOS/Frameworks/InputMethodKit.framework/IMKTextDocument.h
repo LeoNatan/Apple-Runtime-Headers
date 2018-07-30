@@ -16,7 +16,7 @@
 }
 
 + (id)keyPathsForValuesAffectingText;
-+ (id)textDocumentWithTextDocument:(id)arg1;
++ (id)textDocumentWithTextDocument:(id)arg1 surroundingCharactersToCopy:(unsigned long long)arg2;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(readonly, nonatomic) NSMutableString *committedText; // @synthesize committedText=_committedText;
 - (void).cxx_destruct;
@@ -55,7 +55,7 @@
 @property(readonly, nonatomic) unsigned long long length;
 - (void)dealloc;
 - (id)initWithTraits:(id)arg1 candidateMenu:(id)arg2;
-- (id)initWithTextDocument:(id)arg1;
+- (id)initWithTextDocument:(id)arg1 surroundingCharactersToCopy:(unsigned long long)arg2;
 
 @end
 

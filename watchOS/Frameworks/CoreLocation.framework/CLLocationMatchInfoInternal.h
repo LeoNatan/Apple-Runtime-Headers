@@ -8,6 +8,8 @@
 
 #import "NSCopying.h"
 
+@class NSData;
+
 @interface CLLocationMatchInfoInternal : NSObject <NSCopying>
 {
     int fMatchQuality;
@@ -16,10 +18,11 @@
     int fMatchFormOfWay;
     int fMatchRoadClass;
     _Bool fMatchShifted;
+    NSData *fMatchDataArray;
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct CLLocationCoordinate2D)arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(_Bool)arg6;
+- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct CLLocationCoordinate2D)arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(_Bool)arg6 matchDataArray:(id)arg7;
 
 @end
 

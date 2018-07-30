@@ -8,14 +8,16 @@
 
 #import "NSSecureCoding.h"
 #import "QLPreviewItemPrivateProtocol.h"
+#import "QLSExtensionThumbnailItem.h"
 
-@class FPItem, NSData, NSItemProvider, NSNumber, NSString, NSURL, NSUUID, QLItemFetcher, QLUTIAnalyzer, UIColor, UIDocumentInteractionController;
+@class FPItem, FPSandboxingURLWrapper, NSData, NSDictionary, NSItemProvider, NSNumber, NSString, NSURL, NSUUID, QLItemFetcher, QLUTIAnalyzer, UIColor, UIDocumentInteractionController;
 
-@interface QLItem : NSObject <QLPreviewItemPrivateProtocol, NSSecureCoding>
+@interface QLItem : NSObject <QLSExtensionThumbnailItem, QLPreviewItemPrivateProtocol, NSSecureCoding>
 {
     long long _editedFileExtensionHandle;
     _Bool _useAVPlayerViewController;
     _Bool _useFullPDFTransition;
+    _Bool _useLoadingTimeout;
     _Bool _wantsPreviewInDebugViewController;
     _Bool _isPromisedItem;
     _Bool _canBeEdited;
@@ -26,6 +28,7 @@
     _Bool _shouldUseExtensionThumbnail;
     NSNumber *_previewItemProviderProgress;
     NSURL *_editedFileURL;
+    NSDictionary *_previewOptions;
     FPItem *_fpItem;
     id <QLPreviewItemPrivateProtocol> _originalPreviewItem;
     NSURL *_previewItemURL;
@@ -50,10 +53,12 @@
     unsigned long long _thumbnailItemType;
     long long _processIdentifier;
     unsigned long long _editedFileBehavior;
+    FPSandboxingURLWrapper *_sandboxingURLWrapper;
 }
 
 + (id)_newEditedFileURLForItem:(id)arg1;
 + (id)encodedClasses;
++ (id)previewOptionEncodedClasses;
 + (_Bool)supportsSecureCoding;
 + (id)itemWithPreviewItem:(id)arg1;
 + (_Bool)shouldUseRemoteCollection:(id)arg1;
@@ -61,6 +66,7 @@
 + (id)supportedContentTypes;
 + (id)_allPreviewClasses;
 + (unsigned long long)_previewItemTypeForPreviewClass:(Class)arg1;
+@property(retain, nonatomic) FPSandboxingURLWrapper *sandboxingURLWrapper; // @synthesize sandboxingURLWrapper=_sandboxingURLWrapper;
 @property(nonatomic) _Bool shouldUseExtensionThumbnail; // @synthesize shouldUseExtensionThumbnail=_shouldUseExtensionThumbnail;
 @property(nonatomic) _Bool hasDeterminedShouldUseExtensionThumbnail; // @synthesize hasDeterminedShouldUseExtensionThumbnail=_hasDeterminedShouldUseExtensionThumbnail;
 @property(nonatomic) _Bool shouldUseExtensionPreview; // @synthesize shouldUseExtensionPreview=_shouldUseExtensionPreview;
@@ -93,14 +99,18 @@
 @property(retain, nonatomic) id <QLPreviewItemPrivateProtocol> originalPreviewItem; // @synthesize originalPreviewItem=_originalPreviewItem;
 @property(retain) FPItem *fpItem; // @synthesize fpItem=_fpItem;
 @property _Bool wantsPreviewInDebugViewController; // @synthesize wantsPreviewInDebugViewController=_wantsPreviewInDebugViewController;
+@property(copy, nonatomic) NSDictionary *previewOptions; // @synthesize previewOptions=_previewOptions;
 @property(retain, nonatomic) NSURL *editedFileURL; // @synthesize editedFileURL=_editedFileURL;
-@property(retain, nonatomic) NSNumber *previewItemProviderProgress; // @synthesize previewItemProviderProgress=_previewItemProviderProgress;
+@property(copy, nonatomic) NSNumber *previewItemProviderProgress; // @synthesize previewItemProviderProgress=_previewItemProviderProgress;
+@property(nonatomic) _Bool useLoadingTimeout; // @synthesize useLoadingTimeout=_useLoadingTimeout;
 @property(nonatomic) _Bool useFullPDFTransition; // @synthesize useFullPDFTransition=_useFullPDFTransition;
 @property _Bool useAVPlayerViewController; // @synthesize useAVPlayerViewController=_useAVPlayerViewController;
 - (void).cxx_destruct;
-- (void)_setURLFromFPItem;
 - (void)setEditedFileURL:(id)arg1 withSandboxExtension:(id)arg2;
+- (id)saveURL;
+- (void)prepareSaveURL:(CDUnknownBlockType)arg1;
 - (id)shareableURL;
+- (void)prepareShareableURL:(CDUnknownBlockType)arg1;
 @property(readonly) NSString *MIMEType;
 - (_Bool)canBePreviewed;
 - (id)createPreviewContext;
@@ -115,12 +125,15 @@
 - (id)initWithSearchableItemUniqueIdentifier:(id)arg1 applicationBundleIdentifier:(id)arg2;
 - (id)initWithSearchableItemUniqueIdentifier:(id)arg1 queryString:(id)arg2 applicationBundleIdentifier:(id)arg3 previewTitle:(id)arg4;
 - (id)initWithURL:(id)arg1 MIMEType:(id)arg2;
+- (id)initWithURLSandboxWrapper:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithDataProvider:(id)arg1 contentType:(id)arg2 previewTitle:(id)arg3;
 - (id)initWithData:(id)arg1 contentType:(id)arg2 previewTitle:(id)arg3;
 - (id)initWithFPItem:(id)arg1;
 - (id)initWithPreviewItemProvider:(id)arg1 contentType:(id)arg2 previewTitle:(id)arg3 fileSize:(id)arg4;
 - (void)_commonInit;
+@property(readonly, copy, nonatomic) NSString *contentType;
+- (void)provideURLWrapper:(CDUnknownBlockType)arg1;
 - (_Bool)canBePrintedWithCustomPrinter;
 - (struct CGSize)previewSizeForItemViewControllerSize:(struct CGSize)arg1;
 - (unsigned long long)maximumNumberOfCachedPreviews;

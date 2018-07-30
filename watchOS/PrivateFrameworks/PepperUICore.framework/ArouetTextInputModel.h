@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class ArouetLanguageSpec, ArouetTextInputModelChange, NSString;
+@class ArouetLanguageSpec, ArouetTextInputModelChange, NSMutableArray, NSString;
 
 @interface ArouetTextInputModel : NSObject
 {
@@ -17,9 +17,15 @@
     int __activeInputLength;
     ArouetTextInputModelChange *__currentChange;
     int __changesDepth;
+    NSMutableArray *__recentDeletions;
+    int __recentDeletionsLocation;
     struct _NSRange _selectedRange;
+    double __recentDeletionsTimestamp;
 }
 
+@property(nonatomic) double _recentDeletionsTimestamp; // @synthesize _recentDeletionsTimestamp=__recentDeletionsTimestamp;
+@property(nonatomic) int _recentDeletionsLocation; // @synthesize _recentDeletionsLocation=__recentDeletionsLocation;
+@property(readonly, nonatomic) NSMutableArray *_recentDeletions; // @synthesize _recentDeletions=__recentDeletions;
 @property int _changesDepth; // @synthesize _changesDepth=__changesDepth;
 @property(retain, nonatomic) ArouetTextInputModelChange *_currentChange; // @synthesize _currentChange=__currentChange;
 @property(nonatomic, setter=_setActiveInputLength:) int _activeInputLength; // @synthesize _activeInputLength=__activeInputLength;
@@ -29,15 +35,19 @@
 @property(copy, nonatomic, setter=_setInputText:) NSString *inputText; // @synthesize inputText=_inputText;
 @property(readonly, nonatomic) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
 - (void).cxx_destruct;
+- (void)_clearRecentDeletions;
+- (void)_recordRecentDeletionOfRange:(struct _NSRange)arg1 inString:(id)arg2;
 - (void)_performChangesAndNotify:(CDUnknownBlockType)arg1;
 - (void)moveSelectionToRange:(struct _NSRange)arg1;
 - (void)commitActiveRange;
-- (void)updateDisplayTextWithReplacementString:(id)arg1 atInputTextRange:(struct _NSRange)arg2;
-- (void)_replaceInputTextInRange:(struct _NSRange)arg1 withString:(id)arg2 markAsActive:(_Bool)arg3;
-- (void)replaceActiveRangeInInputTextWithString:(id)arg1;
+- (void)insertDisplayTextString:(id)arg1 replacingInputTextRange:(struct _NSRange)arg2;
+- (void)_replaceInputTextInRange:(struct _NSRange)arg1 withString:(id)arg2 markAsActive:(_Bool)arg3 selectionRange:(struct _NSRange)arg4 isInsertion:(_Bool)arg5;
+- (void)insertInputTextString:(id)arg1;
+- (void)replaceInputTextInRange:(struct _NSRange)arg1 withString:(id)arg2 selectionRange:(struct _NSRange)arg3;
 - (void)replaceInputTextInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (void)handleDelete;
 - (void)handleInsertSpace;
+- (id)recentDeletionsAtLocation:(int)arg1;
 @property(readonly, copy, nonatomic) NSString *inputTextCommittedPrefix;
 - (id)initWithLanguageSpec:(id)arg1;
 - (id)init;

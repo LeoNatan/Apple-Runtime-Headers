@@ -10,7 +10,7 @@
 @class NSString;
 
 @protocol INPersonHandleExport <NSObject, JSExport>
-@property(retain) NSString *label;
+@property(copy) NSString *label;
 @property long long type;
 @property(copy) NSString *value;
 - (id)init;

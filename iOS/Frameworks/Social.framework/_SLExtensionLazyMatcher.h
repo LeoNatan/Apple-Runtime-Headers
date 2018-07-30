@@ -13,8 +13,6 @@ __attribute__((visibility("hidden")))
 {
     NSString *_identifier;
     NSExtension *_extension;
-    long long _firstMatchOnceToken;
-    id _matchingContext;
 }
 
 - (void).cxx_destruct;

@@ -6,6 +6,7 @@
 
 #import <Sharing/SFProximityEstimator.h>
 
+__attribute__((visibility("hidden")))
 @interface SFProximityEstimatorMaxOfMean : SFProximityEstimator
 {
     char *_channelNumberArray;

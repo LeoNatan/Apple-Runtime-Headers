@@ -53,8 +53,6 @@
 - (void)removeSearchableItemsForAccount:(id)arg1;
 - (void)addSpotlightTombstones:(id)arg1 type:(long long)arg2;
 - (id)verificationDataSamplesForSearchableIndex:(id)arg1;
-- (id)_verificationDataSamplesForSearchableIndex:(id)arg1 nonLocalAccountClause:(id)arg2;
-- (id)_emailAddressesForVerificationFromLibraryString:(id)arg1;
 - (id)updatesForSearchableIndex:(id)arg1 count:(unsigned long long)arg2;
 - (id)_searchableItemIndexesForDb:(struct sqlite3 *)arg1 indexingType:(long long)arg2 nonLocalAccountsClause:(id)arg3 protectedDataAvailable:(_Bool)arg4 whereClause:(id)arg5 limit:(unsigned long long)arg6;
 - (struct sqlite3_stmt *)_prepareBatchStatement:(struct sqlite3 *)arg1 pattern:(id)arg2 libraryIDs:(unsigned long long *)arg3 batchSize:(unsigned long long)arg4;

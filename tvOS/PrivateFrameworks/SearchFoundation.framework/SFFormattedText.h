@@ -14,7 +14,11 @@
 
 @interface SFFormattedText : SFText <SFFormattedText, NSSecureCoding, NSCopying>
 {
-    CDStruct_87e10b33 _has;
+    struct {
+        unsigned int isEmphasized:1;
+        unsigned int isBold:1;
+        unsigned int textColor:1;
+    } _has;
     _Bool _isEmphasized;
     _Bool _isBold;
     int _textColor;

@@ -17,12 +17,15 @@ __attribute__((visibility("hidden")))
     NSData *_kvsPayload;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)pairWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
 @property(readonly, nonatomic) NSData *kvsPayload; // @synthesize kvsPayload=_kvsPayload;
 @property(readonly, nonatomic) NSString *kvsKey; // @synthesize kvsKey=_kvsKey;
 - (void).cxx_destruct;
 - (double)timestamp;
 - (id)kvsValueDescription;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
 
 // Remaining properties

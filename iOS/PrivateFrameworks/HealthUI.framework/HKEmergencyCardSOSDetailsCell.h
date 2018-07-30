@@ -17,6 +17,8 @@
 
 @property(retain, nonatomic) UITextView *footerTextView; // @synthesize footerTextView=_footerTextView;
 - (void).cxx_destruct;
+- (void)_updateTextColor;
+- (void)tintColorDidChange;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 @property(readonly, nonatomic) NSAttributedString *footerTextViewString;
 - (void)setupConstraints;

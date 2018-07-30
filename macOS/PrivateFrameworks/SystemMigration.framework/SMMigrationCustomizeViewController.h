@@ -48,7 +48,6 @@
     NSLayoutConstraint *_standardTableToTopConstraint;
     NSLayoutConstraint *_standardTableToBottomConstraint;
     CDUnknownBlockType _cancelHandler;
-    CDUnknownBlockType _updateiTunesHandler;
     CDUnknownBlockType _fdeConvertHandler;
     SMMigrationCustomizeEditViewController *_editViewController;
     SMConflictResolutionViewController *_conflictResolutionViewController;
@@ -77,7 +76,6 @@
 @property BOOL collectingPasswords; // @synthesize collectingPasswords=_collectingPasswords;
 @property(copy) CDUnknownBlockType fdeConvertHandler; // @synthesize fdeConvertHandler=_fdeConvertHandler;
 @property BOOL targetCanBecomeFDE; // @synthesize targetCanBecomeFDE=_targetCanBecomeFDE;
-@property(copy) CDUnknownBlockType updateiTunesHandler; // @synthesize updateiTunesHandler=_updateiTunesHandler;
 @property(copy) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
 @property NSLayoutConstraint *standardTableToBottomConstraint; // @synthesize standardTableToBottomConstraint=_standardTableToBottomConstraint;
 @property NSLayoutConstraint *standardTableToTopConstraint; // @synthesize standardTableToTopConstraint=_standardTableToTopConstraint;
@@ -112,7 +110,6 @@
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)destinationSystem;
 - (id)customizeClientForSystem:(id)arg1;
-- (BOOL)shouldUpdateiTunesForSelectedUserCount:(unsigned long long)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)showWindowsUserRelogSheet;
 - (BOOL)sufficientSpaceToMigrate;
@@ -130,6 +127,7 @@
 @property(readonly) NSAttributedString *descriptiveNetSpace;
 - (void)resetState;
 - (void)updateAcceptActionAvailable;
+- (void)setupCommonSystem;
 - (void)setupWindowsSystem;
 - (void)setupMacSystem;
 - (BOOL)setupPasswordCollection;
@@ -145,7 +143,6 @@
 - (void)pressedPasswordButton:(id)arg1;
 - (void)pressedEdit:(id)arg1;
 - (BOOL)pressedBackButton:(id)arg1;
-- (void)_proceedPastUserConflictHandling:(unsigned long long)arg1;
 - (BOOL)pressedSelectButton:(id)arg1;
 - (void)installCustomizeViewInSuperview:(id)arg1;
 - (void)viewDidAppear;

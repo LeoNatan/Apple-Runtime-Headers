@@ -29,7 +29,7 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
-@property(readonly, nonatomic) struct BidirectionalScatteringDistributionFunction *bsdf;
+- (struct BidirectionalScatteringDistributionFunction *)bsdf;
 - (void)removeAllProperties;
 - (void)removeProperty:(id)arg1;
 - (void)setProperty:(id)arg1;
@@ -41,6 +41,8 @@
 - (id)initWithName:(id)arg1 scatteringFunction:(id)arg2;
 - (id)init;
 - (void)loadTexturesUsingResolver:(id)arg1;
+- (void)loadTexturesUsingResolver:(id)arg1 cache:(id)arg2;
+- (void)loadTexturesUsingArchiveAssetResolver:(id)arg1 cache:(id)arg2;
 - (void)resolveTexturesWithResolver:(id)arg1;
 - (void)setScatteringFunction:(id)arg1;
 @property(readonly, retain, nonatomic) MDLScatteringFunction *scatteringFunction;

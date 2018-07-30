@@ -18,7 +18,12 @@
 + (id)allEntriesInManagedObjectContext:(id)arg1;
 + (id)firstEntryWithType:(long long)arg1 albumGUID:(id)arg2 inLibrary:(id)arg3;
 + (id)recentAssetsEntriesInLibrary:(id)arg1 limit:(long long)arg2;
-+ (id)recentEntriesInLibrary:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 limit:(long long)arg4;
++ (id)_recentEntriesInLibrary:(id)arg1 forEntity:(id)arg2 usingPredicate:(id)arg3 earliestDate:(id)arg4 latestDate:(id)arg5 limit:(long long)arg6 sortDescriptors:(id)arg7;
++ (id)recentEntriesInLibrary:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 limit:(long long)arg4 filter:(long long)arg5 sortDescriptors:(id)arg6;
++ (id)entityForFilter:(long long)arg1 inManagedObjectContext:(id)arg2;
++ (id)additionalPrediateForFilter:(long long)arg1;
++ (id)filterPredicateForFilter:(long long)arg1;
++ (id)notificationPredicateForFilter:(long long)arg1;
 + (id)allEntriesInLibrary:(id)arg1;
 + (id)entriesSortDescriptorsAscending:(_Bool)arg1;
 - (_Bool)shouldBeRemovedFromPhotoLibrary:(id)arg1;

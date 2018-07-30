@@ -21,8 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) int streamToken; // @synthesize streamToken=_streamToken;
-- (void)onRtcpEnabledChanged;
-- (void)onRtcpSendIntervalChanged;
+- (double)rtcpHeartbeatLeeway;
+@property(readonly, nonatomic) double lastReceivedRTCPPacketTime;
+@property(readonly, nonatomic) double lastReceivedRTPPacketTime;
+- (void)onRTCPTimeout;
+- (void)onRTPTimeout;
+- (void)onSendRTCPPacket;
 - (void)onResumeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onPauseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStopWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -37,8 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) id <VCTextReceiverDelegate> receiveDelegate;
 - (void)dealloc;
 - (id)init;
-- (void)setupRTPPayloads;
-- (unsigned long)generateStreamToken;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

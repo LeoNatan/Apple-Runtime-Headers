@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "EMAccount.h"
 
 @class MCAuthScheme, MCConnection, NSArray, NSString;
 
-@protocol MCAccount <NSObject>
+@protocol MCAccount <EMAccount>
 + (void)saveAccountInfoToDefaults;
 + (NSString *)accountTypeString;
 @property BOOL usesSSL;
@@ -20,7 +20,6 @@
 @property(readonly, copy) NSString *machineID;
 @property(readonly, copy) NSString *appleAuthenticationToken;
 @property(readonly, copy) NSString *applePersonID;
-@property(copy) NSString *password;
 @property(copy) NSString *username;
 @property(retain) MCAuthScheme *preferredAuthScheme;
 @property(copy) NSString *authenticationScheme;
@@ -28,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSArray *standardSSLPorts;
 @property(readonly, copy, nonatomic) NSArray *standardPorts;
 @property long long portNumber;
-@property(copy) NSString *hostname;
 @property(copy) NSString *canonicalEmailAddress;
 @property BOOL allowInsecureAuthentication;
 @property BOOL configureDynamically;

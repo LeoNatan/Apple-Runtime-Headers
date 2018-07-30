@@ -8,6 +8,7 @@
 
 @class NSMutableArray, TXRTextureInfo;
 
+__attribute__((visibility("hidden")))
 @interface TXRDeferredTextureInfo : NSObject
 {
     TXRTextureInfo *_info;

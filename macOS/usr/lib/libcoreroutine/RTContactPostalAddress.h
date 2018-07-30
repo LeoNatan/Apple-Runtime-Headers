@@ -4,41 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "RTAddress.h"
 
 @class NSString;
 
-@interface RTContactPostalAddress : NSObject
+@interface RTContactPostalAddress : RTAddress
 {
-    NSString *_identifier;
+    NSString *_contactsIdentifier;
     unsigned long long _labelType;
-    NSString *_street;
-    NSString *_subLocality;
-    NSString *_city;
-    NSString *_subAdministrativeArea;
-    NSString *_state;
-    NSString *_postalCode;
-    NSString *_country;
-    NSString *_ISOCountryCode;
 }
 
 + (id)labelTypeToString:(unsigned long long)arg1;
-@property(readonly, nonatomic) NSString *ISOCountryCode; // @synthesize ISOCountryCode=_ISOCountryCode;
-@property(readonly, nonatomic) NSString *country; // @synthesize country=_country;
-@property(readonly, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
-@property(readonly, nonatomic) NSString *state; // @synthesize state=_state;
-@property(readonly, nonatomic) NSString *subAdministrativeArea; // @synthesize subAdministrativeArea=_subAdministrativeArea;
-@property(readonly, nonatomic) NSString *city; // @synthesize city=_city;
-@property(readonly, nonatomic) NSString *subLocality; // @synthesize subLocality=_subLocality;
-@property(readonly, nonatomic) NSString *street; // @synthesize street=_street;
 @property(readonly, nonatomic) unsigned long long labelType; // @synthesize labelType=_labelType;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, copy, nonatomic) NSString *contactsIdentifier; // @synthesize contactsIdentifier=_contactsIdentifier;
 - (void).cxx_destruct;
 - (id)description;
 - (id)geoDictionaryRepresentation;
 - (id)dictionaryRepresentation;
 - (id)initWithIdentifier:(id)arg1 lableType:(unsigned long long)arg2 geoDictionary:(id)arg3;
-- (id)initWithIdentifier:(id)arg1 lableType:(unsigned long long)arg2 street:(id)arg3 subLocality:(id)arg4 city:(id)arg5 subAdministrativeArea:(id)arg6 state:(id)arg7 postalCode:(id)arg8 country:(id)arg9 ISOCountryCode:(id)arg10;
+- (id)initWithIdentifier:(id)arg1 subThoroughfare:(id)arg2 thoroughfare:(id)arg3 subLocality:(id)arg4 locality:(id)arg5 subAdministrativeArea:(id)arg6 administrativeArea:(id)arg7 administrativeAreaCode:(id)arg8 postalCode:(id)arg9 country:(id)arg10 countryCode:(id)arg11 inlandWater:(id)arg12 ocean:(id)arg13 areasOfInterest:(id)arg14 isIsland:(BOOL)arg15 creationDate:(id)arg16 contactsIdentifier:(id)arg17 labelType:(unsigned long long)arg18;
+- (id)initWithIdentifier:(id)arg1 subThoroughfare:(id)arg2 thoroughfare:(id)arg3 subLocality:(id)arg4 locality:(id)arg5 subAdministrativeArea:(id)arg6 administrativeArea:(id)arg7 administrativeAreaCode:(id)arg8 postalCode:(id)arg9 country:(id)arg10 countryCode:(id)arg11 inlandWater:(id)arg12 ocean:(id)arg13 areasOfInterest:(id)arg14 isIsland:(BOOL)arg15 creationDate:(id)arg16;
 - (id)init;
 
 @end

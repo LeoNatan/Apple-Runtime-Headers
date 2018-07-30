@@ -10,15 +10,15 @@
 
 @interface HAPMetadataProperty : HMFObject
 {
+    NSString *_propertyDescription;
     NSString *_propertyType;
     NSNumber *_bitPosition;
-    NSString *_propertyDescription;
 }
 
 + (id)init:(id)arg1 withDictionary:(id)arg2;
-@property(retain, nonatomic) NSString *propertyDescription; // @synthesize propertyDescription=_propertyDescription;
 @property(retain, nonatomic) NSNumber *bitPosition; // @synthesize bitPosition=_bitPosition;
 @property(retain, nonatomic) NSString *propertyType; // @synthesize propertyType=_propertyType;
+@property(copy) NSString *propertyDescription; // @synthesize propertyDescription=_propertyDescription;
 - (void).cxx_destruct;
 - (void)dump;
 - (id)description;

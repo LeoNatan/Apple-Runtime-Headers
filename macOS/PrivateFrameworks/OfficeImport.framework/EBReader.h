@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface EBReader : OCBReader
 {
     NSString *mTemporaryDirectory;
@@ -21,13 +20,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isFileStructuredStorage; // @synthesize isFileStructuredStorage=mIsFileStructuredStorage;
 @property(nonatomic) BOOL useStringOptimization; // @synthesize useStringOptimization=mUseStringOptimization;
 @property(retain, nonatomic) NSString *temporaryDirectory; // @synthesize temporaryDirectory=mTemporaryDirectory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct XlBinaryReader *xlReader;
 - (struct OCCBinaryStreamer *)allocBinaryStreamerWithCryptoKey:(struct OCCCryptoKey *)arg1 baseOutputFilenameInUTF8:(const char *)arg2;
 - (struct OCCEncryptionInfoReader *)encryptionInfoReader;
 - (id)read;
 - (BOOL)start;
 - (void)dealloc;
-- (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (id)initWithCancelDelegate:(id)arg1;
 
 @end
 

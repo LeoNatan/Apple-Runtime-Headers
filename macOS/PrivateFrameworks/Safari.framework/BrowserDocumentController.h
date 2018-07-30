@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canShowUnifiedField;
 - (BOOL)canCreateNewTab;
 - (BOOL)_browserDocumentIsAvailable:(id)arg1 usingWindowPolicy:(long long)arg2;
-- (id)tryMultipleURLs:(unique_ptr_d9da4b2f)arg1 windowPolicy:(long long)arg2 httpReferrer:(id)arg3;
+- (id)tryMultipleURLs:(unique_ptr_aba2cdfe)arg1 windowPolicy:(long long)arg2 httpReferrer:(id)arg3;
 - (void)searchWeb:(id)arg1;
 - (void)toggleHistoryInBookmarksView:(id)arg1;
 - (void)toggleBookmarksEditView:(id)arg1;

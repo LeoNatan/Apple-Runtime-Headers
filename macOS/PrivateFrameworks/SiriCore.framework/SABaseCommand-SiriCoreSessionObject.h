@@ -15,7 +15,7 @@
 - (void)siriCore_setSessionRequestId:(id)arg1;
 - (id)siriCore_requestId;
 - (void)siriCore_logDiagnostics;
-- (BOOL)siriCore_canBeRemapped;
+- (BOOL)siriCore_isProvisional;
 - (BOOL)siriCore_isRestartable;
 - (BOOL)siriCore_isRetryable;
 - (BOOL)siriCore_bufferingAllowedDuringActiveSession;

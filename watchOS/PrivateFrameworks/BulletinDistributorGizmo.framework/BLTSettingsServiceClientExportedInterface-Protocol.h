@@ -5,8 +5,9 @@
 //
 
 #import "BLTSettingsAllowsNotificationsObserver.h"
+#import "BLTSettingsApplicationInfoObserver.h"
 #import "BLTSettingsMuteNotificationsObserver.h"
 
-@protocol BLTSettingsServiceClientExportedInterface <BLTSettingsAllowsNotificationsObserver, BLTSettingsMuteNotificationsObserver>
+@protocol BLTSettingsServiceClientExportedInterface <BLTSettingsAllowsNotificationsObserver, BLTSettingsMuteNotificationsObserver, BLTSettingsApplicationInfoObserver>
 @end
 

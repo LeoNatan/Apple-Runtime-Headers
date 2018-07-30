@@ -59,6 +59,7 @@
 @property(readonly, nonatomic) NSArray *peopleIdentifiers;
 @property(readonly, nonatomic) NSDate *timestamp;
 @property(readonly, nonatomic) _Bool userIsSender;
+- (id)initWithINInteraction:(id)arg1 bundleID:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

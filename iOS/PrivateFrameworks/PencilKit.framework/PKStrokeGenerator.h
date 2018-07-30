@@ -52,7 +52,8 @@
     struct CGAffineTransform _rulerTransform;
 }
 
-+ (vector_58517711)inputPointsFromPath:(struct CGPath *)arg1;
++ (vector_58517711)inputPointsFromPath:(struct CGPath *)arg1 velocityForDistanceFunction:(CDUnknownBlockType)arg2;
++ (vector_58517711)inputPointsFromPoints:(vector_e1abc270)arg1 velocityForDistanceFunction:(CDUnknownBlockType)arg2;
 + (void)initialize;
 @property(nonatomic) double inputScale; // @synthesize inputScale=_inputScale;
 @property double eraserIndicatorAlpha; // @synthesize eraserIndicatorAlpha=_eraserIndicatorAlpha;
@@ -83,10 +84,13 @@
 @property(nonatomic) struct CGAffineTransform rulerTransform; // @synthesize rulerTransform=_rulerTransform;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)strokeFromPath:(struct CGPath *)arg1 ink:(id)arg2 inputScale:(double)arg3;
+- (id)strokeFromPoints:(struct CGPoint *)arg1 count:(unsigned long long)arg2 ink:(id)arg3 inputScale:(double)arg4;
+- (id)strokeFromPath:(struct CGPath *)arg1 ink:(id)arg2 inputScale:(double)arg3 velocityForDistanceFunction:(CDUnknownBlockType)arg4;
+- (id)_strokeFromInputPoints:(vector_58517711 *)arg1 ink:(id)arg2 inputScale:(double)arg3;
 - (void)drawingCancelledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)drawingEndedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_drawingAddPoint:(CDStruct_f17e9403)arg1;
+- (void)closeStroke;
 - (void)addPoint:(CDStruct_f17e9403)arg1;
 - (void)addPoints:(vector_58517711)arg1;
 - (void)removePredictedTouches;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class IDSStunCandidate, NSData, NSObject<OS_dispatch_source>, NSString, NSUUID;
+@class IDSQuickRelaySessionInfo, IDSStunCandidate, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NSUUID;
 
 @interface IDSStunCandidatePair : NSObject
 {
@@ -16,18 +16,36 @@
     IDSStunCandidate *_relayRemote;
     _Bool _isNominated;
     _Bool _isActive;
+    id <IDSStunCandidatePairDelegate> _delegate;
+    CDUnknownBlockType _sendMsgBlock;
     double _lastIncomingPacketTime;
     double _lastOutgoingPacketTime;
     _Bool _hbStarted;
     unsigned short _hbCounter;
+    unsigned char _statsIntervalInSeconds;
     BOOL _linkID;
     NSUUID *_linkUUID;
     NSString *_sessionID;
+    NSString *_groupID;
     NSData *_relaySessionToken;
     NSData *_relaySessionKey;
+    IDSQuickRelaySessionInfo *_relaySessionInfo;
+    NSDictionary *_sessionInfoDict;
     unsigned short _channelNumber;
+    unsigned short _relayLinkID;
     _Bool _isAcceptedRelaySession;
     long long _participantID;
+    unsigned long long _capabilityFlags;
+    unsigned char _protocolVersion;
+    _Bool _isInitiator;
+    _Bool _enableSKE;
+    NSData *_softwareData;
+    NSString *_appName;
+    NSMutableArray *_pendingStunRequests;
+    NSMutableArray *_repliedStunRequests;
+    NSMutableDictionary *_requestIDToQueryLinkIDs;
+    NSMutableDictionary *_requestIDToSessionInfoReqType;
+    NSMutableDictionary *_stunSentBytesToRequestID;
     NSUUID *_defaultLocalDeviceCBUUID;
     NSUUID *_defaultRemoteDeviceCBUUID;
     long long _relayProviderType;
@@ -35,7 +53,7 @@
     double _allocateTime;
     double _selfAllocateStartTime;
     double _serverLatency;
-    double _echoRequestStartTime;
+    unsigned int _sessionInfoReqCount;
     _Bool _recvSKEData;
     _Bool _sentSKEData;
     NSData *_skeData;
@@ -43,24 +61,54 @@
     CDUnknownBlockType _sessionConnectedTimeoutBlock;
     NSObject<OS_dispatch_source> *_sessionConvergenceTimer;
     CDUnknownBlockType _sessionConvergenceBlock;
+    NSObject<OS_dispatch_source> *_sessionGoAwayTimer;
+    CDUnknownBlockType _sessionGoAwayBlock;
     _Bool _pendingRealloc;
     NSObject<OS_dispatch_source> *_reallocTimer;
     _Bool _recvDisconnected;
     _Bool _recvDisconnectedAck;
+    NSData *_encKey;
+    NSData *_decKey;
+    NSData *_hmacKey;
+    NSDictionary *_participantIDMap;
+    _Bool _serverIsDegraded;
+    double _testStartTime;
+    unsigned int _testOptions;
+    _Bool _isDisconnecting;
 }
 
-+ (id)candidatePairWithLocalCandidate:(id)arg1 remoteCandidate:(id)arg2 sessionID:(id)arg3;
++ (id)candidatePairWithLocalCandidate:(id)arg1 remoteCandidate:(id)arg2 sessionID:(id)arg3 delegate:(id)arg4 sendMsgBlock:(CDUnknownBlockType)arg5;
+@property(readonly, nonatomic) _Bool serverIsDegraded; // @synthesize serverIsDegraded=_serverIsDegraded;
+@property(readonly) NSDictionary *participantIDMap; // @synthesize participantIDMap=_participantIDMap;
+@property(readonly) NSData *hmacKey; // @synthesize hmacKey=_hmacKey;
+@property(readonly) NSData *decKey; // @synthesize decKey=_decKey;
+@property(readonly) NSData *encKey; // @synthesize encKey=_encKey;
 @property(nonatomic) _Bool sentSKEData; // @synthesize sentSKEData=_sentSKEData;
 @property(nonatomic) _Bool recvSKEData; // @synthesize recvSKEData=_recvSKEData;
+@property(readonly, nonatomic) unsigned int sessionInfoReqCount; // @synthesize sessionInfoReqCount=_sessionInfoReqCount;
+@property(copy) NSString *groupID; // @synthesize groupID=_groupID;
+@property(readonly) NSMutableArray *repliedStunRequests; // @synthesize repliedStunRequests=_repliedStunRequests;
+@property(readonly) NSMutableArray *pendingStunRequests; // @synthesize pendingStunRequests=_pendingStunRequests;
+@property(readonly) NSString *appName; // @synthesize appName=_appName;
+@property(readonly) NSData *softwareData; // @synthesize softwareData=_softwareData;
+@property(readonly, nonatomic) _Bool enableSKE; // @synthesize enableSKE=_enableSKE;
+@property(readonly, nonatomic) _Bool isInitiator; // @synthesize isInitiator=_isInitiator;
+@property(readonly, nonatomic) unsigned char protocolVersion; // @synthesize protocolVersion=_protocolVersion;
+@property(readonly, nonatomic) unsigned long long capabilityFlags; // @synthesize capabilityFlags=_capabilityFlags;
+@property(readonly, nonatomic) unsigned short relayLinkID; // @synthesize relayLinkID=_relayLinkID;
 @property(nonatomic) unsigned short channelNumber; // @synthesize channelNumber=_channelNumber;
+@property(readonly) NSDictionary *sessionInfoDict; // @synthesize sessionInfoDict=_sessionInfoDict;
+@property(readonly) IDSQuickRelaySessionInfo *relaySessionInfo; // @synthesize relaySessionInfo=_relaySessionInfo;
 @property(copy) NSUUID *linkUUID; // @synthesize linkUUID=_linkUUID;
+@property(readonly, nonatomic) unsigned char statsIntervalInSeconds; // @synthesize statsIntervalInSeconds=_statsIntervalInSeconds;
 @property(nonatomic) double lastOutgoingPacketTime; // @synthesize lastOutgoingPacketTime=_lastOutgoingPacketTime;
 @property(nonatomic) double lastIncomingPacketTime; // @synthesize lastIncomingPacketTime=_lastIncomingPacketTime;
+@property(nonatomic) _Bool isDisconnecting; // @synthesize isDisconnecting=_isDisconnecting;
+@property(readonly, nonatomic) double testStartTime; // @synthesize testStartTime=_testStartTime;
 @property(copy) NSData *skeData; // @synthesize skeData=_skeData;
 @property(nonatomic) _Bool recvDisconnectedAck; // @synthesize recvDisconnectedAck=_recvDisconnectedAck;
 @property(nonatomic) _Bool recvDisconnected; // @synthesize recvDisconnected=_recvDisconnected;
 @property(nonatomic) _Bool pendingRealloc; // @synthesize pendingRealloc=_pendingRealloc;
-@property(nonatomic) double echoRequestStartTime; // @synthesize echoRequestStartTime=_echoRequestStartTime;
 @property(nonatomic) double serverLatency; // @synthesize serverLatency=_serverLatency;
 @property(nonatomic) double selfAllocateStartTime; // @synthesize selfAllocateStartTime=_selfAllocateStartTime;
 @property(nonatomic) double allocateTime; // @synthesize allocateTime=_allocateTime;
@@ -70,8 +118,8 @@
 @property(copy) NSUUID *defaultLocalDeviceCBUUID; // @synthesize defaultLocalDeviceCBUUID=_defaultLocalDeviceCBUUID;
 @property(nonatomic) long long participantID; // @synthesize participantID=_participantID;
 @property(nonatomic) _Bool isAcceptedRelaySession; // @synthesize isAcceptedRelaySession=_isAcceptedRelaySession;
-@property(copy) NSData *relaySessionKey; // @synthesize relaySessionKey=_relaySessionKey;
-@property(copy) NSData *relaySessionToken; // @synthesize relaySessionToken=_relaySessionToken;
+@property(readonly) NSData *relaySessionKey; // @synthesize relaySessionKey=_relaySessionKey;
+@property(readonly) NSData *relaySessionToken; // @synthesize relaySessionToken=_relaySessionToken;
 @property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) _Bool hbStarted; // @synthesize hbStarted=_hbStarted;
 @property(nonatomic) BOOL linkID; // @synthesize linkID=_linkID;
@@ -82,7 +130,38 @@
 @property(readonly) IDSStunCandidate *local; // @synthesize local=_local;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (void)_notifyQREventAdded:(id)arg1;
+- (void)_notifySessionStreamInfoReceived:(id)arg1 withParticipants:(id)arg2 sentBytes:(unsigned long long)arg3 receivedBytes:(unsigned long long)arg4 offlineRequest:(_Bool)arg5 streamInfoRequest:(_Bool)arg6 success:(_Bool)arg7;
+- (void)processSessionInfoRequestTimeout:(id)arg1;
+- (_Bool)processStunErrorResponse:(id)arg1 packetBuffer:(CDStruct_c4cff10b *)arg2 headerOverhead:(unsigned long long)arg3;
+- (_Bool)processSessionInfoIndication:(id)arg1 arrivalTime:(double)arg2;
+- (_Bool)processInfoIndication:(id)arg1 arrivalTime:(double)arg2;
+- (_Bool)processTestResponse:(id)arg1 arrivalTime:(double)arg2;
+- (_Bool)processSessionInfoResponse:(id)arg1 packetBuffer:(CDStruct_c4cff10b *)arg2 headerOverhead:(unsigned long long)arg3;
+- (_Bool)processInfoResponse:(id)arg1 packetBuffer:(CDStruct_c4cff10b *)arg2 headerOverhead:(unsigned long long)arg3;
+- (_Bool)processStatsResponse:(id)arg1 arrivalTime:(double)arg2;
+- (void)sendTestRequest:(id)arg1;
+- (void)sendSessionInfoRequest:(id)arg1 options:(id)arg2;
+- (void)sendInfoRequest:(id)arg1;
+- (void)sendStatsRequest:(id)arg1 options:(id)arg2;
+- (unsigned long long)getStunSentBytes:(id)arg1;
+- (void)updateStunSentBytes:(long long)arg1 requestID:(id)arg2;
+- (_Bool)shouldProcessStunResponse:(id)arg1;
+- (_Bool)shouldRexmitStunRequest:(id)arg1;
+- (void)removeStunRequest:(id)arg1;
+- (void)addStunRequest:(id)arg1;
+- (id)processParticipantsData:(char *)arg1 dataLen:(int)arg2;
+- (void)initParticipantIDMap;
+- (void)deriveAES128CTRKeys:(id)arg1;
+- (void)setProtocolVersion:(unsigned char)arg1 isInitiator:(_Bool)arg2 enableSKE:(_Bool)arg3;
+- (void)setRelayLinkID:(unsigned short)arg1;
+- (_Bool)hasValidCapabilityFlags;
+- (void)setTestOptionsFromUserDefaults;
+- (void)setChannelSettings:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned short hbCounter; // @synthesize hbCounter=_hbCounter;
+- (void)stopSessionGoAwayTimer;
+- (void)startSessionGoAwayTimer:(int)arg1 block:(CDUnknownBlockType)arg2;
+- (void)_handleSessionGoAwayTimer;
 - (void)stopSessionConvergenceTimer;
 - (void)startSessionConvergenceTimer:(int)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_handleSessionConvergenceTimer;
@@ -93,13 +172,19 @@
 - (void)_startReallocTimer;
 - (void)_handleReallocTimer;
 - (void)synthesizeNat64WithPrefix;
+- (unsigned int)nextSessionInfoReqID;
+- (void)setPropertiesWithReallocCandidatePair:(id)arg1 reallocToken:(id)arg2;
+- (void)setPropertiesWithRelaySessionInfo:(id)arg1 sessionInfoDict:(id)arg2 enableSKE:(_Bool)arg3;
+- (_Bool)isSelfQRSession;
 - (_Bool)isSharedQRSession;
+- (_Bool)isValidRelayStunCandidatePair;
 - (_Bool)isRelayStunCandidatePair;
 - (_Bool)isEqual:(id)arg1;
 - (id)candidatePairToken;
 - (id)description;
+- (void)invalidate;
 - (void)dealloc;
-- (id)initWithLocalCandidate:(id)arg1 remoteCandidate:(id)arg2 sessionID:(id)arg3;
+- (id)initWithLocalCandidate:(id)arg1 remoteCandidate:(id)arg2 sessionID:(id)arg3 delegate:(id)arg4 sendMsgBlock:(CDUnknownBlockType)arg5;
 
 @end
 

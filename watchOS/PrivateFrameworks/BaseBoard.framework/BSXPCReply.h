@@ -16,11 +16,11 @@
 
 + (id)messageWithReply:(id)arg1;
 + (id)replyForMessage:(id)arg1;
+- (void).cxx_destruct;
 - (id)message;
 - (long long)messageKind;
 - (id)initWithReply:(id)arg1;
 - (void)sendReply:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)initForMessage:(id)arg1;
 - (id)_initWithReply:(id)arg1;
 

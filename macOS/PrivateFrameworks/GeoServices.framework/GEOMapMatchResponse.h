@@ -10,6 +10,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface GEOMapMatchResponse : PBCodable <NSCopying>
 {
     int _matchingStatus;

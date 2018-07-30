@@ -28,12 +28,14 @@
     NSHashTable *_weakObservers;
     NSMutableDictionary *_monitoredDispatchSourcesByURL;
     _Bool _useVoiceMemoSettings;
+    _Bool _didJumpTime;
     AVPlayerItem *_AVPlayerItem;
     double _currentTimeDelegateUpdateRate;
     RCAVPlayer *_AVPlayer;
     RCAVState *_AVState;
 }
 
+@property(nonatomic) _Bool didJumpTime; // @synthesize didJumpTime=_didJumpTime;
 @property(retain, nonatomic) RCAVState *AVState; // @synthesize AVState=_AVState;
 @property(readonly, nonatomic) RCAVPlayer *AVPlayer; // @synthesize AVPlayer=_AVPlayer;
 @property(nonatomic) _Bool useVoiceMemoSettings; // @synthesize useVoiceMemoSettings=_useVoiceMemoSettings;
@@ -44,6 +46,7 @@
 - (void)_audioRouteControllerWillDeactivateAudioSessionNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_postDelegateJumpTimeUpdate;
 - (void)_postDelegateCurrentTimeUpdate;
 - (void)_postDelegateDidBeginPlaybackWithRate:(float)arg1;
 - (void)_playbackUsageStatisticsPrepareForPlaybackContextName:(id)arg1;
@@ -64,6 +67,7 @@
 - (void)_playerCurrentRateDidChangeToRate:(float)arg1 hadPlaybackItem:(_Bool)arg2;
 - (void)playerCurrentItemDidBecomeReadyToPlay:(id)arg1;
 - (void)playerDidBecomeInvalid:(id)arg1;
+- (void)sendCurrentTimeUpdates;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 @property(readonly, nonatomic) float rate;
@@ -71,6 +75,8 @@
 @property(nonatomic) double currentTime;
 @property(nonatomic) CDStruct_73a5d3ca playableTimeRange;
 - (void)stop;
+- (void)endScrubbing;
+- (void)beginScrubbing;
 - (void)pause;
 - (void)playWithTimeRange:(CDStruct_73a5d3ca)arg1 startTime:(double)arg2 playbackContextName:(id)arg3;
 - (void)_endActivePreviewRouteAssertion;

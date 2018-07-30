@@ -24,10 +24,12 @@
 
 + (id)_itemInStatusBar:(id)arg1 withLength:(double)arg2 withPriority:(long long)arg3 systemInsertOrder:(long long)arg4;
 + (void)_statusItems:(id)arg1 setHidden:(BOOL)arg2;
+- (void)setAllowsVibrancy:(BOOL)arg1;
+- (BOOL)allowsVibrancy;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (BOOL)_allowReplication;
-- (void)_windowDidFlush:(id)arg1;
+- (void)_windowNeedsReplicantUpdate:(id)arg1;
 - (void)_enableStatusItemImageReplication;
 - (void)_disableStatusItemImageReplication;
 - (void)_updateReplicantsUnlessMenuIsTracking:(id)arg1;
@@ -49,6 +51,7 @@
 - (void)_rawSetDisplayIdentifier:(id)arg1;
 - (void)_updateReplicants;
 - (BOOL)_drawingReplicantView;
+- (void)_recursiveSetNeedsDisplayWithoutDirtyingReplicantForView:(id)arg1;
 - (void)_updateReplicant:(id)arg1;
 - (void)_removeReplicantForKey:(id)arg1;
 - (void)_setBackgroundStyle:(long long)arg1;

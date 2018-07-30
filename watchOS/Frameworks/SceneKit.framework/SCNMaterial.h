@@ -73,6 +73,8 @@
 - (void)handleBindingOfSymbol:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)shaderModifiersArgumentsNames;
 @property(copy, nonatomic) NSDictionary *shaderModifiers;
+- (void)copyShaderModifiersFrom:(id)arg1;
+- (id)__shadableHelper;
 - (void)_setupShadableHelperIfNeeded;
 - (id)customMaterialAttributes;
 - (id)customMaterialAttributeNames;
@@ -85,6 +87,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_copyAttributes:(id)arg1;
 - (void)_setAttributes:(id)arg1;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;

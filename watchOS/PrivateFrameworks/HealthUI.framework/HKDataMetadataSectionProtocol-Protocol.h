@@ -7,9 +7,11 @@
 @class NSString, UINavigationController, UITableView, UITableViewCell;
 
 @protocol HKDataMetadataSectionProtocol
+- (void)willDisplayCell:(UITableViewCell *)arg1 forIndex:(unsigned int)arg2 tableView:(UITableView *)arg3;
 - (void)selectCellForIndex:(unsigned int)arg1 navigationController:(UINavigationController *)arg2 animated:(_Bool)arg3;
 - (UITableViewCell *)cellForIndex:(unsigned int)arg1 tableView:(UITableView *)arg2;
 - (unsigned int)numberOfRowsInSection;
+- (NSString *)sectionFooter;
 - (NSString *)sectionTitle;
 @end
 

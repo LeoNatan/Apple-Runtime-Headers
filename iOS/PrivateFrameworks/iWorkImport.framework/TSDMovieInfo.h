@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     float mVolume;
     _Bool mAudioOnly;
     _Bool mStreaming;
+    _Bool mNativeAudioRecording;
     TSDMediaStyle *mStyle;
 }
 
@@ -64,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)animationFilters;
+@property(readonly, nonatomic) _Bool supportsLoopingBackAndForth;
 @property(readonly, nonatomic) _Bool supportsLooping;
 @property(readonly, nonatomic) _Bool supportsStartTimeAndEndTime;
 - (_Bool)isAllowedInGroups;
@@ -72,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (Class)layoutClass;
 - (Class)styleClass;
 - (void)p_setPropertiesFromLoadedAsset:(id)arg1;
+- (_Bool)canBeMediaPlaceholder;
 - (_Bool)canResetMediaSize;
 - (struct CGSize)rawDataSize;
 - (id)styleIdentifierTemplateForNewPreset;
@@ -85,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 movieData:(id)arg4 loadedAsset:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
+@property(nonatomic, getter=isNativeAudioRecording) _Bool nativeAudioRecording;
 @property(nonatomic, getter=isAudioOnly) _Bool audioOnly;
 @property(nonatomic) float volume;
 @property(nonatomic) double posterTime;

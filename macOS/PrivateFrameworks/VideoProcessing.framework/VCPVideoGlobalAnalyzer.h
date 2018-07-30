@@ -22,7 +22,7 @@
 - (float)assetExpressionScoreFromAnalysis:(id)arg1;
 - (float)assetActionScoreFromAnalysis:(id)arg1;
 - (float)assetQualityScoreFromAnalysis:(id)arg1 withFpsRate:(float)arg2;
-- (int)generateLivePhotoRecommendationForResults:(id)arg1 andPrivateResults:(id)arg2;
+- (int)generateLivePhotoRecommendationForResults:(id)arg1 andPrivateResults:(id)arg2 usingFaceAction:(BOOL)arg3;
 - (float)analyzeOverallQuality:(id)arg1 withFpsRate:(float)arg2;
 
 @end

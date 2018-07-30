@@ -6,21 +6,32 @@
 
 #import "NSTableCellView.h"
 
-@class NSMutableArray, NSTextField, NSView;
+@class CNAutocompleteSeparatorView, NSArray, NSString, NSTextField;
 
 @interface CNAutocompleteHeaderView : NSTableCellView
 {
+    BOOL _showDividerLine;
+    NSString *_labelString;
     NSTextField *_label;
-    NSView *_dividerLine;
-    NSMutableArray *_headerConstraints;
+    NSArray *_headerConstraints;
+    CNAutocompleteSeparatorView *_dividerLine;
 }
 
-@property(retain) NSMutableArray *headerConstraints; // @synthesize headerConstraints=_headerConstraints;
-@property(retain) NSView *dividerLine; // @synthesize dividerLine=_dividerLine;
++ (id)label;
+@property(readonly, nonatomic) CNAutocompleteSeparatorView *dividerLine; // @synthesize dividerLine=_dividerLine;
+@property(retain, nonatomic) NSArray *headerConstraints; // @synthesize headerConstraints=_headerConstraints;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
+@property(nonatomic) NSString *labelString; // @synthesize labelString=_labelString;
+@property(nonatomic) BOOL showDividerLine; // @synthesize showDividerLine=_showDividerLine;
 - (void).cxx_destruct;
-- (void)setLabelString:(id)arg1;
 - (void)showDividerLine:(BOOL)arg1;
+- (id)viewsByName;
+- (id)constraintsForInvisibleLabelAndInvisibleDividerLine;
+- (id)constraintsForInvisibleLabelAndVisibleDividerLine;
+- (id)constraintsForVisibleLabelAndInvisibleDividerLine;
+- (id)constraintsForVisibleLabelAndVisibleDividerLine;
+- (id)constraintsForInvisibleLabel;
+- (id)constraintsForVisibleLabel;
 - (void)updateHeaderConstraints;
 - (id)init;
 - (id)initWithLabelString:(id)arg1 showsDividerLine:(BOOL)arg2;

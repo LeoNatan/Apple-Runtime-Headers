@@ -27,6 +27,7 @@
     NSView *_titleSeparatorView;
     NSView *_mapViewContainer;
     SOMapViewController *_mapViewController;
+    NSStackView *_multiwayButtonsAndGroupNameContainer;
     NSView *_participantLabelContainer;
     NSTextField *_participantLabel;
     NSTableView *_participantTableView;
@@ -69,6 +70,7 @@
 @property(retain) NSTableView *participantTableView; // @synthesize participantTableView=_participantTableView;
 @property(retain) NSTextField *participantLabel; // @synthesize participantLabel=_participantLabel;
 @property(retain) NSView *participantLabelContainer; // @synthesize participantLabelContainer=_participantLabelContainer;
+@property(retain) NSStackView *multiwayButtonsAndGroupNameContainer; // @synthesize multiwayButtonsAndGroupNameContainer=_multiwayButtonsAndGroupNameContainer;
 @property(retain) SOMapViewController *mapViewController; // @synthesize mapViewController=_mapViewController;
 @property(retain) NSView *mapViewContainer; // @synthesize mapViewContainer=_mapViewContainer;
 @property(retain) NSView *titleSeparatorView; // @synthesize titleSeparatorView=_titleSeparatorView;
@@ -131,6 +133,9 @@
 - (void)muteUnmute:(id)arg1;
 - (void)leaveChat:(id)arg1;
 - (void)titleTextFieldDidEndEditing:(id)arg1;
+- (void)startAudioMultiwayCall:(id)arg1;
+- (void)startFaceTimeMultiwayCall:(id)arg1;
+- (void)_callButtonPressedWithVideo:(BOOL)arg1;
 - (BOOL)hasUncachedImageAttachmentsForTabViewController:(id)arg1;
 - (void)attachmentsTabViewController:(id)arg1 viewDidChangeAfterUpdatingAttachments:(BOOL)arg2;
 - (void)_updateShowAttachmentsGrid;

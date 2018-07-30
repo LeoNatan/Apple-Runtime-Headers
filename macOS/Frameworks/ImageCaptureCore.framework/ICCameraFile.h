@@ -13,6 +13,7 @@
     id _fileProperties;
 }
 
+- (id)mediaData;
 - (BOOL)isJPEG;
 - (BOOL)isData;
 - (BOOL)isImage;
@@ -46,11 +47,20 @@
 - (id)thumbnailData;
 - (struct CGImage *)largeThumbnailIfAvailable;
 - (struct CGImage *)thumbnailIfAvailable;
+- (void)requestMetadata;
+- (void)requestThumbnail;
+- (void)requestMetadataWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestThumbnailWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestMetadataWithOptions:(id)arg1;
+- (void)requestThumbnailWithOptions:(id)arg1;
 - (BOOL)handleCommandCompletion:(id)arg1;
+- (void)setFetchHiResThumbnail:(struct CGImage *)arg1;
 @property(readonly) NSArray *sidecarFiles;
 - (void)addSidecarFile:(id)arg1;
 @property unsigned long long orientation;
 @property(readonly) NSString *mediaBase;
+- (unsigned long long)uTime;
+- (unsigned long long)oUUID;
 @property BOOL wasDownloaded;
 @property(retain) id downloadDelegate;
 @property BOOL fetchingMetadata;
@@ -81,11 +91,13 @@
 @property(readonly) long long height;
 @property(readonly) long long width;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)debugMediaMetadata;
 - (id)debugIdentity;
 - (id)initWithDictionary:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
+- (unsigned long long)unsignedLongLongValue;
+- (long long)compareDate:(id)arg1;
+- (long long)compareUUID:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

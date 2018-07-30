@@ -45,7 +45,6 @@
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
-- (void)updateTrackingAreas;
 - (void)viewDidMoveToWindow;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;

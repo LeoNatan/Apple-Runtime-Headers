@@ -12,14 +12,21 @@
     double _elapsedTime;
 }
 
++ (id)_extraLargeStopwatchImageProvider;
++ (id)_circularMediumStopwatchImageProvider;
++ (id)_colorAnalogStopwatchImageProvider;
++ (id)_analogStopwatchImageProvider;
++ (id)_modularSmallImageProvider;
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (id)_createLargeUtilityTemplate;
-- (id)_createSmallUtilityTemplate;
-- (id)_createColorTemplate;
-- (id)_createLargeModularTemplate;
-- (id)_createSmallModularTemplate;
-- (id)_stopwatchTimeTextProvider:(_Bool)arg1 twoUnitHeuristic:(_Bool)arg2;
+- (id)_stopwatchTimeTextProviderWithSubseconds:(_Bool)arg1;
+- (id)_newExtraLargeTemplate;
+- (id)_newLargeUtilityTemplate;
+- (id)_newSmallUtilityTemplate;
+- (id)_newCircularMediumTemplate;
+- (id)_newCircularSmallTemplate;
+- (id)_newLargeModularTemplate;
+- (id)_newSmallModularTemplate;
 - (id)templateForComplicationFamily:(int)arg1;
 
 @end

@@ -11,6 +11,7 @@
 
 @class CPShape;
 
+__attribute__((visibility("hidden")))
 @interface CPZoneBorderNeighbor : NSObject <NSCopying, CPCopying>
 {
     CPShape *neighborShape;

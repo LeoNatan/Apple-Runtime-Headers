@@ -7,13 +7,14 @@
 #import <IMAP/IMAPTask.h>
 
 #import "IMAPGetAttachmentsDownloadsOperationDelegate.h"
+#import "IMAPGetMessagesOperationDelegate.h"
 #import "IMAPPersistBodiesOperationDelegate.h"
 #import "IMAPSyncAttachmentsOperationDelegate.h"
 #import "IMAPSyncBodiesOperationDelegate.h"
 
 @class IMAPDownloadCache, IMAPSyncBodiesOperation, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableSet, NSString;
 
-@interface IMAPBodyFetchTask : IMAPTask <IMAPSyncBodiesOperationDelegate, IMAPPersistBodiesOperationDelegate, IMAPGetAttachmentsDownloadsOperationDelegate, IMAPSyncAttachmentsOperationDelegate>
+@interface IMAPBodyFetchTask : IMAPTask <IMAPGetMessagesOperationDelegate, IMAPSyncBodiesOperationDelegate, IMAPPersistBodiesOperationDelegate, IMAPGetAttachmentsDownloadsOperationDelegate, IMAPSyncAttachmentsOperationDelegate>
 {
     NSMutableIndexSet *_mandatoryUIDsToFetch;
     NSMutableIndexSet *_discretionaryUIDsToFetch;
@@ -34,6 +35,7 @@
     BOOL _needToCheckForIncompleteMessages;
     BOOL _checkingForIncompleteMessages;
     BOOL _persistingMessages;
+    BOOL _gettingMessagesToFetch;
     BOOL _dataSourceIsInboxOrAllMail;
     unsigned int _uidNext;
     id <IMAPMessageDataSource> _dataSource;
@@ -41,8 +43,10 @@
     IMAPSyncBodiesOperation *_userRequestedSyncBodiesOperation;
 }
 
++ (id)signpostLog;
 @property(readonly, nonatomic) BOOL dataSourceIsInboxOrAllMail; // @synthesize dataSourceIsInboxOrAllMail=_dataSourceIsInboxOrAllMail;
 @property(retain, nonatomic) IMAPSyncBodiesOperation *userRequestedSyncBodiesOperation; // @synthesize userRequestedSyncBodiesOperation=_userRequestedSyncBodiesOperation;
+@property(nonatomic) BOOL gettingMessagesToFetch; // @synthesize gettingMessagesToFetch=_gettingMessagesToFetch;
 @property(nonatomic) BOOL persistingMessages; // @synthesize persistingMessages=_persistingMessages;
 @property(nonatomic) BOOL checkingForIncompleteMessages; // @synthesize checkingForIncompleteMessages=_checkingForIncompleteMessages;
 @property(retain, nonatomic) IMAPDownloadCache *downloadCache; // @synthesize downloadCache=_downloadCache;
@@ -50,13 +54,20 @@
 @property(nonatomic) unsigned int uidNext; // @synthesize uidNext=_uidNext;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long signpostID;
 - (void)syncAttachmentsOperation:(id)arg1 syncedAttachmentsForDownloads:(id)arg2;
 - (void)getAttachmentsDownloadsOperation:(id)arg1 gotDownloads:(id)arg2 missedMessages:(id)arg3;
 - (void)persistBodiesOperation:(id)arg1 persistedDownloads:(id)arg2;
 - (void)syncBodiesOperation:(id)arg1 syncedBodiesForMessages:(id)arg2 downloadsToPersist:(id)arg3 messagesNeedingAttachments:(id)arg4;
+- (void)getMessagesOperation:(id)arg1 gotMessages:(id)arg2;
+- (void)end;
 - (void)operationFinished:(id)arg1;
+- (long long)_priorityOfUIDsToGet;
+- (unsigned long long)_numberOfUIDsToFetch;
 - (void)recalculatePriorities;
+- (id)_uidsOfMessagesToGet;
 - (id)nextPersistenceOperation;
+- (long long)_nextBatchPriorityDeferDiscretionaryWork:(BOOL)arg1;
 - (long long)_nextNetworkPriorityAndOperation:(id *)arg1;
 - (id)nextNetworkOperation;
 - (void)removeUIDs:(id)arg1;
@@ -68,6 +79,7 @@
 - (void)cancel;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (id)mailboxNameWithoutPII;
 - (id)initWithMailboxName:(id)arg1;
 - (id)initWithDataSource:(id)arg1;
 

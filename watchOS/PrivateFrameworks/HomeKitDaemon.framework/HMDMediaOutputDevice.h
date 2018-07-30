@@ -6,17 +6,15 @@
 
 #import "HMFObject.h"
 
-@class NSString;
+@class AVOutputDevice, NSString;
 
 @interface HMDMediaOutputDevice : HMFObject
 {
     void *_outputDevice;
     NSString *_uniqueIdentifier;
     NSString *_name;
-    NSString *_modelID;
 }
 
-@property(readonly, nonatomic) NSString *modelID; // @synthesize modelID=_modelID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(nonatomic) void *outputDevice; // @synthesize outputDevice=_outputDevice;
@@ -26,10 +24,11 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
-@property(readonly, nonatomic) unsigned int deviceType;
-@property(readonly, nonatomic, getter=isRemoteControllable) _Bool remoteControllable;
-@property(readonly, nonatomic, getter=isGroupable) _Bool groupable;
+@property(readonly, nonatomic) _Bool supportsWHA;
+@property(readonly, nonatomic) NSString *modelID;
+@property(readonly, nonatomic) unsigned int deviceSubtype;
 - (id)initWithOutputDevice:(void *)arg1;
+@property(readonly) AVOutputDevice *av_OutputDevice;
 
 @end
 

@@ -71,6 +71,7 @@
 - (id)protocolForParameters:(id)arg1;
 - (_Bool)isIsAlwaysOn;
 @property(copy) NSArray *onDemandRules;
+@property(nonatomic) _Bool disconnectOnDemandEnabled;
 @property _Bool onDemandEnabled;
 @property _Bool enabled;
 - (void)dealloc;

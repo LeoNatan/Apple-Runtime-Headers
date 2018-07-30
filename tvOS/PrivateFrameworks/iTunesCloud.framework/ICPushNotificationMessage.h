@@ -13,8 +13,10 @@
     NSDictionary *_userInfo;
     NSNumber *_accountDSID;
     long long _actionType;
+    NSDictionary *_apsPayload;
 }
 
+@property(readonly, copy, nonatomic) NSDictionary *apsPayload; // @synthesize apsPayload=_apsPayload;
 @property(readonly, nonatomic) long long actionType; // @synthesize actionType=_actionType;
 @property(readonly, copy, nonatomic) NSNumber *accountDSID; // @synthesize accountDSID=_accountDSID;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;

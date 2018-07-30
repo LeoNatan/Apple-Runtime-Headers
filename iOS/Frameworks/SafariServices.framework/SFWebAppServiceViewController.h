@@ -8,7 +8,7 @@
 
 #import "SFWebAppServiceViewControllerProtocol.h"
 
-@class NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore;
+@class BKSApplicationStateMonitor, NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore;
 
 __attribute__((visibility("hidden")))
 @interface SFWebAppServiceViewController : SFBrowserServiceViewController <SFWebAppServiceViewControllerProtocol>
@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     WKProcessPool *_processPool;
     WKWebsiteDataStore *_websiteDataStore;
     NSMutableArray *_fallbackURLs;
+    BKSApplicationStateMonitor *_stateMonitor;
+    unsigned int _hostState;
 }
 
 + (id)_exportedInterface;
@@ -25,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_loadNextFallbackURL;
 - (void)_loadWebClipPageURL:(id)arg1;
+- (void)_handleHostStateUpdate:(id)arg1;
 - (void)loadWebAppWithIdentifier:(id)arg1;
 - (unsigned long long)_persona;
 - (void)_initialLoadFinishedWithSuccess:(_Bool)arg1;
@@ -46,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsStatusBarAppearanceUpdate;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (_Bool)_clientIsWebApp;
 
 // Remaining properties

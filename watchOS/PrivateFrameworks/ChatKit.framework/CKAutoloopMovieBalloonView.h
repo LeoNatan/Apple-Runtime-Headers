@@ -6,9 +6,11 @@
 
 #import <ChatKit/CKImageBalloonView.h>
 
-@class CKMovieMediaObject, ISVideoPlayerUIView, ISWrappedAVAudioSession, ISWrappedAVPlayer, UIImageView, UIView;
+#import "ISChangeObserver.h"
 
-@interface CKAutoloopMovieBalloonView : CKImageBalloonView
+@class CKMovieMediaObject, ISVideoPlayerUIView, ISWrappedAVAudioSession, ISWrappedAVPlayer, NSString, UIView;
+
+@interface CKAutoloopMovieBalloonView : CKImageBalloonView <ISChangeObserver>
 {
     _Bool _isJellyfishVideo;
     _Bool _isMuted;
@@ -16,23 +18,27 @@
     ISVideoPlayerUIView *_videoPlayer;
     ISWrappedAVPlayer *_avPlayer;
     ISWrappedAVAudioSession *_audioSession;
-    UIImageView *_muteButton;
     UIView *_snapshotView;
+    float _playbackRateWhenPlayerIsReady;
 }
 
 + (id)_autoloopAVAudioSessionQueue;
 + (_Bool)isEnabled;
 + (Class)VideoPlayerUIViewClass;
 + (Class)AVPlayerClass;
+@property(nonatomic) float playbackRateWhenPlayerIsReady; // @synthesize playbackRateWhenPlayerIsReady=_playbackRateWhenPlayerIsReady;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(nonatomic) _Bool isMuted; // @synthesize isMuted=_isMuted;
-@property(retain, nonatomic) UIImageView *muteButton; // @synthesize muteButton=_muteButton;
 @property(retain, nonatomic) ISWrappedAVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
 @property(retain, nonatomic) ISWrappedAVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(retain, nonatomic) ISVideoPlayerUIView *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(nonatomic) _Bool isJellyfishVideo; // @synthesize isJellyfishVideo=_isJellyfishVideo;
 @property(retain, nonatomic) CKMovieMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
 - (void).cxx_destruct;
+- (void)_setPlaybackRateDeferredIfNecessary:(float)arg1;
+- (void)_setPlaybackRate:(float)arg1;
+- (void)pausePlayback;
+- (void)startPlayback;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void *)arg3;
 - (void)avPlayerDidDeallocate;
 - (void)avPlayer:(id)arg1 itemDidPlayToEnd:(id)arg2;
@@ -42,14 +48,19 @@
 - (_Bool)_applicationStateAcceptableForLooping;
 - (void)_thermalStateDidChange:(id)arg1;
 - (_Bool)_thermalStateAcceptableForLooping;
-- (void)didMoveToWindow;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;
+@property(readonly, nonatomic) _Bool isPlaying;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(float)arg2 orientation:(BOOL)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

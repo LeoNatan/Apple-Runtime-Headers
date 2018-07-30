@@ -8,6 +8,7 @@
 
 @class NSDraggingSession;
 
+__attribute__((visibility("hidden")))
 @interface NSCoreDragManager : _NSDragManager
 {
     NSDraggingSession *_dragSession;

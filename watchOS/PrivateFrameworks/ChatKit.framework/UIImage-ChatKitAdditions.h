@@ -7,13 +7,10 @@
 #import "UIImage.h"
 
 @interface UIImage (ChatKitAdditions)
-+ (id)ckNanoTemplateImageNamed:(id)arg1;
 + (id)ckTemplateImageNamed:(id)arg1;
-+ (id)ckNanoImageNamed:(id)arg1 withTintColor:(id)arg2;
 + (id)ckImageNamed:(id)arg1 withTintColor:(id)arg2;
 + (id)ckImageWithData:(id)arg1;
 + (id)abImageNamed:(id)arg1;
-+ (id)ckNanoImageNamed:(id)arg1;
 + (id)ckColorImageOfSize:(struct CGSize)arg1 withColor:(id)arg2;
 + (id)ckImageNamed:(id)arg1;
 - (id)ckImageWithTintColor:(id)arg1;

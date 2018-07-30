@@ -9,19 +9,18 @@
 __attribute__((visibility("hidden")))
 @interface FI_TRunSoonHelper : NSObject
 {
-    unsigned long long _owningTargetID;
-    unique_function_acfb320d _functor;
+    unsigned long long _validatorID;
+    unique_function_63952f55 _functor;
     int _dispatchType;
 }
 
-+ (void)postFunctor:(unique_function_acfb320d *)arg1 withOwningTargetID:(unsigned long long)arg2 andDispatchType:(int)arg3;
++ (void)postFunctor:(unique_function_63952f55 *)arg1 withValidatorID:(unsigned long long)arg2 andDispatchType:(int)arg3;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dispatch;
 - (void)post;
 - (void)repost;
-- (id)runLoopModes;
-- (id)initWithFunctor:(unique_function_acfb320d *)arg1 withOwningTargetID:(unsigned long long)arg2 andDispatchType:(int)arg3;
+- (id)initWithFunctor:(unique_function_63952f55 *)arg1 withValidatorID:(unsigned long long)arg2 andDispatchType:(int)arg3;
 
 @end
 

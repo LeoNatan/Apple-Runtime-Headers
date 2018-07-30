@@ -8,6 +8,7 @@
 
 @class NCMachSendRight;
 
+__attribute__((visibility("hidden")))
 @interface NCRemoteViewServiceContainerView : NSView
 {
     _Bool _inSetFrame;

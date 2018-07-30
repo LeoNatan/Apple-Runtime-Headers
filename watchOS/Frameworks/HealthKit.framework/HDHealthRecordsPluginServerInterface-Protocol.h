@@ -9,6 +9,8 @@
 @class HKClinicalBrand, HKMedicalCodingCollection, HKMedicalRecord, HKSource, NSArray, NSFileHandle, NSNumber, NSSet, NSString, NSUUID;
 
 @protocol HDHealthRecordsPluginServerInterface <NSObject>
+- (void)remote_deregisterAppSourceFromClinicalUnlimitedAuthorizationModeConfirmation:(HKSource *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)remote_registerAppSourceForClinicalUnlimitedAuthorizationModeConfirmation:(HKSource *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_fetchLogoDataForFeaturedBrandsAtScaleKey:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_fetchLogoDataForBrand:(HKClinicalBrand *)arg1 scaleKey:(NSString *)arg2 completion:(void (^)(NSData *, NSError *))arg3;
 - (void)remote_fetchRemoteGatewayWithExternalID:(NSString *)arg1 batchID:(NSString *)arg2 completion:(void (^)(HKClinicalGateway *, NSError *))arg3;
@@ -17,7 +19,7 @@
 - (void)remote_fetchRemoteSearchResultsPageForQuery:(NSString *)arg1 latitude:(NSNumber *)arg2 longitude:(NSNumber *)arg3 from:(int)arg4 completion:(void (^)(HKClinicalProviderSearchResultsPage *, NSError *))arg5;
 - (void)remote_notifyForNewHealthRecordsWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_badgeForNewHealthRecordsWithCompletion:(void (^)(_Bool, NSError *))arg1;
-- (void)remote_createStaticAccountWithTitle:(NSString *)arg1 completion:(void (^)(HKClinicalAccount *, NSError *))arg2;
+- (void)remote_createStaticAccountWithTitle:(NSString *)arg1 subtitle:(NSString *)arg2 description:(NSString *)arg3 onlyIfNeededForSimulatedGatewayID:(NSString *)arg4 completion:(void (^)(HKClinicalAccount *, NSError *))arg5;
 - (void)remote_resetClinicalContentAnalyticsAnchorsWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_triggerClinicalContentAnalyticsForReason:(int)arg1 options:(unsigned int)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)remote_fetchClinicalOptInDataCollectionFilePathsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
@@ -26,6 +28,7 @@
 - (void)remote_performCodingTasks:(NSSet *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_conceptForCodings:(HKMedicalCodingCollection *)arg1 preferredSystems:(NSArray *)arg2 completion:(void (^)(HKMedicalConcept *, NSError *))arg3;
 - (void)remote_displayStringForMedicalCodingSystem:(NSString *)arg1 code:(NSString *)arg2 version:(NSString *)arg3 completion:(void (^)(NSString *, NSError *))arg4;
+- (void)remote_fetchExportedPropertiesForHealthRecord:(HKMedicalRecord *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_fetchRawSourceStringForHealthRecord:(HKMedicalRecord *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)remote_fetchFHIRJSONDocumentWithAccountIdentifier:(NSUUID *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_setHealthRecordsIngestionFrequency:(int)arg1 completion:(void (^)(_Bool, NSError *))arg2;

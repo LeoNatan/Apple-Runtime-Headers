@@ -18,13 +18,13 @@
 
 - (void).cxx_destruct;
 - (id)status;
+- (BOOL)resetWithError:(id *)arg1;
 - (unsigned long long)totalOriginalResourceSize;
 - (unsigned long long)totalResourceSize;
 - (BOOL)_decrementTotalOriginalResourceSize:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)_decrementTotalResourceSize:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)_incrementTotalOriginalResourceSize:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)_incrementTotalResourceSize:(unsigned long long)arg1 error:(id *)arg2;
-- (BOOL)resetWithError:(id *)arg1;
 - (void)enumerateIdentitiesWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)retainCountForIdentity:(id)arg1;
 - (BOOL)releaseIdentity:(id)arg1 lastReference:(char *)arg2 isTrackedOriginal:(BOOL)arg3 error:(id *)arg4;

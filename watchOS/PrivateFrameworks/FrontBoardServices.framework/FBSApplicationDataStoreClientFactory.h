@@ -19,10 +19,10 @@
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSArray *prefetchedKeys; // @synthesize prefetchedKeys=_prefetchedKeys;
+- (void).cxx_destruct;
 - (void)registerClientClass:(Class)arg1;
 - (void)checkin;
 - (id)checkout;
-- (void)dealloc;
 - (id)init;
 
 @end

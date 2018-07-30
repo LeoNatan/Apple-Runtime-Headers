@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCNetworkEvent, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString;
+@class FCEdgeCacheHint, FCNetworkEvent, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface FCCKDirectRequestOperation : FCOperation
 {
@@ -18,6 +18,7 @@
     long long _networkEventType;
     double _timeoutIntervalForRequest;
     NSDictionary *_additionalRequestHTTPHeaders;
+    FCEdgeCacheHint *_edgeCacheHint;
     CDUnknownBlockType _criticalNodeFailureTest;
     CDUnknownBlockType _requestCompletionHandler;
     NSString *_requestUUID;
@@ -37,6 +38,7 @@
 @property(copy, nonatomic) NSString *requestUUID; // @synthesize requestUUID=_requestUUID;
 @property(copy, nonatomic) CDUnknownBlockType requestCompletionHandler; // @synthesize requestCompletionHandler=_requestCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType criticalNodeFailureTest; // @synthesize criticalNodeFailureTest=_criticalNodeFailureTest;
+@property(copy, nonatomic) FCEdgeCacheHint *edgeCacheHint; // @synthesize edgeCacheHint=_edgeCacheHint;
 @property(copy, nonatomic) NSDictionary *additionalRequestHTTPHeaders; // @synthesize additionalRequestHTTPHeaders=_additionalRequestHTTPHeaders;
 @property(nonatomic) double timeoutIntervalForRequest; // @synthesize timeoutIntervalForRequest=_timeoutIntervalForRequest;
 @property(nonatomic) long long networkEventType; // @synthesize networkEventType=_networkEventType;

@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDAxis.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDDateAxis : CHDAxis
 {
     _Bool mAutomatic;

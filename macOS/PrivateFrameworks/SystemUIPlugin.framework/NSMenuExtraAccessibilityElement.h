@@ -8,6 +8,7 @@
 
 @class NSMenuExtra;
 
+__attribute__((visibility("hidden")))
 @interface NSMenuExtraAccessibilityElement : NSAccessibilityElement
 {
     NSMenuExtra *_menuExtra;

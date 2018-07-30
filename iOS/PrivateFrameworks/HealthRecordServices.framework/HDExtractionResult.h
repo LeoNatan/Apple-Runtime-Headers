@@ -13,16 +13,18 @@
 
 @interface HDExtractionResult : NSObject <NSCopying, NSSecureCoding>
 {
-    NSArray *_medicalRecords;
+    NSArray *_items;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *medicalRecords; // @synthesize medicalRecords=_medicalRecords;
+@property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMedicalRecords:(id)arg1;
+- (id)clinicalRecords;
+- (id)medicalRecords;
+- (id)initWithItems:(id)arg1;
 - (id)init;
 
 @end

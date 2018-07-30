@@ -60,6 +60,7 @@
 - (void)_getSupportedConfigurations;
 - (void)_negotiateStream;
 - (void)negotiateStream;
+- (void)updateAudioVolume:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)updateAudioSetting:(unsigned long long)arg1;
 - (void)remoteSetup:(id)arg1;
 - (void)dealloc;

@@ -10,6 +10,7 @@
 
 @interface AVPermissiveSwipeGestureRecognizer : UIGestureRecognizer
 {
+    unsigned int _numberOfTouchMovedEventsReceived;
     _Bool _swipeGestureActive;
     _Bool _swipeGestureRecognizedOrFailed;
     _AVDetachedSwipeGestureRecognizer *_swipeGestureRecognizer;

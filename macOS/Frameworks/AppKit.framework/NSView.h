@@ -10,12 +10,13 @@
 #import "NSAccessibilityElement.h"
 #import "NSAnimatablePropertyContainer.h"
 #import "NSAppearanceCustomization.h"
+#import "NSAppearanceCustomizationInternal.h"
 #import "NSDraggingDestination.h"
 #import "NSUserInterfaceItemIdentification.h"
 
-@class CALayer, CIFilter, NSAppearance, NSArray, NSBezierPath, NSCandidateListTouchBarItem, NSColor, NSColorSpace, NSDictionary, NSFunctionRow, NSLayoutRect, NSMenuItem, NSMutableArray, NSMutableSet, NSPressureConfiguration, NSScrollView, NSShadow, NSString, NSSurface, NSTextInputContext, NSURL, NSViewController, NSWindow, _NSViewAuxiliary;
+@class CALayer, CAProxyLayer, CIFilter, NSAppearance, NSArray, NSBezierPath, NSCGSWindowBackdrop, NSCandidateListTouchBarItem, NSColor, NSColorSpace, NSDictionary, NSFunctionRow, NSLayoutRect, NSMenuItem, NSMutableArray, NSMutableSet, NSPressureConfiguration, NSScrollView, NSShadow, NSString, NSSurface, NSTextInputContext, NSURL, NSViewController, NSWindow, _NSViewAuxiliary;
 
-@interface NSView : NSResponder <NSAnimatablePropertyContainer, NSUserInterfaceItemIdentification, NSDraggingDestination, NSAppearanceCustomization, NSAccessibilityElement, NSAccessibility>
+@interface NSView : NSResponder <NSAppearanceCustomizationInternal, NSAnimatablePropertyContainer, NSUserInterfaceItemIdentification, NSDraggingDestination, NSAppearanceCustomization, NSAccessibilityElement, NSAccessibility>
 {
     struct CGRect _frame;
     struct CGRect _bounds;
@@ -72,24 +73,19 @@
 + (void)_debug_setLayoutFrameChangeFlag:(BOOL)arg1;
 + (BOOL)_debug_shouldReportUnnecessaryLayoutCalls;
 + (id)focusView;
-+ (BOOL)isLockFocusFlushEnabled;
-+ (void)_enableLockFocusFlush;
-+ (void)_disableLockFocusFlush;
 + (id)defaultAnimationForKey:(id)arg1;
 + (void)_performWithoutAnimation:(CDUnknownBlockType)arg1;
 + (BOOL)automaticallyNotifiesObserversOfWantsLayer;
 + (unsigned long long)defaultFocusRingType;
 + (id)new;
++ (void)_antialiasThresholdChanged:(id)arg1;
 + (void)initialize;
-+ (id)_cui_keyPathsAffectingValuesForCurrentState;
 + (void)_initializeMetricsOverlayDebugging;
 + (void)_setShowsAlignmentRects:(BOOL)arg1;
 + (void)_setShowsAllViews:(BOOL)arg1;
 + (BOOL)_showsAllDrawing;
 + (void)_initializeShowAllDrawingDebugging;
 + (void)_setShowsAllDrawing:(BOOL)arg1;
-+ (void)endFreezingInWindow:(id)arg1;
-+ (void)beginFreezingInWindow:(id)arg1;
 + (id)_hiddenViewsTint;
 + (void)_setHiddenViewsTint:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOf_recommendedDrawableSize;
@@ -123,11 +119,12 @@
 - (BOOL)_doIdlePrefetch;
 - (void)_recursiveSendViewDidChangeAppearance:(id)arg1;
 - (void)_viewDidChangeAppearance:(id)arg1;
-- (void)_invalidateTextLayersIfNeeded;
+- (void)effectiveAppearanceDidChange;
+- (void)viewDidChangeEffectiveAppearance;
 @property(readonly) NSAppearance *effectiveAppearance;
-- (BOOL)_recacheEffectiveAppearance;
 - (void)_notePreferredAppearanceDidChange;
-- (id)_preferredAppearance;
+@property(readonly) NSAppearance *_preferredAppearance;
+@property(setter=_setUsesNonVibrantAppearance:) BOOL _usesNonVibrantAppearance;
 - (id)_kitAppearance;
 @property(retain) NSAppearance *appearance;
 - (void)_internalSetAppearance:(id)arg1;
@@ -140,7 +137,7 @@
 - (void)setUserInterfaceItemIdentifier:(id)arg1;
 - (id)userInterfaceItemIdentifier;
 - (void)prepareForReuse;
-- (void)_clearHasBeenCommittedIfNeeded;
+- (void)_clearHasBeenCommittedIfNeededOrForced:(BOOL)arg1;
 - (id)makeBackingLayer;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)updateLayer;
@@ -153,16 +150,11 @@
 - (void)setUpdateLayerHandler:(CDUnknownBlockType)arg1;
 @property(retain) CALayer *layer;
 - (void)_didRemoveLayer;
-- (id)buildLayerTreeWithOwnLayerRequirement:(BOOL)arg1 someAncestorWantsLayer:(BOOL)arg2 canJoinInclusiveLayer:(BOOL)arg3 containingLayer:(id)arg4;
+- (id)buildLayerTreeWithOwnLayerRequirement:(BOOL)arg1 someAncestorWantsLayer:(BOOL)arg2;
 - (void)buildLayerTree;
-- (void)_addLayerToLayerTree;
 @property(readonly) NSTextInputContext *inputContext;
-- (BOOL)_usingAlternateHighlightColorForCell:(id)arg1 withFrame:(struct CGRect)arg2;
-- (id)_highlightColorForCell:(id)arg1;
 - (void)_autoscrollForDraggingInfo:(id)arg1 timeDelta:(double)arg2;
 - (BOOL)_shouldAutoscrollForDraggingInfo:(id)arg1;
-- (void)heartBeat:(CDStruct_fadd2e06 *)arg1;
-- (BOOL)_wantsHeartBeat;
 - (void)_windowChangedKeyState;
 - (void)helpRequested:(id)arg1;
 - (id)_contextMenuTargetForEvent:(id)arg1;
@@ -305,8 +297,6 @@
 - (void)displayRectIgnoringOpacity:(struct CGRect)arg1 inContext:(id)arg2;
 - (void)_buildLayerTreeFromRoot;
 - (BOOL)_useCARenderInContext;
-- (BOOL)_invalidateTextLayersInRect:(struct CGRect)arg1;
-- (BOOL)_includeSubviewsInCacheDisplayInRect;
 - (void)displayRectIgnoringOpacity:(struct CGRect)arg1;
 - (void)displayIfNeededInRectIgnoringOpacity:(struct CGRect)arg1;
 - (void)displayIgnoringOpacity;
@@ -317,9 +307,6 @@
 - (void)displayIfNeeded;
 @property BOOL needsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
-- (BOOL)_shouldKeepTrackOfRectsBeingDrawn;
-- (id)_regionDrawnInto;
-- (void)_setRegionDrawnInto:(id)arg1;
 - (void)_setAncestorLayerNeedsDisplayInRect:(struct CGRect)arg1;
 - (BOOL)_shouldDirtyTheWindowOnLayerInvalidation;
 - (void)_legacySetNeedsDisplayInRect:(struct CGRect)arg1;
@@ -387,7 +374,6 @@
 - (void)_displayRectIgnoringOpacity:(struct CGRect)arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3;
 - (void)_sendSurfaceSyncNotificationAndFlushSurfacesWithRegionToDisplay:(id)arg1;
 - (void)_syncAndDisplaySurfaceIfNecessary:(id)arg1;
-- (void)_sendViewWillDrawInRect:(struct CGRect)arg1 clipRootView:(id)arg2;
 - (void)drawOverlayRect:(struct CGRect)arg1;
 - (struct CGRect)overlayBounds;
 - (void)_recursiveDisplayRectIfNeededIgnoringOpacity:(struct CGRect)arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3 topView:(BOOL)arg4;
@@ -403,15 +389,10 @@
 - (void)_didChangeAutoSetWantsLayer:(BOOL)arg1;
 - (BOOL)_hasAutoSetWantsLayer;
 - (BOOL)_displayingAllDirty;
-- (void)_lightWeightRecursiveDisplayInRect:(struct CGRect)arg1;
 - (struct CGRect)_dirtyRect;
 - (void)_setDirtyRectIvar:(struct CGRect)arg1;
 - (struct CGRect)_dirtyRectIvar;
 - (void)_drawRect:(struct CGRect)arg1 clip:(BOOL)arg2;
-- (BOOL)_drawAsMultiClippedContentInRect:(struct CGRect)arg1;
-- (id)_rectsForMultiClippedContentDrawing;
-- (BOOL)_isDrawingMultiClippedContentAtIndex:(long long)arg1;
-- (id)_multiClipDrawingHelper;
 - (BOOL)_drawRectIfEmptyWhenSubviewsCoverDirtyRect:(struct CGRect)arg1;
 - (BOOL)_drawRectIfEmpty;
 - (id)_getNextResizeEventInvalidatingLiveResizeCacheIfNecessary:(id)arg1;
@@ -435,12 +416,6 @@
 - (void)unlockFocus;
 - (BOOL)lockFocusIfCanDrawInContext:(id)arg1;
 - (BOOL)lockFocusIfCanDraw;
-- (void)_unlockFocusOnLayer;
-- (void)_lockFocusOnLayer;
-- (void)_lockFocusFlush;
-- (BOOL)_needsLockFocusFlush;
-- (BOOL)_shouldDoLockFocusForLayerBacking;
-- (id)_viewWithLayerToLockFocusOn;
 - (id)_contextForLockFocus:(BOOL)arg1;
 - (void)lockFocus;
 - (BOOL)_focusFromView:(id)arg1 withContext:(id)arg2;
@@ -589,6 +564,7 @@
 - (struct CGRect)nsis_rawAlignmentRect;
 - (struct CGRect)nsis_unroundedFrame;
 - (struct CGRect)nsis_frame;
+- (struct CGRect)_layoutFrame;
 - (void)_maybeCheckForAmbiguityForItem:(id)arg1;
 - (struct CGRect)nsis_frameInEngine:(id)arg1 forLayoutGuide:(id)arg2 withRounding:(BOOL)arg3;
 - (BOOL)_allowRoundingToChangeSize;
@@ -652,6 +628,7 @@
 - (void)_disableTrackingRectsIfHidden;
 - (void)_orderOutTheSurfaceIfHidden;
 - (void)_recursiveGainedHiddenAncestorDuringUnarchiving;
+- (void)_setBackgroundStyleForSubtree:(long long)arg1;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidMoveToWindow;
@@ -714,7 +691,6 @@
 - (id)init;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (long long)_defaultLayerContentsRedrawPolicy;
-- (void)_showKeyboardUILoop;
 - (struct CGRect)_focusRingVisibleRect;
 - (void)_recursiveDisplaySelfAndDescendantsInRect:(struct CGRect)arg1;
 - (void)_recursiveDisplayDescendantsInRect:(struct CGRect)arg1;
@@ -724,21 +700,12 @@
 - (void)_performAnimatedAction:(CDUnknownBlockType)arg1;
 - (void)setAllowsVibrancy:(BOOL)arg1;
 @property(readonly) BOOL allowsVibrancy;
-- (id)_layerSurface;
 - (BOOL)_isLayingOut;
 - (id)_visibleDescendants;
 @property(readonly) BOOL _managesOpenGLDrawable;
-- (void)_cui_invalidateCurrentState;
-@property(readonly, copy) NSDictionary *_cui_optionsForCurrentState;
-- (struct CGSize)_cui_sizeValueMetricForKey:(id)arg1 defaultValue:(struct CGSize)arg2;
-- (double)_cui_floatValueMetricForKey:(id)arg1 defaultValue:(double)arg2;
-- (id)_cui_artworkMetrics;
-@property(readonly, copy) NSArray *_cui_availableMetrics;
-@property(readonly) struct NSEdgeInsets _cui_alignmentRectInsets;
-@property(readonly) struct CGSize _cui_intrinsicContentSize;
+- (BOOL)_usingAlternateHighlightColorForCell:(id)arg1 withFrame:(struct CGRect)arg2;
+- (id)_highlightColorForCell:(id)arg1;
 @property(readonly, getter=isDrawingFindIndicator) BOOL drawingFindIndicator;
-- (struct CGSRegionObject *)_copyDragRegion;
-- (struct CGRect)_draggableFrame;
 - (void)_sortSubviewsUsingComparator:(CDUnknownBlockType)arg1;
 - (id)_subtreeDescriptionForTouchBarLogging;
 - (id)_subtreeDescriptionForTouchBarLoggingWithDepth:(long long)arg1;
@@ -762,6 +729,7 @@
 @property(readonly) NSMenuItem *enclosingMenuItem;
 - (id)_enclosingMenuItem;
 @property(retain) NSPressureConfiguration *pressureConfiguration;
+- (void)_debug_showKeyboardUILoop;
 - (void)_drawMetricsOverlays;
 - (void)_updateLayerMetricsOverlays;
 - (void)_debug_drawMetricsOverlays;
@@ -790,14 +758,13 @@
 - (struct CGPoint)convertPointToOpenGLSurface:(struct CGPoint)arg1;
 - (struct CGSize)openGLSurfaceSize;
 @property BOOL wantsExtendedDynamicRangeOpenGLSurface;
-@property(readonly) struct CGRect _behindWindowVisualEffectLayoutRect;
-- (id)_proxyLayer;
-- (void)_setProxyLayer:(id)arg1;
-- (id)_windowBackdrop;
-- (void)_setWindowBackdrop:(id)arg1;
+@property(setter=_setProxyLayer:) CAProxyLayer *_proxyLayer;
+@property(setter=_setWindowBackdrop:) NSCGSWindowBackdrop *_windowBackdrop;
+- (void)_removeVibrantBlendingMimicBackdropOrProxyLayerIfNeeded;
+- (void)_updateVibrantBlendingMimicBackdropOrProxyLayerWithBlendMode:(int)arg1;
 - (BOOL)_isDiagonallyRotatedOrScaledFromBase;
-- (void)_addCornerDirtyRectForRect:(struct CGRect)arg1 list:(struct CGRect *)arg2 count:(long long *)arg3;
 - (id)_buttonOfClass:(Class)arg1 action:(SEL)arg2;
+- (void)heartBeat:(CDStruct_fadd2e06 *)arg1;
 - (void)_recursiveThawLayersAfterTransplant;
 - (void)_recursiveFreezeLayersBeforeTransplant;
 - (unsigned int)_CAViewFlags;
@@ -833,8 +800,6 @@
 - (void)_windowWillOrderOffScreen;
 - (void)_windowDidOrderOnScreen;
 - (void)_windowWillOrderOnScreen;
-- (void)_invalidateShouldAutoFlattenLayerTreeRecursively;
-- (void)_invalidateShouldAutoFlattenLayerTree;
 - (BOOL)_shouldAutoFlattenLayerTree;
 - (void)geometryInWindowDidChange;
 - (void)disableGeometryInWindowDidChangeNotification;
@@ -850,21 +815,17 @@
 - (void)_setSupportsDirectLayerContentsCache:(BOOL)arg1;
 - (int)_supportsDirectLayerContentsCache;
 - (BOOL)_hasRectangularFocusRingAroundFrame;
-- (BOOL)_updateGrowBoxForWindowFrameChange;
 - (BOOL)_NSView_isWebClipView;
 - (void)_setLayerNeedsDisplayInViewRect:(struct CGRect)arg1;
 - (id)_rootmostLayerTreeHostAncestor;
 - (struct CGRect)activeDrawingRect;
-- (void)_recursive:(BOOL)arg1 displayRectIgnoringOpacity:(struct CGRect)arg2 inGraphicsContext:(id)arg3 shouldChangeFontReferenceColor:(BOOL)arg4;
-- (void)_recursive:(BOOL)arg1 displayRectIgnoringOpacity:(struct CGRect)arg2 inContext:(id)arg3 shouldChangeFontReferenceColor:(BOOL)arg4;
+- (void)_recursive:(BOOL)arg1 displayRectIgnoringOpacity:(struct CGRect)arg2 inContext:(id)arg3 shouldChangeFontReferenceColor:(BOOL)arg4 stopAtLayerBackedViews:(BOOL)arg5;
 - (void)_updateSurfaceWhenInAnInclusiveLayer;
 - (void)_disableNeedsDisplayInRectNotifications;
 - (void)_enableNeedsDisplayInRectNotifications;
-- (BOOL)_layerDrawingNeedsLinearMaskOverlayForFontSmoothing;
 - (BOOL)_setupFontSmoothingForLayerDrawingIntoContext:(struct CGContext *)arg1 previousColor:(struct CGColor **)arg2 previousFlag:(char *)arg3;
 - (void)_setupFocusStateForDrawing;
 - (void)_renderLayerInContext:(id)arg1;
-- (void)_drawSurroundingOutline;
 - (double)_autoscrollScreenEdgeFactorFromPoint:(struct CGPoint)arg1;
 - (BOOL)_shouldAutoscrollForEvent:(id)arg1;
 - (struct CGPoint)_autoscrollAmountForWindowPoint:(struct CGPoint)arg1;
@@ -879,38 +840,28 @@
 - (BOOL)_appkitManagesLayer;
 - (void)_createLayerAndInitialize;
 - (void)_updateVibrancy;
-- (BOOL)_canDisableBaseVibrancy;
-- (BOOL)_wantsLayerBasedVibrancy;
-- (void)_addWindowBackdropIfNeededForVibrancy:(BOOL)arg1;
-- (void)_unregisterWithBackdropViewIfNeeded;
-- (void)_registerWithBackdropView;
-- (void)_recursivelyNoteBackdropViewChanged;
-- (void)_recursivelyUnregisterWithBackdropView;
-- (void)_recursivelyUpdateVibrancy;
-- (void)_removeInWindowVibrancyFilter;
-- (void)_updateInWindowNonVibrancyFilter;
-- (void)_updateInWindowVibrancyFilter;
-- (long long)_vibrancyBlendingMode;
-- (int)_vibrancyBlendMode;
-- (id)_vibrancyFilter;
-- (id)_containingBackdropView;
-- (void)_setContainingBackdropView:(id)arg1;
-- (BOOL)_hasCachedContainingBackdropView;
 - (BOOL)_needsVibrancy;
+- (BOOL)_wantsLayerBasedVibrancy;
+@property(setter=_setVibrantBlendingStyleForSubtree:) unsigned long long _vibrantBlendingStyleForSubtree;
+- (void)_invalidateEffectiveVibrantBlendingStyle;
+- (void)_removeVibrantBlendingCACompositingFilterIfNeeded;
+- (void)_updateVibrantBlendingCACompositingFilterWithBlendMode:(int)arg1;
+- (int)_vibrancyBlendMode;
 - (void)_updateLayerGeometryFromView;
 - (void)_updateInclusiveLayerSublayerViewPositions;
 - (BOOL)_useCoreAnimationFrameOriginChanges;
 - (BOOL)_useCoreAnimationFrameChanges;
-- (void)_createLayerIfNeeded;
 - (void)_handleFrameChangeForSubview:(id)arg1;
 - (void)_handleBoundsChangeForSubview:(id)arg1;
 - (void)_compositeHiddenViewHighlight;
+- (BOOL)_appearanceSensitiveIsOpaque;
 - (struct CGRect)_opaqueRectForWindowMoveWhenInTitlebar;
 - (struct CGRect)_opaqueRect;
 - (BOOL)_impactsWindowMoving;
 - (void)_setImpactsWindowMoving:(BOOL)arg1;
 - (id)_dirtyRegion;
 - (BOOL)_needsRedisplayOnFrameChange;
+- (void)_recursiveSetNeedsDisplay:(BOOL)arg1;
 - (unsigned long long)_effectiveFocusRingType;
 - (void)_getDirtyRects:(struct CGRect **)arg1 clippedToRect:(struct CGRect)arg2 count:(unsigned long long *)arg3 boundingBox:(struct CGRect *)arg4;
 - (void)_clearDirtyRectsForTree;
@@ -963,11 +914,8 @@
 - (void)_gainedDescendantThatCanDrawConcurrently;
 - (id)_copySubviewsInOrderOfDisplay;
 - (BOOL)_attemptConcurrentViewDrawingForSelfAndDescendants;
-- (BOOL)_canDrawWindowGrowBox;
-- (void)_sendViewWillDrawAndRecurse:(BOOL)arg1;
 - (void)_sendViewWillDraw;
 - (BOOL)_viewDying;
-- (BOOL)_needsViewWillDraw;
 - (id)_descendantsPassingTest:(CDUnknownBlockType)arg1;
 - (BOOL)_isInclusiveLayerBacked;
 - (BOOL)_isLayerBacked;
@@ -999,6 +947,7 @@
 - (id)_singleCell;
 - (id)accessibilityAuditContrast;
 - (id)accessibilityAuditPotentialChildren;
+- (id)deepestAccessibilityDescendants;
 - (id)visibleAccessibleOrLeafSubviews;
 - (BOOL)_isLeafNodeWithPotentialAccessibilityChildren;
 - (id)_classSetToIgnoreForAuditing;
@@ -1057,6 +1006,7 @@
 - (BOOL)accessibilityIsRoleAttributeSettable;
 - (id)accessibilityRoleAttribute;
 - (id)accessibilityAttributeNames;
+- (BOOL)_wantsHeartBeat;
 - (struct CGRect)_desiredLayerBounds;
 - (id)_screenAtPoint:(struct CGPoint)arg1;
 - (void)_forceUpdateLayerTreeRenderer;
@@ -1098,9 +1048,7 @@
 - (BOOL)knowsPagesFirst:(long long *)arg1 last:(long long *)arg2;
 - (id)printJobTitle;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (void)_view:(id)arg1 shouldSaveDirtyRectIfNecessary:(struct CGRect)arg2;
 - (void)_layoutSublayersOfLayer:(id)arg1;
-- (BOOL)NS_canDrawLayer:(id)arg1;
 - (void)_drawViewBackingLayer:(id)arg1 inContext:(struct CGContext *)arg2 drawingHandler:(CDUnknownBlockType)arg3;
 - (void)_viewDidDrawInLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)_updateLayerCanDrawConcurrentlyFromView;
@@ -1109,7 +1057,7 @@
 - (void)_updateLayerCompositingFilterFromView;
 - (void)_updateLayerBackgroundFiltersFromView;
 - (void)_updateLayerFiltersFromView;
-- (void)_updateLayerHiddenStateFromView;
+- (void)_updateLayerHiddenFromView;
 - (void)_updateLayerShadowFromView;
 - (void)_updateGeometryFlippedOnSelfAndSubviews;
 - (void)_updateGeometryFlippedOnLayer;
@@ -1300,17 +1248,21 @@
 - (id)_hostedLayoutEngineOverride;
 - (id)_replacementConstraintForConstraint:(id)arg1 whenReplacingView:(id)arg2 withView:(id)arg3;
 - (id)_constraintsArray;
+- (id)_nonTAMICConstraints;
 - (double)_effectiveBackingScaleFactorForLayout;
 - (void)_subview:(id)arg1 valueOfVariable:(id)arg2 didChangeInEngine:(id)arg3;
 - (void)nsli_swapContainerForOutgoingConstraint:(id)arg1 toIncomingConstraint:(id)arg2;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (BOOL)nsis_valueOfVariableIsUserObservable:(id)arg1;
 - (BOOL)nsis_shouldIntegralizeVariable:(id)arg1;
+- (int)nsis_orientationHintForVariable:(id)arg1;
 - (id)nsis_descriptionOfVariable:(id)arg1;
 - (id)_heightVariable;
 - (id)_widthVariable;
 - (id)_minYVariable;
 - (id)_minXVariable;
+- (id)nsli_boundsHeightVariable;
+- (id)nsli_boundsWidthVariable;
 - (id)nsli_heightVariable;
 - (id)nsli_widthVariable;
 - (id)nsli_minYVariable;
@@ -1382,7 +1334,7 @@
 - (id)fontSmoothingBackgroundColorForTextLayer:(id)arg1;
 - (BOOL)textLayerCanUseLinearMaskOverlay:(id)arg1;
 - (BOOL)textLayerShouldDoSubpixelAntialiasing:(id)arg1;
-- (id)_appearanceBearingParent;
+@property(readonly) id <NSAppearanceCustomization> _effectiveAppearanceParent;
 - (void)removeConstraintWithIdentifier:(id)arg1;
 
 // Remaining properties

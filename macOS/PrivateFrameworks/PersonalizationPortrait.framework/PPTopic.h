@@ -7,20 +7,24 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface PPTopic : NSObject <NSCopying>
+@interface PPTopic : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *_id;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSString *id; // @synthesize id=_id;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTopic:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithId:(id)arg1;
 
 @end

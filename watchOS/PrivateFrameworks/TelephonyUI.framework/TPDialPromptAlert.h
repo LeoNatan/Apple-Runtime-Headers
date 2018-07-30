@@ -6,22 +6,26 @@
 
 #import <TelephonyUI/TPAlert.h>
 
-@class TUDialRequest;
+@class NSSet, NSString;
 
 @interface TPDialPromptAlert : TPAlert
 {
-    TUDialRequest *_dialRequest;
     CDUnknownBlockType _dialAction;
+    NSString *_buttonTitle;
+    NSSet *_handles;
 }
 
+@property(readonly, copy, nonatomic) NSSet *handles; // @synthesize handles=_handles;
+@property(readonly, copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) CDUnknownBlockType dialAction; // @synthesize dialAction=_dialAction;
-@property(retain, nonatomic) TUDialRequest *dialRequest; // @synthesize dialRequest=_dialRequest;
 - (void).cxx_destruct;
 - (void)otherResponse;
 - (void)defaultResponse;
 - (id)otherButtonTitle;
 - (id)defaultButtonTitle;
 - (id)title;
+- (id)initWithButtonTitle:(id)arg1 handles:(id)arg2 dialAction:(CDUnknownBlockType)arg3;
+- (id)initWithJoinRequest:(id)arg1 dialAction:(CDUnknownBlockType)arg2;
 - (id)initWithDialRequest:(id)arg1 dialAction:(CDUnknownBlockType)arg2;
 
 @end

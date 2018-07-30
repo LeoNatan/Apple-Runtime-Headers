@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @interface MADownloadOptions : NSObject <NSSecureCoding>
 {
@@ -17,15 +17,18 @@
     BOOL _discretionary;
     long long _timeoutIntervalForResource;
     NSMutableDictionary *_additionalServerParams;
+    NSString *_sessionId;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) BOOL discretionary; // @synthesize discretionary=_discretionary;
 @property(retain, nonatomic) NSMutableDictionary *additionalServerParams; // @synthesize additionalServerParams=_additionalServerParams;
 @property(nonatomic) BOOL canUseLocalCacheServer; // @synthesize canUseLocalCacheServer=_canUseLocalCacheServer;
 @property(nonatomic) long long timeoutIntervalForResource; // @synthesize timeoutIntervalForResource=_timeoutIntervalForResource;
 @property(nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
 - (void)logOptions;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

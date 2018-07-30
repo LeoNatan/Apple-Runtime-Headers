@@ -11,7 +11,6 @@
 
 @class ABGroupEntriesList, ABPeoplePickerGroupListStyleProvider, ABPeoplePickerGroupListView, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ABPeoplePickerGroupListController : NSViewController <NSOutlineViewDataSource, NSOutlineViewDelegate>
 {
     ABPeoplePickerGroupListView *_outlineView;

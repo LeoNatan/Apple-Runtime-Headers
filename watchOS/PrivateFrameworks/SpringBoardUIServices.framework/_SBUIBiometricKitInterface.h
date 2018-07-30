@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "BKMatchOperationDelegate.h"
+#import "BKMatchPearlOperationDelegate.h"
 #import "BKOperationDelegate.h"
 
 @class BKDeviceTouchID, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
-@interface _SBUIBiometricKitInterface : NSObject <BKOperationDelegate, BKMatchOperationDelegate>
+@interface _SBUIBiometricKitInterface : NSObject <BKOperationDelegate, BKMatchOperationDelegate, BKMatchPearlOperationDelegate>
 {
     NSSet *_biometricDevices;
     unsigned long long _enrolledIdentitiesCount;

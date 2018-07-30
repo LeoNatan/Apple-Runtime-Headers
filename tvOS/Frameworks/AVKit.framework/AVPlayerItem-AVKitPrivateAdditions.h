@@ -10,5 +10,6 @@
 - (id)_avkitDescription;
 - (_Bool)_isPlayerScrubbingSupported;
 - (_Bool)_avkitIsStreamingWithoutIFrames;
+- (_Bool)_avkitIsStreaming;
 @end
 

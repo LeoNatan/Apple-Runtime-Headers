@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSServicesMenuUpdater.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSServicesPrincipalMenuUpdater : _NSServicesMenuUpdater
 {
 }
@@ -24,6 +25,7 @@
 - (void)dealloc;
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
+- (id)init;
 
 @end
 

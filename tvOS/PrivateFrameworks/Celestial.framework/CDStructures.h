@@ -98,60 +98,12 @@ struct AVItemPrivate {
     id _field25;
 };
 
-struct AVRecorderPrivate {
-    id _field1;
-    id _field2;
-};
-
 struct AVSystemControllerPrivate {
     _Bool _field1;
     _Bool _field2;
     float _field3;
     id _field4;
     struct OpaqueFigPlayer *_field5;
-};
-
-struct AudioQueueBuffer {
-    unsigned int _field1;
-    void *_field2;
-    unsigned int _field3;
-    void *_field4;
-    unsigned int _field5;
-    struct AudioStreamPacketDescription *_field6;
-    unsigned int _field7;
-};
-
-struct AudioQueueLevelMeterState {
-    float _field1;
-    float _field2;
-};
-
-struct AudioStreamBasicDescription {
-    double mSampleRate;
-    unsigned int mFormatID;
-    unsigned int mFormatFlags;
-    unsigned int mBytesPerPacket;
-    unsigned int mFramesPerPacket;
-    unsigned int mBytesPerFrame;
-    unsigned int mChannelsPerFrame;
-    unsigned int mBitsPerChannel;
-    unsigned int mReserved;
-};
-
-struct AudioStreamPacketDescription {
-    long long _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-};
-
-struct AudioTimeStamp {
-    double _field1;
-    unsigned long long _field2;
-    double _field3;
-    unsigned long long _field4;
-    struct SMPTETime _field5;
-    unsigned int _field6;
-    unsigned int _field7;
 };
 
 struct CGPoint {
@@ -183,18 +135,6 @@ struct OpaqueFigPlayer;
 struct OpaqueFigThread;
 
 struct OpaqueFigVisualContext;
-
-struct SMPTETime {
-    short _field1;
-    short _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-    short _field6;
-    short _field7;
-    short _field8;
-    short _field9;
-};
 
 struct _NSRange {
     unsigned long long _field1;

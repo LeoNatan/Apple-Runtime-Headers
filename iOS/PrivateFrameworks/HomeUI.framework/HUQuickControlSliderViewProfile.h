@@ -8,23 +8,27 @@
 
 #import "HUQuickControlIncrementalConvertibleProfile.h"
 
-@class NSString;
+@class HFNumberValueConstraints, NSString;
 
 @interface HUQuickControlSliderViewProfile : HUQuickControlViewProfile <HUQuickControlIncrementalConvertibleProfile>
 {
     _Bool _hasSecondaryValue;
     _Bool _hasOffState;
-    double _stepValue;
+    HFNumberValueConstraints *_primaryValueConstraints;
+    HFNumberValueConstraints *_secondaryValueConstraints;
     unsigned long long _preferredFillSection;
+    unsigned long long _interactionFidelity;
 }
 
+@property(nonatomic) unsigned long long interactionFidelity; // @synthesize interactionFidelity=_interactionFidelity;
 @property(nonatomic) unsigned long long preferredFillSection; // @synthesize preferredFillSection=_preferredFillSection;
-@property(nonatomic) double stepValue; // @synthesize stepValue=_stepValue;
+@property(retain, nonatomic) HFNumberValueConstraints *secondaryValueConstraints; // @synthesize secondaryValueConstraints=_secondaryValueConstraints;
+@property(retain, nonatomic) HFNumberValueConstraints *primaryValueConstraints; // @synthesize primaryValueConstraints=_primaryValueConstraints;
 @property(nonatomic) _Bool hasOffState; // @synthesize hasOffState=_hasOffState;
 @property(nonatomic) _Bool hasSecondaryValue; // @synthesize hasSecondaryValue=_hasSecondaryValue;
+- (void).cxx_destruct;
+- (double)gestureDragCoefficient;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (double)percentageValueForViewValue:(id)arg1;
-- (id)viewValueForPercentageValue:(double)arg1 round:(_Bool)arg2;
 - (id)init;
 
 // Remaining properties

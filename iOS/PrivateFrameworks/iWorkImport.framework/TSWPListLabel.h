@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double height;
 @property(readonly, nonatomic) double width;
 - (_Bool)isEqualToListLabel:(id)arg1;
+- (void)dealloc;
 - (id)initWithType:(int)arg1 labelString:(id)arg2 textLine:(struct __CTLine *)arg3 listNumber:(unsigned long long)arg4 isTateChuYoko:(_Bool)arg5 baselineOffset:(double)arg6;
 - (id)initWithType:(int)arg1 imageProvider:(id)arg2 size:(struct CGSize)arg3 baselineOffset:(double)arg4;
 

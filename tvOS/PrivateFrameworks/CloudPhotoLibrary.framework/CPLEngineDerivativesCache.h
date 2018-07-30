@@ -25,14 +25,14 @@
 - (_Bool)_checkResource:(id)arg1 name:(id)arg2 error:(id *)arg3;
 - (void)_updateChange:(id *)arg1 fromOldChange:(id)arg2 withResources:(id)arg3;
 - (_Bool)_isUnsupportedFormatError:(id)arg1;
-- (id)cachedResourcesForReferenceResource:(id)arg1;
-- (void)noteGeneratedResouces:(id)arg1 haveBeenGeneratedForReferenceResource:(id)arg2;
-- (id)tempFolderURLForGeneratedResourcesWithReferenceResource:(id)arg1;
-- (id)_finalFolderURLForGeneratedResourcesWithReferenceResource:(id)arg1;
-- (id)_tempFolderURLForGeneratedResourcesWithReferenceResource:(id)arg1;
+- (id)cachedResourcesForReferenceResource:(id)arg1 adjustment:(id)arg2;
+- (void)noteGeneratedResouces:(id)arg1 haveBeenGeneratedForReferenceResource:(id)arg2 adjustment:(id)arg3;
+- (id)tempFolderURLForGeneratedResourcesWithReferenceResource:(id)arg1 adjustment:(id)arg2;
+- (id)_finalFolderURLForGeneratedResourcesWithReferenceResource:(id)arg1 adjustment:(id)arg2;
+- (id)_tempFolderURLForGeneratedResourcesWithReferenceResource:(id)arg1 adjustment:(id)arg2;
 - (void)_createCacheFolderIfNecessary;
-- (id)_folderNameForReferenceResource:(id)arg1;
-- (id)_cacheKeyForReferenceResource:(id)arg1;
+- (id)_folderNameForReferenceResource:(id)arg1 adjustment:(id)arg2;
+- (id)_cacheKeyForReferenceResource:(id)arg1 adjustments:(id)arg2;
 - (void)discardCache;
 - (id)initWithCacheURL:(id)arg1;
 

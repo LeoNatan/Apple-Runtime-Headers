@@ -58,6 +58,7 @@
 - (void)hideAuxiliaryViewForQuickControlContent:(id)arg1;
 - (void)quickControlContent:(id)arg1 showAuxiliaryView:(id)arg2;
 - (void)quickControlContent:(id)arg1 requestDismissalOfType:(unsigned long long)arg2;
+- (void)quickControlContentDidUpdateDesiredVisbilityState:(id)arg1;
 - (void)controllerCoordinator:(id)arg1 didUpdateReachability:(_Bool)arg2;
 - (void)controllerCoordinator:(id)arg1 didUpdateStatusWithPrimaryText:(id)arg2 secondaryText:(id)arg3;
 - (void)controllerCoordinator:(id)arg1 didUpdateIconDescriptor:(id)arg2 showOffState:(_Bool)arg3;
@@ -78,12 +79,17 @@
 - (_Bool)isControlDismissedOrDismissing;
 - (void)presentControlFromSourceRect:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (struct CGAffineTransform)sourceViewTransformForPresentationProgress:(double)arg1;
+- (void)_settingsButtonPressed:(id)arg1;
+- (void)_backButtonPressed:(id)arg1;
 - (void)_updateUserInteractionEnabledForActiveControl;
+- (void)_updateAlternateControlButtonVisibility;
 - (void)_updateReachabilityStateForActiveControl;
 - (void)_updateIconDescriptorAnimated:(_Bool)arg1;
 - (void)_updateControlStatusText;
 - (id)presentAlternateActionViewControllerAnimated:(_Bool)arg1;
 - (id)presentDetailViewControllerAnimated:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)isControlPresentedOrPresenting;
 - (id)initWithItem:(id)arg1 controlItems:(id)arg2 home:(id)arg3;

@@ -41,7 +41,7 @@
 @property(copy, nonatomic) CDUnknownBlockType advertiseStateChangedHandler; // @synthesize advertiseStateChangedHandler=_advertiseStateChangedHandler;
 @property(nonatomic) long long advertiseRate; // @synthesize advertiseRate=_advertiseRate;
 - (void).cxx_destruct;
-- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 error:(id)arg3;
+- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 transport:(long long)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didFailToStartAdvertisingOfType:(long long)arg2 withError:(id)arg3;
 - (void)nearby:(id)arg1 didDeferAdvertisingType:(long long)arg2;
 - (void)nearby:(id)arg1 didStartAdvertisingType:(long long)arg2;

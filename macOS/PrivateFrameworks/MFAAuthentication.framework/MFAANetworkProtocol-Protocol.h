@@ -7,6 +7,7 @@
 @class NSData, NSDictionary, NSLocale, NSString;
 
 @protocol MFAANetworkProtocol
+- (void)requestMetadataForCertSerial:(NSData *)arg1 issuerSeq:(NSData *)arg2 ppid:(NSString *)arg3 requestedLocale:(NSLocale *)arg4 requestInfo:(NSDictionary *)arg5 withReply:(void (^)(NSString *, NSLocale *, NSDictionary *, NSError *))arg6;
 - (void)confirmActivationForToken:(NSData *)arg1 withUUID:(NSString *)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)requestActivationForToken:(NSData *)arg1 withUUID:(NSString *)arg2 withReply:(void (^)(NSData *, NSError *))arg3;
 - (void)requestMetadataForToken:(NSData *)arg1 withUUID:(NSString *)arg2 requestedLocale:(NSLocale *)arg3 requestInfo:(NSDictionary *)arg4 withReply:(void (^)(NSString *, NSLocale *, NSDictionary *, NSError *))arg5;

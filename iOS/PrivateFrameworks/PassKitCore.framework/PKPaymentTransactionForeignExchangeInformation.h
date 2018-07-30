@@ -26,7 +26,9 @@
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (unsigned long long)itemType;
 - (id)recordTypesAndNames;
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;
 - (_Bool)isValid;

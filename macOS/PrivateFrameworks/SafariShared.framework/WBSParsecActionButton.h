@@ -25,13 +25,11 @@
     WBSParsecImageRepresentation *_icon;
     NSString *_punchoutAppName;
     NSString *_punchoutAppBundleIdentifier;
-    NSURL *_punchoutAppInstallURL;
     NSURL *_punchoutURL;
 }
 
 + (id)schema;
 @property(readonly, nonatomic) NSURL *punchoutURL; // @synthesize punchoutURL=_punchoutURL;
-@property(readonly, nonatomic) NSURL *punchoutAppInstallURL; // @synthesize punchoutAppInstallURL=_punchoutAppInstallURL;
 @property(readonly, copy, nonatomic) NSString *punchoutAppBundleIdentifier; // @synthesize punchoutAppBundleIdentifier=_punchoutAppBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *punchoutAppName; // @synthesize punchoutAppName=_punchoutAppName;
 @property(readonly, nonatomic) WBSParsecImageRepresentation *icon; // @synthesize icon=_icon;

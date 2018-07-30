@@ -7,14 +7,14 @@
 #import "NSObject.h"
 
 #import "NSCoding.h"
-#import "NSFunctionBarProvider.h"
 #import "NSTouchBarProvider.h"
 #import "NSTouchBarProviderContainer.h"
 #import "NSUIActivityProvider.h"
+#import "_NSQuickActionItemSource.h"
 
 @class NSMenu, NSString, NSTouchBar, NSUserActivity;
 
-@interface NSResponder : NSObject <NSTouchBarProviderContainer, NSUIActivityProvider, NSTouchBarProvider, NSFunctionBarProvider, NSCoding>
+@interface NSResponder : NSObject <NSTouchBarProviderContainer, NSUIActivityProvider, NSTouchBarProvider, _NSQuickActionItemSource, NSCoding>
 {
     id _nextResponder;
 }
@@ -22,6 +22,7 @@
 + (void)initialize;
 + (id)restorableStateKeyPaths;
 + (BOOL)automaticallyNotifiesObserversOfTouchBar;
++ (BOOL)automaticallyNotifiesObserversOfServicesRequestor;
 - (BOOL)_ignoreBadFirstResponders;
 - (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformShowDefaultUI;
@@ -397,6 +398,7 @@
 - (void)mouseDown:(id)arg1;
 - (BOOL)performMnemonic:(id)arg1;
 - (BOOL)performKeyEquivalent:(id)arg1;
+- (void)invalidateRequestor;
 - (id)validRequestorForSendType:(id)arg1 returnType:(id)arg2;
 - (BOOL)tryToPerform:(SEL)arg1 with:(id)arg2;
 @property NSResponder *nextResponder;
@@ -406,6 +408,7 @@
 - (unsigned long long)interfaceStyle;
 - (id)NS_touchBarProvidersKeyPaths;
 - (id)NS_touchBarProviders;
+- (id)_eventResponderChainDescription;
 @property(readonly) NSString *_responderDebugDescription;
 - (id)presentationWindowForError:(id)arg1 originatedInWindow:(id)arg2;
 - (void)_cleanUpUserActivity;
@@ -435,8 +438,11 @@
 - (id)makeTouchBar;
 @property(retain) NSTouchBar *touchBar;
 - (id)ns_widgetType;
-- (id)makeFunctionBar;
-@property(retain) NSTouchBar *functionBar;
+@property(readonly) __weak id <NSServicesRequestor> servicesRequestor;
+@property(readonly) id <_NSQuickActionItemSource> additionalQuickActionItemSource;
+- (id)quickAction:(id)arg1 anchoringViewForRequestor:(id)arg2 showRelativeToRect:(struct CGRect *)arg3 preferredEdge:(unsigned long long *)arg4;
+- (id)quickAction:(id)arg1 sourceWindowForRequestor:(id)arg2;
+- (void)quickAction:(id)arg1 didFailWithRequestor:(id)arg2 error:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

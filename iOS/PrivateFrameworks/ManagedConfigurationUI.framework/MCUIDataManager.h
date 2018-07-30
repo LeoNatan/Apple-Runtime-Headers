@@ -10,6 +10,7 @@
 
 @class LSApplicationWorkspace, MCProfileInfo, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCUIDataManager : NSObject <LSApplicationWorkspaceObserverProtocol>
 {
     int _appsChangedNotifyToken;

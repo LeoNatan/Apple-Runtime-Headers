@@ -10,6 +10,7 @@
 
 @class GEOPDViewportInfo, NSString, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParametersSiriSearch : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

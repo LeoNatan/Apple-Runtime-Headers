@@ -12,22 +12,21 @@
 #import "NSMutableCopying.h"
 #import "NSSecureCoding.h"
 
-@class HMAccessory, HMMediaProfile, HMMediaSystemRole, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMAccessory, HMFUnfairLock, HMMediaProfile, HMMediaSystemRole, NSString, NSUUID;
 
 @interface HMMediaSystemComponent : NSObject <HMFLogging, NSSecureCoding, HMObjectMerge, NSCopying, NSMutableCopying>
 {
+    HMFUnfairLock *_lock;
     HMMediaProfile *_mediaProfile;
     HMMediaSystemRole *_role;
     NSUUID *_uniqueIdentifier;
     HMAccessory *_accessory;
     NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 + (id)mediaSystemComponentWithDictionary:(id)arg1 home:(id)arg2;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

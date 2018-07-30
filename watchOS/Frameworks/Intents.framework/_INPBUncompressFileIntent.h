@@ -7,37 +7,39 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBUncompressFileIntent.h"
 
-@class PBUnknownFields, _INPBIntentMetadata, _INPBString;
+@class NSString, _INPBIntentMetadata, _INPBString;
 
-@interface _INPBUncompressFileIntent : PBCodable <NSCopying>
+@interface _INPBUncompressFileIntent : PBCodable <_INPBUncompressFileIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    CDStruct_032f6352 _has;
     _INPBString *_entityName;
     int _entityType;
     _INPBIntentMetadata *_intentMetadata;
-    CDStruct_032f6352 _has;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) int entityType; // @synthesize entityType=_entityType;
+@property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasEntityName;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
 - (int)StringAsEntityType:(id)arg1;
 - (id)entityTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasEntityType;
-@property(nonatomic) int entityType; // @synthesize entityType=_entityType;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasEntityName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

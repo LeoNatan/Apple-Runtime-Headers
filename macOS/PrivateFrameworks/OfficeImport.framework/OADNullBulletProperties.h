@@ -6,12 +6,10 @@
 
 #import <OfficeImport/OADBulletProperties.h>
 
-__attribute__((visibility("hidden")))
 @interface OADNullBulletProperties : OADBulletProperties
 {
 }
 
-+ (id)nullBulletProperties;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 

@@ -13,18 +13,15 @@
     HMFNetAddressInternal *_internal;
 }
 
-+ (id)shortDescription;
 + (id)localAddress;
 @property(readonly, nonatomic) HMFNetAddressInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *addressString;
 @property(readonly, nonatomic) unsigned long long addressFamily;
+- (id)attributeDescriptions;
+- (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)description;
-- (id)debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
 - (id)initWithHostname:(id)arg1;
 - (id)initWithSocketAddress:(const struct sockaddr *)arg1;
 - (id)init;

@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class CKContainer, NSOperationQueue;
+@class CKContainer, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface CKDatabase : NSObject
 {
     CKContainer *_container;
     int _scope;
     NSOperationQueue *_operationQueue;
+    NSObject<OS_dispatch_queue> *_underlyingDispatchQueue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *underlyingDispatchQueue; // @synthesize underlyingDispatchQueue=_underlyingDispatchQueue;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) int scope; // @synthesize scope=_scope;
 @property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;

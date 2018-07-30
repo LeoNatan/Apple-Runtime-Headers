@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (id)supportedValueLabelsAxisCombinations;
 - (id)axisTypesForValueLabels;
+- (_Bool)supportsRoundedCorners;
 - (_Bool)supportsBarGap;
 - (_Bool)supportsSetGap;
 - (id)elementBuilder;

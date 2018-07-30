@@ -150,6 +150,8 @@
 - (id)_getCachedValueForQueryCritiera:(id)arg1 valueCriteriaCache:(id)arg2 entitiesForCriteriaCache:(id)arg3 didLoadBlocksByQueryCriteria:(id)arg4 valueLoadedFromEntitiesArrayBlock:(CDUnknownBlockType)arg5 loadValueFromDataProviderBlock:(CDUnknownBlockType)arg6;
 - (id)_itemsForQueryCriteria:(id)arg1;
 - (_Bool)collectionExistsContainedWithinSyncIDs:(id)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
+- (_Bool)collectionExistsWithCloudUniversalLibraryID:(id)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
+- (_Bool)collectionExistsWithSagaID:(long long)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
 - (_Bool)collectionExistsWithStoreID:(long long)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
 - (_Bool)collectionExistsWithName:(id)arg1 groupingType:(int)arg2 existentPID:(unsigned long long *)arg3;
 - (_Bool)collectionExistsContainedWithinPersistentIDs:(const unsigned long long *)arg1 count:(unsigned long)arg2 groupingType:(int)arg3 existentPID:(unsigned long long *)arg4;
@@ -162,6 +164,7 @@
 - (id)entityWithMultiverseIdentifier:(id)arg1;
 - (id)multiverseIdentifierForCollectionWithPersistentID:(long long)arg1 groupingType:(int)arg2;
 - (id)multiverseIdentifierForTrackWithPersistentID:(long long)arg1;
+- (_Bool)deleteDatabaseProperty:(id)arg1;
 - (_Bool)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
 - (id)valueForDatabaseProperty:(id)arg1;
 - (id)entityCache;

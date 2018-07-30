@@ -45,6 +45,7 @@
 }
 
 + (id)determineRichLinksInMessage:(id)arg1;
++ (_Bool)supportedRichLinkURL:(id)arg1;
 + (id)messageFromIMMessageItemDictionary:(id)arg1 body:(id)arg2 sender:(id)arg3 subject:(id)arg4;
 + (id)messageFromIMMessageItem:(id)arg1 sender:(id)arg2 subject:(id)arg3;
 + (id)fromMeIMHandle:(id)arg1 withText:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(unsigned long long)arg4;
@@ -131,6 +132,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionForPurpose:(int)arg1 inChat:(id)arg2;
 - (id)descriptionForPurpose:(int)arg1;
+- (void)_ovverrideGUIDForTest:(id)arg1;
 @property(readonly, nonatomic) _Bool isAssociatedMessage;
 - (id)initWithSender:(id)arg1 time:(id)arg2 text:(id)arg3 messageSubject:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8 subject:(id)arg9 associatedMessageGUID:(id)arg10 associatedMessageType:(long long)arg11 associatedMessageRange:(struct _NSRange)arg12 associatedMessageInfo:(id)arg13;
 

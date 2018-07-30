@@ -8,6 +8,7 @@
 
 @class ICCameraDevice, ICCameraFolder, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ICCameraItemProperties : NSObject
 {
     ICCameraDevice *_device;
@@ -24,8 +25,11 @@
     unsigned int _ptpObjectHandle;
     BOOL _addedAfterContentCatalogCompleted;
     id _userObject;
+    unsigned long long _uTime;
+    NSMutableDictionary *_userDict;
 }
 
+@property unsigned long long uTime; // @synthesize uTime=_uTime;
 @property(retain) id userObject; // @synthesize userObject=_userObject;
 @property(getter=wasAddedAfterContentCatalogCompleted) BOOL addedAfterContentCatalogCompleted; // @synthesize addedAfterContentCatalogCompleted=_addedAfterContentCatalogCompleted;
 @property unsigned int ptpObjectHandle; // @synthesize ptpObjectHandle=_ptpObjectHandle;
@@ -40,7 +44,6 @@
 @property unsigned long long objectID; // @synthesize objectID=_objectID;
 @property ICCameraFolder *parentFolder; // @synthesize parentFolder=_parentFolder;
 @property ICCameraDevice *device; // @synthesize device=_device;
-- (void)finalize;
 - (void)dealloc;
 - (void)removeDeviceAssignment;
 - (void)removeParentAssignment;

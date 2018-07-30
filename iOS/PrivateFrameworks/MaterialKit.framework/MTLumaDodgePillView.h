@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIView.h"
+#import <MaterialKit/MTPillView.h>
 
 #import "CAAnimationDelegate.h"
 
 @class MTLumaDodgePillSettings, NSMutableArray, NSString;
 
-@interface MTLumaDodgePillView : UIView <CAAnimationDelegate>
+@interface MTLumaDodgePillView : MTPillView <CAAnimationDelegate>
 {
     long long _style;
     MTLumaDodgePillSettings *_settings;
@@ -43,9 +43,7 @@
 - (void)_updateStyle;
 - (id)_styleSettings;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

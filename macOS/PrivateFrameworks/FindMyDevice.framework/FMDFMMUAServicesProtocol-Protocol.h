@@ -6,11 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSData, NSString;
+@class FMDFMMAccountInfo, NSData, NSDictionary, NSString;
 
 @protocol FMDFMMUAServicesProtocol <NSObject>
+- (oneway void)addFMMAccount:(FMDFMMAccountInfo *)arg1 withAuthData:(NSData *)arg2 withReply:(void (^)(NSError *))arg3;
 - (oneway void)resetShouldResumeCardsForUser:(NSString *)arg1 withReply:(void (^)(NSError *))arg2;
 - (oneway void)didReceiveLostModeExitAuthToken:(NSString *)arg1 withReply:(void (^)(NSError *))arg2;
+- (oneway void)updateAdditionalFMMAccountInfo:(NSDictionary *)arg1 withReply:(void (^)(NSError *))arg2;
 - (oneway void)updateGUIDUsingAuthData:(NSData *)arg1 withReply:(void (^)(NSError *))arg2;
 - (oneway void)clearLocateAlertsForCommandId:(NSString *)arg1 withReply:(void (^)(NSError *))arg2;
 - (oneway void)getPendingLocateAlertsWithReply:(void (^)(NSString *, FMAlert *, FMAlert *, FMAlert *, NSError *))arg1;

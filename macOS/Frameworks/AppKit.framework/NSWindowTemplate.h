@@ -66,11 +66,13 @@
     long long _tabbingMode;
     long long _titleVisibility;
     BOOL _titlebarAppearsTransparent;
+    long long _level;
 }
 
 + (void)initialize;
 @property BOOL maxFullScreenContentSizeIsSet; // @synthesize maxFullScreenContentSizeIsSet=_maxFullScreenContentSizeIsSet;
 @property BOOL minFullScreenContentSizeIsSet; // @synthesize minFullScreenContentSizeIsSet=_minFullScreenContentSizeIsSet;
+@property long long level; // @synthesize level=_level;
 @property BOOL titlebarAppearsTransparent; // @synthesize titlebarAppearsTransparent=_titlebarAppearsTransparent;
 @property long long titleVisibility; // @synthesize titleVisibility=_titleVisibility;
 @property long long tabbingMode; // @synthesize tabbingMode=_tabbingMode;

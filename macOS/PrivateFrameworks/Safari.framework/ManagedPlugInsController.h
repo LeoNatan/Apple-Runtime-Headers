@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 
 + (id)plugInNameForPerSitePreferencesPopoverForBundleIdentifier:(id)arg1;
 + (id)plugInNameForBundleIdentifier:(id)arg1;
++ (id)supportedPlugInList;
++ (BOOL)isPlugInSupported:(id)arg1;
 + (BOOL)isPlugInHidden:(id)arg1;
 + (BOOL)isJavaPlugIn:(id)arg1;
 + (BOOL)isFlashPlugInBundleIdentifier:(id)arg1;
@@ -77,7 +79,7 @@ __attribute__((visibility("hidden")))
 - (void)showInitializationErrorDialogIfNecessaryForManagedPlugInWithInfo:(id)arg1 inBrowserViewController:(id)arg2;
 - (BOOL)_shouldPromptToUsePlugInWithHostPolicy:(id)arg1;
 - (void)showDialogIfNecessaryForManagedPlugInWithInfo:(id)arg1 inBrowserViewController:(id)arg2;
-- (id)_nonAppleConnectPlugIns;
+- (id)_plugIns;
 - (void)_showPromptWhenClickingToUsePlugInWithPolicy:(id)arg1 inBrowserViewController:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)showPromptWhenClickingToUsePlugInForBrowserViewControllerIfNecessary:(id)arg1 navigatingToURL:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)shouldDropPromptToManagePlugInSheetForPlugIn:(id)arg1;
@@ -90,7 +92,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)loadPolicyForPlugInInfo:(id)arg1 inBrowserViewController:(id)arg2 unavailabilityDescription:(id *)arg3;
 - (BOOL)plugInIsWhitelistedWithPlugInIdentifier:(id)arg1;
 - (void)savePendingConfigurationChangesBeforeTerminationIfNecessary;
-- (void)_getManagedPlugInsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)_getManagedPlugInsIncludingUnsupportedPlugIns:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)getManagedPlugInsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)populateManagedPlugInsIfNecessaryUsingCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setUpPlugInsAvailability;

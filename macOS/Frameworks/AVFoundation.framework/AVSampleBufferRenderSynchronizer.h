@@ -13,10 +13,13 @@
     AVSampleBufferRenderSynchronizerInternal *_synchronizerInternal;
 }
 
++ (void)setFigRenderSynchronizerFactory:(id)arg1 forQueue:(id)arg2;
++ (id)currentFigRenderSynchronizerFactory;
+- (void)_updateRateFromTimebase;
 - (void)setRate:(float)arg1 time:(CDStruct_1b6d18a9)arg2;
 @property(nonatomic) float rate;
+- (CDStruct_1b6d18a9)currentTime;
 @property(readonly, retain) struct OpaqueCMTimebase *timebase;
-- (void)finalize;
 - (void)dealloc;
 - (int)_initializeTimebase;
 - (id)init;

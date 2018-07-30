@@ -8,6 +8,7 @@
 
 @class CPLResource, NSData, NSError;
 
+__attribute__((visibility("hidden")))
 @interface CPLProxyLibraryManagerOutstandingInvocation : NSObject
 {
     _Bool _inMemoryRequest;

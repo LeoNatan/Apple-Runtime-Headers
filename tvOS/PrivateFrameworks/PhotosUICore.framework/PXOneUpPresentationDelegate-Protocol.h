@@ -6,17 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSSet, PXActionManager, PXAssetReference, PXAssetsDataSourceManager, PXOneUpPresentation, PXPhotosDetailsContext, PXRegionOfInterest, PXUIMediaProvider, UIImage;
+@class NSSet, PXAssetActionManager, PXAssetReference, PXAssetsDataSourceManager, PXGestureProvider, PXOneUpPresentation, PXPhotosDetailsContext, PXRegionOfInterest, PXUIMediaProvider, UIImage;
 
 @protocol PXOneUpPresentationDelegate <NSObject>
 - (PXUIMediaProvider *)oneUpPresentationMediaProvider:(PXOneUpPresentation *)arg1;
 - (PXAssetsDataSourceManager *)oneUpPresentationDataSourceManager:(PXOneUpPresentation *)arg1;
 
 @optional
-- (PXActionManager *)oneUpPresentationActionManager:(PXOneUpPresentation *)arg1;
+- (PXGestureProvider *)oneUpPresentationGestureProvider:(PXOneUpPresentation *)arg1;
+- (long long)oneUpPresentationActionContext:(PXOneUpPresentation *)arg1;
+- (PXAssetActionManager *)oneUpPresentationActionManagerForPreviewing:(PXOneUpPresentation *)arg1;
+- (PXAssetActionManager *)oneUpPresentationActionManager:(PXOneUpPresentation *)arg1;
 - (void)oneUpPresentation:(PXOneUpPresentation *)arg1 setHiddenAssetReferences:(NSSet *)arg2;
 - (void)oneUpPresentation:(PXOneUpPresentation *)arg1 scrollAssetReferenceToVisible:(PXAssetReference *)arg2;
-- (PXRegionOfInterest *)oneUpPresentation:(PXOneUpPresentation *)arg1 regionOfInterestForAssetReference:(PXAssetReference *)arg2 inCoordinateSpace:(id <UICoordinateSpace>)arg3;
+- (PXRegionOfInterest *)oneUpPresentation:(PXOneUpPresentation *)arg1 regionOfInterestForAssetReference:(PXAssetReference *)arg2;
 - (UIImage *)oneUpPresentation:(PXOneUpPresentation *)arg1 currentImageForAssetReference:(PXAssetReference *)arg2;
 - (_Bool)oneUpPresentationShouldAutoPlay:(PXOneUpPresentation *)arg1;
 - (PXAssetReference *)oneUpPresentationInitialAssetReference:(PXOneUpPresentation *)arg1;

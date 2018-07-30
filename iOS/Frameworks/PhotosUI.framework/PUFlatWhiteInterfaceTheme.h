@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)configureImportHeaderSubtitleLabel:(id)arg1;
+- (void)configureImportHeaderTitleLabel:(id)arg1;
 - (void)configureSlideshowMusicHeaderTitleLabel:(id)arg1;
 @property(readonly, nonatomic) UIColor *slideshowMusicHeaderTextColor;
 @property(readonly, nonatomic) UIColor *slideshowMusicHeaderBackgroundColor;
@@ -23,12 +25,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIColor *slideshowChromeBarTintColor;
 - (id)cloudWelcomeViewTitleLabelFontForSize:(double)arg1;
 - (id)searchDimmedAttributes;
+- (id)searchItalicTitleAttributes;
 - (id)searchDefaultAttributes;
 @property(readonly, nonatomic) double searchSubtitleBottomBaselineDistance;
 @property(readonly, nonatomic) double searchTitleSubtitleBaselineDistance;
 @property(readonly, nonatomic) double searchTitleTopBaselineDistance;
 @property(readonly, nonatomic) double searchSingleTitleBottomBaselineDistance;
 @property(readonly, nonatomic) double searchSingleTitleTopBaselineDistance;
+- (void)configureSearchResultCountLabel:(id)arg1;
+@property(readonly, nonatomic) UIColor *searchResultCountTextColor;
+@property(readonly, nonatomic) UIFont *searchResultCountLabelFont;
 - (void)configureSearchSubtitleLabel:(id)arg1;
 @property(readonly, nonatomic) UIColor *searchSubtitleTextColor;
 @property(readonly, nonatomic) UIFont *searchSubtitleLabelFont;
@@ -36,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (id)searchTitleDimmedTextColor;
 - (id)searchTitleTextColor;
 - (id)searchTitleLabelHighlightedFont;
+@property(readonly, nonatomic) UIFont *searchItalicTitleLabelFont;
 @property(readonly, nonatomic) UIFont *searchTitleLabelFont;
 @property(readonly, nonatomic) UIColor *searchRecentLabelTextColor;
 @property(readonly, nonatomic) UIFont *searchRecentLabelFont;
@@ -55,7 +62,6 @@ __attribute__((visibility("hidden")))
 - (id)createCloudFeedCommentButton;
 - (void)configureCloudFeedStackView:(id)arg1 withStackSize:(struct CGSize)arg2;
 @property(readonly, nonatomic) UIImage *cloudFeedSectionHeaderBackgroundImage;
-@property(readonly, nonatomic) UIImage *cloudFeedMiniChevronImage;
 - (void)configureCloudFeedSectionHeaderTextCell:(id)arg1 contentInsets:(struct UIEdgeInsets)arg2 descriptionAttributedText:(id)arg3 detailAttributedText:(id)arg4;
 - (void)configureCloudFeedGroupHeaderTextCell:(id)arg1 contentInsets:(struct UIEdgeInsets)arg2 withText:(id)arg3;
 - (id)attributedStringForCloudFeedGroupHeaderWithText:(id)arg1;
@@ -73,7 +79,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double cloudFeedSeparatorHeight;
 @property(readonly, nonatomic) UIColor *cloudFeedSeparatorColor;
 @property(readonly, nonatomic) UIColor *cloudFeedBackgroundColor;
-@property(readonly, nonatomic) UIFont *wallpaperCategoryLabelFont;
 @property(readonly, nonatomic) UIColor *videoEditingToolbarToolButtonColor;
 @property(readonly, nonatomic) UIColor *videoEditingToolbarSecondaryButtonColor;
 @property(readonly, nonatomic) UIColor *videoEditingToolbarDestructiveButtonColor;
@@ -186,9 +191,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double albumListDisabledAlbumTitleAlpha;
 @property(readonly, nonatomic) double albumListDisabledAlbumStackViewAlpha;
 - (void)configureAlbumListDeleteButton:(id)arg1;
-- (void)configureAlbumListEmptyStackViewPadPhotoDecoration:(id)arg1;
-- (void)configureAlbumListStackViewPadPhotoDecoration:(id)arg1;
-- (void)configureAlbumListEmptyStackViewPhonePhotoDecoration:(id)arg1;
 - (void)configureAlbumListStackViewPhonePhotoDecoration:(id)arg1;
 - (void)configureAlbumListSectionTitleLabel:(id)arg1;
 @property(readonly, nonatomic) UIFont *albumListSectionTitleLabelFont;
@@ -228,7 +230,6 @@ __attribute__((visibility("hidden")))
 - (id)photoCollectionHeaderDisclosureIconForStyle:(long long)arg1;
 - (id)photoCollectionHeaderBackgroundColorForBackgroundStyle:(unsigned long long)arg1;
 @property(readonly, nonatomic) int photoCollectionViewBackgroundColorValue;
-@property(readonly, nonatomic) UIColor *photoCollectionViewSecondScreenBackgroundColor;
 @property(readonly, nonatomic) UIColor *photoCollectionViewBackgroundColor;
 - (id)topLevelNavigationBarDoneButtonBackgroundImageForState:(unsigned long long)arg1 barMetrics:(long long)arg2;
 - (id)topLevelNavigationBarBackButtonBackgroundImageForState:(unsigned long long)arg1 barMetrics:(long long)arg2;

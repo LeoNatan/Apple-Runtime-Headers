@@ -12,12 +12,20 @@
 
 @interface PHProjectInfo : NSObject <NSSecureCoding>
 {
+    BOOL _brandingEnabled;
+    BOOL _pageNumbersEnabled;
     long long _creationSource;
     NSString *_projectType;
     NSArray *_sections;
+    NSString *_productIdentifier;
+    NSString *_themeIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) NSString *themeIdentifier; // @synthesize themeIdentifier=_themeIdentifier;
+@property(readonly, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
+@property(readonly, nonatomic) BOOL pageNumbersEnabled; // @synthesize pageNumbersEnabled=_pageNumbersEnabled;
+@property(readonly, nonatomic) BOOL brandingEnabled; // @synthesize brandingEnabled=_brandingEnabled;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) NSString *projectType; // @synthesize projectType=_projectType;
 @property(readonly, nonatomic) long long creationSource; // @synthesize creationSource=_creationSource;
@@ -28,6 +36,7 @@
 - (id)description;
 - (id)description:(BOOL)arg1;
 - (id)initWithProjectType:(id)arg1 sections:(id)arg2 creationSource:(long long)arg3;
+- (id)initWithProjectType:(id)arg1 sections:(id)arg2 creationSource:(long long)arg3 brandingEnabled:(BOOL)arg4 pageNumbersEnabled:(BOOL)arg5 productIdentifier:(id)arg6 themeIdentifier:(id)arg7;
 
 @end
 

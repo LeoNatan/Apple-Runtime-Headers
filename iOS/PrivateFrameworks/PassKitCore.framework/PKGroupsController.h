@@ -55,7 +55,7 @@
 - (void)_fixIndicesFrom:(unsigned long long)arg1;
 - (void)_fixIndex:(unsigned long long)arg1;
 - (id)_displayablePassesDictionaryFromSet:(id)arg1;
-- (id)_groupsExcludingPayment;
+- (id)_groupsExcludingTypePayment;
 - (unsigned long long)_indexOfGroupID:(id)arg1;
 - (void)_performEnqueuedUpdates;
 - (void)_performOrEnqueueUpdate:(CDUnknownBlockType)arg1;
@@ -85,6 +85,7 @@
 - (void)dealloc;
 - (id)initLimited;
 - (id)initWithPassTypeMask:(unsigned long long)arg1 passFilters:(unsigned long long)arg2;
+- (id)initWithPassLibrary:(id)arg1;
 - (id)init;
 
 // Remaining properties

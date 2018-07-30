@@ -40,6 +40,7 @@
 - (id)containerView;
 - (id)toViewController;
 - (id)fromViewController;
+- (void)setTransitionContext:(id)arg1;
 - (id)transitionContext;
 - (id)interactiveTransition;
 - (void)cancelInteractiveTransition;

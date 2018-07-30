@@ -8,6 +8,7 @@
 
 @class MTKMeshBuffer;
 
+__attribute__((visibility("hidden")))
 @interface MTKMeshBufferHolder : NSObject
 {
     MTKMeshBuffer *_buffer;

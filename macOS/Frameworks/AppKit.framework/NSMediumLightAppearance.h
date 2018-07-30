@@ -11,10 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (long long)_internalVisualEffectMaterialForBlendingMode:(long long)arg1;
-- (id)_appearanceForStandardTableView;
-- (id)_appearanceForSourceListTableView;
-- (id)name;
+- (id)_appearanceForNonVibrantContent;
+- (id)_appearanceForVibrantContent;
 
 @end
 

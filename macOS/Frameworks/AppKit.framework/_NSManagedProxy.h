@@ -8,6 +8,7 @@
 
 @class NSArray, NSManagedObjectContext, NSPredicate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NSManagedProxy : NSObject
 {
     id _callbackHandler;

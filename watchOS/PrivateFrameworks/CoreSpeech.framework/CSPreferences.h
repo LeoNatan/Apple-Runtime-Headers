@@ -10,14 +10,24 @@
 {
 }
 
++ (unsigned int)_deviceCategoryForDeviceProductType:(id)arg1;
++ (id)deviceCategoryStringRepresentationForCategoryType:(unsigned int)arg1;
++ (_Bool)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
 + (id)sharedPreferences;
+- (_Bool)useSiriActivationSPIForHomePod;
+- (unsigned int)maxNumLoggingFiles;
+- (double)audioSessionActivationDelay;
+- (_Bool)smartSiriVolumeSoftVolumeEnabled;
+- (_Bool)speakerIdEnabled;
+- (id)audioInjectionFilePath;
+- (void)setAudioInjectionFilePath:(id)arg1;
+- (_Bool)audioInjectionEnabled;
+- (_Bool)enableAudioInjection:(_Bool)arg1;
 - (_Bool)myriadFileLoggingEnabled;
 - (id)interstitialAbsoluteDirForLevel:(int)arg1;
 - (id)interstitialRelativeDirForLevel:(int)arg1;
 - (double)remoteVoiceTriggerEndpointTimeoutWithDefault:(double)arg1;
 - (double)remoteVoiceTriggerDelayTime;
-- (id)_deviceCategoryMap;
-- (_Bool)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
 - (_Bool)_markSATEnrollmentWithMarker:(id)arg1 forLanguage:(id)arg2;
 - (_Bool)_markSATEnrollmentMigratedForLanguageCode:(id)arg1;
 - (_Bool)_markSATEnrollmentSuccessForLanguageCode:(id)arg1;

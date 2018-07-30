@@ -34,6 +34,7 @@
 - (void)siriSessionGetRequestContextWithCompletionHandler:(void (^)(NSArray *))arg1;
 - (void)siriSessionSupportsSpeechSynthesis:(BOOL)arg1;
 - (void)siriSessionRequestsDismissal;
+- (void)siriSessionOpenApplicationWithBundleID:(NSString *)arg1 URL:(NSURL *)arg2 completion:(void (^)(BOOL))arg3;
 - (void)siriSessionOpenURL:(NSURL *)arg1 completionHandler:(void (^)(BOOL))arg2;
 - (void)siriSessionDidChangeLockState:(unsigned long long)arg1;
 - (void)siriSessionDidChangeNetworkAvailability;

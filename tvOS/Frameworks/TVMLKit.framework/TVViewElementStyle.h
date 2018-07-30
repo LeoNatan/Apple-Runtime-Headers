@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class IKViewElementStyle, NSMutableDictionary, NSString, TVColor;
+@class IKViewElementStyle, NSMutableDictionary, NSShadow, NSString, TVAppStyle, TVColor;
 
 @interface TVViewElementStyle : NSObject <NSCopying>
 {
@@ -30,7 +30,7 @@
 @property(readonly, nonatomic) TVColor *highlightColor;
 @property(readonly, nonatomic) long long contentAlignment;
 @property(readonly, nonatomic) long long alignment;
-- (id)shadow;
+@property(readonly, nonatomic) NSShadow *shadow;
 @property(readonly, nonatomic) double width;
 @property(readonly, nonatomic) long long textAlignment;
 @property(readonly, nonatomic) struct UIEdgeInsets padding;
@@ -43,10 +43,12 @@
 @property(readonly, nonatomic) double height;
 @property(readonly, nonatomic) NSString *fontWeight;
 @property(readonly, nonatomic) double fontSize;
-- (id)textTransform;
+@property(readonly, nonatomic) NSString *textTransform;
 @property(readonly, nonatomic) TVColor *color;
 @property(readonly, nonatomic) TVColor *backgroundColor;
 - (id)valueForStyleProperty:(id)arg1;
+- (id)cssValueForStyleProperty:(id)arg1;
+@property(retain, nonatomic) TVAppStyle *styleMetrics;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStyle:(id)arg1;
 

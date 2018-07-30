@@ -9,28 +9,30 @@
 #import "ARInternalSessionObserver.h"
 #import "ARReplaySensorDelegate.h"
 
-@class ARQATraceDataBuilder, ARScreenRecording, NSString, UILabel;
+@class ARScreenRecording, NSMutableData, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOutputStream, NSString, UILabel;
 
 @interface ARQATracer : NSObject <ARInternalSessionObserver, ARReplaySensorDelegate>
 {
     unsigned long long _frameIndex;
-    unsigned long long _cameraMovedAtFrame;
-    unsigned long long _featureCapturedAtFrame;
-    unsigned long long _firstPlaneAtFrame;
-    unsigned long long _firstFaceAtFrame;
-    unsigned char _isTracing;
-    struct CGPoint _offset;
-    unsigned char _forceQuitApp;
+    _Bool _isTracing;
+    NSMutableDictionary *_traceHeader;
+    NSMutableData *_dataBuffer;
+    NSOutputStream *_framesStreamToFile;
+    NSObject<OS_dispatch_queue> *_processingQueue;
+    _Bool _forceQuitApp;
+    _Bool _recordScreen;
     id <ARQATracerDelegate> _delegate;
     NSString *_traceOutputFilePath;
     UILabel *_replayFrameLabel;
-    ARQATraceDataBuilder *_dataBuilder;
     ARScreenRecording *_screenRecorder;
+    struct CGPoint _offset;
 }
 
 + (_Bool)isEnabled;
+@property(nonatomic) _Bool recordScreen; // @synthesize recordScreen=_recordScreen;
+@property(nonatomic) _Bool forceQuitApp; // @synthesize forceQuitApp=_forceQuitApp;
+@property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) ARScreenRecording *screenRecorder; // @synthesize screenRecorder=_screenRecorder;
-@property(retain, nonatomic) ARQATraceDataBuilder *dataBuilder; // @synthesize dataBuilder=_dataBuilder;
 @property(retain, nonatomic) UILabel *replayFrameLabel; // @synthesize replayFrameLabel=_replayFrameLabel;
 @property(retain, nonatomic) NSString *traceOutputFilePath; // @synthesize traceOutputFilePath=_traceOutputFilePath;
 @property(nonatomic) __weak id <ARQATracerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -38,19 +40,16 @@
 - (void)session:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (void)replaySensorDidFinishReplayingData;
-- (id)getAppleCV3DVersion;
-- (id)getSceneKitVersion;
-- (id)getARKitVersion;
 - (void)addFrameLabel:(id)arg1;
-- (void)createTraceOutputDirectory;
-- (void)captureFaceData:(id)arg1 frameDataDict:(id)arg2;
-- (void)capturePlanesDate:(id)arg1 frameDataDict:(id)arg2;
-- (void)traceARFrame:(id)arg1;
-- (void)traceCompleted;
+- (id)createTraceOutputDirectory;
 - (void)update:(id)arg1;
 - (void)stop;
 - (void)start:(id)arg1;
+- (void)flushDataBufferToFile;
+- (void)writeStringToOutputStream:(id)arg1;
+- (void)writeJSONObjectToStream:(id)arg1 prefix:(id)arg2;
 - (void)receiveDefaults;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

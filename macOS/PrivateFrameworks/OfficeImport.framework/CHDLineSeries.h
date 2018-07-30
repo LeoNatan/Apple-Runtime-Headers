@@ -10,18 +10,17 @@
 
 @class CHDMarker, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CHDLineSeries : CHDSeries <CHDMarkerOwner>
 {
     CHDMarker *mMarker;
     _Bool mSmooth;
 }
 
+- (void).cxx_destruct;
 - (void)setSmooth:(_Bool)arg1;
 - (_Bool)isSmooth;
 - (void)setMarker:(id)arg1;
 - (id)marker;
-- (void)dealloc;
 - (id)initWithChart:(id)arg1;
 
 // Remaining properties

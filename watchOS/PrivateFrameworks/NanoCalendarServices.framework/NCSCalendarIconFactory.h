@@ -10,8 +10,10 @@
 {
 }
 
-+ (id)calendarIconOfType:(int)arg1 date:(id)arg2;
-+ (id)calendarIconOfType:(int)arg1;
++ (void)_generateIconImages;
++ (id)calendarIconOfDiameter:(float)arg1 date:(id)arg2;
++ (id)calendarIconForDeviceVariant:(int)arg1 quickLook:(_Bool)arg2 date:(id)arg3;
++ (id)calendarIconForQuickLook:(_Bool)arg1 date:(id)arg2;
 + (id)sharedIconLayoutItemCache;
 
 @end

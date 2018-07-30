@@ -6,9 +6,11 @@
 
 #import "UIView.h"
 
-@class NSDecimalNumber, NSNumberFormatter, NSString, UIActivityIndicatorView, UILabel;
+#import "UIGestureRecognizerDelegate.h"
 
-@interface PKEnterValueNewBalanceView : UIView
+@class NSDecimalNumber, NSNumberFormatter, NSString, UIActivityIndicatorView, UILabel, UITapGestureRecognizer;
+
+@interface PKEnterValueNewBalanceView : UIView <UIGestureRecognizerDelegate>
 {
     NSDecimalNumber *_additionalAmount;
     _Bool _subtractAdditionalAmountFromCurrentAmount;
@@ -16,6 +18,7 @@
     NSNumberFormatter *_currentAmountFormatter;
     UILabel *_label;
     UIActivityIndicatorView *_spinner;
+    UITapGestureRecognizer *_tapRecognizer;
     NSString *_promptText;
     NSString *_updatedBalancePromptText;
     NSString *_maxLoadAmountText;
@@ -25,8 +28,10 @@
     NSDecimalNumber *_minBalance;
     NSDecimalNumber *_maxLoadAmount;
     NSDecimalNumber *_minLoadAmount;
+    id <PKEnterValueNewBalanceViewDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <PKEnterValueNewBalanceViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDecimalNumber *minLoadAmount; // @synthesize minLoadAmount=_minLoadAmount;
 @property(copy, nonatomic) NSDecimalNumber *maxLoadAmount; // @synthesize maxLoadAmount=_maxLoadAmount;
 @property(copy, nonatomic) NSDecimalNumber *minBalance; // @synthesize minBalance=_minBalance;
@@ -39,6 +44,7 @@
 - (void).cxx_destruct;
 - (void)_addSubviews;
 - (void)_createAmountFormatter;
+- (void)currentBalanceTapRecognized;
 - (void)_updateBalanceText;
 - (id)_textForPrompt:(id)arg1 amount:(id)arg2;
 - (id)_minimalFormattedStringForAmount:(id)arg1;
@@ -50,6 +56,12 @@
 - (void)layoutSubviews;
 - (id)initWithCurrencyCode:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

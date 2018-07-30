@@ -26,8 +26,6 @@
 - (id)ckRecordIDFromExistingMetadata;
 - (id)_copyCKRecordFromExistingCKMetadata:(_Bool)arg1;
 - (id)_assetURLToInsertToRecord;
-- (id)_recordIDUsingSalt:(id)arg1 zoneID:(id)arg2;
-- (id)_recordNameWithSalt:(id)arg1;
 - (id)_ckUniqueID;
 @end
 

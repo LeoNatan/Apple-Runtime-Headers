@@ -8,14 +8,14 @@
 
 #import "OS_tcp_connection.h"
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_nw_connection>, NSObject<OS_nw_endpoint>, NSObject<OS_nw_parameters>, NSObject<OS_nw_path>, NSObject<OS_xpc_object>, NSString;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_nw_connection>, NSObject<OS_nw_endpoint>, NSObject<OS_nw_error>, NSObject<OS_nw_parameters>, NSObject<OS_nw_path>, NSObject<OS_xpc_object>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_tcp_connection : NSObject <OS_tcp_connection>
 {
     NSObject<OS_xpc_object> *tc_context;
-    char tc_connection_activity[0];
     NSObject<OS_nw_connection> *tc_nwconn;
-    struct __CFError *tc_last_nw_error;
+    NSObject<OS_nw_error> *tc_last_nw_error;
     NSObject<OS_nw_path> *tc_nw_current_path;
     NSObject<OS_nw_endpoint> *tc_network_endpoint;
     NSObject<OS_nw_parameters> *tc_network_parameters;

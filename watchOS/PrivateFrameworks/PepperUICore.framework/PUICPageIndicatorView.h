@@ -33,6 +33,7 @@
 - (float)_dotSize;
 - (void)_setIndicatorView:(id)arg1 atPageIndex:(unsigned int)arg2;
 - (void)_createIndicators;
+- (_Bool)_usesSmallSpacing;
 - (_Bool)_usesSmallImages;
 
 @end

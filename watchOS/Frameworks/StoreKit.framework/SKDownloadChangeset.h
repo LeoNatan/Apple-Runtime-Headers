@@ -10,6 +10,7 @@
 
 @class NSError, NSNumber, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface SKDownloadChangeset : NSObject <NSCopying>
 {
     NSNumber *_contentLength;
@@ -29,10 +30,10 @@
 @property(copy, nonatomic) NSNumber *downloadID; // @synthesize downloadID=_downloadID;
 @property(copy, nonatomic) NSURL *contentURL; // @synthesize contentURL=_contentURL;
 @property(copy, nonatomic) NSNumber *contentLength; // @synthesize contentLength=_contentLength;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)dealloc;
 
 @end
 

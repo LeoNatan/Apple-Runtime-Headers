@@ -41,7 +41,9 @@ __attribute__((visibility("hidden")))
 - (void)doClick:(id)arg1;
 - (void)_ensureValidSelection;
 - (void)addColumnForItem:(id)arg1;
+- (void)loadColumnZero;
 - (void)setLastColumn:(long long)arg1;
+- (void)viewDidChangeBackingProperties;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidMoveToWindow;

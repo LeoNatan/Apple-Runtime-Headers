@@ -10,9 +10,7 @@
 {
 }
 
-- (id)tallFaceTemplate;
-- (id)shortFaceTemplate;
-- (id)shortScrunchedFaceTemplate;
+- (id)templateForLayoutMode:(long long)arg1;
 
 @end
 

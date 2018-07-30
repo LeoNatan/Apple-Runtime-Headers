@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSData, NSDate, NSDictionary, NSString, NSURL, WCUserInfo;
+@class NSData, NSDate, NSDictionary, NSNumber, NSString, NSURL, WCUserInfo;
 
 @interface WCSessionFile : NSObject <NSSecureCoding>
 {
@@ -17,11 +17,13 @@
     WCUserInfo *_userInfoStorage;
     NSString *_relativePath;
     NSString *_fileIdentifier;
+    NSNumber *_fileSize;
     NSURL *_fileURL;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
+@property(copy, nonatomic) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(copy) NSString *fileIdentifier; // @synthesize fileIdentifier=_fileIdentifier;
 @property(copy, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;
 @property(retain, nonatomic) WCUserInfo *userInfoStorage; // @synthesize userInfoStorage=_userInfoStorage;

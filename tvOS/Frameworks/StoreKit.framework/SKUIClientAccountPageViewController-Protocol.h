@@ -6,12 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSError, NSNumber;
+@class NSDictionary, NSError, NSNumber;
 
 @protocol SKUIClientAccountPageViewController <NSObject>
+- (void)popBridgedViewControllersToIndex:(unsigned long long)arg1;
+- (void)pushBridgedViewControllerAnimated:(_Bool)arg1 options:(NSDictionary *)arg2;
+- (void)setBridgedNavigationItemWithOptions:(NSDictionary *)arg1;
 - (void)overrideRedeemCameraWithCompletion:(void (^)(SKUIRedeem *, NSError *))arg1;
 - (void)overrideCreditCardPresentationWithCompletion:(void (^)(SUCreditCardReaderOutput *))arg1;
+- (void)financeInterruptionResolved:(_Bool)arg1;
 - (void)dismissViewControllerWithResult:(NSNumber *)arg1 error:(NSError *)arg2;
+- (void)didFinishLoading;
 - (void)didPrepareWithResult:(NSNumber *)arg1 error:(NSError *)arg2;
 @end
 

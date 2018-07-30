@@ -18,6 +18,9 @@
 + (id)__author_KEY;
 + (id)__podcast_KEY;
 + (id)__localFileAsset_KEY;
++ (id)__seasonNumber_KEY;
++ (id)__episodeNumber_KEY;
++ (id)__episodeType_KEY;
 + (id)__shareURL_KEY;
 + (id)__datePlayed_KEY;
 + (id)__descriptionText_KEY;
@@ -32,6 +35,7 @@
 @property(copy, nonatomic) NSString *commentText; // @synthesize commentText=_commentText;
 - (void).cxx_destruct;
 - (id)artworkCatalog;
+- (id)humanDescription;
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;
@@ -39,12 +43,15 @@
 @property(copy, nonatomic) NSDate *datePlayed; // @dynamic datePlayed;
 @property(copy, nonatomic) NSString *descriptionText; // @dynamic descriptionText;
 @property(nonatomic) double duration; // @dynamic duration;
+@property(readonly, nonatomic) int episodeNumber; // @dynamic episodeNumber;
+@property(readonly, nonatomic) int episodeType; // @dynamic episodeType;
 @property(nonatomic, getter=isExplicitEpisode) _Bool explicitEpisode; // @dynamic explicitEpisode;
 @property(readonly, nonatomic) _Bool hasVideo; // @dynamic hasVideo;
 @property(retain, nonatomic) MPModelFileAsset *localFileAsset; // @dynamic localFileAsset;
 @property(retain, nonatomic) MPModelPlaybackPosition *playbackPosition; // @dynamic playbackPosition;
 @property(retain, nonatomic) MPModelPodcast *podcast; // @dynamic podcast;
 @property(copy, nonatomic) NSDateComponents *releaseDateComponents; // @dynamic releaseDateComponents;
+@property(readonly, nonatomic) int seasonNumber; // @dynamic seasonNumber;
 @property(copy, nonatomic) NSURL *shareURL; // @dynamic shareURL;
 @property(copy, nonatomic) NSString *title; // @dynamic title;
 @property(nonatomic) float userRating; // @dynamic userRating;

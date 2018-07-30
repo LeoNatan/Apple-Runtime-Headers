@@ -15,6 +15,8 @@
 + (id)collectionEventForSearchableItem:(id)arg1 userAction:(id)arg2;
 + (id)contextDictionaryForSearchableItem:(id)arg1 userAction:(id)arg2;
 + (id)knowledgeEventsForSearchableItem:(id)arg1 userAction:(id)arg2;
++ (_Bool)isLocationBasedItem:(id)arg1;
++ (id)_locationMetadataForSearchableItem:(id)arg1 userAction:(id)arg2;
 + (id)_metadataForSearchableItem:(id)arg1 userAction:(id)arg2;
 + (id)interactionForSearchableItem:(id)arg1;
 + (id)policies;

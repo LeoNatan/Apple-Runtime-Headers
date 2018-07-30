@@ -28,6 +28,7 @@
 @property(copy, nonatomic) MPModelRequest *request; // @synthesize request=_request;
 @property(copy, nonatomic) id playbackRequestEnvironment; // @synthesize playbackRequestEnvironment=_playbackRequestEnvironment;
 - (void).cxx_destruct;
+- (id)descriptionComponents;
 - (id)init;
 
 @end

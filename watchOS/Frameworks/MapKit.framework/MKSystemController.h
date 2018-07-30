@@ -14,6 +14,7 @@
 + (id)sharedInstance;
 @property(nonatomic) __weak id <MKSystemControllerOpenURLDelegate> openURLDelegate; // @synthesize openURLDelegate=_openURLDelegate;
 - (void).cxx_destruct;
+- (_Bool)shouldCaptureMapViewGestureAnalytics;
 - (_Bool)overrideBlurStyle;
 - (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 requireOptionKeyPromptUnlockDevice:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)openURL:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

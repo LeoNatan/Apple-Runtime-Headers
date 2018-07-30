@@ -15,6 +15,9 @@
     NSMutableArray *_results;
 }
 
+@property(retain, nonatomic) NSMutableArray *results; // @synthesize results=_results;
+@property(retain, nonatomic) id <CNObservable> observable; // @synthesize observable=_observable;
+@property(retain, nonatomic) id <_CNBufferingStrategy> strategy; // @synthesize strategy=_strategy;
 - (void).cxx_destruct;
 - (void)sendBufferedResultsToObserver:(id)arg1;
 - (id)subscribe:(id)arg1;

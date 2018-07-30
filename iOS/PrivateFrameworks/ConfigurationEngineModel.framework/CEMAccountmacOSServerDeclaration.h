@@ -12,29 +12,31 @@
 
 @interface CEMAccountmacOSServerDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    NSString *_payloadHostName;
+    NSString *_payloadAccountDescription;
+    NSArray *_payloadConfiguredAccounts;
+    NSString *_payloadCredentials;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withHostName:(id)arg2 withConfiguredAccounts:(id)arg3;
++ (id)buildWithIdentifier:(id)arg1 withHostName:(id)arg2 withAccountDescription:(id)arg3 withConfiguredAccounts:(id)arg4 withCredentials:(id)arg5;
 + (id)restrictionPayloadKeys;
-+ (id)ConfiguredAccountsItem_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadConfiguredAccountsItem:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadConfiguredAccountsItem_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) NSString *payloadCredentials; // @synthesize payloadCredentials=_payloadCredentials;
+@property(copy, nonatomic) NSArray *payloadConfiguredAccounts; // @synthesize payloadConfiguredAccounts=_payloadConfiguredAccounts;
+@property(copy, nonatomic) NSString *payloadAccountDescription; // @synthesize payloadAccountDescription=_payloadAccountDescription;
+@property(copy, nonatomic) NSString *payloadHostName; // @synthesize payloadHostName=_payloadHostName;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSString *payloadCredentials;
-@property(readonly, nonatomic) NSArray *payloadConfiguredAccounts;
-@property(readonly, nonatomic) NSString *payloadAccountDescription;
-@property(readonly, nonatomic) NSString *payloadHostName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,7 +8,7 @@
 
 #import "HMFTimerDelegate.h"
 
-@class HMDDevice, HMDResidentMesh, HMFTimer, NSMutableSet, NSSet, NSString;
+@class HMDDevice, HMDResidentMesh, HMFTimer, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
 @interface HMDResidentMeshResidentStorage : HMFObject <HMFTimerDelegate>
 {
@@ -17,8 +17,10 @@
     NSMutableSet *_accessoryUUIDs;
     NSSet *_lastSentAccessoryUUIDs;
     HMFTimer *_transmitTimer;
+    NSMutableDictionary *_accessoryListWithLinkQuality;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *accessoryListWithLinkQuality; // @synthesize accessoryListWithLinkQuality=_accessoryListWithLinkQuality;
 @property(retain, nonatomic) HMFTimer *transmitTimer; // @synthesize transmitTimer=_transmitTimer;
 @property(retain, nonatomic) NSSet *lastSentAccessoryUUIDs; // @synthesize lastSentAccessoryUUIDs=_lastSentAccessoryUUIDs;
 @property(retain, nonatomic) NSMutableSet *accessoryUUIDs; // @synthesize accessoryUUIDs=_accessoryUUIDs;
@@ -30,6 +32,7 @@
 - (void)_transmitAfter:(double)arg1;
 - (void)_removeAccessory:(id)arg1 activateTimer:(_Bool)arg2;
 - (void)_addAccessory:(id)arg1 activateTimer:(_Bool)arg2;
+- (_Bool)_addAccessoryWithLinkQuality:(id)arg1 toList:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)timerDidFire:(id)arg1;
 - (id)initWithResident:(id)arg1 owner:(id)arg2;
 

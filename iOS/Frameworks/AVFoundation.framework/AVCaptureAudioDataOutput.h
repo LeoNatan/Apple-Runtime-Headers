@@ -8,7 +8,7 @@
 
 #import "AVCaptureDataOutputDelegateOverride.h"
 
-@class AVCaptureAudioDataOutputInternal, NSObject<OS_dispatch_queue>, NSString;
+@class AVCaptureAudioDataOutputInternal, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVCaptureAudioDataOutput : AVCaptureOutput <AVCaptureDataOutputDelegateOverride>
 {
@@ -18,10 +18,12 @@
 + (id)new;
 + (void)initialize;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
+@property(readonly, nonatomic) id delegateOverride;
 - (_Bool)canAddConnectionForMediaType:(id)arg1;
 - (id)connectionMediaTypes;
 - (id)recommendedAudioSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)supportedAssetWriterOutputFileTypes;
+@property(copy, nonatomic) NSDictionary *audioSettings;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sampleBufferCallbackQueue;
 @property(readonly, nonatomic) id <AVCaptureAudioDataOutputSampleBufferDelegate> sampleBufferDelegate;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;

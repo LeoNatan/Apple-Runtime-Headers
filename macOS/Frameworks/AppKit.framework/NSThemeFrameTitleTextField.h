@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)allowsVibrancy;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)setFrameOrigin:(struct CGPoint)arg1;
-- (BOOL)canSmoothFontsInLayer;
 - (void)_windowChangedKeyState;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setTextColor:(id)arg1;

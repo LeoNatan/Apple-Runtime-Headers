@@ -4,21 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <FinderKit/FI_TTableViewController.h>
+#import <FinderKit/FI_TViewController.h>
 
-@class FI_TTaggingTokenField;
+@class FI_TLabelView, FI_TTableView, FI_TTaggingTokenField;
 
 __attribute__((visibility("hidden")))
-@interface FI_TTaggingSuggestionsViewController : FI_TTableViewController
+@interface FI_TTaggingSuggestionsViewController : FI_TViewController
 {
+    FI_TTableView *_tableView;
+    FI_TLabelView *_labelColorView;
     FI_TTaggingTokenField *_tokenField;
+    _Bool _showLabelColorView;
     _Bool _showingAll;
     _Bool _needShowAll;
     struct TString _previousTypedPartOfMatchingName;
     _Bool _fadeScrolledRows;
-    struct TNSRef<NSImage *, void> _topClipViewMaskImage;
-    struct TNSRef<NSImage *, void> _bottomClipViewMaskImage;
-    struct TNSRef<NSImage *, void> _topAndBottomClipViewMaskImage;
+    struct TNSRef<NSImage, void> _topClipViewMaskImage;
+    struct TNSRef<NSImage, void> _bottomClipViewMaskImage;
+    struct TNSRef<NSImage, void> _topAndBottomClipViewMaskImage;
     double _lastIndexSelected;
     double _lastScrollOffset;
     struct TNotificationCenterObserver _tagRegistryChangedObserver;
@@ -27,17 +30,22 @@ __attribute__((visibility("hidden")))
     struct TNotificationCenterObserver _clipViewFrameChangedObserver;
     struct TNotificationCenterObserver _clipViewBoundsChangedObserver;
     struct TNotificationCenterObserver _showAllIsSelectedObserver;
+    struct TNSRef<NSLayoutConstraint, void> _maxHeightConstraint;
 }
 
+@property(nonatomic) FI_TTableView *tableView; // @synthesize tableView=_tableView;
+@property(nonatomic) _Bool showLabelColorView; // @synthesize showLabelColorView=_showLabelColorView;
+@property(nonatomic) FI_TLabelView *labelColorView; // @synthesize labelColorView=_labelColorView;
 @property _Bool fadeScrolledRows; // @synthesize fadeScrolledRows=_fadeScrolledRows;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)clipViewBoundsOrFrameChanged;
 - (void)configureClipViewMask;
-- (void)updateSize;
+- (void)labelColorChanged:(id)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (void)doCustomSelectionIfNeeded;
-- (double)desiredListHeight;
+- (void)updateMaxHeightConstraint;
+- (double)calcMaxHeight;
 - (long long)numberOfRowsWhenShowingAll;
 - (long long)numberOfTopTagsToSuggest;
 - (_Bool)showSuggestionsForString:(const struct TString *)arg1;
@@ -61,6 +69,10 @@ __attribute__((visibility("hidden")))
 - (void)tearDownClipViewMask;
 - (void)aboutToTearDown;
 - (id)suggestionsDataSource;
+- (id)nibName;
+- (id)dataSource;
+- (id)tableViewNoLoad;
+- (id)stackView;
 - (void)viewLoaded;
 
 @end

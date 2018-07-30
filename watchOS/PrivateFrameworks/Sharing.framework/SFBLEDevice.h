@@ -32,6 +32,8 @@
     int _smoothedRSSI;
     unsigned int _connectedServices;
     SFProximityEstimator *_infoProximityEstimator;
+    unsigned int _productID2;
+    SFProximityEstimator *_proxPairProximityEstimator;
     SFProximityEstimator *_setupProximityEstimator;
     unsigned long long _foundTicks;
     double _lastSeen;
@@ -42,6 +44,8 @@
 + (void)setRSSIEstimatorInfo:(id)arg1;
 @property(nonatomic) _Bool triggered; // @synthesize triggered=_triggered;
 @property(retain, nonatomic) SFProximityEstimator *setupProximityEstimator; // @synthesize setupProximityEstimator=_setupProximityEstimator;
+@property(retain, nonatomic) SFProximityEstimator *proxPairProximityEstimator; // @synthesize proxPairProximityEstimator=_proxPairProximityEstimator;
+@property(nonatomic) unsigned int productID2; // @synthesize productID2=_productID2;
 @property(nonatomic) _Bool paired; // @synthesize paired=_paired;
 @property(nonatomic) double pairCheckTime; // @synthesize pairCheckTime=_pairCheckTime;
 @property(nonatomic) double lastSeen; // @synthesize lastSeen=_lastSeen;

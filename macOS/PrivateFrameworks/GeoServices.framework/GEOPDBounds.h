@@ -10,6 +10,7 @@
 
 @class GEOMapRegion, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDBounds : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

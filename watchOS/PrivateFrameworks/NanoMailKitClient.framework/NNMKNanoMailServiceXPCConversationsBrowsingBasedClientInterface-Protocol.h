@@ -6,11 +6,13 @@
 
 #import "NNMKNanoMailServiceXPCBasicClientInterface.h"
 
-@class NSArray, NSError, NSString;
+@class NSArray, NSDate, NSError, NSString;
 
 @protocol NNMKNanoMailServiceXPCConversationsBrowsingBasedClientInterface <NNMKNanoMailServiceXPCBasicClientInterface>
+- (oneway void)receiverXPCServerDidUpdateMailboxWithId:(NSString *)arg1 lastUpdate:(NSDate *)arg2;
+- (oneway void)receiverXPCServerDidFailWithError:(NSError *)arg1;
 - (oneway void)receiverXPCServerDidReportProgress:(int)arg1 forComposedMessageWithId:(NSString *)arg2 referenceMessageId:(NSString *)arg3;
-- (oneway void)receiverXPCServerDidNotifyFetchRequestCompleted:(_Bool)arg1;
+- (oneway void)receiverXPCServerDidNotifyFetchRequestCompleted:(_Bool)arg1 mailboxIds:(NSArray *)arg2;
 - (oneway void)receiverXPCServerDidNotifyOldMessagesAvailable;
 - (oneway void)receiverXPCServerDidFailSyncingMessagesWithError:(NSError *)arg1;
 - (oneway void)receiverXPCServerDidFinishSyncingMessagesSuccessfullyReceivingMessages:(_Bool)arg1 initialMessages:(_Bool)arg2;

@@ -14,6 +14,7 @@
 
 + (id)relations;
 + (id)suggestedEventInfoWithOpaqueKey:(id)arg1 uniqueKey:(id)arg2;
+- (id)semanticIdentifier;
 @property(nonatomic) EKPersistentEvent *owner; // @dynamic owner;
 @property(copy, nonatomic) NSDate *timestamp; // @dynamic timestamp;
 @property(nonatomic) _Bool changesAcknowledged; // @dynamic changesAcknowledged;

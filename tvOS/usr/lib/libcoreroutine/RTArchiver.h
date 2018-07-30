@@ -12,12 +12,14 @@
     _Bool _valid;
 }
 
++ (_Bool)extractArchiveAtURL:(id)arg1 error:(id *)arg2;
 @property(nonatomic) _Bool valid; // @synthesize valid=_valid;
 - (void)closeArchive;
 - (void)addDirectoryToArchive:(id)arg1;
 - (void)addFileToArchive:(id)arg1;
 - (void)dealloc;
 - (id)initWithOutputURL:(id)arg1 compress:(_Bool)arg2;
+- (id)init;
 
 @end
 

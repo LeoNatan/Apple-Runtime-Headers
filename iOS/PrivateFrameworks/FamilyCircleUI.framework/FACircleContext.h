@@ -9,7 +9,7 @@
 #import "NSCoding.h"
 #import "NSSecureCoding.h"
 
-@class NSData, NSDictionary, NSString;
+@class NSData, NSDictionary, NSString, NSURL;
 
 @interface FACircleContext : NSObject <NSCoding, NSSecureCoding>
 {
@@ -17,10 +17,12 @@
     NSString *_clientName;
     NSString *_clientBundleID;
     NSDictionary *_additionalParameters;
+    NSURL *_urlForContext;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)contextWithData:(id)arg1;
+@property(copy, nonatomic) NSURL *urlForContext; // @synthesize urlForContext=_urlForContext;
 @property(copy, nonatomic) NSDictionary *additionalParameters; // @synthesize additionalParameters=_additionalParameters;
 @property(copy, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(copy, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;

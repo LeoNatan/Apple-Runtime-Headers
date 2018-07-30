@@ -26,5 +26,6 @@
 + (void)_intents_matchExtensionsForIntent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)_intents_matchExtensionsForIntent:(id)arg1 shouldIgnoreLaunchId:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_intents_extensionSupportsAtLeastOneSiriIntent;
+- (id)_intents_intentsRestrictedWhileProtectedDataUnavailable;
 @end
 

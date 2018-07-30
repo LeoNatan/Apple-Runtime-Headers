@@ -8,7 +8,7 @@
 
 #import "APSConnectionDelegate.h"
 
-@class APSConnection, IMMacNotificationCenterManager, NSData, NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class APSConnection, NSData, NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface IDSPushHandler : NSObject <APSConnectionDelegate>
 {
@@ -17,7 +17,7 @@
     Class _APSConnectionClass;
     NSMutableSet *_topicsCache;
     NSMapTable *_handlerMap;
-    IMMacNotificationCenterManager *_ncHandler;
+    id _ncHandler;
     NSObject<OS_dispatch_queue> *_ivarQueue;
     BOOL _shouldWaitToSetTopics;
 }

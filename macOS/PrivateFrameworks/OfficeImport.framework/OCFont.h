@@ -8,7 +8,6 @@
 
 @class OCFontSubfamily;
 
-__attribute__((visibility("hidden")))
 @interface OCFont : NSObject
 {
     BOOL _bold;
@@ -20,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL italic; // @synthesize italic=_italic;
 @property(nonatomic) BOOL bold; // @synthesize bold=_bold;
 @property(readonly, nonatomic) OCFontSubfamily *subfamily; // @synthesize subfamily=_subfamily;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSubfamily:(id)arg1 bold:(BOOL)arg2 italic:(BOOL)arg3;
 
 @end

@@ -8,7 +8,6 @@
 
 @class EDString;
 
-__attribute__((visibility("hidden")))
 @interface EDComment : NSObject
 {
     BOOL _visible;
@@ -21,8 +20,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) EDString *author; // @synthesize author=_author;
 @property(nonatomic) int columnIndex; // @synthesize columnIndex=_columnIndex;
 @property(nonatomic) int rowIndex; // @synthesize rowIndex=_rowIndex;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

@@ -12,7 +12,7 @@
 #import "PKPaymentSetupDelegate.h"
 #import "SBSHardwareButtonEventConsuming.h"
 
-@class NSString, NSXPCConnection, PKAssertion, PKCompactNavigationContainerController, PKInAppPaymentService, PKPaymentAuthorizationRemoteAlertViewControllerExportedObject, PKPaymentAuthorizationServiceNavigationController, PKPaymentProvisioningController, PKPaymentRequest, PKPaymentSetupNavigationController, PKPhysicalButtonView;
+@class LAUIPhysicalButtonView, NSString, NSXPCConnection, PKAssertion, PKCompactNavigationContainerController, PKInAppPaymentService, PKPaymentAuthorizationRemoteAlertViewControllerExportedObject, PKPaymentAuthorizationServiceNavigationController, PKPaymentProvisioningController, PKPaymentRequest, PKPaymentSetupNavigationController;
 
 @interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKCompactNavigationContainerControllerDelegate, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentSetupDelegate, SBSHardwareButtonEventConsuming>
 {
@@ -27,7 +27,8 @@
     _Bool _paymentAuthorizationPresented;
     PKCompactNavigationContainerController *_navigationContainer;
     PKPaymentAuthorizationServiceNavigationController *_navigationController;
-    PKPhysicalButtonView *_physicalButtonView;
+    _Bool _pearlViewsInserted;
+    LAUIPhysicalButtonView *_physicalButtonView;
     PKPaymentProvisioningController *_paymentProvisioningController;
     PKPaymentSetupNavigationController *_paymentSetupNavigationController;
     _Bool _paymentSetupWasRequired;
@@ -68,7 +69,7 @@
 - (void)consumeSinglePressUpForButtonKind:(long long)arg1;
 - (void)handleHomeButtonPressed;
 - (void)sendAuthorizationDidPresentIfNecessary;
-- (void)_updatePhysicalButtonViewState;
+- (void)_updatePearlViews;
 - (void)_presentAlertWithTitle:(id)arg1 message:(id)arg2 cancelTitle:(id)arg3 actionTitle:(id)arg4 actionHandler:(CDUnknownBlockType)arg5;
 - (void)_presentAlertWithTitle:(id)arg1 message:(id)arg2 actionTitle:(id)arg3 actionHandler:(CDUnknownBlockType)arg4;
 - (void)_presentInvalidAlert;
@@ -90,10 +91,10 @@
 - (int)_preferredStatusBarVisibility;
 - (_Bool)_shouldRemoveViewFromHierarchyOnDisappear;
 - (void)_willAppearInRemoteViewController;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)viewDidLoad;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;

@@ -10,6 +10,7 @@
 {
 }
 
+@property(readonly) float portraitEffectsMatteMainImageDownscalingFactor;
 - (CDStruct_79c71658)depthEngineOutputDimensions;
 @property(readonly) CDStruct_79c71658 highResStillImageDimensions;
 @property(readonly) float fieldOfView;

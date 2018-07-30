@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSArray, NSUUID, NSUndoManager, NSView, PKDrawing, PKInternalDrawingView, PKModifyStrokesCommand;
+@class NSArray, NSOrderedSet, NSUUID, NSUndoManager, NSView, PKDrawing, PKModifyStrokesCommand;
 
 @protocol PKSelectionDelegate
+- (struct CGRect)visibleOnscreenBoundsForDrawing:(PKDrawing *)arg1;
 - (void)resetSelectedStrokeStateForRenderer;
 - (void)applyCommand:(PKModifyStrokesCommand *)arg1 toDrawing:(PKDrawing *)arg2;
-- (PKInternalDrawingView *)drawingView;
 - (PKDrawing *)drawingForLiveAttachment;
 - (BOOL)liveDrawingIsAtEndOfDocument;
 - (void)didBeginDraggingSelection;
@@ -17,12 +17,13 @@
 - (struct CGPoint)closestPointForPastedSelectionRect:(struct CGRect)arg1 withDrawing:(id *)arg2;
 - (PKDrawing *)drawingForSelectionRect:(struct CGRect)arg1;
 - (PKDrawing *)drawingForUUID:(NSUUID *)arg1;
-- (BOOL)containsDrawingUUID:(NSUUID *)arg1;
+- (NSOrderedSet *)visibleStrokesOnscreen:(NSOrderedSet *)arg1 forDrawing:(PKDrawing *)arg2;
 - (struct CGPoint)pointInStrokeSpace:(struct CGPoint)arg1 inDrawing:(PKDrawing *)arg2;
 - (void)selectionRefreshWithChangeToDrawings:(NSArray *)arg1;
 - (NSView *)selectionTopView;
+- (BOOL)canModifyWhitespace;
 - (void)scrollContent:(struct CGPoint)arg1;
-- (void)toggleSelectedStrokes:(NSArray *)arg1 hide:(BOOL)arg2 inDrawing:(PKDrawing *)arg3;
+- (void)toggleSelectedStrokes:(NSArray *)arg1 hide:(BOOL)arg2 inDrawing:(PKDrawing *)arg3 isErasing:(BOOL)arg4;
 - (SEL)drawingUndoSelector;
 - (id)drawingUndoTarget;
 - (NSUndoManager *)undoManager;

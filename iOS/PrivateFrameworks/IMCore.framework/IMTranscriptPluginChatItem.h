@@ -14,12 +14,14 @@
 {
     _Bool _isLastChatItemOfPluginType;
     _Bool _hasSetIsLastChatItemOfPluginType;
+    _Bool _parentChatHasKnownParticipants;
     IMPluginPayload *_initialPayload;
     NSString *_bundleIdentifier;
     IMBalloonPluginDataSource *_dataSource;
 }
 
 @property(retain, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly, nonatomic) _Bool parentChatHasKnownParticipants; // @synthesize parentChatHasKnownParticipants=_parentChatHasKnownParticipants;
 @property(nonatomic) _Bool hasSetIsLastChatItemOfPluginType; // @synthesize hasSetIsLastChatItemOfPluginType=_hasSetIsLastChatItemOfPluginType;
 @property(nonatomic, setter=setLastChatItemOfPluginType:) _Bool isLastChatItemOfPluginType; // @synthesize isLastChatItemOfPluginType=_isLastChatItemOfPluginType;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
@@ -31,7 +33,7 @@
 @property(readonly, nonatomic) unsigned long long playbackType;
 @property(readonly, nonatomic) NSString *pluginSessionGUID;
 @property(readonly, nonatomic) _Bool isDataSourceInitialized;
-- (id)_initWithItem:(id)arg1 initialPayload:(id)arg2 messagePartRange:(struct _NSRange)arg3;
+- (id)_initWithItem:(id)arg1 initialPayload:(id)arg2 messagePartRange:(struct _NSRange)arg3 parentChatHasKnownParticipants:(_Bool)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, retain, nonatomic) NSString *type;

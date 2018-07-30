@@ -10,6 +10,7 @@
 
 @class CALayer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TURemoteVideoClient : NSObject <TURemoteVideoClient>
 {
     long long _videoContextSlotIdentifier;

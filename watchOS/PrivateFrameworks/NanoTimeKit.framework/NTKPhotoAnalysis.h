@@ -16,7 +16,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)analysisWithImage:(id)arg1 alignment:(unsigned int)arg2 deviceSizeClass:(unsigned int)arg3;
 + (id)analysisWithImage:(id)arg1 alignment:(id)arg2;
++ (id)invalidAnalysis;
 + (id)defaultAnalysis;
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 - (id)copyWithZone:(struct _NSZone *)arg1;

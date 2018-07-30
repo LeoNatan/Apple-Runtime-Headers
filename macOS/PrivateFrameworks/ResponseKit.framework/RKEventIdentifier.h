@@ -22,6 +22,7 @@
 - (id)identifyStrings:(id)arg1;
 - (id)_identifyStrings:(id)arg1 otherDateCount:(unsigned long long)arg2 otherDates:(struct RKEventIdentifierRange *)arg3;
 - (id)_identifyOwnedTokenSequences:(id)arg1;
+- (void)resetEventIdentifierModel;
 - (id)initWithLanguageID:(id)arg1;
 - (id)init;
 

@@ -8,6 +8,7 @@
 
 #import "NSValidatedUserInterfaceItem.h"
 
+__attribute__((visibility("hidden")))
 @interface HINSMenuItemProxy : NSObject <NSValidatedUserInterfaceItem>
 {
     long long _tag;

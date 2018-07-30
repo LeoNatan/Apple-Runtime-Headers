@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface _MTLPipelineLibrary : NSObject <MTLPipelineLibrarySPI>
 {
     struct PipelineLibraryData *_pipelineLibraryData;
+    _Bool _disableRunTimeCompilation;
     NSString *_label;
     id <MTLDevice> _device;
     NSArray *_pipelineNames;
 }
 
+@property _Bool disableRunTimeCompilation; // @synthesize disableRunTimeCompilation=_disableRunTimeCompilation;
 @property(readonly) NSArray *pipelineNames; // @synthesize pipelineNames=_pipelineNames;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
 @property(copy) NSString *label; // @synthesize label=_label;

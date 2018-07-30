@@ -10,18 +10,30 @@
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
 
-@class NSDictionary, NSSet, NSString;
+@class NSDictionary, NSSet, NSString, UIImage;
 
 @interface NCNotificationSectionSettings : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying>
 {
     NSString *_sectionIdentifier;
     NSString *_subSectionIdentifier;
+    NSString *_displayName;
     NSDictionary *_settings;
     NSSet *_subSectionSettings;
+    _Bool _userConfigurable;
+    UIImage *_settingsIcon;
+    _Bool _showsCustomSettingsLink;
+    _Bool _isDeliveredQuietly;
+    _Bool _hasProvisialAuthorization;
 }
 
+@property(readonly, nonatomic) _Bool hasProvisionalAuthorization; // @synthesize hasProvisionalAuthorization=_hasProvisialAuthorization;
+@property(readonly, nonatomic) _Bool isDeliveredQuietly; // @synthesize isDeliveredQuietly=_isDeliveredQuietly;
+@property(readonly, nonatomic) _Bool showsCustomSettingsLink; // @synthesize showsCustomSettingsLink=_showsCustomSettingsLink;
+@property(readonly, nonatomic) UIImage *settingsIcon; // @synthesize settingsIcon=_settingsIcon;
+@property(readonly, nonatomic, getter=isUserConfigurable) _Bool userConfigurable; // @synthesize userConfigurable=_userConfigurable;
 @property(readonly, copy, nonatomic) NSSet *subSectionSettings; // @synthesize subSectionSettings=_subSectionSettings;
 @property(readonly, copy, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
+@property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *subSectionIdentifier; // @synthesize subSectionIdentifier=_subSectionIdentifier;
 @property(readonly, copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 - (void).cxx_destruct;

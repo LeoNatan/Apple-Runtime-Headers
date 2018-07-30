@@ -8,6 +8,7 @@
 
 @interface JSValue (NUJSValue)
 + (id)nujs_valueWithFunction:(id)arg1 params:(id)arg2 body:(id)arg3 sourceURL:(id)arg4 inContext:(id)arg5;
+- (id)nujs_toObject;
 - (id)nujs_callWithArguments:(id)arg1 thisObject:(id)arg2;
 - (_Bool)nujs_isString;
 - (id)nujs_functionSource;

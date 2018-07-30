@@ -8,20 +8,18 @@
 
 @interface NMSMediaContainerQuotaData : NSObject
 {
-    unsigned int _quotaBehavior;
     id _quotaRefObj;
-    unsigned int _incrementalTracksCount;
-    unsigned int _incrementalTracksOmittedForQuota;
-    unsigned long long _incrementalSize;
+    unsigned int _numItemsAdded;
+    unsigned int _numItemsSkipped;
+    unsigned int _numItemsRemoved;
 }
 
-@property(nonatomic) unsigned int incrementalTracksOmittedForQuota; // @synthesize incrementalTracksOmittedForQuota=_incrementalTracksOmittedForQuota;
-@property(nonatomic) unsigned long long incrementalSize; // @synthesize incrementalSize=_incrementalSize;
-@property(nonatomic) unsigned int incrementalTracksCount; // @synthesize incrementalTracksCount=_incrementalTracksCount;
+@property(nonatomic) unsigned int numItemsRemoved; // @synthesize numItemsRemoved=_numItemsRemoved;
+@property(nonatomic) unsigned int numItemsSkipped; // @synthesize numItemsSkipped=_numItemsSkipped;
+@property(nonatomic) unsigned int numItemsAdded; // @synthesize numItemsAdded=_numItemsAdded;
 @property(nonatomic) __weak id quotaRefObj; // @synthesize quotaRefObj=_quotaRefObj;
-@property(nonatomic) unsigned int quotaBehavior; // @synthesize quotaBehavior=_quotaBehavior;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, nonatomic) unsigned int numItemsAboveQuota;
 
 @end
 

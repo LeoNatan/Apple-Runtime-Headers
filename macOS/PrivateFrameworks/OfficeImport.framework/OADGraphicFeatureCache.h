@@ -8,13 +8,13 @@
 
 @class NSMutableArray, OITSUNoCopyDictionary;
 
-__attribute__((visibility("hidden")))
 @interface OADGraphicFeatureCache : NSObject
 {
     NSMutableArray *mFeatureUsageArray;
     OITSUNoCopyDictionary *mFeatureMap;
 }
 
+- (void).cxx_destruct;
 - (id)featuresSortedByUsageCount;
 - (id)countedFeatureAtIndex:(unsigned long long)arg1;
 - (unsigned long long)cacheFeature:(id)arg1;

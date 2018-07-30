@@ -12,11 +12,8 @@
 @property(readonly, nonatomic) NSData *jsonData;
 @property(copy, nonatomic) NSArray *formattedTextPieces;
 @property(copy, nonatomic) NSArray *icons;
-@property(readonly, nonatomic) _Bool hasContentAdvisory;
 @property(copy, nonatomic) NSString *contentAdvisory;
-@property(readonly, nonatomic) _Bool hasStarRating;
 @property(retain, nonatomic) _SFPBGraphicalFloat *starRating;
-@property(readonly, nonatomic) _Bool hasText;
 @property(retain, nonatomic) _SFPBText *text;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

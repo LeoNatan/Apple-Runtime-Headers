@@ -17,34 +17,36 @@ __attribute__((visibility("hidden")))
     VKRoadTileSource *_roadTileSource;
     VKTrafficDynamicTileSource *_dynamicTileSource;
     VKTileCache *_recentTrafficTiles;
-    struct map<VKTileKey, geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, bool (*)(const VKTileKey &, const VKTileKey &), std::__1::allocator<std::__1::pair<const VKTileKey, geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>>>> *_incompleteTiles;
+    struct map<VKTileKey, IncompleteTileData, bool (*)(const VKTileKey &, const VKTileKey &), std::__1::allocator<std::__1::pair<const VKTileKey, IncompleteTileData>>> *_incompleteTiles;
     _Bool _buildTrafficTexture;
 }
 
 @property(readonly, nonatomic) VKTrafficDynamicTileSource *dynamicTileSource; // @synthesize dynamicTileSource=_dynamicTileSource;
 @property(nonatomic) VKRoadTileSource *roadTileSource; // @synthesize roadTileSource=_roadTileSource;
+- (_Bool)allowPreliminaryTiles;
+- (id)stateDescriptionForRenderKey:(const struct VKTileKey *)arg1;
 - (int)tileSource:(id)arg1 overrideForMaximumZoomLevel:(int)arg2;
 - (_Bool)minimumZoomLevelBoundsCamera;
 - (void)setSharedResources:(id)arg1;
 - (void)didStopLoadingTilesWithError:(id)arg1;
 - (void)willStartLoadingTiles;
 - (_Bool)tileSource:(id)arg1 keyIsNeeded:(const struct VKTileKey *)arg2;
+- (void)dirtyTilesFromTileSource:(id)arg1 withState:(unsigned int)arg2;
 - (void)dirtyTilesFromTileSource:(id)arg1;
 - (void)tileSource:(id)arg1 dirtyTilesWithinRect:(const Box_3d7e3c2c *)arg2 level:(int)arg3;
 - (void)expireTilesForTileSource:(id)arg1;
 - (void)invalidateTilesFromTileSource:(id)arg1;
-- (void)tileSource:(id)arg1 invalidateTilesWithState:(unsigned int)arg2;
+- (void)tileSource:(id)arg1 invalidateTilesWithStatePredicate:(CDUnknownBlockType)arg2;
 - (void)tileSource:(id)arg1 invalidateKeys:(id)arg2;
-- (void)tileSource:(id)arg1 invalidateKey:(const struct VKTileKey *)arg2;
 - (void)tileSource:(id)arg1 didFailToLoadTileForKey:(const struct VKTileKey *)arg2 error:(id)arg3;
 - (void)tileSource:(id)arg1 didFailToDecodeTileForKey:(const struct VKTileKey *)arg2;
 - (_Bool)_shouldDecodeTile:(const struct VKTileKey *)arg1;
 - (void)tileSource:(id)arg1 didFetchTile:(id)arg2 forKey:(const struct VKTileKey *)arg3;
 - (void)failedToDecodeSourceKey:(const struct VKTileKey *)arg1;
-- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3;
+- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sourceKey:(const struct VKTileKey *)arg3 userInfo:(id)arg4;
 - (void)forceExpireTile:(const struct VKTileKey *)arg1;
-- (void)_fetchedTile:(id)arg1;
-- (void)didFailToLoadTileKey:(const struct _GEOTileKey *)arg1 error:(id)arg2;
+- (void)_fetchedTile:(id)arg1 isPreliminary:(_Bool)arg2;
+- (void)didFailToLoadTileKey:(const struct _GEOTileKey *)arg1 error:(id)arg2 isPreliminary:(_Bool)arg3;
 - (void)_notifyRoadsTileSourceOfErrorForSourceKey:(const struct VKTileKey *)arg1;
 - (void)fetchTileForKey:(const struct VKTileKey *)arg1 sourceKey:(const struct VKTileKey *)arg2 isPrefetch:(_Bool)arg3;
 - (void)fetchTileForKey:(const struct VKTileKey *)arg1 isPrefetch:(_Bool)arg2;
@@ -56,12 +58,12 @@ __attribute__((visibility("hidden")))
 - (int)maximumZoomLevel;
 - (void)_acceptTileIfComplete:(id)arg1 forKey:(const struct VKTileKey *)arg2;
 - (void)_failTilesForFailedDynamicTile:(const struct VKTileKey *)arg1;
-- (void)_acceptPendingTilesIfCompletedWithTile:(id)arg1;
+- (void)_acceptPendingTilesIfCompletedWithTile:(id)arg1 forKey:(const struct VKTileKey *)arg2;
 - (void)_constructTile:(id)arg1 forKey:(struct VKTileKey)arg2;
 - (void)populateVisibleTileSets:(id)arg1 withTiles:(id)arg2;
 - (void)clearCaches;
 - (void)dealloc;
-- (id)initWithSkeletonTileSet:(id)arg1 dynamicTileSet:(id)arg2 resourceManifestConfiguration:(id)arg3 locale:(id)arg4 sharedResources:(id)arg5 taskContext:(shared_ptr_e963992e)arg6 origin:(unsigned char)arg7;
+- (id)initWithSkeletonTileSet:(id)arg1 dynamicTileSet:(id)arg2 resourceManifestConfiguration:(id)arg3 locale:(id)arg4 sharedResources:(id)arg5 taskContext:(shared_ptr_e963992e)arg6;
 - (void)setMapType:(int)arg1;
 - (id)detailedDescription;
 

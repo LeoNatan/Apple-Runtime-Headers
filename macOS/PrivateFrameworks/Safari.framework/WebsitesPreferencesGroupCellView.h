@@ -11,7 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)viewDidMoveToSuperview;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 
 @end
 

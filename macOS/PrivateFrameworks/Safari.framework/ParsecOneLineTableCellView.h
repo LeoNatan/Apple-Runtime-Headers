@@ -8,19 +8,15 @@
 
 #import "ParsecTableCellView.h"
 
-@class NSString;
-
 __attribute__((visibility("hidden")))
 @interface ParsecOneLineTableCellView : UnifiedFieldCompletionStyledOneLineTableCellView <ParsecTableCellView>
 {
-    NSString *_identifierOfDisplayedParsecResult;
     id <ParsecTableCellViewDelegate> _delegate;
     unsigned long long _configuredDescriptionAlignment;
 }
 
 @property(nonatomic) unsigned long long configuredDescriptionAlignment; // @synthesize configuredDescriptionAlignment=_configuredDescriptionAlignment;
 @property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy, nonatomic) NSString *identifierOfDisplayedParsecResult; // @synthesize identifierOfDisplayedParsecResult=_identifierOfDisplayedParsecResult;
 - (void).cxx_destruct;
 - (id)identifier;
 - (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;

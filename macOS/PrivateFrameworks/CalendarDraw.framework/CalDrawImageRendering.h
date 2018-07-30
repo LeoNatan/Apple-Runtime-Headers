@@ -10,8 +10,9 @@
 {
 }
 
-+ (id)_lightStripeColorForColor:(id)arg1;
-+ (id)_lightColorForColor:(id)arg1 opaque:(BOOL)arg2;
++ (id)_stripeColorForColor:(id)arg1 darkBackground:(BOOL)arg2;
++ (id)_lightColorForColor:(id)arg1 alphaValue:(double)arg2;
++ (struct CGImage *)_imageForBarColor:(id)arg1 backgroundColor:(id)arg2 stripeColor:(id)arg3 stripedImageAlpha:(double)arg4 scaleFactor:(double)arg5 options:(id)arg6;
 + (id)_imageForBarColor:(id)arg1 backgroundColor:(id)arg2 stripeColor:(id)arg3 stripedImageAlpha:(double)arg4 options:(id)arg5;
 + (id)_imageForBarColor:(id)arg1 backgroundColor:(id)arg2 options:(id)arg3;
 + (id)_cachedImageForCalendarColor:(id)arg1 options:(id)arg2;
@@ -35,8 +36,6 @@
 + (id)_imageWithName:(id)arg1 andCalColor:(id)arg2;
 + (id)_imageWithName:(id)arg1 andColor:(id)arg2;
 + (id)dotImageForOccurrenceColor:(id)arg1 diameter:(double)arg2 strokeWidth:(double)arg3 options:(id)arg4;
-+ (id)cachedSwatchImageForColor:(id)arg1 largeSize:(BOOL)arg2;
-+ (id)cachedCheckboxImageForColor:(id)arg1;
 + (id)cachedImageForOccurrenceColor:(id)arg1 options:(id)arg2;
 + (id)cachedOccurrenceImageForCalendarColor:(id)arg1 tileOptions:(id)arg2;
 + (id)cachedImageForOccurrenceColor:(id)arg1 height:(double)arg2 pathRadius:(double)arg3 alpha:(double)arg4 options:(id)arg5 category:(id)arg6;

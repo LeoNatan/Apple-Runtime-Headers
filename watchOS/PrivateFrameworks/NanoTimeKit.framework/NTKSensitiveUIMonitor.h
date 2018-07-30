@@ -20,13 +20,14 @@
 - (void).cxx_destruct;
 - (void)removeSensitiveUIObserver:(id)arg1;
 - (void)addSensitiveUIObserver:(id)arg1;
-- (_Bool)faceStyleIsSensitive:(int)arg1;
-- (_Bool)shouldHideSensitiveUIForFaceStyle:(int)arg1;
 - (_Bool)shouldHideSensitiveUI;
 - (void)_handleNotification;
 - (void)_registerForNotifications;
 - (void)dealloc;
 - (id)init;
+- (_Bool)faceStyleIsSensitive:(int)arg1;
+- (_Bool)shouldHideSensitiveUIForFaceStyle:(int)arg1;
+- (_Bool)_isVendorRelease;
 
 @end
 

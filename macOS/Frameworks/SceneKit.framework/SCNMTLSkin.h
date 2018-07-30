@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class MTLStageInputOutputDescriptor;
+@class MTLStageInputOutputDescriptor, SCNMTLComputePipeline;
 
 __attribute__((visibility("hidden")))
 @interface SCNMTLSkin : NSObject
@@ -14,15 +14,16 @@ __attribute__((visibility("hidden")))
     unsigned int _vertexCount;
     _Bool _needNormal;
     _Bool _needTangent;
-    id <MTLBuffer> _skinIndicesBuffer;
-    id <MTLBuffer> _skinWeightsBuffer;
-    id <MTLComputePipelineState> _computePS;
+    id <MTLBuffer> _vertexWeightIndicesBuffer;
+    id <MTLBuffer> _boneIndicesBuffer;
+    id <MTLBuffer> _boneWeightsBuffer;
+    SCNMTLComputePipeline *_computePS;
     MTLStageInputOutputDescriptor *_computeStageDesc;
 }
 
 - (void)skinMesh:(id)arg1 with:(id)arg2 skinner:(struct __C3DSkinner *)arg3 renderContext:(id)arg4;
 - (void)dealloc;
-- (id)initWithSkinner:(struct __C3DSkinner *)arg1 baseMesh:(struct __C3DMesh *)arg2 resourceManager:(id)arg3;
+-     // Error parsing type: @48@0:8^{__C3DSkinner=}16^{__C3DMesh=}24^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v^v}{?=CfIC(?={?=ff}{?=f}{?=f}{?=Cb1b1})}C}32@40, name: initWithSkinner:baseMesh:baseGeometry:resourceManager:
 
 @end
 

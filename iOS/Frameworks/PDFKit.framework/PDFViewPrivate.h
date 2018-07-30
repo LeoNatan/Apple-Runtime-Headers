@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     double gutterWide;
     _Bool displaysPageBreaks;
     struct UIEdgeInsets pageBreakMargins;
+    struct UIEdgeInsets documentMargins;
     long long displayMode;
     long long displayDirection;
     PDFViewLayout *viewLayout;
@@ -65,6 +66,11 @@ __attribute__((visibility("hidden")))
     UIDragInteraction *dragInteraction;
     double horizontalScaleFactorBeforeRotation;
     struct CGPoint documentViewCenterBeforeRotation;
+    struct CGRect extensionViewBoundsInDocument;
+    struct CGRect extensionViewBoundsInView;
+    double extensionViewZoomScale;
+    struct CGRect extensionViewFrame;
+    struct UIEdgeInsets extensionViewInsets;
 }
 
 - (void).cxx_destruct;

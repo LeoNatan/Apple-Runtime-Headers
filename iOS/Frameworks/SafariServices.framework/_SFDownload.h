@@ -6,27 +6,60 @@
 
 #import "NSObject.h"
 
-@class NSString, NSURL, NSURLRequest, WKWebView, _WKUserInitiatedAction;
+#import "WBSFluidProgressStateSource.h"
+#import "_WKDownloadDelegate.h"
 
-@interface _SFDownload : NSObject
+@class NSString, NSURL, WBSFluidProgressController, WBSFluidProgressState, _WKDownload, _WKUserInitiatedAction;
+
+@interface _SFDownload : NSObject <_WKDownloadDelegate, WBSFluidProgressStateSource>
 {
+    _WKDownload *_download;
+    unsigned long long _downloadBackgroundTaskIdentifier;
+    long long _bytesExpected;
+    unsigned long long _bytesLoaded;
+    _Bool _hasFailed;
+    _Bool _wasCanceled;
+    WBSFluidProgressState *_fluidProgressState;
+    double _timeLastProgressNotificationWasSent;
     NSURL *_sourceURL;
     NSString *_fileDownloadPath;
     long long _fileType;
-    WKWebView *_originatingWebView;
-    NSURLRequest *_request;
     _WKUserInitiatedAction *_userInitiatedAction;
+    WBSFluidProgressController *_fluidProgressController;
+    id <_SFDownloadDelegate> _delegate;
 }
 
-+ (id)downloadWithSourceURL:(id)arg1 path:(id)arg2 fileType:(long long)arg3 webKitDownload:(id)arg4 userInitiatedAction:(id)arg5;
++ (id)provisionalDownloadWithType:(long long)arg1 userInitiatedAction:(id)arg2;
+@property(nonatomic) __weak id <_SFDownloadDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak WBSFluidProgressController *fluidProgressController; // @synthesize fluidProgressController=_fluidProgressController;
 @property(readonly, nonatomic) _WKUserInitiatedAction *userInitiatedAction; // @synthesize userInitiatedAction=_userInitiatedAction;
-@property(readonly, nonatomic) NSURLRequest *request; // @synthesize request=_request;
-@property(readonly, nonatomic) __weak WKWebView *originatingWebView; // @synthesize originatingWebView=_originatingWebView;
 @property(readonly, nonatomic) long long fileType; // @synthesize fileType=_fileType;
 @property(readonly, nonatomic) NSString *fileDownloadPath; // @synthesize fileDownloadPath=_fileDownloadPath;
 @property(readonly, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 - (void).cxx_destruct;
+- (_Bool)hasFailedURL;
+- (double)estimatedProgress;
+- (id)expectedOrCurrentURL;
+- (id)progressState;
+- (void)clearFluidProgressState;
+- (_Bool)createFluidProgressState;
+- (void)_downloadDidCancel:(id)arg1;
+- (void)_download:(id)arg1 didFailWithError:(id)arg2;
+- (void)_downloadDidFinish:(id)arg1;
+- (void)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
+- (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)_downloadDidStart:(id)arg1;
+- (void)_endDownloadBackgroundTask;
+- (void)_beginDownloadBackgroundTask;
+- (void)cancel;
 - (_Bool)removeFromDisk;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,10 +9,11 @@
 #import "HMObjectMerge.h"
 #import "NSSecureCoding.h"
 
-@class HMCharacteristicMetadata, HMDelegateCaller, HMService, NSArray, NSDate, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMCharacteristicMetadata, HMFUnfairLock, HMService, NSArray, NSDate, NSNumber, NSString, NSUUID, _HMContext;
 
 @interface HMCharacteristic : NSObject <NSSecureCoding, HMObjectMerge>
 {
+    HMFUnfairLock *_lock;
     _Bool _notificationEnabled;
     _Bool _requiresDeviceUnlock;
     _Bool _hasAuthorizationData;
@@ -25,21 +26,18 @@
     NSDate *_notificationEnabledTime;
     HMService *_service;
     HMCharacteristicMetadata *_metadata;
+    _HMContext *_context;
     NSNumber *_instanceID;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMDelegateCaller *_delegateCaller;
 }
 
 + (id)__localizedDescriptionForCharacteristicType:(id)arg1;
 + (id)localizedDescriptionForCharacteristicType:(id)arg1;
 + (id)_characteristicTypeAsString:(id)arg1;
 + (_Bool)supportsSecureCoding;
++ (id)logCategory;
 @property(nonatomic) _Bool notificationEnabledByThisClient; // @synthesize notificationEnabledByThisClient=_notificationEnabledByThisClient;
-@property(retain, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) HMCharacteristicMetadata *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) __weak HMService *service; // @synthesize service=_service;
 @property(copy, nonatomic) NSDate *valueUpdatedTime; // @synthesize valueUpdatedTime=_valueUpdatedTime;
@@ -56,14 +54,11 @@
 - (void)_writeValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)writeValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateValue:(id)arg1 updateTime:(id)arg2;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
-@property(readonly) unsigned long long hash;
-- (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
 - (id)mapHAPProperties:(long long)arg1;
+- (id)logIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property _Bool hasAuthorizationData; // @synthesize hasAuthorizationData=_hasAuthorizationData;
 @property(copy, nonatomic) NSDate *notificationEnabledTime; // @synthesize notificationEnabledTime=_notificationEnabledTime;
@@ -72,6 +67,10 @@
 @property(copy, nonatomic) id value; // @synthesize value=_value;
 @property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
+- (void)__configureWithContext:(id)arg1 service:(id)arg2;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

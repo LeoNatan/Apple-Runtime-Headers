@@ -95,17 +95,20 @@
 - (_Bool)canPerformActivate;
 @property(readonly, nonatomic) NSArray *supportedGestures;
 @property(readonly, nonatomic) unsigned int windowContextId;
+@property(readonly, nonatomic) unsigned int windowDisplayId;
 - (struct __AXUIElement *)scrollAncestorForScrollAction:(int)arg1;
 - (_Bool)performAction:(int)arg1 withValue:(id)arg2;
 - (_Bool)performAction:(int)arg1;
 - (_Bool)supportsAction:(int)arg1;
 - (_Bool)canScrollInAtLeastOneDirection;
-- (void)scrollToVisible;
+- (_Bool)scrollToVisible;
+- (_Bool)showContextMenu;
 - (_Bool)canPerformTrackingDetail;
 @property(readonly, nonatomic) _Bool canPerformZoom;
 - (id)_remoteParentForContextID;
 @property(readonly, nonatomic) unsigned long long scanningBehaviorTraits;
 @property(readonly, nonatomic) AXElement *remoteParent;
+@property(readonly, nonatomic) AXElement *elementParent;
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic) NSDictionary *semanticContext;
 - (_Bool)setNativeFocus;
@@ -120,6 +123,7 @@
 - (id)previousElementsWithCount:(unsigned long long)arg1;
 - (id)nextElementsWithCount:(unsigned long long)arg1;
 @property(nonatomic) struct _NSRange selectedTextRange;
+@property(readonly, nonatomic) struct _NSRange rowRange;
 @property(readonly, nonatomic) NSArray *drops;
 @property(readonly, nonatomic) NSArray *drags;
 @property(readonly, nonatomic) NSArray *customActions;
@@ -137,6 +141,7 @@
 @property(readonly, nonatomic) AXElement *touchContainer;
 - (id)containerTypes;
 @property(readonly, nonatomic) _Bool isTouchContainer;
+@property(readonly, nonatomic) unsigned long long containerType;
 @property(readonly, nonatomic) _Bool isValid;
 @property(readonly, nonatomic) struct CGRect focusableFrameForZoom;
 @property(readonly, nonatomic) struct CGRect visibleFrame;
@@ -170,6 +175,7 @@
 @property(readonly, nonatomic) _Bool isAXUIServer;
 @property(readonly, nonatomic) _Bool isSystemApplication;
 @property(readonly, nonatomic) _Bool isSpringBoard;
+@property(readonly, nonatomic) NSString *processName;
 @property(readonly, nonatomic) NSString *bundleId;
 @property(readonly, nonatomic) AXElement *firstElementInApplicationForFocus;
 @property(readonly, nonatomic) AXElement *firstElementInApplication;
@@ -215,6 +221,8 @@
 - (void)dealloc;
 - (id)initWithUIElement:(id)arg1;
 - (id)initWithAXUIElement:(struct __AXUIElement *)arg1;
+- (unsigned int)contextIdForPoint:(struct CGPoint)arg1;
+- (unsigned int)displayIdForContextId:(unsigned int)arg1;
 - (id)makeLookingGlassRequest:(id)arg1;
 
 // Remaining properties

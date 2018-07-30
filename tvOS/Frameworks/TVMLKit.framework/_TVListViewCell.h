@@ -6,13 +6,15 @@
 
 #import "UICollectionViewCell.h"
 
-@class UIColor, _UIFloatingContentView;
+@class UIColor, UIVisualEffectView, _UIFloatingContentView;
 
 __attribute__((visibility("hidden")))
 @interface _TVListViewCell : UICollectionViewCell
 {
     UIColor *_backgroundColor;
     UIColor *_highlightedBackgroundColor;
+    UIVisualEffectView *_backgroundVisualEffectView;
+    _Bool _visualEffectViewBackgroundEnabled;
     _Bool _disabled;
     _Bool _shouldAppearSelected;
     _UIFloatingContentView *_floatingView;
@@ -23,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) __weak id <_TVListViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) _UIFloatingContentView *floatingView; // @synthesize floatingView=_floatingView;
+@property(nonatomic) _Bool visualEffectViewBackgroundEnabled; // @synthesize visualEffectViewBackgroundEnabled=_visualEffectViewBackgroundEnabled;
 - (void).cxx_destruct;
 - (void)_updateSelectedBackgroundColor;
 - (unsigned long long)_floatingViewControlState;

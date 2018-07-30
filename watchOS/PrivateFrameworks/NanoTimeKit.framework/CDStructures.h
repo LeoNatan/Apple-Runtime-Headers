@@ -10,25 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct BayesianModel {
-    struct _opaque_pthread_rwlock_t {
-        long __sig;
-        char __opaque[124];
-    } m_rwlock;
-    struct unordered_map<unsigned long long, Gaussian, BayesianModel::SuperHasher, BayesianModel::SuperHasher, std::__1::allocator<std::__1::pair<const unsigned long long, Gaussian>>> m_features;
-    int m_nFeaturesCount;
-    unsigned long long m_nTotalTrue;
-    unsigned long long m_nTotalExamples;
-    double m_dSumPredictions;
-    double m_dLogScore;
-    double m_dNormalizedLogScore;
-    int m_nModelVersion;
-    unsigned long long m_nCalibrationCurveTrue[10];
-    unsigned long long m_nCalibrationCurveCount[10];
-    unsigned long m_nNumberOfTraining;
-    struct Gaussian m_empty;
-};
-
 struct CATransform3D {
     float m11;
     float m12;
@@ -49,12 +30,12 @@ struct CATransform3D {
 };
 
 struct CGAffineTransform {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-    float _field6;
+    float a;
+    float b;
+    float c;
+    float d;
+    float tx;
+    float ty;
 };
 
 struct CGColor;
@@ -110,17 +91,6 @@ struct CharacterStateSpecs {
     float hourElbowBend;
 };
 
-struct Gaussian {
-    double m_dPrecision;
-    double m_dPredicionMean;
-};
-
-struct LabelPosition {
-    struct CGPoint _field1;
-    int _field2;
-    int _field3;
-};
-
 struct NSArray {
     Class _field1;
 };
@@ -158,9 +128,15 @@ struct NTKKaleidoscopePathfinderPoint {
     float _field1[4];
 };
 
+struct NTKLabelPosition {
+    struct CGPoint _field1;
+    int _field2;
+    int _field3;
+};
+
 struct NUProgram {
     unsigned int program;
-    int uniforms[11];
+    int uniforms[12];
 };
 
 struct RingLayout {
@@ -179,54 +155,14 @@ struct UIEdgeInsets {
 };
 
 struct _NSRange {
-    unsigned int _field1;
-    unsigned int _field2;
+    unsigned int location;
+    unsigned int length;
 };
 
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*> *__next_;
-};
-
-struct array<NTKFeatureValue, 22> {
-    CDUnion_a867fccf __elems_[22];
-};
-
-struct bitset<22> {
-    unsigned int __first_;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*> **__value_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>*>> {
-                unsigned long __value_;
-            } __data_;
-        } __value_;
-    } __ptr_;
-};
-
-struct unordered_map<unsigned long long, Gaussian, BayesianModel::SuperHasher, BayesianModel::SuperHasher, std::__1::allocator<std::__1::pair<const unsigned long long, Gaussian>>> {
-    struct __hash_table<std::__1::__hash_value_type<unsigned long long, Gaussian>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, Gaussian>, BayesianModel::SuperHasher, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, Gaussian>, BayesianModel::SuperHasher, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, Gaussian>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, Gaussian>, void *>*> __value_;
-        } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, Gaussian>, BayesianModel::SuperHasher, true>> {
-            unsigned long __value_;
-        } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, Gaussian>, BayesianModel::SuperHasher, true>> {
-            float __value_;
-        } __p3_;
-    } __table_;
-};
-
-struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
-    unsigned long long *_field1;
-    unsigned long long *_field2;
-    struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
-        unsigned long long *_field1;
-    } _field3;
+struct jetsam_info {
+    long long currentKB;
+    long long maxLifetimeKB;
+    long long maxIntervalKB;
 };
 
 #pragma mark Typedef'd Structures
@@ -280,20 +216,6 @@ typedef struct {
     struct UIEdgeInsets _field13;
 } CDStruct_4eca2615;
 
-// Ambiguous groups
-typedef struct {
-    float _field1;
-    float _field2;
-} CDStruct_b2fbf00d;
-
-typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
-    unsigned long long *_field1;
-    unsigned long long *_field2;
-    struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long>> {
-        unsigned long long *_field1;
-    } _field3;
-} vector_cfeb9b06;
-
 #pragma mark Named Unions
 
 union _GLKMatrix4 {
@@ -336,11 +258,4 @@ union _GLKVector3 {
     CDStruct_869f9c67 _field3;
     float _field4[3];
 };
-
-#pragma mark Typedef'd Unions
-
-typedef union {
-    unsigned int intValue;
-    float floatValue;
-} CDUnion_a867fccf;
 

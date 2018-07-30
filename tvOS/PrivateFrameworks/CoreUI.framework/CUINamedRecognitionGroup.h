@@ -10,11 +10,16 @@
 
 @interface CUINamedRecognitionGroup : CUINamedLookup
 {
-    NSMutableDictionary *_contents;
+    NSMutableDictionary *_imageContents;
+    NSMutableDictionary *_objectContents;
 }
 
+- (id)recognitionObjectWithName:(id)arg1;
 - (id)recognitionImageWithName:(id)arg1;
+- (id)recognitionItemsWithName:(id)arg1;
+- (id)namedRecognitionObjectObjectList;
 - (id)namedRecognitionImageImageList;
+- (id)namedRecognitionItemList;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 contentsFromCatalog:(id)arg2 usingRenditionKey:(id)arg3 fromTheme:(unsigned long long)arg4;
 

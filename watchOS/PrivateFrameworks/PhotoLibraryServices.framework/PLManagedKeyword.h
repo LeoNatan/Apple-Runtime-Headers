@@ -4,11 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <PhotoLibraryServices/_PLManagedKeyword.h>
+#import <PhotoLibraryServices/PLManagedObject.h>
 
-@interface PLManagedKeyword : _PLManagedKeyword
+@class NSSet, NSString;
+
+@interface PLManagedKeyword : PLManagedObject
 {
 }
+
++ (id)entityInManagedObjectContext:(id)arg1;
++ (id)entityName;
++ (id)insertInManagedObjectContext:(id)arg1;
+
+// Remaining properties
+@property(retain, nonatomic) NSSet *assetAttributes; // @dynamic assetAttributes;
+@property(retain, nonatomic) NSString *title; // @dynamic title;
 
 @end
 

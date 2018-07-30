@@ -4,12 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSData, NSString, RWIDebuggable;
+#import "NSObject.h"
 
-@protocol RWIDebugger
-@property(readonly, copy, nonatomic) NSString *uuid;
+@class NSData, NSString, RWIDebuggable, RWIManager;
+
+@protocol RWIDebugger <NSObject>
+@property(readonly, nonatomic) RWIManager *manager;
 @property(readonly, nonatomic) RWIDebuggable *debuggable;
+@property(readonly, copy, nonatomic) NSString *uuid;
+- (void)close;
 - (void)sendMessageToBackend:(NSString *)arg1;
 - (void)sendMessageToFrontend:(NSData *)arg1;
+
+@optional
+- (void)debuggableDidChange:(RWIDebuggable *)arg1;
 @end
 

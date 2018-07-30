@@ -10,8 +10,11 @@
 {
 }
 
-+ (int)cellStyleForSpecifier:(id)arg1;
++ (int)cellStyle;
+- (void)updateDetailTextForCurrentValue;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setContentsFromSpecifier:(id)arg1 controller:(id)arg2;
+- (void)dealloc;
 
 @end
 

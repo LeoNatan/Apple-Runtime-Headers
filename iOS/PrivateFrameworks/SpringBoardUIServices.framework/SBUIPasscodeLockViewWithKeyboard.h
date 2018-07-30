@@ -61,12 +61,16 @@
 - (void)_notifyDelegateThatEmergencyCallButtonWasPressed;
 - (void)_notifyDelegatePasscodeEntered;
 - (void)_hardwareReturnKeyPressed:(id)arg1;
+- (void)resignActiveWithAnimationSettings:(id)arg1;
 - (void)becomeActiveWithAnimationSettings:(id)arg1;
 - (_Bool)resignFirstResponder;
 - (_Bool)becomeFirstResponder;
 - (void)layoutSubviews;
 - (void)_setKeyboardTracksLockView:(_Bool)arg1;
 - (id)_viewForKeyboardTracking;
+- (void)updateForTransitionToPasscodeView:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)didEndTransitionToState:(long long)arg1;
+- (void)beginTransitionToState:(long long)arg1;
 - (void)setShowsStatusField:(_Bool)arg1;
 - (void)setShowsEmergencyCallButton:(_Bool)arg1;
 - (id)passcode;

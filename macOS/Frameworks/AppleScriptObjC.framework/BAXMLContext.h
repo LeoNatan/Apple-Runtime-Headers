@@ -10,6 +10,7 @@
 
 @class BAFunctionSignature, BAMetadataManager, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface BAXMLContext : NSObject <NSXMLParserDelegate>
 {
     BAMetadataManager *_m;

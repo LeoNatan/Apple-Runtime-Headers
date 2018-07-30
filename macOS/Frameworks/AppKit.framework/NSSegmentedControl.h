@@ -25,6 +25,7 @@
 + (id)segmentedControlWithImages:(id)arg1 trackingMode:(unsigned long long)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)segmentedControlWithLabels:(id)arg1 trackingMode:(unsigned long long)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)_segmentedControlWithTrackingMode:(unsigned long long)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void)_setBackgroundStyleForSubtree:(long long)arg1;
 - (struct NSEdgeInsets)touchBarHitTestInsets;
 - (id)_insetMitigationTreatment;
 @property(readonly, copy) NSUserInterfaceCompressionOptions *activeCompressionOptions;
@@ -43,7 +44,6 @@
 - (void)_setShowsBadge:(BOOL)arg1 forSegment:(long long)arg2;
 - (void)_updateLayerMasksToBoundsFromView;
 - (id)_highlightColorForCell:(id)arg1;
-- (BOOL)_canDisableBaseVibrancy;
 - (double)baselineOffsetFromBottom;
 - (BOOL)_hasExtra10_11BordersInToolbars;
 - (struct NSEdgeInsets)alignmentRectInsets;
@@ -92,7 +92,6 @@
 - (void)_updateConstraint:(id *)arg1 forAnchor:(id)arg2 atMinSize:(double)arg3 priority:(double)arg4;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)minimumIntrinsicContentSize;
-- (void)_viewDidChangeAppearance:(id)arg1;
 - (void)viewDidEndLiveResize;
 - (void)_windowChangedKeyState;
 - (void)_setWindow:(id)arg1;

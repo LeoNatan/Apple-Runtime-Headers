@@ -9,7 +9,7 @@
 #import "NSSecureCoding.h"
 #import "_SFPBCardSectionValue.h"
 
-@class NSData, NSString, _SFPBActivityIndicatorCardSection, _SFPBAppLinkCardSection, _SFPBAudioPlaybackCardSection, _SFPBDescriptionCardSection, _SFPBDetailedRowCardSection, _SFPBFlightCardSection, _SFPBImagesCardSection, _SFPBKeyValueDataCardSection, _SFPBMapCardSection, _SFPBMediaInfoCardSection, _SFPBMediaPlayerCardSection, _SFPBMessageCardSection, _SFPBMetaInfoCardSection, _SFPBNowPlayingCardSection, _SFPBRichTitleCardSection, _SFPBRowCardSection, _SFPBScoreboardCardSection, _SFPBSectionHeaderCardSection, _SFPBSelectableGridCardSection, _SFPBSocialMediaPostCardSection, _SFPBStockChartCardSection, _SFPBSuggestionCardSection, _SFPBTableHeaderRowCardSection, _SFPBTableRowCardSection, _SFPBTextColumnsCardSection, _SFPBTitleCardSection, _SFPBTrackListCardSection, _SFPBWatchListCardSection, _SFPBWebCardSection;
+@class NSData, NSString, _SFPBActivityIndicatorCardSection, _SFPBAppLinkCardSection, _SFPBAudioPlaybackCardSection, _SFPBButtonCardSection, _SFPBDescriptionCardSection, _SFPBDetailedRowCardSection, _SFPBFlightCardSection, _SFPBHorizontalButtonCardSection, _SFPBHorizontalScrollCardSection, _SFPBImagesCardSection, _SFPBKeyValueDataCardSection, _SFPBMapCardSection, _SFPBMapsDetailedRowCardSection, _SFPBMediaInfoCardSection, _SFPBMediaPlayerCardSection, _SFPBMessageCardSection, _SFPBMetaInfoCardSection, _SFPBNowPlayingCardSection, _SFPBProductCardSection, _SFPBRichTitleCardSection, _SFPBRowCardSection, _SFPBScoreboardCardSection, _SFPBSectionHeaderCardSection, _SFPBSelectableGridCardSection, _SFPBSocialMediaPostCardSection, _SFPBStockChartCardSection, _SFPBSuggestionCardSection, _SFPBTableHeaderRowCardSection, _SFPBTableRowCardSection, _SFPBTextColumnsCardSection, _SFPBTitleCardSection, _SFPBTrackListCardSection, _SFPBVerticalLayoutCardSection, _SFPBWatchListCardSection, _SFPBWebCardSection;
 
 @interface _SFPBCardSectionValue : PBCodable <_SFPBCardSectionValue, NSSecureCoding>
 {
@@ -42,8 +42,20 @@
     _SFPBSectionHeaderCardSection *_sectionHeaderCardSection;
     _SFPBMetaInfoCardSection *_metaInfoCardSection;
     _SFPBWatchListCardSection *_watchListCardSection;
+    _SFPBMapsDetailedRowCardSection *_mapsDetailedRowCardSection;
+    _SFPBButtonCardSection *_buttonCardSection;
+    _SFPBHorizontalButtonCardSection *_horizontalButtonCardSection;
+    _SFPBVerticalLayoutCardSection *_verticalLayoutCardSection;
+    _SFPBProductCardSection *_productCardSection;
+    _SFPBHorizontalScrollCardSection *_horizontalScrollCardSection;
 }
 
+@property(retain, nonatomic) _SFPBHorizontalScrollCardSection *horizontalScrollCardSection; // @synthesize horizontalScrollCardSection=_horizontalScrollCardSection;
+@property(retain, nonatomic) _SFPBProductCardSection *productCardSection; // @synthesize productCardSection=_productCardSection;
+@property(retain, nonatomic) _SFPBVerticalLayoutCardSection *verticalLayoutCardSection; // @synthesize verticalLayoutCardSection=_verticalLayoutCardSection;
+@property(retain, nonatomic) _SFPBHorizontalButtonCardSection *horizontalButtonCardSection; // @synthesize horizontalButtonCardSection=_horizontalButtonCardSection;
+@property(retain, nonatomic) _SFPBButtonCardSection *buttonCardSection; // @synthesize buttonCardSection=_buttonCardSection;
+@property(retain, nonatomic) _SFPBMapsDetailedRowCardSection *mapsDetailedRowCardSection; // @synthesize mapsDetailedRowCardSection=_mapsDetailedRowCardSection;
 @property(retain, nonatomic) _SFPBWatchListCardSection *watchListCardSection; // @synthesize watchListCardSection=_watchListCardSection;
 @property(retain, nonatomic) _SFPBMetaInfoCardSection *metaInfoCardSection; // @synthesize metaInfoCardSection=_metaInfoCardSection;
 @property(retain, nonatomic) _SFPBSectionHeaderCardSection *sectionHeaderCardSection; // @synthesize sectionHeaderCardSection=_sectionHeaderCardSection;
@@ -82,35 +94,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasWatchListCardSection;
-@property(readonly, nonatomic) _Bool hasMetaInfoCardSection;
-@property(readonly, nonatomic) _Bool hasSectionHeaderCardSection;
-@property(readonly, nonatomic) _Bool hasSelectableGridCardSection;
-@property(readonly, nonatomic) _Bool hasSuggestionCardSection;
-@property(readonly, nonatomic) _Bool hasImagesCardSection;
-@property(readonly, nonatomic) _Bool hasDetailedRowCardSection;
-@property(readonly, nonatomic) _Bool hasMessageCardSection;
-@property(readonly, nonatomic) _Bool hasWebCardSection;
-@property(readonly, nonatomic) _Bool hasActivityIndicatorCardSection;
-@property(readonly, nonatomic) _Bool hasFlightCardSection;
-@property(readonly, nonatomic) _Bool hasAudioPlaybackCardSection;
-@property(readonly, nonatomic) _Bool hasTrackListCardSection;
-@property(readonly, nonatomic) _Bool hasTitleCardSection;
-@property(readonly, nonatomic) _Bool hasTextColumnsCardSection;
-@property(readonly, nonatomic) _Bool hasTableRowCardSection;
-@property(readonly, nonatomic) _Bool hasTableHeaderRowCardSection;
-@property(readonly, nonatomic) _Bool hasStockChartCardSection;
-@property(readonly, nonatomic) _Bool hasSocialMediaPostCardSection;
-@property(readonly, nonatomic) _Bool hasScoreboardCardSection;
-@property(readonly, nonatomic) _Bool hasRowCardSection;
-@property(readonly, nonatomic) _Bool hasRichTitleCardSection;
-@property(readonly, nonatomic) _Bool hasNowPlayingCardSection;
-@property(readonly, nonatomic) _Bool hasMediaPlayerCardSection;
-@property(readonly, nonatomic) _Bool hasMediaInfoCardSection;
-@property(readonly, nonatomic) _Bool hasMapCardSection;
-@property(readonly, nonatomic) _Bool hasKeyValueDataCardSection;
-@property(readonly, nonatomic) _Bool hasDescriptionCardSection;
-@property(readonly, nonatomic) _Bool hasAppLinkCardSection;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

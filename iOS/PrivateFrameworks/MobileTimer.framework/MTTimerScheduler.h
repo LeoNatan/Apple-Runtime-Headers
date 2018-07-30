@@ -17,7 +17,7 @@
 {
     id <MTTimerSchedulerDelegate> _delegate;
     id <MTTimerStorage> _storage;
-    id <MTNotificationPoster> _notificationPoster;
+    id <MTNotificationCenter> _notificationCenter;
     MTScheduledList *_scheduledTimers;
     id <NAScheduler> _serializer;
     CDUnknownBlockType _currentDateProvider;
@@ -31,7 +31,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType currentDateProvider; // @synthesize currentDateProvider=_currentDateProvider;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(readonly, nonatomic) MTScheduledList *scheduledTimers; // @synthesize scheduledTimers=_scheduledTimers;
-@property(retain, nonatomic) id <MTNotificationPoster> notificationPoster; // @synthesize notificationPoster=_notificationPoster;
+@property(retain, nonatomic) id <MTNotificationCenter> notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) id <MTTimerStorage> storage; // @synthesize storage=_storage;
 @property(nonatomic) __weak id <MTTimerSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -44,6 +44,7 @@
 - (void)source:(id)arg1 didAddTimers:(id)arg2;
 - (void)handleNotification:(id)arg1;
 - (_Bool)handlesNotification:(id)arg1;
+- (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)_queue_setLastTimerTriggerDate:(id)arg1;
 - (id)_queue_lastTimerTriggerDate;
@@ -64,9 +65,9 @@
 - (void)rescheduleTimers;
 - (id)nextTriggerDate;
 - (id)nextTimer;
-- (id)initWithStorage:(id)arg1 notificationPoster:(id)arg2 scheduler:(id)arg3 schedulingDelegate:(id)arg4 taskScheduler:(id)arg5 currentDateProvider:(CDUnknownBlockType)arg6;
-- (id)initWithStorage:(id)arg1 notificationPoster:(id)arg2 scheduler:(id)arg3;
-- (id)initWithStorage:(id)arg1 notificationPoster:(id)arg2;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 schedulingDelegate:(id)arg4 taskScheduler:(id)arg5 currentDateProvider:(CDUnknownBlockType)arg6;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

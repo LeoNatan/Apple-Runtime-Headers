@@ -10,7 +10,6 @@
 
 @protocol NTKActivityFaceViewFactoryDelegate <NSObject>
 - (void)applyEntryModelWithUnfilledRings:(NTKWellnessEntryModel *)arg1;
-- (void)timeTravelDateEnteredOrExitedTimelineBounds:(_Bool)arg1;
 - (void)applyEntryModel:(NTKWellnessEntryModel *)arg1 animated:(_Bool)arg2;
 @end
 

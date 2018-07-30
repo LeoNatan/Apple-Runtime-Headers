@@ -24,10 +24,12 @@
     int _graphicsPerformanceClass;
     int _graphicsFeatureSetClassValue;
     NSArray *_graphicsFeatureSetFallbackValues;
+    NSArray *_subtypeFallbackValues;
     int _dynamicDisplayModeValue;
 }
 
 @property(nonatomic) int dynamicDisplayModeValue; // @synthesize dynamicDisplayModeValue=_dynamicDisplayModeValue;
+@property(retain, nonatomic) NSArray *subtypeFallbackValues; // @synthesize subtypeFallbackValues=_subtypeFallbackValues;
 @property(copy, nonatomic) NSArray *graphicsFeatureSetFallbackValues; // @synthesize graphicsFeatureSetFallbackValues=_graphicsFeatureSetFallbackValues;
 @property(nonatomic) int graphicsFeatureSetClassValue; // @synthesize graphicsFeatureSetClassValue=_graphicsFeatureSetClassValue;
 @property(nonatomic) int graphicsPerformanceClass; // @synthesize graphicsPerformanceClass=_graphicsPerformanceClass;

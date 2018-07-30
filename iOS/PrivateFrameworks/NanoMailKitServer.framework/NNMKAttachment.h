@@ -18,9 +18,13 @@
     NSString *_mimePartNumber;
     unsigned long long _fileSize;
     unsigned long long _type;
+    NSString *_messageId;
+    unsigned long long _syncState;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long syncState; // @synthesize syncState=_syncState;
+@property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *mimePartNumber; // @synthesize mimePartNumber=_mimePartNumber;

@@ -12,6 +12,7 @@
 
 @interface _DKPREvent : PBCodable <NSCopying>
 {
+    double _creationDate;
     double _endDate;
     double _startDate;
     NSString *_identifier;
@@ -19,9 +20,13 @@
     _DKPRSource *_source;
     _DKPRStream *_stream;
     _DKPRValue *_value;
+    struct {
+        unsigned int creationDate:1;
+    } _has;
 }
 
 + (Class)metadataType;
+@property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSMutableArray *metadatas; // @synthesize metadatas=_metadatas;
 @property(retain, nonatomic) _DKPRSource *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -39,6 +44,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasCreationDate;
 - (id)metadataAtIndex:(unsigned long long)arg1;
 - (unsigned long long)metadatasCount;
 - (void)addMetadata:(id)arg1;

@@ -7,7 +7,7 @@
 #import "UIButton.h"
 
 @interface UIButton (PhotosUICore)
-+ (id)_buttonBackgroundImageForType:(unsigned long long)arg1 color:(id)arg2 controlState:(unsigned long long)arg3;
++ (id)buttonBackgroundImageForType:(unsigned long long)arg1 color:(id)arg2 cornerRadius:(double)arg3 controlState:(unsigned long long)arg4;
 + (id)buttonWithPXType:(unsigned long long)arg1 color:(id)arg2;
 - (void)px_setTitle:(id)arg1 orAttributedTitle:(id)arg2 forState:(unsigned long long)arg3;
 - (void)px_updateTitleUsingBlock:(CDUnknownBlockType)arg1;

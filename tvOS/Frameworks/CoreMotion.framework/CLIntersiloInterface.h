@@ -6,23 +6,13 @@
 
 #import "NSObject.h"
 
-@class Protocol;
-
 @interface CLIntersiloInterface : NSObject
 {
-    struct map<SEL *, CLIntersiloInterfaceSelectorInfo *, std::__1::less<SEL *>, std::__1::allocator<std::__1::pair<SEL *const, CLIntersiloInterfaceSelectorInfo *>>> _selectors;
-    Protocol *_protocol;
 }
 
-+ (id)interfaceWithProtocol:(id)arg1 bases:(id)arg2;
-@property(readonly, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)debugDescription;
++ (id)sharedInterface;
 - (id)getInfoForSelector:(SEL)arg1;
-- (_Bool)conformsToProtocol:(id)arg1;
 - (void)extendSelectorInfoWithProtocol:(id)arg1 bases:(id)arg2;
-- (id)initWithProtocol:(id)arg1 bases:(id)arg2;
 
 @end
 

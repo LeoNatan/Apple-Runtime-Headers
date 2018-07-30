@@ -7,7 +7,7 @@
 #import "SAGetResultObjects.h"
 
 @interface SAGetResultObjects (SiriCoreSessionObject)
-- (BOOL)siriCore_canBeRemapped;
+- (BOOL)siriCore_isProvisional;
 - (BOOL)siriCore_isRetryable;
 @end
 

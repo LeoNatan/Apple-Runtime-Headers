@@ -12,6 +12,7 @@
 
 @interface ADUserTargetingProperties : PBCodable <NSCopying>
 {
+    CDStruct_95bda58d _accountStates;
     CDStruct_95bda58d _accountTypes;
     CDStruct_95bda58d _deviceModes;
     double _clientClockTime;
@@ -107,6 +108,14 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsAccountStates:(id)arg1;
+- (id)accountStatesAsString:(int)arg1;
+- (void)setAccountStates:(int *)arg1 count:(unsigned long long)arg2;
+- (int)accountStateAtIndex:(unsigned long long)arg1;
+- (void)addAccountState:(int)arg1;
+- (void)clearAccountStates;
+@property(readonly, nonatomic) int *accountStates;
+@property(readonly, nonatomic) unsigned long long accountStatesCount;
 @property(readonly, nonatomic) _Bool hasStoreFrontLanguageLocaleIdentifier;
 - (int)StringAsConnectionType:(id)arg1;
 - (id)connectionTypeAsString:(int)arg1;

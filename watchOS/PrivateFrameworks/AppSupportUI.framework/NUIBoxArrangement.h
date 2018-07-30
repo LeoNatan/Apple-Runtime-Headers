@@ -29,7 +29,6 @@
 - (void)positionItemsInBounds:(struct CGRect)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_cacheDisplayScaleIfNeeded;
 - (struct CGSize)layoutSizeFittingSize:(struct CGSize)arg1;
-- (_Bool)supportsAsynchronousMeasurement;
 - (void)populateBoxArrangementCells:(vector_eb457d57 *)arg1;
 - (void)reloadData;
 @property(nonatomic, getter=isBaselineRelativeArrangement) _Bool baselineRelativeArrangement;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AutoLoopStabilizer *stabilizer; // @synthesize stabilizer;
 - (void).cxx_destruct;
 - (id)initWithStabilizer:(id)arg1;
+- (id)generateTrivialPassThruForFrameTimes:(vector_0821a7d5 *)arg1 totalDuration:(CDStruct_1b6d18a9)arg2;
 - (id)generatePassThruForAsset:(id)arg1 trimStart:(CDStruct_1b6d18a9)arg2 trimLength:(CDStruct_1b6d18a9)arg3;
 - (id)generateStabilizeParams;
 - (void)CopyCoordinateShiftedHomographies:(struct HomographyRecordVector *)arg1 firstIndex:(unsigned long long)arg2 lastIndex:(unsigned long long)arg3 toStabilizeParams:(id)arg4 withImageBounds:(struct CGSize)arg5;

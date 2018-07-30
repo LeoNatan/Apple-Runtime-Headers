@@ -9,6 +9,8 @@
 @class NSArray, NSString;
 
 @protocol _ICPredictionManaging <NSObject>
+- (void)hibernate;
+- (void)warmUp;
 - (NSArray *)searchForMeCardEmailAddresses;
 - (NSArray *)searchForMeCardRegions;
 - (void)reset;

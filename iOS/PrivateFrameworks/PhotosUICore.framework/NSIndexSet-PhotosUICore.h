@@ -6,11 +6,13 @@
 
 #import "NSIndexSet.h"
 
+@class NSString;
+
 @interface NSIndexSet (PhotosUICore)
 @property(readonly, nonatomic) struct _NSRange px_coveringRange;
 - (id)px_indexSetAdjustedForInsertions:(id)arg1;
 - (id)px_indexSetAdjustedForDeletions:(id)arg1;
-- (id)_px_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(_Bool)arg2;
-- (id)px_shortDescription;
+- (id)px_intersectionWithIndexSet:(id)arg1;
+@property(readonly, nonatomic) NSString *px_shortDescription;
 @end
 

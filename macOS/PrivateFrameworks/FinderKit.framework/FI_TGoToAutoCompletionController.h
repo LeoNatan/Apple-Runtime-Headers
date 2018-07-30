@@ -18,14 +18,14 @@ __attribute__((visibility("hidden")))
     _Bool _adjustedPathToCompleteIsValid;
     _Bool _isAutoCompleting;
     _Bool _isQuit;
-    vector_9b715b12 _completionNodesAndNames;
-    vector_9b715b12 _filteredSortedCompletionNodesAndNames;
+    vector_0488428e _completionNodesAndNames;
+    vector_0488428e _filteredSortedCompletionNodesAndNames;
     function_b1fce659 _updatePathHandler;
     function_d52b5b4a _autoCompleteHandler;
     function_b4fae195 _completionHandler;
 }
 
-+ (vector_9b715b12)_filterCompletionNodesAndNames:(const vector_9b715b12 *)arg1 withPartialWord:(const struct TString *)arg2;
++ (vector_0488428e)_filterCompletionNodesAndNames:(const vector_0488428e *)arg1 withPartialWord:(const struct TString *)arg2;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)_canReuseControllerWithPath:(const struct TString *)arg1;
@@ -40,12 +40,12 @@ __attribute__((visibility("hidden")))
 - (void)setIsAutoCompleting:(_Bool)arg1;
 - (_Bool)_isAutoCompleting;
 @property(readonly, nonatomic) _Bool isAutoCompleting; // @dynamic isAutoCompleting;
-- (void)_setFilteredSortedCompletionNodesAndNames:(const vector_9b715b12 *)arg1;
-- (const vector_9b715b12 *)_filteredSortedCompletionNodesAndNames;
-- (vector_9b715b12)filteredSortedCompletionNodesAndNames;
-- (void)_setCompletionNodesAndNames:(const vector_9b715b12 *)arg1;
-- (const vector_9b715b12 *)_completionNodesAndNames;
-- (vector_9b715b12)completionNodesAndNames;
+- (void)_setFilteredSortedCompletionNodesAndNames:(const vector_0488428e *)arg1;
+- (const vector_0488428e *)_filteredSortedCompletionNodesAndNames;
+- (vector_0488428e)filteredSortedCompletionNodesAndNames;
+- (void)_setCompletionNodesAndNames:(const vector_0488428e *)arg1;
+- (const vector_0488428e *)_completionNodesAndNames;
+- (vector_0488428e)completionNodesAndNames;
 - (void)_setNodesInPath:(const struct TFENodeVector *)arg1;
 - (const struct TFENodeVector *)_nodesInPath;
 - (struct TFENodeVector)nodesInPath;

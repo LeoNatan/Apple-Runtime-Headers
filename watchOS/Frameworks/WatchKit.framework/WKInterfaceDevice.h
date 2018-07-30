@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @interface WKInterfaceDevice : NSObject
 {
@@ -34,11 +34,6 @@
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
 - (void).cxx_destruct;
 - (void)playHaptic:(int)arg1;
-@property(readonly, nonatomic) NSDictionary *cachedImages;
-- (void)removeAllCachedImages;
-- (void)removeCachedImageWithName:(id)arg1;
-- (_Bool)addCachedImageWithData:(id)arg1 name:(id)arg2;
-- (_Bool)addCachedImage:(id)arg1 name:(id)arg2;
 @property(readonly, nonatomic) int batteryState;
 @property(nonatomic, getter=isBatteryMonitoringEnabled) _Bool batteryMonitoringEnabled;
 @property(readonly, nonatomic) float batteryLevel;

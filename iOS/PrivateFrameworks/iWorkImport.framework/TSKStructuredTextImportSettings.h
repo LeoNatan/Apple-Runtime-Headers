@@ -14,7 +14,9 @@ __attribute__((visibility("hidden")))
 @interface TSKStructuredTextImportSettings : NSObject <NSCopying>
 {
     _Bool _transposeRowsAndColumns;
+    _Bool _automaticDelimiters;
     _Bool _collapseConsecutiveDelimiters;
+    _Bool _automaticOffsets;
     long long _type;
     unsigned long long _startingRow;
     NSSet *_decimalSeparators;
@@ -22,14 +24,19 @@ __attribute__((visibility("hidden")))
     NSSet *_delimiters;
     NSSet *_textQualifiers;
     NSIndexSet *_columnOffsets;
+    unsigned long long _sourceEncoding;
 }
 
 + (id)settingsFromArchive:(const struct StructuredTextImportSettings *)arg1;
++ (id)keyPathsForValuesAffectingIsValid;
 + (id)settingsWithType:(long long)arg1;
 + (id)settings;
+@property(nonatomic) unsigned long long sourceEncoding; // @synthesize sourceEncoding=_sourceEncoding;
+@property(nonatomic) _Bool automaticOffsets; // @synthesize automaticOffsets=_automaticOffsets;
 @property(copy, nonatomic) NSIndexSet *columnOffsets; // @synthesize columnOffsets=_columnOffsets;
 @property(nonatomic) _Bool collapseConsecutiveDelimiters; // @synthesize collapseConsecutiveDelimiters=_collapseConsecutiveDelimiters;
 @property(copy, nonatomic) NSSet *textQualifiers; // @synthesize textQualifiers=_textQualifiers;
+@property(nonatomic) _Bool automaticDelimiters; // @synthesize automaticDelimiters=_automaticDelimiters;
 @property(copy, nonatomic) NSSet *delimiters; // @synthesize delimiters=_delimiters;
 @property(nonatomic) _Bool transposeRowsAndColumns; // @synthesize transposeRowsAndColumns=_transposeRowsAndColumns;
 @property(copy, nonatomic) NSSet *thousandsSeparators; // @synthesize thousandsSeparators=_thousandsSeparators;
@@ -41,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)initFromArchive:(const struct StructuredTextImportSettings *)arg1;
 - (id)errorString;
 - (_Bool)isValid;
+@property(readonly, nonatomic) _Bool hasAnyAutomaticSettings;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

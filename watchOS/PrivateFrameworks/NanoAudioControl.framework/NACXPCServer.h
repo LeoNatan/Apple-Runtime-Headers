@@ -23,6 +23,7 @@
     NACIDSClient *_idsClient;
     float _hapticIntensity;
     _Bool _prominentHapticEnabled;
+    int _hapticState;
     _Bool _systemMutedState;
     NSObject<OS_dispatch_source> *_audioRouteDeferTimer;
     TLAlert *_alert;
@@ -36,6 +37,8 @@
 - (id)_audioRoutesRecordForCategory:(id)arg1;
 - (id)_volumeRecordForTarget:(id)arg1;
 - (void)_cleanupConnection:(id)arg1;
+- (void)_persistHapticState;
+- (int)_cachedHapticState;
 - (void)_persistProminentHapticState;
 - (_Bool)_cachedProminentHapticState;
 - (void)_persistSystemMutedState;
@@ -53,6 +56,7 @@
 - (void)client:(id)arg1 volumeWarningEnabled:(_Bool)arg2 didChangeForTarget:(id)arg3;
 - (void)client:(id)arg1 EULimit:(float)arg2 didChangeForTarget:(id)arg3;
 - (void)client:(id)arg1 systemMutedStateDidChange:(_Bool)arg2;
+- (void)client:(id)arg1 hapticStateDidChange:(int)arg2;
 - (void)client:(id)arg1 prominentHapticStateDidChange:(_Bool)arg2;
 - (void)client:(id)arg1 hapticIntensityDidChange:(float)arg2;
 - (void)client:(id)arg1 mutedState:(_Bool)arg2 didChangeForTarget:(id)arg3;
@@ -65,9 +69,11 @@
 - (void)audioRoutesForCategory:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)playProminentHapticPreview;
 - (void)playAudioAndHapticPreview;
+- (void)setHapticState:(int)arg1;
 - (void)setProminentHapticEnabled:(_Bool)arg1;
 - (void)setHapticIntensity:(float)arg1;
 - (void)systemMutedState:(CDUnknownBlockType)arg1;
+- (void)hapticState:(CDUnknownBlockType)arg1;
 - (void)prominentHapticEnabled:(CDUnknownBlockType)arg1;
 - (void)hapticIntensity:(CDUnknownBlockType)arg1;
 - (void)setSystemMuted:(_Bool)arg1;

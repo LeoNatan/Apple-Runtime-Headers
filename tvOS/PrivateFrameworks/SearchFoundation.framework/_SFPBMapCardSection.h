@@ -13,7 +13,6 @@
 
 @interface _SFPBMapCardSection : PBCodable <_SFPBMapCardSection, NSSecureCoding>
 {
-    CDStruct_0edb3e2f _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;
@@ -31,8 +30,10 @@
     NSString *_footnoteLabel;
     NSString *_footnote;
     _SFPBMapRegion *_boundingMapRegion;
+    NSArray *_pins;
 }
 
+@property(copy, nonatomic) NSArray *pins; // @synthesize pins=_pins;
 @property(nonatomic) int pinBehavior; // @synthesize pinBehavior=_pinBehavior;
 @property(retain, nonatomic) _SFPBMapRegion *boundingMapRegion; // @synthesize boundingMapRegion=_boundingMapRegion;
 @property(nonatomic) int sizeFormat; // @synthesize sizeFormat=_sizeFormat;
@@ -59,22 +60,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasPinBehavior;
-@property(readonly, nonatomic) _Bool hasBoundingMapRegion;
-@property(readonly, nonatomic) _Bool hasSizeFormat;
-@property(readonly, nonatomic) _Bool hasInteractive;
-@property(readonly, nonatomic) _Bool hasFootnote;
-@property(readonly, nonatomic) _Bool hasFootnoteLabel;
-@property(readonly, nonatomic) _Bool hasPinColor;
-@property(readonly, nonatomic) _Bool hasLocation;
-@property(readonly, nonatomic) _Bool hasBackgroundColor;
-@property(readonly, nonatomic) _Bool hasSeparatorStyle;
-@property(readonly, nonatomic) _Bool hasType;
-@property(readonly, nonatomic) _Bool hasHasBottomPadding;
-@property(readonly, nonatomic) _Bool hasHasTopPadding;
-@property(readonly, nonatomic) _Bool hasCanBeHidden;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerDismissText;
-@property(readonly, nonatomic) _Bool hasPunchoutPickerTitle;
+- (id)pinsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pinsCount;
+- (void)addPins:(id)arg1;
+- (void)clearPins;
 - (id)punchoutOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)punchoutOptionsCount;
 - (void)addPunchoutOptions:(id)arg1;

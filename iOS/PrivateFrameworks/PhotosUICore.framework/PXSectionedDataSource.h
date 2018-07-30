@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "PXSectionedLayoutEngineDataSourceSnapshot.h"
 
-@class NSString;
+@class NSObject<OS_os_log>, NSString;
 
 @interface PXSectionedDataSource : NSObject <NSCopying, PXSectionedLayoutEngineDataSourceSnapshot>
 {
@@ -31,10 +31,12 @@
 - (struct PXSimpleIndexPath)convertIndexPath:(struct PXSimpleIndexPath)arg1 fromSectionedDataSource:(id)arg2;
 - (id)objectReferenceForObjectReference:(id)arg1;
 - (id)objectReferenceAtIndexPath:(struct PXSimpleIndexPath)arg1;
+@property(readonly, nonatomic) NSObject<OS_os_log> *sectionedDataSourceLog;
 - (Class)objectReferenceClassForSubItem;
 - (Class)objectReferenceClassForItem;
 - (Class)objectReferenceClassForSection;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
+- (id)objectsInIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
 - (long long)numberOfItemsInSection:(long long)arg1;

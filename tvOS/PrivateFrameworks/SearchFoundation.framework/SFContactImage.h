@@ -10,14 +10,21 @@
 #import "NSSecureCoding.h"
 #import "SFContactImage.h"
 
-@class NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 
 @interface SFContactImage : SFImage <SFContactImage, NSSecureCoding, NSCopying>
 {
+    struct {
+        unsigned int threeDTouchEnabled:1;
+    } _has;
+    _Bool _threeDTouchEnabled;
     NSString *_contactIdentifier;
+    NSArray *_contactIdentifiers;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool threeDTouchEnabled; // @synthesize threeDTouchEnabled=_threeDTouchEnabled;
+@property(copy, nonatomic) NSArray *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -25,6 +32,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)hasThreeDTouchEnabled;
 - (id)initWithProtobuf:(id)arg1;
 
 // Remaining properties

@@ -21,12 +21,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CIContext *context; // @synthesize context;
 - (id)featuresInImage:(id)arg1;
 - (id)featuresInImage:(id)arg1 options:(id)arg2;
-- (void)finalize;
-- (void)dealloc;
 - (id)initWithContext:(id)arg1 options:(id)arg2;
-- (id)createFaceCoreDataFromCIImage:(id)arg1 width:(unsigned int *)arg2 height:(unsigned int *)arg3;
-- (id)adjustedImageFromImage:(id)arg1 orientation:(int)arg2 inverseCTM:(struct CGAffineTransform *)arg3;
-- (struct CGAffineTransform)ctmForImageWithBounds:(struct CGRect)arg1 orientation:(int)arg2;
 
 @end
 

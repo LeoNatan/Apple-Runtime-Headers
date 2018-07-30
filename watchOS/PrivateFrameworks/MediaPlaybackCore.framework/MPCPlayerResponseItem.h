@@ -10,6 +10,8 @@
 
 @interface MPCPlayerResponseItem : NSObject
 {
+    unsigned int _seekSupport;
+    _Bool _placeholder;
     NSString *_contentItemIdentifier;
     int _revision;
     MPCPlayerResponse *_response;
@@ -18,6 +20,7 @@
     CDStruct_fce57115 _duration;
 }
 
+@property(readonly, nonatomic, getter=isPlaceholder) _Bool placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, nonatomic) MPModelGenericObject *metadataObject; // @synthesize metadataObject=_metadataObject;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) __weak MPCPlayerResponse *response; // @synthesize response=_response;
@@ -26,6 +29,7 @@
 @property(readonly, nonatomic) NSString *contentItemIdentifier; // @synthesize contentItemIdentifier=_contentItemIdentifier;
 - (void).cxx_destruct;
 - (id)_feedbackCommandWithMediaRemoteCommand:(unsigned int)arg1;
+- (unsigned int)_determineSeekSupport;
 - (id)startPictureInPicture;
 - (id)remove;
 - (id)rateCommand;

@@ -27,6 +27,7 @@
 
 @property(retain, nonatomic) FBWorkspace *processWorkspace; // @synthesize processWorkspace=_processWorkspace;
 @property(readonly, copy, nonatomic) FBUISceneClientIdentity *clientIdentity; // @synthesize clientIdentity=_clientIdentity;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -41,7 +42,7 @@
 - (void)endTransaction;
 - (void)beginTransaction;
 - (id)clientForSceneIdentifier:(id)arg1;
-@property(readonly, retain, nonatomic) FBProcess<FBUIProcess> *clientProcess;
+@property(readonly, nonatomic) FBProcess<FBUIProcess> *clientProcess;
 - (id)_createSceneClientForIdentifier:(id)arg1 withSpecification:(id)arg2;
 - (void)_processLaunched:(id)arg1;
 - (id)_processWorkspace;

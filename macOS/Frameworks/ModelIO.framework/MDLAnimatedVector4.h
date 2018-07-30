@@ -18,6 +18,7 @@
 -     // Error parsing type: 24@0:8d16, name: float4AtTime:
 - (void)setDouble4:(double)arg1 atTime: /* Error: Ran out of types for this method. */;
 - (void)setFloat4:(double)arg1 atTime: /* Error: Ran out of types for this method. */;
+- (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;
 - (struct VtValue)defaultVtValue;
 - (unsigned long long)precision;

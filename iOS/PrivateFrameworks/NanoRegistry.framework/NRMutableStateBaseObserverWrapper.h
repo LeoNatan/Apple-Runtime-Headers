@@ -8,6 +8,7 @@
 
 @class NSObject<OS_dispatch_queue>;
 
+__attribute__((visibility("hidden")))
 @interface NRMutableStateBaseObserverWrapper : NSObject
 {
     CDUnknownBlockType _observer;

@@ -16,7 +16,6 @@
     NSMutableDictionary *_nodesByAnchorIdentifier;
     NSSet *_lastFrameAnchors;
     long long _interfaceOrientation;
-    id <NSObject> _interfaceOrientationObserver;
     struct CGSize _viewportSize;
 }
 
@@ -36,6 +35,7 @@
 - (id)hitTest:(struct CGPoint)arg1 types:(unsigned long long)arg2;
 @property(retain, nonatomic) ARSession *session;
 - (void)layoutSubviews;
+- (void)deviceOrientationDidChange:(id)arg1;
 - (void)dealloc;
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;

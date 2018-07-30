@@ -10,12 +10,10 @@
 #import "WBSPerSitePreferenceManagerDefaultsDelegate.h"
 #import "WBSPerSitePreferenceManagerStorageDelegate.h"
 
-@class NSString, WBSPerSitePreference, WBSPerSitePreferenceValue, WBSPerSitePreferencesSQLiteStore;
+@class NSString, WBSPerSitePreference, WBSPerSitePreferencesSQLiteStore;
 
 @interface WBSContentBlockersPreferenceManager : WBSPerSitePreferenceManager <WBSPerSitePreferenceManagerStorageDelegate, WBSPerSitePreferenceManagerDefaultsDelegate, WBSPerSitePreferenceBinaryToggleItemManager>
 {
-    WBSPerSitePreferenceValue *_disabledPreferenceValue;
-    WBSPerSitePreferenceValue *_enabledPreferenceValue;
     WBSPerSitePreferencesSQLiteStore *_perSitePreferencesStore;
     WBSPerSitePreference *_contentBlockersPreference;
 }
@@ -27,6 +25,7 @@
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
 - (long long)preferencesStoreKeyForPreference:(id)arg1;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
 - (void)didUpdatePreference:(id)arg1 toValue:(id)arg2 forDomain:(id)arg3;

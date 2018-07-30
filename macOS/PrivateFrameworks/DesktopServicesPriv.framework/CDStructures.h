@@ -10,18 +10,14 @@
 
 struct AuthorizationOpaqueRef;
 
-struct TChildrenList;
-
 struct TConditionVariable {
-    struct _opaque_pthread_cond_t {
-        long long _field1;
-        char _field2[40];
-    } _field1;
+    struct condition_variable_any _field1;
+    int _field2;
 };
 
 struct TDSHelperContext {
     CDUnknownFunctionPointerType *_field1;
-    struct TDSMutex _field2;
+    struct mutex _field2;
     struct TConditionVariable _field3;
     _Bool _field4;
     unsigned int _field5;
@@ -30,73 +26,33 @@ struct TDSHelperContext {
     unsigned char _field8[16];
     struct AuthorizationOpaqueRef *_field9;
     struct TRef<NSObject<OS_xpc_object>*, TRetainReleasePolicy<xpc_object_t>> _field10;
-    struct TNSRef<TDSHelperConnectionHandler *, void> _field11;
+    struct TNSRef<TDSHelperConnectionHandler, void> _field11;
 };
 
 struct TDSMutex {
-    struct _opaque_pthread_mutex_t {
-        long long __sig;
-        char __opaque[56];
-    } fMutex;
+    struct _opaque_pthread_mutex_t fMutex;
 };
 
-struct TFSInfo;
-
-struct TFSVolumeInfo;
-
-struct TNSRef<FITNode *, void> {
+struct TNSRef<FITNode, void> {
     FITNode *fRef;
 };
 
-struct TNSRef<NSMetadataQuery *, void> {
+struct TNSRef<NSMetadataQuery, void> {
     NSMetadataQuery *fRef;
 };
 
-struct TNSRef<TDSHelperConnectionHandler *, void> {
+struct TNSRef<TDSHelperConnectionHandler, void> {
     id _field1;
 };
 
-struct TNode {
-    int _field1;
-    struct TNode *_field2;
-    struct TRef<TFSVolumeInfo *, TInternalRefCountPolicy<TFSVolumeInfo>> _field3;
-    struct TRef<TFSInfo *, TInternalRefCountPolicy<TFSInfo>> _field4;
-    struct TChildrenList *_field5;
-    struct TNodePtr _field6;
-    void *_field7;
-    struct TNotifierList *_field8;
-    struct TRef<TOperationLock *, TInternalRefCountPolicy<TOperationLock>> _field9;
-    unsigned char _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-};
+struct TNode;
 
 struct TNodePtr {
     struct TNode *fCountedNode;
 };
 
-struct TNotifierList;
-
-struct TOperationLock;
-
 struct TRef<NSObject<OS_xpc_object>*, TRetainReleasePolicy<xpc_object_t>> {
     id _field1;
-};
-
-struct TRef<TFSInfo *, TInternalRefCountPolicy<TFSInfo>> {
-    struct TFSInfo *_field1;
-};
-
-struct TRef<TFSVolumeInfo *, TInternalRefCountPolicy<TFSVolumeInfo>> {
-    struct TFSVolumeInfo *_field1;
-};
-
-struct TRef<TOperationLock *, TInternalRefCountPolicy<TOperationLock>> {
-    struct TOperationLock *_field1;
 };
 
 struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> {
@@ -105,5 +61,31 @@ struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> {
 
 struct TUString {
     struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> _field1;
+};
+
+struct _opaque_pthread_mutex_t {
+    long long __sig;
+    char __opaque[56];
+};
+
+struct condition_variable {
+    struct _opaque_pthread_cond_t {
+        long long _field1;
+        char _field2[40];
+    } _field1;
+};
+
+struct condition_variable_any {
+    struct condition_variable _field1;
+    struct shared_ptr<std::__1::mutex> _field2;
+};
+
+struct mutex {
+    struct _opaque_pthread_mutex_t _field1;
+};
+
+struct shared_ptr<std::__1::mutex> {
+    struct mutex *_field1;
+    struct __shared_weak_count *_field2;
 };
 

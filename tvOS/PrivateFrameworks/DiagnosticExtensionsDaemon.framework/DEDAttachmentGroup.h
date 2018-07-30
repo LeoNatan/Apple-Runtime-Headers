@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class DEDBugSession, NSArray, NSString, NSURL;
+#import "DEDSecureArchiving.h"
 
-@interface DEDAttachmentGroup : NSObject
+@class DEDBugSession, DEDExtensionIdentifier, NSArray, NSString, NSURL;
+
+@interface DEDAttachmentGroup : NSObject <DEDSecureArchiving>
 {
     DEDBugSession *_fromBugSession;
     NSString *_deviceID;
@@ -16,10 +18,13 @@
     NSString *_displayName;
     NSString *_extensionID;
     NSArray *_attachmentItems;
+    DEDExtensionIdentifier *_dedExtensionIdentifier;
 }
 
++ (id)archivedClasses;
 + (id)groupWithDEGroup:(id)arg1 identifier:(id)arg2;
 + (id)groupWithDictionary:(id)arg1;
+@property(retain, nonatomic) DEDExtensionIdentifier *dedExtensionIdentifier; // @synthesize dedExtensionIdentifier=_dedExtensionIdentifier;
 @property(retain) NSArray *attachmentItems; // @synthesize attachmentItems=_attachmentItems;
 @property(retain) NSString *extensionID; // @synthesize extensionID=_extensionID;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
@@ -28,10 +33,15 @@
 @property(retain) DEDBugSession *fromBugSession; // @synthesize fromBugSession=_fromBugSession;
 - (void).cxx_destruct;
 - (_Bool)isLocal;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)serialize;
 - (id)archiveName;
 - (id)totalFilesize;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

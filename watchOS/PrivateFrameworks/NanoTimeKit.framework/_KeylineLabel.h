@@ -6,10 +6,11 @@
 
 #import "UIView.h"
 
-@class NSString, UILabel;
+@class CLKDevice, NSString, UILabel;
 
 @interface _KeylineLabel : UIView
 {
+    CLKDevice *_device;
     UILabel *_label;
     UIView *_platter;
 }
@@ -19,7 +20,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setLabelAlpha:(float)arg1;
 @property(copy, nonatomic) NSString *text;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initForDevice:(id)arg1;
 
 @end
 

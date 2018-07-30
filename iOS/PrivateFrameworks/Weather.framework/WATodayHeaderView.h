@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class NSArray, NSString, UIImage, UIImageView, UILabel, UIVisualEffectView;
+@class NSString, UIImage, UIImageView, UILabel, UIVisualEffectView;
 
 @interface WATodayHeaderView : UIView
 {
@@ -17,11 +17,7 @@
     NSString *_temperatureHigh;
     NSString *_temperatureLow;
     NSString *_locationName;
-    UIVisualEffectView *_locationLabelVisualEffectView;
-    UIVisualEffectView *_conditionsLabel1VisualEffectView;
-    UIVisualEffectView *_conditionsLabel2VisualEffectView;
-    UIVisualEffectView *_temperatureLabelVisualEffectView;
-    UIVisualEffectView *_temperatureHighLowLabelVisualEffectView;
+    UIVisualEffectView *_weatherInformationVisualEffectView;
     UILabel *_locationLabel;
     UILabel *_conditionsLabel1;
     UILabel *_conditionsLabel2;
@@ -31,13 +27,9 @@
     double _pageFontSize;
     double _pageDegreeFontSize;
     double _pageBaselineOffset;
-    NSArray *_contentViewConstraints;
-    NSArray *_masterConstraints;
 }
 
 + (_Bool)requiresConstraintBasedLayout;
-@property(retain, nonatomic) NSArray *masterConstraints; // @synthesize masterConstraints=_masterConstraints;
-@property(retain, nonatomic) NSArray *contentViewConstraints; // @synthesize contentViewConstraints=_contentViewConstraints;
 @property(nonatomic) double pageBaselineOffset; // @synthesize pageBaselineOffset=_pageBaselineOffset;
 @property(nonatomic) double pageDegreeFontSize; // @synthesize pageDegreeFontSize=_pageDegreeFontSize;
 @property(nonatomic) double pageFontSize; // @synthesize pageFontSize=_pageFontSize;
@@ -47,11 +39,7 @@
 @property(retain, nonatomic) UILabel *conditionsLabel2; // @synthesize conditionsLabel2=_conditionsLabel2;
 @property(retain, nonatomic) UILabel *conditionsLabel1; // @synthesize conditionsLabel1=_conditionsLabel1;
 @property(retain, nonatomic) UILabel *locationLabel; // @synthesize locationLabel=_locationLabel;
-@property(retain, nonatomic) UIVisualEffectView *temperatureHighLowLabelVisualEffectView; // @synthesize temperatureHighLowLabelVisualEffectView=_temperatureHighLowLabelVisualEffectView;
-@property(retain, nonatomic) UIVisualEffectView *temperatureLabelVisualEffectView; // @synthesize temperatureLabelVisualEffectView=_temperatureLabelVisualEffectView;
-@property(retain, nonatomic) UIVisualEffectView *conditionsLabel2VisualEffectView; // @synthesize conditionsLabel2VisualEffectView=_conditionsLabel2VisualEffectView;
-@property(retain, nonatomic) UIVisualEffectView *conditionsLabel1VisualEffectView; // @synthesize conditionsLabel1VisualEffectView=_conditionsLabel1VisualEffectView;
-@property(retain, nonatomic) UIVisualEffectView *locationLabelVisualEffectView; // @synthesize locationLabelVisualEffectView=_locationLabelVisualEffectView;
+@property(retain, nonatomic) UIVisualEffectView *weatherInformationVisualEffectView; // @synthesize weatherInformationVisualEffectView=_weatherInformationVisualEffectView;
 @property(copy, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;
 @property(copy, nonatomic) NSString *temperatureLow; // @synthesize temperatureLow=_temperatureLow;
 @property(copy, nonatomic) NSString *temperatureHigh; // @synthesize temperatureHigh=_temperatureHigh;
@@ -61,7 +49,6 @@
 @property(copy, nonatomic) NSString *conditionsLine1; // @synthesize conditionsLine1=_conditionsLine1;
 - (void).cxx_destruct;
 - (void)_setupConstraints;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)_setupSubviews;
 - (void)_updateContent;
 - (id)init;

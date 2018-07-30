@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSURL, PDFDestination, PDFDocument;
+@class NSURL, PDFDestination;
 
 __attribute__((visibility("hidden")))
 @interface PDFActionRemoteGoToPrivateVars : NSObject
@@ -14,9 +14,6 @@ __attribute__((visibility("hidden")))
     unsigned long long pageIndex;
     struct CGPoint point;
     NSURL *url;
-    struct CGPDFDictionary *lazyInitDictionary;
-    PDFDocument *lazyInitDocument;
-    unsigned long long lazyInitPageIndex;
     PDFDestination *destination;
 }
 

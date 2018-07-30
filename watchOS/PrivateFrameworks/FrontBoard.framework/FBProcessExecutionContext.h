@@ -39,10 +39,10 @@
 @property(retain, nonatomic) NSURL *standardOutputURL; // @synthesize standardOutputURL=_standardOutputURL;
 @property(copy, nonatomic) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
+- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)_launchAssertionFlags;
-- (void)dealloc;
 - (id)_initWithExecutionContext:(id)arg1;
 - (id)init;
 

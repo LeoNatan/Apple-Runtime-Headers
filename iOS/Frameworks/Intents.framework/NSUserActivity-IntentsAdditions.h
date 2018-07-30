@@ -6,12 +6,21 @@
 
 #import "NSUserActivity.h"
 
-@class INInteraction;
+@class INInteraction, NSString;
 
 @interface NSUserActivity (IntentsAdditions)
+- (long long)_executionContext;
+- (void)_setExecutionContext:(long long)arg1;
+- (_Bool)_isEligibleForPrediction;
+- (void)_setEligibleForPrediction:(_Bool)arg1;
 - (id)_intentsIdentifier;
+@property(copy, nonatomic) NSString *suggestedInvocationPhrase;
 - (void)setInteraction:(id)arg1;
+- (void)_setAccessedInteraction:(_Bool)arg1;
+- (_Bool)_accessedInteraction;
+- (_Bool)_hasInteraction;
 - (void)_setInteraction:(id)arg1 donate:(_Bool)arg2;
 @property(readonly, nonatomic) INInteraction *interaction;
+- (id)_initWithIntent:(id)arg1;
 @end
 

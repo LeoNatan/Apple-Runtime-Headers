@@ -15,12 +15,13 @@
     NSDictionary *_dataFilters;
 }
 
++ (id)requiredEntitlements;
++ (Class)queryClass;
 @property(readonly, nonatomic) NSDictionary *dataFilters; // @synthesize dataFilters=_dataFilters;
 - (void).cxx_destruct;
 - (_Bool)_queue_validateConfiguration:(id *)arg1;
 - (void)_queue_start;
-- (id)requiredEntitlements;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 @end
 

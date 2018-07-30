@@ -7,11 +7,12 @@
 #import <AppKit/NSControl.h>
 
 #import "NSAccessibilityNavigableStaticText.h"
+#import "NSTextViewDelegate.h"
 #import "NSUserInterfaceValidations.h"
 
-@class NSAttributedString, NSColor, NSNumber, NSString;
+@class CUIStyleEffectConfiguration, NSAttributedString, NSColor, NSNumber, NSString;
 
-@interface NSTextField : NSControl <NSUserInterfaceValidations, NSAccessibilityNavigableStaticText>
+@interface NSTextField : NSControl <NSTextViewDelegate, NSUserInterfaceValidations, NSAccessibilityNavigableStaticText>
 {
     id _delegate;
     SEL _errorAction;
@@ -31,14 +32,14 @@
 + (BOOL)_checkLastQueuedWindowFrameForChange:(id)arg1;
 + (id)_deferredFrameUpdateQueue:(BOOL)arg1;
 + (void)initialize;
-+ (id)editableTextFieldWithString:(id)arg1;
-+ (id)textFieldWithAttributedString:(id)arg1;
-+ (id)wrappingTextFieldWithString:(id)arg1 preferredMaxLayoutWidth:(double)arg2;
 + (id)textFieldWithString:(id)arg1;
 + (id)labelWithAttributedString:(id)arg1;
 + (id)wrappingLabelWithString:(id)arg1;
 + (id)labelWithString:(id)arg1;
 + (id)_newBaseLabelWithoutTitle;
++ (id)editableTextFieldWithString:(id)arg1;
++ (id)textFieldWithAttributedString:(id)arg1;
++ (id)wrappingTextFieldWithString:(id)arg1 preferredMaxLayoutWidth:(double)arg2;
 - (void)viewDidEndLiveResize;
 - (void)viewWillStartLiveResize;
 - (void)textView:(id)arg1 prepareMenu:(id)arg2 forCharacterAtIndex:(unsigned long long)arg3 withEvent:(id)arg4;
@@ -58,6 +59,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (BOOL)_allowRoundingToChangeSize;
 - (struct CGSize)intrinsicContentSize;
+- (void)invalidateIntrinsicContentSize;
 - (void)updateConstraints;
 - (void)_resetUpdateConstraintsPassCounter;
 - (void)_updateConstraintsFinished;
@@ -91,8 +93,7 @@
 - (BOOL)shouldBeTreatedAsInkEvent:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)setTitleWithMnemonic:(id)arg1;
-- (void)setTextAlignmentPolicy:(unsigned long long)arg1;
-- (unsigned long long)textAlignmentPolicy;
+@property unsigned long long textAlignmentPolicy;
 - (BOOL)textView:(id)arg1 shouldSelectCandidateAtIndex:(unsigned long long)arg2;
 - (id)textView:(id)arg1 candidates:(id)arg2 forSelectedRange:(struct _NSRange)arg3;
 - (id)textView:(id)arg1 candidatesForSelectedRange:(struct _NSRange)arg2;
@@ -101,8 +102,7 @@
 - (void)setAllowsCharacterPickerTouchBarItem:(BOOL)arg1;
 - (BOOL)allowsCharacterPickerTouchBarItem;
 @property BOOL allowsDefaultTighteningForTruncation;
-- (void)setStyleEffectConfiguration:(id)arg1;
-- (id)styleEffectConfiguration;
+@property(copy, nonatomic) CUIStyleEffectConfiguration *styleEffectConfiguration;
 @property unsigned long long bezelStyle;
 - (void)setImportsGraphics:(BOOL)arg1;
 - (BOOL)importsGraphics;
@@ -121,11 +121,13 @@
 - (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (BOOL)isFlipped;
-- (void)displayTextLayer:(id)arg1 withContext:(id)arg2;
+- (void)displayTextLayer:(id)arg1;
 - (void)_queueForDeferredTextLayerFrameUpdate;
 - (BOOL)_shouldDeferUpdateTextLayerSize:(struct CGSize)arg1 toNewSize:(struct CGSize)arg2;
+- (id)_preferredAppearance;
 - (void)setCell:(id)arg1;
 - (void)viewDidMoveToWindow;
+- (long long)_preferredLayerContentsRedrawPolicy;
 - (id)makeBackingLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)wantsUpdateLayer;

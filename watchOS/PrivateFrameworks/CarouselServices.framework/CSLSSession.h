@@ -13,17 +13,27 @@
 @interface CSLSSession : NSObject <NSSecureCoding>
 {
     _Bool _running;
+    _Bool _autoEndSession;
+    _Bool _dismissed;
+    _Bool _interruptible;
+    _Bool _dismissible;
     id <CSLSSessionDelegate> _delegate;
     NSString *_bundleID;
     NSURL *_url;
     unsigned int _type;
     NSUUID *_sessionID;
     int _pid;
+    int _priority;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)sessionWithSession:(id)arg1;
 + (id)sessionForBundleID:(id)arg1 withURL:(id)arg2 type:(unsigned int)arg3;
+@property(getter=isDismissible) _Bool dismissible; // @synthesize dismissible=_dismissible;
+@property(getter=isInterruptible) _Bool interruptible; // @synthesize interruptible=_interruptible;
+@property int priority; // @synthesize priority=_priority;
+@property(getter=isDismissed) _Bool dismissed; // @synthesize dismissed=_dismissed;
+@property(nonatomic) _Bool autoEndSession; // @synthesize autoEndSession=_autoEndSession;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

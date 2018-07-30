@@ -8,6 +8,7 @@
 
 @class AVAssetInspectorLoader, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetProxyInternal : NSObject
 {
     AVAssetInspectorLoader *loader;

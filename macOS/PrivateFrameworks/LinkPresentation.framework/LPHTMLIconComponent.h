@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)styleSet;
++ (id)ruleDictionaryForStyleWithDarkInterface:(id)arg1;
 + (id)ruleDictionaryForStyle:(id)arg1;
 - (id)initWithImage:(id)arg1 style:(id)arg2 themePath:(id)arg3 generator:(id)arg4;
 - (id)initProgressSpinnerIconWithStyle:(id)arg1 themePath:(id)arg2 generator:(id)arg3;

@@ -7,32 +7,35 @@
 #import <iWorkImport/TSWPPageRep.h>
 
 #import "TSDMasterDrawableDelegate.h"
+#import "TSKChangeSourceObserver.h"
 
-@class CALayer, NSString, TPiOSMarginAdjustRep;
+@class CALayer, NSString, TPiOSMarginAdjustRep, TSDFill;
 
 __attribute__((visibility("hidden")))
-@interface TPPageRep : TSWPPageRep <TSDMasterDrawableDelegate>
+@interface TPPageRep : TSWPPageRep <TSKChangeSourceObserver, TSDMasterDrawableDelegate>
 {
     CALayer *_horizontalSeparatorLayer;
     CALayer *_verticalSeparatorLayer;
+    _Bool _layerNeedsUpdate;
+    _Bool _fillCanApplyToCALayer;
     TPiOSMarginAdjustRep *_marginAdjustRep;
+    TSDFill *_cachedBackgroundFill;
 }
 
+@property(retain, nonatomic) TSDFill *cachedBackgroundFill; // @synthesize cachedBackgroundFill=_cachedBackgroundFill;
 @property(readonly, nonatomic) TPiOSMarginAdjustRep *marginAdjustRep; // @synthesize marginAdjustRep=_marginAdjustRep;
 - (void).cxx_destruct;
 - (id)bodyReps;
 - (_Bool)masksToBounds;
-- (void)drawInLayerContext:(struct CGContext *)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect)arg1;
-- (void)setNeedsDisplay;
 - (_Bool)directlyManagesLayerContent;
-- (id)layerClass;
 - (_Bool)p_pageRequiresHorizontalSeparator;
 - (_Bool)childRepIsMasterDrawable:(id)arg1;
 - (_Bool)childRepIsOnDocSetupCanvas:(id)arg1;
 - (void)willBeRemoved;
 - (id)colorBehindBodyTextLayer:(id)arg1;
+- (_Bool)isOpaque;
+- (id)backgroundFill;
 - (void)dealloc;
 
 // Remaining properties

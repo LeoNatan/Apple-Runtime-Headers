@@ -30,6 +30,7 @@
     struct cache_s *_preparedStatements;
     NSObject<OS_dispatch_source> *_stmtCacheSource;
     NSMutableArray *_stmtCacheCleanupQueue;
+    NSObject<OS_dispatch_queue> *_targetQueue;
     _Bool _traced;
     _Bool _crashIfUsedAfterClose;
     int _batchTransactionType;
@@ -108,9 +109,13 @@
 - (void)_batchStopIfNeeded;
 - (void)forceBatchStart;
 - (void)_batchStartIfNeeded:(int)arg1;
+- (void)assertOnQueue;
 - (void)useBatchingWithPolicyHandler:(CDUnknownBlockType)arg1;
+- (void)useBatchingOnTargetQueue:(id)arg1 withPolicyHandler:(CDUnknownBlockType)arg2;
 - (void)useBatchingWithDelay:(double)arg1 changeCount:(int)arg2;
+- (void)useBatchingOnTargetQueue:(id)arg1 delay:(double)arg2 changeCount:(int)arg3;
 - (void)useSerialQueue;
+- (void)useSerialQueueWithTarget:(id)arg1;
 @property(nonatomic) unsigned long long statementCacheMaxCount;
 @property(readonly, nonatomic) double currentOperationDuration;
 - (void)_createCacheIfNeeded;

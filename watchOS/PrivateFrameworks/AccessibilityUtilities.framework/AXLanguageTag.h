@@ -13,13 +13,17 @@
 @interface AXLanguageTag : NSObject <NSCopying>
 {
     _Bool _wasPredicted;
+    _Bool _createdFromNewline;
     NSString *_content;
     NSMutableOrderedSet *_unambiguousDialects;
     NSMutableOrderedSet *_ambiguousDialects;
+    NSMutableOrderedSet *_predictedSecondaryDialects;
     struct _NSRange _range;
 }
 
 + (id)tagWithDialects:(id)arg1 range:(struct _NSRange)arg2 content:(id)arg3 predictedByTagger:(_Bool)arg4;
+@property(nonatomic) _Bool createdFromNewline; // @synthesize createdFromNewline=_createdFromNewline;
+@property(retain, nonatomic) NSMutableOrderedSet *predictedSecondaryDialects; // @synthesize predictedSecondaryDialects=_predictedSecondaryDialects;
 @property(nonatomic) _Bool wasPredicted; // @synthesize wasPredicted=_wasPredicted;
 @property(retain, nonatomic) NSMutableOrderedSet *ambiguousDialects; // @synthesize ambiguousDialects=_ambiguousDialects;
 @property(retain, nonatomic) NSMutableOrderedSet *unambiguousDialects; // @synthesize unambiguousDialects=_unambiguousDialects;
@@ -30,6 +34,7 @@
 - (_Bool)canBeSpokenByLanguage:(id)arg1;
 - (_Bool)canBeSpokenByDialect:(id)arg1;
 - (id)description;
+- (void)addPredictedSecondaryDialects:(id)arg1;
 - (void)addAmbiguousDialects:(id)arg1;
 - (void)addAmbiguousDialect:(id)arg1;
 - (void)addUnambiguousDialect:(id)arg1;

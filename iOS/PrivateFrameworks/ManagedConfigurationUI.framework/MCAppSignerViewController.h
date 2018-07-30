@@ -8,6 +8,7 @@
 
 @class MCUIAppSigner, NSObject<OS_dispatch_group>, UIAlertController;
 
+__attribute__((visibility("hidden")))
 @interface MCAppSignerViewController : UITableViewController
 {
     _Bool _isNetworkReachable;

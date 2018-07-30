@@ -28,6 +28,8 @@
 - (_Bool)_performChangesForAssetIdentifier:(id)arg1 changesBlock:(CDUnknownBlockType)arg2;
 - (id)gatingResultForVariationType:(int)arg1 assetIdentifier:(id)arg2;
 - (void)saveGatingResult:(id)arg1 forVariationType:(int)arg2 assetIdentifier:(id)arg3;
+- (id)portraitEffectSettingsForAssetIdentifier:(id)arg1;
+- (void)savePortraitEffectSettings:(id)arg1 assetIdentifier:(id)arg2;
 - (id)analysisResultForAssetIdentifier:(id)arg1;
 - (void)saveAnalysisResult:(id)arg1 assetIdentifier:(id)arg2;
 - (id)_suggestionKeyForVariationType:(int)arg1;

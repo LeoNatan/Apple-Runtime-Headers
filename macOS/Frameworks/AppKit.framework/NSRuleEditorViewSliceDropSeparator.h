@@ -6,6 +6,7 @@
 
 #import <AppKit/NSRuleEditorViewSlice.h>
 
+__attribute__((visibility("hidden")))
 @interface NSRuleEditorViewSliceDropSeparator : NSRuleEditorViewSlice
 {
 }

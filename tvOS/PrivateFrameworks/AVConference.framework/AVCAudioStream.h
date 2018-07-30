@@ -38,6 +38,7 @@
 - (void)registerBlocksForDelegateNotifications;
 @property(nonatomic, getter=isOutputFrequencyMeteringEnabled) _Bool outputFrequencyMeteringEnabled;
 @property(nonatomic, getter=isInputFrequencyMeteringEnabled) _Bool inputFrequencyMeteringEnabled;
+@property(nonatomic) float volume;
 @property(nonatomic) double rtcpSendIntervalSec;
 @property(nonatomic) double rtcpTimeOutIntervalSec;
 @property(nonatomic) double rtpTimeOutIntervalSec;

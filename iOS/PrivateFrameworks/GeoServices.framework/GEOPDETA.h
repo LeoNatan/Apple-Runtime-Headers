@@ -10,6 +10,7 @@
 
 @class GEORouteTrafficDetail, PBUnknownFields;
 
+__attribute__((visibility("hidden")))
 @interface GEOPDETA : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;

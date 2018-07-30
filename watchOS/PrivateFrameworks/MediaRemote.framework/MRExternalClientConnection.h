@@ -11,8 +11,9 @@
 @interface MRExternalClientConnection : MRProtocolClientConnection
 {
     _Bool _registeredToNowPlayingUpdates;
-    _Bool _registeredVolumeControlAvailabilityUpdates;
+    _Bool _registeredToVolumeUpdates;
     _Bool _registeredKeyboardUpdates;
+    _Bool _registeredToOutputDeviceUpdates;
     _Bool _cryptoEnabled;
     unsigned int _voiceRecordingState;
     MRCryptoPairingSession *_cryptoSession;
@@ -21,8 +22,9 @@
 @property(nonatomic) _Bool cryptoEnabled; // @synthesize cryptoEnabled=_cryptoEnabled;
 @property(retain, nonatomic) MRCryptoPairingSession *cryptoSession; // @synthesize cryptoSession=_cryptoSession;
 @property(nonatomic) unsigned int voiceRecordingState; // @synthesize voiceRecordingState=_voiceRecordingState;
+@property(nonatomic) _Bool registeredToOutputDeviceUpdates; // @synthesize registeredToOutputDeviceUpdates=_registeredToOutputDeviceUpdates;
 @property(nonatomic) _Bool registeredKeyboardUpdates; // @synthesize registeredKeyboardUpdates=_registeredKeyboardUpdates;
-@property(nonatomic) _Bool registeredVolumeControlAvailabilityUpdates; // @synthesize registeredVolumeControlAvailabilityUpdates=_registeredVolumeControlAvailabilityUpdates;
+@property(nonatomic) _Bool registeredToVolumeUpdates; // @synthesize registeredToVolumeUpdates=_registeredToVolumeUpdates;
 @property(nonatomic) _Bool registeredToNowPlayingUpdates; // @synthesize registeredToNowPlayingUpdates=_registeredToNowPlayingUpdates;
 - (void).cxx_destruct;
 - (id)decryptData:(id)arg1 error:(id *)arg2;

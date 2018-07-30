@@ -10,11 +10,13 @@
 
 @interface MRSendCommandMessage : MRProtocolMessage
 {
+    NSDictionary *_options;
     NSDate *_serializationDate;
 }
 
 @property(readonly, nonatomic) NSDate *serializationDate; // @synthesize serializationDate=_serializationDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int appOptions;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property(readonly, nonatomic) NSDictionary *options;
 @property(readonly, nonatomic) unsigned int command;

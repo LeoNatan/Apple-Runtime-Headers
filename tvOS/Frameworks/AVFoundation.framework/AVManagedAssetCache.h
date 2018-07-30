@@ -8,6 +8,7 @@
 
 @class AVManagedAssetCacheInternal;
 
+__attribute__((visibility("hidden")))
 @interface AVManagedAssetCache : AVAssetCache
 {
     AVManagedAssetCacheInternal *_priv;

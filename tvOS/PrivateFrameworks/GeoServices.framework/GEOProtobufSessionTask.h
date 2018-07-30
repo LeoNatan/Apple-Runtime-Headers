@@ -10,7 +10,6 @@
 
 @class GEOClientMetrics, GEOProtobufSession, NSError, NSObject<OS_dispatch_queue>, NSString, PBCodable;
 
-__attribute__((visibility("hidden")))
 @interface GEOProtobufSessionTask : NSObject <GEODataSessionTaskDelegate>
 {
     Class _responseClass;

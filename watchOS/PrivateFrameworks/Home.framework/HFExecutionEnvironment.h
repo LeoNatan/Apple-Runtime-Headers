@@ -10,6 +10,7 @@
 
 @interface HFExecutionEnvironment : NSObject
 {
+    _Bool _active;
     unsigned int _runningState;
     NSHashTable *_observers;
 }
@@ -17,6 +18,7 @@
 + (id)stringForHFExecutionEnvironmentRunningState:(unsigned int)arg1;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) unsigned int runningState; // @synthesize runningState=_runningState;
 - (void).cxx_destruct;
 - (void)dispatchMessageToObserversWithBlock:(CDUnknownBlockType)arg1;

@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDPivotDataField : NSObject
 {
     long long mBaseField;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pivotDataField;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setShowDataAs:(int)arg1;
 - (int)showDataAs;
@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)baseItem;
 - (void)setBaseField:(long long)arg1;
 - (long long)baseField;
-- (void)dealloc;
 - (id)init;
 
 @end

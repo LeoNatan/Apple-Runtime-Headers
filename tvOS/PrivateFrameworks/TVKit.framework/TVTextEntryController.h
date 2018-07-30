@@ -7,10 +7,11 @@
 #import "UIViewController.h"
 
 #import "UISystemInputViewControllerDelegate.h"
+#import "_TVTextEntryTextFieldDelegate.h"
 
-@class NSString, UILabel, UISystemInputViewController, UITextField, UIView, _TVTextEntryTextField;
+@class NSDictionary, NSString, UILabel, UISystemInputViewController, UITextField, UIView, _TVTextEntryTextField;
 
-@interface TVTextEntryController : UIViewController <UISystemInputViewControllerDelegate>
+@interface TVTextEntryController : UIViewController <_TVTextEntryTextFieldDelegate, UISystemInputViewControllerDelegate>
 {
     _TVTextEntryTextField *_textField;
     UIView *_topAccessoryView;
@@ -30,6 +31,8 @@
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) __weak id <TVTextEntryControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_insertTextSuggestion:(id)arg1;
+@property(retain, nonatomic) NSDictionary *autofillContext;
 @property(nonatomic) _Bool textFieldAllowsFocus;
 - (void)_doneButtonPressed:(id)arg1;
 - (void)systemInputViewControllerDidAcceptRecentInput:(id)arg1;

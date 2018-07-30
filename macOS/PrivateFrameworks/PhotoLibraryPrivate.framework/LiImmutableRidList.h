@@ -18,7 +18,7 @@
 {
     unsigned long long _ridCount;
     unsigned long long _lastOffsetFoundAt;
-    vector_4442b5b9 _ridBitSetVector;
+    vector_6231458f _ridBitSetVector;
 }
 
 + (unsigned char)encodingObjectType;
@@ -72,7 +72,7 @@
 - (const shared_ptr_4932a42e *)bitsetAtIndex:(unsigned long long)arg1;
 - (const shared_ptr_4932a42e *)firstBitset;
 - (unsigned long long)bitsetCount;
-- (id)initWithBitSetVector:(const vector_4442b5b9 *)arg1;
+- (id)initWithBitSetVector:(const vector_6231458f *)arg1;
 - (id)initWithRid:(unsigned long long)arg1;
 - (id)init;
 - (BOOL)isOrderedRidList;

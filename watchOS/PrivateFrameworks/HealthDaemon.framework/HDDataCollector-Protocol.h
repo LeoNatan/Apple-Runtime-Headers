@@ -6,13 +6,17 @@
 
 #import "NSObject.h"
 
-@class HDDataAggregator, HDDataCollectorConfiguration, HDDataCollectorSensorDatum, HKDevice, HKSource, NSString;
+@class HDDataAggregator, HDDataCollectorConfiguration, HKDevice, HKSource, NSString;
 
 @protocol HDDataCollector <NSObject>
 - (NSString *)identifierForDataAggregator:(HDDataAggregator *)arg1;
 - (HKSource *)sourceForDataAggregator:(HDDataAggregator *)arg1;
 - (HKDevice *)deviceForDataAggregator:(HDDataAggregator *)arg1;
 - (void)dataAggregator:(HDDataAggregator *)arg1 wantsCollectionWithConfiguration:(HDDataCollectorConfiguration *)arg2;
-- (void)beginCollectionForDataAggregator:(HDDataAggregator *)arg1 lastPersistedSensorDatum:(HDDataCollectorSensorDatum *)arg2;
+- (void)beginCollectionForDataAggregator:(HDDataAggregator *)arg1 lastPersistedSensorDatum:(id <HDCollectedSensorDatum>)arg2;
+
+@optional
+- (Class)sensorDatumClassForAggregator:(HDDataAggregator *)arg1;
+- (double)preferredAggregationIntervalForAggregator:(HDDataAggregator *)arg1;
 @end
 

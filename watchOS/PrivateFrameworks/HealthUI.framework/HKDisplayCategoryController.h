@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (id)categoryWithID:(int)arg1;
 - (id)allDisplayCategories;
+- (void)_initializeDisplayCategories;
 - (id)init;
 
 @end

@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TAirDropDiscoveryController : NSObject <SFAirDropDiscoveryControllerDelegate>
 {
-    struct TNSRef<SFAirDropDiscoveryController *, void> _discoveryController;
+    struct TNSRef<SFAirDropDiscoveryController, void> _discoveryController;
     _Bool _isLegacyMachine;
     long long _discoverableMode;
     _Bool _isLegacyModeEnabled;

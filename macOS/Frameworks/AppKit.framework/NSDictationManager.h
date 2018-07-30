@@ -6,8 +6,12 @@
 
 #import "NSObject.h"
 
+#import "NSMenuItemValidation.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface NSDictationManager : NSObject
+@interface NSDictationManager : NSObject <NSMenuItemValidation>
 {
     long long _lastNotifiedState;
     struct __TISInputSource *_cachedInputSourceRef;
@@ -27,6 +31,12 @@ __attribute__((visibility("hidden")))
 - (void)dictationItemSelected:(id)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

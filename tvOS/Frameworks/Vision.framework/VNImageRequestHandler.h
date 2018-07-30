@@ -24,6 +24,7 @@
 + (void)requestForcedCleanup;
 - (void).cxx_destruct;
 - (void)cancelAllRequests;
+- (_Bool)performRequests:(id)arg1 gatheredForensics:(id *)arg2 error:(id *)arg3;
 - (_Bool)performRequests:(id)arg1 error:(id *)arg2;
 - (id)imageBufferAndReturnError:(id *)arg1;
 - (_Bool)prepareForPerformingRequests:(id)arg1 error:(id *)arg2;
@@ -37,9 +38,7 @@
 - (id)initWithCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 options:(id)arg3;
 - (id)initWithCGImage:(struct CGImage *)arg1 options:(id)arg2;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1 orientation:(unsigned int)arg2 options:(id)arg3;
-- (id)initWithBuffer:(struct __CVBuffer *)arg1 orientation:(unsigned int)arg2 options:(id)arg3;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
-- (id)initWithBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
 - (id)initWithImageSpecifier:(id)arg1;
 
 @end

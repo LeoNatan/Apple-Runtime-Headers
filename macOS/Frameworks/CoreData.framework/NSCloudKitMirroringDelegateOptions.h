@@ -14,10 +14,12 @@
     NSNumber *_ckAssetThresholdBytes;
     BOOL _useEncryptedStorage;
     BOOL _initializeSchema;
+    BOOL _automaticallyDownloadFileBackedFutures;
     NSNumber *_operationMemoryThresholdBytes;
     CKContainerOptions *_containerOptions;
 }
 
+@property(nonatomic) BOOL automaticallyDownloadFileBackedFutures; // @synthesize automaticallyDownloadFileBackedFutures=_automaticallyDownloadFileBackedFutures;
 @property(retain, nonatomic) CKContainerOptions *containerOptions; // @synthesize containerOptions=_containerOptions;
 @property(retain, nonatomic) NSNumber *operationMemoryThresholdBytes; // @synthesize operationMemoryThresholdBytes=_operationMemoryThresholdBytes;
 @property(retain, nonatomic) NSNumber *ckAssetThresholdBytes; // @synthesize ckAssetThresholdBytes=_ckAssetThresholdBytes;
@@ -27,6 +29,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)copy;
+- (id)initWithContainerIdentifier:(id)arg1;
 
 @end
 

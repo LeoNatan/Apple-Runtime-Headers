@@ -6,7 +6,6 @@
 
 #import <OfficeImport/MFPEffect.h>
 
-__attribute__((visibility("hidden")))
 @interface MFPLevelsEffect : MFPEffect
 {
     int mHighlight;

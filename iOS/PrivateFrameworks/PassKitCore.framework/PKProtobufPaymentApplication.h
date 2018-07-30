@@ -13,6 +13,7 @@
 @interface PKProtobufPaymentApplication : PBCodable <NSCopying>
 {
     long long _inAppPINRequiredAmount;
+    long long _inAppPriority;
     NSString *_applicationIdentifier;
     NSString *_displayName;
     NSString *_dpanIdentifier;
@@ -30,6 +31,7 @@
     _Bool _supportsInAppPayment;
     struct {
         unsigned int inAppPINRequiredAmount:1;
+        unsigned int inAppPriority:1;
         unsigned int paymentNetworkIdentifier:1;
         unsigned int paymentType:1;
         unsigned int state:1;
@@ -40,6 +42,7 @@
     } _has;
 }
 
+@property(nonatomic) long long inAppPriority; // @synthesize inAppPriority=_inAppPriority;
 @property(nonatomic) _Bool auxiliary; // @synthesize auxiliary=_auxiliary;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned int paymentType; // @synthesize paymentType=_paymentType;
@@ -66,6 +69,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasInAppPriority;
 @property(nonatomic) _Bool hasAuxiliary;
 @property(readonly, nonatomic) _Bool hasDisplayName;
 @property(nonatomic) _Bool hasPaymentType;

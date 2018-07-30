@@ -8,6 +8,7 @@
 
 @class AVMetadataItemValueRequest, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVLazyValueLoadingMetadataItemInternal : NSObject
 {
     id <NSObject><NSCopying> value;

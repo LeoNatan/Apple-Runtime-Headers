@@ -11,20 +11,24 @@
 @interface SMUser_Client : SMUser
 {
     BOOL _shouldPromoteToAdmin;
+    BOOL _passwordIsTemporary;
+    BOOL _allowFileVaultUnlock;
     NSObject<OS_dispatch_queue> *daemonPropertyQueue;
     SMSystem_Client *sourceSystem;
+    NSString *_clearPassword;
 }
 
 + (id)keyPathsForValuesAffectingExtraInfoColor;
 + (id)keyPathsForValuesAffectingDisplayExtraInfo;
 + (id)keyPathsForValuesAffectingDisplayName;
 + (id)interestedDaemonKeys;
+@property BOOL allowFileVaultUnlock; // @synthesize allowFileVaultUnlock=_allowFileVaultUnlock;
+@property BOOL passwordIsTemporary; // @synthesize passwordIsTemporary=_passwordIsTemporary;
+@property(retain) NSString *clearPassword; // @synthesize clearPassword=_clearPassword;
 @property BOOL shouldPromoteToAdmin; // @synthesize shouldPromoteToAdmin=_shouldPromoteToAdmin;
 @property(retain) SMSystem_Client *sourceSystem; // @synthesize sourceSystem;
 @property(retain) NSObject<OS_dispatch_queue> *daemonPropertyQueue; // @synthesize daemonPropertyQueue;
 - (void).cxx_destruct;
-- (void)setAllowOverwriteOfConflictedShortName:(BOOL)arg1;
-- (BOOL)allowOverwriteOfConflictedShortName;
 @property(readonly) NSColor *extraInfoColor;
 @property(readonly) NSString *displayExtraInfo;
 @property(readonly) NSString *displayName;

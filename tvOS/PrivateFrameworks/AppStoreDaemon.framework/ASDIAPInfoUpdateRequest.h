@@ -12,6 +12,7 @@
 
 + (long long)requestType;
 - (void)startWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)init;
 
 @end
 

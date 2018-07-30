@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSString *_searchQuery;
 }
 
+@property(readonly, nonatomic, getter=_searchQuery) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 - (void).cxx_destruct;
 - (_Bool)shouldDisplayNoResults;
 - (_Bool)hasShouldDisplayNoResults;

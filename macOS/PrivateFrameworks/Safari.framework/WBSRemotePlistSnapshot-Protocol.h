@@ -6,11 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSData, NSURL;
+@class NSData;
 
 @protocol WBSRemotePlistSnapshot <NSObject>
 - (NSData *)plistDataWithFormat:(unsigned long long)arg1;
-- (id)initWithPlistURL:(NSURL *)arg1 error:(id *)arg2;
 - (id)initWithPlistData:(NSData *)arg1 error:(id *)arg2;
 @end
 

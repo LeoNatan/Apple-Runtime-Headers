@@ -7,12 +7,13 @@
 #import "NSObject.h"
 
 #import "CLSClientDelegate.h"
+#import "NSLocking.h"
 
-@class NSRecursiveLock, NSString, NSXPCConnection, NSXPCListenerEndpoint;
+@class NSString, NSXPCConnection, NSXPCListenerEndpoint;
 
-@interface CLSEndpointConnection : NSObject <CLSClientDelegate>
+@interface CLSEndpointConnection : NSObject <CLSClientDelegate, NSLocking>
 {
-    NSRecursiveLock *_lock;
+    struct os_unfair_recursive_lock_s _lock;
     NSXPCConnection *_serverConnection;
     NSXPCListenerEndpoint *_endpoint;
     _Bool _connectionBorked;
@@ -32,7 +33,7 @@
 + (id)sharedInstance;
 @property(copy, nonatomic) CDUnknownBlockType onConnect; // @synthesize onConnect=_onConnect;
 @property(copy, nonatomic) CDUnknownBlockType onInterupt; // @synthesize onInterupt=_onInterupt;
-@property(retain, nonatomic) NSString *overrideBundleIdentifier; // @synthesize overrideBundleIdentifier=_overrideBundleIdentifier;
+@property(copy, nonatomic) NSString *overrideBundleIdentifier; // @synthesize overrideBundleIdentifier=_overrideBundleIdentifier;
 - (void).cxx_destruct;
 - (void)devModeChanged;
 - (void)accountChanged;
@@ -55,6 +56,8 @@
 - (id)serverConnection;
 - (_Bool)isBorked;
 - (void)_registerForDarwinNotifications;
+- (void)unlock;
+- (void)lock;
 - (void)dealloc;
 - (id)initWithEndpoint:(id)arg1;
 - (id)init;

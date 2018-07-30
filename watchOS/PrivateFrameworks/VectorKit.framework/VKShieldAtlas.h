@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     VKPShieldPack *_shieldPack;
 }
 
-- (id)artworkForShieldIdentifier:(id)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 size:(int)arg4 numberOfLines:(unsigned int)arg5 genericShieldGenerator:(id)arg6 colors:(CDStruct_87ab733e *)arg7;
+- (id)artworkForShieldIdentifier:(id)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 size:(int)arg4 numberOfLines:(unsigned int)arg5 genericShieldGenerator:(id)arg6 colors:(CDStruct_b3fd5d76 *)arg7 overlayColor:(CDStruct_818bb265)arg8;
 - (void)purge;
 - (void)dealloc;
 - (id)initWithShieldPack:(id)arg1;

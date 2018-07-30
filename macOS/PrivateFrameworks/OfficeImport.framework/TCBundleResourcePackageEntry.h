@@ -8,13 +8,13 @@
 
 @class OISFUZipEntry;
 
-__attribute__((visibility("hidden")))
 @interface TCBundleResourcePackageEntry : NSObject
 {
     OISFUZipEntry *mZipEntry;
     struct _xmlDoc *mXmlDocument;
 }
 
+- (void).cxx_destruct;
 - (struct _xmlDoc *)xmlDocument;
 - (id)data;
 - (void)dealloc;

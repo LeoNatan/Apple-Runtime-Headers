@@ -6,21 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSDictionary, NSString;
+@class NSDate, NSDictionary, NSString, _CDPerfMetricFamily;
 
 @interface _CDPerfMetric : NSObject
 {
-    struct XSPerfCollection *_stats;
+    NSDictionary *_dictionary;
     NSString *_name;
-    NSDictionary *_userInfo;
+    NSString *_string;
+    _CDPerfMetricFamily *_family;
 }
 
-+ (id)perfMetricWithName:(id)arg1 userInfo:(id)arg2;
-+ (id)perfMetricForFetchRequest:(id)arg1;
-@property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
++ (id)perfMetricForFetchRequest:(id)arg1 type:(id)arg2;
+@property(readonly) __weak _CDPerfMetricFamily *family; // @synthesize family=_family;
+@property(readonly) NSString *string; // @synthesize string=_string;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)description;
 - (id)elapsedTimeHistogram;
 @property(readonly) unsigned int errorCount;
 @property(readonly) unsigned int lastResultCount;
@@ -30,8 +30,10 @@
 @property(readonly) double minimumElapsedTime;
 @property(readonly) double lastElapsedTime;
 @property(readonly) unsigned int count;
-- (void)dealloc;
--     // Error parsing type: @20@0:4@8@12^{cdpm_shared_memory_region_s=c[1024c][256{cdpm_shared_memory_slot_s=[32c][8{XSPerfCounter=AQ}][1{XSPerfMetric=[32Q]}]}]}16, name: initWithName:userInfo:sharedMemoryRegion:
+- (id)_stringWithIndex:(unsigned int)arg1;
+- (id)_histogramWithIndex:(unsigned int)arg1;
+- (unsigned int)_unsignedIntegerCounterWithIndex:(unsigned int)arg1;
+- (id)initWithName:(id)arg1 string:(id)arg2 family:(id)arg3 dictionary:(id)arg4;
 
 @end
 

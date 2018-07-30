@@ -8,6 +8,7 @@
 
 @class AVPlayer, __NSTemporaryFileURL;
 
+__attribute__((visibility("hidden")))
 @interface NSAVPlayerTextAttachmentViewProvider : NSTextAttachmentViewProvider
 {
     AVPlayer *_avPlayer;

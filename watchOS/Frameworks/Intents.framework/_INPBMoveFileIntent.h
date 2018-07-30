@@ -7,72 +7,73 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBMoveFileIntent.h"
 
-@class NSMutableArray, PBUnknownFields, _INPBIntentMetadata, _INPBString;
+@class NSArray, NSString, _INPBIntentMetadata, _INPBString;
 
-@interface _INPBMoveFileIntent : PBCodable <NSCopying>
+@interface _INPBMoveFileIntent : PBCodable <_INPBMoveFileIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _entityTypes;
-    _INPBString *_destinationName;
-    int _destinationType;
-    NSMutableArray *_entityNames;
-    _INPBIntentMetadata *_intentMetadata;
-    NSMutableArray *_properties;
-    _INPBString *_sourceName;
-    int _sourceType;
     struct {
         unsigned int destinationType:1;
         unsigned int sourceType:1;
     } _has;
+    _INPBString *_destinationName;
+    int _destinationType;
+    NSArray *_entityNames;
+    _INPBIntentMetadata *_intentMetadata;
+    NSArray *_properties;
+    _INPBString *_sourceName;
+    int _sourceType;
 }
 
 + (Class)propertiesType;
 + (Class)entityNameType;
-+ (id)options;
-@property(retain, nonatomic) NSMutableArray *properties; // @synthesize properties=_properties;
-@property(retain, nonatomic) _INPBString *destinationName; // @synthesize destinationName=_destinationName;
+@property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) _INPBString *sourceName; // @synthesize sourceName=_sourceName;
-@property(retain, nonatomic) NSMutableArray *entityNames; // @synthesize entityNames=_entityNames;
+@property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(copy, nonatomic) NSArray *entityNames; // @synthesize entityNames=_entityNames;
+@property(nonatomic) int destinationType; // @synthesize destinationType=_destinationType;
+@property(retain, nonatomic) _INPBString *destinationName; // @synthesize destinationName=_destinationName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (id)propertiesAtIndex:(unsigned int)arg1;
-- (unsigned int)propertiesCount;
-- (void)addProperties:(id)arg1;
-- (void)clearProperties;
-@property(readonly, nonatomic) _Bool hasDestinationName;
-- (int)StringAsDestinationType:(id)arg1;
-- (id)destinationTypeAsString:(int)arg1;
-@property(nonatomic) _Bool hasDestinationType;
-@property(nonatomic) int destinationType; // @synthesize destinationType=_destinationType;
-@property(readonly, nonatomic) _Bool hasSourceName;
 - (int)StringAsSourceType:(id)arg1;
 - (id)sourceTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSourceType;
-@property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;
-- (id)entityNameAtIndex:(unsigned int)arg1;
-- (unsigned int)entityNamesCount;
-- (void)addEntityName:(id)arg1;
-- (void)clearEntityNames;
+@property(readonly, nonatomic) _Bool hasSourceName;
+- (id)propertiesAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int propertiesCount;
+- (void)addProperties:(id)arg1;
+- (void)clearProperties;
+@property(readonly, nonatomic) _Bool hasIntentMetadata;
 - (int)StringAsEntityTypes:(id)arg1;
 - (id)entityTypesAsString:(int)arg1;
-- (void)setEntityTypes:(int *)arg1 count:(unsigned int)arg2;
 - (int)entityTypeAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int entityTypesCount;
 - (void)addEntityType:(int)arg1;
 - (void)clearEntityTypes;
 @property(readonly, nonatomic) int *entityTypes;
-@property(readonly, nonatomic) unsigned int entityTypesCount;
-@property(readonly, nonatomic) _Bool hasIntentMetadata;
-- (void)dealloc;
+- (void)setEntityTypes:(int *)arg1 count:(unsigned int)arg2;
+- (id)entityNameAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int entityNamesCount;
+- (void)addEntityName:(id)arg1;
+- (void)clearEntityNames;
+- (int)StringAsDestinationType:(id)arg1;
+- (id)destinationTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasDestinationType;
+@property(readonly, nonatomic) _Bool hasDestinationName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

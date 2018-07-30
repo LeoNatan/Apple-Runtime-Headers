@@ -17,15 +17,27 @@
     unsigned long long _capacity;
     NSString *_baseDevice;
     NSString *_apfsPhysicalDevice;
+    NSString *_apfsContainerDevice;
+    NSString *_apfsFirstVolumeDevice;
     struct __DADisk *_baseDiskRef;
     struct __DADisk *_mountDiskRef;
-    NSURL *_mountPointURL;
     BOOL _hasFileSystem;
+    NSURL *_mountPointURL;
+    NSString *_stdout;
+    NSString *_stderr;
 }
 
++ (id)apfsPhysicalStoresWholeDiskBSDNamesForAPFSVolumeBSDName:(id)arg1 arbiter:(id)arg2;
++ (id)_apfsPhysicalStoresForAPFSVolume:(struct __DADisk *)arg1 arbiter:(id)arg2;
++ (struct __DADisk *)_apfsVolumeForContainer:(struct __DADisk *)arg1 arbiter:(id)arg2;
++ (struct __DADisk *)_apfsContainerForPhysicalStore:(struct __DADisk *)arg1 arbiter:(id)arg2;
+@property(copy) NSString *__stderrp; // @synthesize __stderrp=_stderr;
+@property(copy) NSString *__stdoutp; // @synthesize __stdoutp=_stdout;
 @property(readonly) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(readonly) unsigned int diskType; // @synthesize diskType=_diskType;
 @property(readonly) unsigned int fileSystemType; // @synthesize fileSystemType=_fsType;
+@property(readonly) NSString *apfsFirstVolumeDevice; // @synthesize apfsFirstVolumeDevice=_apfsFirstVolumeDevice;
+@property(readonly) NSString *apfsContainerDevice; // @synthesize apfsContainerDevice=_apfsContainerDevice;
 @property(readonly) NSString *apfsPhysicalDevice; // @synthesize apfsPhysicalDevice=_apfsPhysicalDevice;
 @property(copy) NSString *baseDevice; // @synthesize baseDevice=_baseDevice;
 @property(retain) NSURL *mountPointURL; // @synthesize mountPointURL=_mountPointURL;
@@ -36,7 +48,9 @@
 - (BOOL)_mountFileSystem;
 - (BOOL)constructFileSystem;
 - (BOOL)constructAPFSContainer;
-- (void)addAPFSCompleted:(id)arg1;
+- (int)runTask:(id)arg1;
+- (void)stderrCompleted:(id)arg1;
+- (void)stdoutCompleted:(id)arg1;
 - (id)_attachNewDeviceWithCapacity:(unsigned long long)arg1;
 - (BOOL)mount;
 - (BOOL)attach;

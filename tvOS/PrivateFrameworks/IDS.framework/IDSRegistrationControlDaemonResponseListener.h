@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)registrationControlResponseForRequestID:(id)arg1 withBoolAnswer:(_Bool)arg2 additionalContextData:(id)arg3 andError:(id)arg4;
 - (void)registrationControlStatusResponseForRequestID:(long long)arg1 requestID:(id)arg2 withError:(id)arg3;
 - (void)registrationControlResponseForRequestID:(id)arg1 withError:(id)arg2;
 - (id)initWithRequestTimer:(id)arg1;

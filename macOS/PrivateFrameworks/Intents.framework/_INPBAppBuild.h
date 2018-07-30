@@ -7,12 +7,14 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBAppBuild.h"
 
-@class PBUnknownFields, _INPBAppId, _INPBBuildId;
+@class NSString, _INPBAppId, _INPBBuildId;
 
-@interface _INPBAppBuild : PBCodable <NSCopying>
+@interface _INPBAppBuild : PBCodable <_INPBAppBuild, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct _has;
     _INPBAppId *_appId;
     _INPBBuildId *_buildId;
 }
@@ -20,17 +22,19 @@
 @property(retain, nonatomic) _INPBBuildId *buildId; // @synthesize buildId=_buildId;
 @property(retain, nonatomic) _INPBAppId *appId; // @synthesize appId=_appId;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
 @property(readonly, nonatomic) BOOL hasBuildId;
 @property(readonly, nonatomic) BOOL hasAppId;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

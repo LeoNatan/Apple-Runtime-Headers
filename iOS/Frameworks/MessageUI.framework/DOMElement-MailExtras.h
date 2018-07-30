@@ -8,6 +8,7 @@
 
 @interface DOMElement (MailExtras)
 + (_Bool)isRichTextStyle:(id)arg1;
+- (void)mf_setDirAttributeToComputedValue;
 - (_Bool)mf_hasBackgroundColorOrImage;
 - (id)mf_computedBackgroundColor;
 - (_Bool)mf_isContainedInAnyElementInSet:(id)arg1;

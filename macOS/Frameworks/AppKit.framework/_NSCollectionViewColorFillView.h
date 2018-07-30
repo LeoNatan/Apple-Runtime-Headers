@@ -14,12 +14,12 @@ __attribute__((visibility("hidden")))
     NSColor *_fillColor;
 }
 
-@property(copy) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 - (BOOL)shouldBeArchived;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)dealloc;
+@property(copy) NSColor *fillColor;
 
 @end
 

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)updateFromFSAtPath:(id)arg1 filenameOverride:(id)arg2;
 - (void)_clearSignatures:(unsigned long long)arg1 isPackage:(BOOL)arg2;
 - (BOOL)isMissingUploadsWithDiffs:(unsigned long long)arg1;
+- (BOOL)shouldRecreateUploadJobGivenDiffs:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

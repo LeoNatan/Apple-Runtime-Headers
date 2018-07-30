@@ -10,7 +10,7 @@
 #import "NFCopying.h"
 #import "NSObject.h"
 
-@class FCArticleContentManifest, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineThumbnail, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
+@class FCArticleContentManifest, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
 
 @protocol FCHeadlineProviding <NSObject, NFCopying, FCFeedElement, FCClassifiable, FCFeedTransformationItem>
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs;
@@ -35,6 +35,8 @@
 @property(readonly, copy, nonatomic) NSString *surfacedBySectionID;
 @property(readonly, nonatomic, getter=isHiddenFromFeeds) _Bool hiddenFromFeeds;
 @property(readonly, nonatomic, getter=isBoundToContext) _Bool boundToContext;
+@property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) _Bool hiddenFromAutoFavorites;
+@property(readonly, nonatomic, getter=isPressRelease) _Bool pressRelease;
 @property(readonly, nonatomic) _Bool showMinimalChrome;
 @property(readonly, nonatomic) _Bool needsRapidUpdates;
 @property(readonly, copy, nonatomic) NSURL *videoCallToActionURL;
@@ -91,7 +93,10 @@
 @property(readonly, copy, nonatomic) NSString *versionIdentifier;
 
 @optional
+@property(readonly, nonatomic) _Bool webEmbedsEnabled;
+@property(copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
+@property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
 - (FCArticleContentManifest *)contentManifestWithContext:(id <FCContentContext>)arg1;
 @end
 

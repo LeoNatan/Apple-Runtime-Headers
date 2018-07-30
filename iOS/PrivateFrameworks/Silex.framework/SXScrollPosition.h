@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
-@interface SXScrollPosition : NSObject <NSCoding>
+@interface SXScrollPosition : NSObject <NSSecureCoding>
 {
 }
 
++ (_Bool)supportsSecureCoding;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

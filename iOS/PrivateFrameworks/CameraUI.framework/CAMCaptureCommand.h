@@ -24,6 +24,7 @@
 - (void)removeSubcommand:(id)arg1;
 - (void)addSubcommand:(id)arg1;
 - (void)executeWithContext:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *sessionModificationLogReason;
 @property(readonly, nonatomic) _Bool requiresSessionModification;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

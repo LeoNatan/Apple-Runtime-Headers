@@ -8,6 +8,7 @@
 
 @class AVAsset, AVWeakReference, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerItemTrackInternal : NSObject
 {
     AVWeakReference *weakReferenceToPlayerItem;

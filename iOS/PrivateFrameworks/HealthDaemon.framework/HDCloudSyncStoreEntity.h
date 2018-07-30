@@ -11,10 +11,13 @@
 }
 
 + (long long)protectionClass;
-+ (id)columnsDefinition;
++ (id)foreignKeys;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 + (_Bool)persistState:(id)arg1 storeUUID:(id)arg2 shouldReplace:(_Bool)arg3 healthDatabase:(id)arg4 error:(id *)arg5;
 + (id)persistedStateForStoreUUID:(id)arg1 database:(id)arg2 error:(id *)arg3;
++ (id)persistedMostRecentLastSyncDateForProfile:(id)arg1 error:(id *)arg2;
++ (id)persistedStoreUUIDsForProfile:(id)arg1 error:(id *)arg2;
 + (id)persistedStateForStoreUUID:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)_propertiesForEntity;
 + (id)storeIdentifierForOwnerIdentifier:(id)arg1 containerIdentifier:(id)arg2 profile:(id)arg3 error:(id *)arg4;

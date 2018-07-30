@@ -10,6 +10,6 @@
 
 @protocol HKGraphRenderDelegate <NSObject>
 - (_Bool)stillAnimating:(UIView<HKGraphRenderer> *)arg1;
-- (void)graphRenderer:(UIView<HKGraphRenderer> *)arg1 shouldRenderSceneWithContext:(struct CGContext *)arg2;
+- (void)graphRenderer:(UIView<HKGraphRenderer> *)arg1 shouldRenderSceneWithContext:(struct CGContext *)arg2 chartRect:(struct CGRect)arg3;
 @end
 

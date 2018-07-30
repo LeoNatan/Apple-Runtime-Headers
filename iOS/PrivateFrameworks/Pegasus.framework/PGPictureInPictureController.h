@@ -17,7 +17,7 @@
     NSXPCListener *_listener;
     NSObject<OS_dispatch_queue> *_listenerQueue;
     PGPictureInPictureRemoteObject *_activePictureInPictureRemoteObject;
-    PGPictureInPictureRemoteObject *_suspenedPictureInPictureRemoteObject;
+    PGPictureInPictureRemoteObject *_suspendedPictureInPictureRemoteObject;
     id <PGPictureInPictureControllerDelegate> _delegate;
     struct {
         unsigned int pictureInPictureController_didCreatePictureInPictureViewController:1;
@@ -47,6 +47,8 @@
 - (void)pictureInPictureInterruptionBegan;
 - (void)startPictureInPictureForApplicationEnteringBackground:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)shouldStartPictureInPictureForApplicationEnteringBackground:(id)arg1;
+- (struct CGSize)preferredContentSizeForInteractivePictureInPictureAnimationEnteringBackgroundForApplication:(id)arg1;
+- (struct CGRect)initialFrameForInteractivePictureInPictureAnimationEnteringBackgroundForApplication:(id)arg1;
 @property(nonatomic) __weak id <PGPictureInPictureControllerDelegate> delegate;
 @property(readonly, nonatomic) _Bool isStartingStoppingOrCancellingPictureInPicture;
 - (void)dealloc;

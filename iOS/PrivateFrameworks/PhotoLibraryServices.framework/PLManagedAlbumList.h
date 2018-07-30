@@ -39,7 +39,6 @@
 + (unsigned long long)priorityForAlbumKind:(int)arg1;
 + (_Bool)albumKindHasFixedOrder:(int)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-+ (id)wallpaperAlbumListInPhotoLibrary:(id)arg1;
 + (id)allStreamedAlbumsListInPhotoLibrary:(id)arg1;
 + (id)scenesAlbumListInPhotoLibrary:(id)arg1;
 + (id)placesAlbumListInPhotoLibrary:(id)arg1;

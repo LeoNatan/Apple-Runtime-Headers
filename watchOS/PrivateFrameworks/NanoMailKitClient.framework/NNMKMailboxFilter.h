@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSArray *mailboxIds; // @synthesize mailboxIds=_mailboxIds;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
+- (_Bool)containsSameMailboxesAs:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) _Bool isFilteredByType;
 @property(readonly, nonatomic) _Bool hasFilter;

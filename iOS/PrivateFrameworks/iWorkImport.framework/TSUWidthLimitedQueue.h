@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s mUnfairLock;
 }
 
+- (void).cxx_destruct;
 - (void)performSync:(CDUnknownBlockType)arg1;
 - (void)performAsync:(CDUnknownBlockType)arg1;
-- (void)dealloc;
+- (id)initWithLimit:(unsigned long long)arg1 name:(id)arg2;
 - (id)initWithLimit:(unsigned long long)arg1;
 - (id)init;
-- (id)targetDispatchQueue;
 
 @end
 

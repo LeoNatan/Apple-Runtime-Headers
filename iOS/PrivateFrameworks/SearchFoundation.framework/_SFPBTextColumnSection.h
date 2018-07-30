@@ -13,7 +13,6 @@
 
 @interface _SFPBTextColumnSection : PBCodable <_SFPBTextColumnSection, NSSecureCoding>
 {
-    CDStruct_82065ba4 _has;
     _Bool _textNoWrap;
     unsigned int _textWeight;
     NSArray *_textLines;
@@ -31,8 +30,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasTextWeight;
-@property(readonly, nonatomic) _Bool hasTextNoWrap;
 - (id)textLinesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)textLinesCount;
 - (void)addTextLines:(id)arg1;

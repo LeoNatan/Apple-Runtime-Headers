@@ -11,6 +11,7 @@
 
 @class AVCallbackContextRegistry, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVClientBlockKVONotifier : NSObject <AVKVONotifier, AVKVOIntrospection>
 {
     AVCallbackContextRegistry *_callbackContextRegistry;

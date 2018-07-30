@@ -10,6 +10,7 @@
 
 @protocol _DKHistoricalMonitor <_DKMonitor>
 @property(readonly, nonatomic) NSDate *lastUpdate;
+@property(copy, nonatomic) CDUnknownBlockType shutdownHandler;
 @property(copy, nonatomic) CDUnknownBlockType historicalHandler;
 - (void)update;
 @end

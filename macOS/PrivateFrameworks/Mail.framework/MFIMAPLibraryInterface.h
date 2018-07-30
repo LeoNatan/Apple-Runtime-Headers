@@ -24,7 +24,8 @@
 + (void)setAllegedHighestModificationSequence:(unsigned long long)arg1 forIMAPMailboxURL:(id)arg2;
 + (unsigned long long)allegedHighestModificationSequenceforIMAPMailboxURL:(id)arg1;
 + (void)addMessageDetails:(id)arg1 mailboxURL:(id)arg2;
-+ (void)setResultsForLabelChangeAction:(long long)arg1 inMailbox:(id)arg2;
++ (void)_addGmailLabels:(id)arg1 removeGmailLabels:(id)arg2 forUID:(unsigned int)arg3 mailboxID:(long long)arg4 handle:(id)arg5;
++ (void)setResultsForLabelChangeAction:(long long)arg1 inMailbox:(id)arg2 uids:(id)arg3 labelsToAdd:(id)arg4 labelsToRemove:(id)arg5;
 + (void)setResultsForFlagChangeAction:(long long)arg1 inMailbox:(id)arg2 uids:(id)arg3 flags:(long long)arg4 mask:(long long)arg5;
 + (void)setResultsForAppendAction:(long long)arg1 inMailbox:(id)arg2 newMessageDetails:(id)arg3;
 + (void)setResultsForCopyAction:(long long)arg1 inMailbox:(id)arg2 newMessageDetails:(id)arg3 lastBatch:(BOOL)arg4;
@@ -37,6 +38,7 @@
 + (void)createLabelChangeAction:(id)arg1 forMessages:(id)arg2 mailboxURL:(id)arg3;
 + (BOOL)copyMessages:(id)arg1 toMailbox:(id)arg2 activityType:(id)arg3 userInitiated:(BOOL)arg4 settingFlags:(id)arg5 oldMessagesByNewMessage:(id *)arg6 error:(id *)arg7;
 + (void)compactMailbox:(id)arg1;
++ (void)reflectGmailLabelChanges:(id)arg1 forMessageDetails:(id)arg2 mailbox:(id)arg3;
 + (void)reflectFlagChanges:(id)arg1 forIMAPMessagesWithUIDs:(id)arg2 mailbox:(id)arg3;
 + (BOOL)reflectNewIMAPMessages:(id)arg1 mailbox:(id)arg2 oldMessagesByNewMessage:(id)arg3 error:(id *)arg4;
 + (void)reflectDeletedIMAPMessages:(id)arg1;

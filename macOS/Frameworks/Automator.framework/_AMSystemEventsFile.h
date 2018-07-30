@@ -19,9 +19,9 @@
 @property(readonly, copy) NSString *shortVersion;
 @property(readonly, copy) NSString *productVersion;
 @property(readonly, copy) NSString *kind;
-@property(copy) NSString *fileType;
-@property(copy) _AMSystemEventsDiskItem *defaultApplication;
-@property(copy) NSString *creatorType;
+@property(copy) id fileType;
+@property(copy) id defaultApplication;
+@property(copy) id creatorType;
 
 @end
 

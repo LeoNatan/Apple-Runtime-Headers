@@ -8,32 +8,33 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSDictionary, NSString;
+@class CEMSystemAllowedMediaDeclaration_MediaItems, NSString;
 
 @interface CEMSystemAllowedMediaDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol>
 {
+    CEMSystemAllowedMediaDeclaration_MediaItems *_payloadLogoutEject;
+    CEMSystemAllowedMediaDeclaration_MediaItems *_payloadMountControls;
+    CEMSystemAllowedMediaDeclaration_MediaItems *_payloadUnmountControls;
 }
 
-+ (id)allowedReasons;
-+ (id)allowedStatusKeys;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withLogoutEject:(id)arg2 withMountControls:(id)arg3 withUnmountControls:(id)arg4;
 + (id)restrictionPayloadKeys;
-+ (id)VolumesDictionary_allowedPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
-+ (id)registeredType;
-+ (id)registeredClass;
-- (id)serializePayloadVolumesDictionary:(id)arg1 withAssetProviders:(id)arg2;
-- (id)serializePayload:(id)arg1 withAssetProviders:(id)arg2;
-- (_Bool)validStatusDictionary:(id)arg1 error:(id *)arg2;
-- (_Bool)validPayloadVolumesDictionary_Dictionary:(id)arg1 parentKeyPath:(id)arg2 error:(id *)arg3;
-- (_Bool)validPayloadDictionary:(id)arg1 error:(id *)arg2;
++ (id)registeredIdentifier;
++ (id)registeredClassName;
+@property(copy, nonatomic) CEMSystemAllowedMediaDeclaration_MediaItems *payloadUnmountControls; // @synthesize payloadUnmountControls=_payloadUnmountControls;
+@property(copy, nonatomic) CEMSystemAllowedMediaDeclaration_MediaItems *payloadMountControls; // @synthesize payloadMountControls=_payloadMountControls;
+@property(copy, nonatomic) CEMSystemAllowedMediaDeclaration_MediaItems *payloadLogoutEject; // @synthesize payloadLogoutEject=_payloadLogoutEject;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithAssetProviders:(id)arg1;
+- (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 - (id)assetReferences;
 - (int)activationLevel;
 - (_Bool)mustBeSupervised;
 - (_Bool)multipleAllowed;
-@property(readonly, nonatomic) NSDictionary *payloadUnmountControls;
-@property(readonly, nonatomic) NSDictionary *payloadMountControls;
-@property(readonly, nonatomic) NSDictionary *payloadLogoutEject;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

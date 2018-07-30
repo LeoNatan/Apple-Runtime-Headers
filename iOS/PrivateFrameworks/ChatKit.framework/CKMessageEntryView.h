@@ -17,10 +17,11 @@
 #import "UIGestureRecognizerDelegate.h"
 #import "_UIBackdropViewGraphicsQualityChangeDelegate.h"
 
-@class CAMShutterButton, CKActionMenuController, CKActionMenuGestureRecognizerButton, CKAudioRecorder, CKBrowserSwitcherFooterView, CKComposition, CKConversation, CKEntryViewButton, CKInlineAudioReplyButtonController, CKMessageEntryAudioHintView, CKMessageEntryContentView, CKMessageEntryRecordedAudioView, CKMessageEntryWaveformView, CKScheduledUpdater, NSArray, NSString, UIInputContextHistory, UILabel, UILongPressGestureRecognizer, UIPreviewInteraction, UISwipeGestureRecognizer, _UIBackdropView;
+@class CAMShutterButton, CKActionMenuController, CKActionMenuGestureRecognizerButton, CKAudioRecorder, CKBrowserSwitcherFooterView, CKComposition, CKConversation, CKEntryViewButton, CKInlineAudioReplyButtonController, CKMessageEntryAudioHintView, CKMessageEntryContentView, CKMessageEntryRecordedAudioView, CKMessageEntryWaveformView, CKScheduledUpdater, NSArray, NSString, UIInputContextHistory, UIKBVisualEffectView, UILabel, UILongPressGestureRecognizer, UIPreviewInteraction, UISwipeGestureRecognizer, _UIBackdropView;
 
 @interface CKMessageEntryView : UIView <CKMessageEntryContentViewDelegate, CKAudioRecorderDelegate, CKActionMenuControllerDelegate, CKMessageEntryRecordedAudioViewDelegate, CKActionMenuGestureRecognizerButtonDelegate, CKInlineAudioReplyButtonDelegate, UIGestureRecognizerDelegate, _UIBackdropViewGraphicsQualityChangeDelegate, CKBrowserSwitcherFooterViewDelegate, CKMessageEntryViewStyleProtocol>
 {
+    _Bool _showAppStrip;
     _Bool _shouldShowSendButton;
     _Bool _shouldShowSubject;
     _Bool _shouldShowPluginButtons;
@@ -28,7 +29,7 @@
     _Bool _shouldKnockoutCoverView;
     _Bool _keyboardVisible;
     _Bool _entryFieldCollapsed;
-    _Bool _showAppStrip;
+    _Bool _extendAppStripBlurToKeyplaneTop;
     _Bool _disablePluginButtons;
     _Bool _composingRecipient;
     _Bool _failedRecipients;
@@ -73,6 +74,8 @@
     UIInputContextHistory *_inputContextHistory;
     UILabel *_collpasedPlaceholderLabel;
     CKBrowserSwitcherFooterView *_appStrip;
+    UIView *_appStripBackgroundBlurContainerView;
+    UIKBVisualEffectView *_appStripBackgroundBlurView;
     CAMShutterButton *_shutterButton;
     CKScheduledUpdater *_entryFieldCollapsedUpdater;
     UISwipeGestureRecognizer *_swipeGestureRecognizer;
@@ -96,6 +99,8 @@
 @property(nonatomic) _Bool entryFieldUpdaterCollapsedValue; // @synthesize entryFieldUpdaterCollapsedValue=_entryFieldUpdaterCollapsedValue;
 @property(retain, nonatomic) CKScheduledUpdater *entryFieldCollapsedUpdater; // @synthesize entryFieldCollapsedUpdater=_entryFieldCollapsedUpdater;
 @property(retain, nonatomic) CAMShutterButton *shutterButton; // @synthesize shutterButton=_shutterButton;
+@property(retain, nonatomic) UIKBVisualEffectView *appStripBackgroundBlurView; // @synthesize appStripBackgroundBlurView=_appStripBackgroundBlurView;
+@property(retain, nonatomic) UIView *appStripBackgroundBlurContainerView; // @synthesize appStripBackgroundBlurContainerView=_appStripBackgroundBlurContainerView;
 @property(retain, nonatomic) CKBrowserSwitcherFooterView *appStrip; // @synthesize appStrip=_appStrip;
 @property(retain, nonatomic) UILabel *collpasedPlaceholderLabel; // @synthesize collpasedPlaceholderLabel=_collpasedPlaceholderLabel;
 @property(nonatomic) _Bool animatingLayoutChange; // @synthesize animatingLayoutChange=_animatingLayoutChange;
@@ -133,7 +138,7 @@
 @property(nonatomic, getter=hasFailedRecipients) _Bool failedRecipients; // @synthesize failedRecipients=_failedRecipients;
 @property(nonatomic, getter=isComposingRecipient) _Bool composingRecipient; // @synthesize composingRecipient=_composingRecipient;
 @property(nonatomic, getter=shouldDisablePluginButtons) _Bool disablePluginButtons; // @synthesize disablePluginButtons=_disablePluginButtons;
-@property(nonatomic, getter=shouldShowAppStrip) _Bool showAppStrip; // @synthesize showAppStrip=_showAppStrip;
+@property(nonatomic) _Bool extendAppStripBlurToKeyplaneTop; // @synthesize extendAppStripBlurToKeyplaneTop=_extendAppStripBlurToKeyplaneTop;
 @property(nonatomic) _Bool entryFieldCollapsed; // @synthesize entryFieldCollapsed=_entryFieldCollapsed;
 @property(nonatomic, getter=isKeyboardVisible) _Bool keyboardVisible; // @synthesize keyboardVisible=_keyboardVisible;
 @property(nonatomic) _Bool shouldKnockoutCoverView; // @synthesize shouldKnockoutCoverView=_shouldKnockoutCoverView;
@@ -189,6 +194,7 @@
 - (void)arrowButtonTapped:(id)arg1;
 - (void)browserButtonTapped:(id)arg1;
 - (void)photoButtonTapped:(id)arg1;
+- (void)photoButtonTouchDown:(id)arg1;
 - (void)audioReplyButtonCancel:(id)arg1;
 - (void)audioReplyButtonStop:(id)arg1;
 - (void)audioReplyButtonStart:(id)arg1;
@@ -216,6 +222,11 @@
 - (void)messageEntryContentViewDidBeginEditing:(id)arg1;
 - (struct CGSize)messageEntryContentViewMaxShelfPluginViewSize:(id)arg1;
 - (_Bool)messageEntryContentViewShouldBeginEditing:(id)arg1;
+- (_Bool)is3rdPartyKeyboardVisible;
+- (_Bool)isPredictionBarEnabled;
+@property(readonly, nonatomic) _Bool showsKeyboardPredictionBar;
+- (void)handleContentViewChange;
+- (void)messageEntryContentViewShelfDidChange:(id)arg1;
 - (void)messageEntryContentViewDidChange:(id)arg1;
 - (void)messageEntryContentViewCancelWasTapped:(id)arg1 shelfPluginPayload:(id)arg2;
 - (void)_animateToCompactLayoutCollapsing:(_Bool)arg1;
@@ -230,7 +241,12 @@
 - (struct CGRect)browserButtonFrame;
 - (id)snapshotForCompactBrowserAnimation;
 - (id)pasteBoardTextFromComposition:(id)arg1;
+- (void)clearAppStripSelection;
+- (void)selectPluginAtIndexPath:(id)arg1;
 - (void)minifyAppStrip;
+- (void)setShowAppStrip:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) _Bool shouldShowAppStrip;
+- (id)_currentInputDelegate;
 - (void)setEntryFieldCollapsed:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool shouldEntryViewBeExpandedLayout;
 - (_Bool)layoutIsCurrentlyCompact;
@@ -258,7 +274,6 @@
 - (void)updateTextViewsForShouldHideCaret:(_Bool)arg1;
 - (void)switcherView:(id)arg1 didMagnify:(_Bool)arg2;
 - (void)switcherView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
-- (double)appStripHeight;
 - (double)bottomInsetForAppStrip;
 - (void)updateAppStripFrame;
 - (void)layoutSubviews;

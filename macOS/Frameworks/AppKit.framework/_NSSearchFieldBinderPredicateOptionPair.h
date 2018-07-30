@@ -8,6 +8,7 @@
 
 @class NSPredicate, NSString, _NSFilterPredicateVisitor;
 
+__attribute__((visibility("hidden")))
 @interface _NSSearchFieldBinderPredicateOptionPair : NSObject
 {
     NSString *_predicateString;

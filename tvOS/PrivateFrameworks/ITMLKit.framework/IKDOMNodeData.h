@@ -14,17 +14,21 @@
     _Bool _childrenUpdated;
     _Bool _subtreeUpdated;
     _Bool _autoHighlightRead;
+    _Bool _prototypesUpdated;
     _Bool _bindingUpdated;
+    _Bool _rulesUpdated;
     _Bool _dataUpdated;
     IKDOMNode *_ownerJSNode;
     NSMutableDictionary *_featuresMap;
 }
 
 + (id)jsNodeDataForNode:(struct _xmlNode *)arg1 create:(_Bool)arg2;
-+ (void)load;
++ (void)initialize;
 @property(retain, nonatomic) NSMutableDictionary *featuresMap; // @synthesize featuresMap=_featuresMap;
 @property(nonatomic, getter=isDataUpdated) _Bool dataUpdated; // @synthesize dataUpdated=_dataUpdated;
+@property(nonatomic, getter=areRulesUpdated) _Bool rulesUpdated; // @synthesize rulesUpdated=_rulesUpdated;
 @property(nonatomic, getter=isBindingUpdated) _Bool bindingUpdated; // @synthesize bindingUpdated=_bindingUpdated;
+@property(nonatomic, getter=arePrototypesUpdated) _Bool prototypesUpdated; // @synthesize prototypesUpdated=_prototypesUpdated;
 @property(nonatomic, getter=isAutoHighlightRead) _Bool autoHighlightRead; // @synthesize autoHighlightRead=_autoHighlightRead;
 @property(nonatomic, getter=isSubtreeUpdated) _Bool subtreeUpdated; // @synthesize subtreeUpdated=_subtreeUpdated;
 @property(nonatomic, getter=isChildrenUpdated) _Bool childrenUpdated; // @synthesize childrenUpdated=_childrenUpdated;
@@ -33,6 +37,7 @@
 - (void).cxx_destruct;
 - (id)featureForName:(id)arg1;
 - (void)setFeature:(id)arg1 forName:(id)arg2;
+@property(readonly, nonatomic) _Bool containsUpdates;
 
 @end
 

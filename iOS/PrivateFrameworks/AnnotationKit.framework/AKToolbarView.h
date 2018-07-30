@@ -51,7 +51,7 @@
     _Bool _alwaysShowUndoButton;
     _Bool _shareButtonHidden;
     _Bool _translucent;
-    _Bool _useThickInks;
+    _Bool _contentsHidden;
     AKController *_annotationController;
 }
 
@@ -59,17 +59,20 @@
 + (id)undoButtonImage;
 + (id)redoButtonImageWithStyle:(unsigned long long)arg1;
 + (id)undoButtonImageWithStyle:(unsigned long long)arg1;
-@property(nonatomic) _Bool useThickInks; // @synthesize useThickInks=_useThickInks;
+@property(nonatomic) _Bool contentsHidden; // @synthesize contentsHidden=_contentsHidden;
 @property(nonatomic, getter=isTranslucent) _Bool translucent; // @synthesize translucent=_translucent;
 @property(nonatomic, getter=isShareButtonHidden) _Bool shareButtonHidden; // @synthesize shareButtonHidden=_shareButtonHidden;
 @property(nonatomic) _Bool alwaysShowUndoButton; // @synthesize alwaysShowUndoButton=_alwaysShowUndoButton;
 @property(nonatomic) _Bool undoRedoButtonsHidden; // @synthesize undoRedoButtonsHidden=_undoRedoButtonsHidden;
 @property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
 - (void).cxx_destruct;
+- (id)inkPicker;
 - (void)setShadowImage:(id)arg1 forToolbarPosition:(long long)arg2;
 - (void)setBackgroundImage:(id)arg1 forToolbarPosition:(long long)arg2 barMetrics:(long long)arg3;
 - (void)_inkPicker:(id)arg1 didPickColor:(id)arg2;
+- (id)viewControllerForPopoverPresentationFromColorPicker:(id)arg1;
 - (void)colorPickerDidSelectColor:(id)arg1 colorChanged:(_Bool)arg2;
+- (id)viewControllerForPopoverPresentationFromInlineInkPicker:(id)arg1;
 - (void)inlineInkPicker:(id)arg1 didSelectColor:(id)arg2;
 - (void)inlineInkPicker:(id)arg1 didSelectTool:(id)arg2;
 - (void)attributePicker:(id)arg1 didSelectToolWithTag:(long long)arg2 attributeTag:(long long)arg3;
@@ -112,6 +115,7 @@
 - (void)upateAttributesPickerButtonWithCurrentSelection:(id)arg1;
 - (id)createUndoViewController;
 - (void)resetToLastDrawingTool;
+- (void)setContentsHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (_Bool)shouldUseCompactHeight;
 - (_Bool)shouldUseCompactWidth;
 - (void)traitCollectionDidChange:(id)arg1;

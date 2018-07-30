@@ -10,19 +10,10 @@
 {
 }
 
++ (long long)coreUICompatibleMode;
 + (void)_determineCompatibilityMode;
-+ (long long)lookCongruencyForObject:(id)arg1;
-+ (struct _themelook *)currentSystemThemeLook;
-+ (void)changeToLook:(struct _themelook *)arg1;
-+ (void)_invalidateVisibleWindows;
-+ (BOOL)_isCurrentLook:(struct _themelook *)arg1;
-+ (void)_setCurrentSystemThemeLook:(struct _themelook *)arg1;
-+ (void)_updateMenuBarDrawingStyleForLook:(struct _themelook *)arg1;
-+ (BOOL)_hasDarkMenuBarForLook:(struct _themelook *)arg1;
-+ (void)_setThemeLookDelegate:(id)arg1;
-+ (id)_themeLookDelegate;
-+ (long long)maximumLookGradation;
 + (long long)currentLookGradation;
++ (struct _themelook *)currentSystemThemeLook;
 
 @end
 

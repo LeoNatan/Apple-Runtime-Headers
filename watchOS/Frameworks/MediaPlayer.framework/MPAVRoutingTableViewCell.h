@@ -8,7 +8,7 @@
 
 #import "MPAVRoutingThemeableCellView.h"
 
-@class MPAVRoutingTableViewCellSubtitleTextState, NSString, NSTimer, UIActivityIndicatorView, UIImageView, UILabel;
+@class MPAVRoutingTableViewCellSubtitleTextState, MPVolumeSlider, NSString, NSTimer, UIActivityIndicatorView, UIImageView, UILabel;
 
 @interface MPAVRoutingTableViewCell : UITableViewCell <MPAVRoutingThemeableCellView>
 {
@@ -23,14 +23,18 @@
     _Bool _isDisplayedAsPicked;
     _Bool _useSmartAudioCheckmarkStyle;
     _Bool _provideOwnSeparator;
+    _Bool _showingVolumeSlider;
     id <MPAVRoutingTableViewCellDelegate> _delegate;
     unsigned int _mirroringStyle;
     unsigned int _iconStyle;
     float _subtitleViewAlpha;
+    MPVolumeSlider *_volumeSlider;
     MPAVRoutingTableViewCellSubtitleTextState *_subtitleTextState;
 }
 
 @property(retain, nonatomic) MPAVRoutingTableViewCellSubtitleTextState *subtitleTextState; // @synthesize subtitleTextState=_subtitleTextState;
+@property(nonatomic, getter=isShowingVolumeSlider) _Bool showingVolumeSlider; // @synthesize showingVolumeSlider=_showingVolumeSlider;
+@property(retain, nonatomic) MPVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
 @property(nonatomic) float subtitleViewAlpha; // @synthesize subtitleViewAlpha=_subtitleViewAlpha;
 @property(nonatomic) _Bool provideOwnSeparator; // @synthesize provideOwnSeparator=_provideOwnSeparator;
 @property(nonatomic) _Bool useSmartAudioCheckmarkStyle; // @synthesize useSmartAudioCheckmarkStyle=_useSmartAudioCheckmarkStyle;
@@ -43,24 +47,27 @@
 - (void).cxx_destruct;
 - (void)_animateSubtitleLabelToNextAvailableText;
 - (void)_updateSpinnerStyle;
-- (void)_updateDetailStackViewForEndpoint:(id)arg1 route:(id)arg2;
 - (void)_updateSubtitleTextLabelForRoute:(id)arg1;
 - (void)_updateSmartAudioAccessory;
 - (id)_checkmarkImageForSmartAudio;
+- (id)_checkmarkImageNameForSmartAudio;
 - (id)_iconImageForRoute:(id)arg1;
 - (id)_pairedDeviceTextForRoute:(id)arg1;
 - (id)_batteryTextForRoute:(id)arg1;
 - (_Bool)_shouldShowSeparateBatteryPercentagesForBatteryLevel:(id)arg1;
 - (void)_configureDetailLabel:(id)arg1;
 - (void)_configureLabel:(id)arg1;
+- (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)setAccessoryType:(int)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)layoutSubviews;
 - (id)separatorView;
 - (id)iconView;
+- (id)volumeView;
 - (id)subtitleView;
 - (id)titleView;
 - (void)updateForEndpoint:(id)arg1 route:(id)arg2 inferLocalizedModelName:(_Bool)arg3;
+- (void)prepareForReuse;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

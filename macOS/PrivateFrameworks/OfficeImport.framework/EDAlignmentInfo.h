@@ -11,7 +11,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface EDAlignmentInfo : NSObject <NSCopying, EDImmutableObject>
 {
     int mHorizontalAlignment;

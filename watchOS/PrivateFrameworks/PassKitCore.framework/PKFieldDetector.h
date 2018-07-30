@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSHashTable, NSLock, NSObject<OS_dispatch_queue>, PKFieldProperties;
+@class NSHashTable, NSObject<OS_dispatch_queue>, PKFieldProperties;
 
 @interface PKFieldDetector : NSObject
 {
+    struct os_unfair_lock_s _lock;
     NSHashTable *_observers;
-    NSLock *_observersLock;
     PKFieldProperties *_fieldProperties;
     NSObject<OS_dispatch_queue> *_fieldDetectorSerialQueue;
     NSObject<OS_dispatch_queue> *_replyQueue;
@@ -19,7 +19,7 @@
 }
 
 - (void).cxx_destruct;
-@property(nonatomic) __weak id <PKFieldDetectorDelegate> delegate;
+@property(nonatomic) __weak id <PKFieldDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PKFieldProperties *fieldProperties;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;

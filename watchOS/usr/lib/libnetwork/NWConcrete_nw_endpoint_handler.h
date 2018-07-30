@@ -8,17 +8,19 @@
 
 #import "OS_nw_endpoint_handler.h"
 
-@class NSObject<NWConcrete_nw_endpoint_mode_handler>, NSObject<OS_dispatch_queue>, NSObject<OS_nw_endpoint>, NSObject<OS_nw_object>, NSObject<OS_nw_parameters>, NSObject<OS_nw_path>, NSObject<OS_nw_path_evaluator>, NSObject<OS_xpc_object>, NSString;
+@class NSObject<NWConcrete_nw_endpoint_mode_handler>, NSObject<OS_dispatch_queue>, NSObject<OS_nw_association>, NSObject<OS_nw_endpoint>, NSObject<OS_nw_object>, NSObject<OS_nw_parameters>, NSObject<OS_nw_path>, NSObject<OS_xpc_object>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_endpoint_handler : NSObject <OS_nw_endpoint_handler>
 {
     CDUnknownFunctionPointerType report_callback;
     NSObject<OS_nw_object> *callback_context;
     NSObject<OS_nw_endpoint> *endpoint;
     NSObject<OS_nw_parameters> *parameters;
-    NSObject<OS_nw_path_evaluator> *path_evaluator;
+    NSObject<OS_nw_association> *association;
     NSObject<OS_nw_path> *current_path;
     NWConcrete_nw_endpoint_handler *parent_handler;
+    struct nw_endpoint_handler_event_s event;
     NSObject<OS_xpc_object> *inactive_agent_uuids;
     NSObject<OS_xpc_object> *inactive_agent_dictionaries;
     NSObject<OS_xpc_object> *triggered_agent_uuids;
@@ -28,18 +30,20 @@
     NSObject<OS_dispatch_queue> *tls_client_queue;
     CDUnknownBlockType tls_prepare_block;
     CDUnknownBlockType tls_message_block;
-    unsigned short id_chain[16];
+    unsigned int top_id;
     int last_child_id;
-    char id_str[96];
+    unsigned char id_chain[16];
+    char id_str[75];
     NSObject<NWConcrete_nw_endpoint_mode_handler> *mode_handler;
+    int privacy_level;
     unsigned int dry_run:1;
     unsigned int triggering_voluntary_agents:1;
-    unsigned int reuse_path_evaluator:1;
+    unsigned int reuse_association:1;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 reportCallback:(CDUnknownFunctionPointerType)arg3 context:(id)arg4 parent:(id)arg5;
+- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 reportCallback:(CDUnknownFunctionPointerType)arg3 context:(id)arg4 parent:(id)arg5 identifier:(unsigned int)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

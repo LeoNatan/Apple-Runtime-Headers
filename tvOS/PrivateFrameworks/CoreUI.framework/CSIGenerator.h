@@ -24,6 +24,9 @@
     long long _templateRenderingMode;
     _Bool _allowsMultiPassEncoding;
     _Bool _allowsOptimalRowbytesPacking;
+    _Bool _allowsPaletteImageCompression;
+    _Bool _allowsHevcCompression;
+    _Bool _allowsDeepmapImageCompression;
     _Bool _optOutOfThinning;
     _Bool _preservedVectorRepresentation;
     _Bool _isFlippable;
@@ -55,13 +58,22 @@
     NSMutableArray *_mipReferences;
     _Bool _textureOpaque;
     NSArray *_colorComponents;
+    NSString *_systemColorName;
     NSDictionary *_sizesByIndex;
     _Bool _clampMetrics;
+    NSDictionary *_renditionProperties;
+    int _objectVersion;
+    // Error parsing type: {?="columns"[4]}, name: _transformation
 }
 
 + (int)fileEncoding;
 + (void)setFileEncoding:(int)arg1;
 + (void)initialize;
+// Error parsing type for property transformation:
+// Property attributes: T{?=[4]},N,V_transformation
+
+@property(nonatomic) int objectVersion; // @synthesize objectVersion=_objectVersion;
+@property(copy, nonatomic) NSDictionary *renditionProperties; // @synthesize renditionProperties=_renditionProperties;
 @property(nonatomic) _Bool clampMetrics; // @synthesize clampMetrics=_clampMetrics;
 @property(copy, nonatomic) NSDictionary *sizesByIndex; // @synthesize sizesByIndex=_sizesByIndex;
 @property(copy, nonatomic) NSArray *colorComponents; // @synthesize colorComponents=_colorComponents;
@@ -74,6 +86,9 @@
 @property(nonatomic) _Bool isFlippable; // @synthesize isFlippable=_isFlippable;
 @property(nonatomic) _Bool preservedVectorRepresentation; // @synthesize preservedVectorRepresentation=_preservedVectorRepresentation;
 @property(nonatomic) _Bool optOutOfThinning; // @synthesize optOutOfThinning=_optOutOfThinning;
+@property(nonatomic) _Bool allowsDeepmapImageCompression; // @synthesize allowsDeepmapImageCompression=_allowsDeepmapImageCompression;
+@property(nonatomic) _Bool allowsHevcCompression; // @synthesize allowsHevcCompression=_allowsHevcCompression;
+@property(nonatomic) _Bool allowsPaletteImageCompression; // @synthesize allowsPaletteImageCompression=_allowsPaletteImageCompression;
 @property(nonatomic) _Bool allowsOptimalRowbytesPacking; // @synthesize allowsOptimalRowbytesPacking=_allowsOptimalRowbytesPacking;
 @property(nonatomic) _Bool allowsMultiPassEncoding; // @synthesize allowsMultiPassEncoding=_allowsMultiPassEncoding;
 @property(nonatomic) struct CGRect alphaCroppedFrame; // @synthesize alphaCroppedFrame=_alphaCroppedFrame;
@@ -97,6 +112,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 - (id)CSIRepresentationWithCompression:(_Bool)arg1;
+- (unsigned long long)writeRecognitionObjectToData:(id)arg1;
 - (unsigned long long)writeTextureToData:(id)arg1;
 - (unsigned long long)writeExternalLinkToData:(id)arg1;
 - (unsigned long long)writeRawDataToData:(id)arg1;
@@ -120,6 +136,7 @@
 - (id)rawData;
 - (void)dealloc;
 - (id)initWithMultisizeImageSetNamed:(id)arg1 sizesByIndex:(id)arg2;
+- (id)initWithColorNamed:(id)arg1 colorSpaceID:(unsigned long long)arg2 components:(id)arg3 linkedToSystemColorWithName:(id)arg4;
 - (id)initWithColorNamed:(id)arg1 colorSpaceID:(unsigned long long)arg2 components:(id)arg3;
 - (id)initWithInternalReferenceRect:(struct CGRect)arg1 layout:(short)arg2;
 - (id)initWithTextureImageWithSize:(struct CGSize)arg1 forPixelFormat:(long long)arg2 cubeMap:(_Bool)arg3;

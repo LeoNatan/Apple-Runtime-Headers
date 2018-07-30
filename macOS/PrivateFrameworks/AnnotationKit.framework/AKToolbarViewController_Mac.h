@@ -23,10 +23,15 @@
     AKToolbarButtonItem_Mac *_variableSketchButton;
     AKToolbarButtonItem_Mac *_inkButton;
     AKToolbarButtonItem_Mac *_simpleHighlightButton;
+    AKToolbarButtonItem_Mac *_simpleRotateLeftButton;
+    AKToolbarButtonItem_Mac *_simpleRotateRightButton;
+    AKToolbarButtonItem_Mac *_rotateButton;
+    AKToolbarButtonItem_Mac *_cropButton;
     AKToolbarColorWellItem_Mac *_strokeColorWell;
     AKToolbarColorWellItem_Mac *_fillColorWell;
     NSMutableSet *_noteButtons;
     NSMutableSet *_highlightControls;
+    NSView *_applyCropButton;
     NSPopover *_shapesPopover;
     NSPopover *_signaturesPopover;
     NSPopover *_textAttributesPopover;
@@ -45,9 +50,14 @@
 @property(retain) NSPopover *shapesPopover; // @synthesize shapesPopover=_shapesPopover;
 @property(retain) NSMutableSet *highlightControls; // @synthesize highlightControls=_highlightControls;
 @property(retain) NSMutableSet *noteButtons; // @synthesize noteButtons=_noteButtons;
+@property(retain) NSView *rotateButton; // @synthesize rotateButton=_rotateButton;
+@property(retain) NSView *simpleRotateRightButton; // @synthesize simpleRotateRightButton=_simpleRotateRightButton;
+@property(retain) NSView *simpleRotateLeftButton; // @synthesize simpleRotateLeftButton=_simpleRotateLeftButton;
 @property(retain) NSView *simpleHighlightButton; // @synthesize simpleHighlightButton=_simpleHighlightButton;
 @property(retain) NSView *fillColorWell; // @synthesize fillColorWell=_fillColorWell;
 @property(retain) NSView *strokeColorWell; // @synthesize strokeColorWell=_strokeColorWell;
+@property(readonly) NSView *applyCropButton; // @synthesize applyCropButton=_applyCropButton;
+@property(retain) NSView *cropButton; // @synthesize cropButton=_cropButton;
 @property(retain) NSView *inkButton; // @synthesize inkButton=_inkButton;
 @property(retain) NSView *variableSketchButton; // @synthesize variableSketchButton=_variableSketchButton;
 @property(retain) NSView *intelligentSketchButton; // @synthesize intelligentSketchButton=_intelligentSketchButton;
@@ -75,6 +85,7 @@
 - (void)revalidateItems;
 - (void)signatureButtonClicked:(id)arg1;
 - (void)doodleButtonClicked:(id)arg1;
+- (void)applyCropButtonClicked:(id)arg1;
 - (void)inkButtonClicked:(id)arg1;
 - (void)variableSketchButtonClicked:(id)arg1;
 - (void)intelligentSketchButtonClicked:(id)arg1;

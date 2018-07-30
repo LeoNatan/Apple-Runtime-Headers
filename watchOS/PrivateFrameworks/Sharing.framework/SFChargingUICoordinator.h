@@ -12,6 +12,7 @@
 {
     _Bool _activateCalled;
     _Bool _invalidateCalled;
+    _Bool _runningAsCarry;
     NSDate *_syncMaxDate;
     NSDate *_syncRequestDate;
     NSObject<OS_dispatch_source> *_syncTimer;
@@ -28,6 +29,8 @@
 - (id)remoteObjectInterface;
 - (id)exportedInterface;
 - (id)machServiceName;
+- (id)millisecondsFromTimeInterval:(double)arg1;
+- (void)_logDashboardWatchSyncRequestWithIntervalFromStart:(double)arg1 remainingIntervalToWait:(double)arg2 intervalToMaxWait:(double)arg3;
 - (void)sendUICoordinationDate:(id)arg1;
 - (void)_requestToDismissUIHandler:(CDUnknownBlockType)arg1;
 - (void)requestToDismissUIHandler:(CDUnknownBlockType)arg1;

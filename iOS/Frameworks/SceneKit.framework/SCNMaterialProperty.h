@@ -16,6 +16,7 @@
     unsigned int _isPresentationInstance:1;
     unsigned int _isCommonProfileProperty:1;
     unsigned int _sRGB:1;
+    unsigned int _preventWarmup:1;
     BOOL _propertyType;
     id _parent;
     NSString *_customSlotName;
@@ -24,7 +25,7 @@
     UIColor *_borderColor;
     id _contents;
     unsigned char _contentType;
-    unsigned char _mappingChannel;
+    long long _mappingChannel;
     unsigned char _minificationFilter;
     unsigned char _magnificationFilter;
     unsigned char _mipFilter;
@@ -36,6 +37,7 @@
     // Error parsing type: ^{__C3DEffectSlot={__CFRuntimeBase=QAQ}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}, name: _customSlot
     struct __C3DImage *_c3dImage;
     struct SCNMatrix4 *_contentTransform;
+    id _runtimeResolvedPath;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -44,6 +46,7 @@
 + (id)_copyImageFromC3DImage:(struct __C3DImage *)arg1;
 + (struct __C3DImage *)copyC3DImageFromImage:(id)arg1;
 + (struct __C3DImage *)copyC3DImageFromImage:(id)arg1 textureOptions:(int)arg2;
++ (struct __C3DImage *)copyC3DImageFromImage:(id)arg1 textureOptions:(int)arg2 wasCached:(_Bool *)arg3;
 + (struct __C3DImage *)_copyC3DImageFromImageData:(id)arg1 typeID:(unsigned long long)arg2;
 + (id)dvt_supportedTypesForPropertyContents;
 + (id)materialPropertyWithContents:(id)arg1;
@@ -75,6 +78,7 @@
 - (void)copyPropertiesFrom:(id)arg1;
 - (void)_syncObjCModel;
 - (struct __C3DScene *)sceneRef;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;

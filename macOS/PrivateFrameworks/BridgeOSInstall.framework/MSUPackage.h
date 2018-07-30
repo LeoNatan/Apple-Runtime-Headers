@@ -13,19 +13,25 @@
     BOOL _shouldDownload;
     NSURL *_URL;
     NSNumber *_size;
-    NSString *_identifier;
-    NSString *_version;
     NSString *_digest;
     NSURL *_metadataURL;
+    NSURL *_integrityDataURL;
+    NSString *_integrityDataDigest;
+    NSNumber *_integrityDataSize;
+    NSString *_identifier;
+    NSString *_version;
     PKPackageInfo *_packageInfo;
 }
 
 @property BOOL shouldDownload; // @synthesize shouldDownload=_shouldDownload;
 @property(retain) PKPackageInfo *packageInfo; // @synthesize packageInfo=_packageInfo;
-@property(retain) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
-@property(retain) NSString *digest; // @synthesize digest=_digest;
 @property(retain) NSString *version; // @synthesize version=_version;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain) NSNumber *integrityDataSize; // @synthesize integrityDataSize=_integrityDataSize;
+@property(retain) NSString *integrityDataDigest; // @synthesize integrityDataDigest=_integrityDataDigest;
+@property(retain) NSURL *integrityDataURL; // @synthesize integrityDataURL=_integrityDataURL;
+@property(retain) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
+@property(retain) NSString *digest; // @synthesize digest=_digest;
 @property(retain) NSNumber *size; // @synthesize size=_size;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;

@@ -33,13 +33,13 @@
 @property unsigned long long minCount;
 @property unsigned long long maxCount;
 - (id)description;
+- (BOOL)_isSchemaEqual:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithName:(id)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6 fetchRequests:(id)arg7;
 - (void)_updateInverse:(id)arg1;
 - (BOOL)_nonPredicateValidateValue:(id *)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id *)arg4;
@@ -51,6 +51,7 @@
 - (void)_versionHash:(char *)arg1 inStyle:(unsigned long long)arg2;
 - (void)_versionHash:(char *)arg1 inStyle:(unsigned long long)arg2 proxyContext:(id)arg3;
 - (void)_createCachesAndOptimizeState;
+- (id)_initWithName:(id)arg1;
 
 @end
 

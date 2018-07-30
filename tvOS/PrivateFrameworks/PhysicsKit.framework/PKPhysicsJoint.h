@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
+#import "NSSecureCoding.h"
 
 @class PKPhysicsBody;
 
-@interface PKPhysicsJoint : NSObject <NSCoding>
+@interface PKPhysicsJoint : NSObject <NSSecureCoding>
 {
     _Bool _inUse;
     _Bool _implicit;
@@ -19,12 +19,14 @@
     PKPhysicsBody *_bodyB;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) PKPhysicsBody *bodyB; // @synthesize bodyB=_bodyB;
 @property(retain, nonatomic) PKPhysicsBody *bodyA; // @synthesize bodyA=_bodyA;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double reactionTorque;
 @property(readonly, nonatomic) struct CGVector reactionForce;
 - (id)init;
+- (_Bool)isEqualToJoint:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)create;

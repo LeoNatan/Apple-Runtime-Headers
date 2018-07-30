@@ -4,17 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/DMFTaskRequest.h>
 
-@class NSString;
+@class NSArray, NSString;
 
-@interface DMFFetchDeclarationsRequest : CATTaskRequest
+@interface DMFFetchDeclarationsRequest : DMFTaskRequest
 {
+    _Bool _includeInternalState;
+    _Bool _includePayloadContents;
     NSString *_organizationIdentifier;
+    NSArray *_payloadIdentifiers;
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+@property(nonatomic) _Bool includePayloadContents; // @synthesize includePayloadContents=_includePayloadContents;
+@property(nonatomic) _Bool includeInternalState; // @synthesize includeInternalState=_includeInternalState;
+@property(copy, nonatomic) NSArray *payloadIdentifiers; // @synthesize payloadIdentifiers=_payloadIdentifiers;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -19,6 +19,8 @@
     id <CNScheduler> _resourceLock;
 }
 
++ (id)makeIMessageRequestsCache;
++ (id)makeFaceTimeRequestsCache;
 @property(retain, nonatomic) id <CNScheduler> resourceLock; // @synthesize resourceLock=_resourceLock;
 @property(retain, nonatomic) NSArray *requestFutures; // @synthesize requestFutures=_requestFutures;
 @property(retain, nonatomic) CNCache *iMessageRequests; // @synthesize iMessageRequests=_iMessageRequests;

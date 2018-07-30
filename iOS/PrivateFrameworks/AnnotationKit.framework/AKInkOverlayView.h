@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) UIGestureRecognizer *pinchGestureRecognizer;
 @property(readonly, nonatomic) UIGestureRecognizer *drawingGestureRecognizer;
 - (void)canvasView:(id)arg1 drawingDidChange:(id)arg2;
+- (void)canvasViewDidCancelStroke:(id)arg1;
 - (void)canvasViewDidEndStroke:(id)arg1;
 - (void)canvasViewDidBeginNewStroke:(id)arg1;
 - (_Bool)canvasView:(id)arg1 shouldBeginDrawingWithTouch:(id)arg2;

@@ -25,16 +25,17 @@ __attribute__((visibility("hidden")))
     struct TFENode _relativeToNode;
     struct TGoToPathToAutoCompleteHelper _autoCompleteHelper;
     struct TriStateBool _isTabAutoCompleting;
-    struct TNSRef<FI_TGoToAutoCompletionController *, void> _autoCompletionController;
-    struct TNSRef<FI_TGoToFieldEditor *, void> _fieldEditor;
+    struct TNSRef<FI_TGoToAutoCompletionController, void> _autoCompletionController;
+    struct TNSRef<FI_TGoToFieldEditor, void> _fieldEditor;
     id <TGoToWindowDelegate> _delegate;
     NSWindow *_parentWindow;
     _Bool _allowLeftoverLastPathComponent;
     _Bool _selectionChangedDuringAutoCompletion;
     function_8027184b _completionHandler;
+    TNSWeakPtr_a131d41e _autoCompleteNowToken;
     struct TNotificationCenterObserver _textDidChangeObserver;
     struct TNotificationCenterObserver _didChangeSelectionObserver;
-    struct TNSRef<NSTouchBar *, void> _goAndCancelButtonsTouchBar;
+    struct TNSRef<NSTouchBar, void> _goAndCancelButtonsTouchBar;
     struct TKeyValueBinder _goTouchBarButtonBinder;
 }
 

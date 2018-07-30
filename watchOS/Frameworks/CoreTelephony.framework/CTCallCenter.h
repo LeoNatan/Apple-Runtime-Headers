@@ -19,7 +19,7 @@
     CXCallObserver *_callKitObserver;
 }
 
-@property CXCallObserver *callKitObserver; // @synthesize callKitObserver=_callKitObserver;
+@property(retain) CXCallObserver *callKitObserver; // @synthesize callKitObserver=_callKitObserver;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;

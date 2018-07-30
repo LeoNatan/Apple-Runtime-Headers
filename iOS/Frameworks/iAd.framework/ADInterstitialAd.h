@@ -8,7 +8,7 @@
 
 #import "ADAdRecipient.h"
 
-@class ADAdSpace, ADInterstitialAdPresentationViewController, ADInterstitialView, NSString, UIView, UIViewController;
+@class ADAdSpace, ADInterstitialAdPresentationViewController, ADInterstitialView, ADLayoutOptions, NSString, UIView, UIViewController;
 
 @interface ADInterstitialAd : NSObject <ADAdRecipient>
 {
@@ -29,20 +29,22 @@
     long long _options;
     NSString *_adResponseId;
     long long _lastErrorCode;
+    ADLayoutOptions *_layoutOptions;
     ADInterstitialAdPresentationViewController *_presentationViewController;
-    ADInterstitialView *_interstitialView;
     ADAdSpace *_adSpace;
+    ADInterstitialView *_interstitialView;
 }
 
 @property(nonatomic) _Bool hasLoadedFirstAd; // @synthesize hasLoadedFirstAd=_hasLoadedFirstAd;
 @property(nonatomic) _Bool canLoadMoreThanOnce; // @synthesize canLoadMoreThanOnce=_canLoadMoreThanOnce;
-@property(retain, nonatomic) ADAdSpace *adSpace; // @synthesize adSpace=_adSpace;
 @property(retain, nonatomic) ADInterstitialView *interstitialView; // @synthesize interstitialView=_interstitialView;
+@property(retain, nonatomic) ADAdSpace *adSpace; // @synthesize adSpace=_adSpace;
 @property(nonatomic) _Bool requestCalledbackError; // @synthesize requestCalledbackError=_requestCalledbackError;
 @property(retain, nonatomic) ADInterstitialAdPresentationViewController *presentationViewController; // @synthesize presentationViewController=_presentationViewController;
 @property(nonatomic) int creativeType; // @synthesize creativeType=_creativeType;
 @property(nonatomic) _Bool dimmingEnabled; // @synthesize dimmingEnabled=_dimmingEnabled;
 @property(nonatomic, getter=isActionInProgress) _Bool actionInProgress; // @synthesize actionInProgress=_actionInProgress;
+@property(retain, nonatomic) ADLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic) _Bool reUsed; // @synthesize reUsed=_reUsed;
 @property(nonatomic) _Bool displayed; // @synthesize displayed=_displayed;
 @property(nonatomic) long long lastErrorCode; // @synthesize lastErrorCode=_lastErrorCode;
@@ -91,11 +93,11 @@
 - (void)_presentFromViewController:(id)arg1;
 - (void)presentFromViewController:(id)arg1;
 - (_Bool)presentInView:(id)arg1;
-- (_Bool)_shouldClampPresentedFrame;
 - (void)cancelAction;
 @property(readonly, nonatomic) UIViewController *presentingViewController;
 @property(nonatomic) __weak UIViewController *internalPresentingViewController;
 @property(readonly, nonatomic) UIView *adSpaceView;
+- (id)_initWithInternalAdType:(int)arg1 layoutOptions:(id)arg2 options:(long long)arg3;
 - (id)initWithCreativeType:(int)arg1 options:(long long)arg2;
 - (id)init;
 - (void)dealloc;

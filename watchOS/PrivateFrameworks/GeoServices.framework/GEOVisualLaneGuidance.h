@@ -14,10 +14,13 @@
 {
     NSMutableArray *_instructions;
     NSMutableArray *_laneInfos;
+    NSMutableArray *_titles;
 }
 
++ (Class)titleType;
 + (Class)instructionType;
 + (Class)laneInfoType;
+@property(retain, nonatomic) NSMutableArray *titles; // @synthesize titles=_titles;
 @property(retain, nonatomic) NSMutableArray *instructions; // @synthesize instructions=_instructions;
 @property(retain, nonatomic) NSMutableArray *laneInfos; // @synthesize laneInfos=_laneInfos;
 - (void).cxx_destruct;
@@ -30,6 +33,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)titleAtIndex:(unsigned int)arg1;
+- (unsigned int)titlesCount;
+- (void)addTitle:(id)arg1;
+- (void)clearTitles;
 - (id)instructionAtIndex:(unsigned int)arg1;
 - (unsigned int)instructionsCount;
 - (void)addInstruction:(id)arg1;

@@ -17,9 +17,11 @@
         unsigned int didFailToConnectPeripheral:1;
         unsigned int didDisconnectPeripheral:1;
         unsigned int didUpdatePeripheralConnectionState:1;
+        unsigned int didFindPeripheral:1;
         unsigned int didLosePeripheral:1;
         unsigned int didLoseZone:1;
         unsigned int didUpdateConnectionParameters:1;
+        unsigned int connectionEventDidOccur:1;
     } _delegateFlags;
     _Bool _isScanning;
     id <CBCentralManagerDelegate> _delegate;
@@ -33,6 +35,7 @@
 - (void)handleMsg:(unsigned short)arg1 args:(id)arg2;
 - (_Bool)isMsgAllowedAlways:(unsigned short)arg1;
 - (_Bool)isMsgAllowedWhenOff:(unsigned short)arg1;
+- (id)retrievePeripheralWithAddress:(id)arg1;
 - (void)handleReadyForUpdates:(id)arg1;
 - (void)handleConnectionParametersUpdated:(id)arg1;
 - (void)handleZoneLost:(id)arg1;
@@ -40,10 +43,16 @@
 - (void)handleApplicationActivityEvent:(id)arg1;
 - (void)handlePeripheralTrackingUpdated:(id)arg1;
 - (void)handlePeripheralConnectionStateUpdated:(id)arg1;
+- (void)handleApplicationConnectionEventDidOccur:(id)arg1;
 - (void)handlePeripheralDisconnectionCompleted:(id)arg1;
 - (void)handlePeripheralConnectionCompleted:(id)arg1;
 - (void)handlePeripheralDiscovered:(id)arg1;
 - (void)handleRestoringState:(id)arg1;
+- (void)resumeScans;
+- (void)pauseScans;
+- (void)resumeLeConnectionManager;
+- (void)pauseLeConnectionManager;
+- (void)setConnectionEventOptions:(id)arg1;
 - (void)enablePrivateModeForPeripheral:(id)arg1 forDuration:(unsigned short)arg2;
 - (void)stopTrackingPeripheral:(id)arg1 options:(id)arg2;
 - (void)startTrackingPeripheral:(id)arg1 options:(id)arg2;

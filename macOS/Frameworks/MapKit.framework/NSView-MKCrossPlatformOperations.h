@@ -24,6 +24,7 @@
 - (BOOL)_mapkit_isDescendantOfView:(id)arg1;
 - (void)_mapkit_insertSubviewBelowAllOtherSubviews:(id)arg1;
 - (void)_mapkit_insertSubviewAboveAllOtherSubviews:(id)arg1;
+- (BOOL)_mapkit_isRTL;
 - (void)_mapKit_setNeedsDisplay;
 - (struct CGSize)_mapkit_fittingSize;
 - (void)_mapkit_setBackgroundColor:(id)arg1;
@@ -34,7 +35,9 @@
 - (void)set_mapkit_preservesSuperviewLayoutMargins:(BOOL)arg1;
 - (BOOL)_mapkit_preservesSuperviewLayoutMargins;
 - (void)_mapkit_tintColorDidChange;
+- (void)_mapkit_layoutBelowIfNeeded;
 - (void)_mapkit_layoutIfNeeded;
+- (void)_mapkit_updateConstraintsIfNeeded;
 - (void)_mapkit_setNeedsLayout;
 - (void)_mapkit_setNeedsUpdateConstraints;
 @end

@@ -14,32 +14,42 @@
 @interface MSMessagesAppViewController : UIViewController <MSConversationDelegate, MSMessagesAppTranscriptPresentation>
 {
     _Bool _isReadyForDisplay;
+    _Bool _viewHasAppeared;
     MSConversation *_activeConversation;
     id <_MSMessageComposeExtensionImplProtocol> _appContext;
+    struct CGRect _initialFrameBeforeAppearance;
 }
 
 @property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> appContext; // @synthesize appContext=_appContext;
+@property(nonatomic) struct CGRect initialFrameBeforeAppearance; // @synthesize initialFrameBeforeAppearance=_initialFrameBeforeAppearance;
+@property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(nonatomic) _Bool isReadyForDisplay; // @synthesize isReadyForDisplay=_isReadyForDisplay;
 @property(retain, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
 - (void).cxx_destruct;
+- (void)_prepareForPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_didRemoveAssetArchiveWithIdentifier:(id)arg1;
 - (_Bool)_handleTextInputPayload:(id)arg1 withPayloadID:(id)arg2;
 - (void)_validateMessageForSending:(id)arg1 conversation:(id)arg2 associatedText:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_validateMessageForSending:(id)arg1 conversation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) struct UIEdgeInsets _balloonMaskEdgeInsets;
+- (void)contentDidLoad;
 - (void)requestResize;
 - (void)setReadyForDisplay;
 - (_Bool)displaysAfterAppearance;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (struct CGSize)contentSizeThatFits:(struct CGSize)arg1;
 - (void)updateSnapshotWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)didResignActiveWithConversation:(id)arg1;
 - (void)willResignActiveWithConversation:(id)arg1;
 - (void)didBecomeActiveWithConversation:(id)arg1;
 - (void)willBecomeActiveWithConversation:(id)arg1;
+@property(readonly, nonatomic) unsigned int presentationContext;
 @property(readonly, nonatomic) unsigned int presentationStyle;
 - (void)requestPresentationStyle:(unsigned int)arg1;
 - (void)_conversation:(id)arg1 didSelectMessage:(id)arg2;
 - (void)_conversation:(id)arg1 willSelectMessage:(id)arg2;
+- (void)viewWillLayoutSubviews;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)dealloc;
 - (void)didTransitionToPresentationStyle:(unsigned int)arg1;
@@ -50,6 +60,7 @@
 - (void)didSelectMessage:(id)arg1 conversation:(id)arg2;
 - (void)willSelectMessage:(id)arg1 conversation:(id)arg2;
 - (void)dismiss;
+- (void)_dismissAndPresentPhotosApp;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

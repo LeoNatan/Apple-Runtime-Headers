@@ -9,24 +9,23 @@
 #import "HMDeviceSetupSessionDelegate.h"
 #import "HMFLogging.h"
 
-@class HMAccessory, HMDeviceSetupSession, NSError, NSObject<OS_dispatch_queue>, NSString, TRSession;
+@class HMAccessory, HMDeviceSetupSession, HMFUnfairLock, NSError, NSObject<OS_dispatch_queue>, NSString, TRSession;
 
 @interface HMDeviceSetupOperation : NSOperation <HMDeviceSetupSessionDelegate, HMFLogging>
 {
+    HMFUnfairLock *_lock;
     _Bool _executing;
     _Bool _finished;
     NSError *_error;
     HMAccessory *_accessory;
     TRSession *_session;
     NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMDeviceSetupSession *_setupSession;
 }
 
 + (id)logCategory;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(readonly, nonatomic) HMDeviceSetupSession *setupSession; // @synthesize setupSession=_setupSession;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly) __weak TRSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;

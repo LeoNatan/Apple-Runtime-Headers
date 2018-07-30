@@ -6,13 +6,16 @@
 
 #import <AppKit/NSToolbarItem.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarGapItem : NSToolbarItem
 {
     double resizeWeight;
     BOOL resizeWeightSharedWithDuplicateItems;
+    BOOL _isSpace;
     NSToolbarItem *_proxiedToolbarItem;
 }
 
+- (BOOL)isSpace;
 - (id)proxiedToolbarItem;
 - (BOOL)_resizeWeightSharedWithDuplicateItems;
 - (double)_resizeWeight;

@@ -11,6 +11,7 @@
 }
 
 - (void)setTitles:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)updateAppearance;
 - (void)viewDidMoveToSuperview;
 - (id)init;

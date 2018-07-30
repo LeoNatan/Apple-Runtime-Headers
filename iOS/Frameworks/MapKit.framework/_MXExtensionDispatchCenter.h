@@ -8,7 +8,6 @@
 
 @class NSHashTable, NSObject<OS_dispatch_queue>, _MXExtensionProvider;
 
-__attribute__((visibility("hidden")))
 @interface _MXExtensionDispatchCenter : NSObject
 {
     NSObject<OS_dispatch_queue> *_lock;

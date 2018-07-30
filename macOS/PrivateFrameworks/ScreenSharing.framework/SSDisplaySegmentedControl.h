@@ -11,6 +11,8 @@
 @interface SSDisplaySegmentedControl : NSSegmentedControl
 {
     NSArray *_screens;
+    BOOL _touchBarStyle;
+    struct CGColor *_grayColor;
     id _boundObjectForSelectedScreen;
     NSString *_boundKeyPathForSelectedScreen;
     struct CGRect _globalScreenRect;
@@ -19,6 +21,7 @@
 @property(copy) NSString *boundKeyPathForSelectedScreen; // @synthesize boundKeyPathForSelectedScreen=_boundKeyPathForSelectedScreen;
 @property id boundObjectForSelectedScreen; // @synthesize boundObjectForSelectedScreen=_boundObjectForSelectedScreen;
 @property struct CGRect globalScreenRect; // @synthesize globalScreenRect=_globalScreenRect;
+@property struct CGColor *grayColor; // @synthesize grayColor=_grayColor;
 - (struct CGImage *)newImageForSegment:(unsigned long long)arg1 size:(struct CGSize)arg2 scaleFactor:(double)arg3;
 - (struct CGImage *)newImageForSegment:(unsigned long long)arg1 size:(struct CGSize)arg2;
 - (void)screenImageSize:(struct CGSize *)arg1 andScaleFactor:(double *)arg2;
@@ -31,6 +34,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)unbind:(id)arg1;
 - (void)bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
+@property BOOL touchBarStyle; // @synthesize touchBarStyle=_touchBarStyle;
 - (void)dealloc;
 - (id)init;
 

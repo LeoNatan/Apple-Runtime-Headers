@@ -9,10 +9,11 @@
 #import "CSSearchableIndexDelegate.h"
 #import "MFDiagnosticsGenerator.h"
 #import "MFLibrarySearchableIndexVerifierDataSource.h"
+#import "MFSearchableIndexSchedulable.h"
 
-@class CSSearchableIndex, MFCancelationToken, MFCoalescer, MFLazyCache, MFWeakSet, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSString, _MFLibrarySearchableIndexBudgetConfiguration, _MFLibrarySearchableIndexPendingRemovals;
+@class CSSearchableIndex, MFCancelationToken, MFLazyCache, MFWeakSet, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_os_activity>, NSString, _MFLibrarySearchableIndexPendingRemovals;
 
-@interface MFLibrarySearchableIndex : NSObject <MFDiagnosticsGenerator, CSSearchableIndexDelegate, MFLibrarySearchableIndexVerifierDataSource>
+@interface MFLibrarySearchableIndex : NSObject <MFDiagnosticsGenerator, CSSearchableIndexDelegate, MFLibrarySearchableIndexVerifierDataSource, MFSearchableIndexSchedulable>
 {
     NSString *_indexName;
     MFCancelationToken *_cancelationToken;
@@ -23,9 +24,6 @@
     unsigned long long _throttledIndexingBatchSize;
     unsigned long long _throttledDataSourceBatchSize;
     unsigned long long _currentMaximumBatchSize;
-    MFCoalescer *_budgetCoalescer;
-    double _remainingIndexingBudget;
-    long long _remainingIndexingBudgetOverage;
     NSObject<OS_os_activity> *_batchIndexingActivity;
     NSMutableArray *_pendingItems;
     NSMutableSet *_pendingDomainRemovals;
@@ -44,8 +42,9 @@
     _Bool _scheduledProcessing;
     _Bool _scheduledRefresh;
     _Bool _scheduledVerification;
+    _Bool _dataSourceIndexingPermitted;
     id <MFLibrarySearchableIndexDataSource> _dataSource;
-    _MFLibrarySearchableIndexBudgetConfiguration *_budgetConfiguration;
+    id <MFSearchableIndexSchedulableDelegate> _schedulableDelegate;
     CSSearchableIndex *_csIndex;
 }
 
@@ -53,8 +52,10 @@
 + (id)_localClientState;
 + (id)_localClientStateURL;
 @property(retain, nonatomic) CSSearchableIndex *csIndex; // @synthesize csIndex=_csIndex;
-@property(readonly, nonatomic) _MFLibrarySearchableIndexBudgetConfiguration *budgetConfiguration; // @synthesize budgetConfiguration=_budgetConfiguration;
-@property(nonatomic) id <MFLibrarySearchableIndexDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) __weak id <MFSearchableIndexSchedulableDelegate> schedulableDelegate; // @synthesize schedulableDelegate=_schedulableDelegate;
+@property(nonatomic) __weak id <MFLibrarySearchableIndexDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic, getter=isDataSourceIndexingPermitted) _Bool dataSourceIndexingPermitted; // @synthesize dataSourceIndexingPermitted=_dataSourceIndexingPermitted;
+- (void).cxx_destruct;
 - (id)identifiersMatchingCriterion:(id)arg1;
 - (void)removeAllItems;
 - (void)removeItemsForDomainIdentifier:(id)arg1;
@@ -76,7 +77,6 @@
 - (void)_processIndexingBatch:(id)arg1 clientState:(id)arg2;
 - (void)_getDomainRemovals:(id *)arg1 identifierRemovals:(id *)arg2;
 - (id)_consumeBatchOfSize:(unsigned long long)arg1;
-- (void)_logIndexingPowerEventWithIdentifier:(id)arg1 additionalEventData:(id)arg2 usePersistentLog:(_Bool)arg3;
 - (void)_scheduleDataSourceRefresh;
 - (void)_scheduleProcessPendingItems;
 - (void)_queueTransitionActive:(_Bool)arg1;
@@ -111,14 +111,9 @@
 - (void)_registerDistantFutureSpotlightVerification;
 - (void)_scheduleSpotlightVerificationOnIndexingQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_scheduleSpotlightVerification;
-- (void)setRemainingIndexingBudget:(double)arg1 shouldPersist:(_Bool)arg2;
-- (void)_persistRemainingIndexingBudgetValue:(id)arg1;
-- (void)_scheduleResetIndexingBudgetTimer;
-- (void)_resetIndexingBudgetTimer;
-- (double)persistedRemainingIndexingBudget;
-- (id)_budgetPersistenceKey;
-- (void)_powerStateChanged;
+@property(readonly, copy, nonatomic) NSString *indexName;
 @property(readonly, nonatomic) unsigned long long pendingIndexItemsCount;
+- (void)_powerStateChanged;
 - (id)copyDiagnosticInformation;
 - (void)addMiddleware:(id)arg1;
 - (void)dealloc;

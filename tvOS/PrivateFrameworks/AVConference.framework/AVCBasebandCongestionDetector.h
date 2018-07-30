@@ -17,23 +17,30 @@ __attribute__((visibility("hidden")))
     VCRateControlMediaController *_mediaController;
     VCBasebandMetrics *_basebandMetrics;
     double _notificationArrivalTime;
+    unsigned int _basebandTxBitrate;
+    unsigned int _basebandAverageBitrate;
+    unsigned int _basebandQueueDepth;
+    double _basebandExpectedQueuingDelay;
     unsigned int _targetBitrate;
     _Bool _isTargetBitrateStabilized;
     void *_logBasebandDump;
 }
 
+@property(readonly, nonatomic) double basebandExpectedQueuingDelay; // @synthesize basebandExpectedQueuingDelay=_basebandExpectedQueuingDelay;
+@property(readonly, nonatomic) unsigned int basebandQueueDepth; // @synthesize basebandQueueDepth=_basebandQueueDepth;
+@property(readonly, nonatomic) unsigned int basebandAverageBitrate; // @synthesize basebandAverageBitrate=_basebandAverageBitrate;
+@property(readonly, nonatomic) unsigned int basebandTxBitrate; // @synthesize basebandTxBitrate=_basebandTxBitrate;
 @property(retain, nonatomic) VCRateControlMediaController *mediaController; // @synthesize mediaController=_mediaController;
 @property(retain, nonatomic) AVCStatisticsCollector *statisticsCollector; // @synthesize statisticsCollector=_statisticsCollector;
 @property(nonatomic) _Bool isTargetBitrateStabilized; // @synthesize isTargetBitrateStabilized=_isTargetBitrateStabilized;
 @property(nonatomic) unsigned int targetBitrate; // @synthesize targetBitrate=_targetBitrate;
 @property(nonatomic) unsigned int mode; // @synthesize mode=_mode;
 @property(nonatomic) unsigned int radioAccessTechnology; // @synthesize radioAccessTechnology=_radioAccessTechnology;
-- (void)printFlushAckToBasebandDump:(unsigned char)arg1 transactionID:(unsigned short)arg2 packetDropped:(unsigned short)arg3 sequenceNumberArray:(unsigned short *)arg4 isBDCDListReset:(_Bool)arg5;
-- (void)processBasebandAck:(CDStruct_f402fb06 *)arg1;
-- (_Bool)parseBasebandNotification:(char *)arg1 size:(int)arg2 arrivalTime:(double)arg3 basebandNotification:(CDStruct_f402fb06 *)arg4;
+- (void)printFlushAckToBasebandDump:(unsigned char)arg1 transactionID:(unsigned short)arg2 packetDropped:(unsigned short)arg3 sequenceNumberArray:(unsigned short *)arg4;
+- (void)processBasebandAck:(CDStruct_b203c80d *)arg1;
 - (void)enableBasebandLogDump:(void *)arg1;
-- (_Bool)processBasebandNotificationWithBuffer:(char *)arg1 size:(int)arg2 arrivalTime:(double)arg3 error:(id *)arg4;
-- (_Bool)processBasebandNotification:(id)arg1 metaDate:(id)arg2 error:(id *)arg3;
+- (_Bool)processBasebandNotification:(CDStruct_b203c80d *)arg1 arrivalTime:(double)arg2 error:(id *)arg3;
+- (_Bool)processBasebandNotification:(id)arg1 metaData:(id)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (id)init;
 

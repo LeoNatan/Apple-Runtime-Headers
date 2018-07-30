@@ -33,7 +33,6 @@
 - (long long)integerForKey:(id)arg1;
 - (_Bool)boolForKey:(id)arg1;
 - (void)resetLocale;
-- (id)localSharedDefaults;
 - (id)init;
 
 @end

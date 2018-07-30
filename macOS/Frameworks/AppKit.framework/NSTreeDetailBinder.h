@@ -6,6 +6,7 @@
 
 #import <AppKit/NSArrayDetailBinder.h>
 
+__attribute__((visibility("hidden")))
 @interface NSTreeDetailBinder : NSArrayDetailBinder
 {
     struct __treeDetailBinderFlags {

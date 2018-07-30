@@ -17,9 +17,9 @@
 @property(retain, nonatomic, setter=_setDate:) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
 - (void)_handleSignificantTimeChange:(id)arg1;
-- (void)_resetIcons;
-- (id)_iconWithOutline;
-- (id)_iconWithFormat:(int)arg1;
+- (void)_resetIconsImpl;
+- (id)_queue_iconWithOutlineForWidgetWithIdentifier:(id)arg1 extension:(id)arg2;
+- (id)_queue_iconWithFormat:(int)arg1 forWidgetWithIdentifier:(id)arg2 extension:(id)arg3;
 - (id)initWithExtension:(id)arg1;
 
 @end

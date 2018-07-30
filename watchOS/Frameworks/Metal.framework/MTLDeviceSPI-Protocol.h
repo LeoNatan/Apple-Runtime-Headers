@@ -6,17 +6,21 @@
 
 #import "MTLDevice.h"
 
-@class MTLCommandQueueDescriptor, MTLComputePipelineDescriptor, MTLStructType, MTLTextureDescriptor, NSArray, NSData, NSObject<OS_dispatch_data>, NSString, _MTLIndirectArgumentBufferLayout;
+@class MTLCommandQueueDescriptor, MTLComputePipelineDescriptor, MTLIndirectCommandBufferDescriptor, MTLStructType, MTLTextureDescriptor, NSArray, NSData, NSObject<OS_dispatch_data>, NSString, _MTLIndirectArgumentBufferLayout;
 
 @protocol MTLDeviceSPI <MTLDevice>
 + (void)registerDevices;
-+ (_Bool)metalBufferSanitizerEnabled;
 @property(readonly) struct IndirectArgumentBufferCapabilities indirectArgumentBufferCapabilities;
 @property(readonly) unsigned long long dedicatedMemorySize;
 @property(readonly) unsigned long long sharedMemorySize;
 @property(readonly) _Bool supportPriorityBand;
 @property(readonly) unsigned int maxFramebufferStorageBits;
+@property(readonly) unsigned int maxTextureBufferWidth;
 @property(readonly) unsigned int maxCustomSamplePositions;
+@property(readonly) unsigned int maxIndirectSamplersPerDevice;
+@property(readonly) unsigned int maxIndirectSamplers;
+@property(readonly) unsigned int maxIndirectTextures;
+@property(readonly) unsigned int maxIndirectBuffers;
 @property(readonly) unsigned int maxTessellationFactor;
 @property(readonly) unsigned int maxInterpolatedComponents;
 @property(readonly) unsigned int maxComputeThreadgroupMemoryAlignmentBytes;
@@ -36,7 +40,6 @@
 @property(readonly) unsigned int maxTextureWidth1D;
 @property(readonly) unsigned int minBufferNoCopyAlignmentBytes;
 @property(readonly) unsigned int minConstantBufferAlignmentBytes;
-@property(readonly) unsigned int maxBufferLength;
 @property(readonly) unsigned int maxVisibilityQueryOffset;
 @property(readonly) float maxPointSize;
 @property(readonly) float maxLineWidth;
@@ -58,12 +61,15 @@
 @property(readonly) unsigned int maxVertexBuffers;
 @property(readonly) unsigned int maxVertexAttributes;
 @property(readonly) unsigned int maxColorAttachments;
-@property(readonly) const CDStruct_efe68850 *limits;
+@property(readonly) const CDStruct_e0f830ab *limits;
 @property(readonly) unsigned int featureProfile;
 @property(nonatomic) _Bool metalAssertionsEnabled;
 @property(readonly) unsigned int doubleFPConfig;
 @property(readonly) unsigned int singleFPConfig;
 @property(readonly) unsigned int halfFPConfig;
+- (id <MTLSharedEvent>)newSharedEventWithMachPort:(unsigned int)arg1;
+- (id <MTLIndirectRenderCommandEncoder>)newIndirectRenderCommandEncoderWithBuffer:(id <MTLBuffer>)arg1;
+- (id <MTLBuffer>)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCount:(unsigned int)arg2 options:(unsigned int)arg3;
 - (id <MTLArgumentEncoder>)newArgumentEncoderWithLayout:(_MTLIndirectArgumentBufferLayout *)arg1;
 - (id <MTLIndirectArgumentEncoder>)newIndirectArgumentEncoderWithLayout:(_MTLIndirectArgumentBufferLayout *)arg1;
 - (_MTLIndirectArgumentBufferLayout *)newIndirectArgumentBufferLayoutWithStructType:(MTLStructType *)arg1;
@@ -75,17 +81,18 @@
 - (unsigned int)minLinearTextureAlignmentForPixelFormat:(unsigned int)arg1;
 - (_Bool)deviceOrFeatureProfileSupportsFeatureSet:(unsigned int)arg1;
 - (_Bool)deviceSupportsFeatureSet:(unsigned int)arg1;
+- (id <MTLDevice>)_deviceWrapper;
 - (void)_setDeviceWrapper:(id <MTLDeviceSPI>)arg1;
 - (void)compilerPropagatesThreadPriority:(_Bool)arg1;
+- (NSString *)productName;
+- (NSString *)familyName;
+- (NSString *)vendorName;
 
 @optional
 @property(readonly, getter=isQuadDataSharingSupported) _Bool quadDataSharingSupported;
 @property(readonly) const struct MTLTargetDeviceArch *targetDeviceInfo;
 @property(readonly) unsigned int indirectArgumentBuffersSupport;
 @property _Bool shaderDebugInfoCaching;
-- (NSString *)productName;
-- (NSString *)familyName;
-- (NSString *)vendorName;
 - (id <MTLTextureLayout>)newTextureLayoutWithDescriptor:(MTLTextureDescriptor *)arg1 isHeapOrBufferBacked:(_Bool)arg2;
 - (id <MTLTexture>)newTextureWithBytesNoCopy:(void *)arg1 length:(unsigned int)arg2 descriptor:(MTLTextureDescriptor *)arg3 deallocator:(void (^)(void *, unsigned int))arg4;
 - (NSData *)endCollectingPipelineDescriptors;
@@ -95,10 +102,15 @@
 - (id <MTLLibrary>)newLibraryWithCIFilters:(NSArray *)arg1 imageFilterFunctionInfo:(const CDStruct_2ff3bdf0 *)arg2 error:(id *)arg3;
 - (id <MTLComputePipelineState>)newComputePipelineStateWithImageFilterFunctionsSPI:(NSArray *)arg1 imageFilterFunctionInfo:(const CDStruct_2ff3bdf0 *)arg2 error:(id *)arg3;
 - (id <MTLIndirectArgumentEncoder>)newIndirectArgumentEncoderWithArguments:(NSArray *)arg1;
+- (void *)getShaderCacheKeys;
+- (id <MTLFunction>)newFunctionWithGLIR:(void *)arg1 inputsDescription:(NSObject<OS_dispatch_data> *)arg2 functionType:(unsigned int)arg3;
+- (id <MTLFunction>)newFunctionWithGLIR:(void *)arg1 functionType:(unsigned int)arg2;
 - (void)newComputePipelineStateWithDescriptor:(MTLComputePipelineDescriptor *)arg1 completionHandler:(void (^)(id <MTLComputePipelineState>, NSError *))arg2;
 - (id <MTLComputePipelineState>)newComputePipelineStateWithDescriptor:(MTLComputePipelineDescriptor *)arg1 error:(id *)arg2;
 - (void)unmapShaderSampleBuffer;
 - (_Bool)mapShaderSampleBufferWithBuffer:(CDStruct_32a7f38a *)arg1 capacity:(unsigned int)arg2 size:(unsigned int)arg3;
+- (void)reserveResourceIndicesForResourceType:(unsigned int)arg1 indices:(unsigned long long *)arg2 indexCount:(unsigned int)arg3;
+- (unsigned int)resourcePatchingTypeForResourceType:(unsigned int)arg1;
 - (void)setupMPSFunctionTable:(struct MPSFunctionTable *)arg1;
 - (void)setIndirectArgumentBufferDecodingData:(NSObject<OS_dispatch_data> *)arg1;
 - (NSObject<OS_dispatch_data> *)indirectArgumentBufferDecodingData;

@@ -8,7 +8,6 @@
 
 @class EDReferenceCollection, EDWorkbook;
 
-__attribute__((visibility("hidden")))
 @interface CHDFormula : EDFormula
 {
     EDReferenceCollection *mReferences;
@@ -17,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (id)formulaWithReferences:(id)arg1;
 + (id)formulaWithReference:(id)arg1;
+- (void).cxx_destruct;
 - (id)constantValuesFromConstantStringFormula;
 - (_Bool)isConstantStringFormula;
 - (void)prepareTokens;
@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)setReferences:(id)arg1;
 - (id)references;
 - (void)setWorkbook:(id)arg1;
-- (void)dealloc;
 - (id)initWithReferences:(id)arg1;
 - (id)initWithReference:(id)arg1;
 - (id)initWithWorkbook:(id)arg1;

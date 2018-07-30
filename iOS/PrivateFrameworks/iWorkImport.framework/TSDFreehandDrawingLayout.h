@@ -20,11 +20,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double opacity;
 - (id)p_sizeEnforcingChild;
 - (struct CGRect)computeBoundsForStandardKnobs;
+- (_Bool)descendentWrappablesContainsWrappable:(id)arg1;
 - (id)descendentWrappables;
+- (_Bool)shouldSnapWhileResizing;
 - (id)additionalDependenciesForChildLayout:(id)arg1;
 - (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
 - (id)additionalInfosForChildLayouts;
 @property(readonly, nonatomic) _Bool shouldSpacerShapeProvideSpace;
+- (struct CGSize)minimumSize;
+- (void)processChangedProperty:(int)arg1;
 @property(readonly, nonatomic) TSDFreehandDrawingInfo *freehandInfo;
 
 @end

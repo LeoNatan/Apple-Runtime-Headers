@@ -19,6 +19,7 @@
 - (id)value;
 - (BOOL)hasValue;
 - (unsigned long long)eventType;
+- (id)description;
 - (id)initWithResult:(id)arg1;
 
 @end

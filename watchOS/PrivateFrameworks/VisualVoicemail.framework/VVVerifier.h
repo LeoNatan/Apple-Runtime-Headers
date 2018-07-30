@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMutableDictionary;
+@class NSArray, NSMutableDictionary, NSString;
 
 @interface VVVerifier : NSObject
 {
     NSMutableDictionary *_checkpointDictionary;
     NSArray *_keyDescriptions;
+    NSString *_serviceIdentifier;
 }
 
-+ (id)sharedVerifier;
++ (id)homeDirectory;
+@property(readonly, copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 - (void).cxx_destruct;
 - (id)humanReadableConfigurationDictionary:(id *)arg1;
 - (void)_mapFromSourceDictionary:(id)arg1 destinationDictionary:(id)arg2 inKey:(id)arg3 outDescription:(id)arg4;
@@ -27,6 +29,7 @@
 - (void)_saveCheckpointDictionary;
 - (id)_checkpointDictionary;
 - (id)_checkpointDictionaryFilePath;
+- (id)initWithServiceIdentifier:(id)arg1;
 
 @end
 

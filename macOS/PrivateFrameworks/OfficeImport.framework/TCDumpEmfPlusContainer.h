@@ -6,7 +6,6 @@
 
 #import <OfficeImport/TCDumpType.h>
 
-__attribute__((visibility("hidden")))
 @interface TCDumpEmfPlusContainer : TCDumpType
 {
 }

@@ -30,8 +30,12 @@
 - (BOOL)stopEmulation;
 - (BOOL)startEmulation:(id)arg1 withMessageType:(unsigned int)arg2 error:(id *)arg3;
 - (BOOL)startEmulation:(id)arg1 withMessageType:(unsigned int)arg2;
+- (BOOL)startEmulation:(id)arg1 error:(id *)arg2;
+- (BOOL)startEmulation:(id)arg1;
 - (BOOL)startEmulationWithNdefMessage:(id)arg1 withMessageType:(unsigned int)arg2 error:(id *)arg3;
 - (BOOL)startEmulationWithNdefMessage:(id)arg1 withMessageType:(unsigned int)arg2;
+- (BOOL)startEmulationWithNdefMessage:(id)arg1 error:(id *)arg2;
+- (BOOL)startEmulationWithNdefMessage:(id)arg1;
 - (void)didTagStateChange:(unsigned int)arg1;
 - (void)didEndUnexpectedly;
 - (void)endSession;

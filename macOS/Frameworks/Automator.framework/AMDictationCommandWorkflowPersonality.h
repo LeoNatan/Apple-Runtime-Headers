@@ -10,12 +10,12 @@
 {
 }
 
-- (void)updateWorkflowMetaDataWithCommandProperties:(id)arg1 forDocument:(id)arg2;
+- (void)updateWorkflowMetaDataWithCommandProperties:(id)arg1 forWorkflow:(id)arg2 atURL:(id)arg3;
 - (id)syncCommandProperties:(id)arg1 atURL:(id)arg2;
-- (id)commandPropertiesFromDocument:(id)arg1;
+- (id)commandPropertiesFromWorkflow:(id)arg1;
 - (id)pluginHeaderViewController;
-- (BOOL)finishSavingDocument:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
-- (BOOL)canSaveDocument:(id)arg1 error:(id *)arg2;
+- (BOOL)finishSavingWorkflow:(id)arg1 forOperation:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
+- (BOOL)canSaveWorkflow:(id)arg1 atURL:(id)arg2 forInstallation:(BOOL)arg3 error:(id *)arg4;
 - (id)infoStringForCompleteInstallationWithMetaData:(id)arg1;
 - (id)imageRepresentation;
 - (id)personalitySettingsDictionary;

@@ -6,15 +6,15 @@
 
 #import <Foundation/NSFormatter.h>
 
-@class NSArray, NSCalendar, NSDate, NSLocale, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSString, NSTimeZone;
+@class NSArray, NSCalendar, NSDate, NSLocale, NSMutableDictionary, NSString, NSTimeZone;
 
 @interface NSDateFormatter : NSFormatter
 {
     NSMutableDictionary *_attributes;
     struct __CFDateFormatter *_formatter;
     unsigned int _counter;
-    NSObject<OS_dispatch_semaphore> *_lock;
     int _cacheGeneration;
+    struct os_unfair_lock_s _lock;
 }
 
 + (id)dateFormatFromTemplate:(id)arg1 options:(unsigned int)arg2 locale:(id)arg3;

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNSuggestedContactIdentifierPredicate : CNPredicate <CNSuggestedContactPredicate>
 {
     unsigned long long _suggestionIdentifier;

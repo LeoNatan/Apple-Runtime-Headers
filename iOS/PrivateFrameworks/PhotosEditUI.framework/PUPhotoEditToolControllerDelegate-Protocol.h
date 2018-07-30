@@ -22,7 +22,7 @@
 - (UIView *)toolControllerPreviewView:(PUPhotoEditToolController *)arg1;
 - (PLPhotoEditRenderer *)toolControllerMainRenderer:(PUPhotoEditToolController *)arg1;
 - (UIView *)toolControllerMainContainerView:(PUPhotoEditToolController *)arg1;
-- (long long)toolControllerImageModulationOptions:(PUPhotoEditToolController *)arg1;
+- (CDStruct_910f5d27)toolControllerImageModulationOptions:(PUPhotoEditToolController *)arg1;
 - (PLPhotoEditModel *)toolControllerUneditedPhotoEditModel:(PUPhotoEditToolController *)arg1;
 - (void)toolControllerDidChangePreferredAlternateToolbarButton:(PUPhotoEditToolController *)arg1;
 - (void)toolControllerDidChangeWantsDefaultPreviewView:(PUPhotoEditToolController *)arg1;

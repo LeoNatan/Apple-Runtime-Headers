@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)forceRedrawOfTextField:(id)arg1;
 + (_Bool)constraint:(id)arg1 affectsAnyView:(id)arg2;
 + (_Bool)constraint:(id)arg1 affectsView:(id)arg2;
 + (void)registerNibNamed:(id)arg1 forIdentifier:(id)arg2 onTableView:(id)arg3;

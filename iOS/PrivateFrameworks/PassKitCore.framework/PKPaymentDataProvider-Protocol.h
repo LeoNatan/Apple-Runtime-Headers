@@ -9,6 +9,7 @@
 @class NSCalendar, NSData, NSDate, NSSet, NSString, PKExpressPassInformation, PKPass, PKPaymentApplication;
 
 @protocol PKPaymentDataProvider <NSObject>
+@property(readonly, nonatomic) NSString *deviceName;
 @property(nonatomic) __weak id <PKPaymentDataProviderDelegate> delegate;
 @property(readonly, nonatomic) _Bool isPaymentHandoffDisabled;
 @property(retain, nonatomic) NSString *defaultPaymentPassIdentifier;
@@ -26,10 +27,12 @@
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 withTransactionSource:(unsigned long long)arg2 withNotificationServiceData:(unsigned long long)arg3 limit:(long long)arg4 completion:(void (^)(NSSet *))arg5;
 - (_Bool)supportsExpressMode:(NSString *)arg1;
 - (_Bool)supportsExpressModeForExpressPassType:(long long)arg1;
+- (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (_Bool)supportsInAppPaymentsForPass:(PKPass *)arg1;
 - (_Bool)supportsNotificationsForPass:(PKPass *)arg1;
 - (_Bool)supportsMessagesForPass:(PKPass *)arg1;
 - (_Bool)supportsTransactionsForPass:(PKPass *)arg1;
+- (void)balancesForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
 - (void)transactionCountByYearForPassWithUniqueIdentifier:(NSString *)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 calendar:(NSCalendar *)arg4 completion:(void (^)(NSDictionary *))arg5;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(NSDate *)arg4 endDate:(NSDate *)arg5 limit:(long long)arg6 completion:(void (^)(NSSet *))arg7;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(long long)arg4 completion:(void (^)(NSSet *))arg5;
@@ -37,11 +40,14 @@
 - (void)startServiceModeForPassWithUniqueIdentifier:(NSString *)arg1 visibleViewController:(id)arg2;
 - (void)transitStateWithPassUniqueIdentifier:(NSString *)arg1 paymentApplication:(PKPaymentApplication *)arg2 completion:(void (^)(PKTransitAppletState *))arg3;
 - (void)felicaStateWithPassUniqueIdentifier:(NSString *)arg1 paymentApplication:(PKPaymentApplication *)arg2 completion:(void (^)(PKFelicaTransitAppletState *))arg3;
+- (void)removeExpressPassWithUniqueIdentifier:(NSString *)arg1 visibleViewController:(id)arg2 completion:(void (^)(_Bool, PKExpressPassInformation *))arg3;
+- (void)removeExpressPassesWithCardType:(long long)arg1 visibleViewController:(id)arg2 completion:(void (^)(_Bool, NSSet *))arg3;
 - (void)setExpressWithPassInformation:(PKExpressPassInformation *)arg1 visibleViewController:(id)arg2 completion:(void (^)(_Bool, PKExpressPassInformation *))arg3;
+- (void)removeExpressPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, PKExpressPassInformation *))arg2;
+- (void)removeExpressPassesWithCardType:(long long)arg1 completion:(void (^)(_Bool, NSSet *))arg2;
 - (void)setExpressWithPassInformation:(PKExpressPassInformation *)arg1 credential:(NSData *)arg2 completion:(void (^)(_Bool, PKExpressPassInformation *))arg3;
 - (PKExpressPassInformation *)expressPassInformationForMode:(NSString *)arg1;
+- (NSSet *)expressPassesInformationWithCardType:(long long)arg1;
 - (NSSet *)expressPassesInformation;
-- (NSString *)defaultExpressTransitPassIdentifier;
-- (NSString *)defaultExpressFelicaTransitPassIdentifier;
 @end
 

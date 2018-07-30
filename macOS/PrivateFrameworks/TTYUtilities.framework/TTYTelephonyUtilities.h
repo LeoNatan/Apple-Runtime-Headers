@@ -6,20 +6,72 @@
 
 #import "NSObject.h"
 
-@interface TTYTelephonyUtilities : NSObject
+#import "CoreTelephonyClientCarrierBundleDelegate.h"
+
+@class CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSObject<OS_dispatch_queue>, NSString;
+
+@interface TTYTelephonyUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate>
 {
     BOOL _headphoneJackSupportsTTY;
+    CTXPCServiceSubscriptionContext *_defaultVoiceContext;
+    unsigned long long _activeContextCount;
+    CoreTelephonyClient *_telephonyClient;
+    NSObject<OS_dispatch_queue> *_telephonyUpdateQueue;
 }
 
++ (id)relayPhoneNumberForContext:(id)arg1;
++ (BOOL)relayIsSupportedForContext:(id)arg1;
++ (BOOL)shouldUseRTTForContext:(id)arg1;
++ (BOOL)softwareTTYIsSupportedForContext:(id)arg1;
++ (BOOL)hardwareTTYIsSupportedForContext:(id)arg1;
++ (BOOL)isOnlyRTTSupportedForContext:(id)arg1;
++ (BOOL)isRTTSupportedForContext:(id)arg1;
++ (BOOL)isTTYSupportedForContext:(id)arg1;
++ (BOOL)softwareTTYIsSupported;
++ (BOOL)hardwareTTYIsSupported;
 + (id)relayPhoneNumber;
 + (BOOL)relayIsSupported;
++ (BOOL)shouldUseRTT;
++ (BOOL)isOnlyRTTSupported;
++ (BOOL)isRTTSupported;
++ (BOOL)isTTYSupported;
++ (BOOL)TTYSoftwareEnabledForAnyActiveContext;
++ (BOOL)TTYHardwareEnabledForAnyActiveContext;
++ (BOOL)isAppleInternalBuild;
 + (id)sharedUtilityProvider;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *telephonyUpdateQueue; // @synthesize telephonyUpdateQueue=_telephonyUpdateQueue;
+@property(retain, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(nonatomic) BOOL headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;
+@property(nonatomic) unsigned long long activeContextCount; // @synthesize activeContextCount=_activeContextCount;
+@property(retain, nonatomic) CTXPCServiceSubscriptionContext *defaultVoiceContext; // @synthesize defaultVoiceContext=_defaultVoiceContext;
+- (void).cxx_destruct;
+- (id)relayNumberForContext:(id)arg1;
+- (BOOL)isTTYSupportedForContext:(id)arg1;
+- (BOOL)isTTYOverIMSSupportedForContext:(id)arg1;
+- (id)getCarrierValueForKeyHierarchy:(id)arg1 andContext:(id)arg2;
+- (id)getCarrierValueForKey:(id)arg1 andContext:(id)arg2;
+- (void)reloadDefaultVoiceContext;
+- (void)reloadRelayPhoneNumbers;
+- (id)subscriptionContexts;
+- (void)simLessSubscriptionsDidChange;
+- (void)activeSubscriptionsDidChange;
+- (void)subscriptionInfoDidChange;
+- (void)carrierSettingsDidChange;
+- (id)phoneNumberFromUUID:(id)arg1;
+- (BOOL)contactPathIsMe:(id)arg1;
+- (id)phoneNumberForContext:(id)arg1;
+- (id)myPhoneNumber;
 - (BOOL)relayIsSupported;
 - (BOOL)contactIsTTYContact:(id)arg1;
 - (unsigned long long)currentPreferredTransportMethod;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

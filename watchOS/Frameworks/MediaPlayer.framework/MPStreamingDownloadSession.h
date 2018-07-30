@@ -24,9 +24,15 @@
     NSURL *_streamingKeyServerURL;
     NSURL *_streamingKeyCertificateURL;
     NSURL *_alternateSourceURL;
+    NSURL *_alternateHLSPlaylistURL;
+    NSURL *_alternateHLSKeyServerURL;
+    NSURL *_alternateHLSKeyCertificateURL;
     unsigned long long _downloadToken;
 }
 
+@property(copy, nonatomic) NSURL *alternateHLSKeyCertificateURL; // @synthesize alternateHLSKeyCertificateURL=_alternateHLSKeyCertificateURL;
+@property(copy, nonatomic) NSURL *alternateHLSKeyServerURL; // @synthesize alternateHLSKeyServerURL=_alternateHLSKeyServerURL;
+@property(copy, nonatomic) NSURL *alternateHLSPlaylistURL; // @synthesize alternateHLSPlaylistURL=_alternateHLSPlaylistURL;
 @property(copy, nonatomic) NSURL *alternateSourceURL; // @synthesize alternateSourceURL=_alternateSourceURL;
 @property(copy, nonatomic) NSURL *streamingKeyCertificateURL; // @synthesize streamingKeyCertificateURL=_streamingKeyCertificateURL;
 @property(copy, nonatomic) NSURL *streamingKeyServerURL; // @synthesize streamingKeyServerURL=_streamingKeyServerURL;

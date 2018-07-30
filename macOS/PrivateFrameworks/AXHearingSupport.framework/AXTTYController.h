@@ -7,10 +7,11 @@
 #import "NSObject.h"
 
 #import "TTYCallDelegate.h"
+#import "TUCallCapabilitiesDelegate.h"
 
 @class NSMutableArray, NSString;
 
-@interface AXTTYController : NSObject <TTYCallDelegate>
+@interface AXTTYController : NSObject <TTYCallDelegate, TUCallCapabilitiesDelegate>
 {
     NSMutableArray *_ttyCalls;
 }
@@ -19,14 +20,21 @@
 @property(retain, nonatomic) NSMutableArray *ttyCalls; // @synthesize ttyCalls=_ttyCalls;
 - (void).cxx_destruct;
 - (void)ttyCall:(id)arg1 didReceiveCharacter:(unsigned short)arg2 forUtterance:(id)arg3;
+- (id)handleIncomingNotificationSuppressionChange:(id)arg1;
 - (id)displayCallPrompt:(id)arg1;
 - (id)handleSettingsRequest:(id)arg1;
 - (id)handleDictionaryRequest:(id)arg1;
 - (id)handleDatabaseRequest:(id)arg1;
 - (void)dealloc;
-- (void)updateRelayNumber;
+- (void)displayRTTFirstUseAlert;
+- (void)dismissRTTFirstUseAlert;
 - (id)callForUUID:(id)arg1;
+- (void)handleUpdatedCalls:(id)arg1;
 - (void)callDidConnect:(id)arg1;
+- (void)telephonySupportDidChange:(id)arg1;
+- (void)didChangeFaceTimeVideoCallingSupport;
+- (void)didChangeFaceTimeAudioCallingSupport;
+- (void)didChangeTelephonyCallingSupport;
 - (id)init;
 
 // Remaining properties

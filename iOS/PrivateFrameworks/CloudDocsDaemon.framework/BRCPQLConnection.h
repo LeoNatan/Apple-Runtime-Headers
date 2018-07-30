@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)needsAutovacuum;
 - (long long)sizeInBytes;
 - (void)brc_close;
-- (void)usePacedBatchingWithInterval:(double)arg1 changeCount:(int)arg2;
+- (void)usePacedBatchingOnTargetQueue:(id)arg1 withInterval:(double)arg2 changeCount:(int)arg3;
 - (_Bool)_shouldFlushWithChangeCount:(int)arg1;
 - (void)disableProfilingForQueriesInBlock:(CDUnknownBlockType)arg1;
 - (_Bool)executeWithErrorHandler:(CDUnknownBlockType)arg1 sql:(id)arg2;

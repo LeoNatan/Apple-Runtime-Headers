@@ -32,6 +32,7 @@
     _Bool _amendSettings;
     _Bool _didUpdateClientSettings;
     _Bool _didReceiveActions;
+    _Bool _hostingPolicyForDisplay;
     _Bool _hostingPolicyForScene;
     _Bool _createDefaultTransitionContext;
 }
@@ -46,6 +47,7 @@
 @property(readonly, copy) NSString *description;
 - (id)sceneManager:(id)arg1 createDefaultTransitionContextForScene:(id)arg2;
 - (int)sceneManager:(id)arg1 hostingPolicyForScene:(id)arg2;
+- (int)sceneManager:(id)arg1 hostingPolicyForDisplay:(id)arg2;
 - (void)sceneManager:(id)arg1 scene:(id)arg2 didReceiveActions:(id)arg3;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
@@ -58,7 +60,7 @@
 - (void)sceneManagerDidEndSceneUpdateSynchronization:(id)arg1;
 - (void)sceneManagerWillBeginSceneUpdateSynchronization:(id)arg1;
 - (id)delegate;
-@property(readonly, nonatomic) id observer;
+@property(readonly, nonatomic) __weak id observer;
 - (id)initWithObject:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithObserver:(id)arg1;

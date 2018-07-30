@@ -6,7 +6,6 @@
 
 #import <OfficeImport/CHDLineSeries.h>
 
-__attribute__((visibility("hidden")))
 @interface CHDScatterSeries : CHDLineSeries
 {
 }

@@ -7,7 +7,7 @@
 #import "SAResultSelected.h"
 
 @interface SAResultSelected (SiriCoreSessionObject)
-- (BOOL)siriCore_canBeRemapped;
+- (BOOL)siriCore_isProvisional;
 - (BOOL)siriCore_isRetryable;
 @end
 

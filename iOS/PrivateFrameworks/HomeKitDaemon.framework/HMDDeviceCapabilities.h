@@ -6,52 +6,72 @@
 
 #import "HMFObject.h"
 
+#import "HMDBackingStoreModelBackedObjectProtocol.h"
+#import "HMDBackingStoreObjectProtocol.h"
 #import "NSCopying.h"
-#import "NSMutableCopying.h"
 #import "NSSecureCoding.h"
 
-@interface HMDDeviceCapabilities : HMFObject <NSCopying, NSMutableCopying, NSSecureCoding>
+@class HMDDeviceCapabilitiesModel, NSString, NSUUID;
+
+@interface HMDDeviceCapabilities : HMFObject <HMDBackingStoreObjectProtocol, HMDBackingStoreModelBackedObjectProtocol, NSCopying, NSSecureCoding>
 {
-    _Bool _supportsKeychainSync;
-    _Bool _supportsDeviceSetup;
-    _Bool _supportsKeyTransferClient;
-    _Bool _supportsKeyTransferServer;
-    _Bool _supportsStandaloneMode;
-    _Bool _supportsCloudDataSync;
-    _Bool _supportsWholeHouseAudio;
-    _Bool _supportsAssistantAccessControl;
-    _Bool _residentCapable;
-    _Bool _remoteGatewayCapable;
+    HMDDeviceCapabilitiesModel *_objectModel;
 }
 
++ (id)deviceCapabilitiesModelIdentifierWithParentIdentifier:(id)arg1;
 + (_Bool)supportsSecureCoding;
-+ (id)shortDescription;
 + (id)deviceCapabilities;
++ (_Bool)supportsSyncingToSharedUsers;
++ (_Bool)supportsAddingAccessory;
++ (_Bool)supportsReceivingRemoteCameraStream;
++ (_Bool)supportsDismissUserNotificationAndDialog;
++ (_Bool)supportsUserNotifications;
++ (_Bool)supportsCameraSnapshotRequestViaRelay;
++ (_Bool)supportsTargetControllerAutoConfigure;
++ (_Bool)supportsRemoteAccess;
 + (_Bool)isAppleMediaAccessory;
++ (_Bool)supportsCustomerReset;
++ (_Bool)supportsDeviceLock;
++ (_Bool)supportsSymptomsHandler;
++ (_Bool)supportsIntentDonation;
 + (_Bool)supportsHomeApp;
 + (_Bool)supportsLocalization;
-@property(readonly, nonatomic, getter=isRemoteGatewayCapable) _Bool remoteGatewayCapable; // @synthesize remoteGatewayCapable=_remoteGatewayCapable;
-@property(readonly, nonatomic, getter=isResidentCapable) _Bool residentCapable; // @synthesize residentCapable=_residentCapable;
-@property(readonly, nonatomic) _Bool supportsAssistantAccessControl; // @synthesize supportsAssistantAccessControl=_supportsAssistantAccessControl;
-@property(readonly, nonatomic) _Bool supportsWholeHouseAudio; // @synthesize supportsWholeHouseAudio=_supportsWholeHouseAudio;
-@property(readonly, nonatomic) _Bool supportsCloudDataSync; // @synthesize supportsCloudDataSync=_supportsCloudDataSync;
-@property(readonly, nonatomic) _Bool supportsStandaloneMode; // @synthesize supportsStandaloneMode=_supportsStandaloneMode;
-@property(readonly, nonatomic) _Bool supportsKeyTransferServer; // @synthesize supportsKeyTransferServer=_supportsKeyTransferServer;
-@property(readonly, nonatomic) _Bool supportsKeyTransferClient; // @synthesize supportsKeyTransferClient=_supportsKeyTransferClient;
-@property(readonly, nonatomic) _Bool supportsDeviceSetup; // @synthesize supportsDeviceSetup=_supportsDeviceSetup;
-@property(readonly, nonatomic) _Bool supportsKeychainSync; // @synthesize supportsKeychainSync=_supportsKeychainSync;
+@property(retain, nonatomic) HMDDeviceCapabilitiesModel *objectModel; // @synthesize objectModel=_objectModel;
+- (void).cxx_destruct;
+- (id)modelBackedObjects;
+- (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)modelCopyWithChangeType:(unsigned long long)arg1 uuid:(id)arg2 parentUUID:(id)arg3;
+@property(retain, nonatomic) NSUUID *modelParentIdentifier;
+@property(readonly, nonatomic) NSUUID *modelIdentifier;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) _Bool supportsTargetControl;
+@property(readonly, nonatomic) _Bool supportsHomeInvitation;
+@property(readonly, nonatomic, getter=isRemoteGatewayCapable) _Bool remoteGatewayCapable;
+@property(readonly, nonatomic, getter=isResidentCapable) _Bool residentCapable;
+@property(readonly, nonatomic) _Bool supportsAssistantAccessControl;
+@property(readonly, nonatomic) _Bool supportsWholeHouseAudio;
+@property(readonly, nonatomic) _Bool supportsCloudDataSync;
+@property(readonly, nonatomic) _Bool supportsStandaloneMode;
+@property(readonly, nonatomic) _Bool supportsKeyTransferServer;
+@property(readonly, nonatomic) _Bool supportsKeyTransferClient;
+@property(readonly, nonatomic) _Bool supportsDeviceSetup;
+@property(readonly, nonatomic) _Bool supportsKeychainSync;
+- (id)attributeDescriptions;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
-- (id)description;
-- (id)debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
+@property(readonly) unsigned long long hash;
+- (id)initWithObjectModel:(id)arg1;
 - (id)initWithProductInfo:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

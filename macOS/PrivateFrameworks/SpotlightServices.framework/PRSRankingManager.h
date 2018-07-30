@@ -32,7 +32,6 @@
 - (void)adjustScoresUsingCategoryEngagement:(id)arg1 forTopScores:(id)arg2 forBottomScores:(id)arg3 query:(id)arg4 logInfo:(id)arg5 usingRankingKnobs:(id)arg6;
 - (id)getTopHitsBasedOnCategoryOrder:(id)arg1 groupedResults:(id)arg2 CEPTopHitThreshold:(double)arg3 CEPProbabilityFactor:(double)arg4 topHitCountLimit:(long long)arg5;
 - (id)reRankCategories:(id)arg1 groupedResults:(id)arg2;
-- (id)postDeDuplicationTopHitResultArray:(id)arg1;
 - (id)chooseTopHitsWithMaxCount:(unsigned long long)arg1 disabledGroups:(id)arg2 topHit:(id)arg3 queryString:(id)arg4 cumulativeTopHitSet:(id)arg5 sortedResults:(id)arg6;
 - (BOOL)rankIsMeaningfulForTopHit:(unsigned long long)arg1;
 - (id)initWithGroupedResult:(id)arg1 preferredTopHitGroups:(id)arg2 shortcuts:(id)arg3;

@@ -6,18 +6,19 @@
 
 #import "NSObject.h"
 
-@class CPKMatrixSectionView;
+@class CPKCharactersSectionView;
 
 __attribute__((visibility("hidden")))
 @interface CPKAXDataItem : NSObject
 {
-    CPKMatrixSectionView *_parent;
+    CPKCharactersSectionView *_parent;
     long long _section;
     long long _index;
 }
 
 @property long long index; // @synthesize index=_index;
 @property long long section; // @synthesize section=_section;
+@property(readonly) CPKCharactersSectionView *parent; // @synthesize parent=_parent;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionDescription:(id)arg1;
 - (id)accessibilityActionNames;

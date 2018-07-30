@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetInternal : NSObject
 {
     AVWeakReference *weakReference;
@@ -17,6 +18,7 @@
     NSArray *availableChapterLanguages;
     NSArray *availableCanonicalizedChapterLanguages;
     NSArray *availableChapterLocales;
+    id <AVLoggingIdentifier> loggingIdentifier;
 }
 
 @end

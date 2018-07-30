@@ -10,6 +10,7 @@
 
 @class NSAnimation;
 
+__attribute__((visibility("hidden")))
 @interface NSTargetAnimationInfo : NSObject <NSCoding>
 {
     NSAnimation *_animation;

@@ -11,7 +11,7 @@
 @interface TDRenditionEntry : NSObject
 {
     struct _renditionkeytoken *key;
-    struct _renditionkeytoken stackKey[17];
+    struct _renditionkeytoken stackKey[18];
     const struct _renditionkeyfmt *keyFormat;
     NSData *assetData;
     TDRenditionSpec *renditionSpec;

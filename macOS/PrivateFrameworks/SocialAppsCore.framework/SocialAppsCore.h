@@ -10,8 +10,14 @@
 {
 }
 
-+ (id)archiving;
++ (id)performance;
++ (id)unreadCount;
 + (id)search;
++ (id)archiving;
+- (id)performance;
+- (id)unreadCount;
+- (id)search;
+- (id)archiving;
 
 @end
 

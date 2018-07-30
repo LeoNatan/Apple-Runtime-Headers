@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
     NSTearOffTabWindow *_dragWindow;
 }
 
-+ (void)dragTabWithDraggingItem:(id)arg1 tabButtonImage:(id)arg2 pinnedTabButtonImage:(id)arg3 windowImage:(id)arg4 fromView:(id)arg5 at:(struct CGPoint)arg6 isDark:(BOOL)arg7 source:(id)arg8;
++ (void)dragTabWithDraggingItem:(id)arg1 tabButtonImage:(id)arg2 pinnedTabButtonImage:(id)arg3 windowImage:(id)arg4 fromView:(id)arg5 at:(struct CGPoint)arg6 source:(id)arg7;
 @property(readonly, nonatomic) NSTearOffTabWindow *dragWindow; // @synthesize dragWindow=_dragWindow;
 - (void).cxx_destruct;
 - (id)detachWindowForTearOffTabWindow:(id)arg1;
@@ -67,8 +67,8 @@ __attribute__((visibility("hidden")))
 - (void)_handleMouseDragged;
 - (void)_handleEvent:(id)arg1;
 - (void)_runDrag;
-- (void)_prepareForDragWithImage:(id)arg1 isDark:(BOOL)arg2;
-- (void)_dragTabWithDraggingItem:(id)arg1 tabButtonImage:(id)arg2 pinnedTabButtonImage:(id)arg3 windowImage:(id)arg4 fromView:(id)arg5 at:(struct CGPoint)arg6 isDark:(BOOL)arg7 source:(id)arg8;
+- (void)_prepareForDragWithImage:(id)arg1;
+- (void)_dragTabWithDraggingItem:(id)arg1 tabButtonImage:(id)arg2 pinnedTabButtonImage:(id)arg3 windowImage:(id)arg4 fromView:(id)arg5 at:(struct CGPoint)arg6 source:(id)arg7;
 - (void)dealloc;
 
 // Remaining properties

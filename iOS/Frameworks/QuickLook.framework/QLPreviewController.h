@@ -50,6 +50,7 @@
     _Bool _didTransitionFromInternalView;
     _Bool _allowInteractiveTransitions;
     _Bool _canShowToolbar;
+    _Bool _canShowNavBar;
     _Bool _currentPreviewHasUnsavedEdits;
     _Bool _sourceIsManaged;
     _Bool _useCustomActionButton;
@@ -70,6 +71,8 @@
     QLPreviewItemStore *_previewItemStore;
     QLActivityItemProvider *_currentItemProvider;
     UIDocumentInteractionController *_sharingInteractionController;
+    id <QLRemotePopoverTracker> _shareSheetPopoverTracker;
+    CDUnknownBlockType _shareSheetDismissCompletion;
     NSURL *_accessedUrlForDocumentInteractionController;
     NSArray *_originalLeftBarButtonItems;
     NSArray *_originalRightBarButtonItems;
@@ -109,6 +112,7 @@
 @property(nonatomic) _Bool sourceIsManaged; // @synthesize sourceIsManaged=_sourceIsManaged;
 @property(nonatomic) unsigned long long appearanceActions; // @synthesize appearanceActions=_appearanceActions;
 @property(nonatomic) _Bool currentPreviewHasUnsavedEdits; // @synthesize currentPreviewHasUnsavedEdits=_currentPreviewHasUnsavedEdits;
+@property _Bool canShowNavBar; // @synthesize canShowNavBar=_canShowNavBar;
 @property _Bool canShowToolbar; // @synthesize canShowToolbar=_canShowToolbar;
 @property(retain) QLTransitionController *currentAnimator; // @synthesize currentAnimator=_currentAnimator;
 @property(retain) QLStateManager *stateManager; // @synthesize stateManager=_stateManager;
@@ -122,6 +126,8 @@
 @property(retain) NSArray *originalRightBarButtonItems; // @synthesize originalRightBarButtonItems=_originalRightBarButtonItems;
 @property(retain) NSArray *originalLeftBarButtonItems; // @synthesize originalLeftBarButtonItems=_originalLeftBarButtonItems;
 @property(retain, nonatomic) NSURL *accessedUrlForDocumentInteractionController; // @synthesize accessedUrlForDocumentInteractionController=_accessedUrlForDocumentInteractionController;
+@property(copy, nonatomic) CDUnknownBlockType shareSheetDismissCompletion; // @synthesize shareSheetDismissCompletion=_shareSheetDismissCompletion;
+@property(retain, nonatomic) id <QLRemotePopoverTracker> shareSheetPopoverTracker; // @synthesize shareSheetPopoverTracker=_shareSheetPopoverTracker;
 @property(retain) UIDocumentInteractionController *sharingInteractionController; // @synthesize sharingInteractionController=_sharingInteractionController;
 @property(retain) QLActivityItemProvider *currentItemProvider; // @synthesize currentItemProvider=_currentItemProvider;
 @property(readonly) QLPreviewItemStore *previewItemStore; // @synthesize previewItemStore=_previewItemStore;
@@ -178,11 +184,13 @@
 - (void)_updateAllowInteractiveTransitionsIfNeeded;
 - (void)currentPreviewItemViewControllerHasUnsavedEdits:(_Bool)arg1;
 - (void)presentAlertControllerForScenario:(long long)arg1;
-- (void)expandContentOfURL:(id)arg1;
+- (void)expandContentOfItemAtIndex:(unsigned long long)arg1 withUUID:(id)arg2;
 - (void)beginInteractiveTransition;
 - (id)currentItem;
 - (void)remoteViewControllerWasInvalidated;
 - (void)updateKeyCommands;
+- (void)triggerQuickLookDismissal;
+- (void)showShareSheetWithPopoverTracker:(id)arg1 dismissCompletion:(CDUnknownBlockType)arg2;
 - (void)showShareSheet;
 - (void)openURLIfAllowed:(id)arg1;
 - (void)updateOverlayButtons:(_Bool)arg1;
@@ -191,6 +199,7 @@
 - (void)setAccessoryViewVisible:(_Bool)arg1;
 - (void)previewCollectionPrefersWhitePointAdaptivityStyle:(long long)arg1;
 - (void)previewCollectionUpdatePreviewItem:(long long)arg1;
+- (void)setNavBarCanBeVisible:(_Bool)arg1;
 - (void)setToolbarCanBeVisible:(_Bool)arg1;
 - (_Bool)accessibilityPerformEscape;
 - (void)_updateBackgroundColor;
@@ -213,14 +222,20 @@
 - (struct CGSize)preferredContentSize;
 - (void)prepareForActionSheetPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)waitForPreviewCollectionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_removePreviewCollectionFromViewHierarchy;
 - (void)_showPreviewCollection;
 - (void)_configurePreviewCollectionIfNeeded;
 - (void)_notifyFirstAppearanceIfNeeded;
+- (void)_invalidatePreviewCollectionIfNeededNow;
+- (void)_invalidatePreviewCollectionIfNeeded;
+- (void)_presentLoadedPreviewCollection:(id)arg1;
 - (void)_presentPreviewCollection;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)_unregisterForApplicationStateChangesNotifications;
 - (void)_registerForApplicationStateChangesNotifications;
+- (_Bool)_basePreviewControllerIsBeingFullyDismissed;
+- (_Bool)_isBeingFullyDismissed;
 - (void)dealloc;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
@@ -234,7 +249,6 @@
 - (void)_commontInit;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPreviewItems:(id)arg1;
-- (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
 - (id)additionalActivitiesForDocumentInteractionController:(id)arg1;
 - (id)activityItemForDocumentInteractionController:(id)arg1;
 - (id)excludedActivityTypesForDocumentInteractionController:(id)arg1;
@@ -248,8 +262,11 @@
 - (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
 - (_Bool)_canPerformBarButtonAction;
 - (void)_doneButtonTapped:(id)arg1;
+- (void)dismissQuickLook;
 - (void)_listButtonTapped:(id)arg1;
 - (void)_stopAccessingUrlForDocumentInteractionController;
+- (void)_setupDocumentInteractionControllerForPresentation:(CDUnknownBlockType)arg1;
+- (void)showShareSheetFromRemoteViewWithPopoverTracker:(id)arg1 dismissCompletion:(CDUnknownBlockType)arg2;
 - (void)showShareSheetFromBarButton:(id)arg1;
 - (void)_actionButtonTapped:(id)arg1;
 - (void)_toolbarButtonPressed:(id)arg1;
@@ -267,6 +284,7 @@
 - (id)_buttonWithAccessibilityIdentifierPointer:(id)arg1 inButtons:(id)arg2;
 - (_Bool)prefersStatusBarHidden;
 - (long long)preferredStatusBarUpdateAnimation;
+- (void)updateRemoteOverlayIfNeeded;
 - (void)updateStatusBarAnimated:(_Bool)arg1;
 - (void)updateOverlayAnimated:(_Bool)arg1 animatedButtons:(_Bool)arg2 forceRefresh:(_Bool)arg3 withTraitCollection:(id)arg4;
 - (void)updateOverlayAnimated:(_Bool)arg1 forceRefresh:(_Bool)arg2 withTraitCollection:(id)arg3;

@@ -33,12 +33,17 @@
 - (BOOL)isDeviceGroupable;
 - (BOOL)isProxyGroupPlayer;
 - (BOOL)isGroupable;
+- (BOOL)parentGroupContainsDiscoverableLeader;
+- (id)parentGroupIdentifier;
 - (BOOL)isAirPlayReceiverSessionActive;
 - (BOOL)groupContainsGroupLeader;
 - (BOOL)isGroupLeader;
 - (BOOL)supportsBufferedAirPlay;
 - (BOOL)canRelayCommunicationChannel;
 - (BOOL)isRemoteControllable;
+- (BOOL)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (BOOL)canFetchMediaDataFromSender;
+- (BOOL)canPlayEncryptedProgressiveDownloadAssets;
 - (BOOL)canAccessiCloudMusicLibrary;
 - (BOOL)canAccessAppleMusic;
 - (BOOL)canAccessRemoteAssets;

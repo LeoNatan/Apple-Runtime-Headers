@@ -11,11 +11,13 @@
 }
 
 + (id)sharedPlatform;
++ (_Bool)isRunningInGeod;
 + (void)setIsRunningInGeod:(_Bool)arg1;
 - (float)deviceScreenScale;
 - (int)deviceScreenHeightInPixels;
 - (int)deviceScreenWidthInPixels;
 - (id)clientCapabilities;
+- (_Bool)isCellDataPossible;
 - (_Bool)isInStoreDemoMode;
 - (_Bool)supportsForceTouch;
 - (_Bool)supportsNewiOS9Features;

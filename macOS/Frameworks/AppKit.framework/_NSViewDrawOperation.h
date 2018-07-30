@@ -8,6 +8,7 @@
 
 @class NSRectSet, NSRegion, NSView, _NSDisplayOperation;
 
+__attribute__((visibility("hidden")))
 @interface _NSViewDrawOperation : NSOperation
 {
     NSView *_view;

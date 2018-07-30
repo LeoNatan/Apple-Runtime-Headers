@@ -46,19 +46,18 @@
 - (void)_pickLoneAvailableLocalRouteIfDesired;
 - (void)_cancelPickRouteTimeout;
 - (void)_beginPickRouteTimeout;
-- (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)dismiss;
+- (void)_openSettings;
 - (id)_connectDeviceGroup;
-- (id)sampleAirPlayActionCell;
+- (float)_defaultStatusBarHeight;
 - (id)_headerViewWithLoadingIndicator;
-- (id)_headerViewWithText:(id)arg1 andImage:(id)arg2;
-- (id)_headerViewWithText:(id)arg1;
+- (id)_fullScreenHeaderViewWithText:(id)arg1 andImage:(id)arg2;
+- (id)_chooseWhereToPlayHeaderView;
 - (void)_updateHeaderForNoConnectivity;
 - (void)_updateHeaderForNoLocalRoutes;
 - (void)_updateHeaderForNoCompanionRoutes;
 - (void)_showConnectionFailedMessage;
 - (void)_connectionFailed;
+- (id)sampleAirPlayActionCell;
 - (void)_cancelFindRoutesTimer;
 - (void)_updateWithItems:(id)arg1 timeoutDuration:(double)arg2 timeoutCompletion:(CDUnknownBlockType)arg3;
 - (void)_updateItemsForCompanionOrigin;
@@ -78,8 +77,11 @@
 - (void)actionSheetController:(id)arg1 didDismissWithActionAtIndexPath:(id)arg2;
 - (void)actionSheetController:(id)arg1 willDismissWithActionAtIndexPath:(id)arg2;
 - (void)actionSheetController:(id)arg1 willTapActionAtIndexPath:(id)arg2;
-- (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)dismiss;
+- (void)setDelegate:(id)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (id)_initWithOrigin:(id)arg1 audioRoutingManager:(id)arg2;
 
 // Remaining properties

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSObject<TSDGLLayerDelegate> *_delegate;
     _Bool _setNeedsDisplay;
     EAGLContext *_sharedContext;
+    _Bool _wasSharedContextCreated;
     CADisplayLink *_displayLink;
 }
 

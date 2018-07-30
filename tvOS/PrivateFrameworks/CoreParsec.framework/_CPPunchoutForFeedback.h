@@ -13,15 +13,17 @@
 
 @interface _CPPunchoutForFeedback : PBCodable <_CPPunchoutForFeedback, NSSecureCoding>
 {
+    int _knownBundleIdentifier;
     NSString *_name;
-    NSString *_bundleIdentifier;
     NSString *_label;
     NSArray *_urls;
+    NSString *_bundleIdentifier;
+    unsigned long long _whichBundleid;
 }
 
+@property(readonly, nonatomic) unsigned long long whichBundleid; // @synthesize whichBundleid=_whichBundleid;
 @property(copy, nonatomic) NSArray *urls; // @synthesize urls=_urls;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
@@ -32,14 +34,14 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+@property(nonatomic) int knownBundleIdentifier; // @synthesize knownBundleIdentifier=_knownBundleIdentifier;
+@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (id)urlsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)urlsCount;
 - (void)addUrls:(id)arg1;
 - (void)clearUrls;
-@property(readonly, nonatomic) _Bool hasLabel;
-@property(readonly, nonatomic) _Bool hasBundleIdentifier;
-@property(readonly, nonatomic) _Bool hasName;
 - (id)initWithFacade:(id)arg1;
+- (id)feedbackJSON;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

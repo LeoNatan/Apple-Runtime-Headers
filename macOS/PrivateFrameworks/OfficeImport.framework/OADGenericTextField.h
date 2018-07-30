@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface OADGenericTextField : OADTextField
 {
     NSString *_guid;
@@ -17,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
+- (void).cxx_destruct;
 - (BOOL)isSimilarToTextRun:(id)arg1;
-- (void)dealloc;
 - (id)initWithGuid:(id)arg1 type:(id)arg2;
 
 @end

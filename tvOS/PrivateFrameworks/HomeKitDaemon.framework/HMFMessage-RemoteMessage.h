@@ -15,5 +15,6 @@
 @property(readonly, nonatomic) NSString *remoteSourceID;
 @property(readonly, nonatomic, getter=isSecureRemote) _Bool secureRemote;
 @property(readonly, nonatomic, getter=isRemote) _Bool remote;
+- (id)hmd_safeUserInfo;
 @end
 

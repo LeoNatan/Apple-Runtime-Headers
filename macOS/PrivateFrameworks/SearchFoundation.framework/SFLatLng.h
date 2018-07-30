@@ -14,7 +14,10 @@
 
 @interface SFLatLng : NSObject <SFLatLng, NSSecureCoding, NSCopying>
 {
-    CDStruct_b993dc87 _has;
+    struct {
+        unsigned int lat:1;
+        unsigned int lng:1;
+    } _has;
     double _lat;
     double _lng;
 }

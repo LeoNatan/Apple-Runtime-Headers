@@ -13,8 +13,11 @@ __attribute__((visibility("hidden")))
 }
 
 - (struct Context *)renderContext;
+- (unsigned int)hitTestContext:(struct CGPoint)arg1;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
 - (void)deleteSlot:(unsigned int)arg1;
+- (unsigned int)createImageSlot:(struct CGSize)arg1 hasAlpha:(BOOL)arg2 extendedColors:(BOOL)arg3;
+- (unsigned int)createImageSlot:(struct CGSize)arg1 hasAlpha:(BOOL)arg2;
 - (unsigned int)createSlot;
 - (void)invalidateFences;
 - (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
@@ -23,6 +26,10 @@ __attribute__((visibility("hidden")))
 - (unsigned int)createFencePort;
 - (BOOL)valid;
 - (id)options;
+- (float)level;
+- (void)setLevel:(float)arg1;
+- (void)orderBelow:(unsigned int)arg1;
+- (void)orderAbove:(unsigned int)arg1;
 - (void)setUnobscuredRegionOfInterest:(struct CGRect)arg1;
 - (struct CGRect)unobscuredRegionOfInterest;
 - (void)setRestrictedHostProcessId:(int)arg1;

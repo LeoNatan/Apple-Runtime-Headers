@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_sendEmail:(id)arg1;
 - (void)_fetchHighlightEstimatesDictionary;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 

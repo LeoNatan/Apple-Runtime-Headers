@@ -42,6 +42,8 @@
 - (id)_copyIdentityWithOptions:(unsigned int)arg1 error:(int *)arg2;
 - (id)_copyOrCreateWithOptions:(unsigned int)arg1 error:(int *)arg2;
 - (id)_copyHomeKitExWithOptions:(unsigned int)arg1 error:(int *)arg2;
+- (id)_copyHomeKitWithOptionsKeychain:(unsigned int)arg1 error:(int *)arg2;
+- (id)_copyHomeKitWithOptionsHAP:(unsigned int)arg1 error:(int *)arg2;
 - (id)_copyHomeKitWithOptions:(unsigned int)arg1 error:(int *)arg2;
 - (id)copyIdentityWithOptions:(unsigned int)arg1 error:(int *)arg2;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *testListenerEndpoint;

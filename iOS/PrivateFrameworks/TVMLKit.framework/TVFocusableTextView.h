@@ -69,6 +69,7 @@
 @property(nonatomic) unsigned long long maximumNumberOfLines;
 @property(retain, nonatomic) NSAttributedString *descriptionText;
 - (void)setFrame:(struct CGRect)arg1;
+- (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

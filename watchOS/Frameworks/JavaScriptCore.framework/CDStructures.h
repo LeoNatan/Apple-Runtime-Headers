@@ -42,6 +42,16 @@ struct CallbackData {
     id _field8;
 };
 
+struct InferredTypeTable;
+
+struct InlineWatchpointSet {
+    unsigned int _field1;
+};
+
+struct JSCell;
+
+struct JSGlobalObject;
+
 struct JSLock;
 
 struct JSObject {
@@ -58,17 +68,79 @@ struct JSValue {
     union EncodedValueDescriptor u;
 };
 
+struct JSWeakValue {
+    int m_tag;
+    union WeakValueUnion m_value;
+};
+
+struct NoLock;
+
 struct OpaqueJSValue;
+
+struct Poisoned<WTF::Poison<&g_GlobalDataPoison>, const JSC::ClassInfo *, void> {
+    unsigned int _field1;
+};
+
+struct PropertyTable;
 
 struct RefPtr<JSC::JSLock, WTF::DumbPtrTraits<JSC::JSLock>> {
     struct JSLock *m_ptr;
+};
+
+struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl>> {
+    struct UniquedStringImpl *_field1;
 };
 
 struct Strong<JSC::JSObject> {
     struct JSValue *m_slot;
 };
 
-struct Structure;
+struct Structure {
+    struct Structure *_field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+    unsigned char _field5;
+    struct StructureIDBlob _field6;
+    unsigned short _field7;
+    unsigned char _field8;
+    struct NoLock _field9;
+    unsigned int _field10;
+    struct WriteBarrier<JSC::JSGlobalObject, WTF::DumbPtrTraits<JSC::JSGlobalObject>> _field11;
+    struct WriteBarrier<JSC::Unknown, WTF::DumbValueTraits<JSC::Unknown>> _field12;
+    struct WriteBarrier<JSC::StructureChain, WTF::DumbPtrTraits<JSC::StructureChain>> _field13;
+    struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> _field14;
+    struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl>> _field15;
+    struct Poisoned<WTF::Poison<&g_GlobalDataPoison>, const JSC::ClassInfo *, void> _field16;
+    struct StructureTransitionTable _field17;
+    struct WriteBarrier<JSC::PropertyTable, WTF::DumbPtrTraits<JSC::PropertyTable>> _field18;
+    struct WriteBarrier<JSC::InferredTypeTable, WTF::DumbPtrTraits<JSC::InferredTypeTable>> _field19;
+    struct InlineWatchpointSet _field20;
+    int _field21;
+    unsigned int _field22;
+};
+
+struct StructureChain;
+
+struct StructureIDBlob {
+    union {
+        struct {
+            struct Structure *_field1;
+            unsigned char _field2;
+            unsigned char _field3;
+            unsigned char _field4;
+            unsigned char _field5;
+        } _field1;
+        CDStruct_c10b32d8 _field2;
+        long long _field3;
+    } _field1;
+};
+
+struct StructureTransitionTable {
+    int _field1;
+};
+
+struct UniquedStringImpl;
 
 struct Weak<JSC::JSGlobalObject> {
     struct WeakImpl *m_impl;
@@ -82,13 +154,36 @@ struct Weak<JSC::JSString> {
     struct WeakImpl *m_impl;
 };
 
+struct Weak<JSC::Structure> {
+    struct WeakImpl *m_impl;
+};
+
 struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>;
 
 struct WeakImpl;
 
-struct WeakValueRef {
-    int m_tag;
-    union WeakValueUnion u;
+struct WriteBarrier<JSC::InferredTypeTable, WTF::DumbPtrTraits<JSC::InferredTypeTable>> {
+    struct InferredTypeTable *_field1;
+};
+
+struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> {
+    struct JSCell *_field1;
+};
+
+struct WriteBarrier<JSC::JSGlobalObject, WTF::DumbPtrTraits<JSC::JSGlobalObject>> {
+    struct JSGlobalObject *_field1;
+};
+
+struct WriteBarrier<JSC::PropertyTable, WTF::DumbPtrTraits<JSC::PropertyTable>> {
+    struct PropertyTable *_field1;
+};
+
+struct WriteBarrier<JSC::StructureChain, WTF::DumbPtrTraits<JSC::StructureChain>> {
+    struct StructureChain *_field1;
+};
+
+struct WriteBarrier<JSC::Unknown, WTF::DumbValueTraits<JSC::Unknown>> {
+    long long _field1;
 };
 
 struct _NSRange {
@@ -109,6 +204,11 @@ struct unique_ptr<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashT
 
 #pragma mark Typedef'd Structures
 
+typedef struct {
+    int payload;
+    int tag;
+} CDStruct_c10b32d8;
+
 // Template types
 typedef struct pair<JSC::JSObject *, JSC::JSObject *> {
     struct JSObject *_field1;
@@ -120,15 +220,12 @@ typedef struct pair<JSC::JSObject *, JSC::JSObject *> {
 union EncodedValueDescriptor {
     long long asInt64;
     double asDouble;
-    struct {
-        int payload;
-        int tag;
-    } asBits;
+    CDStruct_c10b32d8 asBits;
 };
 
 union WeakValueUnion {
-    struct JSValue m_primitive;
-    struct Weak<JSC::JSObject> m_object;
-    struct Weak<JSC::JSString> m_string;
+    struct JSValue primitive;
+    struct Weak<JSC::JSObject> object;
+    struct Weak<JSC::JSString> string;
 };
 

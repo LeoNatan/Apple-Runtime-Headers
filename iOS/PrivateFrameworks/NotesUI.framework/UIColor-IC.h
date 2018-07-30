@@ -8,6 +8,7 @@
 
 @interface UIColor (IC)
 + (struct UIColor *)ic_colorFromString:(id)arg1;
++ (struct UIColor *)ICAccountHeaderLabelColor;
 + (struct UIColor *)ICDrawingToolsBottomMarginColor;
 + (struct UIColor *)ICNoteEditorToolbarColor;
 + (struct UIColor *)ICActiveTintedSelectionColor;

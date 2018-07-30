@@ -43,6 +43,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)_matchType:(const char *)arg1 size:(unsigned long long)arg2 strict:(BOOL)arg3;
 - (BOOL)_matchType:(const char *)arg1 size:(unsigned long long)arg2;
 @property(readonly) const char *objCType;
 - (void)getValue:(void *)arg1 size:(unsigned long long)arg2;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)setPosition:(struct SCNVector3)arg1;
 - (struct SCNVector3)scale;
 - (struct CATransform3D)worldTransform;
+- (void)setWorldTransform:(struct CATransform3D)arg1;
 - (void)setTransform:(struct CATransform3D)arg1;
 - (struct CATransform3D)transform;
 - (BOOL)isNodeManipulator;

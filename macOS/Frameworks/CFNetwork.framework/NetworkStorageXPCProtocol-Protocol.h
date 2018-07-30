@@ -7,6 +7,8 @@
 @class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @protocol NetworkStorageXPCProtocol
+- (void)flushWithCompletionHandler:(void (^)(void))arg1;
+- (void)totalBytesWrittenToDiskWithCompletionHandler:(void (^)(unsigned long long))arg1;
 - (void)performSchemaCheckAndUpdate;
 - (void)setMinSizeForVMCachedResource:(long long)arg1;
 - (void)currentDiskUsageWithCompletionHandler:(void (^)(long long))arg1;

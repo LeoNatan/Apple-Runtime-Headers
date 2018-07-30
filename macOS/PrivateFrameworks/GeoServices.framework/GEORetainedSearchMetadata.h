@@ -10,7 +10,6 @@
 
 @class GEOPDRetainedSearchMetadata, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEORetainedSearchMetadata : NSObject <NSCopying>
 {
     GEOPDRetainedSearchMetadata *_retainedSearchMetadata;

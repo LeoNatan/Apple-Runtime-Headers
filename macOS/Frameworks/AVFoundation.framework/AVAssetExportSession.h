@@ -32,6 +32,8 @@
 - (id)audioMix;
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)audioTimePitchAlgorithm;
+- (void)setMaximizePowerEfficiency:(BOOL)arg1;
+- (BOOL)maximizePowerEfficiency;
 - (void)setFileLengthLimit:(long long)arg1;
 - (long long)fileLengthLimit;
 - (void)setMetadataItemFilter:(id)arg1;

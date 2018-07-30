@@ -6,7 +6,6 @@
 
 #import "NSObject.h"
 
-__attribute__((visibility("hidden")))
 @interface OADTabStop : NSObject
 {
     unsigned char mAlign;

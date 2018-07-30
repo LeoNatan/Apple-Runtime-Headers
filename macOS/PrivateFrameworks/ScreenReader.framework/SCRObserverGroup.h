@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString, NSTimer, SCRApplication, SCRCWeakReferenceContainer, SCRUIElement;
+@class NSDictionary, NSString, NSTimer, SCRApplication, SCRCWeakReferenceContainer, SCRUIElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRObserverGroup : NSObject
@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)_fireWithAXUIElement:(struct __AXUIElement *)arg1 userInfo:(id)arg2 allTargets:(id)arg3;
 - (BOOL)removeObserverWithTarget:(id)arg1;
 - (BOOL)addObserver:(id)arg1 selector:(SEL)arg2 name:(struct __CFString *)arg3 uiElement:(id)arg4 cancelMask:(unsigned int)arg5;
+@property(readonly, nonatomic) NSDictionary *observers;
 - (struct __CFDictionary *)_observers;
 - (void)setThrottleTimeMS:(int)arg1;
 - (int)throttleTimeMS;

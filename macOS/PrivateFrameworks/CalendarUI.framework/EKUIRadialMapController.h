@@ -37,6 +37,7 @@
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
 - (void)mapView:(id)arg1 regionWillChangeAnimated:(BOOL)arg2;
 - (void)displayLocation:(id)arg1;
+- (void)systemColorsChanged;
 - (void)dealloc;
 - (void)loadView;
 

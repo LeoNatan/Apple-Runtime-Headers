@@ -17,12 +17,12 @@
 + (_Bool)supportsSecureCoding;
 + (id)taskNameForPID:(int)arg1;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-@property(readonly, retain, nonatomic) BSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
-- (void)dealloc;
+@property(readonly, nonatomic) BSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 - (id)initWithPID:(int)arg1;
 - (id)init;
 

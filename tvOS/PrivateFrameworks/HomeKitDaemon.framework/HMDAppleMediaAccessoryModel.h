@@ -6,7 +6,7 @@
 
 #import <HomeKitDaemon/HMDMediaAccessoryModel.h>
 
-@class HMDDevice, HMFPairingIdentity, HMFSoftwareVersion, NSData, NSString;
+@class HMDDevice, HMFPairingIdentity, HMFSoftwareVersion, HMFWiFiNetworkInfo, NSData, NSString;
 
 @interface HMDAppleMediaAccessoryModel : HMDMediaAccessoryModel
 {
@@ -15,12 +15,14 @@
 + (id)properties;
 
 // Remaining properties
+@property(retain, nonatomic) NSString *appleMediaAccessoryChangeTag; // @dynamic appleMediaAccessoryChangeTag;
 @property(retain, nonatomic) HMDDevice *device; // @dynamic device;
 @property(retain, nonatomic) NSString *deviceUUID; // @dynamic deviceUUID;
 @property(retain, nonatomic) NSData *loggedInAccount; // @dynamic loggedInAccount;
 @property(retain, nonatomic) HMFPairingIdentity *pairingIdentity; // @dynamic pairingIdentity;
 @property(retain, nonatomic) HMFSoftwareVersion *softwareVersion; // @dynamic softwareVersion;
 @property(retain, nonatomic) NSData *symptoms; // @dynamic symptoms;
+@property(retain, nonatomic) HMFWiFiNetworkInfo *wifiNetworkInfo; // @dynamic wifiNetworkInfo;
 
 @end
 

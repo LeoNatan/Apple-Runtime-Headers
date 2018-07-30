@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface _NSRuleEditorViewUnboundRowHolder : NSObject <NSCoding>
 {
     NSMutableArray *boundArray;

@@ -11,9 +11,15 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)appearanceNamed:(id)arg1;
 + (void)whileHoldingLock:(struct os_unfair_lock_s *)arg1 perform:(CDUnknownBlockType)arg2;
 + (BOOL)maintainConstraintForView:(id)arg1 withIdentifier:(id)arg2 andConstant:(double)arg3 createdByMeansOf:(CDUnknownBlockType)arg4;
 + (void)flushCoreAnimationTransaction;
++ (id)informationStringForKey:(struct __CFString *)arg1 forProcess:(int)arg2;
++ (id)informationStringForKey:(struct __CFString *)arg1 forApplication:(struct __LSASN *)arg2;
++ (void)setCurrentApplicationValue:(void *)arg1 forKey:(struct __CFString *)arg2;
++ (void)setApplication:(struct __LSASN *)arg1 value:(void *)arg2 forKey:(struct __CFString *)arg3;
++ (BOOL)serviceWindowBackgroundColorIsSafe:(id)arg1;
 
 @end
 

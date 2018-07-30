@@ -53,7 +53,7 @@
 - (id)_nextToyboxListing;
 - (id)nextListing;
 - (void)prepareListing;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 
 @end
 

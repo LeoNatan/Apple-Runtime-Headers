@@ -10,6 +10,8 @@
 
 @interface PHAJobGenerator : NSObject
 {
+    _Bool _skippedSomeWorker;
+    _Bool _graphIncompatibleWorkersAreInhibited;
     PHPhotoLibrary *_library;
     PHAWorkerHealthMonitor *_healthMonitor;
     NSMutableDictionary *_workInfoReadersByMode;
@@ -25,6 +27,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *workInfoReadersByMode; // @synthesize workInfoReadersByMode=_workInfoReadersByMode;
 @property(readonly, nonatomic) PHAWorkerHealthMonitor *healthMonitor; // @synthesize healthMonitor=_healthMonitor;
 @property(readonly, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
+@property _Bool graphIncompatibleWorkersAreInhibited; // @synthesize graphIncompatibleWorkersAreInhibited=_graphIncompatibleWorkersAreInhibited;
 - (void).cxx_destruct;
 - (id)generateJobWithCurrentConstraints:(id)arg1;
 - (id)initWithHealthMonitor:(id)arg1 library:(id)arg2 workersByType:(id)arg3;

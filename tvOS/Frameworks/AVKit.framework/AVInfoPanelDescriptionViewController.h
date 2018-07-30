@@ -23,6 +23,7 @@
     UIImageView *_closedCaptionBadge;
     UIImageView *_videoResolutionBadge;
     UIImageView *_colorDepthBadge;
+    UIImageView *_audioFormatBadge;
     AVTomatoRatingView *_tomatoRatingView;
     AVInfoPanelExpandingSummaryView *_summaryView;
     NSLayoutConstraint *_posterViewWidthConstraint;
@@ -36,10 +37,12 @@
     double _duration;
     long long _videoResolution;
     long long _videoRange;
+    long long _audioFormat;
     AVPlayerController *_playerController;
 }
 
 @property(nonatomic) __weak AVPlayerController *playerController; // @synthesize playerController=_playerController;
+@property(nonatomic) long long audioFormat; // @synthesize audioFormat=_audioFormat;
 @property(nonatomic) long long videoRange; // @synthesize videoRange=_videoRange;
 @property(nonatomic) long long videoResolution; // @synthesize videoResolution=_videoResolution;
 @property(nonatomic, getter=isClosedCaptioned) _Bool closedCaptioned; // @synthesize closedCaptioned=_closedCaptioned;
@@ -49,12 +52,13 @@
 - (void).cxx_destruct;
 - (void)_presentFullScreenDescription;
 - (id)_durationString;
-- (id)_releaseDateString;
+- (id)_releaseDateStringStyle:(long long)arg1;
 - (void)_loadPosterFromURL:(id)arg1;
 - (void)_loadPosterFromMetadataItem:(id)arg1;
 - (void)_updatePosterViewWithImage:(id)arg1;
 - (void)_updateViewsWithNewMetadata;
 - (id)_metadataItemForIdentifiers:(id)arg1;
+- (void)_updateAudioFormatBadge;
 - (void)_updateDynamicRangeBadge;
 - (void)_updateVideoResolutionBadge;
 @property(readonly, nonatomic) _Bool hasContent;

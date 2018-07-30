@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TInlineProgressHostLayer : FI_TInlineProgressBaseHostLayer
 {
-    struct TNSRef<FI_TInlineCancelButtonLayer *, void> _cancelLayer;
+    struct TNSRef<FI_TInlineCancelButtonLayer, void> _cancelLayer;
     struct CGRect _iconFrame;
     double _baselineOffset;
 }

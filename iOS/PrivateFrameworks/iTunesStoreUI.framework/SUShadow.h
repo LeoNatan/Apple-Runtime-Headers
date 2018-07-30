@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class UIColor;
 
-@interface SUShadow : NSObject <NSCoding, NSCopying>
+@interface SUShadow : NSObject <NSSecureCoding, NSCopying>
 {
     UIColor *_color;
     struct CGSize _offset;
@@ -19,6 +19,7 @@
     double _radius;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) struct CGSize offset; // @synthesize offset=_offset;

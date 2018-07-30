@@ -116,7 +116,6 @@
 - (void)updateParentReferenceIfNecessary;
 - (id)childCloudObjects;
 - (id)parentCloudObject;
-- (void)updateMinimumSupportedNotesVersion;
 - (BOOL)supportsDeletionByTTL;
 @property(nonatomic) BOOL markedForDeletion; // @dynamic markedForDeletion;
 - (void)unmarkForDeletion;
@@ -135,6 +134,7 @@
 - (id)userSpecificRecordID;
 - (id)userSpecificRecordType;
 - (BOOL)wantsUserSpecificRecord;
+- (void)requireMinimumVersionIncludingChildObjects:(long long)arg1;
 - (void)objectWasFetchedButDoesNotExistInCloud;
 - (void)objectWasFetchedFromCloudWithRecord:(id)arg1;
 - (void)objectWasPushedToCloudWithOperation:(id)arg1 serverRecord:(id)arg2;
@@ -174,6 +174,7 @@
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (void)didTurnIntoFault;
+- (BOOL)isSupportedByCurrentNotes;
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
 
 // Remaining properties

@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned long long)sysctlByName:(id)arg1;
 + (id)valueForMib:(int *)arg1 miblen:(int)arg2;
 + (id)valueForKey:(id)arg1;
 

@@ -74,12 +74,14 @@
     int _sizeStyle;
     id _fontPanelToolbar;
     id _fontPanelContentView;
+    id _familyToFaceConstraint;
 }
 
 + (id)_createFontPanelSizeRep;
 + (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)sharedFontPanel;
 + (BOOL)sharedFontPanelExists;
+- (id)_fontPanelDescriptorsDictionaryFromFromPasteboard:(id)arg1;
 - (BOOL)removeItemForTableView:(id)arg1 pasteboard:(id)arg2 operation:(unsigned long long)arg3;
 - (unsigned long long)draggingSourceOperationMaskForTableView:(id)arg1;
 - (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
@@ -168,6 +170,7 @@
 - (void *)_carbonNotification;
 - (oneway void)release;
 - (void)_fontPanelDidLoad;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 - (void)_setup;
 - (id)_currentFamilyName;

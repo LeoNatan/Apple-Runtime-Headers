@@ -35,7 +35,7 @@
 - (void)_removeWebViewAndShowSpinner;
 - (void)_webViewwillLoadURL:(id)arg1;
 - (void)_webViewDidReceiveTitle:(id)arg1;
-- (id)_initialWebRequest;
+- (id)initialWebRequest;
 - (id)_redirectServerHost;
 - (void)_performRequest:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)helpButton:(id)arg1;

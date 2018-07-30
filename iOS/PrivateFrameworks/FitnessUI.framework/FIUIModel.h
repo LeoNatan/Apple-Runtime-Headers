@@ -6,14 +6,11 @@
 
 #import "NSObject.h"
 
-#import "FIUIAchievementsModelDelegate.h"
+@class FIUIWeeklyGoalModel, HKActivityCache, HKActivitySummary, HKCurrentActivityCacheQuery, HKHealthStore, NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPredicate, _HKCurrentActivitySummaryQuery;
 
-@class FIUIAchievementsModel, FIUIWeeklyGoalModel, HKActivityCache, HKActivitySummary, HKCurrentActivityCacheQuery, HKHealthStore, NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPredicate, NSString, _HKCurrentActivitySummaryQuery;
-
-@interface FIUIModel : NSObject <FIUIAchievementsModelDelegate>
+@interface FIUIModel : NSObject
 {
     FIUIWeeklyGoalModel *_weeklyGoalModel;
-    FIUIAchievementsModel *_achievementsModel;
     NSHashTable *_observers;
     NSMutableDictionary *_currentActivitySummaryQueryClients;
     NSMutableDictionary *_currentActivityCacheQueryClients;
@@ -53,10 +50,8 @@
 - (id)startCurrentActivityCacheWithChartsQueryWithHandler:(CDUnknownBlockType)arg1;
 - (void)stopQuery:(id)arg1;
 - (void)executeQuery:(id)arg1;
-- (void)achievementsDidChangeInModel:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(readonly, nonatomic) FIUIAchievementsModel *achievementsModel;
 - (void)_printUpdatedStatistics:(id)arg1;
 - (void)_printStatisticsCollection:(id)arg1;
 @property(readonly, nonatomic) FIUIWeeklyGoalModel *weeklyGoalModel;
@@ -64,12 +59,6 @@
 - (void)_setKnownSources:(id)arg1;
 - (id)initWithHealthStore:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

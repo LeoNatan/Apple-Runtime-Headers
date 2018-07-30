@@ -12,6 +12,7 @@
 {
     _Bool _IMCloudKitSyncingEnabled;
     _Bool _IMCloudKitIsSyncing;
+    _Bool _IMCloudKitSyncPaused;
     _Bool _IMCloudKitIsEligibleForTruthZone;
     _Bool _IMCloudKitIsInExitState;
     _Bool _IMCloudKitIsRemovedFromBackup;
@@ -38,6 +39,7 @@
 @property _Bool IMCloudKitIsRemovedFromBackup; // @synthesize IMCloudKitIsRemovedFromBackup=_IMCloudKitIsRemovedFromBackup;
 @property _Bool IMCloudKitIsInExitState; // @synthesize IMCloudKitIsInExitState=_IMCloudKitIsInExitState;
 @property _Bool IMCloudKitIsEligibleForTruthZone; // @synthesize IMCloudKitIsEligibleForTruthZone=_IMCloudKitIsEligibleForTruthZone;
+@property _Bool IMCloudKitSyncPaused; // @synthesize IMCloudKitSyncPaused=_IMCloudKitSyncPaused;
 @property _Bool IMCloudKitIsSyncing; // @synthesize IMCloudKitIsSyncing=_IMCloudKitIsSyncing;
 @property _Bool IMCloudKitSyncingEnabled; // @synthesize IMCloudKitSyncingEnabled=_IMCloudKitSyncingEnabled;
 - (void).cxx_destruct;

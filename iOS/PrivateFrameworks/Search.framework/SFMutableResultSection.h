@@ -12,6 +12,7 @@
 
 @interface SFMutableResultSection : SFResultSection <NSCopying>
 {
+    _Bool _doNotFold;
     _Bool _serialized;
     _Bool _isGlanceCategory;
     int _source;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) NSString *resultSetIdentifier; // @synthesize resultSetIdentifier=_resultSetIdentifier;
 @property(retain, nonatomic) NSString *sourceDomain; // @synthesize sourceDomain=_sourceDomain;
 @property int source; // @synthesize source=_source;
+@property _Bool doNotFold; // @synthesize doNotFold=_doNotFold;
 @property(retain, nonatomic) NSMutableOrderedSet *resultSet; // @synthesize resultSet=_resultSet;
 @property(retain, nonatomic) NSArray *hiddenExtResults; // @synthesize hiddenExtResults=_hiddenExtResults;
 - (void).cxx_destruct;

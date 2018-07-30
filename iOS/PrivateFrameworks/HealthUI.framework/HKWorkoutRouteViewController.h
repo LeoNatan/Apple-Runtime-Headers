@@ -31,8 +31,9 @@
 - (void)_toggleRouteViewMapType:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)_shareButtonPressed:(id)arg1;
-- (void)_internalDebuggingOnly_fetchUnsmoothedSeriesFromDatabase;
+- (void)_internalDebuggingOnly_fetchUnsmoothedRoutesFromDatabase;
 - (void)_internalDebuggingOnly_toggleUnsmoothedLocations:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (id)initWithLocationReadings:(id)arg1 title:(id)arg2 sharingEnabled:(_Bool)arg3 shareText:(id)arg4 excludedActivityTypes:(id)arg5;
 

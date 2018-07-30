@@ -8,6 +8,7 @@
 
 @class AVWeakReference, AVWeakReferencingDelegateStorage, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerItemLegibleOutputInternal : NSObject
 {
     id <AVPlayerItemLegibleOutputDependencyFactory> dependencyFactory;

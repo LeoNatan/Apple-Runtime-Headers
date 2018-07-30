@@ -23,9 +23,7 @@
 - (void)buttonPressed;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updateText:(id)arg1 image:(id)arg2 buttonState:(long long)arg3;
-- (void)updateWithRowModel:(id)arg1 animated:(_Bool)arg2;
-- (void)didUpdateRowModel:(id)arg1 withText:(id)arg2 buttonState:(long long)arg3 image:(id)arg4;
-- (void)didUpdateRowModel:(id)arg1 withText:(id)arg2 buttonState:(long long)arg3;
+- (void)didUpdateRowModel:(id)arg1 animate:(_Bool)arg2;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;
 

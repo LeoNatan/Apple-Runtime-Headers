@@ -11,7 +11,6 @@
 }
 
 + (id)lastCompletePrefetchDate;
-+ (void)registerSceneTaxonomySHA:(id)arg1;
 
 @end
 

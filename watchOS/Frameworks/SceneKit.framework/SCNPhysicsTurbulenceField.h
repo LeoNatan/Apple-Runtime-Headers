@@ -6,6 +6,7 @@
 
 #import <SceneKit/SCNPhysicsNoiseField.h>
 
+__attribute__((visibility("hidden")))
 @interface SCNPhysicsTurbulenceField : SCNPhysicsNoiseField
 {
 }

@@ -8,6 +8,8 @@
 
 @interface NSColor (IC)
 + (struct NSColor *)ic_colorFromString:(id)arg1;
++ (struct NSColor *)ic_lightPaperTexture;
++ (struct NSColor *)ic_paperTexture;
 + (struct NSColor *)ICLearnMoreButtonPressedColor;
 + (struct NSColor *)ICLearnMoreButtonUnpressedColor;
 + (struct NSColor *)ICFindInNoteHighlightColor;
@@ -25,8 +27,15 @@
 + (struct NSColor *)ICSystemTintColor;
 + (struct NSColor *)ICTintColor;
 + (struct NSColor *)preferredDefaultFontColor;
++ (struct NSColor *)ic_adjustedSelectionBackgroundColor;
++ (struct NSColor *)ic_adjustedDetailAccentColor;
++ (struct NSColor *)ic_adjustedControlAccentColor;
++ (void)ic_adjustNotesAccentColor:(BOOL)arg1;
++ (void)ic_adjustNotesAccentColorIfNecessary;
++ (BOOL)ic_shouldUseNotesAccentColor;
 + (struct NSColor *)ic_colorWith256Red:(double)arg1 green:(double)arg2 blue:(double)arg3 unitAlpha:(double)arg4;
 + (struct NSColor *)ic_colorWith256Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 - (id)ic_colorString;
+- (struct NSColor *)ic_searchResultSelectedCellHighlightTextColor;
 @end
 

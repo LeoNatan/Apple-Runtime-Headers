@@ -8,6 +8,7 @@
 
 @class CPParagraph, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface CPParagraphFlow : NSObject
 {
     CPParagraph *paragraph;

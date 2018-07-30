@@ -35,6 +35,7 @@
 @property(nonatomic) struct CGRect referenceFrame; // @synthesize referenceFrame=_referenceFrame;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (Class)fallbackXPCEncodableClass;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
@@ -49,7 +50,6 @@
 @property(readonly, copy, nonatomic) BSMutableSettings *otherSettings; // @synthesize otherSettings=_otherSettings;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
 

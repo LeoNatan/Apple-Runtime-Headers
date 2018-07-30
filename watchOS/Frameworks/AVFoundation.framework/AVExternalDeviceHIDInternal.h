@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVExternalDeviceHIDInternal : NSObject
 {
     AVWeakReference *weakReferenceToExternalDevice;

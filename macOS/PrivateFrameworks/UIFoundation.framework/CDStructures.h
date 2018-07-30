@@ -75,6 +75,13 @@ struct RTFFont;
 
 struct RTFStyle;
 
+struct UIEdgeInsets {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
 struct UIKeyAndScopeToValueCache {
     unsigned int previousScope;
     unsigned int previousKey;
@@ -343,10 +350,11 @@ typedef struct {
         unsigned int :1;
         unsigned int :2;
         unsigned int :1;
-        unsigned int :10;
+        unsigned int :3;
+        unsigned int :7;
     } _field20;
     void *_field21[0];
-} CDStruct_9b8416ed;
+} CDStruct_3fda14a5;
 
 #pragma mark Typedef'd Unions
 

@@ -12,6 +12,8 @@
 
 @interface CKMediaObject : NSObject <QLPreviewItem>
 {
+    _Bool _isFromMe;
+    _Bool _suppressPreviewForUnknownSender;
     id <CKFileTransfer> _transfer;
     NSURL *_cachedHighQualityFileURL;
     NSObject<OS_dispatch_group> *_highQualityFetchInProgressGroup;
@@ -28,12 +30,16 @@
 + (_Bool)isPreviewable;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *highQualityFetchInProgressGroup; // @synthesize highQualityFetchInProgressGroup=_highQualityFetchInProgressGroup;
 @property(retain, nonatomic) NSURL *cachedHighQualityFileURL; // @synthesize cachedHighQualityFileURL=_cachedHighQualityFileURL;
+@property(nonatomic) _Bool suppressPreviewForUnknownSender; // @synthesize suppressPreviewForUnknownSender=_suppressPreviewForUnknownSender;
+@property(nonatomic) _Bool isFromMe; // @synthesize isFromMe=_isFromMe;
 @property(retain, nonatomic) id <CKFileTransfer> transfer; // @synthesize transfer=_transfer;
 - (void).cxx_destruct;
 - (_Bool)isPromisedItem;
 @property(readonly, nonatomic) NSURL *previewItemURL;
 @property(readonly, nonatomic) _Bool canShareItem;
 - (void)fetchHighQualityFile:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool validatePreviewFormat;
+@property(readonly, nonatomic) _Bool generatePreviewOutOfProcess;
 @property(readonly, nonatomic) _Bool needsAnimation;
 @property(readonly, nonatomic) int mediaType;
 - (id)pasteboardItem;
@@ -45,7 +51,7 @@
 @property(readonly, copy, nonatomic) NSData *data;
 @property(readonly, copy, nonatomic) NSString *transferGUID;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithTransfer:(id)arg1;
+- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)composeImagesForEntryContentViewWidth:(double)arg1;
@@ -57,6 +63,7 @@
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (struct CGSize)bbSize;
 - (id)bbPreviewFillToSize:(struct CGSize)arg1;
+- (_Bool)validPreviewExistsAtURL:(id)arg1;
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (void)savePreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
 @property(readonly, copy, nonatomic) NSString *previewFilenameExtension;
@@ -67,6 +74,7 @@
 - (id)fileSizeString;
 - (id)downloadProgressString;
 - (id)downloadProgressImage;
+- (_Bool)transcoderPreviewGenerationFailed;
 - (_Bool)shouldShowDisclosure;
 - (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;
 - (id)previewCacheKeyWithOrientation:(BOOL)arg1;

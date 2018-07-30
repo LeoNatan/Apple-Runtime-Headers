@@ -15,12 +15,6 @@
 
 @interface _CPStartNetworkSearchFeedback : PBCodable <_CPProcessableFeedback, _CPFeedbackUUID, _CPStartNetworkSearchFeedback, NSSecureCoding>
 {
-    struct {
-        unsigned int timestamp:1;
-        unsigned int queryId:1;
-        unsigned int endpoint:1;
-        unsigned int tuscanyStatus:1;
-    } _has;
     int _endpoint;
     int _triggerEvent;
     int _lookupSelectionType;
@@ -41,7 +35,7 @@
 @property(copy, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
-@property(copy, nonatomic) NSString *uuid;
+@property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
 @property(nonatomic) unsigned long long timestamp;
 - (void).cxx_destruct;
@@ -53,19 +47,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasTuscanyStatus;
-@property(readonly, nonatomic) BOOL hasLookupSelectionType;
 @property(nonatomic) int lookupSelectionType; // @synthesize lookupSelectionType=_lookupSelectionType;
-@property(readonly, nonatomic) BOOL hasTriggerEvent;
 @property(nonatomic) int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
-@property(readonly, nonatomic) BOOL hasEndpoint;
 - (void)setHeaders:(id)arg1 forKey:(id)arg2;
 - (BOOL)getHeaders:(id *)arg1 forKey:(id)arg2;
-@property(readonly, nonatomic) BOOL hasUrl;
-@property(readonly, nonatomic) BOOL hasQueryId;
-@property(readonly, nonatomic) BOOL hasUuid;
-@property(readonly, nonatomic) BOOL hasInput;
-@property(readonly, nonatomic) BOOL hasTimestamp;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresQueryId;

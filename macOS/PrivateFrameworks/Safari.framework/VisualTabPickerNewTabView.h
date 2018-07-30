@@ -6,13 +6,13 @@
 
 #import <Safari/VisualTabPickerShadowTileView.h>
 
-@class NSImageView, NSView;
+@class BackgroundColorView, ConfigurableVibrancyImageView;
 
 __attribute__((visibility("hidden")))
 @interface VisualTabPickerNewTabView : VisualTabPickerShadowTileView
 {
-    NSView *_contentView;
-    NSImageView *_imageView;
+    BackgroundColorView *_contentView;
+    ConfigurableVibrancyImageView *_imageView;
     id <VisualTabPickerNewTabViewDelegate> _delegate;
 }
 

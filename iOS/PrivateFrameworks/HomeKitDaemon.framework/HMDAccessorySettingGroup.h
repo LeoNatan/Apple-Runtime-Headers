@@ -73,6 +73,7 @@
 - (id)settingWithIdentifier:(id)arg1;
 @property(readonly, copy) NSArray *settings;
 - (_Bool)isPrivateToDevice;
+- (id)ownerAccessory;
 - (id)accessoryFromTarget;
 - (_Bool)isTargetCurrentDevice;
 - (_Bool)isOwnerCurrentDevice;

@@ -21,10 +21,8 @@
     NSMutableArray *_searchResults;
     NSNumber *_currentSearchTaskID;
     NSString *_searchText;
-    NSArray *_conversationCache;
 }
 
-@property(copy, nonatomic) NSArray *conversationCache; // @synthesize conversationCache=_conversationCache;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) NSNumber *currentSearchTaskID; // @synthesize currentSearchTaskID=_currentSearchTaskID;
 @property(retain, nonatomic) NSMutableArray *searchResults; // @synthesize searchResults=_searchResults;
@@ -45,8 +43,6 @@
 - (id)_cullOldResults:(id)arg1;
 - (id)_sortResultsByDate:(id)arg1;
 - (id)_sortSearchResultsWithCoreRecentsResults:(id)arg1 displayNameMatches:(id)arg2 participantNameMatches:(id)arg3;
-- (void)_generateConversationCache;
-- (void)chatStateChanged:(id)arg1;
 - (void)removeRecipient:(id)arg1;
 - (void)didSelectRecipient:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)cancelSearch;

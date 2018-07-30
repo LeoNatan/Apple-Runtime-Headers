@@ -6,11 +6,13 @@
 
 #import "NSObject.h"
 
-@class RWIApplication, RWIDriver, RWITarget;
+@class RWIApplication, RWIDebuggable, RWIDriver, RWITarget;
 
 @protocol RWITargetDelegate <NSObject>
 
 @optional
+- (void)target:(RWITarget *)arg1 debuggerForAutomaticInspectionCandidate:(RWIDebuggable *)arg2 completionHandler:(void (^)(id <RWIDebugger>))arg3;
+- (void)target:(RWITarget *)arg1 decidePolicyForAutomaticInspectionCandidate:(RWIDebuggable *)arg2 decisionHandler:(void (^)(long long))arg3;
 - (void)targetDidBecomeNotReady:(RWITarget *)arg1;
 - (void)targetDidBecomeReady:(RWITarget *)arg1;
 - (void)target:(RWITarget *)arg1 didRemoveDriver:(RWIDriver *)arg2;

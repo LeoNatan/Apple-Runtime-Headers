@@ -48,6 +48,8 @@
 @property(readonly, copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 - (void).cxx_destruct;
 - (unsigned long long)preferedMonogramType;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithType:(unsigned long long)arg1;
 - (id)init;

@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 - (struct __CVBuffer *)pixelBuffer;
 - (void)dealloc;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1;
-- (id)observationsCacheKey;
 
 @end
 

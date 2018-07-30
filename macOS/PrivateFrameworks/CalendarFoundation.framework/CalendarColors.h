@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)colorIsDefaultCalendarColor:(id)arg1;
 + (id)localizedColorNameForColorName:(id)arg1;
 + (id)textColorForName:(id)arg1;
 + (id)facebookCalendarColor;

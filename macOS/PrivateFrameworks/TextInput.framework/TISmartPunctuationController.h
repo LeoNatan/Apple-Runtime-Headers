@@ -35,16 +35,17 @@
 @property(nonatomic) unsigned long long autoQuoteType; // @synthesize autoQuoteType=_autoQuoteType;
 @property(nonatomic) BOOL smartDashesEnabled; // @synthesize smartDashesEnabled=_smartDashesEnabled;
 @property(nonatomic) BOOL smartQuotesEnabled; // @synthesize smartQuotesEnabled=_smartQuotesEnabled;
+- (void).cxx_destruct;
 - (id)_checkInput:(id)arg1 forContextualDashesInDocumentState:(id)arg2;
 - (id)_checkInput:(id)arg1 forContextualChinesePunctuationInDocumentState:(id)arg2;
 - (id)_checkInput:(id)arg1 forContextualQuotesInDocumentState:(id)arg2;
 - (id)_alternatingStringForInputString:(id)arg1 isLockedInput:(BOOL)arg2 hasMarkedText:(BOOL)arg3;
 - (void)reset;
 - (id)smartPunctuationOutputForInput:(id)arg1 isLockedInput:(BOOL)arg2 documentState:(id)arg3;
+- (id)smartPunctuationedStringForString:(id)arg1;
 - (id)smartPunctuationResultsForString:(id)arg1;
 - (void)_initializeDashCharacterSetsIfNecessary;
 - (void)_initializeQuoteCharacterSetsIfNecessary;
-- (void)dealloc;
 - (id)init;
 
 @end

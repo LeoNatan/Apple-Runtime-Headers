@@ -6,19 +6,21 @@
 
 #import "NSObject.h"
 
-@class NNMKAccount, NNMKMailboxSelection, NNMKMessage, NNMKMessageContent, NNMKNanoMailService, NSArray, NSDictionary, NSError, NSString;
+@class NNMKAccount, NNMKMailboxSelection, NNMKMessage, NNMKMessageContent, NNMKNanoMailService, NSArray, NSDate, NSDictionary, NSError, NSString;
 
 @protocol NNMKNanoMailServiceDelegate <NSObject>
 
 @optional
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithAllMessages:(NSArray *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithMessagesCount:(unsigned int)arg2;
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didUpdateMailboxWithId:(NSString *)arg2 lastUpdate:(NSDate *)arg3;
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didFailWithError:(NSError *)arg2;
 - (void)nanoMailServiceDidResetXPCConnection:(NNMKNanoMailService *)arg1;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 connectivityDidChange:(_Bool)arg2;
 - (void)nanoMailServiceDidRequestReloadCache:(NNMKNanoMailService *)arg1;
 - (void)nanoMailServiceDidDeleteAllMessages:(NNMKNanoMailService *)arg1;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReportProgress:(int)arg2 forComposedMessageWithId:(NSString *)arg3 referenceMessageId:(NSString *)arg4;
-- (void)nanoMailServiceDidNotifyFetchRequestCompleted:(NNMKNanoMailService *)arg1 batchResponse:(_Bool)arg2;
+- (void)nanoMailServiceDidNotifyFetchRequestCompleted:(NNMKNanoMailService *)arg1 batchResponse:(_Bool)arg2 mailboxIds:(NSArray *)arg3;
 - (void)nanoMailServiceDidNotifyOldMessagesAvailable:(NNMKNanoMailService *)arg1;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didFailSyncingMessagesWithError:(NSError *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didFinishSyncingMessagesSuccessfullyReceivingMessages:(_Bool)arg2 initialMessages:(_Bool)arg3;
@@ -33,6 +35,7 @@
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didExecuteConversationOperations:(NSArray *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didDeleteMessageWithId:(NSString *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didUpdateMessage:(NNMKMessage *)arg2;
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didReceiveMessage:(NNMKMessage *)arg2 replacingPreviousMessageWithId:(NSString *)arg3;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didAddNewMessage:(NNMKMessage *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithIsConnected:(_Bool)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithFirstUnreadMessages:(NSArray *)arg2;
@@ -40,9 +43,10 @@
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithComposedMessageIds:(NSDictionary *)arg2 progress:(NSDictionary *)arg3;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithMailboxSelection:(NNMKMailboxSelection *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithAccounts:(NSArray *)arg2 error:(NSError *)arg3;
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didFailSyncingAttachment:(NSString *)arg2 messageId:(NSString *)arg3;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithMessageContentLoadFailedForMessageWithId:(NSString *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithMessageContent:(NNMKMessageContent *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithMessage:(NNMKMessage *)arg2;
-- (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithConversationOperations:(NSArray *)arg2 totalConversationsCount:(unsigned int)arg3 willFetch:(_Bool)arg4 error:(NSError *)arg5 reloadCache:(_Bool)arg6;
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithConversationOperations:(NSArray *)arg2 totalConversationsCount:(unsigned int)arg3 willFetch:(_Bool)arg4 error:(NSError *)arg5 reloadCache:(_Bool)arg6 lastUpdateByMailboxId:(NSDictionary *)arg7;
 @end
 

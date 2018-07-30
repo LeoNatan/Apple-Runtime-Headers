@@ -13,9 +13,7 @@
 
 @interface PXSelectionBadgeUIViewTile : UIImageView <PXReusableObject, PXUIViewBasicTile>
 {
-    struct {
-        _Bool imageView;
-    } _needsUpdateFlags;
+    CDStruct_637f5cce _needsUpdateFlags;
     _Bool __selected;
 }
 

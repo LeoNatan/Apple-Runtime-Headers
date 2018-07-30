@@ -8,13 +8,14 @@
 
 #import "STTextCanvasRenderSource.h"
 #import "SXAXAssistiveTechStatusChangeListener.h"
+#import "SXComponentInteractable.h"
 #import "SXTransitionDataSource.h"
 #import "UIGestureRecognizerDelegate.h"
 #import "UIViewControllerPreviewingDelegate.h"
 
 @class NSString, SXColumnLayout, SXComponentExposureEvent, SXComponentExposureMonitor, SXComponentStyle, SXDocumentController, SXFillView, SXViewport;
 
-@interface SXComponentView : UIView <UIGestureRecognizerDelegate, STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionDataSource, UIViewControllerPreviewingDelegate>
+@interface SXComponentView : UIView <UIGestureRecognizerDelegate, STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionDataSource, UIViewControllerPreviewingDelegate, SXComponentInteractable>
 {
     _Bool _hasRenderedContents;
     _Bool _requiresThoroughFrameCalculations;
@@ -82,6 +83,7 @@
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
 - (void).cxx_destruct;
 - (void)assistiveTechnologyStatusDidChange;
+- (_Bool)userInteractable;
 @property(readonly, copy) NSString *description;
 - (id)classification;
 @property(nonatomic) struct CGRect absoluteFrame; // @synthesize absoluteFrame=_absoluteFrame;

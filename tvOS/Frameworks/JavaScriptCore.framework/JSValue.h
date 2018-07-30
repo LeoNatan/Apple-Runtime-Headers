@@ -66,6 +66,8 @@
 - (id)toObjectOfClass:(Class)arg1;
 - (id)toObject;
 - (struct OpaqueJSValue *)JSValueRef;
+- (id)description;
+- (void)dealloc;
 - (struct CGSize)toSize;
 - (struct CGRect)toRect;
 - (struct _NSRange)toRange;
@@ -74,8 +76,6 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)initWithValue:(struct OpaqueJSValue *)arg1 inContext:(id)arg2;
 - (id)init;
 

@@ -9,7 +9,7 @@
 #import "GEOETAUpdaterDelegate.h"
 #import "NSSecureCoding.h"
 
-@class GEOCommonOptions, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsRequestFeedback, GEOETARoute, GEOETAUpdater, GEOLocation, GEOMapRegion, GEOMapServiceTraits, GEORouteAttributes, GEORouteHypothesis, GEORouteHypothesizerAnalyticsStore, GEORouteMatch, NSDate, NSMutableArray, NSObject<OS_dispatch_semaphore>, NSString;
+@class GEOCommonOptions, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsRequestFeedback, GEOETARoute, GEOETAUpdater, GEOLocation, GEOMapRegion, GEOMapServiceTraits, GEORouteAttributes, GEORouteHypothesis, GEORouteHypothesizerAnalyticsStore, GEORouteMatch, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GEORouteHypothesisMonitor : NSObject <GEOETAUpdaterDelegate, NSSecureCoding>
 {
@@ -30,7 +30,7 @@
     GEOMapServiceTraits *_traits;
     GEORouteHypothesizerAnalyticsStore *_analyticsStore;
     GEOComposedRoute *_route;
-    NSObject<OS_dispatch_semaphore> *_requestLock;
+    NSObject<OS_dispatch_queue> *_requestIsolationQueue;
     GEODirectionsRequest *_currentRequest;
     _Bool _needReroute;
     NSMutableArray *_rerouteEntries;

@@ -8,5 +8,8 @@
 
 @protocol MKPlaceAttributionCellDelegate <NSObject>
 - (void)openURL;
+
+@optional
+- (void)attributionCellDidChangeEffectiveAppearance;
 @end
 

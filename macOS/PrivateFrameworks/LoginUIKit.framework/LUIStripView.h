@@ -6,7 +6,7 @@
 
 #import "NSControl.h"
 
-@class NSImage, NSImageView, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableString, NSTimer, NSView;
+@class NSImage, NSImageView, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableString, NSObject<OS_dispatch_source>, NSTimer, NSView;
 
 @interface LUIStripView : NSControl
 {
@@ -27,24 +27,25 @@
     NSMutableDictionary *_itemDict;
     NSImageView *_highlightImageView;
     NSImage *_selectionImage;
-    NSImage *_extendedSelectionImage;
     BOOL _focusing;
     BOOL _focused;
     BOOL _highlighted;
-    struct CGPoint _preFocusOrigin;
+    double _preFocusOriginX;
     NSLayoutConstraint *_firstConstraint;
     NSLayoutConstraint *_highlightConstraintX;
-    NSLayoutConstraint *_highlightConstraintY;
     NSLayoutConstraint *_minWidthConstraint;
     NSLayoutConstraint *_widthConstraint;
     NSLayoutConstraint *_heightConstraint;
     NSView *_leadingBufferView;
     NSLayoutConstraint *_leadingBufferViewWidthConstraint;
+    NSLayoutConstraint *_leadingBufferViewHeightConstraint;
     NSMutableArray *_itemConstraints;
     NSMutableString *_searchString;
     NSTimer *_searchStringTimeoutTimer;
     NSTimer *_scrollTimer;
     BOOL _touched;
+    NSObject<OS_dispatch_source> *_timer;
+    unsigned char _stepCounter;
 }
 
 + (BOOL)accessibilityIsSingleCelled;
@@ -86,6 +87,7 @@
 - (BOOL)isFocusing;
 - (void)focusOnItem:(long long)arg1;
 - (void)endFocusOnItem;
+- (void)animatedScrollToX:(double)arg1;
 - (BOOL)moreItemsToRight;
 - (BOOL)moreItemsToLeft;
 - (void)setNibName:(id)arg1 forIdentifier:(id)arg2;
@@ -95,6 +97,7 @@
 - (double)_calculateBufferViewWidthForNumItems:(long long)arg1 forNumVisibleItems:(long long)arg2 ofSize:(struct CGSize)arg3 andSpacing:(double)arg4 inVisibleWidth:(double)arg5;
 - (id)_leadingBufferView;
 - (id)_unarchiveViewWithIdentifier:(id)arg1 owner:(id)arg2;
+- (id)scrollView;
 - (id)_loadableItemsAroundPoint:(struct CGPoint)arg1;
 - (id)_calculateIndexSetOfItemsInLoadableRect:(struct CGRect)arg1 andContentWidth:(double)arg2 withNumItems:(long long)arg3 ofSize:(struct CGSize)arg4 andSpacing:(double)arg5 layoutDirection:(long long)arg6;
 - (struct CGRect)_calculateLoadableRectForContentWidth:(double)arg1 andVisibleWidth:(double)arg2 aroundPoint:(struct CGPoint)arg3;
@@ -103,6 +106,7 @@
 - (struct CGRect)visibleRect;
 - (void)_updateStripView;
 - (double)_calculateWidthForNumItems:(long long)arg1 ofSize:(struct CGSize)arg2 andSpacing:(double)arg3 inVisibleWidth:(double)arg4;
+- (void)_updateItemHeight;
 - (void)_updateHighlight;
 - (void)_searchStringTimeout:(id)arg1;
 - (id)_reusableItems;

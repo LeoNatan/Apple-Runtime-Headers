@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (struct CGSize)intrinsicContentSize;
+- (BOOL)allowsVibrancy;
 
 @end
 

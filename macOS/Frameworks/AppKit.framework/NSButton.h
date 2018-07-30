@@ -24,6 +24,7 @@
 + (id)buttonWithImage:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (id)buttonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (id)_buttonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)_preferredAppearance;
 @property(readonly, copy) NSUserInterfaceCompressionOptions *activeCompressionOptions;
 - (struct CGSize)minimumSizeWithPrioritizedCompressionOptions:(id)arg1;
 - (void)compressWithPrioritizedCompressionOptions:(id)arg1;
@@ -35,6 +36,7 @@
 - (void)setGuarded:(BOOL)arg1;
 - (BOOL)isGuarded;
 @property(copy) NSColor *bezelColor;
+@property(copy) NSColor *contentTintColor;
 - (BOOL)alwaysEnablesRadioButtonExclusivity;
 - (void)setAlwaysEnablesRadioButtonExclusivity:(BOOL)arg1;
 - (void)springLoadingActivated:(BOOL)arg1 draggingInfo:(id)arg2;
@@ -42,7 +44,6 @@
 - (unsigned long long)springLoadingEntered:(id)arg1;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
-- (BOOL)_canDisableBaseVibrancy;
 - (double)baselineOffsetFromBottom;
 - (BOOL)_hasExtra10_11BordersInToolbars;
 - (struct NSEdgeInsets)alignmentRectInsets;
@@ -78,15 +79,12 @@
 @property(copy) NSString *keyEquivalent;
 - (void)getPeriodicDelay:(float *)arg1 interval:(float *)arg2;
 - (void)setPeriodicDelay:(float)arg1 interval:(float)arg2;
-- (id)_focusRingBleedRegion;
 @property(getter=isTransparent) BOOL transparent;
 @property(getter=isBordered) BOOL bordered;
 @property long long state;
 - (struct CGRect)_opaqueRectForWindowMoveWhenInTitlebar;
 - (void)setShowsDisclosureChevron:(BOOL)arg1;
 - (BOOL)showsDisclosureChevron;
-- (void)setAlternateAction:(SEL)arg1;
-- (SEL)alternateAction;
 - (void)setPeriodicInterval:(double)arg1;
 - (double)periodicInterval;
 - (void)setPeriodicDelay:(double)arg1;
@@ -105,8 +103,6 @@
 @property(copy) NSString *title;
 @property(getter=isSpringLoaded) BOOL springLoaded;
 @property long long maxAcceleratorLevel;
-- (void)setMaxState:(long long)arg1;
-- (long long)maxState;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(readonly) BOOL wantsAlertStylePadding;
 @property unsigned long long bezelStyle;

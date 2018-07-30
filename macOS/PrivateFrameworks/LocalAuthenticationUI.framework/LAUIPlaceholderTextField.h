@@ -6,6 +6,7 @@
 
 #import "NSTextField.h"
 
+__attribute__((visibility("hidden")))
 @interface LAUIPlaceholderTextField : NSTextField
 {
     id <LAUIPlaceHolderTextFieldDelegate> _placeholderDelegate;

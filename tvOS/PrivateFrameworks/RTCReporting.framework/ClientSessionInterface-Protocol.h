@@ -17,8 +17,8 @@
 - (void)flushMessagesWithCompletion:(void (^)(NSString *, NSError *))arg1;
 - (void)sendMessageWithDictionary:(NSDictionary *)arg1 reply:(void (^)(NSString *))arg2;
 - (void)fetchDisplayURL:(void (^)(NSString *))arg1;
-- (void)fetchStatesWithUserInfo:(NSDictionary *)arg1 completionHandler:(void (^)(NSArray *))arg2;
-- (void)startConfigWithCompletionHandler:(void (^)(NSArray *))arg1;
+- (void)fetchStatesWithUserInfo:(NSDictionary *)arg1 completionHandler:(void (^)(NSArray *, NSArray *, NSArray *))arg2;
+- (void)startConfigWithCompletionHandler:(void (^)(NSArray *, NSArray *, NSArray *))arg1;
 - (void)setSessionInfo:(NSDictionary *)arg1 userInfo:(NSDictionary *)arg2 frameworksToCheck:(NSArray *)arg3 hasAggregationBlock:(_Bool)arg4;
 @end
 

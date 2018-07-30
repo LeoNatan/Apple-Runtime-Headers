@@ -39,6 +39,9 @@
 - (_Bool)isHomePodRoute;
 - (_Bool)isAppleTVRoute;
 - (_Bool)isAirPlayingToDevice;
+- (_Bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
+- (_Bool)canFetchMediaDataFromSender;
+- (_Bool)canPlayEncryptedProgressiveDownloadAssets;
 - (_Bool)canAccessRemoteAssets;
 @property(retain, nonatomic) MPAVRouteConnection *connection;
 @property(retain, nonatomic) MPMRAVEndpointWrapper *endpointWrapper; // @synthesize endpointWrapper=_endpointWrapper;

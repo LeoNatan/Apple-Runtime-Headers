@@ -21,8 +21,10 @@
     IDSBatchIDQueryController *_statusQueryController;
     IMAccount *_defaultiMessageAccount;
     NSDate *_idsQueryStartTime;
+    NSArray *_conversationCache;
 }
 
+@property(copy, nonatomic) NSArray *conversationCache; // @synthesize conversationCache=_conversationCache;
 @property(retain, nonatomic) NSDate *idsQueryStartTime; // @synthesize idsQueryStartTime=_idsQueryStartTime;
 @property(retain, nonatomic) IMAccount *defaultiMessageAccount; // @synthesize defaultiMessageAccount=_defaultiMessageAccount;
 @property(retain, nonatomic) IDSBatchIDQueryController *statusQueryController; // @synthesize statusQueryController=_statusQueryController;
@@ -43,13 +45,17 @@
 - (_Bool)isSearchResultsHidden;
 - (_Bool)hasSearchResults;
 - (void)searchWithText:(id)arg1;
+- (void)chatStateChanged:(id)arg1;
 - (void)idStatusUpdatedForDestinations:(id)arg1;
+- (id)conversationCacheForContactsSearchManager:(id)arg1;
 - (void)contactsSearchManager:(id)arg1 finishedSearchingWithResults:(id)arg2;
 - (_Bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (Class)recipientTableViewCellClass;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)initWithStyle:(long long)arg1;
+- (void)viewDidAppearDeferredSetup;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (void)dealloc;

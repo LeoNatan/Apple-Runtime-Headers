@@ -15,6 +15,7 @@
     BOOL _trashed;
     int _trustLevel;
     Class _changeClass;
+    long long _scopeIndex;
     NSString *_identifier;
     unsigned long long _changeType;
     NSString *_relatedIdentifier;
@@ -31,9 +32,10 @@
 @property(copy, nonatomic) NSString *relatedIdentifier; // @synthesize relatedIdentifier=_relatedIdentifier;
 @property(nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) long long scopeIndex; // @synthesize scopeIndex=_scopeIndex;
 @property(retain, nonatomic) Class changeClass; // @synthesize changeClass=_changeClass;
 - (void).cxx_destruct;
-- (id)change;
+- (id)changeWithinPushRepository:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 error:(id *)arg2;
 - (id)initWithChange:(id)arg1 uploadIdentifier:(id)arg2;
 

@@ -18,7 +18,7 @@
     PKFieldProperties *_fieldProperties;
     PKFieldProperties *_fieldPropertiesToLookup;
     unsigned long long _transactionStartTime;
-    _Bool _fieldPresent;
+    // Error parsing type: AB, name: _fieldPresent
     _Bool _handlingExpress;
     unsigned long long _expressActivity;
     _Bool _felicaStateChanged;

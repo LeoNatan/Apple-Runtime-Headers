@@ -17,6 +17,8 @@
 
 + (void)resolveBundleIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)eligibleBundleIDs;
++ (_Bool)grantAccessToBundleIDs:(id)arg1 shouldSuppressWelcomeVideoAddOnOptIn:(_Bool)arg2;
++ (_Bool)grantAccessToBundleIDs:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;

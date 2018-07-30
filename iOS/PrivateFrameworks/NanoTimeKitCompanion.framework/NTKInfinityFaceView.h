@@ -6,7 +6,7 @@
 
 #import <NanoTimeKitCompanion/NTKAVListingFaceBaseView.h>
 
-@class NTKComplicationDisplayWrapperView, NTKFaceLayoutContentProvider, NTKInfinityController, NTKInfinityListing, UIColor, UILabel, UIView;
+@class NTKComplicationDisplayWrapperView, NTKFaceViewComplicationFactory, NTKInfinityController, NTKInfinityListing, UIColor, UILabel, UIView;
 
 @interface NTKInfinityFaceView : NTKAVListingFaceBaseView
 {
@@ -15,7 +15,7 @@
     UIView *_cornerView;
     UILabel *_reviewLabel;
     long long _previousDataMode;
-    NTKFaceLayoutContentProvider *_layoutContentProvider;
+    NTKFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKComplicationDisplayWrapperView *_touchWrapper;
     NTKInfinityController *_controller;
     NTKInfinityListing *_currentQueueListing;
@@ -39,6 +39,7 @@
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (_Bool)_shouldFadeToTransitionView;
 - (double)_timeLabelAlphaForEditMode:(long long)arg1;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
@@ -49,7 +50,6 @@
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (id)_viewForEditOption:(id)arg1;
 - (id)_editingComplicationColor;
-- (void)_updateComplicationWithColor:(id)arg1 animated:(_Bool)arg2 useComplicationFlickerWorkaround:(_Bool)arg3;
 - (void)_updateComplicationWithColor:(id)arg1 animated:(_Bool)arg2;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
@@ -63,7 +63,7 @@
 - (id)videoPlayerView;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
-- (void)videoPlayerViewDidFinishPlayingVideoToEnd:(id)arg1;
+- (void)videoPlayerViewDidBeginPlayingQueuedVideo:(id)arg1;
 - (void)_backlightDidTurnOff;
 - (void)_backlightWillTurnOff;
 - (void)_handleOrdinaryScreenWake;
@@ -78,7 +78,7 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 @end
 

@@ -6,18 +6,26 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface AAURLConfiguration : NSObject
 {
-    NSDictionary *_urlDictionary;
+    NSDictionary *_dictionary;
 }
 
++ (void)setRemoteServer:(id)arg1;
++ (id)remoteServer;
 + (void)reset;
 + (id)_urlConfigurationWithError:(id *)arg1;
 + (id)itemForKey:(id)arg1 error:(id *)arg2;
 + (id)urlConfiguration;
 - (void).cxx_destruct;
+- (id)description;
+@property(readonly, copy, nonatomic) NSNumber *baaInterval;
+@property(readonly, copy, nonatomic) NSNumber *absintheEnable;
+- (id)urlForEndpoint:(id)arg1;
+- (id)_initWithDictionary:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSString *acceptFamilyInviteV2URL;
 @property(readonly, nonatomic) NSString *fetchFamilyInviteV2URL;
 @property(readonly, nonatomic) NSString *familyInviteSentV2URL;
@@ -26,7 +34,6 @@
 @property(readonly, nonatomic) NSString *repairCloudAccountUIURL;
 @property(readonly, nonatomic) NSString *getDeviceListURL;
 @property(readonly, nonatomic) NSString *dismissAlertURL;
-@property(readonly, nonatomic) NSArray *urlsStoringCookies;
 @property(readonly, nonatomic) NSString *familyPaymentCardUIURL;
 @property(readonly, nonatomic) NSString *aboutURL;
 @property(readonly, nonatomic) NSString *familyPaymentInfoURL;
@@ -36,7 +43,6 @@
 @property(readonly, nonatomic) NSString *familyLearnMoreURL;
 @property(readonly, nonatomic) NSString *rejectChildTransferURL;
 @property(readonly, nonatomic) NSString *acceptChildTransferURL;
-@property(readonly, nonatomic) NSString *apsEnvironment;
 @property(readonly, nonatomic) NSString *grandslamURL;
 @property(readonly, nonatomic) NSString *childAccountCreationUIURL;
 @property(readonly, nonatomic) NSString *getFamilyDetailsURL;
@@ -92,7 +98,10 @@
 @property(readonly, nonatomic) NSString *registerURL;
 @property(readonly, nonatomic) NSString *updateAccountURL;
 @property(readonly, nonatomic) NSString *accountCreationURL;
-- (id)initWithDictionary:(id)arg1;
+- (id)_urlStringForKey:(id)arg1;
+@property(readonly, nonatomic) NSString *apsEnvironment;
+- (id)_envStringForKey:(id)arg1;
+@property(readonly, nonatomic) NSArray *urlsStoringCookies;
 
 @end
 

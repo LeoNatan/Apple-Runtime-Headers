@@ -10,7 +10,9 @@
 {
 }
 
++ (void)pauseWithClientLoop:(BOOL)arg1;
 + (void)setMediaPaused:(BOOL)arg1;
++ (id)pausedClients;
 + (BOOL)mediaPaused;
 + (void)setDuckAudio:(BOOL)arg1;
 + (BOOL)duckAudio;

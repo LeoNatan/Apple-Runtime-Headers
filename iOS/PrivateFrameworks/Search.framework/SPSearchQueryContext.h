@@ -29,9 +29,11 @@
     unsigned long long _whyClear;
     unsigned long long _queryIdent;
     NSArray *_searchEntities;
+    double _currentTime;
 }
 
 + (id)queryContextWithSearchString:(id)arg1;
+@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) _Bool noTokenize; // @synthesize noTokenize=_noTokenize;
 @property(nonatomic) _Bool promoteParsecResults; // @synthesize promoteParsecResults=_promoteParsecResults;
 @property(nonatomic) _Bool promoteLocalResults; // @synthesize promoteLocalResults=_promoteLocalResults;
@@ -55,6 +57,7 @@
 @property(readonly, nonatomic) NSString *displayedText;
 @property(readonly, nonatomic) _Bool hasMarkedText;
 - (id)initWithSearchString:(id)arg1;
+- (id)init;
 
 @end
 

@@ -11,7 +11,7 @@
 #import "UIViewControllerAnimatedTransitioning.h"
 #import "UIViewControllerTransitioningDelegate.h"
 
-@class CASpringAnimation, CSLSButtonTapAssertion, NSString, ORBWindowScaler, PUICApplicationStatusBarItem, PUICUISnapshotWindow, UIButton, UIImageView, UIView, _PUICActionContentControllerWindow;
+@class CASpringAnimation, CSLSButtonTapAssertion, NSString, ORBWindowScaler, PUICApplicationStatusBarItem, PUICUISnapshotWindow, UIButton, UIView, _PUICActionContentControllerWindow;
 
 @interface PUICActionContentController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, PUICActionPresentationControllerDelegate, CAAnimationDelegate>
 {
@@ -34,17 +34,19 @@
     UIView *_blurView;
     PUICApplicationStatusBarItem *_statusBar;
     UIButton *_cancelButton;
-    UIImageView *_gradientImageView;
+    UIView *_gradientView;
     CDUnknownBlockType _presentationCompletionHandler;
     CDUnknownBlockType _dismissalCompletionHandler;
+    int _preferredPresentationStyle;
 }
 
 + (void)_setupActionContentControllerSpec;
 + (id)actionContentControllerWithContentView:(id)arg1;
+@property(nonatomic) int preferredPresentationStyle; // @synthesize preferredPresentationStyle=_preferredPresentationStyle;
 @property(nonatomic) _Bool shouldSetStatusBar; // @synthesize shouldSetStatusBar=_shouldSetStatusBar;
 @property(copy) CDUnknownBlockType dismissalCompletionHandler; // @synthesize dismissalCompletionHandler=_dismissalCompletionHandler;
 @property(copy) CDUnknownBlockType presentationCompletionHandler; // @synthesize presentationCompletionHandler=_presentationCompletionHandler;
-@property(retain, nonatomic) UIImageView *gradientImageView; // @synthesize gradientImageView=_gradientImageView;
+@property(retain, nonatomic) UIView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) PUICApplicationStatusBarItem *statusBar; // @synthesize statusBar=_statusBar;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
@@ -64,11 +66,14 @@
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
+- (int)modalPresentationStyle;
+- (void)setModalPresentationStyle:(int)arg1;
 - (_Bool)prefersStatusBarHidden;
 - (id)puic_applicationStatusBarItem;
 - (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)_presentWithoutAnimation:(id)arg1;
 - (void)setShouldTintCancelButton:(_Bool)arg1;

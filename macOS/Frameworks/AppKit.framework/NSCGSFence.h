@@ -12,12 +12,12 @@
 __attribute__((visibility("hidden")))
 @interface NSCGSFence : NSObject <NSCoding, NSCopying>
 {
-    unsigned int _port;
+    struct _mach_right_send _sendRight;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)fence;
-@property(readonly) unsigned int port;
+@property(readonly) struct _mach_right_send sendRight;
 @property(readonly, getter=isValid) BOOL valid;
 - (void)invalidate;
 - (void)set;
@@ -25,9 +25,8 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithPort:(unsigned int)arg1;
+- (id)initWithSendRight:(struct _mach_right_send)arg1;
 - (id)init;
-- (id)_initWithPort:(unsigned int)arg1 incrementRef:(BOOL)arg2;
 
 @end
 

@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
+#import "NSCopying.h"
 #import "NSObject.h"
 #import "NSSecureCoding.h"
 
 @class NSMutableDictionary, NSString;
 
-@interface INParameter : NSObject <NSObject, NSSecureCoding>
+@interface INParameter : NSObject <NSObject, NSSecureCoding, NSCopying>
 {
     NSMutableDictionary *_indexesForSubKeyPaths;
     Class _parameterClass;
@@ -29,6 +30,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;

@@ -10,6 +10,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSObject<OS_nw_array>, NSObject<OS_nw_listener>, NSObject<OS_nw_parameters>, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_socks5_server : NSObject <OS_nw_socks5_server>
 {
     unsigned long long ss_id;
@@ -27,10 +28,10 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithParameters:(id)arg1 clientQueue:(id)arg2;
+@property(readonly, copy) NSString *description;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -129,6 +129,7 @@ __attribute__((visibility("hidden")))
 - (void)UpdateProgressWithTime:(CDStruct_1b6d18a9)arg1 inTimeRange:(CDStruct_e83c9415)arg2;
 - (CDStruct_1b6d18a9)SingleFrameTimeForVideoTrack:(id)arg1;
 - (void)dealloc;
+- (id)initWithOptions:(id)arg1;
 - (id)init;
 
 @end

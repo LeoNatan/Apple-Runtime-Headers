@@ -6,7 +6,6 @@
 
 #import <GeoServices/GEODBReader.h>
 
-__attribute__((visibility("hidden")))
 @interface GEOPlaceDataDBReader : GEODBReader
 {
     struct sqlite3_stmt *_sqlMUIDForPhoneNumber;
@@ -23,8 +22,8 @@ __attribute__((visibility("hidden")))
 - (id)placeDataForMUID:(unsigned long long)arg1;
 - (id)_placeDataForIdentifier:(unsigned long long)arg1;
 - (void)_openDBIfNotAlreadyOpen;
+- (void)_closeDB;
 - (void)_openDB;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (id)componentForKey:(union _GEOPlaceDataComponentKey)arg1;
 

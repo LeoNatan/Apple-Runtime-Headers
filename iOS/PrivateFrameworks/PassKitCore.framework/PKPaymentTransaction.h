@@ -14,6 +14,7 @@
 @interface PKPaymentTransaction : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
     _Bool _enRoute;
+    _Bool _shouldSuppressDate;
     _Bool _deviceScoreIdentifiersRequired;
     _Bool _deviceScoreIdentifiersSubmitted;
     _Bool _isCloudKitArchived;
@@ -45,8 +46,12 @@
     NSString *_stationCodeProvider;
     NSData *_startStationCode;
     NSString *_startStation;
+    double _startStationLatitude;
+    double _startStationLongitude;
     NSData *_endStationCode;
     NSString *_endStation;
+    double _endStationLatitude;
+    double _endStationLongitude;
     long long _adjustmentType;
     long long _peerPaymentType;
     NSString *_peerPaymentCounterpartHandle;
@@ -64,6 +69,7 @@
     NSString *_secondaryFundingSourceDescription;
     NSUUID *_requestDeviceScoreIdentifier;
     NSUUID *_sendDeviceScoreIdentifier;
+    NSString *_merchantProvidedDescription;
     NSDictionary *_metadata;
     long long _transactionStatus;
     long long _transactionType;
@@ -91,6 +97,7 @@
 @property(nonatomic) _Bool processedForLocation; // @synthesize processedForLocation=_processedForLocation;
 @property(nonatomic) _Bool isCloudKitArchived; // @synthesize isCloudKitArchived=_isCloudKitArchived;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(copy, nonatomic) NSString *merchantProvidedDescription; // @synthesize merchantProvidedDescription=_merchantProvidedDescription;
 @property(nonatomic) _Bool deviceScoreIdentifiersSubmitted; // @synthesize deviceScoreIdentifiersSubmitted=_deviceScoreIdentifiersSubmitted;
 @property(nonatomic) _Bool deviceScoreIdentifiersRequired; // @synthesize deviceScoreIdentifiersRequired=_deviceScoreIdentifiersRequired;
 @property(copy, nonatomic) NSUUID *sendDeviceScoreIdentifier; // @synthesize sendDeviceScoreIdentifier=_sendDeviceScoreIdentifier;
@@ -110,8 +117,13 @@
 @property(copy, nonatomic) NSString *peerPaymentCounterpartHandle; // @synthesize peerPaymentCounterpartHandle=_peerPaymentCounterpartHandle;
 @property(nonatomic) long long peerPaymentType; // @synthesize peerPaymentType=_peerPaymentType;
 @property(nonatomic) long long adjustmentType; // @synthesize adjustmentType=_adjustmentType;
+@property(nonatomic) _Bool shouldSuppressDate; // @synthesize shouldSuppressDate=_shouldSuppressDate;
+@property(nonatomic) double endStationLongitude; // @synthesize endStationLongitude=_endStationLongitude;
+@property(nonatomic) double endStationLatitude; // @synthesize endStationLatitude=_endStationLatitude;
 @property(copy, nonatomic) NSString *endStation; // @synthesize endStation=_endStation;
 @property(copy, nonatomic) NSData *endStationCode; // @synthesize endStationCode=_endStationCode;
+@property(nonatomic) double startStationLongitude; // @synthesize startStationLongitude=_startStationLongitude;
+@property(nonatomic) double startStationLatitude; // @synthesize startStationLatitude=_startStationLatitude;
 @property(copy, nonatomic) NSString *startStation; // @synthesize startStation=_startStation;
 @property(copy, nonatomic) NSData *startStationCode; // @synthesize startStationCode=_startStationCode;
 @property(copy, nonatomic) NSString *stationCodeProvider; // @synthesize stationCodeProvider=_stationCodeProvider;
@@ -137,6 +149,9 @@
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)formattedTransitTransactionMessage:(_Bool)arg1;
+@property(retain, nonatomic) CLLocation *endStationLocation;
+@property(retain, nonatomic) CLLocation *startStationLocation;
 - (id)_formatBalanceAdjustmentAmount:(id)arg1;
 @property(readonly, nonatomic) NSString *formattedBalanceAdjustmentSubtotalAmount;
 @property(readonly, nonatomic) NSString *formattedBalanceAdjustmentAmount;
@@ -155,7 +170,9 @@
 @property(nonatomic) long long peerPaymentStatus;
 @property(retain, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) __weak NSString *displayLocation;
+- (unsigned long long)itemType;
 - (id)recordTypesAndNames;
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -167,7 +184,6 @@
 - (unsigned long long)hash;
 - (id)dictionaryRepresentation;
 - (id)init;
-- (void)updateTransactionTypeFromDetailString:(id)arg1;
 
 @end
 

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     int _state;
     int _rampUpStatus;
     int _rampDownStatus;
+    BOOL _paused;
     unsigned short _echoedTimestamp;
     unsigned short _previousTimestamp;
     unsigned short _queuingDelayTimestamp;
@@ -31,13 +32,7 @@ __attribute__((visibility("hidden")))
     unsigned int _remoteBandwidthEstimation;
     unsigned int _localBandwidthEstimation;
     double _owrd;
-    struct {
-        double time[100];
-        double owrd[100];
-        int frontIndex;
-        int rearIndex;
-        unsigned int size;
-    } _owrdList;
+    CDStruct_714379fe _owrdList;
     BOOL _isOWRDListReady;
     BOOL _isOWRDConstant;
     double _nowrd;
@@ -85,14 +80,19 @@ __attribute__((visibility("hidden")))
     int _currentTierIndex;
     int _previousTierIndex;
     unsigned int _targetBitrate;
+    unsigned int _actualBitrate;
     void *_logDump;
     void *_logBasebandDump;
     BOOL _isPeriodicLoggingEnabled;
 }
 
+@property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualBitrate;
+@property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
+@property(readonly, nonatomic) double owrd; // @synthesize owrd=_owrd;
 @property(nonatomic) unsigned int localBandwidthEstimation; // @synthesize localBandwidthEstimation=_localBandwidthEstimation;
 @property(readonly, nonatomic) BOOL isNewRateSentOut; // @synthesize isNewRateSentOut=_isNewRateSentOut;
 @property(readonly, nonatomic) double roundTripTime; // @synthesize roundTripTime=_roundTripTime;
+@property(readonly, nonatomic) unsigned int totalPacketReceived; // @synthesize totalPacketReceived=_totalPacketReceived;
 @property(readonly, nonatomic) double packetLossRate; // @synthesize packetLossRate=_packetLossRate;
 @property(readonly, nonatomic) unsigned int mostBurstLoss; // @synthesize mostBurstLoss=_mostBurstLoss;
 @property(retain, nonatomic) VCRateControlMediaController *mediaController; // @synthesize mediaController=_mediaController;
@@ -131,8 +131,8 @@ __attribute__((visibility("hidden")))
 - (void)stateChangeTo:(int)arg1;
 - (void)resetRampingStatus;
 - (void)updateInternalStatus;
-- (void)doRateControlWithBasebandStatistics:(CDStruct_5cb394a5)arg1;
-- (void)doRateControlWithStatistics:(CDStruct_5cb394a5)arg1;
+- (void)doRateControlWithBasebandStatistics:(CDStruct_48a7b5a5)arg1;
+- (BOOL)doRateControlWithStatistics:(CDStruct_48a7b5a5)arg1;
 - (void)enableBasebandDump:(void *)arg1;
 - (void)enableLogDump:(void *)arg1 enablePeriodicLogging:(BOOL)arg2;
 - (void)configure:(struct VCRateControlAlgorithmConfig)arg1 restartRequired:(BOOL)arg2;

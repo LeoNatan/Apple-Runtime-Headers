@@ -8,11 +8,10 @@
 
 #import "NSCopying.h"
 #import "NSFastEnumeration.h"
-#import "PHObjectIDBackedFetchResult.h"
 
 @class NSArray, NSFetchRequest, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString, PHBatchFetchingArray, PHQuery, _PHFetchRequestWrapper;
 
-@interface PHFetchResult : NSObject <PHObjectIDBackedFetchResult, NSCopying, NSFastEnumeration>
+@interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration>
 {
     PHBatchFetchingArray *_fetchedObjects;
     NSArray *_seedOIDs;
@@ -31,6 +30,7 @@
 }
 
 + (id)_batchFetchingArrayForObjectIDs:(id)arg1 fetchResult:(id)arg2;
++ (id)filteredOIDsFrom:(id)arg1 usingEntityName:(id)arg2 withPhotoLibrary:(id)arg3;
 + (id)cleanedAndSortedOIDsFrom:(id)arg1 usingFetchOptions:(id)arg2;
 + (id)fetchObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchObjectCount:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -48,6 +48,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)localIdentifiers;
+- (_Bool)isFullyBackedByObjectIDs;
 - (void)getMediaTypeCounts;
 - (unsigned int)countOfAssetsWithMediaType:(int)arg1;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(CDUnknownBlockType)arg3;
@@ -70,6 +71,7 @@
 - (void)updateRegistrationForChangeNotificationDeltas;
 - (id)objectIDAtIndex:(unsigned int)arg1;
 @property(readonly) NSSet *fetchedObjectIDsSet;
+- (id)objectIDs;
 @property(readonly) NSArray *fetchedObjectIDs;
 - (id)containerIdentifier;
 - (int)collectionFetchType;

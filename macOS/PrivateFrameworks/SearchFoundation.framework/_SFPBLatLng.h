@@ -13,7 +13,6 @@
 
 @interface _SFPBLatLng : PBCodable <_SFPBLatLng, NSSecureCoding>
 {
-    CDStruct_b993dc87 _has;
     double _lat;
     double _lng;
 }
@@ -28,8 +27,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-@property(readonly, nonatomic) BOOL hasLng;
-@property(readonly, nonatomic) BOOL hasLat;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

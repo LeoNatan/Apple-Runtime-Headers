@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _NANotificationObserverProxy : _NAObserverProxy
 {
     id _notificationObserver;

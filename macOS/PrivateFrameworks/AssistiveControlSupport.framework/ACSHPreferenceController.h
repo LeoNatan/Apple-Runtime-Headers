@@ -10,14 +10,18 @@
 
 @interface ACSHPreferenceController : NSObject
 {
-    NSDictionary *_preferenceDefaults;
     struct __IOHIDEventSystemClient *_iohidEventSystemClient;
     BOOL _showButtonLabels;
+    NSDictionary *__preferenceDefaults;
 }
 
 + (id)sharedController;
+@property(retain, nonatomic) NSDictionary *_preferenceDefaults; // @synthesize _preferenceDefaults=__preferenceDefaults;
 @property(nonatomic) BOOL showButtonLabels; // @synthesize showButtonLabels=_showButtonLabels;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL nonProportionalResizingEnabled;
+- (void)updateToolbarSetting:(unsigned long long)arg1 forToolbarIdentifier:(id)arg2 panelIdentifier:(id)arg3 productSupportType:(unsigned long long)arg4;
+- (unsigned long long)toolbarSettingForToolbarIdentifier:(id)arg1 panelIdentifier:(id)arg2 productSupportType:(unsigned long long)arg3;
 @property(readonly, nonatomic) double hotCornerDwellTime;
 @property(nonatomic) BOOL autoHideEnabled;
 @property(nonatomic) BOOL showDwellActionsInMenuBar;
@@ -35,11 +39,13 @@
 - (id)copyPreferenceStringForKey:(id)arg1;
 - (id)copyPreferenceValueForKey:(id)arg1;
 - (void)setPreferenceValue:(id)arg1 forKey:(id)arg2;
-- (id)_preferenceDefaults;
 - (void)setViewingAlpha:(double)arg1 forPanelUUID:(id)arg2;
 - (double)viewingAlphaForPanelUUID:(id)arg1;
+- (double)viewingZoomNonProportionalFactorForPanelUUID:(id)arg1 returningHorizontalNotVertical:(char *)arg2;
+- (void)setViewingZoomNonProportionalFactor:(double)arg1 horizontalNotVertical:(BOOL)arg2 forPanelUUID:(id)arg3;
 - (void)setViewingZoomScale:(double)arg1 forPanelUUID:(id)arg2;
 - (double)viewingZoomScaleForPanelUUID:(id)arg1;
+- (BOOL)viewingZoomScaleIsDefaultForPanelUUID:(id)arg1;
 @property(readonly, nonatomic) double minimumPressBeforeRepeatDuration;
 @property(readonly, nonatomic) double repeatInterval;
 @property(readonly, nonatomic) double doublePressInterval;
@@ -65,6 +71,7 @@
 - (void)setDesiredPanelWindowPosition:(unsigned long long)arg1 panelWindowFrame:(struct CGRect)arg2;
 @property(readonly, nonatomic) struct CGRect desiredPanelWindowFrame;
 @property(readonly, nonatomic) unsigned long long desiredPanelWindowPosition;
+@property(nonatomic) struct CGRect minimizedPanelFrame;
 - (void)setPanelPosition:(unsigned long long)arg1 windowFrame:(struct CGRect)arg2;
 @property(nonatomic) unsigned long long panelPosition;
 @property(readonly, nonatomic) struct CGRect panelFrame;

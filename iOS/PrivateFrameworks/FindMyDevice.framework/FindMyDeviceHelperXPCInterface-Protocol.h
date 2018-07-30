@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class FMDGenericAccessory, FMDLostModeInfo, NSArray;
+@class FMDGenericAccessory, FMDGenericMessage, FMDLostModeInfo, NSArray;
 
 @protocol FindMyDeviceHelperXPCInterface <NSObject>
+- (oneway void)stopSoundMessageWithCompletion:(void (^)(NSError *))arg1;
+- (oneway void)startPlayingSoundForMessage:(FMDGenericMessage *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)updateNeedsLocateAckLostModeInfo:(FMDLostModeInfo *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)updateManagedLostModeInfo:(FMDLostModeInfo *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)disableBiometricIDWithCompletion:(void (^)(NSError *))arg1;

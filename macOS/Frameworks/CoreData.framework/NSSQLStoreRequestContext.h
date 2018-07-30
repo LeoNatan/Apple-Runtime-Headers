@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSError, NSException, NSManagedObjectContext, NSPersistentStoreRequest, NSQueryGenerationToken, NSSQLCore, NSSQLRowCache, NSSQLiteConnection;
+@class NSError, NSException, NSManagedObjectContext, NSNumber, NSPersistentStoreRequest, NSQueryGenerationToken, NSSQLCore, NSSQLRowCache, NSSQLiteConnection;
 
 __attribute__((visibility("hidden")))
 @interface NSSQLStoreRequestContext : NSObject
@@ -21,8 +21,10 @@ __attribute__((visibility("hidden")))
     BOOL _useColoredLogging;
     BOOL _useConcurrentFetching;
     BOOL _hasHistoryTracking;
+    NSNumber *_transactionID;
 }
 
+@property(readonly, nonatomic) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
 @property(retain, nonatomic) id exception; // @synthesize exception=_exception;
 @property(retain, nonatomic) NSError *localError; // @synthesize localError=_error;
@@ -38,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)executePrologue;
 @property(readonly, nonatomic) NSQueryGenerationToken *queryGenerationToken;
 @property(readonly, nonatomic) BOOL isWritingRequest;
+- (void)setTransactionID:(id)arg1;
 - (BOOL)hasHistoryTracking;
 @property(readonly, nonatomic) int debugLogLevel;
 - (BOOL)forConflictAnalysis;

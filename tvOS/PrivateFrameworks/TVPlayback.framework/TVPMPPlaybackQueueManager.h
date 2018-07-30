@@ -25,6 +25,7 @@
 + (id)_mediaRemotePropertyForMediaItemProperty:(id)arg1;
 + (id)_mediaItemMetadataProperties;
 + (id)_mediaItemPropertyToMediaRemotePropertyMapping;
++ (_Bool)_mediaItemHasArtwork:(id)arg1;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *imageProxies; // @synthesize imageProxies=_imageProxies;
 @property(nonatomic) _Bool isSoleUpdater; // @synthesize isSoleUpdater=_isSoleUpdater;

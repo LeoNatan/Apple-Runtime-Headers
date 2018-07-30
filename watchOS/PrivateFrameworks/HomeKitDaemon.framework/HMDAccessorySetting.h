@@ -14,7 +14,7 @@
 #import "HMFLogging.h"
 #import "NSSecureCoding.h"
 
-@class HMDAccessorySettingContainer, HMDAccessorySettingGroup, HMDAccessorySettingModel, HMDAccessorySettingUpdateBase, HMFMessageDestination, HMFMessageDispatcher, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class HMDAccessorySettingContainer, HMDAccessorySettingGroup, HMDAccessorySettingModel, HMDAccessorySettingUpdateBase, HMFMessageDestination, HMFMessageDispatcher, NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
 
 @interface HMDAccessorySetting : HMFObject <HMDBackingStoreObjectProtocol, HMDAccessorySettingUpdateDelegate, HMFLogging, HMDAccessorySettingUpdateProtocol, HMDAccessorySettingProtocol, HMDHomeMessageReceiver, NSSecureCoding>
 {
@@ -22,6 +22,7 @@
     NSString *_name;
     int _type;
     NSMutableArray *_constraints;
+    NSMutableSet *_constraintItemsMarkedForRemoval;
     unsigned int _configurationVersion;
     HMDAccessorySetting *_mediaSystemSetting;
     NSUUID *_identifier;
@@ -52,6 +53,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_fixupMergeStrategyConstraints;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (id)remoteMessageDestination:(id)arg1;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
@@ -61,6 +63,7 @@
 - (id)transactionWithObjectChangeType:(unsigned int)arg1;
 @property(readonly) HMDAccessorySettingModel *model;
 @property(readonly, copy) NSArray *models;
+- (void)_relayRequestMessageNoRemoteCheck:(id)arg1 targetAccessory:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_relayRequestMessage:(id)arg1 targetAccessory:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(nonatomic) unsigned int configurationVersion; // @synthesize configurationVersion=_configurationVersion;
 - (id)valueUpdateNotificationWithMessage:(id)arg1;
@@ -70,18 +73,28 @@
 - (void)setValue:(id)arg1;
 @property(readonly, copy) id value;
 - (id)modelsForConstraintsUpdate:(id)arg1;
+- (_Bool)isConstraintMergeStrategyReflection;
 - (void)_handleUpdatedConstraints:(id)arg1;
+- (void)_handleReplaceConstraints:(id)arg1 additions:(id)arg2 removals:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)handleReplaceConstraints:(id)arg1 additions:(id)arg2 removals:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_relayConstraintsMessage:(id)arg1 toTargetAccessory:(id)arg2 additions:(id)arg3 removals:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_handleReplaceConstraints:(id)arg1;
+- (void)_mergeConstraintsLocallyWithAdditions:(id)arg1 removals:(id)arg2;
+- (void)_saveHomeConfiguration:(id)arg1;
+- (void)_replaceConstraints:(id)arg1 additions:(id)arg2 removals:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)replaceConstraints:(id)arg1 additions:(id)arg2 removals:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleRemoveConstraint:(id)arg1;
 - (void)handleRemoveConstraint:(id)arg1;
 - (void)removeConstraint:(id)arg1;
 - (void)_handleAddConstraint:(id)arg1;
 - (void)handleAddConstraint:(id)arg1;
 - (void)addConstraint:(id)arg1;
+- (void)mergeConstraintsFromOther:(id)arg1;
 - (void)setConstraints:(id)arg1;
 - (id)constraintWithIdentifier:(id)arg1;
 @property(readonly, copy) NSArray *constraints;
 - (_Bool)isValid:(id *)arg1;
+- (id)accessoryFromTarget;
 @property(readonly) NSString *keyPath;
 @property(readonly) int type;
 @property(readonly, copy) NSString *name;

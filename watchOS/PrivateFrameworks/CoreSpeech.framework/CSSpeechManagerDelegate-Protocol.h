@@ -20,6 +20,7 @@
 - (void)speechManagerEndRecordInterruption:(CSSpeechManager *)arg1;
 - (void)speechManagerBeginRecordInterruption:(CSSpeechManager *)arg1 withContext:(NSDictionary *)arg2;
 - (void)speechManagerBeginRecordInterruption:(CSSpeechManager *)arg1;
+- (void)speechManagerDidFinishAlertPlayback:(CSSpeechManager *)arg1 ofType:(int)arg2 error:(NSError *)arg3;
 - (void)speechManagerDetectedSystemVolumeChange:(CSSpeechManager *)arg1 withVolume:(float)arg2 forReason:(unsigned int)arg3;
 - (void)speechManagerRecordHardwareConfigurationDidChange:(CSSpeechManager *)arg1 toConfiguration:(int)arg2;
 - (NSDictionary *)speechManagerRecordingContext;

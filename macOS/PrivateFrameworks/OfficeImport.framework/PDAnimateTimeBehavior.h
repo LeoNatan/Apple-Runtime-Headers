@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface PDAnimateTimeBehavior : PDAnimateBehavior
 {
     NSString *mTo;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
     int mValueType;
 }
 
+- (void).cxx_destruct;
 - (void)setValueType:(int)arg1;
 - (int)valueType;
 - (BOOL)hasValueType;
@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (id)from;
 - (void)setTo:(id)arg1;
 - (id)to;
-- (void)dealloc;
 - (id)init;
 
 @end

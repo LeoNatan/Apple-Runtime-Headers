@@ -27,7 +27,6 @@
 - (void)openURL:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)updatePreferredMaxLayoutWidth:(id)arg1;
 
 @end
 

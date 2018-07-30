@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSFastEnumeration.h"
 
-@class MDLVertexDescriptor, NSMapTable, NSMutableArray, NSURL;
+@class MDLVertexDescriptor, NSMapTable, NSMutableArray, NSURL, NSUnitLength;
 
 @interface MDLAsset : NSObject <NSCopying, NSFastEnumeration>
 {
@@ -22,16 +22,19 @@
     // Error parsing type: , name: _upAxis
     _Bool _isSceneKitBridged;
     NSMapTable *_components;
+    NSURL *_temporaryFolderURL;
     double _frameInterval;
     id <MDLAssetResolver> _resolver;
     id <MDLMeshBufferAllocator> _bufferAllocator;
     MDLVertexDescriptor *_vertexDescriptor;
     double __timeCodesPerSecond;
+    NSUnitLength *_unitLength;
 }
 
 + (_Bool)canImportFileExtension:(id)arg1;
 + (_Bool)canExportFileExtension:(id)arg1;
 + (id)placeLightProbesWithDensity:(float)arg1 heuristic:(long long)arg2 usingIrradianceDataSource:(id)arg3;
+@property(retain, nonatomic) NSUnitLength *unitLength; // @synthesize unitLength=_unitLength;
 @property(nonatomic) double _timeCodesPerSecond; // @synthesize _timeCodesPerSecond=__timeCodesPerSecond;
 @property(readonly, retain, nonatomic) MDLVertexDescriptor *vertexDescriptor; // @synthesize vertexDescriptor=_vertexDescriptor;
 @property(readonly, retain, nonatomic) id <MDLMeshBufferAllocator> bufferAllocator; // @synthesize bufferAllocator=_bufferAllocator;
@@ -40,6 +43,7 @@
 // Property attributes: T,N,V_upAxis
 
 @property(nonatomic) double frameInterval; // @synthesize frameInterval=_frameInterval;
+@property(retain, nonatomic) NSURL *_temporaryFolderURL; // @synthesize _temporaryFolderURL;
 @property(retain, nonatomic) id <MDLObjectContainerComponent> animations; // @synthesize animations=_animations;
 @property(retain, nonatomic) id <MDLObjectContainerComponent> masters; // @synthesize masters=_masters;
 - (void).cxx_destruct;
@@ -58,8 +62,10 @@
 - (id)initWithURL:(id)arg1 vertexDescriptor:(id)arg2 bufferAllocator:(id)arg3;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 vertexDescriptor:(id)arg2 bufferAllocator:(id)arg3 preserveTopology:(_Bool)arg4 error:(id *)arg5;
+- (id)initWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)_conformVertexBuffers:(id)arg1 error:(id *)arg2;
 - (id)initWithBufferAllocator:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (void)_commonInit;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -70,6 +76,7 @@
 - (void)loadTextures;
 - (void)resolveTextures;
 - (void)enumerateChildObjectsOfClass:(Class)arg1 usingBlock:(CDUnknownBlockType)arg2 stopPointer:(_Bool *)arg3;
+- (id)description;
 - (id)childObjectsOfClass:(Class)arg1;
 - (id)components;
 - (id)objectForKeyedSubscript:(id)arg1;

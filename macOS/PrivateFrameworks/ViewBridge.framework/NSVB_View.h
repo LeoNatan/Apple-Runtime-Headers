@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)_animateWithAttributes:(id)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-+ (id)_currentAnimationAttributes;
++ (id)_currentAnimationAttributes:(BOOL)arg1;
 
 @end
 

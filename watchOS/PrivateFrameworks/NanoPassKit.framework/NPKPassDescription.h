@@ -98,7 +98,6 @@
 @property(nonatomic) unsigned int expressPassTypesMask; // @synthesize expressPassTypesMask=_expressPassTypesMask;
 - (void).cxx_destruct;
 - (_Bool)hasValidNFCPayload;
-- (_Bool)supportsExpressPassType:(int)arg1;
 - (_Bool)isEnroute;
 - (_Bool)isAddValuePending;
 - (id)fieldForKey:(id)arg1;

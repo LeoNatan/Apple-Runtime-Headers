@@ -8,7 +8,7 @@
 
 #import "CALinearMaskLayerDelegate.h"
 
-@class CALayer, CALinearMaskLayer, NSMapTable, NSMutableArray, NSString;
+@class CALayer, CALinearMaskLayer, NSGraphicsContext, NSMapTable, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSTextLayer : _NSBackingLayer <CALinearMaskLayerDelegate>
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _primaryOverlayRenderer;
     NSMutableArray *_primaryOverlayRenderers;
     CALayer *_colorLayer;
+    CALayer *_bezelLayer;
     NSMapTable *_layers;
     NSMapTable *_renderers;
     struct CGContext *_ctx;
@@ -28,15 +29,17 @@ __attribute__((visibility("hidden")))
     BOOL _allowsLinearMaskLayer;
     BOOL _needsFSBC;
     struct CGDisplayList *_renderInContextDisplayList;
+    NSGraphicsContext *_drawingContext;
 }
 
+@property(readonly) NSGraphicsContext *drawingContext;
+@property(retain) CALayer *bezelLayer;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)drawLayer:(id)arg1 inLinearMaskContext:(struct CALinearMaskContext *)arg2;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)_renderForegroundInContext:(struct CGContext *)arg1;
 - (void)renderInContext:(struct CGContext *)arg1;
 - (void)_appkitViewBackingLayerUniqueMethod;
-- (BOOL)NS_usesLinearMaskOverlay;
 - (void)_NS_invalidateSuggestedContentsScale;
 - (void)NS_didChangeDefaultContentsScale:(double)arg1;
 - (void)display;

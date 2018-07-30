@@ -6,20 +6,29 @@
 
 #import "NSObject.h"
 
+@class LUPresenter, RVPopoverPresenter;
+
 @interface RVPresenter : NSObject
 {
     id <NSObject> _observer;
+    LUPresenter *_lookupPresenter;
+    RVPopoverPresenter *_popoverPresenter;
+    id <RVPresenterViewControllerProvider> _viewControllerProvider;
 }
 
 + (id)sharedPresenter;
+@property(nonatomic) __weak id <RVPresenterViewControllerProvider> viewControllerProvider; // @synthesize viewControllerProvider=_viewControllerProvider;
 - (void).cxx_destruct;
+- (void)contentMoved;
 - (void)contentChanged;
+- (BOOL)tryCloseAllPopoverForDDContext:(id)arg1;
 - (BOOL)revealItem:(id)arg1 documentContext:(id)arg2 presentingContext:(id)arg3 options:(id)arg4;
 - (id)menuItemsForItem:(id)arg1 documentContext:(id)arg2 presentingContext:(id)arg3 options:(id)arg4;
+- (id)taggedItems:(id)arg1;
 - (id)animationControllerForItem:(id)arg1 documentContext:(id)arg2 presentingContext:(id)arg3 options:(id)arg4;
-- (BOOL)ddActionAvailableForUrl:(id)arg1 ddResult:(struct __DDResult *)arg2 ddContext:(id)arg3;
-- (id)revealOptionsFromClientOptions:(id)arg1;
-- (id)ddActionContextFromDocumentContext:(id)arg1 presentingContext:(id)arg2 item:(id)arg3 ddResult:(struct __DDResult *)arg4;
+-     // Error parsing type: c40@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32, name: ddActionAvailableForUrl:ddResult:ddContext:
+- (id)revealOptionsFromClientOptions:(id)arg1 withItem:(id)arg2 triggerType:(unsigned long long)arg3;
+-     // Error parsing type: @48@0:8@16@24@32^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}40, name: ddActionContextFromDocumentContext:presentingContext:item:ddResult:
 
 @end
 

@@ -18,6 +18,8 @@
 
 + (id)sharedTextureHandler;
 - (void).cxx_destruct;
+- (unsigned int)textureWithImage:(struct CGImage *)arg1 textureName:(id)arg2 wrap:(_Bool)arg3;
+- (unsigned int)loadTexture:(int *)arg1 image:(struct CGImage *)arg2 wrap:(_Bool)arg3;
 - (unsigned int)textureWithName:(id)arg1 wrap:(_Bool)arg2 forInk:(_Bool)arg3;
 - (unsigned int)textureWithName:(id)arg1 forInk:(_Bool)arg2;
 - (unsigned int)textureWithName:(id)arg1 wrap:(_Bool)arg2;

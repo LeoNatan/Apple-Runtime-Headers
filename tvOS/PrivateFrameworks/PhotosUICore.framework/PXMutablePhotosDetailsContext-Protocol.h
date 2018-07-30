@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString, PHFetchResult;
+@class NSDictionary, NSString, PHFetchResult, PXPhotosDetailsViewModel;
 
 @protocol PXMutablePhotosDetailsContext <NSObject>
+@property(retain, nonatomic) PXPhotosDetailsViewModel *viewModel;
 @property(nonatomic) unsigned long long viewSourceOrigin;
 @property(nonatomic) _Bool shouldShowMovieHeader;
 @property(copy, nonatomic) NSString *titleFontName;

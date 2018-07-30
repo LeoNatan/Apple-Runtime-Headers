@@ -24,6 +24,7 @@
 @property(copy, nonatomic) FBSSceneClientSettings *clientSettings; // @synthesize clientSettings=_clientSettings;
 @property(copy, nonatomic) FBSSceneSettings *settings; // @synthesize settings=_settings;
 @property(readonly, copy, nonatomic) FBSSceneSpecification *specification; // @synthesize specification=_specification;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -37,7 +38,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_configureCopy:(id)arg1;
 - (void)updateSettingsWithBlock:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithSpecification:(id)arg1;
 

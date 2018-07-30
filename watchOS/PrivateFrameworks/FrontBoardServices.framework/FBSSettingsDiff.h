@@ -18,6 +18,7 @@
     Class _settingsClass;
 }
 
+- (void).cxx_destruct;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)settings:(id)arg1 valueDescriptionForFlag:(int)arg2 object:(id)arg3 ofSetting:(unsigned int)arg4;

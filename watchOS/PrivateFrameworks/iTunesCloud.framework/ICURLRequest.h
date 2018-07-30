@@ -8,7 +8,7 @@
 
 #import "NSProgressReporting.h"
 
-@class ICRequestContext, NSDictionary, NSError, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTask;
+@class ICRequestContext, NSData, NSDictionary, NSError, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTask;
 
 @interface ICURLRequest : NSObject <NSProgressReporting>
 {
@@ -24,6 +24,7 @@
     unsigned int _retryCount;
     unsigned int _redirectCount;
     int _requestState;
+    NSData *_resumeData;
     NSURLRequest *_urlRequest;
     NSURLSessionTask *_task;
     int _type;
@@ -56,6 +57,7 @@
 @property(retain, nonatomic) NSURLSessionTask *task; // @synthesize task=_task;
 @property(readonly, nonatomic) NSURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
 @property(nonatomic, getter=isExtendedCertificateValidationRequired) _Bool extendedCertificateValidationRequired; // @synthesize extendedCertificateValidationRequired=_extendedCertificateValidationRequired;
+@property(readonly, copy, nonatomic) NSData *resumeData; // @synthesize resumeData=_resumeData;
 @property(nonatomic) int requestState; // @synthesize requestState=_requestState;
 @property(nonatomic) double retryDelay; // @synthesize retryDelay=_retryDelay;
 @property(nonatomic) unsigned int redirectCount; // @synthesize redirectCount=_redirectCount;
@@ -64,7 +66,7 @@
 @property(nonatomic) unsigned int maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
 @property(nonatomic) _Bool cancelOnHTTPErrors; // @synthesize cancelOnHTTPErrors=_cancelOnHTTPErrors;
 @property(nonatomic) _Bool prioritize; // @synthesize prioritize=_prioritize;
-@property(retain) NSProgress *progress; // @synthesize progress=_progress;
+@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
 - (void)updateState:(int)arg1;
 - (void)removeObserver:(id)arg1;
@@ -72,7 +74,9 @@
 - (void)buildURLRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+- (id)initWithURLRequest:(id)arg1 requestContext:(id)arg2 resumeData:(id)arg3;
 - (id)initWithURLRequest:(id)arg1 requestContext:(id)arg2;
+- (id)initWithURL:(id)arg1 requestContext:(id)arg2 resumeData:(id)arg3;
 - (id)initWithURL:(id)arg1 requestContext:(id)arg2;
 
 // Remaining properties

@@ -48,6 +48,7 @@
 - (void)_removeFigAssetListeners;
 - (void)_addFigAssetListeners;
 - (id)_figAssetNotificationNames;
+- (id)_errorFromAssetNotificationPayload:(id)arg1;
 - (struct OpaqueFigAsset *)_createDuplicateFigAssetFromAVAsset:(id)arg1;
 - (void)_selectMediaOptionsFromMediaSelection:(id)arg1;
 - (id)_loadedTimeRangesFromFigLoadedTimeRanges:(id)arg1;

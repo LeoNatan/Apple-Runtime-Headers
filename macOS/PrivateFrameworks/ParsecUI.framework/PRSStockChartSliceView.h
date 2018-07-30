@@ -8,18 +8,18 @@
 
 #import "StockGraphViewContainer.h"
 
-@class DashedLineView, NSLayoutConstraint, NSMutableArray, PRSStockBox, PRSStockChartView, PRSStockTextField, StockChartData, StockChartDisplayMode, StockGraphView;
+@class DashedLineView, NSLayoutConstraint, NSMutableArray, NSTextField, StockChartData, StockChartDisplayMode, StockGraphView;
 
 @interface PRSStockChartSliceView : NSView <StockGraphViewContainer>
 {
-    PRSStockBox *_chartTopKeyline;
-    PRSStockBox *_chartBottomKeyline;
-    PRSStockBox *_xAxisKeyline;
-    PRSStockChartView *_chartView;
-    PRSStockTextField *_errorMessageLabel;
-    PRSStockTextField *_highPriceLabel;
-    PRSStockTextField *_lowPriceLabel;
-    PRSStockTextField *_previousClosePriceLabel;
+    NSView *_chartTopKeyline;
+    NSView *_chartBottomKeyline;
+    NSView *_xAxisKeyline;
+    NSView *_chartView;
+    NSTextField *_errorMessageLabel;
+    NSTextField *_highPriceLabel;
+    NSTextField *_lowPriceLabel;
+    NSTextField *_previousClosePriceLabel;
     NSLayoutConstraint *_previousClosePriceLabelVerticalSpaceConstraint;
     DashedLineView *_previousCloseLine;
     StockChartData *_chartData;
@@ -37,14 +37,14 @@
 @property(retain, nonatomic) StockChartData *chartData; // @synthesize chartData=_chartData;
 @property(retain) DashedLineView *previousCloseLine; // @synthesize previousCloseLine=_previousCloseLine;
 @property __weak NSLayoutConstraint *previousClosePriceLabelVerticalSpaceConstraint; // @synthesize previousClosePriceLabelVerticalSpaceConstraint=_previousClosePriceLabelVerticalSpaceConstraint;
-@property __weak PRSStockTextField *previousClosePriceLabel; // @synthesize previousClosePriceLabel=_previousClosePriceLabel;
-@property __weak PRSStockTextField *lowPriceLabel; // @synthesize lowPriceLabel=_lowPriceLabel;
-@property __weak PRSStockTextField *highPriceLabel; // @synthesize highPriceLabel=_highPriceLabel;
-@property __weak PRSStockTextField *errorMessageLabel; // @synthesize errorMessageLabel=_errorMessageLabel;
-@property __weak PRSStockChartView *chartView; // @synthesize chartView=_chartView;
-@property __weak PRSStockBox *xAxisKeyline; // @synthesize xAxisKeyline=_xAxisKeyline;
-@property __weak PRSStockBox *chartBottomKeyline; // @synthesize chartBottomKeyline=_chartBottomKeyline;
-@property __weak PRSStockBox *chartTopKeyline; // @synthesize chartTopKeyline=_chartTopKeyline;
+@property __weak NSTextField *previousClosePriceLabel; // @synthesize previousClosePriceLabel=_previousClosePriceLabel;
+@property __weak NSTextField *lowPriceLabel; // @synthesize lowPriceLabel=_lowPriceLabel;
+@property __weak NSTextField *highPriceLabel; // @synthesize highPriceLabel=_highPriceLabel;
+@property __weak NSTextField *errorMessageLabel; // @synthesize errorMessageLabel=_errorMessageLabel;
+@property __weak NSView *chartView; // @synthesize chartView=_chartView;
+@property __weak NSView *xAxisKeyline; // @synthesize xAxisKeyline=_xAxisKeyline;
+@property __weak NSView *chartBottomKeyline; // @synthesize chartBottomKeyline=_chartBottomKeyline;
+@property __weak NSView *chartTopKeyline; // @synthesize chartTopKeyline=_chartTopKeyline;
 - (void).cxx_destruct;
 - (struct CGRect)lineGraphFrame;
 - (void)layoutPriceLabels;
@@ -54,7 +54,6 @@
 - (void)setHourLabels;
 - (void)prepareXAxisLabelsAndPositions;
 - (void)stockGraphViewReadyForDisplay:(id)arg1;
-- (BOOL)allowsVibrancy;
 - (void)viewDidMoveToSuperview;
 - (id)initWithFrame:(struct CGRect)arg1;
 

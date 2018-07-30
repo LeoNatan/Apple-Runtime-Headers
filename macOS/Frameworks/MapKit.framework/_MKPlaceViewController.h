@@ -14,7 +14,6 @@
 #import "MKPlaceCardHeaderViewControllerDelegate.h"
 #import "MKPlaceCardPhotosControllerDelegate.h"
 #import "MKPlaceCardReviewsControllerDelegate.h"
-#import "MKPlaceDealsViewControllerDelegate.h"
 #import "MKPlaceHeaderButtonsViewControllerDelegate.h"
 #import "MKStackingViewControllerDelegate.h"
 #import "MKTransitAttributionViewControllerDelegate.h"
@@ -24,15 +23,14 @@
 #import "_MKInfoCardAnalyticsDelegate.h"
 #import "_MKInfoCardController.h"
 
-@class CLLocation, CNContact, CNContactStore, GEOAutomobileOptions, GEOTransitOptions, MKETAProvider, MKMapItem, MKMapItemMetadataDealRequest, MKPlaceActionManager, MKPlaceCardActionsRowViewController, MKPlaceCardFooterActionsViewController, MKPlaceCardHeaderViewController, MKPlaceDealsViewController, MKPlaceHeaderButtonsViewController, MKPlaceInfoViewController, MKPlaceInlineMapViewController, MKPlacePoisInlineMapViewController, NSMapTable, NSMutableArray, NSPopover, NSString, NSViewController, _MKDistanceDetailProvider, _MKPlaceActionButtonController;
+@class CLLocation, CNContact, CNContactStore, GEOAutomobileOptions, GEOTransitOptions, MKETAProvider, MKMapItem, MKPlaceActionManager, MKPlaceCardActionsRowViewController, MKPlaceCardFooterActionsViewController, MKPlaceCardHeaderViewController, MKPlaceHeaderButtonsViewController, MKPlaceInfoViewController, MKPlaceInlineMapViewController, MKPlacePoisInlineMapViewController, NSMapTable, NSMutableArray, NSPopover, NSString, NSViewController, _MKDistanceDetailProvider, _MKPlaceActionButtonController;
 
-@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKPlaceDealsViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
+@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
 {
     MKPlaceActionManager *_actionManager;
     MKPlaceCardHeaderViewController *_headerViewController;
     MKPlaceHeaderButtonsViewController *_buttonsHeaderController;
     MKPlaceInfoViewController *_infoViewController;
-    MKPlaceDealsViewController *_dealsViewController;
     MKPlaceInlineMapViewController *_inlineMapViewController;
     MKPlacePoisInlineMapViewController *_poisInlineMapViewController;
     MKPlaceCardFooterActionsViewController *_placeActionViewController;
@@ -42,7 +40,6 @@
     NSMapTable *_additionalViewControllers;
     BOOL _overrideDefaultShowRAP;
     BOOL _hasContactOnlyMapItem;
-    MKMapItemMetadataDealRequest *_dealRequest;
     BOOL _isUpdatingViewControllers;
     struct CGPoint _beginAnalyticsScrollingPoint;
     BOOL _hasCheckedDistanceAvailability;
@@ -109,7 +106,7 @@
 - (void)placeCardActionControllerDidSelectAddPhoto:(id)arg1;
 - (void)placeCardActionControllerDidSelectRemoveFromFavorites:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddToFavorites:(id)arg1;
-- (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1;
+- (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1 fromView:(id)arg2;
 - (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1;
 - (id)transitDeparturesViewControllerTraits:(id)arg1;
 - (void)transitDeparturesViewController:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
@@ -131,14 +128,11 @@
 - (void)_showEditSheet:(id)arg1;
 - (void)mapkitActivityViewController:(id)arg1 postCompletedActivityOfType:(id)arg2 completed:(BOOL)arg3;
 - (void)mapkitActivityViewController:(id)arg1 preCompletedActivityOfType:(id)arg2 completed:(BOOL)arg3;
-- (void)_setDeal:(id)arg1 forYelpId:(id)arg2;
-- (void)_checkForDealsIfNecessary;
 - (void)placeCardEncyclopedicControllerDidExpandTextBlock:(id)arg1;
 - (void)placeCardEncyclopedicControllerDidSelectShowArticle:(id)arg1;
 - (void)placeCardReviewsController:(id)arg1 didSelectViewReview:(id)arg2;
 - (void)placeCardReviewsControllerDidSelectViewAllReviews:(id)arg1;
 - (void)placeActionManager:(id)arg1 didSelectShareFromView:(id)arg2;
-- (void)dealsViewController:(id)arg1 didSelectDeal:(id)arg2;
 - (BOOL)shouldUseSmallPhotosWithPhotosController:(id)arg1;
 - (void)placeCardPhotosController:(id)arg1 didSelectViewPhotoWithID:(id)arg2;
 - (double)stackingViewController:(id)arg1 heightForSeparatorBetweenUpperViewController:(id)arg2 andLowerViewController:(id)arg3;
@@ -159,6 +153,7 @@
 - (void)setPlaceItem:(id)arg1;
 - (void)setPlaceItem:(id)arg1 updateOriginalContact:(BOOL)arg2;
 - (void)setMapItem:(id)arg1 contact:(id)arg2 updateOriginalContact:(BOOL)arg3;
+- (unsigned long long)annotatedItemListDisplayStyle;
 - (id)encyclopedicVC;
 - (id)attributionsVC;
 - (id)reviewsVC;
@@ -169,7 +164,6 @@
 - (id)photoVC;
 - (id)poisInlineMapVC;
 - (id)inlineMapVC;
-- (id)dealsVC;
 - (BOOL)shouldDisplayVenueBrowseVC;
 - (id)reservationVC;
 - (id)transitAttributionVC;
@@ -206,7 +200,6 @@
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2;
 - (id)initWithMapItem:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 options:(unsigned long long)arg2;
-- (id)initWithAppId:(id)arg1 configurationProvider:(id)arg2;
 - (id)init;
 - (void)setUseCompactPhotosView:(BOOL)arg1;
 - (BOOL)useCompactPhotosView;

@@ -8,18 +8,21 @@
 
 #import "NSSecureCoding.h"
 
-@class NSString;
+@class CLKDevice, NSString;
 
 @interface NTKEditOption : NSObject <NSSecureCoding>
 {
+    CLKDevice *_device;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)optionsDescription;
 + (struct CGSize)sizeForSwatchStyle:(long long)arg1;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+- (void).cxx_destruct;
 - (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
 - (_Bool)isValidOption;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
+- (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;
 - (id)JSONObjectRepresentation;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -27,6 +30,7 @@
 @property(readonly, nonatomic) NSString *localizedNameForAction;
 @property(readonly, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) NSString *dailySnapshotKey;
+- (id)initWithDevice:(id)arg1;
 @property(readonly, nonatomic) long long swatchStyle;
 
 @end

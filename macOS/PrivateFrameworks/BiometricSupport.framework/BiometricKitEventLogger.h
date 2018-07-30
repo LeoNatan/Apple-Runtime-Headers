@@ -15,14 +15,16 @@
     unsigned int _eventList[200];
     int _eventListLength;
     _Bool _terminalFlushPending;
-    _Bool _operationCreated;
+    _Bool _startEventFound;
 }
 
 + (id)logger;
 - (void).cxx_destruct;
 - (void)flushEvents;
+- (void)logDeviceMetadata;
 - (void)logEventOrCode:(unsigned long long)arg1;
-- (void)appendEventValue:(unsigned int)arg1;
+- (void)appendEvent:(id)arg1;
+- (void)appendEventValue:(unsigned int)arg1 isMetadata:(_Bool)arg2;
 - (id)init;
 
 @end

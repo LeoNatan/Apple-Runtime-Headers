@@ -10,5 +10,6 @@
 
 @protocol UNSNotificationRepositoryDelegate <NSObject>
 - (void)willPresentNotification:(UNSNotificationRecord *)arg1 forBundleIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(unsigned long long, NSError *))arg3;
+- (_Bool)isApplicationForeground:(NSString *)arg1;
 @end
 

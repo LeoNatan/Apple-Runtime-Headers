@@ -11,10 +11,13 @@
 @interface AVCaptureDeviceInput : AVCaptureInput
 {
     AVCaptureDeviceInputInternal *_internal;
+    BOOL _unifiedAutoExposureDefaultsEnabled;
 }
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id *)arg2;
 + (void)initialize;
+@property(nonatomic) BOOL unifiedAutoExposureDefaultsEnabled; // @synthesize unifiedAutoExposureDefaultsEnabled=_unifiedAutoExposureDefaultsEnabled;
+- (BOOL)_authorizedToUseDeviceAndRequestIfNecessary:(id)arg1;
 - (struct OpaqueCMClock *)inputClock;
 - (void)sessionWillUseOutputDecompressionOptions:(id)arg1 forPort:(id)arg2;
 - (void)setAutomaticallyConfiguresDevice:(BOOL)arg1;

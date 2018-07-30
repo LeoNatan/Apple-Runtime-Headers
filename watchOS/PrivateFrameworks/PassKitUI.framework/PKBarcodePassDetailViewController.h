@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UITableViewController.h"
+#import <PassKitUI/PKSectionTableViewController.h>
 
 #import "PKPassHeaderViewDelegate.h"
 #import "UITextViewDelegate.h"
 
-@class BluetoothManager, NSArray, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, PKLinkedAppView, PKPass, PKPassColorProfile, PKPassDisplayProfile, PKPassHeaderView, PKSettingTableCell, UIRefreshControl, UISegmentedControl, UITableViewCell, UIView, UIVisualEffectView;
+@class BluetoothManager, NSArray, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, PKBarcodeTableViewCell, PKLinkedAppView, PKPass, PKPassColorProfile, PKPassDisplayProfile, PKPassHeaderView, PKSettingTableCell, UIRefreshControl, UISegmentedControl, UITableViewCell, UIView, UIVisualEffectView;
 
-@interface PKBarcodePassDetailViewController : UITableViewController <UITextViewDelegate, PKPassHeaderViewDelegate>
+@interface PKBarcodePassDetailViewController : PKSectionTableViewController <UITextViewDelegate, PKPassHeaderViewDelegate>
 {
     PKPassDisplayProfile *_displayProfile;
     PKPassColorProfile *_colorProfile;
@@ -19,43 +19,35 @@
     UIView *_locationHelpView;
     UIRefreshControl *_refreshControl;
     PKSettingTableCell *_automaticUpdatesCell;
+    PKSettingTableCell *_showNotificationsCell;
     PKSettingTableCell *_showInLockScreenCell;
     PKSettingTableCell *_automaticSelectionCell;
     UITableViewCell *_shareCell;
     UITableViewCell *_personalizePassCell;
     UITableViewCell *_deleteCell;
-    NSArray *_rowCountBySection;
-    unsigned int _linkedAppSection;
-    unsigned int _settingsSection;
-    unsigned int _automaticSelectionSection;
-    unsigned int _shareSection;
-    unsigned int _deleteSection;
-    unsigned int _personalizePassSection;
-    unsigned int _fieldsSection;
-    NSMutableDictionary *_fieldCellsByIndexPath;
-    NSMutableDictionary *_fieldCellHeightsByIndexPath;
+    PKBarcodeTableViewCell *_barcodeCell;
+    NSMutableDictionary *_fieldCellsByRow;
+    NSMutableDictionary *_fieldCellHeightsByRow;
+    _Bool _forcedRefresh;
+    float _forcedTopContentInset;
     NSObject<OS_dispatch_source> *_refreshTimeout;
     BluetoothManager *_btManager;
     _Bool _isBluetoothEnabled;
     _Bool _isLocationEnabled;
     _Bool _isWifiEnabled;
-    _Bool _showsShare;
-    _Bool _showsSettings;
-    _Bool _showsDelete;
     _Bool _showsLinks;
-    _Bool _showsLinkedApp;
-    _Bool _showsPersonalize;
     NSArray *_tabBarSegments;
     float _headerHeight;
     struct UIEdgeInsets _headerContentInset;
     float _tabBarHeight;
-    float _previousLayoutTableViewWidth;
+    struct CGSize _previousLayoutTableViewBoundsSize;
     _Bool _navigationControllerHidesShadow;
     UIView *_headerView;
     PKPassHeaderView *_passHeaderView;
     UIVisualEffectView *_blurView;
     UISegmentedControl *_tabBar;
     UIView *_keyLine;
+    _Bool _didRampScreenBrightness;
     PKPass *_pass;
     unsigned int _suppressedContent;
     id <PKPassDeleteHandler> _deleteOverrider;
@@ -74,10 +66,12 @@
 - (_Bool)shouldAllowRefresh;
 - (void)_refreshFinished:(_Bool)arg1;
 - (void)refreshControlValueChanged:(id)arg1;
-- (id)_fieldForIndexPath:(id)arg1;
-- (id)_fieldCellForIndexPath:(id)arg1;
+- (id)_fieldForRow:(unsigned int)arg1;
+- (id)_fieldCellForRow:(unsigned int)arg1;
 - (id)_settingsCellForRow:(unsigned int)arg1;
+- (unsigned int)_settingForRow:(unsigned int)arg1;
 - (id)_personalizePassCell;
+- (id)_barcodeCell;
 - (id)_deleteCell;
 - (id)_shareCell;
 - (id)_automaticSelectionCell;
@@ -85,6 +79,7 @@
 - (_Bool)_settingsAvailable;
 - (_Bool)_linkedAppAvailable;
 - (void)_updatePassProperties;
+- (unsigned int)_numberOfAvailableSettings;
 - (void)_deletePass;
 - (void)_sharePass;
 - (void)_tabBarSegmentChanged:(id)arg1;
@@ -99,8 +94,9 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
@@ -116,15 +112,19 @@
 - (_Bool)_updateHeaderHeightDeterminingLayout:(_Bool)arg1;
 - (void)_updateTabBarWithSegments:(id)arg1;
 - (void)_updateTabBar;
-- (void)reloadData;
+- (int)rowAnimationForReloadingSection:(unsigned int)arg1;
+- (_Bool)reloadData;
+- (void)reloadSections:(id)arg1;
+- (void)reloadSection:(unsigned int)arg1;
+- (_Bool)shouldMapSection:(unsigned int)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
-- (void)_updateTableSections;
 - (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (void)dealloc;
 - (id)initWithPass:(id)arg1;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(int)arg1 numberOfSections:(unsigned int)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 

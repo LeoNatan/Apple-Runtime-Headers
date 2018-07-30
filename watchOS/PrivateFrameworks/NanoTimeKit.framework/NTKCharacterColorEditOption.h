@@ -12,13 +12,13 @@
 {
 }
 
-+ (id)_localizedNameForValue:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (unsigned int)indexOfOption:(id)arg1 forCharacter:(unsigned int)arg2;
-+ (id)optionAtIndex:(unsigned int)arg1 forCharacter:(unsigned int)arg2;
-+ (unsigned int)numberOfOptionsForCharacter:(unsigned int)arg1;
-+ (id)optionWithOption:(id)arg1 forCharacter:(unsigned int)arg2;
-+ (id)optionWithFaceColor:(unsigned int)arg1;
++ (id)_localizedNameForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (unsigned int)indexOfOption:(id)arg1 forCharacter:(unsigned int)arg2 forDevice:(id)arg3;
++ (id)optionAtIndex:(unsigned int)arg1 forCharacter:(unsigned int)arg2 forDevice:(id)arg3;
++ (unsigned int)numberOfOptionsForCharacter:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)optionWithOption:(id)arg1 forCharacter:(unsigned int)arg2 forDevice:(id)arg3;
++ (id)optionWithFaceColor:(unsigned int)arg1 forDevice:(id)arg2;
 @property(readonly, nonatomic) float desaturation;
 @property(readonly, nonatomic) UIColor *colorValue;
 @property(readonly, nonatomic) unsigned int color;

@@ -20,6 +20,7 @@
 + (id)participantWithName:(id)arg1 url:(id)arg2;
 @property(readonly, nonatomic) EKCalendarItem *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+- (id)semanticIdentifier;
 - (id)setInviterNameString;
 @property(copy, nonatomic) NSString *inviterNameString; // @dynamic inviterNameString;
 - (id)invitedBy;
@@ -45,6 +46,7 @@
 @property(copy, nonatomic) NSString *phoneNumber;
 @property(copy, nonatomic) NSString *emailAddress;
 - (void)setDisplayName:(id)arg1;
+- (id)displayNameRaw;
 @property(readonly, nonatomic) NSString *name;
 - (void)setUUID:(id)arg1;
 @property(readonly, nonatomic) NSString *UUID;

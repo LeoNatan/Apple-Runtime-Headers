@@ -18,8 +18,12 @@
     NSDictionary *_launchOptions;
     NSURL *_appLocalJSURL;
     NSURL *_appJSCachePath;
+    NSString *_bagBootURLKey;
+    NSURL *_offlineJSURL;
 }
 
+@property(copy, nonatomic) NSURL *offlineJSURL; // @synthesize offlineJSURL=_offlineJSURL;
+@property(copy, nonatomic) NSString *bagBootURLKey; // @synthesize bagBootURLKey=_bagBootURLKey;
 @property(copy, nonatomic) NSURL *appJSCachePath; // @synthesize appJSCachePath=_appJSCachePath;
 @property(copy, nonatomic) NSURL *appLocalJSURL; // @synthesize appLocalJSURL=_appLocalJSURL;
 @property(nonatomic, getter=isSupplementary) _Bool supplementary; // @synthesize supplementary=_supplementary;

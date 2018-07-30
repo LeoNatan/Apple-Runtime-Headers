@@ -13,9 +13,14 @@
 @interface NTKZeusMoonPhaseComplicationView : NTKZeusComplicationView <NTKMoonPhaseComplicationDisplay>
 {
     UIImageView *_imageView;
+    int _moonPhaseHemisphere;
+    unsigned int _phaseNumber;
 }
 
 - (void).cxx_destruct;
+- (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
+- (void)applyPalette:(id)arg1;
+- (void)_updateImages;
 - (void)setPhaseNumber:(unsigned int)arg1 hemisphere:(int)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

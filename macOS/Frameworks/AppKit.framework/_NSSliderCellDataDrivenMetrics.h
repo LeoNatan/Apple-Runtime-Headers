@@ -13,10 +13,10 @@
 __attribute__((visibility("hidden")))
 @interface _NSSliderCellDataDrivenMetrics : NSObject <NSSliderCellMetricsStrategy>
 {
-    CDStruct_afd5e463 _state;
+    CDStruct_5a39c0a2 _state;
 }
 
-@property CDStruct_afd5e463 state; // @synthesize state=_state;
+@property CDStruct_5a39c0a2 state; // @synthesize state=_state;
 - (struct CGRect)rectOfMaxValueImageFlipped:(BOOL)arg1;
 - (struct CGRect)rectOfMinValueImageFlipped:(BOOL)arg1;
 - (struct CGRect)rectOfTickMarkForValue:(double)arg1 knobRect:(struct CGRect)arg2 barRect:(struct CGRect)arg3;

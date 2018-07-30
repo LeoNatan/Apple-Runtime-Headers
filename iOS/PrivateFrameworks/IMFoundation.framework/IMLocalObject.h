@@ -46,6 +46,7 @@
 - (void)_portInterrupted;
 - (void)_cancelHandlerCompleted;
 - (void)dealloc;
+- (void)_clearPort:(_Bool)arg1 signalRunLoopIfNeeded:(_Bool)arg2;
 - (void)_clearPort:(_Bool)arg1;
 @property(readonly, nonatomic) NSProtocolChecker *protocolChecker;
 @property(nonatomic) id target;

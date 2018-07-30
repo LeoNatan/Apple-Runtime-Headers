@@ -8,6 +8,7 @@
 
 #import "CPDisposable.h"
 
+__attribute__((visibility("hidden")))
 @interface CPFontInfo : NSObject <CPDisposable>
 {
     struct __CFData *fontData;

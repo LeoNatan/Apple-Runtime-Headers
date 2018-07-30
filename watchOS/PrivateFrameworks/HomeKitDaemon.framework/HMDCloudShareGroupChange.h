@@ -6,19 +6,19 @@
 
 #import "HMFObject.h"
 
-@class HMDCloudGroupChange, HMDCloudShareGroup, NSArray, NSMutableArray;
+@class HMDCloudGroupChange, HMDCloudShareGroup, NSArray, NSMutableSet;
 
 @interface HMDCloudShareGroupChange : HMFObject
 {
     HMDCloudGroupChange *_cloudGroupChange;
     HMDCloudShareGroup *_cloudShareGroup;
-    NSMutableArray *_changedObjectIDs;
-    NSMutableArray *_changedRecordNames;
+    NSMutableSet *_changedObjectIDs;
+    NSMutableSet *_changedRecordNames;
 }
 
 + (id)shortDescription;
-@property(retain, nonatomic) NSMutableArray *changedRecordNames; // @synthesize changedRecordNames=_changedRecordNames;
-@property(retain, nonatomic) NSMutableArray *changedObjectIDs; // @synthesize changedObjectIDs=_changedObjectIDs;
+@property(retain, nonatomic) NSMutableSet *changedRecordNames; // @synthesize changedRecordNames=_changedRecordNames;
+@property(retain, nonatomic) NSMutableSet *changedObjectIDs; // @synthesize changedObjectIDs=_changedObjectIDs;
 @property(readonly, nonatomic) __weak HMDCloudShareGroup *cloudShareGroup; // @synthesize cloudShareGroup=_cloudShareGroup;
 @property(readonly, nonatomic) __weak HMDCloudGroupChange *cloudGroupChange; // @synthesize cloudGroupChange=_cloudGroupChange;
 - (void).cxx_destruct;
@@ -35,19 +35,19 @@
 - (void)collectRecordsForBatch;
 - (_Bool)isRootRecordRequired;
 - (_Bool)moreChangesToProcess;
-- (void)loadCloudRecordsAndDetermineDeletesFromCache:(CDUnknownBlockType)arg1;
-- (void)_determineDeletesFromCache:(CDUnknownBlockType)arg1;
-- (void)loadCloudRecordsFromCache:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool hasValidChanges;
-- (id)cloudRecordWithObjectID:(id)arg1;
-- (id)cloudRecordWithName:(id)arg1;
 - (void)removeChangeWithObjectID:(id)arg1;
+- (void)addChange:(id)arg1 setAsProcessing:(_Bool)arg2;
+- (void)loadCloudRecordsAndDetermineDeletesFromCache:(CDUnknownBlockType)arg1;
+- (void)loadCloudRecordsFromCache:(CDUnknownBlockType)arg1;
+- (void)loadCloudChangeTreeFromCache:(CDUnknownBlockType)arg1;
 - (void)addChangeWithDeletedRecordID:(id)arg1;
 - (void)addChangeWithRecord:(id)arg1;
 - (void)addChangeWithObjectChange:(id)arg1;
-- (void)addChange:(id)arg1 setAsProcessing:(_Bool)arg2;
 - (void)_addChange:(id)arg1;
+- (id)cloudRecordWithName:(id)arg1;
 - (id)changeWithRecordName:(id)arg1;
+- (id)cloudRecordWithObjectID:(id)arg1;
 - (id)changeWithObjectID:(id)arg1;
 @property(readonly, nonatomic) NSArray *processedTransactionStoreRowIDs;
 @property(readonly, nonatomic) NSArray *allTransactionStoreRowIDs;

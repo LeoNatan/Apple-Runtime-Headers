@@ -8,15 +8,14 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ODDStyleDefinition : NSObject
 {
     NSMutableDictionary *mStyleLabels;
 }
 
+- (void).cxx_destruct;
 - (void)setLabel:(id)arg1 forName:(id)arg2;
 - (id)labelForName:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

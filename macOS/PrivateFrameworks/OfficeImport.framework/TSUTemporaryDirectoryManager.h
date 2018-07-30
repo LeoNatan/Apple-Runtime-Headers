@@ -8,7 +8,6 @@
 
 @class NSURL;
 
-__attribute__((visibility("hidden")))
 @interface TSUTemporaryDirectoryManager : NSObject
 {
     NSURL *_baseDirectoryURL;

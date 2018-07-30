@@ -7,13 +7,17 @@
 #import "NSObject.h"
 
 #import "NSCopying.h"
+#import "NSPasteboardReading.h"
 
-@interface OITSUColor : NSObject <NSCopying>
+@class NSColor, NSString;
+
+@interface OITSUColor : NSObject <NSCopying, NSPasteboardReading>
 {
     struct CGColor *mCGColor;
     unsigned long long mColorRGBSpace;
 }
 
++ (id)readableTypesForPasteboard:(id)arg1;
 + (id)brownColor;
 + (id)purpleColor;
 + (id)orangeColor;
@@ -41,8 +45,14 @@
 + (id)stringForSystemColorID:(int)arg1;
 + (id)colorWithSystemColorID:(int)arg1;
 + (id)colorWithBGR:(unsigned int)arg1;
-+ (id)colorWithCalibratedHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
++ (id)colorWithCatalogName:(id)arg1 colorName:(id)arg2;
++ (id)colorWithDeviceCyan:(double)arg1 magenta:(double)arg2 yellow:(double)arg3 black:(double)arg4 alpha:(double)arg5;
++ (id)colorWithDeviceRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (id)colorWithDeviceHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
++ (id)colorWithDeviceWhite:(double)arg1 alpha:(double)arg2;
 + (id)colorWithCalibratedRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (id)colorWithCalibratedHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
++ (id)colorWithCalibratedWhite:(double)arg1 alpha:(double)arg2;
 + (id)colorWithBinaryRed:(int)arg1 green:(int)arg2 blue:(int)arg3 alpha:(int)arg4;
 + (id)colorWithBinaryRed:(int)arg1 green:(int)arg2 blue:(int)arg3;
 + (id)colorWithEshColor:(const struct EshColor *)arg1;
@@ -51,7 +61,7 @@
 + (id)colorWithRGBValue:(long long)arg1;
 + (id)colorWithBGRValue:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long colorRGBSpace; // @synthesize colorRGBSpace=mColorRGBSpace;
-@property(readonly) struct CGColor *CGColor; // @synthesize CGColor=mCGColor;
+- (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
 - (id)hexString;
 - (void)paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
 - (void)paintRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
@@ -63,7 +73,7 @@
 - (id)colorWithAlphaComponent:(double)arg1;
 - (id)invertedColor;
 - (id)grayscaleColor;
-- (id)NSColor;
+@property(readonly, nonatomic) NSColor *NSColor;
 - (double)brightnessComponent;
 - (double)saturationComponent;
 - (double)hueComponent;
@@ -78,7 +88,7 @@
 - (BOOL)isAlmostEqualToColor:(id)arg1;
 - (BOOL)p_isEqualToColor:(id)arg1 withTolerance:(double)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (void)dealloc;
 - (id)initWithNSColor:(id)arg1;
 - (id)initWithHexString:(id)arg1;
@@ -90,17 +100,35 @@
 - (id)initWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 - (id)initWithCGColor:(struct CGColor *)arg1;
 - (id)initWithCGColor:(struct CGColor *)arg1 colorSpace:(unsigned long long)arg2;
+@property(readonly) struct CGColor *CGColor;
 - (BOOL)isBlack;
 - (void)set;
 - (id)colorWithShadeValue:(double)arg1;
 - (id)colorWithTintValue:(double)arg1;
 - (unsigned int)toBGR;
+- (id)copy;
+@property(readonly) int CGColorSpaceModel;
+@property(readonly) struct CGColorSpace *CGColorSpace;
+- (void)getCyan:(double *)arg1 magenta:(double *)arg2 yellow:(double *)arg3 black:(double *)arg4 alpha:(double *)arg5;
+@property(readonly) double blackComponent;
+@property(readonly) double yellowComponent;
+@property(readonly) double magentaComponent;
+@property(readonly) double cyanComponent;
+- (double)p_cmykComponentWithIndex:(unsigned char)arg1;
+- (void)getWhite:(double *)arg1 alpha:(double *)arg2;
+@property(readonly) double whiteComponent;
+- (void)getRed:(double *)arg1 green:(double *)arg2 blue:(double *)arg3 alpha:(double *)arg4;
 - (id)solidColoredPngImage;
 - (id)newSolidColoredBitmap:(struct CGSize)arg1;
 - (CDStruct_a06f635e)ttColor;
 - (struct EshColor)eshColor;
 - (struct CsColour)csColour;
 - (void)getRGBBytes:(char *)arg1 green:(char *)arg2 blue:(char *)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,10 +6,11 @@
 
 #import <NanoTimeKitCompanion/NTKColoringImageView.h>
 
-@class UIColor, UIImage, UIImageView;
+@class CLKDevice, UIColor, UIImage, UIImageView;
 
 @interface NTKHandView : NTKColoringImageView
 {
+    CLKDevice *_device;
     UIImageView *_shadowImageView;
     NTKColoringImageView *_inlayView;
     _Bool _shadowsHidden;
@@ -21,7 +22,7 @@
     struct UIEdgeInsets _shadowInsets;
 }
 
-+ (id)_resizableInlayImage;
++ (id)_resizableInlayImageForDevice:(id)arg1;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage=_shadowImage;
 @property(nonatomic) struct UIEdgeInsets shadowInsets; // @synthesize shadowInsets=_shadowInsets;
 @property(nonatomic) _Bool shadowsHidden; // @synthesize shadowsHidden=_shadowsHidden;
@@ -34,7 +35,7 @@
 @property(readonly, nonatomic) NTKColoringImageView *inlayView;
 - (void)_updateTransform;
 - (void)layoutSubviews;
-- (id)initWithImage:(id)arg1;
+- (id)initWithImage:(id)arg1 forDevice:(id)arg2;
 
 @end
 

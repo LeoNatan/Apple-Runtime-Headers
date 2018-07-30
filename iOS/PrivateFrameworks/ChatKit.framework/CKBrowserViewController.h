@@ -14,6 +14,7 @@
 {
     long long _previousConsumer;
     _Bool _isiMessage;
+    _Bool _isPrimaryViewController;
     _Bool _isTransitioningToExpandedPresentation;
     NSObject<CKBrowserViewControllerSendDelegate> *_sendDelegate;
     IMBalloonPlugin *_balloonPlugin;
@@ -30,6 +31,7 @@
 @property(nonatomic) _Bool isTransitioningToExpandedPresentation; // @synthesize isTransitioningToExpandedPresentation=_isTransitioningToExpandedPresentation;
 @property(retain, nonatomic) CKBrowserDragManager *browserDragManager; // @synthesize browserDragManager=_browserDragManager;
 @property(nonatomic) __weak UIView *dragTargetView; // @synthesize dragTargetView=_dragTargetView;
+@property(nonatomic) _Bool isPrimaryViewController; // @synthesize isPrimaryViewController=_isPrimaryViewController;
 @property(nonatomic) long long currentBrowserConsumer; // @synthesize currentBrowserConsumer=_currentBrowserConsumer;
 @property(retain, nonatomic) UIViewController *presentationViewController; // @synthesize presentationViewController=_presentationViewController;
 @property(retain, nonatomic) IMBalloonPluginDataSource *balloonPluginDataSource; // @synthesize balloonPluginDataSource=_balloonPluginDataSource;
@@ -52,7 +54,9 @@
 - (void)viewDidTransitionToExpandedPresentation;
 - (void)viewWillTransitionToExpandedPresentation;
 @property(readonly, nonatomic) _Bool wasExpandedPresentation;
+@property(readonly, nonatomic) _Bool inFullScreenModalPresentation;
 @property(readonly, nonatomic) _Bool inExpandedPresentation;
+- (_Bool)inCompactPresentation;
 - (_Bool)isLoaded;
 - (void)dismiss;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

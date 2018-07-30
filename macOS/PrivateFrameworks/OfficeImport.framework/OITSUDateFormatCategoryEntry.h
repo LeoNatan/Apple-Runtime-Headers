@@ -6,21 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet;
+@class NSMutableArray, NSMutableSet;
 
-__attribute__((visibility("hidden")))
 @interface OITSUDateFormatCategoryEntry : NSObject
 {
-    unsigned short mSeparator;
-    struct __CFArray *mFormatters;
-    NSMutableSet *mFormatStrings;
+    unsigned short _separator;
+    NSMutableArray *_formatters;
+    NSMutableSet *_formatStrings;
 }
 
-- (struct __CFDate *)newDateFromString:(struct __CFString *)arg1 forceAllowAMPM:(BOOL)arg2 successfulFormatString:(const struct __CFString **)arg3 perfect:(char *)arg4;
-- (void)addFormat:(id)arg1 locale:(struct __CFLocale *)arg2;
+- (void).cxx_destruct;
+- (id)newDateFromString:(id)arg1 forceAllowAMPM:(BOOL)arg2 successfulFormatString:(id *)arg3 perfect:(char *)arg4;
+- (void)addFormat:(id)arg1 locale:(id)arg2;
 - (id)formatStrings;
 - (unsigned short)separator;
-- (void)dealloc;
 - (id)initWithSeparator:(unsigned short)arg1;
 
 @end

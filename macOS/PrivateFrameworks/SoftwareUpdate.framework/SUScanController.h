@@ -56,6 +56,8 @@
 - (id)_logScanResultsWithProducts:(id)arg1;
 - (id)availableProducts;
 - (BOOL)isScanActive;
+- (id)currentlySetCatalogURL;
+- (BOOL)isEVProtected;
 - (BOOL)isAppleSeedCatalog;
 - (BOOL)isDefaultAppleCatalog;
 - (int)catalogTrustLevel;

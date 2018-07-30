@@ -6,43 +6,31 @@
 
 #import "NSObject.h"
 
-#import "ISURLOperationDelegate.h"
+@class IKURLBagCache, NSURL;
 
-@class IKURLBagCache, NSMutableSet, NSNumber, NSString, NSURL;
-
-@interface TVStoreApplicationSetupHelper : NSObject <ISURLOperationDelegate>
+@interface TVStoreApplicationSetupHelper : NSObject
 {
-    _Bool _loadingStoreBag;
     NSURL *_defaultBootURL;
     IKURLBagCache *_bagCache;
-    NSMutableSet *_completions;
 }
 
 + (id)_parsedQueryParametersForURL:(id)arg1;
-+ (void)_performCompletion:(CDUnknownBlockType)arg1 withBootURL:(id)arg2;
++ (id)bootURLWithBagBootURL:(id)arg1 defaultBootURL:(id)arg2;
++ (id)fallbackBootURL;
++ (id)preferredBootURL;
 + (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2 appLocalBootURL:(id)arg3;
 + (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2;
-@property(retain, nonatomic) NSMutableSet *completions; // @synthesize completions=_completions;
-@property(nonatomic, getter=isLoadingStoreBag) _Bool loadingStoreBag; // @synthesize loadingStoreBag=_loadingStoreBag;
++ (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2 bagBootURLKey:(id)arg3 useCache:(_Bool)arg4;
++ (id)launchContextWithLaunchOptions:(id)arg1 bootURL:(id)arg2 useCache:(_Bool)arg3;
++ (id)launchContextWithLaunchOptions:(id)arg1 bagBootURLKey:(id)arg2 useCache:(_Bool)arg3;
++ (id)defaultBagBootLaunchContextWithOptions:(id)arg1 useCache:(_Bool)arg2;
 @property(readonly, nonatomic) IKURLBagCache *bagCache; // @synthesize bagCache=_bagCache;
 @property(copy, nonatomic) NSURL *defaultBootURL; // @synthesize defaultBootURL=_defaultBootURL;
 - (void).cxx_destruct;
-- (void)_URLBagDidLoad:(id)arg1;
-- (id)_bootURLWithBagBootURL:(id)arg1;
 - (void)obtainBootURLWithCompletion:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)initWithDefaultBootURL:(id)arg1 bagCache:(id)arg2;
 - (id)initWithDefaultBootURL:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) NSNumber *metricsLoadURLSamplingPercentage;
-@property(readonly, nonatomic) NSNumber *metricsLoadURLSamplingPercentageCachedResponses;
-@property(readonly, nonatomic) NSNumber *metricsLoadURLSessionDuration;
-@property(readonly) Class superclass;
 
 @end
 

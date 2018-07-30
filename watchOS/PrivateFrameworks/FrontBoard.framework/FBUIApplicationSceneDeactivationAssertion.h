@@ -24,6 +24,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) int reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) float sceneLevel; // @synthesize sceneLevel=_sceneLevel;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

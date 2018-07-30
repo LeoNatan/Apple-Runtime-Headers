@@ -91,7 +91,6 @@
 - (id)movieFileOutput;
 - (id)stillImageOutput;
 - (id)audioCaptureDeviceInput;
-- (id)_correspondingCaptureEngineDeviceForCaptureInput:(id)arg1;
 - (id)panoramaConfiguration;
 - (id)audioCaptureDevice;
 - (id)_captureEngineDeviceForDevice:(long long)arg1;
@@ -151,11 +150,12 @@
 - (void)_unlockManagedCaptureDevice:(id)arg1;
 - (_Bool)_lockAllEngineManagedDevices;
 - (_Bool)_lockManagedCapturedDevice:(id)arg1;
-- (void)_commitSessionConfigurationIfNecessary;
-- (void)_beginSessionConfigurationIfRequiredByCommand:(id)arg1 withContext:(id)arg2;
+- (void)_commitSessionConfigurationIfNecessaryWithLogReason:(id)arg1;
+- (void)_beginSessionConfigurationIfRequiredByCommand:(id)arg1 withContext:(id)arg2 logReason:(out id *)arg3;
 - (id)_accumulatedUserInfoFromCommand:(id)arg1;
-- (_Bool)_isSessionModificationRequiredByCommand:(id)arg1;
+- (_Bool)_isSessionModificationRequiredByCommand:(id)arg1 logReason:(out id *)arg2;
 - (void)_updateContext:(id)arg1;
+- (id)_videoDeviceInputFromSession:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_scheduleDelayedRecoveryCheckIfNecessary;
@@ -163,7 +163,7 @@
 - (void)_cancelDelayedSessionNonstartRecovery;
 - (void)_validateSessionRecovery;
 - (void)_handleFailedSessionRecoveryAttemptAfterDelay:(_Bool)arg1;
-- (void)_markSessionRecoveryAsRecovered;
+- (void)_resetPerformingRecoveryState;
 - (void)_recoverFromSessionRuntimeError;
 - (double)_delayForRecoveryAttempt:(unsigned long long)arg1;
 - (void)_handleSessionInterruptionEnded:(id)arg1;
@@ -173,11 +173,15 @@
 - (void)_handleSessionRuntimeError:(id)arg1;
 - (void)_handleSessionDidStopRunning:(id)arg1;
 - (void)_handleSessionDidStartRunning:(id)arg1;
-- (void)stop;
-- (void)start;
+- (void)stopWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_sessionQueue_startWithRetryCount:(unsigned long long)arg1 retryInterval:(double)arg2 logReason:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)startWithRetryCount:(unsigned long long)arg1 retryInterval:(double)arg2 logReason:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_shouldStartSessionOnConfigurationChanges;
 - (void)dealloc;
 - (id)initWithPowerController:(id)arg1 options:(long long)arg2;
+- (id)prewarmedAudioDeviceInput:(id)arg1 device:(id)arg2;
+- (id)prewarmedVideoDeviceInput:(id)arg1 position:(long long)arg2 device:(id)arg3;
+- (id)prewarmedCaptureSession;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

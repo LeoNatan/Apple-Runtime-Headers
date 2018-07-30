@@ -15,6 +15,7 @@
 @property(copy, nonatomic) CDUnknownBlockType destructor; // @synthesize destructor=_destructor;
 @property(nonatomic) void *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithData:(void *)arg1 destructor:(CDUnknownBlockType)arg2;
 

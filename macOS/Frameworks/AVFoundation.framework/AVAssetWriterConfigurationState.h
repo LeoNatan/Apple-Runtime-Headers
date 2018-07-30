@@ -8,6 +8,7 @@
 
 @class AVMediaFileType, NSArray, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVAssetWriterConfigurationState : NSObject
 {
     NSURL *_URL;

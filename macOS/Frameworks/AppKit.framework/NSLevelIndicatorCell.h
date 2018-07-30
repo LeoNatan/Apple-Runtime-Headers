@@ -77,7 +77,7 @@
 - (BOOL)wantsUpdateLayerInView:(id)arg1;
 - (BOOL)_subclassOverridesDrawingMethods;
 - (BOOL)_shouldDrawRTL;
-- (BOOL)_allowsVibrancyForControlView:(id)arg1;
+- (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (BOOL)isOpaque;
 - (struct NSEdgeInsets)_indicatorAlignmentRectInsetsInView:(id)arg1;
 - (struct CGRect)_indicatorAlignmentRectForBounds:(struct CGRect)arg1 inView:(id)arg2;

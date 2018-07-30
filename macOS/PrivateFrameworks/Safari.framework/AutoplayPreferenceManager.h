@@ -9,15 +9,12 @@
 #import "WBSPerSitePreferenceManagerDefaultsDelegate.h"
 #import "WBSPerSitePreferenceManagerStorageDelegate.h"
 
-@class DomainWhitelistManager, NSString, WBSPerSitePreference, WBSPerSitePreferenceValue, WBSPerSitePreferencesSQLiteStore;
+@class DomainWhitelistManager, NSString, WBSPerSitePreference, WBSPerSitePreferencesSQLiteStore;
 
 __attribute__((visibility("hidden")))
 @interface AutoplayPreferenceManager : WBSPerSitePreferenceManager <WBSPerSitePreferenceManagerStorageDelegate, WBSPerSitePreferenceManagerDefaultsDelegate>
 {
     WBSPerSitePreferencesSQLiteStore *_perSitePreferencesStore;
-    WBSPerSitePreferenceValue *_allowAutoplayPreferenceValue;
-    WBSPerSitePreferenceValue *_allowSilentVideosPreferenceValue;
-    WBSPerSitePreferenceValue *_denyAutoplayPreferenceValue;
     DomainWhitelistManager *_autoplayWhitelistManager;
     WBSPerSitePreference *_autoplayPreference;
 }
@@ -27,13 +24,13 @@ __attribute__((visibility("hidden")))
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
 - (long long)preferencesStoreKeyForPreference:(id)arg1;
 - (void)didUpdatePreference:(id)arg1 toValue:(id)arg2 forDomain:(id)arg3;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;
 - (void)setAutoplayPreferenceValue:(long long)arg1 forURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getValueOfPreference:(id)arg1 forDomain:(id)arg2 withTimeout:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)getAutoplayPreferenceValueForDomain:(id)arg1 withTimeout:(double)arg2 fallbackValue:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)_valueForAutoplayPreference:(long long)arg1;
 - (id)initWithPerSitePreferencesStore:(id)arg1 whitelistManager:(id)arg2;
 - (id)init;
 

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSString, NSURL, TIAutocorrectionList, TIKeyboardCandidate, TIKeyboardCandidateResultSet, TIKeyboardConfiguration, TIKeyboardInput, TIKeyboardLayout, TIKeyboardOutput, TIKeyboardState, TIKeyboardTouchEvent;
+@class NSArray, NSDictionary, NSString, NSURL, TIAutocorrectionList, TICandidateRequestToken, TIKeyboardCandidate, TIKeyboardCandidateResultSet, TIKeyboardConfiguration, TIKeyboardInput, TIKeyboardLayout, TIKeyboardOutput, TIKeyboardState, TIKeyboardTouchEvent;
 
 @protocol TIKeyboardInputManagerLogging <NSObject>
 - (void)logReceivedLastAcceptedCandidateCorrected;
@@ -20,7 +20,7 @@
 - (void)logReplacements:(NSArray *)arg1 forString:(NSString *)arg2 keyLayout:(TIKeyboardLayout *)arg3;
 - (void)logKeyboardConfig:(TIKeyboardConfiguration *)arg1 textToCommit:(NSString *)arg2 forAcceptedCandidate:(TIKeyboardCandidate *)arg3 keyboardState:(TIKeyboardState *)arg4;
 - (void)logCandidateResultSet:(TIKeyboardCandidateResultSet *)arg1 forKeyboardState:(TIKeyboardState *)arg2;
-- (void)logAutocorrections:(TIAutocorrectionList *)arg1 forKeyboardState:(TIKeyboardState *)arg2;
+- (void)logAutocorrections:(TIAutocorrectionList *)arg1 forKeyboardState:(TIKeyboardState *)arg2 requestToken:(TICandidateRequestToken *)arg3;
 - (void)logKeyboardOutput:(TIKeyboardOutput *)arg1 keyboardConfiguration:(TIKeyboardConfiguration *)arg2 forKeyboardInput:(TIKeyboardInput *)arg3 keyboardState:(TIKeyboardState *)arg4;
 - (void)logKeyboardConfig:(TIKeyboardConfiguration *)arg1 forSyncToKeyboardState:(TIKeyboardState *)arg2;
 - (void)logToHumanReadableTrace:(NSString *)arg1;

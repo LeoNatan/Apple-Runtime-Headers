@@ -7,48 +7,50 @@
 #import "PBCodable.h"
 
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
+#import "_INPBSetRadioStationIntent.h"
 
-@class PBUnknownFields, _INPBDouble, _INPBInteger, _INPBIntentMetadata, _INPBString;
+@class NSString, _INPBDouble, _INPBInteger, _INPBIntentMetadata, _INPBString;
 
-@interface _INPBSetRadioStationIntent : PBCodable <NSCopying>
+@interface _INPBSetRadioStationIntent : PBCodable <_INPBSetRadioStationIntent, NSSecureCoding, NSCopying>
 {
-    PBUnknownFields *_unknownFields;
+    struct {
+        unsigned int radioType:1;
+    } _has;
     _INPBString *_channel;
     _INPBDouble *_frequency;
     _INPBIntentMetadata *_intentMetadata;
     _INPBInteger *_presetNumber;
     int _radioType;
     _INPBString *_stationName;
-    struct {
-        unsigned int radioType:1;
-    } _has;
 }
 
-+ (id)options;
-@property(retain, nonatomic) _INPBInteger *presetNumber; // @synthesize presetNumber=_presetNumber;
-@property(retain, nonatomic) _INPBString *channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) _INPBString *stationName; // @synthesize stationName=_stationName;
-@property(retain, nonatomic) _INPBDouble *frequency; // @synthesize frequency=_frequency;
+@property(nonatomic) int radioType; // @synthesize radioType=_radioType;
+@property(retain, nonatomic) _INPBInteger *presetNumber; // @synthesize presetNumber=_presetNumber;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBDouble *frequency; // @synthesize frequency=_frequency;
+@property(retain, nonatomic) _INPBString *channel; // @synthesize channel=_channel;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) PBUnknownFields *unknownFields;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasPresetNumber;
-@property(readonly, nonatomic) _Bool hasChannel;
 @property(readonly, nonatomic) _Bool hasStationName;
-@property(readonly, nonatomic) _Bool hasFrequency;
 - (int)StringAsRadioType:(id)arg1;
 - (id)radioTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRadioType;
-@property(nonatomic) int radioType; // @synthesize radioType=_radioType;
+@property(readonly, nonatomic) _Bool hasPresetNumber;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasFrequency;
+@property(readonly, nonatomic) _Bool hasChannel;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

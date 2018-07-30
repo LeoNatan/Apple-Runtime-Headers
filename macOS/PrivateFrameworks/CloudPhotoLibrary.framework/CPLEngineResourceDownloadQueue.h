@@ -25,13 +25,13 @@
 
 + (BOOL)shouldRetryDownloadOnError:(id)arg1;
 - (void).cxx_destruct;
+- (void)barrier;
 - (id)status;
 - (id)_queuesStatus;
 - (BOOL)hasActiveOrQueuedBackgroundDownloadOperations;
-- (BOOL)resetWithError:(id *)arg1;
 - (unsigned long long)countOfQueuedDownloadTasks;
 - (id)enumeratorForDownloadedResources;
-- (BOOL)removeAllBackgroundDownloadTasksForItemWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)removeAllBackgroundDownloadTasksForItemWithScopedIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)resetDequeuedBackgroundDownloadTasksWithError:(id *)arg1;
 - (id)dequeueNextBackgroundDownloadTasksForResourceType:(unsigned long long)arg1 maximumSize:(unsigned long long)arg2 maximumCount:(unsigned long long)arg3 error:(id *)arg4;
 - (BOOL)markBackgroundDownloadTaskForResourceAsSuceeded:(id)arg1 error:(id *)arg2;
@@ -54,7 +54,9 @@
 - (id)_failedTaskWithCompletionHandler:(CDUnknownBlockType)arg1 error:(id)arg2 resource:(id)arg3 highPriority:(BOOL)arg4;
 - (id)_downloadTaskForLocalResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 proposedTaskIdentifier:(id)arg4 didStartHandler:(CDUnknownBlockType)arg5 progressHandler:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (id)downloadTaskForLocalResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 proposedTaskIdentifier:(id)arg4 didStartHandler:(CDUnknownBlockType)arg5 progressHandler:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (id)cloudResourceForLocalResource:(id *)arg1 shouldNotTrustCaches:(char *)arg2 error:(id *)arg3;
+- (id)cloudResourceForLocalResource:(id *)arg1 shouldNotTrustCaches:(char *)arg2 transportScope:(id *)arg3 error:(id *)arg4;
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
+- (unsigned long long)scopeType;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 
 // Remaining properties

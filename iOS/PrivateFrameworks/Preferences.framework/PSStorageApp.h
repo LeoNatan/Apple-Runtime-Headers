@@ -11,7 +11,6 @@
 @interface PSStorageApp : NSObject
 {
     long long _purgeableSize;
-    long long _specialSize;
     _Bool _isUserApp;
     _Bool _isSystemApp;
     _Bool _isInternalApp;
@@ -25,12 +24,16 @@
     PSUsageBundleApp *_usageBundleApp;
     NSArray *_mediaTypes;
     long long _externalDataSize;
+    long long _sharedDataSize;
+    long long _specialSize;
 }
 
 + (void)setLaunchDatesNeedUpdating;
 @property(nonatomic) _Bool isUsageApp; // @synthesize isUsageApp=_isUsageApp;
 @property(nonatomic) _Bool isUserApp; // @synthesize isUserApp=_isUserApp;
 @property _Bool isPseudoApp; // @synthesize isPseudoApp=_isPseudoApp;
+@property long long specialSize; // @synthesize specialSize=_specialSize;
+@property long long sharedDataSize; // @synthesize sharedDataSize=_sharedDataSize;
 @property long long externalDataSize; // @synthesize externalDataSize=_externalDataSize;
 @property(retain, nonatomic) NSArray *mediaTypes; // @synthesize mediaTypes=_mediaTypes;
 @property(retain) PSUsageBundleApp *usageBundleApp; // @synthesize usageBundleApp=_usageBundleApp;
@@ -41,7 +44,6 @@
 @property(readonly, nonatomic) NSDate *lastUsedDate;
 @property(readonly, nonatomic) long long totalSize;
 @property(readonly, nonatomic) long long dataSize;
-@property(readonly, nonatomic) long long specialSize;
 @property(readonly, nonatomic) long long purgeableSize;
 @property(readonly, nonatomic) long long dynamicSize;
 @property(readonly, nonatomic) long long staticSize;

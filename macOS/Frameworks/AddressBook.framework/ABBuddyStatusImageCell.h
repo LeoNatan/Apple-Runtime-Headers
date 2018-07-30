@@ -6,7 +6,6 @@
 
 #import "NSImageCell.h"
 
-__attribute__((visibility("hidden")))
 @interface ABBuddyStatusImageCell : NSImageCell
 {
 }

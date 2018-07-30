@@ -27,6 +27,7 @@
 + (id)sharedMonitorForDisplayType:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, nonatomic) long long displayType; // @synthesize displayType=_displayType;
+- (void).cxx_destruct;
 - (void)client:(id)arg1 handleNewDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (unsigned long long)clientQualityOfService:(id)arg1;
 - (long long)clientDisplayType:(id)arg1;
@@ -36,7 +37,7 @@
 - (id)_observers;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(readonly, retain, nonatomic) FBSDisplayLayout *currentLayout;
+@property(readonly, nonatomic) FBSDisplayLayout *currentLayout;
 @property(copy, nonatomic) CDUnknownBlockType handler;
 - (void)invalidate;
 - (void)dealloc;

@@ -10,6 +10,7 @@
 
 @class AVWeakReference, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCMNotificationDispatcherListenerKey : NSObject <NSCopying>
 {
     AVWeakReference *_weakReferenceToListener;

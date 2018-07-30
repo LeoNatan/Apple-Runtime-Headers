@@ -5,12 +5,16 @@
 //
 
 #import "NSObject.h"
-#import "PLCloudFeedNavigating.h"
+#import "PXCloudFeedNavigating.h"
 
-@class NSString, PHAsset, PHAssetCollection, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAsset, UIViewController;
+@class NSString, NSURL, PHAsset, PHAssetCollection, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAsset;
 
-@protocol PLRootLibraryNavigationController <NSObject, PLCloudFeedNavigating>
-- (UIViewController *)navigateToMemoryWithLocalIdentifier:(NSString *)arg1;
+@protocol PLRootLibraryNavigationController <NSObject, PXCloudFeedNavigating>
+- (void)navigateToPeopleAlbumAnimated:(_Bool)arg1 revealPersonWithLocalIdentifier:(NSString *)arg2 completion:(void (^)(UIViewController *))arg3;
+- (void)navigateToMomentShareWithURL:(NSURL *)arg1 animated:(_Bool)arg2;
+- (void)navigateToInvitationCMMWithIdentifier:(NSString *)arg1 animated:(_Bool)arg2;
+- (void)navigateToSuggestedCMMWithIdentifier:(NSString *)arg1 animated:(_Bool)arg2;
+- (void)navigateToMemoryWithLocalIdentifier:(NSString *)arg1;
 - (void)navigateToRevealTheMostRecentMemoryAnimated:(_Bool)arg1;
 - (_Bool)assetIsAvailableForNavigationInMoments:(PLManagedAsset *)arg1 refetchSectionsIfNeeded:(_Bool)arg2;
 - (_Bool)assetIsAvailableForNavigationInMoments:(PLManagedAsset *)arg1;
@@ -31,10 +35,9 @@
 - (void)navigateToRevealCloudFeedAsset:(PLManagedAsset *)arg1 completion:(void (^)(UIViewController *))arg2;
 - (void)navigateToCloudFeedWithCompletion:(void (^)(UIViewController *))arg1;
 - (void)navigateToOneUpForAsset:(PHAsset *)arg1 inAssetContainer:(PHAssetCollection *)arg2 animated:(_Bool)arg3;
-- (void)navigateToLastYearPhotosSearchAnimated:(_Bool)arg1;
-- (void)navigateToPhotosSearchAnimated:(_Bool)arg1;
+- (void)navigateToOneYearAgoSearch;
 - (void)navigateToPhotosContentBottomAnimated:(_Bool)arg1;
-- (void)navigateToAsset:(PLManagedAsset *)arg1 animated:(_Bool)arg2;
+- (void)navigateToAsset:(PLManagedAsset *)arg1 openOneUp:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)navigateToContentMode:(int)arg1 animated:(_Bool)arg2 completion:(void (^)(_Bool))arg3;
 @end
 

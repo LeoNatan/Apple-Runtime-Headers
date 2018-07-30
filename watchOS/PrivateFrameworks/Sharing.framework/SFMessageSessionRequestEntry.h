@@ -8,7 +8,6 @@
 
 @class NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface SFMessageSessionRequestEntry : NSObject
 {
     _Bool _allowUnencrypted;

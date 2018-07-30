@@ -45,7 +45,7 @@
 - (id)nodesInsideFrustumWithPointOfView:(id)arg1;
 - (_Bool)isNodeInsideFrustum:(id)arg1 withPointOfView:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 options:(id)arg2;
-@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
 @property(nonatomic) double sceneTime;
 - (void)presentScene:(id)arg1 withTransition:(id)arg2 incomingPointOfView:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(retain, nonatomic) SCNScene *scene;

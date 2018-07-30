@@ -11,6 +11,7 @@
 @class NSString, SFActionItem, SFCard, SFImage, SFRichText;
 
 @interface SFSearchResult (SearchUIExtensions) <SearchUIAuxilliaryFieldProtocol>
+@property(readonly) SFSearchResult *identifyingResult;
 
 // Remaining properties
 @property(readonly) SFActionItem *action;

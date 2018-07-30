@@ -16,16 +16,19 @@
     struct CATransform3D _uncoveredTransform;
     struct CATransform3D _coveredTransform;
     BOOL _revealed;
-    struct NSColor *_primaryColor;
+    id <PKCheckGlyphLayerDelegate> _checkGlyphDelegate;
+    NSColor *_primaryColor;
 }
 
 @property(nonatomic) BOOL revealed; // @synthesize revealed=_revealed;
-@property(copy, nonatomic) NSColor *primaryColor; // @synthesize primaryColor=_primaryColor;
+@property(readonly, copy, nonatomic) NSColor *primaryColor; // @synthesize primaryColor=_primaryColor;
+@property(nonatomic) __weak id <PKCheckGlyphLayerDelegate> checkGlyphDelegate; // @synthesize checkGlyphDelegate=_checkGlyphDelegate;
 - (void).cxx_destruct;
 - (double)_updateCovered:(BOOL)arg1;
 - (double)setCovered:(BOOL)arg1 animated:(BOOL)arg2;
 - (double)setRevealed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPrimaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
+- (void)setPrimaryColor:(struct NSColor *)arg1;
 - (void)_createMask;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 package:(id)arg2;

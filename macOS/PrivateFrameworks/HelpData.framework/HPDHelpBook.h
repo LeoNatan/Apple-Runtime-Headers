@@ -27,6 +27,7 @@
     NSString *_topiclistTemplatePath;
     NSString *_topiclistCSSPath;
     NSString *_pathToLoadFrom;
+    NSString *_csIndexPath;
     NSString *_localization;
     NSString *_bookVersion;
     NSString *_appBundleID;
@@ -61,6 +62,7 @@
 @property unsigned long long stringEncoding; // @synthesize stringEncoding=_stringEncoding;
 @property(readonly) BOOL usesExternalViewer; // @synthesize usesExternalViewer=_usesExternalViewer;
 @property(copy) NSDictionary *remoteBookInfo; // @synthesize remoteBookInfo=_remoteBookInfo;
+@property(retain) NSString *csIndexPath; // @synthesize csIndexPath=_csIndexPath;
 @property(retain) NSString *topiclistCSSPath; // @synthesize topiclistCSSPath=_topiclistCSSPath;
 @property(retain) NSString *topiclistTemplatePath; // @synthesize topiclistTemplatePath=_topiclistTemplatePath;
 @property(retain) NSString *accessPagePath; // @synthesize accessPagePath=_accessPagePath;

@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (void)dealloc;
 
 @end
 

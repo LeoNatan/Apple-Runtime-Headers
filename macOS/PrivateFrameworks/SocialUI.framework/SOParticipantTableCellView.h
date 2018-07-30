@@ -8,10 +8,12 @@
 
 #import "CNAvatarViewDelegate.h"
 
-@class CNAvatarViewController, NSArray, NSImageView, NSStackView, NSString, NSTextField, SOAVPopUpButtonViewController;
+@class CNAvatarViewController, NSArray, NSImageView, NSStackView, NSString, NSTextField, NSTrackingArea, SOAVPopUpButtonViewController;
 
 @interface SOParticipantTableCellView : NSTableCellView <CNAvatarViewDelegate>
 {
+    NSTrackingArea *_iconsButtonTracking;
+    BOOL _hideAVButtonsOnRollover;
     NSStackView *_horizontalLayoutStackView;
     NSTextField *_locationLabel;
     NSImageView *_verifiedBusinessImageView;
@@ -22,14 +24,9 @@
     NSArray *_stackedLabelsConstraints;
 }
 
-+ (id)_whiteVideoImage;
 + (id)_blueVideoImage;
-+ (id)_whiteAudioImage;
 + (id)_blueAudioImage;
-+ (id)_whiteScreenSharingImage;
 + (id)_blueScreenSharingImage;
-+ (void)setAVPopUpButtonViewControllerClass:(Class)arg1;
-+ (Class)avPopUpButtonViewControllerClass;
 @property(retain) NSArray *stackedLabelsConstraints; // @synthesize stackedLabelsConstraints=_stackedLabelsConstraints;
 @property(retain) SOAVPopUpButtonViewController *screenSharingPopUpButtonViewController; // @synthesize screenSharingPopUpButtonViewController=_screenSharingPopUpButtonViewController;
 @property(retain) SOAVPopUpButtonViewController *videoPopUpButtonViewController; // @synthesize videoPopUpButtonViewController=_videoPopUpButtonViewController;
@@ -38,11 +35,14 @@
 @property(retain) NSImageView *verifiedBusinessImageView; // @synthesize verifiedBusinessImageView=_verifiedBusinessImageView;
 @property(retain) NSTextField *locationLabel; // @synthesize locationLabel=_locationLabel;
 @property(retain) NSStackView *horizontalLayoutStackView; // @synthesize horizontalLayoutStackView=_horizontalLayoutStackView;
+@property(nonatomic) BOOL hideAVButtonsOnRollover; // @synthesize hideAVButtonsOnRollover=_hideAVButtonsOnRollover;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)_setVerifiedBusinessImageView;
-- (void)setBackgroundStyle:(long long)arg1;
 - (void)setObjectValue:(id)arg1;
+- (void)mouseExited:(id)arg1;
+- (void)mouseEntered:(id)arg1;
+- (void)_hideIconSubviews:(BOOL)arg1;
 - (void)awakeFromNib;
 - (id)accessibilityLabel;
 - (id)avatarViewController:(id)arg1 requiredImageForContact:(id)arg2;

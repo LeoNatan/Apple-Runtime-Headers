@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface GEOSpatialLookupResponse : PBCodable <NSCopying>
 {
     NSMutableArray *_places;

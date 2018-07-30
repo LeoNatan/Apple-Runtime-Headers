@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool _foundTileEdgeJunctions;
     _Bool _oppositeCarriagewayJunctionsValid;
     NSMutableArray *_oppositeCarriagewayJunctions;
-    struct vector<LabelNavJunctionInfo, std::__1::allocator<LabelNavJunctionInfo>> _junctionInfos;
+    struct vector<LabelNavJunctionInfo, geo::StdAllocator<LabelNavJunctionInfo, lhp::Allocator>> _junctionInfos;
 }
 
 @property(readonly, retain, nonatomic) NSMutableArray *oppositeCarriagewayJunctions; // @synthesize oppositeCarriagewayJunctions=_oppositeCarriagewayJunctions;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain, nonatomic) VKLabelTile *tile; // @synthesize tile=_tile;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)findOppositeCarriagewayJunctionsWithRouteFeatures:(unordered_map_e9427026 *)arg1 distanceThreshold:(double)arg2;
+- (void)findOppositeCarriagewayJunctionsWithRouteFeatures:(unordered_map_4d0b7b3a *)arg1 distanceThreshold:(double)arg2;
 - (void)appendNavJunctionsInWorldRect:(const Box_3d7e3c2c *)arg1 junctions:(id)arg2;
 - (void)initializeJunctionInfos;
 - (id)findTileEdgeJunctionAtCoordinate:(Matrix_8746f91e)arg1;

@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
     _Bool _audioIsPaused;
     VCCapabilities *_capabilities;
     _Bool _isVideoPaused;
+    _Bool _isAudioSending;
 }
 
 @property(retain, nonatomic) VCCapabilities *capabilities; // @synthesize capabilities=_capabilities;
+@property(nonatomic, getter=isAudioSending) _Bool isAudioSending; // @synthesize isAudioSending=_isAudioSending;
 @property(nonatomic, getter=isVideoPaused) _Bool isVideoPaused; // @synthesize isVideoPaused=_isVideoPaused;
 @property(nonatomic, getter=isAudioPaused) _Bool audioIsPaused; // @synthesize audioIsPaused=_audioIsPaused;
 - (void)dealloc;

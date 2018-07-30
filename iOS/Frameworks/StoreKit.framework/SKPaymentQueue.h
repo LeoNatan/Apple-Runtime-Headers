@@ -15,12 +15,14 @@
 
 + (_Bool)canMakePayments;
 + (id)defaultQueue;
+- (void).cxx_destruct;
 - (void)_updatePaymentsForMessage:(id)arg1;
 - (void)_updateDownloadsForMessage:(id)arg1;
 - (void)_setTransactionsWithReply:(id)arg1;
 - (void)_sendAppEnteredForegroundMessage;
 - (void)_sendCommand:(long long)arg1 forDownloads:(id)arg2;
 - (void)_removePaymentsForMessage:(id)arg1;
+- (void)_removeNilTransactionObservers;
 - (void)_removeLocalTransaction:(id)arg1;
 - (void)_refreshPaymentsWithPolicy:(long long)arg1;
 - (void)_processUpdates:(id)arg1 trimUnmatched:(_Bool)arg2 sendUpdatedDownloads:(_Bool)arg3;

@@ -6,23 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, RTMapServiceManager;
 
 @interface RTMapsSupportManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
+    RTMapServiceManager *_mapServiceManager;
 }
 
+@property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)fetchHistoryEntryRoutesWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchHistoryEntryPlaceDisplaysWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchFavoritePlacesWithHandler:(CDUnknownBlockType)arg1;
-- (void)fetchHistoryEntryPlaceDisplayMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)_fetchHistoryEntryPlaceDisplayMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)fetchHistoryEntryRouteMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)_fetchHistoryEntryRouteMapItemsWithHandler:(CDUnknownBlockType)arg1;
-- (void)fetchFavoritePlaceMapItemsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchFavoritePlaceMapItemsWithHandler:(CDUnknownBlockType)arg1;
 - (void)clearParkedCarBulletin;
 - (void)showParkedCarReplacementBulletinForEvent:(id)arg1 replacingEvent:(id)arg2;
@@ -30,6 +27,7 @@
 - (void)clearTrafficConditionsBulletin;
 - (void)showTrafficConditionsBulletinWithTitle:(id)arg1 message:(id)arg2 actionURL:(id)arg3;
 - (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
+- (id)initWithMapServiceManager:(id)arg1;
 - (id)init;
 
 @end

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, UIViewController;
+@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface RPService : NSObject
 {
@@ -23,7 +23,6 @@
     unsigned int _advertiseRate;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_label;
-    UIViewController *_presentingViewController;
     NSString *_serviceType;
     NSDictionary *_txtDictionary;
     CDUnknownBlockType _errorHandler;
@@ -44,7 +43,6 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy, nonatomic) NSDictionary *txtDictionary; // @synthesize txtDictionary=_txtDictionary;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-@property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) _Bool needsSetup; // @synthesize needsSetup=_needsSetup;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;

@@ -34,10 +34,10 @@
 - (void)lastUsedAlternateFundingSourcePassUniqueIdentifier:(CDUnknownBlockType)arg1;
 - (void)balanceForPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateMessageReceivedDate:(id)arg1 forTransactionWithIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)updateMemo:(id)arg1 forTransactionWithIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)receivedPeerPaymentMessageData:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)noteAccountDeletedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentPeerPaymentTermsAndConditionsWithTermsURL:(id)arg1 termsIdentifier:(id)arg2 orientation:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)presentRegistrationFlowWithAccount:(id)arg1 amount:(id)arg2 state:(unsigned long long)arg3 orientation:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)presentRegistrationFlowWithAccount:(id)arg1 amount:(id)arg2 state:(unsigned long long)arg3 senderAddress:(id)arg4 orientation:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)presentIdentityVerificationFlowWithResponseData:(id)arg1 orientation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registrationStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)deleteAccountWithCompletion:(CDUnknownBlockType)arg1;

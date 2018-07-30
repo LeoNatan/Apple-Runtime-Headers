@@ -17,7 +17,7 @@
     MTTrigger *_trigger;
 }
 
-+ (_Bool)triggerTypeRepresentsNotification:(unsigned long long)arg1;
++ (unsigned long long)scheduledTypeForTriggerType:(unsigned long long)arg1;
 + (id)scheduledObjectForScheduleable:(id)arg1 trigger:(id)arg2;
 @property(copy, nonatomic) MTTrigger *trigger; // @synthesize trigger=_trigger;
 @property(copy, nonatomic) id <MTScheduleable> scheduleable; // @synthesize scheduleable=_scheduleable;
@@ -27,7 +27,8 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) _Bool isNotification;
+@property(readonly, nonatomic) _Bool isVisible;
+@property(readonly, nonatomic) unsigned long long type;
 - (id)initWithScheduleable:(id)arg1 trigger:(id)arg2;
 
 // Remaining properties

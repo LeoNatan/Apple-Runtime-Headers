@@ -39,6 +39,7 @@
 - (void)encodeRootObject:(id)arg1;
 - (void)encodeObject:(id)arg1;
 - (id)nextGenericKey;
+- (void)encodeUIEdgeInsets:(struct UIEdgeInsets)arg1 forKey:(id)arg2;
 - (void)encodeCGAffineTransform:(struct CGAffineTransform)arg1 forKey:(id)arg2;
 - (void)encodeCGRect:(struct CGRect)arg1 forKey:(id)arg2;
 - (void)encodeCGSize:(struct CGSize)arg1 forKey:(id)arg2;

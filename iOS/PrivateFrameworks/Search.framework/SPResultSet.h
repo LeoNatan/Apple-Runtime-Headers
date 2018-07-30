@@ -24,6 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSections:(id)arg1 stableSections:(id)arg2;
+- (id)initWithSections:(id)arg1;
 
 @end
 

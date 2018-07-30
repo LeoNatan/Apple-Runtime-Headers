@@ -23,6 +23,7 @@
 + (unsigned int)countFromEncodeIdentifier:(unsigned long long)arg1;
 + (int)pidFromEncodeIdentifier:(unsigned long long)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)nextEncodeIdentifier;
 - (void)removeHandleWithName:(unsigned long long)arg1;

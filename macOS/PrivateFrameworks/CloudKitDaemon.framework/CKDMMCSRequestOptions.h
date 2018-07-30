@@ -11,9 +11,9 @@
 __attribute__((visibility("hidden")))
 @interface CKDMMCSRequestOptions : NSObject
 {
-    BOOL _usesBackgroundSession;
     BOOL _allowsCellularAccess;
     BOOL _allowsPowerNapScheduling;
+    BOOL _automaticallyRetryNetworkFailures;
     long long _databaseScope;
     long long _containerEnvironment;
     NSString *_topmostParentOperationID;
@@ -26,16 +26,18 @@ __attribute__((visibility("hidden")))
     NSData *_authPutResponse;
     NSDictionary *_authPutResponseHeaders;
     long long _qualityOfService;
+    unsigned long long _discretionaryNetworkBehavior;
     unsigned long long _networkServiceType;
     CKOperationMMCSRequestOptions *_MMCSRequestOptions;
 }
 
 @property(retain, nonatomic) CKOperationMMCSRequestOptions *MMCSRequestOptions; // @synthesize MMCSRequestOptions=_MMCSRequestOptions;
 @property(nonatomic) unsigned long long networkServiceType; // @synthesize networkServiceType=_networkServiceType;
+@property(nonatomic) unsigned long long discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
+@property(nonatomic) BOOL automaticallyRetryNetworkFailures; // @synthesize automaticallyRetryNetworkFailures=_automaticallyRetryNetworkFailures;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) BOOL allowsPowerNapScheduling; // @synthesize allowsPowerNapScheduling=_allowsPowerNapScheduling;
 @property(nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
-@property(nonatomic) BOOL usesBackgroundSession; // @synthesize usesBackgroundSession=_usesBackgroundSession;
 @property(retain, nonatomic) NSDictionary *authPutResponseHeaders; // @synthesize authPutResponseHeaders=_authPutResponseHeaders;
 @property(retain, nonatomic) NSData *authPutResponse; // @synthesize authPutResponse=_authPutResponse;
 @property(retain, nonatomic) NSString *deviceHardwareID; // @synthesize deviceHardwareID=_deviceHardwareID;
@@ -49,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long databaseScope; // @synthesize databaseScope=_databaseScope;
 - (void).cxx_destruct;
 - (id)MMCSOptions;
+- (BOOL)usesBackgroundSession;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)initWithOperation:(id)arg1;

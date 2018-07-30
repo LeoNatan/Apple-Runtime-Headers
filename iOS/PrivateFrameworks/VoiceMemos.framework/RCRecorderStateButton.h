@@ -8,6 +8,7 @@
 
 @class CALayer, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface RCRecorderStateButton : UIButton
 {
     UIColor *_outerColor;

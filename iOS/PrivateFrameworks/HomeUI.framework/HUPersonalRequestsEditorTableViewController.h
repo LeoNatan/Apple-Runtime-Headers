@@ -25,6 +25,8 @@
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)itemModuleControllers;
+- (_Bool)automaticallyUpdatesViewControllerTitle;
+- (id)initWithUserItem:(id)arg1 sourceMediaProfileContainer:(id)arg2;
 - (id)initWithUserItem:(id)arg1;
 
 // Remaining properties

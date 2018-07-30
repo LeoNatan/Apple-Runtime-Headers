@@ -45,12 +45,13 @@
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)cellFrameForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
-- (id)_generateAttributedStringValue;
+- (id)generateAttributedStringValue;
 - (id)attributedStringValue;
 - (void)setAttributedStringValue:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)markAsNeedsUpdate;
 - (void)resetCachedSizeAttributes;
+- (void)rebuildAttributedString;
 - (BOOL)isCompletedToken;
 - (id)stringForRepresentedObject;
 - (id)imageForRepresentedObject;

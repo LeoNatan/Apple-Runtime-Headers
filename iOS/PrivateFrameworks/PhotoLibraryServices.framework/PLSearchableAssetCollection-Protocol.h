@@ -6,9 +6,16 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSString;
+@class NSArray, NSDate, NSString;
 
 @protocol PLSearchableAssetCollection <NSObject>
+@property(readonly, nonatomic) unsigned long long numberOfAssets;
+@property(readonly, nonatomic) NSDate *searchableEndDate;
+@property(readonly, nonatomic) NSDate *searchableStartDate;
+@property(readonly, nonatomic) NSDate *keyAssetCreationDate;
+@property(readonly, nonatomic) NSString *keyAssetUUID;
+@property(readonly, nonatomic) NSString *subtitle;
+@property(readonly, nonatomic) NSString *title;
 - (NSArray *)assetUUIDsForPreviewWithCount:(unsigned long long)arg1;
 - (unsigned long long)searchIndexCategory;
 - (NSString *)searchIndexContents;

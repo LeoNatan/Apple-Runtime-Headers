@@ -14,10 +14,15 @@
 {
 }
 
+@property(readonly) id <XCUICapabilities> bridgedProcessCapabilities;
+@property(readonly) BOOL automationSessionSupportsAnimationsIdleNotifications;
+@property(readonly) BOOL automationSessionSupportsMainRunLoopIdleNotifications;
+@property(readonly) BOOL automationSessionSupportsAttributeFetching;
 @property(readonly) NSDictionary *truncatedValueSnapshotParameter;
 @property(readonly) NSString *truncatedValueAttribute;
 @property(readonly) BOOL supportsTruncatedValue;
-@property(readonly) BOOL supportsAutomationSessions;
+@property(readonly) long long automationSessionSupport;
+- (BOOL)_supportsFeature:(id)arg1 requiresMacOS:(long long)arg2 macOSBuildNumber:(long long)arg3 iOS:(long long)arg4 iOSBuildNumber:(long long)arg5 tvOS:(long long)arg6 tvOSBuildNumber:(long long)arg7 watchOS:(long long)arg8 watchOSBuildNumber:(long long)arg9;
 - (BOOL)_supportsFeature:(id)arg1 requiresMacOS:(long long)arg2 iOS:(long long)arg3 tvOS:(long long)arg4 watchOS:(long long)arg5;
 
 // Remaining properties

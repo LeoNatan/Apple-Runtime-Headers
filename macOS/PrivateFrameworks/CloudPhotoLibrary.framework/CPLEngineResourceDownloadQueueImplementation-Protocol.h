@@ -6,14 +6,14 @@
 
 #import "CPLEngineStorageImplementation.h"
 
-@class CPLResource, NSArray, NSString;
+@class CPLResource, CPLScopedIdentifier, NSArray;
 
 @protocol CPLEngineResourceDownloadQueueImplementation <CPLEngineStorageImplementation>
+- (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (BOOL)hasActiveOrQueuedBackgroundDownloadOperations;
 - (unsigned long long)countOfQueuedDownloadTasks;
 - (id <NSFastEnumeration>)enumeratorForDownloadedResources;
-- (BOOL)removeAllBackgroundDownloadTasksForItemWithIdentifier:(NSString *)arg1 error:(id *)arg2;
-- (BOOL)resetWithError:(id *)arg1;
+- (BOOL)removeAllBackgroundDownloadTasksForItemWithScopedIdentifier:(CPLScopedIdentifier *)arg1 error:(id *)arg2;
 - (BOOL)resetDequeuedBackgroundDownloadTasksWithError:(id *)arg1;
 - (NSArray *)dequeueNextBackgroundDownloadTasksForResourceType:(unsigned long long)arg1 maximumSize:(unsigned long long)arg2 maximumCount:(unsigned long long)arg3 error:(id *)arg4;
 - (BOOL)removeBackgroundDownloadTaskForResource:(CPLResource *)arg1 taskIdentifier:(unsigned long long)arg2 error:(id *)arg3;

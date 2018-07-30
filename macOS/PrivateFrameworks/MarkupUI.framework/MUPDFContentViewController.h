@@ -10,7 +10,7 @@
 #import "PDFAKControllerDelegateProtocol.h"
 #import "PDFViewDelegate.h"
 
-@class NSClipView, NSCursor, NSMutableSet, NSString, PDFDocument;
+@class MUPDFViewBase, NSClipView, NSCursor, NSMutableSet, NSString, PDFDocument;
 
 __attribute__((visibility("hidden")))
 @interface MUPDFContentViewController : MUContentViewController <PDFAKControllerDelegateProtocol, PDFViewDelegate, MUContentViewControllerProtocol>
@@ -22,8 +22,10 @@ __attribute__((visibility("hidden")))
     PDFDocument *_contentPDFDocument;
     id _frameChangedObserver;
     NSClipView *_pdfScrollViewContentView;
+    MUPDFViewBase *_preloadedView;
 }
 
+@property(retain) MUPDFViewBase *preloadedView; // @synthesize preloadedView=_preloadedView;
 @property __weak NSClipView *pdfScrollViewContentView; // @synthesize pdfScrollViewContentView=_pdfScrollViewContentView;
 @property(retain) id frameChangedObserver; // @synthesize frameChangedObserver=_frameChangedObserver;
 @property(retain) PDFDocument *contentPDFDocument; // @synthesize contentPDFDocument=_contentPDFDocument;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)_stopObservingCropAnnotationForFirstEdit:(id)arg1;
 - (void)_startObservingCropAnnotationForFirstEdit:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)editDetectedForAnnotationController:(id)arg1;
 - (struct CGRect)positioningRectForCandidatePicker;
 - (id)popoverPresentingViewControllerForAnnotationController:(id)arg1;
 - (id)controller:(id)arg1 willSetToolbarItems:(id)arg2;
@@ -59,9 +62,12 @@ __attribute__((visibility("hidden")))
 - (void)uninstallAllAnnotationControllerOverlays;
 - (void)loadContentWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;
+- (void)loadView;
 - (void)teardown;
 - (void)setup;
 - (void)dealloc;
+- (id)initWithPDFDocument:(id)arg1 delegate:(id)arg2 preloadedView:(id)arg3;
+- (id)initWithPreloadedView:(id)arg1 delegate:(id)arg2;
 - (id)initWithPDFDocument:(id)arg1 delegate:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 delegate:(id)arg3;
 

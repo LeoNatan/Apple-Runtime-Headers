@@ -10,6 +10,7 @@
 
 @class MCPayload, MCPayloadInfo, NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCPayloadDetailsViewController : UITableViewController <PSStateRestoration>
 {
     MCPayload *_payload;

@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) int exifOrientation;
 @property(readonly, nonatomic) struct CGSize physicalSizeInMeters;
 @property(readonly, nonatomic) struct CGImage *image;
+- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned long long)arg3;
 
 @end
 

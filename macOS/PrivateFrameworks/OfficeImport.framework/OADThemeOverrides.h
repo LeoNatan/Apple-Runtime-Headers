@@ -6,7 +6,6 @@
 
 #import <OfficeImport/OADBaseStylesBase.h>
 
-__attribute__((visibility("hidden")))
 @interface OADThemeOverrides : OADBaseStylesBase
 {
 }

@@ -39,8 +39,7 @@
 - (void)_drawThemeContents:(struct CGRect)arg1 highlighted:(BOOL)arg2 inView:(id)arg3;
 - (void)_drawGroupViewBackgroundWithFrame:(struct CGRect)arg1 highlighted:(BOOL)arg2 inView:(id)arg3;
 - (void)_drawBezelWithFrame:(struct CGRect)arg1 highlighted:(BOOL)arg2 inView:(id)arg3;
-- (id)_vibrancyFilterForControlView:(id)arg1;
-- (BOOL)_allowsVibrancyForControlView:(id)arg1;
+- (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (struct __CFDictionary *)_coreUIBezelDrawOptionsWithView:(id)arg1 highlighted:(BOOL)arg2 nextColumnAfterOneBeingDrawnIsSelected:(BOOL)arg3;
 - (struct __CFString *)_coreUIState;
 - (BOOL)_shouldDrawRightSeparatorInView:(id)arg1;

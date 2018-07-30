@@ -8,28 +8,34 @@
 
 #import "OS_nw_unique_connection_request.h"
 
-@class NSObject<OS_nw_endpoint>, NSString, NWConcrete_nw_connection;
+@class NSObject<OS_nw_endpoint>, NSObject<OS_nw_parameters>, NSObject<OS_nw_path_evaluator>, NSString, NWConcrete_nw_connection;
 
+__attribute__((visibility("hidden")))
 @interface NWConcrete_nw_unique_connection_request : NSObject <OS_nw_unique_connection_request>
 {
     NSObject<OS_nw_endpoint> *endpoint;
-    char service[430];
+    NSObject<OS_nw_parameters> *userParameters;
+    char service[436];
     unsigned long long sequenceNumber;
+    unsigned long long uniqueID;
     unsigned char uuid[16];
     NWConcrete_nw_connection *connection;
-    _Bool isIncoming;
-    _Bool isPending;
-    _Bool pendingRequestAccepted;
+    NSObject<OS_nw_path_evaluator> *pathEvaluator;
     CDUnknownBlockType requestCompletionBlock;
+    unsigned int isIncoming:1;
+    unsigned int isPending:1;
+    unsigned int pendingRequestAccepted:1;
+    unsigned int isWaitingForListenerReady:1;
+    unsigned int isWaitingForActiveConnection:1;
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

@@ -9,6 +9,7 @@
 @class AFMetrics, AFUserUtteranceSelectionResults, AceObject<SAAceCommand>, NSString, SABaseClientBoundCommand, SiriUIRequestOptions;
 
 @protocol AFUISiriSession <NSObject>
++ (void)forceAvailabilityStateAvailable:(BOOL)arg1;
 + (NSString *)currentMicrophoneIdentifier;
 - (void)recordRequestMetricEvent:(NSString *)arg1 withTimestamp:(double)arg2;
 - (void)recordUIMetrics:(AFMetrics *)arg1;

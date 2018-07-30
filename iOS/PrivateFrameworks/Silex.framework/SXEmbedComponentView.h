@@ -19,6 +19,7 @@
 {
     _Bool _failedLoading;
     _Bool _isCurrentlyLoadingEmbedData;
+    _Bool _hasRegisteredScriptMessageHandlers;
     id <SXReachabilityProvider> _reachabilityProvider;
     id <SXEmbedService> _embedService;
     id <SXComponentActionHandler> _actionHandler;
@@ -39,6 +40,7 @@
     struct CGPoint _lastKnownTouchPoint;
 }
 
+@property(nonatomic) _Bool hasRegisteredScriptMessageHandlers; // @synthesize hasRegisteredScriptMessageHandlers=_hasRegisteredScriptMessageHandlers;
 @property(retain, nonatomic) WKNavigation *initialNavigation; // @synthesize initialNavigation=_initialNavigation;
 @property(nonatomic) _Bool isCurrentlyLoadingEmbedData; // @synthesize isCurrentlyLoadingEmbedData=_isCurrentlyLoadingEmbedData;
 @property(nonatomic) struct CGPoint lastKnownTouchPoint; // @synthesize lastKnownTouchPoint=_lastKnownTouchPoint;
@@ -61,6 +63,8 @@
 @property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
 - (void).cxx_destruct;
 - (_Bool)allowHierarchyRemoval;
+- (void)removeScriptMessageHandlers;
+- (void)addScriptMessageHandlers;
 - (unsigned long long)userActionMediaTypes;
 - (void)showActivityIndicator:(_Bool)arg1;
 - (_Bool)hasLoadedEmbedData;

@@ -25,9 +25,9 @@
 - (void)noteSyncSessionFailedWithError:(id)arg1;
 - (void)noteSyncSessionSucceeded;
 - (void)noteServerHasChanges;
-- (void)notePullQueueIsFull;
-- (void)notePushQueueIsFull;
-- (void)notePushQueueIsEmpty;
+- (void)noteClientNeedsToPull;
+- (void)noteScopeNeedsToPushToTransport;
+- (BOOL)shouldCoalesceServerChangesNotification;
 - (BOOL)shouldStartSyncSessionFromState:(unsigned long long)arg1;
 - (id)initWithAbstractObject:(id)arg1;
 

@@ -12,10 +12,10 @@
 {
 }
 
-@property(readonly, nonatomic) unsigned int errorCode;
+@property(readonly, nonatomic) long errorCode;
 @property(readonly, nonatomic) NSArray *deviceIDs;
 - (unsigned int)type;
-- (id)initWithDeviceIDs:(id)arg1 errorCode:(unsigned int)arg2;
+- (id)initWithDeviceIDs:(id)arg1 errorCode:(long)arg2;
 
 @end
 

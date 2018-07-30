@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+__attribute__((visibility("hidden")))
 @interface WFJSONStructureLeafNode : NSObject
 {
     _Bool _required;

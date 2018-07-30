@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)_pageAddressDidChange:(id)arg1;
 - (void)_addObserverForPageAddressChange;
 - (void)_handleLayoutComplete:(id)arg1;
-- (void)_checkIfLayoutChangeWasPageChange:(id)arg1;
+- (void)_checkIfLayoutChangeWasPageChange:(struct __AXUIElement *)arg1;
 - (void)_addObserverForPageLayoutComplete;
 - (void)_safariReaderExited:(id)arg1;
 - (void)_safariReaderEntered:(id)arg1;

@@ -9,20 +9,44 @@
 #import "HDDecoding.h"
 #import "NSCopying.h"
 
-@class HDCodableSample, NSString;
+@class HDCodableSample, NSMutableArray, NSString;
 
 @interface HDCodableQuantitySample : PBCodable <HDDecoding, NSCopying>
 {
+    long long _count;
+    double _max;
+    double _min;
+    double _mostRecent;
+    double _mostRecentDate;
     double _valueInCanonicalUnit;
     double _valueInOriginalUnit;
     NSString *_originalUnitString;
+    NSMutableArray *_quantitySeriesDatas;
     HDCodableSample *_sample;
+    _Bool _final;
+    _Bool _frozen;
     struct {
+        unsigned int count:1;
+        unsigned int max:1;
+        unsigned int min:1;
+        unsigned int mostRecent:1;
+        unsigned int mostRecentDate:1;
         unsigned int valueInCanonicalUnit:1;
         unsigned int valueInOriginalUnit:1;
+        unsigned int final:1;
+        unsigned int frozen:1;
     } _has;
 }
 
++ (Class)quantitySeriesDataType;
+@property(retain, nonatomic) NSMutableArray *quantitySeriesDatas; // @synthesize quantitySeriesDatas=_quantitySeriesDatas;
+@property(nonatomic) double mostRecentDate; // @synthesize mostRecentDate=_mostRecentDate;
+@property(nonatomic) double mostRecent; // @synthesize mostRecent=_mostRecent;
+@property(nonatomic) double max; // @synthesize max=_max;
+@property(nonatomic) double min; // @synthesize min=_min;
+@property(nonatomic) _Bool final; // @synthesize final=_final;
+@property(nonatomic) long long count; // @synthesize count=_count;
+@property(nonatomic) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) NSString *originalUnitString; // @synthesize originalUnitString=_originalUnitString;
 @property(nonatomic) double valueInOriginalUnit; // @synthesize valueInOriginalUnit=_valueInOriginalUnit;
 @property(nonatomic) double valueInCanonicalUnit; // @synthesize valueInCanonicalUnit=_valueInCanonicalUnit;
@@ -37,10 +61,23 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+- (id)quantitySeriesDataAtIndex:(unsigned long long)arg1;
+- (unsigned long long)quantitySeriesDatasCount;
+- (void)addQuantitySeriesData:(id)arg1;
+- (void)clearQuantitySeriesDatas;
+@property(nonatomic) _Bool hasMostRecentDate;
+@property(nonatomic) _Bool hasMostRecent;
+@property(nonatomic) _Bool hasMax;
+@property(nonatomic) _Bool hasMin;
+@property(nonatomic) _Bool hasFinal;
+@property(nonatomic) _Bool hasCount;
+@property(nonatomic) _Bool hasFrozen;
 @property(readonly, nonatomic) _Bool hasOriginalUnitString;
 @property(nonatomic) _Bool hasValueInOriginalUnit;
 @property(nonatomic) _Bool hasValueInCanonicalUnit;
 @property(readonly, nonatomic) _Bool hasSample;
+- (_Bool)_applyToDiscreteQuantitySeriesSample:(id)arg1;
+- (_Bool)isSeries;
 - (_Bool)applyToObject:(id)arg1;
 
 // Remaining properties

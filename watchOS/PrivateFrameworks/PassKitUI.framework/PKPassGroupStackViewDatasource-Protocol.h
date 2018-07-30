@@ -21,5 +21,6 @@
 - (_Bool)groupStackView:(PKPassGroupStackView *)arg1 willHaveHeaderViewForPassType:(unsigned int)arg2;
 - (_Bool)groupStackView:(PKPassGroupStackView *)arg1 requiresHeaderForPassType:(unsigned int)arg2;
 - (_Bool)groupStackViewShouldShowHeaderViews:(PKPassGroupStackView *)arg1;
+- (PKGroup *)featuredGroup;
 @end
 

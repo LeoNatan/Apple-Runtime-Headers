@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (_Bool)setWallpaperWithVideo:(id)arg1 cropRect:(struct CGRect)arg2;
 - (void)fetchThumbnailForVariant:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)dealloc;

@@ -21,6 +21,7 @@
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;
 @property(retain, nonatomic) HFHomeBuilder *homeBuilder; // @synthesize homeBuilder=_homeBuilder;
 - (void).cxx_destruct;
+- (void)_presentAccountUnavailableAlert;
 - (double)_horizontalInset;
 - (double)_verticalInset;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

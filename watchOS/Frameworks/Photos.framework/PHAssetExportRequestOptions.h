@@ -10,9 +10,11 @@
 {
     _Bool _treatLivePhotoAsStill;
     _Bool _flattenSlomoVideos;
+    _Bool _dontAllowRAW;
     int _variant;
 }
 
+@property(nonatomic) _Bool dontAllowRAW; // @synthesize dontAllowRAW=_dontAllowRAW;
 @property(nonatomic) _Bool flattenSlomoVideos; // @synthesize flattenSlomoVideos=_flattenSlomoVideos;
 @property(nonatomic) _Bool treatLivePhotoAsStill; // @synthesize treatLivePhotoAsStill=_treatLivePhotoAsStill;
 @property(nonatomic) int variant; // @synthesize variant=_variant;

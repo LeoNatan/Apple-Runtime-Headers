@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     FI_TTextField *_explanationTextFld;
     NSButton *_upgradeButton;
     struct TFENode _target;
-    struct TNSRef<NSMetadataQuery *, void> _boostingQuery;
+    struct TNSRef<NSMetadataQuery, void> _boostingQuery;
     _Bool _isUpgradeToICloudUI;
 }
 

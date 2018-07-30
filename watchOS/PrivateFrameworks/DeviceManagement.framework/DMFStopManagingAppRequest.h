@@ -10,5 +10,9 @@
 {
 }
 
++ (_Bool)isPermittedOnUserConnection;
++ (_Bool)isPermittedOnSystemConnection;
++ (id)permittedPlatforms;
+
 @end
 

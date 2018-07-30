@@ -29,7 +29,7 @@
 + (id)deviceEntityWithDevice:(id)arg1 healthDatabase:(id)arg2 error:(id *)arg3;
 + (long long)protectionClass;
 + (id)uniquedColumns;
-+ (id)columnsDefinition;
++ (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;
 + (id)databaseTable;
 - (id)creationDateInHealthDatabase:(id)arg1 error:(id *)arg2;
 - (id)deviceUUIDInHealthDatabase:(id)arg1 error:(id *)arg2;

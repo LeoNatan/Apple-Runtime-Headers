@@ -8,12 +8,12 @@
 
 #import "HMFMessageReceiver.h"
 
-@class HMFMessageDispatcher, HMXpcClient, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMFMessageDispatcher, HMXPCClient, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMClientConnection : NSObject <HMFMessageReceiver>
 {
     NSObject<OS_dispatch_queue> *_clientQueue;
-    HMXpcClient *_xpcClient;
+    HMXPCClient *_xpcClient;
     HMFMessageDispatcher *_msgDispatcher;
     NSUUID *_uuid;
 }
@@ -22,9 +22,10 @@
 + (_Bool)areAnyAccessoriesConfigured;
 + (id)siriHomeIdentifier;
 + (_Bool)areHomesConfigured;
++ (id)sharedInstance;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) HMXpcClient *xpcClient; // @synthesize xpcClient=_xpcClient;
+@property(retain, nonatomic) HMXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 - (void).cxx_destruct;
 - (void)_reportResultsTohandler:(CDUnknownBlockType)arg1;

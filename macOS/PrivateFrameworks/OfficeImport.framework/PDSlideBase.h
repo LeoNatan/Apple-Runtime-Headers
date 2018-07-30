@@ -8,7 +8,6 @@
 
 @class NSArray, NSString, OADBackground, OADTableStyle, PDAnimation, PDTransition;
 
-__attribute__((visibility("hidden")))
 @interface PDSlideBase : NSObject
 {
     unsigned int mSlideId;
@@ -25,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (int)inheritedPlaceholderType:(int)arg1;
 @property(nonatomic) unsigned int slideId; // @synthesize slideId=mSlideId;
+- (void).cxx_destruct;
 - (id)description;
 - (void)removeUnnecessaryOverrides;
 - (void)generatePpt9Animations:(id)arg1;
@@ -68,10 +68,9 @@ __attribute__((visibility("hidden")))
 - (id)drawables;
 - (void)setName:(id)arg1;
 - (id)name;
-- (void)dealloc;
 - (id)init;
-- (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2 state:(id)arg3;
 - (void)addSlideNumberPlaceholder:(id)arg1;
+- (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2 state:(id)arg3;
 
 @end
 

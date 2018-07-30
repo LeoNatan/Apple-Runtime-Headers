@@ -13,7 +13,6 @@
 
 @interface _SFPBTableColumnAlignment : PBCodable <_SFPBTableColumnAlignment, NSSecureCoding>
 {
-    CDStruct_92ac6441 _has;
     _Bool _isEqualWidth;
     int _columnAlignment;
     int _dataAlignment;
@@ -30,9 +29,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-@property(readonly, nonatomic) _Bool hasIsEqualWidth;
-@property(readonly, nonatomic) _Bool hasDataAlignment;
-@property(readonly, nonatomic) _Bool hasColumnAlignment;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

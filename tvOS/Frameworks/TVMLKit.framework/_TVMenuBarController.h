@@ -10,7 +10,7 @@
 #import "UITabBarControllerDelegate.h"
 #import "UITabBarControllerDelegate_Private.h"
 
-@class IKAppMenuBarDocument, IKViewElement, NSArray, NSString, TVPPlayer;
+@class IKAppMenuBarDocument, IKViewElement, NSArray, NSString, _TVPlayer;
 
 __attribute__((visibility("hidden")))
 @interface _TVMenuBarController : UITabBarController <IKAppMenuBarDocumentDelegate, UITabBarControllerDelegate, UITabBarControllerDelegate_Private>
@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _previousSelectedIndex;
     IKViewElement *_nowPlayingMenuItemElement;
     long long _nowPlayingMenuItemInsertionIndex;
-    TVPPlayer *_nowPlayingPlayer;
+    _TVPlayer *_nowPlayingPlayer;
 }
 
-@property(retain, nonatomic) TVPPlayer *nowPlayingPlayer; // @synthesize nowPlayingPlayer=_nowPlayingPlayer;
+@property(retain, nonatomic) _TVPlayer *nowPlayingPlayer; // @synthesize nowPlayingPlayer=_nowPlayingPlayer;
 @property(nonatomic) long long nowPlayingMenuItemInsertionIndex; // @synthesize nowPlayingMenuItemInsertionIndex=_nowPlayingMenuItemInsertionIndex;
 @property(retain, nonatomic) IKViewElement *nowPlayingMenuItemElement; // @synthesize nowPlayingMenuItemElement=_nowPlayingMenuItemElement;
 @property(nonatomic) unsigned long long previousSelectedIndex; // @synthesize previousSelectedIndex=_previousSelectedIndex;

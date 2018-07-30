@@ -6,19 +6,7 @@
 
 #import "HMCharacteristicEvent.h"
 
-#import "HFPrettyDescription.h"
-#import "HFStateDumpSerializable.h"
-
-@class NSString;
-
-@interface HMCharacteristicEvent (HFDebugging) <HFPrettyDescription, HFStateDumpSerializable>
-- (id)hf_serializedStateDumpRepresentation;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@interface HMCharacteristicEvent (HFDebugging)
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 @end
 

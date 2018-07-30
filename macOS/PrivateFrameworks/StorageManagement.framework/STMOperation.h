@@ -12,6 +12,8 @@
 {
     BOOL _isExecuting;
     BOOL _isFinished;
+    double _startTime;
+    double _finishTime;
     NSError *_error;
     NSOperationQueue *_operationQueue;
 }
@@ -23,6 +25,9 @@
 - (void)setIsFinished:(BOOL)arg1;
 - (void)setIsExecuting:(BOOL)arg1;
 - (void)start;
+@property(readonly) double duration;
+@property(readonly) double finishTime;
+@property(readonly) double startTime;
 - (BOOL)isFinished;
 - (BOOL)isExecuting;
 - (BOOL)isAsynchronous;

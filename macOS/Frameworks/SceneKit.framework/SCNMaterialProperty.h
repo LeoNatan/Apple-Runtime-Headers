@@ -16,6 +16,7 @@
     unsigned int _isPresentationInstance:1;
     unsigned int _isCommonProfileProperty:1;
     unsigned int _sRGB:1;
+    unsigned int _preventWarmup:1;
     BOOL _propertyType;
     id _parent;
     NSString *_customSlotName;
@@ -24,7 +25,7 @@
     NSColor *_borderColor;
     id _contents;
     unsigned char _contentType;
-    unsigned char _mappingChannel;
+    long long _mappingChannel;
     unsigned char _minificationFilter;
     unsigned char _magnificationFilter;
     unsigned char _mipFilter;
@@ -36,13 +37,16 @@
     // Error parsing type: ^{__C3DEffectSlot={__CFRuntimeBase=QAQ}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}, name: _customSlot
     struct __C3DImage *_c3dImage;
     struct CATransform3D *_contentTransform;
+    id _runtimeResolvedPath;
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)captureDeviceOutputConsumer;
 + (id)copyImageFromC3DImage:(struct __C3DImage *)arg1;
 + (id)_copyImageFromC3DImage:(struct __C3DImage *)arg1;
 + (struct __C3DImage *)copyC3DImageFromImage:(id)arg1;
 + (struct __C3DImage *)copyC3DImageFromImage:(id)arg1 textureOptions:(int)arg2;
++ (struct __C3DImage *)copyC3DImageFromImage:(id)arg1 textureOptions:(int)arg2 wasCached:(char *)arg3;
 + (struct __C3DImage *)_copyC3DImageFromImageData:(id)arg1 typeID:(unsigned long long)arg2;
 + (id)dvt_supportedTypesForPropertyContents;
 + (id)materialPropertyWithContents:(id)arg1;
@@ -57,6 +61,8 @@
 - (void)_updateMaterialNumber:(id)arg1;
 - (void)_updateMaterialImage:(id)arg1;
 - (void)_updateMaterialProceduralContents:(id)arg1;
+- (void)_updateMaterialCaptureDeviceOutputConsumerSource:(id)arg1;
+- (void)_updateMaterialCaptureDevice:(id)arg1;
 - (void)_updateMaterialAVPlayer:(id)arg1;
 - (void)_updateMaterialLayer:(id)arg1;
 - (void)_updateMaterialSKTexture:(id)arg1;
@@ -76,6 +82,7 @@
 - (void)copyPropertiesFrom:(id)arg1;
 - (void)_syncObjCModel;
 - (struct __C3DScene *)sceneRef;
+- (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)_scnBindings;
@@ -120,6 +127,10 @@
 - (void)setContent:(id)arg1;
 - (void)_setImagePath:(id)arg1 withResolvedPath:(id)arg2;
 @property(retain, nonatomic) id contents;
+- (id)captureDeviceOutputConsumerSource;
+- (void)setCaptureDeviceOutputConsumerSource:(id)arg1;
+- (id)captureDevice;
+- (void)setCaptureDevice:(id)arg1;
 - (id)avPlayer;
 - (void)setAvPlayer:(id)arg1;
 - (id)layer;

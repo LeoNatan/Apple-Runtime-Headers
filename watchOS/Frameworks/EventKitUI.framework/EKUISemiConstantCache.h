@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, UIFont;
+@class NSArray, NSMutableDictionary, UIFont;
 
 @interface EKUISemiConstantCache : NSObject
 {
@@ -21,6 +21,7 @@
     float _dayOccurrenceMinimumCachedLineHeightSmall;
     UIFont *_dayOccurrenceUncompressedSecondaryTextFont;
     NSMutableDictionary *_commentIconStrings;
+    NSArray *_statusGlyphs;
     NSMutableDictionary *_birthdayImages;
     float _weekAllDayBaselineForLargeFormatWeekView;
     float _weekAllDayBaselineForSmallFormatWeekView;
@@ -46,6 +47,7 @@
 @property(readonly) UIFont *weekAllDayLabelFont;
 - (id)birthdayImageForFont:(id)arg1;
 - (id)birthdayImageForFont:(id)arg1 withColor:(id)arg2;
+- (id)statusGlyphForStatusType:(int)arg1;
 - (id)commentIconStringForFont:(id)arg1;
 @property(readonly) float dayOccurrenceMinimumCachedLineHeightSmall;
 @property(readonly) UIFont *dayOccurrenceUncompressedSecondaryTextFont;

@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import "NSBox.h"
 
 __attribute__((visibility("hidden")))
-@interface FUSeparator : NSView
+@interface FUSeparator : NSBox
 {
 }
 
 - (void)setStyleProvider:(id)arg1;
-- (void)setColor:(id)arg1;
 - (void)updateConstraints;
 - (double)onePixelSize;
 - (id)initWithCoder:(id)arg1;

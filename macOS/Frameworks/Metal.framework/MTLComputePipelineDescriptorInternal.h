@@ -18,8 +18,16 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (id)buffers;
 - (const struct MTLComputePipelineDescriptorPrivate *)_descriptorPrivate;
+- (void)setResourceIndex:(unsigned long long)arg1;
+- (unsigned long long)resourceIndex;
+- (void)setForceResourceIndex:(BOOL)arg1;
+- (BOOL)forceResourceIndex;
+- (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (void)setMaxTotalThreadsPerThreadgroup:(unsigned long long)arg1;
 - (BOOL)threadGroupSizeIsMultipleOfThreadExecutionWidth;
 - (void)setThreadGroupSizeIsMultipleOfThreadExecutionWidth:(BOOL)arg1;
+- (id)driverCompilerOptions;
+- (void)setDriverCompilerOptions:(id)arg1;
 - (id)stageInputDescriptor;
 - (void)setStageInputDescriptor:(id)arg1;
 - (id)computeFunction;

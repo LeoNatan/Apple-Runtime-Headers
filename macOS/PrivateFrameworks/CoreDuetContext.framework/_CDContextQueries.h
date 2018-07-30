@@ -10,13 +10,21 @@
 {
 }
 
++ (id)keyPathForActiveComplications;
++ (id)keyPathForDefaultPairedDeviceForegroundApp;
++ (id)keyPathForWatchForegroundApp;
++ (id)keyPathForDefaultPairedDeviceThermalPressureLevel;
 + (id)keyPathForWatchThermalPressureLevel;
++ (id)keyPathForDefaultPairedDevicePluginStatus;
 + (id)keyPathForWatchPluginStatus;
++ (id)keyPathForDefaultPairedDeviceBatteryLevel;
 + (id)keyPathForWatchBatteryLevel;
 + (id)keyPathForWatchActiveStatus;
++ (id)keyPathForDefaultPairedDeviceNearbyStatus;
 + (id)keyPathForWatchNearbyStatus;
 + (id)keyPathForNetworkingBudgetRemainingStatus;
 + (id)keyPathForEnergyBudgetRemainingStatus;
++ (id)keyPathForCPUUsageLevel;
 + (id)keyPathForThermalPressureLevel;
 + (id)predicateForPluginStatus:(BOOL)arg1;
 + (id)keyPathForPluginStatus;
@@ -59,6 +67,16 @@
 + (id)actionSetUUID;
 + (id)sceneHomeUUID;
 + (id)keyPathForHomeKitSceneDataDictionary;
++ (id)appUsageType;
++ (id)appUsageStartDate;
++ (id)appUsageBundleID;
++ (id)keyPathForAppUsageDataDictionaries;
++ (id)appWebUsageWebDomain;
++ (id)appWebUsageWepageURL;
++ (id)appWebUsageType;
++ (id)appWebUsageStartDate;
++ (id)appWebUsageBundleID;
++ (id)keyPathForAppWebUsageDataDictionaries;
 + (id)batteryIsChargingKey;
 + (id)batteryFullyChargedKey;
 + (id)batteryAdapterTypeKey;
@@ -68,15 +86,6 @@
 + (id)batteryPercentageKey;
 + (id)keyPathForBatteryStateDataDictionary;
 + (id)intentDKObjUUIDKey;
-+ (id)intentGoalKey;
-+ (id)intentWorkoutNameKey;
-+ (id)intentAmountKey;
-+ (id)intentPayerKey;
-+ (id)intentPayeeKey;
-+ (id)intentDropOffLocationKey;
-+ (id)intentPickupLocationKey;
-+ (id)intentServiceNameKey;
-+ (id)intentRecipientsKey;
 + (id)intentHandlingStatusKey;
 + (id)intentDonatedBySiriKey;
 + (id)intentVerbKey;
@@ -108,6 +117,8 @@
 + (id)audioPortTypeKey;
 + (id)audioOutputStatusKey;
 + (id)keyPathForAudioOutputDataDictionary;
++ (id)keyPathForDefaultPairedServicesAppearingForeground;
++ (id)keyPathForServicesAppearingForeground;
 + (id)viewInformation;
 + (id)viewName;
 + (id)viewUUID;
@@ -123,6 +134,8 @@
 + (id)sunriseSunsetAvailabilityStatusKey;
 + (id)keyPathForSunriseSunsetDataDictionary;
 + (id)predicateForBluetoothConnectionStatus:(BOOL)arg1;
++ (id)bluetoothProductIDKey;
++ (id)bluetoothIsAppleAudioDeviceKey;
 + (id)bluetoothDeviceTypeKey;
 + (id)bluetoothAddressKey;
 + (id)bluetoothNameKey;

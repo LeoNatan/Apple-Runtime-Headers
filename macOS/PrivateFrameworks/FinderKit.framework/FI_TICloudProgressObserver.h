@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 {
     NSString *_iCloudDriveStatus;
     double _percentageComplete;
-    struct TNSRef<NSObject *, void> _subscriber;
-    struct TNSRef<FI_TInternalCloudProgressObserver *, void> _internalObserver;
+    struct TNSRef<NSObject, void> _subscriber;
+    struct TNSRef<FI_TInternalCloudProgressObserver, void> _internalObserver;
 }
 
 + (id)singleton;
